@@ -31,87 +31,265 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Google bans Podcast Addict app after 9 years for letting users play podcasts that reference COVID-19](https://www.reddit.com/r/androiddev/comments/glx7q2/google_bans_podcast_addict_app_after_9_years_for/)
-- url: https://reclaimthenet.org/google-play-suspends-podcast-addict/
+## [3][Jake Wharton: Today is my second first day at @Square doing Android, Kotlin, and open source things on the @CashApp team.](https://www.reddit.com/r/androiddev/comments/gm3kd2/jake_wharton_today_is_my_second_first_day_at/)
+- url: https://twitter.com/JakeWharton/status/1262399587995828224
 ---
 
-## [4][AVD Query](https://www.reddit.com/r/androiddev/comments/gm0826/avd_query/)
-- url: https://www.reddit.com/r/androiddev/comments/gm0826/avd_query/
+## [4][[Q] Remote Logcat from Android to Android?](https://www.reddit.com/r/androiddev/comments/gmm5kc/q_remote_logcat_from_android_to_android/)
+- url: https://www.reddit.com/r/androiddev/comments/gmm5kc/q_remote_logcat_from_android_to_android/
 ---
-What to choose for hardware acceleration for your android emulator when you don't have a graphics card installed in your computer? GLES hardware or Software?
-## [5][Kevin Lynch (now VP of Technology at Apple) in 2010 on cross-platform apps](https://www.reddit.com/r/androiddev/comments/glxh5e/kevin_lynch_now_vp_of_technology_at_apple_in_2010/)
-- url: https://www.youtube.com/watch?v=Z512TwwyRWM
+I'm looking for an app that can do remote debugging from an android device to an other android device AND has a good and readable log formatting.
+
+There are a ton of logcat apps on the market, but they can do only local logcat. 
+
+The only app i found that have this feature out of the box is [Bugjaeger](https://play.google.com/store/apps/details?id=eu.sisik.hackendebug&amp;hl=en). But the actual logging is pretty terrible, since it's not formatted in any way. 
+
+There is an other solution called [Remote ADB shell](https://play.google.com/store/apps/details?id=com.cgutman.androidremotedebugger&amp;hl=en) which can run logcat, and most importantly it's open source [Github](https://github.com/cgutman/RemoteAdbShell). So i could turn this into a remote logcat that suits my needs, but, i'm not super keen to do if there is an already existing solution.
+## [5][Brainstorming: What policy can break this app?](https://www.reddit.com/r/androiddev/comments/gmnhol/brainstorming_what_policy_can_break_this_app/)
+- url: https://www.reddit.com/r/androiddev/comments/gmnhol/brainstorming_what_policy_can_break_this_app/
 ---
+Hello, I would like to ask you for brainstorm together. Does anybody have any idea what policies may break this app [https://play.google.com/store/apps/details?id=net.hubalek.android.apps.myandroidearnings](https://play.google.com/store/apps/details?id=net.hubalek.android.apps.myandroidearnings) ?
 
-## [6][Migrating paid app users to free app](https://www.reddit.com/r/androiddev/comments/glt218/migrating_paid_app_users_to_free_app/)
-- url: https://www.reddit.com/r/androiddev/comments/glt218/migrating_paid_app_users_to_free_app/
+I got email that update was rejected but there is only following:  
+
+
+&gt; About the Google Play policy  
+  
+&gt;  
+&gt;Google reserves the discretion to include or remove apps from Google Play. We may take action based on a number of factors including, but not limited to, a pattern of harmful behavior or high risk of abuse. We identify risk of abuse using various items such as previous violation history, user feedback, and use of popular brands, characters, and other assets.  
+  
+&gt;  
+&gt;Publishing Status: Rejected  
+  
+&gt;  
+&gt;Your app has been rejected and wasn't published due to a policy violation. If you submitted an update, the previous version of your app is still available on Google Play.
+
+There is no more information in the email from Google.
+
+I tried to change some things but everytime it was rejected so I'm definitely on wrong path. So I would like to ask crowd for brainstorming. Thanks
+## [6][Any clue how to implement DRM on Android](https://www.reddit.com/r/androiddev/comments/gmmkr5/any_clue_how_to_implement_drm_on_android/)
+- url: https://www.reddit.com/r/androiddev/comments/gmmkr5/any_clue_how_to_implement_drm_on_android/
 ---
-Hi, i hope to get advise here.  i have decided to just have one app from a paid app and free app version before and new users will use iap to make it ad free.
-
-how did you guys manager to detect paid app users and unlock them in the free version?
-
-there does not seem to be any api in the billing api that does it since it involves only iap.
-
-i had read about forcing the user to install the pro version so the free version can detect if the paid version is installed. this is not an ideal approach though since it forces the user to have 2 installed apps (free and paid) even if it is only a 1 time step to verify that the paid version is installed.
-
-thoughts?
-## [7][Dear Developers, there is a big difference % wise in earnings on AdMob in this month, compared to the last. Can you help me figure what's the problem?](https://www.reddit.com/r/androiddev/comments/gly9kf/dear_developers_there_is_a_big_difference_wise_in/)
-- url: https://i.redd.it/8vy7qx99shz41.png
+I am finding methods for content protection in the form of digital rights management for documents. I have been through the various types of technologies they use for streaming services
+I need to apply these to an Android application.
+I'd be thankful if any of you could help me out or even share a resource for this ( I have been through the Android documentation already)
+## [7][Would it be possible to copy the content of an entire app, make some changes then use it for personal use?](https://www.reddit.com/r/androiddev/comments/gmmbhr/would_it_be_possible_to_copy_the_content_of_an/)
+- url: https://www.reddit.com/r/androiddev/comments/gmmbhr/would_it_be_possible_to_copy_the_content_of_an/
 ---
+Let's say i wanted to download a workout app on Android, but wanted to change things up for my personal preference  would it be possible to decompile the contents of an app and make an exact copy of it but change a few aspects of it so i could use it for my own personal use.
 
-## [8][Hey, this is my first android app please have a look and give me suggestions. https://play.google.com/store/apps/details?id=com.aniket.randomize](https://www.reddit.com/r/androiddev/comments/gm12l9/hey_this_is_my_first_android_app_please_have_a/)
-- url: https://i.redd.it/n6rczolzuiz41.png
+Would this be possible?
+
+Thank you
+## [8][trying to mount system as read-write in oneplus 6t](https://www.reddit.com/r/androiddev/comments/gmm9jm/trying_to_mount_system_as_readwrite_in_oneplus_6t/)
+- url: https://www.reddit.com/r/androiddev/comments/gmm9jm/trying_to_mount_system_as_readwrite_in_oneplus_6t/
 ---
+i am trying to mount system as read-write
 
-## [9][Type com.github.ybq.android.spinkit.R is defined multiple times, because of aar library](https://www.reddit.com/r/androiddev/comments/gm11pa/type_comgithubybqandroidspinkitr_is_defined/)
-- url: https://www.reddit.com/r/androiddev/comments/gm11pa/type_comgithubybqandroidspinkitr_is_defined/
+adb shell
+
+su
+
+mount -o rw,remount /system
+
+the last command gives me this error-
+
+mount: '/system' not in /proc/mounts
+
+what does this mean. any idea how to fix it?
+## [9][Library for app's onboarding](https://www.reddit.com/r/androiddev/comments/gmluh3/library_for_apps_onboarding/)
+- url: https://www.reddit.com/r/androiddev/comments/gmluh3/library_for_apps_onboarding/
 ---
-Hello, I have integrated a third party SDK (aar file), which uses com.github.ybq.android.spinkit inside of it. This aar library, does not declare com.github.ybq.android.spinkit as gradle depency and this causes an issue, when we **try to create a release version of our app:**
+Hello ;)
 
-**Type com.github.ybq.android.spinkit.R is defined multiple times**
-
-Debug builds work without any issues. 
-
-What I have tried:
-
-1. Exclude a com.github.ybq.android.spinkit from this aar file. This did not worked, because it seems that it does not support **aar files**. Here is my code:
-
-&amp;#8203;
-
-     implementation ('example.library@aar') {
-            exclude group: 'com.github.ybq', module: 'Android-SpinKit'
-        }
-
-I know that it is a fault of library creator to build **a fat aar** with compiled library additionally. However, I can't just force them to change it... 
-
-Perhaps there is a way to somehow **exclude Android-SpinKit from that AAR library**?
-## [10][Client/server CRUD application with client side cache](https://www.reddit.com/r/androiddev/comments/gm118e/clientserver_crud_application_with_client_side/)
-- url: https://www.reddit.com/r/androiddev/comments/gm118e/clientserver_crud_application_with_client_side/
+Currently i'm finishing my first app for Google Play and as last thing i want to develop is some kind of onboarding. The app is very simple, just 3 screens in a viewpager, main feature is based on camera. Since i never did this, i wanted to ask if You know any good onboarding libraries? Will be thankful for any rocommendations.
+## [10][What type of background task should I use and how?](https://www.reddit.com/r/androiddev/comments/gmlqj1/what_type_of_background_task_should_i_use_and_how/)
+- url: https://www.reddit.com/r/androiddev/comments/gmlqj1/what_type_of_background_task_should_i_use_and_how/
 ---
-Recently I've been hacking away on a few different applications. The common denominator is that the Android applications are clients for RESTful backends. The way I've implemented it so far is by synchronizing the backend to local storage on the client. Specifically I'm using Retrofit and Room for that task.
+I am pretty new to android app development, I don't know which one should I pick but here is how I want it to work:
 
-The applications mostly consist of CRUD functionality and the business logic mostly consist of the way the data is structured and its relations.
+* It should run once in a day, I don't care what hour
+* It needs network connection
+* It can't be interrupted
+* It takes around 3 minutes
 
-The problem is that I feel I'm coding the application twice. I'm pretty much duplicating the database layout both client- and server-side. With the limitations of Room versus JPA and Postgresql.
-
-To some extend I feel that Room/Sqlite is overkill and I could do with a simple key value store.
-
-Any comments?
-## [11][How to protect my personal play store account as a freelancer?](https://www.reddit.com/r/androiddev/comments/gm10b2/how_to_protect_my_personal_play_store_account_as/)
-- url: https://www.reddit.com/r/androiddev/comments/gm10b2/how_to_protect_my_personal_play_store_account_as/
+I read about it in android documentation and it seems like WorkManager would suit me the best but I don't know how do I make it run everyday or if it's actually what I should use, can you help me?
+## [11][Tab selection in tab selection](https://www.reddit.com/r/androiddev/comments/gmlmsf/tab_selection_in_tab_selection/)
+- url: https://www.reddit.com/r/androiddev/comments/gmlmsf/tab_selection_in_tab_selection/
 ---
-I will be mostly working with companies who never had an app. I will be building apps for them and guiding them through the process of publishing it on play store.
+Trying to create tab selection in tab selection First tab hierarchy creates fine while second ones tabs overlaps each other and text "aa" is not visible. How to solve this problem?
 
-What are things I should keep in mind so that if in future if they get their account ban, my personal account is not affected by it?
+&amp;#x200B;
 
-If you have any other tips for someone starting freelancing please share them as well.
+    &lt;?xml version="1.0" encoding="utf-8"?&gt;
+    &lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Week"&gt;
+    
+        &lt;TabHost
+            android:id="@+id/tabHost"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"&gt;
+    
+            &lt;LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"&gt;
+    
+                &lt;TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"&gt;
+    
+                &lt;/TabWidget&gt;
+    
+                &lt;FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"&gt;
+    
+                    &lt;LinearLayout
+                        android:id="@+id/tab1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#dadada"
+                        android:orientation="vertical"&gt;
+    
+                        &lt;TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="ths is tab one" /&gt;
+    
+    
+                        &lt;TabHost
+                            android:id="@+id/tabHostt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"&gt;
+    
+                            &lt;LinearLayout
+    
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"&gt;
+    
+    
+                                    &lt;FrameLayout
+                                        android:id="@android:id/tabcontent"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"&gt;
+    
+                                        &lt;LinearLayout
+                                            android:id="@+id/tabb1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:background="#dadada"
+                                            android:orientation="vertical"&gt;
+    
+                                            &lt;TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:text="aa" /&gt;
+    
+    
+                                        &lt;/LinearLayout&gt;
+    
+    
+                                        &lt;LinearLayout
+                                            android:id="@+id/tabb2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:background="#dadada"
+                                            android:orientation="vertical"&gt;
+    
+                                            &lt;TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:text="bb" /&gt;
+                                        &lt;/LinearLayout&gt;
+    
+                                    &lt;/FrameLayout&gt;
+    
+    
+                            &lt;/LinearLayout&gt;
+    
+                        &lt;/TabHost&gt;
+    
+    
+                    &lt;/LinearLayout&gt;
+    
+    
+                    &lt;LinearLayout
+                        android:id="@+id/tab2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#fafafa"
+                        android:orientation="vertical"&gt;
+    
+                        &lt;TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="ths is tab two" /&gt;
+    
+    
+                    &lt;/LinearLayout&gt;
+    
+                    &lt;LinearLayout
+                        android:id="@+id/tab3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#ededed"
+                        android:orientation="vertical"&gt;
+    
+                        &lt;TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="ths is tab three" /&gt;
+    
+    
+                    &lt;/LinearLayout&gt;
+    
+    
+                &lt;/FrameLayout&gt;
+    
+    
+            &lt;/LinearLayout&gt;
+    
+    
+        &lt;/TabHost&gt;
+    &lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;
 
-Thanks.
+onCreate code:
 
-P.s. I am asking this because I have heard stories where a company got their account ban because a developer who was banned had access to it and google associated the company's account with his. I just want to be sure that I am not affected by it the other way round.
-## [12][Someone modified my app and uploaded it to some app store](https://www.reddit.com/r/androiddev/comments/gm0zse/someone_modified_my_app_and_uploaded_it_to_some/)
-- url: https://www.reddit.com/r/androiddev/comments/gm0zse/someone_modified_my_app_and_uploaded_it_to_some/
+&amp;#x200B;
+
+    TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
+    
+    tabHost.setup();
+    
+    //tab1
+    TabHost.TabSpec spec = tabHost.newTabSpec("Tab one");
+    spec.setContent(R.id.tab1);
+    spec.setIndicator("I");
+    tabHost.addTab(spec);
+    
+    //tab2
+    spec = tabHost.newTabSpec("Tab two");
+    spec.setContent(R.id.tab2);
+    spec.setIndicator("II");
+    tabHost.addTab(spec);
+    
+    //tab3
+    spec = tabHost.newTabSpec("Tab three");
+    spec.setContent(R.id.tab3);
+    spec.setIndicator("III");
+    tabHost.addTab(spec);
+    androidEdit tags
+## [12][OkCupid Presents: Cutting Through the Static. Find and Fix Issues the Smart Way with Android Studio Static Code Analysis](https://www.reddit.com/r/androiddev/comments/gm2b31/okcupid_presents_cutting_through_the_static_find/)
+- url: https://www.reddit.com/r/androiddev/comments/gm2b31/okcupid_presents_cutting_through_the_static_find/
 ---
-Hi all. Few days ago I was looking in Google Analytics at the most frequently viewed activities in my app. I noticed that there are many views of "TencentActivity". I'm sure that there's no class with that name in my app. I looked further and it seems that it's used by users in Thailand and Malaysia on Oppo devices. It also uses an app version that I didn't set. I'm curious about this modification. Did anyone had similar case?
+Android Studio surfaces lots of issues in your code with their static code analysis tool. Follow along as Brian Plummer, Senior Android Developer at OkCupid, shows you how to find these issues and best practices for getting your fixes merged into the codebase.  
 
-I tried downloading an apk of the Oppo app store, but it's all in Chinese on my phone, and I couldn't find my app there (probably the name is changed).
+[https://tech.okcupid.com/android-static-analysis-tips-and-tutorial/](https://tech.okcupid.com/android-static-analysis-tips-and-tutorial/)

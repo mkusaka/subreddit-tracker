@@ -109,76 +109,83 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/gcbkuu/whos_hiring_may_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Error handling w/ Apollo Client x React is a nightmare.](https://www.reddit.com/r/reactjs/comments/gls732/error_handling_w_apollo_client_x_react_is_a/)
-- url: https://www.reddit.com/r/reactjs/comments/gls732/error_handling_w_apollo_client_x_react_is_a/
----
-This if my first project using Apollo. Its great, apart from the error handling. There’s always some ‘Unhandled Rejection’ crashing my app. I’m setting up basic user authentication and it’s a pain to handle these expired tokens. For every problem I solve, it seems to create another. 
-
-I’m using apollo-error-link and trying to set up basic default handling in there. 
-
-Am I just being a noob or is this a common sentiment?
-## [4][How to Make your React App a Progressive Web App (PWA) - Full intro to PWAs + tutorial](https://www.reddit.com/r/reactjs/comments/glo1be/how_to_make_your_react_app_a_progressive_web_app/)
-- url: https://felixgerschau.com/how-to-make-your-react-app-a-progressive-web-app-pwa
+## [3][build Weather App Using React.js With Current Location &amp; Search City - Html Hints](https://www.reddit.com/r/reactjs/comments/gmn7xq/build_weather_app_using_reactjs_with_current/)
+- url: https://www.htmlhints.com/article/how-to-create-weather-app-using-reactjs-with-current-location-search-city/93
 ---
 
-## [5][Using Firebase custom claim for role checking in react](https://www.reddit.com/r/reactjs/comments/glv7eo/using_firebase_custom_claim_for_role_checking_in/)
-- url: https://youtu.be/ftwGCvrcWfA
+## [4][Add role-based permissions to your React app](https://www.reddit.com/r/reactjs/comments/gm5wlt/add_rolebased_permissions_to_your_react_app/)
+- url: https://swizec.com/blog/add-granular-role-based-access-to-your-jamstack-app/swizec/9418
 ---
 
-## [6][How To Mock Fetch in Jest (Covers React &amp; React Testing Library)](https://www.reddit.com/r/reactjs/comments/glgmy8/how_to_mock_fetch_in_jest_covers_react_react/)
-- url: https://www.leighhalliday.com/mock-fetch-jest
+## [5][Store - The cleanest state management library I could come up with - very few APIs, UI-framework agnostic, TypeScript support with no effort, fast by default](https://www.reddit.com/r/reactjs/comments/gm3kx8/store_the_cleanest_state_management_library_i/)
+- url: https://github.com/fabiospampinato/store
 ---
 
-## [7][AST docgen: generate docs from code](https://www.reddit.com/r/reactjs/comments/glx7dj/ast_docgen_generate_docs_from_code/)
-- url: https://www.reddit.com/r/reactjs/comments/glx7dj/ast_docgen_generate_docs_from_code/
+## [6][Learn the basics of ReactJS in 30 minutes [for beginners]](https://www.reddit.com/r/reactjs/comments/gmnf75/learn_the_basics_of_reactjs_in_30_minutes_for/)
+- url: https://www.reddit.com/r/reactjs/comments/gmnf75/learn_the_basics_of_reactjs_in_30_minutes_for/
 ---
-So I whipped a little lib over the weekend with the purpose of generating docs from typescript declaration ASTs. I have a video demo of the thing here: https://youtu.be/WBqEIAFfxw0
+Hola,
 
-At this time, I'm solely posting to gauge interest in a tool like this. I don't necessarily know if there is an audience for this so I'm sharing before polishing.
+My cousin was laid off during the pandemic and has the time and resources to invest in making a career change. I have felt it upon myself to help him in his journey and I'm really proud of what he has been able to achieve in just 5 weeks. I want to give an open invitation to anyone that might be interested in learning a specific concept or technology. PM me or reach out to me via Youtube.
 
-https://github.com/ricokahler/ast-docgen
+[https://youtu.be/0Pph03z4\_M0](https://youtu.be/0Pph03z4_M0)
 
-Let me know if you'd using something like this. Feedback appreciated!
-## [8][Reduce bundle size by importing only the parts of a package you need](https://www.reddit.com/r/reactjs/comments/glw8my/reduce_bundle_size_by_importing_only_the_parts_of/)
-- url: https://medium.com/better-programming/stop-importing-whole-javascript-packages-39a5f3d4c8
----
-
-## [9][Am I using the useCallback correctly, and do I need to use it in this situation?](https://www.reddit.com/r/reactjs/comments/glzmtg/am_i_using_the_usecallback_correctly_and_do_i/)
-- url: https://www.reddit.com/r/reactjs/comments/glzmtg/am_i_using_the_usecallback_correctly_and_do_i/
----
-Am I using the useCallback correctly, and do I need to use it in this situation?
-
-&amp;#x200B;
-
- 
-
-const logout = React.useCallback(() =&gt; {  
- setAuth({ user: null, isAuthenticated: false });  
- window.location.href = \`tologinpage\`;  
-    }, \[auth\]);
-## [10][Max Stoiber - The past, present and future of CSS-in-JS](https://www.reddit.com/r/reactjs/comments/gm15i4/max_stoiber_the_past_present_and_future_of_cssinjs/)
-- url: https://www.youtube.com/watch?v=W-zVPl7CGrY
+[https://youtu.be/0Pph03z4\_M0](https://youtu.be/0Pph03z4_M0)
+## [7][Animated Sparkles in React](https://www.reddit.com/r/reactjs/comments/gmo0kp/animated_sparkles_in_react/)
+- url: https://joshwcomeau.com/react/animated-sparkles-in-react/
 ---
 
-## [11][Fireact — The open source project for you to fast track your next web app with Firebase and React](https://www.reddit.com/r/reactjs/comments/gm11lc/fireact_the_open_source_project_for_you_to_fast/)
-- url: https://www.reddit.com/r/reactjs/comments/gm11lc/fireact_the_open_source_project_for_you_to_fast/
+## [8][use-count-up: a lightweight alternative of react-countup](https://www.reddit.com/r/reactjs/comments/gmk9lp/usecountup_a_lightweight_alternative_of/)
+- url: https://www.reddit.com/r/reactjs/comments/gmk9lp/usecountup_a_lightweight_alternative_of/
 ---
-Hi All,
+Hey all,  
 
-I have created an open-source project, Fireact, to demonstrate how React works with Firebase. The idea is that it will help developers to fast track projects by skipping building user sign-in and user functions (e.g. update password). It's a fully functional web application now. Would love to hear feedback and get help to work on it together.
+I'm happy to share with you my latest open-source project [use-count-up](https://github.com/vydimitrov/use-count-up). This is a React/React Native component and hook to animate counting up or down to a number.   
 
-More details here: [https://medium.com/@chaoming\_li/fireact-the-open-source-project-for-you-to-fast-track-your-next-web-app-with-firebase-and-react-5ab98dcf9c93?source=friends\_link&amp;sk=e3a224c2033a504d82d45dc7be7b3177](https://medium.com/@chaoming_li/fireact-the-open-source-project-for-you-to-fast-track-your-next-web-app-with-firebase-and-react-5ab98dcf9c93?source=friends_link&amp;sk=e3a224c2033a504d82d45dc7be7b3177)
+[use-count-up](https://github.com/vydimitrov/use-count-up) is thought to be a [lightweight](https://bundlephobia.com/scan-results?packages=use-count-up@latest,react-countup) alternative to the famous [react-countup](https://github.com/glennreyes/react-countup) with built-in support for `toLocaleString` number formatting. It has declarative API _(no more imperative calls to `start()` and `update()`)_ and is built with React and TypeScript for React and React Native apps.  
 
-Github link here: [https://github.com/chaoming/fireact](https://github.com/chaoming/fireact)
-
-Cheers,
-## [12][Project Management Tool Survey](https://www.reddit.com/r/reactjs/comments/gm0xk3/project_management_tool_survey/)
-- url: https://www.reddit.com/r/reactjs/comments/gm0xk3/project_management_tool_survey/
+Hope you like it!
+## [9][What are some good React repositories to look at and learn?](https://www.reddit.com/r/reactjs/comments/gmohf7/what_are_some_good_react_repositories_to_look_at/)
+- url: https://www.reddit.com/r/reactjs/comments/gmohf7/what_are_some_good_react_repositories_to_look_at/
 ---
-Hi reactjs community!
+I am looking for open source React repositories so that I can learn from them. So far I have found the Spectrum chat one ([https://github.com/withspectrum/spectrum](https://github.com/withspectrum/spectrum)) to be really useful. I was wondering if there are any others the community have found useful.
 
-I’m a computer science student from berlin and part of a research project where we want to understand how project management tools are used in software-development teams.  
-That is why I am asking you: What are your opinions on the tools you use? Help me with my research by filling out the survey below!  
-Thank you!
+I am learning to code on my own so I've this to be the best way I can learn how other people go about programming.
+## [10][Can someone teach me how to implement this? (The orange text changes after every 4-5 seconds).](https://www.reddit.com/r/reactjs/comments/gmoebd/can_someone_teach_me_how_to_implement_this_the/)
+- url: https://www.reddit.com/r/reactjs/comments/gmoebd/can_someone_teach_me_how_to_implement_this_the/
+---
+any sample code, document or an existing component which can help me implement this?
 
-[Click here to start survey](https://pmtoolstudy.typeform.com/to/sdzA6D)
+https://reddit.com/link/gmoebd/video/tljmbvcm2qz41/player
+## [11][For anyone learning React from Brad Traversy on Udemy](https://www.reddit.com/r/reactjs/comments/gmoai3/for_anyone_learning_react_from_brad_traversy_on/)
+- url: https://www.reddit.com/r/reactjs/comments/gmoai3/for_anyone_learning_react_from_brad_traversy_on/
+---
+Hi all,
+
+I would like to share this link for anyone learning React through the brad Traversy course on udemy.
+
+Basically Brad says that the way the hooks are introduced and explained in this course  are not the  best way they should be used.
+
+The course came out when react was still new so lots of things were still unlearned.
+
+I am still going through this file and i am struggling to understand some of it, but once i start changing the code i might be in a better position.
+
+Hopefully this will help out anyone who is currently doing the course as i am and was finding some of hooks usage to be a bit unusual.
+
+If anyone cares to help to give us a hand as to why we shouldn't have functions that change the state inside the stateContext file would be of great help!
+
+My thinking is that it causes react to do unnecessary renderings?
+
+Link:  [https://github.com/bradtraversy/contact-keeper/tree/hookfix#contact-keeper](https://github.com/bradtraversy/contact-keeper/tree/hookfix#contact-keeper) 
+## [12][How do I interact with a site which uses React?](https://www.reddit.com/r/reactjs/comments/gmo51w/how_do_i_interact_with_a_site_which_uses_react/)
+- url: https://www.reddit.com/r/reactjs/comments/gmo51w/how_do_i_interact_with_a_site_which_uses_react/
+---
+I had some Scripts to interact with a specific website to automate some tasks. That site has ported its code to React JS and they stopped working.
+
+Now things like changing the value of the input fields do nothing. Well, it changes the value, but it doesn't trigger the logic behind it, therefore for example, the buttons to submit something keep disabled (and is not as easy as just enabling manually the buttons).
+
+I tried dispatching different events, like "keydown", but for security reasons it seems the browser doesn't allow that event to change the actual value of the fields.
+
+Any ideas?
+
+Thanks in advance.

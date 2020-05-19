@@ -1,11 +1,5 @@
 # javascript
-## [1][Showoff Saturday (May 16, 2020)](https://www.reddit.com/r/javascript/comments/gktdbw/showoff_saturday_may_16_2020/)
-- url: https://www.reddit.com/r/javascript/comments/gktdbw/showoff_saturday_may_16_2020/
----
-Did you find or create something cool this week in javascript? 
-
-Show us here!
-## [2][Your weekly /r/javascript recap](https://www.reddit.com/r/javascript/comments/glxz28/your_weekly_rjavascript_recap/)
+## [1][Your weekly /r/javascript recap](https://www.reddit.com/r/javascript/comments/glxz28/your_weekly_rjavascript_recap/)
 - url: https://www.reddit.com/r/javascript/comments/glxz28/your_weekly_rjavascript_recap/
 ---
 **Monday, May 11 - Sunday, May 17**
@@ -85,71 +79,76 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][A full, summarized, interactive WebGL tutorial](https://www.reddit.com/r/javascript/comments/gliqro/a_full_summarized_interactive_webgl_tutorial/)
-- url: https://xem.github.io/articles/webgl-guide.html
----
-
-## [4][AST docgen: generate docs from code](https://www.reddit.com/r/javascript/comments/glx7hf/ast_docgen_generate_docs_from_code/)
-- url: /r/reactjs/comments/glx7dj/ast_docgen_generate_docs_from_code/
----
-
-## [5][Building a web app with a user scriptable frontend](https://www.reddit.com/r/javascript/comments/glz73h/building_a_web_app_with_a_user_scriptable_frontend/)
-- url: https://alex.uncomma.com/kinda-code/building-a-web-app-with-a-user-scriptable-frontend
----
-
-## [6][New Tutorial on MDN: Spicy HTML-first JavaScript framework: EmberJS](https://www.reddit.com/r/javascript/comments/glnx3l/new_tutorial_on_mdn_spicy_htmlfirst_javascript/)
-- url: https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Ember_getting_started
----
-
-## [7][Building Pokemon Index in Vanilla JS](https://www.reddit.com/r/javascript/comments/gluw0q/building_pokemon_index_in_vanilla_js/)
-- url: https://medium.com/@lelouchb/building-pokemon-index-in-vanilla-js-5ab534d912e4
----
-
-## [8][loupe: an image magnifier written in TypeScript that works with touch events and React](https://www.reddit.com/r/javascript/comments/glynlr/loupe_an_image_magnifier_written_in_typescript/)
-- url: https://github.com/nishanths/loupe-js
----
-
-## [9][I wrote my first Medium article on Getting Started with Deno.js (feedback appreciated)](https://www.reddit.com/r/javascript/comments/glkkoy/i_wrote_my_first_medium_article_on_getting/)
-- url: https://medium.com/@mr_alien/getting-started-with-deno-js-1c4eb3e06aaf?source=friends_link&amp;sk=8ef5f3432a5927b7c7f9741a96f61f09
----
-
-## [10][[AskJS] Why can't JavaScript be extended to handle low-levels systems programming?](https://www.reddit.com/r/javascript/comments/glry5f/askjs_why_cant_javascript_be_extended_to_handle/)
-- url: https://www.reddit.com/r/javascript/comments/glry5f/askjs_why_cant_javascript_be_extended_to_handle/
+## [2][[Survey] Influence of technology trends and hypes on software development and hiring practices (~5 mins)](https://www.reddit.com/r/javascript/comments/glw8so/survey_influence_of_technology_trends_and_hypes/)
+- url: https://www.reddit.com/r/javascript/comments/glw8so/survey_influence_of_technology_trends_and_hypes/
 ---
  
 
-We know that the JavaScript that we write in Node.js gets compiled to C++. We know that JavaScript that we write in Deno gets compiled to Rust.
+Hi /r/javascript!
 
-My question is simple: instead of always using JavaScript as a wrapper, why can't JavaScript be extended to handle more low-level system type programming? To be clear, I'm not trying to be snark. I am genuinely curious why this hasn't been done yet. Are there some inherent problems that make this basically impossible? What are some of the challenges with doing this?
-## [11][[AskJS] Help with window.onbeforeunload()](https://www.reddit.com/r/javascript/comments/glwrrm/askjs_help_with_windowonbeforeunload/)
-- url: https://www.reddit.com/r/javascript/comments/glwrrm/askjs_help_with_windowonbeforeunload/
+We are 3 researchers from the [Institute of Software Technology](https://www.iste.uni-stuttgart.de/se) at the University of Stuttgart, Germany, and currently conduct a  survey  to analyze the influence of technology trends and hypes on  software  development practices and the hiring process. Our target group  are  software and IT professionals both in technical as well as in  hiring roles. We think a lot of you will have an opinion on this topic, having undoubtedly tried to make sense of the JS framework jungle out there. The survey should not take more than 5 minutes.
+
+Your participation would be a great help! Feel free to distribute to your colleagues as well.
+
+[https://www03.surveygrid.com/public/online/index?AZ4A%2F11111](https://www03.surveygrid.com/public/online/index?AZ4A%2F11111)
+
+If you have any questions, we'll also happily answer them here.
+
+Thank you and stay healthy!
+## [3][Painterro - OpenSource Paint plugin](https://www.reddit.com/r/javascript/comments/gmmvqq/painterro_opensource_paint_plugin/)
+- url: https://github.com/devforth/painterro
 ---
-Hi, my requirement is upon refreshing or closing the browser tab, there should be my custom alert
 
-instead of browser alert. I have to get this work done in typescript so I am returning the
+## [4][potato.land - a p2p web app to watch videos with friends](https://www.reddit.com/r/javascript/comments/gmfde7/potatoland_a_p2p_web_app_to_watch_videos_with/)
+- url: https://potato.land/
+---
 
-$event.returnValue = false on beforeunload event which will stop my browser from closing or
+## [5][Authentication on the Client Side the Right Way: Cookies vs. Local Storage](https://www.reddit.com/r/javascript/comments/gm2taz/authentication_on_the_client_side_the_right_way/)
+- url: https://www.taniarascia.com/full-stack-cookies-localstorage-react-express/
+---
 
-refreshing but at the same time I want my custom pop-up to be shown instead of browser pop-up.
+## [6][The Great Dropbox CoffeeScript to Typescript Migration](https://www.reddit.com/r/javascript/comments/gmll4l/the_great_dropbox_coffeescript_to_typescript/)
+- url: https://dropbox.tech/frontend/the-great-coffeescript-to-typescript-migration-of-2017
+---
 
-Here is my Code -
+## [7][I’ve added demos for Web Payments and Web Authentication to What PWA Can Do Today](https://www.reddit.com/r/javascript/comments/gmkn6i/ive_added_demos_for_web_payments_and_web/)
+- url: https://whatpwacando.today
+---
 
-      @HostListener("window:beforeunload", ["$event"])
-      beforeUnload($event: Event) {
-    //loading my custom pop up
-          $event.returnValue =false;
-    }
+## [8][[AskJS] What was programming in JS like in the Netscape Navigator days?](https://www.reddit.com/r/javascript/comments/gmai1k/askjs_what_was_programming_in_js_like_in_the/)
+- url: https://www.reddit.com/r/javascript/comments/gmai1k/askjs_what_was_programming_in_js_like_in_the/
+---
+I'm curious about what the workflow was like, what kind of tooling was around and what kind of quirky JS behavior was there at the time, like `console` being `undefined` on old versions of IE. What's a good place to read more about this topic?
+## [9][Native Lazy Loading Chrome New Feature | Geekstrick](https://www.reddit.com/r/javascript/comments/gmol2z/native_lazy_loading_chrome_new_feature_geekstrick/)
+- url: https://www.geekstrick.com/native-lazy-loading-chrome/
+---
 
-My Custom Pop-up loads but loads after I cancel the browser popup-
+## [10][Connect Typeform to Gmail and Send Automated Emails with Autocode](https://www.reddit.com/r/javascript/comments/gmjlsz/connect_typeform_to_gmail_and_send_automated/)
+- url: https://github.com/JanethL/TypeformtoGmail
+---
+
+## [11][[AskJS] How efficiently can you synchronously busy loop?](https://www.reddit.com/r/javascript/comments/gmjj1r/askjs_how_efficiently_can_you_synchronously_busy/)
+- url: https://www.reddit.com/r/javascript/comments/gmjj1r/askjs_how_efficiently_can_you_synchronously_busy/
+---
+How efficiently can you synchronously busy loop with 100ms or less time between condition tests? Nodejs or browser.
+
+    // probably runs hot, not a winning strategy :)
+    while (true) { /* condition == true, do nothing, just burn cpu */ }
+    // may run a bit warm
+    while (isConditionMet()) { cp.execSync(`sleep 0.09`)) }
+    // ice-cold?
+    while (isConditionMet()) { /* your ideas here */ }
+
+\&gt; "Uh, dude, JS is single threaded--your condition can't update? This is obviously a bad idea."
+
+Not entirely true. But even so, assume it is.
 
 &amp;#x200B;
 
-[Browser Pop up](https://preview.redd.it/yk3gpe3j5hz41.png?width=557&amp;format=png&amp;auto=webp&amp;s=1448c4db23676aea55b105a78f5d930a523d859e)
+What's the lowest energy way to run this loop? Not sure how we can assess the winner yet. Let's figure it out!
 
-&amp;#x200B;
-
-How can I achieve this? what am I doing wrong? Please help.
-## [12][Building your First Chrome Extension : IMDb Lookup](https://www.reddit.com/r/javascript/comments/gl7fcu/building_your_first_chrome_extension_imdb_lookup/)
-- url: https://www.arbazsiddiqui.me/building-your-first-chrome-extension-imdb-lookup/
+[https://unix.stackexchange.com/questions/10418/how-to-find-power-draw-in-watts](https://unix.stackexchange.com/questions/10418/how-to-find-power-draw-in-watts)
+## [12][Logic Gates in JavaScript](https://www.reddit.com/r/javascript/comments/gmnynn/logic_gates_in_javascript/)
+- url: https://ahuth.github.io/articles/logic-gates-in-javascript.html
 ---
 

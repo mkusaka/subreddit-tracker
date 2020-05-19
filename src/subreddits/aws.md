@@ -1,154 +1,89 @@
 # aws
-## [1][TIL AWS has tooling to stop/start instances - Scheduler CLI](https://www.reddit.com/r/aws/comments/gls34w/til_aws_has_tooling_to_stopstart_instances/)
-- url: https://www.reddit.com/r/aws/comments/gls34w/til_aws_has_tooling_to_stopstart_instances/
+## [1][How to setup AWS Organizations with AWS SSO using G Suite as an identity provider. Made account management, centralized billing and resource sharing much easier in my own company. Hope this helps :) !](https://www.reddit.com/r/aws/comments/gmn67i/how_to_setup_aws_organizations_with_aws_sso_using/)
+- url: https://medium.com/serverless-transformation/setup-aws-organizations-with-google-suite-saml-sso-7e676f5ed3e1
 ---
-https://docs.aws.amazon.com/solutions/latest/instance-scheduler/appendix-a.html
 
-I can't help but think this is perhaps only useful for dev/staging environments.
-## [2][CDK for production workloads](https://www.reddit.com/r/aws/comments/glm4k0/cdk_for_production_workloads/)
-- url: https://www.reddit.com/r/aws/comments/glm4k0/cdk_for_production_workloads/
+## [2][AWS YouTube deep dives and code walkthroughs](https://www.reddit.com/r/aws/comments/gmdyy9/aws_youtube_deep_dives_and_code_walkthroughs/)
+- url: https://www.reddit.com/r/aws/comments/gmdyy9/aws_youtube_deep_dives_and_code_walkthroughs/
 ---
-I was recently getting into learning the AWS CDK and I am super excited about it. The elegant approach to provision infrastructure from python code is amazing.
+Hey guys, given the lockdown and an ample amount of free time I decided to create a YouTube channel and dive deep into a lot of the most popular AWS topics. Here's the channel:
+https://www.youtube.com/VladimirBudilov
 
-But since it is pretty new and maybe does not offer all features, I was wondering: is the CDK actually used by organizations for real production environments?
-## [3][[HELP] Cannot connect to RDS from Fargate](https://www.reddit.com/r/aws/comments/gm0ps5/help_cannot_connect_to_rds_from_fargate/)
-- url: https://www.reddit.com/r/aws/comments/gm0ps5/help_cannot_connect_to_rds_from_fargate/
+Here's my GitHub account with a lot of sample code: 
+https://github.com/vbudilov/
+
+Let me know if there's a topic that you're really interested in and if there's additional demand I can do a deep dive on that topic. 
+
+Vladimir
+
+P.S. This isn't sponsored by Amazon
+## [3][A Multithreaded Fork of Redis that is 5X faster](https://www.reddit.com/r/aws/comments/gm4lve/a_multithreaded_fork_of_redis_that_is_5x_faster/)
+- url: https://github.com/JohnSully/KeyDB
 ---
-Hi, I'm new to AWS and I'm stuck with this issue for 2 weeks now.
 
-[https://stackoverflow.com/questions/61869022/cannot-connect-to-rds-from-fargate](https://stackoverflow.com/questions/61869022/cannot-connect-to-rds-from-fargate)
-
-Can someone please help me with this?
-## [4][AWS tutorials from an ex-AWS engineer](https://www.reddit.com/r/aws/comments/glzvt5/aws_tutorials_from_an_exaws_engineer/)
-- url: https://www.reddit.com/r/aws/comments/glzvt5/aws_tutorials_from_an_exaws_engineer/
+## [4][Setting up LAMP stack with load balancing - is Lightsail right for me?](https://www.reddit.com/r/aws/comments/gmohl3/setting_up_lamp_stack_with_load_balancing_is/)
+- url: https://www.reddit.com/r/aws/comments/gmohl3/setting_up_lamp_stack_with_load_balancing_is/
 ---
-Hi everyone,
+I need to set up/write a very basic LAMP app -- some static pages, and some PHP / MySQL CRUD logic, all over SSL.  The catch is it needs to be highly available, lots of inserts to MySQL, and it may need load balancing in the future.
 
-I'm an ex-AWS software engineer (moved on to try something different).
-
-I've been thinking of writing up some tutorials on using AWS to do things which I think far more people should be aware (and not scared) of. For example, hosting a static site on S3 + Cloudfront.
-
-Is there a specific tutorial you'd be interested in?
-## [5][MediaConvert Server Side Encryption of HLS Stream](https://www.reddit.com/r/aws/comments/gly5ym/mediaconvert_server_side_encryption_of_hls_stream/)
-- url: https://www.reddit.com/r/aws/comments/gly5ym/mediaconvert_server_side_encryption_of_hls_stream/
+I've run regular EC2 instances with no load balancers for other stuff and am comfortable with that -- but I want to get the architecture for this app correct right off the bat.  It seems Lightsail would be ideal for this, but I'm wondering what other alternatives there are?
+## [5][Sagemaker Ground Truth - Cannot get active learning to auto label my data](https://www.reddit.com/r/aws/comments/gmnmmr/sagemaker_ground_truth_cannot_get_active_learning/)
+- url: https://www.reddit.com/r/aws/comments/gmnmmr/sagemaker_ground_truth_cannot_get_active_learning/
 ---
-Here's the MediaConvert code that encrypts the segments:
+Hi guys,
 
-&amp;#x200B;
-
-'Encryption' =&gt; \[
-
-	'EncryptionMethod' =&gt; 'AES128',
-
-	'InitializationVectorInManifest' =&gt; 'EXCLUDE',
-
-	'OfflineEncrypted' =&gt; 'DISABLED',
-
-	'StaticKeyProvider' =&gt; \[
-
-		'StaticKeyValue' =&gt; 'ecd0d06eaf884d8226c33928e87efa33',
-
-		'Url' =&gt; '[https://Example.com/keyinfo](https://Example.com/keyinfo)',
-
-	\],
-
-	'Type' =&gt; 'STATIC\_KEY', //'SPEKE'|'STATIC\_KEY'
-
-\],
-
-&amp;#x200B;
-
-[Example.com/keyinfo](https://Example.com/keyinfo) is a text file with ONLY the following 2 lines of text:
-
-&amp;#x200B;
-
-[https://Example.com/key](https://Example.com/key)
-
-key
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-Then, at [Example.com/key](https://Example.com/key) is a text file containing just 1 single line of text:
-
-&amp;#x200B;
-
-ecd0d06eaf884d8226c33928e87efa33
-
-&amp;#x200B;
-
-(and that's the same as "StaticKeyValue" from the earlier MediaConvert job)
-
-&amp;#x200B;
-
-And when I play this video using VideoJS, it is able to get to the main playlist (.m3u8), it is able to locate the keyinfo file (I can see it in the browser logs), but then it fails when trying to open the first .ts segment which is part 1 of the encrypted video.
-
-&amp;#x200B;
-
-So what do you think is wrong here? I am happy to pay someone to troubleshoot this for me.
-
-&amp;#x200B;
-
-Thanks in advance for your help!
-## [6][LightSail instance suddenly stopped working](https://www.reddit.com/r/aws/comments/gly4tj/lightsail_instance_suddenly_stopped_working/)
-- url: https://www.reddit.com/r/aws/comments/gly4tj/lightsail_instance_suddenly_stopped_working/
+I’m trying to use Sagemaker Groundtruth’s active learning capability to label some data but can not figure out how to get the auto-labeling part to work. Do I need to start with 1,000 labeled objects in a labeling job? Do I need to have an initial model? Thanks guys.
+## [6][Load tests with Gatling's Frontline on AWS](https://www.reddit.com/r/aws/comments/gmngz5/load_tests_with_gatlings_frontline_on_aws/)
+- url: https://www.reddit.com/r/aws/comments/gmngz5/load_tests_with_gatlings_frontline_on_aws/
 ---
-Seems like there is a recently undocumented introduction of the [bursting "feature"](https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-frequently-asked-questions-faq) for LightSail that completely render my VPS useless?
+I deployed an infrastructure in five days on AWS (CloudFrint, WAF, S3, API-Gateway, NLB, EKS, RDS). This infrastructure had to sustain 50 thousand calls in one minute on the backend. To make sure everything would go smoothly when we go live, I deployed a Gatling frontline instance. [Here is how I have done it](https://www.padok.fr/en/blog/load-test-gatling-frontline-aws). If you have experience with another tool, I would love to hear it, please share it with me in comments.
+## [7][Api gateway private integration](https://www.reddit.com/r/aws/comments/gmmyu7/api_gateway_private_integration/)
+- url: https://www.reddit.com/r/aws/comments/gmmyu7/api_gateway_private_integration/
+---
+Hi all,
 
-Does someone else get into the same situation or It's only my VPS that is faulty?
+I'm trying to setup a public api gateway with a private integration to forward requests to our on-premise services. I'm using vpc link and an internal network load balancer within a vpc to achieve this, I also want the tls termination to occur at the nlb layer. I've setup the https listener on the nlb and configured a certificate to use.  
 
-https://preview.redd.it/d3g7wi0uphz41.png?width=912&amp;format=png&amp;auto=webp&amp;s=54f29f97fb3b67c7a426467f083dbad8a77d53a6
+
+When I go to test the connection, I get this error: 
+
+`Tue May 19 10:21:25 UTC 2020 : Execution failed due to configuration error: Host name 'vpce-xxxxxxxxxxxxxxxxx-xxxxxxxx.vpce-svc-xxxxxxxxxxxxxxxx.eu-west-1.vpce.amazonaws.com' does not match the certificate subject provided by the peer`  
+
+
+Has anyone else encountered this problem? Is it simply a case of adding `*.vpce-svc-xxxxxxxxxxxxxxxx.eu-west-1.vpce.amazonaws.com` as an alternate in the certificate, or configuring a cname in my dns?
+## [8][Why am I being charged for DynamoDB read and write capacity under the free tier limit?](https://www.reddit.com/r/aws/comments/gmgthz/why_am_i_being_charged_for_dynamodb_read_and/)
+- url: https://www.reddit.com/r/aws/comments/gmgthz/why_am_i_being_charged_for_dynamodb_read_and/
+---
+I am being charged money daily for DynamoDB "WriteCapacityUnit-Hrs" and "ReadCapacityUnit-Hrs". However, my DynamoDB tables only use a maximum of 25 provisioned capacity units for both read and write, which is under the free tier limit. I am even being charged when i'm not actually consuming any units at all. You can see it in the images. Why am I being charged for read and write capacity units if I am still under the free tier limit?
 
 &amp;#x200B;
 
-https://preview.redd.it/9nl3gfdeqhz41.png?width=909&amp;format=png&amp;auto=webp&amp;s=9f0df67f5a096c8defe69cd9601ca483ff391821
-
-Edit : Seems like they always behaved that way. ( Like a burstable T2. It's just now that they decided to include their metric calculation into the metric dashboard ). Wierd thing that I never experienced instances being taken down before but now they do...
-## [7][AWS: CloudFormation — using Conditions, Fn::Equals, and Fn::If — an example](https://www.reddit.com/r/aws/comments/gly2s1/aws_cloudformation_using_conditions_fnequals_and/)
-- url: https://www.reddit.com/r/aws/comments/gly2s1/aws_cloudformation_using_conditions_fnequals_and/
----
-The author has aCloudFormation stack with VPC Peerings.
-
-The task: add an ability to chose if CloudFormation have to create the peering mentioned above — or skip this step.
-
-The solution: use the AWS CloudFormation Conditions: will add a new parameter VPCPeeringCreate which will accept a true value false from a Jenkins job and then depending on this value CloudFormation will decide if need to create such a peering and related resources - the peering itself and two Routes.
-
-The article: https://medium.com/setevoy4/aws-cloudformation-using-conditions-fn-equals-and-fn-if-an-example-bf147336a25f?source=friends_link&amp;sk=30143435f35dc77da8a400e49a7190fe
-## [8][When does Lambda@Edge stop being counted as running for billing purposes?](https://www.reddit.com/r/aws/comments/gltr1g/when_does_lambdaedge_stop_being_counted_as/)
-- url: https://www.reddit.com/r/aws/comments/gltr1g/when_does_lambdaedge_stop_being_counted_as/
----
-Let's say I'm using Lambda@Edge in front of an S3 Bucket that is used for streaming large videos or large file downloads.  Would the Lambda@Edge function be counted as running for the full duration of the streaming video or large download?  Or is it only considered running while it's doing it's initial run to determine the origin and once the origin is set, it stops running at that point (for purposes of billing)?
-
-I hope its not considered running for the duration of the data transfer.  That could get insanely expensive.
-## [9][Glue Crawler creating thousands of tables](https://www.reddit.com/r/aws/comments/glr75g/glue_crawler_creating_thousands_of_tables/)
-- url: https://www.reddit.com/r/aws/comments/glr75g/glue_crawler_creating_thousands_of_tables/
----
-I'm struggling a bit with AWS Glue Crawler and wondering if anyone can help set me in the right direction. I have thousands of xml files on S3 that are daily snapshots of data that I'm trying to convert to 2 partitioned parquet tables (to query with Athena).
-
-**Example S3 files:**
-
-* s3://bucketname/2020/04/26/07/31/index.xml
-* s3://bucketname/2020/04/26/08/08/records/491.xml
-* s3://bucketname/2020/05/17/05/00/index.xml
-* s3://bucketname/2020/05/17/05/53/records/116.xml
-* s3://bucketname/2020/05/17/05/14/records/45.xml
-
-**General pattern:**
-
-* s3://bucketname/yyyy/MM/dd/HH/mm/index.xml
-* s3://bucketname/yyyy/MM/dd/HH/mm/records/&lt;recordId&gt;.xml
+[Being charged for read and write capacity unity hours](https://preview.redd.it/yxqr1vr95nz41.png?width=3787&amp;format=png&amp;auto=webp&amp;s=2b54519e4a82569a16d001dbb53683ea0d850619)
 
 &amp;#x200B;
 
-I hoped the default Crawler would discover there are two schemas (index &amp; records), identify the partitions, and create only 2 tables. But when I run it with include\_path = s3://bucketname/2020, it creates thousands of tables, one for each file I think.
-
-Should I be structuring my files differently? Or is there context I should be providing to the Crawler?
-## [10][renaming Elastic Beanstalk Windows host &amp; domain join / remove](https://www.reddit.com/r/aws/comments/glw8gh/renaming_elastic_beanstalk_windows_host_domain/)
-- url: https://www.reddit.com/r/aws/comments/glw8gh/renaming_elastic_beanstalk_windows_host_domain/
+[My tables only use a total of 25 provisioned capacity \(free tier limit\)](https://preview.redd.it/nff6jv3c5nz41.png?width=2555&amp;format=png&amp;auto=webp&amp;s=26c0c1a589a15d628d60b600c11a49bcd56c7a08)
+## [9][This Week in DevOps](https://www.reddit.com/r/aws/comments/gmm72z/this_week_in_devops/)
+- url: https://www.reddit.com/r/aws/comments/gmm72z/this_week_in_devops/
 ---
-just looking for advice on the best way to achieve;
+This Week in DevOps – AWS reduced prices on some reserved instances and inter-region data transfer for some regions. They also rolled out a new Enterprise Search service called Kendra and a new class of instances called M6g which are based on Graviton2. Spot Virtual Machines came to Azure this week, Digital Ocean opened a new data center in San Francisco and HashiCorp released consul 1.8 for public beta.
 
--rename of Windows host produced via Elastic Beanstalk, they are all the same, which doesn't work when you want multiple hosts joining domain
--join of the newly renamed host to AWS managed Microsoft AD, what is the best way to do this ?
--removal from domain, what is the best way to remove computer from domain on termination for cleanup ?
+Get the details and more here: [https://thisweekindevops.com/2020/05/15/weekly-roundup-may-15th-2020/](https://thisweekindevops.com/2020/05/15/weekly-roundup-may-15th-2020/)
+## [10][Access EC2 (behind VPC) by SSM](https://www.reddit.com/r/aws/comments/gmcqdo/access_ec2_behind_vpc_by_ssm/)
+- url: https://www.reddit.com/r/aws/comments/gmcqdo/access_ec2_behind_vpc_by_ssm/
+---
+Hi all,  
+
+
+I'm working on a project that needs an EC2 instance to poll a website (in this case, PRAW for Reddit), and it will need to create SQS messages. It's my understanding (I could be wrong) that the best way to do this is to put the EC2 behind a VPC along with all the other services that will be running (elasticache, aurora).  
+
+
+Where I'm running into trouble is I'm trying to make this EC2 instance a managed service, but it is not working. I made sure it is on the proper VPC, that there are security groups with endoints for SSM, SSMMessages, EC2, EC2 messages ([https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-create-vpc.html](https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-create-vpc.html)), and I added the default SSM Quickstart role for the EC2 instance.  
+
+
+Still, I cannot start an SSM session, nor does it show up on the managed instances. My other EC2 instance (on the default VPC) shows up, no problem and I can connect.
+
+Any advice or suggestions for trouble shooting? Should I even be using a VPC for this kind of work?  
+
+
+Thanks! And let me know if you'd like to hear more about the project :)

@@ -95,60 +95,45 @@ Your participation would be a great help! Feel free to distribute to your collea
 If you have any questions, we'll also happily answer them here.
 
 Thank you and stay healthy!
-## [3][Painterro - OpenSource Paint plugin](https://www.reddit.com/r/javascript/comments/gmmvqq/painterro_opensource_paint_plugin/)
+## [3][Tobias Koppers (webpack), Orta Therox (TS), Minko Gechev (ng), Matteo Collina (Node) are going to speak at this free remote conf. Check it out!](https://www.reddit.com/r/javascript/comments/gn9xzk/tobias_koppers_webpack_orta_therox_ts_minko/)
+- url: https://live.jsnation.com
+---
+
+## [4][Why is immutability so important (or needed) in JavaScript?](https://www.reddit.com/r/javascript/comments/gmwkaj/why_is_immutability_so_important_or_needed_in/)
+- url: https://stackoverflow.com/questions/34385243/why-is-immutability-so-important-or-needed-in-javascript/43318963#43318963
+---
+
+## [5][Announcing React Native for macOS and more](https://www.reddit.com/r/javascript/comments/gn3so8/announcing_react_native_for_macos_and_more/)
+- url: https://microsoft.github.io/react-native-windows/blog/2020/05/19/rn4mupdadates
+---
+
+## [6][Factory Design Pattern in JS - With Simple Words](https://www.reddit.com/r/javascript/comments/gn9n4w/factory_design_pattern_in_js_with_simple_words/)
+- url: https://medium.com/javascript-in-plain-english/javascript-design-patterns-the-factory-pattern-6b399656d710
+---
+
+## [7][Painterro - OpenSource Paint plugin](https://www.reddit.com/r/javascript/comments/gmmvqq/painterro_opensource_paint_plugin/)
 - url: https://github.com/devforth/painterro
 ---
 
-## [4][potato.land - a p2p web app to watch videos with friends](https://www.reddit.com/r/javascript/comments/gmfde7/potatoland_a_p2p_web_app_to_watch_videos_with/)
-- url: https://potato.land/
+## [8][[AskJS] Is Javascript eating away C# Java market and jobs by being able to do everything now ?](https://www.reddit.com/r/javascript/comments/gn76vp/askjs_is_javascript_eating_away_c_java_market_and/)
+- url: https://www.reddit.com/r/javascript/comments/gn76vp/askjs_is_javascript_eating_away_c_java_market_and/
+---
+1) Is Javascript eating away C# Java market and jobs by being able to do everything now ?
+
+2) Are you afraid about Blazor and Web Assembly ? (performance, strong typing etc)
+## [9][Adapter Pattern in JavaScript](https://www.reddit.com/r/javascript/comments/gn8i3h/adapter_pattern_in_javascript/)
+- url: https://medium.com/javascript-in-plain-english/javascript-design-patterns-adapter-explained-cbcffbb4b8bc
 ---
 
-## [5][Authentication on the Client Side the Right Way: Cookies vs. Local Storage](https://www.reddit.com/r/javascript/comments/gm2taz/authentication_on_the_client_side_the_right_way/)
-- url: https://www.taniarascia.com/full-stack-cookies-localstorage-react-express/
+## [10][Getting started with testing smartly - free 3 hours workshop](https://www.reddit.com/r/javascript/comments/gnb9hb/getting_started_with_testing_smartly_free_3_hours/)
+- url: https://www.eventbrite.com/e/getting-started-with-testing-cleverly-may-2020-tickets-105711475870?aff=reddit
 ---
 
-## [6][The Great Dropbox CoffeeScript to Typescript Migration](https://www.reddit.com/r/javascript/comments/gmll4l/the_great_dropbox_coffeescript_to_typescript/)
-- url: https://dropbox.tech/frontend/the-great-coffeescript-to-typescript-migration-of-2017
+## [11][Deno: A Simple Guide](https://www.reddit.com/r/javascript/comments/gnad7t/deno_a_simple_guide/)
+- url: https://www.martinmck.com/posts/deno-a-simple-guide/
 ---
 
-## [7][I’ve added demos for Web Payments and Web Authentication to What PWA Can Do Today](https://www.reddit.com/r/javascript/comments/gmkn6i/ive_added_demos_for_web_payments_and_web/)
-- url: https://whatpwacando.today
+## [12][[AskJS] What do you think of Airbnb Javascript Style Guild](https://www.reddit.com/r/javascript/comments/gn5wf1/askjs_what_do_you_think_of_airbnb_javascript/)
+- url: https://www.reddit.com/r/javascript/comments/gn5wf1/askjs_what_do_you_think_of_airbnb_javascript/
 ---
-
-## [8][[AskJS] What was programming in JS like in the Netscape Navigator days?](https://www.reddit.com/r/javascript/comments/gmai1k/askjs_what_was_programming_in_js_like_in_the/)
-- url: https://www.reddit.com/r/javascript/comments/gmai1k/askjs_what_was_programming_in_js_like_in_the/
----
-I'm curious about what the workflow was like, what kind of tooling was around and what kind of quirky JS behavior was there at the time, like `console` being `undefined` on old versions of IE. What's a good place to read more about this topic?
-## [9][Native Lazy Loading Chrome New Feature | Geekstrick](https://www.reddit.com/r/javascript/comments/gmol2z/native_lazy_loading_chrome_new_feature_geekstrick/)
-- url: https://www.geekstrick.com/native-lazy-loading-chrome/
----
-
-## [10][Connect Typeform to Gmail and Send Automated Emails with Autocode](https://www.reddit.com/r/javascript/comments/gmjlsz/connect_typeform_to_gmail_and_send_automated/)
-- url: https://github.com/JanethL/TypeformtoGmail
----
-
-## [11][[AskJS] How efficiently can you synchronously busy loop?](https://www.reddit.com/r/javascript/comments/gmjj1r/askjs_how_efficiently_can_you_synchronously_busy/)
-- url: https://www.reddit.com/r/javascript/comments/gmjj1r/askjs_how_efficiently_can_you_synchronously_busy/
----
-How efficiently can you synchronously busy loop with 100ms or less time between condition tests? Nodejs or browser.
-
-    // probably runs hot, not a winning strategy :)
-    while (true) { /* condition == true, do nothing, just burn cpu */ }
-    // may run a bit warm
-    while (isConditionMet()) { cp.execSync(`sleep 0.09`)) }
-    // ice-cold?
-    while (isConditionMet()) { /* your ideas here */ }
-
-\&gt; "Uh, dude, JS is single threaded--your condition can't update? This is obviously a bad idea."
-
-Not entirely true. But even so, assume it is.
-
-&amp;#x200B;
-
-What's the lowest energy way to run this loop? Not sure how we can assess the winner yet. Let's figure it out!
-
-[https://unix.stackexchange.com/questions/10418/how-to-find-power-draw-in-watts](https://unix.stackexchange.com/questions/10418/how-to-find-power-draw-in-watts)
-## [12][Logic Gates in JavaScript](https://www.reddit.com/r/javascript/comments/gmnynn/logic_gates_in_javascript/)
-- url: https://ahuth.github.io/articles/logic-gates-in-javascript.html
----
-
+bad or good or never use that

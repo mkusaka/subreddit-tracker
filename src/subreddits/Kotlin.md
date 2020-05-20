@@ -1,5 +1,32 @@
 # Kotlin
-## [1][What's the best way to build a cross-platform app today, for Android and iOS?](https://www.reddit.com/r/Kotlin/comments/gmomkw/whats_the_best_way_to_build_a_crossplatform_app/)
+## [1][GraalVM 20.1 comes with improved Kotlin coroutine support](https://www.reddit.com/r/Kotlin/comments/gn63sm/graalvm_201_comes_with_improved_kotlin_coroutine/)
+- url: https://medium.com/graalvm/graalvm-20-1-7ce7e89f066b
+---
+
+## [2][The Debate: Which is Better For Android App Development, Java Vs. Kotlin?](https://www.reddit.com/r/Kotlin/comments/gnb3mg/the_debate_which_is_better_for_android_app/)
+- url: https://kodytechnolab.com/java-vs-kotlin-comparison
+---
+
+## [3][Idiomatic way to handle traditional usage of null in function parameters](https://www.reddit.com/r/Kotlin/comments/gn7pfp/idiomatic_way_to_handle_traditional_usage_of_null/)
+- url: https://www.reddit.com/r/Kotlin/comments/gn7pfp/idiomatic_way_to_handle_traditional_usage_of_null/
+---
+It's fairly normal in Java and many other languages to use `null` as a parameter default in functions in places where null would indicate "perform no functionality based on that parameter"
+
+Here's an example of the pattern in question:
+
+    class foo {
+        void bar(int number, Baz exampleBaz) {
+            //do some kind of functionality
+            //if exampleBaz is not null, do something related to exampleBaz as well
+        }
+        
+        void bar(int number) {
+            bar(number, null);
+        }
+    }
+
+Is there a more idiomatic way of achieving this then just checking the type of the parameter and relying on smart casts? A lot of weird design patterns I did to work around null safety ended up being antipatterns so I am hesitant to resort to nullable types immediately.
+## [4][What's the best way to build a cross-platform app today, for Android and iOS?](https://www.reddit.com/r/Kotlin/comments/gmomkw/whats_the_best_way_to_build_a_crossplatform_app/)
 - url: https://www.reddit.com/r/Kotlin/comments/gmomkw/whats_the_best_way_to_build_a_crossplatform_app/
 ---
 For business logic, I am definitely looking at Kotlin Multiplatform. But I'm not sure of the UI part.   
@@ -8,7 +35,39 @@ React Native vs Flutter - I'm not sure which of them works best with Multiplatfo
 It is very important that I have to write as less code as possible to release the apps on both the platforms and maintain them for a long time.
 
 Can somebody help in making me decide?
-## [2][[Spanish] Online{ it.kt } - Kotlin Remote Latam &lt;3](https://www.reddit.com/r/Kotlin/comments/gmcaka/spanish_online_itkt_kotlin_remote_latam_3/)
+## [5][Conflict between Kotlin and project dependencies](https://www.reddit.com/r/Kotlin/comments/gmu950/conflict_between_kotlin_and_project_dependencies/)
+- url: https://www.reddit.com/r/Kotlin/comments/gmu950/conflict_between_kotlin_and_project_dependencies/
+---
+I've been using Kotlin for quite a while now and I've never encountered this issue before, but now I really don't know how to go about it.
+
+I'm using gradle to build my Kotlin application. I recently added a feature that uses the google custom search API and I therefore include a dependency on the official google library for this service.
+
+Now, this broke the application and I get a `NoSuchMethodError` when initialising the new library. It turns out that the library uses a method of the Google guava `Preconditions` class that doesn't exist at runtime, for some reason. So I ran `gradle dependencies` and looked for incompatible guava versions, but only found versions that have the method in question. I then decided to manually declare the guava dependency, hoping that this would override the clash.
+
+When this didn't work either, I figured out where the guava at runtime is coming from. It turns out that it is kotlin, more specifically the `kotlin-compiler-1.3.70` jar. Now, the problem is that guava is *inside* that jar, so I don't know how to exclude it with gradle.
+
+Has anyone ever experienced something similar and has an idea how to resolve this conflict? It is surprising to me that kotlin even uses such an old and incompatible version. I haven't checked what exactly it is, but it must be at least guava 25.0 or lower.
+## [6][JVM Performance Engineering and Troubleshooting](https://www.reddit.com/r/Kotlin/comments/gn4r90/jvm_performance_engineering_and_troubleshooting/)
+- url: https://blog.gceasy.io/2015/07/17/jvm-performance-engineering-troubleshooting/
+---
+
+## [7][Discord](https://www.reddit.com/r/Kotlin/comments/gmw2xh/discord/)
+- url: https://www.reddit.com/r/Kotlin/comments/gmw2xh/discord/
+---
+Does the Discord channel not work?
+## [8][How to avoid "import hell" when your DSL has a large number of extension functions](https://www.reddit.com/r/Kotlin/comments/gmr50a/how_to_avoid_import_hell_when_your_dsl_has_a/)
+- url: https://www.reddit.com/r/Kotlin/comments/gmr50a/how_to_avoid_import_hell_when_your_dsl_has_a/
+---
+I've been working on a Kotlin web framework called [Kweb](https://kweb.io/), which is designed to allow backend developers to build modern websites with minimal fuss.
+
+Kweb incorporates a DSL which corresponds roughly to various aspects of HTML and JavaScript - and to make this work it relies on a lot of extension functions, you can find an example [here](https://github.com/kwebio/kweb-core/blob/master/src/main/kotlin/kweb/prelude.kt).
+
+Previously these extension functions were categorized into different packages, but I found that this often required a large number of `import` statements at the top of every file.  Even when these are created automatically by the IDE, I still found it rather unweildy.
+
+So I made the decision to move almost all extension functions to the `kweb` package so that they could be imported with a simple `import kweb.*`.
+
+Is this a common pattern, or is there a better way to avoid needing a large number of import statements for extension functions?
+## [9][[Spanish] Online{ it.kt } - Kotlin Remote Latam &lt;3](https://www.reddit.com/r/Kotlin/comments/gmcaka/spanish_online_itkt_kotlin_remote_latam_3/)
 - url: https://www.reddit.com/r/Kotlin/comments/gmcaka/spanish_online_itkt_kotlin_remote_latam_3/
 ---
 [Kotlin Remote Latam \&lt;3](https://preview.redd.it/kxaxz3acslz41.png?width=1280&amp;format=png&amp;auto=webp&amp;s=89dc1c24bfb3512673d31f96a14f73abfdf36ff3)
@@ -24,107 +83,7 @@ Join us
 [https://www.meetup.com/Kotlin-CDMX/events/270719229/](https://www.meetup.com/Kotlin-CDMX/events/270719229/)
 
 [https://www.meetup.com/Kotlin-CDMX/events/270720465/](https://www.meetup.com/Kotlin-CDMX/events/270720465/)
-## [3][Kotlin: Beginner Can anyone Explain me this code](https://www.reddit.com/r/Kotlin/comments/gmhol0/kotlin_beginner_can_anyone_explain_me_this_code/)
-- url: https://www.reddit.com/r/Kotlin/comments/gmhol0/kotlin_beginner_can_anyone_explain_me_this_code/
----
-`class User(var firstName:String, var lastName:String ){`
-
-  
- `companion object {`  
- `fun createUser(firstName: String, lastName: String):User {`  
- `return User(firstName,lastName)`  
-`}`  
-`}`  
- `fun printFullName(): String{`  
- `return ("$firstName - $lastName")`  
-`}`  
-
-
-`override fun toString(): String {`  
- `return printFullName()`  
-`}`
-
-`}`
-
-when i create an object and call the   
-`val user = createUser("Jon", "Doe")`
-
-It logs  "Jon-Doe" when i do not over ride toString() but when i do not over ride it 
-
-logs " User@24136"   
-
-
-Can anyone explain why we over ride the toString and how this code is working. I have just started with kotlin and this will be first time im getting into oops.
-## [4][Download Files in Kotlin for Android Using Ktor and Intents](https://www.reddit.com/r/Kotlin/comments/gm1a6j/download_files_in_kotlin_for_android_using_ktor/)
+## [10][Download Files in Kotlin for Android Using Ktor and Intents](https://www.reddit.com/r/Kotlin/comments/gm1a6j/download_files_in_kotlin_for_android_using_ktor/)
 - url: https://spin.atomicobject.com/2020/05/18/android-download-files-kotlin/
----
-
-## [5][kotlin.math.sign function vs extension property](https://www.reddit.com/r/Kotlin/comments/gmfaqd/kotlinmathsign_function_vs_extension_property/)
-- url: https://www.reddit.com/r/Kotlin/comments/gmfaqd/kotlinmathsign_function_vs_extension_property/
----
-I'm working on a math library and I'm wondering if anyone can explain why the stdlib has two different ways to do that same thing: both absolute value and sign are implemented as a function AND as an extension property.
-
-Does it matter which one I use?
-## [6][Registration for Kotlin Heroes Coding Contest (Episode 4) is open!](https://www.reddit.com/r/Kotlin/comments/gm0ehw/registration_for_kotlin_heroes_coding_contest/)
-- url: https://www.reddit.com/r/Kotlin/comments/gm0ehw/registration_for_kotlin_heroes_coding_contest/
----
-Join a programming challenge developed by JetBrains and Codeforces, practice your skills, and compete for the prizes! Learn more [https://jb.gg/kv1azl](https://jb.gg/kv1azl)  and save the date: May 29, 14:35 - 17:05 UTC.
-## [7][Small problem with rest Api. I need help](https://www.reddit.com/r/Kotlin/comments/gm0bs8/small_problem_with_rest_api_i_need_help/)
-- url: https://www.reddit.com/r/Kotlin/comments/gm0bs8/small_problem_with_rest_api_i_need_help/
----
-Hello. I am making an application that connects to Punk API and I have a small problem. I don't know how to download the ingredients list into my Recycler View. I put a link to the application where my attempts are. I was able to successfully download everything except ingredients and MashTemp. Thank you for any tips.
-
-[https://github.com/ciechanek1/PunkApi](https://github.com/ciechanek1/PunkApi)  
-
-
-[https://punkapi.com/documentation/v2](https://punkapi.com/documentation/v2)
-## [8][KVision 3.9.0 is released (with support for React components)](https://www.reddit.com/r/Kotlin/comments/glmzy8/kvision_390_is_released_with_support_for_react/)
-- url: https://www.reddit.com/r/Kotlin/comments/glmzy8/kvision_390_is_released_with_support_for_react/
----
-[KVision](https://github.com/rjaros/kvision) is an open source web framework created for Kotlin/JS. It allows developers to build modern web applications with the Kotlin language.
-
-I have released KVision 3.9.0, with extremely useful support for embedding React components in KVision applications. Now you can use not only the rich set of built-in KVision components, but also literally any free React component available in the NPM repository. Full integration with KVision DSL and built-in state management makes using external React components even easier then with [kotlin-react](https://github.com/JetBrains/kotlin-wrappers)!
-
-You can look at the [new chapter of the guide](https://kvision.gitbook.io/kvision-guide/part-2-advanced-features/using-react-components) to get started right now.
-
-For more details about this release see the [changelog](https://github.com/rjaros/kvision/releases/tag/3.9.0).
-
-As always any feedback is welcomed :-)
-## [9][String.split(Pattern) is not symmetrical with Pattern.split(String) for even-length strings](https://www.reddit.com/r/Kotlin/comments/gls1ko/stringsplitpattern_is_not_symmetrical_with/)
-- url: https://www.reddit.com/r/Kotlin/comments/gls1ko/stringsplitpattern_is_not_symmetrical_with/
----
-**Note: If you're using old Reddit, see Wolfsdale's reply below. I'm new to Reddit and using new Reddit in Markdown mode.**
-
-I was working on a simple exercise to split a string up into pairs of characters when I noticed something surprising with the behavior of `String.split(Pattern)`: it gives a different result from `Pattern.split(String)` when the string has an even number of characters. Here's the JUnit 5 test code that shows the problem:
-```
-private val expr = "(?&lt;=\\G.{2})" // group into pairs of characters
-private val regex: Regex = expr.toRegex()
-private val pattern: Pattern = expr.toPattern()
-
-@ParameterizedTest
-@ValueSource(strings = ["a", "ab", "abc", "abcd", "abcde", "abcdef"])
-fun `split should be symmetrical`(s: String) {
-    assertAll(
-        { assertEquals(regex.split(s).size, s.split(regex).size,
-                "regex.split(\"$s\").size != \"$s\".split(regex).size") },
-
-        { assertEquals(pattern.split(s).size, s.split(pattern).size,
-                "pattern.split(\"$s\").size != \"$s\".split(pattern).size") }
-    )
-}
-```
-The `Pattern.split()` assertion fails with even-length strings. The test can be made to pass if you have this instead:
-```
-assertEquals(pattern.split(s, -1).size, s.split(pattern).size)
-```
-This doesn't seem right though since the documentation for String.split shows `limit: Int = 0` which is contradictory to the above assertion passing. The documentation also makes it seem like `split(Regex)` and `split(Pattern)` should behave the same way for all cases but that is contradicted by the following assertion failing for even-length strings:
-```
-assertEquals(pattern.split(s).size, regex.split(s).size)
-```
-This can also be made to pass by specifying a limit of -1 for `pattern.split()`, which doesn't make sense. Per the documentation of [`java.util.regex.Pattern.split()`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html#split(java.lang.CharSequence,int)) regarding the limit parameter, `regex.split(s)` behaves as though it has a negative limit instead of the declared default of `0`.
-
-Is there any reason this shouldn't be reported as a bug in `String.split()`?
-## [10][Blazing fast Fibonacci with Kotlin and Arrow library](https://www.reddit.com/r/Kotlin/comments/glm2cy/blazing_fast_fibonacci_with_kotlin_and_arrow/)
-- url: https://medium.com/@cesar.tronlozai/blazing-fast-fibonacci-with-kotlin-and-arrow-library-33c1d7eca0bb?source=friends_link&amp;sk=83adb400a6d637fc80d08b52073b30d4
 ---
 

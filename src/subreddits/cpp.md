@@ -125,57 +125,84 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3]["Demystifying pointers". I came across this brilliant video that helped me understand the most mysterious concept in C: "Pointers", better. The great thing about this video is the fact that it addresses the Byte-Addressable Memory, which helped me visualize better.](https://www.reddit.com/r/cpp/comments/gmj6x3/demystifying_pointers_i_came_across_this/)
-- url: https://youtu.be/rB70mUPcLU0
+## [3][Ray Tracing in one Weekend with SYCL](https://www.reddit.com/r/cpp/comments/gn7mqb/ray_tracing_in_one_weekend_with_sycl/)
+- url: https://www.reddit.com/r/cpp/comments/gn7mqb/ray_tracing_in_one_weekend_with_sycl/
+---
+This is part 1 of a 2 part [blog post](https://www.codeplay.com/portal/05-19-20-ray-tracing-in-a-weekend-with-sycl-basic-sphere-tracing) on using SYCL to accelerate some parts of the well known "Ray Tracing in one weekend" code.
+## [4][Visual Studio 2019 version 16.7 Preview 1 released, including 64bit AddressSanitizer](https://www.reddit.com/r/cpp/comments/gmwrpe/visual_studio_2019_version_167_preview_1_released/)
+- url: https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes-preview#16.7.0-pre.1.0
 ---
 
-## [4][Revisiting the postcard pathtracer with CUDA and Optix](https://www.reddit.com/r/cpp/comments/gmm76o/revisiting_the_postcard_pathtracer_with_cuda_and/)
+## [5][MSVC finds (unrelated) friend function template, whereas gcc and clang don't?](https://www.reddit.com/r/cpp/comments/gn8i83/msvc_finds_unrelated_friend_function_template/)
+- url: https://www.reddit.com/r/cpp/comments/gn8i83/msvc_finds_unrelated_friend_function_template/
+---
+Reproduce [https://godbolt.org/z/eFavH7](https://godbolt.org/z/eFavH7)
+
+Guys, can you please help me with this. Is it standard behaviour or implementation defined or I am doing something wrong?
+
+UPDATE: Do I understand correctly that friend functions placed in some special scope, so they are not visible from anywhere except by ADL? Is it described somewhere in standard (sorry I am fairly new to this)?
+## [6][IDEs and Text Editors for Writing C++ Code on a Large Scale](https://www.reddit.com/r/cpp/comments/gnaoop/ides_and_text_editors_for_writing_c_code_on_a/)
+- url: https://pspdfkit.com/blog/2020/ide-text-editors-cpp-large-scale/
+---
+
+## [7][The Darkest Pipeline (TDP): A C++17 library for building multi-threaded software pipelines](https://www.reddit.com/r/cpp/comments/gmvlmu/the_darkest_pipeline_tdp_a_c17_library_for/)
+- url: https://www.reddit.com/r/cpp/comments/gmvlmu/the_darkest_pipeline_tdp_a_c17_library_for/
+---
+Hello fellow redditors, 
+
+I've just published my most recent library, which I'm calling **The Darkest Pipeline**: https://github.com/JoelFilho/TDP
+
+**The Library**: Allows simplified construction of multi-threaded pipelines, by using a declarative style. It handles all thread management, and inter-thread communication.
+
+It's header-only, written on C++17, and released under the Boost License.
+
+**Examples**:
+
+    auto pipeline = tdp::input&lt;float, float, float&gt; &gt;&gt; std::fmaf &gt;&gt; tdp::output;
+
+The line above instances the most basic pipeline type, and starts threads responsible for processing (1). 
+
+It then allows the user to call `pipeline.input(float,float,float)` to enqueue data, and `pipeline.[try/wait]_get()` to obtain the output.
+
+    auto pipeline = tdp::producer{read_str} &gt;&gt; process_str &gt;&gt; tdp::consumer{print};
+
+This type of pipeline executes `read_str` without user input, processes it, then calls `print`, without additional user output interfaces. Producer, processor and consumer are individual threads.
+
+**Features**
+
+- Defined at compile time with an embedded DSL, and using stack storage anywhere it's possible
+  - `std::unique_ptr` and `std::shared_ptr` wrappers are provided to allow ownership transfer/sharing
+- Multiple types of input and output (user-provided vs independent threads) allow versatile definition
+- Allows selection of internal communication data structures, which are suitable for different applications:
+  - Queue (blocking)
+  - Triple buffering (blocking or lock-free)
+- One thread is launched per pipeline stage
+- Pure RAII interface: Threads are created on construction, and stopped on destruction.
+
+**Motivation**: In my last job, I worked with video processing on embedded Linux. As the ARM CPU couldn't handle the processing at hard real-time, it needed a multi-threaded pipeline solution for consistent frame rate. After manually instancing different threads and explicitly communicating between them, I realized it could be simpler and less error-prone. So I wrote TDP. 
+
+---
+
+The library still needs a couple of additions to become feature-complete, but it's usable in its current state. The [examples](https://github.com/JoelFilho/TDP/tree/master/examples) should give an idea of the range of the current features.
+
+As always, I'd love to hear your feedback.
+## [8][Numeric Range Algorithms for C++20](https://www.reddit.com/r/cpp/comments/gmym7c/numeric_range_algorithms_for_c20/)
+- url: https://tristanbrindle.com/posts/numeric-ranges-for-cpp20
+---
+
+## [9][Long walk-through of an Entity Component System that focuses on Data Locality](https://www.reddit.com/r/cpp/comments/gmx91v/long_walkthrough_of_an_entity_component_system/)
+- url: https://indiegamedev.net/2020/05/19/an-entity-component-system-with-data-locality-in-cpp/
+---
+
+## [10][P0468R1: Smart Pointer. Anyone has track of if/why this proposal has been shelved?](https://www.reddit.com/r/cpp/comments/gmuip8/p0468r1_smart_pointer_anyone_has_track_of_ifwhy/)
+- url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p0468r1.html
+---
+
+## [11][Revisiting the postcard pathtracer with CUDA and Optix](https://www.reddit.com/r/cpp/comments/gmm76o/revisiting_the_postcard_pathtracer_with_cuda_and/)
 - url: https://fabiensanglard.net/revisiting_the_pathtracer/index.html
 ---
 
-## [5][Adding anyref support in a C++ to WebAssembly compiler](https://www.reddit.com/r/cpp/comments/gmn7ce/adding_anyref_support_in_a_c_to_webassembly/)
+## [12][Adding anyref support in a C++ to WebAssembly compiler](https://www.reddit.com/r/cpp/comments/gmn7ce/adding_anyref_support_in_a_c_to_webassembly/)
 - url: https://medium.com/leaningtech/adding-anyref-support-in-a-c-to-webassembly-compiler-2bba3fac707f
----
-
-## [6][Meeting C++ Blogroll now available as a weekly newsletter](https://www.reddit.com/r/cpp/comments/gmlmoh/meeting_c_blogroll_now_available_as_a_weekly/)
-- url: http://meetingcpp.com/meetingcpp/news/items/Meeting-Cpp-Blogroll-now-available-as-a-weekly-newsletter.html
----
-
-## [7][State of C++ Static Analysis circa 2020 · Peter Dimov](https://www.reddit.com/r/cpp/comments/gm2ey2/state_of_c_static_analysis_circa_2020_peter_dimov/)
-- url: https://pdimov.github.io/blog/2020/05/17/state-of-c-static-analysis-circa-2020/
----
-
-## [8][Execute command for c++?](https://www.reddit.com/r/cpp/comments/gmofv5/execute_command_for_c/)
-- url: https://www.reddit.com/r/cpp/comments/gmofv5/execute_command_for_c/
----
-Hey, sorry for such a noobish question, but basically, I am using Geany, and I want to set an execute command for my main.cpp file. By default, it is:
-
-`"./%e"`
-
-is there a way to change it so that it performs the following tasks:
-
-1. execute the file that I am currently working on (i.e. main.cpp)
-2. automatically take input from file "input.txt" in the same directory
-3. save output in file "output.txt" in the same directory
-
-Note: MOST IMPORTANTLY, if possible, I do **NOT** want to use "freopen" and all such text in my cpp file, again, if possible.
-## [9][Clash of Code - Dare to join me!](https://www.reddit.com/r/cpp/comments/gmnhto/clash_of_code_dare_to_join_me/)
-- url: https://www.codingame.com/clashofcode/clash/12262016fc91604a3a337ff7837c3cfab277f65?utm_source=reddit&amp;utm_medium=clash%20of%20code&amp;utm_content=3626792&amp;utm_campaign=Share%20options
----
-
-## [10][P1861R1 Secure Networking in C++](https://www.reddit.com/r/cpp/comments/gm40j0/p1861r1_secure_networking_in_c/)
-- url: https://www.reddit.com/r/cpp/comments/gm40j0/p1861r1_secure_networking_in_c/
----
-Following up on [C++ Networking Must Be Secure By Default](https://wg21.link/p1860r0), we present [Secure Networking in C++](https://wg21.link/P1861R1):
-
-&gt;A description of how a C++ networking library can elegantly support Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS) by default, as well as allow future expansion to include protocols such as [QUIC](https://tools.ietf.org/html/draft-ietf-quic-transport-27).
-
-SG4 Networking (chaired by u/je4d) will be discussing this, we therefore welcome early feedback!
-## [11][2020-05 C++ Standard Mailing](https://www.reddit.com/r/cpp/comments/glwito/202005_c_standard_mailing/)
-- url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/#mailing2020-05
----
-
-## [12][Please help me out. Can I do this by using a delayed screen capture of some kind and process that using C++ applying computer vision (no OpenCV)? I can probably control an RBG strip module using the above I guess.](https://www.reddit.com/r/cpp/comments/gmll18/please_help_me_out_can_i_do_this_by_using_a/)
-- url: https://v.redd.it/m0nqwy6q0nz41
 ---
 

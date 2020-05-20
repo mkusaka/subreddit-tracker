@@ -22,49 +22,127 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][The Great Dropbox CoffeeScript to Typescript Migration](https://www.reddit.com/r/typescript/comments/gmll5p/the_great_dropbox_coffeescript_to_typescript/)
+## [2][Using JSDoc tags to test functions [Prototype]](https://www.reddit.com/r/typescript/comments/gn6sit/using_jsdoc_tags_to_test_functions_prototype/)
+- url: https://i.redd.it/8gqa8evpfvz41.gif
+---
+
+## [3][Fcaljs - extensive math expression evaluator library](https://www.reddit.com/r/typescript/comments/gn7ves/fcaljs_extensive_math_expression_evaluator_library/)
+- url: https://www.npmjs.com/package/fcal
+---
+
+## [4][Deno: A Simple Guide](https://www.reddit.com/r/typescript/comments/gnadh0/deno_a_simple_guide/)
+- url: https://www.martinmck.com/posts/deno-a-simple-guide/
+---
+
+## [5][The Great Dropbox CoffeeScript to Typescript Migration](https://www.reddit.com/r/typescript/comments/gmll5p/the_great_dropbox_coffeescript_to_typescript/)
 - url: https://dropbox.tech/frontend/the-great-coffeescript-to-typescript-migration-of-2017
 ---
 
-## [3][A GitHub template featuring automation that makes it pretty darn easy to publish and maintain high-standard NPM modules.](https://www.reddit.com/r/typescript/comments/gma48m/a_github_template_featuring_automation_that_makes/)
+## [6][Destructuring and sum types](https://www.reddit.com/r/typescript/comments/gn7oz6/destructuring_and_sum_types/)
+- url: https://www.reddit.com/r/typescript/comments/gn7oz6/destructuring_and_sum_types/
+---
+I had typed array with an object with one optional field. Then I decided that instead of an optional prop what I really want is an array of objects not containing that property or all the elements containing such property, so I switched to a sum type.
+
+&amp;#x200B;
+
+The problem is that this makes destructuring of such prop impossible.
+
+Here is an example of the sum type:
+
+&amp;#x200B;
+
+```js
+
+type tab&lt;T&gt; =
+
+| { label: string }
+
+| { label: string, value: T }
+
+```
+
+
+
+This is what I can not do:
+
+
+```
+    tabs.map(({ label, badge, value }, idx) =&gt; {
+
+        callSomeFun(value || idx)
+
+    })
+```
+
+
+This works for flow, but not for typescript:
+
+
+```
+    tabs.map(({ label, badge, ...tab }, idx) =&gt; {
+
+        const value = tab.value || idx
+
+        callSomeFun(value)
+
+    })
+```
+
+
+Also because of this, some other parts of the code get an inferred type of mixed, which in runtime is not correct because I'm just "or-ing" them:
+
+
+
+const \[activeTab, setActiveTab\] = useState(tabs\[0\].value || initialTab)
+
+
+
+activeTab becomes of mixed type
+
+
+
+Is there a better way of doing this while ensuring the type safety of having the prop on all items or no one?
+## [7][Pass Paramus to server side props](https://www.reddit.com/r/typescript/comments/gmub97/pass_paramus_to_server_side_props/)
+- url: https://www.reddit.com/r/typescript/comments/gmub97/pass_paramus_to_server_side_props/
+---
+I wonder if anyone knows if it is possible to send arguments to getServersideProps in Next Js.
+
+At the end of my URL I have a hard codded page number, that fetches different movies per page, but I want to have it dynamic with getServersideProps, is it possible?
+
+
+export const getServerSideProps: GetServerSideProps = async (
+  ctx: GetServerSidePropsContext&lt;ParsedUrlQuery&gt;
+) =&gt; {
+  console.log(ctx.query)
+  const response = await fetch(
+    `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.API_KEY}&amp;language=en-US&amp;page=1`
+  )
+
+  const data = await response.json()
+
+  return {
+    props: {
+      data: data.results,
+    },
+  }
+}
+## [8][A GitHub template featuring automation that makes it pretty darn easy to publish and maintain high-standard NPM modules.](https://www.reddit.com/r/typescript/comments/gma48m/a_github_template_featuring_automation_that_makes/)
 - url: https://github.com/garronej/ts_ci
 ---
 
-## [4][Hegel: An advanced static type checker for JavaScript](https://www.reddit.com/r/typescript/comments/gm7ut0/hegel_an_advanced_static_type_checker_for/)
+## [9][Is ES5 dead yet?](https://www.reddit.com/r/typescript/comments/gmr38p/is_es5_dead_yet/)
+- url: https://www.reddit.com/r/typescript/comments/gmr38p/is_es5_dead_yet/
+---
+I've been packaging all my modules lately with ES2015 as the target.
+
+Is there any reason to even think about ES5 anymore?
+
+I mean we're all moving WASM now anyway right? :P
+## [10][Hegel: An advanced static type checker for JavaScript](https://www.reddit.com/r/typescript/comments/gm7ut0/hegel_an_advanced_static_type_checker_for/)
 - url: https://twitter.com/devongovett/status/1262069817655259136
 ---
 
-## [5][Weirdness with booleans](https://www.reddit.com/r/typescript/comments/gmjfxe/weirdness_with_booleans/)
-- url: https://www.reddit.com/r/typescript/comments/gmjfxe/weirdness_with_booleans/
----
-I noticed some weird behavior and I wonder if any of you have seen this before.
-
-**1. So, in the end it boils down to this problem:**
-
-    type Z = ((p: true) =&gt; void) | ((p: false) =&gt; void)
-    const z: Z = 0 as any;
-    z(true); // argument of type 'true' is not assignable to argument of type 'never'
-
-The type Z is being generated by typescript (which is another weird story, see blow), but why does the above combine to a parameter of type never?
-
-**2. What originally brings me to this problem:**
-
-In my original code, I try to infer the promise type and return a function type, which takes the promise type as parameter. Simplified code:
-
-    type SampleFun = () =&gt; Promise&lt;boolean&gt;;
-    type X = ReturnType&lt;SampleFun&gt; extends Promise&lt;infer TP&gt;
-            ? (TP extends void
-                ? () =&gt; void
-                : (result: TP) =&gt; void)
-            : () =&gt; void;
-    // X = ((result: false) =&gt; void) | ((result: true) =&gt; void)
-
-Why does it not create a simple function with parameter boolean?
-
-I'm guessing these are issues I should report to the TypeScript team, but before I bug them, I wanted to see if anyone else noticed one of these and is aware of existing issues (as searching the \~4500 issues on github is painful).
-
-The only thing I could find somewhat related was this one:[https://github.com/microsoft/TypeScript/issues/31663](https://github.com/microsoft/TypeScript/issues/31663)
-## [6][When are parenthesis not redundant?](https://www.reddit.com/r/typescript/comments/gmhh6c/when_are_parenthesis_not_redundant/)
+## [11][When are parenthesis not redundant?](https://www.reddit.com/r/typescript/comments/gmhh6c/when_are_parenthesis_not_redundant/)
 - url: https://www.reddit.com/r/typescript/comments/gmhh6c/when_are_parenthesis_not_redundant/
 ---
 Context: I'm working on adding intersection types + parenthesis support to [typecheck.macro](https://github.com/vedantroy/typecheck.macro).
@@ -82,48 +160,3 @@ It seems like the only place parenthesis affect the order of "type operations" i
 A &amp; (B | C ) =  A &amp; B | A &amp; C. 
 
 Can someone correct me if I am wrong?
-## [7][typecheck.macro - Automatically generate validation functions for Typescript types.](https://www.reddit.com/r/typescript/comments/glyq1m/typecheckmacro_automatically_generate_validation/)
-- url: https://www.reddit.com/r/typescript/comments/glyq1m/typecheckmacro_automatically_generate_validation/
----
-10 days ago, I made [this post](https://www.reddit.com/r/typescript/comments/ges5r9/auto_generate_typechecker_from_typescript_types/) asking whether it was possible to automatically generate validation functions for Typescript types. Unfortunately, it seemed like that was not the case.
-
-So I built a library (well, compile time macro) to do it: [https://github.com/vedantroy/typecheck.macro](https://github.com/vedantroy/typecheck.macro)
-
- Once you configure babel macros, you can seamlessly generate validation functions for your Typescript types. No need to write your types again in a DSL (like runtypes/zod/io-ts). Compile time macros automatically parse your type declarations and generate validation functions.
-
-The library is pretty fresh, but it already handles unions/tuple types/optional types/index signatures/interfaces (no extending yet)/type aliases/generics/object patterns/arrays, so it's pretty functional/usable.
-
-The resulting validation functions are also really fast because most other libraries (except ajv) don't do compile time code generation. After some bench marking (not that I'm a benchmarking expert), I found it was up to 3 times as fast as ajv.
-
-This is my first open source library, so I'm excited to hear what you guys think!
-
-Above all, I feel like this can be a community effort. I'm open to suggestions/any form of feedback/contribution/etc.
-## [8][Why does TypeScript include Enums?](https://www.reddit.com/r/typescript/comments/gm9kq3/why_does_typescript_include_enums/)
-- url: https://www.reddit.com/r/typescript/comments/gm9kq3/why_does_typescript_include_enums/
----
-I'm reading Boris Cherny's "Programming TypeScript" book. At one point he defines the distinction between Type Level and Value Level code. He notes that – as a general rule – if it's valid TypeScript but not valid JavaScript then it's Type Level code.
-
-One of the exceptions to this rule is Enums. I've avoided using Enums in my TypeScript for sometime, and those definitions give me the vocabulary to describe why. I think TypeScript should be _purely_ a type annotation system and _not_ provide Value Level extensions to the language.
-
-Am I the only one that feels this way? Can anyone describe the rationale for including something like Enums in TypeScript? It feels out of scope, and I think all the functionality provided by Enums can be provided through JavaScript constants and Type Level Typescript.
-## [9][Why in this example the type is` unknown` ? Why am I getting a linting error ?](https://www.reddit.com/r/typescript/comments/gm9abm/why_in_this_example_the_type_is_unknown_why_am_i/)
-- url: https://www.reddit.com/r/typescript/comments/gm9abm/why_in_this_example_the_type_is_unknown_why_am_i/
----
-    import {OptionalKeys} from "utility-types";//npm install --save-dev utility-types
-    async function initializeOptionalParameters&lt;T extends object&gt;(
-    	parameters: T,
-    	initializationObject: { [x in OptionalKeys&lt;T&gt;]: () =&gt; Promise&lt;T[x]&gt; }
-    ) {
-    	for (let [key, value] of Object.entries(initializationObject)) {
-    		//why the type of value is `unknown`?
-    		parameters[key] = await value();//This expression is not callable.Type '{}' has no call signatures.ts(2349)
-    	}
-    }
-## [10][Reusing ts-node project assets for runtime scripts](https://www.reddit.com/r/typescript/comments/gm894j/reusing_tsnode_project_assets_for_runtime_scripts/)
-- url: https://www.reddit.com/r/typescript/comments/gm894j/reusing_tsnode_project_assets_for_runtime_scripts/
----
-Hello, so I have a current REST express API project where I am using TypeORM to model my database entities. I was wondering if I were to use ts-node for a runtime console script, (or possibly DENO), if I were able to reuse my assets like my entity models within these runtime scripts?
-## [11][Cloudflare Workers Template with TypeScript and GitHub Actions CI/CD](https://www.reddit.com/r/typescript/comments/gm2wvd/cloudflare_workers_template_with_typescript_and/)
-- url: https://github.com/frandiox/cf-workers-boilerplate?a=1
----
-

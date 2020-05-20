@@ -31,265 +31,87 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Jake Wharton: Today is my second first day at @Square doing Android, Kotlin, and open source things on the @CashApp team.](https://www.reddit.com/r/androiddev/comments/gm3kd2/jake_wharton_today_is_my_second_first_day_at/)
-- url: https://twitter.com/JakeWharton/status/1262399587995828224
+## [3][How do you handle the Play Store app destroying screenshot quality?](https://www.reddit.com/r/androiddev/comments/gn4g9h/how_do_you_handle_the_play_store_app_destroying/)
+- url: https://www.reddit.com/r/androiddev/comments/gn4g9h/how_do_you_handle_the_play_store_app_destroying/
+---
+When viewing the screenshots for one of my apps via the Google Play app, the screenshots displayed are compressed and super low quality. When viewing the Play app store page via a desktop web browser, they look high res.
+
+I've tried several suggestions, including: 
+- Trying JPEG's and PNG's 
+- Using images with lower dimensions and higher dimensions 
+- Compressing the images myself to reduce their file size
+
+None of these really make a difference, and Google still seems to compress them pretty heavily (i.e. if I compress them myself, Google just compresses them more to make them even worse). Thanks!
+## [4][I feel like this applies to any development. Really insightful.](https://www.reddit.com/r/androiddev/comments/gn20s5/i_feel_like_this_applies_to_any_development/)
+- url: https://www.youtube.com/watch?v=UvCri1tqIxQ
 ---
 
-## [4][[Q] Remote Logcat from Android to Android?](https://www.reddit.com/r/androiddev/comments/gmm5kc/q_remote_logcat_from_android_to_android/)
-- url: https://www.reddit.com/r/androiddev/comments/gmm5kc/q_remote_logcat_from_android_to_android/
+## [5]["Clean Dagger - A pragmatic guide to dependency injection on Android" - what do you think? Do you also use this approach in your applications?](https://www.reddit.com/r/androiddev/comments/gn8spj/clean_dagger_a_pragmatic_guide_to_dependency/)
+- url: https://proandroiddev.com/clean-dagger-f248eda5790b
 ---
-I'm looking for an app that can do remote debugging from an android device to an other android device AND has a good and readable log formatting.
 
-There are a ton of logcat apps on the market, but they can do only local logcat. 
-
-The only app i found that have this feature out of the box is [Bugjaeger](https://play.google.com/store/apps/details?id=eu.sisik.hackendebug&amp;hl=en). But the actual logging is pretty terrible, since it's not formatted in any way. 
-
-There is an other solution called [Remote ADB shell](https://play.google.com/store/apps/details?id=com.cgutman.androidremotedebugger&amp;hl=en) which can run logcat, and most importantly it's open source [Github](https://github.com/cgutman/RemoteAdbShell). So i could turn this into a remote logcat that suits my needs, but, i'm not super keen to do if there is an already existing solution.
-## [5][Brainstorming: What policy can break this app?](https://www.reddit.com/r/androiddev/comments/gmnhol/brainstorming_what_policy_can_break_this_app/)
-- url: https://www.reddit.com/r/androiddev/comments/gmnhol/brainstorming_what_policy_can_break_this_app/
+## [6][The one and only object](https://www.reddit.com/r/androiddev/comments/gn88h8/the_one_and_only_object/)
+- url: https://medium.com/androiddevelopers/the-one-and-only-object-5dfd2cf7ab9b
 ---
-Hello, I would like to ask you for brainstorm together. Does anybody have any idea what policies may break this app [https://play.google.com/store/apps/details?id=net.hubalek.android.apps.myandroidearnings](https://play.google.com/store/apps/details?id=net.hubalek.android.apps.myandroidearnings) ?
 
-I got email that update was rejected but there is only following:  
-
-
-&gt; About the Google Play policy  
-  
-&gt;  
-&gt;Google reserves the discretion to include or remove apps from Google Play. We may take action based on a number of factors including, but not limited to, a pattern of harmful behavior or high risk of abuse. We identify risk of abuse using various items such as previous violation history, user feedback, and use of popular brands, characters, and other assets.  
-  
-&gt;  
-&gt;Publishing Status: Rejected  
-  
-&gt;  
-&gt;Your app has been rejected and wasn't published due to a policy violation. If you submitted an update, the previous version of your app is still available on Google Play.
-
-There is no more information in the email from Google.
-
-I tried to change some things but everytime it was rejected so I'm definitely on wrong path. So I would like to ask crowd for brainstorming. Thanks
-## [6][Any clue how to implement DRM on Android](https://www.reddit.com/r/androiddev/comments/gmmkr5/any_clue_how_to_implement_drm_on_android/)
-- url: https://www.reddit.com/r/androiddev/comments/gmmkr5/any_clue_how_to_implement_drm_on_android/
+## [7][I created an extension for the playstore, viewing languages and 2 ASO leading tools](https://www.reddit.com/r/androiddev/comments/gna15j/i_created_an_extension_for_the_playstore_viewing/)
+- url: https://chrome.google.com/webstore/detail/ogbiebalkhkimkogbkofjbfclocdaofg/
 ---
-I am finding methods for content protection in the form of digital rights management for documents. I have been through the various types of technologies they use for streaming services
-I need to apply these to an Android application.
-I'd be thankful if any of you could help me out or even share a resource for this ( I have been through the Android documentation already)
-## [7][Would it be possible to copy the content of an entire app, make some changes then use it for personal use?](https://www.reddit.com/r/androiddev/comments/gmmbhr/would_it_be_possible_to_copy_the_content_of_an/)
-- url: https://www.reddit.com/r/androiddev/comments/gmmbhr/would_it_be_possible_to_copy_the_content_of_an/
+
+## [8][Introduce SharedFlow](https://www.reddit.com/r/androiddev/comments/gmprje/introduce_sharedflow/)
+- url: https://www.reddit.com/r/androiddev/comments/gmprje/introduce_sharedflow/
 ---
-Let's say i wanted to download a workout app on Android, but wanted to change things up for my personal preference  would it be possible to decompile the contents of an app and make an exact copy of it but change a few aspects of it so i could use it for my own personal use.
+[https://github.com/Kotlin/kotlinx.coroutines/issues/2034](https://github.com/Kotlin/kotlinx.coroutines/issues/2034)
 
-Would this be possible?
-
-Thank you
-## [8][trying to mount system as read-write in oneplus 6t](https://www.reddit.com/r/androiddev/comments/gmm9jm/trying_to_mount_system_as_readwrite_in_oneplus_6t/)
-- url: https://www.reddit.com/r/androiddev/comments/gmm9jm/trying_to_mount_system_as_readwrite_in_oneplus_6t/
+With SharedFlow the solution now seems to be complete, it's high time to get to know it better and maybe even start on using it in production.
+## [9][Early development app publishing on Play Store. Yay/Nay?](https://www.reddit.com/r/androiddev/comments/gn5wya/early_development_app_publishing_on_play_store/)
+- url: https://www.reddit.com/r/androiddev/comments/gn5wya/early_development_app_publishing_on_play_store/
 ---
-i am trying to mount system as read-write
+**TL;DR** Can I post my complete mess of a WIP app to the play store for internal testers only, or will Google rain fire from above?
 
-adb shell
+I'm writing an application that is currently internal only, but will eventually\~ (you know, maybe) be high enough quality to publish to the world. I want to publish it on the play store on an internal track so I can push updates out to devices in my household as I iterate and add features.
 
-su
+Currently it's hard-coded to point to a service on my internal network, and has mismatched logos (name is one thing, logo says another thing) and is generally just in a sorry state for anyone else to use.
 
-mount -o rw,remount /system
+Is the play store ok with this? Will it be scrutinized on the internal track and be removed from the play store etc. because it's clearly not functional outside of my household? Have others done this?
 
-the last command gives me this error-
-
-mount: '/system' not in /proc/mounts
-
-what does this mean. any idea how to fix it?
-## [9][Library for app's onboarding](https://www.reddit.com/r/androiddev/comments/gmluh3/library_for_apps_onboarding/)
-- url: https://www.reddit.com/r/androiddev/comments/gmluh3/library_for_apps_onboarding/
+Just a little concerned due to the amount of details it wants me to fill out to publish anything, and I don't really want a Google employee testing the application like they would a public app.
+## [10][I tried making a fun app like android game and it went like this!](https://www.reddit.com/r/androiddev/comments/gnaoes/i_tried_making_a_fun_app_like_android_game_and_it/)
+- url: https://www.reddit.com/r/androiddev/comments/gnaoes/i_tried_making_a_fun_app_like_android_game_and_it/
 ---
-Hello ;)
+ First, I have to choose between java , kotlin &amp; flutter . I choose flutter and started leaning dart. Then I made some small projects like todo app and alarm clocks. After learning flutter for a bit(1 month) I challenged myself to make an app in just 3 days. I tried my best on those 3 days. Please give me your options on this app which was made within 3 days by a beginner. The result is below-:
 
-Currently i'm finishing my first app for Google Play and as last thing i want to develop is some kind of onboarding. The app is very simple, just 3 screens in a viewpager, main feature is based on camera. Since i never did this, i wanted to ask if You know any good onboarding libraries? Will be thankful for any rocommendations.
-## [10][What type of background task should I use and how?](https://www.reddit.com/r/androiddev/comments/gmlqj1/what_type_of_background_task_should_i_use_and_how/)
-- url: https://www.reddit.com/r/androiddev/comments/gmlqj1/what_type_of_background_task_should_i_use_and_how/
+Play store:[https://play.google.com/store/apps/details?id=com.aniket.randomize](https://play.google.com/store/apps/details?id=com.aniket.randomize)
+
+Source code: [https://github.com/AniketSindhu/randomize](https://github.com/AniketSindhu/randomize) 
+
+An app with hell lot of options like:-
+
+✅Random number\*(any range)\*  
+✅Dice Roll\*(up to 6 dice at the same time)\*  
+✅Coin flip\*(5 different coins to flip)\*  
+✅A random card from a deck  
+✅Yes/no\*(ask yourself a question)\*  
+✅Password generator  
+✅Custom roulette\*(roll with 6 different objects)\*  
+✅Random color\*(find a beautiful color scheme)\*  
+✅Random letter  
+✅Random date\*(fix your appointments)\*  
+✅Random fact\*(increase your knowledge)\*  
+✅Random quote\*(be motivated)\*  
+✅Random name generator\*(male/female)\*  
+✅Random location\*(on map)\*  
+✅Random movie\*(Hollywood/Bollywood)\*  
+✅Random country\*(plan your next international travel trip)\*  
+✅Random video game\*(get what to play next)\*
+
+**Luck is not as random as you think.**  
+**Before that lottery ticket won the jackpot, someone had to buy it 😉.**
+## [11][AWS Secrets Manager Alternative Without Limits: Vault From HashiCorp](https://www.reddit.com/r/androiddev/comments/gnajfp/aws_secrets_manager_alternative_without_limits/)
+- url: http://selleoblogone.xyz
 ---
-I am pretty new to android app development, I don't know which one should I pick but here is how I want it to work:
 
-* It should run once in a day, I don't care what hour
-* It needs network connection
-* It can't be interrupted
-* It takes around 3 minutes
-
-I read about it in android documentation and it seems like WorkManager would suit me the best but I don't know how do I make it run everyday or if it's actually what I should use, can you help me?
-## [11][Tab selection in tab selection](https://www.reddit.com/r/androiddev/comments/gmlmsf/tab_selection_in_tab_selection/)
-- url: https://www.reddit.com/r/androiddev/comments/gmlmsf/tab_selection_in_tab_selection/
+## [12][Commonsware: R Raw Paths, DP4 Style](https://www.reddit.com/r/androiddev/comments/gmvgna/commonsware_r_raw_paths_dp4_style/)
+- url: https://commonsware.com/blog/2020/05/16/r-raw-paths-dp4-style.html
 ---
-Trying to create tab selection in tab selection First tab hierarchy creates fine while second ones tabs overlaps each other and text "aa" is not visible. How to solve this problem?
 
-&amp;#x200B;
-
-    &lt;?xml version="1.0" encoding="utf-8"?&gt;
-    &lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".Week"&gt;
-    
-        &lt;TabHost
-            android:id="@+id/tabHost"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"&gt;
-    
-            &lt;LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"&gt;
-    
-                &lt;TabWidget
-                    android:id="@android:id/tabs"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"&gt;
-    
-                &lt;/TabWidget&gt;
-    
-                &lt;FrameLayout
-                    android:id="@android:id/tabcontent"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"&gt;
-    
-                    &lt;LinearLayout
-                        android:id="@+id/tab1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="#dadada"
-                        android:orientation="vertical"&gt;
-    
-                        &lt;TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="ths is tab one" /&gt;
-    
-    
-                        &lt;TabHost
-                            android:id="@+id/tabHostt"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"&gt;
-    
-                            &lt;LinearLayout
-    
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical"&gt;
-    
-    
-                                    &lt;FrameLayout
-                                        android:id="@android:id/tabcontent"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"&gt;
-    
-                                        &lt;LinearLayout
-                                            android:id="@+id/tabb1"
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:background="#dadada"
-                                            android:orientation="vertical"&gt;
-    
-                                            &lt;TextView
-                                                android:layout_width="match_parent"
-                                                android:layout_height="wrap_content"
-                                                android:text="aa" /&gt;
-    
-    
-                                        &lt;/LinearLayout&gt;
-    
-    
-                                        &lt;LinearLayout
-                                            android:id="@+id/tabb2"
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:background="#dadada"
-                                            android:orientation="vertical"&gt;
-    
-                                            &lt;TextView
-                                                android:layout_width="match_parent"
-                                                android:layout_height="wrap_content"
-                                                android:text="bb" /&gt;
-                                        &lt;/LinearLayout&gt;
-    
-                                    &lt;/FrameLayout&gt;
-    
-    
-                            &lt;/LinearLayout&gt;
-    
-                        &lt;/TabHost&gt;
-    
-    
-                    &lt;/LinearLayout&gt;
-    
-    
-                    &lt;LinearLayout
-                        android:id="@+id/tab2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="#fafafa"
-                        android:orientation="vertical"&gt;
-    
-                        &lt;TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="ths is tab two" /&gt;
-    
-    
-                    &lt;/LinearLayout&gt;
-    
-                    &lt;LinearLayout
-                        android:id="@+id/tab3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="#ededed"
-                        android:orientation="vertical"&gt;
-    
-                        &lt;TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="ths is tab three" /&gt;
-    
-    
-                    &lt;/LinearLayout&gt;
-    
-    
-                &lt;/FrameLayout&gt;
-    
-    
-            &lt;/LinearLayout&gt;
-    
-    
-        &lt;/TabHost&gt;
-    &lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;
-
-onCreate code:
-
-&amp;#x200B;
-
-    TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
-    
-    tabHost.setup();
-    
-    //tab1
-    TabHost.TabSpec spec = tabHost.newTabSpec("Tab one");
-    spec.setContent(R.id.tab1);
-    spec.setIndicator("I");
-    tabHost.addTab(spec);
-    
-    //tab2
-    spec = tabHost.newTabSpec("Tab two");
-    spec.setContent(R.id.tab2);
-    spec.setIndicator("II");
-    tabHost.addTab(spec);
-    
-    //tab3
-    spec = tabHost.newTabSpec("Tab three");
-    spec.setContent(R.id.tab3);
-    spec.setIndicator("III");
-    tabHost.addTab(spec);
-    androidEdit tags
-## [12][OkCupid Presents: Cutting Through the Static. Find and Fix Issues the Smart Way with Android Studio Static Code Analysis](https://www.reddit.com/r/androiddev/comments/gm2b31/okcupid_presents_cutting_through_the_static_find/)
-- url: https://www.reddit.com/r/androiddev/comments/gm2b31/okcupid_presents_cutting_through_the_static_find/
----
-Android Studio surfaces lots of issues in your code with their static code analysis tool. Follow along as Brian Plummer, Senior Android Developer at OkCupid, shows you how to find these issues and best practices for getting your fixes merged into the codebase.  
-
-[https://tech.okcupid.com/android-static-analysis-tips-and-tutorial/](https://tech.okcupid.com/android-static-analysis-tips-and-tutorial/)

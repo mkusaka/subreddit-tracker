@@ -1,89 +1,112 @@
 # aws
-## [1][How to setup AWS Organizations with AWS SSO using G Suite as an identity provider. Made account management, centralized billing and resource sharing much easier in my own company. Hope this helps :) !](https://www.reddit.com/r/aws/comments/gmn67i/how_to_setup_aws_organizations_with_aws_sso_using/)
+## [1][DynamoDB now supports empty values for non-key String and Binary attributes](https://www.reddit.com/r/aws/comments/gn5hhi/dynamodb_now_supports_empty_values_for_nonkey/)
+- url: https://aws.amazon.com/about-aws/whats-new/2020/05/amazon-dynamodb-now-supports-empty-values-for-non-key-string-and-binary-attributes-in-dynamodb-tables/
+---
+
+## [2][CORS No 'Access-Control-Allow-Origin' header Using AWS Lambda/S3/VS2019](https://www.reddit.com/r/aws/comments/gnav0b/cors_no_accesscontrolalloworigin_header_using_aws/)
+- url: https://www.reddit.com/r/aws/comments/gnav0b/cors_no_accesscontrolalloworigin_header_using_aws/
+---
+&amp;#x200B;
+
+ I have a Lambda server function uploaded to AWS through visual studio 2019 and enabled CORS through the api gateway and added CORS to the S3 bucket that hosted a static website. When I use curl command:
+
+curl -H "Origin: [https://denisejames.dev/](https://denisejames.dev/)" -H "Access-Control-Request-Method: POST" -H "Access-Control-Request-Headers: X-Requested-With" -X OPTIONS --verbose [https://6j7r3vkufh.execute-api.us-east-1.amazonaws.com/Prod/api/dynamodb/getitems](https://6j7r3vkufh.execute-api.us-east-1.amazonaws.com/Prod/api/dynamodb/getitems)
+
+&amp;#x200B;
+
+    * schannel: stored credential handle in session cache
+    &gt; OPTIONS /Prod/api/dynamodb/getitems HTTP/1.1
+    &gt; Host: 6j7r3vkufh.execute-api.us-east-1.amazonaws.com
+    &gt; User-Agent: curl/7.55.1
+    &gt; Accept: */*
+    &gt; Origin: https://denisejames.dev/
+    &gt; Access-Control-Request-Method: POST
+    &gt; Access-Control-Request-Headers: X-Requested-With
+    &gt;
+    * schannel: client wants to read 102400 bytes
+    * schannel: encdata_buffer resized 103424
+    * schannel: encrypted data buffer: offset 0 length 103424
+    * schannel: encrypted data got 570
+    * schannel: encrypted data buffer: offset 570 length 103424
+    * schannel: decrypted data length: 541
+    * schannel: decrypted data added: 541
+    * schannel: decrypted data cached: offset 541 length 102400
+    * schannel: encrypted data buffer: offset 0 length 103424
+    * schannel: decrypted data buffer: offset 541 length 102400
+    * schannel: schannel_recv cleanup
+    * schannel: decrypted data returned 541
+    * schannel: decrypted data buffer: offset 0 length 102400
+    &lt; HTTP/1.1 200 OK
+    &lt; Content-Type: application/json
+    &lt; Content-Length: 3
+    &lt; Connection: keep-alive
+    &lt; Date: Wed, 20 May 2020 12:28:40 GMT
+    &lt; x-amzn-RequestId: 9bcaeff3-1d2f-42db-826c-9a28ff3beeb8
+    &lt; Access-Control-Allow-Origin: *
+    &lt; Access-Control-Allow-Headers: *
+    &lt; x-amz-apigw-id: M1JSyHxEIAMFing=
+    &lt; Access-Control-Allow-Methods: OPTIONS,POST,GET,DELETE
+    &lt; X-Cache: Miss from cloudfront
+    &lt; Via: 1.1 aefca35da479fa09516461bbcf9ed01c.cloudfront.net (CloudFront)
+    &lt; X-Amz-Cf-Pop: ORD51-C2
+    &lt; X-Amz-Cf-Id: P-PYU57bCpHajQXPp40BLpLagy1snQ_4Z-bmY0O7XJkmEFjlohKWKQ==
+    &lt;
+    {}
+    * Connection #0 to host 6j7r3vkufh.execute-api.us-east-1.amazonaws.com left intact
+
+ 
+
+This is the error I get when I use use firefox at www.denisejames.dev
+
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at [https://6j7r3vkufh.execute-api.us-east-1.amazonaws.com/Prod/api/dynamodb/getitems](https://6j7r3vkufh.execute-api.us-east-1.amazonaws.com/Prod/api/dynamodb/getitems). (Reason: CORS header ‘Access-Control-Allow-Origin’ missing).
+## [3][How to setup AWS Organizations with AWS SSO using G Suite as an identity provider. Made account management, centralized billing and resource sharing much easier in my own company. Hope this helps :) !](https://www.reddit.com/r/aws/comments/gmn67i/how_to_setup_aws_organizations_with_aws_sso_using/)
 - url: https://medium.com/serverless-transformation/setup-aws-organizations-with-google-suite-saml-sso-7e676f5ed3e1
 ---
 
-## [2][AWS YouTube deep dives and code walkthroughs](https://www.reddit.com/r/aws/comments/gmdyy9/aws_youtube_deep_dives_and_code_walkthroughs/)
-- url: https://www.reddit.com/r/aws/comments/gmdyy9/aws_youtube_deep_dives_and_code_walkthroughs/
+## [4][Roughly, how long does it take for a New Datacenter (Cape Town, is the one I’m interested in) to gain support for EKS?](https://www.reddit.com/r/aws/comments/gnaukl/roughly_how_long_does_it_take_for_a_new/)
+- url: https://www.reddit.com/r/aws/comments/gnaukl/roughly_how_long_does_it_take_for_a_new/
 ---
-Hey guys, given the lockdown and an ample amount of free time I decided to create a YouTube channel and dive deep into a lot of the most popular AWS topics. Here's the channel:
-https://www.youtube.com/VladimirBudilov
+This question is rather ambiguous, but just out of curiosity I was wondering how long it typically takes for a DataCenter to gain Containers EKS Support? Specifically the one in Cape Town has been under the Heading “We’re Working on it” for 28 Days now, but I can’t seem to find anything online that suggests how long it took previous data centres; so I don’t have any frame of reference for the time period of giving a Datacenter EKS support.
+## [5][WAF vs NACL](https://www.reddit.com/r/aws/comments/gnaptg/waf_vs_nacl/)
+- url: https://www.reddit.com/r/aws/comments/gnaptg/waf_vs_nacl/
+---
+Which is better option to restrict IP address. Can someone suggest which is better for application protection . I read that for public web application waf is a better choice and for private web app whitelisting add range in NAcl is good choice .
+## [6][A beginner looking for Deployment Suggestion](https://www.reddit.com/r/aws/comments/gnaho4/a_beginner_looking_for_deployment_suggestion/)
+- url: https://www.reddit.com/r/aws/comments/gnaho4/a_beginner_looking_for_deployment_suggestion/
+---
+Hello Everyone, Beginner here, me and my friend is working on a backend server for an app  
+for which we need to setup a node js server &amp; would use MySQL for data, that would point to a subdomain also with some security and scalability , and stability.
 
-Here's my GitHub account with a lot of sample code: 
-https://github.com/vbudilov/
+Our current setup is we have deployed the node js server in ec2 and we are using it with a public ip.can you guys here suggest an ideal setup for our purpose. so that the up time is good and better scalability.
 
-Let me know if there's a topic that you're really interested in and if there's additional demand I can do a deep dive on that topic. 
-
-Vladimir
-
-P.S. This isn't sponsored by Amazon
-## [3][A Multithreaded Fork of Redis that is 5X faster](https://www.reddit.com/r/aws/comments/gm4lve/a_multithreaded_fork_of_redis_that_is_5x_faster/)
-- url: https://github.com/JohnSully/KeyDB
+i have gone through some Reddit post in which some suggestions were using ALB, ACM etc. It would be very helpful if you guys can help me out here.
+## [7][AWS Secrets Manager Alternative Without Limits: Vault From HashiCorp](https://www.reddit.com/r/aws/comments/gnaecf/aws_secrets_manager_alternative_without_limits/)
+- url: http://selleoblogone.xyz
 ---
 
-## [4][Setting up LAMP stack with load balancing - is Lightsail right for me?](https://www.reddit.com/r/aws/comments/gmohl3/setting_up_lamp_stack_with_load_balancing_is/)
-- url: https://www.reddit.com/r/aws/comments/gmohl3/setting_up_lamp_stack_with_load_balancing_is/
+## [8][Client VPN to VPC with address range that overlaps with client's LAN](https://www.reddit.com/r/aws/comments/gn9pye/client_vpn_to_vpc_with_address_range_that/)
+- url: https://www.reddit.com/r/aws/comments/gn9pye/client_vpn_to_vpc_with_address_range_that/
 ---
-I need to set up/write a very basic LAMP app -- some static pages, and some PHP / MySQL CRUD logic, all over SSL.  The catch is it needs to be highly available, lots of inserts to MySQL, and it may need load balancing in the future.
+I'm trying to setup AWS Client VPN (with split tunnelling) to connect from my home network to a VPC, but I'm facing problems, which I think are related to overlapping IP address ranges.
 
-I've run regular EC2 instances with no load balancers for other stuff and am comfortable with that -- but I want to get the architecture for this app correct right off the bat.  It seems Lightsail would be ideal for this, but I'm wondering what other alternatives there are?
-## [5][Sagemaker Ground Truth - Cannot get active learning to auto label my data](https://www.reddit.com/r/aws/comments/gmnmmr/sagemaker_ground_truth_cannot_get_active_learning/)
-- url: https://www.reddit.com/r/aws/comments/gmnmmr/sagemaker_ground_truth_cannot_get_active_learning/
+The VPC's CIDR is [192.168.0.0/16](https://192.168.0.0/16). My home wifi network uses 192.168.0.x.
+
+The Client VPN has a default route with the destination of [192.168.0.0/16](https://192.168.0.0/16) which I can't remove. The Client VPN's DNS server is 192.168.0.2.
+
+I can connect to the VPN, but can't access any resources in the VPC. I don't think my traffic is getting blocked by security groups, ingress authorization or Network ACLs.
+
+Am I wasting my time trying to get this working? Should it be possible or should I just make a new VPC with a different CIDR and use that instead?
+## [9][What is the safest way to create Authenticator ?](https://www.reddit.com/r/aws/comments/gn8c5b/what_is_the_safest_way_to_create_authenticator/)
+- url: https://www.reddit.com/r/aws/comments/gn8c5b/what_is_the_safest_way_to_create_authenticator/
 ---
-Hi guys,
+I think it is best to have the same application on several devices so that if you lose your phone, you can still access other devices and log in.
 
-I’m trying to use Sagemaker Groundtruth’s active learning capability to label some data but can not figure out how to get the auto-labeling part to work. Do I need to start with 1,000 labeled objects in a labeling job? Do I need to have an initial model? Thanks guys.
-## [6][Load tests with Gatling's Frontline on AWS](https://www.reddit.com/r/aws/comments/gmngz5/load_tests_with_gatlings_frontline_on_aws/)
-- url: https://www.reddit.com/r/aws/comments/gmngz5/load_tests_with_gatlings_frontline_on_aws/
----
-I deployed an infrastructure in five days on AWS (CloudFrint, WAF, S3, API-Gateway, NLB, EKS, RDS). This infrastructure had to sustain 50 thousand calls in one minute on the backend. To make sure everything would go smoothly when we go live, I deployed a Gatling frontline instance. [Here is how I have done it](https://www.padok.fr/en/blog/load-test-gatling-frontline-aws). If you have experience with another tool, I would love to hear it, please share it with me in comments.
-## [7][Api gateway private integration](https://www.reddit.com/r/aws/comments/gmmyu7/api_gateway_private_integration/)
-- url: https://www.reddit.com/r/aws/comments/gmmyu7/api_gateway_private_integration/
----
-Hi all,
-
-I'm trying to setup a public api gateway with a private integration to forward requests to our on-premise services. I'm using vpc link and an internal network load balancer within a vpc to achieve this, I also want the tls termination to occur at the nlb layer. I've setup the https listener on the nlb and configured a certificate to use.  
-
-
-When I go to test the connection, I get this error: 
-
-`Tue May 19 10:21:25 UTC 2020 : Execution failed due to configuration error: Host name 'vpce-xxxxxxxxxxxxxxxxx-xxxxxxxx.vpce-svc-xxxxxxxxxxxxxxxx.eu-west-1.vpce.amazonaws.com' does not match the certificate subject provided by the peer`  
-
-
-Has anyone else encountered this problem? Is it simply a case of adding `*.vpce-svc-xxxxxxxxxxxxxxxx.eu-west-1.vpce.amazonaws.com` as an alternate in the certificate, or configuring a cname in my dns?
-## [8][Why am I being charged for DynamoDB read and write capacity under the free tier limit?](https://www.reddit.com/r/aws/comments/gmgthz/why_am_i_being_charged_for_dynamodb_read_and/)
-- url: https://www.reddit.com/r/aws/comments/gmgthz/why_am_i_being_charged_for_dynamodb_read_and/
----
-I am being charged money daily for DynamoDB "WriteCapacityUnit-Hrs" and "ReadCapacityUnit-Hrs". However, my DynamoDB tables only use a maximum of 25 provisioned capacity units for both read and write, which is under the free tier limit. I am even being charged when i'm not actually consuming any units at all. You can see it in the images. Why am I being charged for read and write capacity units if I am still under the free tier limit?
+Am I thinking right? - if yes What apps are suitable for this?
 
 &amp;#x200B;
 
-[Being charged for read and write capacity unity hours](https://preview.redd.it/yxqr1vr95nz41.png?width=3787&amp;format=png&amp;auto=webp&amp;s=2b54519e4a82569a16d001dbb53683ea0d850619)
-
-&amp;#x200B;
-
-[My tables only use a total of 25 provisioned capacity \(free tier limit\)](https://preview.redd.it/nff6jv3c5nz41.png?width=2555&amp;format=png&amp;auto=webp&amp;s=26c0c1a589a15d628d60b600c11a49bcd56c7a08)
-## [9][This Week in DevOps](https://www.reddit.com/r/aws/comments/gmm72z/this_week_in_devops/)
-- url: https://www.reddit.com/r/aws/comments/gmm72z/this_week_in_devops/
+Or maybe there are other options to protect yourself from devices loss, theft, destruction, etc.
+## [10][Heroku Django update static files EC2](https://www.reddit.com/r/aws/comments/gn258f/heroku_django_update_static_files_ec2/)
+- url: https://www.reddit.com/r/aws/comments/gn258f/heroku_django_update_static_files_ec2/
 ---
-This Week in DevOps – AWS reduced prices on some reserved instances and inter-region data transfer for some regions. They also rolled out a new Enterprise Search service called Kendra and a new class of instances called M6g which are based on Graviton2. Spot Virtual Machines came to Azure this week, Digital Ocean opened a new data center in San Francisco and HashiCorp released consul 1.8 for public beta.
-
-Get the details and more here: [https://thisweekindevops.com/2020/05/15/weekly-roundup-may-15th-2020/](https://thisweekindevops.com/2020/05/15/weekly-roundup-may-15th-2020/)
-## [10][Access EC2 (behind VPC) by SSM](https://www.reddit.com/r/aws/comments/gmcqdo/access_ec2_behind_vpc_by_ssm/)
-- url: https://www.reddit.com/r/aws/comments/gmcqdo/access_ec2_behind_vpc_by_ssm/
----
-Hi all,  
-
-
-I'm working on a project that needs an EC2 instance to poll a website (in this case, PRAW for Reddit), and it will need to create SQS messages. It's my understanding (I could be wrong) that the best way to do this is to put the EC2 behind a VPC along with all the other services that will be running (elasticache, aurora).  
-
-
-Where I'm running into trouble is I'm trying to make this EC2 instance a managed service, but it is not working. I made sure it is on the proper VPC, that there are security groups with endoints for SSM, SSMMessages, EC2, EC2 messages ([https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-create-vpc.html](https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-create-vpc.html)), and I added the default SSM Quickstart role for the EC2 instance.  
-
-
-Still, I cannot start an SSM session, nor does it show up on the managed instances. My other EC2 instance (on the default VPC) shows up, no problem and I can connect.
-
-Any advice or suggestions for trouble shooting? Should I even be using a VPC for this kind of work?  
-
-
-Thanks! And let me know if you'd like to hear more about the project :)
+So I am making a project where I serve the static css and images as well as upload pdfs to S3. Is there a way to update the static files if they are updated locally so I dont have to upload the css files through S3 console every time I make a change? I know that there is a S3 commandline

@@ -109,83 +109,96 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/gcbkuu/whos_hiring_may_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][build Weather App Using React.js With Current Location &amp; Search City - Html Hints](https://www.reddit.com/r/reactjs/comments/gmn7xq/build_weather_app_using_reactjs_with_current/)
+## [3][✨ Introducing react-cool-dimensions: React hook to measure an element's size and handle responsive components. (GitHub included)](https://www.reddit.com/r/reactjs/comments/gmos56/introducing_reactcooldimensions_react_hook_to/)
+- url: https://v.redd.it/8m9jms2n6qz41
+---
+
+## [4][Announcing React Native for macOS and more](https://www.reddit.com/r/reactjs/comments/gmxe2s/announcing_react_native_for_macos_and_more/)
+- url: https://microsoft.github.io/react-native-windows/blog/2020/05/19/rn4mupdadates
+---
+
+## [5][React Summit Remote Edition recordings 🎥](https://www.reddit.com/r/reactjs/comments/gn7dh8/react_summit_remote_edition_recordings/)
+- url: https://www.reddit.com/r/reactjs/comments/gn7dh8/react_summit_remote_edition_recordings/
+---
+The event happened April 17th and was available online on [this link](https://remote.reactsummit.com/).
+
+If you are interested [check it out](https://www.youtube.com/playlist?list=PLNBNS7NRGKMGCBNebw8xkpkq_lhgPoIzR). 
+
+PS: I don't have any association with GitNation/JSNation I was registered for a free ticket and was waiting for the recordings.
+## [6][Stopwatch App Tutorial Created with React and TypeScript](https://www.reddit.com/r/reactjs/comments/gn4zae/stopwatch_app_tutorial_created_with_react_and/)
+- url: https://www.reddit.com/r/reactjs/comments/gn4zae/stopwatch_app_tutorial_created_with_react_and/
+---
+Hi everyone, I created a tutorial to create a stopwatch app.
+
+I wanted to give a brief intro of what typescript could do for you by checking types in variables and returning types in functions.
+
+I hope this is helpful for someone.
+
+[https://youtu.be/XHVK-CAysZ0](https://youtu.be/XHVK-CAysZ0)
+## [7][When to use getState inside of redux-thunk?](https://www.reddit.com/r/reactjs/comments/gnb7yj/when_to_use_getstate_inside_of_reduxthunk/)
+- url: https://www.reddit.com/r/reactjs/comments/gnb7yj/when_to_use_getstate_inside_of_reduxthunk/
+---
+Hi there, I have a question about redux-thunk and the proper usage of `getState` argument during the dispatching of actions. 
+
+I have the following app:
+
+I'm building a "dashboard" so to say it, where you can apply several filters and whatnot. I'm sending these filters to backend where I filter the results and display them on front. 
+
+Now the thing is, which of these approaches is more correct:
+
+    export const fetchExamplesFromCategory = (targetCategory, queryString, index) =&gt; {
+        return dispatch =&gt; {
+            axios.get('/api/' + targetCategory + queryString)
+            .then(resp =&gt; {
+                const targetExample = resp.data[index];
+                dispatch(saveExamples(targetExample, resp.data.length));
+            });
+        };
+    }
+
+Or this one:
+
+    export const fetchExamplesFromCategory = () =&gt; {
+        return (dispatch, getState) =&gt; {
+            const curState = getState();
+            axios.get('/api/' + curState.targetCategory + curState.queryString)
+            .then(resp =&gt; {
+                const targetExample = resp.data[curState.index];
+                dispatch(saveExamples(targetExample, resp.data.length));
+            });
+        };
+    }
+
+So just to explain the difference here. I have other actions where I increase index and change category/query. The data is retrieved only in this action.
+
+In the course through which I was learning React, it was mentioned that `getState` should be avoided if possible, however this usecase already seems a bit more complicated than anything in that course.
+
+PS. Is this the proper subreddit to post questions? I found /r/learnreactjs to be relatively small, but if it is better to post there, I will in future. Thanks.
+## [8][React Library to Visualize Kubernetes](https://www.reddit.com/r/reactjs/comments/gnauuy/react_library_to_visualize_kubernetes/)
+- url: https://www.reddit.com/r/reactjs/comments/gnauuy/react_library_to_visualize_kubernetes/
+---
+I need to create many components in react to show clusters, nodes, pods like in the image bellow.
+
+[https://photos.app.goo.gl/bTdwUtB6NLfn3zei7](https://photos.app.goo.gl/bTdwUtB6NLfn3zei7)
+
+I tried [react-d3-graph](https://www.npmjs.com/package/react-d3-graph) but it doesn't seem to allow multiple line links between nodes. I also tried react-vis but it seems limited in terms of styling.
+## [9][Create a Simple POS with React, Node and MongoDB #0: Initial Setup Frontend and Backend](https://www.reddit.com/r/reactjs/comments/gnapu9/create_a_simple_pos_with_react_node_and_mongodb_0/)
+- url: https://blog.soshace.com/create-a-simple-pos-with-react-node-and-mongodb-0-initial-setup-frontend-and-backend/
+---
+
+## [10][Upcoming talk by Ali Spittel](https://www.reddit.com/r/reactjs/comments/gnalss/upcoming_talk_by_ali_spittel/)
+- url: https://www.reddit.com/r/reactjs/comments/gnalss/upcoming_talk_by_ali_spittel/
+---
+Catch Ali Spittel's upcoming talk at Hasura Con'20 on how Hasura makes web development &amp; learning code easier!   
+[https://hasura.io/events/hasura-con-2020/talks/how-hasura-makes-learning-code-easier/](https://hasura.io/events/hasura-con-2020/talks/how-hasura-makes-learning-code-easier/)  
+
+
+Register for the event here: [https://hasura.io/events/hasura-con-2020/](https://hasura.io/events/hasura-con-2020/)
+## [11][AWS Secrets Manager Alternative Without Limits: Vault From HashiCorp](https://www.reddit.com/r/reactjs/comments/gnakgs/aws_secrets_manager_alternative_without_limits/)
+- url: http://selleoblogone.xyz
+---
+
+## [12][build Weather App Using React.js With Current Location &amp; Search City - Html Hints](https://www.reddit.com/r/reactjs/comments/gmn7xq/build_weather_app_using_reactjs_with_current/)
 - url: https://www.htmlhints.com/article/how-to-create-weather-app-using-reactjs-with-current-location-search-city/93
 ---
 
-## [4][Add role-based permissions to your React app](https://www.reddit.com/r/reactjs/comments/gm5wlt/add_rolebased_permissions_to_your_react_app/)
-- url: https://swizec.com/blog/add-granular-role-based-access-to-your-jamstack-app/swizec/9418
----
-
-## [5][Store - The cleanest state management library I could come up with - very few APIs, UI-framework agnostic, TypeScript support with no effort, fast by default](https://www.reddit.com/r/reactjs/comments/gm3kx8/store_the_cleanest_state_management_library_i/)
-- url: https://github.com/fabiospampinato/store
----
-
-## [6][Learn the basics of ReactJS in 30 minutes [for beginners]](https://www.reddit.com/r/reactjs/comments/gmnf75/learn_the_basics_of_reactjs_in_30_minutes_for/)
-- url: https://www.reddit.com/r/reactjs/comments/gmnf75/learn_the_basics_of_reactjs_in_30_minutes_for/
----
-Hola,
-
-My cousin was laid off during the pandemic and has the time and resources to invest in making a career change. I have felt it upon myself to help him in his journey and I'm really proud of what he has been able to achieve in just 5 weeks. I want to give an open invitation to anyone that might be interested in learning a specific concept or technology. PM me or reach out to me via Youtube.
-
-[https://youtu.be/0Pph03z4\_M0](https://youtu.be/0Pph03z4_M0)
-
-[https://youtu.be/0Pph03z4\_M0](https://youtu.be/0Pph03z4_M0)
-## [7][Animated Sparkles in React](https://www.reddit.com/r/reactjs/comments/gmo0kp/animated_sparkles_in_react/)
-- url: https://joshwcomeau.com/react/animated-sparkles-in-react/
----
-
-## [8][use-count-up: a lightweight alternative of react-countup](https://www.reddit.com/r/reactjs/comments/gmk9lp/usecountup_a_lightweight_alternative_of/)
-- url: https://www.reddit.com/r/reactjs/comments/gmk9lp/usecountup_a_lightweight_alternative_of/
----
-Hey all,  
-
-I'm happy to share with you my latest open-source project [use-count-up](https://github.com/vydimitrov/use-count-up). This is a React/React Native component and hook to animate counting up or down to a number.   
-
-[use-count-up](https://github.com/vydimitrov/use-count-up) is thought to be a [lightweight](https://bundlephobia.com/scan-results?packages=use-count-up@latest,react-countup) alternative to the famous [react-countup](https://github.com/glennreyes/react-countup) with built-in support for `toLocaleString` number formatting. It has declarative API _(no more imperative calls to `start()` and `update()`)_ and is built with React and TypeScript for React and React Native apps.  
-
-Hope you like it!
-## [9][What are some good React repositories to look at and learn?](https://www.reddit.com/r/reactjs/comments/gmohf7/what_are_some_good_react_repositories_to_look_at/)
-- url: https://www.reddit.com/r/reactjs/comments/gmohf7/what_are_some_good_react_repositories_to_look_at/
----
-I am looking for open source React repositories so that I can learn from them. So far I have found the Spectrum chat one ([https://github.com/withspectrum/spectrum](https://github.com/withspectrum/spectrum)) to be really useful. I was wondering if there are any others the community have found useful.
-
-I am learning to code on my own so I've this to be the best way I can learn how other people go about programming.
-## [10][Can someone teach me how to implement this? (The orange text changes after every 4-5 seconds).](https://www.reddit.com/r/reactjs/comments/gmoebd/can_someone_teach_me_how_to_implement_this_the/)
-- url: https://www.reddit.com/r/reactjs/comments/gmoebd/can_someone_teach_me_how_to_implement_this_the/
----
-any sample code, document or an existing component which can help me implement this?
-
-https://reddit.com/link/gmoebd/video/tljmbvcm2qz41/player
-## [11][For anyone learning React from Brad Traversy on Udemy](https://www.reddit.com/r/reactjs/comments/gmoai3/for_anyone_learning_react_from_brad_traversy_on/)
-- url: https://www.reddit.com/r/reactjs/comments/gmoai3/for_anyone_learning_react_from_brad_traversy_on/
----
-Hi all,
-
-I would like to share this link for anyone learning React through the brad Traversy course on udemy.
-
-Basically Brad says that the way the hooks are introduced and explained in this course  are not the  best way they should be used.
-
-The course came out when react was still new so lots of things were still unlearned.
-
-I am still going through this file and i am struggling to understand some of it, but once i start changing the code i might be in a better position.
-
-Hopefully this will help out anyone who is currently doing the course as i am and was finding some of hooks usage to be a bit unusual.
-
-If anyone cares to help to give us a hand as to why we shouldn't have functions that change the state inside the stateContext file would be of great help!
-
-My thinking is that it causes react to do unnecessary renderings?
-
-Link:  [https://github.com/bradtraversy/contact-keeper/tree/hookfix#contact-keeper](https://github.com/bradtraversy/contact-keeper/tree/hookfix#contact-keeper) 
-## [12][How do I interact with a site which uses React?](https://www.reddit.com/r/reactjs/comments/gmo51w/how_do_i_interact_with_a_site_which_uses_react/)
-- url: https://www.reddit.com/r/reactjs/comments/gmo51w/how_do_i_interact_with_a_site_which_uses_react/
----
-I had some Scripts to interact with a specific website to automate some tasks. That site has ported its code to React JS and they stopped working.
-
-Now things like changing the value of the input fields do nothing. Well, it changes the value, but it doesn't trigger the logic behind it, therefore for example, the buttons to submit something keep disabled (and is not as easy as just enabling manually the buttons).
-
-I tried dispatching different events, like "keydown", but for security reasons it seems the browser doesn't allow that event to change the actual value of the fields.
-
-Any ideas?
-
-Thanks in advance.

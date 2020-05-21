@@ -79,61 +79,127 @@
 
 
 &amp;nbsp;
-## [2][[Survey] Influence of technology trends and hypes on software development and hiring practices (~5 mins)](https://www.reddit.com/r/javascript/comments/glw8so/survey_influence_of_technology_trends_and_hypes/)
-- url: https://www.reddit.com/r/javascript/comments/glw8so/survey_influence_of_technology_trends_and_hypes/
+## [2][WTF Wednesday (May 20, 2020)](https://www.reddit.com/r/javascript/comments/gne35p/wtf_wednesday_may_20_2020/)
+- url: https://www.reddit.com/r/javascript/comments/gne35p/wtf_wednesday_may_20_2020/
 ---
- 
+Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
+Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
+this is the place.
 
-Hi /r/javascript!
+[Named after this comic](https://davidwalsh.name/demo/code-review.png)
+## [3][If cops can watch us, we should watch them. I scraped court records to find dirty cops.](https://www.reddit.com/r/javascript/comments/gnffx5/if_cops_can_watch_us_we_should_watch_them_i/)
+- url: https://lawsuit.org/keeping-cops-accountable/
+---
 
-We are 3 researchers from the [Institute of Software Technology](https://www.iste.uni-stuttgart.de/se) at the University of Stuttgart, Germany, and currently conduct a  survey  to analyze the influence of technology trends and hypes on  software  development practices and the hiring process. Our target group  are  software and IT professionals both in technical as well as in  hiring roles. We think a lot of you will have an opinion on this topic, having undoubtedly tried to make sense of the JS framework jungle out there. The survey should not take more than 5 minutes.
-
-Your participation would be a great help! Feel free to distribute to your colleagues as well.
-
-[https://www03.surveygrid.com/public/online/index?AZ4A%2F11111](https://www03.surveygrid.com/public/online/index?AZ4A%2F11111)
-
-If you have any questions, we'll also happily answer them here.
-
-Thank you and stay healthy!
-## [3][Tobias Koppers (webpack), Orta Therox (TS), Minko Gechev (ng), Matteo Collina (Node) are going to speak at this free remote conf. Check it out!](https://www.reddit.com/r/javascript/comments/gn9xzk/tobias_koppers_webpack_orta_therox_ts_minko/)
+## [4][Tobias Koppers (webpack), Orta Therox (TS), Minko Gechev (ng), Matteo Collina (Node) are going to speak at this free remote conf. Check it out!](https://www.reddit.com/r/javascript/comments/gn9xzk/tobias_koppers_webpack_orta_therox_ts_minko/)
 - url: https://live.jsnation.com
 ---
 
-## [4][Why is immutability so important (or needed) in JavaScript?](https://www.reddit.com/r/javascript/comments/gmwkaj/why_is_immutability_so_important_or_needed_in/)
-- url: https://stackoverflow.com/questions/34385243/why-is-immutability-so-important-or-needed-in-javascript/43318963#43318963
+## [5][Announcing Appwrite 0.6: Full TypeScript Support and a New Database UI](https://www.reddit.com/r/javascript/comments/gnwut6/announcing_appwrite_06_full_typescript_support/)
+- url: https://medium.com/@eldadfux/introducing-appwrite-0-6-with-flutter-support-1eb4dce820f3?sk=8f3b0ff0446fdb667d31d558bc540456
 ---
 
-## [5][Announcing React Native for macOS and more](https://www.reddit.com/r/javascript/comments/gn3so8/announcing_react_native_for_macos_and_more/)
-- url: https://microsoft.github.io/react-native-windows/blog/2020/05/19/rn4mupdadates
+## [6][[AskJS] Any tutorial for integrating google pay in web?](https://www.reddit.com/r/javascript/comments/gnvz1v/askjs_any_tutorial_for_integrating_google_pay_in/)
+- url: https://www.reddit.com/r/javascript/comments/gnvz1v/askjs_any_tutorial_for_integrating_google_pay_in/
+---
+I have looked online, and the only sites which come uo are google's. I havent found them helpful. So I am looking for other sources.
+
+It would be really helpful if someone can guide me through this. You should know that I am from India, so there is a separate 'Google pay for India' section I am concerned with.
+
+Thank you
+## [7][Joi like validations with TypeScript support!](https://www.reddit.com/r/javascript/comments/gnvguv/joi_like_validations_with_typescript_support/)
+- url: https://github.com/neuledge/computed-types
 ---
 
-## [6][Factory Design Pattern in JS - With Simple Words](https://www.reddit.com/r/javascript/comments/gn9n4w/factory_design_pattern_in_js_with_simple_words/)
-- url: https://medium.com/javascript-in-plain-english/javascript-design-patterns-the-factory-pattern-6b399656d710
+## [8][Great article about Design Patterns in JS - Decorator](https://www.reddit.com/r/javascript/comments/gnsqm8/great_article_about_design_patterns_in_js/)
+- url: https://medium.com/javascript-in-plain-english/javascript-design-patterns-the-decorator-pattern-eaf6adc77cb7
 ---
 
-## [7][Painterro - OpenSource Paint plugin](https://www.reddit.com/r/javascript/comments/gmmvqq/painterro_opensource_paint_plugin/)
-- url: https://github.com/devforth/painterro
+## [9][[AskJS] Why this javascript redirect code won't work?](https://www.reddit.com/r/javascript/comments/gnvuqv/askjs_why_this_javascript_redirect_code_wont_work/)
+- url: https://www.reddit.com/r/javascript/comments/gnvuqv/askjs_why_this_javascript_redirect_code_wont_work/
+---
+Need code to redirect [domain.com/page](https://domain.com/page) based on OS
+
+Made a new index.html and pasted it on /page folder with following conents:`&lt;html&gt;`
+
+`&lt;head&gt;`
+
+`&lt;script type="text/javascript"&gt;`
+
+`&lt;!--`
+
+`var OSName="Unknown OS";`
+
+`if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";`
+
+`if (navigator.appVersion.indexOf("Mac")!=-1) OSName="MacOS";`
+
+`if (navigator.appVersion.indexOf("X11")!=-1) OSName="UNIX";`
+
+`if (navigator.appVersion.indexOf("Linux")!=-1) OSName="Linux";`
+
+&amp;#x200B;
+
+`if( OSName == "Windows" )`
+
+`{`
+
+`window.location="`[`https://www.windows.com`](https://www.windows.com)`";`
+
+`}`
+
+`else if ( OSName == "MacOS" )`
+
+`{`
+
+`window.location="`[`https://www.macos.com`](https://www.macos.com)`";`
+
+`}`
+
+`else if ( OSName == "UNIX" )`
+
+`{`
+
+`window.location="`[`https://www.unix.com`](https://www.unix.com)`";`
+
+`}`
+
+`else if ( OSName == "Linux )`
+
+`{`
+
+`window.location="`[`https://www.linux.com`](https://www.linux.com)`";`
+
+`}`
+
+`else`
+
+`{`
+
+`window.location="`[`vwww.other.com`](https://vwww.other.com)`";`
+
+`}`
+
+`//--&gt;`
+
+`&lt;/script&gt;`
+
+`&lt;/head&gt;`
+
+`&lt;/html&gt;`
+
+&amp;#x200B;
+
+What is the reason that it won't work? It just gives me blank page when I visit domain.com/page
+## [10][Promises were made and kept when I answered a Stack Overflow question about handling multiple async responses](https://www.reddit.com/r/javascript/comments/gnvmss/promises_were_made_and_kept_when_i_answered_a/)
+- url: https://medium.com/@mattcroak718/use-promises-to-consolidate-responses-from-multiple-requests-a0742ab5399a
 ---
 
-## [8][[AskJS] Is Javascript eating away C# Java market and jobs by being able to do everything now ?](https://www.reddit.com/r/javascript/comments/gn76vp/askjs_is_javascript_eating_away_c_java_market_and/)
-- url: https://www.reddit.com/r/javascript/comments/gn76vp/askjs_is_javascript_eating_away_c_java_market_and/
----
-1) Is Javascript eating away C# Java market and jobs by being able to do everything now ?
-
-2) Are you afraid about Blazor and Web Assembly ? (performance, strong typing etc)
-## [9][Adapter Pattern in JavaScript](https://www.reddit.com/r/javascript/comments/gn8i3h/adapter_pattern_in_javascript/)
-- url: https://medium.com/javascript-in-plain-english/javascript-design-patterns-adapter-explained-cbcffbb4b8bc
+## [11][A Functional JavaScript app from scratch (sorta-kinda-mostly)](https://www.reddit.com/r/javascript/comments/gnrg2y/a_functional_javascript_app_from_scratch/)
+- url: https://codewithstyle.info/functional-javascript-app-scratch/
 ---
 
-## [10][Getting started with testing smartly - free 3 hours workshop](https://www.reddit.com/r/javascript/comments/gnb9hb/getting_started_with_testing_smartly_free_3_hours/)
-- url: https://www.eventbrite.com/e/getting-started-with-testing-cleverly-may-2020-tickets-105711475870?aff=reddit
+## [12][A sample implementation of React Recoil](https://www.reddit.com/r/javascript/comments/gnr54n/a_sample_implementation_of_react_recoil/)
+- url: https://github.com/atulmy/react-recoil
 ---
 
-## [11][Deno: A Simple Guide](https://www.reddit.com/r/javascript/comments/gnad7t/deno_a_simple_guide/)
-- url: https://www.martinmck.com/posts/deno-a-simple-guide/
----
-
-## [12][[AskJS] What do you think of Airbnb Javascript Style Guild](https://www.reddit.com/r/javascript/comments/gn5wf1/askjs_what_do_you_think_of_airbnb_javascript/)
-- url: https://www.reddit.com/r/javascript/comments/gn5wf1/askjs_what_do_you_think_of_airbnb_javascript/
----
-bad or good or never use that

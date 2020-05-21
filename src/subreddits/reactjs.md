@@ -109,96 +109,221 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/gcbkuu/whos_hiring_may_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][✨ Introducing react-cool-dimensions: React hook to measure an element's size and handle responsive components. (GitHub included)](https://www.reddit.com/r/reactjs/comments/gmos56/introducing_reactcooldimensions_react_hook_to/)
-- url: https://v.redd.it/8m9jms2n6qz41
+## [3][Built a Dribbble Clone for Developers, MVP](https://www.reddit.com/r/reactjs/comments/gnn5j1/built_a_dribbble_clone_for_developers_mvp/)
+- url: https://v.redd.it/a8lhmpjho0051
 ---
 
-## [4][Announcing React Native for macOS and more](https://www.reddit.com/r/reactjs/comments/gmxe2s/announcing_react_native_for_macos_and_more/)
-- url: https://microsoft.github.io/react-native-windows/blog/2020/05/19/rn4mupdadates
+## [4][I can't solve the default padding in Material-UI.](https://www.reddit.com/r/reactjs/comments/gnvfiw/i_cant_solve_the_default_padding_in_materialui/)
+- url: https://www.reddit.com/r/reactjs/comments/gnvfiw/i_cant_solve_the_default_padding_in_materialui/
+---
+The AppBar component for instance doesn't cover the whole area by default, I looked through the documentation and on google but couldn't find a solution for it.
+
+I also tried changing the spacing in createMuiTheme for my Layout component which included the AppBar and {props.children} at the end. That didn't seem to do anything.
+
+Tl;dr : I want the app bar and all the other components to cover the whole screen, use the whole screen as a flex without padding which material-ui seems to be adding to it by default.
+
+[A Screenshot](https://imgur.com/SxBVKmh)
+
+&amp;#x200B;
+
+Please help me.
+## [5][Architecture of a react application](https://www.reddit.com/r/reactjs/comments/gnstyb/architecture_of_a_react_application/)
+- url: https://www.reddit.com/r/reactjs/comments/gnstyb/architecture_of_a_react_application/
+---
+Hello all!
+
+I was in an interview recently and was asked to sketch out an architectural design of a react application.
+
+I really didn't know what to sketch out.
+
+Are there any tools or resources that you know of or there where I could find out more about this?
+
+The organisation that interviewed me were very back end heavy and kept asking about design patterns in React as well. AFAIK when you talk about design patterns in React it is more concerned with the visual patterns such as grids, cards etc than software patterns.
+
+I have some experience with redux so can see how redux containers implement provider/consumer but are they thinking about it in the wrong way? In so much that they are trying to force software engineering principles onto a discipline that they do not really apply to?
+## [6][How to handle Web Fonts in your web app](https://www.reddit.com/r/reactjs/comments/gnwo6o/how_to_handle_web_fonts_in_your_web_app/)
+- url: https://www.hackdoor.io/articles/bgp8VbJv/how-to-handle-web-fonts-in-your-web-app
 ---
 
-## [5][React Summit Remote Edition recordings 🎥](https://www.reddit.com/r/reactjs/comments/gn7dh8/react_summit_remote_edition_recordings/)
-- url: https://www.reddit.com/r/reactjs/comments/gn7dh8/react_summit_remote_edition_recordings/
+## [7][Stable state manager for any framework including React](https://www.reddit.com/r/reactjs/comments/gnbrp9/stable_state_manager_for_any_framework_including/)
+- url: https://www.reddit.com/r/reactjs/comments/gnbrp9/stable_state_manager_for_any_framework_including/
 ---
-The event happened April 17th and was available online on [this link](https://remote.reactsummit.com/).
+Three years ago I was looking for a way to separate business logic from the presentation layer.
 
-If you are interested [check it out](https://www.youtube.com/playlist?list=PLNBNS7NRGKMGCBNebw8xkpkq_lhgPoIzR). 
+I want to send some kind of events from my components (I use React now), and implement all logic in another place (ex.: model). My view layer should know nothing about model implementation details.
 
-PS: I don't have any association with GitNation/JSNation I was registered for a free ticket and was waiting for the recordings.
-## [6][Stopwatch App Tutorial Created with React and TypeScript](https://www.reddit.com/r/reactjs/comments/gn4zae/stopwatch_app_tutorial_created_with_react_and/)
-- url: https://www.reddit.com/r/reactjs/comments/gn4zae/stopwatch_app_tutorial_created_with_react_and/
+Now I have 1+ years of experience in Effector. You should give a try with effector: [https://github.com/zerobias/effector](https://github.com/zerobias/effector)
+
+Articles:
+
+* [https://itnext.io/effector-state-manager-you-should-give-a-try-b46b917e51cc](https://itnext.io/effector-state-manager-you-should-give-a-try-b46b917e51cc)
+* [https://codeburst.io/effector-state-manager-6ee2e72e8e0b](https://codeburst.io/effector-state-manager-6ee2e72e8e0b)
+* [https://medium.com/blue-harvest-tech-blog/effector-vs-vuex-which-storage-management-is-better-for-vuejs-app-54f3c3257b53](https://medium.com/blue-harvest-tech-blog/effector-vs-vuex-which-storage-management-is-better-for-vuejs-app-54f3c3257b53)
+* [https://dev.to/lessmess/why-i-choose-effector-instead-of-redux-or-mobx-3dl7](https://dev.to/lessmess/why-i-choose-effector-instead-of-redux-or-mobx-3dl7)
+
+Open source:
+
+* [https://github.com/sergeysova/effector-ssr](https://github.com/sergeysova/effector-ssr) — SSR on Razzle
+* [https://github.com/weyheyhey/effector-next](https://github.com/weyheyhey/effector-next?files=1) — SSR on Next.js
+* [https://github.com/howtocards/frontend](https://github.com/howtocards/frontend) — My project built using React and Effector
+* [https://github.com/authmenow/frontend](https://github.com/authmenow/frontend) — Another one, but with SSR
+## [8][Using Ant design pro in production](https://www.reddit.com/r/reactjs/comments/gnw1wk/using_ant_design_pro_in_production/)
+- url: https://www.reddit.com/r/reactjs/comments/gnw1wk/using_ant_design_pro_in_production/
 ---
-Hi everyone, I created a tutorial to create a stopwatch app.
-
-I wanted to give a brief intro of what typescript could do for you by checking types in variables and returning types in functions.
-
-I hope this is helpful for someone.
-
-[https://youtu.be/XHVK-CAysZ0](https://youtu.be/XHVK-CAysZ0)
-## [7][When to use getState inside of redux-thunk?](https://www.reddit.com/r/reactjs/comments/gnb7yj/when_to_use_getstate_inside_of_reduxthunk/)
-- url: https://www.reddit.com/r/reactjs/comments/gnb7yj/when_to_use_getstate_inside_of_reduxthunk/
+Hi, I've wondering in the past few days about if should start using ant design pro in production knowing that I've been using ant design now for a while, but this dashboard scaffolding looks somehow amazing but what I don't find appealing is the use of dva and umijs in which both of them not well documented well and mostly in Chinese, so guys if you have experience with it please advice me here , plus I'm looking forward to find people to hire with such expertises.
+## [9][New to React but having a big problem with create-react-app](https://www.reddit.com/r/reactjs/comments/gnuwjg/new_to_react_but_having_a_big_problem_with/)
+- url: https://www.reddit.com/r/reactjs/comments/gnuwjg/new_to_react_but_having_a_big_problem_with/
 ---
-Hi there, I have a question about redux-thunk and the proper usage of `getState` argument during the dispatching of actions. 
+Hi all, I've been having a big problem with the create-react-app that has stopped me in my tracks. I'm new to React (and coding in general) and I don't want this to be what stops me from going forward. I've posted my error and the package.json file below:
 
-I have the following app:
+Any and all help is appreciated. I've tried `npm cache clean --force` followed by deleting the package.json files and the node\_modules and then ran `npm install`  but the error just kept coming.
 
-I'm building a "dashboard" so to say it, where you can apply several filters and whatnot. I'm sending these filters to backend where I filter the results and display them on front. 
+`npm start`
 
-Now the thing is, which of these approaches is more correct:
+&amp;#x200B;
 
-    export const fetchExamplesFromCategory = (targetCategory, queryString, index) =&gt; {
-        return dispatch =&gt; {
-            axios.get('/api/' + targetCategory + queryString)
-            .then(resp =&gt; {
-                const targetExample = resp.data[index];
-                dispatch(saveExamples(targetExample, resp.data.length));
-            });
-        };
+`&gt; ass1@0.1.0 start C:\Users\Chris Conrad\Documents\_GIT\Udemy\React\Section 3 Understanding Base Features &amp; Syntax\ass1`
+
+`&gt; react-scripts start`
+
+&amp;#x200B;
+
+`'Syntax\ass1\node_modules\.bin\' is not recognized as an internal or external command,`
+
+`operable program or batch file.`
+
+`internal/modules/cjs/loader.js:1032`
+
+  `throw err;`
+
+  `^`
+
+&amp;#x200B;
+
+`Error: Cannot find module 'C:\Users\Chris Conrad\Documents\_GIT\Udemy\React\react-scripts\bin\react-scripts.js'`
+
+`at Function.Module._resolveFilename (internal/modules/cjs/loader.js:1029:15)`
+
+`at Function.Module._load (internal/modules/cjs/loader.js:898:27)`
+
+`at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)`
+
+`at internal/main/run_main_module.js:17:47 {`
+
+  `code: 'MODULE_NOT_FOUND',`
+
+  `requireStack: []`
+
+`}`
+
+`npm ERR! code ELIFECYCLE`
+
+`npm ERR! errno 1`
+
+`npm ERR! ass1@0.1.0 start: \`react-scripts start\``
+
+`npm ERR! Exit status 1`
+
+`npm ERR!`
+
+`npm ERR! Failed at the ass1@0.1.0 start script.`
+
+`npm ERR! This is probably not a problem with npm. There is likely additional logging output above.`
+
+&amp;#x200B;
+
+`npm ERR! A complete log of this run can be found in:`
+
+`npm ERR!     C:\Users\Chris Conrad\AppData\Roaming\npm-cache\_logs\2020-05-21T11_07_16_216Z-debug.log`
+
+`PS C:\Users\Chris Conrad\Documents\_GIT\Udemy\React\Section 3 Understanding Base Features &amp; Syntax\ass1&gt;` 
+
+&amp;#x200B;
+
+and my package.json file is:
+
+ 
+
+`{`  
+ `"name": "ass1",`  
+ `"version": "0.1.0",`  
+ `"private": true,`  
+ `"dependencies": {`  
+ `"@testing-library/jest-dom": "^4.2.4",`  
+ `"@testing-library/react": "^9.5.0",`  
+ `"@testing-library/user-event": "^7.2.1",`  
+ `"react": "^16.13.1",`  
+ `"react-dom": "^16.13.1",`  
+ `"react-scripts": "3.4.1"`  
+  `},`  
+ `"scripts": {`  
+ `"start": "react-scripts start",`  
+ `"build": "react-scripts build",`  
+ `"test": "react-scripts test",`  
+ `"eject": "react-scripts eject"`  
+  `},`  
+ `"eslintConfig": {`  
+ `"extends": "react-app"`  
+  `},`  
+ `"browserslist": {`  
+ `"production": [`  
+ `"&gt;0.2%",`  
+ `"not dead",`  
+ `"not op_mini all"`  
+    `],`  
+ `"development": [`  
+ `"last 1 chrome version",`  
+ `"last 1 firefox version",`  
+ `"last 1 safari version"`  
+    `]`  
+  `}`  
+`}`
+## [10][Is there a way for an input to use all props passed to it from a parent component?](https://www.reddit.com/r/reactjs/comments/gnugg8/is_there_a_way_for_an_input_to_use_all_props/)
+- url: https://www.reddit.com/r/reactjs/comments/gnugg8/is_there_a_way_for_an_input_to_use_all_props/
+---
+I have a `SearchBar` component:
+
+    interface Props {
+      placeholder?: string;
+      ariaLabel?: string;
+      type?: string;
+      onSearchTextChanged: (text: string) =&gt; void;
     }
 
-Or this one:
+    const SearchBar = ({ onSearchTextChanged, placeholder, ariaLabel, type }: Props) =&gt; {
+      const [inputText, setInputText] = useState('');
+    
+      const onTextChanged = (e: React.ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {
+         onSearchTextChanged(e.target.value);
+      };
+    
+      return &lt;input onChange={onTextChanged} placeholder={placeholder} aria-label={ariaLabel} type={type}&gt;&lt;/Input&gt;;
+    };
 
-    export const fetchExamplesFromCategory = () =&gt; {
-        return (dispatch, getState) =&gt; {
-            const curState = getState();
-            axios.get('/api/' + curState.targetCategory + curState.queryString)
-            .then(resp =&gt; {
-                const targetExample = resp.data[curState.index];
-                dispatch(saveExamples(targetExample, resp.data.length));
-            });
-        };
-    }
+&amp;nbsp;
 
-So just to explain the difference here. I have other actions where I increase index and change category/query. The data is retrieved only in this action.
+You can see that `placeholder`, `ariaLabel` and `type` are passed as props which I then map to the standard input element attributes. I was wondering if there was a way to avoid having to specify these so that anyone using this component can use out of the box attributes supported by the `&lt;input&gt;` element. Sort of like `props.children` or `...rest`. Essentially I'd like to be able to use the `SearchBar` component like so:
 
-In the course through which I was learning React, it was mentioned that `getState` should be avoided if possible, however this usecase already seems a bit more complicated than anything in that course.
+&amp;nbsp;
 
-PS. Is this the proper subreddit to post questions? I found /r/learnreactjs to be relatively small, but if it is better to post there, I will in future. Thanks.
-## [8][React Library to Visualize Kubernetes](https://www.reddit.com/r/reactjs/comments/gnauuy/react_library_to_visualize_kubernetes/)
-- url: https://www.reddit.com/r/reactjs/comments/gnauuy/react_library_to_visualize_kubernetes/
+`&lt;SearchBar placeholder="Search" aria-label="Search events" type="search" /&gt;`
+
+&amp;nbsp;
+
+and then inside the component use input like so:
+
+&amp;nbsp;
+
+`&lt;input {...allPropsGoHere} /&gt;`
+
+&amp;nbsp;
+## [11][how to drag &amp; drop image to upload from same page if that image coming through cdn in React Js](https://www.reddit.com/r/reactjs/comments/gnubmf/how_to_drag_drop_image_to_upload_from_same_page/)
+- url: https://www.reddit.com/r/reactjs/comments/gnubmf/how_to_drag_drop_image_to_upload_from_same_page/
 ---
-I need to create many components in react to show clusters, nodes, pods like in the image bellow.
-
-[https://photos.app.goo.gl/bTdwUtB6NLfn3zei7](https://photos.app.goo.gl/bTdwUtB6NLfn3zei7)
-
-I tried [react-d3-graph](https://www.npmjs.com/package/react-d3-graph) but it doesn't seem to allow multiple line links between nodes. I also tried react-vis but it seems limited in terms of styling.
-## [9][Create a Simple POS with React, Node and MongoDB #0: Initial Setup Frontend and Backend](https://www.reddit.com/r/reactjs/comments/gnapu9/create_a_simple_pos_with_react_node_and_mongodb_0/)
-- url: https://blog.soshace.com/create-a-simple-pos-with-react-node-and-mongodb-0-initial-setup-frontend-and-backend/
+I have a dashboard page in my app where blog post are coming from database. I also create a side bar where user can create a new post with description , time and upload image by drag &amp; drop or select from local system by clicking at drag &amp; drop. I want to add a functionality so user can upload the image that is coming to page along with blog post.
+## [12][Webpack Config](https://www.reddit.com/r/reactjs/comments/gnuat8/webpack_config/)
+- url: https://www.reddit.com/r/reactjs/comments/gnuat8/webpack_config/
 ---
+So I know what Webpack is and what it's used for. However, as a React nube, I have no clue why I should care, since I just run create-react-app, code my app, run npm build and deploy that shit. The things is in a few interviews I have been asked about "Webpack Config" and have no clue how I'm supposed to respond to that. Is it ever necessary to "config" webpack if using create-react-app? Or perhaps some folks don't use create-react-app?
 
-## [10][Upcoming talk by Ali Spittel](https://www.reddit.com/r/reactjs/comments/gnalss/upcoming_talk_by_ali_spittel/)
-- url: https://www.reddit.com/r/reactjs/comments/gnalss/upcoming_talk_by_ali_spittel/
----
-Catch Ali Spittel's upcoming talk at Hasura Con'20 on how Hasura makes web development &amp; learning code easier!   
-[https://hasura.io/events/hasura-con-2020/talks/how-hasura-makes-learning-code-easier/](https://hasura.io/events/hasura-con-2020/talks/how-hasura-makes-learning-code-easier/)  
-
-
-Register for the event here: [https://hasura.io/events/hasura-con-2020/](https://hasura.io/events/hasura-con-2020/)
-## [11][AWS Secrets Manager Alternative Without Limits: Vault From HashiCorp](https://www.reddit.com/r/reactjs/comments/gnakgs/aws_secrets_manager_alternative_without_limits/)
-- url: http://selleoblogone.xyz
----
-
-## [12][build Weather App Using React.js With Current Location &amp; Search City - Html Hints](https://www.reddit.com/r/reactjs/comments/gmn7xq/build_weather_app_using_reactjs_with_current/)
-- url: https://www.htmlhints.com/article/how-to-create-weather-app-using-reactjs-with-current-location-search-city/93
----
-
+&amp;#x200B;

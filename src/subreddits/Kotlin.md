@@ -1,89 +1,118 @@
 # Kotlin
-## [1][GraalVM 20.1 comes with improved Kotlin coroutine support](https://www.reddit.com/r/Kotlin/comments/gn63sm/graalvm_201_comes_with_improved_kotlin_coroutine/)
-- url: https://medium.com/graalvm/graalvm-20-1-7ce7e89f066b
+## [1][Introducing Gryphon, the Swift to Kotlin translator](https://www.reddit.com/r/Kotlin/comments/gnm5ed/introducing_gryphon_the_swift_to_kotlin_translator/)
+- url: https://www.reddit.com/r/Kotlin/comments/gnm5ed/introducing_gryphon_the_swift_to_kotlin_translator/
 ---
+Hi all, I’ve just published the first full version Gryphon, a program that translates Swift code into Kotlin code. It is meant to let developers share their iOS app's code with Android.
 
-## [2][The Debate: Which is Better For Android App Development, Java Vs. Kotlin?](https://www.reddit.com/r/Kotlin/comments/gnb3mg/the_debate_which_is_better_for_android_app/)
-- url: https://kodytechnolab.com/java-vs-kotlin-comparison
+I encourage anyone interested to [check out the video](https://twitter.com/gryphonblog/status/1263233844519620610?s=20) and [the website](https://vinivendra.github.io/Gryphon/index.html).
+
+This is the first version where all features are working:
+
+* The generated Kotlin code works the same as the Swift code it came from, no edits needed. There’s an automated test that makes Gryphon translate its own source code, with around 12k lines, and ensures the translation passes all the same tests as the original executable.
+* There’s a templates system that’s used to automatically translate many standard library types and methods.
+* Xcode integration, with Xcode showing any warnings or errors raised by the Kotlin compiler next to the Swift lines that originated them, so users can fix them at the source.
+* The output code is readable, which is useful for minimizing the risks for new users. If Gryphon isn’t the right fit for them, they’re left with a Kotlin codebase they can keep maintaining.
+
+This list of features isn’t to say [there aren’t any bugs](https://github.com/vinivendra/Gryphon/issues), of course - I’m doing my best to keep track of them and fix them on a daily basis.
+
+Any questions, comments, or feedback in general is welcome!
+## [2][Scripting in Python vs Kotlin](https://www.reddit.com/r/Kotlin/comments/gnvjya/scripting_in_python_vs_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/gnvjya/scripting_in_python_vs_kotlin/
 ---
-
-## [3][Idiomatic way to handle traditional usage of null in function parameters](https://www.reddit.com/r/Kotlin/comments/gn7pfp/idiomatic_way_to_handle_traditional_usage_of_null/)
-- url: https://www.reddit.com/r/Kotlin/comments/gn7pfp/idiomatic_way_to_handle_traditional_usage_of_null/
+How easy and supported is scripting and automating daily stuff in kotlin
+## [3][I am loving Kotlin, but...](https://www.reddit.com/r/Kotlin/comments/gnhmbb/i_am_loving_kotlin_but/)
+- url: https://www.reddit.com/r/Kotlin/comments/gnhmbb/i_am_loving_kotlin_but/
 ---
-It's fairly normal in Java and many other languages to use `null` as a parameter default in functions in places where null would indicate "perform no functionality based on that parameter"
+I don't know Java
 
-Here's an example of the pattern in question:
+  
 
-    class foo {
-        void bar(int number, Baz exampleBaz) {
-            //do some kind of functionality
-            //if exampleBaz is not null, do something related to exampleBaz as well
-        }
-        
-        void bar(int number) {
-            bar(number, null);
+
+I started learning Android development some months ago, and I don't know Java, so I went straight to Kotlin. The problem is, everytime a problem comes up, I look for a solution on Stack Overflow and there it is, a solution in Java. So I try to apply it, and sometimes it works, but when it don't I have to make a new question on Stack Overflow, and mostly they mark my post as duplicate and send me to other solution... In Java.
+## [4][[Help] Can anyone explain why this code sample about coroutines from Kotlinlang.org works the way it does?](https://www.reddit.com/r/Kotlin/comments/gnozxp/help_can_anyone_explain_why_this_code_sample/)
+- url: https://www.reddit.com/r/Kotlin/comments/gnozxp/help_can_anyone_explain_why_this_code_sample/
+---
+Hello everyone. 
+
+I'm trying to understand coroutines in Kotlin. While following up the official docs, I came across a code sample I am unable to make sense of. 
+
+Here's the [code sample](https://kotlinlang.org/docs/reference/coroutines/basics.html#coroutines-are-light-weight)
+
+    import kotlinx.coroutines.*
+
+    fun main() = runBlocking {
+        repeat(100_000) { // launch a lot of coroutines
+            launch {
+                delay(1000L)
+                print(".")
+            }
         }
     }
 
-Is there a more idiomatic way of achieving this then just checking the type of the parameter and relying on smart casts? A lot of weird design patterns I did to work around null safety ended up being antipatterns so I am hesitant to resort to nullable types immediately.
-## [4][What's the best way to build a cross-platform app today, for Android and iOS?](https://www.reddit.com/r/Kotlin/comments/gmomkw/whats_the_best_way_to_build_a_crossplatform_app/)
-- url: https://www.reddit.com/r/Kotlin/comments/gmomkw/whats_the_best_way_to_build_a_crossplatform_app/
+
+What's happening is: the program runs, shows nothing for one second, and then prints `.` 1,00,000 times one after another with no delay at all!
+
+I think this should not be happening, and I know I'm wrong but don't know where.
+
+To me, for an iteration let's say first iteration (it = 0):
+
+1. `launch` should be building a coroutine
+2. Then that particular coroutine should be suspended for 1 second
+3. Then `.` should be printed as output. 
+4. Meanwhile, when coroutine built during first iteration was suspended, repeat loop would go to next iteration and the aforesaid procedure in steps 1-3 should be repeated.
+
+I am expecting synchronous code execution here. So for every dot to be printed, there has to have a delay of 1 second. But the overall delay during execution is 1 second only and they all get printed than!
+
+Can you please show me the flaw in my logic?
+## [5][Tell me why Kotlin is more than the current Fad](https://www.reddit.com/r/Kotlin/comments/gnucq9/tell_me_why_kotlin_is_more_than_the_current_fad/)
+- url: https://www.reddit.com/r/Kotlin/comments/gnucq9/tell_me_why_kotlin_is_more_than_the_current_fad/
 ---
-For business logic, I am definitely looking at Kotlin Multiplatform. But I'm not sure of the UI part.   
-React Native vs Flutter - I'm not sure which of them works best with Multiplatform. And I'm not conversant with either of them.
-
-It is very important that I have to write as less code as possible to release the apps on both the platforms and maintain them for a long time.
-
-Can somebody help in making me decide?
-## [5][Conflict between Kotlin and project dependencies](https://www.reddit.com/r/Kotlin/comments/gmu950/conflict_between_kotlin_and_project_dependencies/)
-- url: https://www.reddit.com/r/Kotlin/comments/gmu950/conflict_between_kotlin_and_project_dependencies/
+Hi! Im a Java Developer with JS Knowledge looking for a third language to learn.
+Im choosing between Kotlin and Python.
+I need it for smaller stuff, scripting and more modern coding, but im afraid kotlin will just go away once google embraces flutter
+## [6][Is Ktor production ready?](https://www.reddit.com/r/Kotlin/comments/gnmkn2/is_ktor_production_ready/)
+- url: https://www.reddit.com/r/Kotlin/comments/gnmkn2/is_ktor_production_ready/
 ---
-I've been using Kotlin for quite a while now and I've never encountered this issue before, but now I really don't know how to go about it.
+If I'm making a new website for a business, should I use Ktor? How stable is it and how likely is it to see sustained development?
 
-I'm using gradle to build my Kotlin application. I recently added a feature that uses the google custom search API and I therefore include a dependency on the official google library for this service.
+Part of the source code is already in Java, so I thought that by rewriting the site in Kotlin (which I prefer to Java) I can reuse some of the old Java code by converting it to Kotlin using Intellij's converter tool. Is this actually a good idea?
 
-Now, this broke the application and I get a `NoSuchMethodError` when initialising the new library. It turns out that the library uses a method of the Google guava `Preconditions` class that doesn't exist at runtime, for some reason. So I ran `gradle dependencies` and looked for incompatible guava versions, but only found versions that have the method in question. I then decided to manually declare the guava dependency, hoping that this would override the clash.
-
-When this didn't work either, I figured out where the guava at runtime is coming from. It turns out that it is kotlin, more specifically the `kotlin-compiler-1.3.70` jar. Now, the problem is that guava is *inside* that jar, so I don't know how to exclude it with gradle.
-
-Has anyone ever experienced something similar and has an idea how to resolve this conflict? It is surprising to me that kotlin even uses such an old and incompatible version. I haven't checked what exactly it is, but it must be at least guava 25.0 or lower.
-## [6][JVM Performance Engineering and Troubleshooting](https://www.reddit.com/r/Kotlin/comments/gn4r90/jvm_performance_engineering_and_troubleshooting/)
-- url: https://blog.gceasy.io/2015/07/17/jvm-performance-engineering-troubleshooting/
+Finally, does Ktor support rendering HTML on the server side with a template language?
+## [7][Get top tracks from last.fm](https://www.reddit.com/r/Kotlin/comments/gnhxsf/get_top_tracks_from_lastfm/)
+- url: https://www.reddit.com/r/Kotlin/comments/gnhxsf/get_top_tracks_from_lastfm/
 ---
+Hey, guys.
 
-## [7][Discord](https://www.reddit.com/r/Kotlin/comments/gmw2xh/discord/)
-- url: https://www.reddit.com/r/Kotlin/comments/gmw2xh/discord/
+I wanted to start learning Kotlin and I created app which lets You generate Your top yearly playlists from [last.fm](https://last.fm) in spotify. Any feedback is appreciated. 
+
+&amp;#x200B;
+
+ [https://github.com/lisu188/spotify-web-api-demo](https://github.com/lisu188/spotify-web-api-demo) 
+
+ [https://spotify-web-api-demo.herokuapp.com/](https://spotify-web-api-demo.herokuapp.com/)
+## [8][Diffing with annotations and Kotlin](https://www.reddit.com/r/Kotlin/comments/gng62u/diffing_with_annotations_and_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/gng62u/diffing_with_annotations_and_kotlin/
 ---
-Does the Discord channel not work?
-## [8][How to avoid "import hell" when your DSL has a large number of extension functions](https://www.reddit.com/r/Kotlin/comments/gmr50a/how_to_avoid_import_hell_when_your_dsl_has_a/)
-- url: https://www.reddit.com/r/Kotlin/comments/gmr50a/how_to_avoid_import_hell_when_your_dsl_has_a/
+I wrote a small project to help with diffing between states in a MVI type setup.
+
+https://github.com/iFanie/Stateful
+
+The processor generates a wrapper and a listener interface for the annotated model. The wrapper invokes the listener only when there is a change in the individual properties of the model.
+
+The listener is very granular, with 4 different functions for each property (new value, old &amp; new value, new model, old &amp; new model), all of which have default implementations to avoid clutter.
+
+This is just a proof of concept at the moment so any and all feedback would be appreciated. Cheers :)
+## [9][Creating an object in Kotlin](https://www.reddit.com/r/Kotlin/comments/gni8ls/creating_an_object_in_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/gni8ls/creating_an_object_in_kotlin/
 ---
-I've been working on a Kotlin web framework called [Kweb](https://kweb.io/), which is designed to allow backend developers to build modern websites with minimal fuss.
+So I come from java and I'm still quite new to Kotlin and have been using it on and off for a few months now. 
 
-Kweb incorporates a DSL which corresponds roughly to various aspects of HTML and JavaScript - and to make this work it relies on a lot of extension functions, you can find an example [here](https://github.com/kwebio/kweb-core/blob/master/src/main/kotlin/kweb/prelude.kt).
+Only recently have I been able to write objects in Kotlin without looking it up on Google. I don't why but it didn't stuck in my head that Kotlin doesn't have the "new" keyword. 
 
-Previously these extension functions were categorized into different packages, but I found that this often required a large number of `import` statements at the top of every file.  Even when these are created automatically by the IDE, I still found it rather unweildy.
+I kept forgetting how to write new objects and it was even to the point that I was getting frustrated because let's be honest, it's not hard at all. 
 
-So I made the decision to move almost all extension functions to the `kweb` package so that they could be imported with a simple `import kweb.*`.
-
-Is this a common pattern, or is there a better way to avoid needing a large number of import statements for extension functions?
-## [9][[Spanish] Online{ it.kt } - Kotlin Remote Latam &lt;3](https://www.reddit.com/r/Kotlin/comments/gmcaka/spanish_online_itkt_kotlin_remote_latam_3/)
-- url: https://www.reddit.com/r/Kotlin/comments/gmcaka/spanish_online_itkt_kotlin_remote_latam_3/
----
-[Kotlin Remote Latam \&lt;3](https://preview.redd.it/kxaxz3acslz41.png?width=1280&amp;format=png&amp;auto=webp&amp;s=89dc1c24bfb3512673d31f96a14f73abfdf36ff3)
-
-We are going to have our first Online{ it.kt } talks, an event with 8 Latam speakers in two days of content.
-
-We are gonna talk about DI, Android, Firebase, Coroutines, Channels and more.
-
-Join us 
-
-[https://www.youtube.com/channel/UC0KbJMASJI0QUohkYYiDtjg](https://www.youtube.com/channel/UC0KbJMASJI0QUohkYYiDtjg)
-
-[https://www.meetup.com/Kotlin-CDMX/events/270719229/](https://www.meetup.com/Kotlin-CDMX/events/270719229/)
-
-[https://www.meetup.com/Kotlin-CDMX/events/270720465/](https://www.meetup.com/Kotlin-CDMX/events/270720465/)
-## [10][Download Files in Kotlin for Android Using Ktor and Intents](https://www.reddit.com/r/Kotlin/comments/gm1a6j/download_files_in_kotlin_for_android_using_ktor/)
-- url: https://spin.atomicobject.com/2020/05/18/android-download-files-kotlin/
+I'm good now but is there anyone else that had this problem?
+## [10][GraalVM 20.1 comes with improved Kotlin coroutine support](https://www.reddit.com/r/Kotlin/comments/gn63sm/graalvm_201_comes_with_improved_kotlin_coroutine/)
+- url: https://medium.com/graalvm/graalvm-20-1-7ce7e89f066b
 ---
 

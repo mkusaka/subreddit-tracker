@@ -39,289 +39,181 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Why won't Heroku run the assets:precompile task (Rails6 + Webpacker)](https://www.reddit.com/r/rails/comments/gn4cpf/why_wont_heroku_run_the_assetsprecompile_task/)
-- url: https://www.reddit.com/r/rails/comments/gn4cpf/why_wont_heroku_run_the_assetsprecompile_task/
+## [3][Any free Rails hosting options that don't use Postgres?](https://www.reddit.com/r/rails/comments/gnwlmf/any_free_rails_hosting_options_that_dont_use/)
+- url: https://www.reddit.com/r/rails/comments/gnwlmf/any_free_rails_hosting_options_that_dont_use/
 ---
-What am I doing wrong? Pulling my hair out here. I was on webpacker 4.2.2 then upgraded to 5.1.1 thinking that was my problem...still no dice. Not much I haven't tried. This isn't a new app but one that I'm migrating to using webpacker. **Thanks for any help!**
-
-In Heroku, the nodejs buildpack is before the ruby buildpack.
-
-Logging: [https://gist.github.com/leesmith/2cc55b46e023f2cc29dbf239bf9401bd](https://gist.github.com/leesmith/2cc55b46e023f2cc29dbf239bf9401bd)
-
-Code: [https://github.com/leesmith/decent\_authentication/tree/tailwind](https://github.com/leesmith/decent_authentication/tree/tailwind)
-
-**Edit:** Suspicion confirmed. Running `heroku run rake -T --app my-app` returns nothing. WTF?
-
-**Edit:** This had nothing to do with Heroku or webpack...I tried to use rubocop in my `Rakefile` and reverted it back to the standard `Rakefile` that you get with a new rails project. :)
-## [4][Database structure for a serialized inventory system](https://www.reddit.com/r/rails/comments/gn770m/database_structure_for_a_serialized_inventory/)
-- url: https://www.reddit.com/r/rails/comments/gn770m/database_structure_for_a_serialized_inventory/
+I simply cannot get Postgres to play ball on Windows 10, and I need a free hosting option for pitching/testing purposes. I know it's far from ideal, but are there any free hosting services that will accept Rails with Sqlite?
+## [4][ActiveJob::SerializationError on create model for uploading](https://www.reddit.com/r/rails/comments/gnwl80/activejobserializationerror_on_create_model_for/)
+- url: https://www.reddit.com/r/rails/comments/gnwl80/activejobserializationerror_on_create_model_for/
 ---
-Hello guys, would appreciate some help structuring my Database correctly. I'm building an inventory system where i need to track the location of every single product. Here's what I have so far:-
+i am trying to do background job for uploading pics ,
 
-    class Product &lt; ApplicationRecord
-      has_many :serial_numbers
-    end
-    
-    class SerialNumber &lt; ApplicationRecord
-      belongs_to :product
-    end
-    
-    class SerializedStockMovement &lt; ApplicationRecord
-      belongs_to :bin
-      belongs_to :document, polymorphic: true # Sales invoice/Stock Adjustment etc
-      belongs_to :serial_number
-    end
-    
-    class Bin &lt; ApplicationRecord
-      has_many :serialized_stock_movements
-    end
+the job something like this:
 
-Every time i wish to add an individual item into a bin,
+```
+  def perform(model, new_image, file)
+    model.meta_gallery.attach(
+          io: new_image, 
+          filename: file.original_filename, 
+          content_type:   file.content_type
+     )
+  end
+```
 
-    SerializedStockMovement.create(
-      bin: @bin,
-      serial_number: @serial_number,
-      quantity: 1
-    )
+what I got is `ActiveJob::SerializationError (Unsupported argument type: Tempfile):`
 
-and to transfer to another bin,
+I called that job in my controller like this:
+```
+ params[:gallery][:files].each do |file|
+      new_image = helpers.upload_resized_image(file.tempfile, 400, 400)
+      UploadJob(@model, new_image, file)
+ end
 
-    SerializedStockMovement.create(
-      bin: @bin_one,
-      serial_number: @serial_number,
-      quantity: -1
-    )
-    
-    SerializedStockMovement.create(
-      bin: @bin_two,
-      serial_number: @serial_number,
-      quantity: 1
-    )
-
-It's working decently, but I just have a feeling that the structure can be better. A few of the problems with the structure currently is
-
-* Quantity is always +1 or -1. Would it be better to be an enum "in" "out"?
-* To get all the serial numbers currently in a bin, i'm having to do some fancy grouping.
-
-&amp;#x200B;
-
-    class Bin &lt; ApplicationRecord 
-      has_many :serial_numbers, -&gt; { 
-         group("serial_numbers.id, serial_numbers.*")
-         .having("sum(serialized_stock_movements.quantity) &gt; 0") 
-      }, through: :serialized_stock_movements
-    end
-
-&amp;#x200B;
-
-* How best can I enforce a validation where the serial number is always only in ONE bin? I know how to do it in rails, but is there a way to enforce it in the DB?  
-
-
-**Edit**  
-Added UML
-
-https://preview.redd.it/dv2zq25jgwz41.png?width=2508&amp;format=png&amp;auto=webp&amp;s=e336e2e835705cd7d0981bba1ff674b50a008719
-## [5][Rails form for, form tag, form with - does anyone else have problems with these?](https://www.reddit.com/r/rails/comments/gn50bx/rails_form_for_form_tag_form_with_does_anyone/)
-- url: https://www.reddit.com/r/rails/comments/gn50bx/rails_form_for_form_tag_form_with_does_anyone/
+```
+I tried to change: file.tempfile.path as well but doesn't work
+does anyone has same issue before like this?
+## [5][Authenticate wordpress users using Devise](https://www.reddit.com/r/rails/comments/gnvfiu/authenticate_wordpress_users_using_devise/)
+- url: https://www.reddit.com/r/rails/comments/gnvfiu/authenticate_wordpress_users_using_devise/
 ---
-Hi guys, beginner developer here.  I was stuck on building my form for HOURS today and I'm just wondering if anyone else has issues.  I ended up resorting to an html form which worked fine in the end, but what I was trying to do was build a form without a model, but that would pass back to a strong params method in my controller.  For the life of me I couldn't get it to work without running into a no method error when I rendered the form again (if the user did not type in the correct input -- it's a question/answer type form).  When the form rendered again, the no method error would trigger because it seems like the form was expecting an instance attribute.  
+I have a Rails API and I'm currently building a wordpress site.  When users sign in on the wordpress site, I'd like to authenticate their credentials using Devise and my Rails API.  Are there any solutions for this type of authentication?  Wordpress offers plugins that utilize [OAuth single sign on](https://wordpress.org/plugins/miniorange-login-with-eve-online-google-facebook/) but I'm not sure how to integrate that with Devise.  
 
-So frustrating :(
-## [6][Tracking and displaying recent posts.](https://www.reddit.com/r/rails/comments/gmziwa/tracking_and_displaying_recent_posts/)
-- url: https://www.reddit.com/r/rails/comments/gmziwa/tracking_and_displaying_recent_posts/
+Any ideas on how to solve this?
+## [6][Give your Rails app a fast GraphQL API without writing any code.](https://www.reddit.com/r/rails/comments/gni988/give_your_rails_app_a_fast_graphql_api_without/)
+- url: https://www.reddit.com/r/rails/comments/gni988/give_your_rails_app_a_fast_graphql_api_without/
 ---
-Working on a (portfolio) site that has a private blog (only admin can create posts). I have most of the app already built, but I'm having a hard time trying to get attention from the main (home) page to the blog since it's not technically a blog site. 
+I run a popular Rails App (on App Engine) it gets significant traffic (movnorth.com). Recently I started introducing React into the frontend and also decided to start using GraphQL in the backend for queries. This started me down a rabbit hole and here is the result.
 
-I'm thinking of just making some (post)cards on the home page and making them live (as opposed to static) and tracking by the three most recent posts do display there. It will only be text displaying the title and a few (2-3) lines of body text. My problem specifically is I'm not sure how to get the cards to display the three most recent blog posts automatically. Is it just a simple post.last callback? with :title and :body attached? Or is there a tougher runaround on this?
-## [7][Devise not hitting database.](https://www.reddit.com/r/rails/comments/gn6e64/devise_not_hitting_database/)
-- url: https://www.reddit.com/r/rails/comments/gn6e64/devise_not_hitting_database/
+I built Super Graph an automatic GraphQL to SQL translator (in GO). Just run it along side your Rails app it will learn your database schema, relationships and allow you to query your database using just simple GraphQL.
+
+Super Graph understands Rails cookies and works with session stores to get the current authenticated users ID. 
+
+Github:
+https://github.com/dosco/super-graph
+
+Documentation:
+https://supergraph.dev/docs/home
+## [7][You must use Bundler 2 or greater with this lockfile](https://www.reddit.com/r/rails/comments/gnr5nk/you_must_use_bundler_2_or_greater_with_this/)
+- url: https://www.reddit.com/r/rails/comments/gnr5nk/you_must_use_bundler_2_or_greater_with_this/
 ---
-Getting some kind of freak incident here, hoping some of you guys can help me figure out where the cycle is breaking.
+I am trying to deploy an application on Linux Debian 9 and I am getting an error  
+`You must use Bundler 2 or greater with this lockfile`  
+`Ruby -v returns ruby 2.6.3p62`  
+`rails -v returns Rails` [`6.0.3.1`](https://6.0.3.1)  
+`which bundle returns /usr/local/rvm/gems/ruby-2.6.3/bin/bundle`  
+`bundle version returns Bundler version 2.1.4 (2020-01-05 commit 32a4159325)`
 
-&amp;#x200B;
+So, I have tried various things such as
 
-`&lt;%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %&gt;`
+1. Updating the bundler gem(gem install bundler -v 2.1.4)
+2. Updating the rubygems Package manager( gem update --system)
+3. Reinstalling bundler gem
 
-  `&lt;%= f.error_notification %&gt;`
-
-&amp;#x200B;
-
-`&lt;div&gt;`
-
-`&lt;%= f.input :email,`
-
-`required: true,`
-
-`autofocus: true,`
-
-`input_html: { autocomplete: "email",`
-
-`class: "blah" } %&gt;`
-
-`&lt;/div&gt;`
-
-&amp;#x200B;
-
-`&lt;div&gt;`
-
-`&lt;div&gt;`
-
-`&lt;%= f.input :password,`
-
-`required: true,`
-
-`hint: ("#{@minimum_password_length} characters minimum" if u/minimum_password_length),`
-
-`input_html: { autocomplete: "new-password",`
-
-`class: "blah" } %&gt;`
-
-&amp;#x200B;
-
-`&lt;div&gt;`
-
-`&lt;label class="block text-gray-700 text-sm font-bold mb-2"&gt;`
-
-`&lt;%= f.input :password_confirmation,`
-
-`required: true,`
-
-`input_html: { autocomplete: "new-password",`
-
-`class: "blah" } %&gt;`
-
-`&lt;/div&gt;`
-
-`&lt;div&gt;`
-
-`&lt;div&gt;`
-
-`&lt;%= f.button :submit, "Sign up", class: "blah" %&gt;`
-
-`&lt;% end %&gt;`
-
-`more closing divs and mumbo jumbo...`
-
-When I submit the form, the db/terminal reflect the transaction, but it loops back around with this:
-
-`Started GET "/users/sign_up?authenticity_token=Yfj0DZUtHHTk7LqhctXttGIsGUD0MHEyANKMXkaMaPKcNuFt6rKgRrZbJc2KFkwL%2B7fW0Re9%2F529uat1MwNXMg%3D%3D&amp;user%5Bemail%5D=jsmitty%`[`40email.com`](https://40email.com)`&amp;user%5Bpassword%5D=[FILTERED]&amp;user%5Bpassword_confirmation%5D=[FILTERED]&amp;commit=Sign+up" for ::1 at 2020-05-20 02:37:05 -0400`
-
-`Processing by Devise::RegistrationsController#new as HTML`
-
-  `Parameters: {"authenticity_token"=&gt;"Yfj0DZUtHHTk7LqhctXttGIsGUD0MHEyANKMXkaMaPKcNuFt6rKgRrZbJc2KFkwL+7fW0Re9/529uat1MwNXMg==", "user"=&gt;{"email"=&gt;`[`"jsmitty@email.com`](mailto:"jsmitty@email.com)`", "password"=&gt;"[FILTERED]", "password_confirmation"=&gt;"[FILTERED]"}, "commit"=&gt;"Sign up"}`
-
-  `Rendering devise/registrations/new.html.erb within layouts/application`
-
-  `Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.0ms | Allocations: 6465)`
-
-`[Webpacker] Everything's up-to-date. Nothing to do`
-
-  `Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 53)`
-
-  `Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)`
-
-`Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.0ms | Allocations: 11351)`
-
-&amp;#x200B;
-
-I can't for the life of me figure out where this is going wrong. App already has a root route, I already tried manually redirecting to root route. I already tried the helpers (explicitly stating the user relations in the resource tag at the beginnig) but nothing seems to get the form through. I also tried manually creating the user via rails console, that worked. But I'm having much the same issue with the login bit as well. It just loops back around as I see it. The only thing that seems a little off on this app as opposed to the other apps that I've used devise on is a db:migration I ran for active text that ended up running an active storage bit that I don't understand. I'm assuming it's for file upload, as would be expected from a rich text editor. I don't see how that would have anything to do with the users though.
-## [8][Help understanding if my transaction is nested.](https://www.reddit.com/r/rails/comments/gmtoig/help_understanding_if_my_transaction_is_nested/)
-- url: https://www.reddit.com/r/rails/comments/gmtoig/help_understanding_if_my_transaction_is_nested/
+but they dont seem to work and  everytime I try to work it throws the same error.  
+Anyone who has been facing the same error and could help?
+## [8][Image upload.](https://www.reddit.com/r/rails/comments/gnkn0e/image_upload/)
+- url: https://www.reddit.com/r/rails/comments/gnkn0e/image_upload/
 ---
-I was following [https://api.rubyonrails.org/classes/ActiveRecord/Transactions/ClassMethods.html](https://api.rubyonrails.org/classes/ActiveRecord/Transactions/ClassMethods.html) documentation and came across the below example
+Hit a block here. I've handled image uploading before via action text, but not as an element in a db that I can call back. Wondering, would I just add the params/permit and migration into the post table? If so, what would be the syntax for the migration? And as far as views go, it's pretty straight forward via simple\_for &amp; a framework right?
 
-    Account.transaction do
-      balance.save!
-      account.save!
+It's for a post/index page which will have a title/description linking to a full post. Hoping I can get a db-driven image since I don't want them all to have a static image. Will be 1 square image per post for the card.
+## [9][Rolify and many-to-many relationships](https://www.reddit.com/r/rails/comments/gnov33/rolify_and_manytomany_relationships/)
+- url: https://www.reddit.com/r/rails/comments/gnov33/rolify_and_manytomany_relationships/
+---
+Let's say I'm building an app that models court cases. I have a `Case` model and a `User` model for authentication. I then use Rolify to assign different roles to `Users`, `Plaintiff`, `Defendant`, `Judge`, `Counsel` , and so on. These roles determine what CRUD actions users can take on `Cases`.
+
+What is the best way to get all `Cases` for a `Judge`? I don't think I can use Rolify to set up those many-to-many relationships.
+
+Thanks in advance!
+## [10][Question: How do you organize code in your Rails app?](https://www.reddit.com/r/rails/comments/gnbukt/question_how_do_you_organize_code_in_your_rails/)
+- url: https://www.reddit.com/r/rails/comments/gnbukt/question_how_do_you_organize_code_in_your_rails/
+---
+One thing I constantly stuggle is the problem where my code should live and how the thing that holds it should be named. Rails out of the box doesn't help you much with that so patterns emerge that help to organize things. 
+
+Here's some obvious patterns that most Rails apps have:
+
+**Service Objects** You initialize service object and it has a single public method like `run` or `execute`. So you send it some input and it just does things. It may change the state of the database, send emails, etc. Generally returns true/false. Example:
+
+    class FooService
+      def initialize(foo:)
+        @foo = foo
+      end
+  
+      def run
+        do_things_to(@foo)
+      end
     end
 
-And from that link and this [https://makandracards.com/makandra/42885-nested-activerecord-transaction-pitfalls](https://makandracards.com/makandra/42885-nested-activerecord-transaction-pitfalls) I realize that nested transactions is part of the parent transaction and calling a rollback on the nested transaction doesn't propagate to the parent.   
-Also, that save!, update\_attributes! creates its own transaction and hence making it a nested transaction. 
+**Presenters** Like a view helper, but used specifically to present objects in the views. Example:
 
-My code looks something like this, 
-
-          ActiveRecord::Base.transaction do
-            # destroy an related object (must be rolled back if below updates fail)
-            Book.update_attributes!(params)
-            Author.update_attributes!(params[nscname])
-          end
-
-and I write tests like so
-
-    it "should not destroy related object if Book update fails"
-      Book.any_instance.stubs(update_attributes!).raises(some_exception)
-      assert related object is not deleted
+    class FooPresenter
+      def initialize(object)
+        @foo = object
+      end
+  
+      def avatar
+        image_tag(@foo.avatar)
+      end
     end
 
-Now my problems are, as per my understanding the Book.update\_attributes! runs in a separate transaction and hence it would not rollback the related object, but it turns out it does and the tests succeed.
+**Decorators** I think the idea is that methods from this class are mixed into object that is passed in. Honestly, I've been treating decorators like pseudo presenters that are not used in the views. For example: `FooDecorator.new(foo).some_method_inside_decorator_class`. It's clearly not a decorator pattern but it's not really a presenter in a sense that it will provide outputs to be rendered on the screen. What should it be really called?
 
-I have a few questions, 
+**Form Objects** To deal with complicated logic about handling certain forms. 99% of the time you'd just handle record validation and saving from the controller, but sometimes things get hairy so you'd do something like this:
 
-1. Should I include requires\_new: true in the transaction?
-2. Will the entire transaction rolled back in case book update fails, author update fails. Will this code lead to an invalid state?
-## [9][Error to set up GCP active storage to be public](https://www.reddit.com/r/rails/comments/gn3orn/error_to_set_up_gcp_active_storage_to_be_public/)
-- url: https://www.reddit.com/r/rails/comments/gn3orn/error_to_set_up_gcp_active_storage_to_be_public/
----
-I active the public Access for GCP on Storage.yml  to be true 
-When I tried to upload my file into my Rails app
-I got error "ArgumentError (unknown keyword :public)"
-
-How do you set public Access for active storage in GCP?
-## [10][belongs_to &amp; has_many - do you really need both?](https://www.reddit.com/r/rails/comments/gmnmt6/belongs_to_has_many_do_you_really_need_both/)
-- url: https://www.reddit.com/r/rails/comments/gmnmt6/belongs_to_has_many_do_you_really_need_both/
----
-I am following a training example with microposts and users, and it says you need belongs\_to and has\_many. Is that not duplication? What happens if you only have one and not the other?
-## [11][Friendly-id and a bug with the sequence of a title with two words](https://www.reddit.com/r/rails/comments/gmlktq/friendlyid_and_a_bug_with_the_sequence_of_a_title/)
-- url: https://www.reddit.com/r/rails/comments/gmlktq/friendlyid_and_a_bug_with_the_sequence_of_a_title/
----
-Following the tips of the author's gem (soruce: [https://github.com/norman/friendly\_id/issues/480](https://github.com/norman/friendly_id/issues/480)), I added a title\_and\_sequence like this
-
-     extend FriendlyId   
-     friendly_id :slug_candidates, use: [:slugged, :finders]
-    
-     def slug_candidates
-         [:title, :title_and_sequence] end def title_and_sequence
-         slug = title.to_param
-         sequence = Book.where("slug LIKE '#{slug}--%'").count + 2
-     "#{slug}--#{sequence}"
-     end
-
-but I noted that there is a bug. If I use as title "one", it works correctly
-
-    /books/one 
-    /books/one-2 
-    /books/one-3 
-    /books/one-4 etc.
-
-But if I use a title with two words, for example "one two" I have a "bug" after the second result.
-
-    /books/one-two 
-    /books/one-two-2 
-    /books/one-two-5j12-123j-afu4-jasdk 
-    /books/one-two-9as6-k273-ewu1-87srt 
-    etc.
-
-**Do you have any idea about how to solve it?**
-## [12][Explicitly rollback a transaction in a controller method and render a response as well.](https://www.reddit.com/r/rails/comments/gmqm8z/explicitly_rollback_a_transaction_in_a_controller/)
-- url: https://www.reddit.com/r/rails/comments/gmqm8z/explicitly_rollback_a_transaction_in_a_controller/
----
-I have an update action like so, 
-
-    def update
-       ActiveRecord::Base.transaction do
-        # destroy an item
-        result = call to an external method that returns false if an exception is raised
-        unless result
-          raise ActiveRecord::RollBack
+    class FooForm
+      include ActiveModel::Model
+      attr_accessor :bar
+  
+      def save
+        if valid?
+          save_something
+        else
+          add_some_errors
+          false
         end
-        # method that raises exception on update, not false
-      end
-      rescue
-          # render_errors
-          # same in case of rollback or any other exception
       end
     end
 
-My problem, if the result is false then the transaction is rolled back but the rescue block isn't called and hence I do not get the required HTTP code and message. In case it failed because of any other exception the rescue block is hit and all is well. 
+and in the controller you'd have
 
-Could you please help me figure out how I can raise a rollback and handle that exception to call render\_errors as well.
+    @foo_form = FooForm.new(account_claim_form_params)
+    if @foo_form.save
+      flash[:success] = "Yey"
+      redirect_to path
+    else
+      flash[:error] = "Boo!"
+      render :new
+    end
+
+I also have things like `pdf_generators`, `csv_exporters`. Just organizing code based on what it does. 
+
+Now, there are some things I have no idea how to classify. For example:
+
+- There's a class that digs through yaml file. It initializes with some inputs and then has a pile of public methods you can call. It's not a service and not really a model since it has absolutely nothing to do with database.
+- There's a class that figures out "next work day". You feed it a date and with `increment_by(n)` if will give you next work date. What is this thing? I lives in our services right now, but it's clearly doesn't belong there. How would you classify this?
+- I have a ton of view helpers that have methods like `project_category_options_for_select`. It doesn't feel right to have them in global view helpers. Is this a presenter/decorator... or something else?
+  
+I'm working with Rails apps for ages now, but organizing code is literally the hardest thing that I ahve to deal with.
+## [11][Find the first submitted form record](https://www.reddit.com/r/rails/comments/gng8sg/find_the_first_submitted_form_record/)
+- url: https://www.reddit.com/r/rails/comments/gng8sg/find_the_first_submitted_form_record/
+---
+Hi all, I have a db table that stores records of my form when the status changes.  I am currently getting data like this in a service
+
+\[    {form\_id: 1, status: 0, created\_at: date form was created},   {form\_id: 1, status: 4, created\_at: first submitted date}, //record i want   {form\_id: 1, status: 2, created\_at: date form was returned},   {form\_id: 1, status: 4, created\_at: date form was resubmitted},   {form\_id: 2, status: 0, created\_at: date form was created},   {form\_id: 2, status: 4, created\_at: first submitted date}, //record i want   {form\_id: 2, status: 2, created\_at: date form was returned},   {form\_id: 2, status: 4, created\_at: date form was resubmitted},   {form\_id: 3, status: 0, created\_at: date form was created},   {form\_id: 3, status: 4, created\_at: first submitted date}, //record i want   {form\_id: 3, status: 2, created\_at: date form was returned},   {form\_id: 3, status: 4, created\_at: date form was resubmitted},   \]
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+I've commented the records I want to grab, the first submitted record where status = 0 and the oldest date
+
+&amp;#x200B;
+
+edit:
+
+FormHistoryRecord.where(status: 4).order(:form\_id, :created\_at).uniq{|a| a.form\_id }  seems to work
+## [12][Integrating Ckeditor per user](https://www.reddit.com/r/rails/comments/gnhz9y/integrating_ckeditor_per_user/)
+- url: https://www.reddit.com/r/rails/comments/gnhz9y/integrating_ckeditor_per_user/
+---
+Can anyone help me out getting Ckeditor setup so that each user that uploads photos will only see their photos and not every photo uploaded by everyone?
+
+I am using this gem  [https://github.com/galetahub/ckeditor](https://github.com/galetahub/ckeditor)

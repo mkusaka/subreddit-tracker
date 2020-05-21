@@ -52,7 +52,7 @@ Event | Location | Original Dates | Status | Current Dates
 Location | Original Dates | Status | New Dates
 -|-|-|-
 [Varna, Bulgaria](https://wg21.link/N4837) | 06-01 to 06-06 | [Cancelled](https://herbsutter.com/2020/03/13/the-varna-iso-c-meeting-is-postponed) | 
-[JFK Airport, New York](https://wg21.link/N4848) |  11-09 to 11-14 | No Date Changes Yet |
+[JFK Airport, New York](https://wg21.link/N4848) |  11-09 to 11-14 | [Cancelled](https://herbsutter.com/2020/05/20/the-new-york-iso-c-meeting-is-postponed) |
 
 # 2020 C++ User Groups
 
@@ -125,15 +125,49 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Ray Tracing in one Weekend with SYCL](https://www.reddit.com/r/cpp/comments/gn7mqb/ray_tracing_in_one_weekend_with_sycl/)
+## [3][The New York November 2020 ISO C++ meeting is Postponed](https://www.reddit.com/r/cpp/comments/gns65b/the_new_york_november_2020_iso_c_meeting_is/)
+- url: https://herbsutter.com/2020/05/20/the-new-york-iso-c-meeting-is-postponed/
+---
+
+## [4][C++ proposal dismisses backward compatibility](https://www.reddit.com/r/cpp/comments/gnw1pa/c_proposal_dismisses_backward_compatibility/)
+- url: https://www.infoworld.com/article/3535795/c-plus-plus-proposal-dismisses-backward-compatibility.html
+---
+
+## [5][CppCheck: A million downloads](https://www.reddit.com/r/cpp/comments/gnfq99/cppcheck_a_million_downloads/)
+- url: https://sourceforge.net/p/cppcheck/news/2020/05/a-million-downloads/
+---
+
+## [6][Adventures in returning value-dependent type](https://www.reddit.com/r/cpp/comments/gnif4y/adventures_in_returning_valuedependent_type/)
+- url: https://dev.krzaq.cc/post/adventures-in-returning-value-dependent-type/
+---
+
+## [7][IDEs and Text Editors for Writing C++ Code on a Large Scale](https://www.reddit.com/r/cpp/comments/gnaoop/ides_and_text_editors_for_writing_c_code_on_a/)
+- url: https://pspdfkit.com/blog/2020/ide-text-editors-cpp-large-scale/
+---
+
+## [8][Ray Tracing in one Weekend with SYCL](https://www.reddit.com/r/cpp/comments/gn7mqb/ray_tracing_in_one_weekend_with_sycl/)
 - url: https://www.reddit.com/r/cpp/comments/gn7mqb/ray_tracing_in_one_weekend_with_sycl/
 ---
 This is part 1 of a 2 part [blog post](https://www.codeplay.com/portal/05-19-20-ray-tracing-in-a-weekend-with-sycl-basic-sphere-tracing) on using SYCL to accelerate some parts of the well known "Ray Tracing in one weekend" code.
-## [4][Visual Studio 2019 version 16.7 Preview 1 released, including 64bit AddressSanitizer](https://www.reddit.com/r/cpp/comments/gmwrpe/visual_studio_2019_version_167_preview_1_released/)
+## [9][GCC/Clang compiler warnings you enable in your project](https://www.reddit.com/r/cpp/comments/gnhmhh/gccclang_compiler_warnings_you_enable_in_your/)
+- url: https://www.reddit.com/r/cpp/comments/gnhmhh/gccclang_compiler_warnings_you_enable_in_your/
+---
+I am an embedded C and C++ dev. Recently I enabled -Wconversion and -Wsign-conversion in my project and it just forced me to write correct low-level code (ofc I use -Werror ;) ) which I wouldn't have done otherwise. I felt bad that I did not enable them all along.
+
+And when I went to the warnings page of  GCC &amp; Clang, there was a huge list of warnings. Definitely I don't want to enable each and every one of them.
+
+For now, these are the list of warnings I have enabled in my project - 
+
+&gt;\-Werror -Wall -Wextra -pedantic-errors -Wconversion -Wsign-conversion
+
+Now my question to the community. What all **compiler warnings** do you enable in your day to day job/ hobby project? Which of them is a must have for all C++ devs in your opinion?
+
+P.S: Feel free to add your story on how it helped you catch a bug early on in your project. :)
+## [10][Visual Studio 2019 version 16.7 Preview 1 released, including 64bit AddressSanitizer](https://www.reddit.com/r/cpp/comments/gmwrpe/visual_studio_2019_version_167_preview_1_released/)
 - url: https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes-preview#16.7.0-pre.1.0
 ---
 
-## [5][MSVC finds (unrelated) friend function template, whereas gcc and clang don't?](https://www.reddit.com/r/cpp/comments/gn8i83/msvc_finds_unrelated_friend_function_template/)
+## [11][MSVC finds (unrelated) friend function template, whereas gcc and clang don't?](https://www.reddit.com/r/cpp/comments/gn8i83/msvc_finds_unrelated_friend_function_template/)
 - url: https://www.reddit.com/r/cpp/comments/gn8i83/msvc_finds_unrelated_friend_function_template/
 ---
 Reproduce [https://godbolt.org/z/eFavH7](https://godbolt.org/z/eFavH7)
@@ -141,11 +175,7 @@ Reproduce [https://godbolt.org/z/eFavH7](https://godbolt.org/z/eFavH7)
 Guys, can you please help me with this. Is it standard behaviour or implementation defined or I am doing something wrong?
 
 UPDATE: Do I understand correctly that friend functions placed in some special scope, so they are not visible from anywhere except by ADL? Is it described somewhere in standard (sorry I am fairly new to this)?
-## [6][IDEs and Text Editors for Writing C++ Code on a Large Scale](https://www.reddit.com/r/cpp/comments/gnaoop/ides_and_text_editors_for_writing_c_code_on_a/)
-- url: https://pspdfkit.com/blog/2020/ide-text-editors-cpp-large-scale/
----
-
-## [7][The Darkest Pipeline (TDP): A C++17 library for building multi-threaded software pipelines](https://www.reddit.com/r/cpp/comments/gmvlmu/the_darkest_pipeline_tdp_a_c17_library_for/)
+## [12][The Darkest Pipeline (TDP): A C++17 library for building multi-threaded software pipelines](https://www.reddit.com/r/cpp/comments/gmvlmu/the_darkest_pipeline_tdp_a_c17_library_for/)
 - url: https://www.reddit.com/r/cpp/comments/gmvlmu/the_darkest_pipeline_tdp_a_c17_library_for/
 ---
 Hello fellow redditors, 
@@ -186,23 +216,3 @@ This type of pipeline executes `read_str` without user input, processes it, then
 The library still needs a couple of additions to become feature-complete, but it's usable in its current state. The [examples](https://github.com/JoelFilho/TDP/tree/master/examples) should give an idea of the range of the current features.
 
 As always, I'd love to hear your feedback.
-## [8][Numeric Range Algorithms for C++20](https://www.reddit.com/r/cpp/comments/gmym7c/numeric_range_algorithms_for_c20/)
-- url: https://tristanbrindle.com/posts/numeric-ranges-for-cpp20
----
-
-## [9][Long walk-through of an Entity Component System that focuses on Data Locality](https://www.reddit.com/r/cpp/comments/gmx91v/long_walkthrough_of_an_entity_component_system/)
-- url: https://indiegamedev.net/2020/05/19/an-entity-component-system-with-data-locality-in-cpp/
----
-
-## [10][P0468R1: Smart Pointer. Anyone has track of if/why this proposal has been shelved?](https://www.reddit.com/r/cpp/comments/gmuip8/p0468r1_smart_pointer_anyone_has_track_of_ifwhy/)
-- url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p0468r1.html
----
-
-## [11][Revisiting the postcard pathtracer with CUDA and Optix](https://www.reddit.com/r/cpp/comments/gmm76o/revisiting_the_postcard_pathtracer_with_cuda_and/)
-- url: https://fabiensanglard.net/revisiting_the_pathtracer/index.html
----
-
-## [12][Adding anyref support in a C++ to WebAssembly compiler](https://www.reddit.com/r/cpp/comments/gmn7ce/adding_anyref_support_in_a_c_to_webassembly/)
-- url: https://medium.com/leaningtech/adding-anyref-support-in-a-c-to-webassembly-compiler-2bba3fac707f
----
-

@@ -1,83 +1,65 @@
 # golang
-## [1][Speeding up JSON processing in go](https://www.reddit.com/r/golang/comments/gn45jq/speeding_up_json_processing_in_go/)
-- url: https://klotzandrew.com/blog/speeding-up-json-processing-in-go
+## [1][Three bugs in the Go MySQL Driver](https://www.reddit.com/r/golang/comments/gnm94y/three_bugs_in_the_go_mysql_driver/)
+- url: https://github.blog/2020-05-20-three-bugs-in-the-go-mysql-driver/
 ---
 
-## [2][A complete Terraform setup of a serverless application on Google Cloud Run and Firebase](https://www.reddit.com/r/golang/comments/gnar3n/a_complete_terraform_setup_of_a_serverless/)
+## [2][Run Go code as a Unix pipeline command](https://www.reddit.com/r/golang/comments/gntehs/run_go_code_as_a_unix_pipeline_command/)
+- url: https://github.com/reugn/packer
+---
+
+## [3][overlapping interfaces (Go 1.14)](https://www.reddit.com/r/golang/comments/gnrsfg/overlapping_interfaces_go_114/)
+- url: https://youtu.be/09Hg4Hmdvjo
+---
+
+## [4][Sendsquare Is the Main Operator of S.Korean Gov’s SW Engineering On-Site Application Support Program](https://www.reddit.com/r/golang/comments/gnuqvx/sendsquare_is_the_main_operator_of_skorean_govs/)
+- url: https://medium.com/fleta-first-chain/sendsquare-is-the-main-operator-of-s-korean-c147b95677e3
+---
+
+## [5][Want to learn either golang or python](https://www.reddit.com/r/golang/comments/gnw1po/want_to_learn_either_golang_or_python/)
+- url: https://www.reddit.com/r/golang/comments/gnw1po/want_to_learn_either_golang_or_python/
+---
+I couldn't decide. GoLang is new and heard its fast since its compiled. On the other hand, Python is very popular and is in demand right now. Google Trends show 90% for python and 5% for GoLang. I know python is a general purpose programming language, while GoLang is suited for system programming. Pls help me decide which one should I learn. I am a Javascript full stack developer and would like to strengthen my resume...
+## [6][A complete Terraform setup of a serverless application on Google Cloud Run and Firebase](https://www.reddit.com/r/golang/comments/gnar3n/a_complete_terraform_setup_of_a_serverless/)
 - url: https://threedots.tech/post/complete-setup-of-serverless-application/
 ---
 
-## [3][I built a reddit image downloader in Go. This is my first project using Golang](https://www.reddit.com/r/golang/comments/gn74r2/i_built_a_reddit_image_downloader_in_go_this_is/)
-- url: https://www.reddit.com/r/golang/comments/gn74r2/i_built_a_reddit_image_downloader_in_go_this_is/
----
-Please review my code.
-
-[https://github.com/axiiomatic/reddit-downloader](https://github.com/axiiomatic/reddit-downloader)
-## [4][Build a Microservice with Go and GoLand](https://www.reddit.com/r/golang/comments/gmuey6/build_a_microservice_with_go_and_goland/)
-- url: https://youtu.be/arZiFSerU1k
+## [7][Golang course - lesson 1](https://www.reddit.com/r/golang/comments/gnus2m/golang_course_lesson_1/)
+- url: https://www.blog.duomly.com/golang-course-with-building-a-fintech-banking-app-lesson-1-start-the-project/
 ---
 
-## [5][How I Structure Web Servers in Go](https://www.reddit.com/r/golang/comments/gnb3ih/how_i_structure_web_servers_in_go/)
-- url: https://www.dudley.codes/posts/2020.05.19-golang-structure-web-servers/
+## [8][Yet Another CLi Spinner for Go: yacspin](https://www.reddit.com/r/golang/comments/gngoq6/yet_another_cli_spinner_for_go_yacspin/)
+- url: https://www.reddit.com/r/golang/comments/gngoq6/yet_another_cli_spinner_for_go_yacspin/
+---
+Hey Gophers!
+
+A few months back I had a need for a commandline spinner, to provide some useful feedback for a tool I was writing. I tried to use the most popular spinner that we have in our ecosystem and I ran in to a few challenges. I initially thought about enhancing that package, but it would have required substantial breaking changes.
+
+That ultimately took me down the path of writing my own, to experiment with a new API and implementation. I haven't had many ideas on what to add in the past few months, and am happy with the result so far, so I thought it might be good to share with you:
+
+- https://github.com/theckman/yacspin
+
+There are a few major differences from the other spinners we have in our ecosystem:
+
+* It's safe for concurrent use (updating content while spinner is running)
+* The ability to update the text in the spinner isn't tied to the animation
+  * This means you don't need to trade animation aesthetics to have live-updating info
+* Success and Failure results, that can use different final characters and message colors
+* The spinner dynamically indents any text you specify to the maximum animation size
+  * That way any text in your spinner doesn't shift back and forth as the spinner animates
+* The ability to pause the animation so you can update a few properties at once, and make them appear atomic to the user
+
+I've detailed quite a few of these in the `README.md` file, and even have gifs that compare the behaviors to other spinners if you're interested.
+
+This seems to work as expected on Mac, Linux, and Windows. If you run in to any issues, or have any ideas for additions or changes, [please raise an issue](https://github.com/theckman/yacspin/issues/new)! Likewise, happy to review and accept contributions you raise.
+
+I hope some of you find this useful, and are staying safe out there.
+
+Cheers!
+## [9][AWS Secrets Manager Alternative Without Limits: Vault From HashiCorp](https://www.reddit.com/r/golang/comments/gnsyzz/aws_secrets_manager_alternative_without_limits/)
+- url: http://selleoblogone.xyz
 ---
 
-## [6][I made a super simple Gmail filter organizer tool with Go!](https://www.reddit.com/r/golang/comments/gnapgh/i_made_a_super_simple_gmail_filter_organizer_tool/)
-- url: https://www.reddit.com/r/golang/comments/gnapgh/i_made_a_super_simple_gmail_filter_organizer_tool/
----
-I was looking through Gmail a few days back and realized that I had created so many filters for my many different labels. Most of them had a really common criteria: FROM &lt;email&gt;, ARCHIVE it, then ADD a given label. 
-
-I had nearly 20 filters created just to add a set of different emails to a label for my school work - and that was just for one label. I dreaded the thought of trying to manage and sort through them manually. So, in programmer fashion, I decided to hack together a quick and simple CLI tool that would authenticate a Gmail account and then proceed to clean up the filters list.
-
-Essentially, the tool will look through all the available filters, find the ones that match the criteria outlined above, and then re-organize the filters by deleting all of them and creating a single large filter to assign a set of emails to a given label. 
-
-I tested it out on my own email account and managed to reduce the number of filters from 172 to 63! 
-
-The Github repository is [here.](https://github.com/woojiahao/gmail-filter-organiser) If you do want to try it out, please export a copy of your existing filters first - you can do so by following [this guide.](https://www.lifewire.com/how-to-save-export-and-back-up-gmail-filters-1172109)
-
-I hope that someone is able to find this useful! Any feedback is much appreciated, this is my third project using Go and my experience with Go has been fantastic so far :)
-## [7][Create repeatable byte array of Go struct which contains a pointer](https://www.reddit.com/r/golang/comments/gn8wmt/create_repeatable_byte_array_of_go_struct_which/)
-- url: https://www.reddit.com/r/golang/comments/gn8wmt/create_repeatable_byte_array_of_go_struct_which/
----
-I want to be able to create repeatable byte arrays of structs in Go so I can hash them and then verify that hash at some point.
-
-I am currently following this simple approach to create a byte array from a struct with: 
-
-        []byte(fmt.Sprintf("%v", struct))...)
-
-This works perfectly until my struct holds an embedded struct with a pointer, for example:
-
-        type testEmbeddedPointerStruct struct {
-        	T *testSimpleStruct
-        }
-
-In my tests this creates a different byte array each time, I think it may be because with the pointer the address in memory changes each time?
-
-Is there a way of creating a repeatable byte array digest even if the struct holds a pointer?
-
-Thanks
-## [8][Beginner-Intermediate level Golang projects](https://www.reddit.com/r/golang/comments/gmvw0m/beginnerintermediate_level_golang_projects/)
-- url: https://www.reddit.com/r/golang/comments/gmvw0m/beginnerintermediate_level_golang_projects/
----
-I have been working with Go for the past 2 months and I am looking for project ideas to do something a little more advanced than to-do applications in golang. Please recommend some projects ideas to work on from scratch. The things I have worked on, mostly reside in one file, so I have only worked on simple cli's etc.
-
-I must say, I am a little afraid to take up advanced projects, probably because I have a habit of giving up on them if the project seems too difficult :/
-## [9][CLI based stock tracker / graph visualizer written in Go](https://www.reddit.com/r/golang/comments/gmm8f1/cli_based_stock_tracker_graph_visualizer_written/)
-- url: https://github.com/ericm/stonks
+## [10][In memory key/value store using gRPC](https://www.reddit.com/r/golang/comments/gnksp8/in_memory_keyvalue_store_using_grpc/)
+- url: https://github.com/knrt10/gRPC-cache
 ---
 
-## [10][Parsing HTML fragments with Go](https://www.reddit.com/r/golang/comments/gnagbp/parsing_html_fragments_with_go/)
-- url: https://www.reddit.com/r/golang/comments/gnagbp/parsing_html_fragments_with_go/
----
-Hello,
-
-The other day, I tried to use [x/net/html](https://godoc.org/golang.org/x/net/html) to create a small web scraper. I struggled quite a bit with fragment parsing for my unit tests, and figured I might not be the only one.
-
-Quick, off the top of your head: what HTML nodes will the following produce?`html.Parse(strings.NewReader("&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;/tr")`If (like me!) you thought
-
-    &lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;/tr&gt;
-
-Then, you're wrong :)
-
-It took me a while to understand why it does not work like that (spoiler: it is not a bug in the parser), and I made a little blog post, where I explain how I managed to solve my problem and what it taught me about the HTML spec.
-
-Feel free to [check it out](https://nikodoko.com/posts/html-table-parsing/)!

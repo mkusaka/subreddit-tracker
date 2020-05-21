@@ -31,87 +31,77 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][How do you handle the Play Store app destroying screenshot quality?](https://www.reddit.com/r/androiddev/comments/gn4g9h/how_do_you_handle_the_play_store_app_destroying/)
-- url: https://www.reddit.com/r/androiddev/comments/gn4g9h/how_do_you_handle_the_play_store_app_destroying/
----
-When viewing the screenshots for one of my apps via the Google Play app, the screenshots displayed are compressed and super low quality. When viewing the Play app store page via a desktop web browser, they look high res.
-
-I've tried several suggestions, including: 
-- Trying JPEG's and PNG's 
-- Using images with lower dimensions and higher dimensions 
-- Compressing the images myself to reduce their file size
-
-None of these really make a difference, and Google still seems to compress them pretty heavily (i.e. if I compress them myself, Google just compresses them more to make them even worse). Thanks!
-## [4][I feel like this applies to any development. Really insightful.](https://www.reddit.com/r/androiddev/comments/gn20s5/i_feel_like_this_applies_to_any_development/)
-- url: https://www.youtube.com/watch?v=UvCri1tqIxQ
+## [3][“Postmortem: How I got banned from /r/androiddev for being ‘too’ active as a member of the Community” by Gabor Varadi](https://www.reddit.com/r/androiddev/comments/gnv79i/postmortem_how_i_got_banned_from_randroiddev_for/)
+- url: https://link.medium.com/IO2y8v1qF6
 ---
 
-## [5]["Clean Dagger - A pragmatic guide to dependency injection on Android" - what do you think? Do you also use this approach in your applications?](https://www.reddit.com/r/androiddev/comments/gn8spj/clean_dagger_a_pragmatic_guide_to_dependency/)
+## [4][Introducing Gryphon, the Swift to Kotlin translator](https://www.reddit.com/r/androiddev/comments/gnm5da/introducing_gryphon_the_swift_to_kotlin_translator/)
+- url: https://www.reddit.com/r/androiddev/comments/gnm5da/introducing_gryphon_the_swift_to_kotlin_translator/
+---
+Hi all, I’ve just published the first full version Gryphon, a program that translates Swift code into Kotlin code. It is meant to let developers share their iOS app's code with Android.
+
+I encourage anyone interested to [check out the video](https://twitter.com/gryphonblog/status/1263233844519620610?s=20) and [the website](https://vinivendra.github.io/Gryphon/index.html).
+
+This is the first version where all features are working:
+
+* The generated Kotlin code works the same as the Swift code it came from, no edits needed. There’s an automated test that makes Gryphon translate its own source code, with around 12k lines, and ensures the translation passes all the same tests as the original executable.
+* There’s a templates system that’s used to automatically translate many standard library types and methods.
+* Xcode integration, with Xcode showing any warnings or errors raised by the Kotlin compiler next to the Swift lines that originated them, so users can fix them at the source.
+* The output code is readable, which is useful for minimizing the risks for new users. If Gryphon isn’t the right fit for them, they’re left with a Kotlin codebase they can keep maintaining.
+
+This list of features isn’t to say [there aren’t any bugs](https://github.com/vinivendra/Gryphon/issues), of course - I’m doing my best to keep track of them and fix them on a daily basis.
+
+Any questions, comments, or feedback in general is welcome!
+## [5][Multiple navigation graphs (with bottom navigation bar)](https://www.reddit.com/r/androiddev/comments/gnipdq/multiple_navigation_graphs_with_bottom_navigation/)
+- url: https://www.rockandnull.com/jetpack-navigation-bottom-navigation-view/
+---
+
+## [6][Customize text for app share.](https://www.reddit.com/r/androiddev/comments/gnuu56/customize_text_for_app_share/)
+- url: https://www.reddit.com/r/androiddev/comments/gnuu56/customize_text_for_app_share/
+---
+I added my app to the group of the apps that appears on the share menu, so I can get data from orhers app.  
+Now how can I customize the text below. For example for Reddit it says: "Post on Reddit".
+## [7][Kotlin Extension function to chain ConstraintLayout animations with TransitionManager](https://www.reddit.com/r/androiddev/comments/gnu92q/kotlin_extension_function_to_chain/)
+- url: https://www.reddit.com/r/androiddev/comments/gnu92q/kotlin_extension_function_to_chain/
+---
+So this basically just runs one Transition after the previous one ends, useful where you want to chain several ConstraintLayout Transitions one after another. As there was no "true" built-in method to do this, I decided to create a small extension function for it. 
+
+&amp;#x200B;
+
+PS: TransitionSet with the SEQUENTIAL option didn't work for me
+
+&amp;#x200B;
+
+[https://gist.github.com/DDihanov/6624925ced3b4db6f4ce6cbe1704a891](https://gist.github.com/DDihanov/6624925ced3b4db6f4ce6cbe1704a891)
+## [8][Coroutines &amp; Patterns for work that shouldn’t be cancelled](https://www.reddit.com/r/androiddev/comments/gntqtr/coroutines_patterns_for_work_that_shouldnt_be/)
+- url: https://medium.com/androiddevelopers/coroutines-patterns-for-work-that-shouldnt-be-cancelled-e26c40f142ad
+---
+
+## [9][How important is familiarity with Gradle as a skill for an Android developer?](https://www.reddit.com/r/androiddev/comments/gnm5k4/how_important_is_familiarity_with_gradle_as_a/)
+- url: https://www.reddit.com/r/androiddev/comments/gnm5k4/how_important_is_familiarity_with_gradle_as_a/
+---
+I understand that Gradle helps automate dependency management, task automation, and other things, but I can't find anything online that discusses its importance in the daily use by Android developers. Do you use the features with Gradle a lot in your work? As a beginner learning it in Udacity, I'm just being introduced to it. How important is this skill? When you're hiring someone, is this something you'd value in them?
+## [10][Interest in Google Photos app for Android TV? Looking to get some public sentiment/opinion.](https://www.reddit.com/r/androiddev/comments/gnr0xc/interest_in_google_photos_app_for_android_tv/)
+- url: https://www.reddit.com/r/androiddev/comments/gnr0xc/interest_in_google_photos_app_for_android_tv/
+---
+Google Photos is an amazing product from Google. As a photo enthusiast, I've been using it since it's inception. For the longest time, there was no dedicated API for Google Photos until [mid-2018](https://developers.googleblog.com/2018/05/introducing-google-photos-partner.html). Before that, I believe the photos were accessible via [Picasa Web Albums API](https://support.google.com/picasa/answer/6383491?hl=en).
+
+I'm an Android developer and own nVidia Shield [Android TV](https://www.android.com/intl/en_us/tv/). Even though the Google Photos app has Google [cast](https://developers.google.com/cast) support to show your photos or slideshows on Android TV/Chromecast, I miss the native Android TV photo browsing experience.
+
+I was wondering if there are people like me who has Android TV and have a similar craving to have a native app for Google Photos. ***If there were an Android TV native app for Google Photos what would you wish it had?***
+
+\----
+
+ps. As far as I know, the following features are already supported by Google Photos
+
+* Show pictures on TV via Google Cast
+* Show slideshow of photo album via Google Cast
+* Select photos from albums to use as screen-saver via Google Home app
+## [11][DO Android Jobs pay well?](https://www.reddit.com/r/androiddev/comments/gnjjzm/do_android_jobs_pay_well/)
+- url: https://www.reddit.com/r/androiddev/comments/gnjjzm/do_android_jobs_pay_well/
+---
+I feel like everyone wants to get into Android and so there is a lot of competition and it keeps the pay down. Kinda like the gaming industry?
+## [12]["Clean Dagger - A pragmatic guide to dependency injection on Android" - what do you think? Do you also use this approach in your applications?](https://www.reddit.com/r/androiddev/comments/gn8spj/clean_dagger_a_pragmatic_guide_to_dependency/)
 - url: https://proandroiddev.com/clean-dagger-f248eda5790b
----
-
-## [6][The one and only object](https://www.reddit.com/r/androiddev/comments/gn88h8/the_one_and_only_object/)
-- url: https://medium.com/androiddevelopers/the-one-and-only-object-5dfd2cf7ab9b
----
-
-## [7][I created an extension for the playstore, viewing languages and 2 ASO leading tools](https://www.reddit.com/r/androiddev/comments/gna15j/i_created_an_extension_for_the_playstore_viewing/)
-- url: https://chrome.google.com/webstore/detail/ogbiebalkhkimkogbkofjbfclocdaofg/
----
-
-## [8][Introduce SharedFlow](https://www.reddit.com/r/androiddev/comments/gmprje/introduce_sharedflow/)
-- url: https://www.reddit.com/r/androiddev/comments/gmprje/introduce_sharedflow/
----
-[https://github.com/Kotlin/kotlinx.coroutines/issues/2034](https://github.com/Kotlin/kotlinx.coroutines/issues/2034)
-
-With SharedFlow the solution now seems to be complete, it's high time to get to know it better and maybe even start on using it in production.
-## [9][Early development app publishing on Play Store. Yay/Nay?](https://www.reddit.com/r/androiddev/comments/gn5wya/early_development_app_publishing_on_play_store/)
-- url: https://www.reddit.com/r/androiddev/comments/gn5wya/early_development_app_publishing_on_play_store/
----
-**TL;DR** Can I post my complete mess of a WIP app to the play store for internal testers only, or will Google rain fire from above?
-
-I'm writing an application that is currently internal only, but will eventually\~ (you know, maybe) be high enough quality to publish to the world. I want to publish it on the play store on an internal track so I can push updates out to devices in my household as I iterate and add features.
-
-Currently it's hard-coded to point to a service on my internal network, and has mismatched logos (name is one thing, logo says another thing) and is generally just in a sorry state for anyone else to use.
-
-Is the play store ok with this? Will it be scrutinized on the internal track and be removed from the play store etc. because it's clearly not functional outside of my household? Have others done this?
-
-Just a little concerned due to the amount of details it wants me to fill out to publish anything, and I don't really want a Google employee testing the application like they would a public app.
-## [10][I tried making a fun app like android game and it went like this!](https://www.reddit.com/r/androiddev/comments/gnaoes/i_tried_making_a_fun_app_like_android_game_and_it/)
-- url: https://www.reddit.com/r/androiddev/comments/gnaoes/i_tried_making_a_fun_app_like_android_game_and_it/
----
- First, I have to choose between java , kotlin &amp; flutter . I choose flutter and started leaning dart. Then I made some small projects like todo app and alarm clocks. After learning flutter for a bit(1 month) I challenged myself to make an app in just 3 days. I tried my best on those 3 days. Please give me your options on this app which was made within 3 days by a beginner. The result is below-:
-
-Play store:[https://play.google.com/store/apps/details?id=com.aniket.randomize](https://play.google.com/store/apps/details?id=com.aniket.randomize)
-
-Source code: [https://github.com/AniketSindhu/randomize](https://github.com/AniketSindhu/randomize) 
-
-An app with hell lot of options like:-
-
-✅Random number\*(any range)\*  
-✅Dice Roll\*(up to 6 dice at the same time)\*  
-✅Coin flip\*(5 different coins to flip)\*  
-✅A random card from a deck  
-✅Yes/no\*(ask yourself a question)\*  
-✅Password generator  
-✅Custom roulette\*(roll with 6 different objects)\*  
-✅Random color\*(find a beautiful color scheme)\*  
-✅Random letter  
-✅Random date\*(fix your appointments)\*  
-✅Random fact\*(increase your knowledge)\*  
-✅Random quote\*(be motivated)\*  
-✅Random name generator\*(male/female)\*  
-✅Random location\*(on map)\*  
-✅Random movie\*(Hollywood/Bollywood)\*  
-✅Random country\*(plan your next international travel trip)\*  
-✅Random video game\*(get what to play next)\*
-
-**Luck is not as random as you think.**  
-**Before that lottery ticket won the jackpot, someone had to buy it 😉.**
-## [11][AWS Secrets Manager Alternative Without Limits: Vault From HashiCorp](https://www.reddit.com/r/androiddev/comments/gnajfp/aws_secrets_manager_alternative_without_limits/)
-- url: http://selleoblogone.xyz
----
-
-## [12][Commonsware: R Raw Paths, DP4 Style](https://www.reddit.com/r/androiddev/comments/gmvgna/commonsware_r_raw_paths_dp4_style/)
-- url: https://commonsware.com/blog/2020/05/16/r-raw-paths-dp4-style.html
 ---
 

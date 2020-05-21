@@ -23,156 +23,61 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/05/19/this-week-in-rust-339/
 ---
 
-## [3][New asm! syntax from RFC 2850 has been merged](https://www.reddit.com/r/rust/comments/gn6yh1/new_asm_syntax_from_rfc_2850_has_been_merged/)
-- url: https://github.com/rust-lang/rust/pull/69171
+## [3][Support cargo.toml for GitHub dependency graph](https://www.reddit.com/r/rust/comments/gnryht/support_cargotoml_for_github_dependency_graph/)
+- url: https://github.community/t5/How-to-use-Git-and-GitHub/Feature-request-Support-Cargo-toml-for-dependency-graph/m-p/26122
 ---
 
-## [4]["Contact me if you want to use this name!"](https://www.reddit.com/r/rust/comments/gmu6y1/contact_me_if_you_want_to_use_this_name/)
-- url: https://www.reddit.com/r/rust/comments/gmu6y1/contact_me_if_you_want_to_use_this_name/
----
-I had a project in mind so I thought I could start to do it. I was checking some package distribution platforms. I checked AUR if something like this one exists in the registry and then went to crates.io to see if the name `op` is taken or not. It was [already registered](https://crates.io/crates/op). It was saying:
-
- &gt; WIP. Contact me if you want to use this name!
-
-I thought maybe it was a WIP but visited [the creator's crates.io page](https://crates.io/users/swmon) and he has, no jokes here, almost 90 packages registered saying the same thing. He even holds some important names saying "contact me if you'd like to take it", some of which are:
-
- - algorithm
- - any
- - bash
- - benchmark
- - bind
- - box
- - class
- - download
- - easy-oop
- - ecma
- - emulator
- - exception
- - fuck (yeah, I'm not kidding, this is taken)
- - and almost 80 more of which I have no time to write all
-
-So I wanted to bring this to you guys' attention. Is this really ethic to do that, holding some names? I could say maybe these were WIP projects but almost all of them also state "Contact me if you want to take it.".
-
-Has any of you guys/girls contacted this person? Does he demand anything? Are crates.io devs aware of this situation? If so, why do they not take any action? What do you think of this issue?
-## [5][[ANN] Rusty Days - Virtual Rust Conference (27.07-02.08)](https://www.reddit.com/r/rust/comments/gnatik/ann_rusty_days_virtual_rust_conference_27070208/)
-- url: https://www.reddit.com/r/rust/comments/gnatik/ann_rusty_days_virtual_rust_conference_27070208/
----
-Hello, fellow Rustaceans!
-
-I am one of the organizers of the **Rusty Days Virtual Conference** (https://rusty-days.org/) which is going to happen in about two months.
-
-This event is free!
-
-The conference starts at 27.07 (Monday) and for 5 days we want to deliver a talk at the same time each day (most probably 6 PM CEST - but we have not decided yet).
-
-Talks will be recorded for those who will not be able to watch the live stream.
-
-**We have opened the CfP!** If you are interested in becoming a speaker - please visit our site and submit your proposal. (Deadline for CfP will be announced soon).
-We are also happy to inform you that we have been sent the first proposals already :)
-
-For the last two days, we plan to run a hackathon (more details on that one will also be given a bit later).
-
-So that's it. We hope this idea will find you excited and that you will be able to take part in Rusty Days.
-
-And a small thing we would like to ask you for: could you please follow us and like/RT us on social media? It will definitely help with widening our ranges (which is pretty important in regards to event organization).
-
-More info: https://rusty-days.org/
-
-Twitter: https://twitter.com/rdconf
-
-FB: https://www.facebook.com/Rusty-Days-113835850333252
-## [6][Rocket can be compiled on stable Rust 1.45, last blocker has been solved](https://www.reddit.com/r/rust/comments/gmkpsg/rocket_can_be_compiled_on_stable_rust_145_last/)
-- url: https://github.com/SergioBenitez/Rocket/issues/19#issuecomment-630650328
+## [4][Dropping heavy objects in another thread can make your code faster](https://www.reddit.com/r/rust/comments/gntv7l/dropping_heavy_objects_in_another_thread_can_make/)
+- url: https://abramov.io/rust-dropping-things-in-another-thread
 ---
 
-## [7][tokio, tonic and a thread pool...](https://www.reddit.com/r/rust/comments/gn9pyp/tokio_tonic_and_a_thread_pool/)
-- url: https://www.reddit.com/r/rust/comments/gn9pyp/tokio_tonic_and_a_thread_pool/
+## [5][Announcement: Electron-like library for rust that does not bundle chrome](https://www.reddit.com/r/rust/comments/gnvkf0/announcement_electronlike_library_for_rust_that/)
+- url: https://www.reddit.com/r/rust/comments/gnvkf0/announcement_electronlike_library_for_rust_that/
 ---
-Hi, I'm writing a small application that has an rpc server (using tonic) but also needs to listen for some fs changes.
+Using electron, desktop apps can be created for Mac, Windows and Linux easily using JS and HTML. But in electron the chrome browser is bundled so each app has it's own copy of chrome. Eventhough webview exists, in Windows it uses Internet Explorer so modern JS,HTML or CSS cannot be used. Also different browsers have to be supported.
 
-My initial thought in my async main was to spawn a thread pool for my filesystem watchers - but I wanted to see if there was another way to leverage the tokio reactor for this.
+Webview can be used to create desktop apps but I came across a go library called [lorca](https://github.com/zserge/lorca).It uses the existing chrome installation and communicates with it using the devtools protocol. So I created a lorca like library for rust called [alcro](https://github.com/Srinivasa314/alcro).
 
-The idea is my main(async) will create a channel and hand the Senders to each of the Watchers I create - though I'm a bit lost on how to go about this async.
+I plan to publish it to crates.io but before that I wanted it tested on windows and macos. Alcro will search for the chrome installation and display a message box if not found. The messagebox asks the user whether they want to download chrome and opens the webpage to download chrome if the user agrees.I want some users to check if the following work
 
-Any help / suggestions appreciated!
-## [8][🎉 🎉 The code is compiling, and the tests pass! 🎉 🎉](https://www.reddit.com/r/rust/comments/gmx7u8/the_code_is_compiling_and_the_tests_pass/)
-- url: https://www.reddit.com/r/rust/comments/gmx7u8/the_code_is_compiling_and_the_tests_pass/
+* Whether it compiles on win/mac
+* Whether it finds the chrome installation
+* If you comment out the path of your chrome installation in `src/locate.rs` does it display a messagebox
+* If you click yes does a webpage open to download chrome
+* Do documentation tests work
+* Do the examples work
+* Read the documentation ( using cargo doc --open as of now ) and see if all the features work
+## [6][Oxidised eBPF, part I.: Building a toolchain](https://www.reddit.com/r/rust/comments/gnu5td/oxidised_ebpf_part_i_building_a_toolchain/)
+- url: https://blog.redsift.com/labs/oxidised-ebpf-part-i-building-a-toolchain/
 ---
-I'm currently learning to code rust with rustlings. I'm very pleased with with the progress I made up to now:
 
-https://preview.redd.it/7h429cjocsz41.png?width=621&amp;format=png&amp;auto=webp&amp;s=11cd5a381325cf3d9caf78fe1c66624323e60e8b
-## [9][What's the project of the cross-platform Rust editor using native UI components?](https://www.reddit.com/r/rust/comments/gn7u1d/whats_the_project_of_the_crossplatform_rust/)
-- url: https://www.reddit.com/r/rust/comments/gn7u1d/whats_the_project_of_the_crossplatform_rust/
+## [7][Things I hate about Rust](https://www.reddit.com/r/rust/comments/gnd4bd/things_i_hate_about_rust/)
+- url: https://blog.yossarian.net/2020/05/20/Things-I-hate-about-rust
 ---
-I remember watching a very nice talk a while ago about a project to implement an IDE or editor in Rust which would work across platform while using native UI components and text rendering, but I can't find the talk and I don't remember the name of the project.  Does anyone by chance know what I'm referring to?  Is the project already open-sourced?
-## [10][Confusion around borrow checker analysis of loops](https://www.reddit.com/r/rust/comments/gn901c/confusion_around_borrow_checker_analysis_of_loops/)
-- url: https://www.reddit.com/r/rust/comments/gn901c/confusion_around_borrow_checker_analysis_of_loops/
+
+## [8][Is actix-web still a good bet for a new production website?](https://www.reddit.com/r/rust/comments/gnm0em/is_actixweb_still_a_good_bet_for_a_new_production/)
+- url: https://www.reddit.com/r/rust/comments/gnm0em/is_actixweb_still_a_good_bet_for_a_new_production/
 ---
-I've run into a case where borrow checker seems to think that returning from a function mid loop can result in a mutable borrow being held over into another iteration of a loop.
-
-I've put together a [simplified example](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=4ee7019fa83b7206e48941b6fb1e43aa). The curious part is in the last`fn`, the rest is just fluff to justify the signature.
-
-How I mentally check borrows in loops is to figure out what borrows survive over a loop iteration after the drops at the end of the scope occur and make sure that no incompatible borrows occur. In this case we can see that the candidate reference to be returned gets dropped before another iteration can occur and that there is no sub-borrow of `self` crossing iterations.
-The compiler on the other hand seems to be working backwards from the lifetime of the return type and using that to assert that *any* borrow created from`self` that could be returned should be treated as though it *definitely is* living as long as a returned type and therefore self is permanently borrowed each iteration.
-
-Is that whats happening? Does anyone have a workarounds to suggest? All I have are the ugly options of Arcs or Clones.
-
-Edit: it looks like the consensus is that this is behaviour as intended, unfortunately. Is there any chance of creating UB if the loop returns a pointer which is then, after the loop, converted to a reference with a lifetime bound by self, [like so](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=9192689c8e23537575521b049bac963f)?
-## [11][Refinery 0.3 released](https://www.reddit.com/r/rust/comments/gn0kaj/refinery_03_released/)
-- url: https://www.reddit.com/r/rust/comments/gn0kaj/refinery_03_released/
+With all the fuss about the main developer leaving and the repository getting deleted for a bit, is it still likely that actix-web will see continued development? If I'm making a new production website for a business, should I have reservations about using it?
+## [9][Oxidizing the technical interview](https://www.reddit.com/r/rust/comments/gnbblm/oxidizing_the_technical_interview/)
+- url: https://blog.mgattozzi.dev/oxidizing-the-technical-interview/
 ---
-Hi, I have just released [refinery 0.3](https://github.com/rust-db/refinery), a powerful SQL migration toolkit for Rust. 
-New features include:
 
-- Update `Runner.run` and `Runner.run_async` return signature, it's now `Result&lt;Report, Error&gt;` where `Report` contains applied Migration's
--  Add `Runner.get_applied_migrations_async` method
-- Add `Runner.get_applied_migrations` method
-- Add `Runner.get_last_applied_migration_async` method
-- Add `Runner.get_last_applied_migration` method
-- Add allow migrations to run up until a `Target` version,
-- Impl `Migrate` trait for `Config` so that projects using drivers that aren't yet supported such as `SQLx` can still migrate from a database config
-## [12][[pyo3] trouble with subclassing from Python](https://www.reddit.com/r/rust/comments/gn97kn/pyo3_trouble_with_subclassing_from_python/)
-- url: https://www.reddit.com/r/rust/comments/gn97kn/pyo3_trouble_with_subclassing_from_python/
+## [10][Create Cookies with Warp](https://www.reddit.com/r/rust/comments/gnui36/create_cookies_with_warp/)
+- url: https://www.reddit.com/r/rust/comments/gnui36/create_cookies_with_warp/
 ---
-I'm using pyo3 and I'm having issues getting subclassing to work. Specifically a Python class that inherits from a Rust class.
+I want to create cookies on my server using \`warp\`. Now in documentation I could only find the \`cookie\` filter which lets me access a cookie but not create one.
 
-When I try to construct the Python class I just get an instance of the Rust class.
+No any other documentation I could find related to cookies in the documentation.
 
-Minimal example:
+&amp;#x200B;
 
-```
-#[pyclass(subclass,dict)]
-struct Rust {
-}
+Any help would be really appreciated.
+## [11][*mut Type vs &amp;mut Type . What's the difference between them?](https://www.reddit.com/r/rust/comments/gnr9th/mut_type_vs_mut_type_whats_the_difference_between/)
+- url: https://www.reddit.com/r/rust/comments/gnr9th/mut_type_vs_mut_type_whats_the_difference_between/
+---
 
-#[pymethods]
-impl Rust {
-    #[new]
-    fn new() -&gt; Rust {
-        Rust {}
-    }
-}
+## [12][3d6: Rendering electron orbitals of hydrogen](https://www.reddit.com/r/rust/comments/gnhkxn/3d6_rendering_electron_orbitals_of_hydrogen/)
+- url: https://github.com/cbeuw/iiiD6
+---
 
-#[pymodule]
-fn test(_py: Python, m: &amp;PyModule) -&gt; PyResult&lt;()&gt; {
-    m.add_class::&lt;Rust&gt;()?;
-    Ok(())
-}
-```
-
-Python code:
-
-```
-import test
-
-class Python(test.Rust):
-    pass
-
-p = Python()
-print('p is a', type(p))
-```
-
-It's printing `p is a &lt;class 'Rust'&gt;` whereas I would expect `p is a &lt;class 'Python'&gt;`.
-`Python.__mro__` returns `[&lt;class Python&gt;, &lt;class Rust&gt;, &lt;class 'object'&gt;]` as I would expect.
-
-Looking into the code I can see that the `__new__` method generated by pyo3 ignores the "cls" argument and always returns an instance of the Rust class. Is there a way to make this work?

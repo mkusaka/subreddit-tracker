@@ -22,23 +22,165 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Using JSDoc tags to test functions [Prototype]](https://www.reddit.com/r/typescript/comments/gn6sit/using_jsdoc_tags_to_test_functions_prototype/)
+## [2][Best resources for learning typescript](https://www.reddit.com/r/typescript/comments/gnvyd3/best_resources_for_learning_typescript/)
+- url: https://www.reddit.com/r/typescript/comments/gnvyd3/best_resources_for_learning_typescript/
+---
+As a longtime JS dev who now accepts TS as my lord and saviour - what are the best resources for 'deeply' learning TS fundamentals?
+
+Are there any equivalent resources like 'Eloquent Javascript', 'You don't know JS yet' etc. for TS?
+
+Video series/course suggestions also welcome.
+
+Thanks!
+## [3][Typing some complex lodash stuff](https://www.reddit.com/r/typescript/comments/gnsseg/typing_some_complex_lodash_stuff/)
+- url: https://www.reddit.com/r/typescript/comments/gnsseg/typing_some_complex_lodash_stuff/
+---
+I was trying to type return value of \_.[defaultsDeep](https://lodash.com/docs/4.17.15#defaultsDeep)
+
+Heres the return type for 2 arguments
+
+`type Primitive = string | number | boolean | null`  
+`type DeepDefault&lt;T, K&gt; = T extends Primitive ? T : Omit&lt;T, keyof K&gt; &amp; {`  
+  `[Key in keyof K]: Key extends keyof T ? DeepDefault&lt;T[Key], K[Key]&gt; : K[Key]`  
+`} ;`  
+Heres the link to [playground](https://www.typescriptlang.org/play/?ssl=5&amp;ssc=4&amp;pln=1&amp;pc=1#code/C4TwDgpgBACgTgSwLYOAgbtAvFAzsRAOwHMoAfKQgVyQCMI5ypaB7FgGwgENCnr32AKEGhIUACIQIYSQDMuVdsAA8AFQA0UANIA+KDlVQIAD2ARCAE1yxEKNJigB+KIYBcUAPJ21mgNYQQFlltPQAyKABvQSgoAG0tAKgEXn9A4K0AXXcEkCNTcysoVKCXJwkpGQh5RRVVeICMzS16kAy9bJaMwQBfKABuYVFoFloAKwBGfUjoqC53cfUZ2nd8ImJFmIh3KJiY2QQ4fHcCKggZ7pnZbZm9g6OoAHJEYgALYAfznsHwYbGAJimOygAGN5hsoBYVgRkusZltprs8BBgSxLO55OxcGcYhc9tdEftDsB3A8AO5wVHED44r4iH5QACSHjAYC4U0k0jkCiUyhGE00fL+OkEKMI+CgLBZc0ZzNZgJm0oWS3cACJVjCVeDQVAlTFIVA1dCSJq4fjdoT7icIOCYljRfqMVjzuCrgjzXdiY9nm9qVALhcgA)   
+The problem is typing the general case of N parameters   
+I know i can just add overloads for up to \~10 parameters for example like so  
+`DeepDefaultFor3&lt;T,K,J&gt; = DeepDefault&lt;T, DeepDefault&lt;K,J&gt;&gt;`  
+but that doesn't seem right  
+Does any one have ideas about hot one would type  \_.[defaultsDeep](https://lodash.com/docs/4.17.15#defaultsDeep) of N parameters  when N is unknown?
+## [4][Using JSDoc tags to test functions [Prototype]](https://www.reddit.com/r/typescript/comments/gn6sit/using_jsdoc_tags_to_test_functions_prototype/)
 - url: https://i.redd.it/8gqa8evpfvz41.gif
 ---
 
-## [3][Fcaljs - extensive math expression evaluator library](https://www.reddit.com/r/typescript/comments/gn7ves/fcaljs_extensive_math_expression_evaluator_library/)
+## [5][ESLint - What are the main differences between "eslint-config-airbnb-typescript" and "eslint-config-standard-with-typescript" conventions?](https://www.reddit.com/r/typescript/comments/gney1v/eslint_what_are_the_main_differences_between/)
+- url: https://www.reddit.com/r/typescript/comments/gney1v/eslint_what_are_the_main_differences_between/
+---
+Section [https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md#eslint-configs](https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md#eslint-configs) lists two list of ESLint rules:
+
+* Airbnb's ESLint config - [https://www.npmjs.com/package/eslint-config-airbnb-typescript](https://www.npmjs.com/package/eslint-config-airbnb-typescript)
+* Standard - [https://www.npmjs.com/package/eslint-config-standard-with-typescript](https://www.npmjs.com/package/eslint-config-standard-with-typescript)
+
+What are the main differences between them?
+## [6][[question] Which type of dependency should @types/foobar belong to?](https://www.reddit.com/r/typescript/comments/gni4gr/question_which_type_of_dependency_should/)
+- url: https://www.reddit.com/r/typescript/comments/gni4gr/question_which_type_of_dependency_should/
+---
+Hi. Consider a TypeScript project which uses `foo` and `bar` dependencies.  Should the corresponding `@types/foo` and `@types/bar` belong to `devDependencies` XOR `dependencies`?
+
+The `create-react-app` boiler template lists `@types/*` in `dependencies`.  But I just don't know where to put it.
+
+Does it really matter where they are?
+## [7][Trying to gather Geolocation speed data over an interval](https://www.reddit.com/r/typescript/comments/gngvfz/trying_to_gather_geolocation_speed_data_over_an/)
+- url: https://www.reddit.com/r/typescript/comments/gngvfz/trying_to_gather_geolocation_speed_data_over_an/
+---
+I have an angular ionic 5 app running on a cordova android emulator. What I need to do is use the ionic Geolocation plugin to find the speed of the user. I need to record the user's speed every second, and make sure it falls in the range of 0.7 &lt; x &lt; 2.5 m/s. If it does not, continue recording every second until it does. I need to record 10 valid speed measurements using this method. Then determine the average speed from that set of data. Here is a link to my Stackoverflow [post](https://stackoverflow.com/questions/61920194/finding-speed-of-an-interval-of-10-seconds), and here is my typescript file:
+
+`import { Component } from '@angular/core';`
+
+`import { Geolocation } from '@ionic-native/geolocation/ngx';`
+
+
+
+`u/Component({`
+
+`selector: 'app-home',`
+
+`templateUrl: 'home.page.html',`
+
+`styleUrls: ['home.page.scss'],`
+
+`})`
+
+`export class HomePage {`
+
+`framework = 'At exact boarding time';`
+
+
+
+`constructor(private geolocation: Geolocation) {}`
+
+
+
+`latitude: any = 0; //latitude`
+
+`longitude: any = 0; //longitude`
+
+`speed: any = 1; //speed`
+
+
+
+`choices = {`
+
+`timeout: 10000,` 
+
+`enableHighAccuracy: true,` 
+
+`maximumAge: 3600`
+
+`};`
+
+
+
+`average_walking_speed(){`
+
+`this.geolocation.getCurrentPosition(this.choices).then((resp) =&gt; {`
+
+`this.speed = resp.coords.speed;`
+
+`console.log(this.speed);`
+
+`}).catch((error) =&gt; {`
+
+`console.log('Error getting speed', error);`
+
+`});`
+
+`}`
+
+
+
+`// use geolocation to get user's device coordinates`
+
+`getCurrentCoordinates() {`
+
+`this.geolocation.getCurrentPosition().then((resp) =&gt; {`
+
+`this.latitude = resp.coords.latitude;`
+
+`this.longitude = resp.coords.longitude;`
+
+`this.speed = resp.coords.speed;`
+
+`}).catch((error) =&gt; {`
+
+`console.log('Error getting location', error);`
+
+`});`
+
+
+
+`document.getElementById("updater").innerHTML = ' ' + this.speed +" m/s"`
+
+`}`    
+
+`}`
+## [8][Vanilla library types](https://www.reddit.com/r/typescript/comments/gncmsy/vanilla_library_types/)
+- url: https://www.reddit.com/r/typescript/comments/gncmsy/vanilla_library_types/
+---
+So I've installed the '@types/\[library\]' for what I need. I can't figure out how to leverage that .d.ts file so I can use those types in my own code. Is that what it is supposed to do? For example I'm using express and install it's types. I pass the req object to a function and I want to typecheck that parameter when writing the function for expresses req object but I don't know how to do it.
+## [9][myzod v1.0.0 is out](https://www.reddit.com/r/typescript/comments/gncnh6/myzod_v100_is_out/)
+- url: https://www.reddit.com/r/typescript/comments/gncnh6/myzod_v100_is_out/
+---
+Today I released version 1.0.0 of [myzod](https://www.npmjs.com/package/myzod)! 
+
+I just want to thank everybody who has given feedback and participated over the past month or two.
+
+Hope you guys find it useful.
+## [10][Fcaljs - extensive math expression evaluator library](https://www.reddit.com/r/typescript/comments/gn7ves/fcaljs_extensive_math_expression_evaluator_library/)
 - url: https://www.npmjs.com/package/fcal
 ---
 
-## [4][Deno: A Simple Guide](https://www.reddit.com/r/typescript/comments/gnadh0/deno_a_simple_guide/)
-- url: https://www.martinmck.com/posts/deno-a-simple-guide/
----
-
-## [5][The Great Dropbox CoffeeScript to Typescript Migration](https://www.reddit.com/r/typescript/comments/gmll5p/the_great_dropbox_coffeescript_to_typescript/)
-- url: https://dropbox.tech/frontend/the-great-coffeescript-to-typescript-migration-of-2017
----
-
-## [6][Destructuring and sum types](https://www.reddit.com/r/typescript/comments/gn7oz6/destructuring_and_sum_types/)
+## [11][Destructuring and sum types](https://www.reddit.com/r/typescript/comments/gn7oz6/destructuring_and_sum_types/)
 - url: https://www.reddit.com/r/typescript/comments/gn7oz6/destructuring_and_sum_types/
 ---
 I had typed array with an object with one optional field. Then I decided that instead of an optional prop what I really want is an array of objects not containing that property or all the elements containing such property, so I switched to a sum type.
@@ -102,61 +244,3 @@ activeTab becomes of mixed type
 
 
 Is there a better way of doing this while ensuring the type safety of having the prop on all items or no one?
-## [7][Pass Paramus to server side props](https://www.reddit.com/r/typescript/comments/gmub97/pass_paramus_to_server_side_props/)
-- url: https://www.reddit.com/r/typescript/comments/gmub97/pass_paramus_to_server_side_props/
----
-I wonder if anyone knows if it is possible to send arguments to getServersideProps in Next Js.
-
-At the end of my URL I have a hard codded page number, that fetches different movies per page, but I want to have it dynamic with getServersideProps, is it possible?
-
-
-export const getServerSideProps: GetServerSideProps = async (
-  ctx: GetServerSidePropsContext&lt;ParsedUrlQuery&gt;
-) =&gt; {
-  console.log(ctx.query)
-  const response = await fetch(
-    `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.API_KEY}&amp;language=en-US&amp;page=1`
-  )
-
-  const data = await response.json()
-
-  return {
-    props: {
-      data: data.results,
-    },
-  }
-}
-## [8][A GitHub template featuring automation that makes it pretty darn easy to publish and maintain high-standard NPM modules.](https://www.reddit.com/r/typescript/comments/gma48m/a_github_template_featuring_automation_that_makes/)
-- url: https://github.com/garronej/ts_ci
----
-
-## [9][Is ES5 dead yet?](https://www.reddit.com/r/typescript/comments/gmr38p/is_es5_dead_yet/)
-- url: https://www.reddit.com/r/typescript/comments/gmr38p/is_es5_dead_yet/
----
-I've been packaging all my modules lately with ES2015 as the target.
-
-Is there any reason to even think about ES5 anymore?
-
-I mean we're all moving WASM now anyway right? :P
-## [10][Hegel: An advanced static type checker for JavaScript](https://www.reddit.com/r/typescript/comments/gm7ut0/hegel_an_advanced_static_type_checker_for/)
-- url: https://twitter.com/devongovett/status/1262069817655259136
----
-
-## [11][When are parenthesis not redundant?](https://www.reddit.com/r/typescript/comments/gmhh6c/when_are_parenthesis_not_redundant/)
-- url: https://www.reddit.com/r/typescript/comments/gmhh6c/when_are_parenthesis_not_redundant/
----
-Context: I'm working on adding intersection types + parenthesis support to [typecheck.macro](https://github.com/vedantroy/typecheck.macro).
-
-It seems like parenthesis are redundant in most cases. Examples:
-
-(A | B)\[\] = Array&lt;A | B&gt;
-
-(A) = A
-
-(A | B) | (C &amp; D) = A | B | C &amp; D because Typescript implicitly does parenthesize for you
-
-It seems like the only place parenthesis affect the order of "type operations" is:
-
-A &amp; (B | C ) =  A &amp; B | A &amp; C. 
-
-Can someone correct me if I am wrong?

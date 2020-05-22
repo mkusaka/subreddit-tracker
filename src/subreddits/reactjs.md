@@ -109,221 +109,106 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/gcbkuu/whos_hiring_may_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Built a Dribbble Clone for Developers, MVP](https://www.reddit.com/r/reactjs/comments/gnn5j1/built_a_dribbble_clone_for_developers_mvp/)
-- url: https://v.redd.it/a8lhmpjho0051
+## [3][Looking for a good open source repo to look at that uses React and GraphQL](https://www.reddit.com/r/reactjs/comments/gob259/looking_for_a_good_open_source_repo_to_look_at/)
+- url: https://www.reddit.com/r/reactjs/comments/gob259/looking_for_a_good_open_source_repo_to_look_at/
+---
+I want to learn GraphQL but having a hard time learning from tutorials.   
+
+
+Anyone know of an up to date code base with React and GraphQL that I can look at?  
+
+
+Thanks!
+## [4][How To Setup Redux with Redux Toolkit](https://www.reddit.com/r/reactjs/comments/goj0hz/how_to_setup_redux_with_redux_toolkit/)
+- url: https://www.softkraft.co/how-to-setup-redux-with-redux-toolkit/
 ---
 
-## [4][I can't solve the default padding in Material-UI.](https://www.reddit.com/r/reactjs/comments/gnvfiw/i_cant_solve_the_default_padding_in_materialui/)
-- url: https://www.reddit.com/r/reactjs/comments/gnvfiw/i_cant_solve_the_default_padding_in_materialui/
+## [5][The State of Micro Frontends](https://www.reddit.com/r/reactjs/comments/go1vzc/the_state_of_micro_frontends/)
+- url: https://blog.bitsrc.io/state-of-micro-frontends-9c0c604ed13a
 ---
-The AppBar component for instance doesn't cover the whole area by default, I looked through the documentation and on google but couldn't find a solution for it.
 
-I also tried changing the spacing in createMuiTheme for my Layout component which included the AppBar and {props.children} at the end. That didn't seem to do anything.
+## [6][I recreated React's class component lifecycle methods with hooks](https://www.reddit.com/r/reactjs/comments/goadlf/i_recreated_reacts_class_component_lifecycle/)
+- url: https://github.com/DaniAkash/lifecycle-hooks
+---
 
-Tl;dr : I want the app bar and all the other components to cover the whole screen, use the whole screen as a flex without padding which material-ui seems to be adding to it by default.
+## [7][Free and Open Source React Admin Dashboard Template](https://www.reddit.com/r/reactjs/comments/gojap4/free_and_open_source_react_admin_dashboard/)
+- url: https://flatlogic.com/templates/one-free-react-template
+---
 
-[A Screenshot](https://imgur.com/SxBVKmh)
+## [8][[RELEASE] Acey - an Innovative Global State Manager for React apps.](https://www.reddit.com/r/reactjs/comments/goicie/release_acey_an_innovative_global_state_manager/)
+- url: https://www.reddit.com/r/reactjs/comments/goicie/release_acey_an_innovative_global_state_manager/
+---
+Hey fellows,
 
 &amp;#x200B;
 
-Please help me.
-## [5][Architecture of a react application](https://www.reddit.com/r/reactjs/comments/gnstyb/architecture_of_a_react_application/)
-- url: https://www.reddit.com/r/reactjs/comments/gnstyb/architecture_of_a_react_application/
----
-Hello all!
+💡 I just released a **class-oriented state manager** for **React, NextJS** and **React-Native apps** I've been developing in the past 6 months.
 
-I was in an interview recently and was asked to sketch out an architectural design of a react application.
-
-I really didn't know what to sketch out.
-
-Are there any tools or resources that you know of or there where I could find out more about this?
-
-The organisation that interviewed me were very back end heavy and kept asking about design patterns in React as well. AFAIK when you talk about design patterns in React it is more concerned with the visual patterns such as grids, cards etc than software patterns.
-
-I have some experience with redux so can see how redux containers implement provider/consumer but are they thinking about it in the wrong way? In so much that they are trying to force software engineering principles onto a discipline that they do not really apply to?
-## [6][How to handle Web Fonts in your web app](https://www.reddit.com/r/reactjs/comments/gnwo6o/how_to_handle_web_fonts_in_your_web_app/)
-- url: https://www.hackdoor.io/articles/bgp8VbJv/how-to-handle-web-fonts-in-your-web-app
----
-
-## [7][Stable state manager for any framework including React](https://www.reddit.com/r/reactjs/comments/gnbrp9/stable_state_manager_for_any_framework_including/)
-- url: https://www.reddit.com/r/reactjs/comments/gnbrp9/stable_state_manager_for_any_framework_including/
----
-Three years ago I was looking for a way to separate business logic from the presentation layer.
-
-I want to send some kind of events from my components (I use React now), and implement all logic in another place (ex.: model). My view layer should know nothing about model implementation details.
-
-Now I have 1+ years of experience in Effector. You should give a try with effector: [https://github.com/zerobias/effector](https://github.com/zerobias/effector)
-
-Articles:
-
-* [https://itnext.io/effector-state-manager-you-should-give-a-try-b46b917e51cc](https://itnext.io/effector-state-manager-you-should-give-a-try-b46b917e51cc)
-* [https://codeburst.io/effector-state-manager-6ee2e72e8e0b](https://codeburst.io/effector-state-manager-6ee2e72e8e0b)
-* [https://medium.com/blue-harvest-tech-blog/effector-vs-vuex-which-storage-management-is-better-for-vuejs-app-54f3c3257b53](https://medium.com/blue-harvest-tech-blog/effector-vs-vuex-which-storage-management-is-better-for-vuejs-app-54f3c3257b53)
-* [https://dev.to/lessmess/why-i-choose-effector-instead-of-redux-or-mobx-3dl7](https://dev.to/lessmess/why-i-choose-effector-instead-of-redux-or-mobx-3dl7)
-
-Open source:
-
-* [https://github.com/sergeysova/effector-ssr](https://github.com/sergeysova/effector-ssr) — SSR on Razzle
-* [https://github.com/weyheyhey/effector-next](https://github.com/weyheyhey/effector-next?files=1) — SSR on Next.js
-* [https://github.com/howtocards/frontend](https://github.com/howtocards/frontend) — My project built using React and Effector
-* [https://github.com/authmenow/frontend](https://github.com/authmenow/frontend) — Another one, but with SSR
-## [8][Using Ant design pro in production](https://www.reddit.com/r/reactjs/comments/gnw1wk/using_ant_design_pro_in_production/)
-- url: https://www.reddit.com/r/reactjs/comments/gnw1wk/using_ant_design_pro_in_production/
----
-Hi, I've wondering in the past few days about if should start using ant design pro in production knowing that I've been using ant design now for a while, but this dashboard scaffolding looks somehow amazing but what I don't find appealing is the use of dva and umijs in which both of them not well documented well and mostly in Chinese, so guys if you have experience with it please advice me here , plus I'm looking forward to find people to hire with such expertises.
-## [9][New to React but having a big problem with create-react-app](https://www.reddit.com/r/reactjs/comments/gnuwjg/new_to_react_but_having_a_big_problem_with/)
-- url: https://www.reddit.com/r/reactjs/comments/gnuwjg/new_to_react_but_having_a_big_problem_with/
----
-Hi all, I've been having a big problem with the create-react-app that has stopped me in my tracks. I'm new to React (and coding in general) and I don't want this to be what stops me from going forward. I've posted my error and the package.json file below:
-
-Any and all help is appreciated. I've tried `npm cache clean --force` followed by deleting the package.json files and the node\_modules and then ran `npm install`  but the error just kept coming.
-
-`npm start`
+# It is called [Acey](https://github.com/Fantasim/acey).
 
 &amp;#x200B;
 
-`&gt; ass1@0.1.0 start C:\Users\Chris Conrad\Documents\_GIT\Udemy\React\Section 3 Understanding Base Features &amp; Syntax\ass1`
+Acey allows you to **encapsulate** your **states** inside **Model class**. Then you can gather the methods you need to treat, access, format, and organize their state. 🍱
 
-`&gt; react-scripts start`
+With it you can :
 
-&amp;#x200B;
-
-`'Syntax\ass1\node_modules\.bin\' is not recognized as an internal or external command,`
-
-`operable program or batch file.`
-
-`internal/modules/cjs/loader.js:1032`
-
-  `throw err;`
-
-  `^`
+* **Update** and **access** your Model’s state **wherever** you want **in your App** without any binding. 🔓
+* Connect conveniently any Model with any component, so they re-render when the Model’s state changes. 🔄 (Example of a Counter App [here](https://github.com/Fantasim/acey/blob/master/example/reactjs/counter/src/App.tsx)*)*
 
 &amp;#x200B;
 
-`Error: Cannot find module 'C:\Users\Chris Conrad\Documents\_GIT\Udemy\React\react-scripts\bin\react-scripts.js'`
+It implements many useful built-in features to make your life **easier**, **building**, and **maintaining** your app architecture.
 
-`at Function.Module._resolveFilename (internal/modules/cjs/loader.js:1029:15)`
+Here is a couple :
 
-`at Function.Module._load (internal/modules/cjs/loader.js:898:27)`
-
-`at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)`
-
-`at internal/main/run_main_module.js:17:47 {`
-
-  `code: 'MODULE_NOT_FOUND',`
-
-  `requireStack: []`
-
-`}`
-
-`npm ERR! code ELIFECYCLE`
-
-`npm ERR! errno 1`
-
-`npm ERR! ass1@0.1.0 start: \`react-scripts start\``
-
-`npm ERR! Exit status 1`
-
-`npm ERR!`
-
-`npm ERR! Failed at the ass1@0.1.0 start script.`
-
-`npm ERR! This is probably not a problem with npm. There is likely additional logging output above.`
+* **Local store and cookie** feature: Store your Model's state to **retrieve** their **previous state** when your app reloads. 🗄️
+* No Provider. 🎈
+* Model Nesting.
+* Collection helpers.
+* Compatible with **React, Next, and** **React-Native**. ✅
 
 &amp;#x200B;
 
-`npm ERR! A complete log of this run can be found in:`
+💭 If you have **any questions** just let me know here, or feel free to open an issue in the project repo
 
-`npm ERR!     C:\Users\Chris Conrad\AppData\Roaming\npm-cache\_logs\2020-05-21T11_07_16_216Z-debug.log`
-
-`PS C:\Users\Chris Conrad\Documents\_GIT\Udemy\React\Section 3 Understanding Base Features &amp; Syntax\ass1&gt;` 
-
-&amp;#x200B;
-
-and my package.json file is:
-
- 
-
-`{`  
- `"name": "ass1",`  
- `"version": "0.1.0",`  
- `"private": true,`  
- `"dependencies": {`  
- `"@testing-library/jest-dom": "^4.2.4",`  
- `"@testing-library/react": "^9.5.0",`  
- `"@testing-library/user-event": "^7.2.1",`  
- `"react": "^16.13.1",`  
- `"react-dom": "^16.13.1",`  
- `"react-scripts": "3.4.1"`  
-  `},`  
- `"scripts": {`  
- `"start": "react-scripts start",`  
- `"build": "react-scripts build",`  
- `"test": "react-scripts test",`  
- `"eject": "react-scripts eject"`  
-  `},`  
- `"eslintConfig": {`  
- `"extends": "react-app"`  
-  `},`  
- `"browserslist": {`  
- `"production": [`  
- `"&gt;0.2%",`  
- `"not dead",`  
- `"not op_mini all"`  
-    `],`  
- `"development": [`  
- `"last 1 chrome version",`  
- `"last 1 firefox version",`  
- `"last 1 safari version"`  
-    `]`  
-  `}`  
-`}`
-## [10][Is there a way for an input to use all props passed to it from a parent component?](https://www.reddit.com/r/reactjs/comments/gnugg8/is_there_a_way_for_an_input_to_use_all_props/)
-- url: https://www.reddit.com/r/reactjs/comments/gnugg8/is_there_a_way_for_an_input_to_use_all_props/
+⭐ If you like it or think of using it, feel free to **drop a star on** [**Github**](https://github.com/Fantasim/acey), always good to get some support. :)
+## [9][Reacting to a child's prop value.(hooks)](https://www.reddit.com/r/reactjs/comments/goiay6/reacting_to_a_childs_prop_valuehooks/)
+- url: https://www.reddit.com/r/reactjs/comments/goiay6/reacting_to_a_childs_prop_valuehooks/
 ---
-I have a `SearchBar` component:
+I have a parent component A  and in its first line of return, I have a banner component and followed by it are B and C component. So, A has banner,  B and C as child components and D is the child of C.
 
-    interface Props {
-      placeholder?: string;
-      ariaLabel?: string;
-      type?: string;
-      onSearchTextChanged: (text: string) =&gt; void;
-    }
+There is a submit button in D component and when the user clicks this, I have to show the banner which is located in A.  I've built all these components using hooks.
 
-    const SearchBar = ({ onSearchTextChanged, placeholder, ariaLabel, type }: Props) =&gt; {
-      const [inputText, setInputText] = useState('');
-    
-      const onTextChanged = (e: React.ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {
-         onSearchTextChanged(e.target.value);
-      };
-    
-      return &lt;input onChange={onTextChanged} placeholder={placeholder} aria-label={ariaLabel} type={type}&gt;&lt;/Input&gt;;
-    };
+D component has the most functionality so I placed my button there. I'm stuck at making the banner visible after the user clicks the submit button in D.
 
-&amp;nbsp;
+Can anyone please throw some light on how can I achieve it.
 
-You can see that `placeholder`, `ariaLabel` and `type` are passed as props which I then map to the standard input element attributes. I was wondering if there was a way to avoid having to specify these so that anyone using this component can use out of the box attributes supported by the `&lt;input&gt;` element. Sort of like `props.children` or `...rest`. Essentially I'd like to be able to use the `SearchBar` component like so:
+(I made child components for better readability).
 
-&amp;nbsp;
-
-`&lt;SearchBar placeholder="Search" aria-label="Search events" type="search" /&gt;`
-
-&amp;nbsp;
-
-and then inside the component use input like so:
-
-&amp;nbsp;
-
-`&lt;input {...allPropsGoHere} /&gt;`
-
-&amp;nbsp;
-## [11][how to drag &amp; drop image to upload from same page if that image coming through cdn in React Js](https://www.reddit.com/r/reactjs/comments/gnubmf/how_to_drag_drop_image_to_upload_from_same_page/)
-- url: https://www.reddit.com/r/reactjs/comments/gnubmf/how_to_drag_drop_image_to_upload_from_same_page/
+TIA
+## [10][Why we use Redux in our Apps #6 | react-redux-firebase](https://www.reddit.com/r/reactjs/comments/goi8dg/why_we_use_redux_in_our_apps_6_reactreduxfirebase/)
+- url: https://youtu.be/QbCncZlZYgQ
 ---
-I have a dashboard page in my app where blog post are coming from database. I also create a side bar where user can create a new post with description , time and upload image by drag &amp; drop or select from local system by clicking at drag &amp; drop. I want to add a functionality so user can upload the image that is coming to page along with blog post.
-## [12][Webpack Config](https://www.reddit.com/r/reactjs/comments/gnuat8/webpack_config/)
-- url: https://www.reddit.com/r/reactjs/comments/gnuat8/webpack_config/
----
-So I know what Webpack is and what it's used for. However, as a React nube, I have no clue why I should care, since I just run create-react-app, code my app, run npm build and deploy that shit. The things is in a few interviews I have been asked about "Webpack Config" and have no clue how I'm supposed to respond to that. Is it ever necessary to "config" webpack if using create-react-app? Or perhaps some folks don't use create-react-app?
 
-&amp;#x200B;
+## [11][Open-source version of Facebook's stylex](https://www.reddit.com/r/reactjs/comments/gohwia/opensource_version_of_facebooks_stylex/)
+- url: https://github.com/johanholmerin/style9
+---
+
+## [12][Paperless participation tracking with QR Codes](https://www.reddit.com/r/reactjs/comments/goh74e/paperless_participation_tracking_with_qr_codes/)
+- url: https://www.reddit.com/r/reactjs/comments/goh74e/paperless_participation_tracking_with_qr_codes/
+---
+I build this yesterday and thought it came out pretty well.
+
+In the wake of covid a lot of businesses (restaurants, etc) need to collect information on the customers in order to contact them afterwards if someone around them is ill. This is done by paper a lot of times.
+
+Let's stay with the restaurant example:The customer fills his data out on a landingpage (possibily in advance):[https://qcps.netlify.app/generate](https://qcps.netlify.app/generate)He can now store it as image on his phone.
+
+[https://qcps.netlify.app/](https://qcps.netlify.app/)The business puts in an email and if needed some custom fields.This is stored locally, so whenever it is opened up, they are ready to go.
+
+Now they can scan the qr codes of multiple people, add the information (like table) and send it to the email. The data is now searchable, sortable in the business email account.
+
+I disabled the email part, because I'm not yet sure how to set it up without being vulnurable for spam.But feel free to drop any suggestions.
+
+Feel free to use or comment on the code in any way you like:[https://github.com/groev/qr-code-participation-system](https://github.com/groev/qr-code-participation-system)
+
+I'm not sure if this will get some use anytime soon, but for me it was a good lesson implementing qr codes in an application, which is actually pretty easy because the packages work out of the box

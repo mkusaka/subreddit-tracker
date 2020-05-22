@@ -125,94 +125,132 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][The New York November 2020 ISO C++ meeting is Postponed](https://www.reddit.com/r/cpp/comments/gns65b/the_new_york_november_2020_iso_c_meeting_is/)
-- url: https://herbsutter.com/2020/05/20/the-new-york-iso-c-meeting-is-postponed/
+## [3][Reducing {fmt} library size 4x using Bloaty McBloatface](https://www.reddit.com/r/cpp/comments/go82wo/reducing_fmt_library_size_4x_using_bloaty/)
+- url: https://www.zverovich.net/2020/05/21/reducing-library-size.html
 ---
 
-## [4][C++ proposal dismisses backward compatibility](https://www.reddit.com/r/cpp/comments/gnw1pa/c_proposal_dismisses_backward_compatibility/)
+## [4][Even more non-uniform initialization in C++20?](https://www.reddit.com/r/cpp/comments/goask6/even_more_nonuniform_initialization_in_c20/)
+- url: https://www.reddit.com/r/cpp/comments/goask6/even_more_nonuniform_initialization_in_c20/
+---
+This example is from cppreference:
+
+    struct A {
+      int&amp;&amp; r;
+    };
+    A a1{7}; // OK, lifetime is extended
+    A a2(7); // well-formed, but dangling reference
+
+Prior to C++20 , `a2` was ill-formed.
+
+However C++20 apparently introduces *parenthesized aggregate initialization*, which is the same as list aggregate initialization except:
+
+  * narrowing conversions are allowed, and
+  * lifetime is not extended for temporaries bound to references.
+
+My question is: why?? Surely this is just a whole nother category of bugs waiting to happen.  
+
+BTW if anyone is looking for this in the standard draft, it first appears in N4860 dcl.init/17.6.2.2 -- NOT under the aggregate initialization section!
+## [5][How supported is passing arguments to coroutine frames?](https://www.reddit.com/r/cpp/comments/gogccr/how_supported_is_passing_arguments_to_coroutine/)
+- url: https://www.reddit.com/r/cpp/comments/gogccr/how_supported_is_passing_arguments_to_coroutine/
+---
+Hello reddit, how are you all?
+
+A quick question about passing arguments to the coroutine promise.
+
+According to [cppreference](https://en.cppreference.com/w/cpp/language/coroutines), the compiler must pass the coroutine parameters to the coroutine promise type if the promise-type c.tor matches the coroutine parameters:
+
+&amp;#x200B;
+
+&gt;calls the constructor for the promise object. If the promise type has a  constructor that takes all coroutine parameters, that constuctor is  called, with post-copy coroutine arguments. Otherwise the default  constructor is called.
+
+&amp;#x200B;
+
+I also found this draft [here](http://open-std.org/jtc1/sc22/wg21/docs/papers/2018/p0914r0.html) that explains why we need to pass parameters to the coroutine promise c.tor (In my case, it's not a cancellation token, but an executor), and this draft (I don't know what's the status of it) suggests the same as cppreference.
+
+What I did is this : I used the latest MSVC and I took my already-working coroutine implementation, and I changes the coroutine promise type c.tor to accept `Args&amp;&amp; ... args`. were the coroutine parameters passed to the c.tor? no. the compiler didn't pass any argument to the promise c.tor.
+
+Looking at the resumable header, there is no way for it to currently be supported:
+
+            static void _ConstructPromise(void* _Addr, void* _Resume_addr, int _HeapElision) {
+                *reinterpret_cast&lt;void**&gt;(_Addr) = _Resume_addr;
+                *reinterpret_cast&lt;uint32_t*&gt;(reinterpret_cast&lt;uintptr_t&gt;(_Addr) + sizeof(void*)) =
+                    2u + (_HeapElision ? 0u : 0x10000u);
+                auto _Prom = _Promise_from_frame(_Addr);
+                ::new (static_cast&lt;void*&gt;(_Prom)) _PromiseT();
+            }
+
+Quit funnily, overloading the `new` operator to accept `size_t s,` `Args&amp;&amp; ... args` did work (like the draft suggested)
+
+I did not try Clang to see if it works there.
+
+What is the status of passing parameters to the coroutine promise c.tor? Is it in the standard? If we want a sophisticated coroutine (and not that bland, unusable "lazily executed" coroutine that the committee tries to shove down our throats)  we must have this mechanism.  How much is it supported across different compilers?
+## [6][C++20 ❤️ SQL: A Thin, Typesafe SQL Wrapper in C++20](https://www.reddit.com/r/cpp/comments/gogiks/c20_sql_a_thin_typesafe_sql_wrapper_in_c20/)
+- url: http://jrb-programming.blogspot.com/2020/05/c20-sql.html
+---
+
+## [7][My attempt to make my own similar but improved version of std::conditional. Thoughts?](https://www.reddit.com/r/cpp/comments/gog9uv/my_attempt_to_make_my_own_similar_but_improved/)
+- url: https://gist.github.com/WHStevens/c842d881181800400cead2118e3043dc
+---
+
+## [8][C++ proposal dismisses backward compatibility](https://www.reddit.com/r/cpp/comments/gnw1pa/c_proposal_dismisses_backward_compatibility/)
 - url: https://www.infoworld.com/article/3535795/c-plus-plus-proposal-dismisses-backward-compatibility.html
 ---
 
-## [5][CppCheck: A million downloads](https://www.reddit.com/r/cpp/comments/gnfq99/cppcheck_a_million_downloads/)
-- url: https://sourceforge.net/p/cppcheck/news/2020/05/a-million-downloads/
+## [9][CppCast: Catch2 and Std::random](https://www.reddit.com/r/cpp/comments/gocfju/cppcast_catch2_and_stdrandom/)
+- url: https://cppcast.com/catch2-random-martin-horenovsky/
 ---
 
-## [6][Adventures in returning value-dependent type](https://www.reddit.com/r/cpp/comments/gnif4y/adventures_in_returning_valuedependent_type/)
-- url: https://dev.krzaq.cc/post/adventures-in-returning-value-dependent-type/
+## [10][Why does operator== only get generated for *defaulted* operator&lt;=&gt;?](https://www.reddit.com/r/cpp/comments/go7a5p/why_does_operator_only_get_generated_for/)
+- url: https://www.reddit.com/r/cpp/comments/go7a5p/why_does_operator_only_get_generated_for/
+---
+To elaborate on the title, consider a defaulted three-way comparison operator for a type:
+
+```
+struct MyType
+{
+    auto operator&lt;=&gt;(const MyType&amp; other) const = default;
+    int value;
+};
+
+int main()
+{
+    MyType a{ 42 }, b{ 24 };
+    return a == b; // works fine
+}
+```
+
+Now if we change that three-way comparison operator to no longer be defaulted, but still have the same effect:
+
+```
+struct MyType
+{
+    auto operator&lt;=&gt;(const MyType&amp; other) const { return value &lt;=&gt; other.value; }
+    int value;
+};
+
+int main()
+{
+    MyType a{ 42 }, b{ 24 };
+    return a == b; // ***no longer works***
+}
+```
+
+Godbolt: https://godbolt.org/z/uyqRo6
+
+It is easy (but annoying) to work around by defining `bool operator==(const MyType&amp; other) const { return std::is_eq(*this &lt;=&gt; other); }`, but I feel like I shouldn't have to do that. 
+
+Is there some logical reason why the equality operators can *never* be generated from a non-defaulted three-way comparison operator? 
+
+I'm already aware of the potential performance losses with three-way comparisons on complex types, but for simple struct types I feel like this should be automatic and just as performant.
+## [11][Linux Terminal Based Game Engines?](https://www.reddit.com/r/cpp/comments/gofsuw/linux_terminal_based_game_engines/)
+- url: https://www.reddit.com/r/cpp/comments/gofsuw/linux_terminal_based_game_engines/
+---
+I want to start game development in C++. I thought it would be really cool if I could create a game in my terminal instead of a modern GUI.
+
+This guy on YouTube has a cool console game engine [here](https://github.com/OneLoneCoderCommunity/olcConsoleGameEngine) but it looks like the console game engine is only for windows.
+
+Does anyone have any Github repos for console based Game Engines?
+## [12][A noinline inline function? What sorcery is this?](https://www.reddit.com/r/cpp/comments/gnyt22/a_noinline_inline_function_what_sorcery_is_this/)
+- url: https://devblogs.microsoft.com/oldnewthing/20200521-00/?p=103777
 ---
 
-## [7][IDEs and Text Editors for Writing C++ Code on a Large Scale](https://www.reddit.com/r/cpp/comments/gnaoop/ides_and_text_editors_for_writing_c_code_on_a/)
-- url: https://pspdfkit.com/blog/2020/ide-text-editors-cpp-large-scale/
----
-
-## [8][Ray Tracing in one Weekend with SYCL](https://www.reddit.com/r/cpp/comments/gn7mqb/ray_tracing_in_one_weekend_with_sycl/)
-- url: https://www.reddit.com/r/cpp/comments/gn7mqb/ray_tracing_in_one_weekend_with_sycl/
----
-This is part 1 of a 2 part [blog post](https://www.codeplay.com/portal/05-19-20-ray-tracing-in-a-weekend-with-sycl-basic-sphere-tracing) on using SYCL to accelerate some parts of the well known "Ray Tracing in one weekend" code.
-## [9][GCC/Clang compiler warnings you enable in your project](https://www.reddit.com/r/cpp/comments/gnhmhh/gccclang_compiler_warnings_you_enable_in_your/)
-- url: https://www.reddit.com/r/cpp/comments/gnhmhh/gccclang_compiler_warnings_you_enable_in_your/
----
-I am an embedded C and C++ dev. Recently I enabled -Wconversion and -Wsign-conversion in my project and it just forced me to write correct low-level code (ofc I use -Werror ;) ) which I wouldn't have done otherwise. I felt bad that I did not enable them all along.
-
-And when I went to the warnings page of  GCC &amp; Clang, there was a huge list of warnings. Definitely I don't want to enable each and every one of them.
-
-For now, these are the list of warnings I have enabled in my project - 
-
-&gt;\-Werror -Wall -Wextra -pedantic-errors -Wconversion -Wsign-conversion
-
-Now my question to the community. What all **compiler warnings** do you enable in your day to day job/ hobby project? Which of them is a must have for all C++ devs in your opinion?
-
-P.S: Feel free to add your story on how it helped you catch a bug early on in your project. :)
-## [10][Visual Studio 2019 version 16.7 Preview 1 released, including 64bit AddressSanitizer](https://www.reddit.com/r/cpp/comments/gmwrpe/visual_studio_2019_version_167_preview_1_released/)
-- url: https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes-preview#16.7.0-pre.1.0
----
-
-## [11][MSVC finds (unrelated) friend function template, whereas gcc and clang don't?](https://www.reddit.com/r/cpp/comments/gn8i83/msvc_finds_unrelated_friend_function_template/)
-- url: https://www.reddit.com/r/cpp/comments/gn8i83/msvc_finds_unrelated_friend_function_template/
----
-Reproduce [https://godbolt.org/z/eFavH7](https://godbolt.org/z/eFavH7)
-
-Guys, can you please help me with this. Is it standard behaviour or implementation defined or I am doing something wrong?
-
-UPDATE: Do I understand correctly that friend functions placed in some special scope, so they are not visible from anywhere except by ADL? Is it described somewhere in standard (sorry I am fairly new to this)?
-## [12][The Darkest Pipeline (TDP): A C++17 library for building multi-threaded software pipelines](https://www.reddit.com/r/cpp/comments/gmvlmu/the_darkest_pipeline_tdp_a_c17_library_for/)
-- url: https://www.reddit.com/r/cpp/comments/gmvlmu/the_darkest_pipeline_tdp_a_c17_library_for/
----
-Hello fellow redditors, 
-
-I've just published my most recent library, which I'm calling **The Darkest Pipeline**: https://github.com/JoelFilho/TDP
-
-**The Library**: Allows simplified construction of multi-threaded pipelines, by using a declarative style. It handles all thread management, and inter-thread communication.
-
-It's header-only, written on C++17, and released under the Boost License.
-
-**Examples**:
-
-    auto pipeline = tdp::input&lt;float, float, float&gt; &gt;&gt; std::fmaf &gt;&gt; tdp::output;
-
-The line above instances the most basic pipeline type, and starts threads responsible for processing (1). 
-
-It then allows the user to call `pipeline.input(float,float,float)` to enqueue data, and `pipeline.[try/wait]_get()` to obtain the output.
-
-    auto pipeline = tdp::producer{read_str} &gt;&gt; process_str &gt;&gt; tdp::consumer{print};
-
-This type of pipeline executes `read_str` without user input, processes it, then calls `print`, without additional user output interfaces. Producer, processor and consumer are individual threads.
-
-**Features**
-
-- Defined at compile time with an embedded DSL, and using stack storage anywhere it's possible
-  - `std::unique_ptr` and `std::shared_ptr` wrappers are provided to allow ownership transfer/sharing
-- Multiple types of input and output (user-provided vs independent threads) allow versatile definition
-- Allows selection of internal communication data structures, which are suitable for different applications:
-  - Queue (blocking)
-  - Triple buffering (blocking or lock-free)
-- One thread is launched per pipeline stage
-- Pure RAII interface: Threads are created on construction, and stopped on destruction.
-
-**Motivation**: In my last job, I worked with video processing on embedded Linux. As the ARM CPU couldn't handle the processing at hard real-time, it needed a multi-threaded pipeline solution for consistent frame rate. After manually instancing different threads and explicitly communicating between them, I realized it could be simpler and less error-prone. So I wrote TDP. 
-
----
-
-The library still needs a couple of additions to become feature-complete, but it's usable in its current state. The [examples](https://github.com/JoelFilho/TDP/tree/master/examples) should give an idea of the range of the current features.
-
-As always, I'd love to hear your feedback.

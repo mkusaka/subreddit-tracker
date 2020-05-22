@@ -1,18 +1,12 @@
 # androiddev
-## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/gm0rsw/weekly_whos_hiring_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/gm0rsw/weekly_whos_hiring_thread/
+## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/goim8p/weekly_anything_goes_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/goim8p/weekly_anything_goes_thread/
 ---
-Looking for Android developers? Heard about a cool job posting? Let people know!
+Here's your chance to talk about whatever!
 
-Here is a suggested posting template:
+Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
 
-&gt; Company: &lt;Best Company Ever&gt;  
-&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
-&gt; Location: &lt;City, State, Country&gt;  
-&gt; Allows remote: &lt;Yes/No&gt;  
-&gt; Visa: &lt;Yes/No&gt;  
-
-Feel free to include any other information about the job.
+Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
 ## [2][Weekly Questions Thread - May 18, 2020](https://www.reddit.com/r/androiddev/comments/glzbpr/weekly_questions_thread_may_18_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/glzbpr/weekly_questions_thread_may_18_2020/
 ---
@@ -31,77 +25,75 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][“Postmortem: How I got banned from /r/androiddev for being ‘too’ active as a member of the Community” by Gabor Varadi](https://www.reddit.com/r/androiddev/comments/gnv79i/postmortem_how_i_got_banned_from_randroiddev_for/)
+## [3][Free icons, feature graphics, Google Play screenshots, and other graphics for Android games and apps](https://www.reddit.com/r/androiddev/comments/godrgr/free_icons_feature_graphics_google_play/)
+- url: https://www.reddit.com/r/androiddev/comments/godrgr/free_icons_feature_graphics_google_play/
+---
+[Hotpot.ai](https://Hotpot.ai?s=androiddev) is a new way to create icons, feature graphics, Google Play screenshots, and other graphics for Android games and apps.
+
+Many students and indie devs have used Hotpot for free. Hopefully we can help some of you, too. See the free offer below.
+
+* [Google Play screenshots](https://hotpot.ai/templates/samsung_s10): Device mockups include Samsung S10, Samsung S9, Pixel 3, and other devices.
+* [Google Play feature graphics](https://hotpot.ai/templates/google_play_feature_graphic)
+* [Free icons](http://hotpot.ai/free_icons?s=androiddev): Edit color, background, stroke, size, and other properties. 5,000+ icons.
+* [Splash screens](https://hotpot.ai/templates/launch_screen)
+* [Google Play icons](https://hotpot.ai/templates/app_store_icon): These are the 512x512 icons required for Google Play.
+* [Game assets](https://hotpot.ai/templates/game_asset)
+* [Instagram posts](https://hotpot.ai/templates/instagram_post)
+* [Facebook posts](https://hotpot.ai/templates/facebook_post)
+* [Product Hunt screenshots](https://hotpot.ai/templates/product_hunt_gallery)
+
+**Template Requests**
+
+If you want other templates (e.g., new game assets) please leave a comment describing what you want. If possible, our professional designers will create the template free of charge.
+
+**Free Offer**
+## [4][🎨 Theme: An Experimental Theme Engine for Android](https://www.reddit.com/r/androiddev/comments/gobwgc/theme_an_experimental_theme_engine_for_android/)
+- url: https://github.com/DeweyReed/Theme
+---
+
+## [5][“Postmortem: How I got banned from /r/androiddev for being ‘too’ active as a member of the Community” by Gabor Varadi](https://www.reddit.com/r/androiddev/comments/gnv79i/postmortem_how_i_got_banned_from_randroiddev_for/)
 - url: https://link.medium.com/IO2y8v1qF6
 ---
 
-## [4][Introducing Gryphon, the Swift to Kotlin translator](https://www.reddit.com/r/androiddev/comments/gnm5da/introducing_gryphon_the_swift_to_kotlin_translator/)
-- url: https://www.reddit.com/r/androiddev/comments/gnm5da/introducing_gryphon_the_swift_to_kotlin_translator/
----
-Hi all, I’ve just published the first full version Gryphon, a program that translates Swift code into Kotlin code. It is meant to let developers share their iOS app's code with Android.
-
-I encourage anyone interested to [check out the video](https://twitter.com/gryphonblog/status/1263233844519620610?s=20) and [the website](https://vinivendra.github.io/Gryphon/index.html).
-
-This is the first version where all features are working:
-
-* The generated Kotlin code works the same as the Swift code it came from, no edits needed. There’s an automated test that makes Gryphon translate its own source code, with around 12k lines, and ensures the translation passes all the same tests as the original executable.
-* There’s a templates system that’s used to automatically translate many standard library types and methods.
-* Xcode integration, with Xcode showing any warnings or errors raised by the Kotlin compiler next to the Swift lines that originated them, so users can fix them at the source.
-* The output code is readable, which is useful for minimizing the risks for new users. If Gryphon isn’t the right fit for them, they’re left with a Kotlin codebase they can keep maintaining.
-
-This list of features isn’t to say [there aren’t any bugs](https://github.com/vinivendra/Gryphon/issues), of course - I’m doing my best to keep track of them and fix them on a daily basis.
-
-Any questions, comments, or feedback in general is welcome!
-## [5][Multiple navigation graphs (with bottom navigation bar)](https://www.reddit.com/r/androiddev/comments/gnipdq/multiple_navigation_graphs_with_bottom_navigation/)
-- url: https://www.rockandnull.com/jetpack-navigation-bottom-navigation-view/
+## [6][Decorator - composable margins and dividers for RecyclerView](https://www.reddit.com/r/androiddev/comments/goj14g/decorator_composable_margins_and_dividers_for/)
+- url: https://github.com/cabriole/Decorator
 ---
 
-## [6][Customize text for app share.](https://www.reddit.com/r/androiddev/comments/gnuu56/customize_text_for_app_share/)
-- url: https://www.reddit.com/r/androiddev/comments/gnuu56/customize_text_for_app_share/
+## [7][List of ideal open source android apps to learn Modern Android development.](https://www.reddit.com/r/androiddev/comments/go9qvp/list_of_ideal_open_source_android_apps_to_learn/)
+- url: https://link.medium.com/ALee49ZnG6
 ---
-I added my app to the group of the apps that appears on the share menu, so I can get data from orhers app.  
-Now how can I customize the text below. For example for Reddit it says: "Post on Reddit".
-## [7][Kotlin Extension function to chain ConstraintLayout animations with TransitionManager](https://www.reddit.com/r/androiddev/comments/gnu92q/kotlin_extension_function_to_chain/)
-- url: https://www.reddit.com/r/androiddev/comments/gnu92q/kotlin_extension_function_to_chain/
+
+## [8][Android hacked? Any link could be linked to your app by default!](https://www.reddit.com/r/androiddev/comments/gof30c/android_hacked_any_link_could_be_linked_to_your/)
+- url: https://medium.com/@elye.project/android-hacked-any-link-could-be-linked-to-your-app-by-default-4b49e3692949?source=friends_link&amp;sk=aaa87652510c28c3f52712ba3260cb15
 ---
-So this basically just runs one Transition after the previous one ends, useful where you want to chain several ConstraintLayout Transitions one after another. As there was no "true" built-in method to do this, I decided to create a small extension function for it. 
+
+## [9][The thread calling for the mod who banned Zhuinden to step down has been removed](https://www.reddit.com/r/androiddev/comments/gojc6p/the_thread_calling_for_the_mod_who_banned/)
+- url: https://www.reddit.com/r/androiddev/comments/gojc6p/the_thread_calling_for_the_mod_who_banned/
+---
+I'm posting this so that you know what unaccountable people we have running this subreddit.
+
+Here is the removed post:
+
+https://www.reddit.com/r/androiddev/comments/goglt8/the_mod_who_banned_uzhuinden_should_step_down/
+
+Sorry (to the users, not to the mods) for the spam, and I won't post again.
+## [10][Is this Material Design component](https://www.reddit.com/r/androiddev/comments/gojba6/is_this_material_design_component/)
+- url: https://www.reddit.com/r/androiddev/comments/gojba6/is_this_material_design_component/
+---
+Dear friends, 
+
+How can I implement the blue "label" in my android app? I need something similar for my FAB button. I need to provide some info near the FAB button, and IDK how to do it. For my client, an extended FAB button is not an option. Any other idea is welcome.
 
 &amp;#x200B;
 
-PS: TransitionSet with the SEQUENTIAL option didn't work for me
-
 &amp;#x200B;
 
-[https://gist.github.com/DDihanov/6624925ced3b4db6f4ce6cbe1704a891](https://gist.github.com/DDihanov/6624925ced3b4db6f4ce6cbe1704a891)
-## [8][Coroutines &amp; Patterns for work that shouldn’t be cancelled](https://www.reddit.com/r/androiddev/comments/gntqtr/coroutines_patterns_for_work_that_shouldnt_be/)
-- url: https://medium.com/androiddevelopers/coroutines-patterns-for-work-that-shouldnt-be-cancelled-e26c40f142ad
+https://preview.redd.it/vbd20a2mib051.jpg?width=750&amp;format=pjpg&amp;auto=webp&amp;s=6a573f957afb01e1f8b6249b7ba224fe8ac6eaea
+## [11][Now in Android #16](https://www.reddit.com/r/androiddev/comments/goerg6/now_in_android_16/)
+- url: https://medium.com/androiddevelopers/now-in-android-16-9a282ebd3f42
 ---
 
-## [9][How important is familiarity with Gradle as a skill for an Android developer?](https://www.reddit.com/r/androiddev/comments/gnm5k4/how_important_is_familiarity_with_gradle_as_a/)
-- url: https://www.reddit.com/r/androiddev/comments/gnm5k4/how_important_is_familiarity_with_gradle_as_a/
----
-I understand that Gradle helps automate dependency management, task automation, and other things, but I can't find anything online that discusses its importance in the daily use by Android developers. Do you use the features with Gradle a lot in your work? As a beginner learning it in Udacity, I'm just being introduced to it. How important is this skill? When you're hiring someone, is this something you'd value in them?
-## [10][Interest in Google Photos app for Android TV? Looking to get some public sentiment/opinion.](https://www.reddit.com/r/androiddev/comments/gnr0xc/interest_in_google_photos_app_for_android_tv/)
-- url: https://www.reddit.com/r/androiddev/comments/gnr0xc/interest_in_google_photos_app_for_android_tv/
----
-Google Photos is an amazing product from Google. As a photo enthusiast, I've been using it since it's inception. For the longest time, there was no dedicated API for Google Photos until [mid-2018](https://developers.googleblog.com/2018/05/introducing-google-photos-partner.html). Before that, I believe the photos were accessible via [Picasa Web Albums API](https://support.google.com/picasa/answer/6383491?hl=en).
-
-I'm an Android developer and own nVidia Shield [Android TV](https://www.android.com/intl/en_us/tv/). Even though the Google Photos app has Google [cast](https://developers.google.com/cast) support to show your photos or slideshows on Android TV/Chromecast, I miss the native Android TV photo browsing experience.
-
-I was wondering if there are people like me who has Android TV and have a similar craving to have a native app for Google Photos. ***If there were an Android TV native app for Google Photos what would you wish it had?***
-
-\----
-
-ps. As far as I know, the following features are already supported by Google Photos
-
-* Show pictures on TV via Google Cast
-* Show slideshow of photo album via Google Cast
-* Select photos from albums to use as screen-saver via Google Home app
-## [11][DO Android Jobs pay well?](https://www.reddit.com/r/androiddev/comments/gnjjzm/do_android_jobs_pay_well/)
-- url: https://www.reddit.com/r/androiddev/comments/gnjjzm/do_android_jobs_pay_well/
----
-I feel like everyone wants to get into Android and so there is a lot of competition and it keeps the pay down. Kinda like the gaming industry?
-## [12]["Clean Dagger - A pragmatic guide to dependency injection on Android" - what do you think? Do you also use this approach in your applications?](https://www.reddit.com/r/androiddev/comments/gn8spj/clean_dagger_a_pragmatic_guide_to_dependency/)
-- url: https://proandroiddev.com/clean-dagger-f248eda5790b
+## [12][Prepared a list of 13 most asked android developer interview questions](https://www.reddit.com/r/androiddev/comments/goit4q/prepared_a_list_of_13_most_asked_android/)
+- url: https://ayusch.com/android-developer-interview-questions-preparation/
 ---
 

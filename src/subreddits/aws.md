@@ -1,104 +1,104 @@
 # aws
-## [1][Is there a way to block a Lambda function to be run no more than once per second for a any given IP address?](https://www.reddit.com/r/aws/comments/gnpwsw/is_there_a_way_to_block_a_lambda_function_to_be/)
-- url: https://www.reddit.com/r/aws/comments/gnpwsw/is_there_a_way_to_block_a_lambda_function_to_be/
+## [1][Is there a way to open the services menu with a keyboard shortcut?](https://www.reddit.com/r/aws/comments/goi6og/is_there_a_way_to_open_the_services_menu_with_a/)
+- url: https://www.reddit.com/r/aws/comments/goi6og/is_there_a_way_to_open_the_services_menu_with_a/
 ---
-Is there a way to block a Lambda function to be run no more than once per second for a any given IP address?
-## [2][Has anyone here made the transition from AWS enthusiast to AWS employee?](https://www.reddit.com/r/aws/comments/gnezee/has_anyone_here_made_the_transition_from_aws/)
-- url: https://www.reddit.com/r/aws/comments/gnezee/has_anyone_here_made_the_transition_from_aws/
----
-Being on the 'customer' side of a 'customer-obsessed' company is one thing, but I would be curious if anyone has made the transition to working at AWS and how that went.
-## [3][AWS logging &amp; Monitoring Strategy Guide (w/ CloudFormation and Terraform templates)](https://www.reddit.com/r/aws/comments/gndkrg/aws_logging_monitoring_strategy_guide_w/)
-- url: https://asecure.cloud/g/strategy_logging/
+Seriously, if I want to navigate to a new service I have to take my hands off the keyboard and click the menu icon before I can search! 
+
+Am I just an idiot? What’s the point of auto focusing the search bar if you still have to use the mouse to open the services menu in the first place?
+## [2][How AWS Web application firewall (WAF) was implemented to prevent an in-production bug; and how you can implement it in less than 5 minutes](https://www.reddit.com/r/aws/comments/go3974/how_aws_web_application_firewall_waf_was/)
+- url: https://medium.com/swlh/how-aws-waf-saved-us-6dc21343f1f5
 ---
 
-## [4][Azure blob storage to AWS S3 data migration](https://www.reddit.com/r/aws/comments/gnpxsb/azure_blob_storage_to_aws_s3_data_migration/)
-- url: https://www.reddit.com/r/aws/comments/gnpxsb/azure_blob_storage_to_aws_s3_data_migration/
----
-Hi everyone, 
-
-I am planning on migrating 2 years worth of data that has approximately 45000 blobs/day. What would be a good and efficient way to do this?
-I am currently running a python script in an ecs fargate container - the script lists and downloads the blob, then uploads it to s3. It is an extremely time consuming procedure and it is not fail proof either. 
-
-Please let me know if there are any aws services that I can use to make this better
-## [5][CloudFormation now supports Blue/Green deployments for ECS!](https://www.reddit.com/r/aws/comments/gni34t/cloudformation_now_supports_bluegreen_deployments/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/05/aws-cloudformation-now-supports-blue-green-deployments-for-amazon-ecs/
----
-
-## [6][Preventing cross account roles external to Organization?](https://www.reddit.com/r/aws/comments/gniv3j/preventing_cross_account_roles_external_to/)
-- url: https://www.reddit.com/r/aws/comments/gniv3j/preventing_cross_account_roles_external_to/
+## [3][What should i use to cache my API response ( Beginner )](https://www.reddit.com/r/aws/comments/gog8du/what_should_i_use_to_cache_my_api_response/)
+- url: https://www.reddit.com/r/aws/comments/gog8du/what_should_i_use_to_cache_my_api_response/
 ---
 Hi All,
 
-Currently our developers have limited access in IAM, they can create roles provided they follow a naming convention and also attach a boundary policy to the role. But how can I prevent them from creating a role that trusts a role from an account outside our organization?
+I am making an App for my Univ, where Students can see all the events going on in the Univ.
 
-It's totally feasible that they would do a cross account role for accounts within our organization for collaboration work, but not for outside accounts.
+The website is hosted on AWS Lightsail ($3.5/month) plan. As the website will only be visited by few organizers that  have the ability to post events , i choose the low end server. 
 
-I tried setting a deny on iam:CreateRole with the following condition, but it does not work:
+The problem is with the App , as it makes API calls to the server to get the details about the events and most of them are same response . Even bigger problem when a new event is posted, everyone will make the same request at the same time.
 
-            "Condition": {
-                "StringNotEquals": {
-                    "aws:PrincipalOrgID": [
-                        "o-blahblah"
-                    ]
-                }
-            },
+For around 2000 users what can i use that will be able to caches the API requests and only request the server if a new one is made. Also if the event is updated i want to be able to tell the caching server to drop the current cache for the event.
 
-Is this the incorrect approach? What have you guys done to secure your organization from this issue?
-## [7][Unity -&gt; .net sdk for using pinpoint](https://www.reddit.com/r/aws/comments/gnsjld/unity_net_sdk_for_using_pinpoint/)
-- url: https://www.reddit.com/r/aws/comments/gnsjld/unity_net_sdk_for_using_pinpoint/
+Or should i just upgrade to a better AWS Lightsail to handel all users.
+## [4][Global Accelerator Experience?](https://www.reddit.com/r/aws/comments/go8dv4/global_accelerator_experience/)
+- url: https://www.reddit.com/r/aws/comments/go8dv4/global_accelerator_experience/
 ---
-Hi there!  
+It sure as hell makes a difference for me. 
 
+&amp;#x200B;
 
-Relative noob question.   
-On the game-day chat yesterday, I was advised that unity can post analytics to pinpoint using the .net SDK.   
+&amp;#x200B;
 
+https://preview.redd.it/zmpkmi8fi7051.png?width=917&amp;format=png&amp;auto=webp&amp;s=9cbe47e75c0fa5ae745db0c61a3e6ea40986928e
 
-&gt;For Unity, you can use the AWS SDK for .NET. Download the Pinpoint package from Nuget.  
-&gt;  
-&gt;  
-&gt;  
-&gt;[https://www.nuget.org/packages/AWSSDK.Pinpoint/3.3.109.16](https://www.nuget.org/packages/AWSSDK.Pinpoint/3.3.109.16)  
-&gt;  
-&gt;  
-&gt;  
-&gt;Add the Pinpoint assembly and its dependencies to the Assets\\Plugins in your Unity Project. Then you should be able to reference that in your C# Code. Don’t forget to use  
-&gt;  
-&gt;  
-&gt;  
-&gt;using Amazon.Pinpoint  
-&gt;  
-&gt;  
-&gt;  
-&gt;at the top of the file to enable the code to use the Pinpoint features. There may be other namespaces in the Pinpoint SDK assembly.  
-&gt;  
-&gt;  
-&gt;  
-&gt;The Unity project ‘API Compatibility’ setting in the project settings must be set to ‘.NET 4.x’
+https://preview.redd.it/9f89sg8fi7051.png?width=895&amp;format=png&amp;auto=webp&amp;s=92005f27e8c7c9dc1ea10217f91379a57250d475
 
-  
-Could anyone advise me as to ***how*** to add the right assemblies / dependencies to my project?   
+https://preview.redd.it/tm9x0g8fi7051.png?width=930&amp;format=png&amp;auto=webp&amp;s=9f13c9d024b0feb6da4ac62285ce6c0c1996c1df
 
-
-Alternatively, if anyone has the depreciated mobile-analytics sdk working, could they confirm that events are piped into pinpoint?   
-
-
-Many thanks!
-## [8][DynamoDB now supports empty values for non-key String and Binary attributes](https://www.reddit.com/r/aws/comments/gn5hhi/dynamodb_now_supports_empty_values_for_nonkey/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/05/amazon-dynamodb-now-supports-empty-values-for-non-key-string-and-binary-attributes-in-dynamodb-tables/
+https://preview.redd.it/6g0mmf8fi7051.png?width=976&amp;format=png&amp;auto=webp&amp;s=4470f9c9fc2475ad94c39528150650128d273f34
+## [5][If I use S3 Get Size in the console, which cost do I incur?](https://www.reddit.com/r/aws/comments/gohp3z/if_i_use_s3_get_size_in_the_console_which_cost_do/)
+- url: https://www.reddit.com/r/aws/comments/gohp3z/if_i_use_s3_get_size_in_the_console_which_cost_do/
 ---
-
-## [9][Is there anyway to achieve unlimited domains/subdomains pointing to ALB?](https://www.reddit.com/r/aws/comments/gnps7t/is_there_anyway_to_achieve_unlimited/)
-- url: https://www.reddit.com/r/aws/comments/gnps7t/is_there_anyway_to_achieve_unlimited/
+Is the request made GET or LIST HTTP request? If it's LIST, then it's 10 times more expensive than I thought :D
+## [6][How to enable Two way SSL in the AWS Load Balancer? Or is there an alternative service by AWS which supports that?](https://www.reddit.com/r/aws/comments/gohiwl/how_to_enable_two_way_ssl_in_the_aws_load/)
+- url: https://www.reddit.com/r/aws/comments/gohiwl/how_to_enable_two_way_ssl_in_the_aws_load/
 ---
-So I just ran into a brick wall with the stupid 25 SSL cert limit on ALB.  I need to point UNLIMITED domains/subdomains to our ALB and our proxy app on the instance will take care of doing stuff behind the scenes.  Is there anyway to achieve this without creating a bunch of ALBs?
-## [10][IAM time bound session termination](https://www.reddit.com/r/aws/comments/gnpkv1/iam_time_bound_session_termination/)
-- url: https://www.reddit.com/r/aws/comments/gnpkv1/iam_time_bound_session_termination/
+I have recently started a new job, and have been asked to research for a way to enable two way SSL on an AWS Load Balancer. I have never personally used AWS services as I am a developer, and not someone who knows the infrastructure/DevOps side much. I know that AWS Load Balancer does not support two way SSL, so I instead said that we can go for nginx which supports that and then route the request to the AWS Load Balancer which would be configured to accept the requests only from the nginx server. 
+
+Wondering if there's any service which supports LB and two way SSL out of the box by AWS.
+
+Any other suggestions are also welcome!
+## [7][DynamoDB for fetching API key from user details table](https://www.reddit.com/r/aws/comments/gohdvd/dynamodb_for_fetching_api_key_from_user_details/)
+- url: https://www.reddit.com/r/aws/comments/gohdvd/dynamodb_for_fetching_api_key_from_user_details/
 ---
-Whenever the support engineers are required to perform any level of elevated actions within an account they request a time bound access and then they are added to an AD security group that ties back to the support role. 
+Hi - I'm still fairly new to dynamodb coming from a largely MySQL background, so I was wondering if this is the right use case.
 
-Now let's say the time bound access is set to 3 hrs and after 3 hrs sailpoint IAG automatically removes the users from the AD groups what we have noticed here is the  users can still access the AWS accounts after 3hrs via the CLI even after they are removed from the AD SG until they are asked to revalidate themselves again i.e. log out and log back into the CLI. 
+I'm looking at using dynamodb to store user information and an api key.
 
-There must be a way of session synchronization for a logged in user. This cannot be done at the role as multiple users from that role might have session access at the same time. 
+Structure would be as follows:
 
-Please let know if there's a better way to revoke time bound access via the CLI as soon as the user is removed from the AD security group.
+key for this table would be user cognito id, and then data would include first name, second name, email and an API key.
+
+When my API gets a request, I need to be able to fetch the user cognito id from the API key.
+
+As far as I'm aware, the best way to do this would be to have a second table called API Keys, where key would be API key, and the data stored would just be user id. - Issue with this is ensuring both of these tables are always kept in sync.
+
+Does this sound right?
+
+&amp;#x200B;
+
+Thanks in advance.
+## [8][Securing EC2 instances that host HTTP/S &amp; SFTP services](https://www.reddit.com/r/aws/comments/go75j1/securing_ec2_instances_that_host_https_sftp/)
+- url: https://www.reddit.com/r/aws/comments/go75j1/securing_ec2_instances_that_host_https_sftp/
+---
+ Hi All,
+
+Have some EC2 instances that are hosting HTTP/S and SFTP services. Since these were recently moved to AWS, we have been seeing a pretty good deal of port scanning going on - and in a couple of instances it may have caused in interruption in service. We are not necessarily AWS savvy - we do have an MSP that officially manages AWS for us - but I want to ask for some perspective here :)
+
+Certainly, provisioning a WAF for HTTP/S services would be an improvement, but in our use case we need to support very large file uploads and downloads. This has been a limitation of WAF in the past, and last I asked our vendor, still is. Along with that, a WAF would not help as far as SFTP traffic goes - and I am not sure what to do there.
+
+From what I can see, an NLB and security groups are all that are protecting these instances at the moment, so possibly additional firewall or IDS/IPS services would be the next steps?
+
+Thanks in advance;
+## [9][Cognito - User pool per tenant, or one user pool for all tenants](https://www.reddit.com/r/aws/comments/gog02b/cognito_user_pool_per_tenant_or_one_user_pool_for/)
+- url: https://www.reddit.com/r/aws/comments/gog02b/cognito_user_pool_per_tenant_or_one_user_pool_for/
+---
+Hi! As the title suggests I am having a hard time diciding between using a single user for all of my SaaS system's tenants, or apon team creation provisioning a user pool for that team.   
+
+
+All other AWS resources will be shared, such as DynamoDB, the API Gateway, and the webpage will be served from a single S3 bucket (with Cloud Front).  
+
+
+Does anyone have any advice/experience that would point one way or the other?
+## [10][Serverless video processing architecture?](https://www.reddit.com/r/aws/comments/godb2v/serverless_video_processing_architecture/)
+- url: https://www.reddit.com/r/aws/comments/godb2v/serverless_video_processing_architecture/
+---
+I want to record video from web clients. Don't know when recording ends and webapp is closed, so I need to send the video chunks in real time.
+
+Staff member needs to perform manual video analysis after session is over. In the future video analysis maybe done by a machine AI.
+Want to keep my architecture serverless (pay-as-you-go, auto-scaling).
+Which aws service architecture do you recommend for this?
+Thanks!

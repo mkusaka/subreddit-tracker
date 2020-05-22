@@ -22,7 +22,61 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Best resources for learning typescript](https://www.reddit.com/r/typescript/comments/gnvyd3/best_resources_for_learning_typescript/)
+## [2][Creating an open source team management app. Server and client are both typed and use Prisma, Nexus, Next and Apollo. Would love your feedbacks, and contributions!](https://www.reddit.com/r/typescript/comments/goau56/creating_an_open_source_team_management_app/)
+- url: https://github.com/troup-io
+---
+
+## [3][Generic not working for types imported via jsdoc comment , in js files , but works via typescript types defined in jsdoc comment . How to fix that ?](https://www.reddit.com/r/typescript/comments/goj3yj/generic_not_working_for_types_imported_via_jsdoc/)
+- url: https://i.redd.it/r9j7js42gb051.png
+---
+
+## [4][Is a function a valid void type?](https://www.reddit.com/r/typescript/comments/go4ahi/is_a_function_a_valid_void_type/)
+- url: https://www.reddit.com/r/typescript/comments/go4ahi/is_a_function_a_valid_void_type/
+---
+While I was refactoring some code, I changed some currying functions to simple functions. Obviously I started with the interfaces and I realized this strange thing:
+
+    interface FuncInterface {
+      fi: (id: number) =&gt; void;
+    }
+    const func = (id: number) =&gt; () =&gt; {
+      console.log(id);
+    };
+    const implementation: FuncInterface = {
+      fi: func,
+    };
+
+TS doesn't complain although `func` is returning a function.
+
+Why is this happening?
+## [5][Confused by convention of using the word "Intrinsic"](https://www.reddit.com/r/typescript/comments/gohl2r/confused_by_convention_of_using_the_word_intrinsic/)
+- url: https://www.reddit.com/r/typescript/comments/gohl2r/confused_by_convention_of_using_the_word_intrinsic/
+---
+**Problem:**
+
+I understand  what intrinsic means generally, but I'm  wondering if there is some concrete meaning it has in the context of Typescript.  
+
+
+**Background:**
+
+React has [JSX.IntrinsicElements](https://www.typescriptlang.org/docs/handbook/jsx.html#intrinsic-elements), Which is described as:  
+
+
+*something intrinsic to the environment (browser)*  
+e.g.  native elements (e.g. strings like "div", "span") as opposed to components  
+
+
+But TypeScript when I  look through the [typescript source](https://github.com/microsoft/TypeScript/blob/master/tests/baselines/reference/intrinsics.js), I can't tell if Intrinsic simply denotes:  
+\- inheritance (e.g. "base type"),   or   
+\- environment feature (e.g. "div")
+
+  
+This is further muddied, as I wonder "Intrinsic" is alluding to something  like an [intrinsic function](https://en.wikipedia.org/wiki/Intrinsic_function)
+
+*a function whose implementation is handled specially by the* [*compiler*](https://en.wikipedia.org/wiki/Compiler)*.*  
+
+
+Can anyone put me on the right track?
+## [6][Best resources for learning typescript](https://www.reddit.com/r/typescript/comments/gnvyd3/best_resources_for_learning_typescript/)
 - url: https://www.reddit.com/r/typescript/comments/gnvyd3/best_resources_for_learning_typescript/
 ---
 As a longtime JS dev who now accepts TS as my lord and saviour - what are the best resources for 'deeply' learning TS fundamentals?
@@ -32,7 +86,61 @@ Are there any equivalent resources like 'Eloquent Javascript', 'You don't know J
 Video series/course suggestions also welcome.
 
 Thanks!
-## [3][Typing some complex lodash stuff](https://www.reddit.com/r/typescript/comments/gnsseg/typing_some_complex_lodash_stuff/)
+## [7][Failing function type check?](https://www.reddit.com/r/typescript/comments/go4kj4/failing_function_type_check/)
+- url: https://www.reddit.com/r/typescript/comments/go4kj4/failing_function_type_check/
+---
+Why the first interface is not checking the optional argument and the second one does?
+
+    interface FuncInterface1 {
+      fi1(id?: number): void;
+    }
+    interface FuncInterface2 {
+      fi2: (id?: number) =&gt; void;
+    }
+    const func = (id: number) =&gt; {
+      console.log(id);
+    };
+    const imp1: FuncInterface1 = {
+      fi1: func,     // OK
+    };
+    const imp2: FuncInterface2 = {
+      fi2: func,     // typescript argument error
+    };
+## [8][Make typescript understand that the esmodule I import has its declaration files somewhere else .](https://www.reddit.com/r/typescript/comments/go5iy7/make_typescript_understand_that_the_esmodule_i/)
+- url: https://www.reddit.com/r/typescript/comments/go5iy7/make_typescript_understand_that_the_esmodule_i/
+---
+For example lets say I have the following project :
+
+    ./myEsModule.js
+    ./myFolder
+    ./myFolder/types.d.ts
+
+How do I make typescript understand that my esmodule has its declaration files somewhere else , without moving the declaration files and changing their name .
+## [9][Can't seem to index a mapped type.](https://www.reddit.com/r/typescript/comments/gnxcq4/cant_seem_to_index_a_mapped_type/)
+- url: https://www.reddit.com/r/typescript/comments/gnxcq4/cant_seem_to_index_a_mapped_type/
+---
+I'm trying to learn advanced types, specifically, mapped types and I'm a little confused with their behavior.
+
+Right now my code looks like this:
+
+    type StatNameNoHp = 'atk' | 'def' | 'spa' | 'spd' | 'spe';
+    type StatName = 'hp' | StatNameNoHp;
+    type StatsTable&lt;T = number&gt; = {
+      [stat in StatName]: T
+    };
+    const x: StatsTable = { hp: 0, atk: 0, def: 0, spa: 0, spd: 0, spe: 0 };
+    for (const stat in x) {
+      console.log(x[stat]); //error
+    }
+    
+
+I get an error saying:
+
+    Element implicitly has an 'any' type because expression of type 'string' can't be used to index type 'StatsTable&lt;number&gt;'.
+      No index signature with a parameter of type 'string' was found on type 'StatsTable&lt;number&gt;'
+
+I'm not too sure what's happening here. Referencing x\['hp'\] seems to work perfectly fine. Any help would be appreciated.
+## [10][Typing some complex lodash stuff](https://www.reddit.com/r/typescript/comments/gnsseg/typing_some_complex_lodash_stuff/)
 - url: https://www.reddit.com/r/typescript/comments/gnsseg/typing_some_complex_lodash_stuff/
 ---
 I was trying to type return value of \_.[defaultsDeep](https://lodash.com/docs/4.17.15#defaultsDeep)
@@ -49,198 +157,7 @@ I know i can just add overloads for up to \~10 parameters for example like so
 `DeepDefaultFor3&lt;T,K,J&gt; = DeepDefault&lt;T, DeepDefault&lt;K,J&gt;&gt;`  
 but that doesn't seem right  
 Does any one have ideas about hot one would type  \_.[defaultsDeep](https://lodash.com/docs/4.17.15#defaultsDeep) of N parameters  when N is unknown?
-## [4][Using JSDoc tags to test functions [Prototype]](https://www.reddit.com/r/typescript/comments/gn6sit/using_jsdoc_tags_to_test_functions_prototype/)
+## [11][Using JSDoc tags to test functions [Prototype]](https://www.reddit.com/r/typescript/comments/gn6sit/using_jsdoc_tags_to_test_functions_prototype/)
 - url: https://i.redd.it/8gqa8evpfvz41.gif
 ---
 
-## [5][ESLint - What are the main differences between "eslint-config-airbnb-typescript" and "eslint-config-standard-with-typescript" conventions?](https://www.reddit.com/r/typescript/comments/gney1v/eslint_what_are_the_main_differences_between/)
-- url: https://www.reddit.com/r/typescript/comments/gney1v/eslint_what_are_the_main_differences_between/
----
-Section [https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md#eslint-configs](https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md#eslint-configs) lists two list of ESLint rules:
-
-* Airbnb's ESLint config - [https://www.npmjs.com/package/eslint-config-airbnb-typescript](https://www.npmjs.com/package/eslint-config-airbnb-typescript)
-* Standard - [https://www.npmjs.com/package/eslint-config-standard-with-typescript](https://www.npmjs.com/package/eslint-config-standard-with-typescript)
-
-What are the main differences between them?
-## [6][[question] Which type of dependency should @types/foobar belong to?](https://www.reddit.com/r/typescript/comments/gni4gr/question_which_type_of_dependency_should/)
-- url: https://www.reddit.com/r/typescript/comments/gni4gr/question_which_type_of_dependency_should/
----
-Hi. Consider a TypeScript project which uses `foo` and `bar` dependencies.  Should the corresponding `@types/foo` and `@types/bar` belong to `devDependencies` XOR `dependencies`?
-
-The `create-react-app` boiler template lists `@types/*` in `dependencies`.  But I just don't know where to put it.
-
-Does it really matter where they are?
-## [7][Trying to gather Geolocation speed data over an interval](https://www.reddit.com/r/typescript/comments/gngvfz/trying_to_gather_geolocation_speed_data_over_an/)
-- url: https://www.reddit.com/r/typescript/comments/gngvfz/trying_to_gather_geolocation_speed_data_over_an/
----
-I have an angular ionic 5 app running on a cordova android emulator. What I need to do is use the ionic Geolocation plugin to find the speed of the user. I need to record the user's speed every second, and make sure it falls in the range of 0.7 &lt; x &lt; 2.5 m/s. If it does not, continue recording every second until it does. I need to record 10 valid speed measurements using this method. Then determine the average speed from that set of data. Here is a link to my Stackoverflow [post](https://stackoverflow.com/questions/61920194/finding-speed-of-an-interval-of-10-seconds), and here is my typescript file:
-
-`import { Component } from '@angular/core';`
-
-`import { Geolocation } from '@ionic-native/geolocation/ngx';`
-
-
-
-`u/Component({`
-
-`selector: 'app-home',`
-
-`templateUrl: 'home.page.html',`
-
-`styleUrls: ['home.page.scss'],`
-
-`})`
-
-`export class HomePage {`
-
-`framework = 'At exact boarding time';`
-
-
-
-`constructor(private geolocation: Geolocation) {}`
-
-
-
-`latitude: any = 0; //latitude`
-
-`longitude: any = 0; //longitude`
-
-`speed: any = 1; //speed`
-
-
-
-`choices = {`
-
-`timeout: 10000,` 
-
-`enableHighAccuracy: true,` 
-
-`maximumAge: 3600`
-
-`};`
-
-
-
-`average_walking_speed(){`
-
-`this.geolocation.getCurrentPosition(this.choices).then((resp) =&gt; {`
-
-`this.speed = resp.coords.speed;`
-
-`console.log(this.speed);`
-
-`}).catch((error) =&gt; {`
-
-`console.log('Error getting speed', error);`
-
-`});`
-
-`}`
-
-
-
-`// use geolocation to get user's device coordinates`
-
-`getCurrentCoordinates() {`
-
-`this.geolocation.getCurrentPosition().then((resp) =&gt; {`
-
-`this.latitude = resp.coords.latitude;`
-
-`this.longitude = resp.coords.longitude;`
-
-`this.speed = resp.coords.speed;`
-
-`}).catch((error) =&gt; {`
-
-`console.log('Error getting location', error);`
-
-`});`
-
-
-
-`document.getElementById("updater").innerHTML = ' ' + this.speed +" m/s"`
-
-`}`    
-
-`}`
-## [8][Vanilla library types](https://www.reddit.com/r/typescript/comments/gncmsy/vanilla_library_types/)
-- url: https://www.reddit.com/r/typescript/comments/gncmsy/vanilla_library_types/
----
-So I've installed the '@types/\[library\]' for what I need. I can't figure out how to leverage that .d.ts file so I can use those types in my own code. Is that what it is supposed to do? For example I'm using express and install it's types. I pass the req object to a function and I want to typecheck that parameter when writing the function for expresses req object but I don't know how to do it.
-## [9][myzod v1.0.0 is out](https://www.reddit.com/r/typescript/comments/gncnh6/myzod_v100_is_out/)
-- url: https://www.reddit.com/r/typescript/comments/gncnh6/myzod_v100_is_out/
----
-Today I released version 1.0.0 of [myzod](https://www.npmjs.com/package/myzod)! 
-
-I just want to thank everybody who has given feedback and participated over the past month or two.
-
-Hope you guys find it useful.
-## [10][Fcaljs - extensive math expression evaluator library](https://www.reddit.com/r/typescript/comments/gn7ves/fcaljs_extensive_math_expression_evaluator_library/)
-- url: https://www.npmjs.com/package/fcal
----
-
-## [11][Destructuring and sum types](https://www.reddit.com/r/typescript/comments/gn7oz6/destructuring_and_sum_types/)
-- url: https://www.reddit.com/r/typescript/comments/gn7oz6/destructuring_and_sum_types/
----
-I had typed array with an object with one optional field. Then I decided that instead of an optional prop what I really want is an array of objects not containing that property or all the elements containing such property, so I switched to a sum type.
-
-&amp;#x200B;
-
-The problem is that this makes destructuring of such prop impossible.
-
-Here is an example of the sum type:
-
-&amp;#x200B;
-
-```js
-
-type tab&lt;T&gt; =
-
-| { label: string }
-
-| { label: string, value: T }
-
-```
-
-
-
-This is what I can not do:
-
-
-```
-    tabs.map(({ label, badge, value }, idx) =&gt; {
-
-        callSomeFun(value || idx)
-
-    })
-```
-
-
-This works for flow, but not for typescript:
-
-
-```
-    tabs.map(({ label, badge, ...tab }, idx) =&gt; {
-
-        const value = tab.value || idx
-
-        callSomeFun(value)
-
-    })
-```
-
-
-Also because of this, some other parts of the code get an inferred type of mixed, which in runtime is not correct because I'm just "or-ing" them:
-
-
-
-const \[activeTab, setActiveTab\] = useState(tabs\[0\].value || initialTab)
-
-
-
-activeTab becomes of mixed type
-
-
-
-Is there a better way of doing this while ensuring the type safety of having the prop on all items or no one?

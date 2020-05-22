@@ -23,61 +23,58 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/05/19/this-week-in-rust-339/
 ---
 
-## [3][Support cargo.toml for GitHub dependency graph](https://www.reddit.com/r/rust/comments/gnryht/support_cargotoml_for_github_dependency_graph/)
-- url: https://github.community/t5/How-to-use-Git-and-GitHub/Feature-request-Support-Cargo-toml-for-dependency-graph/m-p/26122
+## [3][Drawing SVG Graphs with Rust](https://www.reddit.com/r/rust/comments/goe4aa/drawing_svg_graphs_with_rust/)
+- url: https://cetra3.github.io/blog/drawing-svg-graphs-rust/
 ---
 
-## [4][Dropping heavy objects in another thread can make your code faster](https://www.reddit.com/r/rust/comments/gntv7l/dropping_heavy_objects_in_another_thread_can_make/)
-- url: https://abramov.io/rust-dropping-things-in-another-thread
+## [4][A Stable Modular ABI for Rust](https://www.reddit.com/r/rust/comments/goav53/a_stable_modular_abi_for_rust/)
+- url: https://internals.rust-lang.org/t/a-stable-modular-abi-for-rust/12347
 ---
 
-## [5][Announcement: Electron-like library for rust that does not bundle chrome](https://www.reddit.com/r/rust/comments/gnvkf0/announcement_electronlike_library_for_rust_that/)
-- url: https://www.reddit.com/r/rust/comments/gnvkf0/announcement_electronlike_library_for_rust_that/
----
-Using electron, desktop apps can be created for Mac, Windows and Linux easily using JS and HTML. But in electron the chrome browser is bundled so each app has it's own copy of chrome. Eventhough webview exists, in Windows it uses Internet Explorer so modern JS,HTML or CSS cannot be used. Also different browsers have to be supported.
-
-Webview can be used to create desktop apps but I came across a go library called [lorca](https://github.com/zserge/lorca).It uses the existing chrome installation and communicates with it using the devtools protocol. So I created a lorca like library for rust called [alcro](https://github.com/Srinivasa314/alcro).
-
-I plan to publish it to crates.io but before that I wanted it tested on windows and macos. Alcro will search for the chrome installation and display a message box if not found. The messagebox asks the user whether they want to download chrome and opens the webpage to download chrome if the user agrees.I want some users to check if the following work
-
-* Whether it compiles on win/mac
-* Whether it finds the chrome installation
-* If you comment out the path of your chrome installation in `src/locate.rs` does it display a messagebox
-* If you click yes does a webpage open to download chrome
-* Do documentation tests work
-* Do the examples work
-* Read the documentation ( using cargo doc --open as of now ) and see if all the features work
-## [6][Oxidised eBPF, part I.: Building a toolchain](https://www.reddit.com/r/rust/comments/gnu5td/oxidised_ebpf_part_i_building_a_toolchain/)
-- url: https://blog.redsift.com/labs/oxidised-ebpf-part-i-building-a-toolchain/
+## [5][Microsoft's Safe Systems Programming Languages Effort (Video)](https://www.reddit.com/r/rust/comments/godjki/microsofts_safe_systems_programming_languages/)
+- url: https://mybuild.microsoft.com/sessions/61de34c5-b111-4ece-928f-541854875862
 ---
 
-## [7][Things I hate about Rust](https://www.reddit.com/r/rust/comments/gnd4bd/things_i_hate_about_rust/)
-- url: https://blog.yossarian.net/2020/05/20/Things-I-hate-about-rust
+## [6][New crate: defer-drop. Defer dropping your data to a background thread.](https://www.reddit.com/r/rust/comments/go4xcp/new_crate_deferdrop_defer_dropping_your_data_to_a/)
+- url: https://www.reddit.com/r/rust/comments/go4xcp/new_crate_deferdrop_defer_dropping_your_data_to_a/
+---
+Inspired by the [recent post](https://www.reddit.com/r/rust/comments/gntv7l/dropping_heavy_objects_in_another_thread_can_make/) about how dropping large data structures or some kinds of OS resources (such as Windows files) can be very slow, and potentially you can speed up your main thread by punting the objects to a background thread to be dropped, I made a crate that does exactly that: [defer-drop](https://docs.rs/defer-drop/1.0.0/defer_drop/)
+
+In the docs, I wrote up all the reasons you might *not* want to use this (performance slowdown, nondeterminism, unbounded memory growth), but hopefully someone can use it for the things it's useful for.
+## [7][Update to LLVM 10 got merged](https://www.reddit.com/r/rust/comments/gnx7y0/update_to_llvm_10_got_merged/)
+- url: https://github.com/rust-lang/rust/pull/67759
 ---
 
-## [8][Is actix-web still a good bet for a new production website?](https://www.reddit.com/r/rust/comments/gnm0em/is_actixweb_still_a_good_bet_for_a_new_production/)
-- url: https://www.reddit.com/r/rust/comments/gnm0em/is_actixweb_still_a_good_bet_for_a_new_production/
----
-With all the fuss about the main developer leaving and the repository getting deleted for a bit, is it still likely that actix-web will see continued development? If I'm making a new production website for a business, should I have reservations about using it?
-## [9][Oxidizing the technical interview](https://www.reddit.com/r/rust/comments/gnbblm/oxidizing_the_technical_interview/)
-- url: https://blog.mgattozzi.dev/oxidizing-the-technical-interview/
+## [8][RustCrypto: contingency plan for new crate releases](https://www.reddit.com/r/rust/comments/go5pf8/rustcrypto_contingency_plan_for_new_crate_releases/)
+- url: https://github.com/RustCrypto/traits/issues/102
 ---
 
-## [10][Create Cookies with Warp](https://www.reddit.com/r/rust/comments/gnui36/create_cookies_with_warp/)
-- url: https://www.reddit.com/r/rust/comments/gnui36/create_cookies_with_warp/
+## [9][How does cargo handle duplicate (indirect) dependencies with same version but different features?](https://www.reddit.com/r/rust/comments/goid6w/how_does_cargo_handle_duplicate_indirect/)
+- url: https://www.reddit.com/r/rust/comments/goid6w/how_does_cargo_handle_duplicate_indirect/
 ---
-I want to create cookies on my server using \`warp\`. Now in documentation I could only find the \`cookie\` filter which lets me access a cookie but not create one.
+I realize that if my package depends on packages `alpha` and `beta`, and the former depends on `gamma = "1.0"` and the latter on `gamma = "2.0"`, then two copies of `gamma` will be build and linked into my package. But what if instead `alpha` depends on `gamma = { version: "2.0", features = ["one"] }` (and `beta` still only depends on `gamma = "2.0"`)? Would I still end up with two copies of `gamma`? Or just a single copy, that had the union of `features = ["one"]` and `features = []`?
 
-No any other documentation I could find related to cookies in the documentation.
-
-&amp;#x200B;
-
-Any help would be really appreciated.
-## [11][*mut Type vs &amp;mut Type . What's the difference between them?](https://www.reddit.com/r/rust/comments/gnr9th/mut_type_vs_mut_type_whats_the_difference_between/)
-- url: https://www.reddit.com/r/rust/comments/gnr9th/mut_type_vs_mut_type_whats_the_difference_between/
+What if `alpha` depends on `gamma = { version: "2.0", features = ["one"] }`, and `beta` depends on `gamma = { version: "2.0", features = ["two"] }`, and features `"one"` and `"two"` for package `gamma` are meant to be incompatible?
+## [10][What is the difference between .to_string() and String::from() and .into()](https://www.reddit.com/r/rust/comments/gohlq2/what_is_the_difference_between_to_string_and/)
+- url: https://www.reddit.com/r/rust/comments/gohlq2/what_is_the_difference_between_to_string_and/
 ---
+As titled. Sorry I am a beginner.
 
-## [12][3d6: Rendering electron orbitals of hydrogen](https://www.reddit.com/r/rust/comments/gnhkxn/3d6_rendering_electron_orbitals_of_hydrogen/)
-- url: https://github.com/cbeuw/iiiD6
+I thought implementing .to\_string() automatically derives String::from()
+## [11][How can we support optional namespaces for registries that support it in Cargo?](https://www.reddit.com/r/rust/comments/goj86f/how_can_we_support_optional_namespaces_for/)
+- url: https://www.reddit.com/r/rust/comments/goj86f/how_can_we_support_optional_namespaces_for/
+---
+This seems like an issue that's so important to this community.  
+
+    [dependencies]
+    foo = { package = "richard/foo", version = "0.2", registry="richard_registry"}
+
+Am I wrong in thinking this is all we need to figure out how to do?  We don't even have to discuss changing crates.io at all.  Just let's focus on specifically, how do we make it even an option.  
+
+I created a feature request if you want to show your support or comment.
+
+https://github.com/rust-lang/cargo/issues/8266
+## [12][The Matrix homeserver Conduit just got support for media and end to end encryption](https://www.reddit.com/r/rust/comments/go0jg8/the_matrix_homeserver_conduit_just_got_support/)
+- url: https://www.youtube.com/watch?v=HoBslDtqC1k
 ---
 

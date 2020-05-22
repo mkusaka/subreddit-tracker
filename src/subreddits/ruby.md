@@ -1,75 +1,92 @@
 # ruby
-## [1][A prototype of an interactive tutorial environment for building games with Ruby (link in the comments).](https://www.reddit.com/r/ruby/comments/gnpvp8/a_prototype_of_an_interactive_tutorial/)
-- url: https://v.redd.it/w3w1mpldl1051
+## [1][Demo: Ruby 2.7 Pattern Matching on YAML](https://www.reddit.com/r/ruby/comments/goei88/demo_ruby_27_pattern_matching_on_yaml/)
+- url: https://www.youtube.com/watch?v=vtJyl2DIZcA&amp;feature=share
 ---
 
 ## [2][5 Ways to Splat in Ruby](https://www.reddit.com/r/ruby/comments/gnve20/5_ways_to_splat_in_ruby/)
 - url: https://hint.io/blog/5-ways-to-splat-in-ruby
 ---
 
-## [3][Why did Why the Lucky Stiff quit?](https://www.reddit.com/r/ruby/comments/gnq0aq/why_did_why_the_lucky_stiff_quit/)
+## [3][New to ruby need recommend a tutorial](https://www.reddit.com/r/ruby/comments/go5zx3/new_to_ruby_need_recommend_a_tutorial/)
+- url: https://www.reddit.com/r/ruby/comments/go5zx3/new_to_ruby_need_recommend_a_tutorial/
+---
+hello am a beginner in programming (altought i already used other programming languages but meh), so i never used ruby before, just wondering if you guys can recommend me a good tutorial to follow, thanks.
+## [4][Error Handling in GraphQL-Ruby](https://www.reddit.com/r/ruby/comments/go2uoq/error_handling_in_graphqlruby/)
+- url: https://www.abhaynikam.me/posts/error-handling-in-graphql-ruby/
+---
+
+## [5][Which is the preferred method here](https://www.reddit.com/r/ruby/comments/go38t3/which_is_the_preferred_method_here/)
+- url: https://www.reddit.com/r/ruby/comments/go38t3/which_is_the_preferred_method_here/
+---
+Hey everyone! So I have a preferred syntax question. Which is the most preferable method here between .count, .length, and .size? I see they all work for this particular code. 
+
+I am new to this sub and so far it has been a wealth of knowledge! 
+
+So thank you all!! 
+
+
+data = [ [1,2],[5,10] ]
+
+def find_num(array)
+    i = 0
+    new_array = []
+    while i &lt; array.length 
+        j = 0
+        temp_min = array[i][j]
+        
+        while j &lt; array[i].length 
+            if array[i][j] &lt; temp_min
+                temp_min = array[i][j] 
+            end 
+                j += 1      
+        end
+          new_array &lt;&lt; temp_min
+          i += 1 
+    end
+      
+      return new_array
+end
+
+p find_num(data)
+## [6][Having a hard time using ruby bundler on manjaro](https://www.reddit.com/r/ruby/comments/go359m/having_a_hard_time_using_ruby_bundler_on_manjaro/)
+- url: https://www.reddit.com/r/ruby/comments/go359m/having_a_hard_time_using_ruby_bundler_on_manjaro/
+---
+I've been trying to get this [program](https://github.com/tmking/reddit_archiver) to run properly but I've got an error on the last step. I don't know ruby well enough to figure it out but it get the error : 
+
+    bash: bundle: command not found
+
+when I run the command
+
+    $ bundle exec reddit_archiver
+
+It seems to be a problem with bundler which I have uninstalled an reinstalled to no avail. Any help would be greatly appreciated
+## [7][Top 5 Reasons For Outsourcing Front-End Development](https://www.reddit.com/r/ruby/comments/gogzdi/top_5_reasons_for_outsourcing_frontend_development/)
+- url: http://selleoblogtwo.xyz
+---
+
+## [8][A prototype of an interactive tutorial environment for building games with Ruby (link in the comments).](https://www.reddit.com/r/ruby/comments/gnpvp8/a_prototype_of_an_interactive_tutorial/)
+- url: https://v.redd.it/w3w1mpldl1051
+---
+
+## [9][Live Talks: Going live when this post is 3 hours old](https://www.reddit.com/r/ruby/comments/gnxdvy/live_talks_going_live_when_this_post_is_3_hours/)
+- url: https://www.reddit.com/r/ruby/comments/gnxdvy/live_talks_going_live_when_this_post_is_3_hours/
+---
+Hey everyone!
+
+I hope this doesn't break any community rules. I wanted to share a project me and my colleagues have been doing during this time of pandemic which makes us super proud. We call it Subvisual Live Talks and it's essentially one of us having a chat with an interesting guest, usually well-known within their communities.
+
+A fair number of us have been frequently speaking at and attending multiple conferences for the past few years. We also organise Ruby Conf Portugal, Mirror Conf and local programming and design meetups. As a result, we made a lot of friends in tech communities. Now that we're all at home, we had this weird idea "what if we livestream the conversations we've been having with some of them?"
+
+It's all very laid back and informal. We've been doing it on [Twitch](https://twitch.tv/wearesubvisual) every Thursday at 6 PM GMT+1. If you want to ask questions, we have - erm - _someone_ whose sole job is to go through both the Twitch chat and the #subvisualtalks hashtag on Twitter and write down any questions you want to ask the guest. We'll do our best to have them answered.
+
+The VODs stay available for 7 days on Twitch and end up going to YouTube eventually (depending on how available that - erm - *someone* is).
+
+So far we've had conversations with [Josh Clayton](https://www.youtube.com/watch?v=fponvB8i9us) (managing director @ thoughtbot), [Saša Jurić](https://www.youtube.com/watch?v=4P9WmnUJ2vo) (author of Elixir in Action), [Chris Keathley](https://www.youtube.com/watch?v=wIjtQvj2C9g) (renowed alchemist), [Fred Oliveira](https://www.youtube.com/watch?v=eQo4_AnfAV0) (CTO @ Union) and [Aaron Patterson](https://www.youtube.com/watch?v=ZZ-8O6_nUjE) (Ruby core team, Rails core team, who I'm sure you all know). All of them available on [Youtube](https://www.youtube.com/channel/UCs2aM7E1bqul_KZqK0Sq2vg).
+
+This has been a blast and the conversations tend to have amazingly insightful content. Josh speaking about his challenges in the Marines, Aaron with his adventures through the Ruby garbage collector. And today we have Miles from Cookpad, who was at one point sound engineer for Bob Dylan! It starts at 6 PM GMT+1 on our Twitch channel.
+
+We really hope you enjoy it! We're just doing it for the fun, as more of a hobbie so if you have any feedback or suggestions for the guest or the project, please do let us know.
+## [10][Why did Why the Lucky Stiff quit?](https://www.reddit.com/r/ruby/comments/gnq0aq/why_did_why_the_lucky_stiff_quit/)
 - url: https://www.reddit.com/r/ruby/comments/gnq0aq/why_did_why_the_lucky_stiff_quit/
----
-
-## [4][The new gem that helps you rule all your classes :)](https://www.reddit.com/r/ruby/comments/gnvy31/the_new_gem_that_helps_you_rule_all_your_classes/)
-- url: https://www.reddit.com/r/ruby/comments/gnvy31/the_new_gem_that_helps_you_rule_all_your_classes/
----
-Github: [https://github.com/andriy-baran/mature\_factory](https://github.com/andriy-baran/mature_factory) 
-
-Gitbook docs:  [https://app.gitbook.com/@andriy-baran-v/s/mature-factory/](https://app.gitbook.com/@andriy-baran-v/s/mature-factory/)
-## [5][Speeding up Rails with Memoization](https://www.reddit.com/r/ruby/comments/gnl9xi/speeding_up_rails_with_memoization/)
-- url: https://www.reddit.com/r/ruby/comments/gnl9xi/speeding_up_rails_with_memoization/
----
-Whoever first said that "the fastest code is no code" must have really liked memoization. After all, memoization speeds up your application by running less code. In this article, Jonathan Miles introduces us to memoization. We'll learn when to use it, how to implement it in Ruby, and how to avoid common pitfalls. Buckle up! [https://www.honeybadger.io/blog/ruby-rails-memoization/](https://www.honeybadger.io/blog/ruby-rails-memoization/)
-## [6][New OData server library for Ruby](https://www.reddit.com/r/ruby/comments/gntthv/new_odata_server_library_for_ruby/)
-- url: https://www.reddit.com/r/ruby/comments/gntthv/new_odata_server_library_for_ruby/
----
-Hello rubyists,
-
-Although OData is around for a long time ago now, and some already predicted it's dead, i still believe there is value in it. The OData Protocoll has been open sourced, but when i looked for open source server implemententions i found only python, php and javascript implementations, but nothing in Ruby. I tried to fill this gap with the [Safrano library](https://gitlab.com/dm0da/safrano#safrano) .
-
-As an example of what can be done with it, you can have a look at the [Fiveapples demo app](https://gitlab.com/dm0da/fiveapples#fiveapples) which runs safrano and an openui5 demo app in a single standalone Rack application.
-
-If you know  a bit of database modeling and are looking for REST/OData server, this might be for you.
-
-&amp;#x200B;
-## [7][How to Migrate from Capybara Webkit to Webdrivers](https://www.reddit.com/r/ruby/comments/gndimm/how_to_migrate_from_capybara_webkit_to_webdrivers/)
-- url: https://www.fastruby.io/blog/rails/upgrades/how-to-migrate-from-capybara-webkit-to-webdrivers.html
----
-
-## [8][anyone used `sdbm` from stdlib? Anyone found it buggy?](https://www.reddit.com/r/ruby/comments/gneh4r/anyone_used_sdbm_from_stdlib_anyone_found_it_buggy/)
-- url: https://www.reddit.com/r/ruby/comments/gneh4r/anyone_used_sdbm_from_stdlib_anyone_found_it_buggy/
----
-So the ruby stdlib actually has a few different file-based key/value store implementations. 
-
-There's [PStore](https://ruby-doc.org/stdlib-2.5.3/libdoc/pstore/rdoc/PStore.html), which gets talked about maybe the most. There's [gdbm](https://ruby-doc.org/stdlib-2.5.3/libdoc/gdbm/rdoc/GDBM.html) and [dbm](https://ruby-doc.org/stdlib-2.6.1/libdoc/dbm/rdoc/DBM.html) -- which weren't available on my system. Apparently while kind of in stdlib, ruby has to be compiled on a system that has dbm or gdbm library headers available for the ruby packages to actually be on the system. 
-
-And there's also [SDBM](https://ruby-doc.org/stdlib-2.6.3/libdoc/sdbm/rdoc/SDBM.html). Which was available on my system, and for some reason I tried to use (under MRI 2.6.6)
-
-I *think* I ran into some severe bugs. I was storing around 300,000 key/values in there. The keys are all URLs (and fairly similar to URLs to each other), the values are all "true" -- I was basically trying to use it as a simple persistent quick-lookup Set. 
-
-I found that some things I stored there `store[key] = value`, would NOT come back with the value when retrieved `store[key] # =&gt; nil`. 
-
-Investigating more, I found that `store.keys.count` was N, but `store.values.count` was a different number M &lt; N.  That doesn't seem like it should ever happen!  `store.each_pair.count` was also that same M &lt; N.  It would seem the sdbm had become inconsistent with itself somehow -- there were keys listed in `store.keys` which if you asked `store.has_key?(key)` would return false!
-
-My guess is some kind of hash collision error in it's internal implementation -- my 300,000 keys which were all URLs (and all began with `https://samedomain`) perhaps triggered lots of key collisions?
-
-When I find a bug like this, I feel like it's my responsibility to report it upstream. BUT, I was unable to simplify this to a nice reproduction script, a subset of 100 of my keys didn't reproduce, I just know my complete 300,000 key set reproduces. 
-
-And after having lost a few hours to this bug (my brain was not considering the bug could be in sdbm itself, part of stdlib! So I was stumped trying to figure out why my code wasn't producing the results I expected, took me a while to consider and confirm it seemed to be sdbm's fault after all) -- not looking to spend any more on reproducing. 
-
-But i figured reporting it on /r/ruby was at least better than not mentioning it to anyone. 
-
-Anyone else ever used sdbm?  Anyone found any problems with it?
-
-[I switched to `pstore`, and it seems to be working fine now. I was using sdbm because i liked it's API better, and using pstore's transaction API is a bit more confusing, and I was worried if there'd be performance or RAM problems if I kept a transaction open while writing hundreds of thousands of objects... but I'm just doing that, and it seems to be okay].
-## [9][Tokens -- Is there a list of reserved tokens for Ruby's syntax?](https://www.reddit.com/r/ruby/comments/gna19o/tokens_is_there_a_list_of_reserved_tokens_for/)
-- url: https://www.reddit.com/r/ruby/comments/gna19o/tokens_is_there_a_list_of_reserved_tokens_for/
----
-I need list for the reserved tokens Ruby has.
-
-For example, in the expression `"hello " &lt;&lt; "world"`, `&lt;&lt;` is a method of the `String` class, not a token.
-## [10][Scaling Rails: Docker &amp; AWS Beanstalk](https://www.reddit.com/r/ruby/comments/gnaiyu/scaling_rails_docker_aws_beanstalk/)
-- url: http://jetrockets.pro/blog/scaling-rails-docker-aws-beanstalk
 ---
 

@@ -1,74 +1,114 @@
 # Kotlin
-## [1][Best practice adding item to room db](https://www.reddit.com/r/Kotlin/comments/gogplf/best_practice_adding_item_to_room_db/)
-- url: https://www.reddit.com/r/Kotlin/comments/gogplf/best_practice_adding_item_to_room_db/
+## [1][Trying to understand something about Kotlin's Collections interface and Java](https://www.reddit.com/r/Kotlin/comments/gp1hil/trying_to_understand_something_about_kotlins/)
+- url: https://www.reddit.com/r/Kotlin/comments/gp1hil/trying_to_understand_something_about_kotlins/
 ---
-I am facing an issue and i need an opinion. I know at least 3 ways to solve the problem but i want to know witch is the best approach. Lets say that i want to add an item to a cart, and notify the user with a corresponidng message: if item exists in card toast "Item already in cart" and if not: "Item added successfully". Adding an item with 2 queries (one to check if exists and one to add the item) seems like a heavy operation. Another way is to store a list of values in the viewmodel and check if item exists in that list. Any advice?
-## [2][Testing for Android app](https://www.reddit.com/r/Kotlin/comments/godp1f/testing_for_android_app/)
-- url: https://www.reddit.com/r/Kotlin/comments/godp1f/testing_for_android_app/
+I'm using Data Binding on Android and I'm trying to understand why I have to import `java.util.List` into my data binding layouts even tho the rest of the code is using Kotlin:
+
+ [https://imgur.com/a/jFiIfy9](https://imgur.com/a/jFiIfy9) 
+
+I tried replacing this for `kotlin.collections.List` but the code doesn't compile. Online I read something about that the Kotlin collection interfaces "don't actually exist". Can someone shed some light on this?
+## [2][Code review/help for a Calculator project I'm working on](https://www.reddit.com/r/Kotlin/comments/gp37ai/code_reviewhelp_for_a_calculator_project_im/)
+- url: https://www.reddit.com/r/Kotlin/comments/gp37ai/code_reviewhelp_for_a_calculator_project_im/
 ---
-Hello,
+I'm working on a smart calculator project for a site that teaches you Kotlin.
 
-I’m developing an android app and was wondering what are some good unit test programs that I can use to test my app with. I’m not sure if there’s any specific kotlin one’s but please let me know.
-## [3][Kotlinscript vs Javascript](https://www.reddit.com/r/Kotlin/comments/goha0p/kotlinscript_vs_javascript/)
-- url: https://www.reddit.com/r/Kotlin/comments/goha0p/kotlinscript_vs_javascript/
+## ---- Description ----
+
+Write a program that reads two numbers in a loop and prints the sum in the standard output. If a user enters only a single number, the program should print the same number. If a user enters an empty line, the program should ignore it.  
+
+
+When the command 
+
+    /exit
+
+is entered, the program must print 
+
+    "Bye!"
+
+(without quotes), and then stop.  
+\----- End Description ----
+
+I wrote some code which I thought meets the requirements but when the project is checked, I get an error stating this input is incorrect, which I'm not sure why it's incorrect  
+
+
+    java.lang.AssertionError: Wrong answer in test #2  Please find below the output of your program during this failed test. Note that the '&gt;' character indicates the beginning of the input line.  
+    ---  
+    &gt; 17 9 
+    26
+
+Here's the bulk of my logic. I read the inputs as String initially so that I can perform my check. Then convert to Int when I need to calculate.   
+
+
+    when {
+            // if user enters "/exit", print "Bye!"
+            a == "/exit" -&gt; {
+                print("Bye!")
+            }
+            // if user enters empty line, ignore it
+            a.isEmpty() -&gt; {
+            }
+            // if user enters single #, print same #
+            b.isEmpty()-&gt; {
+                print(a)
+            }
+            // if user enter 2 #'s, print the sum
+            else -&gt; {
+                print(addTwoNumbers(a.toInt(), b.toInt()))
+            }
+        }
+
+Are there any issues w/ my logic? What would you do differently?
+## [3][30 days of Kotlin - Seminar 2 - Decoding Kotlin: The Modern Way To Build on Android](https://www.reddit.com/r/Kotlin/comments/gp044m/30_days_of_kotlin_seminar_2_decoding_kotlin_the/)
+- url: /r/androiddev/comments/gp038k/30_days_of_kotlin_seminar_2_decoding_kotlin_the/
 ---
-I am looking to start android development.
-I've heard that Google is cancelling javascript. So is Kotlinscript the best option? Also if it helps I am a bootcamp javascript graduate so I know javascript better.
-## [4][Has anyone tried writing a Spring Boot or Spring MVC website in Kotlin?](https://www.reddit.com/r/Kotlin/comments/go5qqx/has_anyone_tried_writing_a_spring_boot_or_spring/)
-- url: https://www.reddit.com/r/Kotlin/comments/go5qqx/has_anyone_tried_writing_a_spring_boot_or_spring/
----
-I want to use the Spring framework for making a website, but I still want to stick to Kotlin JVM as much as possible as I prefer it to Java. Has anyone tried using these frameworks in Kotlin? How easy is it to program in and is the configuration suitable for production websites? How does it compare to a pure Kotlin web framework like Ktor?
 
-I did seem to find quite a bit of information about it based on a preliminary search, but is there enough documentation for someone with no experience with Spring to figure it out?
-## [5][Scripting in Python vs Kotlin](https://www.reddit.com/r/Kotlin/comments/gnvjya/scripting_in_python_vs_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/gnvjya/scripting_in_python_vs_kotlin/
----
-How easy and supported is scripting and automating daily stuff in kotlin
-## [6][Top 5 Reasons For Outsourcing Front-End Development](https://www.reddit.com/r/Kotlin/comments/gogyn8/top_5_reasons_for_outsourcing_frontend_development/)
-- url: http://selleoblogtwo.xyz
+## [4][The Result Monad](https://www.reddit.com/r/Kotlin/comments/gonrds/the_result_monad/)
+- url: https://adambennett.dev/2020/05/the-result-monad/
 ---
 
-## [7][RecyclerView with Swipe Library](https://www.reddit.com/r/Kotlin/comments/go0qrt/recyclerview_with_swipe_library/)
-- url: https://www.reddit.com/r/Kotlin/comments/go0qrt/recyclerview_with_swipe_library/
+## [5][Can I make a function similar to the repeat() function?](https://www.reddit.com/r/Kotlin/comments/gp2rbh/can_i_make_a_function_similar_to_the_repeat/)
+- url: https://www.reddit.com/r/Kotlin/comments/gp2rbh/can_i_make_a_function_similar_to_the_repeat/
 ---
-Hello,
+If I understand it correctly, repeat() is a special function. You can pass in parameters and you also need to specify the body of the function, like this:
 
-I am looking for a GOOD kotlin swipe library for recyclerviews.
+repeat(3) {
+  println("This will print 3 times.")
+}
 
-I have a recyclerview of restaurants and when the itemView is swiped left or right I want to take actions with the information in the row.
-
-Thanks
-## [8][Introducing Gryphon, the Swift to Kotlin translator](https://www.reddit.com/r/Kotlin/comments/gnm5ed/introducing_gryphon_the_swift_to_kotlin_translator/)
-- url: https://www.reddit.com/r/Kotlin/comments/gnm5ed/introducing_gryphon_the_swift_to_kotlin_translator/
+Can I make my own function that will have this functionality? That the user can pass his own code like in the repeat function.
+## [6][🌊StateFlow, End of LiveData?](https://www.reddit.com/r/Kotlin/comments/gowz14/stateflow_end_of_livedata/)
+- url: https://link.medium.com/sm7NfjtoH6
 ---
-Hi all, I’ve just published the first full version Gryphon, a program that translates Swift code into Kotlin code. It is meant to let developers share their iOS app's code with Android.
 
-I encourage anyone interested to [check out the video](https://twitter.com/gryphonblog/status/1263233844519620610?s=20) and [the website](https://vinivendra.github.io/Gryphon/index.html).
-
-This is the first version where all features are working:
-
-* The generated Kotlin code works the same as the Swift code it came from, no edits needed. There’s an automated test that makes Gryphon translate its own source code, with around 12k lines, and ensures the translation passes all the same tests as the original executable.
-* There’s a templates system that’s used to automatically translate many standard library types and methods.
-* Xcode integration, with Xcode showing any warnings or errors raised by the Kotlin compiler next to the Swift lines that originated them, so users can fix them at the source.
-* The output code is readable, which is useful for minimizing the risks for new users. If Gryphon isn’t the right fit for them, they’re left with a Kotlin codebase they can keep maintaining.
-
-This list of features isn’t to say [there aren’t any bugs](https://github.com/vinivendra/Gryphon/issues), of course - I’m doing my best to keep track of them and fix them on a daily basis.
-
-Any questions, comments, or feedback in general is welcome!
-## [9][Rotate an image from Gallery in Android](https://www.reddit.com/r/Kotlin/comments/go4k5l/rotate_an_image_from_gallery_in_android/)
-- url: https://www.reddit.com/r/Kotlin/comments/go4k5l/rotate_an_image_from_gallery_in_android/
+## [7][Absolem - a knowledge sharing platform](https://www.reddit.com/r/Kotlin/comments/gp1bpj/absolem_a_knowledge_sharing_platform/)
+- url: https://www.reddit.com/r/Kotlin/comments/gp1bpj/absolem_a_knowledge_sharing_platform/
 ---
-Hi,
+ Hi, I just published my real-world knowledge platform project using Vert.x Kotlin, DDD, Event Driven Design, GraphQL and lots of stuff. Come and take a look!
 
-&amp;#x200B;
-
-When I upload an image from my gallery into my kotlin app, the orientation of the image is always rotated to the side. How can I rotate them so that they're straight.
-## [10][I am loving Kotlin, but...](https://www.reddit.com/r/Kotlin/comments/gnhmbb/i_am_loving_kotlin_but/)
-- url: https://www.reddit.com/r/Kotlin/comments/gnhmbb/i_am_loving_kotlin_but/
+ [https://github.com/UkonnRa/wonderland](https://github.com/UkonnRa/wonderland)
+## [8][Secondary Constructors](https://www.reddit.com/r/Kotlin/comments/gomb0f/secondary_constructors/)
+- url: https://www.reddit.com/r/Kotlin/comments/gomb0f/secondary_constructors/
 ---
-I don't know Java
+I've just started learning Kotlin as I have free time on my hands right now; I have prior experience in Java and python (may be relevant). When learning about secondary constructors I understand how to use them, just not why they would be useful, why not just include the extra values in the first constructor and assign them as null unless used? Or use an overload to handle objects with different constructors? I'm really confused as to how they are beneficial, any help is appreciated :)))
+## [9][The schedule &amp; talks are out for Kotliners 2020](https://www.reddit.com/r/Kotlin/comments/golgpv/the_schedule_talks_are_out_for_kotliners_2020/)
+- url: https://kotliners.com/conference
+---
 
-  
-
-
-I started learning Android development some months ago, and I don't know Java, so I went straight to Kotlin. The problem is, everytime a problem comes up, I look for a solution on Stack Overflow and there it is, a solution in Java. So I try to apply it, and sometimes it works, but when it don't I have to make a new question on Stack Overflow, and mostly they mark my post as duplicate and send me to other solution... In Java.
+## [10][Question about singletons](https://www.reddit.com/r/Kotlin/comments/gojnfo/question_about_singletons/)
+- url: https://www.reddit.com/r/Kotlin/comments/gojnfo/question_about_singletons/
+---
+I've been studying Kotlin and I just got to the section about creating a singleton with the keyword object, and I was wondering if my understanding of objects and companion objects is correct? With the following Player class, from what I understand if there was 20 Player objects, they each would have a reference to the one companion object ( and any other object that may get added to the class ) that then can be used. But if the companion object was replaced with individual functions they'd all have their own copy of it that then could lead to different results for each Player if there was something within it that could be changed. 
+```
+class Player(val id: Int) {
+ 
+    /* ... */
+    companion object Properties {
+        /* Default player speed in playing field - 7 cells per turn */
+        val defaultSpeed = 7
+ 
+        fun calcMovePenalty(cell: Int): Int {
+            /* calc move speed penalty */
+        }
+    }
+}
+```

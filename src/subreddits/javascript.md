@@ -7,60 +7,49 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [2][I've Been Making a Video Series about Building a 16-bit Virtual Machine From Scratch In JavaScript. This Episode Is All about Writing a Generic Parser for the Assembly Instructions.](https://www.reddit.com/r/javascript/comments/gohm7x/ive_been_making_a_video_series_about_building_a/)
-- url: https://www.youtube.com/watch?v=YYZopr1dr_E
+## [2][Showoff Saturday (May 23, 2020)](https://www.reddit.com/r/javascript/comments/gp3kqn/showoff_saturday_may_23_2020/)
+- url: https://www.reddit.com/r/javascript/comments/gp3kqn/showoff_saturday_may_23_2020/
+---
+Did you find or create something cool this week in javascript? 
+
+Show us here!
+## [3][I made a browser game in JavaScript in which you have to fight an epidemic as a mayor.](https://www.reddit.com/r/javascript/comments/gp03u6/i_made_a_browser_game_in_javascript_in_which_you/)
+- url: https://containment.io
 ---
 
-## [3][Made a component-based Wikipedia card library with Lit Element (polymer)](https://www.reddit.com/r/javascript/comments/godk52/made_a_componentbased_wikipedia_card_library_with/)
-- url: https://github.com/itsarnavsingh/wiCard
+## [4][Baahu: 4.3kb state machine-based UI framework (batteries included)](https://www.reddit.com/r/javascript/comments/gozc78/baahu_43kb_state_machinebased_ui_framework/)
+- url: https://github.com/tjkandala/baahu
 ---
 
-## [4][Custom JavaScript console formatters are being removed from Chrome](https://www.reddit.com/r/javascript/comments/gnxp2s/custom_javascript_console_formatters_are_being/)
-- url: https://github.com/binaryage/cljs-devtools/issues/55
+## [5][JS syntactic quirks, from the perspective on implementing a parser. A really interesting and insightful read.](https://www.reddit.com/r/javascript/comments/goqih7/js_syntactic_quirks_from_the_perspective_on/)
+- url: https://github.com/mozilla-spidermonkey/jsparagus/blob/master/js-quirks.md
 ---
 
-## [5][Webpack plugin - with a progress bar while running the build and also displays minimal output of the built files.](https://www.reddit.com/r/javascript/comments/gohoco/webpack_plugin_with_a_progress_bar_while_running/)
-- url: https://github.com/ajaxtown/webpack-stats-progress
+## [6][A 2D tile map editor that runs on the browser.](https://www.reddit.com/r/javascript/comments/goupdj/a_2d_tile_map_editor_that_runs_on_the_browser/)
+- url: https://github.com/victorqribeiro/tileEditor
 ---
 
-## [6][[Showoff Saturday] How to bundle your webpack tasks](https://www.reddit.com/r/javascript/comments/goew4o/showoff_saturday_how_to_bundle_your_webpack_tasks/)
-- url: https://github.com/neomjs/neo/blob/dev/buildScripts/webpack/buildThreads.js
+## [7][Moving framework and app code off the main thread: approaches and challenges – Google Chrome’s exploration](https://www.reddit.com/r/javascript/comments/gp284j/moving_framework_and_app_code_off_the_main_thread/)
+- url: https://docs.google.com/document/d/1nu0EcVNC3jtmUVWL8Gs5eCj2p_984kamNhG2nS9gOC0/edit
 ---
 
-## [7][TIL WhatsApp Web has a built-in, unrevealed dark mode, so I built a userscript to enable it by default](https://www.reddit.com/r/javascript/comments/gogl8f/til_whatsapp_web_has_a_builtin_unrevealed_dark/)
-- url: https://github.com/tkore/WhatsApp-Web-dark-mode/
+## [8][flyn't : My first react project ( Feedback/Suggestions welcomed)](https://www.reddit.com/r/javascript/comments/gp2r57/flynt_my_first_react_project_feedbacksuggestions/)
+- url: https://flynt.netlify.app
 ---
 
-## [8][[AskJS] What is the idea behind Google Translate's word selecting?](https://www.reddit.com/r/javascript/comments/gog70u/askjs_what_is_the_idea_behind_google_translates/)
-- url: https://www.reddit.com/r/javascript/comments/gog70u/askjs_what_is_the_idea_behind_google_translates/
----
-**The word-selecting function on Google Translate mobile**
-
-Google Translate mobile has a function that we can scan a document then all the bounding boxes of words will be displayed to the screen, then the user can use swipe gestures to select the words that he wants to translate.
-
-Demo function
-
-&amp;#x200B;
-
-https://preview.redd.it/a0kp5o0xca051.png?width=540&amp;format=png&amp;auto=webp&amp;s=d257f41e556cd0987d9fb0d452ce72ee367f6f05
-
-I tried to figure out and reproduce the idea behind it with HTML/JS. Although they made it so smoothly even on a low-performance device, my code seems to have problems with performance.
-
-**What I have tried**
-
-1. Fire an event on every move of user touch -&gt; Requires looping over the bounding boxes list to check
-2. Use Drag/Drop event of HTML -&gt; To many event listeners could also cause performance issue
-
-Could anyone have any idea about that function?
-## [9][[Show JS] A really simple text editor with a retro feel &amp; minimalist UI](https://www.reddit.com/r/javascript/comments/goj2l4/show_js_a_really_simple_text_editor_with_a_retro/)
-- url: https://github.com/jbreckmckye/dead-simple-text
+## [9][[Showoff Saturday] How to bundle your webpack tasks](https://www.reddit.com/r/javascript/comments/gp22do/showoff_saturday_how_to_bundle_your_webpack_tasks/)
+- url: https://github.com/neomjs/neo/blob/dev/buildScripts/webpack/buildThemes.js
 ---
 
-## [10][Lexical functional programming — jargon and naming convention](https://www.reddit.com/r/javascript/comments/goiypo/lexical_functional_programming_jargon_and_naming/)
-- url: https://blog.daftcode.pl/lexical-functional-programming-jargon-and-naming-convention-a4f0cf559fd
+## [10][What are webhooks? How to test it locally?](https://www.reddit.com/r/javascript/comments/gozo98/what_are_webhooks_how_to_test_it_locally/)
+- url: https://www.monkwhocode.com/2020/05/what-are-webhooks-example-use-case-with.html
 ---
 
-## [11][[article] Is putting JWTs in local storage "bad"?](https://www.reddit.com/r/javascript/comments/gnz14f/article_is_putting_jwts_in_local_storage_bad/)
-- url: https://www.ducktypelabs.com/is-localstorage-bad/
+## [11][[100% OFF] Web Development Beginner's Bootcamp 2020](https://www.reddit.com/r/javascript/comments/gp46xa/100_off_web_development_beginners_bootcamp_2020/)
+- url: https://unitedaca.com/100-off-web-development-beginners-bootcamp-2020/
+---
+
+## [12][I made a super simple typing game with no frameworks](https://www.reddit.com/r/javascript/comments/gp3j11/i_made_a_super_simple_typing_game_with_no/)
+- url: https://github.com/ninest/typer
 ---
 

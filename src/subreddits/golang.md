@@ -1,102 +1,109 @@
 # golang
-## [1][10 part series to build web app with Go](https://www.reddit.com/r/golang/comments/gobfe7/10_part_series_to_build_web_app_with_go/)
+## [1][exhaustive: a tool to ensure exhaustiveness of enum switch statements](https://www.reddit.com/r/golang/comments/gp2u4z/exhaustive_a_tool_to_ensure_exhaustiveness_of/)
+- url: https://github.com/nishanths/exhaustive
+---
+
+## [2][Why is Golang so popular for systems programming?](https://www.reddit.com/r/golang/comments/got0yp/why_is_golang_so_popular_for_systems_programming/)
+- url: https://www.reddit.com/r/golang/comments/got0yp/why_is_golang_so_popular_for_systems_programming/
+---
+I see projects like Docker, Kubernetes, and a few other tools written in Go so I was just curious.
+
+A project I'm working on requires using the Docker sdk extensively and I was considering if I should learn Go and use it instead of Python.
+## [3][Getting Started With LDAP in Go](https://www.reddit.com/r/golang/comments/goleyg/getting_started_with_ldap_in_go/)
+- url: https://cybernetist.com/2020/05/18/getting-started-with-go-ldap/
+---
+
+## [4][Horizontally scalable web scraper written in Go](https://www.reddit.com/r/golang/comments/goze9i/horizontally_scalable_web_scraper_written_in_go/)
+- url: https://github.com/sfproductlabs/scrp
+---
+
+## [5][A Closer Look at Go (golang) Type System.](https://www.reddit.com/r/golang/comments/goy6v5/a_closer_look_at_go_golang_type_system/)
+- url: https://medium.com/@ankur_anand/a-closer-look-at-go-golang-type-system-3058a51d1615
+---
+
+## [6][A simple terminal UI for Go linters](https://www.reddit.com/r/golang/comments/gp4sdx/a_simple_terminal_ui_for_go_linters/)
+- url: https://www.reddit.com/r/golang/comments/gp4sdx/a_simple_terminal_ui_for_go_linters/
+---
+[https://github.com/nakabonne/golintui](https://github.com/nakabonne/golintui)
+
+I made a TUI tool to operate golangci-lint intuitively.
+
+A noteworthy feature is that you can open a file by specifying the issue line. I’d be happy if you could try it, and give me any feedback.
+
+https://i.redd.it/mojzzjd4mi051.gif
+## [7][I just put Clean Code's teachings to work!](https://www.reddit.com/r/golang/comments/gp1fjg/i_just_put_clean_codes_teachings_to_work/)
+- url: https://www.reddit.com/r/golang/comments/gp1fjg/i_just_put_clean_codes_teachings_to_work/
+---
+Just bought [Clean Code](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship-ebook/dp/B001GSTOAM) a few days ago, only been through the first few chapters but figured I would try applying it.
+
+The least I can say is, it feels pretty good to crunch that big function! I can still see possible improvements (like create a `isTr(n *html.Node) { return isElement(n, "tr")}`), but I'm [pretty proud of it](https://github.com/nicolascouvrat/javaimports/commit/ffffd8a8a64580b75fa3e75aadfa5dc7c9416bd2).
+
+Do you spot anything else I should improve there?
+## [8][Variable declarations: A question of style](https://www.reddit.com/r/golang/comments/gp1agj/variable_declarations_a_question_of_style/)
+- url: https://www.reddit.com/r/golang/comments/gp1agj/variable_declarations_a_question_of_style/
+---
+Hi, I've really just started using go seriously and I'm interested in people's opinions on best practices/common conventions in variable declarations. 
+
+I have the following function which does exactly the same thing as far as I'm aware, but has a different syntax. Is there a preferred style that is more accepted among the go community?
+
+Method 1:
+
+```
+// GetDb connects to the postgres database and returns a pointer to a gorm database object
+func GetDb() *gorm.DB {
+	var db *gorm.DB
+	var dbURL string
+	var err error
+	var parsedURL *dburl.URL
+
+	if dbURL = os.Getenv("DATABASE_URL"); dbURL == "" {
+		dbURL = "postgresql://localhost/mydb?sslmode=disable"
+	}
+
+	if parsedURL, err = dburl.Parse(dbURL); err != nil {
+		log.Fatal(err)
+	}
+
+	if db, err = gorm.Open("postgres", parsedURL.DSN); err != nil {
+		log.Fatal(err)
+	}
+
+	return db
+}
+```
+Method 2:
+```
+// GetDb connects to the postgres database and returns a pointer to a gorm database object
+func GetDb() *gorm.DB {
+
+	dbURL := os.Getenv("DATABASE_URL")
+
+	if dbURL == "" {
+		dbURL = "postgresql://localhost/mydb?sslmode=disable"
+	}
+
+	parsedURL, err := dburl.Parse(dbURL)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	db, err := gorm.Open("postgres", parsedURL.DSN)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	return db
+}
+```
+
+From what I've seen, method 2 seems to be the more popular in tutorials but I personally find method 1 to be clearer.
+## [9][I made a basic Windows version of neofetch in Go after picking up the language last night! I'm in love!!](https://www.reddit.com/r/golang/comments/gonc7b/i_made_a_basic_windows_version_of_neofetch_in_go/)
+- url: https://github.com/M4cs/winfetch
+---
+
+## [10][10 part series to build web app with Go](https://www.reddit.com/r/golang/comments/gobfe7/10_part_series_to_build_web_app_with_go/)
 - url: https://www.gophersumit.com/series/web/
----
-
-## [2][How to do something every 5 minutes in Go?](https://www.reddit.com/r/golang/comments/gododv/how_to_do_something_every_5_minutes_in_go/)
-- url: https://www.reddit.com/r/golang/comments/gododv/how_to_do_something_every_5_minutes_in_go/
----
-I feel like it's a dummy question, but I want to ask it anyway since I do not have much experience with concurrent programming.
-
-In the app I am currently working on, someone wrote a code that should do something (in this case, printing "TICK!") every, let's say 5 minutes:
-
-    go func() {
-        for {
-            fmt.Println("TICK!")
-            time.Sleep(5 * time.Minute)
-        }
-    }()
-
-However, from what I have read, the recommended approach is:
-
-    func CallTickerInBackground(done &lt;-chan bool) {
-        ticker := time.NewTicker(5 * time.Minute)
-        go func() {
-            for {
-            	select {
-            	case &lt;-done:
-            		logrus.Info("Stopping ticker")
-            		ticker.Stop()
-            		return
-            	case &lt;-ticker.C:
-            		fmt.Println("TICK!")
-            	}
-            }
-        }()
-    }
-
-The advantages of the latter are that we have more stable time intervals (instead of processing time + waiting time) and we have control over stopping the background processing. On the other hand, right now a separate channel to stop it needs to be created, so it's slightly more complex.
-
-So which approach is better, and why (or under what circumstances)?
-## [3][50+ Technical Interview Problems Solved in Go](https://www.reddit.com/r/golang/comments/gnxfby/50_technical_interview_problems_solved_in_go/)
-- url: https://www.reddit.com/r/golang/comments/gnxfby/50_technical_interview_problems_solved_in_go/
----
-I have been solving various technical interview problems and coding challenges in Go. The problems vary from simple “Reverse a String” to more involving ones like “Implement the A* Algorithm”
-
-If you have any feedback and/or some suggestions for new problems to solve, I would appreciate it as my goal is to grow this collection and help anyone interested in learning and/or practicing before their interview 
-
-https://github.com/shomali11/go-interview
-## [4][GUI packages for Go](https://www.reddit.com/r/golang/comments/gojais/gui_packages_for_go/)
-- url: https://golangr.com/gui/
----
-
-## [5][I want to use video streaming in my website , however I got this error "media Stream Error "](https://www.reddit.com/r/golang/comments/goj6jr/i_want_to_use_video_streaming_in_my_website/)
-- url: https://www.reddit.com/r/golang/comments/goj6jr/i_want_to_use_video_streaming_in_my_website/
----
- [https://github.com/ali2210/WizDwarf/blob/master/js/webrtc-video.js](https://github.com/ali2210/WizDwarf/blob/master/js/webrtc-video.js) 
-
-This is the code which i find out at youtube
-## [6][Replacing net.DefaultResolver with a caching DNS over TLS/HTTPS resolver](https://www.reddit.com/r/golang/comments/gofxbv/replacing_netdefaultresolver_with_a_caching_dns/)
-- url: https://www.reddit.com/r/golang/comments/gofxbv/replacing_netdefaultresolver_with_a_caching_dns/
----
-DNS caching has been discussed multiple times in the past. The consensus seems to be that Go won't go there: [github.com/golang/go/issues/24796](https://github.com/golang/go/issues/24796#issuecomment-383716244)
-
-I've seen a few DNS caching solutions for Go ([one](https://github.com/rs/dnscache), [two](https://github.com/mercari/go-dnscache)), however, I haven't seen any implementations that allow replacing the `net.DefaultResolver`?
-
-Package [github.com/artyom/dot](https://github.com/artyom/dot) got me thinking if I could do the same for DNS caching, and also DNS over HTTPS.
-
-So [github.com/ncruces/go-dns](https://godoc.org/github.com/ncruces/go-dns) is my attempt.
-Replacing `net.DefaultResolver` with a caching DNS over HTTPS resolver using 1.1.1.1 as the name server should be this simple:
-
-    net.DefaultResolver = dns.NewCachingResolver(dns.NewHTTPSResolver(
-    	"1.1.1.1", "2606:4700:4700::1111",
-    	"1.0.0.1", "2606:4700:4700::1001"))
-
-What do you guys thing? Do you know of any other implementations that allow replacing `net.DefaultResolver`?
-## [7][How to convert Map to Slice [3 gotchas]](https://www.reddit.com/r/golang/comments/gofaoa/how_to_convert_map_to_slice_3_gotchas/)
-- url: https://web3.coach/golang-how-to-convert-map-to-slice-three-gotchas
----
-
-## [8][Strange code behaviour](https://www.reddit.com/r/golang/comments/gof5w3/strange_code_behaviour/)
-- url: https://www.reddit.com/r/golang/comments/gof5w3/strange_code_behaviour/
----
-Hi. I've been golang enthusiast for a few months. Lately I wanted to consolidate my knowledge of golang concurrency. The following excerpt is from the book "Concurrency in Go" (by O’Reilly):
-
- [https://pastebin.com/L24Z8nd1](https://pastebin.com/L24Z8nd1) 
-
-It works as it should (I suppose).   
-However if I add a few fmt.Println or another function - it deadlocks. :
-
- [https://pastebin.com/cAPbMgGv](https://pastebin.com/cAPbMgGv) 
-
-The use of the "useless" function causes deadlock 1/\~10k application runs. On the other hand, if I comment out the useless function and uncomment fmt.Println - deadlock occurs much more often. 
-
-Can somebody explain why is it happening?
-## [9][An open-source chatbot powered by an artificial neural network](https://www.reddit.com/r/golang/comments/gnxyk9/an_opensource_chatbot_powered_by_an_artificial/)
-- url: https://github.com/olivia-ai/olivia
----
-
-## [10][Three bugs in the Go MySQL Driver](https://www.reddit.com/r/golang/comments/gnm94y/three_bugs_in_the_go_mysql_driver/)
-- url: https://github.blog/2020-05-20-three-bugs-in-the-go-mysql-driver/
 ---
 

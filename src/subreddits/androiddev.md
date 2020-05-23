@@ -1,12 +1,27 @@
 # androiddev
-## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/goim8p/weekly_anything_goes_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/goim8p/weekly_anything_goes_thread/
+## [1][App Feedback Thread - May 23, 2020](https://www.reddit.com/r/androiddev/comments/gp43mt/app_feedback_thread_may_23_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/gp43mt/app_feedback_thread_may_23_2020/
 ---
-Here's your chance to talk about whatever!
+This thread is for getting feedback on your own apps.
 
-Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
+####Developers:
 
-Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
+- must **provide feedback** for others
+- must include **Play Store**, **GitHub**, or **BitBucket** link
+- must make top level comment
+- must make effort to respond to questions and feedback from commenters
+- may be open or closed source
+
+####Commenters:
+
+- must give **constructive feedback** in replies to top level comments
+- must not include links to other apps
+
+To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
+
+As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
+
+\- Da Mods
 ## [2][Weekly Questions Thread - May 18, 2020](https://www.reddit.com/r/androiddev/comments/glzbpr/weekly_questions_thread_may_18_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/glzbpr/weekly_questions_thread_may_18_2020/
 ---
@@ -25,75 +40,57 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Free icons, feature graphics, Google Play screenshots, and other graphics for Android games and apps](https://www.reddit.com/r/androiddev/comments/godrgr/free_icons_feature_graphics_google_play/)
-- url: https://www.reddit.com/r/androiddev/comments/godrgr/free_icons_feature_graphics_google_play/
----
-[Hotpot.ai](https://Hotpot.ai?s=androiddev) is a new way to create icons, feature graphics, Google Play screenshots, and other graphics for Android games and apps.
-
-Many students and indie devs have used Hotpot for free. Hopefully we can help some of you, too. See the free offer below.
-
-* [Google Play screenshots](https://hotpot.ai/templates/samsung_s10): Device mockups include Samsung S10, Samsung S9, Pixel 3, and other devices.
-* [Google Play feature graphics](https://hotpot.ai/templates/google_play_feature_graphic)
-* [Free icons](http://hotpot.ai/free_icons?s=androiddev): Edit color, background, stroke, size, and other properties. 5,000+ icons.
-* [Splash screens](https://hotpot.ai/templates/launch_screen)
-* [Google Play icons](https://hotpot.ai/templates/app_store_icon): These are the 512x512 icons required for Google Play.
-* [Game assets](https://hotpot.ai/templates/game_asset)
-* [Instagram posts](https://hotpot.ai/templates/instagram_post)
-* [Facebook posts](https://hotpot.ai/templates/facebook_post)
-* [Product Hunt screenshots](https://hotpot.ai/templates/product_hunt_gallery)
-
-**Template Requests**
-
-If you want other templates (e.g., new game assets) please leave a comment describing what you want. If possible, our professional designers will create the template free of charge.
-
-**Free Offer**
-## [4][🎨 Theme: An Experimental Theme Engine for Android](https://www.reddit.com/r/androiddev/comments/gobwgc/theme_an_experimental_theme_engine_for_android/)
-- url: https://github.com/DeweyReed/Theme
+## [3][Building Slide Color Picker](https://www.reddit.com/r/androiddev/comments/gp4aaf/building_slide_color_picker/)
+- url: https://medium.com/@shkcodes/building-slide-color-picker-f68bbe37543
 ---
 
-## [5][“Postmortem: How I got banned from /r/androiddev for being ‘too’ active as a member of the Community” by Gabor Varadi](https://www.reddit.com/r/androiddev/comments/gnv79i/postmortem_how_i_got_banned_from_randroiddev_for/)
-- url: https://link.medium.com/IO2y8v1qF6
+## [4][🌊StateFlow, End of LiveData?](https://www.reddit.com/r/androiddev/comments/gowylw/stateflow_end_of_livedata/)
+- url: https://link.medium.com/sm7NfjtoH6
 ---
 
-## [6][Decorator - composable margins and dividers for RecyclerView](https://www.reddit.com/r/androiddev/comments/goj14g/decorator_composable_margins_and_dividers_for/)
+## [5][First Krita Beta for Android and ChromeOS in Play Store [Qt Desktop app]](https://www.reddit.com/r/androiddev/comments/gp4956/first_krita_beta_for_android_and_chromeos_in_play/)
+- url: https://krita.org/en/item/first-krita-beta-for-android-and-chromeos-in-play-store/
+---
+
+## [6][30 days of Kotlin - Seminar 2 - Decoding Kotlin: The Modern Way To Build on Android](https://www.reddit.com/r/androiddev/comments/gp038k/30_days_of_kotlin_seminar_2_decoding_kotlin_the/)
+- url: https://www.reddit.com/r/androiddev/comments/gp038k/30_days_of_kotlin_seminar_2_decoding_kotlin_the/
+---
+follow up from [last week](https://www.reddit.com/r/androiddev/comments/gkqmzk/30_days_of_kotlin_seminar_1_kotlin_101/?utm_source=share&amp;utm_medium=web2x).
+
+[Youtube link](https://youtu.be/y1G2jU-qkZ8)
+
+Resources: 
+
+*  [https://eventsonair.withgoogle.com/events/kotlin/resources](https://eventsonair.withgoogle.com/events/kotlin/resources) 
+*  [Jetpack](https://developer.android.com/jetpack)
+*  [Android KTX](https://developer.android.com/kotlin/ktx)
+## [7][Why should I learn native Android and not Flutter?](https://www.reddit.com/r/androiddev/comments/gotdye/why_should_i_learn_native_android_and_not_flutter/)
+- url: https://www.reddit.com/r/androiddev/comments/gotdye/why_should_i_learn_native_android_and_not_flutter/
+---
+I started learning Android years back when Kotlin wasnt in the picture got to some point and gave up. Then flutter appeared and I got into it. For some reason people who are already native developers in Kotlin, have no intentions of considering Flutter. Why? I find native to be over complicated without a reason. For example api request. In Kotlin I saw this Volley library being used. Its quite a code. While in flutter all you have to type is http.get(url). Thats it you made the request. So whats the deal? I cant really make up my mind which path to choose.
+## [8][The Result Monad](https://www.reddit.com/r/androiddev/comments/gojoel/the_result_monad/)
+- url: https://adambennett.dev/2020/05/the-result-monad/
+---
+
+## [9][I created a tool to make modularization one step easier](https://www.reddit.com/r/androiddev/comments/gp1syw/i_created_a_tool_to_make_modularization_one_step/)
+- url: https://github.com/GradleUp/auto-manifest
+---
+
+## [10][Decorator - composable margins and dividers for RecyclerView](https://www.reddit.com/r/androiddev/comments/goj14g/decorator_composable_margins_and_dividers_for/)
 - url: https://github.com/cabriole/Decorator
 ---
 
-## [7][List of ideal open source android apps to learn Modern Android development.](https://www.reddit.com/r/androiddev/comments/go9qvp/list_of_ideal_open_source_android_apps_to_learn/)
-- url: https://link.medium.com/ALee49ZnG6
+## [11][Assisted Injection](https://www.reddit.com/r/androiddev/comments/gos2kq/assisted_injection/)
+- url: https://www.reddit.com/r/androiddev/comments/gos2kq/assisted_injection/
 ---
+Assisted Injection.... talk to me.
 
-## [8][Android hacked? Any link could be linked to your app by default!](https://www.reddit.com/r/androiddev/comments/gof30c/android_hacked_any_link_could_be_linked_to_your/)
-- url: https://medium.com/@elye.project/android-hacked-any-link-could-be-linked-to-your-app-by-default-4b49e3692949?source=friends_link&amp;sk=aaa87652510c28c3f52712ba3260cb15
+Background is that I want to use ViewModel Save State Handle with a DI library (Dagger in my case but I suppose could be anything). The guidance is either use Square Assisted Inject or due to *complications* write your own ViewModelFactory.
+
+That's cool and all I don't need help writing the factory, I just want a bit more elaboration on why  Assisted Inject is overkill or too complicated for this use or any pitfalls you might think is relevant.
+
+Internet bonus points if there's a super useful advantage to Assisted Inject that isn't Saved State Handle that I haven't considered.
+## [12][Audio Recorder in background even when switching app](https://www.reddit.com/r/androiddev/comments/goxg9k/audio_recorder_in_background_even_when_switching/)
+- url: https://www.reddit.com/r/androiddev/comments/goxg9k/audio_recorder_in_background_even_when_switching/
 ---
-
-## [9][The thread calling for the mod who banned Zhuinden to step down has been removed](https://www.reddit.com/r/androiddev/comments/gojc6p/the_thread_calling_for_the_mod_who_banned/)
-- url: https://www.reddit.com/r/androiddev/comments/gojc6p/the_thread_calling_for_the_mod_who_banned/
----
-I'm posting this so that you know what unaccountable people we have running this subreddit.
-
-Here is the removed post:
-
-https://www.reddit.com/r/androiddev/comments/goglt8/the_mod_who_banned_uzhuinden_should_step_down/
-
-Sorry (to the users, not to the mods) for the spam, and I won't post again.
-## [10][Is this Material Design component](https://www.reddit.com/r/androiddev/comments/gojba6/is_this_material_design_component/)
-- url: https://www.reddit.com/r/androiddev/comments/gojba6/is_this_material_design_component/
----
-Dear friends, 
-
-How can I implement the blue "label" in my android app? I need something similar for my FAB button. I need to provide some info near the FAB button, and IDK how to do it. For my client, an extended FAB button is not an option. Any other idea is welcome.
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-https://preview.redd.it/vbd20a2mib051.jpg?width=750&amp;format=pjpg&amp;auto=webp&amp;s=6a573f957afb01e1f8b6249b7ba224fe8ac6eaea
-## [11][Now in Android #16](https://www.reddit.com/r/androiddev/comments/goerg6/now_in_android_16/)
-- url: https://medium.com/androiddevelopers/now-in-android-16-9a282ebd3f42
----
-
-## [12][Prepared a list of 13 most asked android developer interview questions](https://www.reddit.com/r/androiddev/comments/goit4q/prepared_a_list_of_13_most_asked_android/)
-- url: https://ayusch.com/android-developer-interview-questions-preparation/
----
-
+I’m trying to implement an audio recorder that runs when I press the button, and it keeps running in the background even when I’m outside of the app. I already got the audio recorder to work, and tried to implement IntentService but failed to pass the data (maximum amplitude) from the IntentService back to MainActivity. Can anyone give me some guidance on this? Thanks!

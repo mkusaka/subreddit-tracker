@@ -39,12 +39,89 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Rails, and David Graeber's book "Bullshit Jobs"](https://www.reddit.com/r/rails/comments/goeib9/rails_and_david_graebers_book_bullshit_jobs/)
+## [3][Rails deployment with Dokku](https://www.reddit.com/r/rails/comments/gous61/rails_deployment_with_dokku/)
+- url: https://www.reddit.com/r/rails/comments/gous61/rails_deployment_with_dokku/
+---
+I just recently stumbled on Dokku and seems to be a pretty decent way to deploy rails apps. I also noticed that it's been around for a few years now. My Capistrano deployment is running into issues and setting up a box with other installation is tideous. Is Dokku still a viable way to go about deploying Rails apps or is there a better way? I'm a one man shop working side gigs so I'm just looking for the best/fastest way to deploy with having to manually provision vms in DO or EC2. Thanks.
+## [4][Show Posts by Date in URL](https://www.reddit.com/r/rails/comments/gp2fhi/show_posts_by_date_in_url/)
+- url: https://www.reddit.com/r/rails/comments/gp2fhi/show_posts_by_date_in_url/
+---
+Let's say I want to show only posts for a particular post creation date, which is received from
+
+URL like this (year/month/day): http://localhost:3000/launches/2020/5/24
+
+How do I go about achieving this? 
+
+PS I'm using Rails 6
+## [5][Rails i18n available over server less (lambda)](https://www.reddit.com/r/rails/comments/gox5gb/rails_i18n_available_over_server_less_lambda/)
+- url: https://www.reddit.com/r/rails/comments/gox5gb/rails_i18n_available_over_server_less_lambda/
+---
+Hi everyone, 
+I have a rails monolith platform that we are now moving to serverless architecture! We are moving a lot of bits and pieces to AWS lambda. 
+
+All our emails and notifications needs translation that are stored in YMl files and some in activerecord backend. 
+
+How is everyone handling translations over serverless architecture? 
+
+Is there a way to kinda Jsonify the translations keys and make them available via API and use them in front end as well without increasing significant load time? 
+
+You  guys are awesome!!
+## [6][Concurrent-ruby gem error - corrupted?](https://www.reddit.com/r/rails/comments/gouu11/concurrentruby_gem_error_corrupted/)
+- url: https://www.reddit.com/r/rails/comments/gouu11/concurrentruby_gem_error_corrupted/
+---
+Hi all. I'm having trouble creating a new rails project. When it initially runs bundle install after my rails new command, it gets hung up on the "concurrent-ruby" gem and says there's an error and could be corrupt. I'm not sure how though since it's pulling directly from rubygems.org  unless their latest version (1.1.6) is just messed up? Here's what I get in my terminal: 
+
+`Bundler::GemspecError: Could not read gem at`
+
+`/home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/cache/concurrent-ruby-1.1.6.gem. It may be corrupted.`
+
+`An error occurred while installing concurrent-ruby (1.1.6), and Bundler cannot continue.`
+
+`Make sure that \`gem install concurrent-ruby -v '1.1.6' --source '`[`https://rubygems.org/'\``](https://rubygems.org/'`) `succeeds before bundling.`
+
+&amp;#x200B;
+
+`In Gemfile:`
+
+  `rails was resolved to` [`5.2.4.3`](https://5.2.4.3)`, which depends on`
+
+`actioncable was resolved to` [`5.2.4.3`](https://5.2.4.3)`, which depends on`
+
+`actionpack was resolved to` [`5.2.4.3`](https://5.2.4.3)`, which depends on`
+
+`actionview was resolved to` [`5.2.4.3`](https://5.2.4.3)`, which depends on`
+
+`rails-dom-testing was resolved to 2.0.3, which depends on`
+
+`activesupport was resolved to` [`5.2.4.3`](https://5.2.4.3)`, which depends on`
+
+`i18n was resolved to 1.8.2, which depends on`
+
+`concurrent-ruby`
+
+&amp;#x200B;
+
+Please help. I've tried to manually run "gem install concurrent-ruby blah blah blah." 
+
+I've also tried manually installing the previous version, and succeeded! But then it still tries to install the latest one that it's having trouble with once it runs its own bundle install again. 
+
+Looking in my rails apps from my boot camp, I'm not even seeing that gem in those Gemfiles. So I'm officially confused, as I should be as a very new developer. Any help is appreciated! Thanks in advance.
+## [7][Rails Courses/Videos that are "worth it"](https://www.reddit.com/r/rails/comments/gojmfx/rails_coursesvideos_that_are_worth_it/)
+- url: https://www.reddit.com/r/rails/comments/gojmfx/rails_coursesvideos_that_are_worth_it/
+---
+So i've gone through TheOdinProject a while back and completed the facebook project (its not pretty but it's functional) so I have a basic understanding of rails. However despite being an automation engineer at my web-dev company I want to try to start helping out fixing bugs/etc..
+
+However most things I see are either A. Pretty out of date or B. Go over making a generic "CRUD" site (Which if i've done a facebook app isn't really teaching me much).
+
+I know there is a Udemy Course: "The Complete Ruby on Rails Developer Course" by Rob Percival. I've done about half of it (I might finish it, it just felt slow). Is there anything else that would take me to the next level? FWIW it's been a good bit since i've done the Facebook rails app so refreshing and building a solid foundation isn't necessarily a bad thing (to go back over old stuff).
+
+Hell I don't even mind paying for something if it's really worth-while. I have a C.S. degree but it's been about 10 years, and since then i've only done automation programming (Which isn't super in-depth) and small stuff at home. I want to up my game. Thanks!
+## [8][Rails, and David Graeber's book "Bullshit Jobs"](https://www.reddit.com/r/rails/comments/goeib9/rails_and_david_graebers_book_bullshit_jobs/)
 - url: https://www.reddit.com/r/rails/comments/goeib9/rails_and_david_graebers_book_bullshit_jobs/
 ---
 For those who have read the book (others can read wikipedia summary, it is enough for this discussion), what do you think about the 3rd kind of bullshit job : "duct tapers". The example given in the book states that programmers are happy to code open-source projects for free, but paid jobs consist in aggregate those free projects, who are not made to work together. Thus, programmer job is not very interesting because it is just integrating tools, the interesting part is left to "free time hobby".  
 For me, Ruby-on-Rails is precisely built against this bias, this is why Rails fans are **both** happy and paid  for their job. Why the majority of the industry accept the "duct tapers" as a mainstream remains a mystery to me.
-## [4][Capistrano Deploy and Active Storage issue](https://www.reddit.com/r/rails/comments/go4amp/capistrano_deploy_and_active_storage_issue/)
+## [9][Capistrano Deploy and Active Storage issue](https://www.reddit.com/r/rails/comments/go4amp/capistrano_deploy_and_active_storage_issue/)
 - url: https://www.reddit.com/r/rails/comments/go4amp/capistrano_deploy_and_active_storage_issue/
 ---
 When deploying using Capistrano, I lose all of my assets stored in Rails Active Storage. An older question on this sub (link below) addressed this, however I'm still experiencing the issue after using the fix. 
@@ -56,29 +133,7 @@ My deploy.rb has 'public/uploads'  in `append :linked_dirs` . Whenever I run `ca
 Similar question from a year ago:
 
 [https://www.reddit.com/r/rails/comments/bn0x19/capistrano\_deploy\_and\_active\_storage\_question/](https://www.reddit.com/r/rails/comments/bn0x19/capistrano_deploy_and_active_storage_question/)
-## [5][Using Rails 4 and Angular - Angular is turning my string into a number? HALP](https://www.reddit.com/r/rails/comments/go3hms/using_rails_4_and_angular_angular_is_turning_my/)
-- url: https://www.reddit.com/r/rails/comments/go3hms/using_rails_4_and_angular_angular_is_turning_my/
----
-I am new to Angular and pretty new to rails, and very confused.
-
-On one of my views, I have a simple input checkbox. There is an ng-click on this checkbox which calls this function: toggle(&lt;%= id.to\_s %&gt;) 
-
-**Note**: This problem only happens when the ID exceeds JavaScripts max number, I have confirmed this. Unfortunately, most of the ids I'm dealing with are gigantic and greatly exceed this value, so the appropriate fix seems to be to pass them as strings, this is why I'm doing a "to\_s".
-
-The toggle function in my view then calls my Javascript controller in my public/javascripts:
-
-$scope.toggle = function(id)
-
-This function has some more logic which does document.getElementById, and more things to flip the toggle. THIS WORKS for all integer values which fit in JavaScripts "number" type.
-
-However, for some reason that is beyond me, passing in the id as a STRING to the toggle function in the view always seems to immediately convert it to a NUMBER when it enters the toggle javascript function. 
-
-I am just so confused and have spent hours and hours on this problem. If I straight up pass in a massive string in my view like toggle('2283842384328374297439287372839') THIS WILL WORK and it will stay a string in Javascript.
-
-So why is passing it with to\_s in my view NOT working?
-
-Please help me. Thanks.
-## [6][New to JSON and GraphQL. Which version to store in db?](https://www.reddit.com/r/rails/comments/gnz8qd/new_to_json_and_graphql_which_version_to_store_in/)
+## [10][New to JSON and GraphQL. Which version to store in db?](https://www.reddit.com/r/rails/comments/gnz8qd/new_to_json_and_graphql_which_version_to_store_in/)
 - url: https://www.reddit.com/r/rails/comments/gnz8qd/new_to_json_and_graphql_which_version_to_store_in/
 ---
 As the title shows, I am new to both JSON and GraphQL. Currently I am messing around with the shopify\_api and as such I am using their GraphQL API to gather order data. However, I am a tad bit confused as to how I should be storing this data in my postgres db. I am currently storing requests as t.jsonb :payload
@@ -219,7 +274,7 @@ For the example queries below, my question is which version should I be storing 
         
       ]
     }
-## [7][ActiveJob::SerializationError on create model for uploading](https://www.reddit.com/r/rails/comments/gnwl80/activejobserializationerror_on_create_model_for/)
+## [11][ActiveJob::SerializationError on create model for uploading](https://www.reddit.com/r/rails/comments/gnwl80/activejobserializationerror_on_create_model_for/)
 - url: https://www.reddit.com/r/rails/comments/gnwl80/activejobserializationerror_on_create_model_for/
 ---
 i am trying to do background job for uploading pics ,
@@ -248,51 +303,7 @@ I called that job in my controller like this:
 ```
 I tried to change: file.tempfile.path as well but doesn't work
 does anyone has same issue before like this?
-## [8][Any free Rails hosting options that don't use Postgres?](https://www.reddit.com/r/rails/comments/gnwlmf/any_free_rails_hosting_options_that_dont_use/)
+## [12][Any free Rails hosting options that don't use Postgres?](https://www.reddit.com/r/rails/comments/gnwlmf/any_free_rails_hosting_options_that_dont_use/)
 - url: https://www.reddit.com/r/rails/comments/gnwlmf/any_free_rails_hosting_options_that_dont_use/
 ---
 I simply cannot get Postgres to play ball on Windows 10, and I need a free hosting option for pitching/testing purposes. I know it's far from ideal, but are there any free hosting services that will accept Rails with Sqlite?
-## [9][Authenticate wordpress users using Devise](https://www.reddit.com/r/rails/comments/gnvfiu/authenticate_wordpress_users_using_devise/)
-- url: https://www.reddit.com/r/rails/comments/gnvfiu/authenticate_wordpress_users_using_devise/
----
-I have a Rails API and I'm currently building a wordpress site.  When users sign in on the wordpress site, I'd like to authenticate their credentials using Devise and my Rails API.  Are there any solutions for this type of authentication?  Wordpress offers plugins that utilize [OAuth single sign on](https://wordpress.org/plugins/miniorange-login-with-eve-online-google-facebook/) but I'm not sure how to integrate that with Devise.  
-
-Any ideas on how to solve this?
-## [10][Give your Rails app a fast GraphQL API without writing any code.](https://www.reddit.com/r/rails/comments/gni988/give_your_rails_app_a_fast_graphql_api_without/)
-- url: https://www.reddit.com/r/rails/comments/gni988/give_your_rails_app_a_fast_graphql_api_without/
----
-I run a popular Rails App (on App Engine) it gets significant traffic (movnorth.com). Recently I started introducing React into the frontend and also decided to start using GraphQL in the backend for queries. This started me down a rabbit hole and here is the result.
-
-I built Super Graph an automatic GraphQL to SQL translator (in GO). Just run it along side your Rails app it will learn your database schema, relationships and allow you to query your database using just simple GraphQL.
-
-Super Graph understands Rails cookies and works with session stores to get the current authenticated users ID. 
-
-Github:
-https://github.com/dosco/super-graph
-
-Documentation:
-https://supergraph.dev/docs/home
-## [11][You must use Bundler 2 or greater with this lockfile](https://www.reddit.com/r/rails/comments/gnr5nk/you_must_use_bundler_2_or_greater_with_this/)
-- url: https://www.reddit.com/r/rails/comments/gnr5nk/you_must_use_bundler_2_or_greater_with_this/
----
-I am trying to deploy an application on Linux Debian 9 and I am getting an error  
-`You must use Bundler 2 or greater with this lockfile`  
-`Ruby -v returns ruby 2.6.3p62`  
-`rails -v returns Rails` [`6.0.3.1`](https://6.0.3.1)  
-`which bundle returns /usr/local/rvm/gems/ruby-2.6.3/bin/bundle`  
-`bundle version returns Bundler version 2.1.4 (2020-01-05 commit 32a4159325)`
-
-So, I have tried various things such as
-
-1. Updating the bundler gem(gem install bundler -v 2.1.4)
-2. Updating the rubygems Package manager( gem update --system)
-3. Reinstalling bundler gem
-
-but they dont seem to work and  everytime I try to work it throws the same error.  
-Anyone who has been facing the same error and could help?
-## [12][Image upload.](https://www.reddit.com/r/rails/comments/gnkn0e/image_upload/)
-- url: https://www.reddit.com/r/rails/comments/gnkn0e/image_upload/
----
-Hit a block here. I've handled image uploading before via action text, but not as an element in a db that I can call back. Wondering, would I just add the params/permit and migration into the post table? If so, what would be the syntax for the migration? And as far as views go, it's pretty straight forward via simple\_for &amp; a framework right?
-
-It's for a post/index page which will have a title/description linking to a full post. Hoping I can get a db-driven image since I don't want them all to have a static image. Will be 1 square image per post for the card.

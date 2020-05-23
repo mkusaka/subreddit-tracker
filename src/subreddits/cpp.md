@@ -125,11 +125,42 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Reducing {fmt} library size 4x using Bloaty McBloatface](https://www.reddit.com/r/cpp/comments/go82wo/reducing_fmt_library_size_4x_using_bloaty/)
+## [3][My attempt at making a Modern C++ String class](https://www.reddit.com/r/cpp/comments/goju6u/my_attempt_at_making_a_modern_c_string_class/)
+- url: https://www.reddit.com/r/cpp/comments/goju6u/my_attempt_at_making_a_modern_c_string_class/
+---
+Source: [https://github.com/lionkor/String](https://github.com/lionkor/String)  
+Documentation: [https://lionkor.github.io/String-docs](https://lionkor.github.io/String-docs)
+
+I was always unsatisfied with  `std::string`, as it seems inconsistent with the rest of the STL and lacks a few major methods that I need almost every day, like a proper `replace`, `split`, `find` which returns iterators and so on. 
+
+So I made `String`, including documentation of the entire public interface and unit tests, which does (almost) all the things I want it to do.
+
+Currently on the roadmap are using something like `std::pmr::vector` instead of `std::vector`, maybe implementing SSO (I had it in version 1.0, but that was scrapped), and making the char type templated (or adding some other way of using `wchar` and such). 
+
+I'd be super honored if I could get some feedback on it, from both a technical and convenience standpoint. 
+
+(I am aware that it's slower than `std::string`, and I'm also aware of other string libraries and extensions for `std::string`. I don't find them more convenient than rolling my own implementation.)
+
+Edit: It uses variadic templates for `String::format`, which for me personally is a huge win!
+
+Edit2: I dont think my implementation is better than std::string. I don't know where that came from, but I know my implementation is shit. I've been programming C++ for a year, I dont think I write better code than STL devs. I like it better than std::string, its better for me personally. Thats all. I felt like it needed to be clarified before more people "call me out" on it.
+## [4][TIL: When unlocking any of the std::mutex(es), it must first be locked](https://www.reddit.com/r/cpp/comments/gowpvh/til_when_unlocking_any_of_the_stdmutexes_it_must/)
+- url: https://www.reddit.com/r/cpp/comments/gowpvh/til_when_unlocking_any_of_the_stdmutexes_it_must/
+---
+In most situations, it isn't a problem, but in some situations this might arise. Remember, you need to ensure you only call unlock after the mutex has been locked by the current thread. This was a surprise today when debugging some of my co-worker's code.
+
+"The mutex must be locked by the current thread of execution, **otherwise, the behavior is undefined**."
+
+[https://en.cppreference.com/w/cpp/thread/mutex/unlock](https://en.cppreference.com/w/cpp/thread/mutex/unlock) [https://en.cppreference.com/w/cpp/thread/timed\_mutex/unlock](https://en.cppreference.com/w/cpp/thread/timed_mutex/unlock) [https://en.cppreference.com/w/cpp/thread/recursive\_mutex/unlock](https://en.cppreference.com/w/cpp/thread/recursive_mutex/unlock) [https://en.cppreference.com/w/cpp/thread/recursive\_timed\_mutex/unlock](https://en.cppreference.com/w/cpp/thread/recursive_timed_mutex/unlock) [https://en.cppreference.com/w/cpp/thread/shared\_mutex/unlock](https://en.cppreference.com/w/cpp/thread/shared_mutex/unlock) [https://en.cppreference.com/w/cpp/thread/shared\_timed\_mutex/unlock](https://en.cppreference.com/w/cpp/thread/shared_timed_mutex/unlock)
+## [5][Reducing {fmt} library size 4x using Bloaty McBloatface](https://www.reddit.com/r/cpp/comments/go82wo/reducing_fmt_library_size_4x_using_bloaty/)
 - url: https://www.zverovich.net/2020/05/21/reducing-library-size.html
 ---
 
-## [4][Even more non-uniform initialization in C++20?](https://www.reddit.com/r/cpp/comments/goask6/even_more_nonuniform_initialization_in_c20/)
+## [6][What do we need to get completely rid of macros and header files?](https://www.reddit.com/r/cpp/comments/gov4ap/what_do_we_need_to_get_completely_rid_of_macros/)
+- url: https://www.reddit.com/r/cpp/comments/gov4ap/what_do_we_need_to_get_completely_rid_of_macros/
+---
+Other than for backward compatibility reasons, what are the problems still need to be solved in order to completely get rid of these? I know that many of the recent features are geared toward this goal, but I also vaguely know that we still need macros and header files for reasons other than backward compatibility.
+## [7][Even more non-uniform initialization in C++20?](https://www.reddit.com/r/cpp/comments/goask6/even_more_nonuniform_initialization_in_c20/)
 - url: https://www.reddit.com/r/cpp/comments/goask6/even_more_nonuniform_initialization_in_c20/
 ---
 This example is from cppreference:
@@ -150,7 +181,11 @@ However C++20 apparently introduces *parenthesized aggregate initialization*, wh
 My question is: why?? Surely this is just a whole nother category of bugs waiting to happen.  
 
 BTW if anyone is looking for this in the standard draft, it first appears in N4860 dcl.init/17.6.2.2 -- NOT under the aggregate initialization section!
-## [5][How supported is passing arguments to coroutine frames?](https://www.reddit.com/r/cpp/comments/gogccr/how_supported_is_passing_arguments_to_coroutine/)
+## [8][C++20 ❤️ SQL: A Thin, Typesafe SQL Wrapper in C++20](https://www.reddit.com/r/cpp/comments/gogiks/c20_sql_a_thin_typesafe_sql_wrapper_in_c20/)
+- url: http://jrb-programming.blogspot.com/2020/05/c20-sql.html
+---
+
+## [9][How supported is passing arguments to coroutine frames?](https://www.reddit.com/r/cpp/comments/gogccr/how_supported_is_passing_arguments_to_coroutine/)
 - url: https://www.reddit.com/r/cpp/comments/gogccr/how_supported_is_passing_arguments_to_coroutine/
 ---
 Hello reddit, how are you all?
@@ -184,73 +219,15 @@ Quit funnily, overloading the `new` operator to accept `size_t s,` `Args&amp;&am
 I did not try Clang to see if it works there.
 
 What is the status of passing parameters to the coroutine promise c.tor? Is it in the standard? If we want a sophisticated coroutine (and not that bland, unusable "lazily executed" coroutine that the committee tries to shove down our throats)  we must have this mechanism.  How much is it supported across different compilers?
-## [6][C++20 ❤️ SQL: A Thin, Typesafe SQL Wrapper in C++20](https://www.reddit.com/r/cpp/comments/gogiks/c20_sql_a_thin_typesafe_sql_wrapper_in_c20/)
-- url: http://jrb-programming.blogspot.com/2020/05/c20-sql.html
----
-
-## [7][My attempt to make my own similar but improved version of std::conditional. Thoughts?](https://www.reddit.com/r/cpp/comments/gog9uv/my_attempt_to_make_my_own_similar_but_improved/)
+## [10][My attempt to make my own similar but improved version of std::conditional. Thoughts?](https://www.reddit.com/r/cpp/comments/gog9uv/my_attempt_to_make_my_own_similar_but_improved/)
 - url: https://gist.github.com/WHStevens/c842d881181800400cead2118e3043dc
 ---
 
-## [8][C++ proposal dismisses backward compatibility](https://www.reddit.com/r/cpp/comments/gnw1pa/c_proposal_dismisses_backward_compatibility/)
+## [11][C++ proposal dismisses backward compatibility](https://www.reddit.com/r/cpp/comments/gnw1pa/c_proposal_dismisses_backward_compatibility/)
 - url: https://www.infoworld.com/article/3535795/c-plus-plus-proposal-dismisses-backward-compatibility.html
 ---
 
-## [9][CppCast: Catch2 and Std::random](https://www.reddit.com/r/cpp/comments/gocfju/cppcast_catch2_and_stdrandom/)
+## [12][CppCast: Catch2 and Std::random](https://www.reddit.com/r/cpp/comments/gocfju/cppcast_catch2_and_stdrandom/)
 - url: https://cppcast.com/catch2-random-martin-horenovsky/
----
-
-## [10][Why does operator== only get generated for *defaulted* operator&lt;=&gt;?](https://www.reddit.com/r/cpp/comments/go7a5p/why_does_operator_only_get_generated_for/)
-- url: https://www.reddit.com/r/cpp/comments/go7a5p/why_does_operator_only_get_generated_for/
----
-To elaborate on the title, consider a defaulted three-way comparison operator for a type:
-
-```
-struct MyType
-{
-    auto operator&lt;=&gt;(const MyType&amp; other) const = default;
-    int value;
-};
-
-int main()
-{
-    MyType a{ 42 }, b{ 24 };
-    return a == b; // works fine
-}
-```
-
-Now if we change that three-way comparison operator to no longer be defaulted, but still have the same effect:
-
-```
-struct MyType
-{
-    auto operator&lt;=&gt;(const MyType&amp; other) const { return value &lt;=&gt; other.value; }
-    int value;
-};
-
-int main()
-{
-    MyType a{ 42 }, b{ 24 };
-    return a == b; // ***no longer works***
-}
-```
-
-Godbolt: https://godbolt.org/z/uyqRo6
-
-It is easy (but annoying) to work around by defining `bool operator==(const MyType&amp; other) const { return std::is_eq(*this &lt;=&gt; other); }`, but I feel like I shouldn't have to do that. 
-
-Is there some logical reason why the equality operators can *never* be generated from a non-defaulted three-way comparison operator? 
-
-I'm already aware of the potential performance losses with three-way comparisons on complex types, but for simple struct types I feel like this should be automatic and just as performant.
-## [11][Linux Terminal Based Game Engines?](https://www.reddit.com/r/cpp/comments/gofsuw/linux_terminal_based_game_engines/)
-- url: https://www.reddit.com/r/cpp/comments/gofsuw/linux_terminal_based_game_engines/
----
-I want to start game development in C++. I thought it would be really cool if I could create a game in my terminal instead of a modern GUI.
-
-This guy on YouTube has a cool console game engine [here](https://github.com/OneLoneCoderCommunity/olcConsoleGameEngine) but it looks like the console game engine is only for windows.
-
-Does anyone have any Github repos for console based Game Engines?
-## [12][A noinline inline function? What sorcery is this?](https://www.reddit.com/r/cpp/comments/gnyt22/a_noinline_inline_function_what_sorcery_is_this/)
-- url: https://devblogs.microsoft.com/oldnewthing/20200521-00/?p=103777
 ---
 

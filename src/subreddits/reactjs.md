@@ -109,106 +109,109 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/gcbkuu/whos_hiring_may_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Looking for a good open source repo to look at that uses React and GraphQL](https://www.reddit.com/r/reactjs/comments/gob259/looking_for_a_good_open_source_repo_to_look_at/)
-- url: https://www.reddit.com/r/reactjs/comments/gob259/looking_for_a_good_open_source_repo_to_look_at/
----
-I want to learn GraphQL but having a hard time learning from tutorials.   
-
-
-Anyone know of an up to date code base with React and GraphQL that I can look at?  
-
-
-Thanks!
-## [4][How To Setup Redux with Redux Toolkit](https://www.reddit.com/r/reactjs/comments/goj0hz/how_to_setup_redux_with_redux_toolkit/)
-- url: https://www.softkraft.co/how-to-setup-redux-with-redux-toolkit/
+## [3][React Finland 2020 goes online with free mini-conferences](https://www.reddit.com/r/reactjs/comments/gp3u15/react_finland_2020_goes_online_with_free/)
+- url: https://sfree.life/react-finland-2020-online-conference-free/
 ---
 
-## [5][The State of Micro Frontends](https://www.reddit.com/r/reactjs/comments/go1vzc/the_state_of_micro_frontends/)
-- url: https://blog.bitsrc.io/state-of-micro-frontends-9c0c604ed13a
+## [4][How long should my first paid project take ? (E-commerce)](https://www.reddit.com/r/reactjs/comments/gp1uug/how_long_should_my_first_paid_project_take/)
+- url: https://www.reddit.com/r/reactjs/comments/gp1uug/how_long_should_my_first_paid_project_take/
+---
+I started self-learning back-end in 2017 and front-end in 2018&amp;19 and full stack in late 2019-2020 on and off.And programming as a hobby since kid.I now have an opportunity to work in my first paid project which is an e-commerce web app so am really excited.
+
+...............
+
+I learnt the MERN stack and in the finishing stage of my first portfolio e-commerce project,which I followed some bits initially from a react udemy course but then changes various things and added a lot of features.It took me 3 months as I was learning while doing it but this new project should take less time than that but am kinda scared.
+
+Deadline of the project is in 1 month.Client wants a grocery store of a relatively small scale.
+As I can work with MERN, I am going with it and think it is a good stack to work on for that app along with redux-thunk.
+
+.................
+
+How would you aproach the project ?
+
+And how much time should it take ?
+
+Thanks you for your much appreciated help !
+## [5][⚡️Introducing react-shimmer: Async loading, performant Image component for React.js](https://www.reddit.com/r/reactjs/comments/gol1ou/introducing_reactshimmer_async_loading_performant/)
+- url: https://github.com/gokcan/react-shimmer
 ---
 
-## [6][I recreated React's class component lifecycle methods with hooks](https://www.reddit.com/r/reactjs/comments/goadlf/i_recreated_reacts_class_component_lifecycle/)
-- url: https://github.com/DaniAkash/lifecycle-hooks
+## [6][flyn't : My first react.js project ( suggestions/ feedback welcomed )](https://www.reddit.com/r/reactjs/comments/gp2vcr/flynt_my_first_reactjs_project_suggestions/)
+- url: https://flynt.netlify.app
 ---
 
-## [7][Free and Open Source React Admin Dashboard Template](https://www.reddit.com/r/reactjs/comments/gojap4/free_and_open_source_react_admin_dashboard/)
-- url: https://flatlogic.com/templates/one-free-react-template
+## [7][I made a thing: Kinetic Components - Animate a single React component or orchestrate animations among a collection of React components. Use CSS animations or your favorite JS animation library!](https://www.reddit.com/r/reactjs/comments/gougxz/i_made_a_thing_kinetic_components_animate_a/)
+- url: https://www.reddit.com/r/reactjs/comments/gougxz/i_made_a_thing_kinetic_components_animate_a/
+---
+The playground: [erhathaway.github.io/kinetic-components/](https://erhathaway.github.io/kinetic-components/)  
+The repo: [https://github.com/erhathaway/kinetic-components](https://github.com/erhathaway/kinetic-components)  
+
+
+I dread adding animations to apps b/c they get so unwieldy fast. The aim of Kinetic Components was to create an API that is, in my mind, ideal for controlling animations in React. It lets you easily add and orchestrate animations among multiple components. For example, if a drawer slides open, components inside the drawer can have micro animations. Kinetic can be used to easily orchestrate the micro animations on drawer show and hide! Furthermore, you can go beyond the simple enter / exit animations that most libs facilitate. A single component can have 3+ animations - the sky is the limit!
+## [8][React Native Scrollable Bottom Sheet](https://www.reddit.com/r/reactjs/comments/gp260g/react_native_scrollable_bottom_sheet/)
+- url: https://github.com/rgommezz/react-native-scroll-bottom-sheet
 ---
 
-## [8][[RELEASE] Acey - an Innovative Global State Manager for React apps.](https://www.reddit.com/r/reactjs/comments/goicie/release_acey_an_innovative_global_state_manager/)
-- url: https://www.reddit.com/r/reactjs/comments/goicie/release_acey_an_innovative_global_state_manager/
----
-Hey fellows,
-
-&amp;#x200B;
-
-💡 I just released a **class-oriented state manager** for **React, NextJS** and **React-Native apps** I've been developing in the past 6 months.
-
-# It is called [Acey](https://github.com/Fantasim/acey).
-
-&amp;#x200B;
-
-Acey allows you to **encapsulate** your **states** inside **Model class**. Then you can gather the methods you need to treat, access, format, and organize their state. 🍱
-
-With it you can :
-
-* **Update** and **access** your Model’s state **wherever** you want **in your App** without any binding. 🔓
-* Connect conveniently any Model with any component, so they re-render when the Model’s state changes. 🔄 (Example of a Counter App [here](https://github.com/Fantasim/acey/blob/master/example/reactjs/counter/src/App.tsx)*)*
-
-&amp;#x200B;
-
-It implements many useful built-in features to make your life **easier**, **building**, and **maintaining** your app architecture.
-
-Here is a couple :
-
-* **Local store and cookie** feature: Store your Model's state to **retrieve** their **previous state** when your app reloads. 🗄️
-* No Provider. 🎈
-* Model Nesting.
-* Collection helpers.
-* Compatible with **React, Next, and** **React-Native**. ✅
-
-&amp;#x200B;
-
-💭 If you have **any questions** just let me know here, or feel free to open an issue in the project repo
-
-⭐ If you like it or think of using it, feel free to **drop a star on** [**Github**](https://github.com/Fantasim/acey), always good to get some support. :)
-## [9][Reacting to a child's prop value.(hooks)](https://www.reddit.com/r/reactjs/comments/goiay6/reacting_to_a_childs_prop_valuehooks/)
-- url: https://www.reddit.com/r/reactjs/comments/goiay6/reacting_to_a_childs_prop_valuehooks/
----
-I have a parent component A  and in its first line of return, I have a banner component and followed by it are B and C component. So, A has banner,  B and C as child components and D is the child of C.
-
-There is a submit button in D component and when the user clicks this, I have to show the banner which is located in A.  I've built all these components using hooks.
-
-D component has the most functionality so I placed my button there. I'm stuck at making the banner visible after the user clicks the submit button in D.
-
-Can anyone please throw some light on how can I achieve it.
-
-(I made child components for better readability).
-
-TIA
-## [10][Why we use Redux in our Apps #6 | react-redux-firebase](https://www.reddit.com/r/reactjs/comments/goi8dg/why_we_use_redux_in_our_apps_6_reactreduxfirebase/)
-- url: https://youtu.be/QbCncZlZYgQ
+## [9][React DevTools 4.7.0 released](https://www.reddit.com/r/reactjs/comments/gomyy1/react_devtools_470_released/)
+- url: https://github.com/facebook/react/blob/master/packages/react-devtools/CHANGELOG.md#470-may-18-2020
 ---
 
-## [11][Open-source version of Facebook's stylex](https://www.reddit.com/r/reactjs/comments/gohwia/opensource_version_of_facebooks_stylex/)
-- url: https://github.com/johanholmerin/style9
+## [10][How does Jest test the B function called in the A function?](https://www.reddit.com/r/reactjs/comments/gp3wbg/how_does_jest_test_the_b_function_called_in_the_a/)
+- url: https://www.reddit.com/r/reactjs/comments/gp3wbg/how_does_jest_test_the_b_function_called_in_the_a/
+---
+For example, give an example:
+
+```js
+// ListItem.tsx
+interface Props {
+    onTouchStart: (e: React.TouchEvent) =&gt; void;
+}
+
+const ListItem: React.FC &lt;Props&gt; = (props) =&gt; {
+    const handleTouchStart = (e: React.TouchEvent) =&gt; {
+        // Call the incoming function inside the component
+        props.onTouchStart (e);
+        // perform some other operations
+    }
+
+    return &lt;div onTouchStart = {handleTouchStart}&gt; &lt;/ div&gt;
+}
+
+export default ListItem;
+```
+
+```js
+// ListItem.test.tsx
+import {createElement} from 'rax';
+import renderer from 'rax-test-renderer';
+
+it ('Test ListItem TouchStart', () =&gt; {
+    const mockFunc = jest.fn ();
+    const component = renderer.create (&lt;ListItem onTouchStart = {mockFunc} /&gt;)
+    const tree = component.toJSON ();
+    tree.eventListeners.touchstart ();
+    // report an error
+    expect (tree.eventListeners.touchstart).toHaveBeenCalled ();
+})
+```
+
+```js
+expect (received) .toHaveBeenCalled ()
+
+    Matcher error: received value must be a mock or spy function
+
+    Received has type: function
+    Received has value: [Function handleTouchStart]
+```
+
+How to test whether the function passing in props exists in the test case?
+
+How to test whether the function passed in props is called in the test case?
+## [11][Chat with people who are listening to the same song right now](https://www.reddit.com/r/reactjs/comments/gojkdw/chat_with_people_who_are_listening_to_the_same/)
+- url: https://tunemeet.com/
 ---
 
-## [12][Paperless participation tracking with QR Codes](https://www.reddit.com/r/reactjs/comments/goh74e/paperless_participation_tracking_with_qr_codes/)
-- url: https://www.reddit.com/r/reactjs/comments/goh74e/paperless_participation_tracking_with_qr_codes/
+## [12][Creating a waitlist form with airtable and next.js](https://www.reddit.com/r/reactjs/comments/goznse/creating_a_waitlist_form_with_airtable_and_nextjs/)
+- url: https://smalltuts.com/course/creating-a-waitlist-form-with-airtable-and-next-js-b0cdf52e-6udS5Hs3Ul65IQVk_dnHa
 ---
-I build this yesterday and thought it came out pretty well.
 
-In the wake of covid a lot of businesses (restaurants, etc) need to collect information on the customers in order to contact them afterwards if someone around them is ill. This is done by paper a lot of times.
-
-Let's stay with the restaurant example:The customer fills his data out on a landingpage (possibily in advance):[https://qcps.netlify.app/generate](https://qcps.netlify.app/generate)He can now store it as image on his phone.
-
-[https://qcps.netlify.app/](https://qcps.netlify.app/)The business puts in an email and if needed some custom fields.This is stored locally, so whenever it is opened up, they are ready to go.
-
-Now they can scan the qr codes of multiple people, add the information (like table) and send it to the email. The data is now searchable, sortable in the business email account.
-
-I disabled the email part, because I'm not yet sure how to set it up without being vulnurable for spam.But feel free to drop any suggestions.
-
-Feel free to use or comment on the code in any way you like:[https://github.com/groev/qr-code-participation-system](https://github.com/groev/qr-code-participation-system)
-
-I'm not sure if this will get some use anytime soon, but for me it was a good lesson implementing qr codes in an application, which is actually pretty easy because the packages work out of the box

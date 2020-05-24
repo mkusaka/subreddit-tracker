@@ -1,5 +1,44 @@
 # Kotlin
-## [1][Trying to understand something about Kotlin's Collections interface and Java](https://www.reddit.com/r/Kotlin/comments/gp1hil/trying_to_understand_something_about_kotlins/)
+## [1][Understand Kotlin Collection Function Past Tense](https://www.reddit.com/r/Kotlin/comments/gpk2w7/understand_kotlin_collection_function_past_tense/)
+- url: https://medium.com/@elye.project/understand-kotlin-collection-function-past-tense-59f592af9436?source=friends_link&amp;sk=e22ccd272ebd28ef6f417e7b455b5b4f
+---
+
+## [2][How to secure Ktor web app with Keycloak Jetty 9.x Adapters?](https://www.reddit.com/r/Kotlin/comments/gpnxq8/how_to_secure_ktor_web_app_with_keycloak_jetty_9x/)
+- url: https://www.reddit.com/r/Kotlin/comments/gpnxq8/how_to_secure_ktor_web_app_with_keycloak_jetty_9x/
+---
+Hi all 
+
+I would like to secure the Ktor webapp, that is run on top of Jetty server with [Keycloak Jetty 9.x Adapters][1]. 
+
+Ktor provides a [hook][2] for Jetty server initialization and maybe it is the right place in integrate the Keycloak Jetty 9.x Adapters.  
+
+How to integrate Keycloak Jetty 9.x Adapters into Ktor app?  
+
+Thanks
+
+
+  [1]: https://www.keycloak.org/docs/latest/securing_apps/index.html#_jetty9_adapter
+  [2]: https://ktor.io/servers/configuration.html#jetty
+## [3][Harmony - A process-safe SharedPreference library](https://www.reddit.com/r/Kotlin/comments/gpbmci/harmony_a_processsafe_sharedpreference_library/)
+- url: /r/android_devs/comments/gpbkyp/harmony_a_processsafe_sharedpreference_library/
+---
+
+## [4][Kotlin native performance compared to JVM - Opinions wanted](https://www.reddit.com/r/Kotlin/comments/gpdnt7/kotlin_native_performance_compared_to_jvm/)
+- url: https://www.reddit.com/r/Kotlin/comments/gpdnt7/kotlin_native_performance_compared_to_jvm/
+---
+So my experience with Kotlin native has been less than ideal, bit of a rant (sorry!)
+
+Essentially, after 3 years of Kotlin, went into the native field, thinking i would get better performance or memory usage for large scale applications.  
+
+
+Although the latter is true, especially with millions of objects, the same cannot be said about the former.
+
+First example. Java's File class vs native code using C functions such as fread(). I did some benchmarks (Loading a 55MB text file and load all the lines into an array. JVM does this in 10ms, where native code does it in 2500ms. How is it that much slower!?
+
+Second example, loading loads of classes. JVM does the whole thing about 1000x faster, when converting lines in arrays to objects using a parser. Admittedly, under memory pressure, Kotlin native does perform more consistently, where JVM will pause to do a GC sweep. But still, total performance difference is about 1000x!
+
+Has anyone else had similar experiences? - Or do you reckon i am doing something wrong here?
+## [5][Trying to understand something about Kotlin's Collections interface and Java](https://www.reddit.com/r/Kotlin/comments/gp1hil/trying_to_understand_something_about_kotlins/)
 - url: https://www.reddit.com/r/Kotlin/comments/gp1hil/trying_to_understand_something_about_kotlins/
 ---
 I'm using Data Binding on Android and I'm trying to understand why I have to import `java.util.List` into my data binding layouts even tho the rest of the code is using Kotlin:
@@ -7,108 +46,31 @@ I'm using Data Binding on Android and I'm trying to understand why I have to imp
  [https://imgur.com/a/jFiIfy9](https://imgur.com/a/jFiIfy9) 
 
 I tried replacing this for `kotlin.collections.List` but the code doesn't compile. Online I read something about that the Kotlin collection interfaces "don't actually exist". Can someone shed some light on this?
-## [2][Code review/help for a Calculator project I'm working on](https://www.reddit.com/r/Kotlin/comments/gp37ai/code_reviewhelp_for_a_calculator_project_im/)
-- url: https://www.reddit.com/r/Kotlin/comments/gp37ai/code_reviewhelp_for_a_calculator_project_im/
+## [6][Spring Framework returns 404 for some URLs even when there are controllers for them.](https://www.reddit.com/r/Kotlin/comments/gpgcsh/spring_framework_returns_404_for_some_urls_even/)
+- url: https://www.reddit.com/r/Kotlin/comments/gpgcsh/spring_framework_returns_404_for_some_urls_even/
 ---
-I'm working on a smart calculator project for a site that teaches you Kotlin.
+I two controllers for my site written in Spring Boot and Kotlin, `IndexController` and `AboutController`. Both with a single function with a `@GetMapping` annotation to `/` and `/about`, respectively. However, the index page works find but the about page returns a 404 error. Even when I move the about page controller method to the IndexController, it still doesn't work.
 
-## ---- Description ----
+In another test project, I initially couldn't even get the index page to route correctly, but that problem randomly fixed itself for some reason.
 
-Write a program that reads two numbers in a loop and prints the sum in the standard output. If a user enters only a single number, the program should print the same number. If a user enters an empty line, the program should ignore it.  
+What could be going on, and how do I fix it?
+## [7][What are the best resources to learn Kotlin?](https://www.reddit.com/r/Kotlin/comments/gp5hul/what_are_the_best_resources_to_learn_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/gp5hul/what_are_the_best_resources_to_learn_kotlin/
+---
+Hi,
 
+I'm looking for something that would let be up and running with Kotlin ASAP. I'm comfortable with Java (11) and Typescript and also done some things with Scala, so I feel that most of this language will feel familiar to me.
 
-When the command 
+Anything that you would recommend? Thank you
+## [8][I want to learn Android development with Kotlin.](https://www.reddit.com/r/Kotlin/comments/gpbler/i_want_to_learn_android_development_with_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/gpbler/i_want_to_learn_android_development_with_kotlin/
+---
+I want to learn Android development using Kotlin. But there's a big issue. My laptop has only 2GB of RAM and i can't afford a new laptop right now. What should I do?
+## [9][Why LiveData is the best solution (yet) for UI](https://www.reddit.com/r/Kotlin/comments/gp8atk/why_livedata_is_the_best_solution_yet_for_ui/)
+- url: https://www.coroutinedispatcher.com/2020/05/why-livedata-is-best-solution-yet-for-ui.html
+---
 
-    /exit
-
-is entered, the program must print 
-
-    "Bye!"
-
-(without quotes), and then stop.  
-\----- End Description ----
-
-I wrote some code which I thought meets the requirements but when the project is checked, I get an error stating this input is incorrect, which I'm not sure why it's incorrect  
-
-
-    java.lang.AssertionError: Wrong answer in test #2  Please find below the output of your program during this failed test. Note that the '&gt;' character indicates the beginning of the input line.  
-    ---  
-    &gt; 17 9 
-    26
-
-Here's the bulk of my logic. I read the inputs as String initially so that I can perform my check. Then convert to Int when I need to calculate.   
-
-
-    when {
-            // if user enters "/exit", print "Bye!"
-            a == "/exit" -&gt; {
-                print("Bye!")
-            }
-            // if user enters empty line, ignore it
-            a.isEmpty() -&gt; {
-            }
-            // if user enters single #, print same #
-            b.isEmpty()-&gt; {
-                print(a)
-            }
-            // if user enter 2 #'s, print the sum
-            else -&gt; {
-                print(addTwoNumbers(a.toInt(), b.toInt()))
-            }
-        }
-
-Are there any issues w/ my logic? What would you do differently?
-## [3][30 days of Kotlin - Seminar 2 - Decoding Kotlin: The Modern Way To Build on Android](https://www.reddit.com/r/Kotlin/comments/gp044m/30_days_of_kotlin_seminar_2_decoding_kotlin_the/)
+## [10][30 days of Kotlin - Seminar 2 - Decoding Kotlin: The Modern Way To Build on Android](https://www.reddit.com/r/Kotlin/comments/gp044m/30_days_of_kotlin_seminar_2_decoding_kotlin_the/)
 - url: /r/androiddev/comments/gp038k/30_days_of_kotlin_seminar_2_decoding_kotlin_the/
 ---
 
-## [4][The Result Monad](https://www.reddit.com/r/Kotlin/comments/gonrds/the_result_monad/)
-- url: https://adambennett.dev/2020/05/the-result-monad/
----
-
-## [5][Can I make a function similar to the repeat() function?](https://www.reddit.com/r/Kotlin/comments/gp2rbh/can_i_make_a_function_similar_to_the_repeat/)
-- url: https://www.reddit.com/r/Kotlin/comments/gp2rbh/can_i_make_a_function_similar_to_the_repeat/
----
-If I understand it correctly, repeat() is a special function. You can pass in parameters and you also need to specify the body of the function, like this:
-
-repeat(3) {
-  println("This will print 3 times.")
-}
-
-Can I make my own function that will have this functionality? That the user can pass his own code like in the repeat function.
-## [6][🌊StateFlow, End of LiveData?](https://www.reddit.com/r/Kotlin/comments/gowz14/stateflow_end_of_livedata/)
-- url: https://link.medium.com/sm7NfjtoH6
----
-
-## [7][Absolem - a knowledge sharing platform](https://www.reddit.com/r/Kotlin/comments/gp1bpj/absolem_a_knowledge_sharing_platform/)
-- url: https://www.reddit.com/r/Kotlin/comments/gp1bpj/absolem_a_knowledge_sharing_platform/
----
- Hi, I just published my real-world knowledge platform project using Vert.x Kotlin, DDD, Event Driven Design, GraphQL and lots of stuff. Come and take a look!
-
- [https://github.com/UkonnRa/wonderland](https://github.com/UkonnRa/wonderland)
-## [8][Secondary Constructors](https://www.reddit.com/r/Kotlin/comments/gomb0f/secondary_constructors/)
-- url: https://www.reddit.com/r/Kotlin/comments/gomb0f/secondary_constructors/
----
-I've just started learning Kotlin as I have free time on my hands right now; I have prior experience in Java and python (may be relevant). When learning about secondary constructors I understand how to use them, just not why they would be useful, why not just include the extra values in the first constructor and assign them as null unless used? Or use an overload to handle objects with different constructors? I'm really confused as to how they are beneficial, any help is appreciated :)))
-## [9][The schedule &amp; talks are out for Kotliners 2020](https://www.reddit.com/r/Kotlin/comments/golgpv/the_schedule_talks_are_out_for_kotliners_2020/)
-- url: https://kotliners.com/conference
----
-
-## [10][Question about singletons](https://www.reddit.com/r/Kotlin/comments/gojnfo/question_about_singletons/)
-- url: https://www.reddit.com/r/Kotlin/comments/gojnfo/question_about_singletons/
----
-I've been studying Kotlin and I just got to the section about creating a singleton with the keyword object, and I was wondering if my understanding of objects and companion objects is correct? With the following Player class, from what I understand if there was 20 Player objects, they each would have a reference to the one companion object ( and any other object that may get added to the class ) that then can be used. But if the companion object was replaced with individual functions they'd all have their own copy of it that then could lead to different results for each Player if there was something within it that could be changed. 
-```
-class Player(val id: Int) {
- 
-    /* ... */
-    companion object Properties {
-        /* Default player speed in playing field - 7 cells per turn */
-        val defaultSpeed = 7
- 
-        fun calcMovePenalty(cell: Int): Int {
-            /* calc move speed penalty */
-        }
-    }
-}
-```

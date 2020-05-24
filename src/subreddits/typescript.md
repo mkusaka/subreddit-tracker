@@ -22,11 +22,121 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][TypeScript taught me something today](https://www.reddit.com/r/typescript/comments/goovef/typescript_taught_me_something_today/)
-- url: https://www.reddit.com/r/typescript/comments/goovef/typescript_taught_me_something_today/
+## [2][Best Way To Use markAllAsTouched in Angular Forms | Geekstrick](https://www.reddit.com/r/typescript/comments/gpomm6/best_way_to_use_markallastouched_in_angular_forms/)
+- url: https://www.geekstrick.com/markallastouched-in-angular-forms/
 ---
-So I'm working on a form today, and when I was coding one particular select input, I noticed I needed two different pieces of information from whatever I was selecting. I tried a few different things but nothing was working. As I was noodling around, I hovered over the value attribute in the option tag, and TS told me that the value can be a string\[\] as well as a string or a number. I guess I would have eventually solved the problem, but TypeScript taught me how to get multiple values and from there it was just a matter of of hovering instead of reading a lot of documentation. Thank you Typescript!
-## [3][query in Optional parameter: typescript](https://www.reddit.com/r/typescript/comments/gp3t7g/query_in_optional_parameter_typescript/)
+
+## [3][first steps to take to learn typescript? (most common question asked over time probably)](https://www.reddit.com/r/typescript/comments/gpnwf9/first_steps_to_take_to_learn_typescript_most/)
+- url: https://www.reddit.com/r/typescript/comments/gpnwf9/first_steps_to_take_to_learn_typescript_most/
+---
+as this is liekly the most common question asked over time
+
+im guessing some of the very knowledgable ppl here had sometimes during the past created a script in which other ppl would just copy / paste to new ppl that ask this question (since you're coders and would want to automate things so they can be made efficient &amp; effective)
+
+here's everything i know about coding so far:
+
+[https://www.reddit.com/r/learnpython/comments/goy5xa/where\_to\_continue\_learning\_coding/](https://www.reddit.com/r/learnpython/comments/goy5xa/where_to_continue_learning_coding/)
+
+&amp;#x200B;
+
+it seems like typescript is mainly for 'enterprise use' and for 'angular'  [https://www.quora.com/Should-I-learn-JavaScript-before-learning-TypeScript](https://www.quora.com/Should-I-learn-JavaScript-before-learning-TypeScript) so maybe should learn something simpler but it doesnt seem like there are any simpler options out there...
+## [4][Exporting a Jest mock of a module with type casting](https://www.reddit.com/r/typescript/comments/gpgg8d/exporting_a_jest_mock_of_a_module_with_type/)
+- url: https://www.reddit.com/r/typescript/comments/gpgg8d/exporting_a_jest_mock_of_a_module_with_type/
+---
+Hey everyone. I have a quick question which kind of has to do with typescript, but I think may be more of a Jest question. If this is in the wrong place, I apologize.
+
+I'm learning typescript while building a [nuxt.js](https://nuxtjs.org/) app with jest for unit testing. I am coding my API service layer right now, and have the following code for mocking the [nuxt.js axios module](https://axios.nuxtjs.org/), which as a different type than a standard axios instance:
+
+```TypeScript
+import axios from 'axios'
+import { NuxtAxiosInstance } from '@nuxtjs/axios'
+
+jest.mock('axios')
+
+// cast mock to correct type
+const mockNuxtAxios = axios as jest.Mocked&lt;NuxtAxiosInstance&gt;
+
+// return mock data for test
+mockNuxtAxios.$get = jest.fn().mockReturnValue(mockData)
+```
+
+This is quite a lot of code, and I am using this mock in a few different test files. I would like to avoid duplicating this code whenever I need to mock nuxt axios. What would be ideal would be to be able to import my `mockNuxtAxios` mock into multiple test files with something as simple as:
+
+```TypeScript
+import { mockNuxtAxios } from '~/test/utils'
+```
+
+I imagine that this is a fairly common thing that someone would want to do, but I cannot figure out how to.
+
+Any suggestions?
+## [5][Verify cookie with JWT payload inside.](https://www.reddit.com/r/typescript/comments/gppio8/verify_cookie_with_jwt_payload_inside/)
+- url: https://www.reddit.com/r/typescript/comments/gppio8/verify_cookie_with_jwt_payload_inside/
+---
+https://preview.redd.it/nm5u38x6qp051.png?width=596&amp;format=png&amp;auto=webp&amp;s=b1c75a2fd39e0e077840f4ee40188c3c4e1607ed
+
+Hi everyone, I'm learning TypeScript and I'm stuck in that problem.
+
+The return of function verify is the code commented above the interface Decoded
+
+Thank you for your help!
+
+&amp;#x200B;
+## [6][ORM Challenges](https://www.reddit.com/r/typescript/comments/gp8fx8/orm_challenges/)
+- url: https://www.reddit.com/r/typescript/comments/gp8fx8/orm_challenges/
+---
+Hey All,
+
+I have some fairly extensive professional experience using python with sql alchemy, Django, etc. I am currently working on building a side project with typescript being my language of choice. 
+
+I’ve noticed there is much more scaffolding necessary compared to the python ecosystem. Currently I’m using typeorm. It feels also though everything is extremely manual from setting up testing classes for end to end tests, connection management, simple things like get_or_create statements. 
+
+I love typescript as a language but I feel far less productive building out a backend with the tools I’ve tried so far. 
+
+I’m not sure if I’m simply approaching this with the wrong perspective or using poor tools. 
+
+Does anyone have any recommendations or thoughts on the above? I may just have a poor perspective coming from a more mature python ecosystem.
+## [7][Typescript is not checking function arguments.](https://www.reddit.com/r/typescript/comments/gp7sl4/typescript_is_not_checking_function_arguments/)
+- url: https://www.reddit.com/r/typescript/comments/gp7sl4/typescript_is_not_checking_function_arguments/
+---
+Why TS is not checking function arguments?
+
+    interface Functions {
+      add(x: number, y: number): number;
+      isPositive(n: number): boolean;
+    }
+    const functions: Functions = {
+      add: () =&gt; 5,
+      isPositive: () =&gt; true,
+    };
+
+TS doesn't complain although `x` and `y` arguments are missing in `add` function. But does his job if the return value (number in add) doesn't match.
+## [8][Change property with decorator in TypeScript?](https://www.reddit.com/r/typescript/comments/gpc10u/change_property_with_decorator_in_typescript/)
+- url: https://www.reddit.com/r/typescript/comments/gpc10u/change_property_with_decorator_in_typescript/
+---
+I'm trying to get a simple decorator example in TS to work. I'm simply trying to change the value of an instance member. Since property decorators receive the prototype object as a target argument, defining a property will actually add it to the prototype and not the instance. So, I can't access it directly. I'm not sure how I could actually change the value here?
+
+    function valueDecorator(target: any, propertyKey: any) {
+        Object.defineProperty(target, propertyKey, {
+            value: 5,
+            writable: true,
+        })
+    }
+    
+    
+    class Example {
+        @valueDecorator
+        public value: number;
+    
+        constructor() {
+            this.value = 0
+        }
+    }
+    
+    const ex = new Example()
+    console.log(ex.value)
+
+**The output is still 0. I expected it to be 5.**
+## [9][query in Optional parameter: typescript](https://www.reddit.com/r/typescript/comments/gp3t7g/query_in_optional_parameter_typescript/)
 - url: https://www.reddit.com/r/typescript/comments/gp3t7g/query_in_optional_parameter_typescript/
 ---
 Hello All,
@@ -50,75 +160,34 @@ function add (x ?:  number,  y ?: number, z ?: number){
 is there a way to do it?
 
 thanks in advance
-## [4][How to use TypeScript Airbnb configuration?](https://www.reddit.com/r/typescript/comments/gorkz8/how_to_use_typescript_airbnb_configuration/)
-- url: https://www.reddit.com/r/typescript/comments/gorkz8/how_to_use_typescript_airbnb_configuration/
+## [10][TypeScript taught me something today](https://www.reddit.com/r/typescript/comments/goovef/typescript_taught_me_something_today/)
+- url: https://www.reddit.com/r/typescript/comments/goovef/typescript_taught_me_something_today/
 ---
-I try to use ESLint Airbnb configuration for several days and I don't know how.
-## [5][What to learn?](https://www.reddit.com/r/typescript/comments/gorl4d/what_to_learn/)
-- url: https://www.reddit.com/r/typescript/comments/gorl4d/what_to_learn/
+So I'm working on a form today, and when I was coding one particular select input, I noticed I needed two different pieces of information from whatever I was selecting. I tried a few different things but nothing was working. As I was noodling around, I hovered over the value attribute in the option tag, and TS told me that the value can be a string\[\] as well as a string or a number. I guess I would have eventually solved the problem, but TypeScript taught me how to get multiple values and from there it was just a matter of of hovering instead of reading a lot of documentation. Thank you Typescript!
+## [11][Intellisense not working on returned parameter (ide : vscode) .](https://www.reddit.com/r/typescript/comments/gp6ifp/intellisense_not_working_on_returned_parameter/)
+- url: https://www.reddit.com/r/typescript/comments/gp6ifp/intellisense_not_working_on_returned_parameter/
 ---
-I am trying to get into web development and just finished learning HTML and CSS. I have used a bit of javascript here and there but never learnt it.
-
-My question is should I learn Javascript or start learning Typescript. I know Typescript is a superset of javascript, but is there any advantage or disadvantage of trying to learn one over other. 
-
-I know how to code in C++/ python and coming from a strongly typed language, Typescript feels like the way to go.
-## [6][Generic not working for types imported via jsdoc comment , in js files , but works via typescript types defined in jsdoc comment . How to fix that ?](https://www.reddit.com/r/typescript/comments/goj3yj/generic_not_working_for_types_imported_via_jsdoc/)
-- url: https://i.redd.it/r9j7js42gb051.png
----
-
-## [7][Demo: TypeScript 3.8 Private Fields](https://www.reddit.com/r/typescript/comments/gonmxn/demo_typescript_38_private_fields/)
-- url: https://www.youtube.com/watch?v=c0QMj8x0-Mk
----
-
-## [8][How many of you need to validate cross-file types?](https://www.reddit.com/r/typescript/comments/goos0o/how_many_of_you_need_to_validate_crossfile_types/)
-- url: https://www.reddit.com/r/typescript/comments/goos0o/how_many_of_you_need_to_validate_crossfile_types/
----
-Hi! Author of [typecheck.macro](https://github.com/vedantroy/typecheck.macro) here. I've recently run into an issue, where due to the way Babel works, I don't think it will be possible to validate a type that spans multiple files.
-
-Example: An interface that extends an imported type. Of course you can still generate validators for a type that remains constrained to a single file, and then export those validators to other files.
-
-So, my question is. How big of an issue is it that you can't validate cross-file types? Is this problematic or not?
-## [9][Creating an open source team management app. Server and client are both typed and use Prisma, Nexus, Next and Apollo. Would love your feedbacks, and contributions!](https://www.reddit.com/r/typescript/comments/goau56/creating_an_open_source_team_management_app/)
-- url: https://github.com/troup-io
----
-
-## [10][Is a function a valid void type?](https://www.reddit.com/r/typescript/comments/go4ahi/is_a_function_a_valid_void_type/)
-- url: https://www.reddit.com/r/typescript/comments/go4ahi/is_a_function_a_valid_void_type/
----
-While I was refactoring some code, I changed some currying functions to simple functions. Obviously I started with the interfaces and I realized this strange thing:
-
-    interface FuncInterface {
-      fi: (id: number) =&gt; void;
+    function component&lt;T&gt;(p: {
+    	actions : () =&gt; T,
+    	htmlTemplate: &lt;S extends T&gt;(actions : S) =&gt; any
+    }) {
+    	return p;
     }
-    const func = (id: number) =&gt; () =&gt; {
-      console.log(id);
-    };
-    const implementation: FuncInterface = {
-      fi: func,
-    };
+    
+    component({
+    	actions : () =&gt; ({
+    		a : (x,y) =&gt; x+y
+    	}),
+    	htmlTemplate : (actions) =&gt; { 
+    		/*try to dot into the action and you will get intellisense*/ 
+    		actions;
+    		/*but if you dot here you will get no intellisense*/ 
+    		return actions;
+    	}
+    });
 
-TS doesn't complain although `func` is returning a function.
+here is it with syntax highlighting just for it to be more readable :
 
-Why is this happening?
-## [11][Confused by convention of using the word "Intrinsic"](https://www.reddit.com/r/typescript/comments/gohl2r/confused_by_convention_of_using_the_word_intrinsic/)
-- url: https://www.reddit.com/r/typescript/comments/gohl2r/confused_by_convention_of_using_the_word_intrinsic/
----
-**Problem:**
+https://preview.redd.it/1ogu0pcy5j051.png?width=658&amp;format=png&amp;auto=webp&amp;s=093845151b5d35b74f073d872443eb95634a1473
 
-I understand  what intrinsic means generally, but I'm  wondering if there is some concrete meaning it has in the context of Typescript.
-
-**Background:**
-
-React has [JSX.IntrinsicElements](https://www.typescriptlang.org/docs/handbook/jsx.html#intrinsic-elements), Which is described as:
-
-\*something intrinsic to the environment (browser)\*e.g.  native elements (e.g. strings like "div", "span") as opposed to components
-
-~~But TypeScript when I  look through the~~ [~~typescript source~~](https://github.com/microsoft/TypeScript/blob/master/tests/baselines/reference/intrinsics.js)~~, I can't tell if Intrinsic simply denotes:- inheritance (e.g. "base type"),   or- environment feature (e.g. "div")~~  (actually thats just test of jsx.intrtinsic\*)
-
-This is further muddied, as I wonder "Intrinsic" is alluding to something  like an [intrinsic function](https://en.wikipedia.org/wiki/Intrinsic_function)
-
-*a function whose implementation is handled specially by the* [*compiler*](https://en.wikipedia.org/wiki/Compiler)*.*
-
-Can anyone put me on the right track?
-
-**EDIT**: IMHO Intrinsic is simply *something intrinsic to the environment*
+do you know why intellisense is not working and how to fix that ?

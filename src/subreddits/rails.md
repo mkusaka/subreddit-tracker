@@ -1,25 +1,5 @@
 # rails
-## [1][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/gek2rk/personal_projects_show_off_your_own_project_andor/)
-- url: https://www.reddit.com/r/rails/comments/gek2rk/personal_projects_show_off_your_own_project_andor/
----
-In this thread you can showcase your personal pet project to other redditors.
-
-Need help with a specific problem or just wanna have some extra eyeballs on your code? Ask away!
-
-A suggested format to get you started:
-
-1. **Name of your project**
-2. **A short description**
-3. **Application stack**
-4. **Link to Live app**
-5. **Link to GitHub**
-6. **You experience level**
-7. **Other information or areas that you would like advice on**
-
- 
-
-^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/gnbebg/personal_projects_show_off_your_own_project_andor/)
+## [1][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/gnbebg/personal_projects_show_off_your_own_project_andor/)
 - url: https://www.reddit.com/r/rails/comments/gnbebg/personal_projects_show_off_your_own_project_andor/
 ---
 In this thread you can showcase your personal pet project to other redditors.
@@ -39,11 +19,7 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Rails deployment with Dokku](https://www.reddit.com/r/rails/comments/gous61/rails_deployment_with_dokku/)
-- url: https://www.reddit.com/r/rails/comments/gous61/rails_deployment_with_dokku/
----
-I just recently stumbled on Dokku and seems to be a pretty decent way to deploy rails apps. I also noticed that it's been around for a few years now. My Capistrano deployment is running into issues and setting up a box with other installation is tideous. Is Dokku still a viable way to go about deploying Rails apps or is there a better way? I'm a one man shop working side gigs so I'm just looking for the best/fastest way to deploy with having to manually provision vms in DO or EC2. Thanks.
-## [4][Show Posts by Date in URL](https://www.reddit.com/r/rails/comments/gp2fhi/show_posts_by_date_in_url/)
+## [2][Show Posts by Date in URL](https://www.reddit.com/r/rails/comments/gp2fhi/show_posts_by_date_in_url/)
 - url: https://www.reddit.com/r/rails/comments/gp2fhi/show_posts_by_date_in_url/
 ---
 Let's say I want to show only posts for a particular post creation date, which is received from
@@ -53,7 +29,11 @@ URL like this (year/month/day): http://localhost:3000/launches/2020/5/24
 How do I go about achieving this? 
 
 PS I'm using Rails 6
-## [5][Rails i18n available over server less (lambda)](https://www.reddit.com/r/rails/comments/gox5gb/rails_i18n_available_over_server_less_lambda/)
+## [3][Rails deployment with Dokku](https://www.reddit.com/r/rails/comments/gous61/rails_deployment_with_dokku/)
+- url: https://www.reddit.com/r/rails/comments/gous61/rails_deployment_with_dokku/
+---
+I just recently stumbled on Dokku and seems to be a pretty decent way to deploy rails apps. I also noticed that it's been around for a few years now. My Capistrano deployment is running into issues and setting up a box with other installation is tideous. Is Dokku still a viable way to go about deploying Rails apps or is there a better way? I'm a one man shop working side gigs so I'm just looking for the best/fastest way to deploy with having to manually provision vms in DO or EC2. Thanks.
+## [4][Rails i18n available over server less (lambda)](https://www.reddit.com/r/rails/comments/gox5gb/rails_i18n_available_over_server_less_lambda/)
 - url: https://www.reddit.com/r/rails/comments/gox5gb/rails_i18n_available_over_server_less_lambda/
 ---
 Hi everyone, 
@@ -66,7 +46,7 @@ How is everyone handling translations over serverless architecture?
 Is there a way to kinda Jsonify the translations keys and make them available via API and use them in front end as well without increasing significant load time? 
 
 You  guys are awesome!!
-## [6][Concurrent-ruby gem error - corrupted?](https://www.reddit.com/r/rails/comments/gouu11/concurrentruby_gem_error_corrupted/)
+## [5][Concurrent-ruby gem error - corrupted?](https://www.reddit.com/r/rails/comments/gouu11/concurrentruby_gem_error_corrupted/)
 - url: https://www.reddit.com/r/rails/comments/gouu11/concurrentruby_gem_error_corrupted/
 ---
 Hi all. I'm having trouble creating a new rails project. When it initially runs bundle install after my rails new command, it gets hung up on the "concurrent-ruby" gem and says there's an error and could be corrupt. I'm not sure how though since it's pulling directly from rubygems.org  unless their latest version (1.1.6) is just messed up? Here's what I get in my terminal: 
@@ -106,7 +86,7 @@ Please help. I've tried to manually run "gem install concurrent-ruby blah blah b
 I've also tried manually installing the previous version, and succeeded! But then it still tries to install the latest one that it's having trouble with once it runs its own bundle install again. 
 
 Looking in my rails apps from my boot camp, I'm not even seeing that gem in those Gemfiles. So I'm officially confused, as I should be as a very new developer. Any help is appreciated! Thanks in advance.
-## [7][Rails Courses/Videos that are "worth it"](https://www.reddit.com/r/rails/comments/gojmfx/rails_coursesvideos_that_are_worth_it/)
+## [6][Rails Courses/Videos that are "worth it"](https://www.reddit.com/r/rails/comments/gojmfx/rails_coursesvideos_that_are_worth_it/)
 - url: https://www.reddit.com/r/rails/comments/gojmfx/rails_coursesvideos_that_are_worth_it/
 ---
 So i've gone through TheOdinProject a while back and completed the facebook project (its not pretty but it's functional) so I have a basic understanding of rails. However despite being an automation engineer at my web-dev company I want to try to start helping out fixing bugs/etc..
@@ -116,12 +96,12 @@ However most things I see are either A. Pretty out of date or B. Go over making 
 I know there is a Udemy Course: "The Complete Ruby on Rails Developer Course" by Rob Percival. I've done about half of it (I might finish it, it just felt slow). Is there anything else that would take me to the next level? FWIW it's been a good bit since i've done the Facebook rails app so refreshing and building a solid foundation isn't necessarily a bad thing (to go back over old stuff).
 
 Hell I don't even mind paying for something if it's really worth-while. I have a C.S. degree but it's been about 10 years, and since then i've only done automation programming (Which isn't super in-depth) and small stuff at home. I want to up my game. Thanks!
-## [8][Rails, and David Graeber's book "Bullshit Jobs"](https://www.reddit.com/r/rails/comments/goeib9/rails_and_david_graebers_book_bullshit_jobs/)
+## [7][Rails, and David Graeber's book "Bullshit Jobs"](https://www.reddit.com/r/rails/comments/goeib9/rails_and_david_graebers_book_bullshit_jobs/)
 - url: https://www.reddit.com/r/rails/comments/goeib9/rails_and_david_graebers_book_bullshit_jobs/
 ---
 For those who have read the book (others can read wikipedia summary, it is enough for this discussion), what do you think about the 3rd kind of bullshit job : "duct tapers". The example given in the book states that programmers are happy to code open-source projects for free, but paid jobs consist in aggregate those free projects, who are not made to work together. Thus, programmer job is not very interesting because it is just integrating tools, the interesting part is left to "free time hobby".  
 For me, Ruby-on-Rails is precisely built against this bias, this is why Rails fans are **both** happy and paid  for their job. Why the majority of the industry accept the "duct tapers" as a mainstream remains a mystery to me.
-## [9][Capistrano Deploy and Active Storage issue](https://www.reddit.com/r/rails/comments/go4amp/capistrano_deploy_and_active_storage_issue/)
+## [8][Capistrano Deploy and Active Storage issue](https://www.reddit.com/r/rails/comments/go4amp/capistrano_deploy_and_active_storage_issue/)
 - url: https://www.reddit.com/r/rails/comments/go4amp/capistrano_deploy_and_active_storage_issue/
 ---
 When deploying using Capistrano, I lose all of my assets stored in Rails Active Storage. An older question on this sub (link below) addressed this, however I'm still experiencing the issue after using the fix. 
@@ -133,7 +113,7 @@ My deploy.rb has 'public/uploads'  in `append :linked_dirs` . Whenever I run `ca
 Similar question from a year ago:
 
 [https://www.reddit.com/r/rails/comments/bn0x19/capistrano\_deploy\_and\_active\_storage\_question/](https://www.reddit.com/r/rails/comments/bn0x19/capistrano_deploy_and_active_storage_question/)
-## [10][New to JSON and GraphQL. Which version to store in db?](https://www.reddit.com/r/rails/comments/gnz8qd/new_to_json_and_graphql_which_version_to_store_in/)
+## [9][New to JSON and GraphQL. Which version to store in db?](https://www.reddit.com/r/rails/comments/gnz8qd/new_to_json_and_graphql_which_version_to_store_in/)
 - url: https://www.reddit.com/r/rails/comments/gnz8qd/new_to_json_and_graphql_which_version_to_store_in/
 ---
 As the title shows, I am new to both JSON and GraphQL. Currently I am messing around with the shopify\_api and as such I am using their GraphQL API to gather order data. However, I am a tad bit confused as to how I should be storing this data in my postgres db. I am currently storing requests as t.jsonb :payload
@@ -274,7 +254,7 @@ For the example queries below, my question is which version should I be storing 
         
       ]
     }
-## [11][ActiveJob::SerializationError on create model for uploading](https://www.reddit.com/r/rails/comments/gnwl80/activejobserializationerror_on_create_model_for/)
+## [10][ActiveJob::SerializationError on create model for uploading](https://www.reddit.com/r/rails/comments/gnwl80/activejobserializationerror_on_create_model_for/)
 - url: https://www.reddit.com/r/rails/comments/gnwl80/activejobserializationerror_on_create_model_for/
 ---
 i am trying to do background job for uploading pics ,
@@ -303,7 +283,7 @@ I called that job in my controller like this:
 ```
 I tried to change: file.tempfile.path as well but doesn't work
 does anyone has same issue before like this?
-## [12][Any free Rails hosting options that don't use Postgres?](https://www.reddit.com/r/rails/comments/gnwlmf/any_free_rails_hosting_options_that_dont_use/)
+## [11][Any free Rails hosting options that don't use Postgres?](https://www.reddit.com/r/rails/comments/gnwlmf/any_free_rails_hosting_options_that_dont_use/)
 - url: https://www.reddit.com/r/rails/comments/gnwlmf/any_free_rails_hosting_options_that_dont_use/
 ---
 I simply cannot get Postgres to play ball on Windows 10, and I need a free hosting option for pitching/testing purposes. I know it's far from ideal, but are there any free hosting services that will accept Rails with Sqlite?

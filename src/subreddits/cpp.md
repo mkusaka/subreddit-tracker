@@ -125,7 +125,41 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][My attempt at making a Modern C++ String class](https://www.reddit.com/r/cpp/comments/goju6u/my_attempt_at_making_a_modern_c_string_class/)
+## [3][Analyzing The Simplest C++ Program](https://www.reddit.com/r/cpp/comments/gpj1sk/analyzing_the_simplest_c_program/)
+- url: https://oneraynyday.github.io/dev/2020/05/03/Analyzing-The-Simplest-C++-Program/
+---
+
+## [4][Chrome: 70% of all security bugs are memory safety issues](https://www.reddit.com/r/cpp/comments/gpdbgf/chrome_70_of_all_security_bugs_are_memory_safety/)
+- url: https://www.zdnet.com/article/chrome-70-of-all-security-bugs-are-memory-safety-issues/
+---
+
+## [5][Generating random numbers using C++ standard library: the solutions](https://www.reddit.com/r/cpp/comments/gpbk4i/generating_random_numbers_using_c_standard/)
+- url: https://codingnest.com/generating-random-numbers-using-c-standard-library-the-solutions/
+---
+
+## [6][How are libraries like Tensorflow developed in C++ buy can run in python?](https://www.reddit.com/r/cpp/comments/gp8gl4/how_are_libraries_like_tensorflow_developed_in_c/)
+- url: https://www.reddit.com/r/cpp/comments/gp8gl4/how_are_libraries_like_tensorflow_developed_in_c/
+---
+I was looking at all these machine learning and computer vision libraries, and they are developed in C++ but you can use them in many other languages. I was wondering how do you make something like that.
+
+I have read some stuff on it but it still confuses me, so if anyone has done something similar, I would appreciate the explanation.
+## [7][Oilpan: A C++ garbage collection library for Chromium](https://www.reddit.com/r/cpp/comments/gplxqh/oilpan_a_c_garbage_collection_library_for_chromium/)
+- url: https://docs.google.com/document/d/1Cv2IcsiokkGc2K_5FBTDKekNzTn3iTEUyi9fDOud9wU/edit?usp=sharing
+---
+
+## [8][What do we need to get completely rid of macros and header files?](https://www.reddit.com/r/cpp/comments/gov4ap/what_do_we_need_to_get_completely_rid_of_macros/)
+- url: https://www.reddit.com/r/cpp/comments/gov4ap/what_do_we_need_to_get_completely_rid_of_macros/
+---
+Other than for backward compatibility reasons, what are the problems still need to be solved in order to completely get rid of these? I know that many of the recent features are geared toward this goal, but I also vaguely know that we still need macros and header files for reasons other than backward compatibility.
+## [9][TIL: When unlocking any of the std::mutex(es), it must first be locked](https://www.reddit.com/r/cpp/comments/gowpvh/til_when_unlocking_any_of_the_stdmutexes_it_must/)
+- url: https://www.reddit.com/r/cpp/comments/gowpvh/til_when_unlocking_any_of_the_stdmutexes_it_must/
+---
+In most situations, it isn't a problem, but in some situations this might arise. Remember, you need to ensure you only call unlock after the mutex has been locked by the current thread. This was a surprise today when debugging some of my co-worker's code.
+
+"The mutex must be locked by the current thread of execution, **otherwise, the behavior is undefined**."
+
+[https://en.cppreference.com/w/cpp/thread/mutex/unlock](https://en.cppreference.com/w/cpp/thread/mutex/unlock) [https://en.cppreference.com/w/cpp/thread/timed\_mutex/unlock](https://en.cppreference.com/w/cpp/thread/timed_mutex/unlock) [https://en.cppreference.com/w/cpp/thread/recursive\_mutex/unlock](https://en.cppreference.com/w/cpp/thread/recursive_mutex/unlock) [https://en.cppreference.com/w/cpp/thread/recursive\_timed\_mutex/unlock](https://en.cppreference.com/w/cpp/thread/recursive_timed_mutex/unlock) [https://en.cppreference.com/w/cpp/thread/shared\_mutex/unlock](https://en.cppreference.com/w/cpp/thread/shared_mutex/unlock) [https://en.cppreference.com/w/cpp/thread/shared\_timed\_mutex/unlock](https://en.cppreference.com/w/cpp/thread/shared_timed_mutex/unlock)
+## [10][My attempt at making a Modern C++ String class](https://www.reddit.com/r/cpp/comments/goju6u/my_attempt_at_making_a_modern_c_string_class/)
 - url: https://www.reddit.com/r/cpp/comments/goju6u/my_attempt_at_making_a_modern_c_string_class/
 ---
 Source: [https://github.com/lionkor/String](https://github.com/lionkor/String)  
@@ -144,90 +178,11 @@ I'd be super honored if I could get some feedback on it, from both a technical a
 Edit: It uses variadic templates for `String::format`, which for me personally is a huge win!
 
 Edit2: I dont think my implementation is better than std::string. I don't know where that came from, but I know my implementation is shit. I've been programming C++ for a year, I dont think I write better code than STL devs. I like it better than std::string, its better for me personally. Thats all. I felt like it needed to be clarified before more people "call me out" on it.
-## [4][TIL: When unlocking any of the std::mutex(es), it must first be locked](https://www.reddit.com/r/cpp/comments/gowpvh/til_when_unlocking_any_of_the_stdmutexes_it_must/)
-- url: https://www.reddit.com/r/cpp/comments/gowpvh/til_when_unlocking_any_of_the_stdmutexes_it_must/
----
-In most situations, it isn't a problem, but in some situations this might arise. Remember, you need to ensure you only call unlock after the mutex has been locked by the current thread. This was a surprise today when debugging some of my co-worker's code.
-
-"The mutex must be locked by the current thread of execution, **otherwise, the behavior is undefined**."
-
-[https://en.cppreference.com/w/cpp/thread/mutex/unlock](https://en.cppreference.com/w/cpp/thread/mutex/unlock) [https://en.cppreference.com/w/cpp/thread/timed\_mutex/unlock](https://en.cppreference.com/w/cpp/thread/timed_mutex/unlock) [https://en.cppreference.com/w/cpp/thread/recursive\_mutex/unlock](https://en.cppreference.com/w/cpp/thread/recursive_mutex/unlock) [https://en.cppreference.com/w/cpp/thread/recursive\_timed\_mutex/unlock](https://en.cppreference.com/w/cpp/thread/recursive_timed_mutex/unlock) [https://en.cppreference.com/w/cpp/thread/shared\_mutex/unlock](https://en.cppreference.com/w/cpp/thread/shared_mutex/unlock) [https://en.cppreference.com/w/cpp/thread/shared\_timed\_mutex/unlock](https://en.cppreference.com/w/cpp/thread/shared_timed_mutex/unlock)
-## [5][Reducing {fmt} library size 4x using Bloaty McBloatface](https://www.reddit.com/r/cpp/comments/go82wo/reducing_fmt_library_size_4x_using_bloaty/)
+## [11][Reducing {fmt} library size 4x using Bloaty McBloatface](https://www.reddit.com/r/cpp/comments/go82wo/reducing_fmt_library_size_4x_using_bloaty/)
 - url: https://www.zverovich.net/2020/05/21/reducing-library-size.html
 ---
 
-## [6][What do we need to get completely rid of macros and header files?](https://www.reddit.com/r/cpp/comments/gov4ap/what_do_we_need_to_get_completely_rid_of_macros/)
-- url: https://www.reddit.com/r/cpp/comments/gov4ap/what_do_we_need_to_get_completely_rid_of_macros/
----
-Other than for backward compatibility reasons, what are the problems still need to be solved in order to completely get rid of these? I know that many of the recent features are geared toward this goal, but I also vaguely know that we still need macros and header files for reasons other than backward compatibility.
-## [7][Even more non-uniform initialization in C++20?](https://www.reddit.com/r/cpp/comments/goask6/even_more_nonuniform_initialization_in_c20/)
-- url: https://www.reddit.com/r/cpp/comments/goask6/even_more_nonuniform_initialization_in_c20/
----
-This example is from cppreference:
-
-    struct A {
-      int&amp;&amp; r;
-    };
-    A a1{7}; // OK, lifetime is extended
-    A a2(7); // well-formed, but dangling reference
-
-Prior to C++20 , `a2` was ill-formed.
-
-However C++20 apparently introduces *parenthesized aggregate initialization*, which is the same as list aggregate initialization except:
-
-  * narrowing conversions are allowed, and
-  * lifetime is not extended for temporaries bound to references.
-
-My question is: why?? Surely this is just a whole nother category of bugs waiting to happen.  
-
-BTW if anyone is looking for this in the standard draft, it first appears in N4860 dcl.init/17.6.2.2 -- NOT under the aggregate initialization section!
-## [8][C++20 ❤️ SQL: A Thin, Typesafe SQL Wrapper in C++20](https://www.reddit.com/r/cpp/comments/gogiks/c20_sql_a_thin_typesafe_sql_wrapper_in_c20/)
+## [12][C++20 ❤️ SQL: A Thin, Typesafe SQL Wrapper in C++20](https://www.reddit.com/r/cpp/comments/gogiks/c20_sql_a_thin_typesafe_sql_wrapper_in_c20/)
 - url: http://jrb-programming.blogspot.com/2020/05/c20-sql.html
----
-
-## [9][How supported is passing arguments to coroutine frames?](https://www.reddit.com/r/cpp/comments/gogccr/how_supported_is_passing_arguments_to_coroutine/)
-- url: https://www.reddit.com/r/cpp/comments/gogccr/how_supported_is_passing_arguments_to_coroutine/
----
-Hello reddit, how are you all?
-
-A quick question about passing arguments to the coroutine promise.
-
-According to [cppreference](https://en.cppreference.com/w/cpp/language/coroutines), the compiler must pass the coroutine parameters to the coroutine promise type if the promise-type c.tor matches the coroutine parameters:
-
-&amp;#x200B;
-
-&gt;calls the constructor for the promise object. If the promise type has a  constructor that takes all coroutine parameters, that constuctor is  called, with post-copy coroutine arguments. Otherwise the default  constructor is called.
-
-&amp;#x200B;
-
-I also found this draft [here](http://open-std.org/jtc1/sc22/wg21/docs/papers/2018/p0914r0.html) that explains why we need to pass parameters to the coroutine promise c.tor (In my case, it's not a cancellation token, but an executor), and this draft (I don't know what's the status of it) suggests the same as cppreference.
-
-What I did is this : I used the latest MSVC and I took my already-working coroutine implementation, and I changes the coroutine promise type c.tor to accept `Args&amp;&amp; ... args`. were the coroutine parameters passed to the c.tor? no. the compiler didn't pass any argument to the promise c.tor.
-
-Looking at the resumable header, there is no way for it to currently be supported:
-
-            static void _ConstructPromise(void* _Addr, void* _Resume_addr, int _HeapElision) {
-                *reinterpret_cast&lt;void**&gt;(_Addr) = _Resume_addr;
-                *reinterpret_cast&lt;uint32_t*&gt;(reinterpret_cast&lt;uintptr_t&gt;(_Addr) + sizeof(void*)) =
-                    2u + (_HeapElision ? 0u : 0x10000u);
-                auto _Prom = _Promise_from_frame(_Addr);
-                ::new (static_cast&lt;void*&gt;(_Prom)) _PromiseT();
-            }
-
-Quit funnily, overloading the `new` operator to accept `size_t s,` `Args&amp;&amp; ... args` did work (like the draft suggested)
-
-I did not try Clang to see if it works there.
-
-What is the status of passing parameters to the coroutine promise c.tor? Is it in the standard? If we want a sophisticated coroutine (and not that bland, unusable "lazily executed" coroutine that the committee tries to shove down our throats)  we must have this mechanism.  How much is it supported across different compilers?
-## [10][My attempt to make my own similar but improved version of std::conditional. Thoughts?](https://www.reddit.com/r/cpp/comments/gog9uv/my_attempt_to_make_my_own_similar_but_improved/)
-- url: https://gist.github.com/WHStevens/c842d881181800400cead2118e3043dc
----
-
-## [11][C++ proposal dismisses backward compatibility](https://www.reddit.com/r/cpp/comments/gnw1pa/c_proposal_dismisses_backward_compatibility/)
-- url: https://www.infoworld.com/article/3535795/c-plus-plus-proposal-dismisses-backward-compatibility.html
----
-
-## [12][CppCast: Catch2 and Std::random](https://www.reddit.com/r/cpp/comments/gocfju/cppcast_catch2_and_stdrandom/)
-- url: https://cppcast.com/catch2-random-martin-horenovsky/
 ---
 

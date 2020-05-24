@@ -13,43 +13,45 @@ this is the place.
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][I made a browser game in JavaScript in which you have to fight an epidemic as a mayor.](https://www.reddit.com/r/javascript/comments/gp03u6/i_made_a_browser_game_in_javascript_in_which_you/)
+## [3][I built an interactive tool to visualize the spread of COVID-19 in the United States [D3/Vue]](https://www.reddit.com/r/javascript/comments/gpcpfe/i_built_an_interactive_tool_to_visualize_the/)
+- url: https://covid-usa.herokuapp.com
+---
+
+## [4][peer-data 3.2.2 released!](https://www.reddit.com/r/javascript/comments/gplbj4/peerdata_322_released/)
+- url: https://github.com/vardius/peer-data/releases/tag/v3.2.2
+---
+
+## [5][React Finland 2020 goes online with free mini-conferences](https://www.reddit.com/r/javascript/comments/gp67gh/react_finland_2020_goes_online_with_free/)
+- url: https://sfree.life/react-finland-2020-online-conference-free/
+---
+
+## [6][Bundling your Webpack based build processes &amp; performance improvements](https://www.reddit.com/r/javascript/comments/gpop76/bundling_your_webpack_based_build_processes/)
+- url: https://medium.com/@tobiasuhlig/bundling-your-webpack-based-build-processes-performance-improvements-dd7d0ffdd788
+---
+
+## [7][You Might Not Need jQuery](https://www.reddit.com/r/javascript/comments/gpmoxp/you_might_not_need_jquery/)
+- url: http://youmightnotneedjquery.com/
+---
+
+## [8][Best Way To Use markAllAsTouched in Angular Forms | Geekstrick](https://www.reddit.com/r/javascript/comments/gpom92/best_way_to_use_markallastouched_in_angular_forms/)
+- url: https://www.geekstrick.com/markallastouched-in-angular-forms/
+---
+
+## [9][I made a browser game in JavaScript in which you have to fight an epidemic as a mayor.](https://www.reddit.com/r/javascript/comments/gp03u6/i_made_a_browser_game_in_javascript_in_which_you/)
 - url: https://containment.io
 ---
 
-## [4][Baahu: 4.3kb state machine-based UI framework (batteries included)](https://www.reddit.com/r/javascript/comments/gozc78/baahu_43kb_state_machinebased_ui_framework/)
-- url: https://github.com/tjkandala/baahu
+## [10][PouchDB, the JavaScript Database that Syncs!](https://www.reddit.com/r/javascript/comments/gpktpg/pouchdb_the_javascript_database_that_syncs/)
+- url: https://pouchdb.com/
 ---
 
-## [5][JS syntactic quirks, from the perspective on implementing a parser. A really interesting and insightful read.](https://www.reddit.com/r/javascript/comments/goqih7/js_syntactic_quirks_from_the_perspective_on/)
-- url: https://github.com/mozilla-spidermonkey/jsparagus/blob/master/js-quirks.md
+## [11][top level await node REPL](https://www.reddit.com/r/javascript/comments/gpfte1/top_level_await_node_repl/)
+- url: https://h3manth.com/new/blog/2020/top-level-await-node-repl/
 ---
 
-## [6][A 2D tile map editor that runs on the browser.](https://www.reddit.com/r/javascript/comments/goupdj/a_2d_tile_map_editor_that_runs_on_the_browser/)
-- url: https://github.com/victorqribeiro/tileEditor
+## [12][[AskJS] What JS game engine have you used, and what would you say is it's biggest pro or con?](https://www.reddit.com/r/javascript/comments/gpep9l/askjs_what_js_game_engine_have_you_used_and_what/)
+- url: https://www.reddit.com/r/javascript/comments/gpep9l/askjs_what_js_game_engine_have_you_used_and_what/
 ---
+I've seen a couple of micro-game engines that seemed kind of neat.
 
-## [7][Moving framework and app code off the main thread: approaches and challenges – Google Chrome’s exploration](https://www.reddit.com/r/javascript/comments/gp284j/moving_framework_and_app_code_off_the_main_thread/)
-- url: https://docs.google.com/document/d/1nu0EcVNC3jtmUVWL8Gs5eCj2p_984kamNhG2nS9gOC0/edit
----
-
-## [8][flyn't : My first react project ( Feedback/Suggestions welcomed)](https://www.reddit.com/r/javascript/comments/gp2r57/flynt_my_first_react_project_feedbacksuggestions/)
-- url: https://flynt.netlify.app
----
-
-## [9][[Showoff Saturday] How to bundle your webpack tasks](https://www.reddit.com/r/javascript/comments/gp22do/showoff_saturday_how_to_bundle_your_webpack_tasks/)
-- url: https://github.com/neomjs/neo/blob/dev/buildScripts/webpack/buildThemes.js
----
-
-## [10][What are webhooks? How to test it locally?](https://www.reddit.com/r/javascript/comments/gozo98/what_are_webhooks_how_to_test_it_locally/)
-- url: https://www.monkwhocode.com/2020/05/what-are-webhooks-example-use-case-with.html
----
-
-## [11][[100% OFF] Web Development Beginner's Bootcamp 2020](https://www.reddit.com/r/javascript/comments/gp46xa/100_off_web_development_beginners_bootcamp_2020/)
-- url: https://unitedaca.com/100-off-web-development-beginners-bootcamp-2020/
----
-
-## [12][I made a super simple typing game with no frameworks](https://www.reddit.com/r/javascript/comments/gp3j11/i_made_a_super_simple_typing_game_with_no/)
-- url: https://github.com/ninest/typer
----
-
+But I'm curious what else is out there besides phaser.

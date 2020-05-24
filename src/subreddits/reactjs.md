@@ -109,109 +109,95 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/gcbkuu/whos_hiring_may_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][React Finland 2020 goes online with free mini-conferences](https://www.reddit.com/r/reactjs/comments/gp3u15/react_finland_2020_goes_online_with_free/)
+## [3][I redesigned my personal website from scratch, and it is great!](https://www.reddit.com/r/reactjs/comments/gpg5xq/i_redesigned_my_personal_website_from_scratch_and/)
+- url: https://www.reddit.com/r/reactjs/comments/gpg5xq/i_redesigned_my_personal_website_from_scratch_and/
+---
+Hello all!
+
+My old personal website/portfolio was old (made in 2019) and using a Gatsby starter (that was the time when I was starting to learn JavaScript).
+
+Now,  several months and side projects/university projects later, I have completely rewritten my portfolio, absolutely from scratch, using React and Gatsby!
+
+I have also written a small NodeJS backend to integrate my frontend with Azure, where I store all my images for the gallery page! Any constructive feedback is more than welcome, I hope you enjoy the site guys!!
+
+Website: [https://prutkowski.tech](https://prutkowski.tech)
+
+GitHub repo: [https://github.com/PiotrRut/prutkowski.tech](https://github.com/PiotrRut/prutkowski.tech)
+
+Backend: [https://github.com/PiotrRut/prutkowski.tech-backend](https://github.com/PiotrRut/prutkowski.tech-backend)
+## [4][Next.js Building a Car Trader App: All 6 videos now available =)](https://www.reddit.com/r/reactjs/comments/gpovx1/nextjs_building_a_car_trader_app_all_6_videos_now/)
+- url: https://v.redd.it/tqxo9lmx9i051
+---
+
+## [5][⚛️ Reparenting is now possible with React](https://www.reddit.com/r/reactjs/comments/gp7yld/reparenting_is_now_possible_with_react/)
+- url: https://medium.com/@paolimi/reparenting-with-react-426d12fb6d0d
+---
+
+## [6][Draw arrows (or lines) between components in React](https://www.reddit.com/r/reactjs/comments/gpo93x/draw_arrows_or_lines_between_components_in_react/)
+- url: https://www.reddit.com/r/reactjs/comments/gpo93x/draw_arrows_or_lines_between_components_in_react/
+---
+I just recently released my first react library - `react-xarrows`, which is about component that connects between elements with an arrow or line.
+
+you can customize the look(color,thickness ,etc) and behavior(curveness,anchors,etc).
+
+and I would love to get reviews and suggestions about it.
+
+[Github](https://github.com/Eliav2/react-xarrows) 
+
+[CodeSandBox demo](https://codesandbox.io/embed/github/Eliav2/react-xarrows/tree/master/examples?fontsize=14&amp;hidenavigation=1&amp;theme=dark)
+
+[codeSandBox fullscreen demo](https://lwwwp.csb.app/Playground)
+## [7][How to handle routes in Github Pages?](https://www.reddit.com/r/reactjs/comments/gpj45d/how_to_handle_routes_in_github_pages/)
+- url: https://www.reddit.com/r/reactjs/comments/gpj45d/how_to_handle_routes_in_github_pages/
+---
+I have a react website published on github pages, my hompage and repository is 
+
+    /websiteName
+
+so it's working when I'm at the hompage, ex: 
+
+    username.github.io/websiteName
+
+. But I also have a route which is 
+
+    /user/:id
+
+, so when I click a link it will redirect me to 
+
+    username.github.io/user/123
+
+thus giving me a 404 error. So how do I fix the 404 error when redirecting to a different route other than 
+
+    /websiteName
+
+.
+## [8][React Finland 2020 goes online with free mini-conferences](https://www.reddit.com/r/reactjs/comments/gp3u15/react_finland_2020_goes_online_with_free/)
 - url: https://sfree.life/react-finland-2020-online-conference-free/
 ---
 
-## [4][How long should my first paid project take ? (E-commerce)](https://www.reddit.com/r/reactjs/comments/gp1uug/how_long_should_my_first_paid_project_take/)
-- url: https://www.reddit.com/r/reactjs/comments/gp1uug/how_long_should_my_first_paid_project_take/
+## [9][Want a personal website?](https://www.reddit.com/r/reactjs/comments/gppqf4/want_a_personal_website/)
+- url: https://www.reddit.com/r/reactjs/comments/gppqf4/want_a_personal_website/
 ---
-I started self-learning back-end in 2017 and front-end in 2018&amp;19 and full stack in late 2019-2020 on and off.And programming as a hobby since kid.I now have an opportunity to work in my first paid project which is an e-commerce web app so am really excited.
+Just published [https://github.com/hfa0/who-i-am#readme](https://github.com/hfa0/who-i-am#readme)
 
-...............
-
-I learnt the MERN stack and in the finishing stage of my first portfolio e-commerce project,which I followed some bits initially from a react udemy course but then changes various things and added a lot of features.It took me 3 months as I was learning while doing it but this new project should take less time than that but am kinda scared.
-
-Deadline of the project is in 1 month.Client wants a grocery store of a relatively small scale.
-As I can work with MERN, I am going with it and think it is a good stack to work on for that app along with redux-thunk.
-
-.................
-
-How would you aproach the project ?
-
-And how much time should it take ?
-
-Thanks you for your much appreciated help !
-## [5][⚡️Introducing react-shimmer: Async loading, performant Image component for React.js](https://www.reddit.com/r/reactjs/comments/gol1ou/introducing_reactshimmer_async_loading_performant/)
-- url: https://github.com/gokcan/react-shimmer
+A react app to deploy your own personal website. Check out the docs to find out more.
+## [10][Fully-Featured Authentication Flow with React + Appwrite](https://www.reddit.com/r/reactjs/comments/gppivw/fullyfeatured_authentication_flow_with_react/)
+- url: https://medium.com/@e.wambugu192/user-authentication-with-react-js-and-appwrite-30c9096e92b2
 ---
 
-## [6][flyn't : My first react.js project ( suggestions/ feedback welcomed )](https://www.reddit.com/r/reactjs/comments/gp2vcr/flynt_my_first_reactjs_project_suggestions/)
-- url: https://flynt.netlify.app
+## [11][React.js — How to render useEffect hook only once?](https://www.reddit.com/r/reactjs/comments/gppgtf/reactjs_how_to_render_useeffect_hook_only_once/)
+- url: https://gosink.in/react-js-how-to-render-useeffect-only-once/
 ---
 
-## [7][I made a thing: Kinetic Components - Animate a single React component or orchestrate animations among a collection of React components. Use CSS animations or your favorite JS animation library!](https://www.reddit.com/r/reactjs/comments/gougxz/i_made_a_thing_kinetic_components_animate_a/)
-- url: https://www.reddit.com/r/reactjs/comments/gougxz/i_made_a_thing_kinetic_components_animate_a/
+## [12][Seeking feedback on my react app](https://www.reddit.com/r/reactjs/comments/gppfuu/seeking_feedback_on_my_react_app/)
+- url: https://www.reddit.com/r/reactjs/comments/gppfuu/seeking_feedback_on_my_react_app/
 ---
-The playground: [erhathaway.github.io/kinetic-components/](https://erhathaway.github.io/kinetic-components/)  
-The repo: [https://github.com/erhathaway/kinetic-components](https://github.com/erhathaway/kinetic-components)  
+Hello r/reactjs!
 
+I am a new self taught JS developer and over the past few weeks built my first react app without the use of tutorials. This application is a recreation of the functionality of a clothing website utilizing many different react features like controlled forms and hooks. 
 
-I dread adding animations to apps b/c they get so unwieldy fast. The aim of Kinetic Components was to create an API that is, in my mind, ideal for controlling animations in React. It lets you easily add and orchestrate animations among multiple components. For example, if a drawer slides open, components inside the drawer can have micro animations. Kinetic can be used to easily orchestrate the micro animations on drawer show and hide! Furthermore, you can go beyond the simple enter / exit animations that most libs facilitate. A single component can have 3+ animations - the sky is the limit!
-## [8][React Native Scrollable Bottom Sheet](https://www.reddit.com/r/reactjs/comments/gp260g/react_native_scrollable_bottom_sheet/)
-- url: https://github.com/rgommezz/react-native-scroll-bottom-sheet
----
+I am seeking feedback on this project to help me grow as a new developer. Ultimately, my goal is to get a job as a JS/react dev as I’ve really enjoyed the process of learning and building different projects so any feedback to help we grow is much appreciated! 
 
-## [9][React DevTools 4.7.0 released](https://www.reddit.com/r/reactjs/comments/gomyy1/react_devtools_470_released/)
-- url: https://github.com/facebook/react/blob/master/packages/react-devtools/CHANGELOG.md#470-may-18-2020
----
+The project code can be found [here](https://github.com/dhaef/ecom-sample) and it’s hosted on heroku [here](https://dhaef-react-ecom.herokuapp.com/)
 
-## [10][How does Jest test the B function called in the A function?](https://www.reddit.com/r/reactjs/comments/gp3wbg/how_does_jest_test_the_b_function_called_in_the_a/)
-- url: https://www.reddit.com/r/reactjs/comments/gp3wbg/how_does_jest_test_the_b_function_called_in_the_a/
----
-For example, give an example:
-
-```js
-// ListItem.tsx
-interface Props {
-    onTouchStart: (e: React.TouchEvent) =&gt; void;
-}
-
-const ListItem: React.FC &lt;Props&gt; = (props) =&gt; {
-    const handleTouchStart = (e: React.TouchEvent) =&gt; {
-        // Call the incoming function inside the component
-        props.onTouchStart (e);
-        // perform some other operations
-    }
-
-    return &lt;div onTouchStart = {handleTouchStart}&gt; &lt;/ div&gt;
-}
-
-export default ListItem;
-```
-
-```js
-// ListItem.test.tsx
-import {createElement} from 'rax';
-import renderer from 'rax-test-renderer';
-
-it ('Test ListItem TouchStart', () =&gt; {
-    const mockFunc = jest.fn ();
-    const component = renderer.create (&lt;ListItem onTouchStart = {mockFunc} /&gt;)
-    const tree = component.toJSON ();
-    tree.eventListeners.touchstart ();
-    // report an error
-    expect (tree.eventListeners.touchstart).toHaveBeenCalled ();
-})
-```
-
-```js
-expect (received) .toHaveBeenCalled ()
-
-    Matcher error: received value must be a mock or spy function
-
-    Received has type: function
-    Received has value: [Function handleTouchStart]
-```
-
-How to test whether the function passing in props exists in the test case?
-
-How to test whether the function passed in props is called in the test case?
-## [11][Chat with people who are listening to the same song right now](https://www.reddit.com/r/reactjs/comments/gojkdw/chat_with_people_who_are_listening_to_the_same/)
-- url: https://tunemeet.com/
----
-
-## [12][Creating a waitlist form with airtable and next.js](https://www.reddit.com/r/reactjs/comments/goznse/creating_a_waitlist_form_with_airtable_and_nextjs/)
-- url: https://smalltuts.com/course/creating-a-waitlist-form-with-airtable-and-next-js-b0cdf52e-6udS5Hs3Ul65IQVk_dnHa
----
-
+Thanks!

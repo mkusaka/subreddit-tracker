@@ -109,95 +109,88 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/gcbkuu/whos_hiring_may_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][I redesigned my personal website from scratch, and it is great!](https://www.reddit.com/r/reactjs/comments/gpg5xq/i_redesigned_my_personal_website_from_scratch_and/)
-- url: https://www.reddit.com/r/reactjs/comments/gpg5xq/i_redesigned_my_personal_website_from_scratch_and/
+## [3][I built my new portfolio in GatsbyJS and it's amazing](https://www.reddit.com/r/reactjs/comments/gq8564/i_built_my_new_portfolio_in_gatsbyjs_and_its/)
+- url: https://www.reddit.com/r/reactjs/comments/gq8564/i_built_my_new_portfolio_in_gatsbyjs_and_its/
 ---
-Hello all!
+I decided to make a new faster portfolio with a catchy design so I have been reading through the amazing Gatsby doc for some time. It's not my first time building something with Gatsby, but I wanted to skim through the docs before starting.
 
-My old personal website/portfolio was old (made in 2019) and using a Gatsby starter (that was the time when I was starting to learn JavaScript).
+Gatsby helped me get about score 99 (for desktop) and 90 (for mobile) on Google PageSpeed Insights.
 
-Now,  several months and side projects/university projects later, I have completely rewritten my portfolio, absolutely from scratch, using React and Gatsby!
+  
+Check it here: [https://web-dev.works](https://web-dev.works)  
 
-I have also written a small NodeJS backend to integrate my frontend with Azure, where I store all my images for the gallery page! Any constructive feedback is more than welcome, I hope you enjoy the site guys!!
 
-Website: [https://prutkowski.tech](https://prutkowski.tech)
+* The blog is integrated with Contentful API. 
+* Google Analytics already works. 
+* The website being styled in flexbox, made it easier to be styled for different devices' screens. 
+* The contact form works with Netlify Forms (no back-end work needed)  
 
-GitHub repo: [https://github.com/PiotrRut/prutkowski.tech](https://github.com/PiotrRut/prutkowski.tech)
 
-Backend: [https://github.com/PiotrRut/prutkowski.tech-backend](https://github.com/PiotrRut/prutkowski.tech-backend)
-## [4][Next.js Building a Car Trader App: All 6 videos now available =)](https://www.reddit.com/r/reactjs/comments/gpovx1/nextjs_building_a_car_trader_app_all_6_videos_now/)
+You can find the Github repo here:  [https://github.com/Lartwel/portfolio](https://github.com/Lartwel/portfolio)
+
+Website performance can be even better doing the headers redirects.  
+
+
+Doing some Gatsby config and fixing stuff such as gatsby way of routing pages with animation was kinda time-consuming more than normal react or css/js for the first time, but I loved it.
+## [4][I rewrote my command prompt / terminal inspired website using React](https://www.reddit.com/r/reactjs/comments/gqa2xd/i_rewrote_my_command_prompt_terminal_inspired/)
+- url: https://www.reddit.com/r/reactjs/comments/gqa2xd/i_rewrote_my_command_prompt_terminal_inspired/
+---
+My previous personal website wasn't very mobile friendly and relied on a third party library. I decided to spend a bit of time rewriting my command prompt / terminal inspired website from scratch using React and TypeScript.
+
+There's definitely room for improvement, but I'm pretty happy with the results so far and it was a fun project to work on.
+
+
+Website: https://craigfeldman.com/
+
+Repo: https://github.com/craig-feldman/personal-website-react
+## [5][Built a site to watch YouTube together with friends.](https://www.reddit.com/r/reactjs/comments/gpu0gc/built_a_site_to_watch_youtube_together_with/)
+- url: https://v.redd.it/mpv97g963r051
+---
+
+## [6][RecoilJS is meant to rock your React world](https://www.reddit.com/r/reactjs/comments/gpx5g0/recoiljs_is_meant_to_rock_your_react_world/)
+- url: https://mariosfakiolas.com/blog/recoiljs-is-meant-to-rock-your-react-world
+---
+
+## [7][Next.js Building a Car Trader App: All 6 videos now available =)](https://www.reddit.com/r/reactjs/comments/gpovx1/nextjs_building_a_car_trader_app_all_6_videos_now/)
 - url: https://v.redd.it/tqxo9lmx9i051
 ---
 
-## [5][⚛️ Reparenting is now possible with React](https://www.reddit.com/r/reactjs/comments/gp7yld/reparenting_is_now_possible_with_react/)
-- url: https://medium.com/@paolimi/reparenting-with-react-426d12fb6d0d
+## [8][Keyboard Events not working properly on Chrome Mobile](https://www.reddit.com/r/reactjs/comments/gqaez7/keyboard_events_not_working_properly_on_chrome/)
+- url: https://www.reddit.com/r/reactjs/comments/gqaez7/keyboard_events_not_working_properly_on_chrome/
+---
+There is a bug in google chrome mobile that I noticed Its about keyCodes
+
+ I have an input field and I want to separate words when the user enter comma, Just like tags works.
+
+ It doesn't fire off in chrome mobile, but it does on Firefox mobile
+
+I tested on Google Chrome Mobile
+## [9][What the Heck is React Hooks?](https://www.reddit.com/r/reactjs/comments/gq8m7z/what_the_heck_is_react_hooks/)
+- url: https://blog.soshace.com/what-the-heck-is-react-hooks/
 ---
 
-## [6][Draw arrows (or lines) between components in React](https://www.reddit.com/r/reactjs/comments/gpo93x/draw_arrows_or_lines_between_components_in_react/)
-- url: https://www.reddit.com/r/reactjs/comments/gpo93x/draw_arrows_or_lines_between_components_in_react/
+## [10][Is Redux just React's way of using global variables?](https://www.reddit.com/r/reactjs/comments/gpzg3i/is_redux_just_reacts_way_of_using_global_variables/)
+- url: https://www.reddit.com/r/reactjs/comments/gpzg3i/is_redux_just_reacts_way_of_using_global_variables/
 ---
-I just recently released my first react library - `react-xarrows`, which is about component that connects between elements with an arrow or line.
+Most programmers start by using globals all over their code. It's a very easy way to code as you don't need to worry about passing arguments to functions or scoping. Everything is just available at the top level if you need it. But as I'm sure you all know, this is heavily discouraged and causes problems as your code grows beyond a small demo.
 
-you can customize the look(color,thickness ,etc) and behavior(curveness,anchors,etc).
+React on it's own makes sense as each component holds it's own state, and arguments are passed as props or returned through callbacks. Totally get that. But Redux (or any other global state management) seems to throw out all of the warnings of using global variables. The convention for using Redux is to put the state of your entire app in one store which is accessible and modifiable from anywhere.
 
-and I would love to get reviews and suggestions about it.
-
-[Github](https://github.com/Eliav2/react-xarrows) 
-
-[CodeSandBox demo](https://codesandbox.io/embed/github/Eliav2/react-xarrows/tree/master/examples?fontsize=14&amp;hidenavigation=1&amp;theme=dark)
-
-[codeSandBox fullscreen demo](https://lwwwp.csb.app/Playground)
-## [7][How to handle routes in Github Pages?](https://www.reddit.com/r/reactjs/comments/gpj45d/how_to_handle_routes_in_github_pages/)
-- url: https://www.reddit.com/r/reactjs/comments/gpj45d/how_to_handle_routes_in_github_pages/
----
-I have a react website published on github pages, my hompage and repository is 
-
-    /websiteName
-
-so it's working when I'm at the hompage, ex: 
-
-    username.github.io/websiteName
-
-. But I also have a route which is 
-
-    /user/:id
-
-, so when I click a link it will redirect me to 
-
-    username.github.io/user/123
-
-thus giving me a 404 error. So how do I fix the 404 error when redirecting to a different route other than 
-
-    /websiteName
-
-.
-## [8][React Finland 2020 goes online with free mini-conferences](https://www.reddit.com/r/reactjs/comments/gp3u15/react_finland_2020_goes_online_with_free/)
-- url: https://sfree.life/react-finland-2020-online-conference-free/
+Could someone explain the difference between using globals in a standard webapp and Redux in React? Why is it accepted to use Redux as global state when a top level variable is a big no-no in every language I've ever used.
+## [11][Built with React.js - Hotel Inventory Management app](https://www.reddit.com/r/reactjs/comments/gq8m27/built_with_reactjs_hotel_inventory_management_app/)
+- url: https://www.monterail.com/en/projects/avisio?utm_medium=social&amp;utm_source=reddit&amp;utm_campaign=avisio
 ---
 
-## [9][Want a personal website?](https://www.reddit.com/r/reactjs/comments/gppqf4/want_a_personal_website/)
-- url: https://www.reddit.com/r/reactjs/comments/gppqf4/want_a_personal_website/
+## [12][New release of Spinners React component](https://www.reddit.com/r/reactjs/comments/gq6pro/new_release_of_spinners_react_component/)
+- url: https://www.reddit.com/r/reactjs/comments/gq6pro/new_release_of_spinners_react_component/
 ---
-Just published [https://github.com/hfa0/who-i-am#readme](https://github.com/hfa0/who-i-am#readme)
+A new version of Spinners React has been successfully released. The secondaryColor property is now added for an easy and more convenient way of changing background color along with some bug fixes. Thanks for your valuable feedback on the previous version of the component.
 
-A react app to deploy your own personal website. Check out the docs to find out more.
-## [10][Fully-Featured Authentication Flow with React + Appwrite](https://www.reddit.com/r/reactjs/comments/gppivw/fullyfeatured_authentication_flow_with_react/)
-- url: https://medium.com/@e.wambugu192/user-authentication-with-react-js-and-appwrite-30c9096e92b2
----
+The Spinner React component received 209 stars on GitHub and was downloaded 1k+ times within the last 3 months.
 
-## [11][React.js — How to render useEffect hook only once?](https://www.reddit.com/r/reactjs/comments/gppgtf/reactjs_how_to_render_useeffect_hook_only_once/)
-- url: https://gosink.in/react-js-how-to-render-useeffect-only-once/
----
+As always, we are happy to continue improving the component, and thank you for your support — it is very much appreciated!
 
-## [12][Seeking feedback on my react app](https://www.reddit.com/r/reactjs/comments/gppfuu/seeking_feedback_on_my_react_app/)
-- url: https://www.reddit.com/r/reactjs/comments/gppfuu/seeking_feedback_on_my_react_app/
----
-Hello r/reactjs!
+Adexin Team
 
-I am a new self taught JS developer and over the past few weeks built my first react app without the use of tutorials. This application is a recreation of the functionality of a clothing website utilizing many different react features like controlled forms and hooks. 
-
-I am seeking feedback on this project to help me grow as a new developer. Ultimately, my goal is to get a job as a JS/react dev as I’ve really enjoyed the process of learning and building different projects so any feedback to help we grow is much appreciated! 
-
-The project code can be found [here](https://github.com/dhaef/ecom-sample) and it’s hosted on heroku [here](https://dhaef-react-ecom.herokuapp.com/)
-
-Thanks!
+Spinners React demo: [https://adexin.github.io/spinners/](https://adexin.github.io/spinners/)  
+Spinners React repo: [https://github.com/adexin/spinners-react](https://github.com/adexin/spinners-react)

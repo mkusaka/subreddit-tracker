@@ -57,49 +57,127 @@ REMOTE: *[Do you offer the option of working remotely? If so, do you require emp
 VISA: *[Does your company sponsor visas?]*
 
 CONTACT: *[How can someone get in touch with you?]*
-## [3][The Chromium project finds that around 70% of our serious security bugs are memory safety problems](https://www.reddit.com/r/rust/comments/gpdorw/the_chromium_project_finds_that_around_70_of_our/)
-- url: https://www.chromium.org/Home/chromium-security/memory-safety
+## [3][My first Rust project! A CLI that sends a system notification 100 times evenly over a user-specified timespan, updating you with the time elapsed as a percentage.](https://www.reddit.com/r/rust/comments/gq4ocy/my_first_rust_project_a_cli_that_sends_a_system/)
+- url: https://v.redd.it/2as6sgr4cu051
 ---
 
-## [4][Just: How I Organize Large Rust Programs](https://www.reddit.com/r/rust/comments/gpkuxq/just_how_i_organize_large_rust_programs/)
-- url: https://rodarmor.com/blog/tour-de-just/
+## [4][rust-analyzer: Changelog #26](https://www.reddit.com/r/rust/comments/gq9ppx/rustanalyzer_changelog_26/)
+- url: https://rust-analyzer.github.io/thisweek/2020/05/25/changelog-26.html
 ---
 
-## [5][We all know Rust's trait system is Turing complete, so tell me, why aren't we exploiting this???](https://www.reddit.com/r/rust/comments/gphb1n/we_all_know_rusts_trait_system_is_turing_complete/)
-- url: https://github.com/doctorn/trait-eval
+## [5][A new fast regexp engine in Rust, supporting JS syntax (backreferences + lookarounds)](https://www.reddit.com/r/rust/comments/gq1evg/a_new_fast_regexp_engine_in_rust_supporting_js/)
+- url: https://github.com/ridiculousfish/regress
 ---
 
-## [6][3 part video tutorial for beginners to Rust programming on iteration](https://www.reddit.com/r/rust/comments/gpm6oy/3_part_video_tutorial_for_beginners_to_rust/)
-- url: https://tim.mcnamara.nz/post/618982870485172224/rust-iteration
+## [6][Zero to Production in Rust #0: Foreword](https://www.reddit.com/r/rust/comments/gpydni/zero_to_production_in_rust_0_foreword/)
+- url: https://www.lpalmieri.com/posts/2020-05-24-zero-to-production-0-foreword/
 ---
 
-## [7][Conway's Game of Life on the NES in Rust](https://www.reddit.com/r/rust/comments/gpn98i/conways_game_of_life_on_the_nes_in_rust/)
-- url: https://gridbugs.org/conways-game-of-life-on-the-nes-in-rust/
+## [7][How is the Rust compiler able to tell the visible width of unicode characters?](https://www.reddit.com/r/rust/comments/gpw2ra/how_is_the_rust_compiler_able_to_tell_the_visible/)
+- url: https://www.reddit.com/r/rust/comments/gpw2ra/how_is_the_rust_compiler_able_to_tell_the_visible/
+---
+Here is an example: \[[playground](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=a66dc3d831b1546c01c089aa1439449d)\]
+
+Take this text: `读文`
+
+(I don't speak this language, but Google translate says it means "reading," so I figure it's not anything bad.)
+
+If I were trying to highlight a compiler error for this text as an invalid value, I would naively choose to count the characters using `chars().count()`.
+
+As you can see by running the program, this comes up short.  
+
+    读文;
+    ^^
+But if you uncomment the line with the invalid  assignment, you will see that the Rust compiler correctly highlights the entirety of the text. 
+
+    读文;
+    ^^^^
+
+How does the compiler compute the visible width of these characters?
+
+I have tried to look this up, but my efforts are coming up just as short as my own implementation ☹️️
+
+My search results are almost all about UTF-8 byte width, not visible width.
+## [8][AccessQueue - limit concurrent accesses (async IO backpressure)](https://www.reddit.com/r/rust/comments/gq9ds3/accessqueue_limit_concurrent_accesses_async_io/)
+- url: https://github.com/withoutboats/access-queue
 ---
 
-## [8][A native Rust port of Google's robots.txt parser and matcher C++ library](https://www.reddit.com/r/rust/comments/gplgsj/a_native_rust_port_of_googles_robotstxt_parser/)
-- url: https://github.com/Folyd/robotstxt
+## [9][Hey y'all, I wrote a tmux workspace manager called DMUX using Rust, and I'd love if you checked it out! It's focused on easily selecting and setting up different working environments. Any feedback on either the UX or my code is very welcome!](https://www.reddit.com/r/rust/comments/gq26fj/hey_yall_i_wrote_a_tmux_workspace_manager_called/)
+- url: https://github.com/zdcthomas/dmux
 ---
 
-## [9][Experiences of using Rust beyond systems programming?](https://www.reddit.com/r/rust/comments/gpl70o/experiences_of_using_rust_beyond_systems/)
-- url: https://www.reddit.com/r/rust/comments/gpl70o/experiences_of_using_rust_beyond_systems/
+## [10][How do you effectively and iteratively develop in Rust without a REPL?](https://www.reddit.com/r/rust/comments/gq2ia0/how_do_you_effectively_and_iteratively_develop_in/)
+- url: https://www.reddit.com/r/rust/comments/gq2ia0/how_do_you_effectively_and_iteratively_develop_in/
 ---
-I am sorry if this particular question is frequently asked, but I don't recall seeing it in the near past.
+my only experience is with languages that feature REPLs, and so it's honestly a little confusing learning rust without a REPL.
 
-Do you actively use Rust in place of languages such as C#, F#, Java, Kotlin, Scala? If yes, why and how has Rust worked for you?
-
-Do you actively use Rust in place of languages such as Python and Ruby? If yes, why and how has Rust worked for you?
-## [10][How rust support running multiple versions of crate in one binary?](https://www.reddit.com/r/rust/comments/gpjo7o/how_rust_support_running_multiple_versions_of/)
-- url: https://www.reddit.com/r/rust/comments/gpjo7o/how_rust_support_running_multiple_versions_of/
+for example, i don't know how to effectively test out a new library that i am unfamiliar with or play around with some new techniques.
+## [11][[New Crate] Include files in Markdown docs](https://www.reddit.com/r/rust/comments/gq7kqp/new_crate_include_files_in_markdown_docs/)
+- url: https://www.reddit.com/r/rust/comments/gq7kqp/new_crate_include_files_in_markdown_docs/
 ---
-I googled a bit, seems the same symbol for different major versions has different symbol names, but not able to find the doc or spec on this.
+[https://github.com/martypapa/md-inc](https://github.com/martypapa/md-inc)
 
-Any links is welcomed, thanks in advance :P
-## [11][benchmark stm32 DMA memory-to-memory copy](https://www.reddit.com/r/rust/comments/gpohgx/benchmark_stm32_dma_memorytomemory_copy/)
-- url: https://github.com/yjh0502/stm32-dma-benchmark
+I'd love your feedback!
+
+Essentially, it expands inline:
+
+    Look at the following rust code:
+    &lt;!--{ "file.rs" | code: rust }--&gt;
+    &lt;!--{ end }--&gt;
+    This will print 'Hello World' to the console.
+
+Into:
+
+    Look at the following rust code:
+    &lt;!--{ "file.rs" | code: rust }--&gt;
+    ```rust
+    fn main() {
+        println!("Hello, World!");
+    }
+    ```
+    &lt;!--{ end }--&gt;
+    This will print 'Hello World' to the console.
+
+Follow link for more config options.
+## [12][What am I doing wrong with Option matching ?](https://www.reddit.com/r/rust/comments/gq82jd/what_am_i_doing_wrong_with_option_matching/)
+- url: https://www.reddit.com/r/rust/comments/gq82jd/what_am_i_doing_wrong_with_option_matching/
 ---
+I have the following code, which is based upon standard Thread examples and is using flume for the channel:
 
-## [12][I did my first project in Rust! A "photo mode" for Yakuza Kiwami 2!](https://www.reddit.com/r/rust/comments/gp1que/i_did_my_first_project_in_rust_a_photo_mode_for/)
-- url: https://v.redd.it/q0o5fikhbh051
----
+    use flume::{Sender, Receiver};
+    use std::thread;
+    use std::time::Duration;
+    
+    fn main() {
+    
+        let (tx, rx) = flume::bounded::&lt;Option&lt;_&gt;&gt;(0);
 
+        let producer = thread::spawn(move || {
+            for sent in 1..10 {
+                tx.send(Some(sent));
+            }
+            tx.send(None);
+        });
+    
+        let consumer = thread::spawn(move || {
+            loop {
+                match rx.iter().next() {
+                    None =&gt; break,
+                    Some(received) =&gt; {
+                        println!("Received {}", received.unwrap());
+                    }
+                }
+            }
+        });
+    
+        producer.join();
+        consumer.join();
+    }
+
+Everything works except for the final message to end the process - the None is blowing up as it is entering the Some match arm (at least on my system):
+
+&gt;thread '&lt;unnamed&gt;' panicked at 'called `Option::unwrap()` on a `None` value', src\main.rs:21:45
+
+It's likely something stupid I'm doing, but I can't see what. I would expect the None to be matched and break the loop, not enter the subsequent arm.
+
+Thanks.

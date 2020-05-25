@@ -22,25 +22,208 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Best Way To Use markAllAsTouched in Angular Forms | Geekstrick](https://www.reddit.com/r/typescript/comments/gpomm6/best_way_to_use_markallastouched_in_angular_forms/)
-- url: https://www.geekstrick.com/markallastouched-in-angular-forms/
+## [2][Building a Synthesizer in TypeScript](https://www.reddit.com/r/typescript/comments/gq75go/building_a_synthesizer_in_typescript/)
+- url: https://medium.com//building-a-synthesizer-in-typescript-5a85ea17e2f2?source=friends_link&amp;sk=e443409e6d34185e8496f0aeee22eb5e
 ---
 
-## [3][first steps to take to learn typescript? (most common question asked over time probably)](https://www.reddit.com/r/typescript/comments/gpnwf9/first_steps_to_take_to_learn_typescript_most/)
-- url: https://www.reddit.com/r/typescript/comments/gpnwf9/first_steps_to_take_to_learn_typescript_most/
+## [3][Red - Type-safe, composable, boilerplateless reducers ; https://github.com/betafcc/red](https://www.reddit.com/r/typescript/comments/gq1t2v/red_typesafe_composable_boilerplateless_reducers/)
+- url: https://i.redd.it/fb93h7x0et051.gif
 ---
-as this is liekly the most common question asked over time
 
-im guessing some of the very knowledgable ppl here had sometimes during the past created a script in which other ppl would just copy / paste to new ppl that ask this question (since you're coders and would want to automate things so they can be made efficient &amp; effective)
+## [4][Humble Book Bundle: Definitive Guides to All Things Programming by O'Reilly (pay what you want and help charity)](https://www.reddit.com/r/typescript/comments/gpwdzu/humble_book_bundle_definitive_guides_to_all/)
+- url: https://www.humblebundle.com/books/definitive-guides-to-all-things-programming-oreilly-books?partner=indiekings
+---
 
-here's everything i know about coding so far:
+## [5][exporting imported interfaces](https://www.reddit.com/r/typescript/comments/gqb0kg/exporting_imported_interfaces/)
+- url: https://www.reddit.com/r/typescript/comments/gqb0kg/exporting_imported_interfaces/
+---
+I am creating a package where I want to export the interfaces from the main index.ts file
+
+foo.ts
+
+`export interface Foo {   foo: string }`
+
+interfaces.ts
+
+`export { Foo } from './foo';`
+
+and then the package export
+
+`export * as interfaces from './interfaces';`
+
+if I try to access the interfaces
+
+`import { interfaces } from './index';`
+
+interface has nothing in it
+
+I can, however, import Foo from the interfaces file, which is what I want to avoid  
+`import { Foo } from './interfaces';`  
+`const foo: Foo = {`  
+  `foo: '',`  
+`}`
+## [6][Are you willing to get a mentor?](https://www.reddit.com/r/typescript/comments/gq9nl8/are_you_willing_to_get_a_mentor/)
+- url: https://www.reddit.com/r/typescript/comments/gq9nl8/are_you_willing_to_get_a_mentor/
+---
+Hey guys, I want to take programming seriously and I am looking for a mentor and I’m not sure who I should pick. I would like to know your opinion on this.  
+As a software engineer who knows the basics, are you willing to pay a mentor to help you?   
+If yes:
+
+* How much are you willing to pay if he guarantees you the best results?
+* What problems do you want the mentor to help you with?
+## [7][Need help importing a .gql file into my vue class component](https://www.reddit.com/r/typescript/comments/gpwi83/need_help_importing_a_gql_file_into_my_vue_class/)
+- url: https://www.reddit.com/r/typescript/comments/gpwi83/need_help_importing_a_gql_file_into_my_vue_class/
+---
+Hello everyone. I started with typescript last week and wanted to redo one of my projects with typescript.
+
+I'm trying to import a .gql file into my vue class component file but it gives me the following error.
+
+" **Cannot find module** "
+
+does anyone maybe know how to import .gql files?
+
+I tried googling but couldn't get anything that is related to .gql files.
+## [8][Object Typing Question](https://www.reddit.com/r/typescript/comments/gpvl62/object_typing_question/)
+- url: https://www.reddit.com/r/typescript/comments/gpvl62/object_typing_question/
+---
+Hey all,
+
+Typescript beginner here. This is probably crazy basic but I'm having a hard time putting this into words I can google. Can anyone help me wrap my brain around what's going on here?   Mostly just curious about line 4, where I'm setting the type for the errors object:
+
+`const isRequiredError = "Missing required";`  
+`const dateReg = /0?[1-9]|[12][0-9]|3[01]/-[/-]\d{4}$/;`  
+`const malFormattedDateError = "Date field should be formatted DD-MM-YYYY or DD/MM/YYYY";`  
+`const errors: { [field: string]: string } = {};`
+
+`if (!value.description) errors.description = isRequiredError;`  
+`if (!value.date) errors.date = isRequiredError;`  
+`if (!value.specialist) errors.specialist = isRequiredError;`  
+`if (!dateReg.test(value.date)) errors.date = malFormattedDateError;`  
+`if (!value.discharge.date) errors.discharge.date = isRequiredError;`
+
+`return errors;`
+
+Everything else I've typed has been stuff like:
+
+`interface Foo = {  bar: string;}`
+
+Whereas this is more like:
+
+`interface Foo = {  [bar: string]: string;}`
+
+What are the brackets doing here?
+
+Also this seems to accommodate doing something like
+
+`errors.field = "You effed up";`
+
+How would I type this to accommodate something like this as well?
+
+`errors.field.subfield = "You effed up here too"`
+
+Thanks for the help!
+
+&amp;#x200B;
+
+Edit: Formatting
+## [9][Verify cookie with JWT payload inside.](https://www.reddit.com/r/typescript/comments/gppio8/verify_cookie_with_jwt_payload_inside/)
+- url: https://www.reddit.com/r/typescript/comments/gppio8/verify_cookie_with_jwt_payload_inside/
+---
+https://preview.redd.it/nm5u38x6qp051.png?width=596&amp;format=png&amp;auto=webp&amp;s=b1c75a2fd39e0e077840f4ee40188c3c4e1607ed
+
+Hi everyone, I'm learning TypeScript and I'm stuck in that problem.
+
+The return of function verify is the code commented above the interface Decoded
+
+Thank you for your help!
+
+&amp;#x200B;
+## [10][#1 thing of coding is 'data structures' - everything learned about the first steps in learning typescript (and any other coding languages)](https://www.reddit.com/r/typescript/comments/gpz597/1_thing_of_coding_is_data_structures_everything/)
+- url: https://www.reddit.com/r/typescript/comments/gpz597/1_thing_of_coding_is_data_structures_everything/
+---
+# #1 learning this thing call 'data structure' is the most important thing of coding
+
+so most important thing is to find a good site that shows 'data structure' so everyone can learn it
+
+&amp;#x200B;
+
+"Programming is not really defined in the way you describe it. Namely, you describe functions as *actions* and arguments as *adjustments*. Sure, that’s a decent analogy. But you need to then comprehend how to actually write those functions (or actions as you describe them) to manipulate a *data structure*.
+
+This is the key piece you are missing. You have to have data stored somewhere, and it has to have the correct *structure* for the data you want it to hold. And those actions need to change that data in a well-defined way so that the state of program can progress. You are calling functions on premade objects which is all well and good, but you need to understand how to make data structures, operate on them, and interpret them so that you can begin to write actual programs.
+
+This is going to be very condensed and simplified, but in essence, you:
+
+1. Start your program
+2. Make your data structures to hold any data
+3. Initialize them with the starting data they need (or they might not need any initialization at all).
+4. Enter into the part of your program that does something with that data (actions and adjustments).
+5. Exit out of the part that did something with that data
+6. And either exit the program, or read the data and figure out what to do next to it
+7. if you need to do more things to the data after reading it, do it
+
+Here’s a good medium article [about different types of data structures and how to use them.](https://medium.com/swlh/introduction-to-data-structures-9134b7d064a6) But it might be a bit high level for you. Best is to take an intro course or typescript or python and learn them gradually. But don’t give up, people tend to hit a wall when “hard” stuff like this pops up in programming. But honestly, it isn’t hard once you get the hang of how it works. Best of luck."
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+**here's all the sites i used to try to learn coding**
+
+[https://www.reddit.com/r/learnpython/comments/gp0zsi/heres\_all\_the\_sites\_i\_used\_to\_try\_to\_learn\_coding/](https://www.reddit.com/r/learnpython/comments/gp0zsi/heres_all_the_sites_i_used_to_try_to_learn_coding/)
+
+**here's everything i know about coding so far:**
 
 [https://www.reddit.com/r/learnpython/comments/goy5xa/where\_to\_continue\_learning\_coding/](https://www.reddit.com/r/learnpython/comments/goy5xa/where_to_continue_learning_coding/)
 
 &amp;#x200B;
 
+# #2 random links to learn ts / js - no idea which is ACTUALLY for beginniners, ill test all the js ones
+
+First of all, TypeScript is a typed superset of JavaScript. So, you need to understand JavaScript/ECMAScript first.Few resource to learn:
+
+* [A re-introduction to JavaScript (JS tutorial)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
+* [The Modern JavaScript Tutorial](https://javascript.info/)
+* [33 Concepts Every JavaScript Developer Should Know](https://github.com/leonardomso/33-js-concepts/)
+* [Modern JavaScript Cheatsheet](https://github.com/mbeaudru/modern-js-cheatsheet)
+* [Clean code JavaScript](https://github.com/ryanmcdermott/clean-code-javascript)
+
+And after that, you can go with TS:
+
+* [Official TypeScript docs](https://www.typescriptlang.org/docs/home)
+* [TypeScript Cheatsheet](https://github.com/rmolinamir/typescript-cheatsheet)
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+**original question**
+
+as this is liekly the most common question asked over time
+
+im guessing some of the very knowledgable ppl here had sometimes during the past created a script in which other ppl would just copy / paste to new ppl that ask this question (since you're coders and would want to automate things so they can be made efficient &amp; effective)
+
+&amp;#x200B;
+
+# #3 if coding was designed well, then it would be quick + easy to learn, just lilke hopscotch or walking
+
+'have quite a way to go ' - so is it cos coding is not at the state of progress where it could be easiely and quickly learned? kinda like how some things can be quickly and easiely learned, like hopscotch or walking (for example many or even every single thing is that designed well is easy to learn, but things that are not, are not easy to learn but hard)
+
+i also asked if coding was not at the state of progress where it would be easy and quick  to learn (which it can if it was designed well which you didnt consider). you didnt consider the things taht are easy and quick to learn (especially when there are good sites / resources for new ppl)
+
+&amp;#x200B;
+
+**anything about 'enterpries' doesnt matter**
+
+'why such and such language is an "enterprise" language will *fly* over your head at the moment, don't even read them, forget about them.'
+
 it seems like typescript is mainly for 'enterprise use' and for 'angular'  [https://www.quora.com/Should-I-learn-JavaScript-before-learning-TypeScript](https://www.quora.com/Should-I-learn-JavaScript-before-learning-TypeScript) so maybe should learn something simpler but it doesnt seem like there are any simpler options out there...
-## [4][Exporting a Jest mock of a module with type casting](https://www.reddit.com/r/typescript/comments/gpgg8d/exporting_a_jest_mock_of_a_module_with_type/)
+
+&amp;#x200B;
+
+# #4 good learning sites are hard to find
+
+there are no beginning resources on r/reddit, for example the helpful thing i used to learn 'codecombat', its not even on there etc
+## [11][Exporting a Jest mock of a module with type casting](https://www.reddit.com/r/typescript/comments/gpgg8d/exporting_a_jest_mock_of_a_module_with_type/)
 - url: https://www.reddit.com/r/typescript/comments/gpgg8d/exporting_a_jest_mock_of_a_module_with_type/
 ---
 Hey everyone. I have a quick question which kind of has to do with typescript, but I think may be more of a Jest question. If this is in the wrong place, I apologize.
@@ -69,125 +252,3 @@ import { mockNuxtAxios } from '~/test/utils'
 I imagine that this is a fairly common thing that someone would want to do, but I cannot figure out how to.
 
 Any suggestions?
-## [5][Verify cookie with JWT payload inside.](https://www.reddit.com/r/typescript/comments/gppio8/verify_cookie_with_jwt_payload_inside/)
-- url: https://www.reddit.com/r/typescript/comments/gppio8/verify_cookie_with_jwt_payload_inside/
----
-https://preview.redd.it/nm5u38x6qp051.png?width=596&amp;format=png&amp;auto=webp&amp;s=b1c75a2fd39e0e077840f4ee40188c3c4e1607ed
-
-Hi everyone, I'm learning TypeScript and I'm stuck in that problem.
-
-The return of function verify is the code commented above the interface Decoded
-
-Thank you for your help!
-
-&amp;#x200B;
-## [6][ORM Challenges](https://www.reddit.com/r/typescript/comments/gp8fx8/orm_challenges/)
-- url: https://www.reddit.com/r/typescript/comments/gp8fx8/orm_challenges/
----
-Hey All,
-
-I have some fairly extensive professional experience using python with sql alchemy, Django, etc. I am currently working on building a side project with typescript being my language of choice. 
-
-I’ve noticed there is much more scaffolding necessary compared to the python ecosystem. Currently I’m using typeorm. It feels also though everything is extremely manual from setting up testing classes for end to end tests, connection management, simple things like get_or_create statements. 
-
-I love typescript as a language but I feel far less productive building out a backend with the tools I’ve tried so far. 
-
-I’m not sure if I’m simply approaching this with the wrong perspective or using poor tools. 
-
-Does anyone have any recommendations or thoughts on the above? I may just have a poor perspective coming from a more mature python ecosystem.
-## [7][Typescript is not checking function arguments.](https://www.reddit.com/r/typescript/comments/gp7sl4/typescript_is_not_checking_function_arguments/)
-- url: https://www.reddit.com/r/typescript/comments/gp7sl4/typescript_is_not_checking_function_arguments/
----
-Why TS is not checking function arguments?
-
-    interface Functions {
-      add(x: number, y: number): number;
-      isPositive(n: number): boolean;
-    }
-    const functions: Functions = {
-      add: () =&gt; 5,
-      isPositive: () =&gt; true,
-    };
-
-TS doesn't complain although `x` and `y` arguments are missing in `add` function. But does his job if the return value (number in add) doesn't match.
-## [8][Change property with decorator in TypeScript?](https://www.reddit.com/r/typescript/comments/gpc10u/change_property_with_decorator_in_typescript/)
-- url: https://www.reddit.com/r/typescript/comments/gpc10u/change_property_with_decorator_in_typescript/
----
-I'm trying to get a simple decorator example in TS to work. I'm simply trying to change the value of an instance member. Since property decorators receive the prototype object as a target argument, defining a property will actually add it to the prototype and not the instance. So, I can't access it directly. I'm not sure how I could actually change the value here?
-
-    function valueDecorator(target: any, propertyKey: any) {
-        Object.defineProperty(target, propertyKey, {
-            value: 5,
-            writable: true,
-        })
-    }
-    
-    
-    class Example {
-        @valueDecorator
-        public value: number;
-    
-        constructor() {
-            this.value = 0
-        }
-    }
-    
-    const ex = new Example()
-    console.log(ex.value)
-
-**The output is still 0. I expected it to be 5.**
-## [9][query in Optional parameter: typescript](https://www.reddit.com/r/typescript/comments/gp3t7g/query_in_optional_parameter_typescript/)
-- url: https://www.reddit.com/r/typescript/comments/gp3t7g/query_in_optional_parameter_typescript/
----
-Hello All,
-
-I  have a query
-
-topic: optional parameter
-
-I want to call a specific optional parameter? is there a way to do that, without sending all  the optional parameter. For eg:- 
-
-in the below example I want to send value only for z variable without sending x and y value ,
-
-something like
-
-add( z: 5);
-
-function add (x ?:  number,  y ?: number, z ?: number){
-
-}
-
-is there a way to do it?
-
-thanks in advance
-## [10][TypeScript taught me something today](https://www.reddit.com/r/typescript/comments/goovef/typescript_taught_me_something_today/)
-- url: https://www.reddit.com/r/typescript/comments/goovef/typescript_taught_me_something_today/
----
-So I'm working on a form today, and when I was coding one particular select input, I noticed I needed two different pieces of information from whatever I was selecting. I tried a few different things but nothing was working. As I was noodling around, I hovered over the value attribute in the option tag, and TS told me that the value can be a string\[\] as well as a string or a number. I guess I would have eventually solved the problem, but TypeScript taught me how to get multiple values and from there it was just a matter of of hovering instead of reading a lot of documentation. Thank you Typescript!
-## [11][Intellisense not working on returned parameter (ide : vscode) .](https://www.reddit.com/r/typescript/comments/gp6ifp/intellisense_not_working_on_returned_parameter/)
-- url: https://www.reddit.com/r/typescript/comments/gp6ifp/intellisense_not_working_on_returned_parameter/
----
-    function component&lt;T&gt;(p: {
-    	actions : () =&gt; T,
-    	htmlTemplate: &lt;S extends T&gt;(actions : S) =&gt; any
-    }) {
-    	return p;
-    }
-    
-    component({
-    	actions : () =&gt; ({
-    		a : (x,y) =&gt; x+y
-    	}),
-    	htmlTemplate : (actions) =&gt; { 
-    		/*try to dot into the action and you will get intellisense*/ 
-    		actions;
-    		/*but if you dot here you will get no intellisense*/ 
-    		return actions;
-    	}
-    });
-
-here is it with syntax highlighting just for it to be more readable :
-
-https://preview.redd.it/1ogu0pcy5j051.png?width=658&amp;format=png&amp;auto=webp&amp;s=093845151b5d35b74f073d872443eb95634a1473
-
-do you know why intellisense is not working and how to fix that ?

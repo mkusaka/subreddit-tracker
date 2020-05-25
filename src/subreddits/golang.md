@@ -1,68 +1,116 @@
 # golang
-## [1][I’ve successfully converted 10 lines Bash script into a 100 lines of code 😄](https://www.reddit.com/r/golang/comments/gpdmb4/ive_successfully_converted_10_lines_bash_script/)
-- url: https://link.medium.com/RNuI99KtJ6
+## [1][Difference between "type a string" and "type a = string"](https://www.reddit.com/r/golang/comments/gpxab2/difference_between_type_a_string_and_type_a_string/)
+- url: https://www.reddit.com/r/golang/comments/gpxab2/difference_between_type_a_string_and_type_a_string/
+---
+I was asked this in an interview, with not much context around it. I am unable to find relevant documentation around this. Please redirect me to the correct resources.
+## [2][Instrumentation in Go](https://www.reddit.com/r/golang/comments/gq6aiv/instrumentation_in_go/)
+- url: https://gbws.io/articles/instrumentation-in-go/
 ---
 
-## [2][In love with Go](https://www.reddit.com/r/golang/comments/gph10e/in_love_with_go/)
-- url: https://www.reddit.com/r/golang/comments/gph10e/in_love_with_go/
----
-Past month, I had to start working on Go because of a work project. I was pretty reluctant of moving to some other language, just because I was pretty comfortable with Java and I thought it has everything we need and is like the perfect language. When I started learning Go, I was immediately in love with this language. In the beginning, it was because of its simple syntactical design. One month later, I keep reading articles and watching videos of Go conferences and other concepts and more I go deep, more I keep falling in love with this language. It has even come to this that I don't wanna go back to Java and want to write everything in Go. Go standard libraries alone have so much to offer, feels like everything you need is already built-in and you don't need to go anywhere else. The amount of stuff related to Go I consumed in the past month is a lot but I still learn something interesting everyday. Sorry for the big rant.
-## [3][Kubetap - a kubectl plugin to interactively proxy Kubernetes Services with ease](https://www.reddit.com/r/golang/comments/gpmv3m/kubetap_a_kubectl_plugin_to_interactively_proxy/)
-- url: http://github.com/soluble-ai/kubetap
+## [3][What is a goroutine? And what is their size?](https://www.reddit.com/r/golang/comments/gqat1d/what_is_a_goroutine_and_what_is_their_size/)
+- url: https://tpaschalis.github.io/goroutines-size/
 ---
 
-## [4][go-pg/migrations](https://www.reddit.com/r/golang/comments/gpo5f9/gopgmigrations/)
-- url: https://www.reddit.com/r/golang/comments/gpo5f9/gopgmigrations/
+## [4][Switch from C++ to Go](https://www.reddit.com/r/golang/comments/gq7rkv/switch_from_c_to_go/)
+- url: https://www.reddit.com/r/golang/comments/gq7rkv/switch_from_c_to_go/
 ---
-Hello, everyone.
-
-DId someone work with go-pg/migrations?
-
-I want to do up migration. And after run \`go run \*.go up\` I have this error 
-
-\`Migration's fail: pg: readSimpleQuery: unexpected message 'G'\`
-
-I don't know what to do. I founded a part of code in go-pg repo where this error appears. 
-
-This is repo   [https://github.com/go-pg/pg/blob/master/messages.go](https://github.com/go-pg/pg/blob/master/messages.go) 
-
-line 673
-
-But anyway I don't know how to solve it. Maybe I need add something in pg.Options.
-
-My pg.Options \` pg.Options{  
-   User:     "coreapiuser",  
- Password: "password",  
- Addr:     "localhost:5433",  
- Database: "coreapidb",  
-} \`
-
-I will be grateful for any answer. Thanks for attention
-## [5][Query CPU and GPU temperature in Windows](https://www.reddit.com/r/golang/comments/gppdls/query_cpu_and_gpu_temperature_in_windows/)
-- url: https://www.reddit.com/r/golang/comments/gppdls/query_cpu_and_gpu_temperature_in_windows/
+Hello, I am new to the go lang. I have just played around a little bit. Currently, we have a big desktop application that uses the OpenCV library for image processing. Now we need to create a new cleaner version of this program and start from a new base. Currently, we are using C++. 
+I was thinking if it would be a good idea to replace C++ by Go. An important factor for my is if there is an equivalent library for OpenCV (or maybe can I use OpenCV?) and is there a good free/cheap GUI framework for it to create a desktop application.
+## [5][What is the purpose of fs and gs registers in golang?](https://www.reddit.com/r/golang/comments/gq4pfh/what_is_the_purpose_of_fs_and_gs_registers_in/)
+- url: https://www.reddit.com/r/golang/comments/gq4pfh/what_is_the_purpose_of_fs_and_gs_registers_in/
 ---
-Hi everyone,
+I was looking through the (intel) assembly of a compiled binary written in golang and I found multiple instructions using fs and gs segment registers with address range covering whole 4GB space (was looking on a 32bit system)
 
-I would like to know if it is possible to get CPU and GPU temperatures in Windows 10. I got it on python by using WMI library and OpenHardware Monitor in order to write data on WMI.
+I searched around and I found [this stack overflow answer](https://stackoverflow.com/questions/10810203/what-is-the-fs-gs-register-intended-for#10810340) which says that their usage is OS specific. Some common usage I found is to access thread specific storage.
 
-Thanks in advance.
-## [6][A 50 second review of Black Hat Go](https://www.reddit.com/r/golang/comments/gp5gdt/a_50_second_review_of_black_hat_go/)
-- url: https://www.youtube.com/watch?v=xP7C3Df8MyA
+One usage of gs in golang that I could grasp (and not fully understand, please provide insights here) is to get more stack in runtime, by reading this snippet from [golang blog](https://golang.org/doc/asm):
+
+    TEXT main.main(SB) /tmp/x.go
+    0x10501c0	MOVQ GS:0x30, CX  # GS used here
+    0x10501c9	CMPQ 0x10(CX), SP 
+    0x10501cd	JBE 0x1050203 
+    ...
+    0x1050202	RET 
+    0x1050203	CALL runtime.morestack_noctxt(SB)
+    0x1050208	JMP main.main(SB)
+
+I wanted to know other usages of gs and fs registers in golang (especially in go runtime). Can someone point me to resources which could include this information?
+## [6][Is updating go version via homebrew safe?](https://www.reddit.com/r/golang/comments/gq9bgb/is_updating_go_version_via_homebrew_safe/)
+- url: https://www.reddit.com/r/golang/comments/gq9bgb/is_updating_go_version_via_homebrew_safe/
 ---
-
-## [7][[website] goscreencasts.io | Apprendre et maîtriser le langage Go](https://www.reddit.com/r/golang/comments/gpoupi/website_goscreencastsio_apprendre_et_maîtriser_le/)
-- url: https://goscreencasts.io
+I would like to update my go 1.11 to go 1.13 via homebrew in macOS. Did anyone encounter any problems with it? Or is the best way is to uninstall it and reinstall it via homebrew better?
+## [7][Error checks extraction, good practice?](https://www.reddit.com/r/golang/comments/gq7nje/error_checks_extraction_good_practice/)
+- url: https://www.reddit.com/r/golang/comments/gq7nje/error_checks_extraction_good_practice/
 ---
+Hi there! I've been using Go for some time now, but I have a question of something I do, and I don't know if it actually improves the code readability or hurts it.
 
-## [8][Temporarily removing local replace lines from go.mod during git commits](https://www.reddit.com/r/golang/comments/gpopy0/temporarily_removing_local_replace_lines_from/)
-- url: https://github.com/aduu-dev/tools-gogit
----
+I have a project of making a "Cards against Humanity" online game, and I have this function:
 
-## [9][I want to make micro services .](https://www.reddit.com/r/golang/comments/gpjg4i/i_want_to_make_micro_services/)
-- url: https://www.reddit.com/r/golang/comments/gpjg4i/i_want_to_make_micro_services/
----
-I want to learn micro services but not getting right path or say good resource where i can grow from ground to advanced. I know only practice can make me better and better day by day or in time but i want to clear or make a strong basic so i can build a advanced knowledge on top of that. Can anyone suggest me some good resource..... please....
-## [10][exhaustive: a tool to ensure exhaustiveness of enum switch statements](https://www.reddit.com/r/golang/comments/gp2u4z/exhaustive_a_tool_to_ensure_exhaustiveness_of/)
-- url: https://github.com/nishanths/exhaustive
----
+    func putBlackCardInPlay(g *cah.GameState) error {
+    	if g.BlackCardInPlay != nilBlackCard {
+    		return errors.New("Tried to put a black card in play but there is already a black card in play")
+    	}
+    	if g.Phase == cah.Finished {
+    		return errors.New("Tried to put a black card in play but the game has already finished")
+    	}
+    	if len(g.BlackDeck) == 0 {
+    		return errorEmptyBlackDeck{}
+    	}
+    	g.BlackCardInPlay = g.BlackDeck[0]
+    	g.BlackDeck = g.BlackDeck[1:]
+    	g.Phase = cah.SinnersPlaying
+    	g.CurrRound++
+    	return nil
+    }
 
+I chose this function because it's kind of simple so it's a good example, but sometimes I have like 5 checks before I actually do something, so then I extract the checks to another function, and end up with something like this:
+
+    func putBlackCardInPlay(g *cah.GameState) error {
+    	if err := putBlackCardInPlayChecks(g); err != nil {
+    		return err
+    	}
+    	g.BlackCardInPlay = g.BlackDeck[0]
+    	g.BlackDeck = g.BlackDeck[1:]
+    	g.Phase = cah.SinnersPlaying
+    	g.CurrRound++
+    	return nil
+    }
+    
+    func putBlackCardInPlayChecks(g *cah.GameState) error {
+    	if g.BlackCardInPlay != nilBlackCard {
+    		return errors.New("Tried to put a black card in play but there is already a black card in play")
+    	}
+    	if g.Phase == cah.Finished {
+    		return errors.New("Tried to put a black card in play but the game has already finished")
+    	}
+    	if len(g.BlackDeck) == 0 {
+    		return errorEmptyBlackDeck{}
+    	}
+    	return nil
+    }
+
+I have not seeing something like this in other projects, so I wonder if it would be considered a bad practice.
+
+Thank you in advance!
+## [8][Code styles for tests in Go](https://www.reddit.com/r/golang/comments/gq70c1/code_styles_for_tests_in_go/)
+- url: https://www.reddit.com/r/golang/comments/gq70c1/code_styles_for_tests_in_go/
+---
+Hi everyone. The most popular way of writing tests in Go is Table testing. Usually code styles for tests is not a big deal but some aspects of this approach are not very convenient if you use an IDE for development. I wrote an article about how I write tests in Go now which avoids some of the problems of table testing. Would be great if someone can share their opinion on this. Maybe I'm missing something [https://medium.com/@alexander\_yappo/code-styles-for-tests-in-go-b803b4455ffe](https://medium.com/@alexander_yappo/code-styles-for-tests-in-go-b803b4455ffe)
+## [9][Why we need to convert a string to byte slice before saving to a file?](https://www.reddit.com/r/golang/comments/gpqysh/why_we_need_to_convert_a_string_to_byte_slice/)
+- url: https://www.reddit.com/r/golang/comments/gpqysh/why_we_need_to_convert_a_string_to_byte_slice/
+---
+Example https://gobyexample.com/writing-files
+## [10][How to use encrypted private key for TLS?](https://www.reddit.com/r/golang/comments/gq6pw7/how_to_use_encrypted_private_key_for_tls/)
+- url: https://www.reddit.com/r/golang/comments/gq6pw7/how_to_use_encrypted_private_key_for_tls/
+---
+I generated a certificate and private key with password using OpenSSL. Now I want to use it in Go. I found this [old issue with some instructions](https://golang.org/issue/10181), but it didn't work for me. `x509.DecryptPEMBlock` returns "x509: no DEK-Info header in block". Here is an example key file, password is 1234.
+
+    -----BEGIN ENCRYPTED PRIVATE KEY-----
+    MIIBSzBOBgkqhkiG9w0BBQ0wQTApBgkqhkiG9w0BBQwwHAQIQAY0IsXMhucCAggA
+    MAwGCCqGSIb3DQIJBQAwFAYIKoZIhvcNAwcECHi4EIJK+T6FBIH4Fatl16Lwznm/
+    jIhKygStjhIlpww0A0aZDp/D0eEJpXzvPgRZWf2xhlf5gzTMblQ2XkNrbu/OWOOS
+    f+qx//lh30WTFYOwu0ZWBuxGnjDQav2nc+GKRfzCWbTvgdj8EOKi3vgt8PkuBZWp
+    IwX0GRrLLd19EmC/VpZ6zAoJIxeE2Oc76tBREJCs5T8o+4Y28rgo/mXbMJmxpdAK
+    ncWa4y0f1IEcjdw2u3I8csvtwUIj6WjVLkrS1R3I0DS9jEbs0rZ9uORk5aFatzre
+    ccfQA0JI0n15QPX8dGh/RnWmpzpGXMxShiwn434KGD/Fa0mZeQex26chknoV3YE=
+    -----END ENCRYPTED PRIVATE KEY-----

@@ -21,76 +21,117 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][I wrote a complete guide to the AWS Systems Manager Parameter Store. It's a stellar way to make your applications more scalable and less failure prone](https://www.reddit.com/r/aws/comments/gpnqin/i_wrote_a_complete_guide_to_the_aws_systems/)
+## [2][AWS Cognito SignInWithApple throws apple_sub Attribute does not exist in the schema error](https://www.reddit.com/r/aws/comments/gq9nvw/aws_cognito_signinwithapple_throws_apple_sub/)
+- url: https://www.reddit.com/r/aws/comments/gq9nvw/aws_cognito_signinwithapple_throws_apple_sub/
+---
+copy paste from:  [https://stackoverflow.com/questions/62001500/aws-cognito-signinwithapple-throws-apple-sub-attribute-does-not-exist-in-the-sch](https://stackoverflow.com/questions/62001500/aws-cognito-signinwithapple-throws-apple-sub-attribute-does-not-exist-in-the-sch)
+
+I am currently developing SignInWithApple federation using amazon cognito. During the user cognito apple signup I receive a callback with apple\_sub Attribute does not exist in the schema error. Full callback url below:
+
+[`https://www.localhost:3000/cognito/oauth/callback?error_description=Invalid+user+attributes%3A+apple_sub%3A+Attribute+does+not+exist+in+the+schema.%0A+&amp;state=provider%3DSignInWithApple&amp;error=invalid_request`](https://www.localhost:3000/cognito/oauth/callback?error_description=Invalid+user+attributes%3A+apple_sub%3A+Attribute+does+not+exist+in+the+schema.%0A+&amp;state=provider%3DSignInWithApple&amp;error=invalid_request)
+
+I have tried connecting my cognito to a PreSignUp\_ExternalProvider lambda trigger and deleting the apple sub attribute via the code below:
+
+`// appleSignIn has an obsolete apple_sub userAttributes`
+
+`// that is not present inside AWS infrastructure and causes crashes`
+
+`if (eventData?.request?.userAttributes?.apple_sub) {`
+
+`delete eventData.request.userAttributes.apple_sub`
+
+`}`
+
+This worked marvelously until today. Today, For some reason, even when I delete the apple\_sub user attribute before passing the event further, I am still receiving the error above.
+
+I have also tried adding a custom apple\_sub attribute, but that didn't help me also. There is also no apple\_sub standard attribute to be found.
+
+Is there a way how to add standardized apple\_sub attribute to my cognito schema? Why is it not there by default when I allow SignInWithApple federation?
+## [3][Best practices for custom authentication for calling api from lambda](https://www.reddit.com/r/aws/comments/gq5c7k/best_practices_for_custom_authentication_for/)
+- url: https://www.reddit.com/r/aws/comments/gq5c7k/best_practices_for_custom_authentication_for/
+---
+Any tips or tricks anyone has for calling an API built in api gateway from a lambda? Additional information, building an app that uses Userpool jwt and a custom auth lambda. Currently checking the validity of the token and the request itself, how could I work a lambda into this flow?
+## [4][Is Cloudfront effective when visitors aren't near any data centers?](https://www.reddit.com/r/aws/comments/gq39k5/is_cloudfront_effective_when_visitors_arent_near/)
+- url: https://www.reddit.com/r/aws/comments/gq39k5/is_cloudfront_effective_when_visitors_arent_near/
+---
+If I serve a website that has images, how effective is CloudFront if my users are all in Hawaii?
+
+My servers are in west-2, as are my S3 buckets. I guess I'm wondering if there's an advantage to serving images through a CDN, given my users are always in the same location.
+
+For this scenario, disregard users on VPNs, users travelling, etc. Assume all users are always in Hawaii.
+
+Thanks
+## [5][How to copy/move an EC2 instance/volume/snapshot to another region/AZ?](https://www.reddit.com/r/aws/comments/gqabtl/how_to_copymove_an_ec2_instancevolumesnapshot_to/)
+- url: https://www.reddit.com/r/aws/comments/gqabtl/how_to_copymove_an_ec2_instancevolumesnapshot_to/
+---
+I'm studying for my SAA-C02 and out of all the things, I can't figure out what the best practice is for moving EC2 instances between AZs and regions. Would you make a snapshot of the volume, somehow transfer the snapshot to another place (how?) and then make a new boot volume from that snapshot (how?) ? How do you back up snapshots to S3?
+
+Also, I tried creating a new instance from an existing snapshot of mine and I couldn't figure out how. When launching a new instance, I can only create a new root volume, then when the instance is up and running I can go from "Volumes"-&gt;"Attach Volume to instance" which is not what I wanted.
+
+Thank you for your help!
+## [6][College Student Brand New to AWS - Personal Project for the Summer?](https://www.reddit.com/r/aws/comments/gq0khx/college_student_brand_new_to_aws_personal_project/)
+- url: https://www.reddit.com/r/aws/comments/gq0khx/college_student_brand_new_to_aws_personal_project/
+---
+Hello!
+
+Just looking for some advice. I'm studying Information Systems at my University but recently became interested in the business/strategic side of Cloud Computing (think Cloud/Infrastructure Advisory roles such as [this one](https://www.accenture.com/us-en/careers/jobdetails?id=00752687_en)).
+
+I know to have a strong high-level understanding of AWS, it's important to get some hands-on experience so I can hold my own in future interviews/jobs. This summer, after getting my AWS CCP, I want to do a simple personal project in AWS. There's a student/trial version of Azure I can use, as I'm not looking to break the bank. 
+
+Any recommendations on a simple project or two to do in AWS this summer? 
+
+I really need some insight, as I have very limited knowledge of what's possible after the AWS CCP. Please help. Thanks!
+
+UPDATE: Wow this really blew up! Thanks so much, I have so many ideas to choose from now, and I can’t wait to get started!
+## [7][Are there any sites where people share common cloud formation, or other templates?](https://www.reddit.com/r/aws/comments/gpwuy7/are_there_any_sites_where_people_share_common/)
+- url: https://www.reddit.com/r/aws/comments/gpwuy7/are_there_any_sites_where_people_share_common/
+---
+Are there any sites that are collecting re-usable templates? I don't really care whether it's terraform, pulumi, amazon cdk, or cloud formation.
+
+Most large orgs have common sets of templates people can modify to checkout resources. Sometimes it interfaces with service catalog sometimes it does not, but in general some kind of streamlined self checkout for common requests. Is there a database of open sourced resources like this?
+## [8][Triggering an event from an update to a table in our MySQL RDS.](https://www.reddit.com/r/aws/comments/gq7k0d/triggering_an_event_from_an_update_to_a_table_in/)
+- url: https://www.reddit.com/r/aws/comments/gq7k0d/triggering_an_event_from_an_update_to_a_table_in/
+---
+We have a table in our MySQL RDS that gets updated whenever a customer scans a certain code. 
+
+However, this update does not reflect immediately on our CRM's record of that customer (The CRM service we use is completely independent of any of AWS' services). Right now, we are therefore having to update the CRM manually on a daily basis to reflect the updates from the RDS table.
+
+Essentially, what I'm proposing is being able to automate the following process:
+
+
+1. RDS table updated 
+2. Lambda Function triggered, the customer ID is retrieved from the row that was updated
+3. CRM APIs are used by the lambda function to also update the record in the CRM, based on the customer ID that both the CRM and RDS share in common. 
+
+My problem however seems to be that we can't trigger an event from the RDS. I'm curious as to what the best workaround for this is. 
+
+I'm also wondering if this is considered best-practice for this use-case, or if there's a more elegant method of achieving the same thing?
+## [9][I wrote a complete guide to the AWS Systems Manager Parameter Store. It's a stellar way to make your applications more scalable and less failure prone](https://www.reddit.com/r/aws/comments/gpnqin/i_wrote_a_complete_guide_to_the_aws_systems/)
 - url: https://seanjziegler.com/a-complete-guide-to-using-the-aws-systems-manager-parameter-store/
 ---
 
-## [3][Breaking down NAT costs with AWS flow logs](https://www.reddit.com/r/aws/comments/gp6d7u/breaking_down_nat_costs_with_aws_flow_logs/)
-- url: https://www.reddit.com/r/aws/comments/gp6d7u/breaking_down_nat_costs_with_aws_flow_logs/
+## [10][What is the best way to make a SSML voice more realistic ?](https://www.reddit.com/r/aws/comments/gq79w1/what_is_the_best_way_to_make_a_ssml_voice_more/)
+- url: https://www.reddit.com/r/aws/comments/gq79w1/what_is_the_best_way_to_make_a_ssml_voice_more/
 ---
-We used AWS flow logs to build some dashboards with a detailed breakdown of what our internal services were costing in terms of data transmission, allowing us to decrease NAT costs by some 40%.
+I'm working on a project to make shows and songs based on amazon polly voices and i would like to know what kind of editing i should make to achieve realism on the voice.
 
-I couldn't find a way to do this with the docs, so I wrote about the strategy we came up with on my blog: [https://badgateway.qc.to/breaking-down-aws-flow-logs/](https://badgateway.qc.to/breaking-down-aws-flow-logs/)
-## [4][Amazon Virtual Private Cloud (VPC) now supports Bring Your Own IPv6 Addresses (BYOIPv6)](https://www.reddit.com/r/aws/comments/gpipzz/amazon_virtual_private_cloud_vpc_now_supports/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/05/amazon-virtual-private-cloud-supports-bring-own-ipv6-addresses/
+Here is one example of the realism i want to achieve : [https://youtu.be/PyjmfrFUZ\_4](https://youtu.be/PyjmfrFUZ_4)
+## [11][Struggling with Route53 and changing an instance's associated domain.](https://www.reddit.com/r/aws/comments/gq79bl/struggling_with_route53_and_changing_an_instances/)
+- url: https://www.reddit.com/r/aws/comments/gq79bl/struggling_with_route53_and_changing_an_instances/
 ---
+Hi all,
 
-## [5][RDS DB/serverless Lambda/S3 static React app not accessible in same account?](https://www.reddit.com/r/aws/comments/gppj34/rds_dbserverless_lambdas3_static_react_app_not/)
-- url: https://www.reddit.com/r/aws/comments/gppj34/rds_dbserverless_lambdas3_static_react_app_not/
----
-I have a Postgresql RDS DB with a Ruby on Jets Lambda and React S3 static app with public access. I'm getting a 403 forbidden when trying the given link. I'm also unable to view the json data when trying to access \`index\` or \`show\`. I've tried to create inbound/outbound rules on RDS allowing all traffic but not working. The only item that is on a VPC is the RDS DB. Is there something else I should know about having all 3 parts of the stack on the same AWS account?
-## [6][Hi guys. I have a dumb question. What’s the difference between Amazon Web Services and Amazon Workspace?](https://www.reddit.com/r/aws/comments/gpp9m1/hi_guys_i_have_a_dumb_question_whats_the/)
-- url: https://www.reddit.com/r/aws/comments/gpp9m1/hi_guys_i_have_a_dumb_question_whats_the/
----
-Are they the same thing? Are they totally different things. I’m very confused. My job uses Amazon workspace so we can remotely access everything on the cloud. From my understanding, that’s the same thing as Amazon Web Services. So are they the same thing? Help pls
-## [7][Does AWS Have IRCnet Servers or Connections Easily Available](https://www.reddit.com/r/aws/comments/gpnkmn/does_aws_have_ircnet_servers_or_connections/)
-- url: https://www.reddit.com/r/aws/comments/gpnkmn/does_aws_have_ircnet_servers_or_connections/
----
-I've noticed that it's very hard to connect from EC2, AWS Central Europe/Frankfurt/Germany to the IRC network called IRCnet.
+I’m hoping someone can help me with what I’m sure isn’t too difficult, but I’m having a hard time figuring out.
 
-By hard I mean that the connection gets blocked all the time when I try. And by try I mean that I went through some of the servers on [http://irc.tu-ilmenau.de/all\_servers/](http://irc.tu-ilmenau.de/all_servers/) and those ones that I tried were negative.
 
-Does Amazon happen to host their own server or servers on IRCnet? I mean ones that are easily accessible from EC2. Or does someone know some IRCnet servers that do not block EC2 connections?
+The situation:
+We were using AWS for a Woocommerce site, but recently we’ve moved our .com domain away from AWS. The instance (EC2, RDS, etc.) has been untouched, I simply pointed our .com domain elsewhere via our registrar.
 
-Are there some extra steps that can be taken in order to bypass this problem? I know that Freenode does not allow simple connection attempts from EC2 but they do allow SASL attempts with registered Freenode user credentials. I also know that IRCnet is anarchistic network without internal structure compared to Freenode, so I'm not getting my hopes up, but you know, mayyyybe there is some way.
+The desired outcome:
+We already have a .net domain associated with AWS, and would look this to now point to the old .com instance as a legacy reference. 
 
-Thank you in advance, if you happen have anything cool to chime in on this!
-## [8][EC2 Instance User Accounts](https://www.reddit.com/r/aws/comments/gpn3ef/ec2_instance_user_accounts/)
-- url: https://www.reddit.com/r/aws/comments/gpn3ef/ec2_instance_user_accounts/
----
-Hi everyone,
+The issue:
+This is my first time working with Route53, so I’m unsure which DNS entries I need to copy over from the previous .com zone to the .net zone. Is Route53 all that is needed here or are there changes that need to be made to the instance? I have already changed the domain in Wordpress wp-config on the instance.
 
-I'm working my way through the course content for the AWS CSA certification, and am busy learning about setting up EC2 instances. I'm quite a noob i.t.o. AWS, so apologies if this is a stupid question.
 
-I have some questions on user accounts. When launching an instance (let's say Amazon Linux AMI), as per the documentation "each Linux instance launches with a default Linux system user account". You can then create additional user accounts when you're SSH'd into the instance in the root account.
-
-1. Does the user account used to access the EC2 Instance differ from the Users created in IAM? I assume this is the case? Are there any relationship between these accounts or an "easier way" to grant permissions through IAM to access the EC2 Instance?
-2. According to the documentation on creating new user accounts ( [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managing-users.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managing-users.html)), when setting up the account you add an SSH public key to the account. I assume this won't be the same public key from the root account, so you first then have to create a new key pair and generate the public key?
-3. In practice, how many users would typically need to have access to the VM, and would thus need user accounts? Know this is a wide question, but just wondering.
-
-Hope this make sense - thanks in advance :)
-## [9][Getting http response code monitoring on NLB](https://www.reddit.com/r/aws/comments/gpn2m8/getting_http_response_code_monitoring_on_nlb/)
-- url: https://www.reddit.com/r/aws/comments/gpn2m8/getting_http_response_code_monitoring_on_nlb/
----
-I know this is ridiculous since NLB is L4 and ALB is L7 which is why ALB gets response code monitoring. But we really liked the fact that we could see how many requests returned 500 errors (including gateway timeout). 
-
-But at the same time, NLB’s tls termination is one of the those “magic” features on aws and I was wondering if I could get similar support for it. So the question is, is there any way to get this response code monitoring at the load balancer level or at least something similar to it?
-## [10][I am trying to download something off of AWS but I have no idea how](https://www.reddit.com/r/aws/comments/gpluxc/i_am_trying_to_download_something_off_of_aws_but/)
-- url: https://www.reddit.com/r/aws/comments/gpluxc/i_am_trying_to_download_something_off_of_aws_but/
----
-I have never used this service, and I've tried creating an account to download what I need but I have no idea what I'm doing.
-
-Basically, I need to download some [BAM files](https://www.ncbi.nlm.nih.gov/sra/?term=SRP132033) on NCBI. The problem is that each download address for the BAM files is [like this](https://i.imgur.com/PyfWZ5i.png). I think it's indicating this is some kind of address on AWS (S3)? I have no idea what that is or how to access it. I tried following some instructions on the NCBI which made me create an account of some sorts on AWS, but it was asking for my card number and 50 other things which it shouldn't be if I'm just wanting to download a number of files.
-
-Please help.
-## [11][Infrastructure as Code Best Practices?](https://www.reddit.com/r/aws/comments/gp5tca/infrastructure_as_code_best_practices/)
-- url: https://www.reddit.com/r/aws/comments/gp5tca/infrastructure_as_code_best_practices/
----
-Hello All,
-
-I've recently been approached about potentially publishing an Infrastructure as Code book. While I certainly have plenty of ideas, I wanted to get a general sense of what do actual practitioners need to learn in order to be successful with IAC?
-
-1. I was thinking to have 3 parts to the book, 1 that focuses on executive leadership and tells the "why" story of IAC, 1 that focuses on the technical implementation of IAC, and the last that focuses on architectural patterns and use cases. What are your thoughts about this structure?
-2. How did your organization adopt IAC? Did it start with the cloud? What does your maturity journey look like?
-3. What're the most common pitfalls you've run across trying to do IAC? Are you able to do full automation or are there still manual steps?
-4. How did you learn IAC? What was the most helpful?
+Many thanks in advance for any light you can shine on this for me! I’m relatively well-versed in CPanel but was kind of dropped into AWS unexpectedly.

@@ -125,64 +125,59 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Analyzing The Simplest C++ Program](https://www.reddit.com/r/cpp/comments/gpj1sk/analyzing_the_simplest_c_program/)
+## [3][5 Advantages of C++ Lambda Expressions and How They Make Your Code Better](https://www.reddit.com/r/cpp/comments/gq733g/5_advantages_of_c_lambda_expressions_and_how_they/)
+- url: https://www.bfilipek.com/2020/05/lambdasadvantages.html?m=1
+---
+
+## [4][Testing C++ signal-slot libraries](https://www.reddit.com/r/cpp/comments/gq5cbt/testing_c_signalslot_libraries/)
+- url: https://medium.com/@julienjorge/testing-c-signal-slot-libraries-1994eb120826
+---
+
+## [5][Guix, a package manager with build from source and rollback, suitable for C++](https://www.reddit.com/r/cpp/comments/gq6yey/guix_a_package_manager_with_build_from_source_and/)
+- url: https://ambrevar.xyz/guix-advance/index.html
+---
+
+## [6][Analyzing The Simplest C++ Program](https://www.reddit.com/r/cpp/comments/gpj1sk/analyzing_the_simplest_c_program/)
 - url: https://oneraynyday.github.io/dev/2020/05/03/Analyzing-The-Simplest-C++-Program/
 ---
 
-## [4][Chrome: 70% of all security bugs are memory safety issues](https://www.reddit.com/r/cpp/comments/gpdbgf/chrome_70_of_all_security_bugs_are_memory_safety/)
+## [7][Running C++ Threads in WebAssembly Applications](https://www.reddit.com/r/cpp/comments/gqa1v5/running_c_threads_in_webassembly_applications/)
+- url: https://www.syntaxsuccess.com/viewarticle/multi-threading-with-webassembly
+---
+
+## [8][Using OpenGL for 2D graphics in an audio plug-in with JUCE.](https://www.reddit.com/r/cpp/comments/gq8jnr/using_opengl_for_2d_graphics_in_an_audio_plugin/)
+- url: https://link.medium.com/07ayjNT2K6
+---
+
+## [9][Am I doing something wrong?](https://www.reddit.com/r/cpp/comments/gpq7xa/am_i_doing_something_wrong/)
+- url: https://www.reddit.com/r/cpp/comments/gpq7xa/am_i_doing_something_wrong/
+---
+hey /r/Cpp. I recently graduated from Uni in April and since then I've been trying to write a 3D graphics engine in C++ using OpenGL. I've been having lots of fun with this project and I pretty much work on it 50 hours a week since there's not much else for me to do right now. 
+
+That being said, I feel like I'm doing something very wrong. My process for writing code is pretty straight forward. I write new classes and methods as needed to support new features. I use modern C++ features like smart pointers. And I make an effort to pass parameters by const ref as needed. I understand concepts  like lvalue, rvalue, move semantics. And I use Catch2 for unit testing. I use printfs to debug in to the console, and if the intended output is not correct I use the visual studio debugger to step through my program and look at how  values change  in the immediate window. I haven't found much of a need to use templates in my project so far(is that a bad thing?). 
+
+Then I come to these forums and see people talk about stuff ive never even  heard about. I feel like I am using a completely different language. sometimes. 
+
+Also, why does C++ get such a bad rep? People say manual memory management but that doesn't seem to be an issue with smart pointers? Writing C++ seems to be pretty straightforward to me so far, aside from the weird compiler errors you get time to time, and knowing what headers to include. I heard the build process for C++ sucks but don't you just use Cmake? 
+
+A former professor of mine recently reached out to me and asked if I wanted to help with his reasearch in algorithms and DSP. I guess maybe he needs some C++ guys. But I don't know if I'm even qualified to be honest.
+
+EDIT: sorry, I misphrased by saying that C++ is straightforward. It is hard and the more I learn about it, I realize how deep the rabbit hole goes. I find in straightforward in the sense that I find learning it to be manageable by taking it slow and refactoring old code as I learn more. It is easy to say that it is straightforward, but it is also easy to forget how much time I have already spent learning it, and how much I still don't know.
+## [10][Divide a string with lower case , upper case ,number, special characters and store different arrray.(with efficient time complexity)](https://www.reddit.com/r/cpp/comments/gqacfz/divide_a_string_with_lower_case_upper_case_number/)
+- url: https://www.reddit.com/r/cpp/comments/gqacfz/divide_a_string_with_lower_case_upper_case_number/
+---
+Let Input:"Aeinp@123"
+    My output should be 
+ Arrange this string 
+ Ucase :A
+ Lcase:einp(in sorted way)
+ Special characters:@
+Number: 123(sort)
+## [11][Chrome: 70% of all security bugs are memory safety issues](https://www.reddit.com/r/cpp/comments/gpdbgf/chrome_70_of_all_security_bugs_are_memory_safety/)
 - url: https://www.zdnet.com/article/chrome-70-of-all-security-bugs-are-memory-safety-issues/
 ---
 
-## [5][Generating random numbers using C++ standard library: the solutions](https://www.reddit.com/r/cpp/comments/gpbk4i/generating_random_numbers_using_c_standard/)
-- url: https://codingnest.com/generating-random-numbers-using-c-standard-library-the-solutions/
----
-
-## [6][How are libraries like Tensorflow developed in C++ buy can run in python?](https://www.reddit.com/r/cpp/comments/gp8gl4/how_are_libraries_like_tensorflow_developed_in_c/)
-- url: https://www.reddit.com/r/cpp/comments/gp8gl4/how_are_libraries_like_tensorflow_developed_in_c/
----
-I was looking at all these machine learning and computer vision libraries, and they are developed in C++ but you can use them in many other languages. I was wondering how do you make something like that.
-
-I have read some stuff on it but it still confuses me, so if anyone has done something similar, I would appreciate the explanation.
-## [7][Oilpan: A C++ garbage collection library for Chromium](https://www.reddit.com/r/cpp/comments/gplxqh/oilpan_a_c_garbage_collection_library_for_chromium/)
+## [12][Oilpan: A C++ garbage collection library for Chromium](https://www.reddit.com/r/cpp/comments/gplxqh/oilpan_a_c_garbage_collection_library_for_chromium/)
 - url: https://docs.google.com/document/d/1Cv2IcsiokkGc2K_5FBTDKekNzTn3iTEUyi9fDOud9wU/edit?usp=sharing
----
-
-## [8][What do we need to get completely rid of macros and header files?](https://www.reddit.com/r/cpp/comments/gov4ap/what_do_we_need_to_get_completely_rid_of_macros/)
-- url: https://www.reddit.com/r/cpp/comments/gov4ap/what_do_we_need_to_get_completely_rid_of_macros/
----
-Other than for backward compatibility reasons, what are the problems still need to be solved in order to completely get rid of these? I know that many of the recent features are geared toward this goal, but I also vaguely know that we still need macros and header files for reasons other than backward compatibility.
-## [9][TIL: When unlocking any of the std::mutex(es), it must first be locked](https://www.reddit.com/r/cpp/comments/gowpvh/til_when_unlocking_any_of_the_stdmutexes_it_must/)
-- url: https://www.reddit.com/r/cpp/comments/gowpvh/til_when_unlocking_any_of_the_stdmutexes_it_must/
----
-In most situations, it isn't a problem, but in some situations this might arise. Remember, you need to ensure you only call unlock after the mutex has been locked by the current thread. This was a surprise today when debugging some of my co-worker's code.
-
-"The mutex must be locked by the current thread of execution, **otherwise, the behavior is undefined**."
-
-[https://en.cppreference.com/w/cpp/thread/mutex/unlock](https://en.cppreference.com/w/cpp/thread/mutex/unlock) [https://en.cppreference.com/w/cpp/thread/timed\_mutex/unlock](https://en.cppreference.com/w/cpp/thread/timed_mutex/unlock) [https://en.cppreference.com/w/cpp/thread/recursive\_mutex/unlock](https://en.cppreference.com/w/cpp/thread/recursive_mutex/unlock) [https://en.cppreference.com/w/cpp/thread/recursive\_timed\_mutex/unlock](https://en.cppreference.com/w/cpp/thread/recursive_timed_mutex/unlock) [https://en.cppreference.com/w/cpp/thread/shared\_mutex/unlock](https://en.cppreference.com/w/cpp/thread/shared_mutex/unlock) [https://en.cppreference.com/w/cpp/thread/shared\_timed\_mutex/unlock](https://en.cppreference.com/w/cpp/thread/shared_timed_mutex/unlock)
-## [10][My attempt at making a Modern C++ String class](https://www.reddit.com/r/cpp/comments/goju6u/my_attempt_at_making_a_modern_c_string_class/)
-- url: https://www.reddit.com/r/cpp/comments/goju6u/my_attempt_at_making_a_modern_c_string_class/
----
-Source: [https://github.com/lionkor/String](https://github.com/lionkor/String)  
-Documentation: [https://lionkor.github.io/String-docs](https://lionkor.github.io/String-docs)
-
-I was always unsatisfied with  `std::string`, as it seems inconsistent with the rest of the STL and lacks a few major methods that I need almost every day, like a proper `replace`, `split`, `find` which returns iterators and so on. 
-
-So I made `String`, including documentation of the entire public interface and unit tests, which does (almost) all the things I want it to do.
-
-Currently on the roadmap are using something like `std::pmr::vector` instead of `std::vector`, maybe implementing SSO (I had it in version 1.0, but that was scrapped), and making the char type templated (or adding some other way of using `wchar` and such). 
-
-I'd be super honored if I could get some feedback on it, from both a technical and convenience standpoint. 
-
-(I am aware that it's slower than `std::string`, and I'm also aware of other string libraries and extensions for `std::string`. I don't find them more convenient than rolling my own implementation.)
-
-Edit: It uses variadic templates for `String::format`, which for me personally is a huge win!
-
-Edit2: I dont think my implementation is better than std::string. I don't know where that came from, but I know my implementation is shit. I've been programming C++ for a year, I dont think I write better code than STL devs. I like it better than std::string, its better for me personally. Thats all. I felt like it needed to be clarified before more people "call me out" on it.
-## [11][Reducing {fmt} library size 4x using Bloaty McBloatface](https://www.reddit.com/r/cpp/comments/go82wo/reducing_fmt_library_size_4x_using_bloaty/)
-- url: https://www.zverovich.net/2020/05/21/reducing-library-size.html
----
-
-## [12][C++20 ❤️ SQL: A Thin, Typesafe SQL Wrapper in C++20](https://www.reddit.com/r/cpp/comments/gogiks/c20_sql_a_thin_typesafe_sql_wrapper_in_c20/)
-- url: http://jrb-programming.blogspot.com/2020/05/c20-sql.html
 ---
 

@@ -1,116 +1,134 @@
 # golang
-## [1][Difference between "type a string" and "type a = string"](https://www.reddit.com/r/golang/comments/gpxab2/difference_between_type_a_string_and_type_a_string/)
-- url: https://www.reddit.com/r/golang/comments/gpxab2/difference_between_type_a_string_and_type_a_string/
+## [1][SpaceX Dragon ISS docking autopilot using Go and WebAssembly, well documented](https://www.reddit.com/r/golang/comments/gqk61u/spacex_dragon_iss_docking_autopilot_using_go_and/)
+- url: https://github.com/mbertschler/dragon-iss-docking-autopilot
 ---
-I was asked this in an interview, with not much context around it. I am unable to find relevant documentation around this. Please redirect me to the correct resources.
-## [2][Instrumentation in Go](https://www.reddit.com/r/golang/comments/gq6aiv/instrumentation_in_go/)
+
+## [2][Instrumentation in Go](https://www.reddit.com/r/golang/comments/gquh39/instrumentation_in_go/)
 - url: https://gbws.io/articles/instrumentation-in-go/
 ---
 
-## [3][What is a goroutine? And what is their size?](https://www.reddit.com/r/golang/comments/gqat1d/what_is_a_goroutine_and_what_is_their_size/)
+## [3][HTTP how to stream download response](https://www.reddit.com/r/golang/comments/gqw3yg/http_how_to_stream_download_response/)
+- url: https://rafallorenz.com/go/go-http-stream-download/
+---
+
+## [4][What does the Go community think of Elixir?](https://www.reddit.com/r/golang/comments/gqsoq1/what_does_the_go_community_think_of_elixir/)
+- url: https://www.reddit.com/r/golang/comments/gqsoq1/what_does_the_go_community_think_of_elixir/
+---
+It's a rather weird and perhaps, subjective question, but not without its grounds. I have been using both languages for quite some time, and like each one for its own merit. I think, there are many things that Go developers can learn from the Erlang/Elixir ecosystem.  
+
+
+Are there other people in this community who equally like both languages? How do you distinguish what to use each for?
+## [5][What is a goroutine? And what is their size?](https://www.reddit.com/r/golang/comments/gqat1d/what_is_a_goroutine_and_what_is_their_size/)
 - url: https://tpaschalis.github.io/goroutines-size/
 ---
 
-## [4][Switch from C++ to Go](https://www.reddit.com/r/golang/comments/gq7rkv/switch_from_c_to_go/)
-- url: https://www.reddit.com/r/golang/comments/gq7rkv/switch_from_c_to_go/
+## [6][Webassembly demos using the Pigo face detection library](https://www.reddit.com/r/golang/comments/gqvj3s/webassembly_demos_using_the_pigo_face_detection/)
+- url: https://github.com/esimov/pigo-wasm-demos
 ---
-Hello, I am new to the go lang. I have just played around a little bit. Currently, we have a big desktop application that uses the OpenCV library for image processing. Now we need to create a new cleaner version of this program and start from a new base. Currently, we are using C++. 
-I was thinking if it would be a good idea to replace C++ by Go. An important factor for my is if there is an equivalent library for OpenCV (or maybe can I use OpenCV?) and is there a good free/cheap GUI framework for it to create a desktop application.
-## [5][What is the purpose of fs and gs registers in golang?](https://www.reddit.com/r/golang/comments/gq4pfh/what_is_the_purpose_of_fs_and_gs_registers_in/)
-- url: https://www.reddit.com/r/golang/comments/gq4pfh/what_is_the_purpose_of_fs_and_gs_registers_in/
+
+## [7][What is the proper way to get zeromq up and running in Go?](https://www.reddit.com/r/golang/comments/gqv77p/what_is_the_proper_way_to_get_zeromq_up_and/)
+- url: https://www.reddit.com/r/golang/comments/gqv77p/what_is_the_proper_way_to_get_zeromq_up_and/
 ---
-I was looking through the (intel) assembly of a compiled binary written in golang and I found multiple instructions using fs and gs segment registers with address range covering whole 4GB space (was looking on a 32bit system)
+**Platform: Windows 10 x64**
 
-I searched around and I found [this stack overflow answer](https://stackoverflow.com/questions/10810203/what-is-the-fs-gs-register-intended-for#10810340) which says that their usage is OS specific. Some common usage I found is to access thread specific storage.
+Based on [this website](https://zeromq.org/languages/go/), I want to use **zeromq**.
 
-One usage of gs in golang that I could grasp (and not fully understand, please provide insights here) is to get more stack in runtime, by reading this snippet from [golang blog](https://golang.org/doc/asm):
+Here is what I have done till now:
 
-    TEXT main.main(SB) /tmp/x.go
-    0x10501c0	MOVQ GS:0x30, CX  # GS used here
-    0x10501c9	CMPQ 0x10(CX), SP 
-    0x10501cd	JBE 0x1050203 
-    ...
-    0x1050202	RET 
-    0x1050203	CALL runtime.morestack_noctxt(SB)
-    0x1050208	JMP main.main(SB)
+I installed **msys2** and in **MSYS2 MSYS** command window, issued the following command:
 
-I wanted to know other usages of gs and fs registers in golang (especially in go runtime). Can someone point me to resources which could include this information?
-## [6][Is updating go version via homebrew safe?](https://www.reddit.com/r/golang/comments/gq9bgb/is_updating_go_version_via_homebrew_safe/)
-- url: https://www.reddit.com/r/golang/comments/gq9bgb/is_updating_go_version_via_homebrew_safe/
----
-I would like to update my go 1.11 to go 1.13 via homebrew in macOS. Did anyone encounter any problems with it? Or is the best way is to uninstall it and reinstall it via homebrew better?
-## [7][Error checks extraction, good practice?](https://www.reddit.com/r/golang/comments/gq7nje/error_checks_extraction_good_practice/)
-- url: https://www.reddit.com/r/golang/comments/gq7nje/error_checks_extraction_good_practice/
----
-Hi there! I've been using Go for some time now, but I have a question of something I do, and I don't know if it actually improves the code readability or hurts it.
+    pacman -Syuu
 
-I have a project of making a "Cards against Humanity" online game, and I have this function:
+Then in the **MSYS2 MinGW 64-bit** command window:
 
-    func putBlackCardInPlay(g *cah.GameState) error {
-    	if g.BlackCardInPlay != nilBlackCard {
-    		return errors.New("Tried to put a black card in play but there is already a black card in play")
-    	}
-    	if g.Phase == cah.Finished {
-    		return errors.New("Tried to put a black card in play but the game has already finished")
-    	}
-    	if len(g.BlackDeck) == 0 {
-    		return errorEmptyBlackDeck{}
-    	}
-    	g.BlackCardInPlay = g.BlackDeck[0]
-    	g.BlackDeck = g.BlackDeck[1:]
-    	g.Phase = cah.SinnersPlaying
-    	g.CurrRound++
-    	return nil
-    }
+    pacman -Sy libtool
 
-I chose this function because it's kind of simple so it's a good example, but sometimes I have like 5 checks before I actually do something, so then I extract the checks to another function, and end up with something like this:
+then added ***"C:\\msys64\\mingw64\\bin"*** to the Path and finally in a command prompt window:
 
-    func putBlackCardInPlay(g *cah.GameState) error {
-    	if err := putBlackCardInPlayChecks(g); err != nil {
-    		return err
-    	}
-    	g.BlackCardInPlay = g.BlackDeck[0]
-    	g.BlackDeck = g.BlackDeck[1:]
-    	g.Phase = cah.SinnersPlaying
-    	g.CurrRound++
-    	return nil
-    }
+    go get "github.com/zeromq/goczmq"
+
+This gave me this error:
+
+    # github.com/zeromq/goczmq
+    Documents\Golang\GoWorkspace\src\github.com\zeromq\goczmq\auth.go:4:10: fatal error: czmq.h: No such file or directory
+        4 | #include "czmq.h"
+          |          ^~~~~~~~
+    compilation terminated.
+
+So I downloaded **zeromq** from [here](https://github.com/zeromq/czmq/releases) copied all the contents of its **include** folder into the ***"Documents\\Golang\\GoWorkspace\\src\\***[***github.com***](https://github.com)***\\zeromq\\goczmq\\"*** path and got this error:
+
+    # github.com/zeromq/goczmq
+    In file included from ./czmq_library.h:23,
+                     from ./czmq.h:37,
+                     from Documents\Golang\GoWorkspace\src\github.com\zeromq\goczmq\auth.go:4:
+    ./czmq_prelude.h:217:10: fatal error: zmq.h: No such file or directory
+      217 | #include "zmq.h"
+          |          ^~~~~~~
+    compilation terminated.
+
+this time I downloaded the  **ZeroMQ** library from [here](https://zeromq.org/download/) ([Visual Studio 15 2017 x64](https://dl.bintray.com/zeromq/generic/libzmq-v141-x64-4_3_2.zip)) and copied all of its content into the ***"Documents\\Golang\\GoWorkspace\\src\\***[***github.com***](https://github.com)***\\zeromq\\goczmq\\"*** path and got:
+
+    # github.com/zeromq/goczmq
+    C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot find -lsodium
+    C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot find -lzmq
+    C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot find -lczmq
+    collect2.exe: error: ld returned 1 exit status
+
+I was able to fix the missing -lsodium by using:
+
+    pacman -Ss libsodium
     
-    func putBlackCardInPlayChecks(g *cah.GameState) error {
-    	if g.BlackCardInPlay != nilBlackCard {
-    		return errors.New("Tried to put a black card in play but there is already a black card in play")
-    	}
-    	if g.Phase == cah.Finished {
-    		return errors.New("Tried to put a black card in play but the game has already finished")
-    	}
-    	if len(g.BlackDeck) == 0 {
-    		return errorEmptyBlackDeck{}
-    	}
-    	return nil
-    }
+    and then:
+    
+    pacman -S mingw64/mingw-w64-x86_64-libsodium
 
-I have not seeing something like this in other projects, so I wonder if it would be considered a bad practice.
+but I still get the error of missing **-lczmq** and **-lzmq**. How can I install those packages? Actually what is the proper way for installing and using packages such as **zeromq** in Go?
+## [8][Which Go telegram bot framework to use?](https://www.reddit.com/r/golang/comments/gqrp0g/which_go_telegram_bot_framework_to_use/)
+- url: https://www.reddit.com/r/golang/comments/gqrp0g/which_go_telegram_bot_framework_to_use/
+---
+I've looked at both
 
-Thank you in advance!
-## [8][Code styles for tests in Go](https://www.reddit.com/r/golang/comments/gq70c1/code_styles_for_tests_in_go/)
-- url: https://www.reddit.com/r/golang/comments/gq70c1/code_styles_for_tests_in_go/
----
-Hi everyone. The most popular way of writing tests in Go is Table testing. Usually code styles for tests is not a big deal but some aspects of this approach are not very convenient if you use an IDE for development. I wrote an article about how I write tests in Go now which avoids some of the problems of table testing. Would be great if someone can share their opinion on this. Maybe I'm missing something [https://medium.com/@alexander\_yappo/code-styles-for-tests-in-go-b803b4455ffe](https://medium.com/@alexander_yappo/code-styles-for-tests-in-go-b803b4455ffe)
-## [9][Why we need to convert a string to byte slice before saving to a file?](https://www.reddit.com/r/golang/comments/gpqysh/why_we_need_to_convert_a_string_to_byte_slice/)
-- url: https://www.reddit.com/r/golang/comments/gpqysh/why_we_need_to_convert_a_string_to_byte_slice/
----
-Example https://gobyexample.com/writing-files
-## [10][How to use encrypted private key for TLS?](https://www.reddit.com/r/golang/comments/gq6pw7/how_to_use_encrypted_private_key_for_tls/)
-- url: https://www.reddit.com/r/golang/comments/gq6pw7/how_to_use_encrypted_private_key_for_tls/
----
-I generated a certificate and private key with password using OpenSSL. Now I want to use it in Go. I found this [old issue with some instructions](https://golang.org/issue/10181), but it didn't work for me. `x509.DecryptPEMBlock` returns "x509: no DEK-Info header in block". Here is an example key file, password is 1234.
+1. [https://github.com/go-telegram-bot-api/telegram-bot-api](https://github.com/go-telegram-bot-api/telegram-bot-api)
+2. [https://github.com/tucnak/telebot](https://github.com/tucnak/telebot)
 
-    -----BEGIN ENCRYPTED PRIVATE KEY-----
-    MIIBSzBOBgkqhkiG9w0BBQ0wQTApBgkqhkiG9w0BBQwwHAQIQAY0IsXMhucCAggA
-    MAwGCCqGSIb3DQIJBQAwFAYIKoZIhvcNAwcECHi4EIJK+T6FBIH4Fatl16Lwznm/
-    jIhKygStjhIlpww0A0aZDp/D0eEJpXzvPgRZWf2xhlf5gzTMblQ2XkNrbu/OWOOS
-    f+qx//lh30WTFYOwu0ZWBuxGnjDQav2nc+GKRfzCWbTvgdj8EOKi3vgt8PkuBZWp
-    IwX0GRrLLd19EmC/VpZ6zAoJIxeE2Oc76tBREJCs5T8o+4Y28rgo/mXbMJmxpdAK
-    ncWa4y0f1IEcjdw2u3I8csvtwUIj6WjVLkrS1R3I0DS9jEbs0rZ9uORk5aFatzre
-    ccfQA0JI0n15QPX8dGh/RnWmpzpGXMxShiwn434KGD/Fa0mZeQex26chknoV3YE=
-    -----END ENCRYPTED PRIVATE KEY-----
+The first one seems to have minimal abstraction (too bare) while the second one seems to rely too much on interfaces (possible runtime type safety issues). Does anyone have any experience with either of these frameworks and which one is more reliable?
+## [9][What are some good tips for keeping an eye on blocked / stuck goroutines?](https://www.reddit.com/r/golang/comments/gqvt1f/what_are_some_good_tips_for_keeping_an_eye_on/)
+- url: https://www.reddit.com/r/golang/comments/gqvt1f/what_are_some_good_tips_for_keeping_an_eye_on/
+---
+As applications grow, so does their complexity, and with it, the traceability of things running in parallel Go's race detector is good for keeping an eye on shared memory touched by multiple goroutines. It won't however, report on goroutines stuck on a channel that never gets emptied. In large concurrent applications, this use case is fairly common. Unless one adds log traces on each step, it is fairly easy to get a running app (no compile or runtime errors), which does nothing, because some goroutine somewhere gets stuck, and with it, a whole chain of actions.
+
+What would be some cool tips for instrumenting Go code, such that stuck long-running goroutines can be pointed out immediately? The only thing I can think of right now is pprof
+## [10][consuming grpc service using go (re-post from stackoverflow) - https://stackoverflow.com/questions/62021444/consuming-grpc-service-using-go](https://www.reddit.com/r/golang/comments/gqvqjb/consuming_grpc_service_using_go_repost_from/)
+- url: https://www.reddit.com/r/golang/comments/gqvqjb/consuming_grpc_service_using_go_repost_from/
+---
+ 
+
+I plan to use grpc as an inter-service sync communication protocol. There are lots of different services and I have generated a pb.go  
+ file with all the relevant code for client and server using protoc  
+ with the go-rpc plugin.
+
+Now I'm trying to figure out the best way or the common way of consuming this service from another service. Here is what I have so far:
+
+**Option 1**
+
+1. use the .proto  
+ file from the service (download it)
+2. run the protoc  
+ compiler and generate the ...pb.go  
+ file for the consumer to use
+
+**Option 2**
+
+1. because the ...pb.go  
+ is already generated on the grpc service side to implement the server and my client is another service written in go I can expose this as a sub module (another .mod  
+ file in a sub- directory)
+2. use go get github.com/usr/my-cool-grpc-service/client
+
+Option 2 seems more appealing to me because it makes the consumption of a service very easy and available for all other services that may require it.
+
+On the other hand I know that the .proto  
+ file is the contract that cann generate clients for many different languages and should be used the the source of truth.
+
+I fear that by choosing option 2 I'm unaware of any possible pitfalls I might encounter with regards to backwards compatibility or any other topic..
+
+So, what is the idiomatic way of consuming a gRPC service?

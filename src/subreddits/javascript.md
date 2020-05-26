@@ -1,13 +1,5 @@
 # javascript
-## [1][WTF Wednesday (May 20, 2020)](https://www.reddit.com/r/javascript/comments/gne35p/wtf_wednesday_may_20_2020/)
-- url: https://www.reddit.com/r/javascript/comments/gne35p/wtf_wednesday_may_20_2020/
----
-Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
-Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
-this is the place.
-
-[Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [2][Your weekly /r/javascript recap](https://www.reddit.com/r/javascript/comments/gq7nx9/your_weekly_rjavascript_recap/)
+## [1][Your weekly /r/javascript recap](https://www.reddit.com/r/javascript/comments/gq7nx9/your_weekly_rjavascript_recap/)
 - url: https://www.reddit.com/r/javascript/comments/gq7nx9/your_weekly_rjavascript_recap/
 ---
 **Monday, May 18 - Sunday, May 24**
@@ -87,43 +79,73 @@ this is the place.
 
 
 &amp;nbsp;
-## [3][VSCode Cheatsheet for JS+React Developers](https://www.reddit.com/r/javascript/comments/gq5a4l/vscode_cheatsheet_for_jsreact_developers/)
-- url: http://vscode-hacks.herokuapp.com
+## [2][Showoff Saturday (May 23, 2020)](https://www.reddit.com/r/javascript/comments/gp3kqn/showoff_saturday_may_23_2020/)
+- url: https://www.reddit.com/r/javascript/comments/gp3kqn/showoff_saturday_may_23_2020/
+---
+Did you find or create something cool this week in javascript? 
+
+Show us here!
+## [3][[AskJS] I prefer Vanilla.JS to Typescript. Change my mind.](https://www.reddit.com/r/javascript/comments/gqkpob/askjs_i_prefer_vanillajs_to_typescript_change_my/)
+- url: https://www.reddit.com/r/javascript/comments/gqkpob/askjs_i_prefer_vanillajs_to_typescript_change_my/
+---
+Hello guys,
+
+I've been recently looking for a new job, and I noticed that some of my opinions are not very much widespread, so I wanted to confront with the wider community.
+
+A few years ago, when I had to decide between Typescript and vanilla, I ended up picking vanilla due to the work of the tc39 committee. In particular for me the selling point was the pipeline operator ( |&gt; ) which was not supported in typescript back then, as I was already a fan of functional programming.
+
+The more general problem was that, as usual in the JavaScript world, the abstraction layers or the fancy libraries you use make it harder to adopt new changes and web standards, which usually drove me to use the leanest architectures and stacks.
+
+Another thing I disliked about TS, which instead is praised by many, is the type system. In general I think that the best option, especially for highly dynamic languages, is to write a large number of tests, to cover as many cases as possible, and to ensure that the application state is coherent. Many times I started from writing tests, and then wrote the code to solve those tests.
+
+On the other hand the type system should catch many of the bugs the code could have. Yes, many, but not all. You will always have to write tests, so why write type annotations on a highly dynamic language, that are either not relevant or seriously limiting the dynamic part of the language?
+
+My personal approach is to write functional code and use immutable states, because in my experience is the mutability that gives problems, and pure functions are so easy to test....
+
+What do you guys think?
+
+**EDIT**: Elaborating more on the TC39.
+
+Many people complain about babel, and I agree that it's complicated, but I've used it for so long that I know it by heart, and I really miss the configuration flexibility that plain babel offers, compared to TypeScript.
+
+I also think that I might have the "lone programmer syndrome". I've worked often in groups of devs, but I've ALWAYS stressed a lot about separating the code base in modules, that communicate through standardized interfaces, so a big project can be seen as a collection of small libraries, each one under the responsibility of one dev.
+
+Anyhow I'm glad that I received so many responses, it means that this topic is very hot among devs, and I can see a lot of interesting inputs to think about.
+
+**EDIT 2**: Just to be clear, you guys convinced me to try TS again :P maybe I won't change my mind in the end, but at least I will try it :)
+## [4][How To Deploy NodeJS Apps With PM2 &amp; NGINX In Cluster Mode On Production Environment](https://www.reddit.com/r/javascript/comments/gqruhx/how_to_deploy_nodejs_apps_with_pm2_nginx_in/)
+- url: https://meswapnilwagh.com/2020/05/16/how-to-deploy-nodejs-apps-with-pm2-&amp;-ngnix-in-cluster-mode-on-production-environment/
 ---
 
-## [4][Functional Programming basics with JavaScript - my post but would appreciate feedback](https://www.reddit.com/r/javascript/comments/gpq00t/functional_programming_basics_with_javascript_my/)
-- url: https://medium.com/the-linus-blog/functional-programming-in-javascript-and-why-you-should-utilize-it-part-1-b1705522d769
+## [5][Case study: Analyzing Notion app performance (or how to make a React app load 30% faster by tuning some configs)](https://www.reddit.com/r/javascript/comments/gqery3/case_study_analyzing_notion_app_performance_or/)
+- url: https://3perf.com/blog/notion/
 ---
 
-## [5][🚀I made a site to help developers create their own portfolio! Here is how I did it:](https://www.reddit.com/r/javascript/comments/gqaev5/i_made_a_site_to_help_developers_create_their_own/)
-- url: https://techstax.dev/?ref=reddit
+## [6][Image annotation using canvas with zoom feature](https://www.reddit.com/r/javascript/comments/gquq9t/image_annotation_using_canvas_with_zoom_feature/)
+- url: https://github.com/beast911/annotater
 ---
 
-## [6][The latest on web projects: Remix.run, Snowpack, Rome and Web-vitals](https://www.reddit.com/r/javascript/comments/gq09wi/the_latest_on_web_projects_remixrun_snowpack_rome/)
-- url: https://juanmanuelalloron.com/2020/05/24/weekly-digest-on-remix-snowpack-rome-and-web-vitals/
+## [7][Understanding object &amp; array destructuring in JavaScript](https://www.reddit.com/r/javascript/comments/gqu3er/understanding_object_array_destructuring_in/)
+- url: https://attacomsian.com/blog/javascript-object-array-destructuring
 ---
 
-## [7][Test Your Babel Configuration](https://www.reddit.com/r/javascript/comments/gq9dmk/test_your_babel_configuration/)
-- url: https://jahed.dev/2020/03/13/test-your-babel-config/
+## [8][Today’s JavaScript, from an outsider’s perspective](https://www.reddit.com/r/javascript/comments/gqn9y4/todays_javascript_from_an_outsiders_perspective/)
+- url: http://lea.verou.me/2020/05/todays-javascript-from-an-outsiders-perspective/
 ---
 
-## [8][Using the “Infinite Scrolling” Method to Fetch API Data in ReactJS](https://www.reddit.com/r/javascript/comments/gq10aw/using_the_infinite_scrolling_method_to_fetch_api/)
-- url: https://medium.com/@kennethscoggins/using-the-infinite-scrolling-method-to-fetch-api-data-in-reactjs-c008b2b3a8b9?sk=2713010e273a3955c90f0afff267906d
+## [9][New progressive APIs coming to Chromium browsers](https://www.reddit.com/r/javascript/comments/gqw9dp/new_progressive_apis_coming_to_chromium_browsers/)
+- url: https://medium.com/swlh/how-microsoft-is-making-edge-the-best-browser-for-pwas-3b4ad1197be6
 ---
 
-## [9][Fluor.js — Sprinkle interactivity on your design](https://www.reddit.com/r/javascript/comments/gqa3fg/fluorjs_sprinkle_interactivity_on_your_design/)
-- url: https://fluorjs.github.io/
+## [10][Causes of Memory Leaks in JavaScript and How to Avoid Them](https://www.reddit.com/r/javascript/comments/gqdm58/causes_of_memory_leaks_in_javascript_and_how_to/)
+- url: https://www.ditdot.hr/en/causes-of-memory-leaks-in-javascript-and-how-to-avoid-them
 ---
 
-## [10][BVSelect - VanillaJS Fully Customizable SelectBox](https://www.reddit.com/r/javascript/comments/gq9no1/bvselect_vanillajs_fully_customizable_selectbox/)
-- url: https://github.com/BMSVieira/BVSelect-VanillaJS
+## [11][Making the shortest prime number generator in JavaScript by abusing shorthand. (It is the shortest as far as I know)](https://www.reddit.com/r/javascript/comments/gqoxwh/making_the_shortest_prime_number_generator_in/)
+- url: https://github.com/justinfernald/Insanely-Small-Prime-Number-Generator-In-JavaScript/blob/master/generator.js
 ---
 
-## [11][React, GraphQL, and Rails](https://www.reddit.com/r/javascript/comments/gpxn8h/react_graphql_and_rails/)
-- url: https://www.jmfurlott.com/react-graphql-rails/
----
-
-## [12][How to Make your React App a Progressive Web App (PWA) - Complete Guide to PWAs with Webpack and Workbox](https://www.reddit.com/r/javascript/comments/gq7b46/how_to_make_your_react_app_a_progressive_web_app/)
-- url: https://felixgerschau.com/how-to-make-your-react-app-a-progressive-web-app-pwa
+## [12][For the ones interested in JAMStack, check out this online meetup](https://www.reddit.com/r/javascript/comments/gqteja/for_the_ones_interested_in_jamstack_check_out/)
+- url: https://www.meetup.com/TryCatchMeetups/events/270862945/
 ---
 

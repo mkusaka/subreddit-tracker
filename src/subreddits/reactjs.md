@@ -109,30 +109,24 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/gcbkuu/whos_hiring_may_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][I built my new portfolio in GatsbyJS and it's amazing](https://www.reddit.com/r/reactjs/comments/gq8564/i_built_my_new_portfolio_in_gatsbyjs_and_its/)
-- url: https://www.reddit.com/r/reactjs/comments/gq8564/i_built_my_new_portfolio_in_gatsbyjs_and_its/
+## [3][Hacker Noon: Attend JSNation Live 2020, the remote spin-off of a successful JavaScript conference](https://www.reddit.com/r/reactjs/comments/gqsq9x/hacker_noon_attend_jsnation_live_2020_the_remote/)
+- url: https://www.hackernoon.com/jsnation-live-2020-the-remote-spin-off-of-a-successful-javascript-conference-xe1i3z6l
 ---
-I decided to make a new faster portfolio with a catchy design so I have been reading through the amazing Gatsby doc for some time. It's not my first time building something with Gatsby, but I wanted to skim through the docs before starting.
 
-Gatsby helped me get about score 99 (for desktop) and 90 (for mobile) on Google PageSpeed Insights.
+## [4][Select Payment (Swipe Card)](https://www.reddit.com/r/reactjs/comments/gqdk6h/select_payment_swipe_card/)
+- url: https://v.redd.it/ajhqf0pxox051
+---
 
-  
-Check it here: [https://web-dev.works](https://web-dev.works)  
+## [5][I made a Kanban boards app with React &amp; Django (open-source) https://github.com/rrebase/knboard](https://www.reddit.com/r/reactjs/comments/gqg3t1/i_made_a_kanban_boards_app_with_react_django/)
+- url: https://v.redd.it/06tnp1mvcy051
+---
 
-
-* The blog is integrated with Contentful API. 
-* Google Analytics already works. 
-* The website being styled in flexbox, made it easier to be styled for different devices' screens. 
-* The contact form works with Netlify Forms (no back-end work needed)  
-
-
-You can find the Github repo here:  [https://github.com/Lartwel/portfolio](https://github.com/Lartwel/portfolio)
-
-Website performance can be even better doing the headers redirects.  
-
-
-Doing some Gatsby config and fixing stuff such as gatsby way of routing pages with animation was kinda time-consuming more than normal react or css/js for the first time, but I loved it.
-## [4][I rewrote my command prompt / terminal inspired website using React](https://www.reddit.com/r/reactjs/comments/gqa2xd/i_rewrote_my_command_prompt_terminal_inspired/)
+## [6][I Built A Portfolio Website In React as my first react project](https://www.reddit.com/r/reactjs/comments/gqvl63/i_built_a_portfolio_website_in_react_as_my_first/)
+- url: https://www.reddit.com/r/reactjs/comments/gqvl63/i_built_a_portfolio_website_in_react_as_my_first/
+---
+I learned React a few months ago and I'm just a beginner. This is my first actual project without following any tutorial and boy was this tough. I had to google even the most basic stuff which I thought I knew. I know it's not great and any feedback would be appreciated. I tried to make it responsive too as much as I could. Here's the link to the GitHub repo: [https://github.com/RinkiyaKeDad/personal-website-builder](https://github.com/RinkiyaKeDad/personal-website-builder)  
+I'm welcome to any suggestions you guys might have.
+## [7][I rewrote my command prompt / terminal inspired website using React](https://www.reddit.com/r/reactjs/comments/gqa2xd/i_rewrote_my_command_prompt_terminal_inspired/)
 - url: https://www.reddit.com/r/reactjs/comments/gqa2xd/i_rewrote_my_command_prompt_terminal_inspired/
 ---
 My previous personal website wasn't very mobile friendly and relied on a third party library. I decided to spend a bit of time rewriting my command prompt / terminal inspired website from scratch using React and TypeScript.
@@ -143,54 +137,75 @@ There's definitely room for improvement, but I'm pretty happy with the results s
 Website: https://craigfeldman.com/
 
 Repo: https://github.com/craig-feldman/personal-website-react
-## [5][Built a site to watch YouTube together with friends.](https://www.reddit.com/r/reactjs/comments/gpu0gc/built_a_site_to_watch_youtube_together_with/)
-- url: https://v.redd.it/mpv97g963r051
+## [8][Comparing the Blazor to React](https://www.reddit.com/r/reactjs/comments/gqwvr3/comparing_the_blazor_to_react/)
+- url: https://www.reddit.com/r/reactjs/comments/gqwvr3/comparing_the_blazor_to_react/
+---
+Hi all. I'm a Python/Django and Unity C# programmer. I'm looking to get into modern web/native app development (for non-games). Blazor is attractive for me because of C#/.NET. However, I recognize that Blazor is very new -- it just had it's first official release last week -- so has all the risks of a very new technology. So I'm trying to weigh the pros and cons very carefully before diving into a new project.
+
+In particular, I see how mature and mainstream the React ecosystem is. So I wanted to ask how Blazor (referring to the whole ecosystem) looks to you React experts? Do you see Blazor as being a a real contender in the space now or later? Pros and cons versus React?
+
+Thanks for any insights you can offer!
+## [9][How to properly structure React with Redux](https://www.reddit.com/r/reactjs/comments/gqwayi/how_to_properly_structure_react_with_redux/)
+- url: https://www.reddit.com/r/reactjs/comments/gqwayi/how_to_properly_structure_react_with_redux/
+---
+Hey!
+
+So I've been going thru some of my old code and I'm starting to realize that the way I'm currently implementing redux isn't scaling well, and causing lots of confusion for myself. 
+
+[Repo of a project that uses redux](https://github.com/donnyroufs/Lorax/tree/master/client/src/redux)
+
+\[My first react project from ages ago(private repo)\](  📷  
+[https://gyazo.com/af697e8ad1d3c93d8d9a809ce8859834](https://gyazo.com/af697e8ad1d3c93d8d9a809ce8859834)  )
+
+There are two specific points that confuse me;
+
+* What belongs in my Reducer state? (not asking whether it should be global or not)
+
+Let's say I have a TodosReducer, and on fetch I want to set a loading state; do I define my state like:
+
+    const initialState = { 
+        todos: [],    
+        loading: true,
+    }
+
+Or do I keep loading seperate and initialState becomes my array of todos? 
+
+Which gets me to my second point.
+
+&amp;#x200B;
+
+* Should you use Redux middleware in order to split actions?
+
+I got this idea from [a talk by Nir Kuafman in begin 2018](https://www.youtube.com/watch?v=JUuic7mEs-s)
+
+[My implementation based on the talk and his code examples](https://github.com/donnyroufs/redux-reddit/tree/master/src/redux)
+
+&amp;#x200B;
+
+Cheers,
+
+A fellow developer.
+## [10][useEffect unable to run window.scrollTo](https://www.reddit.com/r/reactjs/comments/gqw8hp/useeffect_unable_to_run_windowscrollto/)
+- url: https://www.reddit.com/r/reactjs/comments/gqw8hp/useeffect_unable_to_run_windowscrollto/
+---
+I have a parent component A with B, C and D as children.
+
+I'm making changes in D component (a section before my footer)  and every time I save it and view the webpage, it renders and still shows the d section of the webpage whereas I expect it to render and show it from page start.
+
+I have written window.scrollTo(0,0) in my useEffect in A component (using this as a componentDidMount).
+
+I'm stuck on this for two days and unable to figure out what is wrong.
+
+Can anyone help me on the alternate approach of fix for this?
+
+TIA
+## [11][I started learning React about a month ago and here's my first simple project](https://www.reddit.com/r/reactjs/comments/gqrb7x/i_started_learning_react_about_a_month_ago_and/)
+- url: https://www.reddit.com/r/reactjs/comments/gqrb7x/i_started_learning_react_about_a_month_ago_and/
+---
+I started learning React js about a month ago after learning basics of Javascript and created this simple covid 19 tracker app yesterday.
+
+This is the first project I ever did with React. Here's the [link](https://corona-tracker-dash.netlify.app/) to the project.
+## [12][Is This The Onion? Game (form r/theOnion and r/notTheOnion)](https://www.reddit.com/r/reactjs/comments/gqpjh9/is_this_the_onion_game_form_rtheonion_and/)
+- url: http://isthistheonion.herokuapp.com
 ---
 
-## [6][RecoilJS is meant to rock your React world](https://www.reddit.com/r/reactjs/comments/gpx5g0/recoiljs_is_meant_to_rock_your_react_world/)
-- url: https://mariosfakiolas.com/blog/recoiljs-is-meant-to-rock-your-react-world
----
-
-## [7][Next.js Building a Car Trader App: All 6 videos now available =)](https://www.reddit.com/r/reactjs/comments/gpovx1/nextjs_building_a_car_trader_app_all_6_videos_now/)
-- url: https://v.redd.it/tqxo9lmx9i051
----
-
-## [8][Keyboard Events not working properly on Chrome Mobile](https://www.reddit.com/r/reactjs/comments/gqaez7/keyboard_events_not_working_properly_on_chrome/)
-- url: https://www.reddit.com/r/reactjs/comments/gqaez7/keyboard_events_not_working_properly_on_chrome/
----
-There is a bug in google chrome mobile that I noticed Its about keyCodes
-
- I have an input field and I want to separate words when the user enter comma, Just like tags works.
-
- It doesn't fire off in chrome mobile, but it does on Firefox mobile
-
-I tested on Google Chrome Mobile
-## [9][What the Heck is React Hooks?](https://www.reddit.com/r/reactjs/comments/gq8m7z/what_the_heck_is_react_hooks/)
-- url: https://blog.soshace.com/what-the-heck-is-react-hooks/
----
-
-## [10][Is Redux just React's way of using global variables?](https://www.reddit.com/r/reactjs/comments/gpzg3i/is_redux_just_reacts_way_of_using_global_variables/)
-- url: https://www.reddit.com/r/reactjs/comments/gpzg3i/is_redux_just_reacts_way_of_using_global_variables/
----
-Most programmers start by using globals all over their code. It's a very easy way to code as you don't need to worry about passing arguments to functions or scoping. Everything is just available at the top level if you need it. But as I'm sure you all know, this is heavily discouraged and causes problems as your code grows beyond a small demo.
-
-React on it's own makes sense as each component holds it's own state, and arguments are passed as props or returned through callbacks. Totally get that. But Redux (or any other global state management) seems to throw out all of the warnings of using global variables. The convention for using Redux is to put the state of your entire app in one store which is accessible and modifiable from anywhere.
-
-Could someone explain the difference between using globals in a standard webapp and Redux in React? Why is it accepted to use Redux as global state when a top level variable is a big no-no in every language I've ever used.
-## [11][Built with React.js - Hotel Inventory Management app](https://www.reddit.com/r/reactjs/comments/gq8m27/built_with_reactjs_hotel_inventory_management_app/)
-- url: https://www.monterail.com/en/projects/avisio?utm_medium=social&amp;utm_source=reddit&amp;utm_campaign=avisio
----
-
-## [12][New release of Spinners React component](https://www.reddit.com/r/reactjs/comments/gq6pro/new_release_of_spinners_react_component/)
-- url: https://www.reddit.com/r/reactjs/comments/gq6pro/new_release_of_spinners_react_component/
----
-A new version of Spinners React has been successfully released. The secondaryColor property is now added for an easy and more convenient way of changing background color along with some bug fixes. Thanks for your valuable feedback on the previous version of the component.
-
-The Spinner React component received 209 stars on GitHub and was downloaded 1k+ times within the last 3 months.
-
-As always, we are happy to continue improving the component, and thank you for your support — it is very much appreciated!
-
-Adexin Team
-
-Spinners React demo: [https://adexin.github.io/spinners/](https://adexin.github.io/spinners/)  
-Spinners React repo: [https://github.com/adexin/spinners-react](https://github.com/adexin/spinners-react)

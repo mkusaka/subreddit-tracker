@@ -125,59 +125,115 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][5 Advantages of C++ Lambda Expressions and How They Make Your Code Better](https://www.reddit.com/r/cpp/comments/gq733g/5_advantages_of_c_lambda_expressions_and_how_they/)
+## [3][C++ Modules: A New Way to Build and Collaborate](https://www.reddit.com/r/cpp/comments/gqvyf5/c_modules_a_new_way_to_build_and_collaborate/)
+- url: https://github.com/mwasplund/Soup/blob/master/Docs/Proposal.md
+---
+
+## [4][C++20 module protocol](https://www.reddit.com/r/cpp/comments/gqhs79/c20_module_protocol/)
+- url: http://lists.llvm.org/pipermail/cfe-dev/2020-May/065487.html
+---
+
+## [5][Fast parsing XML with string_view.](https://www.reddit.com/r/cpp/comments/gqqey0/fast_parsing_xml_with_string_view/)
+- url: https://www.reddit.com/r/cpp/comments/gqqey0/fast_parsing_xml_with_string_view/
+---
+Reference: [https://github.com/jfixemer/string\_view-building-blocks](https://github.com/jfixemer/string_view-building-blocks)
+
+The only way you learn is to try, and have your code torn to pieces (hopefully constructively). No obligation of course, but maybe it will inspire more C++ oriented replacements for things like expat.
+
+I started with some code from simber on github and kind of liked how he made a tokenizer.  So I thought I would roll my own in a similar usage style for XML.
+
+The goal was to have a SAX-ish type of interface but avoid anything that wouldn't swap assign (so no vectors of attributes), and use string\_view to move through the document.  I was partially inspired by the in-situ parsing of RapidXML, but wanted to avoid the custom objects and buffer manipulation they use to create null terminated strings directly in the buffer.
+
+I won't claim it is apples to apples with expat / libXml2 / Xerces as it is more of a tokenizer than a SAX parser (ie. no interpretation of XML namespaces, doc references and definitely not validating -- not even matching start/end elements :-) )   The goal was to make it through a pre-validated XML document, but faster than expat.
+
+Using some xmlbench material (namely the 11MB test.rdf file). I managed to get this comparison on my box:
+
+    mkdir build; cd build; cmake -DCMAKE\_BUILD\_TYPE=Release ..; make performance\_xml
+    time ./performance\_xml $XMLBENC/xml.files/test.rdf 
+    SVBB XML-SAX took: 0.028743 seconds.  ## &lt; this is internal measurement, just around the parsing loop.
+        
+    real    0m0.062s  ## &lt; this is total execution time, including file=&gt;memory slurp.
+    user    0m0.031s
+    sys     0m0.031s
+
+Now expat
+
+    time parse/expat 1 xml.files/test.rdf 
+    Initialisation time 0.039 + 16.889(0.00%) ms, Parsing Time 161.154(0.00%) ms
+    
+    real    0m0.378s
+    user    0m0.313s
+    sys     0m0.063s
+
+So if you want to include some 'other manipulations' then 0.37 s vs 0.06 seconds (6x).
+
+If you trust the internally reported times... then it looks like 0.16s vs 0.03s (5x).
+
+YMMV and no I can't say that it has an 'excellent' test suite with tons of corner cases and other things that make it bullet proof (use RapidXML or Expat if that is needed) - it is just an experiment.
+## [6][C++ Parameter Declaration :: Purpose of different references](https://www.reddit.com/r/cpp/comments/gqg4bm/c_parameter_declaration_purpose_of_different/)
+- url: https://youtu.be/w1Cw3KFPh1A
+---
+
+## [7][compound assignment to volatile is deprecated](https://www.reddit.com/r/cpp/comments/gqu02u/compound_assignment_to_volatile_is_deprecated/)
+- url: https://www.reddit.com/r/cpp/comments/gqu02u/compound_assignment_to_volatile_is_deprecated/
+---
+Working with a G++ 10 compiler (C++2x mode) on my embedded code I ran into this: a compound assignment to volatile is now deprecated. IMO this is a bad idea. Volatile might be a PITA in some situations, but it is INDISPENABLE for accessing memory-based peripherals. The setting or clearing of specific bits is a very common use case, typically something like this:
+
+PIOA-&gt;PIO\_ABSR &amp;= \~PIO\_PA8; 
+
+With the deprecation I'll have to rewrite such statements to
+
+PIOA-&gt;PIO\_ABSR = PIOA-&gt;PIO\_ABSR &amp; \~PIO\_PA8;
+
+which isn't friendly to the reader. Note that the lhs expression can get more complex. IMO this deprecation should be revoked (or at least not culminate in a removal from the language).
+
+(PS: I am now struggling with a hosted gcc 10. Are there already any standalone (-none-) gcc 10 packages available?)
+## [8][Generators using co_yield are 18x slower than a for-loop equivalent; too much of a performance hit](https://www.reddit.com/r/cpp/comments/gqi0io/generators_using_co_yield_are_18x_slower_than_a/)
+- url: https://developercommunity.visualstudio.com/content/problem/19630/generators-using-co-yield-are-18x-slower-than-a-fo.html
+---
+
+## [9][5 Advantages of C++ Lambda Expressions and How They Make Your Code Better](https://www.reddit.com/r/cpp/comments/gq733g/5_advantages_of_c_lambda_expressions_and_how_they/)
 - url: https://www.bfilipek.com/2020/05/lambdasadvantages.html?m=1
 ---
 
-## [4][Testing C++ signal-slot libraries](https://www.reddit.com/r/cpp/comments/gq5cbt/testing_c_signalslot_libraries/)
-- url: https://medium.com/@julienjorge/testing-c-signal-slot-libraries-1994eb120826
+## [10][cpp.chat #73: "It Doesn’t Get Bored and It Doesn’t Get Tired" - with Yuri Minaev](https://www.reddit.com/r/cpp/comments/gqvjjd/cppchat_73_it_doesnt_get_bored_and_it_doesnt_get/)
+- url: https://cpp.chat/73/
 ---
 
-## [5][Guix, a package manager with build from source and rollback, suitable for C++](https://www.reddit.com/r/cpp/comments/gq6yey/guix_a_package_manager_with_build_from_source_and/)
-- url: https://ambrevar.xyz/guix-advance/index.html
+## [11][CLion C++20 impossible to work with?](https://www.reddit.com/r/cpp/comments/gql5a1/clion_c20_impossible_to_work_with/)
+- url: https://www.reddit.com/r/cpp/comments/gql5a1/clion_c20_impossible_to_work_with/
 ---
+Is it only me or once the C++20 flag is enabled in CMakeLists.txt, the whole CLion starts being buggy?   
+Working with MinGW on Windows. 
 
-## [6][Analyzing The Simplest C++ Program](https://www.reddit.com/r/cpp/comments/gpj1sk/analyzing_the_simplest_c_program/)
-- url: https://oneraynyday.github.io/dev/2020/05/03/Analyzing-The-Simplest-C++-Program/
+By buggy I mean that:  
+\-&gt; random identifiers are being highlighted as if they were invalid/errorenous  
+\-&gt; whole auto completion system becomes very delayed/laggy  
+
+
+Everything compiles fine though...
+## [12][What is the best IDE for building/debugging on remote machine?](https://www.reddit.com/r/cpp/comments/gqdnoz/what_is_the_best_ide_for_buildingdebugging_on/)
+- url: https://www.reddit.com/r/cpp/comments/gqdnoz/what_is_the_best_ide_for_buildingdebugging_on/
 ---
+I am currently working on a huge CMake-based C/C++ project that takes forever to build (especially linking is killing me), even though my laptop is pretty buff. So I thought I can boost my performance by building on something even more powerful, and rented a dedicated server.
 
-## [7][Running C++ Threads in WebAssembly Applications](https://www.reddit.com/r/cpp/comments/gqa1v5/running_c_threads_in_webassembly_applications/)
-- url: https://www.syntaxsuccess.com/viewarticle/multi-threading-with-webassembly
----
+Now I have everything to compile my project remotely, as it looks like it works a bit faster than on my local pc. So now I write code on my local machine, push changes to git, ssh to the server, fetch changes, build via terminal.
 
-## [8][Using OpenGL for 2D graphics in an audio plug-in with JUCE.](https://www.reddit.com/r/cpp/comments/gq8jnr/using_opengl_for_2d_graphics_in_an_audio_plugin/)
-- url: https://link.medium.com/07ayjNT2K6
----
+Big question: is there a way to simplify this workflow and retain the raw computing power of the remote server, whilst working from an IDE that renders eye-candy GUI on my local laptop? (yes, I've been living under a rock for a decade or so).
 
-## [9][Am I doing something wrong?](https://www.reddit.com/r/cpp/comments/gpq7xa/am_i_doing_something_wrong/)
-- url: https://www.reddit.com/r/cpp/comments/gpq7xa/am_i_doing_something_wrong/
----
-hey /r/Cpp. I recently graduated from Uni in April and since then I've been trying to write a 3D graphics engine in C++ using OpenGL. I've been having lots of fun with this project and I pretty much work on it 50 hours a week since there's not much else for me to do right now. 
+And just to clarify a bit, here is what I expect:
 
-That being said, I feel like I'm doing something very wrong. My process for writing code is pretty straight forward. I write new classes and methods as needed to support new features. I use modern C++ features like smart pointers. And I make an effort to pass parameters by const ref as needed. I understand concepts  like lvalue, rvalue, move semantics. And I use Catch2 for unit testing. I use printfs to debug in to the console, and if the intended output is not correct I use the visual studio debugger to step through my program and look at how  values change  in the immediate window. I haven't found much of a need to use templates in my project so far(is that a bad thing?). 
+* Minimal set up on remote host (ideally just an SSH server)
+* edit/navigate source code (fuzzy-finding methods, classes, callers, jumping in and out of callees)
+* run build jobs
+* debug stuff on a remote machine with the power of GDB
+* Optionally: forward SSH-identity
 
-Then I come to these forums and see people talk about stuff ive never even  heard about. I feel like I am using a completely different language. sometimes. 
 
-Also, why does C++ get such a bad rep? People say manual memory management but that doesn't seem to be an issue with smart pointers? Writing C++ seems to be pretty straightforward to me so far, aside from the weird compiler errors you get time to time, and knowing what headers to include. I heard the build process for C++ sucks but don't you just use Cmake? 
+I've already tried EMACS, but I must be too stoopid to set it up properly.
 
-A former professor of mine recently reached out to me and asked if I wanted to help with his reasearch in algorithms and DSP. I guess maybe he needs some C++ guys. But I don't know if I'm even qualified to be honest.
+And I've tried VisualStudio Code, but I wasn't able to make it work 100% - debugging was not working, code navigation was off.
 
-EDIT: sorry, I misphrased by saying that C++ is straightforward. It is hard and the more I learn about it, I realize how deep the rabbit hole goes. I find in straightforward in the sense that I find learning it to be manageable by taking it slow and refactoring old code as I learn more. It is easy to say that it is straightforward, but it is also easy to forget how much time I have already spent learning it, and how much I still don't know.
-## [10][Divide a string with lower case , upper case ,number, special characters and store different arrray.(with efficient time complexity)](https://www.reddit.com/r/cpp/comments/gqacfz/divide_a_string_with_lower_case_upper_case_number/)
-- url: https://www.reddit.com/r/cpp/comments/gqacfz/divide_a_string_with_lower_case_upper_case_number/
----
-Let Input:"Aeinp@123"
-    My output should be 
- Arrange this string 
- Ucase :A
- Lcase:einp(in sorted way)
- Special characters:@
-Number: 123(sort)
-## [11][Chrome: 70% of all security bugs are memory safety issues](https://www.reddit.com/r/cpp/comments/gpdbgf/chrome_70_of_all_security_bugs_are_memory_safety/)
-- url: https://www.zdnet.com/article/chrome-70-of-all-security-bugs-are-memory-safety-issues/
----
 
-## [12][Oilpan: A C++ garbage collection library for Chromium](https://www.reddit.com/r/cpp/comments/gplxqh/oilpan_a_c_garbage_collection_library_for_chromium/)
-- url: https://docs.google.com/document/d/1Cv2IcsiokkGc2K_5FBTDKekNzTn3iTEUyi9fDOud9wU/edit?usp=sharing
----
 
+Would appreciate any help with this.

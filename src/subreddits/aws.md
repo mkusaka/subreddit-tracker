@@ -21,117 +21,164 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][AWS Cognito SignInWithApple throws apple_sub Attribute does not exist in the schema error](https://www.reddit.com/r/aws/comments/gq9nvw/aws_cognito_signinwithapple_throws_apple_sub/)
-- url: https://www.reddit.com/r/aws/comments/gq9nvw/aws_cognito_signinwithapple_throws_apple_sub/
+## [2][Migrating from GCP to AWS. Need advice to get up to speed](https://www.reddit.com/r/aws/comments/gqst9c/migrating_from_gcp_to_aws_need_advice_to_get_up/)
+- url: https://www.reddit.com/r/aws/comments/gqst9c/migrating_from_gcp_to_aws_need_advice_to_get_up/
 ---
-copy paste from:  [https://stackoverflow.com/questions/62001500/aws-cognito-signinwithapple-throws-apple-sub-attribute-does-not-exist-in-the-sch](https://stackoverflow.com/questions/62001500/aws-cognito-signinwithapple-throws-apple-sub-attribute-does-not-exist-in-the-sch)
+Our management has decided to move from GCP to AWS.  
+ We use the following services in GCP:
 
-I am currently developing SignInWithApple federation using amazon cognito. During the user cognito apple signup I receive a callback with apple\_sub Attribute does not exist in the schema error. Full callback url below:
+Compute: 
 
-[`https://www.localhost:3000/cognito/oauth/callback?error_description=Invalid+user+attributes%3A+apple_sub%3A+Attribute+does+not+exist+in+the+schema.%0A+&amp;state=provider%3DSignInWithApple&amp;error=invalid_request`](https://www.localhost:3000/cognito/oauth/callback?error_description=Invalid+user+attributes%3A+apple_sub%3A+Attribute+does+not+exist+in+the+schema.%0A+&amp;state=provider%3DSignInWithApple&amp;error=invalid_request)
+GKE, Compute Engine VMs,  
 
-I have tried connecting my cognito to a PreSignUp\_ExternalProvider lambda trigger and deleting the apple sub attribute via the code below:
+Storage: 
 
-`// appleSignIn has an obsolete apple_sub userAttributes`
+SQL ( for Postgres DB), Google Storage bucket,
 
-`// that is not present inside AWS infrastructure and causes crashes`
+More helper services: 
 
-`if (eventData?.request?.userAttributes?.apple_sub) {`
+Pubsub, cloud functions, cloud scheduler, Stackdriver ( logging and monitoring), cloud tasks, cloud build, bigQuery   
 
-`delete eventData.request.userAttributes.apple_sub`
 
-`}`
+In the first phase I'll be migrating just the kubernetes, databases. The helper services will require changes in application code, which i will be doing in the next phase. 
 
-This worked marvelously until today. Today, For some reason, even when I delete the apple\_sub user attribute before passing the event further, I am still receiving the error above.
-
-I have also tried adding a custom apple\_sub attribute, but that didn't help me also. There is also no apple\_sub standard attribute to be found.
-
-Is there a way how to add standardized apple\_sub attribute to my cognito schema? Why is it not there by default when I allow SignInWithApple federation?
-## [3][Best practices for custom authentication for calling api from lambda](https://www.reddit.com/r/aws/comments/gq5c7k/best_practices_for_custom_authentication_for/)
-- url: https://www.reddit.com/r/aws/comments/gq5c7k/best_practices_for_custom_authentication_for/
+Now, I just logged into my AWS account. GCP has a very neat step by step documentation for those migrating from AWS to GCP. But for moving from GCP to AWS I dont find any documentation. Can someone pls give me a few pointers that I need to keep in mind before I start creating the infra on AWS? Are there any gotchas that I need to be aware of?
+## [3][Send cloudinit output to cloudwatch logs](https://www.reddit.com/r/aws/comments/gqvq8j/send_cloudinit_output_to_cloudwatch_logs/)
+- url: https://www.reddit.com/r/aws/comments/gqvq8j/send_cloudinit_output_to_cloudwatch_logs/
 ---
-Any tips or tricks anyone has for calling an API built in api gateway from a lambda? Additional information, building an app that uses Userpool jwt and a custom auth lambda. Currently checking the validity of the token and the request itself, how could I work a lambda into this flow?
-## [4][Is Cloudfront effective when visitors aren't near any data centers?](https://www.reddit.com/r/aws/comments/gq39k5/is_cloudfront_effective_when_visitors_arent_near/)
-- url: https://www.reddit.com/r/aws/comments/gq39k5/is_cloudfront_effective_when_visitors_arent_near/
+When having a lot of EC2 instances that use UserData, it gets difficult to track the output, as you have to log in to each instance to see the output of the cloud-init logs. I wrote a small golang program that can send the output of your commands straight to cloudwatch logs. That way, you can easily see and track errors in userdata. PR's &amp; feedback welcome! GitHub Repo: [https://github.com/in4it/tee2cloudwatch](https://github.com/in4it/tee2cloudwatch)
+## [4][AWS SSO and Jenkins/Terraform/some other CI](https://www.reddit.com/r/aws/comments/gqsr0a/aws_sso_and_jenkinsterraformsome_other_ci/)
+- url: https://www.reddit.com/r/aws/comments/gqsr0a/aws_sso_and_jenkinsterraformsome_other_ci/
 ---
-If I serve a website that has images, how effective is CloudFront if my users are all in Hawaii?
+Hey all!
 
-My servers are in west-2, as are my S3 buckets. I guess I'm wondering if there's an advantage to serving images through a CDN, given my users are always in the same location.
+We have been working on implementing SSO with GSuite for Central auth, and working great(ish).
 
-For this scenario, disregard users on VPNs, users travelling, etc. Assume all users are always in Hawaii.
+One issue I am working on is that our infra built in Terraform. Locally, its okay, it still can find the users SSO credentials, even if you have them post into a credentials file manually.
 
-Thanks
-## [5][How to copy/move an EC2 instance/volume/snapshot to another region/AZ?](https://www.reddit.com/r/aws/comments/gqabtl/how_to_copymove_an_ec2_instancevolumesnapshot_to/)
-- url: https://www.reddit.com/r/aws/comments/gqabtl/how_to_copymove_an_ec2_instancevolumesnapshot_to/
+My question is regarding Jenkins or other CI services. How do you provision your credentials, so it can authenticate with SSO? 
+Do you use some helper, or just generate an IAM role in the account you use to deploy in?
+## [5][Show content from S3 on the frontend](https://www.reddit.com/r/aws/comments/gqweuw/show_content_from_s3_on_the_frontend/)
+- url: https://www.reddit.com/r/aws/comments/gqweuw/show_content_from_s3_on_the_frontend/
 ---
-I'm studying for my SAA-C02 and out of all the things, I can't figure out what the best practice is for moving EC2 instances between AZs and regions. Would you make a snapshot of the volume, somehow transfer the snapshot to another place (how?) and then make a new boot volume from that snapshot (how?) ? How do you back up snapshots to S3?
+Hi all, 
 
-Also, I tried creating a new instance from an existing snapshot of mine and I couldn't figure out how. When launching a new instance, I can only create a new root volume, then when the instance is up and running I can go from "Volumes"-&gt;"Attach Volume to instance" which is not what I wanted.
+I am working on an app, and where I need to find a way to show content from S3 on my frontend. 
 
-Thank you for your help!
-## [6][College Student Brand New to AWS - Personal Project for the Summer?](https://www.reddit.com/r/aws/comments/gq0khx/college_student_brand_new_to_aws_personal_project/)
-- url: https://www.reddit.com/r/aws/comments/gq0khx/college_student_brand_new_to_aws_personal_project/
+Before, I wrote a lambda that runs once a day, scrapes certain content and saves a file to S3 as a txt file. But I don't know how to access it/show it, since I have 0 experience with React. What would you suggest as a solution?  
+
+
+Is it better to write the logic in the react file or there is a better way? I could write a python lambda,  that will loop through the bucket and return the content, but still don't know how can I connect it to the FE.
+
+I am still new to programming, so I hope this makes sense.
+## [6][Which tool for querying semi-structured data?](https://www.reddit.com/r/aws/comments/gqvf2h/which_tool_for_querying_semistructured_data/)
+- url: https://www.reddit.com/r/aws/comments/gqvf2h/which_tool_for_querying_semistructured_data/
 ---
-Hello!
+Advice needed. We are building a modular pipeline in AWS for text processing. I am building a lot of timing and other metrics, which will be collected as JSON objects with various tags and values.
 
-Just looking for some advice. I'm studying Information Systems at my University but recently became interested in the business/strategic side of Cloud Computing (think Cloud/Infrastructure Advisory roles such as [this one](https://www.accenture.com/us-en/careers/jobdetails?id=00752687_en)).
+I'd like to gather all this and query it, such as finding min, max and avg values over time spans, finding patterns in the data etc.
 
-I know to have a strong high-level understanding of AWS, it's important to get some hands-on experience so I can hold my own in future interviews/jobs. This summer, after getting my AWS CCP, I want to do a simple personal project in AWS. There's a student/trial version of Azure I can use, as I'm not looking to break the bank. 
+What's the most cost effective and/or best tool for storing these metrics, and doing queries that can do basic aggregation and other data mining on generic data objects that may evolve over time (not all objects might have the same exact schema as we evolve the system)  I don't have that much familiarity with NoSQL but I wonder if that's the direction I should go? We integrate with Cloudwatch already, is that useful for more general data processing?
 
-Any recommendations on a simple project or two to do in AWS this summer? 
+I guess this may be two questions: which data store and which query tool. Hoping to find something that doesn't require a huge time investment to learn. 
 
-I really need some insight, as I have very limited knowledge of what's possible after the AWS CCP. Please help. Thanks!
-
-UPDATE: Wow this really blew up! Thanks so much, I have so many ideas to choose from now, and I can’t wait to get started!
-## [7][Are there any sites where people share common cloud formation, or other templates?](https://www.reddit.com/r/aws/comments/gpwuy7/are_there_any_sites_where_people_share_common/)
-- url: https://www.reddit.com/r/aws/comments/gpwuy7/are_there_any_sites_where_people_share_common/
+Thanks!
+## [7][AWS SSO: no reports for user and group based access?](https://www.reddit.com/r/aws/comments/gqsgis/aws_sso_no_reports_for_user_and_group_based_access/)
+- url: https://www.reddit.com/r/aws/comments/gqsgis/aws_sso_no_reports_for_user_and_group_based_access/
 ---
-Are there any sites that are collecting re-usable templates? I don't really care whether it's terraform, pulumi, amazon cdk, or cloud formation.
+Where do I get a high level view of every AWS account a particular user or group is assigned to in AWS SSO? I can't see this information anywhere within the Console (side rant: and there's no API yet).
 
-Most large orgs have common sets of templates people can modify to checkout resources. Sometimes it interfaces with service catalog sometimes it does not, but in general some kind of streamlined self checkout for common requests. Is there a database of open sourced resources like this?
-## [8][Triggering an event from an update to a table in our MySQL RDS.](https://www.reddit.com/r/aws/comments/gq7k0d/triggering_an_event_from_an_update_to_a_table_in/)
-- url: https://www.reddit.com/r/aws/comments/gq7k0d/triggering_an_event_from_an_update_to_a_table_in/
+I can go into each individual AWS Account in SSO and see which groups and users are assigned to that _specific_ account. But doing that for 20+ accounts, one by one, to provide a report for compliance and audit seems obscene.
+## [8][Is there a better way to write this buildspec.yml file? Newbie trying to use codebuild / codepipeline](https://www.reddit.com/r/aws/comments/gqqpgf/is_there_a_better_way_to_write_this_buildspecyml/)
+- url: https://www.reddit.com/r/aws/comments/gqqpgf/is_there_a_better_way_to_write_this_buildspecyml/
 ---
-We have a table in our MySQL RDS that gets updated whenever a customer scans a certain code. 
+Pardon for my ignorance, I have tried a few hours to figure this out
 
-However, this update does not reflect immediately on our CRM's record of that customer (The CRM service we use is completely independent of any of AWS' services). Right now, we are therefore having to update the CRM manually on a daily basis to reflect the updates from the RDS table.
+My buildspec file I wrote:
 
-Essentially, what I'm proposing is being able to automate the following process:
+    version: 0.2
+    
+    phases:
+      install:
+        commands:
+          - echo Installing Serverless...
+          - npm install -g serverless
+      pre_build:
+        commands:
+          - echo Installing frontend dependencies...
+          - cd frontend-serverless &amp;&amp; npm install
+          - echo Installing backend dependencies...
+          - cd .. &amp;&amp; cd backend-serverless &amp;&amp; npm install
+      build:
+        commands:
+          - echo Deploying serverless backend...
+          - cd .. &amp;&amp; cd backend-serverless &amp;&amp; serverless deploy
+          - echo Deploying serverless frontend...
+          - cd .. &amp;&amp; cd frontend-serverless &amp;&amp; serverless
+      post_build:
+        commands:
+          - echo Deployment completed on `date`
+    
 
+My Project structure :
 
-1. RDS table updated 
-2. Lambda Function triggered, the customer ID is retrieved from the row that was updated
-3. CRM APIs are used by the lambda function to also update the record in the CRM, based on the customer ID that both the CRM and RDS share in common. 
+    [frontend]
+    [backend]
+    buildspec.yml
+frontend and backend are two different project folders both of which rely on the serverless framework.
 
-My problem however seems to be that we can't trigger an event from the RDS. I'm curious as to what the best workaround for this is. 
+My codebuild works and deploys correctly but notice how I am using ```cd ..``` in a few of the commands to get back to the previous directory.  It is very ugly however I cannot find a better way to make this work at the moment.
 
-I'm also wondering if this is considered best-practice for this use-case, or if there's a more elegant method of achieving the same thing?
-## [9][I wrote a complete guide to the AWS Systems Manager Parameter Store. It's a stellar way to make your applications more scalable and less failure prone](https://www.reddit.com/r/aws/comments/gpnqin/i_wrote_a_complete_guide_to_the_aws_systems/)
-- url: https://seanjziegler.com/a-complete-guide-to-using-the-aws-systems-manager-parameter-store/
+Is there a better way to reference the root working directory in codebuild?  I can't find any documentation.
+
+Thank you for your help.
+## [9][So You Suddenly Need to Reduce Your AWS Bill: 4 Things We Did](https://www.reddit.com/r/aws/comments/gqcbqo/so_you_suddenly_need_to_reduce_your_aws_bill_4/)
+- url: https://www.patientcolife.com/so-you-suddenly-need-to-reduce-your-aws-bill-4-things-we-did/
 ---
 
-## [10][What is the best way to make a SSML voice more realistic ?](https://www.reddit.com/r/aws/comments/gq79w1/what_is_the_best_way_to_make_a_ssml_voice_more/)
-- url: https://www.reddit.com/r/aws/comments/gq79w1/what_is_the_best_way_to_make_a_ssml_voice_more/
+## [10][Can anyone help me figure out a workaround or a better solution for my current problem? I can't figure out how to make my CFT access S3 bucket from different regions.](https://www.reddit.com/r/aws/comments/gqx0uj/can_anyone_help_me_figure_out_a_workaround_or_a/)
+- url: https://www.reddit.com/r/aws/comments/gqx0uj/can_anyone_help_me_figure_out_a_workaround_or_a/
 ---
-I'm working on a project to make shows and songs based on amazon polly voices and i would like to know what kind of editing i should make to achieve realism on the voice.
+**The use case** \- I have a lambda that will auto-tag every newly created ec2 and rds instances with the creator's IAM user id. I uploaded the lambda code in an S3 bucket in the form of a zip.
 
-Here is one example of the realism i want to achieve : [https://youtu.be/PyjmfrFUZ\_4](https://youtu.be/PyjmfrFUZ_4)
-## [11][Struggling with Route53 and changing an instance's associated domain.](https://www.reddit.com/r/aws/comments/gq79bl/struggling_with_route53_and_changing_an_instances/)
-- url: https://www.reddit.com/r/aws/comments/gq79bl/struggling_with_route53_and_changing_an_instances/
+  This is how my bucket looks -   
+**bucket name:** resources-for-autotag  
+|  lambda-function.zip  
+
+I've written a CFT which deploys a CloudWatch rule and some IAM policies. This CFT takes the code from the bucket and deploys the lambda along with the CW rules and IAM policies.  
+My CFT requires the name of the bucket which should be provided by us.
+
+**The problem** is that CFT can't access the bucket if launched in different regions than where my resource bucket is located. I tried making the bucket public(which isn't the best practice, I know) but that didn't work either.   
+I'm forced to create a bucket in every region with the same content. It's becoming pretty redundant and time taking and honestly the repetitive work is getting to me more than I'd like to admit.   
+I'm working on an Organization account, and my permissions and access to other AWS services are pretty limited. 
+
+In addition to all this, I have more than 50 accounts I have to deploy this to.
+
+   
+**Trials  -** 
+
+* I tried bucket replication. But it doesn't make much sense as I have to use the content only once, and the process is more time taking than just creating buckets in different regions and uploading the zip file. 
+* CFT StackSet won't work either for the same reason that S3 buckets can't be accessed from other regions.
+* I cannot add the lambda function directly in the CFT, as it's not usually a best practice and moreover the code is more than the size that is allowed inline CFT.
+* I tried writing a lambda, using boto3 which creates S3 buckets in different regions, uploads the file, and wrote another lambda to empty and delete all the redundant buckets, but I keep getting the Illegal constraint error, even when I gave the Location Constraint and specified the default AWS-REGION
+* I tried creating S3 buckets through CLI, but the same location constraint error is haunting me.
+* I tried Cloud Custodian auto-tag policy, but it's not working for some reason on newly created instances, and their documentation wasn't of much help.
+
+**Questions I'm hoping I can get answers to -** 
+
+1. Is there a way I can modify my CFT, so I can create S3 and use it in the same deployment stack?
+2. Are there any workarounds for working with Amazon s3 in different regions?
+
+I'm sorry if it is a long and boring problem, I've been trying some workaround for a week and the manual work is getting to me.
+## [11][Athena create partition.](https://www.reddit.com/r/aws/comments/gqs1fk/athena_create_partition/)
+- url: https://www.reddit.com/r/aws/comments/gqs1fk/athena_create_partition/
 ---
-Hi all,
+So the simple question is... I'm familiar with CTAS queries and how I'm able to create an entirely new table as the output of a merge of two other tables.
 
-I’m hoping someone can help me with what I’m sure isn’t too difficult, but I’m having a hard time figuring out.
+But in this instance, what I would like to do is run a query against two date partitioned tables every day to add a partition to a table for a particular partition key.
 
+Essentially something along the lines of:
 
-The situation:
-We were using AWS for a Woocommerce site, but recently we’ve moved our .com domain away from AWS. The instance (EC2, RDS, etc.) has been untouched, I simply pointed our .com domain elsewhere via our registrar.
+     ALTER TABLE merged ADD PARTITION (date = '20200526') WITH (format='parquet', external_location='s3://my-bucket/my-key') AS select * from table1
 
-The desired outcome:
-We already have a .net domain associated with AWS, and would look this to now point to the old .com instance as a legacy reference. 
-
-The issue:
-This is my first time working with Route53, so I’m unsure which DNS entries I need to copy over from the previous .com zone to the .net zone. Is Route53 all that is needed here or are there changes that need to be made to the instance? I have already changed the domain in Wordpress wp-config on the instance.
-
-
-Many thanks in advance for any light you can shine on this for me! I’m relatively well-versed in CPanel but was kind of dropped into AWS unexpectedly.
+But I can't see any documentation around creating a partition from query results... just creating tables.  This feels lacking...

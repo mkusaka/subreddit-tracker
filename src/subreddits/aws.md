@@ -21,164 +21,138 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][Migrating from GCP to AWS. Need advice to get up to speed](https://www.reddit.com/r/aws/comments/gqst9c/migrating_from_gcp_to_aws_need_advice_to_get_up/)
-- url: https://www.reddit.com/r/aws/comments/gqst9c/migrating_from_gcp_to_aws_need_advice_to_get_up/
----
-Our management has decided to move from GCP to AWS.  
- We use the following services in GCP:
-
-Compute: 
-
-GKE, Compute Engine VMs,  
-
-Storage: 
-
-SQL ( for Postgres DB), Google Storage bucket,
-
-More helper services: 
-
-Pubsub, cloud functions, cloud scheduler, Stackdriver ( logging and monitoring), cloud tasks, cloud build, bigQuery   
-
-
-In the first phase I'll be migrating just the kubernetes, databases. The helper services will require changes in application code, which i will be doing in the next phase. 
-
-Now, I just logged into my AWS account. GCP has a very neat step by step documentation for those migrating from AWS to GCP. But for moving from GCP to AWS I dont find any documentation. Can someone pls give me a few pointers that I need to keep in mind before I start creating the infra on AWS? Are there any gotchas that I need to be aware of?
-## [3][Send cloudinit output to cloudwatch logs](https://www.reddit.com/r/aws/comments/gqvq8j/send_cloudinit_output_to_cloudwatch_logs/)
-- url: https://www.reddit.com/r/aws/comments/gqvq8j/send_cloudinit_output_to_cloudwatch_logs/
----
-When having a lot of EC2 instances that use UserData, it gets difficult to track the output, as you have to log in to each instance to see the output of the cloud-init logs. I wrote a small golang program that can send the output of your commands straight to cloudwatch logs. That way, you can easily see and track errors in userdata. PR's &amp; feedback welcome! GitHub Repo: [https://github.com/in4it/tee2cloudwatch](https://github.com/in4it/tee2cloudwatch)
-## [4][AWS SSO and Jenkins/Terraform/some other CI](https://www.reddit.com/r/aws/comments/gqsr0a/aws_sso_and_jenkinsterraformsome_other_ci/)
-- url: https://www.reddit.com/r/aws/comments/gqsr0a/aws_sso_and_jenkinsterraformsome_other_ci/
----
-Hey all!
-
-We have been working on implementing SSO with GSuite for Central auth, and working great(ish).
-
-One issue I am working on is that our infra built in Terraform. Locally, its okay, it still can find the users SSO credentials, even if you have them post into a credentials file manually.
-
-My question is regarding Jenkins or other CI services. How do you provision your credentials, so it can authenticate with SSO? 
-Do you use some helper, or just generate an IAM role in the account you use to deploy in?
-## [5][Show content from S3 on the frontend](https://www.reddit.com/r/aws/comments/gqweuw/show_content_from_s3_on_the_frontend/)
-- url: https://www.reddit.com/r/aws/comments/gqweuw/show_content_from_s3_on_the_frontend/
----
-Hi all, 
-
-I am working on an app, and where I need to find a way to show content from S3 on my frontend. 
-
-Before, I wrote a lambda that runs once a day, scrapes certain content and saves a file to S3 as a txt file. But I don't know how to access it/show it, since I have 0 experience with React. What would you suggest as a solution?  
-
-
-Is it better to write the logic in the react file or there is a better way? I could write a python lambda,  that will loop through the bucket and return the content, but still don't know how can I connect it to the FE.
-
-I am still new to programming, so I hope this makes sense.
-## [6][Which tool for querying semi-structured data?](https://www.reddit.com/r/aws/comments/gqvf2h/which_tool_for_querying_semistructured_data/)
-- url: https://www.reddit.com/r/aws/comments/gqvf2h/which_tool_for_querying_semistructured_data/
----
-Advice needed. We are building a modular pipeline in AWS for text processing. I am building a lot of timing and other metrics, which will be collected as JSON objects with various tags and values.
-
-I'd like to gather all this and query it, such as finding min, max and avg values over time spans, finding patterns in the data etc.
-
-What's the most cost effective and/or best tool for storing these metrics, and doing queries that can do basic aggregation and other data mining on generic data objects that may evolve over time (not all objects might have the same exact schema as we evolve the system)  I don't have that much familiarity with NoSQL but I wonder if that's the direction I should go? We integrate with Cloudwatch already, is that useful for more general data processing?
-
-I guess this may be two questions: which data store and which query tool. Hoping to find something that doesn't require a huge time investment to learn. 
-
-Thanks!
-## [7][AWS SSO: no reports for user and group based access?](https://www.reddit.com/r/aws/comments/gqsgis/aws_sso_no_reports_for_user_and_group_based_access/)
-- url: https://www.reddit.com/r/aws/comments/gqsgis/aws_sso_no_reports_for_user_and_group_based_access/
----
-Where do I get a high level view of every AWS account a particular user or group is assigned to in AWS SSO? I can't see this information anywhere within the Console (side rant: and there's no API yet).
-
-I can go into each individual AWS Account in SSO and see which groups and users are assigned to that _specific_ account. But doing that for 20+ accounts, one by one, to provide a report for compliance and audit seems obscene.
-## [8][Is there a better way to write this buildspec.yml file? Newbie trying to use codebuild / codepipeline](https://www.reddit.com/r/aws/comments/gqqpgf/is_there_a_better_way_to_write_this_buildspecyml/)
-- url: https://www.reddit.com/r/aws/comments/gqqpgf/is_there_a_better_way_to_write_this_buildspecyml/
----
-Pardon for my ignorance, I have tried a few hours to figure this out
-
-My buildspec file I wrote:
-
-    version: 0.2
-    
-    phases:
-      install:
-        commands:
-          - echo Installing Serverless...
-          - npm install -g serverless
-      pre_build:
-        commands:
-          - echo Installing frontend dependencies...
-          - cd frontend-serverless &amp;&amp; npm install
-          - echo Installing backend dependencies...
-          - cd .. &amp;&amp; cd backend-serverless &amp;&amp; npm install
-      build:
-        commands:
-          - echo Deploying serverless backend...
-          - cd .. &amp;&amp; cd backend-serverless &amp;&amp; serverless deploy
-          - echo Deploying serverless frontend...
-          - cd .. &amp;&amp; cd frontend-serverless &amp;&amp; serverless
-      post_build:
-        commands:
-          - echo Deployment completed on `date`
-    
-
-My Project structure :
-
-    [frontend]
-    [backend]
-    buildspec.yml
-frontend and backend are two different project folders both of which rely on the serverless framework.
-
-My codebuild works and deploys correctly but notice how I am using ```cd ..``` in a few of the commands to get back to the previous directory.  It is very ugly however I cannot find a better way to make this work at the moment.
-
-Is there a better way to reference the root working directory in codebuild?  I can't find any documentation.
-
-Thank you for your help.
-## [9][So You Suddenly Need to Reduce Your AWS Bill: 4 Things We Did](https://www.reddit.com/r/aws/comments/gqcbqo/so_you_suddenly_need_to_reduce_your_aws_bill_4/)
-- url: https://www.patientcolife.com/so-you-suddenly-need-to-reduce-your-aws-bill-4-things-we-did/
+## [2][10 years of building .NET on AWS | Amazon Web Services](https://www.reddit.com/r/aws/comments/grbcso/10_years_of_building_net_on_aws_amazon_web/)
+- url: https://aws.amazon.com/blogs/developer/10-years-of-building-net-on-aws/
 ---
 
-## [10][Can anyone help me figure out a workaround or a better solution for my current problem? I can't figure out how to make my CFT access S3 bucket from different regions.](https://www.reddit.com/r/aws/comments/gqx0uj/can_anyone_help_me_figure_out_a_workaround_or_a/)
-- url: https://www.reddit.com/r/aws/comments/gqx0uj/can_anyone_help_me_figure_out_a_workaround_or_a/
+## [3][⏰⏰ **AWS Summit Online – June 30**](https://www.reddit.com/r/aws/comments/gr87g0/aws_summit_online_june_30/)
+- url: https://www.reddit.com/r/aws/comments/gr87g0/aws_summit_online_june_30/
 ---
-**The use case** \- I have a lambda that will auto-tag every newly created ec2 and rds instances with the creator's IAM user id. I uploaded the lambda code in an S3 bucket in the form of a zip.
+I wanted to extend to you all the opportunity to attend the AWS Public Sector Summit Online–from the comfort of your home. We’re replacing our in-person event with a best-in-class online event experience happening on June 30. It’s a **free-to-attend** conference that’s a massive remote learning opportunity while many of us are itching to get back to the office. It’s time to invest in yourself and expand that skillset.   
+ 
 
-  This is how my bucket looks -   
-**bucket name:** resources-for-autotag  
-|  lambda-function.zip  
+You’ll have nearly all of the opportunities that you get from in person events at this online event, including: networking in chat rooms, one-on-one time with our experts, and exploring content &amp; resources for every use case you think of.   
+ 
 
-I've written a CFT which deploys a CloudWatch rule and some IAM policies. This CFT takes the code from the bucket and deploys the lambda along with the CW rules and IAM policies.  
-My CFT requires the name of the bucket which should be provided by us.
+When you need a break from sessions, you can get lost in any of our many focus areas, also known as Zones, where content is more segmented, fun, and intentional. Also, there will be trivia, puzzles, and event tasks you can complete to earn points &amp; badges that can be tracked on the event leaderboard that records how close you are to winning an Amazon Echo.   
 
-**The problem** is that CFT can't access the bucket if launched in different regions than where my resource bucket is located. I tried making the bucket public(which isn't the best practice, I know) but that didn't work either.   
-I'm forced to create a bucket in every region with the same content. It's becoming pretty redundant and time taking and honestly the repetitive work is getting to me more than I'd like to admit.   
-I'm working on an Organization account, and my permissions and access to other AWS services are pretty limited. 
 
-In addition to all this, I have more than 50 accounts I have to deploy this to.
+[REGISTER NOW](https://pages.awscloud.com/WWPS_Summit_Online_2020.html?trk=nbbaile_outreach_reddit)  
 
-   
-**Trials  -** 
 
-* I tried bucket replication. But it doesn't make much sense as I have to use the content only once, and the process is more time taking than just creating buckets in different regions and uploading the zip file. 
-* CFT StackSet won't work either for the same reason that S3 buckets can't be accessed from other regions.
-* I cannot add the lambda function directly in the CFT, as it's not usually a best practice and moreover the code is more than the size that is allowed inline CFT.
-* I tried writing a lambda, using boto3 which creates S3 buckets in different regions, uploads the file, and wrote another lambda to empty and delete all the redundant buckets, but I keep getting the Illegal constraint error, even when I gave the Location Constraint and specified the default AWS-REGION
-* I tried creating S3 buckets through CLI, but the same location constraint error is haunting me.
-* I tried Cloud Custodian auto-tag policy, but it's not working for some reason on newly created instances, and their documentation wasn't of much help.
-
-**Questions I'm hoping I can get answers to -** 
-
-1. Is there a way I can modify my CFT, so I can create S3 and use it in the same deployment stack?
-2. Are there any workarounds for working with Amazon s3 in different regions?
-
-I'm sorry if it is a long and boring problem, I've been trying some workaround for a week and the manual work is getting to me.
-## [11][Athena create partition.](https://www.reddit.com/r/aws/comments/gqs1fk/athena_create_partition/)
-- url: https://www.reddit.com/r/aws/comments/gqs1fk/athena_create_partition/
+As always, share with friends, colleagues, and family. You never know who you're helping.
+## [4][Only allow traffic to EC2 instance through CloudFront?](https://www.reddit.com/r/aws/comments/graugb/only_allow_traffic_to_ec2_instance_through/)
+- url: https://www.reddit.com/r/aws/comments/graugb/only_allow_traffic_to_ec2_instance_through/
 ---
-So the simple question is... I'm familiar with CTAS queries and how I'm able to create an entirely new table as the output of a merge of two other tables.
+How would one configure EC2 to only allow traffic through my CloudFront distribution?  I'm using CloudFront as a proxy for caching and for https, and would like to close off all direct access to my EC2's ip address.
+## [5][AWS Workspace - Set keyboard language](https://www.reddit.com/r/aws/comments/grhi2j/aws_workspace_set_keyboard_language/)
+- url: https://www.reddit.com/r/aws/comments/grhi2j/aws_workspace_set_keyboard_language/
+---
+Hello,
 
-But in this instance, what I would like to do is run a query against two date partitioned tables every day to add a partition to a table for a particular partition key.
+I posted a similiar question a few weeks ago.. but I couldnt fix it properly.   
+[https://www.reddit.com/r/aws/comments/g91m7h/aws\_workspace\_set\_keyboard\_language\_and\_disable/](https://www.reddit.com/r/aws/comments/g91m7h/aws_workspace_set_keyboard_language_and_disable/)  
 
-Essentially something along the lines of:
 
-     ALTER TABLE merged ADD PARTITION (date = '20200526') WITH (format='parquet', external_location='s3://my-bucket/my-key') AS select * from table1
+Question: **How can I set the keyboard language (german) after deploying my own created image?**   
 
-But I can't see any documentation around creating a partition from query results... just creating tables.  This feels lacking...
+
+/r/[CARUFO](https://www.reddit.com/user/CARUFO/) told me the solution but its only working randomly.   
+
+
+Solution:  
+
+For the keyboard layout you have to deploy two registry keys via GPO:
+
+HKEY\_CURRENT\_USER\\Keyboard Layout\\Preload\\1
+
+type: REF\_SZ
+
+value: 00000407
+
+And
+
+HKEY\_USERS\\.DEFAULT\\Keyboard Layout\\Preload\\1
+
+type: REF\_SZ
+
+value: 00000407  
+
+
+\+ GPO:  Always wait for the network at computer startup and logon   
+
+
+If I enable the GPO above, my workspaces dont do a single sign on... I have to user login manually after I connted to my workspace.   
+
+
+How do you set your language / keyboard layout?   
+
+
+Many greetings
+## [6][RHEL 7 and aws ec2 get-console-output](https://www.reddit.com/r/aws/comments/gr7owl/rhel_7_and_aws_ec2_getconsoleoutput/)
+- url: https://www.reddit.com/r/aws/comments/gr7owl/rhel_7_and_aws_ec2_getconsoleoutput/
+---
+I'm trying to get userdata outputs and errors into the system logs that are presented either through the gui or using
+
+    aws ec2 get-console-output
+
+I'm having a hard time, has anyone gotten this to work?  
+I've tried solutions like this:  [https://aws.amazon.com/premiumsupport/knowledge-center/ec2-linux-log-user-data/](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-linux-log-user-data/)   
+but it doesn't seem to work for RHEL 7. I"ve also tried passing my commands to tty0 and ttyS0 with no luck  
+for example:   
+echo "testing system log with tty0" &gt; tty0  
+echo "testing system log with ttyS0" &gt; ttyS0
+
+Still no luck.
+
+I"ve noticed that the Amazon Linux ami does this automatically, but I have a client where we must use RHEL 7.x currently.
+## [7][AWS can’t be used for remote access VPN to DC without NAT?](https://www.reddit.com/r/aws/comments/grgw3p/aws_cant_be_used_for_remote_access_vpn_to_dc/)
+- url: https://www.reddit.com/r/aws/comments/grgw3p/aws_cant_be_used_for_remote_access_vpn_to_dc/
+---
+Hey all, 
+
+Been setting up and testing always on VPN configs as of late, and there is a final hurdle for us. 
+
+We have a DC/Office network, with a Direct connect to AWS.  In aws I have a VPC with NLB and public subnet allowing traffic to an RRAS vpn server.  
+
+By amazons rules, an IP not originating from the VPC CIDR will be dropped when it tries to leave the VPC.   This is discussed extensively in various papers and videos by amazon architect, but only in relation to VPC peering and transitive routing.  
+
+Now, we have a vpn set up which NATs out of the RRAS box and routes fine all the way to our office, but for our applications we can’t use NAT, so need the clients issued with an IP from a different subnet.  I have followed the guides and advice and have a non Nat subnet set up for vpn clients which is outside of the VPC CIDR.  this is to allow the route for that subnet to be added to the VPC route table, and pointed at the RRAS server interface. 
+
+Routing works lovely across AWS, but our AWS guys are skeptical that we can get this subnet routing back into our DC.  
+
+For arguments sake,  say our VPC CIDR is 10.0.0.0/16, and we have a client vpn subnet hanging off the RRAS server of 192.168.100.0/24, which is then added to the VPC route table. Source destination checks disabled on instances as well. The RRAS instance is acting as a router and VPN server. 
+
+Any thoughts on whether this remote access use case reaches the limitations of AWS architecture?
+
+Unfortunately it is not well documented!
+
+Best regards
+## [8][AWS DataSync for cold storage offload](https://www.reddit.com/r/aws/comments/grgpqs/aws_datasync_for_cold_storage_offload/)
+- url: https://www.reddit.com/r/aws/comments/grgpqs/aws_datasync_for_cold_storage_offload/
+---
+Hello,
+
+I'm looking for some tips about AWS DataSync for cold storage offload in S3 Glacier/Deep Glacier.
+
+My question is: let's suppose I've uploaded all my data directly to S3 Glacier storage class with AWS DataSync. Then I need to retrieve some of that data with a local NFS share linked to the same S3 bucket, can AWS DataSync manage the retrieval request of my files or I have to manage the data retrieval "by hand"? I think AWS DataSync will notice that the file is not accessibile and I've to retrieve the data that I want to restore "by hand".
+
+Thank you
+## [9][What are LIST limits for an S3 bucket](https://www.reddit.com/r/aws/comments/grjbpp/what_are_list_limits_for_an_s3_bucket/)
+- url: https://www.reddit.com/r/aws/comments/grjbpp/what_are_list_limits_for_an_s3_bucket/
+---
+I'm using a fuse projection for an S3 bucket, but I start hitting 503 errors with ~2200GET TPS. 
+
+I noticed the 5XX errors started coming when LIST requests plateau. I can't find the limit documented anywhere. Does anyone know what the limit is, and if it increases linearly with partitioning (auto or pre)
+
+Thanks
+## [10][Any way to increase the efficiency of 1000 pre-signed S3 urls?](https://www.reddit.com/r/aws/comments/grcm4k/any_way_to_increase_the_efficiency_of_1000/)
+- url: https://www.reddit.com/r/aws/comments/grcm4k/any_way_to_increase_the_efficiency_of_1000/
+---
+I have an image dashboard in part of my app that loads about 1000 images. These are all thumbnails and need to be shown. Is there a better way I can increase the speed of generating 1000 pre-signed S3 urls?
+## [11][No experience in security in aws how hard it is, can it be automated with a service for fixes?](https://www.reddit.com/r/aws/comments/gr84le/no_experience_in_security_in_aws_how_hard_it_is/)
+- url: https://www.reddit.com/r/aws/comments/gr84le/no_experience_in_security_in_aws_how_hard_it_is/
+---
+i built a aws Express.js Beanstalk from codestart+used RDS for database and deployed
+
+what are my options to be safe in production?

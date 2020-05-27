@@ -31,164 +31,75 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Introduction to MotionLayout on Android](https://www.reddit.com/r/androiddev/comments/gqsija/introduction_to_motionlayout_on_android/)
-- url: https://arsfutura.com/magazine/introduction-to-motionlayout-on-android
+## [3][Google Removes 5 Million Negative TikTok Reviews](https://www.reddit.com/r/androiddev/comments/grfs6h/google_removes_5_million_negative_tiktok_reviews/)
+- url: https://www.mobilemarketingreads.com/google-removes-5-million-negative-tiktok-reviews/
 ---
 
-## [4][My Android Developer Dream shattered into pieces 💔....](https://www.reddit.com/r/androiddev/comments/gqfg9v/my_android_developer_dream_shattered_into_pieces/)
-- url: https://www.reddit.com/r/androiddev/comments/gqfg9v/my_android_developer_dream_shattered_into_pieces/
----
-I'm an Android developer since 2016. I used to build apps with firebase &amp; parse for almost 3+ yrs. I'm capable of any project as per the requirement. Today I have a Technical interview from startup located in India. I'm previous week they sent me a challenge to complete.
-
-1. I have to create own image loading library which uses memory cache, not disk memory.
-
-2. They have given a demo API URL to load an image in recycler view.
-
-3. I have to follow SOLID principles &amp; MVVM model.
-
-4. I have to use Dependency Injection.
-
-First I thought it's an easy task. I recently learned MVVM architecture with data binding, Coroutines, jetpack navigation etc.
-
-Since I practised &amp; able to implement with this above pattern. After searching for how to create an image loading library. 
-
-I got some GitHub open source project. Which fits my requirement to create image loading library. I was on cloud nine. I understand how it works. But not fully. 
-
-I still implemented those class to my project. And it works like a charm.
-
-I have successfully submitted my project with the above requirements before the due date.
-
-After a week. I got a confirmation mail as I got shortlisted for the Final Technical round. I was very happy. 
-
-
-Here comes the twist. 
-
-The interviewer starts reviewing my project &amp; asks me to explain it. I was explaining what I did. 
-
-Suddenly he asked about HttpInterceptor. I really don't know much detail about it. I simply answered it's a network monitoring. 
-
-
-He again asked more Deeply about HttpInterceptor. I'm unable to answer. Then he starts asking me questions about like
-
-Interviewer - What's is Appcompat?
-
-Me - Remains silent. And I don't know.
-
-Interviewer - okay. What happens when we load 1000s of an item in recycler view. And how many times will onBindViewHolder called?
-
-
-Me - Explains a little bit about it. He's still not convinced.
- Even I know I'm just blabbering.
-
-I'm silently crying, my hands &amp; legs are shivering. Since it was a screen sharing and video conference with more than 4 people. I controlled my tears.
-
-
-Again,
-
-Interviewer - Explain your implementation of Image loading library.
-
-Me - At this place, I have no answers. I don't understand anything about image loading. I know the concept of how image loading works. But in the code, it's completely different. I never hear of Executor Service in my 3 yrs of Android Development. Which was in that Image loading class. 
-
-
-I honestly said I don't know...
-
-Interviewer - Don't be afraid tell me if you got source code from any GitHub repository. It's not a problem. We have to know that you have understood the concept.
-
-
-Me - Explains where I got this solution for Image loading library.
-
-
-Then I completely fed up. They diverted the topic to bring back my confidence. They asked me what's is your fav subject. 
-
-
-Suddenly they saw I'm using Anaconda in my laptop via screen share. They started asking questions about python. I know the basics of python and created a basic blog app with Django in my college first year. 
-
-
-
-They started digging deeper into OS Topics 🥺...
-
-They asked me about 
-
-
-What is Semaphore?
-
-Explain more about the Android Platform Architecture?
-
-I have no idea. My brain was not concentrating on the questions they're asking.  
-
-Every time they asking the new questions feels like I'm still a noob in Android Development. Even though if have the ability to create any clone apps or any apps. Still, you have to get stronger in the core Android Development.
-
-
-Finally, I have successfully screwed up my interview. And my confidence shattered into pieces.
-
-Interviewer - Do you have any questions for us?
-
-Me - how to improve me as a better android developer.
-
-Interviewer - Try to read more Google document  &amp; to Learn about how the things work in OS.
-
-TBH - Interviewer feels a little bit of Savage to me.
-
-Interviewer &amp; his team literally laughed about my degree. As an engineer, you don't know the basics like that. 
-
-But TBH, I have to improve myself!...
-
-After meeting I have locked myself in the room &amp; cried for 2hrs. And I decided to learn further about core topics in Android. 
-
-Still feeling sad about my interview. But I will bounce back. 
-
-I'm sharing to this community because I have learnt a lot of things from here. 
-
-I have attached the project requirements below.
-
-[Project Requirements ](https://i.imgur.com/WlxuEP9.jpg)
-
-
-[GitHub Repo](https://github.com/Spikeysanju/Picto)
-
-
-
-Thank you, Developers, for contributing to the community.
-
-Any suggestions to get a core understanding of Android development &amp; as well as documents link will be useful for me.
-
-Thanks in advance ♥️...
-## [5][What is the industrial standard in identifying errors in production, without letting the user's app crash?](https://www.reddit.com/r/androiddev/comments/gqu0m9/what_is_the_industrial_standard_in_identifying/)
-- url: https://www.reddit.com/r/androiddev/comments/gqu0m9/what_is_the_industrial_standard_in_identifying/
----
-Letting the app crash when something goes wrong is easy to identify errors, since the stacktraces will pop up in the Play Console. But in the real world, letting the app crash isn't a pleasant user experience, so catching it at the end is what most developers do (I assume, correct me if I'm wrong). How does one keep track of errors in production this way?
-## [6][I'm new to learning android development and I have followed the tutorial my lecturer gave me and everything is the exact same in mine as his but its showing me this error, does anyone have any idea what is causing this?](https://www.reddit.com/r/androiddev/comments/gqwikt/im_new_to_learning_android_development_and_i_have/)
-- url: https://i.redd.it/bhyz013jw3151.png
+## [4][Storage updates in Android 11](https://www.reddit.com/r/androiddev/comments/grciza/storage_updates_in_android_11/)
+- url: https://developer.android.com/preview/privacy/storage
 ---
 
-## [7][I need ur help guys to make my CV better and easy to understand?](https://www.reddit.com/r/androiddev/comments/gqvexl/i_need_ur_help_guys_to_make_my_cv_better_and_easy/)
-- url: https://i.redd.it/soyt4iezi3151.jpg
+## [5][Apps maintained by a single developer](https://www.reddit.com/r/androiddev/comments/gr3i8d/apps_maintained_by_a_single_developer/)
+- url: https://www.reddit.com/r/androiddev/comments/gr3i8d/apps_maintained_by_a_single_developer/
+---
+I'm curious what are some successful Android apps that have been built and still being maintained by a single developer instead of a small/medium/large team. 
+Could you share any? 😁
+## [6][Android Studio: Downloading Images Blocks whole IDE](https://www.reddit.com/r/androiddev/comments/grgv1q/android_studio_downloading_images_blocks_whole_ide/)
+- url: https://www.reddit.com/r/androiddev/comments/grgv1q/android_studio_downloading_images_blocks_whole_ide/
+---
+This really inconvenient: I need to download an emulator image for a certain API level. The download is quite big; and **blocks** the whole IDE! Now I am forced to wait.
+
+&amp;#x200B;
+
+https://preview.redd.it/unsmts7b4a151.png?width=2120&amp;format=png&amp;auto=webp&amp;s=839813c9856756b48327f2b038c45f4547bf4cad
+
+Is there a workaround, by the way?
+## [7][Android Studio 4.1 Canary 10 new project templates now depend on MDC-Android 1.1.0, use updated themes/styles guidance and support dark theme](https://www.reddit.com/r/androiddev/comments/grfad6/android_studio_41_canary_10_new_project_templates/)
+- url: https://twitter.com/androidstudio/status/1265547345393049602
 ---
 
-## [8][Source code for official COVID-19 italian app released](https://www.reddit.com/r/androiddev/comments/gq7va5/source_code_for_official_covid19_italian_app/)
-- url: https://github.com/immuni-app/immuni-app-android
+## [8][ActivityResultContracts.TakePicture now returns a Boolean instead of a Bitmap](https://www.reddit.com/r/androiddev/comments/grfust/activityresultcontractstakepicture_now_returns_a/)
+- url: https://developer.android.com/reference/androidx/activity/result/contract/ActivityResultContracts.TakePicture
 ---
 
-## [9][Designing and Working with Single View States on Android - zsmb.co](https://www.reddit.com/r/androiddev/comments/gqfe46/designing_and_working_with_single_view_states_on/)
-- url: https://zsmb.co/designing-and-working-with-single-view-states-on-android/
+## [9][India’s contact-tracing app Aarogya Setu is now open source](https://www.reddit.com/r/androiddev/comments/gr6ek2/indias_contacttracing_app_aarogya_setu_is_now/)
+- url: https://github.com/nic-delhi/AarogyaSetu_Android
 ---
 
-## [10][I have been a android developer for 3 years, and I would like to know what is the best way to develop a java app?](https://www.reddit.com/r/androiddev/comments/gqsuh6/i_have_been_a_android_developer_for_3_years_and_i/)
-- url: https://www.reddit.com/r/androiddev/comments/gqsuh6/i_have_been_a_android_developer_for_3_years_and_i/
+## [10][Android Jetpack IssueTracker](https://www.reddit.com/r/androiddev/comments/grit7m/android_jetpack_issuetracker/)
+- url: https://www.reddit.com/r/androiddev/comments/grit7m/android_jetpack_issuetracker/
 ---
-I have been hearing about unit tests, project structures and architectures.  
+Hi there,
 
+I submitted an issue on the Android Jetpack - Room IssueTracker almost a week ago and I haven't had any activity on it. Roughly how long is one expected to wait? What are your experiences with submitting an issue there? Should I be expecting a reply at all?  Also, what should one do when there isn't a reply? Apart from StackOverflow, is there a place where I can get some guidance about my specific issue since I am developing my app alone?
 
-What are some topics and guideline would you use to build your own application properly?
-## [11][OptIn-mechanism can be used to enforce factory functions for inline classes](https://www.reddit.com/r/androiddev/comments/gqaexd/optinmechanism_can_be_used_to_enforce_factory/)
-- url: https://i.redd.it/oy5zjteqqw051.png
+For those who are interested, here is the link to my issue: [https://issuetracker.google.com/issues/157261134](https://issuetracker.google.com/issues/157261134) I don't know, maybe some of you could provide some insight :)
+## [11][Workflows for implementing backend interactions](https://www.reddit.com/r/androiddev/comments/grisrg/workflows_for_implementing_backend_interactions/)
+- url: https://www.reddit.com/r/androiddev/comments/grisrg/workflows_for_implementing_backend_interactions/
 ---
+When implementing a new endpoint using Retrofit, do you guys make a request and check the response by using some http client, like Postman, or do you just somehow use Retrofit for it?
 
-## [12][Suggest good resources for learning Kotlin for Android](https://www.reddit.com/r/androiddev/comments/gqpipx/suggest_good_resources_for_learning_kotlin_for/)
-- url: https://www.reddit.com/r/androiddev/comments/gqpipx/suggest_good_resources_for_learning_kotlin_for/
+With Retrofit it's possible to declare a response type as a String so that to just log it out and examine it, but then you need to hook another interactor, which is an additional library, which is actually fine, yet every time you need to do this repetitive setup.
+
+Or is it just silly to use Retrofit for checking what is the structure of the response?
+
+My workflow is like the first one, i.e. Postman goes first, yet I'm thinking there might be nicer ways doing it. Thank you!
+
+Update: This question goes under an assumption there's no example of the response you need to describe for parsing with the library.
+## [12][Is there a way to Mirror Andriod with Broken Screen on Computer](https://www.reddit.com/r/androiddev/comments/grjmoo/is_there_a_way_to_mirror_andriod_with_broken/)
+- url: https://www.reddit.com/r/androiddev/comments/grjmoo/is_there_a_way_to_mirror_andriod_with_broken/
 ---
-Right now I am following Codelabs example and they are really good, but I am looking for others supplimentary resources be it course or book or blogs to further improve learning experience. 
+Here is what I have tried so far:
 
-Please do suggest books, courses etc that you personally found very helpful.
+``` 
+adb devices
+```
+and it didn't detect de device. 
 
-Thank You 🙏
+After 20-30 minutes of furious googling, I found this repo: https://github.com/ribomation/DroidAtScreen1
+
+Set the variable and compiled the program. It executed a blank screen.
+
+Do you guys have any other ideas for this? 
+
+Thank you so much in advance

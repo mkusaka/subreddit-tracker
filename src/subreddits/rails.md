@@ -19,156 +19,114 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Best Way to Implement Multi Column Search Feature](https://www.reddit.com/r/rails/comments/gqtri1/best_way_to_implement_multi_column_search_feature/)
-- url: https://www.reddit.com/r/rails/comments/gqtri1/best_way_to_implement_multi_column_search_feature/
+## [2][railsnew.io: the simplest way to generate a Rails app with (or without!) all the bells and whistles](https://www.reddit.com/r/rails/comments/gr7g5d/railsnewio_the_simplest_way_to_generate_a_rails/)
+- url: https://www.reddit.com/r/rails/comments/gr7g5d/railsnewio_the_simplest_way_to_generate_a_rails/
 ---
-So I wanted to add search feature which would look for LIKE results in multiple columns of the table, ie author (via relation), description, comment et cetc. Can anyone recommend me best approach, gem for this? :) I saw multiple gems but most of them seem too bulky for my simple needs.
-## [3][Rails 6 and parallel tests: get ID/number of current executor](https://www.reddit.com/r/rails/comments/gqtb87/rails_6_and_parallel_tests_get_idnumber_of/)
-- url: https://www.reddit.com/r/rails/comments/gqtb87/rails_6_and_parallel_tests_get_idnumber_of/
+There’s been a lot of discussion lately about generating new Rails apps. There’s an endless number of tweets lamenting over the default choices.
+It’s one of the [hottest topics in ‘May of WTFs’](https://discuss.rubyonrails.org/t/interactive-rails-new/74355).
+
+Even though Rails is more than 15 years old, we are still using the same mechanism to create a new Rails app: `rails new`. And that’s not a problem in and of itself: `rails new` is undoubtedly very powerful and customizable using the template API. But that’s the thing: developers are lazy and do NOT want to customize. This is especially true for __Rails__ developers: convention over configuration is the name of the game!
+
+However… we grew increasingly opinionated about those conventions. DHH’s omakase swiss-army knife grew significantly over the years, and  some (most?) people think it’s more of a kitchen sink now. 
+
+There’s no consensus on what a slimmed-down starter Rails stack should look like, either. Some would go as far as dropping everything and just start with the minimum. Others are __almost__ fine with the omakase stack, except a few things: typically Postgres, RSpec, or perhaps, the Javascript/frontend choices. And there’s everything in-between, centering around the idea of a ‘circa-2009’ stack.
+
+[DHH himself acknowledged the issue](https://discuss.rubyonrails.org/t/interactive-rails-new/74355/50) and gave his blessing to add a —minimal  and an —interactive flag to the official `rails new` generator (as seen on Create React App, Vue CLI, Nuxt.js etc.)
+
+[railsnew.io](https://railsnew.io) is aiming to solve the same problem, using a different approach (for starters, it’s a web application, rather than part of the `rails new` CLI.) [railsnew.io](https://railsnew.io) started out as a weekend fun project. However, with the integration of [railsbytes.com](https://railsbytes.com) and other features added after some initial feedback, we believe it has the potential to become something truly useful.
+
+The app is rough around the edges right now - we are planning to fix things/add more features if it proves to be useful to the community. However, even in its current beta state, it is simple, fast and intuitive to create a new Rails app with everything you (don’t) need. 
+
+Let’s say, you’d like to use Postgres, Stimulus Reflex, and Tailwind, ignoring some things (e.g. spring, various Rails sub-frameworks, sprockets, Turbolinks etc.). With [railsnew.io](https://railsnew.io), this means a few clicks - and it just works!
+
+Once you choose your app’s ingredients and generate the app, you’ll get step-by-step instructions on how to verify it - tailored to that exact stack (provided that you are using any railsbytes, like Stimulus (Reflex) or Tailwind - there’s no use to verify the standard stuff).
+
+I guess that’s enough rambling for now - please [give it a spin](https://railsnew.io) and let us know what do you think!
+## [3][Is it OK to catch StandardError in all controller actions, do something, and re-raise the exception?](https://www.reddit.com/r/rails/comments/grgrns/is_it_ok_to_catch_standarderror_in_all_controller/)
+- url: https://www.reddit.com/r/rails/comments/grgrns/is_it_ok_to_catch_standarderror_in_all_controller/
 ---
-I need to try something with Capybara to attempt to solve an issueand I need to set a different server port for each executor when I am using parallel tests. With old parallelisation gems you could use the env variable TEST_ENV_NUMBER to get a different number for each executor process, but that doesn't seem to work with Rails' own parallel tests and I can't find anything similar. Any idea? Thanks
-## [4][When to use Engines for breaking up monolith?](https://www.reddit.com/r/rails/comments/gqjmjv/when_to_use_engines_for_breaking_up_monolith/)
-- url: https://www.reddit.com/r/rails/comments/gqjmjv/when_to_use_engines_for_breaking_up_monolith/
+Is this OK or bad coding practice?
+
+    class ApplicationController &lt; ActionController::Base
+    
+    around_action :catch_and_rescue
+    
+    def catch_and_rescue
+        yield 
+    rescue StandardError =&gt; e
+        do something here such as logging and/or send email
+        raise e
+    end
+
+I know there are gems that do this but I don't want to complicate my application further. Do you think this would cause any problems in the future? Or should I just swallow the hard pill and install a gem like [exception\_notification](https://github.com/smartinez87/exception_notification)? This app won't be used by more than 100 people concurrently so I don't expect to be spammed by this.
+## [4][How to avoid N+1 query using SQL views (materialized) in Rails application](https://www.reddit.com/r/rails/comments/gqy90z/how_to_avoid_n1_query_using_sql_views/)
+- url: https://www.reddit.com/r/rails/comments/gqy90z/how_to_avoid_n1_query_using_sql_views/
 ---
-We have two Rails repos that use a Rails models gem we have.  This gem contains all the Rails models.  One is the main repo that serves as a backend for the frontend application.  The other small repo is an API for direct client access.
+In this article, we consider a solution using the SQL view to avoid query problem N+1 when calculating the average values in Ruby on Rails application.  
 
-It's a pain to use this models gem as we need to tag releases and it's a lot of overhead.  Now we're combining the two repos together while separating them via Rails Engines.  I personally don't like the approach and wish we just had a regular monolith.  I don't understand why we don't just namespace the API.
 
-It's been a long project that isn't complete yet that's converting it into this monolith with Engines.  I'm concerned because if we had a normal monolith we would have been done already with I think easier-to-manage code.  We could have spent that time upgrading Rails.  Now that will probably be delayed I'm guessing.
+ Tutorial and link to GitHub is available at: 
 
-Am I wrong thinking this is over-engineered?  If it is over-engineered, how do you convince your coworkers and manager?
-## [5][Working with Rails 6 / Webpack / Syntax](https://www.reddit.com/r/rails/comments/gqq7jm/working_with_rails_6_webpack_syntax/)
-- url: https://www.reddit.com/r/rails/comments/gqq7jm/working_with_rails_6_webpack_syntax/
+[https://jtway.co/how-to-avoid-n-1-query-using-sql-views-materialized-in-rails-application-7cf415cd112f](https://jtway.co/how-to-avoid-n-1-query-using-sql-views-materialized-in-rails-application-7cf415cd112f)
+## [5][noob question about duplicating data for less db queries](https://www.reddit.com/r/rails/comments/grde7i/noob_question_about_duplicating_data_for_less_db/)
+- url: https://www.reddit.com/r/rails/comments/grde7i/noob_question_about_duplicating_data_for_less_db/
 ---
-I'm having some errors when trying to compile react js stuff. I'm currently migrating a project from rails 5 to 6 so the additional dependencies had to be configured manually.
+hello ! I'm a new ish Rails dev using it on a side project which will hopefully result in a commercial product down the line.
 
-It happens when I use something like this in a js file:
+My question, to reduce the number of db queries, does it make sense to duplicate a subset of data in a model / db record which appears in another model ? Then our views only need one db query. If you want to edit things, then you a) get the data from the relation and b) make sure you change the duplicated fields to match the new relation value.
 
-```
-someArray.push(&lt;SomeComponent/&gt;)
-```
+A concrete example, say I have a Ticket model, which can be assigned to a User. Ticket has an int id field which relates to the User ID. If my Ticket model has a field for "user name", then I for all my read operations, I can access just that ticket for everything I need, and I save myself a query for [user.id](https://user.id) .
 
-The error message:
+Am I nuts ?
 
-```
-Module parse failed: Unexpected token (34:6)
-You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file.
-```
-
-What I've already done:
-
-* included @babel/core, @babel/preset-env, @babel-preset-react, @babel-preset-typescript
-* Did a `rails webpacker:install:react`
-## [6][RSpec book - Aaron Sumner](https://www.reddit.com/r/rails/comments/gqh0q9/rspec_book_aaron_sumner/)
-- url: https://www.reddit.com/r/rails/comments/gqh0q9/rspec_book_aaron_sumner/
+Thanks \~\~
+## [6][SAML SSO Invalid signature in SAML response](https://www.reddit.com/r/rails/comments/gr03b1/saml_sso_invalid_signature_in_saml_response/)
+- url: https://www.reddit.com/r/rails/comments/gr03b1/saml_sso_invalid_signature_in_saml_response/
 ---
-Hello everyone, I´m trying to improve my tests and learn more about RSpec. I found this e-book from [Aaron Sumner - Every day Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec) and I would like to know your opinions since I found a lot of "tutorials" and "videos" but nothing concrete except for this publication. There are even some references from other authors to this one. I would like to purchase it but also would like to know your thoughts about this one in specific plus other recommendations if possible.
-## [7][Solo semi-noob working on complex site to start side business](https://www.reddit.com/r/rails/comments/gqm0bq/solo_seminoob_working_on_complex_site_to_start/)
-- url: https://www.reddit.com/r/rails/comments/gqm0bq/solo_seminoob_working_on_complex_site_to_start/
+I'm using saml-ruby to validate a saml response. And the error message I'm getting is because of this particular line [https://github.com/onelogin/ruby-saml/blob/master/lib/xml\_security.rb#L357](https://github.com/onelogin/ruby-saml/blob/master/lib/xml_security.rb#L357)
+
+I do not understand the signature, public key, and what is being signed. But what I can understand is the certificate in the response x.509's public key is used to verify the signature using the signing algorithm mentioned as part of the response. 
+
+So in my case, the signature does not match and I get an "Invalid SAML signature in the response" error. Could you please help me out which why this is failing, what exactly is being searched for in the signature of the response, and how the IDP generates it.
+## [7][How would model cuts of meat?](https://www.reddit.com/r/rails/comments/gr0mok/how_would_model_cuts_of_meat/)
+- url: https://www.reddit.com/r/rails/comments/gr0mok/how_would_model_cuts_of_meat/
 ---
-Has there been anyone in this situation that can help me see the light at the end of the tunnel?
+I'm not quite sure how to organize my meat model. For example, a cow is broken into primal cuts, which then have sub-primals, which can be processed into steaks, etc.
 
-I'm a decent programmer, although instead of mastering any language I've been kind of forced to jump around in my career in IT. I fell in love with Ruby for automating my sysadmin tasks, self wrote an internal rails app to automate even more, and now have a lot more free time.
-
-I have an idea for a side business, but it's a big task with lots of code to write which requires a lot of reading the documentation (on both advanced rails stuff as well as the gems I'm using) since I'm not a webdev or software engineer. I'd love to partner with someone who knows rails better than me, but obviously choosing a business partner is a major decision and I don't know any rails devs in my area, much less someone I'd trust as a partner. I also can't afford to hire anyone, so having help on this is out.
-
-Has anyone here been in this situation that can give me advice? Mistakes to avoid? Or a success story to brag about and give me more hope? Today has been a bit hard as I remember a friend I served with that once told me if I ever started a business he would join my team in a heartbeat. As a side note (and I hope this is allowed here), I'd like to plug the Special Operations Warrior Foundation, which I'll be donating a percentage of profits to if I ever have any.
-## [8][Restart nginx throws error and crashes rails app](https://www.reddit.com/r/rails/comments/gqg1v5/restart_nginx_throws_error_and_crashes_rails_app/)
-- url: https://www.reddit.com/r/rails/comments/gqg1v5/restart_nginx_throws_error_and_crashes_rails_app/
----
-Ruby on Rails beginner here.
-
-I have an application that makes requests to an application server that is run on Rails, Nginx, and Passenger.
-
-I want to edit one file on the application server. This is a small file called mailer.rb that controls sending mail to clients. When by reading online, to see my changes I needed to restart my Nginx service. I did so with the code `sudo service nginx reload`.
-
-When I reloaded nginx, the application throws an error page, as attached.
-
-https://preview.redd.it/bpxhi2tncy051.png?width=1263&amp;format=png&amp;auto=webp&amp;s=fd761c7d443f7a6f79391ee6d59ad2a26a3cfdcb
-
-When looking into the error logs, the response it is giving me is as follows:
-
-    App 27766 output: Error: The application encountered the following error: cannot load such file -- /var/www/my-backend/code/config/environment (LoadError)
-    App 27766 output:
-    App 27766 output:     config.ru:3:in \require_relative'`
-    App 27766 output:     config.ru:3:in \block in &lt;main&gt;'`
-    App 27766 output: /var/www/my-backend/code/vendor/bundle/ruby/2.4.0/gems/rack-2.0.7/lib/rack/builder.rb:55:in \instance_eval'`
-    App 27766 output: /var/www/my-backend/code/vendor/bundle/ruby/2.4.0/gems/rack-2.0.7/lib/rack/builder.rb:55:in \initialize'`
-    App 27766 output:     config.ru:1:in \new'`
-    App 27766 output:     config.ru:1:in \&lt;main&gt;'`
-    App 27766 output: /usr/share/passenger/helper-scripts/rack-preloader.rb:101:in \eval'`
-    App 27766 output: /usr/share/passenger/helper-scripts/rack-preloader.rb:101:in \preload_app'`
-    App 27766 output: /usr/share/passenger/helper-scripts/rack-preloader.rb:189:in \block in &lt;module:App&gt;'`
-    App 27766 output: /usr/lib/ruby/vendor_ruby/phusion_passenger/loader_shared_helpers.rb:380:in \run_block_and_record_step_progress'`
-    App 27766 output: /usr/share/passenger/helper-scripts/rack-preloader.rb:188:in \&lt;module:App&gt;'`
-    App 27766 output: /usr/share/passenger/helper-scripts/rack-preloader.rb:30:in \&lt;module:PhusionPassenger&gt;'`
-    App 27766 output: /usr/share/passenger/helper-scripts/rack-preloader.rb:29:in \&lt;main&gt;'`
-    [ E 2020-05-25 11:52:13.5984 1351/T2x age/Cor/App/Implementation.cpp:221 ]: Could not spawn process for application /var/www/my-backend/code: The application encountered the following error: cannot load such file -- /var/www/my-backend/code/config/environment (LoadError)
-    Error ID: 7e0ef459
-    Error details saved to: /tmp/passenger-error-FqS6Dm.html
+What is a good way to structure this? 4 models for animal, primal, sub-primal, and cut?  e.g. cow.primal.subprimal.cut = "delicious"? It feels awkward to access the cuts like this, doesn't it?
 
 &amp;#x200B;
 
-I reverted my changes to the file and tried restarting again but the problem persists. It seems that the file change itself wasn't the problem, but anytime I restart Nginx this happens. Any help would be appreciated.
-## [9][Web App Development](https://www.reddit.com/r/rails/comments/gqahgr/web_app_development/)
-- url: https://www.reddit.com/r/rails/comments/gqahgr/web_app_development/
----
-Hello Everyone. I've been surfing through the internet on how to create a web app but so far I haven't gotten enough Information. 
-First Question: Can I create a cross platform web app with Ruby on Rails?
-2nd: Can I create the app alone with no other team member?
-3rd: Will the back end,frontend and database be created on one the same framework?
-## [10][dynamically creating ActionCable subscriptions in asset pipeline](https://www.reddit.com/r/rails/comments/gpx1hi/dynamically_creating_actioncable_subscriptions_in/)
-- url: https://www.reddit.com/r/rails/comments/gpx1hi/dynamically_creating_actioncable_subscriptions_in/
----
-In expanding that DHH YouTube tutorial for an ActionCable chatroom, I came across a [much more fleshed out example](https://www.thegreatcodeadventure.com/rails-5-action-cable-with-multiple-chatroom-subscriptions/) that loops through all existing conversations and creates a subscription for each. This approach "works," but it essentially hardcodes the app's current number of conversations into the asset pipeline, and then leaves it as is until the assets are regenerated. So really, it's not too usable.
+EDIT:
 
-What approaches have you taken to dynamically create ActionCable subscriptions?
+Sorry I didn't respond yesterday. My brain was fried by the time I finished work. 
 
-**assets/javascripts/channels/messages.coffee**
+I'm thinking about two different uses for the model:
 
-    &lt;% Conversation.all.each do |conversation| %&gt;
-        App['conversation_' + &lt;%= conversation.id %&gt;] = App.cable.subscriptions.create { 
-          channel: "MessagesChannel", conversation: &lt;%= conversation.id %&gt; 
-        }, 
-        {
-          connected: -&gt;
-            console.log 'Connected'
-    
-          disconnected: -&gt;
-            console.log 'Disconnected'
-    
-          received: (data) -&gt;
-            $("[data-conversation-id='" + data.conversation_id + "']").append(data.message)
-            $("#conversation-main").scrollTop($("#conversation-main")[0].scrollHeight);
-    
-          speak: (body, conversation_id) -&gt;
-            @perform 'speak', body: body, conversation_id: conversation_id
-    
-          set_conversation_id: (conversation_id) -&gt;
-            console.log conversation_id
-            this.conversation_id = conversation_id
-        }
-    
-      &lt;% end %&gt;
-    
-      $(document).on 'turbolinks:load', -&gt;
-        submit_message()
-        scroll_bottom()
-    
-      submit_message = () -&gt;
-        $('#response').on 'keydown', (event) -&gt;
-          if event.keyCode is 13
-            conversation_id = $("[data-conversation-id]").data("conversation-id")
-            # values = $(this).serializeArray()
-            App['conversation_' + conversation_id].set_conversation_id(conversation_id)
-            App['conversation_' + conversation_id].speak(event.target.value, conversation_id)
-            event.target.value = ""
-            event.preventDefault()
-    
-      scroll_bottom = () -&gt;
-        if $('#messages').length &gt; 0
-          $('#messages').scrollTop($('#messages')[0].scrollHeight)
-## [11][Action Text Question](https://www.reddit.com/r/rails/comments/gq5s7r/action_text_question/)
-- url: https://www.reddit.com/r/rails/comments/gq5s7r/action_text_question/
+1. An inventory for a user. Say I buy a 1/2 cow (which I have), I would like to track what I have left. e.g. `User.inventory` lists all meat in my freezer.
+2. A cut explorer so that I can see where a `Piece` is from and identify if there are any exclusion rules. As u/beejamin noted, you can't get a full rib roast &amp; ribeyes.
+## [8][C++ HTTP library for POSTing/GETing to Rails 6?](https://www.reddit.com/r/rails/comments/gr7nsd/c_http_library_for_postinggeting_to_rails_6/)
+- url: https://www.reddit.com/r/rails/comments/gr7nsd/c_http_library_for_postinggeting_to_rails_6/
 ---
-Anybody happen to know whether Action Text fields take in html code and display it on the view?
+I need to develop a client in C++14 that talks to a Rails 6 application. Can anybody recommend any libraries? Ideally, I'd like something that works with Devise with me having to manage as little as possible.
+
+The client application will need to run on Windows.
+
+Also, I will need to send small binary attachments to Rails, so it would be nice if the library made that easy.
+
+I see a variety of C++ HTTP libraries out there (cpr, libcurl, cpp-httplib, poco) but I'm not sure if any one is more or less easier to use with Rails.
+## [9][Best Way to Implement Multi Column Search Feature](https://www.reddit.com/r/rails/comments/gqtri1/best_way_to_implement_multi_column_search_feature/)
+- url: https://www.reddit.com/r/rails/comments/gqtri1/best_way_to_implement_multi_column_search_feature/
+---
+So I wanted to add search feature which would look for LIKE results in multiple columns of the table, ie author (via relation), description, comment et cetc. Can anyone recommend me best approach, gem for this? :) I saw multiple gems but most of them seem too bulky for my simple needs.
+## [10][Custom Validator](https://www.reddit.com/r/rails/comments/gr4vz9/custom_validator/)
+- url: https://www.reddit.com/r/rails/comments/gr4vz9/custom_validator/
+---
+Does anyone have a Rails 6 resource for making a custom validator that would accept params in order#new controller. I’ve built an order lifecycle that is customized for a small business’ web store.  At the moment of payment, instantiating the order from a cart, I need to validate not only the Order model but also many parts of the Contact model (which are never required aside from this moment of declaring shipping/billing info).  To account for guest checkout, I don’t wish put these validations in an existing model; I want the validation to be freestanding and perform only in this checkout route.
+
+
+I completed a bootcamp several years ago, but after Dev Boot Camp closed, it took down its github; and nearly all of the code I wrote was in clones of project prompts from the DBC github that were removed.  I was financially sunk after camp and had to resort to immediate employment instead of rebuilding my portfolio from nothing.  So!  I’m grasping for current resources, and would consider hiring a tutor if anyone if interested!
+## [11][Are redis connections and action cable connections the same thing?](https://www.reddit.com/r/rails/comments/gr3s8b/are_redis_connections_and_action_cable/)
+- url: https://www.reddit.com/r/rails/comments/gr3s8b/are_redis_connections_and_action_cable/
+---
+Sorry if this is a dumb question, but I've never set up action cable before.  I have it all working in dev, and on my staging server, but I want to make sure that once this goes into production, I'm ready.

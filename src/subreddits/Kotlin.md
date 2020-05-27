@@ -1,5 +1,29 @@
 # Kotlin
-## [1][Export Typescript definitions in 1.4-M1](https://www.reddit.com/r/Kotlin/comments/gqoacw/export_typescript_definitions_in_14m1/)
+## [1][Create progressive web apps with 100% Kotlin](https://www.reddit.com/r/Kotlin/comments/gr4wz6/create_progressive_web_apps_with_100_kotlin/)
+- url: https://github.com/grantas33/Kotlin-PWA-starter-kit
+---
+
+## [2][Getting the reference of delegated object](https://www.reddit.com/r/Kotlin/comments/gr74xp/getting_the_reference_of_delegated_object/)
+- url: https://www.reddit.com/r/Kotlin/comments/gr74xp/getting_the_reference_of_delegated_object/
+---
+When using delegation, is it possible to gain access to the references of delegated objects?
+
+&amp;#x200B;
+
+    val b = B() // get access to this reference inside A
+    val a = A(B)
+    
+    class A(delegation: B): B by delegation {
+        fun something() {
+            val x = this // reference to instance of A
+            val y = (this as B) // same as x, how to get the original reference of b?    
+        }
+    }
+## [3][Google has removed over 5 million user reviews from Playstore for TikTok in a week. The app was part of many controversies and as a result its ratings were falling fast. With Google removing user reviews, Tiktok's ratings have slightly improved.](https://www.reddit.com/r/Kotlin/comments/grgwqb/google_has_removed_over_5_million_user_reviews/)
+- url: https://i.redd.it/ubibzhhv41151.jpg
+---
+
+## [4][Export Typescript definitions in 1.4-M1](https://www.reddit.com/r/Kotlin/comments/gqoacw/export_typescript_definitions_in_14m1/)
 - url: https://www.reddit.com/r/Kotlin/comments/gqoacw/export_typescript_definitions_in_14m1/
 ---
 I'm trying to build my shared library with the new backend (IR) in order to export Typescript definition files.
@@ -39,7 +63,7 @@ Of course, I need to keep the IR back-end to be able to do  d.ts export
 &amp;#x200B;
 
 Any ideas ?
-## [2][Issue with Jetbrain's kotlin jvm maven archetype.](https://www.reddit.com/r/Kotlin/comments/gqt927/issue_with_jetbrains_kotlin_jvm_maven_archetype/)
+## [5][Issue with Jetbrain's kotlin jvm maven archetype.](https://www.reddit.com/r/Kotlin/comments/gqt927/issue_with_jetbrains_kotlin_jvm_maven_archetype/)
 - url: https://www.reddit.com/r/Kotlin/comments/gqt927/issue_with_jetbrains_kotlin_jvm_maven_archetype/
 ---
 Started learning Kotlin last week. I'm using VS code and generated a maven project using Jetbrain's Kotlin single module jvm [archetype](https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-archetype-jvm).
@@ -49,22 +73,22 @@ Code compiles and jars are built. But when I run: `java -jar app.jar` I get: `no
 I've also tried the build plugin referred by [them](https://kotlinlang.org/docs/reference/using-maven.html#self-contained-jar-file)  to generate a self contained jar with "-with-dependencies.jar" name suffix. It says to point main class name in the plugin. But the main function being a top level function, I don't know what values to provide there. Nonetheless, even the built jar doesn't run and says "no main manifest..."
 
 I've looked online and everyone suggests using IDEA. It is very heavy for my machine. Is there anyway I can rectify this issue?
-## [3][Designing and Working with Single View States on Android - zsmb.co](https://www.reddit.com/r/Kotlin/comments/gqfe6n/designing_and_working_with_single_view_states_on/)
-- url: https://zsmb.co/designing-and-working-with-single-view-states-on-android/
----
-
-## [4][Do you know any framework to build Apps for Linux Arm coding with Kotlin?](https://www.reddit.com/r/Kotlin/comments/gqf4co/do_you_know_any_framework_to_build_apps_for_linux/)
+## [6][Do you know any framework to build Apps for Linux Arm coding with Kotlin?](https://www.reddit.com/r/Kotlin/comments/gqf4co/do_you_know_any_framework_to_build_apps_for_linux/)
 - url: https://www.reddit.com/r/Kotlin/comments/gqf4co/do_you_know_any_framework_to_build_apps_for_linux/
 ---
 
-## [5][kotlin programming: The Big Nerd Ranch Guide Book](https://www.reddit.com/r/Kotlin/comments/gqh3go/kotlin_programming_the_big_nerd_ranch_guide_book/)
+## [7][Designing and Working with Single View States on Android - zsmb.co](https://www.reddit.com/r/Kotlin/comments/gqfe6n/designing_and_working_with_single_view_states_on/)
+- url: https://zsmb.co/designing-and-working-with-single-view-states-on-android/
+---
+
+## [8][kotlin programming: The Big Nerd Ranch Guide Book](https://www.reddit.com/r/Kotlin/comments/gqh3go/kotlin_programming_the_big_nerd_ranch_guide_book/)
 - url: https://www.reddit.com/r/Kotlin/comments/gqh3go/kotlin_programming_the_big_nerd_ranch_guide_book/
 ---
 \#kotlin u/kotlin   
 Is thi book good for someone who never programming in java ? or java is necessary ?
 
 https://preview.redd.it/gvgt9wu5my051.png?width=360&amp;format=png&amp;auto=webp&amp;s=76dab4a99ebb8c4932504a883f3efc9742224782
-## [6][viewModels&lt;&gt;() vs activityViewModels&lt;&gt;() vs createViewModelLazy()](https://www.reddit.com/r/Kotlin/comments/gq5wjk/viewmodels_vs_activityviewmodels_vs/)
+## [9][viewModels&lt;&gt;() vs activityViewModels&lt;&gt;() vs createViewModelLazy()](https://www.reddit.com/r/Kotlin/comments/gq5wjk/viewmodels_vs_activityviewmodels_vs/)
 - url: https://www.reddit.com/r/Kotlin/comments/gq5wjk/viewmodels_vs_activityviewmodels_vs/
 ---
 Recently I've been going thorough the **KTX** libraries and I found several ways to instantiate VM using ktx. 
@@ -72,7 +96,7 @@ Recently I've been going thorough the **KTX** libraries and I found several ways
 I tried following up on the differences between by **viewModels&lt;&gt;()**, **activityViewModels&lt;&gt;()** and **createViewModelLazy()** but couldn't figure out much.  
 
 While all this time, I've been using **KOIN viewmodel artifact** for initializing my VMs, I am just keen to know the differences between the above mentioned.
-## [7][Need help with this confusion in data binding](https://www.reddit.com/r/Kotlin/comments/gq6r2e/need_help_with_this_confusion_in_data_binding/)
+## [10][Need help with this confusion in data binding](https://www.reddit.com/r/Kotlin/comments/gq6r2e/need_help_with_this_confusion_in_data_binding/)
 - url: https://www.reddit.com/r/Kotlin/comments/gq6r2e/need_help_with_this_confusion_in_data_binding/
 ---
 So i am still learning about Android app development with Kotlin using a Udacity course.
@@ -158,31 +182,3 @@ Now i want to know what difference does the equal (=) make in data binding in th
 And why did the code used in the course work for them but didn't work for me?
 
 I didn't find any info about the use of this yet.
-## [8][Annotation processor Extensions](https://www.reddit.com/r/Kotlin/comments/gppuj9/annotation_processor_extensions/)
-- url: https://www.reddit.com/r/Kotlin/comments/gppuj9/annotation_processor_extensions/
----
-I created a repo with the intention of gathering useful extensions/utils for anyone working with Kotlin annotation processing and code generation. Have a look.
-
-https://github.com/iFanie/KTAP
-
-Also, what extension/utils do you find useful for Kotlin annotation processor projects?
-## [9][Understand Kotlin Collection Function Past Tense](https://www.reddit.com/r/Kotlin/comments/gpk2w7/understand_kotlin_collection_function_past_tense/)
-- url: https://medium.com/@elye.project/understand-kotlin-collection-function-past-tense-59f592af9436?source=friends_link&amp;sk=e22ccd272ebd28ef6f417e7b455b5b4f
----
-
-## [10][How to secure Ktor web app with Keycloak Jetty 9.x Adapters?](https://www.reddit.com/r/Kotlin/comments/gpnxq8/how_to_secure_ktor_web_app_with_keycloak_jetty_9x/)
-- url: https://www.reddit.com/r/Kotlin/comments/gpnxq8/how_to_secure_ktor_web_app_with_keycloak_jetty_9x/
----
-Hi all 
-
-I would like to secure the Ktor webapp, that is run on top of Jetty server with [Keycloak Jetty 9.x Adapters][1]. 
-
-Ktor provides a [hook][2] for Jetty server initialization and maybe it is the right place in integrate the Keycloak Jetty 9.x Adapters.  
-
-How to integrate Keycloak Jetty 9.x Adapters into Ktor app?  
-
-Thanks
-
-
-  [1]: https://www.keycloak.org/docs/latest/securing_apps/index.html#_jetty9_adapter
-  [2]: https://ktor.io/servers/configuration.html#jetty

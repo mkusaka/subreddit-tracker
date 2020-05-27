@@ -85,67 +85,43 @@
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][[AskJS] I prefer Vanilla.JS to Typescript. Change my mind.](https://www.reddit.com/r/javascript/comments/gqkpob/askjs_i_prefer_vanillajs_to_typescript_change_my/)
-- url: https://www.reddit.com/r/javascript/comments/gqkpob/askjs_i_prefer_vanillajs_to_typescript_change_my/
----
-Hello guys,
-
-I've been recently looking for a new job, and I noticed that some of my opinions are not very much widespread, so I wanted to confront with the wider community.
-
-A few years ago, when I had to decide between Typescript and vanilla, I ended up picking vanilla due to the work of the tc39 committee. In particular for me the selling point was the pipeline operator ( |&gt; ) which was not supported in typescript back then, as I was already a fan of functional programming.
-
-The more general problem was that, as usual in the JavaScript world, the abstraction layers or the fancy libraries you use make it harder to adopt new changes and web standards, which usually drove me to use the leanest architectures and stacks.
-
-Another thing I disliked about TS, which instead is praised by many, is the type system. In general I think that the best option, especially for highly dynamic languages, is to write a large number of tests, to cover as many cases as possible, and to ensure that the application state is coherent. Many times I started from writing tests, and then wrote the code to solve those tests.
-
-On the other hand the type system should catch many of the bugs the code could have. Yes, many, but not all. You will always have to write tests, so why write type annotations on a highly dynamic language, that are either not relevant or seriously limiting the dynamic part of the language?
-
-My personal approach is to write functional code and use immutable states, because in my experience is the mutability that gives problems, and pure functions are so easy to test....
-
-What do you guys think?
-
-**EDIT**: Elaborating more on the TC39.
-
-Many people complain about babel, and I agree that it's complicated, but I've used it for so long that I know it by heart, and I really miss the configuration flexibility that plain babel offers, compared to TypeScript.
-
-I also think that I might have the "lone programmer syndrome". I've worked often in groups of devs, but I've ALWAYS stressed a lot about separating the code base in modules, that communicate through standardized interfaces, so a big project can be seen as a collection of small libraries, each one under the responsibility of one dev.
-
-Anyhow I'm glad that I received so many responses, it means that this topic is very hot among devs, and I can see a lot of interesting inputs to think about.
-
-**EDIT 2**: Just to be clear, you guys convinced me to try TS again :P maybe I won't change my mind in the end, but at least I will try it :)
-## [4][How To Deploy NodeJS Apps With PM2 &amp; NGINX In Cluster Mode On Production Environment](https://www.reddit.com/r/javascript/comments/gqruhx/how_to_deploy_nodejs_apps_with_pm2_nginx_in/)
-- url: https://meswapnilwagh.com/2020/05/16/how-to-deploy-nodejs-apps-with-pm2-&amp;-ngnix-in-cluster-mode-on-production-environment/
+## [3][I made a tool to merge javascript files with imports/exports into one function.](https://www.reddit.com/r/javascript/comments/grfw6v/i_made_a_tool_to_merge_javascript_files_with/)
+- url: https://github.com/ytiurin/import-export-merger
 ---
 
-## [5][Case study: Analyzing Notion app performance (or how to make a React app load 30% faster by tuning some configs)](https://www.reddit.com/r/javascript/comments/gqery3/case_study_analyzing_notion_app_performance_or/)
-- url: https://3perf.com/blog/notion/
----
-
-## [6][Image annotation using canvas with zoom feature](https://www.reddit.com/r/javascript/comments/gquq9t/image_annotation_using_canvas_with_zoom_feature/)
-- url: https://github.com/beast911/annotater
----
-
-## [7][Understanding object &amp; array destructuring in JavaScript](https://www.reddit.com/r/javascript/comments/gqu3er/understanding_object_array_destructuring_in/)
-- url: https://attacomsian.com/blog/javascript-object-array-destructuring
----
-
-## [8][Today’s JavaScript, from an outsider’s perspective](https://www.reddit.com/r/javascript/comments/gqn9y4/todays_javascript_from_an_outsiders_perspective/)
-- url: http://lea.verou.me/2020/05/todays-javascript-from-an-outsiders-perspective/
----
-
-## [9][New progressive APIs coming to Chromium browsers](https://www.reddit.com/r/javascript/comments/gqw9dp/new_progressive_apis_coming_to_chromium_browsers/)
+## [4][New progressive APIs coming to Chromium browsers](https://www.reddit.com/r/javascript/comments/gqw9dp/new_progressive_apis_coming_to_chromium_browsers/)
 - url: https://medium.com/swlh/how-microsoft-is-making-edge-the-best-browser-for-pwas-3b4ad1197be6
 ---
 
-## [10][Causes of Memory Leaks in JavaScript and How to Avoid Them](https://www.reddit.com/r/javascript/comments/gqdm58/causes_of_memory_leaks_in_javascript_and_how_to/)
-- url: https://www.ditdot.hr/en/causes-of-memory-leaks-in-javascript-and-how-to-avoid-them
+## [5][Storytelling about Best Practices to Handle Errors in JavaScript. Good insights.](https://www.reddit.com/r/javascript/comments/grgsfg/storytelling_about_best_practices_to_handle/)
+- url: https://medium.com/@arthurfrank/javascript-error-handling-the-exception-5068b96c123
 ---
 
-## [11][Making the shortest prime number generator in JavaScript by abusing shorthand. (It is the shortest as far as I know)](https://www.reddit.com/r/javascript/comments/gqoxwh/making_the_shortest_prime_number_generator_in/)
-- url: https://github.com/justinfernald/Insanely-Small-Prime-Number-Generator-In-JavaScript/blob/master/generator.js
+## [6][[AskJS] Do you believe that Javascript is the best path to learn Web and mobile application development (Node/React/Ang/Vue etc) or the others are catching up Java, Php, C# (Blazor/WebAssembly etc) ?? I've heard Asp.net was very fast ?](https://www.reddit.com/r/javascript/comments/grfp4t/askjs_do_you_believe_that_javascript_is_the_best/)
+- url: https://www.reddit.com/r/javascript/comments/grfp4t/askjs_do_you_believe_that_javascript_is_the_best/
+---
+Do you believe that Javascript is the best path to learn Web and mobile application development (Node/React/Ang/Vue etc) or the others are catching up Java, Php, C# (Blazor/WebAssembly etc)  ?? I've heard Asp.net was very fast but less popular less ppl doing C# ?
+## [7][TC39er podcast: TC39 edtior Shu-yu's interview.](https://www.reddit.com/r/javascript/comments/grjl75/tc39er_podcast_tc39_edtior_shuyus_interview/)
+- url: https://tc39er.us/episode-4-shu-yu/
 ---
 
-## [12][For the ones interested in JAMStack, check out this online meetup](https://www.reddit.com/r/javascript/comments/gqteja/for_the_ones_interested_in_jamstack_check_out/)
-- url: https://www.meetup.com/TryCatchMeetups/events/270862945/
+## [8][The Evolution of JavaScript](https://www.reddit.com/r/javascript/comments/griaow/the_evolution_of_javascript/)
+- url: https://dotnetblog.tech/dotnetblog/the-evolution-of-javascript
+---
+
+## [9][Recreational programming with JavaScript. Most people use JavaScript in context of web development, but I have tons of fun with JavaScript (and codeguppy.com) building mini games, playing with turtle graphics, etc What's your opinion about this site?](https://www.reddit.com/r/javascript/comments/grcf1d/recreational_programming_with_javascript_most/)
+- url: https://codeguppy.com
+---
+
+## [10][duckdoc-io/duckdoc-cli - Never let your docs be out of sync with the code](https://www.reddit.com/r/javascript/comments/grhsra/duckdocioduckdoccli_never_let_your_docs_be_out_of/)
+- url: https://github.com/duckdocio/duckdoc-cli
+---
+
+## [11][Build a QRCode API and Inventory Management System with Autocode and Airtable](https://www.reddit.com/r/javascript/comments/greoo1/build_a_qrcode_api_and_inventory_management/)
+- url: https://medium.com/@janeth_10755/build-a-qrcode-api-and-inventory-management-system-with-autocode-and-airtable-7ec23149cd23?postPublishedType=initial
+---
+
+## [12][Test in Prod. Uptime tests written in Mocha](https://www.reddit.com/r/javascript/comments/gr3wr0/test_in_prod_uptime_tests_written_in_mocha/)
+- url: https://asserted.io
 ---
 

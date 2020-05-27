@@ -22,133 +22,125 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Mutex-Server, a new npm module I've developed (+ need your advise)](https://www.reddit.com/r/typescript/comments/gqso87/mutexserver_a_new_npm_module_ive_developed_need/)
-- url: https://www.npmjs.com/package/mutex-server
+## [2][Possible to use TypeScript to check JS only? Trying to figure out incremental conversion path for huge project](https://www.reddit.com/r/typescript/comments/grj31m/possible_to_use_typescript_to_check_js_only/)
+- url: https://www.reddit.com/r/typescript/comments/grj31m/possible_to_use_typescript_to_check_js_only/
+---
+tl;dr trying to just use TypeScript as analysis tool is that possible?
+
+Hey we have a large project some 100,000 lines of code with open contribution within the company. The code is abused and contributing on by hundreds of devs and people don't care about standards, they are just trying to get their code in to meet their deadline.
+
+I am one of the core maintainers and our main defense is very strict testing requirements and static analysis on our CI which will block pull requests.
+
+In the past when we've introduced new standards, we did it incrementally by making sure the code base did not get worse (e.g. we introduced coverage requirements by only checking that only new code was covered).
+
+We are trying to find a similar path forward for TypeScript but have so far failed. 
+
+However, I keep hearing the benefits of using TypeScript even without converting everything and fixing errors. I noticed the "checkJS" flag and found this pretty useful and was curious if we could run tsc with no output and just use it to check code and find certain errors TypeScript is good at like unresolved variables?
+## [3][TypeScript's Language Features Documentation?](https://www.reddit.com/r/typescript/comments/gr8jt4/typescripts_language_features_documentation/)
+- url: https://www.reddit.com/r/typescript/comments/gr8jt4/typescripts_language_features_documentation/
+---
+I'm trying to get on-board with TypeScript coming from a JavaScript background. All of the documentation only talks about the Types and how to use them. But I'm finding hidden secrets like TypeScript supporting [Optional Chaining](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-7.html) or automatically setting instance variables based on private class constructor arguments.
+
+```
+class Test {
+    constructor(private name) {}
+
+    printName() {
+        console.log(this.name); // &lt;- Somehow this is magically defined by TypeScript?
+    }
+}
+```
+
+I totally get the Type features that TypeScript adds. That's easy to follow and well documented. But there seems to be actual language features beyond just types that it adds to and I'd like to know what all of those are. Where can I find documentation for all of the changes to the JavaScript language TypeScript adds?
+## [4][Exhaustive check in TypeScript](https://www.reddit.com/r/typescript/comments/grjnrm/exhaustive_check_in_typescript/)
+- url: https://www.instagram.com/p/CAsUYVEghoO/
 ---
 
-## [3][Earl - Modern chai replacement tailored for TypeScript](https://www.reddit.com/r/typescript/comments/gqc5tq/earl_modern_chai_replacement_tailored_for/)
-- url: https://github.com/krzkaczor/earl
+## [5][I recently spoke w/a recruiter about a role requiring substantial TS experience. TS is a superset of JS that applies strict and custom types to JS code. If two developers both have very strong JS but one has two years and the other six months of TS, is there really THAT much of a difference?](https://www.reddit.com/r/typescript/comments/gr1ybe/i_recently_spoke_wa_recruiter_about_a_role/)
+- url: https://www.reddit.com/r/typescript/comments/gr1ybe/i_recently_spoke_wa_recruiter_about_a_role/
 ---
+I know that TypeScript has its idioms, its ins and outs, etc., but what I'm questioning is whether there's that substantial a difference in two strong JavaScript engineers who have different amounts of experience specifically with TypeScript. TypeScript itself doesn't seem to be a "years of experience" sort of technology; it's very easy to pick up and, with some practice and study, to implement properly. It's more like Lodash (eh, maybe that's a bit crude a comparison, but you take my meaning--it's just a tool that serves a specific purpose in JavaScript, but not a fundamentally different paradigm. It's not like going from JavaScript to, say, Java.)
 
-## [4][convert d.ts tree as a single d.ts file .](https://www.reddit.com/r/typescript/comments/gquyk2/convert_dts_tree_as_a_single_dts_file/)
-- url: https://www.reddit.com/r/typescript/comments/gquyk2/convert_dts_tree_as_a_single_dts_file/
----
-Lets suppose that I have a `d.ts` file that it imports types from other `d.ts` files which import types from other `d.ts` and it goes on . 
+Edit: A bit more information.
 
-Is there any tool that will allow me to make a single `d.ts` file out of that tree that will have no imported types from other `d.ts` files because it has inside of it all its dependencies ?
-## [5][End-to-end Type Safety in Clean Architecture: a possible solution with TypeScript, GraphQL, MongoDB, React.](https://www.reddit.com/r/typescript/comments/gqx14r/endtoend_type_safety_in_clean_architecture_a/)
+I picked up TypeScript about three months ago and have been using it since. I like type safety, but TypeScript itself doesn't seem to be so radical a departure from JavaScript that I'd eliminate a strong engineer from the running if they have only a few months of experience with the technology. It's really not that tough to pick up and use properly.
+
+Let me know if I'm off-base here.
+## [6][End-to-end Type Safety in Clean Architecture: a possible solution with TypeScript, GraphQL, MongoDB, React.](https://www.reddit.com/r/typescript/comments/gqx14r/endtoend_type_safety_in_clean_architecture_a/)
 - url: https://charlesagile.com/end-to-end-type-safety
 ---
 
-## [6][How can I use path aliases in a library in a way that aliases are resolved when used by library consumers?](https://www.reddit.com/r/typescript/comments/gqupni/how_can_i_use_path_aliases_in_a_library_in_a_way/)
-- url: https://www.reddit.com/r/typescript/comments/gqupni/how_can_i_use_path_aliases_in_a_library_in_a_way/
+## [7][Why is it so hard to iterate over objects in TypeScript?](https://www.reddit.com/r/typescript/comments/gqxh2h/why_is_it_so_hard_to_iterate_over_objects_in/)
+- url: https://effectivetypescript.com/2020/05/26/iterate-objects/
 ---
-Hi. I'm writing a library called `cool-lib` in this library I am using TypeScript path aliases to avoid the relative import path hell.
 
-I am using an alias like so: `"@": "./src"`.
-
-When I try to consume `cool-lib` in an actual project I get import path errors. I'm aware this is expected because the path aliases aren't resolved in the emitted JS.
-
-In order to try get around this I added the `module-alias` npm package to `cool-lib` but the same import errors occur in the project consuming `cool-lib`. I'm not sure if I've misconfigured this or it's not meant to be used for TypeScript libraries. Edit: I just noticed it's failing in declaration files so maybe for the source JS files it's actually working? If this is the case how do I resolve paths in generated declaration files?
-
-Another option I thought of was adding a bundler to the library and releasing the library as a bundle? Not really keen on adding something like Webpack just for this though.
-
-What can I do in `cool-lib` so I can use path aliases but not have the library break when consumed by actual projects due to import paths?
-## [7][Do you have a method for declaring or creating fixed length arrays/tuples that are too long to write?](https://www.reddit.com/r/typescript/comments/gqe334/do_you_have_a_method_for_declaring_or_creating/)
-- url: https://www.reddit.com/r/typescript/comments/gqe334/do_you_have_a_method_for_declaring_or_creating/
+## [8][Is there a way to have TypeScript recompile my project when I save a file without the use of an IDE? (I'm using Vim.)](https://www.reddit.com/r/typescript/comments/gr1o6h/is_there_a_way_to_have_typescript_recompile_my/)
+- url: https://www.reddit.com/r/typescript/comments/gr1o6h/is_there_a_way_to_have_typescript_recompile_my/
 ---
-My use case is specifying arguments for an API that accepts only 100 "ids" per request.
 
-I have looked through [this](https://stackoverflow.com/questions/41139763/how-to-declare-a-fixed-length-array-in-typescript) and [that](https://stackoverflow.com/questions/52489261/typescript-can-i-define-an-n-length-tuple-type) stackoverflow thread and [this github issue](https://github.com/Microsoft/TypeScript/issues/26223).
-## [8][exporting imported interfaces](https://www.reddit.com/r/typescript/comments/gqb0kg/exporting_imported_interfaces/)
-- url: https://www.reddit.com/r/typescript/comments/gqb0kg/exporting_imported_interfaces/
+## [9][Mutex-Server, a new npm module I've developed (+ need your advise)](https://www.reddit.com/r/typescript/comments/gqso87/mutexserver_a_new_npm_module_ive_developed_need/)
+- url: https://www.npmjs.com/package/mutex-server
 ---
-I am creating a package where I want to export the interfaces from the main index.ts file
 
-foo.ts
-
-`export interface Foo {   foo: string }`
-
-interfaces.ts
-
-`export { Foo } from './foo';`
-
-and then the package export
-
-`export * as interfaces from './interfaces';`
-
-if I try to access the interfaces
-
-`import { interfaces } from './index';`
-
-interface has nothing in it
-
-I can, however, import Foo from the interfaces file, which is what I want to avoid  
-`import { Foo } from './interfaces';`  
-`const foo: Foo = {`  
-  `foo: '',`  
-`}`
-## [9][Are you willing to get a mentor?](https://www.reddit.com/r/typescript/comments/gq9nl8/are_you_willing_to_get_a_mentor/)
-- url: https://www.reddit.com/r/typescript/comments/gq9nl8/are_you_willing_to_get_a_mentor/
+## [10][convert d.ts tree as a single d.ts file .](https://www.reddit.com/r/typescript/comments/gquyk2/convert_dts_tree_as_a_single_dts_file/)
+- url: https://www.reddit.com/r/typescript/comments/gquyk2/convert_dts_tree_as_a_single_dts_file/
 ---
-Hey guys, I want to take programming seriously and I am looking for a mentor and I’m not sure who I should pick. I would like to know your opinion on this.  
-As a software engineer who knows the basics, are you willing to pay a mentor to help you?   
-If yes:
+Lets suppose that I have a `d.ts` file that it imports types from other `d.ts` files which import types from other `d.ts` and it goes on .
 
-* How much are you willing to pay if he guarantees you the best results?
-* What problems do you want the mentor to help you with?
-## [10][Need help importing a .gql file into my vue class component](https://www.reddit.com/r/typescript/comments/gpwi83/need_help_importing_a_gql_file_into_my_vue_class/)
-- url: https://www.reddit.com/r/typescript/comments/gpwi83/need_help_importing_a_gql_file_into_my_vue_class/
+Is there any tool that will allow me to make a single `d.ts` file out of that tree that will have no imported types from other `d.ts` files because it has inside of it all its dependencies ?
+
+Edit : [Solution](https://www.reddit.com/r/typescript/comments/go5iy7/make_typescript_understand_that_the_esmodule_i/frz19a5?utm_source=share&amp;utm_medium=web2x) .
+## [11][Build/output issues in TypeScript](https://www.reddit.com/r/typescript/comments/gr0l5q/buildoutput_issues_in_typescript/)
+- url: https://www.reddit.com/r/typescript/comments/gr0l5q/buildoutput_issues_in_typescript/
 ---
-Hello everyone. I started with typescript last week and wanted to redo one of my projects with typescript.
-
-I'm trying to import a .gql file into my vue class component file but it gives me the following error.
-
-" **Cannot find module** "
-
-does anyone maybe know how to import .gql files?
-
-I tried googling but couldn't get anything that is related to .gql files.
-## [11][Object Typing Question](https://www.reddit.com/r/typescript/comments/gpvl62/object_typing_question/)
-- url: https://www.reddit.com/r/typescript/comments/gpvl62/object_typing_question/
----
-Hey all,
-
-Typescript beginner here. This is probably crazy basic but I'm having a hard time putting this into words I can google. Can anyone help me wrap my brain around what's going on here?   Mostly just curious about line 4, where I'm setting the type for the errors object:
-
-`const isRequiredError = "Missing required";`  
-`const dateReg = /0?[1-9]|[12][0-9]|3[01]/-[/-]\d{4}$/;`  
-`const malFormattedDateError = "Date field should be formatted DD-MM-YYYY or DD/MM/YYYY";`  
-`const errors: { [field: string]: string } = {};`
-
-`if (!value.description) errors.description = isRequiredError;`  
-`if (!value.date) errors.date = isRequiredError;`  
-`if (!value.specialist) errors.specialist = isRequiredError;`  
-`if (!dateReg.test(value.date)) errors.date = malFormattedDateError;`  
-`if (!value.discharge.date) errors.discharge.date = isRequiredError;`
-
-`return errors;`
-
-Everything else I've typed has been stuff like:
-
-`interface Foo = {  bar: string;}`
-
-Whereas this is more like:
-
-`interface Foo = {  [bar: string]: string;}`
-
-What are the brackets doing here?
-
-Also this seems to accommodate doing something like
-
-`errors.field = "You effed up";`
-
-How would I type this to accommodate something like this as well?
-
-`errors.field.subfield = "You effed up here too"`
-
-Thanks for the help!
+When I run \`tsc\` from the directory in which my \`.tsconfig\` file is located, no errors appear yet no \`build\` directory is generated. Any idea what the problem might be? Here's my \`.tsconfig\`:
 
 &amp;#x200B;
 
-Edit: Formatting
+`{`
+
+`"compilerOptions": {`
+
+`"target": "es5",`
+
+`"outDir": "./build",`
+
+`"allowJs": true,`
+
+`"checkJs": true,`
+
+`"resolveJsonModule": true,`
+
+`"listEmittedFiles": true,`
+
+`"listFiles": true,`
+
+`"esModuleInterop": true,`
+
+`"skipLibCheck": true,`
+
+`"allowSyntheticDefaultImports": true,`
+
+`"strict": true,`
+
+`"alwaysStrict": true,`
+
+`"forceConsistentCasingInFileNames": true,`
+
+`"module": "esnext",`
+
+`"moduleResolution": "node",`
+
+`"resolveJsonModule": true,`
+
+`"noEmit": true`
+
+`},`
+
+`"include": ["./**/*"],`
+
+`"exclude": ["./**/node_modules/*"],`
+
+`"typeroots": ["src/types/index.ts", "node_modules/@types"]`
+
+`}`

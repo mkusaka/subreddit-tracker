@@ -19,114 +19,242 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][railsnew.io: the simplest way to generate a Rails app with (or without!) all the bells and whistles](https://www.reddit.com/r/rails/comments/gr7g5d/railsnewio_the_simplest_way_to_generate_a_rails/)
-- url: https://www.reddit.com/r/rails/comments/gr7g5d/railsnewio_the_simplest_way_to_generate_a_rails/
+## [2][Gimme Gems Thursdays - Found an awesome new gem? Post it here!](https://www.reddit.com/r/rails/comments/gs526t/gimme_gems_thursdays_found_an_awesome_new_gem/)
+- url: https://www.reddit.com/r/rails/comments/gs526t/gimme_gems_thursdays_found_an_awesome_new_gem/
 ---
-There’s been a lot of discussion lately about generating new Rails apps. There’s an endless number of tweets lamenting over the default choices.
-It’s one of the [hottest topics in ‘May of WTFs’](https://discuss.rubyonrails.org/t/interactive-rails-new/74355).
+Please use this thread to discuss **cool** but relatively **unknown** gems you've found.
 
-Even though Rails is more than 15 years old, we are still using the same mechanism to create a new Rails app: `rails new`. And that’s not a problem in and of itself: `rails new` is undoubtedly very powerful and customizable using the template API. But that’s the thing: developers are lazy and do NOT want to customize. This is especially true for __Rails__ developers: convention over configuration is the name of the game!
+You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
-However… we grew increasingly opinionated about those conventions. DHH’s omakase swiss-army knife grew significantly over the years, and  some (most?) people think it’s more of a kitchen sink now. 
-
-There’s no consensus on what a slimmed-down starter Rails stack should look like, either. Some would go as far as dropping everything and just start with the minimum. Others are __almost__ fine with the omakase stack, except a few things: typically Postgres, RSpec, or perhaps, the Javascript/frontend choices. And there’s everything in-between, centering around the idea of a ‘circa-2009’ stack.
-
-[DHH himself acknowledged the issue](https://discuss.rubyonrails.org/t/interactive-rails-new/74355/50) and gave his blessing to add a —minimal  and an —interactive flag to the official `rails new` generator (as seen on Create React App, Vue CLI, Nuxt.js etc.)
-
-[railsnew.io](https://railsnew.io) is aiming to solve the same problem, using a different approach (for starters, it’s a web application, rather than part of the `rails new` CLI.) [railsnew.io](https://railsnew.io) started out as a weekend fun project. However, with the integration of [railsbytes.com](https://railsbytes.com) and other features added after some initial feedback, we believe it has the potential to become something truly useful.
-
-The app is rough around the edges right now - we are planning to fix things/add more features if it proves to be useful to the community. However, even in its current beta state, it is simple, fast and intuitive to create a new Rails app with everything you (don’t) need. 
-
-Let’s say, you’d like to use Postgres, Stimulus Reflex, and Tailwind, ignoring some things (e.g. spring, various Rails sub-frameworks, sprockets, Turbolinks etc.). With [railsnew.io](https://railsnew.io), this means a few clicks - and it just works!
-
-Once you choose your app’s ingredients and generate the app, you’ll get step-by-step instructions on how to verify it - tailored to that exact stack (provided that you are using any railsbytes, like Stimulus (Reflex) or Tailwind - there’s no use to verify the standard stuff).
-
-I guess that’s enough rambling for now - please [give it a spin](https://railsnew.io) and let us know what do you think!
-## [3][Is it OK to catch StandardError in all controller actions, do something, and re-raise the exception?](https://www.reddit.com/r/rails/comments/grgrns/is_it_ok_to_catch_standarderror_in_all_controller/)
-- url: https://www.reddit.com/r/rails/comments/grgrns/is_it_ok_to_catch_standarderror_in_all_controller/
+Please include a **description** and a **link** to the gem's homepage in your comment.
+## [3][html.erb vs html.haml vs html.slim - which one do you use?](https://www.reddit.com/r/rails/comments/gs0x4b/htmlerb_vs_htmlhaml_vs_htmlslim_which_one_do_you/)
+- url: https://www.reddit.com/r/rails/comments/gs0x4b/htmlerb_vs_htmlhaml_vs_htmlslim_which_one_do_you/
 ---
-Is this OK or bad coding practice?
 
-    class ApplicationController &lt; ActionController::Base
-    
-    around_action :catch_and_rescue
-    
-    def catch_and_rescue
-        yield 
-    rescue StandardError =&gt; e
-        do something here such as logging and/or send email
-        raise e
+
+[View Poll](https://www.reddit.com/poll/gs0x4b)
+## [4][Integrating with Google Calendar in a Rails app - The Right Way](https://www.reddit.com/r/rails/comments/gs3qov/integrating_with_google_calendar_in_a_rails_app/)
+- url: https://www.reddit.com/r/rails/comments/gs3qov/integrating_with_google_calendar_in_a_rails_app/
+---
+### Prerequisite
+1) If using rails then use the gem `google-api-client`
+2) I am considering here that you already have the `access_token` of the user. I will write a different blog to explain how to get that.
+
+### 1) Do full initial synch of events
+It has the following steps - 
+  * Fetch a new `access_token` if the token has expired.
+  * Create the service authorization object which will be used for fetching the events.
+
+Ref code for `service authorization`
+```ruby
+def create_service_auth
+  #create service auth
+  @service = Google::Apis::CalendarV3::CalendarService.new
+  @service.authorization = token.google_secret.to_authorization
+  return unless token.expired?
+
+  new_access_token = @service.authorization.refresh! #refresh access_token
+end
+```
+
+  * Fetching all calendar events(past, present and future).
+ 
+    * The full sync is the original request for all the resources of the collection you want to synchronize.
+    * In the response to the list operation, you will find a field called nextSyncToken representing a sync token. You'll need to store the value of nextSyncToken. If the result set is too large and the response gets paginated, then the nextSyncToken field is present only on the very last page.
+    * Depending on what your use case is, it will be better to perform this job as a background task.
+    * [Events: list API](https://developers.google.com/calendar/v3/reference/events/list) is used for this. The gem provides an easier method called `list_events`
+
+Ref code for `syncing events`
+```ruby
+  def get_events
+    @events_arr = []
+    @events_list = @service.list_events('primary', single_events: true, max_results: 500)
+    @sync_token = @events_list.next_sync_token
+    @page_token = @events_list.next_page_token
+    @events_arr &lt;&lt; @events_list.items
+    while @sync_token.blank?
+      @events_list = @service.list_events('primary', single_events: true, max_results: 500, page_token: @page_token)
+      @sync_token = @events_list.next_sync_token
+      @page_token = @events_list.next_page_token
+      @events_arr &lt;&lt; @events_list.items
     end
+  end
+```
 
-I know there are gems that do this but I don't want to complicate my application further. Do you think this would cause any problems in the future? Or should I just swallow the hard pill and install a gem like [exception\_notification](https://github.com/smartinez87/exception_notification)? This app won't be used by more than 100 people concurrently so I don't expect to be spammed by this.
-## [4][How to avoid N+1 query using SQL views (materialized) in Rails application](https://www.reddit.com/r/rails/comments/gqy90z/how_to_avoid_n1_query_using_sql_views/)
-- url: https://www.reddit.com/r/rails/comments/gqy90z/how_to_avoid_n1_query_using_sql_views/
+### 2) Create a webhook to receive push notifications
+
+After a full sync of events, the next step is to setup a Webhook so that google can inform us of the changes that we subscribe for.
+For every user that links their calendar to the app, we will create a subscription so that we can be informed whenever there is a change in their calendar.
+
+It has the following steps - 
+  * Fetch a new `access_token` if the token has expired.
+  * Create the service authorisation object which will be used for fetching the events, exactly same as shown above.
+  * Set up a Channel - It creates a channel with google and specifies the callback URL or the web-hook URL.
+  * Watch events - After the web-hook is set up, we need to specify what events we want to watch and also need to specify from which calendar.
+
+```ruby
+def setup_channel
+  @channel = Google::Apis::CalendarV3::Channel.new(address: callback_url, id: channel_id, type: "web_hook")
+end
+```
+
+`callback_url` - It can't be localhost, it has to be a valid `https` url. For testing purposes you can use [ngrok](https://ngrok.com/).
+`channel_id` - This is a UUID - `SecureRandom.uuid`
+
+
+```ruby
+  def watch_events
+    time_min = DateTime.now.rfc3339
+    @webhook = @service.watch_event('primary', @channel, single_events: true, time_min: time_min)
+  end
+```
+`primary` - refers to the `primary` calendar of the user.
+`single_events` - Setting it to true also gives all events belonging to 1 single recurring event.
+
+Now, whenever there will be any change in the primary calendar of the user google will hit the registered web-hook for the user.
+
+In the request Google will pass `X-Goog-Resource-ID` and `X-Goog-Channel-ID`. We would have to hit the `list_events` API again to fetch the changed events data for that user.
+
+Only difference will be that instead of passing the page token like we did earlier, we would pass the `sync_token`.
+
+```ruby
+  def get_events
+    @events_list = @service.list_events('primary', single_events: true, max_results: 2500, sync_token: sync_token)
+  end
+```
+
+
+
+### 3) Saving X-Goog-Resource-ID &amp; X-Goog-Channel-ID
+
+When we created the web-hook google will return us with a `resource_id`, `resource_uri`, `id`(that we created). We need to save all this data so that we can get to know for which user the events have changed.
+Also the channel expires in around 1 week so we need to keep creating new web-hooks before it expires.
+
+### 3) Deleting the events with status `cancelled`
+
+This is the flow that took me some time to understand. So what happens when a user changes the time of their event or has the user changed a single event or all the events in a recurring event. What google does is that 
+* if the user changes a single event, then google keeps the `calendar_id` as same.
+* if the user changes a recurring event and selects `all` or `following events` as option then the `calendar_id` changes for all the events. Hence, in this case we need to delete the old events and add new events in our system. So, this is a check that you will have to add when saving the calendar events in your system.
+
+
+That's it - It's quite messy if you are trying to figure it out from scratch and I hope this article will help you all.
+## [5][Monitoring multi-dyno Heroku app](https://www.reddit.com/r/rails/comments/gs3n7t/monitoring_multidyno_heroku_app/)
+- url: https://www.reddit.com/r/rails/comments/gs3n7t/monitoring_multidyno_heroku_app/
 ---
-In this article, we consider a solution using the SQL view to avoid query problem N+1 when calculating the average values in Ruby on Rails application.  
+Hello there.
 
+I'm trying to set up some metrics monitoring on Heroku which would eventually be wired to Grafana Cloud. The formation on Heroku is multi-dyno (one web dyno running Rails and two dynos for some workers), with dynos potentially scaling up (especially web dyno).
 
- Tutorial and link to GitHub is available at: 
+I've gave a shot at setting up Prometheus, trying out different Ruby gems ([discourse/prometheus_exporter](https://github.com/discourse/prometheus_exporter/) and [prometheus/client_ruby](https://github.com/prometheus/client_ruby/)) but with no luck. The problem I'm facing is that dynos are isolated, so even both of these gems have multi process support, it just doesn't work on Heroku. E.g., the official Prometheus client has `DirectFileStore` which writes to the same file on the filesystem so that different processes can write to it and then expose the same metrics when `/metrics` is called. This doesn't work on Heroku because each dyno gets its own filesystem, so the file can't be shared.
 
-[https://jtway.co/how-to-avoid-n-1-query-using-sql-views-materialized-in-rails-application-7cf415cd112f](https://jtway.co/how-to-avoid-n-1-query-using-sql-views-materialized-in-rails-application-7cf415cd112f)
-## [5][noob question about duplicating data for less db queries](https://www.reddit.com/r/rails/comments/grde7i/noob_question_about_duplicating_data_for_less_db/)
-- url: https://www.reddit.com/r/rails/comments/grde7i/noob_question_about_duplicating_data_for_less_db/
+Another option I've looked into potentially is using StatsD, but that will require running a deamon parallel with the Rails app or workers.
+
+Was anyone in a similar situation before? Or do you use something totally different for your metrics for Heroku apps?
+
+Thanks in advance!
+## [6][How are you hosting small apps these days?](https://www.reddit.com/r/rails/comments/gs0hbh/how_are_you_hosting_small_apps_these_days/)
+- url: https://www.reddit.com/r/rails/comments/gs0hbh/how_are_you_hosting_small_apps_these_days/
 ---
-hello ! I'm a new ish Rails dev using it on a side project which will hopefully result in a commercial product down the line.
+I have various slack bots and little project apps and I feel like I am a little bit antiquated as I host them on a digital ocean VPS and deploy using capistrano. All the cool kids these days are on about containers and I'm wondering if I'm missing out.
 
-My question, to reduce the number of db queries, does it make sense to duplicate a subset of data in a model / db record which appears in another model ? Then our views only need one db query. If you want to edit things, then you a) get the data from the relation and b) make sure you change the duplicated fields to match the new relation value.
+My way works... And it's relatively easy to understand. But I guess one big drawback is that there is a decent amount of setup and config on my host. If I had to start over, there are nginx config files to make, databases to manually install and set up, specific ruby versions to install, etc.
 
-A concrete example, say I have a Ticket model, which can be assigned to a User. Ticket has an int id field which relates to the User ID. If my Ticket model has a field for "user name", then I for all my read operations, I can access just that ticket for everything I need, and I save myself a query for [user.id](https://user.id) .
+I've kind of given up on heroku because a $10 digital ocean VPS seems a better value than $7 per app. There are various cloud services out there, but pricing is not all that easy to figure out and they seem pretty complicated. 
 
-Am I nuts ?
+I'm tempted to redo my apps using Dokku to get containers going easily on a digital ocean box, one nice thing there is that if I ever did need to burn down and start over containers make the setup a lot easier. 
 
-Thanks \~\~
-## [6][SAML SSO Invalid signature in SAML response](https://www.reddit.com/r/rails/comments/gr03b1/saml_sso_invalid_signature_in_saml_response/)
-- url: https://www.reddit.com/r/rails/comments/gr03b1/saml_sso_invalid_signature_in_saml_response/
+I'm curious what others are doing for low cost hosting of small projects these days.
+## [7][Anyone move from frontend to learn RoR?](https://www.reddit.com/r/rails/comments/gs4jsj/anyone_move_from_frontend_to_learn_ror/)
+- url: https://www.reddit.com/r/rails/comments/gs4jsj/anyone_move_from_frontend_to_learn_ror/
 ---
-I'm using saml-ruby to validate a saml response. And the error message I'm getting is because of this particular line [https://github.com/onelogin/ruby-saml/blob/master/lib/xml\_security.rb#L357](https://github.com/onelogin/ruby-saml/blob/master/lib/xml_security.rb#L357)
+Howdy all!   I'm currently working in the WordPress space on the frontend. I spent a few months about a decade ago deep-diving into Ruby and Rails before moving on to focusing more on FE and WordPress. That's paid off, as the work pays quite well and it seems like there's a decent amount of it out there. 
 
-I do not understand the signature, public key, and what is being signed. But what I can understand is the certificate in the response x.509's public key is used to verify the signature using the signing algorithm mentioned as part of the response. 
+But I'm still curious about the "what-if" I'd stayed with RoR. I never got too-too deep into Rails back then, but I remember really loving Ruby.   I'm wondering if anyone has moved from this frontend track to RoR. 
 
-So in my case, the signature does not match and I get an "Invalid SAML signature in the response" error. Could you please help me out which why this is failing, what exactly is being searched for in the signature of the response, and how the IDP generates it.
-## [7][How would model cuts of meat?](https://www.reddit.com/r/rails/comments/gr0mok/how_would_model_cuts_of_meat/)
-- url: https://www.reddit.com/r/rails/comments/gr0mok/how_would_model_cuts_of_meat/
+A few questions if I may:
+
+How long would it take to get decent with RoR — decent as in employable. Skill-wise now, I've been doing frontend for 10 years or so, I'm probably intermediate-level with React/Vue, to give you some benchmark to go on. I'm definitely not a beginner, but I'm not a backend programmer either.
+
+There's so many posts about the job market from 1-2-3-4+ years ago, with lots of different opinions. The Covid19 situation not withstanding, anyone got an opinion on the 2020-2021 job market? 
+
+Thanks!
+
+ps: I recognize I'm talking about leaving one of the current hottest spaces (React / frontend) and going to a far less hot area, but still interested in perspectives.
+## [8][OPEN: 2020 Ruby on Rails Developer Community Survey](https://www.reddit.com/r/rails/comments/grlcry/open_2020_ruby_on_rails_developer_community_survey/)
+- url: https://www.reddit.com/r/rails/comments/grlcry/open_2020_ruby_on_rails_developer_community_survey/
 ---
-I'm not quite sure how to organize my meat model. For example, a cow is broken into primal cuts, which then have sub-primals, which can be processed into steaks, etc.
+Over ten years ago, we invited our community to participate in the first survey about the state of deploying Ruby on Rails applications. Over the years, we've evolved this to include questions about tools, frameworks, and workflows in order to see how the environment is changing.
 
-What is a good way to structure this? 4 models for animal, primal, sub-primal, and cut?  e.g. cow.primal.subprimal.cut = "delicious"? It feels awkward to access the cuts like this, doesn't it?
+To view previous results: [https://rails-hosting.com/](https://rails-hosting.com/)
+
+To take the 2020 survey visit [https://planetargon.survey.fm/rails-survey-2020](https://planetargon.survey.fm/rails-survey-2020)
+
+Thanks in advance for helping spread the word!
+## [9][Would Rails be considered a good option as api backend for a social network mobile app?](https://www.reddit.com/r/rails/comments/gs1bxt/would_rails_be_considered_a_good_option_as_api/)
+- url: https://www.reddit.com/r/rails/comments/gs1bxt/would_rails_be_considered_a_good_option_as_api/
+---
+Hi guys
+
+The title more or less says it all. I am contemplating using graphql-ruby and rails for a project that involves a social network mobile app built in react native.
+
+I put little stock in flavour of the month tech so I don't want just jump ship and go with something like Hasura or other BaaS solutions but I do want to be critical enough to ask if Rails is the best solution in this case?  
+
+
+Any opinions are welcome!  
+Thanks!
+## [10][Firebase Authentication](https://www.reddit.com/r/rails/comments/gs2s0u/firebase_authentication/)
+- url: https://www.reddit.com/r/rails/comments/gs2s0u/firebase_authentication/
+---
+Hello All,
+
+I’m about to start a new project and I’m scoping out options for various parts. The project will contain a front end web app and a backend API which would be used by a mobile app. Normally, I’d use devise for the front end and devise token with for the backend, but I’m considering firebase auth to move the authentication part out of this application. 
+
+The intention is to use a traditional rails front end with sessions, and the api is to be consumed solely for the mobile app. 
+
+Has anybody got any tips on firebase authentication in this way? The firebase docs show javascript examples for authentication. I’m not keen on turning the front end into a full javascript consumer of the api since it increases the complexity of the application (but I’m not completely against this idea). The original plan was to use sprinklings of stimulus on the front end, but I’m happy to use react or vue. 
+
+After spending a day looking at options I’m thinking that this isn’t realistic in 2020, with firebase, but it’d work with the devise solution. 
+
+I’m just looking for thoughts and ideas. 
+
+Thanks :)
+
+*edit typo
+## [11][Identifier of the bussines included in BLACKLIST](https://www.reddit.com/r/rails/comments/gs5map/identifier_of_the_bussines_included_in_blacklist/)
+- url: https://www.reddit.com/r/rails/comments/gs5map/identifier_of_the_bussines_included_in_blacklist/
+---
+Good afternoon people! I hope this sub reddit is active because I have a problem and it would be great if you can help me.
+
+It turns out that when trying to make an online purchase with a debit card, it pops up a notification on my bank app saying that the page is in BLACKLIST, exactly it says: "identifier of the business included in Blacklist".
+
+What I need to know is the following:
+
+\-Is it possible to alter the merchant's identifier without being part of the team of trade programmers? (like a VPN for web pages ID)
+
+\-What solution can you think of to circumvent the system and be able to buy on this page (I swear it is not illegal! )
 
 &amp;#x200B;
 
-EDIT:
-
-Sorry I didn't respond yesterday. My brain was fried by the time I finished work. 
-
-I'm thinking about two different uses for the model:
-
-1. An inventory for a user. Say I buy a 1/2 cow (which I have), I would like to track what I have left. e.g. `User.inventory` lists all meat in my freezer.
-2. A cut explorer so that I can see where a `Piece` is from and identify if there are any exclusion rules. As u/beejamin noted, you can't get a full rib roast &amp; ribeyes.
-## [8][C++ HTTP library for POSTing/GETing to Rails 6?](https://www.reddit.com/r/rails/comments/gr7nsd/c_http_library_for_postinggeting_to_rails_6/)
-- url: https://www.reddit.com/r/rails/comments/gr7nsd/c_http_library_for_postinggeting_to_rails_6/
+I appreciate your opinions in advance!
+## [12][How to use your custom static files?](https://www.reddit.com/r/rails/comments/grxmgn/how_to_use_your_custom_static_files/)
+- url: https://www.reddit.com/r/rails/comments/grxmgn/how_to_use_your_custom_static_files/
 ---
-I need to develop a client in C++14 that talks to a Rails 6 application. Can anybody recommend any libraries? Ideally, I'd like something that works with Devise with me having to manage as little as possible.
+I am new to rails, and the version I am using is 6, I faced an issue with referring to my static files like CSS and javascript, I tried:
 
-The client application will need to run on Windows.
+\-  typical ways
 
-Also, I will need to send small binary attachments to Rails, so it would be nice if the library made that easy.
+`&lt;link href='assets/stylesheets/customs.css' rel='stylesheet' type='text/css'&gt;`
 
-I see a variety of C++ HTTP libraries out there (cpr, libcurl, cpp-httplib, poco) but I'm not sure if any one is more or less easier to use with Rails.
-## [9][Best Way to Implement Multi Column Search Feature](https://www.reddit.com/r/rails/comments/gqtri1/best_way_to_implement_multi_column_search_feature/)
-- url: https://www.reddit.com/r/rails/comments/gqtri1/best_way_to_implement_multi_column_search_feature/
----
-So I wanted to add search feature which would look for LIKE results in multiple columns of the table, ie author (via relation), description, comment et cetc. Can anyone recommend me best approach, gem for this? :) I saw multiple gems but most of them seem too bulky for my simple needs.
-## [10][Custom Validator](https://www.reddit.com/r/rails/comments/gr4vz9/custom_validator/)
-- url: https://www.reddit.com/r/rails/comments/gr4vz9/custom_validator/
----
-Does anyone have a Rails 6 resource for making a custom validator that would accept params in order#new controller. I’ve built an order lifecycle that is customized for a small business’ web store.  At the moment of payment, instantiating the order from a cart, I need to validate not only the Order model but also many parts of the Contact model (which are never required aside from this moment of declaring shipping/billing info).  To account for guest checkout, I don’t wish put these validations in an existing model; I want the validation to be freestanding and perform only in this checkout route.
+or
 
+`&lt;link href='javascript/stylesheets/customs.css' rel='stylesheet' type='text/css'&gt;`
 
-I completed a bootcamp several years ago, but after Dev Boot Camp closed, it took down its github; and nearly all of the code I wrote was in clones of project prompts from the DBC github that were removed.  I was financially sunk after camp and had to resort to immediate employment instead of rebuilding my portfolio from nothing.  So!  I’m grasping for current resources, and would consider hiring a tutor if anyone if interested!
-## [11][Are redis connections and action cable connections the same thing?](https://www.reddit.com/r/rails/comments/gr3s8b/are_redis_connections_and_action_cable/)
-- url: https://www.reddit.com/r/rails/comments/gr3s8b/are_redis_connections_and_action_cable/
----
-Sorry if this is a dumb question, but I've never set up action cable before.  I have it all working in dev, and on my staging server, but I want to make sure that once this goes into production, I'm ready.
+or
+
+`&lt;link href='vendor/stylesheets/customs.css' rel='stylesheet' type='text/css'&gt;`
+
+\- import in application.css
+
+`@import './theme/css/clean-blog.css';`
+
+and none of them work, any suggestions, please?

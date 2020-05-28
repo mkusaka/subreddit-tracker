@@ -19,65 +19,51 @@ The unofficial Rust community Discord: [https://bit.ly/rust-community](https://b
 Also check out [last week's thread](https://reddit.com/r/rust/comments/glvkc5/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][What's everyone working on this week (22/2020)?](https://www.reddit.com/r/rust/comments/gr3s6m/whats_everyone_working_on_this_week_222020/)
-- url: https://www.reddit.com/r/rust/comments/gr3s6m/whats_everyone_working_on_this_week_222020/
+## [2][This Week in Rust 340](https://www.reddit.com/r/rust/comments/grs1ql/this_week_in_rust_340/)
+- url: https://this-week-in-rust.org/blog/2020/05/27/this-week-in-rust-340/
 ---
-New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-22-2020/43296?u=llogiq)!
-## [3][Multiplatform Minecraft-compatible client written in Rust](https://www.reddit.com/r/rust/comments/gris3i/multiplatform_minecraftcompatible_client_written/)
+
+## [3][2020 Stack Overflow Developer Survey: Rust most loved again at 86.1%](https://www.reddit.com/r/rust/comments/grp7fm/2020_stack_overflow_developer_survey_rust_most/)
+- url: https://stackoverflow.blog/2020/05/27/2020-stack-overflow-developer-survey-results/
+---
+
+## [4][rental, a crate for creating self-referential structs with 300k+ downloads on crates, is no longer maintained](https://www.reddit.com/r/rust/comments/gs3j72/rental_a_crate_for_creating_selfreferential/)
+- url: https://github.com/jpernst/rental/commit/213671ab3aab3452efd7e2290c6bb714ee327014
+---
+
+## [5][iterators filter().count() vs fold() in 2020](https://www.reddit.com/r/rust/comments/gs2jvj/iterators_filtercount_vs_fold_in_2020/)
+- url: https://www.reddit.com/r/rust/comments/gs2jvj/iterators_filtercount_vs_fold_in_2020/
+---
+I came across this issue https://github.com/rust-lang/rust/issues/33038 which mentioned that in 2016, filter().count() was slower than fold() for the same functionality. That issue is closed but it links to https://github.com/rust-lang/rust/issues/55559 which remains an open issue.
+
+Can I ask is this still a concern in 2020, or has it been resolved? I did some benchmarks of filter().count() vs fold() and there didn't seem to be much difference.
+## [6][Crust of Rust: Iterators [video]](https://www.reddit.com/r/rust/comments/gruall/crust_of_rust_iterators_video/)
+- url: https://www.youtube.com/watch?v=yozQ9C69pNs
+---
+
+## [7][Ringbahn: a safe, ergonomic API for io-uring in Rust](https://www.reddit.com/r/rust/comments/gro4lw/ringbahn_a_safe_ergonomic_api_for_iouring_in_rust/)
+- url: https://boats.gitlab.io/blog/post/ringbahn/
+---
+
+## [8][Started learning Rust - would appreciate a quick code review!](https://www.reddit.com/r/rust/comments/gs2dby/started_learning_rust_would_appreciate_a_quick/)
+- url: https://www.reddit.com/r/rust/comments/gs2dby/started_learning_rust_would_appreciate_a_quick/
+---
+I've written a simple Hangman command line game. Would be open to any suggestions on how to improve my code! Repo is [here](https://github.com/ptrbrynt/hangman)
+
+I'm coming from mobile development so Rust has introduced a fair few new concepts for me. Really enjoying it though!
+## [9][Rust Notebooks - Better Output for 2D Arrays](https://www.reddit.com/r/rust/comments/gs1dwj/rust_notebooks_better_output_for_2d_arrays/)
+- url: https://shahinrostami.com/posts/programming/rust-notebooks/better-output-for-2d-arrays/
+---
+
+## [10][Try 'cargo diet', the companion program of The Lean Crate Initiative](https://www.reddit.com/r/rust/comments/grvv1o/try_cargo_diet_the_companion_program_of_the_lean/)
+- url: https://github.com/the-lean-crate/cargo-diet
+---
+
+## [11][Multiplatform Minecraft-compatible client written in Rust](https://www.reddit.com/r/rust/comments/gris3i/multiplatform_minecraftcompatible_client_written/)
 - url: https://github.com/iceiix/stevenarella
 ---
 
-## [4][A retrospective on the 2018 rust-lang.org redesign](https://www.reddit.com/r/rust/comments/grb31n/a_retrospective_on_the_2018_rustlangorg_redesign/)
-- url: https://blog.rust-lang.org/inside-rust/2020/05/26/website-retrospective.html
+## [12][Contributor Survey | Inside Rust Blog](https://www.reddit.com/r/rust/comments/grrybp/contributor_survey_inside_rust_blog/)
+- url: https://blog.rust-lang.org/inside-rust/2020/05/27/contributor-survey.html
 ---
 
-## [5][easy-parallel: like scoped threads, but simpler](https://www.reddit.com/r/rust/comments/grhq9p/easyparallel_like_scoped_threads_but_simpler/)
-- url: https://docs.rs/easy-parallel
----
-
-## [6][Compiling Rust binaries for Windows 98 SE and more: a journey](https://www.reddit.com/r/rust/comments/gr0xqa/compiling_rust_binaries_for_windows_98_se_and/)
-- url: https://seri.tools/blog/compiling-rust-for-legacy-windows/
----
-
-## [7][Rust newbie here, need suggestions on how to improve my code](https://www.reddit.com/r/rust/comments/grgf8b/rust_newbie_here_need_suggestions_on_how_to/)
-- url: https://www.reddit.com/r/rust/comments/grgf8b/rust_newbie_here_need_suggestions_on_how_to/
----
-Hello!
-
-I've made a simple procedural 2D world generator. For now it's very poor, and only generates a tiny ASCII overworld (mountains+sea). There's probably a lot of room for improvement, so I thought it's worth posting here to gain some useful feedback.
-
-What do you guys think?  [https://github.com/jabczyk/worldgen](https://github.com/jabczyk/worldgen)
-## [8][Faster Integer Parsing](https://www.reddit.com/r/rust/comments/gr8mho/faster_integer_parsing/)
-- url: https://kholdstare.github.io/technical/2020/05/26/faster-integer-parsing.html
----
-
-## [9][macro-compose: a library trying to simplify and organize proc-macros](https://www.reddit.com/r/rust/comments/grhgf3/macrocompose_a_library_trying_to_simplify_and/)
-- url: https://github.com/Freax13/macro-compose
----
-
-## [10][Contributing to Rust](https://www.reddit.com/r/rust/comments/gr1oel/contributing_to_rust/)
-- url: https://blog.elinvynia.com/posts/2020-05-26-contributing-to-rust.html
----
-
-## [11][Zero Cost Abstractions: Rust vs C++](https://www.reddit.com/r/rust/comments/gqw2gj/zero_cost_abstractions_rust_vs_c/)
-- url: https://www.rottedfrog.co.uk/?p=24
----
-
-## [12][[ANN] PWatch - a process watcher 0.2.0](https://www.reddit.com/r/rust/comments/grf0bi/ann_pwatch_a_process_watcher_020/)
-- url: https://www.reddit.com/r/rust/comments/grf0bi/ann_pwatch_a_process_watcher_020/
----
-**pwatch** is a terminal process watcher. It is akin to **top** utility but its purpose is to watch closely only a few selected processes(filter them with a list of PIDs or regular expression).
-
-Highlights:
-
-* \- CPU and memory historical graphs per processes.
-* \- Measure I/O total throughput and memory usage change since a moment in the past
-* \- Graphs for dead process are not removed(but stopped updating), so you can examine their CPU/memory usage right before they exited at any moment
-
-Crate: [https://crates.io/crates/pwatch](https://crates.io/crates/pwatch)
-
-Sources: [https://github.com/VladimirMarkelov/pwatch](https://github.com/VladimirMarkelov/pwatch)
-
-Screencast: a few Firefox process after a user clicked button "Refresh" in the browser:
-
-https://i.redd.it/z4mw2dr5e9151.gif

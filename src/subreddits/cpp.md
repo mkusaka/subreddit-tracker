@@ -125,50 +125,65 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Faster Integer Parsing](https://www.reddit.com/r/cpp/comments/gr18ig/faster_integer_parsing/)
-- url: https://kholdstare.github.io/technical/2020/05/26/faster-integer-parsing.html
+## [3][The “OO” Antipattern](https://www.reddit.com/r/cpp/comments/gs0iwm/the_oo_antipattern/)
+- url: https://quuxplusone.github.io/blog/2020/05/28/oo-antipattern/
 ---
 
-## [4][The AMD64 standard did not only add 64 bit instructions but completely reshaped the way assembly routines call each other, with a tremendous impact in performance.](https://www.reddit.com/r/cpp/comments/grb97f/the_amd64_standard_did_not_only_add_64_bit/)
-- url: https://youtu.be/3IVmMD4hqHY
+## [4][A new geometry pipeline in the Magnum graphics engine](https://www.reddit.com/r/cpp/comments/grld3d/a_new_geometry_pipeline_in_the_magnum_graphics/)
+- url: https://blog.magnum.graphics/announcements/new-geometry-pipeline/
 ---
 
-## [5][N-Dimensional Perlin Noise Generator](https://www.reddit.com/r/cpp/comments/greq8t/ndimensional_perlin_noise_generator/)
-- url: https://www.reddit.com/r/cpp/comments/greq8t/ndimensional_perlin_noise_generator/
+## [5][CPM.cmake 0.25 released - CMake's missing package manager](https://www.reddit.com/r/cpp/comments/gs2yr1/cpmcmake_025_released_cmakes_missing_package/)
+- url: https://github.com/TheLartians/CPM.cmake
 ---
-Hey everyone! I'm a university student with a particular interest in generative art. One of the most important tools for projects in that domain is a noise generator. For those who don't know, a noise generator is very similar to a random number generator with the conceit that you can pick a position in "noise space" which will have a value that is similar to the values around it. 
 
-With that being said, I decided a fun project might be to write my own implementation of the classic Ken Perlin's Noise Generator. The main feature of my algorithm is that it allows for N-dimensional noise generation, whereas most implementations cover at most three dimensions.
+## [6][What should I know before going into a data structures class in c++?](https://www.reddit.com/r/cpp/comments/gs33bm/what_should_i_know_before_going_into_a_data/)
+- url: https://www.reddit.com/r/cpp/comments/gs33bm/what_should_i_know_before_going_into_a_data/
+---
+So I am about two weeks away from going into a 4-week summer Data structures class in C++ and I was wondering what are the most important things I should know to be prepared? I just finished the previous class, which was a basic programming class to get into the data structures class but I didn't do too well in it.
 
-You can find the Noise Generator [here.](https://github.com/Nicknakin/PerlinNoiseGeneratorCPP).  
-You can find an example of its usage [here.](https://github.com/Nicknakin/PerlinIO) The output of which can be piped through something to the effect of [eq 0 0.01 10 &gt; /tmp/seq.txt &amp;&amp; paste -d' ' /tmp/seq.txt /tmp/seq.txt /tmp/seq.txt | ./build/NIPNO 4 25 25 25 | awk '{printf("%d\n", $1*94)}'](https://pastebin.com/L74ZH0rN)
+Sort of barely got by and barely passed with a C. I want to get a much better grip on these things before I get into the way more serious classes! Any advice on what I should know to be prepared will be really helpful!
+## [7][std::array vs. std::vector with std::unique_ptr](https://www.reddit.com/r/cpp/comments/gs2fuk/stdarray_vs_stdvector_with_stdunique_ptr/)
+- url: https://www.reddit.com/r/cpp/comments/gs2fuk/stdarray_vs_stdvector_with_stdunique_ptr/
+---
+Hi guys, I have a question regarding the difference between `std::array` and `std::vector` in the context of `std::unique_ptr`s. I'm beginning to learn cpp, so my understanding of the internals is rudimentary. I have a class, in which I want to have a `static const` array of `std::unique_ptr` pointing to an abstract class. The reason why I want it to be `static const` is because this array will never change during runtime, so any instance should point to the same object in memory. I don't know if this is good practice, I just thought it might save memory.
 
-Anyways I would love feedback, let me know if you find use for my project or if you have any recommendations for fixes/improvements. Thanks!
-## [6][std::to_value - Unifying strong types and legacy APIs](https://www.reddit.com/r/cpp/comments/grjrph/stdto_value_unifying_strong_types_and_legacy_apis/)
+I tried both `std::vector&lt;std::unique_ptr&lt;Abstract_class&gt;&gt;` and `std::array&lt;std::unique_ptr&lt;Abstract_class&gt;&gt;`. I can only compile, if I use `std::array`.
+
+    class Entity {
+    private:
+    //This won't work
+    //static const std::vector&lt;std::unique_ptr&lt;Abstract_class&gt;&gt; arr;
+    static const std::array&lt;std::unique_ptr&lt;Abstract_class, 1&gt; arr;
+    //more stuff
+    ...
+    };
+    
+    //Compile error when trying to do this
+    //const std::vector&lt;std::unique_ptr&lt;Abstract_class&gt;&gt; Entity::arr {std::make_unique&lt;Implementation_of_Abstract_class&gt;};
+    //But this works
+    const std::array&lt;std::unique_ptr&lt;Abstract_class&gt;, 1&gt; Entity::arr {std::make_unique&lt;Implementation_of_Abstract_class}; 
+
+I'm not sure why. I though, no copying is done when using an initializer list for `std::vector`? Does this have something to do with stack and heap allocation of `std::array`/`std::vector`, respectively? Appreciate any input! :)
+## [8][Which GCC flags do you use often?](https://www.reddit.com/r/cpp/comments/grpux6/which_gcc_flags_do_you_use_often/)
+- url: https://www.reddit.com/r/cpp/comments/grpux6/which_gcc_flags_do_you_use_often/
+---
+Or your favorite ones? And when they are useful for you?
+
+I can see these frequently in open source projects: `-Wall, -O3, -funroll-loops, -D..`
+## [9][std::to_value - Unifying strong types and legacy APIs](https://www.reddit.com/r/cpp/comments/grjrph/stdto_value_unifying_strong_types_and_legacy_apis/)
 - url: https://github.com/Lyberta/cpp-to-value
 ---
 
-## [7][C++20: The Unspoken Features](https://www.reddit.com/r/cpp/comments/gr3cjm/c20_the_unspoken_features/)
-- url: https://humanreadablemag.com/issues/3/articles/cpp20-the-unspoken-features
+## [10][Faster Integer Parsing](https://www.reddit.com/r/cpp/comments/gr18ig/faster_integer_parsing/)
+- url: https://kholdstare.github.io/technical/2020/05/26/faster-integer-parsing.html
 ---
 
-## [8][Cppm CMake base cross platform C++ project manager](https://www.reddit.com/r/cpp/comments/gri54h/cppm_cmake_base_cross_platform_c_project_manager/)
+## [11][Cppm CMake base cross platform C++ project manager](https://www.reddit.com/r/cpp/comments/gri54h/cppm_cmake_base_cross_platform_c_project_manager/)
 - url: https://github.com/injae/cppm
 ---
 
-## [9][C++ Modules: A New Way to Build and Collaborate](https://www.reddit.com/r/cpp/comments/gqvyf5/c_modules_a_new_way_to_build_and_collaborate/)
-- url: https://github.com/mwasplund/Soup/blob/master/Docs/Proposal.md
----
-
-## [10][A New Cross-Platform Open Source C++ Framework](https://www.reddit.com/r/cpp/comments/gqxnip/a_new_crossplatform_open_source_c_framework/)
-- url: https://preshing.com/20200526/a-new-cross-platform-open-source-cpp-framework/
----
-
-## [11][Visual Studio Code Clang Format C++](https://www.reddit.com/r/cpp/comments/grfmmb/visual_studio_code_clang_format_c/)
-- url: https://www.reddit.com/r/cpp/comments/grfmmb/visual_studio_code_clang_format_c/
----
-Anyone familiar with configuring clang format to format c++ code in vscode? Ive created a ".clang-format" file in my project folder, set the  **Clang\_format\_fallback Style: none,**  **Clang\_format\_style: file, and provided the path to the file in Clang\_format\_path.**
-## [12][Qt 5.15 LTS Released](https://www.reddit.com/r/cpp/comments/gqy6qx/qt_515_lts_released/)
-- url: https://www.qt.io/blog/qt-5.15-released
+## [12][The AMD64 standard did not only add 64 bit instructions but completely reshaped the way assembly routines call each other, with a tremendous impact in performance.](https://www.reddit.com/r/cpp/comments/grb97f/the_amd64_standard_did_not_only_add_64_bit/)
+- url: https://youtu.be/3IVmMD4hqHY
 ---
 

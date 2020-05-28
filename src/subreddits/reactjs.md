@@ -109,121 +109,126 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/gcbkuu/whos_hiring_may_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Figma style real-time cursors with Firebase](https://www.reddit.com/r/reactjs/comments/gr2dry/figma_style_realtime_cursors_with_firebase/)
-- url: https://v.redd.it/ryszma61i5151
+## [3][Gatsby, Website-Building Startup Backed By Index Ventures, Raises $28 Million](https://www.reddit.com/r/reactjs/comments/grm6wt/gatsby_websitebuilding_startup_backed_by_index/)
+- url: https://www.forbes.com/sites/davidjeans/2020/05/27/gatsby-website-building-startup-backed-by-index-ventures-raises-28-million/
 ---
 
-## [4][Learn React Visually: A Guide To React Mental Models, Part 2: UseState, UseEffect, And Lifecycles](https://www.reddit.com/r/reactjs/comments/gr2aln/learn_react_visually_a_guide_to_react_mental/)
-- url: https://www.reddit.com/r/reactjs/comments/gr2aln/learn_react_visually_a_guide_to_react_mental/
+## [4][React does not create the element, return an object, prints [Object object]?](https://www.reddit.com/r/reactjs/comments/gs68qk/react_does_not_create_the_element_return_an/)
+- url: https://www.reddit.com/r/reactjs/comments/gs68qk/react_does_not_create_the_element_return_an/
 ---
-👋 Hey guys! We're all visual learners, so here's the second part of a series focused on learning React through visual mental models. 
-
-The article covers: useState, useEffect, and Lifecycles.
-
-You'll find many original illustrations inside. I believe that makes understanding complex topics a lot easier.  
-
-
-Enjoy! I'm happy to answer any question.
-
-[https://obedparla.com/code/a-visual-guide-to-react-mental-models-part-2-use-state-use-effect-and-lifecycles/](https://obedparla.com/code/a-visual-guide-to-react-mental-models-part-2-use-state-use-effect-and-lifecycles/)
-## [5][[Interview question] . how can you dispatch from useEffect without using useDispatch](https://www.reddit.com/r/reactjs/comments/grjjv4/interview_question_how_can_you_dispatch_from/)
-- url: https://www.reddit.com/r/reactjs/comments/grjjv4/interview_question_how_can_you_dispatch_from/
----
-Long story short, I was asked to write how can I dispatch from useEffect (this is my componentDidMount) without using useDispatch.
-
-First I wrote the component approach 
-`
-Import {getUserDetails} from './actions
-
-class Example extends React.component {
-
-componentDidMount(){
-  this.props.getUserDetails()
-}
-}
-const mapDispatchToProps  = dispatch =&gt;{
-    const details={
-          getUserDetails: ()=&gt;{
-              dispatch(getUserDetails());
-          }
-    }
-return details;
-}
-
-export default Connect(mapDispatchToProps)(Example)
-`
-
-
-For hooks, I wrote
-
-`
-useEffect(() =&gt;{
-   props.getUserDetails();
-}, [ ])
-`
-
-And I said that this change is enough to dispatch. (Ofcourse I will change the declaration to function based, but mapDispatchToProps and imports will be the same)
-
-Interviewer said, " What you wrote in class based component will hit the API inside the getUserDetails but my functional component won't hit the API. 
-
-Is my useEffect code is wrong? Isn't this how we can dispatch from useEffect without using useDispatch?
-## [6][How to add a version parameter to script tags in index.html?](https://www.reddit.com/r/reactjs/comments/grj55g/how_to_add_a_version_parameter_to_script_tags_in/)
-- url: https://www.reddit.com/r/reactjs/comments/grj55g/how_to_add_a_version_parameter_to_script_tags_in/
----
-Hello,
-
-I am looking into adding a parameter like ?v=20200527 to the bundle script files linked in index.html.
-
-I believe this could solve some browser caching issues that have been encountered by some heavy users of my app. Would you have any hint about how to do this. possibly without ejecting from create-react-app? I have spent some time googling but couldn't find anything... any idea?
-
-Thanks for your time :)
-## [7][Video: Building a basic image classifier with Node.js, React, and Tensorflow](https://www.reddit.com/r/reactjs/comments/gri3gw/video_building_a_basic_image_classifier_with/)
-- url: https://www.reddit.com/r/reactjs/comments/gri3gw/video_building_a_basic_image_classifier_with/
----
-Video (link below) where the author went through the process of setting up a basic image classifier. It’s super basic, but he hopes it serves as a gateway drug of sorts into machine learning for the web. Machine learning is awesome and wildly under-utilised, considering its potential.
-
-Link: https://medium.com/timtamimi/video-building-a-basic-image-classifier-with-node-js-react-and-tensorflow-2f19841b19f5?source=friends_link&amp;sk=75f5c9fe46f8840fc73e816dcf3b1611
-## [8][Collaborative secure messenging](https://www.reddit.com/r/reactjs/comments/grhwoy/collaborative_secure_messenging/)
-- url: https://www.reddit.com/r/reactjs/comments/grhwoy/collaborative_secure_messenging/
----
- Hello devs
-
-Wouldn’t it be great to have a place where we can share our valuable insights, DD and news with whom we want when we want.
-
-I’m building an app to which other developers can hook there apps (one guy build an option trading algorithm where he would make X amount of profit in 13 weeks, I haven’t heard from him in a while so I’m guessing it didn’t go according to plan). The app also has a polling bot (on earnings for example) news, messaging, an earnings calendar which will be customizable to the companies you follow and portfolio analytics.
-
-It’s still a work in progress but if you would like to subscribe for when it’s finished please let me know. Or If you want to help/contribute to build this beautiful beast then also let me know
-
-[securecollaborationplatform@gmail.com](mailto:securecollaborationplatform@gmail.com)
-## [9][Handle HTTP range requests with status code 206 Partial Content](https://www.reddit.com/r/reactjs/comments/grhtfs/handle_http_range_requests_with_status_code_206/)
-- url: https://www.reddit.com/r/reactjs/comments/grhtfs/handle_http_range_requests_with_status_code_206/
----
-Hey everyone,
-
-Wrote a post about how to [stream audio and video content with Media Source Extensions API using the Content-Range response HTTP header](https://pantaley.com/blog/Handle-HTTP-range-requests-with-status-code-206-Partial-Content/).
-## [10][Hacker Noon: Attend JSNation Live 2020, the remote spin-off of a successful JavaScript conference](https://www.reddit.com/r/reactjs/comments/gqsq9x/hacker_noon_attend_jsnation_live_2020_the_remote/)
-- url: https://www.hackernoon.com/jsnation-live-2020-the-remote-spin-off-of-a-successful-javascript-conference-xe1i3z6l
----
-
-## [11][Computed Properties in React](https://www.reddit.com/r/reactjs/comments/grh2jz/computed_properties_in_react/)
-- url: https://www.robinwieruch.de/react-computed-properties
----
-
-## [12][New Form library for React](https://www.reddit.com/r/reactjs/comments/grh1xi/new_form_library_for_react/)
-- url: https://www.reddit.com/r/reactjs/comments/grh1xi/new_form_library_for_react/
----
-Hi guys,
-
-I am releasing a new form library designed to create quick and easy forms with full validation.
-
-[React Bare Forms](https://github.com/joegasewicz/react-bare-forms)
-
-I did try a few other form libraries for React &amp; found their public API's a bit convoluted (this is purely my personal opinion, not a declaration!). This  library's main goal then, is to have a much more simple approach to creating forms with React &amp; contain the least amount of learning required by the user to start creating validated forms.
-
-I would be extremely grateful if anyone could give the library a quick once over, look at features or open any issues for features that are currently missing!
+`import React from 'react'`  
+`class SearchCard extends React.Component{`  
+ `ifProps=()=&gt;{`  
+ `let user = this.props.user`  
+ `return(&lt;li&gt;&lt;p&gt;{user.name}- @{user.username}&lt;/p&gt;&lt;/li&gt;) }`  
+ `render(){`  
+`return(&lt;div&gt;`  
+ `{this.ifProps()}`  
+`&lt;/div&gt;)}`  
+`}`  
+`export default SearchCard`
 
 &amp;#x200B;
 
-Thanks very much for your time
+&amp;#x200B;
 
-Joe
+`import React from 'react'`  
+`import SearchCard from './SearchCard'`  
+
+
+`export default function SearchCardIndex(props){`
+
+`function renderIndex(arr){`  
+ `return arr.map((user,i)=&gt;{`  
+ `debugger`  
+ `if(user.attributes){`  
+ `user = user.attributes`  
+`}`  
+ `return &lt;SearchCard user={user}/&gt;`  
+   
+`})`  
+   
+`}`  
+ `const handleOnChange = (e)=&gt;{`  
+ `let users=  props.users`  
+ `let newList`  
+ `let oldList = users.map(user=&gt;{`  
+ `user = user.attributes`  
+ `return {name: user.name.toLowerCase(),username: user.username.toLowerCase(),id: user.id}})`  
+ `let word = e.target.value`  
+ `if(word !==""){`  
+ `newList = oldList.filter(user=&gt;{`  
+ `return (user.username.includes(word)||(user.name.includes(word))`  
+`)})`  
+`}else{`  
+ `newList=oldList`  
+`}`  
+ `let ul= document.querySelector(".searchIndex")`  
+ `let list = renderIndex(newList)`  
+ `ul.innerHTML = list`  
+`}`  
+ `return(&lt;div &gt;`  
+ `&lt;input type="text" value="" onChange={(e)=&gt;handleOnChange(e)}/&gt;`  
+ `&lt;ul className="searchIndex "&gt;`  
+ `&lt;/ul&gt;`  
+ `&lt;/div&gt;)`  
+`}`
+## [5][Working on NPM Package locally](https://www.reddit.com/r/reactjs/comments/gs5zi3/working_on_npm_package_locally/)
+- url: https://www.reddit.com/r/reactjs/comments/gs5zi3/working_on_npm_package_locally/
+---
+I want to submit a PR for a feature I want within a package that I use in my React project. Is there a way that I can pull down the package locally, make changes on it, and test it within my project to submit my PR?
+## [6][Render Component on click](https://www.reddit.com/r/reactjs/comments/gs5qoq/render_component_on_click/)
+- url: https://www.reddit.com/r/reactjs/comments/gs5qoq/render_component_on_click/
+---
+Hi all, 
+
+I am new to programming and I've been using Python and AWS, but now I got a project where I must use React as well. 
+
+I managed to solve most of the tasks, but I got stuck on the next one - In short: When the button on one component is clicked, the content of that component is replaced with different  content
+
+Longer version:
+
+I have a component called Home content, where some basic divs and a button are rendered. What I need to achieve is when that button is clicked, content that is fetched via API should show instead of the current content. I am not sure what is the best way to do it, but my idea was to create a separate component, called Generate URL, that will be in charge of fetching and rendering the data.
+
+I have attached the code example here: [https://jsfiddle.net/me8gLzsp/](https://jsfiddle.net/me8gLzsp/)
+
+When I just pass my Generate component to the Home content in 'normal way' &lt;Genereate /&gt;, it works as it should, but I don't know how to do it on click.
+
+What would be the best approach here?
+## [7][96: Pete Hunt on Seven Years of Reconsidering Best Practices | React Podcast](https://www.reddit.com/r/reactjs/comments/gs5qc9/96_pete_hunt_on_seven_years_of_reconsidering_best/)
+- url: https://reactpodcast.com/96
+---
+
+## [8][Fireact Part 1: Firebase authentication in React](https://www.reddit.com/r/reactjs/comments/gs5h62/fireact_part_1_firebase_authentication_in_react/)
+- url: https://medium.com/@chaoming_li/fireact-part-1-firebase-authentication-in-react-b835f6beacc5?sk=26ed71ccd439fe97103416d7f4039cd7
+---
+
+## [9][Nowadays - Class or Function Based Components?](https://www.reddit.com/r/reactjs/comments/gs5b9u/nowadays_class_or_function_based_components/)
+- url: https://www.reddit.com/r/reactjs/comments/gs5b9u/nowadays_class_or_function_based_components/
+---
+Hello, I have been learning React from tutorials based on older versions of React where of course Class based components are used as the smart containers and function based components as dumb, stateless components. However at the time this courses was created the react hooks was just released and they weren't widely used. Nowadays since the Hooks are fully-supported what approach should I use:  
+1. Only function based components, where some of them use the useState hooks and are containers?
+
+2. Or this old approach dividing components into class or function based?
+## [10][Introducing React Modal - an extremely minimal, completely unopinionated modal library](https://www.reddit.com/r/reactjs/comments/grpgp4/introducing_react_modal_an_extremely_minimal/)
+- url: https://www.reddit.com/r/reactjs/comments/grpgp4/introducing_react_modal_an_extremely_minimal/
+---
+Hi all—I've been a member of this subreddit for years and am excited to share the first of many open-source projects that my digital design firm [TRBL](https://trbl.design) is releasing in the future. We're a team of designers and developers and one of our goals is to open-source as much of the code we write as possible. 
+
+The code we release will be aimed squarely at solving problems in a minimal and unobtrusive way, where developers can execute on complex experiences as-designed, without making concessions based on limitations from the packages that they rely on.
+
+React Modal is our first release. We often find effective solutions from modal-based navigation and experiences, and this package was built because we found ourselves fighting against existing modal implementations. We needed a completely unstyled, unopinionated modal implementation that could flex and bend to make our highly varied, deliberate projects come to life as designed.
+
+[https://github.com/trouble/react-modal](https://github.com/trouble/react-modal)
+
+We use this package ourselves and have it in production on many sites and applications. There's a lot more coming from us in the future, including a very large open-source project that will be revealed in a few months from now. 
+
+Would love to know what you all think.
+## [11][Two Steps Forward, One Step Back - a critique on Atomic CSS (basscss/tachyons/tailwinds) by one of the pioneers of Atomic CSS](https://www.reddit.com/r/reactjs/comments/grmyrl/two_steps_forward_one_step_back_a_critique_on/)
+- url: https://jxnblk.com/blog/two-steps-forward/
+---
+
+## [12][Ideas for personal portfolio](https://www.reddit.com/r/reactjs/comments/gs0ohs/ideas_for_personal_portfolio/)
+- url: https://www.reddit.com/r/reactjs/comments/gs0ohs/ideas_for_personal_portfolio/
+---
+Hey, I'm a full stack developer and work mainly in React. I wanted to create a personal portfolio but I'm not very good at UI and UX. So, can anyone provide some ideas or inspiration for the portfolio. Thank you.

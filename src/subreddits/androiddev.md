@@ -31,75 +31,81 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Google Removes 5 Million Negative TikTok Reviews](https://www.reddit.com/r/androiddev/comments/grfs6h/google_removes_5_million_negative_tiktok_reviews/)
-- url: https://www.mobilemarketingreads.com/google-removes-5-million-negative-tiktok-reviews/
+## [3][Wait what? Am I reading it wrong?](https://www.reddit.com/r/androiddev/comments/gs172e/wait_what_am_i_reading_it_wrong/)
+- url: https://i.redd.it/1gj9tjnfdg151.png
 ---
 
-## [4][Storage updates in Android 11](https://www.reddit.com/r/androiddev/comments/grciza/storage_updates_in_android_11/)
-- url: https://developer.android.com/preview/privacy/storage
+## [4][Introducing Niddler](https://www.reddit.com/r/androiddev/comments/gs5b8r/introducing_niddler/)
+- url: https://medium.com/@nicolaverbeeck/introducing-niddler-98deeac9a6bd
 ---
 
-## [5][Apps maintained by a single developer](https://www.reddit.com/r/androiddev/comments/gr3i8d/apps_maintained_by_a_single_developer/)
-- url: https://www.reddit.com/r/androiddev/comments/gr3i8d/apps_maintained_by_a_single_developer/
+## [5][Started coding/game dev a month ago. Got my first game accepted on Play Store recently. Looking for the feedback to improve my skills :)](https://www.reddit.com/r/androiddev/comments/grrqt0/started_codinggame_dev_a_month_ago_got_my_first/)
+- url: https://www.reddit.com/r/androiddev/comments/grrqt0/started_codinggame_dev_a_month_ago_got_my_first/
 ---
-I'm curious what are some successful Android apps that have been built and still being maintained by a single developer instead of a small/medium/large team. 
-Could you share any? 😁
-## [6][Android Studio: Downloading Images Blocks whole IDE](https://www.reddit.com/r/androiddev/comments/grgv1q/android_studio_downloading_images_blocks_whole_ide/)
-- url: https://www.reddit.com/r/androiddev/comments/grgv1q/android_studio_downloading_images_blocks_whole_ide/
----
-This really inconvenient: I need to download an emulator image for a certain API level. The download is quite big; and **blocks** the whole IDE! Now I am forced to wait.
+Hi guys!  
 
-&amp;#x200B;
 
-https://preview.redd.it/unsmts7b4a151.png?width=2120&amp;format=png&amp;auto=webp&amp;s=839813c9856756b48327f2b038c45f4547bf4cad
+I've learned coding and game dev a bit during lockdown, and build my first android game. This is a number puzzle, so similar genre to 2048.   
+If you have time, can you please provide feedback or suggestions for improvement?   
+I'm enjoying the process a lot, so would like to keek going and making my apps and games better each time :)
 
-Is there a workaround, by the way?
-## [7][Android Studio 4.1 Canary 10 new project templates now depend on MDC-Android 1.1.0, use updated themes/styles guidance and support dark theme](https://www.reddit.com/r/androiddev/comments/grfad6/android_studio_41_canary_10_new_project_templates/)
-- url: https://twitter.com/androidstudio/status/1265547345393049602
----
+The link to the app on Google Store:  
+ [https://play.google.com/store/apps/details?id=com.ross.numbergame12345](https://play.google.com/store/apps/details?id=com.ross.numbergame12345) 
 
-## [8][ActivityResultContracts.TakePicture now returns a Boolean instead of a Bitmap](https://www.reddit.com/r/androiddev/comments/grfust/activityresultcontractstakepicture_now_returns_a/)
-- url: https://developer.android.com/reference/androidx/activity/result/contract/ActivityResultContracts.TakePicture
+The link to the source code below. I used Godot game engine.   
+I was terrible with commenting the code, sorry for that!    
+ [https://github.com/rosspetukhov/12345-number-game](https://github.com/rosspetukhov/12345-number-game)
+## [6][One Tap sign in for Android apps](https://www.reddit.com/r/androiddev/comments/gs16c3/one_tap_sign_in_for_android_apps/)
+- url: https://medium.com/androiddevelopers/one-tap-sign-in-for-android-apps-2259ce15bc2c
 ---
 
-## [9][India’s contact-tracing app Aarogya Setu is now open source](https://www.reddit.com/r/androiddev/comments/gr6ek2/indias_contacttracing_app_aarogya_setu_is_now/)
-- url: https://github.com/nic-delhi/AarogyaSetu_Android
+## [7][Pay rates for audio ads](https://www.reddit.com/r/androiddev/comments/gs4xf9/pay_rates_for_audio_ads/)
+- url: https://www.reddit.com/r/androiddev/comments/gs4xf9/pay_rates_for_audio_ads/
 ---
-
-## [10][Android Jetpack IssueTracker](https://www.reddit.com/r/androiddev/comments/grit7m/android_jetpack_issuetracker/)
-- url: https://www.reddit.com/r/androiddev/comments/grit7m/android_jetpack_issuetracker/
+What are the typical pay rates for including audio ads in your app?
+## [8][Maps SDK v3 beta](https://www.reddit.com/r/androiddev/comments/gs08cp/maps_sdk_v3_beta/)
+- url: https://www.reddit.com/r/androiddev/comments/gs08cp/maps_sdk_v3_beta/
 ---
-Hi there,
+Did anyone integrate the maps sdk v 3 yet? What are your observations? I find it a little less snappy to load (tiles take longer to load), but the zoom animations and move animations seem more responsive.
 
-I submitted an issue on the Android Jetpack - Room IssueTracker almost a week ago and I haven't had any activity on it. Roughly how long is one expected to wait? What are your experiences with submitting an issue there? Should I be expecting a reply at all?  Also, what should one do when there isn't a reply? Apart from StackOverflow, is there a place where I can get some guidance about my specific issue since I am developing my app alone?
-
-For those who are interested, here is the link to my issue: [https://issuetracker.google.com/issues/157261134](https://issuetracker.google.com/issues/157261134) I don't know, maybe some of you could provide some insight :)
-## [11][Workflows for implementing backend interactions](https://www.reddit.com/r/androiddev/comments/grisrg/workflows_for_implementing_backend_interactions/)
-- url: https://www.reddit.com/r/androiddev/comments/grisrg/workflows_for_implementing_backend_interactions/
+Reference: [https://developers.google.com/maps/documentation/android-sdk/v3-client-migration](https://developers.google.com/maps/documentation/android-sdk/v3-client-migration)
+## [9][Active users mismatch between Googleplay console and Firebase console](https://www.reddit.com/r/androiddev/comments/gs3yeb/active_users_mismatch_between_googleplay_console/)
+- url: https://www.reddit.com/r/androiddev/comments/gs3yeb/active_users_mismatch_between_googleplay_console/
 ---
-When implementing a new endpoint using Retrofit, do you guys make a request and check the response by using some http client, like Postman, or do you just somehow use Retrofit for it?
+There is a mismatch between Active users count in Google Play console and Firebase console.
 
-With Retrofit it's possible to declare a response type as a String so that to just log it out and examine it, but then you need to hook another interactor, which is an additional library, which is actually fine, yet every time you need to do this repetitive setup.
+I  can see 10k active users (30 days average) on Google play console but only 3.1k active users on firebase console.
 
-Or is it just silly to use Retrofit for checking what is the structure of the response?
+Really appreciate if someone explains what this difference meant.
 
-My workflow is like the first one, i.e. Postman goes first, yet I'm thinking there might be nicer ways doing it. Thank you!
-
-Update: This question goes under an assumption there's no example of the response you need to describe for parsing with the library.
-## [12][Is there a way to Mirror Andriod with Broken Screen on Computer](https://www.reddit.com/r/androiddev/comments/grjmoo/is_there_a_way_to_mirror_andriod_with_broken/)
-- url: https://www.reddit.com/r/androiddev/comments/grjmoo/is_there_a_way_to_mirror_andriod_with_broken/
+ Stackoverflow : [https://stackoverflow.com/questions/62062727/active-users-mismatch-between-googleplay-console-and-firebase-console](https://stackoverflow.com/questions/62062727/active-users-mismatch-between-googleplay-console-and-firebase-console)
+## [10][OOP for Android](https://www.reddit.com/r/androiddev/comments/gs1sox/oop_for_android/)
+- url: https://www.reddit.com/r/androiddev/comments/gs1sox/oop_for_android/
 ---
-Here is what I have tried so far:
+Hello, I'm not sure if it's deserve post of it's own, but I'll take my chances.
 
-``` 
-adb devices
-```
-and it didn't detect de device. 
+I know Android, and I wrote several apps with java&amp; Kotlin, but I have serious problem of writing "good code".
 
-After 20-30 minutes of furious googling, I found this repo: https://github.com/ribomation/DroidAtScreen1
+What I mean by that - I know the principal of oop - polymorphism, inheritance etc etc but I have hard to implement this in Android development.
 
-Set the variable and compiled the program. It executed a blank screen.
+For example - instead of writing every api call  if check wether to show progress bar or not, write an interface that will handle automatically this check and will inflate the layout by that.
 
-Do you guys have any other ideas for this? 
+Or generic response handling etc etc...
 
-Thank you so much in advance
+My question is - there is online course that focus on this topics?
+
+All I found is just hardcore java with gui, or hardcore Android that not focus on this topic
+## [11][Video Compression on Android](https://www.reddit.com/r/androiddev/comments/gs35ea/video_compression_on_android/)
+- url: https://www.reddit.com/r/androiddev/comments/gs35ea/video_compression_on_android/
+---
+Hey guys, I want to resize videos to a specific resolution (and sometimes even convert landscape videos to portrait using letterboxing). I checked out a few libraries which were using MediaCodec and also [this](https://github.com/tanersener/mobile-ffmpeg) library which uses FFMPEG. Scaling down a 3 minute 1080p video to 480p takes upwards of 1 minute in all of them.
+
+Is there any way to reduce this time? If any native library doesn't provide a significant speed improvement over FFMPEG, I am leaning towards using the latter.
+
+Also, are there any FFMPEG flags which reduce the processing time? I checked the logs and my speed hovers around 2x - 2.2x when compressing the video.
+## [12][Dart is now #7 on the most loved and now moved ahead if Swift and C#](https://www.reddit.com/r/androiddev/comments/gs5szz/dart_is_now_7_on_the_most_loved_and_now_moved/)
+- url: https://www.reddit.com/r/androiddev/comments/gs5szz/dart_is_now_7_on_the_most_loved_and_now_moved/
+---
+https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-loved
+
+Suspect this is only true because of Flutter.

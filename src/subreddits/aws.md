@@ -21,138 +21,77 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][10 years of building .NET on AWS | Amazon Web Services](https://www.reddit.com/r/aws/comments/grbcso/10_years_of_building_net_on_aws_amazon_web/)
-- url: https://aws.amazon.com/blogs/developer/10-years-of-building-net-on-aws/
+## [2][We are the AWS AI / ML Team - Ask the Experts - June 1st @ 9AM PT / 12PM ET / 4PM GMT!](https://www.reddit.com/r/aws/comments/grtkuf/we_are_the_aws_ai_ml_team_ask_the_experts_june/)
+- url: https://www.reddit.com/r/aws/comments/grtkuf/we_are_the_aws_ai_ml_team_ask_the_experts_june/
+---
+Hey r/aws! u/AmazonWebServices here.
+
+The AWS AI/ML team will be hosting another Ask the Experts session here in this thread to answer any questions you may have about deep learning frameworks, as well as any questions you might have about Amazon SageMaker or machine learning in general.
+
+Already have questions? Post them below and we'll answer them starting at 9AM PT on June 1, 2020!
+## [3][Improving Systems Management with AWS Systems Manager Session Manager | Ibexlabs](https://www.reddit.com/r/aws/comments/gs5t0t/improving_systems_management_with_aws_systems/)
+- url: https://www.ibexlabs.com/improving-systems-management-with-aws-systems-manager-session-manager/
 ---
 
-## [3][⏰⏰ **AWS Summit Online – June 30**](https://www.reddit.com/r/aws/comments/gr87g0/aws_summit_online_june_30/)
-- url: https://www.reddit.com/r/aws/comments/gr87g0/aws_summit_online_june_30/
+## [4][Anyone else having Amazon Chime "Internet connection is poor" messages while in meetings?](https://www.reddit.com/r/aws/comments/gs5efs/anyone_else_having_amazon_chime_internet/)
+- url: https://www.reddit.com/r/aws/comments/gs5efs/anyone_else_having_amazon_chime_internet/
 ---
-I wanted to extend to you all the opportunity to attend the AWS Public Sector Summit Online–from the comfort of your home. We’re replacing our in-person event with a best-in-class online event experience happening on June 30. It’s a **free-to-attend** conference that’s a massive remote learning opportunity while many of us are itching to get back to the office. It’s time to invest in yourself and expand that skillset.   
- 
-
-You’ll have nearly all of the opportunities that you get from in person events at this online event, including: networking in chat rooms, one-on-one time with our experts, and exploring content &amp; resources for every use case you think of.   
- 
-
-When you need a break from sessions, you can get lost in any of our many focus areas, also known as Zones, where content is more segmented, fun, and intentional. Also, there will be trivia, puzzles, and event tasks you can complete to earn points &amp; badges that can be tracked on the event leaderboard that records how close you are to winning an Amazon Echo.   
-
-
-[REGISTER NOW](https://pages.awscloud.com/WWPS_Summit_Online_2020.html?trk=nbbaile_outreach_reddit)  
-
-
-As always, share with friends, colleagues, and family. You never know who you're helping.
-## [4][Only allow traffic to EC2 instance through CloudFront?](https://www.reddit.com/r/aws/comments/graugb/only_allow_traffic_to_ec2_instance_through/)
-- url: https://www.reddit.com/r/aws/comments/graugb/only_allow_traffic_to_ec2_instance_through/
+We've been using Chime for about a year and it has been rock solid until just the last 30 days.  I'm sure it is being used more now than ever, but it is frustrating.  Sitting on a 200/200 Fiber circuit (with only 10 users due to WFH being heavily utilized), our folks are gettings messages stating "Internet connection is poor" and their video feeds cut out and audio gets delayed.  Happening for WFH users as well.  Seems like the service is starting to buckle under the load.  Anyone else?
+## [5][Step Functions in YAML with SAM](https://www.reddit.com/r/aws/comments/grv5yf/step_functions_in_yaml_with_sam/)
+- url: https://aws.amazon.com/blogs/compute/simplifying-application-orchestration-with-aws-step-functions-and-aws-sam/
 ---
-How would one configure EC2 to only allow traffic through my CloudFront distribution?  I'm using CloudFront as a proxy for caching and for https, and would like to close off all direct access to my EC2's ip address.
-## [5][AWS Workspace - Set keyboard language](https://www.reddit.com/r/aws/comments/grhi2j/aws_workspace_set_keyboard_language/)
-- url: https://www.reddit.com/r/aws/comments/grhi2j/aws_workspace_set_keyboard_language/
+
+## [6][AWS Batch not starting EC2 instances ?](https://www.reddit.com/r/aws/comments/gs2oo4/aws_batch_not_starting_ec2_instances/)
+- url: https://www.reddit.com/r/aws/comments/gs2oo4/aws_batch_not_starting_ec2_instances/
 ---
 Hello,
 
-I posted a similiar question a few weeks ago.. but I couldnt fix it properly.   
-[https://www.reddit.com/r/aws/comments/g91m7h/aws\_workspace\_set\_keyboard\_language\_and\_disable/](https://www.reddit.com/r/aws/comments/g91m7h/aws_workspace_set_keyboard_language_and_disable/)  
+I have an AWS batch for my project. Everything was working fine until two days ago, but to my knowledge no changes happened on any configurations. I have a daily service submitting jobs to batch, the jobs are correctly added to the queue, in a 'pending' and 'runnable' state, the compute environment has set the desired numbers of vCPUS to 128 (on a max of 256), but nos instances have started to execute the jobs in 24 hours. The compute environment is configured to use the optimal ec2 instance type, and have no logs whatsoever.
 
+&amp;#x200B;
 
-Question: **How can I set the keyboard language (german) after deploying my own created image?**   
-
-
-/r/[CARUFO](https://www.reddit.com/user/CARUFO/) told me the solution but its only working randomly.   
-
-
-Solution:  
-
-For the keyboard layout you have to deploy two registry keys via GPO:
-
-HKEY\_CURRENT\_USER\\Keyboard Layout\\Preload\\1
-
-type: REF\_SZ
-
-value: 00000407
-
-And
-
-HKEY\_USERS\\.DEFAULT\\Keyboard Layout\\Preload\\1
-
-type: REF\_SZ
-
-value: 00000407  
-
-
-\+ GPO:  Always wait for the network at computer startup and logon   
-
-
-If I enable the GPO above, my workspaces dont do a single sign on... I have to user login manually after I connted to my workspace.   
-
-
-How do you set your language / keyboard layout?   
-
-
-Many greetings
-## [6][RHEL 7 and aws ec2 get-console-output](https://www.reddit.com/r/aws/comments/gr7owl/rhel_7_and_aws_ec2_getconsoleoutput/)
-- url: https://www.reddit.com/r/aws/comments/gr7owl/rhel_7_and_aws_ec2_getconsoleoutput/
+Anybody could help me with this ?
+## [7][Kinesis incoming records limit](https://www.reddit.com/r/aws/comments/gs41ov/kinesis_incoming_records_limit/)
+- url: https://www.reddit.com/r/aws/comments/gs41ov/kinesis_incoming_records_limit/
 ---
-I'm trying to get userdata outputs and errors into the system logs that are presented either through the gui or using
+We have a Kinesis stream with 4 shards and according to the dashboard we are exceeding the "incoming records limit" for a few hours everyday:
 
-    aws ec2 get-console-output
+https://preview.redd.it/eabu4h09lh151.png?width=718&amp;format=png&amp;auto=webp&amp;s=8cc3c4be5e72f30780812f3a6762aa9a647e4d76
 
-I'm having a hard time, has anyone gotten this to work?  
-I've tried solutions like this:  [https://aws.amazon.com/premiumsupport/knowledge-center/ec2-linux-log-user-data/](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-linux-log-user-data/)   
-but it doesn't seem to work for RHEL 7. I"ve also tried passing my commands to tty0 and ttyS0 with no luck  
-for example:   
-echo "testing system log with tty0" &gt; tty0  
-echo "testing system log with ttyS0" &gt; ttyS0
+However, all calls to `PutRecords` succeed and we don't have any `WriteProvisionedThroughputExceeded` errors:
 
-Still no luck.
+https://preview.redd.it/9t6m4uu9lh151.png?width=721&amp;format=png&amp;auto=webp&amp;s=d4c660c33ecede064ac3b6d9131e18dddb513368
 
-I"ve noticed that the Amazon Linux ami does this automatically, but I have a client where we must use RHEL 7.x currently.
-## [7][AWS can’t be used for remote access VPN to DC without NAT?](https://www.reddit.com/r/aws/comments/grgw3p/aws_cant_be_used_for_remote_access_vpn_to_dc/)
-- url: https://www.reddit.com/r/aws/comments/grgw3p/aws_cant_be_used_for_remote_access_vpn_to_dc/
+We are also below the limit for incoming bytes:
+
+https://preview.redd.it/mk4hy4ralh151.png?width=721&amp;format=png&amp;auto=webp&amp;s=852177187d5d37c50fc34fe75e6b6417afe09838
+
+I'm confused as to what's going on here. Is the `IncomingRecords` limit a soft limit that doesn't actually cause any errors with `PutRecords`?
+
+**EDIT:** I took a closer look at `PutRecords.Records` on CloudWatch. Given that each shard is limited to 1000 records per second, I've graphed per minute and per hour metrics:  
+
+
+https://preview.redd.it/0ilhw6haci151.png?width=1671&amp;format=png&amp;auto=webp&amp;s=826a65e4607767a7e0a3390dc236bf3da7414ddd
+
+https://preview.redd.it/8rzcr3obci151.png?width=1665&amp;format=png&amp;auto=webp&amp;s=fba7e114e46b09111a12a62dc8bf8e1f0f10d0d3
+
+It seems like we never really exceed the limit after all, so why does the Kinesis dashboard graph look like that?
+## [8][AWS has many services with "interesting" names. Recently I posted an article by Joshua Thijssen to this sub with his version of short descriptions for those services. I've now added them to the wiki in this sub. Feel free to add or update. Note that it's a starting point, so it might be incomplete.](https://www.reddit.com/r/aws/comments/gs1wge/aws_has_many_services_with_interesting_names/)
+- url: https://www.reddit.com/r/aws/wiki/services
 ---
-Hey all, 
 
-Been setting up and testing always on VPN configs as of late, and there is a final hurdle for us. 
-
-We have a DC/Office network, with a Direct connect to AWS.  In aws I have a VPC with NLB and public subnet allowing traffic to an RRAS vpn server.  
-
-By amazons rules, an IP not originating from the VPC CIDR will be dropped when it tries to leave the VPC.   This is discussed extensively in various papers and videos by amazon architect, but only in relation to VPC peering and transitive routing.  
-
-Now, we have a vpn set up which NATs out of the RRAS box and routes fine all the way to our office, but for our applications we can’t use NAT, so need the clients issued with an IP from a different subnet.  I have followed the guides and advice and have a non Nat subnet set up for vpn clients which is outside of the VPC CIDR.  this is to allow the route for that subnet to be added to the VPC route table, and pointed at the RRAS server interface. 
-
-Routing works lovely across AWS, but our AWS guys are skeptical that we can get this subnet routing back into our DC.  
-
-For arguments sake,  say our VPC CIDR is 10.0.0.0/16, and we have a client vpn subnet hanging off the RRAS server of 192.168.100.0/24, which is then added to the VPC route table. Source destination checks disabled on instances as well. The RRAS instance is acting as a router and VPN server. 
-
-Any thoughts on whether this remote access use case reaches the limitations of AWS architecture?
-
-Unfortunately it is not well documented!
-
-Best regards
-## [8][AWS DataSync for cold storage offload](https://www.reddit.com/r/aws/comments/grgpqs/aws_datasync_for_cold_storage_offload/)
-- url: https://www.reddit.com/r/aws/comments/grgpqs/aws_datasync_for_cold_storage_offload/
+## [9][Microsoft Azure Machine Learning Studio equivalent for AWS](https://www.reddit.com/r/aws/comments/grzveb/microsoft_azure_machine_learning_studio/)
+- url: https://www.reddit.com/r/aws/comments/grzveb/microsoft_azure_machine_learning_studio/
 ---
-Hello,
+The company I'm in is very much invested in the AWS stack. I've been tasked to start a team to build machine learning models. I'm very much more in favour of a visual approach of building models compared to the coding way. I can code python and I've done it both ways. And by far both me and my ex-colleagues all prefer the visual approach since we can focus on the parameters instead of the code. We used h2o / datarobot where you can just simply upload a csv file with the data and visually pick / choose the algorithms you want to run.  
 
-I'm looking for some tips about AWS DataSync for cold storage offload in S3 Glacier/Deep Glacier.
 
-My question is: let's suppose I've uploaded all my data directly to S3 Glacier storage class with AWS DataSync. Then I need to retrieve some of that data with a local NFS share linked to the same S3 bucket, can AWS DataSync manage the retrieval request of my files or I have to manage the data retrieval "by hand"? I think AWS DataSync will notice that the file is not accessibile and I've to retrieve the data that I want to restore "by hand".
-
-Thank you
-## [9][What are LIST limits for an S3 bucket](https://www.reddit.com/r/aws/comments/grjbpp/what_are_list_limits_for_an_s3_bucket/)
-- url: https://www.reddit.com/r/aws/comments/grjbpp/what_are_list_limits_for_an_s3_bucket/
+Is there a visual experience equivalent in-built into the AWS stack?
+## [10][Quick demo of DNS Exfiltration and C&amp;C setup on AWS using dnscat2...](https://www.reddit.com/r/aws/comments/grzl0t/quick_demo_of_dns_exfiltration_and_cc_setup_on/)
+- url: /r/HowToHack/comments/grzh4m/quick_demo_of_dns_exfiltration_and_cc_setup_on/
 ---
-I'm using a fuse projection for an S3 bucket, but I start hitting 503 errors with ~2200GET TPS. 
 
-I noticed the 5XX errors started coming when LIST requests plateau. I can't find the limit documented anywhere. Does anyone know what the limit is, and if it increases linearly with partitioning (auto or pre)
-
-Thanks
-## [10][Any way to increase the efficiency of 1000 pre-signed S3 urls?](https://www.reddit.com/r/aws/comments/grcm4k/any_way_to_increase_the_efficiency_of_1000/)
-- url: https://www.reddit.com/r/aws/comments/grcm4k/any_way_to_increase_the_efficiency_of_1000/
+## [11][Understand and Optimize Your AWS Data Transfer Costs](https://www.reddit.com/r/aws/comments/grn07f/understand_and_optimize_your_aws_data_transfer/)
+- url: https://www.cloudforecast.io/blog/understand-and-optimize-your-aws-data-transfer-costs/?utm_source=reddit
 ---
-I have an image dashboard in part of my app that loads about 1000 images. These are all thumbnails and need to be shown. Is there a better way I can increase the speed of generating 1000 pre-signed S3 urls?
-## [11][No experience in security in aws how hard it is, can it be automated with a service for fixes?](https://www.reddit.com/r/aws/comments/gr84le/no_experience_in_security_in_aws_how_hard_it_is/)
-- url: https://www.reddit.com/r/aws/comments/gr84le/no_experience_in_security_in_aws_how_hard_it_is/
----
-i built a aws Express.js Beanstalk from codestart+used RDS for database and deployed
 
-what are my options to be safe in production?

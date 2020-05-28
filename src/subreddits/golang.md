@@ -1,69 +1,67 @@
 # golang
-## [1][Diving into Go by building a CLI application](https://www.reddit.com/r/golang/comments/grgvlu/diving_into_go_by_building_a_cli_application/)
+## [1][Go jumps 4th position as most loved language](https://www.reddit.com/r/golang/comments/gs2ool/go_jumps_4th_position_as_most_loved_language/)
+- url: https://www.reddit.com/r/golang/comments/gs2ool/go_jumps_4th_position_as_most_loved_language/
+---
+Stack overflow survey 2020 is out , And its not surprising that GO has jumped 4 positions to be 5th most loved language as compared to previous year
+
+[https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-loved](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-loved)
+## [2][dancing gophers in your terminal](https://www.reddit.com/r/golang/comments/grqjh2/dancing_gophers_in_your_terminal/)
+- url: https://www.reddit.com/r/golang/comments/grqjh2/dancing_gophers_in_your_terminal/
+---
+working towards an ansi / art library.. in case anyone has interest in this here is how i've been making these files.
+
+[link to github page, there is a gif in README.MD with output in case you're curious](https://github.com/80at8/gopherdance/)
+## [3][Go and CPU Caches](https://www.reddit.com/r/golang/comments/grqyw1/go_and_cpu_caches/)
+- url: https://medium.com/@teivah/go-and-cpu-caches-af5d32cc5592
+---
+
+## [4][He’s a little darker blue than normal, but looks great on my mask!](https://www.reddit.com/r/golang/comments/grslua/hes_a_little_darker_blue_than_normal_but_looks/)
+- url: https://i.imgur.com/QMv8yrA.jpg
+---
+
+## [5][[decimal] a new high-performance arbitrary-precision decimal floating-point arithmetic package for Go](https://www.reddit.com/r/golang/comments/grvmuc/decimal_a_new_highperformance_arbitraryprecision/)
+- url: https://www.reddit.com/r/golang/comments/grvmuc/decimal_a_new_highperformance_arbitraryprecision/
+---
+[https://github.com/db47h/decimal](https://github.com/db47h/decimal)
+
+TL;DR This is a port of Go's big.Float to a big.Decimal. Compared to other similar packages out there, the API is identical to math/big, and it uses a decimal representation for the mantissa.
+## [6][I used to complain about Why Go doesn't have generic?](https://www.reddit.com/r/golang/comments/gs6cjp/i_used_to_complain_about_why_go_doesnt_have/)
+- url: https://www.reddit.com/r/golang/comments/gs6cjp/i_used_to_complain_about_why_go_doesnt_have/
+---
+[Go: the Good, the Bad and the Ugly](https://bluxte.net/musings/2018/04/10/go-good-bad-ugly)
+
+In my first year of Go, I was thinking that it's good if we can also have Generic and other cool things out there in Go
+
+But now I know why they want to keep Go as simple as it is.
+
+I've seen a lot of complicated things build with Go
+
+\- a function return an interface{} even 2 (interface{},interface{})
+
+\- then overuse of reflection (reflect pkg)
+
+....
+
+Imagine you have all of those fancy functionalities in Go, how complicated is your code gonna be?
+## [7][String references in closures](https://www.reddit.com/r/golang/comments/gs5mwj/string_references_in_closures/)
+- url: https://www.reddit.com/r/golang/comments/gs5mwj/string_references_in_closures/
+---
+Say I had this
+
+    func makeFilter(filterVal string) MyFilter {
+        return func(s string) bool { return filterVal == s; }
+    }
+
+Is filterVal copied here for use in the closure, or underneath does it use a pointer to the original string? Is it better to capture the pointer to avoid a copy?
+## [8][Implement a Finite-State Machine in Golang](https://www.reddit.com/r/golang/comments/grwngh/implement_a_finitestate_machine_in_golang/)
+- url: https://levelup.gitconnected.com/implement-a-finite-state-machine-in-golang-f0438b6bc0a8
+---
+
+## [9][Diving into Go by building a CLI application](https://www.reddit.com/r/golang/comments/grgvlu/diving_into_go_by_building_a_cli_application/)
 - url: https://eryb.space/2020/05/27/diving-into-go-by-building-a-cli-application.html
 ---
 
-## [2][[go-quartz] Simple, zero-dependency scheduling library for Go](https://www.reddit.com/r/golang/comments/grft7q/goquartz_simple_zerodependency_scheduling_library/)
-- url: https://github.com/reugn/go-quartz
----
-
-## [3][Why are so many Golang programmers against using the goto statement?](https://www.reddit.com/r/golang/comments/grglzm/why_are_so_many_golang_programmers_against_using/)
-- url: https://www.reddit.com/r/golang/comments/grglzm/why_are_so_many_golang_programmers_against_using/
----
-In my opinion, there are cases where using the goto statement results in cleaner code.
-## [4][Robust gRPC communication on Google Cloud Run (but not only!)](https://www.reddit.com/r/golang/comments/grhm3e/robust_grpc_communication_on_google_cloud_run_but/)
-- url: https://threedots.tech/post/robust-grpc-google-cloud-run/
----
-
-## [5][Robotgo v0.90.0 is released, Go desktop automation. Huge updated!](https://www.reddit.com/r/golang/comments/gqzk9w/robotgo_v0900_is_released_go_desktop_automation/)
-- url: https://www.reddit.com/r/golang/comments/gqzk9w/robotgo_v0900_is_released_go_desktop_automation/
----
-[https://github.com/go-vgo/robotgo/releases/tag/v0.90.0](https://github.com/go-vgo/robotgo/releases/tag/v0.90.0)
-## [6][SDNS v1.0.0 🎉released. Performance improvement 50% more, stability also improvement.](https://www.reddit.com/r/golang/comments/gri8ci/sdns_v100_released_performance_improvement_50/)
-- url: https://github.com/semihalev/sdns
----
-
-## [7][How to print nicely a nested struct](https://www.reddit.com/r/golang/comments/gritgv/how_to_print_nicely_a_nested_struct/)
-- url: https://www.reddit.com/r/golang/comments/gritgv/how_to_print_nicely_a_nested_struct/
----
-Hello everyone! I'm trying to learn go, and to do so I've created a little quiz game to study psychopathology for an exam. My problem is that I don't like the code I've wrote, so I'm trying to do better, hoping to learn good go practices along the way. 
-
-My question is: if I have a nested struct, with maps and stuff like this...:
-
-```go
-type Disorders struct {
-    Disorders []Disorder
-}
-
-type Disorder struct {
-    Name     string
-    Symptoms Symptom
-    // More stuff
-}
-
-type Symptom struct {
-    Cognitive map[string]string
-    Emotional map[string]string
-    // More stuff
-}
-```
-
-...what is the cleanest way to write a ```.String()``` method for everyone of them, that lets me specify the kind of symptom, the key of the map, etc.
-
-I load the values from a JSON, so it looks like I can't use the [stringer tool](https://godoc.org/golang.org/x/tools/cmd/stringer)
-
-Do you see a better solution to writing every ```.String()``` method manually? 
-
-Btw I wanted to thank this community, you're all very inclusive and supportive, and it's one of the subs I read from most gladly!
-## [8][Logging without losing money or context.](https://www.reddit.com/r/golang/comments/gr238r/logging_without_losing_money_or_context/)
-- url: https://www.komu.engineer/blogs/log-without-losing-context/log-without-losing-context
----
-
-## [9][Testing in Go: philosophy and tools](https://www.reddit.com/r/golang/comments/gr4d45/testing_in_go_philosophy_and_tools/)
-- url: https://lwn.net/SubscriberLink/821358/429b0d0527749a3c/
----
-
-## [10][Bigbucket – Serverless Bigtable-like database, backed by Cloud Storage](https://www.reddit.com/r/golang/comments/grbfms/bigbucket_serverless_bigtablelike_database_backed/)
-- url: https://github.com/adrianchifor/Bigbucket
+## [10][[video] Why Go? - what sets Go apart](https://www.reddit.com/r/golang/comments/gs40k1/video_why_go_what_sets_go_apart/)
+- url: https://www.youtube.com/watch?v=doNlg3r6-4w&amp;feature=youtu.be
 ---
 

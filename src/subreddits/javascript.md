@@ -79,49 +79,51 @@
 
 
 &amp;nbsp;
-## [2][Showoff Saturday (May 23, 2020)](https://www.reddit.com/r/javascript/comments/gp3kqn/showoff_saturday_may_23_2020/)
-- url: https://www.reddit.com/r/javascript/comments/gp3kqn/showoff_saturday_may_23_2020/
+## [2][WTF Wednesday (May 27, 2020)](https://www.reddit.com/r/javascript/comments/grmg6m/wtf_wednesday_may_27_2020/)
+- url: https://www.reddit.com/r/javascript/comments/grmg6m/wtf_wednesday_may_27_2020/
 ---
-Did you find or create something cool this week in javascript? 
+Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
+Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
+this is the place.
 
-Show us here!
-## [3][I made a tool to merge javascript files with imports/exports into one function.](https://www.reddit.com/r/javascript/comments/grfw6v/i_made_a_tool_to_merge_javascript_files_with/)
+[Named after this comic](https://davidwalsh.name/demo/code-review.png)
+## [3][Stack Overflow Developer Survey 2020: JS wins with 67.6%](https://www.reddit.com/r/javascript/comments/gs10h6/stack_overflow_developer_survey_2020_js_wins_with/)
+- url: https://insights.stackoverflow.com/survey/2020#most-popular-technologies
+---
+
+## [4][AudioMass – a full-featured audio editor in 65kb of vanilla JavaScript](https://www.reddit.com/r/javascript/comments/grk8kq/audiomass_a_fullfeatured_audio_editor_in_65kb_of/)
+- url: https://audiomass.co/
+---
+
+## [5][prod-conf: A production-ready configuration system for node.js](https://www.reddit.com/r/javascript/comments/grzrrj/prodconf_a_productionready_configuration_system/)
+- url: https://github.com/theogravity/prod-conf
+---
+
+## [6][Curry function and functional thoughts](https://www.reddit.com/r/javascript/comments/gs0shz/curry_function_and_functional_thoughts/)
+- url: https://github.com/youngkaneda/curry
+---
+
+## [7][Graph drawing library for JavaScript that supports SVG and WebGL](https://www.reddit.com/r/javascript/comments/grwamp/graph_drawing_library_for_javascript_that/)
+- url: https://github.com/anvaka/VivaGraphJS
+---
+
+## [8][Introducing Snowpack 2.0](https://www.reddit.com/r/javascript/comments/grnaf8/introducing_snowpack_20/)
+- url: https://www.snowpack.dev/posts/2020-05-26-snowpack-2-0-release/
+---
+
+## [9][The webworkers driven UI framework: neo.mjs v1.2.0 release announcement](https://www.reddit.com/r/javascript/comments/gs5ex6/the_webworkers_driven_ui_framework_neomjs_v120/)
+- url: https://medium.com/@tobiasuhlig/the-webworkers-driven-ui-framework-neo-mjs-v1-2-0-release-announcement-a811ebe47252?source=friends_link&amp;sk=8578383b7664e8a2456cbe7726c98aac
+---
+
+## [10][Augmented reality SDK launched for JavaScript, including AR face tracking, image tracking, and instant world tracking](https://www.reddit.com/r/javascript/comments/gs3xgw/augmented_reality_sdk_launched_for_javascript/)
+- url: https://zap.works/universal-ar/javascript/
+---
+
+## [11][The process: Making Vue 3 – Increment: Frontend](https://www.reddit.com/r/javascript/comments/gru7p6/the_process_making_vue_3_increment_frontend/)
+- url: https://increment.com/frontend/making-vue-3/
+---
+
+## [12][I made a tool to merge javascript files with imports/exports into one function.](https://www.reddit.com/r/javascript/comments/grfw6v/i_made_a_tool_to_merge_javascript_files_with/)
 - url: https://github.com/ytiurin/import-export-merger
----
-
-## [4][New progressive APIs coming to Chromium browsers](https://www.reddit.com/r/javascript/comments/gqw9dp/new_progressive_apis_coming_to_chromium_browsers/)
-- url: https://medium.com/swlh/how-microsoft-is-making-edge-the-best-browser-for-pwas-3b4ad1197be6
----
-
-## [5][Storytelling about Best Practices to Handle Errors in JavaScript. Good insights.](https://www.reddit.com/r/javascript/comments/grgsfg/storytelling_about_best_practices_to_handle/)
-- url: https://medium.com/@arthurfrank/javascript-error-handling-the-exception-5068b96c123
----
-
-## [6][[AskJS] Do you believe that Javascript is the best path to learn Web and mobile application development (Node/React/Ang/Vue etc) or the others are catching up Java, Php, C# (Blazor/WebAssembly etc) ?? I've heard Asp.net was very fast ?](https://www.reddit.com/r/javascript/comments/grfp4t/askjs_do_you_believe_that_javascript_is_the_best/)
-- url: https://www.reddit.com/r/javascript/comments/grfp4t/askjs_do_you_believe_that_javascript_is_the_best/
----
-Do you believe that Javascript is the best path to learn Web and mobile application development (Node/React/Ang/Vue etc) or the others are catching up Java, Php, C# (Blazor/WebAssembly etc)  ?? I've heard Asp.net was very fast but less popular less ppl doing C# ?
-## [7][TC39er podcast: TC39 edtior Shu-yu's interview.](https://www.reddit.com/r/javascript/comments/grjl75/tc39er_podcast_tc39_edtior_shuyus_interview/)
-- url: https://tc39er.us/episode-4-shu-yu/
----
-
-## [8][The Evolution of JavaScript](https://www.reddit.com/r/javascript/comments/griaow/the_evolution_of_javascript/)
-- url: https://dotnetblog.tech/dotnetblog/the-evolution-of-javascript
----
-
-## [9][Recreational programming with JavaScript. Most people use JavaScript in context of web development, but I have tons of fun with JavaScript (and codeguppy.com) building mini games, playing with turtle graphics, etc What's your opinion about this site?](https://www.reddit.com/r/javascript/comments/grcf1d/recreational_programming_with_javascript_most/)
-- url: https://codeguppy.com
----
-
-## [10][duckdoc-io/duckdoc-cli - Never let your docs be out of sync with the code](https://www.reddit.com/r/javascript/comments/grhsra/duckdocioduckdoccli_never_let_your_docs_be_out_of/)
-- url: https://github.com/duckdocio/duckdoc-cli
----
-
-## [11][Build a QRCode API and Inventory Management System with Autocode and Airtable](https://www.reddit.com/r/javascript/comments/greoo1/build_a_qrcode_api_and_inventory_management/)
-- url: https://medium.com/@janeth_10755/build-a-qrcode-api-and-inventory-management-system-with-autocode-and-airtable-7ec23149cd23?postPublishedType=initial
----
-
-## [12][Test in Prod. Uptime tests written in Mocha](https://www.reddit.com/r/javascript/comments/gr3wr0/test_in_prod_uptime_tests_written_in_mocha/)
-- url: https://asserted.io
 ---
 

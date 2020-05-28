@@ -1,9 +1,104 @@
 # Kotlin
-## [1][Create progressive web apps with 100% Kotlin](https://www.reddit.com/r/Kotlin/comments/gr4wz6/create_progressive_web_apps_with_100_kotlin/)
+## [1][No resources out there to learn from - Android + iOS Development with Kotlin Multi-platform](https://www.reddit.com/r/Kotlin/comments/gs2nc1/no_resources_out_there_to_learn_from_android_ios/)
+- url: https://www.reddit.com/r/Kotlin/comments/gs2nc1/no_resources_out_there_to_learn_from_android_ios/
+---
+I have a passion to learn about building mobile applications using Kotlin. I would like them to run on both Android and iOS. As I understand Kotlin Multi-Platform is the way to go, but there are no resources for me to learn from out there. I tried searching in:
+
+* PluralSight
+* Udemy
+* Udacity
+* Google Search
+
+Could you please suggest me a path that I should take in order to learn the skills required? To my knowledge I should use Kotlin Multi-Platform to create a Shared Library, then consume that library from XCode Swift (for iOS)  and I could then also use Android Studio for the Android application. Building Android applications with Kotlin seems to be very common so I have no trouble finding tutorials there, but I need your help for the iOS part. Thanks!
+## [2][Kotlin/Native to avoid JNI](https://www.reddit.com/r/Kotlin/comments/gs42vh/kotlinnative_to_avoid_jni/)
+- url: https://www.reddit.com/r/Kotlin/comments/gs42vh/kotlinnative_to_avoid_jni/
+---
+I recently discovered the great multi-platform capabilities of Kotlin/Native with Kotlin Multiplatform projects.
+However, I want it to use it the other way around: Use Kotlin/Native's `cinterop` tool to generate Kotlin bindings for native C (or even Objective-C/Swift) libraries and use them in Kotlin directly.
+
+I got this to work on my Mac. I built a Swift package into a `.a` file, generated a `klib` using `cinterop` and then linked that when building a simple `main.kt` program. Calling the Swift classes worked as expected.
+
+I am currently trying to get this running on Android, where I face multiple issues. Aside from a Swift compiler for Android, I am trying to make Gradle build a `Klib` which I can call from my Android activity.
+Building the klib for macOS works (so switching to ARM with correct compiler and so forth should work, too), but how to integrate it with Android?
+
+Is this even possible? Is the klib compatible with calls from Kotlin, running on Android's ART runtime?
+## [3][Talking Kotlin - Jetpack Compose with Leland Richardson](https://www.reddit.com/r/Kotlin/comments/gs5p1t/talking_kotlin_jetpack_compose_with_leland/)
+- url: https://talkingkotlin.com/jetpack-compose-with-leland-richardson/
+---
+
+## [4][How do I compare a variable bitmask to several constant bitmasks elegantly in Kotlin?](https://www.reddit.com/r/Kotlin/comments/gs38tj/how_do_i_compare_a_variable_bitmask_to_several/)
+- url: https://www.reddit.com/r/Kotlin/comments/gs38tj/how_do_i_compare_a_variable_bitmask_to_several/
+---
+I'm using the `android.bluetooth.BluetoothGattCharacteristic` API.   
+`BluetoothGattCharacteristic.properties` is an `Int` bitmask, and I'm trying to see which of the API's properties it matches. This just feels wrong:
+
+    val foo = bluetoothGattCharacteristic.properties
+    if (foo and BluetoothGattCharacteristic.PROPERTY_WRITE &gt; 0) doBar()
+    if (foo and BluetoothGattCharacteristic.PROPERTY_READ &gt; 0) doBaz()
+    if (foo and BluetoothGattCharacteristic.PROPERTY_NOTIFY &gt; 0) doQux()
+    //etc
+
+I feel like there should be a `when` block here, but I can't figure out how I'm supposed to express it condition in Kotlin. Help?
+## [5][FXGL game engine 11.9 release](https://www.reddit.com/r/Kotlin/comments/grrt73/fxgl_game_engine_119_release/)
+- url: https://www.reddit.com/r/Kotlin/comments/grrt73/fxgl_game_engine_119_release/
+---
+FXGL is a Java/Kotlin game engine that targets the JVM, mobile (via gluon-client) and web (via jpro).
+
+The Kotlin version of a simple game tutorial is available on [FXGL wiki](https://github.com/AlmasB/FXGL/wiki/Kotlin---Basic-Game-Example-(FXGL-11))
+
+Published game demos are on [itch.io](https://fxgl.itch.io/)
+
+Full source code of the engine and games can be found on [GitHub](https://github.com/AlmasB/FXGL)
+
+Give it a go and join the [dev chat](https://gitter.im/AlmasB/FXGL) if there are any issues
+
+[FXGL game demos](https://preview.redd.it/xu36bv8ebd151.jpg?width=1246&amp;format=pjpg&amp;auto=webp&amp;s=1fdf05778bbb011057ce676783283b9897014c3e)
+## [6][How does Kotlin detect inappropriate blocking method calls?](https://www.reddit.com/r/Kotlin/comments/grxer4/how_does_kotlin_detect_inappropriate_blocking/)
+- url: https://www.reddit.com/r/Kotlin/comments/grxer4/how_does_kotlin_detect_inappropriate_blocking/
+---
+I was recently working with a JedisPool in a suspending function and only found out from reading that Jedis is synchronous. If I understand correctly, that'd make using it blocking right? Do I misunderstand, or should Kotlin have warned it was inappropriate to use it within a suspending function? How does Kotlin detect something like that? Is it based on the exceptions it can throw (some testing showed IOException causes the warning)?
+## [7][Kotlin Microservices With Spring Boot And Spring Cloud: Part 5 - Event-driven microservices](https://www.reddit.com/r/Kotlin/comments/groqvt/kotlin_microservices_with_spring_boot_and_spring/)
+- url: https://youtu.be/fwhP9k0e1BY
+---
+
+## [8][Functional Programming Question About Kotlin](https://www.reddit.com/r/Kotlin/comments/grw9r2/functional_programming_question_about_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/grw9r2/functional_programming_question_about_kotlin/
+---
+So I used to love Kotlin, it was my favorite language. Recently, though, I've discovered Scala, and it changed how I think about writing code. The functional Scala way I have become quite fond of, and now I find myself trying to write code that way pretty much in everything I do.
+
+Anyway, I've got Kotlin, and I'm trying to write some code. I've got a list, and I'm trying to fold() over it and re-build it into a map of lists:
+
+    records.fold(mapOf&lt;String,List&lt;Record&gt;&gt;(), { acc, entry -&gt;
+    	// What to do?
+    })
+
+Now, in Scala it would be something like this (I didn't compile this code, I wrote it on the fly):
+
+    records.fold(Map[String,List[Record]](), (acc, entry) =&gt; {
+    	acc ++ acc.get(entry.name) match {
+    		case Some(list) =&gt; Map(entry.name -&gt; list + entry)
+    		case None =&gt; Map(entry.name -&gt; List(entry))
+    	}
+    })
+
+I'm trying to figure out the equivalent in Kotlin. My goals:
+
+1) Use immutable Map/List.
+
+2) Efficiently combine the collections. I've read that Kotlin has horrible performance in this area, unlike Scala.
+
+3) Create a new entry in the map with a new list if it doesn't exist, append to the existing one if it does.
+
+Basically just do that all in a simple, elegant, functional way. Essentially I still have a love of Kotlin, but this is my first time coming back to it after working with Scala, and it's just a very different experience. To be honest, I feel like even the Vavr library and Java would be able to get closer to my goal here.
+
+But again, I feel like I haven't dived far enough into functional Kotlin, so I'm looking for being pointed in the right direction. If there are some good libraries (like Vavr for Java) that help, that's fine too.
+
+PS. I know I could easily write this using mutable map/list. that's not the point.
+## [9][Create progressive web apps with 100% Kotlin](https://www.reddit.com/r/Kotlin/comments/gr4wz6/create_progressive_web_apps_with_100_kotlin/)
 - url: https://github.com/grantas33/Kotlin-PWA-starter-kit
 ---
 
-## [2][Getting the reference of delegated object](https://www.reddit.com/r/Kotlin/comments/gr74xp/getting_the_reference_of_delegated_object/)
+## [10][Getting the reference of delegated object](https://www.reddit.com/r/Kotlin/comments/gr74xp/getting_the_reference_of_delegated_object/)
 - url: https://www.reddit.com/r/Kotlin/comments/gr74xp/getting_the_reference_of_delegated_object/
 ---
 When using delegation, is it possible to gain access to the references of delegated objects?
@@ -19,166 +114,3 @@ When using delegation, is it possible to gain access to the references of delega
             val y = (this as B) // same as x, how to get the original reference of b?    
         }
     }
-## [3][Google has removed over 5 million user reviews from Playstore for TikTok in a week. The app was part of many controversies and as a result its ratings were falling fast. With Google removing user reviews, Tiktok's ratings have slightly improved.](https://www.reddit.com/r/Kotlin/comments/grgwqb/google_has_removed_over_5_million_user_reviews/)
-- url: https://i.redd.it/ubibzhhv41151.jpg
----
-
-## [4][Export Typescript definitions in 1.4-M1](https://www.reddit.com/r/Kotlin/comments/gqoacw/export_typescript_definitions_in_14m1/)
-- url: https://www.reddit.com/r/Kotlin/comments/gqoacw/export_typescript_definitions_in_14m1/
----
-I'm trying to build my shared library with the new backend (IR) in order to export Typescript definition files.
-
-Before adding any annotation (such as JsExport), I just tried to build my project "as-is" with 1.4-M1 (without any modification) but I get this very strange error :
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-    java.lang.IllegalArgumentException: Collection contains more than one matching element. at org.jetbrains.kotlin.ir.backend.js.lower.EnumClassConstructorLowering.transformEnumConstructor(EnumClassLowering.kt:561) at org.jetbrains.kotlin.ir.backend.js.lower.EnumClassConstructorLowering.transformFlat(EnumClassLowering.kt:109) at org.jetbrains.kotlin.backend.common.LowerKt$transformFlatRestricted$1.invoke(Lower.kt:169) at org.jetbrains.kotlin.backend.common.LowerKt$transformFlatRestricted$1.invoke(Lower.kt) at org.jetbrains.kotlin.ir.declarations.StageController$DefaultImpls.restrictTo(PersistentApi.kt:29) at org.jetbrains.kotlin.ir.backend.js.CompilerKt$compile$1.restrictTo(compiler.kt:54) at org.jetbrains.kotlin.backend.common.LowerKt.transformFlatRestricted(Lower.kt:168) at org.jetbrains.kotlin.backend.common.LowerKt$runPostfix$1$transformFlat$1.visitClass(Lower.kt:240) at org.jetbrains.kotlin.ir.visitors.IrElementVisitorVoid$DefaultImpls.visitClass(IrElementVisitorVoid.kt:44) at org.jetbrains.kotlin.backend.common.LowerKt$runPostfix$1$transformFlat$1.visitClass(Lower.kt:184) at org.jetbrains.kotlin.backend.common.LowerKt$runPostfix$1$transformFlat$1.visitClass(Lower.kt:184) at org.jetbrains.kotlin.ir.declarations.impl.IrClassImpl.accept(IrClassImpl.kt:172) at org.jetbrains.kotlin.ir.visitors.IrElementVisitorVoidKt.acceptVoid(IrElementVisitorVoid.kt:267) at org.jetbrains.kotlin.backend.common.LowerKt$runPostfix$1.transformFlat(Lower.kt:184) at org.jetbrains.kotlin.backend.common.LowerKt$toFileLoweringPass$1.lower(Lower.kt:176) at org.jetbrains.kotlin.backend.common.DeclarationTransformer$DefaultImpls.lower(Lower.kt:163) at org.jetbrains.kotlin.ir.backend.js.lower.EnumClassConstructorLowering.lower(EnumClassLowering.kt:97) at org.jetbrains.kotlin.backend.common.LowerKt.lower(Lower.kt:68) at org.jetbrains.kotlin.backend.common.phaser.PhaseBuildersKt$makeIrModulePhase$1.invoke(PhaseBuilders.kt:240) at org.jetbrains.kotlin.backend.common.phaser.PhaseBuildersKt$makeIrModulePhase$1.invoke(PhaseBuilders.kt:233) at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedPhaseWrapper$runBody$1.invoke(CompilerPhase.kt:128) at org.jetbrains.kotlin.backend.common.phaser.CompilerPhaseKt.downlevel(CompilerPhase.kt:24) at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedPhaseWrapper.runBody(CompilerPhase.kt:127) at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedPhaseWrapper.invoke(CompilerPhase.kt:105) at org.jetbrains.kotlin.backend.common.phaser.CompositePhase.invoke(PhaseBuilders.kt:30) at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedPhaseWrapper$runBody$1.invoke(CompilerPhase.kt:128) at org.jetbrains.kotlin.backend.common.phaser.CompilerPhaseKt.downlevel(CompilerPhase.kt:24) at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedPhaseWrapper.runBody(CompilerPhase.kt:127) at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedPhaseWrapper.invoke(CompilerPhase.kt:105) at org.jetbrains.kotlin.backend.common.phaser.CompilerPhaseKt.invokeToplevel(CompilerPhase.kt:42) at org.jetbrains.kotlin.ir.backend.js.CompilerKt.compile(compiler.kt:118) at org.jetbrains.kotlin.ir.backend.js.CompilerKt.compile$default(compiler.kt:52) at org.jetbrains.kotlin.cli.js.K2JsIrCompiler.doExecute(K2JsIrCompiler.kt:218) at org.jetbrains.kotlin.cli.js.K2JSCompiler.doExecute(K2JSCompiler.java:192) at org.jetbrains.kotlin.cli.js.K2JSCompiler.doExecute(K2JSCompiler.java:85) at org.jetbrains.kotlin.cli.common.CLICompiler.execImpl(CLICompiler.kt:86) at org.jetbrains.kotlin.cli.common.CLICompiler.execImpl(CLICompiler.kt:44) at org.jetbrains.kotlin.cli.common.CLITool.exec(CLITool.kt:105) at org.jetbrains.kotlin.daemon.CompileServiceImpl.compile(CompileServiceImpl.kt:1558) at jdk.internal.reflect.GeneratedMethodAccessor26.invoke(Unknown Source) at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) at java.base/java.lang.reflect.Method.invoke(Method.java:566) at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:359) at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200) at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197) at java.base/java.security.AccessController.doPrivileged(Native Method) at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196) at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:562) at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:796) at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:677) at java.base/java.security.AccessController.doPrivileged(Native Method) at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:676) at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) at java.base/java.lang.Thread.run(Thread.java:834)
-
-&amp;#x200B;
-
-~~Everything works well if I go back to Kotlin 1.3 &amp; Kotlin multiplatform 1.3.7X~~
-
-EDIT : Just by removing the flag
-
-    kotlin.js.compiler=ir 
-
-in
-
-    gradle.settings
-
-&amp;#x200B;
-
-Fixes the build.
-
-So it is not related to the plugins (even when using 1.4-M1 version)
-
-    id 'org.jetbrains.kotlin.multiplatform' version '1.4-M1'
-    id "org.jetbrains.kotlin.plugin.noarg" version "1.4-M1"
-    id 'org.jetbrains.kotlin.plugin.allopen' version '1.4-M1'
-
-Of course, I need to keep the IR back-end to be able to do  d.ts export
-
-&amp;#x200B;
-
-Any ideas ?
-## [5][Issue with Jetbrain's kotlin jvm maven archetype.](https://www.reddit.com/r/Kotlin/comments/gqt927/issue_with_jetbrains_kotlin_jvm_maven_archetype/)
-- url: https://www.reddit.com/r/Kotlin/comments/gqt927/issue_with_jetbrains_kotlin_jvm_maven_archetype/
----
-Started learning Kotlin last week. I'm using VS code and generated a maven project using Jetbrain's Kotlin single module jvm [archetype](https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-archetype-jvm).
-
-Code compiles and jars are built. But when I run: `java -jar app.jar` I get: `no main manifest attribute, in .\app-1.0-SNAPSHOT.jar`
-
-I've also tried the build plugin referred by [them](https://kotlinlang.org/docs/reference/using-maven.html#self-contained-jar-file)  to generate a self contained jar with "-with-dependencies.jar" name suffix. It says to point main class name in the plugin. But the main function being a top level function, I don't know what values to provide there. Nonetheless, even the built jar doesn't run and says "no main manifest..."
-
-I've looked online and everyone suggests using IDEA. It is very heavy for my machine. Is there anyway I can rectify this issue?
-## [6][Do you know any framework to build Apps for Linux Arm coding with Kotlin?](https://www.reddit.com/r/Kotlin/comments/gqf4co/do_you_know_any_framework_to_build_apps_for_linux/)
-- url: https://www.reddit.com/r/Kotlin/comments/gqf4co/do_you_know_any_framework_to_build_apps_for_linux/
----
-
-## [7][Designing and Working with Single View States on Android - zsmb.co](https://www.reddit.com/r/Kotlin/comments/gqfe6n/designing_and_working_with_single_view_states_on/)
-- url: https://zsmb.co/designing-and-working-with-single-view-states-on-android/
----
-
-## [8][kotlin programming: The Big Nerd Ranch Guide Book](https://www.reddit.com/r/Kotlin/comments/gqh3go/kotlin_programming_the_big_nerd_ranch_guide_book/)
-- url: https://www.reddit.com/r/Kotlin/comments/gqh3go/kotlin_programming_the_big_nerd_ranch_guide_book/
----
-\#kotlin u/kotlin   
-Is thi book good for someone who never programming in java ? or java is necessary ?
-
-https://preview.redd.it/gvgt9wu5my051.png?width=360&amp;format=png&amp;auto=webp&amp;s=76dab4a99ebb8c4932504a883f3efc9742224782
-## [9][viewModels&lt;&gt;() vs activityViewModels&lt;&gt;() vs createViewModelLazy()](https://www.reddit.com/r/Kotlin/comments/gq5wjk/viewmodels_vs_activityviewmodels_vs/)
-- url: https://www.reddit.com/r/Kotlin/comments/gq5wjk/viewmodels_vs_activityviewmodels_vs/
----
-Recently I've been going thorough the **KTX** libraries and I found several ways to instantiate VM using ktx. 
-
-I tried following up on the differences between by **viewModels&lt;&gt;()**, **activityViewModels&lt;&gt;()** and **createViewModelLazy()** but couldn't figure out much.  
-
-While all this time, I've been using **KOIN viewmodel artifact** for initializing my VMs, I am just keen to know the differences between the above mentioned.
-## [10][Need help with this confusion in data binding](https://www.reddit.com/r/Kotlin/comments/gq6r2e/need_help_with_this_confusion_in_data_binding/)
-- url: https://www.reddit.com/r/Kotlin/comments/gq6r2e/need_help_with_this_confusion_in_data_binding/
----
-So i am still learning about Android app development with Kotlin using a Udacity course.
-
-I was learning about data binding in the course and they used the following code;
-
-&amp;#x200B;
-
-My name.kt
-
-    package com.example.aboutme
-    data class MyName(var name: String = "",var nickname: String = "")
-
-&amp;#x200B;
-
-MainActivity.kt
-
-    import androidx.databinding.DataBindingUtil
-    import com.rackaapps.aboutme.databinding.ActivityMainBinding
-    
-    class MainActivity : AppCompatActivity() {
-    
-        private lateinit var binding: ActivityMainBinding
-        private val myName = MyName("Racka Legit")
-
-&amp;#x200B;
-
-activity\_main.xml (for a text view that's supposed to show the name &amp; one for nickname)
-
-    &lt;TextView
-                android:id="@+id/name_text"
-                style="@style/NameStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@={myName.name}"
-                android:textAlignment="center" /&gt;
-    
-    &lt;TextView
-                android:id="@+id/nickname_text"
-                style="@style/NameStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:visibility="gone"
-                android:text="@={myName.nickname}"/&gt;
-
-&amp;#x200B;
-
-Now with this code i get an error saying `"cannot find symbol class ActivityMainBindingImpl"`
-
-And its telling me to `"import com.example.aboutme.databinding.ActivityMainBindingImpl"` which gives an error too.
-
-**Note that,**
-
-    dataBinding {enabled = true}
-
-was enabled too.
-
-&amp;#x200B;
-
-**After some Googling i found out that i should use;**
-
-    android:text="@{myName.name}"
-
-&amp;
-
-    android:text="@{myName.nickname}"
-
-**Instead of;**
-
-    android:text="@={myName.name}"
-
-&amp;
-
-    android:text="@={myName.nickname}"
-
-and it worked like charm!
-
-&amp;#x200B;
-
-Now i want to know what difference does the equal (=) make in data binding in the context of the code above?
-
-And why did the code used in the course work for them but didn't work for me?
-
-I didn't find any info about the use of this yet.

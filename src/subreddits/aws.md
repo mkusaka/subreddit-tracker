@@ -21,77 +21,107 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][We are the AWS AI / ML Team - Ask the Experts - June 1st @ 9AM PT / 12PM ET / 4PM GMT!](https://www.reddit.com/r/aws/comments/grtkuf/we_are_the_aws_ai_ml_team_ask_the_experts_june/)
-- url: https://www.reddit.com/r/aws/comments/grtkuf/we_are_the_aws_ai_ml_team_ask_the_experts_june/
----
-Hey r/aws! u/AmazonWebServices here.
-
-The AWS AI/ML team will be hosting another Ask the Experts session here in this thread to answer any questions you may have about deep learning frameworks, as well as any questions you might have about Amazon SageMaker or machine learning in general.
-
-Already have questions? Post them below and we'll answer them starting at 9AM PT on June 1, 2020!
-## [3][Improving Systems Management with AWS Systems Manager Session Manager | Ibexlabs](https://www.reddit.com/r/aws/comments/gs5t0t/improving_systems_management_with_aws_systems/)
-- url: https://www.ibexlabs.com/improving-systems-management-with-aws-systems-manager-session-manager/
+## [2][AWS Encyclopedia -- A place to share all the useful AWS documentation, repos, and solutions you have bookmarked!](https://www.reddit.com/r/aws/comments/gskv0k/aws_encyclopedia_a_place_to_share_all_the_useful/)
+- url: https://github.com/cschultz82/aws_encyclopedia
 ---
 
-## [4][Anyone else having Amazon Chime "Internet connection is poor" messages while in meetings?](https://www.reddit.com/r/aws/comments/gs5efs/anyone_else_having_amazon_chime_internet/)
-- url: https://www.reddit.com/r/aws/comments/gs5efs/anyone_else_having_amazon_chime_internet/
+## [3][Best Practices for CloudFormation/Serverless](https://www.reddit.com/r/aws/comments/gssiz4/best_practices_for_cloudformationserverless/)
+- url: https://www.reddit.com/r/aws/comments/gssiz4/best_practices_for_cloudformationserverless/
 ---
-We've been using Chime for about a year and it has been rock solid until just the last 30 days.  I'm sure it is being used more now than ever, but it is frustrating.  Sitting on a 200/200 Fiber circuit (with only 10 users due to WFH being heavily utilized), our folks are gettings messages stating "Internet connection is poor" and their video feeds cut out and audio gets delayed.  Happening for WFH users as well.  Seems like the service is starting to buckle under the load.  Anyone else?
-## [5][Step Functions in YAML with SAM](https://www.reddit.com/r/aws/comments/grv5yf/step_functions_in_yaml_with_sam/)
-- url: https://aws.amazon.com/blogs/compute/simplifying-application-orchestration-with-aws-step-functions-and-aws-sam/
----
+I am curious what the best practices are with respect to CI/CD and rebuilding/deploying your applications.
 
-## [6][AWS Batch not starting EC2 instances ?](https://www.reddit.com/r/aws/comments/gs2oo4/aws_batch_not_starting_ec2_instances/)
-- url: https://www.reddit.com/r/aws/comments/gs2oo4/aws_batch_not_starting_ec2_instances/
----
-Hello,
+Should certain resources be permanent (S3 Buckets, CloudFront Distributions) or should I wipe away everything and rebuild?
 
-I have an AWS batch for my project. Everything was working fine until two days ago, but to my knowledge no changes happened on any configurations. I have a daily service submitting jobs to batch, the jobs are correctly added to the queue, in a 'pending' and 'runnable' state, the compute environment has set the desired numbers of vCPUS to 128 (on a max of 256), but nos instances have started to execute the jobs in 24 hours. The compute environment is configured to use the optimal ec2 instance type, and have no logs whatsoever.
+I'd rather not have to remember which steps I did manually when trying to rebuild our entire stack from scratch.
+## [4][www.amazon.com is down!](https://www.reddit.com/r/aws/comments/gscvwp/wwwamazoncom_is_down/)
+- url: https://www.reddit.com/r/aws/comments/gscvwp/wwwamazoncom_is_down/
+---
+% nslookup www.amazon.com
+
+Server: 8.8.8.8
+
+Address: 8.8.8.8#53
+
+server can't find www.amazon.com: SERVFAIL
+
+Colorado, USA
 
 &amp;#x200B;
 
-Anybody could help me with this ?
-## [7][Kinesis incoming records limit](https://www.reddit.com/r/aws/comments/gs41ov/kinesis_incoming_records_limit/)
-- url: https://www.reddit.com/r/aws/comments/gs41ov/kinesis_incoming_records_limit/
+HN Thread: [https://news.ycombinator.com/item?id=23341170](https://news.ycombinator.com/item?id=23341170)
+## [5][AWS ECS spot instances availability/creation](https://www.reddit.com/r/aws/comments/gsqqje/aws_ecs_spot_instances_availabilitycreation/)
+- url: https://www.reddit.com/r/aws/comments/gsqqje/aws_ecs_spot_instances_availabilitycreation/
 ---
-We have a Kinesis stream with 4 shards and according to the dashboard we are exceeding the "incoming records limit" for a few hours everyday:
+I have a m5.large  
+ spot instance running on an ECS cluster. What will happen if this instance becomes unavailable? Will ECS spawn a new instance automatically? if not, then how do we handle this situation so that our application doesn't go down?
 
-https://preview.redd.it/eabu4h09lh151.png?width=718&amp;format=png&amp;auto=webp&amp;s=8cc3c4be5e72f30780812f3a6762aa9a647e4d76
-
-However, all calls to `PutRecords` succeed and we don't have any `WriteProvisionedThroughputExceeded` errors:
-
-https://preview.redd.it/9t6m4uu9lh151.png?width=721&amp;format=png&amp;auto=webp&amp;s=d4c660c33ecede064ac3b6d9131e18dddb513368
-
-We are also below the limit for incoming bytes:
-
-https://preview.redd.it/mk4hy4ralh151.png?width=721&amp;format=png&amp;auto=webp&amp;s=852177187d5d37c50fc34fe75e6b6417afe09838
-
-I'm confused as to what's going on here. Is the `IncomingRecords` limit a soft limit that doesn't actually cause any errors with `PutRecords`?
-
-**EDIT:** I took a closer look at `PutRecords.Records` on CloudWatch. Given that each shard is limited to 1000 records per second, I've graphed per minute and per hour metrics:  
-
-
-https://preview.redd.it/0ilhw6haci151.png?width=1671&amp;format=png&amp;auto=webp&amp;s=826a65e4607767a7e0a3390dc236bf3da7414ddd
-
-https://preview.redd.it/8rzcr3obci151.png?width=1665&amp;format=png&amp;auto=webp&amp;s=fba7e114e46b09111a12a62dc8bf8e1f0f10d0d3
-
-It seems like we never really exceed the limit after all, so why does the Kinesis dashboard graph look like that?
-## [8][AWS has many services with "interesting" names. Recently I posted an article by Joshua Thijssen to this sub with his version of short descriptions for those services. I've now added them to the wiki in this sub. Feel free to add or update. Note that it's a starting point, so it might be incomplete.](https://www.reddit.com/r/aws/comments/gs1wge/aws_has_many_services_with_interesting_names/)
-- url: https://www.reddit.com/r/aws/wiki/services
+I am aware of services like Spotinist but I am trying to understand the flow here and also what does AWS provide by default?
+## [6][Apparently I don't understand CloudWatch metrics, or how math works](https://www.reddit.com/r/aws/comments/gsn6zi/apparently_i_dont_understand_cloudwatch_metrics/)
+- url: https://www.reddit.com/r/aws/comments/gsn6zi/apparently_i_dont_understand_cloudwatch_metrics/
 ---
+Could someone explain this to me like I'm 5?
 
-## [9][Microsoft Azure Machine Learning Studio equivalent for AWS](https://www.reddit.com/r/aws/comments/grzveb/microsoft_azure_machine_learning_studio/)
-- url: https://www.reddit.com/r/aws/comments/grzveb/microsoft_azure_machine_learning_studio/
+I'm trying to see (on a chart) how much S3 outgoing bandwidth I'm burning every month. My bill says it's been 457GB last month and 400GB the month before.
+
+Let's say I want to set up a CloudWatch dashboard that shows me this, and I want to look at the past X months, and know how much bandwidth was consumed each month.
+
+I set the statistic to "Sum", period to 30 days, and when I choose the past 3 months, suddenly it says I'm using 800GB over the past couple months. With the configuration I've chosen, doesn't this mean "show the past 3 months, summing up total bandwidth over 30 days"?
+
+If I switch period to 15 minutes and mouse over the data points, it's showing about 300MB every 15 minutes. Is that 300MB of data consumption every 15 minutes? I don't see how that's possible.
+
+(is CloudWatch Metrics maybe not the best place to do this, and I should use the Cost Explorer instead?)
+## [7][Best practice API design for](https://www.reddit.com/r/aws/comments/gsqqwp/best_practice_api_design_for/)
+- url: https://www.reddit.com/r/aws/comments/gsqqwp/best_practice_api_design_for/
 ---
-The company I'm in is very much invested in the AWS stack. I've been tasked to start a team to build machine learning models. I'm very much more in favour of a visual approach of building models compared to the coding way. I can code python and I've done it both ways. And by far both me and my ex-colleagues all prefer the visual approach since we can focus on the parameters instead of the code. We used h2o / datarobot where you can just simply upload a csv file with the data and visually pick / choose the algorithms you want to run.  
+The system was designed with only end users in mind. Primary authentication method is a custom auth lambda using userpools as the authorisation server. That provides a policy based on the user account. The project has expanded a little and requires a small rethink on design. I'm now in the position where the best approach may be to get the internal lambdas to call the api, however as far as I know I cannot create a userpool account for each of the lambdas to access the authorisation server to receive jwts.
 
-
-Is there a visual experience equivalent in-built into the AWS stack?
-## [10][Quick demo of DNS Exfiltration and C&amp;C setup on AWS using dnscat2...](https://www.reddit.com/r/aws/comments/grzl0t/quick_demo_of_dns_exfiltration_and_cc_setup_on/)
-- url: /r/HowToHack/comments/grzh4m/quick_demo_of_dns_exfiltration_and_cc_setup_on/
+One approach I can think of is to decouple the calls to the lambdas and the api and adding a layer between them so that the architecture arguably would look something more akin to that of a microservice ecosystem.
+## [8][Cognito refresh token expiry?](https://www.reddit.com/r/aws/comments/gsne83/cognito_refresh_token_expiry/)
+- url: https://www.reddit.com/r/aws/comments/gsne83/cognito_refresh_token_expiry/
 ---
+How can I tell when a refresh token is due to expire?
 
-## [11][Understand and Optimize Your AWS Data Transfer Costs](https://www.reddit.com/r/aws/comments/grn07f/understand_and_optimize_your_aws_data_transfer/)
-- url: https://www.cloudforecast.io/blog/understand-and-optimize-your-aws-data-transfer-costs/?utm_source=reddit
+I know how long it lasts, but I don't know when it was issued, so that's not helpful.
+
+I can't decode it like an access token or id token.
+
+Is there something in the SDK that can give me info about a refresh token? Struggling to find any useful docs on this.
+## [9][Slow query even after upgrading to larger instance?](https://www.reddit.com/r/aws/comments/gsnrpe/slow_query_even_after_upgrading_to_larger_instance/)
+- url: https://www.reddit.com/r/aws/comments/gsnrpe/slow_query_even_after_upgrading_to_larger_instance/
 ---
+* i'm currently running the free tier
+* currently using rds
+* cpu is just running 1% cloudwatch
+* read and write bearly hitting 5 iops cloudwatch
+* i changed it to instance Class db.r3 large
 
+&amp;#x200B;
+
+is this considered slow?
+
+* 3 index scans 2 seq scan,1  Bitmap Heap Scan only running 1 query
+* Aggregate4 , CTE Scan 7 , Group 2 , Index Scan 4 , Nested Loop Inner Join 5 , Nested Loop Left Join4 , Sort 4 , Subquery Scan 1
+
+do i need to modify something in postgres?
+
+&amp;#x200B;
+
+when i query it doesn't not seams to improve it still queries the same amount of time
+## [10][NLB now supports ALPN on TLS listeners](https://www.reddit.com/r/aws/comments/gsdo3w/nlb_now_supports_alpn_on_tls_listeners/)
+- url: https://www.reddit.com/r/aws/comments/gsdo3w/nlb_now_supports_alpn_on_tls_listeners/
+---
+Elastic Load Balancing now supports Application-Layer Protocol Negotiation (ALPN) policies on Network Load Balancers. ALPN is a TLS extension supported by all major browsers that enables negotiation of the protocol used after establishing a TLS connection, such as HTTP/2. Using ALPN policies, you can now offload your application’s TLS HTTP/2 traffic decryption/encryption to the Network Load Balancer, improving your service security posture and reducing operational complexity.
+
+To get started, simply attach an ALPN policy to your Network Load Balancer TLS listener. The policy can be viewed and changed at any time based on your application’s protocol requirements. When ALPN is enabled, you can use Network Load Balancer TLS access logs to track successful and unsuccessful ALPN negotiations, view clients’ protocol preference lists, identify anomalies and debug connection issues.
+
+Network Load Balancer ALPN policies are now available in all AWS Regions. To learn more, please refer to the Network Load Balancer documentation http://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html
+## [11][Need Help - eCommerce Architecture](https://www.reddit.com/r/aws/comments/gsrvvm/need_help_ecommerce_architecture/)
+- url: https://www.reddit.com/r/aws/comments/gsrvvm/need_help_ecommerce_architecture/
+---
+Folks,
+
+I am looking to develop a simple eCommerce website architecture in AWS.
+
+Could you please suggest any example architecture.
+
+Thank you.

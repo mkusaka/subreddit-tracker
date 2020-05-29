@@ -23,47 +23,80 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/05/27/this-week-in-rust-340/
 ---
 
-## [3][2020 Stack Overflow Developer Survey: Rust most loved again at 86.1%](https://www.reddit.com/r/rust/comments/grp7fm/2020_stack_overflow_developer_survey_rust_most/)
-- url: https://stackoverflow.blog/2020/05/27/2020-stack-overflow-developer-survey-results/
+## [3][Fuchsia Rust Crates](https://www.reddit.com/r/rust/comments/gspk26/fuchsia_rust_crates/)
+- url: https://fuchsia.dev/fuchsia-src/development/languages/rust/crates
 ---
 
-## [4][rental, a crate for creating self-referential structs with 300k+ downloads on crates, is no longer maintained](https://www.reddit.com/r/rust/comments/gs3j72/rental_a_crate_for_creating_selfreferential/)
-- url: https://github.com/jpernst/rental/commit/213671ab3aab3452efd7e2290c6bb714ee327014
+## [4][blocked: A proc-macro that emits a compiler warning when the linked GitHub issue is closed](https://www.reddit.com/r/rust/comments/gsq5gd/blocked_a_procmacro_that_emits_a_compiler_warning/)
+- url: https://www.reddit.com/r/rust/comments/gsq5gd/blocked_a_procmacro_that_emits_a_compiler_warning/
+---
+Inspired by [this post](https://www.reddit.com/r/rust/comments/gs9cgl/blocked_convention_for_marking_code_as_being/) I wrote [my first proc-macro](https://github.com/zacps/blocked)!
+
+    // An attribute-like procedural macro is on the todo-list
+    #![feature(proc_macro_hygiene)]
+    
+    use blocked::blocked;
+    
+    fn hacky_workaround() {}
+    
+    fn main() {
+        blocked!("1", "This code can be removed when the issue is closed");
+        hacky_workaround();
+    
+        // The reason is optional
+        blocked!("1");
+
+        blocked!("rust-lang/rust#123");
+
+        blocked!("https://github.com/rust-lang/rust/issues/123");
+    }
+    
+If you don't specify the repository or organisation it'll infer them from git remotes (`upstream` and `origin`).
+
+I'd like to improve the error messages and warning when an issue is closed. Of course, I also want to add support for Gitlab.
+
+Requires nightly for emitting compiler warnings, and hygiene for function-like proc macros.
+
+Edit: Forgot to link the thing
+## [5][binread: Declarative Rust Binary Parsing](https://www.reddit.com/r/rust/comments/gsfb3p/binread_declarative_rust_binary_parsing/)
+- url: https://jam1.re/blog/binread-a-declarative-rust-binary-parsing-library
 ---
 
-## [5][iterators filter().count() vs fold() in 2020](https://www.reddit.com/r/rust/comments/gs2jvj/iterators_filtercount_vs_fold_in_2020/)
-- url: https://www.reddit.com/r/rust/comments/gs2jvj/iterators_filtercount_vs_fold_in_2020/
+## [6][3D boids swimming along in perfect harmony; Implementing the boids flocking algorithm in Rust.](https://www.reddit.com/r/rust/comments/gsldbi/3d_boids_swimming_along_in_perfect_harmony/)
+- url: https://www.reddit.com/r/rust/comments/gsldbi/3d_boids_swimming_along_in_perfect_harmony/
 ---
-I came across this issue https://github.com/rust-lang/rust/issues/33038 which mentioned that in 2016, filter().count() was slower than fold() for the same functionality. That issue is closed but it links to https://github.com/rust-lang/rust/issues/55559 which remains an open issue.
+I mashed together my interests in procedural graphics generation and Rust programming for this experiment. I implemented the boids flocking algorithm to create swirling patterns. The implementation is heavily inspired by Sebastian Lague's coding adventure with boids [video](https://www.youtube.com/watch?v=bqtqltqcQhw). Here's a small demo.
 
-Can I ask is this still a concern in 2020, or has it been resolved? I did some benchmarks of filter().count() vs fold() and there didn't seem to be much difference.
-## [6][Crust of Rust: Iterators [video]](https://www.reddit.com/r/rust/comments/gruall/crust_of_rust_iterators_video/)
-- url: https://www.youtube.com/watch?v=yozQ9C69pNs
----
+[Swimming along in perfect harmony](https://reddit.com/link/gsldbi/video/l2p1nwaofm151/player)
 
-## [7][Ringbahn: a safe, ergonomic API for io-uring in Rust](https://www.reddit.com/r/rust/comments/gro4lw/ringbahn_a_safe_ergonomic_api_for_iouring_in_rust/)
-- url: https://boats.gitlab.io/blog/post/ringbahn/
----
+You can build and run it [source](https://github.com/twitu/rboids) to enjoy these little creatures endlessly. I've also written a blog about it. You can follow along and create your own flock of boids. Any criticism regarding the code and blog is welcome.
 
-## [8][Started learning Rust - would appreciate a quick code review!](https://www.reddit.com/r/rust/comments/gs2dby/started_learning_rust_would_appreciate_a_quick/)
-- url: https://www.reddit.com/r/rust/comments/gs2dby/started_learning_rust_would_appreciate_a_quick/
----
-I've written a simple Hangman command line game. Would be open to any suggestions on how to improve my code! Repo is [here](https://github.com/ptrbrynt/hangman)
+1. [A fistful of boids](https://blog.bitsacm.in/a-fistful-of-boids/) \- Setting up the scene and basic animation
+2. [For a few boids more](https://blog.bitsacm.in/for-a-few-boids-more/) \- Generating boids and obstacle avoidance
+3. [The school, the boid and the Rusty](https://blog.bitsacm.in/the-school-the-boid-and-the-rusty/) \- Simulating a flock, parallelism and benchmarking performance
 
-I'm coming from mobile development so Rust has introduced a fair few new concepts for me. Really enjoying it though!
-## [9][Rust Notebooks - Better Output for 2D Arrays](https://www.reddit.com/r/rust/comments/gs1dwj/rust_notebooks_better_output_for_2d_arrays/)
-- url: https://shahinrostami.com/posts/programming/rust-notebooks/better-output-for-2d-arrays/
+Many knowledgeable people have written a lot about development in Rust. My conclusion, as a budding Rustaceans, is simple. The Rust ecosystem is not perfect, but that means I have the opportunity to contribute and make a difference.
+## [7][Tour of Web Assembly - Chapter 1 Released](https://www.reddit.com/r/rust/comments/gsatru/tour_of_web_assembly_chapter_1_released/)
+- url: https://tourofrust.com/webassembly/
 ---
 
-## [10][Try 'cargo diet', the companion program of The Lean Crate Initiative](https://www.reddit.com/r/rust/comments/grvv1o/try_cargo_diet_the_companion_program_of_the_lean/)
-- url: https://github.com/the-lean-crate/cargo-diet
+## [8][Blog Post: coverage marks](https://www.reddit.com/r/rust/comments/gssqpp/blog_post_coverage_marks/)
+- url: https://ferrous-systems.com/blog/coverage-marks/
 ---
 
-## [11][Multiplatform Minecraft-compatible client written in Rust](https://www.reddit.com/r/rust/comments/gris3i/multiplatform_minecraftcompatible_client_written/)
-- url: https://github.com/iceiix/stevenarella
+## [9][showing rust for a friend](https://www.reddit.com/r/rust/comments/gsomji/showing_rust_for_a_friend/)
+- url: https://www.reddit.com/r/rust/comments/gsomji/showing_rust_for_a_friend/
+---
+I will showcase rust to a friend where i will try to teach him some of the basics of rust and how it works. Are there any good examples on tasks that showcase the different perks of rust, that is easy to show and explain to someone primarly used to C#, Kotlin &amp; some minor experience with C++?
+## [10][parser for c3d(biomechanics data) written in rust(early version)](https://www.reddit.com/r/rust/comments/gso9yj/parser_for_c3dbiomechanics_data_written_in/)
+- url: https://crates.io/crates/c3d-rs
 ---
 
-## [12][Contributor Survey | Inside Rust Blog](https://www.reddit.com/r/rust/comments/grrybp/contributor_survey_inside_rust_blog/)
-- url: https://blog.rust-lang.org/inside-rust/2020/05/27/contributor-survey.html
+## [11][What is the point of Diesel? What problem is it trying to solve?](https://www.reddit.com/r/rust/comments/gsqq4d/what_is_the_point_of_diesel_what_problem_is_it/)
+- url: https://www.reddit.com/r/rust/comments/gsqq4d/what_is_the_point_of_diesel_what_problem_is_it/
+---
+Do I really need Diesel to communicate with a postgresql database? I don't understand the problem it is trying to solve. Can't I just communicate directly between actix-web and postgresql?
+## [12][An introduction to SIMD and ISPC in Rust](https://www.reddit.com/r/rust/comments/gsb0i3/an_introduction_to_simd_and_ispc_in_rust/)
+- url: https://state.smerity.com/smerity/state/01E8RNH7HRRJT2A63NSX3N6SP1
 ---
 

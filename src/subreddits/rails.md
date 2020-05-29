@@ -27,13 +27,97 @@ Please use this thread to discuss **cool** but relatively **unknown** gems you'v
 You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
 Please include a **description** and a **link** to the gem's homepage in your comment.
-## [3][html.erb vs html.haml vs html.slim - which one do you use?](https://www.reddit.com/r/rails/comments/gs0x4b/htmlerb_vs_htmlhaml_vs_htmlslim_which_one_do_you/)
-- url: https://www.reddit.com/r/rails/comments/gs0x4b/htmlerb_vs_htmlhaml_vs_htmlslim_which_one_do_you/
+## [3][Can we parallel upload to s3 while store is file system using carrierwave?](https://www.reddit.com/r/rails/comments/gsr6wp/can_we_parallel_upload_to_s3_while_store_is_file/)
+- url: https://www.reddit.com/r/rails/comments/gsr6wp/can_we_parallel_upload_to_s3_while_store_is_file/
 ---
+Hi,
 
+We are using `carrierwave` uploader to upload files and storing them to file system. Now we are thinking to move them to s3 from file system. But before doing that, we want a parallel upload to local file system and s3 as well. So when I have a upload like this:
 
-[View Poll](https://www.reddit.com/poll/gs0x4b)
-## [4][Integrating with Google Calendar in a Rails app - The Right Way](https://www.reddit.com/r/rails/comments/gs3qov/integrating_with_google_calendar_in_a_rails_app/)
+    # encoding: utf-8
+    
+    class FileUploader &lt; CarrierWave::Uploader::Base
+    
+      # Include RMagick or MiniMagick support:
+      # include CarrierWave::RMagick
+      include CarrierWave::MiniMagick
+      # include CarrierWave::Processing::MiniMagick
+    
+      # Choose what kind of storage to use for this uploader:
+      # storage :file
+      storage :file
+    
+    
+      # Override the directory where uploaded files will be stored.
+      # This is a sensible default for uploaders that are meant to be mounted:
+      def store_dir
+        # "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+        "#{model.class.to_s.underscore}/#{model.company.id}/#{mounted_as}/#{model.id}"
+      end
+    
+      version :report, if: :is_image? do
+        process :quality =&gt; 80
+        process resize_to_fill: [250, 250]
+      end
+    
+      def is_image?(image)
+        # causing error, so commented it out for now.
+        ## ["png", "jpg", "jpeg"].any? {|mime| image.content_type.include?(mime)}
+      end
+    
+      # Provide a default URL as a default if there hasn't been a file uploaded:
+      # def default_url
+      #   # For Rails 3.1+ asset pipeline compatibility:
+      #   # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
+      #
+      #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
+      # end
+    
+      # Process files as they are uploaded:
+      # process :scale =&gt; [200, 300]
+      #
+      # def scale(width, height)
+      #   # do something
+      # end
+    
+      # Create different versions of your uploaded files:
+      # version :thumb do
+      #   process :resize_to_fit =&gt; [50, 50]
+      # end
+    
+      # Add a white list of extensions which are allowed to be uploaded.
+      # For images you might use something like this:
+      # def extension_white_list
+      #   %w(jpg jpeg gif png)
+      # end
+    
+      # Override the filename of the uploaded files:
+      # Avoid using model.id or version_name here, see uploader/store.rb for details.
+      # def filename
+      #   "something.jpg" if original_filename
+      # end
+    
+    end
+
+How do I upload to S3 in background when local filesystem store is done? I was checking the [store!](https://github.com/carrierwaveuploader/carrierwave/blob/0f733d25e2aa9c3541c4a04fb114ee526c5ec78e/lib/carrierwave/uploader/store.rb#L62) method, but I don't see any way to tell uploader that I want to upload to s3 even if the it is mentioned as `file` statically inside the code. Is there any of doing what I am looking for?
+## [4][React on Rails](https://www.reddit.com/r/rails/comments/gshg3g/react_on_rails/)
+- url: https://www.reddit.com/r/rails/comments/gshg3g/react_on_rails/
+---
+For those of you using React for the front end and Rails on the back end, what have you found are the biggest tradeoffs/gains on the development side of things? Has it become a go-to tool in your arsenal, or a one-off specific client/job thing?
+## [5][Claim Your Profile Functionality](https://www.reddit.com/r/rails/comments/gsp76i/claim_your_profile_functionality/)
+- url: https://www.reddit.com/r/rails/comments/gsp76i/claim_your_profile_functionality/
+---
+So I have a Model Profiles with people names gathered from facebook groups. I want to make a functionality where users can claim their profiles. I have implemented devise omniauth facebook registrations. So I basically want it to check if user name match  profile name and if so assign that Profile to that User. For example, when a user gets to their registration edit page they see the matching Facebook profile and a button saying 'claim profile', and when button is clicked profile gets assigned. Can you help me code it the right way and avoid spaghetti code? :)
+## [6][Mistakes I will avoid in my next Ruby-on-Rails project](https://www.reddit.com/r/rails/comments/gs7ias/mistakes_i_will_avoid_in_my_next_rubyonrails/)
+- url: https://www.reddit.com/r/rails/comments/gs7ias/mistakes_i_will_avoid_in_my_next_rubyonrails/
+---
+Full article here : [http://bdavidxyz.com/blog/mistakes-i-will-avoid-in-my-next-rails-project/](http://bdavidxyz.com/blog/mistakes-i-will-avoid-in-my-next-rails-project/) Nothing really fancy actually, but I'll be happy to discuss here if needed.
+## [7][anyone have experience integrating klaviyo with rails?](https://www.reddit.com/r/rails/comments/gsi5g9/anyone_have_experience_integrating_klaviyo_with/)
+- url: https://www.reddit.com/r/rails/comments/gsi5g9/anyone_have_experience_integrating_klaviyo_with/
+---
+  
+trying to decide between actionmailer vs klaviyo
+## [8][Integrating with Google Calendar in a Rails app - The Right Way](https://www.reddit.com/r/rails/comments/gs3qov/integrating_with_google_calendar_in_a_rails_app/)
 - url: https://www.reddit.com/r/rails/comments/gs3qov/integrating_with_google_calendar_in_a_rails_app/
 ---
 ### Prerequisite
@@ -138,33 +222,13 @@ This is the flow that took me some time to understand. So what happens when a us
 
 
 That's it - It's quite messy if you are trying to figure it out from scratch and I hope this article will help you all.
-## [5][Monitoring multi-dyno Heroku app](https://www.reddit.com/r/rails/comments/gs3n7t/monitoring_multidyno_heroku_app/)
-- url: https://www.reddit.com/r/rails/comments/gs3n7t/monitoring_multidyno_heroku_app/
+## [9][html.erb vs html.haml vs html.slim - which one do you use?](https://www.reddit.com/r/rails/comments/gs0x4b/htmlerb_vs_htmlhaml_vs_htmlslim_which_one_do_you/)
+- url: https://www.reddit.com/r/rails/comments/gs0x4b/htmlerb_vs_htmlhaml_vs_htmlslim_which_one_do_you/
 ---
-Hello there.
 
-I'm trying to set up some metrics monitoring on Heroku which would eventually be wired to Grafana Cloud. The formation on Heroku is multi-dyno (one web dyno running Rails and two dynos for some workers), with dynos potentially scaling up (especially web dyno).
 
-I've gave a shot at setting up Prometheus, trying out different Ruby gems ([discourse/prometheus_exporter](https://github.com/discourse/prometheus_exporter/) and [prometheus/client_ruby](https://github.com/prometheus/client_ruby/)) but with no luck. The problem I'm facing is that dynos are isolated, so even both of these gems have multi process support, it just doesn't work on Heroku. E.g., the official Prometheus client has `DirectFileStore` which writes to the same file on the filesystem so that different processes can write to it and then expose the same metrics when `/metrics` is called. This doesn't work on Heroku because each dyno gets its own filesystem, so the file can't be shared.
-
-Another option I've looked into potentially is using StatsD, but that will require running a deamon parallel with the Rails app or workers.
-
-Was anyone in a similar situation before? Or do you use something totally different for your metrics for Heroku apps?
-
-Thanks in advance!
-## [6][How are you hosting small apps these days?](https://www.reddit.com/r/rails/comments/gs0hbh/how_are_you_hosting_small_apps_these_days/)
-- url: https://www.reddit.com/r/rails/comments/gs0hbh/how_are_you_hosting_small_apps_these_days/
----
-I have various slack bots and little project apps and I feel like I am a little bit antiquated as I host them on a digital ocean VPS and deploy using capistrano. All the cool kids these days are on about containers and I'm wondering if I'm missing out.
-
-My way works... And it's relatively easy to understand. But I guess one big drawback is that there is a decent amount of setup and config on my host. If I had to start over, there are nginx config files to make, databases to manually install and set up, specific ruby versions to install, etc.
-
-I've kind of given up on heroku because a $10 digital ocean VPS seems a better value than $7 per app. There are various cloud services out there, but pricing is not all that easy to figure out and they seem pretty complicated. 
-
-I'm tempted to redo my apps using Dokku to get containers going easily on a digital ocean box, one nice thing there is that if I ever did need to burn down and start over containers make the setup a lot easier. 
-
-I'm curious what others are doing for low cost hosting of small projects these days.
-## [7][Anyone move from frontend to learn RoR?](https://www.reddit.com/r/rails/comments/gs4jsj/anyone_move_from_frontend_to_learn_ror/)
+[View Poll](https://www.reddit.com/poll/gs0x4b)
+## [10][Anyone move from frontend to learn RoR?](https://www.reddit.com/r/rails/comments/gs4jsj/anyone_move_from_frontend_to_learn_ror/)
 - url: https://www.reddit.com/r/rails/comments/gs4jsj/anyone_move_from_frontend_to_learn_ror/
 ---
 Howdy all!   I'm currently working in the WordPress space on the frontend. I spent a few months about a decade ago deep-diving into Ruby and Rails before moving on to focusing more on FE and WordPress. That's paid off, as the work pays quite well and it seems like there's a decent amount of it out there. 
@@ -180,81 +244,51 @@ There's so many posts about the job market from 1-2-3-4+ years ago, with lots of
 Thanks!
 
 ps: I recognize I'm talking about leaving one of the current hottest spaces (React / frontend) and going to a far less hot area, but still interested in perspectives.
-## [8][OPEN: 2020 Ruby on Rails Developer Community Survey](https://www.reddit.com/r/rails/comments/grlcry/open_2020_ruby_on_rails_developer_community_survey/)
-- url: https://www.reddit.com/r/rails/comments/grlcry/open_2020_ruby_on_rails_developer_community_survey/
+## [11][Blog with Posts and few categories to the same post](https://www.reddit.com/r/rails/comments/gsbjki/blog_with_posts_and_few_categories_to_the_same/)
+- url: https://www.reddit.com/r/rails/comments/gsbjki/blog_with_posts_and_few_categories_to_the_same/
 ---
-Over ten years ago, we invited our community to participate in the first survey about the state of deploying Ruby on Rails applications. Over the years, we've evolved this to include questions about tools, frameworks, and workflows in order to see how the environment is changing.
+Hello!
 
-To view previous results: [https://rails-hosting.com/](https://rails-hosting.com/)
+I'm trying to create an blog site, very simple:
 
-To take the 2020 survey visit [https://planetargon.survey.fm/rails-survey-2020](https://planetargon.survey.fm/rails-survey-2020)
+With:
 
-Thanks in advance for helping spread the word!
-## [9][Would Rails be considered a good option as api backend for a social network mobile app?](https://www.reddit.com/r/rails/comments/gs1bxt/would_rails_be_considered_a_good_option_as_api/)
-- url: https://www.reddit.com/r/rails/comments/gs1bxt/would_rails_be_considered_a_good_option_as_api/
----
-Hi guys
+Posts
 
-The title more or less says it all. I am contemplating using graphql-ruby and rails for a project that involves a social network mobile app built in react native.
+Categories
 
-I put little stock in flavour of the month tech so I don't want just jump ship and go with something like Hasura or other BaaS solutions but I do want to be critical enough to ask if Rails is the best solution in this case?  
+The thing is The Post can have category 1,2,3 etc. 
 
+I want to show Post Title etc, and categories.
 
-Any opinions are welcome!  
-Thanks!
-## [10][Firebase Authentication](https://www.reddit.com/r/rails/comments/gs2s0u/firebase_authentication/)
-- url: https://www.reddit.com/r/rails/comments/gs2s0u/firebase_authentication/
----
-Hello All,
+After clicking the category i want to show all the posts with specified category.
 
-I’m about to start a new project and I’m scoping out options for various parts. The project will contain a front end web app and a backend API which would be used by a mobile app. Normally, I’d use devise for the front end and devise token with for the backend, but I’m considering firebase auth to move the authentication part out of this application. 
+Also I want to add a functionality with creating new category or choosing (I want to choose 1-10 or more categories to one post, THAT'S important! ) during creating new Post. 
 
-The intention is to use a traditional rails front end with sessions, and the api is to be consumed solely for the mobile app. 
+Adding image to post is secondary thing. I've tried scaffold and simple-form gem i have found this tutorials, but i have no idea how to connect it!
 
-Has anybody got any tips on firebase authentication in this way? The firebase docs show javascript examples for authentication. I’m not keen on turning the front end into a full javascript consumer of the api since it increases the complexity of the application (but I’m not completely against this idea). The original plan was to use sprinklings of stimulus on the front end, but I’m happy to use react or vue. 
+[https://www.youtube.com/watch?v=\_xKglx3ox0Q&amp;list=PLefL1yCRLHTHnYWgFEdsp35aMqNQWA1MI&amp;index=4&amp;t=0s](https://www.youtube.com/watch?v=_xKglx3ox0Q&amp;list=PLefL1yCRLHTHnYWgFEdsp35aMqNQWA1MI&amp;index=4&amp;t=0s)
 
-After spending a day looking at options I’m thinking that this isn’t realistic in 2020, with firebase, but it’d work with the devise solution. 
+[https://learn.co/lessons/has-many-through-forms-rails](https://learn.co/lessons/has-many-through-forms-rails)
 
-I’m just looking for thoughts and ideas. 
+Please help bc it's very important for me and I'm doing it for 3 month now ...
 
-Thanks :)
-
-*edit typo
-## [11][Identifier of the bussines included in BLACKLIST](https://www.reddit.com/r/rails/comments/gs5map/identifier_of_the_bussines_included_in_blacklist/)
-- url: https://www.reddit.com/r/rails/comments/gs5map/identifier_of_the_bussines_included_in_blacklist/
----
-Good afternoon people! I hope this sub reddit is active because I have a problem and it would be great if you can help me.
-
-It turns out that when trying to make an online purchase with a debit card, it pops up a notification on my bank app saying that the page is in BLACKLIST, exactly it says: "identifier of the business included in Blacklist".
-
-What I need to know is the following:
-
-\-Is it possible to alter the merchant's identifier without being part of the team of trade programmers? (like a VPN for web pages ID)
-
-\-What solution can you think of to circumvent the system and be able to buy on this page (I swear it is not illegal! )
+If anyone could help me doing this I would be very grateful.
 
 &amp;#x200B;
 
-I appreciate your opinions in advance!
-## [12][How to use your custom static files?](https://www.reddit.com/r/rails/comments/grxmgn/how_to_use_your_custom_static_files/)
-- url: https://www.reddit.com/r/rails/comments/grxmgn/how_to_use_your_custom_static_files/
+PEACE
+## [12][Monitoring multi-dyno Heroku app](https://www.reddit.com/r/rails/comments/gs3n7t/monitoring_multidyno_heroku_app/)
+- url: https://www.reddit.com/r/rails/comments/gs3n7t/monitoring_multidyno_heroku_app/
 ---
-I am new to rails, and the version I am using is 6, I faced an issue with referring to my static files like CSS and javascript, I tried:
+Hello there.
 
-\-  typical ways
+I'm trying to set up some metrics monitoring on Heroku which would eventually be wired to Grafana Cloud. The formation on Heroku is multi-dyno (one web dyno running Rails and two dynos for some workers), with dynos potentially scaling up (especially web dyno).
 
-`&lt;link href='assets/stylesheets/customs.css' rel='stylesheet' type='text/css'&gt;`
+I've gave a shot at setting up Prometheus, trying out different Ruby gems ([discourse/prometheus_exporter](https://github.com/discourse/prometheus_exporter/) and [prometheus/client_ruby](https://github.com/prometheus/client_ruby/)) but with no luck. The problem I'm facing is that dynos are isolated, so even both of these gems have multi process support, it just doesn't work on Heroku. E.g., the official Prometheus client has `DirectFileStore` which writes to the same file on the filesystem so that different processes can write to it and then expose the same metrics when `/metrics` is called. This doesn't work on Heroku because each dyno gets its own filesystem, so the file can't be shared.
 
-or
+Another option I've looked into potentially is using StatsD, but that will require running a deamon parallel with the Rails app or workers.
 
-`&lt;link href='javascript/stylesheets/customs.css' rel='stylesheet' type='text/css'&gt;`
+Was anyone in a similar situation before? Or do you use something totally different for your metrics for Heroku apps?
 
-or
-
-`&lt;link href='vendor/stylesheets/customs.css' rel='stylesheet' type='text/css'&gt;`
-
-\- import in application.css
-
-`@import './theme/css/clean-blog.css';`
-
-and none of them work, any suggestions, please?
+Thanks in advance!

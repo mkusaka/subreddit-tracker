@@ -109,126 +109,98 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/gcbkuu/whos_hiring_may_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Gatsby, Website-Building Startup Backed By Index Ventures, Raises $28 Million](https://www.reddit.com/r/reactjs/comments/grm6wt/gatsby_websitebuilding_startup_backed_by_index/)
-- url: https://www.forbes.com/sites/davidjeans/2020/05/27/gatsby-website-building-startup-backed-by-index-ventures-raises-28-million/
+## [3][🎂Happy 6th Birthday React - what are you earliest memories? ⚛️](https://www.reddit.com/r/reactjs/comments/gspypk/happy_6th_birthday_react_what_are_you_earliest/)
+- url: https://dev.to/iainfreestone/happy-6th-birthday-react-what-are-you-earliest-memories-3mg6
 ---
 
-## [4][React does not create the element, return an object, prints [Object object]?](https://www.reddit.com/r/reactjs/comments/gs68qk/react_does_not_create_the_element_return_an/)
-- url: https://www.reddit.com/r/reactjs/comments/gs68qk/react_does_not_create_the_element_return_an/
+## [4][My (fully) first React App. A tool for visualizing Priority Queues that uses a Heap as it's backbone.](https://www.reddit.com/r/reactjs/comments/gsllvn/my_fully_first_react_app_a_tool_for_visualizing/)
+- url: https://v.redd.it/qrdxss2mom151
 ---
-`import React from 'react'`  
-`class SearchCard extends React.Component{`  
- `ifProps=()=&gt;{`  
- `let user = this.props.user`  
- `return(&lt;li&gt;&lt;p&gt;{user.name}- @{user.username}&lt;/p&gt;&lt;/li&gt;) }`  
- `render(){`  
-`return(&lt;div&gt;`  
- `{this.ifProps()}`  
-`&lt;/div&gt;)}`  
-`}`  
-`export default SearchCard`
+
+## [5][React tutorials now on MDN](https://www.reddit.com/r/reactjs/comments/gs7sqd/react_tutorials_now_on_mdn/)
+- url: https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started
+---
+
+## [6][Stack Overflow Developer Survey 2020 - Web Frameworks](https://www.reddit.com/r/reactjs/comments/gs70e2/stack_overflow_developer_survey_2020_web/)
+- url: https://insights.stackoverflow.com/survey/2020#technology-web-frameworks
+---
+
+## [7][Just wanted to show some of the page transitions that I made for one of my projects that I am working on. I used Framer Motion for the animation.](https://www.reddit.com/r/reactjs/comments/gscfl2/just_wanted_to_show_some_of_the_page_transitions/)
+- url: https://v.redd.it/zka0hv160k151
+---
+
+## [8][We made a simplified Next.js and Express.js Skyscanner clone ✈️](https://www.reddit.com/r/reactjs/comments/gsrklw/we_made_a_simplified_nextjs_and_expressjs/)
+- url: https://www.reddit.com/r/reactjs/comments/gsrklw/we_made_a_simplified_nextjs_and_expressjs/
+---
+Hi all,
+
+at Signofactory we love to travel 🌎. The frustration of not being able to hop on the next plane pushed us to buy the domain [https://flights.rip](https://flights.rip)
+
+We were unsure what to do with it so we eventually settled on a (very basic) flight search engine, trying to recreate the experience of popular website such as Skyscanner or Momondo using modern web technologies. We ended up using the very limited Skyscanner APIs ([provided through RapidAPI](https://rapidapi.com/skyscanner/api/skyscanner-flight-search)) to power the flight search, as they were the only free alternative we were able to find (suggestions appreciated!).
+
+Some key features of the project:
+
+* The frontend experience is built with Next.js (React) and the backend is built using Express.js (plus Passport for authentication)
+* We experimented using Recoil, which I have to say is very straightforward although it lacks the opportunity to initialize values from server (we ended-up double wrapping our Component in \_app.js to initialize them via useEffect() hook). If you know of a better way to do so, we are here to chat with the community ;)
+* Deployment is fully automated through Github actions to our webserver. If you are looking to deploy something like that on your own server look at the workflow files, there are some secrets you should configure (feel free to DM us if you need help with that)
+
+We were deeply inspired from [this post](https://www.reddit.com/r/reactjs/comments/gnn5j1/built_a_dribbble_clone_for_developers_mvp/) from the fellow Redditor u/abdulmdiaz
+
+What do you guys think? Are you interested in seeing more content like this? Based on the feedback we get, we are thinking of releasing many more of these small "experiments" to keep on growing and building credibility for our clients.
+
+We are also thinking about a small YT series like [this one](https://www.reddit.com/r/reactjs/comments/gpovx1/nextjs_building_a_car_trader_app_all_6_videos_now/) to teach how to re-build our skyscanner clone (or another platform) from scratch. If you're interested, you can subscribe to our (upcoming) [youtube channel](https://www.youtube.com/channel/UCRYDpGClrHtSbKD3qWHLovQ).
+
+We are a small web development company based in Italy. Our [main website](https://signofactory.it) is currently under revamp, but we should be back online soon. We have worked in stealth mode on some cool stuff in the past - and we are now looking forward to sharing it with you guys!
+
+Any comment or feedback is appreciated (even harsh ones) - we know we have a lot to learn!
 
 &amp;#x200B;
 
-&amp;#x200B;
+Github repo - [https://github.com/signofactory/flights-rip/](https://github.com/signofactory/flights-rip/)
 
-`import React from 'react'`  
-`import SearchCard from './SearchCard'`  
+Live demo - [https://flights.rip](https://flights.rip)
 
-
-`export default function SearchCardIndex(props){`
-
-`function renderIndex(arr){`  
- `return arr.map((user,i)=&gt;{`  
- `debugger`  
- `if(user.attributes){`  
- `user = user.attributes`  
-`}`  
- `return &lt;SearchCard user={user}/&gt;`  
-   
-`})`  
-   
-`}`  
- `const handleOnChange = (e)=&gt;{`  
- `let users=  props.users`  
- `let newList`  
- `let oldList = users.map(user=&gt;{`  
- `user = user.attributes`  
- `return {name: user.name.toLowerCase(),username: user.username.toLowerCase(),id: user.id}})`  
- `let word = e.target.value`  
- `if(word !==""){`  
- `newList = oldList.filter(user=&gt;{`  
- `return (user.username.includes(word)||(user.name.includes(word))`  
-`)})`  
-`}else{`  
- `newList=oldList`  
-`}`  
- `let ul= document.querySelector(".searchIndex")`  
- `let list = renderIndex(newList)`  
- `ul.innerHTML = list`  
-`}`  
- `return(&lt;div &gt;`  
- `&lt;input type="text" value="" onChange={(e)=&gt;handleOnChange(e)}/&gt;`  
- `&lt;ul className="searchIndex "&gt;`  
- `&lt;/ul&gt;`  
- `&lt;/div&gt;)`  
-`}`
-## [5][Working on NPM Package locally](https://www.reddit.com/r/reactjs/comments/gs5zi3/working_on_npm_package_locally/)
-- url: https://www.reddit.com/r/reactjs/comments/gs5zi3/working_on_npm_package_locally/
----
-I want to submit a PR for a feature I want within a package that I use in my React project. Is there a way that I can pull down the package locally, make changes on it, and test it within my project to submit my PR?
-## [6][Render Component on click](https://www.reddit.com/r/reactjs/comments/gs5qoq/render_component_on_click/)
-- url: https://www.reddit.com/r/reactjs/comments/gs5qoq/render_component_on_click/
----
-Hi all, 
-
-I am new to programming and I've been using Python and AWS, but now I got a project where I must use React as well. 
-
-I managed to solve most of the tasks, but I got stuck on the next one - In short: When the button on one component is clicked, the content of that component is replaced with different  content
-
-Longer version:
-
-I have a component called Home content, where some basic divs and a button are rendered. What I need to achieve is when that button is clicked, content that is fetched via API should show instead of the current content. I am not sure what is the best way to do it, but my idea was to create a separate component, called Generate URL, that will be in charge of fetching and rendering the data.
-
-I have attached the code example here: [https://jsfiddle.net/me8gLzsp/](https://jsfiddle.net/me8gLzsp/)
-
-When I just pass my Generate component to the Home content in 'normal way' &lt;Genereate /&gt;, it works as it should, but I don't know how to do it on click.
-
-What would be the best approach here?
-## [7][96: Pete Hunt on Seven Years of Reconsidering Best Practices | React Podcast](https://www.reddit.com/r/reactjs/comments/gs5qc9/96_pete_hunt_on_seven_years_of_reconsidering_best/)
-- url: https://reactpodcast.com/96
+Authors website (under construction) - [https://signofactory.it](https://signofactory.it)
+## [9][A visual guide to React Mental models, part 2: useState, useEffect and lifecycles](https://www.reddit.com/r/reactjs/comments/gst1ho/a_visual_guide_to_react_mental_models_part_2/)
+- url: https://obedparla.com/code/a-visual-guide-to-react-mental-models-part-2-use-state-use-effect-and-lifecycles/
 ---
 
-## [8][Fireact Part 1: Firebase authentication in React](https://www.reddit.com/r/reactjs/comments/gs5h62/fireact_part_1_firebase_authentication_in_react/)
-- url: https://medium.com/@chaoming_li/fireact-part-1-firebase-authentication-in-react-b835f6beacc5?sk=26ed71ccd439fe97103416d7f4039cd7
+## [10][Help with TypeScript type signature for "onClick" handler of button element](https://www.reddit.com/r/reactjs/comments/gsrtnx/help_with_typescript_type_signature_for_onclick/)
+- url: https://www.reddit.com/r/reactjs/comments/gsrtnx/help_with_typescript_type_signature_for_onclick/
+---
+Hi there,
+
+I am new to front-end development and to React with TypeScript. I was wondering why I can write
+
+    &lt;button onClick={() =&gt; console.log("BOOM!")}&gt;
+
+without any compiler error, although Visual Studio Code tooltip tells me:
+
+     (JSX attribute) React.DOMAttributes&lt;HTMLButtonElement&gt;.onClick?: ((event: React.MouseEvent&lt;HTMLButtonElement, MouseEvent&gt;) =&gt; void) | undefined 
+
+As far as I understand it, the `event` parameter is not optional. So why does the compiler not complain about `() =&gt; ...` although it should be `(event) =&gt; ...` ?
+
+Thanks a lot in advance for your help,
+
+Schorsch
+## [11][Help: React Hook Form Controller API vote (Twitter)](https://www.reddit.com/r/reactjs/comments/gsouun/help_react_hook_form_controller_api_vote_twitter/)
+- url: https://twitter.com/HookForm/status/1266240189195669505
 ---
 
-## [9][Nowadays - Class or Function Based Components?](https://www.reddit.com/r/reactjs/comments/gs5b9u/nowadays_class_or_function_based_components/)
-- url: https://www.reddit.com/r/reactjs/comments/gs5b9u/nowadays_class_or_function_based_components/
+## [12][How do you even use ant design's ConfigProvider?](https://www.reddit.com/r/reactjs/comments/gsr5rb/how_do_you_even_use_ant_designs_configprovider/)
+- url: https://www.reddit.com/r/reactjs/comments/gsr5rb/how_do_you_even_use_ant_designs_configprovider/
 ---
-Hello, I have been learning React from tutorials based on older versions of React where of course Class based components are used as the smart containers and function based components as dumb, stateless components. However at the time this courses was created the react hooks was just released and they weren't widely used. Nowadays since the Hooks are fully-supported what approach should I use:  
-1. Only function based components, where some of them use the useState hooks and are containers?
+In Ant Design's docs, under Usage, it simply writes:
 
-2. Or this old approach dividing components into class or function based?
-## [10][Introducing React Modal - an extremely minimal, completely unopinionated modal library](https://www.reddit.com/r/reactjs/comments/grpgp4/introducing_react_modal_an_extremely_minimal/)
-- url: https://www.reddit.com/r/reactjs/comments/grpgp4/introducing_react_modal_an_extremely_minimal/
----
-Hi all—I've been a member of this subreddit for years and am excited to share the first of many open-source projects that my digital design firm [TRBL](https://trbl.design) is releasing in the future. We're a team of designers and developers and one of our goals is to open-source as much of the code we write as possible. 
+    &lt;ConfigProvider {...yourConfig}&gt; &lt;App /&gt; &lt;/ConfigProvider&gt;
 
-The code we release will be aimed squarely at solving problems in a minimal and unobtrusive way, where developers can execute on complex experiences as-designed, without making concessions based on limitations from the packages that they rely on.
+My impression of this was simply to wrap ConfigProvider around my ant design components and the components would somehow be able to consume my configurations, but it doesn't:
 
-React Modal is our first release. We often find effective solutions from modal-based navigation and experiences, and this package was built because we found ourselves fighting against existing modal implementations. We needed a completely unstyled, unopinionated modal implementation that could flex and bend to make our highly varied, deliberate projects come to life as designed.
+    import locale from 'antd/es/date-picker/locale/zh_CN';
+    &lt;ConfigProvider locale={locale}&gt;
+        &lt;DatePicker /&gt; // DatePicker should be accepting locale, but it isn't
+    &lt;/ConfigProvider&gt;
 
-[https://github.com/trouble/react-modal](https://github.com/trouble/react-modal)
+Also, React's docs on Context mention that I'm supposed to have access to the Context if I want to have a component consume it, but I don't have access to it in this case.
 
-We use this package ourselves and have it in production on many sites and applications. There's a lot more coming from us in the future, including a very large open-source project that will be revealed in a few months from now. 
-
-Would love to know what you all think.
-## [11][Two Steps Forward, One Step Back - a critique on Atomic CSS (basscss/tachyons/tailwinds) by one of the pioneers of Atomic CSS](https://www.reddit.com/r/reactjs/comments/grmyrl/two_steps_forward_one_step_back_a_critique_on/)
-- url: https://jxnblk.com/blog/two-steps-forward/
----
-
-## [12][Ideas for personal portfolio](https://www.reddit.com/r/reactjs/comments/gs0ohs/ideas_for_personal_portfolio/)
-- url: https://www.reddit.com/r/reactjs/comments/gs0ohs/ideas_for_personal_portfolio/
----
-Hey, I'm a full stack developer and work mainly in React. I wanted to create a personal portfolio but I'm not very good at UI and UX. So, can anyone provide some ideas or inspiration for the portfolio. Thank you.
+Of course, I could simply directly pass the locale as props to DatePicker, but I don't want to do that. Any idea how to make my child components consume the locale prop? I've completely stumped.

@@ -125,65 +125,75 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][The “OO” Antipattern](https://www.reddit.com/r/cpp/comments/gs0iwm/the_oo_antipattern/)
+## [3][[The Cherno] Move Semantics in C++](https://www.reddit.com/r/cpp/comments/gsrzc0/the_cherno_move_semantics_in_c/)
+- url: https://www.youtube.com/watch?v=ehMg6zvXuMY
+---
+
+## [4][Profiling template metaprograms with C++ Build Insights](https://www.reddit.com/r/cpp/comments/gseork/profiling_template_metaprograms_with_c_build/)
+- url: https://devblogs.microsoft.com/cppblog/profiling-template-metaprograms-with-cpp-build-insights/
+---
+
+## [5][Smart point for memory safety.](https://www.reddit.com/r/cpp/comments/gsn0zu/smart_point_for_memory_safety/)
+- url: https://www.reddit.com/r/cpp/comments/gsn0zu/smart_point_for_memory_safety/
+---
+So there are a lot of discussions about c++ memory safety and the fact that google and Microsoft is trying to using other language in the development of browsers like rust. My question is, wouldn’t the use of smart pointer eliminating many of the unsafe-ness of cpp? Why do they want to move entirely to another language?
+## [6][LEAF, a lightweight error handling library, is undergoing Boost review now](https://www.reddit.com/r/cpp/comments/gshj1u/leaf_a_lightweight_error_handling_library_is/)
+- url: https://www.reddit.com/r/cpp/comments/gshj1u/leaf_a_lightweight_error_handling_library_is/
+---
+LEAF is a lightweight error handling library for C++11. Features:
+
+* Efficient delivery of arbitrary error objects to the correct error-handling scope.
+* No dynamic memory allocations.
+* Compatible with std::error\_code, errno and any other error code type.
+* Can be used with or without exception handling.
+* Support for multi-thread programming.
+
+Documentation: [https://zajo.github.io/leaf/](https://zajo.github.io/leaf/).
+
+Benchmark: [https://github.com/zajo/leaf/blob/master/benchmark/benchmark.md](https://github.com/zajo/leaf/blob/master/benchmark/benchmark.md)
+
+Travis: [https://travis-ci.org/github/zajo/leaf](https://travis-ci.org/github/zajo/leaf)
+
+To participate, you can use the Boost Users mailing list [https://lists.boost.org/mailman/listinfo.cgi/boost-users](https://lists.boost.org/mailman/listinfo.cgi/boost-users).
+## [7][CppCast: Rider for Unreal Engine](https://www.reddit.com/r/cpp/comments/gsk3b0/cppcast_rider_for_unreal_engine/)
+- url: https://cppcast.com/rider-unreal-anastasia-kazakova/
+---
+
+## [8][CompilerNerd: CI build tracking &amp; analysis for C++](https://www.reddit.com/r/cpp/comments/gs7k0q/compilernerd_ci_build_tracking_analysis_for_c/)
+- url: https://www.reddit.com/r/cpp/comments/gs7k0q/compilernerd_ci_build_tracking_analysis_for_c/
+---
+Two other students and myself are starting a university (**open-source**) group project with the goal of developing a **CI web-app** that **continuously tracks and analyses** fine-grained (e.g. per compilation unit) **build statistics** such as build times, memory usage, template instantiations for C++ projects.
+
+Essentially, this tool would be **integrated into existing CI build systems** with profiling and analysis done on a user-defined basis; e.g. for every (or every arbitrary number) commit(s).
+
+One of our design goals is to have a **drop-in-replacement wrapper compiler**; only requiring a few lines in your build system to change without requiring any modification of the code. We're thinking of **initially exclusively supporting clang** since we are planning on using **Templight** for profiling.
+
+Templight already has many features such as a callgrind output that allows you to visualise and step-through the call graph of the template instantions and their associated cost. We’re not intending to replace this sort of interaction, which is what you should use once the problem is identified and complex code refactoring is necessary. We hope to instead **provide &amp; analyse historical data** so that developers can quickly identify or be notified of specific changes that causes compilation speed, memory usage,... to suffer; i.e. automated analysis &amp; regression testing.
+
+Furthermore, Templight and other profiling tools tend to be overly-complicated; especially “-ftime-report”, which outputs a lot of useless information since it is more tailored to compiler developers. Hence, we’re aiming to be as user-friendly as possible: easy visualisation, sorting and filtering of data. Something which we also think would be very valuable is the ability to compare commits. Done in conjunction with "git diff"ing your code, this would then allow you to quickly see the code modifications that caused the changes. 
+
+For example, it should make it easier for a developer to see if a specific change to a public-facing templated function causes there to be a substantial increase in the number of template instantiations. This may not have an immediate effect on the build times but a few months down the line once the function is frequently used, build times could have dramatically increased. But, by then it may be much harder to refactor.
+
+Better yet, would be the ability to (automatically) predict if changes to a template-heavy library will cause software depending on that library to have build time explosions; e.g. by inter-repo analysis or simply to specify that specific entities are expected to be used very often. Not sure how useful or feasible such a feature would be, just a suggestion for something that could be added in the distant future. More generally, this tool would have the means for inter-repo analysis (which current tools do not offer). We presume such analysis could be useful, but we haven’t worked on any large codebases to know for sure.
+
+**We would greatly appreciate any feature suggestions or critiques, since after all, we are developing this with the hope that you will integrate it into your workflow.**
+## [9][The “OO” Antipattern](https://www.reddit.com/r/cpp/comments/gs0iwm/the_oo_antipattern/)
 - url: https://quuxplusone.github.io/blog/2020/05/28/oo-antipattern/
 ---
 
-## [4][A new geometry pipeline in the Magnum graphics engine](https://www.reddit.com/r/cpp/comments/grld3d/a_new_geometry_pipeline_in_the_magnum_graphics/)
-- url: https://blog.magnum.graphics/announcements/new-geometry-pipeline/
+## [10][Data encapsulatipn necessary at all?](https://www.reddit.com/r/cpp/comments/gso7zx/data_encapsulatipn_necessary_at_all/)
+- url: https://www.reddit.com/r/cpp/comments/gso7zx/data_encapsulatipn_necessary_at_all/
 ---
+Hello, iI wanted to ask how you practice data encapsulation of classes. I understand that encapsulation is necessary in many cases, however sometimes it seems unnecessary to write a getValue/setValue method for every data member, especially if the class is used as a c struct to simply store data. 
+What are your advices for a good class design?
+Encapsulation mandatory? Are mixed approaches (some members encapsulated, others declared public) reasonable and easy to understand?
+## [11][Try out my C++ quiz on Telegram!](https://www.reddit.com/r/cpp/comments/gsra66/try_out_my_c_quiz_on_telegram/)
+- url: https://www.reddit.com/r/cpp/comments/gsra66/try_out_my_c_quiz_on_telegram/
+---
+I made a beginners C++ quiz on telegram for their Educational Quiz Competition. Winners of popular quizzes will get a portion of €400 000! I'd appreciate it if you guys give my quiz a go and leave a comment or review. There's only 30 short multiple choice questions. Thanks!
 
-## [5][CPM.cmake 0.25 released - CMake's missing package manager](https://www.reddit.com/r/cpp/comments/gs2yr1/cpmcmake_025_released_cmakes_missing_package/)
+[https://quiz.directory/quiz/BiETakbL](https://quiz.directory/quiz/BiETakbL)
+## [12][CPM.cmake 0.25 released - CMake's missing package manager](https://www.reddit.com/r/cpp/comments/gs2yr1/cpmcmake_025_released_cmakes_missing_package/)
 - url: https://github.com/TheLartians/CPM.cmake
----
-
-## [6][What should I know before going into a data structures class in c++?](https://www.reddit.com/r/cpp/comments/gs33bm/what_should_i_know_before_going_into_a_data/)
-- url: https://www.reddit.com/r/cpp/comments/gs33bm/what_should_i_know_before_going_into_a_data/
----
-So I am about two weeks away from going into a 4-week summer Data structures class in C++ and I was wondering what are the most important things I should know to be prepared? I just finished the previous class, which was a basic programming class to get into the data structures class but I didn't do too well in it.
-
-Sort of barely got by and barely passed with a C. I want to get a much better grip on these things before I get into the way more serious classes! Any advice on what I should know to be prepared will be really helpful!
-## [7][std::array vs. std::vector with std::unique_ptr](https://www.reddit.com/r/cpp/comments/gs2fuk/stdarray_vs_stdvector_with_stdunique_ptr/)
-- url: https://www.reddit.com/r/cpp/comments/gs2fuk/stdarray_vs_stdvector_with_stdunique_ptr/
----
-Hi guys, I have a question regarding the difference between `std::array` and `std::vector` in the context of `std::unique_ptr`s. I'm beginning to learn cpp, so my understanding of the internals is rudimentary. I have a class, in which I want to have a `static const` array of `std::unique_ptr` pointing to an abstract class. The reason why I want it to be `static const` is because this array will never change during runtime, so any instance should point to the same object in memory. I don't know if this is good practice, I just thought it might save memory.
-
-I tried both `std::vector&lt;std::unique_ptr&lt;Abstract_class&gt;&gt;` and `std::array&lt;std::unique_ptr&lt;Abstract_class&gt;&gt;`. I can only compile, if I use `std::array`.
-
-    class Entity {
-    private:
-    //This won't work
-    //static const std::vector&lt;std::unique_ptr&lt;Abstract_class&gt;&gt; arr;
-    static const std::array&lt;std::unique_ptr&lt;Abstract_class, 1&gt; arr;
-    //more stuff
-    ...
-    };
-    
-    //Compile error when trying to do this
-    //const std::vector&lt;std::unique_ptr&lt;Abstract_class&gt;&gt; Entity::arr {std::make_unique&lt;Implementation_of_Abstract_class&gt;};
-    //But this works
-    const std::array&lt;std::unique_ptr&lt;Abstract_class&gt;, 1&gt; Entity::arr {std::make_unique&lt;Implementation_of_Abstract_class}; 
-
-I'm not sure why. I though, no copying is done when using an initializer list for `std::vector`? Does this have something to do with stack and heap allocation of `std::array`/`std::vector`, respectively? Appreciate any input! :)
-## [8][Which GCC flags do you use often?](https://www.reddit.com/r/cpp/comments/grpux6/which_gcc_flags_do_you_use_often/)
-- url: https://www.reddit.com/r/cpp/comments/grpux6/which_gcc_flags_do_you_use_often/
----
-Or your favorite ones? And when they are useful for you?
-
-I can see these frequently in open source projects: `-Wall, -O3, -funroll-loops, -D..`
-## [9][std::to_value - Unifying strong types and legacy APIs](https://www.reddit.com/r/cpp/comments/grjrph/stdto_value_unifying_strong_types_and_legacy_apis/)
-- url: https://github.com/Lyberta/cpp-to-value
----
-
-## [10][Faster Integer Parsing](https://www.reddit.com/r/cpp/comments/gr18ig/faster_integer_parsing/)
-- url: https://kholdstare.github.io/technical/2020/05/26/faster-integer-parsing.html
----
-
-## [11][Cppm CMake base cross platform C++ project manager](https://www.reddit.com/r/cpp/comments/gri54h/cppm_cmake_base_cross_platform_c_project_manager/)
-- url: https://github.com/injae/cppm
----
-
-## [12][The AMD64 standard did not only add 64 bit instructions but completely reshaped the way assembly routines call each other, with a tremendous impact in performance.](https://www.reddit.com/r/cpp/comments/grb97f/the_amd64_standard_did_not_only_add_64_bit/)
-- url: https://youtu.be/3IVmMD4hqHY
 ---
 

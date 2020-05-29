@@ -1,67 +1,69 @@
 # golang
-## [1][Go jumps 4th position as most loved language](https://www.reddit.com/r/golang/comments/gs2ool/go_jumps_4th_position_as_most_loved_language/)
+## [1][Generate a REST API from a PostgreSQL database with pagination, sorting, filtering, and JWT-based authentication](https://www.reddit.com/r/golang/comments/gsl7sp/generate_a_rest_api_from_a_postgresql_database/)
+- url: https://eatonphil.github.io/dbcore/
+---
+
+## [2][A Podcast on distributed systems](https://www.reddit.com/r/golang/comments/gsar35/a_podcast_on_distributed_systems/)
+- url: https://www.reddit.com/r/golang/comments/gsar35/a_podcast_on_distributed_systems/
+---
+Alex and I have worked for years with large scale distributed systems from ad serving to cloud databases. During the lockdown we spent time chatting about our favourite topics and thought it might make for a good Podcast. So presenting "The Computing Podcast". 
+
+[https://anchor.fm/computing](https://anchor.fm/computing)
+
+This might seem a bit off-topic but I posted it here since I'm a big fan of GO and now primarily work with systems built with GO and so I will be inviting a lot of people building GO infra to talk with us. Please reach out if you'd like to join one of our chats and tell us about your work with GO infra. Or just subscribe for when we get those GO interviews out.
+
+We currently have 3 episodes and scheduled a bunch more including interviews with folks working on building all kind of interesting distributed systems.
+
+&amp;#x200B;
+
+1. **Fourth Wave of Distributed Systems - NoSQL to NewSQL**
+2. **Part 1: Apache Kafka - Walkthrough of a distributed system**
+3. **Part 2: Apache Kafka - Walkthrough of a distributed system**
+## [3][ZZT in Go (using a Pascal-to-Go converter)](https://www.reddit.com/r/golang/comments/gsmqhq/zzt_in_go_using_a_pascaltogo_converter/)
+- url: https://benhoyt.com/writings/zzt-in-go/
+---
+
+## [4][Multiple arguments of the same type in a function](https://www.reddit.com/r/golang/comments/gsqiee/multiple_arguments_of_the_same_type_in_a_function/)
+- url: https://www.reddit.com/r/golang/comments/gsqiee/multiple_arguments_of_the_same_type_in_a_function/
+---
+I was just doing a little refactor where I noticed I can simplify my method signature so I want to share this tip with you as well. I didn't know it a year ago when I wrote the original code.  
+
+
+If you have a function signature with multiple arguments of the same type, you don't have to repeat yourself and write the type of every argument.  
+
+
+[simplified repeated arg](https://preview.redd.it/ht7i9fq4mo151.png?width=1374&amp;format=png&amp;auto=webp&amp;s=69cb35c472bf5e8da4140688062c77e8076feec3)
+
+[https://twitter.com/Web3Coach/status/1266311890290032642](https://twitter.com/Web3Coach/status/1266311890290032642)
+## [5][Go jumps 4th position as most loved language](https://www.reddit.com/r/golang/comments/gs2ool/go_jumps_4th_position_as_most_loved_language/)
 - url: https://www.reddit.com/r/golang/comments/gs2ool/go_jumps_4th_position_as_most_loved_language/
 ---
 Stack overflow survey 2020 is out , And its not surprising that GO has jumped 4 positions to be 5th most loved language as compared to previous year
 
 [https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-loved](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-loved)
-## [2][dancing gophers in your terminal](https://www.reddit.com/r/golang/comments/grqjh2/dancing_gophers_in_your_terminal/)
-- url: https://www.reddit.com/r/golang/comments/grqjh2/dancing_gophers_in_your_terminal/
+## [6][I have a hard time understanding interfaces](https://www.reddit.com/r/golang/comments/gsmg2n/i_have_a_hard_time_understanding_interfaces/)
+- url: https://www.reddit.com/r/golang/comments/gsmg2n/i_have_a_hard_time_understanding_interfaces/
 ---
-working towards an ansi / art library.. in case anyone has interest in this here is how i've been making these files.
+Anything past the first interface slide in a tour of go, I suddenly have no idea what I am reading. I have no idea what I am reading. I know that interfaces are a set of method signatures, and as far as I understand, when a function accepts an interface as an argument, it accepts any object\* that has implemented the methods defined in the interface. 
 
-[link to github page, there is a gif in README.MD with output in case you're curious](https://github.com/80at8/gopherdance/)
-## [3][Go and CPU Caches](https://www.reddit.com/r/golang/comments/grqyw1/go_and_cpu_caches/)
-- url: https://medium.com/@teivah/go-and-cpu-caches-af5d32cc5592
+\* I think that's what they're called? I mean to say structs, float64 that have the methods, etc.
+
+Anything past that, like "Interfaces are implemented implicitly", and "Interface values", I don't understand. I thought all interfaces were a collection of methods, how come they are mentioned as a tuple in this page?
+## [7][Detect deeply nested if statements in Go source code](https://www.reddit.com/r/golang/comments/gssvil/detect_deeply_nested_if_statements_in_go_source/)
+- url: https://www.reddit.com/r/golang/comments/gssvil/detect_deeply_nested_if_statements_in_go_source/
 ---
+[https://github.com/nakabonne/nestif](https://github.com/nakabonne/nestif)
 
-## [4][He’s a little darker blue than normal, but looks great on my mask!](https://www.reddit.com/r/golang/comments/grslua/hes_a_little_darker_blue_than_normal_but_looks/)
-- url: https://i.imgur.com/QMv8yrA.jpg
----
-
-## [5][[decimal] a new high-performance arbitrary-precision decimal floating-point arithmetic package for Go](https://www.reddit.com/r/golang/comments/grvmuc/decimal_a_new_highperformance_arbitraryprecision/)
-- url: https://www.reddit.com/r/golang/comments/grvmuc/decimal_a_new_highperformance_arbitraryprecision/
----
-[https://github.com/db47h/decimal](https://github.com/db47h/decimal)
-
-TL;DR This is a port of Go's big.Float to a big.Decimal. Compared to other similar packages out there, the API is identical to math/big, and it uses a decimal representation for the mantissa.
-## [6][I used to complain about Why Go doesn't have generic?](https://www.reddit.com/r/golang/comments/gs6cjp/i_used_to_complain_about_why_go_doesnt_have/)
-- url: https://www.reddit.com/r/golang/comments/gs6cjp/i_used_to_complain_about_why_go_doesnt_have/
----
-[Go: the Good, the Bad and the Ugly](https://bluxte.net/musings/2018/04/10/go-good-bad-ugly)
-
-In my first year of Go, I was thinking that it's good if we can also have Generic and other cool things out there in Go
-
-But now I know why they want to keep Go as simple as it is.
-
-I've seen a lot of complicated things build with Go
-
-\- a function return an interface{} even 2 (interface{},interface{})
-
-\- then overuse of reflection (reflect pkg)
-
-....
-
-Imagine you have all of those fancy functionalities in Go, how complicated is your code gonna be?
-## [7][String references in closures](https://www.reddit.com/r/golang/comments/gs5mwj/string_references_in_closures/)
-- url: https://www.reddit.com/r/golang/comments/gs5mwj/string_references_in_closures/
----
-Say I had this
-
-    func makeFilter(filterVal string) MyFilter {
-        return func(s string) bool { return filterVal == s; }
-    }
-
-Is filterVal copied here for use in the closure, or underneath does it use a pointer to the original string? Is it better to capture the pointer to avoid a copy?
-## [8][Implement a Finite-State Machine in Golang](https://www.reddit.com/r/golang/comments/grwngh/implement_a_finitestate_machine_in_golang/)
-- url: https://levelup.gitconnected.com/implement-a-finite-state-machine-in-golang-f0438b6bc0a8
+Hi, I made a static analysis tool that can help you find if statements that make your code hard to read.
+## [8][Rel v0.4.0 Released – Golang SQL Database Layer for Layered Architecture](https://www.reddit.com/r/golang/comments/gss4ta/rel_v040_released_golang_sql_database_layer_for/)
+- url: https://github.com/Fs02/rel
 ---
 
-## [9][Diving into Go by building a CLI application](https://www.reddit.com/r/golang/comments/grgvlu/diving_into_go_by_building_a_cli_application/)
-- url: https://eryb.space/2020/05/27/diving-into-go-by-building-a-cli-application.html
+## [9][WOFF, WOFF2 and EOT parsers in Go](https://www.reddit.com/r/golang/comments/gsauam/woff_woff2_and_eot_parsers_in_go/)
+- url: https://github.com/tdewolff/canvas/tree/master/font
 ---
 
-## [10][[video] Why Go? - what sets Go apart](https://www.reddit.com/r/golang/comments/gs40k1/video_why_go_what_sets_go_apart/)
-- url: https://www.youtube.com/watch?v=doNlg3r6-4w&amp;feature=youtu.be
+## [10][Waiting on Goroutines - Tit Petric](https://www.reddit.com/r/golang/comments/gsq2ro/waiting_on_goroutines_tit_petric/)
+- url: https://scene-si.org/2020/05/29/waiting-on-goroutines/
 ---
 

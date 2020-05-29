@@ -1,18 +1,12 @@
 # androiddev
-## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/gqacpo/weekly_whos_hiring_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/gqacpo/weekly_whos_hiring_thread/
+## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/gss9p6/weekly_anything_goes_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/gss9p6/weekly_anything_goes_thread/
 ---
-Looking for Android developers? Heard about a cool job posting? Let people know!
+Here's your chance to talk about whatever!
 
-Here is a suggested posting template:
+Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
 
-&gt; Company: &lt;Best Company Ever&gt;  
-&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
-&gt; Location: &lt;City, State, Country&gt;  
-&gt; Allows remote: &lt;Yes/No&gt;  
-&gt; Visa: &lt;Yes/No&gt;  
-
-Feel free to include any other information about the job.
+Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
 ## [2][Weekly Questions Thread - May 25, 2020](https://www.reddit.com/r/androiddev/comments/gq90ik/weekly_questions_thread_may_25_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/gq90ik/weekly_questions_thread_may_25_2020/
 ---
@@ -31,81 +25,55 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Wait what? Am I reading it wrong?](https://www.reddit.com/r/androiddev/comments/gs172e/wait_what_am_i_reading_it_wrong/)
-- url: https://i.redd.it/1gj9tjnfdg151.png
+## [3][Android Studio 4.0 Stable](https://www.reddit.com/r/androiddev/comments/gsab88/android_studio_40_stable/)
+- url: https://android-developers.googleblog.com/2020/05/android-studio-4.html
 ---
 
-## [4][Introducing Niddler](https://www.reddit.com/r/androiddev/comments/gs5b8r/introducing_niddler/)
-- url: https://medium.com/@nicolaverbeeck/introducing-niddler-98deeac9a6bd
+## [4][Check out my new open source project - Kickstart Android Template.](https://www.reddit.com/r/androiddev/comments/gsqcoq/check_out_my_new_open_source_project_kickstart/)
+- url: https://www.reddit.com/r/androiddev/comments/gsqcoq/check_out_my_new_open_source_project_kickstart/
+---
+Hi All! I am super excited to share my first open-source project and I would really appreciate your feedback. 🙏
+
+It is an open-source platform for android developers that generate boilerplate code for implementing MVVM architecture in activities, fragments, and adapter using Dagger, lifecycle comp., Data binding in order to help developers build apps way faster.
+
+Download the [release](https://github.com/sagarmahobia/kickstart-android-template/releases/download/1.0.2/release.zip) and start using it. This is in early-stage right now.
+
+The best way to learn more is to visit the project's GitHub repository ( [https://github.com/sagarmahobia/kickstart-android-template](https://github.com/sagarmahobia/kickstart-android-template) )
+
+The project is just at the start of its way, any feedback, pull requests or new issues on Github (**or stars** 😁) will be very much appreciated!
+## [5][Material Components for Android 1.2.0 now in beta](https://www.reddit.com/r/androiddev/comments/gscuea/material_components_for_android_120_now_in_beta/)
+- url: https://twitter.com/materialdesign/status/1266086036653867012
 ---
 
-## [5][Started coding/game dev a month ago. Got my first game accepted on Play Store recently. Looking for the feedback to improve my skills :)](https://www.reddit.com/r/androiddev/comments/grrqt0/started_codinggame_dev_a_month_ago_got_my_first/)
-- url: https://www.reddit.com/r/androiddev/comments/grrqt0/started_codinggame_dev_a_month_ago_got_my_first/
----
-Hi guys!  
-
-
-I've learned coding and game dev a bit during lockdown, and build my first android game. This is a number puzzle, so similar genre to 2048.   
-If you have time, can you please provide feedback or suggestions for improvement?   
-I'm enjoying the process a lot, so would like to keek going and making my apps and games better each time :)
-
-The link to the app on Google Store:  
- [https://play.google.com/store/apps/details?id=com.ross.numbergame12345](https://play.google.com/store/apps/details?id=com.ross.numbergame12345) 
-
-The link to the source code below. I used Godot game engine.   
-I was terrible with commenting the code, sorry for that!    
- [https://github.com/rosspetukhov/12345-number-game](https://github.com/rosspetukhov/12345-number-game)
-## [6][One Tap sign in for Android apps](https://www.reddit.com/r/androiddev/comments/gs16c3/one_tap_sign_in_for_android_apps/)
-- url: https://medium.com/androiddevelopers/one-tap-sign-in-for-android-apps-2259ce15bc2c
+## [6][Interaction with RecyclerView using Kotlin DSL](https://www.reddit.com/r/androiddev/comments/gsq5t1/interaction_with_recyclerview_using_kotlin_dsl/)
+- url: https://brona.blog/2020/05/interaction-with-recyclerview-using-kotlin-dsl/
 ---
 
-## [7][Pay rates for audio ads](https://www.reddit.com/r/androiddev/comments/gs4xf9/pay_rates_for_audio_ads/)
-- url: https://www.reddit.com/r/androiddev/comments/gs4xf9/pay_rates_for_audio_ads/
+## [7][ANDROID TV DEVELOMENT ISSUE](https://www.reddit.com/r/androiddev/comments/gsswly/android_tv_develoment_issue/)
+- url: https://www.reddit.com/r/androiddev/comments/gsswly/android_tv_develoment_issue/
 ---
-What are the typical pay rates for including audio ads in your app?
-## [8][Maps SDK v3 beta](https://www.reddit.com/r/androiddev/comments/gs08cp/maps_sdk_v3_beta/)
-- url: https://www.reddit.com/r/androiddev/comments/gs08cp/maps_sdk_v3_beta/
+So one month a go I decided that I want to make android tv apps but there is a lack of information and I haven't been able to learn it
+## [8][How to add referrals in App, if the app is not on any store?](https://www.reddit.com/r/androiddev/comments/gsps9c/how_to_add_referrals_in_app_if_the_app_is_not_on/)
+- url: https://www.reddit.com/r/androiddev/comments/gsps9c/how_to_add_referrals_in_app_if_the_app_is_not_on/
 ---
-Did anyone integrate the maps sdk v 3 yet? What are your observations? I find it a little less snappy to load (tiles take longer to load), but the zoom animations and move animations seem more responsive.
-
-Reference: [https://developers.google.com/maps/documentation/android-sdk/v3-client-migration](https://developers.google.com/maps/documentation/android-sdk/v3-client-migration)
-## [9][Active users mismatch between Googleplay console and Firebase console](https://www.reddit.com/r/androiddev/comments/gs3yeb/active_users_mismatch_between_googleplay_console/)
-- url: https://www.reddit.com/r/androiddev/comments/gs3yeb/active_users_mismatch_between_googleplay_console/
+ I want to add referral in my android app which is not on any store(App or Play store) and can be downloaded from our site, I am planning to use Firebase dynamic links but Firebase dynamic links uses play store functionality for the app installation verification, However my app is not on any store, is it going to work still? If not, Then how can I still implement referral in my app, Please anyone suggest me better alternative in such scenario. Any help is highly appreciated!
+## [9][Solve a Word Search Game using Firebase ML Kit and Huawei ML Kit](https://www.reddit.com/r/androiddev/comments/gspdw8/solve_a_word_search_game_using_firebase_ml_kit/)
+- url: https://medium.com/huawei-mobile-developers/solve-a-word-search-game-using-firebase-ml-kit-and-huawei-ml-kit-8b9cc06bf4ce
 ---
-There is a mismatch between Active users count in Google Play console and Firebase console.
 
-I  can see 10k active users (30 days average) on Google play console but only 3.1k active users on firebase console.
-
-Really appreciate if someone explains what this difference meant.
-
- Stackoverflow : [https://stackoverflow.com/questions/62062727/active-users-mismatch-between-googleplay-console-and-firebase-console](https://stackoverflow.com/questions/62062727/active-users-mismatch-between-googleplay-console-and-firebase-console)
-## [10][OOP for Android](https://www.reddit.com/r/androiddev/comments/gs1sox/oop_for_android/)
-- url: https://www.reddit.com/r/androiddev/comments/gs1sox/oop_for_android/
+## [10][Slack latest android App is slick](https://www.reddit.com/r/androiddev/comments/gsrm3w/slack_latest_android_app_is_slick/)
+- url: https://www.reddit.com/r/androiddev/comments/gsrm3w/slack_latest_android_app_is_slick/
 ---
-Hello, I'm not sure if it's deserve post of it's own, but I'll take my chances.
+It uses bottom navigation as well as a left and right gestures to display a menu on the left a list in the middle and details on the right.
 
-I know Android, and I wrote several apps with java&amp; Kotlin, but I have serious problem of writing "good code".
+I'd quite like to use that in my project.Did anyone try to reproduce this behaviour?
 
-What I mean by that - I know the principal of oop - polymorphism, inheritance etc etc but I have hard to implement this in Android development.
-
-For example - instead of writing every api call  if check wether to show progress bar or not, write an interface that will handle automatically this check and will inflate the layout by that.
-
-Or generic response handling etc etc...
-
-My question is - there is online course that focus on this topics?
-
-All I found is just hardcore java with gui, or hardcore Android that not focus on this topic
-## [11][Video Compression on Android](https://www.reddit.com/r/androiddev/comments/gs35ea/video_compression_on_android/)
-- url: https://www.reddit.com/r/androiddev/comments/gs35ea/video_compression_on_android/
+https://reddit.com/link/gsrm3w/video/4809o6j95p151/player
+## [11][Android dev for UI/UX designer](https://www.reddit.com/r/androiddev/comments/gsrgpb/android_dev_for_uiux_designer/)
+- url: https://www.reddit.com/r/androiddev/comments/gsrgpb/android_dev_for_uiux_designer/
 ---
-Hey guys, I want to resize videos to a specific resolution (and sometimes even convert landscape videos to portrait using letterboxing). I checked out a few libraries which were using MediaCodec and also [this](https://github.com/tanersener/mobile-ffmpeg) library which uses FFMPEG. Scaling down a 3 minute 1080p video to 480p takes upwards of 1 minute in all of them.
-
-Is there any way to reduce this time? If any native library doesn't provide a significant speed improvement over FFMPEG, I am leaning towards using the latter.
-
-Also, are there any FFMPEG flags which reduce the processing time? I checked the logs and my speed hovers around 2x - 2.2x when compressing the video.
-## [12][Dart is now #7 on the most loved and now moved ahead if Swift and C#](https://www.reddit.com/r/androiddev/comments/gs5szz/dart_is_now_7_on_the_most_loved_and_now_moved/)
-- url: https://www.reddit.com/r/androiddev/comments/gs5szz/dart_is_now_7_on_the_most_loved_and_now_moved/
+So as the title suggests i am an aspiring UI/UX designer but i want to learn to develop the apps i am making the designs for as well. I have a little bit of experience in C but pretty clueless about the path i should follow to be able to actually make them real. Would really appreciate some guidance.
+## [12][How Firebase Performance trace works](https://www.reddit.com/r/androiddev/comments/gsrdbn/how_firebase_performance_trace_works/)
+- url: https://www.reddit.com/r/androiddev/comments/gsrdbn/how_firebase_performance_trace_works/
 ---
-https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-loved
-
-Suspect this is only true because of Flutter.
+Does it  put  System.currentTimeMillis()  on the method start and end then take difference and put it

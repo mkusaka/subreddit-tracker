@@ -87,43 +87,43 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][Stack Overflow Developer Survey 2020: JS wins with 67.6%](https://www.reddit.com/r/javascript/comments/gs10h6/stack_overflow_developer_survey_2020_js_wins_with/)
+## [3][ECMAscript 4: The missing version](https://www.reddit.com/r/javascript/comments/gsfkdn/ecmascript_4_the_missing_version/)
+- url: https://evertpot.com/ecmascript-4-the-missing-version/
+---
+
+## [4][Using Git to run ESLint on changed files in a feature branch](https://www.reddit.com/r/javascript/comments/gsrxdg/using_git_to_run_eslint_on_changed_files_in_a/)
+- url: https://jdauriemma.com/programming/eslint-changed-files
+---
+
+## [5][Autopilot - Cross-platform Desktop automation in JS](https://www.reddit.com/r/javascript/comments/gslb4w/autopilot_crossplatform_desktop_automation_in_js/)
+- url: http://github.com/divy-work/autopilot-deno
+---
+
+## [6][Stack Overflow Developer Survey 2020: JS wins with 67.6%](https://www.reddit.com/r/javascript/comments/gs10h6/stack_overflow_developer_survey_2020_js_wins_with/)
 - url: https://insights.stackoverflow.com/survey/2020#most-popular-technologies
 ---
 
-## [4][AudioMass – a full-featured audio editor in 65kb of vanilla JavaScript](https://www.reddit.com/r/javascript/comments/grk8kq/audiomass_a_fullfeatured_audio_editor_in_65kb_of/)
-- url: https://audiomass.co/
+## [7][Why we at $FAMOUS_COMPANY Switched to $HYPED_TECHNOLOGY | CSS-Tricks](https://www.reddit.com/r/javascript/comments/gst0ag/why_we_at_famous_company_switched_to_hyped/)
+- url: https://css-tricks.com/why-we-at-famous_company-switched-to-hyped_technology/
 ---
 
-## [5][prod-conf: A production-ready configuration system for node.js](https://www.reddit.com/r/javascript/comments/grzrrj/prodconf_a_productionready_configuration_system/)
-- url: https://github.com/theogravity/prod-conf
+## [8][oauth2-popup-flow — A very simple oauth2 implicit grant flow library with no dependencies that uses window.open](https://www.reddit.com/r/javascript/comments/gsjpw4/oauth2popupflow_a_very_simple_oauth2_implicit/)
+- url: https://github.com/ricokahler/oauth2-popup-flow
 ---
 
-## [6][Curry function and functional thoughts](https://www.reddit.com/r/javascript/comments/gs0shz/curry_function_and_functional_thoughts/)
-- url: https://github.com/youngkaneda/curry
+## [9][Fluent String Package ~ JS](https://www.reddit.com/r/javascript/comments/gsnzar/fluent_string_package_js/)
+- url: https://github.com/zhorton34/laravel-js-str
 ---
 
-## [7][Graph drawing library for JavaScript that supports SVG and WebGL](https://www.reddit.com/r/javascript/comments/grwamp/graph_drawing_library_for_javascript_that/)
-- url: https://github.com/anvaka/VivaGraphJS
+## [10][How To Secure Deno From Malicious 3rd Party Code](https://www.reddit.com/r/javascript/comments/gsrnjs/how_to_secure_deno_from_malicious_3rd_party_code/)
+- url: https://freesourcecodes.in/secure-deno.html
 ---
 
-## [8][Introducing Snowpack 2.0](https://www.reddit.com/r/javascript/comments/grnaf8/introducing_snowpack_20/)
-- url: https://www.snowpack.dev/posts/2020-05-26-snowpack-2-0-release/
+## [11][Private fields and dynamic private fields with Proxy](https://www.reddit.com/r/javascript/comments/gsreu1/private_fields_and_dynamic_private_fields_with/)
+- url: https://github.com/lukigarazus/proxy-private-fields
 ---
 
-## [9][The webworkers driven UI framework: neo.mjs v1.2.0 release announcement](https://www.reddit.com/r/javascript/comments/gs5ex6/the_webworkers_driven_ui_framework_neomjs_v120/)
-- url: https://medium.com/@tobiasuhlig/the-webworkers-driven-ui-framework-neo-mjs-v1-2-0-release-announcement-a811ebe47252?source=friends_link&amp;sk=8578383b7664e8a2456cbe7726c98aac
----
-
-## [10][Augmented reality SDK launched for JavaScript, including AR face tracking, image tracking, and instant world tracking](https://www.reddit.com/r/javascript/comments/gs3xgw/augmented_reality_sdk_launched_for_javascript/)
-- url: https://zap.works/universal-ar/javascript/
----
-
-## [11][The process: Making Vue 3 – Increment: Frontend](https://www.reddit.com/r/javascript/comments/gru7p6/the_process_making_vue_3_increment_frontend/)
-- url: https://increment.com/frontend/making-vue-3/
----
-
-## [12][I made a tool to merge javascript files with imports/exports into one function.](https://www.reddit.com/r/javascript/comments/grfw6v/i_made_a_tool_to_merge_javascript_files_with/)
-- url: https://github.com/ytiurin/import-export-merger
+## [12][Video Demystified! Build a Video App with JavaScript and the Twilio CLI Quickly](https://www.reddit.com/r/javascript/comments/gsf0k0/video_demystified_build_a_video_app_with/)
+- url: https://www.twilio.com/blog/build-a-video-app-javascript-twilio-cli-quickly
 ---
 

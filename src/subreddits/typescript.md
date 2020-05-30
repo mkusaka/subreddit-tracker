@@ -22,7 +22,161 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Hey, I need feedback on my first TypeScript - Node app.](https://www.reddit.com/r/typescript/comments/gsmupu/hey_i_need_feedback_on_my_first_typescript_node/)
+## [2][TS Blog Post: Changes to How We Manage DefinitelyTyped](https://www.reddit.com/r/typescript/comments/gsx450/ts_blog_post_changes_to_how_we_manage/)
+- url: https://devblogs.microsoft.com/typescript/changes-to-how-we-manage-definitelytyped/
+---
+
+## [3][React Web &amp; Electron shared code mono repository](https://www.reddit.com/r/typescript/comments/gtas6x/react_web_electron_shared_code_mono_repository/)
+- url: https://www.reddit.com/r/typescript/comments/gtas6x/react_web_electron_shared_code_mono_repository/
+---
+Hi,
+
+I'm trying to build an application which will be available in the Browser &amp; native via Electron. Since both applications share components &amp; redux functionality I would like to have a shared source folder. I'm usually a C++ &amp; Golang developer, but I already have 2 medium projects worth of experience with create-react-app, electron-forge &amp; jsx. Since this project will probably be maintained for some years (hopefully) I thought Typescript would be the better option in this case. Since I already think in types when coding the transition from plain jsx shouldn't be to difficult.
+
+I started the prototype with create-react-app + typescript &amp; electron-react-boilerplate, but soon found limitations with this setup. create-react-app doesn't allow source files outside of it's root, so the wanted folder structure shown below would be impossible. Also the although the electron boilerplate seems to be configured pretty feature rich, it's hard for me to tell exactly what configurations are really necessary and which "nice to have". 
+
+**So basically my Question is:**
+
+- Is typescript the right choice?
+- What folder structure do you recommend?
+- Should I use boilerplates or go from scratch?
+- What is easier to keep up to date (boilerplate vs. scratch)
+
+### Goals Summary
+
+- typescript
+- mono repo
+- shared code
+- react web
+- react electron
+
+
+#### Project Structure
+
+```sh
+.
+├── electron
+│   ├── package.json
+│   └── src
+├── shared
+│   ├── package.json (if needed)
+│   └── src
+└── web
+    ├── package.json
+    └── src
+```
+
+### Packages
+
+- react
+- electron
+- redux
+- sass
+- testing
+- types
+- and more
+## [4][How can I implement a search function for a drop-down menu?](https://www.reddit.com/r/typescript/comments/gte3ox/how_can_i_implement_a_search_function_for_a/)
+- url: https://www.reddit.com/r/typescript/comments/gte3ox/how_can_i_implement_a_search_function_for_a/
+---
+A combo-box perhaps? I'm trying to create a search function that can search for a code within a drop-down menu that has loads of them.
+## [5][Does tsconfig need ending / for directories?](https://www.reddit.com/r/typescript/comments/gt50hv/does_tsconfig_need_ending_for_directories/)
+- url: https://www.reddit.com/r/typescript/comments/gt50hv/does_tsconfig_need_ending_for_directories/
+---
+In the documentation examples I did not see a trailing forward slash on the exclude properties.
+
+Include did have it, but it was using both a `**` and `*` matcher. So because it was looking for a pattern, I understand the need.
+
+I would like to know if in general, one should include an ending forward slash when specifying folders, and the property is not requesting a matcher. I did add it on `outDir` to be safe; some programmers can be pedantic about style though
+## [6][[QUESTION] Non-null assertion](https://www.reddit.com/r/typescript/comments/gst9x0/question_nonnull_assertion/)
+- url: https://www.reddit.com/r/typescript/comments/gst9x0/question_nonnull_assertion/
+---
+[Playground Link](https://www.typescriptlang.org/play/?ssl=7&amp;ssc=1&amp;pln=9&amp;pc=1#)
+
+Is there any way to avoid the non-null assertion on line 52?
+I want something similar to type predicate. When `isEmpty()` returns false I want typescript to know `this.head`. and `this.tail` are not null.
+
+Also, in the `get()` method, I know `cur` is not null because I did an index check first. Can I somehow tell Typescript that `cur` will never be null as well?
+## [7][Node library distribution best practices](https://www.reddit.com/r/typescript/comments/gszn32/node_library_distribution_best_practices/)
+- url: https://www.reddit.com/r/typescript/comments/gszn32/node_library_distribution_best_practices/
+---
+Hi all, I recently released a small [library](https://github.com/mjhart/help-header) targeting node apps (express in particular). I am building a commonjs module because I still see a lot of node apps using commonjs, so I _think_ that would be most useful for my consumers.
+
+I've done a fair amount of node application development, but this is my first time releasing a library to be incorporated into multiple other apps. I am really unsure of the tradeoffs among the various distribution options available. Any pointers or feedback would be greatly appreciated!
+## [8][Architecture , compile and bundle steps on creating a lodash like library in ts .](https://www.reddit.com/r/typescript/comments/gsvio9/architecture_compile_and_bundle_steps_on_creating/)
+- url: https://www.reddit.com/r/typescript/comments/gsvio9/architecture_compile_and_bundle_steps_on_creating/
+---
+So I want to create a library . My architecture looks like this :
+
+    project-folder
+    ├─node_modules
+    ├─src
+    │ └─modules
+    │   ├─private
+    │   │ ├─privateFn1.ts
+    │   │ ├─privateFn2.ts
+    │   │ ├─ ...
+    │   │ └─privateFnN.ts
+    │   ├─fn1.ts
+    │   ├─fn2.ts
+    │   ├─ ...
+    │   └─fnN.ts
+    ├─package.json
+    └─tsconfig.json
+
+Each `fn*.ts` exports a single function that has name `fn*` (i.e. the same name as the file name).
+
+Each `privateFn*.ts` exports a single reference that is meant to be used by `fn*.ts` .
+
+How would you create :
+
+1. `./dist/cjs/index.js` which is the main entry of the `package.json` , i.e. commonjs format for exports .
+2. `./dist/esm/index.js` which is the browser entry of the `package.json` , i.e. esmodules format for exports .
+3. `./dist/types/index.d.ts` which is the typings entry of the `package.json` .
+
+which :
+
+* exports each one of those functions exported by `fn*.ts` .
+* imports nothing (i.e. the file is bundled and has no depedency) .
+* and default exports an object which contains as properties each one of those functions exported by `fn*.ts` .
+
+I am asking for a more clean and fast way  from what I have done so far :
+
+Here is my `tsconfig.json` :
+
+```
+{
+	"compilerOptions": {
+		"module": "ESNext",
+		"target": "ESNext",
+		"declaration": true,
+		"rootDir": "./src",
+		"outDir": "./built"
+	},
+	"include": ["./src"]
+}
+```
+Here is what my npm scripts do :
+
+1. I remove `./dist` `./src/index.ts` `./built` if they exist from any older build step .
+2. I have created a node js script which I execute and it creates the file `./src/index.ts` which imports and exports all the functions and default exports an object which has as properties all those functions .
+3. I use tsc to compile all ts files deep in `./src` with output to `./built`.
+4. I use rollup cli to bundle `./built/index.js` to `./dist/cjs/index.js`
+5. I use rollup cli to bundle `./built/index.js` to `./dist/mjs/index.js`
+6. I use rollup with `rollup-plugin-dts` with a config file to bundle `./built/index.d.ts` to `./dist/types/index.d.ts`
+7. I remove `./built` `./src/index.ts` .
+
+I have created a final npm script called `build` which executed all the other scripts.So I do `npm run build`.
+
+Edit : By the way is there an official bundler for ts created by Microsoft ? [Regarding bundling d.ts there is a 5 years feature request that is still open](https://github.com/microsoft/TypeScript/issues/4433) . What a disappointment .
+## [9][Resources for Generics and Decorators](https://www.reddit.com/r/typescript/comments/gsz2hn/resources_for_generics_and_decorators/)
+- url: https://www.reddit.com/r/typescript/comments/gsz2hn/resources_for_generics_and_decorators/
+---
+Hey guys,
+
+Noob here,sorry if this is a generic question but can anyone point me to any reosurces which dumbs down generics and decorators,and why it would useful. Somr real life use cases,would be great too 
+
+Thanks in advance
+## [10][Hey, I need feedback on my first TypeScript - Node app.](https://www.reddit.com/r/typescript/comments/gsmupu/hey_i_need_feedback_on_my_first_typescript_node/)
 - url: https://www.reddit.com/r/typescript/comments/gsmupu/hey_i_need_feedback_on_my_first_typescript_node/
 ---
 GitWiz is a portal to search for public repos from multiple version control platforms.
@@ -34,11 +188,7 @@ Here's the link to the Heroku deployment - [https://gitwiz.herokuapp.com](https:
 and the link to the GitHub repo -  [https://github.com/KSSBro/gitwiz](https://github.com/KSSBro/gitwiz) 
 
 I'm currently working on adding more platforms.
-## [3][Simple tests based on JSDoc comments has arrived](https://www.reddit.com/r/typescript/comments/gsekoy/simple_tests_based_on_jsdoc_comments_has_arrived/)
-- url: https://github.com/Idered/typescript-expect-plugin
----
-
-## [4][Looking for a TypeScript interface generator that will generate keys in consistent order, and re-use existing interfaces regardless of parent key name (perhaps via "shape" checksums?)](https://www.reddit.com/r/typescript/comments/gspj8d/looking_for_a_typescript_interface_generator_that/)
+## [11][Looking for a TypeScript interface generator that will generate keys in consistent order, and re-use existing interfaces regardless of parent key name (perhaps via "shape" checksums?)](https://www.reddit.com/r/typescript/comments/gspj8d/looking_for_a_typescript_interface_generator_that/)
 - url: https://www.reddit.com/r/typescript/comments/gspj8d/looking_for_a_typescript_interface_generator_that/
 ---
 * I have millions of JSON+XML files collected over many years, mostly in 3rd party formats that I don't control (web scraping of JSON data).
@@ -58,350 +208,3 @@ Any pointers to some libraries that might be handy here?
 I'm also not sure if I should be looking at "JSONschema" generation first, and then generating the interfaces from that?  Although I'm not really doing "validation"... I'm processing existing data with old immutable data formats, and just trying to make it easier to figure out how much the data shapes actually vary within each "high-level-format", and then make my code that processes it all type safe so I can use ctrl-space intellisense/autocomplete to write the code easily.
 
 Maybe there's some even better way of dealing with this than TypeScript interfaces?  Keen for any tips related to processing large amounts of similar-but-slightly-different JSON/XML formats like this. Without needing to write tons of `if` / `switch` statements.
-## [5][Complex libraries won't implement types saying it's too much work. But we really only need types for 10-20% of the API (pareto typing or 80/20 rule)](https://www.reddit.com/r/typescript/comments/gs92ys/complex_libraries_wont_implement_types_saying_its/)
-- url: https://www.reddit.com/r/typescript/comments/gs92ys/complex_libraries_wont_implement_types_saying_its/
----
-I just did a big review of HTML wysiwyg editors and tinymce, ckeditor5, and froala ALL lack types.
-
-They also all cite the same excuse/reason of why types aren't implemented.
-
-They are all asserting that with a complex code base that it's very very difficult to implement types.
-
-But MOST apps don't need to use the full API surface area.  Most apps just use 5-10% of the total API.
-
-Usually creating an instance, setting a few properties, and you're done.
-
-Everything else can just be 'any' until someone is sufficiently annoyed to improve the types.
-
-Do you guys agree? I think we need a name for this pattern. Maybe 'partial types' or 'pareto typing' (named after the Pareto Principle or 80/20 rule).
-
-I implemented basic / partial types for pdf.js in 2-5 hours and have my own types that I'm using.  
-
-I can do the same for these other projects but of course it would be BEST if they just shipped them.
-## [6][@tsdotnet/tween-factory: A strongly-typed "tweening" utility for use with TypeScript and JavaScript.](https://www.reddit.com/r/typescript/comments/gshbcj/tsdotnettweenfactory_a_stronglytyped_tweening/)
-- url: https://www.npmjs.com/package/@tsdotnet/tween-factory
----
-
-## [7][Angular environments : manage CI/CD environment variables locally](https://www.reddit.com/r/typescript/comments/gs6ioo/angular_environments_manage_cicd_environment/)
-- url: https://medium.com/@admiquel/angular-environments-manage-ci-cd-environment-variables-locally-ac021d9fc6e4?source=friends_link&amp;sk=6abe1ece88363ebea3c17e48a72d01bb
----
-
-## [8][[Need Help] Been stuck trying to implement AVL tree insertion. I'm not able to figure out if it's a problem with my code or logic since the code runs fine but output is not expected. Any help would be appreciated.](https://www.reddit.com/r/typescript/comments/gs3x8c/need_help_been_stuck_trying_to_implement_avl_tree/)
-- url: https://www.reddit.com/r/typescript/comments/gs3x8c/need_help_been_stuck_trying_to_implement_avl_tree/
----
-\[Solved\] Been stuck on this problem for hours. Maybe its my bad debugging skills. So i was just trying to learn some data structures and try to implement them from scratch in Typescript so that i could learn both.
-
-So during AVL tree insertion, everything just works fine until I balance the tree(commenting `balanceTree` and returning bare node gets correct height), whence all the `heights` are not the expected values. I'm not able to figure out if it's because of not properly passing references to `left`,`right`,`root etc.`Or somewhere my logic is wrong. Any help would be appreciated.
-
-Here's a [pastebin link for the code](https://pastebin.com/sbczFNLq), if anyone wants a better preview.
-
-This is the code:-
-
-    class NodeItem {
-        // key is the value assigned to a node
-        key: number = 0;
-        left: NodeItem = null;
-        right: NodeItem = null;
-        // height is the longest path from node to leaf
-        height: number = 0;
-        constructor(val: number) {
-            this.key = val;
-        }
-    
-        get _leftHeight(): number {
-            if (this.left === null) {
-                // if no node exists then let that height be 0
-                return 0;
-            }
-            return this.left.height;
-        }
-    
-        get _rightHeight(): number {
-            if (this.right === null) {
-                // if no node exists then let that height be 0
-                return 0;
-            }
-            return this.right.height;
-        }
-    
-        updateHeight() {
-            // set height as the longest path from current node to leaf
-            this.height = 1 + Math.max(this._leftHeight, this._rightHeight);
-        }
-    
-        getBalanceFactor() {
-            return this._leftHeight - this._rightHeight;
-        }
-    }
-    
-    class AVL {
-        root: NodeItem = null;
-    
-        balanceTree(node: NodeItem, item: number) {
-            /*
-            &lt; -1 - left heavy
-            &gt; 1  - right heavy
-            0    - balanced - do nothing
-            */
-            const balanceFactor = node.getBalanceFactor();
-            if (balanceFactor &lt; -1 &amp;&amp; item &gt; node.right.key) {
-                // rightRight Case
-                node = this.leftRotate(node);
-            } else if (balanceFactor &lt; -1 &amp;&amp; item &lt; node.right.key) {
-                // rightLeft Case
-                node.right = this.rightRotate(node);
-                return this.leftRotate(node);
-            } else if (balanceFactor &gt; 1 &amp;&amp; item &lt; node.left.key) {
-                // leftLeft Case
-                node = this.rightRotate(node);
-            } else if (balanceFactor &gt; 1 &amp;&amp; item &gt; node.left.key) {
-                // leftRight Case
-                node.left = this.leftRotate(node);
-                return this.rightRotate(node);
-            }
-            return node;
-        }
-    
-        leftRotate(first: NodeItem): NodeItem {
-            const second = first.right;
-            const secondLeft = second.left;
-            second.left = first;
-            first.right = secondLeft;
-            first.updateHeight();
-            second.updateHeight();
-            return second;
-        }
-    
-        rightRotate(first: NodeItem): NodeItem {
-            const second = first.left;
-            const secondRight = second.right;
-            second.right = first;
-            first.left = secondRight;
-            first.updateHeight();
-            second.updateHeight();
-            return second;
-        }
-    
-        insert(root: NodeItem, value: number): NodeItem {
-            if (root === null) {
-                // if no node exists, then create new node
-                return new NodeItem(value);
-            } else if (value &lt; root.key) {
-                // go to left subtree
-                root.left = this.insert(root.left, value);
-            } else if (value &gt; root.key) {
-                // go to right subtree
-                root.right = this.insert(root.right, value);
-            } else {
-                // element already exists in tree
-                return root;
-            }
-            root.updateHeight();
-            return this.balanceTree(root, value);
-        }
-    
-        inOrder(root: NodeItem): void {
-            if (root !== null) {
-                this.inOrder(root.left);
-                console.log(`value\t:${root.key}\theight\t:${root.height}`)
-                this.inOrder(root.right);
-            }
-            return;
-        }
-    }
-    
-    const avl = new AVL();
-    const inserts: number[] = [10, 5, 15, -10, -5];
-    for (const i of inserts) {
-        avl.root = avl.insert(avl.root, i);
-    }
-    avl.inOrder(avl.root);
-
-Results:-
-
-    Expected:
-    ---------
-    value	:-10	        height	:0
-    value	:-5		height	:1              10(2)
-    value	:5		height	:0         -5(1)     15(0)
-    value	:10		height	:2     -10(0)   5(0)
-    value	:15		height	:0
-    
-    Current Result:
-    ---------------
-    value	:-10	        height	:1
-    value	:-5		height	:0              10(1)
-    value	:5		height	:2         -5(0)     15(0)
-    value	:10		height	:1     -10(1)   5(2)
-    value	:15		height	:0
-
-\[Solved\]
-
-Changes I had to make:-
-
-1. While making double rotations, in the first rotation i had to pass in either the left/right of node rather than the node itself
-2. The initial height/default value of height in class should be 1(cant be 0 nor -1), such that the height of each node is `this.height - 1`
-3. Minor refactoring in `balanceTree` method, where we directly return values rather than storing
-
-Attaching Working Solution so that it might help someone in future:-
-
-    class NodeItem {
-      // key is the value assigned to a node
-      key: number = 0;
-      left: NodeItem = null;
-      right: NodeItem = null;
-      // height is the longest path from node to leaf
-      height: number = 1;
-      constructor(val: number) { this.key = val; }
-    
-      get _leftHeight(): number {
-        if (this.left === null) {
-          // if no node exists then let that height be 0
-          return 0;
-        }
-        return this.left.height;
-      }
-    
-      get _rightHeight(): number {
-        if (this.right === null) {
-          // if no node exists then let that height be 0
-          return 0;
-        }
-        return this.right.height;
-      }
-    
-      updateHeight() {
-        // set height as the longest path from current node to leaf
-        this.height = 1 + Math.max(this._leftHeight, this._rightHeight);
-      }
-    
-      getBalanceFactor() { return this._leftHeight - this._rightHeight; }
-    
-      getHeight() { return this.height - 1; }
-    }
-    
-    class AVL {
-      root: NodeItem = null;
-    
-      balanceTree(node: NodeItem, key: number) {
-        /*
-        &lt; -1 - right heavy
-        &gt; 1  - left heavy
-        0    - balanced - do nothing
-        */
-        const balanceFactor = node.getBalanceFactor();
-        // leftLeft Case
-        if (balanceFactor &gt; 1 &amp;&amp; key &lt; node.left.key) {
-          return this.rightRotate(node);
-        }
-        // rightRight Case
-        if (balanceFactor &lt; -1 &amp;&amp; key &gt; node.right.key) {
-          return this.leftRotate(node);
-        }
-        // leftRight Case
-        if (balanceFactor &gt; 1 &amp;&amp; key &gt; node.left.key) {
-          node.left = this.leftRotate(node.left);
-          return this.rightRotate(node);
-        }
-        // rightLeft Case
-        if (balanceFactor &lt; -1 &amp;&amp; key &lt; node.right.key) {
-          node.right = this.rightRotate(node.right);
-          return this.leftRotate(node);
-        }
-        return node;
-      }
-    
-      leftRotate(first: NodeItem): NodeItem {
-        const second = first.right;
-        const secondLeft = second.left;
-        second.left = first;
-        first.right = secondLeft;
-        first.updateHeight();
-        second.updateHeight();
-        return second;
-      }
-    
-      rightRotate(first: NodeItem): NodeItem {
-        const second = first.left;
-        const secondRight = second.right;
-        second.right = first;
-        first.left = secondRight;
-        first.updateHeight();
-        second.updateHeight();
-        return second;
-      }
-    
-      insert(root: NodeItem, key: number): NodeItem {
-        if (root === null) {
-          // if no node exists, then create new node
-          return new NodeItem(key);
-        }
-        if (key &lt; root.key) {
-          // go to left subtree
-          root.left = this.insert(root.left, key);
-        } else if (key &gt; root.key) {
-          // go to right subtree
-          root.right = this.insert(root.right, key);
-        } else {
-          // element already exists in tree
-          return root;
-        }
-        root.updateHeight();
-        return this.balanceTree(root, key);
-      }
-    
-      inOrder(root: NodeItem): void {
-        if (root !== null) {
-          this.inOrder(root.left);
-          console.log(`value\t:${root.key}\theight\t:${root.getHeight()}`);
-          this.inOrder(root.right);
-        }
-        return;
-      }
-    }
-    
-    const avl = new AVL();
-    const inserts: number[] = [ 10, 5, 15, -10, -5 ];
-    for (const i of inserts) {
-      avl.root = avl.insert(avl.root, i);
-    }
-    avl.inOrder(avl.root);
-    
-
-&amp;#x200B;
-## [9][Type safety with raw SQL](https://www.reddit.com/r/typescript/comments/grsc2m/type_safety_with_raw_sql/)
-- url: https://www.reddit.com/r/typescript/comments/grsc2m/type_safety_with_raw_sql/
----
-I'm a bit new to this so bear with me if this is impossible/futile but is it possible to use raw sql to query into types/interfaces? Basically if it's possible to save the result of a raw sql query(for me specifically with mssql) into a typed variable(yes I know technically it doesn't actually exist in runtime but I want the development clarity in code). Or am I just avoiding an inevitable ORM? 
-
-Basically how do I avoid an orm while keeping type annotations, as I haven't found any example doing so, all I see are TypeORM projects. Not that I have anything against TypeORM, I just don't like making my entities live objects with decorators and much prefer to keep them as simple dumb interfaces.
-
-Edit: I see this is getting a bit of traction, so first of all I appreciate all the replies, and if anyone else joins this thread i'll just mention I specifically have to use SQL Server(not my first choice but my hands are tied). Answers relevant only to other SQL Services are welcome, just mention it if that's the case :)
-## [10][Secure collaboration platform](https://www.reddit.com/r/typescript/comments/gs807g/secure_collaboration_platform/)
-- url: https://www.reddit.com/r/typescript/comments/gs807g/secure_collaboration_platform/
----
-Hello,
-
-Are you looking for a challenge or want to register to my soon to be app. Please let me know what you think. Your feedback is valuable to me.
-
-I’m building an app to which other developers can hook there apps (one guy build an option trading algorithm where he would make X amount of profit in 13 weeks, I haven’t heard from him in a while so I’m guessing it didn’t go according to plan). The app also has a polling bot (on earnings for example) news, messaging, an earnings calendar which will be customizable to the companies you follow and portfolio analytics.
-
-It’s still a work in progress but if you would like to subscribe for when it’s finished please let me know. Or If you want to help/contribute to build this beautiful beast then also let me know
-
-[https://imgur.com/gallery/sEp3UiX](https://imgur.com/gallery/sEp3UiX)
-
-[securecollaborationplatform@gmail.com](mailto:securecollaborationplatform@gmail.com)
-## [11][Possible to use TypeScript to check JS only? Trying to figure out incremental conversion path for huge project](https://www.reddit.com/r/typescript/comments/grj31m/possible_to_use_typescript_to_check_js_only/)
-- url: https://www.reddit.com/r/typescript/comments/grj31m/possible_to_use_typescript_to_check_js_only/
----
-tl;dr trying to just use TypeScript as analysis tool is that possible?
-
-Hey we have a large project some 100,000 lines of code with open contribution within the company. The code is abused and contributing on by hundreds of devs and people don't care about standards, they are just trying to get their code in to meet their deadline.
-
-I am one of the core maintainers and our main defense is very strict testing requirements and static analysis on our CI which will block pull requests.
-
-In the past when we've introduced new standards, we did it incrementally by making sure the code base did not get worse (e.g. we introduced coverage requirements by only checking that only new code was covered).
-
-We are trying to find a similar path forward for TypeScript but have so far failed. 
-
-However, I keep hearing the benefits of using TypeScript even without converting everything and fixing errors. I noticed the "checkJS" flag and found this pretty useful and was curious if we could run tsc with no output and just use it to check code and find certain errors TypeScript is good at like unresolved variables?

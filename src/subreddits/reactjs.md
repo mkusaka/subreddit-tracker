@@ -109,98 +109,88 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/gcbkuu/whos_hiring_may_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][🎂Happy 6th Birthday React - what are you earliest memories? ⚛️](https://www.reddit.com/r/reactjs/comments/gspypk/happy_6th_birthday_react_what_are_you_earliest/)
+## [3][I’ve finally built my portfolio to showcase my work](https://www.reddit.com/r/reactjs/comments/gsy26e/ive_finally_built_my_portfolio_to_showcase_my_work/)
+- url: https://www.reddit.com/r/reactjs/comments/gsy26e/ive_finally_built_my_portfolio_to_showcase_my_work/
+---
+Hi guys,
+
+I finally built my portfolio. I’ve done it with Nextjs, and Styled Components.
+
+Nextjs is very easy to take up compared to Gatsby. The routing is very basic so it never gets in the way.
+
+One thing that is sometimes a pain to deal with is the SSR by default.
+
+Link : [https://prattdelzenne.com](https://prattdelzenne.com)
+## [4][I built my first big frontend app with React and it's awesome - it's for a Newspaper that receives millions of visits per month](https://www.reddit.com/r/reactjs/comments/gt0ig4/i_built_my_first_big_frontend_app_with_react_and/)
+- url: https://www.reddit.com/r/reactjs/comments/gt0ig4/i_built_my_first_big_frontend_app_with_react_and/
+---
+So I'm part of a militant newspaper from Argentina called "La Izquierda Diario" ("Left's Newspaper" would be the closest translation in English) that is the most well known newspaper from the region amongst not hegemonical media.
+
+Two months ago we decided to go bold and add a Multimedia twist to the brand, to allow not only for written stories but also YouTube programs and podcasts. Today we count with more than 20 YouTube shows and three podcasts, we produce an enormous quantity of audiovisual material every day and I was responsible for the design and programming of the new Multimedia section of the newspaper. Not only we made it to production with a very successful launch mas Tuesday but I'm also very proud of the frontend I designed and coded, using entirely Create-react-app and some very useful npm packages.
+
+You can visit the site and tell me what you think about it here [La Izquierda Diario Multimedia](http://multimedia.laizquierdadiario.com), although it's Worth mentioning it's not perfect yet, we are still polishing some stuff.
+## [5][🎂Happy 6th Birthday React - what are you earliest memories? ⚛️](https://www.reddit.com/r/reactjs/comments/gspypk/happy_6th_birthday_react_what_are_you_earliest/)
 - url: https://dev.to/iainfreestone/happy-6th-birthday-react-what-are-you-earliest-memories-3mg6
 ---
 
-## [4][My (fully) first React App. A tool for visualizing Priority Queues that uses a Heap as it's backbone.](https://www.reddit.com/r/reactjs/comments/gsllvn/my_fully_first_react_app_a_tool_for_visualizing/)
-- url: https://v.redd.it/qrdxss2mom151
+## [6][Built my portfolio. Would love to get some feedback!](https://www.reddit.com/r/reactjs/comments/gtdzxo/built_my_portfolio_would_love_to_get_some_feedback/)
+- url: https://www.reddit.com/r/reactjs/comments/gtdzxo/built_my_portfolio_would_love_to_get_some_feedback/
+---
+Hi guys, I recently made a new portfolio to showcase my code and writing. I'd love to get some feedback. Also you may find some cool idea to steal for you own portfolio/website.
+
+Site: [https://sahil.surge.sh](https://sahil.surge.sh)
+
+Code: [https://github.com/godcrampy/site](https://github.com/godcrampy/site)
+## [7][What is proper way to use hooks with many variables](https://www.reddit.com/r/reactjs/comments/gt5oli/what_is_proper_way_to_use_hooks_with_many/)
+- url: https://www.reddit.com/r/reactjs/comments/gt5oli/what_is_proper_way_to_use_hooks_with_many/
+---
+I’m doing my first “serious” project right now and have about 15-20 variables to store (yeah, I know that it’s not much, but for me it’s pretty a lot). Should I store them like an object in 2-3 main hooks states or split them up and store independently?
+
+I’m not sure because all tutorials and docs show programs with at max 2-3 variables, which they store in separate hooks states, but I’m not sure if its a right thing to do with bigger projects.
+
+Also, yeah, I was thinking about Redux as well, but everyone says that you should use redux mostly in big projects (and I don’t think my project is big enough), so I’m not sure.
+
+Thanks in advance!
+## [8][Need help integrating cashfree on frontend only reactjs + firebase](https://www.reddit.com/r/reactjs/comments/gtdpou/need_help_integrating_cashfree_on_frontend_only/)
+- url: https://www.reddit.com/r/reactjs/comments/gtdpou/need_help_integrating_cashfree_on_frontend_only/
+---
+Hey good people of r/reactjs,
+
+I'm building an e-commerce site for a client that's adamant on not paying for a backend right now.
+
+They've already paid for a payment gateway subscription from [cashfree](https://www.cashfree.com/). I've informed them of the risks of exposing their credentials on a front-end only app and they are apparently fine with it.
+
+My current stack is react (default create-react-app config) + redux
+And am using firebase firestore for data storage.
+
+The cashfree api requires 
+1. a returnUrl where it will send the response for the payment.
+2. A suggests to have a notifyUrl where it'll communicate the response of a transaction for sync. Just in case there is a network outage between making payment and returning to the returnUrl.
+
+Can anyone help/advice me on how to implement these hopefully in just client-side react or maybe with firebase functions.
+## [9][I want to combine an async function inside of a custom hook utilizing redux's useSelector. How can I do that?](https://www.reddit.com/r/reactjs/comments/gt88fv/i_want_to_combine_an_async_function_inside_of_a/)
+- url: https://www.reddit.com/r/reactjs/comments/gt88fv/i_want_to_combine_an_async_function_inside_of_a/
+---
+I'm having a hard time conceptualizing what I need to do. 
+
+Basically, I have a store that contains a large list of objects (1028 to be exact). However, the elements in that list do not have all the information I need, so when I grab one I need to make an API call to get more information for that object and then sticks it back into the store.
+
+The part where I grab the extra information with an API call works, that isn't a problem. The problem I'm having is how to build a function that can use information gathered from useSelector **but also** wait for the information to be populated **and** be called multiple times in a single render with different parameters. 
+
+My first idea was to use a useCallback that waited until the object was hydrated by just recursively called it using a timeout. Obviously this didn't work because the version of the dependency that it was recursively calling itself with never updates with the new data.
+
+I have tried to throw around some other ideas, but I honestly never came up with anything better. 
+
+The function might get called several times during a single render, each time bringing back a different result because it's grabbing something out of that larger list. So using something like a state doesn't really work.
+## [10][You Might Not Need UUID V4 for Generating Random Identifiers](https://www.reddit.com/r/reactjs/comments/gtbt3q/you_might_not_need_uuid_v4_for_generating_random/)
+- url: https://medium.com/javascript-in-plain-english/you-might-not-need-uuid-v4-for-generating-random-identifiers-89e8a28a7d77?source=friends_link&amp;sk=f96ae339e0b689374bd342ee2e98eb56
 ---
 
-## [5][React tutorials now on MDN](https://www.reddit.com/r/reactjs/comments/gs7sqd/react_tutorials_now_on_mdn/)
-- url: https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started
+## [11][Playgibberish.com: my first react app! Guess the gibberish and compete with friends against time.](https://www.reddit.com/r/reactjs/comments/gsycpd/playgibberishcom_my_first_react_app_guess_the/)
+- url: https://v.redd.it/fsf17d8nyq151
 ---
 
-## [6][Stack Overflow Developer Survey 2020 - Web Frameworks](https://www.reddit.com/r/reactjs/comments/gs70e2/stack_overflow_developer_survey_2020_web/)
-- url: https://insights.stackoverflow.com/survey/2020#technology-web-frameworks
+## [12][Reusable logic with React Render Props](https://www.reddit.com/r/reactjs/comments/gtawli/reusable_logic_with_react_render_props/)
+- url: https://dev.to/max_frolov_/reusable-logic-with-react-render-props-2nbg
 ---
 
-## [7][Just wanted to show some of the page transitions that I made for one of my projects that I am working on. I used Framer Motion for the animation.](https://www.reddit.com/r/reactjs/comments/gscfl2/just_wanted_to_show_some_of_the_page_transitions/)
-- url: https://v.redd.it/zka0hv160k151
----
-
-## [8][We made a simplified Next.js and Express.js Skyscanner clone ✈️](https://www.reddit.com/r/reactjs/comments/gsrklw/we_made_a_simplified_nextjs_and_expressjs/)
-- url: https://www.reddit.com/r/reactjs/comments/gsrklw/we_made_a_simplified_nextjs_and_expressjs/
----
-Hi all,
-
-at Signofactory we love to travel 🌎. The frustration of not being able to hop on the next plane pushed us to buy the domain [https://flights.rip](https://flights.rip)
-
-We were unsure what to do with it so we eventually settled on a (very basic) flight search engine, trying to recreate the experience of popular website such as Skyscanner or Momondo using modern web technologies. We ended up using the very limited Skyscanner APIs ([provided through RapidAPI](https://rapidapi.com/skyscanner/api/skyscanner-flight-search)) to power the flight search, as they were the only free alternative we were able to find (suggestions appreciated!).
-
-Some key features of the project:
-
-* The frontend experience is built with Next.js (React) and the backend is built using Express.js (plus Passport for authentication)
-* We experimented using Recoil, which I have to say is very straightforward although it lacks the opportunity to initialize values from server (we ended-up double wrapping our Component in \_app.js to initialize them via useEffect() hook). If you know of a better way to do so, we are here to chat with the community ;)
-* Deployment is fully automated through Github actions to our webserver. If you are looking to deploy something like that on your own server look at the workflow files, there are some secrets you should configure (feel free to DM us if you need help with that)
-
-We were deeply inspired from [this post](https://www.reddit.com/r/reactjs/comments/gnn5j1/built_a_dribbble_clone_for_developers_mvp/) from the fellow Redditor u/abdulmdiaz
-
-What do you guys think? Are you interested in seeing more content like this? Based on the feedback we get, we are thinking of releasing many more of these small "experiments" to keep on growing and building credibility for our clients.
-
-We are also thinking about a small YT series like [this one](https://www.reddit.com/r/reactjs/comments/gpovx1/nextjs_building_a_car_trader_app_all_6_videos_now/) to teach how to re-build our skyscanner clone (or another platform) from scratch. If you're interested, you can subscribe to our (upcoming) [youtube channel](https://www.youtube.com/channel/UCRYDpGClrHtSbKD3qWHLovQ).
-
-We are a small web development company based in Italy. Our [main website](https://signofactory.it) is currently under revamp, but we should be back online soon. We have worked in stealth mode on some cool stuff in the past - and we are now looking forward to sharing it with you guys!
-
-Any comment or feedback is appreciated (even harsh ones) - we know we have a lot to learn!
-
-&amp;#x200B;
-
-Github repo - [https://github.com/signofactory/flights-rip/](https://github.com/signofactory/flights-rip/)
-
-Live demo - [https://flights.rip](https://flights.rip)
-
-Authors website (under construction) - [https://signofactory.it](https://signofactory.it)
-## [9][A visual guide to React Mental models, part 2: useState, useEffect and lifecycles](https://www.reddit.com/r/reactjs/comments/gst1ho/a_visual_guide_to_react_mental_models_part_2/)
-- url: https://obedparla.com/code/a-visual-guide-to-react-mental-models-part-2-use-state-use-effect-and-lifecycles/
----
-
-## [10][Help with TypeScript type signature for "onClick" handler of button element](https://www.reddit.com/r/reactjs/comments/gsrtnx/help_with_typescript_type_signature_for_onclick/)
-- url: https://www.reddit.com/r/reactjs/comments/gsrtnx/help_with_typescript_type_signature_for_onclick/
----
-Hi there,
-
-I am new to front-end development and to React with TypeScript. I was wondering why I can write
-
-    &lt;button onClick={() =&gt; console.log("BOOM!")}&gt;
-
-without any compiler error, although Visual Studio Code tooltip tells me:
-
-     (JSX attribute) React.DOMAttributes&lt;HTMLButtonElement&gt;.onClick?: ((event: React.MouseEvent&lt;HTMLButtonElement, MouseEvent&gt;) =&gt; void) | undefined 
-
-As far as I understand it, the `event` parameter is not optional. So why does the compiler not complain about `() =&gt; ...` although it should be `(event) =&gt; ...` ?
-
-Thanks a lot in advance for your help,
-
-Schorsch
-## [11][Help: React Hook Form Controller API vote (Twitter)](https://www.reddit.com/r/reactjs/comments/gsouun/help_react_hook_form_controller_api_vote_twitter/)
-- url: https://twitter.com/HookForm/status/1266240189195669505
----
-
-## [12][How do you even use ant design's ConfigProvider?](https://www.reddit.com/r/reactjs/comments/gsr5rb/how_do_you_even_use_ant_designs_configprovider/)
-- url: https://www.reddit.com/r/reactjs/comments/gsr5rb/how_do_you_even_use_ant_designs_configprovider/
----
-In Ant Design's docs, under Usage, it simply writes:
-
-    &lt;ConfigProvider {...yourConfig}&gt; &lt;App /&gt; &lt;/ConfigProvider&gt;
-
-My impression of this was simply to wrap ConfigProvider around my ant design components and the components would somehow be able to consume my configurations, but it doesn't:
-
-    import locale from 'antd/es/date-picker/locale/zh_CN';
-    &lt;ConfigProvider locale={locale}&gt;
-        &lt;DatePicker /&gt; // DatePicker should be accepting locale, but it isn't
-    &lt;/ConfigProvider&gt;
-
-Also, React's docs on Context mention that I'm supposed to have access to the Context if I want to have a component consume it, but I don't have access to it in this case.
-
-Of course, I could simply directly pass the locale as props to DatePicker, but I don't want to do that. Any idea how to make my child components consume the locale prop? I've completely stumped.

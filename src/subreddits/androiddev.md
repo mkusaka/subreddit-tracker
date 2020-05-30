@@ -1,12 +1,27 @@
 # androiddev
-## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/gss9p6/weekly_anything_goes_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/gss9p6/weekly_anything_goes_thread/
+## [1][App Feedback Thread - May 30, 2020](https://www.reddit.com/r/androiddev/comments/gtdif9/app_feedback_thread_may_30_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/gtdif9/app_feedback_thread_may_30_2020/
 ---
-Here's your chance to talk about whatever!
+This thread is for getting feedback on your own apps.
 
-Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
+####Developers:
 
-Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
+- must **provide feedback** for others
+- must include **Play Store**, **GitHub**, or **BitBucket** link
+- must make top level comment
+- must make effort to respond to questions and feedback from commenters
+- may be open or closed source
+
+####Commenters:
+
+- must give **constructive feedback** in replies to top level comments
+- must not include links to other apps
+
+To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
+
+As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
+
+\- Da Mods
 ## [2][Weekly Questions Thread - May 25, 2020](https://www.reddit.com/r/androiddev/comments/gq90ik/weekly_questions_thread_may_25_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/gq90ik/weekly_questions_thread_may_25_2020/
 ---
@@ -25,55 +40,88 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Android Studio 4.0 Stable](https://www.reddit.com/r/androiddev/comments/gsab88/android_studio_40_stable/)
-- url: https://android-developers.googleblog.com/2020/05/android-studio-4.html
+## [3][Duolingo completes migration to Kotlin and reduces its line count by an average of 30%](https://www.reddit.com/r/androiddev/comments/gt1om5/duolingo_completes_migration_to_kotlin_and/)
+- url: https://developer.android.com/stories/apps/duolingo-kotlin
 ---
 
-## [4][Check out my new open source project - Kickstart Android Template.](https://www.reddit.com/r/androiddev/comments/gsqcoq/check_out_my_new_open_source_project_kickstart/)
-- url: https://www.reddit.com/r/androiddev/comments/gsqcoq/check_out_my_new_open_source_project_kickstart/
----
-Hi All! I am super excited to share my first open-source project and I would really appreciate your feedback. 🙏
-
-It is an open-source platform for android developers that generate boilerplate code for implementing MVVM architecture in activities, fragments, and adapter using Dagger, lifecycle comp., Data binding in order to help developers build apps way faster.
-
-Download the [release](https://github.com/sagarmahobia/kickstart-android-template/releases/download/1.0.2/release.zip) and start using it. This is in early-stage right now.
-
-The best way to learn more is to visit the project's GitHub repository ( [https://github.com/sagarmahobia/kickstart-android-template](https://github.com/sagarmahobia/kickstart-android-template) )
-
-The project is just at the start of its way, any feedback, pull requests or new issues on Github (**or stars** 😁) will be very much appreciated!
-## [5][Material Components for Android 1.2.0 now in beta](https://www.reddit.com/r/androiddev/comments/gscuea/material_components_for_android_120_now_in_beta/)
-- url: https://twitter.com/materialdesign/status/1266086036653867012
+## [4][@AndroidDev: We are excited to tell you more about Android 11, but now is not the time to celebrate. We are postponing the June 3rd event and beta release. We'll be back with more on Android 11, soon.](https://www.reddit.com/r/androiddev/comments/gt88x1/androiddev_we_are_excited_to_tell_you_more_about/)
+- url: https://twitter.com/AndroidDev/status/1266589514937466880?s=19
 ---
 
-## [6][Interaction with RecyclerView using Kotlin DSL](https://www.reddit.com/r/androiddev/comments/gsq5t1/interaction_with_recyclerview_using_kotlin_dsl/)
-- url: https://brona.blog/2020/05/interaction-with-recyclerview-using-kotlin-dsl/
+## [5][Are rapid Play Store app updates throttled ?](https://www.reddit.com/r/androiddev/comments/gte6mz/are_rapid_play_store_app_updates_throttled/)
+- url: https://www.reddit.com/r/androiddev/comments/gte6mz/are_rapid_play_store_app_updates_throttled/
 ---
+The 27th I made an app udpdate (for an existing app) which was published in less than 24h. The last time the app had been updated before that was about 1 month.
+ Then the 28th, a few hours after that update was published, I had to push a hot fix app update. To this day (3 days later), it is still not published. Could it be because it was pushed very quick after another update and it got into some waiting queue ? Did anybody experience something like this ? Usually all my updates are published very fast, but this is the first time I make a quick hotfix update.
+## [6][Can I do something if someone copied my app title and store listing to rank at the top in the category?](https://www.reddit.com/r/androiddev/comments/gtcg55/can_i_do_something_if_someone_copied_my_app_title/)
+- url: https://www.reddit.com/r/androiddev/comments/gtcg55/can_i_do_something_if_someone_copied_my_app_title/
+---
+I've my app ([Task Nearby: Location reminder](https://play.google.com/store/apps/details?id=app.tasknearby.yashcreations.com.tasknearby)) live in Play store since May 2015. Around Jan 2018, with the help of a friend I revamped the app and optimized the store listing and title to rank amongst the top for keywords like "Location reminder".
 
-## [7][ANDROID TV DEVELOMENT ISSUE](https://www.reddit.com/r/androiddev/comments/gsswly/android_tv_develoment_issue/)
-- url: https://www.reddit.com/r/androiddev/comments/gsswly/android_tv_develoment_issue/
----
-So one month a go I decided that I want to make android tv apps but there is a lack of information and I haven't been able to learn it
-## [8][How to add referrals in App, if the app is not on any store?](https://www.reddit.com/r/androiddev/comments/gsps9c/how_to_add_referrals_in_app_if_the_app_is_not_on/)
-- url: https://www.reddit.com/r/androiddev/comments/gsps9c/how_to_add_referrals_in_app_if_the_app_is_not_on/
----
- I want to add referral in my android app which is not on any store(App or Play store) and can be downloaded from our site, I am planning to use Firebase dynamic links but Firebase dynamic links uses play store functionality for the app installation verification, However my app is not on any store, is it going to work still? If not, Then how can I still implement referral in my app, Please anyone suggest me better alternative in such scenario. Any help is highly appreciated!
-## [9][Solve a Word Search Game using Firebase ML Kit and Huawei ML Kit](https://www.reddit.com/r/androiddev/comments/gspdw8/solve_a_word_search_game_using_firebase_ml_kit/)
-- url: https://medium.com/huawei-mobile-developers/solve-a-word-search-game-using-firebase-ml-kit-and-huawei-ml-kit-8b9cc06bf4ce
----
+Few days ago, I noticed that someone has created another app with the name - "[Nearby Tasks - Location reminders](https://play.google.com/store/apps/details?id=com.weenggs.remindmeatlocation)" which apart from using the almost similar name, has the exact same store listing! The developer just removed the lines from store listing for the features that are not there in their app.
 
-## [10][Slack latest android App is slick](https://www.reddit.com/r/androiddev/comments/gsrm3w/slack_latest_android_app_is_slick/)
+The app, though it builds on the same ideas and features present in my app (e.g. notes, recurring reminders, image attachment), has a different UI - so I cannot call it a clone.
+
+Now the app is ranking at the top for these keywords and is just next to my app. This is confusing the potential customers when they try to search my app by name. Also, I'm not really happy seeing my work being copied by someone and used for their benefit.
+
+I do not have any trademark or copyright over the title or store listing. I tried reporting this to Google [here](https://support.google.com/googleplay/android-developer/contact/takedown) but as expected, I got no response. 
+
+I think there's nothing that can be done here, but thought of asking the community if there's anything that could be done?
+## [7][Slack latest android App is slick](https://www.reddit.com/r/androiddev/comments/gsrm3w/slack_latest_android_app_is_slick/)
 - url: https://www.reddit.com/r/androiddev/comments/gsrm3w/slack_latest_android_app_is_slick/
 ---
 It uses bottom navigation as well as a left and right gestures to display a menu on the left a list in the middle and details on the right.
 
 I'd quite like to use that in my project.Did anyone try to reproduce this behaviour?
 
-https://reddit.com/link/gsrm3w/video/4809o6j95p151/player
-## [11][Android dev for UI/UX designer](https://www.reddit.com/r/androiddev/comments/gsrgpb/android_dev_for_uiux_designer/)
-- url: https://www.reddit.com/r/androiddev/comments/gsrgpb/android_dev_for_uiux_designer/
+[Slack application](https://reddit.com/link/gsrm3w/video/4809o6j95p151/player)
+
+ 
+
+We can see it feels different but it is hard to qualify what it is exactly.
+
+So I spent some time trying to spot some of the differences.
+
+When you flick to the right a drawer appears.
+
+Compared to a regular drawer there are several differences.
+
+1 - you can drag from anywhere on the screen. Generally the drawer is only accessible from the far left.
+
+2 - when you scroll the left drawer to the right, the center panel darkens a little bit and follows it pixel for pixel to the right . Generally it only darkens and stays put.
+
+3 - the left drawer is totally full height including the Pixel notch on top. On other apps it generally covers the title bar but not the system icons above.
+
+The right drawer is similar but a little bit different.
+
+1 - you can also drag from anywhere on the screen. Generally the right drawer is only accessible from the far right.
+
+2 - when you scroll the right drawer to the left, the center panel darkens a little bit and follows to the left just ever so slightly. Perhaps 30 pixels. Generally it only darkens and stays put.
+
+3 - the right drawer is totally full height too.
+
+4 - there is a non linear animation of the background, I wonder if someone can qualify it better.
+## [8][All about Jetpack Compose](https://www.reddit.com/r/androiddev/comments/gszfpf/all_about_jetpack_compose/)
+- url: https://www.youtube.com/watch?v=Z7Qs9XYGyCM
 ---
-So as the title suggests i am an aspiring UI/UX designer but i want to learn to develop the apps i am making the designs for as well. I have a little bit of experience in C but pretty clueless about the path i should follow to be able to actually make them real. Would really appreciate some guidance.
-## [12][How Firebase Performance trace works](https://www.reddit.com/r/androiddev/comments/gsrdbn/how_firebase_performance_trace_works/)
-- url: https://www.reddit.com/r/androiddev/comments/gsrdbn/how_firebase_performance_trace_works/
+
+## [9][Pay for Free Apps](https://www.reddit.com/r/androiddev/comments/gtbpv9/pay_for_free_apps/)
+- url: https://www.reddit.com/r/androiddev/comments/gtbpv9/pay_for_free_apps/
 ---
-Does it  put  System.currentTimeMillis()  on the method start and end then take difference and put it
+Do you think it would improve the ecosystem if the play store was paying devolopers of free apps?
+As they take a percentage of each sale at buying time. Wouldn't it make sense to give some of this money back to free apps based on usage? 
+This would encourage free apps development and provide free possibly ad free apps for the ecosystem.
+## [10][How much money do you make each month on average from your apps?](https://www.reddit.com/r/androiddev/comments/gt2xq0/how_much_money_do_you_make_each_month_on_average/)
+- url: https://www.reddit.com/r/androiddev/comments/gt2xq0/how_much_money_do_you_make_each_month_on_average/
+---
+
+
+[View Poll](https://www.reddit.com/poll/gt2xq0)
+## [11][Google postponed the release of Android 11 Beta: due to the outbreak of protests and other activities in the United States](https://www.reddit.com/r/androiddev/comments/gtd3sa/google_postponed_the_release_of_android_11_beta/)
+- url: https://i.redd.it/ellrsqpt5w151.jpg
+---
+
+## [12][First Slices of Dagger/Hilt](https://www.reddit.com/r/androiddev/comments/gt10d5/first_slices_of_daggerhilt/)
+- url: https://github.com/davidliu/DaggerHiltExploration/tree/master
+---
+

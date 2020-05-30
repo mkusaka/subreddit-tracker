@@ -79,51 +79,79 @@
 
 
 &amp;nbsp;
-## [2][WTF Wednesday (May 27, 2020)](https://www.reddit.com/r/javascript/comments/grmg6m/wtf_wednesday_may_27_2020/)
-- url: https://www.reddit.com/r/javascript/comments/grmg6m/wtf_wednesday_may_27_2020/
+## [2][Showoff Saturday (May 30, 2020)](https://www.reddit.com/r/javascript/comments/gtd0g9/showoff_saturday_may_30_2020/)
+- url: https://www.reddit.com/r/javascript/comments/gtd0g9/showoff_saturday_may_30_2020/
 ---
-Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
-Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
-this is the place.
+Did you find or create something cool this week in javascript? 
 
-[Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][ECMAscript 4: The missing version](https://www.reddit.com/r/javascript/comments/gsfkdn/ecmascript_4_the_missing_version/)
-- url: https://evertpot.com/ecmascript-4-the-missing-version/
+Show us here!
+## [3][WON, a fast HTML, CSS and JSON converter (to have code-understandable HTML and CSS documents)](https://www.reddit.com/r/javascript/comments/gtawnw/won_a_fast_html_css_and_json_converter_to_have/)
+- url: https://gianlucatarantino.github.io/won/
 ---
 
-## [4][Using Git to run ESLint on changed files in a feature branch](https://www.reddit.com/r/javascript/comments/gsrxdg/using_git_to_run_eslint_on_changed_files_in_a/)
+## [4][GitHub - blueimp/JavaScript-Templates: 1KB lightweight, fast &amp; powerful JavaScript templating engine with zero dependencies. Compatible with server-side environments like node.js, module loaders like RequireJS and all web browsers.](https://www.reddit.com/r/javascript/comments/gt7nhk/github_blueimpjavascripttemplates_1kb_lightweight/)
+- url: https://github.com/blueimp/JavaScript-Templates
+---
+
+## [5][[AskJS] What are your must have React tools in 2020?](https://www.reddit.com/r/javascript/comments/gt0bue/askjs_what_are_your_must_have_react_tools_in_2020/)
+- url: https://www.reddit.com/r/javascript/comments/gt0bue/askjs_what_are_your_must_have_react_tools_in_2020/
+---
+Hi there, I'm a very experienced engineer but I've barely touched frontend web technologies in my career. I know the ecosystem in javascript changes very quickly, so everything I knew before (7+ years ago) is outdated.  I'm interested in learning more and would like some feedback on my current thoughts:
+
+I want to build web, iOS, and Android apps using React + React Native. Here are the tools I was thinking about:
+- Expo for build tools and smoothing out the React Native experience
+- TypeScript as the language for type safety benefits
+
+I'm curious what people like to use for
+- Unit testing and integration/system testing
+- HTTP requests
+- Animations
+- Anything that makes CSS more sane
+- Layout
+
+Are there any must use libraries (I remember hearing a lot a few years back about Flux)? I'm curious what libraries and tools are generally accepted as "must use" in the community, and which libraries and tools have flame wars and the pros and cons of each side.
+
+If you have any thoughts on my approach, why it sucks, what to add or remove, or any color to add, please let me know.
+
+Thanks!
+## [6][Progressively enhanced HTML templating engine written in JavaScript](https://www.reddit.com/r/javascript/comments/gtaeo6/progressively_enhanced_html_templating_engine/)
+- url: https://github.com/buxlabs/boxwood
+---
+
+## [7][A pure Javascript Computer that can be turned on and off (Simple but Fun)](https://www.reddit.com/r/javascript/comments/gtavgx/a_pure_javascript_computer_that_can_be_turned_on/)
+- url: https://3pic.github.io/computer
+---
+
+## [8][Create, develop and manage your projects through an accompanying graphical user interface.](https://www.reddit.com/r/javascript/comments/gt3v5z/create_develop_and_manage_your_projects_through/)
+- url: https://github.com/Routine-App/Routine
+---
+
+## [9][[AskJS] Is it just JavaScript in the next decade?](https://www.reddit.com/r/javascript/comments/gtbdwl/askjs_is_it_just_javascript_in_the_next_decade/)
+- url: https://www.reddit.com/r/javascript/comments/gtbdwl/askjs_is_it_just_javascript_in_the_next_decade/
+---
+
+Is it just me, or it really is JS for the next decade. JS for everything and C for your washing machine?
+
+We have a diverse stack in my organization - ruby, python, js, Java, c#. On the browser we are fixed - no choice there, and at least internally in my organization it is getting more and more common to move everything to JS. No need to traverse these trees both in browser with JS and on server with python. Just use the same code and since you are fixed on the browser this code is JS. 
+
+You need desktop - JS. 
+You need mobile - JS. 
+You need server - js.  
+
+You have the ide - which is the browser. You need more - Microsoft are doing some text editors. 
+
+It seems like really naturally we finally have one code base for everything. The prophecy that was once made is probably already fulfilling. Yes, the technology is different, but the chosen one has emerged.
+
+What do you think? Is there even place for anything else? Why would you undertake a new project in a technology that is not JS when you can build with JS and deliver everywhere, reuse from everywhere and yes..slap you head from time to time when fighting different problems, but at least you would slap your head .. consistently.
+## [10][Learn it faster: The entire JavaScript language in a single image](https://www.reddit.com/r/javascript/comments/gtcejo/learn_it_faster_the_entire_javascript_language_in/)
+- url: https://altbulletin.com/learn-it-faster-the-entire-javascript-language-in-a-single-image/
+---
+
+## [11][Using Git to run ESLint on changed files in a feature branch](https://www.reddit.com/r/javascript/comments/gsrxdg/using_git_to_run_eslint_on_changed_files_in_a/)
 - url: https://jdauriemma.com/programming/eslint-changed-files
 ---
 
-## [5][Autopilot - Cross-platform Desktop automation in JS](https://www.reddit.com/r/javascript/comments/gslb4w/autopilot_crossplatform_desktop_automation_in_js/)
-- url: http://github.com/divy-work/autopilot-deno
----
-
-## [6][Stack Overflow Developer Survey 2020: JS wins with 67.6%](https://www.reddit.com/r/javascript/comments/gs10h6/stack_overflow_developer_survey_2020_js_wins_with/)
-- url: https://insights.stackoverflow.com/survey/2020#most-popular-technologies
----
-
-## [7][Why we at $FAMOUS_COMPANY Switched to $HYPED_TECHNOLOGY | CSS-Tricks](https://www.reddit.com/r/javascript/comments/gst0ag/why_we_at_famous_company_switched_to_hyped/)
-- url: https://css-tricks.com/why-we-at-famous_company-switched-to-hyped_technology/
----
-
-## [8][oauth2-popup-flow — A very simple oauth2 implicit grant flow library with no dependencies that uses window.open](https://www.reddit.com/r/javascript/comments/gsjpw4/oauth2popupflow_a_very_simple_oauth2_implicit/)
-- url: https://github.com/ricokahler/oauth2-popup-flow
----
-
-## [9][Fluent String Package ~ JS](https://www.reddit.com/r/javascript/comments/gsnzar/fluent_string_package_js/)
-- url: https://github.com/zhorton34/laravel-js-str
----
-
-## [10][How To Secure Deno From Malicious 3rd Party Code](https://www.reddit.com/r/javascript/comments/gsrnjs/how_to_secure_deno_from_malicious_3rd_party_code/)
-- url: https://freesourcecodes.in/secure-deno.html
----
-
-## [11][Private fields and dynamic private fields with Proxy](https://www.reddit.com/r/javascript/comments/gsreu1/private_fields_and_dynamic_private_fields_with/)
-- url: https://github.com/lukigarazus/proxy-private-fields
----
-
-## [12][Video Demystified! Build a Video App with JavaScript and the Twilio CLI Quickly](https://www.reddit.com/r/javascript/comments/gsf0k0/video_demystified_build_a_video_app_with/)
-- url: https://www.twilio.com/blog/build-a-video-app-javascript-twilio-cli-quickly
+## [12][Learning Deno project easily - User authentication and CRUD operations](https://www.reddit.com/r/javascript/comments/gt2loc/learning_deno_project_easily_user_authentication/)
+- url: https://github.com/yashvardhan-kukreja/deno-auth
 ---
 

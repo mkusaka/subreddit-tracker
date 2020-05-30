@@ -23,80 +23,70 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/05/27/this-week-in-rust-340/
 ---
 
-## [3][Fuchsia Rust Crates](https://www.reddit.com/r/rust/comments/gspk26/fuchsia_rust_crates/)
-- url: https://fuchsia.dev/fuchsia-src/development/languages/rust/crates
+## [3][Rust finally shows up as filter option when searching GitHub](https://www.reddit.com/r/rust/comments/gt2roa/rust_finally_shows_up_as_filter_option_when/)
+- url: https://i.redd.it/45dfpuao5s151.png
 ---
 
-## [4][blocked: A proc-macro that emits a compiler warning when the linked GitHub issue is closed](https://www.reddit.com/r/rust/comments/gsq5gd/blocked_a_procmacro_that_emits_a_compiler_warning/)
-- url: https://www.reddit.com/r/rust/comments/gsq5gd/blocked_a_procmacro_that_emits_a_compiler_warning/
----
-Inspired by [this post](https://www.reddit.com/r/rust/comments/gs9cgl/blocked_convention_for_marking_code_as_being/) I wrote [my first proc-macro](https://github.com/zacps/blocked)!
-
-    // An attribute-like procedural macro is on the todo-list
-    #![feature(proc_macro_hygiene)]
-    
-    use blocked::blocked;
-    
-    fn hacky_workaround() {}
-    
-    fn main() {
-        blocked!("1", "This code can be removed when the issue is closed");
-        hacky_workaround();
-    
-        // The reason is optional
-        blocked!("1");
-
-        blocked!("rust-lang/rust#123");
-
-        blocked!("https://github.com/rust-lang/rust/issues/123");
-    }
-    
-If you don't specify the repository or organisation it'll infer them from git remotes (`upstream` and `origin`).
-
-I'd like to improve the error messages and warning when an issue is closed. Of course, I also want to add support for Gitlab.
-
-Requires nightly for emitting compiler warnings, and hygiene for function-like proc macros.
-
-Edit: Forgot to link the thing
-## [5][binread: Declarative Rust Binary Parsing](https://www.reddit.com/r/rust/comments/gsfb3p/binread_declarative_rust_binary_parsing/)
-- url: https://jam1.re/blog/binread-a-declarative-rust-binary-parsing-library
+## [4][Auto-Vectorization for Newer Instruction Sets in Rust](https://www.reddit.com/r/rust/comments/gt83zg/autovectorization_for_newer_instruction_sets_in/)
+- url: https://www.nickwilcox.com/blog/autovec2/
 ---
 
-## [6][3D boids swimming along in perfect harmony; Implementing the boids flocking algorithm in Rust.](https://www.reddit.com/r/rust/comments/gsldbi/3d_boids_swimming_along_in_perfect_harmony/)
-- url: https://www.reddit.com/r/rust/comments/gsldbi/3d_boids_swimming_along_in_perfect_harmony/
+## [5][What does #[cold] actually do?](https://www.reddit.com/r/rust/comments/gtcsem/what_does_cold_actually_do/)
+- url: https://www.reddit.com/r/rust/comments/gtcsem/what_does_cold_actually_do/
 ---
-I mashed together my interests in procedural graphics generation and Rust programming for this experiment. I implemented the boids flocking algorithm to create swirling patterns. The implementation is heavily inspired by Sebastian Lague's coding adventure with boids [video](https://www.youtube.com/watch?v=bqtqltqcQhw). Here's a small demo.
+[The Reference's description of the `cold` attribute](https://doc.rust-lang.org/reference/attributes/codegen.html#the-cold-attribute) says almost nothing about it. It sounds useful, but I want to know more before I use it, and information about it seems scarce.
 
-[Swimming along in perfect harmony](https://reddit.com/link/gsldbi/video/l2p1nwaofm151/player)
-
-You can build and run it [source](https://github.com/twitu/rboids) to enjoy these little creatures endlessly. I've also written a blog about it. You can follow along and create your own flock of boids. Any criticism regarding the code and blog is welcome.
-
-1. [A fistful of boids](https://blog.bitsacm.in/a-fistful-of-boids/) \- Setting up the scene and basic animation
-2. [For a few boids more](https://blog.bitsacm.in/for-a-few-boids-more/) \- Generating boids and obstacle avoidance
-3. [The school, the boid and the Rusty](https://blog.bitsacm.in/the-school-the-boid-and-the-rusty/) \- Simulating a flock, parallelism and benchmarking performance
-
-Many knowledgeable people have written a lot about development in Rust. My conclusion, as a budding Rustaceans, is simple. The Rust ecosystem is not perfect, but that means I have the opportunity to contribute and make a difference.
-## [7][Tour of Web Assembly - Chapter 1 Released](https://www.reddit.com/r/rust/comments/gsatru/tour_of_web_assembly_chapter_1_released/)
-- url: https://tourofrust.com/webassembly/
+What effect does it have? Where is it effective? I imagine it has an effect on functions, but what about individual statements or blocks? Is it useful to mark an entire module as cold? Should I sprinkle it all over code paths for handling rare errors (e.g. I/O error when writing a file), or would that be unwise or unnecessary? Can it be used for branch weights like the `unlikely` intrinsic (which is unstable)?
+## [6][Announcing `float_eq` 0.3.0](https://www.reddit.com/r/rust/comments/gtbuvu/announcing_float_eq_030/)
+- url: https://www.reddit.com/r/rust/comments/gtbuvu/announcing_float_eq_030/
 ---
+Hi!
 
-## [8][Blog Post: coverage marks](https://www.reddit.com/r/rust/comments/gssqpp/blog_post_coverage_marks/)
-- url: https://ferrous-systems.com/blog/coverage-marks/
----
+I've just published version 0.3.0 of [float\_eq](https://crates.io/crates/float_eq), for comparing floating point values.
 
-## [9][showing rust for a friend](https://www.reddit.com/r/rust/comments/gsomji/showing_rust_for_a_friend/)
-- url: https://www.reddit.com/r/rust/comments/gsomji/showing_rust_for_a_friend/
----
-I will showcase rust to a friend where i will try to teach him some of the basics of rust and how it works. Are there any good examples on tasks that showcase the different perks of rust, that is easy to show and explain to someone primarly used to C#, Kotlin &amp; some minor experience with C++?
-## [10][parser for c3d(biomechanics data) written in rust(early version)](https://www.reddit.com/r/rust/comments/gso9yj/parser_for_c3dbiomechanics_data_written_in/)
-- url: https://crates.io/crates/c3d-rs
----
+Notable changes include a much more rigorous and consistent treatment of special floating point values, so ULPs checks now respect NaNs, and infinities are correctly handled.
 
-## [11][What is the point of Diesel? What problem is it trying to solve?](https://www.reddit.com/r/rust/comments/gsqq4d/what_is_the_point_of_diesel_what_problem_is_it/)
-- url: https://www.reddit.com/r/rust/comments/gsqq4d/what_is_the_point_of_diesel_what_problem_is_it/
----
-Do I really need Diesel to communicate with a postgresql database? I don't understand the problem it is trying to solve. Can't I just communicate directly between actix-web and postgresql?
-## [12][An introduction to SIMD and ISPC in Rust](https://www.reddit.com/r/rust/comments/gsb0i3/an_introduction_to_simd_and_ispc_in_rust/)
-- url: https://state.smerity.com/smerity/state/01E8RNH7HRRJT2A63NSX3N6SP1
+Epsilons for composite types may now be provided on a per-field basis:
+
+    assert_float_eq!(a, b, ulps &lt;= Complex32Ulps { re: 2, im: 4 });
+    assert_float_eq!([1.0, -2.0], [-1.0, -2.5], abs &lt;= [2.0, 0.5]);
+    assert_float_eq!((1.0f32, 2.0f64), (-1.0, 2.5), abs &lt;= (2.0, 0.5))
+
+Or, where applicable, uniformly across all fields:
+
+    assert_float_eq!(a, b, ulps_all &lt;= 4);
+    assert_float_eq!([1.0, -2.0], [-1.0, -2.5], abs_all &lt;= 2.0);
+
+There is also now support for tuples (of up to size 12, inclusive), with more support for standard types planned.
+
+Plus a variety of other fixes and tweaks, see the [CHANGELOG](https://github.com/jtempest/float_eq-rs/blob/master/CHANGELOG.md) for more details.
+
+Constructive criticism and feedback appreciated, I hope you're having a lovely day :)
+## [7][zoxide 0.4.1, a faster way to navigate your filesystem - now 2-3x faster](https://www.reddit.com/r/rust/comments/gt42jm/zoxide_041_a_faster_way_to_navigate_your/)
+- url: https://github.com/ajeetdsouza/zoxide
 ---
 
+## [8][Steve Klabnik Gives a Friendly &amp; Thorough Introduction to Async Await](https://www.reddit.com/r/rust/comments/gst7y7/steve_klabnik_gives_a_friendly_thorough/)
+- url: https://www.youtube.com/watch?v=NNwK5ZPAJCk
+---
+
+## [9][xhacklight - the first time I really needed Rust.](https://www.reddit.com/r/rust/comments/gte05a/xhacklight_the_first_time_i_really_needed_rust/)
+- url: https://www.reddit.com/r/rust/comments/gte05a/xhacklight_the_first_time_i_really_needed_rust/
+---
+I don't get to use Rust at work (which is reasonable for what I do) and also haven't found any personal needs for something more performant than Python or JS. However, this time I just needed a real executable instead of a script - even though it was just for being able to use the SUID bit...
+
+Well, here is [`xhacklight`](https://github.com/SillyFreak/xhacklight), a hacky replacement for `xbacklight` that works at the very least on my machine. I doubt, it will be useful to anyone else, but if anyone wants to critique my code, please do.
+
+Cheers!
+## [10][Elektron (synth manufacturer) looking to hire Rust Graphics Engineer](https://www.reddit.com/r/rust/comments/gt0kgw/elektron_synth_manufacturer_looking_to_hire_rust/)
+- url: https://www.elektron.se/rust-graphics-engineer/
+---
+
+## [11][Implementing a trait only for types satisfying a const-generic predicate! (Nightly Only)](https://www.reddit.com/r/rust/comments/gt067a/implementing_a_trait_only_for_types_satisfying_a/)
+- url: https://play.rust-lang.org/?version=nightly&amp;mode=debug&amp;edition=2018&amp;gist=39c1d2d4169f182c4fe575dca1286dea
+---
+
+## [12][Ncurses update screen](https://www.reddit.com/r/rust/comments/gtchz2/ncurses_update_screen/)
+- url: https://www.reddit.com/r/rust/comments/gtchz2/ncurses_update_screen/
+---
+Hey guys, I'm new to Rust and i'm trying to make a little terminal application for managing my todos, i'm using ncurses. But I have a problem, i'm not able to update the screen, I have the todos listed via a for loop, but whenever the screen is refreshed it moves to the next line and moves to the right, with an offset value of "looks like the length of the previous render text length". Anyone knows how to fix this issue? I'm sorry if i'm being vague, I can also provide a github link for those interested in helping me out. Thank you.

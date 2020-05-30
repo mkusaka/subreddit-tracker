@@ -21,107 +21,82 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][AWS Encyclopedia -- A place to share all the useful AWS documentation, repos, and solutions you have bookmarked!](https://www.reddit.com/r/aws/comments/gskv0k/aws_encyclopedia_a_place_to_share_all_the_useful/)
-- url: https://github.com/cschultz82/aws_encyclopedia
+## [2][Swift is now available with AWS Lambda](https://www.reddit.com/r/aws/comments/gt2880/swift_is_now_available_with_aws_lambda/)
+- url: https://swift.org/blog/aws-lambda-runtime/
 ---
 
-## [3][Best Practices for CloudFormation/Serverless](https://www.reddit.com/r/aws/comments/gssiz4/best_practices_for_cloudformationserverless/)
-- url: https://www.reddit.com/r/aws/comments/gssiz4/best_practices_for_cloudformationserverless/
+## [3][I got 80% usage warning even though no one has used my website in a month](https://www.reddit.com/r/aws/comments/gtbqao/i_got_80_usage_warning_even_though_no_one_has/)
+- url: https://www.reddit.com/r/aws/comments/gtbqao/i_got_80_usage_warning_even_though_no_one_has/
 ---
-I am curious what the best practices are with respect to CI/CD and rebuilding/deploying your applications.
-
-Should certain resources be permanent (S3 Buckets, CloudFront Distributions) or should I wipe away everything and rebuild?
-
-I'd rather not have to remember which steps I did manually when trying to rebuild our entire stack from scratch.
-## [4][www.amazon.com is down!](https://www.reddit.com/r/aws/comments/gscvwp/wwwamazoncom_is_down/)
-- url: https://www.reddit.com/r/aws/comments/gscvwp/wwwamazoncom_is_down/
+Hi everyone, we have website on aws we recently got a warning mail for 80% usage even though no one has touched it in a month, is it because the instance was still running?
+## [4][How to get alert when ECS Fargate service crashes and restarts continuously?](https://www.reddit.com/r/aws/comments/gt92en/how_to_get_alert_when_ecs_fargate_service_crashes/)
+- url: https://www.reddit.com/r/aws/comments/gt92en/how_to_get_alert_when_ecs_fargate_service_crashes/
 ---
-% nslookup www.amazon.com
+Sometimes my service crashes and gets restart automatically by ECS. However, it might get stuck in a restart loop due to a bug, bad data or deployment of a nonexistent task definition version etc... How can I set up an CloudWatch alert for this?
+## [5][Looking for this sticker. (Delete if not allowed)](https://www.reddit.com/r/aws/comments/gsvcja/looking_for_this_sticker_delete_if_not_allowed/)
+- url: https://i.redd.it/2g09ax0z5q151.jpg
+---
 
-Server: 8.8.8.8
+## [6][AWS Step Functions TaskTimedOut](https://www.reddit.com/r/aws/comments/gte9yr/aws_step_functions_tasktimedout/)
+- url: https://www.reddit.com/r/aws/comments/gte9yr/aws_step_functions_tasktimedout/
+---
+I am using boto3 in my activity workers and I came upon a TaskTimedOut when calling the SendTaskFailure:
 
-Address: 8.8.8.8#53
+    botocore.errorfactory.TaskTimedOut: An error occurred (TaskTimedOut) when calling the SendTaskFailure operation: Task Timed Out: 'arn:aws:states:eu-west-2:statemachinearn:activityname' 
 
-server can't find www.amazon.com: SERVFAIL
+I think this happens because the connection pool gets full sometimes which makes the request not being fulfilled (even though a new connection is created).
 
-Colorado, USA
+I know it is possible to set a timeout value for Tasks and Parallel States but that does not have anything to do with calling the send\_task\_failure/send\_task\_success methods.
+
+Does anyone have any idea on how to solve this?
+## [7][How to get started with basic key rotation?](https://www.reddit.com/r/aws/comments/gsza0t/how_to_get_started_with_basic_key_rotation/)
+- url: https://www.reddit.com/r/aws/comments/gsza0t/how_to_get_started_with_basic_key_rotation/
+---
+I have some application components that use S3 to upload images. They run in docker containers and are not all on aws themselves. They store their own key which has minimal privileges so I'm not very concerned about them, but I still would like to rotate these keys as a best practice and for future compliance.
+
+I am curious what I need to do this? Should I have my python app run a cron job every 90 days to invoke the key change? Or can I change the way my app accesses the keys so it will get the new key without the app having to invoke the rotate functionality?
+
+Can anyone give me a high level overview of how I can give my applications aws keys when key rotation is implemented?
+
+In the current design, some keys are stored in a local database, and in some situations the keys are hard coded. Not ideal but hoping I can change that as well.
+
+Thanks!
+## [8][How to know if EC2 instance bandwidth limit is being reached?](https://www.reddit.com/r/aws/comments/gst4tl/how_to_know_if_ec2_instance_bandwidth_limit_is/)
+- url: https://www.reddit.com/r/aws/comments/gst4tl/how_to_know_if_ec2_instance_bandwidth_limit_is/
+---
+EC2 instance types directly impacts how much traffic it can support through its network interface, some consulting firms publish their own benchmarks. A benchmark from 2018 from [Cloudonaut.io](https://Cloudonaut.io) indicates 0.13 Gbit/sec baseline for t2.small instances.
+
+Is there a CloudWatch metric I can look at that will tell me that I am reaching this limit? What I've been doing is looking at NetworkOut and NetworkIn (bytes) from CloudWatch for the EC2 instance \[sum statistic, over 1 minute, then dividing by 60 second to get Gbytes/sec -&gt; then convert to Gbit/sec or similar unit\] . 
 
 &amp;#x200B;
 
-HN Thread: [https://news.ycombinator.com/item?id=23341170](https://news.ycombinator.com/item?id=23341170)
-## [5][AWS ECS spot instances availability/creation](https://www.reddit.com/r/aws/comments/gsqqje/aws_ecs_spot_instances_availabilitycreation/)
-- url: https://www.reddit.com/r/aws/comments/gsqqje/aws_ecs_spot_instances_availabilitycreation/
+Is this method accurate and is there a better way to do this? May be something like VolumeQueueLength of EBS PIOPS which is generally a good indicator if EBS is struggling to keep up with IO, but for network throughput.
+## [9][How often should you auto-rotate secrets in Secrets Manager?](https://www.reddit.com/r/aws/comments/gsz5ok/how_often_should_you_autorotate_secrets_in/)
+- url: https://www.reddit.com/r/aws/comments/gsz5ok/how_often_should_you_autorotate_secrets_in/
 ---
-I have a m5.large  
- spot instance running on an ECS cluster. What will happen if this instance becomes unavailable? Will ECS spawn a new instance automatically? if not, then how do we handle this situation so that our application doesn't go down?
-
-I am aware of services like Spotinist but I am trying to understand the flow here and also what does AWS provide by default?
-## [6][Apparently I don't understand CloudWatch metrics, or how math works](https://www.reddit.com/r/aws/comments/gsn6zi/apparently_i_dont_understand_cloudwatch_metrics/)
-- url: https://www.reddit.com/r/aws/comments/gsn6zi/apparently_i_dont_understand_cloudwatch_metrics/
+For example with RDS databases, what are the pros and cons between autorotating every 30 days vs every single day?
+## [10][A “good” IDE for Redshift](https://www.reddit.com/r/aws/comments/gt03e1/a_good_ide_for_redshift/)
+- url: https://www.reddit.com/r/aws/comments/gt03e1/a_good_ide_for_redshift/
 ---
-Could someone explain this to me like I'm 5?
-
-I'm trying to see (on a chart) how much S3 outgoing bandwidth I'm burning every month. My bill says it's been 457GB last month and 400GB the month before.
-
-Let's say I want to set up a CloudWatch dashboard that shows me this, and I want to look at the past X months, and know how much bandwidth was consumed each month.
-
-I set the statistic to "Sum", period to 30 days, and when I choose the past 3 months, suddenly it says I'm using 800GB over the past couple months. With the configuration I've chosen, doesn't this mean "show the past 3 months, summing up total bandwidth over 30 days"?
-
-If I switch period to 15 minutes and mouse over the data points, it's showing about 300MB every 15 minutes. Is that 300MB of data consumption every 15 minutes? I don't see how that's possible.
-
-(is CloudWatch Metrics maybe not the best place to do this, and I should use the Cost Explorer instead?)
-## [7][Best practice API design for](https://www.reddit.com/r/aws/comments/gsqqwp/best_practice_api_design_for/)
-- url: https://www.reddit.com/r/aws/comments/gsqqwp/best_practice_api_design_for/
+I intend no disrespect to Redshift IDEs, but... I’m struggling to find one that isn’t awful. I come from a SQL Server world and trying to find footing in using Redshift. SSMS and Azure data studio feel like they are miles ahead of things like Aginity Workbench. Do you have a favorite IDE for redshift specific development that you could recommend?
+## [11][First deploy on EC2](https://www.reddit.com/r/aws/comments/gt9z8p/first_deploy_on_ec2/)
+- url: https://www.reddit.com/r/aws/comments/gt9z8p/first_deploy_on_ec2/
 ---
-The system was designed with only end users in mind. Primary authentication method is a custom auth lambda using userpools as the authorisation server. That provides a policy based on the user account. The project has expanded a little and requires a small rethink on design. I'm now in the position where the best approach may be to get the internal lambdas to call the api, however as far as I know I cannot create a userpool account for each of the lambdas to access the authorisation server to receive jwts.
+Hello everyone,
 
-One approach I can think of is to decouple the calls to the lambdas and the api and adding a layer between them so that the architecture arguably would look something more akin to that of a microservice ecosystem.
-## [8][Cognito refresh token expiry?](https://www.reddit.com/r/aws/comments/gsne83/cognito_refresh_token_expiry/)
-- url: https://www.reddit.com/r/aws/comments/gsne83/cognito_refresh_token_expiry/
----
-How can I tell when a refresh token is due to expire?
+I'd like to have some advises on my first deploy on an EC2 instance(s), because it's my first time on AWS.
 
-I know how long it lasts, but I don't know when it was issued, so that's not helpful.
+I have a php website hosted on a shared server, and i want to migrate to a more scalable infrastructure due to sustain a massive load of requests.Right now i deploy/update the application by a gitlab webhook, and at every push on the master branch, my production environment got updated.
 
-I can't decode it like an access token or id token.
+My goal is to deploy my application on EC2 with multiple instances, with a load balancer in front of 2/n servers
 
-Is there something in the SDK that can give me info about a refresh token? Struggling to find any useful docs on this.
-## [9][Slow query even after upgrading to larger instance?](https://www.reddit.com/r/aws/comments/gsnrpe/slow_query_even_after_upgrading_to_larger_instance/)
-- url: https://www.reddit.com/r/aws/comments/gsnrpe/slow_query_even_after_upgrading_to_larger_instance/
----
-* i'm currently running the free tier
-* currently using rds
-* cpu is just running 1% cloudwatch
-* read and write bearly hitting 5 iops cloudwatch
-* i changed it to instance Class db.r3 large
+My questions are:
+
+* Do i need to change something on my application (php code) because of the EC2/EC2 multi server?
+* How can i deploy my application at the same time on all the servers?
+
+Thank you!
 
 &amp;#x200B;
 
-is this considered slow?
-
-* 3 index scans 2 seq scan,1  Bitmap Heap Scan only running 1 query
-* Aggregate4 , CTE Scan 7 , Group 2 , Index Scan 4 , Nested Loop Inner Join 5 , Nested Loop Left Join4 , Sort 4 , Subquery Scan 1
-
-do i need to modify something in postgres?
-
-&amp;#x200B;
-
-when i query it doesn't not seams to improve it still queries the same amount of time
-## [10][NLB now supports ALPN on TLS listeners](https://www.reddit.com/r/aws/comments/gsdo3w/nlb_now_supports_alpn_on_tls_listeners/)
-- url: https://www.reddit.com/r/aws/comments/gsdo3w/nlb_now_supports_alpn_on_tls_listeners/
----
-Elastic Load Balancing now supports Application-Layer Protocol Negotiation (ALPN) policies on Network Load Balancers. ALPN is a TLS extension supported by all major browsers that enables negotiation of the protocol used after establishing a TLS connection, such as HTTP/2. Using ALPN policies, you can now offload your application’s TLS HTTP/2 traffic decryption/encryption to the Network Load Balancer, improving your service security posture and reducing operational complexity.
-
-To get started, simply attach an ALPN policy to your Network Load Balancer TLS listener. The policy can be viewed and changed at any time based on your application’s protocol requirements. When ALPN is enabled, you can use Network Load Balancer TLS access logs to track successful and unsuccessful ALPN negotiations, view clients’ protocol preference lists, identify anomalies and debug connection issues.
-
-Network Load Balancer ALPN policies are now available in all AWS Regions. To learn more, please refer to the Network Load Balancer documentation http://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html
-## [11][Need Help - eCommerce Architecture](https://www.reddit.com/r/aws/comments/gsrvvm/need_help_ecommerce_architecture/)
-- url: https://www.reddit.com/r/aws/comments/gsrvvm/need_help_ecommerce_architecture/
----
-Folks,
-
-I am looking to develop a simple eCommerce website architecture in AWS.
-
-Could you please suggest any example architecture.
-
-Thank you.
+**EDIT:** the website communicate with a MySql database

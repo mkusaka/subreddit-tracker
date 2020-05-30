@@ -125,75 +125,97 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][[The Cherno] Move Semantics in C++](https://www.reddit.com/r/cpp/comments/gsrzc0/the_cherno_move_semantics_in_c/)
+## [3][Github Actions, C++ with Boost and cmake, almost a 50% speedup with caching](https://www.reddit.com/r/cpp/comments/gtazvu/github_actions_c_with_boost_and_cmake_almost_a_50/)
+- url: https://raymii.org/s/articles/Github_Actions_cpp_boost_cmake_speedup.html
+---
+
+## [4][I made a project template for modern C++ projects, using CMake, GoogleTest, Clang-Format with CI, templates for issues, PR and more!](https://www.reddit.com/r/cpp/comments/gt0pz1/i_made_a_project_template_for_modern_c_projects/)
+- url: https://github.com/filipdutescu/modern-cpp-template
+---
+
+## [5][Cheatsheet/summary of Effective Modern C++](https://www.reddit.com/r/cpp/comments/gt4n0g/cheatsheetsummary_of_effective_modern_c/)
+- url: https://www.reddit.com/r/cpp/comments/gt4n0g/cheatsheetsummary_of_effective_modern_c/
+---
+Inspired by a few posts about promoting how/where to learn modern C++, I also took some time to read one of my favorite books "Effective Modern C++" by Scott Meyers again, and write some notes, a small reference sheet of sorts.
+
+I've tried to keep it brief, and it will come in handy for a quick revision of (some of the many) important points made in the book; needless to say one should still read the whole book!
+
+Here is the link: [https://github.com/muqsitnawaz/modern-cpp-cheatsheet](https://github.com/muqsitnawaz/modern-cpp-cheatsheet) 
+
+I've proof-read the notes, but if something seems fishy, do let me know. Thanks!
+## [6][[The Cherno] Move Semantics in C++](https://www.reddit.com/r/cpp/comments/gsrzc0/the_cherno_move_semantics_in_c/)
 - url: https://www.youtube.com/watch?v=ehMg6zvXuMY
 ---
 
-## [4][Profiling template metaprograms with C++ Build Insights](https://www.reddit.com/r/cpp/comments/gseork/profiling_template_metaprograms_with_c_build/)
-- url: https://devblogs.microsoft.com/cppblog/profiling-template-metaprograms-with-cpp-build-insights/
+## [7][Hiding C++ template parameter packs in a tuple](https://www.reddit.com/r/cpp/comments/gt2cuu/hiding_c_template_parameter_packs_in_a_tuple/)
+- url: https://devblogs.microsoft.com/oldnewthing/20200529-00/?p=103810
 ---
 
-## [5][Smart point for memory safety.](https://www.reddit.com/r/cpp/comments/gsn0zu/smart_point_for_memory_safety/)
-- url: https://www.reddit.com/r/cpp/comments/gsn0zu/smart_point_for_memory_safety/
+## [8][Using custom deleters with shared_ptr and unique_ptr](https://www.reddit.com/r/cpp/comments/gtco2v/using_custom_deleters_with_shared_ptr_and_unique/)
+- url: https://www.reddit.com/r/cpp/comments/gtco2v/using_custom_deleters_with_shared_ptr_and_unique/
 ---
-So there are a lot of discussions about c++ memory safety and the fact that google and Microsoft is trying to using other language in the development of browsers like rust. My question is, wouldn’t the use of smart pointer eliminating many of the unsafe-ness of cpp? Why do they want to move entirely to another language?
-## [6][LEAF, a lightweight error handling library, is undergoing Boost review now](https://www.reddit.com/r/cpp/comments/gshj1u/leaf_a_lightweight_error_handling_library_is/)
-- url: https://www.reddit.com/r/cpp/comments/gshj1u/leaf_a_lightweight_error_handling_library_is/
+[https://link.medium.com/0xVVPtq0T6](https://link.medium.com/0xVVPtq0T6)
+
+Have compiled an article on using custom deleters that covers the following things -
+
+1. Why someone might need to specify a custom deleter and how it may be helpful in a few cases?
+2. How to use custom deleter with `unique_ptr`? (and what is std::default\_delete ?)
+3. How to use custom deleter with `shared_ptr`?
+4. In how many ways we can specify these custom deleters?(`std::function` vs stateless  lambda / functor, stateful lambda / functor, function pointer etc)
+5. What's the cost for each of these deleter type with `shared_ptr`
+6. What's the cost for each of these deleter type with `unique_ptr`
+7. Restrictions that come with the usage of custom deleters.
+
+Would love to improve the article based on your suggestions and insights.
+## [9][How much more is there to move semantics after the basics ?](https://www.reddit.com/r/cpp/comments/gt0jek/how_much_more_is_there_to_move_semantics_after/)
+- url: https://www.reddit.com/r/cpp/comments/gt0jek/how_much_more_is_there_to_move_semantics_after/
 ---
-LEAF is a lightweight error handling library for C++11. Features:
-
-* Efficient delivery of arbitrary error objects to the correct error-handling scope.
-* No dynamic memory allocations.
-* Compatible with std::error\_code, errno and any other error code type.
-* Can be used with or without exception handling.
-* Support for multi-thread programming.
-
-Documentation: [https://zajo.github.io/leaf/](https://zajo.github.io/leaf/).
-
-Benchmark: [https://github.com/zajo/leaf/blob/master/benchmark/benchmark.md](https://github.com/zajo/leaf/blob/master/benchmark/benchmark.md)
-
-Travis: [https://travis-ci.org/github/zajo/leaf](https://travis-ci.org/github/zajo/leaf)
-
-To participate, you can use the Boost Users mailing list [https://lists.boost.org/mailman/listinfo.cgi/boost-users](https://lists.boost.org/mailman/listinfo.cgi/boost-users).
-## [7][CppCast: Rider for Unreal Engine](https://www.reddit.com/r/cpp/comments/gsk3b0/cppcast_rider_for_unreal_engine/)
-- url: https://cppcast.com/rider-unreal-anastasia-kazakova/
+I was watching back to the basics for C++ and the section on [move semantics](https://youtu.be/St0MNEU5b0o) for me seemed pretty complete for day to day use. It even covered forwarding references decently though I won't claim to fully understand them. Is there more and if so, what is it and when is it necessary?  I was once pilloried in another forum for saying this was mostly good enough.
+## [10][Any idea how i can store the name i pass through the constructor to the variable char name[40]? I'm only able to do it in the varible string name.](https://www.reddit.com/r/cpp/comments/gtcd6h/any_idea_how_i_can_store_the_name_i_pass_through/)
+- url: https://www.reddit.com/r/cpp/comments/gtcd6h/any_idea_how_i_can_store_the_name_i_pass_through/
 ---
-
-## [8][CompilerNerd: CI build tracking &amp; analysis for C++](https://www.reddit.com/r/cpp/comments/gs7k0q/compilernerd_ci_build_tracking_analysis_for_c/)
-- url: https://www.reddit.com/r/cpp/comments/gs7k0q/compilernerd_ci_build_tracking_analysis_for_c/
+    #include &lt;iostream&gt;
+    
+    using namespace std;
+    
+    class personsName{
+        private:
+    
+        char thisName[40];
+    
+        string name;
+         
+        public :
+        
+        personsName (string name1){
+            name = name1;
+        };
+        
+        void  display(){
+           cout&lt;&lt; name; 
+        };
+    };
+    
+    
+    int main()
+    {
+       personsName n("blach");
+       n.display();
+       
+    }
+## [11][Google is reinventing Chrome](https://www.reddit.com/r/cpp/comments/gtcq7c/google_is_reinventing_chrome/)
+- url: https://www.reddit.com/r/cpp/comments/gtcq7c/google_is_reinventing_chrome/
 ---
-Two other students and myself are starting a university (**open-source**) group project with the goal of developing a **CI web-app** that **continuously tracks and analyses** fine-grained (e.g. per compilation unit) **build statistics** such as build times, memory usage, template instantiations for C++ projects.
-
-Essentially, this tool would be **integrated into existing CI build systems** with profiling and analysis done on a user-defined basis; e.g. for every (or every arbitrary number) commit(s).
-
-One of our design goals is to have a **drop-in-replacement wrapper compiler**; only requiring a few lines in your build system to change without requiring any modification of the code. We're thinking of **initially exclusively supporting clang** since we are planning on using **Templight** for profiling.
-
-Templight already has many features such as a callgrind output that allows you to visualise and step-through the call graph of the template instantions and their associated cost. We’re not intending to replace this sort of interaction, which is what you should use once the problem is identified and complex code refactoring is necessary. We hope to instead **provide &amp; analyse historical data** so that developers can quickly identify or be notified of specific changes that causes compilation speed, memory usage,... to suffer; i.e. automated analysis &amp; regression testing.
-
-Furthermore, Templight and other profiling tools tend to be overly-complicated; especially “-ftime-report”, which outputs a lot of useless information since it is more tailored to compiler developers. Hence, we’re aiming to be as user-friendly as possible: easy visualisation, sorting and filtering of data. Something which we also think would be very valuable is the ability to compare commits. Done in conjunction with "git diff"ing your code, this would then allow you to quickly see the code modifications that caused the changes. 
-
-For example, it should make it easier for a developer to see if a specific change to a public-facing templated function causes there to be a substantial increase in the number of template instantiations. This may not have an immediate effect on the build times but a few months down the line once the function is frequently used, build times could have dramatically increased. But, by then it may be much harder to refactor.
-
-Better yet, would be the ability to (automatically) predict if changes to a template-heavy library will cause software depending on that library to have build time explosions; e.g. by inter-repo analysis or simply to specify that specific entities are expected to be used very often. Not sure how useful or feasible such a feature would be, just a suggestion for something that could be added in the distant future. More generally, this tool would have the means for inter-repo analysis (which current tools do not offer). We presume such analysis could be useful, but we haven’t worked on any large codebases to know for sure.
-
-**We would greatly appreciate any feature suggestions or critiques, since after all, we are developing this with the hope that you will integrate it into your workflow.**
-## [9][The “OO” Antipattern](https://www.reddit.com/r/cpp/comments/gs0iwm/the_oo_antipattern/)
-- url: https://quuxplusone.github.io/blog/2020/05/28/oo-antipattern/
+Google is looking for an alternative, which is probably going to be Rust, to change its c++ codes for memory safety reasons. What is your opinions about it?
+## [12][C++ libraries for restful micro services development](https://www.reddit.com/r/cpp/comments/gt0iol/c_libraries_for_restful_micro_services_development/)
+- url: https://www.reddit.com/r/cpp/comments/gt0iol/c_libraries_for_restful_micro_services_development/
 ---
+I'm a software developer who build cloud native applications. It's been years since I used cpp at college. Now there is golang and rust, those are heavily used on micro services development. Of course they got a huge support from the community which build a lot of libraries to help companies develop their services. 
 
-## [10][Data encapsulatipn necessary at all?](https://www.reddit.com/r/cpp/comments/gso7zx/data_encapsulatipn_necessary_at_all/)
-- url: https://www.reddit.com/r/cpp/comments/gso7zx/data_encapsulatipn_necessary_at_all/
----
-Hello, iI wanted to ask how you practice data encapsulation of classes. I understand that encapsulation is necessary in many cases, however sometimes it seems unnecessary to write a getValue/setValue method for every data member, especially if the class is used as a c struct to simply store data. 
-What are your advices for a good class design?
-Encapsulation mandatory? Are mixed approaches (some members encapsulated, others declared public) reasonable and easy to understand?
-## [11][Try out my C++ quiz on Telegram!](https://www.reddit.com/r/cpp/comments/gsra66/try_out_my_c_quiz_on_telegram/)
-- url: https://www.reddit.com/r/cpp/comments/gsra66/try_out_my_c_quiz_on_telegram/
----
-I made a beginners C++ quiz on telegram for their Educational Quiz Competition. Winners of popular quizzes will get a portion of €400 000! I'd appreciate it if you guys give my quiz a go and leave a comment or review. There's only 30 short multiple choice questions. Thanks!
+Cpp was my fav language and I would like to come back my roots and use it to build a personal project. Is there any libraries or frameworks used by companies to develop restful apis with cpp?
 
-[https://quiz.directory/quiz/BiETakbL](https://quiz.directory/quiz/BiETakbL)
-## [12][CPM.cmake 0.25 released - CMake's missing package manager](https://www.reddit.com/r/cpp/comments/gs2yr1/cpmcmake_025_released_cmakes_missing_package/)
-- url: https://github.com/TheLartians/CPM.cmake
----
+I found crow this week. But seems it was abandoned. Microsoft have one too but it suffer from performance issues when handling huge amount of requests in a short period.
 
+I also found restinio and seems really good so far.
+
+I would appreciate insights and tips from someone out there who work on micro services with cpp, about what they are using in their projects.

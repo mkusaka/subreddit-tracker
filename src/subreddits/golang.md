@@ -1,69 +1,119 @@
 # golang
-## [1][Generate a REST API from a PostgreSQL database with pagination, sorting, filtering, and JWT-based authentication](https://www.reddit.com/r/golang/comments/gsl7sp/generate_a_rest_api_from_a_postgresql_database/)
+## [1][Writing an API using Golang](https://www.reddit.com/r/golang/comments/gt84cm/writing_an_api_using_golang/)
+- url: https://www.reddit.com/r/golang/comments/gt84cm/writing_an_api_using_golang/
+---
+I am extremely new to Golang and I have been using a Udemy course to learn about the language. I am starting a new job as a back-end developer and my first task is to create an API using Golang. If anyone has any good guides/youtubes to throw my way that would be great. Or if anyone has any pointers or best practices please give me all the knowledge. Thanks!
+## [2][Digging deeper into the analysis of Go-code](https://www.reddit.com/r/golang/comments/gtblh7/digging_deeper_into_the_analysis_of_gocode/)
+- url: https://nakabonne.dev/posts/digging-deeper-into-the-analysis-of-go-code
+---
+
+## [3][How do you set up shared models for microservices in your project?](https://www.reddit.com/r/golang/comments/gtdys7/how_do_you_set_up_shared_models_for_microservices/)
+- url: https://www.reddit.com/r/golang/comments/gtdys7/how_do_you_set_up_shared_models_for_microservices/
+---
+We have some models that are shared across some microservices and they are a pita to support. Changes to the models usually have to be merged in tandem or CI breaks, same for deployments. Some people are suggesting joining the repos into a monorepo for the services.
+## [4][GoLand 2020.2 Early Access Program starts](https://www.reddit.com/r/golang/comments/gswlfj/goland_20202_early_access_program_starts/)
+- url: https://blog.jetbrains.com/go/2020/05/29/goland-2020-2-eap-is-open/
+---
+
+## [5][immudb released version 0.6 - a lightweight, high-speed immutable database for systems and applications. New website https://immudb.io including documentation released as well. Open Source and wrtten in Go.](https://www.reddit.com/r/golang/comments/gsyjwa/immudb_released_version_06_a_lightweight/)
+- url: https://github.com/codenotary/immudb
+---
+
+## [6][nitr-agent Remote Monitoring Tool](https://www.reddit.com/r/golang/comments/gt9euo/nitragent_remote_monitoring_tool/)
+- url: https://www.reddit.com/r/golang/comments/gt9euo/nitragent_remote_monitoring_tool/
+---
+I want to share with you a project I am currently working on.
+
+nitr-agent is a crossplatform remote monitoring tool written in Golang, providing system and hardware information through a JSON APIproviding system and hardware information through a JSON API.
+
+[https://github.com/juanhuttemann/nitr-agent](https://github.com/juanhuttemann/nitr-agent)
+
+Any comments on this will be highly appreciated.
+## [7][Best way to cross compile a Golang app onto a raspberry pi?](https://www.reddit.com/r/golang/comments/gszi0d/best_way_to_cross_compile_a_golang_app_onto_a/)
+- url: https://www.reddit.com/r/golang/comments/gszi0d/best_way_to_cross_compile_a_golang_app_onto_a/
+---
+Just to be clear, I've looked at typical options like gox and xgo which do cross compiling but ultimately I'm stuck with the issue my app has a few difficult caveats to deal with namely I need libnfc and libasound2 as there are some C libraries being used by the app's dependencies to make the app work.
+
+I've already got the app building and running on a Raspberry Pi 4. This is mainly just an exercise of curiosity.
+
+Is there a good way of cross compiling with dependencies in place? I'm writing my code on a Mac and I can do a little testing of it there but for simplicity I'd love to compile it their as well and be able to just push the build to a raspberry pi. Originally looked at just making making a docker image so I could boot up the container and compile it there, seems when I try though the build fails and I don't necessarily know a lot about compiling across different architectures. I'm still very much a beginner when it comes to using Go as it is.
+## [8][Generate a REST API from a PostgreSQL database with pagination, sorting, filtering, and JWT-based authentication](https://www.reddit.com/r/golang/comments/gsl7sp/generate_a_rest_api_from_a_postgresql_database/)
 - url: https://eatonphil.github.io/dbcore/
 ---
 
-## [2][A Podcast on distributed systems](https://www.reddit.com/r/golang/comments/gsar35/a_podcast_on_distributed_systems/)
-- url: https://www.reddit.com/r/golang/comments/gsar35/a_podcast_on_distributed_systems/
+## [9][How to cut elements from []byte slice with minimum mallocs and time without changing it's total length?](https://www.reddit.com/r/golang/comments/gsyyl8/how_to_cut_elements_from_byte_slice_with_minimum/)
+- url: https://www.reddit.com/r/golang/comments/gsyyl8/how_to_cut_elements_from_byte_slice_with_minimum/
 ---
-Alex and I have worked for years with large scale distributed systems from ad serving to cloud databases. During the lockdown we spent time chatting about our favourite topics and thought it might make for a good Podcast. So presenting "The Computing Podcast". 
+Hi guys!
 
-[https://anchor.fm/computing](https://anchor.fm/computing)
+I'm implementing in-memory cache with golang. I store values as `[]byte` representation in a cache shards – that is `[]byte` slice with N length – to omit GC (similar to what BigCache do).
 
-This might seem a bit off-topic but I posted it here since I'm a big fan of GO and now primarily work with systems built with GO and so I will be inviting a lot of people building GO infra to talk with us. Please reach out if you'd like to join one of our chats and tell us about your work with GO infra. Or just subscribe for when we get those GO interviews out.
+I need an opportunity to delete values from `[]byte` slice from A index to B index. 
 
-We currently have 3 episodes and scheduled a bunch more including interviews with folks working on building all kind of interesting distributed systems.
+I've tried several approaches to accomplish this task but encountered the following problems:
+– long execution time
+– a lof of memory allocations
 
-&amp;#x200B;
+The more memory I allocate to my `[]byte` slice (it's length must be fixed all the time) – the more time it takes to delete elements from it and more memory being allocated at this time. Which is quite logical, yes. 
 
-1. **Fourth Wave of Distributed Systems - NoSQL to NewSQL**
-2. **Part 1: Apache Kafka - Walkthrough of a distributed system**
-3. **Part 2: Apache Kafka - Walkthrough of a distributed system**
-## [3][ZZT in Go (using a Pascal-to-Go converter)](https://www.reddit.com/r/golang/comments/gsmqhq/zzt_in_go_using_a_pascaltogo_converter/)
-- url: https://benhoyt.com/writings/zzt-in-go/
+For example, I initialize a 128mb shard – `shard := make([]byte, 128*1024*1024)` and store 3 responses as []byte:
+
+– response `A` from `0` to `100 000` index;
+
+– response `B` from `10000` to `15 000 000` index
+
+– response `C` from `15 000 000` to `78 000 000` index
+
+
+Now I want to delete `B` response, because it's TTL has expired. I've tried these approaches:
+
+Approach #1. 
+
+    valueSize := 14990000
+    index := 10000
+    shard = append(shard[:index], shard[index+valueSize:]...)
+    shard = append(shard, make([]byte, valueSize)...)
+
+Approach #2.
+
+    valueSize := 14990000
+    index := 10000
+    for i := index; i &lt; len(shard) - valueSize; i++ {
+        shard[i] = shard[i+valueSize]
+    }
+
+Approach #3.
+
+    valueSize := 14990000
+    index := 10000
+    tmpBuffer := make([]byte, len(shard))
+    copy(tmpBuffer[0:], shard[:index])
+    copy(tmpBuffer[index:], shard[index+valueSize:])
+    shard = tmpBuffer
+
+
+In the #1 we have a lot of memory allocations because each `append` returns new slice. Things go really hard with big slices (even 128mb).
+
+In the #2 there is no allocations, as far as I understand, but the more elements – the more time it'll take. With 128mb shard and ~14.29mb value it takes up to 5-7 seconds on my machine.
+
+In the #3 we have only 1 additional allocation (right?) at the `make()`, but `copy()` takes quite much time – something around ~4-6 seconds.
+
+None of the cases suits me: either it makes a lot of allocations and rss jumps above the roof, or it takes a lot of time.
+
+This is why I'm looking for an optimised way to accomplish my task. I might be doing things **very** wrong at the moment, but I can't find other options. 
+
+I will be really grateful for any kind of help! If you have any additional questions to clarify the things – I'll give a prompt reply!
+
+Thanks in advance.
+## [10][go-guardian an awesome authentication library for go](https://www.reddit.com/r/golang/comments/gt4anb/goguardian_an_awesome_authentication_library_for/)
+- url: https://www.reddit.com/r/golang/comments/gt4anb/goguardian_an_awesome_authentication_library_for/
 ---
+ Go-Guardian is a golang library that provides a simple, clean, and idiomatic way to create powerful modern API and web authentication. 
 
-## [4][Multiple arguments of the same type in a function](https://www.reddit.com/r/golang/comments/gsqiee/multiple_arguments_of_the_same_type_in_a_function/)
-- url: https://www.reddit.com/r/golang/comments/gsqiee/multiple_arguments_of_the_same_type_in_a_function/
----
-I was just doing a little refactor where I noticed I can simplify my method signature so I want to share this tip with you as well. I didn't know it a year ago when I wrote the original code.  
+here a beginner tutorial about it. 
 
+[https://medium.com/@hajsanad/authentication-in-golang-using-go-guardian-b1cd47da47a0](https://medium.com/@hajsanad/authentication-in-golang-using-go-guardian-b1cd47da47a0)
 
-If you have a function signature with multiple arguments of the same type, you don't have to repeat yourself and write the type of every argument.  
+github repo: 
 
-
-[simplified repeated arg](https://preview.redd.it/ht7i9fq4mo151.png?width=1374&amp;format=png&amp;auto=webp&amp;s=69cb35c472bf5e8da4140688062c77e8076feec3)
-
-[https://twitter.com/Web3Coach/status/1266311890290032642](https://twitter.com/Web3Coach/status/1266311890290032642)
-## [5][Go jumps 4th position as most loved language](https://www.reddit.com/r/golang/comments/gs2ool/go_jumps_4th_position_as_most_loved_language/)
-- url: https://www.reddit.com/r/golang/comments/gs2ool/go_jumps_4th_position_as_most_loved_language/
----
-Stack overflow survey 2020 is out , And its not surprising that GO has jumped 4 positions to be 5th most loved language as compared to previous year
-
-[https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-loved](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-loved)
-## [6][I have a hard time understanding interfaces](https://www.reddit.com/r/golang/comments/gsmg2n/i_have_a_hard_time_understanding_interfaces/)
-- url: https://www.reddit.com/r/golang/comments/gsmg2n/i_have_a_hard_time_understanding_interfaces/
----
-Anything past the first interface slide in a tour of go, I suddenly have no idea what I am reading. I have no idea what I am reading. I know that interfaces are a set of method signatures, and as far as I understand, when a function accepts an interface as an argument, it accepts any object\* that has implemented the methods defined in the interface. 
-
-\* I think that's what they're called? I mean to say structs, float64 that have the methods, etc.
-
-Anything past that, like "Interfaces are implemented implicitly", and "Interface values", I don't understand. I thought all interfaces were a collection of methods, how come they are mentioned as a tuple in this page?
-## [7][Detect deeply nested if statements in Go source code](https://www.reddit.com/r/golang/comments/gssvil/detect_deeply_nested_if_statements_in_go_source/)
-- url: https://www.reddit.com/r/golang/comments/gssvil/detect_deeply_nested_if_statements_in_go_source/
----
-[https://github.com/nakabonne/nestif](https://github.com/nakabonne/nestif)
-
-Hi, I made a static analysis tool that can help you find if statements that make your code hard to read.
-## [8][Rel v0.4.0 Released – Golang SQL Database Layer for Layered Architecture](https://www.reddit.com/r/golang/comments/gss4ta/rel_v040_released_golang_sql_database_layer_for/)
-- url: https://github.com/Fs02/rel
----
-
-## [9][WOFF, WOFF2 and EOT parsers in Go](https://www.reddit.com/r/golang/comments/gsauam/woff_woff2_and_eot_parsers_in_go/)
-- url: https://github.com/tdewolff/canvas/tree/master/font
----
-
-## [10][Waiting on Goroutines - Tit Petric](https://www.reddit.com/r/golang/comments/gsq2ro/waiting_on_goroutines_tit_petric/)
-- url: https://scene-si.org/2020/05/29/waiting-on-goroutines/
----
-
+[https://github.com/shaj13/go-guardian](https://github.com/shaj13/go-guardian)

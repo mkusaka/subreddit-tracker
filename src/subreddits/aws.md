@@ -21,82 +21,72 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][Swift is now available with AWS Lambda](https://www.reddit.com/r/aws/comments/gt2880/swift_is_now_available_with_aws_lambda/)
-- url: https://swift.org/blog/aws-lambda-runtime/
+## [2][AWS Landing zone 2.4.0](https://www.reddit.com/r/aws/comments/gtrp6p/aws_landing_zone_240/)
+- url: https://github.com/clouddrove/cloudformation-aws-landing-zone
 ---
 
-## [3][I got 80% usage warning even though no one has used my website in a month](https://www.reddit.com/r/aws/comments/gtbqao/i_got_80_usage_warning_even_though_no_one_has/)
-- url: https://www.reddit.com/r/aws/comments/gtbqao/i_got_80_usage_warning_even_though_no_one_has/
+## [3][T3 unlimited pricing question](https://www.reddit.com/r/aws/comments/gttoto/t3_unlimited_pricing_question/)
+- url: https://www.reddit.com/r/aws/comments/gttoto/t3_unlimited_pricing_question/
 ---
-Hi everyone, we have website on aws we recently got a warning mail for 80% usage even though no one has touched it in a month, is it because the instance was still running?
-## [4][How to get alert when ECS Fargate service crashes and restarts continuously?](https://www.reddit.com/r/aws/comments/gt92en/how_to_get_alert_when_ecs_fargate_service_crashes/)
-- url: https://www.reddit.com/r/aws/comments/gt92en/how_to_get_alert_when_ecs_fargate_service_crashes/
+I'm analyzing the cost of moving a cluster of servers from Rackspace to AWS.  Doing a simple test I've concluded that this cluster will burn 8 CPU credits per hour per server pretty much every hour 24x7.  This is a very CPU consistent usecase by design.  If I use a t3.nano I'm burning 2 CPU credits per hour more than I'm allowed.  If I go with a t3.micro I'm accumulating 4 CPU credits per hour more than I'm using.  Can someone tell me what the cost difference is by going with t3.nano vs t3.micro using t3 unlimited?  I assume the nano would actually be more expensive?
+## [4][SELECT * FROM S3 - Using S3 Select to Query S3 files with SQL](https://www.reddit.com/r/aws/comments/gtf1hw/select_from_s3_using_s3_select_to_query_s3_files/)
+- url: https://www.reddit.com/r/aws/comments/gtf1hw/select_from_s3_using_s3_select_to_query_s3_files/
 ---
-Sometimes my service crashes and gets restart automatically by ECS. However, it might get stuck in a restart loop due to a bug, bad data or deployment of a nonexistent task definition version etc... How can I set up an CloudWatch alert for this?
-## [5][Looking for this sticker. (Delete if not allowed)](https://www.reddit.com/r/aws/comments/gsvcja/looking_for_this_sticker_delete_if_not_allowed/)
-- url: https://i.redd.it/2g09ax0z5q151.jpg
----
+Hey folks,
 
-## [6][AWS Step Functions TaskTimedOut](https://www.reddit.com/r/aws/comments/gte9yr/aws_step_functions_tasktimedout/)
-- url: https://www.reddit.com/r/aws/comments/gte9yr/aws_step_functions_tasktimedout/
----
-I am using boto3 in my activity workers and I came upon a TaskTimedOut when calling the SendTaskFailure:
+Recently put together a tutorial video for using AWS' newish feature, S3 Select, to run SQL commands on your JSON, CSV, or Parquet files in S3.
 
-    botocore.errorfactory.TaskTimedOut: An error occurred (TaskTimedOut) when calling the SendTaskFailure operation: Task Timed Out: 'arn:aws:states:eu-west-2:statemachinearn:activityname' 
+Ontop of it being super easy to use, using S3 Select over traditional S3 Get + Filtering has a 400% performance improvement + cost reduction. Very useful for those of you pulling down large config files in your apps.
 
-I think this happens because the connection pool gets full sometimes which makes the request not being fulfilled (even though a new connection is created).
-
-I know it is possible to set a timeout value for Tasks and Parallel States but that does not have anything to do with calling the send\_task\_failure/send\_task\_success methods.
-
-Does anyone have any idea on how to solve this?
-## [7][How to get started with basic key rotation?](https://www.reddit.com/r/aws/comments/gsza0t/how_to_get_started_with_basic_key_rotation/)
-- url: https://www.reddit.com/r/aws/comments/gsza0t/how_to_get_started_with_basic_key_rotation/
----
-I have some application components that use S3 to upload images. They run in docker containers and are not all on aws themselves. They store their own key which has minimal privileges so I'm not very concerned about them, but I still would like to rotate these keys as a best practice and for future compliance.
-
-I am curious what I need to do this? Should I have my python app run a cron job every 90 days to invoke the key change? Or can I change the way my app accesses the keys so it will get the new key without the app having to invoke the rotate functionality?
-
-Can anyone give me a high level overview of how I can give my applications aws keys when key rotation is implemented?
-
-In the current design, some keys are stored in a local database, and in some situations the keys are hard coded. Not ideal but hoping I can change that as well.
+The tutorial video is located here: https://youtu.be/yqJwN8EBCw8
 
 Thanks!
-## [8][How to know if EC2 instance bandwidth limit is being reached?](https://www.reddit.com/r/aws/comments/gst4tl/how_to_know_if_ec2_instance_bandwidth_limit_is/)
-- url: https://www.reddit.com/r/aws/comments/gst4tl/how_to_know_if_ec2_instance_bandwidth_limit_is/
+## [5][Setup Question: PHP Deployment](https://www.reddit.com/r/aws/comments/gtrr9g/setup_question_php_deployment/)
+- url: https://www.reddit.com/r/aws/comments/gtrr9g/setup_question_php_deployment/
 ---
-EC2 instance types directly impacts how much traffic it can support through its network interface, some consulting firms publish their own benchmarks. A benchmark from 2018 from [Cloudonaut.io](https://Cloudonaut.io) indicates 0.13 Gbit/sec baseline for t2.small instances.
+I have a question about the best way to do PHP production deployments. Right now, I push to a production github enterprise branch, increase the number of nodes in my autoscaling group, let the new node be built, and then delete the old node so we're running on the new version. If I can have downtime, I'll just blow the server away and let it rebuild. 
 
-Is there a CloudWatch metric I can look at that will tell me that I am reaching this limit? What I've been doing is looking at NetworkOut and NetworkIn (bytes) from CloudWatch for the EC2 instance \[sum statistic, over 1 minute, then dividing by 60 second to get Gbytes/sec -&gt; then convert to Gbit/sec or similar unit\] . 
+I'd love to have the application deploy as soon as a push it to github enterprise with no manual action. I prefer to have the server rebuilt because it avoids oddities with dependencies and things like that to just let everything pull and rebuild. 
 
-&amp;#x200B;
-
-Is this method accurate and is there a better way to do this? May be something like VolumeQueueLength of EBS PIOPS which is generally a good indicator if EBS is struggling to keep up with IO, but for network throughput.
-## [9][How often should you auto-rotate secrets in Secrets Manager?](https://www.reddit.com/r/aws/comments/gsz5ok/how_often_should_you_autorotate_secrets_in/)
-- url: https://www.reddit.com/r/aws/comments/gsz5ok/how_often_should_you_autorotate_secrets_in/
+Any recommendations about how to do this better?
+## [6][Point elastic beanstalk to subdomain [ Beginner ]](https://www.reddit.com/r/aws/comments/gtw00a/point_elastic_beanstalk_to_subdomain_beginner/)
+- url: https://www.reddit.com/r/aws/comments/gtw00a/point_elastic_beanstalk_to_subdomain_beginner/
 ---
-For example with RDS databases, what are the pros and cons between autorotating every 30 days vs every single day?
-## [10][A “good” IDE for Redshift](https://www.reddit.com/r/aws/comments/gt03e1/a_good_ide_for_redshift/)
-- url: https://www.reddit.com/r/aws/comments/gt03e1/a_good_ide_for_redshift/
+Hello everyone beginner here, I have setup elastic beanstalk now i want to point it to my subdomain (namecheap)
+Given im using the free tier can anyone here help give some ideas how to do it.
+## [7][Can I serve .php file from S3 hosting? If not, what to use?](https://www.reddit.com/r/aws/comments/gtyr8j/can_i_serve_php_file_from_s3_hosting_if_not_what/)
+- url: https://www.reddit.com/r/aws/comments/gtyr8j/can_i_serve_php_file_from_s3_hosting_if_not_what/
 ---
-I intend no disrespect to Redshift IDEs, but... I’m struggling to find one that isn’t awful. I come from a SQL Server world and trying to find footing in using Redshift. SSMS and Azure data studio feel like they are miles ahead of things like Aginity Workbench. Do you have a favorite IDE for redshift specific development that you could recommend?
-## [11][First deploy on EC2](https://www.reddit.com/r/aws/comments/gt9z8p/first_deploy_on_ec2/)
-- url: https://www.reddit.com/r/aws/comments/gt9z8p/first_deploy_on_ec2/
+Hi, is it possible to serve a index.php file from S3 hosting? I think it's not but I'd rather know for sure.
+
+If it's not possible, what should I use to do that? I'm very new to hosting and servers so I'd be very grateful to get some advice and recommendations.
+
+What I'm trying to do is create a gallery but instead of hard coding tens of &lt;img&gt; tags, I want to get file names from S3 where they are stored and run a script that creates &lt;img&gt; tags for me. I tested locally and I get the local file names so everything should work, I just need help solving the index.php file serving instead of index.html.
+## [8][Question: SQL File for Local Dev Environment](https://www.reddit.com/r/aws/comments/gtros0/question_sql_file_for_local_dev_environment/)
+- url: https://www.reddit.com/r/aws/comments/gtros0/question_sql_file_for_local_dev_environment/
 ---
-Hello everyone,
+Looking for some advice. I have a local setup for PHP development that I'll pull and load with a copy of my production data every so often. I also have a database that we take to load locally into R for offline analysis. 
 
-I'd like to have some advises on my first deploy on an EC2 instance(s), because it's my first time on AWS.
+Right now, I have a shell script that runs every six hours that takes a database and EFS backup and put it in S3 for backup purposes and a copy in an S3 bucket for replicating to dev/analysis environments.
 
-I have a php website hosted on a shared server, and i want to migrate to a more scalable infrastructure due to sustain a massive load of requests.Right now i deploy/update the application by a gitlab webhook, and at every push on the master branch, my production environment got updated.
+I want to move to AWS backup and go serverless for my backups. However, i'm wondering the best way to get the copy of the RDS and EFS data into S3 in a serverless wway where it can be downloaded. Any recommendations?
+## [9][SAM and CORS support](https://www.reddit.com/r/aws/comments/gtn45w/sam_and_cors_support/)
+- url: https://www.reddit.com/r/aws/comments/gtn45w/sam_and_cors_support/
+---
+Can someone please help me with CORS, since there's no simple and wholesome explanation how to do it using SAM. My static website is served from S3 bucket and my api is built using SAM (api gateway, lambda, dynamodb, rds(+vpc lambda)). I understand that the source (my api) needs to serve allowed origins in http header. Now, the question is where and how? In template I gave my api gateway cors: allowed-origin..: "httpmys3link.com" but it failed because  option method is required for every function. What do I do now? Thanks.
+## [10][Unable to connect (including SSH) to EC2 instance randomly?](https://www.reddit.com/r/aws/comments/gtjn1f/unable_to_connect_including_ssh_to_ec2_instance/)
+- url: https://www.reddit.com/r/aws/comments/gtjn1f/unable_to_connect_including_ssh_to_ec2_instance/
+---
+Occasionally, there would be a window of time where I would be unable to connect (including SSH and HTTP) to my EC2 instance. The instance type is a T2 micro, and I've had it for ~3 years.
 
-My goal is to deploy my application on EC2 with multiple instances, with a load balancer in front of 2/n servers
+Status checks seem OK (2/2), and there's some CPU activity on CloudWatch. I attempted the provided diagnostics but they always fail when this happens. I should have EBS storage on it, one of my suspicions is lack of RAM.
 
-My questions are:
+Any ideas for debugging? It's very frustrating to debug. Thanks!
 
-* Do i need to change something on my application (php code) because of the EC2/EC2 multi server?
-* How can i deploy my application at the same time on all the servers?
+Thanks in advance :)
 
-Thank you!
-
-&amp;#x200B;
-
-**EDIT:** the website communicate with a MySql database
+EDIT: Forgot to add that I reboot the instance and the inability to connect remains.
+## [11][What do your "day to day" roles look like?](https://www.reddit.com/r/aws/comments/gtk8ou/what_do_your_day_to_day_roles_look_like/)
+- url: https://www.reddit.com/r/aws/comments/gtk8ou/what_do_your_day_to_day_roles_look_like/
+---
+For your developers, what permission do you give them on the roles they assume? I'm trying to figure out a good middle ground without giving them everything, while not impeding them while doing their job.

@@ -40,88 +40,65 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Duolingo completes migration to Kotlin and reduces its line count by an average of 30%](https://www.reddit.com/r/androiddev/comments/gt1om5/duolingo_completes_migration_to_kotlin_and/)
+## [3][German Corona Tracing App - Code published](https://www.reddit.com/r/androiddev/comments/gtyiqb/german_corona_tracing_app_code_published/)
+- url: https://github.com/corona-warn-app
+---
+
+## [4][Who is using dropbox store library?](https://www.reddit.com/r/androiddev/comments/gttjwi/who_is_using_dropbox_store_library/)
+- url: https://www.reddit.com/r/androiddev/comments/gttjwi/who_is_using_dropbox_store_library/
+---
+I want to achieve memory cache and disk cache at the same time.
+If anybody done with it,can you tell me how you have done it?
+## [5][Avoid bad ratings for your app.](https://www.reddit.com/r/androiddev/comments/gtysj8/avoid_bad_ratings_for_your_app/)
+- url: https://www.reddit.com/r/androiddev/comments/gtysj8/avoid_bad_ratings_for_your_app/
+---
+EasyRate is an Android library for dealing with app ratings &amp; feedbacks. In simple words, it shows a modern and well-designed dialog to engage users to rate your app on the Google Play Store.
+https://github.com/grezzled/EasyRate
+## [6][Advice on writing Medium post about Android development?](https://www.reddit.com/r/androiddev/comments/gtns5f/advice_on_writing_medium_post_about_android/)
+- url: https://www.reddit.com/r/androiddev/comments/gtns5f/advice_on_writing_medium_post_about_android/
+---
+I am thinking of writing an article on Medium about an Android app I rearchitected using a Redux-like data store. I have never written for Medium but I have read a lot of Android articles about development. 
+
+Do you have any advice on writing such an article?
+## [7][Moving and swiping with RecyclerView](https://www.reddit.com/r/androiddev/comments/gtz3vj/moving_and_swiping_with_recyclerview/)
+- url: https://www.rockandnull.com/drag-and-drop-recyclerview-example/
+---
+
+## [8][AnimatedStateListDrawable - Blog by Sasikanth Miriyampalli](https://www.reddit.com/r/androiddev/comments/gtyuyt/animatedstatelistdrawable_blog_by_sasikanth/)
+- url: https://sasikanth.dev/posts/animated-state-list-drawable
+---
+
+## [9][When one assertions is not enough - Kotlin Testing](https://www.reddit.com/r/androiddev/comments/gtyart/when_one_assertions_is_not_enough_kotlin_testing/)
+- url: https://kotlintesting.com/assert-softly-when-one-assertion-is-not-enough/
+---
+
+## [10][Duolingo completes migration to Kotlin and reduces its line count by an average of 30%](https://www.reddit.com/r/androiddev/comments/gt1om5/duolingo_completes_migration_to_kotlin_and/)
 - url: https://developer.android.com/stories/apps/duolingo-kotlin
 ---
 
-## [4][@AndroidDev: We are excited to tell you more about Android 11, but now is not the time to celebrate. We are postponing the June 3rd event and beta release. We'll be back with more on Android 11, soon.](https://www.reddit.com/r/androiddev/comments/gt88x1/androiddev_we_are_excited_to_tell_you_more_about/)
+## [11][@AndroidDev: We are excited to tell you more about Android 11, but now is not the time to celebrate. We are postponing the June 3rd event and beta release. We'll be back with more on Android 11, soon.](https://www.reddit.com/r/androiddev/comments/gt88x1/androiddev_we_are_excited_to_tell_you_more_about/)
 - url: https://twitter.com/AndroidDev/status/1266589514937466880?s=19
 ---
 
-## [5][Are rapid Play Store app updates throttled ?](https://www.reddit.com/r/androiddev/comments/gte6mz/are_rapid_play_store_app_updates_throttled/)
-- url: https://www.reddit.com/r/androiddev/comments/gte6mz/are_rapid_play_store_app_updates_throttled/
+## [12][Best Method to Capture and Store Form Submission Data?](https://www.reddit.com/r/androiddev/comments/gtmxgz/best_method_to_capture_and_store_form_submission/)
+- url: https://www.reddit.com/r/androiddev/comments/gtmxgz/best_method_to_capture_and_store_form_submission/
 ---
-The 27th I made an app udpdate (for an existing app) which was published in less than 24h. The last time the app had been updated before that was about 1 month.
- Then the 28th, a few hours after that update was published, I had to push a hot fix app update. To this day (3 days later), it is still not published. Could it be because it was pushed very quick after another update and it got into some waiting queue ? Did anybody experience something like this ? Usually all my updates are published very fast, but this is the first time I make a quick hotfix update.
-## [6][Can I do something if someone copied my app title and store listing to rank at the top in the category?](https://www.reddit.com/r/androiddev/comments/gtcg55/can_i_do_something_if_someone_copied_my_app_title/)
-- url: https://www.reddit.com/r/androiddev/comments/gtcg55/can_i_do_something_if_someone_copied_my_app_title/
----
-I've my app ([Task Nearby: Location reminder](https://play.google.com/store/apps/details?id=app.tasknearby.yashcreations.com.tasknearby)) live in Play store since May 2015. Around Jan 2018, with the help of a friend I revamped the app and optimized the store listing and title to rank amongst the top for keywords like "Location reminder".
+Hello Android Dev community!
 
-Few days ago, I noticed that someone has created another app with the name - "[Nearby Tasks - Location reminders](https://play.google.com/store/apps/details?id=com.weenggs.remindmeatlocation)" which apart from using the almost similar name, has the exact same store listing! The developer just removed the lines from store listing for the features that are not there in their app.
+I'm working on a basic app for community improvement that requires end users submit the following:
 
-The app, though it builds on the same ideas and features present in my app (e.g. notes, recurring reminders, image attachment), has a different UI - so I cannot call it a clone.
+\-  picture (taken on the spot with Android device)
 
-Now the app is ranking at the top for these keywords and is just next to my app. This is confusing the potential customers when they try to search my app by name. Also, I'm not really happy seeing my work being copied by someone and used for their benefit.
+\- a dropdown field selection
 
-I do not have any trademark or copyright over the title or store listing. I tried reporting this to Google [here](https://support.google.com/googleplay/android-developer/contact/takedown) but as expected, I got no response. 
+\- a simple text field
 
-I think there's nothing that can be done here, but thought of asking the community if there's anything that could be done?
-## [7][Slack latest android App is slick](https://www.reddit.com/r/androiddev/comments/gsrm3w/slack_latest_android_app_is_slick/)
-- url: https://www.reddit.com/r/androiddev/comments/gsrm3w/slack_latest_android_app_is_slick/
----
-It uses bottom navigation as well as a left and right gestures to display a menu on the left a list in the middle and details on the right.
+\- location using the Google Maps API
 
-I'd quite like to use that in my project.Did anyone try to reproduce this behaviour?
+What is the easiest method for capturing this data in a database and displaying in an easily digestible way?
 
-[Slack application](https://reddit.com/link/gsrm3w/video/4809o6j95p151/player)
+I was thinking of connecting the fields to a service such as Knack or Zoho but wanted to get the opinion of someone well-versed in Android app development.
 
- 
+Thank you!
 
-We can see it feels different but it is hard to qualify what it is exactly.
-
-So I spent some time trying to spot some of the differences.
-
-When you flick to the right a drawer appears.
-
-Compared to a regular drawer there are several differences.
-
-1 - you can drag from anywhere on the screen. Generally the drawer is only accessible from the far left.
-
-2 - when you scroll the left drawer to the right, the center panel darkens a little bit and follows it pixel for pixel to the right . Generally it only darkens and stays put.
-
-3 - the left drawer is totally full height including the Pixel notch on top. On other apps it generally covers the title bar but not the system icons above.
-
-The right drawer is similar but a little bit different.
-
-1 - you can also drag from anywhere on the screen. Generally the right drawer is only accessible from the far right.
-
-2 - when you scroll the right drawer to the left, the center panel darkens a little bit and follows to the left just ever so slightly. Perhaps 30 pixels. Generally it only darkens and stays put.
-
-3 - the right drawer is totally full height too.
-
-4 - there is a non linear animation of the background, I wonder if someone can qualify it better.
-## [8][All about Jetpack Compose](https://www.reddit.com/r/androiddev/comments/gszfpf/all_about_jetpack_compose/)
-- url: https://www.youtube.com/watch?v=Z7Qs9XYGyCM
----
-
-## [9][Pay for Free Apps](https://www.reddit.com/r/androiddev/comments/gtbpv9/pay_for_free_apps/)
-- url: https://www.reddit.com/r/androiddev/comments/gtbpv9/pay_for_free_apps/
----
-Do you think it would improve the ecosystem if the play store was paying devolopers of free apps?
-As they take a percentage of each sale at buying time. Wouldn't it make sense to give some of this money back to free apps based on usage? 
-This would encourage free apps development and provide free possibly ad free apps for the ecosystem.
-## [10][How much money do you make each month on average from your apps?](https://www.reddit.com/r/androiddev/comments/gt2xq0/how_much_money_do_you_make_each_month_on_average/)
-- url: https://www.reddit.com/r/androiddev/comments/gt2xq0/how_much_money_do_you_make_each_month_on_average/
----
-
-
-[View Poll](https://www.reddit.com/poll/gt2xq0)
-## [11][Google postponed the release of Android 11 Beta: due to the outbreak of protests and other activities in the United States](https://www.reddit.com/r/androiddev/comments/gtd3sa/google_postponed_the_release_of_android_11_beta/)
-- url: https://i.redd.it/ellrsqpt5w151.jpg
----
-
-## [12][First Slices of Dagger/Hilt](https://www.reddit.com/r/androiddev/comments/gt10d5/first_slices_of_daggerhilt/)
-- url: https://github.com/davidliu/DaggerHiltExploration/tree/master
----
-
+Ama789

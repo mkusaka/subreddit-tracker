@@ -22,11 +22,103 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][TS Blog Post: Changes to How We Manage DefinitelyTyped](https://www.reddit.com/r/typescript/comments/gsx450/ts_blog_post_changes_to_how_we_manage/)
-- url: https://devblogs.microsoft.com/typescript/changes-to-how-we-manage-definitelytyped/
+## [2][[NOOB QUESTION] How is typescript better if it is just compiled to javascript?](https://www.reddit.com/r/typescript/comments/gttwke/noob_question_how_is_typescript_better_if_it_is/)
+- url: https://www.reddit.com/r/typescript/comments/gttwke/noob_question_how_is_typescript_better_if_it_is/
 ---
+Since it is compiled to JS, the performance cannot be better than a natively written JS. 
 
-## [3][React Web &amp; Electron shared code mono repository](https://www.reddit.com/r/typescript/comments/gtas6x/react_web_electron_shared_code_mono_repository/)
+Besides static type checking, what benefits do TS offer? I don't think it offers a performance boost. I'm confused if I should port all my JS code to TS.
+## [3][Not clear on generic syntax](https://www.reddit.com/r/typescript/comments/gttpuz/not_clear_on_generic_syntax/)
+- url: https://www.reddit.com/r/typescript/comments/gttpuz/not_clear_on_generic_syntax/
+---
+From docs:
+
+    function identity&lt;T&gt;(arg: T): T {
+      return arg;
+    }
+
+My issue is with the initial `&lt;T&gt;` just before the parameter definitions. That one appears to assert that the function `identity` is of type `T`. But the later 2 usages then suggest that the function returns itself, which I doubt is very useful above.
+
+If the above is not a type assertion, how do you distinguish a type assertion ("This is asserted to be a string") from a "generic assertion"?
+
+And what is even the purpose of putting it there? I guess just to say "This is entering the parameter definition and function body as a generic type"?
+
+&amp;#x200B;
+
+Here is some sample code I am working on:
+
+    class SetupWizard {
+      public printInstructions(option: optionClass) {
+         console.log(optionClass.instructions)
+      }
+    }
+
+Should the function header instead change to this:
+
+    public printInstructions&lt;optionClass&gt;(option: optionClass)
+
+All examples on the TS site use single character generic types. If you guys have an opinion on sticking to that as a convention, I am also curious why.
+## [4][Generic error: Property 'print' does not exist on type 'C'](https://www.reddit.com/r/typescript/comments/gtv3f3/generic_error_property_print_does_not_exist_on/)
+- url: https://www.reddit.com/r/typescript/comments/gtv3f3/generic_error_property_print_does_not_exist_on/
+---
+Not sure but the two errors below might be related. How do you guys clear "property does not exist" errors on generic types?
+
+More generally, let's say there were 5+ possible instance types for the parameter `childInstance` below. would you type the property as a union, or keep it as a generic as shown? I am curious when you guys would move away from unions here; I'm guessing it has to do with the unknowns regarding possible new types that may be passed in, in the future.
+
+    class Child1 { public print() { console.log("from Child1 instance"); } }
+    class Child2 { public print() { console.log("from Child2 instance"); } }
+    
+    class Parent { 
+        public print&lt;C&gt;(childInstance: C) { 
+            childInstance.print(); // Property 'print' does not exist on type 'C'.(2339)
+        } 
+    }
+    
+    const child1 = new Child1();
+    const child2 = new Child2();
+    const parent = new Parent(); // Cannot redeclare block-scoped variable 'parent'.(2451)
+    // input.tsx(18, 16): 'parent' was also declared here.
+    
+    parent.print(child1);
+    parent.print(child2);
+## [5][does typescript compile unused codes?](https://www.reddit.com/r/typescript/comments/gtwp3j/does_typescript_compile_unused_codes/)
+- url: https://www.reddit.com/r/typescript/comments/gtwp3j/does_typescript_compile_unused_codes/
+---
+i am starting to new project with nrwl nx 
+there are shared codes between frontend and backend and mobile apps.
+
+i could not find a document about this subject
+
+is there anyone point me the right documentation
+## [6][Generic constraints](https://www.reddit.com/r/typescript/comments/gtlbz9/generic_constraints/)
+- url: https://www.reddit.com/r/typescript/comments/gtlbz9/generic_constraints/
+---
+Coming from .Net, much of my Typescript code tends to look like C# so I apologise in advance.
+
+Im confused by generics at the best of times but in C# this is quite easy.
+
+I have the following class:
+
+&amp;#x200B;
+
+https://preview.redd.it/2qsovt47ry151.png?width=449&amp;format=png&amp;auto=webp&amp;s=0bc871f63da34ddac2d4932dc6ad9f0c147a8b02
+
+In the constructor, I shouldn't (I think) need to pass itemType.  I should just be able to new T() inside the foreach but I cant see how to declare T as newable.  In C# I would just use
+
+where T: SomeInterface, new()
+
+Can anyone else?
+
+&amp;#x200B;
+
+Thanks!
+## [7][[AskTS] how to render .tsx to html without react dependency?](https://www.reddit.com/r/typescript/comments/gtodnf/askts_how_to_render_tsx_to_html_without_react/)
+- url: https://www.reddit.com/r/typescript/comments/gtodnf/askts_how_to_render_tsx_to_html_without_react/
+---
+I have some components in .tsx files that I want to render to HTML strings. Right now, there’s a dependency on react and react-dom/server. It’s working, but it feels like there should be an easier way that doesn’t require the full React library as well as another supplemental library. 
+
+Any ideas or suggestions for other packages are welcome!
+## [8][React Web &amp; Electron shared code mono repository](https://www.reddit.com/r/typescript/comments/gtas6x/react_web_electron_shared_code_mono_repository/)
 - url: https://www.reddit.com/r/typescript/comments/gtas6x/react_web_electron_shared_code_mono_repository/
 ---
 Hi,
@@ -75,136 +167,15 @@ I started the prototype with create-react-app + typescript &amp; electron-react-
 - testing
 - types
 - and more
-## [4][How can I implement a search function for a drop-down menu?](https://www.reddit.com/r/typescript/comments/gte3ox/how_can_i_implement_a_search_function_for_a/)
+## [9][TS Blog Post: Changes to How We Manage DefinitelyTyped](https://www.reddit.com/r/typescript/comments/gsx450/ts_blog_post_changes_to_how_we_manage/)
+- url: https://devblogs.microsoft.com/typescript/changes-to-how-we-manage-definitelytyped/
+---
+
+## [10][How can I implement a search function for a drop-down menu?](https://www.reddit.com/r/typescript/comments/gte3ox/how_can_i_implement_a_search_function_for_a/)
 - url: https://www.reddit.com/r/typescript/comments/gte3ox/how_can_i_implement_a_search_function_for_a/
 ---
 A combo-box perhaps? I'm trying to create a search function that can search for a code within a drop-down menu that has loads of them.
-## [5][Does tsconfig need ending / for directories?](https://www.reddit.com/r/typescript/comments/gt50hv/does_tsconfig_need_ending_for_directories/)
-- url: https://www.reddit.com/r/typescript/comments/gt50hv/does_tsconfig_need_ending_for_directories/
+## [11][Trigger button click from another component using service](https://www.reddit.com/r/typescript/comments/gtjc8f/trigger_button_click_from_another_component_using/)
+- url: https://www.reddit.com/r/typescript/comments/gtjc8f/trigger_button_click_from_another_component_using/
 ---
-In the documentation examples I did not see a trailing forward slash on the exclude properties.
-
-Include did have it, but it was using both a `**` and `*` matcher. So because it was looking for a pattern, I understand the need.
-
-I would like to know if in general, one should include an ending forward slash when specifying folders, and the property is not requesting a matcher. I did add it on `outDir` to be safe; some programmers can be pedantic about style though
-## [6][[QUESTION] Non-null assertion](https://www.reddit.com/r/typescript/comments/gst9x0/question_nonnull_assertion/)
-- url: https://www.reddit.com/r/typescript/comments/gst9x0/question_nonnull_assertion/
----
-[Playground Link](https://www.typescriptlang.org/play/?ssl=7&amp;ssc=1&amp;pln=9&amp;pc=1#)
-
-Is there any way to avoid the non-null assertion on line 52?
-I want something similar to type predicate. When `isEmpty()` returns false I want typescript to know `this.head`. and `this.tail` are not null.
-
-Also, in the `get()` method, I know `cur` is not null because I did an index check first. Can I somehow tell Typescript that `cur` will never be null as well?
-## [7][Node library distribution best practices](https://www.reddit.com/r/typescript/comments/gszn32/node_library_distribution_best_practices/)
-- url: https://www.reddit.com/r/typescript/comments/gszn32/node_library_distribution_best_practices/
----
-Hi all, I recently released a small [library](https://github.com/mjhart/help-header) targeting node apps (express in particular). I am building a commonjs module because I still see a lot of node apps using commonjs, so I _think_ that would be most useful for my consumers.
-
-I've done a fair amount of node application development, but this is my first time releasing a library to be incorporated into multiple other apps. I am really unsure of the tradeoffs among the various distribution options available. Any pointers or feedback would be greatly appreciated!
-## [8][Architecture , compile and bundle steps on creating a lodash like library in ts .](https://www.reddit.com/r/typescript/comments/gsvio9/architecture_compile_and_bundle_steps_on_creating/)
-- url: https://www.reddit.com/r/typescript/comments/gsvio9/architecture_compile_and_bundle_steps_on_creating/
----
-So I want to create a library . My architecture looks like this :
-
-    project-folder
-    ├─node_modules
-    ├─src
-    │ └─modules
-    │   ├─private
-    │   │ ├─privateFn1.ts
-    │   │ ├─privateFn2.ts
-    │   │ ├─ ...
-    │   │ └─privateFnN.ts
-    │   ├─fn1.ts
-    │   ├─fn2.ts
-    │   ├─ ...
-    │   └─fnN.ts
-    ├─package.json
-    └─tsconfig.json
-
-Each `fn*.ts` exports a single function that has name `fn*` (i.e. the same name as the file name).
-
-Each `privateFn*.ts` exports a single reference that is meant to be used by `fn*.ts` .
-
-How would you create :
-
-1. `./dist/cjs/index.js` which is the main entry of the `package.json` , i.e. commonjs format for exports .
-2. `./dist/esm/index.js` which is the browser entry of the `package.json` , i.e. esmodules format for exports .
-3. `./dist/types/index.d.ts` which is the typings entry of the `package.json` .
-
-which :
-
-* exports each one of those functions exported by `fn*.ts` .
-* imports nothing (i.e. the file is bundled and has no depedency) .
-* and default exports an object which contains as properties each one of those functions exported by `fn*.ts` .
-
-I am asking for a more clean and fast way  from what I have done so far :
-
-Here is my `tsconfig.json` :
-
-```
-{
-	"compilerOptions": {
-		"module": "ESNext",
-		"target": "ESNext",
-		"declaration": true,
-		"rootDir": "./src",
-		"outDir": "./built"
-	},
-	"include": ["./src"]
-}
-```
-Here is what my npm scripts do :
-
-1. I remove `./dist` `./src/index.ts` `./built` if they exist from any older build step .
-2. I have created a node js script which I execute and it creates the file `./src/index.ts` which imports and exports all the functions and default exports an object which has as properties all those functions .
-3. I use tsc to compile all ts files deep in `./src` with output to `./built`.
-4. I use rollup cli to bundle `./built/index.js` to `./dist/cjs/index.js`
-5. I use rollup cli to bundle `./built/index.js` to `./dist/mjs/index.js`
-6. I use rollup with `rollup-plugin-dts` with a config file to bundle `./built/index.d.ts` to `./dist/types/index.d.ts`
-7. I remove `./built` `./src/index.ts` .
-
-I have created a final npm script called `build` which executed all the other scripts.So I do `npm run build`.
-
-Edit : By the way is there an official bundler for ts created by Microsoft ? [Regarding bundling d.ts there is a 5 years feature request that is still open](https://github.com/microsoft/TypeScript/issues/4433) . What a disappointment .
-## [9][Resources for Generics and Decorators](https://www.reddit.com/r/typescript/comments/gsz2hn/resources_for_generics_and_decorators/)
-- url: https://www.reddit.com/r/typescript/comments/gsz2hn/resources_for_generics_and_decorators/
----
-Hey guys,
-
-Noob here,sorry if this is a generic question but can anyone point me to any reosurces which dumbs down generics and decorators,and why it would useful. Somr real life use cases,would be great too 
-
-Thanks in advance
-## [10][Hey, I need feedback on my first TypeScript - Node app.](https://www.reddit.com/r/typescript/comments/gsmupu/hey_i_need_feedback_on_my_first_typescript_node/)
-- url: https://www.reddit.com/r/typescript/comments/gsmupu/hey_i_need_feedback_on_my_first_typescript_node/
----
-GitWiz is a portal to search for public repos from multiple version control platforms.
-
-https://i.redd.it/2lngawns4n151.gif
-
-Here's the link to the Heroku deployment - [https://gitwiz.herokuapp.com](https://gitwiz.herokuapp.com)
-
-and the link to the GitHub repo -  [https://github.com/KSSBro/gitwiz](https://github.com/KSSBro/gitwiz) 
-
-I'm currently working on adding more platforms.
-## [11][Looking for a TypeScript interface generator that will generate keys in consistent order, and re-use existing interfaces regardless of parent key name (perhaps via "shape" checksums?)](https://www.reddit.com/r/typescript/comments/gspj8d/looking_for_a_typescript_interface_generator_that/)
-- url: https://www.reddit.com/r/typescript/comments/gspj8d/looking_for_a_typescript_interface_generator_that/
----
-* I have millions of JSON+XML files collected over many years, mostly in 3rd party formats that I don't control (web scraping of JSON data).
-* But there's only about  5 different "high-level-formats" involved.  But within each of the 5 formats I need to expect that the exact layout of the JSON/XML structures will have all sorts of unexpected slight variations over time.
-
-I'm looking for an NPM package or similar that:
-
-* From sample objects (parsed from JSON/XML)... generates TypeScript interfaces - there's plenty of packages that do this... but from what I've seen in them, I'm going to end up with 100s/1000s of redundant interfaces simply due to key order and differing parent key names.  To explain further...
-* If data samples have the keys in different orders
- *  e.g. `{b:2,a:1}` and another similar file like... `{a:1,b:2}` ... they should still be treated as exactly the same interface.  This means that the keys will need to be sorted alphabetically for consistency.  
-* Recursion to be handled with separate interfaces. i.e. Each interface is just one flat levels of properties (which may refer to other generated interfaces).
-* In terms of what the interfaces themselves are named... The parent key of an object shouldn't be important, I want objects of the same shape to use the same generated interface, regardless of what the parent keys' names were from the samples.
- *  i.e. In the interface generation libs I've seen so far, the names of the interfaces are taken from the parent key, i.e. `{userinfo: {name:'John, age:30}}` would generate an interface named `Userinfo`.  And another sample object like `{person: {name:'John, age:30}}` would generate another interface named `Person` ... even though the contents of the interfaces are exactly the same.  I only want to generate one interface per "shape".  I'm guessing that this means that the interface names will need to be checksums of their shape.  Not sure if there is another more simple solution than that, aside from having some kind of lookup-existing-interfaces-by-checksum database or something.
-
-Any pointers to some libraries that might be handy here?
-
-I'm also not sure if I should be looking at "JSONschema" generation first, and then generating the interfaces from that?  Although I'm not really doing "validation"... I'm processing existing data with old immutable data formats, and just trying to make it easier to figure out how much the data shapes actually vary within each "high-level-format", and then make my code that processes it all type safe so I can use ctrl-space intellisense/autocomplete to write the code easily.
-
-Maybe there's some even better way of dealing with this than TypeScript interfaces?  Keen for any tips related to processing large amounts of similar-but-slightly-different JSON/XML formats like this. Without needing to write tons of `if` / `switch` statements.
+How to append div that trigger button click from another component using service? Any tips how to do this?

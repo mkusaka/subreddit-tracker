@@ -125,15 +125,33 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Github Actions, C++ with Boost and cmake, almost a 50% speedup with caching](https://www.reddit.com/r/cpp/comments/gtazvu/github_actions_c_with_boost_and_cmake_almost_a_50/)
+## [3][I made simple fight game in C++ OpenGL | Open Source | GitHub](https://www.reddit.com/r/cpp/comments/gtwuv6/i_made_simple_fight_game_in_c_opengl_open_source/)
+- url: https://github.com/stanfortonski/StickMan-3D
+---
+
+## [4][Can somebody explain the linking process in C++?](https://www.reddit.com/r/cpp/comments/gtk5lz/can_somebody_explain_the_linking_process_in_c/)
+- url: https://www.reddit.com/r/cpp/comments/gtk5lz/can_somebody_explain_the_linking_process_in_c/
+---
+So I've been programming in C++ using Mingw for about a year, and I still don't understand the linking process when using libraries.
+
+\- What is .dll/.a/.o etc. file I'm getting a bit confused.
+
+\- Should I  put the files in the mingw library files, or should I keep them in my project folder? (Advantages/Disadvantages)
+
+\- Consider that I have a compiled library file for glfw and glew. How should I know which extra libraries are needed?
+## [5][Ben Deane - "The Construction and Use of C++ Algorithms" (MUC++ 2020)](https://www.reddit.com/r/cpp/comments/gtgvv6/ben_deane_the_construction_and_use_of_c/)
+- url: https://www.youtube.com/watch?v=jCfbyjAyAKU
+---
+
+## [6][Hoare’s Rebuttal and Bubble Sort’s Comeback](https://www.reddit.com/r/cpp/comments/gtkrtg/hoares_rebuttal_and_bubble_sorts_comeback/)
+- url: https://blog.reverberate.org/2020/05/29/hoares-rebuttal-bubble-sorts-comeback.html
+---
+
+## [7][Github Actions, C++ with Boost and cmake, almost a 50% speedup with caching](https://www.reddit.com/r/cpp/comments/gtazvu/github_actions_c_with_boost_and_cmake_almost_a_50/)
 - url: https://raymii.org/s/articles/Github_Actions_cpp_boost_cmake_speedup.html
 ---
 
-## [4][I made a project template for modern C++ projects, using CMake, GoogleTest, Clang-Format with CI, templates for issues, PR and more!](https://www.reddit.com/r/cpp/comments/gt0pz1/i_made_a_project_template_for_modern_c_projects/)
-- url: https://github.com/filipdutescu/modern-cpp-template
----
-
-## [5][Cheatsheet/summary of Effective Modern C++](https://www.reddit.com/r/cpp/comments/gt4n0g/cheatsheetsummary_of_effective_modern_c/)
+## [8][Cheatsheet/summary of Effective Modern C++](https://www.reddit.com/r/cpp/comments/gt4n0g/cheatsheetsummary_of_effective_modern_c/)
 - url: https://www.reddit.com/r/cpp/comments/gt4n0g/cheatsheetsummary_of_effective_modern_c/
 ---
 Inspired by a few posts about promoting how/where to learn modern C++, I also took some time to read one of my favorite books "Effective Modern C++" by Scott Meyers again, and write some notes, a small reference sheet of sorts.
@@ -143,15 +161,11 @@ I've tried to keep it brief, and it will come in handy for a quick revision of (
 Here is the link: [https://github.com/muqsitnawaz/modern-cpp-cheatsheet](https://github.com/muqsitnawaz/modern-cpp-cheatsheet) 
 
 I've proof-read the notes, but if something seems fishy, do let me know. Thanks!
-## [6][[The Cherno] Move Semantics in C++](https://www.reddit.com/r/cpp/comments/gsrzc0/the_cherno_move_semantics_in_c/)
-- url: https://www.youtube.com/watch?v=ehMg6zvXuMY
+## [9][I made a project template for modern C++ projects, using CMake, GoogleTest, Clang-Format with CI, templates for issues, PR and more!](https://www.reddit.com/r/cpp/comments/gt0pz1/i_made_a_project_template_for_modern_c_projects/)
+- url: https://github.com/filipdutescu/modern-cpp-template
 ---
 
-## [7][Hiding C++ template parameter packs in a tuple](https://www.reddit.com/r/cpp/comments/gt2cuu/hiding_c_template_parameter_packs_in_a_tuple/)
-- url: https://devblogs.microsoft.com/oldnewthing/20200529-00/?p=103810
----
-
-## [8][Using custom deleters with shared_ptr and unique_ptr](https://www.reddit.com/r/cpp/comments/gtco2v/using_custom_deleters_with_shared_ptr_and_unique/)
+## [10][Using custom deleters with shared_ptr and unique_ptr](https://www.reddit.com/r/cpp/comments/gtco2v/using_custom_deleters_with_shared_ptr_and_unique/)
 - url: https://www.reddit.com/r/cpp/comments/gtco2v/using_custom_deleters_with_shared_ptr_and_unique/
 ---
 [https://link.medium.com/0xVVPtq0T6](https://link.medium.com/0xVVPtq0T6)
@@ -167,55 +181,11 @@ Have compiled an article on using custom deleters that covers the following thin
 7. Restrictions that come with the usage of custom deleters.
 
 Would love to improve the article based on your suggestions and insights.
-## [9][How much more is there to move semantics after the basics ?](https://www.reddit.com/r/cpp/comments/gt0jek/how_much_more_is_there_to_move_semantics_after/)
-- url: https://www.reddit.com/r/cpp/comments/gt0jek/how_much_more_is_there_to_move_semantics_after/
+## [11][Asking for some open source GUI app written in pure C++ with no library](https://www.reddit.com/r/cpp/comments/gtsk19/asking_for_some_open_source_gui_app_written_in/)
+- url: https://www.reddit.com/r/cpp/comments/gtsk19/asking_for_some_open_source_gui_app_written_in/
 ---
-I was watching back to the basics for C++ and the section on [move semantics](https://youtu.be/St0MNEU5b0o) for me seemed pretty complete for day to day use. It even covered forwarding references decently though I won't claim to fully understand them. Is there more and if so, what is it and when is it necessary?  I was once pilloried in another forum for saying this was mostly good enough.
-## [10][Any idea how i can store the name i pass through the constructor to the variable char name[40]? I'm only able to do it in the varible string name.](https://www.reddit.com/r/cpp/comments/gtcd6h/any_idea_how_i_can_store_the_name_i_pass_through/)
-- url: https://www.reddit.com/r/cpp/comments/gtcd6h/any_idea_how_i_can_store_the_name_i_pass_through/
+As the title said i want to look for some open source C++ app for some research purposes
+## [12][[The Cherno] Move Semantics in C++](https://www.reddit.com/r/cpp/comments/gsrzc0/the_cherno_move_semantics_in_c/)
+- url: https://www.youtube.com/watch?v=ehMg6zvXuMY
 ---
-    #include &lt;iostream&gt;
-    
-    using namespace std;
-    
-    class personsName{
-        private:
-    
-        char thisName[40];
-    
-        string name;
-         
-        public :
-        
-        personsName (string name1){
-            name = name1;
-        };
-        
-        void  display(){
-           cout&lt;&lt; name; 
-        };
-    };
-    
-    
-    int main()
-    {
-       personsName n("blach");
-       n.display();
-       
-    }
-## [11][Google is reinventing Chrome](https://www.reddit.com/r/cpp/comments/gtcq7c/google_is_reinventing_chrome/)
-- url: https://www.reddit.com/r/cpp/comments/gtcq7c/google_is_reinventing_chrome/
----
-Google is looking for an alternative, which is probably going to be Rust, to change its c++ codes for memory safety reasons. What is your opinions about it?
-## [12][C++ libraries for restful micro services development](https://www.reddit.com/r/cpp/comments/gt0iol/c_libraries_for_restful_micro_services_development/)
-- url: https://www.reddit.com/r/cpp/comments/gt0iol/c_libraries_for_restful_micro_services_development/
----
-I'm a software developer who build cloud native applications. It's been years since I used cpp at college. Now there is golang and rust, those are heavily used on micro services development. Of course they got a huge support from the community which build a lot of libraries to help companies develop their services. 
 
-Cpp was my fav language and I would like to come back my roots and use it to build a personal project. Is there any libraries or frameworks used by companies to develop restful apis with cpp?
-
-I found crow this week. But seems it was abandoned. Microsoft have one too but it suffer from performance issues when handling huge amount of requests in a short period.
-
-I also found restinio and seems really good so far.
-
-I would appreciate insights and tips from someone out there who work on micro services with cpp, about what they are using in their projects.

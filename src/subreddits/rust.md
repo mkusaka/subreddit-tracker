@@ -23,70 +23,54 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/05/27/this-week-in-rust-340/
 ---
 
-## [3][Rust finally shows up as filter option when searching GitHub](https://www.reddit.com/r/rust/comments/gt2roa/rust_finally_shows_up_as_filter_option_when/)
-- url: https://i.redd.it/45dfpuao5s151.png
+## [3][An opportunity to improve performance of generators and futures](https://www.reddit.com/r/rust/comments/gts2i4/an_opportunity_to_improve_performance_of/)
+- url: https://github.com/newpavlov/fsm-bench
 ---
 
-## [4][Auto-Vectorization for Newer Instruction Sets in Rust](https://www.reddit.com/r/rust/comments/gt83zg/autovectorization_for_newer_instruction_sets_in/)
-- url: https://www.nickwilcox.com/blog/autovec2/
+## [4][Announcing Octocrab 0.4: (A modern GitHub API client) Now with a whole new suite of APIs.](https://www.reddit.com/r/rust/comments/gtwlzr/announcing_octocrab_04_a_modern_github_api_client/)
+- url: https://github.com/XAMPPRocky/octocrab/releases/tag/v0.4.0
 ---
 
-## [5][What does #[cold] actually do?](https://www.reddit.com/r/rust/comments/gtcsem/what_does_cold_actually_do/)
-- url: https://www.reddit.com/r/rust/comments/gtcsem/what_does_cold_actually_do/
----
-[The Reference's description of the `cold` attribute](https://doc.rust-lang.org/reference/attributes/codegen.html#the-cold-attribute) says almost nothing about it. It sounds useful, but I want to know more before I use it, and information about it seems scarce.
-
-What effect does it have? Where is it effective? I imagine it has an effect on functions, but what about individual statements or blocks? Is it useful to mark an entire module as cold? Should I sprinkle it all over code paths for handling rare errors (e.g. I/O error when writing a file), or would that be unwise or unnecessary? Can it be used for branch weights like the `unlikely` intrinsic (which is unstable)?
-## [6][Announcing `float_eq` 0.3.0](https://www.reddit.com/r/rust/comments/gtbuvu/announcing_float_eq_030/)
-- url: https://www.reddit.com/r/rust/comments/gtbuvu/announcing_float_eq_030/
----
-Hi!
-
-I've just published version 0.3.0 of [float\_eq](https://crates.io/crates/float_eq), for comparing floating point values.
-
-Notable changes include a much more rigorous and consistent treatment of special floating point values, so ULPs checks now respect NaNs, and infinities are correctly handled.
-
-Epsilons for composite types may now be provided on a per-field basis:
-
-    assert_float_eq!(a, b, ulps &lt;= Complex32Ulps { re: 2, im: 4 });
-    assert_float_eq!([1.0, -2.0], [-1.0, -2.5], abs &lt;= [2.0, 0.5]);
-    assert_float_eq!((1.0f32, 2.0f64), (-1.0, 2.5), abs &lt;= (2.0, 0.5))
-
-Or, where applicable, uniformly across all fields:
-
-    assert_float_eq!(a, b, ulps_all &lt;= 4);
-    assert_float_eq!([1.0, -2.0], [-1.0, -2.5], abs_all &lt;= 2.0);
-
-There is also now support for tuples (of up to size 12, inclusive), with more support for standard types planned.
-
-Plus a variety of other fixes and tweaks, see the [CHANGELOG](https://github.com/jtempest/float_eq-rs/blob/master/CHANGELOG.md) for more details.
-
-Constructive criticism and feedback appreciated, I hope you're having a lovely day :)
-## [7][zoxide 0.4.1, a faster way to navigate your filesystem - now 2-3x faster](https://www.reddit.com/r/rust/comments/gt42jm/zoxide_041_a_faster_way_to_navigate_your/)
-- url: https://github.com/ajeetdsouza/zoxide
+## [5][Rust as a High Level Language](https://www.reddit.com/r/rust/comments/gtka22/rust_as_a_high_level_language/)
+- url: https://llogiq.github.io/2020/05/30/hi.html
 ---
 
-## [8][Steve Klabnik Gives a Friendly &amp; Thorough Introduction to Async Await](https://www.reddit.com/r/rust/comments/gst7y7/steve_klabnik_gives_a_friendly_thorough/)
-- url: https://www.youtube.com/watch?v=NNwK5ZPAJCk
+## [6][Working on a vim-style spreadsheet/csv editor written in rust. New to the language, tips welcome.](https://www.reddit.com/r/rust/comments/gtx53l/working_on_a_vimstyle_spreadsheetcsv_editor/)
+- url: https://www.reddit.com/r/rust/comments/gtx53l/working_on_a_vimstyle_spreadsheetcsv_editor/
+---
+[https://github.com/blueForestIcarus/ted](https://github.com/blueForestIcarus/ted)  
+demo vid: [https://paste.sonoran.xyz/LmfwFmvV/+inline](https://paste.sonoran.xyz/LmfwFmvV/+inline)
+
+https://preview.redd.it/92c56vvn03251.png?width=1251&amp;format=png&amp;auto=webp&amp;s=26f3f2f4cc445c1657e7f5d3ab6a8d179c3e2df9
+## [7][Where can I find what's being planned for Rust's next version?](https://www.reddit.com/r/rust/comments/gttuma/where_can_i_find_whats_being_planned_for_rusts/)
+- url: https://www.reddit.com/r/rust/comments/gttuma/where_can_i_find_whats_being_planned_for_rusts/
+---
+I am scanning through [https://www.rust-lang.org/](https://www.rust-lang.org/) for a link where we are clearly told what the Rust team is going to implement regarding Rust's next version (1.42.2 at the time of asking this).
+
+Is there any way I could contribute my own ideas or request language features?
+## [8][Rust Bindings for LittlevGL Embedded GUI Library](https://www.reddit.com/r/rust/comments/gtqnsh/rust_bindings_for_littlevgl_embedded_gui_library/)
+- url: https://github.com/rafaelcaricio/lvgl-rs
 ---
 
-## [9][xhacklight - the first time I really needed Rust.](https://www.reddit.com/r/rust/comments/gte05a/xhacklight_the_first_time_i_really_needed_rust/)
-- url: https://www.reddit.com/r/rust/comments/gte05a/xhacklight_the_first_time_i_really_needed_rust/
----
-I don't get to use Rust at work (which is reasonable for what I do) and also haven't found any personal needs for something more performant than Python or JS. However, this time I just needed a real executable instead of a script - even though it was just for being able to use the SUID bit...
-
-Well, here is [`xhacklight`](https://github.com/SillyFreak/xhacklight), a hacky replacement for `xbacklight` that works at the very least on my machine. I doubt, it will be useful to anyone else, but if anyone wants to critique my code, please do.
-
-Cheers!
-## [10][Elektron (synth manufacturer) looking to hire Rust Graphics Engineer](https://www.reddit.com/r/rust/comments/gt0kgw/elektron_synth_manufacturer_looking_to_hire_rust/)
-- url: https://www.elektron.se/rust-graphics-engineer/
+## [9][Interactive Chord Diagrams with Rust (updated crate)](https://www.reddit.com/r/rust/comments/gtxuvv/interactive_chord_diagrams_with_rust_updated_crate/)
+- url: https://shahinrostami.com/posts/programming/rust-notebooks/chord-diagrams/
 ---
 
-## [11][Implementing a trait only for types satisfying a const-generic predicate! (Nightly Only)](https://www.reddit.com/r/rust/comments/gt067a/implementing_a_trait_only_for_types_satisfying_a/)
-- url: https://play.rust-lang.org/?version=nightly&amp;mode=debug&amp;edition=2018&amp;gist=39c1d2d4169f182c4fe575dca1286dea
+## [10][I made a WebRTC chat using Rust and Yew](https://www.reddit.com/r/rust/comments/gtxujw/i_made_a_webrtc_chat_using_rust_and_yew/)
+- url: https://www.reddit.com/r/rust/comments/gtxujw/i_made_a_webrtc_chat_using_rust_and_yew/
 ---
+Hi,
 
-## [12][Ncurses update screen](https://www.reddit.com/r/rust/comments/gtchz2/ncurses_update_screen/)
-- url: https://www.reddit.com/r/rust/comments/gtchz2/ncurses_update_screen/
+After reading a blog post a while ago of the Cheerp team porting Teeworlds to WASM I wanted to experiment with Rust and WebRTC for doing multiplayer games. As a first step I tried to make a WebRTC chat using Rust and Yew. While not perfect, I am pretty happy with the current result.
+
+You can find the source and a demo in [the repository](https://github.com/codec-abc/Yew-WebRTC-Chat)
+## [11][Rocket 0.4.5 is out](https://www.reddit.com/r/rust/comments/gtn1fp/rocket_045_is_out/)
+- url: https://www.reddit.com/r/rust/comments/gtn1fp/rocket_045_is_out/
 ---
-Hey guys, I'm new to Rust and i'm trying to make a little terminal application for managing my todos, i'm using ncurses. But I have a problem, i'm not able to update the screen, I have the todos listed via a for loop, but whenever the screen is refreshed it moves to the next line and moves to the right, with an offset value of "looks like the length of the previous render text length". Anyone knows how to fix this issue? I'm sorry if i'm being vague, I can also provide a github link for those interested in helping me out. Thank you.
+Here the changelog:
+
+[https://github.com/SergioBenitez/Rocket/blob/v0.4/CHANGELOG.md#version-045-may-30-2020](https://github.com/SergioBenitez/Rocket/blob/v0.4/CHANGELOG.md#version-045-may-30-2020)
+## [12][`#![deny(warnings)]` for applications](https://www.reddit.com/r/rust/comments/gtvckf/denywarnings_for_applications/)
+- url: https://www.reddit.com/r/rust/comments/gtvckf/denywarnings_for_applications/
+---
+Hi all, I read (from a lot of places) that `#![deny(warnings)]` is considered a bad practice for libraries because it harms backwards compatibility. But what about for applications? I would imagine that it's a good way to ensure application code quality, and also fine for compatibility because this is the end of the dependency chain.

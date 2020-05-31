@@ -109,88 +109,140 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/gcbkuu/whos_hiring_may_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][I’ve finally built my portfolio to showcase my work](https://www.reddit.com/r/reactjs/comments/gsy26e/ive_finally_built_my_portfolio_to_showcase_my_work/)
-- url: https://www.reddit.com/r/reactjs/comments/gsy26e/ive_finally_built_my_portfolio_to_showcase_my_work/
+## [3][Online UI builder - interactive platform for UI components](https://www.reddit.com/r/reactjs/comments/gtv057/online_ui_builder_interactive_platform_for_ui/)
+- url: https://www.reddit.com/r/reactjs/comments/gtv057/online_ui_builder_interactive_platform_for_ui/
 ---
-Hi guys,
+Hey, I want to introduce a ui builder for different React UI libraries. If you have a cool React component library in mind, please add them to the builder platform.
 
-I finally built my portfolio. I’ve done it with Nextjs, and Styled Components.
 
-Nextjs is very easy to take up compared to Gatsby. The routing is very basic so it never gets in the way.
+https://youtu.be/jeZyOjZKxYc
 
-One thing that is sometimes a pain to deal with is the SSR by default.
-
-Link : [https://prattdelzenne.com](https://prattdelzenne.com)
-## [4][I built my first big frontend app with React and it's awesome - it's for a Newspaper that receives millions of visits per month](https://www.reddit.com/r/reactjs/comments/gt0ig4/i_built_my_first_big_frontend_app_with_react_and/)
-- url: https://www.reddit.com/r/reactjs/comments/gt0ig4/i_built_my_first_big_frontend_app_with_react_and/
----
-So I'm part of a militant newspaper from Argentina called "La Izquierda Diario" ("Left's Newspaper" would be the closest translation in English) that is the most well known newspaper from the region amongst not hegemonical media.
-
-Two months ago we decided to go bold and add a Multimedia twist to the brand, to allow not only for written stories but also YouTube programs and podcasts. Today we count with more than 20 YouTube shows and three podcasts, we produce an enormous quantity of audiovisual material every day and I was responsible for the design and programming of the new Multimedia section of the newspaper. Not only we made it to production with a very successful launch mas Tuesday but I'm also very proud of the frontend I designed and coded, using entirely Create-react-app and some very useful npm packages.
-
-You can visit the site and tell me what you think about it here [La Izquierda Diario Multimedia](http://multimedia.laizquierdadiario.com), although it's Worth mentioning it's not perfect yet, we are still polishing some stuff.
-## [5][🎂Happy 6th Birthday React - what are you earliest memories? ⚛️](https://www.reddit.com/r/reactjs/comments/gspypk/happy_6th_birthday_react_what_are_you_earliest/)
-- url: https://dev.to/iainfreestone/happy-6th-birthday-react-what-are-you-earliest-memories-3mg6
+https://reactuibuilder.com
+## [4][Babel 7.10.0 Released: a better React tree-shaking](https://www.reddit.com/r/reactjs/comments/gtm7c3/babel_7100_released_a_better_react_treeshaking/)
+- url: https://babeljs.io/blog/2020/05/25/7.10.0#better-tree-shaking-for-react-components-11428-https-githubcom-babel-babel-pull-11428
 ---
 
-## [6][Built my portfolio. Would love to get some feedback!](https://www.reddit.com/r/reactjs/comments/gtdzxo/built_my_portfolio_would_love_to_get_some_feedback/)
-- url: https://www.reddit.com/r/reactjs/comments/gtdzxo/built_my_portfolio_would_love_to_get_some_feedback/
----
-Hi guys, I recently made a new portfolio to showcase my code and writing. I'd love to get some feedback. Also you may find some cool idea to steal for you own portfolio/website.
-
-Site: [https://sahil.surge.sh](https://sahil.surge.sh)
-
-Code: [https://github.com/godcrampy/site](https://github.com/godcrampy/site)
-## [7][What is proper way to use hooks with many variables](https://www.reddit.com/r/reactjs/comments/gt5oli/what_is_proper_way_to_use_hooks_with_many/)
-- url: https://www.reddit.com/r/reactjs/comments/gt5oli/what_is_proper_way_to_use_hooks_with_many/
----
-I’m doing my first “serious” project right now and have about 15-20 variables to store (yeah, I know that it’s not much, but for me it’s pretty a lot). Should I store them like an object in 2-3 main hooks states or split them up and store independently?
-
-I’m not sure because all tutorials and docs show programs with at max 2-3 variables, which they store in separate hooks states, but I’m not sure if its a right thing to do with bigger projects.
-
-Also, yeah, I was thinking about Redux as well, but everyone says that you should use redux mostly in big projects (and I don’t think my project is big enough), so I’m not sure.
-
-Thanks in advance!
-## [8][Need help integrating cashfree on frontend only reactjs + firebase](https://www.reddit.com/r/reactjs/comments/gtdpou/need_help_integrating_cashfree_on_frontend_only/)
-- url: https://www.reddit.com/r/reactjs/comments/gtdpou/need_help_integrating_cashfree_on_frontend_only/
----
-Hey good people of r/reactjs,
-
-I'm building an e-commerce site for a client that's adamant on not paying for a backend right now.
-
-They've already paid for a payment gateway subscription from [cashfree](https://www.cashfree.com/). I've informed them of the risks of exposing their credentials on a front-end only app and they are apparently fine with it.
-
-My current stack is react (default create-react-app config) + redux
-And am using firebase firestore for data storage.
-
-The cashfree api requires 
-1. a returnUrl where it will send the response for the payment.
-2. A suggests to have a notifyUrl where it'll communicate the response of a transaction for sync. Just in case there is a network outage between making payment and returning to the returnUrl.
-
-Can anyone help/advice me on how to implement these hopefully in just client-side react or maybe with firebase functions.
-## [9][I want to combine an async function inside of a custom hook utilizing redux's useSelector. How can I do that?](https://www.reddit.com/r/reactjs/comments/gt88fv/i_want_to_combine_an_async_function_inside_of_a/)
-- url: https://www.reddit.com/r/reactjs/comments/gt88fv/i_want_to_combine_an_async_function_inside_of_a/
----
-I'm having a hard time conceptualizing what I need to do. 
-
-Basically, I have a store that contains a large list of objects (1028 to be exact). However, the elements in that list do not have all the information I need, so when I grab one I need to make an API call to get more information for that object and then sticks it back into the store.
-
-The part where I grab the extra information with an API call works, that isn't a problem. The problem I'm having is how to build a function that can use information gathered from useSelector **but also** wait for the information to be populated **and** be called multiple times in a single render with different parameters. 
-
-My first idea was to use a useCallback that waited until the object was hydrated by just recursively called it using a timeout. Obviously this didn't work because the version of the dependency that it was recursively calling itself with never updates with the new data.
-
-I have tried to throw around some other ideas, but I honestly never came up with anything better. 
-
-The function might get called several times during a single render, each time bringing back a different result because it's grabbing something out of that larger list. So using something like a state doesn't really work.
-## [10][You Might Not Need UUID V4 for Generating Random Identifiers](https://www.reddit.com/r/reactjs/comments/gtbt3q/you_might_not_need_uuid_v4_for_generating_random/)
-- url: https://medium.com/javascript-in-plain-english/you-might-not-need-uuid-v4-for-generating-random-identifiers-89e8a28a7d77?source=friends_link&amp;sk=f96ae339e0b689374bd342ee2e98eb56
+## [5][Recoiljs TypeScript types have been merged into DefinitelyTyped 🎉](https://www.reddit.com/r/reactjs/comments/gtilmv/recoiljs_typescript_types_have_been_merged_into/)
+- url: https://github.com/DefinitelyTyped/DefinitelyTyped/pull/44756
 ---
 
-## [11][Playgibberish.com: my first react app! Guess the gibberish and compete with friends against time.](https://www.reddit.com/r/reactjs/comments/gsycpd/playgibberishcom_my_first_react_app_guess_the/)
-- url: https://v.redd.it/fsf17d8nyq151
+## [6][Getting started with React - on MDN](https://www.reddit.com/r/reactjs/comments/gtltgb/getting_started_with_react_on_mdn/)
+- url: https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started
 ---
 
-## [12][Reusable logic with React Render Props](https://www.reddit.com/r/reactjs/comments/gtawli/reusable_logic_with_react_render_props/)
-- url: https://dev.to/max_frolov_/reusable-logic-with-react-render-props-2nbg
+## [7][Null vs Empty fragment?](https://www.reddit.com/r/reactjs/comments/gtyr61/null_vs_empty_fragment/)
+- url: https://www.reddit.com/r/reactjs/comments/gtyr61/null_vs_empty_fragment/
+---
+In react if you want to render nothing either you can return null from the component or you can also render an empty fragment. I tried searching react docs and it suggests to use null. I also found this PR link where the support of returning empty Fragments was also fixed.  
+[https://github.com/facebook/react/issues/12964](https://github.com/facebook/react/issues/12964)
+
+Is there any disadvantage of using &lt;React.Fragment/&gt; over null.
+
+What do you guys think?
+## [8][CRA with yarn workspaces](https://www.reddit.com/r/reactjs/comments/gtvirx/cra_with_yarn_workspaces/)
+- url: https://www.reddit.com/r/reactjs/comments/gtvirx/cra_with_yarn_workspaces/
+---
+Hey React Community, I am a big fan of CRA but I'm having a lot of trouble setting it up in yarn workspace + lerna type monorepo, the structure is something like this:
+
+```
+(project root)
+    /frontend/
+       (cra stuff here)
+    /server/
+       - package.json
+    /shared/
+       - package.json
+    lerna.json
+    package.json
+```
+
+I've initialized CRA in frontend, What I expected was when I do npm start in frontend it would start the dev server at port 3000 as usual. but it starts in `localhost:4000/project root/frontend` and it doesn't work. 
+
+Searching online I saw CRA has a lot of problem with yarn workspaces so I tried to override existing react scripts with craco or react-app-rewired but no luck so far
+
+Any help would be appreciated, thanks
+## [9][React newbie -- I created a COVID-19 Live updater using a public API [link in comments]](https://www.reddit.com/r/reactjs/comments/gtvdfx/react_newbie_i_created_a_covid19_live_updater/)
+- url: https://github.com/ianpan870102/covid-19-data
 ---
 
+## [10][Need help in manipulating table row in React with Ant-Design.](https://www.reddit.com/r/reactjs/comments/gty140/need_help_in_manipulating_table_row_in_react_with/)
+- url: https://www.reddit.com/r/reactjs/comments/gty140/need_help_in_manipulating_table_row_in_react_with/
+---
+Hi All,
+I am Learning React, along the way I am trying create a billing app.
+My requirement is to search product through search field in table row and fill the other columns with the product details. 
+If I search for the different product  for the same row, that needs to be updated in that particular row.
+But quantity and per-Price columns are not updating.
+I don't know how to approach this.
+Please guide me in choosing a good approach for this.
+
+this is the demo link for what I am talking about: https://lt7rh.csb.app/
+## [11][Hello fellow react programmers, I need help](https://www.reddit.com/r/reactjs/comments/gtxyeb/hello_fellow_react_programmers_i_need_help/)
+- url: https://www.reddit.com/r/reactjs/comments/gtxyeb/hello_fellow_react_programmers_i_need_help/
+---
+So I recently started with react so this might be so obvious but I've been cracking my head for last two days.
+
+I am using react material ui library , precisely collapsible table for displaying my data.  I cant figure out how/when and where to format  response from api so that table accepts it.
+
+In docs they have [this function](https://imgur.com/a/h61Mf2C) that formats data, but when i dispatch action ([my reducer and actions](https://imgur.com/a/JkZendq)) it renders first time and selector gets value of undefined and it crushes my app.
+
+Not the best explanation I know I can try to elaborate in comments . Any help is welcome
+## [12][Help with Full Stack Open Exercise](https://www.reddit.com/r/reactjs/comments/gtxpr2/help_with_full_stack_open_exercise/)
+- url: https://www.reddit.com/r/reactjs/comments/gtxpr2/help_with_full_stack_open_exercise/
+---
+Hello, 
+
+I'm having a little difficulty with part 2.1 "countries" exercise of the Full Stack Open course.  Here's a link to the page: [https://fullstackopen.com/en/part2/getting\_data\_from\_server](https://fullstackopen.com/en/part2/getting_data_from_server)
+
+The task is as follows:  "The country to be shown is found by typing a search query into the search field." which I've managed to do. 
+
+However I'm stuck on this part:
+
+*"When there is only one country matching the query, then the basic data of the country, its flag and the languages spoken there"*
+
+But I'm not sure how to change the code to do this! I feel a little ashamed on how basic this is - I've got this far and it has stumped me. 
+
+Here's the link to what's been rendered to the page: [https://imgur.com/a/tXJIWFf](https://imgur.com/a/tXJIWFf)
+
+Here's the code: 
+
+`import React, { useState, useEffect } from 'react'`  
+`import axios from 'axios'`  
+`const App = () =&gt; {`  
+ `const [countries, setCountries] = useState([])`  
+ `const [searchFilter, setSearchFilter] = useState('')`  
+ `useEffect(() =&gt; {`  
+ `axios`  
+`.get('https://restcountries.eu/rest/v2/all')`  
+`.then(response =&gt; {`  
+ `setCountries(response.data)`  
+`})`  
+  `}, [])`  
+ `const filteredCountries =`  
+ `searchFilter.length === 1`  
+`? countries`  
+`: countries.filter(`  
+`(country) =&gt; country.name.toLowerCase().indexOf(searchFilter.toLowerCase()) &gt; -1`  
+`)`  
+ `const showCountries = () =&gt; {`  
+ `if (filteredCountries.length &gt; 10) {`  
+ `return 'Too many matches'`  
+`}`  
+ `return filteredCountries.map((country) =&gt;`  
+ `&lt;p key={country.alpha2Code}&gt;{country.name}&lt;/p&gt;`  
+`)`  
+  `}`  
+ `const searchHandler = (e) =&gt; {`  
+ `setSearchFilter(e.target.value)`  
+  `}`  
+ `return (`  
+ `&lt;div&gt;`  
+ `&lt;h1&gt;Countries&lt;/h1&gt;`  
+`find countries: &lt;input`  
+ `onChange={searchHandler}`  
+ `/&gt;`  
+ `{showCountries()}`  
+ `&lt;/div&gt;`  
+  `)`  
+`}`  
+`export default App`

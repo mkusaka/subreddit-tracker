@@ -21,72 +21,130 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][AWS Landing zone 2.4.0](https://www.reddit.com/r/aws/comments/gtrp6p/aws_landing_zone_240/)
-- url: https://github.com/clouddrove/cloudformation-aws-landing-zone
+## [2][10 Recommendations for writing pragmatic AWS Lambdas in Python](https://www.reddit.com/r/aws/comments/gu90wn/10_recommendations_for_writing_pragmatic_aws/)
+- url: https://medium.com/@jan.groth.de/10-recommendations-for-writing-pragmatic-aws-lambdas-in-python-5f4b038caafe
 ---
 
-## [3][T3 unlimited pricing question](https://www.reddit.com/r/aws/comments/gttoto/t3_unlimited_pricing_question/)
-- url: https://www.reddit.com/r/aws/comments/gttoto/t3_unlimited_pricing_question/
+## [3][Can "Microsoft Always On VPN" work on AWS?](https://www.reddit.com/r/aws/comments/gugrhx/can_microsoft_always_on_vpn_work_on_aws/)
+- url: https://www.reddit.com/r/aws/comments/gugrhx/can_microsoft_always_on_vpn_work_on_aws/
 ---
-I'm analyzing the cost of moving a cluster of servers from Rackspace to AWS.  Doing a simple test I've concluded that this cluster will burn 8 CPU credits per hour per server pretty much every hour 24x7.  This is a very CPU consistent usecase by design.  If I use a t3.nano I'm burning 2 CPU credits per hour more than I'm allowed.  If I go with a t3.micro I'm accumulating 4 CPU credits per hour more than I'm using.  Can someone tell me what the cost difference is by going with t3.nano vs t3.micro using t3 unlimited?  I assume the nano would actually be more expensive?
-## [4][SELECT * FROM S3 - Using S3 Select to Query S3 files with SQL](https://www.reddit.com/r/aws/comments/gtf1hw/select_from_s3_using_s3_select_to_query_s3_files/)
-- url: https://www.reddit.com/r/aws/comments/gtf1hw/select_from_s3_using_s3_select_to_query_s3_files/
+Hello,  I am a 3rd year student of computer science. I want to make the lab in this [post](http://blog.tofte-it.dk/tutorial-deploy-always-on-vpn/). But, I do not have a computer with enough hardware for virtualization.  The post in the link contains the following statement.
+
+&gt;Do not attempt to deploy Remote Access on a virtual machine (VM) in Microsoft Azure. Using **Remote Access in Microsoft Azure is not supported**, including both Remote Access VPN and DirectAccess.
+
+My goal is to set up the lab environment in a cloud environment, not on the local computer.  Because I don't have a computer with enough hardware.  Can I run the following network structure on AWS? Is Windows Remote Access running on AWS?  Can you help the student who wants to work on VPN technology?
+
+[Always On VPN Overview](https://preview.redd.it/lt3yt2yxd9251.png?width=794&amp;format=png&amp;auto=webp&amp;s=ca67cf2288fd44ca67ce52994c910c4e5121c9b2)
+
+*Note :  Sorry for my English knowledge. I just started learning.*
+## [4][I'm studying how to migrate a relational database to DynamoDB and I'm having a lot of trouble understanding this article. Can someone breakdown how the queries get what you want?](https://www.reddit.com/r/aws/comments/gugwsl/im_studying_how_to_migrate_a_relational_database/)
+- url: https://docs.amazonaws.cn/en_us/amazondynamodb/latest/developerguide/bp-modeling-nosql-B.html
 ---
-Hey folks,
 
-Recently put together a tutorial video for using AWS' newish feature, S3 Select, to run SQL commands on your JSON, CSV, or Parquet files in S3.
+## [5][Games performance on G4 instances.](https://www.reddit.com/r/aws/comments/gukjl5/games_performance_on_g4_instances/)
+- url: https://www.reddit.com/r/aws/comments/gukjl5/games_performance_on_g4_instances/
+---
+I am testing G4 instance for Cloud Gaming, where my games are installed and running on Cloud machines and player is connected using RDP. Currently we are using G4 instances with T4 GPUs.  I am getting around 25 FPS which is very poor. When we are running same games on Azure NV6 with M60 GPUs  we are getting around 60 FPS. I cannot figure out why NV6 outperforming G4, which is less powerful hardware wise compare to G4.  Thanks.  
+Sharing DxDiag of both the machines:  
+[https://we.tl/t-OhHZ1kXFaX](https://we.tl/t-OhHZ1kXFaX)
+## [6][How to know where are my credits being used?](https://www.reddit.com/r/aws/comments/gufhja/how_to_know_where_are_my_credits_being_used/)
+- url: https://www.reddit.com/r/aws/comments/gufhja/how_to_know_where_are_my_credits_being_used/
+---
+I created an AWS Educate account using my university email and I was given some AWS credits for free. Now when I use the account my credits keep decreasing (which means I am paying for the services I am using), but since I am using several services, I want to know how much I am paying for the different services. How can I know this? When I go to the billing page on the link -  [https://console.aws.amazon.com/billing/home](https://console.aws.amazon.com/billing/home) it says you don't have the permission to access this page. This is perhaps because Amazon doesn't allow Credit / Debit cards to be used in AWS Educate accounts. But is there any way I can at least know how much I paid for which services on what date?
+## [7][How to avoid unexpected charges when using AWS free tier](https://www.reddit.com/r/aws/comments/gu1u9t/how_to_avoid_unexpected_charges_when_using_aws/)
+- url: https://www.reddit.com/r/aws/comments/gu1u9t/how_to_avoid_unexpected_charges_when_using_aws/
+---
+Hi, I’m really new to AWS. I’m a bit scared reading through posts about people getting unexpected charges. Besides setting up a billing alert, I want to get to know how the billing system works before starting my free tier instances.
 
-Ontop of it being super easy to use, using S3 Select over traditional S3 Get + Filtering has a 400% performance improvement + cost reduction. Very useful for those of you pulling down large config files in your apps.
+I want to spin up a T3.Micro. To my understanding, there are limits on storage, network, and computation on EC2 instances. Where can I find these limits? If I exceed these limits, how much am I charged? 
 
-The tutorial video is located here: https://youtu.be/yqJwN8EBCw8
+I also want to try the DynamoDB. The free tier includes 25G storage, 25 WCU and 25 RCU. The description says it’s enough to handle 200M requests per month. Does it mean I can write and read 200M times without being charged?
+
+Also, are services like S3 and Lambda less likely to generate a big amount of charges even when I exceed the limit since their pricing seems pretty cheap? Are there things to watch out for S3 and Lambda too?
+
+Is there any general advice to avoid unexpected charges?
+
+Thank you :)
+## [8][IAM policy to deny EKS cluster creation with public access](https://www.reddit.com/r/aws/comments/guk79z/iam_policy_to_deny_eks_cluster_creation_with/)
+- url: https://www.reddit.com/r/aws/comments/guk79z/iam_policy_to_deny_eks_cluster_creation_with/
+---
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Sid": "EKSNoPublicAccess",
+                "Effect": "Deny",
+                "Action": [
+                    "eks:CreateCluster",
+                    "eks:UpdateClusterConfig"
+                ],
+                "Resource": "*",
+                "Condition": {
+                    "Bool": {
+                        "eks:ResourcesVpcConfig:EndpointPublicAccess": true
+                    }
+                }
+            }
+        ]
+    }
+    
+
+Hi,
+
+My goal is to create an IAM policy rule that prevents clusters being created with public access. The above isn't it...any pointers appreciated.
 
 Thanks!
-## [5][Setup Question: PHP Deployment](https://www.reddit.com/r/aws/comments/gtrr9g/setup_question_php_deployment/)
-- url: https://www.reddit.com/r/aws/comments/gtrr9g/setup_question_php_deployment/
+## [9][Setup a Common EC2 filter](https://www.reddit.com/r/aws/comments/gujug4/setup_a_common_ec2_filter/)
+- url: https://www.reddit.com/r/aws/comments/gujug4/setup_a_common_ec2_filter/
 ---
-I have a question about the best way to do PHP production deployments. Right now, I push to a production github enterprise branch, increase the number of nodes in my autoscaling group, let the new node be built, and then delete the old node so we're running on the new version. If I can have downtime, I'll just blow the server away and let it rebuild. 
+Quick tip - I hadn't thought of this until recently, this post started as a question and in the process of thinking through it I ended up solving my own problem.
 
-I'd love to have the application deploy as soon as a push it to github enterprise with no manual action. I prefer to have the server rebuilt because it avoids oddities with dependencies and things like that to just let everything pull and rebuild. 
+Right now I'm working on a WSUS project, and I'm nearly always in EC2 filtering for "WSUS". This pulls up our list of servers just fine. Then when I make an EC2 change (networking etc)  it brings back to the default view everytime. So then I have to type in WSUS and filter again.
 
-Any recommendations about how to do this better?
-## [6][Point elastic beanstalk to subdomain [ Beginner ]](https://www.reddit.com/r/aws/comments/gtw00a/point_elastic_beanstalk_to_subdomain_beginner/)
-- url: https://www.reddit.com/r/aws/comments/gtw00a/point_elastic_beanstalk_to_subdomain_beginner/
+This is a minor annoyance, there is a way to have a button for common filters "WSUS" Button for me, Splunk button for somebody else etc. 
+
+I found I can set a Chrome bookmark for this, and put it on my bookmarks bar in Chrome. 
+
+For a tag we created called "service" the URL ends up being ... ec2/v2/home?region=us-east-1#Instances:tag:service=wsus;sort=tag:Name
+
+Then I had the issue (that I prefer actually) that bookmarks bar doesn't show up unless you're on the New tab. In Chrome settings, Appearance you can have bookmarks bar open all the time.. so now I just hit the bookmark and my filters go back in place.
+## [10][AWS CLI for ECS opposite to register-task-definition](https://www.reddit.com/r/aws/comments/gug5n8/aws_cli_for_ecs_opposite_to_registertaskdefinition/)
+- url: https://www.reddit.com/r/aws/comments/gug5n8/aws_cli_for_ecs_opposite_to_registertaskdefinition/
 ---
-Hello everyone beginner here, I have setup elastic beanstalk now i want to point it to my subdomain (namecheap)
-Given im using the free tier can anyone here help give some ideas how to do it.
-## [7][Can I serve .php file from S3 hosting? If not, what to use?](https://www.reddit.com/r/aws/comments/gtyr8j/can_i_serve_php_file_from_s3_hosting_if_not_what/)
-- url: https://www.reddit.com/r/aws/comments/gtyr8j/can_i_serve_php_file_from_s3_hosting_if_not_what/
+We keep Task Definitions json files in .gitignore because of secrets in the environment variables.
+
+    aws ecs register-task-definition --cli-input-json file://ecs/task-definition-sample.json --profile $AWS_PROFILE
+
+Though the issue with this approach is that the initial developer needs to pass the file around some other method. I was hoping to use the following to download a copy using the aws cli
+
+    aws ecs describe-task-definition --task-definition $REPONAME-sample--profile $AWS_PROFILE &gt; ecs/task-definition-sample.json
+
+Though when I do *describe-task-definition* followed by *register-task-definition* it fails with:
+
+    Missing required parameter in input: "family"
+    Missing required parameter in input: "containerDefinitions"
+    Unknown parameter in input: "taskDefinition", must be one of: family, taskRoleArn, executionRoleArn, networkMode, containerDefinitions, volumes, placementConstraints, requiresCompatibilities, cpu, memory, tags, pidMode, ipcMode, proxyConfiguration, inferenceAccelerators
+
+Is *register-task-definition* the opposite to *describe-task-definition* or is there another I missed in the api docs.
+## [11][API Gateway - Can you synchronously call integration backends?](https://www.reddit.com/r/aws/comments/gu91ue/api_gateway_can_you_synchronously_call/)
+- url: https://www.reddit.com/r/aws/comments/gu91ue/api_gateway_can_you_synchronously_call/
 ---
-Hi, is it possible to serve a index.php file from S3 hosting? I think it's not but I'd rather know for sure.
+So say I have a request that comes in to api gateway. For this request I would have to do 2 things:
 
-If it's not possible, what should I use to do that? I'm very new to hosting and servers so I'd be very grateful to get some advice and recommendations.
+1.) Create a user -&gt; lambda 1
 
-What I'm trying to do is create a gallery but instead of hard coding tens of &lt;img&gt; tags, I want to get file names from S3 where they are stored and run a script that creates &lt;img&gt; tags for me. I tested locally and I get the local file names so everything should work, I just need help solving the index.php file serving instead of index.html.
-## [8][Question: SQL File for Local Dev Environment](https://www.reddit.com/r/aws/comments/gtros0/question_sql_file_for_local_dev_environment/)
-- url: https://www.reddit.com/r/aws/comments/gtros0/question_sql_file_for_local_dev_environment/
----
-Looking for some advice. I have a local setup for PHP development that I'll pull and load with a copy of my production data every so often. I also have a database that we take to load locally into R for offline analysis. 
+2.) Process the user somehow -&gt; lambda 2
 
-Right now, I have a shell script that runs every six hours that takes a database and EFS backup and put it in S3 for backup purposes and a copy in an S3 bucket for replicating to dev/analysis environments.
+Say I now have two lambdas for these and hook them up to api gateway as integrations for a particular HTTP method/route.
 
-I want to move to AWS backup and go serverless for my backups. However, i'm wondering the best way to get the copy of the RDS and EFS data into S3 in a serverless wway where it can be downloaded. Any recommendations?
-## [9][SAM and CORS support](https://www.reddit.com/r/aws/comments/gtn45w/sam_and_cors_support/)
-- url: https://www.reddit.com/r/aws/comments/gtn45w/sam_and_cors_support/
----
-Can someone please help me with CORS, since there's no simple and wholesome explanation how to do it using SAM. My static website is served from S3 bucket and my api is built using SAM (api gateway, lambda, dynamodb, rds(+vpc lambda)). I understand that the source (my api) needs to serve allowed origins in http header. Now, the question is where and how? In template I gave my api gateway cors: allowed-origin..: "httpmys3link.com" but it failed because  option method is required for every function. What do I do now? Thanks.
-## [10][Unable to connect (including SSH) to EC2 instance randomly?](https://www.reddit.com/r/aws/comments/gtjn1f/unable_to_connect_including_ssh_to_ec2_instance/)
-- url: https://www.reddit.com/r/aws/comments/gtjn1f/unable_to_connect_including_ssh_to_ec2_instance/
----
-Occasionally, there would be a window of time where I would be unable to connect (including SSH and HTTP) to my EC2 instance. The instance type is a T2 micro, and I've had it for ~3 years.
+For lambda 2 to work, I need a certain piece of information that only lambda 1 can provide after creating the user.
 
-Status checks seem OK (2/2), and there's some CPU activity on CloudWatch. I attempted the provided diagnostics but they always fail when this happens. I should have EBS storage on it, one of my suspicions is lack of RAM.
+Is there anyway for lambda 2 to know that piece of information from lambda 1? Say through API Gateway orchestrating lambda 1’s reponse and sending it to lambda 2? If not, how would I be able to do that? My only way of thinking is to make ANOTHER SEPARATE API Gateway request would it not? I’m looking to save costs if possible, so trying to avoid that sort of way. It also kind of defeats the purpose I think of 1 api gateway request doing all the things necessary to process ALL the things necessary for that SPECIFIC request. 
 
-Any ideas for debugging? It's very frustrating to debug. Thanks!
+So I just kinda wanna know how this would work in context of API Gateway (HTTP APIs specifically, not REST)
 
-Thanks in advance :)
+Solutions I can come up with only are:
 
-EDIT: Forgot to add that I reboot the instance and the inability to connect remains.
-## [11][What do your "day to day" roles look like?](https://www.reddit.com/r/aws/comments/gtk8ou/what_do_your_day_to_day_roles_look_like/)
-- url: https://www.reddit.com/r/aws/comments/gtk8ou/what_do_your_day_to_day_roles_look_like/
----
-For your developers, what permission do you give them on the roles they assume? I'm trying to figure out a good middle ground without giving them everything, while not impeding them while doing their job.
+1.) Monolithic lambdas that do too much/are too big with multiple routes/apis
+
+2.) This somehow exists in API Gateway and I just don’t know about it (hopefully you can help?)

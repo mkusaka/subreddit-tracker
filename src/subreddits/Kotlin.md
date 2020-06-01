@@ -1,107 +1,71 @@
 # Kotlin
-## [1][When one assertions is not enough - Kotlin Testing](https://www.reddit.com/r/Kotlin/comments/gtxlci/when_one_assertions_is_not_enough_kotlin_testing/)
+## [1][1st KorGE Gamejam - 100% Kotlin - 600 EUR prizepool](https://www.reddit.com/r/Kotlin/comments/gu4wdd/1st_korge_gamejam_100_kotlin_600_eur_prizepool/)
+- url: https://www.reddit.com/r/Kotlin/comments/gu4wdd/1st_korge_gamejam_100_kotlin_600_eur_prizepool/
+---
+We are happy to announce the first KorGE GameJAM. KorGE is a 100% Kotlin game engine and we put so much work and effort in it, that we are really happy to be able to hold our first game jam. We were able to collect *600 EUR of prizes* and a *1 year all products license* from Jetbrains.  
+
+
+You can get all infos here: [https://blog.korge.org/2020/05/korge-game-jam.html](https://blog.korge.org/2020/05/korge-game-jam.html).  
+Feel free to contact us with any questions. Here or in our [slack](https://slack.korge.org).
+
+https://preview.redd.it/5dn96wgsf5251.png?width=640&amp;format=png&amp;auto=webp&amp;s=f9b7796fc095ff08a98c2481ced80ae65865b42e
+## [2][Early Access Program for SDK X.](https://www.reddit.com/r/Kotlin/comments/gukg76/early_access_program_for_sdk_x/)
+- url: https://www.reddit.com/r/Kotlin/comments/gukg76/early_access_program_for_sdk_x/
+---
+Hi everyone, I am Rohit. I wanted to get some feedback from the community.
+
+&amp;#x200B;
+
+We've recently launched a product - SDK X. Its an Admob Automation Tool to help you improve revenues. It automates a lot of experiments that you would have to manually perform in firebase or write and maintain custom code. Some examples -  A/B testing for the right refresh rates for each banner unit, custom code to enable refresh for native advanced, improve CPM through cross format mediation for banners. All these and more are completely automated!
+
+&amp;#x200B;
+
+Our goal is to give our product to potential users and receive their honest feedback as well as help us prove some of the newer concepts we plan to build in our product. So we are looking for a group of people from this community who will be eager to work with us and share their feedback. Ideally, if you are looking to improve your revenue by working on core revenue KPIs - Match rate, Impression RPM and CTR.
+
+&amp;#x200B;
+
+We really appreciate your time and are offering upto a $100 Amazon Gift Voucher + Lifetime FREE access to SDK X for your contribution.
+
+&amp;#x200B;
+
+If you are interested, please apply [here.](https://greedygame.com/sdk-x/?utm_source=Reddit&amp;utm_medium=Kotlin&amp;utm_campaign=SDK%20X%20-%20EAP%20Registration)
+## [3][What is the most user-friendly way to make a Kotlin GUI application?](https://www.reddit.com/r/Kotlin/comments/gu1ui3/what_is_the_most_userfriendly_way_to_make_a/)
+- url: https://www.reddit.com/r/Kotlin/comments/gu1ui3/what_is_the_most_userfriendly_way_to_make_a/
+---
+I want to make a Kotlin GUI application packed into a standalone JAR (or with a tiny EXE that runs the JAR) that runs on Java 8 (the most installed Java version) in order to make using it as easy as possible.
+
+I heard that there are problems with JavaFX in the modern day that requires users to install JavaFX alongside JRE, and I don't want my users to be bothered with this.
+
+So, which GUI technology should I use in this case?
+## [4][When one assertions is not enough - Kotlin Testing](https://www.reddit.com/r/Kotlin/comments/gtxlci/when_one_assertions_is_not_enough_kotlin_testing/)
 - url: https://kotlintesting.com/assert-softly-when-one-assertion-is-not-enough/
 ---
 
-## [2][What is your preferred stack for building a RESTful web app in Kotlin?](https://www.reddit.com/r/Kotlin/comments/gtpg4s/what_is_your_preferred_stack_for_building_a/)
+## [5][Kotlin vs Swift- A Battle Between Powerful Languages](https://www.reddit.com/r/Kotlin/comments/gug7an/kotlin_vs_swift_a_battle_between_powerful/)
+- url: https://solaceinfotech.com/blog/kotlin-vs-swift-a-battle-between-powerful-languages/
+---
+
+## [6][What build tooling do you use?](https://www.reddit.com/r/Kotlin/comments/gu2del/what_build_tooling_do_you_use/)
+- url: https://www.reddit.com/r/Kotlin/comments/gu2del/what_build_tooling_do_you_use/
+---
+I can't figure out how to get the default Intellij JVM build tool to work, not much documentation on it. Have used Maven for Java - should I switch to Gradle?
+## [7][How do I fix unreachable statement error after return statment?](https://www.reddit.com/r/Kotlin/comments/gu4uvb/how_do_i_fix_unreachable_statement_error_after/)
+- url: https://www.reddit.com/r/Kotlin/comments/gu4uvb/how_do_i_fix_unreachable_statement_error_after/
+---
+I am having an issue with unreachable statement after my return statement. I am using firebase createUserWithEmailAndPassword method but it is unreachable because the code before returns true or false. They are two boolean methods which check if email and password are correct input and then return true or false.
+
+&amp;#x200B;
+
+pastepin link:  [https://pastebin.com/pEB5qHnC](https://pastebin.com/pEB5qHnC) 
+## [8][What is your preferred stack for building a RESTful web app in Kotlin?](https://www.reddit.com/r/Kotlin/comments/gtpg4s/what_is_your_preferred_stack_for_building_a/)
 - url: https://www.reddit.com/r/Kotlin/comments/gtpg4s/what_is_your_preferred_stack_for_building_a/
 ---
 I'm new to Kotlin and was wondering what people preferred to use. Especially interested in anything that supports fat jar for easy deployment.
-## [3][Realm 7, the frozen throne](https://www.reddit.com/r/Kotlin/comments/gtigx3/realm_7_the_frozen_throne/)
+## [9][Realm 7, the frozen throne](https://www.reddit.com/r/Kotlin/comments/gtigx3/realm_7_the_frozen_throne/)
 - url: https://www.coroutinedispatcher.com/2020/05/realm-7-frozen-throne.html
 ---
 
-## [4][TechEmpower released round 19 of their server middleware benchmark (including Kotlin ones)](https://www.reddit.com/r/Kotlin/comments/gsuvvo/techempower_released_round_19_of_their_server/)
+## [10][TechEmpower released round 19 of their server middleware benchmark (including Kotlin ones)](https://www.reddit.com/r/Kotlin/comments/gsuvvo/techempower_released_round_19_of_their_server/)
 - url: https://www.reddit.com/r/Kotlin/comments/gsuvvo/techempower_released_round_19_of_their_server/
 ---
 TechEmpower just released their latest round (19) of their server middleware benchmark. You can check the results here: https://www.techempower.com/benchmarks
-## [5][I Need Help Adding To Hashmap From a Text Input](https://www.reddit.com/r/Kotlin/comments/gt99bu/i_need_help_adding_to_hashmap_from_a_text_input/)
-- url: https://www.reddit.com/r/Kotlin/comments/gt99bu/i_need_help_adding_to_hashmap_from_a_text_input/
----
-Can anyone help me add functionality to my program to add items to my hashmap from a text input?
-
-&amp;#x200B;
-
-var products = *hashMapOf*&lt;Int, Pair&lt;String, Double&gt;&gt;(  
- 111 *to* Pair("shoes", 59.99),  
- 222 *to* Pair("shirt", 19.99),  
- 333 *to* Pair("socks", 3.99)
-
-*print*("Please Enter The Description Of The New Item: ")  
-
-
-var addItemDescription = *readLine*()!!  
-
-
-*print*("Please Enter The Price For $addItemDescription: ")  
-
-
-var addItemPrice = *readLine*()!!.*toFloat*()
-## [6][Codota's free ai code completion plugin now supports kotlin for android studio and eclipse.](https://www.reddit.com/r/Kotlin/comments/gt0u32/codotas_free_ai_code_completion_plugin_now/)
-- url: https://www.reddit.com/r/Kotlin/comments/gt0u32/codotas_free_ai_code_completion_plugin_now/
----
-Has anyone tried this plugin with Kotlin? I'm curious about your thoughts on it
-## [7][Java interop: Kotlin gets tripped up by capitalization.](https://www.reddit.com/r/Kotlin/comments/gsw920/java_interop_kotlin_gets_tripped_up_by/)
-- url: https://www.reddit.com/r/Kotlin/comments/gsw920/java_interop_kotlin_gets_tripped_up_by/
----
-The java.net.URLClassLoader class provides a getURLs() method:
-
-&gt; public URL[] getURLs()
-
-&gt; Returns the search path of URLs for loading classes and resources. This includes the original list of URLs specified to the constructor, along with any URLs subsequently appended by the addURL() method.
-
-And the Kotlin documentation claims:
-
-&gt; Methods that follow the Java conventions for getters and setters (no-argument methods with names starting with get and single-argument methods with names starting with set) are represented as properties in Kotlin. Boolean accessor methods (where the name of the getter starts with is and the name of the setter starts with set) are represented as properties which have the same name as the getter method.
-
-Well, all righty then, I should have a .URLs property I can use. But no:
-
-    &gt;&gt;&gt; import java.net.URLClassLoader
-    &gt;&gt;&gt; val cl = ClassLoader.getSystemClassLoader()
-    &gt;&gt;&gt; cl is URLClassLoader
-    res4: kotlin.Boolean = true
-    &gt;&gt;&gt; (cl as URLClassLoader).URLs
-    error: unresolved reference: URLs
-    (cl as URLClassLoader).URLs
-                           ^
-
-However, the old reliable fallback works:
-
-    &gt;&gt;&gt; (cl as URLClassLoader).getURLs()
-    res6: kotlin.Array&lt;(out) java.net.URL!&gt;! = [Ljava.net.URL;@5b6ac24b
-    
-Of course, the rule is that .getFoo() maps to a .foo property. Note the downcasing; the property on the Kotlin side is called .foo and not .Foo. So maybe it’s called .uRLs? Close, but no cigar!
-
-    &gt;&gt;&gt; (cl as URLClassLoader).uRLs
-    error: unresolved reference: uRLs
-    (cl as URLClassLoader).uRLs
-                           ^
-    &gt;&gt;&gt; (cl as URLClassLoader).urLs
-    res8: kotlin.Array&lt;(out) java.net.URL!&gt;! = [Ljava.net.URL;@5dddd61f
-
-Ugh. Maybe I’ll just stick to calling the Java-style getters and setters.
-## [8][Kotlin, Eclipse and Executable JARs](https://www.reddit.com/r/Kotlin/comments/gsoqrd/kotlin_eclipse_and_executable_jars/)
-- url: https://www.reddit.com/r/Kotlin/comments/gsoqrd/kotlin_eclipse_and_executable_jars/
----
-Sooo, I just wanted to compile my Kotlin application into an executable JAR file. No big deal, right? I didn't do that too often when developing with Java, but how much easier than "Export to Executable JAR" can it get?
-
-So that's what I do. And end up with an completely empty error message. The file still got created, but executing it does nothing. 
-
-I'm thinking my IDE (Eclipse) doesn't work all that well with Kotlin - it's not exactly a great IDE after all, and I only use it because I'm used to it and too lazy to get into another one. But maybe, since Kotlin runs in the JVM, I can just export it as a Java Application. A quick test at least shows, that I can successfully run it as a Java Application from within the IDE.  
-But same result: empty error message and a file that does nothing.
-
-So like the good little programmer I am, I hop onto google. 3 pages filled with nothing but "use Gradle", only with the occasional "Maven works too" sprinkled in for flavor. Nothing else I could find.
-
-&amp;#x200B;
-
-So - is there really no way of creating an Executable JAR without using Gradle?
-## [9][How To Prevent ERP Implementation Failure](https://www.reddit.com/r/Kotlin/comments/gtbbta/how_to_prevent_erp_implementation_failure/)
-- url: https://www.odooimplementation.com/blog/erp_implementation_failure
----
-
-## [10][Do I need an Android phone to learn Kotlin?](https://www.reddit.com/r/Kotlin/comments/gsuq6h/do_i_need_an_android_phone_to_learn_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/gsuq6h/do_i_need_an_android_phone_to_learn_kotlin/
----
-So I'm interested in learning Kotlin but... I don't have an Android phone. I know I can learn the language just like any other language, but I'm curious if it's pointless to learn it if I can't test it out on an actual phone. Not sure how elaborate Android Studio is. 
-
-Do I need to get an Android phone to learn Kotlin?

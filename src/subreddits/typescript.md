@@ -1,6 +1,6 @@
 # typescript
-## [1][Who's hiring Typescript developers - May](https://www.reddit.com/r/typescript/comments/gb7km3/whos_hiring_typescript_developers_may/)
-- url: https://www.reddit.com/r/typescript/comments/gb7km3/whos_hiring_typescript_developers_may/
+## [1][Who's hiring Typescript developers - June](https://www.reddit.com/r/typescript/comments/gua247/whos_hiring_typescript_developers_june/)
+- url: https://www.reddit.com/r/typescript/comments/gua247/whos_hiring_typescript_developers_june/
 ---
 The monthly thread for people to post openings at their companies.
 
@@ -22,160 +22,163 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][[NOOB QUESTION] How is typescript better if it is just compiled to javascript?](https://www.reddit.com/r/typescript/comments/gttwke/noob_question_how_is_typescript_better_if_it_is/)
+## [2][Do you guys use eslint on your typescript projects?](https://www.reddit.com/r/typescript/comments/guiovl/do_you_guys_use_eslint_on_your_typescript_projects/)
+- url: https://www.reddit.com/r/typescript/comments/guiovl/do_you_guys_use_eslint_on_your_typescript_projects/
+---
+I used to use eslint with the plugins it suggested to me to install after executing :
+
+    npx eslint --init;
+
+and chooseing the option : I use typescript  , but I have found it to produce some akward linting errors recently like not allowing me to put type `any` on a function parameter. 
+
+I have stopped using eslint since then. 
+
+If you use eslint then what you use it for?
+
+I was using it just because it was linting errors while I was writing js and so I believed it will also be useful in typescript.
+## [3][Are there any online courses that covers TS with JS concepts?](https://www.reddit.com/r/typescript/comments/guehwr/are_there_any_online_courses_that_covers_ts_with/)
+- url: https://www.reddit.com/r/typescript/comments/guehwr/are_there_any_online_courses_that_covers_ts_with/
+---
+I am interested in learning TS, but since it builds to JS, I would also need to learn JS. 
+
+Are there any courses that covers TS entirely such that i won't be needing to learn JS before it?
+## [4][Can enums be treated as numbers for incrementation purposes?](https://www.reddit.com/r/typescript/comments/gugq66/can_enums_be_treated_as_numbers_for/)
+- url: https://www.reddit.com/r/typescript/comments/gugq66/can_enums_be_treated_as_numbers_for/
+---
+By default I believe enums are assigned numbers starting from 0. I was thinking of using an enum to define a series of steps for a CLI script. that way I could name each step, for example, "intro", "gatherName", "configureGoogle" etc. There are no branching paths so in this setup, reaching the final enum would signal that the next step should perform an exit procedure.
+
+Does it ever make sense to increment enums? Are there side effects to consider?
+
+If this should not be done, I suppose additional logic will be needed to define step pathing. I'm open to any ideas you guys have. The first idea I have is to iterate over the enumb definition, push each enum into an array to create a sequence, and then allow the indexes to become the sequence values.
+## [5][Solving Riddles with 0 lines of program | Using typescript types](https://www.reddit.com/r/typescript/comments/gu390u/solving_riddles_with_0_lines_of_program_using/)
+- url: https://medium.com/@damodharanjay/solving-riddles-with-0-lines-of-program-b23994072dd0
+---
+
+## [6][Typescript in React, tough example to understand](https://www.reddit.com/r/typescript/comments/gubcvg/typescript_in_react_tough_example_to_understand/)
+- url: https://www.reddit.com/r/typescript/comments/gubcvg/typescript_in_react_tough_example_to_understand/
+---
+&amp;#x200B;
+
+    const Form = &lt;T extends {}&gt;({values, children}: FormProps&lt;T&gt;) =&gt; {
+        return children(values);
+    };
+    
+    const App: React.FC = () =&gt; {
+        return {
+            &lt;div&gt;
+    	    &lt;Form &lt;{lastName:string|null}&gt; values={{lastName: ""}}&gt;
+    		{values =&gt; &lt;div&gt;{values.lastName}&lt;/div&gt;}
+    	    &lt;/Form&gt;
+    	&lt;/div&gt;
+        }
+    }
+
+My interpretation (as best as I can):
+
+1. The generic T is extending an empty object, meaning it can take any properties
+2. He must have an interface `FormProps` somewhere else. I have a hard time reading what is going on exactly inside the parameter definitions. Destructuring of the props object? Or something else? `FormProps` can't be a return type because `:` should go outside the `()`
+3. Inside the JSX portion, he has a `&lt;Form&gt;` component. The component is typing the `lastName` prop to a string or null.
+4. The values prop appears to be escaping JSX and passing an object with `lastName` set to empty string by default, not sure why
+5. Finally on the last line JSX is escaped and on every render an arrow function prints the value of `values.lastName` to the div if not null.
+
+I know my assessment above is wrong, I appreciate any feedback to help me read this better.
+## [7][What's the return type of a static method that returns new instances of its class?](https://www.reddit.com/r/typescript/comments/gui766/whats_the_return_type_of_a_static_method_that/)
+- url: https://www.reddit.com/r/typescript/comments/gui766/whats_the_return_type_of_a_static_method_that/
+---
+Check this first:
+```
+class A {
+    static someStaticMethod(): any[] {
+        return [new this(), new this()]
+    }
+}
+
+class B extends A {
+    someClassProp = 0
+}
+
+console.log(B.someStaticMethod())
+```
+1. What is the actual return type of `someStaticMethod` beyond `any[]`? How do I express the class which was used to call `someStaticMethod`? In this example it's `B` and the static's return type something like `new B()[]` but the `B` should be a generic. Do I use generics here? If yes, how?
+
+2. Why does the TS compiler does not complain about the `any` type despite having all options set to strict:
+
+Code sandbox: https://www.typescriptlang.org/play?#code/MYGwhgzhAECC0G8BQ1XQgFzBglsdA9gLYCmAylrsALIkYAWBAJgBQCUAXNGAHYCeAbQC6iFGnEAnOgFcJPaAJ4kA7tAY4I7ADTQlq9ZrZCxqAL5JzSUJBgAhaCQAeGEjyYx4ycRGIkAwuBQAAoSBAAO0AC80AAMFkhWBDw+ICQAdCAEAOYstmk+pBTYeLQMzOxsQA
+## [8][Programmer without JS experience: where to start with TS?](https://www.reddit.com/r/typescript/comments/gui6ai/programmer_without_js_experience_where_to_start/)
+- url: https://www.reddit.com/r/typescript/comments/gui6ai/programmer_without_js_experience_where_to_start/
+---
+Hey lads,
+
+I've been bid to learn TS for my job, which revolves around Amazon Web Services. The new AWS "CDK" (cloud dev kit) has by far the best support for TS, so there's no getting around it. 
+
+I've got multiple years of exp working with primarily Java and a bit of python, but none so far with web languages like JavaScript. 
+
+Where do I start with learning TS, assuming my main goal is to write architectures for AWS (so backend stuff)? Do I just start hacking away, do I dive into a Typescript tutorial, or should I start out reading up on JavaScript fundamentals before starting with TS? 
+
+Appreciate the help!
+## [9][How to get TypeScript to stop throwing an error when accessing a field on an object that has been determined to be an instance of a particular object](https://www.reddit.com/r/typescript/comments/gublkg/how_to_get_typescript_to_stop_throwing_an_error/)
+- url: https://www.reddit.com/r/typescript/comments/gublkg/how_to_get_typescript_to_stop_throwing_an_error/
+---
+I've been writing some code, and let's say I have an array of several objects; e.g.
+
+    const ar:(A | B | C)[] = [new A(), new B(), new C()];
+
+where the A object is the only one of them that has a method called `match`.
+
+and then I have a for loop that iterates through it
+
+    for (let e of ar) {
+      if (e instanceof A) {
+        if (a.match('hello')) {
+          print('good');
+        }
+      }
+    }
+
+But I keep getting an error that says something along the lines of `Property 'match' does not exist on type 'A | B | C'. Property 'match' does not exist on types 'B | C'.`
+
+How should I resolve this, seeing as the actual error would not take place as I've already confirmed that it is the proper object as thus the object would have said field.
+
+Any help is appreciated.
+
+Thanks!
+## [10][Typing for higher-order components](https://www.reddit.com/r/typescript/comments/gu657l/typing_for_higherorder_components/)
+- url: https://www.reddit.com/r/typescript/comments/gu657l/typing_for_higherorder_components/
+---
+I'm trying to add typing for a higher-order component that takes in `mapStateToProps` and `mapDispatchToProps` functions to inject into a React component, but I can't seem to get generics to work. I've simplified my problem down to this example ([playground link](https://www.typescriptlang.org/play?#code/JYOwLgpgTgZghgYwgAgCoCE4GcIGkICeWyA3gLABQy1yARthAFzIgCuAtrdANyUC+lSggD2ILGGTtoAczyFiAXmQAeVAEEAJhogb8RZBAAekEBuLDaAKwgIwAPgAUAByjCAbsG1RmDgJTIFOzRNbV15f0CVShpggBtYvWIjEzNgrR1E5AAyNEwcRMpHaJoYEB8Aa3lmdXjEiKC3YU9KetJi6hExCTh0sP0lF3dPaD9eKhpO8ToGROq8uX7SaZxmABYAJmQ+MZioCDBWKBBkUocSZAA6K-p8+QAaS6ue0My+XzHtwQpJiVLUAAs4GBUHBKlgALIyDLyALIBzFc43CAPQYeUJbZiIhjMNicHjIVHDDTMcRQUDSLatSbCWIQC6xYTSBxI5AAamQACJOWyCa40Tp3l8pFBZIkHH4AkEzryhqFmByYMJhFy3r4HH9AcDQRAIVC+lh3kA)):
+
+    interface TBaseKeys {
+        base: number;
+    }
+    
+    const mergeKeys = &lt;TAddedKeys extends object&gt;(provider: () =&gt; TAddedKeys) =&gt; &lt;
+        TAllKeys extends TAddedKeys &amp; TBaseKeys
+    &gt;(
+        fn: (keys: TAllKeys) =&gt; void
+    ) =&gt; {
+        const addedKeys = provider();
+        const baseKeys: TBaseKeys = { base: 42 };
+
+        // Fails with:
+        // Argument of type '{ base: number; } &amp; TAddedKeys' is not assignable to parameter of type 'TAllKeys'.
+        //  '{ base: number; } &amp; TAddedKeys' is assignable to the constraint of type 'TAllKeys',
+        //    but 'TAllKeys' could be instantiated with a different subtype of constraint 'object &amp; TBaseKeys'.(2345)
+        return fn({ ...baseKeys, ...addedKeys });
+    };
+
+In the code above, `fn` takes in an object, where some of the keys are hardcoded (`TBaseKeys`), while others are generic (`TAddedKeys`, which you get from `provider()`). This is how `mergeKeys` could be used:
+
+    const fnThatTakesMergedKeys = (
+      { base, provided }: { base: number; provided: string }) =&gt; console.log(base + " " + provided);
+    
+    mergeKeys(() =&gt; ({ provided: "foo" }))(fnThatTakesMergedKeys);
+
+Console output: `42 foo`
+
+Does anyone have tips on resolving the TypeScript error above?
+## [11][[NOOB QUESTION] How is typescript better if it is just compiled to javascript?](https://www.reddit.com/r/typescript/comments/gttwke/noob_question_how_is_typescript_better_if_it_is/)
 - url: https://www.reddit.com/r/typescript/comments/gttwke/noob_question_how_is_typescript_better_if_it_is/
 ---
 Since it is compiled to JS, the performance cannot be better than a natively written JS. 
 
 Besides static type checking, what benefits do TS offer? I don't think it offers a performance boost. I'm confused if I should port all my JS code to TS.
-## [3][Not clear on generic syntax](https://www.reddit.com/r/typescript/comments/gttpuz/not_clear_on_generic_syntax/)
-- url: https://www.reddit.com/r/typescript/comments/gttpuz/not_clear_on_generic_syntax/
----
-From docs:
-
-    function identity&lt;T&gt;(arg: T): T {
-      return arg;
-    }
-
-My issue is with the initial `&lt;T&gt;` just before the parameter definitions. That one appears to assert that the function `identity` is of type `T`. But the later 2 usages then suggest that the function returns itself, which I doubt is very useful above.
-
-If the above is not a type assertion, how do you distinguish a type assertion ("This is asserted to be a string") from a "generic assertion"?
-
-And what is even the purpose of putting it there? I guess just to say "This is entering the parameter definition and function body as a generic type"?
-
-&amp;#x200B;
-
-Here is some sample code I am working on:
-
-    class SetupWizard {
-      public printInstructions(option: optionClass) {
-         console.log(optionClass.instructions)
-      }
-    }
-
-Should the function header instead change to this:
-
-    public printInstructions&lt;optionClass&gt;(option: optionClass)
-
-All examples on the TS site use single character generic types. If you guys have an opinion on sticking to that as a convention, I am also curious why.
-## [4][Generic error: Property 'print' does not exist on type 'C'](https://www.reddit.com/r/typescript/comments/gtv3f3/generic_error_property_print_does_not_exist_on/)
-- url: https://www.reddit.com/r/typescript/comments/gtv3f3/generic_error_property_print_does_not_exist_on/
----
-Not sure but the two errors below might be related. How do you guys clear "property does not exist" errors on generic types?
-
-More generally, let's say there were 5+ possible instance types for the parameter `childInstance` below. would you type the property as a union, or keep it as a generic as shown? I am curious when you guys would move away from unions here; I'm guessing it has to do with the unknowns regarding possible new types that may be passed in, in the future.
-
-    class Child1 { public print() { console.log("from Child1 instance"); } }
-    class Child2 { public print() { console.log("from Child2 instance"); } }
-    
-    class Parent { 
-        public print&lt;C&gt;(childInstance: C) { 
-            childInstance.print(); // Property 'print' does not exist on type 'C'.(2339)
-        } 
-    }
-    
-    const child1 = new Child1();
-    const child2 = new Child2();
-    const parent = new Parent(); // Cannot redeclare block-scoped variable 'parent'.(2451)
-    // input.tsx(18, 16): 'parent' was also declared here.
-    
-    parent.print(child1);
-    parent.print(child2);
-## [5][does typescript compile unused codes?](https://www.reddit.com/r/typescript/comments/gtwp3j/does_typescript_compile_unused_codes/)
-- url: https://www.reddit.com/r/typescript/comments/gtwp3j/does_typescript_compile_unused_codes/
----
-i am starting to new project with nrwl nx 
-there are shared codes between frontend and backend and mobile apps.
-
-i could not find a document about this subject
-
-is there anyone point me the right documentation
-## [6][Generic constraints](https://www.reddit.com/r/typescript/comments/gtlbz9/generic_constraints/)
-- url: https://www.reddit.com/r/typescript/comments/gtlbz9/generic_constraints/
----
-Coming from .Net, much of my Typescript code tends to look like C# so I apologise in advance.
-
-Im confused by generics at the best of times but in C# this is quite easy.
-
-I have the following class:
-
-&amp;#x200B;
-
-https://preview.redd.it/2qsovt47ry151.png?width=449&amp;format=png&amp;auto=webp&amp;s=0bc871f63da34ddac2d4932dc6ad9f0c147a8b02
-
-In the constructor, I shouldn't (I think) need to pass itemType.  I should just be able to new T() inside the foreach but I cant see how to declare T as newable.  In C# I would just use
-
-where T: SomeInterface, new()
-
-Can anyone else?
-
-&amp;#x200B;
-
-Thanks!
-## [7][[AskTS] how to render .tsx to html without react dependency?](https://www.reddit.com/r/typescript/comments/gtodnf/askts_how_to_render_tsx_to_html_without_react/)
-- url: https://www.reddit.com/r/typescript/comments/gtodnf/askts_how_to_render_tsx_to_html_without_react/
----
-I have some components in .tsx files that I want to render to HTML strings. Right now, there’s a dependency on react and react-dom/server. It’s working, but it feels like there should be an easier way that doesn’t require the full React library as well as another supplemental library. 
-
-Any ideas or suggestions for other packages are welcome!
-## [8][React Web &amp; Electron shared code mono repository](https://www.reddit.com/r/typescript/comments/gtas6x/react_web_electron_shared_code_mono_repository/)
-- url: https://www.reddit.com/r/typescript/comments/gtas6x/react_web_electron_shared_code_mono_repository/
----
-Hi,
-
-I'm trying to build an application which will be available in the Browser &amp; native via Electron. Since both applications share components &amp; redux functionality I would like to have a shared source folder. I'm usually a C++ &amp; Golang developer, but I already have 2 medium projects worth of experience with create-react-app, electron-forge &amp; jsx. Since this project will probably be maintained for some years (hopefully) I thought Typescript would be the better option in this case. Since I already think in types when coding the transition from plain jsx shouldn't be to difficult.
-
-I started the prototype with create-react-app + typescript &amp; electron-react-boilerplate, but soon found limitations with this setup. create-react-app doesn't allow source files outside of it's root, so the wanted folder structure shown below would be impossible. Also the although the electron boilerplate seems to be configured pretty feature rich, it's hard for me to tell exactly what configurations are really necessary and which "nice to have". 
-
-**So basically my Question is:**
-
-- Is typescript the right choice?
-- What folder structure do you recommend?
-- Should I use boilerplates or go from scratch?
-- What is easier to keep up to date (boilerplate vs. scratch)
-
-### Goals Summary
-
-- typescript
-- mono repo
-- shared code
-- react web
-- react electron
-
-
-#### Project Structure
-
-```sh
-.
-├── electron
-│   ├── package.json
-│   └── src
-├── shared
-│   ├── package.json (if needed)
-│   └── src
-└── web
-    ├── package.json
-    └── src
-```
-
-### Packages
-
-- react
-- electron
-- redux
-- sass
-- testing
-- types
-- and more
-## [9][TS Blog Post: Changes to How We Manage DefinitelyTyped](https://www.reddit.com/r/typescript/comments/gsx450/ts_blog_post_changes_to_how_we_manage/)
-- url: https://devblogs.microsoft.com/typescript/changes-to-how-we-manage-definitelytyped/
----
-
-## [10][How can I implement a search function for a drop-down menu?](https://www.reddit.com/r/typescript/comments/gte3ox/how_can_i_implement_a_search_function_for_a/)
-- url: https://www.reddit.com/r/typescript/comments/gte3ox/how_can_i_implement_a_search_function_for_a/
----
-A combo-box perhaps? I'm trying to create a search function that can search for a code within a drop-down menu that has loads of them.
-## [11][Trigger button click from another component using service](https://www.reddit.com/r/typescript/comments/gtjc8f/trigger_button_click_from_another_component_using/)
-- url: https://www.reddit.com/r/typescript/comments/gtjc8f/trigger_button_click_from_another_component_using/
----
-How to append div that trigger button click from another component using service? Any tips how to do this?

@@ -1,6 +1,29 @@
 # reactjs
-## [1][Beginner's Thread / Easy Questions (May 2020)](https://www.reddit.com/r/reactjs/comments/gb541i/beginners_thread_easy_questions_may_2020/)
-- url: https://www.reddit.com/r/reactjs/comments/gb541i/beginners_thread_easy_questions_may_2020/
+## [1][Who's Hiring? [June 2020]](https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
+---
+We alternate between **Who's Hiring** (on the 1st of the month, [most recent one here][hiring:most recent]) and **Who's Available** (on the 15th, [most recent one here][available:most recent])
+
+Welcome to **the biggest React job board in the world!** This is like Hacker News' **Who's Hiring** but just for React. Top Level comments must be **Job Opportunities.**
+
+⚠️ NEW: WE ARE REQUESTING EVERYBODY FOLLOW [THE HN Who's Hiring FORMAT][format:hiring:hn]
+
+**Company inc. | Job Title | City/State Location | Full-time/Part-Time | On-site/Remote | (Optional) Salary range | Website jobs page, other hard requirements etc.**
+
+examples:
+
+- **Thorn | San Francisco or Remote (US based) | Full-time Contract | $100k - $150k | Software Engineer | https://www.wearethorn.org/**
+- **PolicyStat | Full-Stack Python+Django Software Engineer | Indianapolis, Vancouver, or REMOTE | Full Time | +\$80k**
+
+Please include as much information as possible. **If you are remote-friendly, or open to sponsoring work visas to your country, say so! These are the top 2 questions!**
+
+If you are looking for jobs, send a PM to the poster or post in our [Who's Available thread!][available:most recent]
+
+[hiring:most recent]: https://www.reddit.com/r/reactjs/comments/gcbkuu/whos_hiring_may_2020/
+[available:most recent]: https://www.reddit.com/r/reactjs/comments/gk41zb/whos_available_may_2020/
+[format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
+## [2][Beginner's Thread / Easy Questions (June 2020)](https://www.reddit.com/r/reactjs/comments/gukkex/beginners_thread_easy_questions_june_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/gukkex/beginners_thread_easy_questions_june_2020/
 ---
 You can find [previous threads][wiki previous threads] in the wiki.
 
@@ -61,188 +84,124 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [2][Who's Available? [May 2020]](https://www.reddit.com/r/reactjs/comments/gk41zb/whos_available_may_2020/)
-- url: https://www.reddit.com/r/reactjs/comments/gk41zb/whos_available_may_2020/
+## [3][[Show off] Second "full-stack" app - Roomie - Find a room to rent! Built with: React + TailwindCSS + Express + MongoDB + Heroku / S3](https://www.reddit.com/r/reactjs/comments/guembv/show_off_second_fullstack_app_roomie_find_a_room/)
+- url: https://www.reddit.com/r/reactjs/comments/guembv/show_off_second_fullstack_app_roomie_find_a_room/
 ---
-We alternate between hirers (on the 1st of the month) and agencies/freelancers/jobseekers (on the 15th).  
-If you are looking to post or reply to React job postings, please check [this month's Who's Hiring post here.][hiring:this month]
+&amp;#x200B;
 
----
+https://reddit.com/link/guembv/video/qrhzk3mmi8251/player
 
-If your post or comment is removed wrongly, please [send a message][message:mods] to mods  
-because Automods bot is not perfect :)
+Hey, devs!
 
----
+I've been studying for a few months now and after one month and 25 deploys, this is my second full-stack project: Roomie - a website to find rooms to rent or to list your place. 😅
 
-Top Level comments must be Agencies and React Devs available for contract/permanent work.
+I created this for the sake of learning only and since my first full-stack project was a [simple CRUD app](https://appjournals.herokuapp.com/), it was a blast having this experience!
 
-Please include Location or any other Requirements in your comment. You can choose to use this format if it helps:
+**demo:** [https://roomiew.herokuapp.com/](https://roomiew.herokuapp.com/)
 
-## (Fulltime | Contract | USA | Remote)
-
-or
-
-## (Agency | Europe | Remote)
-
-Then we recommend adding a 2-3 sentence bio as well.
-
-Not required, but may help:
-
-- Link to Github/Portfolio
-- Notable [r/reactjs][r/reactjs] submissions
-- Preferred stack
-- Former companies or clients
-- Design or backend dev experience
-- anything else you consider relevant. Put on your best show!
-- Listing years of experience NOT required, it's a poor metric
-
-If you are looking to hire, you can send a PM, or reply so that others might see your job opening.  
-**Note**: Due to the sensitive nature of availability while currently in a job, users may be using alternate accounts.
-
-For more ideas on what to include, look at the [last Who's Available posts][available:last month].
-
-If you just want some portfolio feedback, check the stickied post below.
-
-Good luck! #WriteOnceApplyEverywhere
-
-[r/reactjs]: https://www.reddit.com/r/reactjs/
-[available:last month]: https://www.reddit.com/r/reactjs/comments/fiv53t/whos_available_mar_2020/
-[hiring:this month]: https://www.reddit.com/r/reactjs/comments/gcbkuu/whos_hiring_may_2020/
-[message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Online UI builder - interactive platform for UI components](https://www.reddit.com/r/reactjs/comments/gtv057/online_ui_builder_interactive_platform_for_ui/)
-- url: https://www.reddit.com/r/reactjs/comments/gtv057/online_ui_builder_interactive_platform_for_ui/
----
-Hey, I want to introduce a ui builder for different React UI libraries. If you have a cool React component library in mind, please add them to the builder platform.
+**repo:** [https://github.com/lucasmrl/roomie](https://github.com/lucasmrl/roomie) (missing README)  
 
 
-https://youtu.be/jeZyOjZKxYc
+**Built with:**
 
-https://reactuibuilder.com
-## [4][Babel 7.10.0 Released: a better React tree-shaking](https://www.reddit.com/r/reactjs/comments/gtm7c3/babel_7100_released_a_better_react_treeshaking/)
-- url: https://babeljs.io/blog/2020/05/25/7.10.0#better-tree-shaking-for-react-components-11428-https-githubcom-babel-babel-pull-11428
+* FE: React (Hooks, Context API, Router) + TailwindCSS
+* BE: Node.js (Express.js) + MongoDB
+* Hosted on Heroku / Images in AWS S3
+
+**What I tried to learn:**
+
+* Authentication (Sign up, Log in, Log out, Reset password)
+* API Filtering, Sorting, Pagination (Even though it is not implemented in the FE)
+* Send e-mails from back-end
+* Upload pictures to S3
+* Security
+* TailwindCSS (first time using it)
+* Agile methodology (tried to organize my user stories, sprints, daily stand-up meeting, ...)
+
+Definitely it is far from perfect, but it helped me a least to get my hands dirty. I appreciate any feedback!
+
+Be safe! ;)
+## [4][Dokz - Effortless documentation with Next.js and MDX](https://www.reddit.com/r/reactjs/comments/gu0cdm/dokz_effortless_documentation_with_nextjs_and_mdx/)
+- url: https://v.redd.it/kisf0ca154251
 ---
 
-## [5][Recoiljs TypeScript types have been merged into DefinitelyTyped 🎉](https://www.reddit.com/r/reactjs/comments/gtilmv/recoiljs_typescript_types_have_been_merged_into/)
-- url: https://github.com/DefinitelyTyped/DefinitelyTyped/pull/44756
+## [5][Hard time structuring large project](https://www.reddit.com/r/reactjs/comments/guiv4e/hard_time_structuring_large_project/)
+- url: https://www.reddit.com/r/reactjs/comments/guiv4e/hard_time_structuring_large_project/
+---
+I'm a relatively new to React and I've been working on my medium-large sized full-stack app in it. It's been really increasing in size and unfortunately my code is starting to look like a big pile of spaghetti. 
+
+Does anyone have any tips or resources on how to structure a React project, or the best way to turn it into components, hooks etc? Every time I create a component or a hook I end up having to manage all the dozens of props that has to passed in... and it's just really not working out great. 
+
+I would look at professional repos, but there's really not that many large-scale open-sourced React apps out there.
+## [6][Full screen while scrolling - React PWA](https://www.reddit.com/r/reactjs/comments/guff63/full_screen_while_scrolling_react_pwa/)
+- url: https://www.reddit.com/r/reactjs/comments/guff63/full_screen_while_scrolling_react_pwa/
+---
+Hey guys,
+
+I am trying to make my pwa close to full screen by hiding thr search and nav bar on mobile browsers (Safari and Chrome ) ,while scrolling. 
+I have read that full screen API isn't available for, IOS devices but I see many sites on IOS doing this feature. 
+Can anyone explain how this is done. 
+
+Adding an image for your reference 
+https://i.stack.imgur.com/XxJYY.png
+https://www.swiggy.com/restaurants
+
+Thanks in advance
+## [7][Palette List - color palettes generator made with React.js](https://www.reddit.com/r/reactjs/comments/gukgly/palette_list_color_palettes_generator_made_with/)
+- url: https://www.reddit.com/r/reactjs/comments/gukgly/palette_list_color_palettes_generator_made_with/
+---
+Hi there!
+
+https://reddit.com/link/gukgly/video/vvvf69zuta251/player
+
+I just built this Palette Generating tool for designers and developers in React.js. You pick 2 colors you like (i.e. Red and black) and the tool generates thousands of palettes for you. You can also download the palettes.
+
+[https://www.palettelist.com](https://www.palettelist.com/)
+
+Feedback welcome!
+## [8][Palette List - color palettes generator made with React.js](https://www.reddit.com/r/reactjs/comments/gukdd8/palette_list_color_palettes_generator_made_with/)
+- url: https://www.reddit.com/r/reactjs/comments/gukdd8/palette_list_color_palettes_generator_made_with/
+---
+Hi there!
+
+https://reddit.com/link/gukdd8/video/q2id46hdsa251/player
+
+I just built this Palette Generating tool for designers and developers in React.js. You pick 2 colors you like (i.e. Red and black) and the tool generates thousands of palettes for you. You can also download the palettes.
+
+[https://www.palettelist.com](https://www.palettelist.com/)
+
+Feedback welcome!
+## [9][Created a Trivia Game App, First React Project](https://www.reddit.com/r/reactjs/comments/gujh2t/created_a_trivia_game_app_first_react_project/)
+- url: https://www.reddit.com/r/reactjs/comments/gujh2t/created_a_trivia_game_app_first_react_project/
+---
+Hi guys, I would love to get some feedback from you all, about the app, it's my first react project.
+
+Also, it looks better on mobiles. Thank you.
+
+Link: [here](https://nishchay17.github.io/trivia/).
+## [10][How To Design A SaaS Application?](https://www.reddit.com/r/reactjs/comments/gujadu/how_to_design_a_saas_application/)
+- url: http://selleoblog7.xyz
 ---
 
-## [6][Getting started with React - on MDN](https://www.reddit.com/r/reactjs/comments/gtltgb/getting_started_with_react_on_mdn/)
-- url: https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started
+## [11][In search of an Opensource Repository...](https://www.reddit.com/r/reactjs/comments/guigtv/in_search_of_an_opensource_repository/)
+- url: https://www.reddit.com/r/reactjs/comments/guigtv/in_search_of_an_opensource_repository/
 ---
+Hi all, 
 
-## [7][Null vs Empty fragment?](https://www.reddit.com/r/reactjs/comments/gtyr61/null_vs_empty_fragment/)
-- url: https://www.reddit.com/r/reactjs/comments/gtyr61/null_vs_empty_fragment/
+I have started learning React recently and wants to make some open-source contribution, but when I browse through different repository available, it's gets overwhelming for me. I am looking for suggestion of repositories from regular contributors related to React. Please help this poor fellow, struggling for a long time.
+
+Hoping for a positive response from the community.
+
+Thanks.
+## [12][Passing Arguments to Parent Component's Dispatch function from Child Component](https://www.reddit.com/r/reactjs/comments/guiam9/passing_arguments_to_parent_components_dispatch/)
+- url: https://www.reddit.com/r/reactjs/comments/guiam9/passing_arguments_to_parent_components_dispatch/
 ---
-In react if you want to render nothing either you can return null from the component or you can also render an empty fragment. I tried searching react docs and it suggests to use null. I also found this PR link where the support of returning empty Fragments was also fixed.  
-[https://github.com/facebook/react/issues/12964](https://github.com/facebook/react/issues/12964)
+Hey everyone, I'm still relatively new to React and could use some help. Sorry if it's been asked before, I couldn't find it.
 
-Is there any disadvantage of using &lt;React.Fragment/&gt; over null.
+&amp;#x200B;
 
-What do you guys think?
-## [8][CRA with yarn workspaces](https://www.reddit.com/r/reactjs/comments/gtvirx/cra_with_yarn_workspaces/)
-- url: https://www.reddit.com/r/reactjs/comments/gtvirx/cra_with_yarn_workspaces/
----
-Hey React Community, I am a big fan of CRA but I'm having a lot of trouble setting it up in yarn workspace + lerna type monorepo, the structure is something like this:
+I've passed my dispatch function (parentDispatchFunction as the prop) from ParentComponent to ChildComponent. I need ChildComponent to call that Dispatch function but I need to pass in arguments from ChildComponent back up when I do.
 
-```
-(project root)
-    /frontend/
-       (cra stuff here)
-    /server/
-       - package.json
-    /shared/
-       - package.json
-    lerna.json
-    package.json
-```
+&amp;#x200B;
 
-I've initialized CRA in frontend, What I expected was when I do npm start in frontend it would start the dev server at port 3000 as usual. but it starts in `localhost:4000/project root/frontend` and it doesn't work. 
-
-Searching online I saw CRA has a lot of problem with yarn workspaces so I tried to override existing react scripts with craco or react-app-rewired but no luck so far
-
-Any help would be appreciated, thanks
-## [9][React newbie -- I created a COVID-19 Live updater using a public API [link in comments]](https://www.reddit.com/r/reactjs/comments/gtvdfx/react_newbie_i_created_a_covid19_live_updater/)
-- url: https://github.com/ianpan870102/covid-19-data
----
-
-## [10][Need help in manipulating table row in React with Ant-Design.](https://www.reddit.com/r/reactjs/comments/gty140/need_help_in_manipulating_table_row_in_react_with/)
-- url: https://www.reddit.com/r/reactjs/comments/gty140/need_help_in_manipulating_table_row_in_react_with/
----
-Hi All,
-I am Learning React, along the way I am trying create a billing app.
-My requirement is to search product through search field in table row and fill the other columns with the product details. 
-If I search for the different product  for the same row, that needs to be updated in that particular row.
-But quantity and per-Price columns are not updating.
-I don't know how to approach this.
-Please guide me in choosing a good approach for this.
-
-this is the demo link for what I am talking about: https://lt7rh.csb.app/
-## [11][Hello fellow react programmers, I need help](https://www.reddit.com/r/reactjs/comments/gtxyeb/hello_fellow_react_programmers_i_need_help/)
-- url: https://www.reddit.com/r/reactjs/comments/gtxyeb/hello_fellow_react_programmers_i_need_help/
----
-So I recently started with react so this might be so obvious but I've been cracking my head for last two days.
-
-I am using react material ui library , precisely collapsible table for displaying my data.  I cant figure out how/when and where to format  response from api so that table accepts it.
-
-In docs they have [this function](https://imgur.com/a/h61Mf2C) that formats data, but when i dispatch action ([my reducer and actions](https://imgur.com/a/JkZendq)) it renders first time and selector gets value of undefined and it crushes my app.
-
-Not the best explanation I know I can try to elaborate in comments . Any help is welcome
-## [12][Help with Full Stack Open Exercise](https://www.reddit.com/r/reactjs/comments/gtxpr2/help_with_full_stack_open_exercise/)
-- url: https://www.reddit.com/r/reactjs/comments/gtxpr2/help_with_full_stack_open_exercise/
----
-Hello, 
-
-I'm having a little difficulty with part 2.1 "countries" exercise of the Full Stack Open course.  Here's a link to the page: [https://fullstackopen.com/en/part2/getting\_data\_from\_server](https://fullstackopen.com/en/part2/getting_data_from_server)
-
-The task is as follows:  "The country to be shown is found by typing a search query into the search field." which I've managed to do. 
-
-However I'm stuck on this part:
-
-*"When there is only one country matching the query, then the basic data of the country, its flag and the languages spoken there"*
-
-But I'm not sure how to change the code to do this! I feel a little ashamed on how basic this is - I've got this far and it has stumped me. 
-
-Here's the link to what's been rendered to the page: [https://imgur.com/a/tXJIWFf](https://imgur.com/a/tXJIWFf)
-
-Here's the code: 
-
-`import React, { useState, useEffect } from 'react'`  
-`import axios from 'axios'`  
-`const App = () =&gt; {`  
- `const [countries, setCountries] = useState([])`  
- `const [searchFilter, setSearchFilter] = useState('')`  
- `useEffect(() =&gt; {`  
- `axios`  
-`.get('https://restcountries.eu/rest/v2/all')`  
-`.then(response =&gt; {`  
- `setCountries(response.data)`  
-`})`  
-  `}, [])`  
- `const filteredCountries =`  
- `searchFilter.length === 1`  
-`? countries`  
-`: countries.filter(`  
-`(country) =&gt; country.name.toLowerCase().indexOf(searchFilter.toLowerCase()) &gt; -1`  
-`)`  
- `const showCountries = () =&gt; {`  
- `if (filteredCountries.length &gt; 10) {`  
- `return 'Too many matches'`  
-`}`  
- `return filteredCountries.map((country) =&gt;`  
- `&lt;p key={country.alpha2Code}&gt;{country.name}&lt;/p&gt;`  
-`)`  
-  `}`  
- `const searchHandler = (e) =&gt; {`  
- `setSearchFilter(e.target.value)`  
-  `}`  
- `return (`  
- `&lt;div&gt;`  
- `&lt;h1&gt;Countries&lt;/h1&gt;`  
-`find countries: &lt;input`  
- `onChange={searchHandler}`  
- `/&gt;`  
- `{showCountries()}`  
- `&lt;/div&gt;`  
-  `)`  
-`}`  
-`export default App`
+I've tried to call the dispatch function directly with "parentDispatchFunction" (which works), but when I try to pass things back in with "parentDispatchFunction(argumentFromChild)" it doesn't call the parent function at all. I don't know how to dynamically access the function to change the parameters, or call it with parameters directly. Could someone please help me? Thank you!

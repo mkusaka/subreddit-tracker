@@ -22,7 +22,31 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Do you guys use eslint on your typescript projects?](https://www.reddit.com/r/typescript/comments/guiovl/do_you_guys_use_eslint_on_your_typescript_projects/)
+## [2][Is strict mode worth it?](https://www.reddit.com/r/typescript/comments/guu3a8/is_strict_mode_worth_it/)
+- url: https://www.reddit.com/r/typescript/comments/guu3a8/is_strict_mode_worth_it/
+---
+I just got caught out so I've turned on strictNullChecks, but apart from that is strict mode worth it?
+## [3][Can I improve my knowledge and more deeply understand OOP with TypeScript?](https://www.reddit.com/r/typescript/comments/gux7fw/can_i_improve_my_knowledge_and_more_deeply/)
+- url: https://www.reddit.com/r/typescript/comments/gux7fw/can_i_improve_my_knowledge_and_more_deeply/
+---
+A couple years a go I switched careers and became a front end dev. I love it but I have a lot to learn obviously. One of the things I really want to get a better grasp of is OOP. I have a pretty solid JavaScript knowledge but I have read a lot that it isn't truly an OOP language. I would like to learn TS to start using with React and Redux anyway so I was wondering if TS would help me to learn OOP properly, and if so, can you suggest any resources.   
+
+
+Thank you very much in advance.
+## [4][What's the purpose of having a type variable extend any?](https://www.reddit.com/r/typescript/comments/gupooo/whats_the_purpose_of_having_a_type_variable/)
+- url: https://www.reddit.com/r/typescript/comments/gupooo/whats_the_purpose_of_having_a_type_variable/
+---
+I've randomly run into this looking at random TS snippets online or library source codes. Here's an example of it inside [`ts-toolbelt`](https://github.com/pirix-gh/ts-toolbelt/blob/0d5f604/src/Any/Compute.ts#L13).
+
+I thought the following two examples were equivalent; are they not?
+
+    type WithAny&lt;T extends any&gt; = T;
+    type WithoutAny&lt;T&gt; = T;
+## [5][Generating TypeScript definitions for open source project with over 300k LOC | cesium.com](https://www.reddit.com/r/typescript/comments/gutl6m/generating_typescript_definitions_for_open_source/)
+- url: https://cesium.com/blog/2020/06/01/cesiumjs-tsd/
+---
+
+## [6][Do you guys use eslint on your typescript projects?](https://www.reddit.com/r/typescript/comments/guiovl/do_you_guys_use_eslint_on_your_typescript_projects/)
 - url: https://www.reddit.com/r/typescript/comments/guiovl/do_you_guys_use_eslint_on_your_typescript_projects/
 ---
 I used to use eslint with the plugins it suggested to me to install after executing :
@@ -36,13 +60,80 @@ I have stopped using eslint since then.
 If you use eslint then what you use it for?
 
 I was using it just because it was linting errors while I was writing js and so I believed it will also be useful in typescript.
-## [3][Are there any online courses that covers TS with JS concepts?](https://www.reddit.com/r/typescript/comments/guehwr/are_there_any_online_courses_that_covers_ts_with/)
-- url: https://www.reddit.com/r/typescript/comments/guehwr/are_there_any_online_courses_that_covers_ts_with/
+## [7][Create type for sync function wrapper](https://www.reddit.com/r/typescript/comments/guue8c/create_type_for_sync_function_wrapper/)
+- url: https://www.reddit.com/r/typescript/comments/guue8c/create_type_for_sync_function_wrapper/
 ---
-I am interested in learning TS, but since it builds to JS, I would also need to learn JS. 
+I would like to create a wrapper for any \_synchronous\_ function (the function shouldn't return a promise), is there a way to do that?
 
-Are there any courses that covers TS entirely such that i won't be needing to learn JS before it?
-## [4][Can enums be treated as numbers for incrementation purposes?](https://www.reddit.com/r/typescript/comments/gugq66/can_enums_be_treated_as_numbers_for/)
+I did the following, but it still allows promise returning functions:
+
+    export function wrapSyncFn&lt;T extends any[]&gt;(
+        handler: (...args: T) =&gt; any,
+    ): typeof handler {
+      return (...args) =&gt; {
+        return handler(...args)
+      }
+    }
+    
+    async function promiseFn() {
+      return 0
+    }
+    
+    wrapSyncFn(promiseFn)
+    
+## [8][Pass on specific props, based on interface [REACT]](https://www.reddit.com/r/typescript/comments/guruw2/pass_on_specific_props_based_on_interface_react/)
+- url: https://www.reddit.com/r/typescript/comments/guruw2/pass_on_specific_props_based_on_interface_react/
+---
+So, let's say I have a TopComponent.tsx which gets Props1 of interface Styles, Helpers and some other stuff. TopComponent ist a FunctionComponent. 
+
+Inside this Component I use a different Component, lets call it HolderComponent, which is expecting Props2 of interface Styles and some other different stuff. And they share some props (Styles)
+
+So, I am aware that I can pass on props to other components by using {...props}, or by restructuring. So I get my props from Props1 and pass it on to the HolderComponent - but I don't new all of these props, I only need a subset of props - that of interface Styles. I would expect something like (pseudocode) {...props | Styles}, which pass all props from the TopComponent which are part of the interface Styles, vomiting the rest.
+
+Is that possible, am I missing something? 
+
+The reason for this is: performance hit (if there is any), and code readability.
+## [9][Having trouble using imports and exports](https://www.reddit.com/r/typescript/comments/gusict/having_trouble_using_imports_and_exports/)
+- url: https://www.reddit.com/r/typescript/comments/gusict/having_trouble_using_imports_and_exports/
+---
+Hello,
+
+I am currently working on my first TS project and am having trouble with exports and imports.
+
+I originally wrote my code in one file, while ran great; but splitting the project up into multiple files is finding to be challenging.
+
+&amp;#x200B;
+
+Upon splitting up into multiple files I get *"Uncaught ReferenceError: exports is not defined"* in the browser console.
+
+&amp;#x200B;
+
+What I have tried:
+
+* npm install commonjs then updating my tsconfig.json to {  
+ "compilerOptions": {  
+ "target": "es5",  
+ "module": "commonjs",  
+ "strict": true,  
+ "outDir": "dist",  
+ "sourceMap": true  
+  }  
+}
+
+I did that based off of  [https://stackoverflow.com/questions/43042889/typescript-referenceerror-exports-is-not-defined](https://stackoverflow.com/questions/43042889/typescript-referenceerror-exports-is-not-defined) 
+
+Unfortunately this did not help.
+
+&amp;#x200B;
+
+Any help or advice would be greatly appreciated.
+
+If looking at the code (3 files less than 90 lines) would be helpful please let me know and Ill paste it. I just did not want to flood this thread.
+## [10][[help] Compiler doesn't seem to detect enum variants correctly](https://www.reddit.com/r/typescript/comments/gunlh8/help_compiler_doesnt_seem_to_detect_enum_variants/)
+- url: https://www.reddit.com/r/typescript/comments/gunlh8/help_compiler_doesnt_seem_to_detect_enum_variants/
+---
+at this [playground link](https://www.typescriptlang.org/play/#code/JYOwLgpgTgZghgYwgAgKJSgHlQPmQbwChkTkw4BzALmQHJopaAaY0hgeyhtUIF9DCoSLEQoA8gGtMAFTxFSZSjVrsJzViQAmccjWl8BMAK4gEYYOxDJJMnAAoIegJQ0bsghuRQIYI1Cv4itR0qszI2rrIKLwA3AaExqbmlmgY2PaOaC6pWLgeCt6+-gRBygxhHFxRyLHxYACeAA4oAEoQAM5GADZgMkxoeAC81lLuAD456XGEECBGALbIAIJQwGAAFvM+wAjoUJz5pCYQAG6zyMO0x2cg6goglgCS4BAU0Bd0DyDPkG+M8YkzBYrD9XtAACLAE7ATQQOxwGhzeYAI2g-WRiIWqKg2TanR6mCR2P6KzWm22uwwnDknmAMGQdgAhHYAHJY6AAOmA7VBf3hTmQADJBcg2SjOdzedA7MinHLDgoSIU-FY9nZSRstuZKfsoByvlKcXEFPwFAhLO0wF4Oh84MgAPTIZHG0h0hmMsXYrk8l587zteXyRVKnwqnLq1aail7Tgc66zJwukim0jK4qSOz+xPxc0gdrsLoQDlddgUOyGyHQ2F2AAs-QArHK4rn84Xi6Xy76IVCYXCAJz9ADMTcILYLRZLZYrPerNY59f6ACYR6OLVarMNp1W4fWAGz9ADs2faAHc1gh1gyQBzyBQBUGSAg4O0UCo1FRPApC1aAI6Y8VQB814RHASbIE+L50OUH7BiQ37IOwNAauS2oxoBwzXpUcS8EAA) on line 46, it thinks `o` is of type `Result` instead of just the `Err`variant. Not sure why this is the case.
+## [11][Can enums be treated as numbers for incrementation purposes?](https://www.reddit.com/r/typescript/comments/gugq66/can_enums_be_treated_as_numbers_for/)
 - url: https://www.reddit.com/r/typescript/comments/gugq66/can_enums_be_treated_as_numbers_for/
 ---
 By default I believe enums are assigned numbers starting from 0. I was thinking of using an enum to define a series of steps for a CLI script. that way I could name each step, for example, "intro", "gatherName", "configureGoogle" etc. There are no branching paths so in this setup, reaching the final enum would signal that the next step should perform an exit procedure.
@@ -50,135 +141,3 @@ By default I believe enums are assigned numbers starting from 0. I was thinking 
 Does it ever make sense to increment enums? Are there side effects to consider?
 
 If this should not be done, I suppose additional logic will be needed to define step pathing. I'm open to any ideas you guys have. The first idea I have is to iterate over the enumb definition, push each enum into an array to create a sequence, and then allow the indexes to become the sequence values.
-## [5][Solving Riddles with 0 lines of program | Using typescript types](https://www.reddit.com/r/typescript/comments/gu390u/solving_riddles_with_0_lines_of_program_using/)
-- url: https://medium.com/@damodharanjay/solving-riddles-with-0-lines-of-program-b23994072dd0
----
-
-## [6][Typescript in React, tough example to understand](https://www.reddit.com/r/typescript/comments/gubcvg/typescript_in_react_tough_example_to_understand/)
-- url: https://www.reddit.com/r/typescript/comments/gubcvg/typescript_in_react_tough_example_to_understand/
----
-&amp;#x200B;
-
-    const Form = &lt;T extends {}&gt;({values, children}: FormProps&lt;T&gt;) =&gt; {
-        return children(values);
-    };
-    
-    const App: React.FC = () =&gt; {
-        return {
-            &lt;div&gt;
-    	    &lt;Form &lt;{lastName:string|null}&gt; values={{lastName: ""}}&gt;
-    		{values =&gt; &lt;div&gt;{values.lastName}&lt;/div&gt;}
-    	    &lt;/Form&gt;
-    	&lt;/div&gt;
-        }
-    }
-
-My interpretation (as best as I can):
-
-1. The generic T is extending an empty object, meaning it can take any properties
-2. He must have an interface `FormProps` somewhere else. I have a hard time reading what is going on exactly inside the parameter definitions. Destructuring of the props object? Or something else? `FormProps` can't be a return type because `:` should go outside the `()`
-3. Inside the JSX portion, he has a `&lt;Form&gt;` component. The component is typing the `lastName` prop to a string or null.
-4. The values prop appears to be escaping JSX and passing an object with `lastName` set to empty string by default, not sure why
-5. Finally on the last line JSX is escaped and on every render an arrow function prints the value of `values.lastName` to the div if not null.
-
-I know my assessment above is wrong, I appreciate any feedback to help me read this better.
-## [7][What's the return type of a static method that returns new instances of its class?](https://www.reddit.com/r/typescript/comments/gui766/whats_the_return_type_of_a_static_method_that/)
-- url: https://www.reddit.com/r/typescript/comments/gui766/whats_the_return_type_of_a_static_method_that/
----
-Check this first:
-```
-class A {
-    static someStaticMethod(): any[] {
-        return [new this(), new this()]
-    }
-}
-
-class B extends A {
-    someClassProp = 0
-}
-
-console.log(B.someStaticMethod())
-```
-1. What is the actual return type of `someStaticMethod` beyond `any[]`? How do I express the class which was used to call `someStaticMethod`? In this example it's `B` and the static's return type something like `new B()[]` but the `B` should be a generic. Do I use generics here? If yes, how?
-
-2. Why does the TS compiler does not complain about the `any` type despite having all options set to strict:
-
-Code sandbox: https://www.typescriptlang.org/play?#code/MYGwhgzhAECC0G8BQ1XQgFzBglsdA9gLYCmAylrsALIkYAWBAJgBQCUAXNGAHYCeAbQC6iFGnEAnOgFcJPaAJ4kA7tAY4I7ADTQlq9ZrZCxqAL5JzSUJBgAhaCQAeGEjyYx4ycRGIkAwuBQAAoSBAAO0AC80AAMFkhWBDw+ICQAdCAEAOYstmk+pBTYeLQMzOxsQA
-## [8][Programmer without JS experience: where to start with TS?](https://www.reddit.com/r/typescript/comments/gui6ai/programmer_without_js_experience_where_to_start/)
-- url: https://www.reddit.com/r/typescript/comments/gui6ai/programmer_without_js_experience_where_to_start/
----
-Hey lads,
-
-I've been bid to learn TS for my job, which revolves around Amazon Web Services. The new AWS "CDK" (cloud dev kit) has by far the best support for TS, so there's no getting around it. 
-
-I've got multiple years of exp working with primarily Java and a bit of python, but none so far with web languages like JavaScript. 
-
-Where do I start with learning TS, assuming my main goal is to write architectures for AWS (so backend stuff)? Do I just start hacking away, do I dive into a Typescript tutorial, or should I start out reading up on JavaScript fundamentals before starting with TS? 
-
-Appreciate the help!
-## [9][How to get TypeScript to stop throwing an error when accessing a field on an object that has been determined to be an instance of a particular object](https://www.reddit.com/r/typescript/comments/gublkg/how_to_get_typescript_to_stop_throwing_an_error/)
-- url: https://www.reddit.com/r/typescript/comments/gublkg/how_to_get_typescript_to_stop_throwing_an_error/
----
-I've been writing some code, and let's say I have an array of several objects; e.g.
-
-    const ar:(A | B | C)[] = [new A(), new B(), new C()];
-
-where the A object is the only one of them that has a method called `match`.
-
-and then I have a for loop that iterates through it
-
-    for (let e of ar) {
-      if (e instanceof A) {
-        if (a.match('hello')) {
-          print('good');
-        }
-      }
-    }
-
-But I keep getting an error that says something along the lines of `Property 'match' does not exist on type 'A | B | C'. Property 'match' does not exist on types 'B | C'.`
-
-How should I resolve this, seeing as the actual error would not take place as I've already confirmed that it is the proper object as thus the object would have said field.
-
-Any help is appreciated.
-
-Thanks!
-## [10][Typing for higher-order components](https://www.reddit.com/r/typescript/comments/gu657l/typing_for_higherorder_components/)
-- url: https://www.reddit.com/r/typescript/comments/gu657l/typing_for_higherorder_components/
----
-I'm trying to add typing for a higher-order component that takes in `mapStateToProps` and `mapDispatchToProps` functions to inject into a React component, but I can't seem to get generics to work. I've simplified my problem down to this example ([playground link](https://www.typescriptlang.org/play?#code/JYOwLgpgTgZghgYwgAgCoCE4GcIGkICeWyA3gLABQy1yARthAFzIgCuAtrdANyUC+lSggD2ILGGTtoAczyFiAXmQAeVAEEAJhogb8RZBAAekEBuLDaAKwgIwAPgAUAByjCAbsG1RmDgJTIFOzRNbV15f0CVShpggBtYvWIjEzNgrR1E5AAyNEwcRMpHaJoYEB8Aa3lmdXjEiKC3YU9KetJi6hExCTh0sP0lF3dPaD9eKhpO8ToGROq8uX7SaZxmABYAJmQ+MZioCDBWKBBkUocSZAA6K-p8+QAaS6ue0My+XzHtwQpJiVLUAAs4GBUHBKlgALIyDLyALIBzFc43CAPQYeUJbZiIhjMNicHjIVHDDTMcRQUDSLatSbCWIQC6xYTSBxI5AAamQACJOWyCa40Tp3l8pFBZIkHH4AkEzryhqFmByYMJhFy3r4HH9AcDQRAIVC+lh3kA)):
-
-    interface TBaseKeys {
-        base: number;
-    }
-    
-    const mergeKeys = &lt;TAddedKeys extends object&gt;(provider: () =&gt; TAddedKeys) =&gt; &lt;
-        TAllKeys extends TAddedKeys &amp; TBaseKeys
-    &gt;(
-        fn: (keys: TAllKeys) =&gt; void
-    ) =&gt; {
-        const addedKeys = provider();
-        const baseKeys: TBaseKeys = { base: 42 };
-
-        // Fails with:
-        // Argument of type '{ base: number; } &amp; TAddedKeys' is not assignable to parameter of type 'TAllKeys'.
-        //  '{ base: number; } &amp; TAddedKeys' is assignable to the constraint of type 'TAllKeys',
-        //    but 'TAllKeys' could be instantiated with a different subtype of constraint 'object &amp; TBaseKeys'.(2345)
-        return fn({ ...baseKeys, ...addedKeys });
-    };
-
-In the code above, `fn` takes in an object, where some of the keys are hardcoded (`TBaseKeys`), while others are generic (`TAddedKeys`, which you get from `provider()`). This is how `mergeKeys` could be used:
-
-    const fnThatTakesMergedKeys = (
-      { base, provided }: { base: number; provided: string }) =&gt; console.log(base + " " + provided);
-    
-    mergeKeys(() =&gt; ({ provided: "foo" }))(fnThatTakesMergedKeys);
-
-Console output: `42 foo`
-
-Does anyone have tips on resolving the TypeScript error above?
-## [11][[NOOB QUESTION] How is typescript better if it is just compiled to javascript?](https://www.reddit.com/r/typescript/comments/gttwke/noob_question_how_is_typescript_better_if_it_is/)
-- url: https://www.reddit.com/r/typescript/comments/gttwke/noob_question_how_is_typescript_better_if_it_is/
----
-Since it is compiled to JS, the performance cannot be better than a natively written JS. 
-
-Besides static type checking, what benefits do TS offer? I don't think it offers a performance boost. I'm confused if I should port all my JS code to TS.

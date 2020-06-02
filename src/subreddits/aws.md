@@ -21,130 +21,115 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][10 Recommendations for writing pragmatic AWS Lambdas in Python](https://www.reddit.com/r/aws/comments/gu90wn/10_recommendations_for_writing_pragmatic_aws/)
-- url: https://medium.com/@jan.groth.de/10-recommendations-for-writing-pragmatic-aws-lambdas-in-python-5f4b038caafe
+## [2][At my wits end with trying to access an RDS Postgres DB from home](https://www.reddit.com/r/aws/comments/gv6d9n/at_my_wits_end_with_trying_to_access_an_rds/)
+- url: https://www.reddit.com/r/aws/comments/gv6d9n/at_my_wits_end_with_trying_to_access_an_rds/
+---
+I created an RDS PG DB on a company account created for me with full root access. I set the RDS to Public, set inbound/outbound rules on the security group to allow All Traffic on 0.0.0./0 (I know this is crazy but I just need to get it working first). I attached an Internet Gateway to the VPC (default). I've done everything recommended by the docs to make the RDS accessible to a Rails app on my laptop for development. 
+
+&amp;#x200B;
+
+Whenever I try to either test it via \`psql -h &lt;end point&gt; -U &lt;account username&gt; -p 5432 --password\` and enter the password, it timesout and asks if I'm sure it's running on 5432 and that it's taking IP/TCP traffic. 
+
+&amp;#x200B;
+
+Even if I try to ping it with Telnet via \`telnet &lt;endpoint&gt; &lt;port&gt;\`, same thing. 
+
+&amp;#x200B;
+
+My endpoint is in this format (where it says 'endpoint' in the security description of RDS DB instance): 
+
+&amp;#x200B;
+
+my-postgres-db[.cy5ehlf0towl.us-east-1.rds.amazonaws.com](https://tml-dashboard-development.cy5ehlf0towl.us-east-1.rds.amazonaws.com)
+
+&amp;#x200B;
+
+Can anyone give any other clues? I've spent 3 days on this and it's driving me crazy.
+## [3][Detecting inventory stock + SMS Text Notifications with AWS](https://www.reddit.com/r/aws/comments/gust4m/detecting_inventory_stock_sms_text_notifications/)
+- url: https://www.reddit.com/r/aws/comments/gust4m/detecting_inventory_stock_sms_text_notifications/
+---
+Hey all,
+
+I've recently been dealing with some frustration trying to purchase some seemingly common products off online retailers. Getting sick of seeing 'out of stock' messages, I decided to build a script that would automatically detect when a retailer receives new inventory of a product, and send me a SMS Text Notification.
+
+It ended up working really well for the first item - I got a notification in less than 30 minutes and was able to nab one. Not so good luck on a second product - been running it for over 10 hours and no dice.
+
+I put together a video showing how I did it: https://youtu.be/6ixBJZ2vnYk
+
+I hope this shows some practical applications of using AWS and software in general. 
+
+Cheers
+## [4][[bug] Impossible to change value of SSM parameter](https://www.reddit.com/r/aws/comments/gv5du9/bug_impossible_to_change_value_of_ssm_parameter/)
+- url: https://www.reddit.com/r/aws/comments/gv5du9/bug_impossible_to_change_value_of_ssm_parameter/
+---
+[Screenshot: parameter name is not set and is impossible to set](https://imgur.com/I6Eknv6)
+
+As you can see above, trying to edit a parameter from SSM results in a page that's impossible to use.
+
+Couldn't find any way to report this bug otherwise... which can also be improved.
+## [5][Windows DHCP server](https://www.reddit.com/r/aws/comments/gv37ri/windows_dhcp_server/)
+- url: https://www.reddit.com/r/aws/comments/gv37ri/windows_dhcp_server/
+---
+Hi 
+
+I'm sure there are many other ways of fulfill this requirement but our management team would like to uplift our current on prem Windows DHCP Server and move this into AWS as a EC2 instance
+
+Has anyone or does anyone have their Windows DHCP server running out of AWS ?
+
+The Windows Server configured for DHCP will service our office users computers, this will not affect any AWS servers
+
+The plan is to update the ip helper address which will point to the new DHCP server in AWS, on our core switch so that clients know where to go when looking for a IP address
+## [6][Why redirect on AWS workmail aliases dont work ?](https://www.reddit.com/r/aws/comments/gv7815/why_redirect_on_aws_workmail_aliases_dont_work/)
+- url: https://www.reddit.com/r/aws/comments/gv7815/why_redirect_on_aws_workmail_aliases_dont_work/
+---
+Creating rules:
+
+*When the message is received to myalias@mydomain* 
+
+then
+
+*Then copy the messeg to folder (etc)*
+
+&amp;#x200B;
+
+It is not working
+## [7][Amazon FSx for Windows File Server – Storage Size and Throughput Capacity Scaling](https://www.reddit.com/r/aws/comments/gv76b6/amazon_fsx_for_windows_file_server_storage_size/)
+- url: https://aws.amazon.com/blogs/aws/amazon-fsx-for-windows-file-server-storage-size-and-throughput-capacity-scaling/
 ---
 
-## [3][Can "Microsoft Always On VPN" work on AWS?](https://www.reddit.com/r/aws/comments/gugrhx/can_microsoft_always_on_vpn_work_on_aws/)
-- url: https://www.reddit.com/r/aws/comments/gugrhx/can_microsoft_always_on_vpn_work_on_aws/
+## [8][Fast File Transfer from EC2](https://www.reddit.com/r/aws/comments/guyld3/fast_file_transfer_from_ec2/)
+- url: https://www.reddit.com/r/aws/comments/guyld3/fast_file_transfer_from_ec2/
 ---
-Hello,  I am a 3rd year student of computer science. I want to make the lab in this [post](http://blog.tofte-it.dk/tutorial-deploy-always-on-vpn/). But, I do not have a computer with enough hardware for virtualization.  The post in the link contains the following statement.
-
-&gt;Do not attempt to deploy Remote Access on a virtual machine (VM) in Microsoft Azure. Using **Remote Access in Microsoft Azure is not supported**, including both Remote Access VPN and DirectAccess.
-
-My goal is to set up the lab environment in a cloud environment, not on the local computer.  Because I don't have a computer with enough hardware.  Can I run the following network structure on AWS? Is Windows Remote Access running on AWS?  Can you help the student who wants to work on VPN technology?
-
-[Always On VPN Overview](https://preview.redd.it/lt3yt2yxd9251.png?width=794&amp;format=png&amp;auto=webp&amp;s=ca67cf2288fd44ca67ce52994c910c4e5121c9b2)
-
-*Note :  Sorry for my English knowledge. I just started learning.*
-## [4][I'm studying how to migrate a relational database to DynamoDB and I'm having a lot of trouble understanding this article. Can someone breakdown how the queries get what you want?](https://www.reddit.com/r/aws/comments/gugwsl/im_studying_how_to_migrate_a_relational_database/)
-- url: https://docs.amazonaws.cn/en_us/amazondynamodb/latest/developerguide/bp-modeling-nosql-B.html
+I'm a graduate student with access to an EC2 instance. I'm about to run an experiment that is likely to generate 50-100 GB of data. I've noticed in the past that even small files take a very long time to transfer from my AWS instance to my laptop via \`scp\` or \`rsync\`. Is there a better way to get large files off of an EC2 instance?
+## [9][SSM Patch manager and RHEL 8 - is it possible?](https://www.reddit.com/r/aws/comments/gv4rjf/ssm_patch_manager_and_rhel_8_is_it_possible/)
+- url: https://www.reddit.com/r/aws/comments/gv4rjf/ssm_patch_manager_and_rhel_8_is_it_possible/
 ---
+I've gotten a task that is to set up automatic patching on some servers, we use "Red Hat Enterprise Linux 8" machines and to my surprise the System manager patch manager seems to not support this. 
 
-## [5][Games performance on G4 instances.](https://www.reddit.com/r/aws/comments/gukjl5/games_performance_on_g4_instances/)
-- url: https://www.reddit.com/r/aws/comments/gukjl5/games_performance_on_g4_instances/
+I tested it on the RHEL 7, and it works perfectly. From trouble shooting i found out it has something todo with how the patchmanager uses yum from a python script (  i think ), and it chokes when trying to do "import yum". 
+
+The patch manager is valuable for our organisation and it would be a bummer if we cant figure out how to get it to work on these machines.
+
+Does anyone have experience with this or something similar?
+## [10][Deploying a AWS Lambda written on F# from cloudformation](https://www.reddit.com/r/aws/comments/guzf30/deploying_a_aws_lambda_written_on_f_from/)
+- url: https://www.reddit.com/r/aws/comments/guzf30/deploying_a_aws_lambda_written_on_f_from/
 ---
-I am testing G4 instance for Cloud Gaming, where my games are installed and running on Cloud machines and player is connected using RDP. Currently we are using G4 instances with T4 GPUs.  I am getting around 25 FPS which is very poor. When we are running same games on Azure NV6 with M60 GPUs  we are getting around 60 FPS. I cannot figure out why NV6 outperforming G4, which is less powerful hardware wise compare to G4.  Thanks.  
-Sharing DxDiag of both the machines:  
-[https://we.tl/t-OhHZ1kXFaX](https://we.tl/t-OhHZ1kXFaX)
-## [6][How to know where are my credits being used?](https://www.reddit.com/r/aws/comments/gufhja/how_to_know_where_are_my_credits_being_used/)
-- url: https://www.reddit.com/r/aws/comments/gufhja/how_to_know_where_are_my_credits_being_used/
----
-I created an AWS Educate account using my university email and I was given some AWS credits for free. Now when I use the account my credits keep decreasing (which means I am paying for the services I am using), but since I am using several services, I want to know how much I am paying for the different services. How can I know this? When I go to the billing page on the link -  [https://console.aws.amazon.com/billing/home](https://console.aws.amazon.com/billing/home) it says you don't have the permission to access this page. This is perhaps because Amazon doesn't allow Credit / Debit cards to be used in AWS Educate accounts. But is there any way I can at least know how much I paid for which services on what date?
-## [7][How to avoid unexpected charges when using AWS free tier](https://www.reddit.com/r/aws/comments/gu1u9t/how_to_avoid_unexpected_charges_when_using_aws/)
-- url: https://www.reddit.com/r/aws/comments/gu1u9t/how_to_avoid_unexpected_charges_when_using_aws/
----
-Hi, I’m really new to AWS. I’m a bit scared reading through posts about people getting unexpected charges. Besides setting up a billing alert, I want to get to know how the billing system works before starting my free tier instances.
+Hello all,
 
-I want to spin up a T3.Micro. To my understanding, there are limits on storage, network, and computation on EC2 instances. Where can I find these limits? If I exceed these limits, how much am I charged? 
+I'd like to write and deploy a lambda function written in F#/dotnet; I've found tutorials that allow me to do it manually (something like this):
 
-I also want to try the DynamoDB. The free tier includes 25G storage, 25 WCU and 25 RCU. The description says it’s enough to handle 200M requests per month. Does it mean I can write and read 200M times without being charged?
+dotnet tool install -g Amazon.Lambda.Tools
 
-Also, are services like S3 and Lambda less likely to generate a big amount of charges even when I exceed the limit since their pricing seems pretty cheap? Are there things to watch out for S3 and Lambda too?
+dotnet new lambda.EmptyFunction -lang F# -o FSharpBasicFunction --region us-west-2 --profile default
 
-Is there any general advice to avoid unexpected charges?
+dotnet lambda deploy-function MyFSharpFunction
 
-Thank you :)
-## [8][IAM policy to deny EKS cluster creation with public access](https://www.reddit.com/r/aws/comments/guk79z/iam_policy_to_deny_eks_cluster_creation_with/)
-- url: https://www.reddit.com/r/aws/comments/guk79z/iam_policy_to_deny_eks_cluster_creation_with/
----
-    {
-        "Version": "2012-10-17",
-        "Statement": [
-            {
-                "Sid": "EKSNoPublicAccess",
-                "Effect": "Deny",
-                "Action": [
-                    "eks:CreateCluster",
-                    "eks:UpdateClusterConfig"
-                ],
-                "Resource": "*",
-                "Condition": {
-                    "Bool": {
-                        "eks:ResourcesVpcConfig:EndpointPublicAccess": true
-                    }
-                }
-            }
-        ]
-    }
-    
+yet I need to do it from a cloudformation template and not manually; for this I've found nothing on the internet.
 
-Hi,
-
-My goal is to create an IAM policy rule that prevents clusters being created with public access. The above isn't it...any pointers appreciated.
-
+Any idea on how can I archive this?
 Thanks!
-## [9][Setup a Common EC2 filter](https://www.reddit.com/r/aws/comments/gujug4/setup_a_common_ec2_filter/)
-- url: https://www.reddit.com/r/aws/comments/gujug4/setup_a_common_ec2_filter/
+## [11][AWS workspaces v/s AWS EC2](https://www.reddit.com/r/aws/comments/guxgon/aws_workspaces_vs_aws_ec2/)
+- url: https://www.reddit.com/r/aws/comments/guxgon/aws_workspaces_vs_aws_ec2/
 ---
-Quick tip - I hadn't thought of this until recently, this post started as a question and in the process of thinking through it I ended up solving my own problem.
-
-Right now I'm working on a WSUS project, and I'm nearly always in EC2 filtering for "WSUS". This pulls up our list of servers just fine. Then when I make an EC2 change (networking etc)  it brings back to the default view everytime. So then I have to type in WSUS and filter again.
-
-This is a minor annoyance, there is a way to have a button for common filters "WSUS" Button for me, Splunk button for somebody else etc. 
-
-I found I can set a Chrome bookmark for this, and put it on my bookmarks bar in Chrome. 
-
-For a tag we created called "service" the URL ends up being ... ec2/v2/home?region=us-east-1#Instances:tag:service=wsus;sort=tag:Name
-
-Then I had the issue (that I prefer actually) that bookmarks bar doesn't show up unless you're on the New tab. In Chrome settings, Appearance you can have bookmarks bar open all the time.. so now I just hit the bookmark and my filters go back in place.
-## [10][AWS CLI for ECS opposite to register-task-definition](https://www.reddit.com/r/aws/comments/gug5n8/aws_cli_for_ecs_opposite_to_registertaskdefinition/)
-- url: https://www.reddit.com/r/aws/comments/gug5n8/aws_cli_for_ecs_opposite_to_registertaskdefinition/
----
-We keep Task Definitions json files in .gitignore because of secrets in the environment variables.
-
-    aws ecs register-task-definition --cli-input-json file://ecs/task-definition-sample.json --profile $AWS_PROFILE
-
-Though the issue with this approach is that the initial developer needs to pass the file around some other method. I was hoping to use the following to download a copy using the aws cli
-
-    aws ecs describe-task-definition --task-definition $REPONAME-sample--profile $AWS_PROFILE &gt; ecs/task-definition-sample.json
-
-Though when I do *describe-task-definition* followed by *register-task-definition* it fails with:
-
-    Missing required parameter in input: "family"
-    Missing required parameter in input: "containerDefinitions"
-    Unknown parameter in input: "taskDefinition", must be one of: family, taskRoleArn, executionRoleArn, networkMode, containerDefinitions, volumes, placementConstraints, requiresCompatibilities, cpu, memory, tags, pidMode, ipcMode, proxyConfiguration, inferenceAccelerators
-
-Is *register-task-definition* the opposite to *describe-task-definition* or is there another I missed in the api docs.
-## [11][API Gateway - Can you synchronously call integration backends?](https://www.reddit.com/r/aws/comments/gu91ue/api_gateway_can_you_synchronously_call/)
-- url: https://www.reddit.com/r/aws/comments/gu91ue/api_gateway_can_you_synchronously_call/
----
-So say I have a request that comes in to api gateway. For this request I would have to do 2 things:
-
-1.) Create a user -&gt; lambda 1
-
-2.) Process the user somehow -&gt; lambda 2
-
-Say I now have two lambdas for these and hook them up to api gateway as integrations for a particular HTTP method/route.
-
-For lambda 2 to work, I need a certain piece of information that only lambda 1 can provide after creating the user.
-
-Is there anyway for lambda 2 to know that piece of information from lambda 1? Say through API Gateway orchestrating lambda 1’s reponse and sending it to lambda 2? If not, how would I be able to do that? My only way of thinking is to make ANOTHER SEPARATE API Gateway request would it not? I’m looking to save costs if possible, so trying to avoid that sort of way. It also kind of defeats the purpose I think of 1 api gateway request doing all the things necessary to process ALL the things necessary for that SPECIFIC request. 
-
-So I just kinda wanna know how this would work in context of API Gateway (HTTP APIs specifically, not REST)
-
-Solutions I can come up with only are:
-
-1.) Monolithic lambdas that do too much/are too big with multiple routes/apis
-
-2.) This somehow exists in API Gateway and I just don’t know about it (hopefully you can help?)
+So we use EC2 instances window's MIA(windows 10 image with all pre build configuration) for our developer's. I was thinking about pushing an idea to my manager about using AWS workspaces desktops environment instance instead of EC2. Anyone here would be able to help with me with pros and cons of using workspaces over EC2? Like scalability,cost,etc.
+We do use workspaces for third parties to enable the access for our internal sysytem but that's about it.

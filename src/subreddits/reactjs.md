@@ -84,124 +84,89 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][[Show off] Second "full-stack" app - Roomie - Find a room to rent! Built with: React + TailwindCSS + Express + MongoDB + Heroku / S3](https://www.reddit.com/r/reactjs/comments/guembv/show_off_second_fullstack_app_roomie_find_a_room/)
-- url: https://www.reddit.com/r/reactjs/comments/guembv/show_off_second_fullstack_app_roomie_find_a_room/
----
-&amp;#x200B;
-
-https://reddit.com/link/guembv/video/qrhzk3mmi8251/player
-
-Hey, devs!
-
-I've been studying for a few months now and after one month and 25 deploys, this is my second full-stack project: Roomie - a website to find rooms to rent or to list your place. 😅
-
-I created this for the sake of learning only and since my first full-stack project was a [simple CRUD app](https://appjournals.herokuapp.com/), it was a blast having this experience!
-
-**demo:** [https://roomiew.herokuapp.com/](https://roomiew.herokuapp.com/)
-
-**repo:** [https://github.com/lucasmrl/roomie](https://github.com/lucasmrl/roomie) (missing README)  
-
-
-**Built with:**
-
-* FE: React (Hooks, Context API, Router) + TailwindCSS
-* BE: Node.js (Express.js) + MongoDB
-* Hosted on Heroku / Images in AWS S3
-
-**What I tried to learn:**
-
-* Authentication (Sign up, Log in, Log out, Reset password)
-* API Filtering, Sorting, Pagination (Even though it is not implemented in the FE)
-* Send e-mails from back-end
-* Upload pictures to S3
-* Security
-* TailwindCSS (first time using it)
-* Agile methodology (tried to organize my user stories, sprints, daily stand-up meeting, ...)
-
-Definitely it is far from perfect, but it helped me a least to get my hands dirty. I appreciate any feedback!
-
-Be safe! ;)
-## [4][Dokz - Effortless documentation with Next.js and MDX](https://www.reddit.com/r/reactjs/comments/gu0cdm/dokz_effortless_documentation_with_nextjs_and_mdx/)
-- url: https://v.redd.it/kisf0ca154251
+## [3][React Core Team joins Facebook Employee Walkout](https://www.reddit.com/r/reactjs/comments/gusp7u/react_core_team_joins_facebook_employee_walkout/)
+- url: https://twitter.com/dan_abramov/status/1267544361929256966
 ---
 
-## [5][Hard time structuring large project](https://www.reddit.com/r/reactjs/comments/guiv4e/hard_time_structuring_large_project/)
-- url: https://www.reddit.com/r/reactjs/comments/guiv4e/hard_time_structuring_large_project/
----
-I'm a relatively new to React and I've been working on my medium-large sized full-stack app in it. It's been really increasing in size and unfortunately my code is starting to look like a big pile of spaghetti. 
-
-Does anyone have any tips or resources on how to structure a React project, or the best way to turn it into components, hooks etc? Every time I create a component or a hook I end up having to manage all the dozens of props that has to passed in... and it's just really not working out great. 
-
-I would look at professional repos, but there's really not that many large-scale open-sourced React apps out there.
-## [6][Full screen while scrolling - React PWA](https://www.reddit.com/r/reactjs/comments/guff63/full_screen_while_scrolling_react_pwa/)
-- url: https://www.reddit.com/r/reactjs/comments/guff63/full_screen_while_scrolling_react_pwa/
----
-Hey guys,
-
-I am trying to make my pwa close to full screen by hiding thr search and nav bar on mobile browsers (Safari and Chrome ) ,while scrolling. 
-I have read that full screen API isn't available for, IOS devices but I see many sites on IOS doing this feature. 
-Can anyone explain how this is done. 
-
-Adding an image for your reference 
-https://i.stack.imgur.com/XxJYY.png
-https://www.swiggy.com/restaurants
-
-Thanks in advance
-## [7][Palette List - color palettes generator made with React.js](https://www.reddit.com/r/reactjs/comments/gukgly/palette_list_color_palettes_generator_made_with/)
-- url: https://www.reddit.com/r/reactjs/comments/gukgly/palette_list_color_palettes_generator_made_with/
----
-Hi there!
-
-https://reddit.com/link/gukgly/video/vvvf69zuta251/player
-
-I just built this Palette Generating tool for designers and developers in React.js. You pick 2 colors you like (i.e. Red and black) and the tool generates thousands of palettes for you. You can also download the palettes.
-
-[https://www.palettelist.com](https://www.palettelist.com/)
-
-Feedback welcome!
-## [8][Palette List - color palettes generator made with React.js](https://www.reddit.com/r/reactjs/comments/gukdd8/palette_list_color_palettes_generator_made_with/)
-- url: https://www.reddit.com/r/reactjs/comments/gukdd8/palette_list_color_palettes_generator_made_with/
----
-Hi there!
-
-https://reddit.com/link/gukdd8/video/q2id46hdsa251/player
-
-I just built this Palette Generating tool for designers and developers in React.js. You pick 2 colors you like (i.e. Red and black) and the tool generates thousands of palettes for you. You can also download the palettes.
-
-[https://www.palettelist.com](https://www.palettelist.com/)
-
-Feedback welcome!
-## [9][Created a Trivia Game App, First React Project](https://www.reddit.com/r/reactjs/comments/gujh2t/created_a_trivia_game_app_first_react_project/)
-- url: https://www.reddit.com/r/reactjs/comments/gujh2t/created_a_trivia_game_app_first_react_project/
----
-Hi guys, I would love to get some feedback from you all, about the app, it's my first react project.
-
-Also, it looks better on mobiles. Thank you.
-
-Link: [here](https://nishchay17.github.io/trivia/).
-## [10][How To Design A SaaS Application?](https://www.reddit.com/r/reactjs/comments/gujadu/how_to_design_a_saas_application/)
-- url: http://selleoblog7.xyz
+## [4][A React Testing Library Tutorial for Beginners](https://www.reddit.com/r/reactjs/comments/gv3q4z/a_react_testing_library_tutorial_for_beginners/)
+- url: https://www.robinwieruch.de/react-testing-library
 ---
 
-## [11][In search of an Opensource Repository...](https://www.reddit.com/r/reactjs/comments/guigtv/in_search_of_an_opensource_repository/)
-- url: https://www.reddit.com/r/reactjs/comments/guigtv/in_search_of_an_opensource_repository/
+## [5][ReactJS API Query](https://www.reddit.com/r/reactjs/comments/gv579t/reactjs_api_query/)
+- url: https://www.reddit.com/r/reactjs/comments/gv579t/reactjs_api_query/
 ---
-Hi all, 
+Apologies if this is a stupid question but I am looking to create a simple web app that makes API calls....But the twist here is I have python scripts that call that endpoints, pass all the correct authorization tokens etc before presenting my JSON out on my command line .... 
 
-I have started learning React recently and wants to make some open-source contribution, but when I browse through different repository available, it's gets overwhelming for me. I am looking for suggestion of repositories from regular contributors related to React. Please help this poor fellow, struggling for a long time.
-
-Hoping for a positive response from the community.
-
-Thanks.
-## [12][Passing Arguments to Parent Component's Dispatch function from Child Component](https://www.reddit.com/r/reactjs/comments/guiam9/passing_arguments_to_parent_components_dispatch/)
-- url: https://www.reddit.com/r/reactjs/comments/guiam9/passing_arguments_to_parent_components_dispatch/
+So i am wondering is it possible to somehow create a simple react app where a user can click a button, but that button in the "background" executes that python script and presents the data on screen?
+## [6][Climate change NFP looking for volunteers](https://www.reddit.com/r/reactjs/comments/gv79fz/climate_change_nfp_looking_for_volunteers/)
+- url: https://www.reddit.com/r/reactjs/comments/gv79fz/climate_change_nfp_looking_for_volunteers/
 ---
-Hey everyone, I'm still relatively new to React and could use some help. Sorry if it's been asked before, I couldn't find it.
+We are searching for front-end developers with **React** skills. **Data visualization experience is a bonus!**
 
-&amp;#x200B;
+We are Climate Mind – [www.climatemind.org](http://www.climatemind.org/) and we are building a tool that communicates to users how climate change personally affects them. How the things they care about are affected and gives attractive solutions that align with users' world view, lifestyle, identity, skillset, location and more.
 
-I've passed my dispatch function (parentDispatchFunction as the prop) from ParentComponent to ChildComponent. I need ChildComponent to call that Dispatch function but I need to pass in arguments from ChildComponent back up when I do.
+This is an international team of volunteers who are alarmed about climate change. If this sounds like you drop us an email at [hello@climatemind.org](mailto:hello@climatemind.org)
+## [7][Material UI theming](https://www.reddit.com/r/reactjs/comments/gv6ozy/material_ui_theming/)
+- url: https://www.reddit.com/r/reactjs/comments/gv6ozy/material_ui_theming/
+---
+So I am currently developing an application and I am quite new to react. So please forgive me if this is somehow a silly question. I am using material ui with my application and am wondering how I might provide a light and a dark theme for example. So I am wrapping my App Component with a ThemeProvider Component which will get theme as a prop. My ultimate goal is to read out a folder structure in the folder "themes" and provide a entry to a select input for every folder found. When saving on a settings page the selected theme get's written to a sqlite database and the application will use the theme within the folder which was selected from the dropdown.
 
-&amp;#x200B;
+I hope you guys understand what I am trying to do. So here are the questions:
 
-I've tried to call the dispatch function directly with "parentDispatchFunction" (which works), but when I try to pass things back in with "parentDispatchFunction(argumentFromChild)" it doesn't call the parent function at all. I don't know how to dynamically access the function to change the parameters, or call it with parameters directly. Could someone please help me? Thank you!
+1. How can I read out a folderstructure and pipe that into props of a select component?
+2. How can I read a string from a database and apply the theme.js within a subdirectory to the ThemeProvider theme prop?
+
+Thanks for the help in advance,
+
+Patrick
+## [8][How to add caching headers to axios get requests](https://www.reddit.com/r/reactjs/comments/gv6dm7/how_to_add_caching_headers_to_axios_get_requests/)
+- url: https://www.reddit.com/r/reactjs/comments/gv6dm7/how_to_add_caching_headers_to_axios_get_requests/
+---
+Hello,
+
+Just wondering how I can add a cache header to axios get requests. Is this something I can command the browser to do frontend or do I have to configure something on my backend?
+
+Thanks!
+## [9][Setup a react app from scratch! Part 1 of a remote workshop recording](https://www.reddit.com/r/reactjs/comments/gv6dcn/setup_a_react_app_from_scratch_part_1_of_a_remote/)
+- url: https://www.reddit.com/r/reactjs/comments/gv6dcn/setup_a_react_app_from_scratch_part_1_of_a_remote/
+---
+Over the course of the past few months, I’ve been speaking to a few friends, students, and industry peers who have unfortunately lost their jobs. In one way or another, they have expressed anxiety or worry as they enter the current job market. This community has been nothing but amazing to me, so I  have been eagerly looking for ways to give back.
+
+This past Saturday, May the 30th, 2020, along with \~30 engineers we held a workshop where we built a react app from scratch. We started with an empty terminal and added dependencies until we eventually worked our way to rendering content with React. As we added those dependencies we explored what each of them was doing and how they would play into the React ecosystem.
+
+This is pretty much the first time I'm sharing something like this on the web so any feedback is greatly appreciated
+
+I hope you can find some value from this tutorial! :D
+
+Github:  [https://github.com/aromanarguello/workshop-2020-react](https://github.com/aromanarguello/workshop-2020-react)
+
+[https://www.youtube.com/watch?v=K41DUe38Lc4&amp;t=115s](https://www.youtube.com/watch?v=K41DUe38Lc4&amp;t=115s)
+## [10][I'm using react and express/firebase](https://www.reddit.com/r/reactjs/comments/gv6bzm/im_using_react_and_expressfirebase/)
+- url: https://www.reddit.com/r/reactjs/comments/gv6bzm/im_using_react_and_expressfirebase/
+---
+reactJS/expressjs/firebase
+
+Good day 
+Please I'm developing an app with firebase/expressjs backend and server
+I would like to know how I'll be able to create the client side 
+And the admin dashboard so the admin can see what details on the user client detail inputted.
+I'll love to know the best option for it
+Thanks
+## [11][Help me understand user-auth using react-router-v5 (with hooks)](https://www.reddit.com/r/reactjs/comments/gv63y0/help_me_understand_userauth_using_reactrouterv5/)
+- url: https://www.reddit.com/r/reactjs/comments/gv63y0/help_me_understand_userauth_using_reactrouterv5/
+---
+Hey everyone,
+
+I am a reactjs beginner. I want to learn how to react-router-v5. I know what `Route, exact, and switch` do. I am able to use redux-toolkit and know how states and hooks work. 
+
+I have trouble getting Protected Routes + Redirect on login to work. I want to learn and understand it step by step. Because there's a lack of tutorials on this, I turn to you guys for this! :)
+
+I'll implement it chunk by chunk. Each parent comment will have a chunk that I'll work on with your help!
+## [12][React app and admin](https://www.reddit.com/r/reactjs/comments/gv5xp7/react_app_and_admin/)
+- url: https://www.reddit.com/r/reactjs/comments/gv5xp7/react_app_and_admin/
+---
+Good day 
+Please I'm developing an app with firebase/expressjs backend and server
+I would like to know how I'll be able to create the client side 
+And the admin dashboard so the admin can see what details on the user client detail inputted
+Thanks

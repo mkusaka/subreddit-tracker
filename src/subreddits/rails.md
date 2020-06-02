@@ -1,18 +1,69 @@
 # rails
-## [1][Absolute beginner building a web app! :D](https://www.reddit.com/r/rails/comments/gugj7a/absolute_beginner_building_a_web_app_d/)
-- url: https://www.reddit.com/r/rails/comments/gugj7a/absolute_beginner_building_a_web_app_d/
+## [1][Resources for Fancy Links? Specifically trying to populate user/email field if redirected to login after click](https://www.reddit.com/r/rails/comments/gv3ydx/resources_for_fancy_links_specifically_trying_to/)
+- url: https://www.reddit.com/r/rails/comments/gv3ydx/resources_for_fancy_links_specifically_trying_to/
 ---
-Hey there Rails community! I am building a beginner web app . 
+The business that I’m designing for has a lot of stubborn, crotchety customers, and in this new infrastructure, I’m trying to save the employees as much time as possible by empowering customers (who don’t know how to search their email, or google a tracking number, or make it two clicks past a login page).
 
-The app contains users that register/log in (using devise) and bus tickets that are shown on the welcome page. Everyone can see the bus tickets, but only users that are registered+logged in can buy (its fake buying :D). Additionally, users that have bought the ticket have the option to cancel it (no later than 1 hour before bus starts).
+What’s the best way for including params in a link that then update the value of an input?
 
-The tricky part here for me is how to display the tickets that the user already bought, and then to add the option of cancelling. I thought maybe to add a third table that would connect users and tickets, and then display that on the "My tickets" page? Not sure how to accomplish that. 
+I feel like I could just sit down and build a param trigger to render JS and put logic in a js.erb file, but something in my gut is saying that tailoring to unique params situations is usually a job for a pack full of jquery
+## [2][Order of Callbacks in rails 4](https://www.reddit.com/r/rails/comments/gv3k0n/order_of_callbacks_in_rails_4/)
+- url: https://www.reddit.com/r/rails/comments/gv3k0n/order_of_callbacks_in_rails_4/
+---
+I have a model say \`Item\` which has a method called on \`after\_commit\` but at the same time, the item model also has an Observer called \`ItemObserver\`. The observer also has an \`after\_commit\` callback which resets the cache.
 
-If anyone could chip in with a bit of advice I would be really grateful! Thanks guys.
+Now my issue is on the update of the \`item\` model the \`after\_commit\` on the model is called first before the \`after\_commit\` on the observer hence the cache isn't reset and the \`after\_commit\` runs on stale data learning to invalid actions.
 
-tickets(bus:string, time:datetime, quantity:integer, price:integer)
-users (standard devise table with email, password and so on)
-## [2][How to rescue custom exceptionin transaction block while still rolling back everything?](https://www.reddit.com/r/rails/comments/guk18l/how_to_rescue_custom_exceptionin_transaction/)
+I wanted to know if it's possible to force the observer's \`after\_commit\` to run first so that is refreshed with the latest portal for all subsequent callbacks.
+## [3][Is it poor form to have to supply an array as an argument to initialize, even if there's only one object in the array?](https://www.reddit.com/r/rails/comments/guv73y/is_it_poor_form_to_have_to_supply_an_array_as_an/)
+- url: https://www.reddit.com/r/rails/comments/guv73y/is_it_poor_form_to_have_to_supply_an_array_as_an/
+---
+Hi all,
+
+I have a class which is initialised with 3 arguments.
+
+`def initialize(arg1:, arg2:, array_of_objects:)
+  @arg1 = arg1
+  @arg2 = arg2
+  @array_of_objects = array_of_objects
+end`
+
+My code requires that I run a method on each object in my_class_instance.array_of_objects. There can be one or more objects in that array.
+
+At the moment I'm initializing like this:
+
+`MyClass.new("foo", "bar", [MyOtherClass.new])`
+
+If I don't do it this way, then when I try to run .each on the array_of_objects, it throws an error.
+
+Is this bad practice? And if so, how should I be supplying n number of objects to the initialize method?
+
+Thanks and apologies for the formatting, I only have access to my phone right now.
+## [4][Anybody have any experience with House of Dubs?](https://www.reddit.com/r/rails/comments/gutn5u/anybody_have_any_experience_with_house_of_dubs/)
+- url: https://www.reddit.com/r/rails/comments/gutn5u/anybody_have_any_experience_with_house_of_dubs/
+---
+Just got a freelance offer from them stating a budget and what they need. It's a static informational site which I'm hoping to code top-bottom from scratch. More for practice, though I could just as easily go with a hosting service like GoDaddy, WordPress, Wix, etc. by the looks of it. Curious if anyone has experience with this and knows more or less how I should handle billing to make sure everything plays out well for both parties. Rails related because I'm enjoying using rails and want to bring a hammer to do a scissor's job.
+## [5][donorbox - what is it like working for them?](https://www.reddit.com/r/rails/comments/guynpd/donorbox_what_is_it_like_working_for_them/)
+- url: https://www.reddit.com/r/rails/comments/guynpd/donorbox_what_is_it_like_working_for_them/
+---
+
+## [6][Conventions...](https://www.reddit.com/r/rails/comments/guuqg5/conventions/)
+- url: https://www.reddit.com/r/rails/comments/guuqg5/conventions/
+---
+Ruby on Rails Conventions is important to develop as a  team. 😊
+
+&amp;#x200B;
+
+Controller -&gt; plural.
+
+Model -&gt; singular
+
+Migration -&gt; plural.
+
+&amp;#x200B;
+
+but sometimes weird when generate them 😅
+## [7][How to rescue custom exceptionin transaction block while still rolling back everything?](https://www.reddit.com/r/rails/comments/guk18l/how_to_rescue_custom_exceptionin_transaction/)
 - url: https://www.reddit.com/r/rails/comments/guk18l/how_to_rescue_custom_exceptionin_transaction/
 ---
 Suppose I would like to add a condition inside a transaction block which would raise an exception that would be raised, rescued, but I would still like all previous saves to be rolled back:
@@ -49,7 +100,20 @@ This will not rollback saves to object1 and object2. This is because by rescuing
     end
     
     redirect_to where_i_came_from
-## [3][How can I sort an array of hashes into separate arrays based on key value uniqueness?](https://www.reddit.com/r/rails/comments/gu8nmc/how_can_i_sort_an_array_of_hashes_into_separate/)
+## [8][Absolute beginner building a web app! :D](https://www.reddit.com/r/rails/comments/gugj7a/absolute_beginner_building_a_web_app_d/)
+- url: https://www.reddit.com/r/rails/comments/gugj7a/absolute_beginner_building_a_web_app_d/
+---
+Hey there Rails community! I am building a beginner web app . 
+
+The app contains users that register/log in (using devise) and bus tickets that are shown on the welcome page. Everyone can see the bus tickets, but only users that are registered+logged in can buy (its fake buying :D). Additionally, users that have bought the ticket have the option to cancel it (no later than 1 hour before bus starts).
+
+The tricky part here for me is how to display the tickets that the user already bought, and then to add the option of cancelling. I thought maybe to add a third table that would connect users and tickets, and then display that on the "My tickets" page? Not sure how to accomplish that. 
+
+If anyone could chip in with a bit of advice I would be really grateful! Thanks guys.
+
+tickets(bus:string, time:datetime, quantity:integer, price:integer)
+users (standard devise table with email, password and so on)
+## [9][How can I sort an array of hashes into separate arrays based on key value uniqueness?](https://www.reddit.com/r/rails/comments/gu8nmc/how_can_i_sort_an_array_of_hashes_into_separate/)
 - url: https://www.reddit.com/r/rails/comments/gu8nmc/how_can_i_sort_an_array_of_hashes_into_separate/
 ---
 Hi all,  
@@ -104,86 +168,7 @@ Hope this makes sense.
 
 
 Thanks
-## [4][JavaEE ala Rails](https://www.reddit.com/r/rails/comments/gu4h9q/javaee_ala_rails/)
+## [10][JavaEE ala Rails](https://www.reddit.com/r/rails/comments/gu4h9q/javaee_ala_rails/)
 - url: https://www.reddit.com/r/rails/comments/gu4h9q/javaee_ala_rails/
 ---
 I took something I learned with rails and revisited JavaEE recreating the rails crud with JSF, it is not fashionable but seems better than nowaday development.  Rails developers can identify what I did here?  [JSF-PERFECT-CRUD](https://github.com/lazaronixon/jsf-perfect-crud)
-## [5][My first VSCode extension for Rails tests](https://www.reddit.com/r/rails/comments/gttg2k/my_first_vscode_extension_for_rails_tests/)
-- url: https://www.reddit.com/r/rails/comments/gttg2k/my_first_vscode_extension_for_rails_tests/
----
-Having switched recently from rspec to minitest I missed an easy way to switch between test files and code. There is an extension for Rspec already - [Rails-go-to-spec](https://marketplace.visualstudio.com/items?itemName=sporto.rails-go-to-spec), based on that I created a [version for minitest](https://marketplace.visualstudio.com/items?itemName=SimonBo.rails-go-to-test). It creates a new test file with boilerplate or opens the existing test file. Enjoy!
-## [6][How do I add 'belongs_to' to existing Model](https://www.reddit.com/r/rails/comments/gtxdnr/how_do_i_add_belongs_to_to_existing_model/)
-- url: https://www.reddit.com/r/rails/comments/gtxdnr/how_do_i_add_belongs_to_to_existing_model/
----
-So I was following this guide  [The has\_one :through Association](https://guides.rubyonrails.org/association_basics.html#the-has-one-through-association) All seem good, just I was wondering how do I add 't.belongs\_to :supplier' part to existing model/scheme?
-
-    class CreateAccountHistories &lt; ActiveRecord::Migration[5.0]
-      def change
-        create_table :suppliers do |t|
-          t.string :name
-          t.timestamps
-        end
-     
-        create_table :accounts do |t|
-          t.belongs_to :supplier   &lt;&lt;&lt;&lt;&lt;&lt; THIS!!!
-          t.string :account_number
-          t.timestamps
-        end
-     
-        create_table :account_histories do |t|
-          t.belongs_to :account
-          t.integer :credit_rating
-          t.timestamps
-        end
-      end
-    end
-## [7][Rails but not only for API](https://www.reddit.com/r/rails/comments/gtyuqw/rails_but_not_only_for_api/)
-- url: https://www.reddit.com/r/rails/comments/gtyuqw/rails_but_not_only_for_api/
----
-Hi guys, I was wondering if a normal rails app (created with just a rails new) can be used as an API. In my situation i want to create a website and a react native app.
-
-So do i need work on my rails like usual, or do i need to create 2 different path in my routes ? Or maybe something else?
-## [8][Question about retrieving/streaming media from AWS S3 in Rails.](https://www.reddit.com/r/rails/comments/gtttn8/question_about_retrievingstreaming_media_from_aws/)
-- url: https://www.reddit.com/r/rails/comments/gtttn8/question_about_retrievingstreaming_media_from_aws/
----
-Hi guys!
-
-So I’m new to PosgreSQL usage with Rails so please bear with me.
-
-I’m building a Udemy clone as a small project and I was wondering how I would stream videos from my Amazon S3 buckets.
-
-So I’m using PosgreSQL to store the name of the video, author, and date published. But how do I retrieve the video files in a way where it would only allow subscribed users to view the videos?
-
-Also, how would I be able to refer to the media in S3 from PostgreSQL?
-
-Would this be handled with the controller rather than with AWS S3?
-
-Any help or insight would be much appreciated! Thank you!
-## [9][Stackoverflow 2020 developer survey results](https://www.reddit.com/r/rails/comments/gtm7kg/stackoverflow_2020_developer_survey_results/)
-- url: https://www.reddit.com/r/rails/comments/gtm7kg/stackoverflow_2020_developer_survey_results/
----
-IMHO the results of the survey show Ruby and Rails in bad company:
-
-* Most loved / dreaded languages (Ruby):
-
- [https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages) 
-
-**=&gt;** Ruby is 7th most dreaded after VBA, Objective, Perl, Assembly, C, PHP
-
-* Most loved / dreaded frameworks (Rails):
-
-[https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-web-frameworks](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-web-frameworks)
-
-**=&gt;** Rails is 6th most dreaded after Angular, Drupal, jQuery, ASP, Symfony 
-
-&amp;#x200B;
-
-What do you think about it?
-## [10][Oauth/OmniAuth/etc.](https://www.reddit.com/r/rails/comments/gtq9et/oauthomniauthetc/)
-- url: https://www.reddit.com/r/rails/comments/gtq9et/oauthomniauthetc/
----
-Quick question... Would it be unwise to limit website logins to OAuth services? Meaning, I don't use devise and have them create users, instead just have them sign in via whatevertf they wanna use? I've personally enjoyed having that flexibility on my end and use it fairly often. That being said:
-
-1) Would you use a website that only takes in OAuth-type registrations?
-
-2) Would devise be the best way to handle this still? or is there a better option available with ruby 2.7 &amp; Rails 6? (Saw the omniauth section of Devise says it works best with 2.5 so I'm not sure on this).

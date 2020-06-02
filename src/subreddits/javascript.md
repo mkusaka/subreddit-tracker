@@ -85,43 +85,43 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][I made a babeljs plugin to automatically write unit tests. I hope many find this useful :D](https://www.reddit.com/r/javascript/comments/gucq0g/i_made_a_babeljs_plugin_to_automatically_write/)
+## [3][The things I found annoy me maintaining an open-source library with 30M monthly npm downloads](https://www.reddit.com/r/javascript/comments/gv2j9c/the_things_i_found_annoy_me_maintaining_an/)
+- url: https://github.com/kossnocorp/etiquette
+---
+
+## [4][Web scraping with Javascript](https://www.reddit.com/r/javascript/comments/gumsx8/web_scraping_with_javascript/)
+- url: https://www.scrapingbee.com/blog/web-scraping-javascript/
+---
+
+## [5][Entire jsComplete Library is now FREE](https://www.reddit.com/r/javascript/comments/guvnzc/entire_jscomplete_library_is_now_free/)
+- url: https://medium.com/edge-coders/the-entire-jscomplete-library-is-now-free-5fb7e5cd5406?_branch_match_id=431536048923415405
+---
+
+## [6][Reasons to use GatsbyJs in your next project and reasons to not.](https://www.reddit.com/r/javascript/comments/gv751p/reasons_to_use_gatsbyjs_in_your_next_project_and/)
+- url: https://dev.to/tharunshiv/why-you-should-use-gatsbyjs-and-when-not-to-use-it-oli
+---
+
+## [7][Code Smells in JavaScript](https://www.reddit.com/r/javascript/comments/gv5b43/code_smells_in_javascript/)
+- url: https://medium.com/better-programming/more-code-smells-in-javascript-113067dbd89f
+---
+
+## [8][Solid - a declarative Javascript library for creating user interfaces. It does not use a Virtual DOM. Instead it opts to compile its templates down to real DOM nodes and wrap updates in fine grained reactions](https://www.reddit.com/r/javascript/comments/gumbw3/solid_a_declarative_javascript_library_for/)
+- url: https://github.com/ryansolid/solid
+---
+
+## [9][Simple sandbox: How to design and use a Vue CRUD app for testing and learning](https://www.reddit.com/r/javascript/comments/gv40w4/simple_sandbox_how_to_design_and_use_a_vue_crud/)
+- url: https://medium.com/@jacobcohenrosenthal/simple-sandbox-how-to-design-and-use-a-vue-crud-app-for-testing-and-learning-8f8cc561d75
+---
+
+## [10][Reddit Light with Typeahead+React](https://www.reddit.com/r/javascript/comments/guwld5/reddit_light_with_typeaheadreact/)
+- url: https://reddit-light.herokuapp.com
+---
+
+## [11][I made a babeljs plugin to automatically write unit tests. I hope many find this useful :D](https://www.reddit.com/r/javascript/comments/gucq0g/i_made_a_babeljs_plugin_to_automatically_write/)
 - url: https://github.com/Ghost---Shadow/unit-test-recorder
 ---
 
-## [4][Basic.css - Classless CSS Starter File](https://www.reddit.com/r/javascript/comments/guhmyy/basiccss_classless_css_starter_file/)
-- url: https://vladocar.github.io/Basic.css/
----
-
-## [5][Deep dive into lazy loading images](https://www.reddit.com/r/javascript/comments/gu1vfo/deep_dive_into_lazy_loading_images/)
-- url: https://dev.to/carles/deep-dive-into-lazy-loading-images-211f
----
-
-## [6][A Next JS, Chakra UI, Express JS hobby project to have a listing of baby names, choosing and sharing.](https://www.reddit.com/r/javascript/comments/gufwtx/a_next_js_chakra_ui_express_js_hobby_project_to/)
-- url: https://babynamestart.com
----
-
-## [7][userinterface.js - mini library to build front-end JavaScript apps](https://www.reddit.com/r/javascript/comments/gui8qo/userinterfacejs_mini_library_to_build_frontend/)
-- url: https://github.com/thoughtsunificator/userinterface.js
----
-
-## [8][What is the best and right way to open-source packages from a company monorepo?](https://www.reddit.com/r/javascript/comments/gui6j4/what_is_the_best_and_right_way_to_opensource/)
-- url: /r/AskProgramming/comments/gui6c4/what_is_the_best_and_right_way_to_opensource/
----
-
-## [9][Flatten array with JavaScript reduce function](https://www.reddit.com/r/javascript/comments/guk2ua/flatten_array_with_javascript_reduce_function/)
-- url: https://varya.me/blog/flatten-array-with-reduce/
----
-
-## [10][6 ways to learn JavaScript effectively](https://www.reddit.com/r/javascript/comments/gujtwx/6_ways_to_learn_javascript_effectively/)
-- url: https://www.wespeaksuccess.com/learn-javascript-quickly-the-better-way/
----
-
-## [11][Chrome Extension that turns your "New Tab" into a note taking tool (New version)](https://www.reddit.com/r/javascript/comments/gujody/chrome_extension_that_turns_your_new_tab_into_a/)
-- url: https://github.com/penge/my-notes
----
-
-## [12][How to detect if an object has been garbage collected in Javascript](https://www.reddit.com/r/javascript/comments/gujf0n/how_to_detect_if_an_object_has_been_garbage/)
-- url: http://stevehanov.ca/blog/?id=148
+## [12][VS Code Deprecated – Show deprecated usages in the editor](https://www.reddit.com/r/javascript/comments/guluq7/vs_code_deprecated_show_deprecated_usages_in_the/)
+- url: https://github.com/balajmarius/vscode-deprecated
 ---
 

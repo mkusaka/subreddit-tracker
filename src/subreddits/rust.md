@@ -23,11 +23,59 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/guo51x/whats_everyone_working_on_this_week_232020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-23-2020/43609?u=llogiq)!
-## [3][Rust enters the TIOBE index top 20 for the first time](https://www.reddit.com/r/rust/comments/guzib4/rust_enters_the_tiobe_index_top_20_for_the_first/)
-- url: https://www.tiobe.com/tiobe-index/
+## [3][What features would you like to see in a Rust IDE?](https://www.reddit.com/r/rust/comments/gvnwcx/what_features_would_you_like_to_see_in_a_rust_ide/)
+- url: https://users.rust-lang.org/t/what-features-would-you-like-to-see-in-a-rust-ide/43697
 ---
 
-## [4][Rust is amazing! (a C++ developer's experience writing a raytracer in Rust)](https://www.reddit.com/r/rust/comments/gv2act/rust_is_amazing_a_c_developers_experience_writing/)
+## [4][Rust seems like the most consistent language I've ever used? What's inconsistent about it from your experience?](https://www.reddit.com/r/rust/comments/gvqhea/rust_seems_like_the_most_consistent_language_ive/)
+- url: https://www.reddit.com/r/rust/comments/gvqhea/rust_seems_like_the_most_consistent_language_ive/
+---
+Almost every language I've encountered there have been plenty of questionable (but understandable) decisions (cpp no ABI break , vector&lt;bool&gt;, pythons GIL, java type erasure on generics, etc.). I've yet to encounter a single issue like that in Rust. Everything about it seems consistent and have one and only one way to do it and if there is another way to do something, it seems fulfills a very specific purpose.
+
+To be honest, I'm almost certain there must be some problems like the ones mentioned earlier though so I'd like to hear them.
+## [5][This is a neat trick for getting good runtime performance with Development mode builds](https://www.reddit.com/r/rust/comments/gvrgca/this_is_a_neat_trick_for_getting_good_runtime/)
+- url: https://www.reddit.com/r/rust/comments/gvrgca/this_is_a_neat_trick_for_getting_good_runtime/
+---
+You can tell Cargo to compile all your dependencies with full optimisation (like in Release mode), while compiling your own code with few optimisations (like in Development mode). Since your dependencies change rarely you can take the hit of compiling them in Release mode once without affecting your day-to-day workflow much. Potentially this can give you the best of both worlds - fast run time and fast(ish) compile times.
+
+    [profile.dev.package."*"]
+    # Set the default for dependencies in Development mode.
+    opt-level = 3
+
+    [profile.dev]
+    # Turn on a small amount of optimisation in Development mode.
+    opt-level = 1
+
+Of course the effectiveness will depend heavily on your own individual program, but worth trying I think.
+
+As the [Cargo profiles](https://doc.rust-lang.org/cargo/reference/profiles.html#overrides-and-generics) page shows, if you make heavy use of generics from 3rd party crates then you won't get the full benefit, but in most cases I would not be surprised if 90% of the Rust code in your program is actually from crates and can benefit from this. It certainly worked fantastically well on a game I was writing.
+## [6][Parcel and Rust: A WASM Romcom](https://www.reddit.com/r/rust/comments/gvqje8/parcel_and_rust_a_wasm_romcom/)
+- url: https://dev.p.ota.to/post/parcel-and-rust-a-wasm-romcom-4kgsjnrdm5t/
+---
+
+## [7][DOOM Fire implemented in rust](https://www.reddit.com/r/rust/comments/gvcj6d/doom_fire_implemented_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/gvcj6d/doom_fire_implemented_in_rust/
+---
+I was looking for a simple project to try out different graphics libraries from the rust ecosystem.
+
+I ended up implementing the DOOM fire effect (based on [Fabien Sanglard's blog post](https://fabiensanglard.net/doom_fire_psx/)) and tried it using different libraries:
+
+* [minifb](https://github.com/emoon/rust_minifb)
+* [pixels](https://github.com/parasyte/pixels)
+* [sdl2 bindings](https://github.com/Rust-SDL2/rust-sdl2)
+
+The code can be found [here](https://github.com/r-marques/doomfire)
+
+This could be helpful for someone new to rust and trying to get into game development and looking for the right libraries to use.
+## [8][Why F#, Rust and Others Use Option Type Instead Of Nullable types like C# 8 Or TypeScript?](https://www.reddit.com/r/rust/comments/gvjccd/why_f_rust_and_others_use_option_type_instead_of/)
+- url: https://softwareengineering.stackexchange.com/questions/410724/why-f-rust-and-others-use-option-type-instead-of-nullable-types-like-c-8-or-t
+---
+
+## [9][A new Wasm/rust newsletter. Focus on the server-side.](https://www.reddit.com/r/rust/comments/gvqdwq/a_new_wasmrust_newsletter_focus_on_the_serverside/)
+- url: /r/WebAssembly/comments/gv01ds/a_new_webassembly_newsletter_focus_on_the/
+---
+
+## [10][Rust is amazing! (a C++ developer's experience writing a raytracer in Rust)](https://www.reddit.com/r/rust/comments/gv2act/rust_is_amazing_a_c_developers_experience_writing/)
 - url: https://www.reddit.com/r/rust/comments/gv2act/rust_is_amazing_a_c_developers_experience_writing/
 ---
 Background: I've been writing C++ professionally since 2011, and I started to learn Rust last fall by reading a couple of books and solving some Advent of Code 2019 problems (finished 1-11 except 10 in Rust).  I also did the [Ray Tracing in One Weekend](https://raytracing.github.io/) tutorial in both Rust and Go, and just finished the 2nd "Ray Tracking: The Next Week" part of the series in Rust.
@@ -43,54 +91,37 @@ The few minor complaints I have are the lack of inheritance and function overloa
 Conclusion: Rust is awesome, and I hope to do some more projects in it in the future!                                                                                                                             
                                                                                                                                                                 
 (I'd post the code, but my employer requires us to go through an open source release approval process to release even personal projects... might do it someday)
-## [5][piet-gpu progress report](https://www.reddit.com/r/rust/comments/gv1b95/pietgpu_progress_report/)
-- url: https://raphlinus.github.io/rust/graphics/gpu/2020/06/01/piet-gpu-progress.html
+## [11][(help) Type error and Result](https://www.reddit.com/r/rust/comments/gvtuj6/help_type_error_and_result/)
+- url: https://www.reddit.com/r/rust/comments/gvtuj6/help_type_error_and_result/
 ---
+I'm a new rust programmer and I thought I'd start a project to learn it a bit better. I'm trying to create a header structure but when implementing a trait function I get an error that I dont understand how to resolve.
 
-## [6][Rust Community Wiki (very incomplete)](https://www.reddit.com/r/rust/comments/gv6ktp/rust_community_wiki_very_incomplete/)
+This is a function in my trait. 
+
+        fn get_e_entry_value(&amp;self) -&gt; Result&lt;u32, u64&gt; {
+            match self.e_entry {
+                Addr::Elf32(e_entry) =&gt; Ok(e_entry),
+                Addr::Elf64(e_entry) =&gt; Ok(e_entry),
+            }
+        }
+
+when compilingwith the above I get the following error
+
+    error[E0308]: mismatched types
+       --&gt; src/elf/structures.rs:258:40
+        |
+    258 |             Addr::Elf64(e_entry) =&gt; Ok(e_entry),
+        |                                        ^^^^^^^ expected `u32`, found `u64`
+        |
+    help: you can convert an `u64` to `u32` and panic if the converted value wouldn't fit
+        |
+    258 |             Addr::Elf64(e_entry) =&gt; Ok(e_entry.try_into().unwrap()),
+        |                                        ^^^^^^^^^^^^
+
+Which is complaining that entry is expected to be a u32 even though the return type is actually a u64 inside the Result and the e\_entry type for the second match arm is a u64 (wrapped in an Ok).
+
+So, the compiler knows its a u64 as evidenced by the 'found \`u64\`' statement. I have no idea what is going on. Can any of you help me figure out just what is going on?
+## [12][Rust Community Wiki (very incomplete)](https://www.reddit.com/r/rust/comments/gv6ktp/rust_community_wiki_very_incomplete/)
 - url: https://runrust.miraheze.org
 ---
 
-## [7][We are the devs behind Lemmy, an open source, Federated alternative to reddit! AMA!](https://www.reddit.com/r/rust/comments/gukx09/we_are_the_devs_behind_lemmy_an_open_source/)
-- url: /r/linux/comments/guklhr/we_are_the_devs_behind_lemmy_an_open_source/
----
-
-## [8][Day 1 of learning rust from a programming noob](https://www.reddit.com/r/rust/comments/guspl6/day_1_of_learning_rust_from_a_programming_noob/)
-- url: https://www.reddit.com/r/rust/comments/guspl6/day_1_of_learning_rust_from_a_programming_noob/
----
-TLDR: I'm trying to learn rust with very little programming experience, and having a blast so far. 
-
-Little background, I'm a controls engineer with a hobby interest in traditional programming. I'm well versed in ladder logic, and know enough Python to write some quick and dirty scripts to automate some of the stuff I do at work.
-
-And that's it.
-
-I kept reading how great rust was, but that it wasn't beginner friendly. I was getting annoyed with finding Python tutorials that interested me, and were at the slightly above basic level I'm at. 
-
-I opened the Rust Book online, and got everything set up per the instructions. 
-
-From my perspective, so far I really enjoy rust and can see what the hype is about. Cargo is fantastic, and the error messages in rust are better than anything else I've ever saw. I feel like I'm learning better habits with rust because I don't really have a choice, whereas with Python just about anything will run. The syntax feels intuitive, and the community is awesome. 
-
-My goal is to be able to contribute either to open source projects or learning resources one day. I've got so much use from both, I want to give back a little.
-
-No, I probably wouldn't recommend others to do what I'm doing, but it's working for me and I'm excited to keep at it.
-## [9][A blog from a colleague about his contributions for risc v support in rust, thought it would be worth sharing :)](https://www.reddit.com/r/rust/comments/gv6wl7/a_blog_from_a_colleague_about_his_contributions/)
-- url: https://www.codethink.co.uk/articles/2020/improving-risc-v-linux-support-in-rust/
----
-
-## [10][rust-analyzer changelog #27](https://www.reddit.com/r/rust/comments/gumhni/rustanalyzer_changelog_27/)
-- url: https://rust-analyzer.github.io/thisweek/2020/06/01/changelog-27.html
----
-
-## [11][IntelliJ Rust Changelog #123](https://www.reddit.com/r/rust/comments/gumy60/intellij_rust_changelog_123/)
-- url: https://intellij-rust.github.io/2020/06/01/changelog-123.html
----
-
-## [12][Rust vs FP Scala](https://www.reddit.com/r/rust/comments/gv141b/rust_vs_fp_scala/)
-- url: https://www.reddit.com/r/rust/comments/gv141b/rust_vs_fp_scala/
----
-Hi all   
-
-I am developing in Scala in FP style and maybe consider to change to Rust. 
-What is the pros and cons for Rust over Scala?   
-
-Thanks

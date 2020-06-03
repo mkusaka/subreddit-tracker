@@ -125,11 +125,95 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][stdgpu 1.3.0 released!](https://www.reddit.com/r/cpp/comments/gv655e/stdgpu_130_released/)
+## [3][You asked, I listened! Here is my updated and improved modern C++ template, now with static analyzers, Doxygen, CI caching and more!](https://www.reddit.com/r/cpp/comments/gvdu67/you_asked_i_listened_here_is_my_updated_and/)
+- url: https://www.reddit.com/r/cpp/comments/gvdu67/you_asked_i_listened_here_is_my_updated_and/
+---
+[https://github.com/filipdutescu/modern-cpp-template](https://github.com/filipdutescu/modern-cpp-template)
+
+This is an update to [my previous post](https://www.reddit.com/r/cpp/comments/gt0pz1/i_made_a_project_template_for_modern_c_projects/), in which I shared with you [my modern C++ template](https://github.com/filipdutescu/modern-cpp-template).
+
+Everyone was kind enough to give me a lot of feedback on how, what and where to improve it and I wish to once more share it with you, with hopes that you will all be satisfied with its current state.
+
+Once more I am asking for you opinions and I hope you find it useful!
+
+## Features
+  * Modern **CMake** configuration and project, which, to the best of my knowledge, uses the best practices,
+  * An example of a **Clang-Format** config, inspired from the base *Google* model, with minor tweaks. This is aimed only as a starting point, as coding style is a subjective matter, everyone is free to either delete it (for the *LLVM* default) or supply their own alternative,
+  * **Static analyzers** integration, with *Clang-Tidy* and *Cppcheck*, the former being the default option,
+  * **Doxygen** support, through the `ENABLE_DOXYGEN` option, which you can enable if you wish to use it,
+  * **Unit testing** support, through *GoogleTest* (with an option to enable *GoogleMock*) or *Catch2*,
+  * **Code coverage**, enabled by using the `ENABLE_CODE_COVERAGE` option, through *Codecov* CI integration,
+  * **Package manager support**, with *Conan* and *Vcpkg*, through their respective options
+  * **CI workflows for Windows, Linux and MacOS** using *GitHub Actions*, making use of the caching features, to ensure minimum run time,
+  * **.md templates** for: *README*, *Code of Conduct*, *Contributing Guideliness*, *Issues* and *Pull Requests*,
+  * **Permissive license** to allow you to integrate it as easily as possible. The template is licensed under the [Boost Software License](https://www.boost.org/LICENSE_1_0.txt),
+  * Options to build as a header-only library or executable, not just a static or shared library.
+  * *CCache* integration, for speeding up build times
+
+Thank you to everyone who has supported me and I am very grateful for all the feedback you provided, as well as the opportunity to learn a lot of new things through it! I hope I am not posting too soon since the original, but I wanted to give everyone interested an updated. Hopefully you all find at least one thing that is useful for you, getting something in return for the long read!
+
+Edit: formatting.
+
+Edit 2: Updated with latest features/changes.
+## [4][Using Visual Studio Code for Qt Applications - Part Two](https://www.reddit.com/r/cpp/comments/gvqwa2/using_visual_studio_code_for_qt_applications_part/)
+- url: https://www.kdab.com/using-visual-studio-code-for-qt-apps-pt-2/
+---
+
+## [5][Linux development with Visual Studio: first-class support for gdbserver, improved build times with Ninja, and updates to the Connection Manager | C++ Team Blog](https://www.reddit.com/r/cpp/comments/gvtgg1/linux_development_with_visual_studio_firstclass/)
+- url: https://devblogs.microsoft.com/cppblog/linux-development-with-visual-studio-first-class-support-for-gdbserver-improved-build-times-with-ninja-and-updates-to-the-connection-manager/?WT.mc_id=reddit-social-marouill
+---
+
+## [6][stdgpu 1.3.0 released!](https://www.reddit.com/r/cpp/comments/gv655e/stdgpu_130_released/)
 - url: https://github.com/stotko/stdgpu/releases/tag/1.3.0
 ---
 
-## [4][I wrote a CPU-Emulator using only the C++ type system.](https://www.reddit.com/r/cpp/comments/guqthy/i_wrote_a_cpuemulator_using_only_the_c_type_system/)
+## [7][C++ IDE with an interpreter in addition to the compiler](https://www.reddit.com/r/cpp/comments/gvsbd2/c_ide_with_an_interpreter_in_addition_to_the/)
+- url: https://www.reddit.com/r/cpp/comments/gvsbd2/c_ide_with_an_interpreter_in_addition_to_the/
+---
+I've been using Python in VS Code lately. Since it's an interpreted language, its Debug Console is very powerful. I also use Visual C++ and I think it would be really cool to have the ability to run arbitrary code on a breakpoint (at least in the debug config). I think this would be a quite big productivity boost for many - you can try different things and immediately see if they give you expected results and the debugging speed improves. Immediate Window in VC++ is very limited. There is Cling but I don't think you could integrate it easily with Clang in an IDE.
+
+Any thoughts?  I'm afraid that it would be too much work to make something like this happen. One way could be to have a Cling IDE and the ability to mark certain parts of code for optimized compiling with Clang, as there are usually not many hotspots in code.
+## [8][RStein.AsyncCpp (06-03-2020) - Task Parallel Library](https://www.reddit.com/r/cpp/comments/gvpepb/rsteinasynccpp_06032020_task_parallel_library/)
+- url: https://www.reddit.com/r/cpp/comments/gvpepb/rsteinasynccpp_06032020_task_parallel_library/
+---
+Original announcement:[https://www.reddit.com/r/cpp/comments/gd5313/task\_parallel\_library\_tpl\_for\_c\_coroutines\_in/](https://www.reddit.com/r/cpp/comments/gd5313/task_parallel_library_tpl_for_c_coroutines_in/)
+
+Changes:
+
+\-Added **AsyncMutex** synchronization primitive.
+
+[https://github.com/renestein/Rstein.AsyncCpp#AsyncMutex](https://github.com/renestein/Rstein.AsyncCpp#AsyncMutex)
+
+\- **TaskFactory.Run automatically unwraps nested Task** (e.g. scheduled lambda-coroutine returns Task).  Very convenient and prevents some hard-to-debug, but easy to introduce bugs in C++ coroutines.
+
+[https://github.com/renestein/Rstein.AsyncCpp#TaskFactory-Unwrap-Nested-Task](https://github.com/renestein/Rstein.AsyncCpp#TaskFactory-Unwrap-Nested-Task)
+
+\- Task has the **Unwrap method** ((Unwrap Task&lt;Task&lt;T&gt; and returns Task&lt;T&gt;) and corresponding **Fjoin** method.
+
+[https://github.com/renestein/Rstein.AsyncCpp#Task-Fjoin](https://github.com/renestein/Rstein.AsyncCpp#Task-Fjoin)
+
+\- Added **SynchronizationContext** \- provides a mechanism to queue work to a specialized context. (useful for marshaling calls to UI thread, event loop, etc.)
+
+[https://github.com/renestein/Rstein.AsyncCpp#synchronizationcontext](https://github.com/renestein/Rstein.AsyncCpp#synchronizationcontext)
+
+\- Added **SynchronizationContextScope** \- RAII class for SynchronizationContext. An instance of this class captures the current synchronization context in the constructor (now 'old' context), installs new synchronization context provided by the user, and restores 'old' synchronization context in the destructor.)
+
+[https://github.com/renestein/Rstein.AsyncCpp#SynchronizationContextScope](https://github.com/renestein/Rstein.AsyncCpp#SynchronizationContextScope)
+
+\- Added **ConfigureAwait** method (for the Task awaiter) - configures if the 'co\_await continuation' is resumed in the specific synchronization context.
+
+[https://github.com/renestein/Rstein.AsyncCpp#ConfigureAwait](https://github.com/renestein/Rstein.AsyncCpp#ConfigureAwait)
+
+\- Added **GlobalTaskSettings::UseOnlyConfigureAwaitFalseBehavior** configuration key - set the key to true if you want to enforce the equivalent of the 'co\_await someTask.ConfigureAwait(false)' for all 'co\_await someTask{anything}' expressions in the application - synchronization context is then never used when resuming the 'co\_await continuation'.
+
+[https://github.com/renestein/Rstein.AsyncCpp#GlobalTaskSettings-UseOnlyConfigureAwaitFalseBehavior](https://github.com/renestein/Rstein.AsyncCpp#GlobalTaskSettings-UseOnlyConfigureAwaitFalseBehavior)
+
+\- **Task.ContinueWith method** has new overloads with CancellationToken argument.
+## [9][Taskflow v2.5.0 released with a new visualization tool](https://www.reddit.com/r/cpp/comments/gvbfix/taskflow_v250_released_with_a_new_visualization/)
+- url: https://github.com/taskflow/taskflow
+---
+
+## [10][I wrote a CPU-Emulator using only the C++ type system.](https://www.reddit.com/r/cpp/comments/guqthy/i_wrote_a_cpuemulator_using_only_the_c_type_system/)
 - url: https://www.reddit.com/r/cpp/comments/guqthy/i_wrote_a_cpuemulator_using_only_the_c_type_system/
 ---
 Due to the Turing completeness of the C++ type system it is possible to implement a complete CPU emulator using only templates. The complete code is executed during compilation, the only run time code is for printing the output and registers.
@@ -137,97 +221,16 @@ Due to the Turing completeness of the C++ type system it is possible to implemen
 [https://github.com/aul12/TemplateCpu](https://github.com/aul12/TemplateCpu)
 
 At the moment not many instructions are supported, but new instructions can be added easily. With the current state it is already possible to calculate the n-th fibonacci number, both iterative and recursive.
-## [5][C++ Weekly - Ep - 3.5x Faster Standard Containers With PMR!](https://www.reddit.com/r/cpp/comments/guq5xo/c_weekly_ep_35x_faster_standard_containers_with/)
-- url: https://www.youtube.com/watch?v=q6A7cKFXjY0&amp;feature=share
+## [11][CppCon 2018: “Grill the Committee”](https://www.reddit.com/r/cpp/comments/gvlfcy/cppcon_2018_grill_the_committee/)
+- url: https://youtu.be/cH0nJPbMFAY
 ---
 
-## [6][A C++20 library for using bitwise operators on flag enums](https://www.reddit.com/r/cpp/comments/guug8j/a_c20_library_for_using_bitwise_operators_on_flag/)
-- url: https://www.reddit.com/r/cpp/comments/guug8j/a_c20_library_for_using_bitwise_operators_on_flag/
+## [12][Can FunctionObject be deprecated and replaced by Callable?](https://www.reddit.com/r/cpp/comments/gvcfze/can_functionobject_be_deprecated_and_replaced_by/)
+- url: https://www.reddit.com/r/cpp/comments/gvcfze/can_functionobject_be_deprecated_and_replaced_by/
 ---
-https://github.com/uyha/flag/tree/master
-## [7][Career path for c++/Qt developer](https://www.reddit.com/r/cpp/comments/gv0sso/career_path_for_cqt_developer/)
-- url: /r/AskProgramming/comments/gut9vw/career_path_for_cqt_developer/
----
+Use case:
 
-## [8][C++ Lambdas, Threads, std::async and Parallel Algorithms](https://www.reddit.com/r/cpp/comments/gufsdu/c_lambdas_threads_stdasync_and_parallel_algorithms/)
-- url: https://www.bfilipek.com/2020/05/lambdas-async.html?m=1
----
+    vector&lt;string&gt; names = {"Not empty"};
+    auto const all_empty = all_of(begin(names), end(names), &amp;string::empty);
 
-## [9][C++ pimpl code generator. Fast pimpl without overhead! No dynamic memory allocation! Cache-friendly! Auto-detects storage size! Generates methods based on implementation!](https://www.reddit.com/r/cpp/comments/gumaq0/c_pimpl_code_generator_fast_pimpl_without/)
-- url: https://www.reddit.com/r/cpp/comments/gumaq0/c_pimpl_code_generator_fast_pimpl_without/
----
-How it works (see section about Fast pimpl): https://blockspacer.github.io/flex_docs/tutorial/
-
-Ready-to-use code generator: https://github.com/blockspacer/flex_pimpl_plugin
-## [10][ApprovalTests.cpp 8.9.0 - supports regex scrubbing, as well as {fmt} from 8.8.0](https://www.reddit.com/r/cpp/comments/gusufw/approvaltestscpp_890_supports_regex_scrubbing_as/)
-- url: https://github.com/approvals/ApprovalTests.cpp/releases/tag/v.8.9.0
----
-
-## [11][We've made a new C++/Oat++ module to make it easier to work with MongoDB](https://www.reddit.com/r/cpp/comments/guxui1/weve_made_a_new_coat_module_to_make_it_easier_to/)
-- url: https://github.com/oatpp/oatpp-mongo
----
-
-## [12][C++20 specification of `std::reverse_iterator` makes creating a `std::string_view` from another `std::string_view`'s reverse iterators impossible.](https://www.reddit.com/r/cpp/comments/gup023/c20_specification_of_stdreverse_iterator_makes/)
-- url: https://www.reddit.com/r/cpp/comments/gup023/c20_specification_of_stdreverse_iterator_makes/
----
-EDIT: See the very bottom of the post. This whole thing was nonsense.
-
-Today I tried something like this\*:
-
-    std::string_view original;
-    std::string_view copy(original.begin(), original.end()); // (1)
-    std::string_view reversed(original.rbegin(), original.rend()); // (2)
-
-To my surprise this didn't compile at all. On further inspection, [`std::string_view` constructor](https://en.cppreference.com/w/cpp/string/basic_string_view/basic_string_view) only got an overload that takes a begin iterator and an end sentinel in C++20. It is even constrained with C++20 concepts. The important part of the constraints:
-
-&gt; - `It` satisfies `contiguous_iterator`, 
-
-&amp;nbsp;
-
-Cool. I do have gcc 10.1. However, this only makes line `(1)` compile. Line `(2)` errors, saying that a `random_access_iterator` isn't a `contiguous_iterator`.
-
-Logically, if `T::iterator` is a `contiguous_iterator`, so must be `T::reverse_iterator`. Or so I thought.
-
-&amp;nbsp;
-
-Let's look at the specification of [`std::string_view`](https://en.cppreference.com/w/cpp/string/basic_string_view) itself.
-
-&amp;nbsp;
-
-`std::string_view::iterator` is the same as `std::string_view::const_iterator` for which cppreference says:
-
-&gt; implementation-defined constant `LegacyRandomAccessIterator`, `ConstexprIterator` (since C++20) and `LegacyContiguousIterator` whose value_type is `CharT`
-
-So we have confirmed that `std::string_view::iterator` models a contiguous iterator. What about `std::string_view::reverse_iterator`?
-
-Once again it is the same as the `const_reverse_iterator` for which cppreference says the following:
-
-&gt; `std::reverse_iterator&lt;const_iterator&gt;`
-
-Is it possible that [`std::reverse_iterator&lt;It&gt;`](https://en.cppreference.com/w/cpp/iterator/reverse_iterator) never produces a contiguous iterator? Well.. here's what cppreference has to say about `std::reverse_iterator&lt;It&gt;::iterator_category`:
-
-&gt; If `std::iterator_traits&lt;Iter&gt;::iterator_category` models `std::derived_from&lt;std::random_access_iterator_tag&gt;`, this is `std::random_access_iterator_tag`. Otherwise, this is `std::iterator_traits&lt;Iter&gt;::iterator_category` unchanged 
-
-And for `iterator_concept`:
-
-&gt; If `Iter` models `std::random_access_iterator`, this is `std::random_access_iterator_tag`. Otherwise, this is `std::bidirectional_iterator_tag`
-
-So yes, having `std::string_view::reverse_iterator` specified as `std::reverse_iterator&lt;std::string_view::const_iterator&gt;` makes this iterator not viable for the new constructor overload.
-
-Proof of the above: https://godbolt.org/z/QHRjsA
-
-&amp;nbsp;
-
-Final thoughts:
-
-1. GCC/libstdc++ seems to have followed the standard to the letter, so there doesn't seem to be a bug to report.
-2. `std::reverse_iterator` seems to have been intentionally designed to avoid ever producing a contiguous iterator. Does anyone know a rationale for this?
-3. This really looks like an oversight in the specification to me.
-
-&amp;nbsp;
-
-\* The actual code I wanted to write is [here](https://godbolt.org/z/uL4UR5)
-
-&amp;nbsp;
-
-EDIT: Nothing to see here folks. I don't know what I was thinking. A `string_view` can't "magically" view a reverse buffer without allocating it too (or holding a stride as mentioned by /u/ramennoodle) and allocation would defeat the purpose of `string_view`.
+I looked through a few invoke-related papers (N4169, P0077R2... any others?) to see if relaxing the algorithm requirements was considered or discussed but I couldn't find any mention of the idea. Is it  because it's dumb in some way? If so please clue me in :).

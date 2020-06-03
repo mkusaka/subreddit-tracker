@@ -84,89 +84,85 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][React Core Team joins Facebook Employee Walkout](https://www.reddit.com/r/reactjs/comments/gusp7u/react_core_team_joins_facebook_employee_walkout/)
+## [3][I've been almost exlusively developing in C#/.NET for about two years, but due to possible layoffs amid COVID started working React tickets at my job about a month ago - holy shit I love it.](https://www.reddit.com/r/reactjs/comments/gvk0vk/ive_been_almost_exlusively_developing_in_cnet_for/)
+- url: https://www.reddit.com/r/reactjs/comments/gvk0vk/ive_been_almost_exlusively_developing_in_cnet_for/
+---
+I've always been apprehensive about working with Javascript due to the lack of type safety confusing the shit out of me. Fortuntely we use Typescript for our React applications which I find easier to manage especially given the size and number of engineers working on it.
+
+Unreal. It's incredibly intuituve and very straightforward to develop with.
+
+My first exposure to any sort of application development was playing with Ionic 2 &amp; 3 in 2016, but I always despised it's coupling with Angular and figured that perhaps front end development wasn't for me and bailed on it.
+
+I'm still not crazy about styling components, but boy building them out and wiring them up to API calls is a god damn breeze.
+
+TLDR; React fucks
+## [4][Apollo Client 3.0.0 rc.0](https://www.reddit.com/r/reactjs/comments/gvdjaa/apollo_client_300_rc0/)
+- url: https://github.com/apollographql/apollo-client/blob/v3.0.0-rc.0/CHANGELOG.md#apollo-client-300-tbd---not-yet-released
+---
+
+## [5][Curated list of dev-related Discord servers](https://www.reddit.com/r/reactjs/comments/gviqqb/curated_list_of_devrelated_discord_servers/)
+- url: https://github.com/ljosberinn/awesome-dev-discord
+---
+
+## [6][[Design Question] When do you call parent handlers?](https://www.reddit.com/r/reactjs/comments/gvtzjf/design_question_when_do_you_call_parent_handlers/)
+- url: https://www.reddit.com/r/reactjs/comments/gvtzjf/design_question_when_do_you_call_parent_handlers/
+---
+Suppose a parent component holds a list of data (id and text). This data is fetched from a database via an HTTP GET request. This component also has a list of subcomponents wherein each subcomponent contains an element which modifies the list on the parent component via another HTTP request (let's say DELETE in this case). Is it better to call the DELETE request within the subcomponent or is it better to call the DELETE request at the parent component?
+## [7][How to build a Markdown Previewer with Reactjs](https://www.reddit.com/r/reactjs/comments/gvce6b/how_to_build_a_markdown_previewer_with_reactjs/)
+- url: https://www.freecodecamp.org/news/how-to-build-a-markdown-previewer-with-react-js/
+---
+
+## [8][How to create a dynamic React App without an API?](https://www.reddit.com/r/reactjs/comments/gvt49x/how_to_create_a_dynamic_react_app_without_an_api/)
+- url: https://www.reddit.com/r/reactjs/comments/gvt49x/how_to_create_a_dynamic_react_app_without_an_api/
+---
+Hello folks. I want to create a React app which can be a simple social media or e-commerce. But I have no idea about backend technologies. Is there a way to create react app without API? Firebase or strapi is enough for this? Is there any other technology like these?
+## [9][Best resources to learn React JS for free in 2020](https://www.reddit.com/r/reactjs/comments/gvcc6b/best_resources_to_learn_react_js_for_free_in_2020/)
+- url: https://neupanedipendra.com.np/free-resources-to-learn-react-js/
+---
+
+## [10][Need help with Framer Motion animation](https://www.reddit.com/r/reactjs/comments/gvrz7l/need_help_with_framer_motion_animation/)
+- url: https://www.reddit.com/r/reactjs/comments/gvrz7l/need_help_with_framer_motion_animation/
+---
+Hi guys, I'm a bit new to animations and wanted to make something similar to Facebook live's reaction animation. I found Framer Motion to be easy to use for this purpose and have attempted remaking that feature but I'm a bit stuck on something. When I click on an emoji, the animation gets activated but I can't seem to unmount it after the transition has been completed.
+
+
+If you view inspect element after an emoji has been fired, the div stays and doesn't get removed. I worry that this might impact performance even though it "works" technically. How can I fix this problem? My code can be found here: https://codesandbox.io/s/frosty-bardeen-xt6uq
+
+
+Thanks!
+## [11][React Core Team joins Facebook Employee Walkout](https://www.reddit.com/r/reactjs/comments/gusp7u/react_core_team_joins_facebook_employee_walkout/)
 - url: https://twitter.com/dan_abramov/status/1267544361929256966
 ---
 
-## [4][A React Testing Library Tutorial for Beginners](https://www.reddit.com/r/reactjs/comments/gv3q4z/a_react_testing_library_tutorial_for_beginners/)
-- url: https://www.robinwieruch.de/react-testing-library
+## [12][Help - Scalable RN App for startup](https://www.reddit.com/r/reactjs/comments/gvqhyb/help_scalable_rn_app_for_startup/)
+- url: https://www.reddit.com/r/reactjs/comments/gvqhyb/help_scalable_rn_app_for_startup/
 ---
+Hello!
 
-## [5][ReactJS API Query](https://www.reddit.com/r/reactjs/comments/gv579t/reactjs_api_query/)
-- url: https://www.reddit.com/r/reactjs/comments/gv579t/reactjs_api_query/
----
-Apologies if this is a stupid question but I am looking to create a simple web app that makes API calls....But the twist here is I have python scripts that call that endpoints, pass all the correct authorization tokens etc before presenting my JSON out on my command line .... 
+Im developing an app (duuh…) for a startup.
 
-So i am wondering is it possible to somehow create a simple react app where a user can click a button, but that button in the "background" executes that python script and presents the data on screen?
-## [6][Climate change NFP looking for volunteers](https://www.reddit.com/r/reactjs/comments/gv79fz/climate_change_nfp_looking_for_volunteers/)
-- url: https://www.reddit.com/r/reactjs/comments/gv79fz/climate_change_nfp_looking_for_volunteers/
----
-We are searching for front-end developers with **React** skills. **Data visualization experience is a bonus!**
+I’ve been developing and programming native apps for quite a few years now, but am just now learning React Native.
 
-We are Climate Mind – [www.climatemind.org](http://www.climatemind.org/) and we are building a tool that communicates to users how climate change personally affects them. How the things they care about are affected and gives attractive solutions that align with users' world view, lifestyle, identity, skillset, location and more.
+Currently I’m working on an App for a startup, and I’m looking for some pointers. We aren’t looking to launch the app anytime soon, so I’m not in a hurry, but I just wanna make sure I get the hang of this from the beginning.
 
-This is an international team of volunteers who are alarmed about climate change. If this sounds like you drop us an email at [hello@climatemind.org](mailto:hello@climatemind.org)
-## [7][Material UI theming](https://www.reddit.com/r/reactjs/comments/gv6ozy/material_ui_theming/)
-- url: https://www.reddit.com/r/reactjs/comments/gv6ozy/material_ui_theming/
----
-So I am currently developing an application and I am quite new to react. So please forgive me if this is somehow a silly question. I am using material ui with my application and am wondering how I might provide a light and a dark theme for example. So I am wrapping my App Component with a ThemeProvider Component which will get theme as a prop. My ultimate goal is to read out a folder structure in the folder "themes" and provide a entry to a select input for every folder found. When saving on a settings page the selected theme get's written to a sqlite database and the application will use the theme within the folder which was selected from the dropdown.
+The app is gonna have some main features: 
 
-I hope you guys understand what I am trying to do. So here are the questions:
+&amp;#x200B;
 
-1. How can I read out a folderstructure and pipe that into props of a select component?
-2. How can I read a string from a database and apply the theme.js within a subdirectory to the ThemeProvider theme prop?
+* Playback Audio from a server (maybe firebase)
+* Download said audio, and playback offline
+* Authentication (again, maybe firebase)
+* Small animations (probably Lottie)
+* Subscriptions
 
-Thanks for the help in advance,
+What I’m thinking:
 
-Patrick
-## [8][How to add caching headers to axios get requests](https://www.reddit.com/r/reactjs/comments/gv6dm7/how_to_add_caching_headers_to_axios_get_requests/)
-- url: https://www.reddit.com/r/reactjs/comments/gv6dm7/how_to_add_caching_headers_to_axios_get_requests/
----
-Hello,
+&amp;#x200B;
 
-Just wondering how I can add a cache header to axios get requests. Is this something I can command the browser to do frontend or do I have to configure something on my backend?
+* React Native as front-end
+* Firebase as back-end (maybe a Parse server, hosted on Back4App)
+* Stripe for handling transactions and subscriptions.
 
-Thanks!
-## [9][Setup a react app from scratch! Part 1 of a remote workshop recording](https://www.reddit.com/r/reactjs/comments/gv6dcn/setup_a_react_app_from_scratch_part_1_of_a_remote/)
-- url: https://www.reddit.com/r/reactjs/comments/gv6dcn/setup_a_react_app_from_scratch_part_1_of_a_remote/
----
-Over the course of the past few months, I’ve been speaking to a few friends, students, and industry peers who have unfortunately lost their jobs. In one way or another, they have expressed anxiety or worry as they enter the current job market. This community has been nothing but amazing to me, so I  have been eagerly looking for ways to give back.
+I’m not looking for specific guidance on small features (like navigation, audio playback packages, UI packages).
 
-This past Saturday, May the 30th, 2020, along with \~30 engineers we held a workshop where we built a react app from scratch. We started with an empty terminal and added dependencies until we eventually worked our way to rendering content with React. As we added those dependencies we explored what each of them was doing and how they would play into the React ecosystem.
-
-This is pretty much the first time I'm sharing something like this on the web so any feedback is greatly appreciated
-
-I hope you can find some value from this tutorial! :D
-
-Github:  [https://github.com/aromanarguello/workshop-2020-react](https://github.com/aromanarguello/workshop-2020-react)
-
-[https://www.youtube.com/watch?v=K41DUe38Lc4&amp;t=115s](https://www.youtube.com/watch?v=K41DUe38Lc4&amp;t=115s)
-## [10][I'm using react and express/firebase](https://www.reddit.com/r/reactjs/comments/gv6bzm/im_using_react_and_expressfirebase/)
-- url: https://www.reddit.com/r/reactjs/comments/gv6bzm/im_using_react_and_expressfirebase/
----
-reactJS/expressjs/firebase
-
-Good day 
-Please I'm developing an app with firebase/expressjs backend and server
-I would like to know how I'll be able to create the client side 
-And the admin dashboard so the admin can see what details on the user client detail inputted.
-I'll love to know the best option for it
-Thanks
-## [11][Help me understand user-auth using react-router-v5 (with hooks)](https://www.reddit.com/r/reactjs/comments/gv63y0/help_me_understand_userauth_using_reactrouterv5/)
-- url: https://www.reddit.com/r/reactjs/comments/gv63y0/help_me_understand_userauth_using_reactrouterv5/
----
-Hey everyone,
-
-I am a reactjs beginner. I want to learn how to react-router-v5. I know what `Route, exact, and switch` do. I am able to use redux-toolkit and know how states and hooks work. 
-
-I have trouble getting Protected Routes + Redirect on login to work. I want to learn and understand it step by step. Because there's a lack of tutorials on this, I turn to you guys for this! :)
-
-I'll implement it chunk by chunk. Each parent comment will have a chunk that I'll work on with your help!
-## [12][React app and admin](https://www.reddit.com/r/reactjs/comments/gv5xp7/react_app_and_admin/)
-- url: https://www.reddit.com/r/reactjs/comments/gv5xp7/react_app_and_admin/
----
-Good day 
-Please I'm developing an app with firebase/expressjs backend and server
-I would like to know how I'll be able to create the client side 
-And the admin dashboard so the admin can see what details on the user client detail inputted
-Thanks
+Any experience, do’s and dont’s or pointers are much appreciated.

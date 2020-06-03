@@ -21,115 +21,109 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][At my wits end with trying to access an RDS Postgres DB from home](https://www.reddit.com/r/aws/comments/gv6d9n/at_my_wits_end_with_trying_to_access_an_rds/)
-- url: https://www.reddit.com/r/aws/comments/gv6d9n/at_my_wits_end_with_trying_to_access_an_rds/
+## [2][CPU showing vulnerability on boot that was supposed to be fixed on EC2 instances last year](https://www.reddit.com/r/aws/comments/gvhpun/cpu_showing_vulnerability_on_boot_that_was/)
+- url: https://www.reddit.com/r/aws/comments/gvhpun/cpu_showing_vulnerability_on_boot_that_was/
 ---
-I created an RDS PG DB on a company account created for me with full root access. I set the RDS to Public, set inbound/outbound rules on the security group to allow All Traffic on 0.0.0./0 (I know this is crazy but I just need to get it working first). I attached an Internet Gateway to the VPC (default). I've done everything recommended by the docs to make the RDS accessible to a Rails app on my laptop for development. 
+Hello all.  I have the following issue, it started with the `oom_reaper` killing the only memory intensive process on the server, `mariadb`, as seen when looking at oom_scores.  So I'm not positive, maridb is actually causing it to run out of memory.    
 
-&amp;#x200B;
 
-Whenever I try to either test it via \`psql -h &lt;end point&gt; -U &lt;account username&gt; -p 5432 --password\` and enter the password, it timesout and asks if I'm sure it's running on 5432 and that it's taking IP/TCP traffic. 
+In debugging the issue i was looking through the `kern.log` and see the following.
+```
+MDS CPU bug present and SMT on, data leak possible. See https://www.kernel.org/doc/html/latest/admin-guide/hw-vuln/mds.html for more details.
+TAA CPU bug present and SMT on, data leak possible. See https://www.kernel.org/doc/html/latest/admin-guide/hw-vuln/tsx_async_abort.html for more details.
+```
+And i have gone over those links which lead me to CVEs addressed by Amazon in this release. https://aws.amazon.com/security/security-bulletins/AWS-2019-004/.  
 
-&amp;#x200B;
+The values on all of my servers in two VPCs in the file `cat /sys/devices/system/cpu/vulnerabilities/mds` is `Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown`.  
 
-Even if I try to ping it with Telnet via \`telnet &lt;endpoint&gt; &lt;port&gt;\`, same thing. 
+From my understanding that statement is there b/c `md_clean` is not passed to kernel. So i installed `intel-microcode` package, i can see the available and chosen ones with with `/usr/sbin/iucode_tool -tb -lS /lib/firmware/intel-ucode/*`
 
-&amp;#x200B;
+When i reboot the server the message don't change and `dmesg | grep microcode` returns 
+```
+[    0.820544] TAA: Vulnerable: Clear CPU buffers attempted, no microcode
+[    0.820544] MDS: Vulnerable: Clear CPU buffers attempted, no microcode
+```
 
-My endpoint is in this format (where it says 'endpoint' in the security description of RDS DB instance): 
+Now I may be going down a rabbit hole with my OOM, but this was a clear well documented issue and well hell at this point i don't know exactly what i want, but i'll take any input. 
 
-&amp;#x200B;
+I'm confused about why it doesn't actually show the chosen microcodes or change the message. All updates are applied to all servers.
 
-my-postgres-db[.cy5ehlf0towl.us-east-1.rds.amazonaws.com](https://tml-dashboard-development.cy5ehlf0towl.us-east-1.rds.amazonaws.com)
+```
+$&gt; uname -a
+Linux prodweb01 5.3.0-1019-aws #21~18.04.1-Ubuntu SMP Mon May 11 12:33:03 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+```
+The impacted server is a `c5.xlarge`  I see this on older T2 instances and newer rebuilt T3 instances.
 
-&amp;#x200B;
-
-Can anyone give any other clues? I've spent 3 days on this and it's driving me crazy.
-## [3][Detecting inventory stock + SMS Text Notifications with AWS](https://www.reddit.com/r/aws/comments/gust4m/detecting_inventory_stock_sms_text_notifications/)
-- url: https://www.reddit.com/r/aws/comments/gust4m/detecting_inventory_stock_sms_text_notifications/
+Thanks for any ideas, speculations etc.
+## [3][Cutting costs - Do I need a NAT gateway?](https://www.reddit.com/r/aws/comments/gvqvjg/cutting_costs_do_i_need_a_nat_gateway/)
+- url: https://www.reddit.com/r/aws/comments/gvqvjg/cutting_costs_do_i_need_a_nat_gateway/
 ---
-Hey all,
+I'm running a small application in AWS. I have a web server that provides an API, hosted in AWS Fargate, with an Elastic Load Balancer in front of it. It connects to a RDS instance to store user data. I have a SPA client hosted in S3 with CloudFront.
 
-I've recently been dealing with some frustration trying to purchase some seemingly common products off online retailers. Getting sick of seeing 'out of stock' messages, I decided to build a script that would automatically detect when a retailer receives new inventory of a product, and send me a SMS Text Notification.
-
-It ended up working really well for the first item - I got a notification in less than 30 minutes and was able to nab one. Not so good luck on a second product - been running it for over 10 hours and no dice.
-
-I put together a video showing how I did it: https://youtu.be/6ixBJZ2vnYk
-
-I hope this shows some practical applications of using AWS and software in general. 
-
-Cheers
-## [4][[bug] Impossible to change value of SSM parameter](https://www.reddit.com/r/aws/comments/gv5du9/bug_impossible_to_change_value_of_ssm_parameter/)
-- url: https://www.reddit.com/r/aws/comments/gv5du9/bug_impossible_to_change_value_of_ssm_parameter/
+1. I set the stack up with AWS CDK and it apparently spun up a NAT Gateway for me which is one of the greatest costs. Do I even need that?
+2. At the moment I'm at roughly 50 users per day, so I guess I should be fine with the lowest tier CPU/memory specs on all my instances, right? The application is basically a CRUD application at this point.
+3. I don't want to spend too much cash on this, but my costs are already estimated to $100+/month. Is this reasonable?
+## [4][AWS WorkSpaces - How do you protect / monitor it?](https://www.reddit.com/r/aws/comments/gvteo6/aws_workspaces_how_do_you_protect_monitor_it/)
+- url: https://www.reddit.com/r/aws/comments/gvteo6/aws_workspaces_how_do_you_protect_monitor_it/
 ---
-[Screenshot: parameter name is not set and is impossible to set](https://imgur.com/I6Eknv6)
+I'm trying to create a proof of concept for whether a company could use AWS WorkSpaces as a DaaS. I keep finding that a lot of services I try to use only work with EC2 instances or need IAM roles.
 
-As you can see above, trying to edit a parameter from SSM results in a page that's impossible to use.
+* CloudWatch - have to treat WorkSpaces as an on-premise device to get custom metrics and use an agent which was a pain to setup. Took 2 minutes to get working with an EC2 instance however took me a week to get it working properly with a WorkSpace
+* Amazon Inspector - only EC2, I can't run it at all against my WorkSpaces to see how vulnerable they are.
+* Guard Duty - I haven't use this yet however it looks like it needs a service role, since you can't put service roles on WorkSpaces I'm assuming this won't work but may be wrong..
 
-Couldn't find any way to report this bug otherwise... which can also be improved.
-## [5][Windows DHCP server](https://www.reddit.com/r/aws/comments/gv37ri/windows_dhcp_server/)
-- url: https://www.reddit.com/r/aws/comments/gv37ri/windows_dhcp_server/
----
-Hi 
-
-I'm sure there are many other ways of fulfill this requirement but our management team would like to uplift our current on prem Windows DHCP Server and move this into AWS as a EC2 instance
-
-Has anyone or does anyone have their Windows DHCP server running out of AWS ?
-
-The Windows Server configured for DHCP will service our office users computers, this will not affect any AWS servers
-
-The plan is to update the ip helper address which will point to the new DHCP server in AWS, on our core switch so that clients know where to go when looking for a IP address
-## [6][Why redirect on AWS workmail aliases dont work ?](https://www.reddit.com/r/aws/comments/gv7815/why_redirect_on_aws_workmail_aliases_dont_work/)
-- url: https://www.reddit.com/r/aws/comments/gv7815/why_redirect_on_aws_workmail_aliases_dont_work/
----
-Creating rules:
-
-*When the message is received to myalias@mydomain* 
-
-then
-
-*Then copy the messeg to folder (etc)*
-
-&amp;#x200B;
-
-It is not working
-## [7][Amazon FSx for Windows File Server – Storage Size and Throughput Capacity Scaling](https://www.reddit.com/r/aws/comments/gv76b6/amazon_fsx_for_windows_file_server_storage_size/)
-- url: https://aws.amazon.com/blogs/aws/amazon-fsx-for-windows-file-server-storage-size-and-throughput-capacity-scaling/
+Anyone got any advice maybe I'm missing something obvious? Thank you very much.
+## [5][RDS PostgreSQL Logical Replication COPY from AWS RDS Snapshot](https://www.reddit.com/r/aws/comments/gvsqyd/rds_postgresql_logical_replication_copy_from_aws/)
+- url: https://medium.com/searce/rds-postgresql-logical-replication-copy-from-aws-rds-snapshot-6983446472a9
 ---
 
-## [8][Fast File Transfer from EC2](https://www.reddit.com/r/aws/comments/guyld3/fast_file_transfer_from_ec2/)
-- url: https://www.reddit.com/r/aws/comments/guyld3/fast_file_transfer_from_ec2/
+## [6][Updated an RDS instance tag via CloudFormation, and the instance rebooted](https://www.reddit.com/r/aws/comments/gvsnzf/updated_an_rds_instance_tag_via_cloudformation/)
+- url: https://www.reddit.com/r/aws/comments/gvsnzf/updated_an_rds_instance_tag_via_cloudformation/
 ---
-I'm a graduate student with access to an EC2 instance. I'm about to run an experiment that is likely to generate 50-100 GB of data. I've noticed in the past that even small files take a very long time to transfer from my AWS instance to my laptop via \`scp\` or \`rsync\`. Is there a better way to get large files off of an EC2 instance?
-## [9][SSM Patch manager and RHEL 8 - is it possible?](https://www.reddit.com/r/aws/comments/gv4rjf/ssm_patch_manager_and_rhel_8_is_it_possible/)
-- url: https://www.reddit.com/r/aws/comments/gv4rjf/ssm_patch_manager_and_rhel_8_is_it_possible/
+I have a CloudFormation stack of an Aurora PostgreSQL cluster with currently a single instance.  There are some other supplementary resources such as ParameterGroup, SecurityGroup, etc.
+
+Today I initiated a stack update which did one single thing: it changed a single tag value that is applied to all the resources.  That's it.
+
+My stack changeset showed nothing unusual, no unexpected Replacements, etc.
+
+I execute the update, and things when it gets to updating the instance, I notice in the window behind my current one, the DB instance rebooted.
+
+I have two questions:
+
+1) why?
+
+2) in the future is there any way I can anticipate disruptions like this?
+## [7][An abnormally high number of S3 GET requests on a development account?](https://www.reddit.com/r/aws/comments/gvs9v4/an_abnormally_high_number_of_s3_get_requests_on_a/)
+- url: https://www.reddit.com/r/aws/comments/gvs9v4/an_abnormally_high_number_of_s3_get_requests_on_a/
 ---
-I've gotten a task that is to set up automatic patching on some servers, we use "Red Hat Enterprise Linux 8" machines and to my surprise the System manager patch manager seems to not support this. 
+Hi all,
 
-I tested it on the RHEL 7, and it works perfectly. From trouble shooting i found out it has something todo with how the patchmanager uses yum from a python script (  i think ), and it chokes when trying to do "import yum". 
+I was just taking a look at my billing when I noticed a high number of S3 GET requests (around 4000). I know this isn't huge, but it is not a public or project-tied account. I have only been doing some development work using CloudFormation and SAM. 
 
-The patch manager is valuable for our organisation and it would be a bummer if we cant figure out how to get it to work on these machines.
+I checked again this morning and now there are \~5700 requests in total. I thought that originally my GET requests might be coming from CodePipeline as part of the CI solution I'm using. 
 
-Does anyone have experience with this or something similar?
-## [10][Deploying a AWS Lambda written on F# from cloudformation](https://www.reddit.com/r/aws/comments/guzf30/deploying_a_aws_lambda_written_on_f_from/)
-- url: https://www.reddit.com/r/aws/comments/guzf30/deploying_a_aws_lambda_written_on_f_from/
+Has anyone seen this before?
+
+UPDATE: I forgot to submit this post, and since re-checking there are now over 6500 requests.
+## [8][VPN Solution](https://www.reddit.com/r/aws/comments/gvm8sm/vpn_solution/)
+- url: https://www.reddit.com/r/aws/comments/gvm8sm/vpn_solution/
 ---
-Hello all,
-
-I'd like to write and deploy a lambda function written in F#/dotnet; I've found tutorials that allow me to do it manually (something like this):
-
-dotnet tool install -g Amazon.Lambda.Tools
-
-dotnet new lambda.EmptyFunction -lang F# -o FSharpBasicFunction --region us-west-2 --profile default
-
-dotnet lambda deploy-function MyFSharpFunction
-
-yet I need to do it from a cloudformation template and not manually; for this I've found nothing on the internet.
-
-Any idea on how can I archive this?
-Thanks!
-## [11][AWS workspaces v/s AWS EC2](https://www.reddit.com/r/aws/comments/guxgon/aws_workspaces_vs_aws_ec2/)
-- url: https://www.reddit.com/r/aws/comments/guxgon/aws_workspaces_vs_aws_ec2/
+Looking for a robust remote access vpn solution. We’ve been using Sophos UTM’s SSL vpn client but it’s pretty unreliable where it sometimes refuses to resolve dns names until client machines are rebooted. Are there any AWS recommended firewall appliances that have good vpn support or perhaps stand alone vpn? Looked into native AWS client vpn but looks too new to consider and a bit cumbersome.
+## [9][Whitelisting paths in AWS WAF](https://www.reddit.com/r/aws/comments/gvqw24/whitelisting_paths_in_aws_waf/)
+- url: https://www.reddit.com/r/aws/comments/gvqw24/whitelisting_paths_in_aws_waf/
 ---
-So we use EC2 instances window's MIA(windows 10 image with all pre build configuration) for our developer's. I was thinking about pushing an idea to my manager about using AWS workspaces desktops environment instance instead of EC2. Anyone here would be able to help with me with pros and cons of using workspaces over EC2? Like scalability,cost,etc.
-We do use workspaces for third parties to enable the access for our internal sysytem but that's about it.
+Hello, I'm a student which is creating  an IaC infrastructure  (with Terraform) on AWS for a launching company. 
+
+We have setup the waf with the Owasp top 10 rules (using a terraform module) in front of our load balancer. The problem I am facing here is I need to whitelist certain URI (like /api/comment) to allow some blocked words (like the SQL injection words, they can be use by our visitors in the comment section) and I don't understand how I am supposed to do that.  
+Can some of you guys help me here ? thanks in advance
+## [10][Using the built in ALB authentication](https://www.reddit.com/r/aws/comments/gvllv4/using_the_built_in_alb_authentication/)
+- url: https://www.reddit.com/r/aws/comments/gvllv4/using_the_built_in_alb_authentication/
+---
+When using this:  [https://aws.amazon.com/blogs/aws/built-in-authentication-in-alb/](https://aws.amazon.com/blogs/aws/built-in-authentication-in-alb/) 
+
+since the application is no longer handling the authentication, how do you know who the authenticated user is in the app?  Does it pass through the JWT token?
+## [11][Internal Documentation Tool](https://www.reddit.com/r/aws/comments/gv7gox/internal_documentation_tool/)
+- url: https://www.reddit.com/r/aws/comments/gv7gox/internal_documentation_tool/
+---
+Curious what everyone else uses for enterprise internal documentation. Wiki? Sharepoint? Build a custom tool in AWS?  
+For example, what would you use if you want to share architecture diagrams, run books, ops books, etc. to anyone in your IT org?

@@ -31,103 +31,358 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][A small Pokedex project using Dagger Hilt, Motion animations, Jetpack based on MVVM architecture.](https://www.reddit.com/r/androiddev/comments/gukp2e/a_small_pokedex_project_using_dagger_hilt_motion/)
-- url: https://i.redd.it/8r8v0adkwa251.gif
+## [3][Gradle 6.5 Released](https://www.reddit.com/r/androiddev/comments/gvqaeb/gradle_65_released/)
+- url: https://docs.gradle.org/6.5/release-notes.html
 ---
 
-## [4][Retrofit CallAdapter for Coroutines to handle response as states](https://www.reddit.com/r/androiddev/comments/gv518p/retrofit_calladapter_for_coroutines_to_handle/)
-- url: https://www.reddit.com/r/androiddev/comments/gv518p/retrofit_calladapter_for_coroutines_to_handle/
+## [4][Material Components for Android 1.3.0-alpha01](https://www.reddit.com/r/androiddev/comments/gvg8s0/material_components_for_android_130alpha01/)
+- url: https://github.com/material-components/material-components-android/releases/tag/1.3.0-alpha01
 ---
-Hi guys, taking inspiration from this interesting [article](https://proandroiddev.com/create-retrofit-calladapter-for-coroutines-to-handle-response-as-states-c102440de37a), I created a sample Android application to handle response from **Retrofit** \+ **Coroutines** as states. I must say that everything is clean and easy to manage.
 
-Source code: [https://github.com/auron567/Retrofit2CoroutinesCallAdapter](https://github.com/auron567/Retrofit2CoroutinesCallAdapter)
-## [5][icons not full](https://www.reddit.com/r/androiddev/comments/gv71jr/icons_not_full/)
-- url: https://www.reddit.com/r/androiddev/comments/gv71jr/icons_not_full/
+## [5][Restore RecyclerView scroll position](https://www.reddit.com/r/androiddev/comments/gvt3s7/restore_recyclerview_scroll_position/)
+- url: https://medium.com/androiddevelopers/restore-recyclerview-scroll-position-a8fbdc9a9334
 ---
-I've tried putting legacy icons but I don't have it on my phone for some reason (umidigi power 3) and the icons look smaller so is there other ways to fix this?
-## [6][Offering 50$ for solving this Android Bundle bug](https://www.reddit.com/r/androiddev/comments/gv6glx/offering_50_for_solving_this_android_bundle_bug/)
-- url: https://www.reddit.com/r/androiddev/comments/gv6glx/offering_50_for_solving_this_android_bundle_bug/
+
+## [6][A Google Play anomaly explained: How a trivial update for existing users can cause a sharp drop in daily *new* users.](https://www.reddit.com/r/androiddev/comments/gvcx1f/a_google_play_anomaly_explained_how_a_trivial/)
+- url: https://www.reddit.com/r/androiddev/comments/gvcx1f/a_google_play_anomaly_explained_how_a_trivial/
 ---
-See here:
+It's a known fact that Google play factors in 'uninstalls' in your app ranking.
+
+The reasoning behind this is to factor in 'retention' rate to predict if users like your app. or otherwise 80% uninstall it first or second day.
+
+But here is an unwanted side effect:
+
+I have a game with very good retention, low uninstalls in first weeks of download, therefore  it's ranked in a good place and gets a very healthy and failry constant daily downloads for last 10 months. Now I've released a minor 'typo' update.
+
+As expected for a game that user do "finish playing with" and it continue setting for months as dead weight in user device, users do uninstall once they notice the game updating. ( We all do)
+
+So after 8 months, the game accumulated tens of thousands "finished users"' who uninstalled in same day.
+
+But should a user that played my game for weeks\\months and uninstalls it when I update , hurt app ranking, like same day uninstall ?
+
+Retention among new users is still very high, but Google play interpreted those 50k uninstalls in one day as a bad sign.  rank plummeted and downloads where hurt considerably.
+
+This is anomaly because:1- game still has hight retention for weeks.
+
+2. if users who finished after weeks uninstalled it ASAP and didn't accumulate my app ranking wouldn't get punished.
+
+3. if I updated more frequently and those 'dead weight' we're spread, ranking wouldn't hurt.
+
+Key lessons:
+
+\- if you have a "finite puzzle game" , and you update after a long time. consider this to a cause to download drop.
+
+\- leave that typo alone !
+
+I hope Play team, implements an heuristic that distinguished between "uninstalls" due to bad experience and "uninstall" from finished an happy users that accumulated over time.
 
 &amp;#x200B;
 
-[https://stackoverflow.com/questions/62148182/android-app-bundle-kills-google-play-games-integration-working-with-plain-old](https://stackoverflow.com/questions/62148182/android-app-bundle-kills-google-play-games-integration-working-with-plain-old)
-## [7][Does anyone know what does this mean of console pricing templates : "List includes countries where users make payments using local currency. In the 59 other countries where you distribute your app, your price in JPY will be used instead."](https://www.reddit.com/r/androiddev/comments/gv662l/does_anyone_know_what_does_this_mean_of_console/)
-- url: https://www.reddit.com/r/androiddev/comments/gv662l/does_anyone_know_what_does_this_mean_of_console/
+An update can hurt you
+## [7][Is Jetpack Navigation good?](https://www.reddit.com/r/androiddev/comments/gvl1gm/is_jetpack_navigation_good/)
+- url: https://www.reddit.com/r/androiddev/comments/gvl1gm/is_jetpack_navigation_good/
 ---
-With Google Play we can distribute apps in 151 countries, when we set pricing template we only set prices for some 92 countries, for the rest of the 59 countries our main template price is set instead.
-
-*"List includes countries where users make payments using local currency. In the 59 other countries where you distribute your app, your price in JPY will be used instead."*
-
-When they say,"your price in JPY" do they mean they will show the Japanese price **and Japanese currency.**
-
-I ask this question because if someone is not familiar with JPY they might be reluctant to pay. If this is the case how may I change this to a more familiar currency such as a USD.
-## [8][If you're someone who adds data manually in Firestore backend, I found a very useful thing accidentally!](https://www.reddit.com/r/androiddev/comments/guo5pd/if_youre_someone_who_adds_data_manually_in/)
-- url: https://www.reddit.com/r/androiddev/comments/guo5pd/if_youre_someone_who_adds_data_manually_in/
+I just went over the Codelab Jetpack Navigation project. I don't really feel it is very intuitive. Especially with all the XMLs. What do you guys think? What kinds of benefit does it brings to your app/projects?
+## [8][how to implement adview with databinding correctly.](https://www.reddit.com/r/androiddev/comments/gvs4ef/how_to_implement_adview_with_databinding_correctly/)
+- url: https://www.reddit.com/r/androiddev/comments/gvs4ef/how_to_implement_adview_with_databinding_correctly/
 ---
-I have a wallpaper module in my app, to which I add Wallpapers manually in Firestore backend and which has similar kind of data but only with different keys.
+Hi, fellow android developers, I hope all of your doing great Currently I am developing news android app and I have implemented adview with databinding but when I run the code I am getting following exception java.lang.IllegalStateException: The ad size and ad unit ID must be set before loadAd is called.?
 
-It gets very frustrating to create the whole model class again with the same key pairs, and there's a way to automate this on Google Cloud Console. **Yes, you read that right, this thing is available on Google Cloud Platform and not Firebase.**
-
-Here's how you avoid the headache of manually creating the same data model again and again.
-
-1. Go to [https://console.cloud.google.com](https://console.cloud.google.com)
-2. From the top left corner, select the project that you have your Firestore database in. Here's where you select
-
-[Click on the blacked out portion and select the project](https://preview.redd.it/njisn0ycub251.png?width=560&amp;format=png&amp;auto=webp&amp;s=84f84d5f02677436d3fbd4eee169e55486152b0d)
-
-3. After selecting the project, from the left navigation panel, select Firestore -&gt; Data
-
-https://preview.redd.it/1453o57vub251.png?width=361&amp;format=png&amp;auto=webp&amp;s=719a7fdd5e8183d664fde1bf9b40794704c2ab03
-
-4. It will load your Firestore database (it'll look just like Firebase console).
-
-5. But here's where the magic happens:
-
-[See that copy button?](https://preview.redd.it/t1x2awpovb251.png?width=663&amp;format=png&amp;auto=webp&amp;s=c18a8bf5c762fafd6193c47486b2e2b01ae1a27c)
-
-Clicking on that button brings up a new window, where it copies this data with a new random document ID.
-
-Look at the window below and you'll get the idea.
-
-https://preview.redd.it/iqo8ype5wb251.png?width=1146&amp;format=png&amp;auto=webp&amp;s=bf7809c48c5ac08c6fc37385379d46005f028267
-
-You can now save the data with new values, and choose whether to add another document with "Save &amp; Add another" button.
-
-And people at Firebase, when are you adding this in the console itself?
-## [9][Developed an app using Flutter and Firebase, for exploring nearby restaurants and checking out their reviews. Also includes a 'Likes section' where users liked restaurants are displayed!](https://www.reddit.com/r/androiddev/comments/gv5iml/developed_an_app_using_flutter_and_firebase_for/)
-- url: https://github.com/ahmedgulabkhan/Foodspace
+even I posted my question to StackOverflow https://stackoverflow.com/questions/62150185/java-lang-illegalstateexception-the-ad-size-and-ad-unit-id-must-be-set-before-l but  I have tried suggested answer it did not work at all any help will be appreciated I have tried set ad unit size and id XML as well as programmatically using kotlin it did not work at all
+## [9][Playing with Github Actions](https://www.reddit.com/r/androiddev/comments/gvrwe1/playing_with_github_actions/)
+- url: http://github.com/volkansahin45/github-actions
 ---
 
-## [10][installing android studio on windows 10 problem](https://www.reddit.com/r/androiddev/comments/gv4zxx/installing_android_studio_on_windows_10_problem/)
-- url: https://www.reddit.com/r/androiddev/comments/gv4zxx/installing_android_studio_on_windows_10_problem/
+## [10][Create an expandable Recyclerview with the MergeAdapter](https://www.reddit.com/r/androiddev/comments/gvpv3c/create_an_expandable_recyclerview_with_the/)
+- url: https://github.com/OHoussein/Android-Expandable-MergeAdapter
 ---
-i tried to install android studio on windows 10 but i keep getting the same error as shown in the picture . i searched for the sdk folder inside appdata and it is not there.
 
-&amp;#x200B;
-
-https://preview.redd.it/24ml8lc47h251.png?width=1366&amp;format=png&amp;auto=webp&amp;s=0e21badad7b41a19b769adb37874a3c30bd87b64
-## [11][A library which draws dividers in a RecyclerView (it supports LinearLayoutManager, GridLayoutManager and StaggeredGridLayoutManager) with one line of code](https://www.reddit.com/r/androiddev/comments/guwsiz/a_library_which_draws_dividers_in_a_recyclerview/)
-- url: https://www.reddit.com/r/androiddev/comments/guwsiz/a_library_which_draws_dividers_in_a_recyclerview/
+## [11][Complexity of requesting permissions - the default Kotlin example](https://www.reddit.com/r/androiddev/comments/gvtyzb/complexity_of_requesting_permissions_the_default/)
+- url: https://www.reddit.com/r/androiddev/comments/gvtyzb/complexity_of_requesting_permissions_the_default/
 ---
-[https://github.com/fondesa/recycler-view-divider](https://github.com/fondesa/recycler-view-divider)
+I'm looking at the Kotlin default example here - halfway down the page
 
-Hi guys, here is my library which can be used to draw automatically dividers between the items of a `RecyclerView`. It supports `LinearLayoutManager`, `GridLayoutManager` and `StaggeredGridLayoutManager`.
+[https://developer.android.com/training/permissions/requesting#kotlin](https://developer.android.com/training/permissions/requesting#kotlin)
 
-The dividers by default pick the configuration from the theme, but they can be easily configured runtime for further customizations.
+why should I need an alpha release android x package ([Activity 1.2.0-alpha02](https://developer.android.com/jetpack/androidx/releases/activity#1.2.0-alpha02)) just to get this to compile?
 
-The default configuration can be attached with `recyclerView.addDivider()` and the library will handle the rest.
+Whole thing seems overly complex for what should be pretty simple bit of code,
 
-The library is pretty mature, but if you have any questions or feedbacks, I'm here :)
-## [12][[HELP] What should I learn Ruby on rails or React js ?](https://www.reddit.com/r/androiddev/comments/gv4bm6/help_what_should_i_learn_ruby_on_rails_or_react_js/)
-- url: https://www.reddit.com/r/androiddev/comments/gv4bm6/help_what_should_i_learn_ruby_on_rails_or_react_js/
+I mean at least they should make the samples valid code, not with "..." scattered about, which should really be // TODO comment.
+## [12][Resources$NotFoundException on Android 10 devices.](https://www.reddit.com/r/androiddev/comments/gvquc5/resourcesnotfoundexception_on_android_10_devices/)
+- url: https://www.reddit.com/r/androiddev/comments/gvquc5/resourcesnotfoundexception_on_android_10_devices/
 ---
-I am and android dev and my manager is asking me to learn any of this. ( ROR or React js)  
+Hey community!
+
+**Problem**I've noticed a lot of unexpected crashes only on Android 10 devices. Crashes are pointing to missing resource ID in different layouts but I was not able to reproduce it even on same device and OS as I saw in crash reports.Weirdly enough, after hours of digging through google search results page 4 and further(I've got lost and results were in Mandarin) i found post pointing to `Developer options -&gt; Enable view attribute inspection`. After enabling it on my device I've could reproduce it but it's still not clear how to fix it. Disabling it helped and app users are not seeing crashes there.
+
+**Question**Even though that helped I want to know what's the culprit of it and what is the right approach to fix it.
+
+**Crash log**
+
+    android.content.res.Resources$NotFoundException: Unable to find resource ID #0x7f040378
+        at android.content.res.ResourcesImpl.getResourceTypeName(ResourcesImpl.java:305)
+        at android.content.res.Resources.getResourceTypeName(Resources.java:2111)
+        at android.content.res.Resources$Theme.getExplicitStyle(Resources.java:1769)
+        at android.view.View.retrieveExplicitStyle(View.java:6731)
+        at android.view.View.&lt;init&gt;(View.java:5639)
+        at android.view.ViewGroup.&lt;init&gt;(ViewGroup.java:687)
+        at android.widget.FrameLayout.&lt;init&gt;(FrameLayout.java:99)
+        at android.widget.FrameLayout.&lt;init&gt;(FrameLayout.java:94)
+        at androidx.cardview.widget.CardView.&lt;init&gt;(SourceFile:121)
+        at com.google.android.material.card.MaterialCardView.&lt;init&gt;(SourceFile:52)
+        at com.google.android.material.card.MaterialCardView.&lt;init&gt;(SourceFile:48)
+        at java.lang.reflect.Constructor.newInstance0(Constructor.java)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:343)
+        at android.view.LayoutInflater.createView(LayoutInflater.java:854)
+        at android.view.LayoutInflater.createViewFromTag(LayoutInflater.java:1006)
+        at android.view.LayoutInflater.createViewFromTag(LayoutInflater.java:961)
+        at android.view.LayoutInflater.rInflate(LayoutInflater.java:1123)
+        at android.view.LayoutInflater.rInflateChildren(LayoutInflater.java:1084)
+        at android.view.LayoutInflater.rInflate(LayoutInflater.java:1126)
+        at android.view.LayoutInflater.rInflateChildren(LayoutInflater.java:1084)
+        at android.view.LayoutInflater.inflate(LayoutInflater.java:682)
+        at android.view.LayoutInflater.inflate(LayoutInflater.java:534)
+        at androidx.databinding.DataBindingUtil.inflate$45cd3863(SourceFile:126)
+        at androidx.databinding.ViewDataBinding.inflateInternal$5250870e(SourceFile:1366)
+        at com.example.app.LoginFragmentBinding.inflate(SourceFile:1090)
+        at com.example.app.LoginFragment.onCreateView(SourceFile:66)
+        at androidx.fragment.app.Fragment.performCreateView(SourceFile:2439)
+        at androidx.fragment.app.FragmentManagerImpl.removeRedundantOperationsAndExecute(SourceFile:1460)
+        at androidx.fragment.app.FragmentManagerImpl.moveFragmentToExpectedState(SourceFile:1784)
+        at androidx.fragment.app.BackStackRecord.executeOps(SourceFile:797)
+        at androidx.fragment.app.FragmentManagerImpl.executeOps(SourceFile:2625)
+        at androidx.fragment.app.FragmentManagerImpl.moveToState(SourceFile:2411)
+        at androidx.fragment.app.FragmentManagerImpl.removeRedundantOperationsAndExecute(SourceFile:2366)
+        at androidx.fragment.app.FragmentManagerImpl.execPendingActions(SourceFile:2273)
+        at androidx.fragment.app.FragmentManagerImpl.dispatchStateChange(SourceFile:3273)
+        at androidx.fragment.app.FragmentManagerImpl.dispatchActivityCreated(SourceFile:3229)
+        at androidx.fragment.app.Fragment.performActivityCreated(SourceFile:2466)
+        at androidx.fragment.app.FragmentManagerImpl.moveToState(SourceFile:1483)
+        at androidx.fragment.app.FragmentManagerImpl.moveFragmentToExpectedState(SourceFile:1784)
+        at androidx.fragment.app.BackStackRecord.executeOps(SourceFile:797)
+        at androidx.fragment.app.FragmentManagerImpl.executeOps(SourceFile:2625)
+        at androidx.fragment.app.FragmentManagerImpl.executeOpsTogether(SourceFile:2411)
+        at androidx.fragment.app.FragmentManagerImpl.removeRedundantOperationsAndExecute(SourceFile:2366)
+        at androidx.fragment.app.FragmentManagerImpl.execPendingActions(SourceFile:2273)
+        at androidx.fragment.app.FragmentManagerImpl.dispatchStateChange(SourceFile:3273)
+        at androidx.fragment.app.FragmentActivity.androidx.fragment.app.FragmentManagerImpl.dispatchActivityCreated(SourceFile:17229)
+        at androidx.appcompat.app.AppCompatActivity.onStart(SourceFile:178)
+        at com.ing.mobile.app.activities.INGMobileActivity.onStart(SourceFile:145)
+        at android.app.Instrumentation.callActivityOnStart(Instrumentation.java:1433)
+        at android.app.Activity.performStart(Activity.java:7978)
+        at android.app.ActivityThread.handleStartActivity(ActivityThread.java:3472)
+        at android.app.servertransaction.TransactionExecutor.performLifecycleSequence(TransactionExecutor.java:221)
+        at android.app.servertransaction.TransactionExecutor.cycleToPath(TransactionExecutor.java:201)
+        at android.app.servertransaction.TransactionExecutor.executeLifecycleState(TransactionExecutor.java:173)
+        at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:97)
+        at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2147)
+        at android.os.Handler.dispatchMessage(Handler.java:107)
+        at android.os.Looper.loop(Looper.java:237)
+        at android.app.ActivityThread.main(ActivityThread.java:7814)
+        at java.lang.reflect.Method.invoke(Method.java)
+        at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:493)
+        at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1075)
+
+**Layout**
+
+    &lt;?xml version="1.0" encoding="utf-8"?&gt;
+    &lt;layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"&gt;
+    
+        &lt;data&gt;
+    
+            &lt;import type="model.CustomerType" /&gt;
+    
+            &lt;import type="android.view.View" /&gt;
+    
+            &lt;import type="AccessibilityUtils" /&gt;
+    
+            &lt;variable
+                name="view"
+                type="login.LoginView" /&gt;
+    
+            &lt;variable
+                name="presenter"
+                type="login.LoginPresenter" /&gt;
+        &lt;/data&gt;
+    
+        &lt;androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"&gt;
+    
+            &lt;com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:liftOnScroll="?attr/myAppBarLayoutScrollingBehaviorEnabled"&gt;
+                &lt;androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?android:attr/actionBarSize"
+                    app:navigationContentDescription="@string/login__cancel_content_description"
+                    app:navigationIcon="?attr/navigationCloseDrawable"&gt;
+                    &lt;ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/login__header_content_description"
+                        app:srcCompat="@drawable/logo" /&gt;
+                &lt;/androidx.appcompat.widget.Toolbar&gt;
+            &lt;/com.google.android.material.appbar.AppBarLayout&gt;
+    
+            &lt;androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="?attr/myAppBarLayoutScrollingBehavior"&gt;
+    
+                &lt;com.google.android.material.card.MaterialCardView
+                    style="?attr/myCardViewFullWidthStyle"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    app:contentPadding="0dp"&gt;
+    
+                    &lt;LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"&gt;
+    
+                        &lt;com.google.android.material.tabs.TabLayout
+                            android:id="@+id/tabs"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:tabGravity="fill"
+                            app:tabMode="fixed" /&gt;
+    
+                        &lt;LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="@dimen/card_content_padding"&gt;
+    
+                            &lt;LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:focusable="true"
+                                android:orientation="vertical"
+                                android:visibility="@{view.customerType == CustomerType.PRIVATE ? View.VISIBLE : View.GONE}"&gt;
+    
+                                &lt;TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/text_vertical_spacing"
+                                    android:text="@string/login__title_private"
+                                    android:textAppearance="?attr/textAppearanceHeadline5" /&gt;
+    
+                                &lt;TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:contentDescription="@string/login__body_private_accessibility"
+                                    android:text="@{AccessibilityUtils.makeWordAccessible(@string/login__body_private)}" /&gt;
+    
+                            &lt;/LinearLayout&gt;
+    
+                            &lt;LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:focusable="true"
+                                android:orientation="vertical"
+                                android:visibility="@{view.customerType == CustomerType.BUSINESS ? View.VISIBLE : View.GONE}"&gt;
+    
+                                &lt;TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/text_vertical_spacing"
+                                    android:text="@string/login__title_business"
+                                    android:textAppearance="?attr/textAppearanceHeadline5" /&gt;
+    
+                                &lt;TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:contentDescription="@string/login__body__accessibility"
+                                    android:text="@{AccessibilityUtils.makeWordAccessible(@string/login__body)}" /&gt;
+    
+                            &lt;/LinearLayout&gt;
+    
+                            &lt;com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="-4dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_marginEnd="-4dp"
+                                android:layout_marginBottom="@dimen/input_vertical_spacing"
+                                android:hint="@string/login__username"&gt;
+    
+                                &lt;com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/username"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:singleLine="true"
+                                    android:text="@={view.username}" /&gt;
+    
+                            &lt;/com.google.android.material.textfield.TextInputLayout&gt;
+    
+                            &lt;com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="-4dp"
+                                android:layout_marginEnd="-4dp"
+                                android:hint="@string/login_password_hint"&gt;
+    
+                                &lt;com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/password"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="textPassword"
+                                    android:singleLine="true"
+                                    android:text="@={view.password}" /&gt;
+                            &lt;/com.google.android.material.textfield.TextInputLayout&gt;
+    
+                            &lt;com.google.android.material.button.MaterialButton
+                                android:id="@+id/login_button"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/buttons_margin_top"
+                                android:layout_marginBottom="@dimen/button_vertical_spacing"
+                                android:onClick="@{() -&gt; presenter.onLoginClicked(view.username, view.password)}"
+                                android:text="@string/login_label" /&gt;
+    
+                            &lt;com.google.android.material.button.MaterialButton
+                                android:id="@+id/help_button"
+                                style="?attr/buttonTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:onClick="@{() -&gt; presenter.onForgotCredentialsClicked()}"
+                                android:text="@string/login_help" /&gt;
+                        &lt;/LinearLayout&gt;
+                    &lt;/LinearLayout&gt;
+                &lt;/com.google.android.material.card.MaterialCardView&gt;
+            &lt;/androidx.core.widget.NestedScrollView&gt;
+        &lt;/androidx.coordinatorlayout.widget.CoordinatorLayout&gt;
+    &lt;/layout&gt;
+
+**Attribute/Style**
+
+    &lt;item name="myCardViewFullWidthStyle"&gt;@style/CardView.FullWidth&lt;/item&gt;
+        &lt;style name="CardView.FullWidth" parent="Widget.MaterialComponents.CardView"&gt;
+            &lt;item name="cardCornerRadius"&gt;@dimen/card_fullwidth_corner_radius&lt;/item&gt;
+            &lt;item name="cardElevation"&gt;@dimen/card_fullwidth_elevation&lt;/item&gt;
+            &lt;item name="contentPadding"&gt;@dimen/card_fullwidth_content_padding&lt;/item&gt;
+            &lt;item name="android:layout_width"&gt;@dimen/card_fullwidth_width&lt;/item&gt;
+            &lt;item name="android:layout_marginTop"&gt;@dimen/card_fullwidth_margin_top&lt;/item&gt;
+            &lt;item name="android:layout_marginBottom"&gt;@dimen/card_fullwidth_margin_bottom&lt;/item&gt;
+        &lt;/style&gt;
+
+And the resource ID #0x7f040378 that system is unable to find seems to be style="?attr/myCardViewFullWidthStyle" or at least something in related to CardView because that's where the crash is pointing in the layout.
+
+                &lt;com.google.android.material.card.MaterialCardView
+                    style="?attr/myCardViewFullWidthStyle"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    app:contentPadding="0dp"&gt;
+
+Hope I've put enough details and it's understable what my goal is. Looking forward for suggestion, ideas or fix!  
 
 
-I do know what this technologies are there for, but I just want to know if someone was in this situation before and how did it turn out. 
-
-Any advice would be great.
-
-Thanks a lot in advance.
+Edit:  
+It happens on prod app version with proguard.

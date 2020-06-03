@@ -85,43 +85,46 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][The things I found annoy me maintaining an open-source library with 30M monthly npm downloads](https://www.reddit.com/r/javascript/comments/gv2j9c/the_things_i_found_annoy_me_maintaining_an/)
+## [3][Destructuring in JavaScript: the not so good parts](https://www.reddit.com/r/javascript/comments/gvps5s/destructuring_in_javascript_the_not_so_good_parts/)
+- url: https://goodguydaniel.com/blog/destructuring-not-so-good-parts/
+---
+
+## [4][New in Firefox 77: DevTool improvements and web platform updates](https://www.reddit.com/r/javascript/comments/gvdqtv/new_in_firefox_77_devtool_improvements_and_web/)
+- url: https://hacks.mozilla.org/2020/06/new-in-firefox-77-devtool-improvements-and-web-platform-updates/
+---
+
+## [5][The things I found annoy me maintaining an open-source library with 30M monthly npm downloads](https://www.reddit.com/r/javascript/comments/gv2j9c/the_things_i_found_annoy_me_maintaining_an/)
 - url: https://github.com/kossnocorp/etiquette
 ---
 
-## [4][Web scraping with Javascript](https://www.reddit.com/r/javascript/comments/gumsx8/web_scraping_with_javascript/)
-- url: https://www.scrapingbee.com/blog/web-scraping-javascript/
+## [6][Library for quick chainable BEM classname generation](https://www.reddit.com/r/javascript/comments/gvtqlf/library_for_quick_chainable_bem_classname/)
+- url: https://github.com/LuudJacobs/better-bem
 ---
 
-## [5][Entire jsComplete Library is now FREE](https://www.reddit.com/r/javascript/comments/guvnzc/entire_jscomplete_library_is_now_free/)
-- url: https://medium.com/edge-coders/the-entire-jscomplete-library-is-now-free-5fb7e5cd5406?_branch_match_id=431536048923415405
+## [7][Five common mistakes writing react components (with hooks) in 2020](https://www.reddit.com/r/javascript/comments/gv9i9b/five_common_mistakes_writing_react_components/)
+- url: https://www.lorenzweiss.de/common_mistakes_react_hooks/
 ---
 
-## [6][Reasons to use GatsbyJs in your next project and reasons to not.](https://www.reddit.com/r/javascript/comments/gv751p/reasons_to_use_gatsbyjs_in_your_next_project_and/)
-- url: https://dev.to/tharunshiv/why-you-should-use-gatsbyjs-and-when-not-to-use-it-oli
+## [8][[AskJS] what are some tricky parts of the javascript?](https://www.reddit.com/r/javascript/comments/gvqdnm/askjs_what_are_some_tricky_parts_of_the_javascript/)
+- url: https://www.reddit.com/r/javascript/comments/gvqdnm/askjs_what_are_some_tricky_parts_of_the_javascript/
+---
+Hey guys! I am a new content creator at YouTube. I want to cover the tricky parts of javascript. Javascript is little different language. After learning java I decided to learn js. But  I found that javascript behaves little differently than other language. I think second programming language is always the hardest language to learn.
+Thinking of that I want to create bunch of videos that can be helpful to others who are starting out .
+Please suggest some of the tricky and weird parts of javascript.
+Javascript is weird and awesome at the same time
+## [9][Javascript Collective Service Wrapper for Browsers and NodeJS](https://www.reddit.com/r/javascript/comments/gvpqlf/javascript_collective_service_wrapper_for/)
+- url: https://dev.to/behnamazimi/javascript-collective-service-wrapper-for-browsers-and-nodejs-4gl7
 ---
 
-## [7][Code Smells in JavaScript](https://www.reddit.com/r/javascript/comments/gv5b43/code_smells_in_javascript/)
-- url: https://medium.com/better-programming/more-code-smells-in-javascript-113067dbd89f
+## [10][We made a website for browsing Winget packages](https://www.reddit.com/r/javascript/comments/gvejwn/we_made_a_website_for_browsing_winget_packages/)
+- url: https://github.com/winget-run/wingetdotrun
 ---
 
-## [8][Solid - a declarative Javascript library for creating user interfaces. It does not use a Virtual DOM. Instead it opts to compile its templates down to real DOM nodes and wrap updates in fine grained reactions](https://www.reddit.com/r/javascript/comments/gumbw3/solid_a_declarative_javascript_library_for/)
-- url: https://github.com/ryansolid/solid
+## [11][Cool bounty of $190 for fix resolution and font in JS](https://www.reddit.com/r/javascript/comments/gvh2rf/cool_bounty_of_190_for_fix_resolution_and_font_in/)
+- url: https://www.bountysource.com/issues/89023609-changing-resolution-makes-text-objects-blurry-or-distorted
 ---
 
-## [9][Simple sandbox: How to design and use a Vue CRUD app for testing and learning](https://www.reddit.com/r/javascript/comments/gv40w4/simple_sandbox_how_to_design_and_use_a_vue_crud/)
-- url: https://medium.com/@jacobcohenrosenthal/simple-sandbox-how-to-design-and-use-a-vue-crud-app-for-testing-and-learning-8f8cc561d75
----
-
-## [10][Reddit Light with Typeahead+React](https://www.reddit.com/r/javascript/comments/guwld5/reddit_light_with_typeaheadreact/)
-- url: https://reddit-light.herokuapp.com
----
-
-## [11][I made a babeljs plugin to automatically write unit tests. I hope many find this useful :D](https://www.reddit.com/r/javascript/comments/gucq0g/i_made_a_babeljs_plugin_to_automatically_write/)
-- url: https://github.com/Ghost---Shadow/unit-test-recorder
----
-
-## [12][VS Code Deprecated – Show deprecated usages in the editor](https://www.reddit.com/r/javascript/comments/guluq7/vs_code_deprecated_show_deprecated_usages_in_the/)
-- url: https://github.com/balajmarius/vscode-deprecated
+## [12][A reddit-news-bot created using nodejs](https://www.reddit.com/r/javascript/comments/gvnh9z/a_redditnewsbot_created_using_nodejs/)
+- url: /r/node/comments/gvnfva/redditnewsbot/
 ---
 

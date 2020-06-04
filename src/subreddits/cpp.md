@@ -125,7 +125,103 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][You asked, I listened! Here is my updated and improved modern C++ template, now with static analyzers, Doxygen, CI caching and more!](https://www.reddit.com/r/cpp/comments/gvdu67/you_asked_i_listened_here_is_my_updated_and/)
+## [3][What is [[nodiscard]] and why it is useful.](https://www.reddit.com/r/cpp/comments/gwevjr/what_is_nodiscard_and_why_it_is_useful/)
+- url: https://www.reddit.com/r/cpp/comments/gwevjr/what_is_nodiscard_and_why_it_is_useful/
+---
+[https://www.blog.khrynczenko.com/post/2020-05-27-no\_discard/](https://www.blog.khrynczenko.com/post/2020-05-27-no_discard/)
+
+Hi, few days ago I started my own blog and wrote my first post.  My reason for starting a blog is to improve my writing skills since I am not a native English speaking person. Other reason is to have a place where I can store information that I find relevant. I would very much appreciate any kind of feedback.  
+
+
+Thank you for time spent reading the material. I would also like to know what is your opinion on the topic.
+## [4][toml++ v1.3.0 released](https://www.reddit.com/r/cpp/comments/gw16v1/toml_v130_released/)
+- url: https://marzer.github.io/tomlplusplus/
+---
+
+## [5][STX: C++ 20 Error and Optional-Value Handling Library (Result, Option, Panics, and Backtracing)](https://www.reddit.com/r/cpp/comments/gw14ke/stx_c_20_error_and_optionalvalue_handling_library/)
+- url: https://www.reddit.com/r/cpp/comments/gw14ke/stx_c_20_error_and_optionalvalue_handling_library/
+---
+Hello everyone,
+
+I have been exploring and evaluating error-handling models across the C++ ecosystem for the past 3 months. Primarily because I needed a proper and deterministic error-handling model for fail-often systems (embedded systems) in which exceptions don't fit the bill **yet**. Even with some embedded toolchains not having an actual exception implementation. The overall reliability and security of these systems are highly impacted by the error-handling model.
+
+From my exploration and interaction with other developers, I found that the **Result** and **Option** type monads were highly preferred to other models and are much more intuitive due to the error-handling logic abstraction, and the concise and deterministic success and failure paths they provide. In addition, many of the engineers had already rolled their in-house implementations.
+
+Here are a **few** open-source projects that also replicate the same error-handling types/models: [LLVM's ErrorOr](https://github.com/llvm/llvm-project/blob/master/llvm/include/llvm/Support/ErrorOr.h), [Mozilla MFBT's Result](https://searchfox.org/mozilla-central/source/mfbt/Result.h), Fuchsia OS' [Result](https://fuchsia.googlesource.com/fuchsia/+/refs/heads/master/zircon/system/ulib/zxc/), [StatusOr](https://fuchsia.googlesource.com/fuchsia/+/refs/heads/master/zircon/system/ulib/intel-hda/include/intel-hda/utils/status_or.h), and [Panic](https://fuchsia.googlesource.com/fuchsia/+/HEAD/zircon/system/public/zircon/assert.h), [Pigweed's Result](https://pigweed.googlesource.com/pigweed/pigweed/+/refs/heads/master/pw_result/), [Simdjson's Result](https://github.com/simdjson/simdjson/blob/master/include/simdjson/error.h), etc. Another great approach is error-handling macros like [ENSURE\_OK, DCHECK\_OK, QCHECK\_OK](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/platform/status.h) which I came across during my open-source work on Tensorflow micro.
+
+As with many cases of code duplication even within the same codebase, they can have really subtle bugs (i.e. Mozilla's Result).
+
+Some programming languages adopt this functional approach i.e: Haskell (`Either`),  Scala (`Try` &amp; `Option`), Rust (`Result` &amp; `Option`).
+
+**STX** (*standard-extended*) is a C++20 library that aims to unify these development efforts and make it easier to manage errors and also provide some development utilities.
+
+# STX Library Features
+
+* **Result&lt;T, E&gt;** and **Option&lt;T&gt;** (with monadic methods) and ***constexpr*** support
+   * Local explicit error propagation (with `TRY_OK` &amp; `CO_TRY_OK`)
+   * **std::error\_code** and *exception-object* compatible
+   * fast and deterministic success and failure paths
+   * errors and nullability can not be ignored implicitly
+* Panics  (i.e. fail-fast abandonment)
+   * Panic backtracing
+   * Thread-safe runtime panic hooks (especially for DLL *drivers*)
+   * Panic Handlers (reporting preference varies from project to project. i.e:  log to disk, log to *journal*, halting, etc)
+   * Reporting
+* \*Fatal signal backtracing (**SIGILL**, **SIGSEGV**, and **SIGFPE**)
+* No **RTTI**, memory allocation, nor *exceptions*
+* Manual backtracing library based on *Abseil*
+
+&amp;#x200B;
+
+Please share your feedback!
+
+And yes, I'm willing to steal good ideas!
+
+&amp;#x200B;
+
+Repository: [https://github.com/lamarrr/STX](https://github.com/lamarrr/STX)
+
+Documentation: [https://lamarrr.github.io/STX](https://lamarrr.github.io/STX)
+
+Many thanks to u/TartanLlama, [Corentin Jabot](https://twitter.com/Cor3ntin) and [JeanHeyd Meneide](https://twitter.com/thephantomderp)!
+
+# References
+
+* [Zero-overhead Deterministic exceptions](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p0709r0.pdf), Herb Sutter. 2019
+* [The Error Model](http://joeduffyblog.com/2016/02/07/the-error-model/), Joe Duffy. 2016
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+*Stay safe!*
+## [6][Linux development with Visual Studio: first-class support for gdbserver, improved build times with Ninja, and updates to the Connection Manager | C++ Team Blog](https://www.reddit.com/r/cpp/comments/gvtgg1/linux_development_with_visual_studio_firstclass/)
+- url: https://devblogs.microsoft.com/cppblog/linux-development-with-visual-studio-first-class-support-for-gdbserver-improved-build-times-with-ninja-and-updates-to-the-connection-manager/?WT.mc_id=reddit-social-marouill
+---
+
+## [7][Eric Richardson presents "Modern Cmake: An introduction" (DC CPP User Group Virtual Meeting)](https://www.reddit.com/r/cpp/comments/gwhae0/eric_richardson_presents_modern_cmake_an/)
+- url: https://www.youtube.com/watch?v=bDdkJu-nVTo&amp;feature=youtu.be
+---
+
+## [8][How to ask for C++ Coding Help - Kate Gregory](https://www.reddit.com/r/cpp/comments/gvw8y3/how_to_ask_for_c_coding_help_kate_gregory/)
+- url: http://www.gregcons.com/KateBlog/HowToAskForCCodingHelp.aspx
+---
+
+## [9][Using Visual Studio Code for Qt Applications - Part Two](https://www.reddit.com/r/cpp/comments/gvqwa2/using_visual_studio_code_for_qt_applications_part/)
+- url: https://www.kdab.com/using-visual-studio-code-for-qt-apps-pt-2/
+---
+
+## [10][Interesting cpp unity build benchmarks](https://www.reddit.com/r/cpp/comments/gw163l/interesting_cpp_unity_build_benchmarks/)
+- url: https://www.reddit.com/r/cpp/comments/gw163l/interesting_cpp_unity_build_benchmarks/
+---
+I created a benchmark that tests a one compilation unit header only unity build vs a regular cpp build (h + cpp in individual compilation units).  I really hate writing headers so I prefer to do everything header only. The problem with header only is that every file gets rebuilt every time. This increases built times and becomes a chore.  I thought maybe a unity build would offset the time it takes to compile "everything" every time. The results show that a unity build even on header only source code reduced build time by a factor of 6 or 7.
+
+I got pretty extensive in my testing. At one point I created a benchmark for a 1 mil LOC unity header only project and I was impressed to see it built in about 10 seconds. I didnt even try a full build of that for a regular cpp structure (cpp + header being compiled individually) lol.  However; incremental builds for a regular cpp structure  still beat most unity builds by a few seconds (depending on project size).  This goes to show that header only unity builds are fast enough to avoid writing header(declaration) files all together! So if you cant wait until modules finally get released, unity builds are definitely do-able as they are almost as speedy as incremental builds.
+
+[https://github.com/Triangle345/CppUnityBuildBenchmarks/](https://github.com/Triangle345/CppUnityBuildBenchmarks/)
+## [11][You asked, I listened! Here is my updated and improved modern C++ template, now with static analyzers, Doxygen, CI caching and more!](https://www.reddit.com/r/cpp/comments/gvdu67/you_asked_i_listened_here_is_my_updated_and/)
 - url: https://www.reddit.com/r/cpp/comments/gvdu67/you_asked_i_listened_here_is_my_updated_and/
 ---
 [https://github.com/filipdutescu/modern-cpp-template](https://github.com/filipdutescu/modern-cpp-template)
@@ -155,82 +251,11 @@ Thank you to everyone who has supported me and I am very grateful for all the fe
 Edit: formatting.
 
 Edit 2: Updated with latest features/changes.
-## [4][Using Visual Studio Code for Qt Applications - Part Two](https://www.reddit.com/r/cpp/comments/gvqwa2/using_visual_studio_code_for_qt_applications_part/)
-- url: https://www.kdab.com/using-visual-studio-code-for-qt-apps-pt-2/
+## [12][HPX Applications Survey -- The STE||AR Group](https://www.reddit.com/r/cpp/comments/gvv4fn/hpx_applications_survey_the_stear_group/)
+- url: https://www.reddit.com/r/cpp/comments/gvv4fn/hpx_applications_survey_the_stear_group/
 ---
+As a follow-up to the community survey we did earlier this year, we would now like to ask all of our users that are willing and able to publicly share details about their applications to comment on this issue on GitHub: [https://github.com/STEllAR-GROUP/hpx/issues/4690](https://github.com/STEllAR-GROUP/hpx/issues/4690).
 
-## [5][Linux development with Visual Studio: first-class support for gdbserver, improved build times with Ninja, and updates to the Connection Manager | C++ Team Blog](https://www.reddit.com/r/cpp/comments/gvtgg1/linux_development_with_visual_studio_firstclass/)
-- url: https://devblogs.microsoft.com/cppblog/linux-development-with-visual-studio-first-class-support-for-gdbserver-improved-build-times-with-ninja-and-updates-to-the-connection-manager/?WT.mc_id=reddit-social-marouill
----
+We are collecting this information at one hand for us to learn more about our users, but also for current and potential future users to be able to see what others are working on with HPX. We will eventually present this information on our website. If you are not able to share the details of an application, only mentioning the institution or company that is using HPX would also be helpful to us.
 
-## [6][stdgpu 1.3.0 released!](https://www.reddit.com/r/cpp/comments/gv655e/stdgpu_130_released/)
-- url: https://github.com/stotko/stdgpu/releases/tag/1.3.0
----
-
-## [7][C++ IDE with an interpreter in addition to the compiler](https://www.reddit.com/r/cpp/comments/gvsbd2/c_ide_with_an_interpreter_in_addition_to_the/)
-- url: https://www.reddit.com/r/cpp/comments/gvsbd2/c_ide_with_an_interpreter_in_addition_to_the/
----
-I've been using Python in VS Code lately. Since it's an interpreted language, its Debug Console is very powerful. I also use Visual C++ and I think it would be really cool to have the ability to run arbitrary code on a breakpoint (at least in the debug config). I think this would be a quite big productivity boost for many - you can try different things and immediately see if they give you expected results and the debugging speed improves. Immediate Window in VC++ is very limited. There is Cling but I don't think you could integrate it easily with Clang in an IDE.
-
-Any thoughts?  I'm afraid that it would be too much work to make something like this happen. One way could be to have a Cling IDE and the ability to mark certain parts of code for optimized compiling with Clang, as there are usually not many hotspots in code.
-## [8][RStein.AsyncCpp (06-03-2020) - Task Parallel Library](https://www.reddit.com/r/cpp/comments/gvpepb/rsteinasynccpp_06032020_task_parallel_library/)
-- url: https://www.reddit.com/r/cpp/comments/gvpepb/rsteinasynccpp_06032020_task_parallel_library/
----
-Original announcement:[https://www.reddit.com/r/cpp/comments/gd5313/task\_parallel\_library\_tpl\_for\_c\_coroutines\_in/](https://www.reddit.com/r/cpp/comments/gd5313/task_parallel_library_tpl_for_c_coroutines_in/)
-
-Changes:
-
-\-Added **AsyncMutex** synchronization primitive.
-
-[https://github.com/renestein/Rstein.AsyncCpp#AsyncMutex](https://github.com/renestein/Rstein.AsyncCpp#AsyncMutex)
-
-\- **TaskFactory.Run automatically unwraps nested Task** (e.g. scheduled lambda-coroutine returns Task).  Very convenient and prevents some hard-to-debug, but easy to introduce bugs in C++ coroutines.
-
-[https://github.com/renestein/Rstein.AsyncCpp#TaskFactory-Unwrap-Nested-Task](https://github.com/renestein/Rstein.AsyncCpp#TaskFactory-Unwrap-Nested-Task)
-
-\- Task has the **Unwrap method** ((Unwrap Task&lt;Task&lt;T&gt; and returns Task&lt;T&gt;) and corresponding **Fjoin** method.
-
-[https://github.com/renestein/Rstein.AsyncCpp#Task-Fjoin](https://github.com/renestein/Rstein.AsyncCpp#Task-Fjoin)
-
-\- Added **SynchronizationContext** \- provides a mechanism to queue work to a specialized context. (useful for marshaling calls to UI thread, event loop, etc.)
-
-[https://github.com/renestein/Rstein.AsyncCpp#synchronizationcontext](https://github.com/renestein/Rstein.AsyncCpp#synchronizationcontext)
-
-\- Added **SynchronizationContextScope** \- RAII class for SynchronizationContext. An instance of this class captures the current synchronization context in the constructor (now 'old' context), installs new synchronization context provided by the user, and restores 'old' synchronization context in the destructor.)
-
-[https://github.com/renestein/Rstein.AsyncCpp#SynchronizationContextScope](https://github.com/renestein/Rstein.AsyncCpp#SynchronizationContextScope)
-
-\- Added **ConfigureAwait** method (for the Task awaiter) - configures if the 'co\_await continuation' is resumed in the specific synchronization context.
-
-[https://github.com/renestein/Rstein.AsyncCpp#ConfigureAwait](https://github.com/renestein/Rstein.AsyncCpp#ConfigureAwait)
-
-\- Added **GlobalTaskSettings::UseOnlyConfigureAwaitFalseBehavior** configuration key - set the key to true if you want to enforce the equivalent of the 'co\_await someTask.ConfigureAwait(false)' for all 'co\_await someTask{anything}' expressions in the application - synchronization context is then never used when resuming the 'co\_await continuation'.
-
-[https://github.com/renestein/Rstein.AsyncCpp#GlobalTaskSettings-UseOnlyConfigureAwaitFalseBehavior](https://github.com/renestein/Rstein.AsyncCpp#GlobalTaskSettings-UseOnlyConfigureAwaitFalseBehavior)
-
-\- **Task.ContinueWith method** has new overloads with CancellationToken argument.
-## [9][Taskflow v2.5.0 released with a new visualization tool](https://www.reddit.com/r/cpp/comments/gvbfix/taskflow_v250_released_with_a_new_visualization/)
-- url: https://github.com/taskflow/taskflow
----
-
-## [10][I wrote a CPU-Emulator using only the C++ type system.](https://www.reddit.com/r/cpp/comments/guqthy/i_wrote_a_cpuemulator_using_only_the_c_type_system/)
-- url: https://www.reddit.com/r/cpp/comments/guqthy/i_wrote_a_cpuemulator_using_only_the_c_type_system/
----
-Due to the Turing completeness of the C++ type system it is possible to implement a complete CPU emulator using only templates. The complete code is executed during compilation, the only run time code is for printing the output and registers.
-
-[https://github.com/aul12/TemplateCpu](https://github.com/aul12/TemplateCpu)
-
-At the moment not many instructions are supported, but new instructions can be added easily. With the current state it is already possible to calculate the n-th fibonacci number, both iterative and recursive.
-## [11][CppCon 2018: “Grill the Committee”](https://www.reddit.com/r/cpp/comments/gvlfcy/cppcon_2018_grill_the_committee/)
-- url: https://youtu.be/cH0nJPbMFAY
----
-
-## [12][Can FunctionObject be deprecated and replaced by Callable?](https://www.reddit.com/r/cpp/comments/gvcfze/can_functionobject_be_deprecated_and_replaced_by/)
-- url: https://www.reddit.com/r/cpp/comments/gvcfze/can_functionobject_be_deprecated_and_replaced_by/
----
-Use case:
-
-    vector&lt;string&gt; names = {"Not empty"};
-    auto const all_empty = all_of(begin(names), end(names), &amp;string::empty);
-
-I looked through a few invoke-related papers (N4169, P0077R2... any others?) to see if relaxing the algorithm requirements was considered or discussed but I couldn't find any mention of the idea. Is it  because it's dumb in some way? If so please clue me in :).
+Thanks for your time!

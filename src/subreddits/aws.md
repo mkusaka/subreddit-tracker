@@ -21,109 +21,129 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][CPU showing vulnerability on boot that was supposed to be fixed on EC2 instances last year](https://www.reddit.com/r/aws/comments/gvhpun/cpu_showing_vulnerability_on_boot_that_was/)
-- url: https://www.reddit.com/r/aws/comments/gvhpun/cpu_showing_vulnerability_on_boot_that_was/
----
-Hello all.  I have the following issue, it started with the `oom_reaper` killing the only memory intensive process on the server, `mariadb`, as seen when looking at oom_scores.  So I'm not positive, maridb is actually causing it to run out of memory.    
-
-
-In debugging the issue i was looking through the `kern.log` and see the following.
-```
-MDS CPU bug present and SMT on, data leak possible. See https://www.kernel.org/doc/html/latest/admin-guide/hw-vuln/mds.html for more details.
-TAA CPU bug present and SMT on, data leak possible. See https://www.kernel.org/doc/html/latest/admin-guide/hw-vuln/tsx_async_abort.html for more details.
-```
-And i have gone over those links which lead me to CVEs addressed by Amazon in this release. https://aws.amazon.com/security/security-bulletins/AWS-2019-004/.  
-
-The values on all of my servers in two VPCs in the file `cat /sys/devices/system/cpu/vulnerabilities/mds` is `Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown`.  
-
-From my understanding that statement is there b/c `md_clean` is not passed to kernel. So i installed `intel-microcode` package, i can see the available and chosen ones with with `/usr/sbin/iucode_tool -tb -lS /lib/firmware/intel-ucode/*`
-
-When i reboot the server the message don't change and `dmesg | grep microcode` returns 
-```
-[    0.820544] TAA: Vulnerable: Clear CPU buffers attempted, no microcode
-[    0.820544] MDS: Vulnerable: Clear CPU buffers attempted, no microcode
-```
-
-Now I may be going down a rabbit hole with my OOM, but this was a clear well documented issue and well hell at this point i don't know exactly what i want, but i'll take any input. 
-
-I'm confused about why it doesn't actually show the chosen microcodes or change the message. All updates are applied to all servers.
-
-```
-$&gt; uname -a
-Linux prodweb01 5.3.0-1019-aws #21~18.04.1-Ubuntu SMP Mon May 11 12:33:03 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
-```
-The impacted server is a `c5.xlarge`  I see this on older T2 instances and newer rebuilt T3 instances.
-
-Thanks for any ideas, speculations etc.
-## [3][Cutting costs - Do I need a NAT gateway?](https://www.reddit.com/r/aws/comments/gvqvjg/cutting_costs_do_i_need_a_nat_gateway/)
-- url: https://www.reddit.com/r/aws/comments/gvqvjg/cutting_costs_do_i_need_a_nat_gateway/
----
-I'm running a small application in AWS. I have a web server that provides an API, hosted in AWS Fargate, with an Elastic Load Balancer in front of it. It connects to a RDS instance to store user data. I have a SPA client hosted in S3 with CloudFront.
-
-1. I set the stack up with AWS CDK and it apparently spun up a NAT Gateway for me which is one of the greatest costs. Do I even need that?
-2. At the moment I'm at roughly 50 users per day, so I guess I should be fine with the lowest tier CPU/memory specs on all my instances, right? The application is basically a CRUD application at this point.
-3. I don't want to spend too much cash on this, but my costs are already estimated to $100+/month. Is this reasonable?
-## [4][AWS WorkSpaces - How do you protect / monitor it?](https://www.reddit.com/r/aws/comments/gvteo6/aws_workspaces_how_do_you_protect_monitor_it/)
-- url: https://www.reddit.com/r/aws/comments/gvteo6/aws_workspaces_how_do_you_protect_monitor_it/
----
-I'm trying to create a proof of concept for whether a company could use AWS WorkSpaces as a DaaS. I keep finding that a lot of services I try to use only work with EC2 instances or need IAM roles.
-
-* CloudWatch - have to treat WorkSpaces as an on-premise device to get custom metrics and use an agent which was a pain to setup. Took 2 minutes to get working with an EC2 instance however took me a week to get it working properly with a WorkSpace
-* Amazon Inspector - only EC2, I can't run it at all against my WorkSpaces to see how vulnerable they are.
-* Guard Duty - I haven't use this yet however it looks like it needs a service role, since you can't put service roles on WorkSpaces I'm assuming this won't work but may be wrong..
-
-Anyone got any advice maybe I'm missing something obvious? Thank you very much.
-## [5][RDS PostgreSQL Logical Replication COPY from AWS RDS Snapshot](https://www.reddit.com/r/aws/comments/gvsqyd/rds_postgresql_logical_replication_copy_from_aws/)
-- url: https://medium.com/searce/rds-postgresql-logical-replication-copy-from-aws-rds-snapshot-6983446472a9
+## [2][I've created a tool - spotcost.net The one-pager about all spot instances information. It helps find the cheapest region/az, compare specs, regions, price in time and etc. The difference between regions is huge (10-300% sic!). What do you think?](https://www.reddit.com/r/aws/comments/gwgdkm/ive_created_a_tool_spotcostnet_the_onepager_about/)
+- url: https://spotcost.net
 ---
 
-## [6][Updated an RDS instance tag via CloudFormation, and the instance rebooted](https://www.reddit.com/r/aws/comments/gvsnzf/updated_an_rds_instance_tag_via_cloudformation/)
-- url: https://www.reddit.com/r/aws/comments/gvsnzf/updated_an_rds_instance_tag_via_cloudformation/
+## [3][TLS 1.2 to become the minimum for all AWS FIPS endpoints | Amazon Web Services](https://www.reddit.com/r/aws/comments/gw1a47/tls_12_to_become_the_minimum_for_all_aws_fips/)
+- url: https://aws.amazon.com/blogs/security/tls-1-2-to-become-the-minimum-for-all-aws-fips-endpoints/
 ---
-I have a CloudFormation stack of an Aurora PostgreSQL cluster with currently a single instance.  There are some other supplementary resources such as ParameterGroup, SecurityGroup, etc.
 
-Today I initiated a stack update which did one single thing: it changed a single tag value that is applied to all the resources.  That's it.
-
-My stack changeset showed nothing unusual, no unexpected Replacements, etc.
-
-I execute the update, and things when it gets to updating the instance, I notice in the window behind my current one, the DB instance rebooted.
-
-I have two questions:
-
-1) why?
-
-2) in the future is there any way I can anticipate disruptions like this?
-## [7][An abnormally high number of S3 GET requests on a development account?](https://www.reddit.com/r/aws/comments/gvs9v4/an_abnormally_high_number_of_s3_get_requests_on_a/)
-- url: https://www.reddit.com/r/aws/comments/gvs9v4/an_abnormally_high_number_of_s3_get_requests_on_a/
+## [4][Any reason NOT to use ACM Certificates ?](https://www.reddit.com/r/aws/comments/gw99u5/any_reason_not_to_use_acm_certificates/)
+- url: https://www.reddit.com/r/aws/comments/gw99u5/any_reason_not_to_use_acm_certificates/
 ---
-Hi all,
+Is there any reason for someone to use traditional CA certificates (Comodo/Digicert etc) if they are fully on AWS, and do not plan to install the certificates in EC2 ? How would you convince corporate IT teams that traditional CA signed certificates offer no additional value;  and ACM in fact removes a lot of head aches offered by them like cert rotation?
 
-I was just taking a look at my billing when I noticed a high number of S3 GET requests (around 4000). I know this isn't huge, but it is not a public or project-tied account. I have only been doing some development work using CloudFormation and SAM. 
-
-I checked again this morning and now there are \~5700 requests in total. I thought that originally my GET requests might be coming from CodePipeline as part of the CI solution I'm using. 
-
-Has anyone seen this before?
-
-UPDATE: I forgot to submit this post, and since re-checking there are now over 6500 requests.
-## [8][VPN Solution](https://www.reddit.com/r/aws/comments/gvm8sm/vpn_solution/)
-- url: https://www.reddit.com/r/aws/comments/gvm8sm/vpn_solution/
+Even if we decide to install certs on EC2, is there any advantage for paid certificates over those given by Lets Encrypt ?
+## [5][RDS Script - Iterating over MS SQL databases and backing them up to s3](https://www.reddit.com/r/aws/comments/gwealg/rds_script_iterating_over_ms_sql_databases_and/)
+- url: https://www.reddit.com/r/aws/comments/gwealg/rds_script_iterating_over_ms_sql_databases_and/
 ---
-Looking for a robust remote access vpn solution. We’ve been using Sophos UTM’s SSL vpn client but it’s pretty unreliable where it sometimes refuses to resolve dns names until client machines are rebooted. Are there any AWS recommended firewall appliances that have good vpn support or perhaps stand alone vpn? Looked into native AWS client vpn but looks too new to consider and a bit cumbersome.
-## [9][Whitelisting paths in AWS WAF](https://www.reddit.com/r/aws/comments/gvqw24/whitelisting_paths_in_aws_waf/)
-- url: https://www.reddit.com/r/aws/comments/gvqw24/whitelisting_paths_in_aws_waf/
----
-Hello, I'm a student which is creating  an IaC infrastructure  (with Terraform) on AWS for a launching company. 
+Hello Everybody,
 
-We have setup the waf with the Owasp top 10 rules (using a terraform module) in front of our load balancer. The problem I am facing here is I need to whitelist certain URI (like /api/comment) to allow some blocked words (like the SQL injection words, they can be use by our visitors in the comment section) and I don't understand how I am supposed to do that.  
-Can some of you guys help me here ? thanks in advance
-## [10][Using the built in ALB authentication](https://www.reddit.com/r/aws/comments/gvllv4/using_the_built_in_alb_authentication/)
-- url: https://www.reddit.com/r/aws/comments/gvllv4/using_the_built_in_alb_authentication/
----
-When using this:  [https://aws.amazon.com/blogs/aws/built-in-authentication-in-alb/](https://aws.amazon.com/blogs/aws/built-in-authentication-in-alb/) 
+I created this script a while ago and thought it might be useful for people here who use RDS for MS SQL and want to either migrate their databases or back them up.
 
-since the application is no longer handling the authentication, how do you know who the authenticated user is in the app?  Does it pass through the JWT token?
-## [11][Internal Documentation Tool](https://www.reddit.com/r/aws/comments/gv7gox/internal_documentation_tool/)
-- url: https://www.reddit.com/r/aws/comments/gv7gox/internal_documentation_tool/
+&amp;#x200B;
+
+This script iterates over all the databases except: master, model, rdsadmin, tmpdb, msdb.
+
+&amp;#x200B;
+
+prints the database name, and then backs it up as &lt;database\_name&gt;.bak to s3 (make sure to change the arn of the s3 bucket.)
+
+&amp;#x200B;
+
+ 
+
+`DECLARE @value VARCHAR(50)`
+
+`DECLARE db_cursor CURSOR FOR`  
+
+`SELECT name FROM master.dbo.sysdatabases`
+
+`where name not in ('master','model','rdsadmin','tempdb','msdb')`
+
+`OPEN db_cursor`   
+
+`FETCH NEXT FROM db_cursor INTO @value`   
+
+`WHILE @@FETCH_STATUS = 0`   
+
+`BEGIN`   
+
+`PRINT @value`
+
+  `declare  @s3 nvarchar(MAX) = N'arn:aws:s3:::bucket_name/'+@value+'.BAK'`
+
+  `exec msdb.dbo.rds_backup_database` 
+
+`@source_db_name=@value,`
+
+`@s3_arn_to_backup_to=@s3,` 
+
+`@overwrite_S3_backup_file=1;`
+
+`FETCH NEXT FROM db_cursor INTO @value`   
+
+`END`   
+
+`CLOSE db_cursor`   
+
+`DEALLOCATE db_cursor`
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+Hopefully this helps someone!
+## [6][Authorising HLS streaming files from Amazon S3 directory](https://www.reddit.com/r/aws/comments/gwglv0/authorising_hls_streaming_files_from_amazon_s3/)
+- url: https://www.reddit.com/r/aws/comments/gwglv0/authorising_hls_streaming_files_from_amazon_s3/
 ---
-Curious what everyone else uses for enterprise internal documentation. Wiki? Sharepoint? Build a custom tool in AWS?  
-For example, what would you use if you want to share architecture diagrams, run books, ops books, etc. to anyone in your IT org?
+We have setup that converts raw videos into HLS format (.m3u8 and .ts files) and organises them into a directory inside a s3 bucket. Each directory inside the bucket represents one video. Since s3 doesn't really have the concept of directory in its implementation, it does not allow us to get a signed url to read the content of the directory to feed into the video player.
+
+I tried signing the URL for the .m3u8 file alone with getObject, but since tries to fetch the parts of the video to play, it will be thrown with an 403 by s3. Using cloudfront is not an option for us at this stage.
+
+Is there a better and secure way to handle the streaming from s3 without making the entire bucket public?
+## [7][API entrypoint with ACM certificates without ALB](https://www.reddit.com/r/aws/comments/gwh45t/api_entrypoint_with_acm_certificates_without_alb/)
+- url: https://www.reddit.com/r/aws/comments/gwh45t/api_entrypoint_with_acm_certificates_without_alb/
+---
+ Hey!
+
+I love to use ALB in front of EC2 instances because then I don’t need to worry about SSL on EC2 instances (on nginx side), but rather use ACM on ALB for 2 of my domains (site has to work on both [example1.com](http://example1.com/) and [example2.com](http://example2.com/), 2 certificates - [example2.com](http://example2.com/) is a CNAME to [example1.com](http://example1.com/), which right now is a CNAME to load balancer address). But is there a way of doing this when there’s only 1 EC2 instance and I don’t need ALB, but I still don’t want to manage certificates on the EC2 side?
+
+The reason I’m asking is that I sometimes just need 1 instance, but sometimes I need to scale and need to add more EC2 instances and load balance them. The times I only need 1, I would rather not use the ALB to save money. Can I provision any sort of AWS resource that would serve as an entrypoint and would pass that request to the EC2 instance? I noticed CloudFront can be used to serve dynamic content as well, but it only supports 1 ACM certificate. Can API gateway be configured in such a way to pass the request down to EC2 instance but provide multiple certificates as well?  
+ 
+
+I would like to be as flexible as possible, where I would CNAME my domains to some endpoint that stands in front of EC2, then if I need more instances, I would provision ALB, add those instances and swap out the CNAME to ALB’s address. I would love to hear out what you guys think.
+
+All of this now works with ALB. I can just remove and add targeted instances, but in case I only need 1 instance, ALB is wasting money for my use case.
+
+&amp;#x200B;
+
+I'm not very experienced in AWS, so I would love to hear your opinions.
+## [8][Domain still going to Godaddy website after setting up NS records with A record and CNAME records on AWS Lightsail](https://www.reddit.com/r/aws/comments/gwh3l1/domain_still_going_to_godaddy_website_after/)
+- url: https://www.reddit.com/r/aws/comments/gwh3l1/domain_still_going_to_godaddy_website_after/
+---
+I purchased my domain name at Godaddy, then changed the nameservers in Godaddy's DNS settings over to my AWS nameservers. AWS now controls my DNS records so I added an A record and two CNAME records. 
+
+The A record points to my static IP (@.example.com --&gt; staticIP) and my CNAME records point to my domain name ([www.example.com](https://www.example.com) \--&gt; [example.com](https://example.com))
+
+Both my subdomains from the CNAME records take me to the correct website hosted on Lightsail, but going to the main domain ([example.com](https://example.com)) still takes me to Godaddy's website builder that I set up when I bought the domain. There are no other options in Godaddy's DNS settings except to transfer the domain which isn't available for another month. I'm not sure what else to do on the AWS side because I already set up the A record, but it's not working correctly. Anyone know what else I can do?
+## [9][Different Deployment Types Of AWS Elastic Beanstalk](https://www.reddit.com/r/aws/comments/gwgzy3/different_deployment_types_of_aws_elastic/)
+- url: https://www.ibexlabs.com/different-deployment-types-of-aws-elastic-beanstalk/
+---
+
+## [10][Automating RDS Start and Stop](https://www.reddit.com/r/aws/comments/gw7doh/automating_rds_start_and_stop/)
+- url: https://www.reddit.com/r/aws/comments/gw7doh/automating_rds_start_and_stop/
+---
+I am using it (PostgreSql) only for developing purposes. So I want it to be open only on work hours. Is there a way of scheduling it?
+## [11][Unable to map API Gateway to custom domain name](https://www.reddit.com/r/aws/comments/gwfprg/unable_to_map_api_gateway_to_custom_domain_name/)
+- url: https://www.reddit.com/r/aws/comments/gwfprg/unable_to_map_api_gateway_to_custom_domain_name/
+---
+I am trying to create a custom domain name mapping to API Gateway. I followed the documentation and I have following things in place:
+
+* SSL Certificate from ACM
+* Entry for desired domain in Route 53 with routing set to API End point
+
+Now only step remaining is adding API mapping. When I try to add an API mapping it throws errors saying  `Unable to complete operation due to concurrent modification. Please try again later.` 
+
+Not able to figure out how to resolve this. Looking for assistance for the same.

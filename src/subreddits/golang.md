@@ -1,96 +1,120 @@
 # golang
-## [1][Learn Golang by building a fintech banking app - Lesson3: User registration](https://www.reddit.com/r/golang/comments/gvmtxi/learn_golang_by_building_a_fintech_banking_app/)
-- url: https://morioh.com/p/743f14006552?f=5c21fb01c16e2556b555ab32
----
-
-## [2][Love at first sight](https://www.reddit.com/r/golang/comments/gvhywi/love_at_first_sight/)
-- url: https://www.reddit.com/r/golang/comments/gvhywi/love_at_first_sight/
----
-Sorry, this is a complete ramble.
-
-I have recently given golang an actually chance. I had an opportunity to write golang at work over a year ago when we decided to use it in one of our services. I immediately brushed away the chance because of how golang didn't look so familiar (like C syntax languages). It breaks a few conventions that I'm familiar with.
-
-Fast forward to literally yesterday around lunchtime and something in my head entices me to learn go. I immediately find "gobyexample" and I'm hooked. Spent the entire lunch learning about go.
-
-Once I got home, all I can think about is learning go. I immediately join this subreddit. I don't know a lot of go, I've only written sub basic things in go (client/server ping pong deal), but I just love it.
-
-I haven't felt this way about a language since I learned Lua all those years ago. And when I learned Java at first... I hated it (I've been doing it for 5 years now though,  so its like a spoken language to me at this point).
-
-Do you guys still feel this way about go?
-## [3][Build a distributed website with Hugo](https://www.reddit.com/r/golang/comments/gvm9mi/build_a_distributed_website_with_hugo/)
-- url: https://levelup.gitconnected.com/build-a-distributed-website-with-hugo-1183bb098057
----
-
-## [4][I wrote a post on how to write a lexer in Go](https://www.reddit.com/r/golang/comments/gv8ql1/i_wrote_a_post_on_how_to_write_a_lexer_in_go/)
-- url: https://www.reddit.com/r/golang/comments/gv8ql1/i_wrote_a_post_on_how_to_write_a_lexer_in_go/
----
-Hey everyone, this is my first blog post! I'd love to hear your feedback!
-
-[https://www.aaronraff.dev/blog/how-to-write-a-lexer-in-go](https://www.aaronraff.dev/blog/how-to-write-a-lexer-in-go)
-## [5][Handling Signals in Go](https://www.reddit.com/r/golang/comments/gvsnho/handling_signals_in_go/)
-- url: https://www.reddit.com/r/golang/comments/gvsnho/handling_signals_in_go/
----
-Hello, I just started writing blog posts and would really appreciate feedback on my first blog post in Go, titled [Handling Signals in Go](https://arberiii.github.io/go/2020/06/02/signals-go.html).
-## [6][Reducing Slice Length](https://www.reddit.com/r/golang/comments/gvsjsa/reducing_slice_length/)
-- url: https://www.reddit.com/r/golang/comments/gvsjsa/reducing_slice_length/
----
-Hello,  I am trying to reduce a slice’s length using a maximum count parameter. Here is the code. It is quite ok. But I am open for advices.
-
-&amp;#x200B;
-
-    package main
-    
-    import "fmt"
-    
-    func main() {
-    	records := selectRecords(1000)
-    	fmt.Println(len(records))
-    }
-    
-    func selectRecords(maximumRecordCount float64) []string {
-    	records := make([]string, 5987)
-    	recordCount := float64(len(records))
-    	if recordCount &lt;= maximumRecordCount {
-    		return records
-    	}
-    	step := recordCount / maximumRecordCount
-    	var filteredRecords []string
-    	for i := 0.0; i &lt; recordCount; i += step {
-    		filteredRecords = append(filteredRecords, records[int(i)])
-    	}
-    	return filteredRecords
-    }
-## [7][Open Source MIT license Spreading Disease Simulation in golang](https://www.reddit.com/r/golang/comments/gvtluz/open_source_mit_license_spreading_disease/)
-- url: https://www.reddit.com/r/golang/comments/gvtluz/open_source_mit_license_spreading_disease/
+## [1][LocalXpose: Bye Bye Localhost, Hello World.](https://www.reddit.com/r/golang/comments/gw6lo5/localxpose_bye_bye_localhost_hello_world/)
+- url: https://www.reddit.com/r/golang/comments/gw6lo5/localxpose_bye_bye_localhost_hello_world/
 ---
 &amp;#x200B;
 
-https://preview.redd.it/36syz7ht2p251.png?width=1766&amp;format=png&amp;auto=webp&amp;s=212a48b056d626f9e9b23b491bebd0e837785a6b
+https://preview.redd.it/ggl95vkghs251.png?width=2529&amp;format=png&amp;auto=webp&amp;s=c03d4a58cbc29d52d25132747c5f51410cb2a0d5
 
-Hi gophers,
+I created LocalXpose which is a reverse proxy that enables you to expose your localhost to the internet.
 
-for an University project me and another classmate created a spreading disease simulation tool in golang, I decided to post here because I thought it could be a useful starting point for someone. At this stage it is a bit tricky to edit parameters, by the way if someone is interested can contribute in order to improve it. Star it if you like it!
+LocalXpose has many features like TCP, HTTP, TLS, UDP tunnels, built-in Let's Encrypt, unlimited connections, CLI &amp; GUI, SDK to start tunnels from your app and much more.
 
-[https://github.com/carbogninalberto/spreading-disease-simulation](https://github.com/carbogninalberto/spreading-disease-simulation)
+You can read more at [https://localxpose.io](https://localxpose.io)
 
-**TL;DR**: there are a lot of customizable parameters, Montecarlo Simulation with Confidence Intervals calculation, Containment Measures and many more features...
+&amp;#x200B;
 
-The software is able to create and allocate a big graph using a relative low amount of RAM; by default the graph consist of around 4mln nodes and 150 edges per node, note that 32gb RAM is needed. Generally you can use a 400k nodes 150 edges with around 4 gb ram usage; if you suggest some feedback to reduce the amount of usage is appreciated.
+&amp;#x200B;
 
-We build a 4mln nodes graph because is the population in Veneto Region in Italy, and 150 edges per node is the Dunbar number, We know it's a rough rappresentation, but for our purpose was good enough; you can still load your graph in json format.
-
-We provide a simple Montecarlo Simulation that consists on running multiple time the spreading simulation, collect data and save them on csv.
-
-After that we run a python script to calculate confidence intervals with Asymptotic Formulas and Bootstrap algorithm. As final step the script plot some matplotlib graphs of the measured metrics.
-## [8][logrusiowriter adapts logrus.Logger to be an io.Writer](https://www.reddit.com/r/golang/comments/gvt79c/logrusiowriter_adapts_logruslogger_to_be_an/)
-- url: https://github.com/cabify/logrusiowriter
+https://i.redd.it/6qoalibihs251.gif
+## [2][how to read the next 4 bytes in file ?](https://www.reddit.com/r/golang/comments/gwg7ek/how_to_read_the_next_4_bytes_in_file/)
+- url: https://www.reddit.com/r/golang/comments/gwg7ek/how_to_read_the_next_4_bytes_in_file/
+---
+basically after i read starting 4 bytes of a file i want to read the next 4 bytes in the file without looping.basically specific next 4 bytes
+## [3][How I solved Jepsen with OpenCensus Distributed Tracing: A personal journey](https://www.reddit.com/r/golang/comments/gwgaf6/how_i_solved_jepsen_with_opencensus_distributed/)
+- url: https://dgraph.io/blog/post/solving-jepsen-with-opencensus/
 ---
 
-## [9][Golang Code Smells](https://www.reddit.com/r/golang/comments/gvpte8/golang_code_smells/)
-- url: https://www.reddit.com/r/golang/comments/gvpte8/golang_code_smells/
----
-Where can I find the code smells related to Golang?
-## [10][You should not build your own authentication. Let Firebase do it for you](https://www.reddit.com/r/golang/comments/gvs4q8/you_should_not_build_your_own_authentication_let/)
-- url: https://threedots.tech/post/firebase-cloud-run-authentication/
+## [4][Golang Authentication Service: allows setup authentication in minutes](https://www.reddit.com/r/golang/comments/gvwelw/golang_authentication_service_allows_setup/)
+- url: https://github.com/maximthomas/gortas
 ---
 
+## [5][Self-Host Complete Authentication Service in Go](https://www.reddit.com/r/golang/comments/gwh8vw/selfhost_complete_authentication_service_in_go/)
+- url: https://www.reddit.com/r/golang/comments/gwh8vw/selfhost_complete_authentication_service_in_go/
+---
+Hi community, my first post here.
+
+&amp;#x200B;
+
+I've written an Authentication microservice, or more appropriately, a User microservice complete with all the features you'd expect. Here's some of what's included:
+
+* JWT Based and API Key based authentication
+* Support For Social Media Login Using Facebook/Google/Instagram/Twitter/LinkedIn.
+* CRUD operations on user, with included endpoints for all the usual stuff such as Email Verification, Password Recovery, etc.
+* Additional functionality on certain routes based on Admin role (Additional roles can easily be added).
+* Complete session tracking with locations and time, ability for the user to manage their sessions.
+* Created using Goa ([https://github.com/goadesign/goa](https://github.com/goadesign/goa)), making implementation of RPC super easy if needed.
+* Ability to create Frontend SDKs for JavaScript/Android/iOS/others using openapi-generator within seconds.
+
+This list is not exhaustive.
+
+It uses MongoDB for database but the service is written in a manner where the database package can easily be swapped out for a different DB. Other features would include things such as Rate Limiting, Logging, etc.
+
+&amp;#x200B;
+
+**Do note that this is not a package that you can import into your code and use that way. This is a service in itself, which ideally someone can take, modify for their use and then deploy directly.**
+
+&amp;#x200B;
+
+In any case, here's the project: [https://github.com/anshap1719/authentication](https://github.com/anshap1719/authentication). Also, here's the API documentation for the same: [https://anshap1719.github.io/authentication/](https://anshap1719.github.io/authentication/).
+
+&amp;#x200B;
+
+Also note that this is not a 100% ready to use directly. You'll need to make some changes anyway such as setting up your own API keys and providing it with the Public and Private Key Files For JWT, etc.
+## [6][Big File Uploader :- Upload big file by chunking the file using goroutines and channel](https://www.reddit.com/r/golang/comments/gw0axl/big_file_uploader_upload_big_file_by_chunking_the/)
+- url: https://www.reddit.com/r/golang/comments/gw0axl/big_file_uploader_upload_big_file_by_chunking_the/
+---
+Hi community,
+
+I have been learning golang for some time after office hours. I love the language. I have written a simple file uploader which writes the file(any type) onto disk. I would love a code review and feedback from the community.
+
+[Github repo](https://github.com/atulkgupta9/big-file-uploader)
+## [7][Requests and context](https://www.reddit.com/r/golang/comments/gwes7r/requests_and_context/)
+- url: https://www.reddit.com/r/golang/comments/gwes7r/requests_and_context/
+---
+Hi,
+
+I wonder how a server should deal with requests that take too much time to be handled.
+
+I read the go's blog about the context. But the main thing that bothers me there is that the actual function that does the work should return anyhow. Either when &lt;-done is called or not. So the actual load will still be there, so what is the point in timeout (in server side perspective)?
+
+I found it is OK if we don't wait for the function to send it's output to the channel, because we can buffer the channel. but in this situation the load is still there.
+
+Is there a good way to handle it? Do I miss something?
+
+link to the blog: [https://blog.golang.org/context](https://blog.golang.org/context)
+
+Thanks everyone
+## [8][Starting to learn Go](https://www.reddit.com/r/golang/comments/gw50ea/starting_to_learn_go/)
+- url: https://www.reddit.com/r/golang/comments/gw50ea/starting_to_learn_go/
+---
+Hi, guys. I’m starting to learn Go. I have been coding for past few years in various languages and for networking I used Python as my choice. 
+I have been looking at some stats about speed of Python and Go and figured that for what I’m doing (mostly networking and cli tools) Python is keeping me back. 
+
+I want to learn this language.. from very start. So do you have any book or some advices what should I focus on?
+
+Thank you :)
+## [9][JMX Exporter in golang?](https://www.reddit.com/r/golang/comments/gwdmve/jmx_exporter_in_golang/)
+- url: https://www.reddit.com/r/golang/comments/gwdmve/jmx_exporter_in_golang/
+---
+Hi Guys,
+
+I want to create a custom Prometheus exporter for JMX monitoring of a java based application. is it possible to code it in golang?
+
+ Prometheus is created with golang go there shouldn't be any issue there but my concern is can we extract Java memory management parameters (like heap/non heap memory, garbage collector information, native memory usage, metaspace etc.) using golang?
+
+if so, is there any reference/source available in web (i checked but didn't find any lead)? 
+
+Thanks in advance \^\_\^
+
+Stay Safe!
+
+Cheers!
+## [10][go-guardian newly born library for golang authentication](https://www.reddit.com/r/golang/comments/gwd3sh/goguardian_newly_born_library_for_golang/)
+- url: https://www.reddit.com/r/golang/comments/gwd3sh/goguardian_newly_born_library_for_golang/
+---
+Repo: [https://github.com/shaj13/go-guardian](https://github.com/shaj13/go-guardian)
+
+GoDoc: [https://pkg.go.dev/github.com/shaj13/go-guardian@v1.1.1?tab=doc](https://pkg.go.dev/github.com/shaj13/go-guardian@v1.1.1?tab=doc)
+
+It worth your star :)

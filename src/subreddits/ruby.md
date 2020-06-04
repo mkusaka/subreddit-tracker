@@ -1,9 +1,36 @@
 # ruby
-## [1][Is there a GUI Toolkit for Ruby that is currently an active and simple project like "Shoes"? I find Shoes very intuitive, too bad it is no longer developed. Do you know anything like this? I have searched around but I find all the other more cumbersome toolkits ....](https://www.reddit.com/r/ruby/comments/gvq1ww/is_there_a_gui_toolkit_for_ruby_that_is_currently/)
-- url: https://www.reddit.com/r/ruby/comments/gvq1ww/is_there_a_gui_toolkit_for_ruby_that_is_currently/
+## [1][Dynamic OmniAuth strategy utilizing OpenId Connect?](https://www.reddit.com/r/ruby/comments/gw91oa/dynamic_omniauth_strategy_utilizing_openid_connect/)
+- url: https://www.reddit.com/r/ruby/comments/gw91oa/dynamic_omniauth_strategy_utilizing_openid_connect/
 ---
+I’m using OmniAuth right now and things are working fine using the available strategies like ‘omniauth-google-oauth2’. 
 
-## [2][Ansible Rails: Deploy Ruby on Rails apps easily](https://www.reddit.com/r/ruby/comments/gvr7m9/ansible_rails_deploy_ruby_on_rails_apps_easily/)
+I’d like to write on generic strategy, where I can pass in the ‘client_id’, ‘client_secret’, a provider url, etc. It’s my understanding that a generic strategy will only work if the provider is OpenId Connect compliant for standard naming, endpoints, etc. 
+
+I have bit and pieces of it figured out, but struggling to put it all together.  There’s a couple gems that look like generic OpenId Connect strategies, but I’ve run into issues dynamically updating them in the initializer following a pattern like this [dynamic provider ](https://github.com/omniauth/omniauth/wiki/Dynamic-Providers)
+
+
+Has anyone implemented something similar?
+## [2][Shipped print copies of Why's Poignant Guide this Monday as part of Alt::BrightonRuby](https://www.reddit.com/r/ruby/comments/gvu5r1/shipped_print_copies_of_whys_poignant_guide_this/)
+- url: https://www.reddit.com/r/ruby/comments/gvu5r1/shipped_print_copies_of_whys_poignant_guide_this/
+---
+Hey there,
+
+I've read and re-read this for typos and layout errors and am getting ready to send to the printers on Monday (8th). We'll ship anywhere for the price of the £29 Alt::BrightonRuby "ticket" as well as access to the talks (15th June) and the ability to ask questions that I'll put to the speakers on a podcast (late June/early July).
+
+Tickets and further information at https://alt.brightonruby.com
+
+[The cover](https://preview.redd.it/y19ghclw7p251.png?width=1586&amp;format=png&amp;auto=webp&amp;s=c9be747a6a499d76b7ffa862c0eb87da91b27ce2)
+
+[It's a real book.](https://preview.redd.it/6ooqvdsa8p251.jpg?width=3024&amp;format=pjpg&amp;auto=webp&amp;s=41cf241a1748acca77866d60ff9bb95387babde2)
+## [3][Learning from others...](https://www.reddit.com/r/ruby/comments/gw3bgv/learning_from_others/)
+- url: https://www.reddit.com/r/ruby/comments/gw3bgv/learning_from_others/
+---
+Noob here. I’ve always found reading another spoken language once you have a handle on the pronunciation helps to cement some of the nuances of the languages just by repetitive review of structures of the language, even if I don’t understand what I’m reading right away the brain seems to work out the semantics. 
+
+Seems like that works with programming as well so I was just curious if anyone has any suggestions for a well-documented/organized small to medium size open-sourced Ruby projects on Github that a beginner would benefit from looking through to see the file structure, documentation, etc.? Thanks for any suggestions in advance.
+
+Edit:  Thanks for all the ideas. Much appreciated.
+## [4][Ansible Rails: Deploy Ruby on Rails apps easily](https://www.reddit.com/r/ruby/comments/gvr7m9/ansible_rails_deploy_ruby_on_rails_apps_easily/)
 - url: https://www.reddit.com/r/ruby/comments/gvr7m9/ansible_rails_deploy_ruby_on_rails_apps_easily/
 ---
 I 've been using Heroku to deploy my Rails apps but I always wanted to learn how it all works under the hood. Over the last couple of months, I decided to learn more about how to set up a server and deploy a Rails app to production. I've made this open-source project in order to consolidate my learning.
@@ -24,21 +51,29 @@ It includes roles for performing the following tasks -
 * Deploying using Ansistrano
 
 Let me know what you guys think about it 🙌🏻
-## [3][Services and tools we use for development](https://www.reddit.com/r/ruby/comments/gvpwp9/services_and_tools_we_use_for_development/)
+## [5][Is there a GUI Toolkit for Ruby that is currently an active and simple project like "Shoes"? I find Shoes very intuitive, too bad it is no longer developed. Do you know anything like this? I have searched around but I find all the other more cumbersome toolkits ....](https://www.reddit.com/r/ruby/comments/gvq1ww/is_there_a_gui_toolkit_for_ruby_that_is_currently/)
+- url: https://www.reddit.com/r/ruby/comments/gvq1ww/is_there_a_gui_toolkit_for_ruby_that_is_currently/
+---
+
+## [6][New Ruby / Ruby on Rails daily digest in Telegram](https://www.reddit.com/r/ruby/comments/gvuh4q/new_ruby_ruby_on_rails_daily_digest_in_telegram/)
+- url: https://t.me/rubydoobydoo
+---
+
+## [7][Services and tools we use for development](https://www.reddit.com/r/ruby/comments/gvpwp9/services_and_tools_we_use_for_development/)
 - url: https://www.reddit.com/r/ruby/comments/gvpwp9/services_and_tools_we_use_for_development/
 ---
 Tools and services that help to automatize development flow. Easy to install with increasing team effectiveness.
 
 [https://jtway.co/services-and-tools-we-use-for-development-2749af5ad08a](https://jtway.co/services-and-tools-we-use-for-development-2749af5ad08a)
-## [4][Understanding Programs Using Graphs](https://www.reddit.com/r/ruby/comments/gvbn0p/understanding_programs_using_graphs/)
+## [8][Understanding Programs Using Graphs](https://www.reddit.com/r/ruby/comments/gvbn0p/understanding_programs_using_graphs/)
 - url: https://engineering.shopify.com/blogs/engineering/understanding-programs-using-graphs
 ---
 
-## [5][Designing helpful service objects. Part 1. Choosing the right design](https://www.reddit.com/r/ruby/comments/gvbrg2/designing_helpful_service_objects_part_1_choosing/)
+## [9][Designing helpful service objects. Part 1. Choosing the right design](https://www.reddit.com/r/ruby/comments/gvbrg2/designing_helpful_service_objects_part_1_choosing/)
 - url: https://www.morozov.is/2020/06/01/helpful-service-objects-part-1-chosing-right-design.html
 ---
 
-## [6][Integrating with Google Calendar - The Right Way](https://www.reddit.com/r/ruby/comments/gv5hdk/integrating_with_google_calendar_the_right_way/)
+## [10][Integrating with Google Calendar - The Right Way](https://www.reddit.com/r/ruby/comments/gv5hdk/integrating_with_google_calendar_the_right_way/)
 - url: https://www.reddit.com/r/ruby/comments/gv5hdk/integrating_with_google_calendar_the_right_way/
 ---
 ## Prerequisite
@@ -134,35 +169,3 @@ This is the flow that took me some time to understand. So what happens when a us
 * if the user changes a recurring event and selects `all` or `following events` as option then the `calendar_id` changes for all the events. Hence, in this case we need to delete the old events and add new events in our system. So, this is a check that you will have to add when saving the calendar events in your system.
 
 That's it - It's quite messy if you are trying to figure it out from scratch and I hope this article will help you all.
-## [7][Discussing Rails Deployment and Hosting Options with Nate Berkopec - The Rails with Jason Podcast](https://www.reddit.com/r/ruby/comments/gv90wc/discussing_rails_deployment_and_hosting_options/)
-- url: https://www.codewithjason.com/rails-with-jason-podcast/nate-berkopec-2/
----
-
-## [8][Writing better StimulusJS controllers](https://www.reddit.com/r/ruby/comments/gullws/writing_better_stimulusjs_controllers/)
-- url: https://boringrails.com/articles/better-stimulus-controllers/
----
-
-## [9][New error after forking ruby Koans from a not "10 yr old repo"](https://www.reddit.com/r/ruby/comments/guyr6v/new_error_after_forking_ruby_koans_from_a_not_10/)
-- url: https://www.reddit.com/r/ruby/comments/guyr6v/new_error_after_forking_ruby_koans_from_a_not_10/
----
-After forking from git hub, running rake or  ruby path\_to\_enlightenment.rb  in  koans returns 
-
-    Thinking AboutAsserts
-      test_assert_truth has damaged your karma.
-    
-    You have not yet reached enlightenment ...
-    &lt;false&gt; is not true.
-    
-    Please meditate on the following code:
-    Traceback (most recent call last):
-            2: from /mnt/c/Users/skywalker/dev/flatiron/projects/ruby_koans/koans/edgecase.rb:265:in `block in &lt;top (required)&gt;'
-            1: from /mnt/c/Users/skywalker/dev/flatiron/projects/ruby_koans/koans/edgecase.rb:112:in `report'
-    /mnt/c/Users/skywalker/dev/flatiron/projects/ruby_koans/koans/edgecase.rb:102:in `assert_failed?': uninitialized constant EdgeCase::Sensei::AssertionError (NameError)
-
-what is this 
-
-    uninitialized constant EdgeCase::Sensei::AssertionError (NameError)
-## [10][Somecache - A micro library to create and reuse cache configurations](https://www.reddit.com/r/ruby/comments/guvelz/somecache_a_micro_library_to_create_and_reuse/)
-- url: https://www.reddit.com/r/ruby/comments/guvelz/somecache_a_micro_library_to_create_and_reuse/
----
-[https://github.com/VAGAScom/somecache](https://github.com/VAGAScom/somecache)

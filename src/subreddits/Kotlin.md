@@ -1,13 +1,44 @@
 # Kotlin
-## [1][Kotlin generics in multiple platforms.](https://www.reddit.com/r/Kotlin/comments/gvtjbp/kotlin_generics_in_multiple_platforms/)
+## [1][Kotlin 1.4-M2 Released](https://www.reddit.com/r/Kotlin/comments/gwfyn3/kotlin_14m2_released/)
+- url: https://blog.jetbrains.com/kotlin/2020/06/kotlin-1-4-m2-released
+---
+
+## [2][Koge the new 100 % pure Kotlin OpenGL Game Engine](https://www.reddit.com/r/Kotlin/comments/gw259e/koge_the_new_100_pure_kotlin_opengl_game_engine/)
+- url: https://www.reddit.com/r/Kotlin/comments/gw259e/koge_the_new_100_pure_kotlin_opengl_game_engine/
+---
+Koge (Kotlin OpenGL Game Engine) is a 2D game framework developed in Kotlin that works in Windows, Linux and Mac OS X. It is very simple and intuitive to use. For more information check [Koge on github](https://github.com/KogeLabs/Koge/blob/master/README.md)
+## [3][Kotlin if statements and exception handling](https://www.reddit.com/r/Kotlin/comments/gwcusx/kotlin_if_statements_and_exception_handling/)
+- url: https://www.reddit.com/r/Kotlin/comments/gwcusx/kotlin_if_statements_and_exception_handling/
+---
+A coworker and I noticed an interesting behaviour today, where the `get` operator on a `List`, if used inside an `if` statement, would never result in a crash due to an `OutOfBoundsException`, even if that index was definitely out of bounds. The statement will just return false instead.
+
+This makes sense, in my opinion, but was wondering if anyone has any insight or documentation they can point me to regarding this, just out of interest and intrigue. I couldn't find anything with a quick google search.
+## [4][Is Kotlin enough similar to Java to let me study concepts from java books and apply them in a kt app easily?](https://www.reddit.com/r/Kotlin/comments/gvy4ec/is_kotlin_enough_similar_to_java_to_let_me_study/)
+- url: https://www.reddit.com/r/Kotlin/comments/gvy4ec/is_kotlin_enough_similar_to_java_to_let_me_study/
+---
+I'm a java programmer. I'm curious about Kotlin and I'd like to give it a try, if I could transfer my java knowledge easily. Especially the things regarding network programming and parallel programming.  
+Any opinion/suggestions?
+## [5][Kotlin generics in multiple platforms.](https://www.reddit.com/r/Kotlin/comments/gvtjbp/kotlin_generics_in_multiple_platforms/)
 - url: https://www.reddit.com/r/Kotlin/comments/gvtjbp/kotlin_generics_in_multiple_platforms/
 ---
 Greetings to all. I will acknowledge beforehand that I could have just missed reading about this. As I know already when working with Kotlin/JVM that generic types are erased after compilation. To circumvent this and perform some tasks like checking types at runtime, we use a reified keyword. My question is if this is the same behavior when working with Kotlin/JS or Kotlin/Native?
-## [2][Android MVI with Kotlin Coroutines &amp; Flow](https://www.reddit.com/r/Kotlin/comments/gv8vv7/android_mvi_with_kotlin_coroutines_flow/)
+## [6][rant this language is driving me mad](https://www.reddit.com/r/Kotlin/comments/gwfmsy/rant_this_language_is_driving_me_mad/)
+- url: https://www.reddit.com/r/Kotlin/comments/gwfmsy/rant_this_language_is_driving_me_mad/
+---
+i have to use a var called prevVal in a loop but the first time through the loop it doesn't make sense to have a prevVal since we are going through it for the first time and it hasn't been assigned until we go through the first iteration
+
+ So i googled and it said use lateinit and then check prevVal.isInitialized  .. ofc the compiler won't let me do that, it doesn't know anything about isInitialized on a reference type (thanks dickheads .. you don't allow lateinit on primitive vals so what use is this lateinit anyway? .. retards)
+
+fine i say, i'll just use a boolean flag (which is hacky and ugly af) to check if it's the first iteration.. except ofc now it complains that prevVal is never intialized. NO MOTHERFUCKER IT ISNT but if the compiler wasn't written by a retard it'd realise it has been initialized by the ONLY other branch. 
+
+WHAT A FUCKED UP LANGUAGE
+
+i will also add this was my 3rd attempt at a solution, the 2nd one was to check if  the first element of my results arraylist is not null.. which the kotlin List docs say first()  return null if there isn't one (THIS IS A LIE, i get a java.lang.exception saying no such element exists) .. so the docs are not only useles they're wrong as well
+## [7][Android MVI with Kotlin Coroutines &amp; Flow](https://www.reddit.com/r/Kotlin/comments/gv8vv7/android_mvi_with_kotlin_coroutines_flow/)
 - url: https://quickbirdstudios.com/blog/android-mvi-kotlin-coroutines-flow/?utm_source=reddit.com
 ---
 
-## [3][What name is the best for a Kotlin Multiplatform MVI framework?](https://www.reddit.com/r/Kotlin/comments/gvf255/what_name_is_the_best_for_a_kotlin_multiplatform/)
+## [8][What name is the best for a Kotlin Multiplatform MVI framework?](https://www.reddit.com/r/Kotlin/comments/gvf255/what_name_is_the_best_for_a_kotlin_multiplatform/)
 - url: https://www.reddit.com/r/Kotlin/comments/gvf255/what_name_is_the_best_for_a_kotlin_multiplatform/
 ---
 I was told that the name "MVIKotlin" violates [Kotlin Foundation guidelines](https://kotlinlang.org/foundation/guidelines.html). Please help me find another name for the project.
@@ -17,7 +48,7 @@ Project page: [https://github.com/arkivanov/MVIKotlin](https://github.com/arkiva
 Thanks!
 
 [View Poll](https://www.reddit.com/poll/gvf255)
-## [4][API design question for those who lean pretty hard into the FP camp.](https://www.reddit.com/r/Kotlin/comments/gvbymb/api_design_question_for_those_who_lean_pretty/)
+## [9][API design question for those who lean pretty hard into the FP camp.](https://www.reddit.com/r/Kotlin/comments/gvbymb/api_design_question_for_those_who_lean_pretty/)
 - url: https://www.reddit.com/r/Kotlin/comments/gvbymb/api_design_question_for_those_who_lean_pretty/
 ---
 The tl;dr is that I have some business workflow that uses several of my `Repository` interfaces to fetch a bunch of data to massage into some result. I'm trying to decide if I should have a stateful `Service` class that has all of the repos as properties or if I should just have a function (or object method) that take the repos as parameters.
@@ -45,7 +76,7 @@ One thing that I very much don't like about choice #2 is that this function is i
 One more issue with choice #1 is that some of the methods on the `Service` **will** be pure. But you can't really tell from the signatures which ones are pure transformations and which involve persistence, since all methods will have access to the repos.
 
 Thoughts?
-## [5][[Style] Free functions or object methods for business logic?](https://www.reddit.com/r/Kotlin/comments/gvbnk6/style_free_functions_or_object_methods_for/)
+## [10][[Style] Free functions or object methods for business logic?](https://www.reddit.com/r/Kotlin/comments/gvbnk6/style_free_functions_or_object_methods_for/)
 - url: https://www.reddit.com/r/Kotlin/comments/gvbnk6/style_free_functions_or_object_methods_for/
 ---
 I think top-level functions are great, but maybe only for fundamental or very generic things. I think for business logic I'm leaning more toward the way I used to do things in Scala/Java:
@@ -57,66 +88,3 @@ I think top-level functions are great, but maybe only for fundamental or very ge
 Maybe just leave the free functions for entrypoints to DSLs and `mapOf()` constructor-like functions. I just like the discoverability of "namespacing" my business logic services, I guess...
 
 Opinions?
-## [6]["JSON conversion problem: Parameter specified as non-null is null" is thrown when trying to reference one JDL entity from another entity in JHipster Kotlin.](https://www.reddit.com/r/Kotlin/comments/gvi84q/json_conversion_problem_parameter_specified_as/)
-- url: https://www.reddit.com/r/Kotlin/comments/gvi84q/json_conversion_problem_parameter_specified_as/
----
-I'm trying to build a website in JDL Kotlin, but am having a problem with the JDL generated entities and edit forms. I have a JDL entity called `Provider`, an entity called `Plan` that needs to reference which provider it belongs to, and a third entity called `PerDayPricing` that references both `Provider` and `Plan`, all as per the following JDL configuration: 
-
-    entity Provider {
-        // [...]
-    }
-
-    entity Plan {
-        // [...]
-    }
-
-    entity PerDayPricing {
-        // [...]
-    }
-
-    relationship OneToMany {
-        Provider to Plan
-    }
-
-    relationship OneToMany {
-        Provider to PerDayPricing
-        Plan to PerDayPricing
-    }
-    
-    service all with serviceImpl
-
-However, when I try to create or set the Provider field on a Plan item, it spits out the following error:
-
-    WARN [PID] --- [ XNIO-1 task-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageConversionException: JSON conversion problem: Parameter specified as non-null is null: method com.example.project.domain.Plan.setPerDayPricings, parameter &lt;set-?&gt;; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Parameter specified as non-null is null: method com.example.project.domain.Plan.setPerDayPricings, parameter &lt;set-?&gt; (through reference chain: com.example.project.domain.Plan["perDayPricings"])]
-
-`PerDayPricing` is referenced here even though I didn't change any of its items. When I do try to set the Provider field on a PerDayPricing item, it gives the following error:
-
-    WARN [PID] --- [ XNIO-1 task-32] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageConversionException: JSON conversion problem: Parameter specified as non-null is null: method com.example.project.domain.Provider.setPlans, parameter &lt;set-?&gt;; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Parameter specified as non-null is null: method com.example.project.domain.Provider.setPlans, parameter &lt;set-?&gt; (through reference chain: com.example.project.domain.PerDayPricing["provider"]-&gt;com.example.project.domain.Provider["plans"])]
-
-I actually have no idea what's going on here as I don't have a lot of experience with JHipster. I simply imported the JDL source file and let JHipster create files based on its configuration, without changing any of them, and this is already happening. References to the method names `setPlans` and `setPerDayPricings` don't even exist in the codebase, so I'm assuming they are being generated by Kotlin in the background?
-
-Does anyone know what's going on and how I can fix it?
-## [7][Kotlin react router example using the new gradle plugin](https://www.reddit.com/r/Kotlin/comments/gur5n8/kotlin_react_router_example_using_the_new_gradle/)
-- url: https://www.reddit.com/r/Kotlin/comments/gur5n8/kotlin_react_router_example_using_the_new_gradle/
----
-Is there any examples of using kotlin routers using the new kotlin js. I have seen examples with npm style. Please help
-## [8][For people who are into listening to music while coding...](https://www.reddit.com/r/Kotlin/comments/gvay6h/for_people_who_are_into_listening_to_music_while/)
-- url: https://www.reddit.com/r/Kotlin/comments/gvay6h/for_people_who_are_into_listening_to_music_while/
----
-Post here what you're into!
-
-Curious about what you listen to.
-## [9][10 reasons to try Kotlin for Android development](https://www.reddit.com/r/Kotlin/comments/gv2l8c/10_reasons_to_try_kotlin_for_android_development/)
-- url: https://haizrulamrie.com/watch?v=LEi1ecigDFE
----
-
-## [10][1st KorGE Gamejam - 100% Kotlin - 600 EUR prizepool](https://www.reddit.com/r/Kotlin/comments/gu4wdd/1st_korge_gamejam_100_kotlin_600_eur_prizepool/)
-- url: https://www.reddit.com/r/Kotlin/comments/gu4wdd/1st_korge_gamejam_100_kotlin_600_eur_prizepool/
----
-We are happy to announce the first KorGE GameJAM. KorGE is a 100% Kotlin game engine and we put so much work and effort in it, that we are really happy to be able to hold our first game jam. We were able to collect *600 EUR of prizes* and a *1 year all products license* from Jetbrains.  
-
-
-You can get all infos here: [https://blog.korge.org/2020/05/korge-game-jam.html](https://blog.korge.org/2020/05/korge-game-jam.html).  
-Feel free to contact us with any questions. Here or in our [slack](https://slack.korge.org).
-
-https://preview.redd.it/5dn96wgsf5251.png?width=640&amp;format=png&amp;auto=webp&amp;s=f9b7796fc095ff08a98c2481ced80ae65865b42e

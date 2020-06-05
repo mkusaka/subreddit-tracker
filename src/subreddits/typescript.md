@@ -22,43 +22,173 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][How to handle __dirname transpilation?](https://www.reddit.com/r/typescript/comments/gwbb8s/how_to_handle_dirname_transpilation/)
-- url: https://www.reddit.com/r/typescript/comments/gwbb8s/how_to_handle_dirname_transpilation/
+## [2][Good typescript function programming library](https://www.reddit.com/r/typescript/comments/gwvw9q/good_typescript_function_programming_library/)
+- url: https://www.reddit.com/r/typescript/comments/gwvw9q/good_typescript_function_programming_library/
 ---
-TS transpiles `__dirname` to the folder `__dirname` was used in a class definition of. Do you guys just go along with this, or is there a workaround to have it evaluate to the folder of the calling file?
-## [3][Naming convention for interfaces + decorators](https://www.reddit.com/r/typescript/comments/gwezqm/naming_convention_for_interfaces_decorators/)
-- url: https://www.reddit.com/r/typescript/comments/gwezqm/naming_convention_for_interfaces_decorators/
+Hello, I'm finding a good functional programming library for typescript, currently I found [purify](https://gigobyte.github.io/purify) and [fp-ts](https://gcanti.github.io/fp-ts) and wondering which one I should learn or are there any other libraries that worth looking at. Oh and I'm just finding a library to learn functional programming, not working on any projects. Thank you.
+## [3][@tsdotnet: A JavaScript-Friendly .NET Inspired TypeScript Library](https://www.reddit.com/r/typescript/comments/gwpu15/tsdotnet_a_javascriptfriendly_net_inspired/)
+- url: https://www.reddit.com/r/typescript/comments/gwpu15/tsdotnet_a_javascriptfriendly_net_inspired/
 ---
+[https://github.com/tsdotnet](https://github.com/tsdotnet)
 
-I have this very specific issue where I cannot find a clean way of naming interfaces and decorators.
+Originally a port of `linq.js`, then evolved into a monolithic library to help those transitioning from C#/.NET to TypeScript.  Now updated with a clear intention to follow current / modern Node and Web development standards.
 
-For example, I have a `Middleware` interface that I can use to create implementations like `AuthMiddleware`;
-```ts
-interface Middleware {
-    handle():boolean;
-}
+Classes are selectively grouped into individual packages to minimize unnecessary imports and improve tree-shaking.  Simply install any of the following using NPM.
 
-class AuthMiddleware implements Middleware {
-    handle(){ /* implementation here */ }
-}
+# Highlights
+
+Inspired by .NET:
+
+* [@tsdotnet/linq](https://github.com/tsdotnet/linq): Written from the ground up to use JavaScript iterables and maximize modularity.
+* [@tsdotnet/exceptions](https://github.com/tsdotnet/exceptions): Commonly used .NET style exceptions like `ArgumentNullException`, etc.
+* [@tsdotnet/regex](https://github.com/tsdotnet/regex): Designed to mimic .NET `Regex` and enable named matching.
+* [@tsdotnet/queue](https://github.com/tsdotnet/queue): Implementation of `Queue&lt;T&gt;` that performs much better than just an array.
+* [@tsdotnet/linked-list](https://github.com/tsdotnet/linked-list):  A doubly (bidirectional) linked list.
+* [@tsdotnet/string-builder](https://github.com/tsdotnet/string-builder): A simple implementation of a `StringBuilder`.
+* [@tsdotnet/disposable](https://github.com/tsdotnet/disposable): `DisposableBase` and other utilities for managing object life-cycles.
+* [@todotnet/lazy](https://github.com/tsdotnet/lazy): A disposable `Lazy&lt;T&gt;` and `ResettableLazy&lt;T&gt;` for simplifying lazy-initialization.
+* [@tsdotnet/date-time](https://github.com/tsdotnet/date-time): Extensive set of date and time classes including `DateTime` and `TimeSpan`.
+* [@tsdotnet/stopwatch](https://github.com/tsdotnet/stopwatch): A `Stopwatch` class with lap timing and easy to use static methods.
+* [@tsdotnet/uri](https://github.com/tsdotnet/uri): A useful set of utilities for building URLs and managing query string values.
+
+Other:
+
+* [https://github.com/tsdotnet/linked-node-list](https://github.com/tsdotnet/linked-node-list)
+* [https://github.com/tsdotnet/object-pool](https://github.com/tsdotnet/object-pool)
+* [https://github.com/tsdotnet/ordered-registry](https://github.com/tsdotnet/ordered-registry)
+* [https://github.com/tsdotnet/event-factory](https://github.com/tsdotnet/event-factory)
+* [https://github.com/tsdotnet/tween-factory](https://github.com/tsdotnet/tween-factory)
+
+And more... [https://github.com/tsdotnet](https://github.com/tsdotnet)
+
+[tsdotnet](https://preview.redd.it/b7bstd0ley251.png?width=200&amp;format=png&amp;auto=webp&amp;s=8fe37df47a3c6707c5ba1f2d3685d5a041ec9ced)
+## [4][Is it possible to get an interface key by value?](https://www.reddit.com/r/typescript/comments/gx1452/is_it_possible_to_get_an_interface_key_by_value/)
+- url: https://www.reddit.com/r/typescript/comments/gx1452/is_it_possible_to_get_an_interface_key_by_value/
+---
+Hi everyone,
+
+I'm trying to write a type (or interface) that receives an `HTMLElement` and returns its tag. For example:
+
+```typescript
+const divtag: Foo&lt;HTMLDivElement&gt; // "div"
 ```
 
-The problem arises when I need a decorator to add middleware to a class:
+We have dom's built in `HTMLElementTagNameMap` that does the opposite, i.e.:
 
-```ts
-@Middleware(AuthMiddleware)
-class UserController{
-
-}
+```typescript
+const divelem: HTMLElementTagNameMap["div"] // HTMLDivElement
 ```
 
-I cannot name it also `Middleware` because this is the name of the interface. 
+How would you go about it?
 
-Of course, one solution is to name the interface `MiddlwareInterface` but I feel it's tautology.
-One other solution is to change the decorator to `AddMiddleware` but I also feel it's tautology and doesn't look that good in code.
+Thanks!
+## [5][Where do you keep your types?](https://www.reddit.com/r/typescript/comments/gwni63/where_do_you_keep_your_types/)
+- url: https://www.reddit.com/r/typescript/comments/gwni63/where_do_you_keep_your_types/
+---
+We have just merged our client and server projects so we can easily share types across the two projects. This means we have \`client\`, \`server\` &amp; \`types\` dir. 
 
-What are some other beautiful ways to name interfaces that have decorators with the same name?
-## [4][How would I properly write the example for React-Transition-Group's 'Transition' so that eslint stops yelling at me?](https://www.reddit.com/r/typescript/comments/gwgfzk/how_would_i_properly_write_the_example_for/)
+However, now the discussion has begun as to wether all types should live in the top level \`types\` directory or they should live to the closest place where they are used, so if in a single file - then in that file, in a module, in that module, in both projects, only then in types....
+
+Where do people keep their types and what are the pros/cons of the approach?
+## [6][Help with generic function call signatures](https://www.reddit.com/r/typescript/comments/gx2ft7/help_with_generic_function_call_signatures/)
+- url: https://www.reddit.com/r/typescript/comments/gx2ft7/help_with_generic_function_call_signatures/
+---
+The goal of the below method is to continue looping until the callback returns a boolean. If/when this happens, the conditional should activate switching off the loop and assigning `userData` to the `rawUserInput` property in `callbackArgs`.
+
+I don't fully understand how to handle typing a call signature to a generic method. I'm also not confident I typed `callbackArgs` correctly as I'm new to generics in general. Any feedback is appreciated, thanks.
+
+    export default class Utilities {
+       public loopUserInputDataUntilValid &lt;Callback, Args&gt;(
+          callback: Callback,
+          callbackArgs: Args extends {rawUserInput : string}) {
+    
+          let continueLooping = true;
+    
+          while (continueLooping) {
+             const isValid: boolean = callback(callbackArgs);
+             
+             if (isValid) {
+                continueLooping = false;
+             }
+          }
+          // user input is validated
+          
+          const validatedInput = callbackArgs.rawUserInput;
+          return validatedInput;
+       }
+    }
+## [7][What filenames do you capitalize?](https://www.reddit.com/r/typescript/comments/gwykim/what_filenames_do_you_capitalize/)
+- url: https://www.reddit.com/r/typescript/comments/gwykim/what_filenames_do_you_capitalize/
+---
+I capitalize filenames containing classes or interfaces. A couple years ago when I learned mongoose models, the course instructor capitalized his model files. I have stuck to that ever since. 
+
+In TS I guess interfaces felt OOP enough that I leaked that personal convention over to them as well.
+
+Curious what you guys do, and whether there is a more standard convention for which files should or should not be capitalized.
+## [8][Is this even possible?](https://www.reddit.com/r/typescript/comments/gwzff8/is_this_even_possible/)
+- url: https://www.reddit.com/r/typescript/comments/gwzff8/is_this_even_possible/
+---
+Check first:
+```
+class Animal {
+  legs?: number
+}
+
+class Dog extends Animal {
+  name: string
+  barkingVolume?: number
+
+  constructor(input: Dog) {
+    super()
+    Object.assign(this, input)
+  }
+}
+```
+1. Is there a way to get `Object.assign` type-safe without letting TS complain that `name` in line 6 has no initializer? 
+2. Is there a way to abstract away the `Object.assign`/put it into the `Animal` class constructor?
+
+I ask question 1 to get 2 working, then I could just eg. `new Cat({ tigerStripes: true })`, means I have subclasses with different constructor signatures but still having type-safety. This without  doing tiring many eg. `this.tigerStripes = input.tigerStripes` in every subclass constructor.
+
+*Sandbox: https://codesandbox.io/s/clever-rosalind-4bqu2*
+## [9][React's useMemo requires all dependencies to be of same type](https://www.reddit.com/r/typescript/comments/gwofi8/reacts_usememo_requires_all_dependencies_to_be_of/)
+- url: https://www.reddit.com/r/typescript/comments/gwofi8/reacts_usememo_requires_all_dependencies_to_be_of/
+---
+I have a React component that has 3 props.  Their types are string, string, and MyInterface[].  If any of the props change, I want to recompute a new value.  I am trying to use useMemo:
+
+```javascript
+const computedValue = useMemo&lt;ComputedValueType&gt;(
+  () =&gt; computeValue(props.string1, props.string2, props.myArray), [ 
+    props.string1, 
+    props.string2, 
+    props.myArray
+  ]);
+```
+
+I get the following error:
+
+```
+Type '(string | MyInterface[])[]' is not assignable to type 'ReadonlyArray&lt;any&gt;'.
+  Types of property 'findIndex' are incompatible.
+```
+
+Is there a work around for this?  I am new to Typescript.  Would I have to compute my own memoization based on those three props and pass that in as the dependency?  Or at that point, just not use useMemo and do my own memoization?  Any help would be great.  Thanks.
+
+UPDATE:
+It looks like this issue is only an error that VS Code is showing.  Typescript from the command line works fine.  My VS Code and command line are both using Typescript 3.9.5.
+
+UPDATE 2:
+It goes away if I disable the VS Code plugin for JavaScript and TypeScript IntelliSense.
+## [10][How can I import all interfaces from a file without a namespace?](https://www.reddit.com/r/typescript/comments/gwofcn/how_can_i_import_all_interfaces_from_a_file/)
+- url: https://www.reddit.com/r/typescript/comments/gwofcn/how_can_i_import_all_interfaces_from_a_file/
+---
+I have a list of `interface`s I want to define in a file that I can use throughout the project. Ideally I'd like to be able to avoid needing to write `MyAPI.MyType` everywhere and just write `MyType`.
+
+If there is a syntax that supports this—something like `import * from "module"`—then I haven't been able to find it or get it to work.
+
+- How should I declare my interfaces? Top-level with `export` in front of each? Wrapped inside `declare module "x" { ... }`? etc
+- What file type should my interfaces be in? `.ts` or `.d.ts`?
+- And lastly, what would be the proper import statement? If this is at all possible
+## [11][How would I properly write the example for React-Transition-Group's 'Transition' so that eslint stops yelling at me?](https://www.reddit.com/r/typescript/comments/gwgfzk/how_would_i_properly_write_the_example_for/)
 - url: https://www.reddit.com/r/typescript/comments/gwgfzk/how_would_i_properly_write_the_example_for/
 ---
 [ https://reactcommunity.org/react-transition-group/transition]( https://reactcommunity.org/react-transition-group/transition)
@@ -93,128 +223,3 @@ In particular this part:
 
 
 I'm not really sure how to type the state in the arrow func or the transitionStyles[state] in the style
-## [5][Is utility types a dev depedency or a depedency ?](https://www.reddit.com/r/typescript/comments/gw5ysy/is_utility_types_a_dev_depedency_or_a_depedency/)
-- url: https://www.reddit.com/r/typescript/comments/gw5ysy/is_utility_types_a_dev_depedency_or_a_depedency/
----
-`utility-types` is a typescript library of utility type functions. Since some of those functions end up in the `d.ts` file that `package.json` point with the field `types` I was wondering if it is a dependency and not a dev dependency.
-
-Here is how I see stuff :
-
-* dev depedency is any package of which the code does not end up in the  entry point files
-* depedency is any package of which some part (or all)  of the code ends up in the entry point files
-## [6][What are the actual reasons some devs don't like Typescript?](https://www.reddit.com/r/typescript/comments/gvrrsu/what_are_the_actual_reasons_some_devs_dont_like/)
-- url: https://www.reddit.com/r/typescript/comments/gvrrsu/what_are_the_actual_reasons_some_devs_dont_like/
----
-I usually hear "excess code writing/verbosity." Personally I think it covers for not wanting to learn another language. Or maybe the dev is in a field with fairly low complexity or routine work.
-
-I just hooked up part of a CLI program across 5 different files with abstract base classes, interfaces enforcing consistency between a main controller class, and an array of instances of various types. Would have been impossible for it to work on the first go but TS tells you where there are issues every step of the way. I personally think one actually codes faster on the first pass too, when you consider the superior feedback loop.
-## [7][What's the easiest way to deal with identical enums with different names?](https://www.reddit.com/r/typescript/comments/gvyfck/whats_the_easiest_way_to_deal_with_identical/)
-- url: https://www.reddit.com/r/typescript/comments/gvyfck/whats_the_easiest_way_to_deal_with_identical/
----
-I'm using  `graphql-codegen` and in the process it's automatically generating types for me to work with, however it's creating a lot of ENUMs with the same name for each different schema.  I don't have control of what these names are because the schema is generated automatically by `graphql-compose-mongoose`
-
-Lets say I have two identical enums:
-
-    enum A {
-        This = 'THIS',
-        That = 'THAT,
-    }
-
-
-    enum B {
-        This = 'THIS',
-        That = 'THAT,
-    }
-
-If I have a field on an interface that is designed to accept A, what would be the safest way for me to assert that it's okay to accept enum B because I know it's identical, but Typescript doesn't.
-
-What I'm looking for ideally is something like:
-
-`type AssertSameEnum&lt;T&gt; = T extends A ? A : never` 
-
-But from what I understand you can't compare two enums with `extends` so that's where I'm stuck.
-
-Thanks!
-## [8][Watch mode for multiple child workspaces?](https://www.reddit.com/r/typescript/comments/gvv8wb/watch_mode_for_multiple_child_workspaces/)
-- url: https://www.reddit.com/r/typescript/comments/gvv8wb/watch_mode_for_multiple_child_workspaces/
----
-I have the following project structure:
-
-```
-├── foo                   (workspace @project/foo)
-│   ├── package.json
-│   └── src
-│       └── index.ts
-├── bar                   (workspace @project/bar)
-│   ├── package.json
-│   └── src
-│       └── index.ts
-├── package.json          (monorepo root)
-└── tsconfig.json         (base tsconfig)
-```
-
-If I run `tsc --watch` in each child workspace, TypeScript watches the file changes correctly and rebuilds the package. However, If I run the same command at the monorepo root, it doesn't work - it doesn't throw an error but if I change anything in file, the package is not rebuilt.
-
-Reading the [docs](https://www.typescriptlang.org/docs/handbook/project-references.html#build-mode-for-typescript), I understand the the `--build` flag does have an option to pass multiple child projects (or `tsconfig.json` files). Is there something equivalent for `--watch`?
-## [9][Understanding "baseUrl" and "paths" in TypeScript with * glob](https://www.reddit.com/r/typescript/comments/gvq2mh/understanding_baseurl_and_paths_in_typescript/)
-- url: https://www.reddit.com/r/typescript/comments/gvq2mh/understanding_baseurl_and_paths_in_typescript/
----
-I have a monorepo created with yarn workspaces and the following folder structure:
-
-```
-├── foo                   (workspace @project/foo)
-│   ├── package.json
-│   └── src
-│       └── index.ts
-├── bar                   (workspace @project/bar)
-│   ├── package.json
-│   └── src
-│       └── index.ts
-├── package.json          (monorepo root)
-└── tsconfig.json         (base tsconfig)
-```
-
-And the following settings in `tsconfig.json`:
-
-```ts
-{
-  "compilerOptions": {
-    "baseUrl": ".",
-    "module": "commonjs",
-    "paths": {
-      "@project/foo/*": "./packages/foo/src/*",
-      "@project/bar/*": "./packages/bar/src/*"
-    },
-    ...
-  }
-}
-```
-
-In the `@project/bar` workspace, I want to import modules from `@project/foo`:
-
-
-```ts
-import foo from "@project/foo";
-```
-
-But I'm getting the following error:
-
-&gt; Cannot find module '@project/foo' or its corresponding type declarations.ts(2307)
-
-If I remove the `*` symbols from both the keys and the values of the "paths" object, the code compiles. Why is that? How can I keep the `*` glob pattern and make non-relative imports to my local modules?
-## [10][How to see TypeScript at my company?](https://www.reddit.com/r/typescript/comments/gvuwr6/how_to_see_typescript_at_my_company/)
-- url: https://www.reddit.com/r/typescript/comments/gvuwr6/how_to_see_typescript_at_my_company/
----
-I love working with React + TypeScript, but for a new project I have to make a case for this and some of the devs are resistant. 
-
-Are there any good articles or resources to do this? I'm assuming most complex JavaScript apps started today would use TypeScript rather than ES6 or Flow, but is there any data on this?
-## [11][Define a type of Record where the key should be of type T](https://www.reddit.com/r/typescript/comments/gvlse5/define_a_type_of_record_where_the_key_should_be/)
-- url: https://www.reddit.com/r/typescript/comments/gvlse5/define_a_type_of_record_where_the_key_should_be/
----
-I have a `create` method inside a users-service like so:
-
-```
-async create(fields: Record&lt;string, any&gt;) {}
-```
-
-but the `fields` is always an object of keys where the keys are a partial of `User` keys, so how do I achieve this typing? Something like: `Record&lt;K extends keyof User, V&gt;` ?

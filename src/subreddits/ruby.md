@@ -1,5 +1,140 @@
 # ruby
-## [1][Dynamic OmniAuth strategy utilizing OpenId Connect?](https://www.reddit.com/r/ruby/comments/gw91oa/dynamic_omniauth_strategy_utilizing_openid_connect/)
+## [1][A RSS reader in Ruby](https://www.reddit.com/r/ruby/comments/gx38l1/a_rss_reader_in_ruby/)
+- url: https://www.reddit.com/r/ruby/comments/gx38l1/a_rss_reader_in_ruby/
+---
+Hello All,  I wrote a terminal based RSS reader [https://gitlab.com/mindaslab/rss\_reader](https://gitlab.com/mindaslab/rss_reader) , thought it might be useful for some one so am posting it here.
+## [2][TIL you can pass heredocs tokens as arguments and even stack them](https://www.reddit.com/r/ruby/comments/gwqllv/til_you_can_pass_heredocs_tokens_as_arguments_and/)
+- url: https://www.reddit.com/r/ruby/comments/gwqllv/til_you_can_pass_heredocs_tokens_as_arguments_and/
+---
+I've been writing Ruby since before Rails came out and I had no idea you could do this. 
+
+You can pass the token defining the heredoc as an argument, and the continue the line:
+
+    call_method(&lt;&lt;DOC).do_something(5)
+      SOME TEXT
+    DOC
+
+You can even stack the heredocs and call them as multiple arguments:
+
+    call_method(&lt;&lt;-DOC1, &lt;&lt;~DOC2).do_something
+      this is doc 1
+    DOC1
+      this is doc 2
+    DOC2
+
+Not something that will matter very often, but a cool discovery.
+
+---
+
+Edit - Other cool stuff from this thread:
+
+/u/yxhuvud pointed out that it is possible to call methods on the heredoc too:
+
+    foo(&lt;&lt;~SQL.strip)
+      SELECT
+        foo, bar
+      FROM tables
+    SQL
+
+/u/riffraff pointed out the `DATA` and `__END__` syntax as well ([explanation link](https://www.honeybadger.io/blog/data-and-end-in-ruby/))
+
+    call_method(DATA).do_something
+
+    # some code
+
+    __END__
+    Evertyhing after the above line
+    is what will go in DATA
+## [3][Run Rails script as an ActiveJob job](https://www.reddit.com/r/ruby/comments/gx2jzd/run_rails_script_as_an_activejob_job/)
+- url: https://blog.eq8.eu/til/run-script-as-a-activejob-sidekiq-job.html
+---
+
+## [4][session[:user_id] problem in a sinatra app](https://www.reddit.com/r/ruby/comments/gx0ize/sessionuser_id_problem_in_a_sinatra_app/)
+- url: https://www.reddit.com/r/ruby/comments/gx0ize/sessionuser_id_problem_in_a_sinatra_app/
+---
+I wrote this, but I have problems with my helper "current\_user". I don't  know what I exactly should put there to get it into the work : [https://gist.github.com/prp-e/91ad2491ffa8926a4c5ff67268078b1f](https://slack-redir.net/link?url=https%3A%2F%2Fgist.github.com%2Fprp-e%2F91ad2491ffa8926a4c5ff67268078b1f&amp;v=3) 
+
+(P.S : It's not a serious project, don't worry about it's security)
+## [5][Yielding an array resulting faster than doing a for loop](https://www.reddit.com/r/ruby/comments/gx1kul/yielding_an_array_resulting_faster_than_doing_a/)
+- url: https://www.reddit.com/r/ruby/comments/gx1kul/yielding_an_array_resulting_faster_than_doing_a/
+---
+Code (file iter.rb):
+
+  
+`require("benchmark")`
+
+&amp;#x200B;
+
+`array = (1..2000000).to_a()`
+
+&amp;#x200B;
+
+`class Array`
+
+  `def iter()`
+
+`yield self`
+
+  `end`
+
+`end`
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+[`Benchmark.bm`](https://Benchmark.bm)`() {|b|`
+
+  [`b.report`](https://b.report)`("for: ") {|b|`
+
+[`File.open`](https://File.open)`("for.txt", "w") {|f|`
+
+`for i in array do`
+
+`f.puts(i)`
+
+`end`
+
+`}` 
+
+  `}`
+
+  [`b.report`](https://b.report)`("iter:") {|b|`
+
+[`File.open`](https://File.open)`("iter.txt", "w") {|f|`
+
+`array.iter() {|i|`
+
+`f.puts(i)`
+
+`}`
+
+`}`
+
+  `}`
+
+`}` 
+
+&amp;#x200B;
+
+On my Raspberry Pi 4 (`Linux Manjaro 4.19.122-1-MANJARO-ARM #1 SMP PREEMPT Mon May 11 14:20:27 CDT 2020 aarch64 GNU/Linux`), this produces the following:  
+`user     system      total        real`
+
+`for:   4.481485   0.152160   4.633645 (  4.665762)`
+
+`iter:  2.933153   0.135692   3.068845 (  3.082631)`  
+
+
+it's a second and a half faster, just by yielding the array instead of looping into it with a for loop.
+## [6][Topaz still one of the fastest ruby implementation, even if it not developed some years, by this benchmarks](https://www.reddit.com/r/ruby/comments/gwt2xc/topaz_still_one_of_the_fastest_ruby/)
+- url: https://github.com/kostya/jit-benchmarks
+---
+
+## [7][The Ruby Blend Episode 15: Rails Testing Tools and Best Practices with Jason Swett](https://www.reddit.com/r/ruby/comments/gwn67u/the_ruby_blend_episode_15_rails_testing_tools_and/)
+- url: https://fireside.fm/s/ouBAUjGy+C2WN3swa
+---
+
+## [8][Dynamic OmniAuth strategy utilizing OpenId Connect?](https://www.reddit.com/r/ruby/comments/gw91oa/dynamic_omniauth_strategy_utilizing_openid_connect/)
 - url: https://www.reddit.com/r/ruby/comments/gw91oa/dynamic_omniauth_strategy_utilizing_openid_connect/
 ---
 I’m using OmniAuth right now and things are working fine using the available strategies like ‘omniauth-google-oauth2’. 
@@ -10,7 +145,7 @@ I have bit and pieces of it figured out, but struggling to put it all together. 
 
 
 Has anyone implemented something similar?
-## [2][Shipped print copies of Why's Poignant Guide this Monday as part of Alt::BrightonRuby](https://www.reddit.com/r/ruby/comments/gvu5r1/shipped_print_copies_of_whys_poignant_guide_this/)
+## [9][Shipped print copies of Why's Poignant Guide this Monday as part of Alt::BrightonRuby](https://www.reddit.com/r/ruby/comments/gvu5r1/shipped_print_copies_of_whys_poignant_guide_this/)
 - url: https://www.reddit.com/r/ruby/comments/gvu5r1/shipped_print_copies_of_whys_poignant_guide_this/
 ---
 Hey there,
@@ -22,7 +157,7 @@ Tickets and further information at https://alt.brightonruby.com
 [The cover](https://preview.redd.it/y19ghclw7p251.png?width=1586&amp;format=png&amp;auto=webp&amp;s=c9be747a6a499d76b7ffa862c0eb87da91b27ce2)
 
 [It's a real book.](https://preview.redd.it/6ooqvdsa8p251.jpg?width=3024&amp;format=pjpg&amp;auto=webp&amp;s=41cf241a1748acca77866d60ff9bb95387babde2)
-## [3][Learning from others...](https://www.reddit.com/r/ruby/comments/gw3bgv/learning_from_others/)
+## [10][Learning from others...](https://www.reddit.com/r/ruby/comments/gw3bgv/learning_from_others/)
 - url: https://www.reddit.com/r/ruby/comments/gw3bgv/learning_from_others/
 ---
 Noob here. I’ve always found reading another spoken language once you have a handle on the pronunciation helps to cement some of the nuances of the languages just by repetitive review of structures of the language, even if I don’t understand what I’m reading right away the brain seems to work out the semantics. 
@@ -30,142 +165,3 @@ Noob here. I’ve always found reading another spoken language once you have a h
 Seems like that works with programming as well so I was just curious if anyone has any suggestions for a well-documented/organized small to medium size open-sourced Ruby projects on Github that a beginner would benefit from looking through to see the file structure, documentation, etc.? Thanks for any suggestions in advance.
 
 Edit:  Thanks for all the ideas. Much appreciated.
-## [4][Ansible Rails: Deploy Ruby on Rails apps easily](https://www.reddit.com/r/ruby/comments/gvr7m9/ansible_rails_deploy_ruby_on_rails_apps_easily/)
-- url: https://www.reddit.com/r/ruby/comments/gvr7m9/ansible_rails_deploy_ruby_on_rails_apps_easily/
----
-I 've been using Heroku to deploy my Rails apps but I always wanted to learn how it all works under the hood. Over the last couple of months, I decided to learn more about how to set up a server and deploy a Rails app to production. I've made this open-source project in order to consolidate my learning.
-
-Ansible Rails is an Ansible playbook for easily deploying Ruby on Rails applications.
-
-[https://github.com/EmailThis/ansible-rails](https://github.com/EmailThis/ansible-rails)
-
-It includes roles for performing the following tasks -
-
-* Installation of common packages
-* Ruby (via rbenv)
-* Rails 6, Puma, Sidekiq
-* Redis
-* Nodejs/Webpack/yarn
-* Postgresql and another role that saves backups to S3
-* Install nginx, Certbot (for Letsencrypt SSL Certs)
-* Deploying using Ansistrano
-
-Let me know what you guys think about it 🙌🏻
-## [5][Is there a GUI Toolkit for Ruby that is currently an active and simple project like "Shoes"? I find Shoes very intuitive, too bad it is no longer developed. Do you know anything like this? I have searched around but I find all the other more cumbersome toolkits ....](https://www.reddit.com/r/ruby/comments/gvq1ww/is_there_a_gui_toolkit_for_ruby_that_is_currently/)
-- url: https://www.reddit.com/r/ruby/comments/gvq1ww/is_there_a_gui_toolkit_for_ruby_that_is_currently/
----
-
-## [6][New Ruby / Ruby on Rails daily digest in Telegram](https://www.reddit.com/r/ruby/comments/gvuh4q/new_ruby_ruby_on_rails_daily_digest_in_telegram/)
-- url: https://t.me/rubydoobydoo
----
-
-## [7][Services and tools we use for development](https://www.reddit.com/r/ruby/comments/gvpwp9/services_and_tools_we_use_for_development/)
-- url: https://www.reddit.com/r/ruby/comments/gvpwp9/services_and_tools_we_use_for_development/
----
-Tools and services that help to automatize development flow. Easy to install with increasing team effectiveness.
-
-[https://jtway.co/services-and-tools-we-use-for-development-2749af5ad08a](https://jtway.co/services-and-tools-we-use-for-development-2749af5ad08a)
-## [8][Understanding Programs Using Graphs](https://www.reddit.com/r/ruby/comments/gvbn0p/understanding_programs_using_graphs/)
-- url: https://engineering.shopify.com/blogs/engineering/understanding-programs-using-graphs
----
-
-## [9][Designing helpful service objects. Part 1. Choosing the right design](https://www.reddit.com/r/ruby/comments/gvbrg2/designing_helpful_service_objects_part_1_choosing/)
-- url: https://www.morozov.is/2020/06/01/helpful-service-objects-part-1-chosing-right-design.html
----
-
-## [10][Integrating with Google Calendar - The Right Way](https://www.reddit.com/r/ruby/comments/gv5hdk/integrating_with_google_calendar_the_right_way/)
-- url: https://www.reddit.com/r/ruby/comments/gv5hdk/integrating_with_google_calendar_the_right_way/
----
-## Prerequisite
-
-1. If using rails then use the gem `google-api-client`
-2. I am considering here that you already have the `access_token` of the user. I will write a different blog to explain how to get that.
-
-## 1) Do full initial synch of events
-
-It has the following steps -
-
-* Fetch a new `access_token` if the token has expired.
-* Create the service authorization object which will be used for fetching the events.
-
-Ref code for `service authorization`
-
-    def create_service_auth
-      #create service auth
-      @service = Google::Apis::CalendarV3::CalendarService.new
-      @service.authorization = token.google_secret.to_authorization
-      return unless token.expired?
-    
-      new_access_token = @service.authorization.refresh! #refresh access_token
-    end
-
-* Fetching all calendar events(past, present and future).
-   * The full sync is the original request for all the resources of the collection you want to synchronize.
-   * In the response to the list operation, you will find a field called nextSyncToken representing a sync token. You'll need to store the value of nextSyncToken. If the result set is too large and the response gets paginated, then the nextSyncToken field is present only on the very last page.
-   * Depending on what your use case is, it will be better to perform this job as a background task.
-   * [Events: list API](https://developers.google.com/calendar/v3/reference/events/list) is used for this. The gem provides an easier method called `list_events`
-
-Ref code for `syncing events`
-
-      def get_events
-        @events_arr = []
-        @events_list = @service.list_events('primary', single_events: true, max_results: 500)
-        @sync_token = @events_list.next_sync_token
-        @page_token = @events_list.next_page_token
-        @events_arr &lt;&lt; @events_list.items
-        while @sync_token.blank?
-          @events_list = @service.list_events('primary', single_events: true, max_results: 500, page_token: @page_token)
-          @sync_token = @events_list.next_sync_token
-          @page_token = @events_list.next_page_token
-          @events_arr &lt;&lt; @events_list.items
-        end
-      end
-
-## 2) Create a webhook to receive push notifications
-
-After a full sync of events, the next step is to setup a Webhook so that google can inform us of the changes that we subscribe for. For every user that links their calendar to the app, we will create a subscription so that we can be informed whenever there is a change in their calendar.
-
-It has the following steps -
-
-* Fetch a new `access_token` if the token has expired.
-* Create the service authorisation object which will be used for fetching the events, exactly same as shown above.
-* Set up a Channel - It creates a channel with google and specifies the callback URL or the web-hook URL.
-* Watch events - After the web-hook is set up, we need to specify what events we want to watch and also need to specify from which calendar.
-
-&amp;#8203;
-
-    def setup_channel
-      @channel = Google::Apis::CalendarV3::Channel.new(address: callback_url, id: channel_id, type: "web_hook")
-    end
-
-`callback_url` \- It can't be localhost, it has to be a valid `https` url. For testing purposes you can use [ngrok](https://ngrok.com/). `channel_id` \- This is a UUID - `SecureRandom.uuid`
-
-      def watch_events
-        time_min = DateTime.now.rfc3339
-        @webhook = @service.watch_event('primary', @channel, single_events: true, time_min: time_min)
-      end
-
-`primary` \- refers to the `primary` calendar of the user. `single_events` \- Setting it to true also gives all events belonging to 1 single recurring event.
-
-Now, whenever there will be any change in the primary calendar of the user google will hit the registered web-hook for the user.
-
-In the request Google will pass `X-Goog-Resource-ID` and `X-Goog-Channel-ID`. We would have to hit the `list_events` API again to fetch the changed events data for that user.
-
-Only difference will be that instead of passing the page token like we did earlier, we would pass the `sync_token`.
-
-      def get_events
-        @events_list = @service.list_events('primary', single_events: true, max_results: 2500, sync_token: sync_token)
-      end
-
-## 3) Saving X-Goog-Resource-ID &amp; X-Goog-Channel-ID
-
-When we created the web-hook google will return us with a `resource_id`, `resource_uri`, `id`(that we created). We need to save all this data so that we can get to know for which user the events have changed. Also the channel expires in around 1 week so we need to keep creating new web-hooks before it expires.
-
-## 3) Deleting the events with status cancelled
-
-This is the flow that took me some time to understand. So what happens when a user changes the time of their event or has the user changed a single event or all the events in a recurring event. What google does is that
-
-* if the user changes a single event, then google keeps the `calendar_id` as same.
-* if the user changes a recurring event and selects `all` or `following events` as option then the `calendar_id` changes for all the events. Hence, in this case we need to delete the old events and add new events in our system. So, this is a check that you will have to add when saving the calendar events in your system.
-
-That's it - It's quite messy if you are trying to figure it out from scratch and I hope this article will help you all.

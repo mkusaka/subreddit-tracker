@@ -19,161 +19,203 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][100 days of code to learn rails](https://www.reddit.com/r/rails/comments/gw2y2l/100_days_of_code_to_learn_rails/)
+## [2][Awesome-Ruby: A Curated Collection of 851 Ruby Links and Resources](https://www.reddit.com/r/rails/comments/gwv338/awesomeruby_a_curated_collection_of_851_ruby/)
+- url: https://www.reddit.com/r/rails/comments/gwv338/awesomeruby_a_curated_collection_of_851_ruby/
+---
+Check this on github. It really helps. Awesome-Ruby: https://github.com/markets/awesome-ruby#readme
+## [3][Stimulus course in context of Rails?](https://www.reddit.com/r/rails/comments/gx2ca6/stimulus_course_in_context_of_rails/)
+- url: https://www.reddit.com/r/rails/comments/gx2ca6/stimulus_course_in_context_of_rails/
+---
+Are you aware of any online courses or resources that teach how to use Stimulus in the context of a Rails 6 site? I know Rails and JS in general, and I would like to pick up Stimulus, and learn best practices. Thank you!
+## [4][Webpack struggles - need some help with an npm package](https://www.reddit.com/r/rails/comments/gx4geq/webpack_struggles_need_some_help_with_an_npm/)
+- url: https://www.reddit.com/r/rails/comments/gx4geq/webpack_struggles_need_some_help_with_an_npm/
+---
+Hello all, I have a Rails 6 project where I recently started using Stimulus and Stimulus Reflex, which forced me to go down the webpack road a bit.  I am now starting to migrate everything else to webpack from the asset pipeline and running into a little bit of a wall...
+
+I am using Bulma for this project and have successfully got that working as a webpack/yarn package (previously I was downloading the entire Bulma library and storing under the vendor folder of my project).
+
+I was also using an extension called "Bulma Toast" which appears to have an npm package as well, but for the life of me I cannot get it working in the new webpack setup, and hoping someone can steer me in the right direction.  No matter what I say I get an error in the rails console complaining that bulma-toast cannot be found, but if I fix that then I get javascript console errors in my browser saying "bulmaToast is undefined"
+
+&amp;#x200B;
+
+Posting relevant files below:
+
+**package.json**
+
+    {
+      "name": "asdf",
+      "private": true,
+      "dependencies": {
+        "@creativebulma/bulma-tooltip": "^1.2.0",
+        "@rails/webpacker": "4.2.2",
+        "bulma": "^0.8.2",
+        "bulma-toast": "^2.0.1",
+        "stimulus": "^1.1.1",
+        "stimulus_reflex": "^3.2.1",
+        "url-loader": "^4.1.0"
+      },
+      "devDependencies": {
+        "webpack-dev-server": "^3.10.0"
+      }
+    }
+
+**app/javascript/packs/application.js**
+
+    import "controllers"
+    import "../application/stylesheets/application"
+    import bulmaToast from 'bulma-toast';
+
+&amp;#x200B;
+
+**app/views/layouts/application.html.erb (excerpt)**
+
+    &lt;head&gt;
+        &lt;%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %&gt;
+        &lt;%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', async: true %&gt;
+    &lt;/head&gt;
+    ...
+    &lt;main class="site-content"&gt;
+        &lt;section class="section"&gt;
+          &lt;div class="container"&gt;
+            &lt;%= yield %&gt;
+          &lt;/div&gt;
+        
+          &lt;% flash.each do |message_type, message| %&gt;
+            &lt;%= javascript_tag "bulmaToast.toast({ message: '#{message}',
+                                                  position: 'top-center',
+                                                  type: 'is-#{message_type}',
+                                                  animate: { in: 'fadeIn', out: 'fadeOut' },
+                                                  duration: 2500 });" %&gt;
+          &lt;% end %&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+
+&amp;#x200B;
+## [5][Digest form input](https://www.reddit.com/r/rails/comments/gwwq00/digest_form_input/)
+- url: https://www.reddit.com/r/rails/comments/gwwq00/digest_form_input/
+---
+So... I added username &amp; display name strings to my user model via rails g migration AddBlahToBlah username:string display\_name:string
+
+Then I added the digest to the registrations controller.
+
+Then I added the fields to the form/update view (using devise).
+
+Looks kinda like this:  
+&lt;%= f.label :username, "Username" %&gt;
+
+&lt;%= f.text\_field :username, placeholder: "Username" %&gt; 
+
+With some styling in between.   
+
+
+I loaded up the edit account view and everything worked perfectly. However, none of the changes are actually saving. 
+
+So I went into the rails console to confirm this, and sure enough the values are still nil. Something is happening in the database, but none of the inputs are going through. What do?
+## [6][Bootstrap-filestyle](https://www.reddit.com/r/rails/comments/gwwdzv/bootstrapfilestyle/)
+- url: https://www.reddit.com/r/rails/comments/gwwdzv/bootstrapfilestyle/
+---
+Has anyone used this before?
+
+[bootstrap-filestyle](https://markusslima.github.io/bootstrap-filestyle/)
+
+I can kind of get it to work.. I added the classes to the file_field in my view file and when I refresh the page my file input is styled.  However if I leave and come back to the page it’s gone, but if I refresh it comes back. I’m on mobile at my daughters dance so I can’t easily copy my code at this moment but it was on my mind and thought I’d see if this community had any experience with it.
+## [7][Recommendations for courses/books/tutorials](https://www.reddit.com/r/rails/comments/gwmgsu/recommendations_for_coursesbookstutorials/)
+- url: https://www.reddit.com/r/rails/comments/gwmgsu/recommendations_for_coursesbookstutorials/
+---
+I am trying to determine the best path to salvage a legacy RAILS website that has been offline since the host dropped RAILS support. One thought is to containerize it and host it on AWS. But, I haven't done web development in years, and little experience with RAILS. I went through the free part of Michael Hartl's Ruby on RAILS tutorial and it seems good, although I hesitate to do a subscription service as opposed to a pay once and download e-book. Can anyone either provide a recommendation for Michael Hartl's tutorial or suggest other resources for coming up to speed on RAILS? Also, if anyone has dockerized a RAILS website, I would appreciate any perspectives on that as well.
+
+Cheers!
+## [8][First Rails project in Ubuntu terminal - Having Troubles with Server Startup](https://www.reddit.com/r/rails/comments/gwncxb/first_rails_project_in_ubuntu_terminal_having/)
+- url: https://www.reddit.com/r/rails/comments/gwncxb/first_rails_project_in_ubuntu_terminal_having/
+---
+Hello there. I have come to seek help here again regarding version control for my ruby apps. I found a tutorial on how to set up a rails project in Ubuntu starting with installing RVM and the latest Ruby/Rails versions. I installed the bundler and stuff. But when trying to start the server, it's like I missed something. The webpack install? So it tells me to run "rails webpack:install" and I"m getting this error below: 
+
+`rails aborted!`
+
+`ArgumentError: Malformed version number string 0.32+git`
+
+`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/webpacker-4.2.2/lib/tasks/webpacker/check_yarn.rake:12:in \`block (2 levels) in &lt;main&gt;'`
+
+`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.1/lib/rails/commands/rake/rake_command.rb:23:in \`block in perform'`
+
+`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.1/lib/rails/commands/rake/rake_command.rb:20:in \`perform'`
+
+`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.1/lib/rails/command.rb:48:in \`invoke'`
+
+`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.1/lib/rails/commands.rb:18:in \`&lt;main&gt;'`
+
+`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/bootsnap-1.4.6/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in \`require'`
+
+`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/bootsnap-1.4.6/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in \`block in require_with_bootsnap_lfi'`
+
+`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/bootsnap-1.4.6/lib/bootsnap/load_path_cache/loaded_features_index.rb:92:in \`register'`
+
+`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/bootsnap-1.4.6/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in \`require_with_bootsnap_lfi'`
+
+`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/bootsnap-1.4.6/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:31:in \`require'`
+
+`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/activesupport-6.0.3.1/lib/active_support/dependencies.rb:324:in \`block in require'`
+
+`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/activesupport-6.0.3.1/lib/active_support/dependencies.rb:291:in \`load_dependency'`
+
+`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/activesupport-6.0.3.1/lib/active_support/dependencies.rb:324:in \`require'`
+
+`/mnt/c/dev/src/my-portfolio/bin/rails:9:in \`&lt;top (required)&gt;'`
+
+`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/spring-2.1.0/lib/spring/client/rails.rb:28:in \`load'`
+
+`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/spring-2.1.0/lib/spring/client/rails.rb:28:in \`call'`
+
+`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/spring-2.1.0/lib/spring/client/command.rb:7:in \`call'`
+
+`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/spring-2.1.0/lib/spring/client.rb:30:in \`run'`
+
+`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/spring-2.1.0/bin/spring:49:in \`&lt;top (required)&gt;'`
+
+`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/spring-2.1.0/lib/spring/binstub.rb:11:in \`load'`
+
+`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/spring-2.1.0/lib/spring/binstub.rb:11:in \`&lt;top (required)&gt;'`
+
+`/mnt/c/dev/src/my-portfolio/bin/spring:15:in \`require'`
+
+`/mnt/c/dev/src/my-portfolio/bin/spring:15:in \`&lt;top (required)&gt;'`
+
+`bin/rails:3:in \`load'`
+
+`bin/rails:3:in \`&lt;main&gt;'`
+
+`Tasks: TOP =&gt; webpacker:install =&gt; webpacker:check_yarn`
+
+`(See full trace by running task with --trace)`
+
+&amp;#x200B;
+
+I'm not sure if this is because the rails server should be started already? If I try to start a rails server I get an even longer output of an error, but I'm not sure if this is what should fixed first before being able to start it in the first place. 
+
+I'm still quite a noob on a lot of this type of stuf. My coding bootcamp took us mainly through front end stuff and a lot of Rails specifically using vagrant. I've wanted to try something else other than vagrant now that I'm on my own.  I'm trying to get my portfolio finally finished so I can launch it to the domain I purchased ASAP, so any help getting my environment set up all silky smooth would be much appreciated!
+## [9][Updating legacy storage](https://www.reddit.com/r/rails/comments/gwho9k/updating_legacy_storage/)
+- url: https://www.reddit.com/r/rails/comments/gwho9k/updating_legacy_storage/
+---
+Our application stores all images and files in an S3 bucket. Uploads are handled by Paperclip in various places. We're trying to find the best solution to update. 
+
+Initially, we were looking at Active Storage because it natively supports one-to-many relations, but don't like the lack of control (mostly regarding filenames and [paths](https://stackoverflow.com/questions/48389782/how-to-specify-a-prefix-when-uploading-to-s3-using-activestorages-direct-upload)). 
+
+We've also been looking into Shrine, which does less out of the box, but seems to allow for more customization.
+
+What do you use and why? Are there pitfalls to lookout for?
+## [10][Should I make a POST request with a PNG blob as a parameter in Rails 5?](https://www.reddit.com/r/rails/comments/gwhoct/should_i_make_a_post_request_with_a_png_blob_as_a/)
+- url: https://www.reddit.com/r/rails/comments/gwhoct/should_i_make_a_post_request_with_a_png_blob_as_a/
+---
+Hey! I am developing a product customization tool on my Rails 5 webapp, which requires me to send the final design's blob string to a different web-service via the webapp's server (in order to generate a composite preview).
+
+Is it scalable if I am making a POST request to my server with blob string as a parameter? I fear that can bloat the memory. Am I right?
+
+The blob size will be around 40-50 Kb tops.
+
+Thank you in advance.
+## [11][100 days of code to learn rails](https://www.reddit.com/r/rails/comments/gw2y2l/100_days_of_code_to_learn_rails/)
 - url: https://www.reddit.com/r/rails/comments/gw2y2l/100_days_of_code_to_learn_rails/
 ---
 just wanted to share I'm starting my web dev journey and choosing to go through Hartl's rails 6 tutorial. a lot of negatives on rails hype dying, but really looking forward to get a foundation of being able to build MVP's for some of my ideas I have. I've been stalking this sub a bit and it's really cool that you guys are so practical and helpful. I hope it's okay to share here and probably will be posting here for some help along the way :)
 
 starting a substack if anyone is interested in following a newb: [https://joelchoi.substack.com/p/day-1](https://joelchoi.substack.com/p/day-1)
-## [3][Active record queries](https://www.reddit.com/r/rails/comments/gwgps7/active_record_queries/)
-- url: https://www.reddit.com/r/rails/comments/gwgps7/active_record_queries/
----
-Beginner in Ruby and Activerecord, I wanted to know if anyone could help me write this out and explain what happened. Here's what I figured out so far but I need confirmation or a guide. \\ I have more questions I need to figure out but I thought I should post one at a time. 
-
-The question
-
-1. Find who published the book with the highest average rating.
-
-Avg(rating) = avg\_rating
-
-Book.find\_by(:authour).order(avg\_rating desc)
-## [4][Product with price history](https://www.reddit.com/r/rails/comments/gw47vj/product_with_price_history/)
-- url: https://www.reddit.com/r/rails/comments/gw47vj/product_with_price_history/
----
-Hello folks.
-
-I have some issue to solve, hope you will help me. I'd like to store history of price. I've model products (every time I buy something I add it into my warehouse - name, price, quantity or so on) also I want to get last added price - how can I solve it  in the proper way? To have last price, history of changed prices and to by DRY. So ie: 
-
-warehouse has\_any products (with quantity)
-
-product has\_many prices
-
-also I have meal recipes where I'd like to know actual food cost (using last added price) and I'd like to have history, that given meal or product cost me $30 few month ago and today it cost me $40...
-
-any ideas?
-## [5][Slides What Comes After MVC - Peter Harkins](https://www.reddit.com/r/rails/comments/gvs0dh/slides_what_comes_after_mvc_peter_harkins/)
-- url: https://www.reddit.com/r/rails/comments/gvs0dh/slides_what_comes_after_mvc_peter_harkins/
----
-Peter talked so fast. I can't keep up, let alone digest the ideas presented.
-
-Does anyone have the slides and notes to [https://push.cx/2015/railsconf](https://push.cx/2015/railsconf) that they can share?
-
-Thanks.
-## [6][Is there a ajax html table sortable gem?](https://www.reddit.com/r/rails/comments/gw6g1w/is_there_a_ajax_html_table_sortable_gem/)
-- url: https://www.reddit.com/r/rails/comments/gw6g1w/is_there_a_ajax_html_table_sortable_gem/
----
-I'm looking around for something that allows me to search a lot of data (currently using searchkick and will\_paginate) and let me add ajax and sortable columns.
-
-Maybe I'm just looking in the wrong places but many of the gems either are discontinued or don't appear to take object sets from searchkick, but want to control the search themseleves.
-
-Thanks for any help, reddit!
-## [7][ActionMailer - Email not arriving, no error thrown. How to debug?](https://www.reddit.com/r/rails/comments/gvv63s/actionmailer_email_not_arriving_no_error_thrown/)
-- url: https://www.reddit.com/r/rails/comments/gvv63s/actionmailer_email_not_arriving_no_error_thrown/
----
-Hello,
-
-I'm trying to get ActionMailer working. First off I have the following feature test:
-
-    it 'sends an email', focus: true do
-      test_form.visit_page.fill_in_with.submit
-      expect(ActionMailer::Base.deliveries.count).to eq(1)
-      expect(ActionMailer::Base.deliveries.last.to).to include(u.email)
-    end
-
-This test passes.
-
-Here's my development.rb settings for action\_mailer:
-
-    config.active_record.dump_schema_after_migration = false
-    
-    config.action_mailer.raise_delivery_errors = true
-    
-    config.action_mailer.perform_deliveries = true
-    
-    config.action_mailer.delivery_method = :smtp
-      config.action_mailer.smtp_settings = {
-        :address              =&gt; "mail.privateemail.com",
-        :port                 =&gt; 465,
-        :user_name            =&gt; ENV['EMAIL_USERNAME'],
-        :password             =&gt; ENV['REMAIL_PASSWORD'],
-      }
-
-My username is my full email: [me@mydomain.com](mailto:me@mydomain.com)These settings are from my email provider which can be found on [this page](https://www.namecheap.com/support/knowledgebase/article.aspx/1179/2175/general-private-email-configuration-for-mail-clients-and-mobile-devices).
-
-Here's my appliction\_mailer.rb
-
-    class ApplicationMailer &lt; ActionMailer::Base
-      default from: 'me@mydomain.com'
-      layout 'mailer'
-    end
-
-Here's mailer/test\_mailer.rb
-
-    class TestMailer &lt; ApplicationMailer
-      def test(user:)
-        mail(to: user.email,
-        subject: "This is a test",
-        body: "body...")
-      end
-    end
-
-Here's views/test\_mailer/test.html.erb
-
-    &lt;h1&gt; THIS IS A TEST &lt;/h1&gt;
-
-When I go through the process manually, everything appears to go through. This is what I get in the console:
-
-    VenueMailer#new_venue_listed: processed outbound mail in 0.6ms
-    Delivered mail 5ed7b46cbe880_4c811367826e@Jonnys-MacBook-Pro.local.mail (1.7ms)
-    Date: Wed, 03 Jun 2020 15:32:12 +0100
-    From: mail.privateemail.com
-    To: myemal@gmail.com
-    Message-ID: &lt;5ed7b46cbe880_4c811367826e@Jonnys-MacBook-Pro.local.mail&gt;
-    Subject: This is a test
-    Mime-Version: 1.0
-    Content-Type: text/plain;
-     charset=UTF-8
-    Content-Transfer-Encoding: 7bit
-    
-    body...
-    Redirected to http://localhost:3000/
-    Completed 302 Found in 179ms (ActiveRecord: 4.8ms | Allocations: 11556)
-
-So I don't get any errors, but the email simply never arrives.
-
-How do I debug this?
-
-Thanks.
-## [8][Baserails course still relevant?](https://www.reddit.com/r/rails/comments/gw3epa/baserails_course_still_relevant/)
-- url: https://www.reddit.com/r/rails/comments/gw3epa/baserails_course_still_relevant/
----
-The marketplace course found here:
-
-[https://www.baserails.com/marketplace](https://www.baserails.com/marketplace)
-
-is exactly the sort of project I'm looking to build with Rails. I'm still learning, but this fits perfectly with the product I'd like to eventually build. I noticed the copyright on the site is from 2014, so it's a bit older now. Any thoughts on if this material would still be relevant?  Any other suggestions I might look at instead?
-## [9]["--webpack" flag, some explanation needed.](https://www.reddit.com/r/rails/comments/gvuw61/webpack_flag_some_explanation_needed/)
-- url: https://www.reddit.com/r/rails/comments/gvuw61/webpack_flag_some_explanation_needed/
----
-Last night I was reading something about rails apps. Something in the article attracted my attention. It was this :
-
-`rails new myapp --webpack=react`
-
-And it actually made a few questions in my head. So I'm asking them here.
-
-1. Is it only a way to load needed frontend framework to the app? Or it also loads a basic theme or something? (in case we may want some beautiful themes for the app).
-2. I saw another tutorial used `vue` instead of react. Which frameworks does it exactly support?
-
-I'm thankful for your kind answers.
-## [10][Services and tools we use for development](https://www.reddit.com/r/rails/comments/gvpvlp/services_and_tools_we_use_for_development/)
-- url: https://www.reddit.com/r/rails/comments/gvpvlp/services_and_tools_we_use_for_development/
----
-Tools and services that help to automatize development flow. Easy to install with increasing team effectiveness.
-
-[https://jtway.co/services-and-tools-we-use-for-development-2749af5ad08a](https://jtway.co/services-and-tools-we-use-for-development-2749af5ad08a)
-## [11][Question about how a Rails backend works...](https://www.reddit.com/r/rails/comments/gvm3r6/question_about_how_a_rails_backend_works/)
-- url: https://www.reddit.com/r/rails/comments/gvm3r6/question_about_how_a_rails_backend_works/
----
-This is a general programming question and may not be specific to Rails. However, it's an issue I've run into building an app with a Rails backend.
-
-Say I make an app and store user information in the Rails server-- such as a login and pw-- and push it all to github... if somebody clones that repo, runs it and tries to login with a login/pw that I saved will they be able to do it?

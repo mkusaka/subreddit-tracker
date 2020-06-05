@@ -125,7 +125,56 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][What is [[nodiscard]] and why it is useful.](https://www.reddit.com/r/cpp/comments/gwevjr/what_is_nodiscard_and_why_it_is_useful/)
+## [3][CppCast: Move Semantics](https://www.reddit.com/r/cpp/comments/gwwp9u/cppcast_move_semantics/)
+- url: https://cppcast.com/move-semantics-nico-josuttis/
+---
+
+## [4][TinyInst: A lightweight dynamic instrumentation library](https://www.reddit.com/r/cpp/comments/gwsn8c/tinyinst_a_lightweight_dynamic_instrumentation/)
+- url: https://github.com/googleprojectzero/TinyInst
+---
+
+## [5][Eric Richardson presents "Modern Cmake: An introduction" (DC CPP User Group Virtual Meeting)](https://www.reddit.com/r/cpp/comments/gwhae0/eric_richardson_presents_modern_cmake_an/)
+- url: https://www.youtube.com/watch?v=bDdkJu-nVTo&amp;feature=youtu.be
+---
+
+## [6][UTF8 and grapheme Cluster](https://www.reddit.com/r/cpp/comments/gx11mu/utf8_and_grapheme_cluster/)
+- url: https://www.reddit.com/r/cpp/comments/gx11mu/utf8_and_grapheme_cluster/
+---
+I spent the last few days digging into the depths of the Unicode specification because I can't wrap my head around how to integrate utf8 support into my existing project. It seems like that most libraries do not properly deal with grapheme cluster: `u8"è".find_first('e')` will always return positive. I am aware of the ongoing controversy about what actually counts as a character (Code units, code points or user-perceived characters) and doing proper Grapheme splitting (Text Boundary Analysis) etc is expensive and probably should not be part of a low-level utf8 String. ICU has their BreakIterator, which you can use to count user-perceived characters. It's quite slow though and possibly nothing you'd want to every time you construct a string or query it's length.
+What would you recommend? Should I just naively deal with grapheme and pretty much ignore their existence... Or could this cause issues in the future? I am kinda worried that once I make a utf8 string available in the code base coworkers will start doing splitting, replacing etc with user content (which may or may not have graphemes) and get the wrong results. 
+
+http://utf8everywhere.org/
+This excellent document is proposing to always use utf8 (which I agree on) and keep using `std::string`. I am not a big fan of the latter as some of the member functions would be broken for non-ASCII input.... and the type is not "strong" enough to signal that it's really storing utf8. (Might need to wait for char8_t)
+## [7][QStringView Diaries: Zero-Allocation String Splitting](https://www.reddit.com/r/cpp/comments/gx3d6s/qstringview_diaries_zeroallocation_string/)
+- url: https://www.kdab.com/qstringview-diaries-zero-allocation-string-splitting/
+---
+
+## [8][Updates on redeclaration of structured binding reference variables?](https://www.reddit.com/r/cpp/comments/gx05k3/updates_on_redeclaration_of_structured_binding/)
+- url: https://www.reddit.com/r/cpp/comments/gx05k3/updates_on_redeclaration_of_structured_binding/
+---
+Are there any updates on CWG issue 2313?
+
+https://wg21.link/CWG2313
+
+The proposed resolution dates from 2017 yet it seems nothing is concrete yet. 
+
+The following code works in MSVC and GCC but not on Clang:
+
+    int main() {
+        auto [x, y] = [] { return std::make_pair(1, 2); }();
+        return [&amp;] { return x + y; }();
+    }
+## [9][Template literals](https://www.reddit.com/r/cpp/comments/gwzzrq/template_literals/)
+- url: https://www.reddit.com/r/cpp/comments/gwzzrq/template_literals/
+---
+Can template literals be used in C++, for example, 
+
+cout&lt;&lt;I have some things to do, which are ${expression} when you don't know about them.
+
+Here, expression="really very hard"
+
+Thanks.
+## [10][What is [[nodiscard]] and why it is useful.](https://www.reddit.com/r/cpp/comments/gwevjr/what_is_nodiscard_and_why_it_is_useful/)
 - url: https://www.reddit.com/r/cpp/comments/gwevjr/what_is_nodiscard_and_why_it_is_useful/
 ---
 [https://www.blog.khrynczenko.com/post/2020-05-27-no\_discard/](https://www.blog.khrynczenko.com/post/2020-05-27-no_discard/)
@@ -134,11 +183,11 @@ Hi, few days ago I started my own blog and wrote my first post.  My reason for s
 
 
 Thank you for time spent reading the material. I would also like to know what is your opinion on the topic.
-## [4][toml++ v1.3.0 released](https://www.reddit.com/r/cpp/comments/gw16v1/toml_v130_released/)
+## [11][toml++ v1.3.0 released](https://www.reddit.com/r/cpp/comments/gw16v1/toml_v130_released/)
 - url: https://marzer.github.io/tomlplusplus/
 ---
 
-## [5][STX: C++ 20 Error and Optional-Value Handling Library (Result, Option, Panics, and Backtracing)](https://www.reddit.com/r/cpp/comments/gw14ke/stx_c_20_error_and_optionalvalue_handling_library/)
+## [12][STX: C++ 20 Error and Optional-Value Handling Library (Result, Option, Panics, and Backtracing)](https://www.reddit.com/r/cpp/comments/gw14ke/stx_c_20_error_and_optionalvalue_handling_library/)
 - url: https://www.reddit.com/r/cpp/comments/gw14ke/stx_c_20_error_and_optionalvalue_handling_library/
 ---
 Hello everyone,
@@ -197,65 +246,3 @@ Many thanks to u/TartanLlama, [Corentin Jabot](https://twitter.com/Cor3ntin) and
 &amp;#x200B;
 
 *Stay safe!*
-## [6][Linux development with Visual Studio: first-class support for gdbserver, improved build times with Ninja, and updates to the Connection Manager | C++ Team Blog](https://www.reddit.com/r/cpp/comments/gvtgg1/linux_development_with_visual_studio_firstclass/)
-- url: https://devblogs.microsoft.com/cppblog/linux-development-with-visual-studio-first-class-support-for-gdbserver-improved-build-times-with-ninja-and-updates-to-the-connection-manager/?WT.mc_id=reddit-social-marouill
----
-
-## [7][Eric Richardson presents "Modern Cmake: An introduction" (DC CPP User Group Virtual Meeting)](https://www.reddit.com/r/cpp/comments/gwhae0/eric_richardson_presents_modern_cmake_an/)
-- url: https://www.youtube.com/watch?v=bDdkJu-nVTo&amp;feature=youtu.be
----
-
-## [8][How to ask for C++ Coding Help - Kate Gregory](https://www.reddit.com/r/cpp/comments/gvw8y3/how_to_ask_for_c_coding_help_kate_gregory/)
-- url: http://www.gregcons.com/KateBlog/HowToAskForCCodingHelp.aspx
----
-
-## [9][Using Visual Studio Code for Qt Applications - Part Two](https://www.reddit.com/r/cpp/comments/gvqwa2/using_visual_studio_code_for_qt_applications_part/)
-- url: https://www.kdab.com/using-visual-studio-code-for-qt-apps-pt-2/
----
-
-## [10][Interesting cpp unity build benchmarks](https://www.reddit.com/r/cpp/comments/gw163l/interesting_cpp_unity_build_benchmarks/)
-- url: https://www.reddit.com/r/cpp/comments/gw163l/interesting_cpp_unity_build_benchmarks/
----
-I created a benchmark that tests a one compilation unit header only unity build vs a regular cpp build (h + cpp in individual compilation units).  I really hate writing headers so I prefer to do everything header only. The problem with header only is that every file gets rebuilt every time. This increases built times and becomes a chore.  I thought maybe a unity build would offset the time it takes to compile "everything" every time. The results show that a unity build even on header only source code reduced build time by a factor of 6 or 7.
-
-I got pretty extensive in my testing. At one point I created a benchmark for a 1 mil LOC unity header only project and I was impressed to see it built in about 10 seconds. I didnt even try a full build of that for a regular cpp structure (cpp + header being compiled individually) lol.  However; incremental builds for a regular cpp structure  still beat most unity builds by a few seconds (depending on project size).  This goes to show that header only unity builds are fast enough to avoid writing header(declaration) files all together! So if you cant wait until modules finally get released, unity builds are definitely do-able as they are almost as speedy as incremental builds.
-
-[https://github.com/Triangle345/CppUnityBuildBenchmarks/](https://github.com/Triangle345/CppUnityBuildBenchmarks/)
-## [11][You asked, I listened! Here is my updated and improved modern C++ template, now with static analyzers, Doxygen, CI caching and more!](https://www.reddit.com/r/cpp/comments/gvdu67/you_asked_i_listened_here_is_my_updated_and/)
-- url: https://www.reddit.com/r/cpp/comments/gvdu67/you_asked_i_listened_here_is_my_updated_and/
----
-[https://github.com/filipdutescu/modern-cpp-template](https://github.com/filipdutescu/modern-cpp-template)
-
-This is an update to [my previous post](https://www.reddit.com/r/cpp/comments/gt0pz1/i_made_a_project_template_for_modern_c_projects/), in which I shared with you [my modern C++ template](https://github.com/filipdutescu/modern-cpp-template).
-
-Everyone was kind enough to give me a lot of feedback on how, what and where to improve it and I wish to once more share it with you, with hopes that you will all be satisfied with its current state.
-
-Once more I am asking for you opinions and I hope you find it useful!
-
-## Features
-  * Modern **CMake** configuration and project, which, to the best of my knowledge, uses the best practices,
-  * An example of a **Clang-Format** config, inspired from the base *Google* model, with minor tweaks. This is aimed only as a starting point, as coding style is a subjective matter, everyone is free to either delete it (for the *LLVM* default) or supply their own alternative,
-  * **Static analyzers** integration, with *Clang-Tidy* and *Cppcheck*, the former being the default option,
-  * **Doxygen** support, through the `ENABLE_DOXYGEN` option, which you can enable if you wish to use it,
-  * **Unit testing** support, through *GoogleTest* (with an option to enable *GoogleMock*) or *Catch2*,
-  * **Code coverage**, enabled by using the `ENABLE_CODE_COVERAGE` option, through *Codecov* CI integration,
-  * **Package manager support**, with *Conan* and *Vcpkg*, through their respective options
-  * **CI workflows for Windows, Linux and MacOS** using *GitHub Actions*, making use of the caching features, to ensure minimum run time,
-  * **.md templates** for: *README*, *Code of Conduct*, *Contributing Guideliness*, *Issues* and *Pull Requests*,
-  * **Permissive license** to allow you to integrate it as easily as possible. The template is licensed under the [Boost Software License](https://www.boost.org/LICENSE_1_0.txt),
-  * Options to build as a header-only library or executable, not just a static or shared library.
-  * *CCache* integration, for speeding up build times
-
-Thank you to everyone who has supported me and I am very grateful for all the feedback you provided, as well as the opportunity to learn a lot of new things through it! I hope I am not posting too soon since the original, but I wanted to give everyone interested an updated. Hopefully you all find at least one thing that is useful for you, getting something in return for the long read!
-
-Edit: formatting.
-
-Edit 2: Updated with latest features/changes.
-## [12][HPX Applications Survey -- The STE||AR Group](https://www.reddit.com/r/cpp/comments/gvv4fn/hpx_applications_survey_the_stear_group/)
-- url: https://www.reddit.com/r/cpp/comments/gvv4fn/hpx_applications_survey_the_stear_group/
----
-As a follow-up to the community survey we did earlier this year, we would now like to ask all of our users that are willing and able to publicly share details about their applications to comment on this issue on GitHub: [https://github.com/STEllAR-GROUP/hpx/issues/4690](https://github.com/STEllAR-GROUP/hpx/issues/4690).
-
-We are collecting this information at one hand for us to learn more about our users, but also for current and potential future users to be able to see what others are working on with HPX. We will eventually present this information on our website. If you are not able to share the details of an application, only mentioning the institution or company that is using HPX would also be helpful to us.
-
-Thanks for your time!

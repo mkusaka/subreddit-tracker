@@ -1,190 +1,115 @@
 # androiddev
-## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/guk02c/weekly_whos_hiring_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/guk02c/weekly_whos_hiring_thread/
+## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/gx3tj9/weekly_anything_goes_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/gx3tj9/weekly_anything_goes_thread/
 ---
-Looking for Android developers? Heard about a cool job posting? Let people know!
+Here's your chance to talk about whatever!
 
-Here is a suggested posting template:
+Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
 
-&gt; Company: &lt;Best Company Ever&gt;  
-&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
-&gt; Location: &lt;City, State, Country&gt;  
-&gt; Allows remote: &lt;Yes/No&gt;  
-&gt; Visa: &lt;Yes/No&gt;  
-
-Feel free to include any other information about the job.
-## [2][Weekly Questions Thread - June 01, 2020](https://www.reddit.com/r/androiddev/comments/guij23/weekly_questions_thread_june_01_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/guij23/weekly_questions_thread_june_01_2020/
+Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
+## [2][Community Megathread](https://www.reddit.com/r/androiddev/comments/gwpxlc/community_megathread/)
+- url: https://www.reddit.com/r/androiddev/comments/gwpxlc/community_megathread/
 ---
-This thread is for simple questions that don't warrant their own thread (although we suggest checking the sidebar, [the wiki](http://www.reddit.com/r/androiddev/wiki/), [our Discord](https://discord.gg/D2cNrqX), or [Stack Overflow](http://stackoverflow.com) before posting). Examples of questions:
+Good morning/afternoon/evening everyone!
 
-* How do I pass data between my Activities?
-* Does anyone have a link to the source for the AOSP messaging app?
-* Is it possible to programmatically change the color of the status bar without targeting API 21?
+Let's get right into it. Recent events have lead to a lot of debate and deliberation internally and externally. I'd like to reach out to everyone and open a dialogue between us and the community.
 
-**Important: Downvotes are strongly discouraged in this thread. Sorting by new is strongly encouraged.**
+We will not be allowing several posts discussing the subreddit and past events, this is not the proper method to reach us, and I don't want to stifle or drown out the great discussion that happens here with too many posts. Instead, I'd like to open this thread as a place to discuss. In response to past events I would like to state the following will be happening in short order.
 
-Large code snippets don't read well on reddit and take up a lot of space, so please don't paste them in your comments. Consider linking [Gists](https://gist.github.com) instead.
+ * We will be restructuring our leadership internally as some mods have differing activity levels and some wish to retire. We recognize that we are also severely understaffed which is hurting our ability to serve the community, so we will soon be recruiting additional volunteers from the community to help out. More on this will be announced soon.
 
-Have a question about the subreddit or otherwise for /r/androiddev mods? [We welcome your mod mail!](http://www.reddit.com/message/compose?to=%2Fr%2Fandroiddev)
+ * Any action we take is as a team. At the end of the day we are volunteers doing this in our free time with the best interests of our community in mind. With everything that is going on in the world right now, now is not time for bickering, from anyone. Now is the time for coming together and solving problems. Remember that everyone is a human being. Harassment is zero tolerance.
 
-Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
+ * In response to the above point, I would like to ask for everyone's feedback on our current rule set in the comment below. Please keep the discussion calm and collected, or it will be unproductive and removed. I am however encouraging everyone to provide their feedback and suggestions on how we can improve our community.
 
-Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][With all these new restrictive rules, what is this sub for? Serious question.](https://www.reddit.com/r/androiddev/comments/gweyu0/with_all_these_new_restrictive_rules_what_is_this/)
-- url: https://www.reddit.com/r/androiddev/comments/gweyu0/with_all_these_new_restrictive_rules_what_is_this/
+Expect to see more from me personally as I take a bigger role in trying to help restructure our team and improve our community. 
+
+Have a great day everyone!
+## [3][Air Location 2.0 : Android library to get user's most precise live location and its updates via a callback!](https://www.reddit.com/r/androiddev/comments/gwwk4o/air_location_20_android_library_to_get_users_most/)
+- url: https://www.reddit.com/r/androiddev/comments/gwwk4o/air_location_20_android_library_to_get_users_most/
 ---
-With all these new rules, what can you post in this sub? Who thought these new rules would be helpful/good for community?   
+[Github Link](https://github.com/mumayank/AirLocation/)
 
+Features:
 
-Since new rules have been applied the quality and usefulness of this sub including number of posts has been reduced drastically, now it's just a generic links sharing hub with occasional lib discussion.  
+Highest precision: The location is precise up to 7 decimal places
 
+Either get user's location just one-time, or continue getting live udpates
 
-No app/takedown posts?   
-No help me posts?   
-What the actual fuck?   
+No need to manually: (the lib takes care of these)
++ add any permissions in manifest
++ add google play services location lib in gradle
++ ask runtime permissions
++ ask location settings optimization permissions
 
+Uses Google location services API internally - so you're in safe hands
 
- `News for Android developers with the who, what, where when and how of the Android community.`   
-Maybe rename this sub into AndroidHelpPage? Because its no longer useful.   
-I have been following this sub for a while now, and ever since new rules have been applied, this sub went from very useful to meh.
-## [4][cmdline-tools package is replacing the old tools package: was I the only one that missed this change?](https://www.reddit.com/r/androiddev/comments/gwe1w2/cmdlinetools_package_is_replacing_the_old_tools/)
-- url: https://www.reddit.com/r/androiddev/comments/gwe1w2/cmdlinetools_package_is_replacing_the_old_tools/
+Simple plug and play design
+
+Extremely light weight library (~50KB)
+
+Written in Kotlin (with full Java support)
+
+Android 10+ compatible (gets user's location via foreground location access, i.e., an activity that belongs to your app must be visible to the user to continue receiving location updates)
+
+Import the lib, use the lib, and start receiving user's live location in under 5 mins!
+## [4][Did Rich Text Formatting sink my Play Store listing?](https://www.reddit.com/r/androiddev/comments/gx317h/did_rich_text_formatting_sink_my_play_store/)
+- url: https://www.reddit.com/r/androiddev/comments/gx317h/did_rich_text_formatting_sink_my_play_store/
 ---
-So, yesterday I just noticed that there is a new SDK Tool package available, `cmdline-tools`:
+I’ve started to have a proper look at ASO over the last few weeks and I’ve been making changes to my store listings (title, description etc). I was making small progresses here and there and I’d started ranking on some lesser searched for keywords and phrases. All good. All going in the right direction.
 
-&amp;#x200B;
+I then read a few articles on using rich text formatting in the descriptions and I though I’d give that a go and try and emphasise and bump up the importance of certain words and phrases. So a week ago I started to use header tags, bold tags, italics etc throughout the descriptions.
 
-[Android SDK Command-line Tools package](https://preview.redd.it/sqam76znzu251.png?width=586&amp;format=png&amp;auto=webp&amp;s=4cd58e939ef3e561a5deb0d9159456e27429fa21)
+Since then my listings have dropped off completely and I’m no longer ranking for these words or phrases - or anything else for that matter. According to AppAnnie’s free ASO keyword tool I no longer rank for any word or phrase.
 
-I decided to download and install it and, to my surprise, contains some of the same binaries available inside the good old `tools` directory:
+So I’m guessing this is all thanks to the rich text formatting that my keywords and phrases (and app in a whole) no longer rank. Either that or Google takes longer to index pages with RTF.
 
-    $ find . -name sdkmanager 
-    ./cmdline-tools/latest/bin/sdkmanager
-    ./tools/bin/sdkmanager
-    
-    $ find . -name avdmanager 
-    ./cmdline-tools/latest/bin/avdmanager
-    ./tools/bin/avdmanager
+Does anyone else have similar experiences with RTF, or apps that completely dropped off the rankings for similar reasons?
+## [5][Firebase Cloud Messaging alternatives](https://www.reddit.com/r/androiddev/comments/gx0e10/firebase_cloud_messaging_alternatives/)
+- url: https://www.reddit.com/r/androiddev/comments/gx0e10/firebase_cloud_messaging_alternatives/
+---
+Are there any alternative to Firebase Cloud Messaging that are free?
+## [6][Is compiling your code/part of your code into a C/C++ library worth it?](https://www.reddit.com/r/androiddev/comments/gx4drk/is_compiling_your_codepart_of_your_code_into_a_cc/)
+- url: https://www.reddit.com/r/androiddev/comments/gx4drk/is_compiling_your_codepart_of_your_code_into_a_cc/
+---
+I'm trying to learn more about obfuscation and I've come across this concept of compiling part of your Java code into a C/C++ library. Have you used it for your app, ever? From a learning point of view and for protecting your app to some degree, is it worth the effort? If you know of samples that are both in Java code and the compiled C/C++ library, please let me know about it. I have the samples that come along with NDK but I read somewhere that they aren't really reliable(or something along those lines). 
 
-But the interesting part is that the binaries are different:
+This is more about just learning it than obfuscating my app. Any help/advice/experiences appreciated.
+## [7][Thoughts about State Handling on Android - zsmb.co](https://www.reddit.com/r/androiddev/comments/gwj8v9/thoughts_about_state_handling_on_android_zsmbco/)
+- url: https://zsmb.co/thoughts-about-state-handling-on-android/
+---
 
-    $ find . -name sdkmanager -exec sha256sum {} \;
-    42e587cd6795924403943856f8d5d62200272cc121ae89e5c91681967449c6e0  ./cmdline-tools/latest/bin/sdkmanager
-    ca5dce516a93bea2c070ba6cc63d3d45436ce1c9a27f1173256b2aa98ae1cffa  ./tools/bin/sdkmanager
-    
-    $ find . -name avdmanager -exec sha256sum {} \;
-    a5ca2a53294ea0b4af3d91fb59b3c8b7878c1d9eb7ecfc9d521c896ecbf7653e  ./cmdline-tools/latest/bin/avdmanager
-    a98933db7c4d8dd376d67208316732ccf3a4917d0aea109302feda86bfc5a906  ./tools/bin/avdmanager
-
-and the crazy part is that the version numbers are very different:
-
-    $ find . -name sdkmanager -exec  {} --version \;
-    4.0.0
-    26.1.1
-
-Please note that the new `cmdline-tools` package is the one using version 4.0.0!
-
-I tried to search about this change but I can't find a single place where this is announced.
-
-The official SDK Manager page still refers to the version from tools and the version number 25.2.3 or higher:
-
-&amp;#x200B;
-
-[sdkmanager](https://preview.redd.it/ixt9lxqr0v251.png?width=878&amp;format=png&amp;auto=webp&amp;s=7bf18a65326189610a185138047ac9fb60ce02e2)
-
-But the Command line tools page advise instead to use the new `cmdline-tools` version:
-
-[Command line tools](https://preview.redd.it/vjaoyp5z0v251.png?width=869&amp;format=png&amp;auto=webp&amp;s=c72072b028a78d3d9afcfd6618574c5ceec5168b)
-
-Does anybody have more info on this `cmdline-tools` package? Is it safe to migrate to it or is it better to stick with the `tools` version? 
-
-Why did the version number of the `sdkmanager` go from 26.x back to 4.x?
-## [5][Kotlin 1.4-M2 Released](https://www.reddit.com/r/androiddev/comments/gwfyw5/kotlin_14m2_released/)
+## [8][Kotlin 1.4-M2 Released](https://www.reddit.com/r/androiddev/comments/gwfyw5/kotlin_14m2_released/)
 - url: https://blog.jetbrains.com/kotlin/2020/06/kotlin-1-4-m2-released
 ---
 
-## [6][Coroutines: Suspending State Machines](https://www.reddit.com/r/androiddev/comments/gwchzr/coroutines_suspending_state_machines/)
-- url: https://medium.com/@ragdroid/coroutines-suspending-state-machines-36b189f8aa60
+## [9][Emulator 30.0.16 Canary](https://www.reddit.com/r/androiddev/comments/gwshde/emulator_30016_canary/)
+- url: https://androidstudio.googleblog.com/2020/06/emulator-30016-canary.html
 ---
 
-## [7][Securing Network Data Tutorial for Android](https://www.reddit.com/r/androiddev/comments/gw20zi/securing_network_data_tutorial_for_android/)
-- url: https://www.raywenderlich.com/10056112-securing-network-data-tutorial-for-android
+## [10][Possible to send data to pc while attached via USB?](https://www.reddit.com/r/androiddev/comments/gx1414/possible_to_send_data_to_pc_while_attached_via_usb/)
+- url: https://www.reddit.com/r/androiddev/comments/gx1414/possible_to_send_data_to_pc_while_attached_via_usb/
+---
+Hi. Wondering if its possible to send data to computers via USB with app running? Would like to use this to install companion application on PC and also stream data to it.
+
+Currently I've got two separate steps for the user (user downloads the companion online then opens app to connect to pc companion via websockets).
+
+The story would look like:
+
+1: User installs app on device
+
+2: App asks user to plug into pc to allow download of companion
+
+3: App will transfer data to pc through USB if connected otherwise use websocket
+## [11][Maximizing OkHttp connection reuse: Debugging tools used to improve an application network stack](https://www.reddit.com/r/androiddev/comments/gwkaxd/maximizing_okhttp_connection_reuse_debugging/)
+- url: https://medium.com/booking-com-development/maximizing-okhttp-connection-reuse-b1f0ad6ec66c?source=friends_link&amp;sk=0e1bc07e45c99230c23b733bcab40c4b
 ---
 
-## [8][does PDA important when flashing your phone ?](https://www.reddit.com/r/androiddev/comments/gwh95n/does_pda_important_when_flashing_your_phone/)
-- url: https://www.reddit.com/r/androiddev/comments/gwh95n/does_pda_important_when_flashing_your_phone/
+## [12][Kotlin Weekly Telegram channel](https://www.reddit.com/r/androiddev/comments/gx0avg/kotlin_weekly_telegram_channel/)
+- url: https://www.reddit.com/r/androiddev/comments/gx0avg/kotlin_weekly_telegram_channel/
 ---
- i have a Samsung j5 stuck on Samsung logo so i am gonna flash it but its PDA is j500HXXS1APE1  
-and i did not find the exact same firmware  , is it important ? or i can flash it with a firmware  with another PDA
-## [9][Android Gradle Plugin can have better performance with Graalvm](https://www.reddit.com/r/androiddev/comments/gwb4mp/android_gradle_plugin_can_have_better_performance/)
-- url: https://issuetracker.google.com/issues/157893911#comment3
----
+For those who prefer to follow news via Telegram, I have created a channel dedicated to [Kotlin Weekly](http://www.kotlinweekly.net/), where I post the various articles as soon as they are available: [https://t.me/kotlin\_weekly](https://t.me/kotlin_weekly).
 
-## [10][Mobile and web application costs in 2020](https://www.reddit.com/r/androiddev/comments/gwg0jq/mobile_and_web_application_costs_in_2020/)
-- url: https://blog.codemagic.io/mobile-and-web-app-costs-2020/
----
+It is a way of thanking this fantastic team for their work.
 
-## [11][RxJava onNext only works with the mainThread, not newThread](https://www.reddit.com/r/androiddev/comments/gwfr8x/rxjava_onnext_only_works_with_the_mainthread_not/)
-- url: https://www.reddit.com/r/androiddev/comments/gwfr8x/rxjava_onnext_only_works_with_the_mainthread_not/
----
-When I switch from running the observeOn on the Main thread to a newThread, the onNext only runs once.
-
-That only way I can get it to work is to keep it on the Main thread, but then I get that it does too much work on the Main Thread.
-
-Without the setErrorHandler it just crashes (Also, can I use doOnError instead of RxJavaPlugins?)
-
-PS. It works on the emulator fine, but it's on the physical device that the issue comes up.
-
-    public void updatePie() {
-    
-        RxJavaPlugins.setErrorHandler(Functions.&lt;Throwable&gt;emptyConsumer());
-    
-        Observable&lt;Long&gt; intervalObservable = Observable
-                .interval(1, TimeUnit.SECONDS)
-              //.doOnError(Functions.&lt;Throwable&gt;emptyConsumer())
-                .subscribeOn(Schedulers.io())
-                .takeWhile(new Predicate&lt;Long&gt;() {
-                    @Override
-                    public boolean test(Long aLong) throws Exception {
-    
-                        if (isMyServiceRunning(MyService.class) == false) {
-                            RxB = false;
-                        }
-                        return RxB;
-                    }
-                })
-                .observeOn(Schedulers.newThread());
-    
-        intervalObservable.subscribe(new io.reactivex.Observer&lt;Long&gt;() {
-            @Override
-            public void onSubscribe(Disposable d) {
-    
-            }
-    
-            @Override
-            public void onNext(Long aLong) {
-    
-                triple = mService.Time;
-                entries.set(0, new PieEntry(mService.Time, "kronk"));
-                entries.set(1, new PieEntry(mService.Time2, "notre dame"));
-                pie_chart.notifyDataSetChanged();
-                pie_chart.invalidate();
-    
-            }
-    
-            @Override
-            public void onError(Throwable e) {
-                Log.d(TAG, "Pie Update " + e.toString());
-            }
-    
-            @Override
-            public void onComplete() {
-                Log.d(TAG, "Pie Update completed");
-            }
-        });
-    }
-## [12][Fuchsia is not a science experiment](https://www.reddit.com/r/androiddev/comments/gwfht5/fuchsia_is_not_a_science_experiment/)
-- url: https://fuchsia.dev/fuchsia-src/concepts
----
-
+https://preview.redd.it/2xa1n7tls1351.jpg?width=1080&amp;format=pjpg&amp;auto=webp&amp;s=7f2dbe593dd4a676d1f5bcfcdd47586f55656a2f

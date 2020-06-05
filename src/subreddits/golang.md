@@ -1,120 +1,122 @@
 # golang
-## [1][LocalXpose: Bye Bye Localhost, Hello World.](https://www.reddit.com/r/golang/comments/gw6lo5/localxpose_bye_bye_localhost_hello_world/)
-- url: https://www.reddit.com/r/golang/comments/gw6lo5/localxpose_bye_bye_localhost_hello_world/
+## [1][why does json.unmarshall change the value of uint64 to float64 ?](https://www.reddit.com/r/golang/comments/gx1xdv/why_does_jsonunmarshall_change_the_value_of/)
+- url: https://www.reddit.com/r/golang/comments/gx1xdv/why_does_jsonunmarshall_change_the_value_of/
 ---
-&amp;#x200B;
+i have a json file that contains some json data. The values of the keys are in UINT64,when i decode this in my map using
 
-https://preview.redd.it/ggl95vkghs251.png?width=2529&amp;format=png&amp;auto=webp&amp;s=c03d4a58cbc29d52d25132747c5f51410cb2a0d5
+    var objmap map[string]interface{}
+    err = json.Unmarshal(jsondata, &amp;objmap)
 
-I created LocalXpose which is a reverse proxy that enables you to expose your localhost to the internet.
+the values of the key come out as float64
 
-LocalXpose has many features like TCP, HTTP, TLS, UDP tunnels, built-in Let's Encrypt, unlimited connections, CLI &amp; GUI, SDK to start tunnels from your app and much more.
+example my json would be 
 
-You can read more at [https://localxpose.io](https://localxpose.io)
+    {
+       "someval": {
+          "first": 1228224835,
+       }
+    }
 
-&amp;#x200B;
+but when i unmarshall i get  first :1.228224835e+09
 
-&amp;#x200B;
+Edit : https://stackoverflow.com/questions/55436628/json-decoded-value-is-treated-as-float64-instead-of-int/55436758 seems to be the answer
 
-https://i.redd.it/6qoalibihs251.gif
-## [2][how to read the next 4 bytes in file ?](https://www.reddit.com/r/golang/comments/gwg7ek/how_to_read_the_next_4_bytes_in_file/)
-- url: https://www.reddit.com/r/golang/comments/gwg7ek/how_to_read_the_next_4_bytes_in_file/
+Edit 2 : with the solution, so basically what i did was 
+
+    data, err := os.Open("./file.json")
+    check(err)
+    d := json.NewDecoder(data)
+    d.UseNumber()
+    err = d.Decode(&amp;objmap)
+
+this seems to work https://stackoverflow.com/questions/22343083/json-unmarshaling-with-long-numbers-gives-floating-point-number
+## [2][Handling multidomain requests with simple host switch](https://www.reddit.com/r/golang/comments/gx0t6e/handling_multidomain_requests_with_simple_host/)
+- url: https://rafallorenz.com/go/go-multidomain-host-switch/
 ---
-basically after i read starting 4 bytes of a file i want to read the next 4 bytes in the file without looping.basically specific next 4 bytes
-## [3][How I solved Jepsen with OpenCensus Distributed Tracing: A personal journey](https://www.reddit.com/r/golang/comments/gwgaf6/how_i_solved_jepsen_with_opencensus_distributed/)
+
+## [3][The Go compiler needs to be smarter](https://www.reddit.com/r/golang/comments/gwlrms/the_go_compiler_needs_to_be_smarter/)
+- url: https://lemire.me/blog/2020/06/04/the-go-compiler-needs-to-be-smarter/
+---
+
+## [4][Fictional 80s computer](https://www.reddit.com/r/golang/comments/gwpl6m/fictional_80s_computer/)
+- url: https://www.reddit.com/r/golang/comments/gwpl6m/fictional_80s_computer/
+---
+My project [benji4000](https://github.com/uzudil/benji4000) is a fictional 80s gaming computer. It's programmed in an interpreted, js-like [language](https://github.com/uzudil/benji4000/wiki/LanguageFeatures). The project is just starting out and comes with a couple of games. Let me know what you think!
+
+https://preview.redd.it/5a9l4o9jfy251.png?width=1504&amp;format=png&amp;auto=webp&amp;s=87fdf00fd60ec16ac4c459ea60e18285ee9f3f52
+## [5][Junior golang developer interview](https://www.reddit.com/r/golang/comments/gwxctz/junior_golang_developer_interview/)
+- url: https://www.reddit.com/r/golang/comments/gwxctz/junior_golang_developer_interview/
+---
+I'm fairly new to golang, coming from Java and c++ mainly. I've been learning golang for a couple of months.
+ I have to crack an junior dev interview that's in about a week.
+How would you prepare for a junior golang dev position? I'm looking for commonly asked interview questions and other interview protocols or tips. Though, anything would be helpful.
+The answers to this post will surely be helpful to other devs too.
+## [6][How I solved Jepsen with OpenCensus Distributed Tracing: A personal journey](https://www.reddit.com/r/golang/comments/gwgaf6/how_i_solved_jepsen_with_opencensus_distributed/)
 - url: https://dgraph.io/blog/post/solving-jepsen-with-opencensus/
 ---
 
-## [4][Golang Authentication Service: allows setup authentication in minutes](https://www.reddit.com/r/golang/comments/gvwelw/golang_authentication_service_allows_setup/)
-- url: https://github.com/maximthomas/gortas
+## [7][gql: A new way of doing GraphQL in Go](https://www.reddit.com/r/golang/comments/gwj0b4/gql_a_new_way_of_doing_graphql_in_go/)
+- url: https://www.reddit.com/r/golang/comments/gwj0b4/gql_a_new_way_of_doing_graphql_in_go/
 ---
+In the last 2 years, I learned more and more on GraphQL in Go because of my work and enthusiasm in programming, so I started contributing to graphql-go, worked on extensions (middleware is a better word for it) for schemas, so a middleware for tracing could be added to the schema. But I don’t like that there’s way too much boilerplate code required to get started and in the last few months, I couldn’t fail to notice that there’s less and less activity in the repository, which results in no new features.
 
-## [5][Self-Host Complete Authentication Service in Go](https://www.reddit.com/r/golang/comments/gwh8vw/selfhost_complete_authentication_service_in_go/)
-- url: https://www.reddit.com/r/golang/comments/gwh8vw/selfhost_complete_authentication_service_in_go/
----
-Hi community, my first post here.
+Last year, as a project to learn more about parsers, I built one for GraphQL. It turned out great, there are so many things in that topic and can be interesting (might write a post on that topic later). I found it useful, so I can only recommend writing a parser for a fictional language, configuration files, or for templating, you can learn a ton.
+
+Since I already had the core implementation of the GraphQL language, I decided to do more. I started working on a GraphQL server, implementing the type system, validation, and execution.
+
+Early this year, I decided that I want to have something, I want to build an open-source project, one that I care about, I start and use. After a little time, I had to realize that there’s no better project than a GraphQL package for Go, targeting features missing from existing packages, or ones that could be done differently. So I started coding, revisited my parser, my existing implementation, and did a huge refactor to make it more efficient…
+
+The [github.com/rigglo/gql](https://github.com/rigglo/gql) package is still in a work-in-progress solution, but already supports the most common features, like
+
+* Custom scalars
+* Built-in playground
+* Subscriptions: using the new [github.com/rigglo/gqlws](https://github.com/rigglo/gqlws) package, you can create one endpoint to support regular request and others with WebSockets for subscriptions
+* Field directives: can be used to check if the requester has permissions for a given field, or to solve other cases
+* Extensions: tools can be developed for tracing or to resolve custom issues
+* Validation: validates all the queries before execution as the specification describes
+* Concurrent execution
+
+And many more are coming…
+
+* Checks for query complexity
+* Apollo File Upload
+* Apollo Federation support
+* Custom validation for inputs
+* Custom rules-based introspection
+* Converting structs into GraphQL types
+* Parse inputs into structs
+
+In the last few weeks, I started implementing it into one of the projects I’m working on, so there’s continuous feedback coming from there, but it’s not enough. If you’re planning on doing GraphQL in Go, about to start a project, or just curious about this, I’d like you to try, test the [gql](https://github.com/rigglo/gql) package, contribute, or provide feedback for me on how I can improve it, make it better. I have so many ideas for this project, solutions I’d like to bring to life, so with your help, with your feedback and contribution, we could shape it to be an awesome GraphQL package for Go, a solution for many issues, with not much boilerplate, and great learning curve.
+
+I'm happy to answer any questions!
 
 &amp;#x200B;
 
-I've written an Authentication microservice, or more appropriately, a User microservice complete with all the features you'd expect. Here's some of what's included:
+Original post: [https://medium.com/rigglo/a-new-way-of-doing-graphql-in-go-e909b8eb83f5](https://medium.com/rigglo/a-new-way-of-doing-graphql-in-go-e909b8eb83f5)
 
-* JWT Based and API Key based authentication
-* Support For Social Media Login Using Facebook/Google/Instagram/Twitter/LinkedIn.
-* CRUD operations on user, with included endpoints for all the usual stuff such as Email Verification, Password Recovery, etc.
-* Additional functionality on certain routes based on Admin role (Additional roles can easily be added).
-* Complete session tracking with locations and time, ability for the user to manage their sessions.
-* Created using Goa ([https://github.com/goadesign/goa](https://github.com/goadesign/goa)), making implementation of RPC super easy if needed.
-* Ability to create Frontend SDKs for JavaScript/Android/iOS/others using openapi-generator within seconds.
+Repository: [https://github.com/rigglo/gql](https://github.com/rigglo/gql)
 
-This list is not exhaustive.
-
-It uses MongoDB for database but the service is written in a manner where the database package can easily be swapped out for a different DB. Other features would include things such as Rate Limiting, Logging, etc.
-
-&amp;#x200B;
-
-**Do note that this is not a package that you can import into your code and use that way. This is a service in itself, which ideally someone can take, modify for their use and then deploy directly.**
-
-&amp;#x200B;
-
-In any case, here's the project: [https://github.com/anshap1719/authentication](https://github.com/anshap1719/authentication). Also, here's the API documentation for the same: [https://anshap1719.github.io/authentication/](https://anshap1719.github.io/authentication/).
-
-&amp;#x200B;
-
-Also note that this is not a 100% ready to use directly. You'll need to make some changes anyway such as setting up your own API keys and providing it with the Public and Private Key Files For JWT, etc.
-## [6][Big File Uploader :- Upload big file by chunking the file using goroutines and channel](https://www.reddit.com/r/golang/comments/gw0axl/big_file_uploader_upload_big_file_by_chunking_the/)
-- url: https://www.reddit.com/r/golang/comments/gw0axl/big_file_uploader_upload_big_file_by_chunking_the/
+Me: [https://github.com/Fontinalis](https://github.com/Fontinalis)
+## [8][Best Go email server for Web App sending emails?](https://www.reddit.com/r/golang/comments/gx0eru/best_go_email_server_for_web_app_sending_emails/)
+- url: https://www.reddit.com/r/golang/comments/gx0eru/best_go_email_server_for_web_app_sending_emails/
 ---
-Hi community,
-
-I have been learning golang for some time after office hours. I love the language. I have written a simple file uploader which writes the file(any type) onto disk. I would love a code review and feedback from the community.
-
-[Github repo](https://github.com/atulkgupta9/big-file-uploader)
-## [7][Requests and context](https://www.reddit.com/r/golang/comments/gwes7r/requests_and_context/)
-- url: https://www.reddit.com/r/golang/comments/gwes7r/requests_and_context/
+Is there a small Go project suitable for sending verification emails for a small web app?
+## [9][Call for Speakers - GopherCon Turkey (25th July)](https://www.reddit.com/r/golang/comments/gwpflq/call_for_speakers_gophercon_turkey_25th_july/)
+- url: https://www.reddit.com/r/golang/comments/gwpflq/call_for_speakers_gophercon_turkey_25th_july/
 ---
-Hi,
+We're proud to announce that we are organizing Turkey's first Go programming language conference. GopherCon Turkey is planned to bring together the Go community and share experiences. The conference will be online and will host 17 speakers in 2 parallel sessions, one in Turkish and the other in English on the 25th of July. Registration is free.
 
-I wonder how a server should deal with requests that take too much time to be handled.
+Call for Papers will be ended on June, 22nd.
 
-I read the go's blog about the context. But the main thing that bothers me there is that the actual function that does the work should return anyhow. Either when &lt;-done is called or not. So the actual load will still be there, so what is the point in timeout (in server side perspective)?
+Details: [http://gophercon.ist/](http://gophercon.ist/)
 
-I found it is OK if we don't wait for the function to send it's output to the channel, because we can buffer the channel. but in this situation the load is still there.
-
-Is there a good way to handle it? Do I miss something?
-
-link to the blog: [https://blog.golang.org/context](https://blog.golang.org/context)
-
-Thanks everyone
-## [8][Starting to learn Go](https://www.reddit.com/r/golang/comments/gw50ea/starting_to_learn_go/)
-- url: https://www.reddit.com/r/golang/comments/gw50ea/starting_to_learn_go/
+https://preview.redd.it/o3s0ai07dy251.png?width=1200&amp;format=png&amp;auto=webp&amp;s=29233538069a3c512981550b49c88ef4eebfcd12
+## [10][[help] [gotk3] Need help in removing signal/function from gtk button](https://www.reddit.com/r/golang/comments/gwz9hl/help_gotk3_need_help_in_removing_signalfunction/)
+- url: https://www.reddit.com/r/golang/comments/gwz9hl/help_gotk3_need_help_in_removing_signalfunction/
 ---
-Hi, guys. I’m starting to learn Go. I have been coding for past few years in various languages and for networking I used Python as my choice. 
-I have been looking at some stats about speed of Python and Go and figured that for what I’m doing (mostly networking and cli tools) Python is keeping me back. 
+I need help in removing the signal/function or whatever i connect to the button
 
-I want to learn this language.. from very start. So do you have any book or some advices what should I focus on?
+in python it can be done by
+button.disconnect_by_func(func)
 
-Thank you :)
-## [9][JMX Exporter in golang?](https://www.reddit.com/r/golang/comments/gwdmve/jmx_exporter_in_golang/)
-- url: https://www.reddit.com/r/golang/comments/gwdmve/jmx_exporter_in_golang/
----
-Hi Guys,
-
-I want to create a custom Prometheus exporter for JMX monitoring of a java based application. is it possible to code it in golang?
-
- Prometheus is created with golang go there shouldn't be any issue there but my concern is can we extract Java memory management parameters (like heap/non heap memory, garbage collector information, native memory usage, metaspace etc.) using golang?
-
-if so, is there any reference/source available in web (i checked but didn't find any lead)? 
-
-Thanks in advance \^\_\^
-
-Stay Safe!
-
-Cheers!
-## [10][go-guardian newly born library for golang authentication](https://www.reddit.com/r/golang/comments/gwd3sh/goguardian_newly_born_library_for_golang/)
-- url: https://www.reddit.com/r/golang/comments/gwd3sh/goguardian_newly_born_library_for_golang/
----
-Repo: [https://github.com/shaj13/go-guardian](https://github.com/shaj13/go-guardian)
-
-GoDoc: [https://pkg.go.dev/github.com/shaj13/go-guardian@v1.1.1?tab=doc](https://pkg.go.dev/github.com/shaj13/go-guardian@v1.1.1?tab=doc)
-
-It worth your star :)
+how to done the same in go

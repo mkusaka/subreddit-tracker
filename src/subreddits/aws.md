@@ -21,129 +21,84 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][I've created a tool - spotcost.net The one-pager about all spot instances information. It helps find the cheapest region/az, compare specs, regions, price in time and etc. The difference between regions is huge (10-300% sic!). What do you think?](https://www.reddit.com/r/aws/comments/gwgdkm/ive_created_a_tool_spotcostnet_the_onepager_about/)
+## [2][Slack adopts Chime Video Call technology](https://www.reddit.com/r/aws/comments/gwt7vu/slack_adopts_chime_video_call_technology/)
+- url: https://www.cnbc.com/2020/06/04/amazon-licenses-slack-for-workers-as-slack-adopts-aws-video-call-tech.html
+---
+
+## [3][I've created a tool - spotcost.net The one-pager about all spot instances information. It helps find the cheapest region/az, compare specs, regions, price in time and etc. The difference between regions is huge (10-300% sic!). What do you think?](https://www.reddit.com/r/aws/comments/gwgdkm/ive_created_a_tool_spotcostnet_the_onepager_about/)
 - url: https://spotcost.net
 ---
 
-## [3][TLS 1.2 to become the minimum for all AWS FIPS endpoints | Amazon Web Services](https://www.reddit.com/r/aws/comments/gw1a47/tls_12_to_become_the_minimum_for_all_aws_fips/)
-- url: https://aws.amazon.com/blogs/security/tls-1-2-to-become-the-minimum-for-all-aws-fips-endpoints/
+## [4][Why are NLB healthchecks coming from public IP address?](https://www.reddit.com/r/aws/comments/gx46m3/why_are_nlb_healthchecks_coming_from_public_ip/)
+- url: https://www.reddit.com/r/aws/comments/gx46m3/why_are_nlb_healthchecks_coming_from_public_ip/
 ---
+1. Create a VPC (10.0.0.0) and subnet (10.0.0.0/24) with internet gateway and normal routing table.
+2. Create internal NLB (10.0.0.151), listener (8000), and target group (instance).
+3. Launch EC2 instance (10.0.0.184) and register to target group.
+4. Register instnace to target group.
+5. On the instance, run python -m SimpleHTTPServer
 
-## [4][Any reason NOT to use ACM Certificates ?](https://www.reddit.com/r/aws/comments/gw99u5/any_reason_not_to_use_acm_certificates/)
-- url: https://www.reddit.com/r/aws/comments/gw99u5/any_reason_not_to_use_acm_certificates/
+Output
+
+    209.17.97.106 - - [05/Jun/2020 12:38:42] "GET / HTTP/1.1" 200 -
+    209.17.96.242 - - [05/Jun/2020 12:39:53] "GET / HTTP/1.1" 200 -
+    209.17.96.122 - - [05/Jun/2020 12:40:58] "GET / HTTP/1.1" 200 -
+    209.17.97.10 - - [05/Jun/2020 12:41:10] "GET / HTTP/1.1" 200 -
+
+Why are the health checks coming from a public IP address? As I read the documentation, they should come from the NLB's private IP address?
+## [5][New – Amazon EC2 C5a Instances Powered By 2nd Gen AMD EPYC™ Processors](https://www.reddit.com/r/aws/comments/gws4qo/new_amazon_ec2_c5a_instances_powered_by_2nd_gen/)
+- url: https://www.reddit.com/r/aws/comments/gws4qo/new_amazon_ec2_c5a_instances_powered_by_2nd_gen/
 ---
-Is there any reason for someone to use traditional CA certificates (Comodo/Digicert etc) if they are fully on AWS, and do not plan to install the certificates in EC2 ? How would you convince corporate IT teams that traditional CA signed certificates offer no additional value;  and ACM in fact removes a lot of head aches offered by them like cert rotation?
-
-Even if we decide to install certs on EC2, is there any advantage for paid certificates over those given by Lets Encrypt ?
-## [5][RDS Script - Iterating over MS SQL databases and backing them up to s3](https://www.reddit.com/r/aws/comments/gwealg/rds_script_iterating_over_ms_sql_databases_and/)
-- url: https://www.reddit.com/r/aws/comments/gwealg/rds_script_iterating_over_ms_sql_databases_and/
----
-Hello Everybody,
-
-I created this script a while ago and thought it might be useful for people here who use RDS for MS SQL and want to either migrate their databases or back them up.
-
 &amp;#x200B;
 
-This script iterates over all the databases except: master, model, rdsadmin, tmpdb, msdb.
+https://preview.redd.it/jjnuvb51gz251.jpg?width=680&amp;format=pjpg&amp;auto=webp&amp;s=f02a2f00b5d054579c5e26db7e7297757cbddb91
 
-&amp;#x200B;
-
-prints the database name, and then backs it up as &lt;database\_name&gt;.bak to s3 (make sure to change the arn of the s3 bucket.)
-
-&amp;#x200B;
-
- 
-
-`DECLARE @value VARCHAR(50)`
-
-`DECLARE db_cursor CURSOR FOR`  
-
-`SELECT name FROM master.dbo.sysdatabases`
-
-`where name not in ('master','model','rdsadmin','tempdb','msdb')`
-
-`OPEN db_cursor`   
-
-`FETCH NEXT FROM db_cursor INTO @value`   
-
-`WHILE @@FETCH_STATUS = 0`   
-
-`BEGIN`   
-
-`PRINT @value`
-
-  `declare  @s3 nvarchar(MAX) = N'arn:aws:s3:::bucket_name/'+@value+'.BAK'`
-
-  `exec msdb.dbo.rds_backup_database` 
-
-`@source_db_name=@value,`
-
-`@s3_arn_to_backup_to=@s3,` 
-
-`@overwrite_S3_backup_file=1;`
-
-`FETCH NEXT FROM db_cursor INTO @value`   
-
-`END`   
-
-`CLOSE db_cursor`   
-
-`DEALLOCATE db_cursor`
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-Hopefully this helps someone!
-## [6][Authorising HLS streaming files from Amazon S3 directory](https://www.reddit.com/r/aws/comments/gwglv0/authorising_hls_streaming_files_from_amazon_s3/)
-- url: https://www.reddit.com/r/aws/comments/gwglv0/authorising_hls_streaming_files_from_amazon_s3/
+[https://aws.amazon.com/blogs/aws/new-amazon-ec2-c5a-instances-powered-by-2nd-gen-amd-epyc-processors/](https://aws.amazon.com/blogs/aws/new-amazon-ec2-c5a-instances-powered-by-2nd-gen-amd-epyc-processors/)
+## [6][Update auth token whenever user permissions are modified elsewhere](https://www.reddit.com/r/aws/comments/gx1cvh/update_auth_token_whenever_user_permissions_are/)
+- url: https://www.reddit.com/r/aws/comments/gx1cvh/update_auth_token_whenever_user_permissions_are/
 ---
-We have setup that converts raw videos into HLS format (.m3u8 and .ts files) and organises them into a directory inside a s3 bucket. Each directory inside the bucket represents one video. Since s3 doesn't really have the concept of directory in its implementation, it does not allow us to get a signed url to read the content of the directory to feed into the video player.
+I'm creating a web application with user authentication.
 
-I tried signing the URL for the .m3u8 file alone with getObject, but since tries to fetch the parts of the video to play, it will be thrown with an 403 by s3. Using cloudfront is not an option for us at this stage.
+I'll have multiple customers, each account with multiple users. The user permissions will be stored in his auth token upon login (issued by **Amazon Cognito**).
 
-Is there a better and secure way to handle the streaming from s3 without making the entire bucket public?
-## [7][API entrypoint with ACM certificates without ALB](https://www.reddit.com/r/aws/comments/gwh45t/api_entrypoint_with_acm_certificates_without_alb/)
-- url: https://www.reddit.com/r/aws/comments/gwh45t/api_entrypoint_with_acm_certificates_without_alb/
+I'm facing the problem of **possible old auth tokens**: if **userA** modifies **userB**'s permissions, but **userB** currently has an active session, there's an ≤1h window of time where **userB** will have his old auth token (before it refreshes), containing claims that represent his old permission set. So **userB** may still be accessing and changing information that he shouldn't be allowed to anymore.
+
+What to do in this situation?
+
+I would like to be able to refresh a user's active sessions (i.e. update all currently valid auth tokens) remotely whenever someone modifies that user's permission set, so he gets his tokens updated.
+
+This sounds to me like event listening. So, is **EventBridge** the tool I should use here? Can I make a web client listen to and react whenever my updatePermissions Lambda function is executed **with that user as argument**, and then refresh the user's token? If possible, is it cost-effective?
+
+Or am I thinking it wrong?
+
+Thanks
+## [7][Whenever I update my Fargate container via CloudFormation, ECS deploys the change in minutes, but CloudFormation marks the service UPDATE_IN_PROGRESS for many minutes more. Why?](https://www.reddit.com/r/aws/comments/gwz5yw/whenever_i_update_my_fargate_container_via/)
+- url: https://www.reddit.com/r/aws/comments/gwz5yw/whenever_i_update_my_fargate_container_via/
 ---
- Hey!
+I've had this happen reproducably. It happens for tasks with a load balancer, and an explicit, short health check period. It also happens with tasks with no load balancer.
 
-I love to use ALB in front of EC2 instances because then I don’t need to worry about SSL on EC2 instances (on nginx side), but rather use ACM on ALB for 2 of my domains (site has to work on both [example1.com](http://example1.com/) and [example2.com](http://example2.com/), 2 certificates - [example2.com](http://example2.com/) is a CNAME to [example1.com](http://example1.com/), which right now is a CNAME to load balancer address). But is there a way of doing this when there’s only 1 EC2 instance and I don’t need ALB, but I still don’t want to manage certificates on the EC2 side?
-
-The reason I’m asking is that I sometimes just need 1 instance, but sometimes I need to scale and need to add more EC2 instances and load balance them. The times I only need 1, I would rather not use the ALB to save money. Can I provision any sort of AWS resource that would serve as an entrypoint and would pass that request to the EC2 instance? I noticed CloudFront can be used to serve dynamic content as well, but it only supports 1 ACM certificate. Can API gateway be configured in such a way to pass the request down to EC2 instance but provide multiple certificates as well?  
- 
-
-I would like to be as flexible as possible, where I would CNAME my domains to some endpoint that stands in front of EC2, then if I need more instances, I would provision ALB, add those instances and swap out the CNAME to ALB’s address. I would love to hear out what you guys think.
-
-All of this now works with ALB. I can just remove and add targeted instances, but in case I only need 1 instance, ALB is wasting money for my use case.
-
-&amp;#x200B;
-
-I'm not very experienced in AWS, so I would love to hear your opinions.
-## [8][Domain still going to Godaddy website after setting up NS records with A record and CNAME records on AWS Lightsail](https://www.reddit.com/r/aws/comments/gwh3l1/domain_still_going_to_godaddy_website_after/)
-- url: https://www.reddit.com/r/aws/comments/gwh3l1/domain_still_going_to_godaddy_website_after/
+What is CloudFormation waiting for?
+## [8][AWS S3 Monetization](https://www.reddit.com/r/aws/comments/gx2ofg/aws_s3_monetization/)
+- url: https://www.reddit.com/r/aws/comments/gx2ofg/aws_s3_monetization/
 ---
-I purchased my domain name at Godaddy, then changed the nameservers in Godaddy's DNS settings over to my AWS nameservers. AWS now controls my DNS records so I added an A record and two CNAME records. 
+Hello guys, I'm starting a movie watching website and the way I'll win money is by ads, I am wondering how could I monetize my S3 videos(movies) with ads before the video starts? Is there any way?
 
-The A record points to my static IP (@.example.com --&gt; staticIP) and my CNAME records point to my domain name ([www.example.com](https://www.example.com) \--&gt; [example.com](https://example.com))
-
-Both my subdomains from the CNAME records take me to the correct website hosted on Lightsail, but going to the main domain ([example.com](https://example.com)) still takes me to Godaddy's website builder that I set up when I bought the domain. There are no other options in Godaddy's DNS settings except to transfer the domain which isn't available for another month. I'm not sure what else to do on the AWS side because I already set up the A record, but it's not working correctly. Anyone know what else I can do?
-## [9][Different Deployment Types Of AWS Elastic Beanstalk](https://www.reddit.com/r/aws/comments/gwgzy3/different_deployment_types_of_aws_elastic/)
-- url: https://www.ibexlabs.com/different-deployment-types-of-aws-elastic-beanstalk/
+Thanks :)
+## [9][ELI5: Asynchronous API push notifications](https://www.reddit.com/r/aws/comments/gwur3y/eli5_asynchronous_api_push_notifications/)
+- url: https://www.reddit.com/r/aws/comments/gwur3y/eli5_asynchronous_api_push_notifications/
 ---
-
-## [10][Automating RDS Start and Stop](https://www.reddit.com/r/aws/comments/gw7doh/automating_rds_start_and_stop/)
-- url: https://www.reddit.com/r/aws/comments/gw7doh/automating_rds_start_and_stop/
+I have a couple of lambdas that need to execute in sequence calling external APIs and may possibly fail for various reasons depending on the health of the third party. For this reason the API calls that need to go externally outside the bounds of my AWS, once a response has been received, how do I alert the react client  (am using Amplify) that the process has completed, other than just making requests to my api asking for job updates?
+## [10][Lambda vs EC2 vs locally running](https://www.reddit.com/r/aws/comments/gwrnzd/lambda_vs_ec2_vs_locally_running/)
+- url: https://www.reddit.com/r/aws/comments/gwrnzd/lambda_vs_ec2_vs_locally_running/
 ---
-I am using it (PostgreSql) only for developing purposes. So I want it to be open only on work hours. Is there a way of scheduling it?
-## [11][Unable to map API Gateway to custom domain name](https://www.reddit.com/r/aws/comments/gwfprg/unable_to_map_api_gateway_to_custom_domain_name/)
-- url: https://www.reddit.com/r/aws/comments/gwfprg/unable_to_map_api_gateway_to_custom_domain_name/
+Hi guys, I'm extremely new to AWS. I watched a few of the Amazon AWS training modules and was introduced to Lambda and EC2. From my understanding, they are both computing services. I googled what the difference was between the two and what I read was that Lambda is used for smaller and quicker executions whereas EC2 is used for more high-performance executions. But why would you get lambda in the first place if all you're doing is computing simple tasks? Wouldn't it be easier to compute it locally? I would appreciate if someone could give examples of what kind of situation you would use each kind of resource. Sorry if the question is a bit elementary, I was just introduced to the subject.
+## [11][Media Services / CloudFront - amount of viewers](https://www.reddit.com/r/aws/comments/gwpg0q/media_services_cloudfront_amount_of_viewers/)
+- url: https://www.reddit.com/r/aws/comments/gwpg0q/media_services_cloudfront_amount_of_viewers/
 ---
-I am trying to create a custom domain name mapping to API Gateway. I followed the documentation and I have following things in place:
+Hey all,
 
-* SSL Certificate from ACM
-* Entry for desired domain in Route 53 with routing set to API End point
+Question from a novice in the AWS environment. I successfully deployed a MediaLive, MediaPackage and CloudFront in AWS for live streaming. Works like a charm. 
 
-Now only step remaining is adding API mapping. When I try to add an API mapping it throws errors saying  `Unable to complete operation due to concurrent modification. Please try again later.` 
+Is there a way to see how many viewers/connections you have during a stream? I see number of Request Count in CloudFront, but no actually of real viewers/connections. My customers would love to know that. Is it possible to see that info?
 
-Not able to figure out how to resolve this. Looking for assistance for the same.
+Thanks!

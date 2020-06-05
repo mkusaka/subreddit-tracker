@@ -23,64 +23,127 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/06/02/this-week-in-rust-341/
 ---
 
-## [3][Rather interesting take on visualizing ownership/borrowing from 2017](https://www.reddit.com/r/rust/comments/gwaqlx/rather_interesting_take_on_visualizing/)
-- url: https://rufflewind.com/2017-02-15/rust-move-copy-borrow
+## [3][I wrote a small virtual machine in rust](https://www.reddit.com/r/rust/comments/gx3emt/i_wrote_a_small_virtual_machine_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/gx3emt/i_wrote_a_small_virtual_machine_in_rust/
+---
+This is my first rust program. Would love some feedback :)
+
+[github.com/tarekwiz/smallvm](https://github.com/tarekwiz/smallvm)
+## [4][Announcing Rust 1.44.0](https://www.reddit.com/r/rust/comments/gwmmum/announcing_rust_1440/)
+- url: https://blog.rust-lang.org/2020/06/04/Rust-1.44.0.html
 ---
 
-## [4][ct_python!, a Rust macro to execute Python code at compile time and to insert the outputs as Rust code back into your Rust program, by Mara Bos](https://www.reddit.com/r/rust/comments/gwe7ut/ct_python_a_rust_macro_to_execute_python_code_at/)
+## [5][toshi: A full-text search engine in rust](https://www.reddit.com/r/rust/comments/gwvu6x/toshi_a_fulltext_search_engine_in_rust/)
+- url: https://github.com/toshi-search/Toshi
+---
+
+## [6][Jubi Taneja presents "Improving Compiler Construction Using Formal Methods"](https://www.reddit.com/r/rust/comments/gwy3d9/jubi_taneja_presents_improving_compiler/)
+- url: https://www.youtube.com/watch?v=de8Ak0nY1hA
+---
+
+## [7][Tour of WebAssembly - Chapter 2 Released](https://www.reddit.com/r/rust/comments/gwt37e/tour_of_webassembly_chapter_2_released/)
+- url: https://tourofrust.com/webassembly/chapter_2_en.html
+---
+
+## [8][My first blog, about "how to read Rust docs"](https://www.reddit.com/r/rust/comments/gwnl0w/my_first_blog_about_how_to_read_rust_docs/)
+- url: https://www.reddit.com/r/rust/comments/gwnl0w/my_first_blog_about_how_to_read_rust_docs/
+---
+Hi everyone, 
+
+I'm learning Rust and I found somehow rust docs hard to understand for a newbie. So I summarize something that may help reading rust docs, mainly about the function signatures and navigate modules with the aware of some key traits. 
+
+[How to read Rust docs](http://blog.frqc.info/post/how-to-read-rust-docs/)
+
+This is my post about rust. I know it's far from a conclusive summary and please correct me if there is anything not correct or precise enough in the post. 
+
+&amp;#x200B;
+
+Thank you and looking forward to your feedback!
+## [9][ct_python!, a Rust macro to execute Python code at compile time and to insert the outputs as Rust code back into your Rust program, by Mara Bos](https://www.reddit.com/r/rust/comments/gwe7ut/ct_python_a_rust_macro_to_execute_python_code_at/)
 - url: https://twitter.com/m_ou_se/status/1268469932544733186
 ---
 
-## [5][Visualisating Co-occurring Pokemon Types with Rust Notebooks](https://www.reddit.com/r/rust/comments/gwfll9/visualisating_cooccurring_pokemon_types_with_rust/)
-- url: https://shahinrostami.com/posts/programming/rust-notebooks/visualisation-of-co-occurring-types/
+## [10][Is it anti pattern to define a method in a trait to return a struct(to avoid lots of getter/setter)?](https://www.reddit.com/r/rust/comments/gx0esy/is_it_anti_pattern_to_define_a_method_in_a_trait/)
+- url: https://www.reddit.com/r/rust/comments/gx0esy/is_it_anti_pattern_to_define_a_method_in_a_trait/
+---
+Hi! I am rather new to rust and quite confused about the way OOP is implemented in rust. I've got the following code to implement a basic class inheritance:
+
+    #[derive(Debug, Default)]
+    pub struct BaseData {
+        a: f64,
+        b: f64,
+        c: f64,
+        d: f64,
+    }
+    
+    pub trait BaseCompute {
+        fn get_base(&amp;self) -&gt; &amp;BaseData;
+        fn get_mut_base(&amp;mut self) -&gt; &amp;mut BaseData;
+        // Thus avoiding lots of "getter/setter"
+    
+        // Default implementation
+        fn do_something(&amp;self) {
+            // Do computation with: self.get().a, self.get().b, self.get().c
+        }
+    }
+    
+    pub trait CrazyCompute:BaseCompute{
+        fn do_something_crazy(&amp;self);
+    }
+    
+    pub struct Crazy{
+        base: BaseData,
+        x: f64,
+    }
+    
+    // We only need to implement get_base and get_mut_base to implement BaseCompute
+    impl BaseCompute for Crazy {
+        fn get_base(&amp;self)-&gt;&amp;BaseData{
+            &amp;self.base
+        }
+        fn get_mut_base(&amp;mut self)-&gt;&amp;mut BaseData{
+            &amp;mut self.base
+        }
+    }
+    
+    impl CrazyCompute for Crazy{
+        fn do_something_crazy(&amp;self){
+    
+        }
+    }
+
+I've defined a `get_base` and a `get_mut_base` in trait `BaseCompute` so that when another trait needs to **inherit** from `BaseCompute`, they don't need to implement a lot of `get_a`, `get_b` etc. I wonder if this is the correct way of OOP in rust, or if there's better way to implement inheritance in rust?
+## [11][Rust has no goto? Now you can at least jump forward.](https://www.reddit.com/r/rust/comments/gwqrv6/rust_has_no_goto_now_you_can_at_least_jump_forward/)
+- url: https://www.reddit.com/r/rust/comments/gwqrv6/rust_has_no_goto_now_you_can_at_least_jump_forward/
+---
+I made a crate that enables you to safely (borrow checker friendly!) jump forward in the control-flow [forward\_goto](https://crates.io/crates/forward_goto)
+
+```rust
+use forward_goto::rewrite_forward_goto;
+
+#[rewrite_forward_goto]
+fn decode_msg(luck: impl Fn() -&gt; bool, is_alan_turing: bool) {
+    if is_alan_turing {
+        // jump forward from here
+        forward_goto!('turing_complete);
+    }
+
+    println!("You'll need a lot of luck for this");
+
+    if luck() {
+        println!("Seems you were lucky");
+
+        forward_label!('turing_complete);
+        // directly to here
+        println!("Message decoded!");
+    } else {
+        println!("No luck today...");
+    }
+}
+```
+
+Should you use it? No, probably not...
+## [12][Rather interesting take on visualizing ownership/borrowing from 2017](https://www.reddit.com/r/rust/comments/gwaqlx/rather_interesting_take_on_visualizing/)
+- url: https://rufflewind.com/2017-02-15/rust-move-copy-borrow
 ---
 
-## [6][Pushrod 0.1.2: SDL2-based GUI library for Rust](https://www.reddit.com/r/rust/comments/gwayfg/pushrod_012_sdl2based_gui_library_for_rust/)
-- url: https://www.reddit.com/r/rust/comments/gwayfg/pushrod_012_sdl2based_gui_library_for_rust/
----
-Hey everyone!
-
-What is [Pushrod](https://www.github.com/KenSuenobu/pushrod/)?  It is a library that is written for GUI applications, written in Rust from the ground up using the SDL2 library for its graphics libraries and OS event handling.
-
-The following new items have been added since the last update post ...
-
-- A base widget library containing a button, checkbox, grid, group box, image button, image, progress, text, and toggle buttons have all been created.
-- Test applications have been created to test all of the functionality of the widgets mentioned above.
-
-I had a previous version of this library, called [rust-pushrod](https://www.github.com/KenSuenobu/rust-pushrod/) that was being worked on.  However, its design was too limiting, making it difficult to add additional widgets to the display, and was partially hampered by some bad internal design.
-
-This new version uses a more recognized event-based system (similar to Atari, Amiga, and early Windows-based programming), making it easier to implement a main event loop to intercept actions.
-
-I will be working on the Wiki for the site, and may be making some Youtube content to help show examples and some step-by-step instructions on how to create applications, or even your own Widgets from scratch.
-
-It's a one-man-show right now, and I could also [use some donations](https://www.patreon.com/KenSuenobu) if you feel like contributing to the cause!  (I also like coffee.)
-
-The library is made up of [Pushrod](https://www.github.com/KenSuenobu/pushrod/) and [Pushrod-Widgets](https://www.github.com/KenSuenobu/pushrod-widgets/).  I am also creating a GUI builder called [Chassis](https://www.github.com/KenSuenobu/pushrod-chassis/) which is currently a WIP.  Anyone who used "Interface" on the Atari ST or KIDE for the KDE library will be familiar with this type of application.
-
-Thanks, and I look forward to feedback - positive or negative!
-## [7][Photon: A high-performance image processing library that compiles to WebAssembly](https://www.reddit.com/r/rust/comments/gvvlz3/photon_a_highperformance_image_processing_library/)
-- url: https://silvia-odwyer.github.io/photon/
----
-
-## [8][VisualStudio Magazine | So What's Up with Microsoft's (and Everyone Else's) Love of Rust?](https://www.reddit.com/r/rust/comments/gw3ove/visualstudio_magazine_so_whats_up_with_microsofts/)
-- url: https://visualstudiomagazine.com/articles/2020/06/02/rust-love.aspx?m=1
----
-
-## [9][An annotated comparison of Linux system calls made by an empty Rust and an empty C program for startup/shutdown.](https://www.reddit.com/r/rust/comments/gwex0d/an_annotated_comparison_of_linux_system_calls/)
-- url: https://gist.github.com/Ben-PH/539fd19911cae424cc9f9484fd6b0da9
----
-
-## [10][Nand2Tetris Hack assembler implementation with Rust](https://www.reddit.com/r/rust/comments/gwf3b9/nand2tetris_hack_assembler_implementation_with/)
-- url: https://www.reddit.com/r/rust/comments/gwf3b9/nand2tetris_hack_assembler_implementation_with/
----
-[https://github.com/tamuhey/hack-assembler-rust](https://github.com/tamuhey/hack-assembler-rust)
-## [11][Parser for HTML/JSX-like TokenStreams to help with building html! proc macros](https://www.reddit.com/r/rust/comments/gw3a6v/parser_for_htmljsxlike_tokenstreams_to_help_with/)
-- url: https://github.com/stoically/syn-rsx
----
-
-## [12][Rust seems like the most consistent language I've ever used? What's inconsistent about it from your experience?](https://www.reddit.com/r/rust/comments/gvqhea/rust_seems_like_the_most_consistent_language_ive/)
-- url: https://www.reddit.com/r/rust/comments/gvqhea/rust_seems_like_the_most_consistent_language_ive/
----
-Almost every language I've encountered there have been plenty of questionable (but understandable) decisions (cpp no ABI break , vector&lt;bool&gt;, pythons GIL, java type erasure on generics, etc.). I've yet to encounter a single issue like that in Rust. Everything about it seems consistent and have one and only one way to do it and if there is another way to do something, it seems fulfills a very specific purpose.
-
-To be honest, I'm almost certain there must be some problems like the ones mentioned earlier though so I'd like to hear them.

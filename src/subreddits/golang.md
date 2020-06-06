@@ -1,122 +1,118 @@
 # golang
-## [1][why does json.unmarshall change the value of uint64 to float64 ?](https://www.reddit.com/r/golang/comments/gx1xdv/why_does_jsonunmarshall_change_the_value_of/)
-- url: https://www.reddit.com/r/golang/comments/gx1xdv/why_does_jsonunmarshall_change_the_value_of/
+## [1][Learnt Go, teenager in dire need looking for advice.](https://www.reddit.com/r/golang/comments/gxltew/learnt_go_teenager_in_dire_need_looking_for_advice/)
+- url: https://www.reddit.com/r/golang/comments/gxltew/learnt_go_teenager_in_dire_need_looking_for_advice/
 ---
-i have a json file that contains some json data. The values of the keys are in UINT64,when i decode this in my map using
+Hi Everyone,
 
-    var objmap map[string]interface{}
-    err = json.Unmarshal(jsondata, &amp;objmap)
+I'm 19 years old, decided to learn programming on my own, and bought two Go books and gave it a go, pun intended :) Finished them both, last topic I learnt was the basics of Concurrent Programming.
 
-the values of the key come out as float64
+I've decided that this is something I could see myself doing for a living, but I come from a very poor family and due to this crazy pandemic, both of my parents have lost their jobs, we living off unemployment benefits and we won't last too long like this so I am doing everything I can to be able to help out as soon as humanly possible.
 
-example my json would be 
+I've decided I wont be going to college because I dont have 4 years, not right now, I need to produce money like yesterday.  Long story short I am teaching myself programming using Go and now Ive been reading classic basic Data Structure and Algorithms book which btw, there are none available in Go, so been
+reading a Data Structures book in Java and sort of converting them to Go as added exercise, algorithms too.  I took very basic Java in high school, so it's enough to understand some of it, the rest I sort of figure out as I progress.
 
-    {
-       "someval": {
-          "first": 1228224835,
-       }
-    }
+Ok, is there a question here?
 
-but when i unmarshall i get  first :1.228224835e+09
+There sure is!
 
-Edit : https://stackoverflow.com/questions/55436628/json-decoded-value-is-treated-as-float64-instead-of-int/55436758 seems to be the answer
+I want to become a paid developer, after I finish converting this Data Structures and Algorithms book to Go and reading and learning about these concepts, what's my next step? I dig Go, I like it, so anything that allows me to use it would be great.  I've read the web development market is flooding with juniors, so I dont even want to go there, what do you guys suggest? Where I could move to next?
 
-Edit 2 : with the solution, so basically what i did was 
+Read I should learn Git and get it going, and well, that's about all I know as far as my next step.
 
-    data, err := os.Open("./file.json")
-    check(err)
-    d := json.NewDecoder(data)
-    d.UseNumber()
-    err = d.Decode(&amp;objmap)
+Oh before I forget, where did I get the idea to learn Go and DS and Algorithms? I emailed my high school Java teacher and he said it's a great language, he was right, absolutely love it.
 
-this seems to work https://stackoverflow.com/questions/22343083/json-unmarshaling-with-long-numbers-gives-floating-point-number
-## [2][Handling multidomain requests with simple host switch](https://www.reddit.com/r/golang/comments/gx0t6e/handling_multidomain_requests_with_simple_host/)
-- url: https://rafallorenz.com/go/go-multidomain-host-switch/
----
+So there you have it,  your help is VERY VERY MUCH APPRECIATED.
 
-## [3][The Go compiler needs to be smarter](https://www.reddit.com/r/golang/comments/gwlrms/the_go_compiler_needs_to_be_smarter/)
-- url: https://lemire.me/blog/2020/06/04/the-go-compiler-needs-to-be-smarter/
+BTW my computer kind of sucks but been using Visual Studio Code and no issues compiling or reading PDFs!  
+
+Good thing Im not a gamer, I hear they use a lot of resources, but, no time for gaming, need to become a coder!
+
+Sorry if I made typos wrote this on a very old iPhone.
+
+Cheers.
+## [2][My first app in Go](https://www.reddit.com/r/golang/comments/gxoe5k/my_first_app_in_go/)
+- url: https://github.com/0xfederama/water-reminder
 ---
 
-## [4][Fictional 80s computer](https://www.reddit.com/r/golang/comments/gwpl6m/fictional_80s_computer/)
-- url: https://www.reddit.com/r/golang/comments/gwpl6m/fictional_80s_computer/
----
-My project [benji4000](https://github.com/uzudil/benji4000) is a fictional 80s gaming computer. It's programmed in an interpreted, js-like [language](https://github.com/uzudil/benji4000/wiki/LanguageFeatures). The project is just starting out and comes with a couple of games. Let me know what you think!
-
-https://preview.redd.it/5a9l4o9jfy251.png?width=1504&amp;format=png&amp;auto=webp&amp;s=87fdf00fd60ec16ac4c459ea60e18285ee9f3f52
-## [5][Junior golang developer interview](https://www.reddit.com/r/golang/comments/gwxctz/junior_golang_developer_interview/)
-- url: https://www.reddit.com/r/golang/comments/gwxctz/junior_golang_developer_interview/
----
-I'm fairly new to golang, coming from Java and c++ mainly. I've been learning golang for a couple of months.
- I have to crack an junior dev interview that's in about a week.
-How would you prepare for a junior golang dev position? I'm looking for commonly asked interview questions and other interview protocols or tips. Though, anything would be helpful.
-The answers to this post will surely be helpful to other devs too.
-## [6][How I solved Jepsen with OpenCensus Distributed Tracing: A personal journey](https://www.reddit.com/r/golang/comments/gwgaf6/how_i_solved_jepsen_with_opencensus_distributed/)
-- url: https://dgraph.io/blog/post/solving-jepsen-with-opencensus/
+## [3][srv: minimalist alternative to python -m http.server](https://www.reddit.com/r/golang/comments/gxjkjy/srv_minimalist_alternative_to_python_m_httpserver/)
+- url: https://github.com/joshuarli/srv/releases/tag/0.2
 ---
 
-## [7][gql: A new way of doing GraphQL in Go](https://www.reddit.com/r/golang/comments/gwj0b4/gql_a_new_way_of_doing_graphql_in_go/)
-- url: https://www.reddit.com/r/golang/comments/gwj0b4/gql_a_new_way_of_doing_graphql_in_go/
+## [4][Webgo v4.0.1](https://www.reddit.com/r/golang/comments/gxn297/webgo_v401/)
+- url: https://www.reddit.com/r/golang/comments/gxn297/webgo_v401/
 ---
-In the last 2 years, I learned more and more on GraphQL in Go because of my work and enthusiasm in programming, so I started contributing to graphql-go, worked on extensions (middleware is a better word for it) for schemas, so a middleware for tracing could be added to the schema. But I don’t like that there’s way too much boilerplate code required to get started and in the last few months, I couldn’t fail to notice that there’s less and less activity in the repository, which results in no new features.
+After 2yrs of posting here about [webgo v2](https://www.reddit.com/r/golang/comments/898zt8/webgo_v2_a_micro_web_framework/), this is an update. I just released [v4 of webgo](https://github.com/bnkamalesh/webgo). I know a lot of people consider "web frameworks, router etc." a joke/amateur/reinventing the wheel. But I've been able to learn a lot from it and am happy maintaining this package. Hope you like it!
 
-Last year, as a project to learn more about parsers, I built one for GraphQL. It turned out great, there are so many things in that topic and can be interesting (might write a post on that topic later). I found it useful, so I can only recommend writing a parser for a fictional language, configuration files, or for templating, you can learn a ton.
+Webgo maintains its promise of standard library compliance, and getting out of the execution path asap. And this version comes with quite a lot of performance improvement in terms of latency &amp; memory usage.
 
-Since I already had the core implementation of the GraphQL language, I decided to do more. I started working on a GraphQL server, implementing the type system, validation, and execution.
+[https://github.com/bnkamalesh/webgo](https://github.com/bnkamalesh/webgo)
+## [5][Generate High Level Microservice Architecture diagrams for GraphViz using simple YAML syntax.](https://www.reddit.com/r/golang/comments/gx7syh/generate_high_level_microservice_architecture/)
+- url: https://github.com/lucasepe/draft
+---
 
-Early this year, I decided that I want to have something, I want to build an open-source project, one that I care about, I start and use. After a little time, I had to realize that there’s no better project than a GraphQL package for Go, targeting features missing from existing packages, or ones that could be done differently. So I started coding, revisited my parser, my existing implementation, and did a huge refactor to make it more efficient…
+## [6][Don't defer Close() on writable files](https://www.reddit.com/r/golang/comments/gxpf4l/dont_defer_close_on_writable_files/)
+- url: https://www.joeshaw.org/dont-defer-close-on-writable-files/
+---
 
-The [github.com/rigglo/gql](https://github.com/rigglo/gql) package is still in a work-in-progress solution, but already supports the most common features, like
+## [7][[Update] TermBackTime (v1.0.0-beta.2) - Live terminal sharing via WebRTC.](https://www.reddit.com/r/golang/comments/gxlck5/update_termbacktime_v100beta2_live_terminal/)
+- url: https://www.reddit.com/r/golang/comments/gxlck5/update_termbacktime_v100beta2_live_terminal/
+---
+I've recently pushed v1.0.0-beta.2 of my project [TermBackTime](https://termbackti.me/), adding support for live terminal sharing via WebRTC. As well, there are now ARMv6 and ARMv7 builds for Raspberry Pi support. Because this uses WebRTC it also allows you to use an official TURN server provided by this project, your own server, or you can attempt to use none at all.
 
-* Custom scalars
-* Built-in playground
-* Subscriptions: using the new [github.com/rigglo/gqlws](https://github.com/rigglo/gqlws) package, you can create one endpoint to support regular request and others with WebSockets for subscriptions
-* Field directives: can be used to check if the requester has permissions for a given field, or to solve other cases
-* Extensions: tools can be developed for tracing or to resolve custom issues
-* Validation: validates all the queries before execution as the specification describes
-* Concurrent execution
+When using the a provided TURN server, a request is made to the TermBackTime API for TURN authorization credentials. This API is running via Cloudflare Workers. I've been debating a change of domain for this project's live sharing feature, something more like "https://&lt;token&gt;.&lt;tbt&gt;.live" if anyone has any suggestions on this for perhaps a shorter URL.
 
-And many more are coming…
-
-* Checks for query complexity
-* Apollo File Upload
-* Apollo Federation support
-* Custom validation for inputs
-* Custom rules-based introspection
-* Converting structs into GraphQL types
-* Parse inputs into structs
-
-In the last few weeks, I started implementing it into one of the projects I’m working on, so there’s continuous feedback coming from there, but it’s not enough. If you’re planning on doing GraphQL in Go, about to start a project, or just curious about this, I’d like you to try, test the [gql](https://github.com/rigglo/gql) package, contribute, or provide feedback for me on how I can improve it, make it better. I have so many ideas for this project, solutions I’d like to bring to life, so with your help, with your feedback and contribution, we could shape it to be an awesome GraphQL package for Go, a solution for many issues, with not much boilerplate, and great learning curve.
-
-I'm happy to answer any questions!
+A future goal is to share between two TermBackTime CLI clients still using WebRTC.
 
 &amp;#x200B;
 
-Original post: [https://medium.com/rigglo/a-new-way-of-doing-graphql-in-go-e909b8eb83f5](https://medium.com/rigglo/a-new-way-of-doing-graphql-in-go-e909b8eb83f5)
+* Use an official TURN server provided by TermBackTime:
+   * `termbacktime live`
+* Provide your own TURN server credentials:
+   * `termbacktime live --turn &lt;username&gt;:&lt;password&gt;@&lt;server&gt;[:&lt;port&gt;]`
+   * `termbacktime live --user &lt;username&gt; --password &lt;password&gt; --addr &lt;server&gt;[:&lt;port&gt;]`
+* Attempt to share without any TURN server:
+   * `termbacktime live --no-turn`
 
-Repository: [https://github.com/rigglo/gql](https://github.com/rigglo/gql)
+&amp;#x200B;
 
-Me: [https://github.com/Fontinalis](https://github.com/Fontinalis)
-## [8][Best Go email server for Web App sending emails?](https://www.reddit.com/r/golang/comments/gx0eru/best_go_email_server_for_web_app_sending_emails/)
-- url: https://www.reddit.com/r/golang/comments/gx0eru/best_go_email_server_for_web_app_sending_emails/
+[TermBackTime - Live terminal sharing](https://reddit.com/link/gxlck5/video/eaqr0lmi78351/player)
+
+Prebuilt binaries are available on the [releases](https://github.com/termbacktime/termbacktime/releases) page. As always, any feedback would be greatly appreciated
+## [8][Allez Go !! Premier Pas](https://www.reddit.com/r/golang/comments/gxqepb/allez_go_premier_pas/)
+- url: https://fredericschmidt.fr/2020/06/06/allez-go-premier-pas/
 ---
-Is there a small Go project suitable for sending verification emails for a small web app?
-## [9][Call for Speakers - GopherCon Turkey (25th July)](https://www.reddit.com/r/golang/comments/gwpflq/call_for_speakers_gophercon_turkey_25th_july/)
-- url: https://www.reddit.com/r/golang/comments/gwpflq/call_for_speakers_gophercon_turkey_25th_july/
+
+## [9][goscreencasts.io | Go source file anatomy](https://www.reddit.com/r/golang/comments/gxn0do/goscreencastsio_go_source_file_anatomy/)
+- url: https://www.goscreencasts.io/videos/03-anatomie-d-un-fichier-go
 ---
-We're proud to announce that we are organizing Turkey's first Go programming language conference. GopherCon Turkey is planned to bring together the Go community and share experiences. The conference will be online and will host 17 speakers in 2 parallel sessions, one in Turkish and the other in English on the 25th of July. Registration is free.
 
-Call for Papers will be ended on June, 22nd.
-
-Details: [http://gophercon.ist/](http://gophercon.ist/)
-
-https://preview.redd.it/o3s0ai07dy251.png?width=1200&amp;format=png&amp;auto=webp&amp;s=29233538069a3c512981550b49c88ef4eebfcd12
-## [10][[help] [gotk3] Need help in removing signal/function from gtk button](https://www.reddit.com/r/golang/comments/gwz9hl/help_gotk3_need_help_in_removing_signalfunction/)
-- url: https://www.reddit.com/r/golang/comments/gwz9hl/help_gotk3_need_help_in_removing_signalfunction/
+## [10][Trouble with concurrency](https://www.reddit.com/r/golang/comments/gxmk4l/trouble_with_concurrency/)
+- url: https://www.reddit.com/r/golang/comments/gxmk4l/trouble_with_concurrency/
 ---
-I need help in removing the signal/function or whatever i connect to the button
+Hi everyone,  
+I'm writing an API in Go which makes use of the Spotify API. I was able to make most of the things work fine except for when I tried adding some tracks to a playlist.  
+I had in my hand an array of track IDs and had to add them to a playlist one by one. Instead of adding them one by one I thought this would be the right time to make use of concurrency.  
 
-in python it can be done by
-button.disconnect_by_func(func)
 
-how to done the same in go
+So, I wrote up a goroutine as follows:  
+
+```
+        type result struct {
+		err   error
+		resId string
+	}
+	resultCh := make(chan result)
+	for _, j := range allTracks {
+		go func(id string) {
+			snap, err := client.AddTracksToPlaylist(newPlaylist.ID, id)
+			if err != nil {
+				resultCh &lt;- result{err: err}
+			}
+			resultCh &lt;- result{resId: snap}
+		}(j)
+	}
+```
+
+This seemed to do the job for me, except when I started receiving 429 - Too Many Requests from the Spotify API. It made sense, I could well be shooting too many requests in a second because of the goroutines. So I thought instead of having an unknown number of goroutines getting created I could batch my requests into groups of 2, 5, or 10 and then add a ticker between these batches so I don't hit that error again. But I still ended up getting Too Many Requests again.
+Can someone help me with this and also if this was indeed the right place to make use of concurrency?
+Thanks :)

@@ -23,127 +23,90 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/06/02/this-week-in-rust-341/
 ---
 
-## [3][I wrote a small virtual machine in rust](https://www.reddit.com/r/rust/comments/gx3emt/i_wrote_a_small_virtual_machine_in_rust/)
+## [3][System76 is hiring Rust software engineers to work on Pop!_OS](https://www.reddit.com/r/rust/comments/gx73y1/system76_is_hiring_rust_software_engineers_to/)
+- url: https://www.reddit.com/r/rust/comments/gx73y1/system76_is_hiring_rust_software_engineers_to/
+---
+I am Jeremy Soller, the Principal Engineer at System76. We are currently looking for people in the US (for tax purposes) who have experience with Rust and would like to work on the open source Rust projects that power Pop!\_OS:
+
+[https://pop.system76.com/](https://pop.system76.com/)
+
+The most important skills to have are familiarity with Linux and Rust. For more information including how to apply, please see the posting:
+
+[https://system76.com/careers](https://system76.com/careers)
+## [4][I've started work on a tmuxinator successor written in Rust](https://www.reddit.com/r/rust/comments/gxidy5/ive_started_work_on_a_tmuxinator_successor/)
+- url: https://www.reddit.com/r/rust/comments/gxidy5/ive_started_work_on_a_tmuxinator_successor/
+---
+I'm one of the maintainers of [tmuxinator](https://github.com/tmuxinator/tmuxinator), a Ruby library which allows users to manage tmux sessions using project configuration files.
+
+tmuxinator is widely used and stable, but there are regularly issues arising around installation, distribution, etc. as a result of the project being written in Ruby (its dynamic runtime, reliance on RubyGems, etc.). Installing and using the library can be problematic for people not familiar with the Ruby ecosystem. The project is available via a few different package managers, but those can/do present other problems relating to the issues mentioned above. There are ways to "simplify" the distribution of Ruby gems by shipping a Ruby interpreter along with the library or using containers, but, IMO, both of those options are too complex.
+
+Since I'd been experimenting with Rust for some time and wanted to dive into a project that might actually be useful, I've started working on a tmuxinator successor written in Rust: [rmuxinator](https://github.com/ethagnawl/rmuxinator). In addition to greatly simplifying distribution of the utility, the program is _much_ more robust due to Rust's nature. (For instance, project configuration files are implicitly typechecked by Serde which cleaves off a bunch of ad hoc validation that happens in tmuxinator.) This is not a performance critical project, but it should eventually be much faster, too.
+
+rmuxinator is pre-alpha, but it is functional and I plan to keep picking at it as I find time. (It'd be great to have someone else confirm that they're able to build/run it!) It supports the most basic use case of allowing a user to define a number of project configuration options (create n windows; split window n into nn panes; scope each window/session/pane to a given directory; run a series of commands in each pane, etc.) in a TOML file and it then uses that configuration to spawn a tmux session. I've also added a number of features beyond what tmuxinator currently offers (support for all tmux hooks, support for custom pane titles, etc.). rmuxinator doesn't currently concern itself with any of the CRUD features that tmuxinator offers, but I may add those at a later time. I don't use those myself and I'm not sure how often others actually do. tmuxinator also supports scripting within a project config file using ERB, but this feature actually scares me and I don't think I'll be implementing anything similar in rmuxinator.
+
+From a Rust perspective, I feel _okay_ about what I've done so far and I've learned quite a bit. Also, Serde is fantastic! I've really enjoyed the experience and would really like to start using Rust for $WORK (I'm available for hire!). There are undoubtedly some quirky things I'm doing because I'm still new to Rust, so I was hoping to potentially get some feedback from others about those. For instance: 
+
+* defaulting to passing references to functions even when it's not necessary (lots of other Rust programs seem to do this, but that's not a good reason to do it)
+* using `#[derive(Debug,...)]` in (almost) all of my structs
+* stepping through the Serde `Config` struct one portion at a time building up vectors of strings instead of pushing that behavior down into a Serde deserializer (I looked into this and the trait implementation felt overwhelming; this would also completely invert the flow of the program and require just about every line to change.)
+
+I'm also currently punting on some things I wasn't initially sure how to address, like: 
+
+* shelling out multiple times using `Command::new` instead of building up and executing a single shell script to start and configure the tmux session. I don't imagine this will be too difficult (either use a vector or create a temporary file), but I haven't gotten back to it yet.
+* integration testing
+* publishing the built library to crates.io
+## [5][Learning Rust Homework Review (Jason &amp; Jonathan Turner)](https://www.reddit.com/r/rust/comments/gxmg6n/learning_rust_homework_review_jason_jonathan/)
+- url: https://www.youtube.com/watch?v=Y5-ZgxfQvpc
+---
+
+## [6][What's the recommended crypto crate?](https://www.reddit.com/r/rust/comments/gxkrop/whats_the_recommended_crypto_crate/)
+- url: https://www.reddit.com/r/rust/comments/gxkrop/whats_the_recommended_crypto_crate/
+---
+### TL;DR
+
+What's the goto crypto crate that everyone uses and is mostly implemented in rust.  
+
+### The Reason
+I'm working on a torrent client as a fun project, and was looking for a crypto library. I only need SHA-1 functionality and settled on this [sha-1](https://crates.io/crates/sha-1) crate currently. 
+
+I've googled searched recommendations and looked at crates.io for top [crypto crate downloads](https://crates.io/keywords/crypto?sort=downloads). I figured i was going to be using openssl but they seem to only have rust bindings on crates.io and it's currently in a failing state.
+## [7][Why the developers who use Rust love it so much - Stack Overflow Blog](https://www.reddit.com/r/rust/comments/gx85qr/why_the_developers_who_use_rust_love_it_so_much/)
+- url: https://stackoverflow.blog/2020/06/05/why-the-developers-who-use-rust-love-it-so-much/
+---
+
+## [8][Tour of Rust - Chapter 6 on "Text" and more chapters in a variety of language](https://www.reddit.com/r/rust/comments/gxiqg3/tour_of_rust_chapter_6_on_text_and_more_chapters/)
+- url: https://tourofrust.com/chapter_6_en.html
+---
+
+## [9][Zero To Production #1: Setup - Toolchain, IDEs, CI](https://www.reddit.com/r/rust/comments/gxqr2l/zero_to_production_1_setup_toolchain_ides_ci/)
+- url: https://www.lpalmieri.com/posts/2020-06-06-zero-to-production-1-setup-toolchain-ides-ci/
+---
+
+## [10][First project, written in rust](https://www.reddit.com/r/rust/comments/gxqozw/first_project_written_in_rust/)
+- url: https://i.redd.it/393ziqodfa351.gif
+---
+
+## [11][Trait bound not satisfied](https://www.reddit.com/r/rust/comments/gxn345/trait_bound_not_satisfied/)
+- url: https://www.reddit.com/r/rust/comments/gxn345/trait_bound_not_satisfied/
+---
+I'm working on a small binary (de)serialization crate for values with a fixed serialized size at compile time.
+
+```
+pub trait Encode: Sized + EncodedSize {
+    fn encode(self) -&gt; [u8; &lt;Self as EncodedSize&gt;::SIZE];
+}
+
+pub trait EncodedSize: Sized {
+    const SIZE: usize;
+}
+```
+
+This code produces an error telling me that the trait bound EncodedSize is not satisfied (when it in fact is). I presume this is a bug in the compiler.
+
+While it's being fixed, is there a way to work around this that does not involve dynamic memory allocation (that is, serializing to a Vec&lt;u8&gt;)? This is for a highly realtime application so I would like to avoid dynamic allocations when possible.
+## [12][I wrote a small virtual machine in rust](https://www.reddit.com/r/rust/comments/gx3emt/i_wrote_a_small_virtual_machine_in_rust/)
 - url: https://www.reddit.com/r/rust/comments/gx3emt/i_wrote_a_small_virtual_machine_in_rust/
 ---
 This is my first rust program. Would love some feedback :)
 
 [github.com/tarekwiz/smallvm](https://github.com/tarekwiz/smallvm)
-## [4][Announcing Rust 1.44.0](https://www.reddit.com/r/rust/comments/gwmmum/announcing_rust_1440/)
-- url: https://blog.rust-lang.org/2020/06/04/Rust-1.44.0.html
----
-
-## [5][toshi: A full-text search engine in rust](https://www.reddit.com/r/rust/comments/gwvu6x/toshi_a_fulltext_search_engine_in_rust/)
-- url: https://github.com/toshi-search/Toshi
----
-
-## [6][Jubi Taneja presents "Improving Compiler Construction Using Formal Methods"](https://www.reddit.com/r/rust/comments/gwy3d9/jubi_taneja_presents_improving_compiler/)
-- url: https://www.youtube.com/watch?v=de8Ak0nY1hA
----
-
-## [7][Tour of WebAssembly - Chapter 2 Released](https://www.reddit.com/r/rust/comments/gwt37e/tour_of_webassembly_chapter_2_released/)
-- url: https://tourofrust.com/webassembly/chapter_2_en.html
----
-
-## [8][My first blog, about "how to read Rust docs"](https://www.reddit.com/r/rust/comments/gwnl0w/my_first_blog_about_how_to_read_rust_docs/)
-- url: https://www.reddit.com/r/rust/comments/gwnl0w/my_first_blog_about_how_to_read_rust_docs/
----
-Hi everyone, 
-
-I'm learning Rust and I found somehow rust docs hard to understand for a newbie. So I summarize something that may help reading rust docs, mainly about the function signatures and navigate modules with the aware of some key traits. 
-
-[How to read Rust docs](http://blog.frqc.info/post/how-to-read-rust-docs/)
-
-This is my post about rust. I know it's far from a conclusive summary and please correct me if there is anything not correct or precise enough in the post. 
-
-&amp;#x200B;
-
-Thank you and looking forward to your feedback!
-## [9][ct_python!, a Rust macro to execute Python code at compile time and to insert the outputs as Rust code back into your Rust program, by Mara Bos](https://www.reddit.com/r/rust/comments/gwe7ut/ct_python_a_rust_macro_to_execute_python_code_at/)
-- url: https://twitter.com/m_ou_se/status/1268469932544733186
----
-
-## [10][Is it anti pattern to define a method in a trait to return a struct(to avoid lots of getter/setter)?](https://www.reddit.com/r/rust/comments/gx0esy/is_it_anti_pattern_to_define_a_method_in_a_trait/)
-- url: https://www.reddit.com/r/rust/comments/gx0esy/is_it_anti_pattern_to_define_a_method_in_a_trait/
----
-Hi! I am rather new to rust and quite confused about the way OOP is implemented in rust. I've got the following code to implement a basic class inheritance:
-
-    #[derive(Debug, Default)]
-    pub struct BaseData {
-        a: f64,
-        b: f64,
-        c: f64,
-        d: f64,
-    }
-    
-    pub trait BaseCompute {
-        fn get_base(&amp;self) -&gt; &amp;BaseData;
-        fn get_mut_base(&amp;mut self) -&gt; &amp;mut BaseData;
-        // Thus avoiding lots of "getter/setter"
-    
-        // Default implementation
-        fn do_something(&amp;self) {
-            // Do computation with: self.get().a, self.get().b, self.get().c
-        }
-    }
-    
-    pub trait CrazyCompute:BaseCompute{
-        fn do_something_crazy(&amp;self);
-    }
-    
-    pub struct Crazy{
-        base: BaseData,
-        x: f64,
-    }
-    
-    // We only need to implement get_base and get_mut_base to implement BaseCompute
-    impl BaseCompute for Crazy {
-        fn get_base(&amp;self)-&gt;&amp;BaseData{
-            &amp;self.base
-        }
-        fn get_mut_base(&amp;mut self)-&gt;&amp;mut BaseData{
-            &amp;mut self.base
-        }
-    }
-    
-    impl CrazyCompute for Crazy{
-        fn do_something_crazy(&amp;self){
-    
-        }
-    }
-
-I've defined a `get_base` and a `get_mut_base` in trait `BaseCompute` so that when another trait needs to **inherit** from `BaseCompute`, they don't need to implement a lot of `get_a`, `get_b` etc. I wonder if this is the correct way of OOP in rust, or if there's better way to implement inheritance in rust?
-## [11][Rust has no goto? Now you can at least jump forward.](https://www.reddit.com/r/rust/comments/gwqrv6/rust_has_no_goto_now_you_can_at_least_jump_forward/)
-- url: https://www.reddit.com/r/rust/comments/gwqrv6/rust_has_no_goto_now_you_can_at_least_jump_forward/
----
-I made a crate that enables you to safely (borrow checker friendly!) jump forward in the control-flow [forward\_goto](https://crates.io/crates/forward_goto)
-
-```rust
-use forward_goto::rewrite_forward_goto;
-
-#[rewrite_forward_goto]
-fn decode_msg(luck: impl Fn() -&gt; bool, is_alan_turing: bool) {
-    if is_alan_turing {
-        // jump forward from here
-        forward_goto!('turing_complete);
-    }
-
-    println!("You'll need a lot of luck for this");
-
-    if luck() {
-        println!("Seems you were lucky");
-
-        forward_label!('turing_complete);
-        // directly to here
-        println!("Message decoded!");
-    } else {
-        println!("No luck today...");
-    }
-}
-```
-
-Should you use it? No, probably not...
-## [12][Rather interesting take on visualizing ownership/borrowing from 2017](https://www.reddit.com/r/rust/comments/gwaqlx/rather_interesting_take_on_visualizing/)
-- url: https://rufflewind.com/2017-02-15/rust-move-copy-borrow
----
-

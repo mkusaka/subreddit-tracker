@@ -7,43 +7,57 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [2][Grid.js - Advanced Table Plugin. Grid.js is a Free and open-source HTML table plugin written in TypeScript. It works with most JavaScript frameworks, including React, Angular.js, Vue and VanillaJs](https://www.reddit.com/r/javascript/comments/gwp41h/gridjs_advanced_table_plugin_gridjs_is_a_free_and/)
-- url: https://gridjs.io/
+## [2][Showoff Saturday (June 06, 2020)](https://www.reddit.com/r/javascript/comments/gxpjys/showoff_saturday_june_06_2020/)
+- url: https://www.reddit.com/r/javascript/comments/gxpjys/showoff_saturday_june_06_2020/
+---
+Did you find or create something cool this week in javascript? 
+
+Show us here!
+## [3][Want more from Particles.js? Try tsParticles for improvements and new features](https://www.reddit.com/r/javascript/comments/gxnpb8/want_more_from_particlesjs_try_tsparticles_for/)
+- url: https://dev.to/matteobruni/tsparticles-v1-15-0-released-1j0d
 ---
 
-## [3][How JWT works — in depth](https://www.reddit.com/r/javascript/comments/gwqmc3/how_jwt_works_in_depth/)
-- url: https://medium.com/@alexcambose/how-jwt-works-in-depth-604c93ec20a4
+## [4][Yet Another Doom Clone (In 13kb of JavaScript)](https://www.reddit.com/r/javascript/comments/gx7lkn/yet_another_doom_clone_in_13kb_of_javascript/)
+- url: https://nicholas.carlini.com/writing/2019/javascript-doom-clone-13k.html
 ---
 
-## [4][Serverless Headless CMS by Webiny - Free &amp; OpenSource - Written in Node.js and React with a GraphQL API. Deploys to your own AWS cloud. Runs on top of Lambda functions.](https://www.reddit.com/r/javascript/comments/gx2zbo/serverless_headless_cms_by_webiny_free_opensource/)
-- url: https://www.webiny.com/serverless-app/headless-cms
+## [5][Stranger Things, JavaScript Edition](https://www.reddit.com/r/javascript/comments/gxp2nv/stranger_things_javascript_edition/)
+- url: https://livecodestream.dev/post/2020-06-03-stranger-things-javascript-edition/
 ---
 
-## [5][Chrome v83 enables JS module support for SharedWorkers → Starting a new era for multi Browser…](https://www.reddit.com/r/javascript/comments/gwddb5/chrome_v83_enables_js_module_support_for/)
-- url: https://medium.com/@tobiasuhlig/chrome-v83-enables-js-module-support-for-sharedworkers-starting-a-new-era-for-multi-browser-dbb20366bddf
+## [6][How to avoid race conditions using asynchronous javascript](https://www.reddit.com/r/javascript/comments/gx5dj0/how_to_avoid_race_conditions_using_asynchronous/)
+- url: https://www.lorenzweiss.de/race_conditions_explained/
 ---
 
-## [6][InteractiveQuery objects in automaton -- abstract filter DSL, interactive GraphQL data queries](https://www.reddit.com/r/javascript/comments/gx3jrj/interactivequery_objects_in_automaton_abstract/)
-- url: http://fforw.de/post/interactivequery-in-automaton/
+## [7][[AskJS] Javascript projects during quarantine](https://www.reddit.com/r/javascript/comments/gxke4b/askjs_javascript_projects_during_quarantine/)
+- url: https://www.reddit.com/r/javascript/comments/gxke4b/askjs_javascript_projects_during_quarantine/
+---
+Here are a few ideas of projects I've been doing to learn Javascript during quarantine.
+
+&amp;#x200B;
+
+1. Calculator Pretty straightforward but learned a lot about the syntax of javascript
+2. Flashcard Project, You make a bunch of questions/answers. During the day, you can easily pop them out and study. I will actually use this
+3. Budget Project, quite simple but I want to make a sleek and nice design for the user. Actually something good to use.
+
+That's what Ive done, would appreciate new ideas if you guys have some :)
+## [8][Javascript (TypeScript) library to render guitar chord diagrams in SVG](https://www.reddit.com/r/javascript/comments/gxqeq5/javascript_typescript_library_to_render_guitar/)
+- url: https://github.com/omnibrain/svguitar
 ---
 
-## [7][The top types `any` and `unknown` in TypeScript](https://www.reddit.com/r/javascript/comments/gwgtsb/the_top_types_any_and_unknown_in_typescript/)
-- url: https://2ality.com/2020/06/any-unknown-typescript.html
+## [9][Looking for something more advanced? Learn Data Structures and Algorithms in Typescript](https://www.reddit.com/r/javascript/comments/gx6834/looking_for_something_more_advanced_learn_data/)
+- url: https://github.com/jeffzh4ng/dsa-ts
 ---
 
-## [8][Useful links for JavaScript Developers](https://www.reddit.com/r/javascript/comments/gx0q6k/useful_links_for_javascript_developers/)
-- url: https://github.com/yuandongzhong/useful-links-for-javascript
+## [10][Telegram channel with new remote Javascript jobs every day [OC]](https://www.reddit.com/r/javascript/comments/gx61vu/telegram_channel_with_new_remote_javascript_jobs/)
+- url: https://t.me/joinchat/AAAAAFjHFc49Ng6HKjZFIQ
 ---
 
-## [9][ac-colors - A lightweight color library for color conversion and data visualizations](https://www.reddit.com/r/javascript/comments/gwqdtb/accolors_a_lightweight_color_library_for_color/)
-- url: https://github.com/vinaypillai/ac-colors
+## [11][50 coding challenges for absolute beginners](https://www.reddit.com/r/javascript/comments/gxgilx/50_coding_challenges_for_absolute_beginners/)
+- url: https://codeguppy.com/site/download/50_coding_challenges.pdf
 ---
 
-## [10][Wrote A JS Script To Validate Email](https://www.reddit.com/r/javascript/comments/gwzd46/wrote_a_js_script_to_validate_email/)
-- url: https://dev.to/devxify/wrote-a-js-script-to-validate-email-2h6a
----
-
-## [11][ZeroQueue: a low-code queue management system for JavaScript](https://www.reddit.com/r/javascript/comments/gwtxzt/zeroqueue_a_lowcode_queue_management_system_for/)
-- url: https://github.com/thezeroqueue/zeroqueue
+## [12][5 KB PWA that manages nutrients](https://www.reddit.com/r/javascript/comments/gxlkrj/5_kb_pwa_that_manages_nutrients/)
+- url: https://github.com/jedzoka/plantiet
 ---
 

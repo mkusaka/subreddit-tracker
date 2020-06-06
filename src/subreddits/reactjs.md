@@ -84,167 +84,171 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][Dan Abramov possibly leaving React team](https://www.reddit.com/r/reactjs/comments/gwkhdg/dan_abramov_possibly_leaving_react_team/)
-- url: https://mobile.twitter.com/dan_abramov/status/1268571783575351298
+## [3][I've created a tiny component for applying a 'gooey' effect, also known as shape blobbing.](https://www.reddit.com/r/reactjs/comments/gxo4oo/ive_created_a_tiny_component_for_applying_a_gooey/)
+- url: https://v.redd.it/gdtu19svh9351
 ---
 
-## [4][Disable React default error boundary or anything that captures my error](https://www.reddit.com/r/reactjs/comments/gx1xk9/disable_react_default_error_boundary_or_anything/)
-- url: https://www.reddit.com/r/reactjs/comments/gx1xk9/disable_react_default_error_boundary_or_anything/
----
-During development, I'd like to make Dev Tools pause the code where the error in my code is thrown. Sure there's a stack trace printed in the console like it's some Fortran program, while I'd like actually being in the stack where I can inspect variables, run stuff, go up and down in the stack etc. For now I'm not interested in alternatives such as putting a breakpoint in the questionable line, or add a conditional breakpoint, because these workarounds are annoying, distract and slow us down. There's a reason for Dev Tools and its Pause on exceptions functionality. Also, I can't pause on handled exceptions because Babel and related workarounds throw exceptions like crazy, so my actual exception is dwarfed among the hundreds that Babel, core.js etc. throws (blackboxing doesn't help due to reported Chrome bug)
-## [5][Advice or tips on designing app with multiple components, graphs, reports performing calculations](https://www.reddit.com/r/reactjs/comments/gx1mla/advice_or_tips_on_designing_app_with_multiple/)
-- url: https://www.reddit.com/r/reactjs/comments/gx1mla/advice_or_tips_on_designing_app_with_multiple/
----
-Hi, I am a fairly new react developer with a little over 1 year of experience. I am developing an application that consists of various graphs, reports and charts often dealing with lots of computations, calculations and grouping of data. 
-
-I take in all the data along with the reference tables required from DB and store them in redux. As a result making any changes via the filters or changes to the source data in general takes a lot of time to perform computations to all the graphs and reports and therefore, makes the application significantly slow. 
-
-Do you guys have any tips on how to deal with the situation and how you design and develop your applications which deals with a lot of data. thank you
-## [6][What is the best way to report any crashes or error in a React App?](https://www.reddit.com/r/reactjs/comments/gx4czx/what_is_the_best_way_to_report_any_crashes_or/)
-- url: https://www.reddit.com/r/reactjs/comments/gx4czx/what_is_the_best_way_to_report_any_crashes_or/
----
-I’m working on a React App and I need the best way to report any crashes that occur in the app. I thought about using error boundary to fire an email containing details of crashes every time there’s one, but I believe there’s a better way to do this than just Error boundary doing the work.
-## [7][React Edit User Details (Updating information) -&gt; How do I do this?](https://www.reddit.com/r/reactjs/comments/gx3wem/react_edit_user_details_updating_information_how/)
-- url: https://www.reddit.com/r/reactjs/comments/gx3wem/react_edit_user_details_updating_information_how/
----
-I am currently trying to make a "Edit Details" page where the user of the app can edit the details they've set when signing up. This needs to be done in React, JavaScript.
-
-These details would include their full name, email, username, updating password and updating their avatar.
-
-Backend includes Django and MySQL for database.
-
-Any suggestions?
-## [8][Failing job interviews? No feedback to improve? Here's a technique to learn from rejections](https://www.reddit.com/r/reactjs/comments/gwgp1t/failing_job_interviews_no_feedback_to_improve/)
-- url: https://jkettmann.com/interview-reviews/
+## [4][Mini graphiql component to document graphql API queries](https://www.reddit.com/r/reactjs/comments/gx5vdx/mini_graphiql_component_to_document_graphql_api/)
+- url: https://v.redd.it/rn9cgpj2t3351
 ---
 
-## [9][React.memo re-renders, what is it that I am missing?](https://www.reddit.com/r/reactjs/comments/gx18sz/reactmemo_rerenders_what_is_it_that_i_am_missing/)
-- url: https://www.reddit.com/r/reactjs/comments/gx18sz/reactmemo_rerenders_what_is_it_that_i_am_missing/
+## [5][Has any course/video changed the way you build things in React?](https://www.reddit.com/r/reactjs/comments/gxqn9v/has_any_coursevideo_changed_the_way_you_build/)
+- url: https://www.reddit.com/r/reactjs/comments/gxqn9v/has_any_coursevideo_changed_the_way_you_build/
 ---
-I am trying to better understand this hook so I came up with this code, but on every  button click in the parent component, the child component gets re-rendered (check out the console). What am I missing?  Thanks in advance to whomever can help shine some light on this elusive feature.
+I've been building my own projects in React for about 6 months. I feel like I've been doing well and constantly learning but at the same time I still sense something might be missing. I started learning React  from one course in Scrimba and took it from there - just googling stuff. There's certainly more things out there than the way I learned things.
 
-    const Child = ({name}) =&gt; {
-        console.log("rendering child"); 
-        return(&lt;div&gt;Hello, {name} &lt;/div&gt;); 
-    }
-    
-    const MemoShowcase = () =&gt; {
-    const [count, setCount] = useState(0) 
-    const [name, setName ] = useState("") 
-    var MemoChild = React.memo(Child) 
-    return (&lt;div&gt;                
-         &lt;input type="text" onChange = {e =&gt; {setName(e.target.value)}}/&gt; {count}
-         &lt;p&gt;&lt;/p&gt;
-         &lt;button onClick={() =&gt; {setCount(count + 1)}}&gt;increment&lt;/button&gt;      &lt;MemoChild name={name}/&gt;             
-    &lt;/div&gt;) }
-    export default MemoShowcase
-## [10][Free React+Redux Web App Template converted from The Conference Html Template](https://www.reddit.com/r/reactjs/comments/gwwp4c/free_reactredux_web_app_template_converted_from/)
-- url: https://www.reddit.com/r/reactjs/comments/gwwp4c/free_reactredux_web_app_template_converted_from/
+&amp;#x200B;
+
+Did you, after a while builing apps with React, watched a course or video that changed the way you think about React?
+## [6][Looking for a production-grade project on github to learn from that uses Hooks, Redux-Toolkit and user authentication](https://www.reddit.com/r/reactjs/comments/gxqh2n/looking_for_a_productiongrade_project_on_github/)
+- url: https://www.reddit.com/r/reactjs/comments/gxqh2n/looking_for_a_productiongrade_project_on_github/
 ---
-We just converted this Colorlib The Conference HTML template into React.js + Redux Web App template and it is available absolutely free. Download and let us know if you have any feedback.
+I have done some React courses and gone through to-do apps etc and I'm now looking for a meatier project to learn from!
 
-Here is the link:  [https://faciletechnolab.github.io/#/](https://faciletechnolab.github.io/#/)
-## [11][Add favourite icon on the posts](https://www.reddit.com/r/reactjs/comments/gx00j6/add_favourite_icon_on_the_posts/)
-- url: https://www.reddit.com/r/reactjs/comments/gx00j6/add_favourite_icon_on_the_posts/
+As per the title, if there is a project which matches that it would great. So far I've found Spectrum on github but it's a bit too big for me to dive into. I also found this: [https://github.com/oldboyxx](https://github.com/oldboyxx) which I've learned from, but it doesn't have Redux-Toolkit (or any redux actually).
+
+Thanks for any pointers!
+## [7][Can anybody explain how this arrow function gets the array index from](https://www.reddit.com/r/reactjs/comments/gxpv0y/can_anybody_explain_how_this_arrow_function_gets/)
+- url: https://www.reddit.com/r/reactjs/comments/gxpv0y/can_anybody_explain_how_this_arrow_function_gets/
 ---
-I  am trying to implement instagram like love on posts. It is working for one single post.
+Started with the tic-tac-toe example from [https://reactjs.org/tutorial/tutorial.html](https://reactjs.org/tutorial/tutorial.html) , I am unable to understand how [this](https://imgur.com/a/zJMRZnv) arrow function gets the array indices. Can anybody explain how this is done?
+## [8][How to sort and map over an array by pairing specific values?](https://www.reddit.com/r/reactjs/comments/gxpga7/how_to_sort_and_map_over_an_array_by_pairing/)
+- url: https://www.reddit.com/r/reactjs/comments/gxpga7/how_to_sort_and_map_over_an_array_by_pairing/
+---
+I'll explain.
 
-Since i am using same state, when i click love on one post it gets changed in every post.
+I have a comment section for my React blog that pulls comments from JSON.
 
-How to optimize following code so that i can add love on one posts without affecting other posts.  
+A typical comment looks like this:
 
-
-code:
-
-Togle between red and white love icon on click
-
-    &lt;div onClick={this.handleFavourite} className="favourite-details"&gt;
     {
-    this.state.isFavourite ? &lt;img src={Favourite2} width="40%" /&gt; : &lt;img src={Favourite1} width="40%" /&gt;
+            "path": "https://www.website.com/blog-post/", 
+                "comment": "I have no reply, only a question and I am  undoubtedly presuming...", 
+                "parent_id": 314541, 
+                "name": "Thomas", 
+                "date": "2018-05-12", 
+                "id": 406163, 
+                "avatar": "https://s.gravatar.com/avatar/4e234b1110fa5123dbe9c4e73e77d69?s=48&amp;r=x&amp;d=robohash"
+              }
+
+As you can see, there's a unique \`id\` for the comment, and an optional \`parent\_id\` when it's a reply to a parent comment (took the idea from Wordpress).
+
+The relevant comment section in JSX is here:
+
+    
+    return data.allCommentsJson.edges.map(d =&gt; {
+        const val = Object.values(d)[0]
+        const HasComment = val.path === OgUrl
+        const comment = val.comment.replace(/\n/g, "&lt;br /&gt;")
+        const hasParent = val.parent_id &gt; 0
+        return (
+          &lt;&gt;
+            {HasComment ? (
+              &lt;li key={val.id} style={{marginLeft: hasParent? `10%` : `0`}}&gt;
+                &lt;CommentWrap&gt;
+                  &lt;article
+                    itemProp="comment"
+                    itemScope
+                    itemType="https://schema.org/Comment"&gt;
+                    &lt;header&gt;
+                      &lt;Robot
+                        fixed={{
+                          aspectRatio: 1 / 1,
+                          src: `${val.avatar}`,
+                          width: `42px`,
+                          height: `42px`,
+                        }}
+                        alt={val.name}
+                      /&gt;
+                      &lt;h4
+                        itemProp="author"
+                        itemScope
+                        itemType="https://schema.org/Person"&gt;
+                        &lt;span itemProp="name"&gt;{val.name}&lt;/span&gt;
+                      &lt;/h4&gt;
+                      &lt;CommentMeta&gt;
+                        &lt;time itemProp="datePublished"&gt;{val.date}&lt;/time&gt;
+                      &lt;/CommentMeta&gt;
+                    &lt;/header&gt;
+                    &lt;CommentBody itemProp="text"&gt;
+                      &lt;p dangerouslySetInnerHTML={{__html: comment}}&gt;&lt;/p&gt;
+                      &lt;ReplyButton href="#comments"&gt;Reply&lt;/ReplyButton&gt;
+                    &lt;/CommentBody&gt;
+                  &lt;/article&gt;
+                &lt;/CommentWrap&gt;
+              &lt;/li&gt;
+            ) : null}
+          &lt;/&gt;
+        )
+      })
     }
-    &lt;/div&gt;
 
-//function
+My question is, when I map over \`data.allCommentsJson.edges.map\`, how can I sort this data to pair comments with parent comments (if it's a reply)?
 
-    handleFavourite(e) {
-            this.setState({
-                isFavourite: !this.state.isFavourite
-            });
-        }
+So if a comment has a \`parent\_id\` that matches the \`id\` of another comment, then reorder the index to place the reply directly underneath the parent. 
 
-//state
-
-    this.state = {
-                isFavourite: false
-            };
-## [12][Passing initial data to child component](https://www.reddit.com/r/reactjs/comments/gwyjrb/passing_initial_data_to_child_component/)
-- url: https://www.reddit.com/r/reactjs/comments/gwyjrb/passing_initial_data_to_child_component/
+Right now, comments are just displayed chronologically which means that replies are not where they should be.
+## [9][ListBox Component (similar to Excel's Pivot Slicer)](https://www.reddit.com/r/reactjs/comments/gxovqo/listbox_component_similar_to_excels_pivot_slicer/)
+- url: https://www.reddit.com/r/reactjs/comments/gxovqo/listbox_component_similar_to_excels_pivot_slicer/
 ---
-I have a parent GameRoom component that requests data from my server after it mounts. Part of this data is only used to initialize the child Game and GameSetup components. My issue is, how do I store that data so that i can pass it to those components in the render method? I could store them in state, but I feel that's not the best way since the GameRoom component doesn't need that data itself. I've tried setting two gameInit and setupInit components equal to the initialization data, but for some reason they never get set. I could also have the child components fetch their initial data themselves, but I figured it would be better this way because I'd have at least some initial display. What's the best way to do this?
+Hi all,
 
-    
-    import React, { Component } from 'react';
-    import Game from './Game';
-    import GameSetup from './GameSetup';
-    
-    let gameInit, setupInit;
-    
-    class GameRoom extends Component {
-      id = this.props.match.params.id;
-    
-      state = {};
-    
-      boundHandlers = {
-        receiveGameRoomData: receiveGameRoomDataHandler.bind(this)
-      };
-    
-      componentDidMount() {
-        this.props.socket.on('gameRoomData', this.boundHandlers.receiveGameRoomData);
-        this.props.socket.send(JSON.stringify({event: 'getGameRoomData', payload: this.id}));
-      }
-      componentWillUnmount() {
-        this.props.socket.off('gameRoomData', this.boundHandlers.receiveGameRoomData);
-      }
-    
-      render() {
-        const renderMainArea = () =&gt; {
-          if (this.state.gameInProgress) return &lt;Game socket={this.props.socket} initData={setupInit} /&gt;;
-          else if (this.state.gameInProgress === false) return &lt;GameSetup socket={this.props.socket} initData={gameInit} /&gt;;
-          return null; // this is only reached when gameInProgress is undefined, meaning there's no data from the server yet
-        };
-        return (
-          &lt;React.Fragment&gt;
-            {renderMainArea()}
-            {this.state.scoreBoard ? &lt;ScoreBoard scores={this.state.scoreBoard} /&gt; : null}
-          &lt;/React.Fragment&gt;
-        )
-      }
-    
-    }
-    
-    function receiveGameRoomDataHandler(data) {
-      data = JSON.parse(data);
-      let inSetup = "setupData" in Object.keys(data);
-      if (inSetup) setupInit = data.setupData;
-      else gameInit = data.gameData;
-      inSetup ? delete data.setupData : delete data.gameData;
-      this.setState(data);
-    }
-    
-    class ScoreBoard extends Component {
-    
-      render() {
-        const scoreData = this.props.scores;
-        const playerNames = Object.getOwnPropertyNames(scoreData);
-        let tableData = '';
-        playerNames.forEach(name =&gt; {
-          tableData += `&lt;tr&gt;&lt;td&gt;${name}&lt;br/&gt;${scoreData[name]}&lt;/td&gt;&lt;/tr&gt;`;
-        });
-    
-        return (
-          &lt;table dangerouslySetInnerHTML={{__html: tableData}}&gt;&lt;/table&gt;
-        )
-      }
-    }
-    
-    export default GameRoom;
+I'm looking for a solid listbox component. A component which displays an always visible list of items (unlike a dropdown which hides the item list when it loses focus), which can be single- or multi-selectable. 
+
+Something similar to a pivot table slicer, in which one can select multiple items by simply clicking and dragging the mouse.
+
+Something similar to the last component on the following codepen, but with a cleaner UI.
+ https://codesandbox.io/s/material-demo-l6suj
+
+Anyone came across something similar?
+## [10][How to make separate component(reusable component) in react?](https://www.reddit.com/r/reactjs/comments/gxoqlh/how_to_make_separate_componentreusable_component/)
+- url: https://www.reddit.com/r/reactjs/comments/gxoqlh/how_to_make_separate_componentreusable_component/
+---
+Can somebody help me here? Actually, I'm making a separate component for  scrollbar. So I'm confusing what I'm doing wrong because right now its  not working as you can see the code down below. I need your help that am I  doing right or i'm missing something? please check the code and  let me know.
+
+code :-
+
+scrollbar.jsx
+
+import React from 'react';import PropTypes from 'prop-types';import './Scrollable.scss';const Scrollable = props =&gt; {const { children } = props;return (
+
+ &lt;div className="scrollableDiv"&gt;    
+ &lt;div className="scrollable-content"&gt;{children}&lt;/div&gt;    
+ &lt;/div&gt;    
+  );    
+};    
+Scrollable.defaultProps = {    
+ children: null,    
+ className: ''    
+};    
+Scrollable.propTypes = {    
+ text: PropTypes.oneOfType(\\\[PropTypes.string\\\]).isRequired,    
+ onClick: PropTypes.func.isRequired,    
+ children: PropTypes.node,    
+ className: PropTypes.string    
+};    
+export default Scrollable;    
+scrollbar.scss  
+
+
+html {box-sizing: border-box;-ms-overflow-style: scrollbar;}u/import '../../../styles/variables';.scroll-content {overflow: scroll;}.vertical-scroll {overflow-y: scroll;}.overflow-auto {overflow: auto;}.pointer {cursor: pointer;}::-webkit-scrollbar {width: $scroll-bar-width;height: 7px;}
+
+/\* Handle \*/::-webkit-scrollbar-thumb {background: #555;}/\* Handle on hover \*/::-webkit-scrollbar-thumb:hover {background: #555;}u/media only screen and (max-width: 450px) {body {::-webkit-scrollbar-track {display: none;    }  }.hidden-small {display: none !important;  }}.scrollableDiv {overflow: auto;visibility: hidden;}.scrollable-content,.scrollableDiv:hover,.scrollableDiv:focus {visibility: visible;}
+## [11][De-note - A minimal (sticky) note taking app using react.](https://www.reddit.com/r/reactjs/comments/gxd0nl/denote_a_minimal_sticky_note_taking_app_using/)
+- url: https://www.reddit.com/r/reactjs/comments/gxd0nl/denote_a_minimal_sticky_note_taking_app_using/
+---
+**De-note** is a minimal note taking app built with react and bootstrap. I used create-react-app as a base structure.
+
+I'm new to React and posting on Reddit and this is my first take at it while learning so it may  be a little crude in terms of coding standards.
+
+Please review and guide me where I can improve also what is the future safe learning path for react and related stuff?
+
+GITHUB - [https://github.com/icyi2i/De-note](https://github.com/icyi2i/De-note)
+
+DEMO - [https://icyi2i.github.io/De-note/](https://icyi2i.github.io/De-note/)
+
+https://reddit.com/link/gxd0nl/video/cl25kc3bn5351/player
+## [12][Using React, Redux and SSR to acommodate users without JavaScript](https://www.reddit.com/r/reactjs/comments/gxng98/using_react_redux_and_ssr_to_acommodate_users/)
+- url: https://blog.klungo.no/2020/05/28/using-react-and-redux-to-acommodate-users-without-javascript/
+---
+

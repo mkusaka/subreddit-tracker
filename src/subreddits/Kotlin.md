@@ -1,13 +1,33 @@
 # Kotlin
-## [1][Introduction to event-driven microservices with Spring Cloud Stream and Kotlin](https://www.reddit.com/r/Kotlin/comments/gx16b0/introduction_to_eventdriven_microservices_with/)
+## [1][Kotlin for desktop apps](https://www.reddit.com/r/Kotlin/comments/gxcp9l/kotlin_for_desktop_apps/)
+- url: https://www.reddit.com/r/Kotlin/comments/gxcp9l/kotlin_for_desktop_apps/
+---
+Hello,
+
+I am familiar with Kotlin and Android apps, but what about writing (cross-platform) desktop apps? Is there a Kotlin-first recommended way? Also, is there a tool for visual GUI design you recommend?
+
+Thanks!
+## [2][30 days of Kotlin - Seminar 2 - Live Coding an App with Kotlin](https://www.reddit.com/r/Kotlin/comments/gxm29n/30_days_of_kotlin_seminar_2_live_coding_an_app/)
+- url: /r/androiddev/comments/gxm245/30_days_of_kotlin_seminar_2_live_coding_an_app/
+---
+
+## [3][Has anyone shipped or developed anything with Kotlin Multiplatform?](https://www.reddit.com/r/Kotlin/comments/gx78rz/has_anyone_shipped_or_developed_anything_with/)
+- url: https://www.reddit.com/r/Kotlin/comments/gx78rz/has_anyone_shipped_or_developed_anything_with/
+---
+I just saw a video on Kotlin Multiplatform and I'm wondering if anyone has used it or shipped anything with it.
+
+https://www.youtube.com/watch?v=F6qCeTp_YA4
+
+https://www.youtube.com/watch?v=je8aqW48JiA
+## [4][Introduction to event-driven microservices with Spring Cloud Stream and Kotlin](https://www.reddit.com/r/Kotlin/comments/gx16b0/introduction_to_eventdriven_microservices_with/)
 - url: https://piotrminkowski.com/2020/06/05/introduction-to-event-driven-microservices-with-spring-cloud-stream/
 ---
 
-## [2][Rob Percival's Complete Kotlin Developer Course](https://www.reddit.com/r/Kotlin/comments/gwz46t/rob_percivals_complete_kotlin_developer_course/)
+## [5][Rob Percival's Complete Kotlin Developer Course](https://www.reddit.com/r/Kotlin/comments/gwz46t/rob_percivals_complete_kotlin_developer_course/)
 - url: http://google.com/amp/s/onlinecoursesgalore.com/complete-kotlin-developer-course-rob-percival/amp/
 ---
 
-## [3][Why You Should Use Kotlin Over Java?](https://www.reddit.com/r/Kotlin/comments/gwz8pl/why_you_should_use_kotlin_over_java/)
+## [6][Why You Should Use Kotlin Over Java?](https://www.reddit.com/r/Kotlin/comments/gwz8pl/why_you_should_use_kotlin_over_java/)
 - url: https://www.reddit.com/r/Kotlin/comments/gwz8pl/why_you_should_use_kotlin_over_java/
 ---
  
@@ -91,37 +111,22 @@ Kotlin has been built with developer productivity in mind and is the key advanta
 * Extension functions
 
 You can also know the use of Kotlin for android development at- [**Why you should use Kotlin for android development?**](https://solaceinfotech.com/blog/why-you-should-use-kotlin-for-android-development/)
-## [4][Kotlin 1.4-M2 Released](https://www.reddit.com/r/Kotlin/comments/gwfyn3/kotlin_14m2_released/)
+## [7][Kotlin 1.4-M2 Released](https://www.reddit.com/r/Kotlin/comments/gwfyn3/kotlin_14m2_released/)
 - url: https://blog.jetbrains.com/kotlin/2020/06/kotlin-1-4-m2-released
 ---
 
-## [5][Why doesn't Kotlin support multiple inheritance?](https://www.reddit.com/r/Kotlin/comments/gx0ham/why_doesnt_kotlin_support_multiple_inheritance/)
+## [8][Introducing GraphQL Kotlin Client](https://www.reddit.com/r/Kotlin/comments/gwitbq/introducing_graphql_kotlin_client/)
+- url: /r/graphql/comments/gwis3f/introducing_graphql_kotlin_client/
+---
+
+## [9][Can Kotlin Classes be Split Across Multiple Files?](https://www.reddit.com/r/Kotlin/comments/gwvxd1/can_kotlin_classes_be_split_across_multiple_files/)
+- url: https://www.reddit.com/r/Kotlin/comments/gwvxd1/can_kotlin_classes_be_split_across_multiple_files/
+---
+I haven't used Kotlin in a while and I was wondering if this was possible. C# is able to do so using the partial keyword and I was wondering if Kotlin had something similar.
+## [10][Why doesn't Kotlin support multiple inheritance?](https://www.reddit.com/r/Kotlin/comments/gx0ham/why_doesnt_kotlin_support_multiple_inheritance/)
 - url: https://www.reddit.com/r/Kotlin/comments/gx0ham/why_doesnt_kotlin_support_multiple_inheritance/
 ---
 https://i.imgur.com/1LNHYwM.jpg
 I know about this diamond problem but that can easily be solved. As a language feature if a class inherits multiple things that override the same thing it should throw a compile time error and just require the class itself to override it to avoid ambiguity. There could be a ClassName.super syntax to it so if you wanna use code from a certain class your class inherits from you can seamlessly do so. This is all that's needed to be able to seamlessly use multiple inheritance, this one problem that has such an easy solution isn't a valid reason not to support multiple inheritance.
 
 If you agree with me and would like to see Multiple Inheritance come to Kotlin give this YouTrack issue a thumbs up: https://youtrack.jetbrains.com/issue/KT-39406 it would be greatly appreciated 🙂
-## [6][Introducing GraphQL Kotlin Client](https://www.reddit.com/r/Kotlin/comments/gwitbq/introducing_graphql_kotlin_client/)
-- url: /r/graphql/comments/gwis3f/introducing_graphql_kotlin_client/
----
-
-## [7][Can Kotlin Classes be Split Across Multiple Files?](https://www.reddit.com/r/Kotlin/comments/gwvxd1/can_kotlin_classes_be_split_across_multiple_files/)
-- url: https://www.reddit.com/r/Kotlin/comments/gwvxd1/can_kotlin_classes_be_split_across_multiple_files/
----
-I haven't used Kotlin in a while and I was wondering if this was possible. C# is able to do so using the partial keyword and I was wondering if Kotlin had something similar.
-## [8][Koge the new 100 % pure Kotlin OpenGL Game Engine](https://www.reddit.com/r/Kotlin/comments/gw259e/koge_the_new_100_pure_kotlin_opengl_game_engine/)
-- url: https://www.reddit.com/r/Kotlin/comments/gw259e/koge_the_new_100_pure_kotlin_opengl_game_engine/
----
-Koge (Kotlin OpenGL Game Engine) is a 2D game framework developed in Kotlin that works in Windows, Linux and Mac OS X. It is very simple and intuitive to use. For more information check [Koge on github](https://github.com/KogeLabs/Koge/blob/master/README.md)
-## [9][Kotlin if statements and exception handling](https://www.reddit.com/r/Kotlin/comments/gwcusx/kotlin_if_statements_and_exception_handling/)
-- url: https://www.reddit.com/r/Kotlin/comments/gwcusx/kotlin_if_statements_and_exception_handling/
----
-A coworker and I noticed an interesting behaviour today, where the `get` operator on a `List`, if used inside an `if` statement, would never result in a crash due to an `OutOfBoundsException`, even if that index was definitely out of bounds. The statement will just return false instead.
-
-This makes sense, in my opinion, but was wondering if anyone has any insight or documentation they can point me to regarding this, just out of interest and intrigue. I couldn't find anything with a quick google search.
-## [10][Is Kotlin enough similar to Java to let me study concepts from java books and apply them in a kt app easily?](https://www.reddit.com/r/Kotlin/comments/gvy4ec/is_kotlin_enough_similar_to_java_to_let_me_study/)
-- url: https://www.reddit.com/r/Kotlin/comments/gvy4ec/is_kotlin_enough_similar_to_java_to_let_me_study/
----
-I'm a java programmer. I'm curious about Kotlin and I'd like to give it a try, if I could transfer my java knowledge easily. Especially the things regarding network programming and parallel programming.  
-Any opinion/suggestions?

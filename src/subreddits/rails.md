@@ -19,203 +19,182 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Awesome-Ruby: A Curated Collection of 851 Ruby Links and Resources](https://www.reddit.com/r/rails/comments/gwv338/awesomeruby_a_curated_collection_of_851_ruby/)
-- url: https://www.reddit.com/r/rails/comments/gwv338/awesomeruby_a_curated_collection_of_851_ruby/
+## [2][Sidekiq file access](https://www.reddit.com/r/rails/comments/gxptw0/sidekiq_file_access/)
+- url: https://www.reddit.com/r/rails/comments/gxptw0/sidekiq_file_access/
 ---
-Check this on github. It really helps. Awesome-Ruby: https://github.com/markets/awesome-ruby#readme
-## [3][Stimulus course in context of Rails?](https://www.reddit.com/r/rails/comments/gx2ca6/stimulus_course_in_context_of_rails/)
+I have an application on Heroku that has a Postgres database and sidekiq running on a hosted Redis instance.
+
+A tool I want to rely on is able to generate JSON output when an  output file is specified but it will also print to stdout the non-JSON  output. Before deploying the app to Heroku, I was passing a temporary  file as output to the tool, opening the file and processing the JSON  contents and finally deleting it, but now on Heroku, sidekiq doesn't  have access to files.
+
+Since I just want the JSON data, is there a way to run the tool and  just process the JSON output without using an object storage service  like S3 and having to deal with tmp files? Alternatively, is there a way  to do something like passing a memory mapped file to the output file  option of the tool and read it from memory?
+
+Thank you
+## [3][Access Rails server in guets VM without knowing IP?](https://www.reddit.com/r/rails/comments/gxee38/access_rails_server_in_guets_vm_without_knowing_ip/)
+- url: https://www.reddit.com/r/rails/comments/gxee38/access_rails_server_in_guets_vm_without_knowing_ip/
+---
+This isn't necessarily a Rails question, but I assume some Rails developers have run into this.
+
+I could swear that I used to be able to access my Rails server in my Ubuntu guest VM by typing the following into Chrome on my host (Windows 10):
+
+[http://0.0.0.0:3000](http://0.0.0.0:3000)
+
+But now, I just get "This site can't be reached". This was after upgrading from VMWare Player to VMWare Workstation Pro. I called VMWare support, and they gave me the run-around changing a bunch of settings but they ended by saying that this doesn't appear to be a VMWare issue, and I should check application/OS settings.
+
+I should mention that when I upgraded, I had to use the "Repair" tool in the installer. The Repair seemed to be successful, and I was able to launch my VM, but it seems that the ability to access my VM server at this path has been broken.
+
+I'm about 98% sure I was using the [0.0.0.0](https://0.0.0.0) path on my host machine. I have my VM configured to use a NAT network adapter.
+
+From within the guest machine, I can still access my Rails server at [0.0.0.0:3000](https://0.0.0.0:3000).
+
+Any idea what might have changed? Does anyone know how to configure my networking so that my guest responds to [0.0.0.0](https://0.0.0.0) from my host?
+## [4][How to get Rails default log path any config reader present?](https://www.reddit.com/r/rails/comments/gxkqg9/how_to_get_rails_default_log_path_any_config/)
+- url: https://www.reddit.com/r/rails/comments/gxkqg9/how_to_get_rails_default_log_path_any_config/
+---
+I am recently looking into some third party gem [https://www.zoho.com/crm/developer/docs/ruby-sdk/config.html](https://www.zoho.com/crm/developer/docs/ruby-sdk/config.html) where it wants me to link the log file if I want any via `application_log_file_path`. How do I get the Rails default log path without doing some manual work to get there?
+## [5][How do I make IDs non sequential?](https://www.reddit.com/r/rails/comments/gx8h4o/how_do_i_make_ids_non_sequential/)
+- url: https://www.reddit.com/r/rails/comments/gx8h4o/how_do_i_make_ids_non_sequential/
+---
+Hi all,  
+
+
+At the moment my IDs are just sequential numbers starting at 1.  
+
+
+I don't want people to know how many entries there are, so I'd like my IDs to look like a random assortment of numbers (or letters).  
+
+
+I don't really care about the IDs in the database, but in particular in the URL string. Currently I'm using this method to generate the URL string:
+
+    def to_param
+      "#{id}-#{name.parameterize}"
+    end
+
+This is generating URLs like:
+
+    /1-some-name
+
+I would like this to be something like:
+
+    /19987004213-some-name
+
+Or
+
+    /a8gY4b97a-some-name
+
+  
+I tried the obfuscate-id gem, which seems to do exactly what I want, but when I try to bundle install it, I get this error:
+
+    Bundler could not find compatible versions for gem "rails":
+      In snapshot (Gemfile.lock):
+        rails (= 6.0.3.1)
+    
+      In Gemfile:
+        rails (= 6.0.3.1)
+    
+        obfuscate_id was resolved to 0.2.0, which depends on
+          rails (~&gt; 4.2.0)
+    
+    Running `bundle update` will rebuild your snapshot from scratch, using only
+    the gems in your Gemfile, which may resolve the conflict.
+
+So I assume this means it's no longer supported and I need to go with an alternative (either a gem, or my own way of doing this)  
+
+
+Help appreciated.
+## [6][Quick question about charts and analytics..](https://www.reddit.com/r/rails/comments/gxl3se/quick_question_about_charts_and_analytics/)
+- url: https://www.reddit.com/r/rails/comments/gxl3se/quick_question_about_charts_and_analytics/
+---
+I want to add some static numbers, with the ability to manually update these numbers or auto-update periodically (really depends on cost). The goal of these numbers would be to create both line and pie charts to measure a market trend/growth-over-time/current status on a number of different areas, I have the numbers I need for this already. Is there an API that you would recommend for this? Bonus points if you help me recall an API for some Alpha\_\_\_\_\_ that I saw a while back but can't find for the life of me.
+## [7][Is that possible using multiple versions of bootstrap in Rails ?](https://www.reddit.com/r/rails/comments/gxkvgz/is_that_possible_using_multiple_versions_of/)
+- url: https://www.reddit.com/r/rails/comments/gxkvgz/is_that_possible_using_multiple_versions_of/
+---
+Yesterday till today I have tried to override the classes of Bootstrap 4 in my rails app
+But it still read the class of the Bootstrap 3 
+I downloaded Bootstrap 3 from gem and for the Bootstrap 4 I download source files on their official website
+And after it I copy those files into my styles directory 
+And then trying to create new directory called "new-bootstrap" and create file "_override_boostrap.scss"
+And then I @import this file into my root application scss , and on _override_boostrap.scss I import the rouse file I downloaded Wich from dist/css/bootstrap.css and do created new class and @extend the class of new Bootstrapt
+After I called it on my html , itu still using the Bootstrap 3 Andi think this is because the Bootstrap 3 in my app do global 
+Anyone has any idea?
+## [8][Using ActiveRecord Without Rails, Weird Attribute Errors](https://www.reddit.com/r/rails/comments/gxei30/using_activerecord_without_rails_weird_attribute/)
+- url: https://www.reddit.com/r/rails/comments/gxei30/using_activerecord_without_rails_weird_attribute/
+---
+I'm building an app and using ActiveRecord outside of Rails. So far things are OK, but I'm trying to be able to create a user object like this:
+
+```
+u = User.new(name: "Bob", email: "bob@bobloblaw.com")
+```
+
+The problem is, when I do this it tells me those attributes don't exist. Here's my user.rb model:
+
+```
+class User &lt; ApplicationRecord
+  include ActiveModel::SecurePassword
+  has_secure_password
+  belongs_to :org
+
+  # attr_accessor :name, :phone, :email, :password, :org_id
+
+  def visible_attributes
+    attrs = attributes
+    attrs.delete('password_digest')
+    attrs
+  end
+end
+```
+
+As you can see I commented out the `attr_accessor` line. That's because with it on, I'm able to mass assign on object creation, but I get weird shit like this happening:
+
+https://imgur.com/a/vzNSZPn
+
+Here's the ApplicationRecord class:
+
+```
+class ApplicationRecord &lt; ActiveRecord::Base
+  include ActiveModel::Model
+  self.abstract_class = true
+
+  def initialize(args)
+    super
+    args.each do |k, v|
+      send("#{k}=", v)
+    end
+  end
+end
+```
+
+Any ideas what I might be doing wrong here? It's pretty weird to create an object but it has no visible attributes even though the column names are a perfect match.
+## [9][Stimulus course in context of Rails?](https://www.reddit.com/r/rails/comments/gx2ca6/stimulus_course_in_context_of_rails/)
 - url: https://www.reddit.com/r/rails/comments/gx2ca6/stimulus_course_in_context_of_rails/
 ---
 Are you aware of any online courses or resources that teach how to use Stimulus in the context of a Rails 6 site? I know Rails and JS in general, and I would like to pick up Stimulus, and learn best practices. Thank you!
-## [4][Webpack struggles - need some help with an npm package](https://www.reddit.com/r/rails/comments/gx4geq/webpack_struggles_need_some_help_with_an_npm/)
-- url: https://www.reddit.com/r/rails/comments/gx4geq/webpack_struggles_need_some_help_with_an_npm/
+## [10][Query to group and count by multiple columns and get a nice representation of the data?](https://www.reddit.com/r/rails/comments/gx8op3/query_to_group_and_count_by_multiple_columns_and/)
+- url: https://www.reddit.com/r/rails/comments/gx8op3/query_to_group_and_count_by_multiple_columns_and/
 ---
-Hello all, I have a Rails 6 project where I recently started using Stimulus and Stimulus Reflex, which forced me to go down the webpack road a bit.  I am now starting to migrate everything else to webpack from the asset pipeline and running into a little bit of a wall...
+I have a model with the `created_at` column and a `state` column (which may have different values, like `A`, nil, etc.), I want to get the amount of records I have in that model, first categorized by `created_at` and then by the `state` column, something like the following...
 
-I am using Bulma for this project and have successfully got that working as a webpack/yarn package (previously I was downloading the entire Bulma library and storing under the vendor folder of my project).
+```
+{
+  [Wed, 01 Jan 2020]=&gt; { "A" =&gt; 662, nil =&gt; 1091 },
+  [Thu, 02 Jan 2020]=&gt;{ "A" =&gt; 2895, nil =&gt; 5058 },                                                                                                                                                                                    
+  ...                                                                                                                                                                          
+```
 
-I was also using an extension called "Bulma Toast" which appears to have an npm package as well, but for the life of me I cannot get it working in the new webpack setup, and hoping someone can steer me in the right direction.  No matter what I say I get an error in the rails console complaining that bulma-toast cannot be found, but if I fix that then I get javascript console errors in my browser saying "bulmaToast is undefined"
+The closest I've gotten was this:
 
-&amp;#x200B;
+```
+{
+  [Wed, 01 Jan 2020, "A"]=&gt;662,
+  [Wed, 01 Jan 2020, nil]=&gt;1091,
+  [Thu, 02 Jan 2020, "A"]=&gt;2895,
+  [Thu, 02 Jan 2020, nil]=&gt;5058,                                                                                                                                                                                                                                                                                                                                                                   
+  ...
+```
 
-Posting relevant files below:
+With this query: `MyModel.order('DATE(created_at) ASC').group('DATE(created_at)', 'state').count`
 
-**package.json**
-
-    {
-      "name": "asdf",
-      "private": true,
-      "dependencies": {
-        "@creativebulma/bulma-tooltip": "^1.2.0",
-        "@rails/webpacker": "4.2.2",
-        "bulma": "^0.8.2",
-        "bulma-toast": "^2.0.1",
-        "stimulus": "^1.1.1",
-        "stimulus_reflex": "^3.2.1",
-        "url-loader": "^4.1.0"
-      },
-      "devDependencies": {
-        "webpack-dev-server": "^3.10.0"
-      }
-    }
-
-**app/javascript/packs/application.js**
-
-    import "controllers"
-    import "../application/stylesheets/application"
-    import bulmaToast from 'bulma-toast';
-
-&amp;#x200B;
-
-**app/views/layouts/application.html.erb (excerpt)**
-
-    &lt;head&gt;
-        &lt;%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %&gt;
-        &lt;%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', async: true %&gt;
-    &lt;/head&gt;
-    ...
-    &lt;main class="site-content"&gt;
-        &lt;section class="section"&gt;
-          &lt;div class="container"&gt;
-            &lt;%= yield %&gt;
-          &lt;/div&gt;
-        
-          &lt;% flash.each do |message_type, message| %&gt;
-            &lt;%= javascript_tag "bulmaToast.toast({ message: '#{message}',
-                                                  position: 'top-center',
-                                                  type: 'is-#{message_type}',
-                                                  animate: { in: 'fadeIn', out: 'fadeOut' },
-                                                  duration: 2500 });" %&gt;
-          &lt;% end %&gt;
-        &lt;/section&gt;
-    &lt;/main&gt;
-
-&amp;#x200B;
-## [5][Digest form input](https://www.reddit.com/r/rails/comments/gwwq00/digest_form_input/)
-- url: https://www.reddit.com/r/rails/comments/gwwq00/digest_form_input/
+How can I get what I want in one query? I'd like it to be as efficient as possible.
+## [11][Awesome-Ruby: A Curated Collection of 851 Ruby Links and Resources](https://www.reddit.com/r/rails/comments/gwv338/awesomeruby_a_curated_collection_of_851_ruby/)
+- url: https://www.reddit.com/r/rails/comments/gwv338/awesomeruby_a_curated_collection_of_851_ruby/
 ---
-So... I added username &amp; display name strings to my user model via rails g migration AddBlahToBlah username:string display\_name:string
-
-Then I added the digest to the registrations controller.
-
-Then I added the fields to the form/update view (using devise).
-
-Looks kinda like this:  
-&lt;%= f.label :username, "Username" %&gt;
-
-&lt;%= f.text\_field :username, placeholder: "Username" %&gt; 
-
-With some styling in between.   
-
-
-I loaded up the edit account view and everything worked perfectly. However, none of the changes are actually saving. 
-
-So I went into the rails console to confirm this, and sure enough the values are still nil. Something is happening in the database, but none of the inputs are going through. What do?
-## [6][Bootstrap-filestyle](https://www.reddit.com/r/rails/comments/gwwdzv/bootstrapfilestyle/)
-- url: https://www.reddit.com/r/rails/comments/gwwdzv/bootstrapfilestyle/
----
-Has anyone used this before?
-
-[bootstrap-filestyle](https://markusslima.github.io/bootstrap-filestyle/)
-
-I can kind of get it to work.. I added the classes to the file_field in my view file and when I refresh the page my file input is styled.  However if I leave and come back to the page it’s gone, but if I refresh it comes back. I’m on mobile at my daughters dance so I can’t easily copy my code at this moment but it was on my mind and thought I’d see if this community had any experience with it.
-## [7][Recommendations for courses/books/tutorials](https://www.reddit.com/r/rails/comments/gwmgsu/recommendations_for_coursesbookstutorials/)
-- url: https://www.reddit.com/r/rails/comments/gwmgsu/recommendations_for_coursesbookstutorials/
----
-I am trying to determine the best path to salvage a legacy RAILS website that has been offline since the host dropped RAILS support. One thought is to containerize it and host it on AWS. But, I haven't done web development in years, and little experience with RAILS. I went through the free part of Michael Hartl's Ruby on RAILS tutorial and it seems good, although I hesitate to do a subscription service as opposed to a pay once and download e-book. Can anyone either provide a recommendation for Michael Hartl's tutorial or suggest other resources for coming up to speed on RAILS? Also, if anyone has dockerized a RAILS website, I would appreciate any perspectives on that as well.
-
-Cheers!
-## [8][First Rails project in Ubuntu terminal - Having Troubles with Server Startup](https://www.reddit.com/r/rails/comments/gwncxb/first_rails_project_in_ubuntu_terminal_having/)
-- url: https://www.reddit.com/r/rails/comments/gwncxb/first_rails_project_in_ubuntu_terminal_having/
----
-Hello there. I have come to seek help here again regarding version control for my ruby apps. I found a tutorial on how to set up a rails project in Ubuntu starting with installing RVM and the latest Ruby/Rails versions. I installed the bundler and stuff. But when trying to start the server, it's like I missed something. The webpack install? So it tells me to run "rails webpack:install" and I"m getting this error below: 
-
-`rails aborted!`
-
-`ArgumentError: Malformed version number string 0.32+git`
-
-`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/webpacker-4.2.2/lib/tasks/webpacker/check_yarn.rake:12:in \`block (2 levels) in &lt;main&gt;'`
-
-`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.1/lib/rails/commands/rake/rake_command.rb:23:in \`block in perform'`
-
-`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.1/lib/rails/commands/rake/rake_command.rb:20:in \`perform'`
-
-`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.1/lib/rails/command.rb:48:in \`invoke'`
-
-`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.1/lib/rails/commands.rb:18:in \`&lt;main&gt;'`
-
-`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/bootsnap-1.4.6/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in \`require'`
-
-`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/bootsnap-1.4.6/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in \`block in require_with_bootsnap_lfi'`
-
-`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/bootsnap-1.4.6/lib/bootsnap/load_path_cache/loaded_features_index.rb:92:in \`register'`
-
-`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/bootsnap-1.4.6/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in \`require_with_bootsnap_lfi'`
-
-`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/bootsnap-1.4.6/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:31:in \`require'`
-
-`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/activesupport-6.0.3.1/lib/active_support/dependencies.rb:324:in \`block in require'`
-
-`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/activesupport-6.0.3.1/lib/active_support/dependencies.rb:291:in \`load_dependency'`
-
-`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/activesupport-6.0.3.1/lib/active_support/dependencies.rb:324:in \`require'`
-
-`/mnt/c/dev/src/my-portfolio/bin/rails:9:in \`&lt;top (required)&gt;'`
-
-`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/spring-2.1.0/lib/spring/client/rails.rb:28:in \`load'`
-
-`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/spring-2.1.0/lib/spring/client/rails.rb:28:in \`call'`
-
-`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/spring-2.1.0/lib/spring/client/command.rb:7:in \`call'`
-
-`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/spring-2.1.0/lib/spring/client.rb:30:in \`run'`
-
-`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/spring-2.1.0/bin/spring:49:in \`&lt;top (required)&gt;'`
-
-`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/spring-2.1.0/lib/spring/binstub.rb:11:in \`load'`
-
-`/home/spartan-626/.rvm/gems/ruby-2.7.1/gems/spring-2.1.0/lib/spring/binstub.rb:11:in \`&lt;top (required)&gt;'`
-
-`/mnt/c/dev/src/my-portfolio/bin/spring:15:in \`require'`
-
-`/mnt/c/dev/src/my-portfolio/bin/spring:15:in \`&lt;top (required)&gt;'`
-
-`bin/rails:3:in \`load'`
-
-`bin/rails:3:in \`&lt;main&gt;'`
-
-`Tasks: TOP =&gt; webpacker:install =&gt; webpacker:check_yarn`
-
-`(See full trace by running task with --trace)`
-
-&amp;#x200B;
-
-I'm not sure if this is because the rails server should be started already? If I try to start a rails server I get an even longer output of an error, but I'm not sure if this is what should fixed first before being able to start it in the first place. 
-
-I'm still quite a noob on a lot of this type of stuf. My coding bootcamp took us mainly through front end stuff and a lot of Rails specifically using vagrant. I've wanted to try something else other than vagrant now that I'm on my own.  I'm trying to get my portfolio finally finished so I can launch it to the domain I purchased ASAP, so any help getting my environment set up all silky smooth would be much appreciated!
-## [9][Updating legacy storage](https://www.reddit.com/r/rails/comments/gwho9k/updating_legacy_storage/)
-- url: https://www.reddit.com/r/rails/comments/gwho9k/updating_legacy_storage/
----
-Our application stores all images and files in an S3 bucket. Uploads are handled by Paperclip in various places. We're trying to find the best solution to update. 
-
-Initially, we were looking at Active Storage because it natively supports one-to-many relations, but don't like the lack of control (mostly regarding filenames and [paths](https://stackoverflow.com/questions/48389782/how-to-specify-a-prefix-when-uploading-to-s3-using-activestorages-direct-upload)). 
-
-We've also been looking into Shrine, which does less out of the box, but seems to allow for more customization.
-
-What do you use and why? Are there pitfalls to lookout for?
-## [10][Should I make a POST request with a PNG blob as a parameter in Rails 5?](https://www.reddit.com/r/rails/comments/gwhoct/should_i_make_a_post_request_with_a_png_blob_as_a/)
-- url: https://www.reddit.com/r/rails/comments/gwhoct/should_i_make_a_post_request_with_a_png_blob_as_a/
----
-Hey! I am developing a product customization tool on my Rails 5 webapp, which requires me to send the final design's blob string to a different web-service via the webapp's server (in order to generate a composite preview).
-
-Is it scalable if I am making a POST request to my server with blob string as a parameter? I fear that can bloat the memory. Am I right?
-
-The blob size will be around 40-50 Kb tops.
-
-Thank you in advance.
-## [11][100 days of code to learn rails](https://www.reddit.com/r/rails/comments/gw2y2l/100_days_of_code_to_learn_rails/)
-- url: https://www.reddit.com/r/rails/comments/gw2y2l/100_days_of_code_to_learn_rails/
----
-just wanted to share I'm starting my web dev journey and choosing to go through Hartl's rails 6 tutorial. a lot of negatives on rails hype dying, but really looking forward to get a foundation of being able to build MVP's for some of my ideas I have. I've been stalking this sub a bit and it's really cool that you guys are so practical and helpful. I hope it's okay to share here and probably will be posting here for some help along the way :)
-
-starting a substack if anyone is interested in following a newb: [https://joelchoi.substack.com/p/day-1](https://joelchoi.substack.com/p/day-1)
+Check this on github. It really helps. Awesome-Ruby: https://github.com/markets/awesome-ruby#readme

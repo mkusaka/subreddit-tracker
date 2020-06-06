@@ -125,124 +125,249 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][CppCast: Move Semantics](https://www.reddit.com/r/cpp/comments/gwwp9u/cppcast_move_semantics/)
+## [3][I made Procedural Terrain Generator in OpenGL C++ | Perlin noise | Custom engine | Open Source GitHub](https://www.reddit.com/r/cpp/comments/gxmka1/i_made_procedural_terrain_generator_in_opengl_c/)
+- url: https://github.com/stanfortonski/Procedural-Terrain-Generator-OpenGL
+---
+
+## [4][Refureku: New c++17 reflection library](https://www.reddit.com/r/cpp/comments/gxekzz/refureku_new_c17_reflection_library/)
+- url: https://github.com/jsoysouvanh/Refureku
+---
+
+## [5][Please review this tiny lock free data structure I wrote](https://www.reddit.com/r/cpp/comments/gxn6se/please_review_this_tiny_lock_free_data_structure/)
+- url: https://www.reddit.com/r/cpp/comments/gxn6se/please_review_this_tiny_lock_free_data_structure/
+---
+Hello all.
+
+I kindly request your review to this simple variation of the classical Treiber-stack used to monitor idle threads in a threadpool.
+
+The problem:
+
+Every threadpool holds a number of threads it re-uses to execute tasks that had been submitted to it.
+
+Work-distribution is an important aspect of parallel and concurrent execution: an application needs to partitian, distribute and schedule
+
+the work into tasks and threads in order to achieve maximum cpu utilization.
+
+Every thread in a threadpool can either be active (executing tasks) or idle (waiting for a task to be submitted to the threadpool).
+
+An old-fashion approach is to have one queue for the entire thread pool and have the threads waiting on one mutex, using one condition variable.
+
+when a thread finishes to execute a task, it goes back to the global queue to pop a new one, and if it doesn't find any - it sleeps on the condition variable
+
+until a new task is submitted to the pool and the thread is notified by the pusher.
+
+Needless to say, this is very naive approach that doesn't handle high loads.
+
+Modern approaches use one queue each worker, possibly a lock free one. threads either steal work from other queues when they run out of tasks,
+
+either they do the reverse thing by sharing tasks when they detect that other threads are idle.
+
+&amp;#x200B;
+
+Either way, whether we just want to enqueue a task to the right thread, or we want to share work, we need to know which threads are idle and which are not.
+
+To do so, I've modified the classical Treiber stack algorithm to handle this task of monitoring idle threads.
+
+This is NOT a general-purpose lock free stack. this has a very specific goal under very specific environment.
+
+In my threadpool, threads are stored in a vector, and their ID is basically the index they sit on. We can use this fact to use integers instead of pointers.
+
+The idle-worker-stack is also bounded, since the maximum amount of threads is fixed.
+
+This also means, that the data stored in the stack can only be an integer number from 0 to (worker-size - 1).
+
+&amp;#x200B;
+
+So we can basically "ditch" the old node structure in favor of a simple integer array.
+
+the index of a cell is the index of an idle thread, while the integer the cell contains points to the next idle worker.
+
+we also don't have to worry about memory management, since we just allocate this fixed array in the stack construction, and deallocate the memory fully during the stack destruction.
+
+&amp;#x200B;
+
+The only real change from the classical Treiber-stack algorithm is the aba stamp we keep in the cursor ("head") member - this prevents the nasty ABA problem that the classical design has.
+
+&amp;#x200B;
+
+The code:
+
+    class idle_worker_stack {
+    
+    	struct alignas(8) cursor_ctx {
+    		int32_t pos;
+    		uint32_t aba;
+    	};
+    
+    private:
+    	std::atomic&lt;cursor_ctx&gt; m_cursor;
+    	std::unique_ptr&lt;std::atomic_intptr_t[]&gt; m_stack;
+    
+    public:
+    	idle_worker_stack(size_t size);
+    
+    	void push(int32_t index) noexcept;
+    	int32_t pop() noexcept;
+    };
+    
+    idle_worker_stack::idle_worker_stack(size_t size) {
+    	m_stack = std::make_unique&lt;std::atomic_intptr_t[]&gt;(size);
+    	for (size_t i = 0; i &lt; size; i++) {
+    		m_stack[i] = -1;
+    	}
+    
+    	cursor_ctx cursor;
+    	cursor.pos = -1;
+    	cursor.aba = 0;
+    
+    	m_cursor = cursor;
+    }
+    
+    void idle_worker_stack::push(int32_t index) noexcept {
+    	while (true) {
+    		auto current_idle = m_cursor.load(std::memory_order_relaxed);
+    		m_stack[index].store(current_idle.pos, std::memory_order_relaxed);
+    
+    		cursor_ctx new_cursor;
+    		new_cursor.pos = index;
+    		new_cursor.aba = current_idle.aba + 1;
+    
+    		if (m_cursor.compare_exchange_weak(
+    			current_idle,
+    			new_cursor,
+    			std::memory_order_release,
+    			std::memory_order_relaxed)) {
+    			return;
+    		}
+    	}
+    }
+    
+    int32_t idle_worker_stack::pop() noexcept {
+    	while (true) {
+    		auto cursor = m_cursor.load(std::memory_order_relaxed);
+    		if (cursor.pos == -1) {
+    			return -1;
+    		}
+    
+    		auto next_idle_worker = m_stack[cursor.pos].load(std::memory_order_relaxed);
+    
+    		cursor_ctx new_cursor;
+    		new_cursor.pos = next_idle_worker;
+    		new_cursor.aba = cursor.aba + 1;
+    
+    		if (m_cursor.compare_exchange_weak(
+    			cursor,
+    			new_cursor,
+    			std::memory_order_release,
+    			std::memory_order_relaxed)) {
+    			return cursor.pos;
+    		}
+    	}
+    }
+
+&amp;#x200B;
+
+A few notes:
+
+1. the memory barriers are only needed to prevent reordering. the workers themselves are protected with a lock. this is why most of the operation only require relaxed operation. when we use release m-o, it's only because we want to prevent the CAS to be reordered before whatever comes before it.
+2. this implementation looks more of a "flat list" or an "unrolled list" than a node-based-stack.
+3. there can be only &lt;&lt;size&gt;&gt; producers, where &lt;&lt;size&gt;&gt; is the number of the workers. there can be infinite amount of consumers. if the stack is empty when popped, it should return -1.
+4. should a padding be added between m\_cursor and m\_stack? should the individual integers in the array be padded between them? I couldn't decide myself.
+5. pushing and popping is done under a loop - so we can use weak CAS instead of a strong one to milk a little more performance from the hardware.
+6. please ignore the bit-ness issues here. this WILL be modified to work correctly under 32 bit. assume for now that this design is written to work only under 64-bit CPU's that support atomic operation on integers.
+
+Your comments, remarks, reviews, questions and answers are welcome.
+## [6][I re-implemented rusts Result type in c++ using std::variant, check it out!](https://www.reddit.com/r/cpp/comments/gxn1bn/i_reimplemented_rusts_result_type_in_c_using/)
+- url: https://github.com/Liorst4/cpp-result
+---
+
+## [7][Using C++20 to call a member function through a C-style function pointer](https://www.reddit.com/r/cpp/comments/gx6lhg/using_c20_to_call_a_member_function_through_a/)
+- url: https://www.reddit.com/r/cpp/comments/gx6lhg/using_c20_to_call_a_member_function_through_a/
+---
+I've been writing a class to wrap around part of a C library that requires function pointers for callbacks. The callback should be instance-specific; however, a function pointer can't be made out of anything that involves `this` (`this` is a function parameter, and parameters can't be constant expressions).
+
+Since all instances of this class will be `static`, I was able to come up with the following solution that I found to be interesting:
+
+    template&lt;auto&amp; inst, auto func&gt;
+    consteval auto make_member_callback() {
+        return [](auto... args) { (inst.*func)(args...); };
+    }
+    
+    // MyClass is a class that takes a function pointer as an argument
+    constinit static MyClass mc {
+        make_member_callback&lt;mc, &amp;MyClass::someCallback&gt;()
+    };
+(Try it online [here](https://godbolt.org/z/-Zo9S4) (or with a templated lambda [here](https://godbolt.org/z/erxmS-)))
+ 
+My work is with a real-time operating system written in C, so being able to use this with all of the callbacks required by hardware will be helpful. Would anyone else find this useful?
+
+I'd also enjoy it if, in the future, this could happen within a constructor. Right now this is prevented by `constexpr` parameters, though I would propose that a `constexpr/consteval` constructor (i.e. one that initializes a static object) should be able to access `this` at compile-time, since it appears that the static object's address/instance can be known.
+
+&amp;nbsp;
+
+**Edit:** Someone pointed out that a variadic generic lambda could be used instead of a templated lambda, which I think is simpler (and doesn't affect the resulting program). Changed the above example to match.
+
+**Edit 2:** Thanks to everyone who suggested different variations of this code. As I've spent more time on this, I've been able to set the callback during "construction:"
+
+    #include &lt;cstdio&gt;
+    
+    template&lt;auto&amp; v, auto f&gt;
+    constexpr auto member_callback = [](auto... args) { (v.*f)(args...); };
+    
+    struct MyClass {
+    public:
+        using Callback = void (*)(const char *);
+    
+    private:
+        int value;
+        Callback callback;
+    
+        void myCallback(const char* data) { value = printf("%s: %d", data, value); }
+    
+    public:
+        consteval MyClass(int v = 0) : value(v), callback(nullptr) {}
+    
+        template&lt;MyClass&amp; MC&gt;
+        constexpr static auto&amp; init() {
+            MC.callback = member_callback&lt;MC, &amp;MyClass::myCallback&gt;;
+            return MC;
+        }
+    
+        Callback getCallback() const { return callback; }
+    };
+    
+    int main() {
+        constinit static MyClass mc = (mc = MyClass{42}, MyClass::init&lt;mc&gt;());
+        mc.getCallback()("hi");
+        return 0;
+    }
+
+([Online](https://godbolt.org/z/GcK4jK))
+## [8][How to deal with string constants?](https://www.reddit.com/r/cpp/comments/gxocem/how_to_deal_with_string_constants/)
+- url: https://www.reddit.com/r/cpp/comments/gxocem/how_to_deal_with_string_constants/
+---
+Is it preferred that static const char\* or #define macro be used for string constants?
+## [9][Style question: to ADL or not?](https://www.reddit.com/r/cpp/comments/gxakho/style_question_to_adl_or_not/)
+- url: https://www.reddit.com/r/cpp/comments/gxakho/style_question_to_adl_or_not/
+---
+Say you have (in non-library code) a
+
+    std::vector&lt;int&gt; v;
+
+do you write
+
+    auto iter = find_if(cbegin(v), cend(v), [](auto i) { ... });
+
+anticipating that ADL will find `std::cbegin()`, `std::cend()` and `std::find_if()` because the vector is a type from `std`, or do you spell the namespace on the function calls?
+## [10][I std::cout like this. Fight me.](https://www.reddit.com/r/cpp/comments/gxqbrz/i_stdcout_like_this_fight_me/)
+- url: https://www.reddit.com/r/cpp/comments/gxqbrz/i_stdcout_like_this_fight_me/
+---
+ https://imgur.com/kOcU0C8
+## [11][CppCast: Move Semantics](https://www.reddit.com/r/cpp/comments/gwwp9u/cppcast_move_semantics/)
 - url: https://cppcast.com/move-semantics-nico-josuttis/
 ---
 
-## [4][TinyInst: A lightweight dynamic instrumentation library](https://www.reddit.com/r/cpp/comments/gwsn8c/tinyinst_a_lightweight_dynamic_instrumentation/)
-- url: https://github.com/googleprojectzero/TinyInst
----
-
-## [5][Eric Richardson presents "Modern Cmake: An introduction" (DC CPP User Group Virtual Meeting)](https://www.reddit.com/r/cpp/comments/gwhae0/eric_richardson_presents_modern_cmake_an/)
-- url: https://www.youtube.com/watch?v=bDdkJu-nVTo&amp;feature=youtu.be
----
-
-## [6][UTF8 and grapheme Cluster](https://www.reddit.com/r/cpp/comments/gx11mu/utf8_and_grapheme_cluster/)
-- url: https://www.reddit.com/r/cpp/comments/gx11mu/utf8_and_grapheme_cluster/
----
-I spent the last few days digging into the depths of the Unicode specification because I can't wrap my head around how to integrate utf8 support into my existing project. It seems like that most libraries do not properly deal with grapheme cluster: `u8"è".find_first('e')` will always return positive. I am aware of the ongoing controversy about what actually counts as a character (Code units, code points or user-perceived characters) and doing proper Grapheme splitting (Text Boundary Analysis) etc is expensive and probably should not be part of a low-level utf8 String. ICU has their BreakIterator, which you can use to count user-perceived characters. It's quite slow though and possibly nothing you'd want to every time you construct a string or query it's length.
-What would you recommend? Should I just naively deal with grapheme and pretty much ignore their existence... Or could this cause issues in the future? I am kinda worried that once I make a utf8 string available in the code base coworkers will start doing splitting, replacing etc with user content (which may or may not have graphemes) and get the wrong results. 
-
-http://utf8everywhere.org/
-This excellent document is proposing to always use utf8 (which I agree on) and keep using `std::string`. I am not a big fan of the latter as some of the member functions would be broken for non-ASCII input.... and the type is not "strong" enough to signal that it's really storing utf8. (Might need to wait for char8_t)
-## [7][QStringView Diaries: Zero-Allocation String Splitting](https://www.reddit.com/r/cpp/comments/gx3d6s/qstringview_diaries_zeroallocation_string/)
+## [12][QStringView Diaries: Zero-Allocation String Splitting](https://www.reddit.com/r/cpp/comments/gx3d6s/qstringview_diaries_zeroallocation_string/)
 - url: https://www.kdab.com/qstringview-diaries-zero-allocation-string-splitting/
 ---
 
-## [8][Updates on redeclaration of structured binding reference variables?](https://www.reddit.com/r/cpp/comments/gx05k3/updates_on_redeclaration_of_structured_binding/)
-- url: https://www.reddit.com/r/cpp/comments/gx05k3/updates_on_redeclaration_of_structured_binding/
----
-Are there any updates on CWG issue 2313?
-
-https://wg21.link/CWG2313
-
-The proposed resolution dates from 2017 yet it seems nothing is concrete yet. 
-
-The following code works in MSVC and GCC but not on Clang:
-
-    int main() {
-        auto [x, y] = [] { return std::make_pair(1, 2); }();
-        return [&amp;] { return x + y; }();
-    }
-## [9][Template literals](https://www.reddit.com/r/cpp/comments/gwzzrq/template_literals/)
-- url: https://www.reddit.com/r/cpp/comments/gwzzrq/template_literals/
----
-Can template literals be used in C++, for example, 
-
-cout&lt;&lt;I have some things to do, which are ${expression} when you don't know about them.
-
-Here, expression="really very hard"
-
-Thanks.
-## [10][What is [[nodiscard]] and why it is useful.](https://www.reddit.com/r/cpp/comments/gwevjr/what_is_nodiscard_and_why_it_is_useful/)
-- url: https://www.reddit.com/r/cpp/comments/gwevjr/what_is_nodiscard_and_why_it_is_useful/
----
-[https://www.blog.khrynczenko.com/post/2020-05-27-no\_discard/](https://www.blog.khrynczenko.com/post/2020-05-27-no_discard/)
-
-Hi, few days ago I started my own blog and wrote my first post.  My reason for starting a blog is to improve my writing skills since I am not a native English speaking person. Other reason is to have a place where I can store information that I find relevant. I would very much appreciate any kind of feedback.  
-
-
-Thank you for time spent reading the material. I would also like to know what is your opinion on the topic.
-## [11][toml++ v1.3.0 released](https://www.reddit.com/r/cpp/comments/gw16v1/toml_v130_released/)
-- url: https://marzer.github.io/tomlplusplus/
----
-
-## [12][STX: C++ 20 Error and Optional-Value Handling Library (Result, Option, Panics, and Backtracing)](https://www.reddit.com/r/cpp/comments/gw14ke/stx_c_20_error_and_optionalvalue_handling_library/)
-- url: https://www.reddit.com/r/cpp/comments/gw14ke/stx_c_20_error_and_optionalvalue_handling_library/
----
-Hello everyone,
-
-I have been exploring and evaluating error-handling models across the C++ ecosystem for the past 3 months. Primarily because I needed a proper and deterministic error-handling model for fail-often systems (embedded systems) in which exceptions don't fit the bill **yet**. Even with some embedded toolchains not having an actual exception implementation. The overall reliability and security of these systems are highly impacted by the error-handling model.
-
-From my exploration and interaction with other developers, I found that the **Result** and **Option** type monads were highly preferred to other models and are much more intuitive due to the error-handling logic abstraction, and the concise and deterministic success and failure paths they provide. In addition, many of the engineers had already rolled their in-house implementations.
-
-Here are a **few** open-source projects that also replicate the same error-handling types/models: [LLVM's ErrorOr](https://github.com/llvm/llvm-project/blob/master/llvm/include/llvm/Support/ErrorOr.h), [Mozilla MFBT's Result](https://searchfox.org/mozilla-central/source/mfbt/Result.h), Fuchsia OS' [Result](https://fuchsia.googlesource.com/fuchsia/+/refs/heads/master/zircon/system/ulib/zxc/), [StatusOr](https://fuchsia.googlesource.com/fuchsia/+/refs/heads/master/zircon/system/ulib/intel-hda/include/intel-hda/utils/status_or.h), and [Panic](https://fuchsia.googlesource.com/fuchsia/+/HEAD/zircon/system/public/zircon/assert.h), [Pigweed's Result](https://pigweed.googlesource.com/pigweed/pigweed/+/refs/heads/master/pw_result/), [Simdjson's Result](https://github.com/simdjson/simdjson/blob/master/include/simdjson/error.h), etc. Another great approach is error-handling macros like [ENSURE\_OK, DCHECK\_OK, QCHECK\_OK](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/platform/status.h) which I came across during my open-source work on Tensorflow micro.
-
-As with many cases of code duplication even within the same codebase, they can have really subtle bugs (i.e. Mozilla's Result).
-
-Some programming languages adopt this functional approach i.e: Haskell (`Either`),  Scala (`Try` &amp; `Option`), Rust (`Result` &amp; `Option`).
-
-**STX** (*standard-extended*) is a C++20 library that aims to unify these development efforts and make it easier to manage errors and also provide some development utilities.
-
-# STX Library Features
-
-* **Result&lt;T, E&gt;** and **Option&lt;T&gt;** (with monadic methods) and ***constexpr*** support
-   * Local explicit error propagation (with `TRY_OK` &amp; `CO_TRY_OK`)
-   * **std::error\_code** and *exception-object* compatible
-   * fast and deterministic success and failure paths
-   * errors and nullability can not be ignored implicitly
-* Panics  (i.e. fail-fast abandonment)
-   * Panic backtracing
-   * Thread-safe runtime panic hooks (especially for DLL *drivers*)
-   * Panic Handlers (reporting preference varies from project to project. i.e:  log to disk, log to *journal*, halting, etc)
-   * Reporting
-* \*Fatal signal backtracing (**SIGILL**, **SIGSEGV**, and **SIGFPE**)
-* No **RTTI**, memory allocation, nor *exceptions*
-* Manual backtracing library based on *Abseil*
-
-&amp;#x200B;
-
-Please share your feedback!
-
-And yes, I'm willing to steal good ideas!
-
-&amp;#x200B;
-
-Repository: [https://github.com/lamarrr/STX](https://github.com/lamarrr/STX)
-
-Documentation: [https://lamarrr.github.io/STX](https://lamarrr.github.io/STX)
-
-Many thanks to u/TartanLlama, [Corentin Jabot](https://twitter.com/Cor3ntin) and [JeanHeyd Meneide](https://twitter.com/thephantomderp)!
-
-# References
-
-* [Zero-overhead Deterministic exceptions](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p0709r0.pdf), Herb Sutter. 2019
-* [The Error Model](http://joeduffyblog.com/2016/02/07/the-error-model/), Joe Duffy. 2016
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-*Stay safe!*

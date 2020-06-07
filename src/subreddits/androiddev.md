@@ -40,91 +40,69 @@ We will not be allowing several posts discussing the subreddit and past events, 
 Expect to see more from me personally as I take a bigger role in trying to help restructure our team and improve our community. 
 
 Have a great day everyone!
-## [3][30 days of Kotlin - Seminar 2 - Live Coding an App with Kotlin](https://www.reddit.com/r/androiddev/comments/gxm245/30_days_of_kotlin_seminar_2_live_coding_an_app/)
-- url: https://www.reddit.com/r/androiddev/comments/gxm245/30_days_of_kotlin_seminar_2_live_coding_an_app/
+## [3][JetBrains is going to monetize JetBrains Academy register quickly to get free access until Jan 1st](https://www.reddit.com/r/androiddev/comments/gy70u5/jetbrains_is_going_to_monetize_jetbrains_academy/)
+- url: https://blog.jetbrains.com/blog/2020/06/02/jetbrains-academy-is-getting-ready-to-hit-the-market/
 ---
-This is 3rd and last webinar. [Youtube Link](https://youtu.be/WCxoDUcTsbU)
 
-First Webinar: [30\_days\_of\_kotlin\_seminar\_1\_kotlin\_101](https://www.reddit.com/r/androiddev/comments/gkqmzk/30_days_of_kotlin_seminar_1_kotlin_101/?utm_source=share&amp;utm_medium=web2x)
-
-Second Webinar: [30\_days\_of\_kotlin\_seminar\_2\_decoding\_kotlin](https://www.reddit.com/r/androiddev/comments/gp038k/30_days_of_kotlin_seminar_2_decoding_kotlin_the/?utm_source=share&amp;utm_medium=web2x)
-
-edit: it is seminar 3, misspelled in title.
-## [4][This is how Google completely terminated my Google Dev, Adsense and Admob Account](https://www.reddit.com/r/androiddev/comments/gxpefh/this_is_how_google_completely_terminated_my/)
-- url: https://www.reddit.com/r/androiddev/comments/gxpefh/this_is_how_google_completely_terminated_my/
+## [4][Android Architecture: MVP to MVVM](https://www.reddit.com/r/androiddev/comments/gy65bu/android_architecture_mvp_to_mvvm/)
+- url: https://medium.com/@kgaurav23/android-architecture-journey-from-mvp-to-mvvm-29bf469a8b59
 ---
-I have read a lot of posts where this kind of stuff happened to android developers and always thought it wouldn't happen to me one day.
 
-But it did. I'm now completely banned by Google. Ok my first ban was on Adsense and Admob and I have to say that ban was right. But my second ban on Google Play is just wrong and I guess bad luck. I mistakenly changed my Developer Name to a Name which looks similar to another brand name. I never heard of that brand and that was my mistake. 
-
-Well at least they told me the reason for my ban this time.  As far as I know from other posts normally they don't tell you the reason. Anyways I'm currently trying to get my account back and have taken many steps towards it and had one last Idea how I could get my Account back. 
-
-I mean, I'm ok with having a clean Google Play Store, but damn banning people for changing their name is just so bad. Just disable the account, send an Email about that and give the developer a chance to change their developer name to another. If the users does this a second time then I would be ok with a lifetime ban. This mistake can happen and most of us do this unintentionally. So give them at least 1 chance and if they do it again terminate the account. But not like this google.
-
-There is a lot more behind my story and if you are interested in it and don't want to the same mistakes like I did, you can read the full story here:
-
- [https://medium.com/@lreiner/how-google-completely-terminated-me-from-google-play-admob-and-adsense-dev-storie-f1301c20412d](https://medium.com/@lreiner/how-google-completely-terminated-me-from-google-play-admob-and-adsense-dev-storie-f1301c20412d)
-## [5][How to find dependency versions/names easy and consistently](https://www.reddit.com/r/androiddev/comments/gxl5sf/how_to_find_dependency_versionsnames_easy_and/)
-- url: https://www.reddit.com/r/androiddev/comments/gxl5sf/how_to_find_dependency_versionsnames_easy_and/
+## [5][Google is OK with violating the GDPR?](https://www.reddit.com/r/androiddev/comments/gy9uro/google_is_ok_with_violating_the_gdpr/)
+- url: https://i.redd.it/q3vf7oqssg351.png
 ---
-Is there a way to find dependency names easily? For example lets say you want to add the BottomNavigationView to your app, which requires:
 
-  
-implementation 'com.google.android.material:material:1.1.0'
+## [6][[DEV] I made a wrapper around official Spotify android SDK](https://www.reddit.com/r/androiddev/comments/gy8xnx/dev_i_made_a_wrapper_around_official_spotify/)
+- url: https://www.reddit.com/r/androiddev/comments/gy8xnx/dev_i_made_a_wrapper_around_official_spotify/
+---
+Recently for some reason, I've to implement Spotify API in my personal android app project. So I went to the official android [docs](https://developer.spotify.com/documentation/android/) and saw that they actually provide an authentication library.
 
-Is there a website or resource to go to for finding that? In this example the android docs for the component don't even have the import on there: [https://developer.android.com/reference/com/google/android/material/bottomnavigation/BottomNavigationView](https://developer.android.com/reference/com/google/android/material/bottomnavigation/BottomNavigationView)
+It's good until I came across a problem regarding refreshing an access token like there is no built-in way to generate an access token from refresh token, also for capturing result from OAuth we've to override onActivityResult() which is OK, but I think there is a better solution to use [ActivityResultContract](https://developer.android.com/reference/androidx/activity/result/contract/ActivityResultContracts.StartActivityForResult) from the latest androidx [Activity](https://developer.android.com/jetpack/androidx/releases/activity) (alpha release) which lets you register &amp; listens for Activity Result Callback.
+
+There are other limitations regarding the official SDK which I've mentioned in my GitHub repo's readme.
+
+So I thought to create a wrapper overcoming these limitations. The library is open-source and licensed under GPL v3. It is also well documented, so if you've any spare time take a look at it and let me know how I can improve it further.
+
+Library - [https://github.com/KaustubhPatange/Unofficial-Spotify-SDK](https://github.com/KaustubhPatange/Unofficial-Spotify-SDK)
+## [7][1.54k requests in AdMob and my app is not live? It was sent to 5 people to test quickly. Where are they coming from? I do not want to violate any rules.](https://www.reddit.com/r/androiddev/comments/gxrptc/154k_requests_in_admob_and_my_app_is_not_live_it/)
+- url: https://i.redd.it/gyicf1ugsa351.png
+---
+
+## [8][TheMovieDB: An app for TMDB API featuring MVVM, Koin and AAC](https://www.reddit.com/r/androiddev/comments/gy9qxy/themoviedb_an_app_for_tmdb_api_featuring_mvvm/)
+- url: https://www.reddit.com/r/androiddev/comments/gy9qxy/themoviedb_an_app_for_tmdb_api_featuring_mvvm/
+---
+Hey guys, I'm working on this app for a long time and it has always been a playground for learning new things. Some parts of the app are very well written and other parts are just horrible IMO. Still, here it is hope you guys like it, and please point out any improvements that you guys think can be made (or just something that I did horribly wrong).
+
+EDIT: [https://github.com/skrilltrax/TheMovieDB](https://github.com/skrilltrax/TheMovieDB)
+## [9][Android distribution chart new location](https://www.reddit.com/r/androiddev/comments/gy7plh/android_distribution_chart_new_location/)
+- url: https://androiddistribution.io
+---
+
+## [10][I have a jar which depends on old Android support, and there is no way I can update the Jar. What are the possible solutions?](https://www.reddit.com/r/androiddev/comments/gybvlo/i_have_a_jar_which_depends_on_old_android_support/)
+- url: https://www.reddit.com/r/androiddev/comments/gybvlo/i_have_a_jar_which_depends_on_old_android_support/
+---
+I'm building an app and it depends on a jar/rar file, which uses old \`ActionBarActivity\`  from \`android.support.v7.app\` package.  Now this class has been deprecated and removed (I can't see it in AndroidX library). 
 
 &amp;#x200B;
 
-Usually I google around and hope to find the latest version. Is this the best solution or is there a different way?
-## [6][Passing data between Bottom Navigation fragments](https://www.reddit.com/r/androiddev/comments/gxp5pn/passing_data_between_bottom_navigation_fragments/)
-- url: https://www.reddit.com/r/androiddev/comments/gxp5pn/passing_data_between_bottom_navigation_fragments/
+What are my options to continue using the jar?.
+
+**Note:** I'm using AndroidX libraries
+
+&amp;#x200B;
+
+**What I have tried**
+
+1. Copy pasting the \`ActionBarActivity\` to my project under \`androidx.appcompat.app\` package name (Androidx because **Jetifier** is enabled.) However lot of the APIs that \`ActionBarActivity\` is using is blocked by \`@RestrictTo\` annotation. So it gives me a error. Not sure if I can get pass this error!!
+## [11][Issue in split screen](https://www.reddit.com/r/androiddev/comments/gyaki2/issue_in_split_screen/)
+- url: https://www.reddit.com/r/androiddev/comments/gyaki2/issue_in_split_screen/
 ---
-hey guys, I'm really new into android dev and I can't find a correct way to pass data from one fragment to another in Bottom Navigation View. Would anyone be so kind and take a look :(? Thanks.
-
-StackOverFlow: https://stackoverflow.com/questions/62217714/how-to-pass-data-between-bottom-navigation-fragments-or-navigation-drawer
-## [7][What steps can you take to protect your app from piracy?](https://www.reddit.com/r/androiddev/comments/gx5thd/what_steps_can_you_take_to_protect_your_app_from/)
-- url: https://www.reddit.com/r/androiddev/comments/gx5thd/what_steps_can_you_take_to_protect_your_app_from/
+When I use android:windowFullScreen true in activity style it works perfectly in normal screen mode i.e., it hides the status bar but in split screen mode status bar becomes visible and content is being drawn beneath the status bar. Is there any recommended way to handle this? I have tried official documentation around this and couldn't find anything
+## [12][Adding support functionality in the app](https://www.reddit.com/r/androiddev/comments/gyaej8/adding_support_functionality_in_the_app/)
+- url: https://www.reddit.com/r/androiddev/comments/gyaej8/adding_support_functionality_in_the_app/
 ---
-Wanted to check if anything has changed or has been added. I've read SO threads and have googled around and browsed this sub. I know of compiling your code into a C/C++ library, and about Proguard and Dexguard obfuscaion, checking whether the device is an emulator, checking the package name and making the app crash if it doesn't match the original package name, adding server side code check( doesn't apply to my app).
+I've seen an app named **FASTHUB** which has a support us, a screen where you can donate to the dev, is that allowed? 
 
+Payment is through **Google Play Billing.**
 
-What other things can be done to stop script kiddies and automated tools from pirating your app?
-
-Edit: Don't understand the downvotes here. Has everyone learnt everything and this sub shouldn't exist? Please let me know if there's something you're offended about.
-
-2nd Edit: This was being downvoted heavily when I first created this post. I wasn't fishing for karma (Hint:check my username), but the negative energy gets to you. Sure, don't help me if you're not interested, but please don't downvote a serious question. Thanks to those who answered and helped this be visible.
-## [8][[HWTD] How was this done - octopus keymapper](https://www.reddit.com/r/androiddev/comments/gxogwj/hwtd_how_was_this_done_octopus_keymapper/)
-- url: https://www.reddit.com/r/androiddev/comments/gxogwj/hwtd_how_was_this_done_octopus_keymapper/
----
-Does anyone have any idea how this app is able to provide this functionality?
-
-If you haven't seen it before, it maps Bluetooth controllers and keyboards / mice to physical touch events on any app.
-
-There's no way, that I know of, to send touch events to another app, other than accessibility services, but even this is limited to a single pointer and has to enable the service permission first, which octopus does not use.
-
-Octopus app gets the user to select the app they want to provide the touch functionality to first, to load it onto the app. I thought it might be using some kind of launcher feature but it didn't appear to be a launcher either. 
-
-It does have copious amounts of permissions though.
-## [9][Mobile advertising question ecpm](https://www.reddit.com/r/androiddev/comments/gxr0n3/mobile_advertising_question_ecpm/)
-- url: https://www.reddit.com/r/androiddev/comments/gxr0n3/mobile_advertising_question_ecpm/
----
-Let’s say the average ecpm for rewarded videos in a country is 5$ but your app has an extreme amount of users in that country, usage is through the roof, the amount of the active users can’t be compared to any other app in that country, how much of a spike of ecpm can you expect comparing to that?
-## [10][Best budget phone for android development 2020](https://www.reddit.com/r/androiddev/comments/gxf1pe/best_budget_phone_for_android_development_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/gxf1pe/best_budget_phone_for_android_development_2020/
----
-Hi, Im getting into android development and I want to buy a physical device to test my code.
-
-Regarding that there are loads of android phones out there with many sizes, versions and system version (stock android, android one, go) I want like to know your recommendations.
-
-I read about many Pixels ( 4 and 3 with their variations) Moto G7/G8, Nokia phones.
-
-Thanks in advance 🙏
-## [11][X-post: Epic Games Store still coming to Android, CEO Tim Sweeney confirms : android_devs](https://www.reddit.com/r/androiddev/comments/gx7ohd/xpost_epic_games_store_still_coming_to_android/)
-- url: https://www.reddit.com/r/android_devs/comments/gx6g7e/_/
----
-
-## [12][Kotlin vs Java](https://www.reddit.com/r/androiddev/comments/gxnscp/kotlin_vs_java/)
-- url: https://www.reddit.com/r/androiddev/comments/gxnscp/kotlin_vs_java/
----
-Wanted to start with Android app development. Just knew about kotlin . Please share your thoughts with which to start
+Thanks!

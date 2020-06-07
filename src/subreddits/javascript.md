@@ -13,51 +13,76 @@ this is the place.
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][Want more from Particles.js? Try tsParticles for improvements and new features](https://www.reddit.com/r/javascript/comments/gxnpb8/want_more_from_particlesjs_try_tsparticles_for/)
+## [3][Starting with order: an approach to generative art](https://www.reddit.com/r/javascript/comments/gy5n6u/starting_with_order_an_approach_to_generative_art/)
+- url: https://karthikkaranth.me/blog/starting-with-order/
+---
+
+## [4][I'm making a series about building a 16-bit Virtual Machine in JavaScript from scratch. This episodes all about taking an assembly AST and generating machine code](https://www.reddit.com/r/javascript/comments/gxrwsf/im_making_a_series_about_building_a_16bit_virtual/)
+- url: https://youtube.com/watch?v=5PXMwvUkOKI
+---
+
+## [5][IT-Tools, a website in vuejs, with sets of handy and useful developer tools](https://www.reddit.com/r/javascript/comments/gybxrv/ittools_a_website_in_vuejs_with_sets_of_handy_and/)
+- url: https://it-tools.tech/
+---
+
+## [6][149850 – Reinstate support for SharedWorkers](https://www.reddit.com/r/javascript/comments/gyb0ps/149850_reinstate_support_for_sharedworkers/)
+- url: https://bugs.webkit.org/show_bug.cgi?id=149850
+---
+
+## [7][Want more from Particles.js? Try tsParticles for improvements and new features](https://www.reddit.com/r/javascript/comments/gxnpb8/want_more_from_particlesjs_try_tsparticles_for/)
 - url: https://dev.to/matteobruni/tsparticles-v1-15-0-released-1j0d
 ---
 
-## [4][Yet Another Doom Clone (In 13kb of JavaScript)](https://www.reddit.com/r/javascript/comments/gx7lkn/yet_another_doom_clone_in_13kb_of_javascript/)
-- url: https://nicholas.carlini.com/writing/2019/javascript-doom-clone-13k.html
----
-
-## [5][Stranger Things, JavaScript Edition](https://www.reddit.com/r/javascript/comments/gxp2nv/stranger_things_javascript_edition/)
-- url: https://livecodestream.dev/post/2020-06-03-stranger-things-javascript-edition/
----
-
-## [6][How to avoid race conditions using asynchronous javascript](https://www.reddit.com/r/javascript/comments/gx5dj0/how_to_avoid_race_conditions_using_asynchronous/)
-- url: https://www.lorenzweiss.de/race_conditions_explained/
----
-
-## [7][[AskJS] Javascript projects during quarantine](https://www.reddit.com/r/javascript/comments/gxke4b/askjs_javascript_projects_during_quarantine/)
-- url: https://www.reddit.com/r/javascript/comments/gxke4b/askjs_javascript_projects_during_quarantine/
----
-Here are a few ideas of projects I've been doing to learn Javascript during quarantine.
-
-&amp;#x200B;
-
-1. Calculator Pretty straightforward but learned a lot about the syntax of javascript
-2. Flashcard Project, You make a bunch of questions/answers. During the day, you can easily pop them out and study. I will actually use this
-3. Budget Project, quite simple but I want to make a sleek and nice design for the user. Actually something good to use.
-
-That's what Ive done, would appreciate new ideas if you guys have some :)
 ## [8][Javascript (TypeScript) library to render guitar chord diagrams in SVG](https://www.reddit.com/r/javascript/comments/gxqeq5/javascript_typescript_library_to_render_guitar/)
 - url: https://github.com/omnibrain/svguitar
 ---
 
-## [9][Looking for something more advanced? Learn Data Structures and Algorithms in Typescript](https://www.reddit.com/r/javascript/comments/gx6834/looking_for_something_more_advanced_learn_data/)
-- url: https://github.com/jeffzh4ng/dsa-ts
+## [9][This is my project "Checkboxland". I'm trying to think of new demos I can add to the page. Any ideas?](https://www.reddit.com/r/javascript/comments/gy1x0d/this_is_my_project_checkboxland_im_trying_to/)
+- url: https://www.bryanbraun.com/checkboxland/
 ---
 
-## [10][Telegram channel with new remote Javascript jobs every day [OC]](https://www.reddit.com/r/javascript/comments/gx61vu/telegram_channel_with_new_remote_javascript_jobs/)
-- url: https://t.me/joinchat/AAAAAFjHFc49Ng6HKjZFIQ
+## [10][Bundling Nodejs application to single executable for windows.](https://www.reddit.com/r/javascript/comments/gy9xl0/bundling_nodejs_application_to_single_executable/)
+- url: https://www.monkwhocode.com/2020/06/nodejs-bundling-your-nodejs-application.html
 ---
 
-## [11][50 coding challenges for absolute beginners](https://www.reddit.com/r/javascript/comments/gxgilx/50_coding_challenges_for_absolute_beginners/)
-- url: https://codeguppy.com/site/download/50_coding_challenges.pdf
+## [11][[AskJS] Is it me or are Web Components fundamentally broken?](https://www.reddit.com/r/javascript/comments/gy9ba3/askjs_is_it_me_or_are_web_components/)
+- url: https://www.reddit.com/r/javascript/comments/gy9ba3/askjs_is_it_me_or_are_web_components/
 ---
+Edit Seems like this might not be the case as long as the elements use accessors or class fields (see top comment).
 
-## [12][5 KB PWA that manages nutrients](https://www.reddit.com/r/javascript/comments/gxlkrj/5_kb_pwa_that_manages_nutrients/)
-- url: https://github.com/jedzoka/plantiet
+&amp;#x200B;
+
+So, the thing about CustomElements is that they work by inheriting from a built-in base class HTMLElement (or some other, but that's much less common since it doesn't work on Safari):
+
+        class MyElement extends HTMLElement {
+    
+        }
+
+I'm not normally the one to hate on inheritance, I do think it has it's places, however this construct scares me.
+
+See, the problem here is that while class `MyElement` updates as any JS code (when developer pushes a new version), *HTMLElement updates on it's own, i.e. whenever browser vendor makes changes*.
+
+This poses a serious issue: if `MyElement` declares a property, `HTMLElement` might, at any time, declare a property with the same name *but completely different semantics*, possibly breaking the component.
+
+Note that this is not a problem with inheritance in general, but rather with inheritance from a built-in class: if I extend a class provided by my framework of choice, changes to framework might still break my component, but this happens *only by my own action*, i.e. even when using a CDN, my site won't use a new version of a framework until I decide so. So I have chance to test for that and fix it before it affects my users/stakeholders.
+
+Also note that this doesn't occur when simply *using* built-in elements, only when *inheriting* from them, e.g. this React code
+
+        export default () =&gt; &lt;div className="omg" /&gt;
+
+doesn't ever break if new properties pop up on a div.
+
+This issue completely breaks a key expectation developers have from Web: that our sites won't break on their own after they are released.
+
+You might think now that I'm trying to spread FUD an this is something that simply doesn't happen (i.e. that HTMLElement.prototype doesn't change, or at least very rarely), but no:
+
+* if you go to [MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement), you will notice that `HTMLElement.prototype` defines about a dozen properties or methods marked as experimental (meaning "added only recently"), and `Element.prototype` which it extends defines another bunch of them
+* if you compare properties on HTMLElement in different browser, you will notice that they differ by another several dozen, which shows that this list is not only dynamic, but also not very standardized (i.e. browser vendors are adding properties to HTMLElement at their own discretion)
+* in other places, Web Standards do recognize dangers of userland and browser vendors sharing the same namespace (this is why CustomElement's tag name has to include a dash (`my-element`), and custom CSS properties need to start with two dashes (`--css-var`)
+* WebKit straight up refused to implement Customized Built-ins for very similar reasons
+
+What do you think? Am I missing something, or is it really that any WebComponents code out there is prone to breaking without warning?
+## [12][Javascript without semicolons](https://www.reddit.com/r/javascript/comments/gy03qa/javascript_without_semicolons/)
+- url: /r/learnjavascript/comments/gxznn8/javascript_without_semicolons/
 ---
 

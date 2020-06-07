@@ -125,163 +125,43 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][I made Procedural Terrain Generator in OpenGL C++ | Perlin noise | Custom engine | Open Source GitHub](https://www.reddit.com/r/cpp/comments/gxmka1/i_made_procedural_terrain_generator_in_opengl_c/)
+## [3][Which IDE do you use? Or if you prefer text editors, which and which plugins?](https://www.reddit.com/r/cpp/comments/gy08ip/which_ide_do_you_use_or_if_you_prefer_text/)
+- url: https://www.reddit.com/r/cpp/comments/gy08ip/which_ide_do_you_use_or_if_you_prefer_text/
+---
+
+## [4][Route planner using io2D library](https://www.reddit.com/r/cpp/comments/gyc8jg/route_planner_using_io2d_library/)
+- url: https://www.reddit.com/r/cpp/comments/gyc8jg/route_planner_using_io2d_library/
+---
+Just created a route planner project using the io2D library ([https://github.com/iparikshitdubey/Route\_Planner\_using\_io2D/tree/master/CppND-Route-Planning-Project](https://github.com/iparikshitdubey/Route_Planner_using_io2D/tree/master/CppND-Route-Planning-Project)) as a part of my Udacity Nanodegree program. Although I understood most of the code the implementation and rendering of the io2D library are still beyond my understanding.
+## [5][A compile time optimisation trick with C++ templates](https://www.reddit.com/r/cpp/comments/gyby5v/a_compile_time_optimisation_trick_with_c_templates/)
+- url: https://link.medium.com/xoAqARiJ76
+---
+
+## [6][I made Procedural Terrain Generator in OpenGL C++ | Perlin noise | Custom engine | Open Source GitHub](https://www.reddit.com/r/cpp/comments/gxmka1/i_made_procedural_terrain_generator_in_opengl_c/)
 - url: https://github.com/stanfortonski/Procedural-Terrain-Generator-OpenGL
 ---
 
-## [4][Refureku: New c++17 reflection library](https://www.reddit.com/r/cpp/comments/gxekzz/refureku_new_c17_reflection_library/)
-- url: https://github.com/jsoysouvanh/Refureku
+## [7][Enforcing implementation of concept](https://www.reddit.com/r/cpp/comments/gy06ax/enforcing_implementation_of_concept/)
+- url: https://www.reddit.com/r/cpp/comments/gy06ax/enforcing_implementation_of_concept/
 ---
+I am currently toying around with concepts and I was wondering if there's a way to enforce a class implementing a concept, without having to pass it into some function or template first. Like:
 
-## [5][Please review this tiny lock free data structure I wrote](https://www.reddit.com/r/cpp/comments/gxn6se/please_review_this_tiny_lock_free_data_structure/)
-- url: https://www.reddit.com/r/cpp/comments/gxn6se/please_review_this_tiny_lock_free_data_structure/
----
-Hello all.
+`struct MyAddableType requires Addable&lt;MyAddableType&gt; {`
 
-I kindly request your review to this simple variation of the classical Treiber-stack used to monitor idle threads in a threadpool.
+`//error if MyAddableType does not satisfy concept`
 
-The problem:
+`}`
 
-Every threadpool holds a number of threads it re-uses to execute tasks that had been submitted to it.
-
-Work-distribution is an important aspect of parallel and concurrent execution: an application needs to partitian, distribute and schedule
-
-the work into tasks and threads in order to achieve maximum cpu utilization.
-
-Every thread in a threadpool can either be active (executing tasks) or idle (waiting for a task to be submitted to the threadpool).
-
-An old-fashion approach is to have one queue for the entire thread pool and have the threads waiting on one mutex, using one condition variable.
-
-when a thread finishes to execute a task, it goes back to the global queue to pop a new one, and if it doesn't find any - it sleeps on the condition variable
-
-until a new task is submitted to the pool and the thread is notified by the pusher.
-
-Needless to say, this is very naive approach that doesn't handle high loads.
-
-Modern approaches use one queue each worker, possibly a lock free one. threads either steal work from other queues when they run out of tasks,
-
-either they do the reverse thing by sharing tasks when they detect that other threads are idle.
-
-&amp;#x200B;
-
-Either way, whether we just want to enqueue a task to the right thread, or we want to share work, we need to know which threads are idle and which are not.
-
-To do so, I've modified the classical Treiber stack algorithm to handle this task of monitoring idle threads.
-
-This is NOT a general-purpose lock free stack. this has a very specific goal under very specific environment.
-
-In my threadpool, threads are stored in a vector, and their ID is basically the index they sit on. We can use this fact to use integers instead of pointers.
-
-The idle-worker-stack is also bounded, since the maximum amount of threads is fixed.
-
-This also means, that the data stored in the stack can only be an integer number from 0 to (worker-size - 1).
-
-&amp;#x200B;
-
-So we can basically "ditch" the old node structure in favor of a simple integer array.
-
-the index of a cell is the index of an idle thread, while the integer the cell contains points to the next idle worker.
-
-we also don't have to worry about memory management, since we just allocate this fixed array in the stack construction, and deallocate the memory fully during the stack destruction.
-
-&amp;#x200B;
-
-The only real change from the classical Treiber-stack algorithm is the aba stamp we keep in the cursor ("head") member - this prevents the nasty ABA problem that the classical design has.
-
-&amp;#x200B;
-
-The code:
-
-    class idle_worker_stack {
-    
-    	struct alignas(8) cursor_ctx {
-    		int32_t pos;
-    		uint32_t aba;
-    	};
-    
-    private:
-    	std::atomic&lt;cursor_ctx&gt; m_cursor;
-    	std::unique_ptr&lt;std::atomic_intptr_t[]&gt; m_stack;
-    
-    public:
-    	idle_worker_stack(size_t size);
-    
-    	void push(int32_t index) noexcept;
-    	int32_t pop() noexcept;
-    };
-    
-    idle_worker_stack::idle_worker_stack(size_t size) {
-    	m_stack = std::make_unique&lt;std::atomic_intptr_t[]&gt;(size);
-    	for (size_t i = 0; i &lt; size; i++) {
-    		m_stack[i] = -1;
-    	}
-    
-    	cursor_ctx cursor;
-    	cursor.pos = -1;
-    	cursor.aba = 0;
-    
-    	m_cursor = cursor;
-    }
-    
-    void idle_worker_stack::push(int32_t index) noexcept {
-    	while (true) {
-    		auto current_idle = m_cursor.load(std::memory_order_relaxed);
-    		m_stack[index].store(current_idle.pos, std::memory_order_relaxed);
-    
-    		cursor_ctx new_cursor;
-    		new_cursor.pos = index;
-    		new_cursor.aba = current_idle.aba + 1;
-    
-    		if (m_cursor.compare_exchange_weak(
-    			current_idle,
-    			new_cursor,
-    			std::memory_order_release,
-    			std::memory_order_relaxed)) {
-    			return;
-    		}
-    	}
-    }
-    
-    int32_t idle_worker_stack::pop() noexcept {
-    	while (true) {
-    		auto cursor = m_cursor.load(std::memory_order_relaxed);
-    		if (cursor.pos == -1) {
-    			return -1;
-    		}
-    
-    		auto next_idle_worker = m_stack[cursor.pos].load(std::memory_order_relaxed);
-    
-    		cursor_ctx new_cursor;
-    		new_cursor.pos = next_idle_worker;
-    		new_cursor.aba = cursor.aba + 1;
-    
-    		if (m_cursor.compare_exchange_weak(
-    			cursor,
-    			new_cursor,
-    			std::memory_order_release,
-    			std::memory_order_relaxed)) {
-    			return cursor.pos;
-    		}
-    	}
-    }
-
-&amp;#x200B;
-
-A few notes:
-
-1. the memory barriers are only needed to prevent reordering. the workers themselves are protected with a lock. this is why most of the operation only require relaxed operation. when we use release m-o, it's only because we want to prevent the CAS to be reordered before whatever comes before it.
-2. this implementation looks more of a "flat list" or an "unrolled list" than a node-based-stack.
-3. there can be only &lt;&lt;size&gt;&gt; producers, where &lt;&lt;size&gt;&gt; is the number of the workers. there can be infinite amount of consumers. if the stack is empty when popped, it should return -1.
-4. should a padding be added between m\_cursor and m\_stack? should the individual integers in the array be padded between them? I couldn't decide myself.
-5. pushing and popping is done under a loop - so we can use weak CAS instead of a strong one to milk a little more performance from the hardware.
-6. please ignore the bit-ness issues here. this WILL be modified to work correctly under 32 bit. assume for now that this design is written to work only under 64-bit CPU's that support atomic operation on integers.
-
-Your comments, remarks, reviews, questions and answers are welcome.
-## [6][I re-implemented rusts Result type in c++ using std::variant, check it out!](https://www.reddit.com/r/cpp/comments/gxn1bn/i_reimplemented_rusts_result_type_in_c_using/)
+Now this code doesn't compile unfortunately and I tried some tricks with inheritance, but wto no avail. Is there any way of achieving this? Thanks!
+## [8][I re-implemented rusts Result type in c++ using std::variant, check it out!](https://www.reddit.com/r/cpp/comments/gxn1bn/i_reimplemented_rusts_result_type_in_c_using/)
 - url: https://github.com/Liorst4/cpp-result
 ---
 
-## [7][Using C++20 to call a member function through a C-style function pointer](https://www.reddit.com/r/cpp/comments/gx6lhg/using_c20_to_call_a_member_function_through_a/)
+## [9][Refureku: New c++17 reflection library](https://www.reddit.com/r/cpp/comments/gxekzz/refureku_new_c17_reflection_library/)
+- url: https://github.com/jsoysouvanh/Refureku
+---
+
+## [10][Using C++20 to call a member function through a C-style function pointer](https://www.reddit.com/r/cpp/comments/gx6lhg/using_c20_to_call_a_member_function_through_a/)
 - url: https://www.reddit.com/r/cpp/comments/gx6lhg/using_c20_to_call_a_member_function_through_a/
 ---
 I've been writing a class to wrap around part of a C library that requires function pointers for callbacks. The callback should be instance-specific; however, a function pointer can't be made out of anything that involves `this` (`this` is a function parameter, and parameters can't be constant expressions).
@@ -307,7 +187,7 @@ I'd also enjoy it if, in the future, this could happen within a constructor. Rig
 
 **Edit:** Someone pointed out that a variadic generic lambda could be used instead of a templated lambda, which I think is simpler (and doesn't affect the resulting program). Changed the above example to match.
 
-**Edit 2:** Thanks to everyone who suggested different variations of this code. As I've spent more time on this, I've been able to set the callback during "construction:"
+**Edit 2:** Thanks to everyone who suggested different variations of this code. As I've spent more time on this, I've been able to create the callback "within" the class:
 
     #include &lt;cstdio&gt;
     
@@ -343,11 +223,7 @@ I'd also enjoy it if, in the future, this could happen within a constructor. Rig
     }
 
 ([Online](https://godbolt.org/z/GcK4jK))
-## [8][How to deal with string constants?](https://www.reddit.com/r/cpp/comments/gxocem/how_to_deal_with_string_constants/)
-- url: https://www.reddit.com/r/cpp/comments/gxocem/how_to_deal_with_string_constants/
----
-Is it preferred that static const char\* or #define macro be used for string constants?
-## [9][Style question: to ADL or not?](https://www.reddit.com/r/cpp/comments/gxakho/style_question_to_adl_or_not/)
+## [11][Style question: to ADL or not?](https://www.reddit.com/r/cpp/comments/gxakho/style_question_to_adl_or_not/)
 - url: https://www.reddit.com/r/cpp/comments/gxakho/style_question_to_adl_or_not/
 ---
 Say you have (in non-library code) a
@@ -359,15 +235,7 @@ do you write
     auto iter = find_if(cbegin(v), cend(v), [](auto i) { ... });
 
 anticipating that ADL will find `std::cbegin()`, `std::cend()` and `std::find_if()` because the vector is a type from `std`, or do you spell the namespace on the function calls?
-## [10][I std::cout like this. Fight me.](https://www.reddit.com/r/cpp/comments/gxqbrz/i_stdcout_like_this_fight_me/)
-- url: https://www.reddit.com/r/cpp/comments/gxqbrz/i_stdcout_like_this_fight_me/
----
- https://imgur.com/kOcU0C8
-## [11][CppCast: Move Semantics](https://www.reddit.com/r/cpp/comments/gwwp9u/cppcast_move_semantics/)
+## [12][CppCast: Move Semantics](https://www.reddit.com/r/cpp/comments/gwwp9u/cppcast_move_semantics/)
 - url: https://cppcast.com/move-semantics-nico-josuttis/
----
-
-## [12][QStringView Diaries: Zero-Allocation String Splitting](https://www.reddit.com/r/cpp/comments/gx3d6s/qstringview_diaries_zeroallocation_string/)
-- url: https://www.kdab.com/qstringview-diaries-zero-allocation-string-splitting/
 ---
 

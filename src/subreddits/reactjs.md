@@ -84,171 +84,141 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][I've created a tiny component for applying a 'gooey' effect, also known as shape blobbing.](https://www.reddit.com/r/reactjs/comments/gxo4oo/ive_created_a_tiny_component_for_applying_a_gooey/)
+## [3][How to download dependencies on a 2G network?](https://www.reddit.com/r/reactjs/comments/gyaimn/how_to_download_dependencies_on_a_2g_network/)
+- url: https://www.reddit.com/r/reactjs/comments/gyaimn/how_to_download_dependencies_on_a_2g_network/
+---
+To your surprise, there is a place in the world that does not have access to high-speed internet. Indian Occupied Kashmir. Which is why I am not able to download the dependencies from the terminal. It just shows error. Is there any other way I can download the files from Chrome or something? I am trying to download and install 'react-router-dom'. Kindly help!
+## [4][Creating Your First React Typescript Project from Scratch](https://www.reddit.com/r/reactjs/comments/gyapk8/creating_your_first_react_typescript_project_from/)
+- url: https://typeofnan.dev/your-first-react-typescript-project-todo-app/
+---
+
+## [5][Centralizing API error handling in React apps](https://www.reddit.com/r/reactjs/comments/gy8jx8/centralizing_api_error_handling_in_react_apps/)
+- url: https://www.reddit.com/r/reactjs/comments/gy8jx8/centralizing_api_error_handling_in_react_apps/
+---
+ In this article I’m going to present to you a way of handling your API errors once and for all in a centralized and easily extendable way, regardless of the state-management library (Redux, Apollo, etc.) that you are using. 
+
+[https://medium.com/@aggelosarvanitakis/centralizing-api-error-handling-in-react-apps-810b2be1d39d](https://medium.com/@aggelosarvanitakis/centralizing-api-error-handling-in-react-apps-810b2be1d39d)
+## [6][I've created a tiny component for applying a 'gooey' effect, also known as shape blobbing.](https://www.reddit.com/r/reactjs/comments/gxo4oo/ive_created_a_tiny_component_for_applying_a_gooey/)
 - url: https://v.redd.it/gdtu19svh9351
 ---
 
-## [4][Mini graphiql component to document graphql API queries](https://www.reddit.com/r/reactjs/comments/gx5vdx/mini_graphiql_component_to_document_graphql_api/)
-- url: https://v.redd.it/rn9cgpj2t3351
+## [7][I open source web app to copy and paste colour from phone's camera](https://www.reddit.com/r/reactjs/comments/gy3kxh/i_open_source_web_app_to_copy_and_paste_colour/)
+- url: https://colorcopypaste.app/
 ---
 
-## [5][Has any course/video changed the way you build things in React?](https://www.reddit.com/r/reactjs/comments/gxqn9v/has_any_coursevideo_changed_the_way_you_build/)
-- url: https://www.reddit.com/r/reactjs/comments/gxqn9v/has_any_coursevideo_changed_the_way_you_build/
+## [8][How to submit a form without redirecting, change button text to "Sending..." and then reset form?](https://www.reddit.com/r/reactjs/comments/gy4p9v/how_to_submit_a_form_without_redirecting_change/)
+- url: https://www.reddit.com/r/reactjs/comments/gy4p9v/how_to_submit_a_form_without_redirecting_change/
 ---
-I've been building my own projects in React for about 6 months. I feel like I've been doing well and constantly learning but at the same time I still sense something might be missing. I started learning React  from one course in Scrimba and took it from there - just googling stuff. There's certainly more things out there than the way I learned things.
-
-&amp;#x200B;
-
-Did you, after a while builing apps with React, watched a course or video that changed the way you think about React?
-## [6][Looking for a production-grade project on github to learn from that uses Hooks, Redux-Toolkit and user authentication](https://www.reddit.com/r/reactjs/comments/gxqh2n/looking_for_a_productiongrade_project_on_github/)
-- url: https://www.reddit.com/r/reactjs/comments/gxqh2n/looking_for_a_productiongrade_project_on_github/
+Is there a simple example of this somewhere that someone can point me to?
+## [9][Issues with code splitting using react-snap](https://www.reddit.com/r/reactjs/comments/gy5m6w/issues_with_code_splitting_using_reactsnap/)
+- url: https://www.reddit.com/r/reactjs/comments/gy5m6w/issues_with_code_splitting_using_reactsnap/
 ---
-I have done some React courses and gone through to-do apps etc and I'm now looking for a meatier project to learn from!
+I deployed a react website(using create-react-app), on netlify. The Lighthouse audit was decent, the Performance section would be around 80%.  Then I included a library [react-snap](https://github.com/stereobooster/react-snap), because it pre-renders my web app into static HTML, and does other load performance optimization. So I expected the Performance score to increase, because it should reduce page load. 
 
-As per the title, if there is a project which matches that it would great. So far I've found Spectrum on github but it's a bit too big for me to dive into. I also found this: [https://github.com/oldboyxx](https://github.com/oldboyxx) which I've learned from, but it doesn't have Redux-Toolkit (or any redux actually).
+However this lowered my score on [Lighthouse to 63%](https://i.imgur.com/gGozKNh.png). This is because react-snap has issues with code splitting when using React.lazy, but I [followed their directions on the workaround](https://github.com/stereobooster/react-snap#async-components) and  has made little to no difference on improving the score.
 
-Thanks for any pointers!
-## [7][Can anybody explain how this arrow function gets the array index from](https://www.reddit.com/r/reactjs/comments/gxpv0y/can_anybody_explain_how_this_arrow_function_gets/)
-- url: https://www.reddit.com/r/reactjs/comments/gxpv0y/can_anybody_explain_how_this_arrow_function_gets/
----
-Started with the tic-tac-toe example from [https://reactjs.org/tutorial/tutorial.html](https://reactjs.org/tutorial/tutorial.html) , I am unable to understand how [this](https://imgur.com/a/zJMRZnv) arrow function gets the array indices. Can anybody explain how this is done?
-## [8][How to sort and map over an array by pairing specific values?](https://www.reddit.com/r/reactjs/comments/gxpga7/how_to_sort_and_map_over_an_array_by_pairing/)
-- url: https://www.reddit.com/r/reactjs/comments/gxpga7/how_to_sort_and_map_over_an_array_by_pairing/
----
-I'll explain.
+prerenderComponent.tsx
 
-I have a comment section for my React blog that pulls comments from JSON.
-
-A typical comment looks like this:
-
-    {
-            "path": "https://www.website.com/blog-post/", 
-                "comment": "I have no reply, only a question and I am  undoubtedly presuming...", 
-                "parent_id": 314541, 
-                "name": "Thomas", 
-                "date": "2018-05-12", 
-                "id": 406163, 
-                "avatar": "https://s.gravatar.com/avatar/4e234b1110fa5123dbe9c4e73e77d69?s=48&amp;r=x&amp;d=robohash"
-              }
-
-As you can see, there's a unique \`id\` for the comment, and an optional \`parent\_id\` when it's a reply to a parent comment (took the idea from Wordpress).
-
-The relevant comment section in JSX is here:
-
+    import { PrerenderedComponent } from "react-prerendered-component";
     
-    return data.allCommentsJson.edges.map(d =&gt; {
-        const val = Object.values(d)[0]
-        const HasComment = val.path === OgUrl
-        const comment = val.comment.replace(/\n/g, "&lt;br /&gt;")
-        const hasParent = val.parent_id &gt; 0
-        return (
-          &lt;&gt;
-            {HasComment ? (
-              &lt;li key={val.id} style={{marginLeft: hasParent? `10%` : `0`}}&gt;
-                &lt;CommentWrap&gt;
-                  &lt;article
-                    itemProp="comment"
-                    itemScope
-                    itemType="https://schema.org/Comment"&gt;
-                    &lt;header&gt;
-                      &lt;Robot
-                        fixed={{
-                          aspectRatio: 1 / 1,
-                          src: `${val.avatar}`,
-                          width: `42px`,
-                          height: `42px`,
-                        }}
-                        alt={val.name}
-                      /&gt;
-                      &lt;h4
-                        itemProp="author"
-                        itemScope
-                        itemType="https://schema.org/Person"&gt;
-                        &lt;span itemProp="name"&gt;{val.name}&lt;/span&gt;
-                      &lt;/h4&gt;
-                      &lt;CommentMeta&gt;
-                        &lt;time itemProp="datePublished"&gt;{val.date}&lt;/time&gt;
-                      &lt;/CommentMeta&gt;
-                    &lt;/header&gt;
-                    &lt;CommentBody itemProp="text"&gt;
-                      &lt;p dangerouslySetInnerHTML={{__html: comment}}&gt;&lt;/p&gt;
-                      &lt;ReplyButton href="#comments"&gt;Reply&lt;/ReplyButton&gt;
-                    &lt;/CommentBody&gt;
-                  &lt;/article&gt;
-                &lt;/CommentWrap&gt;
-              &lt;/li&gt;
-            ) : null}
-          &lt;/&gt;
-        )
-      })
+    // Solution 1
+    export const prerenderedLoadable = (dynamicImport: any) =&gt; {
+      const LoadableComponent = loadable(dynamicImport);
+      return React.memo((props) =&gt; (
+        // you can use the `.preload()` method from react-loadable or react-imported-component`
+        &lt;PrerenderedComponent live={LoadableComponent.load()}&gt;
+          &lt;LoadableComponent {...props} /&gt;
+        &lt;/PrerenderedComponent&gt;
+      ));
+    };
+    
+    // Solution 2
+    const prefetchMap = new WeakMap();
+    const prefetchLazy = (LazyComponent: any) =&gt; {
+      if (!prefetchMap.has(LazyComponent)) {
+        prefetchMap.set(LazyComponent, LazyComponent._ctor());
+      }
+      return prefetchMap.get(LazyComponent);
+    };
+    
+    export const prerenderedLazy = (dynamicImport: any) =&gt; {
+      const LazyComponent = React.lazy(dynamicImport);
+      return React.memo((props) =&gt; (
+        &lt;PrerenderedComponent live={prefetchLazy(LazyComponent)}&gt;
+          &lt;LazyComponent {...props} /&gt;
+        &lt;/PrerenderedComponent&gt;
+      ));
+    };
+    
+
+Graph.tsx
+
+    import React, { Suspense } from "react";
+    import { prerenderedLoadable, prerenderedLazy } from "./prerenderedComponent";
+    
+    // Solution 1
+    // const FusionTimeChart = prerenderedLoadable(() =&gt;
+    //   import("./Fusion/FusionTimeChart")
+    // );
+    // Solution 2
+    // const FusionTimeChart = prerenderedLazy(() =&gt;
+    //   import("./Fusion/FusionTimeChart")
+    // );
+    
+    export default function Graph() {
+      return (
+        &lt;section className="coding-activity"&gt;
+          &lt;h2 className="section-title coding-activity-title"&gt;
+            Lorem ipsum dolor sit amet.
+          &lt;/h2&gt;
+          &lt;p&gt;(Powered by wakatime.com)&lt;/p&gt;
+          &lt;div className="container"&gt;
+            {/*
+            Solution 1
+              &lt;FusionTimeChart /&gt;
+            */}
+            {/*
+            Solution 2
+             &lt;Suspense fallback={&lt;div&gt;&lt;/div&gt;}&gt;
+              &lt;FusionTimeChart /&gt;
+            &lt;/Suspense&gt; 
+            */}
+          &lt;/div&gt;
+        &lt;/section&gt;
+      );
     }
+    
 
-My question is, when I map over \`data.allCommentsJson.edges.map\`, how can I sort this data to pair comments with parent comments (if it's a reply)?
+Here's a before an after using react-snap 
 
-So if a comment has a \`parent\_id\` that matches the \`id\` of another comment, then reorder the index to place the reply directly underneath the parent. 
+**With react-snap**
 
-Right now, comments are just displayed chronologically which means that replies are not where they should be.
-## [9][ListBox Component (similar to Excel's Pivot Slicer)](https://www.reddit.com/r/reactjs/comments/gxovqo/listbox_component_similar_to_excels_pivot_slicer/)
-- url: https://www.reddit.com/r/reactjs/comments/gxovqo/listbox_component_similar_to_excels_pivot_slicer/
+[Live site](https://cra-with-snap.netlify.app/) 
+
+[Source code](https://github.com/aquaductape/cra_with_snap)
+
+[Lighthouse audit image](https://i.imgur.com/gGozKNh.png)
+
+**Without react-snap**
+
+[Live site](https://cra-without-snap.netlify.app/)
+
+[Source code](https://github.com/aquaductape/cra_without_snap)
+
+[Lighthouse audit image](https://i.imgur.com/Rrf48rl.png)
+## [10][Handeling consistent state over multiple modules](https://www.reddit.com/r/reactjs/comments/gya7yn/handeling_consistent_state_over_multiple_modules/)
+- url: https://www.reddit.com/r/reactjs/comments/gya7yn/handeling_consistent_state_over_multiple_modules/
 ---
-Hi all,
-
-I'm looking for a solid listbox component. A component which displays an always visible list of items (unlike a dropdown which hides the item list when it loses focus), which can be single- or multi-selectable. 
-
-Something similar to a pivot table slicer, in which one can select multiple items by simply clicking and dragging the mouse.
-
-Something similar to the last component on the following codepen, but with a cleaner UI.
- https://codesandbox.io/s/material-demo-l6suj
-
-Anyone came across something similar?
-## [10][How to make separate component(reusable component) in react?](https://www.reddit.com/r/reactjs/comments/gxoqlh/how_to_make_separate_componentreusable_component/)
-- url: https://www.reddit.com/r/reactjs/comments/gxoqlh/how_to_make_separate_componentreusable_component/
+I'm wondering what peoples experiences are in regards to handeling consistent state in multiple modules in a react application. Let's assume you have multiple redux stores, one for each module in a project, and sometimes data in one store could affect data in another store. To be more specific you might have table showing data which you can also edit. This data is in 1. redux store. But if you edit this data, and go to another table in the system, which gets data from a 2. Redux store, the data has not been updated even though the edit you made on the first table should have affected the data in the second table. This requires that the user have to press refresh to see the changes take effect, which is not ideal. Or would you even use redux for this matter? - I have been looking at graphQL and apollo as well, since eventually realtime updates will become necessary as well, as in multible users should be able to interact with the system at the same time. First time posting here, so let me know if more info is needed, but in general i'm just interested in getting some different ideas/views on people would normally handle this in a large scale react project.
+## [11][{Help} Turn.js react based alternative?](https://www.reddit.com/r/reactjs/comments/gy4uv5/help_turnjs_react_based_alternative/)
+- url: https://www.reddit.com/r/reactjs/comments/gy4uv5/help_turnjs_react_based_alternative/
 ---
-Can somebody help me here? Actually, I'm making a separate component for  scrollbar. So I'm confusing what I'm doing wrong because right now its  not working as you can see the code down below. I need your help that am I  doing right or i'm missing something? please check the code and  let me know.
+Hey guys,
 
-code :-
+I'm looking for a react based alternative for turn.js (book flip). Let me know if anyone has a good recommendation
 
-scrollbar.jsx
-
-import React from 'react';import PropTypes from 'prop-types';import './Scrollable.scss';const Scrollable = props =&gt; {const { children } = props;return (
-
- &lt;div className="scrollableDiv"&gt;    
- &lt;div className="scrollable-content"&gt;{children}&lt;/div&gt;    
- &lt;/div&gt;    
-  );    
-};    
-Scrollable.defaultProps = {    
- children: null,    
- className: ''    
-};    
-Scrollable.propTypes = {    
- text: PropTypes.oneOfType(\\\[PropTypes.string\\\]).isRequired,    
- onClick: PropTypes.func.isRequired,    
- children: PropTypes.node,    
- className: PropTypes.string    
-};    
-export default Scrollable;    
-scrollbar.scss  
-
-
-html {box-sizing: border-box;-ms-overflow-style: scrollbar;}u/import '../../../styles/variables';.scroll-content {overflow: scroll;}.vertical-scroll {overflow-y: scroll;}.overflow-auto {overflow: auto;}.pointer {cursor: pointer;}::-webkit-scrollbar {width: $scroll-bar-width;height: 7px;}
-
-/\* Handle \*/::-webkit-scrollbar-thumb {background: #555;}/\* Handle on hover \*/::-webkit-scrollbar-thumb:hover {background: #555;}u/media only screen and (max-width: 450px) {body {::-webkit-scrollbar-track {display: none;    }  }.hidden-small {display: none !important;  }}.scrollableDiv {overflow: auto;visibility: hidden;}.scrollable-content,.scrollableDiv:hover,.scrollableDiv:focus {visibility: visible;}
-## [11][De-note - A minimal (sticky) note taking app using react.](https://www.reddit.com/r/reactjs/comments/gxd0nl/denote_a_minimal_sticky_note_taking_app_using/)
-- url: https://www.reddit.com/r/reactjs/comments/gxd0nl/denote_a_minimal_sticky_note_taking_app_using/
+TIA
+## [12][Suggest me an idea for MERN Stack Project.](https://www.reddit.com/r/reactjs/comments/gy9q8y/suggest_me_an_idea_for_mern_stack_project/)
+- url: https://www.reddit.com/r/reactjs/comments/gy9q8y/suggest_me_an_idea_for_mern_stack_project/
 ---
-**De-note** is a minimal note taking app built with react and bootstrap. I used create-react-app as a base structure.
-
-I'm new to React and posting on Reddit and this is my first take at it while learning so it may  be a little crude in terms of coding standards.
-
-Please review and guide me where I can improve also what is the future safe learning path for react and related stuff?
-
-GITHUB - [https://github.com/icyi2i/De-note](https://github.com/icyi2i/De-note)
-
-DEMO - [https://icyi2i.github.io/De-note/](https://icyi2i.github.io/De-note/)
-
-https://reddit.com/link/gxd0nl/video/cl25kc3bn5351/player
-## [12][Using React, Redux and SSR to acommodate users without JavaScript](https://www.reddit.com/r/reactjs/comments/gxng98/using_react_redux_and_ssr_to_acommodate_users/)
-- url: https://blog.klungo.no/2020/05/28/using-react-and-redux-to-acommodate-users-without-javascript/
----
-
+Hello, I'm learning MERN Stack and looking forward to create project in it, but not getting ideas what to build. So please suggest me sole cool ideas..

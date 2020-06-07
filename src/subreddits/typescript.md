@@ -22,7 +22,193 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][My validation library written with type inference in mind](https://www.reddit.com/r/typescript/comments/gx6c8l/my_validation_library_written_with_type_inference/)
+## [2][Creating Your First React Typescript Project from Scratch](https://www.reddit.com/r/typescript/comments/gyauln/creating_your_first_react_typescript_project_from/)
+- url: https://www.youtube.com/watch?v=ODvirqIC09A&amp;list=PLITOO2g_PUHTtMcBFiDk3ITbOh6YR0nhV&amp;index=2&amp;t=0s
+---
+
+## [3][How do you type server responses and FE models? (+ examples of large real world apps?)](https://www.reddit.com/r/typescript/comments/gy6pxr/how_do_you_type_server_responses_and_fe_models/)
+- url: https://www.reddit.com/r/typescript/comments/gy6pxr/how_do_you_type_server_responses_and_fe_models/
+---
+Hi everyone!  
+I'm starting to implement TS in my company and i'm not sure how to go about typing server responses and front-end models.   
+
+
+For example, I have a server response for a Block resource:  
+`export interface IBlockResponse {`  
+ `_id: string;`  
+ `page_id: string;`  
+ `type: TBlockType;`  
+ `styles: IStyles;`  
+`}`  
+
+
+Inside my api service i do a transformation that adds a parent\_id field to each block. So now I also have a:  
+`export interface ITransformedBlockResponse`  
+ `extends IBlockResponse {`  
+ `parent_id: string;`  
+`}`  
+
+
+I then create JS class instances out of these responses, and these classes have some computed fields and might not include all fields from the server response.  
+So now I have a third representation of basically the same data. I'm wondering if there's a more canonical way of typing these interfaces between server and client representations of the same data.  
+Also wondering if creating a new interface for the transformed data is necessary?  
+
+
+**P.S** \- If anyone has some examples of some open-source real world apps that have this type of behaviour I'd be very happy to  see them!  
+
+
+Thanks!  
+Uri
+## [4][typecheck.macro - A library/macro for automatically generating validation functions from Typescript types now supports intersection types, circular references/recursive types, detailed error messages, type analysis, maps, sets, and more!](https://www.reddit.com/r/typescript/comments/gxsret/typecheckmacro_a_librarymacro_for_automatically/)
+- url: https://www.reddit.com/r/typescript/comments/gxsret/typecheckmacro_a_librarymacro_for_automatically/
+---
+A while back, I made[ this post](https://www.reddit.com/r/typescript/comments/ges5r9/auto_generate_typechecker_from_typescript_types/) asking whether it was automatically possible to generate validation functions for Typescript types. It seems like this is not the case. Libraries like ajv, io-ts, zod, and runtypes exist, but none of them are truly automatic (and there are other issues as well).
+
+About 3 weeks ago, I[ released](https://www.reddit.com/r/typescript/comments/glyq1m/typecheckmacro_automatically_generate_validation/)[ typecheck.macro](https://github.com/vedantroy/typecheck.macro), a compile macro/library for automatically generating validation functions for Typescript types. I've been working on it non-stop since then, and I've added a bunch more features.
+
+The macro supports a fairly large portion of the Typescript type system, so you can automatically generate a validator for most Typescript types. (Look at the README/the bottom of this post for a full list of supported features).
+
+So why use this library/macro? A few reasons:
+
+\- It's seamless. You don't need to define your types in a DSL. Just use... Typescript! The macro automatically parses your type declarations and generates validation functions. This removes a lot of mental overhead and makes the overall process way easier since you don't need to worry about issues like,[ io-ts](https://github.com/gcanti/io-ts/issues/477) or[ runtypes](https://github.com/pelotom/runtypes/issues/147) not supporting rest types. (Note: These libraries are also super cool, all comparisons are friendly!)
+
+\- It's really really really fast. I did some benchmarking in the original post and some more benchmarking for this post. It turns out when you generate "boolean validators" (validators that only return true/false) this library is consistently 2x - 3x faster than ajv, which is the fastest JSON schema validation library. When you enable error messages, this library is still generally faster than ajv, **and** it gives waayyy better error messages.
+
+The reason this macro is fast is because it generates optimized code at compile time whereas other libraries don't generate code. (ajv does generate code, but it 1. only does this at runtime 2. can't handle circular references and 3. this library tends to generate less/faster code).
+
+Here's an example of an error message for the following type with this library:[ ](https://pastebin.com/SiibGU2w)
+
+`| number`
+
+`| {`
+
+`a?: [`
+
+`number | { a: [number, Array&lt;number | string&gt;] },`
+
+`number,`
+
+`...string[]`
+
+`];`
+
+`b: "bar" | false | 42;`
+
+`c: Array&lt;Array&lt;number | boolean | "bar" | "zar"&gt;&gt;;`
+
+`}`
+
+Error message (first entry is path, 2nd is actual value, 3rd is expected value): [https://pastebin.com/SiibGU2w](https://pastebin.com/SiibGU2w)
+
+Here's ajv's equivalent of the same error message: "data should be number, data should be object, data should match some schema in anyOf".
+
+Supported Typescript constructs:
+
+\- interfaces/object literals (no extends, but all the other goodies are there, such as index signatures and optional properties)
+
+\- intersection types
+
+\- union types
+
+\- generics
+
+\- literals
+
+\- arrays/maps/sets
+
+\- tuples
+
+\- type aliases
+
+\- circular types/circular references
+## [5][TypeError: Cannot assign to read only property 'isNew' of object '#&lt;Session&gt;](https://www.reddit.com/r/typescript/comments/gxucpp/typeerror_cannot_assign_to_read_only_property/)
+- url: https://www.reddit.com/r/typescript/comments/gxucpp/typeerror_cannot_assign_to_read_only_property/
+---
+
+	static createSession(admin:AdminDocument) : CookieSessionInterfaces.CookieSessionObject {
+			const adminToken = jwt.sign({
+				id: admin.id,
+				email: admin.email
+			}, process.env.JWT_KEY!);
+
+			const sessionObject = {
+				isChanged: false,
+				isNew: true,
+				isPopulated: true,
+				jwt: adminToken
+			};
+			return sessionObject;
+	}
+
+Ok, so I tried to create a sessionObject with just jwt, but it wouldn't let me, because it said I needed isNew, isChanged and isPopulated as properties of the session object, but now I get another error and it seems to tell me to not add isNew, so what do you need to do? Typescript is telling me to do two opposite things.
+
+	 TypeError: Cannot assign to read only property 'isNew' of object '#&lt;Session&gt;
+
+How do we avoid the above error?
+## [6][Getting error for types that I have installed but dont use when I tsc .](https://www.reddit.com/r/typescript/comments/gxsafu/getting_error_for_types_that_i_have_installed_but/)
+- url: https://www.reddit.com/r/typescript/comments/gxsafu/getting_error_for_types_that_i_have_installed_but/
+---
+Steps to reproduce :
+
+create a folder and in it execute :
+
+    npm init -y;
+    npm install --save-dev typescript;
+    npm install @types/jest-environment-puppeteer;
+
+create file `./tsconfig.json` that has content :
+
+    {
+    	"compilerOptions": {
+    		"module": "commonjs",
+    		"outDir": "./dist",
+    		"rootDir": "./src",
+    		"target": "ESNext",
+    		"declaration": true
+    	},
+    	"include": [
+    		"./src"
+    	],
+    	"exclude": [
+    		"node_modules"
+    	]
+    }
+
+create file `./src/index.ts` that has content :
+
+    const a = 3;
+
+Run `npx tsc` and look at the errors you get :
+
+    node_modules/@jest/environment/build/index.d.ts:8:23 - error TS2688: Cannot find type definition file for 'jest'.
+    
+    8 /// &lt;reference types="jest" /&gt;
+                            ~~~~
+    
+    node_modules/@jest/environment/build/index.d.ts:11:8 - error TS1259: Module '"~/Desktop/test_jest_types_bug_with_tsc/node_modules/jest-mock/build/index"' can only be default-imported using the 'esModuleInterop' flag
+    
+    11 import jestMock, { ModuleMocker } from 'jest-mock';
+              ~~~~~~~~
+    
+      node_modules/jest-mock/build/index.d.ts:133:1
+        133 export = JestMock;
+            ~~~~~~~~~~~~~~~~~~
+        This module is declared with using 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+    
+    node_modules/@jest/source-map/build/getCallsite.d.ts:8:100 - error TS2503: Cannot find namespace 'callsites'.
+    
+    8 declare const _default: (level: number, sourceMaps?: Record&lt;string, string&gt; | null | undefined) =&gt; callsites.CallSite;
+                                                                                                         ~~~~~~~~~
+    
+    
+    Found 3 errors.
+
+Why am I getting errors for types that I have installed and dont use ?
+## [7][[CheckPoint] VSCode extension for easy file state tracking. No more hammering the undo button to recover snippets. More info in the comments.](https://www.reddit.com/r/typescript/comments/gxw9e9/checkpoint_vscode_extension_for_easy_file_state/)
+- url: https://www.github.com/BurntBanana/CheckPoint
+---
+
+## [8][My validation library written with type inference in mind](https://www.reddit.com/r/typescript/comments/gx6c8l/my_validation_library_written_with_type_inference/)
 - url: https://www.reddit.com/r/typescript/comments/gx6c8l/my_validation_library_written_with_type_inference/
 ---
 Hi all!
@@ -40,7 +226,7 @@ I know there are many user input validating libraries, but I did not found one w
 NPM: [https://www.npmjs.com/package/treat-like](https://www.npmjs.com/package/treat-like)
 
 GitHub: [https://github.com/atomAltera/treat-like](https://github.com/atomAltera/treat-like)
-## [3][Looking for something more advanced? Learn Data Structures and Algorithms in Typescript](https://www.reddit.com/r/typescript/comments/gx67lc/looking_for_something_more_advanced_learn_data/)
+## [9][Looking for something more advanced? Learn Data Structures and Algorithms in Typescript](https://www.reddit.com/r/typescript/comments/gx67lc/looking_for_something_more_advanced_learn_data/)
 - url: https://www.reddit.com/r/typescript/comments/gx67lc/looking_for_something_more_advanced_learn_data/
 ---
 https://github.com/jeffzh4ng/dsa-ts
@@ -72,24 +258,30 @@ The repository and series is just getting started! The plan is to go over all cl
 And algorithms: sorting, searching, backtracking, dynamic, greedy, graph theory, minimum spanning trees, and more.
 
 Videos and code here: https://github.com/jeffzh4ng/dsa-ts
-## [4][How to indicate error status in a return value.](https://www.reddit.com/r/typescript/comments/gxcrh5/how_to_indicate_error_status_in_a_return_value/)
-- url: https://www.reddit.com/r/typescript/comments/gxcrh5/how_to_indicate_error_status_in_a_return_value/
+## [10][Trying to reset a key value pair in an object where the value is a type to a string](https://www.reddit.com/r/typescript/comments/gxdqin/trying_to_reset_a_key_value_pair_in_an_object/)
+- url: https://www.reddit.com/r/typescript/comments/gxdqin/trying_to_reset_a_key_value_pair_in_an_object/
 ---
-I am learning typescript, and I don't really have a mentor. I am struggling with a lot of new concepts. 
+Sorry if the title is confusing, but I have a set of classes that look like this.
 
-I have a module that exports a function that returns a result. I want to indicate in the return value if there was an error, and provide feedback to be relayed to the user.
+    export class Account {
+    	id = "";
+    	name? = "";
+    }
+    
+    export class Service {
+    	id = "";
+    	name? = "";
+    }
+    
+    export class LineItem {
+    	account: Account = new Account();
+    	service: Service = new Service();
+    	type = "";
+    	amount = 0;
+    }
 
-Is this a good way to implement this?
-
-`type ProcessResult = { error: false; results: number[] } | { error: true; message: string };`  
-
-
-`export function processFile(filePath: string): ProcessResult {`      
-`// process the file, and produce the result, or return a descriptive error message`  
-`}`
-
-My gut instinct is it's better to check a boolean in the return value, than check typeof the return value. But maybe that's not the best way to do it. Also, that may be because I'm coming from Python, where checking the type of anything is considered bad form.
-## [5][Use types or interfaces to constrain generics?](https://www.reddit.com/r/typescript/comments/gxertm/use_types_or_interfaces_to_constrain_generics/)
+I populate LineItem and need to send it to my API. Now my issue is that my API needs `account` and `service` to be strings (the id of the type), not a type. But my state management needs to store these as types (using Vuejs &amp; Vuex). My thought process here is to store/commit the objects with the types to the state, and then right before I send this value to API, set `account` and `service` to be the value of the `id`. instead of the objects.. Any thoughts? I can try explaining a little better if needed too
+## [11][Use types or interfaces to constrain generics?](https://www.reddit.com/r/typescript/comments/gxertm/use_types_or_interfaces_to_constrain_generics/)
 - url: https://www.reddit.com/r/typescript/comments/gxertm/use_types_or_interfaces_to_constrain_generics/
 ---
 I thought interfaces should be limited to class implementations. However:
@@ -117,175 +309,3 @@ I checked this code and it also compiles.
     }
 
 Can you guys tell me which you would prefer? I would think the type definition should almost always be preferred unless the generic is being used to create a class factory.
-## [6][Accessing an item in an Object that is possibly null](https://www.reddit.com/r/typescript/comments/gxbeea/accessing_an_item_in_an_object_that_is_possibly/)
-- url: https://www.reddit.com/r/typescript/comments/gxbeea/accessing_an_item_in_an_object_that_is_possibly/
----
-Hi, i'm currently testing out firebase and its Google Authentication ..  
-
-
-I'm using firebase and firebaseui in the dependencies.
-
-&amp;#x200B;
-
-in my App.tsx i have my authenticated state that is set via onAuthStateChanged(() =&gt; {....} in useEffect
-
-That state i pass down to the child component AuthScreen. In the AuthScreen i want to display the username from firebase with firebase.auth().currentUser.displayName .. but heres the problem.. typescript complains that currentUser is possibly null so i cant access displayName. And i thought i can check this with firebase.auth().currentuser?.displayName or at lease with if(....currentUser !== null) .. but both doesn' work.. does someone has any idea? I would appreciate! 
-
-&amp;#x200B;
-
-Here is some code example from my project: 
-
-`function App() {`  
- `const [authenticated, setAuthenticated] = useState&lt;boolean&gt;(false);`  
- `const handleLogout = () =&gt; {`  
- `firebase.auth().signOut();`  
-  `};`  
- `useEffect(() =&gt; {`  
- `firebase.auth().onAuthStateChanged(user =&gt; {`  
- `setAuthenticated(!!user);`  
-`});`  
-  `}, []);`  
- `return (`  
- `&lt;AppContextProvider value={{ authenticated: !authenticated }}&gt;`  
- `&lt;Styled.LoginBody&gt;`  
- `&lt;Suspense fallback={&lt;div&gt;Loading...&lt;/div&gt;}&gt;`  
- `&lt;AuthScreenComponent`  
- `authenticated={authenticated}`  
- `handleLogout={handleLogout}`  
- `/&gt;`  
- `&lt;/Suspense&gt;`  
- `&lt;/Styled.LoginBody&gt;`  
- `&lt;/AppContextProvider&gt;`  
-  `);`  
-`}`
-
-&amp;#x200B;
-
-`interface IProps {`  
- `authenticated: boolean;`  
- `handleLogout: () =&gt; void;`  
-`}`  
-`function AuthScreen(props: IProps) {`  
- `const context = useContext(AppContext);`  
- `const uiConfig = {`  
- `signInFlow: 'popup',`  
- `signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID],`  
- `callbacks: {`  
- `// Avoid redirects after sign-in.`  
- `signInSuccessWithAuthResult: () =&gt; false`  
-`}`  
-  `};`  
- `return (`  
- `&lt;Styled.LoginForm&gt;`  
- `&lt;&gt;`  
- `{props.authenticated ? (`  
- `&lt;&gt;`  
- `&lt;h1&gt;`  
-`Welcome{' '}`  
- `{console.log(`  
- `firebase.auth().currentUser !== null`  
-`? firebase.auth().currentUser.displayName`  
-`: console.log('user null')`  
-`)}`  
- `&lt;/h1&gt;`  
- `&lt;button onClick={props.handleLogout}&gt;Logout&lt;/button&gt;`  
- `&lt;/&gt;`  
-`) : (`  
- `&lt;StyledFirebaseAuth`  
- `uiConfig={uiConfig}`  
- `firebaseAuth={firebase.auth()}`  
- `/&gt;`  
-`)}`  
- `&lt;/&gt;`  
- `&lt;/Styled.LoginForm&gt;`  
-  `);`  
-`}`
-
-&amp;#x200B;
-
-https://preview.redd.it/tj1zijfe95351.png?width=1080&amp;format=png&amp;auto=webp&amp;s=3e9e669bc23511b076fca9fa8d9ff6455e388c1c
-## [7][Trying to reset a key value pair in an object where the value is a type to a string](https://www.reddit.com/r/typescript/comments/gxdqin/trying_to_reset_a_key_value_pair_in_an_object/)
-- url: https://www.reddit.com/r/typescript/comments/gxdqin/trying_to_reset_a_key_value_pair_in_an_object/
----
-Sorry if the title is confusing, but I have a set of classes that look like this.
-
-    export class Account {
-    	id = "";
-    	name? = "";
-    }
-    
-    export class Service {
-    	id = "";
-    	name? = "";
-    }
-    
-    export class LineItem {
-    	account: Account = new Account();
-    	service: Service = new Service();
-    	type = "";
-    	amount = 0;
-    }
-
-I populate LineItem and need to send it to my API. Now my issue is that my API needs `account` and `service` to be strings (the id of the type), not a type. But my state management needs to store these as types (using Vuejs &amp; Vuex). My thought process here is to store/commit the objects with the types to the state, and then right before I send this value to API, set `account` and `service` to be the value of the `id`. instead of the objects.. Any thoughts? I can try explaining a little better if needed too
-## [8][Good typescript function programming library](https://www.reddit.com/r/typescript/comments/gwvw9q/good_typescript_function_programming_library/)
-- url: https://www.reddit.com/r/typescript/comments/gwvw9q/good_typescript_function_programming_library/
----
-Hello, I'm finding a good functional programming library for typescript, currently I found [purify](https://gigobyte.github.io/purify) and [fp-ts](https://gcanti.github.io/fp-ts) and wondering which one I should learn or are there any other libraries that worth looking at. Oh and I'm just finding a library to learn functional programming, not working on any projects. Thank you.
-## [9][Getting to a maintainable + enjoying code architecture](https://www.reddit.com/r/typescript/comments/gx6xeo/getting_to_a_maintainable_enjoying_code/)
-- url: https://www.reddit.com/r/typescript/comments/gx6xeo/getting_to_a_maintainable_enjoying_code/
----
-Learned today from `type-graphql`'s maintainer [https://github.com/MichalLytek/type-graphql/issues/646#issuecomment-639537771](https://github.com/MichalLytek/type-graphql/issues/646#issuecomment-639537771) how a flexible reference architecture for typical GraphQL/CRUD apps could look like. Feedback/improvements are welcome!
-
-https://preview.redd.it/u6uw2tf434351.png?width=1248&amp;format=png&amp;auto=webp&amp;s=eb18091c549398fd5dfb9825660322e67f7dd270
-## [10][Is it possible to use path alias for a multi-repo project?](https://www.reddit.com/r/typescript/comments/gx4xmc/is_it_possible_to_use_path_alias_for_a_multirepo/)
-- url: https://www.reddit.com/r/typescript/comments/gx4xmc/is_it_possible_to_use_path_alias_for_a_multirepo/
----
-So, I'll try to explain the scenario the best I possibly can, and the reason why I'm here.
-
-We will launch a new site pretty soon, we have an old legacy site that we're replacing completely with never technologies, etc.
-
-My first idea was to create a Lerna mono-repo using yarn workspaces, but that didn't work out because Nuxt doesn't work that well with Yarn Workspaces (which we needed).
-
-So I ditched that idéa and instead went with multiple repositories, basically migrated package/folder into its own repo.
-
-So, now we have 3 different repositories:  
-\* SCL - Component lib (Shared Vue components)  
-\* App-A (Nuxt app)  
-\* App-B (Vue app)
-
-The SCL repo takes advantage of the path alias feature of TS, so the imports are readable, something like the following:
-
-    {
-       "paths": {
-          "@/*": ["./src/*"]
-       }
-    }
-
-Meaning I can reference components like the following inside the project.  
-`import MyComponent from '@/components/MyComponent.vue'`  
-
-
-The issue now is that I thought I could get away without building and publish this repo each time I make changes since all the packages depending on this shared package are also using TypeScript...  
-
-
-So, when I reference a component from the shared library inside my other "app projects"
-
-    import { MyComponent } from '@org/scl'
-
-I get the following error because it's defined in the SCL repo.
-
-    These dependencies were not found:
-    @/components/SubFolder/AnotherComponent.vue
-
-It's pretty obvious because the tsconfig.json inside the App-A repo doesn't know about the path aliases inside the SCL-repo.
-
-Is there a pretty way to go around this, or is the best to make sure to build/transpile the TS to JS and always work against the output?
-
-Let me know if I need to clarify something.
-
-Br,  
-Hopeless dude
-## [11][Build Mobile Cross Platform Volunteer Delivery App in React Native](https://www.reddit.com/r/typescript/comments/gx6wyv/build_mobile_cross_platform_volunteer_delivery/)
-- url: https://www.reddit.com/r/typescript/comments/gx6wyv/build_mobile_cross_platform_volunteer_delivery/
----
-[https://www.education-ecosystem.com/glenettn/2bOj9-how-to-create-volunteer-delivery-app/jYAEb-00-intro/](https://www.education-ecosystem.com/glenettn/2bOj9-how-to-create-volunteer-delivery-app/jYAEb-00-intro/)

@@ -22,11 +22,47 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Creating Your First React Typescript Project from Scratch](https://www.reddit.com/r/typescript/comments/gyauln/creating_your_first_react_typescript_project_from/)
+## [2][How should a variable initialized to empty object be assigned an interface before it is returned?](https://www.reddit.com/r/typescript/comments/gywrtm/how_should_a_variable_initialized_to_empty_object/)
+- url: https://www.reddit.com/r/typescript/comments/gywrtm/how_should_a_variable_initialized_to_empty_object/
+---
+    export default interface ConfigData {
+       languageCode : string
+       , numberOfRepeats : number
+    }
+
+Probably a basic thing for you guys to sort out. I'm thinking on initialization, allow TS to infer variable type, then enforce the interface as return type:
+
+       run() {
+          // data to be returned at end
+          const configData = {};
+    
+          this.steps.forEach(async (configStep: WizardSteps): ConfigData =&gt; {
+             // capture answer
+             const rawUserResponse: string|void = await configStep.explain();
+    
+             if (configStep.needsValidation) {
+                // loops until validated
+                const validatedInput: string = configStep.validatedInput(rawUserResponse);
+                
+                if (configStep.hasSaveableData) { 
+                   // convert to k/v pair
+                   const formattedForConfiguration = configStep.format(rawUserResponse);
+    
+                   // save to local object
+                   Object.assign(configData, formattedForConfiguration);
+                }
+             }
+          })
+    
+          return configData;
+       }
+
+Is this the proper pattern? If not, how should an interface enforce types on something that is initially set to one value and then mutated?
+## [3][Creating Your First React Typescript Project from Scratch](https://www.reddit.com/r/typescript/comments/gyauln/creating_your_first_react_typescript_project_from/)
 - url: https://www.youtube.com/watch?v=ODvirqIC09A&amp;list=PLITOO2g_PUHTtMcBFiDk3ITbOh6YR0nhV&amp;index=2&amp;t=0s
 ---
 
-## [3][How do you type server responses and FE models? (+ examples of large real world apps?)](https://www.reddit.com/r/typescript/comments/gy6pxr/how_do_you_type_server_responses_and_fe_models/)
+## [4][How do you type server responses and FE models? (+ examples of large real world apps?)](https://www.reddit.com/r/typescript/comments/gy6pxr/how_do_you_type_server_responses_and_fe_models/)
 - url: https://www.reddit.com/r/typescript/comments/gy6pxr/how_do_you_type_server_responses_and_fe_models/
 ---
 Hi everyone!  
@@ -59,7 +95,7 @@ Also wondering if creating a new interface for the transformed data is necessary
 
 Thanks!  
 Uri
-## [4][typecheck.macro - A library/macro for automatically generating validation functions from Typescript types now supports intersection types, circular references/recursive types, detailed error messages, type analysis, maps, sets, and more!](https://www.reddit.com/r/typescript/comments/gxsret/typecheckmacro_a_librarymacro_for_automatically/)
+## [5][typecheck.macro - A library/macro for automatically generating validation functions from Typescript types now supports intersection types, circular references/recursive types, detailed error messages, type analysis, maps, sets, and more!](https://www.reddit.com/r/typescript/comments/gxsret/typecheckmacro_a_librarymacro_for_automatically/)
 - url: https://www.reddit.com/r/typescript/comments/gxsret/typecheckmacro_a_librarymacro_for_automatically/
 ---
 A while back, I made[ this post](https://www.reddit.com/r/typescript/comments/ges5r9/auto_generate_typechecker_from_typescript_types/) asking whether it was automatically possible to generate validation functions for Typescript types. It seems like this is not the case. Libraries like ajv, io-ts, zod, and runtypes exist, but none of them are truly automatic (and there are other issues as well).
@@ -121,7 +157,7 @@ Supported Typescript constructs:
 \- type aliases
 
 \- circular types/circular references
-## [5][TypeError: Cannot assign to read only property 'isNew' of object '#&lt;Session&gt;](https://www.reddit.com/r/typescript/comments/gxucpp/typeerror_cannot_assign_to_read_only_property/)
+## [6][TypeError: Cannot assign to read only property 'isNew' of object '#&lt;Session&gt;](https://www.reddit.com/r/typescript/comments/gxucpp/typeerror_cannot_assign_to_read_only_property/)
 - url: https://www.reddit.com/r/typescript/comments/gxucpp/typeerror_cannot_assign_to_read_only_property/
 ---
 
@@ -145,7 +181,7 @@ Ok, so I tried to create a sessionObject with just jwt, but it wouldn't let me, 
 	 TypeError: Cannot assign to read only property 'isNew' of object '#&lt;Session&gt;
 
 How do we avoid the above error?
-## [6][Getting error for types that I have installed but dont use when I tsc .](https://www.reddit.com/r/typescript/comments/gxsafu/getting_error_for_types_that_i_have_installed_but/)
+## [7][Getting error for types that I have installed but dont use when I tsc .](https://www.reddit.com/r/typescript/comments/gxsafu/getting_error_for_types_that_i_have_installed_but/)
 - url: https://www.reddit.com/r/typescript/comments/gxsafu/getting_error_for_types_that_i_have_installed_but/
 ---
 Steps to reproduce :
@@ -204,11 +240,11 @@ Run `npx tsc` and look at the errors you get :
     Found 3 errors.
 
 Why am I getting errors for types that I have installed and dont use ?
-## [7][[CheckPoint] VSCode extension for easy file state tracking. No more hammering the undo button to recover snippets. More info in the comments.](https://www.reddit.com/r/typescript/comments/gxw9e9/checkpoint_vscode_extension_for_easy_file_state/)
+## [8][[CheckPoint] VSCode extension for easy file state tracking. No more hammering the undo button to recover snippets. More info in the comments.](https://www.reddit.com/r/typescript/comments/gxw9e9/checkpoint_vscode_extension_for_easy_file_state/)
 - url: https://www.github.com/BurntBanana/CheckPoint
 ---
 
-## [8][My validation library written with type inference in mind](https://www.reddit.com/r/typescript/comments/gx6c8l/my_validation_library_written_with_type_inference/)
+## [9][My validation library written with type inference in mind](https://www.reddit.com/r/typescript/comments/gx6c8l/my_validation_library_written_with_type_inference/)
 - url: https://www.reddit.com/r/typescript/comments/gx6c8l/my_validation_library_written_with_type_inference/
 ---
 Hi all!
@@ -226,7 +262,7 @@ I know there are many user input validating libraries, but I did not found one w
 NPM: [https://www.npmjs.com/package/treat-like](https://www.npmjs.com/package/treat-like)
 
 GitHub: [https://github.com/atomAltera/treat-like](https://github.com/atomAltera/treat-like)
-## [9][Looking for something more advanced? Learn Data Structures and Algorithms in Typescript](https://www.reddit.com/r/typescript/comments/gx67lc/looking_for_something_more_advanced_learn_data/)
+## [10][Looking for something more advanced? Learn Data Structures and Algorithms in Typescript](https://www.reddit.com/r/typescript/comments/gx67lc/looking_for_something_more_advanced_learn_data/)
 - url: https://www.reddit.com/r/typescript/comments/gx67lc/looking_for_something_more_advanced_learn_data/
 ---
 https://github.com/jeffzh4ng/dsa-ts
@@ -258,29 +294,6 @@ The repository and series is just getting started! The plan is to go over all cl
 And algorithms: sorting, searching, backtracking, dynamic, greedy, graph theory, minimum spanning trees, and more.
 
 Videos and code here: https://github.com/jeffzh4ng/dsa-ts
-## [10][Trying to reset a key value pair in an object where the value is a type to a string](https://www.reddit.com/r/typescript/comments/gxdqin/trying_to_reset_a_key_value_pair_in_an_object/)
-- url: https://www.reddit.com/r/typescript/comments/gxdqin/trying_to_reset_a_key_value_pair_in_an_object/
----
-Sorry if the title is confusing, but I have a set of classes that look like this.
-
-    export class Account {
-    	id = "";
-    	name? = "";
-    }
-    
-    export class Service {
-    	id = "";
-    	name? = "";
-    }
-    
-    export class LineItem {
-    	account: Account = new Account();
-    	service: Service = new Service();
-    	type = "";
-    	amount = 0;
-    }
-
-I populate LineItem and need to send it to my API. Now my issue is that my API needs `account` and `service` to be strings (the id of the type), not a type. But my state management needs to store these as types (using Vuejs &amp; Vuex). My thought process here is to store/commit the objects with the types to the state, and then right before I send this value to API, set `account` and `service` to be the value of the `id`. instead of the objects.. Any thoughts? I can try explaining a little better if needed too
 ## [11][Use types or interfaces to constrain generics?](https://www.reddit.com/r/typescript/comments/gxertm/use_types_or_interfaces_to_constrain_generics/)
 - url: https://www.reddit.com/r/typescript/comments/gxertm/use_types_or_interfaces_to_constrain_generics/
 ---

@@ -1,6 +1,6 @@
 # rust
-## [1][Hey Rustaceans! Got an easy question? Ask here (23/2020)!](https://www.reddit.com/r/rust/comments/guo4c1/hey_rustaceans_got_an_easy_question_ask_here/)
-- url: https://www.reddit.com/r/rust/comments/guo4c1/hey_rustaceans_got_an_easy_question_ask_here/
+## [1][Hey Rustaceans! Got an easy question? Ask here (24/2020)!](https://www.reddit.com/r/rust/comments/gyswpo/hey_rustaceans_got_an_easy_question_ask_here/)
+- url: https://www.reddit.com/r/rust/comments/gyswpo/hey_rustaceans_got_an_easy_question_ask_here/
 ---
 Mystified about strings? Borrow checker have you in a headlock? Seek help here! There are no stupid questions, only docs that haven't been written yet.
 
@@ -16,83 +16,83 @@ The official Rust Programming Language Discord: [https://discord.gg/rust-lang](h
 
 The unofficial Rust community Discord: [https://bit.ly/rust-community](https://bit.ly/rust-community)
 
-Also check out [last week's thread](https://reddit.com/r/rust/comments/gr3r32/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
+Also check out [last week's thread](https://reddit.com/r/rust/comments/guo4c1/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][This Week in Rust 341](https://www.reddit.com/r/rust/comments/gvwvep/this_week_in_rust_341/)
-- url: https://this-week-in-rust.org/blog/2020/06/02/this-week-in-rust-341/
+## [2][What's everyone working on this week (24/2020)?](https://www.reddit.com/r/rust/comments/gysxgq/whats_everyone_working_on_this_week_242020/)
+- url: https://www.reddit.com/r/rust/comments/gysxgq/whats_everyone_working_on_this_week_242020/
 ---
-
-## [3][Getting started with Rust/WinRT](https://www.reddit.com/r/rust/comments/gy372x/getting_started_with_rustwinrt/)
-- url: https://kennykerr.ca/2020/06/05/getting-started-with-rust-winrt/
+New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-24-2020/43988?u=llogiq)!
+## [3][Are many companies using Rust outside of the US?](https://www.reddit.com/r/rust/comments/gyw3f5/are_many_companies_using_rust_outside_of_the_us/)
+- url: https://www.reddit.com/r/rust/comments/gyw3f5/are_many_companies_using_rust_outside_of_the_us/
 ---
+I live in Australia and haven't really seen any companies that mention they are using Rust in their products. 
 
-## [4][Animal Fight Chess Game written in rust.](https://www.reddit.com/r/rust/comments/gy7ct1/animal_fight_chess_game_written_in_rust/)
-- url: https://www.reddit.com/r/rust/comments/gy7ct1/animal_fight_chess_game_written_in_rust/
+From what I can tell, the vast majority of Rust jobs are based in the US (San Francisco, New York, etc.). Do you know of any companies outside of America that employ Rust programmers?
+## [4][Absolute addresses in position-independent code (PIC)](https://www.reddit.com/r/rust/comments/gyrmam/absolute_addresses_in_positionindependent_code_pic/)
+- url: https://www.reddit.com/r/rust/comments/gyrmam/absolute_addresses_in_positionindependent_code_pic/
 ---
-Here is my first  proj: [https://github.com/netcan/AnimalChess](https://github.com/netcan/AnimalChess)
-## [5][First project, written in rust](https://www.reddit.com/r/rust/comments/gxqozw/first_project_written_in_rust/)
-- url: https://i.redd.it/393ziqodfa351.gif
----
+Cross-posted to [StackOverflow](https://stackoverflow.com/questions/62254811/absolute-addresses-in-position-independent-code-pic) .
 
-## [6][Why Rust should be preferred for web assembly?](https://www.reddit.com/r/rust/comments/gyabs4/why_rust_should_be_preferred_for_web_assembly/)
-- url: https://www.reddit.com/r/rust/comments/gyabs4/why_rust_should_be_preferred_for_web_assembly/
----
+I am trying to build and link a single image to load as an OS kernel (ie. in QEMU) targeting aarch64-unknown-none-softfloat. I use a custom linker.ld file which sets the entry point for the kernel `ENTRY(_reset)` and positions the image
 
-## [7][I finally published cargo-fuzzcheck, a structure-aware fuzzing engine for Rust functions. How to move forward?](https://www.reddit.com/r/rust/comments/gxu0q7/i_finally_published_cargofuzzcheck_a/)
-- url: https://www.reddit.com/r/rust/comments/gxu0q7/i_finally_published_cargofuzzcheck_a/
----
-Hi everyone,
+`. = 0x40080000`
 
-9 months ago I [posted](https://old.reddit.com/r/rust/comments/d02gxk/fuzzcheck_an_evolutionary_coverageguided_fuzzing/) here about my first Rust project, [fuzzcheck](https://github.com/loiclec/fuzzcheck-rs). For those who don’t know it, it is similar to cargo-fuzz, except that the fuzzing engine itself is fully written in Rust and that it is truly structure-aware. That means that it can fuzz-test values of any type T directly, without having to copy, mutate, and then decode a byte array using the “Arbitrary” trait. I can explain why that is preferable in the comments if someone is interested in the details.
+where the program counter (PC) is on reset.
 
-Anyway, since then, fuzzcheck has considerably improved. It is much faster, easier to understand, and faster to compile. So  I [published](https://crates.io/crates/fuzzcheck) it on crates.io! I started this project more than 2 years ago, [initially writing it in Swift](https://github.com/loiclec/FuzzCheck). Looking back, I am really proud that I was able keep slowly working on it, and proud of how much it has improved. But I know it’s nowhere near as good as it should be.
+It works ok until I map the pages at 0x40080000 to high memory where the kernel will reside and enable virtual memory translation. To ensure the debugging information meshes after the switch, I change the nominal image position to
 
-Now that it is the end of the academic year and that my summer course has been canceled due to COVID-19, I will have about two/three months where I can spend some time every week working on it. It is a bit of a critical period, because after more than two years, I am running out of motivation to work alone on this, so I would really love this summer to be the time that fuzzcheck is finally used by someone else! Which is why I’d like to ask you for a little bit of help in making fuzzcheck a reality.
+`. = 0xffffff8200000000`
 
-* Is the README.md of the project clear, does it convey the purpose of the tool clearly? If not, what is confusing? What kind of explanation/example would you like to see?
-* Do you have a (small) project that could benefit from fuzzing? If so, would you like to work together to test fuzzcheck on it? If not, why wouldn’t fuzzing be applicable to your project?
-* Do you think I could realistically be sponsored to write fuzzcheck? If so, what steps should I take to receive funding?
-* Do you have some free time to contribute to fuzzcheck directly? If so, please contact me! I can explain the design in more details, and then you can choose to work on one of the many tasks that could make fuzzcheck more viable.
+and rebuild.
 
-Or simply try to run it on your computer, and report to me if something went wrong :)
+I have discovered that access:
 
-Thank you so much for your time!
-## [8][capnproto-rust now supports [no_std]](https://www.reddit.com/r/rust/comments/gxsfb9/capnprotorust_now_supports_no_std/)
-- url: https://dwrensha.github.io/capnproto-rust/2020/06/06/no-std-support.html
----
+* to some (pub extern) statics, and
+* by certain core library functions
 
-## [9][Zero To Production #1: Setup - Toolchain, IDEs, CI](https://www.reddit.com/r/rust/comments/gxqr2l/zero_to_production_1_setup_toolchain_ides_ci/)
-- url: https://www.lpalmieri.com/posts/2020-06-06-zero-to-production-1-setup-toolchain-ides-ci/
----
+is by reading the absolute address from somewhere in `.rodata`. This breaks the code when it is running before mapping. And if I change it back it will break the code when I run it after mapping.
 
-## [10][Reddit images downloader in Rust](https://www.reddit.com/r/rust/comments/gy0a21/reddit_images_downloader_in_rust/)
-- url: https://www.reddit.com/r/rust/comments/gy0a21/reddit_images_downloader_in_rust/
----
-Hi everyone!
+The code it is generating looks a bit like this at O1 (indirect through PC-relative page):
 
-Check out, my program that uses Rust async/await features to concurently download images from Reddit, here is the repo [https://github.com/risboo6909/reddit-dl](https://github.com/risboo6909/reddit-dl)
+    adrp  x0, 0x10000 // page offset from PC up to rodata
+    add   x0, 0x120   // byte offset from page in rodata
+    ldr   x0, [x0]    // use as address
 
-Initially I was inspired by this [post](https://www.reddit.com/r/golang/comments/gn74r2/i_built_a_reddit_image_downloader_in_go_this_is/) whose author had written the same downloader in Go. 
+What I need is truly position independent code across code and data so that it works at *both* locations in memory without referring to any stored absolute addresses, even if those addresses are available relative to PC.
 
-I'm not a professional Rust developer (however I would like to be) but I use Rust for my pet projects when I have free time, so I strongly decided that Rust must have the same downloader (:
-
-This is actually my first serious experience with async/await and tokio and I'm sure my code is far away from ideal, therefor I would be really appreciated to hear any opinion about the code and the tool itself.
+I've tried the other relocation-models including Pic and RopiRwpi but I can't see it generating different code.
 
 Thanks!
-## [11][Which framework/library would you recommend if I like Django?](https://www.reddit.com/r/rust/comments/gxzy1j/which_frameworklibrary_would_you_recommend_if_i/)
-- url: https://www.reddit.com/r/rust/comments/gxzy1j/which_frameworklibrary_would_you_recommend_if_i/
+## [5][Announcing fluent-templates: Easily Add Fluent Localisation To Your Rust Projects.](https://www.reddit.com/r/rust/comments/gyxl2g/announcing_fluenttemplates_easily_add_fluent/)
+- url: https://github.com/XAMPPRocky/fluent-templates
 ---
-Hey,
 
-obviously I still use Django for some projects, but I am currently checking out Rust and I really like it. I prefer Django, because it has many useful things built-in (admin, ORM, templating, user-system, migration, etc.), and has terrific documentation.
+## [6][What is the state of rust on the ESP8266?](https://www.reddit.com/r/rust/comments/gyxbkv/what_is_the_state_of_rust_on_the_esp8266/)
+- url: https://www.reddit.com/r/rust/comments/gyxbkv/what_is_the_state_of_rust_on_the_esp8266/
+---
+There are a few older posts about this but there is a bunch of activity in the area since then and it looks like its at least possible to blink leds now. Has anyone tried to use rust here? What is it like? Are we at the point of being able to connect to wifi and make a http request?
+## [7][GTK and Rust](https://www.reddit.com/r/rust/comments/gytgw8/gtk_and_rust/)
+- url: https://www.reddit.com/r/rust/comments/gytgw8/gtk_and_rust/
+---
+I saw on the oficial GTK page on language bindings the support of Rust, but is developed for other people, not directly by Gnome, so this library port are developed by gnome too and have a really interest of moving forward or is only a honorable mention like alternative for rust language?
+## [8][A Quick (and good) View of Iterators in Rust!](https://www.reddit.com/r/rust/comments/gyryth/a_quick_and_good_view_of_iterators_in_rust/)
+- url: https://youtu.be/HZftwxCIXqE
+---
 
-That does not mean I need all this features (e.g. templating and the ORM are not that important), but it is nice to have them in the package and available.
+## [9][This Month in Rust OSDev (May 2020)](https://www.reddit.com/r/rust/comments/gyi9p0/this_month_in_rust_osdev_may_2020/)
+- url: https://rust-osdev.com/this-month/2020-05/
+---
 
-My research brought me mainly to Rocket and Actic-Web, but I am not sure which to choose (I will probably try out some of them anyway).
+## [10][This month in rustsim #11 (April - May 2020): cross-platform deterministic physics using nphysics with fixed-point numbers!](https://www.reddit.com/r/rust/comments/gyeaik/this_month_in_rustsim_11_april_may_2020/)
+- url: https://www.rustsim.org/blog/2020/06/01/this-month-in-rustsim/
+---
 
-Cheers and thx for the discussion.
-## [12][What's Functional Programming All About?](https://www.reddit.com/r/rust/comments/gxw1sk/whats_functional_programming_all_about/)
-- url: https://www.lihaoyi.com/post/WhatsFunctionalProgrammingAllAbout.html
+## [11][[Ann] gemini a crate to make sync and async apis while letting your users choose what they want](https://www.reddit.com/r/rust/comments/gyl7h7/ann_gemini_a_crate_to_make_sync_and_async_apis/)
+- url: https://github.com/mgattozzi/gemini
+---
+
+## [12][MiniCouchDB: implementing a subset of CouchDB in Rust](https://www.reddit.com/r/rust/comments/gynj0f/minicouchdb_implementing_a_subset_of_couchdb_in/)
+- url: https://www.garrensmith.com/blogs/mini-couch-hack-week
 ---
 

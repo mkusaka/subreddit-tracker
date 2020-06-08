@@ -84,141 +84,81 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][How to download dependencies on a 2G network?](https://www.reddit.com/r/reactjs/comments/gyaimn/how_to_download_dependencies_on_a_2g_network/)
-- url: https://www.reddit.com/r/reactjs/comments/gyaimn/how_to_download_dependencies_on_a_2g_network/
----
-To your surprise, there is a place in the world that does not have access to high-speed internet. Indian Occupied Kashmir. Which is why I am not able to download the dependencies from the terminal. It just shows error. Is there any other way I can download the files from Chrome or something? I am trying to download and install 'react-router-dom'. Kindly help!
-## [4][Creating Your First React Typescript Project from Scratch](https://www.reddit.com/r/reactjs/comments/gyapk8/creating_your_first_react_typescript_project_from/)
-- url: https://typeofnan.dev/your-first-react-typescript-project-todo-app/
+## [3][How a React App Works Under the Hood](https://www.reddit.com/r/reactjs/comments/gyi59w/how_a_react_app_works_under_the_hood/)
+- url: https://youtu.be/TjnyFNxQ67Y
 ---
 
-## [5][Centralizing API error handling in React apps](https://www.reddit.com/r/reactjs/comments/gy8jx8/centralizing_api_error_handling_in_react_apps/)
-- url: https://www.reddit.com/r/reactjs/comments/gy8jx8/centralizing_api_error_handling_in_react_apps/
----
- In this article I’m going to present to you a way of handling your API errors once and for all in a centralized and easily extendable way, regardless of the state-management library (Redux, Apollo, etc.) that you are using. 
-
-[https://medium.com/@aggelosarvanitakis/centralizing-api-error-handling-in-react-apps-810b2be1d39d](https://medium.com/@aggelosarvanitakis/centralizing-api-error-handling-in-react-apps-810b2be1d39d)
-## [6][I've created a tiny component for applying a 'gooey' effect, also known as shape blobbing.](https://www.reddit.com/r/reactjs/comments/gxo4oo/ive_created_a_tiny_component_for_applying_a_gooey/)
-- url: https://v.redd.it/gdtu19svh9351
+## [4][How to Use Recursive Components in React to Display Deeply Nested Data](https://www.reddit.com/r/reactjs/comments/gyytw9/how_to_use_recursive_components_in_react_to/)
+- url: https://medium.com/@kennethscoggins/how-to-use-recursive-components-in-react-to-display-deeply-nested-data-9f485a43ebab?sk=5829bb854fc6a5ddd2e4c3c747d92124
 ---
 
-## [7][I open source web app to copy and paste colour from phone's camera](https://www.reddit.com/r/reactjs/comments/gy3kxh/i_open_source_web_app_to_copy_and_paste_colour/)
-- url: https://colorcopypaste.app/
+## [5][My First React app, A markdown editor inspired by Stackedit](https://www.reddit.com/r/reactjs/comments/gyvf7g/my_first_react_app_a_markdown_editor_inspired_by/)
+- url: https://www.reddit.com/r/reactjs/comments/gyvf7g/my_first_react_app_a_markdown_editor_inspired_by/
+---
+I have been learning React since the end of March 2020. I finished my [first project](https://stanulilic.github.io/markdown-editor) a couple of days ago.
+
+ The app allows you to write markdown it previews it as you type. It also has buttons that generate markdown syntax for bold, italic, etc. You can also open a markdown file and export it as a PDF, HTML, or Markdown file.  I learned a lot with this project and am excited to start another project with React soon. 
+
+I would like to hear your opinion or tips on how to improve the code or the app or anything you might want to add.
+
+Demo link: https://stanulilic.github.io/markdown-editor
+
+Github link: https://github.com/stanulilic/markdown-editor
+## [6][User-Customizable UI via custom css](https://www.reddit.com/r/reactjs/comments/gywx7z/usercustomizable_ui_via_custom_css/)
+- url: https://www.reddit.com/r/reactjs/comments/gywx7z/usercustomizable_ui_via_custom_css/
+---
+I want to implement myspace-esque experience a React app where users can theme their group page how they want, template and CSS.
+
+Really stuck on a front-end only way to accomplish this, or an efficient way. Cost is the biggest issue- I am trying to run the front-end service fully out of S3 static hosting to really maximize cost savings.
+
+For CSS at least, my idea is that when users save their custom stylesheet, we save that to the a user-css bucket. On their page load we get it for them, then let the browser cache it locally and use the cached version of their style from there on out till they make a new change- and voila.
+
+Not sure if that'll actually work as planned or if there is a better way.  
+
+
+EDIT: Originally posted this in one of the question threads, but was asked to split this into its own.  
+
+
+Hope to see what cool ideas there are- sure mine isn't the best ;-;
+## [7][Fetching image from system-path](https://www.reddit.com/r/reactjs/comments/gyyifi/fetching_image_from_systempath/)
+- url: https://www.reddit.com/r/reactjs/comments/gyyifi/fetching_image_from_systempath/
+---
+So I am currently working on a side project with Node as backend and React as frontend. The issue Im stuck with currently is that I can read some images from the system using backend and then send their path to frontend to display as HTML. How can this be achieved as react doesn't allow reading resources from outside the src folder. Any suggestion is welcome.
+## [8][First month on React project - loving it!](https://www.reddit.com/r/reactjs/comments/gym6an/first_month_on_react_project_loving_it/)
+- url: https://www.reddit.com/r/reactjs/comments/gym6an/first_month_on_react_project_loving_it/
+---
+I was a C++ programmer for many, many years but long story short made a lifestyle change a couple of years ago to go live with my Mexican girlfriend in Mexico and run a small guesthouse on the Pacific coast. Not complaining at all but beginning of this year the programming itch got to me and I enrolled on a React course - four months of pretty steep learning for me. So last month I started on my first real project which is an app for booking retreats which a friend runs but which has potential to be expanded to other areas. Anyway just the practise I was looking for.
+
+So how's the first month gone? Pretty hard work to be honest!
+
+First few days: wanted to get some good looking screens together so that turned out to be minimal React and loads of css stuff which I found pretty frustrating. I'm not the world's greatest css'er but being a perfectionist I wanted them looking just right and got annoyed at some of the more illogical aspects of css.
+
+Next few days: I worked on the general flow of the app and applied all that redux stuff that I had learnt (and somewhat dreaded). In fact that bit of the programming worked out far easier than I thought. When I was doing the course I'd produced a kind of template ./store with ActionTypes, ActionCreators, Index.js for the creators and then the various Reducers plus the code I needed to insert into my App.js and the modules where I was going to use them. This meant instead of having to reinvent the wheel, I could just copy the whole lot across and globally change template names and add the real code where I needed it.
+
+Next few days: I'd decided to use Firebase as the backend along with its Authentication, Firestore and Storage. I'd had friends comment that it had its problem areas but so far at least I really rate it. There is loads of stuff on Youtube on how to authenticate with React, general CRUD and how to use Storage. I find it very slick to use and like the community support.
+
+Last few days: well just generally heavy programming. Problems come up, I stare at them for an hour, check everything in existence in Google, kick myself when I realize what I'm doing wrong. Still make loads of stupid mistakes. I've been used to compilers in C++ that did a lot of nursemaiding so it's a shock to see some of my errors appear only when I run it but I'm finding the language highly productive and versatile and I have to remind myself this is just the start.
+
+So what do I reckon to React after one month? Well put it like this, I wake up in the morning and think, a cup of coffee, some breakfast and then I've got hours of fantastic programming ahead of me. Simply loving it!
+## [9][[Show off] MAYOOR - modern order management system. Built with: Typescript, React, GraphQL, Prisma, styled-components, Ant Design, e2e tests. Open source, please, give me a feedback 🙏](https://www.reddit.com/r/reactjs/comments/gyd23q/show_off_mayoor_modern_order_management_system/)
+- url: https://github.com/rostaklein/mayoor
 ---
 
-## [8][How to submit a form without redirecting, change button text to "Sending..." and then reset form?](https://www.reddit.com/r/reactjs/comments/gy4p9v/how_to_submit_a_form_without_redirecting_change/)
-- url: https://www.reddit.com/r/reactjs/comments/gy4p9v/how_to_submit_a_form_without_redirecting_change/
+## [10][Live Share and Create React App?](https://www.reddit.com/r/reactjs/comments/gyxobf/live_share_and_create_react_app/)
+- url: https://www.reddit.com/r/reactjs/comments/gyxobf/live_share_and_create_react_app/
 ---
-Is there a simple example of this somewhere that someone can point me to?
-## [9][Issues with code splitting using react-snap](https://www.reddit.com/r/reactjs/comments/gy5m6w/issues_with_code_splitting_using_reactsnap/)
-- url: https://www.reddit.com/r/reactjs/comments/gy5m6w/issues_with_code_splitting_using_reactsnap/
+I've been doing some leisurely remote coding with  JS,HTML,CSS using Live Share and Live Server. Everyone is able to load the project locally on their own browsers and the project refreshes when changes are made. It's really fun. 
+
+We've tried with Create-React-App but it only runs on the person hosting the sessions machine. Presumably it is possible to set it up so it works like Live Server? Where are we going wrong?
+## [11][Introducing React to a company software development](https://www.reddit.com/r/reactjs/comments/gyx5oc/introducing_react_to_a_company_software/)
+- url: https://www.reddit.com/r/reactjs/comments/gyx5oc/introducing_react_to_a_company_software/
 ---
-I deployed a react website(using create-react-app), on netlify. The Lighthouse audit was decent, the Performance section would be around 80%.  Then I included a library [react-snap](https://github.com/stereobooster/react-snap), because it pre-renders my web app into static HTML, and does other load performance optimization. So I expected the Performance score to increase, because it should reduce page load. 
+I'm introducing React into my small company software development toolset. our developers currently use .Net and ColdFusion server-side rendered apps with MS SQL databases. I did a small test app using react and firebase that turned out amazing. We are looking to convert more applications to the cloud to reduce our overhead and speed up deployment.
 
-However this lowered my score on [Lighthouse to 63%](https://i.imgur.com/gGozKNh.png). This is because react-snap has issues with code splitting when using React.lazy, but I [followed their directions on the workaround](https://github.com/stereobooster/react-snap#async-components) and  has made little to no difference on improving the score.
+What are some good best practices to introduce into our react development cycle both from a security standpoint but also from a software development standpoint so that future developers are able to easily be onboard onto a project and develop it without a lengthy learning process? I'm hearing Redux is good for this.
 
-prerenderComponent.tsx
-
-    import { PrerenderedComponent } from "react-prerendered-component";
-    
-    // Solution 1
-    export const prerenderedLoadable = (dynamicImport: any) =&gt; {
-      const LoadableComponent = loadable(dynamicImport);
-      return React.memo((props) =&gt; (
-        // you can use the `.preload()` method from react-loadable or react-imported-component`
-        &lt;PrerenderedComponent live={LoadableComponent.load()}&gt;
-          &lt;LoadableComponent {...props} /&gt;
-        &lt;/PrerenderedComponent&gt;
-      ));
-    };
-    
-    // Solution 2
-    const prefetchMap = new WeakMap();
-    const prefetchLazy = (LazyComponent: any) =&gt; {
-      if (!prefetchMap.has(LazyComponent)) {
-        prefetchMap.set(LazyComponent, LazyComponent._ctor());
-      }
-      return prefetchMap.get(LazyComponent);
-    };
-    
-    export const prerenderedLazy = (dynamicImport: any) =&gt; {
-      const LazyComponent = React.lazy(dynamicImport);
-      return React.memo((props) =&gt; (
-        &lt;PrerenderedComponent live={prefetchLazy(LazyComponent)}&gt;
-          &lt;LazyComponent {...props} /&gt;
-        &lt;/PrerenderedComponent&gt;
-      ));
-    };
-    
-
-Graph.tsx
-
-    import React, { Suspense } from "react";
-    import { prerenderedLoadable, prerenderedLazy } from "./prerenderedComponent";
-    
-    // Solution 1
-    // const FusionTimeChart = prerenderedLoadable(() =&gt;
-    //   import("./Fusion/FusionTimeChart")
-    // );
-    // Solution 2
-    // const FusionTimeChart = prerenderedLazy(() =&gt;
-    //   import("./Fusion/FusionTimeChart")
-    // );
-    
-    export default function Graph() {
-      return (
-        &lt;section className="coding-activity"&gt;
-          &lt;h2 className="section-title coding-activity-title"&gt;
-            Lorem ipsum dolor sit amet.
-          &lt;/h2&gt;
-          &lt;p&gt;(Powered by wakatime.com)&lt;/p&gt;
-          &lt;div className="container"&gt;
-            {/*
-            Solution 1
-              &lt;FusionTimeChart /&gt;
-            */}
-            {/*
-            Solution 2
-             &lt;Suspense fallback={&lt;div&gt;&lt;/div&gt;}&gt;
-              &lt;FusionTimeChart /&gt;
-            &lt;/Suspense&gt; 
-            */}
-          &lt;/div&gt;
-        &lt;/section&gt;
-      );
-    }
-    
-
-Here's a before an after using react-snap 
-
-**With react-snap**
-
-[Live site](https://cra-with-snap.netlify.app/) 
-
-[Source code](https://github.com/aquaductape/cra_with_snap)
-
-[Lighthouse audit image](https://i.imgur.com/gGozKNh.png)
-
-**Without react-snap**
-
-[Live site](https://cra-without-snap.netlify.app/)
-
-[Source code](https://github.com/aquaductape/cra_without_snap)
-
-[Lighthouse audit image](https://i.imgur.com/Rrf48rl.png)
-## [10][Handeling consistent state over multiple modules](https://www.reddit.com/r/reactjs/comments/gya7yn/handeling_consistent_state_over_multiple_modules/)
-- url: https://www.reddit.com/r/reactjs/comments/gya7yn/handeling_consistent_state_over_multiple_modules/
+Any library or tool recommendation would also be highly appreciated. as well as any drawbacks to doing fully rendered client-side apps
+## [12][How To Build A Shopify Headless eCommerce Storefront](https://www.reddit.com/r/reactjs/comments/gyx1a0/how_to_build_a_shopify_headless_ecommerce/)
+- url: http://selleo7.xyz
 ---
-I'm wondering what peoples experiences are in regards to handeling consistent state in multiple modules in a react application. Let's assume you have multiple redux stores, one for each module in a project, and sometimes data in one store could affect data in another store. To be more specific you might have table showing data which you can also edit. This data is in 1. redux store. But if you edit this data, and go to another table in the system, which gets data from a 2. Redux store, the data has not been updated even though the edit you made on the first table should have affected the data in the second table. This requires that the user have to press refresh to see the changes take effect, which is not ideal. Or would you even use redux for this matter? - I have been looking at graphQL and apollo as well, since eventually realtime updates will become necessary as well, as in multible users should be able to interact with the system at the same time. First time posting here, so let me know if more info is needed, but in general i'm just interested in getting some different ideas/views on people would normally handle this in a large scale react project.
-## [11][{Help} Turn.js react based alternative?](https://www.reddit.com/r/reactjs/comments/gy4uv5/help_turnjs_react_based_alternative/)
-- url: https://www.reddit.com/r/reactjs/comments/gy4uv5/help_turnjs_react_based_alternative/
----
-Hey guys,
 
-I'm looking for a react based alternative for turn.js (book flip). Let me know if anyone has a good recommendation
-
-TIA
-## [12][Suggest me an idea for MERN Stack Project.](https://www.reddit.com/r/reactjs/comments/gy9q8y/suggest_me_an_idea_for_mern_stack_project/)
-- url: https://www.reddit.com/r/reactjs/comments/gy9q8y/suggest_me_an_idea_for_mern_stack_project/
----
-Hello, I'm learning MERN Stack and looking forward to create project in it, but not getting ideas what to build. So please suggest me sole cool ideas..

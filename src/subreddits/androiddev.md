@@ -1,108 +1,234 @@
 # androiddev
-## [1][App Feedback Thread - June 06, 2020](https://www.reddit.com/r/androiddev/comments/gxq3m1/app_feedback_thread_june_06_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/gxq3m1/app_feedback_thread_june_06_2020/
+## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/gyyn9x/weekly_whos_hiring_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/gyyn9x/weekly_whos_hiring_thread/
 ---
-This thread is for getting feedback on your own apps.
+Looking for Android developers? Heard about a cool job posting? Let people know!
 
-####Developers:
+Here is a suggested posting template:
 
-- must **provide feedback** for others
-- must include **Play Store**, **GitHub**, or **BitBucket** link
-- must make top level comment
-- must make effort to respond to questions and feedback from commenters
-- may be open or closed source
+&gt; Company: &lt;Best Company Ever&gt;  
+&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
+&gt; Location: &lt;City, State, Country&gt;  
+&gt; Allows remote: &lt;Yes/No&gt;  
+&gt; Visa: &lt;Yes/No&gt;  
 
-####Commenters:
-
-- must give **constructive feedback** in replies to top level comments
-- must not include links to other apps
-
-To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
-
-As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
-
-\- Da Mods
-## [2][Community Megathread](https://www.reddit.com/r/androiddev/comments/gwpxlc/community_megathread/)
-- url: https://www.reddit.com/r/androiddev/comments/gwpxlc/community_megathread/
+Feel free to include any other information about the job.
+## [2][Weekly Questions Thread - June 08, 2020](https://www.reddit.com/r/androiddev/comments/gyx6z3/weekly_questions_thread_june_08_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/gyx6z3/weekly_questions_thread_june_08_2020/
 ---
-Good morning/afternoon/evening everyone!
+This thread is for simple questions that don't warrant their own thread (although we suggest checking the sidebar, [the wiki](http://www.reddit.com/r/androiddev/wiki/), [our Discord](https://discord.gg/D2cNrqX), or [Stack Overflow](http://stackoverflow.com) before posting). Examples of questions:
 
-Let's get right into it. Recent events have lead to a lot of debate and deliberation internally and externally. I'd like to reach out to everyone and open a dialogue between us and the community.
+* How do I pass data between my Activities?
+* Does anyone have a link to the source for the AOSP messaging app?
+* Is it possible to programmatically change the color of the status bar without targeting API 21?
 
-We will not be allowing several posts discussing the subreddit and past events, this is not the proper method to reach us, and I don't want to stifle or drown out the great discussion that happens here with too many posts. Instead, I'd like to open this thread as a place to discuss. In response to past events I would like to state the following will be happening in short order.
+**Important: Downvotes are strongly discouraged in this thread. Sorting by new is strongly encouraged.**
 
- * We will be restructuring our leadership internally as some mods have differing activity levels and some wish to retire. We recognize that we are also severely understaffed which is hurting our ability to serve the community, so we will soon be recruiting additional volunteers from the community to help out. More on this will be announced soon.
+Large code snippets don't read well on reddit and take up a lot of space, so please don't paste them in your comments. Consider linking [Gists](https://gist.github.com) instead.
 
- * Any action we take is as a team. At the end of the day we are volunteers doing this in our free time with the best interests of our community in mind. With everything that is going on in the world right now, now is not time for bickering, from anyone. Now is the time for coming together and solving problems. Remember that everyone is a human being. Harassment is zero tolerance.
+Have a question about the subreddit or otherwise for /r/androiddev mods? [We welcome your mod mail!](http://www.reddit.com/message/compose?to=%2Fr%2Fandroiddev)
 
- * In response to the above point, I would like to ask for everyone's feedback on our current rule set in the comment below. Please keep the discussion calm and collected, or it will be unproductive and removed. I am however encouraging everyone to provide their feedback and suggestions on how we can improve our community.
+Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
-Expect to see more from me personally as I take a bigger role in trying to help restructure our team and improve our community. 
-
-Have a great day everyone!
-## [3][JetBrains is going to monetize JetBrains Academy register quickly to get free access until Jan 1st](https://www.reddit.com/r/androiddev/comments/gy70u5/jetbrains_is_going_to_monetize_jetbrains_academy/)
-- url: https://blog.jetbrains.com/blog/2020/06/02/jetbrains-academy-is-getting-ready-to-hit-the-market/
+Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
+## [3][TIL: Be really careful with proguard wildcards](https://www.reddit.com/r/androiddev/comments/gyu1ar/til_be_really_careful_with_proguard_wildcards/)
+- url: https://medium.com/@woitaschek/how-to-break-your-android-app-with-proguard-r8-6566bc387b63
 ---
 
-## [4][Android Architecture: MVP to MVVM](https://www.reddit.com/r/androiddev/comments/gy65bu/android_architecture_mvp_to_mvvm/)
-- url: https://medium.com/@kgaurav23/android-architecture-journey-from-mvp-to-mvvm-29bf469a8b59
+## [4][I created this simple app that will notify you of any new releases to the current Android Jetpack libraries. You can also browse and bookmark specific libraries you're interested in for easier tracking. It's on GitHub and Play Store. Not sure if I'll add more features, but I'm open to suggestions.](https://www.reddit.com/r/androiddev/comments/gyyhrm/i_created_this_simple_app_that_will_notify_you_of/)
+- url: https://i.redd.it/jzc3t3ofjo351.png
 ---
 
-## [5][Google is OK with violating the GDPR?](https://www.reddit.com/r/androiddev/comments/gy9uro/google_is_ok_with_violating_the_gdpr/)
-- url: https://i.redd.it/q3vf7oqssg351.png
+## [5][Mobile app CI with AppCenter — good, but could be better](https://www.reddit.com/r/androiddev/comments/gyxtol/mobile_app_ci_with_appcenter_good_but_could_be/)
+- url: https://medium.com/variant-as/mobile-app-ci-with-appcenter-good-but-could-be-better-7c7eb515dcea
 ---
 
-## [6][[DEV] I made a wrapper around official Spotify android SDK](https://www.reddit.com/r/androiddev/comments/gy8xnx/dev_i_made_a_wrapper_around_official_spotify/)
-- url: https://www.reddit.com/r/androiddev/comments/gy8xnx/dev_i_made_a_wrapper_around_official_spotify/
+## [6][Finding Android dev a bit tougher as a Java developer as time goes on.](https://www.reddit.com/r/androiddev/comments/gyeoko/finding_android_dev_a_bit_tougher_as_a_java/)
+- url: https://www.reddit.com/r/androiddev/comments/gyeoko/finding_android_dev_a_bit_tougher_as_a_java/
 ---
-Recently for some reason, I've to implement Spotify API in my personal android app project. So I went to the official android [docs](https://developer.spotify.com/documentation/android/) and saw that they actually provide an authentication library.
+I've been working on my pet project for Android for a while now on and off, but lately I've been finding it increasingly difficult to find java code references and examples that are up to date. Everything new is almost always in Kotlin. Now I have nothing against Kotlin, I want to focus on increasing my proficiency with Java and direct energy into actually developing a full fledged app. 
 
-It's good until I came across a problem regarding refreshing an access token like there is no built-in way to generate an access token from refresh token, also for capturing result from OAuth we've to override onActivityResult() which is OK, but I think there is a better solution to use [ActivityResultContract](https://developer.android.com/reference/androidx/activity/result/contract/ActivityResultContracts.StartActivityForResult) from the latest androidx [Activity](https://developer.android.com/jetpack/androidx/releases/activity) (alpha release) which lets you register &amp; listens for Activity Result Callback.
+I'd be interested to hear about if any other developers have experienced this and how they approached it. I am fine to learn Kotlin in the future, and hopefully when it's better than Java in all respects (hear a lot about performance issues in compile and ide).
 
-There are other limitations regarding the official SDK which I've mentioned in my GitHub repo's readme.
-
-So I thought to create a wrapper overcoming these limitations. The library is open-source and licensed under GPL v3. It is also well documented, so if you've any spare time take a look at it and let me know how I can improve it further.
-
-Library - [https://github.com/KaustubhPatange/Unofficial-Spotify-SDK](https://github.com/KaustubhPatange/Unofficial-Spotify-SDK)
-## [7][1.54k requests in AdMob and my app is not live? It was sent to 5 people to test quickly. Where are they coming from? I do not want to violate any rules.](https://www.reddit.com/r/androiddev/comments/gxrptc/154k_requests_in_admob_and_my_app_is_not_live_it/)
-- url: https://i.redd.it/gyicf1ugsa351.png
+Edit: Wow this kind of blew up. Thank you everyone for the feedback and advice. Means a lot. :)
+## [7][What's a good 2020 source to learn app marketing, pricing, IAP strategies, ad placement etc.?](https://www.reddit.com/r/androiddev/comments/gyx5ms/whats_a_good_2020_source_to_learn_app_marketing/)
+- url: https://www.reddit.com/r/androiddev/comments/gyx5ms/whats_a_good_2020_source_to_learn_app_marketing/
 ---
-
-## [8][TheMovieDB: An app for TMDB API featuring MVVM, Koin and AAC](https://www.reddit.com/r/androiddev/comments/gy9qxy/themoviedb_an_app_for_tmdb_api_featuring_mvvm/)
-- url: https://www.reddit.com/r/androiddev/comments/gy9qxy/themoviedb_an_app_for_tmdb_api_featuring_mvvm/
+Preferable simple and compact written articles, do's and don'ts, starter strategies, geo-specific pricing etc.
+## [8][What are the best places to stay on top of Android app development news/tools/ideas/knowledge?](https://www.reddit.com/r/androiddev/comments/gyx2n9/what_are_the_best_places_to_stay_on_top_of/)
+- url: https://www.reddit.com/r/androiddev/comments/gyx2n9/what_are_the_best_places_to_stay_on_top_of/
 ---
-Hey guys, I'm working on this app for a long time and it has always been a playground for learning new things. Some parts of the app are very well written and other parts are just horrible IMO. Still, here it is hope you guys like it, and please point out any improvements that you guys think can be made (or just something that I did horribly wrong).
+Hey, I just want to get new sources into my Android info sources. What do you like recently?
 
-EDIT: [https://github.com/skrilltrax/TheMovieDB](https://github.com/skrilltrax/TheMovieDB)
-## [9][Android distribution chart new location](https://www.reddit.com/r/androiddev/comments/gy7plh/android_distribution_chart_new_location/)
-- url: https://androiddistribution.io
+Thanks for any tips in advance!
+## [9][What are good examples for shared element transition implementation?](https://www.reddit.com/r/androiddev/comments/gyz54v/what_are_good_examples_for_shared_element/)
+- url: https://www.reddit.com/r/androiddev/comments/gyz54v/what_are_good_examples_for_shared_element/
 ---
-
-## [10][I have a jar which depends on old Android support, and there is no way I can update the Jar. What are the possible solutions?](https://www.reddit.com/r/androiddev/comments/gybvlo/i_have_a_jar_which_depends_on_old_android_support/)
-- url: https://www.reddit.com/r/androiddev/comments/gybvlo/i_have_a_jar_which_depends_on_old_android_support/
+I'm trying to find apps that implement shared element transition in a meaningful way. I came across [this](https://medium.com/google-design/implementing-motion-9f2839002016) blog post which includes some nice animated gifs but those are only designs and not the real thing.
+## [10][App update rejected (Default phone handler)](https://www.reddit.com/r/androiddev/comments/gyyyp7/app_update_rejected_default_phone_handler/)
+- url: https://www.reddit.com/r/androiddev/comments/gyyyp7/app_update_rejected_default_phone_handler/
 ---
-I'm building an app and it depends on a jar/rar file, which uses old \`ActionBarActivity\`  from \`android.support.v7.app\` package.  Now this class has been deprecated and removed (I can't see it in AndroidX library). 
+ We have an android app that we developed as a default dialer that can identify incoming calls if they are registered to a company.
 
-&amp;#x200B;
+At first Play store told us to implement the asking for default before asking for any permissions. We fixed that and our app was accepted. After that all updates have failed due to this error:
 
-What are my options to continue using the jar?.
+&gt;You declared Default Phone handler (and any other core functionality usage while default handler), Caller ID, spam detection, and /or spam blocking, Write and Show Call History in Dialer as the core functionality of your app. However, after review, we found that your app does not match the declared use case(s). Learn more about permitted uses and exceptions.
 
-**Note:** I'm using AndroidX libraries
+Our manifest:
 
-&amp;#x200B;
+    &lt;manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="5"
+    android:versionName="1.0.4"
+    android:compileSdkVersion="28"
+    android:compileSdkVersionCodename="9"
+    package="com.storybookdialerv4"
+    platformBuildVersionCode="5"
+    platformBuildVersionName="1.0.4"&gt;
+    &lt;application
+        android:theme="(reference) @0x7f0f0006"
+        android:label="(reference) @0x7f0e002e"
+        android:icon="(reference) @0x7f0d0005"
+        android:name="com.storybookdialerv4.App"
+        android:allowBackup="true"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:roundIcon="(reference) @0x7f0d0006"
+        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"&gt;
+        &lt;activity
+            android:theme="(reference) @0x7f0f00c6"
+            android:name="com.nabinbhandari.android.permissions.PermissionsActivity"/&gt;
+        &lt;service
+            android:name="com.storybookdialerv4.NotificationService"/&gt;
+        &lt;service
+            android:name="com.storybookdialerv4.CallService"
+            android:permission="android.permission.BIND_INCALL_SERVICE"&gt;
+            &lt;intent-filter&gt;
+                &lt;action
+                    android:name="android.telecom.InCallService"/&gt;
+            &lt;/intent-filter&gt;
+            &lt;meta-data
+                android:name="android.telecom.IN_CALL_SERVICE_UI"
+                android:value="true"/&gt;
+        &lt;/service&gt;
+        &lt;activity
+            android:name="com.storybookdialerv4.CallActivity"
+            android:screenOrientation="1"
+            android:configChanges="80"
+            android:windowSoftInputMode="2"/&gt;
+        &lt;activity
+            android:name="com.storybookdialerv4.DialerActivity"
+            android:screenOrientation="1"
+            android:configChanges="80"
+            android:windowSoftInputMode="2"&gt;
+            &lt;intent-filter&gt;
+                &lt;category
+                    android:name="android.intent.category.DEFAULT"/&gt;
+                &lt;action
+                    android:name="android.intent.action.DIAL"/&gt;
+            &lt;/intent-filter&gt;
+            &lt;intent-filter&gt;
+                &lt;data
+                    android:scheme="tel"/&gt;
+                &lt;category
+                    android:name="android.intent.category.BROWSABLE"/&gt;
+                &lt;category
+                    android:name="android.intent.category.DEFAULT"/&gt;
+                &lt;action
+                    android:name="android.intent.action.DIAL"/&gt;
+                &lt;action
+                    android:name="android.intent.action.VIEW"/&gt;
+            &lt;/intent-filter&gt;
+            &lt;intent-filter&gt;
+                &lt;category
+                    android:name="android.intent.category.LAUNCHER"/&gt;
+                &lt;action
+                    android:name="android.intent.action.MAIN"/&gt;
+            &lt;/intent-filter&gt;
+        &lt;/activity&gt;
+        &lt;activity
+            android:name="com.storybookdialerv4.ContactsActivity"
+            android:screenOrientation="1"
+            android:configChanges="80"
+            android:windowSoftInputMode="20"/&gt;
+        &lt;activity
+            android:name="com.storybookdialerv4.AddContactActivity"
+            android:screenOrientation="1"
+            android:configChanges="80"
+            android:windowSoftInputMode="20"/&gt;
+        &lt;activity
+            android:name="com.storybookdialerv4.RecentsActivity"
+            android:screenOrientation="1"
+            android:configChanges="80"
+            android:windowSoftInputMode="2"/&gt;
+        &lt;activity
+            android:name="com.storybookdialerv4.CallKeypadActivity"
+            android:screenOrientation="1"
+            android:configChanges="80"
+            android:windowSoftInputMode="2"/&gt;
+    &lt;/application&gt;
+    &lt;uses-permission
+        android:name="android.permission.WAKE_LOCK"/&gt;
+    &lt;uses-permission
+        android:name="android.permission.WRITE_CALL_LOG"/&gt;
+    &lt;uses-permission
+        android:name="android.permission.READ_CALL_LOG"/&gt;
+    &lt;uses-permission
+        android:name="android.permission.WRITE_CONTACTS"/&gt;
+    &lt;uses-permission
+        android:name="android.permission.READ_CONTACTS"/&gt;
+    &lt;uses-permission
+        android:name="android.permission.MODIFY_AUDIO_SETTINGS"/&gt;
+    &lt;uses-permission
+        android:name="android.permission.RECORD_AUDIO"/&gt;
+    &lt;uses-permission
+        android:name="android.permission.CALL_PHONE"/&gt;
+    &lt;uses-permission
+        android:name="android.permission.PROCESS_OUTGOING_CALLS"/&gt;
+    &lt;uses-permission
+        android:name="android.permission.READ_PHONE_STATE"/&gt;
+    &lt;uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE"/&gt;
+    &lt;uses-permission
+        android:name="android.permission.INTERNET"/&gt;
+    &lt;uses-sdk
+        android:minSdkVersion="23"
+        android:targetSdkVersion="28"/&gt;
 
-**What I have tried**
+ We've choosen three core functionalities in our permissions declaration: 
 
-1. Copy pasting the \`ActionBarActivity\` to my project under \`androidx.appcompat.app\` package name (Androidx because **Jetifier** is enabled.) However lot of the APIs that \`ActionBarActivity\` is using is blocked by \`@RestrictTo\` annotation. So it gives me a error. Not sure if I can get pass this error!!
-## [11][Issue in split screen](https://www.reddit.com/r/androiddev/comments/gyaki2/issue_in_split_screen/)
-- url: https://www.reddit.com/r/androiddev/comments/gyaki2/issue_in_split_screen/
+\* Default Phone handler   
+\* Caller ID, spam detection, and blocking   
+\* Write and Show Call History in Dialer
+
+We have tried contacting play store developer support but Google seems busy and we're waiting for a response for about a week already. The chat option says they can not do anything about permissions errors and that we have to wait for an email from Google. I'm wondering if anyone can see anything fishy about our manifest or permissions declaration.
+
+The app is not listed in play store because it's in open beta and is limited to Estonia at our testing phase.
+
+I'm kind of lost how to proceed from here. Google wont answer (or offer normal paid support like almost every other software/service company). Really hoping some redditors have ideas.
+## [11][Android example project of LiveData, Retrofit and infinity scroll RecyclerView](https://www.reddit.com/r/androiddev/comments/gyveub/android_example_project_of_livedata_retrofit_and/)
+- url: https://www.reddit.com/r/androiddev/comments/gyveub/android_example_project_of_livedata_retrofit_and/
 ---
-When I use android:windowFullScreen true in activity style it works perfectly in normal screen mode i.e., it hides the status bar but in split screen mode status bar becomes visible and content is being drawn beneath the status bar. Is there any recommended way to handle this? I have tried official documentation around this and couldn't find anything
-## [12][Adding support functionality in the app](https://www.reddit.com/r/androiddev/comments/gyaej8/adding_support_functionality_in_the_app/)
-- url: https://www.reddit.com/r/androiddev/comments/gyaej8/adding_support_functionality_in_the_app/
----
-I've seen an app named **FASTHUB** which has a support us, a screen where you can donate to the dev, is that allowed? 
+Hi,
 
-Payment is through **Google Play Billing.**
+I've created an example project for anyone who don't know how to implement MVVM with LiveData and RecyclerView.
+
+Link:
+
+ [https://github.com/tRamboli/LiveData/](https://github.com/tRamboli/LiveData/) 
+
+Feel free to fork, share, edit and improve the code.
 
 Thanks!
+## [12]["Introducing AndroidDistribution․io, a new home for the Android distribution chart"](https://www.reddit.com/r/androiddev/comments/gykslm/introducing_androiddistributionio_a_new_home_for/)
+- url: https://www.reddit.com/r/androiddev/comments/gykslm/introducing_androiddistributionio_a_new_home_for/
+---
+In case you wanted to view it without Android Studio, someone made it into a website:
+
+https://9to5google.com/2020/06/05/introducing-androiddistribution-io/
+
+https://androiddistribution.io/
+
+If you want, I've made today an app that shows it in textual format, open sourced too, based on the JSON we can have from Android Studio code (it also has an APK) :
+
+https://github.com/AndroidDeveloperLB/AnddroidVersionsStats

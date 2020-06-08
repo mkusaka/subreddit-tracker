@@ -125,117 +125,80 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Which IDE do you use? Or if you prefer text editors, which and which plugins?](https://www.reddit.com/r/cpp/comments/gy08ip/which_ide_do_you_use_or_if_you_prefer_text/)
-- url: https://www.reddit.com/r/cpp/comments/gy08ip/which_ide_do_you_use_or_if_you_prefer_text/
+## [3][Asynchronous Tasks with std::future and std::async from C++11](https://www.reddit.com/r/cpp/comments/gyu4xi/asynchronous_tasks_with_stdfuture_and_stdasync/)
+- url: https://www.bfilipek.com/2014/01/tasks-with-stdfuture-and-stdasync.html
 ---
 
-## [4][Route planner using io2D library](https://www.reddit.com/r/cpp/comments/gyc8jg/route_planner_using_io2d_library/)
+## [4][Implementing graph based Image Segmentation in c++](https://www.reddit.com/r/cpp/comments/gyl5h6/implementing_graph_based_image_segmentation_in_c/)
+- url: https://www.reddit.com/r/cpp/comments/gyl5h6/implementing_graph_based_image_segmentation_in_c/
+---
+
+To learn c++, I worked on implementing the research paper Efficient Graph Based Image Segmentation. I have finally finished implementing it and have also written a blog explaining the research paper and my implementation. Please give it a read. 
+
+As the name suggests, Graph based Image Segmentation used graph like data structure and graph algorithms to segment images. 
+
+In the blog above I have tried to add as much intuition about the paper and also intuition behind my implementation. I'm interested in computer vision and wanted to learn cpp too. Hence, I decided to go with this project. Although I'm not new to programming, I'm new to cpp.  Any constructive feedback from good practices of cpp to error-prone blocks of code is highly appreciated :)
+
+
+https://iammohitm.github.io/Graph-Based-Image-Segmentation/
+## [5][Principles of Unit Testing With C++ - Dave Steffen and Kris Jusiak](https://www.reddit.com/r/cpp/comments/gynrwf/principles_of_unit_testing_with_c_dave_steffen/)
+- url: https://www.youtube.com/watch?v=oOcuJdJJ33g
+---
+
+## [6][The ModernCPPStarter now includes static analyser support, automatic version headers and Doxygen!](https://www.reddit.com/r/cpp/comments/gyy1r5/the_moderncppstarter_now_includes_static_analyser/)
+- url: https://github.com/TheLartians/ModernCppStarter
+---
+
+## [7][C++ On Sea - Updated talks and announcing Herb Sutter as keynote speaker](https://www.reddit.com/r/cpp/comments/gyuwpg/c_on_sea_updated_talks_and_announcing_herb_sutter/)
+- url: https://cpponsea.uk/news/updated-talks-and-announcing-herb-sutter-as-keynote-speaker.html
+---
+
+## [8][xmake v2.3.4 released, Better toolchain support](https://www.reddit.com/r/cpp/comments/gyqk75/xmake_v234_released_better_toolchain_support/)
+- url: https://github.com/xmake-io/xmake/wiki/xmake-v2.3.4-released,-Better-toolchain-support
+---
+
+## [9][Is this good practice and effective? (open for details)](https://www.reddit.com/r/cpp/comments/gyv9tc/is_this_good_practice_and_effective_open_for/)
+- url: https://www.reddit.com/r/cpp/comments/gyv9tc/is_this_good_practice_and_effective_open_for/
+---
+I finish my 3rd year in high school in 2 days. I want to be a software engineer in the future (mainly C++/web development/python), knowing that I've spent half of my life on a computer and always wondered how these things work. I also want to get a bit in hardware.   
+
+
+Having that said, I recently noticed that I'm scared to try out new things. I started programming a bit in the start of 2018 (1st year high school), but never really came back to it since. Last thing i remember learning was classes/objects.  
+
+
+During quarantine I decided to start doing something valuable for once in my lazy life. So i did, i guess. I started learning from Bjarne Stroustrup's ***Programming: Principles and Practice using C++***. It's fun, challenging and really makes you think outside the ordinary. I really like that it has real world programs that you can immediately start writing. I was amazed of how fast you can create simple programs with such little knowledge. Although practical, the exercises can be a hassle sometimes.  
+
+
+I finished reading chapter 4, tried solving the exercises and I was greatly discouraged of my lack of knowledge. So I took a pause (to game with my friends) for about a month and a half and started reading the book all over again.  
+
+
+I don't know if it's cheating to look at other people's solutions to the programs, but I was having such a hard time that I had to. I still do sometimes, but have a MUCH easier time figuring out how I wanna lay down my thoughts. After reading the chapter again, I was finally encouraged to start thinking differently - I even started debunking how a program's flow should be, writing it on a peace of paper. I try as much as possible to translate real world common sense into a computer that's as dumb as a rock.  
+
+
+I started documenting my answers, going as far as making a neat little OneNote document that you can check out here: [https://1drv.ms/u/s!Ap705yZCur1zhOdpXcSUJRVegFtTUg](https://1drv.ms/u/s!Ap705yZCur1zhOdpXcSUJRVegFtTUg)  
+
+
+Finally, I wanted to get advice from more experienced people than me for **exercises** 11-14 from chapter 4, surrounding the prime numbers. In addition, when comparing my answers to the answers from these 2 sources: 
+
+* [https://programming-principles-and-pratice-using-c.readthedocs.io/en/latest/ch4-computation.html#exercise-11](https://programming-principles-and-pratice-using-c.readthedocs.io/en/latest/ch4-computation.html#exercise-11) 
+*  [http://www.stroustrup.com/Programming/Solutions/Ch4.html](http://www.stroustrup.com/Programming/Solutions/Ch4.html) 
+
+i feel like my answers are so short that it makes the programs less effective - rather, I'm not really "leaning" or creating programs that mean "good programming",but instead "fast programming". Will this kind of tackling problems cause any problems in my learning experience and in my programming in the future? The books states that I should be precise, effective and fast, but I just don't feel like I'm achieving any of that by creating such short programs.   
+
+
+Thank you for reading this and making time in order to help me. It really means a lot to me.  
+\- Boyan
+## [10][Looking for suggestions on a kit to practice embedded system programming with C/C++](https://www.reddit.com/r/cpp/comments/gywvjt/looking_for_suggestions_on_a_kit_to_practice/)
+- url: https://www.reddit.com/r/cpp/comments/gywvjt/looking_for_suggestions_on_a_kit_to_practice/
+---
+I'm looking to practice embedded system programming and looking for recommendations on a beginners kit.  I see many kits available online but looking for recommendations.  Something like the link below, or a Raspberry Pi maybe?  Curious what others have used in the past.  Thanks!
+
+[https://www.st.com/en/evaluation-tools/32f429idiscovery.html#overview](https://www.st.com/en/evaluation-tools/32f429idiscovery.html#overview)
+## [11][Comparing compilation times: Plain compilation vs Modules vs Precompiled headers](https://www.reddit.com/r/cpp/comments/gyhli0/comparing_compilation_times_plain_compilation_vs/)
+- url: http://www.icce.rug.nl/documents/cplusplus/cplusplus07.html#l165
+---
+
+## [12][Route planner using io2D library](https://www.reddit.com/r/cpp/comments/gyc8jg/route_planner_using_io2d_library/)
 - url: https://www.reddit.com/r/cpp/comments/gyc8jg/route_planner_using_io2d_library/
 ---
 Just created a route planner project using the io2D library ([https://github.com/iparikshitdubey/Route\_Planner\_using\_io2D/tree/master/CppND-Route-Planning-Project](https://github.com/iparikshitdubey/Route_Planner_using_io2D/tree/master/CppND-Route-Planning-Project)) as a part of my Udacity Nanodegree program. Although I understood most of the code the implementation and rendering of the io2D library are still beyond my understanding.
-## [5][A compile time optimisation trick with C++ templates](https://www.reddit.com/r/cpp/comments/gyby5v/a_compile_time_optimisation_trick_with_c_templates/)
-- url: https://link.medium.com/xoAqARiJ76
----
-
-## [6][I made Procedural Terrain Generator in OpenGL C++ | Perlin noise | Custom engine | Open Source GitHub](https://www.reddit.com/r/cpp/comments/gxmka1/i_made_procedural_terrain_generator_in_opengl_c/)
-- url: https://github.com/stanfortonski/Procedural-Terrain-Generator-OpenGL
----
-
-## [7][Enforcing implementation of concept](https://www.reddit.com/r/cpp/comments/gy06ax/enforcing_implementation_of_concept/)
-- url: https://www.reddit.com/r/cpp/comments/gy06ax/enforcing_implementation_of_concept/
----
-I am currently toying around with concepts and I was wondering if there's a way to enforce a class implementing a concept, without having to pass it into some function or template first. Like:
-
-`struct MyAddableType requires Addable&lt;MyAddableType&gt; {`
-
-`//error if MyAddableType does not satisfy concept`
-
-`}`
-
-Now this code doesn't compile unfortunately and I tried some tricks with inheritance, but wto no avail. Is there any way of achieving this? Thanks!
-## [8][I re-implemented rusts Result type in c++ using std::variant, check it out!](https://www.reddit.com/r/cpp/comments/gxn1bn/i_reimplemented_rusts_result_type_in_c_using/)
-- url: https://github.com/Liorst4/cpp-result
----
-
-## [9][Refureku: New c++17 reflection library](https://www.reddit.com/r/cpp/comments/gxekzz/refureku_new_c17_reflection_library/)
-- url: https://github.com/jsoysouvanh/Refureku
----
-
-## [10][Using C++20 to call a member function through a C-style function pointer](https://www.reddit.com/r/cpp/comments/gx6lhg/using_c20_to_call_a_member_function_through_a/)
-- url: https://www.reddit.com/r/cpp/comments/gx6lhg/using_c20_to_call_a_member_function_through_a/
----
-I've been writing a class to wrap around part of a C library that requires function pointers for callbacks. The callback should be instance-specific; however, a function pointer can't be made out of anything that involves `this` (`this` is a function parameter, and parameters can't be constant expressions).
-
-Since all instances of this class will be `static`, I was able to come up with the following solution that I found to be interesting:
-
-    template&lt;auto&amp; inst, auto func&gt;
-    consteval auto make_member_callback() {
-        return [](auto... args) { (inst.*func)(args...); };
-    }
-    
-    // MyClass is a class that takes a function pointer as an argument
-    constinit static MyClass mc {
-        make_member_callback&lt;mc, &amp;MyClass::someCallback&gt;()
-    };
-(Try it online [here](https://godbolt.org/z/-Zo9S4) (or with a templated lambda [here](https://godbolt.org/z/erxmS-)))
- 
-My work is with a real-time operating system written in C, so being able to use this with all of the callbacks required by hardware will be helpful. Would anyone else find this useful?
-
-I'd also enjoy it if, in the future, this could happen within a constructor. Right now this is prevented by `constexpr` parameters, though I would propose that a `constexpr/consteval` constructor (i.e. one that initializes a static object) should be able to access `this` at compile-time, since it appears that the static object's address/instance can be known.
-
-&amp;nbsp;
-
-**Edit:** Someone pointed out that a variadic generic lambda could be used instead of a templated lambda, which I think is simpler (and doesn't affect the resulting program). Changed the above example to match.
-
-**Edit 2:** Thanks to everyone who suggested different variations of this code. As I've spent more time on this, I've been able to create the callback "within" the class:
-
-    #include &lt;cstdio&gt;
-    
-    template&lt;auto&amp; v, auto f&gt;
-    constexpr auto member_callback = [](auto... args) { (v.*f)(args...); };
-    
-    struct MyClass {
-    public:
-        using Callback = void (*)(const char *);
-    
-    private:
-        int value;
-        Callback callback;
-    
-        void myCallback(const char* data) { value = printf("%s: %d", data, value); }
-    
-    public:
-        consteval MyClass(int v = 0) : value(v), callback(nullptr) {}
-    
-        template&lt;MyClass&amp; MC&gt;
-        constexpr static auto&amp; init() {
-            MC.callback = member_callback&lt;MC, &amp;MyClass::myCallback&gt;;
-            return MC;
-        }
-    
-        Callback getCallback() const { return callback; }
-    };
-    
-    int main() {
-        constinit static MyClass mc = (mc = MyClass{42}, MyClass::init&lt;mc&gt;());
-        mc.getCallback()("hi");
-        return 0;
-    }
-
-([Online](https://godbolt.org/z/GcK4jK))
-## [11][Style question: to ADL or not?](https://www.reddit.com/r/cpp/comments/gxakho/style_question_to_adl_or_not/)
-- url: https://www.reddit.com/r/cpp/comments/gxakho/style_question_to_adl_or_not/
----
-Say you have (in non-library code) a
-
-    std::vector&lt;int&gt; v;
-
-do you write
-
-    auto iter = find_if(cbegin(v), cend(v), [](auto i) { ... });
-
-anticipating that ADL will find `std::cbegin()`, `std::cend()` and `std::find_if()` because the vector is a type from `std`, or do you spell the namespace on the function calls?
-## [12][CppCast: Move Semantics](https://www.reddit.com/r/cpp/comments/gwwp9u/cppcast_move_semantics/)
-- url: https://cppcast.com/move-semantics-nico-josuttis/
----
-

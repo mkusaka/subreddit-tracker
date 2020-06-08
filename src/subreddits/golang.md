@@ -1,79 +1,118 @@
 # golang
-## [1][Go has removed all uses of blacklist/whitelist and master/slave](https://www.reddit.com/r/golang/comments/gy9ylr/go_has_removed_all_uses_of_blacklistwhitelist_and/)
+## [1][How do you browse large GO codebase](https://www.reddit.com/r/golang/comments/gyrxeb/how_do_you_browse_large_go_codebase/)
+- url: https://www.reddit.com/r/golang/comments/gyrxeb/how_do_you_browse_large_go_codebase/
+---
+So I am reading Kubernetes codebase. It is so large. Are there any tools to which can help me how functions interact with each other and what is the code flow.
+## [2][What are your reasons for mastering Go?](https://www.reddit.com/r/golang/comments/gyxl86/what_are_your_reasons_for_mastering_go/)
+- url: https://www.reddit.com/r/golang/comments/gyxl86/what_are_your_reasons_for_mastering_go/
+---
+Hello developers!
+
+I am starting to get my hands on Go and I wanted to know why you guys are mastering this language. Currently I am mostly coding in Python, Java, C++ and R. I think Go is interesting but I would like to have opinions of people who work with it on a regular basis as to why it is worth mastering the language. By mastering I don't mean just being able to develop some web apps but to really be a capable and competent Go programmer. For Python it is the rapid prototyping and the ease of doing machine learning. For C++ the argument is obvious. But why should one master Go?
+
+Please enlighten me! :)
+## [3][Go has removed all uses of blacklist/whitelist and master/slave](https://www.reddit.com/r/golang/comments/gy9ylr/go_has_removed_all_uses_of_blacklistwhitelist_and/)
 - url: https://go-review.googlesource.com/c/go/+/236857/
 ---
 
-## [2][Understanding Pointers in Go](https://www.reddit.com/r/golang/comments/gxznze/understanding_pointers_in_go/)
-- url: https://www.reddit.com/r/golang/comments/gxznze/understanding_pointers_in_go/
----
-[https://www.digitalocean.com/community/conceptual\_articles/understanding-pointers-in-](https://www.digitalocean.com/community/conceptual_articles/understanding-pointers-in-go)
-## [3][bingo: a small app to sync your wallpaper with Bing's image of the day](https://www.reddit.com/r/golang/comments/gy9pde/bingo_a_small_app_to_sync_your_wallpaper_with/)
-- url: https://github.com/kkyr/bingo
+## [4][How to Write a CLI With “Just Enough” Architecture](https://www.reddit.com/r/golang/comments/gyxfvp/how_to_write_a_cli_with_just_enough_architecture/)
+- url: https://blog.carlmjohnson.net/post/2020/go-cli-how-to-and-advice/
 ---
 
-## [4][Pass by value vs Pass by reference](https://www.reddit.com/r/golang/comments/gybads/pass_by_value_vs_pass_by_reference/)
-- url: https://www.reddit.com/r/golang/comments/gybads/pass_by_value_vs_pass_by_reference/
+## [5][Tell me how wrong i am on database layers in GO](https://www.reddit.com/r/golang/comments/gyx4cn/tell_me_how_wrong_i_am_on_database_layers_in_go/)
+- url: https://www.reddit.com/r/golang/comments/gyx4cn/tell_me_how_wrong_i_am_on_database_layers_in_go/
 ---
-Hi you all.
+I'm pondering this for last year or so. So I made an example: [https://github.com/JakubOboza/go-database-model-example](https://github.com/JakubOboza/go-database-model-example)
 
-I saw this in the book Go in Action Pg 20
+I'm looking for most flexible and easy to use database layer for GO. (doesn't matter if it is NoSQL, or some sort of SQL database). I was pondering few solutions or types of solutions like DI, Having like a app/env wrapping object or just var in a package. All of them have some sort of issue usually around tests or usage. Here is my POV and I don't know if it is perfect. So I would like to ask you guys as gurus   
+:D what is wrong with how i think about Database layers / access.
 
-"In Go, all variables are passed by value. Since the value of a Pointer variable is the address to the memory being pointed to, passing pointer variables between functions is still considered a pass by value".
+Example isn't perfect but i didn't want to make it complex because the purpose example.
 
-How is this a pass by value? I know we are passing the address of a variable but isn't that the same as saying we are passing a "reference" to the value contained in this address?
+The example of use is here: [https://github.com/JakubOboza/go-database-model-example/blob/master/example/moonlanding/moonlanding.go](https://github.com/JakubOboza/go-database-model-example/blob/master/example/moonlanding/moonlanding.go)
 
-What's your opinion?
-## [5][Pike: Generate CRUD gRPC backends from single YAML description](https://www.reddit.com/r/golang/comments/gxszuz/pike_generate_crud_grpc_backends_from_single_yaml/)
-- url: https://github.com/sashabaranov/pike/
+The example of test is here: [https://github.com/JakubOboza/go-database-model-example/blob/master/example/moonlanding/moonlanding\_test.go](https://github.com/JakubOboza/go-database-model-example/blob/master/example/moonlanding/moonlanding_test.go)  
+
+
+The main question is: **"How would you improve this ? Where I'm making mistakes in your opinion."**  Obviously if you will tell me that i should have database package that models should register to and it would be only initialized one time. Yeah that is fine but for purpose of example i've cut it.
+## [6][why append function returns new slice instead of mutating the underlying array of another slice?](https://www.reddit.com/r/golang/comments/gyyngm/why_append_function_returns_new_slice_instead_of/)
+- url: https://www.reddit.com/r/golang/comments/gyyngm/why_append_function_returns_new_slice_instead_of/
+---
+A tour of Go says
+
+&gt;If the backing array of slice is too small to fit all the given values a bigger array will be allocated. The returned slice will point to the newly allocated array.
+
+I've tried creating a slice and using go's built-in **append** function on that slice, it just returns a new slice instead of using the same underlying array.
+
+  
+This is my experiment regarding to my question: 
+
+    package main
+    
+    import (
+    	"fmt"
+    )
+    
+    func main() {
+    	d := make([]int, 0, 10)
+    
+    	printLenAndCap(d)
+    
+    	// returns new slice instead of append directly to underlying array of d
+    	e := append(d, 1)
+    
+    	printLenAndCap(d)
+    	printLenAndCap(e)
+    }
+    
+    
+    func printLenAndCap(ls []int) {
+    	fmt.Printf("Length: %d Capacity: %d\n", len(ls), cap(ls))
+    	fmt.Println(ls)
+    }
+
+
+which produces the following output:
+
+    Length: 0 Capacity: 10
+    []
+    Length: 0 Capacity: 10
+    []
+    Length: 1 Capacity: 10
+    [200]
+
+so back to my question, why is it returning new slice? Does **d** and **e** have the same underlying array?
+## [7][Context in Golang](https://www.reddit.com/r/golang/comments/gyxbeg/context_in_golang/)
+- url: https://www.reddit.com/r/golang/comments/gyxbeg/context_in_golang/
+---
+Guys, I am trying to read about the ***goalng context***, but not getting exact tutorials or resources to learn about. 
+
+As per my understanding the context allows to pass the context of program and it helps to identify the timeout or deadline so that program can be stopped to avoid any cascading effect. 
+
+But still I am not clear about the context, 
+
+Please suggest If I am missing something. 
+
+I found some resources, 
+
+ [http://p.agnihotry.com/post/understanding\_the\_context\_package\_in\_golang/](http://p.agnihotry.com/post/understanding_the_context_package_in_golang/) 
+
+ [https://blog.golang.org/context](https://blog.golang.org/context) 
+
+But still not clear about context. 
+
+Please help me to learn about the context.
+## [8][Nominal Typing vs Duck Typing vs Structural Typing](https://www.reddit.com/r/golang/comments/gyvfl1/nominal_typing_vs_duck_typing_vs_structural_typing/)
+- url: https://medium.com/higher-order-functions/duck-typing-vs-structural-typing-vs-nominal-typing-e0881860bf10
 ---
 
-## [6][My first app in Go](https://www.reddit.com/r/golang/comments/gxoe5k/my_first_app_in_go/)
-- url: https://github.com/0xfederama/water-reminder
+## [9][Console #2: How to Write a JVM (in Go)](https://www.reddit.com/r/golang/comments/gydkev/console_2_how_to_write_a_jvm_in_go/)
+- url: https://youtu.be/TbWTtJupz44
 ---
 
-## [7][Pain points for Go developers](https://www.reddit.com/r/golang/comments/gy923v/pain_points_for_go_developers/)
-- url: https://www.reddit.com/r/golang/comments/gy923v/pain_points_for_go_developers/
+## [10][Golang Fprint, Fprintf and Fprintln | Go FMT Package](https://www.reddit.com/r/golang/comments/gywg6b/golang_fprint_fprintf_and_fprintln_go_fmt_package/)
+- url: https://www.reddit.com/r/golang/comments/gywg6b/golang_fprint_fprintf_and_fprintln_go_fmt_package/
 ---
-I'd like to know if there are any pain points for Go developers that could be addressed with code generation or any other areas where you think code generation might be valuable in Go. Stuff like boilerplate code, or in general any code that be cumbersome or time consuming to write and could do with code generation. I'm conducting a research on the topic of Program synthesis and Auto programming.
+The Golang FMT package Fprint function takes a writer and variadic parameter in the form of empty interfaces and returns the number of bytes written as integer and an error with Golang error type. 
 
-Please do share your valuable thoughts. Thanks.
-## [8][Trying to create a reusable clean base for my projects](https://www.reddit.com/r/golang/comments/gy3gce/trying_to_create_a_reusable_clean_base_for_my/)
-- url: https://www.reddit.com/r/golang/comments/gy3gce/trying_to_create_a_reusable_clean_base_for_my/
----
-Hi, I'm trying to create a simple, reusable base for my projects. Most of the time, APIs to be consumed by React Native apps.
-Althought I love Go, I haven't been able to use it profesionally yet and I'm wondering how many things I did that may suck.
-
-I tried to adhere to patterns like DDD or Bob's Clean Code, but not strictly, I also took points from go-kit.
-Here's my code https://github.com/nerock/base , if anyone cares to take a quick look and tell me what sucks and what doesn't and why it would really help me.
-
-Thanks!
-## [9][My experience so far with Go, and a request for advice. (heads-up, long read)](https://www.reddit.com/r/golang/comments/gxt7t1/my_experience_so_far_with_go_and_a_request_for/)
-- url: https://www.reddit.com/r/golang/comments/gxt7t1/my_experience_so_far_with_go_and_a_request_for/
----
-I have been learning Go for a while now (my first programming language). A few resources I've used and my experience with them:
-
-* gobyexample.com was my first introduction. It was easy to follow up until Errors. I came back to this a month later and went through it much more easily.
-
-* https://quii.gitbook.io/learn-go-with-tests/ This was a great experience. I now love writing tests, and I've been doing the TDD approach ever since.
-
-* https://ieftimov.com/ This guy... this guy has to write a book on Golang. His DS with Go articles and Testing with Go articles were a revelation. I haven't learned from any other resource as quickly or as efficiently as I've learned from this guy. If you are around, write a damn book, I'll buy it. 
-
-* https://github.com/hoanhan101/ultimate-go I struggled at first with this one, but when I finished the previous, I came back to this and it was eye opening on so many topics. 
-
-* Algorithms, 4th Edition. I picked this up and worked through the DS / Algorithms, and tried to implement them in Go (following a TDD approach). They use Java in their code examples and it proved difficult to follow the code. But I managed to get though it.
-
-* I started doing easy/medium Leetcode problems in Go. I struggle with lots of them, but I learn heaps.  
-
-* I don't like video tutorials. So much rambling instead of just getting to the point. Some of the most recommended on here even felt at times as pitches to paid premium content (especially the Jon Calhoun's Gophercises / Video tutorials). What works for me is long written articles with code examples and brief explanations of core fundamentals in a way that's not overwhelming. Just enough to make it through the code, and put off the rest until another article. 
-
-Anyway, I fell in love with programming and although I have no experience with any other language, I'm in love with Go as much. My issue so far is I don't like doing web dev stuff (Learn Go with Tests has a tutroail on building a web app, I didn't enjoy that or any of a variety of web dev stuff).  What I enjoy is problem solving (like Leetcode problems), but that's not something I can do for a living. So I need your advice:
-
-What other fields are out there where I'll be using Go to develop solutions for? I browsed around, and it's either Webdev or Machine Learning (math is beyond my grasp, dead-end). 
-
-Are there any github projects that are not web dev/ML that I can contribute to? 
-
-Any other advice is welcome. Thank you.
-## [10][Don't defer Close() on writable files](https://www.reddit.com/r/golang/comments/gxpf4l/dont_defer_close_on_writable_files/)
-- url: https://www.joeshaw.org/dont-defer-close-on-writable-files/
----
-
+Read More [Golang Fprint](https://divyanshushekhar.com/golang-fprint-fprintf-fprintln-fmt-package/)

@@ -22,7 +22,73 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][How should a variable initialized to empty object be assigned an interface before it is returned?](https://www.reddit.com/r/typescript/comments/gywrtm/how_should_a_variable_initialized_to_empty_object/)
+## [2][Design Doc: Use JavaScript instead of TypeScript for internal Deno Code](https://www.reddit.com/r/typescript/comments/gzkodc/design_doc_use_javascript_instead_of_typescript/)
+- url: https://docs.google.com/document/d/1_WvwHl7BXUPmoiSeD8G83JmS8ypsTPqed4Btkqkn_-4/preview?pru=AAABcry4Yhs*kxYogrqCiIU7LhIaH3-5XA
+---
+
+## [3][Should this be throwing an error (optional chaining comparison with 0)? (see comments)](https://www.reddit.com/r/typescript/comments/gze2cx/should_this_be_throwing_an_error_optional/)
+- url: https://i.redd.it/roruv41tps351.png
+---
+
+## [4][Is there an ESLint rule to stop you from coercing numbers to booleans?](https://www.reddit.com/r/typescript/comments/gzeeer/is_there_an_eslint_rule_to_stop_you_from_coercing/)
+- url: https://www.reddit.com/r/typescript/comments/gzeeer/is_there_an_eslint_rule_to_stop_you_from_coercing/
+---
+Suppose I have the following check to see if str &amp; number is defined:
+
+    str = undefined
+    num = undefined
+
+    if (str)
+      console.log("not undefined")
+    if (num)
+      console.log("not undefined")
+
+However this will fail if num == 0.
+
+    num = 0
+
+    if (num)
+      console.log("not undefined")
+    else
+      console.log("undefined")
+
+And console.log will print that it's undefined instead, even though it was defined as 0, because 0 is evaluated to false.
+
+Is there an ESLint rule that checks if you attempt to evaluate a number as true / false and warn you? I've made way too many bugs because I keep forgetting that numbers get coerced to 0.
+## [5][How to add more declaration for an existing library](https://www.reddit.com/r/typescript/comments/gzjth7/how_to_add_more_declaration_for_an_existing/)
+- url: https://www.reddit.com/r/typescript/comments/gzjth7/how_to_add_more_declaration_for_an_existing/
+---
+hi, i was using typescript recently(using my limited ES knowledges on server side)
+
+and there were a 3rd party library, which used to be a pure ES module, but now they had wrote some \`.d.ts\` files, unfortunately they havnt wrote for all the members inside the module, while only about 1/3 had. this caused my project throw error when compiling(i guess since the new version had types file, compiler might treate it as a pure TS module)
+
+so my question is how to add more declaration for this 3rd party library? without sending PR to the upstream?  
+
+if that's impossible, is there anyway to indicate the compiler(tsc) to fallback to treat the library as a ES module?
+
+also i noticed that in the existing declarations, there were some types which can not be accept by my compiler, should i explicit import them from that library?
+
+sorry for the poor english and knowledges
+## [6][Why is here no type error when calling super?](https://www.reddit.com/r/typescript/comments/gzgatm/why_is_here_no_type_error_when_calling_super/)
+- url: https://www.reddit.com/r/typescript/comments/gzgatm/why_is_here_no_type_error_when_calling_super/
+---
+```
+class Person {
+    name!: string
+    constructor(input: Person) {
+       Object.assign(this, input)
+    }
+}
+
+class Employee extends Person {
+    age!: number
+    constructor(input: Employee) {
+       super(input)
+    }
+}
+```
+I thought that `super(input)` calls `class Person`'s constructor and that requires `input` to be of type `Person` but the `input` passed to super has one more field than `type Person` (`age`).
+## [7][How should a variable initialized to empty object be assigned an interface before it is returned?](https://www.reddit.com/r/typescript/comments/gywrtm/how_should_a_variable_initialized_to_empty_object/)
 - url: https://www.reddit.com/r/typescript/comments/gywrtm/how_should_a_variable_initialized_to_empty_object/
 ---
     export default interface ConfigData {
@@ -58,11 +124,11 @@ Probably a basic thing for you guys to sort out. I'm thinking on initialization,
        }
 
 Is this the proper pattern? If not, how should an interface enforce types on something that is initially set to one value and then mutated?
-## [3][Creating Your First React Typescript Project from Scratch](https://www.reddit.com/r/typescript/comments/gyauln/creating_your_first_react_typescript_project_from/)
+## [8][Creating Your First React Typescript Project from Scratch](https://www.reddit.com/r/typescript/comments/gyauln/creating_your_first_react_typescript_project_from/)
 - url: https://www.youtube.com/watch?v=ODvirqIC09A&amp;list=PLITOO2g_PUHTtMcBFiDk3ITbOh6YR0nhV&amp;index=2&amp;t=0s
 ---
 
-## [4][How do you type server responses and FE models? (+ examples of large real world apps?)](https://www.reddit.com/r/typescript/comments/gy6pxr/how_do_you_type_server_responses_and_fe_models/)
+## [9][How do you type server responses and FE models? (+ examples of large real world apps?)](https://www.reddit.com/r/typescript/comments/gy6pxr/how_do_you_type_server_responses_and_fe_models/)
 - url: https://www.reddit.com/r/typescript/comments/gy6pxr/how_do_you_type_server_responses_and_fe_models/
 ---
 Hi everyone!  
@@ -95,7 +161,7 @@ Also wondering if creating a new interface for the transformed data is necessary
 
 Thanks!  
 Uri
-## [5][typecheck.macro - A library/macro for automatically generating validation functions from Typescript types now supports intersection types, circular references/recursive types, detailed error messages, type analysis, maps, sets, and more!](https://www.reddit.com/r/typescript/comments/gxsret/typecheckmacro_a_librarymacro_for_automatically/)
+## [10][typecheck.macro - A library/macro for automatically generating validation functions from Typescript types now supports intersection types, circular references/recursive types, detailed error messages, type analysis, maps, sets, and more!](https://www.reddit.com/r/typescript/comments/gxsret/typecheckmacro_a_librarymacro_for_automatically/)
 - url: https://www.reddit.com/r/typescript/comments/gxsret/typecheckmacro_a_librarymacro_for_automatically/
 ---
 A while back, I made[ this post](https://www.reddit.com/r/typescript/comments/ges5r9/auto_generate_typechecker_from_typescript_types/) asking whether it was automatically possible to generate validation functions for Typescript types. It seems like this is not the case. Libraries like ajv, io-ts, zod, and runtypes exist, but none of them are truly automatic (and there are other issues as well).
@@ -157,7 +223,7 @@ Supported Typescript constructs:
 \- type aliases
 
 \- circular types/circular references
-## [6][TypeError: Cannot assign to read only property 'isNew' of object '#&lt;Session&gt;](https://www.reddit.com/r/typescript/comments/gxucpp/typeerror_cannot_assign_to_read_only_property/)
+## [11][TypeError: Cannot assign to read only property 'isNew' of object '#&lt;Session&gt;](https://www.reddit.com/r/typescript/comments/gxucpp/typeerror_cannot_assign_to_read_only_property/)
 - url: https://www.reddit.com/r/typescript/comments/gxucpp/typeerror_cannot_assign_to_read_only_property/
 ---
 
@@ -181,144 +247,3 @@ Ok, so I tried to create a sessionObject with just jwt, but it wouldn't let me, 
 	 TypeError: Cannot assign to read only property 'isNew' of object '#&lt;Session&gt;
 
 How do we avoid the above error?
-## [7][Getting error for types that I have installed but dont use when I tsc .](https://www.reddit.com/r/typescript/comments/gxsafu/getting_error_for_types_that_i_have_installed_but/)
-- url: https://www.reddit.com/r/typescript/comments/gxsafu/getting_error_for_types_that_i_have_installed_but/
----
-Steps to reproduce :
-
-create a folder and in it execute :
-
-    npm init -y;
-    npm install --save-dev typescript;
-    npm install @types/jest-environment-puppeteer;
-
-create file `./tsconfig.json` that has content :
-
-    {
-    	"compilerOptions": {
-    		"module": "commonjs",
-    		"outDir": "./dist",
-    		"rootDir": "./src",
-    		"target": "ESNext",
-    		"declaration": true
-    	},
-    	"include": [
-    		"./src"
-    	],
-    	"exclude": [
-    		"node_modules"
-    	]
-    }
-
-create file `./src/index.ts` that has content :
-
-    const a = 3;
-
-Run `npx tsc` and look at the errors you get :
-
-    node_modules/@jest/environment/build/index.d.ts:8:23 - error TS2688: Cannot find type definition file for 'jest'.
-    
-    8 /// &lt;reference types="jest" /&gt;
-                            ~~~~
-    
-    node_modules/@jest/environment/build/index.d.ts:11:8 - error TS1259: Module '"~/Desktop/test_jest_types_bug_with_tsc/node_modules/jest-mock/build/index"' can only be default-imported using the 'esModuleInterop' flag
-    
-    11 import jestMock, { ModuleMocker } from 'jest-mock';
-              ~~~~~~~~
-    
-      node_modules/jest-mock/build/index.d.ts:133:1
-        133 export = JestMock;
-            ~~~~~~~~~~~~~~~~~~
-        This module is declared with using 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
-    
-    node_modules/@jest/source-map/build/getCallsite.d.ts:8:100 - error TS2503: Cannot find namespace 'callsites'.
-    
-    8 declare const _default: (level: number, sourceMaps?: Record&lt;string, string&gt; | null | undefined) =&gt; callsites.CallSite;
-                                                                                                         ~~~~~~~~~
-    
-    
-    Found 3 errors.
-
-Why am I getting errors for types that I have installed and dont use ?
-## [8][[CheckPoint] VSCode extension for easy file state tracking. No more hammering the undo button to recover snippets. More info in the comments.](https://www.reddit.com/r/typescript/comments/gxw9e9/checkpoint_vscode_extension_for_easy_file_state/)
-- url: https://www.github.com/BurntBanana/CheckPoint
----
-
-## [9][My validation library written with type inference in mind](https://www.reddit.com/r/typescript/comments/gx6c8l/my_validation_library_written_with_type_inference/)
-- url: https://www.reddit.com/r/typescript/comments/gx6c8l/my_validation_library_written_with_type_inference/
----
-Hi all!
-
-I just finished work on README for my first user input validation library.
-
-This is still in alpha but I already use it in my production projects and I hope it would be useful for you too.
-
-This is my first step to open source, so feel free to comment, open issues and create pull requests.
-
-Any critics is welcome.
-
-I know there are many user input validating libraries, but I did not found one with type inference. And type inference is a one of the greatest features of TypeScript.
-
-NPM: [https://www.npmjs.com/package/treat-like](https://www.npmjs.com/package/treat-like)
-
-GitHub: [https://github.com/atomAltera/treat-like](https://github.com/atomAltera/treat-like)
-## [10][Looking for something more advanced? Learn Data Structures and Algorithms in Typescript](https://www.reddit.com/r/typescript/comments/gx67lc/looking_for_something_more_advanced_learn_data/)
-- url: https://www.reddit.com/r/typescript/comments/gx67lc/looking_for_something_more_advanced_learn_data/
----
-https://github.com/jeffzh4ng/dsa-ts
-
-MIT/Harvard/Stanford's online DS/algos courses are great for theory and understanding. Real life application and real code matters too though. You learn best when you actually implement these DSA for yourself.
-
-This repository is a collection of DS/algorithms implemented in Typescript. If you also need video lectures, they're there too.
-
-I finished the first section of data structures. sequences.
-
-- static/dynamic arrays
-- linked lists
-- stacks
-- queues
-- double-ended queues
-- circular buffers
-
-Next week we'll cover the Priority Queue ADT and Heaps.
-
-- binary heaps
-- indexed binary heaps
-- binomial heaps
-- fibonnaci heaps
-- pairing heap
-- soft heap
-
-The repository and series is just getting started! The plan is to go over all classic data structures. Hashing, self balancing trees, tries, graphs.
-
-And algorithms: sorting, searching, backtracking, dynamic, greedy, graph theory, minimum spanning trees, and more.
-
-Videos and code here: https://github.com/jeffzh4ng/dsa-ts
-## [11][Use types or interfaces to constrain generics?](https://www.reddit.com/r/typescript/comments/gxertm/use_types_or_interfaces_to_constrain_generics/)
-- url: https://www.reddit.com/r/typescript/comments/gxertm/use_types_or_interfaces_to_constrain_generics/
----
-I thought interfaces should be limited to class implementations. However:
-
-    // https://www.typescriptlang.org/docs/handbook/generics.html
-    
-    interface Lengthwise {
-        length: number;
-    }
-    
-    function loggingIdentity&lt;T extends Lengthwise&gt;(arg: T): T {
-        console.log(arg.length);  // Now we know it has a .length property, so no more error
-        return arg;
-    }
-
-I checked this code and it also compiles.
-
-    type Lengthwise = {
-        length: number;
-    }
-    
-    function loggingIdentity&lt;T extends Lengthwise&gt;(arg: T): T {
-        console.log(arg.length); 
-        return arg;
-    }
-
-Can you guys tell me which you would prefer? I would think the type definition should almost always be preferred unless the generic is being used to create a class factory.

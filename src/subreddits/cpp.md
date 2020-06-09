@@ -125,80 +125,61 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Asynchronous Tasks with std::future and std::async from C++11](https://www.reddit.com/r/cpp/comments/gyu4xi/asynchronous_tasks_with_stdfuture_and_stdasync/)
-- url: https://www.bfilipek.com/2014/01/tasks-with-stdfuture-and-stdasync.html
+## [3][FileSaver - Fast multi-threaded file size scanner (for macOS - MIT licensed)](https://www.reddit.com/r/cpp/comments/gzkp7i/filesaver_fast_multithreaded_file_size_scanner/)
+- url: https://www.reddit.com/r/cpp/comments/gzkp7i/filesaver_fast_multithreaded_file_size_scanner/
+---
+I wrote this little utility for myself. Really happy with performance :) so far. Throughput on my notebook (i7 macbook) is 50k - 60k files / second.
+
+Not a professional C++ developer so anyone has feedback on the source, that'd be nice.
+
+The blog post goes over architecture and aggregation logic in detail, as does the README on the repo. Used boost::filesystem and AppKit for the GUI; not much more.
+
+[https://beijaflor.io/blog/06-2020/filesaver-freeing-up-space/](https://beijaflor.io/blog/06-2020/filesaver-freeing-up-space/)
+
+[https://github.com/yamadapc/filesaver](https://github.com/yamadapc/filesaver)
+## [4][ISO C++ and SYCL Join for the Future of Heterogeneous Programming](https://www.reddit.com/r/cpp/comments/gzmmd3/iso_c_and_sycl_join_for_the_future_of/)
+- url: https://www.reddit.com/r/cpp/comments/gzmmd3/iso_c_and_sycl_join_for_the_future_of/
+---
+SYCL is an open standard developed by the Khronos™ Group that enables  developers to write code for heterogeneous systems using standard C++. 
+
+ [ISO C++ and SYCL Join for the Future of Heterogeneous Programming](https://www.codeplay.com/portal/06-09-20-iso-cpp-and-sycl-join-for-the-future-of-heterogeneous-programming)  
+
+
+by Michael Wong, Codeplay Software
+
+"SYCL was designed from the ground up to be ISO C++ first, then augmented with heterogeneous support"  
+Michael  Wong has written aboud how SYCL is evolving and aligning with ISO C++  to bring portable heterogeneous programming to all.
+## [5][A first look at COVID-19 and Meeting C++ 2020](https://www.reddit.com/r/cpp/comments/gzldrd/a_first_look_at_covid19_and_meeting_c_2020/)
+- url: https://meetingcpp.com/meetingcpp/news/items/A-first-look-at-COVID-19-and-Meeting-Cpp-2020.html
 ---
 
-## [4][Implementing graph based Image Segmentation in c++](https://www.reddit.com/r/cpp/comments/gyl5h6/implementing_graph_based_image_segmentation_in_c/)
-- url: https://www.reddit.com/r/cpp/comments/gyl5h6/implementing_graph_based_image_segmentation_in_c/
+## [6][C++ Multithreading: Mutex and Conditional Variables in Modern C++](https://www.reddit.com/r/cpp/comments/gz2tbg/c_multithreading_mutex_and_conditional_variables/)
+- url: https://youtu.be/jwJ4Eh_2Umo
 ---
 
-To learn c++, I worked on implementing the research paper Efficient Graph Based Image Segmentation. I have finally finished implementing it and have also written a blog explaining the research paper and my implementation. Please give it a read. 
-
-As the name suggests, Graph based Image Segmentation used graph like data structure and graph algorithms to segment images. 
-
-In the blog above I have tried to add as much intuition about the paper and also intuition behind my implementation. I'm interested in computer vision and wanted to learn cpp too. Hence, I decided to go with this project. Although I'm not new to programming, I'm new to cpp.  Any constructive feedback from good practices of cpp to error-prone blocks of code is highly appreciated :)
-
-
-https://iammohitm.github.io/Graph-Based-Image-Segmentation/
-## [5][Principles of Unit Testing With C++ - Dave Steffen and Kris Jusiak](https://www.reddit.com/r/cpp/comments/gynrwf/principles_of_unit_testing_with_c_dave_steffen/)
-- url: https://www.youtube.com/watch?v=oOcuJdJJ33g
+## [7][What data structure should I use?](https://www.reddit.com/r/cpp/comments/gzmot5/what_data_structure_should_i_use/)
+- url: https://www.reddit.com/r/cpp/comments/gzmot5/what_data_structure_should_i_use/
 ---
-
-## [6][The ModernCPPStarter now includes static analyser support, automatic version headers and Doxygen!](https://www.reddit.com/r/cpp/comments/gyy1r5/the_moderncppstarter_now_includes_static_analyser/)
+I was creating a fun chat database project to practice data structures. I'm basically letting users join chats. Chats can be associated with multiple users and users can be associated with multiple chats. When a person leaves a chat, his current chat must become the chat he was last associated with. I should also be able to let users leave chats and chats to be terminated entirely. I'm also allowing users to make contributions to these chats (just incrementing the number of contributions made in a given chat). Currently, I'm trying to use a hash map to store the number of contributions made for every chat. I'm also using a hashmap to store the chats every user is appreciated. The goal is to make it as fast as possible. Any suggestions appreciated!
+## [8][The ModernCPPStarter now includes static analyser support, automatic version headers and Doxygen!](https://www.reddit.com/r/cpp/comments/gyy1r5/the_moderncppstarter_now_includes_static_analyser/)
 - url: https://github.com/TheLartians/ModernCppStarter
 ---
 
-## [7][C++ On Sea - Updated talks and announcing Herb Sutter as keynote speaker](https://www.reddit.com/r/cpp/comments/gyuwpg/c_on_sea_updated_talks_and_announcing_herb_sutter/)
-- url: https://cpponsea.uk/news/updated-talks-and-announcing-herb-sutter-as-keynote-speaker.html
+## [9][Cross platform cpp compiling?](https://www.reddit.com/r/cpp/comments/gzl6fz/cross_platform_cpp_compiling/)
+- url: https://www.reddit.com/r/cpp/comments/gzl6fz/cross_platform_cpp_compiling/
+---
+Hello guys
+I build a game project from scratch on windows so i have used mcvs compiler but i know want to target linux and macOs from windows with details?
+Also can i use cpp for devoloping android apps?
+## [10][Bubble Sort with great animations!](https://www.reddit.com/r/cpp/comments/gzkbrm/bubble_sort_with_great_animations/)
+- url: https://youtu.be/012152sNCqA
 ---
 
-## [8][xmake v2.3.4 released, Better toolchain support](https://www.reddit.com/r/cpp/comments/gyqk75/xmake_v234_released_better_toolchain_support/)
-- url: https://github.com/xmake-io/xmake/wiki/xmake-v2.3.4-released,-Better-toolchain-support
+## [11][Small graphics programming project I made for my university. Featuring Perlin clouds, procedurally generating terrain, planar water surface, shadow mapping and birds. The source code is available on: https://github.com/JoaoBaptMG/INF443-Project](https://www.reddit.com/r/cpp/comments/gzcacp/small_graphics_programming_project_i_made_for_my/)
+- url: https://v.redd.it/a76tk9xh6s351
 ---
 
-## [9][Is this good practice and effective? (open for details)](https://www.reddit.com/r/cpp/comments/gyv9tc/is_this_good_practice_and_effective_open_for/)
-- url: https://www.reddit.com/r/cpp/comments/gyv9tc/is_this_good_practice_and_effective_open_for/
----
-I finish my 3rd year in high school in 2 days. I want to be a software engineer in the future (mainly C++/web development/python), knowing that I've spent half of my life on a computer and always wondered how these things work. I also want to get a bit in hardware.   
-
-
-Having that said, I recently noticed that I'm scared to try out new things. I started programming a bit in the start of 2018 (1st year high school), but never really came back to it since. Last thing i remember learning was classes/objects.  
-
-
-During quarantine I decided to start doing something valuable for once in my lazy life. So i did, i guess. I started learning from Bjarne Stroustrup's ***Programming: Principles and Practice using C++***. It's fun, challenging and really makes you think outside the ordinary. I really like that it has real world programs that you can immediately start writing. I was amazed of how fast you can create simple programs with such little knowledge. Although practical, the exercises can be a hassle sometimes.  
-
-
-I finished reading chapter 4, tried solving the exercises and I was greatly discouraged of my lack of knowledge. So I took a pause (to game with my friends) for about a month and a half and started reading the book all over again.  
-
-
-I don't know if it's cheating to look at other people's solutions to the programs, but I was having such a hard time that I had to. I still do sometimes, but have a MUCH easier time figuring out how I wanna lay down my thoughts. After reading the chapter again, I was finally encouraged to start thinking differently - I even started debunking how a program's flow should be, writing it on a peace of paper. I try as much as possible to translate real world common sense into a computer that's as dumb as a rock.  
-
-
-I started documenting my answers, going as far as making a neat little OneNote document that you can check out here: [https://1drv.ms/u/s!Ap705yZCur1zhOdpXcSUJRVegFtTUg](https://1drv.ms/u/s!Ap705yZCur1zhOdpXcSUJRVegFtTUg)  
-
-
-Finally, I wanted to get advice from more experienced people than me for **exercises** 11-14 from chapter 4, surrounding the prime numbers. In addition, when comparing my answers to the answers from these 2 sources: 
-
-* [https://programming-principles-and-pratice-using-c.readthedocs.io/en/latest/ch4-computation.html#exercise-11](https://programming-principles-and-pratice-using-c.readthedocs.io/en/latest/ch4-computation.html#exercise-11) 
-*  [http://www.stroustrup.com/Programming/Solutions/Ch4.html](http://www.stroustrup.com/Programming/Solutions/Ch4.html) 
-
-i feel like my answers are so short that it makes the programs less effective - rather, I'm not really "leaning" or creating programs that mean "good programming",but instead "fast programming". Will this kind of tackling problems cause any problems in my learning experience and in my programming in the future? The books states that I should be precise, effective and fast, but I just don't feel like I'm achieving any of that by creating such short programs.   
-
-
-Thank you for reading this and making time in order to help me. It really means a lot to me.  
-\- Boyan
-## [10][Looking for suggestions on a kit to practice embedded system programming with C/C++](https://www.reddit.com/r/cpp/comments/gywvjt/looking_for_suggestions_on_a_kit_to_practice/)
-- url: https://www.reddit.com/r/cpp/comments/gywvjt/looking_for_suggestions_on_a_kit_to_practice/
----
-I'm looking to practice embedded system programming and looking for recommendations on a beginners kit.  I see many kits available online but looking for recommendations.  Something like the link below, or a Raspberry Pi maybe?  Curious what others have used in the past.  Thanks!
-
-[https://www.st.com/en/evaluation-tools/32f429idiscovery.html#overview](https://www.st.com/en/evaluation-tools/32f429idiscovery.html#overview)
-## [11][Comparing compilation times: Plain compilation vs Modules vs Precompiled headers](https://www.reddit.com/r/cpp/comments/gyhli0/comparing_compilation_times_plain_compilation_vs/)
-- url: http://www.icce.rug.nl/documents/cplusplus/cplusplus07.html#l165
+## [12][Asynchronous Tasks with std::future and std::async from C++11](https://www.reddit.com/r/cpp/comments/gyu4xi/asynchronous_tasks_with_stdfuture_and_stdasync/)
+- url: https://www.bfilipek.com/2014/01/tasks-with-stdfuture-and-stdasync.html
 ---
 
-## [12][Route planner using io2D library](https://www.reddit.com/r/cpp/comments/gyc8jg/route_planner_using_io2d_library/)
-- url: https://www.reddit.com/r/cpp/comments/gyc8jg/route_planner_using_io2d_library/
----
-Just created a route planner project using the io2D library ([https://github.com/iparikshitdubey/Route\_Planner\_using\_io2D/tree/master/CppND-Route-Planning-Project](https://github.com/iparikshitdubey/Route_Planner_using_io2D/tree/master/CppND-Route-Planning-Project)) as a part of my Udacity Nanodegree program. Although I understood most of the code the implementation and rendering of the io2D library are still beyond my understanding.

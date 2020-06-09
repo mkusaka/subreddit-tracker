@@ -21,118 +21,125 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][Hard time getting TLS/SSL to work with Network Load Balancer](https://www.reddit.com/r/aws/comments/gyyf04/hard_time_getting_tlsssl_to_work_with_network/)
-- url: https://www.reddit.com/r/aws/comments/gyyf04/hard_time_getting_tlsssl_to_work_with_network/
+## [2][Golf Factor](https://www.reddit.com/r/aws/comments/gzn0fv/golf_factor/)
+- url: https://www.reddit.com/r/aws/comments/gzn0fv/golf_factor/
 ---
- Setup: ASP.NET Core Web App on ECS
+Unfortunately this community has no shitpost flair, as I would mark it (as it kinda is a shitpost).
 
-We are attempting to use an NLB to pass SSL all the way through to the host. So far, I've been able to get non SSL TCP to work over port 80, but when trying TLS over port 443 the health checks keep failing which is causing ECS to keep shutting down the Task.
+I'm a fan of cloud solutions and abstracting the data center, but in many organizations the cost outweights the benefits of migrating. I've seen migrations that quadrupled the cost of ownership for infrastructure with no clear benefit. And the only viable explanation for such a move would be something I've called the "Golf Factor".
 
-Do I need to do anything special with the ASP.NET Core app to allow this? When running it locally in Docker, both 80 and 443 work just fine. I'm assuming in that case it's a self signed cert. The Dockerfile does contain "Expose 443", which again, works locally, so I would've expected this to transfer the same to ECS.
+So what is Golf Factor? Pretty simple, it's the ability for CEO/CTO, to say that they too use "The Cloud" during meetings with other C*Os. 
 
-Without any logs contain the reason as to why the healthchecks are failing, I flying blind right now and have no idea where to look. My assumption is that it's SSL related, but I'm not sure.
-## [3][Calculated field in Cloudwatch Log Insights](https://www.reddit.com/r/aws/comments/gyx7qf/calculated_field_in_cloudwatch_log_insights/)
-- url: https://www.reddit.com/r/aws/comments/gyx7qf/calculated_field_in_cloudwatch_log_insights/
+Have you guys noticed such behaviour? Has it influenced the decision to move to cloud, if yes how?
+## [3][Is there any real performance difference between an ALB and a NLB?](https://www.reddit.com/r/aws/comments/gz3zax/is_there_any_real_performance_difference_between/)
+- url: https://www.reddit.com/r/aws/comments/gz3zax/is_there_any_real_performance_difference_between/
 ---
-Hi, I have a query, but want to be able to sort by the duration, which I am calculating as "abs(start-end).
+All things being equal, is NLB faster in serving up content from a web server?  The way it's marketed seems to be around increased performance, but NLB seems much more challenging to get working vs ALB.
+## [4][How will you explain AWS Glue to a 5 year old](https://www.reddit.com/r/aws/comments/gziddr/how_will_you_explain_aws_glue_to_a_5_year_old/)
+- url: https://www.reddit.com/r/aws/comments/gziddr/how_will_you_explain_aws_glue_to_a_5_year_old/
+---
+Hi AWS experts, 
+
+I have a fair bit of knowledge about the AWS ecosystem and have been using it hands-on for a couple of years. However today my team asked me to start using AWS Glue for data catalogging, and I'm not able to understand how that is going to make any difference to the business user. 
+
+Some basic understanding or blog post can help me here. 
+
+Thanks in advance.
+## [5][Newbie with a very inefficient EC2/S3 workflow for ML model training. Interested in ways to automate environment prep (libraries, file downloads, etc).](https://www.reddit.com/r/aws/comments/gzkf8m/newbie_with_a_very_inefficient_ec2s3_workflow_for/)
+- url: https://www.reddit.com/r/aws/comments/gzkf8m/newbie_with_a_very_inefficient_ec2s3_workflow_for/
+---
+Hi!
+
+My current process for training on EC2 is wildly inefficient, I do the following.
+
+1. Go to EC2 Console -&gt; Spot Requests
+
+2. Select AMI, usually some DLAMI. Then Select instance type, p3.2x usually, apply an IAM role to allow me to download/write to S3.
+
+3. Go to Filezilla and connect via SFTP. Navigate to some directory, usually /dev/shm and transfer my files (models, scripts, even data if it's not large).
+
+4. SSH into instance via cmd, go to /dev/shm. apt-get things I might need and open a tmux window (so that I can close terminal without ending training). I then activate whatever environment I want from the DLAMI. Then I pip install the 6 - 12 libraries I am using.
+
+5. Finally either download from S3 the data if it's large, or just start some scripts. Observe via terminal output, HTOP, nvidia-smi.
+
+6. Once training is done, either use Filezilla to transfer files locally or upload to S3.
+
+7. Close instance
+
+so which parts am I doing wildly wrong?
+
+I feel like number 2 can be automated using templates? I've never done that. I also feel like if I am installing the same libraries over and over I could make some type of bash script or something?
+
+I also feel like the way I am transferring data from and to S3 (I always look up on stackexchange some commands) seems wrong.
+
+Any tips are much appreciated!
+## [6][Lowering service quota instead of increasing?](https://www.reddit.com/r/aws/comments/gzn4ky/lowering_service_quota_instead_of_increasing/)
+- url: https://www.reddit.com/r/aws/comments/gzn4ky/lowering_service_quota_instead_of_increasing/
+---
+We are investigating how to restrict usage in an account. 
+
+Has anyone tried to *lowering* a service quota instead of increasing it? Example: Service Quotas currently say we have a maximum of 640 on-demand vCPU for a region as a limit in EC2; what if if would want that to much lower?
+## [7][Getting started with Terraform in AWS [YouTube Video]](https://www.reddit.com/r/aws/comments/gzn4kk/getting_started_with_terraform_in_aws_youtube/)
+- url: https://www.reddit.com/r/aws/comments/gzn4kk/getting_started_with_terraform_in_aws_youtube/
+---
+Hi all, I recently delivered an online meetup about how to get started with Terraform in AWS - Link: https://www.youtube.com/watch?v=cBDmoC7QonA
+
+Topics
+- Why should I use infrastructure as code?
+- How Terraform works
+- How to create infrastructure with Terraform (Demo)
+
+You should watch this meetup if ...
+- You heard about the concept of infrastructure as code (IaC) and you need a "push" to get familiar with it
+- You want to learn how to create your first infrastructure as code with Terraform from scratch
+- You create your cloud infrastructure (resources) for the dev environment, using the GUI, and you feel comfortable with what you're doing. Your manager is happy with your work, and now you need to apply the same infrastructure to the staging environment, this is where you get overwhelmed - "I wish there was a way to copy-paste the infrastructure to staging, I will never be able to recreate what I've done in dev"
+- You need to create a VPC, while following best practices (security, resilience, flexibility, etc.) and you wonder if there's any tool that can assist in doing so
+- You want to automate the process of deploying/modifying/destroying your infrastructure's resources
+## [8][Basic Question on EC2 Pricing](https://www.reddit.com/r/aws/comments/gzlo9q/basic_question_on_ec2_pricing/)
+- url: https://www.reddit.com/r/aws/comments/gzlo9q/basic_question_on_ec2_pricing/
+---
+Sorry if I used the wrong flair. I'm new to AWS EC2, but looking to get an instance to do memory intensive work.
+
+Some background: Want to work with a dataset, but it doesn't fit into memory on my personal computer. 
+
+I'm worried about the charges I'll accumulate because I'm working with something unfamilar and I expect a lot of buggy code. I expect to spend more time debugging than actually running my code. 
+
+Is there a workaround for this, did I misunderstand how the pricing works, or do I have to suck it up and deal with it?
+## [9][How do I apply a filter to a paginated boto3 response?](https://www.reddit.com/r/aws/comments/gza6ck/how_do_i_apply_a_filter_to_a_paginated_boto3/)
+- url: https://www.reddit.com/r/aws/comments/gza6ck/how_do_i_apply_a_filter_to_a_paginated_boto3/
+---
+I am working on a python script that will send a filtered list (written to csv) to S3 from Security Hub Insights. It's a paginated response and I want to pull only the filtered keys,values and I'm not sure how to reference the Value of AwsAccount ID (these are in the boto response in the get_findings call) in the Filters dict, if anyone could tell me what I'm missing I would appreciate it.
+
+
+    def paginate(method, **kwargs):
+          client = method.__self__
+          paginator = client.get_paginator(method.__name__)
+          for page in paginator.paginate(**kwargs).result_key_iters():
+              for result in page:
+                  yield result
+
+    def getSecurityHubFindings():
+        hub = boto3.client('securityhub')
+        for key in paginate(hub.get_findings, Filters=filters):
+        print(key)
+    filters = {
+      'AwsAccountId': [
+        {
+          'Value': 'string',
+          'Comparison': 'EQUALS'
+        }
+      ]
+## [10][How do I get the cloudfront to accept connections from multiple domains?](https://www.reddit.com/r/aws/comments/gzkl2p/how_do_i_get_the_cloudfront_to_accept_connections/)
+- url: https://www.reddit.com/r/aws/comments/gzkl2p/how_do_i_get_the_cloudfront_to_accept_connections/
+---
+I am making an application where users should connect as follows:
+
+[cliente.com](https://cliente.com) \-&gt; CNAME -&gt; [mysystem.com](https://mysystem.com)
 
 &amp;#x200B;
 
-    fields @timestamp, dstPort, bytes, srcAddr, dstAddr, @message, abs(start-end)
-    | filter  dstPort = 80 and dstAddr = "10.2.6.242" 
-    | sort @timestamp desc
-    | limit 2000
-
-How can I do that? I had a play around with Parse but I don't think that is what I am looking for, but basically I think I want something like:\~  
-
-
-    fields @timestamp, dstPort, bytes, srcAddr, dstAddr, @message, duration as abs(start-end)
-    | filter  dstPort = 80 and dstAddr = "10.2.6.242" 
-    | sort duration desc
-    | limit 2000
-
-But that doesn't work..
-
-Also, does anyone know the standard size (in bytes) of an HTTP healthcheck from an NLB? I am seeing a lot of connections that are 164 bytes or 362 bytes so wondering if it is either of those? Or is it just not that easy?
-## [4][.Net Worker Service on Fargate vs Lambda](https://www.reddit.com/r/aws/comments/gyur6y/net_worker_service_on_fargate_vs_lambda/)
-- url: https://www.reddit.com/r/aws/comments/gyur6y/net_worker_service_on_fargate_vs_lambda/
----
-Hi, 
-
-I’m relatively new to dotnet and trying to understand the benefits of a background service on Fargate (specifically .NET Core Worker Service)
-
-My use case is that I want to query an RDS Database at 6pm everyday and check if a user has met specific conditions or not. If not, then send them a text.
-
-Would a .NET Worker Service running on Fargate be a good solution for this or having a lambda run at those times be a better approach?
-
-Trying to understand if a worker service would be an overkill for this use case. 
-
-Thank you.
-## [5][AWS newbie -- setting up periodic data collection with lambda functions](https://www.reddit.com/r/aws/comments/gyqq3s/aws_newbie_setting_up_periodic_data_collection/)
-- url: https://www.reddit.com/r/aws/comments/gyqq3s/aws_newbie_setting_up_periodic_data_collection/
----
-This post is to see if the AWS solution I came up with is reasonable and see if anyone suggests alternatives:
-
-The goal is to gather and save traffic data from here.com's api every few minutes.  It's to collect sample data for analysis tool -- and to get familiarity with some AWS tools.  It's not mission-critcal.
-
-Here.com uses a bearer token setup -- you authenticate with oauth secret keys, and get an access token that goes in request headers, the token expires in 24 hours.  
-
-I set up:
-  * two lambda functions, refresh-token and save-traffic-stats
-  * three ssm parameters: oauth-id, oauth-secret, and bearer-token, all SecureString
-
-Every 10 hour refresh-token, using the oauth parms,  updates the bearer-token parm (thinking odds are it'll never be down, but if there's some transient error it'll probably be better in ten hours)
-
-Every few minutes save-traffic-stats runs, reads the bearer token, gets the traffic data, and saves to s3.
-
-The functions are scheduled with CloudWatch fixed rate event rules.
-
-Is that a reasonable/typical solution for this goal?
-
-Other thoughts... 
-
-I read that if you were doing a lot of traffic, the ssm Parameter Store standard tier might throttle you -- the limits are so far beyond what I'm doing that's of no concern for me.
-
-For this application it's not clear to me that it's any easier, more flexible, or more secure than running scripts by cron/at on an ec2 host.  I did hit one complication: I'm using python and the popular "request" http library is deprecated, so I had to fall back to comes-with-python urllib.
-
-The setup so far has been  entirely thru the AWS Console and ad-hoc cli scripts.  My next goal is to set up terraform or similar to make the set up paramaterized/recreatable.
-## [6][Why are all new posts pending moderator review now?](https://www.reddit.com/r/aws/comments/gyy4a2/why_are_all_new_posts_pending_moderator_review_now/)
-- url: https://www.reddit.com/r/aws/comments/gyy4a2/why_are_all_new_posts_pending_moderator_review_now/
----
-Very frustrating because I have come to rely on this sub for timely help and now o have to wait for a moderator to approve.  Why is that now?  None of the other subs I frequent require that.
-## [7][Slack’s new integration deal with AWS could also be about tweaking Microsoft](https://www.reddit.com/r/aws/comments/gyiq2i/slacks_new_integration_deal_with_aws_could_also/)
-- url: https://techcrunch.com/2020/06/05/slacks-new-integration-deal-with-aws-could-also-be-about-tweaking-microsoft/
+I've done the test on Route53 but it gives error
+## [11][Thoughts on Serverless in 2020: Mechanical Rock](https://www.reddit.com/r/aws/comments/gz8zfg/thoughts_on_serverless_in_2020_mechanical_rock/)
+- url: https://mechanicalrock.github.io/2020/06/02/serverless-trends.html
 ---
 
-## [8][question on API gateway client certificate](https://www.reddit.com/r/aws/comments/gyuvcm/question_on_api_gateway_client_certificate/)
-- url: https://www.reddit.com/r/aws/comments/gyuvcm/question_on_api_gateway_client_certificate/
----
-I have a REST API that's using Lambda as the "backend". My boss hired a third party VA/PT engineer to check the configuration of the application and then I got a report that I should be enabling API gateway's client certificate to let my back end know that requests are coming from API Gateway. 
-
-Now please take note that I'm fairly new to AWS services (or security, for that matter) and from what I know AWS already requires API gateway to have "permissions" before it can access lambda. From that, I assume Lambda would already know that requests come from API gateway. 
-
-My question is should I enable API gateway's client certificate when connecting to Lambda? and if so, how do I do that?
-## [9][Migrating old instance type to the latest gen question](https://www.reddit.com/r/aws/comments/gyz5hy/migrating_old_instance_type_to_the_latest_gen/)
-- url: https://www.reddit.com/r/aws/comments/gyz5hy/migrating_old_instance_type_to_the_latest_gen/
----
-So we have lot of database and pub/sub server such as Kafka and Cassandra in dev and production in our start up. Amazon notified us our instance type are t2-3, m1 and m3 and they need to be migrated to the latest gen which is m5 I believe.The story with them is that AWS is considering the underlying type oh hardware as obsolete and more failure prone than their best availability standards. My question is how do I achieve this. Do I have to snapshot this first and deploy new instance ? Never migrated instances before so curious on how to do this safely ?
-
-TLDR: Need to migrate old gen instance to the latest gen. How do I achieve in the best secure way without losing data and minimal downtime and outage. 
-## [10][Would there be any interruption, when doing an AMI backup to a production server?](https://www.reddit.com/r/aws/comments/gyuhou/would_there_be_any_interruption_when_doing_an_ami/)
-- url: https://www.reddit.com/r/aws/comments/gyuhou/would_there_be_any_interruption_when_doing_an_ami/
----
-Hi,
-
-we need to AMI backup a production server. we are worried that there will be interruption doing so.  
-we don't want interruption, as the server is online to serve clients.
-## [11][Configuring Free SSL certificate on IIS in EC-2 Instance](https://www.reddit.com/r/aws/comments/gyus2h/configuring_free_ssl_certificate_on_iis_in_ec2/)
-- url: https://www.reddit.com/r/aws/comments/gyus2h/configuring_free_ssl_certificate_on_iis_in_ec2/
----
-I have hosted my PHP MySQL web application on EC-2 on windows 2019 on free tier. I have assigned the elastic IP to the instance and pointed to the our domain which is hosted on third party. Now i would like to enable the Free SSL certificate by amazon certificate manager and i have created that. I am little bit confused in the next steps can anyone help me there.
-
-1. Do i need to use Amazon Route 53 service for this? Is this service is available in free tier? Do i need to create an hosted zone in Route 53 with the domain name and create records and update these records into my third party domain provider portal? Is this step is really required in the free SSL setup to work on my domain?
-2. Or Elastic Load Balancer is the only one i need to set up in the further process to work the SSL?
-
-Can anyone advise me here and it will be really appreciated.
-
-Thanks in advance!

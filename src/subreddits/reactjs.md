@@ -84,81 +84,114 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][How a React App Works Under the Hood](https://www.reddit.com/r/reactjs/comments/gyi59w/how_a_react_app_works_under_the_hood/)
-- url: https://youtu.be/TjnyFNxQ67Y
+## [3][My first MERN stack app finally showable, it is twitter clone with some prefetched data from Twitter api, Feedback and suggestions are welcome.](https://www.reddit.com/r/reactjs/comments/gzk1dh/my_first_mern_stack_app_finally_showable_it_is/)
+- url: https://v.redd.it/osyqdc6pwu351
 ---
 
-## [4][How to Use Recursive Components in React to Display Deeply Nested Data](https://www.reddit.com/r/reactjs/comments/gyytw9/how_to_use_recursive_components_in_react_to/)
-- url: https://medium.com/@kennethscoggins/how-to-use-recursive-components-in-react-to-display-deeply-nested-data-9f485a43ebab?sk=5829bb854fc6a5ddd2e4c3c747d92124
+## [4][keen-slider - The HTML touch slider carousel with the most native feeling.](https://www.reddit.com/r/reactjs/comments/gz6ixb/keenslider_the_html_touch_slider_carousel_with/)
+- url: https://keen-slider.io/
 ---
 
-## [5][My First React app, A markdown editor inspired by Stackedit](https://www.reddit.com/r/reactjs/comments/gyvf7g/my_first_react_app_a_markdown_editor_inspired_by/)
-- url: https://www.reddit.com/r/reactjs/comments/gyvf7g/my_first_react_app_a_markdown_editor_inspired_by/
----
-I have been learning React since the end of March 2020. I finished my [first project](https://stanulilic.github.io/markdown-editor) a couple of days ago.
-
- The app allows you to write markdown it previews it as you type. It also has buttons that generate markdown syntax for bold, italic, etc. You can also open a markdown file and export it as a PDF, HTML, or Markdown file.  I learned a lot with this project and am excited to start another project with React soon. 
-
-I would like to hear your opinion or tips on how to improve the code or the app or anything you might want to add.
-
-Demo link: https://stanulilic.github.io/markdown-editor
-
-Github link: https://github.com/stanulilic/markdown-editor
-## [6][User-Customizable UI via custom css](https://www.reddit.com/r/reactjs/comments/gywx7z/usercustomizable_ui_via_custom_css/)
-- url: https://www.reddit.com/r/reactjs/comments/gywx7z/usercustomizable_ui_via_custom_css/
----
-I want to implement myspace-esque experience a React app where users can theme their group page how they want, template and CSS.
-
-Really stuck on a front-end only way to accomplish this, or an efficient way. Cost is the biggest issue- I am trying to run the front-end service fully out of S3 static hosting to really maximize cost savings.
-
-For CSS at least, my idea is that when users save their custom stylesheet, we save that to the a user-css bucket. On their page load we get it for them, then let the browser cache it locally and use the cached version of their style from there on out till they make a new change- and voila.
-
-Not sure if that'll actually work as planned or if there is a better way.  
-
-
-EDIT: Originally posted this in one of the question threads, but was asked to split this into its own.  
-
-
-Hope to see what cool ideas there are- sure mine isn't the best ;-;
-## [7][Fetching image from system-path](https://www.reddit.com/r/reactjs/comments/gyyifi/fetching_image_from_systempath/)
-- url: https://www.reddit.com/r/reactjs/comments/gyyifi/fetching_image_from_systempath/
----
-So I am currently working on a side project with Node as backend and React as frontend. The issue Im stuck with currently is that I can read some images from the system using backend and then send their path to frontend to display as HTML. How can this be achieved as react doesn't allow reading resources from outside the src folder. Any suggestion is welcome.
-## [8][First month on React project - loving it!](https://www.reddit.com/r/reactjs/comments/gym6an/first_month_on_react_project_loving_it/)
-- url: https://www.reddit.com/r/reactjs/comments/gym6an/first_month_on_react_project_loving_it/
----
-I was a C++ programmer for many, many years but long story short made a lifestyle change a couple of years ago to go live with my Mexican girlfriend in Mexico and run a small guesthouse on the Pacific coast. Not complaining at all but beginning of this year the programming itch got to me and I enrolled on a React course - four months of pretty steep learning for me. So last month I started on my first real project which is an app for booking retreats which a friend runs but which has potential to be expanded to other areas. Anyway just the practise I was looking for.
-
-So how's the first month gone? Pretty hard work to be honest!
-
-First few days: wanted to get some good looking screens together so that turned out to be minimal React and loads of css stuff which I found pretty frustrating. I'm not the world's greatest css'er but being a perfectionist I wanted them looking just right and got annoyed at some of the more illogical aspects of css.
-
-Next few days: I worked on the general flow of the app and applied all that redux stuff that I had learnt (and somewhat dreaded). In fact that bit of the programming worked out far easier than I thought. When I was doing the course I'd produced a kind of template ./store with ActionTypes, ActionCreators, Index.js for the creators and then the various Reducers plus the code I needed to insert into my App.js and the modules where I was going to use them. This meant instead of having to reinvent the wheel, I could just copy the whole lot across and globally change template names and add the real code where I needed it.
-
-Next few days: I'd decided to use Firebase as the backend along with its Authentication, Firestore and Storage. I'd had friends comment that it had its problem areas but so far at least I really rate it. There is loads of stuff on Youtube on how to authenticate with React, general CRUD and how to use Storage. I find it very slick to use and like the community support.
-
-Last few days: well just generally heavy programming. Problems come up, I stare at them for an hour, check everything in existence in Google, kick myself when I realize what I'm doing wrong. Still make loads of stupid mistakes. I've been used to compilers in C++ that did a lot of nursemaiding so it's a shock to see some of my errors appear only when I run it but I'm finding the language highly productive and versatile and I have to remind myself this is just the start.
-
-So what do I reckon to React after one month? Well put it like this, I wake up in the morning and think, a cup of coffee, some breakfast and then I've got hours of fantastic programming ahead of me. Simply loving it!
-## [9][[Show off] MAYOOR - modern order management system. Built with: Typescript, React, GraphQL, Prisma, styled-components, Ant Design, e2e tests. Open source, please, give me a feedback 🙏](https://www.reddit.com/r/reactjs/comments/gyd23q/show_off_mayoor_modern_order_management_system/)
-- url: https://github.com/rostaklein/mayoor
+## [5][React use-count-up has a new demo site](https://www.reddit.com/r/reactjs/comments/gzlabc/react_usecountup_has_a_new_demo_site/)
+- url: https://use-count-up.now.sh/
 ---
 
-## [10][Live Share and Create React App?](https://www.reddit.com/r/reactjs/comments/gyxobf/live_share_and_create_react_app/)
-- url: https://www.reddit.com/r/reactjs/comments/gyxobf/live_share_and_create_react_app/
----
-I've been doing some leisurely remote coding with  JS,HTML,CSS using Live Share and Live Server. Everyone is able to load the project locally on their own browsers and the project refreshes when changes are made. It's really fun. 
-
-We've tried with Create-React-App but it only runs on the person hosting the sessions machine. Presumably it is possible to set it up so it works like Live Server? Where are we going wrong?
-## [11][Introducing React to a company software development](https://www.reddit.com/r/reactjs/comments/gyx5oc/introducing_react_to_a_company_software/)
-- url: https://www.reddit.com/r/reactjs/comments/gyx5oc/introducing_react_to_a_company_software/
----
-I'm introducing React into my small company software development toolset. our developers currently use .Net and ColdFusion server-side rendered apps with MS SQL databases. I did a small test app using react and firebase that turned out amazing. We are looking to convert more applications to the cloud to reduce our overhead and speed up deployment.
-
-What are some good best practices to introduce into our react development cycle both from a security standpoint but also from a software development standpoint so that future developers are able to easily be onboard onto a project and develop it without a lengthy learning process? I'm hearing Redux is good for this.
-
-Any library or tool recommendation would also be highly appreciated. as well as any drawbacks to doing fully rendered client-side apps
-## [12][How To Build A Shopify Headless eCommerce Storefront](https://www.reddit.com/r/reactjs/comments/gyx1a0/how_to_build_a_shopify_headless_ecommerce/)
-- url: http://selleo7.xyz
+## [6][Free like a freelancer or secure like an employee? There's a third option: The contractor](https://www.reddit.com/r/reactjs/comments/gzm5fa/free_like_a_freelancer_or_secure_like_an_employee/)
+- url: https://jkettmann.com/contractor-as-alternative-to-freelancer-or-employee/
 ---
 
+## [7][How do you persist a login for a browser that has cookies and/or local storage disabled?](https://www.reddit.com/r/reactjs/comments/gzm14o/how_do_you_persist_a_login_for_a_browser_that_has/)
+- url: https://www.reddit.com/r/reactjs/comments/gzm14o/how_do_you_persist_a_login_for_a_browser_that_has/
+---
+I am thinking about how to write my authentication code. I want to use cookies to store the JWT so when the user returns to the site they are still logged in.
+
+However I am aware that there are some cases when the user may have cookies disabled and/or their local storage. Is it normal to consider engineering a solution around this or do most sites only work if cookies are enabled?
+
+If a solution is needed how would I go about it? I guess I would just have to force the user to login again when they return to the site and store the token in context or something.
+
+Any pointers on this would be greatly appreciated! Thanks!
+## [8][React Animated Bottomsheet with user gesture](https://www.reddit.com/r/reactjs/comments/gzhkiu/react_animated_bottomsheet_with_user_gesture/)
+- url: https://www.reddit.com/r/reactjs/comments/gzhkiu/react_animated_bottomsheet_with_user_gesture/
+---
+Recently, I've had the opportunity to work on a module that had a bottomsheet kind of component. So, I thought why not ship this is a module for the open source community. What do you guys think?
+
+[https://www.npmjs.com/package/react-animated-bottomsheet](https://www.npmjs.com/package/react-animated-bottomsheet)
+
+[React Animated Bottomsheet](https://reddit.com/link/gzhkiu/video/skmbutttwt351/player)
+## [9][Today I fully embraced test-driving coding. Feeling refreshed.](https://www.reddit.com/r/reactjs/comments/gzim8z/today_i_fully_embraced_testdriving_coding_feeling/)
+- url: https://www.reddit.com/r/reactjs/comments/gzim8z/today_i_fully_embraced_testdriving_coding_feeling/
+---
+I did not write a lot of test for my full stack apps before. I feel bored and troublesome to write snapshot test, unit test, etc, esp. for small size apps.
+
+Recently a friend of mine invited me to start a new business project and I will be the only main programmer. He has a fairly complete database design and UI design and CSS is still not complete. So I started to build the GraphQL server first.
+
+This time I embraced test-driven coding: I write tests before even starting making the resolvers. Then my tests as well as my codebase start to grow, but the feeling of afraid of writing incomplete or buggy code is completely gone! 
+
+Previously I was not well-planned and I always started coding both frontend and backend together. It was very tiring to manage so many functions and data flow and switching mindset between. Now I focused my GraphQL API only, and think deeply how should the input be, and how to return meaningful errors. I think I have found a right way to code efficiently and effectively.
+
+Whats your thought on this?
+## [10][Let's Fork: my first "real" React Native app &amp; an app to help couples/groups of people decide where to eat 😀](https://www.reddit.com/r/reactjs/comments/gzmrjt/lets_fork_my_first_real_react_native_app_an_app/)
+- url: https://v.redd.it/bhusc306j4151
+---
+
+## [11][I've been away from React and web dev for about 4 months now. What are some good sources (other than the docs) to refresh my knowledge on React?](https://www.reddit.com/r/reactjs/comments/gzmhww/ive_been_away_from_react_and_web_dev_for_about_4/)
+- url: https://www.reddit.com/r/reactjs/comments/gzmhww/ive_been_away_from_react_and_web_dev_for_about_4/
+---
+Yeah, I've been away for quite some time, but I would like to get back into my shape asap. I would also appreciate it if someone could update me on what news I've missed out on React.
+
+Thank you!
+## [12][New to React, am I thinking about it correctly with this example](https://www.reddit.com/r/reactjs/comments/gzmgnx/new_to_react_am_i_thinking_about_it_correctly/)
+- url: https://www.reddit.com/r/reactjs/comments/gzmgnx/new_to_react_am_i_thinking_about_it_correctly/
+---
+I am trying to convert a legacy web app over to reactjs. This is an example piece of HTML (it's part of the top navbar containing the signup/login buttons):
+
+    &lt;div class="top-navbar-right"&gt;
+    
+        &lt;div id="nightmode-container" class="flex center row-reverse"&gt;
+            &lt;i class="fas fa-moon"&gt;&lt;/i&gt;
+        &lt;/div&gt;
+    
+        &lt;div class="flex"&gt;
+            &lt;div id="signup" class="star-button"&gt;Sign Up&lt;/div&gt;
+            &lt;div id="login" class="star-button"&gt;Login&lt;/div&gt;
+        &lt;/div&gt;
+    
+    &lt;/div&gt;
+
+* Nightmode-container is a padded, centered div aligned to the left with display flex.
+* The signup and login buttons are aligned to the right.
+* top-navbar-right is a flex container with space-between.
+* All of the above code is part of the "navbar", it's just the right part of it
+
+I'm using Styled Components. **This is where I'm not sure if I'm following the correct "react way":**
+
+    &lt;NavRight&gt;
+    &lt;div id="nightmode-container" class="flex center row-reverse"&gt;
+       &lt;Nightmode/&gt;
+    &lt;/div&gt;
+    &lt;div class="flex"&gt;
+       &lt;Button&gt;Sign Up Free&lt;/Button&gt;
+       &lt;Button&gt;Login&lt;/Button&gt;
+    &lt;/div&gt;
+    &lt;/NavRight&gt;
+
+These are my questions:
+
+1. Should everything be React Components? I have left "nightmode-container" as an ordinary div as it doesn't have function other than some css styling which I can apply via stylesheet. My logic is too many React Components on the screen will cause slowdown or just isn't desirable in general? 
+2. Similarly to 1, I am just wrapping the Buttons in a div. I'm aware of Fragment but I need to apply styling to this div. The problem I am now faced with is how to put a margin-right:15px on the Sign Up button. I'm aware I can put in-line styling on the Button with style={{margin-right:15px}} but I want a better way to do it because I want the styling to be responsive via media queries. Should I simply put a "sign-up" class on the button and target it via ordinary stylesheet? Or is there a clever way to target it via StyledComponents? I tried putting a sign-up class and this
+
+&amp;#8203;
+
+    export const NavRight= styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: ${sizes.columnLeftWidth}px;
+    padding: ${sizes.spacing}px;
+
+ &amp; .sign-up{
+        margin-right:15px;
+ }
+`;
+
+Thanks for any tips.

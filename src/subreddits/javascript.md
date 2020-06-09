@@ -79,47 +79,51 @@
 
 
 &amp;nbsp;
-## [2][When is a package a dependency or devDependency](https://www.reddit.com/r/javascript/comments/gyt3dk/when_is_a_package_a_dependency_or_devdependency/)
-- url: https://withblue.ink/2020/06/07/is-this-a-dependency-or-devdependency.html
+## [2][Deno plans to use JavaScript in internal code instead of TypeScript going forward](https://www.reddit.com/r/javascript/comments/gz98sb/deno_plans_to_use_javascript_in_internal_code/)
+- url: https://docs.google.com/document/d/1_WvwHl7BXUPmoiSeD8G83JmS8ypsTPqed4Btkqkn_-4/edit
 ---
 
-## [3][15 Must-Know JavaScript Array Methods](https://www.reddit.com/r/javascript/comments/gyvg77/15_mustknow_javascript_array_methods/)
-- url: https://livecodestream.dev/post/2020-06-05-15-must-know-javascript-array-methods/
+## [3][ECMAScript proposal updates @ 2020-06](https://www.reddit.com/r/javascript/comments/gzks58/ecmascript_proposal_updates_202006/)
+- url: https://ecmascript-daily.github.io/ecmascript/2020/06/06/ecmascript-proposal-update
 ---
 
-## [4][How to Use Recursive Components in React to Display Deeply Nested Data](https://www.reddit.com/r/javascript/comments/gyytjo/how_to_use_recursive_components_in_react_to/)
-- url: https://medium.com/@kennethscoggins/how-to-use-recursive-components-in-react-to-display-deeply-nested-data-9f485a43ebab?sk=5829bb854fc6a5ddd2e4c3c747d92124
+## [4][A simple way to add paint into a Vue app](https://www.reddit.com/r/javascript/comments/gz3xbo/a_simple_way_to_add_paint_into_a_vue_app/)
+- url: https://tracklify.com/blog/a-simple-way-to-add-paint-into-a-vue-app
 ---
 
-## [5][Josh.js - A JavaScript library to animate content on page scroll.](https://www.reddit.com/r/javascript/comments/gydcb4/joshjs_a_javascript_library_to_animate_content_on/)
-- url: https://mamunhpath.github.io/josh.js/
+## [5][Rough Notation - a small JavaScript library to create and animate annotations on a web page. Elements can be annotated in a number of different styles. Animation duration and delay can be configured, or just turned off](https://www.reddit.com/r/javascript/comments/gz0y5g/rough_notation_a_small_javascript_library_to/)
+- url: https://github.com/pshihn/rough-notation
 ---
 
-## [6][Developer Dark Arts: Default Exports](https://www.reddit.com/r/javascript/comments/gyymmx/developer_dark_arts_default_exports/)
-- url: https://dev.to/n8io/developer-dark-arts-default-exports-31ia
+## [6][[AskJS] Asynchronous Code in JavaScript before and after V8 Engine and Node](https://www.reddit.com/r/javascript/comments/gzk367/askjs_asynchronous_code_in_javascript_before_and/)
+- url: https://www.reddit.com/r/javascript/comments/gzk367/askjs_asynchronous_code_in_javascript_before_and/
+---
+I have an assignment where I should learn and write about the history of JavaScript, how the language has started and how it developed to what it is today.
+
+JavaScript is a single threaded language, so blocking by nature. I'm wondering at what point, asynchronous code became possible in JavaScript.
+
+One important point in the history was the release of the V8 engine. It introduced the Event Loop, which allowed for asynchronous Callbacks using the WebApis of the browser. (For example for making Ajax Requests).
+
+But to my knowledge AJAX is quite a bit older then V8, and it was used for making HTTP Requests on the client and updating a webpage asynchronously. So my question is: was asynchronous programming possible before V8? If yes, how was it done and why is V8 considered the beginning of asynchronous programing? If no, was there absolutely no asynchronous code possible before and what was AJAX used for?
+
+Also I would be thankful for other events that marked revolutionary changes in JavaScript. (Besides the different ECMAScript versions).
+## [7][All the Ways to make a Web Component - June 2020 Update](https://www.reddit.com/r/javascript/comments/gzn2pv/all_the_ways_to_make_a_web_component_june_2020/)
+- url: /r/WebComponents/comments/gzn2c4/all_the_ways_to_make_a_web_component_june_2020/
 ---
 
-## [7][A simple terrain generator, build using react-three-fiber](https://www.reddit.com/r/javascript/comments/gynsba/a_simple_terrain_generator_build_using/)
-- url: https://terrain.mozzius.now.sh/
+## [8][Creating a blazing fast static website without Gatsby or JavaScript](https://www.reddit.com/r/javascript/comments/gzmmw4/creating_a_blazing_fast_static_website_without/)
+- url: https://bennetthardwick.com/blog/creating-a-blazingly-fast-blog-without-js-or-gatsby/
 ---
 
-## [8][[AskJS] Which bundler has best plugin ecosystem?](https://www.reddit.com/r/javascript/comments/gyy0sb/askjs_which_bundler_has_best_plugin_ecosystem/)
-- url: https://www.reddit.com/r/javascript/comments/gyy0sb/askjs_which_bundler_has_best_plugin_ecosystem/
----
-I'm creating a high-performance web asset bundler. I'm almost done, and now I have dynamic import, plug-in systems, and integration tests ledt and I'm concerned about plug-in systems.
-
-I would like to make the plug-in of the existing Bundlers available if possible. But I don't know which bundle to match.
-
-I'd like to know which one is the most comfortable when making plug-ins, and which Bundler has the best ecosystem
-## [9][SMRT a SMal Reactive Templating Library where Components are Written as JS Objects](https://www.reddit.com/r/javascript/comments/gyv423/smrt_a_smal_reactive_templating_library_where/)
-- url: https://github.com/jjohnson1994/smrt
+## [9][React state management and side-effects with Redux and RxJS](https://www.reddit.com/r/javascript/comments/gzjlqw/react_state_management_and_sideeffects_with_redux/)
+- url: https://subvisual.com/blog/posts/react-state-management-and-side-effects-with-redux-and-rxjs/
 ---
 
-## [10][IT-Tools, a website in vuejs, with sets of handy and useful developer tools](https://www.reddit.com/r/javascript/comments/gybxrv/ittools_a_website_in_vuejs_with_sets_of_handy_and/)
-- url: https://it-tools.tech/
+## [10][Read Front End Interview Questions &amp; Experiences of Amazon, Intuit, Walmart, Flipkart, OYO, MMT](https://www.reddit.com/r/javascript/comments/gz0uir/read_front_end_interview_questions_experiences_of/)
+- url: https://niksbay.com
 ---
 
-## [11][How JavaScript Async/Await Works and How to Use It](https://www.reddit.com/r/javascript/comments/gyuxe6/how_javascript_asyncawait_works_and_how_to_use_it/)
-- url: https://blog.alexdevero.com/javascript-async-await/
+## [11][A Simple way to run the Calculator App made in Javascript using deno.](https://www.reddit.com/r/javascript/comments/gzi39m/a_simple_way_to_run_the_calculator_app_made_in/)
+- url: https://www.loginradius.com/engineering/blog/a-webapp-in-deno/
 ---
 

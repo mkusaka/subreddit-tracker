@@ -23,76 +23,61 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/gysxgq/whats_everyone_working_on_this_week_242020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-24-2020/43988?u=llogiq)!
-## [3][Are many companies using Rust outside of the US?](https://www.reddit.com/r/rust/comments/gyw3f5/are_many_companies_using_rust_outside_of_the_us/)
-- url: https://www.reddit.com/r/rust/comments/gyw3f5/are_many_companies_using_rust_outside_of_the_us/
----
-I live in Australia and haven't really seen any companies that mention they are using Rust in their products. 
-
-From what I can tell, the vast majority of Rust jobs are based in the US (San Francisco, New York, etc.). Do you know of any companies outside of America that employ Rust programmers?
-## [4][Absolute addresses in position-independent code (PIC)](https://www.reddit.com/r/rust/comments/gyrmam/absolute_addresses_in_positionindependent_code_pic/)
-- url: https://www.reddit.com/r/rust/comments/gyrmam/absolute_addresses_in_positionindependent_code_pic/
----
-Cross-posted to [StackOverflow](https://stackoverflow.com/questions/62254811/absolute-addresses-in-position-independent-code-pic) .
-
-I am trying to build and link a single image to load as an OS kernel (ie. in QEMU) targeting aarch64-unknown-none-softfloat. I use a custom linker.ld file which sets the entry point for the kernel `ENTRY(_reset)` and positions the image
-
-`. = 0x40080000`
-
-where the program counter (PC) is on reset.
-
-It works ok until I map the pages at 0x40080000 to high memory where the kernel will reside and enable virtual memory translation. To ensure the debugging information meshes after the switch, I change the nominal image position to
-
-`. = 0xffffff8200000000`
-
-and rebuild.
-
-I have discovered that access:
-
-* to some (pub extern) statics, and
-* by certain core library functions
-
-is by reading the absolute address from somewhere in `.rodata`. This breaks the code when it is running before mapping. And if I change it back it will break the code when I run it after mapping.
-
-The code it is generating looks a bit like this at O1 (indirect through PC-relative page):
-
-    adrp  x0, 0x10000 // page offset from PC up to rodata
-    add   x0, 0x120   // byte offset from page in rodata
-    ldr   x0, [x0]    // use as address
-
-What I need is truly position independent code across code and data so that it works at *both* locations in memory without referring to any stored absolute addresses, even if those addresses are available relative to PC.
-
-I've tried the other relocation-models including Pic and RopiRwpi but I can't see it generating different code.
-
-Thanks!
-## [5][Announcing fluent-templates: Easily Add Fluent Localisation To Your Rust Projects.](https://www.reddit.com/r/rust/comments/gyxl2g/announcing_fluenttemplates_easily_add_fluent/)
-- url: https://github.com/XAMPPRocky/fluent-templates
+## [3][New inline assembly syntax available in nightly | Inside Rust Blog](https://www.reddit.com/r/rust/comments/gzil0l/new_inline_assembly_syntax_available_in_nightly/)
+- url: https://blog.rust-lang.org/inside-rust/2020/06/08/new-inline-asm.html
 ---
 
-## [6][What is the state of rust on the ESP8266?](https://www.reddit.com/r/rust/comments/gyxbkv/what_is_the_state_of_rust_on_the_esp8266/)
-- url: https://www.reddit.com/r/rust/comments/gyxbkv/what_is_the_state_of_rust_on_the_esp8266/
----
-There are a few older posts about this but there is a bunch of activity in the area since then and it looks like its at least possible to blink leds now. Has anyone tried to use rust here? What is it like? Are we at the point of being able to connect to wifi and make a http request?
-## [7][GTK and Rust](https://www.reddit.com/r/rust/comments/gytgw8/gtk_and_rust/)
-- url: https://www.reddit.com/r/rust/comments/gytgw8/gtk_and_rust/
----
-I saw on the oficial GTK page on language bindings the support of Rust, but is developed for other people, not directly by Gnome, so this library port are developed by gnome too and have a really interest of moving forward or is only a honorable mention like alternative for rust language?
-## [8][A Quick (and good) View of Iterators in Rust!](https://www.reddit.com/r/rust/comments/gyryth/a_quick_and_good_view_of_iterators_in_rust/)
-- url: https://youtu.be/HZftwxCIXqE
+## [4][Futures and Segmented Stacks](https://www.reddit.com/r/rust/comments/gz5oe0/futures_and_segmented_stacks/)
+- url: https://without.boats/blog/futures-and-segmented-stacks/
 ---
 
-## [9][This Month in Rust OSDev (May 2020)](https://www.reddit.com/r/rust/comments/gyi9p0/this_month_in_rust_osdev_may_2020/)
-- url: https://rust-osdev.com/this-month/2020-05/
+## [5][PNGme: An Intermediate Rust Project](https://www.reddit.com/r/rust/comments/gzehpz/pngme_an_intermediate_rust_project/)
+- url: https://picklenerd.github.io/pngme_book/
 ---
 
-## [10][This month in rustsim #11 (April - May 2020): cross-platform deterministic physics using nphysics with fixed-point numbers!](https://www.reddit.com/r/rust/comments/gyeaik/this_month_in_rustsim_11_april_may_2020/)
-- url: https://www.rustsim.org/blog/2020/06/01/this-month-in-rustsim/
+## [6][Why does rust need something like placement new](https://www.reddit.com/r/rust/comments/gzmbpa/why_does_rust_need_something_like_placement_new/)
+- url: https://www.reddit.com/r/rust/comments/gzmbpa/why_does_rust_need_something_like_placement_new/
+---
+Why was there an attempt to introduce new syntax for placement new? Why can't the rust compiler optimize the cases by itself (ever?)?
+
+For e.g.: In `vec.push(MyStruct { foo, bar})`, why can't this be compiled such that MyStruct is constructed in place by itself without any special syntax? Is there a requirement that MyStruct be constructed on stack before moving to heap?
+
+A lot of code is already written like this, which would benefit from implicit optimization rather than creating a new syntax. Is there some technical difficulty in achieving this?
+
+I remember seeing an issue related to `Box::new` not skipping copy even when it's `#[inline(always)]`.
+
+Forgive me if it's a stupid question.
+## [7][rust-analyzer changelog #28](https://www.reddit.com/r/rust/comments/gyzk6s/rustanalyzer_changelog_28/)
+- url: https://rust-analyzer.github.io/thisweek/2020/06/08/changelog-28.html
 ---
 
-## [11][[Ann] gemini a crate to make sync and async apis while letting your users choose what they want](https://www.reddit.com/r/rust/comments/gyl7h7/ann_gemini_a_crate_to_make_sync_and_async_apis/)
-- url: https://github.com/mgattozzi/gemini
+## [8][Not everything is UTF-8](https://www.reddit.com/r/rust/comments/gz33u6/not_everything_is_utf8/)
+- url: https://octobus.net/blog/2020-06-05-not-everything-is-utf8.html
 ---
 
-## [12][MiniCouchDB: implementing a subset of CouchDB in Rust](https://www.reddit.com/r/rust/comments/gynj0f/minicouchdb_implementing_a_subset_of_couchdb_in/)
-- url: https://www.garrensmith.com/blogs/mini-couch-hack-week
+## [9][What's the current state of Rust's Sparse Linear Algebra libraries?](https://www.reddit.com/r/rust/comments/gzazna/whats_the_current_state_of_rusts_sparse_linear/)
+- url: https://www.reddit.com/r/rust/comments/gzazna/whats_the_current_state_of_rusts_sparse_linear/
+---
+Hello all,
+
+I've been doing a lot of simulations recently, and I need to solve some ~~large~~ (2000 x 2000) symmetric and non-triangular sparse (~40000 non-zero entries) linear systems of equations where the matrices are changing in a tight loop. (The matrices are Jacobians of a highly non-linear function). The RHS vectors are dense. I currently store the RHS in a `ndarray::Array1`.
+
+What's the best library to use for this?
+
+I've been using `sprs`, but its performance was terrible in my benchmarking.
+
+I understand `nalgebra` has sparse matrix support, but I was under the impression that `nalgebra` isn't meant for high dimensional systems such as mine.
+
+EDIT: As many have pointed out these matrices aren't really large. I'll have larger ones in future iterations of this project, but should have been more careful with my phrasing.
+## [10][Prose: a Markdown to HTML parser built using Nom and Yew](https://www.reddit.com/r/rust/comments/gzmeoa/prose_a_markdown_to_html_parser_built_using_nom/)
+- url: https://github.com/HGHimself/prose
+---
+
+## [11][This Month in Rust GameDev #10 - May 2020](https://www.reddit.com/r/rust/comments/gz59mk/this_month_in_rust_gamedev_10_may_2020/)
+- url: https://rust-gamedev.github.io/posts/newsletter-010
+---
+
+## [12][unFTP: When you need to FTP, but don't want to.](https://www.reddit.com/r/rust/comments/gz12l4/unftp_when_you_need_to_ftp_but_dont_want_to/)
+- url: https://github.com/bolcom/unFTP
 ---
 

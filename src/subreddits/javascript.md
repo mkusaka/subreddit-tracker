@@ -79,51 +79,51 @@
 
 
 &amp;nbsp;
-## [2][Deno plans to use JavaScript in internal code instead of TypeScript going forward](https://www.reddit.com/r/javascript/comments/gz98sb/deno_plans_to_use_javascript_in_internal_code/)
-- url: https://docs.google.com/document/d/1_WvwHl7BXUPmoiSeD8G83JmS8ypsTPqed4Btkqkn_-4/edit
+## [2][Visualizing bubble sort in 5 minutes using HTML5 canvas API](https://www.reddit.com/r/javascript/comments/h0954e/visualizing_bubble_sort_in_5_minutes_using_html5/)
+- url: https://dev.to/galelmalah/visualizing-bubble-sort-in-5-minutes-using-html5-canvas-api-422d
 ---
 
-## [3][ECMAScript proposal updates @ 2020-06](https://www.reddit.com/r/javascript/comments/gzks58/ecmascript_proposal_updates_202006/)
-- url: https://ecmascript-daily.github.io/ecmascript/2020/06/06/ecmascript-proposal-update
+## [3][stegcloak: Hide secrets with invisible characters in plain text securely using passwords](https://www.reddit.com/r/javascript/comments/h09rcv/stegcloak_hide_secrets_with_invisible_characters/)
+- url: https://github.com/KuroLabs/stegcloak
 ---
 
-## [4][A simple way to add paint into a Vue app](https://www.reddit.com/r/javascript/comments/gz3xbo/a_simple_way_to_add_paint_into_a_vue_app/)
-- url: https://tracklify.com/blog/a-simple-way-to-add-paint-into-a-vue-app
+## [4][Download scalable code right from a "kida CodePen on steroids" – new release!](https://www.reddit.com/r/javascript/comments/h098t9/download_scalable_code_right_from_a_kida_codepen/)
+- url: https://dev.to/chrisczopp/download-scalable-code-right-from-a-kida-codepen-on-steroids-new-release-1bbc
 ---
 
-## [5][Rough Notation - a small JavaScript library to create and animate annotations on a web page. Elements can be annotated in a number of different styles. Animation duration and delay can be configured, or just turned off](https://www.reddit.com/r/javascript/comments/gz0y5g/rough_notation_a_small_javascript_library_to/)
-- url: https://github.com/pshihn/rough-notation
+## [5][ES4, The Failed proposal the indirectly led to Node.js, ES6, TypeScript and Deno](https://www.reddit.com/r/javascript/comments/gzpmlv/es4_the_failed_proposal_the_indirectly_led_to/)
+- url: https://dev.to/hansuxdev/es4-the-failed-proposal-the-indirectly-led-to-node-js-es6-typescript-and-deno-g6f
 ---
 
-## [6][[AskJS] Asynchronous Code in JavaScript before and after V8 Engine and Node](https://www.reddit.com/r/javascript/comments/gzk367/askjs_asynchronous_code_in_javascript_before_and/)
-- url: https://www.reddit.com/r/javascript/comments/gzk367/askjs_asynchronous_code_in_javascript_before_and/
----
-I have an assignment where I should learn and write about the history of JavaScript, how the language has started and how it developed to what it is today.
-
-JavaScript is a single threaded language, so blocking by nature. I'm wondering at what point, asynchronous code became possible in JavaScript.
-
-One important point in the history was the release of the V8 engine. It introduced the Event Loop, which allowed for asynchronous Callbacks using the WebApis of the browser. (For example for making Ajax Requests).
-
-But to my knowledge AJAX is quite a bit older then V8, and it was used for making HTTP Requests on the client and updating a webpage asynchronously. So my question is: was asynchronous programming possible before V8? If yes, how was it done and why is V8 considered the beginning of asynchronous programing? If no, was there absolutely no asynchronous code possible before and what was AJAX used for?
-
-Also I would be thankful for other events that marked revolutionary changes in JavaScript. (Besides the different ECMAScript versions).
-## [7][All the Ways to make a Web Component - June 2020 Update](https://www.reddit.com/r/javascript/comments/gzn2pv/all_the_ways_to_make_a_web_component_june_2020/)
-- url: /r/WebComponents/comments/gzn2c4/all_the_ways_to_make_a_web_component_june_2020/
+## [6][React-Express-Passport-Mongoose easy to set up boilerplate, including routing and cookie-based auth, June 2020](https://www.reddit.com/r/javascript/comments/h078qt/reactexpresspassportmongoose_easy_to_set_up/)
+- url: https://github.com/raulrene/react-express-passport-boilerplate
 ---
 
-## [8][Creating a blazing fast static website without Gatsby or JavaScript](https://www.reddit.com/r/javascript/comments/gzmmw4/creating_a_blazing_fast_static_website_without/)
-- url: https://bennetthardwick.com/blog/creating-a-blazingly-fast-blog-without-js-or-gatsby/
+## [7][Article: How to Use Attribute Directives to Avoid Repetition in Angular Templates](https://www.reddit.com/r/javascript/comments/h074yb/article_how_to_use_attribute_directives_to_avoid/)
+- url: https://volosoft.com/blog/attribute-directives-to-avoid-repetition-in-angular-templates
 ---
 
-## [9][React state management and side-effects with Redux and RxJS](https://www.reddit.com/r/javascript/comments/gzjlqw/react_state_management_and_sideeffects_with_redux/)
-- url: https://subvisual.com/blog/posts/react-state-management-and-side-effects-with-redux-and-rxjs/
+## [8][[AskJS] A small JS utility library that allows you to use $ instead of document.querySelector?](https://www.reddit.com/r/javascript/comments/h07jgi/askjs_a_small_js_utility_library_that_allows_you/)
+- url: https://www.reddit.com/r/javascript/comments/h07jgi/askjs_a_small_js_utility_library_that_allows_you/
+---
+I think I heard about this library from Wes Bos on the Syntax podcast recently but I forgot to write down the name.
+
+I googled but cannot find it. I know I can do this myself but the library had a few other interesting features.
+
+Anybody know it?
+
+P.S. it's not jQuery, it is a tiny library that only does a few things.
+## [9][[AskJS] Have you every actually run into someone assigning something to undefined?](https://www.reddit.com/r/javascript/comments/h02db6/askjs_have_you_every_actually_run_into_someone/)
+- url: https://www.reddit.com/r/javascript/comments/h02db6/askjs_have_you_every_actually_run_into_someone/
+---
+And on a spectrum between "well, this is only a few lines to replace; it's not so bad" and "there are like, a gajillion lines worth of spaghetti-legacy-production code that depend on this and I literally just have to work around this right now", what was it like?
+
+Edit: what I mean is undefined = value, not variableName = undefined.
+## [10][Circuit Beaker - Simple Example](https://www.reddit.com/r/javascript/comments/gzzzy7/circuit_beaker_simple_example/)
+- url: /r/node/comments/gzzorr/circuit_breaker_simple_example/
 ---
 
-## [10][Read Front End Interview Questions &amp; Experiences of Amazon, Intuit, Walmart, Flipkart, OYO, MMT](https://www.reddit.com/r/javascript/comments/gz0uir/read_front_end_interview_questions_experiences_of/)
-- url: https://niksbay.com
----
-
-## [11][A Simple way to run the Calculator App made in Javascript using deno.](https://www.reddit.com/r/javascript/comments/gzi39m/a_simple_way_to_run_the_calculator_app_made_in/)
-- url: https://www.loginradius.com/engineering/blog/a-webapp-in-deno/
+## [11][I've been working on the New York Times API lately and developed a Search engine for NYT articles.](https://www.reddit.com/r/javascript/comments/h05xtt/ive_been_working_on_the_new_york_times_api_lately/)
+- url: https://rachit-pandey.github.io/Search-NYT/New%20York%20Times%20API/
 ---
 

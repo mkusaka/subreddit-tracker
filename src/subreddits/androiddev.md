@@ -31,66 +31,91 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Hi guys, I'm working on my second small android game. Thoughts? https://github.com/rosspetukhov/MathFinder/ . Pieces on the map are assigned a random value. Your goal is to find a path from one corner to the opposite, so that the sum of numbers on your route match the value of a final piece.](https://www.reddit.com/r/androiddev/comments/gzmbos/hi_guys_im_working_on_my_second_small_android/)
+## [3][The unique feature of Android 10 has come to the PC. Google Chrome earned "Automatic subtitles"](https://www.reddit.com/r/androiddev/comments/h04rj7/the_unique_feature_of_android_10_has_come_to_the/)
+- url: https://i.redd.it/j89jbz85u0451.jpg
+---
+
+## [4][How To Record Automated Tests For Mobile Apps](https://www.reddit.com/r/androiddev/comments/h07mr9/how_to_record_automated_tests_for_mobile_apps/)
+- url: https://open-source-dev-resources.s3.eu-central-1.amazonaws.com/record-mobile-tests.htm
+---
+
+## [5][Hi guys, I'm working on my second small android game. Thoughts? https://github.com/rosspetukhov/MathFinder/ . Pieces on the map are assigned a random value. Your goal is to find a path from one corner to the opposite, so that the sum of numbers on your route match the value of a final piece.](https://www.reddit.com/r/androiddev/comments/gzmbos/hi_guys_im_working_on_my_second_small_android/)
 - url: https://v.redd.it/8qah9r65pv351
 ---
 
-## [4][Information on how webapps may have to change in the future](https://www.reddit.com/r/androiddev/comments/gzlkb6/information_on_how_webapps_may_have_to_change_in/)
-- url: https://github.com/GoogleChromeLabs/svgomg-twa/issues/67#issuecomment-633657136
+## [6][Made an app using Flutter which displays all the Trending repositories, developers for a certain time frame, as the official GitHub app does not have this feature nor does the official GitHub API.](https://www.reddit.com/r/androiddev/comments/h07g85/made_an_app_using_flutter_which_displays_all_the/)
+- url: https://github.com/ahmedgulabkhan/GitTrends
 ---
 
-## [5][I made some shell scripts for easy and quick screenshotting of your developer phone from the command line](https://www.reddit.com/r/androiddev/comments/gzkcnl/i_made_some_shell_scripts_for_easy_and_quick/)
-- url: https://github.com/Johnderate/Android-Screenshot-Scripts
+## [7][Kotlin and Exceptions](https://www.reddit.com/r/androiddev/comments/h0amdw/kotlin_and_exceptions/)
+- url: https://medium.com/@elizarov/kotlin-and-exceptions-8062f589d07
 ---
 
-## [6][The mystery of Google Play's notorious "underscore" app searching issue](https://www.reddit.com/r/androiddev/comments/gzcbd1/the_mystery_of_google_plays_notorious_underscore/)
-- url: https://www.reddit.com/r/androiddev/comments/gzcbd1/the_mystery_of_google_plays_notorious_underscore/
+## [8][Here is a list of free online courses for learning Java, C++ and Python. I found those helpful for beginners. Happy learning!](https://www.reddit.com/r/androiddev/comments/h0a2ml/here_is_a_list_of_free_online_courses_for/)
+- url: https://www.reddit.com/r/androiddev/comments/h0a2ml/here_is_a_list_of_free_online_courses_for/
 ---
-Hi all, I'm new to app development and have hit a pretty bizarre obstacle to releasing my first app. I did a production release on Google Play's network two days ago and the *only* way I can find my app is by searching for it with underscores instead of spaces in the title. Will not show up by keywords, even if I type in the name verbatim. Also, my app still says "Internal Beta" even though my production release is definitely rolled out. [Here](https://imgur.com/a/Mv5lw0x?fbclid=IwAR3ZSVOkRESLheNqvNsFzyS5RUa_oGORL58ddpA4nxfyQPSAo8Rq9l77UYY) are two screenshots that show what I'm talking about.
+[Main Article Link](https://medium.com/@exploreroftruth/best-free-online-courses-for-learning-python-c-java-android-development-1a9a67afb850)
 
-I Googled the problem and was surprised to see many developers complaining about this. Check out [this 2k+ upvoted thread](https://support.google.com/googleplay/thread/15162444?hl=en) of app makers complaining about this issue from approximately seventh months ago. [Here](https://www.reddit.com/r/androiddev/comments/dvsehg/app_do_not_show_in_playstore_search_without/) is a thread in this very subreddit about the same issue around the same time. And then there was also a [news article](https://www.neowin.net/news/google-fixes-play-store-bug-that-was-hiding-new-apps-from-search-results/) the same month that talked about how Google Play has supposedly fixed this bug. None of them seemed to give any clarity on the issue from Google's perspective or why it might still be going on, just saying that this was a "search indexing" issue. I still have no idea why my app can only be found with underscores, what I can do to fix it, or if there is simply a waiting period for new apps before they show up on searches.
+# Android Development:
 
-Has anyone here experienced this issue? Google Play devs, are you reading this? It would make my day if someone can shed some wisdom on this issue for me!
-## [7][I created this simple app that will notify you of any new releases to the current Android Jetpack libraries. You can also browse and bookmark specific libraries you're interested in for easier tracking. It's on GitHub and Play Store. Not sure if I'll add more features, but I'm open to suggestions.](https://www.reddit.com/r/androiddev/comments/gyyhrm/i_created_this_simple_app_that_will_notify_you_of/)
-- url: https://i.redd.it/jzc3t3ofjo351.png
----
+**1. Learn Android Application Development**
 
-## [8][Question about Android tv app.](https://www.reddit.com/r/androiddev/comments/gzmzlz/question_about_android_tv_app/)
-- url: https://www.reddit.com/r/androiddev/comments/gzmzlz/question_about_android_tv_app/
----
-I am a big fan of tv apps based on leanback tv , I came across a very simple apk (totally free from Google Play) and the streams are also free to air, but very limited,number, 
-I was wondering if possible to modify the apk to add more links, more channels.
-or would it just be easier to start of a new project using Google Leanback template. the app is 
-&gt; com.globecastwebtv.arabsattve
+**2. Android Fundamentals: Ultimate Tutorial for App Development**
 
-thank you
-## [9][Does Google allow having apps on Huawei's app store?](https://www.reddit.com/r/androiddev/comments/gzn3wx/does_google_allow_having_apps_on_huaweis_app_store/)
-- url: https://www.reddit.com/r/androiddev/comments/gzn3wx/does_google_allow_having_apps_on_huaweis_app_store/
----
-I have been approached by Huawei and they want me to upload my apps to their store. They said they do not mind if I keep my apps on Google Play Store, but will Google mind? I cannot find anything in Google's terms and conditions.
+**3. Android Development from Scratch to Create Cool Apps!**
 
- I'm assuming because developers are allowed to upload apps to Amazon store, it is perfectly OK?
-## [10][AdMob very low ecpm](https://www.reddit.com/r/androiddev/comments/gzn3gm/admob_very_low_ecpm/)
-- url: https://www.reddit.com/r/androiddev/comments/gzn3gm/admob_very_low_ecpm/
----
-Hey
+**4. How to publish an Android App on Google Play Store**
 
-O create a simple app and add AdMob to it.
-On the first week I got a ecpm between 0.40 and 0.60 which was ok.
-Recently I have been seeing ecpm of 0.02.
+**5. Learn Android 4.0 Programming in Java**
 
-Is there something that I can do to increase this?
+# JAVA Programming:
 
-Also the main screen in my app consist of a large list with a detail view. I added the add on the detail view only so when you go back to the list it is gone. Is it a better approach to display the add always on the screen?
+**1. Crash Course Into JavaFX: The Best Way to make GUI Apps**
 
-Thanks for any help on this
-## [11][Background Location Access Permission](https://www.reddit.com/r/androiddev/comments/gzedur/background_location_access_permission/)
-- url: https://www.reddit.com/r/androiddev/comments/gzedur/background_location_access_permission/
----
-Hi Everyone, 
+**2.Java Tutorial for Complete Beginners**
 
-Recently, Google announced an SMS/Call permission type permission request mechanism for [accessing a location in the background](https://android-developers.googleblog.com/2020/02/safer-location-access.html). Have you submitted for the feedback from Google Play regarding your use case for background location permission? If so, What use cases are accepted and what use cases are rejected?
-## [12][Clean Rx Kotlin Architecture sample on GitHub Api 🚀](https://www.reddit.com/r/androiddev/comments/gz4d4v/clean_rx_kotlin_architecture_sample_on_github_api/)
-- url: https://github.com/lopspower/CleanRxArchitecture
+**3. Practice Java by Building Projects**
+
+**4. Java Design Patterns and Architecture**
+
+**5. Java Programming Basics**
+
+**6.Java Database Connection: JDBC and MySQL**
+
+**7. Java Multithreading**
+
+**8. Developing Database Application using Spring MVC and MyBatis**
+
+**9. Java Servlets and JSP — Build Java EE(JEE) app in 25 Steps**
+
+**10. Cucumber, Selenium &amp; Java -Develop a Framework in 2.5 Hours!**
+
+**11. Data Structures in Java for Noobs (Lite Edition)**
+
+**12. Introduction to Docker for Java Developers**
+## [9][Dagger Hilt Documentation](https://www.reddit.com/r/androiddev/comments/gzr21q/dagger_hilt_documentation/)
+- url: https://dagger.dev/hilt/
 ---
 
+## [10][Grade sync failed](https://www.reddit.com/r/androiddev/comments/h09dor/grade_sync_failed/)
+- url: https://www.reddit.com/r/androiddev/comments/h09dor/grade_sync_failed/
+---
+I'm a noob. I have just started building apps. This is my first time and I am not able to run my app. It shows gradle sync failed. I don't know hoe to solve this problem.
+
+Please help!
+
+Also if you guys have any suggestion as to from where I can learn more about building apps using Java it would be helpful
+## [11][The user journey: activation and commitment](https://www.reddit.com/r/androiddev/comments/h065wa/the_user_journey_activation_and_commitment/)
+- url: https://medium.com/googleplaydev/the-user-journey-activation-and-commitment-3b59a8d81164
+---
+
+## [12][Extremely Low Performance in Android Studio when I connect a specific physical device to my PC.](https://www.reddit.com/r/androiddev/comments/h08qs4/extremely_low_performance_in_android_studio_when/)
+- url: https://www.reddit.com/r/androiddev/comments/h08qs4/extremely_low_performance_in_android_studio_when/
+---
+Hi,
+
+I used my old Lenovo Moto Z Play for App development (Android 9 via Lineage OS). It worked fine, no performance issues whatsoever. After I updated to Android Studio 4.0 the performance of Android Studio is \~5fps when the Lenovo is connected (wire and wifi). If I disconnect it, the performace is back to normal. This however doesnt happen when I connect my Pixel 4XL.
+
+Does anyone have a similar issue / knows how to fix it?
+
+Thanks in advance :)

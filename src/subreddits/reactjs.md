@@ -84,114 +84,130 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][My first MERN stack app finally showable, it is twitter clone with some prefetched data from Twitter api, Feedback and suggestions are welcome.](https://www.reddit.com/r/reactjs/comments/gzk1dh/my_first_mern_stack_app_finally_showable_it_is/)
+## [3][After 3 weeks of building with react &amp; typescript I'm officially in love. We managed to build out the web app for StockAlarm and here's how it turned out...](https://www.reddit.com/r/reactjs/comments/gzxh3x/after_3_weeks_of_building_with_react_typescript/)
+- url: https://app.stockalarm.io/
+---
+
+## [4][My first MERN stack app finally showable, it is twitter clone with some prefetched data from Twitter api, Feedback and suggestions are welcome.](https://www.reddit.com/r/reactjs/comments/gzk1dh/my_first_mern_stack_app_finally_showable_it_is/)
 - url: https://v.redd.it/osyqdc6pwu351
 ---
 
-## [4][keen-slider - The HTML touch slider carousel with the most native feeling.](https://www.reddit.com/r/reactjs/comments/gz6ixb/keenslider_the_html_touch_slider_carousel_with/)
-- url: https://keen-slider.io/
+## [5][How does React Reconciliation works ??](https://www.reddit.com/r/reactjs/comments/h0axzb/how_does_react_reconciliation_works/)
+- url: https://www.reddit.com/r/reactjs/comments/h0axzb/how_does_react_reconciliation_works/
 ---
+Reconciliation is the process in which React kind of appears to reload data or the whole app on updates. 
 
-## [5][React use-count-up has a new demo site](https://www.reddit.com/r/reactjs/comments/gzlabc/react_usecountup_has_a_new_demo_site/)
-- url: https://use-count-up.now.sh/
+ [https://www.loginradius.com/engineering/blog/reacts-reconciliation-algorithm/](https://www.loginradius.com/engineering/blog/reacts-reconciliation-algorithm/)
+## [6][How to incorporate AI text generator in my website?.](https://www.reddit.com/r/reactjs/comments/h07s7g/how_to_incorporate_ai_text_generator_in_my_website/)
+- url: https://www.reddit.com/r/reactjs/comments/h07s7g/how_to_incorporate_ai_text_generator_in_my_website/
 ---
+Id like to do something similar to this: [https://talktotransformer.com/](https://talktotransformer.com/)
 
-## [6][Free like a freelancer or secure like an employee? There's a third option: The contractor](https://www.reddit.com/r/reactjs/comments/gzm5fa/free_like_a_freelancer_or_secure_like_an_employee/)
-- url: https://jkettmann.com/contractor-as-alternative-to-freelancer-or-employee/
+Id like to add AI (GPT-2) generated text to my page but I don't know python nor Im versed in AI matters. I can use JS and React Node etc, what would be the best way to approach this?
+## [7][How to use an SSG for dynamic components](https://www.reddit.com/r/reactjs/comments/h0afo3/how_to_use_an_ssg_for_dynamic_components/)
+- url: https://www.reddit.com/r/reactjs/comments/h0afo3/how_to_use_an_ssg_for_dynamic_components/
 ---
+Let's say I have a back-end server which can only host static files. For SPAs like create-react-app, deploying the front-end to this server is relatively simple (just build the app to the server then route the back-end to the bundled index.html). However, things get complicated when your trying to implement it for multi-page applications. Let's assume again that your back-end server can only have static files, in this case, you can't use SSR. But some pages of the application needs to be fetched from the server at browser runtime. Example, if we have a news website we might have the following component hierarchy:
 
-## [7][How do you persist a login for a browser that has cookies and/or local storage disabled?](https://www.reddit.com/r/reactjs/comments/gzm14o/how_do_you_persist_a_login_for_a_browser_that_has/)
-- url: https://www.reddit.com/r/reactjs/comments/gzm14o/how_do_you_persist_a_login_for_a_browser_that_has/
+```
+Home
+├─ NewsViewer
+└─ About
+```
+Home has two components (or pages in this case). About is just a static page. However, NewsViewer is a dynamic page which fetches data from an API to display the appropriate contents. I'm confused how one should use SSG for this kind of scenario since I don't want to statically build each news (just the Viewer itself). So I want my back-end server to only have three HTML files (Home, NewsViewer, and About). Most of the approaches I see about this implements some kind of building all related static files for each News View until a page is fully static. Is it possible to use some kind of SSG with this set-up?
+## [8][To test or not to test. That is the question?](https://www.reddit.com/r/reactjs/comments/h05843/to_test_or_not_to_test_that_is_the_question/)
+- url: https://www.reddit.com/r/reactjs/comments/h05843/to_test_or_not_to_test_that_is_the_question/
 ---
-I am thinking about how to write my authentication code. I want to use cookies to store the JWT so when the user returns to the site they are still logged in.
+Hey 👋
 
-However I am aware that there are some cases when the user may have cookies disabled and/or their local storage. Is it normal to consider engineering a solution around this or do most sites only work if cookies are enabled?
+I have spent many years now building various different React applications, large and small scale, and recently had thoughts on testing I would love to share with you all.
 
-If a solution is needed how would I go about it? I guess I would just have to force the user to login again when they return to the site and store the token in context or something.
+The question I asked myself recently and our team was do we need the full suite of tests to gain confidence with our code? And the answer is probably not, here I go into some details why:
 
-Any pointers on this would be greatly appreciated! Thanks!
-## [8][React Animated Bottomsheet with user gesture](https://www.reddit.com/r/reactjs/comments/gzhkiu/react_animated_bottomsheet_with_user_gesture/)
-- url: https://www.reddit.com/r/reactjs/comments/gzhkiu/react_animated_bottomsheet_with_user_gesture/
+[https://dev.to/boyney123/to-test-or-not-to-test-that-is-the-question-ml3](https://dev.to/boyney123/to-test-or-not-to-test-that-is-the-question-ml3)
+
+Hopefully, it can help some people.
+
+✌️
+## [9][Conditional rendering of a checkbox's "checked" value based on a json value?](https://www.reddit.com/r/reactjs/comments/h091zf/conditional_rendering_of_a_checkboxs_checked/)
+- url: https://www.reddit.com/r/reactjs/comments/h091zf/conditional_rendering_of_a_checkboxs_checked/
 ---
-Recently, I've had the opportunity to work on a module that had a bottomsheet kind of component. So, I thought why not ship this is a module for the open source community. What do you guys think?
+Hi all,
 
-[https://www.npmjs.com/package/react-animated-bottomsheet](https://www.npmjs.com/package/react-animated-bottomsheet)
+I have a materialUI checkbox that I want to either render checked or unchecked based on data I'm pulling in from my Flask API route `/users`.
 
-[React Animated Bottomsheet](https://reddit.com/link/gzhkiu/video/skmbutttwt351/player)
-## [9][Today I fully embraced test-driving coding. Feeling refreshed.](https://www.reddit.com/r/reactjs/comments/gzim8z/today_i_fully_embraced_testdriving_coding_feeling/)
-- url: https://www.reddit.com/r/reactjs/comments/gzim8z/today_i_fully_embraced_testdriving_coding_feeling/
----
-I did not write a lot of test for my full stack apps before. I feel bored and troublesome to write snapshot test, unit test, etc, esp. for small size apps.
+The data is sent as JSON and I am storing it like so from my API path:
 
-Recently a friend of mine invited me to start a new business project and I will be the only main programmer. He has a fairly complete database design and UI design and CSS is still not complete. So I started to build the GraphQL server first.
+    const [users, setUsers] = useState([]);
 
-This time I embraced test-driven coding: I write tests before even starting making the resolvers. Then my tests as well as my codebase start to grow, but the feeling of afraid of writing incomplete or buggy code is completely gone! 
+    useEffect(() =&gt; {
+    fetch("/users").then((response) =&gt;
+        response.json().then((data) =&gt; {
+        console.log(data);
+        setUsers(data.users); //get the data from the API and put it in the state
+        })
+    );
+    }, []);
 
-Previously I was not well-planned and I always started coding both frontend and backend together. It was very tiring to manage so many functions and data flow and switching mindset between. Now I focused my GraphQL API only, and think deeply how should the input be, and how to return meaningful errors. I think I have found a right way to code efficiently and effectively.
+I am trying to then render into a table.  Here is an example:
 
-Whats your thought on this?
-## [10][Let's Fork: my first "real" React Native app &amp; an app to help couples/groups of people decide where to eat 😀](https://www.reddit.com/r/reactjs/comments/gzmrjt/lets_fork_my_first_real_react_native_app_an_app/)
-- url: https://v.redd.it/bhusc306j4151
----
+    &lt;TableBody&gt;
+        {users.map((user) =&gt; (
+        &lt;TableRow key={user.user_name}&gt;
+            &lt;TableCell component="th" scope="row"&gt;{user.user_name}&lt;/TableCell&gt;
+            &lt;TableCell align="left"&gt;{user.first_name} {user.last_name}&lt;/TableCell&gt;
+            &lt;TableCell align="left"&gt;{user.email}&lt;/TableCell&gt;
+            &lt;TableCell align="center"&gt;  
+                
+                {user.active}
+                
+                &lt;Checkbox
+                checked={checked}
+                color="primary"
+                inputProps={{ 'aria-label': 'secondary checkbox' }}
+                /&gt;
+            &lt;/TableCell&gt;
+        &lt;/TableRow&gt;
+        ))}
+    &lt;/TableBody&gt;
 
-## [11][I've been away from React and web dev for about 4 months now. What are some good sources (other than the docs) to refresh my knowledge on React?](https://www.reddit.com/r/reactjs/comments/gzmhww/ive_been_away_from_react_and_web_dev_for_about_4/)
-- url: https://www.reddit.com/r/reactjs/comments/gzmhww/ive_been_away_from_react_and_web_dev_for_about_4/
----
-Yeah, I've been away for quite some time, but I would like to get back into my shape asap. I would also appreciate it if someone could update me on what news I've missed out on React.
+So the above renders a checkbox, in a checked state as I would expect.  It is NOT rendering anything for `{user.active}`. I am not sure how to make it checked or unchecked based on the `user.active` value.  As a note, the `console.log()` is showing `true` as the active property.
 
-Thank you!
-## [12][New to React, am I thinking about it correctly with this example](https://www.reddit.com/r/reactjs/comments/gzmgnx/new_to_react_am_i_thinking_about_it_correctly/)
-- url: https://www.reddit.com/r/reactjs/comments/gzmgnx/new_to_react_am_i_thinking_about_it_correctly/
----
-I am trying to convert a legacy web app over to reactjs. This is an example piece of HTML (it's part of the top navbar containing the signup/login buttons):
-
-    &lt;div class="top-navbar-right"&gt;
+In Python I'd do something like 
     
-        &lt;div id="nightmode-container" class="flex center row-reverse"&gt;
-            &lt;i class="fas fa-moon"&gt;&lt;/i&gt;
-        &lt;/div&gt;
-    
-        &lt;div class="flex"&gt;
-            &lt;div id="signup" class="star-button"&gt;Sign Up&lt;/div&gt;
-            &lt;div id="login" class="star-button"&gt;Login&lt;/div&gt;
-        &lt;/div&gt;
-    
-    &lt;/div&gt;
+    if user.active == False:
+        # checkbox code
 
-* Nightmode-container is a padded, centered div aligned to the left with display flex.
-* The signup and login buttons are aligned to the right.
-* top-navbar-right is a flex container with space-between.
-* All of the above code is part of the "navbar", it's just the right part of it
+I am sorry I am coming from python and finding my way in react/js so apologies if this seems a beginner question.  I've done a heap of searching on this but unfortunately the results of searching is heavily swayed toward making custom checkboxes and I'm not finding what I'm after.
 
-I'm using Styled Components. **This is where I'm not sure if I'm following the correct "react way":**
+Any advice would be greatly appreciated.  Thank you
+## [10][Manifest.json takes forever to load](https://www.reddit.com/r/reactjs/comments/h091mh/manifestjson_takes_forever_to_load/)
+- url: https://www.reddit.com/r/reactjs/comments/h091mh/manifestjson_takes_forever_to_load/
+---
+I can't tell where the error lies. But when users come to my website a small 100byte manifest.json file sometimes takes over a second to load.
 
-    &lt;NavRight&gt;
-    &lt;div id="nightmode-container" class="flex center row-reverse"&gt;
-       &lt;Nightmode/&gt;
-    &lt;/div&gt;
-    &lt;div class="flex"&gt;
-       &lt;Button&gt;Sign Up Free&lt;/Button&gt;
-       &lt;Button&gt;Login&lt;/Button&gt;
-    &lt;/div&gt;
-    &lt;/NavRight&gt;
+This is all that I have under manifest.json rules for my nginx config:
 
-These are my questions:
+    location ~* \.(?:manifest|appcache|html?|xml|json)$ {
+        expires -1;
+    } 
 
-1. Should everything be React Components? I have left "nightmode-container" as an ordinary div as it doesn't have function other than some css styling which I can apply via stylesheet. My logic is too many React Components on the screen will cause slowdown or just isn't desirable in general? 
-2. Similarly to 1, I am just wrapping the Buttons in a div. I'm aware of Fragment but I need to apply styling to this div. The problem I am now faced with is how to put a margin-right:15px on the Sign Up button. I'm aware I can put in-line styling on the Button with style={{margin-right:15px}} but I want a better way to do it because I want the styling to be responsive via media queries. Should I simply put a "sign-up" class on the button and target it via ordinary stylesheet? Or is there a clever way to target it via StyledComponents? I tried putting a sign-up class and this
+Does anyone have any idea why this might be?
+## [11][Methods to create a configureable &amp; downloadable build zip?](https://www.reddit.com/r/reactjs/comments/h07zta/methods_to_create_a_configureable_downloadable/)
+- url: https://www.reddit.com/r/reactjs/comments/h07zta/methods_to_create_a_configureable_downloadable/
+---
+Hey guys, I'm really new in this area and I actually have no idea where to start.
 
-&amp;#8203;
+I want to provide users with the ability to download a zip of a build that uses data, they previously added in a form. Then they can use it how they like, completely Independent of my server.
 
-    export const NavRight= styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: ${sizes.columnLeftWidth}px;
-    padding: ${sizes.spacing}px;
+At first glance I see two ways to go about this:
 
- &amp; .sign-up{
-        margin-right:15px;
- }
-`;
+1.) Actually build on the server, zip the file and download it. I somehow need to trigger the build script and pass the data to the build script. I really have no idea how this would work.
 
-Thanks for any tips.
+2.) Use a build and just add a file like data.json to the zip, that the app uses to get this data. This seems a little easier and I could do this In what ever language I like, but with this approach I'm not sure how I would handle the usage of the data/the import. Would it be smart to just fetch the file?
+
+Has anybody done something like that? I'm really open for all suggestions.
+## [12][React Lesson 8: Deep Dive into React Redux](https://www.reddit.com/r/reactjs/comments/h07wvy/react_lesson_8_deep_dive_into_react_redux/)
+- url: https://blog.soshace.com/react-lesson-8/
+---
+

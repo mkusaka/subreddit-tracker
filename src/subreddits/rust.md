@@ -23,61 +23,59 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/gysxgq/whats_everyone_working_on_this_week_242020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-24-2020/43988?u=llogiq)!
-## [3][New inline assembly syntax available in nightly | Inside Rust Blog](https://www.reddit.com/r/rust/comments/gzil0l/new_inline_assembly_syntax_available_in_nightly/)
-- url: https://blog.rust-lang.org/inside-rust/2020/06/08/new-inline-asm.html
+## [3][The new version of nushell, a modern shell written in Rust.](https://www.reddit.com/r/rust/comments/h01ysx/the_new_version_of_nushell_a_modern_shell_written/)
+- url: https://www.nushell.sh/blog/2020/06/09/nushell_0_15_0.html
 ---
 
-## [4][Futures and Segmented Stacks](https://www.reddit.com/r/rust/comments/gz5oe0/futures_and_segmented_stacks/)
-- url: https://without.boats/blog/futures-and-segmented-stacks/
+## [4][Ditto | Introducing safer_ffi](https://www.reddit.com/r/rust/comments/gzyjo8/ditto_introducing_safer_ffi/)
+- url: https://www.ditto.live/blog/posts/introducing-safer-ffi
 ---
 
-## [5][PNGme: An Intermediate Rust Project](https://www.reddit.com/r/rust/comments/gzehpz/pngme_an_intermediate_rust_project/)
-- url: https://picklenerd.github.io/pngme_book/
+## [5][What are your favorite Rust blogs?](https://www.reddit.com/r/rust/comments/gzt3cj/what_are_your_favorite_rust_blogs/)
+- url: https://www.reddit.com/r/rust/comments/gzt3cj/what_are_your_favorite_rust_blogs/
+---
+Who's writing great thoughtful/insightful/interesting posts about Rust, or Rust-adjacent subjects?
+
+Off the top of my head I know of:
+
+The official blog: https://blog.rust-lang.org/ 
+
+The "inside Rust" blog: https://blog.rust-lang.org/inside-rust/
+
+withoutblogs: https://without.boats/blog 
+
+
+
+Feel free to self-promote - if you're writing great content, I want to know about it!
+## [6][bita 0.7.0 - New release of the http file synchronization tool+lib](https://www.reddit.com/r/rust/comments/h08vxp/bita_070_new_release_of_the_http_file/)
+- url: https://github.com/oll3/bita
 ---
 
-## [6][Why does rust need something like placement new](https://www.reddit.com/r/rust/comments/gzmbpa/why_does_rust_need_something_like_placement_new/)
-- url: https://www.reddit.com/r/rust/comments/gzmbpa/why_does_rust_need_something_like_placement_new/
+## [7][Build deps in release, but your code in debug](https://www.reddit.com/r/rust/comments/h0ad4y/build_deps_in_release_but_your_code_in_debug/)
+- url: https://www.reddit.com/r/rust/comments/h0ad4y/build_deps_in_release_but_your_code_in_debug/
 ---
-Why was there an attempt to introduce new syntax for placement new? Why can't the rust compiler optimize the cases by itself (ever?)?
-
-For e.g.: In `vec.push(MyStruct { foo, bar})`, why can't this be compiled such that MyStruct is constructed in place by itself without any special syntax? Is there a requirement that MyStruct be constructed on stack before moving to heap?
-
-A lot of code is already written like this, which would benefit from implicit optimization rather than creating a new syntax. Is there some technical difficulty in achieving this?
-
-I remember seeing an issue related to `Box::new` not skipping copy even when it's `#[inline(always)]`.
-
-Forgive me if it's a stupid question.
-## [7][rust-analyzer changelog #28](https://www.reddit.com/r/rust/comments/gyzk6s/rustanalyzer_changelog_28/)
-- url: https://rust-analyzer.github.io/thisweek/2020/06/08/changelog-28.html
+Hi guys!
+Recently I saw some useful cargo config when it builds all dependencies in release mode, but app code in debug. Remember that it need some `Cargo.toml` changes. 
+I fail to find that trick now, hope for community help!)
+## [8][mrml, a Rust implementation of mjml for faster, client side or server side, email templating](https://www.reddit.com/r/rust/comments/h067bs/mrml_a_rust_implementation_of_mjml_for_faster/)
+- url: https://github.com/jdrouet/mrml/
 ---
 
-## [8][Not everything is UTF-8](https://www.reddit.com/r/rust/comments/gz33u6/not_everything_is_utf8/)
-- url: https://octobus.net/blog/2020-06-05-not-everything-is-utf8.html
+## [9][The Making of Pong using Mun Hot Reloading](https://www.reddit.com/r/rust/comments/gzqcow/the_making_of_pong_using_mun_hot_reloading/)
+- url: https://v.redd.it/toz830p4uw351
 ---
 
-## [9][What's the current state of Rust's Sparse Linear Algebra libraries?](https://www.reddit.com/r/rust/comments/gzazna/whats_the_current_state_of_rusts_sparse_linear/)
-- url: https://www.reddit.com/r/rust/comments/gzazna/whats_the_current_state_of_rusts_sparse_linear/
----
-Hello all,
-
-I've been doing a lot of simulations recently, and I need to solve some ~~large~~ (2000 x 2000) symmetric and non-triangular sparse (~40000 non-zero entries) linear systems of equations where the matrices are changing in a tight loop. (The matrices are Jacobians of a highly non-linear function). The RHS vectors are dense. I currently store the RHS in a `ndarray::Array1`.
-
-What's the best library to use for this?
-
-I've been using `sprs`, but its performance was terrible in my benchmarking.
-
-I understand `nalgebra` has sparse matrix support, but I was under the impression that `nalgebra` isn't meant for high dimensional systems such as mine.
-
-EDIT: As many have pointed out these matrices aren't really large. I'll have larger ones in future iterations of this project, but should have been more careful with my phrasing.
-## [10][Prose: a Markdown to HTML parser built using Nom and Yew](https://www.reddit.com/r/rust/comments/gzmeoa/prose_a_markdown_to_html_parser_built_using_nom/)
-- url: https://github.com/HGHimself/prose
+## [10][First Rust project! Might be useful if you have a Thinkpad with Linux](https://www.reddit.com/r/rust/comments/gzv3t9/first_rust_project_might_be_useful_if_you_have_a/)
+- url: https://github.com/saibotd/tp-auto-kbbl
 ---
 
-## [11][This Month in Rust GameDev #10 - May 2020](https://www.reddit.com/r/rust/comments/gz59mk/this_month_in_rust_gamedev_10_may_2020/)
-- url: https://rust-gamedev.github.io/posts/newsletter-010
+## [11][My Experiences with Rust Open Source Projects](https://www.reddit.com/r/rust/comments/gzvl6o/my_experiences_with_rust_open_source_projects/)
+- url: https://javednissar.ca/getting-involved-in-rust-open-source/
 ---
 
-## [12][unFTP: When you need to FTP, but don't want to.](https://www.reddit.com/r/rust/comments/gz12l4/unftp_when_you_need_to_ftp_but_dont_want_to/)
-- url: https://github.com/bolcom/unFTP
+## [12][Improving the IDE for Rust/WinRT](https://www.reddit.com/r/rust/comments/gzyppr/improving_the_ide_for_rustwinrt/)
+- url: https://www.reddit.com/r/rust/comments/gzyppr/improving_the_ide_for_rustwinrt/
 ---
+[https://kennykerr.ca/2020/06/09/improving-the-ide-for-rust-winrt/](https://kennykerr.ca/2020/06/09/improving-the-ide-for-rust-winrt/)
 
+FTA, the author of the rust/winrt crate dives into how to unroll the dependency to make working with the crate easier in VSCode and gives tips on speeding up compilation and debugging.

@@ -1,98 +1,68 @@
 # golang
-## [1][VS Code Go extension joins Go project](https://www.reddit.com/r/golang/comments/gzvdq7/vs_code_go_extension_joins_go_project/)
-- url: https://blog.golang.org/vscode-go
+## [1][Exploring container package in Go (list, ring and heap)](https://www.reddit.com/r/golang/comments/h0xjc2/exploring_container_package_in_go_list_ring_and/)
+- url: https://therebelsource.com/blog/exploring-container-package-in-go-list-ring-and-heap/9zTBiMaaYg
 ---
 
-## [2][mstore : In-memory storage management system for embedded data storage or cache system](https://www.reddit.com/r/golang/comments/h070vr/mstore_inmemory_storage_management_system_for/)
-- url: https://www.reddit.com/r/golang/comments/h070vr/mstore_inmemory_storage_management_system_for/
----
-[https://github.com/PierreKieffer/mstore](https://github.com/PierreKieffer/mstore)
-## [3][Go: String &amp; Conversion Optimization](https://www.reddit.com/r/golang/comments/h0as8m/go_string_conversion_optimization/)
-- url: https://medium.com/a-journey-with-go/go-string-conversion-optimization-767b019b75ef
+## [2][Google authentication with GoLang and Goth](https://www.reddit.com/r/golang/comments/h0yrhk/google_authentication_with_golang_and_goth/)
+- url: https://www.loginradius.com/engineering/blog/google-authentication-with-golang-and-goth/
 ---
 
-## [4][Basic authentication with Go](https://www.reddit.com/r/golang/comments/h06wi5/basic_authentication_with_go/)
-- url: https://rafallorenz.com/go/go-basic-authentication/
+## [3][An introduction to Go for non-Go developers](https://www.reddit.com/r/golang/comments/h0jc27/an_introduction_to_go_for_nongo_developers/)
+- url: https://benhoyt.com/writings/go-intro/
 ---
 
-## [5][New release of DevDash, to create customizable dashboards in your terminal](https://www.reddit.com/r/golang/comments/gzk5z3/new_release_of_devdash_to_create_customizable/)
-- url: https://www.reddit.com/r/golang/comments/gzk5z3/new_release_of_devdash_to_create_customizable/
----
-Hello everybody!
-
-I'm very proud to release the new version of [DevDash](https://github.com/Phantas0s/devdash), which allows you to create very flexible terminal dashboards.
-
-What's the difference with the existing solutions, you might rightfully ask? You can personalize everything: what data you put in the widgets, from where, the color, the placement, and so on.
-
-You can as well use very generic widgets to query yourself the APIs available!
-
-With this new version, you can as well feed your nice dashboard widgets with data from command lines or scripts output, from your local host or from a remote host (via SSH).
-
-The way to handle dashboard configurations has been simplified, too. I still think there is a lot of improvement to be made on that matter, so I will focus on that next.
-
-The performance have been significantly improved, too.
-
-If you like it, don't forget to give a sweet little Github star :)
-
-* [Github repo](https://github.com/Phantas0s/devdash) 
-* [Documentation](https://thedevdash.com)
-
-&amp;#x200B;
-
-https://preview.redd.it/lluiebevyu351.png?width=1920&amp;format=png&amp;auto=webp&amp;s=678a6e016c5ff92c7c731ed651af5780a62bb011
-
-https://preview.redd.it/5zile4evyu351.png?width=1920&amp;format=png&amp;auto=webp&amp;s=88ad4abe600ca787fe0ab0b91c46ac1784b1c29a
-## [6][The learning resources I'm using for my 100 days of Go which starts this week. Do you have any other recommendations?](https://www.reddit.com/r/golang/comments/gzuxgt/the_learning_resources_im_using_for_my_100_days/)
-- url: https://www.reddit.com/r/golang/comments/gzuxgt/the_learning_resources_im_using_for_my_100_days/
----
-Starting a 100 days of Go this week which should take me up until September. My resources are the following:
-
-1. [Learn Go with tests](https://quii.gitbook.io/learn-go-with-tests/) This will be what I use to start coding in Go for the first 18-20 days
-2. [Gophercises](https://gophercises.com/) There seems to be a variety of rich content here. I've heard great things about Jon Calhoun's teaching style. This will take up days 20-60 to complete
-3. [Web Development in Go](https://www.usegolang.com/) A premium resource by Jon Calhoun. Other than me receiving a massive student discount, I am choosing the course because he is the type of instructor to take time out of his day to help you when things go wrong (according to his course bio). Instead of paying for a tutorial, I'm seeing this as a "*pay for a mentor*" type of scheme. This will take up days 61-70 to complete.
-4. Days 70-100 will consist of me commiting normal 9-5 working hours to a web project powered by Go. 
-
-Over those 100 days I will be supplementing my learning by passively reading through [Go By Example](https://gobyexample.com/) along with the [Blue book](https://www.gopl.io/). I understand that the book has some exercises to complete so perhaps I'll do these passively over days 70-100 or just look at the code solutions on Github to see if I understand the code.
-
-**Does anyone else have any superb learning resources?**
-## [7][A Go package for drawing basic graphics in a terminal](https://www.reddit.com/r/golang/comments/h00sxz/a_go_package_for_drawing_basic_graphics_in_a/)
-- url: https://github.com/daoleno/tgraph
+## [4][Telebot V2.3 released: The most feature-complete bot framework for Telegram in Go](https://www.reddit.com/r/golang/comments/h0yz9o/telebot_v23_released_the_most_featurecomplete_bot/)
+- url: https://github.com/tucnak/telebot/releases/tag/v2.3
 ---
 
-## [8][Measure DNS Request time](https://www.reddit.com/r/golang/comments/h06b0r/measure_dns_request_time/)
-- url: https://www.reddit.com/r/golang/comments/h06b0r/measure_dns_request_time/
+## [5][UtahFS is an encrypted storage system that provides a user-friendly FUSE drive backed by cloud storage](https://www.reddit.com/r/golang/comments/h0szzl/utahfs_is_an_encrypted_storage_system_that/)
+- url: https://github.com/cloudflare/utahfs
 ---
-Hi all,
 
-I'm looking for a method to measure how long a DNS request takes from Golang, but unable to find out how to measure the time it takes to get back the data.  
-Maybe anyone here has an idea ?
-## [9][Why can't you declare array in const?](https://www.reddit.com/r/golang/comments/h04eg2/why_cant_you_declare_array_in_const/)
-- url: https://www.reddit.com/r/golang/comments/h04eg2/why_cant_you_declare_array_in_const/
+## [6][[P] spaGO: a work-in-progress yet ready-to-use library for ML/NLP entirely in Go](https://www.reddit.com/r/golang/comments/h0yys5/p_spago_a_workinprogress_yet_readytouse_library/)
+- url: https://www.reddit.com/r/golang/comments/h0yys5/p_spago_a_workinprogress_yet_readytouse_library/
 ---
-New to Go, but is it this hard to define a constant array?
+From today, Gophers can exploit the potential of state-of-the-art NLP technologies without moving to other languages. I am excited to share some results from my personal "NLP Odyssey": spaGO is a work-in-progress yet ready-to-use library for ML/NLP, written entirely in Go. You can create and train your own neural model, or import a pre-trained one from Hugging Face and FlairNLP. The deploy is just a single executable for your server (no heavy dependencies, no virtual environments).
 
-So here's a tiny snippet, sorry for formatting if it messes up:  
+[spaGO HTTP API for Question-Answering](https://preview.redd.it/irz8bu945a451.png?width=1811&amp;format=png&amp;auto=webp&amp;s=6a3f6efb4c010876ab478a1582812a9d6ae4d5cc)
 
+Please check it out and let me know what you think!
 
-const (  
-x = 3  
-arr := \[x\] int{1, 2, 3}  
-)
+The code is aviable at: [https://github.com/nlpodyssey/spago](https://github.com/nlpodyssey/spago)
 
-func main() {
+If you like the project, please star the repository to show your support!
 
-.....
-
-}
-
-//Note, "arr := \[3\] int{1, 2, 3}" does not work either. 
-
-The error is const initializer \[3\]int literal is not a constant.
-## [10][Projects for beginners](https://www.reddit.com/r/golang/comments/h08pfs/projects_for_beginners/)
-- url: https://www.reddit.com/r/golang/comments/h08pfs/projects_for_beginners/
+P.S. I warn you that for now, spaGO doesn't use GPU and there are a ton of optimizations to make it more performant. As a minimum, we can start with something!
+## [7][Stream processing similar to Kafka](https://www.reddit.com/r/golang/comments/h0xtya/stream_processing_similar_to_kafka/)
+- url: https://www.reddit.com/r/golang/comments/h0xtya/stream_processing_similar_to_kafka/
 ---
-Hi there, I have recently started learning go and was wondering what all projects I could work on as a newbie
+Hi.
 
-&amp;#x200B;
+Are there any stream processing systems similar to Kafka written in Golang? Why go, because I want the consumer/client to be first class citizen. I want an alternative for Kafka because of the annoying Zookeeper dependency. One requirements: If the client/consumer stops I want the ability to pick up where it left off.
 
-Couldn't find much by googling, hence asking here. Thank you!
+How does nsq and nats stack up?
+## [8][Can anyone translate relation sql to MongoDB?](https://www.reddit.com/r/golang/comments/h0ywdk/can_anyone_translate_relation_sql_to_mongodb/)
+- url: https://www.reddit.com/r/golang/comments/h0ywdk/can_anyone_translate_relation_sql_to_mongodb/
+---
+Can anyone give me example in MongoDB to createOne and getOne for relationships
+
+Let's say user has many companies 
+
+Companies has many files 
+
+How to translate it to createOne and getOne ?
+
+Should I create collection company, user, and file for those ? 
+
+Thank you
+## [9][Testing and Validating Input in Go](https://www.reddit.com/r/golang/comments/h0z9zg/testing_and_validating_input_in_go/)
+- url: https://hackwild.com/article/go-input-validation-and-testing/
+---
+
+## [10][Avoiding nested function (using pixel)](https://www.reddit.com/r/golang/comments/h0z7x5/avoiding_nested_function_using_pixel/)
+- url: https://www.reddit.com/r/golang/comments/h0z7x5/avoiding_nested_function_using_pixel/
+---
+Hi I'm using the pixel library (in which basically you define a run function and it's your "real" main fuction the main jsute does : pixel.Run(run) and I feel that it's not a good idea to define any pixel object outside of the run (thats probabely on this point that I'm wrong...) ): 
+I'm really new in programming and with pixel I've created a "shoot" function which lets my character shoot, but... I've first created the function inside of the run func... before discovering that go does not let us create nested func... 
+So I defined it outside the run function but... I need some variable (such as my main window or things like that ) which are defined inside the run function (so on a local scope... so basically I can't access them)... could you please tell me a way to go through this or tell me if I'm not thinking my code the right way... I've never coded a game before (and almost never coded) 
+Thanks you ! &lt;3

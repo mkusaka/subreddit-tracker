@@ -1,5 +1,43 @@
 # reduxjs
-## [1][Does mapStateToProps run first before the component pulls in the props passed down into it?](https://www.reddit.com/r/reduxjs/comments/gz7hpt/does_mapstatetoprops_run_first_before_the/)
+## [1][Why should I write unit test for actionCreators?](https://www.reddit.com/r/reduxjs/comments/h0ue75/why_should_i_write_unit_test_for_actioncreators/)
+- url: https://www.reddit.com/r/reduxjs/comments/h0ue75/why_should_i_write_unit_test_for_actioncreators/
+---
+Reference from [Official docs](https://redux.js.org/recipes/writing-tests#action-creators):
+
+In Redux, action creators are functions which return plain objects. When testing action creators, we want to test whether the correct action creator was called and also whether the right action was returned.
+
+But my question is WHY?
+
+ActionCreator is a function that returns an object. It's a pure function. All it does is returning an object with whatever data is passed while calling. Is there any risk of not testing this function?
+
+    export function addTodo(text) {
+      return {
+        type: types.ADD_TODO,
+        text
+      }
+    }
+
+Its more like creating two objects and doing deep comparison.
+
+&gt;expect(actions.addTodo(text)).toEqual(expectedAction)
+
+The only scenario I can think of where unit tests can be useful is when someone accidentally changes this function to return an object with type: `types.EDIT_TODO`
+
+But  is this the only case? Are there any other benefits  of writing tests cases for functions that does the obvious?  
+
+
+EDIT: I do use `redux-saga` for managing async actions (fetching data through API calls etc) and I do write unit tests for sagas. I'm only concerned  about writing unit tests for action creators!
+## [2][Can you use reducers across sibling components?](https://www.reddit.com/r/reduxjs/comments/h0dbjw/can_you_use_reducers_across_sibling_components/)
+- url: https://www.reddit.com/r/reduxjs/comments/h0dbjw/can_you_use_reducers_across_sibling_components/
+---
+This might seem like a dumb question but this current code architecture I'm working with, each "sibling component" think left/right panels, have their own reducers(obviously?). Then they're joined into a parent reducer eg. `allReducers`.
+
+So for the sake of an example we have: left panel, right panel
+
+If right-panel has some state it's maintaining, can left-panel use it(without using that primary combined parent reducer).
+
+Anyway I know this is hard to imagine without code, also we're using saga which I don't know off hand what it's for. The saga files have function generators inside them. I don't think it's relevant.
+## [3][Does mapStateToProps run first before the component pulls in the props passed down into it?](https://www.reddit.com/r/reduxjs/comments/gz7hpt/does_mapstatetoprops_run_first_before_the/)
 - url: https://www.reddit.com/r/reduxjs/comments/gz7hpt/does_mapstatetoprops_run_first_before_the/
 ---
 This is probably a weird question but as I trace through(console log execution) of events when loading a component that is using `mapStateToProps` the value I set in the reducer state is what I see on the immediate load of the component.
@@ -25,7 +63,7 @@ edit: here's a better idea of what I'm saying
 `// rest of dispatch/connect`
 
 I don't know if this fully captures the issue, since we also have connected components going on, a main reducer/saga...
-## [2][I am getting Reddit's store in my app and not the one I created](https://www.reddit.com/r/reduxjs/comments/gvduz0/i_am_getting_reddits_store_in_my_app_and_not_the/)
+## [4][I am getting Reddit's store in my app and not the one I created](https://www.reddit.com/r/reduxjs/comments/gvduz0/i_am_getting_reddits_store_in_my_app_and_not_the/)
 - url: https://www.reddit.com/r/reduxjs/comments/gvduz0/i_am_getting_reddits_store_in_my_app_and_not_the/
 ---
 I made a small app that fetches restaurant data, displays it, and allows filtering and searching cities and all the usual stuff using useReducer and now I am trying to refactor it to use Redux. I am not using Redux ToolKit yet but I plan on learning it for my next project.
@@ -53,15 +91,15 @@ Anyway, I made my rootReducer, brought in Provider and createStore and hooked al
 Thanks in advance for nay help
 
 EDIT: formatting
-## [3][[Q] Why so much work just for a global storage space?](https://www.reddit.com/r/reduxjs/comments/gv47ka/q_why_so_much_work_just_for_a_global_storage_space/)
+## [5][[Q] Why so much work just for a global storage space?](https://www.reddit.com/r/reduxjs/comments/gv47ka/q_why_so_much_work_just_for_a_global_storage_space/)
 - url: https://www.reddit.com/r/reduxjs/comments/gv47ka/q_why_so_much_work_just_for_a_global_storage_space/
 ---
  I was thinking that perhaps redux has too much indirection, maybe? I mean its a bit too much separation of concern with all the mapdispatch and mapstate and actions and reducers . If the point is to use a global store why not just import a singleton class and use its state with plain getters &amp; setters? or some other object with application level scope ?  Thanks in advance for reading and giving this some thought. 
-## [4][Easy Peasy the React Redux wrapper](https://www.reddit.com/r/reduxjs/comments/gv3kc9/easy_peasy_the_react_redux_wrapper/)
+## [6][Easy Peasy the React Redux wrapper](https://www.reddit.com/r/reduxjs/comments/gv3kc9/easy_peasy_the_react_redux_wrapper/)
 - url: https://medium.com//easy-peasy-the-react-redux-wrapper-b31a5911c5e3?source=friends_link&amp;sk=b5d0c558e24e3e0c7f40cf58dff17d70
 ---
 
-## [5][Dynamic dependency injection with Redux](https://www.reddit.com/r/reduxjs/comments/gutj9m/dynamic_dependency_injection_with_redux/)
+## [7][Dynamic dependency injection with Redux](https://www.reddit.com/r/reduxjs/comments/gutj9m/dynamic_dependency_injection_with_redux/)
 - url: https://www.reddit.com/r/reduxjs/comments/gutj9m/dynamic_dependency_injection_with_redux/
 ---
 I've been hustling with this for a few days now and I can't find a satisfactory answer anywhere else.
@@ -221,7 +259,7 @@ While `api.doLongProcess` is in course, a `changeLibrary` event arrives. That wi
 What I believe should happpen is that upon `api` change, all in-course operations depending on it should be cancelled. That is not an easy thing to pull out with this setup.
 
 Does anyone have a suggestion on how to approach this?
-## [6][Nullable state best practice (typescript) [redux toolkit, createSlice - set/allow state to be null ]](https://www.reddit.com/r/reduxjs/comments/guns93/nullable_state_best_practice_typescript_redux/)
+## [8][Nullable state best practice (typescript) [redux toolkit, createSlice - set/allow state to be null ]](https://www.reddit.com/r/reduxjs/comments/guns93/nullable_state_best_practice_typescript_redux/)
 - url: https://www.reddit.com/r/reduxjs/comments/guns93/nullable_state_best_practice_typescript_redux/
 ---
 Hey!
@@ -283,32 +321,11 @@ interface GlobalErrorState {
     initialState: initialState as (GlobalErrorState|null)
 
 Thank you!
-## [7][Do you connect every component which fetches data to Redux?](https://www.reddit.com/r/reduxjs/comments/guhewr/do_you_connect_every_component_which_fetches_data/)
+## [9][Do you connect every component which fetches data to Redux?](https://www.reddit.com/r/reduxjs/comments/guhewr/do_you_connect_every_component_which_fetches_data/)
 - url: https://www.reddit.com/r/reduxjs/comments/guhewr/do_you_connect_every_component_which_fetches_data/
 ---
  It just seems crazy to add so much boilerplate code for every data-fetching component. I've seen this pattern a lot. Any motives for it?It seems that simple ApiCall in componentDidMount / useEffect would work better...
-## [8][What happens when Redux is compiled/minified/deployed?](https://www.reddit.com/r/reduxjs/comments/gr46kl/what_happens_when_redux_is/)
+## [10][What happens when Redux is compiled/minified/deployed?](https://www.reddit.com/r/reduxjs/comments/gr46kl/what_happens_when_redux_is/)
 - url: https://www.reddit.com/r/reduxjs/comments/gr46kl/what_happens_when_redux_is/
 ---
 This is a random conceptual question but  I was just thinking, at the end of the day when you launch something and you have static files, they're deployed on some website/app. What does Redux/reducer/actions become... just an object/methods?
-## [9][[Puzzler] Action creator using function.name](https://www.reddit.com/r/reduxjs/comments/gqze1l/puzzler_action_creator_using_functionname/)
-- url: https://www.reddit.com/r/reduxjs/comments/gqze1l/puzzler_action_creator_using_functionname/
----
-Today I encountered interesting bug which was caused by action creators like this:
-
-    export function setCartStatus(status) {
-        return {
-            type: setCartStatus.name,
-            cartStatus: status
-        }
-    }
-
-All creators had unique names, I checked this several times manually across all modules. All other components (store, reducers etc) were also ok — the problem is only in the code given above. Can you spot one?
-
-Note: comments under the post mention solution.
-
-Answer is under the spoiler: &gt;! webpack minimizes function names, and different functions from different modules may happen to have the same minimized name. !&lt;
-## [10][Frontend Cache Question](https://www.reddit.com/r/reduxjs/comments/gqqzkc/frontend_cache_question/)
-- url: https://www.reddit.com/r/reduxjs/comments/gqqzkc/frontend_cache_question/
----
-Hey everyone! So for the last few weeks I’ve been designing and beginning to implement a GraphQL API using Prisma. I’m at a stage where I have enough of an API foundation to think about developing frontend. I’ll be using react-native and I have a few questions regarding fetching data from my API. I want to be able to provide users with an offline experience and therefore require cache. I also want to use subscriptions (real-time functionality in GraphQL). I’ve found Apollo Client and seen that it has a lot of good reviews, however, I’m not a huge fan of the built in React components that display the data. I haven’t used them so I can’t really be sure that I don’t like them, however I don’t think they’ll be great for query testing which isn’t a huge deal since I’ll be thoroughly testing my API and Prisma is tested. On the other hand I’ve used redux in the past and am wondering if it has the possibly of acting as a sort of cache when paired with simple https requests. Any thoughts are appreciated! 🙏

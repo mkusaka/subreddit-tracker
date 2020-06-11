@@ -84,130 +84,190 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][After 3 weeks of building with react &amp; typescript I'm officially in love. We managed to build out the web app for StockAlarm and here's how it turned out...](https://www.reddit.com/r/reactjs/comments/gzxh3x/after_3_weeks_of_building_with_react_typescript/)
-- url: https://app.stockalarm.io/
+## [3][Immer v7.0 - new `current` API](https://www.reddit.com/r/reactjs/comments/h0npbn/immer_v70_new_current_api/)
+- url: https://github.com/immerjs/immer/commit/467ea5d3b5d062c084ce6d875f8d77e21f26965c
 ---
 
-## [4][My first MERN stack app finally showable, it is twitter clone with some prefetched data from Twitter api, Feedback and suggestions are welcome.](https://www.reddit.com/r/reactjs/comments/gzk1dh/my_first_mern_stack_app_finally_showable_it_is/)
-- url: https://v.redd.it/osyqdc6pwu351
+## [4][How would you style your components using styled-{components,system}/Material UI?](https://www.reddit.com/r/reactjs/comments/h0zckp/how_would_you_style_your_components_using/)
+- url: https://www.reddit.com/r/reactjs/comments/h0zckp/how_would_you_style_your_components_using/
 ---
+I am trying to determine which approach to styling is the best, so I was wondering what the general preference is for those using styled-components and styled-system/Material UI system. There are a few approaches, but my main question is about one-off components, such as when you are making a login screen.
 
-## [5][How does React Reconciliation works ??](https://www.reddit.com/r/reactjs/comments/h0axzb/how_does_react_reconciliation_works/)
-- url: https://www.reddit.com/r/reactjs/comments/h0axzb/how_does_react_reconciliation_works/
----
-Reconciliation is the process in which React kind of appears to reload data or the whole app on updates. 
+1 - Wrap a component with styled-components and use css to style (inline with the css prop or wrapping with styled)
 
- [https://www.loginradius.com/engineering/blog/reacts-reconciliation-algorithm/](https://www.loginradius.com/engineering/blog/reacts-reconciliation-algorithm/)
-## [6][How to incorporate AI text generator in my website?.](https://www.reddit.com/r/reactjs/comments/h07s7g/how_to_incorporate_ai_text_generator_in_my_website/)
-- url: https://www.reddit.com/r/reactjs/comments/h07s7g/how_to_incorporate_ai_text_generator_in_my_website/
----
-Id like to do something similar to this: [https://talktotransformer.com/](https://talktotransformer.com/)
 
-Id like to add AI (GPT-2) generated text to my page but I don't know python nor Im versed in AI matters. I can use JS and React Node etc, what would be the best way to approach this?
-## [7][How to use an SSG for dynamic components](https://www.reddit.com/r/reactjs/comments/h0afo3/how_to_use_an_ssg_for_dynamic_components/)
-- url: https://www.reddit.com/r/reactjs/comments/h0afo3/how_to_use_an_ssg_for_dynamic_components/
----
-Let's say I have a back-end server which can only host static files. For SPAs like create-react-app, deploying the front-end to this server is relatively simple (just build the app to the server then route the back-end to the bundled index.html). However, things get complicated when your trying to implement it for multi-page applications. Let's assume again that your back-end server can only have static files, in this case, you can't use SSR. But some pages of the application needs to be fetched from the server at browser runtime. Example, if we have a news website we might have the following component hierarchy:
-
-```
-Home
-├─ NewsViewer
-└─ About
-```
-Home has two components (or pages in this case). About is just a static page. However, NewsViewer is a dynamic page which fetches data from an API to display the appropriate contents. I'm confused how one should use SSG for this kind of scenario since I don't want to statically build each news (just the Viewer itself). So I want my back-end server to only have three HTML files (Home, NewsViewer, and About). Most of the approaches I see about this implements some kind of building all related static files for each News View until a page is fully static. Is it possible to use some kind of SSG with this set-up?
-## [8][To test or not to test. That is the question?](https://www.reddit.com/r/reactjs/comments/h05843/to_test_or_not_to_test_that_is_the_question/)
-- url: https://www.reddit.com/r/reactjs/comments/h05843/to_test_or_not_to_test_that_is_the_question/
----
-Hey 👋
-
-I have spent many years now building various different React applications, large and small scale, and recently had thoughts on testing I would love to share with you all.
-
-The question I asked myself recently and our team was do we need the full suite of tests to gain confidence with our code? And the answer is probably not, here I go into some details why:
-
-[https://dev.to/boyney123/to-test-or-not-to-test-that-is-the-question-ml3](https://dev.to/boyney123/to-test-or-not-to-test-that-is-the-question-ml3)
-
-Hopefully, it can help some people.
-
-✌️
-## [9][Conditional rendering of a checkbox's "checked" value based on a json value?](https://www.reddit.com/r/reactjs/comments/h091zf/conditional_rendering_of_a_checkboxs_checked/)
-- url: https://www.reddit.com/r/reactjs/comments/h091zf/conditional_rendering_of_a_checkboxs_checked/
----
-Hi all,
-
-I have a materialUI checkbox that I want to either render checked or unchecked based on data I'm pulling in from my Flask API route `/users`.
-
-The data is sent as JSON and I am storing it like so from my API path:
-
-    const [users, setUsers] = useState([]);
-
-    useEffect(() =&gt; {
-    fetch("/users").then((response) =&gt;
-        response.json().then((data) =&gt; {
-        console.log(data);
-        setUsers(data.users); //get the data from the API and put it in the state
-        })
+    const LoginContainer = styled(Paper)`
+        width: 680px;
+        padding: 75px 120px;
+    `;
+    const Logo = styled.img`
+        margin-top: 0px;
+        display: block;
+        margin: 0 auto;
+    `;
+    const Login = () =&gt; (
+        &lt;LoginContainer elevation={3}&gt;
+            &lt;Logo src={logo} /&gt;
+            &lt;LoginForm /&gt;
+        &lt;/LoginContainer&gt;
     );
-    }, []);
 
-I am trying to then render into a table.  Here is an example:
 
-    &lt;TableBody&gt;
-        {users.map((user) =&gt; (
-        &lt;TableRow key={user.user_name}&gt;
-            &lt;TableCell component="th" scope="row"&gt;{user.user_name}&lt;/TableCell&gt;
-            &lt;TableCell align="left"&gt;{user.first_name} {user.last_name}&lt;/TableCell&gt;
-            &lt;TableCell align="left"&gt;{user.email}&lt;/TableCell&gt;
-            &lt;TableCell align="center"&gt;  
-                
-                {user.active}
-                
-                &lt;Checkbox
-                checked={checked}
-                color="primary"
-                inputProps={{ 'aria-label': 'secondary checkbox' }}
-                /&gt;
-            &lt;/TableCell&gt;
-        &lt;/TableRow&gt;
-        ))}
-    &lt;/TableBody&gt;
+This approach avoids setting a lot of props in the component usage itself. However, considering the 'elevation' prop and how it sets box-shadow, it kind of means CSS props are set at 2 points: in the styled component and via the component props in Login. There's also more general CSS, which might make it easier to read for someone more accustomed to css instead of a styled-system approach. One big disadvantage in my eyes is that it takes a lot more css code for responsive design because of media queries (didn't include that in the examples).
 
-So the above renders a checkbox, in a checked state as I would expect.  It is NOT rendering anything for `{user.active}`. I am not sure how to make it checked or unchecked based on the `user.active` value.  As a note, the `console.log()` is showing `true` as the active property.
 
-In Python I'd do something like 
+2 - Wrap a component with styled-components, add styled-system props and set the values of those css props when you use that component
+
+    const LoginContainer = styled(Paper)`
+      ${spacing}
+      ${sizing}
+    `;
+    const Logo = styled.img`
+      ${display}
+      ${spacing}
+    `;
+    const Login = () =&gt; (
+      &lt;LoginContainer width={680} px="75px" py="120px" elevation={3}&gt;
+        &lt;Logo mx="auto" src={logo} /&gt;
+        &lt;LoginForm /&gt;
+      &lt;/LoginContainer&gt;
+    )
+
+
+This approach keeps the setting of the css props in one place, making a responsive design easier too. However, defining what those props can be is quite some boilerplate for one-off components. Another point is that I'm not sure how legible the code will be if each prop has multiple values for the responsive design as opposed to solution 1 where you can have clearly defined sections in media queries. The documentation of styled-system also says to avoid this where possible and reuse components.
+
+
+3 - Avoid creating wrapping styled components by having a Box component that implements all styled-system props and possibly create more nested levels of elements, but stops you from having to define one-off styled components
+
+
+    const Login = () =&gt; (
+      &lt;Paper elevation={3}&gt;
+        &lt;Box width={680} px="75px" py="120px"&gt;
+           &lt;Box mx="auto"&gt;
+             &lt;img src={logo} /&gt;
+             &lt;LoginForm /&gt;
+           &lt;/Box&gt;
+        &lt;/Box&gt;
+      &lt;/Paper&gt;   
+    );
+
+
+This approach currently has my preference. I don't have to define one-off components, the props are all in one place and there's a clear distinction between what each level does (the paper determines the background and elevation, the box the internal spacing, etc.). However, there's clearly more elements needed to achieve the same result (I know that the innermost Box can be replaced by making the parent Box display="flex" justifyContent="center" but for the sake of this example and question I kept it this way to show you the accumulation of levels).
+Indentation levels/readability can be increased by separating sections into components (more one-off components, hah), but I have no idea how this will affect the performance of the app in the long run.
+
+
+So my question is to you: Which approach do you/would you take?
+If you have different examples, please let us know!
+## [5][Next.JS Authentication without Third Party Libraries](https://www.reddit.com/r/reactjs/comments/h0n0tr/nextjs_authentication_without_third_party/)
+- url: https://www.mikealche.com/software-development/how-to-implement-authentication-in-next-js-without-third-party-libraries
+---
+
+## [6][COVID-19 Globe - My bro and I built a web app that visualizes coronavirus cases as spikes on a globe](https://www.reddit.com/r/reactjs/comments/h0iosx/covid19_globe_my_bro_and_i_built_a_web_app_that/)
+- url: https://covid19-globe.web.app/
+---
+
+## [7][What React dashboards have you had success with?](https://www.reddit.com/r/reactjs/comments/h0cgt0/what_react_dashboards_have_you_had_success_with/)
+- url: https://www.reddit.com/r/reactjs/comments/h0cgt0/what_react_dashboards_have_you_had_success_with/
+---
+Looking to start a small project without a designer and am interested in using a dashboard with pre-fabricated components to speed things up. 
+
+What have you used for this purpose that you’d recommend to other developers, and what was your experience like?
+
+So far I’ve checked out work from creative tim (seems to be quite popular) as well as appwork, and a few others. 
+
+Project should be fairly simple at first. Is there a case for avoiding a template and just trying to create some basic views/scenes from scratch?
+## [8][Looking for a new good react project written by star react programmers](https://www.reddit.com/r/reactjs/comments/h0rvjw/looking_for_a_new_good_react_project_written_by/)
+- url: https://www.reddit.com/r/reactjs/comments/h0rvjw/looking_for_a_new_good_react_project_written_by/
+---
+I am looking for a project written by "react pros" that mainly uses react hooks. And is available on github or something similar.
+
+is there anything you can recommend?
+## [9][How to eject axios interceptor if my reactjs app is setup like this?](https://www.reddit.com/r/reactjs/comments/h0xxoi/how_to_eject_axios_interceptor_if_my_reactjs_app/)
+- url: https://www.reddit.com/r/reactjs/comments/h0xxoi/how_to_eject_axios_interceptor_if_my_reactjs_app/
+---
+How to eject axios interceptor if my reactjs app is setup like this?
+
+&amp;#x200B;
+
+App.tsx
+
+    function App() {
     
-    if user.active == False:
-        # checkbox code
+        React.useEffect(() =&gt; {
+            addInterceptor ();
+            addResponseInterceptors();
+    
+            // Cleanup Interceptors
+            return () =&gt; {
+                // interceptors.removeInterceptor ();
+            };
+        }, []);
+    
+      return (
+        Component that does a lot of stuff
+      );
+    }
+    
+    export default App;
+    
 
-I am sorry I am coming from python and finding my way in react/js so apologies if this seems a beginner question.  I've done a heap of searching on this but unfortunately the results of searching is heavily swayed toward making custom checkboxes and I'm not finding what I'm after.
+Here is the interceptor.tsx
 
-Any advice would be greatly appreciated.  Thank you
-## [10][Manifest.json takes forever to load](https://www.reddit.com/r/reactjs/comments/h091mh/manifestjson_takes_forever_to_load/)
-- url: https://www.reddit.com/r/reactjs/comments/h091mh/manifestjson_takes_forever_to_load/
+    
+    const addInterceptor = () =&gt; {
+        axios.interceptors.request.use(request =&gt; {     
+              console.log(request);
+              return request; });
+    }
+    
+    function removeInterceptor (){
+        What to put here in this code context?
+    }
+    
+    export {addInterceptor, removeInterceptor };
+
+How can I eject this interceptor from my App.tsx useeffect method?
+## [10][Styled-components good practice?](https://www.reddit.com/r/reactjs/comments/h0wwlw/styledcomponents_good_practice/)
+- url: https://www.reddit.com/r/reactjs/comments/h0wwlw/styledcomponents_good_practice/
 ---
-I can't tell where the error lies. But when users come to my website a small 100byte manifest.json file sometimes takes over a second to load.
+So I started using styled-components to easily apply CSS to my components, but I was wondering, what are the good practices while using styled-components?
 
-This is all that I have under manifest.json rules for my nginx config:
+&amp;#x200B;
 
-    location ~* \.(?:manifest|appcache|html?|xml|json)$ {
-        expires -1;
-    } 
+For instance, I'm currently doing a site using a styled component for each of the pages' top component from where I'm handling the style of the page and its child components. But I find that the file is starting to get quite long at some point depending on what you're doing, so I was wondering if I shouldn't have a styled component at the top of each of my page's child components, but then that would start to make a lots of files just for styling (because for clarity I create styled-components in their own file) and I don't really like that. So would it be a good practice to actually define the styled component within the file of the component for which it will be used?
 
-Does anyone have any idea why this might be?
-## [11][Methods to create a configureable &amp; downloadable build zip?](https://www.reddit.com/r/reactjs/comments/h07zta/methods_to_create_a_configureable_downloadable/)
-- url: https://www.reddit.com/r/reactjs/comments/h07zta/methods_to_create_a_configureable_downloadable/
----
-Hey guys, I'm really new in this area and I actually have no idea where to start.
+&amp;#x200B;
 
-I want to provide users with the ability to download a zip of a build that uses data, they previously added in a form. Then they can use it how they like, completely Independent of my server.
-
-At first glance I see two ways to go about this:
-
-1.) Actually build on the server, zip the file and download it. I somehow need to trigger the build script and pass the data to the build script. I really have no idea how this would work.
-
-2.) Use a build and just add a file like data.json to the zip, that the app uses to get this data. This seems a little easier and I could do this In what ever language I like, but with this approach I'm not sure how I would handle the usage of the data/the import. Would it be smart to just fetch the file?
-
-Has anybody done something like that? I'm really open for all suggestions.
-## [12][React Lesson 8: Deep Dive into React Redux](https://www.reddit.com/r/reactjs/comments/h07wvy/react_lesson_8_deep_dive_into_react_redux/)
-- url: https://blog.soshace.com/react-lesson-8/
+How do you use styled components and organise your files with them?
+## [11][Insight #3 - Use ImmerJS over lodash/set, ImmutableJS or plain JS](https://www.reddit.com/r/reactjs/comments/h0wif9/insight_3_use_immerjs_over_lodashset_immutablejs/)
+- url: https://dev.to/sebastienlorber/insight-3-use-immerjs-over-lodash-set-immutablejs-or-plain-js-36bl
 ---
 
+## [12][Almost finished an online React course from Udemy of around 40 hours - I have some questions and I would love some quick tips of what you think is important for someone new](https://www.reddit.com/r/reactjs/comments/h0wb2w/almost_finished_an_online_react_course_from_udemy/)
+- url: https://www.reddit.com/r/reactjs/comments/h0wb2w/almost_finished_an_online_react_course_from_udemy/
+---
+So, first of all, I honestly enjoyed it. It is my entry into the web development scene, I am coming from languages like Java and Swift. I think he managed to touch many topics and tried to put a lot of weight into doing stuff "the correct way" - which of course is subjective, but in general there is some sort of consensus. I know I could probably Google some of this stuff, find some niche Medium articles etc., but I would also just like to get a small discussion going on. I know could just jump straight into a project, but I would like to have a clean project. So, I have a list of questions basically and I would love your input/tip of something very specific to React, that a beginner should remember. There were some parts where I thought *"there must be a better way to do this"*.
+
+&amp;#x200B;
+
+1. Keep all CSS files in one place, or have something like? `component/post/post.js` and `component/post/post.module.css`
+2. There’s a bonus module of around 3 hours of React hooks – Should I do it? My understand is that it’s another way to do local state handling, so instead of classes you have functions with hooks. However, I am honestly quite impressed and enjoy Redux a lot, so the state management I will have in the local components are stuff like loading, error etc. I am bit unsure where the actual gain is using hooks? 
+3. Shared functions across the whole application. Is it “okay” to just have a folder in the root of src with functions such as “form validation” which is used across multiple components?
+4. Exporting a class only for testing purposes. I have a class x and I want to write jest tests for it – the only place I want to import is in the tests, so in theory I am shipping source code which is modified only for testing purposes, by “export class x” (I guess my concern here is coming from stuff like Java, where I wouldn't want to make a function/variable public just for testing purposes)
+5. Nested states and immutability. So if I have a nested object, I need to spread the children as well, so I don't make a shallow copy but a deep copy. Handling state seems to be sensitive topic and I can introduce bugs without potentially having any idea about it, because, even if I don't change state immutable, the chance that I see an error upon testing etc. is pretty low? Basically, he created a function which he imported everywhere - but even this wouldn't help with deeply nested components  
+`export constant updateObject = (oldObject, updatedProperties) =&gt; {`  
+ `return {`  
+ `...oldObject,`  
+ `...updatedProperties`  
+ `}`  
+`}`
+6. PropTypes - okay to use? Coming from languages with strict typing, one of the things I really have a tough time with, is the typing - I really miss it. I just feel like it is trying to force something which isn't meant to be there and if no one uses it, I won't start to make it a habit to use it.
+7. Networking(!!!) - He uses axios and imports it in several modules and just call the http requests directly in the modules. With some experience from Swift, I am used to have a central networking component which imports the networking library, makes the http calls and returns the objects needed. So I would assume I would have a file like networking.js, which imports axios and all the http requests (can be split up into several files if it is a large project) and returns it back, so this networking.js is imported to the modules instead, so there arent ad hoc networking requests.
+
+I think this is more or less it. I think it is pretty cool and man, Redux is awesome. I am pretty impressed with it and it is super effective. I know that it shouldn't be abused either, but it's cool.
+
+About tips, I honestly dread the CSS part. Are there some cool libraries/websites, where there are some default styling for projects that you like? I don't want a template for now, because I would like to keep control. I will still make my own toolbars, sidedrawers., but some styling wouldn't hurt.
+
+Otherwise, some specific React/JS libraries you just love and you think more people should know about? I don't want to depend too much on 3rd party libraries, but if there's something really cool/good I don't mind. An example of what I mean is something like [https://projects.lukehaas.me/css-loaders/](https://projects.lukehaas.me/css-loaders/). Very trivial and not functionality related really, but just cool and so easy to integrate and just makes it feel nicer. (I know that that is not React related tho). 
+
+Thanks in advance :-)

@@ -125,110 +125,119 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][CMake 3.18.0-rc1 is ready for testing - Announcements](https://www.reddit.com/r/cpp/comments/h09sr5/cmake_3180rc1_is_ready_for_testing_announcements/)
+## [3][Reusing a thread in C++ for better performance](https://www.reddit.com/r/cpp/comments/h0uct7/reusing_a_thread_in_c_for_better_performance/)
+- url: https://lemire.me/blog/2020/06/10/reusing-a-thread-in-c-for-better-performance/
+---
+
+## [4][Why is std implementation so damn ugly?](https://www.reddit.com/r/cpp/comments/h0flxv/why_is_std_implementation_so_damn_ugly/)
+- url: https://www.reddit.com/r/cpp/comments/h0flxv/why_is_std_implementation_so_damn_ugly/
+---
+Recently I remembered a moment from my uni years when immediately after handing in the assignment of implementing our own string data structure we were warned not to ever try to implement and use our own data structures. Which is exactly what you want to hear after working hours on such assignment. However the reason behind it makes sense, you would be only reinventing the wheel and let's be honest, it will be also way slower than data structures in the almighty std library. Now think about it, what kind of black magic is behind the std's speed? Well I had no idea so I took a peak, lets see the code:
+
+    inline string
+    secret_function(int __val)
+    {
+        const bool __neg = __val &lt; 0;
+        const unsigned __uval = __neg ? (unsigned)~__val + 1u : __val;
+        const auto __len = __detail::__to_chars_len(__uval);
+        string __str(__neg + __len, '-');
+        __detail::__to_chars_10_impl(&amp;__str[__neg], __len, __uval);
+        return __str;
+    }
+
+Hey, I bet you just skipped the whole code part. I know it looks unreadable, but please try to go through it and guess which std function it might be (obviously its not called secret\_function, but i'm pretty sure you used this function at some point).
+
+It's only 6 line function but it took me a while to figure out what each line does and I believe this could be fixed very easily just by naming the variables and functions with a bit more descriptive names. Just to prove the point here is an example of how I would structure this function:
+
+    inline string secretFunction(int value) {
+        const bool isNegative = value &lt; 0;
+        const unsigned absoluteValue = Helper::abs(value);
+        const auto length = Helper::charCount(absoluteValue);
+        string stringValue(isNegative + length, '-');
+        Helper::insertIntAsChars(&amp;stringValue[isNegative], length, absoluteValue, 10);
+        return stringValue;
+    }
+
+While the functionality stays exactly the same, I think this chunk of code is much more pleasant to read and it's pretty obvious what the code is doing on each line. From this you should have a solid guess which function it is (you can leave a comment), but the real question is why would anyone write such code? Especially when nowadays everyone is talking about how code readability is so important. Is this how they wrote code back when std was released and they didn't bother to change it? Or am I just too inexperienced that I couldn't figure it out immediately?
+
+EDIT: Thanks for the insightful comments, for anyone reading this the reason variables are beginning with `__` is macros. If user defines isNegative macro, it will get overwritten in the std, however user is forbidden to define macros starting with `__` , as the wise people of reddit comment section suggested. However underscores aren't the only issue with this code, the main issue is I think using short non-descriptive names of variables/functions which is very confusing in functions that are doing more complicated operations.
+## [5][C++ Weekly - Ep 223 - Know Your Standard Library: std::nextafter](https://www.reddit.com/r/cpp/comments/h0iady/c_weekly_ep_223_know_your_standard_library/)
+- url: https://www.youtube.com/watch?v=-F0j2VN4xEU
+---
+
+## [6][Wrote my first (tiny) library for stringi-fying C++'s objects](https://www.reddit.com/r/cpp/comments/h0srs9/wrote_my_first_tiny_library_for_stringifying_cs/)
+- url: https://www.reddit.com/r/cpp/comments/h0srs9/wrote_my_first_tiny_library_for_stringifying_cs/
+---
+**Link:** [sfy](https://github.com/muqsitnawaz/sfy)
+
+**Motivation:** I was working on another project when I realized there had been many times when I wanted to simply convert the contents of a containers e.g `std::vector`, `std::map` etc to `std::string` for some quick dirty debugging or inspection. Usually, I'd write a \_range-based\_ for loop, but it gets ugly for nested types e.g `std::map&lt;T, std::pair&lt;std::vector&lt;U&gt;, std::tuple&lt;Ts...&gt;&gt;&gt;` etc.
+
+I had also been playing around with C++20's concepts recently, and I really liked how much simpler template meta-programming became if you used them (here's a great [document](https://www.stroustrup.com/good_concepts.pdf) that everyone should read). So I went ahead today and wrote a tiny library for stringi-fying objects i.e for converting to `std::string`; it has `fmtlib` dependency but switching to `std::format` when it comes out. 
+
+The library is in very early stages, please be patient if you come across bugs. Any suggestions and/or ideas for improvements are welcome! Thank you!
+## [7][Problem solving channel , need suggestions !](https://www.reddit.com/r/cpp/comments/h0ygsp/problem_solving_channel_need_suggestions/)
+- url: https://www.reddit.com/r/cpp/comments/h0ygsp/problem_solving_channel_need_suggestions/
+---
+Recently i've uploaded a video on my approach to solve a problem and would like to know some opinions about it (i used C++ to solve it) , here's the link :) 
+
+link :  [https://www.youtube.com/watch?v=zIKaZYwZ\_6Q](https://www.youtube.com/watch?v=zIKaZYwZ_6Q) 
+
+*Thank you in advance,*
+## [8][Why is stack-unwinding with noexcept not specified/consistent?](https://www.reddit.com/r/cpp/comments/h0y7t5/why_is_stackunwinding_with_noexcept_not/)
+- url: https://www.reddit.com/r/cpp/comments/h0y7t5/why_is_stackunwinding_with_noexcept_not/
+---
+The following code has on each major compiler (GCC, Clang, MSVC) different runtime behaviors:
+
+    #include &lt;iostream&gt;
+    
+    struct A {
+        ~A() {
+            std::cerr &lt;&lt; "destructor" &lt;&lt; std::endl;
+        }
+    };
+    
+    int get2() {
+        A a;
+        throw 1;
+    }
+    
+    int get() noexcept {
+        A a;
+        return get2();
+    }
+    
+    int main() {
+        return get();
+    }
+
+GCC:  *destructor, terminate -* [*https://godbolt.org/z/WcfnwP*](https://godbolt.org/z/WcfnwP)
+
+Clang:  *destructor destructor, terminate -* [*https://godbolt.org/z/WcfnwP*](https://godbolt.org/z/WcfnwP)
+
+MSVC: *terminate -* [*https://rextester.com/HLKWE55155*](https://rextester.com/HLKWE55155)
+
+In my opinion, MSVC is right to not unwind the stack/calling destructors at all. It is the same behavior then without any noexcept functions at all.
+
+Please don't answer with: The standard does not know about the stack.
+## [9][CMake 3.18.0-rc1 is ready for testing - Announcements](https://www.reddit.com/r/cpp/comments/h09sr5/cmake_3180rc1_is_ready_for_testing_announcements/)
 - url: https://discourse.cmake.org/t/cmake-3-18-0-rc1-is-ready-for-testing/1360
 ---
 
-## [4][ASIO makes for a bloated Networking standard](https://www.reddit.com/r/cpp/comments/h0954a/asio_makes_for_a_bloated_networking_standard/)
-- url: https://www.reddit.com/r/cpp/comments/h0954a/asio_makes_for_a_bloated_networking_standard/
+## [10][C++ is now the only language to appear in three HOPLs in a row!](https://www.reddit.com/r/cpp/comments/h0gxo5/c_is_now_the_only_language_to_appear_in_three/)
+- url: https://www.reddit.com/r/cpp/comments/h0gxo5/c_is_now_the_only_language_to_appear_in_three/
 ---
-Hello,
+HOPL-II, 1993 [A History of C++: 1979-1991](http://www.stroustrup.com/hopl2.pdf)
 
-&amp;#x200B;
+HOPL-III, 2007 [Evolving a language in and for the real world: C++ 1991-2006](http://www.stroustrup.com/hopl-almost-final.pdf)
 
-I've run benchmarks of various networking solutions for some years and decided to get some real numbers for ASIO, as this will be the basis for standard C++ event-loops and networking for decades to follow.
+HOPL-IV, 2020 [Thriving in a crowded and changing world: C++ 2006-2020](https://www.stroustrup.com/hopl20main-p5-p-bfc9cd4--final.pdf)
 
-&amp;#x200B;
-
-C++ is a language that makes its dent in the world by being fast, optimizable and of higher quality runtime wise than say, scripted things. So for things to get standardized they should at least pass basic benchmark requirements IMO. What kind of performance is sane, and what is not?
-
-&amp;#x200B;
-
-If the Linux kernel with BSD socket interfaces can perform IPC between two processes over network at 250k "messages" per second, then it makes sense for a C++ wrapper of such TCP foundations to be somewhat close to this number. To retain the performance of the underlying platform in a reasonable way.
-
-&amp;#x200B;
-
-My testing shows that while you can absolutely retain this performance with C++ using these BSD socket interfaces, ASIO has a significant performance loss **retaining only 80% of the underlying platform** foundations. You're down to 199k with the most basic echo server one could make (no web protocols or anything implemented, just from wrapping).
-
-&amp;#x200B;
-
-These 80% are measured using the [https://www.boost.org/doc/libs/1\_36\_0/doc/html/boost\_asio/example/echo/async\_tcp\_echo\_server.cpp](https://www.boost.org/doc/libs/1_36_0/doc/html/boost_asio/example/echo/async_tcp_echo_server.cpp) basic TCP echo server. There shouldn't be any significant performance loss for such a basic application. I'm no expert in ASIO, and I reserve the case that I could be entirely wrong here, but this example file looks very slim and simple, yet it doesn't measure up to the standards we already have had for 40 years.
-
-&amp;#x200B;
-
-Some would argue that interfaces have no relation to performance, but what is Vulkan vs. OpenGL then? They are both interfaces, both standards, and they perform vastly differently as one has a mandated validation layer while the other has an optional layer. There are other differences, sure, but the main point is that **an interface has performance characteristics no matter what vendor** implementation you use. The gaming industry knows this very well.
-
-&amp;#x200B;
-
-For something so important and fundamental it would make sense, in my mind, to show actual proof that there can be an implementation of such an ASIO interface that actually does retain close to 100% of the performance as given by the underlying platform, before that interface gets standardized. Otherwise, fragmentation will follow as every one different database, client library, server will use their own event-loop instead, as they are working uphill using the standard thing.
-
-&amp;#x200B;
-
-Furthermore I know from other memory benchmarks that ASIO sockets are close to 700 bytes in user space memory, while things like libuv is 160 bytes and other things like h2o has 90 byte sockets while lwan and others have 40 byte ones. ASIO is the most bloated in this measurement.
-
-&amp;#x200B;
-
-Alright, that's what I wanted to get said. If nobody cares, that's fine.
-## [5][Modern C++ wrappers for the CUDA Runtime API (v0.3.0 released)](https://www.reddit.com/r/cpp/comments/gzw2vn/modern_c_wrappers_for_the_cuda_runtime_api_v030/)
-- url: https://github.com/eyalroz/cuda-api-wrappers/
+(other languages can be found in [history](https://hopl4.sigplan.org/track/hopl-4-papers#History-of-HOPL) and [accepted papers](https://hopl4.sigplan.org/track/hopl-4-papers#List-of-Accepted-Papers))
+## [11][Thriving in a Crowded and Changing World: C++ 2006–2020 - HOPL-IV 2020 - Bjarne Stroustrup](https://www.reddit.com/r/cpp/comments/h0ppr4/thriving_in_a_crowded_and_changing_world_c/)
+- url: https://www.stroustrup.com/hopl20main-p5-p-bfc9cd4--final.pdf
 ---
 
-## [6][Microsoft CInternetException 12152 Error code](https://www.reddit.com/r/cpp/comments/h0alku/microsoft_cinternetexception_12152_error_code/)
-- url: https://www.reddit.com/r/cpp/comments/h0alku/microsoft_cinternetexception_12152_error_code/
----
-Hi,
-
-We have a development system where we open a connection to a server and in the OpenRequest method I have not added the INTERNET\_FLAG\_SECURE parameter and when we call the SendRequest method, it will throw an exception with code 12152. But same code in production has not caused issues in some scenarios.  WinInet API.
-
-Can anyone explain a few things:
-
-1. What is INTERNET\_FLAG\_SECURE?
-2. What is error code 12152 and when is it thrown?
-3. Is there any scenario where the 12152 error will not be thrown even when the INTERNET\_FLAG\_SECURE is ***not*** passed to OpenRequest function?
-
-Also, if i use the URL with https, it throws another error 12007.
-
-I request everyone not to post the description from MSDN. I did not understand it and hence i come here to understand it in near to layman terms.
-## [7][cpp for open source...](https://www.reddit.com/r/cpp/comments/h0a82z/cpp_for_open_source/)
-- url: https://www.reddit.com/r/cpp/comments/h0a82z/cpp_for_open_source/
----
-I'm new in c++ programming. I want to know which libraries to learn as a beginner and also want to know how to get started into open source as a cpp developer.
-I also wanted to know about kde, and nodeJs and chrome v8 engine.
-## [8][ISO C++ and SYCL Join for the Future of Heterogeneous Programming](https://www.reddit.com/r/cpp/comments/gzmmd3/iso_c_and_sycl_join_for_the_future_of/)
-- url: https://www.reddit.com/r/cpp/comments/gzmmd3/iso_c_and_sycl_join_for_the_future_of/
----
-SYCL is an open standard developed by the Khronos™ Group that enables  developers to write code for heterogeneous systems using standard C++. 
-
- [ISO C++ and SYCL Join for the Future of Heterogeneous Programming](https://www.codeplay.com/portal/06-09-20-iso-cpp-and-sycl-join-for-the-future-of-heterogeneous-programming)  
-
-
-by Michael Wong, Codeplay Software
-
-"SYCL was designed from the ground up to be ISO C++ first, then augmented with heterogeneous support"  
-Michael  Wong has written aboud how SYCL is evolving and aligning with ISO C++  to bring portable heterogeneous programming to all.
-## [9][I'm relatively new with C++ and was wondering about C++ libraries and integration with other languages like react native for example](https://www.reddit.com/r/cpp/comments/h07ybk/im_relatively_new_with_c_and_was_wondering_about/)
-- url: https://www.reddit.com/r/cpp/comments/h07ybk/im_relatively_new_with_c_and_was_wondering_about/
----
- So to clarify a little more currently myself and a group of friends from college are developing some applications for web and mobile, it's been a ton of fun and their guys are fantastic at what they do but since I'm primarily interested in game development and C++ I take the role of project management but I would love if for the next project I could contribute using C++ somehow.
-
-I was thinking about potentially the ability to write a library in C++ but I'm really still new to it myself so I thought I'd see if anyone had any experience with it, possibly would anyone know if it's rather difficult to integrate or even feasible at all? Any advice would be great, thanks a million in advance! :)
-## [10][FileSaver - Fast multi-threaded file size scanner (for macOS - MIT licensed)](https://www.reddit.com/r/cpp/comments/gzkp7i/filesaver_fast_multithreaded_file_size_scanner/)
-- url: https://www.reddit.com/r/cpp/comments/gzkp7i/filesaver_fast_multithreaded_file_size_scanner/
----
-I wrote this little utility for myself. Really happy with performance :) so far. Throughput on my notebook (i7 macbook) is 50k - 60k files / second.
-
-Not a professional C++ developer so anyone has feedback on the source, that'd be nice.
-
-The blog post goes over architecture and aggregation logic in detail, as does the README on the repo. Used boost::filesystem and AppKit for the GUI; not much more.
-
-[https://beijaflor.io/blog/06-2020/filesaver-freeing-up-space/](https://beijaflor.io/blog/06-2020/filesaver-freeing-up-space/)
-
-[https://github.com/yamadapc/filesaver](https://github.com/yamadapc/filesaver)
-## [11][A first look at COVID-19 and Meeting C++ 2020](https://www.reddit.com/r/cpp/comments/gzldrd/a_first_look_at_covid19_and_meeting_c_2020/)
-- url: https://meetingcpp.com/meetingcpp/news/items/A-first-look-at-COVID-19-and-Meeting-Cpp-2020.html
----
-
-## [12][C++ Multithreading: Mutex and Conditional Variables in Modern C++](https://www.reddit.com/r/cpp/comments/gz2tbg/c_multithreading_mutex_and_conditional_variables/)
-- url: https://youtu.be/jwJ4Eh_2Umo
+## [12][ABI breakage - summary of initial comments](https://www.reddit.com/r/cpp/comments/h0bsq1/abi_breakage_summary_of_initial_comments/)
+- url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p1654r1.html
 ---
 

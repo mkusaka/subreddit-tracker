@@ -31,91 +31,70 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][The unique feature of Android 10 has come to the PC. Google Chrome earned "Automatic subtitles"](https://www.reddit.com/r/androiddev/comments/h04rj7/the_unique_feature_of_android_10_has_come_to_the/)
-- url: https://i.redd.it/j89jbz85u0451.jpg
+## [3][Kotlin Symbol Processing: Early Thoughts](https://www.reddit.com/r/androiddev/comments/h0uyhx/kotlin_symbol_processing_early_thoughts/)
+- url: https://www.zacsweers.dev/kotlin-symbol-processor-early-thoughts/
 ---
 
-## [4][How To Record Automated Tests For Mobile Apps](https://www.reddit.com/r/androiddev/comments/h07mr9/how_to_record_automated_tests_for_mobile_apps/)
-- url: https://open-source-dev-resources.s3.eu-central-1.amazonaws.com/record-mobile-tests.htm
+## [4][Android 11 - The first Beta of Android 11 is out](https://www.reddit.com/r/androiddev/comments/h0evc2/android_11_the_first_beta_of_android_11_is_out/)
+- url: https://www.youtube.com/playlist?list=PLWz5rJ2EKKc9hqKx4qZWolQxy59Bt20t_
 ---
 
-## [5][Hi guys, I'm working on my second small android game. Thoughts? https://github.com/rosspetukhov/MathFinder/ . Pieces on the map are assigned a random value. Your goal is to find a path from one corner to the opposite, so that the sum of numbers on your route match the value of a final piece.](https://www.reddit.com/r/androiddev/comments/gzmbos/hi_guys_im_working_on_my_second_small_android/)
-- url: https://v.redd.it/8qah9r65pv351
+## [5][Play console beta adds policy compliance tab](https://www.reddit.com/r/androiddev/comments/h0ko2u/play_console_beta_adds_policy_compliance_tab/)
+- url: https://i.redd.it/jprqqv0sh5451.png
 ---
 
-## [6][Made an app using Flutter which displays all the Trending repositories, developers for a certain time frame, as the official GitHub app does not have this feature nor does the official GitHub API.](https://www.reddit.com/r/androiddev/comments/h07g85/made_an_app_using_flutter_which_displays_all_the/)
-- url: https://github.com/ahmedgulabkhan/GitTrends
+## [6][Google's Android Studio 4.0: How is it an Upgrade to Mobile App Development?](https://www.reddit.com/r/androiddev/comments/h0ylz2/googles_android_studio_40_how_is_it_an_upgrade_to/)
+- url: https://www.reddit.com/r/androiddev/comments/h0ylz2/googles_android_studio_40_how_is_it_an_upgrade_to/
+---
+We live in this scary time where most people have locked them up behind the walls of their homes, leaving several businesses inoperable. Considering the current situation, we are humbled by most developers, who are working tirelessly to build amazing apps for Android. However, regardless of whether you’re working from your home office or your living room on a laptop, you need tools to stay ahead from your competitors by building exceptional mobile apps. Android Studio 4.0 is all you need.
+
+Recently launched by Google, Android Studio 4.0 brings new and advanced features for developers to code smarter and to build mobile apps faster with attractive designs. Being one of the best [Android app development companies](https://www.softprodigy.com/hire-android-mobile-developer/), we will highlight some of the exciting features of this new update.   
+
+
+&amp;#x200B;
+
+https://preview.redd.it/4ysvyqn91a451.png?width=840&amp;format=png&amp;auto=webp&amp;s=f8b1ae2d03401f947e8c13ba3d7dc24094f4f806
+
+**Here’s why Google’s Android Studio 4.0 is a major upgrade**
+
+The most attractive highlight of the upgrade is an exceptional Motion Editor. It is a simple Android interface for creating, editing, and previewing MotionLayout animations in apps. Due to the lack of this feature in the previous Android Studio versions, the developers were required to create and modify complex XML files manually for animation designing. Thanks to the new Motion Editor, it automatically generates the XML files, while allowing developers to design complex animations with the help of the click-and-drag interface. 
+
+Apart from this, Android Studio 4.0 also comes with an upgraded layout inspector and layout validation. The former offers a real-time and more intuitive experience when debugging your UI. On the other hand, a new layout validation allows developers to view UI across multiple screen dimensions. 
+
+Another eye-catching highlight of the upgrade includes a Build Analyzer, which helps developers to understand and address bottlenecks in the build, a Java 8 language APIs, and redesigned CPU Profiler.
+
+**Summary -** Google’s Android Studio 4.0 brings you new and advanced tools for building apps faster on every type of device. Learn what it has in store for the developers.
+## [7][A Great Way to do Presenters](https://www.reddit.com/r/androiddev/comments/h0ndj3/a_great_way_to_do_presenters/)
+- url: https://cashapp.github.io/2020-06-09/android-presenters
 ---
 
-## [7][Kotlin and Exceptions](https://www.reddit.com/r/androiddev/comments/h0amdw/kotlin_and_exceptions/)
-- url: https://medium.com/@elizarov/kotlin-and-exceptions-8062f589d07
+## [8][I've implemented library to manage networking and database caching in single place in mvvm using Kotlin flow. Feedbacks are appreciated.](https://www.reddit.com/r/androiddev/comments/h0yidf/ive_implemented_library_to_manage_networking_and/)
+- url: https://github.com/hadiyarajesh/flower
 ---
 
-## [8][Here is a list of free online courses for learning Java, C++ and Python. I found those helpful for beginners. Happy learning!](https://www.reddit.com/r/androiddev/comments/h0a2ml/here_is_a_list_of_free_online_courses_for/)
-- url: https://www.reddit.com/r/androiddev/comments/h0a2ml/here_is_a_list_of_free_online_courses_for/
----
-[Main Article Link](https://medium.com/@exploreroftruth/best-free-online-courses-for-learning-python-c-java-android-development-1a9a67afb850)
-
-# Android Development:
-
-**1. Learn Android Application Development**
-
-**2. Android Fundamentals: Ultimate Tutorial for App Development**
-
-**3. Android Development from Scratch to Create Cool Apps!**
-
-**4. How to publish an Android App on Google Play Store**
-
-**5. Learn Android 4.0 Programming in Java**
-
-# JAVA Programming:
-
-**1. Crash Course Into JavaFX: The Best Way to make GUI Apps**
-
-**2.Java Tutorial for Complete Beginners**
-
-**3. Practice Java by Building Projects**
-
-**4. Java Design Patterns and Architecture**
-
-**5. Java Programming Basics**
-
-**6.Java Database Connection: JDBC and MySQL**
-
-**7. Java Multithreading**
-
-**8. Developing Database Application using Spring MVC and MyBatis**
-
-**9. Java Servlets and JSP — Build Java EE(JEE) app in 25 Steps**
-
-**10. Cucumber, Selenium &amp; Java -Develop a Framework in 2.5 Hours!**
-
-**11. Data Structures in Java for Noobs (Lite Edition)**
-
-**12. Introduction to Docker for Java Developers**
-## [9][Dagger Hilt Documentation](https://www.reddit.com/r/androiddev/comments/gzr21q/dagger_hilt_documentation/)
-- url: https://dagger.dev/hilt/
+## [9][Dependency Injection on Android with Hilt](https://www.reddit.com/r/androiddev/comments/h0gcvf/dependency_injection_on_android_with_hilt/)
+- url: https://medium.com/androiddevelopers/dependency-injection-on-android-with-hilt-67b6031e62d
 ---
 
-## [10][Grade sync failed](https://www.reddit.com/r/androiddev/comments/h09dor/grade_sync_failed/)
-- url: https://www.reddit.com/r/androiddev/comments/h09dor/grade_sync_failed/
----
-I'm a noob. I have just started building apps. This is my first time and I am not able to run my app. It shows gradle sync failed. I don't know hoe to solve this problem.
-
-Please help!
-
-Also if you guys have any suggestion as to from where I can learn more about building apps using Java it would be helpful
-## [11][The user journey: activation and commitment](https://www.reddit.com/r/androiddev/comments/h065wa/the_user_journey_activation_and_commitment/)
-- url: https://medium.com/googleplaydev/the-user-journey-activation-and-commitment-3b59a8d81164
+## [10][Answers to common questions about App Signing by Google Play](https://www.reddit.com/r/androiddev/comments/h0zacd/answers_to_common_questions_about_app_signing_by/)
+- url: https://medium.com/androiddevelopers/answers-to-common-questions-about-app-signing-by-google-play-b28fef836af0
 ---
 
-## [12][Extremely Low Performance in Android Studio when I connect a specific physical device to my PC.](https://www.reddit.com/r/androiddev/comments/h08qs4/extremely_low_performance_in_android_studio_when/)
-- url: https://www.reddit.com/r/androiddev/comments/h08qs4/extremely_low_performance_in_android_studio_when/
+## [11][SurfaceView vs GlSurfaceView for live wallpaper](https://www.reddit.com/r/androiddev/comments/h0vjpg/surfaceview_vs_glsurfaceview_for_live_wallpaper/)
+- url: https://www.reddit.com/r/androiddev/comments/h0vjpg/surfaceview_vs_glsurfaceview_for_live_wallpaper/
 ---
-Hi,
+I've been creating a live wallpaper lately. Its principle is simple: open a GIF (animated or not) and you can display it as your wallpaper. [https://github.com/redwarp/gif-wallpaper](https://github.com/redwarp/gif-wallpaper)
 
-I used my old Lenovo Moto Z Play for App development (Android 9 via Lineage OS). It worked fine, no performance issues whatsoever. After I updated to Android Studio 4.0 the performance of Android Studio is \~5fps when the Lenovo is connected (wire and wifi). If I disconnect it, the performace is back to normal. This however doesnt happen when I connect my Pixel 4XL.
+To implement that, I've used a regular WallpaperService, that draw everything in a SurfaceView. It seems to work pretty well and is quite efficient. ([https://github.com/redwarp/gif-wallpaper/blob/master/app/src/main/java/net/redwarp/gifwallpaper/GifWallpaperService.kt](https://github.com/redwarp/gif-wallpaper/blob/master/app/src/main/java/net/redwarp/gifwallpaper/GifWallpaperService.kt))
 
-Does anyone have a similar issue / knows how to fix it?
+But when you look at the really popular Muzei Live Wallpaper code source, they went for a GlSurfaceView instead. Their renderer doing magic here: [https://github.com/romannurik/muzei/blob/master/main/src/main/java/com/google/android/apps/muzei/render/MuzeiBlurRenderer.kt](https://github.com/romannurik/muzei/blob/master/main/src/main/java/com/google/android/apps/muzei/render/MuzeiBlurRenderer.kt)
 
-Thanks in advance :)
+So I'm trying to guess if there is a reason behind it appart from legacy, and if I should also take the plunge and go for it and use a GlSurfaceView instead.
+
+Since Android 26, on a regular SurfaceView, the SurfaceHolder allows use to lock on a hardware canvas: [https://developer.android.com/reference/android/view/SurfaceHolder#lockHardwareCanvas()](https://developer.android.com/reference/android/view/SurfaceHolder#lockHardwareCanvas()) which means that drawing get offloaded to GPU (my min app version is 24) so I wonder if there is still an advantage with going with OpenGl.
+
+It's probably an old question, I find several stackoverflow topic about SurfaceView vs GlSurfaceView, but none applied to a live wallpaper.
+## [12]["Teacher approved" or "teacher rejected" in Google Play?](https://www.reddit.com/r/androiddev/comments/h0yds2/teacher_approved_or_teacher_rejected_in_google/)
+- url: https://www.reddit.com/r/androiddev/comments/h0yds2/teacher_approved_or_teacher_rejected_in_google/
+---
+Does anyone know what happens to apps that are selected for the "teacher approved" review but don't get approved? I have several apps for children, but none of them has the "teacher approved" badge yet. So I wonder if they are still in the review queue, or already have been "rejected by teacher".

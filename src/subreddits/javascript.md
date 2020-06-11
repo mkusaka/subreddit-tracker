@@ -79,51 +79,51 @@
 
 
 &amp;nbsp;
-## [2][Visualizing bubble sort in 5 minutes using HTML5 canvas API](https://www.reddit.com/r/javascript/comments/h0954e/visualizing_bubble_sort_in_5_minutes_using_html5/)
-- url: https://dev.to/galelmalah/visualizing-bubble-sort-in-5-minutes-using-html5-canvas-api-422d
+## [2][WTF Wednesday (June 10, 2020)](https://www.reddit.com/r/javascript/comments/h0dwvy/wtf_wednesday_june_10_2020/)
+- url: https://www.reddit.com/r/javascript/comments/h0dwvy/wtf_wednesday_june_10_2020/
+---
+Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
+Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
+this is the place.
+
+[Named after this comic](https://davidwalsh.name/demo/code-review.png)
+## [3][LinkedIn Login using Node JS and passport](https://www.reddit.com/r/javascript/comments/h0vex7/linkedin_login_using_node_js_and_passport/)
+- url: https://www.loginradius.com/engineering/blog/linkedin-login-using-node-passport/
 ---
 
-## [3][stegcloak: Hide secrets with invisible characters in plain text securely using passwords](https://www.reddit.com/r/javascript/comments/h09rcv/stegcloak_hide_secrets_with_invisible_characters/)
+## [4][Visual Studio Code May 2020](https://www.reddit.com/r/javascript/comments/h0hveb/visual_studio_code_may_2020/)
+- url: https://code.visualstudio.com/updates/v1_46
+---
+
+## [5][stegcloak: Hide secrets with invisible characters in plain text securely using passwords](https://www.reddit.com/r/javascript/comments/h09rcv/stegcloak_hide_secrets_with_invisible_characters/)
 - url: https://github.com/KuroLabs/stegcloak
 ---
 
-## [4][Download scalable code right from a "kida CodePen on steroids" – new release!](https://www.reddit.com/r/javascript/comments/h098t9/download_scalable_code_right_from_a_kida_codepen/)
-- url: https://dev.to/chrisczopp/download-scalable-code-right-from-a-kida-codepen-on-steroids-new-release-1bbc
+## [6][Insight #3 - Use ImmerJS over lodash/set, ImmutableJS or plain JS](https://www.reddit.com/r/javascript/comments/h0wj49/insight_3_use_immerjs_over_lodashset_immutablejs/)
+- url: https://dev.to/sebastienlorber/insight-3-use-immerjs-over-lodash-set-immutablejs-or-plain-js-36bl
 ---
 
-## [5][ES4, The Failed proposal the indirectly led to Node.js, ES6, TypeScript and Deno](https://www.reddit.com/r/javascript/comments/gzpmlv/es4_the_failed_proposal_the_indirectly_led_to/)
-- url: https://dev.to/hansuxdev/es4-the-failed-proposal-the-indirectly-led-to-node-js-es6-typescript-and-deno-g6f
+## [7][What is Scaffolder, and how you can use it to increase your team dev velocity](https://www.reddit.com/r/javascript/comments/h0yfqf/what_is_scaffolder_and_how_you_can_use_it_to/)
+- url: https://dev.to/galelmalah/what-is-scaffolder-and-how-you-can-use-it-to-increase-your-team-dev-velocity-558l
 ---
 
-## [6][React-Express-Passport-Mongoose easy to set up boilerplate, including routing and cookie-based auth, June 2020](https://www.reddit.com/r/javascript/comments/h078qt/reactexpresspassportmongoose_easy_to_set_up/)
-- url: https://github.com/raulrene/react-express-passport-boilerplate
+## [8][Random boxes - image transition effect in 15 lines of pure JS](https://www.reddit.com/r/javascript/comments/h0z2ac/random_boxes_image_transition_effect_in_15_lines/)
+- url: https://slicker.me/javascript/random_boxes.htm
 ---
 
-## [7][Article: How to Use Attribute Directives to Avoid Repetition in Angular Templates](https://www.reddit.com/r/javascript/comments/h074yb/article_how_to_use_attribute_directives_to_avoid/)
-- url: https://volosoft.com/blog/attribute-directives-to-avoid-repetition-in-angular-templates
+## [9][Mind boggling website puts Jeff Bezos' Insane Wealth into perspective by letting you take control of HIS bank account](https://www.reddit.com/r/javascript/comments/h0qan2/mind_boggling_website_puts_jeff_bezos_insane/)
+- url: https://3pic.github.io/money
 ---
 
-## [8][[AskJS] A small JS utility library that allows you to use $ instead of document.querySelector?](https://www.reddit.com/r/javascript/comments/h07jgi/askjs_a_small_js_utility_library_that_allows_you/)
-- url: https://www.reddit.com/r/javascript/comments/h07jgi/askjs_a_small_js_utility_library_that_allows_you/
----
-I think I heard about this library from Wes Bos on the Syntax podcast recently but I forgot to write down the name.
-
-I googled but cannot find it. I know I can do this myself but the library had a few other interesting features.
-
-Anybody know it?
-
-P.S. it's not jQuery, it is a tiny library that only does a few things.
-## [9][[AskJS] Have you every actually run into someone assigning something to undefined?](https://www.reddit.com/r/javascript/comments/h02db6/askjs_have_you_every_actually_run_into_someone/)
-- url: https://www.reddit.com/r/javascript/comments/h02db6/askjs_have_you_every_actually_run_into_someone/
----
-And on a spectrum between "well, this is only a few lines to replace; it's not so bad" and "there are like, a gajillion lines worth of spaghetti-legacy-production code that depend on this and I literally just have to work around this right now", what was it like?
-
-Edit: what I mean is undefined = value, not variableName = undefined.
-## [10][Circuit Beaker - Simple Example](https://www.reddit.com/r/javascript/comments/gzzzy7/circuit_beaker_simple_example/)
-- url: /r/node/comments/gzzorr/circuit_breaker_simple_example/
+## [10][Visualizing bubble sort in 5 minutes using HTML5 canvas API](https://www.reddit.com/r/javascript/comments/h0954e/visualizing_bubble_sort_in_5_minutes_using_html5/)
+- url: https://dev.to/galelmalah/visualizing-bubble-sort-in-5-minutes-using-html5-canvas-api-422d
 ---
 
-## [11][I've been working on the New York Times API lately and developed a Search engine for NYT articles.](https://www.reddit.com/r/javascript/comments/h05xtt/ive_been_working_on_the_new_york_times_api_lately/)
-- url: https://rachit-pandey.github.io/Search-NYT/New%20York%20Times%20API/
+## [11][Rehawk — A React audio library powered by Howler.js](https://www.reddit.com/r/javascript/comments/h0f9uv/rehawk_a_react_audio_library_powered_by_howlerjs/)
+- url: https://github.com/leonardomso/rehawk
+---
+
+## [12][Lunr.js - a small, full-text search library for use in the browser. It indexes JSON documents and provides a simple search interface for retrieving documents that best match text queries](https://www.reddit.com/r/javascript/comments/h0c0pf/lunrjs_a_small_fulltext_search_library_for_use_in/)
+- url: https://lunrjs.com/docs/index.html
 ---
 

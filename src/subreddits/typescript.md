@@ -22,11 +22,146 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][A lightweight yet powerful dependency injection framework using modern TypeScript and decorators](https://www.reddit.com/r/typescript/comments/h0ogq0/a_lightweight_yet_powerful_dependency_injection/)
+## [2][Arbitrary amount of generics in function call?](https://www.reddit.com/r/typescript/comments/h7ivji/arbitrary_amount_of_generics_in_function_call/)
+- url: https://www.reddit.com/r/typescript/comments/h7ivji/arbitrary_amount_of_generics_in_function_call/
+---
+The mysql package allows you to make an SQL query with an arbitrary amount of statements. In my case, I've got a stored procedure with an OUT parameter:
+
+    db.query('call getSalaries(1, 2, @average); select @average)'); // two statements
+
+This would return an array where the first element is a Salary[] and the second element is an array of numbers (the average - though in this particular case, that array would contain a single number). In general, depending on the statements in the query and how many there are, I'm going to have an array of elements of different types, with corresponding length.
+
+I would like to be able to call query in different ways. In general, if I call db.query&lt;A, B, C, ...etc&gt;(myQuery), then I know I'm going to get an array where the first element is A[], the second B[], the third C[], and so on. How would I go about modeling that?
+
+I hope the question is clear. Thanks!
+## [3][Node.js, Dependency Injection, Layered Architecture, and TDD: A Practical Example Part 1](https://www.reddit.com/r/typescript/comments/h13hr7/nodejs_dependency_injection_layered_architecture/)
+- url: https://carlosgonzalez.dev/posts/node-js-di-layered-architecture-and-tdd-a-practical-example-part-1/
+---
+
+## [4][What is a valid use case for Interfaces with indexers in typescript?](https://www.reddit.com/r/typescript/comments/h7k8y7/what_is_a_valid_use_case_for_interfaces_with/)
+- url: https://www.reddit.com/r/typescript/comments/h7k8y7/what_is_a_valid_use_case_for_interfaces_with/
+---
+I could not quite come up with a valid use case to justify why typescript supports interface with indexers. plain javascript provides you with indexing objects then why one would need to define an indexer in an interface.?
+## [5][How to create a Conditional Type/Typeguard for this?](https://www.reddit.com/r/typescript/comments/h7dob0/how_to_create_a_conditional_typetypeguard_for_this/)
+- url: https://www.reddit.com/r/typescript/comments/h7dob0/how_to_create_a_conditional_typetypeguard_for_this/
+---
+So I've got a data structure (`SingleValue`) that I want to be able to handle in 2 different ways. The first is when only one or no instances of it is needed, in which case the variable holding the value should be of type `SingleValue | null`. The other case is when many are needed, in which case the variable holding the value should be of type `SingleValue[]`.
+
+How can I set up a single variable and a typeguard function for a type that is conditionally one of those two types based on a generic type argument.
+
+This is what I have at the moment but it's not quite right:
+
+```ts
+type SingleValue = { /* ... */ };
+
+type Value&lt;Multiple extends boolean&gt; = Multiple extends true
+  ? SingleValue[]
+  : SingleValue | null;
+
+function isMultipleValue&lt;Multiple extends boolean&gt;(
+ value: Value&lt;Multiple&gt;
+): value is Value&lt;true&gt; {
+ return Array.isArray(value);
+}
+```
+
+The error I get is:
+
+```
+A type predicate's type must be assignable to its parameter's type.
+  Type 'readonly SingleValue[]' is not assignable to type 'Value&lt;Multiple&gt;'.
+```
+
+(this error happens on the 3rd to last line)
+
+Note: I cannot switch to just using an array for the one/none case due to how other parts of my project are set up and the implementation of 3rd party libraries. For the same reason `Multiple` but be a generic type argument.
+## [6][How to warn on number to boolean coercion?](https://www.reddit.com/r/typescript/comments/h7aw3i/how_to_warn_on_number_to_boolean_coercion/)
+- url: https://www.reddit.com/r/typescript/comments/h7aw3i/how_to_warn_on_number_to_boolean_coercion/
+---
+Hi, I was wondering if it's possible to get Typescript to warn whenever a possible number is coerced into a boolean. For example:
+
+```
+const x: number | null = 5;
+
+if(x) {} // warn
+
+const y = !x //warn
+```
+
+The reason for this is that I would like to avoid numbers potentially becoming falsey due to 0.
+## [7][Duplication of code for ORMs](https://www.reddit.com/r/typescript/comments/h15lwb/duplication_of_code_for_orms/)
+- url: https://www.reddit.com/r/typescript/comments/h15lwb/duplication_of_code_for_orms/
+---
+First of all, I am a newcomer to Typescript, and my previous projects involved C# and WPF.
+
+On the C# side of things, I have always used Entity Framework as ORM, which was a mighty powerful ORM. It handled code-first as well as db-first approaches quite easily.
+
+As far as I can tell, there is nothing in Typescript that handles db-first approach. But the bigger problem for me is duplication of code when using ORMs. Entity Framework could easily infer the database schema from the classes only. In Typescript, if I want to define a schema, I will have to do it twice, once as a plain old TS class, and secondly for the ORM. An example of such a code is [here](https://sequelize.org/master/manual/typescript.html).
+
+I have found typegoose to do something akin to Entity Framework when it comes to ORM. TS-Mongoose looked promising until I ran into the issue [here](https://www.reddit.com/r/typescript/comments/h0e3ff/help_with_tsmongoose/).
+
+Has anyone found a less tedious solution for Postgresql too?
+
+&amp;#x200B;
+
+EDIT: Found it. It's TypeORM.
+## [8][Reliable typescript language parser.](https://www.reddit.com/r/typescript/comments/h11s6h/reliable_typescript_language_parser/)
+- url: https://www.reddit.com/r/typescript/comments/h11s6h/reliable_typescript_language_parser/
+---
+We're trying to build a command line app to find orphan code in a larger typescript project.
+
+Parsing the imports is an issue as they could be multiline.
+
+Is there a parse that can take a .ts or .tsx file and parse out the imports reliably into an AST?
+## [9][A lightweight yet powerful dependency injection framework using modern TypeScript and decorators](https://www.reddit.com/r/typescript/comments/h0ogq0/a_lightweight_yet_powerful_dependency_injection/)
 - url: https://github.com/H1ghBre4k3r/dependory
 ---
 
-## [3][Foal TS - June release (version 1.9) - Auth with MongoDB/TypeORM, auth with REST APIs, handy shortcuts, CLI improvements](https://www.reddit.com/r/typescript/comments/h0tzhe/foal_ts_june_release_version_19_auth_with/)
+## [10][Which of these TSLinter tools are most important for my offshore team to follow?](https://www.reddit.com/r/typescript/comments/h14yuh/which_of_these_tslinter_tools_are_most_important/)
+- url: https://www.reddit.com/r/typescript/comments/h14yuh/which_of_these_tslinter_tools_are_most_important/
+---
+Hey guys,
+
+My team had to turn off all of the following rules on TSLinter, but to improve standards over time I want to turn them on. Which of these rules are most important for code quality?
+
+&amp;#x200B;
+
+1. "jsx-wrap-multiline": false,
+2. "jsx-no-lambda": false,
+3. "jsx-self-close": false,
+4. "jsx-no-string-ref": false,
+5. "prefer-const": false,
+6. "array-type": false,
+7. "no-object-literal-type-assertion": false,
+8. "one-variable-per-declaration": false,
+9. "object-literal-shorthand": false,
+10. "no-string-literal": false,
+11. "no-implicit-dependencies": false,
+12. "triple-equals": false,
+13. "no-submodule-imports": false,
+14. "no-console": false,
+15. "no-empty": false,
+16. "no-shadowed-variable": false,
+17. "prefer-conditional-expression": false,
+18. "forin": false,
+19. "radix": false,
+20. "space-within-parens": false,
+21. "no-trailing-whitespace": false,
+22. "whitespace":false,
+23. "ban-types": false,
+24. "comment-format": false,
+25. "jsx-boolean-value": false,
+26. "class-name": false,
+27. "prefer-object-spread": false,
+28. "variable-name": false,
+29. "no-unused-expression": false,
+30. "no-var-keyword": false,
+31. "no-duplicate-imports": false,
+32. "only-arrow-functions": false,
+33. "no-this-assignment": false,
+34. "max-classes-per-file": false,
+35. "align": false
+## [11][Foal TS - June release (version 1.9) - Auth with MongoDB/TypeORM, auth with REST APIs, handy shortcuts, CLI improvements](https://www.reddit.com/r/typescript/comments/h0tzhe/foal_ts_june_release_version_19_auth_with/)
 - url: https://www.reddit.com/r/typescript/comments/h0tzhe/foal_ts_june_release_version_19_auth_with/
 ---
 Foal TS framework version 1.9 is officially released!
@@ -74,254 +209,3 @@ And the must: it has more than 11,000 lines of documentation.
 [https://foalts.gitbook.io/docs/](https://foalts.gitbook.io/docs/)
 
 \#TypeScript #JavaScript #NodeJS #FoalTS #CLI #Auth #Authentification #JWT
-## [4][Passing generic to function without calling it (1st class function)](https://www.reddit.com/r/typescript/comments/h0qrqx/passing_generic_to_function_without_calling_it/)
-- url: https://www.reddit.com/r/typescript/comments/h0qrqx/passing_generic_to_function_without_calling_it/
----
-I'm trying to pass a 1st class function to a another function while have the generic inferred without calling it, but I can't get typescript to infer the type, only if I explicitly call the function.
-
-    sql.parseTable = &lt;T&gt;(res: QueryResult): T[] =&gt;
-        pipe(sqlResRows, map(convertToCamelCase))(res)
-    
-    const songs = await sql.query({
-        sql: SELECT_SONGS,
-        parse: sql.parseTable, // in this line the generic can't be inferred
-        parse: res =&gt; sql.parseTable(res), // the generic correctly inferred
-    })
-
-I would prefer the first one as it's cleaner and would mean i don't have to change all my graphql resolvers, but the generic can't be inferred.
-
-Any ideas?
-
-TS: 3.9.5, Node: 14.4.0
-## [5][Can i use typescript in express.js with functional programming, will everything works fine ?](https://www.reddit.com/r/typescript/comments/h0eqsx/can_i_use_typescript_in_expressjs_with_functional/)
-- url: https://www.reddit.com/r/typescript/comments/h0eqsx/can_i_use_typescript_in_expressjs_with_functional/
----
-
-## [6][Help with TS-Mongoose](https://www.reddit.com/r/typescript/comments/h0e3ff/help_with_tsmongoose/)
-- url: https://www.reddit.com/r/typescript/comments/h0e3ff/help_with_tsmongoose/
----
-The code:
-
-The main file:
-
-`server.ts`
-
-    import * as Fastify from "fastify";
-    import * as Dotenv from "dotenv";
-    import * as mongoose from "mongoose";
-    import routes from "./routes";
-    import fastify = require("fastify");
-    
-    Dotenv.config();
-    
-    const server = Fastify({ logger: true });
-    
-    server.register(routes);
-    
-    const connectToMongo = async (): Promise&lt;void&gt; =&gt; {
-      try {
-        await mongoose.connect(String(process.env.MONGODB_URI), {
-          useNewUrlParser: true,
-          useUnifiedTopology: true,
-          useCreateIndex: true,
-        });
-      } catch (err) {
-        throw err;
-      }
-    };
-    
-    const startServer = async (): Promise&lt;void&gt; =&gt; {
-      try {
-        await server.listen(Number(process.env.PORT), process.env.ADDR);
-        server.log.info(`Started Server @ ${process.env.ADDR}:${process.env.PORT}`);
-        await connectToMongo();
-        server.log.info("Connected to Mongo...");
-      } catch (err) {
-        server.log.error(err);
-        process.exit(-1);
-      }
-    };
-    
-    startServer();
-
-A sample schema:
-
-`schema/task.ts`
-
-    import { createSchema, Type, typedModel } from "ts-mongoose";
-    
-    const taskSchema = createSchema(
-      {
-        entryDate: Type.date({ required: true }),
-        particulars: Type.string({ required: true }),
-        finishDate: Type.date({ required: false }),
-      },
-      { collection: "Task", timestamps: true }
-    );
-    
-    export default taskSchema;
-
-Models:
-
-`models.ts`
-
-    import { typedModel } from "ts-mongoose";
-    import aggregateSchema from "./schemata/aggregate";
-    import taskSchema from "./schemata/task";
-    import transactionSchema from "./schemata/transaction";
-    
-    const models = {
-      Aggregate: typedModel("Aggregate", aggregateSchema),
-      Task: typedModel("Task", taskSchema),
-      Transaction: typedModel("Transaction", transactionSchema),
-    };
-    
-    export default models;
-
-Routes file (WIP):
-
-`route.ts`
-
-    import * as Fastify from "fastify";
-    import { Server, IncomingMessage, ServerResponse } from "http";
-    import handlers from "./handlers";
-    
-    const routes = (
-      server: Fastify.FastifyInstance&lt;Server, IncomingMessage, ServerResponse&gt;,
-      opts: Fastify.RegisterOptions&lt;Server, IncomingMessage, ServerResponse&gt;,
-      done: (err?: Fastify.FastifyError | undefined) =&gt; void
-    ): void =&gt; {
-      server.get("/transaction", opts, handlers.getTransactionHandler);
-    
-      server.post("/transaction", opts, async (req, res) =&gt; {});
-    
-      server.get("/aggregate", opts, async () =&gt; {});
-    
-      server.get("/task", opts, async () =&gt; {});
-      server.post("/task", opts, async () =&gt; {});
-      server.put("/task/:id", opts, async () =&gt; {});
-    
-      done();
-    };
-    
-    export default routes;
-
-Handlers file (WIP):
-
-`handlers.ts`
-
-    import { FastifyRequest, FastifyReply } from "fastify";
-    import { ServerResponse } from "http";
-    
-    import models from "./models";
-    const { Aggregate, Task, Transaction } = models;
-    
-    const handlers = {
-      getTransactionHandler: async (
-        req: FastifyRequest,
-        _: FastifyReply&lt;ServerResponse&gt;
-      ) =&gt; {
-        const x = new Task({ entryDate: Date() });
-        await x.save();
-        return "Hello";
-      },
-    };
-    
-    export default handlers;
-
-In `handlers.ts`, when I instantiate a `Task` object without one of the required properties, no error is thrown at compile time. Error is thrown at runtime. Also, intellisense/autocomplete of VS Code does not work with the property names. Is that expected behaviour? I expected almost class-like typechecking behaviour, like when we instantiate a new object using constructor.
-## [7][Help understanding why these type assertions aren't working](https://www.reddit.com/r/typescript/comments/h0p61x/help_understanding_why_these_type_assertions/)
-- url: https://www.reddit.com/r/typescript/comments/h0p61x/help_understanding_why_these_type_assertions/
----
-    // works
-    const configData = this.steps.reduce((accumulator: Partial&lt;ConfigData&gt;,
-     currentStepInstance: WizardSteps): Partial&lt;ConfigData&gt; =&gt; {...}, {});
-    
-    return configData as ConfigData;
-       
-    
-    // doesn't work
-    const configData: ConfigData = this.steps.reduce((accumulator: Partial&lt;ConfigData&gt;, 
-    currentStepInstance: WizardSteps): Partial&lt;ConfigData&gt; =&gt; {...}, {});
-    
-    return configData;
-    
-    
-    // doesn't work
-    const configData as ConfigData = this.steps.reduce((accumulator: Partial&lt;ConfigData&gt;, 
-    currentStepInstance: WizardSteps): Partial&lt;ConfigData&gt; =&gt; {...}, {});
-    
-    return configData;
-    
-    
-    // doesn't work
-    const configData&lt;ConfigData&gt; = this.steps.reduce((accumulator: Partial&lt;ConfigData&gt;, 
-    currentStepInstance: WizardSteps): Partial&lt;ConfigData&gt; =&gt; {...}, {});
-    
-    return configData;
-
-My understanding of type assertions is not complete.
-
-I initially thought the 2nd version should work, but the error message made sense, it looks like `reduce` will be returning a Partial of the type with no explicit acknowledgement that all k/v pairs will be there.
-
-Ok, so a type assertion should work. But both `as` and `&lt;&gt;` syntax have failed and I don't understand why.
-
-Only the first example worked where the type was initially allowed to be inferred, only being asserted later as the object is returned. Personally I don't like that, I want to be explicit earlier on if possible.
-
-Thanks for any feedback on this.
-## [8][Can I code npm package with Typescript? If I can, how to do it?](https://www.reddit.com/r/typescript/comments/h0kbef/can_i_code_npm_package_with_typescript_if_i_can/)
-- url: https://www.reddit.com/r/typescript/comments/h0kbef/can_i_code_npm_package_with_typescript_if_i_can/
----
-I want to code a package about styled-components. I haven't published package before and using Typescript generally. I know installing packages with Typescript is little bit trying. How about coding a npm package with Typescript ? If you want to contribute contact w/me
-## [9][What's a good charting library that I can use with TypeStyle &amp; React?](https://www.reddit.com/r/typescript/comments/h02b26/whats_a_good_charting_library_that_i_can_use_with/)
-- url: https://www.reddit.com/r/typescript/comments/h02b26/whats_a_good_charting_library_that_i_can_use_with/
----
-My understanding is that most charting libraries rely on traditional style rules, so wouldn't play well with TypeStyle (or styled-components) - is that accurate? If so, what recommendations do people have?
-## [10][Does typescript works with pnpm?](https://www.reddit.com/r/typescript/comments/h043pc/does_typescript_works_with_pnpm/)
-- url: https://www.reddit.com/r/typescript/comments/h043pc/does_typescript_works_with_pnpm/
----
-Pnpm is a package manager that uses symlinks for node modules. Yesterday I started learning typescript but the code doesn't runs with pnpm. Using the npm instead of pnpm works. I stumbled upon few stackoverflow and github questions but none had the answer.
-## [11][Help with return values out of `reduce` method](https://www.reddit.com/r/typescript/comments/h06rlf/help_with_return_values_out_of_reduce_method/)
-- url: https://www.reddit.com/r/typescript/comments/h06rlf/help_with_return_values_out_of_reduce_method/
----
-I have an interface `ConfigData` that identifies a couple of key/value pairs (`languageCode: string`, and `numberOfRepeats: number`).
-
-Not every step object being reduced will contribute to the accumulator. Of 5 steps passing through, only 2 will add a k/v pair.
-
-I want `const configData` in the example below to receive a `ConfigData` object after the reduce method evaluates. But my code is incorrect as is in (at least) two places:
-
-       run(): ConfigData {
-    
-          const configData = this.steps.reduce((accumulator: Partial&lt;ConfigData&gt;, currentStep: WizardSteps): ConfigData =&gt; {
-             // instruct and ask for feedback
-             currentStep.explain();
-             const rawUserResponse: string = currentStep.prompt();
-    
-             if (currentStep.needsInputValidation) {
-                const validatedInput: string = currentStep.validate(rawUserResponse);
-                
-                return {
-                   [currentStep.configDataKey] : validatedInput
-    // const validatedInput: string
-    // Type '{ [x: string]: string; }' is missing the following 
-    // properties from type 'ConfigData': languageCode, 
-    // numberOfRepeats ts(2739)
-                };
-             }
-    
-             if (currentStep.needsFileValidation) {
-                // blocks until file is validated
-                currentStep.validate();
-             }
-    
-    
-          }, {});
-    
-          return configData;
-    // const configData: Partial&lt;ConfigData&gt;
-    // Type 'Partial&lt;ConfigData&gt;' is not assignable to type 'ConfigData'.
-    // Property 'languageCode' is optional in type 'Partial&lt;ConfigData&gt;' 
-    // but required in type 'ConfigData'. ts(2322)
-       }
-
-I'm having a hard time with both of these. The second one is at least comprehensible but I'm lost on how to fix both. Anyone know how?

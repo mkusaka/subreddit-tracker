@@ -87,43 +87,93 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][LinkedIn Login using Node JS and passport](https://www.reddit.com/r/javascript/comments/h0vex7/linkedin_login_using_node_js_and_passport/)
-- url: https://www.loginradius.com/engineering/blog/linkedin-login-using-node-passport/
+## [3][Standalone UUID generator in Javascript (no external dependencies, only 6 lines of code)](https://www.reddit.com/r/javascript/comments/h7i7m2/standalone_uuid_generator_in_javascript_no/)
+- url: https://abhishekdutta.org/blog/standalone_uuid_generator_in_javascript.html
 ---
 
-## [4][Visual Studio Code May 2020](https://www.reddit.com/r/javascript/comments/h0hveb/visual_studio_code_may_2020/)
-- url: https://code.visualstudio.com/updates/v1_46
+## [4][The Power of Functions Returning Other Functions in JavaScript](https://www.reddit.com/r/javascript/comments/h7dl15/the_power_of_functions_returning_other_functions/)
+- url: https://dev.to/jsmanifest/the-power-of-functions-returning-other-functions-in-javascript-11lo
 ---
 
-## [5][stegcloak: Hide secrets with invisible characters in plain text securely using passwords](https://www.reddit.com/r/javascript/comments/h09rcv/stegcloak_hide_secrets_with_invisible_characters/)
-- url: https://github.com/KuroLabs/stegcloak
+## [5][Better Rename in VS Code: Edit First, Then Decide To Rename](https://www.reddit.com/r/javascript/comments/h7hohh/better_rename_in_vs_code_edit_first_then_decide/)
+- url: https://github.com/hediet/vscode-hediet-power-tools/blob/master/README.md
 ---
 
-## [6][Insight #3 - Use ImmerJS over lodash/set, ImmutableJS or plain JS](https://www.reddit.com/r/javascript/comments/h0wj49/insight_3_use_immerjs_over_lodashset_immutablejs/)
-- url: https://dev.to/sebastienlorber/insight-3-use-immerjs-over-lodash-set-immutablejs-or-plain-js-36bl
+## [6][[AskJS] When is object-oriented programming more practical than "mostly-functional" in JS?](https://www.reddit.com/r/javascript/comments/h7hnxz/askjs_when_is_objectoriented_programming_more/)
+- url: https://www.reddit.com/r/javascript/comments/h7hnxz/askjs_when_is_objectoriented_programming_more/
+---
+I've been writing JS for about 6 years. In the last couple years I've switched to a mostly functional style. I only define classes when extending native classes or some other code requires it.
+
+Are there problems object-oriented programming solves is a more practical way than a "mosly-functional" style?
+## [7][Node.js, Dependency Injection, Layered Architecture, and TDD: A Practical Example Part 1](https://www.reddit.com/r/javascript/comments/h13ide/nodejs_dependency_injection_layered_architecture/)
+- url: https://carlosgonzalez.dev/posts/node-js-di-layered-architecture-and-tdd-a-practical-example-part-1/
 ---
 
-## [7][What is Scaffolder, and how you can use it to increase your team dev velocity](https://www.reddit.com/r/javascript/comments/h0yfqf/what_is_scaffolder_and_how_you_can_use_it_to/)
-- url: https://dev.to/galelmalah/what-is-scaffolder-and-how-you-can-use-it-to-increase-your-team-dev-velocity-558l
+## [8][[AskJS] A good place to look for stuff to do and challenges ?](https://www.reddit.com/r/javascript/comments/h7ili8/askjs_a_good_place_to_look_for_stuff_to_do_and/)
+- url: https://www.reddit.com/r/javascript/comments/h7ili8/askjs_a_good_place_to_look_for_stuff_to_do_and/
 ---
+Hello, i am learning javascript and i would love to take a more actif aproach by doing more and more Challenge while i learn the language to be on top.
 
-## [8][Random boxes - image transition effect in 15 lines of pure JS](https://www.reddit.com/r/javascript/comments/h0z2ac/random_boxes_image_transition_effect_in_15_lines/)
+Any recommandation where i can look up ?
+## [9][[AskJS] - Stateless Server + JWT auth mechanism + Token storage](https://www.reddit.com/r/javascript/comments/h7gsa7/askjs_stateless_server_jwt_auth_mechanism_token/)
+- url: https://www.reddit.com/r/javascript/comments/h7gsa7/askjs_stateless_server_jwt_auth_mechanism_token/
+---
+Hi!
+
+I've recently been building an auth mechanism for a SPA / Node Backend. We've been discussing some of the trade-offs heavily with regards to token storage / server-side session state and I would just like to run an idea by you. At some point in the future we will support things like Auth0. But for now we'll work with this.
+
+**Ideal scenario;**
+
+*httpOnly token, javascript is unaware - has no access to - tokens.*
+
+This is something we're considering as a last resort, we'd like for the server to remain stateless and do not have sessions.
+
+As such, we will need some form of access / refresh token scheme so we can actively blacklist / lockout people upon token refresh (every 5 minutes or so in our case).
+
+There are other not so nice parts to this, since we're using a microservice type setup, we would like to pass along the token with every request through to other microservices, then have them check the roles and access themselves. Which would be tricky'er when using sessions.
+
+**Idea 01**
+
+*httpOnly cookie for refreshToken, in-memory javascript accessToken*
+
+We're building the FE in a pure functional way. The token would be stored in a redux like store. In the ReasonML specific implementation this is done using context, so we cannot access it outside of the component tree. This means that everything that needs to do a request, needs to pass the token from its component to a Thunk. This means that there are a shit-ton of selectors to that access-token, and this would become extremely verbose.
+
+We could do this at a higher level with some IO / Reader monad trickery, but we would like to keep things as straight forward as possible.
+
+**Idea 02**
+
+*httpOnly cookie for refreshToken, service worker for requests, service worker holds in-memory token*
+
+Instead of calling out to the api, we spawn commands to the service worker. Since we're already using Thunks, it would be relatively trivial to setup a worker to handle this for us. The worker would then have some internal mutable state that holds / refreshes the token. Upon any request coming in, we would simply append the token, do the request, and report back.
+
+However, just like above, this would be an extra layer of indirection and possibly not particularly straight forward.
+
+**Idea 03**
+
+*httpOnly cookie for refreshToken, accessToken in local storage, but always require both to be present*
+
+The accessToken in local storage presents an XSS attack possibility. The token in the cookie has a possible CSRF attack (should be mitigated by secure / httpOnly). By requiring them both at the same time, always, we get like a ven diagram as you'd have to both find an XSS as well as an CSRF vulnerability. Further lowering chances of an attack.
+
+An added bonus here would be that we have some form of tamper detection. As when we get a request in that has a valid access token, but no refresh token via cookie, either the user has removed the cookie manually, or the access token has been captured. In both cases, we could flag the user, log her / him out and do further investigation.
+
+The downside to this is of course that we're sending two JWT tokens with every request, which adds overhead.
+
+I would just like to have some input on the idea's here. And ask if someone maybe has an even better one?
+## [10][[AskJS] Any frameworks I can use for WYSIWYG editor for a web app?](https://www.reddit.com/r/javascript/comments/h7g615/askjs_any_frameworks_i_can_use_for_wysiwyg_editor/)
+- url: https://www.reddit.com/r/javascript/comments/h7g615/askjs_any_frameworks_i_can_use_for_wysiwyg_editor/
+---
+I want to create a WYSIWYG viewer for my web app that is built on React.
+
+But I have absolutely no idea how I would go about this.
+
+Does anyone have any tools or tips for how to create this replica view of an iPhone to reflect the changes in the editor real-time?
+
+For example, Glide App offers a beautiful WYSIWYG viewer for its web app. I want to make the phone screen here. ([https://imgur.com/a/p84K6bq](https://imgur.com/a/p84K6bq))
+## [11][Random boxes - image transition effect in 15 lines of pure JS](https://www.reddit.com/r/javascript/comments/h0z2ac/random_boxes_image_transition_effect_in_15_lines/)
 - url: https://slicker.me/javascript/random_boxes.htm
 ---
 
-## [9][Mind boggling website puts Jeff Bezos' Insane Wealth into perspective by letting you take control of HIS bank account](https://www.reddit.com/r/javascript/comments/h0qan2/mind_boggling_website_puts_jeff_bezos_insane/)
-- url: https://3pic.github.io/money
----
-
-## [10][Visualizing bubble sort in 5 minutes using HTML5 canvas API](https://www.reddit.com/r/javascript/comments/h0954e/visualizing_bubble_sort_in_5_minutes_using_html5/)
-- url: https://dev.to/galelmalah/visualizing-bubble-sort-in-5-minutes-using-html5-canvas-api-422d
----
-
-## [11][Rehawk — A React audio library powered by Howler.js](https://www.reddit.com/r/javascript/comments/h0f9uv/rehawk_a_react_audio_library_powered_by_howlerjs/)
-- url: https://github.com/leonardomso/rehawk
----
-
-## [12][Lunr.js - a small, full-text search library for use in the browser. It indexes JSON documents and provides a simple search interface for retrieving documents that best match text queries](https://www.reddit.com/r/javascript/comments/h0c0pf/lunrjs_a_small_fulltext_search_library_for_use_in/)
-- url: https://lunrjs.com/docs/index.html
+## [12][LinkedIn Login using Node JS and passport](https://www.reddit.com/r/javascript/comments/h0vex7/linkedin_login_using_node_js_and_passport/)
+- url: https://www.loginradius.com/engineering/blog/linkedin-login-using-node-passport/
 ---
 

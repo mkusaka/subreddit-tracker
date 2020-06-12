@@ -1,68 +1,56 @@
 # golang
-## [1][Exploring container package in Go (list, ring and heap)](https://www.reddit.com/r/golang/comments/h0xjc2/exploring_container_package_in_go_list_ring_and/)
-- url: https://therebelsource.com/blog/exploring-container-package-in-go-list-ring-and-heap/9zTBiMaaYg
+## [1][[P] GoPickle: Go library for loading Python's data serialized with pickle and PyTorch module files.](https://www.reddit.com/r/golang/comments/h7hpfb/p_gopickle_go_library_for_loading_pythons_data/)
+- url: https://github.com/nlpodyssey/gopickle
 ---
 
-## [2][Google authentication with GoLang and Goth](https://www.reddit.com/r/golang/comments/h0yrhk/google_authentication_with_golang_and_goth/)
+## [2][Go 1.15 Beta 1 is released](https://www.reddit.com/r/golang/comments/h17f3k/go_115_beta_1_is_released/)
+- url: https://groups.google.com/forum/#!msg/golang-announce/A0frTIl9W6Y/mTgsOVCnAQAJ
+---
+
+## [3][Profiling Go HTTP service with pprof and expvar](https://www.reddit.com/r/golang/comments/h7j4am/profiling_go_http_service_with_pprof_and_expvar/)
+- url: https://rafallorenz.com/go/go-profiling-http-service-with-pprof-and-expvar/
+---
+
+## [4][Expanding from Go to a language with a similar mindset](https://www.reddit.com/r/golang/comments/h7illc/expanding_from_go_to_a_language_with_a_similar/)
+- url: https://www.reddit.com/r/golang/comments/h7illc/expanding_from_go_to_a_language_with_a_similar/
+---
+Hey,
+
+I will start by saying that I absolutely love go, it is the perfect imperative language IMHO. Even the error handling and parametric polymorphism with interfaces is something I highly enjoy.
+
+One issue is, the job vacancies pool is highly limited and/or in very specific fields - devOps, banking, real-time.
+
+I would like to expand to another language with the same mindset, simplicity and elegance, with a strong stdlib support, and hopefully not too many ways to do the same thing.
+As far as I concern it can be strictly functional, but must maintain the spirit of Go.
+
+I would pick a JVM based language like Clojure or Scala, but I hate Java with a fury passion.
+
+I thought about Python, it seems to check all the boxes with Python3.
+
+Obviously I aim t stay in the same field, server/backend engineering.
+
+What do you think?
+## [5][How to scale order book integration for over 200 crypto exchanges using Go and Nodejs](https://www.reddit.com/r/golang/comments/h7kh3q/how_to_scale_order_book_integration_for_over_200/)
+- url: https://blog.cryptocompare.com/how-to-scale-order-book-integration-for-over-200-crypto-exchanges-313f30cf5ac2
+---
+
+## [6][Open-sourcing: "Build a Blockchain from Scratch in Go" training codebase](https://www.reddit.com/r/golang/comments/h7hita/opensourcing_build_a_blockchain_from_scratch_in/)
+- url: https://github.com/web3coach/the-blockchain-bar
+---
+
+## [7][JotFS: a deduplicating file store made using Go](https://www.reddit.com/r/golang/comments/h7ilfa/jotfs_a_deduplicating_file_store_made_using_go/)
+- url: https://github.com/jotfs/jotfs
+---
+
+## [8][Google authentication with GoLang and Goth](https://www.reddit.com/r/golang/comments/h0yrhk/google_authentication_with_golang_and_goth/)
 - url: https://www.loginradius.com/engineering/blog/google-authentication-with-golang-and-goth/
 ---
 
-## [3][An introduction to Go for non-Go developers](https://www.reddit.com/r/golang/comments/h0jc27/an_introduction_to_go_for_nongo_developers/)
-- url: https://benhoyt.com/writings/go-intro/
+## [9][Microservices in Golang Part 1 - gRPC - 2020 update](https://www.reddit.com/r/golang/comments/h7k1vs/microservices_in_golang_part_1_grpc_2020_update/)
+- url: https://ewanvalentine.io/microservices-in-golang-part-1/
 ---
 
-## [4][Telebot V2.3 released: The most feature-complete bot framework for Telegram in Go](https://www.reddit.com/r/golang/comments/h0yz9o/telebot_v23_released_the_most_featurecomplete_bot/)
-- url: https://github.com/tucnak/telebot/releases/tag/v2.3
+## [10][A Data Engineering Perspective on Go vs. Python (Part 1)](https://www.reddit.com/r/golang/comments/h7jwzl/a_data_engineering_perspective_on_go_vs_python/)
+- url: https://chollinger.com/blog/2020/06/a-data-engineering-perspective-on-go-vs.-python-part-1/
 ---
 
-## [5][UtahFS is an encrypted storage system that provides a user-friendly FUSE drive backed by cloud storage](https://www.reddit.com/r/golang/comments/h0szzl/utahfs_is_an_encrypted_storage_system_that/)
-- url: https://github.com/cloudflare/utahfs
----
-
-## [6][[P] spaGO: a work-in-progress yet ready-to-use library for ML/NLP entirely in Go](https://www.reddit.com/r/golang/comments/h0yys5/p_spago_a_workinprogress_yet_readytouse_library/)
-- url: https://www.reddit.com/r/golang/comments/h0yys5/p_spago_a_workinprogress_yet_readytouse_library/
----
-From today, Gophers can exploit the potential of state-of-the-art NLP technologies without moving to other languages. I am excited to share some results from my personal "NLP Odyssey": spaGO is a work-in-progress yet ready-to-use library for ML/NLP, written entirely in Go. You can create and train your own neural model, or import a pre-trained one from Hugging Face and FlairNLP. The deploy is just a single executable for your server (no heavy dependencies, no virtual environments).
-
-[spaGO HTTP API for Question-Answering](https://preview.redd.it/irz8bu945a451.png?width=1811&amp;format=png&amp;auto=webp&amp;s=6a3f6efb4c010876ab478a1582812a9d6ae4d5cc)
-
-Please check it out and let me know what you think!
-
-The code is aviable at: [https://github.com/nlpodyssey/spago](https://github.com/nlpodyssey/spago)
-
-If you like the project, please star the repository to show your support!
-
-P.S. I warn you that for now, spaGO doesn't use GPU and there are a ton of optimizations to make it more performant. As a minimum, we can start with something!
-## [7][Stream processing similar to Kafka](https://www.reddit.com/r/golang/comments/h0xtya/stream_processing_similar_to_kafka/)
-- url: https://www.reddit.com/r/golang/comments/h0xtya/stream_processing_similar_to_kafka/
----
-Hi.
-
-Are there any stream processing systems similar to Kafka written in Golang? Why go, because I want the consumer/client to be first class citizen. I want an alternative for Kafka because of the annoying Zookeeper dependency. One requirements: If the client/consumer stops I want the ability to pick up where it left off.
-
-How does nsq and nats stack up?
-## [8][Can anyone translate relation sql to MongoDB?](https://www.reddit.com/r/golang/comments/h0ywdk/can_anyone_translate_relation_sql_to_mongodb/)
-- url: https://www.reddit.com/r/golang/comments/h0ywdk/can_anyone_translate_relation_sql_to_mongodb/
----
-Can anyone give me example in MongoDB to createOne and getOne for relationships
-
-Let's say user has many companies 
-
-Companies has many files 
-
-How to translate it to createOne and getOne ?
-
-Should I create collection company, user, and file for those ? 
-
-Thank you
-## [9][Testing and Validating Input in Go](https://www.reddit.com/r/golang/comments/h0z9zg/testing_and_validating_input_in_go/)
-- url: https://hackwild.com/article/go-input-validation-and-testing/
----
-
-## [10][Avoiding nested function (using pixel)](https://www.reddit.com/r/golang/comments/h0z7x5/avoiding_nested_function_using_pixel/)
-- url: https://www.reddit.com/r/golang/comments/h0z7x5/avoiding_nested_function_using_pixel/
----
-Hi I'm using the pixel library (in which basically you define a run function and it's your "real" main fuction the main jsute does : pixel.Run(run) and I feel that it's not a good idea to define any pixel object outside of the run (thats probabely on this point that I'm wrong...) ): 
-I'm really new in programming and with pixel I've created a "shoot" function which lets my character shoot, but... I've first created the function inside of the run func... before discovering that go does not let us create nested func... 
-So I defined it outside the run function but... I need some variable (such as my main window or things like that ) which are defined inside the run function (so on a local scope... so basically I can't access them)... could you please tell me a way to go through this or tell me if I'm not thinking my code the right way... I've never coded a game before (and almost never coded) 
-Thanks you ! &lt;3

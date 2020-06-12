@@ -19,7 +19,161 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][What are you using for requests?](https://www.reddit.com/r/rails/comments/h0vva7/what_are_you_using_for_requests/)
+## [2][Deploying subdirectory projects to Heroku](https://www.reddit.com/r/rails/comments/h7iazy/deploying_subdirectory_projects_to_heroku/)
+- url: https://www.reddit.com/r/rails/comments/h7iazy/deploying_subdirectory_projects_to_heroku/
+---
+When you have your project services (API backend, frontend, background processing, etc.) in one monorepo you might struggle with a simple way of deploying them to Heroku independently. Here's an article containing a way of doing just that.
+
+TL;DR: The easiest solution is 
+```
+git subtree push --prefix path/to/app-subdir heroku master
+```
+
+To get more details and a more complex solution that provides the ability to set up a deployment from CI and utilizing Heroku Review Apps you can read the article.
+
+https://jtway.co/deploying-subdirectory-projects-to-heroku-f31ed65f3f2
+## [3][MVC vs 3-tier architecture](https://www.reddit.com/r/rails/comments/h17sez/mvc_vs_3tier_architecture/)
+- url: https://www.reddit.com/r/rails/comments/h17sez/mvc_vs_3tier_architecture/
+---
+**So this has always been a debatable topic.**  
+**Approach 1:** We use the classic rails MVC architecture with Server Side rendering.  
+**Approach 2:** We use client-side rendering, with rails working as a backend providing the JSON response and client to be made using react or any frontend framework.
+
+  
+I would love to get some insights and have a discussion on what are the pros and cons of both these approaches.  
+
+
+Some of my thoughts are:  
+\* Using client-side rendering restricts us to leverage the magic provided by rails. (form auto completions, an automatic mapping between endpoint and controller methods)  
+\* Client-side rendering makes the application a bit lighter, as the server is not responsible for rendering the UI for every instance.  
+\* I personally am not very comfortable in Js, so using Rails MVC is always an easy way out for me.  
+
+
+Let's discuss this!
+## [4][Can I use a conditional to toggle between rendered partials?](https://www.reddit.com/r/rails/comments/h79ljs/can_i_use_a_conditional_to_toggle_between/)
+- url: https://www.reddit.com/r/rails/comments/h79ljs/can_i_use_a_conditional_to_toggle_between/
+---
+I'm trying to render a partial/hide another partial on a page when a button is clicked. Is this possible with a conditional? Or possible at all? Something like:   
+
+
+    -if @toggle == 'show'
+      = render :partial =&gt; "partial_one"
+    
+    -elsif @toggle == 'hide'
+      = render :partial =&gt; "partial_two"
+## [5][Implementing search, should I go for Algolia or is Rails/Postgres enough?](https://www.reddit.com/r/rails/comments/h14rpx/implementing_search_should_i_go_for_algolia_or_is/)
+- url: https://www.reddit.com/r/rails/comments/h14rpx/implementing_search_should_i_go_for_algolia_or_is/
+---
+As the title says, I am implementing search functionality on a social network project.
+
+I want it to feel snappy and provide good suggestions on typing and since I just came back to Rails after a long hiatus in javascript land, I'm not sure if Rails provides something for this out of the box or if should use something like Algolia which is a search-as-a-service to save me the headache.
+
+Any ideas/feeback are welcome!
+
+&amp;#x200B;
+
+Regards
+## [6][Appropriate way to validate association](https://www.reddit.com/r/rails/comments/h128cd/appropriate_way_to_validate_association/)
+- url: https://www.reddit.com/r/rails/comments/h128cd/appropriate_way_to_validate_association/
+---
+I'm building a Rails API app that deals with orchestrating Users within a Company, and I want to check my logic for attaching Settings to a User.
+
+The idea is, an admin at a Company will create a Settings entry in the database, and then assign that to a bunch of users.
+
+&amp;#x200B;
+
+Because this is an API, I have one call to create a Setting, one call to create a User, and one call to assign a Setting to a User.
+
+&amp;#x200B;
+
+Here's what the User controller looks like:
+
+    class UsersController &lt; ApplicationController
+    
+      def set_setting
+        if @user.update(setting: Setting.find(params[:setting_id]))
+          render :show
+        else
+          render json: @user.errors, status: :unprocessable_entity
+        end
+      end
+    
+    end
+
+And here's how I'm doing the validation in the User model:
+
+    class User &lt; ApplicationRecord
+      belongs_to :organisation
+      has_one :user_setting
+      has_one :setting, through: :user_setting
+    
+      validate :setting_in_organisation, on: :update
+    
+      private
+    
+        def setting_in_organisation
+          errors.add(:setting_id, "You can't assign a setting that's not part of your organisation") unless setting.organisation == organisation
+        end
+    end
+
+So, my question is, is this a good way to approach the issue while sticking to Rails ethos and DRY principals? I think it's important to highlight the views for this app are handled in a different repo. And because it's an API I definitely want a separate call to assign a Setting to a User, rather than chucking everything in user\_params.
+
+What's everyone's thoughts?
+## [7][Navbar and Topbar in application.html.erb vs individual files](https://www.reddit.com/r/rails/comments/h16k7s/navbar_and_topbar_in_applicationhtmlerb_vs/)
+- url: https://www.reddit.com/r/rails/comments/h16k7s/navbar_and_topbar_in_applicationhtmlerb_vs/
+---
+Hello everyone, I just came across a project where the navigation bar and topbar are being rendered on every page (thus fetching the username on every reload). I was thinking about adding them to application.html.erb instead.   
+I was just wondering if this approach has any kind of downfalls, in terms of scalability or performance.  
+
+
+I know the answer seems a bit obvious, but just trying to get some more insights.
+## [8][[HELP] How to show specific jsonapi-resources attributes scheme on Rswag's swagger ui?](https://www.reddit.com/r/rails/comments/h77fda/help_how_to_show_specific_jsonapiresources/)
+- url: https://www.reddit.com/r/rails/comments/h77fda/help_how_to_show_specific_jsonapiresources/
+---
+Hi everyone, I have a json api using rswag to create the features/resources/endpoint tests and generate the swagger ui at the same time. The lib is amazing, but I'm having a small problem: Because I'm using jsonapi-resources I downloaded the jsonschema for jsonapi and use it as my "base schema". I want to show it as a response schema for every endpoint, but having the "attributes" item specified to that specific endpoint. I tried using allOf [baseSchema, specificSchema] , but I didn't have much success. I am trying to create the schema for "data" dynamically but It feels like I am overreaching and doing something that otherwise should be rather simple. 
+
+Has anyone used both these tools at the same time?
+
+How did you handle the response format of the jsonapi in the swagger ui?
+
+PS: I've been to their GitHub continuously for the past days, but it seems like the problem is related to how I organize and compose the schemas using the rswag lib.
+
+Thanks a lot in advance for any help! (I am so glad that I found this sub on my first days of Ruby/rails!)
+## [9][How do I preserve/pass URL parameters with render](https://www.reddit.com/r/rails/comments/h17rrp/how_do_i_preservepass_url_parameters_with_render/)
+- url: https://www.reddit.com/r/rails/comments/h17rrp/how_do_i_preservepass_url_parameters_with_render/
+---
+Fairly run-of-the mill configuration. Only thing is that from the index view I pass a parameter in my URL on the :new action.
+
+    &lt;%= link_to 'Add Model', new_my_model_path(utm: @utm), class: 'btn btn-outline-dark btn-large mb-3', role: 'button' %&gt;
+
+My create action is fairly standard:
+
+    def create
+      respond_to do |format|
+        if @my_model.save
+          format.html { redirect_to my_models_path(utm: @my_model.reference_id), notice: 'Model was successfully created.' }
+          format.json { render :show, status: :created, location: my_modelss_path(utm: @my_model.reference_id) }
+        else
+          format.html { render :new }
+          format.json { render json: @my_model.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+
+Problem is, on that 'else', I lose the url parameter (which I want to continue to pass).
+
+I'm guessing that I have two options:
+
+1. Discover a little-known way to maintain url parameters with 'render'
+2. Pass the data in a different way (pass the instance variable?)
+3. Ensure we never hit 'else'
+
+Obviously, I'm hoping there is a valid solution to 1, with the intention of later updating to 2. But I haven't been able to find a way yet.
+
+Would love some input on my possible path(s) forward.
+
+\*Edited for code block after foolishly using inline code...
+## [10][What are you using for requests?](https://www.reddit.com/r/rails/comments/h0vva7/what_are_you_using_for_requests/)
 - url: https://www.reddit.com/r/rails/comments/h0vva7/what_are_you_using_for_requests/
 ---
 A lot of times API's won't have Ruby SDK's or gems.
@@ -39,267 +193,39 @@ What is your normal procedure for doing this?
 &amp;#x200B;
 
 Basically, something similar to Pythons requests library
-## [3][How to trigger JS directly after link_to in Rails 5](https://www.reddit.com/r/rails/comments/h0zaux/how_to_trigger_js_directly_after_link_to_in_rails/)
-- url: https://www.reddit.com/r/rails/comments/h0zaux/how_to_trigger_js_directly_after_link_to_in_rails/
+## [11][Having a hard time with saving a date with date_select](https://www.reddit.com/r/rails/comments/h11z2p/having_a_hard_time_with_saving_a_date_with_date/)
+- url: https://www.reddit.com/r/rails/comments/h11z2p/having_a_hard_time_with_saving_a_date_with_date/
 ---
-Hi - I'm looking to trigger some JS immediately after someone clicks a link_to button within my application. Tried doing the following with jQuery, but nothing is firing even if I just do a basic console.log(). Any idea what turbolinks:load should be replaced with?
-
-    $(document).on('turbolinks:load', function(){
-        console.log("test");
-    });
-## [4][Test User devise model with RSpec](https://www.reddit.com/r/rails/comments/h0ys91/test_user_devise_model_with_rspec/)
-- url: https://www.reddit.com/r/rails/comments/h0ys91/test_user_devise_model_with_rspec/
----
-Hello guys, I am testing user model with rspec. I want to test the database table columns. I added column firstname and lastname in user devise model. So i have the user\_spec.rb of:  
-`describe "database table" do`
-
-   `it { is_expected.to have_db_column(:id).of_type(:uuid) }`
-
-   `it { is_expected.to have_db_column(:first_name).of_type(:string) }`
-
-   `it { is_expected.to have_db_column(:last_name).of_type(:string) }`
-
-   `it { is_expected.to have_db_column(:email).of_type(:string) }`
-
- `end`
-
-And then when i rspec it the error is "User does not have a db column named last\_name and first\_name."  
-I have a column of first\_name and last\_name in my database and in schema.  
-How to solve that? Thankss.
-## [5][ActiveRecord Help!](https://www.reddit.com/r/rails/comments/h0mrup/activerecord_help/)
-- url: https://www.reddit.com/r/rails/comments/h0mrup/activerecord_help/
----
- 
-
- **I have an sql query and I keep getting back this error** \----
-
-result = ActiveRecord::Base.connection.execute("Select Countries.capital, Max(features\_shipped) AS feat, Countries.name, Max(age) As age, Teams.name As teamname From Engineers Inner Join Teams on Engineers.team\_id = Teams.id Inner Join Countries on Countries.id = Engineers.id Group by countries.name,countries.capital, teamname Order by age desc, feat desc").result.rows
+Trying to save a date of birth using date\_select.  I'm kinda lost.  Any advice would be greatly appreciated!
 
 &amp;#x200B;
 
-***\*\*\*\*\*\* I keep getting back this error ----***
+schema:
 
-**Traceback** (most recent call last):
+    t.date "age"
 
-1: from (irb):71
+&amp;#x200B;
 
-**NoMethodError (undefined method \`result' for #&lt;PG::Result:0x00007f9a944d6918&gt;)**
-## [6][Is it possible to have several domains on one rails app with Devise ? (and no SSO)](https://www.reddit.com/r/rails/comments/h0edb3/is_it_possible_to_have_several_domains_on_one/)
-- url: https://www.reddit.com/r/rails/comments/h0edb3/is_it_possible_to_have_several_domains_on_one/
----
-Hello,
+form:
 
-I have a rails 5.2 app in production with domain www.mydomain.com
+    &lt;%= f.date_select :age, :start_year=&gt;1900,:end_year=&gt;2020 %&gt;
 
-We would like to roll out a new product which use the heavy-lifting from the Rails app.
-This product would be branded and used under www.anotherdomain.com
+&amp;#x200B;
 
-We host on Heroku. I have no problem to add the domain and access the app but I can't login through Devise. I don't even want to share cookies across domains - so I just have a quick question : it is doable to have several domains on one rails app with Devise ?
-I don't want to implement SSO/ oauth.
+when saved:
 
-Any other gotcha besides authentication ?
+    Child Create (0.9ms)  INSERT INTO "children" ("age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["age", "2012-03-02"], ["created_at", "2020-06-11 15:43:05.548019"], ["updated_at", "2020-06-11 15:43:05.548019"]]
 
-Thank you !
-## [7][Tailing heroku with `heroku logs --tail`](https://www.reddit.com/r/rails/comments/h0caj8/tailing_heroku_with_heroku_logs_tail/)
-- url: https://www.reddit.com/r/rails/comments/h0caj8/tailing_heroku_with_heroku_logs_tail/
----
-  
-I had two issues with the vanilla heroku logs --tail command 
+&amp;#x200B;
 
-   \- it wouldn't save it to a file  
-   \- it would often abruptly stop, specially if you have it on for more than 30 mins  
+when i try to access the age:
 
+    from (pry):17:in `create'
+    [8] pry(#&lt;ChildrenController&gt;)&gt; @child.age
+    =&gt; Fri, 02 Mar 2012
 
-I went about wrapping the command in a bash script like this  
+edit: I was hoping it would return what it appeared to save:  "2012-03-02" 
 
-```
-#!/bin/bash
-heroku logs --tail
-```
+but should it be a string? 
 
-saved it as ~/bin/heroku_logs_clientname
-with a chmod of 755.
-Now you can watch the logs by typing heroku_logs_clientname
-in any shell prompt.
-(assuming you ~/bin/ is in your PATH)
-
-### Adding persistence
-
-`tee` is a handy unix command. it copies whatever you're seeing to file.
-
-```
-#!/bin/bash
-heroku logs --tail  | tee /tmp/heroku_logs_clientname.log
-```
-
-### Better persistence
-
-In this current state, logs saved tomorrow would overwrite the logs saved
-today. Lets' timestamp the filename to prevent overwriting:
-
-```
-#!/bin/bash
-heroku logs --tail  | tee /tmp/heroku_logs_clientname_$(date +%s).log
-```
-
-### Handling timeouts
-
-heroku log tails time out after a certain period of time. When that happens,
-we want to sleep a bit and then re-initiate the log tailing. Using the `while`
-command for this:
-
-```
-#!/bin/bash
-while true; do echo sleep 1; sleep 1; heroku logs --tail| tee /tmp/heroku_logs_clientname_$(date +%s).log; echo sleep 300; sleep 300; done
-```
-
-Infinite loops are dangerous imho, except if you put in a generous sleep amount like 5 minutes.
-
-### Here' my final script
-
-```
-#!/bin/bash
-cd ~/clientname; while true; do echo sleep 1; sleep 1; heroku logs --app appname --tail 2&gt;&amp;1 | tee /tmp/heroku_logs_clientname_$(date +%s); echo sleep 300; sleep 300; done
-```
-## [8][Update Product without replacing Thumbnail by Default](https://www.reddit.com/r/rails/comments/h0ccbp/update_product_without_replacing_thumbnail_by/)
-- url: https://www.reddit.com/r/rails/comments/h0ccbp/update_product_without_replacing_thumbnail_by/
----
-Hi Folks,
-
-I have a model where I attach a thumbnail image to a product when I upload it (through has_one_attached in model). No problem there and have configured it with an S3 bucket so that images are stored there. My issue becomes when I want to update an item through a form. By default it removes the image and I have to reupload each time which proves tedious. Any way to maintain that integrity by default as it does with other text or number fields?
-## [9][rails-foundation issue](https://www.reddit.com/r/rails/comments/h0c5cl/railsfoundation_issue/)
-- url: https://www.reddit.com/r/rails/comments/h0c5cl/railsfoundation_issue/
----
-Hi folks,
-
-I inherited a rails project 6 months ago and up until now i've not needed to make any SASS/CSS changes. The project is using the foundation-rails gem. So i setup a watcher in order to auto-generate the css whenever a scss/sass file is changed.
-
-The watcer seems to be functioning ok, however, i get a fundamental error in the \_settings.scss file:  
-\---------------------------------
-
-cmd.exe /D /C call C:\\Users\\xazos\\AppData\\Roaming\\npm\\sass.cmd application.scss:application.css
-
-Error: Undefined mixin.
-
-╷
-
-105 │ u/include add-foundation-colors;  
-\------------------------------
-
-I'm not sure why this mixin is undefined. It seems like a fundamental part of foundation. I've tried "re-installing" with the -force switch but it doesn't seem to make a difference. Any help would be massively appreciated!
-
-Cheers!
-## [10][Issue with Joining to Another Model in Admin Namespace](https://www.reddit.com/r/rails/comments/h0a27t/issue_with_joining_to_another_model_in_admin/)
-- url: https://www.reddit.com/r/rails/comments/h0a27t/issue_with_joining_to_another_model_in_admin/
----
-UPDATE: Got it working. I ended up adding admin\_category.references through a migration and saw that it added the admin\_categories\_id field to the DB. I had admin\_category\_id. After that I was able to pull the the category name via the rails console and hooked it up through the view. 
-
-\_\_\_\_\_\_
-
-I have products which belong to a category. Categories have many products. Both of these are in an admin namespace. I am trying to show the category name on the product show page when you look at the product but haven't been able to get it to work. What am I doing wrong here?
-
-Category Model:
-
-    class Admin::Category &lt; ApplicationRecord
-      has_many :admin_products
-    end
-
-Product Model:
-
-    class Admin::Product &lt; ApplicationRecord
-      belongs_to :admin_category, class_name: "Admin::Category"
-      has_many_attached :images
-    end
-
-Products Controller
-
-    class Admin::ProductsController &lt; Admin::ApplicationController
-      before_action :set_admin_product, only: [:show, :edit, :update, :destroy]
-      breadcrumb 'Products', :admin_products_path
-      # GET /admin/products
-      # GET /admin/products.json
-      def index
-        @admin_products = Admin::Product.all
-      end
-    
-      # GET /admin/products/1
-      # GET /admin/products/1.json
-      def show
-        @admin_product = Admin::Product.joins(:admin_category)
-      end
-    
-      # GET /admin/products/new
-      def new
-        @admin_product = Admin::Product.new
-      end
-    
-      # GET /admin/products/1/edit
-      def edit
-        @pagetitle = "Edit Product"
-        breadcrumb 'Edit Product', edit_admin_product_path
-      end
-    
-      # POST /admin/products
-      # POST /admin/products.json
-      def create
-        @admin_product = Admin::Product.new(admin_product_params)
-    
-        respond_to do |format|
-          if @admin_product.save
-            format.html { redirect_to @admin_product, notice: 'Product was successfully created.' }
-            format.json { render :show, status: :created, location: @admin_product }
-          else
-            format.html { render :new }
-            format.json { render json: @admin_product.errors, status: :unprocessable_entity }
-          end
-        end
-      end
-    
-      # PATCH/PUT /admin/products/1
-      # PATCH/PUT /admin/products/1.json
-      def update
-        respond_to do |format|
-          if @admin_product.update(admin_product_params)
-            format.html { redirect_to @admin_product, notice: 'Product was successfully updated.' }
-            format.json { render :show, status: :ok, location: @admin_product }
-          else
-            format.html { render :edit }
-            format.json { render json: @admin_product.errors, status: :unprocessable_entity }
-          end
-        end
-      end
-    
-      # DELETE /admin/products/1
-      # DELETE /admin/products/1.json
-      def destroy
-        @admin_product.destroy
-        respond_to do |format|
-          format.html { redirect_to admin_products_url, notice: 'Product was successfully destroyed.' }
-          format.json { head :no_content }
-        end
-      end
-    
-      private
-        # Use callbacks to share common setup or constraints between actions.
-        def set_admin_product
-          @admin_product = Admin::Product.find(params[:id])
-        end
-    
-    
-        # Only allow a list of trusted parameters through.
-        def admin_product_params
-          params.require(:admin_product).permit(:name, :description, :available_on, :deleted_at, :permalink, :meta_description, :meta_keywords, :count_on_hand, :admin_category_id, images: [])
-        end
-    end
-
-In the admin/products/show view:
-
-    &lt;p class="mb-6"&gt;&lt;%= @admin_product.admin_category.name %&gt;&lt;/p&gt;
-
-I'm getting an undefined method \`admin\_category' error on page.
-## [11][How I can import a multistep loginn to ROR?](https://www.reddit.com/r/rails/comments/h0ivs8/how_i_can_import_a_multistep_loginn_to_ror/)
-- url: https://www.reddit.com/r/rails/comments/h0ivs8/how_i_can_import_a_multistep_loginn_to_ror/
----
-Hello  I'a starter RoR  developer and I'm trying to import this [https://bbbootstrap.com/snippets/multi-step-form-wizard-30467045](https://bbbootstrap.com/snippets/multi-step-form-wizard-30467045)  multistep  login to rails with the studying goal, and when I  run the server it becomes like that and I can't jump to the next tabs of the form when I click next step: [https://imgur.com/IWAXX0C](https://imgur.com/IWAXX0C)  but why it  don't become like the snnippets?  The app  is here:  [https://github.com/LeoFragozo/wizard\_bootstrap](https://github.com/LeoFragozo/wizard_bootstrap),  can someone kindly please help me?
-
-Here is the terminal: [https://imgur.com/UlWvCrN](https://imgur.com/UlWvCrN)
+&amp;#x200B;

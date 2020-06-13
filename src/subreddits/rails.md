@@ -19,7 +19,121 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Deploying subdirectory projects to Heroku](https://www.reddit.com/r/rails/comments/h7iazy/deploying_subdirectory_projects_to_heroku/)
+## [2][The case of the disappearing db column :(](https://www.reddit.com/r/rails/comments/h7ww81/the_case_of_the_disappearing_db_column/)
+- url: https://www.reddit.com/r/rails/comments/h7ww81/the_case_of_the_disappearing_db_column/
+---
+I have been programming in RoR since version 2.0, but I have never encountered a problem like this til now.  This is my second RoR API with React as the front end app. RoR v6.02
+
+The problem is in one particular table **Invitations** which has, among many others, a string column originally named **state**.  I have many other tables with similar columns (same name, same type) that work fine, BUT, the **Invitations** table is in a world of its own.  
+
+
+* 1 the column does exist in the table.  I can see it and populate it using
+pgAdmin 4.
+* 2 I can see the field in the log, with the proper values.  
+* 3 I have it in my parameters whitelist.  
+* 4 I can see it when printing params.inspect.
+
+In the line immediately following the inspection, as in:
+
+    puts "#{params.inspect}"
+
+= "... updated_at"=&gt;"2020-06-12T17:32:46.420Z", "state"=&gt;"invite"} permitted: true&gt;}
+
+    puts  "#{params.state}"
+
+=NoMethodError (undefined method `state' for &lt;ActionController::Parameters...&gt;)
+
+Any code that executes after the whitelist gives me the same NoMethodError.  For example,
+
+    @state = params.state;
+    Invitation.update(invitation_params).
+
+I have looked all over the web for a similar problem but maybe I just don't know the right question.
+
+Lastly, just in case, I renamed the column to **status**, but nothing changed except for the column name in the logs.
+
+Any ideas will be appreciated.
+
+P.S.  I have been working in digital electronics since 1954, with a degree in Electrical Engineering.  The first machine I worked on was a LGP-30 with 8k words of drum memory.  The OS was a graduate student with a cot (and miles of paper tape).  I am probably among the few survivors who knows how to program around drum latency :) /brag
+## [3][Rails Routes in Rails 6 looks kinda terrible in the terminal](https://www.reddit.com/r/rails/comments/h7lozw/rails_routes_in_rails_6_looks_kinda_terrible_in/)
+- url: https://www.reddit.com/r/rails/comments/h7lozw/rails_routes_in_rails_6_looks_kinda_terrible_in/
+---
+Does anyone have a solution for the rails routes command that doesn't require grepping a specific controller or using the expand flag, that would pretty up the output of the rails routes command? It seems to be thrown off by action mail and active storage routes because of their length. Sure, I could use the expanded flag but then the console window can go for days. I would like to just see the formatting locked like it used to be or maybe even suppress the action mail stuff. 
+
+https://preview.redd.it/5pyumixzoh451.png?width=1706&amp;format=png&amp;auto=webp&amp;s=c4e08fe5012b36a9f1957842de27ba785805d509
+## [4][heroku[logplex]: Error L10 (output buffer overflow): drain 'd.cfcd3264-7259-4b12-ac5b-016032978174' dropped 1 messages since 2020-06-12T14:40:59.280571+00:00.](https://www.reddit.com/r/rails/comments/h7lyqq/herokulogplex_error_l10_output_buffer_overflow/)
+- url: https://www.reddit.com/r/rails/comments/h7lyqq/herokulogplex_error_l10_output_buffer_overflow/
+---
+  
+How can I even begin troubleshooting this? it would help to know what the contents of the dropped messages were, or at least which method/process/dyno these dropped messages originated from.
+## [5][How to handle dynamic, nested WHERE AND/OR queries using active record](https://www.reddit.com/r/rails/comments/h7pxmb/how_to_handle_dynamic_nested_where_andor_queries/)
+- url: https://www.reddit.com/r/rails/comments/h7pxmb/how_to_handle_dynamic_nested_where_andor_queries/
+---
+I'm currently building a feature that requires me to loop over an hash, and for each key in the hash, dynamically modify an SQL query.
+
+The actual SQL query should look something like this:
+
+```sql
+select * from space_dates d
+	inner join space_prices p on p.space_date_id = d.id
+	where d.space_id = ?
+	and d.date between ? and ?
+	and (
+		(p.price_type = 'monthly' and p.price_cents &lt;&gt; 9360) or
+		(p.price_type = 'daily' and p.price_cents &lt;&gt; 66198) or
+		(p.price_type = 'hourly' and p.price_cents &lt;&gt; 66198) # This part should be added in dynamically
+	)
+```
+
+The last `and` query is to be added dynamically, as you can see, I basically need only one of the conditions to be true but not all.
+
+```
+query = space.dates
+      .joins(:price)
+      .where('date between ? and ?', start_date, end_date)
+
+# We are looping over the rails enum (hash) and getting the key for each key value pair, alongside the index
+
+SpacePrice.price_types.each_with_index do |(price_type, _), index|
+  amount_cents = space.send("#{price_type}_price").price_cents
+  query = if index.positive? # It's not the first item so we want to chain it as an 'OR'
+            query.or(
+              space.dates
+               .joins(:price)
+               .where('space_prices.price_type = ?', price_type)
+               .where('space_prices.price_cents &lt;&gt; ?', amount_cents)
+             )
+           else
+             query # It's the first item, chain it as an and
+               .where('space_prices.price_type = ?', price_type)
+               .where('space_prices.price_cents &lt;&gt; ?', amount_cents)
+           end
+end
+```
+
+The output of this in rails is:
+
+```
+SELECT "space_dates".* FROM "space_dates"
+  INNER JOIN "space_prices" ON "space_prices"."space_date_id" = "space_dates"."id"
+  WHERE "space_dates"."space_id" = $1 AND (
+   (
+     (date between '2020-06-11' and '2020-06-11') AND
+     (space_prices.price_type = 'hourly') AND (space_prices.price_cents &lt;&gt; 9360) OR
+     (space_prices.price_type = 'daily') AND (space_prices.price_cents &lt;&gt; 66198)) OR
+     (space_prices.price_type = 'monthly') AND (space_prices.price_cents &lt;&gt; 5500)
+   ) LIMIT $2 
+```
+
+Which isn't as expected. I need to wrap the last few lines in another set of round brackets in order to produce the same output. I'm not sure how to go about this using ActiveRecord.
+
+It's not possible for me to use `find_by_sql` since this would be dynamically generated SQL too.
+## [6][Form_for PUT instead of PATCH in the edit form](https://www.reddit.com/r/rails/comments/h7qr9d/form_for_put_instead_of_patch_in_the_edit_form/)
+- url: https://www.reddit.com/r/rails/comments/h7qr9d/form_for_put_instead_of_patch_in_the_edit_form/
+---
+So I am using partial in new and edit part of my User object, and by default, Rails applies \_method as PATCH while submitting the edit option. How can I use PUT instead of the patch.  
+I cant add method as then it will be an issue while creating a new user.
+## [7][Deploying subdirectory projects to Heroku](https://www.reddit.com/r/rails/comments/h7iazy/deploying_subdirectory_projects_to_heroku/)
 - url: https://www.reddit.com/r/rails/comments/h7iazy/deploying_subdirectory_projects_to_heroku/
 ---
 When you have your project services (API backend, frontend, background processing, etc.) in one monorepo you might struggle with a simple way of deploying them to Heroku independently. Here's an article containing a way of doing just that.
@@ -32,7 +146,7 @@ git subtree push --prefix path/to/app-subdir heroku master
 To get more details and a more complex solution that provides the ability to set up a deployment from CI and utilizing Heroku Review Apps you can read the article.
 
 https://jtway.co/deploying-subdirectory-projects-to-heroku-f31ed65f3f2
-## [3][MVC vs 3-tier architecture](https://www.reddit.com/r/rails/comments/h17sez/mvc_vs_3tier_architecture/)
+## [8][MVC vs 3-tier architecture](https://www.reddit.com/r/rails/comments/h17sez/mvc_vs_3tier_architecture/)
 - url: https://www.reddit.com/r/rails/comments/h17sez/mvc_vs_3tier_architecture/
 ---
 **So this has always been a debatable topic.**  
@@ -50,7 +164,7 @@ Some of my thoughts are:
 
 
 Let's discuss this!
-## [4][Can I use a conditional to toggle between rendered partials?](https://www.reddit.com/r/rails/comments/h79ljs/can_i_use_a_conditional_to_toggle_between/)
+## [9][Can I use a conditional to toggle between rendered partials?](https://www.reddit.com/r/rails/comments/h79ljs/can_i_use_a_conditional_to_toggle_between/)
 - url: https://www.reddit.com/r/rails/comments/h79ljs/can_i_use_a_conditional_to_toggle_between/
 ---
 I'm trying to render a partial/hide another partial on a page when a button is clicked. Is this possible with a conditional? Or possible at all? Something like:   
@@ -61,7 +175,7 @@ I'm trying to render a partial/hide another partial on a page when a button is c
     
     -elsif @toggle == 'hide'
       = render :partial =&gt; "partial_two"
-## [5][Implementing search, should I go for Algolia or is Rails/Postgres enough?](https://www.reddit.com/r/rails/comments/h14rpx/implementing_search_should_i_go_for_algolia_or_is/)
+## [10][Implementing search, should I go for Algolia or is Rails/Postgres enough?](https://www.reddit.com/r/rails/comments/h14rpx/implementing_search_should_i_go_for_algolia_or_is/)
 - url: https://www.reddit.com/r/rails/comments/h14rpx/implementing_search_should_i_go_for_algolia_or_is/
 ---
 As the title says, I am implementing search functionality on a social network project.
@@ -73,7 +187,7 @@ Any ideas/feeback are welcome!
 &amp;#x200B;
 
 Regards
-## [6][Appropriate way to validate association](https://www.reddit.com/r/rails/comments/h128cd/appropriate_way_to_validate_association/)
+## [11][Appropriate way to validate association](https://www.reddit.com/r/rails/comments/h128cd/appropriate_way_to_validate_association/)
 - url: https://www.reddit.com/r/rails/comments/h128cd/appropriate_way_to_validate_association/
 ---
 I'm building a Rails API app that deals with orchestrating Users within a Company, and I want to check my logic for attaching Settings to a User.
@@ -119,113 +233,3 @@ And here's how I'm doing the validation in the User model:
 So, my question is, is this a good way to approach the issue while sticking to Rails ethos and DRY principals? I think it's important to highlight the views for this app are handled in a different repo. And because it's an API I definitely want a separate call to assign a Setting to a User, rather than chucking everything in user\_params.
 
 What's everyone's thoughts?
-## [7][Navbar and Topbar in application.html.erb vs individual files](https://www.reddit.com/r/rails/comments/h16k7s/navbar_and_topbar_in_applicationhtmlerb_vs/)
-- url: https://www.reddit.com/r/rails/comments/h16k7s/navbar_and_topbar_in_applicationhtmlerb_vs/
----
-Hello everyone, I just came across a project where the navigation bar and topbar are being rendered on every page (thus fetching the username on every reload). I was thinking about adding them to application.html.erb instead.   
-I was just wondering if this approach has any kind of downfalls, in terms of scalability or performance.  
-
-
-I know the answer seems a bit obvious, but just trying to get some more insights.
-## [8][[HELP] How to show specific jsonapi-resources attributes scheme on Rswag's swagger ui?](https://www.reddit.com/r/rails/comments/h77fda/help_how_to_show_specific_jsonapiresources/)
-- url: https://www.reddit.com/r/rails/comments/h77fda/help_how_to_show_specific_jsonapiresources/
----
-Hi everyone, I have a json api using rswag to create the features/resources/endpoint tests and generate the swagger ui at the same time. The lib is amazing, but I'm having a small problem: Because I'm using jsonapi-resources I downloaded the jsonschema for jsonapi and use it as my "base schema". I want to show it as a response schema for every endpoint, but having the "attributes" item specified to that specific endpoint. I tried using allOf [baseSchema, specificSchema] , but I didn't have much success. I am trying to create the schema for "data" dynamically but It feels like I am overreaching and doing something that otherwise should be rather simple. 
-
-Has anyone used both these tools at the same time?
-
-How did you handle the response format of the jsonapi in the swagger ui?
-
-PS: I've been to their GitHub continuously for the past days, but it seems like the problem is related to how I organize and compose the schemas using the rswag lib.
-
-Thanks a lot in advance for any help! (I am so glad that I found this sub on my first days of Ruby/rails!)
-## [9][How do I preserve/pass URL parameters with render](https://www.reddit.com/r/rails/comments/h17rrp/how_do_i_preservepass_url_parameters_with_render/)
-- url: https://www.reddit.com/r/rails/comments/h17rrp/how_do_i_preservepass_url_parameters_with_render/
----
-Fairly run-of-the mill configuration. Only thing is that from the index view I pass a parameter in my URL on the :new action.
-
-    &lt;%= link_to 'Add Model', new_my_model_path(utm: @utm), class: 'btn btn-outline-dark btn-large mb-3', role: 'button' %&gt;
-
-My create action is fairly standard:
-
-    def create
-      respond_to do |format|
-        if @my_model.save
-          format.html { redirect_to my_models_path(utm: @my_model.reference_id), notice: 'Model was successfully created.' }
-          format.json { render :show, status: :created, location: my_modelss_path(utm: @my_model.reference_id) }
-        else
-          format.html { render :new }
-          format.json { render json: @my_model.errors, status: :unprocessable_entity }
-        end
-      end
-    end
-
-Problem is, on that 'else', I lose the url parameter (which I want to continue to pass).
-
-I'm guessing that I have two options:
-
-1. Discover a little-known way to maintain url parameters with 'render'
-2. Pass the data in a different way (pass the instance variable?)
-3. Ensure we never hit 'else'
-
-Obviously, I'm hoping there is a valid solution to 1, with the intention of later updating to 2. But I haven't been able to find a way yet.
-
-Would love some input on my possible path(s) forward.
-
-\*Edited for code block after foolishly using inline code...
-## [10][What are you using for requests?](https://www.reddit.com/r/rails/comments/h0vva7/what_are_you_using_for_requests/)
-- url: https://www.reddit.com/r/rails/comments/h0vva7/what_are_you_using_for_requests/
----
-A lot of times API's won't have Ruby SDK's or gems.
-
-I'm wondering what you all do in these cases...
-
-&amp;#x200B;
-
-I see some API's do:
-
-    require 'uri' 
-    require 'net/http' 
-    require 'openssl' 
-
-What is your normal procedure for doing this?
-
-&amp;#x200B;
-
-Basically, something similar to Pythons requests library
-## [11][Having a hard time with saving a date with date_select](https://www.reddit.com/r/rails/comments/h11z2p/having_a_hard_time_with_saving_a_date_with_date/)
-- url: https://www.reddit.com/r/rails/comments/h11z2p/having_a_hard_time_with_saving_a_date_with_date/
----
-Trying to save a date of birth using date\_select.  I'm kinda lost.  Any advice would be greatly appreciated!
-
-&amp;#x200B;
-
-schema:
-
-    t.date "age"
-
-&amp;#x200B;
-
-form:
-
-    &lt;%= f.date_select :age, :start_year=&gt;1900,:end_year=&gt;2020 %&gt;
-
-&amp;#x200B;
-
-when saved:
-
-    Child Create (0.9ms)  INSERT INTO "children" ("age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["age", "2012-03-02"], ["created_at", "2020-06-11 15:43:05.548019"], ["updated_at", "2020-06-11 15:43:05.548019"]]
-
-&amp;#x200B;
-
-when i try to access the age:
-
-    from (pry):17:in `create'
-    [8] pry(#&lt;ChildrenController&gt;)&gt; @child.age
-    =&gt; Fri, 02 Mar 2012
-
-edit: I was hoping it would return what it appeared to save:  "2012-03-02" 
-
-but should it be a string? 
-
-&amp;#x200B;

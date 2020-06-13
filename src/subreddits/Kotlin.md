@@ -1,5 +1,31 @@
 # Kotlin
-## [1][I want to learn an MVC framework. Is Spring Boot the best choice (see description)?](https://www.reddit.com/r/Kotlin/comments/h7e0k6/i_want_to_learn_an_mvc_framework_is_spring_boot/)
+## [1][The KorGE (Kotlin game engine) Gamejam is now live](https://www.reddit.com/r/Kotlin/comments/h7ixxb/the_korge_kotlin_game_engine_gamejam_is_now_live/)
+- url: https://blog.korge.org/2020/06/korge-gamejam-1-theme.html
+---
+
+## [2][AutomationBoot - Desktop application](https://www.reddit.com/r/Kotlin/comments/h7lvp3/automationboot_desktop_application/)
+- url: https://www.reddit.com/r/Kotlin/comments/h7lvp3/automationboot_desktop_application/
+---
+Hi!
+
+I would like to share my desktop application that helps in automating processes. Controls mouse and keyboard, records actions, executes scripts, etc. AutomationBoot gives you the ability to control actions using the button, keyboard shortcuts and via the website.
+
+The repository with details: [https://github.com/Patresss/AutomationBoot](https://github.com/Patresss/AutomationBoot) 
+
+&amp;#x200B;
+
+https://preview.redd.it/c789efqbqh451.png?width=575&amp;format=png&amp;auto=webp&amp;s=0281fdeb07800dbfc916d96a7e83f06bc823c075
+
+The application was written using Kotlin + JavaFx.
+
+In my free time, I have been writing for over 3 years (old, ugly repository - [https://github.com/Patresss/Clicker](https://github.com/Patresss/Clicker)). I was surprised that writing such an application can be so time consuming.
+## [3][Nice resource to learn Kotlin.js](https://www.reddit.com/r/Kotlin/comments/h7keg3/nice_resource_to_learn_kotlinjs/)
+- url: https://www.reddit.com/r/Kotlin/comments/h7keg3/nice_resource_to_learn_kotlinjs/
+---
+Hello! I was trying to build an experimental webapp for displaying and fetching images and wanted to do it in Kotlin solely but I'm confused where I should start. The resources that I find assumes that I know HTML/CSS/JS which I think is actually creating trouble.
+I'm not completely new to Kotlin though I'm fairly new to creating websites/webapps.
+Any help would be appreciated. Thanks!
+## [4][I want to learn an MVC framework. Is Spring Boot the best choice (see description)?](https://www.reddit.com/r/Kotlin/comments/h7e0k6/i_want_to_learn_an_mvc_framework_is_spring_boot/)
 - url: https://www.reddit.com/r/Kotlin/comments/h7e0k6/i_want_to_learn_an_mvc_framework_is_spring_boot/
 ---
 I come from Laravel where basically everything is plug and play (Authentication/Authorization, Migrations, ORM, Seeders, Query Builder, Mail, etc.), no need to reinvent the wheel or find a package, almost everything is already cover. The only thing I don't like about Laravel is PHP LOL.
@@ -7,17 +33,7 @@ I come from Laravel where basically everything is plug and play (Authentication/
 So, I recently started to learn Kotlin. I love it so much and I want to learn an MVC framework. Is Spring Boot the closest to Laravel or do you know another that may fit?
 
 I've heard that with Spring you need to reinvent the wheel and I'm kinda lazy so I don't want to mess with things like that.
-## [2][Nice resource to learn Kotlin.js](https://www.reddit.com/r/Kotlin/comments/h7keg3/nice_resource_to_learn_kotlinjs/)
-- url: https://www.reddit.com/r/Kotlin/comments/h7keg3/nice_resource_to_learn_kotlinjs/
----
-Hello! I was trying to build an experimental webapp for displaying and fetching images and wanted to do it in Kotlin solely but I'm confused where I should start. The resources that I find assumes that I know HTML/CSS/JS which I think is actually creating trouble.
-I'm not completely new to Kotlin though I'm fairly new to creating websites/webapps.
-Any help would be appreciated. Thanks!
-## [3][The KorGE (Kotlin game engine) Gamejam is now live](https://www.reddit.com/r/Kotlin/comments/h7ixxb/the_korge_kotlin_game_engine_gamejam_is_now_live/)
-- url: https://blog.korge.org/2020/06/korge-gamejam-1-theme.html
----
-
-## [4][fetch date of today](https://www.reddit.com/r/Kotlin/comments/h7870c/fetch_date_of_today/)
+## [5][fetch date of today](https://www.reddit.com/r/Kotlin/comments/h7870c/fetch_date_of_today/)
 - url: https://www.reddit.com/r/Kotlin/comments/h7870c/fetch_date_of_today/
 ---
 When I use:
@@ -27,7 +43,7 @@ dateFormatter.setLenient(**false**)
 **val** today = Date()
 
 to get the actual date, it shows the date from yesterday 1 hour after midnight. then it works. is that a problem of my pc/how can i fix this?
-## [5][IntelliJ nullability inspections and method calls](https://www.reddit.com/r/Kotlin/comments/h11mfz/intellij_nullability_inspections_and_method_calls/)
+## [6][IntelliJ nullability inspections and method calls](https://www.reddit.com/r/Kotlin/comments/h11mfz/intellij_nullability_inspections_and_method_calls/)
 - url: https://www.reddit.com/r/Kotlin/comments/h11mfz/intellij_nullability_inspections_and_method_calls/
 ---
 Let's say I have a Spring REST service, my input is a Data Class, taken in as JSON.
@@ -47,15 +63,15 @@ But I want to move these lines to a specific `validate` method as my class has a
 &amp;#x200B;
 
 Is this something that can't be inspected for some reason or an issue with IntelliJ inspections?
-## [6][I'm a beginner at Kotlin](https://www.reddit.com/r/Kotlin/comments/h7bf9v/im_a_beginner_at_kotlin/)
+## [7][I'm a beginner at Kotlin](https://www.reddit.com/r/Kotlin/comments/h7bf9v/im_a_beginner_at_kotlin/)
 - url: https://www.reddit.com/r/Kotlin/comments/h7bf9v/im_a_beginner_at_kotlin/
 ---
 Hey guys, I am looking for some advices to start learning Kotlin, i'm familiar with coding so i dont have to begin with basics
-## [7][First look on Hilt](https://www.reddit.com/r/Kotlin/comments/h15tj3/first_look_on_hilt/)
+## [8][First look on Hilt](https://www.reddit.com/r/Kotlin/comments/h15tj3/first_look_on_hilt/)
 - url: https://www.coroutinedispatcher.com/2020/06/first-look-on-hilt.html
 ---
 
-## [8][Error : Overload Resolution Ambiguity](https://www.reddit.com/r/Kotlin/comments/h12gap/error_overload_resolution_ambiguity/)
+## [9][Error : Overload Resolution Ambiguity](https://www.reddit.com/r/Kotlin/comments/h12gap/error_overload_resolution_ambiguity/)
 - url: https://www.reddit.com/r/Kotlin/comments/h12gap/error_overload_resolution_ambiguity/
 ---
 I have this function.
@@ -83,11 +99,7 @@ On calling this function I'm getting compile error :
 I'm not able to figure out what is the problem here. Any solutions or suggesstions please.
 
 &amp;#x200B;
-## [9][KSP - Kotlin Symbol Processing API](https://www.reddit.com/r/Kotlin/comments/h0gdth/ksp_kotlin_symbol_processing_api/)
+## [10][KSP - Kotlin Symbol Processing API](https://www.reddit.com/r/Kotlin/comments/h0gdth/ksp_kotlin_symbol_processing_api/)
 - url: https://github.com/android/kotlin/tree/ksp/libraries/tools/kotlin-symbol-processing-api
----
-
-## [10][Best Tools to Convert UI to Code Instantly!](https://www.reddit.com/r/Kotlin/comments/h140u7/best_tools_to_convert_ui_to_code_instantly/)
-- url: https://youtu.be/T-nLOpomHjY
 ---
 

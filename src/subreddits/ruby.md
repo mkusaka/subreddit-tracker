@@ -1,17 +1,57 @@
 # ruby
-## [1][Fun facts about Ruby #4](https://www.reddit.com/r/ruby/comments/h12yg6/fun_facts_about_ruby_4/)
-- url: https://i.redd.it/n22dyxmq8b451.png
+## [1][Good (can be paid) courses for learning Ruby + Rails for PHP developer](https://www.reddit.com/r/ruby/comments/h7p6tm/good_can_be_paid_courses_for_learning_ruby_rails/)
+- url: https://www.reddit.com/r/ruby/comments/h7p6tm/good_can_be_paid_courses_for_learning_ruby_rails/
 ---
+Hello! I am a PHP developer with few years experience and I want to switch to ruby and get a job as a junior ROR dev. I was hoping you could point me to some good and tested tutorials or courses where the focus is put on creating a real-life application.
+## [2][Is my algorithm's time complexity O(n log n)?](https://www.reddit.com/r/ruby/comments/h7s4yg/is_my_algorithms_time_complexity_on_log_n/)
+- url: https://www.reddit.com/r/ruby/comments/h7s4yg/is_my_algorithms_time_complexity_on_log_n/
+---
+    def two_sum?(array, value)
+    	array.sort! # O(nlogn)
+    	array.each do |element|
+    		return true if bsearch(array - [element], value - element) == true
+    	end
+    	return false
+    end
+    
+    def bsearch(array, value)
+    	return false if array.empty?
+    	mid_idx = array.length / 2
+    	mid_value = array[mid_idx]
+    	return true if mid_value == value
+    	mid_value &lt; value ? bsearch(array[0...mid_idx], value) : bsearch(array[mid_idx+1..-1], value)
+    end
 
-## [2][Spark Joy by Running Fewer Tests](https://www.reddit.com/r/ruby/comments/h7cclo/spark_joy_by_running_fewer_tests/)
+I'm trying to create a function that finds a two unique numbers in an array whose sum equals the value in the second argument. I believe my implementation has a time complexity of O(n log n). However, when I run it with another function whose time complexity is also O(n log n), the total time is way different (calculated using the Benchmark gem) using the same input. For my function, it takes about 0.9 seconds. For the other function, it is taking 0.003 seconds. Is there any error in my algorithm analysis? Is my implementation not O(n log n)?
+## [3][Reverting to an older string time format](https://www.reddit.com/r/ruby/comments/h7pq7v/reverting_to_an_older_string_time_format/)
+- url: https://www.reddit.com/r/ruby/comments/h7pq7v/reverting_to_an_older_string_time_format/
+---
+Currently with ruby 2.7.1, when you do something like `Date.today.to_s(:long)` you'll get something like
+
+`June 09, 2020` 
+
+But with older versions of ruby (for instance 2.2.4), that format would look like this: 
+
+`June 9, 2020`
+
+Without that 0 padding on the day. Is there anyway to revert back to this old formatting, i.e **without** the 0 padding on the day? Without changing the `to_s(:long)` part and without going back to an older  version of ruby? 
+
+Or is there anyway to specify that `:long` should follow this structure: `%B %e, %Y`
+
+All help is appreciated!
+## [4][Spark Joy by Running Fewer Tests](https://www.reddit.com/r/ruby/comments/h7cclo/spark_joy_by_running_fewer_tests/)
 - url: https://engineering.shopify.com/blogs/engineering/spark-joy-by-running-fewer-tests
 ---
 
-## [3][RHUBARBCIPHER: A plausibly deniable multi-key file encryption tool written in Ruby for GNU/Linux and BSD systems.](https://www.reddit.com/r/ruby/comments/h7e299/rhubarbcipher_a_plausibly_deniable_multikey_file/)
+## [5][Fun facts about Ruby #4](https://www.reddit.com/r/ruby/comments/h12yg6/fun_facts_about_ruby_4/)
+- url: https://i.redd.it/n22dyxmq8b451.png
+---
+
+## [6][RHUBARBCIPHER: A plausibly deniable multi-key file encryption tool written in Ruby for GNU/Linux and BSD systems.](https://www.reddit.com/r/ruby/comments/h7e299/rhubarbcipher_a_plausibly_deniable_multikey_file/)
 - url: https://github.com/octetsplicer/RHUBARBCIPHER
 ---
 
-## [4][Help me understand bubble_sort](https://www.reddit.com/r/ruby/comments/h77rzt/help_me_understand_bubble_sort/)
+## [7][Help me understand bubble_sort](https://www.reddit.com/r/ruby/comments/h77rzt/help_me_understand_bubble_sort/)
 - url: https://www.reddit.com/r/ruby/comments/h77rzt/help_me_understand_bubble_sort/
 ---
 https://github.com/Ubuntu19019/learnruby/blob/master/bubble_sort
@@ -23,7 +63,7 @@ At the top sorted = false
 so does while !sorted mean while sorted = true? That doesn't really make sense to me. Next it says sorted = true. Does it automatically do a pass after that. If it says sorted = true, why does it check the next loop? After it checks the next loop and makes changes sorted = false. Does that take it back to while !sorted? If so wouldn't that mean !sorted = false? If that's the case whats the point of setting sorted = false at the top?
 
 Thanks for the help. I don't understand the logic.
-## [5][Having trouble installing ruby in my Vagrant Box](https://www.reddit.com/r/ruby/comments/h777f6/having_trouble_installing_ruby_in_my_vagrant_box/)
+## [8][Having trouble installing ruby in my Vagrant Box](https://www.reddit.com/r/ruby/comments/h777f6/having_trouble_installing_ruby_in_my_vagrant_box/)
 - url: https://www.reddit.com/r/ruby/comments/h777f6/having_trouble_installing_ruby_in_my_vagrant_box/
 ---
 Hello. I'm in desperate need of help with this. So I haven't done much on my own outside of my coding bootcamp I graduated from yet. They had me download a set of files that included everything set up for Vagrant. But I wanted to recreate the environment for myself so that everything came from me and doesn't have any files related to the bootcamp anymore.
@@ -69,11 +109,11 @@ Searching for binary rubies, this might take some time.
     There has been an error fetching the ruby interpreter. Halting the installation.
 
 I just need to try and get this fixed so I can continue to work on my Web Dev portfolio which is based on Ruby on Rails. I'm just not understanding why I'm now having all this trouble with my development environment when using the files that the bootcamp gave me is fine. It's just that those install older versions of ruby and rails and stuff and I want the latest working versions of everything. Any help is greatly appreciated.
-## [6][HABTM to has_many through](https://www.reddit.com/r/ruby/comments/h11m7g/habtm_to_has_many_through/)
+## [9][HABTM to has_many through](https://www.reddit.com/r/ruby/comments/h11m7g/habtm_to_has_many_through/)
 - url: https://medium.com/rubycademy/habtm-to-has-many-through-43f68f50e50e
 ---
 
-## [7][Best way to design grid for flight simultor ?](https://www.reddit.com/r/ruby/comments/h13o7f/best_way_to_design_grid_for_flight_simultor/)
+## [10][Best way to design grid for flight simultor ?](https://www.reddit.com/r/ruby/comments/h13o7f/best_way_to_design_grid_for_flight_simultor/)
 - url: https://www.reddit.com/r/ruby/comments/h13o7f/best_way_to_design_grid_for_flight_simultor/
 ---
 The general idea is that:
@@ -115,52 +155,3 @@ model B
 to me, model B makes more sense visually. but being fairly new to programming. What are your thoughts ?
 
 obviously the actualy grid is 12 x 12 not 3 x 3
-## [8][Expected output of the debug flag (`-d` or `--debug`)](https://www.reddit.com/r/ruby/comments/h0vor5/expected_output_of_the_debug_flag_d_or_debug/)
-- url: https://www.reddit.com/r/ruby/comments/h0vor5/expected_output_of_the_debug_flag_d_or_debug/
----
-On a fresh install of macOS 10.14.6, opening the Interactive Ruby Shell with the debug flag enabled results in the following output:
-
-```console
-$ ruby --debug
-Exception `LoadError' at /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/ruby/2.3.0/rubygems.rb:1242 - cannot load such file -- rubygems/defaults/operating_system
-Exception `LoadError' at /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/ruby/2.3.0/rubygems.rb:1251 - cannot load such file -- rubygems/defaults/ruby
-Exception `LoadError' at /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/ruby/2.3.0/rubygems/core_ext/kernel_require.rb:55 - cannot load such file -- did_you_mean
-```
-
-For what it's worth, similar output is shown when running a Ruby installation installed via `rbenv`.
-
-I did not expect to see any exceptions. The closest thing I could find relating to the output I saw on GitHub was [this issue](https://github.com/rubygems/rubygems/issues/358) in the rubygems repository on GitHub. A contributor closed the issue with [this](https://github.com/rubygems/rubygems/issues/358#issuecomment-7114343) to say:
-
-&gt; This is expected output when you run with `ruby -d`. There's nothing wrong with it.
-
-Why is it the expected output?
-
-I also came across [this Stack Overflow post](https://stackoverflow.com/questions/35240324/something-wrong-with-my-ruby?noredirect=1#comment58199906_35240324). To quote [the accepted answer](https://stackoverflow.com/a/35240886/11805749):
-
-&gt; The system ruby installation seems to be messed up. Try removing the offending `/Library/Ruby/Site/2.0.0/rubygems.rb` (and may be more of enclosing folders)
-&gt; 
-&gt; Ruby have its bundled rubygems at `/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0` so it should work with these.
-&gt; 
-&gt; Once ruby is alive - you can try upgrading rubygems again by `sudo gem update --system` if needed, but I advise setting up a ruby version manager like `rvm` (rvm.io) and leave the system ruby be there only for emergences and backing the `brew`.
-## [9][Help me to understand the triple equal with module](https://www.reddit.com/r/ruby/comments/h0s4gx/help_me_to_understand_the_triple_equal_with_module/)
-- url: https://www.reddit.com/r/ruby/comments/h0s4gx/help_me_to_understand_the_triple_equal_with_module/
----
-&amp;#x200B;
-
-https://preview.redd.it/qyjc4bz6m7451.png?width=1058&amp;format=png&amp;auto=webp&amp;s=afbcc7dc64239ae644fee353e0a7171b195f9c95
-
-Why `@controller.class.parent === Recall` doesn't returns `true`?
-
-The `object_id` are the same but it is not equal. Why?
-
-`Recall` is a module.
-## [10][Ruby Desktop Development - Complete OSS Mac DMG App](https://www.reddit.com/r/ruby/comments/h0lnai/ruby_desktop_development_complete_oss_mac_dmg_app/)
-- url: https://www.reddit.com/r/ruby/comments/h0lnai/ruby_desktop_development_complete_oss_mac_dmg_app/
----
-A Ruby desktop complete application developed with [Glimmer](https://github.com/AndyObtiva/glimmer) has been released at version 2.1 (open-source and free):
-
-[https://github.com/AndyObtiva/MathBowling](https://github.com/AndyObtiva/MathBowling)
-
-Please use as a learning reference for how to leverage the [Glimmer](https://github.com/AndyObtiva/glimmer) desktop development GUI library.
-
-Enjoy!!!

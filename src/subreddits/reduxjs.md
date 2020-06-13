@@ -1,5 +1,93 @@
 # reduxjs
-## [1][Asynchronous actions, Redux store and race conditions.](https://www.reddit.com/r/reduxjs/comments/h7j059/asynchronous_actions_redux_store_and_race/)
+## [1][Dispatching for one type of global state affects the other. Why?](https://www.reddit.com/r/reduxjs/comments/h7t6sq/dispatching_for_one_type_of_global_state_affects/)
+- url: https://www.reddit.com/r/reduxjs/comments/h7t6sq/dispatching_for_one_type_of_global_state_affects/
+---
+I'm using Redux with my React Hooks simple counter project. It worked without any bugs or problems when the only global state was a simple integer with +/- buttons to. Then I added a second global state for light/dark themes and found that the add/subtract buttons affect the light/dark variable! I think I'm misusing the useDispatch() hook or combining reducers incorrectly. I've tried moving things into different containers and fiddled a lot with the syntax. In the code below I have omitted `import` and `export` statements for brevity:  
+  
+App.js:  
+  
+    const App = () =&gt; {
+        return (
+          &lt;div className="App"&gt;
+            &lt;ThemeBar /&gt;
+            &lt;Counter /&gt;
+          &lt;/div&gt;
+        );
+    }
+  
+ThemeBar.js:  
+  
+    const ThemeBar = () =&gt; {
+        const theme = useSelector(state =&gt; state.theme.themeIsLight)
+        const dispatch = useDispatch();
+    
+        return (
+            &lt;div&gt;
+                &lt;ThemeOutput value={theme} /&gt;
+                &lt;ThemeButton label="Toggle Theme"
+                             clicked={()=&gt;dispatch({type: 'TOGGLE_THEME'})}/&gt;
+            &lt;/div&gt;
+        );
+    };
+  
+Counter.js:  
+  
+    const Counter = () =&gt; {
+        const count = useSelector(state =&gt; state.number.counter);
+        const dispatch = useDispatch();
+    
+            return (
+                &lt;div&gt;
+                    &lt;CounterOutput value={count} /&gt;
+                    &lt;CounterControl label="Increment"
+                                    clicked={()=&gt;dispatch({ type: 'INCREMENT'})} /&gt;
+                    &lt;CounterControl label="Decrement"
+                                    clicked={()=&gt;dispatch({ type: 'DECREMENT'})} /&gt;
+                    &lt;CounterControl label="Add 5"
+                                    clicked={()=&gt;dispatch({ type: 'ADD', value: 5})} /&gt;
+                    &lt;CounterControl label="Subtract 5"
+                                    clicked={()=&gt;dispatch({ type: 'SUBTRACT', value: 5})} /&gt;
+                &lt;/div&gt;
+            );
+    };  
+  
+themeReducer.js:  
+  
+    const themeReducer = (state = initialState, action) =&gt; {
+        console.log('Theme: ' + state.themeIsLight);
+        if (action.type === 'TOGGLE_THEME')
+            return { themeIsLight: !state.themeIsLight};
+        return state;
+    };
+  
+globalNumberReducer.js:  
+  
+    const globalNumberReducer = (state = initialState, action) =&gt; {
+        switch (action.type) {
+            case 'INCREMENT': return {counter: state.counter + 1};
+            case 'DECREMENT': return {counter: state.counter - 1};
+            case 'ADD': return {counter: state.counter + action.value};
+            case 'SUBTRACT': return {counter: state.counter - action.value};
+            default: return state;
+        }
+    };
+  
+index.js:  
+  
+    const rootReducer = combineReducers({
+        number: globalNumberReducer,
+        theme:themeReducer
+    });
+    
+    const store = createStore(rootReducer);
+    console.log(store.getState());
+    
+    
+    ReactDOM.render(
+        &lt;Provider store={store}&gt;&lt;App /&gt;&lt;/Provider&gt;, document.getElementById('root')
+    );
+    registerServiceWorker();
+## [2][Asynchronous actions, Redux store and race conditions.](https://www.reddit.com/r/reduxjs/comments/h7j059/asynchronous_actions_redux_store_and_race/)
 - url: https://www.reddit.com/r/reduxjs/comments/h7j059/asynchronous_actions_redux_store_and_race/
 ---
 **The problem:**
@@ -25,13 +113,13 @@ I can think of a few solutions to this, but all seem slightly complex..
 &amp;#x200B;
 
 Any other suggestions? Thanks.
-## [2][Best practice for actions?](https://www.reddit.com/r/reduxjs/comments/h13l2y/best_practice_for_actions/)
+## [3][Best practice for actions?](https://www.reddit.com/r/reduxjs/comments/h13l2y/best_practice_for_actions/)
 - url: https://www.reddit.com/r/reduxjs/comments/h13l2y/best_practice_for_actions/
 ---
 At my work we use something along the lines of every real "action" having a pending, success, and fail action. Out of curiosity I checked some online resources and I'll see more of a SET vs GET sort of thing for actions. Just wondering if there is a best practice for this sort of thing for my own projects?
 
 Thanks
-## [3][Why should I write unit test for actionCreators?](https://www.reddit.com/r/reduxjs/comments/h0ue75/why_should_i_write_unit_test_for_actioncreators/)
+## [4][Why should I write unit test for actionCreators?](https://www.reddit.com/r/reduxjs/comments/h0ue75/why_should_i_write_unit_test_for_actioncreators/)
 - url: https://www.reddit.com/r/reduxjs/comments/h0ue75/why_should_i_write_unit_test_for_actioncreators/
 ---
 Reference from [Official docs](https://redux.js.org/recipes/writing-tests#action-creators):
@@ -59,7 +147,7 @@ But  is this the only case? Are there any other benefits  of writing tests cases
 
 
 EDIT: I do use `redux-saga` for managing async actions (fetching data through API calls etc) and I do write unit tests for sagas. I'm only concerned  about writing unit tests for action creators!
-## [4][Can you use reducers across sibling components?](https://www.reddit.com/r/reduxjs/comments/h0dbjw/can_you_use_reducers_across_sibling_components/)
+## [5][Can you use reducers across sibling components?](https://www.reddit.com/r/reduxjs/comments/h0dbjw/can_you_use_reducers_across_sibling_components/)
 - url: https://www.reddit.com/r/reduxjs/comments/h0dbjw/can_you_use_reducers_across_sibling_components/
 ---
 This might seem like a dumb question but this current code architecture I'm working with, each "sibling component" think left/right panels, have their own reducers(obviously?). Then they're joined into a parent reducer eg. `allReducers`.
@@ -69,7 +157,7 @@ So for the sake of an example we have: left panel, right panel
 If right-panel has some state it's maintaining, can left-panel use it(without using that primary combined parent reducer).
 
 Anyway I know this is hard to imagine without code, also we're using saga which I don't know off hand what it's for. The saga files have function generators inside them. I don't think it's relevant.
-## [5][Does mapStateToProps run first before the component pulls in the props passed down into it?](https://www.reddit.com/r/reduxjs/comments/gz7hpt/does_mapstatetoprops_run_first_before_the/)
+## [6][Does mapStateToProps run first before the component pulls in the props passed down into it?](https://www.reddit.com/r/reduxjs/comments/gz7hpt/does_mapstatetoprops_run_first_before_the/)
 - url: https://www.reddit.com/r/reduxjs/comments/gz7hpt/does_mapstatetoprops_run_first_before_the/
 ---
 This is probably a weird question but as I trace through(console log execution) of events when loading a component that is using `mapStateToProps` the value I set in the reducer state is what I see on the immediate load of the component.
@@ -95,7 +183,7 @@ edit: here's a better idea of what I'm saying
 `// rest of dispatch/connect`
 
 I don't know if this fully captures the issue, since we also have connected components going on, a main reducer/saga...
-## [6][I am getting Reddit's store in my app and not the one I created](https://www.reddit.com/r/reduxjs/comments/gvduz0/i_am_getting_reddits_store_in_my_app_and_not_the/)
+## [7][I am getting Reddit's store in my app and not the one I created](https://www.reddit.com/r/reduxjs/comments/gvduz0/i_am_getting_reddits_store_in_my_app_and_not_the/)
 - url: https://www.reddit.com/r/reduxjs/comments/gvduz0/i_am_getting_reddits_store_in_my_app_and_not_the/
 ---
 I made a small app that fetches restaurant data, displays it, and allows filtering and searching cities and all the usual stuff using useReducer and now I am trying to refactor it to use Redux. I am not using Redux ToolKit yet but I plan on learning it for my next project.
@@ -123,15 +211,15 @@ Anyway, I made my rootReducer, brought in Provider and createStore and hooked al
 Thanks in advance for nay help
 
 EDIT: formatting
-## [7][[Q] Why so much work just for a global storage space?](https://www.reddit.com/r/reduxjs/comments/gv47ka/q_why_so_much_work_just_for_a_global_storage_space/)
+## [8][[Q] Why so much work just for a global storage space?](https://www.reddit.com/r/reduxjs/comments/gv47ka/q_why_so_much_work_just_for_a_global_storage_space/)
 - url: https://www.reddit.com/r/reduxjs/comments/gv47ka/q_why_so_much_work_just_for_a_global_storage_space/
 ---
  I was thinking that perhaps redux has too much indirection, maybe? I mean its a bit too much separation of concern with all the mapdispatch and mapstate and actions and reducers . If the point is to use a global store why not just import a singleton class and use its state with plain getters &amp; setters? or some other object with application level scope ?  Thanks in advance for reading and giving this some thought. 
-## [8][Easy Peasy the React Redux wrapper](https://www.reddit.com/r/reduxjs/comments/gv3kc9/easy_peasy_the_react_redux_wrapper/)
+## [9][Easy Peasy the React Redux wrapper](https://www.reddit.com/r/reduxjs/comments/gv3kc9/easy_peasy_the_react_redux_wrapper/)
 - url: https://medium.com//easy-peasy-the-react-redux-wrapper-b31a5911c5e3?source=friends_link&amp;sk=b5d0c558e24e3e0c7f40cf58dff17d70
 ---
 
-## [9][Dynamic dependency injection with Redux](https://www.reddit.com/r/reduxjs/comments/gutj9m/dynamic_dependency_injection_with_redux/)
+## [10][Dynamic dependency injection with Redux](https://www.reddit.com/r/reduxjs/comments/gutj9m/dynamic_dependency_injection_with_redux/)
 - url: https://www.reddit.com/r/reduxjs/comments/gutj9m/dynamic_dependency_injection_with_redux/
 ---
 I've been hustling with this for a few days now and I can't find a satisfactory answer anywhere else.
@@ -291,65 +379,3 @@ While `api.doLongProcess` is in course, a `changeLibrary` event arrives. That wi
 What I believe should happpen is that upon `api` change, all in-course operations depending on it should be cancelled. That is not an easy thing to pull out with this setup.
 
 Does anyone have a suggestion on how to approach this?
-## [10][Nullable state best practice (typescript) [redux toolkit, createSlice - set/allow state to be null ]](https://www.reddit.com/r/reduxjs/comments/guns93/nullable_state_best_practice_typescript_redux/)
-- url: https://www.reddit.com/r/reduxjs/comments/guns93/nullable_state_best_practice_typescript_redux/
----
-Hey!
-
-I'm trying to create a slice in which its state can be null.
-
-    import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-    import { RootState, AppThunk } from 'app/store';
-    interface GlobalErrorState {
-        name?: string;
-        message?: string;
-        code?: string;
-    }
-    
-    const initialState: GlobalErrorState|null= null;
-    
-    const globalErrorSlice = createSlice({
-        name: 'globalError',
-        initialState: initialState as (GlobalErrorState|null),
-        reducers: {
-            errorOccurred: (state, action: PayloadAction&lt;CommonAPIError&gt;) =&gt; {
-                return action.payload;
-            },
-            errorDismissed: (state) =&gt; {
-                return null;
-            },
-        },
-    }});
-    
-
-Then, taking advantage of useSelector in a component would look as below:
-
-    const globalError = useSelector((state: RootState) =&gt; {
-            return state.globalError;
-    }, shallowEqual);
-    if (globalError) {
-            return &lt;CommonErrorPage message={globalError.message} /&gt;;
-    }
-
-Few questions regarding the abovementioned approach:
-
-1. Is there any best practice for setting a state to null? Would it be better if the state had wrapped the error object? 
-
-&amp;#8203;
-
-    
-interface GlobalErrorState {
-        error?: {
-            name?: string;
-            message?: string;
-            code?: string;
-        };
-    }
-    
-    const initialState: GlobalErrorState = {error:undefined};
-
-2. For typescript experts - any other way to make the first example work without the 'as'?
-
-    initialState: initialState as (GlobalErrorState|null)
-
-Thank you!

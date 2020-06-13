@@ -84,121 +84,97 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][SpiderX - React Native + Python Scrapy](https://www.reddit.com/r/reactjs/comments/h7dg2z/spiderx_react_native_python_scrapy/)
+## [3][BrutalityVisualizer - an interactive heatmap visualization of police brutality incidents in the US](https://www.reddit.com/r/reactjs/comments/h7q18l/brutalityvisualizer_an_interactive_heatmap/)
+- url: https://v.redd.it/jsz020vkti451
+---
+
+## [4][Facebook employee got fired for calling out @Vjeux and Recoil on not supporting BLM](https://www.reddit.com/r/reactjs/comments/h877ko/facebook_employee_got_fired_for_calling_out_vjeux/)
+- url: https://twitter.com/aweary/status/1267895488205869057
+---
+
+## [5][Use tailwind like class names inside styled components, introducing styled-wind](https://www.reddit.com/r/reactjs/comments/h829uo/use_tailwind_like_class_names_inside_styled/)
+- url: https://styled-wind.netlify.app/
+---
+
+## [6][I'm thinking of open sourcing my React/Typescript/Express SaaS boilerplate!](https://www.reddit.com/r/reactjs/comments/h87hha/im_thinking_of_open_sourcing_my/)
+- url: https://www.reddit.com/r/reactjs/comments/h87hha/im_thinking_of_open_sourcing_my/
+---
+Nowadays, building a subscriptions based SaaS app requires plenty of features such as user authentication, billing management, email verification, trial expiration reminders, etc. These take away the required time to actually focus on building your product. A boilerplate will save weeks and even probably months of dev time since most of us here mostly work on side projects after returning home from a full time job.
+
+I found some implementations for my tech stack online. One was Divjoy and the other was [usegravity.app. ](https://usegravity.app/)I noticed that usegravity had most of the features I was looking for but at a starting price of $500, I felt I should go ahead and build my own. Divjoy is also a pretty solid boilerplate but lacked majority of the features I was looking to have.
+
+I believe that a community driven approach is the best case here. If we have a solid starting base that everyone can contribute to, it will help free the time for more important work to be done and hopefully even bring more cool products to market. One can imagine a variant of the boilerplate using Mailgun, while another using Sendgrid for email deliverability for example, or one using a Node.js backend with another using Flask.
+
+I've started the work and it's about 70% completed. The remaining 30% is in relation to security, email template design and webhooks for stripe and of-course, unit and integration tests.
+
+I'm looking to the community to contribute to bringing this project to life or if you have any feature requests at all or general questions at that. If you're not sure if you have a question, ask yourself; If I was to have anything in the world that I wanted in a project, what would it be?
+
+I'm using this to gauge interest and collect early testers of the project. If you are eager for me to release the project as soon as possible, please help me gauge interest here:
+
+[https://www.producthunt.com/upcoming/eli](https://www.producthunt.com/upcoming/eli)
+
+&amp;#x200B;
+
+I will be sending the live demo to all subscribers and am willing to hear all of your feedback
+## [7][SpiderX - React Native + Python Scrapy](https://www.reddit.com/r/reactjs/comments/h7dg2z/spiderx_react_native_python_scrapy/)
 - url: https://v.redd.it/b7fgy6k0je451
 ---
 
-## [4][The Fullstack Next.js GraphQL Serverless Tutorial](https://www.reddit.com/r/reactjs/comments/h7j0iz/the_fullstack_nextjs_graphql_serverless_tutorial/)
+## [8][Using React Router how would I change the navbar style on different routes?](https://www.reddit.com/r/reactjs/comments/h857dn/using_react_router_how_would_i_change_the_navbar/)
+- url: https://www.reddit.com/r/reactjs/comments/h857dn/using_react_router_how_would_i_change_the_navbar/
+---
+Hi there, fairly new to React Router. I have the following setup:
+
+    function App() {
+      return (
+        &lt;div&gt;
+          &lt;NavbarDefault /&gt;
+          &lt;MainSwitch /&gt;
+        &lt;/div&gt;
+      );
+    }
+
+And `MainSwitch` as follows: 
+
+    const MainSwitch = () =&gt; {
+        return (
+            &lt;Switch&gt;
+                &lt;Route exact path='/' component={Home}&gt;&lt;/Route&gt;
+                &lt;Route exact path='/login' component={Login}&gt;&lt;/Route&gt;
+                &lt;Route exact path='/signup' component={Signup}&gt;&lt;/Route&gt;
+                &lt;Route exact path='/pricing' component={Pricing}&gt;&lt;/Route&gt;
+                &lt;Route exact path='/dashboard' component={Pricing}&gt;&lt;/Route&gt;
+                &lt;Route path="*"&gt;&lt;NotFound /&gt;&lt;/Route&gt;
+            &lt;/Switch&gt;
+        );
+    }
+
+When I route to `Dashboard` I want to change the Navbar style. What is the best way to go about this? Should I try nested routes? Or write a higher order component for route that toggles a context switch?
+## [9][DnD in react](https://www.reddit.com/r/reactjs/comments/h84vtf/dnd_in_react/)
+- url: https://www.reddit.com/r/reactjs/comments/h84vtf/dnd_in_react/
+---
+Hi
+
+Lately I'm learning how to work with quite advanced dnd (something like page builder). I'm looking for materials that can help me how to do the dnd system like in this [website](https://grapesjs.com/demo.html).
+
+Do you know any articles or projects that can help me with that?
+## [10][The Fullstack Next.js GraphQL Serverless Tutorial](https://www.reddit.com/r/reactjs/comments/h7j0iz/the_fullstack_nextjs_graphql_serverless_tutorial/)
 - url: https://hasura.io/learn/graphql/nextjs-fullstack-serverless/introduction/
 ---
 
-## [5][[WIP] Click in your app and jump to the relevant code](https://www.reddit.com/r/reactjs/comments/h11aqz/wip_click_in_your_app_and_jump_to_the_relevant/)
-- url: https://v.redd.it/2kafhfltsa451
+## [11][I don't understand React testing](https://www.reddit.com/r/reactjs/comments/h7zlvn/i_dont_understand_react_testing/)
+- url: https://www.reddit.com/r/reactjs/comments/h7zlvn/i_dont_understand_react_testing/
 ---
+I'm not exactly sure how to phrase this, but I don't understand React testing. I come from testing Rails where I make tests for the model, and I make tests for the controller. With the model, I want to make sure the object saves correctly, and with the controller, I want to make sure the API acts correctly.
 
-## [6][React JS - Building a Chat UI in 2020 - Session 1](https://www.reddit.com/r/reactjs/comments/h7invl/react_js_building_a_chat_ui_in_2020_session_1/)
-- url: https://www.youtube.com/watch?v=vu2gxHGgWIs
----
+With React... I'm super confused about what I'm supposed to test. 
 
-## [7][React Learning Path in 2020](https://www.reddit.com/r/reactjs/comments/h7i0jq/react_learning_path_in_2020/)
-- url: https://www.reddit.com/r/reactjs/comments/h7i0jq/react_learning_path_in_2020/
----
-Hey everyone, I thought a lot of us would be starting out on learning React during this time of quarantine. The video is my take on learning React in 2020. Hopefully it will help you if you're learning React at the moment.
+Let's say I have a form, and the form lets a user sign in. When they enter their email into the email field, it updates the email state, etc. etc. When the user clicks submit, it will do an API request to the server, which will return a token, is stored in LocalStorage, and then call the callback from the parent to update the signedinstate that is passed to children components (I'm not using Redux).
 
-[React Learning Path](https://youtu.be/Q9Qx2Xef0do)
+What am I trying to test? I want to test state but have found... Issues with trying to do so (when using hooks) and have read that state isn't meant to be tested? Maybe testing error messages show on the page (like invalid email)? But that seems small to what really matters in the component, the state changing, the API request, the token being set, and the callback to the parent.
 
-I also create content on React so I have created a few playlists to help you.
-
-[React Fundamentals + Advanced Topics](https://youtu.be/QFaFIcGhPoM)
-
-[React Hooks](https://youtu.be/cF2lQ_gZeA8)
-
-[React + Redux](https://youtu.be/9boMnm5X9ak)
-
-[React + Formik](https://youtu.be/a94FOvaBomQ)
-
-[Practical React Libraries](https://youtu.be/LZhwNGpiTEI)
-## [8][react-native-web declarative filtering demo](https://www.reddit.com/r/reactjs/comments/h16og9/reactnativeweb_declarative_filtering_demo/)
-- url: https://v.redd.it/5rqbenhx5c451
----
-
-## [9][Icons Package for React](https://www.reddit.com/r/reactjs/comments/h7iehs/icons_package_for_react/)
-- url: https://github.com/Iconscout/react-unicons-monochrome
----
-
-## [10][Looking for someone to learn React with](https://www.reddit.com/r/reactjs/comments/h7gu7c/looking_for_someone_to_learn_react_with/)
-- url: https://www.reddit.com/r/reactjs/comments/h7gu7c/looking_for_someone_to_learn_react_with/
----
-Hello, I'm a senior web developer with almost six years of working experience in the industry. My strong-suite is definitely front-end, and because of our company's standards, I haven't really been able to keep up with any recent technologies or libraries. I'm very interested in React and have already started out with the basics, but I find my motivation slowly vanishing without friends or co-workers backing me up.
-
-I'm by no means an expert in JavaScript, as my work usually focuses heavily on HTML/CSS.
-
-With that said, I have my own training project which I do intend to make a functional service. **It would be helpful if you, the person interested in this suggestion** had any kind of background with video games as a hobby, as my project is heavily focused on serving as a tool for gamers.
-
-I would really appreciate it if you'd wish to learn with me or help me learn. What I would suggest is creating a small channel of like-minded people in Discord, where we could discuss (text chat preferred) and develop our skills with React! :)
-## [11][Render props vs Hooks](https://www.reddit.com/r/reactjs/comments/h7kb92/render_props_vs_hooks/)
-- url: https://www.reddit.com/r/reactjs/comments/h7kb92/render_props_vs_hooks/
----
-⚛️ Question on React state management ⚛️
-
-**Can you guess which code snippet is more efficient and why?**
-
-  1. Custom hook.
-
-
-```jsx
-function Page() {
-  const { values, setValue } = useForm();
-
-  return (
-    &lt;&gt;
-      &lt;Header /&gt;
-      &lt;Navigation /&gt;
-      &lt;SomeOtherThirdPartyComponent&gt;
-      &lt;form&gt;
-        &lt;input value={values.name} onChange={e =&gt; {
-          setValue("name", e.target.value);
-        }}/&gt;
-        &lt;input value={values.email} onChange={e =&gt; {
-          setValue("email", e.target.value);
-        }}/&gt;
-      &lt;/form&gt;
-      &lt;Footer /&gt;
-    &lt;/&gt;
-  );
-}
-```
-
- 2. Wrapper with render prop.
-
-
-```jsx
-function Page() {
-  return (
-    &lt;&gt;
-      &lt;Header /&gt;
-      &lt;Navigation /&gt;
-      &lt;SomeOtherThirdPartyComponent&gt;
-      &lt;FormManager&gt;
-        {({ values, setValue }) =&gt; (
-          &lt;form&gt;
-            &lt;input value={values.name} onChange={e =&gt; {
-              setValue("name", e.target.value);
-            }}/&gt;
-            &lt;input value={values.email} onChange={e =&gt; {
-              setValue("email", e.target.value);
-            }}/&gt;
-          &lt;/form&gt;
-        )}
-      &lt;/FormManager&gt;
-      &lt;Footer /&gt;
-    &lt;/&gt;
-  );
-}
-```
-
-Both are doing the same: **form state management**.
-## [12][3rd times the charm. SSL errors are out the window. Introducing Shenanigan!](https://www.reddit.com/r/reactjs/comments/h7i4ia/3rd_times_the_charm_ssl_errors_are_out_the_window/)
-- url: http://www.she.energy
+What am I actually trying to test with React tests? Is it purely DOM stuff?
+## [12][Devious Games - Party Game platform built in React / Socket.io](https://www.reddit.com/r/reactjs/comments/h7vzji/devious_games_party_game_platform_built_in_react/)
+- url: https://devious.games
 ---
 

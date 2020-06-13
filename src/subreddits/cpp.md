@@ -125,15 +125,96 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][CppCast: Web Assembly](https://www.reddit.com/r/cpp/comments/h7czqf/cppcast_web_assembly/)
+## [3][itCppCon20 Welcome + KEYNOTE Let's Move-The Hidden Features and Traps of C++ Move Semantics Josuttis](https://www.reddit.com/r/cpp/comments/h84mi6/itcppcon20_welcome_keynote_lets_movethe_hidden/)
+- url: https://www.youtube.com/watch?v=OOLR96-GjsI
+---
+
+## [4][Makefile projects in CLion: now public!](https://www.reddit.com/r/cpp/comments/h7t3bj/makefile_projects_in_clion_now_public/)
+- url: https://blog.jetbrains.com/clion/2020/06/makefile-projects-in-clion/
+---
+
+## [5][Boost epoch proposal: *Illustrative* Boost 1.73 epoch report](https://www.reddit.com/r/cpp/comments/h84v7r/boost_epoch_proposal_illustrative_boost_173_epoch/)
+- url: https://github.com/joaquintides/boost_epoch/blob/master/epoch_report.md
+---
+
+## [6][Watch live the Virtual Italian C++ Conference 2020](https://www.reddit.com/r/cpp/comments/h822du/watch_live_the_virtual_italian_c_conference_2020/)
+- url: https://www.reddit.com/r/cpp/comments/h822du/watch_live_the_virtual_italian_c_conference_2020/
+---
+Hi there!
+
+The **Italian C++ Conference 2020** will be live from 9 AM (GMT+2) on YouTube.
+
+[Here is the playlist containing all the live videos.](https://www.youtube.com/playlist?list=PLsCm1Hs016LWIjOrEftUA42ZwxsF30vZB)
+
+Drop questions by adding "QUESTION" at front on the chat.
+
+&amp;#x200B;
+
+Looking forward to seeing you there!
+## [7][Can const-correctness be achieved for pointer wrapper types?](https://www.reddit.com/r/cpp/comments/h87gc0/can_constcorrectness_be_achieved_for_pointer/)
+- url: https://www.reddit.com/r/cpp/comments/h87gc0/can_constcorrectness_be_achieved_for_pointer/
+---
+Hello!
+
+I'm wondering if there's any way to get a const-correct pointer wrapper type in C++?  
+
+```
+class Foo {
+  Foo* next = nullptr;
+public:
+  Foo* getNext() { return next; }
+  const Foo* getNextConst() const { return next; }
+};
+
+int main() {
+  // This works as expected
+  Foo foo; 
+  foo.getNext();
+  foo.getNextConst();
+  // This works as expected too
+  const Foo fooConst;
+  fooConst.getNext(); // error!
+  fooConst.getNextConst(); 
+  // This shouldn't be possible. This is what I want to solve (const T to T, copy that allows one to access Foo's mutable members)
+  foo = fooConst;
+  // However, I'd like to keep those working:
+  fooConst = fooConst;
+  foo = foo;
+  fooConst= foo;
+}
+```
+This looks easy, right, remove the copy constructor? Well, no, I'd like to keep it. Ideally, I want this to behave just like a pointer would:
+
+* Copy of T to const T is allowed.
+* Copy of T to T is allowed.
+* Copy of const T to const T is allowed.
+* Copy of const T to T is forbidden.
+
+Is there any way to do this in C++ ? I doubt it, but maybe someone has a solution?
+
+I managed to write something (https://pastebin.com/8ekHJZYv) using `operator=`, it ticks all the boxes but it doesn't support the constructor, so ` const Foo otherConst = fooConst` doesn't work, it's the closest I can get. It'd be an acceptable quirk, but I still want to do better.
+
+Other solutions I can think of:
+
+* Use a base class "ConstFoo" that'd contain all of the immutable stuff. It's not pretty, I personally don't like it. It's fine for a single object, but if I want to apply this to a large number of classes, it'll be unmanageable.
+* Drop const-correctness entirely for such object, and accept they'll never be const correct.
+## [8][How much faster can a 4 by 4 matrix on the stack be as opposed to being on the heap?](https://www.reddit.com/r/cpp/comments/h830sj/how_much_faster_can_a_4_by_4_matrix_on_the_stack/)
+- url: https://www.reddit.com/r/cpp/comments/h830sj/how_much_faster_can_a_4_by_4_matrix_on_the_stack/
+---
+So, if I create the matrix as float* m = new float[16]; , it is on the heap. But if it's float[16] m = {0}; (not sure if this initalization is correct), it's on the stack. How much faster can the second option be, seeing that I don't need to allocate again on the heap when copying?
+## [9][CppCast: Web Assembly](https://www.reddit.com/r/cpp/comments/h7czqf/cppcast_web_assembly/)
 - url: https://cppcast.com/web-assembly-ben-smith/
 ---
 
-## [4][A compile-time CHIP-8 emulator using constexpr](https://www.reddit.com/r/cpp/comments/h12k00/a_compiletime_chip8_emulator_using_constexpr/)
+## [10][A compile-time CHIP-8 emulator using constexpr](https://www.reddit.com/r/cpp/comments/h12k00/a_compiletime_chip8_emulator_using_constexpr/)
 - url: https://github.com/IoanThomas/constexpr-chip8
 ---
 
-## [5][C++20 Modules (VERY) easy way to build them](https://www.reddit.com/r/cpp/comments/h788pg/c20_modules_very_easy_way_to_build_them/)
+## [11][Microsoft: Rust Is the Industry’s ‘Best Chance’ at Safe Systems Programming](https://www.reddit.com/r/cpp/comments/h77a0z/microsoft_rust_is_the_industrys_best_chance_at/)
+- url: https://thenewstack.io/microsoft-rust-is-the-industrys-best-chance-at-safe-systems-programming/
+---
+
+## [12][C++20 Modules (VERY) easy way to build them](https://www.reddit.com/r/cpp/comments/h788pg/c20_modules_very_easy_way_to_build_them/)
 - url: https://www.reddit.com/r/cpp/comments/h788pg/c20_modules_very_easy_way_to_build_them/
 ---
 Hello guys, just began a new game with C++ modules (MSVC 2019 Preview), made this simple python script to successfully build many .ixx and .cpp files into executable without tracking them by hand.  
@@ -141,91 +222,3 @@ Hello guys, just began a new game with C++ modules (MSVC 2019 Preview), made thi
 
 Feel free to try (tested only on MSVC 2019 Preview). You just need to set path to vsvars.bat file to let the pyton script setup Visual Studio environment then run make.py.  
 [https://github.com/xdeadmonkx/CPPModPy](https://github.com/xdeadmonkx/CPPModPy)
-## [6][Copperspice -- C++ Copy Elision](https://www.reddit.com/r/cpp/comments/h11btv/copperspice_c_copy_elision/)
-- url: https://youtu.be/_zZWUZEwXk8
----
-
-## [7][Reusing a thread in C++ for better performance](https://www.reddit.com/r/cpp/comments/h0uct7/reusing_a_thread_in_c_for_better_performance/)
-- url: https://lemire.me/blog/2020/06/10/reusing-a-thread-in-c-for-better-performance/
----
-
-## [8][Microsoft: Rust Is the Industry’s ‘Best Chance’ at Safe Systems Programming](https://www.reddit.com/r/cpp/comments/h77a0z/microsoft_rust_is_the_industrys_best_chance_at/)
-- url: https://thenewstack.io/microsoft-rust-is-the-industrys-best-chance-at-safe-systems-programming/
----
-
-## [9][Why is stack-unwinding with noexcept not specified/consistent?](https://www.reddit.com/r/cpp/comments/h0y7t5/why_is_stackunwinding_with_noexcept_not/)
-- url: https://www.reddit.com/r/cpp/comments/h0y7t5/why_is_stackunwinding_with_noexcept_not/
----
-The following code has on each major compiler (GCC, Clang, MSVC) different runtime behaviors:
-
-    #include &lt;iostream&gt;
-    
-    struct A {
-        ~A() {
-            std::cerr &lt;&lt; "destructor" &lt;&lt; std::endl;
-        }
-    };
-    
-    int get2() {
-        A a;
-        throw 1;
-    }
-    
-    int get() noexcept {
-        A a;
-        return get2();
-    }
-    
-    int main() {
-        return get();
-    }
-
-GCC:  *destructor, terminate -* [*https://godbolt.org/z/WcfnwP*](https://godbolt.org/z/WcfnwP)
-
-Clang:  *destructor destructor, terminate -* [*https://godbolt.org/z/WcfnwP*](https://godbolt.org/z/WcfnwP)
-
-MSVC: *terminate -* [*https://rextester.com/HLKWE55155*](https://rextester.com/HLKWE55155)
-
-In my opinion, MSVC is right to not unwind the stack/calling destructors at all. It is the same behavior then without any noexcept functions at all.
-
-Please don't answer with: The standard does not know about the stack.
-## [10][Why is std implementation so damn ugly?](https://www.reddit.com/r/cpp/comments/h0flxv/why_is_std_implementation_so_damn_ugly/)
-- url: https://www.reddit.com/r/cpp/comments/h0flxv/why_is_std_implementation_so_damn_ugly/
----
-Recently I remembered a moment from my uni years when immediately after handing in the assignment of implementing our own string data structure we were warned not to ever try to implement and use our own data structures. Which is exactly what you want to hear after working hours on such assignment. However the reason behind it makes sense, you would be only reinventing the wheel and let's be honest, it will be also way slower than data structures in the almighty std library. Now think about it, what kind of black magic is behind the std's speed? Well I had no idea so I took a peak, lets see the code:
-
-    inline string
-    secret_function(int __val)
-    {
-        const bool __neg = __val &lt; 0;
-        const unsigned __uval = __neg ? (unsigned)~__val + 1u : __val;
-        const auto __len = __detail::__to_chars_len(__uval);
-        string __str(__neg + __len, '-');
-        __detail::__to_chars_10_impl(&amp;__str[__neg], __len, __uval);
-        return __str;
-    }
-
-Hey, I bet you just skipped the whole code part. I know it looks unreadable, but please try to go through it and guess which std function it might be (obviously its not called secret\_function, but i'm pretty sure you used this function at some point).
-
-It's only 6 line function but it took me a while to figure out what each line does and I believe this could be fixed very easily just by naming the variables and functions with a bit more descriptive names. Just to prove the point here is an example of how I would structure this function:
-
-    inline string secretFunction(int value) {
-        const bool isNegative = value &lt; 0;
-        const unsigned absoluteValue = Helper::abs(value);
-        const auto length = Helper::charCount(absoluteValue);
-        string stringValue(isNegative + length, '-');
-        Helper::insertIntAsChars(&amp;stringValue[isNegative], length, absoluteValue, 10);
-        return stringValue;
-    }
-
-While the functionality stays exactly the same, I think this chunk of code is much more pleasant to read and it's pretty obvious what the code is doing on each line. From this you should have a solid guess which function it is (you can leave a comment), but the real question is why would anyone write such code? Especially when nowadays everyone is talking about how code readability is so important. Is this how they wrote code back when std was released and they didn't bother to change it? Or am I just too inexperienced that I couldn't figure it out immediately?
-
-EDIT: Thanks for the insightful comments, for anyone reading this the reason variables are beginning with `__` is macros. If user defines isNegative macro, it will get overwritten in the std, however user is forbidden to define macros starting with `__` , as the wise people of reddit comment section suggested. However underscores aren't the only issue with this code, the main issue is I think using short non-descriptive names of variables/functions which is very confusing in functions that are doing more complicated operations.
-## [11][C++ Weekly - Ep 223 - Know Your Standard Library: std::nextafter](https://www.reddit.com/r/cpp/comments/h0iady/c_weekly_ep_223_know_your_standard_library/)
-- url: https://www.youtube.com/watch?v=-F0j2VN4xEU
----
-
-## [12][A simple c++ logging library.](https://www.reddit.com/r/cpp/comments/h13udx/a_simple_c_logging_library/)
-- url: https://github.com/emilienlemaire/CppLogger2
----
-

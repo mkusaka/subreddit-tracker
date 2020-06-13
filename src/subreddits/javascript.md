@@ -79,101 +79,59 @@
 
 
 &amp;nbsp;
-## [2][WTF Wednesday (June 10, 2020)](https://www.reddit.com/r/javascript/comments/h0dwvy/wtf_wednesday_june_10_2020/)
-- url: https://www.reddit.com/r/javascript/comments/h0dwvy/wtf_wednesday_june_10_2020/
+## [2][Showoff Saturday (June 13, 2020)](https://www.reddit.com/r/javascript/comments/h8625p/showoff_saturday_june_13_2020/)
+- url: https://www.reddit.com/r/javascript/comments/h8625p/showoff_saturday_june_13_2020/
 ---
-Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
-Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
-this is the place.
+Did you find or create something cool this week in javascript? 
 
-[Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][Standalone UUID generator in Javascript (no external dependencies, only 6 lines of code)](https://www.reddit.com/r/javascript/comments/h7i7m2/standalone_uuid_generator_in_javascript_no/)
+Show us here!
+## [3][TwilioQuest - Discover your power to change the world with code. Test you JavaScript skills with a downloadable game!](https://www.reddit.com/r/javascript/comments/h80dyz/twilioquest_discover_your_power_to_change_the/)
+- url: https://www.twilio.com/quest
+---
+
+## [4][How to get the last item of an array with destructuring](https://www.reddit.com/r/javascript/comments/h84r91/how_to_get_the_last_item_of_an_array_with/)
+- url: https://diary.kud.io/en/posts/2020/06/13/how-to-get-the-last-item-of-an-array-with-destructuring
+---
+
+## [5][[AskJS] Lerna publish and AngularJS](https://www.reddit.com/r/javascript/comments/h847xs/askjs_lerna_publish_and_angularjs/)
+- url: https://www.reddit.com/r/javascript/comments/h847xs/askjs_lerna_publish_and_angularjs/
+---
+Hello everybody,
+
+I've setup a monorepo with Lerna and Yarn. I started from some existing repositories and merged them in one. But the AngularJS component is the one with a different publish routine.
+
+I adapted the build script to have a `build` script everywhere but the publish in angular is made from the dist folder of the library.
+
+You can see [here](https://github.com/matteobruni/tsparticles/tree/dev) (the Lerna structure is only in `dev` branch for now) the repository, `core` is the common library, `wrappers` the various frameworks packages (including the angular one), `plugins` are some plugins projects but they are under development and just plain javascript.
+
+How can I make the angular project work fine with Lerna?
+## [6][I made a site dedicated to providing details on political alignment, bill voting statistics, and contact info for members of Congress in your voting district.](https://www.reddit.com/r/javascript/comments/h7oy7d/i_made_a_site_dedicated_to_providing_details_on/)
+- url: https://whoaremyrepresentatives.us/
+---
+
+## [7][Tips for End to End Testing with Puppeteer](https://www.reddit.com/r/javascript/comments/h83nhm/tips_for_end_to_end_testing_with_puppeteer/)
+- url: https://goodguydaniel.com/blog/tips-end-to-end-testing-puppeteer/
+---
+
+## [8][Standalone UUID generator in Javascript (no external dependencies, only 6 lines of code)](https://www.reddit.com/r/javascript/comments/h7i7m2/standalone_uuid_generator_in_javascript_no/)
 - url: https://abhishekdutta.org/blog/standalone_uuid_generator_in_javascript.html
 ---
 
-## [4][The Power of Functions Returning Other Functions in JavaScript](https://www.reddit.com/r/javascript/comments/h7dl15/the_power_of_functions_returning_other_functions/)
-- url: https://dev.to/jsmanifest/the-power-of-functions-returning-other-functions-in-javascript-11lo
+## [9][MDN Periodic Table](https://www.reddit.com/r/javascript/comments/h81eaw/mdn_periodic_table/)
+- url: https://tpkahlon.github.io/javascript/43/
 ---
 
-## [5][Better Rename in VS Code: Edit First, Then Decide To Rename](https://www.reddit.com/r/javascript/comments/h7hohh/better_rename_in_vs_code_edit_first_then_decide/)
-- url: https://github.com/hediet/vscode-hediet-power-tools/blob/master/README.md
+## [10][[AskJS] Best Practices/Approaches for Security Vulnerabilities in Downstream Dependencies?](https://www.reddit.com/r/javascript/comments/h7v1cb/askjs_best_practicesapproaches_for_security/)
+- url: https://www.reddit.com/r/javascript/comments/h7v1cb/askjs_best_practicesapproaches_for_security/
+---
+I have inherited a JavaScript project that is scanned weekly for known security vulnerabilities (a cross-reference of alerts to NPM modules, etc.). I've managed to eliminate the majority of the problems that were present when I took over the project, but I still have a small number of vulns in downstream dependencies. I'm wondering how others address these sorts of issues? In a few of the earlier cases, I was able to completely drop the module that was the source of the issue (or at least replace it with something else that was more secure). But now that I'm down to the last handful, I'm running into the limits of my knowledge/understanding of the overall JavaScript ecosystem.
+
+Any suggestions/tips welcomed.
+## [11][Detecting the end of a fluent API chain in JavaScript](https://www.reddit.com/r/javascript/comments/h7kuva/detecting_the_end_of_a_fluent_api_chain_in/)
+- url: https://michaelzanggl.com/articles/end-of-chain/
 ---
 
-## [6][[AskJS] When is object-oriented programming more practical than "mostly-functional" in JS?](https://www.reddit.com/r/javascript/comments/h7hnxz/askjs_when_is_objectoriented_programming_more/)
-- url: https://www.reddit.com/r/javascript/comments/h7hnxz/askjs_when_is_objectoriented_programming_more/
----
-I've been writing JS for about 6 years. In the last couple years I've switched to a mostly functional style. I only define classes when extending native classes or some other code requires it.
-
-Are there problems object-oriented programming solves is a more practical way than a "mosly-functional" style?
-## [7][Node.js, Dependency Injection, Layered Architecture, and TDD: A Practical Example Part 1](https://www.reddit.com/r/javascript/comments/h13ide/nodejs_dependency_injection_layered_architecture/)
-- url: https://carlosgonzalez.dev/posts/node-js-di-layered-architecture-and-tdd-a-practical-example-part-1/
----
-
-## [8][[AskJS] A good place to look for stuff to do and challenges ?](https://www.reddit.com/r/javascript/comments/h7ili8/askjs_a_good_place_to_look_for_stuff_to_do_and/)
-- url: https://www.reddit.com/r/javascript/comments/h7ili8/askjs_a_good_place_to_look_for_stuff_to_do_and/
----
-Hello, i am learning javascript and i would love to take a more actif aproach by doing more and more Challenge while i learn the language to be on top.
-
-Any recommandation where i can look up ?
-## [9][[AskJS] - Stateless Server + JWT auth mechanism + Token storage](https://www.reddit.com/r/javascript/comments/h7gsa7/askjs_stateless_server_jwt_auth_mechanism_token/)
-- url: https://www.reddit.com/r/javascript/comments/h7gsa7/askjs_stateless_server_jwt_auth_mechanism_token/
----
-Hi!
-
-I've recently been building an auth mechanism for a SPA / Node Backend. We've been discussing some of the trade-offs heavily with regards to token storage / server-side session state and I would just like to run an idea by you. At some point in the future we will support things like Auth0. But for now we'll work with this.
-
-**Ideal scenario;**
-
-*httpOnly token, javascript is unaware - has no access to - tokens.*
-
-This is something we're considering as a last resort, we'd like for the server to remain stateless and do not have sessions.
-
-As such, we will need some form of access / refresh token scheme so we can actively blacklist / lockout people upon token refresh (every 5 minutes or so in our case).
-
-There are other not so nice parts to this, since we're using a microservice type setup, we would like to pass along the token with every request through to other microservices, then have them check the roles and access themselves. Which would be tricky'er when using sessions.
-
-**Idea 01**
-
-*httpOnly cookie for refreshToken, in-memory javascript accessToken*
-
-We're building the FE in a pure functional way. The token would be stored in a redux like store. In the ReasonML specific implementation this is done using context, so we cannot access it outside of the component tree. This means that everything that needs to do a request, needs to pass the token from its component to a Thunk. This means that there are a shit-ton of selectors to that access-token, and this would become extremely verbose.
-
-We could do this at a higher level with some IO / Reader monad trickery, but we would like to keep things as straight forward as possible.
-
-**Idea 02**
-
-*httpOnly cookie for refreshToken, service worker for requests, service worker holds in-memory token*
-
-Instead of calling out to the api, we spawn commands to the service worker. Since we're already using Thunks, it would be relatively trivial to setup a worker to handle this for us. The worker would then have some internal mutable state that holds / refreshes the token. Upon any request coming in, we would simply append the token, do the request, and report back.
-
-However, just like above, this would be an extra layer of indirection and possibly not particularly straight forward.
-
-**Idea 03**
-
-*httpOnly cookie for refreshToken, accessToken in local storage, but always require both to be present*
-
-The accessToken in local storage presents an XSS attack possibility. The token in the cookie has a possible CSRF attack (should be mitigated by secure / httpOnly). By requiring them both at the same time, always, we get like a ven diagram as you'd have to both find an XSS as well as an CSRF vulnerability. Further lowering chances of an attack.
-
-An added bonus here would be that we have some form of tamper detection. As when we get a request in that has a valid access token, but no refresh token via cookie, either the user has removed the cookie manually, or the access token has been captured. In both cases, we could flag the user, log her / him out and do further investigation.
-
-The downside to this is of course that we're sending two JWT tokens with every request, which adds overhead.
-
-I would just like to have some input on the idea's here. And ask if someone maybe has an even better one?
-## [10][[AskJS] Any frameworks I can use for WYSIWYG editor for a web app?](https://www.reddit.com/r/javascript/comments/h7g615/askjs_any_frameworks_i_can_use_for_wysiwyg_editor/)
-- url: https://www.reddit.com/r/javascript/comments/h7g615/askjs_any_frameworks_i_can_use_for_wysiwyg_editor/
----
-I want to create a WYSIWYG viewer for my web app that is built on React.
-
-But I have absolutely no idea how I would go about this.
-
-Does anyone have any tools or tips for how to create this replica view of an iPhone to reflect the changes in the editor real-time?
-
-For example, Glide App offers a beautiful WYSIWYG viewer for its web app. I want to make the phone screen here. ([https://imgur.com/a/p84K6bq](https://imgur.com/a/p84K6bq))
-## [11][Random boxes - image transition effect in 15 lines of pure JS](https://www.reddit.com/r/javascript/comments/h0z2ac/random_boxes_image_transition_effect_in_15_lines/)
-- url: https://slicker.me/javascript/random_boxes.htm
----
-
-## [12][LinkedIn Login using Node JS and passport](https://www.reddit.com/r/javascript/comments/h0vex7/linkedin_login_using_node_js_and_passport/)
-- url: https://www.loginradius.com/engineering/blog/linkedin-login-using-node-passport/
+## [12][Generate default avatars with any text, which are 100% fingerprinted](https://www.reddit.com/r/javascript/comments/h7m8rv/generate_default_avatars_with_any_text_which_are/)
+- url: https://github.com/loweisz/generate-avatar
 ---
 

@@ -21,91 +21,152 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][Show /r/aws: periodic sanitized snapshot of production RDS database for developers/QA](https://www.reddit.com/r/aws/comments/h7ew99/show_raws_periodic_sanitized_snapshot_of/)
-- url: https://github.com/CloudSnorkel/RDS-sanitized-snapshots
+## [2][Get custom metric using get-metric-statistics](https://www.reddit.com/r/aws/comments/h869ad/get_custom_metric_using_getmetricstatistics/)
+- url: https://www.reddit.com/r/aws/comments/h869ad/get_custom_metric_using_getmetricstatistics/
 ---
+Hi, 
 
-## [3][How to make signed URLs less unwieldy and more usable?](https://www.reddit.com/r/aws/comments/h7dt02/how_to_make_signed_urls_less_unwieldy_and_more/)
-- url: https://www.reddit.com/r/aws/comments/h7dt02/how_to_make_signed_urls_less_unwieldy_and_more/
+This works:
+
+    aws cloudwatch get-metric-statistics --metric-name 'CPUUtilization' --start-time 2020-06-13T10:00:00Z --end-time 2020-06-13T10:05:00Z --period 3600 --namespace AWS/EC2 --statistics Maximum --dimensions Name=InstanceId,Value=i-0b7765711d215xxxx
+
+I am trying to do the same for a custom metric that I can see in Cloudwatch called "'Memory % Committed Bytes In Use'":
+
+    aws cloudwatch get-metric-statistics --metric-name 'Memory % Committed Bytes In Use' --start-time 2020-06-13T10:00:00Z --end-time 2020-06-13T10:05:00Z --period 3600 --namespace AWS/EC2 --statistics Maximum --dimensions Name=InstanceId,Value=i-0b7765711d215xxxx
+
+That isn't finding it, it just returns:
+
+    {
+        "Label": "Memory % Committed Bytes In Use",
+        "Datapoints": []
+    }
+
+Any idea on how I can get that memory metric? If I try and graph it, I can see it under under the "All Metrics" tab, and to the left of the search bar, I have 
+
+    London | All&gt; CWAgent &gt; AutoScalingGroupName, ImageId, InstanceId, InstanceType, objectname'
+
+If that makes sense?
+## [3][We are the AWS ML Heroes - Ask the Experts - June 15th @ 9AM PT / 12PM ET / 4PM GMT!](https://www.reddit.com/r/aws/comments/h7rayy/we_are_the_aws_ml_heroes_ask_the_experts_june/)
+- url: https://www.reddit.com/r/aws/comments/h7rayy/we_are_the_aws_ml_heroes_ask_the_experts_june/
 ---
-Since signed URLs are so long (~400 extra chars) are there any good solutions for sharing shorter URLs? 
-Do people build their own URL shorteners to get deal with this? Or are there simpler workarounds?
-## [4][AWS Anti Patterns - Mixing Accounts](https://www.reddit.com/r/aws/comments/h7jy11/aws_anti_patterns_mixing_accounts/)
+Hey r/aws!
+
+u/AmazonWebServices here.
+
+Several AWS Machine Learning Heroes will be hosting an Ask the Experts session here in this thread to answer any questions you may have about training and tuning ML models, as well as any questions you might have about Amazon SageMaker or machine learning in general. You don’t want to miss this one!
+
+Already have questions? Post them below and we'll answer them starting at 9AM PT on June 15, 2020!
+## [4][Serverless - 0 logs in CloudWatch, but full logs when debugging](https://www.reddit.com/r/aws/comments/h8210j/serverless_0_logs_in_cloudwatch_but_full_logs/)
+- url: https://www.reddit.com/r/aws/comments/h8210j/serverless_0_logs_in_cloudwatch_but_full_logs/
+---
+Hi,
+
+I've managed to do something awesome, and I think other people would want to do it as well - I've 100% disabled CloudWatch logging for all my Lambda functions (using a "logs:*" DENY policy) while still being able to have all logs that are needed when debugging with 0 costs.
+
+Pre-requisites:
+- Sentry (either hosted or on-premise)
+- a basic understanding of the "logging" library in Python
+
+Reasons to do this:
+- as mentioned in my other post (https://www.reddit.com/r/aws/comments/g3k1zr/lambda_logs_to_anything_else_but_cloudwatch/), I had shitload of costs triggered by CloudWatch PutEvents that were killing my AWS budget
+- I hate scrolling through the new CloudWatch Web UI
+- I'm not interested in paying for another service (eg custom ElasticSearch/Datadog) to query/filter my logs
+
+
+How to do it:
+- create your projects in Sentry and get a DSN (preferrably one for each of your Lambda repositories)
+- include the Sentry SDK in your custom Layer
+- and then:
+
+```
+from sentry import capture_exception
+from sentry import capture_message
+import logging
+
+def lambda_handler(event, context):
+  log = logging.getLogger("my-logger")
+  log.debug("Hello, world")
+  capture_message("something happened")
+
+```
+
+And that's it.
+
+Now, when an exception is triggered through Sentry, you also get the benefit of having all the logs up until that point, WITHOUT them being stored or even sent to CloudWatch.
+
+Proof -&gt; https://drive.google.com/file/d/12KWGTjizUAfAzGBFHmy0OHUHtVwoBNm3/view?usp=drivesdk
+
+
+Full disclosure: I'm the CTO of https://rungutan.com , an api-driven SaaS load testing platform written 100% on Serverless technologies
+## [5][AWS Anti Patterns - Mixing Accounts](https://www.reddit.com/r/aws/comments/h7jy11/aws_anti_patterns_mixing_accounts/)
 - url: https://www.reddit.com/r/aws/comments/h7jy11/aws_anti_patterns_mixing_accounts/
 ---
 Guilty of this myself and seeing many others fall into the same trap, I wanted to make a quick technical resource to highlight the problems with mixing accounts and why its important to avoid this trap from the beginning.
 
 Video is available here: https://youtu.be/A_XnXc-5i8Y
-## [5][Fargate task on private subnet getting "CannotPullContainerError" even though its got a working NAT](https://www.reddit.com/r/aws/comments/h7iqme/fargate_task_on_private_subnet_getting/)
-- url: https://www.reddit.com/r/aws/comments/h7iqme/fargate_task_on_private_subnet_getting/
+## [6][Can I use AWS WAF with my own web server that is hosted on an EC2 instance?](https://www.reddit.com/r/aws/comments/h7ofot/can_i_use_aws_waf_with_my_own_web_server_that_is/)
+- url: https://www.reddit.com/r/aws/comments/h7ofot/can_i_use_aws_waf_with_my_own_web_server_that_is/
 ---
-I have a Fargate task failing to deploy with a CannotPullContainerError that suggests it cannot reach the internet. Its on a private subnet that has a working NAT and other EC2 instances that have no problem reaching the outside world.  I have IAM permissions setup, and everything works fine inside a public subnet. According to the docs the error message Im getting suggests there is no path to the repository. Im using ECR.
-
-I cant figure out what is going on, does anyone have any suggestions? Thanks!
-## [6][How to restart EC2 instance in auto scaling group?](https://www.reddit.com/r/aws/comments/h7gbu2/how_to_restart_ec2_instance_in_auto_scaling_group/)
-- url: https://www.reddit.com/r/aws/comments/h7gbu2/how_to_restart_ec2_instance_in_auto_scaling_group/
+Or AWS WAF works only with Cloud Front and Application Load Balancer?
+## [7][How to Achieve the parallelism for these distributed tasks handling with AWS](https://www.reddit.com/r/aws/comments/h84nqr/how_to_achieve_the_parallelism_for_these/)
+- url: https://www.reddit.com/r/aws/comments/h84nqr/how_to_achieve_the_parallelism_for_these/
 ---
-I have an EC2 auto scaling group configured to run from 1 to 5 instance depending on load. I need the instances to restart for some configuration changes to happen. 4 out of 5 instances have already been restarted by auto scaling group. But 1 is always on, I want to restart that instance. I want to know the following:
+While developing an infra on aws having certain questions and issues I am facing with it. I want to parallelism distributed tasks handling for API.
 
-1. If I restart that instance manually when another is running (so 2 out of 5 are running ) will AWS understand that and run another instance?
-2. If 1 is not the correct way of restarting instances in EC2 auto scaling group, the what is?
-## [7][Have codedeploy launch a new instance before update](https://www.reddit.com/r/aws/comments/h7g9cw/have_codedeploy_launch_a_new_instance_before/)
-- url: https://www.reddit.com/r/aws/comments/h7g9cw/have_codedeploy_launch_a_new_instance_before/
+Scenario- I have an app that is related to banking where every minute  millions of requests generate for scheduling reports. Report are of  several types. Like say Account report, Transaction report, and so on.  which can be further schedule daily, weekly, monthly or custom. It  should be send using email and report attach to email.
+
+Now what I require is I want build an API to handle such request and  schedule the reports. Once it scheduled I want to make sure it execute  the N  
+ number of whenever it is scheduled.(parallel) \[The reason I want Parallel execution of all the reports which is  scheduled at same time is because lets say if user(s) schedule report(s)  at 11:00 UTC it should receive the report at the same time. I don't  want user(s) end up receiving reports after 1hr or 2hr or N  
+  number of hours. No matter how much reports are scheduled, Ever time it  should execute the report at given time stamp. That's why I am looking  for some solution of handling such case of parallel distributed tasks  handling.\]
+
+I tried -  I am not sure what AWS services would be more reliable for  such kind of situation. I built API using API Gateway with SQS &gt;  Lambda which create event on cloudwatch and execute it with lambda  trigger to send SES(email). (But this approach leave me at certain issues if delaying the report  delivery where N  
+ number of users scheduled report at the same time.)
+
+Can anyone help me here with forming some very efficient solution that can handle such cases seamlessly without any delay.
+## [8][ACM now allows Route53 Hosted Zone validation via Cloudformation](https://www.reddit.com/r/aws/comments/h7v0hp/acm_now_allows_route53_hosted_zone_validation_via/)
+- url: https://www.reddit.com/r/aws/comments/h7v0hp/acm_now_allows_route53_hosted_zone_validation_via/
 ---
-Hello
-Is there a way I can have no downtime deployments with CodeDeploy without the Blue/Green option?
+ACM at some point updated their Domain Validation option to include a Hosted Zone ID for a domain name. You can specify a hosted zone for ACM to validate your certificates, so it is fully automated (unless I am wrong). How long has this been a thing? 
 
-I have a single instance behind a load balancer. I would like to have CodeDeploy launch a new instance before deployment so that I have no downtime with a OneAtATime deploy config. It should then turn off the old instance once complete.
-
-I launched my CF stack including a ASG and for some reason CD will create a new ASG when doing a Blue/Green which then deletes the old ASG. Then all be CF updates fail because the ASG resource no longer exists.
-
-Does anybody have a workaround?
-## [8][Show /r/aws: A Better AWS Console](https://www.reddit.com/r/aws/comments/h109wr/show_raws_a_better_aws_console/)
-- url: https://www.reddit.com/r/aws/comments/h109wr/show_raws_a_better_aws_console/
+[Domain Validation option spec] (https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-certificatemanager-certificate-domainvalidationoption.html)
+## [9][Custom metrics, ASGs, and Cloudwatch alarms](https://www.reddit.com/r/aws/comments/h7xk89/custom_metrics_asgs_and_cloudwatch_alarms/)
+- url: https://www.reddit.com/r/aws/comments/h7xk89/custom_metrics_asgs_and_cloudwatch_alarms/
 ---
-Hi folks,
+Hello,
 
-I saw the post about how rough the AWS Console is and I couldn't agree more. A few of my friends are working on https://vantage.sh/ - a console experience for AWS focused on better UI/UX. I'm using it in early access right now and it is extremely well done and getting better every week. 
+We have an application running on instances in an ASG that has an issue with memory. To get around this until we have a code fix, I wrote a lambda function to do some checks on the health of the TG, then take the instance out, reboot it, and add it back in. The aim was to trigger this when RAM utilization gets above a certain amount.
 
-I know they're actively looking for early access user feedback so if you're interested you should sign up. I also messaged them about posting here so hopefully they have/will make a reddit account and come in here to chat.
-## [9][AWS Backup - cron command](https://www.reddit.com/r/aws/comments/h79yin/aws_backup_cron_command/)
-- url: https://www.reddit.com/r/aws/comments/h79yin/aws_backup_cron_command/
+The problem is that frustratingly I can't create an alarm for this as it looks like the RAM metric from CWAgent needs to be selected on an instance by instance basis, and these are in ASG.
+
+So do I need another Lambda function to update the Cloudwatch Alarm on a regular basis? Or is there another way?
+
+The only other thing I was thinking of was writing something that runs inside the instance itself, but that could be unreliable...
+## [10][How exactly do applications handle auto scaling?](https://www.reddit.com/r/aws/comments/h7rnex/how_exactly_do_applications_handle_auto_scaling/)
+- url: https://www.reddit.com/r/aws/comments/h7rnex/how_exactly_do_applications_handle_auto_scaling/
 ---
-Hi all
+Been working with AWS for a few years and am taking my SAA cert in a few days, however with my experience and all the prep I did for the exam, I still don't fully understand how applications know how to work with auto scaling groups.
 
-Currently configuring AWS Backup and I would like to use a cron command to take care of quarterly backups
+The common architecture is ELB &lt;-&gt; EC2 Auto Scaling Group &lt;-&gt; Database.  I fully understand how ASGs work to dynamically route traffic between the ELB and database tiers, build/destroy instances, and monitor health of targets, but what I don't understand is how do the actual compute application itself work with this dynamic environment?
 
-It seems that some sites online have slightly different syntax or less values that AWS doesn't accept
-
-I was wondering if anyone had an example that they use in their configuration?
-## [10][Advice on AWS services to use for photo-sharing mobile app](https://www.reddit.com/r/aws/comments/h7enuc/advice_on_aws_services_to_use_for_photosharing/)
-- url: https://www.reddit.com/r/aws/comments/h7enuc/advice_on_aws_services_to_use_for_photosharing/
+It seems to be that there is some magic going on behind the scenes where an application just "knows" how to deal with it (obviously not the case), or somehow the application just doesn't care about the infrastructure.  Do developers have to develop their applications in a way to "work" with auto scaling?  Are there any examples of applications that would not work with ASGs by default or by the nature of the program?
+## [11][How to SSM or Similar to Automatically Attach Elastic Graphics on Instance Launch??](https://www.reddit.com/r/aws/comments/h7upw6/how_to_ssm_or_similar_to_automatically_attach/)
+- url: https://www.reddit.com/r/aws/comments/h7upw6/how_to_ssm_or_similar_to_automatically_attach/
 ---
-Hi AWS experts - 
+I am looking for a means to have a particular AMI always launch with elastic graphics. The software my client uses (not my software), calls on AWS to create a spot instance fleet with a selected AMI and instance type, but does not provide the option to create and attach elastic graphics to the instances being launched.
 
-I'm a software engineer but very new to cloud computing.
+&amp;#x200B;
 
-I'm building a photo-sharing mobile app that I hope will eventually attract high traffic and be spun into a start-up. I have about 20% of the backend and proof-of-concept ready and running on my local workstation. The overall system will consist of a Java Spring web server, a Python machine learning engine, a website and iOS and Android mobile apps. AWS is so vast and confusing I'm at a loss what infrastructure to use. Could any of you kindly give me options to look at, pros, cons, etc. of the various AWS services I could use to achieve a system like this? Could you also go into things like monitoring? Not just infrastructure monitoring, but how I can write metrics from my code, etc. If you've launched a similar app from AWS could you also share your experience?
+Ideally, I would just append the following to the code that controls launching instances, but I don't have access to the code to add it:
 
-Thanks very much!
-## [11][ECS isn't using the Codedeploy images file on deploy](https://www.reddit.com/r/aws/comments/h13zfe/ecs_isnt_using_the_codedeploy_images_file_on/)
-- url: https://www.reddit.com/r/aws/comments/h13zfe/ecs_isnt_using_the_codedeploy_images_file_on/
----
-I am using Terraform for a Codepipeline deployed ECS cluster. The codepipeline works up until the deploy stage. I have been digging into this issue for about 3 days now and what I have found, is that when I review the codepipeline execution, I do find the proper imagedefinitions.json file in S3 artifact button. The formatting looks right to me (see below), but when I look at the tasks that failed to start in ECS, I find that it is looking for the wrong image in ECR. See image attached. It is looking for the one from the original task definition (:latest), not the one in the imagedefinitions.json (:320ac83).
+ \--elastic-gpu-specification Type=eg1.2xlarge 
 
-[ECS Screenshot](https://atlchris-screenshots.s3.amazonaws.com/Screen+Shot+2020-06-10+at+7.38.01+PM.png)
+&amp;#x200B;
 
-Does anyone have any theories on what might be going on or things I can look at further to help narrow down the issue?
+Unfortunately, the instances are being launched from this cloud management app doesn't support this, and I cannot add in the appropriate flags to create and attach elastic graphics on launch from there. My task is to find a workaround to this particular software's limitation and just have aws automatically do the deed anytime the instance is launched.  
 
-    # imagedefinitions.json
-     
-    [
-       {
-          "name":"php",
-          "imageUri":"xxxxxxxx07.dkr.ecr.us-east-1.amazonaws.com/filmfed-php:320ac83"
-       },
-       {
-          "name":"nginx",
-          "imageUri":"xxxxxxxx07.dkr.ecr.us-east-1.amazonaws.com/filmfed-nginx:320ac83"
-       }
-    ]
+&amp;#x200B;
+
+I have been trying to find a means via a cloudwatch event -&gt; SSM function, but it seems that there are only means to set up monitoring.  
+
+
+Any ideas here?  Thanks.

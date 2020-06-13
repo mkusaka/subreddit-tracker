@@ -1,12 +1,27 @@
 # androiddev
-## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/h7jyws/weekly_anything_goes_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/h7jyws/weekly_anything_goes_thread/
+## [1][App Feedback Thread - June 13, 2020](https://www.reddit.com/r/androiddev/comments/h86msj/app_feedback_thread_june_13_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/h86msj/app_feedback_thread_june_13_2020/
 ---
-Here's your chance to talk about whatever!
+This thread is for getting feedback on your own apps.
 
-Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
+####Developers:
 
-Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
+- must **provide feedback** for others
+- must include **Play Store**, **GitHub**, or **BitBucket** link
+- must make top level comment
+- must make effort to respond to questions and feedback from commenters
+- may be open or closed source
+
+####Commenters:
+
+- must give **constructive feedback** in replies to top level comments
+- must not include links to other apps
+
+To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
+
+As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
+
+\- Da Mods
 ## [2][Weekly Questions Thread - June 08, 2020](https://www.reddit.com/r/androiddev/comments/gyx6z3/weekly_questions_thread_june_08_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/gyx6z3/weekly_questions_thread_june_08_2020/
 ---
@@ -25,52 +40,50 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Android Studio getting native WiFi debugging](https://www.reddit.com/r/androiddev/comments/h7icn3/android_studio_getting_native_wifi_debugging/)
+## [3][As promised, my insights on the effect of a 1 week ad on reddit for my app. Is it worth it? In short: Nope, not for me.](https://www.reddit.com/r/androiddev/comments/h8369y/as_promised_my_insights_on_the_effect_of_a_1_week/)
+- url: https://i.redd.it/7ya29writm451.jpg
+---
+
+## [4][Google tracking libraries used in apps by default](https://www.reddit.com/r/androiddev/comments/h7si5r/google_tracking_libraries_used_in_apps_by_default/)
+- url: https://i.redd.it/vi0a3r8fhj451.png
+---
+
+## [5][I was pretty excited about the release of Android 11 beta. Google has given us information about a lot of the new features/APIs which we can take advantage of while developing features specifically for Android 11. Here's a list of few features which I found interesting from them.](https://www.reddit.com/r/androiddev/comments/h852cw/i_was_pretty_excited_about_the_release_of_android/)
+- url: https://coderwhodreams.com/blog/exciting-new-features-in-android-11-for-developers/
+---
+
+## [6][Android Studio getting native WiFi debugging](https://www.reddit.com/r/androiddev/comments/h7icn3/android_studio_getting_native_wifi_debugging/)
 - url: https://twitter.com/_saulmm/status/1271389483930456064
 ---
 
-## [4][Android Studio 4.2 can preview @Compose functions in interactive mode](https://www.reddit.com/r/androiddev/comments/h11ilb/android_studio_42_can_preview_compose_functions/)
-- url: https://v.redd.it/7svd4jfzua451
+## [7][Android Studio 4.2 along with Emulator and Database Viewer](https://www.reddit.com/r/androiddev/comments/h7oy01/android_studio_42_along_with_emulator_and/)
+- url: https://i.redd.it/nhpygjaeji451.png
 ---
 
-## [5][Google play refund issue](https://www.reddit.com/r/androiddev/comments/h7jela/google_play_refund_issue/)
-- url: https://www.reddit.com/r/androiddev/comments/h7jela/google_play_refund_issue/
----
-Hi! 
-I have a paid app on google play and I just have noticed that every purchase from South Africa (currency ZAR) always gets refunded before its charged. Anyone else is heaving this issue? Any thoughts about it?
-## [6][LeakCannary 2.4 released](https://www.reddit.com/r/androiddev/comments/h13a0f/leakcannary_24_released/)
-- url: https://square.github.io/leakcanary/changelog/#version-24-2020-06-10
+## [8][How I take this snack bar notification on android like gmail..? Is external library or by Google?](https://www.reddit.com/r/androiddev/comments/h87368/how_i_take_this_snack_bar_notification_on_android/)
+- url: https://i.redd.it/0ofejib0eo451.jpg
 ---
 
-## [7][Android Developers Blog: Meet Google Play Billing Library Version 3](https://www.reddit.com/r/androiddev/comments/h76y1q/android_developers_blog_meet_google_play_billing/)
-- url: https://android-developers.googleblog.com/2020/06/meet-google-play-billing-library.html
+## [9][GitHub Actions used to build an Android project (with working UI tests - on emulators)](https://www.reddit.com/r/androiddev/comments/h86yju/github_actions_used_to_build_an_android_project/)
+- url: https://www.reddit.com/r/androiddev/comments/h86yju/github_actions_used_to_build_an_android_project/
+---
+I have converted my android-showcase project to use. Now I am running UI tests on Android emulators and I have an infinite number of parallel executors.
+
+Here is the full workflow config for GitHub Actions
+https://github.com/igorwojda/android-showcase/tree/master/.github/workflows
+## [10][Will an update APK also update the internal SQLite database?](https://www.reddit.com/r/androiddev/comments/h86vu5/will_an_update_apk_also_update_the_internal/)
+- url: https://www.reddit.com/r/androiddev/comments/h86vu5/will_an_update_apk_also_update_the_internal/
+---
+If I have an app built running on an SQLite database (everything is completely offline). 
+
+If I then release an update, with changes to the database, will that also be updated or does the user need to uninstall and reinstall the app to see the database changes?
+
+Changes can include new columns and more entries to the database.
+## [11][I dont want to fix the app no more , how do i make it go away ? i dont care if i have to delete the app](https://www.reddit.com/r/androiddev/comments/h83wa9/i_dont_want_to_fix_the_app_no_more_how_do_i_make/)
+- url: https://i.redd.it/yhyu1ah55n451.png
 ---
 
-## [8][Android 11 emoji ttf](https://www.reddit.com/r/androiddev/comments/h7b8by/android_11_emoji_ttf/)
-- url: https://www.reddit.com/r/androiddev/comments/h7b8by/android_11_emoji_ttf/
----
-Hi guys, I am looking for the Android 11 emoji ttf so I can port it over to older Android versions, I was hoping anyone on beta 1 could share it, thanks in advance! (If you're rooted you can find it in /system/fonts/NotoColorEmoji.ttf)
-## [9][First look on Hilt](https://www.reddit.com/r/androiddev/comments/h15tay/first_look_on_hilt/)
-- url: https://www.coroutinedispatcher.com/2020/06/first-look-on-hilt.html
+## [12][ConstraintLayout 2.0.0 beta 7](https://www.reddit.com/r/androiddev/comments/h7va63/constraintlayout_200_beta_7/)
+- url: https://androidstudio.googleblog.com/2020/06/constraintlayout-200-beta-7.html
 ---
 
-## [10][Facebook audience network banner keeps failing](https://www.reddit.com/r/androiddev/comments/h7gqpl/facebook_audience_network_banner_keeps_failing/)
-- url: https://www.reddit.com/r/androiddev/comments/h7gqpl/facebook_audience_network_banner_keeps_failing/
----
-Hello, i am using FAN for my apps and implemented banner at bottom of 2 screens out of 7 screens in my app. I checked all documentation where to implement and how to implement. But still my banner keeps failing quality check quite often. 
-
-Any idea how to fix this because i can't find my article or source where i can look it to fix. All installs are organic and no false or fake installs are there on my app.
-
-Thanks
-## [11][Question: is it possible and easy to make your own app and have it pull data from android fitness trackers, or is there a one to one relationship between the app on the tracker and the app on the phone?](https://www.reddit.com/r/androiddev/comments/h7g0xn/question_is_it_possible_and_easy_to_make_your_own/)
-- url: https://www.reddit.com/r/androiddev/comments/h7g0xn/question_is_it_possible_and_easy_to_make_your_own/
----
-
-## [12][Will I have cross compatibility issues developing on separate platforms? Mac to Linux and vise versa](https://www.reddit.com/r/androiddev/comments/h7fpbj/will_i_have_cross_compatibility_issues_developing/)
-- url: https://www.reddit.com/r/androiddev/comments/h7fpbj/will_i_have_cross_compatibility_issues_developing/
----
-Does anyone have any experience in this? I've recently started developing for Android and was wondering if transferring a project over from my Mac to my Linux machine would cause any problems with gradle or just building the app in general?
-
-If not, what's the best way to approach this? I'll be using Github for version control.
-
-Coming from iOS I've only had the ability to code on my Mac but I'd love to switch over a project I started to my Linux machine.

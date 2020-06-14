@@ -125,19 +125,90 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][itCppCon20 Welcome + KEYNOTE Let's Move-The Hidden Features and Traps of C++ Move Semantics Josuttis](https://www.reddit.com/r/cpp/comments/h84mi6/itcppcon20_welcome_keynote_lets_movethe_hidden/)
+## [3][An iterator_facade in C++20](https://www.reddit.com/r/cpp/comments/h8ot87/an_iterator_facade_in_c20/)
+- url: https://vector-of-bool.github.io/2020/06/13/cpp20-iter-facade.html
+---
+
+## [4][nanobech v4.0.0 released: faster compile, better output formatting, thorough documentation, linux performance counters](https://www.reddit.com/r/cpp/comments/h8boen/nanobech_v400_released_faster_compile_better/)
+- url: https://nanobench.ankerl.com/
+---
+
+## [5][Intro to C++20's Concepts - C++ User Group Dresden - Hendrik Niemeyer](https://www.reddit.com/r/cpp/comments/h8dq39/intro_to_c20s_concepts_c_user_group_dresden/)
+- url: https://www.youtube.com/watch?v=rROoYqDr2KM
+---
+
+## [6][Member function forward declaration?](https://www.reddit.com/r/cpp/comments/h8kjui/member_function_forward_declaration/)
+- url: https://www.reddit.com/r/cpp/comments/h8kjui/member_function_forward_declaration/
+---
+I've been looking into reducing compile times. I noticed files with just a few lines can spawn thousands  after preprocessing.
+
+Many of those includes come to declare private members of classes being depended on. The pimpl idiom would be solution here, but I feel that is verbose and incur penalties that are not really needed.
+
+I wrote what I thought to be a more elegant way to clean this up. But is it though?
+
+    // Foo_fwd.hpp
+    struct operator Foo // Invented "struct operator" syntax to represent
+                        // a forward declaration with member functions
+    {
+        int as_int();
+    };
+    
+    // User that just need the opaque interface of Foo
+    // Very few dependencies - quick to compile
+    int add(Foo&amp; f1, Foo&amp; f2) { return f1.as_int() + f2.as_int(); }
+    
+    
+    // Foo.hpp
+    // Actual member and inline function definition. Only here you get extra dependencies
+    
+    #include &lt;string&gt;
+    struct Foo
+    {
+        void clear() { number_as_string.clear(); }
+        std::string number_as_string;
+    };
+    
+    
+    // Foo.cpp
+    int Foo::as_int()
+    { 
+        return std::stoi(number_as_string);
+    }
+
+So if you want to create, destroy or use inline member functions, you need to include \`Foo.h\`. Otherwise you could get by just including \`Foo\_fwd.h\`.
+
+Pros: A lot of your code can just include the Foo\_fwd to use the class. Specially long lived classes that are created once and passed around.
+
+Cons: The declaration of the class is a bit scattered.
+
+More pros? More cons? Any other clean way to achieve this effect with the current language features?
+## [7][Is there a special "compat" repository for windows shims](https://www.reddit.com/r/cpp/comments/h8sm8g/is_there_a_special_compat_repository_for_windows/)
+- url: https://www.reddit.com/r/cpp/comments/h8sm8g/is_there_a_special_compat_repository_for_windows/
+---
+Hello. I'm porting a C library for posix to support windows. The library uses posix specific things like unistd.h, pthread.h, etc.. I found some repos that use special "compat" shim that mimic behaviour of posix functionality and work with windows environment and msvc. Examples of such repos:  [https://github.com/libressl-portable/portable/tree/master/include/compat](https://github.com/libressl-portable/portable/tree/master/include/compat),  [https://github.com/FFmpeg/FFmpeg/tree/master/compat](https://github.com/FFmpeg/FFmpeg/tree/master/compat)
+
+Is there a specific compat repo that I can clone as submodule into my project? These guys find these sources somewhere or each writes their own shims?
+## [8][itCppCon20 Welcome + KEYNOTE Let's Move-The Hidden Features and Traps of C++ Move Semantics Josuttis](https://www.reddit.com/r/cpp/comments/h84mi6/itcppcon20_welcome_keynote_lets_movethe_hidden/)
 - url: https://www.youtube.com/watch?v=OOLR96-GjsI
 ---
 
-## [4][Makefile projects in CLion: now public!](https://www.reddit.com/r/cpp/comments/h7t3bj/makefile_projects_in_clion_now_public/)
-- url: https://blog.jetbrains.com/clion/2020/06/makefile-projects-in-clion/
+## [9][Italian C++ Conference 2020: All sessions](https://www.reddit.com/r/cpp/comments/h8a5oz/italian_c_conference_2020_all_sessions/)
+- url: https://www.youtube.com/playlist?list=PLsCm1Hs016LWIjOrEftUA42ZwxsF30vZB
 ---
 
-## [5][Boost epoch proposal: *Illustrative* Boost 1.73 epoch report](https://www.reddit.com/r/cpp/comments/h84v7r/boost_epoch_proposal_illustrative_boost_173_epoch/)
+## [10][Barbarian: A client for the conan package manager.](https://www.reddit.com/r/cpp/comments/h896gt/barbarian_a_client_for_the_conan_package_manager/)
+- url: https://www.reddit.com/r/cpp/comments/h896gt/barbarian_a_client_for_the_conan_package_manager/
+---
+Barbarian is a graphical frontend for the conan package manager. Conan is a package manager mainly aimed at devs. It's not a whole package, and conan has to be installed for it to work. It's written in the Qt framework. Please do check it out: [https://github.com/Roidujeu/barbarian](https://github.com/Roidujeu/barbarian)
+
+ It's only available for unix-like OSes and not Windows(sorry). 
+
+Arch users can install it from AUR: [https://aur.archlinux.org/packages/barbarian/](https://aur.archlinux.org/packages/barbarian/) Please give me your feedback too so that i can improve it.
+## [11][Boost epoch proposal: *Illustrative* Boost 1.73 epoch report](https://www.reddit.com/r/cpp/comments/h84v7r/boost_epoch_proposal_illustrative_boost_173_epoch/)
 - url: https://github.com/joaquintides/boost_epoch/blob/master/epoch_report.md
 ---
 
-## [6][Watch live the Virtual Italian C++ Conference 2020](https://www.reddit.com/r/cpp/comments/h822du/watch_live_the_virtual_italian_c_conference_2020/)
+## [12][Watch live the Virtual Italian C++ Conference 2020](https://www.reddit.com/r/cpp/comments/h822du/watch_live_the_virtual_italian_c_conference_2020/)
 - url: https://www.reddit.com/r/cpp/comments/h822du/watch_live_the_virtual_italian_c_conference_2020/
 ---
 Hi there!
@@ -151,74 +222,3 @@ Drop questions by adding "QUESTION" at front on the chat.
 &amp;#x200B;
 
 Looking forward to seeing you there!
-## [7][Can const-correctness be achieved for pointer wrapper types?](https://www.reddit.com/r/cpp/comments/h87gc0/can_constcorrectness_be_achieved_for_pointer/)
-- url: https://www.reddit.com/r/cpp/comments/h87gc0/can_constcorrectness_be_achieved_for_pointer/
----
-Hello!
-
-I'm wondering if there's any way to get a const-correct pointer wrapper type in C++?  
-
-```
-class Foo {
-  Foo* next = nullptr;
-public:
-  Foo* getNext() { return next; }
-  const Foo* getNextConst() const { return next; }
-};
-
-int main() {
-  // This works as expected
-  Foo foo; 
-  foo.getNext();
-  foo.getNextConst();
-  // This works as expected too
-  const Foo fooConst;
-  fooConst.getNext(); // error!
-  fooConst.getNextConst(); 
-  // This shouldn't be possible. This is what I want to solve (const T to T, copy that allows one to access Foo's mutable members)
-  foo = fooConst;
-  // However, I'd like to keep those working:
-  fooConst = fooConst;
-  foo = foo;
-  fooConst= foo;
-}
-```
-This looks easy, right, remove the copy constructor? Well, no, I'd like to keep it. Ideally, I want this to behave just like a pointer would:
-
-* Copy of T to const T is allowed.
-* Copy of T to T is allowed.
-* Copy of const T to const T is allowed.
-* Copy of const T to T is forbidden.
-
-Is there any way to do this in C++ ? I doubt it, but maybe someone has a solution?
-
-I managed to write something (https://pastebin.com/8ekHJZYv) using `operator=`, it ticks all the boxes but it doesn't support the constructor, so ` const Foo otherConst = fooConst` doesn't work, it's the closest I can get. It'd be an acceptable quirk, but I still want to do better.
-
-Other solutions I can think of:
-
-* Use a base class "ConstFoo" that'd contain all of the immutable stuff. It's not pretty, I personally don't like it. It's fine for a single object, but if I want to apply this to a large number of classes, it'll be unmanageable.
-* Drop const-correctness entirely for such object, and accept they'll never be const correct.
-## [8][How much faster can a 4 by 4 matrix on the stack be as opposed to being on the heap?](https://www.reddit.com/r/cpp/comments/h830sj/how_much_faster_can_a_4_by_4_matrix_on_the_stack/)
-- url: https://www.reddit.com/r/cpp/comments/h830sj/how_much_faster_can_a_4_by_4_matrix_on_the_stack/
----
-So, if I create the matrix as float* m = new float[16]; , it is on the heap. But if it's float[16] m = {0}; (not sure if this initalization is correct), it's on the stack. How much faster can the second option be, seeing that I don't need to allocate again on the heap when copying?
-## [9][CppCast: Web Assembly](https://www.reddit.com/r/cpp/comments/h7czqf/cppcast_web_assembly/)
-- url: https://cppcast.com/web-assembly-ben-smith/
----
-
-## [10][A compile-time CHIP-8 emulator using constexpr](https://www.reddit.com/r/cpp/comments/h12k00/a_compiletime_chip8_emulator_using_constexpr/)
-- url: https://github.com/IoanThomas/constexpr-chip8
----
-
-## [11][Microsoft: Rust Is the Industry’s ‘Best Chance’ at Safe Systems Programming](https://www.reddit.com/r/cpp/comments/h77a0z/microsoft_rust_is_the_industrys_best_chance_at/)
-- url: https://thenewstack.io/microsoft-rust-is-the-industrys-best-chance-at-safe-systems-programming/
----
-
-## [12][C++20 Modules (VERY) easy way to build them](https://www.reddit.com/r/cpp/comments/h788pg/c20_modules_very_easy_way_to_build_them/)
-- url: https://www.reddit.com/r/cpp/comments/h788pg/c20_modules_very_easy_way_to_build_them/
----
-Hello guys, just began a new game with C++ modules (MSVC 2019 Preview), made this simple python script to successfully build many .ixx and .cpp files into executable without tracking them by hand.  
-
-
-Feel free to try (tested only on MSVC 2019 Preview). You just need to set path to vsvars.bat file to let the pyton script setup Visual Studio environment then run make.py.  
-[https://github.com/xdeadmonkx/CPPModPy](https://github.com/xdeadmonkx/CPPModPy)

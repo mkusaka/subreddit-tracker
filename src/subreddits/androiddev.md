@@ -40,50 +40,78 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][As promised, my insights on the effect of a 1 week ad on reddit for my app. Is it worth it? In short: Nope, not for me.](https://www.reddit.com/r/androiddev/comments/h8369y/as_promised_my_insights_on_the_effect_of_a_1_week/)
+## [3][Google Play Store will make app bundles a requirement in 2021](https://www.reddit.com/r/androiddev/comments/h8cv3v/google_play_store_will_make_app_bundles_a/)
+- url: https://www.androidpolice.com/2020/06/12/google-play-store-will-make-app-bundles-a-requirement-in-2021/
+---
+
+## [4][Google Play Console Beta is beautiful &amp; also packs great new features](https://www.reddit.com/r/androiddev/comments/h8opqc/google_play_console_beta_is_beautiful_also_packs/)
+- url: https://www.androidpolice.com/2020/06/13/hands-on-with-the-new-google-play-console-easier-publishing-and-a-new-material-theme/
+---
+
+## [5][Some clarification about the terminlogy of TESTING](https://www.reddit.com/r/androiddev/comments/h8subw/some_clarification_about_the_terminlogy_of_testing/)
+- url: https://www.reddit.com/r/androiddev/comments/h8subw/some_clarification_about_the_terminlogy_of_testing/
+---
+Hello,
+
+I am getting into testing and I find the terminology a bit confusing and at times mixed up.
+
+Can someone tell me if I get this right:
+
+The `test` source set in Android Studio contains **local** tests. All test in this folder run without an emulator or real device (but not necessarily without Android dependencies, since they can be mocked).
+
+The `androidTest` directory contains all tests that need an **emulator or real device** to run. They are called **instrumented** tests since they use the instrumentation API.
+
+We also divide tests into **3 categories** by their **size: Unit** tests ( smallest), **Integration** tests (medium-sized), and **end-to-end** tests (largest).
+
+Usually, **unit** tests are **local** tests (`test` package) but there are also instrumented unit tests that need an Android device to run (an so go into the `androidTest` package). 
+
+**Integration** tests usually go into the `androidTest` package but there are also integration tests that don't need the Android framework (or where the Android parts can be mocked?) to run and can, therefore, go into the `test` (local) package.
+
+End-to-end tests go into the `androidTest` package and might need external tools (? unsure). Do end-to-end tests need **manual** interaction or can they be fully automated?
+
+Where do UI tests fit here? Are all UI tests end-to-end tests? Sorry for my ignorance.
+## [6][Second app for Firebase Admin.](https://www.reddit.com/r/androiddev/comments/h8s7at/second_app_for_firebase_admin/)
+- url: https://www.reddit.com/r/androiddev/comments/h8s7at/second_app_for_firebase_admin/
+---
+Hello there. Hope all are good.
+
+I have an app that list promotions for retailers in a certain field of the economy. So products constantly have to be added and removed from promotions from 9 different retailers. I do that, not the retailer (at this stage).
+
+I'm thinking of building a total separate new app to maintain the database of that app. Have any of you people done it? My thinking is if I put a link to an activity (with a login obviously) where I do that, it will almost double the size.
+
+At this stage I do it with a website I created, but it is very clumsy, because my JavaScript and HTML is not up to par. I can build a much better way to do that with an app, but I'm not sure if I should add it to app or build  a separate app for that. Doing it directly on Firebase is totally out of the question. 
+
+Just a little input please, what would you do?
+## [7][Possible to implement a scrollable container with cumulative percentage height of child views that exceeds 100%?](https://www.reddit.com/r/androiddev/comments/h8r3fk/possible_to_implement_a_scrollable_container_with/)
+- url: https://www.reddit.com/r/androiddev/comments/h8r3fk/possible_to_implement_a_scrollable_container_with/
+---
+I tried to do this with ConstraintLayout's percent height. The cumulative is 120%. But it can't be scrolled. match_parent obviously makes the layout unscrollable in the ScrollView. wrap_content seems to not work with scrolling, even though the child percentages still add up to 120%.
+## [8][Google Play Store app details: "varies with device"](https://www.reddit.com/r/androiddev/comments/h8r2a9/google_play_store_app_details_varies_with_device/)
+- url: https://www.reddit.com/r/androiddev/comments/h8r2a9/google_play_store_app_details_varies_with_device/
+---
+Something that's puzzled me for a while. When looking at apps in the Play Store, I often see: Current version: varies with device / Size: varies with device / Requires Android: varies with device. If that's accurate, then that's fine I guess.
+
+But for example I see the same info (or lack thereof) for one of my own apps, uploaded as an apk. AFAIK, the version number is unique, the size is the size (all assets are loaded irrespective of the device), the minimum Android version is specified and unique.
+
+Does anyone know why this information isn't being shown?
+## [9][As promised, my insights on the effect of a 1 week ad on reddit for my app. Is it worth it? In short: Nope, not for me.](https://www.reddit.com/r/androiddev/comments/h8369y/as_promised_my_insights_on_the_effect_of_a_1_week/)
 - url: https://i.redd.it/7ya29writm451.jpg
 ---
 
-## [4][Google tracking libraries used in apps by default](https://www.reddit.com/r/androiddev/comments/h7si5r/google_tracking_libraries_used_in_apps_by_default/)
-- url: https://i.redd.it/vi0a3r8fhj451.png
+## [10][Screen pinning programmatically](https://www.reddit.com/r/androiddev/comments/h8pqf0/screen_pinning_programmatically/)
+- url: https://www.reddit.com/r/androiddev/comments/h8pqf0/screen_pinning_programmatically/
 ---
-
-## [5][I was pretty excited about the release of Android 11 beta. Google has given us information about a lot of the new features/APIs which we can take advantage of while developing features specifically for Android 11. Here's a list of few features which I found interesting from them.](https://www.reddit.com/r/androiddev/comments/h852cw/i_was_pretty_excited_about_the_release_of_android/)
-- url: https://coderwhodreams.com/blog/exciting-new-features-in-android-11-for-developers/
+How Touch Lock Lite achieve screen pinning of other apps? The official Android documentation says only the current activity, from which the pinning is triggered, can be pinned. Any hint?
+## [11][Android emulator behaving weird after AS updated to 4.0](https://www.reddit.com/r/androiddev/comments/h8os2p/android_emulator_behaving_weird_after_as_updated/)
+- url: https://www.reddit.com/r/androiddev/comments/h8os2p/android_emulator_behaving_weird_after_as_updated/
 ---
+I have been having problems with the Android emulator lately after upgrading to the 4.0 version. The emulator doesn't start, I have tried every method i.e. cold boot, wiping data, even deleting the AS with SDK, and installing it afresh but everything went in vain. A few days ago it just started to work normally without me doing anything and today it again stopped working. Every time I start it this warning appears "Resetting for cold boot: Emulation engine failed". Any suggestions on fixing it?
 
-## [6][Android Studio getting native WiFi debugging](https://www.reddit.com/r/androiddev/comments/h7icn3/android_studio_getting_native_wifi_debugging/)
-- url: https://twitter.com/_saulmm/status/1271389483930456064
----
-
-## [7][Android Studio 4.2 along with Emulator and Database Viewer](https://www.reddit.com/r/androiddev/comments/h7oy01/android_studio_42_along_with_emulator_and/)
-- url: https://i.redd.it/nhpygjaeji451.png
----
-
-## [8][How I take this snack bar notification on android like gmail..? Is external library or by Google?](https://www.reddit.com/r/androiddev/comments/h87368/how_i_take_this_snack_bar_notification_on_android/)
-- url: https://i.redd.it/0ofejib0eo451.jpg
----
-
-## [9][GitHub Actions used to build an Android project (with working UI tests - on emulators)](https://www.reddit.com/r/androiddev/comments/h86yju/github_actions_used_to_build_an_android_project/)
+P.S I am on a Windows machine
+## [12][GitHub Actions used to build an Android project (with working UI tests - on emulators)](https://www.reddit.com/r/androiddev/comments/h86yju/github_actions_used_to_build_an_android_project/)
 - url: https://www.reddit.com/r/androiddev/comments/h86yju/github_actions_used_to_build_an_android_project/
 ---
 I have converted my android-showcase project to use. Now I am running UI tests on Android emulators and I have an infinite number of parallel executors.
 
 Here is the full workflow config for GitHub Actions
 https://github.com/igorwojda/android-showcase/tree/master/.github/workflows
-## [10][Will an update APK also update the internal SQLite database?](https://www.reddit.com/r/androiddev/comments/h86vu5/will_an_update_apk_also_update_the_internal/)
-- url: https://www.reddit.com/r/androiddev/comments/h86vu5/will_an_update_apk_also_update_the_internal/
----
-If I have an app built running on an SQLite database (everything is completely offline). 
-
-If I then release an update, with changes to the database, will that also be updated or does the user need to uninstall and reinstall the app to see the database changes?
-
-Changes can include new columns and more entries to the database.
-## [11][I dont want to fix the app no more , how do i make it go away ? i dont care if i have to delete the app](https://www.reddit.com/r/androiddev/comments/h83wa9/i_dont_want_to_fix_the_app_no_more_how_do_i_make/)
-- url: https://i.redd.it/yhyu1ah55n451.png
----
-
-## [12][ConstraintLayout 2.0.0 beta 7](https://www.reddit.com/r/androiddev/comments/h7va63/constraintlayout_200_beta_7/)
-- url: https://androidstudio.googleblog.com/2020/06/constraintlayout-200-beta-7.html
----
-

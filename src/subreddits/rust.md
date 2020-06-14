@@ -57,53 +57,145 @@ REMOTE: *[Do you offer the option of working remotely? If so, do you require emp
 VISA: *[Does your company sponsor visas?]*
 
 CONTACT: *[How can someone get in touch with you?]*
-## [3][Microsoft: Rust Is the Industry’s ‘Best Chance’ at Safe Systems Programming](https://www.reddit.com/r/rust/comments/h84zwp/microsoft_rust_is_the_industrys_best_chance_at/)
+## [3][Ropey 1.2 - an editable text buffer for Rust](https://www.reddit.com/r/rust/comments/h8o6p4/ropey_12_an_editable_text_buffer_for_rust/)
+- url: https://www.reddit.com/r/rust/comments/h8o6p4/ropey_12_an_editable_text_buffer_for_rust/
+---
+[Ropey v1.2.0](https://crates.io/crates/ropey/1.2.0)
+
+Ropey is a utf8 text rope for Rust, designed to be the backing text buffer for applications such as text editors. Ropey is fast, robust, and can handle huge texts and memory-incoherent edits with ease.
+
+Since the last release announcement on Reddit (v1.0.0) there have been two main feature additions:
+
+* Ropey's iterators have generally been made more flexible.  You can now directly create iterators that start anywhere within the text of the rope, and you can step backwards via a new `prev()` method.
+* Ropey can now convert between scalar value indices and utf16 code unit indices.  This is useful for interop with APIs that may use utf16, such as the Language Server Protocol.
+## [4][Fast 2D rendering on GPU](https://www.reddit.com/r/rust/comments/h8hx7e/fast_2d_rendering_on_gpu/)
+- url: https://raphlinus.github.io/rust/graphics/gpu/2020/06/13/fast-2d-rendering.html
+---
+
+## [5][JetBrains 2020 dev ecosystem survey](https://www.reddit.com/r/rust/comments/h8pur7/jetbrains_2020_dev_ecosystem_survey/)
+- url: https://www.reddit.com/r/rust/comments/h8pur7/jetbrains_2020_dev_ecosystem_survey/
+---
+Rust seems to be the only language (at the moment) where more people are planning on adopting it than are currently using it:
+
+[https://www.jetbrains.com/lp/devecosystem-2020/](https://www.jetbrains.com/lp/devecosystem-2020/)
+
+and some rust specific analysis:
+
+[https://www.jetbrains.com/lp/devecosystem-2020/rust/](https://www.jetbrains.com/lp/devecosystem-2020/rust/)
+## [6][Microsoft: Rust Is the Industry’s ‘Best Chance’ at Safe Systems Programming](https://www.reddit.com/r/rust/comments/h84zwp/microsoft_rust_is_the_industrys_best_chance_at/)
 - url: https://thenewstack.io/microsoft-rust-is-the-industrys-best-chance-at-safe-systems-programming/
 ---
 
-## [4][Tour of Rust - Chapter 7 Released- Object Oriented Programming, French translations, and more.](https://www.reddit.com/r/rust/comments/h80nkc/tour_of_rust_chapter_7_released_object_oriented/)
-- url: https://tourofrust.com/chapter_7_en.html
+## [7][Eddit - A basic text editor with GTK and Rust](https://www.reddit.com/r/rust/comments/h8rl0l/eddit_a_basic_text_editor_with_gtk_and_rust/)
+- url: https://www.reddit.com/r/rust/comments/h8rl0l/eddit_a_basic_text_editor_with_gtk_and_rust/
 ---
+Hi y'all,
 
-## [5][My first rust project, Kalk - A CLI calculator with syntax highlighting (and library) that supports user-defined functions and variables, and fairly ambiguous syntax](https://www.reddit.com/r/rust/comments/h7oqpk/my_first_rust_project_kalk_a_cli_calculator_with/)
-- url: https://github.com/PaddiM8/kalk
+I would like to share my first project in Rust. The repo is available in [GitHub](https://github.com/maze-n/eddit). Please check it out guys.
+
+[https://github.com/maze-n/eddit](https://github.com/maze-n/eddit)
+## [8][Do I use gfx-rs or wgpu-rs?](https://www.reddit.com/r/rust/comments/h8skin/do_i_use_gfxrs_or_wgpurs/)
+- url: https://www.reddit.com/r/rust/comments/h8skin/do_i_use_gfxrs_or_wgpurs/
 ---
+I'm working on a 3D Rendering Engine as a component for my Game Engine, and I'm about to begin programming it. I originally intended to use gfx-hal, but I thought that it was a little overkill for what I'm making. I've narrowed my options down to gfx-rs or wgpu-rs (unless someone points out a better API that I didn't know of), and I'm not sure which to choose, does anyone have any suggestions for which?
 
-## [6][Publishing WASM packages to npm for use by nodejs as well as web(pack)?](https://www.reddit.com/r/rust/comments/h85a9n/publishing_wasm_packages_to_npm_for_use_by_nodejs/)
-- url: https://www.reddit.com/r/rust/comments/h85a9n/publishing_wasm_packages_to_npm_for_use_by_nodejs/
+&amp;#x200B;
+
+Edit: I just found out that wgpu-rs is actually a sort of layer on top of gfx-rs
+## [9][Compiler isn't printing line where erroneous code is](https://www.reddit.com/r/rust/comments/h8ptwc/compiler_isnt_printing_line_where_erroneous_code/)
+- url: https://www.reddit.com/r/rust/comments/h8ptwc/compiler_isnt_printing_line_where_erroneous_code/
 ---
-Is  it possible to publish a single npm package using `wasm-pack` for both  nodejs and browser environments? I have written a rust library that does  not depend on browser or native APIs so `wasm-pack` build can create  packages for either of the targets. But the glue code for nodejs uses `fs`  and the glue code for bundler doesn't create CommonJS modules, so the  generated pkg  only works for one platform at a time.
+Hey y'all. I could use some help finding this warning. *Somewhere* in my code, I'm getting these warnings, but the compiler isn't giving me a line to jump to. I'd post my code, but I don't know where to look. Is there any flag I'm missing that could give me a line number and file?
 
-If  this is not possible, and I need to maintain separate packages for node and bundler/web targets, what is the usual way to use wasm-pack for this?  I'm very new to the ecosystem. TIA!
-## [7][Rust and Jupyter Notebooks - Getting Started](https://www.reddit.com/r/rust/comments/h85c6k/rust_and_jupyter_notebooks_getting_started/)
-- url: https://www.youtube.com/watch?v=SZKEzNL9als
+    $ cargo build --features="rustls/dangerous_configuration"
+    warning: variable does not need to be mutable
+      |
+      = note: `#[warn(unused_mut)]` on by default
+    
+    warning: unused `std::result::Result` that must be used
+      |
+      = note: `#[warn(unused_must_use)]` on by default
+      = note: this `Result` may be an `Err` variant, which should be handled
+    
+    warning: 2 warnings emitted
+    
+        Finished dev [unoptimized + debuginfo] target(s) in 0.08s
+## [10][Mun's "Make It or Break It" contest](https://www.reddit.com/r/rust/comments/h8d1vb/muns_make_it_or_break_it_contest/)
+- url: https://www.reddit.com/r/rust/comments/h8d1vb/muns_make_it_or_break_it_contest/
 ---
+In honour of the [Mun v0.2 release](https://github.com/mun-lang/mun/releases/tag/v0.2.0) we are launching the ***Make It or Break It*** contest. We want to invite both content creators and developers to use Mun v0.2 and *make* or *break* something with/in Mun.
 
-## [8][A demo wasm compiler which itself is also wasm.](https://www.reddit.com/r/rust/comments/h83of9/a_demo_wasm_compiler_which_itself_is_also_wasm/)
-- url: https://github.com/warycat/walrus_demo
+There are two tracks in which you can participate:
+
+***Make It***
+
+Mun was designed to empower creation through iteration, by using natively supported hot reloading for data and functions. Even though Mun v0.2 is still lacking language features - such as enums and arrays - and is limited to single source files, we are excited to see what games and apps people come up with. After all, didn't great artists like Monet create their masterpieces by limiting available tools?
+
+For inspiration, have a look at the classic game [Pong](https://github.com/mun-lang/example-rs/commit/7a9a3757e6360a60a5c37a831afceb48e16d9b96) ([Making of video](https://www.youtube.com/watch?v=n1ea4QUepSU)) that Mun Team devs made.
+
+***Break It***
+
+Mun consists of the Mun ABI[^(1)](https://github.com/mun-lang/mun/blob/master/crates/mun_abi/src/autogen_impl.rs), Mun Compiler[^(1)](https://github.com/mun-lang/mun/tree/master/crates/mun_syntax/src/tests)^(,)[^(2)](https://github.com/mun-lang/mun/blob/master/crates/mun_hir/src/tests.rs)^(,)[^(3)](https://github.com/mun-lang/mun/blob/master/crates/mun_codegen/src/test.rs), and Mun Runtime[^(1)](https://github.com/mun-lang/mun/tree/master/crates/mun_runtime/tests)^(,)[^(2)](https://github.com/mun-lang/mun/blob/master/crates/mun_runtime_capi/src/tests.rs); each with their own tests. Still, there are a lot of untested code paths and other (non-logical) ways that Mun can crash and 🔥. Can you find the craziest, most unexpected bugs?
+
+For inspiration, have a look at breaking Mun's [struct hot reloading](https://mun-lang.org/blog/2020/05/01/memory-mapping) or try fuzzing ([\#152](https://github.com/mun-lang/mun/issues/152)).
+
+***Award***
+
+A contest wouldn't be a contest if there was no award. At the end of every season (i.e. release cycle), we'll release a poll to our Discord community to determine the most popular ***Make It or Break It*** demos. The top contender will be awarded with a mention on our website, but the Mun Team reserves the right to award multiple top contenders (always in order of popularity).
+
+Additionally, all (merged) submissions will be credited on our [Rust](https://github.com/mun-lang/example-rs) example repository.
+
+For more information, please have a look at the [GitHub Issue](https://github.com/mun-lang/mun/issues/220).
+## [11][Can someone review my code? Have a function that seeds data, but I'm not quite sure if it's done in the best way.](https://www.reddit.com/r/rust/comments/h8ozan/can_someone_review_my_code_have_a_function_that/)
+- url: https://www.reddit.com/r/rust/comments/h8ozan/can_someone_review_my_code_have_a_function_that/
 ---
+So here is my code: 
 
-## [9][Rust or C++?](https://www.reddit.com/r/rust/comments/h80fy1/rust_or_c/)
-- url: https://www.reddit.com/r/rust/comments/h80fy1/rust_or_c/
+    pub async fn seed_recipe(pool: &amp;PgPool, recipe: &amp;Recipe, ingredients: &amp;Vec&lt;Ingredient&gt;) -&gt; Uuid {
+        let pool_ref = Rc::new(RefCell::new(pool));
+        let mut sql_ingredients = "INSERT INTO ingredients(id, name, created_at) VALUES".to_owned();
+        let mut sql_recipes_ingredients = "INSERT INTO recipes_ingredients(recipe_id, ingredient_id) VALUES".to_owned();
+        let row: (Uuid,) = sqlx::query_as("
+            INSERT INTO recipes (id, name, created_at)
+            VALUES ($1, $2, $3)
+            RETURNING id"
+        )
+        .bind(recipe.id)
+        .bind(recipe.name.clone())
+        .bind(recipe.created_at)
+        .fetch_one(*pool_ref.borrow_mut()).await.expect("Error inserting recipe.");
+    
+        for ingredient in ingredients {
+            let ingredient_values = &amp;format!("('{}', '{}', '{}'),", ingredient.id, ingredient.name, ingredient.created_at);
+            let ingredient_recipe_values = &amp;format!("('{}', '{}'),", recipe.id, ingredient.id);
+            sql_ingredients.push_str(ingredient_values);
+            sql_recipes_ingredients.push_str(ingredient_recipe_values);
+        }
+    
+        sql_ingredients.pop();
+        sql_recipes_ingredients.pop();
+    
+        sqlx::query(sql_ingredients.as_str()).execute(*pool_ref.borrow_mut()).await.expect("Error inserting ingredients.");
+        sqlx::query(sql_recipes_ingredients.as_str()).execute(*pool_ref.borrow_mut()).await.expect("Error inserting recipes_ingredients.");
+    
+        row.0
+    
+    }
+
+Basically, this just does a couple of inserts. First, I insert a recipe, then a list of ingredients that belong to that recipe and finally a bunch of associations between those records within a many-to-many table. 
+
+I'm not sure if the way I'm building the queries to insert is the most efficient or if I'm using `Rc&lt;T&gt;`and `RefCell&lt;T&gt;` properly. 
+
+I was wondering if someone could help me out. Also, I'm using expects instead of handling the errors because this is supposed to be a utility function for my tests. If it fails, it fails, it shouldn't handle anything special in the case of an error. 
+
+Thanks in advance.
+## [12][Beginner question: Best practice for performing gaussian elimination on a sparse matrix (and keeping the borrowchecker happy)](https://www.reddit.com/r/rust/comments/h8sd46/beginner_question_best_practice_for_performing/)
+- url: https://www.reddit.com/r/rust/comments/h8sd46/beginner_question_best_practice_for_performing/
 ---
-Looking at adding a "systems programming level" language to a higher-level general purpose programming language that I already know, should I learn Rust or C++?
+I want to represent my matrix as Vec&lt;Vec&lt;(i32,f64)&gt;&gt; - this is a list gor each row which contains tuples (column index, value).
 
-I feel bad about not learning Rust since it's very new, everyone loves it, replaces the previous two, but I'm not sure if it will be as big and important as the others, and I want to learn the one that is going to kind of "shape the next technology" kind of language.
+Now for the elimination I fetch a row (immutable borrow) and iterate over all rows below which of course is a mut borrow and makes the borrow checker quite unhappy.
 
-Edit: I'm interested in Systems Programming in the way of "learning and building small systems from scratch". I also heard machine learning is a new trend and that these languages create the core of ML libraries, so why not consider this as an extra goal!
-## [10][A simple pong game in &lt; 80 lines of Rust, using fltk-rs](https://www.reddit.com/r/rust/comments/h86vhx/a_simple_pong_game_in_80_lines_of_rust_using/)
-- url: https://www.reddit.com/r/rust/comments/h86vhx/a_simple_pong_game_in_80_lines_of_rust_using/
----
-Hi
+Therefore the question is - what would be the best practice here? Wrap the rows in RefCell or use a unsafe block?
 
-Since the library provides drawing primitives (as well as opengl primitives), event-handling and an event loop, I thought I'd write a simple demo game.
-
-[https://github.com/MoAlyousef/fltk-rs/blob/master/examples/pong.rs](https://github.com/MoAlyousef/fltk-rs/blob/master/examples/pong.rs)
-## [11][How long until you are productive? How long until you are productive and write good code?](https://www.reddit.com/r/rust/comments/h86rjg/how_long_until_you_are_productive_how_long_until/)
-- url: https://www.reddit.com/r/rust/comments/h86rjg/how_long_until_you_are_productive_how_long_until/
----
-Everyones has different amounts of time to pour into rust learning, whats your opinion?
-## [12][Forth implemented in Rust trait system](https://www.reddit.com/r/rust/comments/h878w4/forth_implemented_in_rust_trait_system/)
-- url: https://github.com/Ashymad/fortraith
----
-
+Any hints would be highly appreciated - I can of course post code if my question is unclear.

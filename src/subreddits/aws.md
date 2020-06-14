@@ -21,152 +21,77 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][Get custom metric using get-metric-statistics](https://www.reddit.com/r/aws/comments/h869ad/get_custom_metric_using_getmetricstatistics/)
-- url: https://www.reddit.com/r/aws/comments/h869ad/get_custom_metric_using_getmetricstatistics/
+## [2][How to host this django project on AWS](https://www.reddit.com/r/aws/comments/h8sya9/how_to_host_this_django_project_on_aws/)
+- url: https://www.reddit.com/r/aws/comments/h8sya9/how_to_host_this_django_project_on_aws/
 ---
-Hi, 
+I made a project which includes a django-celery-beat task ([https://github.com/celery/django-celery-beat](https://github.com/celery/django-celery-beat)) which is used in order to query an API every second and store the result in a database (SQLite). Is it straightforward to host this on AWS, given that it's already working as it should locally? I've never done something like this using AWS, so am open to all possible suggestions regarding what's the best way to do it. Should I for instance host it on EC2 or something else?
 
-This works:
-
-    aws cloudwatch get-metric-statistics --metric-name 'CPUUtilization' --start-time 2020-06-13T10:00:00Z --end-time 2020-06-13T10:05:00Z --period 3600 --namespace AWS/EC2 --statistics Maximum --dimensions Name=InstanceId,Value=i-0b7765711d215xxxx
-
-I am trying to do the same for a custom metric that I can see in Cloudwatch called "'Memory % Committed Bytes In Use'":
-
-    aws cloudwatch get-metric-statistics --metric-name 'Memory % Committed Bytes In Use' --start-time 2020-06-13T10:00:00Z --end-time 2020-06-13T10:05:00Z --period 3600 --namespace AWS/EC2 --statistics Maximum --dimensions Name=InstanceId,Value=i-0b7765711d215xxxx
-
-That isn't finding it, it just returns:
-
-    {
-        "Label": "Memory % Committed Bytes In Use",
-        "Datapoints": []
-    }
-
-Any idea on how I can get that memory metric? If I try and graph it, I can see it under under the "All Metrics" tab, and to the left of the search bar, I have 
-
-    London | All&gt; CWAgent &gt; AutoScalingGroupName, ImageId, InstanceId, InstanceType, objectname'
-
-If that makes sense?
-## [3][We are the AWS ML Heroes - Ask the Experts - June 15th @ 9AM PT / 12PM ET / 4PM GMT!](https://www.reddit.com/r/aws/comments/h7rayy/we_are_the_aws_ml_heroes_ask_the_experts_june/)
-- url: https://www.reddit.com/r/aws/comments/h7rayy/we_are_the_aws_ml_heroes_ask_the_experts_june/
+The project is quite basic - it contains a view which has a live chart (highcharts) that is fed through websockets with the data I'm putting into the DB (that comes from the previously mentioned API). I also have another view which contains a form where the user inputs a date range and then gets a file to download. But my aprehension is coming mainly with how farfetched it will be in respect to the celery beat, given that on my local machine I'm using redis and so on.
+## [3][I am getting billed if my RDS instance is stopped?](https://www.reddit.com/r/aws/comments/h8p7yt/i_am_getting_billed_if_my_rds_instance_is_stopped/)
+- url: https://www.reddit.com/r/aws/comments/h8p7yt/i_am_getting_billed_if_my_rds_instance_is_stopped/
 ---
-Hey r/aws!
+Hi!
 
-u/AmazonWebServices here.
+I have a situation where I need to access my database for probably like 10 hours out of the whole month. Obviously I don't want to pay for the whole month and I also don't want to spin it up (if it's avoidable) just to access it. Will I be billed if instance is stopped/paused? Or what other solutions can there be for such a case?
 
-Several AWS Machine Learning Heroes will be hosting an Ask the Experts session here in this thread to answer any questions you may have about training and tuning ML models, as well as any questions you might have about Amazon SageMaker or machine learning in general. You don’t want to miss this one!
-
-Already have questions? Post them below and we'll answer them starting at 9AM PT on June 15, 2020!
-## [4][Serverless - 0 logs in CloudWatch, but full logs when debugging](https://www.reddit.com/r/aws/comments/h8210j/serverless_0_logs_in_cloudwatch_but_full_logs/)
-- url: https://www.reddit.com/r/aws/comments/h8210j/serverless_0_logs_in_cloudwatch_but_full_logs/
+Thanks in advance!
+## [4][How to flush RAM in Ubuntu EC2 instance?](https://www.reddit.com/r/aws/comments/h8ixph/how_to_flush_ram_in_ubuntu_ec2_instance/)
+- url: https://www.reddit.com/r/aws/comments/h8ixph/how_to_flush_ram_in_ubuntu_ec2_instance/
 ---
-Hi,
+I tried commands such as: sync; echo 1 &gt; /proc/sys/vm/drop_caches
 
-I've managed to do something awesome, and I think other people would want to do it as well - I've 100% disabled CloudWatch logging for all my Lambda functions (using a "logs:*" DENY policy) while still being able to have all logs that are needed when debugging with 0 costs.
-
-Pre-requisites:
-- Sentry (either hosted or on-premise)
-- a basic understanding of the "logging" library in Python
-
-Reasons to do this:
-- as mentioned in my other post (https://www.reddit.com/r/aws/comments/g3k1zr/lambda_logs_to_anything_else_but_cloudwatch/), I had shitload of costs triggered by CloudWatch PutEvents that were killing my AWS budget
-- I hate scrolling through the new CloudWatch Web UI
-- I'm not interested in paying for another service (eg custom ElasticSearch/Datadog) to query/filter my logs
-
-
-How to do it:
-- create your projects in Sentry and get a DSN (preferrably one for each of your Lambda repositories)
-- include the Sentry SDK in your custom Layer
-- and then:
-
-```
-from sentry import capture_exception
-from sentry import capture_message
-import logging
-
-def lambda_handler(event, context):
-  log = logging.getLogger("my-logger")
-  log.debug("Hello, world")
-  capture_message("something happened")
-
-```
-
-And that's it.
-
-Now, when an exception is triggered through Sentry, you also get the benefit of having all the logs up until that point, WITHOUT them being stored or even sent to CloudWatch.
-
-Proof -&gt; https://drive.google.com/file/d/12KWGTjizUAfAzGBFHmy0OHUHtVwoBNm3/view?usp=drivesdk
-
-
-Full disclosure: I'm the CTO of https://rungutan.com , an api-driven SaaS load testing platform written 100% on Serverless technologies
-## [5][AWS Anti Patterns - Mixing Accounts](https://www.reddit.com/r/aws/comments/h7jy11/aws_anti_patterns_mixing_accounts/)
-- url: https://www.reddit.com/r/aws/comments/h7jy11/aws_anti_patterns_mixing_accounts/
+But I get permission denied even using sudo.  How can I clear memory on a running EC2.
+I’m troubleshooting memory leaks but while I do I need to restart the instance very often and it’s taking much time.
+## [5][Safe to use programmatic access over public internet?](https://www.reddit.com/r/aws/comments/h8s8dg/safe_to_use_programmatic_access_over_public/)
+- url: https://www.reddit.com/r/aws/comments/h8s8dg/safe_to_use_programmatic_access_over_public/
 ---
-Guilty of this myself and seeing many others fall into the same trap, I wanted to make a quick technical resource to highlight the problems with mixing accounts and why its important to avoid this trap from the beginning.
+I have a relatively straightforward question; I have sometimes used programmatic access (Access Key/Secure Key) to do stuff over public internet (for hobbyist purposes), and always somewhat assumed that it is safe to do.
 
-Video is available here: https://youtu.be/A_XnXc-5i8Y
-## [6][Can I use AWS WAF with my own web server that is hosted on an EC2 instance?](https://www.reddit.com/r/aws/comments/h7ofot/can_i_use_aws_waf_with_my_own_web_server_that_is/)
-- url: https://www.reddit.com/r/aws/comments/h7ofot/can_i_use_aws_waf_with_my_own_web_server_that_is/
+However, I'm looking for a real explanation of how this works to prove that it is secure (or quantify how secure it is). Mostly for my own learning due to being somewhat obsessive about security.
+
+* Assuming that you use key rotation and your keys are not exposed in any way.
+* When there is no other alternative, do you consider programmatic access a fully secure solution?
+* Do you know exactly how it works?
+## [6][Making diagram of existing cloud infrastructure](https://www.reddit.com/r/aws/comments/h8p6rj/making_diagram_of_existing_cloud_infrastructure/)
+- url: https://github.com/Cloud-Architects/cloudiscovery
 ---
-Or AWS WAF works only with Cloud Front and Application Load Balancer?
-## [7][How to Achieve the parallelism for these distributed tasks handling with AWS](https://www.reddit.com/r/aws/comments/h84nqr/how_to_achieve_the_parallelism_for_these/)
-- url: https://www.reddit.com/r/aws/comments/h84nqr/how_to_achieve_the_parallelism_for_these/
+
+## [7][Aggregate result of all lambda invocation](https://www.reddit.com/r/aws/comments/h8ormf/aggregate_result_of_all_lambda_invocation/)
+- url: https://www.reddit.com/r/aws/comments/h8ormf/aggregate_result_of_all_lambda_invocation/
 ---
-While developing an infra on aws having certain questions and issues I am facing with it. I want to parallelism distributed tasks handling for API.
+My use case is that I need ti check how many objects from the list are missing  in s3, and return number of missing documents. Note that the list size can be of milion order of magnitude. 
 
-Scenario- I have an app that is related to banking where every minute  millions of requests generate for scheduling reports. Report are of  several types. Like say Account report, Transaction report, and so on.  which can be further schedule daily, weekly, monthly or custom. It  should be send using email and report attach to email.
+From what I gather I have to use HeadObject but doing that sequentially would be too slow. So I could send all messages to the queue and have each lambda head few objects. However I'm stuck on how to aggregate that data further, i.e. how to sum results from  all parallel executions. 
 
-Now what I require is I want build an API to handle such request and  schedule the reports. Once it scheduled I want to make sure it execute  the N  
- number of whenever it is scheduled.(parallel) \[The reason I want Parallel execution of all the reports which is  scheduled at same time is because lets say if user(s) schedule report(s)  at 11:00 UTC it should receive the report at the same time. I don't  want user(s) end up receiving reports after 1hr or 2hr or N  
-  number of hours. No matter how much reports are scheduled, Ever time it  should execute the report at given time stamp. That's why I am looking  for some solution of handling such case of parallel distributed tasks  handling.\]
-
-I tried -  I am not sure what AWS services would be more reliable for  such kind of situation. I built API using API Gateway with SQS &gt;  Lambda which create event on cloudwatch and execute it with lambda  trigger to send SES(email). (But this approach leave me at certain issues if delaying the report  delivery where N  
- number of users scheduled report at the same time.)
-
-Can anyone help me here with forming some very efficient solution that can handle such cases seamlessly without any delay.
-## [8][ACM now allows Route53 Hosted Zone validation via Cloudformation](https://www.reddit.com/r/aws/comments/h7v0hp/acm_now_allows_route53_hosted_zone_validation_via/)
-- url: https://www.reddit.com/r/aws/comments/h7v0hp/acm_now_allows_route53_hosted_zone_validation_via/
+I've seen that maybe Kinesis can be used to this effect, but I never worked with it so I don't know if it will fit my use case.
+## [8][Is there a way to implement a system where an IAM admin can allow or ignore every resource an IAM user tries to create?](https://www.reddit.com/r/aws/comments/h8tmwl/is_there_a_way_to_implement_a_system_where_an_iam/)
+- url: https://www.reddit.com/r/aws/comments/h8tmwl/is_there_a_way_to_implement_a_system_where_an_iam/
 ---
-ACM at some point updated their Domain Validation option to include a Hosted Zone ID for a domain name. You can specify a hosted zone for ACM to validate your certificates, so it is fully automated (unless I am wrong). How long has this been a thing? 
+Hi, is there a way in AWS where an IAM user will request the AWS IAM Admin User to grant him permission to create a particular resource?
 
-[Domain Validation option spec] (https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-certificatemanager-certificate-domainvalidationoption.html)
-## [9][Custom metrics, ASGs, and Cloudwatch alarms](https://www.reddit.com/r/aws/comments/h7xk89/custom_metrics_asgs_and_cloudwatch_alarms/)
-- url: https://www.reddit.com/r/aws/comments/h7xk89/custom_metrics_asgs_and_cloudwatch_alarms/
+For example, John (IAM User) wants to create a t2.large EC2. But to do that, he will need to send a request to Mark (AWS Admin User). Mark will review the request and can either grant him permission to create t2.large EC2 or can ignore it. Is this possible? Thanks.
+## [9][In S3 bucket, uploading files with different extensions like .glb,.gltf or USDZ are getting converted into .bin file.](https://www.reddit.com/r/aws/comments/h8g5zt/in_s3_bucket_uploading_files_with_different/)
+- url: https://www.reddit.com/r/aws/comments/h8g5zt/in_s3_bucket_uploading_files_with_different/
 ---
-Hello,
+When I am trying to upload it directly from AWS console, its working but not with PHP Laravel.  
+I m having trouble with 3D files via Laravel file uploader,   
 
-We have an application running on instances in an ASG that has an issue with memory. To get around this until we have a code fix, I wrote a lambda function to do some checks on the health of the TG, then take the instance out, reboot it, and add it back in. The aim was to trigger this when RAM utilization gets above a certain amount.
 
-The problem is that frustratingly I can't create an alarm for this as it looks like the RAM metric from CWAgent needs to be selected on an instance by instance basis, and these are in ASG.
-
-So do I need another Lambda function to update the Cloudwatch Alarm on a regular basis? Or is there another way?
-
-The only other thing I was thinking of was writing something that runs inside the instance itself, but that could be unreliable...
-## [10][How exactly do applications handle auto scaling?](https://www.reddit.com/r/aws/comments/h7rnex/how_exactly_do_applications_handle_auto_scaling/)
-- url: https://www.reddit.com/r/aws/comments/h7rnex/how_exactly_do_applications_handle_auto_scaling/
+files that are working  
+.html, mp4, jpeg, jpg, png and more.
+## [10][Restrict API gateway by IP for POST only](https://www.reddit.com/r/aws/comments/h8q9wy/restrict_api_gateway_by_ip_for_post_only/)
+- url: https://www.reddit.com/r/aws/comments/h8q9wy/restrict_api_gateway_by_ip_for_post_only/
 ---
-Been working with AWS for a few years and am taking my SAA cert in a few days, however with my experience and all the prep I did for the exam, I still don't fully understand how applications know how to work with auto scaling groups.
-
-The common architecture is ELB &lt;-&gt; EC2 Auto Scaling Group &lt;-&gt; Database.  I fully understand how ASGs work to dynamically route traffic between the ELB and database tiers, build/destroy instances, and monitor health of targets, but what I don't understand is how do the actual compute application itself work with this dynamic environment?
-
-It seems to be that there is some magic going on behind the scenes where an application just "knows" how to deal with it (obviously not the case), or somehow the application just doesn't care about the infrastructure.  Do developers have to develop their applications in a way to "work" with auto scaling?  Are there any examples of applications that would not work with ASGs by default or by the nature of the program?
-## [11][How to SSM or Similar to Automatically Attach Elastic Graphics on Instance Launch??](https://www.reddit.com/r/aws/comments/h7upw6/how_to_ssm_or_similar_to_automatically_attach/)
-- url: https://www.reddit.com/r/aws/comments/h7upw6/how_to_ssm_or_similar_to_automatically_attach/
+Hey all. Please let me know if this isn’t the right place to ask. Is it possible to restrict an API gateway that’s running an express app using proxy+ to allow GETs from anywhere but to restrict POSTs to a certain set of IPs? Would they need to be separate resources to support this? Thanks in advance
+## [11][Help with separating data in AWS Glue](https://www.reddit.com/r/aws/comments/h8bft9/help_with_separating_data_in_aws_glue/)
+- url: https://www.reddit.com/r/aws/comments/h8bft9/help_with_separating_data_in_aws_glue/
 ---
-I am looking for a means to have a particular AMI always launch with elastic graphics. The software my client uses (not my software), calls on AWS to create a spot instance fleet with a selected AMI and instance type, but does not provide the option to create and attach elastic graphics to the instances being launched.
+I have a support ticket out but I might as well exhaust all resources. 
 
-&amp;#x200B;
+To try and give a brief overview of what I'm doing, I have a table of records that have 2 different IDs. One ID is a unique identifier, the other ID is used to group 1-3 records.  
+EX:  
+* recordID: 1, groupID: abc
+* recordID: 2, groupID: abc
+* recordID: 3, groupID: def  
 
-Ideally, I would just append the following to the code that controls launching instances, but I don't have access to the code to add it:
-
- \--elastic-gpu-specification Type=eg1.2xlarge 
-
-&amp;#x200B;
-
-Unfortunately, the instances are being launched from this cloud management app doesn't support this, and I cannot add in the appropriate flags to create and attach elastic graphics on launch from there. My task is to find a workaround to this particular software's limitation and just have aws automatically do the deed anytime the instance is launched.  
-
-&amp;#x200B;
-
-I have been trying to find a means via a cloudwatch event -&gt; SSM function, but it seems that there are only means to set up monitoring.  
-
-
-Any ideas here?  Thanks.
+I don't really care about recordID, I want to get all unique groupIDs. In MySQL where I come from, that's a simple GROUP BY, but I'm not sure how to do it in AWS. My Glue job already separated out the data nicely how I want it, but it's currently going to give me duplicate records without a group by or something similar. How do I separate them out?

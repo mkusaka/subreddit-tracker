@@ -19,7 +19,150 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][The case of the disappearing db column :(](https://www.reddit.com/r/rails/comments/h7ww81/the_case_of_the_disappearing_db_column/)
+## [2][Quick Demo of Reactive UI with Stimulus Reflex](https://www.reddit.com/r/rails/comments/h8j14f/quick_demo_of_reactive_ui_with_stimulus_reflex/)
+- url: https://www.reddit.com/r/rails/comments/h8j14f/quick_demo_of_reactive_ui_with_stimulus_reflex/
+---
+[https://youtu.be/MlnNkcz-oIc](https://youtu.be/MlnNkcz-oIc)
+## [3][Out of curiosity, how many of you are finding that your professional Rails-based environment is moving more toward JavaScript?](https://www.reddit.com/r/rails/comments/h8mdaz/out_of_curiosity_how_many_of_you_are_finding_that/)
+- url: https://www.reddit.com/r/rails/comments/h8mdaz/out_of_curiosity_how_many_of_you_are_finding_that/
+---
+The reason I ask this is because I am - and have been for quite some time - a professional JavaScript developer.
+
+However, I love working with Rails and am positioning myself to move into my first Rails gig within the next 6 months.
+
+And I had a very interesting conversation with a pro Rails developer the other day.  This guy is a senior engineer who has been doing Rails for over 12 years.  Recently, though, he was laid off from a remote job due to his company taking a big economic hit because of Covid-19.
+
+He told me that he immediately started sending out resumes and went through a battery of tests and interviews and what struck his as interesting is that they were FAR more interested in his JavaScript (React mainly) experience than they were his 12 years of Rails development.  In fact, he said that because of my JS experience, I would probably have an easier time finding a Rails job than he did - which sounds ludicrous. 
+
+Are any of you folks starting to witness the shift as well?
+## [4][Calculating average order frequency in days with activerecord](https://www.reddit.com/r/rails/comments/h8pzlo/calculating_average_order_frequency_in_days_with/)
+- url: https://www.reddit.com/r/rails/comments/h8pzlo/calculating_average_order_frequency_in_days_with/
+---
+For every user with more than one order, I want to calculate the average amount of time in between order's `created_at` in days (how often a user places an order):
+
+7th grade math way: Calculate the average by taking the total sum of the numbers divided by the total number count:
+
+`[1,2,3,4].sum / [1,2,3,4].length`
+
+This is a bit more tricky when dealing with dates (more specifically time in seconds). Can I accomplish this with the same level of accuracy using the `.minimum` and `.maximum` activerecord methods?
+
+The only way I've been able to get what appears to be an accurate number is by breaking down the dates by `seconds` and converting to `days`
+
+my code so far (very ugly and expensive):
+
+    def self.average_order_frequency
+        frequency_collection = []
+        customers = User.joins(:orders)
+        .group('users.id')
+        .having('count(orders) &gt; 1') 
+    
+        if customers.any?
+          customers.each do |customer|
+            orders = customer.orders
+    
+            seconds = orders.maximum(:created_at) - orders.minimum(:created_at)
+            avg_seconds = seconds / (orders.count - 1)
+            avg_days = avg_seconds / (24 * 60 * 60)
+    
+            frequency_collection.push(avg_days)
+          end
+    
+          "#{(frequency_collection.sum / customers.length).round(2)} days in between orders on average"
+        else
+          "none to show"
+        end
+      end
+
+I tried to get a day count using a range:
+
+    (order[num+1].created_at.to_date..order[num].created_at.to_date).to_i
+
+but it requires an additional nested block and several more lines in an already ugly method.
+
+How do you calculate the average amount of days in between records creation?
+## [5][What is the best way to access the joined model's data in has_may :through?](https://www.reddit.com/r/rails/comments/h8ghu7/what_is_the_best_way_to_access_the_joined_models/)
+- url: https://www.reddit.com/r/rails/comments/h8ghu7/what_is_the_best_way_to_access_the_joined_models/
+---
+I'm creating a standard has\_many :through association like the one outlined in the [rails guide.](https://guides.rubyonrails.org/association_basics.html#the-has-many-through-association)
+
+I have `Users` and `Gardens` joined through `GardenUsers` as shown below.  
+
+
+    class User &lt; ApplicationRecord
+      has_many :garden_users, dependent: :destroy
+      has_many :gardens, through: :garden_users
+    end
+    
+    class Garden &lt; ApplicationRecord
+      has_many :garden_users, dependent: :destroy
+      has_many :users, through: :garden_users
+    end
+    
+    class GardenUser &lt; ApplicationRecord
+      belongs_to :user
+      belongs_to :garden
+      enum garden_role: {owner: 0, maintainer: 1, harvester:2}
+    end
+
+My first question:
+
+This seems like the best association because `Users` will have multiple `Gardens` and visa versa, but is there a better way, given that there will only be one connection between any given user/garden? If it is the best, what would be best way to ensure that there is only one instance of any `garden_id/user_id` combination in `garden_users`?
+
+My second question is:  
+What is the best way to access a user's `garden_role` for a specific garden? The best way that I could come up with is
+
+    class User &lt; ApplicationRecord
+      def garden_role(garden)
+        garden_user.find_by(garden_id: garden.id).garden_role
+      end
+    end
+
+but that feels a bit clunky and seems like a common enough thing that there would be a more "rails magic" way to access whatever data is in the `GardenUser` model.
+## [6][Experience with the Shopify API?](https://www.reddit.com/r/rails/comments/h8c3cv/experience_with_the_shopify_api/)
+- url: https://www.reddit.com/r/rails/comments/h8c3cv/experience_with_the_shopify_api/
+---
+Hey - does anyone have experience with the Shopify API? If so, I'd love some help. 
+
+When a Shopify Merchant installs my app (written in RoR), we ask the Merchant to manually add some Liquid code to their Theme files. But I'd like to automate that process and can't figure out how to do it.
+## [7][ActiveStorage: How to convert images to WebP properly?](https://www.reddit.com/r/rails/comments/h87nfs/activestorage_how_to_convert_images_to_webp/)
+- url: https://www.reddit.com/r/rails/comments/h87nfs/activestorage_how_to_convert_images_to_webp/
+---
+Hey there,
+
+currently I'm experiment with ActiveStorage and image optimization. To convert my JPGs to WebPs is my main goal at the moment to increase the performance and loading time.
+
+Problem: converting JPG to WebP works out of the box but the generated WebPs acts like JPG (MIME type and file extension)
+
+One of my models has an active storage association: `has_one_attached :profile_picture`
+
+The view:
+
+&amp;#x200B;
+
+    - Photomodel.all.each do |model|
+     - if model.profile_picture.attached?
+      .pictures{style: "display: flex"}
+        = image_tag(model.profile_picture.variant(convert: :webp, resize_to_limit: [300,300]), alt: 'webp')
+        = image_tag(model.profile_picture.variant(resize_to_limit: [300,300]), alt: 'jpg')
+
+Actually, rails converts the uploaded JPG to WebP but ignores to change the mime type and the file extension.
+
+https://preview.redd.it/0i7ppk1tjo451.png?width=449&amp;format=png&amp;auto=webp&amp;s=0f8fa1b585203e5e21fd2059cec3315b76dc6101
+
+&amp;#x200B;
+
+https://preview.redd.it/wdosqg84jo451.jpg?width=912&amp;format=pjpg&amp;auto=webp&amp;s=67ab5c4ae4a4a93621d1e7aef55b8b45cc3ff054
+
+With `pry` I tried to inspect the active storage object to change those parameters but found nothing in this direction.
+
+Is it possible to change the parameter of mime type and file extention to 'image/webp' and .webp?
+
+Many thanks!
+## [8][Hello Everyone, new rails user, I’ve built a functional CRUD rails app, now I need tips on styling](https://www.reddit.com/r/rails/comments/h8ikx9/hello_everyone_new_rails_user_ive_built_a/)
+- url: https://www.reddit.com/r/rails/comments/h8ikx9/hello_everyone_new_rails_user_ive_built_a/
+---
+I am done with my app, I’ve given it full Crud functionality, but it’s looking very plain. I’ve designed the home page and about page quite nicely, but is there any way to style my views *after* the app is completed? This might sound like a basic and stupid question, but I am new to this. Most of the resources online are for those who are starting from scratch and I am not. Thanks in advance.
+## [9][The case of the disappearing db column :(](https://www.reddit.com/r/rails/comments/h7ww81/the_case_of_the_disappearing_db_column/)
 - url: https://www.reddit.com/r/rails/comments/h7ww81/the_case_of_the_disappearing_db_column/
 ---
 I have been programming in RoR since version 2.0, but I have never encountered a problem like this til now.  This is my second RoR API with React as the front end app. RoR v6.02
@@ -55,181 +198,14 @@ Lastly, just in case, I renamed the column to **status**, but nothing changed ex
 Any ideas will be appreciated.
 
 P.S.  I have been working in digital electronics since 1954, with a degree in Electrical Engineering.  The first machine I worked on was a LGP-30 with 8k words of drum memory.  The OS was a graduate student with a cot (and miles of paper tape).  I am probably among the few survivors who knows how to program around drum latency :) /brag
-## [3][Rails Routes in Rails 6 looks kinda terrible in the terminal](https://www.reddit.com/r/rails/comments/h7lozw/rails_routes_in_rails_6_looks_kinda_terrible_in/)
+## [10][Rails Routes in Rails 6 looks kinda terrible in the terminal](https://www.reddit.com/r/rails/comments/h7lozw/rails_routes_in_rails_6_looks_kinda_terrible_in/)
 - url: https://www.reddit.com/r/rails/comments/h7lozw/rails_routes_in_rails_6_looks_kinda_terrible_in/
 ---
 Does anyone have a solution for the rails routes command that doesn't require grepping a specific controller or using the expand flag, that would pretty up the output of the rails routes command? It seems to be thrown off by action mail and active storage routes because of their length. Sure, I could use the expanded flag but then the console window can go for days. I would like to just see the formatting locked like it used to be or maybe even suppress the action mail stuff. 
 
 https://preview.redd.it/5pyumixzoh451.png?width=1706&amp;format=png&amp;auto=webp&amp;s=c4e08fe5012b36a9f1957842de27ba785805d509
-## [4][heroku[logplex]: Error L10 (output buffer overflow): drain 'd.cfcd3264-7259-4b12-ac5b-016032978174' dropped 1 messages since 2020-06-12T14:40:59.280571+00:00.](https://www.reddit.com/r/rails/comments/h7lyqq/herokulogplex_error_l10_output_buffer_overflow/)
+## [11][heroku[logplex]: Error L10 (output buffer overflow): drain 'd.cfcd3264-7259-4b12-ac5b-016032978174' dropped 1 messages since 2020-06-12T14:40:59.280571+00:00.](https://www.reddit.com/r/rails/comments/h7lyqq/herokulogplex_error_l10_output_buffer_overflow/)
 - url: https://www.reddit.com/r/rails/comments/h7lyqq/herokulogplex_error_l10_output_buffer_overflow/
 ---
   
 How can I even begin troubleshooting this? it would help to know what the contents of the dropped messages were, or at least which method/process/dyno these dropped messages originated from.
-## [5][How to handle dynamic, nested WHERE AND/OR queries using active record](https://www.reddit.com/r/rails/comments/h7pxmb/how_to_handle_dynamic_nested_where_andor_queries/)
-- url: https://www.reddit.com/r/rails/comments/h7pxmb/how_to_handle_dynamic_nested_where_andor_queries/
----
-I'm currently building a feature that requires me to loop over an hash, and for each key in the hash, dynamically modify an SQL query.
-
-The actual SQL query should look something like this:
-
-```sql
-select * from space_dates d
-	inner join space_prices p on p.space_date_id = d.id
-	where d.space_id = ?
-	and d.date between ? and ?
-	and (
-		(p.price_type = 'monthly' and p.price_cents &lt;&gt; 9360) or
-		(p.price_type = 'daily' and p.price_cents &lt;&gt; 66198) or
-		(p.price_type = 'hourly' and p.price_cents &lt;&gt; 66198) # This part should be added in dynamically
-	)
-```
-
-The last `and` query is to be added dynamically, as you can see, I basically need only one of the conditions to be true but not all.
-
-```
-query = space.dates
-      .joins(:price)
-      .where('date between ? and ?', start_date, end_date)
-
-# We are looping over the rails enum (hash) and getting the key for each key value pair, alongside the index
-
-SpacePrice.price_types.each_with_index do |(price_type, _), index|
-  amount_cents = space.send("#{price_type}_price").price_cents
-  query = if index.positive? # It's not the first item so we want to chain it as an 'OR'
-            query.or(
-              space.dates
-               .joins(:price)
-               .where('space_prices.price_type = ?', price_type)
-               .where('space_prices.price_cents &lt;&gt; ?', amount_cents)
-             )
-           else
-             query # It's the first item, chain it as an and
-               .where('space_prices.price_type = ?', price_type)
-               .where('space_prices.price_cents &lt;&gt; ?', amount_cents)
-           end
-end
-```
-
-The output of this in rails is:
-
-```
-SELECT "space_dates".* FROM "space_dates"
-  INNER JOIN "space_prices" ON "space_prices"."space_date_id" = "space_dates"."id"
-  WHERE "space_dates"."space_id" = $1 AND (
-   (
-     (date between '2020-06-11' and '2020-06-11') AND
-     (space_prices.price_type = 'hourly') AND (space_prices.price_cents &lt;&gt; 9360) OR
-     (space_prices.price_type = 'daily') AND (space_prices.price_cents &lt;&gt; 66198)) OR
-     (space_prices.price_type = 'monthly') AND (space_prices.price_cents &lt;&gt; 5500)
-   ) LIMIT $2 
-```
-
-Which isn't as expected. I need to wrap the last few lines in another set of round brackets in order to produce the same output. I'm not sure how to go about this using ActiveRecord.
-
-It's not possible for me to use `find_by_sql` since this would be dynamically generated SQL too.
-## [6][Form_for PUT instead of PATCH in the edit form](https://www.reddit.com/r/rails/comments/h7qr9d/form_for_put_instead_of_patch_in_the_edit_form/)
-- url: https://www.reddit.com/r/rails/comments/h7qr9d/form_for_put_instead_of_patch_in_the_edit_form/
----
-So I am using partial in new and edit part of my User object, and by default, Rails applies \_method as PATCH while submitting the edit option. How can I use PUT instead of the patch.  
-I cant add method as then it will be an issue while creating a new user.
-## [7][Deploying subdirectory projects to Heroku](https://www.reddit.com/r/rails/comments/h7iazy/deploying_subdirectory_projects_to_heroku/)
-- url: https://www.reddit.com/r/rails/comments/h7iazy/deploying_subdirectory_projects_to_heroku/
----
-When you have your project services (API backend, frontend, background processing, etc.) in one monorepo you might struggle with a simple way of deploying them to Heroku independently. Here's an article containing a way of doing just that.
-
-TL;DR: The easiest solution is 
-```
-git subtree push --prefix path/to/app-subdir heroku master
-```
-
-To get more details and a more complex solution that provides the ability to set up a deployment from CI and utilizing Heroku Review Apps you can read the article.
-
-https://jtway.co/deploying-subdirectory-projects-to-heroku-f31ed65f3f2
-## [8][MVC vs 3-tier architecture](https://www.reddit.com/r/rails/comments/h17sez/mvc_vs_3tier_architecture/)
-- url: https://www.reddit.com/r/rails/comments/h17sez/mvc_vs_3tier_architecture/
----
-**So this has always been a debatable topic.**  
-**Approach 1:** We use the classic rails MVC architecture with Server Side rendering.  
-**Approach 2:** We use client-side rendering, with rails working as a backend providing the JSON response and client to be made using react or any frontend framework.
-
-  
-I would love to get some insights and have a discussion on what are the pros and cons of both these approaches.  
-
-
-Some of my thoughts are:  
-\* Using client-side rendering restricts us to leverage the magic provided by rails. (form auto completions, an automatic mapping between endpoint and controller methods)  
-\* Client-side rendering makes the application a bit lighter, as the server is not responsible for rendering the UI for every instance.  
-\* I personally am not very comfortable in Js, so using Rails MVC is always an easy way out for me.  
-
-
-Let's discuss this!
-## [9][Can I use a conditional to toggle between rendered partials?](https://www.reddit.com/r/rails/comments/h79ljs/can_i_use_a_conditional_to_toggle_between/)
-- url: https://www.reddit.com/r/rails/comments/h79ljs/can_i_use_a_conditional_to_toggle_between/
----
-I'm trying to render a partial/hide another partial on a page when a button is clicked. Is this possible with a conditional? Or possible at all? Something like:   
-
-
-    -if @toggle == 'show'
-      = render :partial =&gt; "partial_one"
-    
-    -elsif @toggle == 'hide'
-      = render :partial =&gt; "partial_two"
-## [10][Implementing search, should I go for Algolia or is Rails/Postgres enough?](https://www.reddit.com/r/rails/comments/h14rpx/implementing_search_should_i_go_for_algolia_or_is/)
-- url: https://www.reddit.com/r/rails/comments/h14rpx/implementing_search_should_i_go_for_algolia_or_is/
----
-As the title says, I am implementing search functionality on a social network project.
-
-I want it to feel snappy and provide good suggestions on typing and since I just came back to Rails after a long hiatus in javascript land, I'm not sure if Rails provides something for this out of the box or if should use something like Algolia which is a search-as-a-service to save me the headache.
-
-Any ideas/feeback are welcome!
-
-&amp;#x200B;
-
-Regards
-## [11][Appropriate way to validate association](https://www.reddit.com/r/rails/comments/h128cd/appropriate_way_to_validate_association/)
-- url: https://www.reddit.com/r/rails/comments/h128cd/appropriate_way_to_validate_association/
----
-I'm building a Rails API app that deals with orchestrating Users within a Company, and I want to check my logic for attaching Settings to a User.
-
-The idea is, an admin at a Company will create a Settings entry in the database, and then assign that to a bunch of users.
-
-&amp;#x200B;
-
-Because this is an API, I have one call to create a Setting, one call to create a User, and one call to assign a Setting to a User.
-
-&amp;#x200B;
-
-Here's what the User controller looks like:
-
-    class UsersController &lt; ApplicationController
-    
-      def set_setting
-        if @user.update(setting: Setting.find(params[:setting_id]))
-          render :show
-        else
-          render json: @user.errors, status: :unprocessable_entity
-        end
-      end
-    
-    end
-
-And here's how I'm doing the validation in the User model:
-
-    class User &lt; ApplicationRecord
-      belongs_to :organisation
-      has_one :user_setting
-      has_one :setting, through: :user_setting
-    
-      validate :setting_in_organisation, on: :update
-    
-      private
-    
-        def setting_in_organisation
-          errors.add(:setting_id, "You can't assign a setting that's not part of your organisation") unless setting.organisation == organisation
-        end
-    end
-
-So, my question is, is this a good way to approach the issue while sticking to Rails ethos and DRY principals? I think it's important to highlight the views for this app are handled in a different repo. And because it's an API I definitely want a separate call to assign a Setting to a User, rather than chucking everything in user\_params.
-
-What's everyone's thoughts?

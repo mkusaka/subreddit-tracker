@@ -85,53 +85,47 @@
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][TwilioQuest - Discover your power to change the world with code. Test you JavaScript skills with a downloadable game!](https://www.reddit.com/r/javascript/comments/h80dyz/twilioquest_discover_your_power_to_change_the/)
+## [3][I created an Open Source Google Drive Clone - MyDrive (Node.js, React, Docker, Amazon S3)](https://www.reddit.com/r/javascript/comments/h8dfu2/i_created_an_open_source_google_drive_clone/)
+- url: https://github.com/subnub/myDrive
+---
+
+## [4][Static Hosting Benchmark 2020](https://www.reddit.com/r/javascript/comments/h8ktbh/static_hosting_benchmark_2020/)
+- url: https://www.pierbover.com/posts/static-hosting-benchmark-2020/
+---
+
+## [5][I made a twitter bot that mirrors random post to twitter from r/ProgrammerHumor](https://www.reddit.com/r/javascript/comments/h8sk2q/i_made_a_twitter_bot_that_mirrors_random_post_to/)
+- url: https://github.com/tayfurunal/reddit-to-twitter-bot
+---
+
+## [6][[AskJS] Difference between classes and modules](https://www.reddit.com/r/javascript/comments/h8sf4g/askjs_difference_between_classes_and_modules/)
+- url: https://www.reddit.com/r/javascript/comments/h8sf4g/askjs_difference_between_classes_and_modules/
+---
+Hi all!
+
+Just  a little mental excercise: I was wondering about whether it could be  possible to convert classes into modules. The way I was thinking about  it is to just declare all the properties/methods in the top level of the  file. Public properties/methods would be exported and private  properties/methods would not. I then realised I didn't really know how  this would behave. Would it act like a singleton static class? I guess  if you'd want something like class instances you'd need a factory  function of sorts?
+
+Do people use modules this way? What are the main benefits/downsides of this compared to classes?
+## [7][Web platform's hidden gems - Gamepad API](https://www.reddit.com/r/javascript/comments/h8l1np/web_platforms_hidden_gems_gamepad_api/)
+- url: https://arunmichaeldsouza.com/blog/web-platform's-hidden-gems---gamepad-api
+---
+
+## [8][TwilioQuest - Discover your power to change the world with code. Test you JavaScript skills with a downloadable game!](https://www.reddit.com/r/javascript/comments/h80dyz/twilioquest_discover_your_power_to_change_the/)
 - url: https://www.twilio.com/quest
 ---
 
-## [4][How to get the last item of an array with destructuring](https://www.reddit.com/r/javascript/comments/h84r91/how_to_get_the_last_item_of_an_array_with/)
-- url: https://diary.kud.io/en/posts/2020/06/13/how-to-get-the-last-item-of-an-array-with-destructuring
+## [9][I created a visual Static Site Generator that deploys to Github Pages](https://www.reddit.com/r/javascript/comments/h8iosm/i_created_a_visual_static_site_generator_that/)
+- url: https://prss.io
 ---
 
-## [5][[AskJS] Lerna publish and AngularJS](https://www.reddit.com/r/javascript/comments/h847xs/askjs_lerna_publish_and_angularjs/)
-- url: https://www.reddit.com/r/javascript/comments/h847xs/askjs_lerna_publish_and_angularjs/
----
-Hello everybody,
-
-I've setup a monorepo with Lerna and Yarn. I started from some existing repositories and merged them in one. But the AngularJS component is the one with a different publish routine.
-
-I adapted the build script to have a `build` script everywhere but the publish in angular is made from the dist folder of the library.
-
-You can see [here](https://github.com/matteobruni/tsparticles/tree/dev) (the Lerna structure is only in `dev` branch for now) the repository, `core` is the common library, `wrappers` the various frameworks packages (including the angular one), `plugins` are some plugins projects but they are under development and just plain javascript.
-
-How can I make the angular project work fine with Lerna?
-## [6][I made a site dedicated to providing details on political alignment, bill voting statistics, and contact info for members of Congress in your voting district.](https://www.reddit.com/r/javascript/comments/h7oy7d/i_made_a_site_dedicated_to_providing_details_on/)
-- url: https://whoaremyrepresentatives.us/
+## [10][I made a web app that lets you view 2D and 3D assets from PlayStation games](https://www.reddit.com/r/javascript/comments/h8a5is/i_made_a_web_app_that_lets_you_view_2d_and_3d/)
+- url: https://roblouie.com/psx-viewer
 ---
 
-## [7][Tips for End to End Testing with Puppeteer](https://www.reddit.com/r/javascript/comments/h83nhm/tips_for_end_to_end_testing_with_puppeteer/)
-- url: https://goodguydaniel.com/blog/tips-end-to-end-testing-puppeteer/
+## [11][Don't write your own framework](https://www.reddit.com/r/javascript/comments/h8o5mn/dont_write_your_own_framework/)
+- url: https://stitcher.io/blog/dont-write-your-own-framework
 ---
 
-## [8][Standalone UUID generator in Javascript (no external dependencies, only 6 lines of code)](https://www.reddit.com/r/javascript/comments/h7i7m2/standalone_uuid_generator_in_javascript_no/)
-- url: https://abhishekdutta.org/blog/standalone_uuid_generator_in_javascript.html
----
-
-## [9][MDN Periodic Table](https://www.reddit.com/r/javascript/comments/h81eaw/mdn_periodic_table/)
-- url: https://tpkahlon.github.io/javascript/43/
----
-
-## [10][[AskJS] Best Practices/Approaches for Security Vulnerabilities in Downstream Dependencies?](https://www.reddit.com/r/javascript/comments/h7v1cb/askjs_best_practicesapproaches_for_security/)
-- url: https://www.reddit.com/r/javascript/comments/h7v1cb/askjs_best_practicesapproaches_for_security/
----
-I have inherited a JavaScript project that is scanned weekly for known security vulnerabilities (a cross-reference of alerts to NPM modules, etc.). I've managed to eliminate the majority of the problems that were present when I took over the project, but I still have a small number of vulns in downstream dependencies. I'm wondering how others address these sorts of issues? In a few of the earlier cases, I was able to completely drop the module that was the source of the issue (or at least replace it with something else that was more secure). But now that I'm down to the last handful, I'm running into the limits of my knowledge/understanding of the overall JavaScript ecosystem.
-
-Any suggestions/tips welcomed.
-## [11][Detecting the end of a fluent API chain in JavaScript](https://www.reddit.com/r/javascript/comments/h7kuva/detecting_the_end_of_a_fluent_api_chain_in/)
-- url: https://michaelzanggl.com/articles/end-of-chain/
----
-
-## [12][Generate default avatars with any text, which are 100% fingerprinted](https://www.reddit.com/r/javascript/comments/h7m8rv/generate_default_avatars_with_any_text_which_are/)
-- url: https://github.com/loweisz/generate-avatar
+## [12][Translating your React app with i18nexus](https://www.reddit.com/r/javascript/comments/h8katd/translating_your_react_app_with_i18nexus/)
+- url: https://medium.com/javascript-in-plain-english/react-localization-the-winner-is-i18next-i18nexus-b7cd9f14094e
 ---
 

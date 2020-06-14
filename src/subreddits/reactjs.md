@@ -84,97 +84,190 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][BrutalityVisualizer - an interactive heatmap visualization of police brutality incidents in the US](https://www.reddit.com/r/reactjs/comments/h7q18l/brutalityvisualizer_an_interactive_heatmap/)
-- url: https://v.redd.it/jsz020vkti451
+## [3][MyDrive - Open Source Google Drive Clone (Node, Docker, Amazon S3, React, MongoDB)](https://www.reddit.com/r/reactjs/comments/h8b1xz/mydrive_open_source_google_drive_clone_node/)
+- url: https://v.redd.it/mo6qwc10jp451
 ---
 
-## [4][Facebook employee got fired for calling out @Vjeux and Recoil on not supporting BLM](https://www.reddit.com/r/reactjs/comments/h877ko/facebook_employee_got_fired_for_calling_out_vjeux/)
-- url: https://twitter.com/aweary/status/1267895488205869057
+## [4][Just Finished My Portfolio Website Using Gatsby.js and my Genetic Algorithm Library, Genie.js](https://www.reddit.com/r/reactjs/comments/h8ob6p/just_finished_my_portfolio_website_using_gatsbyjs/)
+- url: https://www.reddit.com/r/reactjs/comments/h8ob6p/just_finished_my_portfolio_website_using_gatsbyjs/
 ---
+Hi everyone!
 
-## [5][Use tailwind like class names inside styled components, introducing styled-wind](https://www.reddit.com/r/reactjs/comments/h829uo/use_tailwind_like_class_names_inside_styled/)
-- url: https://styled-wind.netlify.app/
+This is my first post here. I want to share the portfolio I created using Gatsby, with some flourishing using my genetic algorithm library, Genie.js (source [here](https://github.com/adrianmarkperea/genie), and demo [here](https://genie-phrase-guesser.netlify.app/)).
+
+You can check it out at the following link: [https://adrianperea.dev](https://adrianperea.dev)
+
+I never really fancied myself as a web developer, but proud that I made it this far. Didn't realize beforehand that CSS would've taken most of my time.
+
+Hope to hear what you guys think!
+
+Cheers.
+## [5][Is there a better way to use Sass and Css modules together in React?](https://www.reddit.com/r/reactjs/comments/h8twrc/is_there_a_better_way_to_use_sass_and_css_modules/)
+- url: https://www.reddit.com/r/reactjs/comments/h8twrc/is_there_a_better_way_to_use_sass_and_css_modules/
 ---
+Hello. I apologize if this is trivial, but wanted to get your opinions on how I’m going about this. Some context: I started at a new company in January. I’m the only dev working on the UI. I inherited a repo that was pretty unwieldy and I was brought on with no prior knowledge to react. For the past six months, I’ve gotten the hang of React for the most part. After months of Udemy tutorials and on-the-job experience, I’ve learned quite a lot (still got a ways to go). I’ve realized that our repo closely resembles the Maximillian Academind React Udemy course. It’s a great course, and I recommend it for beginners, but the repo structure is a bit dated (mostly class based components). That’s fine for now. The repo is small enough that I will eventually adopt hooks (doing tutorials on hooks currently) and context api. Ok here we go. When I joined the team, the UI repo had Css modules in place. This was the import statement:
 
-## [6][I'm thinking of open sourcing my React/Typescript/Express SaaS boilerplate!](https://www.reddit.com/r/reactjs/comments/h87hha/im_thinking_of_open_sourcing_my/)
-- url: https://www.reddit.com/r/reactjs/comments/h87hha/im_thinking_of_open_sourcing_my/
+import classes from ‘./Component.module.css’;
+
+And to bring in the Css classes, the repo would use classes.NameofCssClass in the jsx. This is how it was done in the Maximilian course as well. Pretty cumbersome. Fast forward to now. I use ‘css’ variable name instead of ‘classes’ and i now use Sass. I’ve been using it alongside Css modules. I like Css modules for avoiding name space collisions, but it’s not great for the BEM naming convention. For instance, I can’t use classes.block-element—modifier. Because I like BEM, I’ve been using the following approach:
+
+import css from ‘./Component.module.scss’;
+
+//example jsx
+&lt;div className={css[‘block-element’]}&gt;stuff&lt;/div&gt;
+
+So my question: is there a better way? This seems pretty clunky as well but I really can’t think of a better way to use css modules, Sass, and BEM together. Please excuse my noobness. Any insight would be greatly appreciated. Thank you.
+## [6][How big is the jump from React to React Native?](https://www.reddit.com/r/reactjs/comments/h8tmsj/how_big_is_the_jump_from_react_to_react_native/)
+- url: https://www.reddit.com/r/reactjs/comments/h8tmsj/how_big_is_the_jump_from_react_to_react_native/
 ---
-Nowadays, building a subscriptions based SaaS app requires plenty of features such as user authentication, billing management, email verification, trial expiration reminders, etc. These take away the required time to actually focus on building your product. A boilerplate will save weeks and even probably months of dev time since most of us here mostly work on side projects after returning home from a full time job.
+Forgive me if this is a naive question: 
 
-I found some implementations for my tech stack online. One was Divjoy and the other was [usegravity.app. ](https://usegravity.app/)I noticed that usegravity had most of the features I was looking for but at a starting price of $500, I felt I should go ahead and build my own. Divjoy is also a pretty solid boilerplate but lacked majority of the features I was looking to have.
+I'm beginning to get into React.js (ie I do not have much experience at all with it as yet, but am very excited to get into it) and have a very keen interest in mobile development as well. Up until this point I've been dabbling in flutter as a mobile development framework, which I have found to be a really great experience - however, I am very attracted to the idea of being able to use similar code/techniques/technologies on multiple fronts, if that makes sense - which is why I'm considering the similarities between React and React Native. 
 
-I believe that a community driven approach is the best case here. If we have a solid starting base that everyone can contribute to, it will help free the time for more important work to be done and hopefully even bring more cool products to market. One can imagine a variant of the boilerplate using Mailgun, while another using Sendgrid for email deliverability for example, or one using a Node.js backend with another using Flask.
+If I get proficient in React.js, will there be a big jump to then get into React Native, or are they very similar?
+## [7][My portfolio site built with Next.js and Tailwind.css](https://www.reddit.com/r/reactjs/comments/h8slwx/my_portfolio_site_built_with_nextjs_and/)
+- url: https://www.reddit.com/r/reactjs/comments/h8slwx/my_portfolio_site_built_with_nextjs_and/
+---
+Hey guys,
 
-I've started the work and it's about 70% completed. The remaining 30% is in relation to security, email template design and webhooks for stripe and of-course, unit and integration tests.
+I've just finished my portfolio site using next.js and tailwind.css. It's been fun building and I think that using `getStaticPaths` in next can get you really far.
 
-I'm looking to the community to contribute to bringing this project to life or if you have any feature requests at all or general questions at that. If you're not sure if you have a question, ask yourself; If I was to have anything in the world that I wanted in a project, what would it be?
+Anyways here's my site: lenardpratt.com 
 
-I'm using this to gauge interest and collect early testers of the project. If you are eager for me to release the project as soon as possible, please help me gauge interest here:
+It should be fully mobile responsive but if theirs any bugs let me know. Any design tips would also be appreciated.
 
-[https://www.producthunt.com/upcoming/eli](https://www.producthunt.com/upcoming/eli)
+Thanks
+## [8][How do I fix it?](https://www.reddit.com/r/reactjs/comments/h8s0z3/how_do_i_fix_it/)
+- url: https://www.reddit.com/r/reactjs/comments/h8s0z3/how_do_i_fix_it/
+---
+npm ERR! code ELIFECYCLE
+
+npm ERR! errno 1
+
+npm ERR! react-boilerplate@4.0.0 npmcheckversion: \`node ./internals/scripts/npmcheckversion.js\`
+
+npm ERR! Exit status 1
+
+npm ERR!
+
+npm ERR! Failed at the react-boilerplate@4.0.0 npmcheckversion script.
+
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
 
 &amp;#x200B;
 
-I will be sending the live demo to all subscribers and am willing to hear all of your feedback
-## [7][SpiderX - React Native + Python Scrapy](https://www.reddit.com/r/reactjs/comments/h7dg2z/spiderx_react_native_python_scrapy/)
-- url: https://v.redd.it/b7fgy6k0je451
+npm ERR! A complete log of this run can be found in:
+
+npm ERR!     C:\\Users\\User\\AppData\\Roaming\\npm-cache\\\_logs\\2020-06-14T11\_16\_12\_354Z-debug.log
+
+npm ERR! code ELIFECYCLE
+
+npm ERR! errno 1
+
+npm ERR! react-boilerplate@4.0.0 preinstall: \`npm run npmcheckversion\`
+
+npm ERR! Exit status 1
+
+npm ERR!
+
+npm ERR! Failed at the react-boilerplate@4.0.0 preinstall script.
+
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+&amp;#x200B;
+
+npm ERR! A complete log of this run can be found in:
+
+npm ERR!     C:\\Users\\User\\AppData\\Roaming\\npm-cache\\\_logs\\2020-06-14T11\_16\_12\_394Z-debug.log
+## [9][My portfolio website built with React and Redux! Also my first mobile-first website design.](https://www.reddit.com/r/reactjs/comments/h8b48f/my_portfolio_website_built_with_react_and_redux/)
+- url: https://www.reddit.com/r/reactjs/comments/h8b48f/my_portfolio_website_built_with_react_and_redux/
 ---
+Hello everyone!
 
-## [8][Using React Router how would I change the navbar style on different routes?](https://www.reddit.com/r/reactjs/comments/h857dn/using_react_router_how_would_i_change_the_navbar/)
-- url: https://www.reddit.com/r/reactjs/comments/h857dn/using_react_router_how_would_i_change_the_navbar/
+I have recently finished my portfolio website designed with React and Redux. I want to share it here and get your comments and feedback.
+
+You can see the site here: [www.rahuleswar.com](https://www.rahuleswar.com)
+
+And source is at this repo:  [https://github.com/esyywar/rahul-portfolio](https://github.com/esyywar/rahul-portfolio)
+
+I have focused on mobile platforms and this is my first project done with mobile-first design. It is a no-scrolling static website.... I have had to touch up the cross platform responsiveness a lot over past couple days... If anyone finds it looks weird on their device, I will appreciate if you let me know!
+
+I have implemented features like the the typewriting animation and swipe events without use of any packages. I did use React Transitions Group for the page change animations. I also used a little bit of MDB React Bootstrap for some buttons.
+
+I would be happy to hear any comments and feedback you can give about the website and/or the code! I have never had any of my react project code reviewed in the past and am curious if I am following the correct practices.
+
+Thanks in advance :)
+## [10][Weird google top result! Need help](https://www.reddit.com/r/reactjs/comments/h8re3p/weird_google_top_result_need_help/)
+- url: https://www.reddit.com/r/reactjs/comments/h8re3p/weird_google_top_result_need_help/
 ---
-Hi there, fairly new to React Router. I have the following setup:
+So I've made a portfolio for a photographer and now that it has been a while the google crawler has done its job.
 
-    function App() {
-      return (
-        &lt;div&gt;
-          &lt;NavbarDefault /&gt;
-          &lt;MainSwitch /&gt;
-        &lt;/div&gt;
-      );
-    }
+However, the top search result for the person isn't what I want, the second result is the right one.
 
-And `MainSwitch` as follows: 
+Let me show you what I get as top: [https://i.imgur.com/YJxLbMX.png](https://i.imgur.com/YJxLbMX.png)
 
-    const MainSwitch = () =&gt; {
-        return (
-            &lt;Switch&gt;
-                &lt;Route exact path='/' component={Home}&gt;&lt;/Route&gt;
-                &lt;Route exact path='/login' component={Login}&gt;&lt;/Route&gt;
-                &lt;Route exact path='/signup' component={Signup}&gt;&lt;/Route&gt;
-                &lt;Route exact path='/pricing' component={Pricing}&gt;&lt;/Route&gt;
-                &lt;Route exact path='/dashboard' component={Pricing}&gt;&lt;/Route&gt;
-                &lt;Route path="*"&gt;&lt;NotFound /&gt;&lt;/Route&gt;
-            &lt;/Switch&gt;
-        );
-    }
-
-When I route to `Dashboard` I want to change the Navbar style. What is the best way to go about this? Should I try nested routes? Or write a higher order component for route that toggles a context switch?
-## [9][DnD in react](https://www.reddit.com/r/reactjs/comments/h84vtf/dnd_in_react/)
-- url: https://www.reddit.com/r/reactjs/comments/h84vtf/dnd_in_react/
+Anyone has a clue why this has happened? I'm clueless and I have no idea how to fix it! I'm a bit stressed out because this makes it look very unprofessional.
+## [11][building production ready boilerplate for my company as a junior developer](https://www.reddit.com/r/reactjs/comments/h8r6ge/building_production_ready_boilerplate_for_my/)
+- url: https://www.reddit.com/r/reactjs/comments/h8r6ge/building_production_ready_boilerplate_for_my/
 ---
-Hi
+Hello guys,
 
-Lately I'm learning how to work with quite advanced dnd (something like page builder). I'm looking for materials that can help me how to do the dnd system like in this [website](https://grapesjs.com/demo.html).
+I am working in a startup and we decided to start our new project with React. We are currently using jQuery for other big product. This new product will be a large scale dashboard.
 
-Do you know any articles or projects that can help me with that?
-## [10][The Fullstack Next.js GraphQL Serverless Tutorial](https://www.reddit.com/r/reactjs/comments/h7j0iz/the_fullstack_nextjs_graphql_serverless_tutorial/)
-- url: https://hasura.io/learn/graphql/nextjs-fullstack-serverless/introduction/
+\-It will be user login private dashboard. So no need for SEO.
+
+\-It will make lots of interactions with backend. Lots of data in and out.
+
+\-It will depend on interactive map.
+
+\-It will have at least 10 pages with nested routes.
+
+\-It will use theme based on user.
+
+\-It will be multilanguage and need datepicker.
+
+I decided to go with **Create React App** as a starter kit. I am currently in the research and I am trying my best to decide the dependencies in a right way for the project. I have no experience in React project in work life I only made projects for my own side projects. I really need you help since there is no senior frontend developer in my company. All burden is at my shoulders.
+
+If you just look at what I decided so far and tell me if I chose wrong or there is better, or I did not include dependency that is important, please let me know.
+
+**State Management** \-Redux, Redux Toolkit, Redux Saga, Selector
+
+**Router** \-React Router, connected react router
+
+**Language** \-React-i18next, Babeledit
+
+**Map -** React-Leaflet
+
+**Datepicker -** React-datepicker
+
+**Css -** Styled Components
+
+**Icons**
+
+[https://medium.com/@david.gilbertson/icons-as-react-components-de3e33cb8792](https://medium.com/@david.gilbertson/icons-as-react-components-de3e33cb8792)
+
+**Project structure**
+
+[https://levelup.gitconnected.com/structure-your-react-redux-project-for-scalability-and-maintainability-618ad82e32b7](https://levelup.gitconnected.com/structure-your-react-redux-project-for-scalability-and-maintainability-618ad82e32b7)
+
+&amp;#x200B;
+
+I will update the post and let you know what I decided and will be used in production.
+## [12][I was today years old when I learnt we can have multiple 'useState' hooks](https://www.reddit.com/r/reactjs/comments/h8oj3j/i_was_today_years_old_when_i_learnt_we_can_have/)
+- url: https://www.reddit.com/r/reactjs/comments/h8oj3j/i_was_today_years_old_when_i_learnt_we_can_have/
 ---
+I have been using state as:
 
-## [11][I don't understand React testing](https://www.reddit.com/r/reactjs/comments/h7zlvn/i_dont_understand_react_testing/)
-- url: https://www.reddit.com/r/reactjs/comments/h7zlvn/i_dont_understand_react_testing/
----
-I'm not exactly sure how to phrase this, but I don't understand React testing. I come from testing Rails where I make tests for the model, and I make tests for the controller. With the model, I want to make sure the object saves correctly, and with the controller, I want to make sure the API acts correctly.
+`const [state, setState] = useState({loading: false, error: false, data: null})`
 
-With React... I'm super confused about what I'm supposed to test. 
+I use spread operator to mutate the state and contextAPI for statedrilling.
 
-Let's say I have a form, and the form lets a user sign in. When they enter their email into the email field, it updates the email state, etc. etc. When the user clicks submit, it will do an API request to the server, which will return a token, is stored in LocalStorage, and then call the callback from the parent to update the signedinstate that is passed to children components (I'm not using Redux).
+ I read [React State Management in 2020](https://medium.com/better-programming/react-state-management-in-2020-719d10c816bf) by Tom Buyse and he shared how state hooks help in maintaining state.
 
-What am I trying to test? I want to test state but have found... Issues with trying to do so (when using hooks) and have read that state isn't meant to be tested? Maybe testing error messages show on the page (like invalid email)? But that seems small to what really matters in the component, the state changing, the API request, the token being set, and the callback to the parent.
+Tom used state as the following in the component:
 
-What am I actually trying to test with React tests? Is it purely DOM stuff?
-## [12][Devious Games - Party Game platform built in React / Socket.io](https://www.reddit.com/r/reactjs/comments/h7vzji/devious_games_party_game_platform_built_in_react/)
-- url: https://devious.games
----
+    const [isLoading, setLoading] = useState(false);   
+    const [hasError, setError] = useState(false);   
+    const [data, setData] = useState(null);
 
+Do you all think this is more efficient way and does this scale at an enterprise-scale? Eg. if I am building an eCommerce website that has Springboot as backend, can I remove Redux/MobX to remove state management?

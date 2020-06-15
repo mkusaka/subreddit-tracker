@@ -1,29 +1,20 @@
 # androiddev
-## [1][App Feedback Thread - June 13, 2020](https://www.reddit.com/r/androiddev/comments/h86msj/app_feedback_thread_june_13_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/h86msj/app_feedback_thread_june_13_2020/
+## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/h9fmdb/weekly_whos_hiring_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/h9fmdb/weekly_whos_hiring_thread/
 ---
-This thread is for getting feedback on your own apps.
+Looking for Android developers? Heard about a cool job posting? Let people know!
 
-####Developers:
+Here is a suggested posting template:
 
-- must **provide feedback** for others
-- must include **Play Store**, **GitHub**, or **BitBucket** link
-- must make top level comment
-- must make effort to respond to questions and feedback from commenters
-- may be open or closed source
+&gt; Company: &lt;Best Company Ever&gt;  
+&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
+&gt; Location: &lt;City, State, Country&gt;  
+&gt; Allows remote: &lt;Yes/No&gt;  
+&gt; Visa: &lt;Yes/No&gt;  
 
-####Commenters:
-
-- must give **constructive feedback** in replies to top level comments
-- must not include links to other apps
-
-To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
-
-As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
-
-\- Da Mods
-## [2][Weekly Questions Thread - June 08, 2020](https://www.reddit.com/r/androiddev/comments/gyx6z3/weekly_questions_thread_june_08_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/gyx6z3/weekly_questions_thread_june_08_2020/
+Feel free to include any other information about the job.
+## [2][Weekly Questions Thread - June 15, 2020](https://www.reddit.com/r/androiddev/comments/h9e1kl/weekly_questions_thread_june_15_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/h9e1kl/weekly_questions_thread_june_15_2020/
 ---
 This thread is for simple questions that don't warrant their own thread (although we suggest checking the sidebar, [the wiki](http://www.reddit.com/r/androiddev/wiki/), [our Discord](https://discord.gg/D2cNrqX), or [Stack Overflow](http://stackoverflow.com) before posting). Examples of questions:
 
@@ -40,78 +31,100 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Google Play Store will make app bundles a requirement in 2021](https://www.reddit.com/r/androiddev/comments/h8cv3v/google_play_store_will_make_app_bundles_a/)
-- url: https://www.androidpolice.com/2020/06/12/google-play-store-will-make-app-bundles-a-requirement-in-2021/
+## [3][Introducing JetpackCompose.app! Find answers to your "How to do X in Jetpack Compose" questions](https://www.reddit.com/r/androiddev/comments/h98l3u/introducing_jetpackcomposeapp_find_answers_to/)
+- url: https://www.reddit.com/r/androiddev/comments/h98l3u/introducing_jetpackcomposeapp_find_answers_to/
+---
+Hey Droids,  
+Some of you might remember me from my previous project - [https://www.reddit.com/r/androiddev/comments/fvmktf/learn\_jetpack\_compose\_from\_examples\_that\_show\_the/](https://www.reddit.com/r/androiddev/comments/fvmktf/learn_jetpack_compose_from_examples_that_show_the/)  
+
+
+I'm back with another quick weekend project - [JetpackCompose.app](https://JetpackCompose.app)  
+
+
+https://preview.redd.it/pmh0h3k1zz451.png?width=1440&amp;format=png&amp;auto=webp&amp;s=3eae3f7536a90eaef548df60289044a569d28878
+
+The first tool that I added on this site makes recommendations for the right JetpackCompose API to use based on what you use today with the current Android UI Toolkit. Very IFTTT-eque if you will!   
+
+
+Here's a quick demo -   
+
+
+[Demo](https://reddit.com/link/h98l3u/video/ba46i76yyz451/player)
+
+Would love for you'll to try it. There's more coming on the site so stay tuned!
+## [4][Clean architecture everywhere, or dirty coding. Where does one draw the line?](https://www.reddit.com/r/androiddev/comments/h982qv/clean_architecture_everywhere_or_dirty_coding/)
+- url: https://www.reddit.com/r/androiddev/comments/h982qv/clean_architecture_everywhere_or_dirty_coding/
+---
+I am still re-writing my two demo apps at the moment, but I am hitting on certain roadblocks where clean architecture actually made the code worse, where the coding was actually more straightforward and understandable if I did away with LiveData observing, for example, and just read the data one-time while creating Views. It's dirty coding I think, something where a non-conventional, non-elegant approach or beginner-level method is used, but gets the job done right away. 
+
+I have heard about clean architecture coding, but I also heard about KISS which I think is the same as dirty coding (unless I am mistaken), but where does one draw the line?
+## [5][I'm losing downloads day by day. I'm getting lower and lower in a popular keyword ranking. What is going on? Is it natural behavior of a published app lifecycle? How does keywords ranking works exactly in Play Store?](https://www.reddit.com/r/androiddev/comments/h9c9wd/im_losing_downloads_day_by_day_im_getting_lower/)
+- url: https://www.reddit.com/r/androiddev/comments/h9c9wd/im_losing_downloads_day_by_day_im_getting_lower/
+---
+Hi,
+
+I have my first game app **published for about 1.5 years now.** I have between **100k-200k downloads.**  
+On the best days **I had 2k downloads/day and on a bad day I had like 300.**
+
+***HOWEVER,***
+
+in the recent days I see with a keyword ranking tool that I use that my app is losing rank in a popular game keyword. There was a time when **I was in the top 20 in USA** but I started losing that so right now I'm more closer to the 100th place and **I started to lose downloads lightning fast.**
+
+From the "bad day 300" **I slipped down to an average 100/day, but sometimes even \~50.**  
+
+
+It is important to note that I reached these number with almost **0 budget advertising**, like negligible amount. Only posts on forums, social media, and I had 1-2 posts on websites about android games and that is it basically.
+
+*Needless to say that my income has been greatly reduced.*  
+
+
+My question:  
+
+
+*  Is it a natural behavior of the constant competition on the Play Store?
+*  What can I do to prevent this? I cannot stuff more keywords to my app's description it is already has like 7% density, like ever 10th-15th word is that particular keyword. Could I get algorithm penalty from stuffing more keywords?
+*  Is it a natural fluctuation of Play Store's algorithm? Can I expect better numbers ever again without touching anything?
+* I also thinking about maybe the target audience simply depleted, since my game is a sub-genre and maybe everyone who really wanted to try it already tried it so that's it, game over?  
+
+* I tried stuffing another popular keyword but it just made things worse in the past 2 weeks.
+* Buying keyword boost is out of the table for me. First of all it is prohibited, I don't want the ban hammer, secondly I don't believe in its efficiency and cost per value.   
+
+
+Please help if you can,  
+Adam
+## [6][Weight scale custom view](https://www.reddit.com/r/androiddev/comments/h9cui3/weight_scale_custom_view/)
+- url: https://www.reddit.com/r/androiddev/comments/h9cui3/weight_scale_custom_view/
+---
+Does anyone know how to make a scale view like this one or if there's any library that can get a similar  behavior ?
+
+https://preview.redd.it/5xx3296kl1551.png?width=718&amp;format=png&amp;auto=webp&amp;s=2c57d358fd26af7d8a45c4cbc00d30cd6dacc53a
+## [7][Hey guys, I made a new subreddit targeted to developers who need help localizing their apps/ games: r/Localizable](https://www.reddit.com/r/androiddev/comments/h9dwcm/hey_guys_i_made_a_new_subreddit_targeted_to/)
+- url: https://www.reddit.com/r/androiddev/comments/h9dwcm/hey_guys_i_made_a_new_subreddit_targeted_to/
+---
+You can ask questions about how to localize different words and phrases into another language, let the users check your localization for mistakes and open the localization files to let users contribute to your app or game.
+## [8][Which Of You Have Started Selling Apps On Your Own Website? I Want To Support You](https://www.reddit.com/r/androiddev/comments/h8ubn4/which_of_you_have_started_selling_apps_on_your/)
+- url: https://www.reddit.com/r/androiddev/comments/h8ubn4/which_of_you_have_started_selling_apps_on_your/
+---
+Awhile ago I expressed that the best way forward for any Android Developer is also selling apps independently on your own website. I really want to support independent Android Developers plus I bought a few new Android devices and I am enjoying the power/freedom of Android again.
+## [9][Jetbrains Runtime with GraalVM for Android Studio 4.0](https://www.reddit.com/r/androiddev/comments/h9g9xc/jetbrains_runtime_with_graalvm_for_android_studio/)
+- url: https://github.com/ganadist/graalvm-ce-builds/releases/tag/vm-20.1.0
 ---
 
-## [4][Google Play Console Beta is beautiful &amp; also packs great new features](https://www.reddit.com/r/androiddev/comments/h8opqc/google_play_console_beta_is_beautiful_also_packs/)
-- url: https://www.androidpolice.com/2020/06/13/hands-on-with-the-new-google-play-console-easier-publishing-and-a-new-material-theme/
+## [10][Open-sourced a project for the first time](https://www.reddit.com/r/androiddev/comments/h9ctmz/opensourced_a_project_for_the_first_time/)
+- url: https://www.reddit.com/r/androiddev/comments/h9ctmz/opensourced_a_project_for_the_first_time/
+---
+I've been doing Android development now off &amp; on for \~5 years, I'm a self-taught dev who has occasionally struggled along over the years to piece things together.
+
+This is a project I first made a few years back and published to the Play Store. I maintained it minimally over the last few years &amp; also used it to help me start learning Kotlin. It doesn't have all the latest &amp; greatest libraries but it's very simple and minimal. I hope another Android dev out there can gain value from it.
+
+GitHub source: [https://github.com/renedeanda/adnotes](https://github.com/renedeanda/adnotes)
+
+Play Store: [https://play.google.com/store/apps/details?id=com.dcrtns.adnotebook](https://play.google.com/store/apps/details?id=com.dcrtns.adnotebook)
+## [11][How to get user's installed apps in Android 11](https://www.reddit.com/r/androiddev/comments/h9froc/how_to_get_users_installed_apps_in_android_11/)
+- url: https://proandroiddev.com/how-to-get-users-installed-apps-in-android-11-b4a4d2754286
 ---
 
-## [5][Some clarification about the terminlogy of TESTING](https://www.reddit.com/r/androiddev/comments/h8subw/some_clarification_about_the_terminlogy_of_testing/)
-- url: https://www.reddit.com/r/androiddev/comments/h8subw/some_clarification_about_the_terminlogy_of_testing/
----
-Hello,
-
-I am getting into testing and I find the terminology a bit confusing and at times mixed up.
-
-Can someone tell me if I get this right:
-
-The `test` source set in Android Studio contains **local** tests. All test in this folder run without an emulator or real device (but not necessarily without Android dependencies, since they can be mocked).
-
-The `androidTest` directory contains all tests that need an **emulator or real device** to run. They are called **instrumented** tests since they use the instrumentation API.
-
-We also divide tests into **3 categories** by their **size: Unit** tests ( smallest), **Integration** tests (medium-sized), and **end-to-end** tests (largest).
-
-Usually, **unit** tests are **local** tests (`test` package) but there are also instrumented unit tests that need an Android device to run (an so go into the `androidTest` package). 
-
-**Integration** tests usually go into the `androidTest` package but there are also integration tests that don't need the Android framework (or where the Android parts can be mocked?) to run and can, therefore, go into the `test` (local) package.
-
-End-to-end tests go into the `androidTest` package and might need external tools (? unsure). Do end-to-end tests need **manual** interaction or can they be fully automated?
-
-Where do UI tests fit here? Are all UI tests end-to-end tests? Sorry for my ignorance.
-## [6][Second app for Firebase Admin.](https://www.reddit.com/r/androiddev/comments/h8s7at/second_app_for_firebase_admin/)
-- url: https://www.reddit.com/r/androiddev/comments/h8s7at/second_app_for_firebase_admin/
----
-Hello there. Hope all are good.
-
-I have an app that list promotions for retailers in a certain field of the economy. So products constantly have to be added and removed from promotions from 9 different retailers. I do that, not the retailer (at this stage).
-
-I'm thinking of building a total separate new app to maintain the database of that app. Have any of you people done it? My thinking is if I put a link to an activity (with a login obviously) where I do that, it will almost double the size.
-
-At this stage I do it with a website I created, but it is very clumsy, because my JavaScript and HTML is not up to par. I can build a much better way to do that with an app, but I'm not sure if I should add it to app or build  a separate app for that. Doing it directly on Firebase is totally out of the question. 
-
-Just a little input please, what would you do?
-## [7][Possible to implement a scrollable container with cumulative percentage height of child views that exceeds 100%?](https://www.reddit.com/r/androiddev/comments/h8r3fk/possible_to_implement_a_scrollable_container_with/)
-- url: https://www.reddit.com/r/androiddev/comments/h8r3fk/possible_to_implement_a_scrollable_container_with/
----
-I tried to do this with ConstraintLayout's percent height. The cumulative is 120%. But it can't be scrolled. match_parent obviously makes the layout unscrollable in the ScrollView. wrap_content seems to not work with scrolling, even though the child percentages still add up to 120%.
-## [8][Google Play Store app details: "varies with device"](https://www.reddit.com/r/androiddev/comments/h8r2a9/google_play_store_app_details_varies_with_device/)
-- url: https://www.reddit.com/r/androiddev/comments/h8r2a9/google_play_store_app_details_varies_with_device/
----
-Something that's puzzled me for a while. When looking at apps in the Play Store, I often see: Current version: varies with device / Size: varies with device / Requires Android: varies with device. If that's accurate, then that's fine I guess.
-
-But for example I see the same info (or lack thereof) for one of my own apps, uploaded as an apk. AFAIK, the version number is unique, the size is the size (all assets are loaded irrespective of the device), the minimum Android version is specified and unique.
-
-Does anyone know why this information isn't being shown?
-## [9][As promised, my insights on the effect of a 1 week ad on reddit for my app. Is it worth it? In short: Nope, not for me.](https://www.reddit.com/r/androiddev/comments/h8369y/as_promised_my_insights_on_the_effect_of_a_1_week/)
-- url: https://i.redd.it/7ya29writm451.jpg
+## [12][Support New Form Factors with the new Jetpack WindowManager Library](https://www.reddit.com/r/androiddev/comments/h9cdo4/support_new_form_factors_with_the_new_jetpack/)
+- url: https://medium.com/androiddevelopers/support-new-form-factors-with-the-new-jetpack-windowmanager-library-4be98f5450da
 ---
 
-## [10][Screen pinning programmatically](https://www.reddit.com/r/androiddev/comments/h8pqf0/screen_pinning_programmatically/)
-- url: https://www.reddit.com/r/androiddev/comments/h8pqf0/screen_pinning_programmatically/
----
-How Touch Lock Lite achieve screen pinning of other apps? The official Android documentation says only the current activity, from which the pinning is triggered, can be pinned. Any hint?
-## [11][Android emulator behaving weird after AS updated to 4.0](https://www.reddit.com/r/androiddev/comments/h8os2p/android_emulator_behaving_weird_after_as_updated/)
-- url: https://www.reddit.com/r/androiddev/comments/h8os2p/android_emulator_behaving_weird_after_as_updated/
----
-I have been having problems with the Android emulator lately after upgrading to the 4.0 version. The emulator doesn't start, I have tried every method i.e. cold boot, wiping data, even deleting the AS with SDK, and installing it afresh but everything went in vain. A few days ago it just started to work normally without me doing anything and today it again stopped working. Every time I start it this warning appears "Resetting for cold boot: Emulation engine failed". Any suggestions on fixing it?
-
-P.S I am on a Windows machine
-## [12][GitHub Actions used to build an Android project (with working UI tests - on emulators)](https://www.reddit.com/r/androiddev/comments/h86yju/github_actions_used_to_build_an_android_project/)
-- url: https://www.reddit.com/r/androiddev/comments/h86yju/github_actions_used_to_build_an_android_project/
----
-I have converted my android-showcase project to use. Now I am running UI tests on Android emulators and I have an infinite number of parallel executors.
-
-Here is the full workflow config for GitHub Actions
-https://github.com/igorwojda/android-showcase/tree/master/.github/workflows

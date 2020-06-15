@@ -21,77 +21,117 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][How to host this django project on AWS](https://www.reddit.com/r/aws/comments/h8sya9/how_to_host_this_django_project_on_aws/)
-- url: https://www.reddit.com/r/aws/comments/h8sya9/how_to_host_this_django_project_on_aws/
----
-I made a project which includes a django-celery-beat task ([https://github.com/celery/django-celery-beat](https://github.com/celery/django-celery-beat)) which is used in order to query an API every second and store the result in a database (SQLite). Is it straightforward to host this on AWS, given that it's already working as it should locally? I've never done something like this using AWS, so am open to all possible suggestions regarding what's the best way to do it. Should I for instance host it on EC2 or something else?
-
-The project is quite basic - it contains a view which has a live chart (highcharts) that is fed through websockets with the data I'm putting into the DB (that comes from the previously mentioned API). I also have another view which contains a form where the user inputs a date range and then gets a file to download. But my aprehension is coming mainly with how farfetched it will be in respect to the celery beat, given that on my local machine I'm using redis and so on.
-## [3][I am getting billed if my RDS instance is stopped?](https://www.reddit.com/r/aws/comments/h8p7yt/i_am_getting_billed_if_my_rds_instance_is_stopped/)
-- url: https://www.reddit.com/r/aws/comments/h8p7yt/i_am_getting_billed_if_my_rds_instance_is_stopped/
----
-Hi!
-
-I have a situation where I need to access my database for probably like 10 hours out of the whole month. Obviously I don't want to pay for the whole month and I also don't want to spin it up (if it's avoidable) just to access it. Will I be billed if instance is stopped/paused? Or what other solutions can there be for such a case?
-
-Thanks in advance!
-## [4][How to flush RAM in Ubuntu EC2 instance?](https://www.reddit.com/r/aws/comments/h8ixph/how_to_flush_ram_in_ubuntu_ec2_instance/)
-- url: https://www.reddit.com/r/aws/comments/h8ixph/how_to_flush_ram_in_ubuntu_ec2_instance/
----
-I tried commands such as: sync; echo 1 &gt; /proc/sys/vm/drop_caches
-
-But I get permission denied even using sudo.  How can I clear memory on a running EC2.
-I’m troubleshooting memory leaks but while I do I need to restart the instance very often and it’s taking much time.
-## [5][Safe to use programmatic access over public internet?](https://www.reddit.com/r/aws/comments/h8s8dg/safe_to_use_programmatic_access_over_public/)
-- url: https://www.reddit.com/r/aws/comments/h8s8dg/safe_to_use_programmatic_access_over_public/
----
-I have a relatively straightforward question; I have sometimes used programmatic access (Access Key/Secure Key) to do stuff over public internet (for hobbyist purposes), and always somewhat assumed that it is safe to do.
-
-However, I'm looking for a real explanation of how this works to prove that it is secure (or quantify how secure it is). Mostly for my own learning due to being somewhat obsessive about security.
-
-* Assuming that you use key rotation and your keys are not exposed in any way.
-* When there is no other alternative, do you consider programmatic access a fully secure solution?
-* Do you know exactly how it works?
-## [6][Making diagram of existing cloud infrastructure](https://www.reddit.com/r/aws/comments/h8p6rj/making_diagram_of_existing_cloud_infrastructure/)
-- url: https://github.com/Cloud-Architects/cloudiscovery
+## [2][Getting the Most Out of AWS’ Online Summit](https://www.reddit.com/r/aws/comments/h9djvs/getting_the_most_out_of_aws_online_summit/)
+- url: https://www.contino.io/insights/aws-emea-online-summit
 ---
 
-## [7][Aggregate result of all lambda invocation](https://www.reddit.com/r/aws/comments/h8ormf/aggregate_result_of_all_lambda_invocation/)
-- url: https://www.reddit.com/r/aws/comments/h8ormf/aggregate_result_of_all_lambda_invocation/
+## [3][I made a tool that makes me faster listing AWS resources and their attributes](https://www.reddit.com/r/aws/comments/h8yhbo/i_made_a_tool_that_makes_me_faster_listing_aws/)
+- url: https://github.com/jckuester/awsls
 ---
-My use case is that I need ti check how many objects from the list are missing  in s3, and return number of missing documents. Note that the list size can be of milion order of magnitude. 
 
-From what I gather I have to use HeadObject but doing that sequentially would be too slow. So I could send all messages to the queue and have each lambda head few objects. However I'm stuck on how to aggregate that data further, i.e. how to sum results from  all parallel executions. 
-
-I've seen that maybe Kinesis can be used to this effect, but I never worked with it so I don't know if it will fit my use case.
-## [8][Is there a way to implement a system where an IAM admin can allow or ignore every resource an IAM user tries to create?](https://www.reddit.com/r/aws/comments/h8tmwl/is_there_a_way_to_implement_a_system_where_an_iam/)
-- url: https://www.reddit.com/r/aws/comments/h8tmwl/is_there_a_way_to_implement_a_system_where_an_iam/
+## [4][List and delete snapshots](https://www.reddit.com/r/aws/comments/h9blzg/list_and_delete_snapshots/)
+- url: https://www.reddit.com/r/aws/comments/h9blzg/list_and_delete_snapshots/
 ---
-Hi, is there a way in AWS where an IAM user will request the AWS IAM Admin User to grant him permission to create a particular resource?
+Could someone assist me with the right syntax to delete the  snapshot i created: 
 
-For example, John (IAM User) wants to create a t2.large EC2. But to do that, he will need to send a request to Mark (AWS Admin User). Mark will review the request and can either grant him permission to create t2.large EC2 or can ignore it. Is this possible? Thanks.
-## [9][In S3 bucket, uploading files with different extensions like .glb,.gltf or USDZ are getting converted into .bin file.](https://www.reddit.com/r/aws/comments/h8g5zt/in_s3_bucket_uploading_files_with_different/)
-- url: https://www.reddit.com/r/aws/comments/h8g5zt/in_s3_bucket_uploading_files_with_different/
+I am unable to to delete the snapshot  with snap.delete()  by refe the boto3 doc . ----&gt;
+
+ snap.delete()
+
+AttributeError: 'dict' object has no attribute 'delete'
+
+ 
+
+=====================================================
+
+import boto3  
+session=boto3.session.Session(profile\_name='XXXX',region\_name='us-east-1')  
+ec2\_cli=session.client('ec2')  
+all\_reg=ec2\_cli.describe\_regions()  
+\#print(all\_reg\['Regions'\])  
+list\_of\_regions=\[\]  
+for each\_reg in all\_reg\['Regions'\]:  
+ \#print(each\_reg\['RegionName'\])  
+    list\_of\_regions.append(each\_reg\['RegionName'\])  
+\#print(list\_of\_regions)  
+for region in list\_of\_regions:  
+ print('region:' , region)  
+    ec2=boto3.client('ec2',region\_name =region)  
+    response = ec2.describe\_snapshots(OwnerIds=\['self'\])  
+ \#print(response\['Snapshots'\])  
+ for snap in response\['Snapshots'\]:  
+ \#print(snap\['SnapshotId'\])  
+        snap.delete()
+## [5][Cloudwatch logs for ECS in different region. Good or terrible idea?](https://www.reddit.com/r/aws/comments/h9d4tq/cloudwatch_logs_for_ecs_in_different_region_good/)
+- url: https://www.reddit.com/r/aws/comments/h9d4tq/cloudwatch_logs_for_ecs_in_different_region_good/
 ---
-When I am trying to upload it directly from AWS console, its working but not with PHP Laravel.  
-I m having trouble with 3D files via Laravel file uploader,   
-
-
-files that are working  
-.html, mp4, jpeg, jpg, png and more.
-## [10][Restrict API gateway by IP for POST only](https://www.reddit.com/r/aws/comments/h8q9wy/restrict_api_gateway_by_ip_for_post_only/)
-- url: https://www.reddit.com/r/aws/comments/h8q9wy/restrict_api_gateway_by_ip_for_post_only/
+Hi, 
+We have our application deployed in the eu-west-1, now we're expanding in the US and I launched our stack in the us-east-1. However, I just found out that it's possible to send ecs logs in us-east-1 to the log group in eu. Do I need to pay data transfer fees for that? If not that sounds like a good idea because we also have a log analytics stack that is quite expensive to run.
+## [6][Breaking in to the Top 10 of AWS Deepracer Competition - May 2020](https://www.reddit.com/r/aws/comments/h9g56l/breaking_in_to_the_top_10_of_aws_deepracer/)
+- url: https://mickqg.github.io/DeepracerBlog/
 ---
-Hey all. Please let me know if this isn’t the right place to ask. Is it possible to restrict an API gateway that’s running an express app using proxy+ to allow GETs from anywhere but to restrict POSTs to a certain set of IPs? Would they need to be separate resources to support this? Thanks in advance
-## [11][Help with separating data in AWS Glue](https://www.reddit.com/r/aws/comments/h8bft9/help_with_separating_data_in_aws_glue/)
-- url: https://www.reddit.com/r/aws/comments/h8bft9/help_with_separating_data_in_aws_glue/
+
+## [7][Site-to-Site VPN, are you billed if the tunnel state is down?](https://www.reddit.com/r/aws/comments/h9crqw/sitetosite_vpn_are_you_billed_if_the_tunnel_state/)
+- url: https://www.reddit.com/r/aws/comments/h9crqw/sitetosite_vpn_are_you_billed_if_the_tunnel_state/
 ---
-I have a support ticket out but I might as well exhaust all resources. 
+As the title, will AWS bill me if the managed VPN tunnels are down?
 
-To try and give a brief overview of what I'm doing, I have a table of records that have 2 different IDs. One ID is a unique identifier, the other ID is used to group 1-3 records.  
-EX:  
-* recordID: 1, groupID: abc
-* recordID: 2, groupID: abc
-* recordID: 3, groupID: def  
+As per here: [https://aws.amazon.com/vpn/pricing/](https://aws.amazon.com/vpn/pricing/) "You will be charged for your AWS Site-to-Site VPN connection on an hourly basis, for each hour the connection is active."
 
-I don't really care about recordID, I want to get all unique groupIDs. In MySQL where I come from, that's a simple GROUP BY, but I'm not sure how to do it in AWS. My Glue job already separated out the data nicely how I want it, but it's currently going to give me duplicate records without a group by or something similar. How do I separate them out?
+"Active" in this case is a little vague, but knowing the AWS pricing model, I feel strongly that they will be charging regardless of the state of the tunnels (i.e. the moment you create a AWS VPN in the console, regardless of if you set-it up on the other side), but wanted to run this past you beautiful people of r/aws
+## [8][RedShift HealthCheck tool](https://www.reddit.com/r/aws/comments/h9buvm/redshift_healthcheck_tool/)
+- url: https://www.reddit.com/r/aws/comments/h9buvm/redshift_healthcheck_tool/
+---
+We have open-sourced a small utility to perform health checks on the RedShift cluster. It'll check your
+
+1. table-level issues
+2. Design problems
+3. Vacuum, stats
+4. WLM
+5. and Performance-related issues
+
+We want the AWS Redshift community to provide feedback on this also we welcome your contribution.
+
+Link to the repo:  [https://github.com/searceinc/RStoolKit](https://github.com/searceinc/RStoolKit)
+## [9][Cognito Architectural Advice](https://www.reddit.com/r/aws/comments/h9bdoh/cognito_architectural_advice/)
+- url: https://www.reddit.com/r/aws/comments/h9bdoh/cognito_architectural_advice/
+---
+ 
+
+I need some help with some architectural advice. I have a shared application load balancer (By shared I mean multiple customers use this and all requests are routed a set of EC2 instances running IIS)
+
+I'm trying to implement SSO using cognito user pools with OpenID being the identity providers.
+
+I want to be able to have my customers access use it by going to their URL
+
+www.customerwebsite.com/sso and www.customerwebsite.com/admin/sso
+
+I also want to create a backdoor so i'm also able to access it with my own OpenID, I'd call it something like www.CustomerWebsite.com/Backdoor the ( FYI the customers are okay this and i will be naming it something better than Backdoor :')  )
+
+should I create a User Pool per customer and have my backdoor separate as a separate User Pool (therefore accounts won't appear in multiple user pools Or should i  create 1 user pool per customer with an additional App client for myself. I also worry about hitting the limit for Load Balncer Limit rule and input would be greatly appreciated
+## [10][AWS/Cloud based distributed DAG task runner](https://www.reddit.com/r/aws/comments/h995od/awscloud_based_distributed_dag_task_runner/)
+- url: https://www.reddit.com/r/aws/comments/h995od/awscloud_based_distributed_dag_task_runner/
+---
+Long time reader, first time poster. At work we have an internally developed distributed task runner system (Java) with a single main/delegator server and multiple task runner servers.
+
+Jobs are a hierarchical tree of tasks that each have their own parameters and dependencies, parameters can be passed down into sub-tasks, tasks can spawn more sub-tasks that the main server redistributes to executors. Executors report status and logs back to the main server for quick examination of how a process ran.
+
+It works really well but is showing its age a little. It was developed before Hadoop was a thing, before containers were mainstream and definitely before the AWS revolution. The problem is it assumes on-prem zero cost servers, so a dozen executor machines sit there idle until the one time a week/month they have to run their tasks. Worse there are multiple clusters and one cluster of five EC2 instances maxes out while several other ten-instance clusters sit idle. It's a crushing waste of resources.
+
+My question is- is there an on-prem solution (or cloud solution I guess) for this situation where multiple clusters can join in on a process or a single larger cluster can be configured to work on whatever is needed if idle but snap to a certain task if it starts? Or alternatively an AWS or cloud solution where only processing time is charged?
+
+I have looked into various task runner applications.
+
+Apache Airflow (from AirBnB) is nice but needs serious bolted-on Celery job queue configuration to handle multiple executor servers.
+
+Luigi (from Spotify) has a task dependency concept but I don't think it can farm out tasks to multiple servers. Also jobs are in Python which isn't a dealbreaker but would prefer declarative JSON, YAML, XML, even INI.
+
+Nomad (from Hashicorp- vagrant, packer, etc.) is a really nice cluster manager, very professional UI and documentation but unfortunately doesn't support DAGs or a tree of tasks to perform with dependencies.
+
+I looked in to a few more but it became clear that there wasn't a single offering that supported multiple task runner servers, tree-shaped (DAG) jobs
+
+Am I missing something here? Running dependency-based high I/O distributed tasks seems like a thing every medium-sized company would do but there aren't any options that tick all the boxes.
+## [11][Best way for secure access to S3?](https://www.reddit.com/r/aws/comments/h9736a/best_way_for_secure_access_to_s3/)
+- url: https://www.reddit.com/r/aws/comments/h9736a/best_way_for_secure_access_to_s3/
+---
+What is the best way to allow **secure** access to data stored in S3 to other folks within your organization? Is it better to attach an identity policy to the users or to a resource policy to the S3 bucket and why?

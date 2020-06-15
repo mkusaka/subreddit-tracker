@@ -125,100 +125,76 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][An iterator_facade in C++20](https://www.reddit.com/r/cpp/comments/h8ot87/an_iterator_facade_in_c20/)
+## [3][Do compilers optimize away nullptr checks because of UB?](https://www.reddit.com/r/cpp/comments/h9bmpq/do_compilers_optimize_away_nullptr_checks_because/)
+- url: https://www.reddit.com/r/cpp/comments/h9bmpq/do_compilers_optimize_away_nullptr_checks_because/
+---
+Had a conversation with someone in YouTube comments claiming, all major compilers will optimize a \`nullptr\` check away, if you already dereferenced that pointer.
+
+[https://i.imgur.com/qZA69Yq.png](https://i.imgur.com/qZA69Yq.png)
+
+I mean first of all: Dereferencing a pointer that you expect might be nullptr before the check is ill-formed as far as I know. But would a compiler really optimize away the nullptr check in this case?
+
+I mean even if, making assertions on what a compiler will or will not do, based on ill-formed code would be pretty meaningless.
+## [4][JSON for Modern C++ 3.8.0](https://www.reddit.com/r/cpp/comments/h8w7e0/json_for_modern_c_380/)
+- url: https://github.com/nlohmann/json/releases/tag/v3.8.0
+---
+
+## [5][Is there a need for more utility ranges in standard library?](https://www.reddit.com/r/cpp/comments/h9e8ty/is_there_a_need_for_more_utility_ranges_in/)
+- url: https://www.reddit.com/r/cpp/comments/h9e8ty/is_there_a_need_for_more_utility_ranges_in/
+---
+One of the more irritating things for me, when working with standard containers, is all the problems if I want to get all the elements enumerated, while keeping the code clean.
+
+IMO one of the best way to do it for now is:
+
+```
+for (std::size_t id = 0; auto&amp;&amp; el : container) {
+   ...
+   ++id;
+}
+```
+
+I find it annoying, cause it logically breaks the for loop structure a bit. I don't even want to think about teaching this to newbies, there are so many things there, also the new feature of initialization in the range loop.
+
+Shouldn't it be as simple as:
+
+```
+using std::ranges;
+
+for (auto&amp;&amp; [el, id] : enumerated(container))
+    // do stuff
+```
+
+I think lack of features like that disturbing.
+Because the zip_range didn't ship with c++20 writing a range like that isn't trivial.
+
+I didn't see any proposal for adding more range adaptors like that. Did I miss it? Or are functionalities like that not considered to be put into standard?
+
+I know I won't be using the ranges much, except for constrained algorithms. They seem too limited for now, and writing your own ranges get really verbose for more complex cases. Is that just my opinion, or is this feature really undercooked like coroutines (that are shipped without library support)?
+## [6][Implementing Unsophisticated Tuple](https://www.reddit.com/r/cpp/comments/h9fojm/implementing_unsophisticated_tuple/)
+- url: http://www.vishalchovatiya.com/variadic-template-cpp-implementing-unsophisticated-tuple/
+---
+
+## [7][New to C++, I built a ray tracer on a STM32 board. Critiques and comments are welcome!](https://www.reddit.com/r/cpp/comments/h958lb/new_to_c_i_built_a_ray_tracer_on_a_stm32_board/)
+- url: https://medium.com/@namtran_77878/ray-tracer-challenge-on-the-stm32f429i-discovery-board-9ca21d7bd49d
+---
+
+## [8][Expanding On Standard Threads](https://www.reddit.com/r/cpp/comments/h9a5w3/expanding_on_standard_threads/)
+- url: https://m-peko.github.io/craft-cpp/posts/expanding-on-standard-threads/
+---
+
+## [9][An Introduction to Parallel Computing in C++](https://www.reddit.com/r/cpp/comments/h930pw/an_introduction_to_parallel_computing_in_c/)
+- url: https://www.cs.cmu.edu/~15210/pasl.html
+---
+
+## [10][CLion EAP 2020.2: Makefile Projects in CLion, Doctest Support, More Accurate Code Analysis Checks](https://www.reddit.com/r/cpp/comments/h9d3w1/clion_eap_20202_makefile_projects_in_clion/)
+- url: https://blog.jetbrains.com/clion/2020/06/clion-eap-makefile-doctest-code-analysis/
+---
+
+## [11][Thriving in a crowded and changing world: C++ 2006–2020](https://www.reddit.com/r/cpp/comments/h8xc35/thriving_in_a_crowded_and_changing_world_c/)
+- url: https://dl.acm.org/doi/abs/10.1145/3386320
+---
+
+## [12][An iterator_facade in C++20](https://www.reddit.com/r/cpp/comments/h8ot87/an_iterator_facade_in_c20/)
 - url: https://vector-of-bool.github.io/2020/06/13/cpp20-iter-facade.html
 ---
 
-## [4][nanobech v4.0.0 released: faster compile, better output formatting, thorough documentation, linux performance counters](https://www.reddit.com/r/cpp/comments/h8boen/nanobech_v400_released_faster_compile_better/)
-- url: https://nanobench.ankerl.com/
----
-
-## [5][Intro to C++20's Concepts - C++ User Group Dresden - Hendrik Niemeyer](https://www.reddit.com/r/cpp/comments/h8dq39/intro_to_c20s_concepts_c_user_group_dresden/)
-- url: https://www.youtube.com/watch?v=rROoYqDr2KM
----
-
-## [6][Member function forward declaration?](https://www.reddit.com/r/cpp/comments/h8kjui/member_function_forward_declaration/)
-- url: https://www.reddit.com/r/cpp/comments/h8kjui/member_function_forward_declaration/
----
-I've been looking into reducing compile times. I noticed files with just a few lines can spawn thousands  after preprocessing.
-
-Many of those includes come to declare private members of classes being depended on. The pimpl idiom would be solution here, but I feel that is verbose and incur penalties that are not really needed.
-
-I wrote what I thought to be a more elegant way to clean this up. But is it though?
-
-    // Foo_fwd.hpp
-    struct operator Foo // Invented "struct operator" syntax to represent
-                        // a forward declaration with member functions
-    {
-        int as_int();
-    };
-    
-    // User that just need the opaque interface of Foo
-    // Very few dependencies - quick to compile
-    int add(Foo&amp; f1, Foo&amp; f2) { return f1.as_int() + f2.as_int(); }
-    
-    
-    // Foo.hpp
-    // Actual member and inline function definition. Only here you get extra dependencies
-    
-    #include &lt;string&gt;
-    struct Foo
-    {
-        void clear() { number_as_string.clear(); }
-        std::string number_as_string;
-    };
-    
-    
-    // Foo.cpp
-    int Foo::as_int()
-    { 
-        return std::stoi(number_as_string);
-    }
-
-So if you want to create, destroy or use inline member functions, you need to include \`Foo.h\`. Otherwise you could get by just including \`Foo\_fwd.h\`.
-
-Pros: A lot of your code can just include the Foo\_fwd to use the class. Specially long lived classes that are created once and passed around.
-
-Cons: The declaration of the class is a bit scattered.
-
-More pros? More cons? Any other clean way to achieve this effect with the current language features?
-## [7][Is there a special "compat" repository for windows shims](https://www.reddit.com/r/cpp/comments/h8sm8g/is_there_a_special_compat_repository_for_windows/)
-- url: https://www.reddit.com/r/cpp/comments/h8sm8g/is_there_a_special_compat_repository_for_windows/
----
-Hello. I'm porting a C library for posix to support windows. The library uses posix specific things like unistd.h, pthread.h, etc.. I found some repos that use special "compat" shim that mimic behaviour of posix functionality and work with windows environment and msvc. Examples of such repos:  [https://github.com/libressl-portable/portable/tree/master/include/compat](https://github.com/libressl-portable/portable/tree/master/include/compat),  [https://github.com/FFmpeg/FFmpeg/tree/master/compat](https://github.com/FFmpeg/FFmpeg/tree/master/compat)
-
-Is there a specific compat repo that I can clone as submodule into my project? These guys find these sources somewhere or each writes their own shims?
-## [8][itCppCon20 Welcome + KEYNOTE Let's Move-The Hidden Features and Traps of C++ Move Semantics Josuttis](https://www.reddit.com/r/cpp/comments/h84mi6/itcppcon20_welcome_keynote_lets_movethe_hidden/)
-- url: https://www.youtube.com/watch?v=OOLR96-GjsI
----
-
-## [9][Italian C++ Conference 2020: All sessions](https://www.reddit.com/r/cpp/comments/h8a5oz/italian_c_conference_2020_all_sessions/)
-- url: https://www.youtube.com/playlist?list=PLsCm1Hs016LWIjOrEftUA42ZwxsF30vZB
----
-
-## [10][Barbarian: A client for the conan package manager.](https://www.reddit.com/r/cpp/comments/h896gt/barbarian_a_client_for_the_conan_package_manager/)
-- url: https://www.reddit.com/r/cpp/comments/h896gt/barbarian_a_client_for_the_conan_package_manager/
----
-Barbarian is a graphical frontend for the conan package manager. Conan is a package manager mainly aimed at devs. It's not a whole package, and conan has to be installed for it to work. It's written in the Qt framework. Please do check it out: [https://github.com/Roidujeu/barbarian](https://github.com/Roidujeu/barbarian)
-
- It's only available for unix-like OSes and not Windows(sorry). 
-
-Arch users can install it from AUR: [https://aur.archlinux.org/packages/barbarian/](https://aur.archlinux.org/packages/barbarian/) Please give me your feedback too so that i can improve it.
-## [11][Boost epoch proposal: *Illustrative* Boost 1.73 epoch report](https://www.reddit.com/r/cpp/comments/h84v7r/boost_epoch_proposal_illustrative_boost_173_epoch/)
-- url: https://github.com/joaquintides/boost_epoch/blob/master/epoch_report.md
----
-
-## [12][Watch live the Virtual Italian C++ Conference 2020](https://www.reddit.com/r/cpp/comments/h822du/watch_live_the_virtual_italian_c_conference_2020/)
-- url: https://www.reddit.com/r/cpp/comments/h822du/watch_live_the_virtual_italian_c_conference_2020/
----
-Hi there!
-
-The **Italian C++ Conference 2020** will be live from 9 AM (GMT+2) on YouTube.
-
-[Here is the playlist containing all the live videos.](https://www.youtube.com/playlist?list=PLsCm1Hs016LWIjOrEftUA42ZwxsF30vZB)
-
-Drop questions by adding "QUESTION" at front on the chat.
-
-&amp;#x200B;
-
-Looking forward to seeing you there!

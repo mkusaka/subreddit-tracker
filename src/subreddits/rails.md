@@ -19,11 +19,100 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Quick Demo of Reactive UI with Stimulus Reflex](https://www.reddit.com/r/rails/comments/h8j14f/quick_demo_of_reactive_ui_with_stimulus_reflex/)
-- url: https://www.reddit.com/r/rails/comments/h8j14f/quick_demo_of_reactive_ui_with_stimulus_reflex/
+## [2][StimulusReflex, I was waiting for you](https://www.reddit.com/r/rails/comments/h92jon/stimulusreflex_i_was_waiting_for_you/)
+- url: https://www.reddit.com/r/rails/comments/h92jon/stimulusreflex_i_was_waiting_for_you/
 ---
-[https://youtu.be/MlnNkcz-oIc](https://youtu.be/MlnNkcz-oIc)
-## [3][Out of curiosity, how many of you are finding that your professional Rails-based environment is moving more toward JavaScript?](https://www.reddit.com/r/rails/comments/h8mdaz/out_of_curiosity_how_many_of_you_are_finding_that/)
+Hello to this new tool, without being really aware, I was actually waiting for it. I felt pain about this topic. There were no place were to store the front state in Ruby-on-Rails. Not properly. How to know which accordion is opened or not, how to know which tab is opened or not, etc. The only way I found until then was to use a centralized state (root object with Vue, or Vuex, or redux alone or with React). And store/restore it from localStorage. Without this centralized state, things get messy very quickly for complex scenarii. I wasn't completly convinced by StimulusJS itself because the state is assumed by the DOM, therefore it is very difficult to reason about it. Now with Reflex, it seems you can rely on a front state that is 100% assumed by the backend, removing the need to reason about a frontend state, and all the heavy mandatory JS tooling. Guys, this is a huge promise. Thanks a lot !!
+## [3][[Help]Creating authentic seeds and attaching images](https://www.reddit.com/r/rails/comments/h9dvxn/helpcreating_authentic_seeds_and_attaching_images/)
+- url: https://www.reddit.com/r/rails/comments/h9dvxn/helpcreating_authentic_seeds_and_attaching_images/
+---
+    Hi, I'm trying to create authentic seeds in 3 categories for a restaurant app and attaching a default image for each one. On the menu page, I want to just display a 'featured' item, which will be chosen at random. However, I'm not able to create seeds with the correct category id, nor iterate over to display an image. For the partial below, I get an undefined method error. If anyone could point me in the right direction, or is willing to chat over DM, would be greatly appreciated
+
+&lt;div class="row"&gt;
+		&lt;% @cats.each do |cat| %&gt;
+    &lt;% if cat.products.where(featured: true).first.image.attached? %&gt;
+    &lt;%= image_tag(cat.products.where(featured: true).first.image, class:'img-fluid')%&gt;
+    &lt;% end %&gt;
+    &lt;div class='col-12'&gt;
+      &lt;h1 style="text-align:center;"&gt;&lt;%= cat.heading %&gt;&lt;/h1&gt;
+      &lt;hr /&gt;
+    &lt;/div&gt;
+    &lt;% @products.each do |product| %&gt;
+    &lt;% if product.category == cat %&gt;
+    &lt;div class="col-4"&gt;
+      &lt;h5&gt;
+        &lt;%= product.name %&gt;
+      &lt;/h5&gt;
+      &lt;p&gt;
+        &lt;%= product.description %&gt;
+      &lt;/p&gt;
+      &lt;span&gt;&lt;%= product.price %&gt; | &lt;%= "Available for delivery" if product.delivery %&gt;&lt;/span&gt;
+      &lt;%= form_with model: @order_item do |f| %&gt;
+      &lt;%= f.hidden_field :product_id, value: product.id %&gt;
+      &lt;%= f.number_field :quantity, value: 1, min: 1%&gt;
+      &lt;%= f.submit "Add to Cart" %&gt;
+      &lt;% end %&gt;
+    &lt;/div&gt;
+
+    &lt;% end %&gt;
+    &lt;% end %&gt;
+    &lt;% end %&gt;
+  &lt;/div&gt;
+## [4][Which is better? Puma or Passenger?](https://www.reddit.com/r/rails/comments/h9em7o/which_is_better_puma_or_passenger/)
+- url: https://www.reddit.com/r/rails/comments/h9em7o/which_is_better_puma_or_passenger/
+---
+Which server is best for handling high volume of light weight requests? I did load testing with both servers, Puma won the contest with very slight difference. The main reason I'm asking to reduce running servers for my production app. As of now 15 servers are running with passenger. Is this possible to reduce servers count to atleast 13 or 14 by switching to Puma from Passenger?
+## [5][Best way to association one to "many manies"?](https://www.reddit.com/r/rails/comments/h985c6/best_way_to_association_one_to_many_manies/)
+- url: https://www.reddit.com/r/rails/comments/h985c6/best_way_to_association_one_to_many_manies/
+---
+I'm wondering what's the best way to do the association for the following models. On one hand, we have `Reviewers` and on the other one we have their reviews on different platforms (Tripadvisor, Yelp, etc.). Each type of review would have their own unique characteristics, so we have models like `TripadvisorReview`, `YelpReview`, etc.
+
+Each `Reviewer` only has one type of reviews. To keep all the reviewers in one model, we validates the uniqueness of their username on the `scope:` of their `:platform` ("tripadvisor", "yelp", etc.).
+
+Here's the current model for `Reviewer`:
+```
+class Reviewer &lt; ApplicationRecord  
+  has_many :tripadvisor_reviews, dependent: :destroy  
+  has_many :yelp_reviews, dependent: :destroy  
+  validates :username, presence: true, uniqueness: { scope: :platform }  
+end
+```
+Here's the model for `TripadvisorReview`:
+```
+class TripadvisorReview &lt; ApplicationRecord
+  belongs_to :reviewer
+end
+```
+(Same for `YelpReview`, etc.)
+
+I considered creating an association like `ReviewerPlatform` but individually this is a `one_to_many` association: each reviewer has many reviews only on one platform. I'm wondering if there would be a more efficient way to do this association, or is this one fitting "the Rails way"?
+## [6][Gem for Dynamic, Per-User Banner Messages?](https://www.reddit.com/r/rails/comments/h96o36/gem_for_dynamic_peruser_banner_messages/)
+- url: https://www.reddit.com/r/rails/comments/h96o36/gem_for_dynamic_peruser_banner_messages/
+---
+Just display a banner with a message for a given user or sets of users. Messages may differ per user. I thought there was a gem for this but could not find it. 
+
+One must be able to set messages that will be displayed on next page load. 
+
+Suggestions?
+## [7][HTTP2 early hints in Rails / Puma](https://www.reddit.com/r/rails/comments/h8z9kz/http2_early_hints_in_rails_puma/)
+- url: https://www.reddit.com/r/rails/comments/h8z9kz/http2_early_hints_in_rails_puma/
+---
+Hi, I've enabled early hints in puma, but when i enable http2 in nginx i get an error on mobile clients net::ERR\_HTTP2\_PROTOCOL\_ERROR
+
+From what I've found looks like nginx still doesn't support early hints, has anyone gotten it working? Could you share your stack / configuration? 
+
+&amp;#x200B;
+
+Thanks
+## [8][Connecting to Heroku Follower Database](https://www.reddit.com/r/rails/comments/h99i6n/connecting_to_heroku_follower_database/)
+- url: https://www.reddit.com/r/rails/comments/h99i6n/connecting_to_heroku_follower_database/
+---
+I'm trying to setup a follower database on Heroku. What's the easiest way to configure my Rails application to connect to the follower database for reads? Do I do it on the model level? Or there might be an easier way to do it. I can't seem to find any resources online.
+## [9][Edit and delete (newbie)](https://www.reddit.com/r/rails/comments/h94tr1/edit_and_delete_newbie/)
+- url: https://www.reddit.com/r/rails/comments/h94tr1/edit_and_delete_newbie/
+---
+I am having trouble getting my app to edit and delete an actual object. I am a newbie and this is my first rails project for my bootcamp. I am able to get the links connected, but when you click the link it does not delete anything. I also must mention that I had to nest some routes, so it really confused me in terms of the logic. If anyone can point me to some good resources that would be really helpful!
+## [10][Out of curiosity, how many of you are finding that your professional Rails-based environment is moving more toward JavaScript?](https://www.reddit.com/r/rails/comments/h8mdaz/out_of_curiosity_how_many_of_you_are_finding_that/)
 - url: https://www.reddit.com/r/rails/comments/h8mdaz/out_of_curiosity_how_many_of_you_are_finding_that/
 ---
 The reason I ask this is because I am - and have been for quite some time - a professional JavaScript developer.
@@ -35,177 +124,7 @@ And I had a very interesting conversation with a pro Rails developer the other d
 He told me that he immediately started sending out resumes and went through a battery of tests and interviews and what struck his as interesting is that they were FAR more interested in his JavaScript (React mainly) experience than they were his 12 years of Rails development.  In fact, he said that because of my JS experience, I would probably have an easier time finding a Rails job than he did - which sounds ludicrous. 
 
 Are any of you folks starting to witness the shift as well?
-## [4][Calculating average order frequency in days with activerecord](https://www.reddit.com/r/rails/comments/h8pzlo/calculating_average_order_frequency_in_days_with/)
-- url: https://www.reddit.com/r/rails/comments/h8pzlo/calculating_average_order_frequency_in_days_with/
+## [11][Quick Demo of Reactive UI with Stimulus Reflex](https://www.reddit.com/r/rails/comments/h8j14f/quick_demo_of_reactive_ui_with_stimulus_reflex/)
+- url: https://www.reddit.com/r/rails/comments/h8j14f/quick_demo_of_reactive_ui_with_stimulus_reflex/
 ---
-For every user with more than one order, I want to calculate the average amount of time in between order's `created_at` in days (how often a user places an order):
-
-7th grade math way: Calculate the average by taking the total sum of the numbers divided by the total number count:
-
-`[1,2,3,4].sum / [1,2,3,4].length`
-
-This is a bit more tricky when dealing with dates (more specifically time in seconds). Can I accomplish this with the same level of accuracy using the `.minimum` and `.maximum` activerecord methods?
-
-The only way I've been able to get what appears to be an accurate number is by breaking down the dates by `seconds` and converting to `days`
-
-my code so far (very ugly and expensive):
-
-    def self.average_order_frequency
-        frequency_collection = []
-        customers = User.joins(:orders)
-        .group('users.id')
-        .having('count(orders) &gt; 1') 
-    
-        if customers.any?
-          customers.each do |customer|
-            orders = customer.orders
-    
-            seconds = orders.maximum(:created_at) - orders.minimum(:created_at)
-            avg_seconds = seconds / (orders.count - 1)
-            avg_days = avg_seconds / (24 * 60 * 60)
-    
-            frequency_collection.push(avg_days)
-          end
-    
-          "#{(frequency_collection.sum / customers.length).round(2)} days in between orders on average"
-        else
-          "none to show"
-        end
-      end
-
-I tried to get a day count using a range:
-
-    (order[num+1].created_at.to_date..order[num].created_at.to_date).to_i
-
-but it requires an additional nested block and several more lines in an already ugly method.
-
-How do you calculate the average amount of days in between records creation?
-## [5][What is the best way to access the joined model's data in has_may :through?](https://www.reddit.com/r/rails/comments/h8ghu7/what_is_the_best_way_to_access_the_joined_models/)
-- url: https://www.reddit.com/r/rails/comments/h8ghu7/what_is_the_best_way_to_access_the_joined_models/
----
-I'm creating a standard has\_many :through association like the one outlined in the [rails guide.](https://guides.rubyonrails.org/association_basics.html#the-has-many-through-association)
-
-I have `Users` and `Gardens` joined through `GardenUsers` as shown below.  
-
-
-    class User &lt; ApplicationRecord
-      has_many :garden_users, dependent: :destroy
-      has_many :gardens, through: :garden_users
-    end
-    
-    class Garden &lt; ApplicationRecord
-      has_many :garden_users, dependent: :destroy
-      has_many :users, through: :garden_users
-    end
-    
-    class GardenUser &lt; ApplicationRecord
-      belongs_to :user
-      belongs_to :garden
-      enum garden_role: {owner: 0, maintainer: 1, harvester:2}
-    end
-
-My first question:
-
-This seems like the best association because `Users` will have multiple `Gardens` and visa versa, but is there a better way, given that there will only be one connection between any given user/garden? If it is the best, what would be best way to ensure that there is only one instance of any `garden_id/user_id` combination in `garden_users`?
-
-My second question is:  
-What is the best way to access a user's `garden_role` for a specific garden? The best way that I could come up with is
-
-    class User &lt; ApplicationRecord
-      def garden_role(garden)
-        garden_user.find_by(garden_id: garden.id).garden_role
-      end
-    end
-
-but that feels a bit clunky and seems like a common enough thing that there would be a more "rails magic" way to access whatever data is in the `GardenUser` model.
-## [6][Experience with the Shopify API?](https://www.reddit.com/r/rails/comments/h8c3cv/experience_with_the_shopify_api/)
-- url: https://www.reddit.com/r/rails/comments/h8c3cv/experience_with_the_shopify_api/
----
-Hey - does anyone have experience with the Shopify API? If so, I'd love some help. 
-
-When a Shopify Merchant installs my app (written in RoR), we ask the Merchant to manually add some Liquid code to their Theme files. But I'd like to automate that process and can't figure out how to do it.
-## [7][ActiveStorage: How to convert images to WebP properly?](https://www.reddit.com/r/rails/comments/h87nfs/activestorage_how_to_convert_images_to_webp/)
-- url: https://www.reddit.com/r/rails/comments/h87nfs/activestorage_how_to_convert_images_to_webp/
----
-Hey there,
-
-currently I'm experiment with ActiveStorage and image optimization. To convert my JPGs to WebPs is my main goal at the moment to increase the performance and loading time.
-
-Problem: converting JPG to WebP works out of the box but the generated WebPs acts like JPG (MIME type and file extension)
-
-One of my models has an active storage association: `has_one_attached :profile_picture`
-
-The view:
-
-&amp;#x200B;
-
-    - Photomodel.all.each do |model|
-     - if model.profile_picture.attached?
-      .pictures{style: "display: flex"}
-        = image_tag(model.profile_picture.variant(convert: :webp, resize_to_limit: [300,300]), alt: 'webp')
-        = image_tag(model.profile_picture.variant(resize_to_limit: [300,300]), alt: 'jpg')
-
-Actually, rails converts the uploaded JPG to WebP but ignores to change the mime type and the file extension.
-
-https://preview.redd.it/0i7ppk1tjo451.png?width=449&amp;format=png&amp;auto=webp&amp;s=0f8fa1b585203e5e21fd2059cec3315b76dc6101
-
-&amp;#x200B;
-
-https://preview.redd.it/wdosqg84jo451.jpg?width=912&amp;format=pjpg&amp;auto=webp&amp;s=67ab5c4ae4a4a93621d1e7aef55b8b45cc3ff054
-
-With `pry` I tried to inspect the active storage object to change those parameters but found nothing in this direction.
-
-Is it possible to change the parameter of mime type and file extention to 'image/webp' and .webp?
-
-Many thanks!
-## [8][Hello Everyone, new rails user, I’ve built a functional CRUD rails app, now I need tips on styling](https://www.reddit.com/r/rails/comments/h8ikx9/hello_everyone_new_rails_user_ive_built_a/)
-- url: https://www.reddit.com/r/rails/comments/h8ikx9/hello_everyone_new_rails_user_ive_built_a/
----
-I am done with my app, I’ve given it full Crud functionality, but it’s looking very plain. I’ve designed the home page and about page quite nicely, but is there any way to style my views *after* the app is completed? This might sound like a basic and stupid question, but I am new to this. Most of the resources online are for those who are starting from scratch and I am not. Thanks in advance.
-## [9][The case of the disappearing db column :(](https://www.reddit.com/r/rails/comments/h7ww81/the_case_of_the_disappearing_db_column/)
-- url: https://www.reddit.com/r/rails/comments/h7ww81/the_case_of_the_disappearing_db_column/
----
-I have been programming in RoR since version 2.0, but I have never encountered a problem like this til now.  This is my second RoR API with React as the front end app. RoR v6.02
-
-The problem is in one particular table **Invitations** which has, among many others, a string column originally named **state**.  I have many other tables with similar columns (same name, same type) that work fine, BUT, the **Invitations** table is in a world of its own.  
-
-
-* 1 the column does exist in the table.  I can see it and populate it using
-pgAdmin 4.
-* 2 I can see the field in the log, with the proper values.  
-* 3 I have it in my parameters whitelist.  
-* 4 I can see it when printing params.inspect.
-
-In the line immediately following the inspection, as in:
-
-    puts "#{params.inspect}"
-
-= "... updated_at"=&gt;"2020-06-12T17:32:46.420Z", "state"=&gt;"invite"} permitted: true&gt;}
-
-    puts  "#{params.state}"
-
-=NoMethodError (undefined method `state' for &lt;ActionController::Parameters...&gt;)
-
-Any code that executes after the whitelist gives me the same NoMethodError.  For example,
-
-    @state = params.state;
-    Invitation.update(invitation_params).
-
-I have looked all over the web for a similar problem but maybe I just don't know the right question.
-
-Lastly, just in case, I renamed the column to **status**, but nothing changed except for the column name in the logs.
-
-Any ideas will be appreciated.
-
-P.S.  I have been working in digital electronics since 1954, with a degree in Electrical Engineering.  The first machine I worked on was a LGP-30 with 8k words of drum memory.  The OS was a graduate student with a cot (and miles of paper tape).  I am probably among the few survivors who knows how to program around drum latency :) /brag
-## [10][Rails Routes in Rails 6 looks kinda terrible in the terminal](https://www.reddit.com/r/rails/comments/h7lozw/rails_routes_in_rails_6_looks_kinda_terrible_in/)
-- url: https://www.reddit.com/r/rails/comments/h7lozw/rails_routes_in_rails_6_looks_kinda_terrible_in/
----
-Does anyone have a solution for the rails routes command that doesn't require grepping a specific controller or using the expand flag, that would pretty up the output of the rails routes command? It seems to be thrown off by action mail and active storage routes because of their length. Sure, I could use the expanded flag but then the console window can go for days. I would like to just see the formatting locked like it used to be or maybe even suppress the action mail stuff. 
-
-https://preview.redd.it/5pyumixzoh451.png?width=1706&amp;format=png&amp;auto=webp&amp;s=c4e08fe5012b36a9f1957842de27ba785805d509
-## [11][heroku[logplex]: Error L10 (output buffer overflow): drain 'd.cfcd3264-7259-4b12-ac5b-016032978174' dropped 1 messages since 2020-06-12T14:40:59.280571+00:00.](https://www.reddit.com/r/rails/comments/h7lyqq/herokulogplex_error_l10_output_buffer_overflow/)
-- url: https://www.reddit.com/r/rails/comments/h7lyqq/herokulogplex_error_l10_output_buffer_overflow/
----
-  
-How can I even begin troubleshooting this? it would help to know what the contents of the dropped messages were, or at least which method/process/dyno these dropped messages originated from.
+[https://youtu.be/MlnNkcz-oIc](https://youtu.be/MlnNkcz-oIc)

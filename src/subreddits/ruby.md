@@ -1,17 +1,33 @@
 # ruby
-## [1][I made a template for running a ruby app (sinatra) in Docker, feedback wanted](https://www.reddit.com/r/ruby/comments/h8qmr3/i_made_a_template_for_running_a_ruby_app_sinatra/)
+## [1][How to run slow RSpec files on Github Actions with parallel jobs by doing an auto split of the spec file by test examples](https://www.reddit.com/r/ruby/comments/h9beb4/how_to_run_slow_rspec_files_on_github_actions/)
+- url: https://docs.knapsackpro.com/2020/how-to-run-slow-rspec-files-on-github-actions-with-parallel-jobs-by-doing-an-auto-split-of-the-spec-file-by-test-examples
+---
+
+## [2][datoji - Remote JSON storage server. Create, Read, Update, Delete and Search JSON data.](https://www.reddit.com/r/ruby/comments/h9fvqs/datoji_remote_json_storage_server_create_read/)
+- url: https://datoji.dev
+---
+
+## [3][Noob ruby/Linux cron job question](https://www.reddit.com/r/ruby/comments/h93lk9/noob_rubylinux_cron_job_question/)
+- url: https://www.reddit.com/r/ruby/comments/h93lk9/noob_rubylinux_cron_job_question/
+---
+Thanks for reading this. I have very little experience with Ruby.  I have a RedHat Linux server that has a homemade Ruby application running on it. The person who created it is long gone. It's started manually now, but I'd like it to start on reboot. I was going to add a cron job for the script, but it's started with the command "rvmsudo bundle exec puma". Is adding this to a "@reboot" cron job the best path here, and if so do I just put that path and command in a script?
+
+&amp;#x200B;
+
+Thanks again, any help is appreciated.
+## [4][I made a template for running a ruby app (sinatra) in Docker, feedback wanted](https://www.reddit.com/r/ruby/comments/h8qmr3/i_made_a_template_for_running_a_ruby_app_sinatra/)
 - url: https://github.com/SebastianThorn/ruby-docker-skeleton
 ---
 
-## [2][Puma NewRelic plugin to monitor pools](https://www.reddit.com/r/ruby/comments/h8rsgh/puma_newrelic_plugin_to_monitor_pools/)
+## [5][Puma NewRelic plugin to monitor pools](https://www.reddit.com/r/ruby/comments/h8rsgh/puma_newrelic_plugin_to_monitor_pools/)
 - url: https://github.com/benoist/puma-newrelic
 ---
 
-## [3][Good (can be paid) courses for learning Ruby + Rails for PHP developer](https://www.reddit.com/r/ruby/comments/h7p6tm/good_can_be_paid_courses_for_learning_ruby_rails/)
+## [6][Good (can be paid) courses for learning Ruby + Rails for PHP developer](https://www.reddit.com/r/ruby/comments/h7p6tm/good_can_be_paid_courses_for_learning_ruby_rails/)
 - url: https://www.reddit.com/r/ruby/comments/h7p6tm/good_can_be_paid_courses_for_learning_ruby_rails/
 ---
 Hello! I am a PHP developer with few years experience and I want to switch to ruby and get a job as a junior ROR dev. I was hoping you could point me to some good and tested tutorials or courses where the focus is put on creating a real-life application.
-## [4][Reverting to an older string time format](https://www.reddit.com/r/ruby/comments/h7pq7v/reverting_to_an_older_string_time_format/)
+## [7][Reverting to an older string time format](https://www.reddit.com/r/ruby/comments/h7pq7v/reverting_to_an_older_string_time_format/)
 - url: https://www.reddit.com/r/ruby/comments/h7pq7v/reverting_to_an_older_string_time_format/
 ---
 Currently with ruby 2.7.1, when you do something like `Date.today.to_s(:long)` you'll get something like
@@ -27,7 +43,7 @@ Without that 0 padding on the day. Is there anyway to revert back to this old fo
 Or is there anyway to specify that `:long` should follow this structure: `%B %e, %Y`
 
 All help is appreciated!
-## [5][Is my algorithm's time complexity O(n log n)?](https://www.reddit.com/r/ruby/comments/h7s4yg/is_my_algorithms_time_complexity_on_log_n/)
+## [8][Is my algorithm's time complexity O(n log n)?](https://www.reddit.com/r/ruby/comments/h7s4yg/is_my_algorithms_time_complexity_on_log_n/)
 - url: https://www.reddit.com/r/ruby/comments/h7s4yg/is_my_algorithms_time_complexity_on_log_n/
 ---
     def two_sum?(array, value)
@@ -47,73 +63,11 @@ All help is appreciated!
     end
 
 I'm trying to create a function that finds a two unique numbers in an array whose sum equals the value in the second argument. I believe my implementation has a time complexity of O(n log n). However, when I run it with another function whose time complexity is also O(n log n), the total time is way different (calculated using the Benchmark gem) using the same input. For my function, it takes about 0.9 seconds. For the other function, it is taking 0.003 seconds. Is there any error in my algorithm analysis? Is my implementation not O(n log n)?
-## [6][Spark Joy by Running Fewer Tests](https://www.reddit.com/r/ruby/comments/h7cclo/spark_joy_by_running_fewer_tests/)
+## [9][Spark Joy by Running Fewer Tests](https://www.reddit.com/r/ruby/comments/h7cclo/spark_joy_by_running_fewer_tests/)
 - url: https://engineering.shopify.com/blogs/engineering/spark-joy-by-running-fewer-tests
 ---
 
-## [7][Fun facts about Ruby #4](https://www.reddit.com/r/ruby/comments/h12yg6/fun_facts_about_ruby_4/)
+## [10][Fun facts about Ruby #4](https://www.reddit.com/r/ruby/comments/h12yg6/fun_facts_about_ruby_4/)
 - url: https://i.redd.it/n22dyxmq8b451.png
 ---
 
-## [8][RHUBARBCIPHER: A plausibly deniable multi-key file encryption tool written in Ruby for GNU/Linux and BSD systems.](https://www.reddit.com/r/ruby/comments/h7e299/rhubarbcipher_a_plausibly_deniable_multikey_file/)
-- url: https://github.com/octetsplicer/RHUBARBCIPHER
----
-
-## [9][Having trouble installing ruby in my Vagrant Box](https://www.reddit.com/r/ruby/comments/h777f6/having_trouble_installing_ruby_in_my_vagrant_box/)
-- url: https://www.reddit.com/r/ruby/comments/h777f6/having_trouble_installing_ruby_in_my_vagrant_box/
----
-Hello. I'm in desperate need of help with this. So I haven't done much on my own outside of my coding bootcamp I graduated from yet. They had me download a set of files that included everything set up for Vagrant. But I wanted to recreate the environment for myself so that everything came from me and doesn't have any files related to the bootcamp anymore.
-
-I'm going through the tutorial of just creating the folder you want your code environment in, running the vagrant init command int he terminal and creating everything that way. I'm at the point of installing RVM and Ruby, specifically 2.7.1 which is the latest as of the time of this post. I'm getting an error though.
-
-Here's the output when I run "rvm install ruby-2.7.1":
-
-Searching for binary rubies, this might take some time.
-
-    Found remote file https://rvm_io.global.ssl.fastly.net/binaries/ubuntu/18.04/x86_64/ruby-2.7.1.tar.bz2
-    Checking requirements for ubuntu.
-    Requirements installation successful.
-    ruby-2.7.1 - #configure
-    ruby-2.7.1 - #download
-    Archive bin-ruby-2.7.1.tar.bz2 checksum did not match, downloading again.
-      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                     Dload  Upload   Total   Spent    Left  Speed
-    100 21.0M  100 21.0M    0     0  9572k      0  0:00:02  0:00:02 --:--:-- 9572k
-    Downloaded archive checksum did not match, archive was removed!
-    If you wish to continue with not matching download add '--verify-downloads 2' after the command.
-    
-    Downloading https://rvm_io.global.ssl.fastly.net/binaries/ubuntu/18.04/x86_64/ruby-2.7.1.tar.bz2 failed.
-    Mounting remote ruby failed with status 2, trying to compile.
-    Checking requirements for ubuntu.
-    Requirements installation successful.
-    Installing Ruby from source to: /usr/share/rvm/rubies/ruby-2.7.1, this may take a while depending on your cpu(s)...
-    ruby-2.7.1 - #downloading ruby-2.7.1, this may take a while depending on your connection...
-    Archive ruby-2.7.1.tar.bz2 checksum did not match, downloading again.
-      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                     Dload  Upload   Total   Spent    Left  Speed
-      0 14.0M    0 58100    0     0   267k      0  0:00:53 --:--:--  0:00:53  266k
-    curl: (16) Error in the HTTP2 framing layer
-    There was an error(16).
-    Checking fallback: https://ftp.ruby-lang.org/pub/ruby/2.7/ruby-2.7.1.tar.bz2
-    ** Resuming transfer from byte position 58100
-      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                     Dload  Upload   Total   Spent    Left  Speed
-    100 13.9M  100 13.9M    0     0   9.9M      0  0:00:01  0:00:01 --:--:--  9.9M
-    Downloaded archive checksum did not match, archive was removed!
-    If you wish to continue with not matching download add '--verify-downloads 2' after the command.
-    
-    There has been an error fetching the ruby interpreter. Halting the installation.
-
-I just need to try and get this fixed so I can continue to work on my Web Dev portfolio which is based on Ruby on Rails. I'm just not understanding why I'm now having all this trouble with my development environment when using the files that the bootcamp gave me is fine. It's just that those install older versions of ruby and rails and stuff and I want the latest working versions of everything. Any help is greatly appreciated.
-## [10][Help me understand bubble_sort](https://www.reddit.com/r/ruby/comments/h77rzt/help_me_understand_bubble_sort/)
-- url: https://www.reddit.com/r/ruby/comments/h77rzt/help_me_understand_bubble_sort/
----
-https://github.com/Ubuntu19019/learnruby/blob/master/bubble_sort
-
-The bubble sort problem is easy to implement, because it is very formulaic. I don't understand the sorted part though. I can do it, but I don't understand.
-
-At the top sorted = false
-
-so does while !sorted mean while sorted = true? That doesn't really make sense to me. Next it says sorted = true. Does it automatically do a pass after that. If it says sorted = true, why does it check the next loop? After it checks the next loop and makes changes sorted = false. Does that take it back to while !sorted? If so wouldn't that mean !sorted = false? If that's the case whats the point of setting sorted = false at the top?
-
-Thanks for the help. I don't understand the logic.

@@ -79,53 +79,123 @@
 
 
 &amp;nbsp;
-## [2][Showoff Saturday (June 13, 2020)](https://www.reddit.com/r/javascript/comments/h8625p/showoff_saturday_june_13_2020/)
-- url: https://www.reddit.com/r/javascript/comments/h8625p/showoff_saturday_june_13_2020/
+## [2][Your weekly /r/javascript recap](https://www.reddit.com/r/javascript/comments/h9cijv/your_weekly_rjavascript_recap/)
+- url: https://www.reddit.com/r/javascript/comments/h9cijv/your_weekly_rjavascript_recap/
 ---
-Did you find or create something cool this week in javascript? 
+**Monday, June 08 - Sunday, June 14**
 
-Show us here!
-## [3][I created an Open Source Google Drive Clone - MyDrive (Node.js, React, Docker, Amazon S3)](https://www.reddit.com/r/javascript/comments/h8dfu2/i_created_an_open_source_google_drive_clone/)
+###Top Posts
+
+| score | comments | title &amp; link |
+|--|--|--|
+| 615  | [75 comments](https://www.reddit.com/r/javascript/comments/h8dfu2/i_created_an_open_source_google_drive_clone/) | [I created an Open Source Google Drive Clone - MyDrive &amp;#40;Node.js, React, Docker, Amazon S3&amp;#41;](https://github.com/subnub/myDrive)|
+| 389  | [257 comments](https://www.reddit.com/r/javascript/comments/gz98sb/deno_plans_to_use_javascript_in_internal_code/) | [Deno plans to use JavaScript in internal code instead of TypeScript going forward](https://docs.google.com/document/d/1_WvwHl7BXUPmoiSeD8G83JmS8ypsTPqed4Btkqkn_-4/edit)|
+| 326  | [36 comments](https://www.reddit.com/r/javascript/comments/h8ulad/cors_understanding_cross_origin_resource_sharing/) | [CORS : Understanding Cross Origin Resource Sharing](https://www.arbazsiddiqui.me/cors-understanding-cross-origin-resource-sharing/)|
+| 242  | [60 comments](https://www.reddit.com/r/javascript/comments/gzpmlv/es4_the_failed_proposal_the_indirectly_led_to/) | [ES4, The Failed proposal the indirectly led to Node.js, ES6, TypeScript and Deno](https://dev.to/hansuxdev/es4-the-failed-proposal-the-indirectly-led-to-node-js-es6-typescript-and-deno-g6f)|
+| 237  | [34 comments](https://www.reddit.com/r/javascript/comments/h09rcv/stegcloak_hide_secrets_with_invisible_characters/) | [stegcloak: Hide secrets with invisible characters in plain text securely using passwords](https://github.com/KuroLabs/stegcloak)|
+| 215  | [45 comments](https://www.reddit.com/r/javascript/comments/h0hveb/visual_studio_code_may_2020/) | [Visual Studio Code May 2020](https://code.visualstudio.com/updates/v1_46)|
+| 213  | [115 comments](https://www.reddit.com/r/javascript/comments/h7i7m2/standalone_uuid_generator_in_javascript_no/) | [Standalone UUID generator in Javascript &amp;#40;no external dependencies, only 6 lines of code&amp;#41;](https://abhishekdutta.org/blog/standalone_uuid_generator_in_javascript.html)|
+| 207  | [9 comments](https://www.reddit.com/r/javascript/comments/h80dyz/twilioquest_discover_your_power_to_change_the/) | [TwilioQuest - Discover your power to change the world with code. Test you JavaScript skills with a downloadable game!](https://www.twilio.com/quest)|
+| 163  | [36 comments](https://www.reddit.com/r/javascript/comments/h13ide/nodejs_dependency_injection_layered_architecture/) | [Node.js, Dependency Injection, Layered Architecture, and TDD: A Practical Example Part 1](https://carlosgonzalez.dev/posts/node-js-di-layered-architecture-and-tdd-a-practical-example-part-1/)|
+| 143  | [10 comments](https://www.reddit.com/r/javascript/comments/gz0y5g/rough_notation_a_small_javascript_library_to/) | [Rough Notation - a small JavaScript library to create and animate annotations on a web page. Elements can be annotated in a number of different styles. Animation duration and delay can be configured, or just turned off](https://github.com/pshihn/rough-notation)|
+
+
+
+
+&amp;nbsp;
+
+###Most Commented Posts
+
+| score | comments | title &amp; link |
+|--|--|--|
+| 109  | [50 comments](https://www.reddit.com/r/javascript/comments/gyt3dk/when_is_a_package_a_dependency_or_devdependency/) | [When is a package a dependency or devDependency](https://withblue.ink/2020/06/07/is-this-a-dependency-or-devdependency.html)|
+| 32  | [45 comments](https://www.reddit.com/r/javascript/comments/h7hnxz/askjs_when_is_objectoriented_programming_more/) | `[AskJS]` &amp;#91;AskJS&amp;#93; When is object-oriented programming more practical than "mostly-functional" in JS?|
+| 24  | [34 comments](https://www.reddit.com/r/javascript/comments/h02db6/askjs_have_you_every_actually_run_into_someone/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Have you every actually run into someone assigning something to undefined?|
+| 7  | [29 comments](https://www.reddit.com/r/javascript/comments/h84r91/how_to_get_the_last_item_of_an_array_with/) | [How to get the last item of an array with destructuring](https://diary.kud.io/en/posts/2020/06/13/how-to-get-the-last-item-of-an-array-with-destructuring)|
+| 52  | [25 comments](https://www.reddit.com/r/javascript/comments/h7dl15/the_power_of_functions_returning_other_functions/) | [The Power of Functions Returning Other Functions in JavaScript](https://dev.to/jsmanifest/the-power-of-functions-returning-other-functions-in-javascript-11lo)|
+
+
+
+
+&amp;nbsp;
+
+###Top Ask JS
+
+| score | comments | title &amp; link |
+|--|--|--|
+| 13  | [10 comments](https://www.reddit.com/r/javascript/comments/h7ili8/askjs_a_good_place_to_look_for_stuff_to_do_and/) | `[AskJS]` &amp;#91;AskJS&amp;#93; A good place to look for stuff to do and challenges ?|
+| 11  | [9 comments](https://www.reddit.com/r/javascript/comments/h7v1cb/askjs_best_practicesapproaches_for_security/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Best Practices/Approaches for Security Vulnerabilities in Downstream Dependencies?|
+| 9  | [16 comments](https://www.reddit.com/r/javascript/comments/h07jgi/askjs_a_small_js_utility_library_that_allows_you/) | `[AskJS]` &amp;#91;AskJS&amp;#93; A small JS utility library that allows you to use $ instead of document.querySelector?|
+
+
+
+
+&amp;nbsp;
+
+###Top Showoffs
+
+| score  |  comment  |
+|--|--|
+| 2  |  /u/hodgef said [I've just released PRSS, a Static Site Generator for blogs and documentation sites.  &amp;#91;https://github.com/hodgef/PRSS&amp;#93;&amp;#40;https://github.com/hodgef/PRSS&amp;#41;   All feedback is very much apprec...](/r/javascript/comments/h8625p/showoff_saturday_june_13_2020/fuqcnob/?context=5) |
+| 2  |  /u/guilhermebbastos said [Hello, #Devs I have created  the **replacement for the ordinary text resume**, **using Angular 9**.  Fork on &amp;#91;GitHub repository&amp;#93;&amp;#40;https://github.com/guilhermeborgesbastos/live-resume/&amp;#41; ...](/r/javascript/comments/h8625p/showoff_saturday_june_13_2020/fupfvee/?context=5) |
+| 1  |  /u/solopov said [I've released yace: ~1KB code editor for browser with plugins.  https://github.com/petersolopov/yace](/r/javascript/comments/h8625p/showoff_saturday_june_13_2020/futjnu2/?context=5) |
+
+
+
+
+&amp;nbsp;
+
+###Top Comments
+
+| score  |  comment  |
+|--|--|
+| 94  |  /u/ghostfacedcoder said [&amp;gt;I believe JavaScript is largely a broken language that should have been fixed before large parts of our entire global economy and technology that running off it intertwined with our social reality...](/r/javascript/comments/gzpmlv/es4_the_failed_proposal_the_indirectly_led_to/fthyktx/?context=5) |
+| 84  |  /u/TheDarkIn1978 said [A failed proposal that was used by millions of ActionScript 3.0 developers.](/r/javascript/comments/gzpmlv/es4_the_failed_proposal_the_indirectly_led_to/fthu02i/?context=5) |
+| 81  |  /u/subnub99 said [Hey guys, i'm excited to announce the first major update to myDrive, myDrive is an Open Source File Service I created, it’s similar to Google Drive. MyDrive now has more features than ever, features s...](/r/javascript/comments/h8dfu2/i_created_an_open_source_google_drive_clone/fuq7jyh/?context=5) |
+| 81  |  /u/whatisboom said [Post about JavaScript with a WP template file as the hero image](/r/javascript/comments/h7dl15/the_power_of_functions_returning_other_functions/ftrsl79/?context=5) |
+| 72  |  /u/letsgetrandy said [**dependency:** Required all the way to production.  **devDependency:** Only required to build in dev.  Running `npm install --only=prod` will skip the downloading and installing of packages that are ...](/r/javascript/comments/gyt3dk/when_is_a_package_a_dependency_or_devdependency/ftcg6gj/?context=5) |
+
+
+
+
+&amp;nbsp;
+## [3][How JWT works — the implementation](https://www.reddit.com/r/javascript/comments/h9el4d/how_jwt_works_the_implementation/)
+- url: https://medium.com/@alexcambose/how-jwt-works-in-depth-354cb5dc360d
+---
+
+## [4][[AskJS] What was some of your very first projects to understand and get comfortable with the language?](https://www.reddit.com/r/javascript/comments/h9e148/askjs_what_was_some_of_your_very_first_projects/)
+- url: https://www.reddit.com/r/javascript/comments/h9e148/askjs_what_was_some_of_your_very_first_projects/
+---
+And in hindsight, was what the most valuable lesson/idea or project?
+## [5][Grid.js - Advanced table plugin](https://www.reddit.com/r/javascript/comments/h9dep8/gridjs_advanced_table_plugin/)
+- url: https://gridjs.io/?reddit
+---
+
+## [6][[AskJS] How would i make a script that refeshes a site and keeps the filters when refreshed?](https://www.reddit.com/r/javascript/comments/h9dn1l/askjs_how_would_i_make_a_script_that_refeshes_a/)
+- url: https://www.reddit.com/r/javascript/comments/h9dn1l/askjs_how_would_i_make_a_script_that_refeshes_a/
+---
+I tried using an extension to auto refresh but it doesn't seem to retain the filters i turn on. Is there a way to do this with Javascript? Thanks
+## [7][CORS : Understanding Cross Origin Resource Sharing](https://www.reddit.com/r/javascript/comments/h8ulad/cors_understanding_cross_origin_resource_sharing/)
+- url: https://www.arbazsiddiqui.me/cors-understanding-cross-origin-resource-sharing/
+---
+
+## [8][denoland/deno_lint : fast alternative to ESLint](https://www.reddit.com/r/javascript/comments/h8v4s4/denolanddeno_lint_fast_alternative_to_eslint/)
+- url: https://github.com/denoland/deno_lint
+---
+
+## [9][A fun tree fractal visualization with p5.js](https://www.reddit.com/r/javascript/comments/h94hlv/a_fun_tree_fractal_visualization_with_p5js/)
+- url: https://alexkaufman06.github.io/fractalTree/
+---
+
+## [10][Component namespacing with Emotion](https://www.reddit.com/r/javascript/comments/h93xnq/component_namespacing_with_emotion/)
+- url: https://diary.kud.io/en/posts/2020/06/15/component-namespacing-with-emotion
+---
+
+## [11][I created an Open Source Google Drive Clone - MyDrive (Node.js, React, Docker, Amazon S3)](https://www.reddit.com/r/javascript/comments/h8dfu2/i_created_an_open_source_google_drive_clone/)
 - url: https://github.com/subnub/myDrive
 ---
 
-## [4][Static Hosting Benchmark 2020](https://www.reddit.com/r/javascript/comments/h8ktbh/static_hosting_benchmark_2020/)
-- url: https://www.pierbover.com/posts/static-hosting-benchmark-2020/
----
-
-## [5][I made a twitter bot that mirrors random post to twitter from r/ProgrammerHumor](https://www.reddit.com/r/javascript/comments/h8sk2q/i_made_a_twitter_bot_that_mirrors_random_post_to/)
-- url: https://github.com/tayfurunal/reddit-to-twitter-bot
----
-
-## [6][[AskJS] Difference between classes and modules](https://www.reddit.com/r/javascript/comments/h8sf4g/askjs_difference_between_classes_and_modules/)
-- url: https://www.reddit.com/r/javascript/comments/h8sf4g/askjs_difference_between_classes_and_modules/
----
-Hi all!
-
-Just  a little mental excercise: I was wondering about whether it could be  possible to convert classes into modules. The way I was thinking about  it is to just declare all the properties/methods in the top level of the  file. Public properties/methods would be exported and private  properties/methods would not. I then realised I didn't really know how  this would behave. Would it act like a singleton static class? I guess  if you'd want something like class instances you'd need a factory  function of sorts?
-
-Do people use modules this way? What are the main benefits/downsides of this compared to classes?
-## [7][Web platform's hidden gems - Gamepad API](https://www.reddit.com/r/javascript/comments/h8l1np/web_platforms_hidden_gems_gamepad_api/)
-- url: https://arunmichaeldsouza.com/blog/web-platform's-hidden-gems---gamepad-api
----
-
-## [8][TwilioQuest - Discover your power to change the world with code. Test you JavaScript skills with a downloadable game!](https://www.reddit.com/r/javascript/comments/h80dyz/twilioquest_discover_your_power_to_change_the/)
-- url: https://www.twilio.com/quest
----
-
-## [9][I created a visual Static Site Generator that deploys to Github Pages](https://www.reddit.com/r/javascript/comments/h8iosm/i_created_a_visual_static_site_generator_that/)
-- url: https://prss.io
----
-
-## [10][I made a web app that lets you view 2D and 3D assets from PlayStation games](https://www.reddit.com/r/javascript/comments/h8a5is/i_made_a_web_app_that_lets_you_view_2d_and_3d/)
-- url: https://roblouie.com/psx-viewer
----
-
-## [11][Don't write your own framework](https://www.reddit.com/r/javascript/comments/h8o5mn/dont_write_your_own_framework/)
-- url: https://stitcher.io/blog/dont-write-your-own-framework
----
-
-## [12][Translating your React app with i18nexus](https://www.reddit.com/r/javascript/comments/h8katd/translating_your_react_app_with_i18nexus/)
-- url: https://medium.com/javascript-in-plain-english/react-localization-the-winner-is-i18next-i18nexus-b7cd9f14094e
+## [12][JavaScript Developer Salary 2020| React, Angular, Vue Salary and Market Trends](https://www.reddit.com/r/javascript/comments/h99ump/javascript_developer_salary_2020_react_angular/)
+- url: https://www.daxx.com/blog/development-trends/javascript-market-trends-average-salaries
 ---
 

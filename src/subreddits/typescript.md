@@ -22,7 +22,123 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Must I always extend protected members to be protected?](https://www.reddit.com/r/typescript/comments/h9g59c/must_i_always_extend_protected_members_to_be/)
+## [2][Single value as a return type?](https://www.reddit.com/r/typescript/comments/ha1pog/single_value_as_a_return_type/)
+- url: https://www.reddit.com/r/typescript/comments/ha1pog/single_value_as_a_return_type/
+---
+VSCode doesn't lint if I set the return type as a static value. I have an orchestrator method that should only ever err or return true:
+
+       public run(): true {
+
+Another option is to just set it to `void`. That actually sounds more sensible.
+
+Does it ever make sense to set the return type to a static non-void value?
+## [3][thetutlage/japa the missing Typescript-Typescript unit test library](https://www.reddit.com/r/typescript/comments/h9p03q/thetutlagejapa_the_missing_typescripttypescript/)
+- url: https://github.com/thetutlage/japa
+---
+
+## [4][Show Reddit: Computing with types in TypeScript](https://www.reddit.com/r/typescript/comments/h9vaxq/show_reddit_computing_with_types_in_typescript/)
+- url: https://2ality.com/2020/06/computing-with-types.html
+---
+
+## [5][[Newbie] Type annotations for functions](https://www.reddit.com/r/typescript/comments/h9xl4p/newbie_type_annotations_for_functions/)
+- url: https://www.reddit.com/r/typescript/comments/h9xl4p/newbie_type_annotations_for_functions/
+---
+I came accros this code! I'm a bit confused on the first code and what the differences between the 2 are! 
+
+    // first
+    const logNumber: (i: number) =&gt; void = (i: number) =&gt; {
+      console.log(i);
+    };
+    //Annotating the  variable with (i:number)? And the function must return void? 
+    //Why are we anotating the variable with (i:number)?
+     
+    // second
+    const logNumber = (i:number): void =&gt; {
+      console.log(i);
+    };
+    //annotaitng the function, where i must be a number, return type must be void
+## [6][Type guard is acting strange. Is this a bug, or am I confused?](https://www.reddit.com/r/typescript/comments/h9isnt/type_guard_is_acting_strange_is_this_a_bug_or_am/)
+- url: https://www.reddit.com/r/typescript/comments/h9isnt/type_guard_is_acting_strange_is_this_a_bug_or_am/
+---
+Idk if I found a bug or something is going over my head, but I've written out a super simplified example of code I wrote where the type error is displayed, and one where it is not.
+
+[example code 1 (error)](https://www.typescriptlang.org/play/#code/MYewdgzgLgBAygFQKIAUD6BJAIjAvDAbwCgZSYAzASwCdoAueATwFsAjEAGwDpyRqAKAOQBGQQEoANCTIQApqDAATBnBbtuvAYIBM4qQF8iRKIwAOs+FFmm8haaUrKYENZwDc9mGFkAPKAH4VK1MPQyIFaGdgiCDrAG0AXVs4z2IydJhHFWR0bB4aaCkMsm8-BgJMp0RUTCwuOQVFGH0isha7YocqnNr6+XBFVuLSqAYAVyVZKm9Bz0MEjyJyCeAoSnAKSiU4YIAhRgxFfmhrQ4YAa1lGEHIYE3Mb+B7sMQ6yDllYE9NYmwAfGATRRTLayJr4b4QOIABgWRnSlFu-AAhN9XmlOtRPmNqGAPOkwukAO4AC0oHxgx2CXEcMGRuHw1VyWDi30OCXRnnSEVgI1s3y4I0WnUySORI1eWKgOLx8M631sQrmctIUplUWsoSIQA)
+
+[example code 2 (working)](https://www.typescriptlang.org/play/#code/MYewdgzgLgBAygFQKIAUD6BJAIjAvDAbwCgZSYAzASwCdoAueATwFsAjEAGwDpyRqAKAOQBGQQEoANCTIQApqDAATBnBbtuvAYIBM4qQF8iRKIwAOs+FFmm8haaUrKYENZwDc9mGFkAPKAH4VK1MPQyIFaGdgiCDrAG0AXVs4z2IydJhHFWR0bB4aaCkMsm8-BgJMp0RUTCwuOQVFGH0isha7YocqnNr6+XBFVuLSqAYAVyVZKm9Bz0MEjyJyCeAoSnAKSiU4YIAhRgxFfmhrQ4YAa1lGEHIYE3Mb+B7sMQ6yDllYE9NYmwAfGATRRTLayJr4b4QOIABgWRnSlFu-AAhN9XmlOtRPmNqGAPOkwukAO4AC0oHxgx2CXEcMGRuHw1VyWDi30OCXRngRSNR1JGryxUBxePhnW+tm+XBG+LaotIguFUWsoSIQA)
+
+Does anyone know why the guard at line 24-26 in example code 1 does not work, but does work in example 2? I'm fairly confident in my TypeScript abilities but this one is not making sense in my brain.
+## [7][How are branded types valid types?](https://www.reddit.com/r/typescript/comments/h9udyv/how_are_branded_types_valid_types/)
+- url: https://www.reddit.com/r/typescript/comments/h9udyv/how_are_branded_types_valid_types/
+---
+An example of a branded type is:
+
+`type USD = number &amp; {__brand: "USD"}`
+
+You can then cast numbers to this type with \`as USD\`. However, I don't understand how this works. How can you intersect a primitive with an object? I thought objects could only be intersected with other objects, `object`, or `any`.
+## [8][How to create a JSON Object's element based on if it is null or not?](https://www.reddit.com/r/typescript/comments/h9xfpa/how_to_create_a_json_objects_element_based_on_if/)
+- url: https://www.reddit.com/r/typescript/comments/h9xfpa/how_to_create_a_json_objects_element_based_on_if/
+---
+    async homeApi(_source: any, _args: any) { const body = {           door: _args.door,           window: _args.window         }; }
+
+I have a typescript code like above where I create a JSON Object called bodyusing doorand windowarguments. Typically the body should be:
+
+    {     door: 3,     window: 4 }
+
+What I want is if \_args.dooris empty/blank, the bodyshould be
+
+    {window: 4}
+
+It should not be: {         door: undefined,         window: 4        }
+## [9][Beginner needs help writing his first .d.ts file](https://www.reddit.com/r/typescript/comments/h9o9g9/beginner_needs_help_writing_his_first_dts_file/)
+- url: https://www.reddit.com/r/typescript/comments/h9o9g9/beginner_needs_help_writing_his_first_dts_file/
+---
+Hello everyone!
+
+I’m currently working on a react component library for my own personal use and so far I’ve built my components, compiled them to JS and it all works as expected when I import my lib from a new project.
+
+However when I import the lib, TS demands a .d.ts file... to override this while working on my lib I just had TS ignore the missing .d.ts file.
+
+But now I’m ready to actually supply this file and I’ve never written one.
+
+I read some of the TS docs this morning and although I’ll appreciate any input, my main question is:
+
+Where does the .d.ts file go?
+
+Do I put it in the root of the lib where node_modules is?
+
+Do I put it inside of the src folder?
+
+Or am I creating a .d.ts file for every module of my lib?
+
+I’m just throwing this out there, any input is appreciated! Thank you! 🙏🏽
+## [10][String Literal Propagation Issue](https://www.reddit.com/r/typescript/comments/h9laux/string_literal_propagation_issue/)
+- url: https://www.reddit.com/r/typescript/comments/h9laux/string_literal_propagation_issue/
+---
+I'm trying to propagate a string literal through a function argument while also accepting another generic type. What I'm trying to do is get the result of the action and put it in a list of actions for a switch case Here is where I'm at.
+```
+export function generateAction&lt;Payload, T extends string = string&gt;(
+	type: T
+): [T, (payload: Payload) =&gt; { type: T; payload: Payload }] {
+	return [type, payload =&gt; ({ type, payload })];
+}
+
+export const [SWITCH_SECTION, switchSection] = generateAction&lt;{ section: number }&gt;('SWITCH_SECTION');
+export const [SWITCH_SUBSECTION, switchSubsection] = generateAction&lt;{ subsection: number }, 'SWITCH_SUBSECTION'&gt;(
+
+type actionTypes = ReturnType&lt;typeof switchSection&gt; | ReturnType&lt;typeof switchSubsection&gt;;
+```
+
+By specifying the payload type it makes the string generic dumb and doesn't use the string literal. If I use the below the string literal is preserved.
+
+```
+export const [SWITCH_SECTION, switchSection] = generateAction('SWITCH_SECTION');
+export const [SWITCH_SUBSECTION, switchSubsection] = generateAction('SWITCH_SUBSECTION');
+
+type actionTypes = ReturnType&lt;typeof switchSection&gt; | ReturnType&lt;typeof switchSubsection&gt;;
+```
+[Playground Link](https://www.staging-typescript.org/play?#code/KYDwDg9gTgLgBAMwK4DsDGMCWEVwObArBQCGMwAghtigDwAKJAngDYQkAmANHACpyhyKDgGc4ImFEwo8cALzjJ0vAD4AFACg42uDCZhgALj4aAlMYDavHmrDM2nY41bsOp+SrgBvXfqN8Abjg7F0c4ZwcOOABfAF1vLR0oYBgkKFwLPQMeEMiPODUfLOAc+1cY01iAjWiNDVBIWDg0HAk4CwBlAHUASV4AYQAJAH0OgFF+3h6AeQA5HhEAd0wYNAALDuBqHHiFAiJSciosHFofES2TlGMUJABbACNiGPUAcm6+odGJqbnX02qDWg8BaKDanV6AxGHQAqgAhcaTGbzcTLVYbJAPC7bFC7fCEYhkSg4s7iTHYq43e5PKAxHjvSFfWEIn7I15vD5Q0bwxG-Wb-QHgYHNVrwCGfaE81lzABMCzR602OJleP2hKOOLUDIl3JZSNlArqxTgJBxvD8YgUACUUmkUOaDLRihAEKiVorLjRPAAfOA21LpB3AJ1+F1u9EdcmenA+v22wN+EMGMNLd0baMoGUqAJAA)
+Any idea how to preserve the string literal while also specifying another generic?
+## [11][Must I always extend protected members to be protected?](https://www.reddit.com/r/typescript/comments/h9g59c/must_i_always_extend_protected_members_to_be/)
 - url: https://www.reddit.com/r/typescript/comments/h9g59c/must_i_always_extend_protected_members_to_be/
 ---
 I have something like this:
@@ -45,115 +161,3 @@ I don't plan to extend `Subclass` so I thought marking `description` as `protect
 Can anyone help me understand why `protected` is needed here?
 
 Is the case simply that any time you extend a class you must identify overwritten members with the `protected` keyword?
-## [3][A class-based fixtures generator powered by TypeScript and decorators](https://www.reddit.com/r/typescript/comments/h91zp9/a_classbased_fixtures_generator_powered_by/)
-- url: https://github.com/CyriacBr/class-fixtures-factory
----
-
-## [4][When to export interfaces?](https://www.reddit.com/r/typescript/comments/h9bhbc/when_to_export_interfaces/)
-- url: https://www.reddit.com/r/typescript/comments/h9bhbc/when_to_export_interfaces/
----
-Hi.  If I have a file, `Foo.tx` which defines `interface IFoo` and an export default class `export default class Foo implements IFoo`; when should I `export { IFoo }`.
-
-Are there any advantages to exporting the interface too?
-
----
-
-**Edit: explanation**
-
-I have a bunch of TypeScript files which are for a module.  Will exporting interfaces help with IntelliSense?  Will not exporting interfaces for the module (though I am exporting classes) strip away something helpful from those using the node module I am making?
-## [5][Types and autocomplete IntelliSense](https://www.reddit.com/r/typescript/comments/h8tyod/types_and_autocomplete_intellisense/)
-- url: https://www.reddit.com/r/typescript/comments/h8tyod/types_and_autocomplete_intellisense/
----
-Hi.  I have a TypeScript project which I want to put out as npm module.
-
-Currently the TypeScript source code is in `src` directory.
-```
-src
-| - Foo
-       | - Foo.ts  // -&gt; export default class Foo
-| - Bar
-        | - Bar.ts  // -&gt; export default class Bar
-| - index.ts // -&gt; export { Foo, Bar }
-```
-With the current `tsconfig.json`, types are emitted in the `types` directory, and compiled JavaScript code is in `dist`.
-
-But when I create a `main.js` file which imports `Foo` from `dist/index`; IntelliSense does not suggest any methods I had defined for `Foo`.  How do I make it work?
-## [6][React: Do I really have to declare every properties inside props?](https://www.reddit.com/r/typescript/comments/h96wp3/react_do_i_really_have_to_declare_every/)
-- url: https://www.reddit.com/r/typescript/comments/h96wp3/react_do_i_really_have_to_declare_every/
----
-Using vscode.
-
-A component have many props, eg. - `props.navigation`, `props.showMenu`, etc. But typescript is giving me error saying `navigation does not exist in Object` and squiggly red underlines `navigation`. I can resolve this by clicking Quick Fix and then declare property 'navigation'. This adds navigation in the Object interface.
-
-Do I really have to do this for every property inside props?
-## [7][Rosebox 0.2.3](https://www.reddit.com/r/typescript/comments/h8pev6/rosebox_023/)
-- url: https://www.reddit.com/r/typescript/comments/h8pev6/rosebox_023/
----
-[Rosebox](https://www.rosebox.dev/) is an active project with the ultimate goal to build an independent and complete JS/TS styling framework with an emphasis on writing declarative, reliable, and conflict-free style-code.
-## [8][Question regarding a dynamic key to get values from an object.](https://www.reddit.com/r/typescript/comments/h8ukgv/question_regarding_a_dynamic_key_to_get_values/)
-- url: https://www.reddit.com/r/typescript/comments/h8ukgv/question_regarding_a_dynamic_key_to_get_values/
----
-So I will try to explain my issue:  
-
-
-"account" is an object containing the usual stuff like name/password/etc..
-
-In my updateAccount function I have a parameter "data" which can contain the Id and whatever fields needs updating. 
-
-&amp;#x200B;
-
-Now, here arises my struggle with typescript, in normal javascript I would simply do:
-
-&amp;#x200B;
-
-Object.keys(data).forEach(key =&gt; {
-
-if(account\[key\]) { this is a valid key to update }
-
-});
-
-This allows me to only update what I need and filter out anything unneeded.  
-
-
-Yet... typescript seems to be annoyed as hell when you try do this claiming that strings are not a valid child of an account and what not. (the code runs it just gives TS warnings)
-
-Looking into it... it should be fixed by doing:
-
-Object.keys(data).forEach(&lt;T extends keyof AccountModel&gt;(key: T) =&gt; {  
-
-
-But then it nags about key and value being incompatible... Can anyone shed some light on how you are supposed to do this?
-## [9][Why does this work?](https://www.reddit.com/r/typescript/comments/h89nb2/why_does_this_work/)
-- url: https://www.reddit.com/r/typescript/comments/h89nb2/why_does_this_work/
----
-I'm having trouble understanding this odd behavior...
-
-```
-interface Foo {
-    n? : number;
-    s: string;
-}
-
-const foo = { n : 1 } as Foo;  // OK
-
-```
-
-If  `s` here isn't optional, then why does this work? Isn't this an error? Shouldn't we be assigning `s` to something?
-## [10][webpack and conflicting types with identical versions in imported library.](https://www.reddit.com/r/typescript/comments/h8dqld/webpack_and_conflicting_types_with_identical/)
-- url: https://www.reddit.com/r/typescript/comments/h8dqld/webpack_and_conflicting_types_with_identical/
----
-I'm really stuck on this issue... 
-
-If I have a react components library that I want to isolate I can't just setup a devDependency on @types/react because when I import it  I get a conflict saying that types were found in two locations.  
-
-This is super silly because they're the same types and same version.
-
-I *could* setup peerDependencies, I think, but then I can't have unit tests in the main code or use that as a module by itself.
-
-It ends up causing a LOT of hassle and now I'm basically dead in the water until I completely refactor my  components/modules into separate npm projects.
-
-Is there a workaround here?
-## [11][How can I get ts specific errors , for all my files , and log them in the terminal without building ?](https://www.reddit.com/r/typescript/comments/h8dfyq/how_can_i_get_ts_specific_errors_for_all_my_files/)
-- url: https://www.reddit.com/r/typescript/comments/h8dfyq/how_can_i_get_ts_specific_errors_for_all_my_files/
----
-I am taking about the errors which are provided when you tsc . Nut I want to get them without building .

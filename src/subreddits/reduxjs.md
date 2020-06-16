@@ -1,5 +1,17 @@
 # reduxjs
-## [1][Dispatching for one type of global state affects the other. Why?](https://www.reddit.com/r/reduxjs/comments/h7t6sq/dispatching_for_one_type_of_global_state_affects/)
+## [1][Create simple POS with React, Node and MongoDB #6: Redux Integration](https://www.reddit.com/r/reduxjs/comments/ha0wdc/create_simple_pos_with_react_node_and_mongodb_6/)
+- url: https://blog.soshace.com/create-simple-pos-with-react-node-and-mongodb-6-redux-integration/
+---
+
+## [2][Advice for a frontend dev — firing multiple api calls at once](https://www.reddit.com/r/reduxjs/comments/h9u0mp/advice_for_a_frontend_dev_firing_multiple_api/)
+- url: https://www.reddit.com/r/reduxjs/comments/h9u0mp/advice_for_a_frontend_dev_firing_multiple_api/
+---
+I'm struggling to find the right words to convey what I'm looking for in my research, so I thought I would ask the reddit community. I am looking for best practices to create records in different tables at once.
+
+An example would be, user registration. Say you need to create 6 records for that user when they sign up, which need to connect. By connect I mean in the sense that if a user and team were created on user registration, the `userID` would need to be included in the team's members array. So the records need to fire in order so the relationship is properly recorded. So user would need to be created first, then the team record so I can add the `userID` to the team's members. Also note that the user record would need to be updated later on (after the team's record is created) with the `teamID` under the user's teams.
+
+So as you can see it feels a bit all over the place. Currently I have multiple API calls being fired on user submit. While I have this working using `redux`, `firebase` and `react` — I foresee a lot of potential errors happening and feel as if I am not doing this in the most efficient way. I want to do this correctly and happy to do the research, I'm just not exactly sure what I am looking for. I was hoping for some guides, information, search terms, etc — basically anything to help me understand this concept more throughly if that makes sense.
+## [3][Dispatching for one type of global state affects the other. Why?](https://www.reddit.com/r/reduxjs/comments/h7t6sq/dispatching_for_one_type_of_global_state_affects/)
 - url: https://www.reddit.com/r/reduxjs/comments/h7t6sq/dispatching_for_one_type_of_global_state_affects/
 ---
 I'm using Redux with my React Hooks simple counter project. It worked without any bugs or problems when the only global state was a simple integer with +/- buttons to. Then I added a second global state for light/dark themes and found that the add/subtract buttons affect the light/dark variable! I think I'm misusing the useDispatch() hook or combining reducers incorrectly. I've tried moving things into different containers and fiddled a lot with the syntax. In the code below I have omitted `import` and `export` statements for brevity:  
@@ -87,7 +99,7 @@ index.js:
         &lt;Provider store={store}&gt;&lt;App /&gt;&lt;/Provider&gt;, document.getElementById('root')
     );
     registerServiceWorker();
-## [2][Asynchronous actions, Redux store and race conditions.](https://www.reddit.com/r/reduxjs/comments/h7j059/asynchronous_actions_redux_store_and_race/)
+## [4][Asynchronous actions, Redux store and race conditions.](https://www.reddit.com/r/reduxjs/comments/h7j059/asynchronous_actions_redux_store_and_race/)
 - url: https://www.reddit.com/r/reduxjs/comments/h7j059/asynchronous_actions_redux_store_and_race/
 ---
 **The problem:**
@@ -113,13 +125,13 @@ I can think of a few solutions to this, but all seem slightly complex..
 &amp;#x200B;
 
 Any other suggestions? Thanks.
-## [3][Best practice for actions?](https://www.reddit.com/r/reduxjs/comments/h13l2y/best_practice_for_actions/)
+## [5][Best practice for actions?](https://www.reddit.com/r/reduxjs/comments/h13l2y/best_practice_for_actions/)
 - url: https://www.reddit.com/r/reduxjs/comments/h13l2y/best_practice_for_actions/
 ---
 At my work we use something along the lines of every real "action" having a pending, success, and fail action. Out of curiosity I checked some online resources and I'll see more of a SET vs GET sort of thing for actions. Just wondering if there is a best practice for this sort of thing for my own projects?
 
 Thanks
-## [4][Why should I write unit test for actionCreators?](https://www.reddit.com/r/reduxjs/comments/h0ue75/why_should_i_write_unit_test_for_actioncreators/)
+## [6][Why should I write unit test for actionCreators?](https://www.reddit.com/r/reduxjs/comments/h0ue75/why_should_i_write_unit_test_for_actioncreators/)
 - url: https://www.reddit.com/r/reduxjs/comments/h0ue75/why_should_i_write_unit_test_for_actioncreators/
 ---
 Reference from [Official docs](https://redux.js.org/recipes/writing-tests#action-creators):
@@ -147,7 +159,7 @@ But  is this the only case? Are there any other benefits  of writing tests cases
 
 
 EDIT: I do use `redux-saga` for managing async actions (fetching data through API calls etc) and I do write unit tests for sagas. I'm only concerned  about writing unit tests for action creators!
-## [5][Can you use reducers across sibling components?](https://www.reddit.com/r/reduxjs/comments/h0dbjw/can_you_use_reducers_across_sibling_components/)
+## [7][Can you use reducers across sibling components?](https://www.reddit.com/r/reduxjs/comments/h0dbjw/can_you_use_reducers_across_sibling_components/)
 - url: https://www.reddit.com/r/reduxjs/comments/h0dbjw/can_you_use_reducers_across_sibling_components/
 ---
 This might seem like a dumb question but this current code architecture I'm working with, each "sibling component" think left/right panels, have their own reducers(obviously?). Then they're joined into a parent reducer eg. `allReducers`.
@@ -157,7 +169,7 @@ So for the sake of an example we have: left panel, right panel
 If right-panel has some state it's maintaining, can left-panel use it(without using that primary combined parent reducer).
 
 Anyway I know this is hard to imagine without code, also we're using saga which I don't know off hand what it's for. The saga files have function generators inside them. I don't think it's relevant.
-## [6][Does mapStateToProps run first before the component pulls in the props passed down into it?](https://www.reddit.com/r/reduxjs/comments/gz7hpt/does_mapstatetoprops_run_first_before_the/)
+## [8][Does mapStateToProps run first before the component pulls in the props passed down into it?](https://www.reddit.com/r/reduxjs/comments/gz7hpt/does_mapstatetoprops_run_first_before_the/)
 - url: https://www.reddit.com/r/reduxjs/comments/gz7hpt/does_mapstatetoprops_run_first_before_the/
 ---
 This is probably a weird question but as I trace through(console log execution) of events when loading a component that is using `mapStateToProps` the value I set in the reducer state is what I see on the immediate load of the component.
@@ -183,7 +195,7 @@ edit: here's a better idea of what I'm saying
 `// rest of dispatch/connect`
 
 I don't know if this fully captures the issue, since we also have connected components going on, a main reducer/saga...
-## [7][I am getting Reddit's store in my app and not the one I created](https://www.reddit.com/r/reduxjs/comments/gvduz0/i_am_getting_reddits_store_in_my_app_and_not_the/)
+## [9][I am getting Reddit's store in my app and not the one I created](https://www.reddit.com/r/reduxjs/comments/gvduz0/i_am_getting_reddits_store_in_my_app_and_not_the/)
 - url: https://www.reddit.com/r/reduxjs/comments/gvduz0/i_am_getting_reddits_store_in_my_app_and_not_the/
 ---
 I made a small app that fetches restaurant data, displays it, and allows filtering and searching cities and all the usual stuff using useReducer and now I am trying to refactor it to use Redux. I am not using Redux ToolKit yet but I plan on learning it for my next project.
@@ -211,171 +223,7 @@ Anyway, I made my rootReducer, brought in Provider and createStore and hooked al
 Thanks in advance for nay help
 
 EDIT: formatting
-## [8][[Q] Why so much work just for a global storage space?](https://www.reddit.com/r/reduxjs/comments/gv47ka/q_why_so_much_work_just_for_a_global_storage_space/)
+## [10][[Q] Why so much work just for a global storage space?](https://www.reddit.com/r/reduxjs/comments/gv47ka/q_why_so_much_work_just_for_a_global_storage_space/)
 - url: https://www.reddit.com/r/reduxjs/comments/gv47ka/q_why_so_much_work_just_for_a_global_storage_space/
 ---
  I was thinking that perhaps redux has too much indirection, maybe? I mean its a bit too much separation of concern with all the mapdispatch and mapstate and actions and reducers . If the point is to use a global store why not just import a singleton class and use its state with plain getters &amp; setters? or some other object with application level scope ?  Thanks in advance for reading and giving this some thought. 
-## [9][Easy Peasy the React Redux wrapper](https://www.reddit.com/r/reduxjs/comments/gv3kc9/easy_peasy_the_react_redux_wrapper/)
-- url: https://medium.com//easy-peasy-the-react-redux-wrapper-b31a5911c5e3?source=friends_link&amp;sk=b5d0c558e24e3e0c7f40cf58dff17d70
----
-
-## [10][Dynamic dependency injection with Redux](https://www.reddit.com/r/reduxjs/comments/gutj9m/dynamic_dependency_injection_with_redux/)
-- url: https://www.reddit.com/r/reduxjs/comments/gutj9m/dynamic_dependency_injection_with_redux/
----
-I've been hustling with this for a few days now and I can't find a satisfactory answer anywhere else.
-
-I'm currently working as an Ethereum Dapp Engineer and the crypto ecosystem is known to have some very poorly implemented libraries which almost everyone depends upon.
-
-I need multi-wallet support in my app and this is a lot of work for now. My team uses this library called [web3-react](https://github.com/NoahZinsmeister/web3-react). It is a React-centric lib that allows for easy integration with different wallet providers.
-
-To integrate this with Redux, I need to tap into it at the higher levels of my app and dispatch some actions. This way I can store the current connector and library in the store:
-
-    function Initializer({ children }) {
-      const dispatch = useDispatch();
-      const web3React = useWeb3React();
-      const { account, library, connector } = web3React;
-    
-      React.useEffect(() =&gt; {
-        dispatch(
-          changeProvider({
-            connector,
-            library,
-           })
-        );
-      }, [connector, library, dispatch]);
-    
-      React.useEffect(() =&gt; {
-        dispatch(changeAccount(account));
-      }, [account, dispatch]);
-    
-      return children;
-    }
-
-**Problem #1**: `connector` and `library` are non-serializable and this is a NO-NO [according to the official style-guide](https://redux.js.org/style-guide/style-guide#do-not-put-non-serializable-values-in-state-or-actions).
-
-Okay, let's find some place else for them to be.
-
-**Approach #1:**
-
-Since I'm using [@reduxjs/toolkit](https://redux-toolkit.js.org/), by default it comes with `redux-thunk`.
-
-I created the following thunk to deal with provider connection:
-
-```
-export const activateConnector = Object.assign(
-  ({ activate, setError, connectorName }) =&gt; async (dispatch, getState) =&gt; {
-    const currentConnectorName = selectConnectorName(getState());
-    if (currentConnectorName === connectorName) {
-      return;
-    }
-
-    try {
-      dispatch(activateConnector.pending(connectorName));
-
-      await activate(getConnector(connectorName), (err) =&gt; setError(err), true);
-
-      dispatch(activateConnector.fulfilled(connectorName));
-    } catch (err) {
-      dispatch(activateConnector.rejected(err.message));
-    }
-  },
-  {
-    pending: createAction("web3/activateConnector/pending"),
-    fulfilled: createAction("web3/activateConnector/fulfilled"),
-    rejected: createAction("web3/activateConnector/rejected"),
-  }
-);
-```
-
-In this scenario, my other thunks depend on `library` (to be more precise, they depend on both on `library` and some smart contract instances that depend on `library`). Since I can't put it in the store, I thought about using `thunk.withExtraArgument` API.
-
-**Problem #2:** `withExtraArgument` assumes the extra arg is resolved by the time the store is created. However, since the user can change the wallet provider at any time, I need a way to overwrite in runtime. That doesn't seem possible and [redux-thunk maintainers don't seem to eager to add such functionality](https://github.com/reduxjs/redux-thunk/issues/277).
-
-I managed to workaround that by injecting a mutable object in the thunk and using a custom middleware to change the reference whenever the library changes:
-
-    const createApi = (library) =&gt; {
-      return {
-        // This is a contrived example. Most methods are not just a passthrough.
-        async getBalance(account) {
-          return library.getBalance(account);
-        },
-      };
-    };
-    
-    const services = {
-      api: new Proxy(
-        {},
-        {
-          get: (target, prop, receiver) =&gt; {
-            return () =&gt; Promise.reject(new Error("Not initialized"));
-          },
-        }
-      ),
-    };
-    
-    const store = configureStore({
-      reducer: rootReducer,
-      middleware: [
-        // this should probably be exported from the web3Slice.js file
-        (store) =&gt; (next) =&gt; (action) =&gt; {
-          if (changeLibrary.match(action)) {
-            services.api = createApi(action.payload);
-            // do not forward this action
-            return;
-          }
-    
-          return next(action);
-        },
-        thunk.withExtraArgument(services),
-        ...getDefaultMiddleware({
-          thunk: false,
-        }),
-      ],
-    });
-
-The `Initializer` component is changed a little bit now:
-
-    //...
-      React.useEffect(() =&gt; {
-        dispatch(
-          activateConnector({
-            connectorName: "network",
-            activate,
-            setError,
-          })
-        );
-      }, [activate, dispatch, setError]);
-    
-      React.useEffect(() =&gt; {
-        dispatch(changeAccount(account));
-      }, [account, dispatch]);
-    
-      React.useEffect(() =&gt; {
-        dispatch(changeLibrary(library));
-      }, [library, dispatch]);
-    // ...
-
-**Problem #3:** While this solves the problem, this looks like a JavaScript-ey version of the Service Locator pattern (which many consider to be an anti-pattern).
-
-It also just basically mutable global state, which could cause inconsistent state.
-
-Imagine that I have thunk A and thunk B, which must perform sequential operations always as A -&gt; B. 
-
-    const thunkA = () =&gt; async (dispatch, getState, { api }) =&gt; {
-      // ...
-      await api.doLongProcess();
-    
-      // ... dispatch some actions
-    
-      dispatch(thunkB());
-    }
-    
-    const thunkB = () =&gt; async (dispatch, getState, { api }) =&gt; {
-      await api.doOtherThing();
-    }
-
-While `api.doLongProcess` is in course, a `changeLibrary` event arrives. That will cause the `api` dependency to be changed, so what happens next is that when `thunkB` is called with the newer `api` instance. This is a big problem.
-
-What I believe should happpen is that upon `api` change, all in-course operations depending on it should be cancelled. That is not an easy thing to pull out with this setup.
-
-Does anyone have a suggestion on how to approach this?

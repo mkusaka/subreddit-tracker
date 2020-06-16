@@ -125,76 +125,86 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Do compilers optimize away nullptr checks because of UB?](https://www.reddit.com/r/cpp/comments/h9bmpq/do_compilers_optimize_away_nullptr_checks_because/)
-- url: https://www.reddit.com/r/cpp/comments/h9bmpq/do_compilers_optimize_away_nullptr_checks_because/
----
-Had a conversation with someone in YouTube comments claiming, all major compilers will optimize a \`nullptr\` check away, if you already dereferenced that pointer.
-
-[https://i.imgur.com/qZA69Yq.png](https://i.imgur.com/qZA69Yq.png)
-
-I mean first of all: Dereferencing a pointer that you expect might be nullptr before the check is ill-formed as far as I know. But would a compiler really optimize away the nullptr check in this case?
-
-I mean even if, making assertions on what a compiler will or will not do, based on ill-formed code would be pretty meaningless.
-## [4][JSON for Modern C++ 3.8.0](https://www.reddit.com/r/cpp/comments/h8w7e0/json_for_modern_c_380/)
-- url: https://github.com/nlohmann/json/releases/tag/v3.8.0
+## [3][C++11 Guide: A Practical Guide for the Everyday Programmer](https://www.reddit.com/r/cpp/comments/h9qi9v/c11_guide_a_practical_guide_for_the_everyday/)
+- url: https://stuartwheaton.com/blog/2020-06-14-c++11-guide/
 ---
 
-## [5][Is there a need for more utility ranges in standard library?](https://www.reddit.com/r/cpp/comments/h9e8ty/is_there_a_need_for_more_utility_ranges_in/)
-- url: https://www.reddit.com/r/cpp/comments/h9e8ty/is_there_a_need_for_more_utility_ranges_in/
----
-One of the more irritating things for me, when working with standard containers, is all the problems if I want to get all the elements enumerated, while keeping the code clean.
-
-IMO one of the best way to do it for now is:
-
-```
-for (std::size_t id = 0; auto&amp;&amp; el : container) {
-   ...
-   ++id;
-}
-```
-
-I find it annoying, cause it logically breaks the for loop structure a bit. I don't even want to think about teaching this to newbies, there are so many things there, also the new feature of initialization in the range loop.
-
-Shouldn't it be as simple as:
-
-```
-using std::ranges;
-
-for (auto&amp;&amp; [el, id] : enumerated(container))
-    // do stuff
-```
-
-I think lack of features like that disturbing.
-Because the zip_range didn't ship with c++20 writing a range like that isn't trivial.
-
-I didn't see any proposal for adding more range adaptors like that. Did I miss it? Or are functionalities like that not considered to be put into standard?
-
-I know I won't be using the ranges much, except for constrained algorithms. They seem too limited for now, and writing your own ranges get really verbose for more complex cases. Is that just my opinion, or is this feature really undercooked like coroutines (that are shipped without library support)?
-## [6][Implementing Unsophisticated Tuple](https://www.reddit.com/r/cpp/comments/h9fojm/implementing_unsophisticated_tuple/)
-- url: http://www.vishalchovatiya.com/variadic-template-cpp-implementing-unsophisticated-tuple/
+## [4][Write a database CRUD application in 10 lines of C++ (with the new ObjectBox Generator)](https://www.reddit.com/r/cpp/comments/ha3tc2/write_a_database_crud_application_in_10_lines_of/)
+- url: https://objectbox.io/introducing-objectbox-generator-plus-c-api/
 ---
 
-## [7][New to C++, I built a ray tracer on a STM32 board. Critiques and comments are welcome!](https://www.reddit.com/r/cpp/comments/h958lb/new_to_c_i_built_a_ray_tracer_on_a_stm32_board/)
-- url: https://medium.com/@namtran_77878/ray-tracer-challenge-on-the-stm32f429i-discovery-board-9ca21d7bd49d
+## [5][The joys and perils of C and C++ aliasing, Part 1 - Red Hat Developer](https://www.reddit.com/r/cpp/comments/h9yy86/the_joys_and_perils_of_c_and_c_aliasing_part_1/)
+- url: https://developers.redhat.com/blog/2020/06/02/the-joys-and-perils-of-c-and-c-aliasing-part-1/
 ---
 
-## [8][Expanding On Standard Threads](https://www.reddit.com/r/cpp/comments/h9a5w3/expanding_on_standard_threads/)
-- url: https://m-peko.github.io/craft-cpp/posts/expanding-on-standard-threads/
+## [6][Introducing ubench.h](https://www.reddit.com/r/cpp/comments/h9nk5i/introducing_ubenchh/)
+- url: https://www.duskborn.com/posts/introducing_ubench_h/
 ---
 
-## [9][An Introduction to Parallel Computing in C++](https://www.reddit.com/r/cpp/comments/h930pw/an_introduction_to_parallel_computing_in_c/)
-- url: https://www.cs.cmu.edu/~15210/pasl.html
+## [7][The best C++ resources?](https://www.reddit.com/r/cpp/comments/h9s26a/the_best_c_resources/)
+- url: https://www.reddit.com/r/cpp/comments/h9s26a/the_best_c_resources/
+---
+So i know basic C++ but I decided to just ignore that and start C++ from scratch. Whats the best course/resources to learn everything about C++ starting right from the basics and covering data structures etc in depth?
+## [8][Can I union type-pun to smaller std::arrays in C++17?](https://www.reddit.com/r/cpp/comments/h9kq4p/can_i_union_typepun_to_smaller_stdarrays_in_c17/)
+- url: https://www.reddit.com/r/cpp/comments/h9kq4p/can_i_union_typepun_to_smaller_stdarrays_in_c17/
+---
+I posted to r/cpp_questions first and couldn't get a consensus on whether the following is defined in the standard or is just something that tends to work. My end goal is to write a bignum class for modular arithmetic.
+
+    #include &lt;iostream&gt;
+    #include &lt;array&gt;
+    #include &lt;type_traits&gt;
+    
+    union arrayunion {
+        std::array&lt;unsigned,4&gt; big;
+        std::array&lt;unsigned,2&gt; small;
+    };
+    
+    int main() {
+        std::cout &lt;&lt; std::boolalpha;
+        std::cout &lt;&lt; std::is_standard_layout_v&lt;std::array&lt;unsigned,4&gt;&gt; &lt;&lt; '\n';
+        std::cout &lt;&lt; std::is_standard_layout_v&lt;std::array&lt;unsigned,2&gt;&gt; &lt;&lt; '\n';
+        std::cout &lt;&lt; std::is_standard_layout_v&lt;arrayunion&gt; &lt;&lt; '\n';
+        arrayunion arr;
+        arr.big = {1,2,3,4};
+        auto small_arr = arr.small;
+        for(const auto&amp; v : small_arr)  std::cout &lt;&lt; v &lt;&lt; "\n";
+        return 0;
+    }
+    /*
+    outputs:
+    true
+    true
+    true
+    1
+    2
+    */
+
+Could anyone comment? Can I reason that the first two unsigned values are active members, everything is standard layout and involves the same type: `unsigned`, and therefore, the type-punning is allowed in this specific case?
+
+If I asked the same question with C-style arrays, would the answer be the same?
+## [9][Make C++ integer types great for the first time](https://www.reddit.com/r/cpp/comments/ha2yge/make_c_integer_types_great_for_the_first_time/)
+- url: https://github.com/Lyberta/cpp-integers
 ---
 
-## [10][CLion EAP 2020.2: Makefile Projects in CLion, Doctest Support, More Accurate Code Analysis Checks](https://www.reddit.com/r/cpp/comments/h9d3w1/clion_eap_20202_makefile_projects_in_clion/)
-- url: https://blog.jetbrains.com/clion/2020/06/clion-eap-makefile-doctest-code-analysis/
+## [10][Password generator](https://www.reddit.com/r/cpp/comments/ha22ny/password_generator/)
+- url: https://www.reddit.com/r/cpp/comments/ha22ny/password_generator/
 ---
+ Hello, this week-end I have been making a password generator, however I've heard that my code is quite trashy so I'd like to know where I can improve. Nonetheless, I can help myself feeling proud of this little project.
 
-## [11][Thriving in a crowded and changing world: C++ 2006–2020](https://www.reddit.com/r/cpp/comments/h8xc35/thriving_in_a_crowded_and_changing_world_c/)
-- url: https://dl.acm.org/doi/abs/10.1145/3386320
+Here is the code :
+
+[https://pastebin.com/68Bc3Hfc](https://pastebin.com/68Bc3Hfc)
+## [11][Udacity C++ Nanoprogram review](https://www.reddit.com/r/cpp/comments/ha0lij/udacity_c_nanoprogram_review/)
+- url: https://www.reddit.com/r/cpp/comments/ha0lij/udacity_c_nanoprogram_review/
 ---
+I'm trying to find a good place to learn c++. I've mostly been working in Matlab/Simulink for over 5 years now. But learning c++ would be very useful in my career. So far in my search, Udacity's program looks well structured and project-based (which I really like). But the price seems to be exorbitant.
 
-## [12][An iterator_facade in C++20](https://www.reddit.com/r/cpp/comments/h8ot87/an_iterator_facade_in_c20/)
-- url: https://vector-of-bool.github.io/2020/06/13/cpp20-iter-facade.html
+I would like to hear from someone who's taken this course and if they recommend it. Also please feel free to suggest other good courses or tutorials for c++.
+## [12][Any ongoing proposal for replacement of printf with safer `std::format` like formatting?](https://www.reddit.com/r/cpp/comments/h9pzq2/any_ongoing_proposal_for_replacement_of_printf/)
+- url: https://www.reddit.com/r/cpp/comments/h9pzq2/any_ongoing_proposal_for_replacement_of_printf/
 ---
+One could use `std::cout &lt;&lt; std::format(&lt;format_str&gt;, args...);`, but streams based solution seems to be much slower due to the calls to `std::basic_ostream` types - streams aren't featherweight.
 
+Moreover, using `std::cout` with `std::format` seems like a overkill especially when `std::format` can already do most of the work i.e conversion to `std::string`, field-width, space filling etc which also "deprecates" some features from &lt;iomanip&gt; header.
+
+I know there's `std::format_to` which works with `std::ostream_iterator` but `std::stream_iterator` builds on top of the `std::cout` abstraction, so we can/should definitely do better like `fmt::print`.

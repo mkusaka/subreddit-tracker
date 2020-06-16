@@ -84,108 +84,68 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][So, has anyone had a chance to try out Recoil yet? Coming from some pretty Redux/React.Context heavy projects this seems like a more convenient way of coding? Especially when using hooks and FCs.](https://www.reddit.com/r/reactjs/comments/h9e4ca/so_has_anyone_had_a_chance_to_try_out_recoil_yet/)
+## [3][The React docs are tremendous!](https://www.reddit.com/r/reactjs/comments/h9mat4/the_react_docs_are_tremendous/)
+- url: https://www.reddit.com/r/reactjs/comments/h9mat4/the_react_docs_are_tremendous/
+---
+I’ve been trying to learn React for awhile and did the usual thing of watching crash course videos and tutorials then trying out my own projects. I’d occasionally look at the docs when I couldn’t get my head around something.
+
+For the last day I’ve sat down and read them through from the start while toying with some of the snippets provided and I can’t get over how much clearer everything is! They’re easy to understand and cover the basics really well!
+
+This should be obvious to everyone and I almost feel silly saying it, but if you want to learn a technology...
+
+Start with the documentation! 😛
+## [4][Create simple POS with React, Node and MongoDB #6: Redux Integration](https://www.reddit.com/r/reactjs/comments/ha0w7m/create_simple_pos_with_react_node_and_mongodb_6/)
+- url: https://blog.soshace.com/create-simple-pos-with-react-node-and-mongodb-6-redux-integration/
+---
+
+## [5][How long do you guys think react is going to maintain this “superiority” over all frameworks](https://www.reddit.com/r/reactjs/comments/ha3whs/how_long_do_you_guys_think_react_is_going_to/)
+- url: https://www.reddit.com/r/reactjs/comments/ha3whs/how_long_do_you_guys_think_react_is_going_to/
+---
+The title says it all.
+## [6][Do Not Follow JavaScript Trends](https://www.reddit.com/r/reactjs/comments/ha3dvx/do_not_follow_javascript_trends/)
+- url: https://pragmaticpineapple.com/do-not-follow-javascript-trends/
+---
+
+## [7][So, has anyone had a chance to try out Recoil yet? Coming from some pretty Redux/React.Context heavy projects this seems like a more convenient way of coding? Especially when using hooks and FCs.](https://www.reddit.com/r/reactjs/comments/h9e4ca/so_has_anyone_had_a_chance_to_try_out_recoil_yet/)
 - url: https://medium.com/swlh/recoil-another-react-state-management-library-97fc979a8d2b
 ---
 
-## [4][Made a simple App with Reddit API](https://www.reddit.com/r/reactjs/comments/h8yzdv/made_a_simple_app_with_reddit_api/)
-- url: https://v.redd.it/7klz0gwn5x451
+## [8][Getting Started with React Testing Library](https://www.reddit.com/r/reactjs/comments/ha1j8a/getting_started_with_react_testing_library/)
+- url: https://www.robinwieruch.de/react-testing-library
 ---
 
-## [5][I’ve made a simple tool to generate a unique name for a given hex colour code and generate the respective css/scss variable for it.](https://www.reddit.com/r/reactjs/comments/h98ch0/ive_made_a_simple_tool_to_generate_a_unique_name/)
-- url: https://whatthehex.app
+## [9][A simple terrain generator, build using react-three-fiber](https://www.reddit.com/r/reactjs/comments/ha1gyt/a_simple_terrain_generator_build_using/)
+- url: https://terrain.mozzius.now.sh/
 ---
 
-## [6][Frame animation, would canvas help here?](https://www.reddit.com/r/reactjs/comments/h9f1ar/frame_animation_would_canvas_help_here/)
-- url: https://www.reddit.com/r/reactjs/comments/h9f1ar/frame_animation_would_canvas_help_here/
+## [10][Structuring styled-components](https://www.reddit.com/r/reactjs/comments/ha3vpi/structuring_styledcomponents/)
+- url: https://www.reddit.com/r/reactjs/comments/ha3vpi/structuring_styledcomponents/
 ---
-I am making a frame by frame animation component. Basically it is like an animated gif only you can interact with it. So far, so good, it works, but the project is about learning and trying to get the best performance possible, so I am wondering about canvas vs. img tag.
+I've been trying out styled-components on a medium sized project, and while I love the idea of styled-components, I'm not satisfied with how my files are organised. 
 
-The heart of it is this, (apologies for the extra brackets at the bottom, I removed extraneous code):
+I have a `styles/` folder containing three sub-folders:
 
-&amp;#x200B;
+* `helpers/`, where I put files like `colors.js`, `breakpoints.js`, `fonts.js`...
+* `global/`, where I put styled files for very small independent components like `Button.js`, `SmallText.js`, `SubTitle.js`...
+* `components/`, which contains project specific styled files, organised in subfolders:
+   * `layout/`, itself containing styled files for the Footer and the Header, each in their own subfolder
+   * `pages/`, with a subfolder for each page, containing subfolders for every big section of the given page
+   * ...and a few folders for components that need multiple styled files and which could be used on any page
 
-animator:
+I made [a (simplified) diagram](https://imgur.com/ppiowxV) to help you see better what I mean.
 
-`{entity.actions.map((item, index) =&gt;` 
+I only made a homepage containing a hero and a simple grid of links to news articles displayed in card format, yet I already feel like I'm drowning in folders and files. And that's just for the styling part of things. I feel like I'm not going the right way at all, as I don't feel this kind of structure is scalable at all.
 
-`{return Array.from({ length: item.length }, (x, i) =&gt; i + 1).map(x =&gt;` 
-
-`{return &lt;img`
-
-`style={{position: 'absolute',` 
-
-`opacity: internalCount === x &amp;&amp; entity.name ===` [`animation.name`](https://animation.name) `? 1 : 0,`
-
-`height: size,`
-
-`width: 'auto' }}`
-
-`src={\${entity.path}${entity.name}/${x}.png\`} /&gt;\`     
-
-`})  }}`
-
-So a counter fires and that increments a count in the animator called internalCount. All the images are preloaded and by looking at internalCount and animation.name we decide which image should have an opacity of 1. That's it, that's the whole thing, very simple, very straightforward and works okay.
-
-The question is, would there be any performance improvements, or any differences at all, if instead of using an img element, I put a canvas there and swapped the images passed to the canvas. So it wouldn't be one canvas with lots of entites/sprites, it would be lots of components with their own canvases.
-
-Would love some feedback on my current approach and if canvas would help.
-
-Thank you!
-## [7][How to reset initial state with useState Hook](https://www.reddit.com/r/reactjs/comments/h99ctz/how_to_reset_initial_state_with_usestate_hook/)
-- url: https://www.reddit.com/r/reactjs/comments/h99ctz/how_to_reset_initial_state_with_usestate_hook/
+Is there a scalable standard I could follow and easily use on big projects for styled-components ? Most articles I find on styled-components don't talk about folders structure.
+## [11][Tips for starting developement in react?](https://www.reddit.com/r/reactjs/comments/ha25dy/tips_for_starting_developement_in_react/)
+- url: https://www.reddit.com/r/reactjs/comments/ha25dy/tips_for_starting_developement_in_react/
 ---
-Hey React friends. Ive been trying to learn React Hooks and I'm running into an issue when trying to reset my state back to its initial state of an empty array. I have a SignIn component where the user puts in their email and password with server side validation. The error state works just fine, but if the user tries to submit a non-valid field again then the errors continue to append to the page. My thinking is that I could have some logic in the onSubmit handler that would check to see if errors exist in state and then reset it to its initial state if they do exist. I've done that in the past using the class components with setState but for some reason I cant figure out how to do it with hooks.  
+I mostly or I can say employers mostly kept me at backend while developing web applications. I am a Nodejs developer and developing in it from past 3 years(professionally). However my relationship with front end side is of kind on and off. Angular is what I am used to dabble in mostly whenever I got chance. I first learned React in 2015 and from then on kept myself awared of the new features and trends but haven't got chance to develop apps in react other than one or two video courses I do every year just to kill time.
 
-
-Thanks
-
-`function LogIn({context}) {`  
- `const [formData, setFormData] = useState({`  
-`email: '',`  
-`password: '',`  
-  `});`  
- `const [errors, setErrors] = useState([]);`  
- `const {email, password} = formData;`  
- `const onChange = (e) =&gt;`  
- `setFormData({...formData, [e.target.name]: e.target.value});`  
- `const onSubmit = async (e) =&gt; {`  
-`e.preventDefault();`  
- `//resets error state to empty if previously rendered validation errors`  
- `if (errors.length) {`  
- `console.log('I work');`  
- `setErrors([]);`  
-`}`  
- `//fires login action`  
- `//if errors are returned it takes error object values and adds them to error array`  
- `const res = await context.actions.signIn(email, password);`  
- `console.log(res.errors);`  
- `setErrors([...errors, ...res.errors]);`  
-  `};`
-
-  
-`//rest of the component......`
-## [8][looking for a react mentor](https://www.reddit.com/r/reactjs/comments/h9g2x1/looking_for_a_react_mentor/)
-- url: https://www.reddit.com/r/reactjs/comments/h9g2x1/looking_for_a_react_mentor/
+I work in a Angular based team but convinced my seniors to go with react for an upcoming project( my manager has unrealistic expectation from this project). But right now I am on my own even all of the UI/UX designers are used to angular. So I will be getting plain html/css files (no ng ui components setup).
+## [12][Free resources (Youtube, docs etc.) or a Udemy course to learn React?](https://www.reddit.com/r/reactjs/comments/ha1bgx/free_resources_youtube_docs_etc_or_a_udemy_course/)
+- url: https://www.reddit.com/r/reactjs/comments/ha1bgx/free_resources_youtube_docs_etc_or_a_udemy_course/
 ---
-Hello, I am learning React and Redux now and I wanna find a person who can share his experience and maybe help to understand all tricks and best tools for using react efficiently.   
-Thanks for your attention
-## [9][How can I adapt to myself to manage to a remote-job?](https://www.reddit.com/r/reactjs/comments/h9fq27/how_can_i_adapt_to_myself_to_manage_to_a_remotejob/)
-- url: https://www.reddit.com/r/reactjs/comments/h9fq27/how_can_i_adapt_to_myself_to_manage_to_a_remotejob/
----
-I’m thinking start a start-up and will be remote. I’ve done due diligence. I’m thinking, can coding my project within 8m or 1 year with waterfall project management. I guess many remote jobs are using SCRUM and Agile. I haven’t been other project management systems. As a solo-entrepreneur, I want to create a team and manage it. How should I do this and which project management system?
-## [10][I've made a React component generator.. what do you think of the code?](https://www.reddit.com/r/reactjs/comments/h99k8b/ive_made_a_react_component_generator_what_do_you/)
-- url: https://springload.github.io/metacomponent/
----
+After learning Node.js, I thought to improve my Front End skills with React. However, I am a bit lost. Youtube has a wide choice but the courses are around 2 hours each, and I don't know whether that's enough to learn it. On the other hand, there are a few Udemy courses which are about 40 hours each which might be a bit overwhelming and long, and cost as well. 
 
-## [11][[QUESTION] A code-along illustrating UI abilities with React](https://www.reddit.com/r/reactjs/comments/h9fg49/question_a_codealong_illustrating_ui_abilities/)
-- url: https://www.reddit.com/r/reactjs/comments/h9fg49/question_a_codealong_illustrating_ui_abilities/
----
-Dear kind people of this Forum, 
-
-Is there a code-along illustrating React's UI functionality?a code along or tutorial or resource similar to this one \[[1](https://www.reddit.com/r/reactjs/comments/h7invl/react_js_building_a_chat_ui_in_2020_session_1/)\]?  
-I am specifically interested in a code-along illustrating how react can be used to create rich UI (for example an interactive online game etc. just because such apps seem to be the benchmark in UI capabilities).
-## [12][Do you really need Redux? Or just want to 'share' states? Try this one!](https://www.reddit.com/r/reactjs/comments/h9fenh/do_you_really_need_redux_or_just_want_to_share/)
-- url: https://github.com/nekocode/use-shared-state
----
-
+Is there a ton to learn about React that I would have to get the courses, or can I absorb necessary information from free sources that are available? What is the best approach?

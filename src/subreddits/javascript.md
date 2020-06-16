@@ -1,84 +1,10 @@
 # javascript
-## [1][Your weekly /r/javascript recap](https://www.reddit.com/r/javascript/comments/gyvug4/your_weekly_rjavascript_recap/)
-- url: https://www.reddit.com/r/javascript/comments/gyvug4/your_weekly_rjavascript_recap/
+## [1][Showoff Saturday (June 13, 2020)](https://www.reddit.com/r/javascript/comments/h8625p/showoff_saturday_june_13_2020/)
+- url: https://www.reddit.com/r/javascript/comments/h8625p/showoff_saturday_june_13_2020/
 ---
-**Monday, June 01 - Sunday, June 07**
+Did you find or create something cool this week in javascript? 
 
-###Top Posts
-
-| score | comments | title &amp; link |
-|--|--|--|
-| 440  | [34 comments](https://www.reddit.com/r/javascript/comments/gxrwsf/im_making_a_series_about_building_a_16bit_virtual/) | [I'm making a series about building a 16-bit Virtual Machine in JavaScript from scratch. This episodes all about taking an assembly AST and generating machine code](https://youtube.com/watch?v=5PXMwvUkOKI)|
-| 366  | [153 comments](https://www.reddit.com/r/javascript/comments/gv2j9c/the_things_i_found_annoy_me_maintaining_an/) | [The things I found annoy me maintaining an open-source library with 30M monthly npm downloads](https://github.com/kossnocorp/etiquette)|
-| 323  | [62 comments](https://www.reddit.com/r/javascript/comments/gumsx8/web_scraping_with_javascript/) | [Web scraping with Javascript](https://www.scrapingbee.com/blog/web-scraping-javascript/)|
-| 282  | [43 comments](https://www.reddit.com/r/javascript/comments/gx7lkn/yet_another_doom_clone_in_13kb_of_javascript/) | [Yet Another Doom Clone &amp;#40;In 13kb of JavaScript&amp;#41;](https://nicholas.carlini.com/writing/2019/javascript-doom-clone-13k.html)|
-| 250  | [55 comments](https://www.reddit.com/r/javascript/comments/gwp41h/gridjs_advanced_table_plugin_gridjs_is_a_free_and/) | [Grid.js - Advanced Table Plugin. Grid.js is a Free and open-source HTML table plugin written in TypeScript. It works with most JavaScript frameworks, including React, Angular.js, Vue and VanillaJs](https://gridjs.io/)|
-| 230  | [45 comments](https://www.reddit.com/r/javascript/comments/gwddb5/chrome_v83_enables_js_module_support_for/) | [Chrome v83 enables JS module support for SharedWorkers → Starting a new era for multi Browser…](https://medium.com/@tobiasuhlig/chrome-v83-enables-js-module-support-for-sharedworkers-starting-a-new-era-for-multi-browser-dbb20366bddf)|
-| 227  | [13 comments](https://www.reddit.com/r/javascript/comments/gvwajn/track_your_smartphone_in_2d_with_javascript/) | [Track Your Smartphone in 2D With JavaScript](https://medium.com/better-programming/track-your-smartphone-in-2d-with-javascript-1ba44603c0df)|
-| 218  | [23 comments](https://www.reddit.com/r/javascript/comments/gvdqtv/new_in_firefox_77_devtool_improvements_and_web/) | [New in Firefox 77: DevTool improvements and web platform updates](https://hacks.mozilla.org/2020/06/new-in-firefox-77-devtool-improvements-and-web-platform-updates/)|
-| 168  | [20 comments](https://www.reddit.com/r/javascript/comments/gydcb4/joshjs_a_javascript_library_to_animate_content_on/) | [Josh.js - A JavaScript library to animate content on page scroll.](https://mamunhpath.github.io/josh.js/)|
-| 161  | [18 comments](https://www.reddit.com/r/javascript/comments/gxnpb8/want_more_from_particlesjs_try_tsparticles_for/) | [Want more from Particles.js? Try tsParticles for improvements and new features](https://dev.to/matteobruni/tsparticles-v1-15-0-released-1j0d)|
-
-
-
-
-&amp;nbsp;
-
-###Most Commented Posts
-
-| score | comments | title &amp; link |
-|--|--|--|
-| 96  | [67 comments](https://www.reddit.com/r/javascript/comments/gvps5s/destructuring_in_javascript_the_not_so_good_parts/) | [Destructuring in JavaScript: the not so good parts](https://goodguydaniel.com/blog/destructuring-not-so-good-parts/)|
-| 2  | [64 comments](https://www.reddit.com/r/javascript/comments/gvyai2/askjs_let_vs_var_should_var_ever_be_used_to/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Let VS. Var: Should var ever be used to declare variables?|
-| 2  | [44 comments](https://www.reddit.com/r/javascript/comments/gxffsp/askjs_why_should_i_ever_use_const/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Why should I ever use const?|
-| 97  | [40 comments](https://www.reddit.com/r/javascript/comments/gx5dj0/how_to_avoid_race_conditions_using_asynchronous/) | [How to avoid race conditions using asynchronous javascript](https://www.lorenzweiss.de/race_conditions_explained/)|
-| 8  | [27 comments](https://www.reddit.com/r/javascript/comments/gy03qa/javascript_without_semicolons/) | [Javascript without semicolons](/r/learnjavascript/comments/gxznn8/javascript_without_semicolons/)|
-
-
-
-
-&amp;nbsp;
-
-###Top Ask JS
-
-| score | comments | title &amp; link |
-|--|--|--|
-| 5  | [11 comments](https://www.reddit.com/r/javascript/comments/gyiktg/askjs_why_300kb_of_bundle_size_considered_big_for/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Why 300kb of bundle size considered big for SPA's?|
-| 5  | [3 comments](https://www.reddit.com/r/javascript/comments/gxke4b/askjs_javascript_projects_during_quarantine/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Javascript projects during quarantine|
-| 3  | [4 comments](https://www.reddit.com/r/javascript/comments/gulrts/askjs_best_way_to_deal_with_oldstale_transitive/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Best way to deal with old/stale transitive package dependencies in packages you import.|
-
-
-
-
-&amp;nbsp;
-
-###Top Showoffs
-
-| score  |  comment  |
-|--|--|
-| 2  |  /u/AiHasBeenSolved said [Life assigned me to solve AI, so I used JavaScript for thinking in Latin:   **&amp;#91;http://ai.neocities.org/LaThink.html&amp;#93;&amp;#40;http://ai.neocities.org/LaThink.html&amp;#41;**](/r/javascript/comments/gxpjys/showoff_saturday_june_06_2020/ft4gei5/?context=5) |
-| 1  |  /u/backlashsid said [https://github.com/sidkr/ParseDemo  Sample server + client application using the Parse open source backend platform.](/r/javascript/comments/gxpjys/showoff_saturday_june_06_2020/ft86lkg/?context=5) |
-| 1  |  /u/suso_g said [I have published my first module in npm. It is a function to mix two javascript objects in depth.  Criticism will be welcome.  &amp;#91;https://www.npmjs.com/package/deepmergefn&amp;#93;&amp;#40;https://www.npmjs...](/r/javascript/comments/gxpjys/showoff_saturday_june_06_2020/ft7255x/?context=5) |
-
-
-
-
-&amp;nbsp;
-
-###Top Comments
-
-| score  |  comment  |
-|--|--|
-| 187  |  /u/atpeters said [I absolutely agree with his points... But I didn't realize I was being rude by asking 'Any update on this?'  When I've asked it has been for an issue that is seemingly dead and looks like the rot bot ...](/r/javascript/comments/gv2j9c/the_things_i_found_annoy_me_maintaining_an/fsmb516/?context=5) |
-| 149  |  /u/basil_fresh said [If experience tells me anything, it probably does 99% of what I want to do then I have to hack the library to do the remaining 1% that is a critical for the application.](/r/javascript/comments/gwp41h/gridjs_advanced_table_plugin_gridjs_is_a_free_and/fsxd4ya/?context=5) |
-| 117  |  /u/WaterInMyShoes said [This blog post is just looking for problems that don't really exist.   * It's fairly obvious that you can't destruct an undefined value, just like you can't do pretty much any other stuff with it, lik...](/r/javascript/comments/gvps5s/destructuring_in_javascript_the_not_so_good_parts/fsqbo0g/?context=5) |
-| 91  |  /u/Cherlokoms said [You should have written a plugin that writes production code from unit tests.](/r/javascript/comments/gucq0g/i_made_a_babeljs_plugin_to_automatically_write/fsi6bpn/?context=5) |
-| 66  |  /u/boomskats said [Great read! Excerpt from the article:  &amp;gt;This is absolutely brilliant, since Apps can directly communicate to each other, without even needing to send post messages across workers.   &amp;gt;   &amp;gt;It g...](/r/javascript/comments/gwddb5/chrome_v83_enables_js_module_support_for/fsui13e/?context=5) |
-
-
-
-
-&amp;nbsp;
+Show us here!
 ## [2][Your weekly /r/javascript recap](https://www.reddit.com/r/javascript/comments/h9cijv/your_weekly_rjavascript_recap/)
 - url: https://www.reddit.com/r/javascript/comments/h9cijv/your_weekly_rjavascript_recap/
 ---
@@ -159,43 +85,44 @@
 
 
 &amp;nbsp;
-## [3][How JWT works — the implementation](https://www.reddit.com/r/javascript/comments/h9el4d/how_jwt_works_the_implementation/)
+## [3][I made a WebApp to share files instantly, fully anonymously and direct ☕](https://www.reddit.com/r/javascript/comments/h9gxzg/i_made_a_webapp_to_share_files_instantly_fully/)
+- url: https://github.com/dot-cafe/beam.cafe
+---
+
+## [4][How do I create a sitemap of a github repository?](https://www.reddit.com/r/javascript/comments/ha2n7t/how_do_i_create_a_sitemap_of_a_github_repository/)
+- url: /r/learnjavascript/comments/ha2mtj/how_do_i_create_a_sitemap_of_a_github_repository/
+---
+
+## [5][Topic for a written paper](https://www.reddit.com/r/javascript/comments/ha14rk/topic_for_a_written_paper/)
+- url: /r/Frontend/comments/ha0xyb/topic_for_a_written_paper/
+---
+
+## [6][keen-slider - Free, Lightweight, Library-Agnostic HTML Touch Slider Carousel](https://www.reddit.com/r/javascript/comments/h9ndq0/keenslider_free_lightweight_libraryagnostic_html/)
+- url: https://keen-slider.io/
+---
+
+## [7][How JWT works — the implementation](https://www.reddit.com/r/javascript/comments/h9el4d/how_jwt_works_the_implementation/)
 - url: https://medium.com/@alexcambose/how-jwt-works-in-depth-354cb5dc360d
 ---
 
-## [4][[AskJS] What was some of your very first projects to understand and get comfortable with the language?](https://www.reddit.com/r/javascript/comments/h9e148/askjs_what_was_some_of_your_very_first_projects/)
-- url: https://www.reddit.com/r/javascript/comments/h9e148/askjs_what_was_some_of_your_very_first_projects/
----
-And in hindsight, was what the most valuable lesson/idea or project?
-## [5][Grid.js - Advanced table plugin](https://www.reddit.com/r/javascript/comments/h9dep8/gridjs_advanced_table_plugin/)
-- url: https://gridjs.io/?reddit
+## [8][A simple way to design your linked list using Javascript functions](https://www.reddit.com/r/javascript/comments/h9z84n/a_simple_way_to_design_your_linked_list_using/)
+- url: https://dev.to/misss_popcorn/designing-your-own-singly-linked-list-using-javascript-functions-1p51
 ---
 
-## [6][[AskJS] How would i make a script that refeshes a site and keeps the filters when refreshed?](https://www.reddit.com/r/javascript/comments/h9dn1l/askjs_how_would_i_make_a_script_that_refeshes_a/)
-- url: https://www.reddit.com/r/javascript/comments/h9dn1l/askjs_how_would_i_make_a_script_that_refeshes_a/
----
-I tried using an extension to auto refresh but it doesn't seem to retain the filters i turn on. Is there a way to do this with Javascript? Thanks
-## [7][CORS : Understanding Cross Origin Resource Sharing](https://www.reddit.com/r/javascript/comments/h8ulad/cors_understanding_cross_origin_resource_sharing/)
-- url: https://www.arbazsiddiqui.me/cors-understanding-cross-origin-resource-sharing/
+## [9][A Pragmatic Mocking Tool](https://www.reddit.com/r/javascript/comments/ha3tjt/a_pragmatic_mocking_tool/)
+- url: https://goodguydaniel.com/blog/best-http-request-mock-tool/
 ---
 
-## [8][denoland/deno_lint : fast alternative to ESLint](https://www.reddit.com/r/javascript/comments/h8v4s4/denolanddeno_lint_fast_alternative_to_eslint/)
-- url: https://github.com/denoland/deno_lint
+## [10][[AskJS] (p)react hooks are just a dirty hack with global state, right?](https://www.reddit.com/r/javascript/comments/h9qgh2/askjs_preact_hooks_are_just_a_dirty_hack_with/)
+- url: https://www.reddit.com/r/javascript/comments/h9qgh2/askjs_preact_hooks_are_just_a_dirty_hack_with/
+---
+looking at a [hooks implementation](https://github.com/preactjs/preact/blob/master/hooks/src/index.js) ... it looks like hooks are just one big globally shared state, with limitations in how to be used, instead of the state that used to be local per component.
+So a pure DX optimization with traps, isn't it?
+## [11][Do Not Follow JavaScript Trends](https://www.reddit.com/r/javascript/comments/ha39si/do_not_follow_javascript_trends/)
+- url: https://pragmaticpineapple.com/do-not-follow-javascript-trends/
 ---
 
-## [9][A fun tree fractal visualization with p5.js](https://www.reddit.com/r/javascript/comments/h94hlv/a_fun_tree_fractal_visualization_with_p5js/)
-- url: https://alexkaufman06.github.io/fractalTree/
----
-
-## [10][Component namespacing with Emotion](https://www.reddit.com/r/javascript/comments/h93xnq/component_namespacing_with_emotion/)
-- url: https://diary.kud.io/en/posts/2020/06/15/component-namespacing-with-emotion
----
-
-## [11][I created an Open Source Google Drive Clone - MyDrive (Node.js, React, Docker, Amazon S3)](https://www.reddit.com/r/javascript/comments/h8dfu2/i_created_an_open_source_google_drive_clone/)
-- url: https://github.com/subnub/myDrive
----
-
-## [12][JavaScript Developer Salary 2020| React, Angular, Vue Salary and Market Trends](https://www.reddit.com/r/javascript/comments/h99ump/javascript_developer_salary_2020_react_angular/)
-- url: https://www.daxx.com/blog/development-trends/javascript-market-trends-average-salaries
+## [12][Built-In and Custom Traits in JavaScript](https://www.reddit.com/r/javascript/comments/h9t8ip/builtin_and_custom_traits_in_javascript/)
+- url: https://medium.com/@Evan_Brass/built-in-and-custom-traits-in-javascript-5e532de069f2?sk=f1cdd1da83be8783904769e2f814f4ae
 ---
 

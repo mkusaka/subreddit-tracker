@@ -23,55 +23,43 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/h9905p/whats_everyone_working_on_this_week/
 ---
 New week. new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-25-2020/44318?u=llogiq)!
-## [3][Rustls, the TLS implementation in Rust, just got a formal audit!](https://www.reddit.com/r/rust/comments/h8za2s/rustls_the_tls_implementation_in_rust_just_got_a/)
-- url: https://github.com/ctz/rustls/blob/master/audit/TLS-01-report.pdf
+## [3][async-channel: async MPMC channel based on crossbeam-channel](https://www.reddit.com/r/rust/comments/ha15jg/asyncchannel_async_mpmc_channel_based_on/)
+- url: https://docs.rs/async-channel
 ---
 
-## [4][rust-analyzer changelog #29](https://www.reddit.com/r/rust/comments/h9g0yj/rustanalyzer_changelog_29/)
+## [4][Steve Klabnik is starting at Oxide Computer Company](https://www.reddit.com/r/rust/comments/h9obsp/steve_klabnik_is_starting_at_oxide_computer/)
+- url: https://steveklabnik.com/writing/today-is-my-first-day-at-oxide-computer-company
+---
+
+## [5][Announcing RustFest Global 2020 🎉 - 2020-11-07 and 2020-11-08](https://www.reddit.com/r/rust/comments/ha0dr5/announcing_rustfest_global_2020_20201107_and/)
+- url: https://blog.rustfest.eu/announcing-rustfest-2020
+---
+
+## [6][Are we slow?](https://www.reddit.com/r/rust/comments/h9nnyc/are_we_slow/)
+- url: https://blog.kodewerx.org/2020/06/the-rust-compiler-isnt-slow-we-are.html
+---
+
+## [7][Generics and Compile-Time in Rust](https://www.reddit.com/r/rust/comments/h9ucbe/generics_and_compiletime_in_rust/)
+- url: https://pingcap.com/blog/generics-and-compile-time-in-rust/
+---
+
+## [8][Changelog for Druid 0.6 (updated from 0.5 two weeks ago)](https://www.reddit.com/r/rust/comments/h9z66n/changelog_for_druid_06_updated_from_05_two_weeks/)
+- url: https://github.com/xi-editor/druid/blob/master/CHANGELOG.md
+---
+
+## [9][Tyrade: a pure functional language for type-level programming in Rust](https://www.reddit.com/r/rust/comments/h9pbhk/tyrade_a_pure_functional_language_for_typelevel/)
+- url: https://github.com/willcrichton/tyrade
+---
+
+## [10][rust-analyzer changelog #29](https://www.reddit.com/r/rust/comments/h9g0yj/rustanalyzer_changelog_29/)
 - url: https://rust-analyzer.github.io/thisweek/2020/06/15/changelog-29.html
 ---
 
-## [5][NDArray Index Arrays and Mask Index Arrays](https://www.reddit.com/r/rust/comments/h9eoaw/ndarray_index_arrays_and_mask_index_arrays/)
-- url: https://shahinrostami.com/posts/programming/rust-notebooks/ndarray-index-arrays-and-mask-index-arrays/
+## [11][IntelliJ Rust Changelog #124](https://www.reddit.com/r/rust/comments/h9jegd/intellij_rust_changelog_124/)
+- url: https://intellij-rust.github.io/2020/06/15/changelog-124.html
 ---
 
-## [6][The Matrix homeserver Conduit supports Server-side key backups](https://www.reddit.com/r/rust/comments/h9am33/the_matrix_homeserver_conduit_supports_serverside/)
-- url: https://youtu.be/-1MbP3CC2Yk
----
-
-## [7][A multithreading library for Rust and WebAssembly](https://www.reddit.com/r/rust/comments/h99p9d/a_multithreading_library_for_rust_and_webassembly/)
-- url: https://github.com/w3reality/wasm-mt
----
-
-## [8][A simple web analytics in Rust](https://www.reddit.com/r/rust/comments/h9clto/a_simple_web_analytics_in_rust/)
-- url: https://github.com/kooparse/bast
----
-
-## [9][Rust AVR 2020 status?](https://www.reddit.com/r/rust/comments/h9doww/rust_avr_2020_status/)
-- url: https://www.reddit.com/r/rust/comments/h9doww/rust_avr_2020_status/
----
-Hi,
-
-If you look up Rust for AVR on Google, most posts are from 2018 saying that there are significant problems. It's now two years later, and I was wondering what the status is now?
-
-The only recent top hit is the [avr-rust project](https://github.com/avr-rust/rust). My concern with this is that I do not want to be using an outdated version of Rust. However, in the README.md, it says:
-
-&gt; Vanilla rustc
-
-&gt; AVR support is enabled by passing the --target avr-unknown-unknown flag to rustc.
-
-&gt; Note that the Rust libcore library (essentially required for every Rust program), must be manually compiled for it to be used, as it will not be built for AVR during compiler compilation (yet). Work is currently being done in order to allow libcore to be automatically compiled for AVR.
-
-Okay, so vanilla `rustc` can be used to target AVR, but I have to recompile libcore. So how do I do that? And does it actually work as expected? Or are there significant bugs still?
-## [10][A simple mapping library that generate From&lt;T&gt; trait implementation](https://www.reddit.com/r/rust/comments/h9ebja/a_simple_mapping_library_that_generate_fromt/)
-- url: https://github.com/kumarmo2/mapper
----
-
-## [11][I'm working on Miso, a ambient soundscape generator, using iced and rodio](https://www.reddit.com/r/rust/comments/h8vz4s/im_working_on_miso_a_ambient_soundscape_generator/)
-- url: https://github.com/tindleaj/miso
----
-
-## [12][My first useful project written in Rust! Blindfold: a lightweight and simple .gitignore generator. Github Link in comments!](https://www.reddit.com/r/rust/comments/h8xk2p/my_first_useful_project_written_in_rust_blindfold/)
-- url: https://i.redd.it/dpo27mn4rw451.gif
+## [12][Spend your novelty budget on Rust](https://www.reddit.com/r/rust/comments/h9txgz/spend_your_novelty_budget_on_rust/)
+- url: https://tim.mcnamara.nz/post/621040767010504704/spend-your-novelty-budget-on-rust
 ---
 

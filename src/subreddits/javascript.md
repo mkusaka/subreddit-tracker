@@ -1,11 +1,5 @@
 # javascript
-## [1][Showoff Saturday (June 13, 2020)](https://www.reddit.com/r/javascript/comments/h8625p/showoff_saturday_june_13_2020/)
-- url: https://www.reddit.com/r/javascript/comments/h8625p/showoff_saturday_june_13_2020/
----
-Did you find or create something cool this week in javascript? 
-
-Show us here!
-## [2][Your weekly /r/javascript recap](https://www.reddit.com/r/javascript/comments/h9cijv/your_weekly_rjavascript_recap/)
+## [1][Your weekly /r/javascript recap](https://www.reddit.com/r/javascript/comments/h9cijv/your_weekly_rjavascript_recap/)
 - url: https://www.reddit.com/r/javascript/comments/h9cijv/your_weekly_rjavascript_recap/
 ---
 **Monday, June 08 - Sunday, June 14**
@@ -85,44 +79,49 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][I made a WebApp to share files instantly, fully anonymously and direct ☕](https://www.reddit.com/r/javascript/comments/h9gxzg/i_made_a_webapp_to_share_files_instantly_fully/)
-- url: https://github.com/dot-cafe/beam.cafe
+## [2][The biggest JS conf in the cloud starts tomorrow. Free tickets are still available.](https://www.reddit.com/r/javascript/comments/hamya2/the_biggest_js_conf_in_the_cloud_starts_tomorrow/)
+- url: https://live.jsnation.com
 ---
 
-## [4][How do I create a sitemap of a github repository?](https://www.reddit.com/r/javascript/comments/ha2n7t/how_do_i_create_a_sitemap_of_a_github_repository/)
-- url: /r/learnjavascript/comments/ha2mtj/how_do_i_create_a_sitemap_of_a_github_repository/
+## [3][Bootstrap 5 alpha is officially released removing jQuery and going all in with vanilla JS](https://www.reddit.com/r/javascript/comments/haopme/bootstrap_5_alpha_is_officially_released_removing/)
+- url: https://themesberg.com/blog/bootstrap/bootstrap-version-5-alpha-whats-new
 ---
 
-## [5][Topic for a written paper](https://www.reddit.com/r/javascript/comments/ha14rk/topic_for_a_written_paper/)
-- url: /r/Frontend/comments/ha0xyb/topic_for_a_written_paper/
+## [4][Our experience with micro-frontends](https://www.reddit.com/r/javascript/comments/habtdg/our_experience_with_microfrontends/)
+- url: https://medium.com/hacking-talent/two-years-of-micro-frontends-a-retrospective-522526f76df4
 ---
 
-## [6][keen-slider - Free, Lightweight, Library-Agnostic HTML Touch Slider Carousel](https://www.reddit.com/r/javascript/comments/h9ndq0/keenslider_free_lightweight_libraryagnostic_html/)
-- url: https://keen-slider.io/
+## [5][gab: A CLI tool to create/copy/paste Github actions from terminal](https://www.reddit.com/r/javascript/comments/hammvk/gab_a_cli_tool_to_createcopypaste_github_actions/)
+- url: https://github.com/rajasegar/gab
 ---
 
-## [7][How JWT works — the implementation](https://www.reddit.com/r/javascript/comments/h9el4d/how_jwt_works_the_implementation/)
-- url: https://medium.com/@alexcambose/how-jwt-works-in-depth-354cb5dc360d
+## [6][Expanding Single Page Apps into multiple Browser Windows](https://www.reddit.com/r/javascript/comments/haolwi/expanding_single_page_apps_into_multiple_browser/)
+- url: https://medium.com/@tobiasuhlig/expanding-single-page-apps-into-multiple-browser-windows-e6d9bd155d59?source=friends_link&amp;sk=bbfe1dada95c5674669e463f93360822
 ---
 
-## [8][A simple way to design your linked list using Javascript functions](https://www.reddit.com/r/javascript/comments/h9z84n/a_simple_way_to_design_your_linked_list_using/)
-- url: https://dev.to/misss_popcorn/designing-your-own-singly-linked-list-using-javascript-functions-1p51
+## [7][Navim: navigate files on the terminal with the minimal amount of keystrokes.](https://www.reddit.com/r/javascript/comments/ha59ig/navim_navigate_files_on_the_terminal_with_the/)
+- url: https://github.com/MaiaVictor/Navim
 ---
 
-## [9][A Pragmatic Mocking Tool](https://www.reddit.com/r/javascript/comments/ha3tjt/a_pragmatic_mocking_tool/)
-- url: https://goodguydaniel.com/blog/best-http-request-mock-tool/
+## [8][[AskJS] Advice needed. I’m still a newbie to this. A classmate of mine recommend me to start from html then to CSS then to JavaScript. Is this ideal?](https://www.reddit.com/r/javascript/comments/hanm5q/askjs_advice_needed_im_still_a_newbie_to_this_a/)
+- url: https://www.reddit.com/r/javascript/comments/hanm5q/askjs_advice_needed_im_still_a_newbie_to_this_a/
+---
+I don’t mind starting from the basics as long as I reach JavaScript. If the other programming languages help me build my way up to JS, then I don’t mind taking my time to learn those.
+
+Some of my classmates hopped right into JS, but I rather take my time to learn the basics and work my way into JS and eventually learn Python...
+
+Any advice or feedback of what I should do/ start with would be greatly appreciated. 
+
+Btw, I’m learning this programming languages through CodeAcademy since it’s free!
+## [9][How To Build A Shopify Headless eCommerce Storefront](https://www.reddit.com/r/javascript/comments/hap0vy/how_to_build_a_shopify_headless_ecommerce/)
+- url: http://selleo-shopify.xyz
 ---
 
-## [10][[AskJS] (p)react hooks are just a dirty hack with global state, right?](https://www.reddit.com/r/javascript/comments/h9qgh2/askjs_preact_hooks_are_just_a_dirty_hack_with/)
-- url: https://www.reddit.com/r/javascript/comments/h9qgh2/askjs_preact_hooks_are_just_a_dirty_hack_with/
----
-looking at a [hooks implementation](https://github.com/preactjs/preact/blob/master/hooks/src/index.js) ... it looks like hooks are just one big globally shared state, with limitations in how to be used, instead of the state that used to be local per component.
-So a pure DX optimization with traps, isn't it?
-## [11][Do Not Follow JavaScript Trends](https://www.reddit.com/r/javascript/comments/ha39si/do_not_follow_javascript_trends/)
-- url: https://pragmaticpineapple.com/do-not-follow-javascript-trends/
+## [10][Splitting Event Streams: How RxJS groupBy() Works](https://www.reddit.com/r/javascript/comments/habusy/splitting_event_streams_how_rxjs_groupby_works/)
+- url: https://eugene.coding.blog/rxjs-group-by
 ---
 
-## [12][Built-In and Custom Traits in JavaScript](https://www.reddit.com/r/javascript/comments/h9t8ip/builtin_and_custom_traits_in_javascript/)
-- url: https://medium.com/@Evan_Brass/built-in-and-custom-traits-in-javascript-5e532de069f2?sk=f1cdd1da83be8783904769e2f814f4ae
+## [11][Caching server-side requests - Angular Universal](https://www.reddit.com/r/javascript/comments/hapd3n/caching_serverside_requests_angular_universal/)
+- url: https://andremonteiro.pt/caching-server-side-requests-ng-universal/
 ---
 

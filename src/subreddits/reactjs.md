@@ -1,28 +1,5 @@
 # reactjs
-## [1][Who's Hiring? [June 2020]](https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/)
-- url: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
----
-We alternate between **Who's Hiring** (on the 1st of the month, [most recent one here][hiring:most recent]) and **Who's Available** (on the 15th, [most recent one here][available:most recent])
-
-Welcome to **the biggest React job board in the world!** This is like Hacker News' **Who's Hiring** but just for React. Top Level comments must be **Job Opportunities.**
-
-⚠️ NEW: WE ARE REQUESTING EVERYBODY FOLLOW [THE HN Who's Hiring FORMAT][format:hiring:hn]
-
-**Company inc. | Job Title | City/State Location | Full-time/Part-Time | On-site/Remote | (Optional) Salary range | Website jobs page, other hard requirements etc.**
-
-examples:
-
-- **Thorn | San Francisco or Remote (US based) | Full-time Contract | $100k - $150k | Software Engineer | https://www.wearethorn.org/**
-- **PolicyStat | Full-Stack Python+Django Software Engineer | Indianapolis, Vancouver, or REMOTE | Full Time | +\$80k**
-
-Please include as much information as possible. **If you are remote-friendly, or open to sponsoring work visas to your country, say so! These are the top 2 questions!**
-
-If you are looking for jobs, send a PM to the poster or post in our [Who's Available thread!][available:most recent]
-
-[hiring:most recent]: https://www.reddit.com/r/reactjs/comments/gcbkuu/whos_hiring_may_2020/
-[available:most recent]: https://www.reddit.com/r/reactjs/comments/gk41zb/whos_available_may_2020/
-[format:hiring:hn]: https://news.ycombinator.com/item?id=21683554
-## [2][Beginner's Thread / Easy Questions (June 2020)](https://www.reddit.com/r/reactjs/comments/gukkex/beginners_thread_easy_questions_june_2020/)
+## [1][Beginner's Thread / Easy Questions (June 2020)](https://www.reddit.com/r/reactjs/comments/gukkex/beginners_thread_easy_questions_june_2020/)
 - url: https://www.reddit.com/r/reactjs/comments/gukkex/beginners_thread_easy_questions_june_2020/
 ---
 You can find [previous threads][wiki previous threads] in the wiki.
@@ -84,68 +61,213 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][The React docs are tremendous!](https://www.reddit.com/r/reactjs/comments/h9mat4/the_react_docs_are_tremendous/)
-- url: https://www.reddit.com/r/reactjs/comments/h9mat4/the_react_docs_are_tremendous/
+## [2][Who's Available? [June 2020]](https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
 ---
-I’ve been trying to learn React for awhile and did the usual thing of watching crash course videos and tutorials then trying out my own projects. I’d occasionally look at the docs when I couldn’t get my head around something.
+We alternate between hirers (on the 1st of the month) and agencies/freelancers/jobseekers (on the 15th).  
+If you are looking to post or reply to React job postings, please check [this month's Who's Hiring post here.][hiring:this month]
 
-For the last day I’ve sat down and read them through from the start while toying with some of the snippets provided and I can’t get over how much clearer everything is! They’re easy to understand and cover the basics really well!
-
-This should be obvious to everyone and I almost feel silly saying it, but if you want to learn a technology...
-
-Start with the documentation! 😛
-## [4][Create simple POS with React, Node and MongoDB #6: Redux Integration](https://www.reddit.com/r/reactjs/comments/ha0w7m/create_simple_pos_with_react_node_and_mongodb_6/)
-- url: https://blog.soshace.com/create-simple-pos-with-react-node-and-mongodb-6-redux-integration/
 ---
 
-## [5][How long do you guys think react is going to maintain this “superiority” over all frameworks](https://www.reddit.com/r/reactjs/comments/ha3whs/how_long_do_you_guys_think_react_is_going_to/)
-- url: https://www.reddit.com/r/reactjs/comments/ha3whs/how_long_do_you_guys_think_react_is_going_to/
----
-The title says it all.
-## [6][Do Not Follow JavaScript Trends](https://www.reddit.com/r/reactjs/comments/ha3dvx/do_not_follow_javascript_trends/)
-- url: https://pragmaticpineapple.com/do-not-follow-javascript-trends/
+If your post or comment is removed wrongly, please [send a message][message:mods] to mods  
+because Automods bot is not perfect :)
+
 ---
 
-## [7][So, has anyone had a chance to try out Recoil yet? Coming from some pretty Redux/React.Context heavy projects this seems like a more convenient way of coding? Especially when using hooks and FCs.](https://www.reddit.com/r/reactjs/comments/h9e4ca/so_has_anyone_had_a_chance_to_try_out_recoil_yet/)
-- url: https://medium.com/swlh/recoil-another-react-state-management-library-97fc979a8d2b
+Top Level comments must be Agencies and React Devs available for contract/permanent work.
+
+Please include Location or any other Requirements in your comment. You can choose to use this format if it helps:
+
+## (Fulltime | Contract | USA | Remote)
+
+or
+
+## (Agency | Europe | Remote)
+
+Then we recommend adding a 2-3 sentence bio as well.
+
+Not required, but may help:
+
+- Link to Github/Portfolio
+- Notable [r/reactjs][r/reactjs] submissions
+- Preferred stack
+- Former companies or clients
+- Design or backend dev experience
+- anything else you consider relevant. Put on your best show!
+- Listing years of experience NOT required, it's a poor metric
+
+If you are looking to hire, you can send a PM, or reply so that others might see your job opening.  
+**Note**: Due to the sensitive nature of availability while currently in a job, users may be using alternate accounts.
+
+For more ideas on what to include, look at the [last Who's Available posts][available:last month].
+
+If you just want some portfolio feedback, check the stickied post below.
+
+Good luck! #WriteOnceApplyEverywhere
+
+[r/reactjs]: https://www.reddit.com/r/reactjs/
+[available:last month]: https://www.reddit.com/r/reactjs/comments/gk41zb/whos_available_may_2020/
+[hiring:this month]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
+[message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
+## [3][React Functional Components and Lodash High-Order Functions](https://www.reddit.com/r/reactjs/comments/haks1w/react_functional_components_and_lodash_highorder/)
+- url: https://medium.com/@vdeantoni/react-functional-components-and-lodash-high-order-functions-a0bc9e2df171?source=friends_link&amp;sk=403c607784238c9f812917be3e2bee57
 ---
 
-## [8][Getting Started with React Testing Library](https://www.reddit.com/r/reactjs/comments/ha1j8a/getting_started_with_react_testing_library/)
-- url: https://www.robinwieruch.de/react-testing-library
+## [4][ReactJS Automatic Deployment with Github Actions Tutorial](https://www.reddit.com/r/reactjs/comments/ha4mnw/reactjs_automatic_deployment_with_github_actions/)
+- url: https://www.youtube.com/watch?v=encpjND99xU&amp;feature=youtu.be
 ---
 
-## [9][A simple terrain generator, build using react-three-fiber](https://www.reddit.com/r/reactjs/comments/ha1gyt/a_simple_terrain_generator_build_using/)
-- url: https://terrain.mozzius.now.sh/
+## [5][How to update a single propery in an array of objects using React Hooks?](https://www.reddit.com/r/reactjs/comments/hanvk7/how_to_update_a_single_propery_in_an_array_of/)
+- url: https://www.reddit.com/r/reactjs/comments/hanvk7/how_to_update_a_single_propery_in_an_array_of/
+---
+Hi,
+
+I am creating a memory game and I need to update `turned` property from `false` to `true` on click`.` I have this code but it throw an error. Could you help me please?
+
+ 
+
+`import React, {useEffect, useState} from 'react'`  
+`import Card from './Card'`  
+`function Index({data}) {`  
+ `const [dataInternal, setData] = useState(null)`  
+ `const [clickedCardId, setClickedCard] = useState(null)`  
+ `useEffect(() =&gt; {`  
+ `const arr = []`  
+ `data.map((item) =&gt;{`  
+ `return arr.push(`  
+        `{`  
+ `value:item.value,`  
+ `pic:item.pic,`  
+ `turned:false`  
+        `}`  
+      `)`  
+    `})`  
+ `setData(arr)`  
+  `}, [data])`  
+ `dataInternal &amp;&amp; dataInternal.map((item, index) =&gt; {`  
+ `if (index === clickedCardId) {`  
+ `return setData(Object.assign({}, item, { turned:true }))`  
+    `} else {`  
+ `return setData(item)`  
+    `}`  
+  `})`  
+   
+   
+ `return (`  
+ `&lt;div className="memory-game-container"&gt;`  
+ `{dataInternal &amp;&amp; dataInternal.map((item, index) =&gt; (`  
+ `&lt;Card key={index} item={item} setClickedCard={setClickedCard} id={index}/&gt;`  
+      `))}`  
+ `&lt;/div&gt;`  
+  `)`  
+`}`  
+`export default Index`
+## [6][[Typescript] React/Redux/Ajax/SQL = Where to put models?](https://www.reddit.com/r/reactjs/comments/hapi9m/typescript_reactreduxajaxsql_where_to_put_models/)
+- url: https://www.reddit.com/r/reactjs/comments/hapi9m/typescript_reactreduxajaxsql_where_to_put_models/
+---
+Hi all,
+
+I have a PWA project based on React + Redux + Axios / SQL
+
+I want to ask how / where you put your models from Services/Redux/SQL, models are shared 
+
+* request model for service
+* response model from service
+   * response model can be used for SQL 
+   * response model can be used for Redux 
+
+&amp;#x200B;
+
+for generic models, should I create folder &lt;rootDir&gt;/models? or what are you using?
+
+&amp;#x200B;
+
+Thank you!
+## [7][6 Stunning React.js Project Ideas🚀](https://www.reddit.com/r/reactjs/comments/ha9dex/6_stunning_reactjs_project_ideas/)
+- url: https://flatlogic.com/blog/6-stunning-react-js-project-ideas/
 ---
 
-## [10][Structuring styled-components](https://www.reddit.com/r/reactjs/comments/ha3vpi/structuring_styledcomponents/)
-- url: https://www.reddit.com/r/reactjs/comments/ha3vpi/structuring_styledcomponents/
+## [8][Github Pages breaks background images locally in Create React App](https://www.reddit.com/r/reactjs/comments/har3ze/github_pages_breaks_background_images_locally_in/)
+- url: https://www.reddit.com/r/reactjs/comments/har3ze/github_pages_breaks_background_images_locally_in/
 ---
-I've been trying out styled-components on a medium sized project, and while I love the idea of styled-components, I'm not satisfied with how my files are organised. 
+Here's my repo: [https://github.com/DanielJWagener/calculator-react](https://github.com/DanielJWagener/calculator-react)  
 
-I have a `styles/` folder containing three sub-folders:
 
-* `helpers/`, where I put files like `colors.js`, `breakpoints.js`, `fonts.js`...
-* `global/`, where I put styled files for very small independent components like `Button.js`, `SmallText.js`, `SubTitle.js`...
-* `components/`, which contains project specific styled files, organised in subfolders:
-   * `layout/`, itself containing styled files for the Footer and the Header, each in their own subfolder
-   * `pages/`, with a subfolder for each page, containing subfolders for every big section of the given page
-   * ...and a few folders for components that need multiple styled files and which could be used on any page
-
-I made [a (simplified) diagram](https://imgur.com/ppiowxV) to help you see better what I mean.
-
-I only made a homepage containing a hero and a simple grid of links to news articles displayed in card format, yet I already feel like I'm drowning in folders and files. And that's just for the styling part of things. I feel like I'm not going the right way at all, as I don't feel this kind of structure is scalable at all.
-
-Is there a scalable standard I could follow and easily use on big projects for styled-components ? Most articles I find on styled-components don't talk about folders structure.
-## [11][Tips for starting developement in react?](https://www.reddit.com/r/reactjs/comments/ha25dy/tips_for_starting_developement_in_react/)
-- url: https://www.reddit.com/r/reactjs/comments/ha25dy/tips_for_starting_developement_in_react/
+When I deployed my app to Github Pages, I set `"homepage"` in my [package.json](https://github.com/DanielJWagener/calculator-react/blob/master/package.json) to `"`[`http://DanielJWagener.github.io/calculator-react`](http://DanielJWagener.github.io/calculator-react)`"`. The deployment went fine and the hosted app looks okay, but now when I run `yarn start` on my machine, it runs on localhost:3000/calculator-react (instead of just localhost:3000) and the background image in my [Display component](https://github.com/DanielJWagener/calculator-react/blob/master/src/components/Display/display.styles.js) doesn't render. The issue resolves itself if I change `"homepage"`  to  `"`[`http://DanielJWagener.github.io`](http://DanielJWagener.github.io/calculator-react)`/"`. Is there a way to avoid having to change that URL before and after deployments? Or is it just an annoying little thing I have to remember to do?
+## [9][Help with socket io and redux saga bug](https://www.reddit.com/r/reactjs/comments/haq60f/help_with_socket_io_and_redux_saga_bug/)
+- url: https://www.reddit.com/r/reactjs/comments/haq60f/help_with_socket_io_and_redux_saga_bug/
 ---
-I mostly or I can say employers mostly kept me at backend while developing web applications. I am a Nodejs developer and developing in it from past 3 years(professionally). However my relationship with front end side is of kind on and off. Angular is what I am used to dabble in mostly whenever I got chance. I first learned React in 2015 and from then on kept myself awared of the new features and trends but haven't got chance to develop apps in react other than one or two video courses I do every year just to kill time.
+Hi all, i figured i would make a post here before I submit an issue to the package. I have an event channel that I'm using to listen for incoming socket events and dispatch actions.  
 
-I work in a Angular based team but convinced my seniors to go with react for an upcoming project( my manager has unrealistic expectation from this project). But right now I am on my own even all of the UI/UX designers are used to angular. So I will be getting plain html/css files (no ng ui components setup).
-## [12][Free resources (Youtube, docs etc.) or a Udemy course to learn React?](https://www.reddit.com/r/reactjs/comments/ha1bgx/free_resources_youtube_docs_etc_or_a_udemy_course/)
-- url: https://www.reddit.com/r/reactjs/comments/ha1bgx/free_resources_youtube_docs_etc_or_a_udemy_course/
+```
+const createSocketChannel = (socket) =&gt;
+  eventChannel((emit) =&gt; {
+    socket.on("message", (payload) =&gt; emit(() =&gt; messageReceived(payload)));
+
+    socket.on("client-disconnected", (payload) =&gt; emit(() =&gt; clientDisconnected(payload);
+
+    return () =&gt; {};
+  });
+```
+
+What's strange is the in the first event, this is working perfectly. In the second event, if I replace the dispatch action with a console.log of the payload, it will log the payload every time. The emit function is the only thing that is not called.
+
+...Any one have any idea? Is there something I'm doing wrong or some other code that could help identity what this problem is?
+## [10][Exquisite Consequences](https://www.reddit.com/r/reactjs/comments/hapw57/exquisite_consequences/)
+- url: https://www.reddit.com/r/reactjs/comments/hapw57/exquisite_consequences/
 ---
-After learning Node.js, I thought to improve my Front End skills with React. However, I am a bit lost. Youtube has a wide choice but the courses are around 2 hours each, and I don't know whether that's enough to learn it. On the other hand, there are a few Udemy courses which are about 40 hours each which might be a bit overwhelming and long, and cost as well. 
+Hi r/reactjs!! I'm currently taking a course in graphic design and have built a web app using ReactJS that is a twist on generative art. Typically, the generative artist hands the process over to a machine, in Exquisite Consequences, Im going to hand the work over to you and crowd source the elements. I would love it, if you took 30 seconds of your time and contributed to my work here:
 
-Is there a ton to learn about React that I would have to get the courses, or can I absorb necessary information from free sources that are available? What is the best approach?
+[https://humannetwork-93d55.web.app/](https://humannetwork-93d55.web.app/)
+## [11][Build your React Blog with Firebase - 11 - Upload an Article to Firebase Firestore](https://www.reddit.com/r/reactjs/comments/han7gz/build_your_react_blog_with_firebase_11_upload_an/)
+- url: https://www.youtube.com/watch?v=Uo2yqA9qI4I
+---
+
+## [12][Two types of setState?](https://www.reddit.com/r/reactjs/comments/hakuk5/two_types_of_setstate/)
+- url: https://www.reddit.com/r/reactjs/comments/hakuk5/two_types_of_setstate/
+---
+    import React from 'react';
+    import './App.css';
+    
+    class App extends React.Component {
+      constructor(){
+        super();
+    
+        this.state = {
+          time: new Date(),
+        }
+      }
+    
+    currentTime(){
+      this.setState({
+        time: new Date(),
+    
+      })
+    }
+    
+      componentWillMount(){
+       setInterval(()=&gt; this.currentTime(),1000)
+      }
+    
+      render(){
+      return (
+        &lt;div className="App"&gt;
+    
+         {this.state.time.toLocaleTimeString()}
+        &lt;/div&gt;
+      );}
+    }
+    
+    export default App;
+    
+
+here in the setState line,
+
+when i use equals sign, it doesnt update every second
+
+     this.setState=({
+        time: new Date(),
+    
+      })
+
+like this, is there any reason for that?

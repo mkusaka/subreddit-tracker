@@ -19,301 +19,180 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][List of 211 remote jobs hand-picked from "Hacker News: Who is hiring?"](https://www.reddit.com/r/rails/comments/h9vihg/list_of_211_remote_jobs_handpicked_from_hacker/)
-- url: https://www.reddit.com/r/rails/comments/h9vihg/list_of_211_remote_jobs_handpicked_from_hacker/
+## [2][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/har6r7/personal_projects_show_off_your_own_project_andor/)
+- url: https://www.reddit.com/r/rails/comments/har6r7/personal_projects_show_off_your_own_project_andor/
 ---
-This list contains 211 remote jobs and you can filter them by location or skills.
+In this thread you can showcase your personal pet project to other redditors.
 
-Here I would like to share the entire remote jobs list from the big list of opportunities. All these are 100% remote jobs not just allowed to work from home during this crisis. These are 100% remote jobs and will continue to follow that after the crisis.
+Need help with a specific problem or just wanna have some extra eyeballs on your code? Ask away!
 
-https://remoteleaf.com/whoishiring
+A suggested format to get you started:
 
-Note: Select "ruby" in the category filter to see rails jobs. 
+1. **Name of your project**
+2. **A short description**
+3. **Application stack**
+4. **Link to Live app**
+5. **Link to GitHub**
+6. **You experience level**
+7. **Other information or areas that you would like advice on**
 
-✅ 100% remote full-time jobs    
-✅ Spent more than 30 hours to curate this information
-## [3][Getting db:migrate error eitherway](https://www.reddit.com/r/rails/comments/ha1aop/getting_dbmigrate_error_eitherway/)
-- url: https://www.reddit.com/r/rails/comments/ha1aop/getting_dbmigrate_error_eitherway/
+ 
+
+^(Many thanks to Kritnc for getting the ball rolling.)
+## [3][Best PWA options for Rails?](https://www.reddit.com/r/rails/comments/hal2l7/best_pwa_options_for_rails/)
+- url: https://www.reddit.com/r/rails/comments/hal2l7/best_pwa_options_for_rails/
 ---
-Hello,   
+Looking for the current and best methods for building Progressive Web Apps with Rails. Any suggestions?
 
-I am new to rails. I have been working on a basic sign-up/login module. On localhost, I am getting the following error:  
+Thinking about maybe dabbling in StimulusReflex, but not seeing any solid discussion on PWA implementation / planning.
 
-&gt; Migrations are pending. To resolve this issue, run:
-&gt; rails db:migrate RAILS_ENV=development
-
-Then when I follow the that instruction, I am getting the following error:
-
-
-&gt; An error has occurred, all later migrations are canceled: Mysql2::error: Table 'users' already exists
-
-
-How can this be fixed ?
-## [4][MySQL vs PostgreSQL for production?](https://www.reddit.com/r/rails/comments/h9tsrj/mysql_vs_postgresql_for_production/)
-- url: https://www.reddit.com/r/rails/comments/h9tsrj/mysql_vs_postgresql_for_production/
+Goal is to build an app that feels as native as possible with a cohesive UI that eliminates building and maintaining multiple user interface styles for various devices.
+## [4][Heroku Add-ons I am working on](https://www.reddit.com/r/rails/comments/haq5lv/heroku_addons_i_am_working_on/)
+- url: https://www.reddit.com/r/rails/comments/haq5lv/heroku_addons_i_am_working_on/
 ---
-Which of these two would you recommend for a production database for a Rails app? I've worked with both before, but am much more familiar with MySQL. Does one have any major advantages over the other when it comes to Rails? 
+Hi Devs!
 
-Also, is it worth exploring NoSQL options for Rails, like MongoDB or Redis?
-## [5][Generate Dynamic URLs/Paths in rails based off table parameter](https://www.reddit.com/r/rails/comments/h9mozp/generate_dynamic_urlspaths_in_rails_based_off/)
-- url: https://www.reddit.com/r/rails/comments/h9mozp/generate_dynamic_urlspaths_in_rails_based_off/
+If you are on Heroku and use Heroku Scheduler, I am working on 2 projects that might interest you! Feel free to reach out!
+
+[https://schedulerctl.com](https://schedulerctl.com/)
+
+[https://schedulermon.com](https://schedulermon.com/)
+## [5][Integrating Keycloak](https://www.reddit.com/r/rails/comments/han42k/integrating_keycloak/)
+- url: https://www.reddit.com/r/rails/comments/han42k/integrating_keycloak/
 ---
-I'm looking to generate a dynamic url within rails based off a table parameter. As an example, let's say I have a bunch of partners and want to have a dedicated path /some-partner-name based off the saved name value in an Active Record value. What is the best approach to creating these paths/URLs?
-## [6][Devise with Multiple User Types](https://www.reddit.com/r/rails/comments/h9kslp/devise_with_multiple_user_types/)
-- url: https://www.reddit.com/r/rails/comments/h9kslp/devise_with_multiple_user_types/
+Has anyone integrated [Keycloak](https://keycloak.org) with a Rails app?   
+
+I'm not very experienced with authentication in Rails, aside from the basics of setting up Devise, and it is unclear to me what I need to do to make the first connection.
+
+There is a Rack middleware gem, [keycloak-api-rails](https://github.com/looorent/keycloak-api-rails), which handles JWT token management for Keycloak.  However, I must do something in my app that will start the authN process.
+
+I believe it should go something like this:
+
+1. User arrives at my Rails site, but user is not yet authenticated
+2. User is automatically redirected to my Keycloak server, and Keycloak provides the login page
+3. User logs in with a local Keycloak username/password, or they login via one of the configured social integrations (Github, for example)
+4. Upon successful authN, Keycloak redirects user back to my Rails app
+5. The keycloak gem looks at the header and sees the Bearer token, then does the appropriate inspection to determine that it is valid; if so, it allows Rails to process the request fully.
+
+**I don't know what must be done to get from step 1 to step 2.**  There are many gems for doing many things regarding user authentication, but I don't know which is right for this use case.  I would like to be as precise as possible with my gem choices such that I do not include a lot of unnecessary dependencies or configurations.
+
+Suggestions?  TIA.
+## [6][Help with configuring PostgreSQL and locale in Rails app](https://www.reddit.com/r/rails/comments/hamond/help_with_configuring_postgresql_and_locale_in/)
+- url: https://www.reddit.com/r/rails/comments/hamond/help_with_configuring_postgresql_and_locale_in/
 ---
-I've got an application with 3 different kinds of users: administrators, representatives and cardholders.
+Hi, I'm using a Mac running Catalina to develop Rails applications. Since I'm going to use PostgreSQL in production, I've switched to using it in development (from sqlite). However, despite the fact that my Rails app specifies 'unicode' in the database.yml file, I cannot use it with a PostgreSQL database with UTF8 encoding. It keeps giving me the following error message:
 
-I'm using Pundit to authorize different actions based on the user type but I'm having trouble configuring devise (and devise invitable) to play nice with the different user types. 
+    ERROR:  encoding "UTF8" does not match locale "en_NZ.ISO8859-15" DETAIL:  The chosen LC_CTYPE setting requires encoding "LATIN9". 
 
-Here are my current Devise Routes:
+What can I do to allow PostgreSQL to let me use UTF8 encoding, despite the fact that my Mac is set to NZ English?
 
-```
-  #
-  # Devise Routes
-  #
-  devise_for :users, controllers: { invitations: 'invitations/administrators' }
-  devise_scope :user do
-    get 'sign_in', to: 'devise/sessions#new'
-    get 'sign_up', to: 'invitations/administrators#new'
-    get 'success', to: 'invitations/administrators#success', as: 'invitation_success'
-    get 'representative_inquiry', to: 'invitations/administrators#representative_inquiry'
-    post 'representative_inquiry_submission', to: 'administrators/users#representative_inquiry_submission'
-    post 'sign_up', to: 'invitations/administrators#create'
-    post 'invitations/representatives', to: 'invitations/representatives#create'
-    post 'invitations/cardholders', to: 'invitations/cardholders#create'
-  end
-```
-
-The problem is that when a representative accepts an invitation, they will call `accept_resource` in the AdministratorsController. That's not ideal because I need different actions to happen when different user types accept an invitations.
-
-I've also tried a setup like this:
-
-```
-  devise_for :users, controllers: { invitations: 'invitations/administrators' }
-  devise_for :representatives, class_name: 'User', controllers: { invitations: 'invitations/representatives' }
-```
-
-This works a little better but the `warden` session is still iffy (note: `devise_for :users` _must_ be the first line and I can't use `devise_for :administrators` because then the warden session is "warden.user.administrator.key" instead of "warden.user.user.key" and devise can't authenticate the user).
-
-Any ideas on the best way to manage this? I've never used devise with multiple user types and it's a bit weird.
-
-Thanks!
-## [7][easyAutocomplete in create form](https://www.reddit.com/r/rails/comments/h9gu3z/easyautocomplete_in_create_form/)
-- url: https://www.reddit.com/r/rails/comments/h9gu3z/easyautocomplete_in_create_form/
+This is definitely a problem for me as I've been tasked with creating a website that will have both English and Thai options.
+## [7][Is the Ruby Cookbook out of date now?](https://www.reddit.com/r/rails/comments/hah1x4/is_the_ruby_cookbook_out_of_date_now/)
+- url: https://www.reddit.com/r/rails/comments/hah1x4/is_the_ruby_cookbook_out_of_date_now/
 ---
-I want to implement find easy autocomplete in a form, where I would search and select seller name, but when I submit the form I get seller name as a string. I need it to be seller ID. Is there a way for me to pass ID instead the name using  text\_field or I need to use other type of field?
+Is the Ruby Cookbook out of date now or is it still mostly still relevant? If it's out of date, is there anything you would suggest? Either a ruby or a rails cookbook (or similar).
+## [8][Ruby on Rails cheatsheet from Michael Hartl tutorials](https://www.reddit.com/r/rails/comments/ham7y6/ruby_on_rails_cheatsheet_from_michael_hartl/)
+- url: https://www.reddit.com/r/rails/comments/ham7y6/ruby_on_rails_cheatsheet_from_michael_hartl/
+---
+Hi folks,   
+
+Hope everyone is staying safe!
+
+I started learning Ruby-on-Rails framework two weeks before &amp; made a cheat sheet with minimal explanations of different concepts, referred from **Michael Hartl**’s "[Learn Web Development with Rails - Fourth Edition](https://www.pdfdrive.com/ruby-on-rails-tutorial-learn-web-development-with-rails-4th-edition-e184254589.html)" tutorials.  
+
+The textbook is really awesome &amp; helped me to build a simple blogging website similar to the basic version of Twitter and the source code is available in github: [https://github.com/ddlogesh/rails-tutorial](https://github.com/ddlogesh/rails-tutorial) 
+
+I would like to share these two cheat sheets, which may be a good start for preparing ruby-on-rails framework or recollect the concepts learned from the above-mentioned textbook.  
+
+Rails: [https://www.notion.so/Ruby-on-Rails-Cheat-Sheet-61106a73031d46ec81c285daaebf1409](https://www.notion.so/Ruby-on-Rails-Cheat-Sheet-61106a73031d46ec81c285daaebf1409)
+
+Ruby: [https://www.notion.so/Ruby-Cheat-Sheet-7c8aabc9268b4e65b5691245dd19068c](https://www.notion.so/Ruby-Cheat-Sheet-7c8aabc9268b4e65b5691245dd19068c)
+
+If you are a beginner to Ruby, please watch this 4-hours tutorial from **freeCodeCamp**: [https://www.youtube.com/watch?v=t\_ispmWmdjY](https://www.youtube.com/watch?v=t_ispmWmdjY). Though it's quite a long, it's worth watching it!
+
+Please do share these cheatsheets with your Ruby-on-Rails enthusiasts, who may be interested to learn Ruby-on-Rails.
+## [9][Help with internal table join](https://www.reddit.com/r/rails/comments/hahf0f/help_with_internal_table_join/)
+- url: https://www.reddit.com/r/rails/comments/hahf0f/help_with_internal_table_join/
+---
+hello:
+
+I have two tables:
+
+`Player --&gt; has_many FantasyStarts`
+
+`FantasyStarts --&gt;  belongs_to Player`
 
 &amp;#x200B;
 
-https://preview.redd.it/l1y5l0dxx2551.png?width=1296&amp;format=png&amp;auto=webp&amp;s=9d596510ce62311dcb8620ba3100b94c9c45d1f2
-## [8][Bulma Nav Dropdown - Quick flash on page load after converting to Webpacker](https://www.reddit.com/r/rails/comments/h9iwmq/bulma_nav_dropdown_quick_flash_on_page_load_after/)
-- url: https://www.reddit.com/r/rails/comments/h9iwmq/bulma_nav_dropdown_quick_flash_on_page_load_after/
+In english, I am trying to find all SeasonStats from the last year and week that were the first entry for that player in the whole table (ie who started last week and it was their first 'start' ever recorded in the table). I have constructed a bare sql query that works great, but I am trying to improve my rails query skills:
+
+`FantasyStart.includes(:player).find_by_sql("with count_table as (select player_id, count(*) as num_starts from fantasy_starts where position != 'BN' group by player_id) select * from fantasy_starts join count_table on fantasy_starts.player_id = count_table.player_id where week = 13 and year = 2019 and count_table.num_starts = 1 and position != 'BN' ")`
+
+I have also figure out a 'rails way' of creating the map of counts I would join to:
+
+`FantasyStart.where.not(position: 'BN').group(:player_id).count`
+
+which yields:
+
+`=&gt; {184=&gt;2, 2562721=&gt;5, 2540215=&gt;12, 100004=&gt;57, 100001=&gt;26, 100006=&gt;62, 2505785=&gt;5, 2561029=&gt;1, 2541316=&gt;1, 2558954=&gt;1, 2552408=&gt;12, 2532820=&gt;60, 2507999=&gt;25, 2506194=&gt;16, 2505600=&gt;18, 2532977=&gt;6, 2507164=&gt;75, 2495441=&gt;4, 100022=&gt;23, 2543704=&gt;2, 2532807=&gt;1, 81288=&gt;1, 2550658=&gt;4, 2506386=&gt;15, 2560809=&gt;11, 2533349=&gt;4, 2560735=&gt;3, 2557976=&gt;19, 2556521=&gt;15,....`
+
+any good ideas for a next step?
+## [10][naming css classes and the placement of css styles](https://www.reddit.com/r/rails/comments/hahqvu/naming_css_classes_and_the_placement_of_css_styles/)
+- url: https://www.reddit.com/r/rails/comments/hahqvu/naming_css_classes_and_the_placement_of_css_styles/
 ---
-**EDIT**: It seems I have corrected the issue by removing some no longer necessary lines in my assets.rb initializer.  Nevermind! Mods feel free to delete or leave this post if you think it may help others.
 
+where do I put this bit bit of css in a small/madium size rails 6 app?
+
+    .clients-favorite-button-style { font-size: 300%; }
+
+idea 1:
+It's first use was in views/posts/new.html.erb, so i guess it can go in
+
+    app/assets/stylesheets/posts.scss
+
+But, this button style is not specific to posts, so I feel posts.scss might not be the best place.
+
+idea 2:
+The second idea was to put it in app/assets/stylesheets/instacart.scss
+(suppose the site we're building is instacart.com)
+But this doesn't scale well, because after some months this file has grown
+and contains to pretty much contain all the styles the site uses.
+
+idea 3:
+The application has a app/assets/javascripts folder, I can put it somewhere in
+there but this style is not specific to any js/webpacker packs, and often the style is used outside of the webpacker world.
+
+do you have any other ideas?
+
+
+also
+how do you namespace the styles, I've been using the lame approach like this:
+
+    .instacart-color-1 { ... }
+    .instacart-font-1 { ... }
+    .instacart-bolder-1 { ... }
+    etc
+## [11][default_scope is evil?](https://www.reddit.com/r/rails/comments/ha6gqj/default_scope_is_evil/)
+- url: https://www.reddit.com/r/rails/comments/ha6gqj/default_scope_is_evil/
 ---
+I've read articles [like this](https://rails-bestpractices.com/posts/2013/06/15/default_scope-is-evil/) or [this one](https://stackoverflow.com/questions/25087336/why-is-using-the-rails-default-scope-often-recommend-against), but I think it depends on the use case.
 
-Hello all, I just converted a big project from using the Asset pipeline and self-hosted Bulma framework to using Webpacker and the Bulma npm package, along with Stimulus.js and Stimulus Reflex.  After making the conversion, I'm noticing that my navbar dropdown (class `navbar-dropdown`) is flashing briefly when loading a page or moving amongst my app routes.  
+For example at my job we want to add a soft delete in the user model, I think adding a `default_scope where(active: true)` would solve this issue pretty fast and efficiently, all views would show active users and maybe some views would need a little touch here and there. Hard deletions would be done at the terminal anyway and in only very specific cases/records. Also, the fact that it affects users initialization isn't a drawback in this case, but actually a pro.
 
-I don't believe this to be a Bulma issue, but rather something with my webpacker or javascript pack configuration somewhere.  I am using the dropdown with the native CSS `is-hoverable` class, so no JS is written for this at all.
-
-If anyone could help me out on this I would appreciate it.  I'm new to Webpack and probably missing something about how it works.  I can provide a video of the issue if needed. Thanks!
-
-Here is my nav code and partial:
-
-**_navbar.html.erb**
-
-```
-&lt;nav class="navbar has-shadow is-spaced" role="navigation" aria-label="main-navigation" data-controller="nav"&gt;
-  &lt;div class="navbar-brand"&gt;
-    &lt;%= link_to root_path, class: "navbar-item" do %&gt;
-      &lt;%= image_tag("logo.png") %&gt;
-    &lt;% end %&gt;
-    &lt;a
-      role="button"
-      class="navbar-burger burger"
-      aria-label="menu"
-      aria-expanded="false"
-      data-target="nav.burger"
-      data-action="click-&gt;nav#toggleNav"
-    &gt;
-      &lt;span aria-hidden="true"&gt;&lt;/span&gt;
-      &lt;span aria-hidden="true"&gt;&lt;/span&gt;
-      &lt;span aria-hidden="true"&gt;&lt;/span&gt;
-    &lt;/a&gt;
-  &lt;/div&gt;
-
-  &lt;div class="navbar-menu" id="navMenu" data-target="nav.menu"&gt;
-
-    &lt;%= render "shared/userMenu" if user_signed_in? %&gt;
-
-    &lt;%= render "shared/environment" if !Rails.env.production? %&gt;
-    
-    &lt;div class="navbar-end"&gt;
-      &lt;div class="navbar-item"&gt;
-        &lt;div class="buttons"&gt;
-          &lt;%= render "shared/guestlinks" if !user_signed_in? %&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/nav&gt;
-```
-
-**_userMenu.html.erb**
-
-```
-&lt;div class="navbar-item has-dropdown is-hoverable"&gt;
-  &lt;a class="navbar-link has-text-grey-dark"&gt;
-    &lt;span&gt;&lt;%= current_user.full_name %&gt;&lt;/span&gt;
-  &lt;/a&gt;
-
-  &lt;div class="navbar-dropdown ob-main-menu"&gt;
-    &lt;div class="navbar-item"&gt;
-      &lt;%= render "shared/userDetails" %&gt;
-    &lt;/div&gt;
-
-    &lt;hr class="navbar-divider"/&gt;
-
-    &lt;%= link_to edit_user_registration_path, class: "navbar-item" do %&gt;
-      &lt;span class="icon has-text-link is-medium ob-icon-rpad"&gt;
-        &lt;i class="fas fa-cog"&gt;&lt;/i&gt;
-      &lt;/span&gt;
-      Settings
-    &lt;% end %&gt;
-
-    &lt;%= link_to accounts_inactive_path, class: "navbar-item" do %&gt;
-      &lt;span class="icon has-text-link is-medium ob-icon-rpad"&gt;
-        &lt;i class="fas fa-archive"&gt;&lt;/i&gt;
-      &lt;/span&gt;
-      Inactive Accounts
-    &lt;% end %&gt;
-
-    &lt;%= link_to destroy_user_session_path, class: "navbar-item", method: :delete do%&gt;
-      &lt;span class="icon has-text-link is-medium ob-icon-rpad"&gt;
-        &lt;i class="fas fa-sign-out-alt"&gt;&lt;/i&gt;
-      &lt;/span&gt;
-      Logout
-    &lt;% end %&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-```
-
-**packs/application.js**
-
-```
-import "controllers"
-import "@fortawesome/fontawesome-free/js/all"
-import "../application/stylesheets/application"
-```
-
-**controllers/index.js**
-```
-import { Application } from "stimulus"
-import { definitionsFromContext } from "stimulus/webpack-helpers"
-import StimulusReflex from 'stimulus_reflex'
-import consumer from '../channels/consumer'
-import controller from './application_controller'
-
-const application = Application.start()
-const context = require.context("controllers", true, /_controller\.js$/)
-application.load(definitionsFromContext(context))
-StimulusReflex.initialize(application, { consumer, controller, debug: false })
-```
-
-**package.json**
-```
-{
-  "name": "myapp",
-  "private": true,
-  "dependencies": {
-    "@creativebulma/bulma-tooltip": "^1.2.0",
-    "@fortawesome/fontawesome-free": "^5.13.0",
-    "@rails/webpacker": "4.2.2",
-    "bulma": "^0.8.2",
-    "bulma-checkradio": "^1.1.1",
-    "bulma-toast": "^2.0.1",
-    "stimulus": "^1.1.1",
-    "stimulus_reflex": "^3.2.1",
-    "url-loader": "^4.1.0"
-  },
-  "devDependencies": {
-    "webpack-dev-server": "^3.10.0"
-  }
-}
-```
-
-**Gemfile**
-
-```
-# frozen_string_literal: true
-
-source 'https://rubygems.org'
-
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
-  "https://github.com/#{repo_name}.git"
-end
-
-ruby '2.6.6'
-
-gem 'aws-sdk-s3', '~&gt; 1.60.0'
-gem 'devise', '~&gt; 4.7.1'
-gem 'draper', '~&gt; 3.1.0'
-gem 'faker', '~&gt; 2.9.0'
-gem 'figaro', '~&gt; 1.1.1'
-gem 'jquery-rails'
-gem 'jquery-turbolinks'
-gem 'mini_magick', '~&gt; 4.9.5'
-gem 'pagy', '~&gt; 3.7.1'
-gem 'pg', '~&gt; 1.2.3'
-gem 'puma', '~&gt; 4.3.3'
-gem 'rails', '~&gt; 6.0.2.2'
-gem 'rails-ujs', '~&gt; 0.1.0'
-gem 'sassc', '~&gt; 2.2.1'
-gem 'sassc-rails', '~&gt; 2.1.2'
-gem 'stimulus_reflex', '~&gt; 3.2'
-gem 'turbolinks', '~&gt; 5.2.1'
-gem 'uglifier', '~&gt; 4.2.0'
-gem 'webpacker', '~&gt; 4.2.2'
-
-group :development, :test do
-  gem 'capybara'
-  gem 'database_cleaner', '~&gt; 1.7.0'
-  gem 'factory_bot_rails', '~&gt; 5.1.1'
-  gem 'pry-byebug'
-  gem 'pry-rails'
-  gem 'rails-controller-testing', '~&gt; 1.0.4'
-  gem 'rspec-rails', '~&gt; 3.9.0'
-  gem 'shoulda-matchers', '~&gt; 4.1.2'
-  gem 'simplecov', require: false
-end
-
-group :development do
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'listen'
-  gem 'rubocop', require: false
-  gem 'rubocop-rails', require: false
-  gem 'spring'
-  gem 'spring-watcher-listen'
-end
-```
-## [9][I have http://localhost:3001/items/product1, how do I add to the filepath to make it http://localhost:3001/items/product1/prices?](https://www.reddit.com/r/rails/comments/h9j3rp/i_have_httplocalhost3001itemsproduct1_how_do_i/)
-- url: https://www.reddit.com/r/rails/comments/h9j3rp/i_have_httplocalhost3001itemsproduct1_how_do_i/
+What do you think?
+## [12][Trying to deploy Rails and VueJS app to Heroku but...](https://www.reddit.com/r/rails/comments/halfdg/trying_to_deploy_rails_and_vuejs_app_to_heroku_but/)
+- url: https://www.reddit.com/r/rails/comments/halfdg/trying_to_deploy_rails_and_vuejs_app_to_heroku_but/
 ---
-Hey all- I'm looking to add `/prices` to `http://localhost:3001/items/product1/`  so I have [`http://localhost:3001/items/product1/prices`](http://localhost:3001/items/product1/prices) . I have logic in the items controller for product1 already that I would like to use in /prices as well.  
+I seem to be running into an issue with the Rails UJS module not being found according to the Heroku log.
 
+&amp;#x200B;
 
-How do I add this route? What is this type of routing called in [https://guides.rubyonrails.org/routing.html](https://guides.rubyonrails.org/routing.html) ? I'm getting lost and confused with the amount of routing documentation out there.
-## [10][Which is better? Puma or Passenger?](https://www.reddit.com/r/rails/comments/h9em7o/which_is_better_puma_or_passenger/)
-- url: https://www.reddit.com/r/rails/comments/h9em7o/which_is_better_puma_or_passenger/
----
-Which server is best for handling high volume of light weight requests? I did load testing with both servers, Puma won the contest with very slight difference. The main reason I'm asking to reduce running servers for my production app. As of now 15 servers are running with passenger. Is this possible to reduce servers count to atleast 13 or 14 by switching to Puma from Passenger?
+The exact error is " ModuleNotFoundError: Module not found: Error: Can't resolve 'rails/ujs' "
 
-Note: It's an API app.
-## [11][StimulusReflex, I was waiting for you](https://www.reddit.com/r/rails/comments/h92jon/stimulusreflex_i_was_waiting_for_you/)
-- url: https://www.reddit.com/r/rails/comments/h92jon/stimulusreflex_i_was_waiting_for_you/
----
-Hello to this new tool, without being really aware, I was actually waiting for it. I felt pain about this topic. There were no place were to store the front state in Ruby-on-Rails. Not properly. How to know which accordion is opened or not, how to know which tab is opened or not, etc. The only way I found until then was to use a centralized state (root object with Vue, or Vuex, or redux alone or with React). And store/restore it from localStorage. Without this centralized state, things get messy very quickly for complex scenarii. I wasn't completly convinced by StimulusJS itself because the state is assumed by the DOM, therefore it is very difficult to reason about it. Now with Reflex, it seems you can rely on a front state that is 100% assumed by the backend, removing the need to reason about a frontend state, and all the heavy mandatory JS tooling. Guys, this is a huge promise. Thanks a lot !!
+I have it in my appication.js file require("@rails/ujs").start();
+
+In my package.json file it 
+
+"@rails/ujs": "\^6.0.0", 
+
+Still saying it can't resolve it... not sure what else I  am missing.  Anyone run into this?  Any other code I can share let me know

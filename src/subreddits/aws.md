@@ -21,81 +21,86 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][Dealing with growing load on RDS](https://www.reddit.com/r/aws/comments/ha1bn2/dealing_with_growing_load_on_rds/)
-- url: https://www.reddit.com/r/aws/comments/ha1bn2/dealing_with_growing_load_on_rds/
----
-Hi everyone!
-
-I have a hypothetical scenario, maybe you are able to help me out.
-
-Say you have a increasingly stressed production DB in RDS, 3TB of data with 500GB increase each month. You want to offload data for analytics purposes and reduce the stress on your production DB, making scaling in the future easier.
-
-So I know that by using ETL tools like Glue, EMR, LakeFormation you can load your data into e.g. a data lake (or even Redshift) for further analysis.
-
-But then the scaling problem in RDS is still an issue. How would you tackle an increasingly stressed main DB? By rethinking the entire persistence layer architecture, splitting up a databases into several databases? Move to something more scalable like Aurora or even DynamoDB?
-
-Thanks! Really appreciate the help!
-## [3][Cluster Cloner: Copying cluster infrastructure between GKE, EKS, and AKS](https://www.reddit.com/r/aws/comments/ha2tou/cluster_cloner_copying_cluster_infrastructure/)
-- url: https://blog.doit-intl.com/you-can-handle-the-pods-but-what-about-the-clusters-486fbdb5345d
+## [2][A Shared File System for Your Lambda Functions](https://www.reddit.com/r/aws/comments/habrhi/a_shared_file_system_for_your_lambda_functions/)
+- url: https://aws.amazon.com/blogs/aws/new-a-shared-file-system-for-your-lambda-functions/
 ---
 
-## [4][Enforcing Compliance using the AWS Ansible Collection](https://www.reddit.com/r/aws/comments/ha1gg7/enforcing_compliance_using_the_aws_ansible/)
-- url: https://steampunk.si/blog/enforcing-compliance-using-aws-ansible-collection/
+## [3][Amazon EC2 Auto Scaling now supports Instance Refresh within Auto Scaling Groups](https://www.reddit.com/r/aws/comments/hafi7q/amazon_ec2_auto_scaling_now_supports_instance/)
+- url: https://aws.amazon.com/about-aws/whats-new/2020/06/amazon-ec2-auto-scaling-now-supports-instance-refresh-within-auto-scaling-groups/
 ---
 
-## [5][Don't forget that you can ask Jeff Barr anything (right here on r/aws) for the upcoming AWS Community Online event on 6 July](https://www.reddit.com/r/aws/comments/h9i8op/dont_forget_that_you_can_ask_jeff_barr_anything/)
-- url: https://www.reddit.com/r/aws/comments/h15ie8/ask_jeff_anything_help_inform_jeff_barrs_keynote/
+## [4][We are thinking of migrating from Classic ECS to Fargate - costs?](https://www.reddit.com/r/aws/comments/haop4g/we_are_thinking_of_migrating_from_classic_ecs_to/)
+- url: https://www.reddit.com/r/aws/comments/haop4g/we_are_thinking_of_migrating_from_classic_ecs_to/
 ---
+I am thinking of moving a 'classical' ECS docker cluster running 67 services to Fargate. The cluster autoscales in/out but has about 12 nodes. It costs us about $960/month.
 
-## [6][Do you feel that AWS needs to step up its game in following the Java release cadence?](https://www.reddit.com/r/aws/comments/ha3p2z/do_you_feel_that_aws_needs_to_step_up_its_game_in/)
-- url: https://www.reddit.com/r/aws/comments/ha3p2z/do_you_feel_that_aws_needs_to_step_up_its_game_in/
+I ran some calculations on the running the same tasks in Fargate and calculated that 67 Fargate tasks with 0.5 CPU and 1GB of memory would cost $424/month. I'm a little surprised by this since most web forums claim Fargate is MORE expensive.
+
+I also wonder whether the 0.5CPU in Fargate is equivalent to 200 CPU Units in ECS if the instance type is C5.large.
+
+Is there anything else I might be missing?
+## [5][AWS Workspaces](https://www.reddit.com/r/aws/comments/happs5/aws_workspaces/)
+- url: https://www.reddit.com/r/aws/comments/happs5/aws_workspaces/
 ---
-The latest release (not LTS though) is   **Java** 14  and aws java is at 11. I think its not good enough. I wish AWS would step up its game and work a little bit faster at keeping up.
-
-&amp;#x200B;
-
-What do you think?
-## [7][AWS XRay: Out of the box spring](https://www.reddit.com/r/aws/comments/ha3jyc/aws_xray_out_of_the_box_spring/)
-- url: https://www.reddit.com/r/aws/comments/ha3jyc/aws_xray_out_of_the_box_spring/
+Why the fuck hasn't a solution been created for the problem of  "User must change password at next login" not been created yet? How is everyone doing on-boarding?
+## [6][Reminder: AWS Summit Online is starting today!](https://www.reddit.com/r/aws/comments/han0w1/reminder_aws_summit_online_is_starting_today/)
+- url: https://www.reddit.com/r/aws/comments/han0w1/reminder_aws_summit_online_is_starting_today/
 ---
-https://docs.aws.amazon.com/xray/latest/devguide/xray-sdk-java-aop-spring.html
+See more info and how to register [here](https://aws.amazon.com/events/summits/online/emea/agenda/)
 
-This guide shows how we can use AWS XRay out of the box for spring projects without making any major code changes. However, if we follow these to the dot, there is no auto instrumentation of code. Is there any extra configuration I have to add?
-## [8][Is AWS Batch an analogous product to Cisco Tidal or Stonebranch?](https://www.reddit.com/r/aws/comments/ha00ir/is_aws_batch_an_analogous_product_to_cisco_tidal/)
-- url: https://www.reddit.com/r/aws/comments/ha00ir/is_aws_batch_an_analogous_product_to_cisco_tidal/
+Can't wait!
+
+EDIT: looks like they should have used scheduled auto scaling instead of target tracking:) site seems to be up and working now...
+
+Update: it seems like their whole schedule has shifted mid-day by an hour. I'm utterly confused at what's going on everywhere. It's a prerecorded summit, how hard is it really? you were supposed to be the chosen one AWS....  
+Do what I say, not what I do much?  
+
+## [7][What would be the best way to build Gravatar like service with using AWS services and least amount of code?](https://www.reddit.com/r/aws/comments/har7l0/what_would_be_the_best_way_to_build_gravatar_like/)
+- url: https://www.reddit.com/r/aws/comments/har7l0/what_would_be_the_best_way_to_build_gravatar_like/
 ---
-I'm trying to wrap my head around the use cases for AWS Batch. From what I've gathered it's best suited for batch processing tasks, some of which can be run in parallel and some which have dependencies on other jobs. 
+How could you build a system with AWS services that:
+1. A user can upload an image, and the only detail they give out is their email.
+2. The uploaded image can be accessed by some hash (generated from email?) in public.
+3. The uploaded image GET must also have support for width and height parameters that allows to fetch custom size uploaded image. If no width and height is specified, a default 250x250 image is returned.
 
-Currently at my work we schedule jobs on Cisco Tidal. We have several servers available to us locally that we can run jobs on. We define jobs in Tidal to either run at a specific time or after some job dependencies have been met. Jobs are allocated to run on our local servers depending on which servers have suitable resources available.
-
-Is this essentially what AWS Batch does, just on AWS infrastructure?
-## [9][Mounting a volume for AWS Batch](https://www.reddit.com/r/aws/comments/ha1yiw/mounting_a_volume_for_aws_batch/)
-- url: https://www.reddit.com/r/aws/comments/ha1yiw/mounting_a_volume_for_aws_batch/
+How would build it with AWS services with using least amount of code?
+## [8][SNS sends two emails for RDS snapshot creation](https://www.reddit.com/r/aws/comments/haquel/sns_sends_two_emails_for_rds_snapshot_creation/)
+- url: https://www.reddit.com/r/aws/comments/haquel/sns_sends_two_emails_for_rds_snapshot_creation/
 ---
-Hi,
+I'm setting up SNS to send out emails confirming the snapshots went off and completed successfully. Right now cloudwatch has an event set up for RDS DB Snapshot Events but I get two emails.
 
-We have some AWS batch processes that run nicely, using images from ECS.  We do not assign any volumes or storage, and it seems we get 8gb by default. I'm not actually sure why/where that is defined.
-
-Anyway we now have a situation where we need more space. It's only temporary processing space - we need to extract an archive, convert it, re-compress it and then upload it to S3. We already have this process, it's just that we've now ran out of space in our 8gb allowance.
-
-So; Just to be absolutely sure, how should we go about adding this space?  I see a few things about connecting EFS to the instance, is that a good use case?  Are there considerations regarding to multiple jobs running at the same time etc?  (There are scenarios where this is allowed - since it's a generic unzipper process, that gets called many times). 
-
-So the requirement is a throwaway storage volume, that doesn't need to persist, it can disappear once the AWS batch job finishes.  The data files that have currently blown it up are 9gb, i'm not sure how much our image itself uses.  Alpine linux so presumably not a huge amount.
-
-Or of course, if we can simply tune that initial 8gb up by a couple of gb then we're laughing...
-
-Thanks!
-
-Dan
-## [10][AWS Cognito: after a successful login form AWS kibana using Google Account and loginout. My second login is unsuccessful and loop me back to the login page.](https://www.reddit.com/r/aws/comments/h9wmfh/aws_cognito_after_a_successful_login_form_aws/)
-- url: https://www.reddit.com/r/aws/comments/h9wmfh/aws_cognito_after_a_successful_login_form_aws/
+One is "creating autmoated snapshot" and the second 2 minutes later is "Automated snapshot created" telling me that it completed.  
+  
+What JSON should I have in cloudwatch to only receive the second one? Here is what was input by amazon by default  
+  
+    {
+      "source": [
+        "aws.rds"
+      ],
+      "detail-type": [
+        "RDS DB Snapshot Event"
+      ]
+    }
+## [9][Appstream: Files question](https://www.reddit.com/r/aws/comments/haqsm4/appstream_files_question/)
+- url: https://www.reddit.com/r/aws/comments/haqsm4/appstream_files_question/
 ---
-AWS Cognito: after a successful login form AWS kibana using Google Account and loginout. My second login is unsuccessful and loop me back to the login page. How do i fix this Error?
-## [11][SSL and cloudfront with a domain registered from somewhere other than route 53](https://www.reddit.com/r/aws/comments/h9snsr/ssl_and_cloudfront_with_a_domain_registered_from/)
-- url: https://www.reddit.com/r/aws/comments/h9snsr/ssl_and_cloudfront_with_a_domain_registered_from/
+In our use case we have a program where we need to at times update the files folder, doing this through image builder is time consuming - is there an easier way (perhaps mapping a S3 drive at run time?) to update these files without updating the image?.
+## [10][How to store data/file-uploads securely where a visitor cant guess URLs for file uploads using S3?](https://www.reddit.com/r/aws/comments/hamazy/how_to_store_datafileuploads_securely_where_a/)
+- url: https://www.reddit.com/r/aws/comments/hamazy/how_to_store_datafileuploads_securely_where_a/
 ---
-Hi,
+* Using Django and AWS S3 for file uploads
+* I dont want visitors to be able to guess eg. [www.whatever.com/user/file/2332fdsfSDFsdfsfd234.jpg](http://www.whatever.com/user/file/2332fdsfSDFsdfsfd234.jpg) for another users. All data should be private. A user will upload a private document or a photo of themselves and it should only be viewable by the logged in user or the admin of the web app.
+* What is the term/method I should look up to handle this situation?
+## [11][Trouble with AWS Glue and adding column names through a custom classifier](https://www.reddit.com/r/aws/comments/haptk2/trouble_with_aws_glue_and_adding_column_names/)
+- url: https://www.reddit.com/r/aws/comments/haptk2/trouble_with_aws_glue_and_adding_column_names/
+---
+Hey guys,
 
-I have 2 domain names bought from GoDaddy and I've been doing a lot of research and it seems like I can't get SSL working with cloudfront with domains from GoDaddy because GoDaddy doesn't offer SSL  domain forwarding? I was wondering if anyone else had this issue or if they transferred their domains to another provider?
+important: we are deploying everything with terraform but a manual workaround for this would also be sufficient!
 
-resource I found: [https://stackoverflow.com/questions/56914945/https-connections-to-cloudfront-s3-using-godaddy-domain](https://stackoverflow.com/questions/56914945/https-connections-to-cloudfront-s3-using-godaddy-domain)
+For a client we are required to read a .tsv file that is located in a S3. This file does NOT have any headers and currently if we run a crawler to populate a database with a table in Glue, we get the col1, col2 etc.. Not desired behaviour so we got the requirement to add column names.
+
+We tried adding a custom classifier that adds column names to the table but this does not seem to work. I am wondering if anyone has experience here with Glue and how to solve this. If you guys require more info (scrubbed) let me know and I can see what to provide!  
+
+
+Cheers, ConsultantCat

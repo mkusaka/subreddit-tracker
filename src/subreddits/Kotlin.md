@@ -1,94 +1,323 @@
 # Kotlin
-## [1][Building a Reactive Oauth Client App with SpringBoot and Kotlin Coroutines](https://www.reddit.com/r/Kotlin/comments/ha3u2m/building_a_reactive_oauth_client_app_with/)
+## [1][Published my first app to the play store today 😁](https://www.reddit.com/r/Kotlin/comments/haoxom/published_my_first_app_to_the_play_store_today/)
+- url: https://www.reddit.com/r/Kotlin/comments/haoxom/published_my_first_app_to_the_play_store_today/
+---
+
+I started learning kotlin for Android app development a few weeks ago and I’m loving it
+
+
+Published my first android app to the play store using Kotlin. Yes I know it’s a ***VERY basic app*** However I’m learning new stuff everyday.
+
+The ***primary focus*** of making this simple app was just to understand the fundamentals of kotlin,  how to use android studio and how to implement ads using admob.
+
+Check it out if you want to see what a terrible app this is lol. The main thing is that I’m learning anyway.
+
+https://play.google.com/store/apps/details?id=com.herd.whattodo
+## [2][Kotlin Cheat Sheet - a basic reference for beginner and advanced](https://www.reddit.com/r/Kotlin/comments/hal4zf/kotlin_cheat_sheet_a_basic_reference_for_beginner/)
+- url: https://simplecheatsheet.com/tag/kotlin-cheat-sheet/
+---
+
+## [3][Elide - JSON:API or GraphQL web service starting from a JPA annotated data model (by Yahoo!)](https://www.reddit.com/r/Kotlin/comments/haq2ht/elide_jsonapi_or_graphql_web_service_starting/)
+- url: https://blog.graphqleditor.com/elide-opinionated-apis/
+---
+
+## [4][[Doubt] What is the function of init code block in following program ?](https://www.reddit.com/r/Kotlin/comments/hannfg/doubt_what_is_the_function_of_init_code_block_in/)
+- url: https://www.reddit.com/r/Kotlin/comments/hannfg/doubt_what_is_the_function_of_init_code_block_in/
+---
+    class Food(_name: String) {
+        var name = _name
+            get() = "I'm eating $field"
+            set(value) {
+                field = value.toLowerCase().reversed().capitalize()
+            }
+    /*    init {
+            name=_name
+        }*/
+    }
+    
+    fun main(args: Array&lt;String&gt;) {
+        val food = Food("Banana")
+        println(food.name)
+    }
+
+In above program why commenting out init code block causing program to fail  to reverse  print banana ?  why I need to  initialize name=\_name in 'init code block' even though I did it at start in Class Food?
+
+    ("I'm eating Banana"-&gt;"I'm eating Ananab")
+
+&amp;#x200B;
+## [5][Routing in Ktor](https://www.reddit.com/r/Kotlin/comments/ha8eds/routing_in_ktor/)
+- url: https://hadihariri.com/2020/04/02/Routing-in-Ktor/
+---
+
+## [6][Any examples/engineering blog posts of companies using Kotlin for server side? Better, if paired with spring boot.](https://www.reddit.com/r/Kotlin/comments/haeghi/any_examplesengineering_blog_posts_of_companies/)
+- url: https://www.reddit.com/r/Kotlin/comments/haeghi/any_examplesengineering_blog_posts_of_companies/
+---
+thanks!
+## [7][Building a Reactive Oauth Client App with SpringBoot and Kotlin Coroutines](https://www.reddit.com/r/Kotlin/comments/ha3u2m/building_a_reactive_oauth_client_app_with/)
 - url: https://www.shiveenp.com/posts/spring-boot-reactive-oauth-client-with-coroutines/
 ---
 
-## [2][Learning Kotlin - Android Studio](https://www.reddit.com/r/Kotlin/comments/h9bu9j/learning_kotlin_android_studio/)
-- url: https://www.reddit.com/r/Kotlin/comments/h9bu9j/learning_kotlin_android_studio/
+## [8][Where are the answers to the online Kotlin Bootcamp homework questions?](https://www.reddit.com/r/Kotlin/comments/haj1k5/where_are_the_answers_to_the_online_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/haj1k5/where_are_the_answers_to_the_online_kotlin/
 ---
-Guys, I'm working on app which have different aspects, feeds, navigation, sharing.. but I trying to find a good source to learn Kotlin and Android development. I need a course that teach me in exact. how to build for ex "Main activity" what is each part of it means? class, appcompat()..etc, who to interupt button? navigation drawer? link? I need to learn more about the methods used in real life situation, on how to transfer data between activities and how to handle motions and charts.
+Does anyone know where I could find the answers to these:
+https://codelabs.developers.google.com/codelabs/kotlin-bootcamp-introduction/#7
 
-I already looked watched two courses from "Linkedin Learning" I watched few youtube lessons, I watched kotlin lessons, I watch how to build an app lesson. I downloaded open source apps, but they either showing me basic tutorials, or just how to use android studio tutorials, or a general tutorial for kotlin, which very confusing when I'm trying to apply it in Android studio. and regarding the open source apps, I've downloaded only one apps, if someone can guide me for bigger library for open source apps I will be thankful. it kindof hard to search in github.
+(The homework questions to the Kotlin Bootcamp online)
 
-&amp;#x200B;
-
-btw, I have around 3 years experience in web development, I've studies java on windows, [visualbasic.net](https://visualbasic.net), php, swift.
-## [3][Building a Reactive Oauth Client App with SpringBoot and Kotlin Coroutines](https://www.reddit.com/r/Kotlin/comments/h96ypw/building_a_reactive_oauth_client_app_with/)
-- url: https://www.shiveenp.com/posts/spring-boot-reactive-oauth-client-with-coroutines/
+Most can be found within the tutorials but later on some questions can't necessarily be found in the exact text.
+## [9][Inheritance, Overriding using Open Keyword in Kotlin](https://www.reddit.com/r/Kotlin/comments/hainpg/inheritance_overriding_using_open_keyword_in/)
+- url: https://www.youtube.com/watch?v=s2UwnlAxstA&amp;t=6s
 ---
 
-## [4][Trying to get access to errors in Ktor JWTAuth custom challenge](https://www.reddit.com/r/Kotlin/comments/h9b83y/trying_to_get_access_to_errors_in_ktor_jwtauth/)
-- url: https://www.reddit.com/r/Kotlin/comments/h9b83y/trying_to_get_access_to_errors_in_ktor_jwtauth/
+## [10][Connect 4](https://www.reddit.com/r/Kotlin/comments/ha8sbz/connect_4/)
+- url: https://www.reddit.com/r/Kotlin/comments/ha8sbz/connect_4/
 ---
-Hey everyone!
+Hello,
 
-I'd like to be able to respond differently to different JWTAuth errors, so have customised the challenge (below is some code I've been using to test). Unfortunately the context is returning an empty list for the errors. I've tested with an expired token and with no token at all.
+I am working on a program that allows the user to play a game of Connect 4 within the IDE command console.
 
-```
-fun JWTAuthenticationProvider.Configuration.customConfigure() {
-    verifier(verifier)
-    realm = ISSUER
-    challenge { _, _ -&gt;
-      call.respond(HttpStatusCode.Unauthorized, JSONObject(mapOf("err" to context.authentication.allErrors)))
+Currently, I have my playerVsPlayer version working reasonably. However, I am having trouble checking for a win in any given direction. I am also having an issue implementing the  computer for a playerVsComputer or computerVsComputer version. I tried copy pasting my pvp code but I am unsure how to put the computer into the loop.
+
+Thanks in advance.
+
+Here is my code:
+
+    var gameBoard = Array( 8 ) { Array( 8 ) { " . " } }
+    var player = "X"
+    var turnCounter = 1
+    var winner = false
+    var computer1 = ( 1..8 ).random()
+    var computer2 = ( 1..8 ).random()
+    
+    fun main() {
+     println()
+     println( "Welcome to the game of Connect Four!" )
+     var menuItems = arrayOf(
+     "Player vs. Player",
+     "Player vs. Computer",
+     "Computer vs. Computer",
+     "Quit"
+     )
+     var quitOption = menuItems.size
+     var userChoice = 0
+     while( userChoice != quitOption ) {
+     println()
+            userChoice = menuOptions( menuItems, "\nPlease enter your selection: " )
+     when( userChoice ) {
+     1 -&gt; playerVsPlayer()
+     2 -&gt; playerVsComputer()
+     3 -&gt; computerVsComputer()
+     else -&gt; {
+     if( userChoice != quitOption ) {
+     println()
+     println( "ERROR: Please select a valid menu option." )
+                    }
+                }
+            }
+        }
+     println()
+     println( "Thank you for playing!" )
     }
-    validate { 
-      if (it.payload.audience.contains(AUDIENCE)) {
-        it.payload.getClaim("id").asString().let { id -&gt; userDao.getUserById(id) }
-      } else null
+    
+    fun menuOptions(items: Array&lt;String&gt;, prompt: String): Int {
+     for( ( index, item ) in items.withIndex() ) {
+     println( "${index + 1}. $item" )
+        }
+     print( prompt )
+     return readLine()!!.toInt()
     }
-  }
-```
-
-I was wondering if I was perhaps missing something. Hoping someone can help me!
-
-Link to Stackoverflow post: [https://stackoverflow.com/q/62377411/6374965](https://stackoverflow.com/q/62377411/6374965)
-## [5][Android Memory Dump Analyzer](https://www.reddit.com/r/Kotlin/comments/h9bbph/android_memory_dump_analyzer/)
-- url: https://heaphero.io/
----
-
-## [6][Destructuring to existing vars](https://www.reddit.com/r/Kotlin/comments/h90p8r/destructuring_to_existing_vars/)
-- url: https://www.reddit.com/r/Kotlin/comments/h90p8r/destructuring_to_existing_vars/
----
-I was just fooling around with destructuring of data classes, and I noticed that you _can_ do
-
-    var (a, b) = returnsDataClassWith2Members()
- 
-But if the `var`s `a` and `b` are already declared, you _cannot_ do
-
-    (a, b) = returnsDataClassWith2Members()
-
-Although it would be pretty useful. Am I just doing it wrong or is it generally not possible? And if it's not possible, why? And is it probable that this feature might be added in a future version?
-
-I'm just curious, any help is appreciated. Thanks!
-## [7][What does '?' after className means?](https://www.reddit.com/r/Kotlin/comments/h8xa7k/what_does_after_classname_means/)
-- url: https://www.reddit.com/r/Kotlin/comments/h8xa7k/what_does_after_classname_means/
----
-what does `?` means here `fun onCreate(container: ViewGroup?): View? { ... }`? There are two `?` here.
-## [8][Why nonlocal return isn't allowed in noinline function? Please, explain me](https://www.reddit.com/r/Kotlin/comments/h8puxc/why_nonlocal_return_isnt_allowed_in_noinline/)
-- url: https://www.reddit.com/r/Kotlin/comments/h8puxc/why_nonlocal_return_isnt_allowed_in_noinline/
----
-Now I am reading "Kotlin in Action" and this book describes about nonlocal return. But I don't understand why nonlocal return isn't allowed in noinline func. I reread some sentences about it a lot of times. Give me a simple example why it isn't allowed
-## [9][Is Kotlin commonly used with Spring?](https://www.reddit.com/r/Kotlin/comments/h8egj6/is_kotlin_commonly_used_with_spring/)
-- url: https://www.reddit.com/r/Kotlin/comments/h8egj6/is_kotlin_commonly_used_with_spring/
----
-Hi guys, I've known about Kotlin existence for some time but just recently I decided to give it a proper go and I really like some aspects of it. Mostly how it deals with collections and functional aspects such as HOFs and I'm sure there is more I just don't know about yet. I also know that it can be used with Spring, but when I was trying to find content about it I couldn't find much stuff. So my question is: is it because it works fairly similar to Java and there isn't much stuff specific to Kotlin or because it is rarely used with Spring for some reasons I am not aware of?
-## [10][How to pass userinput data from another activity to recyclerview?](https://www.reddit.com/r/Kotlin/comments/h8j8gm/how_to_pass_userinput_data_from_another_activity/)
-- url: https://www.reddit.com/r/Kotlin/comments/h8j8gm/how_to_pass_userinput_data_from_another_activity/
----
-I am having a hard time getting my user input to show in the recyclerview. I have two activities. The Note activity has 2 edit text and a button and the MainActivity has my recyclerview. I am trying to pass the first activity input to the other and place that in the recyclerview. I also have a data class which just stores the two input data. Here are my codes.
-
-Recyclerview adapter class :  [https://pastebin.com/4jBgS2Q5](https://pastebin.com/4jBgS2Q5)
-
-MainActivity class:  [https://pastebin.com/yhCBwcD3](https://pastebin.com/yhCBwcD3)// main activity has my recyclerview
-
-NoteActivity class:  [https://pastebin.com/kMqFzX29](https://pastebin.com/kMqFzX29)   // this class takes user input
-
-NoteItem:  [https://pastebin.com/8WKEimNJ](https://pastebin.com/8WKEimNJ)   // data I want to pass into recyclerview.
-
-&amp;#x200B;
-
-Edit: I fix this issue. In my OnactivityResult after I added  my note to the list,  I needed to let my adapter know something happen by calling noteAdapter.notifyDataSetChanged(). noteAdapter is the name of my adapter btw. So you need to use the name you assign to your adapter.
-
-&amp;#x200B;
+    
+    fun playerVsPlayer() {
+     while(!winner) {
+     var validMove: Boolean
+     var play: Int
+     do {
+     printGameBoard(gameBoard)
+     print("Player $player, please choose a column: ")
+                play = readLine()!!.toInt() - 1
+     printGameBoard(gameBoard)
+                validMove = validateMove(play, gameBoard)
+            } while( validMove == false )
+     for (row in gameBoard.indices.reversed()) {
+     if (gameBoard[row][play] == " . ") {
+     gameBoard[row][play] = " ${player} "
+     break
+     }
+            }
+     player = if (player == "X") {
+     "O"
+     } else {
+     "X"
+     }
+     turnCounter++
+        }
+     printGameBoard(gameBoard)
+     if (winner) {
+     if (player == "X") {
+     winner = true
+     println("X won")
+            } else {
+     winner = true
+     println("O won")
+            }
+        } else {
+     println("Tie game")
+        }
+    }
+    
+    fun playerVsComputer() {
+     while(!winner) {
+     var validMove: Boolean
+     var play: Int
+     do {
+     printGameBoard(gameBoard)
+     print("Player $player, please choose a column: ")
+                play = readLine()!!.toInt() - 1
+     printGameBoard(gameBoard)
+                validMove = validateMove(play, gameBoard)
+            } while( validMove == false )
+     for (row in gameBoard.indices.reversed()) {
+     if (gameBoard[row][play] == " . ") {
+     gameBoard[row][play] = " ${player} "
+     break
+     }
+            }
+     player = if (player == "X") {
+     "O"
+     } else {
+     "X"
+     }
+     turnCounter++
+        }
+     printGameBoard(gameBoard)
+     if (winner) {
+     if (player == "X") {
+     winner = true
+     println("X won")
+            } else {
+     winner = true
+     println("O won")
+            }
+        } else {
+     println("Tie game")
+        }
+    }
+    
+    fun computerVsComputer() {
+     while(!winner) {
+     var validMove: Boolean
+     var play: Int
+     do {
+     printGameBoard(gameBoard)
+     print("Player $player, please choose a column: ")
+                play = readLine()!!.toInt() - 1
+     printGameBoard(gameBoard)
+                validMove = validateMove(play, gameBoard)
+            } while( validMove == false )
+     for (row in gameBoard.indices.reversed()) {
+     if (gameBoard[row][play] == " . ") {
+     gameBoard[row][play] = " ${player} "
+     break
+     }
+            }
+     player = if (player == "X") {
+     "O"
+     } else {
+     "X"
+     }
+     turnCounter++
+        }
+     printGameBoard(gameBoard)
+     if (winner) {
+     if (player == "X") {
+     winner = true
+     println("X won")
+            } else {
+     winner = true
+     println("O won")
+            }
+        } else {
+     println("Tie game")
+        }
+    }
+    
+    fun printGameBoard(gameBoard: Array&lt;Array&lt;String&gt;&gt;) {
+     println()
+     println( "          Connect Four!          " )
+     println( "╔===╦===╦===╦===╦===╦===╦===╦===╗" )
+     println( "║ 1 ║ 2 ║ 3 ║ 4 ║ 5 ║ 6 ║ 7 ║ 8 ║" )
+     println( "╠===╬===╬===╬===╬===╬===╬===╬===╣" )
+     for( row in 0 until gameBoard.size ) {
+     print( "║" )
+     for( col in 0 until gameBoard[row].size ) {
+     print( gameBoard[row][col] )
+     print( "║" )
+            }
+     println()
+     println( "╠===╬===╬===╬===╬===╬===╬===╬===╣" )
+        }
+     println( "║ 1 ║ 2 ║ 3 ║ 4 ║ 5 ║ 6 ║ 7 ║ 8 ║" )
+     println( "╚===╩===╩===╩===╩===╩===╩===╩===╝" )
+     println()
+    }
+    
+    fun validateMove(col: Int, gameBoard: Array&lt;Array&lt;String&gt;&gt;): Boolean {
+     if( col &lt; 0 || col &gt; gameBoard[0].size ) {
+     return false
+     }
+     return if( gameBoard[0][col] != " . " ) {
+     false
+     } else true
+    }
+    
+    fun fourInARow(player: String, gameBoard: Array&lt;Array&lt;String&gt;&gt;): Boolean {
+     //check for 4 across
+     for (row in gameBoard.indices) {
+     for (col in 0 until gameBoard[0].size - 4) {
+     if (gameBoard[row][col] == player &amp;&amp;
+                        gameBoard[row][col + 1] == player &amp;&amp;
+                        gameBoard[row][col + 2] == player &amp;&amp;
+                        gameBoard[row][col + 3] == player) {
+     return true
+     }
+            }
+        }
+     //check for 4 up and down
+     for (row in 0 until gameBoard.size - 4) {
+     for (col in 0 until gameBoard[0].size) {
+     if (gameBoard[row][col] == player &amp;&amp;
+                        gameBoard[row + 1][col] == player &amp;&amp;
+                        gameBoard[row + 2][col] == player &amp;&amp;
+                        gameBoard[row + 3][col] == player) {
+     return true
+     }
+            }
+        }
+     //check upward diagonal
+     for (row in 2 until gameBoard.size) {
+     for (col in 0 until gameBoard[0].size - 4) {
+     if (gameBoard[row][col] == player &amp;&amp;
+                        gameBoard[row - 1][col + 1] == player &amp;&amp;
+                        gameBoard[row - 2][col + 2] == player &amp;&amp;
+                        gameBoard[row - 3][col + 3] == player) {
+     return true
+     }
+            }
+        }
+     //check downward diagonal
+     for (row in 0 until gameBoard.size - 4) {
+     for (col in 0 until gameBoard[0].size - 4) {
+     if (gameBoard[row][col] == player &amp;&amp;
+                        gameBoard[row + 1][col + 1] == player &amp;&amp;
+                        gameBoard[row + 2][col + 2] == player &amp;&amp;
+                        gameBoard[row + 3][col + 3] == player) {
+     return true
+     }
+            }
+        }
+     return false
+    }
+    
 
 &amp;#x200B;

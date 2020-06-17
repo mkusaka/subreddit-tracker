@@ -125,86 +125,97 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][C++11 Guide: A Practical Guide for the Everyday Programmer](https://www.reddit.com/r/cpp/comments/h9qi9v/c11_guide_a_practical_guide_for_the_everyday/)
-- url: https://stuartwheaton.com/blog/2020-06-14-c++11-guide/
+## [3][Casbin-CPP: An authorization library that supports access control models like ACL, RBAC, ABAC in C/C++](https://www.reddit.com/r/cpp/comments/hamm9o/casbincpp_an_authorization_library_that_supports/)
+- url: https://github.com/casbin/casbin-cpp
 ---
 
-## [4][Write a database CRUD application in 10 lines of C++ (with the new ObjectBox Generator)](https://www.reddit.com/r/cpp/comments/ha3tc2/write_a_database_crud_application_in_10_lines_of/)
+## [4][Allocators, I don't know what I'm talking about.](https://www.reddit.com/r/cpp/comments/hahdkl/allocators_i_dont_know_what_im_talking_about/)
+- url: https://www.reddit.com/r/cpp/comments/hahdkl/allocators_i_dont_know_what_im_talking_about/
+---
+Hello Der,
+
+I'm trying to make a ECS in c++ and started exploring the existing material a little, going down the rabbit hole I ended up finding out about special allocators.
+
+I think I get the theory behind the allocators, and have seen multiple (around 5) videos from cpp con and one from code::dive 2018 about allocators, and I do get that using allocators&lt;typename&gt; is bad and that you should use                   std::pmr::datatype&lt;typename, &amp;(allocator)&gt;           instead.
+
+What I specifically don't understand is what function other than :  new, malloc, realloc, calloc (these are general allocators right?). do you use to get the memory in the first place? Like what is that one function that gives you a block of memory on the ram to work with so that nothing else touches it? What does the actual grabbing memory out of thin air work?
+
+Do you like just get an array of some required size in bytes, and then deal with that ? Or is there a function that you can call so you don't have to create an array? This seems kind of contradictory?
+
+I apologize if I make absolutely no sense, but can someone please help me out... I don't think I'm intelligent enough to figure this out on my own...
+
+&amp;#x200B;
+
+Edit: yes things make more sense after asking the question.
+
+Allocators aren't the ones that actually allocate the memory aren't they? They just hand out pointers to the allocated memory in such a way that everything works for the expected specific purpose?
+
+So is it alright to use new? and std::allocator&lt;t&gt;::allocate(n) to get the memory block and then have an allocator class that deals with it?
+## [5][CPP app: UDP Packet Replicator](https://www.reddit.com/r/cpp/comments/haoal1/cpp_app_udp_packet_replicator/)
+- url: https://www.reddit.com/r/cpp/comments/haoal1/cpp_app_udp_packet_replicator/
+---
+Hello! I want to share with you my first open source app. I want to learn so feel free to point any suggestions or improvements you consider!
+
+[https://github.com/AlexSL92/udp-packet-replicator](https://github.com/AlexSL92/udp-packet-replicator)
+
+It is a command line application that sends a packet stored in binary format through the network using UDP protocol. 
+
+I have been using it to test local network applications. You can store a packet with [Wireshark](https://www.wireshark.org/) for example and then replicate it constantly to the desired IP and port.
+
+I hope you find it interesting! Feel free to post any suggestion about the code or the functionality.
+## [6][Anatomy of Windows Hello World program](https://www.reddit.com/r/cpp/comments/han00l/anatomy_of_windows_hello_world_program/)
+- url: https://pratikone.github.io/c++/2020/06/07/anatomy-of-windows-hello-world.html
+---
+
+## [7][SymCC: efficient compiler-based symbolic execution](https://www.reddit.com/r/cpp/comments/haqfll/symcc_efficient_compilerbased_symbolic_execution/)
+- url: https://github.com/eurecom-s3/symcc
+---
+
+## [8][Write a database CRUD application in 10 lines of C++ (with the new ObjectBox Generator)](https://www.reddit.com/r/cpp/comments/ha3tc2/write_a_database_crud_application_in_10_lines_of/)
 - url: https://objectbox.io/introducing-objectbox-generator-plus-c-api/
 ---
 
-## [5][The joys and perils of C and C++ aliasing, Part 1 - Red Hat Developer](https://www.reddit.com/r/cpp/comments/h9yy86/the_joys_and_perils_of_c_and_c_aliasing_part_1/)
+## [9][Repeat type N-times in Deduction Guide](https://www.reddit.com/r/cpp/comments/haokvp/repeat_type_ntimes_in_deduction_guide/)
+- url: https://www.reddit.com/r/cpp/comments/haokvp/repeat_type_ntimes_in_deduction_guide/
+---
+Hi guys,
+
+When implementing a grid class I stumbled upon a problem in my deduction guides.
+
+My grid class consists a number of indexable objects (like `std::vector` or `std::array` or a linspace implementation like in matlab) which describe the positions of the grid per dimension. Now the grid class's task is to create positions from these indexable objects by combining these. This works in my impementation without any issues. When passing the dimension descriptions directly via a parameter pack there is also no problem.
+
+The actual problems comes when a constructor is called that does not take a variadic parameter pack where you have the types directly but with a constructor that only gets said how many dimensions it has to get via a number as template parameter N, but not which types. We only have some bounding box and a resolution and want to repeat `linspace` N-times.
+
+Now with C++17 we got deduction guides. One could repeat linspace with a `std::index_sequence&lt;Is...&gt;` (`sizeof...(Is) == N`) in the deduction guide like this:  
+`decltype((Is, linspace{})...)`
+
+And the whole deduction guide looks like this:  
+`template &lt;std::size_t N, std::size_t... Is&gt;`  
+`grid(bb&lt;N&gt;, vec&lt;N&gt;, std::index_sequence&lt;Is...&gt;)`  
+  `-&gt; grid&lt;decltype((Is, linspace{})...)&gt;`
+
+But this only works if you already have a  `std::index_sequence`  
+It would be great if you could call one deduction guide from another or when a constructor C1 calls another constructor C2 the deduction guide of C2 would be called if C1 is used. 
+
+Here is a little framework: [https://godbolt.org/z/QNc-4x](https://godbolt.org/z/QNc-4x)  
+In line 38/39 is the constructor where linspace would magically need to be repeated.  
+Its deduction guide in 54/55 is not able to do this.
+
+The constructor with `std::index_sequence` in line 32/33 can with help of its deduction guide in lines 47/48.
+
+Maybe there is some super simple solution I have overseen. Or maybe there is no solution to this problem. Suggestions are welcome!
+
+Best Regards  
+PandaFax
+## [10][How to declare a qHash overload](https://www.reddit.com/r/cpp/comments/hao5u8/how_to_declare_a_qhash_overload/)
+- url: https://www.kdab.com/how-to-declare-a-qhash-overload/
+---
+
+## [11][The joys and perils of C and C++ aliasing, Part 1 - Red Hat Developer](https://www.reddit.com/r/cpp/comments/h9yy86/the_joys_and_perils_of_c_and_c_aliasing_part_1/)
 - url: https://developers.redhat.com/blog/2020/06/02/the-joys-and-perils-of-c-and-c-aliasing-part-1/
 ---
 
-## [6][Introducing ubench.h](https://www.reddit.com/r/cpp/comments/h9nk5i/introducing_ubenchh/)
-- url: https://www.duskborn.com/posts/introducing_ubench_h/
+## [12][C++11 Guide: A Practical Guide for the Everyday Programmer](https://www.reddit.com/r/cpp/comments/h9qi9v/c11_guide_a_practical_guide_for_the_everyday/)
+- url: https://stuartwheaton.com/blog/2020-06-14-c++11-guide/
 ---
 
-## [7][The best C++ resources?](https://www.reddit.com/r/cpp/comments/h9s26a/the_best_c_resources/)
-- url: https://www.reddit.com/r/cpp/comments/h9s26a/the_best_c_resources/
----
-So i know basic C++ but I decided to just ignore that and start C++ from scratch. Whats the best course/resources to learn everything about C++ starting right from the basics and covering data structures etc in depth?
-## [8][Can I union type-pun to smaller std::arrays in C++17?](https://www.reddit.com/r/cpp/comments/h9kq4p/can_i_union_typepun_to_smaller_stdarrays_in_c17/)
-- url: https://www.reddit.com/r/cpp/comments/h9kq4p/can_i_union_typepun_to_smaller_stdarrays_in_c17/
----
-I posted to r/cpp_questions first and couldn't get a consensus on whether the following is defined in the standard or is just something that tends to work. My end goal is to write a bignum class for modular arithmetic.
-
-    #include &lt;iostream&gt;
-    #include &lt;array&gt;
-    #include &lt;type_traits&gt;
-    
-    union arrayunion {
-        std::array&lt;unsigned,4&gt; big;
-        std::array&lt;unsigned,2&gt; small;
-    };
-    
-    int main() {
-        std::cout &lt;&lt; std::boolalpha;
-        std::cout &lt;&lt; std::is_standard_layout_v&lt;std::array&lt;unsigned,4&gt;&gt; &lt;&lt; '\n';
-        std::cout &lt;&lt; std::is_standard_layout_v&lt;std::array&lt;unsigned,2&gt;&gt; &lt;&lt; '\n';
-        std::cout &lt;&lt; std::is_standard_layout_v&lt;arrayunion&gt; &lt;&lt; '\n';
-        arrayunion arr;
-        arr.big = {1,2,3,4};
-        auto small_arr = arr.small;
-        for(const auto&amp; v : small_arr)  std::cout &lt;&lt; v &lt;&lt; "\n";
-        return 0;
-    }
-    /*
-    outputs:
-    true
-    true
-    true
-    1
-    2
-    */
-
-Could anyone comment? Can I reason that the first two unsigned values are active members, everything is standard layout and involves the same type: `unsigned`, and therefore, the type-punning is allowed in this specific case?
-
-If I asked the same question with C-style arrays, would the answer be the same?
-## [9][Make C++ integer types great for the first time](https://www.reddit.com/r/cpp/comments/ha2yge/make_c_integer_types_great_for_the_first_time/)
-- url: https://github.com/Lyberta/cpp-integers
----
-
-## [10][Password generator](https://www.reddit.com/r/cpp/comments/ha22ny/password_generator/)
-- url: https://www.reddit.com/r/cpp/comments/ha22ny/password_generator/
----
- Hello, this week-end I have been making a password generator, however I've heard that my code is quite trashy so I'd like to know where I can improve. Nonetheless, I can help myself feeling proud of this little project.
-
-Here is the code :
-
-[https://pastebin.com/68Bc3Hfc](https://pastebin.com/68Bc3Hfc)
-## [11][Udacity C++ Nanoprogram review](https://www.reddit.com/r/cpp/comments/ha0lij/udacity_c_nanoprogram_review/)
-- url: https://www.reddit.com/r/cpp/comments/ha0lij/udacity_c_nanoprogram_review/
----
-I'm trying to find a good place to learn c++. I've mostly been working in Matlab/Simulink for over 5 years now. But learning c++ would be very useful in my career. So far in my search, Udacity's program looks well structured and project-based (which I really like). But the price seems to be exorbitant.
-
-I would like to hear from someone who's taken this course and if they recommend it. Also please feel free to suggest other good courses or tutorials for c++.
-## [12][Any ongoing proposal for replacement of printf with safer `std::format` like formatting?](https://www.reddit.com/r/cpp/comments/h9pzq2/any_ongoing_proposal_for_replacement_of_printf/)
-- url: https://www.reddit.com/r/cpp/comments/h9pzq2/any_ongoing_proposal_for_replacement_of_printf/
----
-One could use `std::cout &lt;&lt; std::format(&lt;format_str&gt;, args...);`, but streams based solution seems to be much slower due to the calls to `std::basic_ostream` types - streams aren't featherweight.
-
-Moreover, using `std::cout` with `std::format` seems like a overkill especially when `std::format` can already do most of the work i.e conversion to `std::string`, field-width, space filling etc which also "deprecates" some features from &lt;iomanip&gt; header.
-
-I know there's `std::format_to` which works with `std::ostream_iterator` but `std::stream_iterator` builds on top of the `std::cout` abstraction, so we can/should definitely do better like `fmt::print`.

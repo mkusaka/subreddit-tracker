@@ -31,78 +31,56 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Does anyone have example of projects using Jetpack with real tests?](https://www.reddit.com/r/androiddev/comments/ha041d/does_anyone_have_example_of_projects_using/)
-- url: https://www.reddit.com/r/androiddev/comments/ha041d/does_anyone_have_example_of_projects_using/
+## [3][Im doing English-Spanish translations on small apps for free.](https://www.reddit.com/r/androiddev/comments/hanoi2/im_doing_englishspanish_translations_on_small/)
+- url: https://www.reddit.com/r/androiddev/comments/hanoi2/im_doing_englishspanish_translations_on_small/
 ---
-I'm trying to improve my testing game, but most lessons online seem to include only trivial contrived examples of tests, so I was wondering if anyone knew of some open source projects that use Jetpack components and have some real world tests in them to learn from?
-## [4][Discussion: Can I get more downloads by showing female asses on screenshots?](https://www.reddit.com/r/androiddev/comments/ha1wyi/discussion_can_i_get_more_downloads_by_showing/)
-- url: https://www.reddit.com/r/androiddev/comments/ha1wyi/discussion_can_i_get_more_downloads_by_showing/
----
-Hi,
+That's it. I have  a lot of free time since i work from home, i did a translation to spanish of a small bot app on the playstore and since i think there are a lot of starting independent developers i'll give them a hand. 
 
-  
-Look at this:
-
-[https://play.google.com/store/apps/details?id=skydragon.honorofkings](https://play.google.com/store/apps/details?id=skydragon.honorofkings)
-
-So this game has 6 screenshots, 4 of them showing soft porn images of sexy women's ass.
-
-  
-My question is is this actually works? Can I sell better my app with showing erotic images?
-
-Is there anybody who A/B tested this and actually has data which prove that this works?  
+Im doing up to 500-1000 words, not doing ToS or anything like that.  
 
 
-You can see the screenshotsb below:
-
-  
-
-
-[Ass 1](https://preview.redd.it/h8u5yeqe89551.jpg?width=482&amp;format=pjpg&amp;auto=webp&amp;s=c0de3d9be42a8cf3ace2432eee3c7f609f9c8f33)
-
-  
-
-
-[Ass 2](https://preview.redd.it/ymy0zqrf89551.jpg?width=482&amp;format=pjpg&amp;auto=webp&amp;s=4608a77f53b986b60a9e8b50c6dcaf38ca6d03b5)
-
-&amp;#x200B;
-
-[Ass 3](https://preview.redd.it/8sptl3eh89551.jpg?width=482&amp;format=pjpg&amp;auto=webp&amp;s=e5982982adb7a2cb43e2bac1e37e9e99132e0f78)
-
-&amp;#x200B;
-
-[Ass 4](https://preview.redd.it/boqdx16i89551.jpg?width=482&amp;format=pjpg&amp;auto=webp&amp;s=ebf288b6b9ed294741178e86ee3914d418ee6018)
-## [5][How to hit the mark with mobile games in Japan, Korea and China](https://www.reddit.com/r/androiddev/comments/ha0bc8/how_to_hit_the_mark_with_mobile_games_in_japan/)
-- url: https://www.gamedev.net/tutorials/business/production-and-management/how-to-hit-the-mark-with-mobile-games-in-japan-korea-and-china-r5463/
+ Anyone can PM me (:
+## [4][Apple Pay and iOS App Store under formal antitrust probe in Europe. Will Google Play be scrutinised next?](https://www.reddit.com/r/androiddev/comments/hadi27/apple_pay_and_ios_app_store_under_formal/)
+- url: https://techcrunch.com/2020/06/16/apple-pay-and-ios-app-store-under-formal-antitrust-probe-in-europe
 ---
 
-## [6][We could see IOS-styled app login features in android when switching between android devices.](https://www.reddit.com/r/androiddev/comments/h9pxeu/we_could_see_iosstyled_app_login_features_in/)
-- url: https://www.newserector.com/we-could-see-ios-styled-app-login-features-in-android-when-switching-between-android-devices-
+## [5][I updated FrangSierra's RxFirebase2 library to RxJava3. Hopefully this can help some people making the transfer.](https://www.reddit.com/r/androiddev/comments/hap5x0/i_updated_frangsierras_rxfirebase2_library_to/)
+- url: https://github.com/FAITH-HoGent/RxFirebase
 ---
 
-## [7][X-post: Count Your SAF Uri Persisted Permissions! - r/android_devs](https://www.reddit.com/r/androiddev/comments/h9wjet/xpost_count_your_saf_uri_persisted_permissions/)
-- url: https://www.reddit.com/r/android_devs/comments/h8psk6/_/
+## [6][Do you guys often create your own animations?](https://www.reddit.com/r/androiddev/comments/hahl84/do_you_guys_often_create_your_own_animations/)
+- url: https://www.reddit.com/r/androiddev/comments/hahl84/do_you_guys_often_create_your_own_animations/
+---
+Just finished a course on material design, and they reviewed how to create animations. My question is, is it common to create your own animations, our do you guys just outsource the functionality to a UI library. This seems very complex. I am a noob so if this seems like a nooby question it is.
+## [7][Activity tracker with documented ble protocol](https://www.reddit.com/r/androiddev/comments/hapbmk/activity_tracker_with_documented_ble_protocol/)
+- url: https://www.reddit.com/r/androiddev/comments/hapbmk/activity_tracker_with_documented_ble_protocol/
+---
+Are there any BLE enabled activity trackers out there with a documented protocol? I want to learn more about making android apps that use BLE and thought it would be fun to display stats collected from an activity tracker. I've found articles about mi bands, but it seems Xiaomi/Haumi have been gradually making it harder for others wanting to communicate with the device.
+## [8][COVID app without Google API.](https://www.reddit.com/r/androiddev/comments/haqbyq/covid_app_without_google_api/)
+- url: https://www.reddit.com/r/androiddev/comments/haqbyq/covid_app_without_google_api/
+---
+For a university project we need to implement a contact tracking app.
+
+
+The application requirements cannot be met through the Apple/Google API so we will have to work directly with the BLE.
+
+
+What limitations would you have if you chose to work directly with BLE?  Is it necessary that the application is always open or something like that?
+## [9][Android could soon have iOS-style seamless app logins when switching to a new phone](https://www.reddit.com/r/androiddev/comments/ha87y6/android_could_soon_have_iosstyle_seamless_app/)
+- url: https://www.androidpolice.com/2020/06/15/android-could-soon-have-ios-style-seamless-app-logins-when-switching-to-a-new-phone/
 ---
 
-## [8][Free copyright content on the playstore ?](https://www.reddit.com/r/androiddev/comments/ha29hj/free_copyright_content_on_the_playstore/)
-- url: https://www.reddit.com/r/androiddev/comments/ha29hj/free_copyright_content_on_the_playstore/
----
-Hey, i made a pokédex app i'm proud of and i'd like to put it on the playstore, is this legal ? does the playstore allow this ? is it only illegal if i make money off of it ?
-## [9][If I have an app released outisde of the Play Store, then publish it there, will the updating users be considered as new user installs on Play Store?](https://www.reddit.com/r/androiddev/comments/ha1lxb/if_i_have_an_app_released_outisde_of_the_play/)
-- url: https://www.reddit.com/r/androiddev/comments/ha1lxb/if_i_have_an_app_released_outisde_of_the_play/
----
-The obvious answer would be yes, but I would like to make sure. Thanks.
-## [10][Issues with Play Console](https://www.reddit.com/r/androiddev/comments/h9nanr/issues_with_play_console/)
-- url: https://www.reddit.com/r/androiddev/comments/h9nanr/issues_with_play_console/
----
-Today when trying to click on any of my apps from the Play Console homepage, I get a red bar with "An unexpected error occurred. Please try again later." I've tried on multiple browsers and internet connections with no luck. Anyone else having this issue?
-
-Edit: The guy in the comments who said "Messaged" sent me a message stating he would fix my issue for $50 over paypal. Obviously he is full of it so if someone else is here looking for help don't fall for that.
-## [11][App to control your phone with gesture motions.](https://www.reddit.com/r/androiddev/comments/ha3yo7/app_to_control_your_phone_with_gesture_motions/)
-- url: https://v.redd.it/71hzr1f8x9551
+## [10][Ask the Expert #2: LeakCanary 2.x is out, track your memory leaks](https://www.reddit.com/r/androiddev/comments/hajl0t/ask_the_expert_2_leakcanary_2x_is_out_track_your/)
+- url: https://www.youtube.com/watch?v=Sx0k4ipqwBs
 ---
 
-## [12][Debugging in Android Studio](https://www.reddit.com/r/androiddev/comments/h9kr5t/debugging_in_android_studio/)
-- url: https://medium.com/androiddevelopers/debugging-in-android-studio-dfbbf8a8d03c
+## [11][Hello](https://www.reddit.com/r/androiddev/comments/har5z3/hello/)
+- url: https://www.reddit.com/r/androiddev/comments/har5z3/hello/
+---
+Good morning!
+
+Over the past few months, I've started developing android apps and it has been a great experience so far. I graduated from school last year, but I had a tough time finding a job so I just decided to focus on improving my skillset as a developer so that I could be ready if an opportunity comes to me. I would love to connect with other like-minds so we can help each other grow in the years to come! If you have some advice or if you just want to reach out, don't hesitate to message me! I look forward to hearing your thoughts! I really appreciate this community here and I hope you all enjoy your day!
+## [12][What’s New in Android Studio System Trace](https://www.reddit.com/r/androiddev/comments/haqs8x/whats_new_in_android_studio_system_trace/)
+- url: https://medium.com/androiddevelopers/whats-new-in-android-studio-system-trace-5841465c5935
 ---
 

@@ -22,100 +22,95 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][A collection of Algorithms and Data Structures with video lectures in Typescript [Update 2]](https://www.reddit.com/r/typescript/comments/haoirx/a_collection_of_algorithms_and_data_structures/)
+## [2][Variadic Kinds arriving in TypeScript 4!](https://www.reddit.com/r/typescript/comments/haw15b/variadic_kinds_arriving_in_typescript_4/)
+- url: https://github.com/microsoft/TypeScript/issues/5453#issuecomment-644984977
+---
+
+## [3][Using a conditional filter, error still occurs: Property 'header' does not exist on type 'never'.ts(2339)](https://www.reddit.com/r/typescript/comments/hbe5ct/using_a_conditional_filter_error_still_occurs/)
+- url: https://www.reddit.com/r/typescript/comments/hbe5ct/using_a_conditional_filter_error_still_occurs/
+---
+    export default abstract class StepsBase {
+        protected description: string = ``;
+     
+        /**** Duck Typed DEFAULT Methods ****/
+    
+        public explain() {
+            // Property 'header' does not exist on type 'never'.ts(2339)
+            if ("header" in this) { console.log(this.header); }
+    
+            if ("description" in this) { console.log(this.description); }
+        }
+
+The lint is on the header property of `this.header`, I guess since `this` points back to this class definition.
+
+I thought my if statement would tell the interpreter to only type check inside that control flow block if the condition passed.
+
+I also tried the following type assertions but both failed:
+
+            if ("header" in this) { console.log(this.header as unknown); }
+            if ("header" in this) { console.log(this.header as any); }
+
+This is meant to be a base class where some inheriting subclasses define their own `header` and `description` properties. How should the base class be setup to pass type checking? I can leave an empty default value for `header` as I did for `description`, but I would like to know the best practice (maybe it is exactly that).
+## [4][Type parameters: What is the name for the part that goes in front of &lt;&gt;?](https://www.reddit.com/r/typescript/comments/hbasvp/type_parameters_what_is_the_name_for_the_part/)
+- url: https://www.reddit.com/r/typescript/comments/hbasvp/type_parameters_what_is_the_name_for_the_part/
+---
+I see the syntax for generics is:
+
+    function doX &lt;T&gt; (args: T): T {...}
+
+And sometimes there is a word in front:
+
+    function doY &lt;T&gt; (args: Array&lt;T&gt;): Partial&lt;T&gt; {...}
+
+I know what these represent. `Array` specifies an array of values of type `T`. `Partial` is a utility type that specific some k/v pairs of the generic are there, but not all are required.
+
+My understanding is not complete. I understand  `Array` and `Partial` are modifiers of a generic type... but how exactly? Are they keywords? Can I make my own? Do they, as a whole, have a deeper syntactical structure (`Partial.If` for example)?
+
+Any help clarifying what that syntax is exactly is appreciated, thanks.
+## [5][Help needed with error 'Argument of type 'any' is not assignable to parameter of type 'never'.'](https://www.reddit.com/r/typescript/comments/hb90fk/help_needed_with_error_argument_of_type_any_is/)
+- url: https://www.reddit.com/r/typescript/comments/hb90fk/help_needed_with_error_argument_of_type_any_is/
+---
+Hi! I've been stuck on this error all day: Argument of type 'any' is not assignable to parameter of type 'never'.
+
+ I am using Object.entries(constraints).forEach(([k, v]) =&gt; strConstraint[k as keyof StringValidator](v)) to loop over a constraints object which can contain any combination of the following: 
+maxChars?: number; minChars?: number; regexToValidate? RegExp; equals?: string; notEquals?: string;. 
+
+Here is the code for my stringValidator (error on line: 232) https://codesandbox.io/s/festive-bartik-6hdhm?file=/index.ts. If maxChars method (97-103) of number type is commented out, it works fine. 
+
+As a last resort, I could parse a string to a number which works since everything is a string then. Any thoughts?
+## [6][Non-hacky ways of doing nested classes?](https://www.reddit.com/r/typescript/comments/hbbif6/nonhacky_ways_of_doing_nested_classes/)
+- url: https://www.reddit.com/r/typescript/comments/hbbif6/nonhacky_ways_of_doing_nested_classes/
+---
+Hi.  I want to create a private class within a class.
+```ts
+class Foo {
+  private class Bar extends Baz {
+    …
+  }
+}
+```
+But as of TypeScript 3.9.5, it is not possible.  How do I implement that in a non-hacky sane manner?
+## [7][Rulr 📐 TypeScript package to save you time writing validation.](https://www.reddit.com/r/typescript/comments/hb1nt6/rulr_typescript_package_to_save_you_time_writing/)
+- url: https://github.com/ryansmith94/rulr
+---
+
+## [8][A collection of Algorithms and Data Structures with video lectures in Typescript [Update 2]](https://www.reddit.com/r/typescript/comments/haoirx/a_collection_of_algorithms_and_data_structures/)
 - url: https://github.com/jeffzh4ng/algorithms-and-data-structures
 ---
 
-## [3][How To Build A Shopify Headless eCommerce Storefront](https://www.reddit.com/r/typescript/comments/haq4kv/how_to_build_a_shopify_headless_ecommerce/)
+## [9][Understanding Mixins in TypeScript](https://www.reddit.com/r/typescript/comments/hazjt0/understanding_mixins_in_typescript/)
+- url: https://blog.bitsrc.io/understanding-mixins-in-typescript-3c2c9a545d87
+---
+
+## [10][How To Build A Shopify Headless eCommerce Storefront](https://www.reddit.com/r/typescript/comments/haq4kv/how_to_build_a_shopify_headless_ecommerce/)
 - url: http://selleo-shopify.xyz
 ---
 
-## [4][Help with indexing by enum](https://www.reddit.com/r/typescript/comments/hagg2r/help_with_indexing_by_enum/)
-- url: https://www.reddit.com/r/typescript/comments/hagg2r/help_with_indexing_by_enum/
+## [11][How to iterate over the properties of an interface/class in order to default initialize an object?](https://www.reddit.com/r/typescript/comments/hav4nv/how_to_iterate_over_the_properties_of_an/)
+- url: https://www.reddit.com/r/typescript/comments/hav4nv/how_to_iterate_over_the_properties_of_an/
 ---
-I'm not 100% sure if what I'd like to do is possible, but here it is:
+I have interfaces and classes which are rather cumbersome and, for various reasons, require creating "default" forms; for example, the strings need to be initialized to empty strings, the numbers need to be initialized to 0, the arrays need to be initialized to [], etc.
 
-I've got an object "map" where the key is some enum, say `ActionType`, and the value is some subscriber function. I'm trying to make it so that when I do:
+Can anyone point me in the direction of information on how best to accomplish this? I tried looking at the "ts-transformer-keys" package but ran into the same error about "ts_transformer_keys_1.keys is not a function" people have reported from time to time.
 
-    subscribe(ActionType.SomeAction, (response) =&gt; {})
-
-`response` is automagically typed correctly based on the value of the `ActionType` passed in. I've tried a couple ways without any success, but I often get tripped up with these more complex type definitions, so maybe I'm just overlooking something/not aware of some technique to do this.
-
-Any help is appreciated!
-## [5][typescript object type alias signature working!!!](https://www.reddit.com/r/typescript/comments/hapvof/typescript_object_type_alias_signature_working/)
-- url: https://www.reddit.com/r/typescript/comments/hapvof/typescript_object_type_alias_signature_working/
----
- `type personType = { name: string }`
-
-`const displayPerson = (person2: personType) =&gt; {     console.log(person2) }`
-
-`let person1 = {     name: "aaa",     address: "bbb",     age: 30 }`
-
-`displayPerson(person1)` 
-
-This code should give error, because person1 type is not personType but the code is still running with out any error or warning!!!
-## [6][When type inference goes wrong, use an identity function to set it right](https://www.reddit.com/r/typescript/comments/ha5rk7/when_type_inference_goes_wrong_use_an_identity/)
-- url: https://effectivetypescript.com/2020/06/16/typed-identity-functions/
----
-
-## [7][Newbie help TS2739](https://www.reddit.com/r/typescript/comments/ha53i2/newbie_help_ts2739/)
-- url: https://www.reddit.com/r/typescript/comments/ha53i2/newbie_help_ts2739/
----
-Hey everyone, I have the following function in React
-
-    providers.reduce((GlobalProvider, NewProvider) =&gt; ({ children }) =&gt; (
-          &lt;GlobalProvider&gt;
-            &lt;NewProvider&gt;{children}&lt;/NewProvider&gt;
-          &lt;/GlobalProvider&gt;
-        ));
-
-and i'm receiving the following error:
-
-`({ children }: any) =&gt; Element' is missing the following properties from type 'LazyExoticComponent&lt;FC&lt;any&gt;&gt;': _result, $$typeof`
-
-Basically this function takes an array of Lazy Components and nests them into one.
-GlobalProvider, NewProvider are `React.LazyExoticComponent&lt;any&gt;`
-
-Thanks for any help
-## [8][Single value as a return type?](https://www.reddit.com/r/typescript/comments/ha1pog/single_value_as_a_return_type/)
-- url: https://www.reddit.com/r/typescript/comments/ha1pog/single_value_as_a_return_type/
----
-VSCode doesn't lint if I set the return type as a static value. I have an orchestrator method that should only ever err or return true:
-
-       public run(): true {
-
-Another option is to just set it to `void`. That actually sounds more sensible.
-
-Does it ever make sense to set the return type to a static non-void value?
-## [9][Anybody know how to set the type parameter of a default value?](https://www.reddit.com/r/typescript/comments/ha76sv/anybody_know_how_to_set_the_type_parameter_of_a/)
-- url: https://www.reddit.com/r/typescript/comments/ha76sv/anybody_know_how_to_set_the_type_parameter_of_a/
----
-    function createBatches&lt;type&gt;(
-        {OMITTED}: createBatches_Interface,
-        batchClass: { new (batchRecipe: batchRecipe&lt;type&gt;): Batch&lt;type&gt; } = Batch&lt;type&gt;
-    )
-
-
-The default parameter for `batchClass` throws an error. Does anybody know how to work around this?
-## [10][TS noob needs help figuring out why TS is enforcing “key” and “ref” props on a React Class Component.](https://www.reddit.com/r/typescript/comments/ha9o4q/ts_noob_needs_help_figuring_out_why_ts_is/)
-- url: https://www.reddit.com/r/typescript/comments/ha9o4q/ts_noob_needs_help_figuring_out_why_ts_is/
----
-Hello everyone! I’m working on a react component library which I decided to write in TS and compile back to ES5.
-
-Everything is working as expected except for a tiny “warning/error” that TS throws.
-
-I’m at work rn on a 15 min break so I can’t provide detailed info and code examples which I know is a bad way to ask for help, but I’m hoping someone out there ran I to this problem and can guide me a bit.
-
-So TS yells at me for missing the “key” and “ref” props on my component. The thing is that I never wrote those props as part of my component props, so I’m guessing something in React’s typings of the class component is attaching these “ghost” props.
-
-When I actually include the key and ref prop the warning goes away and everything is happy. But it’s annoying that I HAVE to include these props when 1. I never wrote them into the props, and 2. I don’t have any use for them.
-
-As of now I simply include the key and ref props and set them to “undefined” and everything works as expected. But it’s annoying that I NEED to do that.
-
-For people that need more details or code examples, I’ll write a more detailed post if this post doesn’t yield any responses. But hopefully I’m not the first guy running into this and someone out there can point me down the right path.
-
-Thank you guys! Have a good one!
-## [11][thetutlage/japa the missing Typescript-Typescript unit test library](https://www.reddit.com/r/typescript/comments/h9p03q/thetutlagejapa_the_missing_typescripttypescript/)
-- url: https://github.com/thetutlage/japa
----
-
+Thanks in advance.

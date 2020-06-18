@@ -31,7 +31,81 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Im doing English-Spanish translations on small apps for free.](https://www.reddit.com/r/androiddev/comments/hanoi2/im_doing_englishspanish_translations_on_small/)
+## [3][I've composed over 150 songs and sound effects and released them under the CC BY 4.0 license which you can use in any personal and commercial project and they're all free!](https://www.reddit.com/r/androiddev/comments/hbcmls/ive_composed_over_150_songs_and_sound_effects_and/)
+- url: https://www.reddit.com/r/androiddev/comments/hbcmls/ive_composed_over_150_songs_and_sound_effects_and/
+---
+**How to download the songs?**
+
+You can download all of them in one RAR file by following this [Bandcamp](https://onemansymphony.bandcamp.com/releases) link.
+
+**What's the total size of the library and in which format do they come in?**
+
+Total file size varies in format. You can download the songs in MP3, FLAC, AAC, OGG, ALAC, WAV and AIFF formats. If you'd like to download the songs in MP3 format, the total file size would be 488MB. If you'd want to go with WAV format, then the total size would be 3.2 GB.
+
+**What about the license? (CC BY 4.0)**
+
+You can use any song in this library in anyway you want, be it as a sound effect in your game or as a background music in one of your Youtube &amp; Twitch videos, even commercially. If you'd like to find more information about the license, please check this [creativecommons.org](https://creativecommons.org/licenses/by/4.0/) link. Providing an appropriate credit (Either Composed by [onemansymphony.bandcamp.com](https://onemansymphony.bandcamp.com) or patreon.com/onemansymphony) is required.
+
+**Can I remix the songs in the library?**
+
+As long as you provide an appropriate credit to the original album, you can do whatever you want to do with them.
+
+**What is the future of this library? How can I support it?**
+
+I'm planning to expand this library's content as much as possible, and doing so takes a great amount of time, and calls for new virtual instruments and tools to create songs in rich and different sound. My current goal is to keep adding more songs in different genres into this library as well as creating environmental sound effects in high quality. Due to this reason, I created a [Patreon](https://www.patreon.com/onemansymphony) page if you'd like to support this project. By becoming a Patron, **you'll get access to the loop files, bonus and alternative songs and sound effects** that are not included in the public library hosted on Bandcamp.
+
+**Are these songs loopable?**
+
+Almost every single song in the album (with a few exceptions here and there) is loopable. While producing these songs, I always paid extra attention to make them as loopable as possible since some users would like to break a song into seperate pieces and just want to use that specific section of the song in their projects, and some people might like to extend a specific part of the song for adaptive sound design purposes. I am very well aware of that modern video games call for an application of adaptive sound design. A song which is made of different sections should be easily loopable &amp; cuttable and any section of the song should be easily extandable. And whenever a transition occurs, it should sound as smooth as possible. These were the things that I kept in my mind while composing these pieces. If you'd like to create your own loop files out of these songs, you can use a free software such as [Audacity](https://www.audacityteam.org/) to do so and refer to its [manual](https://manual.audacityteam.org/) to learn more about how looping is done. If you don't want to spend your time with the process of looping, you can subscribe to my $1 tier on Patreon where you can get access to the loop files of the songs in the library.
+
+**Is this album updated regularly?**
+
+Yes! Whenever I add a new song or sound effect to the library, I announce it on my [Twitter](https://twitter.com/onemansymphony). I would suggest checking the tweets or the album page regularly if you're in need of new music frequently.
+
+Feel free to ask if you guys have any questions.
+## [4][i unpublished the app , i deleted the ads units , and i am still seeing this " Must Fix ". it just won't go away](https://www.reddit.com/r/androiddev/comments/hb96sh/i_unpublished_the_app_i_deleted_the_ads_units_and/)
+- url: https://i.redd.it/brgerrzv3m551.png
+---
+
+## [5][I made this small tool to write Play Store listings. It lets you have an eye on the keywords you want to target. Maybe it's useful to some of you.](https://www.reddit.com/r/androiddev/comments/hbb8s5/i_made_this_small_tool_to_write_play_store/)
+- url: https://aso-tool.com/
+---
+
+## [6][Has anyone here tried Upwork? What was your experience like? Is it worth it?](https://www.reddit.com/r/androiddev/comments/hbctbx/has_anyone_here_tried_upwork_what_was_your/)
+- url: https://www.reddit.com/r/androiddev/comments/hbctbx/has_anyone_here_tried_upwork_what_was_your/
+---
+I'm thinking about using the platform to make some side money. I've looked at some posts though and it looks like prices for the jobs are pretty low . Is it worth freelancing a dev on there?
+## [7][App to control your phone with gesture motions. Source code at https://github.com/MARUI-PlugIn/MiVRy/tree/master/android](https://www.reddit.com/r/androiddev/comments/hbdp4q/app_to_control_your_phone_with_gesture_motions/)
+- url: https://v.redd.it/6vpow579xn551
+---
+
+## [8][Google upgrades Android 11 beta v1.5 with some important bug fixes.](https://www.reddit.com/r/androiddev/comments/haz9tt/google_upgrades_android_11_beta_v15_with_some/)
+- url: https://www.newserector.com/google-upgrades-android-11-beta-v1-5-with-some-important-bug-fixes-
+---
+
+## [9][Suggestion, please!!!!](https://www.reddit.com/r/androiddev/comments/hbe492/suggestion_please/)
+- url: https://www.reddit.com/r/androiddev/comments/hbe492/suggestion_please/
+---
+Hi there,
+
+I'm a beginner, quite enthusiastic to build a mobile application just like anyone here.
+
+Because of the growing tech, I'm so confused where to start with, I'm sure this is not a common syndrome, y'all must have successfully gone through times like these, kudos to you there!
+
+I was taught C and Python at my university. After a bit of research, I have planned to start learning JAVA, and Android Studio. But my bad the internet has a lot of information, sometimes it's scary. I happen to come across ReactNative, which is definitely a cool platform to build applications with.
+
+I'm sure there will be many more out there, I'm not preferring to learn Kotlin, I made my mind to learn either Java or ReactNative.
+
+But here comes the problem, which one to use. If I had to use just Java and Android Studio, that would be great for me, but what about Cross-platform issues, I mean if I had to make my App available for iOS, etc, what framework would help me if I use Java. I got to know I can use Flutter with Dart. But that doesn't help my problem out, because without learning Java it is not easy to learn Dart/Kotlin.
+
+Can someone share their experience, Also I'm confused about which resource should I learn Java/Android Studio.
+
+I will be glad if anyone can help me out !.
+## [10][[1 Minute Read] 1:1 reference between iOS and Android components. I recently started android development. Wrote this easy to use table for referring the components between iOS and android.](https://www.reddit.com/r/androiddev/comments/hayurf/1_minute_read_11_reference_between_ios_and/)
+- url: https://redflowerinc.com/1-minute-cheatsheet-to-begin-android-development-for-ios-developers/
+---
+
+## [11][Im doing English-Spanish translations on small apps for free.](https://www.reddit.com/r/androiddev/comments/hanoi2/im_doing_englishspanish_translations_on_small/)
 - url: https://www.reddit.com/r/androiddev/comments/hanoi2/im_doing_englishspanish_translations_on_small/
 ---
 That's it. I have  a lot of free time since i work from home, i did a translation to spanish of a small bot app on the playstore and since i think there are a lot of starting independent developers i'll give them a hand. 
@@ -40,47 +114,19 @@ Im doing up to 500-1000 words, not doing ToS or anything like that.
 
 
  Anyone can PM me (:
-## [4][Apple Pay and iOS App Store under formal antitrust probe in Europe. Will Google Play be scrutinised next?](https://www.reddit.com/r/androiddev/comments/hadi27/apple_pay_and_ios_app_store_under_formal/)
-- url: https://techcrunch.com/2020/06/16/apple-pay-and-ios-app-store-under-formal-antitrust-probe-in-europe
+## [12][Sales Tax and VAT Play Store](https://www.reddit.com/r/androiddev/comments/hbbfpa/sales_tax_and_vat_play_store/)
+- url: https://www.reddit.com/r/androiddev/comments/hbbfpa/sales_tax_and_vat_play_store/
 ---
+Hi All
 
-## [5][I updated FrangSierra's RxFirebase2 library to RxJava3. Hopefully this can help some people making the transfer.](https://www.reddit.com/r/androiddev/comments/hap5x0/i_updated_frangsierras_rxfirebase2_library_to/)
-- url: https://github.com/FAITH-HoGent/RxFirebase
----
+Hope you are well.
 
-## [6][Do you guys often create your own animations?](https://www.reddit.com/r/androiddev/comments/hahl84/do_you_guys_often_create_your_own_animations/)
-- url: https://www.reddit.com/r/androiddev/comments/hahl84/do_you_guys_often_create_your_own_animations/
----
-Just finished a course on material design, and they reviewed how to create animations. My question is, is it common to create your own animations, our do you guys just outsource the functionality to a UI library. This seems very complex. I am a noob so if this seems like a nooby question it is.
-## [7][Activity tracker with documented ble protocol](https://www.reddit.com/r/androiddev/comments/hapbmk/activity_tracker_with_documented_ble_protocol/)
-- url: https://www.reddit.com/r/androiddev/comments/hapbmk/activity_tracker_with_documented_ble_protocol/
----
-Are there any BLE enabled activity trackers out there with a documented protocol? I want to learn more about making android apps that use BLE and thought it would be fun to display stats collected from an activity tracker. I've found articles about mi bands, but it seems Xiaomi/Haumi have been gradually making it harder for others wanting to communicate with the device.
-## [8][COVID app without Google API.](https://www.reddit.com/r/androiddev/comments/haqbyq/covid_app_without_google_api/)
-- url: https://www.reddit.com/r/androiddev/comments/haqbyq/covid_app_without_google_api/
----
-For a university project we need to implement a contact tracking app.
+I am looking at releasing an app on the Play Store which will generate revenue via in app purchases.
 
+I understand that Google, charge, collect and remit sales tax, VAT and GST for the majority of territories around the world, on my behalf.
 
-The application requirements cannot be met through the Apple/Google API so we will have to work directly with the BLE.
+My question is, how do you then go about reporting this/filing this correctly. For example - with VAT do you treat it as a B2B transaction(s) between you and Google and therefore use the 'reverse charge' method to zero it out to stop you effectivley paying the VAT twice?
 
+Any guidance on reporting/filing sales tax and GST would also be appreaciated.
 
-What limitations would you have if you chose to work directly with BLE?  Is it necessary that the application is always open or something like that?
-## [9][Android could soon have iOS-style seamless app logins when switching to a new phone](https://www.reddit.com/r/androiddev/comments/ha87y6/android_could_soon_have_iosstyle_seamless_app/)
-- url: https://www.androidpolice.com/2020/06/15/android-could-soon-have-ios-style-seamless-app-logins-when-switching-to-a-new-phone/
----
-
-## [10][Ask the Expert #2: LeakCanary 2.x is out, track your memory leaks](https://www.reddit.com/r/androiddev/comments/hajl0t/ask_the_expert_2_leakcanary_2x_is_out_track_your/)
-- url: https://www.youtube.com/watch?v=Sx0k4ipqwBs
----
-
-## [11][Hello](https://www.reddit.com/r/androiddev/comments/har5z3/hello/)
-- url: https://www.reddit.com/r/androiddev/comments/har5z3/hello/
----
-Good morning!
-
-Over the past few months, I've started developing android apps and it has been a great experience so far. I graduated from school last year, but I had a tough time finding a job so I just decided to focus on improving my skillset as a developer so that I could be ready if an opportunity comes to me. I would love to connect with other like-minds so we can help each other grow in the years to come! If you have some advice or if you just want to reach out, don't hesitate to message me! I look forward to hearing your thoughts! I really appreciate this community here and I hope you all enjoy your day!
-## [12][What’s New in Android Studio System Trace](https://www.reddit.com/r/androiddev/comments/haqs8x/whats_new_in_android_studio_system_trace/)
-- url: https://medium.com/androiddevelopers/whats-new-in-android-studio-system-trace-5841465c5935
----
-
+Also is there a best practice in reporting/filing? Does Google have a report you can download which highlights where each payment was made so you can see where you are liable for sales tax/VAT/GST?

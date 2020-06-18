@@ -125,97 +125,73 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Casbin-CPP: An authorization library that supports access control models like ACL, RBAC, ABAC in C/C++](https://www.reddit.com/r/cpp/comments/hamm9o/casbincpp_an_authorization_library_that_supports/)
-- url: https://github.com/casbin/casbin-cpp
+## [3][Guideline for passing smart pointers shared_ptr and unique_ptr in functions](https://www.reddit.com/r/cpp/comments/hba97v/guideline_for_passing_smart_pointers_shared_ptr/)
+- url: https://www.reddit.com/r/cpp/comments/hba97v/guideline_for_passing_smart_pointers_shared_ptr/
+---
+[https://medium.com/pranayaggarwal25/passing-shared-ptr-and-unique-ptr-dc34a2f23010?source=friends\_link&amp;sk=64b47f469f60d1b691a799a146ddbf4f](https://medium.com/pranayaggarwal25/passing-shared-ptr-and-unique-ptr-dc34a2f23010?source=friends_link&amp;sk=64b47f469f60d1b691a799a146ddbf4f)
+
+Hi All,
+
+I have compiled a **guideline diagram** and article on how to pass shared\_ptr and unique\_ptr in function arguments and what to pass at the time of return.
+
+After reading Herb's blog, C++ guidelines, and a few other references I have put together this and few guideline matrices which are in this article.
+
+This article covers the following -
+
+1. Always ask yourself “Do I really need to pass a smart pointer”
+2. std::unique\_ptr usage
+3. std::shared\_ptr usage
+4. How to pass correctly pass raw pointer/reference.
+5. For Returning smart pointers, what is the norm?
+
+I searched but never found a good graphical representation of these guidelines, hence I thought I'd give that a try :)  Please help me in improving anything which is incorrect or missing in this.
+## [4][Converting a hundred million integers to strings per second](https://www.reddit.com/r/cpp/comments/havo5k/converting_a_hundred_million_integers_to_strings/)
+- url: http://www.zverovich.net/2020/06/13/fast-int-to-string-revisited.html
 ---
 
-## [4][Allocators, I don't know what I'm talking about.](https://www.reddit.com/r/cpp/comments/hahdkl/allocators_i_dont_know_what_im_talking_about/)
-- url: https://www.reddit.com/r/cpp/comments/hahdkl/allocators_i_dont_know_what_im_talking_about/
----
-Hello Der,
-
-I'm trying to make a ECS in c++ and started exploring the existing material a little, going down the rabbit hole I ended up finding out about special allocators.
-
-I think I get the theory behind the allocators, and have seen multiple (around 5) videos from cpp con and one from code::dive 2018 about allocators, and I do get that using allocators&lt;typename&gt; is bad and that you should use                   std::pmr::datatype&lt;typename, &amp;(allocator)&gt;           instead.
-
-What I specifically don't understand is what function other than :  new, malloc, realloc, calloc (these are general allocators right?). do you use to get the memory in the first place? Like what is that one function that gives you a block of memory on the ram to work with so that nothing else touches it? What does the actual grabbing memory out of thin air work?
-
-Do you like just get an array of some required size in bytes, and then deal with that ? Or is there a function that you can call so you don't have to create an array? This seems kind of contradictory?
-
-I apologize if I make absolutely no sense, but can someone please help me out... I don't think I'm intelligent enough to figure this out on my own...
-
-&amp;#x200B;
-
-Edit: yes things make more sense after asking the question.
-
-Allocators aren't the ones that actually allocate the memory aren't they? They just hand out pointers to the allocated memory in such a way that everything works for the expected specific purpose?
-
-So is it alright to use new? and std::allocator&lt;t&gt;::allocate(n) to get the memory block and then have an allocator class that deals with it?
-## [5][CPP app: UDP Packet Replicator](https://www.reddit.com/r/cpp/comments/haoal1/cpp_app_udp_packet_replicator/)
-- url: https://www.reddit.com/r/cpp/comments/haoal1/cpp_app_udp_packet_replicator/
----
-Hello! I want to share with you my first open source app. I want to learn so feel free to point any suggestions or improvements you consider!
-
-[https://github.com/AlexSL92/udp-packet-replicator](https://github.com/AlexSL92/udp-packet-replicator)
-
-It is a command line application that sends a packet stored in binary format through the network using UDP protocol. 
-
-I have been using it to test local network applications. You can store a packet with [Wireshark](https://www.wireshark.org/) for example and then replicate it constantly to the desired IP and port.
-
-I hope you find it interesting! Feel free to post any suggestion about the code or the functionality.
-## [6][Anatomy of Windows Hello World program](https://www.reddit.com/r/cpp/comments/han00l/anatomy_of_windows_hello_world_program/)
-- url: https://pratikone.github.io/c++/2020/06/07/anatomy-of-windows-hello-world.html
+## [5][C++ Object Tokens v1.1.0 released](https://www.reddit.com/r/cpp/comments/hbbu2g/c_object_tokens_v110_released/)
+- url: https://gitlab.com/CppObjectTokens/Module/Library/CppOtl
 ---
 
-## [7][SymCC: efficient compiler-based symbolic execution](https://www.reddit.com/r/cpp/comments/haqfll/symcc_efficient_compilerbased_symbolic_execution/)
-- url: https://github.com/eurecom-s3/symcc
+## [6][Capture *this in lambda expression: Timeline of change](https://www.reddit.com/r/cpp/comments/hbdmme/capture_this_in_lambda_expression_timeline_of/)
+- url: https://www.nextptr.com/tutorial/ta1430524603/capture-this-in-lambda-expression-timeline-of-change
 ---
 
-## [8][Write a database CRUD application in 10 lines of C++ (with the new ObjectBox Generator)](https://www.reddit.com/r/cpp/comments/ha3tc2/write_a_database_crud_application_in_10_lines_of/)
-- url: https://objectbox.io/introducing-objectbox-generator-plus-c-api/
+## [7][June 2020 C++ standard mailing](https://www.reddit.com/r/cpp/comments/hazwo1/june_2020_c_standard_mailing/)
+- url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/#mailing2020-06
 ---
 
-## [9][Repeat type N-times in Deduction Guide](https://www.reddit.com/r/cpp/comments/haokvp/repeat_type_ntimes_in_deduction_guide/)
-- url: https://www.reddit.com/r/cpp/comments/haokvp/repeat_type_ntimes_in_deduction_guide/
----
-Hi guys,
-
-When implementing a grid class I stumbled upon a problem in my deduction guides.
-
-My grid class consists a number of indexable objects (like `std::vector` or `std::array` or a linspace implementation like in matlab) which describe the positions of the grid per dimension. Now the grid class's task is to create positions from these indexable objects by combining these. This works in my impementation without any issues. When passing the dimension descriptions directly via a parameter pack there is also no problem.
-
-The actual problems comes when a constructor is called that does not take a variadic parameter pack where you have the types directly but with a constructor that only gets said how many dimensions it has to get via a number as template parameter N, but not which types. We only have some bounding box and a resolution and want to repeat `linspace` N-times.
-
-Now with C++17 we got deduction guides. One could repeat linspace with a `std::index_sequence&lt;Is...&gt;` (`sizeof...(Is) == N`) in the deduction guide like this:  
-`decltype((Is, linspace{})...)`
-
-And the whole deduction guide looks like this:  
-`template &lt;std::size_t N, std::size_t... Is&gt;`  
-`grid(bb&lt;N&gt;, vec&lt;N&gt;, std::index_sequence&lt;Is...&gt;)`  
-  `-&gt; grid&lt;decltype((Is, linspace{})...)&gt;`
-
-But this only works if you already have a  `std::index_sequence`  
-It would be great if you could call one deduction guide from another or when a constructor C1 calls another constructor C2 the deduction guide of C2 would be called if C1 is used. 
-
-Here is a little framework: [https://godbolt.org/z/QNc-4x](https://godbolt.org/z/QNc-4x)  
-In line 38/39 is the constructor where linspace would magically need to be repeated.  
-Its deduction guide in 54/55 is not able to do this.
-
-The constructor with `std::index_sequence` in line 32/33 can with help of its deduction guide in lines 47/48.
-
-Maybe there is some super simple solution I have overseen. Or maybe there is no solution to this problem. Suggestions are welcome!
-
-Best Regards  
-PandaFax
-## [10][How to declare a qHash overload](https://www.reddit.com/r/cpp/comments/hao5u8/how_to_declare_a_qhash_overload/)
-- url: https://www.kdab.com/how-to-declare-a-qhash-overload/
+## [8][Conan Docker Tools - Official docker images for creating C++ packages for ConanCenter](https://www.reddit.com/r/cpp/comments/haza0c/conan_docker_tools_official_docker_images_for/)
+- url: https://blog.conan.io/2020/06/17/Conan-Docker-Images.html
 ---
 
-## [11][The joys and perils of C and C++ aliasing, Part 1 - Red Hat Developer](https://www.reddit.com/r/cpp/comments/h9yy86/the_joys_and_perils_of_c_and_c_aliasing_part_1/)
-- url: https://developers.redhat.com/blog/2020/06/02/the-joys-and-perils-of-c-and-c-aliasing-part-1/
+## [9][[Youtube Playlist] C++ STL by Example by Professor Douglas Schmidt](https://www.reddit.com/r/cpp/comments/hb5uvb/youtube_playlist_c_stl_by_example_by_professor/)
+- url: https://www.youtube.com/playlist?list=PLZ9NgFYEMxp5oH3mrr4IlFBn03rjS-gN1
 ---
 
-## [12][C++11 Guide: A Practical Guide for the Everyday Programmer](https://www.reddit.com/r/cpp/comments/h9qi9v/c11_guide_a_practical_guide_for_the_everyday/)
-- url: https://stuartwheaton.com/blog/2020-06-14-c++11-guide/
+## [10][Improve your C++ today](https://www.reddit.com/r/cpp/comments/hbdpd6/improve_your_c_today/)
+- url: https://www.reddit.com/r/cpp/comments/hbdpd6/improve_your_c_today/
+---
+ 
+
+Hi there, we are a Discord community of 6,600 members. We are a tight, social community and offer the ability to be mentored in many programming languages, computer science or maths. Our mentoring consists of multiple tasks:
+
+We create exercises for you to learn most effectively
+
+We give feedback on your code (e.g. exercise or project)
+
+We answer questions &lt;3
+
+Participate in group projects led by an experienced developer to gain real experience
+
+Possibility to request a private mentor (this is currently not very popular among mentors)
+
+We hope to see you in our community! :3 [https://discordapp.com/invite/aJwTAgS](https://discordapp.com/invite/aJwTAgS)
+## [11][Non-terminal variadic template parameters](https://www.reddit.com/r/cpp/comments/hasukt/nonterminal_variadic_template_parameters/)
+- url: https://cor3ntin.github.io/posts/variadic/
+---
+
+## [12][JetBrains - The State of Developer Ecosystem 2020](https://www.reddit.com/r/cpp/comments/hawtro/jetbrains_the_state_of_developer_ecosystem_2020/)
+- url: https://blog.jetbrains.com/blog/2020/06/11/the-state-of-developer-ecosystem-2020/
 ---
 

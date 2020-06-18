@@ -23,82 +23,50 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/06/16/this-week-in-rust-343/
 ---
 
-## [3][How to build a new rust toolchain?](https://www.reddit.com/r/rust/comments/hapgv4/how_to_build_a_new_rust_toolchain/)
-- url: https://www.reddit.com/r/rust/comments/hapgv4/how_to_build_a_new_rust_toolchain/
----
-I want to build a rust toolchain for powerpc64le-unknown-linux-musl . What are the steps I need to take to achieve that?
-## [4][Variadic functions can be defined in Rust Nightly (kinda!)](https://www.reddit.com/r/rust/comments/hakjqw/variadic_functions_can_be_defined_in_rust_nightly/)
-- url: https://www.reddit.com/r/rust/comments/hakjqw/variadic_functions_can_be_defined_in_rust_nightly/
----
-I saw someone post how you could do function overloading in nightly rust.
-
-Well, similarly, variadic functions can work now too by using the `tuple_list` crate.
-
-Example:
-
-    #![feature(fn_traits, unboxed_closures)]
-    
-    use tuple_list::{TupleList,Tuple};
-    
-    trait sumTupleList: TupleList {
-        fn sum(self) -&gt; i32;
-    }
-    // induction base case
-    impl sumTupleList for () {
-        fn sum(self)-&gt; i32 {0}
-    }
-    impl&lt;Tail&gt; sumTupleList for ( i32, Tail) where
-        Self: TupleList,
-        Tail: sumTupleList {
-        fn sum(self) -&gt; i32 {
-            self.0 + self.1.sum()
-        }
-    }
-    struct Foo {}
-    impl&lt;'a,T&gt; FnOnce&lt;T&gt; for Foo where
-        T:  tuple_list::Tuple ,
-        &lt;T as Tuple&gt;::TupleList: sumTupleList
-    {
-        type Output = i32;
-        extern "rust-call" fn call_once(self, args:T ) -&gt; Self::Output {
-            sumTupleList::sum(Tuple::into_tuple_list(args))
-        }
-    }
-    const addup: Foo = Foo{};
-    fn main() {
-        assert!(addup(1,2,4,5,6,7)        == 25);
-        assert!(addup(1,2,3)              ==  6);
-        assert!(addup(1,2,4,5,6,7,8,9,10) == 52);
-    }
-
-It should be noted, the difference between `f` and just calling aliasing `sumTupleList::sum(Tuple::into_tuple_list(...))` is that in the latter, you would have to pass in a tuple  of your items.
-
-(In general, if you  for `Fn_Once&lt;(a,b,c)&gt;`   for `b`; then you can pass an implementation of `b`  three parameters `a,b,c,` not one parameter tuple `(a,b,c).` )
-
-It should also be noted that tuple\_list supports only up to 12 items in a tuple I believe.
-## [5][What is the current story for compiling to C?](https://www.reddit.com/r/rust/comments/hapl7w/what_is_the_current_story_for_compiling_to_c/)
-- url: https://www.reddit.com/r/rust/comments/hapl7w/what_is_the_current_story_for_compiling_to_c/
----
-I need to write some code for a relatively uncommon microprocessor.  The manufacturer provides a proprietary C/C++ compiler.  Obviously, I'd prefer to write this code in Rust and use the manufacturer's compiler as the last step in my build somehow.
-
-I know there used to be an LLVM C backend that would let you do this kind of thing, but as I recall it was removed from the LLVM project.  Have there been any recent developments to improve this situation?
-## [6][3K, 60fps, 130ms: achieving it in Rust](https://www.reddit.com/r/rust/comments/ha6kje/3k_60fps_130ms_achieving_it_in_rust/)
-- url: https://blog.tonari.no/why-we-love-rust
+## [3][Crust of Rust: Smart Pointers and Interior Mutability [video]](https://www.reddit.com/r/rust/comments/hb4jqw/crust_of_rust_smart_pointers_and_interior/)
+- url: https://www.youtube.com/watch?v=8O0Nt9qY_vo
 ---
 
-## [7][MeiliSearch v0.11 - Faceted search](https://www.reddit.com/r/rust/comments/hapeaw/meilisearch_v011_faceted_search/)
-- url: https://blog.meilisearch.com/whats-new-in-v0-11/
+## [4][Bodil (GTK-based elm-inspired GUI toolkit for rust)](https://www.reddit.com/r/rust/comments/hbcmf0/bodil_gtkbased_elminspired_gui_toolkit_for_rust/)
+- url: https://github.com/bodil/vgtk
 ---
 
-## [8][WezTerm: A GPU-accelerated cross-platform terminal emulator and multiplexer implemented in Rust](https://www.reddit.com/r/rust/comments/hach2x/wezterm_a_gpuaccelerated_crossplatform_terminal/)
-- url: https://wezfurlong.org/wezterm/
+## [5][passmenu-rs: Rofi frontend for passwordstore written in rust!](https://www.reddit.com/r/rust/comments/hbckus/passmenurs_rofi_frontend_for_passwordstore/)
+- url: https://github.com/rupansh/passmenu-rs
 ---
 
-## [9][The Rust Programming Language book is part of the Humble Fight for Racial Justice Bundle](https://www.reddit.com/r/rust/comments/hadsoz/the_rust_programming_language_book_is_part_of_the/)
-- url: https://www.humblebundle.com/fight-for-racial-justice-bundle
+## [6][Aside from the Rust language itself, how important are the "meta" features like cargo, quick test harnesses, auto-get git repo?](https://www.reddit.com/r/rust/comments/hbcvt8/aside_from_the_rust_language_itself_how_important/)
+- url: https://www.reddit.com/r/rust/comments/hbcvt8/aside_from_the_rust_language_itself_how_important/
+---
+I don't code professionally anymore but started down the Hello World path the other day. Also played with Cargo and realized there are a number of extra features that have nothing to do with the language that make it easier to pick up. Auto-gen git repo, quasi Makefile features, and super quick test harnesses.
+## [7][What are your favorite "Better than std" crates?](https://www.reddit.com/r/rust/comments/hat5bt/what_are_your_favorite_better_than_std_crates/)
+- url: https://www.reddit.com/r/rust/comments/hat5bt/what_are_your_favorite_better_than_std_crates/
+---
+The article from the other day on Tonari had an interesting section on packages that are better than std:
+
+* [crossbeam](https://github.com/crossbeam-rs/crossbeam) is better for inter-thread communication than std::sync::mpsc  
+ in almost every way, and may be merged into std  
+ eventually.
+* [parking\_lot](https://github.com/Amanieu/parking_lot) has a mutex implementation better than std::sync::Mutex  
+ in almost every way, and may be merged into the standard library (one day). It also provides many other useful synchronization primitives.
+* [bytes](https://github.com/tokio-rs/bytes) is a more robust, and often more performant, way to play with bytes compared to Vec&lt;u8&gt;  
+.
+* [socket2](https://github.com/alexcrichton/socket2-rs) is what you will end up at if you are ever doing lower-level networking optimizations.
+
+I'm curious what crates you all think are better than std worth looking at ...
+## [8][json5format is a general purpose Rust library that formats JSON5 (a.k.a., "JSON for Humans"), preserving contextual line and block comments.](https://www.reddit.com/r/rust/comments/hb6al4/json5format_is_a_general_purpose_rust_library/)
+- url: https://github.com/google/json5format
 ---
 
-## [10][I'm making a mouseless Image editor with Rust. Open source, also documented in video format](https://www.reddit.com/r/rust/comments/haqrel/im_making_a_mouseless_image_editor_with_rust_open/)
+## [9][xdg-mime: guess MIME types using the shared-mime-info database from freedesktop.org](https://www.reddit.com/r/rust/comments/hbdeeu/xdgmime_guess_mime_types_using_the_sharedmimeinfo/)
+- url: https://docs.rs/xdg-mime/0.3.2/xdg_mime/
+---
+
+## [10][Rust implementation of backtracing algorithm for command-line Sudoku solving](https://www.reddit.com/r/rust/comments/hbd3nz/rust_implementation_of_backtracing_algorithm_for/)
+- url: https://github.com/mcdulltii/Sudoku-solver
+---
+
+## [11][I'm making a mouseless Image editor with Rust. Open source, also documented in video format](https://www.reddit.com/r/rust/comments/haqrel/im_making_a_mouseless_image_editor_with_rust_open/)
 - url: https://www.reddit.com/r/rust/comments/haqrel/im_making_a_mouseless_image_editor_with_rust_open/
 ---
 I'm in the early stages of creating an Image Editor, inspired by VIM. The goal I'm aiming towards is to be able to create thumbnails fast and easily.
@@ -108,13 +76,116 @@ I document the process on my youtube channel: [I Made a Mouseless Image Editor W
 Here is my github page:  [https://github.com/TanTanDev/vimnail](https://github.com/TanTanDev/vimnail)
 
 The project is in a very early stage, but if you have criticism surrounding the idea or the code, I highly appreciate it. Especially the code, I'm quite new to Rust!
-## [11][Understanding the Rust ecosystem](https://www.reddit.com/r/rust/comments/hamjrm/understanding_the_rust_ecosystem/)
-- url: https://joeprevite.com/rust-lang-ecosystem
+## [12][wgpu-rs and android-ndk-rs are causing a lot of headaches](https://www.reddit.com/r/rust/comments/hbaao4/wgpurs_and_androidndkrs_are_causing_a_lot_of/)
+- url: https://www.reddit.com/r/rust/comments/hbaao4/wgpurs_and_androidndkrs_are_causing_a_lot_of/
 ---
+OK, so I'm trying to run the hello-triangle example from wgpu-rs on android, and it's causing a lot of issues. First, I switched the example type to a binary and added this snippet to get it to compile:
 
-## [12][Rust concurrency: the archetype of a message-passing bug.](https://www.reddit.com/r/rust/comments/han5h8/rust_concurrency_the_archetype_of_a/)
-- url: https://www.reddit.com/r/rust/comments/han5h8/rust_concurrency_the_archetype_of_a/
----
-A description of a common source of bugs in message-passing code, taking the Rust programming language as an example. 
+    #[cfg(target_os = "android")]
+    ndk_glue::ndk_glue!(main);
 
-[https://medium.com/@polyglot\_factotum/817b60efd8f8?source=friends\_link&amp;sk=ad32b77d42eda3dd28a26671282271df](https://medium.com/@polyglot_factotum/817b60efd8f8?source=friends_link&amp;sk=ad32b77d42eda3dd28a26671282271df)
+Then, it was panicking on start because, apparently, the NativeScreen isn't ready and so I hacked in a fix for that: (this snipped was placet at the very begining of `async fn run`)
+
+    #[cfg(target_os = "android")]
+        {
+            println!("Waiting for NativeScreen");
+            loop
+            {
+                match ndk_glue::native_window().as_ref() {
+                    Some(_) =&gt; 
+                    {
+                        println!("NativeScreen Found:{:?}", ndk_glue::native_window());
+                        break;
+                    },
+                    None =&gt; ()
+                }
+            }
+        }
+
+But still, it wouldn't run. So I added a couple extra `println!` statements to debug further at the ends of their respective functions in `async run`.
+
+Then, I tested it both on an Pixel emulator with Android 8 and on my rooted Mi 8 with Lineage OS, and unfortunately got 2 different error messages. Here are the relevant `adb logcat` results
+
+Real device:
+```
+I RustStdoutStderr: ------------------------RUST START------------------
+I RustStdoutStderr: Waiting for NativeScreen
+I RustStdoutStderr: NativeScreen Found:RwLockReadGuard { lock: RwLock { data: Some(NativeWindow { ptr: 0x73639f4010 }) } }
+D vulkan  : searching for layers in '/data/app/rust.example.hello_triangle-Sq7qBU-XxxSKvKk6XWtvDQ==/lib/arm64'
+D vulkan  : searching for layers in '/data/app/rust.example.hello_triangle-Sq7qBU-XxxSKvKk6XWtvDQ==/base.apk!/lib/arm64-v8a'
+I AdrenoVK: QUALCOMM build          : 033a5b0, I0e419467bc
+I AdrenoVK: Build Date              : 03/11/20
+I AdrenoVK: Shader Compiler Version : EV031.27.05.01
+I AdrenoVK: Local Branch            : 
+I AdrenoVK: Remote Branch           : refs/tags/AU_LINUX_ANDROID_LA.UM.8.3.R1.10.00.00.520.058
+I AdrenoVK: Remote Branch           : NONE
+I AdrenoVK: Reconstruct Branch      : NOTHING
+I AdrenoVK: Build Config            : S P 8.0.11 AArch64
+I RustStdoutStderr: surface made
+I RustStdoutStderr: adapter made
+I RustStdoutStderr: [2020-06-18T06:37:16Z ERROR gfx_backend_vulkan] [vulkan] invalid vkGetDeviceProcAddr(0x73683eb2c0, "vkGetPhysicalDevicePresentRectanglesKHR") call
+I RustStdoutStderr: device and queue made
+I ActivityTaskManager: Displayed rust.example.hello_triangle/android.app.NativeActivity: +172ms
+I RustStdoutStderr: shader modules made
+I RustStdoutStderr: pipeline layout made
+I RustStdoutStderr: pipeline made
+I RustStdoutStderr: descriptor made
+I RustStdoutStderr: [2020-06-18T06:37:16Z ERROR gfx_backend_vulkan] [vulkan] invalid vkGetDeviceProcAddr(0x73683eb2c0, "vkGetPhysicalDevicePresentRectanglesKHR") call
+I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@3.0::IMapper/default in either framework or device manifest.
+W Gralloc3: mapper 3.x is not supported
+I RustStdoutStderr: swapchain made
+I RustStdoutStderr: -----------------------ENTERING EVENT LOOP-----------------
+```
+
+Emulator:
+```
+I RustStdoutStderr: -------------------RUST START----------------------------
+I RustStdoutStderr: Waiting for NativeScreen
+D EGL_emulation: eglMakeCurrent: 0xa45f57a0: ver 3 0 (tinfo 0xa467ea20)
+I RustStdoutStderr: NativeScreen Found:RwLockReadGuard { lock: RwLock { data: Some(NativeWindow { ptr: 0xb03ba808 }) } }
+I MicroDetectionState: Should stop hotword detection immediately - false
+I MicroDetector: Keeping mic open: false
+I MicroDetector: #shutdownAudioWithAudioLibrary
+E vulkan  : invalid vkGetInstanceProcAddr(VK_NULL_HANDLE, "vkEnumerateInstanceVersion") call
+D vulkan  : searching for layers in '/data/app/rust.example.hello_triangle-52It2mKIndceMGQUCUmqGg==/lib/x86'
+D vulkan  : searching for layers in '/data/app/rust.example.hello_triangle-52It2mKIndceMGQUCUmqGg==/base.apk!/lib/x86'
+I RustStdoutStderr: surface made
+I RustStdoutStderr: thread '&lt;unnamed&gt;' panicked at 'called `Option::unwrap()` on a `None` value', examples/hello_triangle/main.rs:34:19
+I RustStdoutStderr: stack backtrace:
+I RustStdoutStderr:    0: &lt;unknown&gt;
+I RustStdoutStderr:    1: &lt;unknown&gt;
+I RustStdoutStderr:    2: &lt;unknown&gt;
+I RustStdoutStderr:    3: &lt;unknown&gt;
+I RustStdoutStderr:    4: &lt;unknown&gt;
+I RustStdoutStderr:    5: &lt;unknown&gt;
+I RustStdoutStderr:    6: &lt;unknown&gt;
+I RustStdoutStderr:    7: &lt;unknown&gt;
+I RustStdoutStderr:    8: &lt;unknown&gt;
+I RustStdoutStderr:    9: &lt;unknown&gt;
+I RustStdoutStderr:   10: &lt;unknown&gt;
+I RustStdoutStderr:   11: &lt;unknown&gt;
+I RustStdoutStderr:   12: &lt;unknown&gt;
+I RustStdoutStderr:   13: &lt;unknown&gt;
+I RustStdoutStderr:   14: &lt;unknown&gt;
+I RustStdoutStderr:   15: &lt;unknown&gt;
+I RustStdoutStderr:   16: &lt;unknown&gt;
+I RustStdoutStderr:   17: &lt;unknown&gt;
+I RustStdoutStderr:   18: &lt;unknown&gt;
+I RustStdoutStderr:   19: &lt;unknown&gt;
+I RustStdoutStderr:   20: &lt;unknown&gt;
+I RustStdoutStderr:   21: &lt;unknown&gt;
+I RustStdoutStderr:   22: &lt;unknown&gt;
+I RustStdoutStderr:   23: &lt;unknown&gt;
+I RustStdoutStderr:   24: &lt;unknown&gt;
+I RustStdoutStderr:   25: &lt;unknown&gt;
+I RustStdoutStderr:   26: &lt;unknown&gt;
+I RustStdoutStderr:   27: &lt;unknown&gt;
+I RustStdoutStderr:   28: &lt;unknown&gt;
+I RustStdoutStderr:   29: &lt;unknown&gt;
+I RustStdoutStderr:   30: &lt;unknown&gt;
+I RustStdoutStderr:   31: &lt;unknown&gt;
+I RustStdoutStderr:   32: &lt;unknown&gt;
+I RustStdoutStderr: note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+```
+
+I feel completely lost atm. Can anyone explain the error, or redirect to a better place to report this bug?

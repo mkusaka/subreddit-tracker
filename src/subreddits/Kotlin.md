@@ -1,5 +1,45 @@
 # Kotlin
-## [1][Published my first app to the play store today 😁](https://www.reddit.com/r/Kotlin/comments/haoxom/published_my_first_app_to_the_play_store_today/)
+## [1][[Kord] - Discord Kotlin Library](https://www.reddit.com/r/Kotlin/comments/hbaeh8/kord_discord_kotlin_library/)
+- url: https://www.reddit.com/r/Kotlin/comments/hbaeh8/kord_discord_kotlin_library/
+---
+Kord was created as an answer to the frustrations of writing Discord bots with other JVM libraries, which either use thread-blocking code or verbose and scope restrictive reactive systems. We believe an API written from the ground up in Kotlin with coroutines can give you the best of both worlds: The conciseness of imperative code with the concurrency of reactive code.
+
+Aside from coroutines, we also wanted to give the user full access to lower-level APIs. Sometimes you have to do some unconventional things, and we want to allow you to do those in a safe and supported way.
+
+* Discord Gateway
+
+* Discord Rest API
+
+* High-level abstraction and caching
+
+Voice and Multiplatform support coming in future releases.
+
+you can find all the things you need to get started at [GitHub](https://github.com/kordlib/kord) and our [Discord](https://discord.gg/mpDQm5N)
+## [2][My first Kotlin Multiplatform app in the app store](https://www.reddit.com/r/Kotlin/comments/haz2vj/my_first_kotlin_multiplatform_app_in_the_app_store/)
+- url: https://www.reddit.com/r/Kotlin/comments/haz2vj/my_first_kotlin_multiplatform_app_in_the_app_store/
+---
+My side project Packrat, built with Kotlin Multiplatform in order to learn a bit about Kotlin is now live in the app store. https://apps.apple.com/us/app/packrat/id1490422067?ls=1. I started with iOS as I knew it better but a lot of my app already works on Android too. Overall I really enjoyed starting to learn Kotlin as a language, at first it seemed similar to Swift (which I love) but as I dived further in I realised this was only superficial, I found it to be it's own unique and productive language with some very cool design choices. 
+
+Using Swift and Kotlin together worked really nicely and I didn't feel any issues with context switching (apart from the occasional fun/func annoyance). I believe Kotlin Multiplatform has a bright future and I hope to use it for a client one day soon.
+## [3][How to explain implementation in Kotlin](https://www.reddit.com/r/Kotlin/comments/hbe3u5/how_to_explain_implementation_in_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/hbe3u5/how_to_explain_implementation_in_kotlin/
+---
+What is the meaning of this code line? 
+
+ fun  a.b(y: Int) = lazy { u.v(y) }
+## [4][Status and future of TornadoFX?](https://www.reddit.com/r/Kotlin/comments/hasb8y/status_and_future_of_tornadofx/)
+- url: https://www.reddit.com/r/Kotlin/comments/hasb8y/status_and_future_of_tornadofx/
+---
+Hey Guys, 
+
+can you help me understand, what the status and the future of TornadoFX is? On the github page it still says that it is not (yet) compatible with java 9/10. I see that the releases are quite far apart.
+
+Don't get me wrong, i love TornadoFX. I think the way stuff is done is very cool and I have used it in a couple of projects already. 
+
+I am just starting a new project and wanna use TornadoFX with this too, but i need to make sure it is the right lib to use for Kotlin and JavaFX. I just wanna ask if it is still being actively developed, evolving and future proof.
+
+Any comments and hints would be appreciated! :)
+## [5][Published my first app to the play store today 😁](https://www.reddit.com/r/Kotlin/comments/haoxom/published_my_first_app_to_the_play_store_today/)
 - url: https://www.reddit.com/r/Kotlin/comments/haoxom/published_my_first_app_to_the_play_store_today/
 ---
 
@@ -13,311 +53,46 @@ The ***primary focus*** of making this simple app was just to understand the fun
 Check it out if you want to see what a terrible app this is lol. The main thing is that I’m learning anyway.
 
 https://play.google.com/store/apps/details?id=com.herd.whattodo
-## [2][Kotlin Cheat Sheet - a basic reference for beginner and advanced](https://www.reddit.com/r/Kotlin/comments/hal4zf/kotlin_cheat_sheet_a_basic_reference_for_beginner/)
-- url: https://simplecheatsheet.com/tag/kotlin-cheat-sheet/
+## [6][Zoe: a new CLI tool for Apache Kafka written in Kotlin](https://www.reddit.com/r/Kotlin/comments/hau0b2/zoe_a_new_cli_tool_for_apache_kafka_written_in/)
+- url: https://www.reddit.com/r/Kotlin/comments/hau0b2/zoe_a_new_cli_tool_for_apache_kafka_written_in/
 ---
+Hi!
 
-## [3][Elide - JSON:API or GraphQL web service starting from a JPA annotated data model (by Yahoo!)](https://www.reddit.com/r/Kotlin/comments/haq2ht/elide_jsonapi_or_graphql_web_service_starting/)
+Within Adevinta, we are heavy users of Apache Kafka. We are also Kotlin Lovers! Recently, we open sourced a tool called Zoe that makes interacting with Kafka much easier. This tool is written in Kotlin.
+
+* Checkout [the repository here](https://github.com/adevinta/zoe) where you will find a screen cast that demo the tool.
+* And [the documentation](https://adevinta.github.io/zoe/)
+
+Any feedback is welcome : )
+## [7][Elide - JSON:API or GraphQL web service starting from a JPA annotated data model (by Yahoo!)](https://www.reddit.com/r/Kotlin/comments/haq2ht/elide_jsonapi_or_graphql_web_service_starting/)
 - url: https://blog.graphqleditor.com/elide-opinionated-apis/
 ---
 
-## [4][[Doubt] What is the function of init code block in following program ?](https://www.reddit.com/r/Kotlin/comments/hannfg/doubt_what_is_the_function_of_init_code_block_in/)
-- url: https://www.reddit.com/r/Kotlin/comments/hannfg/doubt_what_is_the_function_of_init_code_block_in/
----
-    class Food(_name: String) {
-        var name = _name
-            get() = "I'm eating $field"
-            set(value) {
-                field = value.toLowerCase().reversed().capitalize()
-            }
-    /*    init {
-            name=_name
-        }*/
-    }
-    
-    fun main(args: Array&lt;String&gt;) {
-        val food = Food("Banana")
-        println(food.name)
-    }
-
-In above program why commenting out init code block causing program to fail  to reverse  print banana ?  why I need to  initialize name=\_name in 'init code block' even though I did it at start in Class Food?
-
-    ("I'm eating Banana"-&gt;"I'm eating Ananab")
-
-&amp;#x200B;
-## [5][Routing in Ktor](https://www.reddit.com/r/Kotlin/comments/ha8eds/routing_in_ktor/)
-- url: https://hadihariri.com/2020/04/02/Routing-in-Ktor/
+## [8][Companion Object in Kotlin (How to declare static variables and functions in Kotlin?)](https://www.reddit.com/r/Kotlin/comments/hb6jhv/companion_object_in_kotlin_how_to_declare_static/)
+- url: https://www.youtube.com/watch?v=UQau-nYWeEo
 ---
 
-## [6][Any examples/engineering blog posts of companies using Kotlin for server side? Better, if paired with spring boot.](https://www.reddit.com/r/Kotlin/comments/haeghi/any_examplesengineering_blog_posts_of_companies/)
-- url: https://www.reddit.com/r/Kotlin/comments/haeghi/any_examplesengineering_blog_posts_of_companies/
----
-thanks!
-## [7][Building a Reactive Oauth Client App with SpringBoot and Kotlin Coroutines](https://www.reddit.com/r/Kotlin/comments/ha3u2m/building_a_reactive_oauth_client_app_with/)
-- url: https://www.shiveenp.com/posts/spring-boot-reactive-oauth-client-with-coroutines/
+## [9][Kotlin Cheat Sheet - a basic reference for beginner and advanced](https://www.reddit.com/r/Kotlin/comments/hal4zf/kotlin_cheat_sheet_a_basic_reference_for_beginner/)
+- url: https://simplecheatsheet.com/tag/kotlin-cheat-sheet/
 ---
 
-## [8][Where are the answers to the online Kotlin Bootcamp homework questions?](https://www.reddit.com/r/Kotlin/comments/haj1k5/where_are_the_answers_to_the_online_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/haj1k5/where_are_the_answers_to_the_online_kotlin/
+## [10][Where to start with kotlin for android dev?](https://www.reddit.com/r/Kotlin/comments/has3yz/where_to_start_with_kotlin_for_android_dev/)
+- url: https://www.reddit.com/r/Kotlin/comments/has3yz/where_to_start_with_kotlin_for_android_dev/
 ---
-Does anyone know where I could find the answers to these:
-https://codelabs.developers.google.com/codelabs/kotlin-bootcamp-introduction/#7
+Hello everyone,
 
-(The homework questions to the Kotlin Bootcamp online)
+I'm here looking for some advices. Lately I've got interested in GUI and mobile dev, expecially on Android. I started to code in Python for scientific and math usage but now I really got into programming and I wanted to develop a small app for my smartphone. I tried with Python libraries like Kivy and QtPy but it seems I can't get a nice result. It always feels that the app is old or crunchy or not...nice enough.
 
-Most can be found within the tutorials but later on some questions can't necessarily be found in the exact text.
-## [9][Inheritance, Overriding using Open Keyword in Kotlin](https://www.reddit.com/r/Kotlin/comments/hainpg/inheritance_overriding_using_open_keyword_in/)
-- url: https://www.youtube.com/watch?v=s2UwnlAxstA&amp;t=6s
----
+Recently I've used an app written in Kotlin and It felt like a really good one, runs smooth and was pretty nice to use. 
 
-## [10][Connect 4](https://www.reddit.com/r/Kotlin/comments/ha8sbz/connect_4/)
-- url: https://www.reddit.com/r/Kotlin/comments/ha8sbz/connect_4/
----
-Hello,
+I thought "I could program for a hundred years in Kivy but I'll never get this result".
 
-I am working on a program that allows the user to play a game of Connect 4 within the IDE command console.
+So I am willing to move to Kotlin, for now for Android programming at least.
 
-Currently, I have my playerVsPlayer version working reasonably. However, I am having trouble checking for a win in any given direction. I am also having an issue implementing the  computer for a playerVsComputer or computerVsComputer version. I tried copy pasting my pvp code but I am unsure how to put the computer into the loop.
+The big problem is I have 0 knoledge about Java, javascript and JVM. I never had to aproach them, because the compilation in Python is done by some libraries called "buildozer", I just had to install JDK and SDK... so now I feel like I have this big black hole in my head with "Java" written on it. 
 
-Thanks in advance.
+So now that you know my goal, can you guys suggest me something to start with?
 
-Here is my code:
+A course, a book or some documentation could be great, but I'd like to know what I am actually doing. For example, I tried to look for the documentation on Intellij IDE website and it's great that they teach you to write "Hello world" and other simple stuff in Kotlin. But I don't know how and from which interpreter the file I've written gets compiled, for example. I'd really like to know what's happening, t have a full vision of the environment (if it's possible of course).
 
-    var gameBoard = Array( 8 ) { Array( 8 ) { " . " } }
-    var player = "X"
-    var turnCounter = 1
-    var winner = false
-    var computer1 = ( 1..8 ).random()
-    var computer2 = ( 1..8 ).random()
-    
-    fun main() {
-     println()
-     println( "Welcome to the game of Connect Four!" )
-     var menuItems = arrayOf(
-     "Player vs. Player",
-     "Player vs. Computer",
-     "Computer vs. Computer",
-     "Quit"
-     )
-     var quitOption = menuItems.size
-     var userChoice = 0
-     while( userChoice != quitOption ) {
-     println()
-            userChoice = menuOptions( menuItems, "\nPlease enter your selection: " )
-     when( userChoice ) {
-     1 -&gt; playerVsPlayer()
-     2 -&gt; playerVsComputer()
-     3 -&gt; computerVsComputer()
-     else -&gt; {
-     if( userChoice != quitOption ) {
-     println()
-     println( "ERROR: Please select a valid menu option." )
-                    }
-                }
-            }
-        }
-     println()
-     println( "Thank you for playing!" )
-    }
-    
-    fun menuOptions(items: Array&lt;String&gt;, prompt: String): Int {
-     for( ( index, item ) in items.withIndex() ) {
-     println( "${index + 1}. $item" )
-        }
-     print( prompt )
-     return readLine()!!.toInt()
-    }
-    
-    fun playerVsPlayer() {
-     while(!winner) {
-     var validMove: Boolean
-     var play: Int
-     do {
-     printGameBoard(gameBoard)
-     print("Player $player, please choose a column: ")
-                play = readLine()!!.toInt() - 1
-     printGameBoard(gameBoard)
-                validMove = validateMove(play, gameBoard)
-            } while( validMove == false )
-     for (row in gameBoard.indices.reversed()) {
-     if (gameBoard[row][play] == " . ") {
-     gameBoard[row][play] = " ${player} "
-     break
-     }
-            }
-     player = if (player == "X") {
-     "O"
-     } else {
-     "X"
-     }
-     turnCounter++
-        }
-     printGameBoard(gameBoard)
-     if (winner) {
-     if (player == "X") {
-     winner = true
-     println("X won")
-            } else {
-     winner = true
-     println("O won")
-            }
-        } else {
-     println("Tie game")
-        }
-    }
-    
-    fun playerVsComputer() {
-     while(!winner) {
-     var validMove: Boolean
-     var play: Int
-     do {
-     printGameBoard(gameBoard)
-     print("Player $player, please choose a column: ")
-                play = readLine()!!.toInt() - 1
-     printGameBoard(gameBoard)
-                validMove = validateMove(play, gameBoard)
-            } while( validMove == false )
-     for (row in gameBoard.indices.reversed()) {
-     if (gameBoard[row][play] == " . ") {
-     gameBoard[row][play] = " ${player} "
-     break
-     }
-            }
-     player = if (player == "X") {
-     "O"
-     } else {
-     "X"
-     }
-     turnCounter++
-        }
-     printGameBoard(gameBoard)
-     if (winner) {
-     if (player == "X") {
-     winner = true
-     println("X won")
-            } else {
-     winner = true
-     println("O won")
-            }
-        } else {
-     println("Tie game")
-        }
-    }
-    
-    fun computerVsComputer() {
-     while(!winner) {
-     var validMove: Boolean
-     var play: Int
-     do {
-     printGameBoard(gameBoard)
-     print("Player $player, please choose a column: ")
-                play = readLine()!!.toInt() - 1
-     printGameBoard(gameBoard)
-                validMove = validateMove(play, gameBoard)
-            } while( validMove == false )
-     for (row in gameBoard.indices.reversed()) {
-     if (gameBoard[row][play] == " . ") {
-     gameBoard[row][play] = " ${player} "
-     break
-     }
-            }
-     player = if (player == "X") {
-     "O"
-     } else {
-     "X"
-     }
-     turnCounter++
-        }
-     printGameBoard(gameBoard)
-     if (winner) {
-     if (player == "X") {
-     winner = true
-     println("X won")
-            } else {
-     winner = true
-     println("O won")
-            }
-        } else {
-     println("Tie game")
-        }
-    }
-    
-    fun printGameBoard(gameBoard: Array&lt;Array&lt;String&gt;&gt;) {
-     println()
-     println( "          Connect Four!          " )
-     println( "╔===╦===╦===╦===╦===╦===╦===╦===╗" )
-     println( "║ 1 ║ 2 ║ 3 ║ 4 ║ 5 ║ 6 ║ 7 ║ 8 ║" )
-     println( "╠===╬===╬===╬===╬===╬===╬===╬===╣" )
-     for( row in 0 until gameBoard.size ) {
-     print( "║" )
-     for( col in 0 until gameBoard[row].size ) {
-     print( gameBoard[row][col] )
-     print( "║" )
-            }
-     println()
-     println( "╠===╬===╬===╬===╬===╬===╬===╬===╣" )
-        }
-     println( "║ 1 ║ 2 ║ 3 ║ 4 ║ 5 ║ 6 ║ 7 ║ 8 ║" )
-     println( "╚===╩===╩===╩===╩===╩===╩===╩===╝" )
-     println()
-    }
-    
-    fun validateMove(col: Int, gameBoard: Array&lt;Array&lt;String&gt;&gt;): Boolean {
-     if( col &lt; 0 || col &gt; gameBoard[0].size ) {
-     return false
-     }
-     return if( gameBoard[0][col] != " . " ) {
-     false
-     } else true
-    }
-    
-    fun fourInARow(player: String, gameBoard: Array&lt;Array&lt;String&gt;&gt;): Boolean {
-     //check for 4 across
-     for (row in gameBoard.indices) {
-     for (col in 0 until gameBoard[0].size - 4) {
-     if (gameBoard[row][col] == player &amp;&amp;
-                        gameBoard[row][col + 1] == player &amp;&amp;
-                        gameBoard[row][col + 2] == player &amp;&amp;
-                        gameBoard[row][col + 3] == player) {
-     return true
-     }
-            }
-        }
-     //check for 4 up and down
-     for (row in 0 until gameBoard.size - 4) {
-     for (col in 0 until gameBoard[0].size) {
-     if (gameBoard[row][col] == player &amp;&amp;
-                        gameBoard[row + 1][col] == player &amp;&amp;
-                        gameBoard[row + 2][col] == player &amp;&amp;
-                        gameBoard[row + 3][col] == player) {
-     return true
-     }
-            }
-        }
-     //check upward diagonal
-     for (row in 2 until gameBoard.size) {
-     for (col in 0 until gameBoard[0].size - 4) {
-     if (gameBoard[row][col] == player &amp;&amp;
-                        gameBoard[row - 1][col + 1] == player &amp;&amp;
-                        gameBoard[row - 2][col + 2] == player &amp;&amp;
-                        gameBoard[row - 3][col + 3] == player) {
-     return true
-     }
-            }
-        }
-     //check downward diagonal
-     for (row in 0 until gameBoard.size - 4) {
-     for (col in 0 until gameBoard[0].size - 4) {
-     if (gameBoard[row][col] == player &amp;&amp;
-                        gameBoard[row + 1][col + 1] == player &amp;&amp;
-                        gameBoard[row + 2][col + 2] == player &amp;&amp;
-                        gameBoard[row + 3][col + 3] == player) {
-     return true
-     }
-            }
-        }
-     return false
-    }
-    
-
-&amp;#x200B;
+Thanks in advance, guys, thanks a lot!

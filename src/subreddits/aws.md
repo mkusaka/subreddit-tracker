@@ -21,86 +21,147 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][A Shared File System for Your Lambda Functions](https://www.reddit.com/r/aws/comments/habrhi/a_shared_file_system_for_your_lambda_functions/)
-- url: https://aws.amazon.com/blogs/aws/new-a-shared-file-system-for-your-lambda-functions/
+## [2][Building a podcast search engine using all AWS services.](https://www.reddit.com/r/aws/comments/hb9yue/building_a_podcast_search_engine_using_all_aws/)
+- url: https://www.reddit.com/r/aws/comments/hb9yue/building_a_podcast_search_engine_using_all_aws/
+---
+I built a service that tracks a podcast, transcribes its episodes, and indexes it for search. I have a sample prototype rigged for the Joe Rogan Experience at [www.jamiepullup.com](https://www.jamiepullup.com). 
+
+The service is a swift console app, all the processing, transcribing and indexing happens on various AWS services (EC2 to host the site and run the service, S3 for storage, Amazon Transcribe for transcription and Amazon Cloud Search for search)
+
+Getting this up and running wasn't cheap, thank god for the activate program. 
+
+If you have any questions regarding any of these technologies, I'd be more than happy to answer.
+## [3][AWS said it mitigated a 2.3 Tbps DDoS attack, the largest ever](https://www.reddit.com/r/aws/comments/hau6np/aws_said_it_mitigated_a_23_tbps_ddos_attack_the/)
+- url: https://www.zdnet.com/article/aws-said-it-mitigated-a-2-3-tbps-ddos-attack-the-largest-ever/
 ---
 
-## [3][Amazon EC2 Auto Scaling now supports Instance Refresh within Auto Scaling Groups](https://www.reddit.com/r/aws/comments/hafi7q/amazon_ec2_auto_scaling_now_supports_instance/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/06/amazon-ec2-auto-scaling-now-supports-instance-refresh-within-auto-scaling-groups/
+## [4][Can I reduce my cost by changing the way I'm running my infrastructure?](https://www.reddit.com/r/aws/comments/hbc5dd/can_i_reduce_my_cost_by_changing_the_way_im/)
+- url: https://www.reddit.com/r/aws/comments/hbc5dd/can_i_reduce_my_cost_by_changing_the_way_im/
+---
+Currently I'm running 2 EC2 instances.
+
+The main one is a Windows Server instance on t2.small with a 100GB gp2 storage volume which runs IIS web server, MSSQL database server, FTP server and hMailServer for email. 
+
+The other is a Linux server running on t2.micro with the default 8GB gp2 storage which basically just runs a LAMP stack (no email) but is hardly used.
+
+My average monthly bill over the last 2 years has been about $40/month but I'm wondering if there are other tools on AWS that would allow me to still host and maintain my web apps but possibly at a cheaper rate than using the EC2 instances mentioned.
+
+Is there some sort of app hosting feature that I can use to host .NET web apps, databases, etc. to maintain my hosting environment or is EC2 the best I can get? In case EC2 is the best, I may have to look for cheaper alternatives to AWS which I really don't want to do because moving is going to be a pain.
+
+Thanks in advance!
+## [5][Have reserved CIDR blocks changed in the last year to eighteen months or so?](https://www.reddit.com/r/aws/comments/hbdbji/have_reserved_cidr_blocks_changed_in_the_last/)
+- url: https://www.reddit.com/r/aws/comments/hbdbji/have_reserved_cidr_blocks_changed_in_the_last/
+---
+I just tried to add a new CIDR block to my VPC and stumbled upon this error.
+
+As you can see, I already have 172.31.1.0/28 in my VPC which I added probably around 12-18 months ago, but according to the [documentation](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing), this is a reserved address and isn't allowed.
+
+Am I going crazy or has this changed recently?
+
+https://preview.redd.it/mhlucmrqrn551.png?width=1718&amp;format=png&amp;auto=webp&amp;s=c281301322b5603bb9b835930623be046ce64c71
+
+EDIT: Further to this, it looks like it's not accepting any subnets, even ones that are not restricted. I must be doing something wrong here.
+## [6][SAM / Cloudformation API -&gt; Kinesis woes](https://www.reddit.com/r/aws/comments/hbcvm8/sam_cloudformation_api_kinesis_woes/)
+- url: https://www.reddit.com/r/aws/comments/hbcvm8/sam_cloudformation_api_kinesis_woes/
+---
+Hi all,
+
+Can anyone confirm whether or not I can establish an API gateway via cloudformation to receive HTTP posts and have it forward the payload directly to a kinesis data stream?
+
+It appears to me I can only do that if I'm using http/2 / WebSocket gateway,  OR I intend to forward to a firehose stream which neither is not what I'm wanting.
+
+When I attempt to deploy the stack, it's failing because I've got integration type set to AWS\_PROXY, and it claims it only supports lambdafunctions or firehose...  
+
+Seems odd that if it really can't pass the request payload directly through to a data stream...?
+
+Thanks
+## [7][AWS Snowcone – A Small, Lightweight, Rugged, Secure Edge Computing, Edge Storage, and Data Transfer Device](https://www.reddit.com/r/aws/comments/hav7qe/aws_snowcone_a_small_lightweight_rugged_secure/)
+- url: https://aws.amazon.com/blogs/aws/introducing-aws-snowcone-small-lightweight-edge-storage-and-processing/
 ---
 
-## [4][We are thinking of migrating from Classic ECS to Fargate - costs?](https://www.reddit.com/r/aws/comments/haop4g/we_are_thinking_of_migrating_from_classic_ecs_to/)
-- url: https://www.reddit.com/r/aws/comments/haop4g/we_are_thinking_of_migrating_from_classic_ecs_to/
+## [8][Request for advice on which AWS service would best suit my purpose.](https://www.reddit.com/r/aws/comments/hbaez1/request_for_advice_on_which_aws_service_would/)
+- url: https://www.reddit.com/r/aws/comments/hbaez1/request_for_advice_on_which_aws_service_would/
 ---
-I am thinking of moving a 'classical' ECS docker cluster running 67 services to Fargate. The cluster autoscales in/out but has about 12 nodes. It costs us about $960/month.
+Hello, I would like to request some advice on which of the AWS NLP  related services would best suit my purpose as several of them seem like  they could be suitable candidates and there seems to be some overlap in  what they could be used for.  
+ 
 
-I ran some calculations on the running the same tasks in Fargate and calculated that 67 Fargate tasks with 0.5 CPU and 1GB of memory would cost $424/month. I'm a little surprised by this since most web forums claim Fargate is MORE expensive.
+As a disclaimer I will say that I am fairly new to all this stuff so please forgive any ignorance or naivety on my part.   
+ 
 
-I also wonder whether the 0.5CPU in Fargate is equivalent to 200 CPU Units in ECS if the instance type is C5.large.
+I have been tasked by the company I work for to find a solution for  detecting questions that have the same meaning but are worded  differently.  
+ 
 
-Is there anything else I might be missing?
-## [5][AWS Workspaces](https://www.reddit.com/r/aws/comments/happs5/aws_workspaces/)
-- url: https://www.reddit.com/r/aws/comments/happs5/aws_workspaces/
+For context, we develop apps for Google Home, Alexa, and things like that.  
+ 
+
+Unfortunately I do not yet have all the details of the internal  mechanics of the application that this question pertains to but my  educated guess is that we will have a set of known questions and answers  and we will need a way to map a question asked by the user to one of  the existing known questions even if it is worded differently.  
+ 
+
+I have done some reading and watched some videos the past few days and have been able to identify some possible candidates:  
+ 
+
+&amp;#x200B;
+
+* The first is using some pre-trained BERT models with Sagemaker and  Tensorflow/Pytorch, I still only have a vague notion of how this would  apply to what I'm trying to do but I will gladly learn all the specifics  if this turns out to be the best solution for my needs. I understand  that this system can be used to develop chatbots, and while what I am  trying to do is similar to a chatbot, I think it is less sophisticated  in the sense that we only need our application to be able to understand a  very specific set of questions whereas a typical chatbot has a much  broader scope of interaction (I may be misinterpreting this). I have a  feeling this solution may be overkill for my current purposes.  
+
+
+&amp;#x200B;
+
+* The second possible solution is Comprehend. Again, seems like it could be overkill.  
+
+
+&amp;#x200B;
+
+* The third possible solution is Lex. This seems like it could work,  but at the same time it also seems like it could be too specifically  oriented towards typical chatbot development and not flexible enough for  my purpose.  
+
+
+Anyway, sorry for the long winded post.  
+ 
+
+Any advice would be greatly appreciated.
+## [9][Restricting TLS version when accessing S3 over the internet - is Cloudfront the only answer?](https://www.reddit.com/r/aws/comments/hbadu0/restricting_tls_version_when_accessing_s3_over/)
+- url: https://www.reddit.com/r/aws/comments/hbadu0/restricting_tls_version_when_accessing_s3_over/
 ---
-Why the fuck hasn't a solution been created for the problem of  "User must change password at next login" not been created yet? How is everyone doing on-boarding?
-## [6][Reminder: AWS Summit Online is starting today!](https://www.reddit.com/r/aws/comments/han0w1/reminder_aws_summit_online_is_starting_today/)
-- url: https://www.reddit.com/r/aws/comments/han0w1/reminder_aws_summit_online_is_starting_today/
+Hi,
+
+I have a private S3 bucket that I need to grant access to a third party, who will download data out of it.
+
+The current setup is they have an AWS account and programmatic  user that has explicit permissions granted to a role that can only access that bucket.  They then use one of the AWS SDK's to download the files to their servers over the internet.
+
+The bucket policy is setup to deny non-SSL traffic and to restrict access to their IP ranges.
+
+I have now been asked to ensure that this access is restricted to TLS V1.2 or greater.
+
+While it is possible to do this via CloudFront, I am a bit unsure how this would fit with the above scenario without a lot of rework.
+
+Does anyone know of any other way to restrict TLS version?
+
+Thanks
+## [10][Does Aurora Serverless support Multi-AZ by default ?](https://www.reddit.com/r/aws/comments/hbe8is/does_aurora_serverless_support_multiaz_by_default/)
+- url: https://www.reddit.com/r/aws/comments/hbe8is/does_aurora_serverless_support_multiaz_by_default/
 ---
-See more info and how to register [here](https://aws.amazon.com/events/summits/online/emea/agenda/)
+Hi,
 
-Can't wait!
+When choosing to create a new RDS Aurora **Serverless** (Mysql or Postgres) there's no option to select **Multi-AZ**.
 
-EDIT: looks like they should have used scheduled auto scaling instead of target tracking:) site seems to be up and working now...
+Does the service support Multi-AZ by default ?
 
-Update: it seems like their whole schedule has shifted mid-day by an hour. I'm utterly confused at what's going on everywhere. It's a prerecorded summit, how hard is it really? you were supposed to be the chosen one AWS....  
-Do what I say, not what I do much?  
+In case of an AZ failure does Aurora Serverless stay running ?
 
-## [7][What would be the best way to build Gravatar like service with using AWS services and least amount of code?](https://www.reddit.com/r/aws/comments/har7l0/what_would_be_the_best_way_to_build_gravatar_like/)
-- url: https://www.reddit.com/r/aws/comments/har7l0/what_would_be_the_best_way_to_build_gravatar_like/
+Thank you.
+## [11][EC2 instance can no longer call AWS ec2 stop-instances](https://www.reddit.com/r/aws/comments/hbax8r/ec2_instance_can_no_longer_call_aws_ec2/)
+- url: https://www.reddit.com/r/aws/comments/hbax8r/ec2_instance_can_no_longer_call_aws_ec2/
 ---
-How could you build a system with AWS services that:
-1. A user can upload an image, and the only detail they give out is their email.
-2. The uploaded image can be accessed by some hash (generated from email?) in public.
-3. The uploaded image GET must also have support for width and height parameters that allows to fetch custom size uploaded image. If no width and height is specified, a default 250x250 image is returned.
+I have a ec2 instance with the following rights on a instance policy
 
-How would build it with AWS services with using least amount of code?
-## [8][SNS sends two emails for RDS snapshot creation](https://www.reddit.com/r/aws/comments/haquel/sns_sends_two_emails_for_rds_snapshot_creation/)
-- url: https://www.reddit.com/r/aws/comments/haquel/sns_sends_two_emails_for_rds_snapshot_creation/
----
-I'm setting up SNS to send out emails confirming the snapshots went off and completed successfully. Right now cloudwatch has an event set up for RDS DB Snapshot Events but I get two emails.
+ec2:StopInstances
+ec2:StartInstances
+ec2:DescribeTags
 
-One is "creating autmoated snapshot" and the second 2 minutes later is "Automated snapshot created" telling me that it completed.  
-  
-What JSON should I have in cloudwatch to only receive the second one? Here is what was input by amazon by default  
-  
-    {
-      "source": [
-        "aws.rds"
-      ],
-      "detail-type": [
-        "RDS DB Snapshot Event"
-      ]
-    }
-## [9][Appstream: Files question](https://www.reddit.com/r/aws/comments/haqsm4/appstream_files_question/)
-- url: https://www.reddit.com/r/aws/comments/haqsm4/appstream_files_question/
----
-In our use case we have a program where we need to at times update the files folder, doing this through image builder is time consuming - is there an easier way (perhaps mapping a S3 drive at run time?) to update these files without updating the image?.
-## [10][How to store data/file-uploads securely where a visitor cant guess URLs for file uploads using S3?](https://www.reddit.com/r/aws/comments/hamazy/how_to_store_datafileuploads_securely_where_a/)
-- url: https://www.reddit.com/r/aws/comments/hamazy/how_to_store_datafileuploads_securely_where_a/
----
-* Using Django and AWS S3 for file uploads
-* I dont want visitors to be able to guess eg. [www.whatever.com/user/file/2332fdsfSDFsdfsfd234.jpg](http://www.whatever.com/user/file/2332fdsfSDFsdfsfd234.jpg) for another users. All data should be private. A user will upload a private document or a photo of themselves and it should only be viewable by the logged in user or the admin of the web app.
-* What is the term/method I should look up to handle this situation?
-## [11][Trouble with AWS Glue and adding column names through a custom classifier](https://www.reddit.com/r/aws/comments/haptk2/trouble_with_aws_glue_and_adding_column_names/)
-- url: https://www.reddit.com/r/aws/comments/haptk2/trouble_with_aws_glue_and_adding_column_names/
----
-Hey guys,
+Etc...
 
-important: we are deploying everything with terraform but a manual workaround for this would also be sufficient!
+The instance (using amzn2-ami-hvm-2.0.20200520.1-x86_64-gp2) runs a go application within docker for performing certain actions. One of these actions include stopping/starting instances in a managed way within the same VPC. It use to work and the application was able to stop instances, but with the last few weeks I am now getting “UnauthorizedOperation” error. I even tried connecting to the server using ssh and performing a aws ec2 stop-instances command. The other command that I can no longer execute is ec2 describe-tags (again, not authorised). 
 
-For a client we are required to read a .tsv file that is located in a S3. This file does NOT have any headers and currently if we run a crawler to populate a database with a table in Glue, we get the col1, col2 etc.. Not desired behaviour so we got the requirement to add column names.
+I am stuck. I do not know why I can no longer perform these actions. My next step is to revert to an older AMI (though that surely should have no effect). 
 
-We tried adding a custom classifier that adds column names to the table but this does not seem to work. I am wondering if anyone has experience here with Glue and how to solve this. If you guys require more info (scrubbed) let me know and I can see what to provide!  
-
-
-Cheers, ConsultantCat
+Any help, ideas?

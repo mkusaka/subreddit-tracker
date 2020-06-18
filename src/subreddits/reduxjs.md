@@ -1,9 +1,97 @@
 # reduxjs
-## [1][Create simple POS with React, Node and MongoDB #6: Redux Integration](https://www.reddit.com/r/reduxjs/comments/ha0wdc/create_simple_pos_with_react_node_and_mongodb_6/)
+## [1][Parent componentDidMount and child componentDidMount.](https://www.reddit.com/r/reduxjs/comments/hbbc6n/parent_componentdidmount_and_child/)
+- url: https://www.reddit.com/r/reduxjs/comments/hbbc6n/parent_componentdidmount_and_child/
+---
+I am trying to teach myself Redux and I am having trouble with an assignment.  I'm trying to figure out how to let a child use componentDidMount without the whole component tree, it belongs to, re-rendering.
+Here's are some pics to explain my problem:
+When I click on the [todo item](https://imgur.com/5SJ3QFS) I expect it to open up and reveal the details of the todo item including the [steps](https://imgur.com/bhSL24w).  This does happen BUT I only see the steps flash for a second and I'm back to seeing only the [todo list item](https://imgur.com/5SJ3QFS).  The todo items(parents) are fetched just like the steps(children).
+
+Please let me know if you need more information!!!
+
+Here is my code...
+
+
+Child component:
+
+
+    class TodoViewDetail extends React.Component {
+        constructor(props) {
+            super(props);
+            this.props = props;
+        }
+        componentDidMount() {
+            this.props.fetchSteps();
+        }
+        render() {
+            const { body, id } = this.props.todo;
+            return (
+                &lt;div className="todo-details"&gt;
+                    &lt;p&gt;{body}&lt;/p&gt;
+                    &lt;StepListContainer todoId={id} /&gt;
+                    &lt;button onClick={this.props.deleteTodo}&gt;Delete&lt;/button&gt;
+                &lt;/div&gt;
+            );
+        }
+    }
+
+fetchSteps action:
+
+
+    export const receiveSteps = (steps) =&gt;  ({
+        type: RECEIVE_STEPS,
+        steps: steps
+    });
+    export function fetchSteps(todoId) {
+        return (dispatch, state) =&gt; {
+            return stepAPIUtil.fetchSteps(todoId).then(
+                    successfulStepsResponse =&gt; dispatch(receiveSteps(successfulStepsResponse)
+                )
+            )
+        }
+    }
+
+ajax request:
+
+
+    export function fetchSteps(todoId) {
+        return $.ajax({
+            type: "GET",
+            url: `/api/todos/${todoId}/steps`,
+        });
+    }
+## [2][How Redux Toolkit can reduce your setup of Redux in your next React app](https://www.reddit.com/r/reduxjs/comments/hbc6ca/how_redux_toolkit_can_reduce_your_setup_of_redux/)
+- url: https://medium.com//how-redux-toolkit-can-reduce-your-setup-of-redux-in-your-react-app-d87baab59268?source=friends_link&amp;sk=626b48e7ab94dff289177c14be3b7383
+---
+
+## [3][I need help refactoring a middleware to use dependency injection.](https://www.reddit.com/r/reduxjs/comments/hb8u24/i_need_help_refactoring_a_middleware_to_use/)
+- url: https://www.reddit.com/r/reduxjs/comments/hb8u24/i_need_help_refactoring_a_middleware_to_use/
+---
+I'm working on an application that uses legacy code from its version 1, where Redux middlewares were used to handle some actions. This middlewear would do something like `import Logger from './logger';` and `Logger.emit('some log');`.
+
+In the new version of this application, `Logger` (among other objects, functions, and values) are no longer static modules. They are dependency injected:
+
+    &lt;Application logger={Logger} /&gt;
+
+The middleware can no longer import these variables this way, because they don't exist as simple modules. They exist within the React lifecycle as props.
+
+What is the best way to handle this?
+
+My team has two ideas, but I wanted to make sure we aren't overlooking anything obvious or potential problems.
+
+1) Pass these values as a part of the action. Instead of `{ type: 'do', value: true }` it would now need to be `{ type: 'do', value: true, logger: Logger }`.
+
+2) Create the store inside a `useMemo` on `Application` mount.
+
+What is the optimal solution for injecting dependencies into actions?
+## [4][Modern React/React Router Auth Best Practices with Redux Saga Firebase + React Hooks?](https://www.reddit.com/r/reduxjs/comments/hauvve/modern_reactreact_router_auth_best_practices_with/)
+- url: /r/reactjs/comments/hauut4/modern_reactreact_router_auth_best_practices_with/
+---
+
+## [5][Create simple POS with React, Node and MongoDB #6: Redux Integration](https://www.reddit.com/r/reduxjs/comments/ha0wdc/create_simple_pos_with_react_node_and_mongodb_6/)
 - url: https://blog.soshace.com/create-simple-pos-with-react-node-and-mongodb-6-redux-integration/
 ---
 
-## [2][Advice for a frontend dev — firing multiple api calls at once](https://www.reddit.com/r/reduxjs/comments/h9u0mp/advice_for_a_frontend_dev_firing_multiple_api/)
+## [6][Advice for a frontend dev — firing multiple api calls at once](https://www.reddit.com/r/reduxjs/comments/h9u0mp/advice_for_a_frontend_dev_firing_multiple_api/)
 - url: https://www.reddit.com/r/reduxjs/comments/h9u0mp/advice_for_a_frontend_dev_firing_multiple_api/
 ---
 I'm struggling to find the right words to convey what I'm looking for in my research, so I thought I would ask the reddit community. I am looking for best practices to create records in different tables at once.
@@ -11,7 +99,7 @@ I'm struggling to find the right words to convey what I'm looking for in my rese
 An example would be, user registration. Say you need to create 6 records for that user when they sign up, which need to connect. By connect I mean in the sense that if a user and team were created on user registration, the `userID` would need to be included in the team's members array. So the records need to fire in order so the relationship is properly recorded. So user would need to be created first, then the team record so I can add the `userID` to the team's members. Also note that the user record would need to be updated later on (after the team's record is created) with the `teamID` under the user's teams.
 
 So as you can see it feels a bit all over the place. Currently I have multiple API calls being fired on user submit. While I have this working using `redux`, `firebase` and `react` — I foresee a lot of potential errors happening and feel as if I am not doing this in the most efficient way. I want to do this correctly and happy to do the research, I'm just not exactly sure what I am looking for. I was hoping for some guides, information, search terms, etc — basically anything to help me understand this concept more throughly if that makes sense.
-## [3][Dispatching for one type of global state affects the other. Why?](https://www.reddit.com/r/reduxjs/comments/h7t6sq/dispatching_for_one_type_of_global_state_affects/)
+## [7][Dispatching for one type of global state affects the other. Why?](https://www.reddit.com/r/reduxjs/comments/h7t6sq/dispatching_for_one_type_of_global_state_affects/)
 - url: https://www.reddit.com/r/reduxjs/comments/h7t6sq/dispatching_for_one_type_of_global_state_affects/
 ---
 I'm using Redux with my React Hooks simple counter project. It worked without any bugs or problems when the only global state was a simple integer with +/- buttons to. Then I added a second global state for light/dark themes and found that the add/subtract buttons affect the light/dark variable! I think I'm misusing the useDispatch() hook or combining reducers incorrectly. I've tried moving things into different containers and fiddled a lot with the syntax. In the code below I have omitted `import` and `export` statements for brevity:  
@@ -99,7 +187,7 @@ index.js:
         &lt;Provider store={store}&gt;&lt;App /&gt;&lt;/Provider&gt;, document.getElementById('root')
     );
     registerServiceWorker();
-## [4][Asynchronous actions, Redux store and race conditions.](https://www.reddit.com/r/reduxjs/comments/h7j059/asynchronous_actions_redux_store_and_race/)
+## [8][Asynchronous actions, Redux store and race conditions.](https://www.reddit.com/r/reduxjs/comments/h7j059/asynchronous_actions_redux_store_and_race/)
 - url: https://www.reddit.com/r/reduxjs/comments/h7j059/asynchronous_actions_redux_store_and_race/
 ---
 **The problem:**
@@ -125,13 +213,13 @@ I can think of a few solutions to this, but all seem slightly complex..
 &amp;#x200B;
 
 Any other suggestions? Thanks.
-## [5][Best practice for actions?](https://www.reddit.com/r/reduxjs/comments/h13l2y/best_practice_for_actions/)
+## [9][Best practice for actions?](https://www.reddit.com/r/reduxjs/comments/h13l2y/best_practice_for_actions/)
 - url: https://www.reddit.com/r/reduxjs/comments/h13l2y/best_practice_for_actions/
 ---
 At my work we use something along the lines of every real "action" having a pending, success, and fail action. Out of curiosity I checked some online resources and I'll see more of a SET vs GET sort of thing for actions. Just wondering if there is a best practice for this sort of thing for my own projects?
 
 Thanks
-## [6][Why should I write unit test for actionCreators?](https://www.reddit.com/r/reduxjs/comments/h0ue75/why_should_i_write_unit_test_for_actioncreators/)
+## [10][Why should I write unit test for actionCreators?](https://www.reddit.com/r/reduxjs/comments/h0ue75/why_should_i_write_unit_test_for_actioncreators/)
 - url: https://www.reddit.com/r/reduxjs/comments/h0ue75/why_should_i_write_unit_test_for_actioncreators/
 ---
 Reference from [Official docs](https://redux.js.org/recipes/writing-tests#action-creators):
@@ -159,71 +247,3 @@ But  is this the only case? Are there any other benefits  of writing tests cases
 
 
 EDIT: I do use `redux-saga` for managing async actions (fetching data through API calls etc) and I do write unit tests for sagas. I'm only concerned  about writing unit tests for action creators!
-## [7][Can you use reducers across sibling components?](https://www.reddit.com/r/reduxjs/comments/h0dbjw/can_you_use_reducers_across_sibling_components/)
-- url: https://www.reddit.com/r/reduxjs/comments/h0dbjw/can_you_use_reducers_across_sibling_components/
----
-This might seem like a dumb question but this current code architecture I'm working with, each "sibling component" think left/right panels, have their own reducers(obviously?). Then they're joined into a parent reducer eg. `allReducers`.
-
-So for the sake of an example we have: left panel, right panel
-
-If right-panel has some state it's maintaining, can left-panel use it(without using that primary combined parent reducer).
-
-Anyway I know this is hard to imagine without code, also we're using saga which I don't know off hand what it's for. The saga files have function generators inside them. I don't think it's relevant.
-## [8][Does mapStateToProps run first before the component pulls in the props passed down into it?](https://www.reddit.com/r/reduxjs/comments/gz7hpt/does_mapstatetoprops_run_first_before_the/)
-- url: https://www.reddit.com/r/reduxjs/comments/gz7hpt/does_mapstatetoprops_run_first_before_the/
----
-This is probably a weird question but as I trace through(console log execution) of events when loading a component that is using `mapStateToProps` the value I set in the reducer state is what I see on the immediate load of the component.
-
-I have a case where there is a destructured "key" in the props that is the same name/key as an added prop from `mapStateToProps` so I'm wondering if this is expected or a clash/technically an error...
-
-And testing if I take out the `key: val` entry in the reducer state, the destructured prop is still there but the value is undefined.
-
-edit: here's a better idea of what I'm saying
-
-`const componentName = (props) =&gt; {`
-
-`const { isLoading } = props;`
-
-`}`
-
-`const mapStateToProps = state =&gt; ({`
-
-`isLoading: state.reducerState.isLoading`
-
-`})`
-
-`// rest of dispatch/connect`
-
-I don't know if this fully captures the issue, since we also have connected components going on, a main reducer/saga...
-## [9][I am getting Reddit's store in my app and not the one I created](https://www.reddit.com/r/reduxjs/comments/gvduz0/i_am_getting_reddits_store_in_my_app_and_not_the/)
-- url: https://www.reddit.com/r/reduxjs/comments/gvduz0/i_am_getting_reddits_store_in_my_app_and_not_the/
----
-I made a small app that fetches restaurant data, displays it, and allows filtering and searching cities and all the usual stuff using useReducer and now I am trying to refactor it to use Redux. I am not using Redux ToolKit yet but I plan on learning it for my next project.
-
-Anyway, I made my rootReducer, brought in Provider and createStore and hooked all that up but in Redux devtools I see Reddit's store for my user and not my app store. Here is my index.js code. And I did install redux and react-redux and I see it in package.json. I have not connected any components yet but should I not see my store in redux dev tools?
-
-    ...
-    import { createStore } from 'redux';
-    import { Provider } from 'react-redux';
-    import { rootReducer } from './reducers/rootReducer.js';
-    
-    const store = createStore(rootReducer);
-    
-    ReactDOM.render(
-      &lt;Provider store={store}&gt;
-        &lt;React.StrictMode&gt;
-          &lt;App /&gt;
-        &lt;/React.StrictMode&gt;
-      &lt;/Provider&gt;,
-      document.getElementById('root')
-    );
-    
-    ...
-
-Thanks in advance for nay help
-
-EDIT: formatting
-## [10][[Q] Why so much work just for a global storage space?](https://www.reddit.com/r/reduxjs/comments/gv47ka/q_why_so_much_work_just_for_a_global_storage_space/)
-- url: https://www.reddit.com/r/reduxjs/comments/gv47ka/q_why_so_much_work_just_for_a_global_storage_space/
----
- I was thinking that perhaps redux has too much indirection, maybe? I mean its a bit too much separation of concern with all the mapdispatch and mapstate and actions and reducers . If the point is to use a global store why not just import a singleton class and use its state with plain getters &amp; setters? or some other object with application level scope ?  Thanks in advance for reading and giving this some thought. 

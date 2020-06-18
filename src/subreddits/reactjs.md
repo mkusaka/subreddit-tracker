@@ -109,165 +109,62 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/gk41zb/whos_available_may_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][React Functional Components and Lodash High-Order Functions](https://www.reddit.com/r/reactjs/comments/haks1w/react_functional_components_and_lodash_highorder/)
-- url: https://medium.com/@vdeantoni/react-functional-components-and-lodash-high-order-functions-a0bc9e2df171?source=friends_link&amp;sk=403c607784238c9f812917be3e2bee57
+## [3][I built an open source windows based tool using ReactJS to monitor and analyze your system's power and battery usage over time showcasing various insights like battery capacity, estimated life, cycle, recent usages, etc with various options to export all of the data in structured format (JSON, PDF)](https://www.reddit.com/r/reactjs/comments/hauq4l/i_built_an_open_source_windows_based_tool_using/)
+- url: https://v.redd.it/ftl6n7qxzh551
 ---
 
-## [4][ReactJS Automatic Deployment with Github Actions Tutorial](https://www.reddit.com/r/reactjs/comments/ha4mnw/reactjs_automatic_deployment_with_github_actions/)
-- url: https://www.youtube.com/watch?v=encpjND99xU&amp;feature=youtu.be
+## [4][Do you use TypeScript?](https://www.reddit.com/r/reactjs/comments/hb9eyn/do_you_use_typescript/)
+- url: https://www.reddit.com/r/reactjs/comments/hb9eyn/do_you_use_typescript/
+---
+Recently been heavily using TS for React projects and will have to say vanilla JS just isn’t as nice to be inside of anymore. Who else?
+
+[View Poll](https://www.reddit.com/poll/hb9eyn)
+## [5][How to Add a Heatmap to Your Covid Tracker Using React](https://www.reddit.com/r/reactjs/comments/hbeka4/how_to_add_a_heatmap_to_your_covid_tracker_using/)
+- url: https://medium.com/@kennethscoggins/how-to-add-a-heatmap-to-your-covid-tracker-using-react-9e51cf633a0f?source=friends_link&amp;sk=e0b151536d70864d2e6515516f0bbc2c
 ---
 
-## [5][How to update a single propery in an array of objects using React Hooks?](https://www.reddit.com/r/reactjs/comments/hanvk7/how_to_update_a_single_propery_in_an_array_of/)
-- url: https://www.reddit.com/r/reactjs/comments/hanvk7/how_to_update_a_single_propery_in_an_array_of/
+## [6][I18n for statically generated (Next.js) apps](https://www.reddit.com/r/reactjs/comments/hbdxmc/i18n_for_statically_generated_nextjs_apps/)
+- url: https://www.reddit.com/r/reactjs/comments/hbdxmc/i18n_for_statically_generated_nextjs_apps/
 ---
-Hi,
+Hi :)
 
-I am creating a memory game and I need to update `turned` property from `false` to `true` on click`.` I have this code but it throw an error. Could you help me please?
+Recently, I've been struggling with setting up i18n with the (Next.js) static export. (Namely the i18next library but did not find any other general solutions.)
 
- 
-
-`import React, {useEffect, useState} from 'react'`  
-`import Card from './Card'`  
-`function Index({data}) {`  
- `const [dataInternal, setData] = useState(null)`  
- `const [clickedCardId, setClickedCard] = useState(null)`  
- `useEffect(() =&gt; {`  
- `const arr = []`  
- `data.map((item) =&gt;{`  
- `return arr.push(`  
-        `{`  
- `value:item.value,`  
- `pic:item.pic,`  
- `turned:false`  
-        `}`  
-      `)`  
-    `})`  
- `setData(arr)`  
-  `}, [data])`  
- `dataInternal &amp;&amp; dataInternal.map((item, index) =&gt; {`  
- `if (index === clickedCardId) {`  
- `return setData(Object.assign({}, item, { turned:true }))`  
-    `} else {`  
- `return setData(item)`  
-    `}`  
-  `})`  
-   
-   
- `return (`  
- `&lt;div className="memory-game-container"&gt;`  
- `{dataInternal &amp;&amp; dataInternal.map((item, index) =&gt; (`  
- `&lt;Card key={index} item={item} setClickedCard={setClickedCard} id={index}/&gt;`  
-      `))}`  
- `&lt;/div&gt;`  
-  `)`  
-`}`  
-`export default Index`
-## [6][[Typescript] React/Redux/Ajax/SQL = Where to put models?](https://www.reddit.com/r/reactjs/comments/hapi9m/typescript_reactreduxajaxsql_where_to_put_models/)
-- url: https://www.reddit.com/r/reactjs/comments/hapi9m/typescript_reactreduxajaxsql_where_to_put_models/
----
-Hi all,
-
-I have a PWA project based on React + Redux + Axios / SQL
-
-I want to ask how / where you put your models from Services/Redux/SQL, models are shared 
-
-* request model for service
-* response model from service
-   * response model can be used for SQL 
-   * response model can be used for Redux 
+What I'd like to achieve?
 
 &amp;#x200B;
 
-for generic models, should I create folder &lt;rootDir&gt;/models? or what are you using?
+* I want to generate *multiple versions* of the app, one "version" per one language.
+* I want to handle all the translations at *build time*. (I'd like to output static HTML files translated to different languages and *don't* want to include the translation logic in the bundle which gets shipped to the user)
 
-&amp;#x200B;
+Has anyone had any success achieving something similar? The closest solution I found is [https://github.com/claudetech/node-static-i18n](https://github.com/claudetech/node-static-i18n), which is unfortunately only for plain HTML (no JSX)...
+## [7][redux-toolkit does not allow mutating state in createSlice](https://www.reddit.com/r/reactjs/comments/hbd1ay/reduxtoolkit_does_not_allow_mutating_state_in/)
+- url: https://www.reddit.com/r/reactjs/comments/hbd1ay/reduxtoolkit_does_not_allow_mutating_state_in/
+---
+Hi guys. I'm trying to implement redux-toolkit in my React project. In the doc it says that redux-toolkit comes with immer, which allows mutating state. However when I try to do so, here are the errors I'm getting:
 
-Thank you!
-## [7][6 Stunning React.js Project Ideas🚀](https://www.reddit.com/r/reactjs/comments/ha9dex/6_stunning_reactjs_project_ideas/)
-- url: https://flatlogic.com/blog/6-stunning-react-js-project-ideas/
+\-  `Unhandled Rejection (TypeError): Cannot add property x, object is not extensible` 
+
+\-  `Unhandled Rejection (Error): Invariant failed: A state mutation was detected between dispatches, in the path 'myObject.0.aRandomProp'.  This may cause incorrect behavior.`  
+
+Please let me know if you have come across this problem before. If there's no fix for this, I might need to go back to vanilla redux, since redux-toolkit is doing the opposite of making my life easier
+## [8][Learn React templates in 5 minutes](https://www.reddit.com/r/reactjs/comments/hbcoko/learn_react_templates_in_5_minutes/)
+- url: https://mkdev.me/en/posts/learn-react-templates-in-5-minutes
 ---
 
-## [8][Github Pages breaks background images locally in Create React App](https://www.reddit.com/r/reactjs/comments/har3ze/github_pages_breaks_background_images_locally_in/)
-- url: https://www.reddit.com/r/reactjs/comments/har3ze/github_pages_breaks_background_images_locally_in/
----
-Here's my repo: [https://github.com/DanielJWagener/calculator-react](https://github.com/DanielJWagener/calculator-react)  
-
-
-When I deployed my app to Github Pages, I set `"homepage"` in my [package.json](https://github.com/DanielJWagener/calculator-react/blob/master/package.json) to `"`[`http://DanielJWagener.github.io/calculator-react`](http://DanielJWagener.github.io/calculator-react)`"`. The deployment went fine and the hosted app looks okay, but now when I run `yarn start` on my machine, it runs on localhost:3000/calculator-react (instead of just localhost:3000) and the background image in my [Display component](https://github.com/DanielJWagener/calculator-react/blob/master/src/components/Display/display.styles.js) doesn't render. The issue resolves itself if I change `"homepage"`  to  `"`[`http://DanielJWagener.github.io`](http://DanielJWagener.github.io/calculator-react)`/"`. Is there a way to avoid having to change that URL before and after deployments? Or is it just an annoying little thing I have to remember to do?
-## [9][Help with socket io and redux saga bug](https://www.reddit.com/r/reactjs/comments/haq60f/help_with_socket_io_and_redux_saga_bug/)
-- url: https://www.reddit.com/r/reactjs/comments/haq60f/help_with_socket_io_and_redux_saga_bug/
----
-Hi all, i figured i would make a post here before I submit an issue to the package. I have an event channel that I'm using to listen for incoming socket events and dispatch actions.  
-
-```
-const createSocketChannel = (socket) =&gt;
-  eventChannel((emit) =&gt; {
-    socket.on("message", (payload) =&gt; emit(() =&gt; messageReceived(payload)));
-
-    socket.on("client-disconnected", (payload) =&gt; emit(() =&gt; clientDisconnected(payload);
-
-    return () =&gt; {};
-  });
-```
-
-What's strange is the in the first event, this is working perfectly. In the second event, if I replace the dispatch action with a console.log of the payload, it will log the payload every time. The emit function is the only thing that is not called.
-
-...Any one have any idea? Is there something I'm doing wrong or some other code that could help identity what this problem is?
-## [10][Exquisite Consequences](https://www.reddit.com/r/reactjs/comments/hapw57/exquisite_consequences/)
-- url: https://www.reddit.com/r/reactjs/comments/hapw57/exquisite_consequences/
----
-Hi r/reactjs!! I'm currently taking a course in graphic design and have built a web app using ReactJS that is a twist on generative art. Typically, the generative artist hands the process over to a machine, in Exquisite Consequences, Im going to hand the work over to you and crowd source the elements. I would love it, if you took 30 seconds of your time and contributed to my work here:
-
-[https://humannetwork-93d55.web.app/](https://humannetwork-93d55.web.app/)
-## [11][Build your React Blog with Firebase - 11 - Upload an Article to Firebase Firestore](https://www.reddit.com/r/reactjs/comments/han7gz/build_your_react_blog_with_firebase_11_upload_an/)
-- url: https://www.youtube.com/watch?v=Uo2yqA9qI4I
+## [9][We created a site to show corporate anti-racism donations proportional to their profits (and how much you can donate to make the same impact)](https://www.reddit.com/r/reactjs/comments/hav0pg/we_created_a_site_to_show_corporate_antiracism/)
+- url: https://v.redd.it/tgnwra5l2i551
 ---
 
-## [12][Two types of setState?](https://www.reddit.com/r/reactjs/comments/hakuk5/two_types_of_setstate/)
-- url: https://www.reddit.com/r/reactjs/comments/hakuk5/two_types_of_setstate/
+## [10][Don't model dark mode with a boolean](https://www.reddit.com/r/reactjs/comments/hbb19x/dont_model_dark_mode_with_a_boolean/)
+- url: https://dev.to/sebastienlorber/insight-4-don-t-model-dark-mode-with-a-boolean-ol1
 ---
-    import React from 'react';
-    import './App.css';
-    
-    class App extends React.Component {
-      constructor(){
-        super();
-    
-        this.state = {
-          time: new Date(),
-        }
-      }
-    
-    currentTime(){
-      this.setState({
-        time: new Date(),
-    
-      })
-    }
-    
-      componentWillMount(){
-       setInterval(()=&gt; this.currentTime(),1000)
-      }
-    
-      render(){
-      return (
-        &lt;div className="App"&gt;
-    
-         {this.state.time.toLocaleTimeString()}
-        &lt;/div&gt;
-      );}
-    }
-    
-    export default App;
-    
 
-here in the setState line,
+## [11][Urql now has Offline Support - Phil Pluckthun on Twitter](https://www.reddit.com/r/reactjs/comments/haxfod/urql_now_has_offline_support_phil_pluckthun_on/)
+- url: https://twitter.com/_philpl/status/1273292200995061760?s=20
+---
 
-when i use equals sign, it doesnt update every second
+## [12][Build your React Blog with Firebase - 12 - Upload file to Firebase Storage](https://www.reddit.com/r/reactjs/comments/hbalqw/build_your_react_blog_with_firebase_12_upload/)
+- url: https://www.youtube.com/watch?v=GBPMTTrE6HI
+---
 
-     this.setState=({
-        time: new Date(),
-    
-      })
-
-like this, is there any reason for that?

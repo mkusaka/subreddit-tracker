@@ -79,49 +79,51 @@
 
 
 &amp;nbsp;
-## [2][The biggest JS conf in the cloud starts tomorrow. Free tickets are still available.](https://www.reddit.com/r/javascript/comments/hamya2/the_biggest_js_conf_in_the_cloud_starts_tomorrow/)
-- url: https://live.jsnation.com
+## [2][WTF Wednesday (June 17, 2020)](https://www.reddit.com/r/javascript/comments/hau2vx/wtf_wednesday_june_17_2020/)
+- url: https://www.reddit.com/r/javascript/comments/hau2vx/wtf_wednesday_june_17_2020/
+---
+Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
+Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
+this is the place.
+
+[Named after this comic](https://davidwalsh.name/demo/code-review.png)
+## [3][Showcase GitHub repositories on your website](https://www.reddit.com/r/javascript/comments/hbbcpi/showcase_github_repositories_on_your_website/)
+- url: https://github.com/Tarptaeya/repo-card
 ---
 
-## [3][Bootstrap 5 alpha is officially released removing jQuery and going all in with vanilla JS](https://www.reddit.com/r/javascript/comments/haopme/bootstrap_5_alpha_is_officially_released_removing/)
+## [4][Bootstrap 5 alpha is officially released removing jQuery and going all in with vanilla JS](https://www.reddit.com/r/javascript/comments/haopme/bootstrap_5_alpha_is_officially_released_removing/)
 - url: https://themesberg.com/blog/bootstrap/bootstrap-version-5-alpha-whats-new
 ---
 
-## [4][Our experience with micro-frontends](https://www.reddit.com/r/javascript/comments/habtdg/our_experience_with_microfrontends/)
-- url: https://medium.com/hacking-talent/two-years-of-micro-frontends-a-retrospective-522526f76df4
+## [5][The biggest JS conf in the cloud starts tomorrow. Free tickets are still available.](https://www.reddit.com/r/javascript/comments/hamya2/the_biggest_js_conf_in_the_cloud_starts_tomorrow/)
+- url: https://live.jsnation.com
 ---
 
-## [5][gab: A CLI tool to create/copy/paste Github actions from terminal](https://www.reddit.com/r/javascript/comments/hammvk/gab_a_cli_tool_to_createcopypaste_github_actions/)
-- url: https://github.com/rajasegar/gab
+## [6][Don't model dark mode with a boolean](https://www.reddit.com/r/javascript/comments/hbb10g/dont_model_dark_mode_with_a_boolean/)
+- url: https://dev.to/sebastienlorber/insight-4-don-t-model-dark-mode-with-a-boolean-ol1
 ---
 
-## [6][Expanding Single Page Apps into multiple Browser Windows](https://www.reddit.com/r/javascript/comments/haolwi/expanding_single_page_apps_into_multiple_browser/)
-- url: https://medium.com/@tobiasuhlig/expanding-single-page-apps-into-multiple-browser-windows-e6d9bd155d59?source=friends_link&amp;sk=bbfe1dada95c5674669e463f93360822
+## [7][Learn React templates in 5 minutes](https://www.reddit.com/r/javascript/comments/hbcp0q/learn_react_templates_in_5_minutes/)
+- url: https://mkdev.me/en/posts/learn-react-templates-in-5-minutes
 ---
 
-## [7][Navim: navigate files on the terminal with the minimal amount of keystrokes.](https://www.reddit.com/r/javascript/comments/ha59ig/navim_navigate_files_on_the_terminal_with_the/)
-- url: https://github.com/MaiaVictor/Navim
+## [8][Now free to read online: “Deep JavaScript: Theory and techniques” [Show Reddit]](https://www.reddit.com/r/javascript/comments/hasbwv/now_free_to_read_online_deep_javascript_theory/)
+- url: https://exploringjs.com/deep-js/
 ---
 
-## [8][[AskJS] Advice needed. I’m still a newbie to this. A classmate of mine recommend me to start from html then to CSS then to JavaScript. Is this ideal?](https://www.reddit.com/r/javascript/comments/hanm5q/askjs_advice_needed_im_still_a_newbie_to_this_a/)
-- url: https://www.reddit.com/r/javascript/comments/hanm5q/askjs_advice_needed_im_still_a_newbie_to_this_a/
----
-I don’t mind starting from the basics as long as I reach JavaScript. If the other programming languages help me build my way up to JS, then I don’t mind taking my time to learn those.
-
-Some of my classmates hopped right into JS, but I rather take my time to learn the basics and work my way into JS and eventually learn Python...
-
-Any advice or feedback of what I should do/ start with would be greatly appreciated. 
-
-Btw, I’m learning this programming languages through CodeAcademy since it’s free!
-## [9][How To Build A Shopify Headless eCommerce Storefront](https://www.reddit.com/r/javascript/comments/hap0vy/how_to_build_a_shopify_headless_ecommerce/)
-- url: http://selleo-shopify.xyz
+## [9][Announcing swc v1.2.0: Yet another asset bundler](https://www.reddit.com/r/javascript/comments/hau99x/announcing_swc_v120_yet_another_asset_bundler/)
+- url: https://swc-project.github.io/blog/
 ---
 
-## [10][Splitting Event Streams: How RxJS groupBy() Works](https://www.reddit.com/r/javascript/comments/habusy/splitting_event_streams_how_rxjs_groupby_works/)
-- url: https://eugene.coding.blog/rxjs-group-by
+## [10][How To Migrate From TypeORM to Sequelize](https://www.reddit.com/r/javascript/comments/hbaga4/how_to_migrate_from_typeorm_to_sequelize/)
+- url: http://selleo-typeorm.xyz
 ---
 
-## [11][Caching server-side requests - Angular Universal](https://www.reddit.com/r/javascript/comments/hapd3n/caching_serverside_requests_angular_universal/)
-- url: https://andremonteiro.pt/caching-server-side-requests-ng-universal/
+## [11][How Node handles multiple requests so fast](https://www.reddit.com/r/javascript/comments/hazjb3/how_node_handles_multiple_requests_so_fast/)
+- url: https://mateusguimaraes.com/posts/why-do-they-say-nodejs-is-fast
+---
+
+## [12][Benchmarking JavaScript Loops and Methods](https://www.reddit.com/r/javascript/comments/hazn2r/benchmarking_javascript_loops_and_methods/)
+- url: https://medium.com/@michaelmcshinsky/benchmarking-javascript-loops-and-methods-part-1-54bb4889342f
 ---
 

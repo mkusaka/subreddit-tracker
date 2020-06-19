@@ -1,15 +1,43 @@
 # ruby
-## [1][An attempt at creating a "Heroku-like" Docker/Helm/GitHub Action setup for "classic-stack" Rails apps. Feedback wanted.](https://www.reddit.com/r/ruby/comments/haz3c0/an_attempt_at_creating_a_herokulike/)
-- url: https://github.com/lewagon/rails-k8s-demo
+## [1][Web Scraping with Ruby](https://www.reddit.com/r/ruby/comments/hbgajf/web_scraping_with_ruby/)
+- url: https://www.scrapingbee.com/blog/web-scraping-ruby/
 ---
 
-## [2][I wanna make fancy(!) TUIs for Linux using Ruby. Are my only options the ancient and largely undocumented ncurses wrappers?](https://www.reddit.com/r/ruby/comments/hb4uqq/i_wanna_make_fancy_tuis_for_linux_using_ruby_are/)
-- url: https://www.reddit.com/r/ruby/comments/hb4uqq/i_wanna_make_fancy_tuis_for_linux_using_ruby_are/
+## [2][Maintenance Mode and End of Support Dates Announced for AWS SDK For Ruby V2](https://www.reddit.com/r/ruby/comments/hbsf1b/maintenance_mode_and_end_of_support_dates/)
+- url: https://aws.amazon.com/blogs/developer/deprecation-schedule-for-aws-sdk-for-ruby-v2/
 ---
-Every time I've tried to use one of the many ncurses wrappers, there's like one blog post and if you're lucky some docs written for C programmers.
 
-I've tried reading the 'sup' source and it wasn't really helpful. Is the windowed TUI the stuff of wizards in 2020?
-## [3][How to use a string array for case labels and call methods with same name](https://www.reddit.com/r/ruby/comments/hbc4uo/how_to_use_a_string_array_for_case_labels_and/)
+## [3][Rails 6.0.3.2 has been released!](https://www.reddit.com/r/ruby/comments/hbsilw/rails_6032_has_been_released/)
+- url: https://weblog.rubyonrails.org/2020/6/17/Rails-6-0-3-2-has-been-released/
+---
+
+## [4][Looking into learning Ruby](https://www.reddit.com/r/ruby/comments/hbmy6e/looking_into_learning_ruby/)
+- url: https://www.reddit.com/r/ruby/comments/hbmy6e/looking_into_learning_ruby/
+---
+Hey guys! I’m a full stack developer who’s coming from a JavaScript/Node/Express background. And I’m intrested in learning ruby, but a lot of the medium articles are 3+ years old. Would those articles still be relevant?
+If not then any good resources?
+## [5][Alternative to Sidekiq for long-running jobs](https://www.reddit.com/r/ruby/comments/hbi3gv/alternative_to_sidekiq_for_longrunning_jobs/)
+- url: https://www.reddit.com/r/ruby/comments/hbi3gv/alternative_to_sidekiq_for_longrunning_jobs/
+---
+Hello everyone,
+
+i'm developing a pretty old ruby (on rails) app which relies heavy on background processing using Sidekiq. We basically fetch a lot of data from external CRM systems, parses them and persists on our side. As the job sounds relatively easy from the logic perspective, it became a nightmare from the infrastructure/resources/timing perspective. Some CRMs we use have an API designed in a way that  doing one import run might even take up to **20 hours (!!).** As sidekiq has been designed to run a fast and simple jobs, we started to look for alternatives.
+
+I'm not entirely sure what am i looking for to be honest but ideal solution that comes to my mind is: some sort of a cloud service i can send a HTTP request to with any params. This service receives it and runs any script i configured injecting the query params into the "job". Being it docker-based would be additional pro. Even better if i could clone any git repository (containing my ruby script) inside that job. It kinda reminds me of how CircleCI works - you can setup a project, assign github repo to it, prepare a  "workflow" with anything you want inside and trigger a build using a webhook (not sure about that part but you get the idea).
+
+I even thought about setting up a [Drone.io](https://Drone.io) instance but i would prefer to have something in cloud (cloud is my strong requirement - we can't afford to maintain anything complex on our own)
+
+Thanks in advance for any ideas!
+
+PS. i beg you not to advice me to split my long running sidekiq jobs into smaller ones, we already tried that - let's focus on cloud-based solutions :)
+## [6][Is there a full list of structs, unions and functions of the C API?](https://www.reddit.com/r/ruby/comments/hbdjd8/is_there_a_full_list_of_structs_unions_and/)
+- url: https://www.reddit.com/r/ruby/comments/hbdjd8/is_there_a_full_list_of_structs_unions_and/
+---
+I am looking for a complete list of the \`struct\`s, \`typedef struct\`s, and functions in Ruby C API and it's body.  
+
+
+I tried looking up but I found nothing.
+## [7][How to use a string array for case labels and call methods with same name](https://www.reddit.com/r/ruby/comments/hbc4uo/how_to_use_a_string_array_for_case_labels_and/)
 - url: https://www.reddit.com/r/ruby/comments/hbc4uo/how_to_use_a_string_array_for_case_labels_and/
 ---
 Hi All -
@@ -42,59 +70,17 @@ And I was hoping to switch it to something a bit more dynamic:
 Anyone point me in the right direction?
 
 Thanks!
-## [4][Is there a full list of structs, unions and functions of the C API?](https://www.reddit.com/r/ruby/comments/hbdjd8/is_there_a_full_list_of_structs_unions_and/)
-- url: https://www.reddit.com/r/ruby/comments/hbdjd8/is_there_a_full_list_of_structs_unions_and/
+## [8][I wanna make fancy(!) TUIs for Linux using Ruby. Are my only options the ancient and largely undocumented ncurses wrappers?](https://www.reddit.com/r/ruby/comments/hb4uqq/i_wanna_make_fancy_tuis_for_linux_using_ruby_are/)
+- url: https://www.reddit.com/r/ruby/comments/hb4uqq/i_wanna_make_fancy_tuis_for_linux_using_ruby_are/
 ---
-I am looking for a complete list of the \`struct\`s, \`typedef struct\`s, and functions in Ruby C API and it's body.  
+Every time I've tried to use one of the many ncurses wrappers, there's like one blog post and if you're lucky some docs written for C programmers.
 
+I've tried reading the 'sup' source and it wasn't really helpful. Is the windowed TUI the stuff of wizards in 2020?
+## [9][An attempt at creating a "Heroku-like" Docker/Helm/GitHub Action setup for "classic-stack" Rails apps. Feedback wanted.](https://www.reddit.com/r/ruby/comments/haz3c0/an_attempt_at_creating_a_herokulike/)
+- url: https://github.com/lewagon/rails-k8s-demo
+---
 
-I tried looking up but I found nothing.
-## [5][Rails 6.1's ActiveModel Errors Revamp](https://www.reddit.com/r/ruby/comments/hap4u9/rails_61s_activemodel_errors_revamp/)
+## [10][Rails 6.1's ActiveModel Errors Revamp](https://www.reddit.com/r/ruby/comments/hap4u9/rails_61s_activemodel_errors_revamp/)
 - url: https://code.lulalala.com/2020/0531-1013.html
 ---
 
-## [6][Best way to parse shell style (VAR=value) configuration files](https://www.reddit.com/r/ruby/comments/hawtu4/best_way_to_parse_shell_style_varvalue/)
-- url: https://www.reddit.com/r/ruby/comments/hawtu4/best_way_to_parse_shell_style_varvalue/
----
-I have a string `GRUB_CMDLINE_LINUX="quiet rhgb crashkernel=auto"` which is pretty much shell style variable assignment. I need to process this string so I can extract string within the quotes  `quiet rhgb crashkernel=auto` and then split the options into an array.
-
-I do it this way:
-
-    line = 'GRUB_CMDLINE_LINUX="quiet rhgb crashkernel=auto"'
-    kernel_opts = line.match(/"(.*)"/).to_s.delete('"').split(' ')
-
-Is there a leaner way to do it?
-
-Is there a way in Ruby to load shell style configuration files naively (without processing them as strings)?
-## [7][Using Service Objects in Ruby on Rails](https://www.reddit.com/r/ruby/comments/haqv41/using_service_objects_in_ruby_on_rails/)
-- url: https://blog.appsignal.com/2020/06/17/using-service-objects-in-ruby-on-rails.html
----
-
-## [8][Interview with DHH: the Ruby on Rails creator, co-founder &amp; CTO of Basecamp and Le Mans class-winning race car driver](https://www.reddit.com/r/ruby/comments/hami35/interview_with_dhh_the_ruby_on_rails_creator/)
-- url: https://evrone.com/dhh-interview
----
-
-## [9][Encapsulate each validation error as an Error object](https://www.reddit.com/r/ruby/comments/hasv2r/encapsulate_each_validation_error_as_an_error/)
-- url: https://blog.saeloun.com/2020/06/17/rails-active-model-errors
----
-
-## [10][Ruby on rails cheatsheet from Michael Hartl tutorials](https://www.reddit.com/r/ruby/comments/ham5u8/ruby_on_rails_cheatsheet_from_michael_hartl/)
-- url: https://www.reddit.com/r/ruby/comments/ham5u8/ruby_on_rails_cheatsheet_from_michael_hartl/
----
-Hi folks,   
-
-Hope everyone is staying safe!
-
-I started learning Ruby-on-Rails framework two weeks before &amp; made a cheat sheet with minimal explanations of different concepts, referred from **Michael Hartl**’s "[Learn Web Development with Rails - Fourth Edition](https://www.pdfdrive.com/ruby-on-rails-tutorial-learn-web-development-with-rails-4th-edition-e184254589.html)" tutorials.  
-
-The textbook is really awesome &amp; helped me to build a simple blogging website similar to the basic version of Twitter and the source code is available in github: [https://github.com/ddlogesh/rails-tutorial](https://github.com/ddlogesh/rails-tutorial) 
-
-I would like to share these two cheat sheets, which may be a good start for preparing ruby-on-rails framework or recollect the concepts learned from the above-mentioned textbook.  
-
-Rails: [https://www.notion.so/Ruby-on-Rails-Cheat-Sheet-61106a73031d46ec81c285daaebf1409](https://www.notion.so/Ruby-on-Rails-Cheat-Sheet-61106a73031d46ec81c285daaebf1409)
-
-Ruby: [https://www.notion.so/Ruby-Cheat-Sheet-7c8aabc9268b4e65b5691245dd19068c](https://www.notion.so/Ruby-Cheat-Sheet-7c8aabc9268b4e65b5691245dd19068c)
-
-If you are a beginner to Ruby, please watch this 4-hours tutorial from **freeCodeCamp**: [https://www.youtube.com/watch?v=t\_ispmWmdjY](https://www.youtube.com/watch?v=t_ispmWmdjY). Though it's quite a long, it's worth watching it!
-
-Please do share these cheatsheets with your Ruby-on-Rails enthusiasts, who may be interested to learn Ruby-on-Rails.

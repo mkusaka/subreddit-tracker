@@ -109,62 +109,118 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/gk41zb/whos_available_may_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][I built an open source windows based tool using ReactJS to monitor and analyze your system's power and battery usage over time showcasing various insights like battery capacity, estimated life, cycle, recent usages, etc with various options to export all of the data in structured format (JSON, PDF)](https://www.reddit.com/r/reactjs/comments/hauq4l/i_built_an_open_source_windows_based_tool_using/)
-- url: https://v.redd.it/ftl6n7qxzh551
+## [3][I made an instagram clone](https://www.reddit.com/r/reactjs/comments/hbryhy/i_made_an_instagram_clone/)
+- url: https://www.reddit.com/r/reactjs/comments/hbryhy/i_made_an_instagram_clone/
+---
+&amp;#x200B;
+
+https://reddit.com/link/hbryhy/video/ubh629rsxr551/player
+## [4][7 Interesting JavaScript Features in ES2020 That You Should Know - Kriss](https://www.reddit.com/r/reactjs/comments/hbzvh6/7_interesting_javascript_features_in_es2020_that/)
+- url: https://kriss.io/7-interesting-javascript-features-in-es2020-that-you-should-know/#.XuyvbmgzZdg
 ---
 
-## [4][Do you use TypeScript?](https://www.reddit.com/r/reactjs/comments/hb9eyn/do_you_use_typescript/)
-- url: https://www.reddit.com/r/reactjs/comments/hb9eyn/do_you_use_typescript/
----
-Recently been heavily using TS for React projects and will have to say vanilla JS just isn’t as nice to be inside of anymore. Who else?
-
-[View Poll](https://www.reddit.com/poll/hb9eyn)
-## [5][How to Add a Heatmap to Your Covid Tracker Using React](https://www.reddit.com/r/reactjs/comments/hbeka4/how_to_add_a_heatmap_to_your_covid_tracker_using/)
-- url: https://medium.com/@kennethscoggins/how-to-add-a-heatmap-to-your-covid-tracker-using-react-9e51cf633a0f?source=friends_link&amp;sk=e0b151536d70864d2e6515516f0bbc2c
+## [5][📦 Parcel 2 beta 1: improved stability, tree shaking, source map performance, and more! 🚀](https://www.reddit.com/r/reactjs/comments/hbl72g/parcel_2_beta_1_improved_stability_tree_shaking/)
+- url: https://medium.com/@devongovett/parcel-2-beta-1-improved-stability-tree-shaking-source-map-performance-and-more-78179779e8b7
 ---
 
-## [6][I18n for statically generated (Next.js) apps](https://www.reddit.com/r/reactjs/comments/hbdxmc/i18n_for_statically_generated_nextjs_apps/)
-- url: https://www.reddit.com/r/reactjs/comments/hbdxmc/i18n_for_statically_generated_nextjs_apps/
+## [6][Did React development grind to a halt last few weeks?](https://www.reddit.com/r/reactjs/comments/hbztec/did_react_development_grind_to_a_halt_last_few/)
+- url: https://www.reddit.com/r/reactjs/comments/hbztec/did_react_development_grind_to_a_halt_last_few/
 ---
-Hi :)
+https://github.com/facebook/react/graphs/commit-activity
 
-Recently, I've been struggling with setting up i18n with the (Next.js) static export. (Namely the i18next library but did not find any other general solutions.)
+The last 3 weeks there has been a stark difference in commit activity compared to last year.
 
-What I'd like to achieve?
+Does anyone know the reason for this?
+## [7][React-PWA – A minimal React PWA application as a GitHub template](https://www.reddit.com/r/reactjs/comments/hbmtj9/reactpwa_a_minimal_react_pwa_application_as_a/)
+- url: https://github.com/suren-atoyan/react-pwa
+---
+
+## [8][I made a React component for displaying a Google Calendar. Feedback welcome!](https://www.reddit.com/r/reactjs/comments/hbmyw7/i_made_a_react_component_for_displaying_a_google/)
+- url: https://www.reddit.com/r/reactjs/comments/hbmyw7/i_made_a_react_component_for_displaying_a_google/
+---
+Hi everyone,
+
+A while ago I was looking for a simple to use and customizable way to display a google calendar on a website. Google's embedded calendar has a dated design and little customization, so I decided to make my own that hopefully improves on these aspects.
+
+It pulls events from a Google Calendar and displays them in a month view. It shows more information about the event when clicked, and properly supports recurring events (using rrule), including instances that have changed or been deleted.
+
+I am still pretty new to react and this is my first time making an npm package, so I would love to hear any feedback on the design, code, or anything else you want to say.
+
+Github:  [https://github.com/ericz1803/react-google-calendar](https://github.com/ericz1803/react-google-calendar)
+
+Demo: [https://ericz1803.github.io/react-test-calendar](https://ericz1803.github.io/react-test-calendar)
+## [9][I want to click a cell but whole row becomes clicked.](https://www.reddit.com/r/reactjs/comments/hc04tf/i_want_to_click_a_cell_but_whole_row_becomes/)
+- url: https://www.reddit.com/r/reactjs/comments/hc04tf/i_want_to_click_a_cell_but_whole_row_becomes/
+---
+I have suck [https://github.com/audriu/lenta](https://github.com/audriu/lenta) code. But when I click on a cell it will update the whole row instead of that cell. I can not see where the problem lies. Please help! This is a very noob question, but somewhere I have to start...
+## [10][Naming Conventions for React - Apollo GraphQL?](https://www.reddit.com/r/reactjs/comments/hbzznj/naming_conventions_for_react_apollo_graphql/)
+- url: https://www.reddit.com/r/reactjs/comments/hbzznj/naming_conventions_for_react_apollo_graphql/
+---
+Hello - I've just started working on a React + GraphQL project at work and I'm curious if there is a naming convention for queries and mutations that is typically followed?  (Our project also uses codegen)
+
+Would love to see an example of a query and a mutation that you are following including the gql tag export, the operation name and then the actual query/mutation.
+
+Thanks
+## [11][With react router how can I use a static navbar on just some routes?](https://www.reddit.com/r/reactjs/comments/hbt1hd/with_react_router_how_can_i_use_a_static_navbar/)
+- url: https://www.reddit.com/r/reactjs/comments/hbt1hd/with_react_router_how_can_i_use_a_static_navbar/
+---
+I am trying to setup nesting in the react router. I have the following code:
+
+    
+        import React from 'react';
+        import DefaultSwitch from './components/DefaultSwitch/DefaultSwitch';
+        import './scss/App.scss';
+        
+        const App = () =&gt; {
+            return (
+                &lt;DefaultSwitch /&gt;
+            );
+        };
+        export default App;
+
+With `DefaultSwitch` defined as:
+
+     const DefaultSwitch = () =&gt; {
+            return (
+                &lt;Switch&gt;
+                    &lt;Route exact path='/' component={Landing} /&gt;
+                    &lt;Route exact path='/login' component={Login} /&gt;
+                    &lt;Route exact path='/logout' component={Logout} /&gt;
+                    &lt;Route path="/dashboard" component={Dashboard} /&gt;
+                &lt;/Switch&gt;
+            );
+        }
+
+Inside the `Dashboard` I have the following:
+
+    const Dashboard = () =&gt; {
+            return (
+                &lt;div&gt;
+                    &lt;MyNavbar /&gt;
+                    &lt;DashboardSwitch /&gt;
+                &lt;/div&gt;
+            );
+        };
+
+And finally `DashboardSwitch` as:
+
+     const DashboardSwitch = () =&gt; {
+            return (
+                &lt;Switch&gt;
+                    &lt;Route exact path='/dashboard' component={Home} /&gt;
+                    &lt;Route exact path='/dashboard/home' component={Home} /&gt;
+                    &lt;Route exact path='/dashboard/bonuses' component={Bonuses} /&gt;
+                &lt;/Switch&gt;
+            );
+        }
+    
+
+Routing appears to work and the correct components are loaded, however I have noticed that if for example I am at `/dashboard` and then navigate to `/dashboard/bonuses` the entire page is reloading including the `MyNavbar` component. I want the navbar to remain static and only the content below it to reload as I have defined in the \`Dashboard\` component.
 
 &amp;#x200B;
 
-* I want to generate *multiple versions* of the app, one "version" per one language.
-* I want to handle all the translations at *build time*. (I'd like to output static HTML files translated to different languages and *don't* want to include the translation logic in the bundle which gets shipped to the user)
-
-Has anyone had any success achieving something similar? The closest solution I found is [https://github.com/claudetech/node-static-i18n](https://github.com/claudetech/node-static-i18n), which is unfortunately only for plain HTML (no JSX)...
-## [7][redux-toolkit does not allow mutating state in createSlice](https://www.reddit.com/r/reactjs/comments/hbd1ay/reduxtoolkit_does_not_allow_mutating_state_in/)
-- url: https://www.reddit.com/r/reactjs/comments/hbd1ay/reduxtoolkit_does_not_allow_mutating_state_in/
----
-Hi guys. I'm trying to implement redux-toolkit in my React project. In the doc it says that redux-toolkit comes with immer, which allows mutating state. However when I try to do so, here are the errors I'm getting:
-
-\-  `Unhandled Rejection (TypeError): Cannot add property x, object is not extensible` 
-
-\-  `Unhandled Rejection (Error): Invariant failed: A state mutation was detected between dispatches, in the path 'myObject.0.aRandomProp'.  This may cause incorrect behavior.`  
-
-Please let me know if you have come across this problem before. If there's no fix for this, I might need to go back to vanilla redux, since redux-toolkit is doing the opposite of making my life easier
-## [8][Learn React templates in 5 minutes](https://www.reddit.com/r/reactjs/comments/hbcoko/learn_react_templates_in_5_minutes/)
-- url: https://mkdev.me/en/posts/learn-react-templates-in-5-minutes
----
-
-## [9][We created a site to show corporate anti-racism donations proportional to their profits (and how much you can donate to make the same impact)](https://www.reddit.com/r/reactjs/comments/hav0pg/we_created_a_site_to_show_corporate_antiracism/)
-- url: https://v.redd.it/tgnwra5l2i551
----
-
-## [10][Don't model dark mode with a boolean](https://www.reddit.com/r/reactjs/comments/hbb19x/dont_model_dark_mode_with_a_boolean/)
-- url: https://dev.to/sebastienlorber/insight-4-don-t-model-dark-mode-with-a-boolean-ol1
----
-
-## [11][Urql now has Offline Support - Phil Pluckthun on Twitter](https://www.reddit.com/r/reactjs/comments/haxfod/urql_now_has_offline_support_phil_pluckthun_on/)
-- url: https://twitter.com/_philpl/status/1273292200995061760?s=20
----
-
-## [12][Build your React Blog with Firebase - 12 - Upload file to Firebase Storage](https://www.reddit.com/r/reactjs/comments/hbalqw/build_your_react_blog_with_firebase_12_upload/)
-- url: https://www.youtube.com/watch?v=GBPMTTrE6HI
+What am I doing wrong here?
+## [12][writing a better abstraction... Better code](https://www.reddit.com/r/reactjs/comments/hbzbna/writing_a_better_abstraction_better_code/)
+- url: https://medium.com/healthify-tech/your-way-to-better-abstraction-53b165a8c54f
 ---
 

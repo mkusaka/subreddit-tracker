@@ -1,18 +1,12 @@
 # androiddev
-## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/h9fmdb/weekly_whos_hiring_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/h9fmdb/weekly_whos_hiring_thread/
+## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/hbzzjp/weekly_anything_goes_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/hbzzjp/weekly_anything_goes_thread/
 ---
-Looking for Android developers? Heard about a cool job posting? Let people know!
+Here's your chance to talk about whatever!
 
-Here is a suggested posting template:
+Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
 
-&gt; Company: &lt;Best Company Ever&gt;  
-&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
-&gt; Location: &lt;City, State, Country&gt;  
-&gt; Allows remote: &lt;Yes/No&gt;  
-&gt; Visa: &lt;Yes/No&gt;  
-
-Feel free to include any other information about the job.
+Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
 ## [2][Weekly Questions Thread - June 15, 2020](https://www.reddit.com/r/androiddev/comments/h9e1kl/weekly_questions_thread_june_15_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/h9e1kl/weekly_questions_thread_june_15_2020/
 ---
@@ -31,7 +25,11 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][I've composed over 150 songs and sound effects and released them under the CC BY 4.0 license which you can use in any personal and commercial project and they're all free!](https://www.reddit.com/r/androiddev/comments/hbcmls/ive_composed_over_150_songs_and_sound_effects_and/)
+## [3][Simplifying Jetpack Navigation between top-level destinations using Dagger-Hilt](https://www.reddit.com/r/androiddev/comments/hbyzl8/simplifying_jetpack_navigation_between_toplevel/)
+- url: https://medium.com/@Zhuinden/simplifying-jetpack-navigation-between-top-level-destinations-using-dagger-hilt-3d918721d91e
+---
+
+## [4][I've composed over 150 songs and sound effects and released them under the CC BY 4.0 license which you can use in any personal and commercial project and they're all free!](https://www.reddit.com/r/androiddev/comments/hbcmls/ive_composed_over_150_songs_and_sound_effects_and/)
 - url: https://www.reddit.com/r/androiddev/comments/hbcmls/ive_composed_over_150_songs_and_sound_effects_and/
 ---
 **How to download the songs?**
@@ -63,70 +61,44 @@ Almost every single song in the album (with a few exceptions here and there) is 
 Yes! Whenever I add a new song or sound effect to the library, I announce it on my [Twitter](https://twitter.com/onemansymphony). I would suggest checking the tweets or the album page regularly if you're in need of new music frequently.
 
 Feel free to ask if you guys have any questions.
-## [4][i unpublished the app , i deleted the ads units , and i am still seeing this " Must Fix ". it just won't go away](https://www.reddit.com/r/androiddev/comments/hb96sh/i_unpublished_the_app_i_deleted_the_ads_units_and/)
-- url: https://i.redd.it/brgerrzv3m551.png
+## [5][Creating secure Applications tips](https://www.reddit.com/r/androiddev/comments/hbztb9/creating_secure_applications_tips/)
+- url: http://medium.com/@humayuntanwar/creating-secure-android-applications-d41531dbedd5
 ---
 
-## [5][I made this small tool to write Play Store listings. It lets you have an eye on the keywords you want to target. Maybe it's useful to some of you.](https://www.reddit.com/r/androiddev/comments/hbb8s5/i_made_this_small_tool_to_write_play_store/)
-- url: https://aso-tool.com/
+## [6][track file host domain](https://www.reddit.com/r/androiddev/comments/hbz76k/track_file_host_domain/)
+- url: https://www.reddit.com/r/androiddev/comments/hbz76k/track_file_host_domain/
+---
+is their an app or a way to know what domain host of this downloaded file came from?  
+
+
+  
+example  
+in the DATA folder there is this file Z1X2C3.dat, how do i know its domain host server that downloaded this file?
+## [7][Unable to create Google Play Developer Console account](https://www.reddit.com/r/androiddev/comments/hbyzmf/unable_to_create_google_play_developer_console/)
+- url: https://www.reddit.com/r/androiddev/comments/hbyzmf/unable_to_create_google_play_developer_console/
+---
+Is anyone else experiencing this? I cannot complete the sign up process because I can't get to the payment option. The website seems to be broken due to a 404 error downloading a js file.  
+GET [https://wallet.google.com/inapp/lib/buy.js](https://wallet.google.com/inapp/lib/buy.js) net::ERR\_ABORTED 404  
+ I contacted support but they have not resolved it yet. I'm wondering if it's just me or if Google's left their website broken.
+## [8][Simplifying Jetpack Navigation between top-level destinations using Dagger-Hilt](https://www.reddit.com/r/androiddev/comments/hbyqgm/simplifying_jetpack_navigation_between_toplevel/)
+- url: https://medium.com/@Zhuinden/simplifying-jetpack-navigation-between-top-level-destinations-using-dagger-hilt-3d918721d91e
 ---
 
-## [6][Has anyone here tried Upwork? What was your experience like? Is it worth it?](https://www.reddit.com/r/androiddev/comments/hbctbx/has_anyone_here_tried_upwork_what_was_your/)
-- url: https://www.reddit.com/r/androiddev/comments/hbctbx/has_anyone_here_tried_upwork_what_was_your/
+## [9][Inspect a webview](https://www.reddit.com/r/androiddev/comments/hbyooy/inspect_a_webview/)
+- url: https://www.reddit.com/r/androiddev/comments/hbyooy/inspect_a_webview/
 ---
-I'm thinking about using the platform to make some side money. I've looked at some posts though and it looks like prices for the jobs are pretty low . Is it worth freelancing a dev on there?
-## [7][App to control your phone with gesture motions. Source code at https://github.com/MARUI-PlugIn/MiVRy/tree/master/android](https://www.reddit.com/r/androiddev/comments/hbdp4q/app_to_control_your_phone_with_gesture_motions/)
-- url: https://v.redd.it/6vpow579xn551
+This is the best match of a sub/r that I found to ask this, so if it's not the correct place, let me know.
+
+I want to know if it's possible to inspect a webview inside an app ( that I don't own ) - Basically open something like the chrome devtools on it. Thanks for any help!
+## [10][How it your Firebase Cloud Messaging notification model looking like?](https://www.reddit.com/r/androiddev/comments/hbxy9s/how_it_your_firebase_cloud_messaging_notification/)
+- url: https://www.reddit.com/r/androiddev/comments/hbxy9s/how_it_your_firebase_cloud_messaging_notification/
 ---
-
-## [8][Google upgrades Android 11 beta v1.5 with some important bug fixes.](https://www.reddit.com/r/androiddev/comments/haz9tt/google_upgrades_android_11_beta_v15_with_some/)
-- url: https://www.newserector.com/google-upgrades-android-11-beta-v1-5-with-some-important-bug-fixes-
----
-
-## [9][Suggestion, please!!!!](https://www.reddit.com/r/androiddev/comments/hbe492/suggestion_please/)
-- url: https://www.reddit.com/r/androiddev/comments/hbe492/suggestion_please/
----
-Hi there,
-
-I'm a beginner, quite enthusiastic to build a mobile application just like anyone here.
-
-Because of the growing tech, I'm so confused where to start with, I'm sure this is not a common syndrome, y'all must have successfully gone through times like these, kudos to you there!
-
-I was taught C and Python at my university. After a bit of research, I have planned to start learning JAVA, and Android Studio. But my bad the internet has a lot of information, sometimes it's scary. I happen to come across ReactNative, which is definitely a cool platform to build applications with.
-
-I'm sure there will be many more out there, I'm not preferring to learn Kotlin, I made my mind to learn either Java or ReactNative.
-
-But here comes the problem, which one to use. If I had to use just Java and Android Studio, that would be great for me, but what about Cross-platform issues, I mean if I had to make my App available for iOS, etc, what framework would help me if I use Java. I got to know I can use Flutter with Dart. But that doesn't help my problem out, because without learning Java it is not easy to learn Dart/Kotlin.
-
-Can someone share their experience, Also I'm confused about which resource should I learn Java/Android Studio.
-
-I will be glad if anyone can help me out !.
-## [10][[1 Minute Read] 1:1 reference between iOS and Android components. I recently started android development. Wrote this easy to use table for referring the components between iOS and android.](https://www.reddit.com/r/androiddev/comments/hayurf/1_minute_read_11_reference_between_ios_and/)
-- url: https://redflowerinc.com/1-minute-cheatsheet-to-begin-android-development-for-ios-developers/
+How it your Firebase Cloud Messaging notification model looking like?
+## [11][Fragment Lifecycles in the Age of Jetpack - zsmb.co](https://www.reddit.com/r/androiddev/comments/hbhgur/fragment_lifecycles_in_the_age_of_jetpack_zsmbco/)
+- url: https://zsmb.co/fragment-lifecycles-in-the-age-of-jetpack/
 ---
 
-## [11][Im doing English-Spanish translations on small apps for free.](https://www.reddit.com/r/androiddev/comments/hanoi2/im_doing_englishspanish_translations_on_small/)
-- url: https://www.reddit.com/r/androiddev/comments/hanoi2/im_doing_englishspanish_translations_on_small/
+## [12][Android Studio 4.2 Canary 2 available](https://www.reddit.com/r/androiddev/comments/hbjr0t/android_studio_42_canary_2_available/)
+- url: https://androidstudio.googleblog.com/2020/06/android-studio-42-canary-2-available.html
 ---
-That's it. I have  a lot of free time since i work from home, i did a translation to spanish of a small bot app on the playstore and since i think there are a lot of starting independent developers i'll give them a hand. 
 
-Im doing up to 500-1000 words, not doing ToS or anything like that.  
-
-
- Anyone can PM me (:
-## [12][Sales Tax and VAT Play Store](https://www.reddit.com/r/androiddev/comments/hbbfpa/sales_tax_and_vat_play_store/)
-- url: https://www.reddit.com/r/androiddev/comments/hbbfpa/sales_tax_and_vat_play_store/
----
-Hi All
-
-Hope you are well.
-
-I am looking at releasing an app on the Play Store which will generate revenue via in app purchases.
-
-I understand that Google, charge, collect and remit sales tax, VAT and GST for the majority of territories around the world, on my behalf.
-
-My question is, how do you then go about reporting this/filing this correctly. For example - with VAT do you treat it as a B2B transaction(s) between you and Google and therefore use the 'reverse charge' method to zero it out to stop you effectivley paying the VAT twice?
-
-Any guidance on reporting/filing sales tax and GST would also be appreaciated.
-
-Also is there a best practice in reporting/filing? Does Google have a report you can download which highlights where each payment was made so you can see where you are liable for sales tax/VAT/GST?

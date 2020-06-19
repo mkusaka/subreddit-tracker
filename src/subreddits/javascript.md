@@ -87,43 +87,49 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][Showcase GitHub repositories on your website](https://www.reddit.com/r/javascript/comments/hbbcpi/showcase_github_repositories_on_your_website/)
+## [3][Speed up your development with this new VS Code extension](https://www.reddit.com/r/javascript/comments/hbyh8q/speed_up_your_development_with_this_new_vs_code/)
+- url: https://github.com/snipsnapdev/snipsnap
+---
+
+## [4][[AskJS] How important is it to check in a lock file? i.e. yarn.lock or package-lock.json](https://www.reddit.com/r/javascript/comments/hbvwmx/askjs_how_important_is_it_to_check_in_a_lock_file/)
+- url: https://www.reddit.com/r/javascript/comments/hbvwmx/askjs_how_important_is_it_to_check_in_a_lock_file/
+---
+I was talking to the lead engineer of a project that chooses not to check in their lock file (for their monorepo). He reasons that it "causes issues with merging/rebasing, and it pollutes diffs with tons of unimportant changes." And that major projects like [Serverless](https://github.com/serverless/serverless) and [JQuery](https://github.com/jquery/jquery) don't check them in either.
+
+This makes me a bit conflicted because it is officially [recommended](https://yarnpkg.com/blog/2016/11/24/lockfiles-for-all/) by Yarn and a large [majority](https://stackoverflow.com/questions/44206782/do-i-commit-the-package-lock-json-file-created-by-npm-5) on StackOverflow seem to be in favour of it (although to be fair, many also [disagree](https://stackoverflow.com/questions/44206782/do-i-commit-the-package-lock-json-file-created-by-npm-5#comment78284962_44210813)).
+
+The most practical line of reasoning from the lead is that "we've never had any serious problems leaving it out." And that if we were concerned about certain versions that break our code, we should lock down those versions explicitly in the `package.json`.
+
+I think those arguments are quite credible, but it feels really wrong to "buck the trend" of the vast majority of projects. What do you guys think? How important is it to check it in?
+## [5][Comprehensive guide on the JavaScript tooling ecosystem by MDN.](https://www.reddit.com/r/javascript/comments/hbgtug/comprehensive_guide_on_the_javascript_tooling/)
+- url: https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools
+---
+
+## [6][React-PWA – A minimal React PWA application as a GitHub template](https://www.reddit.com/r/javascript/comments/hby5u0/reactpwa_a_minimal_react_pwa_application_as_a/)
+- url: https://github.com/suren-atoyan/react-pwa
+---
+
+## [7][What is GraphQL, how does it even work and why should you bother?](https://www.reddit.com/r/javascript/comments/hc0kza/what_is_graphql_how_does_it_even_work_and_why/)
+- url: https://academy.esveo.com/en/blog/m2
+---
+
+## [8][Webapp shows how you would die if an asteroid collided with your city. [Javascrip]](https://www.reddit.com/r/javascript/comments/hbpfkx/webapp_shows_how_you_would_die_if_an_asteroid/)
+- url: https://asteroidcollision.herokuapp.com/
+---
+
+## [9][writing a better abstraction... Better code](https://www.reddit.com/r/javascript/comments/hbzdzr/writing_a_better_abstraction_better_code/)
+- url: https://medium.com/healthify-tech/your-way-to-better-abstraction-53b165a8c54f
+---
+
+## [10][MDXP : Web Slides Made Easy](https://www.reddit.com/r/javascript/comments/hbz2au/mdxp_web_slides_made_easy/)
+- url: https://0phoff.github.io/MDXP
+---
+
+## [11][Clipanion, type-safe CLI library with no dependency](https://www.reddit.com/r/javascript/comments/hbywkq/clipanion_typesafe_cli_library_with_no_dependency/)
+- url: https://github.com/arcanis/clipanion
+---
+
+## [12][Showcase GitHub repositories on your website](https://www.reddit.com/r/javascript/comments/hbbcpi/showcase_github_repositories_on_your_website/)
 - url: https://github.com/Tarptaeya/repo-card
----
-
-## [4][Bootstrap 5 alpha is officially released removing jQuery and going all in with vanilla JS](https://www.reddit.com/r/javascript/comments/haopme/bootstrap_5_alpha_is_officially_released_removing/)
-- url: https://themesberg.com/blog/bootstrap/bootstrap-version-5-alpha-whats-new
----
-
-## [5][The biggest JS conf in the cloud starts tomorrow. Free tickets are still available.](https://www.reddit.com/r/javascript/comments/hamya2/the_biggest_js_conf_in_the_cloud_starts_tomorrow/)
-- url: https://live.jsnation.com
----
-
-## [6][Don't model dark mode with a boolean](https://www.reddit.com/r/javascript/comments/hbb10g/dont_model_dark_mode_with_a_boolean/)
-- url: https://dev.to/sebastienlorber/insight-4-don-t-model-dark-mode-with-a-boolean-ol1
----
-
-## [7][Learn React templates in 5 minutes](https://www.reddit.com/r/javascript/comments/hbcp0q/learn_react_templates_in_5_minutes/)
-- url: https://mkdev.me/en/posts/learn-react-templates-in-5-minutes
----
-
-## [8][Now free to read online: “Deep JavaScript: Theory and techniques” [Show Reddit]](https://www.reddit.com/r/javascript/comments/hasbwv/now_free_to_read_online_deep_javascript_theory/)
-- url: https://exploringjs.com/deep-js/
----
-
-## [9][Announcing swc v1.2.0: Yet another asset bundler](https://www.reddit.com/r/javascript/comments/hau99x/announcing_swc_v120_yet_another_asset_bundler/)
-- url: https://swc-project.github.io/blog/
----
-
-## [10][How To Migrate From TypeORM to Sequelize](https://www.reddit.com/r/javascript/comments/hbaga4/how_to_migrate_from_typeorm_to_sequelize/)
-- url: http://selleo-typeorm.xyz
----
-
-## [11][How Node handles multiple requests so fast](https://www.reddit.com/r/javascript/comments/hazjb3/how_node_handles_multiple_requests_so_fast/)
-- url: https://mateusguimaraes.com/posts/why-do-they-say-nodejs-is-fast
----
-
-## [12][Benchmarking JavaScript Loops and Methods](https://www.reddit.com/r/javascript/comments/hazn2r/benchmarking_javascript_loops_and_methods/)
-- url: https://medium.com/@michaelmcshinsky/benchmarking-javascript-loops-and-methods-part-1-54bb4889342f
 ---
 

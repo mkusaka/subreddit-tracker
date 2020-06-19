@@ -21,147 +21,156 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][Building a podcast search engine using all AWS services.](https://www.reddit.com/r/aws/comments/hb9yue/building_a_podcast_search_engine_using_all_aws/)
-- url: https://www.reddit.com/r/aws/comments/hb9yue/building_a_podcast_search_engine_using_all_aws/
+## [2][I wrote a free app for sketching cloud architecture diagrams](https://www.reddit.com/r/aws/comments/hbztrc/i_wrote_a_free_app_for_sketching_cloud/)
+- url: https://www.reddit.com/r/aws/comments/hbztrc/i_wrote_a_free_app_for_sketching_cloud/
 ---
-I built a service that tracks a podcast, transcribes its episodes, and indexes it for search. I have a sample prototype rigged for the Joe Rogan Experience at [www.jamiepullup.com](https://www.jamiepullup.com). 
+I wrote a free app for sketching cloud architecture diagrams. All AWS, Azure, GCP, Kubernetes, Alibaba Cloud, Oracle Cloud icons and more are preloaded in the app. Hope the community finds it useful: [cloudskew.com](https://www.cloudskew.com/)
 
-The service is a swift console app, all the processing, transcribing and indexing happens on various AWS services (EC2 to host the site and run the service, S3 for storage, Amazon Transcribe for transcription and Amazon Cloud Search for search)
+Notes:
 
-Getting this up and running wasn't cheap, thank god for the activate program. 
+1. The app's just a simple diagram editor, it doesn't need access to any AWS, Azure, GCP accounts.
+2. You can see some sample diagrams [here](https://www.cloudskew.com/docs/samples.html).
 
-If you have any questions regarding any of these technologies, I'd be more than happy to answer.
-## [3][AWS said it mitigated a 2.3 Tbps DDoS attack, the largest ever](https://www.reddit.com/r/aws/comments/hau6np/aws_said_it_mitigated_a_23_tbps_ddos_attack_the/)
-- url: https://www.zdnet.com/article/aws-said-it-mitigated-a-2-3-tbps-ddos-attack-the-largest-ever/
----
-
-## [4][Can I reduce my cost by changing the way I'm running my infrastructure?](https://www.reddit.com/r/aws/comments/hbc5dd/can_i_reduce_my_cost_by_changing_the_way_im/)
-- url: https://www.reddit.com/r/aws/comments/hbc5dd/can_i_reduce_my_cost_by_changing_the_way_im/
----
-Currently I'm running 2 EC2 instances.
-
-The main one is a Windows Server instance on t2.small with a 100GB gp2 storage volume which runs IIS web server, MSSQL database server, FTP server and hMailServer for email. 
-
-The other is a Linux server running on t2.micro with the default 8GB gp2 storage which basically just runs a LAMP stack (no email) but is hardly used.
-
-My average monthly bill over the last 2 years has been about $40/month but I'm wondering if there are other tools on AWS that would allow me to still host and maintain my web apps but possibly at a cheaper rate than using the EC2 instances mentioned.
-
-Is there some sort of app hosting feature that I can use to host .NET web apps, databases, etc. to maintain my hosting environment or is EC2 the best I can get? In case EC2 is the best, I may have to look for cheaper alternatives to AWS which I really don't want to do because moving is going to be a pain.
-
-Thanks in advance!
-## [5][Have reserved CIDR blocks changed in the last year to eighteen months or so?](https://www.reddit.com/r/aws/comments/hbdbji/have_reserved_cidr_blocks_changed_in_the_last/)
-- url: https://www.reddit.com/r/aws/comments/hbdbji/have_reserved_cidr_blocks_changed_in_the_last/
----
-I just tried to add a new CIDR block to my VPC and stumbled upon this error.
-
-As you can see, I already have 172.31.1.0/28 in my VPC which I added probably around 12-18 months ago, but according to the [documentation](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing), this is a reserved address and isn't allowed.
-
-Am I going crazy or has this changed recently?
-
-https://preview.redd.it/mhlucmrqrn551.png?width=1718&amp;format=png&amp;auto=webp&amp;s=c281301322b5603bb9b835930623be046ce64c71
-
-EDIT: Further to this, it looks like it's not accepting any subnets, even ones that are not restricted. I must be doing something wrong here.
-## [6][SAM / Cloudformation API -&gt; Kinesis woes](https://www.reddit.com/r/aws/comments/hbcvm8/sam_cloudformation_api_kinesis_woes/)
-- url: https://www.reddit.com/r/aws/comments/hbcvm8/sam_cloudformation_api_kinesis_woes/
----
-Hi all,
-
-Can anyone confirm whether or not I can establish an API gateway via cloudformation to receive HTTP posts and have it forward the payload directly to a kinesis data stream?
-
-It appears to me I can only do that if I'm using http/2 / WebSocket gateway,  OR I intend to forward to a firehose stream which neither is not what I'm wanting.
-
-When I attempt to deploy the stack, it's failing because I've got integration type set to AWS\_PROXY, and it claims it only supports lambdafunctions or firehose...  
-
-Seems odd that if it really can't pass the request payload directly through to a data stream...?
-
-Thanks
-## [7][AWS Snowcone – A Small, Lightweight, Rugged, Secure Edge Computing, Edge Storage, and Data Transfer Device](https://www.reddit.com/r/aws/comments/hav7qe/aws_snowcone_a_small_lightweight_rugged_secure/)
-- url: https://aws.amazon.com/blogs/aws/introducing-aws-snowcone-small-lightweight-edge-storage-and-processing/
+[CloudSkew - Free AWS, Azure, GCP, Kubernetes diagram tool](https://preview.redd.it/9jm111zn1v551.png?width=1438&amp;format=png&amp;auto=webp&amp;s=c33c6eb8c76a0c52408e0c672d36b6eac62a3fed)
+## [3][Amazon Builders: Automating safe, hands-off deployments](https://www.reddit.com/r/aws/comments/hbnqkb/amazon_builders_automating_safe_handsoff/)
+- url: https://aws.amazon.com/builders-library/automating-safe-hands-off-deployments/
 ---
 
-## [8][Request for advice on which AWS service would best suit my purpose.](https://www.reddit.com/r/aws/comments/hbaez1/request_for_advice_on_which_aws_service_would/)
-- url: https://www.reddit.com/r/aws/comments/hbaez1/request_for_advice_on_which_aws_service_would/
+## [4][Run Multiple Wordpress Sites on EC2 Free Tier?](https://www.reddit.com/r/aws/comments/hc0a57/run_multiple_wordpress_sites_on_ec2_free_tier/)
+- url: https://www.reddit.com/r/aws/comments/hc0a57/run_multiple_wordpress_sites_on_ec2_free_tier/
 ---
-Hello, I would like to request some advice on which of the AWS NLP  related services would best suit my purpose as several of them seem like  they could be suitable candidates and there seems to be some overlap in  what they could be used for.  
- 
+Would it be possible to run circa 10 Wordpress sites on the AWS EC2 Free Tier? 
 
-As a disclaimer I will say that I am fairly new to all this stuff so please forgive any ignorance or naivety on my part.   
- 
+The sites will receive extremely low traffic. 
 
-I have been tasked by the company I work for to find a solution for  detecting questions that have the same meaning but are worded  differently.  
- 
+I still haven't really wrapped my head around how the hours will be used or if it's even possible to keep the sites up for one year with the Free Tier.
+## [5][help! 1M RPS ELB spike cost estimation](https://www.reddit.com/r/aws/comments/hbxb8g/help_1m_rps_elb_spike_cost_estimation/)
+- url: https://www.reddit.com/r/aws/comments/hbxb8g/help_1m_rps_elb_spike_cost_estimation/
+---
+hey, i'm starting to consider to switch to the cloud my side project, now, i found that ELB scales automatically without having the possibility to set a max number of connection per second.
 
-For context, we develop apps for Google Home, Alexa, and things like that.  
- 
+in the event of a spike on traffic of  1 million request (let's say for an http flood attack) i would need 10\^6 connection/s which that means  (10\^6/25) LCU.
 
-Unfortunately I do not yet have all the details of the internal  mechanics of the application that this question pertains to but my  educated guess is that we will have a set of known questions and answers  and we will need a way to map a question asked by the user to one of  the existing known questions even if it is worded differently.  
- 
+so the cost for that spike will be: (10\^6/25) \*0.008 = 320$ only in LCU, right?
 
-I have done some reading and watched some videos the past few days and have been able to identify some possible candidates:  
- 
+it seems too expensive to me (for a side project) and i've no knowledge on how prevent this (cloudfront is not suitable for this). 
+
+are my calculations right? 
+
+there's a way to mitigate / prevent to ELB to scale to infinity or drop request(without paying for them)?
+## [6][Is it possible to access the execution time of a lambda within itself?](https://www.reddit.com/r/aws/comments/hbw5ie/is_it_possible_to_access_the_execution_time_of_a/)
+- url: https://www.reddit.com/r/aws/comments/hbw5ie/is_it_possible_to_access_the_execution_time_of_a/
+---
+I'm processing a bunch of images which are stored on one of our servers through Lambda, not to DoS ourselves, this means that it is very likely that the Lambda is going to exceed 15 minutes.
+
+Currently we already have a caching mechanism in place but I was wondering if Lambda has any way knowing its own execution time and gracefully terminate before it's timed out?
+## [7][Is ap-southeast-3 coming online? Region looks to be published in AWS ip ranges](https://www.reddit.com/r/aws/comments/hbugj5/is_apsoutheast3_coming_online_region_looks_to_be/)
+- url: https://www.reddit.com/r/aws/comments/hbugj5/is_apsoutheast3_coming_online_region_looks_to_be/
+---
+https://ip-ranges.amazonaws.com/ip-ranges.json is now publishing ap-southeast-3 as a region?? We about to see a new shiny region come up?
+## [8][Elastic Beanstalk is wrongly deploying environment with Python 2.7 rather than 3.7](https://www.reddit.com/r/aws/comments/hbylic/elastic_beanstalk_is_wrongly_deploying/)
+- url: https://www.reddit.com/r/aws/comments/hbylic/elastic_beanstalk_is_wrongly_deploying/
+---
+After running \`eb init\` I chose an environment with Python 3.7 and AL 2. This is the config file that was generated:
+
+    branch-defaults:
+      default:
+        environment: django-env
+        group_suffix: null
+    global:
+      application_name: dashboard
+      branch: null
+      default_ec2_keyname: aws-eb
+      default_platform: Python 3.7 running on 64bit Amazon Linux 2
+      default_region: us-west-2
+      include_git_submodules: true
+      instance_profile: null
+      platform_name: null
+      platform_version: null
+      profile: eb-cli
+      repository: null
+      sc: null
+      workspace_type: Application
+
+So clearly I'm supposed to have python 3.7 in the EC 2 instance, but that doesn't seem to be the case.
+
+When I SSH into the instance and run \`python\`, the instance's default is 2.7. What's wrong here?
+## [9][ASG set max lifetime of ec2?](https://www.reddit.com/r/aws/comments/hbwsqb/asg_set_max_lifetime_of_ec2/)
+- url: https://www.reddit.com/r/aws/comments/hbwsqb/asg_set_max_lifetime_of_ec2/
+---
+Currently I have a lambda function that recycles ec2's in the ASG after they are more than a week old.  I remember seeing a press release or something that mentioned that sort of functionality was built into the infrastructure now but I can't find anything about it through google or the interface.  Is it possible or was I dreaming?
+## [10][Lambdas - is there a better logical oranizational way to approach lambdas? I have too many...](https://www.reddit.com/r/aws/comments/hbmqfl/lambdas_is_there_a_better_logical_oranizational/)
+- url: https://www.reddit.com/r/aws/comments/hbmqfl/lambdas_is_there_a_better_logical_oranizational/
+---
+My team has deployed like 3 API Gateways, which all trigger some lambda or other, and we have additional test lambdas, and lambdas that do other things...
+
+All in all we have 86 lambdas, 9 pages worth, and all different applications and projects and everything is just in one large list in the Lambda page.
+
+Is there some sort of best-practice or some better way to organize them? I'm thinking like in ECS where you have like a logical cluster of containers/services/etc...
+
+Any advice, I have to create 10 more lambdas for a new project and it just seems so disorganized.
+## [11][Elastic Beanstalk: /bin/sh: /opt/python/run/venv/bin/activate: No such file or directory](https://www.reddit.com/r/aws/comments/hby4py/elastic_beanstalk_binsh/)
+- url: https://www.reddit.com/r/aws/comments/hby4py/elastic_beanstalk_binsh/
+---
+Trying to deploy a django app which uses channels following this [https://medium.com/@elspanishgeek/how-to-deploy-django-channels-2-x-on-aws-elastic-beanstalk-8621771d4ff0](https://medium.com/@elspanishgeek/how-to-deploy-django-channels-2-x-on-aws-elastic-beanstalk-8621771d4ff0)
 
 &amp;#x200B;
 
-* The first is using some pre-trained BERT models with Sagemaker and  Tensorflow/Pytorch, I still only have a vague notion of how this would  apply to what I'm trying to do but I will gladly learn all the specifics  if this turns out to be the best solution for my needs. I understand  that this system can be used to develop chatbots, and while what I am  trying to do is similar to a chatbot, I think it is less sophisticated  in the sense that we only need our application to be able to understand a  very specific set of questions whereas a typical chatbot has a much  broader scope of interaction (I may be misinterpreting this). I have a  feeling this solution may be overkill for my current purposes.  
+These are my config files:
 
+**01\_env.config**
+
+        option_settings:  
+          aws:elasticbeanstalk:container:python:     
+            WSGIPath: "dashboard/wsgi.py"
+          aws:elasticbeanstalk:application:environment:
+            DJANGO_SETTINGS_MODULE: "dashboard.settings"
+            PYTHONPATH: /opt/python/current/app/dashboard:$PYTHONPATH
+        
+          aws:elbv2:listener:80:
+            DefaultProcess: http
+            ListenerEnabled: 'true'
+            Protocol: HTTP
+            Rules: ws
+          aws:elbv2:listenerrule:ws:
+            PathPatterns: /websockets/*
+            Process: websocket
+            Priority: 1
+          aws:elasticbeanstalk:environment:process:http:
+            Port: '80'
+            Protocol: HTTP
+          aws:elasticbeanstalk:environment:process:websocket:
+            Port: '5000'
+            Protocol: HTTP
+
+**02\_setup.config**
+
+        container_commands:
+          00_pip_upgrade:
+            command: "source /opt/python/run/venv/bin/activate &amp;&amp; pip install --upgrade pip"
+            ignoreErrors: false
+          01_migrate:
+            command: "django-admin.py migrate"
+            leader_only: true
+          02_collectstatic:
+            command: "django-admin.py collectstatic --noinput"
+          03_wsgipass:
+            command: 'echo "WSGIPassAuthorization On" &gt;&gt; ../wsgi.conf'
+
+When I run \`eb create django-env\` it fails with 
+
+\`Command failed on instance. An unexpected error has occurred \[ErrorCode: 0000000001\].\`
+
+and in the logs, I found that the reason is:
 
 &amp;#x200B;
 
-* The second possible solution is Comprehend. Again, seems like it could be overkill.  
+2020-06-17 16:36:41,880 P4189 \[INFO\] Command 00\_pip\_upgrade
 
+2020-06-17 16:36:41,883 P4189 \[INFO\] -----------------------Command Output-----------------------
+
+2020-06-17 16:36:41,883 P4189 \[INFO\] 	/bin/sh: /opt/python/run/venv/bin/activate: No such file or directory
 
 &amp;#x200B;
 
-* The third possible solution is Lex. This seems like it could work,  but at the same time it also seems like it could be too specifically  oriented towards typical chatbot development and not flexible enough for  my purpose.  
-
-
-Anyway, sorry for the long winded post.  
- 
-
-Any advice would be greatly appreciated.
-## [9][Restricting TLS version when accessing S3 over the internet - is Cloudfront the only answer?](https://www.reddit.com/r/aws/comments/hbadu0/restricting_tls_version_when_accessing_s3_over/)
-- url: https://www.reddit.com/r/aws/comments/hbadu0/restricting_tls_version_when_accessing_s3_over/
----
-Hi,
-
-I have a private S3 bucket that I need to grant access to a third party, who will download data out of it.
-
-The current setup is they have an AWS account and programmatic  user that has explicit permissions granted to a role that can only access that bucket.  They then use one of the AWS SDK's to download the files to their servers over the internet.
-
-The bucket policy is setup to deny non-SSL traffic and to restrict access to their IP ranges.
-
-I have now been asked to ensure that this access is restricted to TLS V1.2 or greater.
-
-While it is possible to do this via CloudFront, I am a bit unsure how this would fit with the above scenario without a lot of rework.
-
-Does anyone know of any other way to restrict TLS version?
-
-Thanks
-## [10][Does Aurora Serverless support Multi-AZ by default ?](https://www.reddit.com/r/aws/comments/hbe8is/does_aurora_serverless_support_multiaz_by_default/)
-- url: https://www.reddit.com/r/aws/comments/hbe8is/does_aurora_serverless_support_multiaz_by_default/
----
-Hi,
-
-When choosing to create a new RDS Aurora **Serverless** (Mysql or Postgres) there's no option to select **Multi-AZ**.
-
-Does the service support Multi-AZ by default ?
-
-In case of an AZ failure does Aurora Serverless stay running ?
-
-Thank you.
-## [11][EC2 instance can no longer call AWS ec2 stop-instances](https://www.reddit.com/r/aws/comments/hbax8r/ec2_instance_can_no_longer_call_aws_ec2/)
-- url: https://www.reddit.com/r/aws/comments/hbax8r/ec2_instance_can_no_longer_call_aws_ec2/
----
-I have a ec2 instance with the following rights on a instance policy
-
-ec2:StopInstances
-ec2:StartInstances
-ec2:DescribeTags
-
-Etc...
-
-The instance (using amzn2-ami-hvm-2.0.20200520.1-x86_64-gp2) runs a go application within docker for performing certain actions. One of these actions include stopping/starting instances in a managed way within the same VPC. It use to work and the application was able to stop instances, but with the last few weeks I am now getting “UnauthorizedOperation” error. I even tried connecting to the server using ssh and performing a aws ec2 stop-instances command. The other command that I can no longer execute is ec2 describe-tags (again, not authorised). 
-
-I am stuck. I do not know why I can no longer perform these actions. My next step is to revert to an older AMI (though that surely should have no effect). 
-
-Any help, ideas?
+So even though I'm following the guide, the directory seems to not exist. I'm also not being able to SSH into the EC2 instance to check this. Has the python venv directory in Amazon Linux 2 changed?

@@ -23,169 +23,122 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/06/16/this-week-in-rust-343/
 ---
 
-## [3][Crust of Rust: Smart Pointers and Interior Mutability [video]](https://www.reddit.com/r/rust/comments/hb4jqw/crust_of_rust_smart_pointers_and_interior/)
-- url: https://www.youtube.com/watch?v=8O0Nt9qY_vo
+## [3][Got this baby in today, gonna enjoy some light reading later](https://www.reddit.com/r/rust/comments/hbtt65/got_this_baby_in_today_gonna_enjoy_some_light/)
+- url: https://i.redd.it/plk3qzaxks551.jpg
 ---
 
-## [4][Bodil (GTK-based elm-inspired GUI toolkit for rust)](https://www.reddit.com/r/rust/comments/hbcmf0/bodil_gtkbased_elminspired_gui_toolkit_for_rust/)
-- url: https://github.com/bodil/vgtk
+## [4][Small trick destructuring slices with known length](https://www.reddit.com/r/rust/comments/hbxtrm/small_trick_destructuring_slices_with_known_length/)
+- url: https://www.reddit.com/r/rust/comments/hbxtrm/small_trick_destructuring_slices_with_known_length/
+---
+Just want to share a small trick I found on destructuring the contents of a slice into local variables.
+
+Instead of using `if let` like this:
+
+    if let [a, b, c] = k {
+        Some(a * x.powi(2) + b * x + c)
+    } else {
+        None
+    }
+
+... you can use the `TryInto` trait together with the `try` (`?`) operator for a more linear code flow:
+
+    use std::convert::TryInto;
+    let [a, b, c]: [_; 3] = k.try_into().ok()?;
+    Some(a * x.powi(2) + b * x + c)
+
+[Playground example](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=46498dd319aa14d5e5286246e03e0f4e)
+## [5][bygge - Build a Rust project without Cargo*](https://www.reddit.com/r/rust/comments/hc07zm/bygge_build_a_rust_project_without_cargo/)
+- url: https://fnordig.de/2020/06/19/build-your-project/
 ---
 
-## [5][passmenu-rs: Rofi frontend for passwordstore written in rust!](https://www.reddit.com/r/rust/comments/hbckus/passmenurs_rofi_frontend_for_passwordstore/)
-- url: https://github.com/rupansh/passmenu-rs
+## [6][rust-highfive's contributions graph - is this because of COVID?](https://www.reddit.com/r/rust/comments/hbghcm/rusthighfives_contributions_graph_is_this_because/)
+- url: https://i.redd.it/kcoukwx5qo551.png
 ---
 
-## [6][Aside from the Rust language itself, how important are the "meta" features like cargo, quick test harnesses, auto-get git repo?](https://www.reddit.com/r/rust/comments/hbcvt8/aside_from_the_rust_language_itself_how_important/)
-- url: https://www.reddit.com/r/rust/comments/hbcvt8/aside_from_the_rust_language_itself_how_important/
----
-I don't code professionally anymore but started down the Hello World path the other day. Also played with Cargo and realized there are a number of extra features that have nothing to do with the language that make it easier to pick up. Auto-gen git repo, quasi Makefile features, and super quick test harnesses.
-## [7][What are your favorite "Better than std" crates?](https://www.reddit.com/r/rust/comments/hat5bt/what_are_your_favorite_better_than_std_crates/)
-- url: https://www.reddit.com/r/rust/comments/hat5bt/what_are_your_favorite_better_than_std_crates/
----
-The article from the other day on Tonari had an interesting section on packages that are better than std:
-
-* [crossbeam](https://github.com/crossbeam-rs/crossbeam) is better for inter-thread communication than std::sync::mpsc  
- in almost every way, and may be merged into std  
- eventually.
-* [parking\_lot](https://github.com/Amanieu/parking_lot) has a mutex implementation better than std::sync::Mutex  
- in almost every way, and may be merged into the standard library (one day). It also provides many other useful synchronization primitives.
-* [bytes](https://github.com/tokio-rs/bytes) is a more robust, and often more performant, way to play with bytes compared to Vec&lt;u8&gt;  
-.
-* [socket2](https://github.com/alexcrichton/socket2-rs) is what you will end up at if you are ever doing lower-level networking optimizations.
-
-I'm curious what crates you all think are better than std worth looking at ...
-## [8][json5format is a general purpose Rust library that formats JSON5 (a.k.a., "JSON for Humans"), preserving contextual line and block comments.](https://www.reddit.com/r/rust/comments/hb6al4/json5format_is_a_general_purpose_rust_library/)
-- url: https://github.com/google/json5format
+## [7][80x faster Rust code?!](https://www.reddit.com/r/rust/comments/hbvjer/80x_faster_rust_code/)
+- url: https://github.com/choiway/prognog/blob/master/README.md
 ---
 
-## [9][xdg-mime: guess MIME types using the shared-mime-info database from freedesktop.org](https://www.reddit.com/r/rust/comments/hbdeeu/xdgmime_guess_mime_types_using_the_sharedmimeinfo/)
-- url: https://docs.rs/xdg-mime/0.3.2/xdg_mime/
+## [8][Announcing Rust 1.44.1](https://www.reddit.com/r/rust/comments/hbgayc/announcing_rust_1441/)
+- url: https://blog.rust-lang.org/2020/06/18/Rust.1.44.1.html
 ---
 
-## [10][Rust implementation of backtracing algorithm for command-line Sudoku solving](https://www.reddit.com/r/rust/comments/hbd3nz/rust_implementation_of_backtracing_algorithm_for/)
-- url: https://github.com/mcdulltii/Sudoku-solver
+## [9][Crafting cellular automata in Rust (my first blog post, looking for feedback)](https://www.reddit.com/r/rust/comments/hbu84n/crafting_cellular_automata_in_rust_my_first_blog/)
+- url: https://www.reddit.com/r/rust/comments/hbu84n/crafting_cellular_automata_in_rust_my_first_blog/
+---
+Hey everyone, I just graduated from university and have decided to take the lull in job opportunities to brush back up on my Rust. I am trying to blog about the process of writing a cellular automata library in Rust, but this first piece was more of just a "test" on writing a blog post at all. I'm just looking for basic feedback about the writing, and code style, so anything is appreciated.
+
+[Here's the post](https://oneorten.dev/blog/automata_rust_1/)
+
+Thank you for reading!
+## [10][Announcing `float_eq` 0.4.0](https://www.reddit.com/r/rust/comments/hbyq2o/announcing_float_eq_040/)
+- url: https://www.reddit.com/r/rust/comments/hbyq2o/announcing_float_eq_040/
+---
+Hi!
+
+I've just published version 0.4.0 of [float\_eq](https://crates.io/crates/float_eq), for comparing floating point values.
+
+This release adds support for comparing the contents of more standard Rust types - slices, Option, Vec, VecDeque, LinkedList, BTreeMap and HashMap:
+
+    let a = vec![1.0f32, 2.0];
+    let b = vec![1.000_000_1, 2.000_000_5];
+    
+    assert_float_eq!(a, b, ulps &lt;= vec![1, 2]);
+    assert_float_eq!(a, b, ulps_all &lt;= 2);
+
+This is in addition to the support added in 0.3.1 for comparing mutable and immutable reference types and the contents of Cell, RefCell, Rc, Arc and Box instances.
+
+You may also now `#[derive]` any or all of the float\_eq traits for non-generic structs and tuple structs, by enabling the optional `"derive"` feature:
+
+    #[derive(
+        Debug, PartialEq, FloatUlps, FloatDiff, FloatEq, FloatEqDebug,
+        FloatEqAll, FloatEqAllDebug,
+    )]
+    #[float_eq(ulps = "PointUlps", all_epsilon = "f64")]
+    struct Point {
+        x: f64,
+        y: f64,
+    }
+    
+    let a = Point { x: 1.0, y: -2.0 };
+    let b = Point { x: 1.1, y: -2.2 };
+    assert_float_eq!(a, b, abs &lt;= Point { x: 0.15, y: 0.25 });
+    assert_float_eq!(a, b, abs_all &lt;= 0.25);
+    
+    let c = Point { x: 1.000_000_000_000_000_9, y: -2.000_000_000_000_001_3 };
+    assert_float_eq!(a, c, ulps &lt;= PointUlps { x: 4, y: 3 });
+    assert_float_eq!(a, c, ulps_all &lt;= 4);
+
+**How does float\_eq differ from approx?**
+
+Both provide similar comparison capabilities, with different underlying philosophies and APIs, see [this post](https://www.reddit.com/r/rust/comments/fzwxiy/announcing_float_eq_for_explicitly_bounded/fn6nkka/) for a longer discussion.
+
+**Why write yet another floating point equality library?**
+
+To explore providing a different kind of toolkit for working with floating point numbers. Since I am fairly new to Rust (though very experienced with C++) it seemed like a good way to introduce myself to some of the more advanced language and ecosystem features. Finally, I wanted to gain a deeper intuition for floating point representation and usage and you know what they say - don't reinvent the wheel unless you're planning on learning how wheels work :)
+## [11][5 years of Rust - a cross-platform &amp; full-stack language of choice for the next decade(s)](https://www.reddit.com/r/rust/comments/hbwpv9/5_years_of_rust_a_crossplatform_fullstack/)
+- url: https://gendignoux.com/blog/2020/06/16/rust-5-years-cross-platform.html
 ---
 
-## [11][I'm making a mouseless Image editor with Rust. Open source, also documented in video format](https://www.reddit.com/r/rust/comments/haqrel/im_making_a_mouseless_image_editor_with_rust_open/)
-- url: https://www.reddit.com/r/rust/comments/haqrel/im_making_a_mouseless_image_editor_with_rust_open/
+## [12][HELP Exposing static files with Rocket](https://www.reddit.com/r/rust/comments/hc0d97/help_exposing_static_files_with_rocket/)
+- url: https://www.reddit.com/r/rust/comments/hc0d97/help_exposing_static_files_with_rocket/
 ---
-I'm in the early stages of creating an Image Editor, inspired by VIM. The goal I'm aiming towards is to be able to create thumbnails fast and easily.
+So guys, i have few doubts about exposing static files with rocket.
 
-I document the process on my youtube channel: [I Made a Mouseless Image Editor With RUST](https://youtu.be/2cSY43OcuZc)
+First one, can i expose files which are not index or .html files?
 
-Here is my github page:  [https://github.com/TanTanDev/vimnail](https://github.com/TanTanDev/vimnail)
+If so in my code im trying to do something like this in the main():
 
-The project is in a very early stage, but if you have criticism surrounding the idea or the code, I highly appreciate it. Especially the code, I'm quite new to Rust!
-## [12][wgpu-rs and android-ndk-rs are causing a lot of headaches](https://www.reddit.com/r/rust/comments/hbaao4/wgpurs_and_androidndkrs_are_causing_a_lot_of/)
-- url: https://www.reddit.com/r/rust/comments/hbaao4/wgpurs_and_androidndkrs_are_causing_a_lot_of/
----
-OK, so I'm trying to run the hello-triangle example from wgpu-rs on android, and it's causing a lot of issues. First, I switched the example type to a binary and added this snippet to get it to compile:
+`rocket::ignite()`  
+`.mount("/", routes![index])`  
+`.mount("/path",StaticFiles::from("/local/path/files"))`  
+`.attach(Template::fairing())`  
+`.launch();`
 
-    #[cfg(target_os = "android")]
-    ndk_glue::ndk_glue!(main);
+I'm not getting any error from rust, but simply when i try to see if any of the files in that path are availables i get a 404 Errror.
 
-Then, it was panicking on start because, apparently, the NativeScreen isn't ready and so I hacked in a fix for that: (this snipped was placet at the very begining of `async fn run`)
+Can i do a "double" mount like i'm doing? Rust seems fine compiling this but i don't know.
 
-    #[cfg(target_os = "android")]
-        {
-            println!("Waiting for NativeScreen");
-            loop
-            {
-                match ndk_glue::native_window().as_ref() {
-                    Some(_) =&gt; 
-                    {
-                        println!("NativeScreen Found:{:?}", ndk_glue::native_window());
-                        break;
-                    },
-                    None =&gt; ()
-                }
-            }
-        }
+How can i expose files like .mp3 or others on /path such i can contact them as (for example) /path/name\_file.mp3 ?
 
-But still, it wouldn't run. So I added a couple extra `println!` statements to debug further at the ends of their respective functions in `async run`.
-
-Then, I tested it both on an Pixel emulator with Android 8 and on my rooted Mi 8 with Lineage OS, and unfortunately got 2 different error messages. Here are the relevant `adb logcat` results
-
-Real device:
-```
-I RustStdoutStderr: ------------------------RUST START------------------
-I RustStdoutStderr: Waiting for NativeScreen
-I RustStdoutStderr: NativeScreen Found:RwLockReadGuard { lock: RwLock { data: Some(NativeWindow { ptr: 0x73639f4010 }) } }
-D vulkan  : searching for layers in '/data/app/rust.example.hello_triangle-Sq7qBU-XxxSKvKk6XWtvDQ==/lib/arm64'
-D vulkan  : searching for layers in '/data/app/rust.example.hello_triangle-Sq7qBU-XxxSKvKk6XWtvDQ==/base.apk!/lib/arm64-v8a'
-I AdrenoVK: QUALCOMM build          : 033a5b0, I0e419467bc
-I AdrenoVK: Build Date              : 03/11/20
-I AdrenoVK: Shader Compiler Version : EV031.27.05.01
-I AdrenoVK: Local Branch            : 
-I AdrenoVK: Remote Branch           : refs/tags/AU_LINUX_ANDROID_LA.UM.8.3.R1.10.00.00.520.058
-I AdrenoVK: Remote Branch           : NONE
-I AdrenoVK: Reconstruct Branch      : NOTHING
-I AdrenoVK: Build Config            : S P 8.0.11 AArch64
-I RustStdoutStderr: surface made
-I RustStdoutStderr: adapter made
-I RustStdoutStderr: [2020-06-18T06:37:16Z ERROR gfx_backend_vulkan] [vulkan] invalid vkGetDeviceProcAddr(0x73683eb2c0, "vkGetPhysicalDevicePresentRectanglesKHR") call
-I RustStdoutStderr: device and queue made
-I ActivityTaskManager: Displayed rust.example.hello_triangle/android.app.NativeActivity: +172ms
-I RustStdoutStderr: shader modules made
-I RustStdoutStderr: pipeline layout made
-I RustStdoutStderr: pipeline made
-I RustStdoutStderr: descriptor made
-I RustStdoutStderr: [2020-06-18T06:37:16Z ERROR gfx_backend_vulkan] [vulkan] invalid vkGetDeviceProcAddr(0x73683eb2c0, "vkGetPhysicalDevicePresentRectanglesKHR") call
-I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@3.0::IMapper/default in either framework or device manifest.
-W Gralloc3: mapper 3.x is not supported
-I RustStdoutStderr: swapchain made
-I RustStdoutStderr: -----------------------ENTERING EVENT LOOP-----------------
-```
-
-Emulator:
-```
-I RustStdoutStderr: -------------------RUST START----------------------------
-I RustStdoutStderr: Waiting for NativeScreen
-D EGL_emulation: eglMakeCurrent: 0xa45f57a0: ver 3 0 (tinfo 0xa467ea20)
-I RustStdoutStderr: NativeScreen Found:RwLockReadGuard { lock: RwLock { data: Some(NativeWindow { ptr: 0xb03ba808 }) } }
-I MicroDetectionState: Should stop hotword detection immediately - false
-I MicroDetector: Keeping mic open: false
-I MicroDetector: #shutdownAudioWithAudioLibrary
-E vulkan  : invalid vkGetInstanceProcAddr(VK_NULL_HANDLE, "vkEnumerateInstanceVersion") call
-D vulkan  : searching for layers in '/data/app/rust.example.hello_triangle-52It2mKIndceMGQUCUmqGg==/lib/x86'
-D vulkan  : searching for layers in '/data/app/rust.example.hello_triangle-52It2mKIndceMGQUCUmqGg==/base.apk!/lib/x86'
-I RustStdoutStderr: surface made
-I RustStdoutStderr: thread '&lt;unnamed&gt;' panicked at 'called `Option::unwrap()` on a `None` value', examples/hello_triangle/main.rs:34:19
-I RustStdoutStderr: stack backtrace:
-I RustStdoutStderr:    0: &lt;unknown&gt;
-I RustStdoutStderr:    1: &lt;unknown&gt;
-I RustStdoutStderr:    2: &lt;unknown&gt;
-I RustStdoutStderr:    3: &lt;unknown&gt;
-I RustStdoutStderr:    4: &lt;unknown&gt;
-I RustStdoutStderr:    5: &lt;unknown&gt;
-I RustStdoutStderr:    6: &lt;unknown&gt;
-I RustStdoutStderr:    7: &lt;unknown&gt;
-I RustStdoutStderr:    8: &lt;unknown&gt;
-I RustStdoutStderr:    9: &lt;unknown&gt;
-I RustStdoutStderr:   10: &lt;unknown&gt;
-I RustStdoutStderr:   11: &lt;unknown&gt;
-I RustStdoutStderr:   12: &lt;unknown&gt;
-I RustStdoutStderr:   13: &lt;unknown&gt;
-I RustStdoutStderr:   14: &lt;unknown&gt;
-I RustStdoutStderr:   15: &lt;unknown&gt;
-I RustStdoutStderr:   16: &lt;unknown&gt;
-I RustStdoutStderr:   17: &lt;unknown&gt;
-I RustStdoutStderr:   18: &lt;unknown&gt;
-I RustStdoutStderr:   19: &lt;unknown&gt;
-I RustStdoutStderr:   20: &lt;unknown&gt;
-I RustStdoutStderr:   21: &lt;unknown&gt;
-I RustStdoutStderr:   22: &lt;unknown&gt;
-I RustStdoutStderr:   23: &lt;unknown&gt;
-I RustStdoutStderr:   24: &lt;unknown&gt;
-I RustStdoutStderr:   25: &lt;unknown&gt;
-I RustStdoutStderr:   26: &lt;unknown&gt;
-I RustStdoutStderr:   27: &lt;unknown&gt;
-I RustStdoutStderr:   28: &lt;unknown&gt;
-I RustStdoutStderr:   29: &lt;unknown&gt;
-I RustStdoutStderr:   30: &lt;unknown&gt;
-I RustStdoutStderr:   31: &lt;unknown&gt;
-I RustStdoutStderr:   32: &lt;unknown&gt;
-I RustStdoutStderr: note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
-```
-
-I feel completely lost atm. Can anyone explain the error, or redirect to a better place to report this bug?
+Cheers

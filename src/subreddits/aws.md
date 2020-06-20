@@ -21,7 +21,29 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][I wrote a free app for sketching cloud architecture diagrams](https://www.reddit.com/r/aws/comments/hbztrc/i_wrote_a_free_app_for_sketching_cloud/)
+## [2][A utility to edit secrets from AWS Secrets Manager without storing them](https://www.reddit.com/r/aws/comments/hcj9lf/a_utility_to_edit_secrets_from_aws_secrets/)
+- url: https://github.com/zeapo/barberousse
+---
+
+## [3][Do I really need to provide resource-level tenant isolation with IAM roles and policies?](https://www.reddit.com/r/aws/comments/hcdv70/do_i_really_need_to_provide_resourcelevel_tenant/)
+- url: https://www.reddit.com/r/aws/comments/hcdv70/do_i_really_need_to_provide_resourcelevel_tenant/
+---
+I'm developing a web app for a SaaS business.
+
+This business is aspiring/planning to have hundreds or thousands of customers.
+
+I've watched some (awesome) talks by Tod Golding on AWS multi-tenant architectures for SaaS businesses.
+
+Tod recommends us to add tenant isolation not only at the token level, but also at the resource level (DynamoDB tables or partition keys, S3 buckets or tags, etc.), by adding policies on those resources that will isolate tenants and also handle permission levels.
+
+After creating these policies, we would utilize the services of Cognito Identity Pools (or AWS STS) to exchange the user token for AWS credentials, through which the users would assume roles.
+
+I have to say: I don't really see the need for that. Because if I have a token with a secret key, I can assume the user is who they are, and then I can just take the user ID, the tenant ID and query my DynamoDB table or S3 bucket according to what I need.
+
+**What precisely other security would such IAM policies add?** Can someone illuminate me?
+
+Because as I see it, I think this will just add unnecessary complexity and make the app slower (demanding extra requests to STS each time I need to access AWS resources).
+## [4][I wrote a free app for sketching cloud architecture diagrams](https://www.reddit.com/r/aws/comments/hbztrc/i_wrote_a_free_app_for_sketching_cloud/)
 - url: https://www.reddit.com/r/aws/comments/hbztrc/i_wrote_a_free_app_for_sketching_cloud/
 ---
 I wrote a free app for sketching cloud architecture diagrams. All AWS, Azure, GCP, Kubernetes, Alibaba Cloud, Oracle Cloud icons and more are preloaded in the app. Hope the community finds it useful: [cloudskew.com](https://www.cloudskew.com/)
@@ -32,145 +54,57 @@ Notes:
 2. You can see some sample diagrams [here](https://www.cloudskew.com/docs/samples.html).
 
 [CloudSkew - Free AWS, Azure, GCP, Kubernetes diagram tool](https://preview.redd.it/9jm111zn1v551.png?width=1438&amp;format=png&amp;auto=webp&amp;s=c33c6eb8c76a0c52408e0c672d36b6eac62a3fed)
-## [3][Amazon Builders: Automating safe, hands-off deployments](https://www.reddit.com/r/aws/comments/hbnqkb/amazon_builders_automating_safe_handsoff/)
-- url: https://aws.amazon.com/builders-library/automating-safe-hands-off-deployments/
+## [5][Best ec2 instance type(s) for remote full-stack development?](https://www.reddit.com/r/aws/comments/hcl879/best_ec2_instance_types_for_remote_fullstack/)
+- url: https://www.reddit.com/r/aws/comments/hcl879/best_ec2_instance_types_for_remote_fullstack/
 ---
+Was using a t2.small for remote dev through vscode but the performance was abysmal.  Any sort of load on the device seemed to caused very high response times or kick me out ssh(even through the aws webconsole).  However the status checks on the server never showed any issues.  The rest of my internet is fine and I've never had this issue on DigitalOcean.  
 
-## [4][Run Multiple Wordpress Sites on EC2 Free Tier?](https://www.reddit.com/r/aws/comments/hc0a57/run_multiple_wordpress_sites_on_ec2_free_tier/)
-- url: https://www.reddit.com/r/aws/comments/hc0a57/run_multiple_wordpress_sites_on_ec2_free_tier/
+Using a docker-compose MERN stack.
+
+I'm wondering if anyone can recommend a good ec2 instance type for full-stack remote development with vscode(via ssh)?  Or at least what to avoid?  8GB of memory is the most I would ever need I think.
+## [6][How do I make boto3 output more readable?](https://www.reddit.com/r/aws/comments/hcmalq/how_do_i_make_boto3_output_more_readable/)
+- url: https://www.reddit.com/r/aws/comments/hcmalq/how_do_i_make_boto3_output_more_readable/
 ---
-Would it be possible to run circa 10 Wordpress sites on the AWS EC2 Free Tier? 
+Hello, 
 
-The sites will receive extremely low traffic. 
-
-I still haven't really wrapped my head around how the hours will be used or if it's even possible to keep the sites up for one year with the Free Tier.
-## [5][help! 1M RPS ELB spike cost estimation](https://www.reddit.com/r/aws/comments/hbxb8g/help_1m_rps_elb_spike_cost_estimation/)
-- url: https://www.reddit.com/r/aws/comments/hbxb8g/help_1m_rps_elb_spike_cost_estimation/
+If I get an output from something like ec2.describe\_instances(), I just get an enormous wall of text. How can I format it to make it more readable in the terminal? I have tried playing around with json (output=json.loads(response) for example, but can't seem to find something that works.
+## [7][Amazon Glacier Stack for Synology](https://www.reddit.com/r/aws/comments/hcm6wa/amazon_glacier_stack_for_synology/)
+- url: https://www.reddit.com/r/aws/comments/hcm6wa/amazon_glacier_stack_for_synology/
 ---
-hey, i'm starting to consider to switch to the cloud my side project, now, i found that ELB scales automatically without having the possibility to set a max number of connection per second.
+Another weekend project, this time I made a CloudFormation file for anyone with a Synology device who would like to have an offsite backup using Amazon Glacier. As always the CF file is setup as one click deployment. 
 
-in the event of a spike on traffic of  1 million request (let's say for an http flood attack) i would need 10\^6 connection/s which that means  (10\^6/25) LCU.
+Worth knowing: the downside of the Synology implementation of Glacier is that they don't ask for a Vault ARN, they make one for you, so there is no way to configure the Vault using a CF file. Not to mention that they need way more privileges than needed. Thankfully they have a standard naming scheme, so I locked Synology down with a policy that has a wildmaks resource ARN.
 
-so the cost for that spike will be: (10\^6/25) \*0.008 = 320$ only in LCU, right?
-
-it seems too expensive to me (for a side project) and i've no knowledge on how prevent this (cloudfront is not suitable for this). 
-
-are my calculations right? 
-
-there's a way to mitigate / prevent to ELB to scale to infinity or drop request(without paying for them)?
-## [6][Is it possible to access the execution time of a lambda within itself?](https://www.reddit.com/r/aws/comments/hbw5ie/is_it_possible_to_access_the_execution_time_of_a/)
-- url: https://www.reddit.com/r/aws/comments/hbw5ie/is_it_possible_to_access_the_execution_time_of_a/
+This is the URL of the project: https://github.com/0x4447/0x4447_product_synology_backup
+## [8][Elastic Beanstalk - Command '/opt/python/run/venv/bin/pip install -r /opt/python/ondeck/app/requirements.txt' returned non-zero exit status 1](https://www.reddit.com/r/aws/comments/hck7u0/elastic_beanstalk_command_optpythonrunvenvbinpip/)
+- url: https://www.reddit.com/r/aws/comments/hck7u0/elastic_beanstalk_command_optpythonrunvenvbinpip/
 ---
-I'm processing a bunch of images which are stored on one of our servers through Lambda, not to DoS ourselves, this means that it is very likely that the Lambda is going to exceed 15 minutes.
+Trying to use a git link in order to install a package which is on github. For this, I included the following line in my requirements.txt file:
 
-Currently we already have a caching mechanism in place but I was wondering if Lambda has any way knowing its own execution time and gracefully terminate before it's timed out?
-## [7][Is ap-southeast-3 coming online? Region looks to be published in AWS ip ranges](https://www.reddit.com/r/aws/comments/hbugj5/is_apsoutheast3_coming_online_region_looks_to_be/)
-- url: https://www.reddit.com/r/aws/comments/hbugj5/is_apsoutheast3_coming_online_region_looks_to_be/
+        [-e] git+https://github.com/deribit/deribit-api-clients#egg=python
+
+But I get the following error when I run \`eb deploy -v\`
+
+        CalledProcessError: Command '/opt/python/run/venv/bin/pip install -r /opt/python/ondeck/app/requirements.txt' returned non-zero exit status 1.
+
+What's the right way to list a requirement like that? Pip version of the instance is 9.0.3
+## [9][how do i change Node.js version , Proxy server,Listeners from config or yml? instead of going over Configuration overview in aws web UI](https://www.reddit.com/r/aws/comments/hcjyiu/how_do_i_change_nodejs_version_proxy/)
+- url: https://www.reddit.com/r/aws/comments/hcjyiu/how_do_i_change_nodejs_version_proxy/
 ---
-https://ip-ranges.amazonaws.com/ip-ranges.json is now publishing ap-southeast-3 as a region?? We about to see a new shiny region come up?
-## [8][Elastic Beanstalk is wrongly deploying environment with Python 2.7 rather than 3.7](https://www.reddit.com/r/aws/comments/hbylic/elastic_beanstalk_is_wrongly_deploying/)
-- url: https://www.reddit.com/r/aws/comments/hbylic/elastic_beanstalk_is_wrongly_deploying/
+currently i usually end up doing config over web UI
+
+Node.js version, Proxy server,  Listeners,   Instance type
+## [10][Question about lightsail and databases](https://www.reddit.com/r/aws/comments/hcgaxz/question_about_lightsail_and_databases/)
+- url: https://www.reddit.com/r/aws/comments/hcgaxz/question_about_lightsail_and_databases/
 ---
-After running \`eb init\` I chose an environment with Python 3.7 and AL 2. This is the config file that was generated:
+Hey guys, I’m new to AWS and kind of confused about their pricing. I’m starting off with the free lightsail. My understanding is you pay for each hour you use (I assume that’s both me playing around in the backend, and anybody visiting the site) up to the 3.50 for the cheapest plan. Seems like a great deal. I kept reading and it says you have to pay 15/month for managed databases. 
 
-    branch-defaults:
-      default:
-        environment: django-env
-        group_suffix: null
-    global:
-      application_name: dashboard
-      branch: null
-      default_ec2_keyname: aws-eb
-      default_platform: Python 3.7 running on 64bit Amazon Linux 2
-      default_region: us-west-2
-      include_git_submodules: true
-      instance_profile: null
-      platform_name: null
-      platform_version: null
-      profile: eb-cli
-      repository: null
-      sc: null
-      workspace_type: Application
+This is where I’m confused. With the 3.50/month can I not create sql databases? Or are managed databases something different? Once the free trial ends, I don’t want to get with a bunch of costs I don’t quite understand. 
 
-So clearly I'm supposed to have python 3.7 in the EC 2 instance, but that doesn't seem to be the case.
+I’m looking to run php and python scripts, and to do so I obviously need to utilize MySQL or postgresql etc. can I create those with just the 3.50/month, or would I need the 15/month managed databases to be able to do that?
 
-When I SSH into the instance and run \`python\`, the instance's default is 2.7. What's wrong here?
-## [9][ASG set max lifetime of ec2?](https://www.reddit.com/r/aws/comments/hbwsqb/asg_set_max_lifetime_of_ec2/)
-- url: https://www.reddit.com/r/aws/comments/hbwsqb/asg_set_max_lifetime_of_ec2/
+Thanks so much!
+## [11][Moving a file share to FSx for Windows in a hybrid environment?](https://www.reddit.com/r/aws/comments/hcab3a/moving_a_file_share_to_fsx_for_windows_in_a/)
+- url: https://www.reddit.com/r/aws/comments/hcab3a/moving_a_file_share_to_fsx_for_windows_in_a/
 ---
-Currently I have a lambda function that recycles ec2's in the ASG after they are more than a week old.  I remember seeing a press release or something that mentioned that sort of functionality was built into the infrastructure now but I can't find anything about it through google or the interface.  Is it possible or was I dreaming?
-## [10][Lambdas - is there a better logical oranizational way to approach lambdas? I have too many...](https://www.reddit.com/r/aws/comments/hbmqfl/lambdas_is_there_a_better_logical_oranizational/)
-- url: https://www.reddit.com/r/aws/comments/hbmqfl/lambdas_is_there_a_better_logical_oranizational/
----
-My team has deployed like 3 API Gateways, which all trigger some lambda or other, and we have additional test lambdas, and lambdas that do other things...
-
-All in all we have 86 lambdas, 9 pages worth, and all different applications and projects and everything is just in one large list in the Lambda page.
-
-Is there some sort of best-practice or some better way to organize them? I'm thinking like in ECS where you have like a logical cluster of containers/services/etc...
-
-Any advice, I have to create 10 more lambdas for a new project and it just seems so disorganized.
-## [11][Elastic Beanstalk: /bin/sh: /opt/python/run/venv/bin/activate: No such file or directory](https://www.reddit.com/r/aws/comments/hby4py/elastic_beanstalk_binsh/)
-- url: https://www.reddit.com/r/aws/comments/hby4py/elastic_beanstalk_binsh/
----
-Trying to deploy a django app which uses channels following this [https://medium.com/@elspanishgeek/how-to-deploy-django-channels-2-x-on-aws-elastic-beanstalk-8621771d4ff0](https://medium.com/@elspanishgeek/how-to-deploy-django-channels-2-x-on-aws-elastic-beanstalk-8621771d4ff0)
-
-&amp;#x200B;
-
-These are my config files:
-
-**01\_env.config**
-
-        option_settings:  
-          aws:elasticbeanstalk:container:python:     
-            WSGIPath: "dashboard/wsgi.py"
-          aws:elasticbeanstalk:application:environment:
-            DJANGO_SETTINGS_MODULE: "dashboard.settings"
-            PYTHONPATH: /opt/python/current/app/dashboard:$PYTHONPATH
-        
-          aws:elbv2:listener:80:
-            DefaultProcess: http
-            ListenerEnabled: 'true'
-            Protocol: HTTP
-            Rules: ws
-          aws:elbv2:listenerrule:ws:
-            PathPatterns: /websockets/*
-            Process: websocket
-            Priority: 1
-          aws:elasticbeanstalk:environment:process:http:
-            Port: '80'
-            Protocol: HTTP
-          aws:elasticbeanstalk:environment:process:websocket:
-            Port: '5000'
-            Protocol: HTTP
-
-**02\_setup.config**
-
-        container_commands:
-          00_pip_upgrade:
-            command: "source /opt/python/run/venv/bin/activate &amp;&amp; pip install --upgrade pip"
-            ignoreErrors: false
-          01_migrate:
-            command: "django-admin.py migrate"
-            leader_only: true
-          02_collectstatic:
-            command: "django-admin.py collectstatic --noinput"
-          03_wsgipass:
-            command: 'echo "WSGIPassAuthorization On" &gt;&gt; ../wsgi.conf'
-
-When I run \`eb create django-env\` it fails with 
-
-\`Command failed on instance. An unexpected error has occurred \[ErrorCode: 0000000001\].\`
-
-and in the logs, I found that the reason is:
-
-&amp;#x200B;
-
-2020-06-17 16:36:41,880 P4189 \[INFO\] Command 00\_pip\_upgrade
-
-2020-06-17 16:36:41,883 P4189 \[INFO\] -----------------------Command Output-----------------------
-
-2020-06-17 16:36:41,883 P4189 \[INFO\] 	/bin/sh: /opt/python/run/venv/bin/activate: No such file or directory
-
-&amp;#x200B;
-
-So even though I'm following the guide, the directory seems to not exist. I'm also not being able to SSH into the EC2 instance to check this. Has the python venv directory in Amazon Linux 2 changed?
+How well does this work compared to a traditional Windows File Server or on-prem NAS? How did you handle access for remote workers?

@@ -79,57 +79,49 @@
 
 
 &amp;nbsp;
-## [2][WTF Wednesday (June 17, 2020)](https://www.reddit.com/r/javascript/comments/hau2vx/wtf_wednesday_june_17_2020/)
-- url: https://www.reddit.com/r/javascript/comments/hau2vx/wtf_wednesday_june_17_2020/
+## [2][Showoff Saturday (June 20, 2020)](https://www.reddit.com/r/javascript/comments/hckze6/showoff_saturday_june_20_2020/)
+- url: https://www.reddit.com/r/javascript/comments/hckze6/showoff_saturday_june_20_2020/
 ---
-Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
-Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
-this is the place.
+Did you find or create something cool this week in javascript? 
 
-[Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][Speed up your development with this new VS Code extension](https://www.reddit.com/r/javascript/comments/hbyh8q/speed_up_your_development_with_this_new_vs_code/)
+Show us here!
+## [3][New Google web app Keen, a Pinterest rival, is build with Angular, and it is slow with Lighthouse performance score of 11%](https://www.reddit.com/r/javascript/comments/hc97g5/new_google_web_app_keen_a_pinterest_rival_is/)
+- url: https://staykeen.com/
+---
+
+## [4][Integrate Stripe with React and Serverless](https://www.reddit.com/r/javascript/comments/hclhj2/integrate_stripe_with_react_and_serverless/)
+- url: https://sigmetic.io/blog/stripe-react-serverless-part1/
+---
+
+## [5][Silly idea I had for syntactic sugar for creating relative dates with Javascript - 1..day.ago](https://www.reddit.com/r/javascript/comments/hcm30h/silly_idea_i_had_for_syntactic_sugar_for_creating/)
+- url: https://github.com/alexpusch/dotago.js
+---
+
+## [6][Speed up your development with this new VS Code extension](https://www.reddit.com/r/javascript/comments/hbyh8q/speed_up_your_development_with_this_new_vs_code/)
 - url: https://github.com/snipsnapdev/snipsnap
 ---
 
-## [4][[AskJS] How important is it to check in a lock file? i.e. yarn.lock or package-lock.json](https://www.reddit.com/r/javascript/comments/hbvwmx/askjs_how_important_is_it_to_check_in_a_lock_file/)
-- url: https://www.reddit.com/r/javascript/comments/hbvwmx/askjs_how_important_is_it_to_check_in_a_lock_file/
----
-I was talking to the lead engineer of a project that chooses not to check in their lock file (for their monorepo). He reasons that it "causes issues with merging/rebasing, and it pollutes diffs with tons of unimportant changes." And that major projects like [Serverless](https://github.com/serverless/serverless) and [JQuery](https://github.com/jquery/jquery) don't check them in either.
-
-This makes me a bit conflicted because it is officially [recommended](https://yarnpkg.com/blog/2016/11/24/lockfiles-for-all/) by Yarn and a large [majority](https://stackoverflow.com/questions/44206782/do-i-commit-the-package-lock-json-file-created-by-npm-5) on StackOverflow seem to be in favour of it (although to be fair, many also [disagree](https://stackoverflow.com/questions/44206782/do-i-commit-the-package-lock-json-file-created-by-npm-5#comment78284962_44210813)).
-
-The most practical line of reasoning from the lead is that "we've never had any serious problems leaving it out." And that if we were concerned about certain versions that break our code, we should lock down those versions explicitly in the `package.json`.
-
-I think those arguments are quite credible, but it feels really wrong to "buck the trend" of the vast majority of projects. What do you guys think? How important is it to check it in?
-## [5][Comprehensive guide on the JavaScript tooling ecosystem by MDN.](https://www.reddit.com/r/javascript/comments/hbgtug/comprehensive_guide_on_the_javascript_tooling/)
-- url: https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools
+## [7][small and powerful nutrient calculator](https://www.reddit.com/r/javascript/comments/hcj4cp/small_and_powerful_nutrient_calculator/)
+- url: http://github.com/jedzoka/plantiet/
 ---
 
-## [6][React-PWA – A minimal React PWA application as a GitHub template](https://www.reddit.com/r/javascript/comments/hby5u0/reactpwa_a_minimal_react_pwa_application_as_a/)
-- url: https://github.com/suren-atoyan/react-pwa
+## [8][Web Cache Deception in WhiteHat Security’s Top 10 Application Vulnerabilities of 2019](https://www.reddit.com/r/javascript/comments/hccy9b/web_cache_deception_in_whitehat_securitys_top_10/)
+- url: https://www.whitehatsec.com/blog/top-10-application-vulnerabilities-of-2019/
 ---
 
-## [7][What is GraphQL, how does it even work and why should you bother?](https://www.reddit.com/r/javascript/comments/hc0kza/what_is_graphql_how_does_it_even_work_and_why/)
-- url: https://academy.esveo.com/en/blog/m2
+## [9][NodeJS TS Continuous Deployments To AWS](https://www.reddit.com/r/javascript/comments/hcm308/nodejs_ts_continuous_deployments_to_aws/)
+- url: https://medium.com/@codingwithmanny/automating-nodejs-ts-deployments-with-codepipeline-to-elastic-beanstalk-79664321ab91
 ---
 
-## [8][Webapp shows how you would die if an asteroid collided with your city. [Javascrip]](https://www.reddit.com/r/javascript/comments/hbpfkx/webapp_shows_how_you_would_die_if_an_asteroid/)
-- url: https://asteroidcollision.herokuapp.com/
+## [10][Understanding Tail Recursion (With Javascript Code Snippets)](https://www.reddit.com/r/javascript/comments/hchngu/understanding_tail_recursion_with_javascript_code/)
+- url: https://medium.com/@parthipannatkunam/understanding-tail-recursion-7975af331296
 ---
 
-## [9][writing a better abstraction... Better code](https://www.reddit.com/r/javascript/comments/hbzdzr/writing_a_better_abstraction_better_code/)
-- url: https://medium.com/healthify-tech/your-way-to-better-abstraction-53b165a8c54f
+## [11][[AskJS] can I build an entire website using just JavaScript?](https://www.reddit.com/r/javascript/comments/hcjco3/askjs_can_i_build_an_entire_website_using_just/)
+- url: https://www.reddit.com/r/javascript/comments/hcjco3/askjs_can_i_build_an_entire_website_using_just/
 ---
 
-## [10][MDXP : Web Slides Made Easy](https://www.reddit.com/r/javascript/comments/hbz2au/mdxp_web_slides_made_easy/)
-- url: https://0phoff.github.io/MDXP
----
-
-## [11][Clipanion, type-safe CLI library with no dependency](https://www.reddit.com/r/javascript/comments/hbywkq/clipanion_typesafe_cli_library_with_no_dependency/)
-- url: https://github.com/arcanis/clipanion
----
-
-## [12][Showcase GitHub repositories on your website](https://www.reddit.com/r/javascript/comments/hbbcpi/showcase_github_repositories_on_your_website/)
-- url: https://github.com/Tarptaeya/repo-card
+## [12][This asteroid collision simulator allows you to simulate an asteroid collision with your city. You can view the damages it causes. [Javascript]](https://www.reddit.com/r/javascript/comments/hc6s3i/this_asteroid_collision_simulator_allows_you_to/)
+- url: https://asteroidcollision.herokuapp.com/?asteroid
 ---
 

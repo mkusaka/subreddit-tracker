@@ -109,21 +109,52 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/gk41zb/whos_available_may_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][I made an instagram clone](https://www.reddit.com/r/reactjs/comments/hbryhy/i_made_an_instagram_clone/)
-- url: https://www.reddit.com/r/reactjs/comments/hbryhy/i_made_an_instagram_clone/
+## [3][My first Full-Stack project: online multiplayer Tic-Tac-Toe!](https://www.reddit.com/r/reactjs/comments/hccnc2/my_first_fullstack_project_online_multiplayer/)
+- url: https://v.redd.it/t4bdp8pipy551
 ---
-&amp;#x200B;
 
-https://reddit.com/link/hbryhy/video/ubh629rsxr551/player
-## [4][7 Interesting JavaScript Features in ES2020 That You Should Know - Kriss](https://www.reddit.com/r/reactjs/comments/hbzvh6/7_interesting_javascript_features_in_es2020_that/)
+## [4][React Router v6 API Reference just released (WIP)](https://www.reddit.com/r/reactjs/comments/hc824e/react_router_v6_api_reference_just_released_wip/)
+- url: https://github.com/ReactTraining/react-router/blob/dev/docs/api-reference.md
+---
+
+## [5][7 Interesting JavaScript Features in ES2020 That You Should Know - Kriss](https://www.reddit.com/r/reactjs/comments/hbzvh6/7_interesting_javascript_features_in_es2020_that/)
 - url: https://kriss.io/7-interesting-javascript-features-in-es2020-that-you-should-know/#.XuyvbmgzZdg
 ---
 
-## [5][📦 Parcel 2 beta 1: improved stability, tree shaking, source map performance, and more! 🚀](https://www.reddit.com/r/reactjs/comments/hbl72g/parcel_2_beta_1_improved_stability_tree_shaking/)
-- url: https://medium.com/@devongovett/parcel-2-beta-1-improved-stability-tree-shaking-source-map-performance-and-more-78179779e8b7
+## [6][Hi. I have created a tiny form using formik. Is it possible for me to display the data the user has entered on submit? Without using any API calls.](https://www.reddit.com/r/reactjs/comments/hcmah4/hi_i_have_created_a_tiny_form_using_formik_is_it/)
+- url: https://www.reddit.com/r/reactjs/comments/hcmah4/hi_i_have_created_a_tiny_form_using_formik_is_it/
+---
+Please tell me how. I want to display the form data as a summary on another page.
+## [7][Automatic Analytics PageView Tracking using React Router](https://www.reddit.com/r/reactjs/comments/hclsp3/automatic_analytics_pageview_tracking_using_react/)
+- url: http://www.sheshbabu.com/posts/automatic-pageview-tracking-using-react-router/
 ---
 
-## [6][Did React development grind to a halt last few weeks?](https://www.reddit.com/r/reactjs/comments/hbztec/did_react_development_grind_to_a_halt_last_few/)
+## [8][SVG Component Library Creator - NPM](https://www.reddit.com/r/reactjs/comments/hclfnq/svg_component_library_creator_npm/)
+- url: https://www.reddit.com/r/reactjs/comments/hclfnq/svg_component_library_creator_npm/
+---
+Hey guys! I just created my very first npm package!
+It allows you to turn all svgs in your project into a single React (React Native) component with full type-safety!
+Any feedback appreciated!!
+Check it out here:
+
+https://github.com/josevelaz/svg-component-library-creator
+## [9][How to get dom properties from react element](https://www.reddit.com/r/reactjs/comments/hckw0m/how_to_get_dom_properties_from_react_element/)
+- url: https://www.reddit.com/r/reactjs/comments/hckw0m/how_to_get_dom_properties_from_react_element/
+---
+I want to know the scroll height form an element. I know that in vanilla js i'd do element.scrollHeight, but in React it says undefined. What should I do?
+## [10][Invasion, Protect The Earth!](https://www.reddit.com/r/reactjs/comments/hcko1s/invasion_protect_the_earth/)
+- url: https://www.reddit.com/r/reactjs/comments/hcko1s/invasion_protect_the_earth/
+---
+ I'm learning redux so I built an earth invasion game using Reactjs, Redux, and SVG 
+
+Source Code:  [https://github.com/aashrafh/Invasion](https://github.com/aashrafh/Invasion) 
+
+Try It: [https://aashrafh.github.io/Invasion](https://aashrafh.github.io/Invasion)
+## [11][Learn how to practice React by building a basic application that fetches and renders Pokémon data](https://www.reddit.com/r/reactjs/comments/hckjsa/learn_how_to_practice_react_by_building_a_basic/)
+- url: https://youtu.be/d4JoL9LTJdQ
+---
+
+## [12][Did React development grind to a halt last few weeks?](https://www.reddit.com/r/reactjs/comments/hbztec/did_react_development_grind_to_a_halt_last_few/)
 - url: https://www.reddit.com/r/reactjs/comments/hbztec/did_react_development_grind_to_a_halt_last_few/
 ---
 https://github.com/facebook/react/graphs/commit-activity
@@ -131,96 +162,3 @@ https://github.com/facebook/react/graphs/commit-activity
 The last 3 weeks there has been a stark difference in commit activity compared to last year.
 
 Does anyone know the reason for this?
-## [7][React-PWA – A minimal React PWA application as a GitHub template](https://www.reddit.com/r/reactjs/comments/hbmtj9/reactpwa_a_minimal_react_pwa_application_as_a/)
-- url: https://github.com/suren-atoyan/react-pwa
----
-
-## [8][I made a React component for displaying a Google Calendar. Feedback welcome!](https://www.reddit.com/r/reactjs/comments/hbmyw7/i_made_a_react_component_for_displaying_a_google/)
-- url: https://www.reddit.com/r/reactjs/comments/hbmyw7/i_made_a_react_component_for_displaying_a_google/
----
-Hi everyone,
-
-A while ago I was looking for a simple to use and customizable way to display a google calendar on a website. Google's embedded calendar has a dated design and little customization, so I decided to make my own that hopefully improves on these aspects.
-
-It pulls events from a Google Calendar and displays them in a month view. It shows more information about the event when clicked, and properly supports recurring events (using rrule), including instances that have changed or been deleted.
-
-I am still pretty new to react and this is my first time making an npm package, so I would love to hear any feedback on the design, code, or anything else you want to say.
-
-Github:  [https://github.com/ericz1803/react-google-calendar](https://github.com/ericz1803/react-google-calendar)
-
-Demo: [https://ericz1803.github.io/react-test-calendar](https://ericz1803.github.io/react-test-calendar)
-## [9][I want to click a cell but whole row becomes clicked.](https://www.reddit.com/r/reactjs/comments/hc04tf/i_want_to_click_a_cell_but_whole_row_becomes/)
-- url: https://www.reddit.com/r/reactjs/comments/hc04tf/i_want_to_click_a_cell_but_whole_row_becomes/
----
-I have suck [https://github.com/audriu/lenta](https://github.com/audriu/lenta) code. But when I click on a cell it will update the whole row instead of that cell. I can not see where the problem lies. Please help! This is a very noob question, but somewhere I have to start...
-## [10][Naming Conventions for React - Apollo GraphQL?](https://www.reddit.com/r/reactjs/comments/hbzznj/naming_conventions_for_react_apollo_graphql/)
-- url: https://www.reddit.com/r/reactjs/comments/hbzznj/naming_conventions_for_react_apollo_graphql/
----
-Hello - I've just started working on a React + GraphQL project at work and I'm curious if there is a naming convention for queries and mutations that is typically followed?  (Our project also uses codegen)
-
-Would love to see an example of a query and a mutation that you are following including the gql tag export, the operation name and then the actual query/mutation.
-
-Thanks
-## [11][With react router how can I use a static navbar on just some routes?](https://www.reddit.com/r/reactjs/comments/hbt1hd/with_react_router_how_can_i_use_a_static_navbar/)
-- url: https://www.reddit.com/r/reactjs/comments/hbt1hd/with_react_router_how_can_i_use_a_static_navbar/
----
-I am trying to setup nesting in the react router. I have the following code:
-
-    
-        import React from 'react';
-        import DefaultSwitch from './components/DefaultSwitch/DefaultSwitch';
-        import './scss/App.scss';
-        
-        const App = () =&gt; {
-            return (
-                &lt;DefaultSwitch /&gt;
-            );
-        };
-        export default App;
-
-With `DefaultSwitch` defined as:
-
-     const DefaultSwitch = () =&gt; {
-            return (
-                &lt;Switch&gt;
-                    &lt;Route exact path='/' component={Landing} /&gt;
-                    &lt;Route exact path='/login' component={Login} /&gt;
-                    &lt;Route exact path='/logout' component={Logout} /&gt;
-                    &lt;Route path="/dashboard" component={Dashboard} /&gt;
-                &lt;/Switch&gt;
-            );
-        }
-
-Inside the `Dashboard` I have the following:
-
-    const Dashboard = () =&gt; {
-            return (
-                &lt;div&gt;
-                    &lt;MyNavbar /&gt;
-                    &lt;DashboardSwitch /&gt;
-                &lt;/div&gt;
-            );
-        };
-
-And finally `DashboardSwitch` as:
-
-     const DashboardSwitch = () =&gt; {
-            return (
-                &lt;Switch&gt;
-                    &lt;Route exact path='/dashboard' component={Home} /&gt;
-                    &lt;Route exact path='/dashboard/home' component={Home} /&gt;
-                    &lt;Route exact path='/dashboard/bonuses' component={Bonuses} /&gt;
-                &lt;/Switch&gt;
-            );
-        }
-    
-
-Routing appears to work and the correct components are loaded, however I have noticed that if for example I am at `/dashboard` and then navigate to `/dashboard/bonuses` the entire page is reloading including the `MyNavbar` component. I want the navbar to remain static and only the content below it to reload as I have defined in the \`Dashboard\` component.
-
-&amp;#x200B;
-
-What am I doing wrong here?
-## [12][writing a better abstraction... Better code](https://www.reddit.com/r/reactjs/comments/hbzbna/writing_a_better_abstraction_better_code/)
-- url: https://medium.com/healthify-tech/your-way-to-better-abstraction-53b165a8c54f
----
-

@@ -23,122 +23,127 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/06/16/this-week-in-rust-343/
 ---
 
-## [3][Got this baby in today, gonna enjoy some light reading later](https://www.reddit.com/r/rust/comments/hbtt65/got_this_baby_in_today_gonna_enjoy_some_light/)
-- url: https://i.redd.it/plk3qzaxks551.jpg
+## [3][String vs &amp;str](https://www.reddit.com/r/rust/comments/hciaol/string_vs_str/)
+- url: https://www.reddit.com/r/rust/comments/hciaol/string_vs_str/
+---
+As a Rust newbie struggling with understanding the basics, I found this article really good at explaining the difference between String and &amp;str in Rust
+
+[https://blog.thoughtram.io/string-vs-str-in-rust/](https://blog.thoughtram.io/string-vs-str-in-rust/)
+## [4][Show /r/rust: libps1 a shell prompt for developers](https://www.reddit.com/r/rust/comments/hcfy2d/show_rrust_libps1_a_shell_prompt_for_developers/)
+- url: https://github.com/JoshMcguigan/libps1
 ---
 
-## [4][Small trick destructuring slices with known length](https://www.reddit.com/r/rust/comments/hbxtrm/small_trick_destructuring_slices_with_known_length/)
-- url: https://www.reddit.com/r/rust/comments/hbxtrm/small_trick_destructuring_slices_with_known_length/
----
-Just want to share a small trick I found on destructuring the contents of a slice into local variables.
-
-Instead of using `if let` like this:
-
-    if let [a, b, c] = k {
-        Some(a * x.powi(2) + b * x + c)
-    } else {
-        None
-    }
-
-... you can use the `TryInto` trait together with the `try` (`?`) operator for a more linear code flow:
-
-    use std::convert::TryInto;
-    let [a, b, c]: [_; 3] = k.try_into().ok()?;
-    Some(a * x.powi(2) + b * x + c)
-
-[Playground example](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=46498dd319aa14d5e5286246e03e0f4e)
-## [5][bygge - Build a Rust project without Cargo*](https://www.reddit.com/r/rust/comments/hc07zm/bygge_build_a_rust_project_without_cargo/)
-- url: https://fnordig.de/2020/06/19/build-your-project/
+## [5][(Stream) C++ programmer and game developer starts learning Rust this week](https://www.reddit.com/r/rust/comments/hchmsz/stream_c_programmer_and_game_developer_starts/)
+- url: https://www.youtube.com/watch?v=1asufxmZW5A
 ---
 
-## [6][rust-highfive's contributions graph - is this because of COVID?](https://www.reddit.com/r/rust/comments/hbghcm/rusthighfives_contributions_graph_is_this_because/)
-- url: https://i.redd.it/kcoukwx5qo551.png
+## [6][CS196 at Illinois is Teaching Rust Concepts and Sharing on YT](https://www.reddit.com/r/rust/comments/hc1c52/cs196_at_illinois_is_teaching_rust_concepts_and/)
+- url: https://www.youtube.com/channel/UCRA18QWPzB7FYVyg0WFKC6g/videos
 ---
 
-## [7][80x faster Rust code?!](https://www.reddit.com/r/rust/comments/hbvjer/80x_faster_rust_code/)
-- url: https://github.com/choiway/prognog/blob/master/README.md
+## [7][Tour of Rust - Chapter 8 Released - Smart Pointers - Occidental translations, French translations](https://www.reddit.com/r/rust/comments/hccnbk/tour_of_rust_chapter_8_released_smart_pointers/)
+- url: https://tourofrust.com/chapter_8_en.html
 ---
 
-## [8][Announcing Rust 1.44.1](https://www.reddit.com/r/rust/comments/hbgayc/announcing_rust_1441/)
-- url: https://blog.rust-lang.org/2020/06/18/Rust.1.44.1.html
+## [8][I made a pandemic-inspired data structure to practice what I've learned in Rust](https://www.reddit.com/r/rust/comments/hcakf2/i_made_a_pandemicinspired_data_structure_to/)
+- url: https://www.reddit.com/r/rust/comments/hcakf2/i_made_a_pandemicinspired_data_structure_to/
 ---
+Need another way to store values that has some unpredictability? Do you agree that Rust just isn't safe when it comes to memory management? Want another 4-letter acronym to keep track of?
 
-## [9][Crafting cellular automata in Rust (my first blog post, looking for feedback)](https://www.reddit.com/r/rust/comments/hbu84n/crafting_cellular_automata_in_rust_my_first_blog/)
-- url: https://www.reddit.com/r/rust/comments/hbu84n/crafting_cellular_automata_in_rust_my_first_blog/
----
-Hey everyone, I just graduated from university and have decided to take the lull in job opportunities to brush back up on my Rust. I am trying to blog about the process of writing a cellular automata library in Rust, but this first piece was more of just a "test" on writing a blog post at all. I'm just looking for basic feedback about the writing, and code style, so anything is appreciated.
+Introducing [OIOO](https://github.com/ramirezmike/OIOO) (one-in, one-out), an almost useless data structure I made because I thought it would be fun and good practice. Here's how it works:
 
-[Here's the post](https://oneorten.dev/blog/automata_rust_1/)
-
-Thank you for reading!
-## [10][Announcing `float_eq` 0.4.0](https://www.reddit.com/r/rust/comments/hbyq2o/announcing_float_eq_040/)
-- url: https://www.reddit.com/r/rust/comments/hbyq2o/announcing_float_eq_040/
----
-Hi!
-
-I've just published version 0.4.0 of [float\_eq](https://crates.io/crates/float_eq), for comparing floating point values.
-
-This release adds support for comparing the contents of more standard Rust types - slices, Option, Vec, VecDeque, LinkedList, BTreeMap and HashMap:
-
-    let a = vec![1.0f32, 2.0];
-    let b = vec![1.000_000_1, 2.000_000_5];
+    // create an essential oioo with 25% capacity
+    let mut oioo = OIOO::&lt;usize&gt;::new(
+        Phase::One { 
+            occupancy: 12, 
+            is_essential: true 
+        }
+    ); 
     
-    assert_float_eq!(a, b, ulps &lt;= vec![1, 2]);
-    assert_float_eq!(a, b, ulps_all &lt;= 2);
-
-This is in addition to the support added in 0.3.1 for comparing mutable and immutable reference types and the contents of Cell, RefCell, Rc, Arc and Box instances.
-
-You may also now `#[derive]` any or all of the float\_eq traits for non-generic structs and tuple structs, by enabling the optional `"derive"` feature:
-
-    #[derive(
-        Debug, PartialEq, FloatUlps, FloatDiff, FloatEq, FloatEqDebug,
-        FloatEqAll, FloatEqAllDebug,
-    )]
-    #[float_eq(ulps = "PointUlps", all_epsilon = "f64")]
-    struct Point {
-        x: f64,
-        y: f64,
-    }
+    // add values with one_in()
+    oioo.one_in(10); 
+    oioo.one_in(20);
+    oioo.one_in(30);
     
-    let a = Point { x: 1.0, y: -2.0 };
-    let b = Point { x: 1.1, y: -2.2 };
-    assert_float_eq!(a, b, abs &lt;= Point { x: 0.15, y: 0.25 });
-    assert_float_eq!(a, b, abs_all &lt;= 0.25);
+    // randomly returns a value with one_out()
+    println!("{}", oioo.one_out().unwrap()); 
+
+There's a hard limit based on the initialized occupancy, phase and essentialism, but don't worry because any excess values get stored in a queue outside, which automatically inserts into the main store once room becomes available.
+
+    // add values in an oioo with a max capacity of 3
+    oioo.one_in(10); 
+    oioo.one_in(20);
+    oioo.one_in(30);
     
-    let c = Point { x: 1.000_000_000_000_000_9, y: -2.000_000_000_000_001_3 };
-    assert_float_eq!(a, c, ulps &lt;= PointUlps { x: 4, y: 3 });
-    assert_float_eq!(a, c, ulps_all &lt;= 4);
+    // add a value to exceed capacity. 
+    // This value gets stored in a separate queue
+    oioo.one_in(40); 
 
-**How does float\_eq differ from approx?**
+    // randomly returns a value from the set [10, 20, 30]
+    println!("{}", oioo.one_out().unwrap()); // let's say this outputs 20
 
-Both provide similar comparison capabilities, with different underlying philosophies and APIs, see [this post](https://www.reddit.com/r/rust/comments/fzwxiy/announcing_float_eq_for_explicitly_bounded/fn6nkka/) for a longer discussion.
+    // randomly returns a value from the set [10, 30, 40]
+    println!("{}", oioo.one_out().unwrap()); // can potentially return 40
 
-**Why write yet another floating point equality library?**
+And you don't have to worry about the safety of the memory stored in the OIOO because [they are padded with social distance None values.](https://github.com/ramirezmike/OIOO/raw/master/example.jpg?raw=true). That's right, each value will have plenty of space to stay safe while in the OIOO!
 
-To explore providing a different kind of toolkit for working with floating point numbers. Since I am fairly new to Rust (though very experienced with C++) it seemed like a good way to introduce myself to some of the more advanced language and ecosystem features. Finally, I wanted to gain a deeper intuition for floating point representation and usage and you know what they say - don't reinvent the wheel unless you're planning on learning how wheels work :)
-## [11][5 years of Rust - a cross-platform &amp; full-stack language of choice for the next decade(s)](https://www.reddit.com/r/rust/comments/hbwpv9/5_years_of_rust_a_crossplatform_fullstack/)
-- url: https://gendignoux.com/blog/2020/06/16/rust-5-years-cross-platform.html
+[Further documentation can be found here](https://ramirezmike.github.io/OIOO/target/doc/oioo/) Feedback and criticism is totally welcome! 
+
+^^^^im ^^^^so ^^^^sorry, ^^^^please ^^^^don't ^^^^hurt ^^^^me
+## [9][Behold, my first Rust application. It's a CLI that opens Windows paths on Linux to a shared drive. If you can spot some mistakes I made, don't hesitate to tell, I came from PHP.](https://www.reddit.com/r/rust/comments/hciydg/behold_my_first_rust_application_its_a_cli_that/)
+- url: https://github.com/ivkovici/sp
 ---
 
-## [12][HELP Exposing static files with Rocket](https://www.reddit.com/r/rust/comments/hc0d97/help_exposing_static_files_with_rocket/)
-- url: https://www.reddit.com/r/rust/comments/hc0d97/help_exposing_static_files_with_rocket/
+## [10][I built a fast BLAS-accelerated, Pytorch-style tensor+autograd library in Rust](https://www.reddit.com/r/rust/comments/hcby3r/i_built_a_fast_blasaccelerated_pytorchstyle/)
+- url: https://www.reddit.com/r/rust/comments/hcby3r/i_built_a_fast_blasaccelerated_pytorchstyle/
 ---
-So guys, i have few doubts about exposing static files with rocket.
+https://github.com/bkkaggle/L2/blob/master/screenshot.png
 
-First one, can i expose files which are not index or .html files?
+GitHub: https://github.com/bkkaggle/L2
 
-If so in my code im trying to do something like this in the main():
+Crates.io: https://crates.io/crates/l2
 
-`rocket::ignite()`  
-`.mount("/", routes![index])`  
-`.mount("/path",StaticFiles::from("/local/path/files"))`  
-`.attach(Template::fairing())`  
-`.launch();`
+Twitter thread with images: https://twitter.com/stormtroper1721/status/1273824371056902145
 
-I'm not getting any error from rust, but simply when i try to see if any of the files in that path are availables i get a 404 Errror.
+I benchmarked matrix multiplication on two 256x256 matrices, Pytorch (on my MacBook pro's cpu) takes 10us compared to l2 which takes 50us. So it's about 5x slower but I didn't explicitly try too hard to make it super-fast.
 
-Can i do a "double" mount like i'm doing? Rust seems fine compiling this but i don't know.
+I made l2 to get better at using Rust and to learn more about how libraries like Pytorch and Tensorflow work behind the scenes, so don't expect this library to be production-ready :)
 
-How can i expose files like .mp3 or others on /path such i can contact them as (for example) /path/name\_file.mp3 ?
+I also only picked up rust a few months ago so I’d really appreciate feedback on how to make it more better/more idiomatic :)
+## [11][RLS does not provide suggestions for reqwest crate](https://www.reddit.com/r/rust/comments/hcg4ft/rls_does_not_provide_suggestions_for_reqwest_crate/)
+- url: https://www.reddit.com/r/rust/comments/hcg4ft/rls_does_not_provide_suggestions_for_reqwest_crate/
+---
+Is any body having issues with code suggestions for external crates for public methods?
 
-Cheers
+I created an example repo where the issue occurs for the reqwest crate
+
+[https://github.com/ta32/issues/tree/master/rust\_requests](https://github.com/ta32/issues/tree/master/rust_requests)
+
+CLion with the rust plugin can find the definition of structs like Client, but it cannot suggest public methods. This is not happening for other projects that use different crates.
+
+Is it an issue with this crate or an environmental issue - does anyone else experience this?
+
+edit: Clion Rust does not use RLS - i thought it was. 
+## [12][smallvec 1.4.0 wont compile on my new laptop but still compiles on my other computer?](https://www.reddit.com/r/rust/comments/hck5ej/smallvec_140_wont_compile_on_my_new_laptop_but/)
+- url: https://www.reddit.com/r/rust/comments/hck5ej/smallvec_140_wont_compile_on_my_new_laptop_but/
+---
+Hi,
+
+So I just got a new laptop and have been setting everything up.
+
+I noticed something very… strange. Some of my projects won't compile anymore because my dependencies have dependencies on `smallvec 1.4.0`. For whatever reason, this compiles just fine on my old computer.
+
+However, on my new computer, I get the following error on the *same project*:
+
+	error[E0554]: `#![feature]` may not be used on the stable release channel
+	  --&gt; /Users/xxxxx/.cargo/registry/src/github.com-1ecc6299db9ec823/smallvec-1.4.0/lib.rs:61:32
+	   |
+	61 | #![cfg_attr(feature = "union", feature(untagged_unions))]
+	   |                                ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+What the hell? The projects are identical. They're being synced with dropbox, so I know they're identical. Both computers are using the latest stable version of rust (according to rustup, 1.44.1 stable and 1.46.0 nightly).
+
+So how is this possible?
+
+**Bonus question:** Because rustfmt isn't available on the latest version of nightly, when I program on a nightly project rustfmt doesn't work. How can I set it to use the stable rustfmt on this nightly project?

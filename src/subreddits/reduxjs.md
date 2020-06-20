@@ -1,9 +1,25 @@
 # reduxjs
-## [1][How Redux Toolkit can reduce your setup of Redux in your next React app](https://www.reddit.com/r/reduxjs/comments/hbc6ca/how_redux_toolkit_can_reduce_your_setup_of_redux/)
+## [1][Invasion, Protect The Earth!](https://www.reddit.com/r/reduxjs/comments/hcko88/invasion_protect_the_earth/)
+- url: https://www.reddit.com/r/reduxjs/comments/hcko88/invasion_protect_the_earth/
+---
+ I'm learning redux so I built an earth invasion game using Reactjs, Redux, and SVG 
+
+Source Code:  [https://github.com/aashrafh/Invasion](https://github.com/aashrafh/Invasion) 
+
+Try It: [https://aashrafh.github.io/Invasion](https://aashrafh.github.io/Invasion)
+
+https://i.redd.it/gp17hjfdv1651.gif
+## [2][Subscribing multiple reducers to a single action in Redux Toolkit](https://www.reddit.com/r/reduxjs/comments/hc2255/subscribing_multiple_reducers_to_a_single_action/)
+- url: https://www.reddit.com/r/reduxjs/comments/hc2255/subscribing_multiple_reducers_to_a_single_action/
+---
+It seems like the suggested pattern to use is createSlice where actions and reducers have a 1:1 relationship based on the name/variable provided. createAsyncThunk seems to follow the same pattern.
+
+Is there a way to write reducers (let's say for a different slice) to handle an action defined by createSlice/createAsyncThunk? Or would you have to write actions/reducers using createAction and createReducer?
+## [3][How Redux Toolkit can reduce your setup of Redux in your next React app](https://www.reddit.com/r/reduxjs/comments/hbc6ca/how_redux_toolkit_can_reduce_your_setup_of_redux/)
 - url: https://medium.com//how-redux-toolkit-can-reduce-your-setup-of-redux-in-your-react-app-d87baab59268?source=friends_link&amp;sk=626b48e7ab94dff289177c14be3b7383
 ---
 
-## [2][Parent componentDidMount and child componentDidMount.](https://www.reddit.com/r/reduxjs/comments/hbbc6n/parent_componentdidmount_and_child/)
+## [4][Parent componentDidMount and child componentDidMount.](https://www.reddit.com/r/reduxjs/comments/hbbc6n/parent_componentdidmount_and_child/)
 - url: https://www.reddit.com/r/reduxjs/comments/hbbc6n/parent_componentdidmount_and_child/
 ---
 I am trying to teach myself Redux and I am having trouble with an assignment.  I'm trying to figure out how to let a child use componentDidMount without the whole component tree, it belongs to, re-rendering.
@@ -63,7 +79,7 @@ ajax request:
             url: `/api/todos/${todoId}/steps`,
         });
     }
-## [3][I need help refactoring a middleware to use dependency injection.](https://www.reddit.com/r/reduxjs/comments/hb8u24/i_need_help_refactoring_a_middleware_to_use/)
+## [5][I need help refactoring a middleware to use dependency injection.](https://www.reddit.com/r/reduxjs/comments/hb8u24/i_need_help_refactoring_a_middleware_to_use/)
 - url: https://www.reddit.com/r/reduxjs/comments/hb8u24/i_need_help_refactoring_a_middleware_to_use/
 ---
 I'm working on an application that uses legacy code from its version 1, where Redux middlewares were used to handle some actions. This middlewear would do something like `import Logger from './logger';` and `Logger.emit('some log');`.
@@ -83,15 +99,15 @@ My team has two ideas, but I wanted to make sure we aren't overlooking anything 
 2) Create the store inside a `useMemo` on `Application` mount.
 
 What is the optimal solution for injecting dependencies into actions?
-## [4][Modern React/React Router Auth Best Practices with Redux Saga Firebase + React Hooks?](https://www.reddit.com/r/reduxjs/comments/hauvve/modern_reactreact_router_auth_best_practices_with/)
+## [6][Modern React/React Router Auth Best Practices with Redux Saga Firebase + React Hooks?](https://www.reddit.com/r/reduxjs/comments/hauvve/modern_reactreact_router_auth_best_practices_with/)
 - url: /r/reactjs/comments/hauut4/modern_reactreact_router_auth_best_practices_with/
 ---
 
-## [5][Create simple POS with React, Node and MongoDB #6: Redux Integration](https://www.reddit.com/r/reduxjs/comments/ha0wdc/create_simple_pos_with_react_node_and_mongodb_6/)
+## [7][Create simple POS with React, Node and MongoDB #6: Redux Integration](https://www.reddit.com/r/reduxjs/comments/ha0wdc/create_simple_pos_with_react_node_and_mongodb_6/)
 - url: https://blog.soshace.com/create-simple-pos-with-react-node-and-mongodb-6-redux-integration/
 ---
 
-## [6][Advice for a frontend dev — firing multiple api calls at once](https://www.reddit.com/r/reduxjs/comments/h9u0mp/advice_for_a_frontend_dev_firing_multiple_api/)
+## [8][Advice for a frontend dev — firing multiple api calls at once](https://www.reddit.com/r/reduxjs/comments/h9u0mp/advice_for_a_frontend_dev_firing_multiple_api/)
 - url: https://www.reddit.com/r/reduxjs/comments/h9u0mp/advice_for_a_frontend_dev_firing_multiple_api/
 ---
 I'm struggling to find the right words to convey what I'm looking for in my research, so I thought I would ask the reddit community. I am looking for best practices to create records in different tables at once.
@@ -99,7 +115,7 @@ I'm struggling to find the right words to convey what I'm looking for in my rese
 An example would be, user registration. Say you need to create 6 records for that user when they sign up, which need to connect. By connect I mean in the sense that if a user and team were created on user registration, the `userID` would need to be included in the team's members array. So the records need to fire in order so the relationship is properly recorded. So user would need to be created first, then the team record so I can add the `userID` to the team's members. Also note that the user record would need to be updated later on (after the team's record is created) with the `teamID` under the user's teams.
 
 So as you can see it feels a bit all over the place. Currently I have multiple API calls being fired on user submit. While I have this working using `redux`, `firebase` and `react` — I foresee a lot of potential errors happening and feel as if I am not doing this in the most efficient way. I want to do this correctly and happy to do the research, I'm just not exactly sure what I am looking for. I was hoping for some guides, information, search terms, etc — basically anything to help me understand this concept more throughly if that makes sense.
-## [7][Dispatching for one type of global state affects the other. Why?](https://www.reddit.com/r/reduxjs/comments/h7t6sq/dispatching_for_one_type_of_global_state_affects/)
+## [9][Dispatching for one type of global state affects the other. Why?](https://www.reddit.com/r/reduxjs/comments/h7t6sq/dispatching_for_one_type_of_global_state_affects/)
 - url: https://www.reddit.com/r/reduxjs/comments/h7t6sq/dispatching_for_one_type_of_global_state_affects/
 ---
 I'm using Redux with my React Hooks simple counter project. It worked without any bugs or problems when the only global state was a simple integer with +/- buttons to. Then I added a second global state for light/dark themes and found that the add/subtract buttons affect the light/dark variable! I think I'm misusing the useDispatch() hook or combining reducers incorrectly. I've tried moving things into different containers and fiddled a lot with the syntax. In the code below I have omitted `import` and `export` statements for brevity:  
@@ -187,7 +203,7 @@ index.js:
         &lt;Provider store={store}&gt;&lt;App /&gt;&lt;/Provider&gt;, document.getElementById('root')
     );
     registerServiceWorker();
-## [8][Asynchronous actions, Redux store and race conditions.](https://www.reddit.com/r/reduxjs/comments/h7j059/asynchronous_actions_redux_store_and_race/)
+## [10][Asynchronous actions, Redux store and race conditions.](https://www.reddit.com/r/reduxjs/comments/h7j059/asynchronous_actions_redux_store_and_race/)
 - url: https://www.reddit.com/r/reduxjs/comments/h7j059/asynchronous_actions_redux_store_and_race/
 ---
 **The problem:**
@@ -213,37 +229,3 @@ I can think of a few solutions to this, but all seem slightly complex..
 &amp;#x200B;
 
 Any other suggestions? Thanks.
-## [9][Best practice for actions?](https://www.reddit.com/r/reduxjs/comments/h13l2y/best_practice_for_actions/)
-- url: https://www.reddit.com/r/reduxjs/comments/h13l2y/best_practice_for_actions/
----
-At my work we use something along the lines of every real "action" having a pending, success, and fail action. Out of curiosity I checked some online resources and I'll see more of a SET vs GET sort of thing for actions. Just wondering if there is a best practice for this sort of thing for my own projects?
-
-Thanks
-## [10][Why should I write unit test for actionCreators?](https://www.reddit.com/r/reduxjs/comments/h0ue75/why_should_i_write_unit_test_for_actioncreators/)
-- url: https://www.reddit.com/r/reduxjs/comments/h0ue75/why_should_i_write_unit_test_for_actioncreators/
----
-Reference from [Official docs](https://redux.js.org/recipes/writing-tests#action-creators):
-
-In Redux, action creators are functions which return plain objects. When testing action creators, we want to test whether the correct action creator was called and also whether the right action was returned.
-
-But my question is WHY?
-
-ActionCreator is a function that returns an object. It's a pure function. All it does is returning an object with whatever data is passed while calling. Is there any risk of not testing this function?
-
-    export function addTodo(text) {
-      return {
-        type: types.ADD_TODO,
-        text
-      }
-    }
-
-Its more like creating two objects and doing deep comparison.
-
-&gt;expect(actions.addTodo(text)).toEqual(expectedAction)
-
-The only scenario I can think of where unit tests can be useful is when someone accidentally changes this function to return an object with type: `types.EDIT_TODO`
-
-But  is this the only case? Are there any other benefits  of writing tests cases for functions that does the obvious?  
-
-
-EDIT: I do use `redux-saga` for managing async actions (fetching data through API calls etc) and I do write unit tests for sagas. I'm only concerned  about writing unit tests for action creators!

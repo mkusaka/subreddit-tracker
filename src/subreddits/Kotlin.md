@@ -1,11 +1,85 @@
 # Kotlin
-## [1][What's the best general purpose array class in Kotlin?](https://www.reddit.com/r/Kotlin/comments/hbqxne/whats_the_best_general_purpose_array_class_in/)
+## [1][Kotlin Virtual Machine (KVM)](https://www.reddit.com/r/Kotlin/comments/hcluse/kotlin_virtual_machine_kvm/)
+- url: https://www.reddit.com/r/Kotlin/comments/hcluse/kotlin_virtual_machine_kvm/
+---
+Nowadays, Kotlin is using the JVM, but I would like to know if in the future there will be something like a KVM?
+## [2][Swagger java annotations in action](https://www.reddit.com/r/Kotlin/comments/hcg763/swagger_java_annotations_in_action/)
+- url: https://medium.com/@domrevigor/generate-api-docs-clients-server-code-using-swagger-java-annotations-f25ad69e00be
+---
+
+## [3][JVM Performance and Troubleshooting](https://www.reddit.com/r/Kotlin/comments/hckjf2/jvm_performance_and_troubleshooting/)
+- url: https://blog.gceasy.io/2015/07/17/jvm-performance-engineering-troubleshooting/
+---
+
+## [4][Best library for manage JSON](https://www.reddit.com/r/Kotlin/comments/hc2mp2/best_library_for_manage_json/)
+- url: https://www.reddit.com/r/Kotlin/comments/hc2mp2/best_library_for_manage_json/
+---
+Hi every one, 
+
+I am currently using Kotlin with Spring in a module as a microservice. This module has to handle a lot of requests to communicate with other modules through http with a JSON body. I was working with Jackson library but when a JSON becomes more complex I feel that this library isn't really good. 
+
+After research I have found that there are two main options for this task, Moshi and KotlinX Serillization. I couldn't choose between because discussions about that on internet were even and also because were talking for use them on android development which I am not sure if for my case there is a clear winner (even if is other one)
+
+Many Thanks!
+## [5][Need quick help creating the right constructor to interpret Json](https://www.reddit.com/r/Kotlin/comments/hc1b3o/need_quick_help_creating_the_right_constructor_to/)
+- url: https://www.reddit.com/r/Kotlin/comments/hc1b3o/need_quick_help_creating_the_right_constructor_to/
+---
+SOLVED :D
+
+\---
+
+Hey all!
+
+I'm working on a little weather app and it's my first time dealing with JSON. At the moment my app is almost working as intended, I'm just having problems trying to take this Json information from openweathermap into my data objects. Sorry if the terminology I'm using isn't quite correct too.
+
+My only problem is the weather part of the json info.
+
+    {
+     "coord":{"lon":-0.13,"lat":51.51},
+     "weather": [
+     {
+         "id":803,
+         "main": "Clouds",
+         "description":"broken clouds",
+         "icon":"04d"
+     }
+     ],
+     "base":"stations",
+
+This is the only part of the full Json that has a \[ {} \] in it. This is making me think it wants an array of info?
+
+&amp;#x200B;
+
+My WeatherData class is extensive so I'll just list the problem bit in it. It references another class 'Weather' as I've made classes for any part of the Json that has { } in it and it seems to be working great when I comment out the Weather bit in my constructor.
+
+    data class WeatherData(val coord: Coord, val weather: Weather, val base: String //more stuff )
+    
+    data class Weather(val id: Int, val main: String, val description: String, val icon: String)
+
+What I feel like I want to do is something like, val weather: arrayOf{Weather}.
+
+The error I get is
+
+    com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was BEGIN_ARRAY at line 1 column 47 path $.weather
+
+&amp;#x200B;
+
+Thanks in advance for any help guys! Your time is much appreciated :D
+## [6][Logging service uptime with a custom log4j2 lookup plugin](https://www.reddit.com/r/Kotlin/comments/hc5ypw/logging_service_uptime_with_a_custom_log4j2/)
+- url: https://link.medium.com/ewYVFWN2r7
+---
+
+## [7][📚 Android Components Architecture in a Modular Word](https://www.reddit.com/r/Kotlin/comments/hc42km/android_components_architecture_in_a_modular_word/)
+- url: https://i.redd.it/pwgb1x1ebw551.png
+---
+
+## [8][What's the best general purpose array class in Kotlin?](https://www.reddit.com/r/Kotlin/comments/hbqxne/whats_the_best_general_purpose_array_class_in/)
 - url: https://www.reddit.com/r/Kotlin/comments/hbqxne/whats_the_best_general_purpose_array_class_in/
 ---
 When I took an intro to Java class, if we need to a basic array object, the majority of time we used an `ArrayList`. It was never really explained, and they said we could any suitable class we wanted in our assignments, but most of the code given to us used `ArrayList`.
 
 Obviously, I can still use `ArrayList` in Kotlin though the JVM, but is there a different class that fulfils a general purpose array?
-## [2][A Kotlin/JS Boids simulation using three.js](https://www.reddit.com/r/Kotlin/comments/hbolen/a_kotlinjs_boids_simulation_using_threejs/)
+## [9][A Kotlin/JS Boids simulation using three.js](https://www.reddit.com/r/Kotlin/comments/hbolen/a_kotlinjs_boids_simulation_using_threejs/)
 - url: https://www.reddit.com/r/Kotlin/comments/hbolen/a_kotlinjs_boids_simulation_using_threejs/
 ---
 [https://github.com/liorgonnen/boids.kt](https://github.com/liorgonnen/boids.kt)
@@ -21,7 +95,7 @@ Using Dukat to generate the Kotlin externals for three.js wasn't working out of 
 Why Boids?
 
 Just seemed like a fun and satisfying use-case :)
-## [3][[Kord] - Discord Kotlin Library](https://www.reddit.com/r/Kotlin/comments/hbaeh8/kord_discord_kotlin_library/)
+## [10][[Kord] - Discord Kotlin Library](https://www.reddit.com/r/Kotlin/comments/hbaeh8/kord_discord_kotlin_library/)
 - url: https://www.reddit.com/r/Kotlin/comments/hbaeh8/kord_discord_kotlin_library/
 ---
 Kord was created as an answer to the frustrations of writing Discord bots with other JVM libraries, which either use thread-blocking code or verbose and scope restrictive reactive systems. We believe an API written from the ground up in Kotlin with coroutines can give you the best of both worlds: The conciseness of imperative code with the concurrency of reactive code.
@@ -38,72 +112,3 @@ you can find all the things you need to get started at [GitHub](https://github.c
 
 
 &amp;#x200B;
-## [4][Kotlin gives me kotlin.unit instead of correct string](https://www.reddit.com/r/Kotlin/comments/hbig5w/kotlin_gives_me_kotlinunit_instead_of_correct/)
-- url: https://www.reddit.com/r/Kotlin/comments/hbig5w/kotlin_gives_me_kotlinunit_instead_of_correct/
----
-I found a weird issue for my following code. The value is 3, isDone is false, so I should get "3 scans", but it prints as "3 kotlin.unit". What is the reason of it? The code was auto suggested by Android Studio.
-
-`string += if(isDone) {`  
- `"scanned"`  
-`} else {`  
- `if(value == null || value == 0) {`  
- `"scan"`  
- `} else {`  
- `"scans"`  
- `}`  
-`}`
-
-Dear mod, please remove this post if it is not allowed to ask programming question.
-## [5][My first Kotlin Multiplatform app in the app store](https://www.reddit.com/r/Kotlin/comments/haz2vj/my_first_kotlin_multiplatform_app_in_the_app_store/)
-- url: https://www.reddit.com/r/Kotlin/comments/haz2vj/my_first_kotlin_multiplatform_app_in_the_app_store/
----
-My side project Packrat, built with Kotlin Multiplatform in order to learn a bit about Kotlin is now live in the app store. https://apps.apple.com/us/app/packrat/id1490422067?ls=1. I started with iOS as I knew it better but a lot of my app already works on Android too. Overall I really enjoyed starting to learn Kotlin as a language, at first it seemed similar to Swift (which I love) but as I dived further in I realised this was only superficial, I found it to be it's own unique and productive language with some very cool design choices. 
-
-Using Swift and Kotlin together worked really nicely and I didn't feel any issues with context switching (apart from the occasional fun/func annoyance). I believe Kotlin Multiplatform has a bright future and I hope to use it for a client one day soon.
-## [6][How to explain implementation in Kotlin](https://www.reddit.com/r/Kotlin/comments/hbe3u5/how_to_explain_implementation_in_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/hbe3u5/how_to_explain_implementation_in_kotlin/
----
-What is the meaning of this code line? 
-
- fun  a.b(y: Int) = lazy { u.v(y) }
-## [7][Status and future of TornadoFX?](https://www.reddit.com/r/Kotlin/comments/hasb8y/status_and_future_of_tornadofx/)
-- url: https://www.reddit.com/r/Kotlin/comments/hasb8y/status_and_future_of_tornadofx/
----
-Hey Guys, 
-
-can you help me understand, what the status and the future of TornadoFX is? On the github page it still says that it is not (yet) compatible with java 9/10. I see that the releases are quite far apart.
-
-Don't get me wrong, i love TornadoFX. I think the way stuff is done is very cool and I have used it in a couple of projects already. 
-
-I am just starting a new project and wanna use TornadoFX with this too, but i need to make sure it is the right lib to use for Kotlin and JavaFX. I just wanna ask if it is still being actively developed, evolving and future proof.
-
-Any comments and hints would be appreciated! :)
-## [8][Published my first app to the play store today 😁](https://www.reddit.com/r/Kotlin/comments/haoxom/published_my_first_app_to_the_play_store_today/)
-- url: https://www.reddit.com/r/Kotlin/comments/haoxom/published_my_first_app_to_the_play_store_today/
----
-
-I started learning kotlin for Android app development a few weeks ago and I’m loving it
-
-
-Published my first android app to the play store using Kotlin. Yes I know it’s a ***VERY basic app*** However I’m learning new stuff everyday.
-
-The ***primary focus*** of making this simple app was just to understand the fundamentals of kotlin,  how to use android studio and how to implement ads using admob.
-
-Check it out if you want to see what a terrible app this is lol. The main thing is that I’m learning anyway.
-
-https://play.google.com/store/apps/details?id=com.herd.whattodo
-## [9][Zoe: a new CLI tool for Apache Kafka written in Kotlin](https://www.reddit.com/r/Kotlin/comments/hau0b2/zoe_a_new_cli_tool_for_apache_kafka_written_in/)
-- url: https://www.reddit.com/r/Kotlin/comments/hau0b2/zoe_a_new_cli_tool_for_apache_kafka_written_in/
----
-Hi!
-
-Within Adevinta, we are heavy users of Apache Kafka. We are also Kotlin Lovers! Recently, we open sourced a tool called Zoe that makes interacting with Kafka much easier. This tool is written in Kotlin.
-
-* Checkout [the repository here](https://github.com/adevinta/zoe) where you will find a screen cast that demo the tool.
-* And [the documentation](https://adevinta.github.io/zoe/)
-
-Any feedback is welcome : )
-## [10][Elide - JSON:API or GraphQL web service starting from a JPA annotated data model (by Yahoo!)](https://www.reddit.com/r/Kotlin/comments/haq2ht/elide_jsonapi_or_graphql_web_service_starting/)
-- url: https://blog.graphqleditor.com/elide-opinionated-apis/
----
-

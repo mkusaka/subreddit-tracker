@@ -1,135 +1,129 @@
 # golang
-## [1][Worldwide - a GameBoyColor emulator written in Go (Ebiten)](https://www.reddit.com/r/golang/comments/hchnmh/worldwide_a_gameboycolor_emulator_written_in_go/)
+## [1][Playing with Go schedulers on a dual-core RISC-V](https://www.reddit.com/r/golang/comments/hcycss/playing_with_go_schedulers_on_a_dualcore_riscv/)
+- url: https://embeddedgo.github.io/2020/06/21/playing_with_go_schedulers_on_a_dual-core_risc-v.html
+---
+
+## [2][Simple microservice boilerplate](https://www.reddit.com/r/golang/comments/hcvm6j/simple_microservice_boilerplate/)
+- url: https://www.reddit.com/r/golang/comments/hcvm6j/simple_microservice_boilerplate/
+---
+Here's the [repo](https://github.com/diffuse/gloss)
+
+I find myself copying/rewriting a lot of the same boilerplate whenever I create a new microservice, so I figured I would throw some of it in a standard setup and share it with you guys.  If anyone is interested, this is a bare-bones microservice deployment with Docker, chi, and pq SQL, to save me (and hopefully you) a bit of setup when you write new services.  The example code in the handler and database query function bodies exposes a simple integer counter and serves as a placeholder for actual application code.
+
+Fork it, clone it, stick it in a stew.  Will happily take any advice/suggestions for improvements :)
+
+Thanks!
+## [3][gRPC over WebRTC](https://www.reddit.com/r/golang/comments/hd6hsb/grpc_over_webrtc/)
+- url: https://github.com/jsmouret/grpc-over-webrtc
+---
+
+## [4][Meet VERMIN The smart virtual machines manager](https://www.reddit.com/r/golang/comments/hcvg4y/meet_vermin_the_smart_virtual_machines_manager/)
+- url: https://github.com/mhewedy/vermin
+---
+
+## [5][Using TinyGo to create a Thermal Detonator from Star Wars](https://www.reddit.com/r/golang/comments/hd2lk2/using_tinygo_to_create_a_thermal_detonator_from/)
+- url: https://www.reddit.com/r/golang/comments/hd2lk2/using_tinygo_to_create_a_thermal_detonator_from/
+---
+Created a project that I enjoyed working on and wanted to share [go-thermal](https://github.com/BattleBas/go-thermal).
+
+A [thermal detonator](https://www.youtube.com/watch?v=bStsof9p7Mc) that uses an Arduino Nano to flicker LED's and play sound.
+
+I used a chip called dfminiplayer to play sound, there wasn't any example how to use it using TinyGo, so I had to use the official documentation to partially recreate a library for it using Go which was an interesting challenge:  [link to source](https://github.com/BattleBas/go-thermal/blob/master/dfminiplayer.go)
+## [6][How to Implement scheduler task the right way for many data](https://www.reddit.com/r/golang/comments/hd22gr/how_to_implement_scheduler_task_the_right_way_for/)
+- url: https://www.reddit.com/r/golang/comments/hd22gr/how_to_implement_scheduler_task_the_right_way_for/
+---
+Hello, I am new in scheduler task and never use this in the back end, here is my case:
+
+I have a user that have 2 reminders to email them when the meeting begin; let say the meeting is next week, and the user want to a reminder 2 days and 1 day before the meeting to send email to them
+And sometimes user want to change the reminder as well, such as user want to reminder 3 days before the meeting or a day at 10 am before meeting begin.
+
+Should I use only Cron job here to check the meeting reminder between on the date meeting ? Should I create the default reminder meeting for the user
+Let say when the user add meeting today and decrement of that meeting time to 2 days before that meeting and then I should do Cron job to check Every day that reminder of meeting need to send email by today, is that correct??
+What library to make this easier ? 
+
+Thank you for you attention :)
+Hope I get some advice for you
+## [7][Share a distributed job management system : Asgard](https://www.reddit.com/r/golang/comments/hcrdko/share_a_distributed_job_management_system_asgard/)
+- url: https://www.reddit.com/r/golang/comments/hcrdko/share_a_distributed_job_management_system_asgard/
+---
+##Source code
+
+https://github.com/dalonghahaha/Asgard
+
+## Introduction
+
+Asgard is a distributed job management system designed to comprehensively solve resident progress applications, plan tasks, and schedule tasks.
+
+## Architecture design
+
+![Architecture design](https://raw.githubusercontent.com/dalonghahaha/Asgard/master/doc/Asgard.png)
+
+- The Asgard system consists of web nodes, master nodes, and agent nodes.
+
+- The main functions of the web node include instance management, group management, job configuration, job running status control, job running status viewing, log query
+
+- The master node is responsible for the status monitoring of the agent node, and at the same time receives and dumps the runtime data reported by the agent node
+
+- The agent node receives instructions from the web node and operates related operations in the corresponding server
+
+- Master node and agent node exchange data through grpc protocol
+
+## Web UI preview
+
+![Home console](https://raw.githubusercontent.com/dalonghahaha/Asgard/master/doc/page1.png)
+
+![Instance management](https://raw.githubusercontent.com/dalonghahaha/Asgard/master/doc/page2.png)
+
+![Task management](https://raw.githubusercontent.com/dalonghahaha/Asgard/master/doc/page3.png)
+
+![Monitoring information](https://raw.githubusercontent.com/dalonghahaha/Asgard/master/doc/page4.png)
+## [8][Golang for Application installation automation?](https://www.reddit.com/r/golang/comments/hd57nf/golang_for_application_installation_automation/)
+- url: https://www.reddit.com/r/golang/comments/hd57nf/golang_for_application_installation_automation/
+---
+Hey Guys,
+
+i'm looking forward to build a tool to install an enterprise application (cross platform ), setup database (oracle/microsoft sql server), setup load balancer etc . Currently my plan is to go with python . 
+
+As i have enough time in hand so i'm exploring all the possibilities.  Is it possible to do the same with golang i.e, building an automation tool to install enterprise application (cross platform), db setup, application/webserver setup etc using golang?
+
+&amp;#x200B;
+
+Thanks in Advance ;)
+## [9][Is there a way to implement generics on a map?](https://www.reddit.com/r/golang/comments/hd0v05/is_there_a_way_to_implement_generics_on_a_map/)
+- url: https://www.reddit.com/r/golang/comments/hd0v05/is_there_a_way_to_implement_generics_on_a_map/
+---
+I am attempting to do a filter function on a map but I am having trouble even doing the parameters for a generic map.
+If I use just filter(type T)(s T) it lets the map through but then I cannot for loop through a type T.  Yet, if I use reflection with a fmt.Println(reflect.TypeOf(s)) it gives me type map[string]string.
+I have tried params (type T)(s map[T]T) but it gives the error prog.go2:8:27: invalid map key type T.  Anyone figure this out because I cannot seem to find any resources online for generic maps.
+
+
+````
+
+
+func filter(type T)(s T) {
+
+	fmt.Println(reflect.TypeOf(s))
+
+        //wont let me do this with (s T)
+	//for k, v := range s {
+		//fmt.Printf("%s -&gt; %s\n", k, v)
+	//}
+
+}
+
+func main() {
+
+	kvs := map[string]string{"a": "apple", "b": "banana"}
+	filter(kvs)
+}
+
+
+````
+
+Playground example https://go2goplay.golang.org/p/WQDpNvA7ndq
+## [10][Worldwide - a GameBoyColor emulator written in Go (Ebiten)](https://www.reddit.com/r/golang/comments/hchnmh/worldwide_a_gameboycolor_emulator_written_in_go/)
 - url: https://www.reddit.com/r/golang/comments/hchnmh/worldwide_a_gameboycolor_emulator_written_in_go/
 ---
 [https://github.com/Akatsuki-py/Worldwide](https://github.com/Akatsuki-py/Worldwide)
 
 https://i.redd.it/9znnudgpm0651.gif
-## [2][OpenDiablo2 News: The open-source Diablo 2 engine written in Go](https://www.reddit.com/r/golang/comments/hc667q/opendiablo2_news_the_opensource_diablo_2_engine/)
-- url: https://www.reddit.com/r/golang/comments/hc667q/opendiablo2_news_the_opensource_diablo_2_engine/
----
-This is a repost from [r/OpenDiablo2](https://www.reddit.com/r/OpenDiablo2/comments/hc5w6f/news_multiplayer_mapgen_and_patreon/)
-
-Just a quick status update:
-
-* OpenDiablo2 now has a functional UDP client/server network implementation
-* More data dictionary loaders for the txt files have been added
-* Rudimentary map-generation work has begun, added the ability to stitch discrete map regions (pre-defined map sections). Character path-finding works between the regions.
-* The game audio/input/rendering framework [Ebiten](https://ebiten.org/) has been updated and increased performance
-* [A Patreon page has been set up](https://www.patreon.com/user?u=37261055&amp;fan_landing=true) \- We will be using the money to guide development efforts, offer bug bounties, and pay developers/designers for their work. Please, consider becoming a patron!
-
-The project website can be found at [https://opendiablo2.com/](https://opendiablo2.com/)
-
-The source can be found on Github at [https://github.com/OpenDiablo2/OpenDiablo2](https://github.com/OpenDiablo2/OpenDiablo2)
-
-If you want to get involved, ask questions, suggest features, or just hang out you can find us over on our [Discord server](https://discord.gg/5jd4CwW)
-## [3][People's efficiency expectations for generics in 'Go 2' and patterns of use](https://www.reddit.com/r/golang/comments/hcce4e/peoples_efficiency_expectations_for_generics_in/)
-- url: https://utcc.utoronto.ca/~cks/space/blog/programming/Go2GenericsExpectedEfficiency
----
-
-## [4][Integrate twitter login with golang application](https://www.reddit.com/r/golang/comments/hcm2ga/integrate_twitter_login_with_golang_application/)
-- url: https://www.reddit.com/r/golang/comments/hcm2ga/integrate_twitter_login_with_golang_application/
----
-I wrote a [blog](https://www.loginradius.com/engineering/blog/twitter-authentication-with-golang-and-goth/) on integrating twitter login with **golang** application and share it on [Github](https://github.com/LoginRadius/engineering-blog-samples/tree/master/GoLang/TwitterAuthenticationGoth) too. Please check this out and let me know if it helps uh in same
-## [5][Go DataDog](https://www.reddit.com/r/golang/comments/hclrpj/go_datadog/)
-- url: https://www.reddit.com/r/golang/comments/hclrpj/go_datadog/
----
-Does anyone use Datadog and write integrations using Go? I know there is a python implemention([https://docs.datadoghq.com/developers/write\_agent\_check/?tab=agentv6v7](https://docs.datadoghq.com/developers/write_agent_check/?tab=agentv6v7)) but I have a preference to write my checks in Go, obviously.
-## [6][How to change terminal/console output color in golang?](https://www.reddit.com/r/golang/comments/hcl9f1/how_to_change_terminalconsole_output_color_in/)
-- url: https://www.reddit.com/r/golang/comments/hcl9f1/how_to_change_terminalconsole_output_color_in/
----
-
-## [7][My Learning Path - GoLang](https://www.reddit.com/r/golang/comments/hcgctg/my_learning_path_golang/)
-- url: https://www.reddit.com/r/golang/comments/hcgctg/my_learning_path_golang/
----
-Hello guys,
-
-I'm new to GoLang and came up with a small learning path for myself to get started with GoLang.Posting it here to get suggestions whether I'm going in right directions or not.
-
-Also, I'm forcing myself to learn Go concepts/APIs first (as mentioned in **Directions to Follow**) from official docs and refer to other sources if I don't understand from official docs. Is this the right way to do it?
-
-**Directions to Follow**
-
-* Use official docs as primary source, this way I will learn how to read Go Packages and use it implement in my code.
-* Use `other sources` if I’m really stuck on some tasks and not able to figure out from Official docs. (Because I can learn reading Docs and understanding APIs form Docs)
-
-&amp;#x200B;
-
-**Official Reference**
-
-* Go Doc - [https://golang.org/doc/](https://golang.org/doc/)
-* Go Packages - [https://golang.org/pkg/](https://golang.org/pkg/)
-* Effective Go - [https://golang.org/doc/effective\_go.html](https://golang.org/doc/effective_go.html)
-
-&amp;#x200B;
-
-**Useful Links**
-
-* [https://pmihaylov.com/](https://pmihaylov.com/)
-* [https://medium.com/a-journey-with-go](https://medium.com/a-journey-with-go)
-* [https://quii.gitbook.io/learn-go-with-tests/](https://quii.gitbook.io/learn-go-with-tests/)
-
-&amp;#x200B;
-
-**Basic**
-
-* Get familiar with Go syntax - [https://gobyexample.com/](https://gobyexample.com/)
-* Get familiar with Go project structure
-* Build a basic App `Calculator-v1`
-   * Ask user to select which arithmetic operation to do
-   * Ask user to input 2 number to do operation on
-   * Write test cases
-   * Return result
-* Build a basic App `Calculator-v2`
-   * Think how to refactor `Calculator-v1`
-   * Explore using command line arguments in Go
-   * More test cases
-
-&amp;#x200B;
-
-**Intermediate**
-
-* Understand Methods (Pointers vs Values) - [https://golang.org/doc/effective\_go.html#methods](https://golang.org/doc/effective_go.html#methods)
-* Understand Interfaces - [https://golang.org/doc/effective\_go.html#interfaces\_and\_types](https://golang.org/doc/effective_go.html#interfaces_and_types)
-* Understand Errors - [https://golang.org/doc/effective\_go.html#errors](https://golang.org/doc/effective_go.html#errors)
-* Explore the net/http package - [https://golang.org/pkg/net/http/](https://golang.org/pkg/net/http/)
-* Build an App `GithubTopRepos-v1`
-   * Use Github APIs to get the top 10 repos for a particular programming language
-* To be continued…
-
-Feedback is much appreciated :)Thank you :)
-## [8][Tested the new generics proposal and I think they will be a game changer](https://www.reddit.com/r/golang/comments/hck2sz/tested_the_new_generics_proposal_and_i_think_they/)
-- url: https://medium.com/swlh/the-new-generics-proposal-tested-b9bd24f86547
----
-
-## [9][Very basic doubt. Craving for some help :'(](https://www.reddit.com/r/golang/comments/hcijn3/very_basic_doubt_craving_for_some_help/)
-- url: https://www.reddit.com/r/golang/comments/hcijn3/very_basic_doubt_craving_for_some_help/
----
---------------------
-TLDR;
-GoLand IDE not looking into $GOPATH/pkg/mod for the packages of my go project and hence, giving issues and red highlights on code where I am importing packages. GoLand seems to only look into $GOPATH/src for the packages where packages are not there coz packages got downloaded in pkg/mod where GoLand is not looking into.
-----------------------
-So, the thing is
-I was going with open source dev with go...
-: So, I forked and cloned a repo ....
-
-did a "go get -d ./..."
-
-And all the required modules and all got downloaded under the directory $GOPATH/pkg/mod
-Now, I can "go build" the project ... It's all cool and all
-BUT BUT BUT
-BUT BUT BUT
-
-when I am opening the project in GoLand IDE... It is giving issues and red highlights while importing the packages... And the reason seems that GoLand is not looking inside 
-$GOPATH/pkg/mod
-
-GoLand seems to look inside $GOPATH/src for any package and hence, provides auto suggestions accordingly but well, in my case the packages and all got downloaded in $GOPATH/pkg/mod.
-
-Now, golang doesn't have a problem... Because while doing "go build", it happily looks into pkg/mod finds the required packages and builds the binary
-
-"The problem is with GoLand not looking into pkg/mod and hence, not providing autosuggestion and just highlight the import statements as red  because it thinks the package does not exist"
-I have been stuck at it since a long bloody time.... Rambled through soo many stackoverflow posts and all,... But nothing worked out :'(
-## [10][Golang Vancouver Online Meetup on July 8](https://www.reddit.com/r/golang/comments/hcbzeb/golang_vancouver_online_meetup_on_july_8/)
-- url: https://www.reddit.com/r/golang/comments/hcbzeb/golang_vancouver_online_meetup_on_july_8/
----
-YouTube live steam at [https://www.youtube.com/watch?v=vjmoNQmXAeI](https://www.youtube.com/watch?v=vjmoNQmXAeI). RSVP at [https://www.meetup.com/golangvan/events/271386675](https://www.meetup.com/golangvan/events/271386675/)

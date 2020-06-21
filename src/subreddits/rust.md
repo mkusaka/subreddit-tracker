@@ -23,127 +23,67 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/06/16/this-week-in-rust-343/
 ---
 
-## [3][String vs &amp;str](https://www.reddit.com/r/rust/comments/hciaol/string_vs_str/)
-- url: https://www.reddit.com/r/rust/comments/hciaol/string_vs_str/
----
-As a Rust newbie struggling with understanding the basics, I found this article really good at explaining the difference between String and &amp;str in Rust
-
-[https://blog.thoughtram.io/string-vs-str-in-rust/](https://blog.thoughtram.io/string-vs-str-in-rust/)
-## [4][Show /r/rust: libps1 a shell prompt for developers](https://www.reddit.com/r/rust/comments/hcfy2d/show_rrust_libps1_a_shell_prompt_for_developers/)
-- url: https://github.com/JoshMcguigan/libps1
+## [3][PyO3 now supports stable Rust!](https://www.reddit.com/r/rust/comments/hd5506/pyo3_now_supports_stable_rust/)
+- url: https://github.com/PyO3/pyo3/issues/5#issuecomment-647094806
 ---
 
-## [5][(Stream) C++ programmer and game developer starts learning Rust this week](https://www.reddit.com/r/rust/comments/hchmsz/stream_c_programmer_and_game_developer_starts/)
-- url: https://www.youtube.com/watch?v=1asufxmZW5A
+## [4][Installed and Compiled Rust on Raspberry Pi Zero W](https://www.reddit.com/r/rust/comments/hcyolu/installed_and_compiled_rust_on_raspberry_pi_zero_w/)
+- url: https://i.redd.it/u5fo8jzi86651.jpg
 ---
 
-## [6][CS196 at Illinois is Teaching Rust Concepts and Sharing on YT](https://www.reddit.com/r/rust/comments/hc1c52/cs196_at_illinois_is_teaching_rust_concepts_and/)
-- url: https://www.youtube.com/channel/UCRA18QWPzB7FYVyg0WFKC6g/videos
+## [5][Announcing lexical-sort, a crate for sorting strings properly (and quickly) 🎉](https://www.reddit.com/r/rust/comments/hcw2re/announcing_lexicalsort_a_crate_for_sorting/)
+- url: https://www.reddit.com/r/rust/comments/hcw2re/announcing_lexicalsort_a_crate_for_sorting/
+---
+The standard library implements `Ord` for strings, but the resulting ordering is unsuitable for many use cases. This is why I wrote the [lexical-sort](https://github.com/Aloso/lexical-sort) crate, which provides better string comparison functions.
+
+It can sort strings **lexicographically**, which means that Unicode characters such as äßàćñæΩµð are transliterated to ASCII and converted to lowercase before the comparison. In effect, the comparison is case insensitive and works as expected for many languages, including English, German, French, Spanish, Portuguese, Italian, etc.
+
+It can sort strings **naturally** (sometimes called "human sort"), which parses whole numbers instead of just digits, so "50" comes before "100". There's also an option to ignore non-alphanumeric characters.
+
+According to my benchmark, its performance is very competitive. If all strings are ASCII, sorting them lexicographically is only 2–3 times as slow as the standard library. It's slower for non-ASCII strings, which is not surprising since it does much more work.
+
+One use case for this is sorting files. Note file managers as well as tools like GNU `ls` usually sort files lexicographically.
+
+Note that it will not return the desired order in some languages such as Swedish. Implementing correct lexicograpical order for every language is much harder. Also, just transliterating characters to ASCII is a bit of a hack, so if you have suggestions for improvement, they are very appreciated!
+## [6][Announcing genco: A whitespace-aware quasiquoter for beautiful code generation (nightly only)](https://www.reddit.com/r/rust/comments/hd5g1v/announcing_genco_a_whitespaceaware_quasiquoter/)
+- url: https://github.com/udoprog/genco
 ---
 
-## [7][Tour of Rust - Chapter 8 Released - Smart Pointers - Occidental translations, French translations](https://www.reddit.com/r/rust/comments/hccnbk/tour_of_rust_chapter_8_released_smart_pointers/)
-- url: https://tourofrust.com/chapter_8_en.html
+## [7][I decided to learn Rust as a first* language.](https://www.reddit.com/r/rust/comments/hcyp93/i_decided_to_learn_rust_as_a_first_language/)
+- url: https://www.reddit.com/r/rust/comments/hcyp93/i_decided_to_learn_rust_as_a_first_language/
+---
+I have been wanting to actually learn to code for a while. I am fairly proficient in R for data analysis and visualization (including some ML) and write SQL queries daily for work, but I feel that most of the expertise won't really translate. I searched most loved programming languages and ended up here.  
+
+Seems like Rust is not an easy language to begin with, but the documentation seems fantastic and the community seems friendly, so fuck it, we are doing it live. Wish me luck!
+ (1 hour in I am already a bit frustrated about "size not known at compile time")
+## [8][TIL: You can add strings in Rust](https://www.reddit.com/r/rust/comments/hcvagr/til_you_can_add_strings_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/hcvagr/til_you_can_add_strings_in_rust/
+---
+I've been using Rust for years now I only just learned that you can use `+` and `+=` for string concatenation.  Did anyone else not know this?
+
+Edit:
+FYI `+` has been around since 1.0 and `+=` was added in 1.14 (which was back in 2016).
+## [9][Does Rust have anything like placement new?](https://www.reddit.com/r/rust/comments/hd3myx/does_rust_have_anything_like_placement_new/)
+- url: https://www.reddit.com/r/rust/comments/hd3myx/does_rust_have_anything_like_placement_new/
+---
+I'm once again considering porting from C++ to something else and I had a quick question about Rust. As the title says does Rust have anything like a placement new?
+## [10][Writing Non-Trivial Macros in Rust](https://www.reddit.com/r/rust/comments/hcqn81/writing_nontrivial_macros_in_rust/)
+- url: http://adventures.michaelfbryan.com/posts/non-trivial-macros/?utm_source=reddit&amp;utm_medium=social&amp;utm_campaign=non-trivial-macros
 ---
 
-## [8][I made a pandemic-inspired data structure to practice what I've learned in Rust](https://www.reddit.com/r/rust/comments/hcakf2/i_made_a_pandemicinspired_data_structure_to/)
-- url: https://www.reddit.com/r/rust/comments/hcakf2/i_made_a_pandemicinspired_data_structure_to/
+## [11][Second project : TermUI : A Window manager for the command line.](https://www.reddit.com/r/rust/comments/hcyxoa/second_project_termui_a_window_manager_for_the/)
+- url: https://www.reddit.com/r/rust/comments/hcyxoa/second_project_termui_a_window_manager_for_the/
 ---
-Need another way to store values that has some unpredictability? Do you agree that Rust just isn't safe when it comes to memory management? Want another 4-letter acronym to keep track of?
-
-Introducing [OIOO](https://github.com/ramirezmike/OIOO) (one-in, one-out), an almost useless data structure I made because I thought it would be fun and good practice. Here's how it works:
-
-    // create an essential oioo with 25% capacity
-    let mut oioo = OIOO::&lt;usize&gt;::new(
-        Phase::One { 
-            occupancy: 12, 
-            is_essential: true 
-        }
-    ); 
-    
-    // add values with one_in()
-    oioo.one_in(10); 
-    oioo.one_in(20);
-    oioo.one_in(30);
-    
-    // randomly returns a value with one_out()
-    println!("{}", oioo.one_out().unwrap()); 
-
-There's a hard limit based on the initialized occupancy, phase and essentialism, but don't worry because any excess values get stored in a queue outside, which automatically inserts into the main store once room becomes available.
-
-    // add values in an oioo with a max capacity of 3
-    oioo.one_in(10); 
-    oioo.one_in(20);
-    oioo.one_in(30);
-    
-    // add a value to exceed capacity. 
-    // This value gets stored in a separate queue
-    oioo.one_in(40); 
-
-    // randomly returns a value from the set [10, 20, 30]
-    println!("{}", oioo.one_out().unwrap()); // let's say this outputs 20
-
-    // randomly returns a value from the set [10, 30, 40]
-    println!("{}", oioo.one_out().unwrap()); // can potentially return 40
-
-And you don't have to worry about the safety of the memory stored in the OIOO because [they are padded with social distance None values.](https://github.com/ramirezmike/OIOO/raw/master/example.jpg?raw=true). That's right, each value will have plenty of space to stay safe while in the OIOO!
-
-[Further documentation can be found here](https://ramirezmike.github.io/OIOO/target/doc/oioo/) Feedback and criticism is totally welcome! 
-
-^^^^im ^^^^so ^^^^sorry, ^^^^please ^^^^don't ^^^^hurt ^^^^me
-## [9][Behold, my first Rust application. It's a CLI that opens Windows paths on Linux to a shared drive. If you can spot some mistakes I made, don't hesitate to tell, I came from PHP.](https://www.reddit.com/r/rust/comments/hciydg/behold_my_first_rust_application_its_a_cli_that/)
-- url: https://github.com/ivkovici/sp
+It's all here : [https://github.com/Teln0/TermUI](https://github.com/Teln0/TermUI). Feel free to contribute !
+## [12][Why the `finish` function on `std::hash::Hasher` returns a fixed `u64` type?](https://www.reddit.com/r/rust/comments/hd35ri/why_the_finish_function_on_stdhashhasher_returns/)
+- url: https://www.reddit.com/r/rust/comments/hd35ri/why_the_finish_function_on_stdhashhasher_returns/
 ---
+Hello rustaceans! I'm an intermediate rustacean, recently checking out detailed Rust library designs. I saw this function in the standard library: 
 
-## [10][I built a fast BLAS-accelerated, Pytorch-style tensor+autograd library in Rust](https://www.reddit.com/r/rust/comments/hcby3r/i_built_a_fast_blasaccelerated_pytorchstyle/)
-- url: https://www.reddit.com/r/rust/comments/hcby3r/i_built_a_fast_blasaccelerated_pytorchstyle/
----
-https://github.com/bkkaggle/L2/blob/master/screenshot.png
+```rust
+fn finish(&amp;self) -&gt; u64
+```
 
-GitHub: https://github.com/bkkaggle/L2
+(Link: https://doc.rust-lang.org/nightly/std/hash/trait.Hasher.html#tymethod.finish)
 
-Crates.io: https://crates.io/crates/l2
-
-Twitter thread with images: https://twitter.com/stormtroper1721/status/1273824371056902145
-
-I benchmarked matrix multiplication on two 256x256 matrices, Pytorch (on my MacBook pro's cpu) takes 10us compared to l2 which takes 50us. So it's about 5x slower but I didn't explicitly try too hard to make it super-fast.
-
-I made l2 to get better at using Rust and to learn more about how libraries like Pytorch and Tensorflow work behind the scenes, so don't expect this library to be production-ready :)
-
-I also only picked up rust a few months ago so I’d really appreciate feedback on how to make it more better/more idiomatic :)
-## [11][RLS does not provide suggestions for reqwest crate](https://www.reddit.com/r/rust/comments/hcg4ft/rls_does_not_provide_suggestions_for_reqwest_crate/)
-- url: https://www.reddit.com/r/rust/comments/hcg4ft/rls_does_not_provide_suggestions_for_reqwest_crate/
----
-Is any body having issues with code suggestions for external crates for public methods?
-
-I created an example repo where the issue occurs for the reqwest crate
-
-[https://github.com/ta32/issues/tree/master/rust\_requests](https://github.com/ta32/issues/tree/master/rust_requests)
-
-CLion with the rust plugin can find the definition of structs like Client, but it cannot suggest public methods. This is not happening for other projects that use different crates.
-
-Is it an issue with this crate or an environmental issue - does anyone else experience this?
-
-edit: Clion Rust does not use RLS - i thought it was. 
-## [12][smallvec 1.4.0 wont compile on my new laptop but still compiles on my other computer?](https://www.reddit.com/r/rust/comments/hck5ej/smallvec_140_wont_compile_on_my_new_laptop_but/)
-- url: https://www.reddit.com/r/rust/comments/hck5ej/smallvec_140_wont_compile_on_my_new_laptop_but/
----
-Hi,
-
-So I just got a new laptop and have been setting everything up.
-
-I noticed something very… strange. Some of my projects won't compile anymore because my dependencies have dependencies on `smallvec 1.4.0`. For whatever reason, this compiles just fine on my old computer.
-
-However, on my new computer, I get the following error on the *same project*:
-
-	error[E0554]: `#![feature]` may not be used on the stable release channel
-	  --&gt; /Users/xxxxx/.cargo/registry/src/github.com-1ecc6299db9ec823/smallvec-1.4.0/lib.rs:61:32
-	   |
-	61 | #![cfg_attr(feature = "union", feature(untagged_unions))]
-	   |                                ^^^^^^^^^^^^^^^^^^^^^^^^
-
-
-What the hell? The projects are identical. They're being synced with dropbox, so I know they're identical. Both computers are using the latest stable version of rust (according to rustup, 1.44.1 stable and 1.46.0 nightly).
-
-So how is this possible?
-
-**Bonus question:** Because rustfmt isn't available on the latest version of nightly, when I program on a nightly project rustfmt doesn't work. How can I set it to use the stable rustfmt on this nightly project?
+I noticed that this function returns a fixed `u64` type, instead of a generic type or associated type. I'm wondering how the authors discussed and analyzed on this design at that time. Just curious to discuss on this detailed API design and/or its history, didn't mean any harms to anyone. Thanks! :)

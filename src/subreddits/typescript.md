@@ -22,7 +22,196 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Help with handling JSON array of objects (merge two arrays)](https://www.reddit.com/r/typescript/comments/hc5odl/help_with_handling_json_array_of_objects_merge/)
+## [2][How can improve my tsconfig?](https://www.reddit.com/r/typescript/comments/hd176e/how_can_improve_my_tsconfig/)
+- url: https://www.reddit.com/r/typescript/comments/hd176e/how_can_improve_my_tsconfig/
+---
+Hi everybody. I have this repo in typescript and I would like to know how it can be improved. Looking for feedback. This is a package for managing permissions.
+## [3][How would you implement a Map with objects (vectors) as keys?](https://www.reddit.com/r/typescript/comments/hcrtdx/how_would_you_implement_a_map_with_objects/)
+- url: https://www.reddit.com/r/typescript/comments/hcrtdx/how_would_you_implement_a_map_with_objects/
+---
+I want to store where figures are on a game board.
+
+Positions on the board are of the type 'Vector' which has an x and an y attribute. The figures are of type Entity, but for simplicitys sake here they are just strings:
+
+    class Vector {
+        constructor(readonly x: number, readonly y: number) {
+        }
+    
+        equals(other: this): boolean {
+            return this.x === other.x &amp;&amp; this.y === other.y;
+        }
+    }
+    
+    const board = new Map&lt;Vector, string&gt;();
+    board.set(new Vector(0, 1), "white pawn");
+    board.set(new Vector(4, 0), "white king");
+    
+    console.log(board.get(new Vector(4, 0)));  // prints "undefined" - not what I want
+
+I understand now that the Map class compares keys by their identity / memory address. Two distinct objects are considered not the same key, even if the equals method returns true.
+
+*What would be the most elegant and efficient way to implement a type of Map that considers keys to be equivalent if they are structurally equal or an "equals" method would return true?*
+
+On [stackoverflow](https://stackoverflow.com/questions/57262315/how-to-get-deep-equality-of-keys-in-es6-map-alternative-to-using-complex-object), they suggested using strings as keys. I'm uncomfortable with using strings in program logic. Maybe that's just a bad practice in other programming languages but okay in Javascript/Typescript? The typechecker couldn't warn me if I tried to insert an invalid key like `"Vecdor(y:  4,x=2)"`.
+
+One other way, I could imagine, is a custom Map type that requires keys to implement a "Hashable" interface. Every key would be transformed to a `number` and then that number would be used as a key in an internal, regular `Map&lt;number, Value&gt;`.
+
+Thirdly, I don't think I am the only person who would have a use for such a Map variant. Is there maybe something on npm that acts like that?
+## [4][Having a real tough time "optionally" using typescript in my react app. see configs](https://www.reddit.com/r/typescript/comments/hd30z4/having_a_real_tough_time_optionally_using/)
+- url: https://www.reddit.com/r/typescript/comments/hd30z4/having_a_real_tough_time_optionally_using/
+---
+So, I have a react app and my Webstorm is just not appropriately linting things. Everything seems to be building fine, but all my ".js" files are littered with linting errors EVEN though I pre-commit with linting and its fine.
+
+Can you look over my babel, eslintrc file and let me know if anything jumps out as incorrect or "out of ordering". I am trying TRYING to ONLY use typescript on ".ts/.tsx" files and ignore the '.js' files for typing... basically "oh its a .js, ignore typescript linting etc...".
+
+ESLINTRC
+
+const path = require('path')
+
+    module.exports = {
+      parserOptions: {
+        ecmaVersion: 2019,
+        sourceType: 'module',
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+      extends: [
+        'eslint:recommended',
+        'plugin:react-hooks/recommended',
+        'plugin:react/recommended',
+        'eslint-config-prettier',
+        'eslint-config-prettier/@typescript-eslint',
+        'airbnb-base',
+        'prettier',
+        'prettier/react',
+      ],
+      globals: {},
+      rules: {
+        strict: ['error', 'never'],
+        'import/prefer-default-export': 1,
+        'global-require': 1,
+        'react/jsx-key': 1,
+        'prefer-destructuring': 1,
+      },
+      env: {
+        browser: true,
+        jest: true,
+        es2020: true,
+      },
+      settings: {
+        'import/resolver': {
+          'babel-module': {
+            'import/resolver': {
+              src: path.join(__dirname, '/src'),
+            },
+          },
+        },
+        react: {
+          version: 'detect',
+        },
+      },
+      overrides: [
+        {
+          files: '**/*.+(ts|tsx)',
+          parser: '@typescript-eslint/parser',
+          parserOptions: {
+            project: './tsconfig.json',
+            jsx: true,
+          },
+          plugins: [
+            '@typescript-eslint/eslint-plugin',
+            '@typescript-eslint/eslint-recommended',
+            '@typescript-eslint/recommended',
+          ],
+        },
+        {
+          files: ['**/__tests__/**'],
+          settings: {
+            'import/resolver': {
+              jest: {
+                jestConfigFile: path.join(__dirname, '/jest.config.js'),
+              },
+            },
+          },
+        },
+      ],
+    }
+
+HERE IS MY BABELRC FILE
+
+      {
+      "presets": [
+          "@babel/preset-react",
+          "@babel/preset-env",
+          "@babel/preset-typescript"
+      ],
+      "plugins": [
+        "@babel/plugin-proposal-optional-chaining",
+        "@babel/plugin-proposal-nullish-coalescing-operator",
+        "@babel/plugin-syntax-dynamic-import",
+        ["module-resolver", {
+          "root": ["./src"],
+          "alias": {
+            "src": "./src"
+          }
+        }]
+      ]
+    }
+
+HERE IS WHAT MY WEBSTORM IS SHOWING AS ERRORS. These are ".js" files. I have used Webstorm on all my projects and never any issues... even when jump to other repos, all good. So, I am thinking its my introducing with typescript to this project,  as my other projects do not use it. Anybody see any issues? Remember, I want to use both ".js" and ".ts" extensions.. and only "type" the ts files.
+
+errors webstorm show. Its crazy. It doesn't seem to recognize the js/jsx, YET I verified over and over that i have the proper settings (see last image).
+
+[https://imgur.com/a/xYJowaO](https://imgur.com/a/xYJowaO)
+
+[https://imgur.com/uJSIFyj](https://imgur.com/uJSIFyj)
+
+[https://imgur.com/a/Of3f8ah](https://imgur.com/a/Of3f8ah)
+
+  
+P.S. --- IF you want to work thru this with me, let me know and I will venmo you some $ for your time. We can google hangout and I can share my screen etc... message me. I do NOT need coding help, I am in need of configurations help.
+## [5][Noobie trying to do something advanced I guess - conditional arguments](https://www.reddit.com/r/typescript/comments/hcpm4d/noobie_trying_to_do_something_advanced_i_guess/)
+- url: https://www.reddit.com/r/typescript/comments/hcpm4d/noobie_trying_to_do_something_advanced_i_guess/
+---
+I'm learning typescript and trying to use it on a personal project.I have this function:
+
+```
+const fn = ({
+   resourceId,
+   select = resourceId ? state =&gt; state : id =&gt; state =&gt; state[id],
+}) =&gt; {
+   const selector = state =&gt;`
+   resourceId ? select(resourceId(state) : select(state);)`
+};
+```
+and I cannot make it build successfully. Here is my best attempt:
+
+```
+type Attr = string | number;
+type LikeState = {
+   [key: string]: any;
+   [key: number]: any;
+};
+
+interface IfcFn&lt;ResourceId extends Attr | undefined&gt; {
+   resourceId?: ResourceId;
+   select: ResourceId extends Attr
+      ? (x: Attr) =&gt; (y: LikeState) =&gt; LikeState
+      : (x: LikeState) =&gt; LikeState;
+}
+
+const fn = ({
+   resourceId,
+   select = resourceId ? state =&gt; state : id =&gt; state =&gt; state[id],
+}: IfcFn&lt;Attr | undefined&gt;) =&gt; {
+   const selector = (state: LikeState) =&gt; 
+      resourceId ? select(resourceId)(state) : select(state);
+};
+```
+
+I know I'm not there. So, any suggestions? Thank you!
+## [6][Help with handling JSON array of objects (merge two arrays)](https://www.reddit.com/r/typescript/comments/hc5odl/help_with_handling_json_array_of_objects_merge/)
 - url: https://www.reddit.com/r/typescript/comments/hc5odl/help_with_handling_json_array_of_objects_merge/
 ---
 I have a json array of Objects and need to pick a corresponding object in that array according to some calculations.  
@@ -48,7 +237,7 @@ and (this adds new key "Area" to each object but the value is full array, not co
 The result should be like:  
 
 `return this.Pipeareas.find(x =&gt; x &gt;= this.OutsideNumber);`
-## [3][Abstract class "TypeError: this is null"](https://www.reddit.com/r/typescript/comments/hca7qq/abstract_class_typeerror_this_is_null/)
+## [7][Abstract class "TypeError: this is null"](https://www.reddit.com/r/typescript/comments/hca7qq/abstract_class_typeerror_this_is_null/)
 - url: https://www.reddit.com/r/typescript/comments/hca7qq/abstract_class_typeerror_this_is_null/
 ---
 Going through one of my m8s code I found two classes with basically the same properties and methods and I though "Why not abstractifizzle this shizzle" which I thought would be all rainbows and flowers until this was null on line 75
@@ -74,15 +263,15 @@ which is implemented like this in the class that extends the abstract one
 but aparrently not?
 
 It probably or not helps to say that this in a Vue component where the abstract class extends Vue. And Vue Property Decorators are used
-## [4][Typing promisify with variadic tuple types](https://www.reddit.com/r/typescript/comments/hbpbwq/typing_promisify_with_variadic_tuple_types/)
+## [8][Typing promisify with variadic tuple types](https://www.reddit.com/r/typescript/comments/hbpbwq/typing_promisify_with_variadic_tuple_types/)
 - url: https://oida.dev/variadic-tuple-types-preview/
 ---
 
-## [5][Why You Should Use TypeScript in 2020](https://www.reddit.com/r/typescript/comments/hbhfsh/why_you_should_use_typescript_in_2020/)
+## [9][Why You Should Use TypeScript in 2020](https://www.reddit.com/r/typescript/comments/hbhfsh/why_you_should_use_typescript_in_2020/)
 - url: https://serokell.io/blog/why-typescript
 ---
 
-## [6][[Help Wanted] Mutation Testing with Typescript](https://www.reddit.com/r/typescript/comments/hbqgfg/help_wanted_mutation_testing_with_typescript/)
+## [10][[Help Wanted] Mutation Testing with Typescript](https://www.reddit.com/r/typescript/comments/hbqgfg/help_wanted_mutation_testing_with_typescript/)
 - url: https://www.reddit.com/r/typescript/comments/hbqgfg/help_wanted_mutation_testing_with_typescript/
 ---
 Supposedly Stryker as it working for nearly 3 years: https://stryker-mutator.io/blog/2017-10-06/typescript-support
@@ -96,7 +285,7 @@ I commented on a closed [issue](https://github.com/stryker-mutator/stryker/issue
 Anyone got mutation testing (Skryker or otherwise) working with typescript that could point me the right direction?  It looks like I might need to tell stryker to do some transpiling, but I'm not sure.  I think I tried `"transpiler": [ "typescript" ]` in the Stryker configuration, but it didn't help.
 
 Thanks for reading, and thanks in advance for any help you can provide.
-## [7][Those of you who came from dynamic languages, how did you survive without compile-time checks and autocomplete?](https://www.reddit.com/r/typescript/comments/hbhajh/those_of_you_who_came_from_dynamic_languages_how/)
+## [11][Those of you who came from dynamic languages, how did you survive without compile-time checks and autocomplete?](https://www.reddit.com/r/typescript/comments/hbhajh/those_of_you_who_came_from_dynamic_languages_how/)
 - url: https://www.reddit.com/r/typescript/comments/hbhajh/those_of_you_who_came_from_dynamic_languages_how/
 ---
 So, I come from a Java / Android / Kotlin background, where the IDE is top notch and warns you over every little mistake. Maybe it warns you a bit too much, but at least I know what I'm doing wrong.
@@ -118,88 +307,3 @@ I get really annoyed whenever I have to interact with their code bases. Either I
 Been trying to convince them to use Typescript because it feels like you're coding blindly without it, but all of them just don't see any point to it? I don't know. Are they just too blind to realize the advantages? Or maybe I'm the one that's too dumb and everyone else is really smart and that's why I need a crutch like Intellisense.
 
 Those of you who came from non-typed backgrounds like Javascript / Ruby, how on earth did you survive?
-## [8][Newbie Help with union types](https://www.reddit.com/r/typescript/comments/hbh47x/newbie_help_with_union_types/)
-- url: https://www.reddit.com/r/typescript/comments/hbh47x/newbie_help_with_union_types/
----
-I am attempting to do this
-
-&amp;#x200B;
-
-```typescript
-
-let username: String | HTMLInputElement = document.querySelector('#username')
-
-
-
-if (username.reportValidity()) {
-
-  username = (username as HTMLInputElement).value
-
-  verify({ username })
-
-}
-
-```
-
-&amp;#x200B;
-
-But typescript wont let me make a union type with String and HTMLInputElement
-
-&amp;#x200B;
-
-```typescript
-
-Type 'Element' is not assignable to type 'String | HTMLInputElement'.
-
-  Type 'Element' is missing the following properties from type 'HTMLInputElement': accept, align, alt, autocomplete, and 159 more.ts(2322)
-
-```
-
-what do I need to do to make this happen?
-
-Thank you so much
-## [9][Type parameters: What is the name for the part that goes in front of &lt;&gt;?](https://www.reddit.com/r/typescript/comments/hbasvp/type_parameters_what_is_the_name_for_the_part/)
-- url: https://www.reddit.com/r/typescript/comments/hbasvp/type_parameters_what_is_the_name_for_the_part/
----
-I see the syntax for generics is:
-
-    function doX &lt;T&gt; (args: T): T {...}
-
-And sometimes there is a word in front:
-
-    function doY &lt;T&gt; (args: Array&lt;T&gt;): Partial&lt;T&gt; {...}
-
-I know what these represent. `Array` specifies an array of values of type `T`. `Partial` is a utility type that specific some k/v pairs of the generic are there, but not all are required.
-
-My understanding is not complete. I understand  `Array` and `Partial` are modifiers of a generic type... but how exactly? Are they keywords? Can I make my own? Do they, as a whole, have a deeper syntactical structure (`Partial.If` for example)?
-
-Any help clarifying what that syntax is exactly is appreciated, thanks.
-## [10][Variadic Kinds arriving in TypeScript 4!](https://www.reddit.com/r/typescript/comments/haw15b/variadic_kinds_arriving_in_typescript_4/)
-- url: https://github.com/microsoft/TypeScript/issues/5453#issuecomment-644984977
----
-
-## [11][Using a conditional filter, error still occurs: Property 'header' does not exist on type 'never'.ts(2339)](https://www.reddit.com/r/typescript/comments/hbe5ct/using_a_conditional_filter_error_still_occurs/)
-- url: https://www.reddit.com/r/typescript/comments/hbe5ct/using_a_conditional_filter_error_still_occurs/
----
-    export default abstract class StepsBase {
-        protected description: string = ``;
-     
-        /**** Duck Typed DEFAULT Methods ****/
-    
-        public explain() {
-            // Property 'header' does not exist on type 'never'.ts(2339)
-            if ("header" in this) { console.log(this.header); }
-    
-            if ("description" in this) { console.log(this.description); }
-        }
-
-The lint is on the header property of `this.header`, I guess since `this` points back to this class definition.
-
-I thought my if statement would tell the interpreter to only type check inside that control flow block if the condition passed.
-
-I also tried the following type assertions but both failed:
-
-            if ("header" in this) { console.log(this.header as unknown); }
-            if ("header" in this) { console.log(this.header as any); }
-
-This is meant to be a base class where some inheriting subclasses define their own `header` and `description` properties. How should the base class be setup to pass type checking? I can leave an empty default value for `header` as I did for `description`, but I would like to know the best practice (maybe it is exactly that).

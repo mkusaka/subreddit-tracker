@@ -40,106 +40,123 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][I wrote about using Dagger Multibinding to initialize gradle modules at App Startup. Inspired by the new Jetpack App Startup Library.](https://www.reddit.com/r/androiddev/comments/hcgnna/i_wrote_about_using_dagger_multibinding_to/)
-- url: https://saurabharora.dev/2020-06-19-using-dagger-multibinding-to-initialize-modules/
+## [3][Funny things to do when you detect that a user is using a cracked version of your app.](https://www.reddit.com/r/androiddev/comments/hctu1d/funny_things_to_do_when_you_detect_that_a_user_is/)
+- url: https://www.reddit.com/r/androiddev/comments/hctu1d/funny_things_to_do_when_you_detect_that_a_user_is/
 ---
+I have a paid app on PlayStore, the app has checks if the user has bought the app, if not I close it immediately.
 
-## [4][Be cautious when using third-party APIs](https://www.reddit.com/r/androiddev/comments/hclze5/be_cautious_when_using_thirdparty_apis/)
+I was wondering what you guys do when you detect that your app is cracked, like increasing the text size by each day, making buttons fade by each day, I don't know, share your ideas
+## [4][What resources should complete beginners use for UI/UX design?](https://www.reddit.com/r/androiddev/comments/hd1m3k/what_resources_should_complete_beginners_use_for/)
+- url: https://www.reddit.com/r/androiddev/comments/hd1m3k/what_resources_should_complete_beginners_use_for/
+---
+I'm at the beginning stages of my app and I want to design the login page. Does anyone know where complete beginners to graphic design should go for designing the UI/UX of their mobile app?
+## [5][Be cautious when using third-party APIs](https://www.reddit.com/r/androiddev/comments/hclze5/be_cautious_when_using_thirdparty_apis/)
 - url: https://www.reddit.com/r/androiddev/comments/hclze5/be_cautious_when_using_thirdparty_apis/
 ---
-TLDR; chances are there are songs on SoundCloud that infringe some record labels' copyright. I was using SoundCloud API in my apps, thus my apps infringe their copyright. The consequence is my Google Play developer account has been terminated, forever.
+TL;DR chances are there are songs on SoundCloud that infringe some record labels' copyright. I was using SoundCloud API in my apps, thus my apps infringe their copyright. The consequence is my Google Play developer account has been terminated, forever.
 
-This is a lesson I paid with a high price. About 2 years ago, I published 4 music streaming apps. These apps relied on SoundCloud API for searching, filtering &amp; streaming music. The monetization model is Admob banner, there is no in-app purchase, no subscription. It went fine at that time. 
+This is a lesson I paid with a high price. About 2 years ago, I published 6 music streaming apps. These apps relied on SoundCloud API for searching, filtering &amp; streaming music. The monetization model is Admob banner, there is no in-app purchase, no subscription. It went fine at that time. 
 
 Finally, an Indian record label filled DCMA reports about my apps' infringement. They listed some of the songs apparently being uploaded on SoundCloud, without their authorization. My apps were using SoundCloud API, thus, their songs appeared in these apps if my users search for them. 
-In the wee hours of a night this week, I received consecutive emails notify that my apps have been removed for its violations. In the morning, when I wake up, an email put an end to my developer account, for repeatedly violating Google Play policies. Of course, all of my other apps, whether or not they violated the store's policy, have been removed too.
+In the wee hours of a night, I received consecutive emails notify that my apps have been removed for its violations. In the morning, when I wake up, an email put an end to my developer account, for repeatedly violating Google Play policies. Of course, all of my other apps, whether or not they violated the store's policy, have been removed too.
 
 With API Terms of Use, SoundCloud already clarified they do not grant any rights when using their User Content. It was my thoughtless actions that resulted in the termination. 
 I was always careful to choose free Google fonts, free Freepiks' icons, free Unsplash photos, free Youtube Studio music, etc. with their appropriated attributions. But I never thought using SoundCloud API would be a big problem. 
 My hard-learned lesson.
-## [5][Free Spanish/English translation [Update/Rant]](https://www.reddit.com/r/androiddev/comments/hchtcl/free_spanishenglish_translation_updaterant/)
-- url: https://www.reddit.com/r/androiddev/comments/hchtcl/free_spanishenglish_translation_updaterant/
+## [6][Developed a Group chat application using Flutter and Firebase, where users can register and create groups, or join already existing groups and start conversing with each other. Feedback is appreciated.](https://www.reddit.com/r/androiddev/comments/hd6v10/developed_a_group_chat_application_using_flutter/)
+- url: https://github.com/ahmedgulabkhan/GroupChatApp
 ---
-**First of all, im high on benzos because of the stress everything in my life is causing me right now and i know its not the way to get through them but its what work for now so i copied this rant from the discord server, im sorry if you cant understand anything as i said im on a (6mg kpin) benzo high**
+
+## [7][Simple COVID-19 pandemic themed 2D Android game. Open sourced!](https://www.reddit.com/r/androiddev/comments/hd3voe/simple_covid19_pandemic_themed_2d_android_game/)
+- url: https://www.reddit.com/r/androiddev/comments/hd3voe/simple_covid19_pandemic_themed_2d_android_game/
+---
+**TL;DR** Looking for some constructive feedback and open source contributions.
+
+I just published my first app on PlayStore. Designed it as a simple and fun to play COVID-19 pandemic themed Android game as a means to spread some much-needed awareness regarding social distancing norms and use of personal protective equipment (PPE).
+
+I have kept the V1 minimal in terms of features. And would really appreciate if the community could help me build it. In terms of ideas, constructive feedback, open source contributions or simply best practices.
+
+[Google Play](https://play.google.com/store/apps/details?id=com.project.dodgecorona)
+[GitHub](https://github.com/Ashish-Kenjale/DodgeCorona)
+
+The game is FREE and I do not intend to monetize it.
+## [8][Unity tutorials for beginners?](https://www.reddit.com/r/androiddev/comments/hd5sir/unity_tutorials_for_beginners/)
+- url: https://www.reddit.com/r/androiddev/comments/hd5sir/unity_tutorials_for_beginners/
+---
+I’ve made a couple of simple 2D games over the past couple of years using Construct3. Im now looking at moving on to create something in Unity.
+
+Can anyone point me towards some decent beginner tutorials?
+
+Also, what build services will I need for Android and iOS? Construct took care of all that, is that something that Unity also does or will I need a third party?
+
+And voxel generators - are there any free packages out there?
+
+Cheers all :)
+## [9][How I return a string value from other private void to opened alerdialog and updated a EditText?](https://www.reddit.com/r/androiddev/comments/hd5afu/how_i_return_a_string_value_from_other_private/)
+- url: https://www.reddit.com/r/androiddev/comments/hd5afu/how_i_return_a_string_value_from_other_private/
+---
+When I open a alertdialog I have a empty EditText, when I click a button I collect from other activity alerdialog a string passportnumber, how I return this string to opened alerdialog and set the editext with this value?
 
 &amp;#x200B;
 
-**And im really sorry for the walltext and i know that this possibly will get deleted but i really need to vent because im still receving messages.**  
+`btn_info.setOnClickListener(new View.OnClickListener() { u/Override public void onClick(View v) { //showing dialog` 
 
+`AlertDialog.Builder mBuilder = new AlertDialog.Builder(context);` 
 
-A few days ago i posted about doin free translations EN/ES for small apps and i was expecting a bunch of strings files and maybe some random stuff.   I kid you not i got over 50 chats/pms and i wasn't even mad, it was interesting to work on so many different stuff that took me almost no time and i could do from my office after finishing my work.   I started answering every chat/pm in order telling them to send the files to one of my emails so i could keep track of everything and to make communication easier in general. 
+`LayoutInflater layoutInflater = context.getLayoutInflater();` 
+
+`View view = layoutInflater.inflate(R.layout.popup_checks, null);` 
+
+`final EditText editText = view.findViewById(R.id.passportn);`
+
+//....//
+
+`private void method2() {`   
+
+`passportNo = passportNo.replaceAll("&lt;", "");`
+
+`}`
+## [10][A polyglot vector graphic optimization tool, with VectorDrawable support](https://www.reddit.com/r/androiddev/comments/hcnh3u/a_polyglot_vector_graphic_optimization_tool_with/)
+- url: https://www.reddit.com/r/androiddev/comments/hcnh3u/a_polyglot_vector_graphic_optimization_tool_with/
+---
+I've been working on a tool to reduce the size of VectorDrawables for a little while now. It's built from the ground-up in Kotlin. It supports most of the VectorDrawable spec, has early support for SVG, and early support for converting between different vector art formats.
+
+I hope it improves over time and can help people be more productive. Issues are welcome!
+
+Here are a couple links you may find interesting:
+
+[https://jzbrooks.com/posts/optimizing-vector-art/](https://jzbrooks.com/posts/optimizing-vector-art/)
+
+[https://github.com/jzbrooks/vgo](https://github.com/jzbrooks/vgo)
+## [11][LiveData on ArrayList, it is not the right choose, but which is the right one ?](https://www.reddit.com/r/androiddev/comments/hd4012/livedata_on_arraylist_it_is_not_the_right_choose/)
+- url: https://www.reddit.com/r/androiddev/comments/hd4012/livedata_on_arraylist_it_is_not_the_right_choose/
+---
+Hi,
+
+update the liveData every time an element of an ArrayList is edited is soo tricky, and for that I'm wondering if it is the right choice.  
+It never happens to you to have a simple list like this:  
+
+    data Test(val flagTest:Boolean, val name:String, val age:Int)  
+    val testsList:ArrayList&lt;Test&gt;
+
+and you have to update the view every time a flagTEst field value change ?
+## [12][Where do you store temporary data of your app ? Ram or on db?](https://www.reddit.com/r/androiddev/comments/hd3ald/where_do_you_store_temporary_data_of_your_app_ram/)
+- url: https://www.reddit.com/r/androiddev/comments/hd3ald/where_do_you_store_temporary_data_of_your_app_ram/
+---
+Hi !
+
+I'm wondering where do  you save the temporary data of your app. 
 
 &amp;#x200B;
 
-After 2-3 projects where everything went well i wrote after every email that i was accepting tips in general if they were happy with what i did but that it wasnt mandatory or even encouraged to do so, but it would help a lot (Living in Southamerica i kinda make a dollar an hour lmao)   Most of the people didn't mention it and just thanked me for the translation and that was cool, there was two or three that sent some tips to my paypal account (That is the same email i was using to manage all of this) but at least 5 people went furious about just reading the word "Tip" at the botton of the email in italics and light gray. I swear it was almost invisible.   
+An example:
+
+a configuration screen storing data on db after click on save button. Before the save button pression where do you store the data ? Do you create a temporary entity on db ??
 
 &amp;#x200B;
 
-The work was done, the translation was complete and i even modified some terms to make it more user friendly (after asking them ofc) the files were in the very same email where i was telling them that they could tip me if they wanted to but i just got called a scammer and that i wasn't really doing anything "For free" because then i was asking for money and if i wanted charity then i should go to the church.   Well i ignored that because that kind of people is everywhere and my main goal was (Is) to help indie dev reach new regions but then this guy wrote me.  
-
-
-He wanted a "Simple translation" of a moneymaking app that was based on crypto and i thought it was one of those silly games that give you 0,00001 cent per win or something like that, but after i sent him the files he kept sending more and more and i ended up with about 6-7 big strings files which to me made no sense at all. i wrote to him asking wtf was happening and that i was just offering a small translation not this kind of work and somehow he slipped that he was making a new game/crypto app that function as a wallet but not really because he keeps the private keys and there is no way to redeem the "Gems" users won. I refused to keep working on this and again i got insulted and told me that it was irresposible to accept a job offer and not even finish it. I asked him for $20, just to see what he would tell me. And of course he started telling me that i was a scammer and stuff. 
+Do you have an entity for every screen of your app ???
 
 &amp;#x200B;
 
- I kind of gave up after that. But i picked up three more emails and they were really blessed. The first one was kind of a tic-tac-toe game that was really easy to translate and the game was really fun, i even played it with my coworkers.   Then a flashlight that i didn't use and just translated the appstore description (He tipped me about $6 and was the first and only one to do so even thought it was one of the most easy translation i had) and then a guy with a Military app to identify ranks. This last one was really interesting because i had to do a lot of research to properly translate ranks, i called a friend from the UN and the guy was just nice af. Im waiting a response for him rn because it looked like he wanted to continue the project and im on board 100%, it was really fun.  
-
-
-Some people even got mad when i asked to see the app so i could see the context of what i was translating and it was just ridiculous.  
-
-
-But yeah, i finished the last one and the ones i had on reddit (One guy didn't even say hello, he just sent a message saying "Translation" and a walltext about a game that i didnt even read) got ignored.  
-
-
-So if someone wants anything translated to spanish, hit me up. But remember that i have a full time job and i cant make everything in a few hours, im just trying to help. Not only here but in life in general, i think that rough times need helping people.  **You can send me the files to ironkunst@gmail.com** and write what you need and if you don't have the app in the appstore at least try to explain it to me because otherwise probably the translation would make no sense if its a weird game/lifestyle app.  
-
-
-I don't ask for money, you can tip but as i said its not necessary at all. Just a "Thank you" email back is enough and im open to modify whatever sounds/looks weird once i can see the app working.  
-
-
-Ok this was a full rant but im sorry, i really can't talk about this to anyone because i always get "They why aren't they paying you? You should start charging for it" If the wording sound weird, im high af on benzos. The stress that this gave me and the work combined were just killing me.  
-
-
-If one of you who acted like a dickhead is reading this, there is no hard feelings at all, everyone else who i had the honor to work with is welcome to just email me to chat. I sent a lot of notes with the translations and i can help even more if you need them, again free of charge. 
-
-Thanks for reading, i love you all and i wish you the best.
-## [6][How do you (or your company) manage app revenue?](https://www.reddit.com/r/androiddev/comments/hcg0jy/how_do_you_or_your_company_manage_app_revenue/)
-- url: https://www.reddit.com/r/androiddev/comments/hcg0jy/how_do_you_or_your_company_manage_app_revenue/
----
-I have multiple apps with many different ad networks in them, and was wondering how do you or your company manage all that data? Is there a way to aggregate it (in-apps and ad networks)? It would be nice to see it all in one place, not to login into 10+ networks. 
-
-I know AppAnnie has aggregation tools but I'd rather not them get my downloads and other app data.
-
-I would really appreciate any suggestions, especially if you know how companies manage it.
-## [7][Not Just Another Modularization Talk &amp; Scaling your Android Build with Gradle Panel Discussion](https://www.reddit.com/r/androiddev/comments/hcgv8h/not_just_another_modularization_talk_scaling_your/)
-- url: https://www.droidcon.com/media-detail?video=430648415
----
-
-## [8][How to use AssistedInject with the current Hilt version (Will be added to Dagger and Hilt in the future).](https://www.reddit.com/r/androiddev/comments/hc53mb/how_to_use_assistedinject_with_the_current_hilt/)
-- url: https://twitter.com/manuelvicnt/status/1273699171078475780?s=09
----
-
-## [9][Crashy, a small reporter library based on the new AndroidX Startup](https://www.reddit.com/r/androiddev/comments/hc303c/crashy_a_small_reporter_library_based_on_the_new/)
-- url: https://www.reddit.com/r/androiddev/comments/hc303c/crashy_a_small_reporter_library_based_on_the_new/
----
-Hello fellow Android devs,
-
-I decided to slice off these utils (I've been using inside my projects for crash reporting when I've given to people to test the apps) into a nice simple library.
-
-Meet [Crashy](https://github.com/CraZyLegenD/Crashy), based on [AndroidX Startup](https://developer.android.com/jetpack/androidx/releases/startup), primarily it was implemented with content provider now this improvement from Google is a nice addition.
-
- Overall it's a tiny library to save your crash reports to the device's storage with lots of details of what went wrong so that you can later on export and do whatever you want with them.
-
-Let me know what you think and happy usage to y'all!
-## [10][Android 11 Beta 1.5 was released a week after Android 11 Beta 1. What's new?](https://www.reddit.com/r/androiddev/comments/hcjwyk/android_11_beta_15_was_released_a_week_after/)
-- url: https://i.redd.it/832c454dk1651.jpg
----
-
-## [11][Emulator 30.0.18 Canary](https://www.reddit.com/r/androiddev/comments/hc4g3m/emulator_30018_canary/)
-- url: https://androidstudio.googleblog.com/2020/06/emulator-30018-canary.html
----
-
-## [12][How long does it take to see the results of ASO localisation?](https://www.reddit.com/r/androiddev/comments/hcibfc/how_long_does_it_take_to_see_the_results_of_aso/)
-- url: /r/gamedev/comments/hciasq/how_long_does_it_take_to_see_the_results_of_aso/
----
-
+Currently I save those datas in memory inside a cacheDataSource, but I don't know if it is the right choice.

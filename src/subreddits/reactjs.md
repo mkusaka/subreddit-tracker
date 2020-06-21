@@ -109,56 +109,59 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/gk41zb/whos_available_may_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][My first Full-Stack project: online multiplayer Tic-Tac-Toe!](https://www.reddit.com/r/reactjs/comments/hccnc2/my_first_fullstack_project_online_multiplayer/)
-- url: https://v.redd.it/t4bdp8pipy551
+## [3][I have built and open sourced an automated irrigation system based on Node.js and React](https://www.reddit.com/r/reactjs/comments/hd2oaw/i_have_built_and_open_sourced_an_automated/)
+- url: https://v.redd.it/6n79cs3os7651
 ---
 
-## [4][React Router v6 API Reference just released (WIP)](https://www.reddit.com/r/reactjs/comments/hc824e/react_router_v6_api_reference_just_released_wip/)
-- url: https://github.com/ReactTraining/react-router/blob/dev/docs/api-reference.md
+## [4][How to replicate Zelda BOTW interface with React, Tailwind and Framer-motion](https://www.reddit.com/r/reactjs/comments/hcppxi/how_to_replicate_zelda_botw_interface_with_react/)
+- url: https://www.reddit.com/r/reactjs/comments/hcppxi/how_to_replicate_zelda_botw_interface_with_react/
+---
+Hello r/reactjs, I made a tutorial to learn how to replicate one of Zelda menu screen with React, Tailwind and Framer motion.
+
+ Any feedbacks would be greatly appreciated ! 
+
+Demo link:  [https://www.gameuionweb.com/zelda-botw/inventory](https://www.gameuionweb.com/zelda-botw/inventory) 
+
+Article link: [https://dev.to/flagrede/how-to-replicate-the-zelda-botw-interface-with-react-tailwind-and-framer-motion-part-1-298g](https://dev.to/flagrede/how-to-replicate-the-zelda-botw-interface-with-react-tailwind-and-framer-motion-part-1-298g)
+## [5][React Hook Form V6 Preview (Feedback welcome)](https://www.reddit.com/r/reactjs/comments/hcz5bp/react_hook_form_v6_preview_feedback_welcome/)
+- url: https://www.youtube.com/watch?v=CeR7ERx9ehE
 ---
 
-## [5][7 Interesting JavaScript Features in ES2020 That You Should Know - Kriss](https://www.reddit.com/r/reactjs/comments/hbzvh6/7_interesting_javascript_features_in_es2020_that/)
-- url: https://kriss.io/7-interesting-javascript-features-in-es2020-that-you-should-know/#.XuyvbmgzZdg
+## [6][🧪 use-ab-test: Simple, framework agnostic A/B and canary testing with React Hooks](https://www.reddit.com/r/reactjs/comments/hd50ac/useabtest_simple_framework_agnostic_ab_and_canary/)
+- url: https://github.com/dan-js/use-ab-test
 ---
 
-## [6][Hi. I have created a tiny form using formik. Is it possible for me to display the data the user has entered on submit? Without using any API calls.](https://www.reddit.com/r/reactjs/comments/hcmah4/hi_i_have_created_a_tiny_form_using_formik_is_it/)
-- url: https://www.reddit.com/r/reactjs/comments/hcmah4/hi_i_have_created_a_tiny_form_using_formik_is_it/
----
-Please tell me how. I want to display the form data as a summary on another page.
-## [7][Automatic Analytics PageView Tracking using React Router](https://www.reddit.com/r/reactjs/comments/hclsp3/automatic_analytics_pageview_tracking_using_react/)
-- url: http://www.sheshbabu.com/posts/automatic-pageview-tracking-using-react-router/
+## [7][GitHub - beautifulinteractions/beautiful-react-hooks: 🔥 A collection of beautiful and (hopefully) useful React hooks to speed-up your components and hooks development 🔥](https://www.reddit.com/r/reactjs/comments/hd6nck/github_beautifulinteractionsbeautifulreacthooks_a/)
+- url: https://github.com/beautifulinteractions/beautiful-react-hooks
 ---
 
-## [8][SVG Component Library Creator - NPM](https://www.reddit.com/r/reactjs/comments/hclfnq/svg_component_library_creator_npm/)
-- url: https://www.reddit.com/r/reactjs/comments/hclfnq/svg_component_library_creator_npm/
----
-Hey guys! I just created my very first npm package!
-It allows you to turn all svgs in your project into a single React (React Native) component with full type-safety!
-Any feedback appreciated!!
-Check it out here:
-
-https://github.com/josevelaz/svg-component-library-creator
-## [9][How to get dom properties from react element](https://www.reddit.com/r/reactjs/comments/hckw0m/how_to_get_dom_properties_from_react_element/)
-- url: https://www.reddit.com/r/reactjs/comments/hckw0m/how_to_get_dom_properties_from_react_element/
----
-I want to know the scroll height form an element. I know that in vanilla js i'd do element.scrollHeight, but in React it says undefined. What should I do?
-## [10][Invasion, Protect The Earth!](https://www.reddit.com/r/reactjs/comments/hcko1s/invasion_protect_the_earth/)
-- url: https://www.reddit.com/r/reactjs/comments/hcko1s/invasion_protect_the_earth/
----
- I'm learning redux so I built an earth invasion game using Reactjs, Redux, and SVG 
-
-Source Code:  [https://github.com/aashrafh/Invasion](https://github.com/aashrafh/Invasion) 
-
-Try It: [https://aashrafh.github.io/Invasion](https://aashrafh.github.io/Invasion)
-## [11][Learn how to practice React by building a basic application that fetches and renders Pokémon data](https://www.reddit.com/r/reactjs/comments/hckjsa/learn_how_to_practice_react_by_building_a_basic/)
-- url: https://youtu.be/d4JoL9LTJdQ
+## [8][A deep dive into React Context API - LogRocket Blog](https://www.reddit.com/r/reactjs/comments/hd6n0i/a_deep_dive_into_react_context_api_logrocket_blog/)
+- url: https://blog.logrocket.com/a-deep-dive-into-react-context-api/
 ---
 
-## [12][Did React development grind to a halt last few weeks?](https://www.reddit.com/r/reactjs/comments/hbztec/did_react_development_grind_to_a_halt_last_few/)
-- url: https://www.reddit.com/r/reactjs/comments/hbztec/did_react_development_grind_to_a_halt_last_few/
+## [9][How to Pass Props Through React-Router Path Links](https://www.reddit.com/r/reactjs/comments/hd6f2v/how_to_pass_props_through_reactrouter_path_links/)
+- url: https://medium.com/@kennethscoggins/how-to-pass-props-through-react-router-path-links-876aadaa5027?sk=1485d056d83ca03e2f8637b02954256c
 ---
-https://github.com/facebook/react/graphs/commit-activity
 
-The last 3 weeks there has been a stark difference in commit activity compared to last year.
+## [10][React Native Web](https://www.reddit.com/r/reactjs/comments/hd6eu9/react_native_web/)
+- url: https://www.reddit.com/r/reactjs/comments/hd6eu9/react_native_web/
+---
+Hi Everyone,
 
-Does anyone know the reason for this?
+I actually come from a react native background, and am starting a new Web focused project. The platform is web focused, but if I can be smart about it and develop a mobile app for it along the way, I'd like to do that.
+
+I was just going to use React.js before stumbling on React Native Web. Are there performance downsides to using React Native Web? There has to be some sort of drawback right? Particularly on the web.
+
+My fallback plan was to just use cordova to deploy my site mobily. That I know has far worse performance
+## [11][How use mutation in next js react js apollo client 3 ?](https://www.reddit.com/r/reactjs/comments/hd5mav/how_use_mutation_in_next_js_react_js_apollo/)
+- url: https://www.reddit.com/r/reactjs/comments/hd5mav/how_use_mutation_in_next_js_react_js_apollo/
+---
+guys can you give me example of useing mutation in next js with apollo client 3 ? it will be great.
+## [12][Hoe to parse a value calculated within a component to his parent](https://www.reddit.com/r/reactjs/comments/hd5bw5/hoe_to_parse_a_value_calculated_within_a/)
+- url: https://www.reddit.com/r/reactjs/comments/hd5bw5/hoe_to_parse_a_value_calculated_within_a/
+---
+Hello,
+
+I've a very basic question - I'm passing some data into a component and within this component I'm calculating some outputs. What I'm trying to do is to return back (reflect) a value to an attribute so that it can be used to his parent component.
+
+Any idea???

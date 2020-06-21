@@ -21,90 +21,101 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][A utility to edit secrets from AWS Secrets Manager without storing them](https://www.reddit.com/r/aws/comments/hcj9lf/a_utility_to_edit_secrets_from_aws_secrets/)
-- url: https://github.com/zeapo/barberousse
+## [2][What is AWS competitor to firebase database?](https://www.reddit.com/r/aws/comments/hd3zaw/what_is_aws_competitor_to_firebase_database/)
+- url: https://www.reddit.com/r/aws/comments/hd3zaw/what_is_aws_competitor_to_firebase_database/
 ---
-
-## [3][Do I really need to provide resource-level tenant isolation with IAM roles and policies?](https://www.reddit.com/r/aws/comments/hcdv70/do_i_really_need_to_provide_resourcelevel_tenant/)
-- url: https://www.reddit.com/r/aws/comments/hcdv70/do_i_really_need_to_provide_resourcelevel_tenant/
+I found very easy to setup and use firebase database as a web dev.  Does AWS have a similar technology that is as simple to setup and use?
+## [3][{"message":"Missing Authentication Token"} Chalice API Authentication Erorr?](https://www.reddit.com/r/aws/comments/hd2syh/messagemissing_authentication_token_chalice_api/)
+- url: https://www.reddit.com/r/aws/comments/hd2syh/messagemissing_authentication_token_chalice_api/
 ---
-I'm developing a web app for a SaaS business.
+Hello! 
 
-This business is aspiring/planning to have hundreds or thousands of customers.
+I've been poking around AWS Chalice and Lambda, and I've been running into an issues with getting my API set up. I am consistiently running into a `{"message":"Missing Authentication Token"}` error.
 
-I've watched some (awesome) talks by Tod Golding on AWS multi-tenant architectures for SaaS businesses.
+My AWS rootkey credentials in the AWS configure settings are correct, however the error still remains.
 
-Tod recommends us to add tenant isolation not only at the token level, but also at the resource level (DynamoDB tables or partition keys, S3 buckets or tags, etc.), by adding policies on those resources that will isolate tenants and also handle permission levels.
+The API never seems to update even when 200 POST requests are made from test clients such as Insomnia.
 
-After creating these policies, we would utilize the services of Cognito Identity Pools (or AWS STS) to exchange the user token for AWS credentials, through which the users would assume roles.
+Anyone run into a similar issue?
 
-I have to say: I don't really see the need for that. Because if I have a token with a secret key, I can assume the user is who they are, and then I can just take the user ID, the tenant ID and query my DynamoDB table or S3 bucket according to what I need.
+`import requests, json`
 
-**What precisely other security would such IAM policies add?** Can someone illuminate me?
+`from chalice import Chalice, Response`
 
-Because as I see it, I think this will just add unnecessary complexity and make the app slower (demanding extra requests to STS each time I need to access AWS resources).
-## [4][I wrote a free app for sketching cloud architecture diagrams](https://www.reddit.com/r/aws/comments/hbztrc/i_wrote_a_free_app_for_sketching_cloud/)
-- url: https://www.reddit.com/r/aws/comments/hbztrc/i_wrote_a_free_app_for_sketching_cloud/
+&amp;#x200B;
+
+`app = Chalice(app_name='helloworld')`
+
+&amp;#x200B;
+
+`@app.route('/', methods=['POST'])`
+
+`def index():`
+
+`message = app.current_request.json_body`
+
+`return {'webhook_message': message}`
+## [4][AWS Phone Support: Just call me when a tech is available!](https://www.reddit.com/r/aws/comments/hcn13f/aws_phone_support_just_call_me_when_a_tech_is/)
+- url: https://www.reddit.com/r/aws/comments/hcn13f/aws_phone_support_just_call_me_when_a_tech_is/
 ---
-I wrote a free app for sketching cloud architecture diagrams. All AWS, Azure, GCP, Kubernetes, Alibaba Cloud, Oracle Cloud icons and more are preloaded in the app. Hope the community finds it useful: [cloudskew.com](https://www.cloudskew.com/)
+Every time I go to open a phone ticket with Amazon they call my landline immediately, then make me wait an hour or two for a tech. (At least I think they would... usually the call drops before the tech shows up.)
 
-Notes:
+For the love of god, why not just call me when the tech is available.
 
-1. The app's just a simple diagram editor, it doesn't need access to any AWS, Azure, GCP accounts.
-2. You can see some sample diagrams [here](https://www.cloudskew.com/docs/samples.html).
+Also how about having more than 16 bars of looping hold music. Maybe you could tell me how long the wait is going to be?
 
-[CloudSkew - Free AWS, Azure, GCP, Kubernetes diagram tool](https://preview.redd.it/9jm111zn1v551.png?width=1438&amp;format=png&amp;auto=webp&amp;s=c33c6eb8c76a0c52408e0c672d36b6eac62a3fed)
-## [5][Best ec2 instance type(s) for remote full-stack development?](https://www.reddit.com/r/aws/comments/hcl879/best_ec2_instance_types_for_remote_fullstack/)
-- url: https://www.reddit.com/r/aws/comments/hcl879/best_ec2_instance_types_for_remote_fullstack/
+**Are phone tickets just a suckers game?**  
+
+
+**Edit:** The support I get from Amazon is top-notch. I'm just nit-picky about the phone system.
+## [5][Website (using Angular) accessing API with authorization? help!](https://www.reddit.com/r/aws/comments/hd4een/website_using_angular_accessing_api_with/)
+- url: https://www.reddit.com/r/aws/comments/hd4een/website_using_angular_accessing_api_with/
 ---
-Was using a t2.small for remote dev through vscode but the performance was abysmal.  Any sort of load on the device seemed to caused very high response times or kick me out ssh(even through the aws webconsole).  However the status checks on the server never showed any issues.  The rest of my internet is fine and I've never had this issue on DigitalOcean.  
-
-Using a docker-compose MERN stack.
-
-I'm wondering if anyone can recommend a good ec2 instance type for full-stack remote development with vscode(via ssh)?  Or at least what to avoid?  8GB of memory is the most I would ever need I think.
-## [6][How do I make boto3 output more readable?](https://www.reddit.com/r/aws/comments/hcmalq/how_do_i_make_boto3_output_more_readable/)
-- url: https://www.reddit.com/r/aws/comments/hcmalq/how_do_i_make_boto3_output_more_readable/
+I'm new to the web front-end programming, as I have always been more of a SQL and Python developer. I am building a website, and I have a MySQL DB (on AWS) with many tables of Sports data for example. I just want my web domain to display different analytics or reports. I found that I needed an API which hits the DB, which I've built in API Gateway.  I am learning Angular to make this site, and I have successfully connected to my API in Angular (using HttpRequest) and displayed data successfully locally on my browser (localhost:4200)! So that was great, but I then thought my API should have security/authorization though, so only my web code is allowed to hit my API. I added authorization in my API's settings (See pic: [https://imgur.com/a/xxBgksv](https://imgur.com/a/xxBgksv)) and I successfully tested connecting using Postman by plugging in my IAM AccessKey and SecretKey. But, every example or tutorial on Angular accessing an API either brushes over this signature part or uses Cognito as part of it's solution. I don't see why I'd use Cognito though. I am not making a pool of users for my site. I just need ONE access key for the website code only. I don't understand how there's no sample Angular code for a regular dynamic website accessing an API. This seems like a very common scenario for most people building a website. It's making me question if I am going down the right path as it seems more difficult than it should be. I'm assuming everyone has IAM authorization turned on for their API endpoint, right? I mean I guess it would be hard for someone to even find out my endpoint path, but I feel like it should have it regardless. I'm at a loss, please help. Thanks
+## [6][Is AppSync the best way to set up a GraphQL API on aws for a web app?](https://www.reddit.com/r/aws/comments/hd5uhu/is_appsync_the_best_way_to_set_up_a_graphql_api/)
+- url: https://www.reddit.com/r/aws/comments/hd5uhu/is_appsync_the_best_way_to_set_up_a_graphql_api/
 ---
-Hello, 
+Or is it mostly just for mobile apps?
 
-If I get an output from something like ec2.describe\_instances(), I just get an enormous wall of text. How can I format it to make it more readable in the terminal? I have tried playing around with json (output=json.loads(response) for example, but can't seem to find something that works.
-## [7][Amazon Glacier Stack for Synology](https://www.reddit.com/r/aws/comments/hcm6wa/amazon_glacier_stack_for_synology/)
-- url: https://www.reddit.com/r/aws/comments/hcm6wa/amazon_glacier_stack_for_synology/
+If it’s not the one Th en are there any managed graphql solutions like API gateway or do you need to set up your own custom thing?
+## [7][DynamoDB or MongoDB in ec2 instance?](https://www.reddit.com/r/aws/comments/hd2517/dynamodb_or_mongodb_in_ec2_instance/)
+- url: https://www.reddit.com/r/aws/comments/hd2517/dynamodb_or_mongodb_in_ec2_instance/
 ---
-Another weekend project, this time I made a CloudFormation file for anyone with a Synology device who would like to have an offsite backup using Amazon Glacier. As always the CF file is setup as one click deployment. 
+We are planning to migrate our ecosystem completely to the AWS. Currently mongodb is used  as a backend with replica set . Our system is both write heavy and read heavy. And data is extremly unstructred. And it stores few millions of records. And very high throughput. 
 
-Worth knowing: the downside of the Synology implementation of Glacier is that they don't ask for a Vault ARN, they make one for you, so there is no way to configure the Vault using a CF file. Not to mention that they need way more privileges than needed. Thankfully they have a standard naming scheme, so I locked Synology down with a policy that has a wildmaks resource ARN.
-
-This is the URL of the project: https://github.com/0x4447/0x4447_product_synology_backup
-## [8][Elastic Beanstalk - Command '/opt/python/run/venv/bin/pip install -r /opt/python/ondeck/app/requirements.txt' returned non-zero exit status 1](https://www.reddit.com/r/aws/comments/hck7u0/elastic_beanstalk_command_optpythonrunvenvbinpip/)
-- url: https://www.reddit.com/r/aws/comments/hck7u0/elastic_beanstalk_command_optpythonrunvenvbinpip/
+So which is better in AWS for this use case. MongoDB in EC2 or DynamoDB interms of performance, cost, consistency and HA?
+## [8][Rent AWS services to others](https://www.reddit.com/r/aws/comments/hd4g3p/rent_aws_services_to_others/)
+- url: https://www.reddit.com/r/aws/comments/hd4g3p/rent_aws_services_to_others/
 ---
-Trying to use a git link in order to install a package which is on github. For this, I included the following line in my requirements.txt file:
-
-        [-e] git+https://github.com/deribit/deribit-api-clients#egg=python
-
-But I get the following error when I run \`eb deploy -v\`
-
-        CalledProcessError: Command '/opt/python/run/venv/bin/pip install -r /opt/python/ondeck/app/requirements.txt' returned non-zero exit status 1.
-
-What's the right way to list a requirement like that? Pip version of the instance is 9.0.3
-## [9][how do i change Node.js version , Proxy server,Listeners from config or yml? instead of going over Configuration overview in aws web UI](https://www.reddit.com/r/aws/comments/hcjyiu/how_do_i_change_nodejs_version_proxy/)
-- url: https://www.reddit.com/r/aws/comments/hcjyiu/how_do_i_change_nodejs_version_proxy/
+Hello people, Is there any place where I can give my AWS servers for rent for example? Let's say I'm gonna take them only half of the money that it costs me in AWS services and provide to them cheaper. I'm thinking that becauseI won 6,500$ credits in AWS by applying for an  idea
+## [9][I have access key and secret, and a pem file. Can I get in?](https://www.reddit.com/r/aws/comments/hd40qf/i_have_access_key_and_secret_and_a_pem_file_can_i/)
+- url: https://www.reddit.com/r/aws/comments/hd40qf/i_have_access_key_and_secret_and_a_pem_file_can_i/
 ---
-currently i usually end up doing config over web UI
+It has been a while since I maintained my AWS account, and in the end I am only using it for a Lightsail instance.  I changed my phone a few months back and of course lost my virtual MFA key in the process... and the root registered phone number is a landline I no longer have access to. 
 
-Node.js version, Proxy server,  Listeners,   Instance type
-## [10][Question about lightsail and databases](https://www.reddit.com/r/aws/comments/hcgaxz/question_about_lightsail_and_databases/)
-- url: https://www.reddit.com/r/aws/comments/hcgaxz/question_about_lightsail_and_databases/
+I am preparing to go and get the notarised documentation etc. as advised by  Customer Support when I contacted them for help yesterday accessing as root user.  I completely understand the reason, so this is not a whinge.  
+
+I do however have the AWSAccessKeyID and the AWSSecretKey in a file on my laptop.  But I cannot find any documentation if it is possible to use the CLI and these keys, or a PEM file which I also have, to connect as root.  
+
+Is anyone able to advise if this is even worth investigating, and maybe some documentation that would help me try it out?  
+
+Thanks, long shot I guess.
+## [10][Is one S3 bucket enough?](https://www.reddit.com/r/aws/comments/hd1fql/is_one_s3_bucket_enough/)
+- url: https://www.reddit.com/r/aws/comments/hd1fql/is_one_s3_bucket_enough/
 ---
-Hey guys, I’m new to AWS and kind of confused about their pricing. I’m starting off with the free lightsail. My understanding is you pay for each hour you use (I assume that’s both me playing around in the backend, and anybody visiting the site) up to the 3.50 for the cheapest plan. Seems like a great deal. I kept reading and it says you have to pay 15/month for managed databases. 
+Hi, I'm developing an e-commerce platform. I thought using one bucket to store products images and user profile and store profile using the folders
 
-This is where I’m confused. With the 3.50/month can I not create sql databases? Or are managed databases something different? Once the free trial ends, I don’t want to get with a bunch of costs I don’t quite understand. 
+like 
 
-I’m looking to run php and python scripts, and to do so I obviously need to utilize MySQL or postgresql etc. can I create those with just the 3.50/month, or would I need the 15/month managed databases to be able to do that?
+    mybucket/products
+    mybucket/user
+    mybucket/store
 
-Thanks so much!
-## [11][Moving a file share to FSx for Windows in a hybrid environment?](https://www.reddit.com/r/aws/comments/hcab3a/moving_a_file_share_to_fsx_for_windows_in_a/)
-- url: https://www.reddit.com/r/aws/comments/hcab3a/moving_a_file_share_to_fsx_for_windows_in_a/
+or should I use separate buckets?
+## [11][12 Months free tier questions](https://www.reddit.com/r/aws/comments/hd1eso/12_months_free_tier_questions/)
+- url: https://www.reddit.com/r/aws/comments/hd1eso/12_months_free_tier_questions/
 ---
-How well does this work compared to a traditional Windows File Server or on-prem NAS? How did you handle access for remote workers?
+1. Am I charged when downloading files from googledrive to my EC2?
+2. Am I charge when uploading files from EC2 to google drive?
+3. If 1 and 2 are yes, what is the FREE bandwidth limit?
+4. I have 1 shapshot and I did not know if this is created automatically or not. Is it free?

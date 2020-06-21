@@ -125,27 +125,49 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Ray Tracing in one weekend with SYCL (part 2)](https://www.reddit.com/r/cpp/comments/hc0tou/ray_tracing_in_one_weekend_with_sycl_part_2/)
+## [3][How To Add A GUI To A C++ Program](https://www.reddit.com/r/cpp/comments/hcpoc0/how_to_add_a_gui_to_a_c_program/)
+- url: https://www.reddit.com/r/cpp/comments/hcpoc0/how_to_add_a_gui_to_a_c_program/
+---
+Hi all, 
+
+I'm a third year CS student. In all my classes, I have only every made programs that have worked via the command line. I'm starting on a personal project that involves creating a program for sports tournaments such as seeding players, displaying stats, etc.
+
+My major questions are:
+
+1). Can I code my program as a simple command line based program, then integrate the GUI after? Or should I implement my program with the GUI the first time around. 
+
+2). I've looked into how GUIs can be implemented and want to try wxWidgets. Is this a good idea?
+
+3). Should I use a different language? I've read that GUIs are hard to implement via C++. I have only learned C++, C, and Python, but am not against learning new languages! 
+
+4). Are there any good guides that you can recommend to me?
+
+Any and all help are appreciated! Thank you! :D
+## [4][Ray Tracing in one weekend with SYCL (part 2)](https://www.reddit.com/r/cpp/comments/hc0tou/ray_tracing_in_one_weekend_with_sycl_part_2/)
 - url: https://www.reddit.com/r/cpp/comments/hc0tou/ray_tracing_in_one_weekend_with_sycl_part_2/
 ---
 This is part 2 of a 2 part [blog post](https://codeplay.com/portal/06-19-20-ray-tracing-in-a-weekend-with-sycl-part-2-pixel-sampling-and-material-tracing) on using SYCL to accelerate some parts of the well known "Ray Tracing in one weekend" code.
-## [4][Lambda Lambda Lambda](https://www.reddit.com/r/cpp/comments/hbwbtf/lambda_lambda_lambda/)
-- url: https://brevzin.github.io/c++/2020/06/18/lambda-lambda-lambda/
----
-
 ## [5][Introduction to Conan (Virtual DC C++ User Group, June 19, 2020)](https://www.reddit.com/r/cpp/comments/hc05l4/introduction_to_conan_virtual_dc_c_user_group/)
 - url: https://www.youtube.com/watch?v=rsFA2VXwxbE
 ---
 
-## [6][CppCast: Modules Present and Future with Gabriel Dos Reis](https://www.reddit.com/r/cpp/comments/hc0ifn/cppcast_modules_present_and_future_with_gabriel/)
+## [6][Lambda Lambda Lambda](https://www.reddit.com/r/cpp/comments/hbwbtf/lambda_lambda_lambda/)
+- url: https://brevzin.github.io/c++/2020/06/18/lambda-lambda-lambda/
+---
+
+## [7][CppCast: Modules Present and Future with Gabriel Dos Reis](https://www.reddit.com/r/cpp/comments/hc0ifn/cppcast_modules_present_and_future_with_gabriel/)
 - url: http://cppcast.com/modules-gaby-dos-reis/
 ---
 
-## [7][Compile-time Merge Sort [C++]](https://www.reddit.com/r/cpp/comments/hbha5x/compiletime_merge_sort_c/)
+## [8][The 'const' system is one of the messy features of C++](https://www.reddit.com/r/cpp/comments/hcrr0r/the_const_system_is_one_of_the_messy_features_of_c/)
+- url: http://duramecho.com/ComputerInformation/WhyHowCppConst.html
+---
+
+## [9][Compile-time Merge Sort [C++]](https://www.reddit.com/r/cpp/comments/hbha5x/compiletime_merge_sort_c/)
 - url: https://medium.com/@vgasparyan1995/compile-time-merge-sort-c-bb0ace62cc23
 ---
 
-## [8][A little confused about .h/.cpp seperation (style)](https://www.reddit.com/r/cpp/comments/hbque9/a_little_confused_about_hcpp_seperation_style/)
+## [10][A little confused about .h/.cpp seperation (style)](https://www.reddit.com/r/cpp/comments/hbque9/a_little_confused_about_hcpp_seperation_style/)
 - url: https://www.reddit.com/r/cpp/comments/hbque9/a_little_confused_about_hcpp_seperation_style/
 ---
 Howdy.  Coming to C++ from the Javascript/Typescript world, with a little dabbling in Java, C, and Rust (though JS/TS is my main language). 
@@ -209,45 +231,11 @@ Account.prototype.setBalance = function(balanceValue){
 ```
 
 Am I wrong or does this seem like a really weird convention?
-## [9][Second. Worst. Lock. Ever.](https://www.reddit.com/r/cpp/comments/hbv7be/second_worst_lock_ever/)
+## [11][Second. Worst. Lock. Ever.](https://www.reddit.com/r/cpp/comments/hbv7be/second_worst_lock_ever/)
 - url: https://hacksoflife.blogspot.com/2020/06/second-worst-lock-ever.html
 ---
 
-## [10][Capture *this in lambda expression: Timeline of change](https://www.reddit.com/r/cpp/comments/hbdmme/capture_this_in_lambda_expression_timeline_of/)
+## [12][Capture *this in lambda expression: Timeline of change](https://www.reddit.com/r/cpp/comments/hbdmme/capture_this_in_lambda_expression_timeline_of/)
 - url: https://www.nextptr.com/tutorial/ta1430524603/capture-this-in-lambda-expression-timeline-of-change
 ---
 
-## [11][Guideline for passing smart pointers shared_ptr and unique_ptr in functions](https://www.reddit.com/r/cpp/comments/hba97v/guideline_for_passing_smart_pointers_shared_ptr/)
-- url: https://www.reddit.com/r/cpp/comments/hba97v/guideline_for_passing_smart_pointers_shared_ptr/
----
-[https://medium.com/pranayaggarwal25/passing-shared-ptr-and-unique-ptr-dc34a2f23010?source=friends\_link&amp;sk=64b47f469f60d1b691a799a146ddbf4f](https://medium.com/pranayaggarwal25/passing-shared-ptr-and-unique-ptr-dc34a2f23010?source=friends_link&amp;sk=64b47f469f60d1b691a799a146ddbf4f)
-
-Hi All,
-
-I have compiled a **guideline diagram** and article on how to pass shared\_ptr and unique\_ptr in function arguments and what to pass at the time of return.
-
-After reading Herb's blog, C++ guidelines, and a few other references I have put together this and few guideline matrices which are in this article.
-
-This article covers the following -
-
-1. Always ask yourself “Do I really need to pass a smart pointer”
-2. std::unique\_ptr usage
-3. std::shared\_ptr usage
-4. How to pass correctly pass raw pointer/reference.
-5. For Returning smart pointers, what is the norm?
-
-I searched but never found a good graphical representation of these guidelines, hence I thought I'd give that a try :)  Please help me in improving anything which is incorrect or missing in this.
-## [12][CI service for iOS testing without XCTest](https://www.reddit.com/r/cpp/comments/hbjgmi/ci_service_for_ios_testing_without_xctest/)
-- url: https://www.reddit.com/r/cpp/comments/hbjgmi/ci_service_for_ios_testing_without_xctest/
----
-The company I work for sells a library (not an app) that runs on iOS, among other platforms. 
-
-Currently we've got an on-prem build farm with several mac minis with iPhones attached to them. As the company grows, this isn't really working for us anymore. For those that don't know, the iPhone needs to remain unlocked for you to do anything to it. If the iPhone locks up for whatever reason, somebody has to physically access the device to open it back up. Because of this annoyance we're looking to move to some cloud based product to help us with iOS testing.
-
-There's no shortage of CI products out there offering iOS testing, but I notice that a lot of them have 1 major limitation, they require your tests to be XCTest based. A lot of the services that are top results on Google (ie Bitrise) seem to have this limitation.
-
-Currently our tests are not XCTest based, and instead use Catch2. To run the tests, we wrap each Catch test executable in an app, and run that on device using "ios-deploy". Ideally, we'd love to find a service where we can have a similar workflow.
-
-I'd love to hear the community's recommendation on how you handle your C++ projects that run on iOS, and any other tips on making iOS development less painful.
-
-Thanks!

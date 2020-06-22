@@ -125,7 +125,49 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][How To Add A GUI To A C++ Program](https://www.reddit.com/r/cpp/comments/hcpoc0/how_to_add_a_gui_to_a_c_program/)
+## [3][Silly file extension naming idea about C++ modules](https://www.reddit.com/r/cpp/comments/hdnkej/silly_file_extension_naming_idea_about_c_modules/)
+- url: https://www.reddit.com/r/cpp/comments/hdnkej/silly_file_extension_naming_idea_about_c_modules/
+---
+    .cpp // C++ source file
+    .hpp // C++ header file
+    .mpp // C++ module file
+
+Though extension .cppm may already have been standarized ... just wanted to share this :)
+
+I think it's classy ( pun intended )!
+## [4][Timemory: Timing + Memory + Hardware Counter Utilities for C / C++ / CUDA / Python (Linux, macOS, Windows)](https://www.reddit.com/r/cpp/comments/hdg0io/timemory_timing_memory_hardware_counter_utilities/)
+- url: https://github.com/NERSC/timemory
+---
+
+## [5][The C++ Lambda Story Book](https://www.reddit.com/r/cpp/comments/hdoqvz/the_c_lambda_story_book/)
+- url: https://www.bfilipek.com/2020/06/lambdastory.html
+---
+
+## [6][C++ Primer](https://www.reddit.com/r/cpp/comments/hdse2q/c_primer/)
+- url: https://www.reddit.com/r/cpp/comments/hdse2q/c_primer/
+---
+Currently, I have a C++ Primer 4th edition. Should I learn C++ from this book which deals with an older version of C++? Start with a Yes or No and kindly state the reasons.
+## [7][Visual Studio devs: What are your favorite addons?](https://www.reddit.com/r/cpp/comments/hds899/visual_studio_devs_what_are_your_favorite_addons/)
+- url: https://www.reddit.com/r/cpp/comments/hds899/visual_studio_devs_what_are_your_favorite_addons/
+---
+Hi all,
+
+I recently switched to working in a Windows environment for dev work and am experiencing Visual Studio for the first time. Really impressed with the debugger, not so impressed with the layout (mostly cause I'm not used to it), anyway, I was curious what people here consider their essential Visual Studio extensions for C++ work? 
+
+So far I found a couple that I really like:
+
+Viasfora - color coded braces
+
+FastFind - does what it says on the tin... paid, but I love it!
+## [8][C++ Template Story So Far : C++11 to C++20](https://www.reddit.com/r/cpp/comments/hds7c1/c_template_story_so_far_c11_to_c20/)
+- url: http://www.vishalchovatiya.com/c-template-a-quick-uptodate-look/
+---
+
+## [9][cpp.chat : episode 74 - 'My Friends Call Me Bool'](https://www.reddit.com/r/cpp/comments/hd80mz/cppchat_episode_74_my_friends_call_me_bool/)
+- url: https://cpp.chat/74/
+---
+
+## [10][How To Add A GUI To A C++ Program](https://www.reddit.com/r/cpp/comments/hcpoc0/how_to_add_a_gui_to_a_c_program/)
 - url: https://www.reddit.com/r/cpp/comments/hcpoc0/how_to_add_a_gui_to_a_c_program/
 ---
 Hi all, 
@@ -143,99 +185,11 @@ My major questions are:
 4). Are there any good guides that you can recommend to me?
 
 Any and all help are appreciated! Thank you! :D
-## [4][Ray Tracing in one weekend with SYCL (part 2)](https://www.reddit.com/r/cpp/comments/hc0tou/ray_tracing_in_one_weekend_with_sycl_part_2/)
+## [11][Ray Tracing in one weekend with SYCL (part 2)](https://www.reddit.com/r/cpp/comments/hc0tou/ray_tracing_in_one_weekend_with_sycl_part_2/)
 - url: https://www.reddit.com/r/cpp/comments/hc0tou/ray_tracing_in_one_weekend_with_sycl_part_2/
 ---
 This is part 2 of a 2 part [blog post](https://codeplay.com/portal/06-19-20-ray-tracing-in-a-weekend-with-sycl-part-2-pixel-sampling-and-material-tracing) on using SYCL to accelerate some parts of the well known "Ray Tracing in one weekend" code.
-## [5][Introduction to Conan (Virtual DC C++ User Group, June 19, 2020)](https://www.reddit.com/r/cpp/comments/hc05l4/introduction_to_conan_virtual_dc_c_user_group/)
+## [12][Introduction to Conan (Virtual DC C++ User Group, June 19, 2020)](https://www.reddit.com/r/cpp/comments/hc05l4/introduction_to_conan_virtual_dc_c_user_group/)
 - url: https://www.youtube.com/watch?v=rsFA2VXwxbE
----
-
-## [6][Lambda Lambda Lambda](https://www.reddit.com/r/cpp/comments/hbwbtf/lambda_lambda_lambda/)
-- url: https://brevzin.github.io/c++/2020/06/18/lambda-lambda-lambda/
----
-
-## [7][CppCast: Modules Present and Future with Gabriel Dos Reis](https://www.reddit.com/r/cpp/comments/hc0ifn/cppcast_modules_present_and_future_with_gabriel/)
-- url: http://cppcast.com/modules-gaby-dos-reis/
----
-
-## [8][The 'const' system is one of the messy features of C++](https://www.reddit.com/r/cpp/comments/hcrr0r/the_const_system_is_one_of_the_messy_features_of_c/)
-- url: http://duramecho.com/ComputerInformation/WhyHowCppConst.html
----
-
-## [9][Compile-time Merge Sort [C++]](https://www.reddit.com/r/cpp/comments/hbha5x/compiletime_merge_sort_c/)
-- url: https://medium.com/@vgasparyan1995/compile-time-merge-sort-c-bb0ace62cc23
----
-
-## [10][A little confused about .h/.cpp seperation (style)](https://www.reddit.com/r/cpp/comments/hbque9/a_little_confused_about_hcpp_seperation_style/)
-- url: https://www.reddit.com/r/cpp/comments/hbque9/a_little_confused_about_hcpp_seperation_style/
----
-Howdy.  Coming to C++ from the Javascript/Typescript world, with a little dabbling in Java, C, and Rust (though JS/TS is my main language). 
-
-The instructor on the Udemy course I'm taking recommends creating seperate .h and .cpp files for classes. The header contains the class definitions and declarations, while the .cpp file contains the methods. 
-
-But I'm a little worried about this when C++ classes aren't like Java classes, in that the values can be referenced *by name* outside of the expected scope. 
-
-What I'm concerned about is that balance is... just kinda sitting there.  It's 
-So for example: 
-
-
-```c++
-/* Account.h */
-#ifndef _ACCOUNT_H_
-#define _ACCOUNT_H_
-#include &lt;iostream&gt;
-using namespace std;
-
-class Account {
- private:
-  double balance{0.0}; // &lt;-- balance is declared here. 
-
- public:
-  // methods
-  void set_balance(double bal);
-  double get_balance();
-};
-
-#endif
-```
-
-but in a seperate file:
-
-```c++
-/* Account.cpp */
-#include "Account.h"
-#include &lt;iostream&gt;
-using namespace std;
-
-// methods
-void Account::set_balance(double bal) {
-  balance = bal; // &lt;-- this line here is worrying me
-};
-double Account::get_balance() {
-  return balance; // &lt;-- same here.
-};
-```
-
-Wouldn't it make it much easier to read if have everything in the Account.h file? That is - if you're a programmer looking at Account.cpp, and you see "balance" in the set_balance method, then the first thing you're going to think of is: "If that's not defined in this scope, what scope is it defined in?  The *scope* exists in a *completely different file.*
-
-I've rarely seen this happen in the JS world; where we do use class definitions, we tend to keep them all in the same place - properties, methods, &amp; constructors all in the same file. But *even if* we split defining class definitions and method definitions into different files, we have a variable name defined in our import statement. And when we're working with the properties of the values, such as balance, we use 'this' to note that balance is a property of the class.  
-
-
-```javascript
-import Account from './Account'; 
-
-Account.prototype.setBalance = function(balanceValue){
-  this.balance = balanceValue;
-}
-```
-
-Am I wrong or does this seem like a really weird convention?
-## [11][Second. Worst. Lock. Ever.](https://www.reddit.com/r/cpp/comments/hbv7be/second_worst_lock_ever/)
-- url: https://hacksoflife.blogspot.com/2020/06/second-worst-lock-ever.html
----
-
-## [12][Capture *this in lambda expression: Timeline of change](https://www.reddit.com/r/cpp/comments/hbdmme/capture_this_in_lambda_expression_timeline_of/)
-- url: https://www.nextptr.com/tutorial/ta1430524603/capture-this-in-lambda-expression-timeline-of-change
 ---
 

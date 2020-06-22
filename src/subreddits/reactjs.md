@@ -109,59 +109,89 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/gk41zb/whos_available_may_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][I have built and open sourced an automated irrigation system based on Node.js and React](https://www.reddit.com/r/reactjs/comments/hd2oaw/i_have_built_and_open_sourced_an_automated/)
+## [3][Instagram using MERN stack](https://www.reddit.com/r/reactjs/comments/hdnsn4/instagram_using_mern_stack/)
+- url: https://v.redd.it/wcmrxtk51f651
+---
+
+## [4][I have built and open sourced an automated irrigation system based on Node.js and React](https://www.reddit.com/r/reactjs/comments/hd2oaw/i_have_built_and_open_sourced_an_automated/)
 - url: https://v.redd.it/6n79cs3os7651
 ---
 
-## [4][How to replicate Zelda BOTW interface with React, Tailwind and Framer-motion](https://www.reddit.com/r/reactjs/comments/hcppxi/how_to_replicate_zelda_botw_interface_with_react/)
-- url: https://www.reddit.com/r/reactjs/comments/hcppxi/how_to_replicate_zelda_botw_interface_with_react/
+## [5][My first attempt at making a personal Portfolio website with ReactJS!](https://www.reddit.com/r/reactjs/comments/hdqypx/my_first_attempt_at_making_a_personal_portfolio/)
+- url: https://www.reddit.com/r/reactjs/comments/hdqypx/my_first_attempt_at_making_a_personal_portfolio/
 ---
-Hello r/reactjs, I made a tutorial to learn how to replicate one of Zelda menu screen with React, Tailwind and Framer motion.
+I'm a junior fullstack developer just landed my first job, I am thinking to fully remote in future and for that a portfolio is must to showcase what you're capable of, After going through many talented developer's portfolios from twitter. I decided to finally make one of my own.  
 
- Any feedbacks would be greatly appreciated ! 
 
-Demo link:  [https://www.gameuionweb.com/zelda-botw/inventory](https://www.gameuionweb.com/zelda-botw/inventory) 
+So here it is, [https://farazkhan.me](https://farazkhan.me)   
+Please criticize to your heart's content, I really want to improve and make this my best frontend related work I've done.  
 
-Article link: [https://dev.to/flagrede/how-to-replicate-the-zelda-botw-interface-with-react-tailwind-and-framer-motion-part-1-298g](https://dev.to/flagrede/how-to-replicate-the-zelda-botw-interface-with-react-tailwind-and-framer-motion-part-1-298g)
-## [5][React Hook Form V6 Preview (Feedback welcome)](https://www.reddit.com/r/reactjs/comments/hcz5bp/react_hook_form_v6_preview_feedback_welcome/)
-- url: https://www.youtube.com/watch?v=CeR7ERx9ehE
----
 
-## [6][🧪 use-ab-test: Simple, framework agnostic A/B and canary testing with React Hooks](https://www.reddit.com/r/reactjs/comments/hd50ac/useabtest_simple_framework_agnostic_ab_and_canary/)
-- url: https://github.com/dan-js/use-ab-test
----
+I realize for a single page layout using react was overkill but I really love the components based developer experience react provides, I've been doing css/sass class based animations and trying out props based styled components was an interesting experience.  
 
-## [7][GitHub - beautifulinteractions/beautiful-react-hooks: 🔥 A collection of beautiful and (hopefully) useful React hooks to speed-up your components and hooks development 🔥](https://www.reddit.com/r/reactjs/comments/hd6nck/github_beautifulinteractionsbeautifulreacthooks_a/)
-- url: https://github.com/beautifulinteractions/beautiful-react-hooks
----
 
-## [8][A deep dive into React Context API - LogRocket Blog](https://www.reddit.com/r/reactjs/comments/hd6n0i/a_deep_dive_into_react_context_api_logrocket_blog/)
-- url: https://blog.logrocket.com/a-deep-dive-into-react-context-api/
+Technical details: Made using Create React App ( Will move to Gatsby once I make up my mind about blogging). Styled using styled components and tailwindcss ( bad combination, lead to messy code which I'll clean before making it public but I like simplicity of tailwind too)  
+
+
+Thank you community!
+## [6][Making sense of Redux](https://www.reddit.com/r/reactjs/comments/hdpt1z/making_sense_of_redux/)
+- url: https://vishaltelangre.com/making-sense-of-redux/
 ---
 
-## [9][How to Pass Props Through React-Router Path Links](https://www.reddit.com/r/reactjs/comments/hd6f2v/how_to_pass_props_through_reactrouter_path_links/)
-- url: https://medium.com/@kennethscoggins/how-to-pass-props-through-react-router-path-links-876aadaa5027?sk=1485d056d83ca03e2f8637b02954256c
+## [7][12 recipes for testing React applications using Testing Library](https://www.reddit.com/r/reactjs/comments/hdpeha/12_recipes_for_testing_react_applications_using/)
+- url: https://joaoforja.com/blog/recipes-for-testing-react-apps-tl/
 ---
 
-## [10][React Native Web](https://www.reddit.com/r/reactjs/comments/hd6eu9/react_native_web/)
-- url: https://www.reddit.com/r/reactjs/comments/hd6eu9/react_native_web/
+## [8][React + graphQL + REST](https://www.reddit.com/r/reactjs/comments/hdqmxv/react_graphql_rest/)
+- url: https://www.reddit.com/r/reactjs/comments/hdqmxv/react_graphql_rest/
 ---
-Hi Everyone,
+Hey, I’m planning on building an app, it’s a medium scaled one, we have a rest backend. I’m staying away from redux for this one. Thought of looking into apollo graphQL in the frontend in fairly new to it. Just wanted to try it out.
 
-I actually come from a react native background, and am starting a new Web focused project. The platform is web focused, but if I can be smart about it and develop a mobile app for it along the way, I'd like to do that.
+Is it a good idea? Can I use apollo Graphql in the front end and connect to a rest api from react app, without a node implementation?
 
-I was just going to use React.js before stumbling on React Native Web. Are there performance downsides to using React Native Web? There has to be some sort of drawback right? Particularly on the web.
+I’ve read about apollo-link-rest, will it work in my scenario? Can you suggest a good tutorial or blog to get started with.
 
-My fallback plan was to just use cordova to deploy my site mobily. That I know has far worse performance
-## [11][How use mutation in next js react js apollo client 3 ?](https://www.reddit.com/r/reactjs/comments/hd5mav/how_use_mutation_in_next_js_react_js_apollo/)
-- url: https://www.reddit.com/r/reactjs/comments/hd5mav/how_use_mutation_in_next_js_react_js_apollo/
+Or What other solutions would work here?
+## [9][What are the best React courses and books?](https://www.reddit.com/r/reactjs/comments/hdkmxh/what_are_the_best_react_courses_and_books/)
+- url: https://www.reddit.com/r/reactjs/comments/hdkmxh/what_are_the_best_react_courses_and_books/
 ---
-guys can you give me example of useing mutation in next js with apollo client 3 ? it will be great.
-## [12][Hoe to parse a value calculated within a component to his parent](https://www.reddit.com/r/reactjs/comments/hd5bw5/hoe_to_parse_a_value_calculated_within_a/)
-- url: https://www.reddit.com/r/reactjs/comments/hd5bw5/hoe_to_parse_a_value_calculated_within_a/
+Most projects features in books and courses aren't particularly well-engineered, so I wanted to see if you could recommend one that tells you what are all of the best practices and best solutions for creating an application that's highly scalable and maintainable.
+## [10][Help with React SSR with ExpressJS](https://www.reddit.com/r/reactjs/comments/hdptem/help_with_react_ssr_with_expressjs/)
+- url: https://www.reddit.com/r/reactjs/comments/hdptem/help_with_react_ssr_with_expressjs/
 ---
-Hello,
+Hi /r/reactjs,
 
-I've a very basic question - I'm passing some data into a component and within this component I'm calculating some outputs. What I'm trying to do is to return back (reflect) a value to an attribute so that it can be used to his parent component.
+I'm looking for good resources on SSR with React in conjunction with expressjs.
 
-Any idea???
+I'm trying to integrate React into an existing expressjs app while getting all the goodies (HMR, etc) and need help with the setup.
+
+Migrating to a framework like NextJS or Gatsby is not an option.
+
+Thanks in advance,
+
+/u/ohadaldi
+## [11][How to subscribe children to a fraction of a parent's context in a native way?](https://www.reddit.com/r/reactjs/comments/hdpl4e/how_to_subscribe_children_to_a_fraction_of_a/)
+- url: https://www.reddit.com/r/reactjs/comments/hdpl4e/how_to_subscribe_children_to_a_fraction_of_a/
+---
+Let's suppose we have the following component hierarchy:
+
+            A
+           / \
+          AB  C --- AF
+         /     \
+        D       AE
+
+
+And suppose component A has a Context.Provider with some values and some dispatch functions.
+Components AB and AE are using A context.
+
+The requirement is that AE and AF components are subscribed to a part of the context, and AB is subscribed to another.
+How do I make a structure so that context updates from AF and AE don't trigger rerenders on AB?
+
+I thought about splitting the A context state into multiple subcontexts, but looks a bit cubersome. Which would be the standard approach? A frameworkless solution would be preferable.
+
+Edited to add #Needs Help tag :S
+## [12][Is there a simple way to understand props? I think I’m over complicating it.](https://www.reddit.com/r/reactjs/comments/hdh80o/is_there_a_simple_way_to_understand_props_i_think/)
+- url: https://www.reddit.com/r/reactjs/comments/hdh80o/is_there_a_simple_way_to_understand_props_i_think/
+---
+Question is in the title but also when do you use this.props vs props. ?

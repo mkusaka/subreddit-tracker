@@ -1,129 +1,107 @@
 # golang
-## [1][Playing with Go schedulers on a dual-core RISC-V](https://www.reddit.com/r/golang/comments/hcycss/playing_with_go_schedulers_on_a_dualcore_riscv/)
-- url: https://embeddedgo.github.io/2020/06/21/playing_with_go_schedulers_on_a_dual-core_risc-v.html
+## [1][Simple embedding of static files in your binary](https://www.reddit.com/r/golang/comments/hdiod7/simple_embedding_of_static_files_in_your_binary/)
+- url: https://www.reddit.com/r/golang/comments/hdiod7/simple_embedding_of_static_files_in_your_binary/
+---
+I found the existing tools for resource embedding a little complicated, lacking features, hard to use and having low test coverage. 
+
+So I wrote
+[binclude](https://github.com/lu4p/binclude). 
+
+I would appreciate getting some feedback on features you miss and suggestions for improvements in documentation and code.
+
+Features:
+
+- high test coverage 96%+
+- add files directly in your code with just  `binclude.Include("./assets")` this includes the assets folder with all files and subdirectories
+- files have the same paths as on your host os
+- development mode for loading files from disk instead
+- ioutil like functions
+- ast for typsafe parsing and code generation
+- the generated filesystem implements the http.Filesystem interface for standard conformity
+- supports execution of included executables directly (wrapper for os/exec)
+## [2][(Bad?) Experiments with Go generics](https://www.reddit.com/r/golang/comments/hdlu9g/bad_experiments_with_go_generics/)
+- url: https://brbe.net/posts/experiments-with-go-generics/
 ---
 
-## [2][Simple microservice boilerplate](https://www.reddit.com/r/golang/comments/hcvm6j/simple_microservice_boilerplate/)
-- url: https://www.reddit.com/r/golang/comments/hcvm6j/simple_microservice_boilerplate/
+## [3][PIN Verification API of a banking application - which approach is preferred?](https://www.reddit.com/r/golang/comments/hdptnu/pin_verification_api_of_a_banking_application/)
+- url: https://www.reddit.com/r/golang/comments/hdptnu/pin_verification_api_of_a_banking_application/
 ---
-Here's the [repo](https://github.com/diffuse/gloss)
+**Option 1:**
 
-I find myself copying/rewriting a lot of the same boilerplate whenever I create a new microservice, so I figured I would throw some of it in a standard setup and share it with you guys.  If anyone is interested, this is a bare-bones microservice deployment with Docker, chi, and pq SQL, to save me (and hopefully you) a bit of setup when you write new services.  The example code in the handler and database query function bodies exposes a simple integer counter and serves as a placeholder for actual application code.
+`GET /api/v1/pin?code=123456`
 
-Fork it, clone it, stick it in a stew.  Will happily take any advice/suggestions for improvements :)
+**Option 2:**
 
-Thanks!
-## [3][gRPC over WebRTC](https://www.reddit.com/r/golang/comments/hd6hsb/grpc_over_webrtc/)
+`POST /api/v1/pin` with request body `{"code":"123456"}`
+
+This is why I am asking your suggestion:
+
+* The issue with first option is, sending sensitive data like PIN code in query string doesn't  seem to be right approach. Again, as sending through *https*, the code will not be visible to middleman (if any).
+* And, the problem with second option is, "PIN Verification" is conceptually not a "POST" as it's not *creating resource* in REST terms.
+
+Please let me which one will you prefer and why. Also, if want to suggest any alternative approach, totally welcome :)
+## [4][go get -u &lt;github url&gt; not doing anything](https://www.reddit.com/r/golang/comments/hdsclr/go_get_u_github_url_not_doing_anything/)
+- url: https://www.reddit.com/r/golang/comments/hdsclr/go_get_u_github_url_not_doing_anything/
+---
+This command would not throw any output, literally nothing. When I enter the program's name it will say no command found.
+
+Why isn't it working?
+## [5][Library for conversion and Forex of 6100+ Fiat &amp; Crypto currency with no API key](https://www.reddit.com/r/golang/comments/hds3td/library_for_conversion_and_forex_of_6100_fiat/)
+- url: https://github.com/asvvvad/exchange
+---
+
+## [6][gRPC over WebRTC](https://www.reddit.com/r/golang/comments/hd6hsb/grpc_over_webrtc/)
 - url: https://github.com/jsmouret/grpc-over-webrtc
 ---
 
-## [4][Meet VERMIN The smart virtual machines manager](https://www.reddit.com/r/golang/comments/hcvg4y/meet_vermin_the_smart_virtual_machines_manager/)
-- url: https://github.com/mhewedy/vermin
+## [7][Type safe query builder and struct mapper](https://www.reddit.com/r/golang/comments/hdq5dt/type_safe_query_builder_and_struct_mapper/)
+- url: https://www.reddit.com/r/golang/comments/hdq5dt/type_safe_query_builder_and_struct_mapper/
+---
+I've been working on this type safe query builder for the past month, and now I would like feedback on it. Especially for people who write SQL heavily, does it cover the queries that you normally write?
+
+Here's the package: [https://github.com/bokwoon95/go-structured-query](https://github.com/bokwoon95/go-structured-query)
+
+- I wrote this initially out of frustration due to null handling, I didn't want to pepper my structs with NullStrings and NullInt64s. More often than not the zero value suited me fine.
+- Most query builders fall back on strings, this one uses jOOQ-like columns generated from your database. So you gain some type-safety knowing that the columns you're putting into the query builder actually exist and you didn't mistype something.
+- The most unique aspect is the struct mapping, you use a callback function to map columns to fields which doubles as the SELECT clause so you don't have to specify the columns twice:
+
+
+    u := tables.USERS().As("u")
+
+    var user User
+    var users []User
+
+    // SELECT u.user_id, u.name, u.email
+    // FROM public.users AS u
+    // WHERE u.name = 'bob'
+    err := From(u).
+        Where(u.NAME.EqString("bob")).
+        Selectx(func(row *sq.Row) {
+            user.UserID = row.Int(u.USER_ID)
+            user.Name = row.String(u.NAME)
+            user.Email = row.String(u.EMAIL)
+        }, func() {
+            users = append(users, user)
+        }).
+        Fetch(DB)
+
+
+The code above is equivalent to running the SQL query, scanning each column into the corresponding user struct field and aggregating the user into the slice of users with rows.Next().
+
+The code formatting seems borked, here is a link [playground](https://play.golang.org/p/LXTiWaJQOhI).
+## [8][Youtube: Go Syntax with Bill Kennedy](https://www.reddit.com/r/golang/comments/hdfiiz/youtube_go_syntax_with_bill_kennedy/)
+- url: https://www.youtube.com/playlist?list=PLADD_vxzPcZATO4tDU_nHApxTEJyxskiS
 ---
 
-## [5][Using TinyGo to create a Thermal Detonator from Star Wars](https://www.reddit.com/r/golang/comments/hd2lk2/using_tinygo_to_create_a_thermal_detonator_from/)
-- url: https://www.reddit.com/r/golang/comments/hd2lk2/using_tinygo_to_create_a_thermal_detonator_from/
+## [9][Manber&amp;Myers's Suffix Array implemented in Go.](https://www.reddit.com/r/golang/comments/hdpw79/manbermyerss_suffix_array_implemented_in_go/)
+- url: https://github.com/d-tsuji/suffixarray
 ---
-Created a project that I enjoyed working on and wanted to share [go-thermal](https://github.com/BattleBas/go-thermal).
 
-A [thermal detonator](https://www.youtube.com/watch?v=bStsof9p7Mc) that uses an Arduino Nano to flicker LED's and play sound.
-
-I used a chip called dfminiplayer to play sound, there wasn't any example how to use it using TinyGo, so I had to use the official documentation to partially recreate a library for it using Go which was an interesting challenge:  [link to source](https://github.com/BattleBas/go-thermal/blob/master/dfminiplayer.go)
-## [6][How to Implement scheduler task the right way for many data](https://www.reddit.com/r/golang/comments/hd22gr/how_to_implement_scheduler_task_the_right_way_for/)
-- url: https://www.reddit.com/r/golang/comments/hd22gr/how_to_implement_scheduler_task_the_right_way_for/
+## [10][How productive is Golang?](https://www.reddit.com/r/golang/comments/hdq7i5/how_productive_is_golang/)
+- url: https://www.reddit.com/r/golang/comments/hdq7i5/how_productive_is_golang/
 ---
-Hello, I am new in scheduler task and never use this in the back end, here is my case:
+Hi, I'm looking for a new web development stack and I had to choose between Elixir and Golang. For the time begin, I can only choose one language and pick a framework. My background is in PHP with laravel.
 
-I have a user that have 2 reminders to email them when the meeting begin; let say the meeting is next week, and the user want to a reminder 2 days and 1 day before the meeting to send email to them
-And sometimes user want to change the reminder as well, such as user want to reminder 3 days before the meeting or a day at 10 am before meeting begin.
+How productive it is compare to other language?
 
-Should I use only Cron job here to check the meeting reminder between on the date meeting ? Should I create the default reminder meeting for the user
-Let say when the user add meeting today and decrement of that meeting time to 2 days before that meeting and then I should do Cron job to check Every day that reminder of meeting need to send email by today, is that correct??
-What library to make this easier ? 
-
-Thank you for you attention :)
-Hope I get some advice for you
-## [7][Share a distributed job management system : Asgard](https://www.reddit.com/r/golang/comments/hcrdko/share_a_distributed_job_management_system_asgard/)
-- url: https://www.reddit.com/r/golang/comments/hcrdko/share_a_distributed_job_management_system_asgard/
----
-##Source code
-
-https://github.com/dalonghahaha/Asgard
-
-## Introduction
-
-Asgard is a distributed job management system designed to comprehensively solve resident progress applications, plan tasks, and schedule tasks.
-
-## Architecture design
-
-![Architecture design](https://raw.githubusercontent.com/dalonghahaha/Asgard/master/doc/Asgard.png)
-
-- The Asgard system consists of web nodes, master nodes, and agent nodes.
-
-- The main functions of the web node include instance management, group management, job configuration, job running status control, job running status viewing, log query
-
-- The master node is responsible for the status monitoring of the agent node, and at the same time receives and dumps the runtime data reported by the agent node
-
-- The agent node receives instructions from the web node and operates related operations in the corresponding server
-
-- Master node and agent node exchange data through grpc protocol
-
-## Web UI preview
-
-![Home console](https://raw.githubusercontent.com/dalonghahaha/Asgard/master/doc/page1.png)
-
-![Instance management](https://raw.githubusercontent.com/dalonghahaha/Asgard/master/doc/page2.png)
-
-![Task management](https://raw.githubusercontent.com/dalonghahaha/Asgard/master/doc/page3.png)
-
-![Monitoring information](https://raw.githubusercontent.com/dalonghahaha/Asgard/master/doc/page4.png)
-## [8][Golang for Application installation automation?](https://www.reddit.com/r/golang/comments/hd57nf/golang_for_application_installation_automation/)
-- url: https://www.reddit.com/r/golang/comments/hd57nf/golang_for_application_installation_automation/
----
-Hey Guys,
-
-i'm looking forward to build a tool to install an enterprise application (cross platform ), setup database (oracle/microsoft sql server), setup load balancer etc . Currently my plan is to go with python . 
-
-As i have enough time in hand so i'm exploring all the possibilities.  Is it possible to do the same with golang i.e, building an automation tool to install enterprise application (cross platform), db setup, application/webserver setup etc using golang?
-
-&amp;#x200B;
-
-Thanks in Advance ;)
-## [9][Is there a way to implement generics on a map?](https://www.reddit.com/r/golang/comments/hd0v05/is_there_a_way_to_implement_generics_on_a_map/)
-- url: https://www.reddit.com/r/golang/comments/hd0v05/is_there_a_way_to_implement_generics_on_a_map/
----
-I am attempting to do a filter function on a map but I am having trouble even doing the parameters for a generic map.
-If I use just filter(type T)(s T) it lets the map through but then I cannot for loop through a type T.  Yet, if I use reflection with a fmt.Println(reflect.TypeOf(s)) it gives me type map[string]string.
-I have tried params (type T)(s map[T]T) but it gives the error prog.go2:8:27: invalid map key type T.  Anyone figure this out because I cannot seem to find any resources online for generic maps.
-
-
-````
-
-
-func filter(type T)(s T) {
-
-	fmt.Println(reflect.TypeOf(s))
-
-        //wont let me do this with (s T)
-	//for k, v := range s {
-		//fmt.Printf("%s -&gt; %s\n", k, v)
-	//}
-
-}
-
-func main() {
-
-	kvs := map[string]string{"a": "apple", "b": "banana"}
-	filter(kvs)
-}
-
-
-````
-
-Playground example https://go2goplay.golang.org/p/WQDpNvA7ndq
-## [10][Worldwide - a GameBoyColor emulator written in Go (Ebiten)](https://www.reddit.com/r/golang/comments/hchnmh/worldwide_a_gameboycolor_emulator_written_in_go/)
-- url: https://www.reddit.com/r/golang/comments/hchnmh/worldwide_a_gameboycolor_emulator_written_in_go/
----
-[https://github.com/Akatsuki-py/Worldwide](https://github.com/Akatsuki-py/Worldwide)
-
-https://i.redd.it/9znnudgpm0651.gif
+EDIT: I'm looking into Beego as it's the closest thing to Laravel and provide ORM out of the box. My main focus is realtime web application. Back in Laravel, I would use something like [socket.io](https://socket.io) \+ redis where Laravel broadcast event to redis and had [socket.io](https://socket.io) handle the websocket between server + client.

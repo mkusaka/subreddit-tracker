@@ -1,9 +1,13 @@
 # reduxjs
-## [1][Build a Shopping Cart with React, Redux, and React-DnD — PART 1](https://www.reddit.com/r/reduxjs/comments/hd5wgq/build_a_shopping_cart_with_react_redux_and/)
+## [1][Making sense of Redux](https://www.reddit.com/r/reduxjs/comments/hdptf7/making_sense_of_redux/)
+- url: https://vishaltelangre.com/making-sense-of-redux/
+---
+
+## [2][Build a Shopping Cart with React, Redux, and React-DnD — PART 1](https://www.reddit.com/r/reduxjs/comments/hd5wgq/build_a_shopping_cart_with_react_redux_and/)
 - url: https://medium.com/@tonyparkerkenz/build-a-shopping-cart-with-react-redux-and-react-dnd-part-1-2433558c3f38
 ---
 
-## [2][React helmet with redux](https://www.reddit.com/r/reduxjs/comments/hd3jsh/react_helmet_with_redux/)
+## [3][React helmet with redux](https://www.reddit.com/r/reduxjs/comments/hd3jsh/react_helmet_with_redux/)
 - url: https://www.reddit.com/r/reduxjs/comments/hd3jsh/react_helmet_with_redux/
 ---
 Hi!  
@@ -11,7 +15,7 @@ I'm implementing a website with React Redux Saga and react router. I have a few 
 I want to use JsonLd schemas for better SEO (yeah, I know React is not the best tool for SEO) and I'm using React Helmet to add the required meta tags to each recipe page.  
 My question is: Is it bad practice to have a SEO component that connects to the redux store and when the back-end responds with the data update the JsonLd schema?  
 Thanks!
-## [3][Invasion, Protect The Earth!](https://www.reddit.com/r/reduxjs/comments/hcko88/invasion_protect_the_earth/)
+## [4][Invasion, Protect The Earth!](https://www.reddit.com/r/reduxjs/comments/hcko88/invasion_protect_the_earth/)
 - url: https://www.reddit.com/r/reduxjs/comments/hcko88/invasion_protect_the_earth/
 ---
  I'm learning redux so I built an earth invasion game using Reactjs, Redux, and SVG 
@@ -21,17 +25,17 @@ Source Code:  [https://github.com/aashrafh/Invasion](https://github.com/aashrafh
 Try It: [https://aashrafh.github.io/Invasion](https://aashrafh.github.io/Invasion)
 
 https://i.redd.it/gp17hjfdv1651.gif
-## [4][Subscribing multiple reducers to a single action in Redux Toolkit](https://www.reddit.com/r/reduxjs/comments/hc2255/subscribing_multiple_reducers_to_a_single_action/)
+## [5][Subscribing multiple reducers to a single action in Redux Toolkit](https://www.reddit.com/r/reduxjs/comments/hc2255/subscribing_multiple_reducers_to_a_single_action/)
 - url: https://www.reddit.com/r/reduxjs/comments/hc2255/subscribing_multiple_reducers_to_a_single_action/
 ---
 It seems like the suggested pattern to use is createSlice where actions and reducers have a 1:1 relationship based on the name/variable provided. createAsyncThunk seems to follow the same pattern.
 
 Is there a way to write reducers (let's say for a different slice) to handle an action defined by createSlice/createAsyncThunk? Or would you have to write actions/reducers using createAction and createReducer?
-## [5][How Redux Toolkit can reduce your setup of Redux in your next React app](https://www.reddit.com/r/reduxjs/comments/hbc6ca/how_redux_toolkit_can_reduce_your_setup_of_redux/)
+## [6][How Redux Toolkit can reduce your setup of Redux in your next React app](https://www.reddit.com/r/reduxjs/comments/hbc6ca/how_redux_toolkit_can_reduce_your_setup_of_redux/)
 - url: https://medium.com//how-redux-toolkit-can-reduce-your-setup-of-redux-in-your-react-app-d87baab59268?source=friends_link&amp;sk=626b48e7ab94dff289177c14be3b7383
 ---
 
-## [6][Parent componentDidMount and child componentDidMount.](https://www.reddit.com/r/reduxjs/comments/hbbc6n/parent_componentdidmount_and_child/)
+## [7][Parent componentDidMount and child componentDidMount.](https://www.reddit.com/r/reduxjs/comments/hbbc6n/parent_componentdidmount_and_child/)
 - url: https://www.reddit.com/r/reduxjs/comments/hbbc6n/parent_componentdidmount_and_child/
 ---
 I am trying to teach myself Redux and I am having trouble with an assignment.  I'm trying to figure out how to let a child use componentDidMount without the whole component tree, it belongs to, re-rendering.
@@ -91,26 +95,6 @@ ajax request:
             url: `/api/todos/${todoId}/steps`,
         });
     }
-## [7][I need help refactoring a middleware to use dependency injection.](https://www.reddit.com/r/reduxjs/comments/hb8u24/i_need_help_refactoring_a_middleware_to_use/)
-- url: https://www.reddit.com/r/reduxjs/comments/hb8u24/i_need_help_refactoring_a_middleware_to_use/
----
-I'm working on an application that uses legacy code from its version 1, where Redux middlewares were used to handle some actions. This middlewear would do something like `import Logger from './logger';` and `Logger.emit('some log');`.
-
-In the new version of this application, `Logger` (among other objects, functions, and values) are no longer static modules. They are dependency injected:
-
-    &lt;Application logger={Logger} /&gt;
-
-The middleware can no longer import these variables this way, because they don't exist as simple modules. They exist within the React lifecycle as props.
-
-What is the best way to handle this?
-
-My team has two ideas, but I wanted to make sure we aren't overlooking anything obvious or potential problems.
-
-1) Pass these values as a part of the action. Instead of `{ type: 'do', value: true }` it would now need to be `{ type: 'do', value: true, logger: Logger }`.
-
-2) Create the store inside a `useMemo` on `Application` mount.
-
-What is the optimal solution for injecting dependencies into actions?
 ## [8][Modern React/React Router Auth Best Practices with Redux Saga Firebase + React Hooks?](https://www.reddit.com/r/reduxjs/comments/hauvve/modern_reactreact_router_auth_best_practices_with/)
 - url: /r/reactjs/comments/hauut4/modern_reactreact_router_auth_best_practices_with/
 ---

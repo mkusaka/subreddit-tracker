@@ -21,101 +21,183 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][What is AWS competitor to firebase database?](https://www.reddit.com/r/aws/comments/hd3zaw/what_is_aws_competitor_to_firebase_database/)
-- url: https://www.reddit.com/r/aws/comments/hd3zaw/what_is_aws_competitor_to_firebase_database/
+## [2][Amazon introduces 'Distance Assistant' The company’s latest innovation provides real-time social distancing feedback and we plan to open source the technology By Brad Porter](https://www.reddit.com/r/aws/comments/hdeaqy/amazon_introduces_distance_assistant_the_companys/)
+- url: https://www.reddit.com/r/aws/comments/hdeaqy/amazon_introduces_distance_assistant_the_companys/
 ---
-I found very easy to setup and use firebase database as a web dev.  Does AWS have a similar technology that is as simple to setup and use?
-## [3][{"message":"Missing Authentication Token"} Chalice API Authentication Erorr?](https://www.reddit.com/r/aws/comments/hd2syh/messagemissing_authentication_token_chalice_api/)
-- url: https://www.reddit.com/r/aws/comments/hd2syh/messagemissing_authentication_token_chalice_api/
+[Amazon introduces 'Distance Assistant'](https://blog.aboutamazon.com/operations/amazon-introduces-distance-assistant)
+The company’s latest innovation provides real-time social distancing feedback and Amazon plan to open source the technology
+By Brad Porter
+
+Excerpt from blog post
+
+"As we've continued to learn and innovate to support the health and safety of our associates, we also saw an opportunity to evolve our tech even further and promote social distancing behavior in real-time. Given social distancing isn’t always natural, this team set out to use augmented reality to create a magic-mirror-like tool that helps associates see their physical distancing from others. Working backwards from a concept of immediate visual feedback, and inspired by existing examples like radar speed check signs, our 'Distance Assistant' provides employees with live feedback on social distancing via a 50 inch monitor, a camera, and a local computing device. The standalone unit uses machine learning models to differentiate people from their surroundings. Combined with depth sensors, it creates an accurate distance measurement between associates."
+
+Here is [Amazon Distance Assistant in action](https://youtu.be/FexuGnXVkvE).
+## [3][Which WAF ACL managed rules are best practice good starting point?](https://www.reddit.com/r/aws/comments/hdpnbn/which_waf_acl_managed_rules_are_best_practice/)
+- url: https://www.reddit.com/r/aws/comments/hdpnbn/which_waf_acl_managed_rules_are_best_practice/
 ---
-Hello! 
+I have
 
-I've been poking around AWS Chalice and Lambda, and I've been running into an issues with getting my API set up. I am consistiently running into a `{"message":"Missing Authentication Token"}` error.
+* RDS
+* Beanstalk Application Load Balancer
+* VPC
+* Node Linux
+* Using Route 53
+* Guard Duty
+* 1 location country only, at least 300-1000 active users monthly
+* Single API only
 
-My AWS rootkey credentials in the AWS configure settings are correct, however the error still remains.
+&amp;#x200B;
+## [4][aws cli command not working when installed local folder](https://www.reddit.com/r/aws/comments/hds410/aws_cli_command_not_working_when_installed_local/)
+- url: https://www.reddit.com/r/aws/comments/hds410/aws_cli_command_not_working_when_installed_local/
+---
+I installed the [aws-cli](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html) program as mentioned in this doc without `sudo` to local folder. But when I try to run the command line utility I get error.
 
-The API never seems to update even when 200 POST requests are made from test clients such as Insomnia.
+    $ ./aws/install -i awscli-app -b awscli-bin
+    $ ls awscli-bin/
+     aws  aws_completer
+    $ ls -alh awscli-bin
+    total 8.0K
+    drwxrwxr-x  2 docking_prod docking_prod 4.0K Jun 22 14:14 .
+    drwxr-xr-x 16 docking_prod docking_prod 4.0K Jun 22 14:14 ..
+    lrwxrwxrwx  1 docking_prod docking_prod   29 Jun 22 14:14 aws -&gt; awscli-app/v2/current/bin/aws
+    lrwxrwxrwx  1 docking_prod docking_prod   39 Jun 22 14:14 aws_completer -&gt; awscli-app/v2/current/bin/aws_completer
+    $ ./awscli-bin/aws --version
+    -bash: ./awscli-bin/aws: No such file or directory
 
-Anyone run into a similar issue?
+What am I missing here, can anyone help me ?
+## [5][How to control Ingress rules for an NLB ?](https://www.reddit.com/r/aws/comments/hdrdpl/how_to_control_ingress_rules_for_an_nlb/)
+- url: https://www.reddit.com/r/aws/comments/hdrdpl/how_to_control_ingress_rules_for_an_nlb/
+---
+Hi,
 
-`import requests, json`
+I have an application composed of an API Gateway, 2 EC2 instance (A and B) and a ECS Cluster (Fargate). Fargate Tasks should be accessed ONLY by the API Gateway throught a VPC Link and an NLB and the EC2 Instance A.
 
-`from chalice import Chalice, Response`
+UPDATE : Here is a diagram simplified of the APP : 
 
 &amp;#x200B;
 
-`app = Chalice(app_name='helloworld')`
+https://preview.redd.it/9d9xk1s4hg651.png?width=552&amp;format=png&amp;auto=webp&amp;s=2bca2f65cffb491c2b031c314ad9e58e2603904f
+
+Now what i want to do is to secure the access to that NLB to make it only accessible from the API Gateway and from the EC2 Instance A.
+
+The problem is that in the NLB there is no Security Group (unlike the ALB)
+
+I already configured the Security Group of Fargate to accept trafic only form the Private IP of the NLB and from the EC2 A.
+
+Now if i try to access directly the Fargate from the EC2 instance B it will not work, and that's what i want. **BUT**, if access the NLB from the EC2 B the traffic will be accepted and redirected to the Fargate Task.
+
+So my question how to control the Ingress rules in the NLB ? Is there a way to make that ?
+
+Thank you,
+## [6][Is the connection between datacenters of a different region faster than a typical connection?](https://www.reddit.com/r/aws/comments/hdqo8q/is_the_connection_between_datacenters_of_a/)
+- url: https://www.reddit.com/r/aws/comments/hdqo8q/is_the_connection_between_datacenters_of_a/
+---
+Would someone with a high speed internet connection in Singapore get similar latency and throughput accessing the EU-West-1 region; as to a inter-datacentre connection between Ap-Southeast-1 and EU-West-1.
+
+Is there anything special about the connection between data centers. I'd imagine that Amazon has optimised and invested the fuck out of the connections between them.
+## [7][Directory unavailable](https://www.reddit.com/r/aws/comments/hdqjy7/directory_unavailable/)
+- url: https://www.reddit.com/r/aws/comments/hdqjy7/directory_unavailable/
+---
+Is anyone else having users being kicked out of AWS with the  'Directory unavailable' error?
+
+How can I resolve this?
+## [8][Elastic Beanstalk - Daphne is not serving static files](https://www.reddit.com/r/aws/comments/hdqcot/elastic_beanstalk_daphne_is_not_serving_static/)
+- url: https://www.reddit.com/r/aws/comments/hdqcot/elastic_beanstalk_daphne_is_not_serving_static/
+---
+Following this guide [https://medium.com/@elspanishgeek/how-to-deploy-django-channels-2-x-on-aws-elastic-beanstalk-8621771d4ff0](https://medium.com/@elspanishgeek/how-to-deploy-django-channels-2-x-on-aws-elastic-beanstalk-8621771d4ff0) to set up a django project that uses websockets. Before I made the traffic go through Daphne, the static files were being served, but now I get on the console that the files are not found.
+
+01\_env.config
+
+        option_settings:  
+          aws:elasticbeanstalk:application:environment:
+            DJANGO_SETTINGS_MODULE: dashboard.settings
+            PYTHONPATH: /opt/python/current/app/dashboard:$PYTHONPATH
+          aws:elasticbeanstalk:container:python:
+            WSGIPath: dashboard/wsgi.py
+          "aws:elasticbeanstalk:container:python:staticfiles":
+              /static/: "static/"
+        
+          aws:elbv2:listener:80:
+            ListenerEnabled: 'true'
+            Protocol: HTTP
+          aws:elbv2:listener:5000:
+            ListenerEnabled: 'true'
+            Protocol: HTTP
+
+02\_setup.config
+
+        container_commands:
+          00_pip_upgrade:
+            command: "source /opt/python/run/venv/bin/activate &amp;&amp; pip install --upgrade pip"
+            ignoreErrors: false
+          01_migrate:
+            command: "django-admin.py migrate"
+            leader_only: true
+          02_collectstatic:
+            command: "django-admin.py collectstatic --noinput"
+          03_wsgipass:
+            command: 'echo "WSGIPassAuthorization On" &gt;&gt; ../wsgi.conf'
+          04_celery_tasks:
+            command: "cat .ebextensions/celery_configuration.txt &gt; /opt/elasticbeanstalk/hooks/appdeploy/post/run_supervised_celeryd.sh &amp;&amp; chmod 744 /opt/elasticbeanstalk/hooks/appdeploy/post/run_supervised_celeryd.sh"
+            leader_only: true
+          05_celery_tasks_run:
+            command: "/opt/elasticbeanstalk/hooks/appdeploy/post/run_supervised_celeryd.sh"
+            leader_only: true
+
+03\_proxy.config
+
+        files:
+          "/etc/httpd/conf.d/proxy.conf":
+            mode: "000644"
+            owner: root
+            group: root
+            content: |
+              ProxyPass /websockets/ ws://127.0.0.1:5000/websockets/
+              ProxyPassReverse /websockets/ ws://127.0.0.1:5000/websockets/
+              ProxyPass / http://127.0.0.1:5000/
+              ProxyPassReverse / http://127.0.0.1:5000/
+
+[settings.py](https://settings.py)
+
+        ...
+        
+        STATIC_URL = '/static/'
+        STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+Running Daphne using:
+
+        daphne -b 0.0.0.0 -p 5000 dashboard.asgi:application
+## [9][When SSL is terminated at ALB, how the request to ECS from ALB is still encrypted?](https://www.reddit.com/r/aws/comments/hdh2e6/when_ssl_is_terminated_at_alb_how_the_request_to/)
+- url: https://www.reddit.com/r/aws/comments/hdh2e6/when_ssl_is_terminated_at_alb_how_the_request_to/
+---
+In our infrastructure, a request is initiated from the client and hit the ALB which has an ACM for, say, [testdomain.com](https://testdomain.com). The listener on the ALB redirects the request to port 443 on one of the services running on ECS. 
+
+I am having a hard time understanding that,
 
 &amp;#x200B;
 
-`@app.route('/', methods=['POST'])`
-
-`def index():`
-
-`message = app.current_request.json_body`
-
-`return {'webhook_message': message}`
-## [4][AWS Phone Support: Just call me when a tech is available!](https://www.reddit.com/r/aws/comments/hcn13f/aws_phone_support_just_call_me_when_a_tech_is/)
-- url: https://www.reddit.com/r/aws/comments/hcn13f/aws_phone_support_just_call_me_when_a_tech_is/
+* When SSL is terminated at ALB, is the connection still encrypted between ALB to ECS service?
+* How can I verify if the connection between ALB and Backend service is still encrypted if SSL is terminated at ALB?
+## [10][Cognito token verification with API gateway](https://www.reddit.com/r/aws/comments/hdjlqp/cognito_token_verification_with_api_gateway/)
+- url: https://www.reddit.com/r/aws/comments/hdjlqp/cognito_token_verification_with_api_gateway/
 ---
-Every time I go to open a phone ticket with Amazon they call my landline immediately, then make me wait an hour or two for a tech. (At least I think they would... usually the call drops before the tech shows up.)
+I have an authorizer set up in API gateway, it is connected to my Cognito user pool.
 
-For the love of god, why not just call me when the tech is available.
+It has worked before, but as of recent, when I log in on my app, and get the id token:
 
-Also how about having more than 16 bars of looping hold music. Maybe you could tell me how long the wait is going to be?
+userSession.getIdToken().getJWTToken()
 
-**Are phone tickets just a suckers game?**  
+I am running my app in debugger mode, and getting the value of this token, however, when I run it through the API gateway authorize test, it claims it is an unauthorized request.
 
+I have no idea why it would be doing this, Also, I have noticed each time I log in with the same username, cognito gives me identical JWT tokens, is this how it should be?
 
-**Edit:** The support I get from Amazon is top-notch. I'm just nit-picky about the phone system.
-## [5][Website (using Angular) accessing API with authorization? help!](https://www.reddit.com/r/aws/comments/hd4een/website_using_angular_accessing_api_with/)
-- url: https://www.reddit.com/r/aws/comments/hd4een/website_using_angular_accessing_api_with/
+&amp;#x200B;
+
+I have noticed, when I make a new user, it will work for them for a while
+
+Thank you!
+## [11][CORS, why does the target domain authorise which source domains can call its API and not the other way round?](https://www.reddit.com/r/aws/comments/hdp7bi/cors_why_does_the_target_domain_authorise_which/)
+- url: https://www.reddit.com/r/aws/comments/hdp7bi/cors_why_does_the_target_domain_authorise_which/
 ---
-I'm new to the web front-end programming, as I have always been more of a SQL and Python developer. I am building a website, and I have a MySQL DB (on AWS) with many tables of Sports data for example. I just want my web domain to display different analytics or reports. I found that I needed an API which hits the DB, which I've built in API Gateway.  I am learning Angular to make this site, and I have successfully connected to my API in Angular (using HttpRequest) and displayed data successfully locally on my browser (localhost:4200)! So that was great, but I then thought my API should have security/authorization though, so only my web code is allowed to hit my API. I added authorization in my API's settings (See pic: [https://imgur.com/a/xxBgksv](https://imgur.com/a/xxBgksv)) and I successfully tested connecting using Postman by plugging in my IAM AccessKey and SecretKey. But, every example or tutorial on Angular accessing an API either brushes over this signature part or uses Cognito as part of it's solution. I don't see why I'd use Cognito though. I am not making a pool of users for my site. I just need ONE access key for the website code only. I don't understand how there's no sample Angular code for a regular dynamic website accessing an API. This seems like a very common scenario for most people building a website. It's making me question if I am going down the right path as it seems more difficult than it should be. I'm assuming everyone has IAM authorization turned on for their API endpoint, right? I mean I guess it would be hard for someone to even find out my endpoint path, but I feel like it should have it regardless. I'm at a loss, please help. Thanks
-## [6][Is AppSync the best way to set up a GraphQL API on aws for a web app?](https://www.reddit.com/r/aws/comments/hd5uhu/is_appsync_the_best_way_to_set_up_a_graphql_api/)
-- url: https://www.reddit.com/r/aws/comments/hd5uhu/is_appsync_the_best_way_to_set_up_a_graphql_api/
----
-Or is it mostly just for mobile apps?
-
-If it’s not the one Th en are there any managed graphql solutions like API gateway or do you need to set up your own custom thing?
-## [7][DynamoDB or MongoDB in ec2 instance?](https://www.reddit.com/r/aws/comments/hd2517/dynamodb_or_mongodb_in_ec2_instance/)
-- url: https://www.reddit.com/r/aws/comments/hd2517/dynamodb_or_mongodb_in_ec2_instance/
----
-We are planning to migrate our ecosystem completely to the AWS. Currently mongodb is used  as a backend with replica set . Our system is both write heavy and read heavy. And data is extremly unstructred. And it stores few millions of records. And very high throughput. 
-
-So which is better in AWS for this use case. MongoDB in EC2 or DynamoDB interms of performance, cost, consistency and HA?
-## [8][Rent AWS services to others](https://www.reddit.com/r/aws/comments/hd4g3p/rent_aws_services_to_others/)
-- url: https://www.reddit.com/r/aws/comments/hd4g3p/rent_aws_services_to_others/
----
-Hello people, Is there any place where I can give my AWS servers for rent for example? Let's say I'm gonna take them only half of the money that it costs me in AWS services and provide to them cheaper. I'm thinking that becauseI won 6,500$ credits in AWS by applying for an  idea
-## [9][I have access key and secret, and a pem file. Can I get in?](https://www.reddit.com/r/aws/comments/hd40qf/i_have_access_key_and_secret_and_a_pem_file_can_i/)
-- url: https://www.reddit.com/r/aws/comments/hd40qf/i_have_access_key_and_secret_and_a_pem_file_can_i/
----
-It has been a while since I maintained my AWS account, and in the end I am only using it for a Lightsail instance.  I changed my phone a few months back and of course lost my virtual MFA key in the process... and the root registered phone number is a landline I no longer have access to. 
-
-I am preparing to go and get the notarised documentation etc. as advised by  Customer Support when I contacted them for help yesterday accessing as root user.  I completely understand the reason, so this is not a whinge.  
-
-I do however have the AWSAccessKeyID and the AWSSecretKey in a file on my laptop.  But I cannot find any documentation if it is possible to use the CLI and these keys, or a PEM file which I also have, to connect as root.  
-
-Is anyone able to advise if this is even worth investigating, and maybe some documentation that would help me try it out?  
-
-Thanks, long shot I guess.
-## [10][Is one S3 bucket enough?](https://www.reddit.com/r/aws/comments/hd1fql/is_one_s3_bucket_enough/)
-- url: https://www.reddit.com/r/aws/comments/hd1fql/is_one_s3_bucket_enough/
----
-Hi, I'm developing an e-commerce platform. I thought using one bucket to store products images and user profile and store profile using the folders
-
-like 
-
-    mybucket/products
-    mybucket/user
-    mybucket/store
-
-or should I use separate buckets?
-## [11][12 Months free tier questions](https://www.reddit.com/r/aws/comments/hd1eso/12_months_free_tier_questions/)
-- url: https://www.reddit.com/r/aws/comments/hd1eso/12_months_free_tier_questions/
----
-1. Am I charged when downloading files from googledrive to my EC2?
-2. Am I charge when uploading files from EC2 to google drive?
-3. If 1 and 2 are yes, what is the FREE bandwidth limit?
-4. I have 1 shapshot and I did not know if this is created automatically or not. Is it free?
+I've got to the point where I can configure API Gateway CORS so that my scripts can submit to my AWS HTTP API. I have a very basic understanding of cross site attacks. I don't understand why the target domain authorises the source domain and not the other way round or why both domains don't need to authorise each other.

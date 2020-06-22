@@ -1,9 +1,109 @@
 # Kotlin
-## [1][best resources to learn Kotlin](https://www.reddit.com/r/Kotlin/comments/hd3rim/best_resources_to_learn_kotlin/)
+## [1][Within 24 hours, kotlin will overtake the scala subreddit in subscriber count](https://www.reddit.com/r/Kotlin/comments/hdbqs1/within_24_hours_kotlin_will_overtake_the_scala/)
+- url: https://www.reddit.com/r/Kotlin/comments/hdbqs1/within_24_hours_kotlin_will_overtake_the_scala/
+---
+Enjoy!
+## [2][Low-level api interop in Kotlin/JVM?](https://www.reddit.com/r/Kotlin/comments/hdndw9/lowlevel_api_interop_in_kotlinjvm/)
+- url: https://www.reddit.com/r/Kotlin/comments/hdndw9/lowlevel_api_interop_in_kotlinjvm/
+---
+Is there some guide to get started on pulling info from some low level apis such as wireless information, battery information, etc?
+
+I know in linux its easy by running some commands and filtering outputs, but its a mess in platforms like windows where we need to write some sort of bindings in like jni, but I still don't know much about JNI and want some guides to work.
+
+And is it possible to interact them (low-level api) with help of Kotlin/Native to write bindings for Kotlin/JVM instead of writing in direct C++?
+## [3][I can't decide which one is better practice](https://www.reddit.com/r/Kotlin/comments/hdoz36/i_cant_decide_which_one_is_better_practice/)
+- url: https://www.reddit.com/r/Kotlin/comments/hdoz36/i_cant_decide_which_one_is_better_practice/
+---
+I usually don't care much about code styling but i can't  decide which one is better.  what do you think?
+
+This:
+
+`if (person.nationality == NATIONALITY_ONE) {`
+
+`person.unit= UNIT_METRIC`
+
+`person.drink= DRINK_TEA`
+
+`person.food= FOOD_PIZZA`
+
+`person.sport= SPORT_FOOTBALL`
+
+`} else {`
+
+`person.unit= UNIT_IMPERIAL`
+
+`person.drink= DRINK_COFFEE`
+
+`person.food= FOOD_HOTDOG`
+
+`person.sport= SPORT_HOCKEY`
+
+`}`
+
+&amp;#x200B;
+
+Or this:
+
+`person.unit = if (person.nationality == NATIONALITY_ONE) UNIT_METRIC else UNIT_IMPERIAL`
+
+`person.drink = if (person.nationality == NATIONALITY_ONE) DRINK_TEA else DRINK_COFFEE`
+
+[`person.food`](https://person.food) `= if (person.nationality == NATIONALITY_ONE) FOOD_PIZZA else FOOD_HOTDOG`
+
+`person.sport = if (person.nationality == NATIONALITY_ONE) SPORT_FOOTBALL else SPORT_HOCKEY`
+## [4]['this' in javascript callbacks from Kotlin](https://www.reddit.com/r/Kotlin/comments/hdenlz/this_in_javascript_callbacks_from_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/hdenlz/this_in_javascript_callbacks_from_kotlin/
+---
+'this' in javascript is fun!  ;-). But at least it's defined.  For Kotlin that's transpiled to javascript, I think they're missing that piece, or just couldn't.  In a EventListener callback, there doesn't seem to be a direct way of getting 'this' exactly.  Is event.currentTarget always the same (== the calling DOM object)? 
+
+I'm not expert at this and am using the D3 libs solely in Kotlin.  Most of the examples in js expect 'this'.  However D3 appears to give access to the event parameter,  often times through a D3.event global ... ?  
+
+I've gotten it to work, after much head-scratching but was hoping for someone more knowledgeable to weigh in on 'this'.
+## [5][Is it so wrong to learn the "bad practice" of a pattern first to fully understand what is happening?](https://www.reddit.com/r/Kotlin/comments/hd81q3/is_it_so_wrong_to_learn_the_bad_practice_of_a/)
+- url: https://www.reddit.com/r/Kotlin/comments/hd81q3/is_it_so_wrong_to_learn_the_bad_practice_of_a/
+---
+Like i said in the title, i really like to use and learn the "bad practices" first because it feels like it really helps me to understand things better actually.  For example i am not using injections right now until the bad practice of doing it without kodein/dagger is in my brain muscle.
+
+For me it feels like, it really helps me to solve future problems by myself because I understand the things happening underneath the surface.
+
+Do you think it is a bad practice to learn the "bad practice" first?
+
+Sorry i am not a native english speaker so I hope the text makes actually sense :)
+## [6][best resources to learn Kotlin](https://www.reddit.com/r/Kotlin/comments/hd3rim/best_resources_to_learn_kotlin/)
 - url: https://www.reddit.com/r/Kotlin/comments/hd3rim/best_resources_to_learn_kotlin/
 ---
 Python programmer needs to learn Kotlin for upcoming interview in two weeks time. What would be the best resources to start. The goal is to learn essentials web development with Kotlin using Springboot.
-## [2][How to avoid sharepreference overriding previous data?](https://www.reddit.com/r/Kotlin/comments/hcze76/how_to_avoid_sharepreference_overriding_previous/)
+## [7][Linked List as Iterable](https://www.reddit.com/r/Kotlin/comments/hdcyk8/linked_list_as_iterable/)
+- url: https://www.reddit.com/r/Kotlin/comments/hdcyk8/linked_list_as_iterable/
+---
+So, I was coding something using Linked Lists, but there was no fitting implementation of them.
+(I would realy like to make them usable as Iterables, to make fit into Kotlins Interface System.)
+I am currently trying to implement a LinkedList class on my own, but I am realy unsure about the implementation of the Interfaces.
+Is there any good implementation that I just haven't found?
+Or is there a source on how to make a new functioning Iterable?
+## [8][Problems with multiplications for double floating-point numbers](https://www.reddit.com/r/Kotlin/comments/hdbfty/problems_with_multiplications_for_double/)
+- url: https://www.reddit.com/r/Kotlin/comments/hdbfty/problems_with_multiplications_for_double/
+---
+Simple test with weird result:
+
+    @Test
+    fun doubleMultiplicationTest() { 
+      assertEquals(3_3300.0, 1_000_000.0 * 0.0333) // This succeeds 
+      assertEquals(3_330.0, 100_000.0 * 0.0333) // This fails 
+    }
+
+Second assert equals fails with a message:
+
+    expected:&lt;3330.0&gt; but was:&lt;3330.0000000000005&gt;
+    Expected :3330.0
+    Actual   :3330.0000000000005
+
+My app is supposed to run hundreds of similar operations, can I trust that they'll be correct or should I use some different basic math methods than the ones from the standard library? Is this error occurring because of some weird quirks of binary numbers representation?
+## [9][What is Data Class in Kotlin? and How to use Data Class in Kotlin?](https://www.reddit.com/r/Kotlin/comments/hda4f5/what_is_data_class_in_kotlin_and_how_to_use_data/)
+- url: https://youtu.be/knZ8Vk_Hkcs
+---
+
+## [10][How to avoid sharepreference overriding previous data?](https://www.reddit.com/r/Kotlin/comments/hcze76/how_to_avoid_sharepreference_overriding_previous/)
 - url: https://www.reddit.com/r/Kotlin/comments/hcze76/how_to_avoid_sharepreference_overriding_previous/
 ---
 I am using sharePreference to save a user input data. The problem is when I create a new data it overrides the previous data. I have two inputs a title and description and I save this data. I am trying to pass this data into a recyclerview but I want to create a new data and not override current data.
@@ -15,87 +115,3 @@ MainActivity:  [https://pastebin.com/HZLMwM8v](https://pastebin.com/HZLMwM8v) (c
 NoteActivity :  [https://pastebin.com/CtrKcqEs](https://pastebin.com/CtrKcqEs) (contains userinput)
 
 Recyclerview adapter class :  [https://pastebin.com/Z6dh3gDh](https://pastebin.com/Z6dh3gDh)
-## [3][Kotlin spirng boot mvc beginner](https://www.reddit.com/r/Kotlin/comments/hcykr5/kotlin_spirng_boot_mvc_beginner/)
-- url: https://www.reddit.com/r/Kotlin/comments/hcykr5/kotlin_spirng_boot_mvc_beginner/
----
-Hi! Quick intro:
-
-I pivoted my career to BI but I have free time to learn mvc because the startup im in will work on that in about two months. 
-
-The things is thar i'm NEW to programming, I know nothing really, just basics like: what a function/class/parameters/interface/repository is and I've created entities for tweet and user and very little of postMapping/get/pathvariable. The thing is that I can't find  something that guides me, theres not a lot of info or tutorials and i feel alone lol. Like I try to code something and I go very slowly because i'm very new to this. I know I''l get better with exp, but if you have any resources. ANY that could be useful or tips etc It'll be much appreciated.
-
-Thanks:))
-## [4][Kotlin infix functions](https://www.reddit.com/r/Kotlin/comments/hcmr17/kotlin_infix_functions/)
-- url: https://www.mscharhag.com/kotlin/infix-functions
----
-
-## [5][Swagger java annotations in action](https://www.reddit.com/r/Kotlin/comments/hcg763/swagger_java_annotations_in_action/)
-- url: https://medium.com/@domrevigor/generate-api-docs-clients-server-code-using-swagger-java-annotations-f25ad69e00be
----
-
-## [6][Kotlin Virtual Machine (KVM)](https://www.reddit.com/r/Kotlin/comments/hcluse/kotlin_virtual_machine_kvm/)
-- url: https://www.reddit.com/r/Kotlin/comments/hcluse/kotlin_virtual_machine_kvm/
----
-Nowadays, Kotlin is using the JVM, but I would like to know if in the future there will be something like a KVM?
-## [7][Best library for manage JSON](https://www.reddit.com/r/Kotlin/comments/hc2mp2/best_library_for_manage_json/)
-- url: https://www.reddit.com/r/Kotlin/comments/hc2mp2/best_library_for_manage_json/
----
-Hi every one, 
-
-I am currently using Kotlin with Spring in a module as a microservice. This module has to handle a lot of requests to communicate with other modules through http with a JSON body. I was working with Jackson library but when a JSON becomes more complex I feel that this library isn't really good. 
-
-After research I have found that there are two main options for this task, Moshi and KotlinX Serillization. I couldn't choose between because discussions about that on internet were even and also because were talking for use them on android development which I am not sure if for my case there is a clear winner (even if is other one)
-
-Many Thanks!
-## [8][Need quick help creating the right constructor to interpret Json](https://www.reddit.com/r/Kotlin/comments/hc1b3o/need_quick_help_creating_the_right_constructor_to/)
-- url: https://www.reddit.com/r/Kotlin/comments/hc1b3o/need_quick_help_creating_the_right_constructor_to/
----
-SOLVED :D
-
-\---
-
-Hey all!
-
-I'm working on a little weather app and it's my first time dealing with JSON. At the moment my app is almost working as intended, I'm just having problems trying to take this Json information from openweathermap into my data objects. Sorry if the terminology I'm using isn't quite correct too.
-
-My only problem is the weather part of the json info.
-
-    {
-     "coord":{"lon":-0.13,"lat":51.51},
-     "weather": [
-     {
-         "id":803,
-         "main": "Clouds",
-         "description":"broken clouds",
-         "icon":"04d"
-     }
-     ],
-     "base":"stations",
-
-This is the only part of the full Json that has a \[ {} \] in it. This is making me think it wants an array of info?
-
-&amp;#x200B;
-
-My WeatherData class is extensive so I'll just list the problem bit in it. It references another class 'Weather' as I've made classes for any part of the Json that has { } in it and it seems to be working great when I comment out the Weather bit in my constructor.
-
-    data class WeatherData(val coord: Coord, val weather: Weather, val base: String //more stuff )
-    
-    data class Weather(val id: Int, val main: String, val description: String, val icon: String)
-
-What I feel like I want to do is something like, val weather: arrayOf{Weather}.
-
-The error I get is
-
-    com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was BEGIN_ARRAY at line 1 column 47 path $.weather
-
-&amp;#x200B;
-
-Thanks in advance for any help guys! Your time is much appreciated :D
-## [9][Logging service uptime with a custom log4j2 lookup plugin](https://www.reddit.com/r/Kotlin/comments/hc5ypw/logging_service_uptime_with_a_custom_log4j2/)
-- url: https://link.medium.com/ewYVFWN2r7
----
-
-## [10][📚 Android Components Architecture in a Modular Word](https://www.reddit.com/r/Kotlin/comments/hc42km/android_components_architecture_in_a_modular_word/)
-- url: https://i.redd.it/pwgb1x1ebw551.png
----
-

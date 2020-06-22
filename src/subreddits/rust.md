@@ -1,6 +1,6 @@
 # rust
-## [1][Hey Rustaceans! Got an easy question? Ask here (25/2020)!](https://www.reddit.com/r/rust/comments/h98zfz/hey_rustaceans_got_an_easy_question_ask_here/)
-- url: https://www.reddit.com/r/rust/comments/h98zfz/hey_rustaceans_got_an_easy_question_ask_here/
+## [1][Hey Rustaceans! Got an easy question? Ask here (26/2020)!](https://www.reddit.com/r/rust/comments/hdku4k/hey_rustaceans_got_an_easy_question_ask_here/)
+- url: https://www.reddit.com/r/rust/comments/hdku4k/hey_rustaceans_got_an_easy_question_ask_here/
 ---
 Mystified about strings? Borrow checker have you in a headlock? Seek help here! There are no stupid questions, only docs that haven't been written yet.
 
@@ -16,74 +16,74 @@ The official Rust Programming Language Discord: [https://discord.gg/rust-lang](h
 
 The unofficial Rust community Discord: [https://bit.ly/rust-community](https://bit.ly/rust-community)
 
-Also check out [last week's thread](https://reddit.com/r/rust/comments/gyswpo/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
+Also check out [last week's thread](https://reddit.com/r/rust/comments/h98zfz/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][This Week in Rust 343](https://www.reddit.com/r/rust/comments/hactqu/this_week_in_rust_343/)
-- url: https://this-week-in-rust.org/blog/2020/06/16/this-week-in-rust-343/
+## [2][What's everyone working on this week (26/2020)?](https://www.reddit.com/r/rust/comments/hdkuz9/whats_everyone_working_on_this_week_262020/)
+- url: https://www.reddit.com/r/rust/comments/hdkuz9/whats_everyone_working_on_this_week_262020/
+---
+New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-26-2020/44701?u=llogiq)!
+## [3][Announcing Tokei 12: A fast &amp; accurate code analysis tool and library.](https://www.reddit.com/r/rust/comments/hdr6gd/announcing_tokei_12_a_fast_accurate_code_analysis/)
+- url: https://github.com/XAMPPRocky/tokei/releases/tag/v12.0.0
 ---
 
-## [3][PyO3 now supports stable Rust!](https://www.reddit.com/r/rust/comments/hd5506/pyo3_now_supports_stable_rust/)
+## [4][My project TermUI on it's way to become an actual terminal emulator in a terminal !](https://www.reddit.com/r/rust/comments/hde9dk/my_project_termui_on_its_way_to_become_an_actual/)
+- url: https://v.redd.it/zj5nj132tb651
+---
+
+## [5][rust-analyzer changelog #30](https://www.reddit.com/r/rust/comments/hds2vd/rustanalyzer_changelog_30/)
+- url: https://rust-analyzer.github.io/thisweek/2020/06/22/changelog-30.html
+---
+
+## [6][Implementing a Type-safe printf in Rust](https://www.reddit.com/r/rust/comments/hdlzjq/implementing_a_typesafe_printf_in_rust/)
+- url: http://willcrichton.net/notes/type-safe-printf/
+---
+
+## [7][Tips for Faster Rust Compile Times](https://www.reddit.com/r/rust/comments/hdb5m4/tips_for_faster_rust_compile_times/)
+- url: https://endler.dev/2020/rust-compile-times/
+---
+
+## [8][PyO3 now supports stable Rust!](https://www.reddit.com/r/rust/comments/hd5506/pyo3_now_supports_stable_rust/)
 - url: https://github.com/PyO3/pyo3/issues/5#issuecomment-647094806
 ---
 
-## [4][Installed and Compiled Rust on Raspberry Pi Zero W](https://www.reddit.com/r/rust/comments/hcyolu/installed_and_compiled_rust_on_raspberry_pi_zero_w/)
-- url: https://i.redd.it/u5fo8jzi86651.jpg
+## [9][Rust Lints You May Not Know](https://www.reddit.com/r/rust/comments/hdgodw/rust_lints_you_may_not_know/)
+- url: https://www.possiblerust.com/pattern/rust-lints-you-may-not-know
 ---
 
-## [5][Announcing lexical-sort, a crate for sorting strings properly (and quickly) 🎉](https://www.reddit.com/r/rust/comments/hcw2re/announcing_lexicalsort_a_crate_for_sorting/)
-- url: https://www.reddit.com/r/rust/comments/hcw2re/announcing_lexicalsort_a_crate_for_sorting/
+## [10][nom derive 0.6: deriving binary parsers from structure declaration](https://www.reddit.com/r/rust/comments/hdb5h1/nom_derive_06_deriving_binary_parsers_from/)
+- url: https://www.reddit.com/r/rust/comments/hdb5h1/nom_derive_06_deriving_binary_parsers_from/
 ---
-The standard library implements `Ord` for strings, but the resulting ordering is unsuitable for many use cases. This is why I wrote the [lexical-sort](https://github.com/Aloso/lexical-sort) crate, which provides better string comparison functions.
+[nom-derive](https://crates.io/crates/nom-derive) 0.6.0 has been released, with many improvements over previous release.
 
-It can sort strings **lexicographically**, which means that Unicode characters such as äßàćñæΩµð are transliterated to ASCII and converted to lowercase before the comparison. In effect, the comparison is case insensitive and works as expected for many languages, including English, German, French, Spanish, Portuguese, Italian, etc.
+This crate adds a custom derive `#[derive(Nom)]`, which automatically creates a parser from a structure or enum declaration (aka declarative parsing). It is mostly intended for binary formats, and relies on nom, creating fast parsers using zero-copy most of the time.
 
-It can sort strings **naturally** (sometimes called "human sort"), which parses whole numbers instead of just digits, so "50" comes before "100". There's also an option to ignore non-alphanumeric characters.
+Trivial example:
 
-According to my benchmark, its performance is very competitive. If all strings are ASCII, sorting them lexicographically is only 2–3 times as slow as the standard library. It's slower for non-ASCII strings, which is not surprising since it does much more work.
+    #[derive(Nom)]
+    struct S {
+      a: u32,
+      b: u16,
+      c: u16
+    }
 
-One use case for this is sorting files. Note file managers as well as tools like GNU `ls` usually sort files lexicographically.
+It also supports custom attributes to control parsing endianness, add verifications or custom code, etc. The objective is to make the 99% of the parser automatically derived, while also being able to switch to custom code and parsing functions for some parts.
 
-Note that it will not return the desired order in some languages such as Swedish. Implementing correct lexicograpical order for every language is much harder. Also, just transliterating characters to ASCII is a bit of a hack, so if you have suggestions for improvement, they are very appreciated!
-## [6][Announcing genco: A whitespace-aware quasiquoter for beautiful code generation (nightly only)](https://www.reddit.com/r/rust/comments/hd5g1v/announcing_genco_a_whitespaceaware_quasiquoter/)
-- url: https://github.com/udoprog/genco
----
+* [Documentation of the Nom attribute and options](https://docs.rs/nom-derive/0.6.0/nom_derive/derive.Nom.html)
+* [Example of parser, taken from an OSPFv3 protocol](https://github.com/rusticata/ospf-parser/blob/master/src/ospfv3.rs)
 
-## [7][I decided to learn Rust as a first* language.](https://www.reddit.com/r/rust/comments/hcyp93/i_decided_to_learn_rust_as_a_first_language/)
-- url: https://www.reddit.com/r/rust/comments/hcyp93/i_decided_to_learn_rust_as_a_first_language/
----
-I have been wanting to actually learn to code for a while. I am fairly proficient in R for data analysis and visualization (including some ML) and write SQL queries daily for work, but I feel that most of the expertise won't really translate. I searched most loved programming languages and ended up here.  
-
-Seems like Rust is not an easy language to begin with, but the documentation seems fantastic and the community seems friendly, so fuck it, we are doing it live. Wish me luck!
- (1 hour in I am already a bit frustrated about "size not known at compile time")
-## [8][TIL: You can add strings in Rust](https://www.reddit.com/r/rust/comments/hcvagr/til_you_can_add_strings_in_rust/)
-- url: https://www.reddit.com/r/rust/comments/hcvagr/til_you_can_add_strings_in_rust/
----
-I've been using Rust for years now I only just learned that you can use `+` and `+=` for string concatenation.  Did anyone else not know this?
-
-Edit:
-FYI `+` has been around since 1.0 and `+=` was added in 1.14 (which was back in 2016).
-## [9][Does Rust have anything like placement new?](https://www.reddit.com/r/rust/comments/hd3myx/does_rust_have_anything_like_placement_new/)
-- url: https://www.reddit.com/r/rust/comments/hd3myx/does_rust_have_anything_like_placement_new/
----
-I'm once again considering porting from C++ to something else and I had a quick question about Rust. As the title says does Rust have anything like a placement new?
-## [10][Writing Non-Trivial Macros in Rust](https://www.reddit.com/r/rust/comments/hcqn81/writing_nontrivial_macros_in_rust/)
-- url: http://adventures.michaelfbryan.com/posts/non-trivial-macros/?utm_source=reddit&amp;utm_medium=social&amp;utm_campaign=non-trivial-macros
+Feedback is welcome!
+## [11][Rooster - Personal Web Server with Rust](https://www.reddit.com/r/rust/comments/hdlbeu/rooster_personal_web_server_with_rust/)
+- url: https://github.com/elasmojs/rooster
 ---
 
-## [11][Second project : TermUI : A Window manager for the command line.](https://www.reddit.com/r/rust/comments/hcyxoa/second_project_termui_a_window_manager_for_the/)
-- url: https://www.reddit.com/r/rust/comments/hcyxoa/second_project_termui_a_window_manager_for_the/
+## [12][Why is assignment an expression in Rust?](https://www.reddit.com/r/rust/comments/hddg7u/why_is_assignment_an_expression_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/hddg7u/why_is_assignment_an_expression_in_rust/
 ---
-It's all here : [https://github.com/Teln0/TermUI](https://github.com/Teln0/TermUI). Feel free to contribute !
-## [12][Why the `finish` function on `std::hash::Hasher` returns a fixed `u64` type?](https://www.reddit.com/r/rust/comments/hd35ri/why_the_finish_function_on_stdhashhasher_returns/)
-- url: https://www.reddit.com/r/rust/comments/hd35ri/why_the_finish_function_on_stdhashhasher_returns/
----
-Hello rustaceans! I'm an intermediate rustacean, recently checking out detailed Rust library designs. I saw this function in the standard library: 
+Since I assume asking about language design itself isn't an easy topic, I ask it here.
 
-```rust
-fn finish(&amp;self) -&gt; u64
-```
+Why is assignment in rust an expression and not simply a statement? After all it always returns the unit type `()`, thus it's not really useful for chaining assignments like `a = b = c = 3;`, which if I understood correctly is one of the reasons why languages like C made assignment an expression instead of a statement.
 
-(Link: https://doc.rust-lang.org/nightly/std/hash/trait.Hasher.html#tymethod.finish)
+PS: I'm writing a small programming language interpreter/compiler and I am modelling it heavily after rust, swift, etc, thus I'm trying to incorporate their language design (although very simplified). That design decision appears to be also be in swift (where chaining expressions) aren't possible, but assignment is an expression evaluating to the unit type.
 
-I noticed that this function returns a fixed `u64` type, instead of a generic type or associated type. I'm wondering how the authors discussed and analyzed on this design at that time. Just curious to discuss on this detailed API design and/or its history, didn't mean any harms to anyone. Thanks! :)
+PPS: If you have any useful blogs etc on such topics, feel free to post it :)

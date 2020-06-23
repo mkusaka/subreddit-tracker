@@ -39,13 +39,127 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][What are People Using for Localizing Date/Time?](https://www.reddit.com/r/rails/comments/hdkurj/what_are_people_using_for_localizing_datetime/)
-- url: https://www.reddit.com/r/rails/comments/hdkurj/what_are_people_using_for_localizing_datetime/
+## [3][how to improve multi insert](https://www.reddit.com/r/rails/comments/hebb6x/how_to_improve_multi_insert/)
+- url: https://www.reddit.com/r/rails/comments/hebb6x/how_to_improve_multi_insert/
 ---
-The [Rails Locale Data Repository](https://github.com/svenfuchs/rails-i18n) seems to be the only comprehensive collection of formats but unfortunately I have not seen a single date/time format it uses that is an actual date time format **used in the given locale**. 
+i have list of values and need insert in db for general i use `each` for loop.
 
-What are people using for their data/time localization formats?
-## [4][Writing to a file is taking a lot of time in the prod environment](https://www.reddit.com/r/rails/comments/hdrubu/writing_to_a_file_is_taking_a_lot_of_time_in_the/)
+`data = {`
+
+`row1: {id:1, name: 'test',  type: 'x'},`
+
+`........... etc`
+
+`}`
+
+&amp;#x200B;
+
+how can improve it  . i hear  about \`activerecord-import\` for reduce queries
+## [4][Wordpress vs Rails](https://www.reddit.com/r/rails/comments/hee2b3/wordpress_vs_rails/)
+- url: https://www.reddit.com/r/rails/comments/hee2b3/wordpress_vs_rails/
+---
+lets say you know how to make Wordpress websites with all their different plugins and themes (no php) and you know Rails (medior).
+
+In what case would you pick making a website in RoR over WP?
+## [5][Stripe Users: How do you handle product data with Rails?](https://www.reddit.com/r/rails/comments/hdwode/stripe_users_how_do_you_handle_product_data_with/)
+- url: https://www.reddit.com/r/rails/comments/hdwode/stripe_users_how_do_you_handle_product_data_with/
+---
+I noticed that Stripe wants you to create products in their API, which sets off alarm bells about data going out of sync locally if I also have a \`products\` table.
+
+How do people in the community integrate Stripe product data with Rails and ActiveRecord. Are there any best practices?
+## [6][How to implement a ThemeForest front end the "Rails 6 way"?](https://www.reddit.com/r/rails/comments/hdyjjz/how_to_implement_a_themeforest_front_end_the/)
+- url: https://www.reddit.com/r/rails/comments/hdyjjz/how_to_implement_a_themeforest_front_end_the/
+---
+Hey everyone, I've been bouncing around for a week now, watching videos, reading tutorials, and experimenting, and I feel like I'm doing this all wrong. Instead of asking how to fix this particular problem or that problem, I think I need to step back and ask **how I should be doing this on a brand new project... What's the Rails 6 way?**
+
+So I'm building a new Rails 6 app, and since I'm not a front-end person, I purchased a couple ThemeForest HTML bootstrap admin templates. The first one was pretty simple. After trying to implement it with WebPacker, I gave up, and I sort of got it working through the asset pipeline - but I had to do a lot of tweaking.  
+By that I mean I put all the fonts, css, images and js in subfolders under /apps/assets. Renamed some conflicting css and js file names. Renamed the icons.css (where the font references are) to icons.scss and then line-by-line changed the urls to something like this:
+
+    src: url(font-path('fa-brands-400.eot')
+
+Well, now I've decided I don't like the theme, and I've moved to a much better one called Metronic (very popular).  
+ [https://keenthemes.com/metronic/?page=index](https://keenthemes.com/metronic/?page=index) 
+
+The theme's docs quickstart section shows two way of getting started: Using WebPack or using Gulp. You decide which of 11 demos you like best, then if you want, tweak files under the src directory, then run " npm run build --demo1" (for webpack) or " gulp *--demo1" (for gulp).*  
+That compiles all the assets into a dist directory with all the css, js, images and fonts.
+
+Both options produce a small number of xxxx.bundle.css and xxx.bundle.js files that are called in the HTML examples. You also get a packages.json with all the yarn dependencies. 
+
+Well, since WebPacker is the new hotness in Rails 6, and only sort of understanding what WebPack/WebPacker is and does, I started with the WebPack version. I know right now you're supposed to use WebPack for javascript, and asset pipeline for css, fonts and media - but most of the videos I watched just went ahead and used WebPack for everything.
+
+So I tried it, and the CSS, images and fonts seem to work using WebPacker. No CSS tweaking to find the fonts.  
+The javascript - not so much - because the javascript isn't getting loaded into the global scope (apparently that's how WebPacker is supposed to work). With tons of lines of javascript, it's pretty intimidating to figure out how to get this pre-written code into the right scopes. I'm not even sure how I would go about that.
+
+That being the case, I put the javascript in the asset pipeline, and css/etc in WebPacker. Totally flipping the script. But it works. 
+
+Ok, not totally. The pre-compiling in development is so slow that half the time my pages wont load (1500ms timeout). And when I tried to deploy to Heroku, all hell broke loose.
+
+I've also tried the Gulp version exclusively in the asset pipeline. Sort of works in dev, but pukes on precompiling at Heroku.
+
+So, instead of banging my head against trying to get either approach to work, it's time to step back and ask the experts: Which route should I be going? What's the best approach to take? What's the Rails 6 way?  
+Bonus question: Is there a good reference on how to bring a modern HTML template into a Rails 6 app? Video, book, blog post, etc?  
+Bonus bonus question: Since it's so popular, has anyone worked specifically with Metronic?
+
+For reference, this is the docs for the HTML template:  
+ [https://keenthemes.com/metronic/?page=docs&amp;section=html-webpack-quick-start](https://keenthemes.com/metronic/?page=docs&amp;section=html-webpack-quick-start) 
+
+Thanks for any and all guidance!
+## [7][Upgrading ruby version on production server](https://www.reddit.com/r/rails/comments/he0zcr/upgrading_ruby_version_on_production_server/)
+- url: https://www.reddit.com/r/rails/comments/he0zcr/upgrading_ruby_version_on_production_server/
+---
+Does anyone have experience with this? Is it any different from doing it in the development environment?
+
+If anyone could point me to a tutorial or just give me some tips, I'd very much appreciate it
+## [8][Please review my ServiceHelper](https://www.reddit.com/r/rails/comments/hdulyf/please_review_my_servicehelper/)
+- url: https://www.reddit.com/r/rails/comments/hdulyf/please_review_my_servicehelper/
+---
+I'm working on app which have many external APIs calls. I don't want to have fat wrapper, so I made smart(at least I'm tried) base_service class, to make few dozens light services, but I have doubts if is it overcomplicated, imho I like now my tiny services which now have about 20 lines of code, but I want to know if my approach is proper way. Here is code: https://github.com/rwegrzyniak/FaradayBaseService
+Can you make fast code review?
+## [9][Recommended books](https://www.reddit.com/r/rails/comments/he2zqd/recommended_books/)
+- url: https://www.reddit.com/r/rails/comments/he2zqd/recommended_books/
+---
+What are the best books you would recommend about Ruby/Rails?
+## [10][How to have distinct forms for multiple objects in the same view](https://www.reddit.com/r/rails/comments/hdv8vt/how_to_have_distinct_forms_for_multiple_objects/)
+- url: https://www.reddit.com/r/rails/comments/hdv8vt/how_to_have_distinct_forms_for_multiple_objects/
+---
+I'm building a shopping cart and one of the features I'd like to be able to implement is to allow the shopper to select the quantity of item they want. I figure I could do this with a form_for for each object that's currently in the cart, but worried that there would be conflicts. How can I assign a unique form input (which will then be available as params for the next page)? Would it be something like:
+
+     &lt;%= form_for(:product_name, url: cart_path), html: {id: "quantity-form"}) do |f| %&gt;
+        &lt;%= f.label :quantity, class: 'field-label emphasis contact-form-item-mobile' do %&gt;
+            &lt;span class = 'field-label emphasis'&gt; Quantity &lt;/span&gt;
+        &lt;% end %&gt;
+        &lt;%= f.number_field :quantity, class: 'form-control form-control-mobile', placeholder: "Quantity" %&gt;&lt;br&gt;
+    &lt;% end %&gt;
+## [11][Help optimizing SQL query generation in rails active record](https://www.reddit.com/r/rails/comments/hdw20h/help_optimizing_sql_query_generation_in_rails/)
+- url: https://www.reddit.com/r/rails/comments/hdw20h/help_optimizing_sql_query_generation_in_rails/
+---
+I have a \`user\` model that has\_many \`posts\`. For this example suppose I have to do two things.
+
+1. Check if the user any posts present
+2. If test, check if the post is present in one of the following types. 
+
+This example is a bit contrived but it like the posts exist only if the user is of a certain kind. something like that. so please bear with me on this. 
+
+Approach one
+
+user = User.find(1)
+
+return user.posts.present? &amp;&amp; (user.posts.map(&amp;:type) &amp; types).present?
+
+Approach 2
+
+user = User.find(1)
+
+return true unless user.posts.exists?
+
+return user.posts.where(type: types).exists?
+
+While I thought the approach 2 would be more efficient, I noticed that in the 1st approach since posts are already loaded in the present? check the subsequent map doesn't fire a new query.  So say just 1 DB query. 
+
+In the second approach probably since there is a where query it ends up firing 2 queries to the DB. 
+
+Could you let me know if this is this is the case and any information on how rails caches these queries? I tried it only in a rails console.
+## [12][Writing to a file is taking a lot of time in the prod environment](https://www.reddit.com/r/rails/comments/hdrubu/writing_to_a_file_is_taking_a_lot_of_time_in_the/)
 - url: https://www.reddit.com/r/rails/comments/hdrubu/writing_to_a_file_is_taking_a_lot_of_time_in_the/
 ---
 I know it's kind of weird. I have changed the in-memory generation of csv to a file-based one. Locally, it  generates the file relatively faster 20 k records in 20 mins or so. But in the production environment it's taking too much time. It's writing 1 k records over 20 mins. Is it because of I/O overhead? or am I looking at this wrong
@@ -53,154 +167,17 @@ I know it's kind of weird. I have changed the in-memory generation of csv to a f
 This is the code I have
 
 `tempfile = File.open(Rails.root.join('tmp', "#{SecureRandom.hex(8)}.csv"), 'wb')CSV.open(tempfile.path, 'w') do |csv|ActiveRecord::Base.uncached doModel.find_each do |model|csv &lt;&lt; ["foobar"]endendendtempfile`
-## [5][How do you guys get acquainted with the huge codebase of an app with tons of functionality?](https://www.reddit.com/r/rails/comments/hd5xdu/how_do_you_guys_get_acquainted_with_the_huge/)
-- url: https://www.reddit.com/r/rails/comments/hd5xdu/how_do_you_guys_get_acquainted_with_the_huge/
----
-I got a job at a company where the app and the codebase are so huge and very poorly written tests. So, how should I get acquainted with this monstrosity?
-## [6][Create Record As A User Signs Up](https://www.reddit.com/r/rails/comments/hd9yr4/create_record_as_a_user_signs_up/)
-- url: https://www.reddit.com/r/rails/comments/hd9yr4/create_record_as_a_user_signs_up/
----
-I am using devise facebook omniauth for User sign up. When a user signs up I want to create a record with user's name in particular table if it doesn't exist already, how do I go about doing this?
-## [7][Does anyone know the answer to this? Has anyone faced this before? Sry if this is a basic error, but I'm new to programming.](https://www.reddit.com/r/rails/comments/hdbf7r/does_anyone_know_the_answer_to_this_has_anyone/)
-- url: https://www.reddit.com/r/rails/comments/hdbf7r/does_anyone_know_the_answer_to_this_has_anyone/
----
-Could not load 'active\_record/connection\_adapters/sqlite3\_adapter'. Make sure that the adapter in config/database.yml is valid. If you use an adapter other than 'mysql2', 'postgresql' or 'sqlite3' add the necessary adapter gem to the Gemfile.  
-Couldn't create database for {"adapter"=&gt;"sqlite3", "pool"=&gt;5, "timeout"=&gt;5000, "database"=&gt;"db/development.sqlite3"}  
-rails aborted! 
 
 &amp;#x200B;
 
-The adapter in my database.yml file is sqlite3 and even in my gemfile it is sqlite3. So after i host a server using 'rails server' command I get the above error. But after refreshing a few times, I get to the desired page which says 'Yay! You're on rails!' The problem is that i cant continue the scaffold command as it won't execute. When I write a command for scaffold, I get the error mentioned above and quite a lot of lines mentioning some error. Again, my error may be quite amateurish, but I legit have no idea what I should be changing. Thanks in advance.
-## [8][How do I query for the most recently created records across multiple models?](https://www.reddit.com/r/rails/comments/hcu0i9/how_do_i_query_for_the_most_recently_created/)
-- url: https://www.reddit.com/r/rails/comments/hcu0i9/how_do_i_query_for_the_most_recently_created/
----
-## Models
+Looks like writing to file is indeed an overhead, what are my options now? I cannot create file in memory due to RAM reasons
 
-```
-class CoreCompetency &lt; ApplicationRecord
-    has_many :scores
-end
-```
+This is how much Benchmark results looks like
 
-```
-class TeamMember &lt; ApplicationRecord
-    has_many :scores
-end
-```
+0.019205 0.001835 0.021040 ( 0.021893) - local
 
-```
-class Score &lt; ApplicationRecord
-    belongs_to :team_member
-    belongs_to :core_competency
-end
-```
-
-## Question
-
-A `team_member` can create a `score` for several `core_competencies` at different times. How do I get a team_member's most recent `score` per `core_competency`?
-## [9][Modify Instance variable in a haml?](https://www.reddit.com/r/rails/comments/hcohd4/modify_instance_variable_in_a_haml/)
-- url: https://www.reddit.com/r/rails/comments/hcohd4/modify_instance_variable_in_a_haml/
----
-I have a HAML with a modal. The modal contains a button, and the button’s href has instance variables so that when the Ajax call is made later (after clicking the button) the controller can find user data via java back end services (mysql).
-
-I can’t seem to be able to set those instance variables correctly.
-
-1. an Ajax call (of type get) is used to call the controller action which renders the modal containing the button.
-2. The modal is supposed to pop up with the button containing the proper href (href containing the id and name, from the instance variables)
-3. When the button is clicked it another Ajax call (of type put) should be made to act on that user.
-
-I’m stuck between 1 and 2. I can post some code later but I hope this makes some sense about what I’m trying to do.
-
-Thanks!
-
-\---EDIT---
-
-The modal to be rendered:
-
-`.modal-body`
-
-`= t('remittances.similar_refund_message', :transAm =&gt; @transAm, :EFTCheckDate =&gt; @EFTCheckDate)`
-
-`=hidden_field_tag "action", @action`
-
-`.footer.pull-right.padding-t-20`
-
-`%a.btn.btn-primary{id:'save-refund-confirmation-button', href: update_refund_check_remittances_path(id: @remittance.id, payerName: @remittance.payer.name, checkDuplicate: false, filters: u/filters), 'data-remote'=&gt;'true', type: 'button'}= t('remittances.yes_continue')`
-
-`%a.btn{"data-dismiss" =&gt; "modal", type: "button"}= t('remittances.no_go_back')`
-
-The ruby controller action rendering the modal:
-
-`def render_similar_update_refund_modal`
-
-`@action = params['actionType']`
-
-`@transAm = params['transAm']`
-
-`@EFTCheckDate = params['EFTCheckDate']`
-
-`render partial: 'similar_update_refund_modal_body'`
-
-`end`
-
-The ajax call to the controller action to render the modal:
-
-`$.ajax({`
-
-`url: errorModalUrl,`
-
-`data: { actionType: actionType, transAm: transAmt, EFTCheckDate: EFTCheckDate }, success: function(response) {`
-
-`$('.modal-body').replaceWith(response);`
-
-`$('#remittance-error-button').click();`
-
-`Terra.Overlay.hide();`
-
-`},`
-
-I think my confusion is how to use instance variables... this href works in the modal-body:`href: update_refund_check_remittances_path(checkDuplicate: false, isRefund: true)`
-
-Basically what I want is to have the button in the modal body contain the href that has what I assume are instance variables. This is done on the save button on the bottom of my form page and it works just fine. That save button acts like a form submission button but instead of submitting, it serializes the form data and sends it via Ajax to the controller which directs the data to the java back end. When I take the href from the save button and put it in the modal button, it fails and the ajax call (from clicking the modal button) immediately hits the error branch.
+0.455934 0.035429 0.491363 ( 0.725257) - prod
 
 &amp;#x200B;
 
 &amp;#x200B;
-## [10][How do you structure your models for a multi-lingual app?](https://www.reddit.com/r/rails/comments/hcdh15/how_do_you_structure_your_models_for_a/)
-- url: https://www.reddit.com/r/rails/comments/hcdh15/how_do_you_structure_your_models_for_a/
----
-I've been tasked with creating an e-commerce website, and I'm planning to build it in Rails. However, the client wants the content to be available in both English and Thai.
-
-I'm a Rails newbie (and have also used Laravel and Django), so I'd like some advice on how to approach this. Would the best way be to have a `Product` model that contains the price, quantity, etc, and has a one-to-many relationship with the `ProductInfo` class, which contains the title and description. So `new_product` could have two `ProductInfo` objects, one with an English description and one with a Thai description. I'm guessing the same structure could be used for a `Category` model too.
-
-What would be the practical way of structuring the data entry form for the `Product` class? Separate form for each language, or one form with the fields for both languages?
-## [11][Different data presentation without querying database again](https://www.reddit.com/r/rails/comments/hcb7ah/different_data_presentation_without_querying/)
-- url: https://www.reddit.com/r/rails/comments/hcb7ah/different_data_presentation_without_querying/
----
-Hi I'm from nodejs/react background, and am learning ROR for fun for my side project. The reason why I chose ROR is SEO matters to me and I don't want to waste my time configuring SSR
-
-Basically I want to display some data in two formats, cards and lists.
-
-e.g. user hits url \`/cars\`, based on user saved preference, I'll render \`&lt;%= render card %&gt;\` or \`&lt;%= render list %&gt;\` in my template.
-
-But I also want to allow user to toggle each view by a button in UI. However in ROR's server side mindset, if I understand correctly, when user changes card view to list view, I probably need to send an ajax and server returns \`\*.js.erb\` and replace the entire cards section with list section.
-
-The problem is this inevitably query the database second time to render \`js.erb\`. On a higher level I  need to send ajax to reuse the erb template even though I have all the necessary data already in UI DOM.
-
-One workaround I can think of is to render both \`cards\` and \`list\` in same page, and set \`display: none\` to either of it. But that means I need to render same data twice on the page. Is this considered a good approach?
-
-from React POV, this is pretty straightforward where I can get the data, and use UI state to determine if I need to render cards or list without sending extra ajax. 
-
-What's considered the best practice of doing this without much hassle? Thanks in advance!
-## [12][Would you build your app in Rails in 2020?](https://www.reddit.com/r/rails/comments/hbpmc1/would_you_build_your_app_in_rails_in_2020/)
-- url: https://www.reddit.com/r/rails/comments/hbpmc1/would_you_build_your_app_in_rails_in_2020/
----
-I have a couple of (what I think are) good ideas floating around in my head, and trying to decide what to build them in.
-
-I've dabbled in Rails, as well as full stack JS, but never built anything **serious** with either.
-
-A few years ago I was really looking into becoming a professional Web Developer. I was working tech support for a web design company but had hit a dead end with my career there. So I was doing the typical self studying thing, Coursera, Codecademy, Hartl's tutorial, etc, getting ready to go down that route, before I kind of fell into an Application Support engineer position with a startup my friend was working in, and I have been doing that ever since. Now I support the same application for a self driving car startup making well over 6 figures.
-
-Now that I am in a pretty good place financially and career wise, and I am a little older and have a little better work ethic, I want to take a serious crack at actually making something out of these ideas I have. Back when I was first thinking about this, a few years ago, I was pretty sure I was going to build them in Rails. Rails was pretty popular then, I was learning about it and found it really easy to use and I really liked how fast you could get something up. But it seems like in the few years I wasn't really paying attention, Rails has really fallen out of vogue, as it were. It doesn't scale. People are listing Ruby as their most hated language.  It's really hard to make anything other than an old fashioned Monolith style app with it. Etc. etc.
-
-If you were starting a brand new project in 2020 one that you were hoping to actually monetize and go commercial with, would still doing it in Rails be a decision that you'd regret later, or is Rails fine, just everyone likes to crap on it because it's not the new hotness anymore?

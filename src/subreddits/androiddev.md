@@ -31,248 +31,78 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Is it true that Android apps make less than their iOS counterparts?](https://www.reddit.com/r/androiddev/comments/hdkv40/is_it_true_that_android_apps_make_less_than_their/)
-- url: https://www.reddit.com/r/androiddev/comments/hdkv40/is_it_true_that_android_apps_make_less_than_their/
----
-I hear this a lot. I wanted to ask this to Android developers and see what you guys all think. I have seen some people debunking this. But I also want to hear if this is true from you guys! 
-
-Regarding me, I am more of a web developer and an Android user (and fan). But I have experimented with mobile apps in the past with the likes of Flutter and React Native. Although I would love to hear from you guys on whether or not this is true!
-## [4][Free Royalty Free Music](https://www.reddit.com/r/androiddev/comments/hd9kg3/free_royalty_free_music/)
-- url: https://www.reddit.com/r/androiddev/comments/hd9kg3/free_royalty_free_music/
----
-I am pretty new to Reddit, a European  Composer who writes royalty free music since 2007. About 2 weeks ago I  decided to upload all of my work on YT and my website and provide my  work for free. I cover a lot of genres, from cinematic to upbeat tracks  and I hope that my collection can come in handy.
-
-The  last few tracks I composed as a "pack" which allows editors to customize  the music to their project. I would love some feedback as well. [Here you will find some of my music](https://www.youtube.com/channel/UC-qkEIL9H-99m-qfKThwoaA/).
-
-**You  may use my music within your project(s), even commercially, at no  charge. A credit to my YT-channel or website is appreciated but not  required.**
-
-**Restrictions:**
-
-**You cannot claim my music as your own**  
-**You cannot distribute my music in any store or platform**  
-**You cannot use my music for audio podcasts or audiobooks**  
-**You cannot edit my music, song or remix unless it is published as a “pack”**  
-**You can use my music for facebook videos but you cannot register it within Facebook Rights Manager**
-
-Right now there are about 120 tracks on my website, hope you will have fun browsing!
-## [5][Do you use RxJava in your project?](https://www.reddit.com/r/androiddev/comments/hdkdtk/do_you_use_rxjava_in_your_project/)
-- url: https://www.reddit.com/r/androiddev/comments/hdkdtk/do_you_use_rxjava_in_your_project/
----
-After my acquaintance with RxJava during my intern days. I almost always uses RxJava for concurrencies in Android projects. I am curious, is it the same for everyone else in this subreddit?
-
-[View Poll](https://www.reddit.com/poll/hdkdtk)
-## [6][Does Cameras Work on Facial Recognition Smart Security Technology](https://www.reddit.com/r/androiddev/comments/hdrj3y/does_cameras_work_on_facial_recognition_smart/)
-- url: http://www.codeinnovationsblog.com/2020/06/22/does-cameras-work-on-facial-recognition-smart-security-technology/
+## [3][Apple will soon let developers challenge App Store rules](https://www.reddit.com/r/androiddev/comments/he59w9/apple_will_soon_let_developers_challenge_app/)
+- url: https://techcrunch.com/2020/06/22/apple-will-soon-let-developers-challenge-app-store-rules/?guccounter=1&amp;guce_referrer=aHR0cHM6Ly9uZXdzLmdvb2dsZS5jb20v&amp;guce_referrer_sig=AQAAAGTYMJPliC52HOqzguiaWaw30DlrIi5AEzPVAbXepkPzo6F646D0i9WeOfwIo_Ch7a0bhJLFBwKuVgE555k7rxoWVVeP2cz_1hAqHT2oLcWpcg_uDff6jesOZwp1j_ql0Kp4Tq-HXl3BdODgq3XYdV9EH92pR-4KYMZh2Tb_aH1m
 ---
 
-## [7][Has anyone dealt with “Flippa” before?](https://www.reddit.com/r/androiddev/comments/hdqw8e/has_anyone_dealt_with_flippa_before/)
-- url: https://www.reddit.com/r/androiddev/comments/hdqw8e/has_anyone_dealt_with_flippa_before/
+## [4][the wwdc apple event reminds me of i/o 2017 or 18](https://www.reddit.com/r/androiddev/comments/he5juq/the_wwdc_apple_event_reminds_me_of_io_2017_or_18/)
+- url: https://www.reddit.com/r/androiddev/comments/he5juq/the_wwdc_apple_event_reminds_me_of_io_2017_or_18/
 ---
-Hi, a company called Flippa offered to buy my app. I’ve no idea how to go about it, and I wonder if anyone has dealt with them before.
-Are they legit? How to price the app? And is it worth it? Thanks!
-## [8][May I use other app names in my play store description if it makes sense?](https://www.reddit.com/r/androiddev/comments/hdq62k/may_i_use_other_app_names_in_my_play_store/)
-- url: https://www.reddit.com/r/androiddev/comments/hdq62k/may_i_use_other_app_names_in_my_play_store/
----
-For example, if I integrated another app to automatically synchronize with mine or if I allow importing backups from other apps into mine, am I allowed to name them in my app store description?
-
-Intuitively, I'd say that it is no problem, but Google can be very unpredictable sometimes.. So what is your advice?
-## [9][Trying to use recycled bitmap crash](https://www.reddit.com/r/androiddev/comments/hdpmbl/trying_to_use_recycled_bitmap_crash/)
-- url: https://www.reddit.com/r/androiddev/comments/hdpmbl/trying_to_use_recycled_bitmap_crash/
----
-Hello everyone, I hope you're going through a bugless monday. Things are not going bugless for me. I'm receiving a crash as below:
+[https://www.engadget.com/apple-wwdc2020-event-roundup-203226945.html](https://www.engadget.com/apple-wwdc2020-event-roundup-203226945.html) , quick 20 mins if you don't want to watch it all.
 
 &amp;#x200B;
 
-Fatal Exception: java.lang.RuntimeException: Canvas: trying to use a recycled bitmap android.graphics.Bitmap@9e192f3
+phone apps running on chrome books = ios apps running in osx
 
-at android.graphics.BaseCanvas.throwIfCannotDraw([BaseCanvas.java:55](https://BaseCanvas.java:55))
+bike mode in maps = bike mode in maps
 
-at android.view.DisplayListCanvas.throwIfCannotDraw([DisplayListCanvas.java:227](https://DisplayListCanvas.java:227))
-
-at android.view.RecordingCanvas.drawBitmap([RecordingCanvas.java:97](https://RecordingCanvas.java:97))
-
-at android.graphics.drawable.BitmapDrawable.draw([BitmapDrawable.java:529](https://BitmapDrawable.java:529))
-
-at android.widget.ImageView.onDraw([ImageView.java:1352](https://ImageView.java:1352))
-
-at android.view.View.draw([View.java:19455](https://View.java:19455))
-
-at android.view.View.updateDisplayListIfDirty([View.java:18351](https://View.java:18351))
-
-at android.view.View.draw([View.java:19159](https://View.java:19159))
-
-at android.view.ViewGroup.drawChild([ViewGroup.java:4457](https://ViewGroup.java:4457))
-
-at android.view.ViewGroup.dispatchDraw([ViewGroup.java:4236](https://ViewGroup.java:4236))
-
-at android.view.View.updateDisplayListIfDirty([View.java:18337](https://View.java:18337))
-
-at android.view.View.draw([View.java:19159](https://View.java:19159))
-
-at android.view.ViewGroup.drawChild([ViewGroup.java:4457](https://ViewGroup.java:4457))
-
-at android.view.ViewGroup.dispatchDraw([ViewGroup.java:4236](https://ViewGroup.java:4236))
-
-at android.view.View.draw([View.java:19463](https://View.java:19463))
-
-at android.widget.ScrollView.draw([ScrollView.java:1739](https://ScrollView.java:1739))
-
-at android.view.View.updateDisplayListIfDirty([View.java:18351](https://View.java:18351))
-
-at android.view.View.draw([View.java:19159](https://View.java:19159))
-
-at android.view.ViewGroup.drawChild([ViewGroup.java:4457](https://ViewGroup.java:4457))
-
-at android.view.ViewGroup.dispatchDraw([ViewGroup.java:4236](https://ViewGroup.java:4236))
-
-at android.view.View.updateDisplayListIfDirty([View.java:18337](https://View.java:18337))
-
-at android.view.View.draw([View.java:19159](https://View.java:19159))
-
-at android.view.ViewGroup.drawChild([ViewGroup.java:4457](https://ViewGroup.java:4457))
-
-at android.view.ViewGroup.dispatchDraw([ViewGroup.java:4236](https://ViewGroup.java:4236))
-
-at android.view.View.draw([View.java:19463](https://View.java:19463))
-
-at android.view.View.updateDisplayListIfDirty([View.java:18351](https://View.java:18351))
-
-at android.view.ViewGroup.recreateChildDisplayList([ViewGroup.java:4436](https://ViewGroup.java:4436))
-
-at android.view.ViewGroup.dispatchGetDisplayList([ViewGroup.java:4416](https://ViewGroup.java:4416))
-
-at android.view.View.updateDisplayListIfDirty([View.java:18295](https://View.java:18295))
-
-at android.view.ViewGroup.recreateChildDisplayList([ViewGroup.java:4436](https://ViewGroup.java:4436))
-
-at android.view.ViewGroup.dispatchGetDisplayList([ViewGroup.java:4416](https://ViewGroup.java:4416))
-
-at android.view.View.updateDisplayListIfDirty([View.java:18295](https://View.java:18295))
-
-at android.view.View.draw([View.java:19159](https://View.java:19159))
-
-at android.view.ViewGroup.drawChild([ViewGroup.java:4457](https://ViewGroup.java:4457))
-
-at android.view.ViewGroup.dispatchDraw([ViewGroup.java:4260](https://ViewGroup.java:4260))
-
-at android.view.View.updateDisplayListIfDirty([View.java:18337](https://View.java:18337))
-
-at android.view.ViewGroup.recreateChildDisplayList([ViewGroup.java:4436](https://ViewGroup.java:4436))
-
-at android.view.ViewGroup.dispatchGetDisplayList([ViewGroup.java:4416](https://ViewGroup.java:4416))
-
-at android.view.View.updateDisplayListIfDirty([View.java:18295](https://View.java:18295))
-
-at android.view.ViewGroup.recreateChildDisplayList([ViewGroup.java:4436](https://ViewGroup.java:4436))
-
-at android.view.ViewGroup.dispatchGetDisplayList([ViewGroup.java:4416](https://ViewGroup.java:4416))
-
-at android.view.View.updateDisplayListIfDirty([View.java:18295](https://View.java:18295))
-
-at android.view.ViewGroup.recreateChildDisplayList([ViewGroup.java:4436](https://ViewGroup.java:4436))
-
-at android.view.ViewGroup.dispatchGetDisplayList([ViewGroup.java:4416](https://ViewGroup.java:4416))
-
-at android.view.View.updateDisplayListIfDirty([View.java:18295](https://View.java:18295))
-
-at android.view.ViewGroup.recreateChildDisplayList([ViewGroup.java:4436](https://ViewGroup.java:4436))
-
-at android.view.ViewGroup.dispatchGetDisplayList([ViewGroup.java:4416](https://ViewGroup.java:4416))
-
-at android.view.View.updateDisplayListIfDirty([View.java:18295](https://View.java:18295))
-
-at android.view.ViewGroup.recreateChildDisplayList([ViewGroup.java:4436](https://ViewGroup.java:4436))
-
-at android.view.ViewGroup.dispatchGetDisplayList([ViewGroup.java:4416](https://ViewGroup.java:4416))
-
-at android.view.View.updateDisplayListIfDirty([View.java:18295](https://View.java:18295))
-
-at android.view.ViewGroup.recreateChildDisplayList([ViewGroup.java:4436](https://ViewGroup.java:4436))
-
-at android.view.ViewGroup.dispatchGetDisplayList([ViewGroup.java:4416](https://ViewGroup.java:4416))
-
-at android.view.View.updateDisplayListIfDirty([View.java:18295](https://View.java:18295))
-
-at android.view.ThreadedRenderer.updateViewTreeDisplayList([ThreadedRenderer.java:669](https://ThreadedRenderer.java:669))
-
-at android.view.ThreadedRenderer.updateRootDisplayList([ThreadedRenderer.java:675](https://ThreadedRenderer.java:675))
-
-at android.view.ThreadedRenderer.draw([ThreadedRenderer.java:783](https://ThreadedRenderer.java:783))
-
-at android.view.ViewRootImpl.draw([ViewRootImpl.java:3194](https://ViewRootImpl.java:3194))
-
-at android.view.ViewRootImpl.performDraw([ViewRootImpl.java:2992](https://ViewRootImpl.java:2992))
-
-at android.view.ViewRootImpl.performTraversals([ViewRootImpl.java:2530](https://ViewRootImpl.java:2530))
-
-at android.view.ViewRootImpl.doTraversal([ViewRootImpl.java:1488](https://ViewRootImpl.java:1488))
-
-at [android.view.ViewRootImpl$TraversalRunnable.run](https://android.view.ViewRootImpl$TraversalRunnable.run)([ViewRootImpl.java:7182](https://ViewRootImpl.java:7182))
-
-at [android.view.Choreographer$CallbackRecord.run](https://android.view.Choreographer$CallbackRecord.run)([Choreographer.java:935](https://Choreographer.java:935))
-
-at android.view.Choreographer.doCallbacks([Choreographer.java:747](https://Choreographer.java:747))
-
-at android.view.Choreographer.doFrame([Choreographer.java:677](https://Choreographer.java:677))
-
-at [android.view.Choreographer$FrameDisplayEventReceiver.run](https://android.view.Choreographer$FrameDisplayEventReceiver.run)([Choreographer.java:921](https://Choreographer.java:921))
-
-at android.os.Handler.handleCallback([Handler.java:790](https://Handler.java:790))
-
-at android.os.Handler.dispatchMessage([Handler.java:99](https://Handler.java:99))
-
-at android.os.Looper.loop([Looper.java:192](https://Looper.java:192))
-
-at android.app.ActivityThread.main([ActivityThread.java:6759](https://ActivityThread.java:6759))
-
-at java.lang.reflect.Method.invoke([Method.java](https://Method.java))
-
-at [com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run](https://com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run)([RuntimeInit.java:556](https://RuntimeInit.java:556))
-
-at com.android.internal.os.ZygoteInit.main([ZygoteInit.java:875](https://ZygoteInit.java:875))
+picture in picture = picture in picture 
 
 &amp;#x200B;
 
-I cannot trace the crash since it does not create a log from the classes I wrote. Did anyone experience such a thing and solve?
-
-Any help is appreciated.
-## [10][Singletons are not evil...right?](https://www.reddit.com/r/androiddev/comments/hdp5r2/singletons_are_not_evilright/)
-- url: https://www.reddit.com/r/androiddev/comments/hdp5r2/singletons_are_not_evilright/
+fells kinda deja vu, calling dr. who
+## [5][Why has my keyword ranking on the Play Store disappeared?](https://www.reddit.com/r/androiddev/comments/hee6sl/why_has_my_keyword_ranking_on_the_play_store/)
+- url: https://www.reddit.com/r/androiddev/comments/hee6sl/why_has_my_keyword_ranking_on_the_play_store/
 ---
-From my own experience, android dev is like gardening - there are wide variety of tools, and you have to be mindful to use the right tools for the job.
+I have a couple of apps on the Play Store. They've been live for about 18 months.
 
-And I simply feel after many times revisioning my own demo apps, that using singletons is not evil at all, if done correctly.
+They haven't performed particularly well - that's OK they're just small game apps. So recently I started to focus on keyword research and ASO. I made small incremental changes to the descriptions and other meta data each week and for the first three or four weeks it was going really well - on the Play Store my apps moved up from nowhere into the 20s and teens for long-tail keywords. Good progress, everything was moving in the right direction.
 
-My demo app involves my ViewModel class executing a Firebase Firestore query, returning a data class consisting of about a half dozen primitive types. 
+Then one day my apps just completely disappeared from the rankings. Just gone. If I type my app names into the search bar they don’t appear. If I type the names in with the spaces removed then they appear. But they’ve just disappeared from the keyword listings.
 
-Now, I could just store the data class inside a ViewModel, and then storing a copy inside a SavedStateHandle so that whenever the ViewModel resets - by the phone being rotated, the app paused or the Fragment changed with another, I can code for the ViewModel upon startup/reset to immediately call back the copy from the SavedStateHandle. 
+On AppAnnie, if I look at their keyword tool, my apps are now ranking for one single random word that appears just once in the description, usually around position 205. And it's position fluctuates constantly from one day to the next from 243, 247, 243, 247 etc...
 
-But I imagine that this is just tedious and not code-efficient at all. Singular primitive types like Int, String are okay, but a whole data class? I need to actually serialize the whole data class into a String using Gson before saving it inside a ViewModel's SavedStateHandle. And then when the Viewmodel gets reset, I need to retrieve from SavedStateHandle and deserialize the String back to the date class (unless there is actually a more elegant way to do this that I do not know of?)
+Now If I look at the keyword rankings on AppAnnie even my app name doesn’t rank anymore. And there’s a particular date in late May where that happens. It’s ranking number one continually for the app name then on one particular date everything just stops as if it’s been turned off.
 
-For small data classes, this is still okay. My demo app only queries small data classes from Firebase. But what if I need to download HUGE data classes instead? Like for example, market prices from stocks? Weather data? Directions between two coordinates on a map?
+And in complete contrast to that on the iOS App Store the opposite is true - I’ve used the same descriptions - just copy/pasted and they’ve really taken off. I’m ranking number one for a certain key phrase (which admittedly doesn’t have the greatest reach) and in the top 10 for others.
 
-Then every time I retrieve a huge data class from a Firebase query, I need to serialize the whole data class before shoving it inside the ViewModel's SavedStateHandle, and this actually causes the app to pause and even freeze. This hampers the app's performance. The work load is doubled since the app also needs to deserialize too every single time the ViewModel is reset. 
+For all intents and purposes my apps on the Play Store have simply disappeared from view. Any idea why this has happened? I’d done keyword research and was making positive progress then one day nothing - as if my apps had simply been switched off.
 
-What if I actually want to save the data class inside my app and then modify the variables inside the data class? I still need to serialize and deserialize, even though I just edited one variable inside the data class. 
+I’ve contacted Google Play Store support a couple of days ago to ask why this is but I’ve yet to get a reply.
 
-It's like I'm using a machete to cut down a sequoia bark. It's just not the right tool for the job....when I can just use Object instead. 
-
-But please, hear me out. When I place the data class I retrieved from the Firebase query into an Object, the data class inside the object persists for the whole life of the app - at least as I have observed. The data doesn't go away until the app closes. The data persists even if the Viewmodel gets reset. If I want to make some edits to the data class, I can just edit the variables directly and not have to worry about serializing and deserializing. 
-
-But still, singletons, evil. Yeah. I read that in blogs and articles everywhere.
-
-I am wracking my head here. Either I use Object and have an easier coding experience with the app running smoothly, or squeeze my brain like mad figuring out workaround solutions that still would end up with my app running slow because of all the serializing and deserializing, just to please other developers instead of the end user, because singletons are evil.
-
-I need to please developers since I intend to show these demo apps to interviewers. But I am thinking if I just become a solo developer and make my apps purely for end users, I can be as evil as I want, right?
-
-TL:DR; I love singletons but I am wary of using them for my demo apps because other devs say singletons are evil.
-## [11][What are your thoughts on integrating your google apps with HMS, and port them to huawei AppGallery?](https://www.reddit.com/r/androiddev/comments/hdn7wb/what_are_your_thoughts_on_integrating_your_google/)
-- url: /r/Huawei_Developers/comments/h9au3h/what_are_your_thoughts_on_integrating_your_google/
+Has this happened to anyone else?
+## [6][Dagger 2.28.1 release - fixes wrongly added permissions](https://www.reddit.com/r/androiddev/comments/hebf7l/dagger_2281_release_fixes_wrongly_added/)
+- url: https://github.com/google/dagger/releases/tag/dagger-2.28.1
 ---
 
-## [12][Funny things to do when you detect that a user is using a cracked version of your app.](https://www.reddit.com/r/androiddev/comments/hctu1d/funny_things_to_do_when_you_detect_that_a_user_is/)
-- url: https://www.reddit.com/r/androiddev/comments/hctu1d/funny_things_to_do_when_you_detect_that_a_user_is/
+## [7][Overriding TZDB in Java 8 desugaring java.time](https://www.reddit.com/r/androiddev/comments/he9j4h/overriding_tzdb_in_java_8_desugaring_javatime/)
+- url: https://www.reddit.com/r/androiddev/comments/he9j4h/overriding_tzdb_in_java_8_desugaring_javatime/
 ---
-I have a paid app on PlayStore, the app has checks if the user has bought the app, if not I close it immediately.
+It seems that TZDB of Android devices is updated by the device manufacturers. Can we pack the latest TZDB into our app and load it when initializing the app [just like ThreeTenABP](https://github.com/JakeWharton/ThreeTenABP/blob/master/threetenabp/src/main/java/com/jakewharton/threetenabp/AndroidThreeTen.java#L22)?
 
-I was wondering what you guys do when you detect that your app is cracked, like increasing the text size by each day, making buttons fade by each day, I don't know, share your ideas
+The readme of ThreeTenABP suggests us to switch to Android Gradle plugin 4.0 and `java.time`, but seems it does not ship with the classes for dynamically changing the TZDB source.
+## [8][Testing your Espresso Matchers](https://www.reddit.com/r/androiddev/comments/hee448/testing_your_espresso_matchers/)
+- url: https://medium.com/@fabiocarballo/testing-espresso-matchers-1c3c587d7d39?sk=ac01c339f96b7ae958c7bc45a77f7d87
+---
+
+## [9][Android API question](https://www.reddit.com/r/androiddev/comments/hedj1k/android_api_question/)
+- url: https://www.reddit.com/r/androiddev/comments/hedj1k/android_api_question/
+---
+Hello Android Dev's, so I have a simple question that I want an answer to:
+I have an APP that is built on Android 28 API, and I have an SDK that is built on Android 29 API, I have checks on Runtime to see which version is running and what API to use, but, can I integrate an SDK that is built on API 29 into an APP that will be built on API 28? Thanks in advance!
+## [10][Is there a place to download template layouts and designs to use in my personal Android project?](https://www.reddit.com/r/androiddev/comments/heatgp/is_there_a_place_to_download_template_layouts_and/)
+- url: https://www.reddit.com/r/androiddev/comments/heatgp/is_there_a_place_to_download_template_layouts_and/
+---
+I've recently started getting into Android app development and find the front-end stuff really tedious. Is there a website or other place where I can find sample layouts, Buttons, EditTexts, Spinners etc that I can simply copy the style I like into my own XML files from and make some changes as and when I need?
+## [11][What's the best way of handling multithreading in Android?](https://www.reddit.com/r/androiddev/comments/hedcdb/whats_the_best_way_of_handling_multithreading_in/)
+- url: https://www.reddit.com/r/androiddev/comments/hedcdb/whats_the_best_way_of_handling_multithreading_in/
+---
+Few years ago when I took an Android course they suggested that I should use Asynctask for multithreading stuff, now I'm tinkering with Android again and the official docs say that Asynctask is deprecated and its telling me to use java.util.concurrent instead, I want to use kotlin coroutines but I need to learn kotlin for that.
+
+I have heard that RxJava/RxAndroid is good and is a must learn for an Android developer. Should I learn it if I just want to just create a thread and do some processing?
+
+What would you suggest for doing some multithreading stuff in Android and what's the current best practices right now?
+## [12][Best practices for creating a developer account?](https://www.reddit.com/r/androiddev/comments/hdtwus/best_practices_for_creating_a_developer_account/)
+- url: https://www.reddit.com/r/androiddev/comments/hdtwus/best_practices_for_creating_a_developer_account/
+---
+Hi, newb Android dev here. I've been reading some scary posts on people getting their dev accounts terminated by Google. I read posts that suggest setting up an LLC even. I am trying to set up a new Google account just for learning and developing apps. Now, I'm not even close to making money from the Play Store, but would still like to be informed on what to do and what NOT to do. Any tips or advice would be appreciated!

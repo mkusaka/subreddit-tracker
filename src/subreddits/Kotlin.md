@@ -1,9 +1,200 @@
 # Kotlin
-## [1][Within 24 hours, kotlin will overtake the scala subreddit in subscriber count](https://www.reddit.com/r/Kotlin/comments/hdbqs1/within_24_hours_kotlin_will_overtake_the_scala/)
+## [1][Kotlin Coroutines vs Java Threads](https://www.reddit.com/r/Kotlin/comments/hecrel/kotlin_coroutines_vs_java_threads/)
+- url: https://piotrminkowski.com/2020/06/23/kotlin-coroutines-vs-java-threads/
+---
+
+## [2][SQLDelight 1.4.0 released](https://www.reddit.com/r/Kotlin/comments/hdvn5g/sqldelight_140_released/)
+- url: https://github.com/cashapp/sqldelight/releases/tag/1.4.0
+---
+
+## [3][variable name vs type position](https://www.reddit.com/r/Kotlin/comments/hedgeg/variable_name_vs_type_position/)
+- url: https://www.reddit.com/r/Kotlin/comments/hedgeg/variable_name_vs_type_position/
+---
+Hey everyone, trying to learn Kotlin, coming from Java.
+
+Why did Kotlin decide to switch the variable name and the type positions around? Is there a good reason for this?  
+I find it so much easier to write code like this:
+
+Dog dog; (Something like D&lt;ctrl-space&gt;&lt;space&gt;&lt;ctrl-space&gt;&lt;enter&gt;)
+
+vs.
+
+dog: Dog (Where the autocomplete is only available towards the end of the line)
+
+What advantages are there to do it the Kotlin way?
+## [4][What's the best way to check if something is null in Kotlin?](https://www.reddit.com/r/Kotlin/comments/he5792/whats_the_best_way_to_check_if_something_is_null/)
+- url: https://www.reddit.com/r/Kotlin/comments/he5792/whats_the_best_way_to_check_if_something_is_null/
+---
+Should I use `variable == null`, `variable === null` or something else?
+## [5][Where can I see a list of the built-in exceptions in Kotlin?](https://www.reddit.com/r/Kotlin/comments/he6nv6/where_can_i_see_a_list_of_the_builtin_exceptions/)
+- url: https://www.reddit.com/r/Kotlin/comments/he6nv6/where_can_i_see_a_list_of_the_builtin_exceptions/
+---
+I like to throw exceptions built into the language with a custom message explaining the error when possible, instead of making my own exceptions every time. Howver, I couldn't find a definitive list of all the exceptions Kotlin defines in the standard library and their usages. Does such a list exist? Is this way of throwing exceptions even a good idea?
+## [6][New Dokka - Designed for Fearless Creativity](https://www.reddit.com/r/Kotlin/comments/hdxgj4/new_dokka_designed_for_fearless_creativity/)
+- url: https://www.youtube.com/watch?v=OvFoTRhqaKg
+---
+
+## [7][Kotlin REPL?](https://www.reddit.com/r/Kotlin/comments/hdsppd/kotlin_repl/)
+- url: https://www.reddit.com/r/Kotlin/comments/hdsppd/kotlin_repl/
+---
+Does Kotlin have a REPL? Something like JShell or Ipython?
+## [8][Android | Having a strange WrongThread error that I can't figure out](https://www.reddit.com/r/Kotlin/comments/hdzap2/android_having_a_strange_wrongthread_error_that_i/)
+- url: https://www.reddit.com/r/Kotlin/comments/hdzap2/android_having_a_strange_wrongthread_error_that_i/
+---
+SOLVED :D
+
+\-------
+
+Hey all,
+
+Just quickly wanted to say thanks again to the guys that helped me out a few days ago, thanks this sub :D
+
+I'm getting the following error message when I try to add some new values to a text view on my app.
+
+    android.view.ViewRootImpl$CalledFromWrongThreadException: Only the original thread that created a view hierarchy can touch its views.
+
+The strangest thing is that this problem sometimes happens, and sometimes doesnt.
+
+I'm running it within an overriden onResponse() method within a OkHttpClient. Everything has been working great, but now it's gotten to a point where I can't add any more values to my weather app without the app crashing.
+
+Some examples of code that works currently:
+
+    threeDay.text = getNextDay(twoDay.text.toString())
+    threeWeather.text = weatherData.daily[2].weather[0].main
+    cityText.text = getLocalLocation(weatherData.timezone)
+    weatherSummaryText.text = weatherData.current.weather[0].description
+
+And then some error code, which when I test in a println method gives me exactly the value I want:
+
+    nowTemp.text = kelvinToCelsius(weatherData.hourly[0].temp).toString()
+    oneTemp.text = kelvinToCelsius(weatherData.hourly[1].temp).toString()
+
+Where kelvinToCelsius is just a converter method I made.
+
+&amp;#x200B;
+
+Can anyone give me any insight into this strange problem?
+
+Cheers
+
+&amp;#x200B;
+
+EDIT:
+
+&amp;#x200B;
+
+the onResponse method where I am doing inputting all my information from the API.
+
+    private fun fetchJson() {
+    
+            val url = "https://api.openweathermap.org/data/2.5/onecall?lat=51.51&amp;lon=-0.19&amp;exclude=minutely&amp;appid=MYKEY"
+    
+            val request = Request.Builder().url(url).build()
+    
+            client.newCall(request).enqueue(object : Callback {
+    
+                override fun onFailure(call: Call, e: IOException) {
+                    println("Failed to execute request")
+                }
+    
+                override fun onResponse(call: Call, response: Response) {
+                    val body = response.body?.string()
+                    println(body)
+    
+                    val gson = GsonBuilder().create()
+    
+                    val weatherData = gson.fromJson(body, WeatherData::class.java)
+    
+                    /**
+                     * ERROR: High/Low temps not registering.
+                     * android.view.ViewRootImpl$CalledFromWrongThreadException: Only         the original thread that created a view hierarchy can touch its views.
+                     * Sometimes works, sometimes doesn't???
+                     */
+    
+                    //Fill out info from top to bottom.
+                    //Top
+                    cityText.text = getLocalLocation(weatherData.timezone)
+                    weatherSummaryText.text = weatherData.current.weather[0].description
+                    tempText.text = kelvinToCelsius(weatherData.current.temp).toString() + "°"
+    
+                    /////////////////////////Hourly
+                    currentDayText.text = getDateDay(weatherData.current.dt)
+    
+    //                nowTemp.text = kelvinToCelsius(weatherData.hourly[0].temp).toString()
+    //
+    //                oneTemp.text = kelvinToCelsius(weatherData.hourly[1].temp).toString()
+    //
+    //                twoTemp.text = kelvinToCelsius(weatherData.hourly[2].temp).toString()
+    //
+    //                threeTemp.text = kelvinToCelsius(weatherData.hourly[3].temp).toString()
+    //
+    //                fourTemp.text = kelvinToCelsius(weatherData.hourly[4].temp).toString()
+    //
+    //                fiveTemp.text = kelvinToCelsius(weatherData.hourly[5].temp).toString()
+    //
+    //                sixTemp.text = kelvinToCelsius(weatherData.hourly[6].temp).toString()
+    //
+    //                sevenTemp.text = kelvinToCelsius(weatherData.hourly[7].temp).toString()
+    //
+    //                eightTemp.text = kelvinToCelsius(weatherData.hourly[8].temp).toString()
+    //
+    //                nineTemp.text = kelvinToCelsius(weatherData.hourly[9].temp).toString()
+    //
+    //                tenTemp.text = kelvinToCelsius(weatherData.hourly[10].temp).toString()
+    //
+    //                elevenTemp.text = kelvinToCelsius(weatherData.hourly[11].temp).toString()
+    //
+    //                twelveTemp.text = kelvinToCelsius(weatherData.hourly[12].temp).toString()
+    
+    
+                    /////////////////////////Daily
+                    oneDay.text = getNextDay(currentDayText.text.toString())
+                    oneWeather.text = weatherData.daily[0].weather[0].main
+    //                oneHighTemp.text = kelvinToCelsius(weatherData.daily[0].temp.max).toString()
+    //                oneLowTemp.text = kelvinToCelsius(weatherData.daily[0].temp.min).toString()
+    
+                    twoDay.text = getNextDay(oneDay.text.toString())
+                    twoWeather.text = weatherData.daily[1].weather[0].main
+    //                twoHighTemp.text = kelvinToCelsius(weatherData.daily[1].temp.max).toString()
+    //                twoLowTemp.text = kelvinToCelsius(weatherData.daily[1].temp.min).toString()
+    
+                    threeDay.text = getNextDay(twoDay.text.toString())
+                    threeWeather.text = weatherData.daily[2].weather[0].main
+    //                threeHighTemp.text = kelvinToCelsius(weatherData.daily[2].temp.max).toString()
+    //                threeLowTemp.text = kelvinToCelsius(weatherData.daily[2].temp.min).toString()
+    
+                    fourDay.text = getNextDay(threeDay.text.toString())
+                    fourWeather.text = weatherData.daily[3].weather[0].main
+    //                fourHighTemp.text = kelvinToCelsius(weatherData.daily[3].temp.max).toString()
+    //                fourLowTemp.text = kelvinToCelsius(weatherData.daily[3].temp.min).toString()
+    
+                    fiveDay.text = getNextDay(fourDay.text.toString())
+                    fiveWeather.text = weatherData.daily[4].weather[0].main
+    //                fiveHighTemp.text = kelvinToCelsius(weatherData.daily[4].temp.max).toString()
+    //                fiveLowTemp.text = kelvinToCelsius(weatherData.daily[4].temp.min).toString()
+    
+                    sixDay.text = getNextDay(fiveDay.text.toString())
+                    sixWeather.text = weatherData.daily[5].weather[0].main
+    //                sixHighTemp.text = kelvinToCelsius(weatherData.daily[5].temp.max).toString()
+    //                sixLowTemp.text = kelvinToCelsius(weatherData.daily[5].temp.min).toString()
+    
+                    sevenDay.text = getNextDay(sixDay.text.toString())
+                    sevenWeather.text = weatherData.daily[6].weather[0].main
+    //                sevenHighTemp.text = kelvinToCelsius(weatherData.daily[6].temp.max).toString()
+    //                sevenLowTemp.text = kelvinToCelsius(weatherData.daily[6].temp.min).toString()
+    
+                }
+            })
+    
+    
+        }
+
+&amp;#x200B;
+## [9][Within 24 hours, kotlin will overtake the scala subreddit in subscriber count](https://www.reddit.com/r/Kotlin/comments/hdbqs1/within_24_hours_kotlin_will_overtake_the_scala/)
 - url: https://www.reddit.com/r/Kotlin/comments/hdbqs1/within_24_hours_kotlin_will_overtake_the_scala/
 ---
 Enjoy!
-## [2][Low-level api interop in Kotlin/JVM?](https://www.reddit.com/r/Kotlin/comments/hdndw9/lowlevel_api_interop_in_kotlinjvm/)
+## [10][Low-level api interop in Kotlin/JVM?](https://www.reddit.com/r/Kotlin/comments/hdndw9/lowlevel_api_interop_in_kotlinjvm/)
 - url: https://www.reddit.com/r/Kotlin/comments/hdndw9/lowlevel_api_interop_in_kotlinjvm/
 ---
 Is there some guide to get started on pulling info from some low level apis such as wireless information, battery information, etc?
@@ -11,107 +202,3 @@ Is there some guide to get started on pulling info from some low level apis such
 I know in linux its easy by running some commands and filtering outputs, but its a mess in platforms like windows where we need to write some sort of bindings in like jni, but I still don't know much about JNI and want some guides to work.
 
 And is it possible to interact them (low-level api) with help of Kotlin/Native to write bindings for Kotlin/JVM instead of writing in direct C++?
-## [3][I can't decide which one is better practice](https://www.reddit.com/r/Kotlin/comments/hdoz36/i_cant_decide_which_one_is_better_practice/)
-- url: https://www.reddit.com/r/Kotlin/comments/hdoz36/i_cant_decide_which_one_is_better_practice/
----
-I usually don't care much about code styling but i can't  decide which one is better.  what do you think?
-
-This:
-
-`if (person.nationality == NATIONALITY_ONE) {`
-
-`person.unit= UNIT_METRIC`
-
-`person.drink= DRINK_TEA`
-
-`person.food= FOOD_PIZZA`
-
-`person.sport= SPORT_FOOTBALL`
-
-`} else {`
-
-`person.unit= UNIT_IMPERIAL`
-
-`person.drink= DRINK_COFFEE`
-
-`person.food= FOOD_HOTDOG`
-
-`person.sport= SPORT_HOCKEY`
-
-`}`
-
-&amp;#x200B;
-
-Or this:
-
-`person.unit = if (person.nationality == NATIONALITY_ONE) UNIT_METRIC else UNIT_IMPERIAL`
-
-`person.drink = if (person.nationality == NATIONALITY_ONE) DRINK_TEA else DRINK_COFFEE`
-
-[`person.food`](https://person.food) `= if (person.nationality == NATIONALITY_ONE) FOOD_PIZZA else FOOD_HOTDOG`
-
-`person.sport = if (person.nationality == NATIONALITY_ONE) SPORT_FOOTBALL else SPORT_HOCKEY`
-## [4]['this' in javascript callbacks from Kotlin](https://www.reddit.com/r/Kotlin/comments/hdenlz/this_in_javascript_callbacks_from_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/hdenlz/this_in_javascript_callbacks_from_kotlin/
----
-'this' in javascript is fun!  ;-). But at least it's defined.  For Kotlin that's transpiled to javascript, I think they're missing that piece, or just couldn't.  In a EventListener callback, there doesn't seem to be a direct way of getting 'this' exactly.  Is event.currentTarget always the same (== the calling DOM object)? 
-
-I'm not expert at this and am using the D3 libs solely in Kotlin.  Most of the examples in js expect 'this'.  However D3 appears to give access to the event parameter,  often times through a D3.event global ... ?  
-
-I've gotten it to work, after much head-scratching but was hoping for someone more knowledgeable to weigh in on 'this'.
-## [5][Is it so wrong to learn the "bad practice" of a pattern first to fully understand what is happening?](https://www.reddit.com/r/Kotlin/comments/hd81q3/is_it_so_wrong_to_learn_the_bad_practice_of_a/)
-- url: https://www.reddit.com/r/Kotlin/comments/hd81q3/is_it_so_wrong_to_learn_the_bad_practice_of_a/
----
-Like i said in the title, i really like to use and learn the "bad practices" first because it feels like it really helps me to understand things better actually.  For example i am not using injections right now until the bad practice of doing it without kodein/dagger is in my brain muscle.
-
-For me it feels like, it really helps me to solve future problems by myself because I understand the things happening underneath the surface.
-
-Do you think it is a bad practice to learn the "bad practice" first?
-
-Sorry i am not a native english speaker so I hope the text makes actually sense :)
-## [6][best resources to learn Kotlin](https://www.reddit.com/r/Kotlin/comments/hd3rim/best_resources_to_learn_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/hd3rim/best_resources_to_learn_kotlin/
----
-Python programmer needs to learn Kotlin for upcoming interview in two weeks time. What would be the best resources to start. The goal is to learn essentials web development with Kotlin using Springboot.
-## [7][Linked List as Iterable](https://www.reddit.com/r/Kotlin/comments/hdcyk8/linked_list_as_iterable/)
-- url: https://www.reddit.com/r/Kotlin/comments/hdcyk8/linked_list_as_iterable/
----
-So, I was coding something using Linked Lists, but there was no fitting implementation of them.
-(I would realy like to make them usable as Iterables, to make fit into Kotlins Interface System.)
-I am currently trying to implement a LinkedList class on my own, but I am realy unsure about the implementation of the Interfaces.
-Is there any good implementation that I just haven't found?
-Or is there a source on how to make a new functioning Iterable?
-## [8][Problems with multiplications for double floating-point numbers](https://www.reddit.com/r/Kotlin/comments/hdbfty/problems_with_multiplications_for_double/)
-- url: https://www.reddit.com/r/Kotlin/comments/hdbfty/problems_with_multiplications_for_double/
----
-Simple test with weird result:
-
-    @Test
-    fun doubleMultiplicationTest() { 
-      assertEquals(3_3300.0, 1_000_000.0 * 0.0333) // This succeeds 
-      assertEquals(3_330.0, 100_000.0 * 0.0333) // This fails 
-    }
-
-Second assert equals fails with a message:
-
-    expected:&lt;3330.0&gt; but was:&lt;3330.0000000000005&gt;
-    Expected :3330.0
-    Actual   :3330.0000000000005
-
-My app is supposed to run hundreds of similar operations, can I trust that they'll be correct or should I use some different basic math methods than the ones from the standard library? Is this error occurring because of some weird quirks of binary numbers representation?
-## [9][What is Data Class in Kotlin? and How to use Data Class in Kotlin?](https://www.reddit.com/r/Kotlin/comments/hda4f5/what_is_data_class_in_kotlin_and_how_to_use_data/)
-- url: https://youtu.be/knZ8Vk_Hkcs
----
-
-## [10][How to avoid sharepreference overriding previous data?](https://www.reddit.com/r/Kotlin/comments/hcze76/how_to_avoid_sharepreference_overriding_previous/)
-- url: https://www.reddit.com/r/Kotlin/comments/hcze76/how_to_avoid_sharepreference_overriding_previous/
----
-I am using sharePreference to save a user input data. The problem is when I create a new data it overrides the previous data. I have two inputs a title and description and I save this data. I am trying to pass this data into a recyclerview but I want to create a new data and not override current data.
-
-My data class:  [https://pastebin.com/8WKEimNJ](https://pastebin.com/8WKEimNJ) 
-
-MainActivity:  [https://pastebin.com/HZLMwM8v](https://pastebin.com/HZLMwM8v) (contains recyclerview)
-
-NoteActivity :  [https://pastebin.com/CtrKcqEs](https://pastebin.com/CtrKcqEs) (contains userinput)
-
-Recyclerview adapter class :  [https://pastebin.com/Z6dh3gDh](https://pastebin.com/Z6dh3gDh)

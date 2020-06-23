@@ -23,67 +23,53 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/hdkuz9/whats_everyone_working_on_this_week_262020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-26-2020/44701?u=llogiq)!
-## [3][Announcing Tokei 12: A fast &amp; accurate code analysis tool and library.](https://www.reddit.com/r/rust/comments/hdr6gd/announcing_tokei_12_a_fast_accurate_code_analysis/)
+## [3][Cheap tricks for high-performance Rust](https://www.reddit.com/r/rust/comments/he8zky/cheap_tricks_for_highperformance_rust/)
+- url: https://deterministic.space/high-performance-rust.html
+---
+
+## [4][The ARM-ageddon is comming, now what?](https://www.reddit.com/r/rust/comments/hdzohj/the_armageddon_is_comming_now_what/)
+- url: https://www.reddit.com/r/rust/comments/hdzohj/the_armageddon_is_comming_now_what/
+---
+Finally is official: Apple will switch to ARM, biggly. 
+
+According to the keynote, "just a recompile" will be enough for most apps (surely made with Swift/Obj-C), but how this could impact rust going forward?
+
+&amp;#x200B;
+
+What to know/do to be ready?
+## [5][Hey Rustaceans! I'm starting a blog post series about how I implement a CQRS/ES framework. I will try to describe how I design and implement the whole thing. I will start from scratch and this is the first blog post! Feel free to help me and contribute!](https://www.reddit.com/r/rust/comments/hea0wz/hey_rustaceans_im_starting_a_blog_post_series/)
+- url: https://freyskeyd.fr/posts/building-chekov-part-1-design-the-eventstore/
+---
+
+## [6][Rust's Huge Compilation Units](https://www.reddit.com/r/rust/comments/he5ran/rusts_huge_compilation_units/)
+- url: https://pingcap.com/blog/rust-huge-compilation-units/
+---
+
+## [7][Rust AWS Lambda functions!](https://www.reddit.com/r/rust/comments/he78fs/rust_aws_lambda_functions/)
+- url: https://i.redd.it/2z23cit7yk651.gif
+---
+
+## [8][IPv6 and Rust](https://www.reddit.com/r/rust/comments/hee938/ipv6_and_rust/)
+- url: https://blog.apnic.net/2020/06/02/ipv6-and-rust/
+---
+
+## [9][Announcing Tokei 12: A fast &amp; accurate code analysis tool and library.](https://www.reddit.com/r/rust/comments/hdr6gd/announcing_tokei_12_a_fast_accurate_code_analysis/)
 - url: https://github.com/XAMPPRocky/tokei/releases/tag/v12.0.0
 ---
 
-## [4][My project TermUI on it's way to become an actual terminal emulator in a terminal !](https://www.reddit.com/r/rust/comments/hde9dk/my_project_termui_on_its_way_to_become_an_actual/)
-- url: https://v.redd.it/zj5nj132tb651
+## [10][Any good resource about streams?](https://www.reddit.com/r/rust/comments/hebooo/any_good_resource_about_streams/)
+- url: https://www.reddit.com/r/rust/comments/hebooo/any_good_resource_about_streams/
+---
+I had some hard time using `Stream` and `Sink` and I'd like to read a little more about it. The docs are great but I'm for some complementary information, ie: blog post, video.
+
+&amp;#x200B;
+
+For obvious reasons (removing rust from the sink and rustgame streaming), google is not helping much...
+## [11][Rust for Data-Intensive Computation](https://www.reddit.com/r/rust/comments/hdy145/rust_for_dataintensive_computation/)
+- url: https://materialize.io/rust-for-data-intensive-computation/
 ---
 
-## [5][rust-analyzer changelog #30](https://www.reddit.com/r/rust/comments/hds2vd/rustanalyzer_changelog_30/)
-- url: https://rust-analyzer.github.io/thisweek/2020/06/22/changelog-30.html
+## [12][Protocol | The programming language that wants to rescue the world from dangerous code](https://www.reddit.com/r/rust/comments/he0sh8/protocol_the_programming_language_that_wants_to/)
+- url: https://www.protocol.com/rust-programming-safety-security
 ---
 
-## [6][Implementing a Type-safe printf in Rust](https://www.reddit.com/r/rust/comments/hdlzjq/implementing_a_typesafe_printf_in_rust/)
-- url: http://willcrichton.net/notes/type-safe-printf/
----
-
-## [7][Tips for Faster Rust Compile Times](https://www.reddit.com/r/rust/comments/hdb5m4/tips_for_faster_rust_compile_times/)
-- url: https://endler.dev/2020/rust-compile-times/
----
-
-## [8][PyO3 now supports stable Rust!](https://www.reddit.com/r/rust/comments/hd5506/pyo3_now_supports_stable_rust/)
-- url: https://github.com/PyO3/pyo3/issues/5#issuecomment-647094806
----
-
-## [9][Rust Lints You May Not Know](https://www.reddit.com/r/rust/comments/hdgodw/rust_lints_you_may_not_know/)
-- url: https://www.possiblerust.com/pattern/rust-lints-you-may-not-know
----
-
-## [10][nom derive 0.6: deriving binary parsers from structure declaration](https://www.reddit.com/r/rust/comments/hdb5h1/nom_derive_06_deriving_binary_parsers_from/)
-- url: https://www.reddit.com/r/rust/comments/hdb5h1/nom_derive_06_deriving_binary_parsers_from/
----
-[nom-derive](https://crates.io/crates/nom-derive) 0.6.0 has been released, with many improvements over previous release.
-
-This crate adds a custom derive `#[derive(Nom)]`, which automatically creates a parser from a structure or enum declaration (aka declarative parsing). It is mostly intended for binary formats, and relies on nom, creating fast parsers using zero-copy most of the time.
-
-Trivial example:
-
-    #[derive(Nom)]
-    struct S {
-      a: u32,
-      b: u16,
-      c: u16
-    }
-
-It also supports custom attributes to control parsing endianness, add verifications or custom code, etc. The objective is to make the 99% of the parser automatically derived, while also being able to switch to custom code and parsing functions for some parts.
-
-* [Documentation of the Nom attribute and options](https://docs.rs/nom-derive/0.6.0/nom_derive/derive.Nom.html)
-* [Example of parser, taken from an OSPFv3 protocol](https://github.com/rusticata/ospf-parser/blob/master/src/ospfv3.rs)
-
-Feedback is welcome!
-## [11][Rooster - Personal Web Server with Rust](https://www.reddit.com/r/rust/comments/hdlbeu/rooster_personal_web_server_with_rust/)
-- url: https://github.com/elasmojs/rooster
----
-
-## [12][Why is assignment an expression in Rust?](https://www.reddit.com/r/rust/comments/hddg7u/why_is_assignment_an_expression_in_rust/)
-- url: https://www.reddit.com/r/rust/comments/hddg7u/why_is_assignment_an_expression_in_rust/
----
-Since I assume asking about language design itself isn't an easy topic, I ask it here.
-
-Why is assignment in rust an expression and not simply a statement? After all it always returns the unit type `()`, thus it's not really useful for chaining assignments like `a = b = c = 3;`, which if I understood correctly is one of the reasons why languages like C made assignment an expression instead of a statement.
-
-PS: I'm writing a small programming language interpreter/compiler and I am modelling it heavily after rust, swift, etc, thus I'm trying to incorporate their language design (although very simplified). That design decision appears to be also be in swift (where chaining expressions) aren't possible, but assignment is an expression evaluating to the unit type.
-
-PPS: If you have any useful blogs etc on such topics, feel free to post it :)

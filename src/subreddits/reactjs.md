@@ -109,89 +109,65 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/gk41zb/whos_available_may_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Instagram using MERN stack](https://www.reddit.com/r/reactjs/comments/hdnsn4/instagram_using_mern_stack/)
+## [3][A CLI tool to scaffold your React components](https://www.reddit.com/r/reactjs/comments/hebvve/a_cli_tool_to_scaffold_your_react_components/)
+- url: https://github.com/iamtabrezkhan/awesome-react-generator
+---
+
+## [4][Made a version of React todoMVC without Router.](https://www.reddit.com/r/reactjs/comments/hebe1t/made_a_version_of_react_todomvc_without_router/)
+- url: https://www.reddit.com/r/reactjs/comments/hebe1t/made_a_version_of_react_todomvc_without_router/
+---
+Searched for Todo lists as reference for me to reproduce as a beginner and made my own version of the todoMVC without the React Router.
+
+[https://avsssai.github.io/todoMVC](https://avsssai.github.io/todoMVC/)
+
+any suggestions accepted.
+## [5][Create simple POS with React.js, Node.js, and MongoDB #7: Adding redux to other component](https://www.reddit.com/r/reactjs/comments/hebhsh/create_simple_pos_with_reactjs_nodejs_and_mongodb/)
+- url: https://blog.soshace.com/create-simple-pos-with-react-js-node-js-and-mongodb-7-adding-redux-to-other-component/
+---
+
+## [6][Instagram using MERN stack](https://www.reddit.com/r/reactjs/comments/hdnsn4/instagram_using_mern_stack/)
 - url: https://v.redd.it/wcmrxtk51f651
 ---
 
-## [4][I have built and open sourced an automated irrigation system based on Node.js and React](https://www.reddit.com/r/reactjs/comments/hd2oaw/i_have_built_and_open_sourced_an_automated/)
-- url: https://v.redd.it/6n79cs3os7651
+## [7][How to make a map, like in a Risk game?](https://www.reddit.com/r/reactjs/comments/he9r4c/how_to_make_a_map_like_in_a_risk_game/)
+- url: https://www.reddit.com/r/reactjs/comments/he9r4c/how_to_make_a_map_like_in_a_risk_game/
+---
+Hello, everyone.
+
+ I have an idea of quite simple game, not a paradox-like grand strategy, not so complicated, but visually similar - in the center is a world map, like in a Risk game. This map should be divided into regions. They should be clickable just to show information about that region. No 3d. No details. Just flat 2d map. 
+
+Well, could you recommend some resources, which could give a knowledge about making such map? I have no idea how to implement it. Maybe, there are some libraries ready to help with that? I've already searched for some, but did't find something that fits.
+## [8][Render props better than hooks? ⚔️](https://www.reddit.com/r/reactjs/comments/heeoo6/render_props_better_than_hooks/)
+- url: https://webup.org/blog/render-props-vs-hooks/
 ---
 
-## [5][My first attempt at making a personal Portfolio website with ReactJS!](https://www.reddit.com/r/reactjs/comments/hdqypx/my_first_attempt_at_making_a_personal_portfolio/)
-- url: https://www.reddit.com/r/reactjs/comments/hdqypx/my_first_attempt_at_making_a_personal_portfolio/
----
-I'm a junior fullstack developer just landed my first job, I am thinking to fully remote in future and for that a portfolio is must to showcase what you're capable of, After going through many talented developer's portfolios from twitter. I decided to finally make one of my own.  
-
-
-So here it is, [https://farazkhan.me](https://farazkhan.me)   
-Please criticize to your heart's content, I really want to improve and make this my best frontend related work I've done.  
-
-
-I realize for a single page layout using react was overkill but I really love the components based developer experience react provides, I've been doing css/sass class based animations and trying out props based styled components was an interesting experience.  
-
-
-Technical details: Made using Create React App ( Will move to Gatsby once I make up my mind about blogging). Styled using styled components and tailwindcss ( bad combination, lead to messy code which I'll clean before making it public but I like simplicity of tailwind too)  
-
-
-Thank you community!
-## [6][Making sense of Redux](https://www.reddit.com/r/reactjs/comments/hdpt1z/making_sense_of_redux/)
-- url: https://vishaltelangre.com/making-sense-of-redux/
+## [9][What state management solution do you use and why ?](https://www.reddit.com/r/reactjs/comments/heen8j/what_state_management_solution_do_you_use_and_why/)
+- url: https://www.reddit.com/r/reactjs/comments/heen8j/what_state_management_solution_do_you_use_and_why/
 ---
 
-## [7][12 recipes for testing React applications using Testing Library](https://www.reddit.com/r/reactjs/comments/hdpeha/12_recipes_for_testing_react_applications_using/)
-- url: https://joaoforja.com/blog/recipes-for-testing-react-apps-tl/
+
+[View Poll](https://www.reddit.com/poll/heen8j)
+## [10][NextJS : Connect a PostgresQL database](https://www.reddit.com/r/reactjs/comments/heekbf/nextjs_connect_a_postgresql_database/)
+- url: https://www.reddit.com/r/reactjs/comments/heekbf/nextjs_connect_a_postgresql_database/
+---
+I'm still learning the React/NextJS so my question might seem a bit dumb, but here we go. Right now, i have developped a website using NextJS and Contentful. Wonderful stuff, i've learned a lot in the past month and that's a really awesome way to prototype websites fast. But Contentful is not really scalable for what i'm trying to achieve, so i'd like to create a PostgresQL database and connect it to my nextJS application. The thing is i'm not a backend developer, and i'm having trouble to find simple tutorials on how to do this. 
+
+In this database, i'd like to store informations about products and display them on my website. Sounds simple, but for me and my lack of backend knowledge, that's a little bit overwhelming.
+
+My question is the following : how can i create a postgresql database, store informations and retrieve them to display it in my NextJS app? Do you have any tutorials on how to do this? Can i do it without creating an express backend, only using nextjs?
+
+Thanks a lot for your answers guys!
+## [11][I wanted to build a personal website, was thinking Gatsby and adding a HeadlessCMS. Any suggestions?](https://www.reddit.com/r/reactjs/comments/heehhc/i_wanted_to_build_a_personal_website_was_thinking/)
+- url: https://www.reddit.com/r/reactjs/comments/heehhc/i_wanted_to_build_a_personal_website_was_thinking/
+---
+Basically the website I’ve started building up is for a yoga instructor who wants to display information about them and their services they practice. With the possibility of adding a blog later on.
+
+So would be quite simple to put together. I’ve started attached Ghost’s API to a Gatsby site but I’m wondering if Ghost is the best option for the type of site? 
+
+I’ve noticed others CMS platforms like Strapi and Sanity which seem pretty cool as well but don’t want to jump into something else without seeing what others have felt worked for similar projects :)
+
+Any suggestions would be forever grateful!
+## [12][[old but gold] MobX vs Recoil comparison from Michel Weststrate on Twitter](https://www.reddit.com/r/reactjs/comments/heeeuw/old_but_gold_mobx_vs_recoil_comparison_from/)
+- url: https://twitter.com/mweststrate/status/1261369870152871937
 ---
 
-## [8][React + graphQL + REST](https://www.reddit.com/r/reactjs/comments/hdqmxv/react_graphql_rest/)
-- url: https://www.reddit.com/r/reactjs/comments/hdqmxv/react_graphql_rest/
----
-Hey, I’m planning on building an app, it’s a medium scaled one, we have a rest backend. I’m staying away from redux for this one. Thought of looking into apollo graphQL in the frontend in fairly new to it. Just wanted to try it out.
-
-Is it a good idea? Can I use apollo Graphql in the front end and connect to a rest api from react app, without a node implementation?
-
-I’ve read about apollo-link-rest, will it work in my scenario? Can you suggest a good tutorial or blog to get started with.
-
-Or What other solutions would work here?
-## [9][What are the best React courses and books?](https://www.reddit.com/r/reactjs/comments/hdkmxh/what_are_the_best_react_courses_and_books/)
-- url: https://www.reddit.com/r/reactjs/comments/hdkmxh/what_are_the_best_react_courses_and_books/
----
-Most projects features in books and courses aren't particularly well-engineered, so I wanted to see if you could recommend one that tells you what are all of the best practices and best solutions for creating an application that's highly scalable and maintainable.
-## [10][Help with React SSR with ExpressJS](https://www.reddit.com/r/reactjs/comments/hdptem/help_with_react_ssr_with_expressjs/)
-- url: https://www.reddit.com/r/reactjs/comments/hdptem/help_with_react_ssr_with_expressjs/
----
-Hi /r/reactjs,
-
-I'm looking for good resources on SSR with React in conjunction with expressjs.
-
-I'm trying to integrate React into an existing expressjs app while getting all the goodies (HMR, etc) and need help with the setup.
-
-Migrating to a framework like NextJS or Gatsby is not an option.
-
-Thanks in advance,
-
-/u/ohadaldi
-## [11][How to subscribe children to a fraction of a parent's context in a native way?](https://www.reddit.com/r/reactjs/comments/hdpl4e/how_to_subscribe_children_to_a_fraction_of_a/)
-- url: https://www.reddit.com/r/reactjs/comments/hdpl4e/how_to_subscribe_children_to_a_fraction_of_a/
----
-Let's suppose we have the following component hierarchy:
-
-            A
-           / \
-          AB  C --- AF
-         /     \
-        D       AE
-
-
-And suppose component A has a Context.Provider with some values and some dispatch functions.
-Components AB and AE are using A context.
-
-The requirement is that AE and AF components are subscribed to a part of the context, and AB is subscribed to another.
-How do I make a structure so that context updates from AF and AE don't trigger rerenders on AB?
-
-I thought about splitting the A context state into multiple subcontexts, but looks a bit cubersome. Which would be the standard approach? A frameworkless solution would be preferable.
-
-Edited to add #Needs Help tag :S
-## [12][Is there a simple way to understand props? I think I’m over complicating it.](https://www.reddit.com/r/reactjs/comments/hdh80o/is_there_a_simple_way_to_understand_props_i_think/)
-- url: https://www.reddit.com/r/reactjs/comments/hdh80o/is_there_a_simple_way_to_understand_props_i_think/
----
-Question is in the title but also when do you use this.props vs props. ?

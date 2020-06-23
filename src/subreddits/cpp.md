@@ -125,71 +125,111 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Silly file extension naming idea about C++ modules](https://www.reddit.com/r/cpp/comments/hdnkej/silly_file_extension_naming_idea_about_c_modules/)
-- url: https://www.reddit.com/r/cpp/comments/hdnkej/silly_file_extension_naming_idea_about_c_modules/
+## [3][I am a developer and just started learning C++, and I'm LOVING it! Programs feel real for the first time!](https://www.reddit.com/r/cpp/comments/hebc9f/i_am_a_developer_and_just_started_learning_c_and/)
+- url: https://www.reddit.com/r/cpp/comments/hebc9f/i_am_a_developer_and_just_started_learning_c_and/
 ---
-    .cpp // C++ source file
-    .hpp // C++ header file
-    .mpp // C++ module file
+**Or how I was so bored with Java that I switched from software to mechanical engineering, became a web developer, and finally started to love C++!**
 
-Though extension .cppm may already have been standarized ... just wanted to share this :)
+So my programming related story: before joining university, I thought I wanted to become a software engineering, I think I wanted to make games at that point. Then, after taking a year of general engineering courses, calculus, physics, intro programming (in Pascal :D), I had my first semester at computer science department. The object oriented programming course was in Java. I hated it so much that I dropped all of my courses, switched field to mechanical engineering, and for almost ten years didn't touch any programs that wasn't directly related to my mechanical engineering jobs (I did assembly and embedded C for micro-controllers and  matlab and labview). I was so happy with my decision to do mechanical engineering, it felt so real!
 
-I think it's classy ( pun intended )!
-## [4][Timemory: Timing + Memory + Hardware Counter Utilities for C / C++ / CUDA / Python (Linux, macOS, Windows)](https://www.reddit.com/r/cpp/comments/hdg0io/timemory_timing_memory_hardware_counter_utilities/)
-- url: https://github.com/NERSC/timemory
----
+Fast forward to about three years ago, that I had this startup idea of mine \[is it a phase that we all go through?\] and it needed me to develop an app for it. I'm one of those people who likes to gets hands on and do everything himself \[I suppose that's a euphemism for being a lone wolf who doesn't know how to lead/persuade people to follow him\] and I started learning web development, which is obviously mostly in JavaScript.
 
-## [5][The C++ Lambda Story Book](https://www.reddit.com/r/cpp/comments/hdoqvz/the_c_lambda_story_book/)
-- url: https://www.bfilipek.com/2020/06/lambdastory.html
+To my surprise, the focus on functional programming in the JavaScript community, at least the niche I was dwelling in - I was learning React/redux which is big on functional and immutably, made it much more relatable to me than Java. It felt more like math; no more weird analogy between classes and the world and stuff. Then a friend of my introduced me to [SICP](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html) and for the first time I was having fun reading an academic book on software... Yet JavaScript had started to wear me down as well and started toying with the idea of leaving my programming career unfinished. I took algorithm courses, learned about complexity analysis, TLA and distributed systems, but still felt something was missing, there was a hole that I just couldn't pin point.
+
+I had been told, since ages ago and till now, that C++ is a flawed language; that we use it just because we have to, because there's just so much legacy of it lying around. What I didn't know, what that I'm going to love it exactly because of  what I presume are the roots of it's flaws! I've been taking [a course in C++](https://www.coursera.org/specializations/cs-fundamentals) and it starts by discussing \* and &amp; and heap memory vs stack and how the memory allocation grows and such, and, what little did I know, this is exactly what I had been missing! The link between the never-feeling-real codes on my screen and the real physical world that runs these codes. To end on a dramatic note - I know if I had to deal with all the memory related issues in my actual job I might not have said this \[though probably I still would\], thanks for not dying out C++ and having yourself replaced with all the other languages that do away with the real stuff and replace it with garbage collection and more abstractions, I love seeing your garbages!
+## [4][SIMDe 0.5.0 Released](https://www.reddit.com/r/cpp/comments/he4a1h/simde_050_released/)
+- url: https://simd-everywhere.github.io/blog/announcements/release/2020/06/21/0.5.0-release.html
 ---
 
-## [6][C++ Primer](https://www.reddit.com/r/cpp/comments/hdse2q/c_primer/)
-- url: https://www.reddit.com/r/cpp/comments/hdse2q/c_primer/
+## [5][std::bitset and finding first set bit.](https://www.reddit.com/r/cpp/comments/hebcnu/stdbitset_and_finding_first_set_bit/)
+- url: https://www.reddit.com/r/cpp/comments/hebcnu/stdbitset_and_finding_first_set_bit/
 ---
-Currently, I have a C++ Primer 4th edition. Should I learn C++ from this book which deals with an older version of C++? Start with a Yes or No and kindly state the reasons.
-## [7][Visual Studio devs: What are your favorite addons?](https://www.reddit.com/r/cpp/comments/hds899/visual_studio_devs_what_are_your_favorite_addons/)
-- url: https://www.reddit.com/r/cpp/comments/hds899/visual_studio_devs_what_are_your_favorite_addons/
+I want to implement an allocator for small sizes using a bitmask.  I have seen that there are fast intrinsics for finding the first set or unset bit and returning the index.  Stackoverflow has some super interesting discussions on the subject i.e. [https://stackoverflow.com/questions/757059/position-of-least-significant-bit-that-is-set](https://stackoverflow.com/questions/757059/position-of-least-significant-bit-that-is-set)
+
+I would much rather use std::bitset than roll my own solution and was suprised to see that bitset does NOT have any special ability to find the first set or unset index with or without using intrinsics.
+
+There is a whole wiki page devoted to the "Find First Set" instructions on different platforms: [https://en.wikipedia.org/wiki/Find\_first\_set](https://en.wikipedia.org/wiki/Find_first_set)
+
+So I was wondering at what point do people just stick within the C++ standard or actually get there hands dirty with intrinsics.  When should we expect the standard to already be doing the job where clearly in a simple case like this it is not doing it?
+## [6][Syntactic Sugar, std::endl and operator &lt;&lt;](https://www.reddit.com/r/cpp/comments/he59uc/syntactic_sugar_stdendl_and_operator/)
+- url: https://www.reddit.com/r/cpp/comments/he59uc/syntactic_sugar_stdendl_and_operator/
 ---
-Hi all,
+And so I was curious and I tried to reduce a cout syntax into the non-syntactic sugar equivalent.  And I initially ended up with this:
 
-I recently switched to working in a Windows environment for dev work and am experiencing Visual Studio for the first time. Really impressed with the debugger, not so impressed with the layout (mostly cause I'm not used to it), anyway, I was curious what people here consider their essential Visual Studio extensions for C++ work? 
+`operator&lt;&lt; ( operator&lt;&lt;( cout, "hello" ), endl );`
 
-So far I found a couple that I really like:
+I got an error where the outer operator&lt;&lt; not being defined and so I checked the definition for endl and it is a function that takes an ostream&amp; object.  This confused me at first because I previously thought endl was a stub ostream object that was passed to cout to create a newline and flush the main ostream object.  I experimented a bit and found a syntax that worked.
 
-Viasfora - color coded braces
+And so I would like to know if these two code equal?
 
-FastFind - does what it says on the tin... paid, but I love it!
-## [8][C++ Template Story So Far : C++11 to C++20](https://www.reddit.com/r/cpp/comments/hds7c1/c_template_story_so_far_c11_to_c20/)
+`endl( operator&lt;&lt;( cout, "hello" ) );`
+
+and
+
+`cout &lt;&lt; "hello" &lt;&lt; endl;`
+
+If they are indeed equal I would like to know how the C++ compiler treats endl differently from the rest of the other objects that are passed through shift-left operator?  And if they're not equal, what is the non-syntactic sugar equivalent of the `cout &lt;&lt; hello &lt;&lt; endl;` code?
+## [7][C++ Template Story So Far : C++11 to C++20](https://www.reddit.com/r/cpp/comments/hds7c1/c_template_story_so_far_c11_to_c20/)
 - url: http://www.vishalchovatiya.com/c-template-a-quick-uptodate-look/
 ---
 
-## [9][cpp.chat : episode 74 - 'My Friends Call Me Bool'](https://www.reddit.com/r/cpp/comments/hd80mz/cppchat_episode_74_my_friends_call_me_bool/)
-- url: https://cpp.chat/74/
+## [8][refl-cpp header only C++17 static reflection](https://www.reddit.com/r/cpp/comments/hedsl9/reflcpp_header_only_c17_static_reflection/)
+- url: https://github.com/veselink1/refl-cpp
 ---
 
-## [10][How To Add A GUI To A C++ Program](https://www.reddit.com/r/cpp/comments/hcpoc0/how_to_add_a_gui_to_a_c_program/)
-- url: https://www.reddit.com/r/cpp/comments/hcpoc0/how_to_add_a_gui_to_a_c_program/
+## [9][Streaming data from a C++ Software to a browser](https://www.reddit.com/r/cpp/comments/heaqwh/streaming_data_from_a_c_software_to_a_browser/)
+- url: https://www.reddit.com/r/cpp/comments/heaqwh/streaming_data_from_a_c_software_to_a_browser/
 ---
-Hi all, 
+Hello everyone.  
+I am not sure this is the best subreddit to seek advice on this matter but since my server-side software is written in C++ I thought ill give it a shot.  
 
-I'm a third year CS student. In all my classes, I have only every made programs that have worked via the command line. I'm starting on a personal project that involves creating a program for sports tournaments such as seeding players, displaying stats, etc.
 
-My major questions are:
+I have a C++ program that continuously renders a 3D scene reconstruction from continuously received data from an iPad Pro (the new ones with the Lidar).  
 
-1). Can I code my program as a simple command line based program, then integrate the GUI after? Or should I implement my program with the GUI the first time around. 
 
-2). I've looked into how GUIs can be implemented and want to try wxWidgets. Is this a good idea?
+The software is receiving the 3D data to render through a simple Poco TCP server, which works great and fast (the rendering itself is being done with OpenGL).  
 
-3). Should I use a different language? I've read that GUIs are hard to implement via C++. I have only learned C++, C, and Python, but am not against learning new languages! 
 
-4). Are there any good guides that you can recommend to me?
+While the server renders the scene it keeps sending new data (mesh, textures, etc) to a browser, which then displays the data.  
 
-Any and all help are appreciated! Thank you! :D
-## [11][Ray Tracing in one weekend with SYCL (part 2)](https://www.reddit.com/r/cpp/comments/hc0tou/ray_tracing_in_one_weekend_with_sycl_part_2/)
-- url: https://www.reddit.com/r/cpp/comments/hc0tou/ray_tracing_in_one_weekend_with_sycl_part_2/
+
+Currently, because browsers don't support raw TCP I am sending a new download URL for each new file through a web socket connection, then the browser proceeds to download each new file with a normal HTTP /1.1 request.  
+
+
+This is a very slow pipeline as the browser has to open a new "transaction" for each HTTP download.  
+I would to "stream" the data continuously to the browser as I create it.  
+I have thought of using HTTP/2 or GRPC, but I would like to hear if someone can recommend a known practice.  
+
+
+Thanks in advance!
+## [10][Stupid std::tuple tricks: Getting started](https://www.reddit.com/r/cpp/comments/hdxjud/stupid_stdtuple_tricks_getting_started/)
+- url: https://devblogs.microsoft.com/oldnewthing/20200622-00/?p=103880
 ---
-This is part 2 of a 2 part [blog post](https://codeplay.com/portal/06-19-20-ray-tracing-in-a-weekend-with-sycl-part-2-pixel-sampling-and-material-tracing) on using SYCL to accelerate some parts of the well known "Ray Tracing in one weekend" code.
-## [12][Introduction to Conan (Virtual DC C++ User Group, June 19, 2020)](https://www.reddit.com/r/cpp/comments/hc05l4/introduction_to_conan_virtual_dc_c_user_group/)
-- url: https://www.youtube.com/watch?v=rsFA2VXwxbE
----
 
+## [11][Conan best practices ?](https://www.reddit.com/r/cpp/comments/hedgw3/conan_best_practices/)
+- url: https://www.reddit.com/r/cpp/comments/hedgw3/conan_best_practices/
+---
+I'm currently making a few small libraries that I want to distribute easily (teaching scenario), and Conan seems a good option for that. 
+
+My only concern is that I can't really find any documentation or blog post or anything about what the best practices are for packaging C++ libraries with Conan.
+
+In particular, here are the main questions I have:
+
+1. In source or out of source recipes?
+2. Which CMake generator to use?
+3. Is it ok to impose Conan on my users or should I leave them a choice?
+4. How to deal properly with GCC 5.2 ABI break? My solution so far is to modify the default profile to force the new ABI so that I don't end up with linking issues but I don't like very much.
+
+Do you have any resource available on these subjects? If not but you are a Conan user, what's your opinion on that and am I missing some important points?
+## [12][What Build System Do You Use And Why?](https://www.reddit.com/r/cpp/comments/he4nmm/what_build_system_do_you_use_and_why/)
+- url: https://www.reddit.com/r/cpp/comments/he4nmm/what_build_system_do_you_use_and_why/
+---
+Hi everyone, 
+
+I've finished university about a month ago and I'm now working on a personal project utilising C++ and Vulkan. This has led me to realise that university has made me very Visual Studio dependent and this is something I would like to rectify. I did do a year in industry as part of my course, and they did use a different build system, but I wasn't really taught how it worked or how to change parts of it etc, more just "and you type this and it just works".
+
+So, I'm looking for a build system that can build for Windows and Linux (I'm currently using Ubuntu for the Linux testing, so I'm not sure if that will affect whether or not it will work on non-gnome based Linux distros) with the potential to add MacOS later via MoltenVK.
+
+I wanted to know what build systems people are using, the reason behind their choice, pros, cons, etc.
+
+Thanks

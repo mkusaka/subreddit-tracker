@@ -22,7 +22,139 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][[Newbie] Are getters syntatic sugar?](https://www.reddit.com/r/typescript/comments/hdmea1/newbie_are_getters_syntatic_sugar/)
+## [2][(Beta) I've written a guide to architecting Node TypeScript apps - still WIP but has a runnable companion repo and full documentation](https://www.reddit.com/r/typescript/comments/hed665/beta_ive_written_a_guide_to_architecting_node/)
+- url: https://jbreckmckye.gitbook.io/node-ts-architecture/
+---
+
+## [3][What's coming in TypeScript 4?](https://www.reddit.com/r/typescript/comments/hdvk70/whats_coming_in_typescript_4/)
+- url: https://httptoolkit.tech/blog/whats-coming-in-typescript-4
+---
+
+## [4][Help reating this type](https://www.reddit.com/r/typescript/comments/heehno/help_reating_this_type/)
+- url: https://www.reddit.com/r/typescript/comments/heehno/help_reating_this_type/
+---
+     translationServiceStub?: Promise&lt;{
+            [name: string]: Function;
+        }&gt;;
+
+I see this is an optional type. It is a returned promise. The promise contains an object. The object has a key name that is a string. the value of name is a function (in other words name is a method).
+
+Is that accurate?
+
+If so can someone tell me why it wasn't written more concisely like this:
+
+     translationServiceStub?: Promise&lt;{
+            name: Function;
+        }&gt;;
+
+Or even:
+
+     translationServiceStub?: Promise&lt;{
+            name: () =&gt; void // or whatever the expected return type is
+        }&gt;;
+## [5][Adding types for a third party imported package](https://www.reddit.com/r/typescript/comments/hea2qv/adding_types_for_a_third_party_imported_package/)
+- url: https://www.reddit.com/r/typescript/comments/hea2qv/adding_types_for_a_third_party_imported_package/
+---
+Edit: Solved... kind of? I was using Checkbox like `&lt;Checkbox /&gt;` without any props, so I tried adding the 'id' prop and it worked, but then I tried removing the 'id' prop again and it still worked. I'm guessing the change caused something that was being cached to update, and whatever it was that was cached was causing the error?
+
+I'm trying to use this package: [https://www.npmjs.com/package/react-simple-checkbox](https://www.npmjs.com/package/react-simple-checkbox)
+
+The issue is it doesn't seem to have been written with TypeScript in mind. I'm brand new to TypeScript but I'm guessing this is a relatively common problem.
+
+The error I got was:
+
+&gt;`Could not find a declaration file for module 'react-simple-checkbox'. '/node_modules/react-simple-checkbox/dist/bundle.js' implicitly has an 'any' type. Try 'npm install @types/react-simple-checkbox' if it exists or add a new declaration (.d.ts) file containing 'declare module 'react-simple-checkbox';'ts(7016)`
+
+I tried to npm install the types, but they don't exist, so the other option is to 'add a new declaration file'. I made a d.ts file, declaring prop types according to the npm page:
+
+    declare module "react-simple-checkbox" {  
+      export default function Checkbox(props: {  
+        backAnimationDuration?: number;  
+        borderThickness?: number;  
+        checked?: boolean;  
+        className?: string;  
+        color?: string | object;  
+        delay?: number;  
+        id?: string;  
+        onChange?: Function;  
+        size?: number;  
+        tickAnimationDuration?: number;  
+        tickSize?: number;  
+      }) : JSX.Element;
+    }
+
+Now the first error is gone, but I'm getting a new error...
+
+&gt;`JSX element type 'Checkbox' does not have any construct or call signatures.ts(2604)`
+
+I'm pretty lost on this one. Looking up the error I just get a bunch of results where people needed to install the correct `@types` file for whatever package they're using... but that doesn't help me since this package doesn't have a types file.
+
+Could somebody point me in the right direction?
+## [6][How to correctly use iterators in classes?](https://www.reddit.com/r/typescript/comments/he0o69/how_to_correctly_use_iterators_in_classes/)
+- url: https://www.reddit.com/r/typescript/comments/he0o69/how_to_correctly_use_iterators_in_classes/
+---
+Hi.  I have a class called `List`: the Singly Linked List data structure.
+
+I wanted to implement an iterator for the class, so that I could use something like a for…of loop.
+
+**TLDR** How do I implement an iterator to a class which can be used by all the objects extentiated from the class?
+## [7][PUZZLE: How to infer a type from function arguments](https://www.reddit.com/r/typescript/comments/he0z3h/puzzle_how_to_infer_a_type_from_function_arguments/)
+- url: https://www.reddit.com/r/typescript/comments/he0z3h/puzzle_how_to_infer_a_type_from_function_arguments/
+---
+So I have a situation I can't seem to figure out whether it is even possible.
+
+I am trying to infer the type of a value in an object of type `T extends {}`, given the object `T` and `fieldName` with type `keyof T`. I want to use this value as a parameter to a function declared and returned in this scope. See below:
+
+```
+export function makeFormFieldProps&lt;T extends {}&gt;(
+  formData: T,
+  fieldName: keyof T
+) {
+  return {
+    value: formData[fieldName],
+    onChange: (val: &lt;type of formData[fieldName]&gt;) =&gt; { ... }
+  };
+}
+```
+Thanks!
+## [8][[Crosspost] I End Up Writing JavaScript Code Anytime I Try To Write TypeScript Code. Is TypeScript Necessary?](https://www.reddit.com/r/typescript/comments/hdyvq9/crosspost_i_end_up_writing_javascript_code/)
+- url: https://www.reddit.com/r/typescript/comments/hdyvq9/crosspost_i_end_up_writing_javascript_code/
+---
+I have 6 years of Vanilla JavaScript experience. I learned TypeScript a few months back and have basic to intermediate knowledge.
+
+Since Deno was released with native TypeScript support I decided to force myself to always write TypeScript no matter the environment (Deno, Node.js, Front-end) when working on projects.
+
+The reason for this is that it seems the JS ecosystem is heading towards more and more TypeScript adoption since most projects are being rewritten from Vanilla JavaScript to TypeScript these days.
+
+I realized that the code I write always ends up looking like vanilla JavaScript anyway with just a few data types added here and there.
+
+I find it cumbersome to always create data types like **interfaces** all the time so I just use a regular **object literal** most of the time. Also the code becomes bloated with too many unnecessary data types so I tend not to use types for basic variables.
+
+Setting up a proper linter like ESLint helps me find bugs most of the time when writing just vanilla JavaScript,
+
+My question is why is there so much hype about TypeScript claiming it helps prevent bugs and it's ideal for large JavaScript projects?
+## [9][Implicit super calls](https://www.reddit.com/r/typescript/comments/hdxmj8/implicit_super_calls/)
+- url: https://www.reddit.com/r/typescript/comments/hdxmj8/implicit_super_calls/
+---
+    class Parent {
+      public a: string;
+      
+      constructor(setA: string) {
+        this.a = setA;
+      }
+    }
+    
+    class Child extends Parent {}
+    
+    
+    const childInstance = new Child("value passed in");
+    
+    console.log(childInstance.a); // prints
+
+Any risks to relying on implicit super calls?
+
+At first I thought argument ambiguity. But they are positional so it shouldn't matter.
+## [10][[Newbie] Are getters syntatic sugar?](https://www.reddit.com/r/typescript/comments/hdmea1/newbie_are_getters_syntatic_sugar/)
 - url: https://www.reddit.com/r/typescript/comments/hdmea1/newbie_are_getters_syntatic_sugar/
 ---
 Instead of 
@@ -54,21 +186,7 @@ Why not just do
     
     }
     console.log(class.y);
-## [3][Generic constraints in constructor not working](https://www.reddit.com/r/typescript/comments/hdrdv7/generic_constraints_in_constructor_not_working/)
-- url: https://www.reddit.com/r/typescript/comments/hdrdv7/generic_constraints_in_constructor_not_working/
----
-[playground link](https://www.staging-typescript.org/play?#code/KYDwDg9gTgLgBASwHY2FAZgQwMbDgCUwGcALTAIwBs8BvAKDjjNIGEIATYACgEoAuOEgCuAW3Jo6AXzp1QkWHGyViROAFEUUAJ4AeANIAaOADUAfHHqNmJAcLESGcANbAtAvY4BumSkOADjGUZsCCQiGCghbBhoLhc3OD04UFQkdlVCUgpqI29ffxMeC0dGGBIEIgA6azgAXmdXauISNk5eErgyisr4uoatDq6qvL8+keBHaWkgA)
-
-Trying to create an `Entry` class to be used in a hash map. I need to constrain a generic type in a constructor, but Typescript is giving me a weird type error.
-
-Parameter 'key' of constructor from exported class has or is using private name ''
-
-I'm exporting `Hashable` though.
-
-If you replace `Hashable` with string: `key: K extends string` it still gives the same type error.
-
-Why?
-## [4][Can I annotate all TypeORM queries with a filter condition?](https://www.reddit.com/r/typescript/comments/hdph92/can_i_annotate_all_typeorm_queries_with_a_filter/)
+## [11][Can I annotate all TypeORM queries with a filter condition?](https://www.reddit.com/r/typescript/comments/hdph92/can_i_annotate_all_typeorm_queries_with_a_filter/)
 - url: https://www.reddit.com/r/typescript/comments/hdph92/can_i_annotate_all_typeorm_queries_with_a_filter/
 ---
 I'm trying to create a multi-tenant architecture. For this, I want to create a new EntityManager  
@@ -91,244 +209,3 @@ Should be automatically transformed by the Repository or Manager to a query like
 Is this possible with TypeORM?
 
 (The benefit with this approach is that it is more fault-tolerant since it would be impossible to forget filtering for the right tenant)
-## [5][Cannot find type definition file for 'babel__generator'.](https://www.reddit.com/r/typescript/comments/hdpeag/cannot_find_type_definition_file_for_babel/)
-- url: https://www.reddit.com/r/typescript/comments/hdpeag/cannot_find_type_definition_file_for_babel/
----
-I'm struggling with this error and I have tried `yarn add @types/babel__generator`  it didn't work? How should deal with this error?
-## [6][[Help] Getting property names of types](https://www.reddit.com/r/typescript/comments/hdpc2p/help_getting_property_names_of_types/)
-- url: https://www.reddit.com/r/typescript/comments/hdpc2p/help_getting_property_names_of_types/
----
-Hi there. I just wonder if there a possible way to get a property names from a type, not an object. I tried do somethng like this:
-
-    export type Names&lt;T&gt; = {readonly [K in keyof T]: K};
-    
-    export interface Test {
-      myLuck2: number;
-      myBad: string;
-    };
-    
-    export function nameof&lt;TClass&gt;(callback: (obj: Names&lt;TClass&gt;) =&gt; keyof TClass): keyof TClass {
-      const names: Names&lt;TClass&gt; = {
-        // Here I can't define same properties as in Names&lt;TClass&gt; dynamicly =(
-      };
-      return callback(names);
-    };
-    
-    export const TestNameOfSomeProperty = nameof&lt;Test&gt;(x =&gt; x.myLuck2);
-
-And, of course, I can't convert string type literal to value string... AFAIK. Maybe there is an issue or pull request?
-## [7][How can improve my tsconfig?](https://www.reddit.com/r/typescript/comments/hd176e/how_can_improve_my_tsconfig/)
-- url: https://www.reddit.com/r/typescript/comments/hd176e/how_can_improve_my_tsconfig/
----
-Hi everybody. I have this repo in typescript and I would like to know how it can be improved. Looking for feedback. This is a package for managing permissions. [Link](https://github.com/roggervalf/iam-policies)
-## [8][Having a real tough time "optionally" using typescript in my react app. see configs](https://www.reddit.com/r/typescript/comments/hd30z4/having_a_real_tough_time_optionally_using/)
-- url: https://www.reddit.com/r/typescript/comments/hd30z4/having_a_real_tough_time_optionally_using/
----
-So, I have a react app and my Webstorm is just not appropriately linting things. Everything seems to be building fine, but all my ".js" files are littered with linting errors EVEN though I pre-commit with linting and its fine.
-
-Can you look over my babel, eslintrc file and let me know if anything jumps out as incorrect or "out of ordering". I am trying TRYING to ONLY use typescript on ".ts/.tsx" files and ignore the '.js' files for typing... basically "oh its a .js, ignore typescript linting etc...".
-
-ESLINTRC
-
-const path = require('path')
-
-    module.exports = {
-      parserOptions: {
-        ecmaVersion: 2019,
-        sourceType: 'module',
-        ecmaFeatures: {
-          jsx: true,
-        },
-      },
-      extends: [
-        'eslint:recommended',
-        'plugin:react-hooks/recommended',
-        'plugin:react/recommended',
-        'eslint-config-prettier',
-        'eslint-config-prettier/@typescript-eslint',
-        'airbnb-base',
-        'prettier',
-        'prettier/react',
-      ],
-      globals: {},
-      rules: {
-        strict: ['error', 'never'],
-        'import/prefer-default-export': 1,
-        'global-require': 1,
-        'react/jsx-key': 1,
-        'prefer-destructuring': 1,
-      },
-      env: {
-        browser: true,
-        jest: true,
-        es2020: true,
-      },
-      settings: {
-        'import/resolver': {
-          'babel-module': {
-            'import/resolver': {
-              src: path.join(__dirname, '/src'),
-            },
-          },
-        },
-        react: {
-          version: 'detect',
-        },
-      },
-      overrides: [
-        {
-          files: '**/*.+(ts|tsx)',
-          parser: '@typescript-eslint/parser',
-          parserOptions: {
-            project: './tsconfig.json',
-            jsx: true,
-          },
-          plugins: [
-            '@typescript-eslint/eslint-plugin',
-            '@typescript-eslint/eslint-recommended',
-            '@typescript-eslint/recommended',
-          ],
-        },
-        {
-          files: ['**/__tests__/**'],
-          settings: {
-            'import/resolver': {
-              jest: {
-                jestConfigFile: path.join(__dirname, '/jest.config.js'),
-              },
-            },
-          },
-        },
-      ],
-    }
-
-HERE IS MY BABELRC FILE
-
-      {
-      "presets": [
-          "@babel/preset-react",
-          "@babel/preset-env",
-          "@babel/preset-typescript"
-      ],
-      "plugins": [
-        "@babel/plugin-proposal-optional-chaining",
-        "@babel/plugin-proposal-nullish-coalescing-operator",
-        "@babel/plugin-syntax-dynamic-import",
-        ["module-resolver", {
-          "root": ["./src"],
-          "alias": {
-            "src": "./src"
-          }
-        }]
-      ]
-    }
-
-HERE IS WHAT MY WEBSTORM IS SHOWING AS ERRORS. These are ".js" files. I have used Webstorm on all my projects and never any issues... even when jump to other repos, all good. So, I am thinking its my introducing with typescript to this project,  as my other projects do not use it. Anybody see any issues? Remember, I want to use both ".js" and ".ts" extensions.. and only "type" the ts files.
-
-errors webstorm show. Its crazy. It doesn't seem to recognize the js/jsx, YET I verified over and over that i have the proper settings (see last image).
-
-[https://imgur.com/a/xYJowaO](https://imgur.com/a/xYJowaO)
-
-[https://imgur.com/uJSIFyj](https://imgur.com/uJSIFyj)
-
-[https://imgur.com/a/Of3f8ah](https://imgur.com/a/Of3f8ah)
-
-  
-P.S. --- IF you want to work thru this with me, let me know and I will venmo you some $ for your time. We can google hangout and I can share my screen etc... message me. I do NOT need coding help, I am in need of configurations help.
-## [9][How would you implement a Map with objects (vectors) as keys?](https://www.reddit.com/r/typescript/comments/hcrtdx/how_would_you_implement_a_map_with_objects/)
-- url: https://www.reddit.com/r/typescript/comments/hcrtdx/how_would_you_implement_a_map_with_objects/
----
-I want to store where figures are on a game board.
-
-Positions on the board are of the type 'Vector' which has an x and an y attribute. The figures are of type Entity, but for simplicitys sake here they are just strings:
-
-    class Vector {
-        constructor(readonly x: number, readonly y: number) {
-        }
-    
-        equals(other: this): boolean {
-            return this.x === other.x &amp;&amp; this.y === other.y;
-        }
-    }
-    
-    const board = new Map&lt;Vector, string&gt;();
-    board.set(new Vector(0, 1), "white pawn");
-    board.set(new Vector(4, 0), "white king");
-    
-    console.log(board.get(new Vector(4, 0)));  // prints "undefined" - not what I want
-
-I understand now that the Map class compares keys by their identity / memory address. Two distinct objects are considered not the same key, even if the equals method returns true.
-
-*What would be the most elegant and efficient way to implement a type of Map that considers keys to be equivalent if they are structurally equal or an "equals" method would return true?*
-
-On [stackoverflow](https://stackoverflow.com/questions/57262315/how-to-get-deep-equality-of-keys-in-es6-map-alternative-to-using-complex-object), they suggested using strings as keys. I'm uncomfortable with using strings in program logic. Maybe that's just a bad practice in other programming languages but okay in Javascript/Typescript? The typechecker couldn't warn me if I tried to insert an invalid key like `"Vecdor(y:  4,x=2)"`.
-
-One other way, I could imagine, is a custom Map type that requires keys to implement a "Hashable" interface. Every key would be transformed to a `number` and then that number would be used as a key in an internal, regular `Map&lt;number, Value&gt;`.
-
-Thirdly, I don't think I am the only person who would have a use for such a Map variant. Is there maybe something on npm that acts like that?
-## [10][Noobie trying to do something advanced I guess - conditional arguments](https://www.reddit.com/r/typescript/comments/hcpm4d/noobie_trying_to_do_something_advanced_i_guess/)
-- url: https://www.reddit.com/r/typescript/comments/hcpm4d/noobie_trying_to_do_something_advanced_i_guess/
----
-I'm learning typescript and trying to use it on a personal project.I have this function:
-
-```
-const fn = ({
-   resourceId,
-   select = resourceId ? state =&gt; state : id =&gt; state =&gt; state[id],
-}) =&gt; {
-   const selector = state =&gt;`
-   resourceId ? select(resourceId(state) : select(state);)`
-};
-```
-and I cannot make it build successfully. Here is my best attempt:
-
-```
-type Attr = string | number;
-type LikeState = {
-   [key: string]: any;
-   [key: number]: any;
-};
-
-interface IfcFn&lt;ResourceId extends Attr | undefined&gt; {
-   resourceId?: ResourceId;
-   select: ResourceId extends Attr
-      ? (x: Attr) =&gt; (y: LikeState) =&gt; LikeState
-      : (x: LikeState) =&gt; LikeState;
-}
-
-const fn = ({
-   resourceId,
-   select = resourceId ? state =&gt; state : id =&gt; state =&gt; state[id],
-}: IfcFn&lt;Attr | undefined&gt;) =&gt; {
-   const selector = (state: LikeState) =&gt; 
-      resourceId ? select(resourceId)(state) : select(state);
-};
-```
-
-I know I'm not there. So, any suggestions? Thank you!
-## [11][Help with handling JSON array of objects (merge two arrays)](https://www.reddit.com/r/typescript/comments/hc5odl/help_with_handling_json_array_of_objects_merge/)
-- url: https://www.reddit.com/r/typescript/comments/hc5odl/help_with_handling_json_array_of_objects_merge/
----
-I have a json array of Objects and need to pick a corresponding object in that array according to some calculations.  
-
-My json have a following structure: {"OD": number, "SCH" {"SCH40": number, "SCH80": number}}  
-
-I need to do some math with OD and SCH numbers, compare it with an outside number and find corresponding value for OD key.  
-
-I can get a new array (of numbers I compare the outside number with):  
-
-`this.Pipeareas = this.Pipesizes.map (x =&gt; Math.pow((x.OD - 2 * x.SCH[this.selectedSCH])/2000,2) * Math.PI);`   
-
-How to merge existing and new arrays?  
-
-I tried (this add extra existing array and new object to new array (not key:value pair))     
-
-`this.Pipeareas = {...this.Pipesizes, Area: this.Pipesizes.map (x =&gt; Math.pow((x.OD - 2 * x.SCH[this.selectedSCH])/2000,2) * Math.PI) }`  
-
-and (this adds new key "Area" to each object but the value is full array, not corresponding numbers from new array)     
-
-`this.Pipesizes.map (x =&gt; x.Area = this.Pipesizes.map (x =&gt; Math.pow((x.OD - 2 * x.SCH[this.selectedSCH])/2000,2) * Math.PI))`  
-
-The result should be like:  
-
-`return this.Pipeareas.find(x =&gt; x &gt;= this.OutsideNumber);`

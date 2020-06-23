@@ -21,183 +21,210 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][Amazon introduces 'Distance Assistant' The company’s latest innovation provides real-time social distancing feedback and we plan to open source the technology By Brad Porter](https://www.reddit.com/r/aws/comments/hdeaqy/amazon_introduces_distance_assistant_the_companys/)
-- url: https://www.reddit.com/r/aws/comments/hdeaqy/amazon_introduces_distance_assistant_the_companys/
+## [2][Introducing AWS Solutions Constructs](https://www.reddit.com/r/aws/comments/he38t0/introducing_aws_solutions_constructs/)
+- url: https://aws.amazon.com/about-aws/whats-new/2020/06/introducing-aws-solutions-constructs/
 ---
-[Amazon introduces 'Distance Assistant'](https://blog.aboutamazon.com/operations/amazon-introduces-distance-assistant)
-The company’s latest innovation provides real-time social distancing feedback and Amazon plan to open source the technology
-By Brad Porter
 
-Excerpt from blog post
-
-"As we've continued to learn and innovate to support the health and safety of our associates, we also saw an opportunity to evolve our tech even further and promote social distancing behavior in real-time. Given social distancing isn’t always natural, this team set out to use augmented reality to create a magic-mirror-like tool that helps associates see their physical distancing from others. Working backwards from a concept of immediate visual feedback, and inspired by existing examples like radar speed check signs, our 'Distance Assistant' provides employees with live feedback on social distancing via a 50 inch monitor, a camera, and a local computing device. The standalone unit uses machine learning models to differentiate people from their surroundings. Combined with depth sensors, it creates an accurate distance measurement between associates."
-
-Here is [Amazon Distance Assistant in action](https://youtu.be/FexuGnXVkvE).
-## [3][Which WAF ACL managed rules are best practice good starting point?](https://www.reddit.com/r/aws/comments/hdpnbn/which_waf_acl_managed_rules_are_best_practice/)
-- url: https://www.reddit.com/r/aws/comments/hdpnbn/which_waf_acl_managed_rules_are_best_practice/
+## [3][websocket for publically available chatbot](https://www.reddit.com/r/aws/comments/hebnhe/websocket_for_publically_available_chatbot/)
+- url: https://www.reddit.com/r/aws/comments/hebnhe/websocket_for_publically_available_chatbot/
 ---
-I have
+I'm developing a chatbot for a publically available website (kind of like a customer support chatbot) and I was wondering how to properly protect it while still using it without authentication.
 
-* RDS
-* Beanstalk Application Load Balancer
-* VPC
-* Node Linux
-* Using Route 53
-* Guard Duty
-* 1 location country only, at least 300-1000 active users monthly
-* Single API only
+I was thinking about using an invisible recaptcha or something along those lines but from previous projects I remember we had an issue with stealing sessions, but that was on Azure. Does anyone if API Gateway has something to handle that?
+## [4][Multiple security groups or just one?](https://www.reddit.com/r/aws/comments/hee44q/multiple_security_groups_or_just_one/)
+- url: https://www.reddit.com/r/aws/comments/hee44q/multiple_security_groups_or_just_one/
+---
+I'm wondering what everyone thinks on this topic. I personally like multiple security groups but I'm not sure if that's proper.
 
+In regards to EC2, I feel, if you have rules that apply to more than 1 instance; say allowing RDP/SSH from the office IP, then you make one SG for that and apply to all instances. However, one issue is that for windows, you dont need port 22 open by default. This means your attack surface is larger than needed, even if just from a single IP. 
+
+I like applying one SG to multiple instances because it allows for easy updates across all instances if required. For example, Office IP changes for whatever reason, you just update one SG rather than 100s or 1000s.
+
+Also, I like having multiple, more targeted SGs on instances that need custom rules. For example, one SG handling HTTP/HTTPS and another handling say port 22 for FTP etc. Keeping the 5 SG limit in mind.
+
+I've seen where you give each instance it's own SG and put absolutely everything in that and it just seems super messy and a bit of management nightmare.
+
+Thoughts?
+## [5][AWS Solutions Constructs – A Library of Architecture Patterns for the AWS CDK](https://www.reddit.com/r/aws/comments/he1g74/aws_solutions_constructs_a_library_of/)
+- url: https://aws.amazon.com/blogs/aws/aws-solutions-constructs-a-library-of-architecture-patterns-for-the-aws-cdk/
+---
+
+## [6][Athena "SELECT * not allowed in queries without FROM clause"/"Column 'column_name' cannot be resolved"](https://www.reddit.com/r/aws/comments/hedmgi/athena_select_not_allowed_in_queries_without_from/)
+- url: https://www.reddit.com/r/aws/comments/hedmgi/athena_select_not_allowed_in_queries_without_from/
+---
+Hi all!
+
+I have data, which comes from webhook as JSON string. I save it as JSON document to S3 using Lambda (Python). Then I use Glue Crawler to create schema and when I want to take a peek at my data, Athena gives me `SELECT * not allowed in queries without FROM clause` error when I try to query all columns and  `Column 'column_name' cannot be resolved` when I want to query specific column.
+
+I searched for similar error and everyone has it due to their CSV encoding, but no answers with JSON files. Does anyone know what can possibly be wrong?  
+
+
+**UPD**: Okay, nvm, all I had to do is to grant myself a permissions at Lake Formation on specified tables
+## [7][s3 bucket permissions](https://www.reddit.com/r/aws/comments/hecpwp/s3_bucket_permissions/)
+- url: https://www.reddit.com/r/aws/comments/hecpwp/s3_bucket_permissions/
+---
+Hi all
+
+We currently use cyberduck to perform some Windows file uploads to s3
+
+Does anyone know if its possible to create a IAM User + Policy to provide the ability to  move/rename/delete files and folders within a specified bucket? Or is this simply not available/allowed ?
+## [8][What is/are your DR plan?](https://www.reddit.com/r/aws/comments/he3v6v/what_isare_your_dr_plan/)
+- url: https://www.reddit.com/r/aws/comments/he3v6v/what_isare_your_dr_plan/
+---
+Can you guys share yours? also where should i start? like reading resources.
+
+initially i thought theres no need to have a DR but then came to my mind that i can deploy a standby on another region and just clone the servers
+
+our aws are mostly rds mysql, elasticache and ec2
+## [9][How to use EFS with AWS Lambda?](https://www.reddit.com/r/aws/comments/hdy144/how_to_use_efs_with_aws_lambda/)
+- url: https://www.reddit.com/r/aws/comments/hdy144/how_to_use_efs_with_aws_lambda/
+---
 &amp;#x200B;
-## [4][aws cli command not working when installed local folder](https://www.reddit.com/r/aws/comments/hds410/aws_cli_command_not_working_when_installed_local/)
-- url: https://www.reddit.com/r/aws/comments/hds410/aws_cli_command_not_working_when_installed_local/
----
-I installed the [aws-cli](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html) program as mentioned in this doc without `sudo` to local folder. But when I try to run the command line utility I get error.
 
-    $ ./aws/install -i awscli-app -b awscli-bin
-    $ ls awscli-bin/
-     aws  aws_completer
-    $ ls -alh awscli-bin
-    total 8.0K
-    drwxrwxr-x  2 docking_prod docking_prod 4.0K Jun 22 14:14 .
-    drwxr-xr-x 16 docking_prod docking_prod 4.0K Jun 22 14:14 ..
-    lrwxrwxrwx  1 docking_prod docking_prod   29 Jun 22 14:14 aws -&gt; awscli-app/v2/current/bin/aws
-    lrwxrwxrwx  1 docking_prod docking_prod   39 Jun 22 14:14 aws_completer -&gt; awscli-app/v2/current/bin/aws_completer
-    $ ./awscli-bin/aws --version
-    -bash: ./awscli-bin/aws: No such file or directory
+https://preview.redd.it/sv9how6a9i651.png?width=641&amp;format=png&amp;auto=webp&amp;s=d94df6c5bc1aafa9b5c1466c3472760a4d17156e
 
-What am I missing here, can anyone help me ?
-## [5][How to control Ingress rules for an NLB ?](https://www.reddit.com/r/aws/comments/hdrdpl/how_to_control_ingress_rules_for_an_nlb/)
-- url: https://www.reddit.com/r/aws/comments/hdrdpl/how_to_control_ingress_rules_for_an_nlb/
----
-Hi,
+AWS recently launched a new feature that lets the customer make an EFS (Elastic File System) that works with Lambda. This is really cool! But, Why EFS?
 
-I have an application composed of an API Gateway, 2 EC2 instance (A and B) and a ECS Cluster (Fargate). Fargate Tasks should be accessed ONLY by the API Gateway throught a VPC Link and an NLB and the EC2 Instance A.
+EFS is a storage unit that lives independently inside a machine. This file can be attached to other services like EC2 and can be accessed from multiple instances at once. Files that are inside this storage unit is accessible from any connected instance or Lambda.
 
-UPDATE : Here is a diagram simplified of the APP : 
+**Why do we need something like this to work with Lambda? Extra complicated step?**
 
-&amp;#x200B;
+Actually, this feature is amazing if you looked at it from different angles, let’s start with some of them:
 
-https://preview.redd.it/9d9xk1s4hg651.png?width=552&amp;format=png&amp;auto=webp&amp;s=2bca2f65cffb491c2b031c314ad9e58e2603904f
+*1- Consistency:*
 
-Now what i want to do is to secure the access to that NLB to make it only accessible from the API Gateway and from the EC2 Instance A.
+If you need multiple Lambdas to use (read and write) BIG files, you’ll need them to be in a place that doesn’t delay the function to get the resources, which leads to less computing power and time -&gt; less money.
 
-The problem is that in the NLB there is no Security Group (unlike the ALB)
+*2- More space:*
 
-I already configured the Security Group of Fargate to accept trafic only form the Private IP of the NLB and from the EC2 A.
+When you’re working with files from S3, you’re limited to the max storage size of 512 MiB. Which is not enough is some cases. Plus, you might need to work with this file in different processes stages, like cleaning, segmenting, processing, and exporting readable reports/formats of this file. Imagine the amount of code involved in this scenario.
 
-Now if i try to access directly the Fargate from the EC2 instance B it will not work, and that's what i want. **BUT**, if access the NLB from the EC2 B the traffic will be accepted and redirected to the Fargate Task.
+*3- More space 2:*
 
-So my question how to control the Ingress rules in the NLB ? Is there a way to make that ?
+Using layers will share the resources between the functions, but Layers sometimes can’t handle the size of the resources and binaries you called to run this function. Using EFS will give you more room to store these resources and call when is needed.
 
-Thank you,
-## [6][Is the connection between datacenters of a different region faster than a typical connection?](https://www.reddit.com/r/aws/comments/hdqo8q/is_the_connection_between_datacenters_of_a/)
-- url: https://www.reddit.com/r/aws/comments/hdqo8q/is_the_connection_between_datacenters_of_a/
----
-Would someone with a high speed internet connection in Singapore get similar latency and throughput accessing the EU-West-1 region; as to a inter-datacentre connection between Ap-Southeast-1 and EU-West-1.
+I can list more points. But, you got the idea. Let’s dive into how to use it with lambda.
 
-Is there anything special about the connection between data centers. I'd imagine that Amazon has optimised and invested the fuck out of the connections between them.
-## [7][Directory unavailable](https://www.reddit.com/r/aws/comments/hdqjy7/directory_unavailable/)
-- url: https://www.reddit.com/r/aws/comments/hdqjy7/directory_unavailable/
----
-Is anyone else having users being kicked out of AWS with the  'Directory unavailable' error?
+# Creating EFS:
 
-How can I resolve this?
-## [8][Elastic Beanstalk - Daphne is not serving static files](https://www.reddit.com/r/aws/comments/hdqcot/elastic_beanstalk_daphne_is_not_serving_static/)
-- url: https://www.reddit.com/r/aws/comments/hdqcot/elastic_beanstalk_daphne_is_not_serving_static/
----
-Following this guide [https://medium.com/@elspanishgeek/how-to-deploy-django-channels-2-x-on-aws-elastic-beanstalk-8621771d4ff0](https://medium.com/@elspanishgeek/how-to-deploy-django-channels-2-x-on-aws-elastic-beanstalk-8621771d4ff0) to set up a django project that uses websockets. Before I made the traffic go through Daphne, the static files were being served, but now I get on the console that the files are not found.
-
-01\_env.config
-
-        option_settings:  
-          aws:elasticbeanstalk:application:environment:
-            DJANGO_SETTINGS_MODULE: dashboard.settings
-            PYTHONPATH: /opt/python/current/app/dashboard:$PYTHONPATH
-          aws:elasticbeanstalk:container:python:
-            WSGIPath: dashboard/wsgi.py
-          "aws:elasticbeanstalk:container:python:staticfiles":
-              /static/: "static/"
-        
-          aws:elbv2:listener:80:
-            ListenerEnabled: 'true'
-            Protocol: HTTP
-          aws:elbv2:listener:5000:
-            ListenerEnabled: 'true'
-            Protocol: HTTP
-
-02\_setup.config
-
-        container_commands:
-          00_pip_upgrade:
-            command: "source /opt/python/run/venv/bin/activate &amp;&amp; pip install --upgrade pip"
-            ignoreErrors: false
-          01_migrate:
-            command: "django-admin.py migrate"
-            leader_only: true
-          02_collectstatic:
-            command: "django-admin.py collectstatic --noinput"
-          03_wsgipass:
-            command: 'echo "WSGIPassAuthorization On" &gt;&gt; ../wsgi.conf'
-          04_celery_tasks:
-            command: "cat .ebextensions/celery_configuration.txt &gt; /opt/elasticbeanstalk/hooks/appdeploy/post/run_supervised_celeryd.sh &amp;&amp; chmod 744 /opt/elasticbeanstalk/hooks/appdeploy/post/run_supervised_celeryd.sh"
-            leader_only: true
-          05_celery_tasks_run:
-            command: "/opt/elasticbeanstalk/hooks/appdeploy/post/run_supervised_celeryd.sh"
-            leader_only: true
-
-03\_proxy.config
-
-        files:
-          "/etc/httpd/conf.d/proxy.conf":
-            mode: "000644"
-            owner: root
-            group: root
-            content: |
-              ProxyPass /websockets/ ws://127.0.0.1:5000/websockets/
-              ProxyPassReverse /websockets/ ws://127.0.0.1:5000/websockets/
-              ProxyPass / http://127.0.0.1:5000/
-              ProxyPassReverse / http://127.0.0.1:5000/
-
-[settings.py](https://settings.py)
-
-        ...
-        
-        STATIC_URL = '/static/'
-        STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-
-Running Daphne using:
-
-        daphne -b 0.0.0.0 -p 5000 dashboard.asgi:application
-## [9][When SSL is terminated at ALB, how the request to ECS from ALB is still encrypted?](https://www.reddit.com/r/aws/comments/hdh2e6/when_ssl_is_terminated_at_alb_how_the_request_to/)
-- url: https://www.reddit.com/r/aws/comments/hdh2e6/when_ssl_is_terminated_at_alb_how_the_request_to/
----
-In our infrastructure, a request is initiated from the client and hit the ALB which has an ACM for, say, [testdomain.com](https://testdomain.com). The listener on the ALB redirects the request to port 443 on one of the services running on ECS. 
-
-I am having a hard time understanding that,
+1- Open AWS console and search for “EFS”.
 
 &amp;#x200B;
 
-* When SSL is terminated at ALB, is the connection still encrypted between ALB to ECS service?
-* How can I verify if the connection between ALB and Backend service is still encrypted if SSL is terminated at ALB?
-## [10][Cognito token verification with API gateway](https://www.reddit.com/r/aws/comments/hdjlqp/cognito_token_verification_with_api_gateway/)
-- url: https://www.reddit.com/r/aws/comments/hdjlqp/cognito_token_verification_with_api_gateway/
----
-I have an authorizer set up in API gateway, it is connected to my Cognito user pool.
+https://preview.redd.it/rh3jgvmg9i651.png?width=2876&amp;format=png&amp;auto=webp&amp;s=39732c98655bc1f1509fe9756ec9c438c2f96cf5
 
-It has worked before, but as of recent, when I log in on my app, and get the id token:
+2- Click on “Create file system”.
 
-userSession.getIdToken().getJWTToken()
-
-I am running my app in debugger mode, and getting the value of this token, however, when I run it through the API gateway authorize test, it claims it is an unauthorized request.
-
-I have no idea why it would be doing this, Also, I have noticed each time I log in with the same username, cognito gives me identical JWT tokens, is this how it should be?
+3- At step 1, select your VPC. If your lambda is configured within a VPC, choose it, if not, remember when VPC you’ve selected.
 
 &amp;#x200B;
 
-I have noticed, when I make a new user, it will work for them for a while
+https://preview.redd.it/hoycogli9i651.png?width=2880&amp;format=png&amp;auto=webp&amp;s=8a3f9bdad9fd0b8d618406e4bad749ee6941a7ae
 
-Thank you!
-## [11][CORS, why does the target domain authorise which source domains can call its API and not the other way round?](https://www.reddit.com/r/aws/comments/hdp7bi/cors_why_does_the_target_domain_authorise_which/)
-- url: https://www.reddit.com/r/aws/comments/hdp7bi/cors_why_does_the_target_domain_authorise_which/
+4- Step 2, Add descriptive name for your file system. Then click next step.
+
+&amp;#x200B;
+
+https://preview.redd.it/osowihal9i651.png?width=2880&amp;format=png&amp;auto=webp&amp;s=da1ec399e14736501c2ac5ca2f1932253fcae9ac
+
+5- In step 3, go down and click on “Add access point”. Then fill it with what’s in the image.
+
+&amp;#x200B;
+
+https://preview.redd.it/hgggcc6o9i651.png?width=2238&amp;format=png&amp;auto=webp&amp;s=8a6a96daac64826bc0ab721ee9983aba4b12ce32
+
+6- Review the configuration, then click “Create file system”.
+
+&amp;#x200B;
+
+https://preview.redd.it/e0g20ilq9i651.png?width=2878&amp;format=png&amp;auto=webp&amp;s=c0e8b7c1b97ae4374c82da702ac876e72318b4ba
+
+7- Done ! wait for a few seconds and your EFS will be active.
+
+&amp;#x200B;
+
+https://preview.redd.it/d5ggxlks9i651.png?width=2874&amp;format=png&amp;auto=webp&amp;s=0b90bf69010a1195eea178b81f16c300a0eda84f
+
+# Connect it with Lambda:
+
+1- Click on Service and search for “Lambda”.
+
+&amp;#x200B;
+
+https://preview.redd.it/4487tf4u9i651.png?width=2880&amp;format=png&amp;auto=webp&amp;s=cfeebe0297dadd38183d01e37fc355d2aa949a88
+
+2- Create a new function and choose your preferred runtime language. In this article, I’ll use Python.
+
+&amp;#x200B;
+
+https://preview.redd.it/bpf99wtv9i651.png?width=2616&amp;format=png&amp;auto=webp&amp;s=448c0c3e7d13038a8c38298e90ed6c7dac265021
+
+3- Go down a little bit and you’ll see a section called “VPC”, click on “Edit”.
+
+&amp;#x200B;
+
+https://preview.redd.it/8tizq57x9i651.png?width=2600&amp;format=png&amp;auto=webp&amp;s=0947937eff2593757ea236d0169a0f187382b56e
+
+4- Select your VPC, and choose the Subnets and the security group. Then save.
+
+&amp;#x200B;
+
+https://preview.redd.it/251at16z9i651.png?width=2880&amp;format=png&amp;auto=webp&amp;s=8ef40c9544bfb57286b37ffbdbde54f52be6cff9
+
+5- Under the VPC section, click on “Add file system” from “file System” section.
+
+&amp;#x200B;
+
+https://preview.redd.it/hy0uu0eeai651.png?width=2588&amp;format=png&amp;auto=webp&amp;s=9c52f8b67bb6734815fd076537575fdcd2249fd4
+
+6- Select the EFS File System we made, remember that we gave it a descriptive name. Then choose the Access point that is associated with the Access Point and finally, give it a path.
+
+&amp;#x200B;
+
+&gt;*NOTE: This path needs to start with ‘/mnt/‘. You can keep it as it is or if you want to have a custom folders, defiantly you can.*
+
+&amp;#x200B;
+
+https://preview.redd.it/qi9rm8mgai651.png?width=1656&amp;format=png&amp;auto=webp&amp;s=b5ecbf64d578261479a131b73e8119865a5057fc
+
+7- A small piece of code to test if the file system is attached to the function.
+
+&amp;#x200B;
+
+https://preview.redd.it/k402xs7jai651.png?width=2666&amp;format=png&amp;auto=webp&amp;s=53b6b731d5a26176bf96deccbc68b30e8827ac5d
+
+8- Bingo!! We made it!
+
+&amp;#x200B;
+
+https://preview.redd.it/watgdwpkai651.png?width=2578&amp;format=png&amp;auto=webp&amp;s=753ee8eed2eab80384cb55c658803550490efaef
+
+# Conclusion:
+
+Adding EFS to Lambda is a huge new milestone in The Serverless architecture. You can have new use-cases that will be doable and before were a nightmare to accomplish. Easy steps with the cheap price make Lambda an option that can battle EC2 in some new modern use-cases.
+## [10][AWS EKS multi region service discovery](https://www.reddit.com/r/aws/comments/he4x4w/aws_eks_multi_region_service_discovery/)
+- url: https://www.reddit.com/r/aws/comments/he4x4w/aws_eks_multi_region_service_discovery/
 ---
-I've got to the point where I can configure API Gateway CORS so that my scripts can submit to my AWS HTTP API. I have a very basic understanding of cross site attacks. I don't understand why the target domain authorises the source domain and not the other way round or why both domains don't need to authorise each other.
+Hi Everyone, 
+
+I have a scenario where I have EKS cluster in multiple AWS regions. ALL the VPC's are paired using TGW to route the traffic between them. 
+
+For DNS resolution between the region for k8s to discover pod in other region looks like we can use AWS R53 resolver. But turns out we can also CoreDNS instead of R53 resolver. 
+
+Anyone have used CoreDNS for service discovery between the EKS cluster in multiple AWS regions? 
+
+It will be super helpful if you have any lesson learned that you can share?
+
+&amp;#x200B;
+
+Cheers.
+## [11][AWS WorkSpaces resilience - recovery from an AZ failure?](https://www.reddit.com/r/aws/comments/hdzl3z/aws_workspaces_resilience_recovery_from_an_az/)
+- url: https://www.reddit.com/r/aws/comments/hdzl3z/aws_workspaces_resilience_recovery_from_an_az/
+---
+We're looking into putting our desktop in the cloud by using WorkSpaces as a VDI solution.  I believe there are a lot of problems, but one which stands out is high availability.
+
+How does WorkSpaces cope with a AZ failure?  Their 'Best Practices for Deploying Amazon Workspaces' whitepaper ([https://d1.awsstatic.com/whitepapers/workspaces/Best\_Practices\_for\_Deploying\_Amazon\_WorkSpaces.pdf](https://d1.awsstatic.com/whitepapers/workspaces/Best_Practices_for_Deploying_Amazon_WorkSpaces.pdf)) shows deploying over two AZs, but what if one fails?
+
+I think WorkSpaces are balanced across the two, with the backups on S3, so losing an AZ would mean restoring half the WorkSpaces to the remaining AZ.  Sounds horrible!  Or do the WorkSpaces exist in both AZ's?
+
+cheers.

@@ -85,43 +85,49 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][Whole page slider for creating simple swipe-able web pages](https://www.reddit.com/r/javascript/comments/he9v09/whole_page_slider_for_creating_simple_swipeable/)
+## [3][Fullstack JavaScript Microservice Web App in Minutes](https://www.reddit.com/r/javascript/comments/hev6rk/fullstack_javascript_microservice_web_app_in/)
+- url: https://medium.com/@krawa76/fullstack-javascript-microservice-web-app-in-minutes-448c523a919b
+---
+
+## [4][Safari now supports webextensions APIs 😎](https://www.reddit.com/r/javascript/comments/heie3e/safari_now_supports_webextensions_apis/)
+- url: https://hacks.mozilla.org/2020/06/welcoming-safari-to-the-webextensions-community/
+---
+
+## [5][Async Method Chaining in Node: A quick study on building a Promise Queue Pipeline](https://www.reddit.com/r/javascript/comments/hf0fhe/async_method_chaining_in_node_a_quick_study_on/)
+- url: https://medium.com/@hgmaxwellking/async-method-chaining-in-node-8c24c8c3a28d
+---
+
+## [6][How to create a webworkers driven multithreading App — Part 2](https://www.reddit.com/r/javascript/comments/hez92v/how_to_create_a_webworkers_driven_multithreading/)
+- url: https://medium.com/@tobiasuhlig/how-to-create-a-webworkers-driven-multithreading-app-part-2-3c5b3c2d1adb?source=friends_link&amp;sk=cf4b5c0e014fcfd6fc1d9845f4eb3097
+---
+
+## [7][Esbuild JavaScript Bundler Claims 10-100x Faster Bundling Time](https://www.reddit.com/r/javascript/comments/hefqeg/esbuild_javascript_bundler_claims_10100x_faster/)
+- url: https://www.infoq.com/news/2020/06/esbuild-faster-go-js-bundler/
+---
+
+## [8][[AskJS] Front end developers: Has anyone ever recovered from being “that guy” on their team?](https://www.reddit.com/r/javascript/comments/hep4on/askjs_front_end_developers_has_anyone_ever/)
+- url: https://www.reddit.com/r/javascript/comments/hep4on/askjs_front_end_developers_has_anyone_ever/
+---
+You know—the developer no one wants to work with, the one always complaining, etc? What made you realize you were the toxic one and how did you recover at the same company?
+## [9][The physics behind spring animations](https://www.reddit.com/r/javascript/comments/hefx97/the_physics_behind_spring_animations/)
+- url: https://blog.maximeheckel.com/posts/the-physics-behind-spring-animations
+---
+
+## [10][Whole page slider for creating simple swipe-able web pages](https://www.reddit.com/r/javascript/comments/he9v09/whole_page_slider_for_creating_simple_swipeable/)
 - url: https://github.com/elansx/Wholepage-Slider
 ---
 
-## [4][A CLI tool to scaffold your React components](https://www.reddit.com/r/javascript/comments/hebo9u/a_cli_tool_to_scaffold_your_react_components/)
-- url: https://github.com/iamtabrezkhan/awesome-react-generator
+## [11][cris691/jtype-system Simple type-checking system for JavaScript at runtime.](https://www.reddit.com/r/javascript/comments/hexlpl/cris691jtypesystem_simple_typechecking_system_for/)
+- url: https://github.com/cris691/jtype-system
 ---
 
-## [5][Secure Book: free private note-taking open-source web app [a bit of self-promotion]](https://www.reddit.com/r/javascript/comments/he2ul9/secure_book_free_private_notetaking_opensource/)
-- url: https://github.com/securebook/securebook.github.io
+## [12][[AskJS] What are some (niche?) ESLint rules you couldn't live without?](https://www.reddit.com/r/javascript/comments/hemp97/askjs_what_are_some_niche_eslint_rules_you/)
+- url: https://www.reddit.com/r/javascript/comments/hemp97/askjs_what_are_some_niche_eslint_rules_you/
 ---
+Recently created my own eslint config and stumbled across [https://github.com/sindresorhus/eslint-plugin-unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn) which has a few reasonable rules in there that have the potential to massively contribute to code quality, e.g. prefer-array-find, prefer-modern-dom-apis.
 
-## [6][New GitHub App automates resolving merge conflicts (JavaScript only)](https://www.reddit.com/r/javascript/comments/hds2kk/new_github_app_automates_resolving_merge/)
-- url: https://blogs.grammatech.com/mergeresolver-automatic-merge-conflict-resolution
----
+I was also unaware of [https://github.com/testing-library/eslint-plugin-testing-library](https://github.com/testing-library/eslint-plugin-testing-library) as well as the included eslint-plugin-jest which... should definitely have your attention attention if you use testing-library and/or jest.
 
-## [7][React-like Virtual DOM in 70 lines of TypeScript](https://www.reddit.com/r/javascript/comments/he08tn/reactlike_virtual_dom_in_70_lines_of_typescript/)
-- url: https://github.com/ms-jpq/noact
----
+[https://github.com/benmosher/eslint-plugin-import](https://github.com/benmosher/eslint-plugin-import) also has import/order which may alphabetically group your imports, improving readability.
 
-## [8][What's coming in TypeScript 4?](https://www.reddit.com/r/javascript/comments/hdvkij/whats_coming_in_typescript_4/)
-- url: https://httptoolkit.tech/blog/whats-coming-in-typescript-4
----
-
-## [9][Eslint plugin ensuring that your architecture boundaries are respected by the elements in your project checking file structure and dependencies](https://www.reddit.com/r/javascript/comments/hebxkg/eslint_plugin_ensuring_that_your_architecture/)
-- url: https://github.com/javierbrea/eslint-plugin-boundaries
----
-
-## [10][Combining observables and iterables into a single concept](https://www.reddit.com/r/javascript/comments/he2cnm/combining_observables_and_iterables_into_a_single/)
-- url: https://staltz.com/why-we-need-callbags.html
----
-
-## [11][Get started with web workers](https://www.reddit.com/r/javascript/comments/hean6o/get_started_with_web_workers/)
-- url: https://dev.to/trishul/get-started-with-web-workers-1kgm
----
-
-## [12][How to serve an API locally with webpack](https://www.reddit.com/r/javascript/comments/heaanz/how_to_serve_an_api_locally_with_webpack/)
-- url: https://dev.to/trishul/how-to-serve-an-api-locally-with-webpack-32ne
----
-
+Anything else I've been missing out on?

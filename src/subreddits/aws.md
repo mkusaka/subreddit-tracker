@@ -21,210 +21,96 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][Introducing AWS Solutions Constructs](https://www.reddit.com/r/aws/comments/he38t0/introducing_aws_solutions_constructs/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/06/introducing-aws-solutions-constructs/
+## [2][Samsung Database Migration Case Study: 1.1 Billion Users across Three Continents from Oracle to Amazon Aurora with AWS Database Migration Service](https://www.reddit.com/r/aws/comments/heo21x/samsung_database_migration_case_study_11_billion/)
+- url: https://aws.amazon.com/solutions/case-studies/samsung-migrates-off-oracle-to-amazon-aurora/
 ---
 
-## [3][websocket for publically available chatbot](https://www.reddit.com/r/aws/comments/hebnhe/websocket_for_publically_available_chatbot/)
-- url: https://www.reddit.com/r/aws/comments/hebnhe/websocket_for_publically_available_chatbot/
+## [3][Creating a cloudwatch event with terraform](https://www.reddit.com/r/aws/comments/hezj08/creating_a_cloudwatch_event_with_terraform/)
+- url: https://www.reddit.com/r/aws/comments/hezj08/creating_a_cloudwatch_event_with_terraform/
 ---
-I'm developing a chatbot for a publically available website (kind of like a customer support chatbot) and I was wondering how to properly protect it while still using it without authentication.
+Hi all,
 
-I was thinking about using an invisible recaptcha or something along those lines but from previous projects I remember we had an issue with stealing sessions, but that was on Azure. Does anyone if API Gateway has something to handle that?
-## [4][Multiple security groups or just one?](https://www.reddit.com/r/aws/comments/hee44q/multiple_security_groups_or_just_one/)
-- url: https://www.reddit.com/r/aws/comments/hee44q/multiple_security_groups_or_just_one/
+Can somebody please point me in the direction of a terraform example creating a cloudwatch event that is triggered by aws config rules that then targets a lambda function?
+
+Cheers,
+Adam
+## [4][Amazon Workspaces - Setting up a user &amp; restricting user from installing programs](https://www.reddit.com/r/aws/comments/hezeyj/amazon_workspaces_setting_up_a_user_restricting/)
+- url: https://www.reddit.com/r/aws/comments/hezeyj/amazon_workspaces_setting_up_a_user_restricting/
 ---
-I'm wondering what everyone thinks on this topic. I personally like multiple security groups but I'm not sure if that's proper.
+Sorry, total noob here.
 
-In regards to EC2, I feel, if you have rules that apply to more than 1 instance; say allowing RDP/SSH from the office IP, then you make one SG for that and apply to all instances. However, one issue is that for windows, you dont need port 22 open by default. This means your attack surface is larger than needed, even if just from a single IP. 
+I just discovered Amazon workspaces and had no problem setting up a workspace for a remote worker.
 
-I like applying one SG to multiple instances because it allows for easy updates across all instances if required. For example, Office IP changes for whatever reason, you just update one SG rather than 100s or 1000s.
+However, I can't figure out how to add restrictions to that persons accounts.
 
-Also, I like having multiple, more targeted SGs on instances that need custom rules. For example, one SG handling HTTP/HTTPS and another handling say port 22 for FTP etc. Keeping the 5 SG limit in mind.
+For example:
 
-I've seen where you give each instance it's own SG and put absolutely everything in that and it just seems super messy and a bit of management nightmare.
+I have their workspace set up.
 
-Thoughts?
-## [5][AWS Solutions Constructs – A Library of Architecture Patterns for the AWS CDK](https://www.reddit.com/r/aws/comments/he1g74/aws_solutions_constructs_a_library_of/)
-- url: https://aws.amazon.com/blogs/aws/aws-solutions-constructs-a-library-of-architecture-patterns-for-the-aws-cdk/
+I installed programs they need (nothing crazy, chrome, ringcentral)
+
+That user on the workspace is an administrator.
+
+How do I restrict that user and make them standard? I see I can change it from within windows but I can also change it back.
+
+In short: I want to restrict the user from installing anything on the workspace.
+
+&amp;#x200B;
+
+Thank you so much for your help. I'm sure it's something really simple.
+## [5][Packer + Ansible still relevant?](https://www.reddit.com/r/aws/comments/hf0z87/packer_ansible_still_relevant/)
+- url: https://www.reddit.com/r/aws/comments/hf0z87/packer_ansible_still_relevant/
+---
+Hi guys
+
+Due to actions outside of my control I have been out of the workplace since February, previously I was working in DevOps (AWS) for a very long time.
+
+I have enjoyed the enforced break but soon I want to get back on the wagon now as it were and I am looking to the people who are heavily involved in DevOps based around AWS for a little steer if you don't mind?
+
+My question is, is Ansible + Packet still relevant in the market place in respect of building AMIs / automating deployments.
+
+My last position used Packer + Ansible + Terraform to build AMI images (via GitLab automation pipelines), has anything changed here or is it still widely utilised?
+
+Obviously Terraform is still used extensively, but any tips on what else I should be looking at?
+
+The question I always had in my mind is is Jenkins still used more widely than GitLab for automation as well, or has this moved on to actual AWS pipelines themselves.
+
+Thanks for any tips you can provide
+## [6][OPENVPN in public subnet and pinging instances in private subnet](https://www.reddit.com/r/aws/comments/hf037r/openvpn_in_public_subnet_and_pinging_instances_in/)
+- url: https://www.reddit.com/r/aws/comments/hf037r/openvpn_in_public_subnet_and_pinging_instances_in/
+---
+Hi there, 
+
+For various reasons I am making a lab in a private subnet. I want to be able to use Openvpn to access that lab and do things like ping instances, etc. 
+
+I have set up OpenVPN in a public subnet, but I'm not sure what I need to do in order to get the service running. When I connect, I am unable to ping instances in the private subnet.
+
+Does anyone have experience with this and possibly provide information and help?
+
+&amp;#x200B;
+
+Thanks in advance
+## [7][Useful article on how to pass the AWS SA-02 exam quickly](https://www.reddit.com/r/aws/comments/heftqn/useful_article_on_how_to_pass_the_aws_sa02_exam/)
+- url: https://medium.com/capital-one-tech/advice-on-taking-the-aws-solutions-architect-associate-exam-from-someone-who-just-passed-eaaaabaf8c1c
 ---
 
-## [6][Athena "SELECT * not allowed in queries without FROM clause"/"Column 'column_name' cannot be resolved"](https://www.reddit.com/r/aws/comments/hedmgi/athena_select_not_allowed_in_queries_without_from/)
-- url: https://www.reddit.com/r/aws/comments/hedmgi/athena_select_not_allowed_in_queries_without_from/
+## [8][CORS issue with Application Load Balancer and Fargate Microservices](https://www.reddit.com/r/aws/comments/heuyhq/cors_issue_with_application_load_balancer_and/)
+- url: https://www.reddit.com/r/aws/comments/heuyhq/cors_issue_with_application_load_balancer_and/
 ---
-Hi all!
-
-I have data, which comes from webhook as JSON string. I save it as JSON document to S3 using Lambda (Python). Then I use Glue Crawler to create schema and when I want to take a peek at my data, Athena gives me `SELECT * not allowed in queries without FROM clause` error when I try to query all columns and  `Column 'column_name' cannot be resolved` when I want to query specific column.
-
-I searched for similar error and everyone has it due to their CSV encoding, but no answers with JSON files. Does anyone know what can possibly be wrong?  
-
-
-**UPD**: Okay, nvm, all I had to do is to grant myself a permissions at Lake Formation on specified tables
-## [7][s3 bucket permissions](https://www.reddit.com/r/aws/comments/hecpwp/s3_bucket_permissions/)
-- url: https://www.reddit.com/r/aws/comments/hecpwp/s3_bucket_permissions/
+We have Microservices hosted on Fargate via an ALB.  We set our Microservices' CORS policy to accept any origin, any method.  They are REST apis consumed by an SPA client.  However, about 10% of the time, we would get CORS errors.  We are new to AWS and not quite sure why this is happening.  Any tips or hints on what we should look at?  Thanks!
+## [9][When using CloudFront OAI for serving static content stored in S3, can I restrict which path in the bucket CloudFront can access to?](https://www.reddit.com/r/aws/comments/hexqnu/when_using_cloudfront_oai_for_serving_static/)
+- url: https://www.reddit.com/r/aws/comments/hexqnu/when_using_cloudfront_oai_for_serving_static/
 ---
-Hi all
+Can I allow CloudFront to read anything inside my-bucket/public, but disallow reading anything inside my-bucket/private?
 
-We currently use cyberduck to perform some Windows file uploads to s3
+I have files in S3 which I don't want to allow access without logging in my app. The app is hosted on EC2.
 
-Does anyone know if its possible to create a IAM User + Policy to provide the ability to  move/rename/delete files and folders within a specified bucket? Or is this simply not available/allowed ?
-## [8][What is/are your DR plan?](https://www.reddit.com/r/aws/comments/he3v6v/what_isare_your_dr_plan/)
-- url: https://www.reddit.com/r/aws/comments/he3v6v/what_isare_your_dr_plan/
+I don't want to allow access to S3 bucket directly even for public files because that would disable caching and optimized routing by CloudFront, and don't want to have another bucket just for public content.
+## [10][Serving gzipped video file from s3](https://www.reddit.com/r/aws/comments/hexhcv/serving_gzipped_video_file_from_s3/)
+- url: https://www.reddit.com/r/aws/comments/hexhcv/serving_gzipped_video_file_from_s3/
 ---
-Can you guys share yours? also where should i start? like reading resources.
-
-initially i thought theres no need to have a DR but then came to my mind that i can deploy a standby on another region and just clone the servers
-
-our aws are mostly rds mysql, elasticache and ec2
-## [9][How to use EFS with AWS Lambda?](https://www.reddit.com/r/aws/comments/hdy144/how_to_use_efs_with_aws_lambda/)
-- url: https://www.reddit.com/r/aws/comments/hdy144/how_to_use_efs_with_aws_lambda/
+I gzipped a .mov file and uploaded to s3. The content type is set to video/quicktime, and content encoding is set to gzip. However when I use the url as a source for video element, it shows CONTENT_DECODING_FAILED. I am not sure if this is the correct way to do this, please help
+## [11][What are the scenarios where you would use multiple VPCs?](https://www.reddit.com/r/aws/comments/heg7sh/what_are_the_scenarios_where_you_would_use/)
+- url: https://www.reddit.com/r/aws/comments/heg7sh/what_are_the_scenarios_where_you_would_use/
 ---
-&amp;#x200B;
-
-https://preview.redd.it/sv9how6a9i651.png?width=641&amp;format=png&amp;auto=webp&amp;s=d94df6c5bc1aafa9b5c1466c3472760a4d17156e
-
-AWS recently launched a new feature that lets the customer make an EFS (Elastic File System) that works with Lambda. This is really cool! But, Why EFS?
-
-EFS is a storage unit that lives independently inside a machine. This file can be attached to other services like EC2 and can be accessed from multiple instances at once. Files that are inside this storage unit is accessible from any connected instance or Lambda.
-
-**Why do we need something like this to work with Lambda? Extra complicated step?**
-
-Actually, this feature is amazing if you looked at it from different angles, let’s start with some of them:
-
-*1- Consistency:*
-
-If you need multiple Lambdas to use (read and write) BIG files, you’ll need them to be in a place that doesn’t delay the function to get the resources, which leads to less computing power and time -&gt; less money.
-
-*2- More space:*
-
-When you’re working with files from S3, you’re limited to the max storage size of 512 MiB. Which is not enough is some cases. Plus, you might need to work with this file in different processes stages, like cleaning, segmenting, processing, and exporting readable reports/formats of this file. Imagine the amount of code involved in this scenario.
-
-*3- More space 2:*
-
-Using layers will share the resources between the functions, but Layers sometimes can’t handle the size of the resources and binaries you called to run this function. Using EFS will give you more room to store these resources and call when is needed.
-
-I can list more points. But, you got the idea. Let’s dive into how to use it with lambda.
-
-# Creating EFS:
-
-1- Open AWS console and search for “EFS”.
-
-&amp;#x200B;
-
-https://preview.redd.it/rh3jgvmg9i651.png?width=2876&amp;format=png&amp;auto=webp&amp;s=39732c98655bc1f1509fe9756ec9c438c2f96cf5
-
-2- Click on “Create file system”.
-
-3- At step 1, select your VPC. If your lambda is configured within a VPC, choose it, if not, remember when VPC you’ve selected.
-
-&amp;#x200B;
-
-https://preview.redd.it/hoycogli9i651.png?width=2880&amp;format=png&amp;auto=webp&amp;s=8a3f9bdad9fd0b8d618406e4bad749ee6941a7ae
-
-4- Step 2, Add descriptive name for your file system. Then click next step.
-
-&amp;#x200B;
-
-https://preview.redd.it/osowihal9i651.png?width=2880&amp;format=png&amp;auto=webp&amp;s=da1ec399e14736501c2ac5ca2f1932253fcae9ac
-
-5- In step 3, go down and click on “Add access point”. Then fill it with what’s in the image.
-
-&amp;#x200B;
-
-https://preview.redd.it/hgggcc6o9i651.png?width=2238&amp;format=png&amp;auto=webp&amp;s=8a6a96daac64826bc0ab721ee9983aba4b12ce32
-
-6- Review the configuration, then click “Create file system”.
-
-&amp;#x200B;
-
-https://preview.redd.it/e0g20ilq9i651.png?width=2878&amp;format=png&amp;auto=webp&amp;s=c0e8b7c1b97ae4374c82da702ac876e72318b4ba
-
-7- Done ! wait for a few seconds and your EFS will be active.
-
-&amp;#x200B;
-
-https://preview.redd.it/d5ggxlks9i651.png?width=2874&amp;format=png&amp;auto=webp&amp;s=0b90bf69010a1195eea178b81f16c300a0eda84f
-
-# Connect it with Lambda:
-
-1- Click on Service and search for “Lambda”.
-
-&amp;#x200B;
-
-https://preview.redd.it/4487tf4u9i651.png?width=2880&amp;format=png&amp;auto=webp&amp;s=cfeebe0297dadd38183d01e37fc355d2aa949a88
-
-2- Create a new function and choose your preferred runtime language. In this article, I’ll use Python.
-
-&amp;#x200B;
-
-https://preview.redd.it/bpf99wtv9i651.png?width=2616&amp;format=png&amp;auto=webp&amp;s=448c0c3e7d13038a8c38298e90ed6c7dac265021
-
-3- Go down a little bit and you’ll see a section called “VPC”, click on “Edit”.
-
-&amp;#x200B;
-
-https://preview.redd.it/8tizq57x9i651.png?width=2600&amp;format=png&amp;auto=webp&amp;s=0947937eff2593757ea236d0169a0f187382b56e
-
-4- Select your VPC, and choose the Subnets and the security group. Then save.
-
-&amp;#x200B;
-
-https://preview.redd.it/251at16z9i651.png?width=2880&amp;format=png&amp;auto=webp&amp;s=8ef40c9544bfb57286b37ffbdbde54f52be6cff9
-
-5- Under the VPC section, click on “Add file system” from “file System” section.
-
-&amp;#x200B;
-
-https://preview.redd.it/hy0uu0eeai651.png?width=2588&amp;format=png&amp;auto=webp&amp;s=9c52f8b67bb6734815fd076537575fdcd2249fd4
-
-6- Select the EFS File System we made, remember that we gave it a descriptive name. Then choose the Access point that is associated with the Access Point and finally, give it a path.
-
-&amp;#x200B;
-
-&gt;*NOTE: This path needs to start with ‘/mnt/‘. You can keep it as it is or if you want to have a custom folders, defiantly you can.*
-
-&amp;#x200B;
-
-https://preview.redd.it/qi9rm8mgai651.png?width=1656&amp;format=png&amp;auto=webp&amp;s=b5ecbf64d578261479a131b73e8119865a5057fc
-
-7- A small piece of code to test if the file system is attached to the function.
-
-&amp;#x200B;
-
-https://preview.redd.it/k402xs7jai651.png?width=2666&amp;format=png&amp;auto=webp&amp;s=53b6b731d5a26176bf96deccbc68b30e8827ac5d
-
-8- Bingo!! We made it!
-
-&amp;#x200B;
-
-https://preview.redd.it/watgdwpkai651.png?width=2578&amp;format=png&amp;auto=webp&amp;s=753ee8eed2eab80384cb55c658803550490efaef
-
-# Conclusion:
-
-Adding EFS to Lambda is a huge new milestone in The Serverless architecture. You can have new use-cases that will be doable and before were a nightmare to accomplish. Easy steps with the cheap price make Lambda an option that can battle EC2 in some new modern use-cases.
-## [10][AWS EKS multi region service discovery](https://www.reddit.com/r/aws/comments/he4x4w/aws_eks_multi_region_service_discovery/)
-- url: https://www.reddit.com/r/aws/comments/he4x4w/aws_eks_multi_region_service_discovery/
----
-Hi Everyone, 
-
-I have a scenario where I have EKS cluster in multiple AWS regions. ALL the VPC's are paired using TGW to route the traffic between them. 
-
-For DNS resolution between the region for k8s to discover pod in other region looks like we can use AWS R53 resolver. But turns out we can also CoreDNS instead of R53 resolver. 
-
-Anyone have used CoreDNS for service discovery between the EKS cluster in multiple AWS regions? 
-
-It will be super helpful if you have any lesson learned that you can share?
-
-&amp;#x200B;
-
-Cheers.
-## [11][AWS WorkSpaces resilience - recovery from an AZ failure?](https://www.reddit.com/r/aws/comments/hdzl3z/aws_workspaces_resilience_recovery_from_an_az/)
-- url: https://www.reddit.com/r/aws/comments/hdzl3z/aws_workspaces_resilience_recovery_from_an_az/
----
-We're looking into putting our desktop in the cloud by using WorkSpaces as a VDI solution.  I believe there are a lot of problems, but one which stands out is high availability.
-
-How does WorkSpaces cope with a AZ failure?  Their 'Best Practices for Deploying Amazon Workspaces' whitepaper ([https://d1.awsstatic.com/whitepapers/workspaces/Best\_Practices\_for\_Deploying\_Amazon\_WorkSpaces.pdf](https://d1.awsstatic.com/whitepapers/workspaces/Best_Practices_for_Deploying_Amazon_WorkSpaces.pdf)) shows deploying over two AZs, but what if one fails?
-
-I think WorkSpaces are balanced across the two, with the backups on S3, so losing an AZ would mean restoring half the WorkSpaces to the remaining AZ.  Sounds horrible!  Or do the WorkSpaces exist in both AZ's?
-
-cheers.
+Just curious. At the startup I work for, uses just one VPC for everything and we feel our design is secure and efficient. I understand big orgs might would have good use cases for multiple VPCs but I can't think of any myself

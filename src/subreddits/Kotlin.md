@@ -1,13 +1,39 @@
 # Kotlin
-## [1][Kotlin Coroutines vs Java Threads](https://www.reddit.com/r/Kotlin/comments/hecrel/kotlin_coroutines_vs_java_threads/)
+## [1][Discussion: Do you think this would be a cool feature?](https://www.reddit.com/r/Kotlin/comments/hexe8l/discussion_do_you_think_this_would_be_a_cool/)
+- url: https://www.reddit.com/r/Kotlin/comments/hexe8l/discussion_do_you_think_this_would_be_a_cool/
+---
+TL;DR let the Kotlin compiler generate the boilerplate code for reifying typeargs in order to circumvent type erasure. Or, in other words, a `reified` keyword for class / non-inline function typeargs.
+
+Working with Java (and reflection) a lot, I frequently feel the urge of banging my head against the table because of type erasure. Kotlin having a `reified` keyword for inline function typeargs is already a helpful thing, but I feel like there could be done more. In order to manually reify typeargs, I found myself using this boilerplate pattern:
+
+1. Store a `Class&lt;?&gt;` instance in the class (this usually requires passing that instance to the constructor)
+2. Perform instance checks using `clazz.isInstance(obj)`
+3. Perform an unchecked cast to the requested typearg.
+
+Kotlin is already known as a language that mostly uses syntactic sugar to improve Java, while still ensuring interoperability. Therefore it would be quite fitting if Kotlin provided an universally usable `reified` keyword that hides the boilerplate pattern from you and lets you use your typearg as if it wasn't subject to type erasure. So you could do
+
+```
+var inner: T
+// ...
+fun set(newval: Any) {
+    if (newval is T) {
+        inner = newval // smartcast
+    }
+}
+```
+
+Which would actually store the KClass representation of T and performs an isInstance check in the background.
+
+What are your thoughts? Is this a good idea? Is it useful? How would you improve it? And ultimately, do you think it should be a feature request on YouTrack?
+## [2][Kotlin Coroutines vs Java Threads](https://www.reddit.com/r/Kotlin/comments/hecrel/kotlin_coroutines_vs_java_threads/)
 - url: https://piotrminkowski.com/2020/06/23/kotlin-coroutines-vs-java-threads/
 ---
 
-## [2][SQLDelight 1.4.0 released](https://www.reddit.com/r/Kotlin/comments/hdvn5g/sqldelight_140_released/)
+## [3][SQLDelight 1.4.0 released](https://www.reddit.com/r/Kotlin/comments/hdvn5g/sqldelight_140_released/)
 - url: https://github.com/cashapp/sqldelight/releases/tag/1.4.0
 ---
 
-## [3][variable name vs type position](https://www.reddit.com/r/Kotlin/comments/hedgeg/variable_name_vs_type_position/)
+## [4][variable name vs type position](https://www.reddit.com/r/Kotlin/comments/hedgeg/variable_name_vs_type_position/)
 - url: https://www.reddit.com/r/Kotlin/comments/hedgeg/variable_name_vs_type_position/
 ---
 Hey everyone, trying to learn Kotlin, coming from Java.
@@ -22,23 +48,23 @@ vs.
 dog: Dog (Where the autocomplete is only available towards the end of the line)
 
 What advantages are there to do it the Kotlin way?
-## [4][What's the best way to check if something is null in Kotlin?](https://www.reddit.com/r/Kotlin/comments/he5792/whats_the_best_way_to_check_if_something_is_null/)
+## [5][What's the best way to check if something is null in Kotlin?](https://www.reddit.com/r/Kotlin/comments/he5792/whats_the_best_way_to_check_if_something_is_null/)
 - url: https://www.reddit.com/r/Kotlin/comments/he5792/whats_the_best_way_to_check_if_something_is_null/
 ---
 Should I use `variable == null`, `variable === null` or something else?
-## [5][Where can I see a list of the built-in exceptions in Kotlin?](https://www.reddit.com/r/Kotlin/comments/he6nv6/where_can_i_see_a_list_of_the_builtin_exceptions/)
+## [6][Where can I see a list of the built-in exceptions in Kotlin?](https://www.reddit.com/r/Kotlin/comments/he6nv6/where_can_i_see_a_list_of_the_builtin_exceptions/)
 - url: https://www.reddit.com/r/Kotlin/comments/he6nv6/where_can_i_see_a_list_of_the_builtin_exceptions/
 ---
 I like to throw exceptions built into the language with a custom message explaining the error when possible, instead of making my own exceptions every time. Howver, I couldn't find a definitive list of all the exceptions Kotlin defines in the standard library and their usages. Does such a list exist? Is this way of throwing exceptions even a good idea?
-## [6][New Dokka - Designed for Fearless Creativity](https://www.reddit.com/r/Kotlin/comments/hdxgj4/new_dokka_designed_for_fearless_creativity/)
+## [7][New Dokka - Designed for Fearless Creativity](https://www.reddit.com/r/Kotlin/comments/hdxgj4/new_dokka_designed_for_fearless_creativity/)
 - url: https://www.youtube.com/watch?v=OvFoTRhqaKg
 ---
 
-## [7][Kotlin REPL?](https://www.reddit.com/r/Kotlin/comments/hdsppd/kotlin_repl/)
+## [8][Kotlin REPL?](https://www.reddit.com/r/Kotlin/comments/hdsppd/kotlin_repl/)
 - url: https://www.reddit.com/r/Kotlin/comments/hdsppd/kotlin_repl/
 ---
 Does Kotlin have a REPL? Something like JShell or Ipython?
-## [8][Android | Having a strange WrongThread error that I can't figure out](https://www.reddit.com/r/Kotlin/comments/hdzap2/android_having_a_strange_wrongthread_error_that_i/)
+## [9][Android | Having a strange WrongThread error that I can't figure out](https://www.reddit.com/r/Kotlin/comments/hdzap2/android_having_a_strange_wrongthread_error_that_i/)
 - url: https://www.reddit.com/r/Kotlin/comments/hdzap2/android_having_a_strange_wrongthread_error_that_i/
 ---
 SOLVED :D
@@ -190,15 +216,7 @@ the onResponse method where I am doing inputting all my information from the API
         }
 
 &amp;#x200B;
-## [9][Within 24 hours, kotlin will overtake the scala subreddit in subscriber count](https://www.reddit.com/r/Kotlin/comments/hdbqs1/within_24_hours_kotlin_will_overtake_the_scala/)
+## [10][Within 24 hours, kotlin will overtake the scala subreddit in subscriber count](https://www.reddit.com/r/Kotlin/comments/hdbqs1/within_24_hours_kotlin_will_overtake_the_scala/)
 - url: https://www.reddit.com/r/Kotlin/comments/hdbqs1/within_24_hours_kotlin_will_overtake_the_scala/
 ---
 Enjoy!
-## [10][Low-level api interop in Kotlin/JVM?](https://www.reddit.com/r/Kotlin/comments/hdndw9/lowlevel_api_interop_in_kotlinjvm/)
-- url: https://www.reddit.com/r/Kotlin/comments/hdndw9/lowlevel_api_interop_in_kotlinjvm/
----
-Is there some guide to get started on pulling info from some low level apis such as wireless information, battery information, etc?
-
-I know in linux its easy by running some commands and filtering outputs, but its a mess in platforms like windows where we need to write some sort of bindings in like jni, but I still don't know much about JNI and want some guides to work.
-
-And is it possible to interact them (low-level api) with help of Kotlin/Native to write bindings for Kotlin/JVM instead of writing in direct C++?

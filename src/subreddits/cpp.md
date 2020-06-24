@@ -125,7 +125,19 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][I am a developer and just started learning C++, and I'm LOVING it! Programs feel real for the first time!](https://www.reddit.com/r/cpp/comments/hebc9f/i_am_a_developer_and_just_started_learning_c_and/)
+## [3][How to write SOLID C++](https://www.reddit.com/r/cpp/comments/hey696/how_to_write_solid_c/)
+- url: https://www.youtube.com/watch?v=PakbXnLht1I
+---
+
+## [4][Moving From Intel to ARM - Apple's Big Performance Mistake?](https://www.reddit.com/r/cpp/comments/hewo53/moving_from_intel_to_arm_apples_big_performance/)
+- url: https://youtu.be/JAr0c6le_F8
+---
+
+## [5][I have created my very own first library. It's called cpp-lazy and it can be used for lazy evuluation in C++14/17/20. I'm a 23 year old CS student so feedback (especially in terms of speed) is welcome.](https://www.reddit.com/r/cpp/comments/hey0fe/i_have_created_my_very_own_first_library_its/)
+- url: https://github.com/MarcDirven/cpp-lazy
+---
+
+## [6][I am a developer and just started learning C++, and I'm LOVING it! Programs feel real for the first time!](https://www.reddit.com/r/cpp/comments/hebc9f/i_am_a_developer_and_just_started_learning_c_and/)
 - url: https://www.reddit.com/r/cpp/comments/hebc9f/i_am_a_developer_and_just_started_learning_c_and/
 ---
 **Or how I was so bored with Java that I switched from software to mechanical engineering, became a web developer, and finally started to love C++!**
@@ -137,11 +149,25 @@ Fast forward to about three years ago, that I had this startup idea of mine \[is
 To my surprise, the focus on functional programming in the JavaScript community, at least the niche I was dwelling in - I was learning React/redux which is big on functional and immutably, made it much more relatable to me than Java. It felt more like math; no more weird analogy between classes and the world and stuff. Then a friend of my introduced me to [SICP](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html) and for the first time I was having fun reading an academic book on software... Yet JavaScript had started to wear me down as well and started toying with the idea of leaving my programming career unfinished. I took algorithm courses, learned about complexity analysis, TLA and distributed systems, but still felt something was missing, there was a hole that I just couldn't pin point.
 
 I had been told, since ages ago and till now, that C++ is a flawed language; that we use it just because we have to, because there's just so much legacy of it lying around. What I didn't know, what that I'm going to love it exactly because of  what I presume are the roots of it's flaws! I've been taking [a course in C++](https://www.coursera.org/specializations/cs-fundamentals) and it starts by discussing \* and &amp; and heap memory vs stack and how the memory allocation grows and such, and, what little did I know, this is exactly what I had been missing! The link between the never-feeling-real codes on my screen and the real physical world that runs these codes. To end on a dramatic note - I know if I had to deal with all the memory related issues in my actual job I might not have said this \[though probably I still would\], thanks for not dying out C++ and having yourself replaced with all the other languages that do away with the real stuff and replace it with garbage collection and more abstractions, I love seeing your garbages!
-## [4][SIMDe 0.5.0 Released](https://www.reddit.com/r/cpp/comments/he4a1h/simde_050_released/)
-- url: https://simd-everywhere.github.io/blog/announcements/release/2020/06/21/0.5.0-release.html
+## [7][Are these critiques of C++ still valid?](https://www.reddit.com/r/cpp/comments/hf0qau/are_these_critiques_of_c_still_valid/)
+- url: https://www.reddit.com/r/cpp/comments/hf0qau/are_these_critiques_of_c_still_valid/
+---
+I'm reading some documents by the author of FontForge and he discusses why didn't choose C++ to write the application. He has the following criticisms:
+
+* The semantics of a C++ program cannot be specified. The compiler is free to generate temporaries as it wishes. In C this is not a problem, but in C++ the creation of a temporary can involve calling a constructor and a destructor which may have untold side-effects. I find this frightening.
+* The order of execution of external constructors is unspecified. I have seen many inexplicable bugs caused by this.
+* I find it extremely difficult to debug C++. Stepping through a statement often involves many unexpected procedure calls (some of which are inlined and not obvious). This distracts from my main purpose in debugging.
+
+Have recent standard versions of C++ addressed these issues? Are they real issues for others? They seem like ninja-level problems to me.
+## [8][refl-cpp header only C++17 static reflection](https://www.reddit.com/r/cpp/comments/hedsl9/reflcpp_header_only_c17_static_reflection/)
+- url: https://github.com/veselink1/refl-cpp
 ---
 
-## [5][std::bitset and finding first set bit.](https://www.reddit.com/r/cpp/comments/hebcnu/stdbitset_and_finding_first_set_bit/)
+## [9][Virtual DC C++ User Group Meeting on July 14: Intro to Opensurgsim](https://www.reddit.com/r/cpp/comments/helvuq/virtual_dc_c_user_group_meeting_on_july_14_intro/)
+- url: https://www.meetup.com/dccppug/events/271481350/
+---
+
+## [10][std::bitset and finding first set bit.](https://www.reddit.com/r/cpp/comments/hebcnu/stdbitset_and_finding_first_set_bit/)
 - url: https://www.reddit.com/r/cpp/comments/hebcnu/stdbitset_and_finding_first_set_bit/
 ---
 I want to implement an allocator for small sizes using a bitmask.  I have seen that there are fast intrinsics for finding the first set or unset bit and returning the index.  Stackoverflow has some super interesting discussions on the subject i.e. [https://stackoverflow.com/questions/757059/position-of-least-significant-bit-that-is-set](https://stackoverflow.com/questions/757059/position-of-least-significant-bit-that-is-set)
@@ -151,62 +177,11 @@ I would much rather use std::bitset than roll my own solution and was suprised t
 There is a whole wiki page devoted to the "Find First Set" instructions on different platforms: [https://en.wikipedia.org/wiki/Find\_first\_set](https://en.wikipedia.org/wiki/Find_first_set)
 
 So I was wondering at what point do people just stick within the C++ standard or actually get there hands dirty with intrinsics.  When should we expect the standard to already be doing the job where clearly in a simple case like this it is not doing it?
-## [6][Syntactic Sugar, std::endl and operator &lt;&lt;](https://www.reddit.com/r/cpp/comments/he59uc/syntactic_sugar_stdendl_and_operator/)
-- url: https://www.reddit.com/r/cpp/comments/he59uc/syntactic_sugar_stdendl_and_operator/
----
-And so I was curious and I tried to reduce a cout syntax into the non-syntactic sugar equivalent.  And I initially ended up with this:
-
-`operator&lt;&lt; ( operator&lt;&lt;( cout, "hello" ), endl );`
-
-I got an error where the outer operator&lt;&lt; not being defined and so I checked the definition for endl and it is a function that takes an ostream&amp; object.  This confused me at first because I previously thought endl was a stub ostream object that was passed to cout to create a newline and flush the main ostream object.  I experimented a bit and found a syntax that worked.
-
-And so I would like to know if these two code equal?
-
-`endl( operator&lt;&lt;( cout, "hello" ) );`
-
-and
-
-`cout &lt;&lt; "hello" &lt;&lt; endl;`
-
-If they are indeed equal I would like to know how the C++ compiler treats endl differently from the rest of the other objects that are passed through shift-left operator?  And if they're not equal, what is the non-syntactic sugar equivalent of the `cout &lt;&lt; hello &lt;&lt; endl;` code?
-## [7][C++ Template Story So Far : C++11 to C++20](https://www.reddit.com/r/cpp/comments/hds7c1/c_template_story_so_far_c11_to_c20/)
-- url: http://www.vishalchovatiya.com/c-template-a-quick-uptodate-look/
+## [11][SIMDe 0.5.0 Released](https://www.reddit.com/r/cpp/comments/he4a1h/simde_050_released/)
+- url: https://simd-everywhere.github.io/blog/announcements/release/2020/06/21/0.5.0-release.html
 ---
 
-## [8][refl-cpp header only C++17 static reflection](https://www.reddit.com/r/cpp/comments/hedsl9/reflcpp_header_only_c17_static_reflection/)
-- url: https://github.com/veselink1/refl-cpp
----
-
-## [9][Streaming data from a C++ Software to a browser](https://www.reddit.com/r/cpp/comments/heaqwh/streaming_data_from_a_c_software_to_a_browser/)
-- url: https://www.reddit.com/r/cpp/comments/heaqwh/streaming_data_from_a_c_software_to_a_browser/
----
-Hello everyone.  
-I am not sure this is the best subreddit to seek advice on this matter but since my server-side software is written in C++ I thought ill give it a shot.  
-
-
-I have a C++ program that continuously renders a 3D scene reconstruction from continuously received data from an iPad Pro (the new ones with the Lidar).  
-
-
-The software is receiving the 3D data to render through a simple Poco TCP server, which works great and fast (the rendering itself is being done with OpenGL).  
-
-
-While the server renders the scene it keeps sending new data (mesh, textures, etc) to a browser, which then displays the data.  
-
-
-Currently, because browsers don't support raw TCP I am sending a new download URL for each new file through a web socket connection, then the browser proceeds to download each new file with a normal HTTP /1.1 request.  
-
-
-This is a very slow pipeline as the browser has to open a new "transaction" for each HTTP download.  
-I would to "stream" the data continuously to the browser as I create it.  
-I have thought of using HTTP/2 or GRPC, but I would like to hear if someone can recommend a known practice.  
-
-
-Thanks in advance!
-## [10][Stupid std::tuple tricks: Getting started](https://www.reddit.com/r/cpp/comments/hdxjud/stupid_stdtuple_tricks_getting_started/)
-- url: https://devblogs.microsoft.com/oldnewthing/20200622-00/?p=103880
----
-
-## [11][Conan best practices ?](https://www.reddit.com/r/cpp/comments/hedgw3/conan_best_practices/)
+## [12][Conan best practices ?](https://www.reddit.com/r/cpp/comments/hedgw3/conan_best_practices/)
 - url: https://www.reddit.com/r/cpp/comments/hedgw3/conan_best_practices/
 ---
 I'm currently making a few small libraries that I want to distribute easily (teaching scenario), and Conan seems a good option for that. 
@@ -221,15 +196,3 @@ In particular, here are the main questions I have:
 4. How to deal properly with GCC 5.2 ABI break? My solution so far is to modify the default profile to force the new ABI so that I don't end up with linking issues but I don't like very much.
 
 Do you have any resource available on these subjects? If not but you are a Conan user, what's your opinion on that and am I missing some important points?
-## [12][What Build System Do You Use And Why?](https://www.reddit.com/r/cpp/comments/he4nmm/what_build_system_do_you_use_and_why/)
-- url: https://www.reddit.com/r/cpp/comments/he4nmm/what_build_system_do_you_use_and_why/
----
-Hi everyone, 
-
-I've finished university about a month ago and I'm now working on a personal project utilising C++ and Vulkan. This has led me to realise that university has made me very Visual Studio dependent and this is something I would like to rectify. I did do a year in industry as part of my course, and they did use a different build system, but I wasn't really taught how it worked or how to change parts of it etc, more just "and you type this and it just works".
-
-So, I'm looking for a build system that can build for Windows and Linux (I'm currently using Ubuntu for the Linux testing, so I'm not sure if that will affect whether or not it will work on non-gnome based Linux distros) with the potential to add MacOS later via MoltenVK.
-
-I wanted to know what build systems people are using, the reason behind their choice, pros, cons, etc.
-
-Thanks

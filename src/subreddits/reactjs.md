@@ -109,65 +109,101 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/gk41zb/whos_available_may_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][A CLI tool to scaffold your React components](https://www.reddit.com/r/reactjs/comments/hebvve/a_cli_tool_to_scaffold_your_react_components/)
-- url: https://github.com/iamtabrezkhan/awesome-react-generator
+## [3][My second full-stack project - A Twitter Clone](https://www.reddit.com/r/reactjs/comments/henrwi/my_second_fullstack_project_a_twitter_clone/)
+- url: https://v.redd.it/kn1aqp2wcq651
 ---
 
-## [4][Made a version of React todoMVC without Router.](https://www.reddit.com/r/reactjs/comments/hebe1t/made_a_version_of_react_todomvc_without_router/)
-- url: https://www.reddit.com/r/reactjs/comments/hebe1t/made_a_version_of_react_todomvc_without_router/
----
-Searched for Todo lists as reference for me to reproduce as a beginner and made my own version of the todoMVC without the React Router.
-
-[https://avsssai.github.io/todoMVC](https://avsssai.github.io/todoMVC/)
-
-any suggestions accepted.
-## [5][Create simple POS with React.js, Node.js, and MongoDB #7: Adding redux to other component](https://www.reddit.com/r/reactjs/comments/hebhsh/create_simple_pos_with_reactjs_nodejs_and_mongodb/)
-- url: https://blog.soshace.com/create-simple-pos-with-react-js-node-js-and-mongodb-7-adding-redux-to-other-component/
+## [4][An in-depth beginner's guide to testing React applications](https://www.reddit.com/r/reactjs/comments/hezhuj/an_indepth_beginners_guide_to_testing_react/)
+- url: https://jkettmann.com/beginners-guide-to-testing-react/
 ---
 
-## [6][Instagram using MERN stack](https://www.reddit.com/r/reactjs/comments/hdnsn4/instagram_using_mern_stack/)
-- url: https://v.redd.it/wcmrxtk51f651
+## [5][VS Code extension with React snippets and other useful libraries](https://www.reddit.com/r/reactjs/comments/heexd5/vs_code_extension_with_react_snippets_and_other/)
+- url: https://github.com/snipsnapdev/snipsnap
 ---
 
-## [7][How to make a map, like in a Risk game?](https://www.reddit.com/r/reactjs/comments/he9r4c/how_to_make_a_map_like_in_a_risk_game/)
-- url: https://www.reddit.com/r/reactjs/comments/he9r4c/how_to_make_a_map_like_in_a_risk_game/
----
-Hello, everyone.
-
- I have an idea of quite simple game, not a paradox-like grand strategy, not so complicated, but visually similar - in the center is a world map, like in a Risk game. This map should be divided into regions. They should be clickable just to show information about that region. No 3d. No details. Just flat 2d map. 
-
-Well, could you recommend some resources, which could give a knowledge about making such map? I have no idea how to implement it. Maybe, there are some libraries ready to help with that? I've already searched for some, but did't find something that fits.
-## [8][Render props better than hooks? ⚔️](https://www.reddit.com/r/reactjs/comments/heeoo6/render_props_better_than_hooks/)
-- url: https://webup.org/blog/render-props-vs-hooks/
+## [6][Sentry.io releasesd @sentry/react including a prebuilt ErrorBoundary &amp; APM Tracing Profiler](https://www.reddit.com/r/reactjs/comments/heiwsf/sentryio_releasesd_sentryreact_including_a/)
+- url: https://github.com/getsentry/sentry-javascript/blob/master/packages/react/README.md
 ---
 
-## [9][What state management solution do you use and why ?](https://www.reddit.com/r/reactjs/comments/heen8j/what_state_management_solution_do_you_use_and_why/)
-- url: https://www.reddit.com/r/reactjs/comments/heen8j/what_state_management_solution_do_you_use_and_why/
+## [7][I made a chrome extension with react](https://www.reddit.com/r/reactjs/comments/hf10m1/i_made_a_chrome_extension_with_react/)
+- url: https://www.reddit.com/r/reactjs/comments/hf10m1/i_made_a_chrome_extension_with_react/
+---
+[https://github.com/jshan2017/tabash](https://github.com/jshan2017/tabash/blob/master/README.md)
+
+Hi! I made a bash-like 'new tab' page for chrome/edge.
+
+You can manage url shortcuts with simple command line interface.
+
+Also you can develop and install custom javascript packages on the shell
+
+Following commands are supported now ..
+
+    ls, mv, rm, echo, tire(package installer)
+
+If you install the program and give me a review, it would  be very helpful for me studying react.
+
+&amp;#x200B;
+## [8][12 Powerful Principles for Robust React Apps](https://www.reddit.com/r/reactjs/comments/hf0xrk/12_powerful_principles_for_robust_react_apps/)
+- url: https://medium.com/@lukebrandonfarrell/12-powerful-principles-for-robust-react-apps-industry-secrets-revealed-16a2a0159e11?source=friends_link&amp;sk=dcc42944448f77455c632c05351c0e07
 ---
 
-
-[View Poll](https://www.reddit.com/poll/heen8j)
-## [10][NextJS : Connect a PostgresQL database](https://www.reddit.com/r/reactjs/comments/heekbf/nextjs_connect_a_postgresql_database/)
-- url: https://www.reddit.com/r/reactjs/comments/heekbf/nextjs_connect_a_postgresql_database/
+## [9][Passing props to next component when using Link](https://www.reddit.com/r/reactjs/comments/hey2zt/passing_props_to_next_component_when_using_link/)
+- url: https://www.reddit.com/r/reactjs/comments/hey2zt/passing_props_to_next_component_when_using_link/
 ---
-I'm still learning the React/NextJS so my question might seem a bit dumb, but here we go. Right now, i have developped a website using NextJS and Contentful. Wonderful stuff, i've learned a lot in the past month and that's a really awesome way to prototype websites fast. But Contentful is not really scalable for what i'm trying to achieve, so i'd like to create a PostgresQL database and connect it to my nextJS application. The thing is i'm not a backend developer, and i'm having trouble to find simple tutorials on how to do this. 
+`&lt;Router&gt;`  
+ `&lt;div className="App"&gt;`  
+ `&lt;Switch&gt;`  
+ `&lt;Route path="/group/:id" component={GroupDetails}/&gt;`  
+ `&lt;Route exact path="/" component={Intro}/&gt;`   
+ `&lt;Route path="/dashboard" component={Dashboard}/&gt;`   
+   
+   
+ `&lt;/Switch&gt;`  
+   
+ `&lt;/div&gt;`  
+ `&lt;/Router&gt;`
 
-In this database, i'd like to store informations about products and display them on my website. Sounds simple, but for me and my lack of backend knowledge, that's a little bit overwhelming.
+this is my app.js routes  
+now I need to open the group details page when I click on a link in a list  
+this is my list component  
 
-My question is the following : how can i create a postgresql database, store informations and retrieve them to display it in my NextJS app? Do you have any tutorials on how to do this? Can i do it without creating an express backend, only using nextjs?
 
-Thanks a lot for your answers guys!
-## [11][I wanted to build a personal website, was thinking Gatsby and adding a HeadlessCMS. Any suggestions?](https://www.reddit.com/r/reactjs/comments/heehhc/i_wanted_to_build_a_personal_website_was_thinking/)
-- url: https://www.reddit.com/r/reactjs/comments/heehhc/i_wanted_to_build_a_personal_website_was_thinking/
+`const GroupList = ({groups}) =&gt;{`  
+   
+ `return(`  
+ `&lt;div className="row"&gt;`  
+ `{groups&amp;&amp;groups.map(group=&gt;{`  
+   
+ `return(`  
+ `&lt;div className="col s12 m6 l3"&gt;`  
+ `&lt;Link to={'/group/'+group._id}&gt;`  
+ `&lt;GroupCard group={group}/&gt;`  
+ `&lt;/Link&gt;`  
+ `&lt;/div&gt;`  
+`)`  
+`})}`  
+   
+   
+   
+ `&lt;/div&gt;`  
+`)`  
+`}`
+
+Here as you can see i am passing the {group} prop to GroupCard component and it works  
+now I need to pass the {group} prop  to the link which calls the GroupDetails component. Can anyone tell me how should i do this
+## [10][React state management and side-effects with Redux and RxJS](https://www.reddit.com/r/reactjs/comments/hf0vnx/react_state_management_and_sideeffects_with_redux/)
+- url: https://subvisual.com/blog/posts/react-state-management-and-side-effects-with-redux-and-rxjs/
 ---
-Basically the website I’ve started building up is for a yoga instructor who wants to display information about them and their services they practice. With the possibility of adding a blog later on.
 
-So would be quite simple to put together. I’ve started attached Ghost’s API to a Gatsby site but I’m wondering if Ghost is the best option for the type of site? 
-
-I’ve noticed others CMS platforms like Strapi and Sanity which seem pretty cool as well but don’t want to jump into something else without seeing what others have felt worked for similar projects :)
-
-Any suggestions would be forever grateful!
-## [12][[old but gold] MobX vs Recoil comparison from Michel Weststrate on Twitter](https://www.reddit.com/r/reactjs/comments/heeeuw/old_but_gold_mobx_vs_recoil_comparison_from/)
-- url: https://twitter.com/mweststrate/status/1261369870152871937
+## [11][Woof Vs. Meow: Data Fetching and React Component Lifecycle](https://www.reddit.com/r/reactjs/comments/hf0tte/woof_vs_meow_data_fetching_and_react_component/)
+- url: https://dev.to/ranaemad/woof-vs-meow-data-fetching-and-react-component-lifecycle-17gd
 ---
 
+## [12][Passing data to child component vs fetching data in child component?](https://www.reddit.com/r/reactjs/comments/hezn7c/passing_data_to_child_component_vs_fetching_data/)
+- url: https://www.reddit.com/r/reactjs/comments/hezn7c/passing_data_to_child_component_vs_fetching_data/
+---
+Hey folks, so I was wondering about a certain use case I have on my project at the moment.
+
+I have a table component that is filled with notifications. Each notification in the table has a name, date and id. On each table row click a new modal component is displayed and notification id is passed as a prop to the modal. Modal component then makes another call to the server and displays the current notification details.
+
+I was wondering if there is any benefit to making the call in the *onRowClick()* function in the table component, getting the whole notification object with the details and passing the whole object to the modal?

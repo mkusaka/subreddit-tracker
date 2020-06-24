@@ -1,24 +1,67 @@
 # ruby
-## [1][Postgres Indexes for ActiveRecord Join Tables in Rails Apps](https://www.reddit.com/r/ruby/comments/hea2rf/postgres_indexes_for_activerecord_join_tables_in/)
+## [1][Fun facts about Ruby #5](https://www.reddit.com/r/ruby/comments/hf04se/fun_facts_about_ruby_5/)
+- url: https://i.redd.it/3tbszye9qu651.png
+---
+
+## [2][Live coding: refactoring video with coding tips](https://www.reddit.com/r/ruby/comments/heseap/live_coding_refactoring_video_with_coding_tips/)
+- url: https://www.reddit.com/r/ruby/comments/heseap/live_coding_refactoring_video_with_coding_tips/
+---
+Hello everyone
+
+It's a refactoring video with tips to make our code more maintainable. The codebase is Rails, still most tips are very relevant to all Rubyist.
+
+Last year I presented a refactoring at Tokyo Rubyist Meetup. On stage I only used slides, for the video I wanted to do a live coding which I think is more appropriate for an online video.
+
+That was my first presentation and it's my first video! 🎉
+
+[https://youtu.be/X0542oOs1Qg](https://youtu.be/X0542oOs1Qg)
+
+&amp;#x200B;
+
+Feedback are welcome. Prononciation is a struggle (in any language), I'm working on it, hope it's ok enough.
+## [3][Hey, guys. I recently did a task for interview, and as usual I didn't get answer about the code, can u critic my code pls?](https://www.reddit.com/r/ruby/comments/hey2oq/hey_guys_i_recently_did_a_task_for_interview_and/)
+- url: https://www.reddit.com/r/ruby/comments/hey2oq/hey_guys_i_recently_did_a_task_for_interview_and/
+---
+[https://gitlab.com/abdullaachilov/my\_test\_task](https://gitlab.com/abdullaachilov/my_test_task)
+
+Here is the link, Id love to know - how I can improve myself.  
+
+
+UPD: The task was simple - create API for product with tags (there are was few requests in postman file)  
+The condition also was - it will be work with ember on front-end, so I have some formats restricted.
+## [4][Ruby 2.7 adds Enumerable#filter_map](https://www.reddit.com/r/ruby/comments/hegf6b/ruby_27_adds_enumerablefilter_map/)
+- url: https://blog.bigbinary.com/2020/05/08/ruby-2-7-adds-enumerable-filter-map.html
+---
+
+## [5][Huge Theme and Workflow Advances in Bridgetown 0.15 “Overlook”](https://www.reddit.com/r/ruby/comments/heft18/huge_theme_and_workflow_advances_in_bridgetown/)
+- url: https://www.bridgetownrb.com/release/major-workflow-advances-in-0.15-overlook/
+---
+
+## [6][Postgres Indexes for ActiveRecord Join Tables in Rails Apps](https://www.reddit.com/r/ruby/comments/hea2rf/postgres_indexes_for_activerecord_join_tables_in/)
 - url: https://pawelurbanek.com/rails-postgres-join-indexes
 ---
 
-## [2][How to Make a Perfect Pull Request](https://www.reddit.com/r/ruby/comments/hdzfeb/how_to_make_a_perfect_pull_request/)
-- url: https://www.reddit.com/r/ruby/comments/hdzfeb/how_to_make_a_perfect_pull_request/
+## [7][CockroachDB Support for Active Record](https://www.reddit.com/r/ruby/comments/hem2ew/cockroachdb_support_for_active_record/)
+- url: https://www.reddit.com/r/ruby/comments/hem2ew/cockroachdb_support_for_active_record/
 ---
-Once I had decided to improve my team’s performance and the first step was to find the bottleneck.
+[https://www.cockroachlabs.com/blog/build-an-app-with-active-record-cockroachdb/](https://www.cockroachlabs.com/blog/build-an-app-with-active-record-cockroachdb/)
+## [8][Best Ruby library for generating the locations of items in a room?](https://www.reddit.com/r/ruby/comments/hefafq/best_ruby_library_for_generating_the_locations_of/)
+- url: https://www.reddit.com/r/ruby/comments/hefafq/best_ruby_library_for_generating_the_locations_of/
+---
+I'm wondering if this problem has been solved before, and if it has, if it's open source.
 
-It turned out that coding speed wasn’t the limiting factor — code review was.
+I need to generate a grid (lets say 1000x1000). I need to be able to plot things on it (such as chairs, desks, and blocked out areas).
 
-So, to speed up reviews, I compared two types of pull requests:
+I could see something like:
 
-* Those that receive few comments and get merged quickly
-* Those that get a lot of comments and require several review rounds.
+    grid = Grid.new(1000,1000);
+    Grid.plot(chair, 500, 200);
+    Grid.generate();
 
-Here’s the result: 9 ways to make pull requests easier to review. [https://medium.com/better-programming/how-to-make-a-perfect-pull-request-3578fb4c112](https://medium.com/better-programming/how-to-make-a-perfect-pull-request-3578fb4c112?source=friends_link&amp;sk=b326bf34cab38601f1fb994206b33137)
+This is for a ruby app so thought I'd ask about it in Ruby but perhaps it's just easier to generate these statically using an image program.
 
-https://preview.redd.it/k2q8ba88oi651.jpg?width=4032&amp;format=pjpg&amp;auto=webp&amp;s=9fe61b1c1fa5ee10f73de999561be76896a8b746
-## [3][Strings -- how does `\b` work?](https://www.reddit.com/r/ruby/comments/hee8tu/strings_how_does_b_work/)
+Thanks for any advice!
+## [9][Strings -- how does `\b` work?](https://www.reddit.com/r/ruby/comments/hee8tu/strings_how_does_b_work/)
 - url: https://www.reddit.com/r/ruby/comments/hee8tu/strings_how_does_b_work/
 ---
 source:
@@ -30,38 +73,7 @@ source:
 
 and this is ok, but if I replace the first `print()` with `puts()`, I get `s` printed out vertically and nothing deleted.  
 basically, "\\b" can't delete new lines, is there a specific format character for doing that?
-## [4][Building GitHub-style Hovercards with Stimulus and HTML-over-the-wire](https://www.reddit.com/r/ruby/comments/hdsmwj/building_githubstyle_hovercards_with_stimulus_and/)
-- url: https://boringrails.com/articles/hovercards-stimulus/
+## [10][Coding Study: ASCII Art Faces](https://www.reddit.com/r/ruby/comments/heju2d/coding_study_ascii_art_faces/)
+- url: https://www.youtube.com/watch?v=c-ymcTlr4nU
 ---
 
-## [5][Opal-Async Gem Maintenance Going Forward](https://www.reddit.com/r/ruby/comments/he6mtg/opalasync_gem_maintenance_going_forward/)
-- url: https://www.reddit.com/r/ruby/comments/he6mtg/opalasync_gem_maintenance_going_forward/
----
-[https://andymaleh.blogspot.com/2020/06/opal-async-gem-maintainer-going-forward.html](https://andymaleh.blogspot.com/2020/06/opal-async-gem-maintainer-going-forward.html)
-## [6][Graceful Request Retries in Ruby Applications](https://www.reddit.com/r/ruby/comments/hdr91t/graceful_request_retries_in_ruby_applications/)
-- url: https://medium.com/@kirill_shevch/graceful-request-retries-in-ruby-applications-7bbeac5ebd40
----
-
-## [7][ruby on arm?](https://www.reddit.com/r/ruby/comments/hdnmn9/ruby_on_arm/)
-- url: https://www.reddit.com/r/ruby/comments/hdnmn9/ruby_on_arm/
----
-given that mac will move to arm procs
-aws has his on arm processor
-and somehow the performance is good(https://www.anandtech.com/show/15578/cloud-clash-amazon-graviton2-arm-against-intel-and-amd/10)
-
-- what is the status of ruby on arm?
-- can ruby leverage here, or again we are years behind all?
-- what the community could do to improve it?
-- what is the story with jruby, truffleruby on arm?
-## [8][I used 7 as the input and it still outputs hi. How would I be able to fix this](https://www.reddit.com/r/ruby/comments/hdur6w/i_used_7_as_the_input_and_it_still_outputs_hi_how/)
-- url: https://i.redd.it/x6h24pz0gh651.png
----
-
-## [9][What are People Using for Localizing Date/Time?](https://www.reddit.com/r/ruby/comments/hdkw5t/what_are_people_using_for_localizing_datetime/)
-- url: /r/rails/comments/hdkurj/what_are_people_using_for_localizing_datetime/
----
-
-## [10][JRuby](https://www.reddit.com/r/ruby/comments/hdd1dw/jruby/)
-- url: https://www.reddit.com/r/ruby/comments/hdd1dw/jruby/
----
-So if I interpreted this correctly (no pun intended) I can use JRuby to write both Java and Ruby code?

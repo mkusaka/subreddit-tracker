@@ -1,25 +1,5 @@
 # rails
-## [1][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/gvu083/personal_projects_show_off_your_own_project_andor/)
-- url: https://www.reddit.com/r/rails/comments/gvu083/personal_projects_show_off_your_own_project_andor/
----
-In this thread you can showcase your personal pet project to other redditors.
-
-Need help with a specific problem or just wanna have some extra eyeballs on your code? Ask away!
-
-A suggested format to get you started:
-
-1. **Name of your project**
-2. **A short description**
-3. **Application stack**
-4. **Link to Live app**
-5. **Link to GitHub**
-6. **You experience level**
-7. **Other information or areas that you would like advice on**
-
- 
-
-^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/har6r7/personal_projects_show_off_your_own_project_andor/)
+## [1][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/har6r7/personal_projects_show_off_your_own_project_andor/)
 - url: https://www.reddit.com/r/rails/comments/har6r7/personal_projects_show_off_your_own_project_andor/
 ---
 In this thread you can showcase your personal pet project to other redditors.
@@ -39,145 +19,163 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][how to improve multi insert](https://www.reddit.com/r/rails/comments/hebb6x/how_to_improve_multi_insert/)
-- url: https://www.reddit.com/r/rails/comments/hebb6x/how_to_improve_multi_insert/
+## [2][Solidus won't display images out of the box - Paperclip and ImageMagick error](https://www.reddit.com/r/rails/comments/hf0te0/solidus_wont_display_images_out_of_the_box/)
+- url: https://www.reddit.com/r/rails/comments/hf0te0/solidus_wont_display_images_out_of_the_box/
 ---
-i have list of values and need insert in db for general i use `each` for loop.
+I'm just starting with Solidus, though I do know my way around Rails. I've created a Solidus project on my Mac, and I installed all the required gems as well as ImageMagick through Homebrew.  Both `identify` and `magick` work as terminal commands as my `/usr/local/bin` directory is in my PATH. I've also specified the path to `identify` in the `application.rb` file (I'm guessing it's supposed to go in side the `Application` class). However, none of the images show up in Solidus, and when I try and manually add an image, I get the following error (it's related to paperclip). 
 
-`data = {`
+Any help here would be - Google has not been my friend this time. BTW, the same thing happens on both Mac and Windows running WSL (Debian). The error message is shown below:
 
-`row1: {id:1, name: 'test',  type: 'x'},`
+    [paperclip] Trying to link /tmp/RackMultipart20200622-9041-8gndhx.jpg to /tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-1t35lnu.jpg
+    [paperclip] Trying to link /tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-1t35lnu.jpg to /tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-62aumc.jpg
+    Command :: PATH=/usr/local/bin/identify:$PATH; file -b --mime '/tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-62aumc.jpg'
+    Command :: PATH=/usr/local/bin/identify:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-1t35lnu.jpg[0]' 2&gt;/dev/null
+    [paperclip] An error was received while processing: #&lt;Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError&gt;
+    Command :: PATH=/usr/local/bin/identify:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-1t35lnu.jpg[0]' 2&gt;/dev/null
+    [paperclip] An error was received while processing: #&lt;Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError&gt;
+    Command :: PATH=/usr/local/bin/identify:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-1t35lnu.jpg[0]' 2&gt;/dev/null
+    [paperclip] An error was received while processing: #&lt;Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError&gt;
+    Command :: PATH=/usr/local/bin/identify:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-1t35lnu.jpg[0]' 2&gt;/dev/null
+    [paperclip] An error was received while processing: #&lt;Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError&gt;
+    [paperclip] Trying to link /tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-1t35lnu.jpg to /tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-1dlkgdw.jpg
+    Command :: PATH=/usr/local/bin/identify:$PATH; file -b --mime '/tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-1dlkgdw.jpg'
+    [paperclip] Trying to link /tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-1t35lnu.jpg to /tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-16yjulo.jpg
+    Command :: PATH=/usr/local/bin/identify:$PATH; file -b --mime '/tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-16yjulo.jpg'
+      Rendering /Library/Ruby/Gems/2.6.0/gems/solidus_backend-2.10.1/app/views/spree/admin/images/create.js.erb
+      Rendered /Library/Ruby/Gems/2.6.0/gems/solidus_backend-2.10.1/app/views/spree/admin/images/create.js.erb (Duration: 3.4ms | Allocations: 874)
+    Completed 200 OK in 836ms (Views: 20.7ms | ActiveRecord: 7.6ms | Allocations: 29100)
+## [3][Live coding: refactoring video with coding tips](https://www.reddit.com/r/rails/comments/hesedi/live_coding_refactoring_video_with_coding_tips/)
+- url: https://www.reddit.com/r/rails/comments/hesedi/live_coding_refactoring_video_with_coding_tips/
+---
+Hello everyone
 
-`........... etc`
+It's a refactoring video with tips to make our code more maintainable.
 
-`}`
+Last year I presented a refactoring at Tokyo Rubyist Meetup. On stage I only used slides, for the video I wanted to do a live coding which I think is more appropriate for an online video.
+
+That was my first presentation and it's my first video! 🎉
+
+[https://youtu.be/X0542oOs1Qg](https://youtu.be/X0542oOs1Qg)
 
 &amp;#x200B;
 
-how can improve it  . i hear  about \`activerecord-import\` for reduce queries
-## [4][Wordpress vs Rails](https://www.reddit.com/r/rails/comments/hee2b3/wordpress_vs_rails/)
-- url: https://www.reddit.com/r/rails/comments/hee2b3/wordpress_vs_rails/
+Feedback are welcome. Prononciation is a struggle (in any language), I'm working on it, hope it's ok enough.
+## [4][Advanced Sinatra tutorials?](https://www.reddit.com/r/rails/comments/heknov/advanced_sinatra_tutorials/)
+- url: https://www.reddit.com/r/rails/comments/heknov/advanced_sinatra_tutorials/
 ---
-lets say you know how to make Wordpress websites with all their different plugins and themes (no php) and you know Rails (medior).
-
-In what case would you pick making a website in RoR over WP?
-## [5][Stripe Users: How do you handle product data with Rails?](https://www.reddit.com/r/rails/comments/hdwode/stripe_users_how_do_you_handle_product_data_with/)
-- url: https://www.reddit.com/r/rails/comments/hdwode/stripe_users_how_do_you_handle_product_data_with/
+Would appreciate someone pointing me to any tutorials that show the advanced use of Sinatra. In a nutshell what am trying to do is have a scrapper pull some data from various websites for me (have this covered using another service), but then I need to poll that data and use a Messenger bot to send messages to a subscriber list I have (it is this particular use case that has me thinking of using Sinatra). Thanks.
+## [5][How would you solve a "easy to edit complex html" situation like ....](https://www.reddit.com/r/rails/comments/hej9yo/how_would_you_solve_a_easy_to_edit_complex_html/)
+- url: https://www.reddit.com/r/rails/comments/hej9yo/how_would_you_solve_a_easy_to_edit_complex_html/
 ---
-I noticed that Stripe wants you to create products in their API, which sets off alarm bells about data going out of sync locally if I also have a \`products\` table.
+Use case: Our sales guys like using things like [https://instapage.com/](https://instapage.com/) to create frequently edited sales type content. 
 
-How do people in the community integrate Stripe product data with Rails and ActiveRecord. Are there any best practices?
-## [6][How to implement a ThemeForest front end the "Rails 6 way"?](https://www.reddit.com/r/rails/comments/hdyjjz/how_to_implement_a_themeforest_front_end_the/)
-- url: https://www.reddit.com/r/rails/comments/hdyjjz/how_to_implement_a_themeforest_front_end_the/
+Problem: But of a lot of this is VERY repetitive for them (like they need to do a similar page for 1,000 clients) - so it makes sense to rails/erb that up and host it ourselves. They also want to do a ton of subdomain stuff that services like instapage don't really support well. But - since this is now hosted in rails the sales guys can't really easily edit/publish anymore (since we don't have a wiz-bang wysiwyg type editor for complex html, don't have a simple way for them to go through deploy -&gt; staging -&gt; prod, etc.... they're not rails devs).
+
+Does anyone have any great solutions to something like this? The existing wysiwyg get editors for rails (afaik) are mostly just for doing word processing type editing and not for doing HTML editing with divs, js-plugins, etc.
+## [6][Could not found leave without an id](https://www.reddit.com/r/rails/comments/hersml/could_not_found_leave_without_an_id/)
+- url: https://www.reddit.com/r/rails/comments/hersml/could_not_found_leave_without_an_id/
 ---
-Hey everyone, I've been bouncing around for a week now, watching videos, reading tutorials, and experimenting, and I feel like I'm doing this all wrong. Instead of asking how to fix this particular problem or that problem, I think I need to step back and ask **how I should be doing this on a brand new project... What's the Rails 6 way?**
+i am using rails 5.2 and i am new to rails but i find error Couldn't find Leave without an ID please guide mn
 
-So I'm building a new Rails 6 app, and since I'm not a front-end person, I purchased a couple ThemeForest HTML bootstrap admin templates. The first one was pretty simple. After trying to implement it with WebPacker, I gave up, and I sort of got it working through the asset pipeline - but I had to do a lot of tweaking.  
-By that I mean I put all the fonts, css, images and js in subfolders under /apps/assets. Renamed some conflicting css and js file names. Renamed the icons.css (where the font references are) to icons.scss and then line-by-line changed the urls to something like this:
+Controller code
 
-    src: url(font-path('fa-brands-400.eot')
+def leave\_to\_approveleave = Leave.find(params\[:id\])status = params\[:rejected\].present? ? params\[:rejected\] : "Approved"if leave.update\_attribute("status",status)flash\[:notice\] = "Leave updated successfully"endend
 
-Well, now I've decided I don't like the theme, and I've moved to a much better one called Metronic (very popular).  
- [https://keenthemes.com/metronic/?page=index](https://keenthemes.com/metronic/?page=index) 
+view code
 
-The theme's docs quickstart section shows two way of getting started: Using WebPack or using Gulp. You decide which of 11 demos you like best, then if you want, tweak files under the src directory, then run " npm run build --demo1" (for webpack) or " gulp *--demo1" (for gulp).*  
-That compiles all the assets into a dist directory with all the css, js, images and fonts.
+&lt;% u/leaves.each\_with\_index do |leave, index| %&gt;
 
-Both options produce a small number of xxxx.bundle.css and xxx.bundle.js files that are called in the HTML examples. You also get a packages.json with all the yarn dependencies. 
+&lt;tr&gt;    
+&lt;td&gt;&lt;%= index + 1 %&gt;&lt;/td&gt;    
+&lt;td&gt;&lt;%= leave.leave\\\_date %&gt;&lt;/td&gt;    
+&lt;td&gt;&lt;%= leave.leave\\\_description %&gt;&lt;/td&gt;    
+&lt;td&gt;&lt;%= leave.status %&gt;&lt;/td&gt;    
+&lt;td&gt;&lt;%= link\\\_to 'Approve', dashbord\\\_leave\\\_to\\\_approve\\\_path(leave),method: :put,class: "btn btn-large btn-success" %&gt;&lt;td&gt;    
+&lt;td&gt;&lt;%= link\\\_to "Reject", dashbord\\\_leave\\\_to\\\_approve\\\_path(leave), method: :put, class: "btn btn-large btn-danger" %&gt;&lt;td&gt;    
+&lt;/tr&gt;    
+ &lt;% end %&gt;  
 
-Well, since WebPacker is the new hotness in Rails 6, and only sort of understanding what WebPack/WebPacker is and does, I started with the WebPack version. I know right now you're supposed to use WebPack for javascript, and asset pipeline for css, fonts and media - but most of the videos I watched just went ahead and used WebPack for everything.
 
-So I tried it, and the CSS, images and fonts seem to work using WebPacker. No CSS tweaking to find the fonts.  
-The javascript - not so much - because the javascript isn't getting loaded into the global scope (apparently that's how WebPacker is supposed to work). With tons of lines of javascript, it's pretty intimidating to figure out how to get this pre-written code into the right scopes. I'm not even sure how I would go about that.
+routes code
 
-That being the case, I put the javascript in the asset pipeline, and css/etc in WebPacker. Totally flipping the script. But it works. 
-
-Ok, not totally. The pre-compiling in development is so slow that half the time my pages wont load (1500ms timeout). And when I tried to deploy to Heroku, all hell broke loose.
-
-I've also tried the Gulp version exclusively in the asset pipeline. Sort of works in dev, but pukes on precompiling at Heroku.
-
-So, instead of banging my head against trying to get either approach to work, it's time to step back and ask the experts: Which route should I be going? What's the best approach to take? What's the Rails 6 way?  
-Bonus question: Is there a good reference on how to bring a modern HTML template into a Rails 6 app? Video, book, blog post, etc?  
-Bonus bonus question: Since it's so popular, has anyone worked specifically with Metronic?
-
-For reference, this is the docs for the HTML template:  
- [https://keenthemes.com/metronic/?page=docs&amp;section=html-webpack-quick-start](https://keenthemes.com/metronic/?page=docs&amp;section=html-webpack-quick-start) 
-
-Thanks for any and all guidance!
-## [7][Upgrading ruby version on production server](https://www.reddit.com/r/rails/comments/he0zcr/upgrading_ruby_version_on_production_server/)
-- url: https://www.reddit.com/r/rails/comments/he0zcr/upgrading_ruby_version_on_production_server/
+get 'dashbord/leaves'  
+ put 'dashbord/leave\_to\_approve'
+## [7][Integrate a bootstrap theme into a Rails app?](https://www.reddit.com/r/rails/comments/heht08/integrate_a_bootstrap_theme_into_a_rails_app/)
+- url: https://www.reddit.com/r/rails/comments/heht08/integrate_a_bootstrap_theme_into_a_rails_app/
 ---
-Does anyone have experience with this? Is it any different from doing it in the development environment?
-
-If anyone could point me to a tutorial or just give me some tips, I'd very much appreciate it
-## [8][Please review my ServiceHelper](https://www.reddit.com/r/rails/comments/hdulyf/please_review_my_servicehelper/)
-- url: https://www.reddit.com/r/rails/comments/hdulyf/please_review_my_servicehelper/
+I'm currently learning Rails and I'm working to add a theme to my app to make it look, well, not terrible.  Specifically, I'm looking at [this](https://startbootstrap.com/themes/sb-admin-2/) theme.  I've tried following along with this [Medium post](https://medium.com/@yli0607x/how-to-use-bootstrap-themes-on-ruby-on-rails-in-5-minutes-8e6f9542f6d8), and I got it mostly working, but the fonts are way small and some of the JS isn't firing (see my [repo](https://github.com/kroe761/sb-admin-2) here).  Thanks!
+## [8][best way to get range of keys using specific pattern in Redis](https://www.reddit.com/r/rails/comments/hehqsq/best_way_to_get_range_of_keys_using_specific/)
+- url: https://www.reddit.com/r/rails/comments/hehqsq/best_way_to_get_range_of_keys_using_specific/
 ---
-I'm working on app which have many external APIs calls. I don't want to have fat wrapper, so I made smart(at least I'm tried) base_service class, to make few dozens light services, but I have doubts if is it overcomplicated, imho I like now my tiny services which now have about 20 lines of code, but I want to know if my approach is proper way. Here is code: https://github.com/rwegrzyniak/FaradayBaseService
-Can you make fast code review?
-## [9][Recommended books](https://www.reddit.com/r/rails/comments/he2zqd/recommended_books/)
-- url: https://www.reddit.com/r/rails/comments/he2zqd/recommended_books/
+I work with Redis but I need best way to get keys from Redis .
+
+I need search by range of date `(2020-06-01 to 2020-06-20)` for every company\_id **(id is unique)**
+
+**example of key** `stat:company:2:date:2020-06-13`
+
+I think to solve problem i get key for every day but if need 200 numbers of key .
+
+it take many times and i make some operation with value before display user .
+
+i try use scan  
+ &amp; keys
+
+`Environment Ruby 2.7.0`  
+`, Ruby on Rails  6.0.3`  
+ `Redis`
+## [9][Where do I put this code?](https://www.reddit.com/r/rails/comments/heku2i/where_do_i_put_this_code/)
+- url: https://www.reddit.com/r/rails/comments/heku2i/where_do_i_put_this_code/
 ---
-What are the best books you would recommend about Ruby/Rails?
-## [10][How to have distinct forms for multiple objects in the same view](https://www.reddit.com/r/rails/comments/hdv8vt/how_to_have_distinct_forms_for_multiple_objects/)
-- url: https://www.reddit.com/r/rails/comments/hdv8vt/how_to_have_distinct_forms_for_multiple_objects/
+I am working on an app that has models:
+
+Accounts -&gt; Transactions
+
+I want to add a "Transfer" feature to my app which will essentially create a debit Transaction in one Account, and a credit Transaction in another Account.  
+
+My thought was to create a transfer controller action in the AccountController, and put the code there, but I'm reading about helpers, service objects, domain objects, and just putting the code in the Model instead. 
+
+I'm getting confused and wondering where would be the best place to code this logic? 
+
+Thanks!
+## [10][NoMethodError (undefined method `email' for #&lt;User:0x00007f8d981f3c90&gt;)](https://www.reddit.com/r/rails/comments/hei2lp/nomethoderror_undefined_method_email_for/)
+- url: https://www.reddit.com/r/rails/comments/hei2lp/nomethoderror_undefined_method_email_for/
 ---
-I'm building a shopping cart and one of the features I'd like to be able to implement is to allow the shopper to select the quantity of item they want. I figure I could do this with a form_for for each object that's currently in the cart, but worried that there would be conflicts. How can I assign a unique form input (which will then be available as params for the next page)? Would it be something like:
+ 
 
-     &lt;%= form_for(:product_name, url: cart_path), html: {id: "quantity-form"}) do |f| %&gt;
-        &lt;%= f.label :quantity, class: 'field-label emphasis contact-form-item-mobile' do %&gt;
-            &lt;span class = 'field-label emphasis'&gt; Quantity &lt;/span&gt;
-        &lt;% end %&gt;
-        &lt;%= f.number_field :quantity, class: 'form-control form-control-mobile', placeholder: "Quantity" %&gt;&lt;br&gt;
-    &lt;% end %&gt;
-## [11][Help optimizing SQL query generation in rails active record](https://www.reddit.com/r/rails/comments/hdw20h/help_optimizing_sql_query_generation_in_rails/)
-- url: https://www.reddit.com/r/rails/comments/hdw20h/help_optimizing_sql_query_generation_in_rails/
+I am using devise for sign-up and have removed all :email references from migration files, updated devise.rb to :username for authentication and I get this error. It won't let me create a user in the console. Has anyone seen this before and know how to fix it? Any help is appreciated, I've tried everything.
+## [11][change status of leave from pending to approve](https://www.reddit.com/r/rails/comments/hegnkx/change_status_of_leave_from_pending_to_approve/)
+- url: https://www.reddit.com/r/rails/comments/hegnkx/change_status_of_leave_from_pending_to_approve/
 ---
-I have a \`user\` model that has\_many \`posts\`. For this example suppose I have to do two things.
+def leave\_to\_approve  
+ leave = Leave.find(params\[:id\])  
+ status = params\[:rejected\].present? ? params\[:rejected\] : "Approved"  
+ if leave.update\_attribute("status",status)  
+ flash\[:notice\] = "Leave updated successfully"  
+ end  
+ end
 
-1. Check if the user any posts present
-2. If test, check if the post is present in one of the following types. 
+view code
 
-This example is a bit contrived but it like the posts exist only if the user is of a certain kind. something like that. so please bear with me on this. 
+ &lt;tbody&gt;  
+ &lt;% leaves.each\_with\_index do |leave, index| %&gt;  
+&lt;tr&gt;  
+&lt;td&gt;&lt;%= index + 1 %&gt;&lt;/td&gt;  
+&lt;td&gt;&lt;%= leave.leave\_date %&gt;&lt;/td&gt;  
+&lt;td&gt;&lt;%= leave.leave\_description %&gt;&lt;/td&gt;  
+&lt;td&gt;&lt;%= leave.status %&gt;&lt;/td&gt;  
+&lt;td&gt;&lt;%= link\_to 'Approve', dashbord\_leave\_to\_approve\_path(leave),method: :put,class: "btn btn-large btn-success" %&gt;&lt;td&gt;  
+&lt;td&gt;&lt;%= link\_to "Reject", dashbord\_leave\_to\_approve\_path(leave), method: :put, class: "btn btn-large btn-danger" %&gt;&lt;td&gt;  
+&lt;/tr&gt;  
+ &lt;% end %&gt;  
+  &lt;/tbody&gt;
 
-Approach one
+routes code 
 
-user = User.find(1)
+get 'dashbord/leaves'  
+ put 'dashbord/leave\_to\_approve'
 
-return user.posts.present? &amp;&amp; (user.posts.map(&amp;:type) &amp; types).present?
+but it give error
 
-Approach 2
+# ActiveRecord::RecordNotFound in DashbordController#leave_to_approve
 
-user = User.find(1)
-
-return true unless user.posts.exists?
-
-return user.posts.where(type: types).exists?
-
-While I thought the approach 2 would be more efficient, I noticed that in the 1st approach since posts are already loaded in the present? check the subsequent map doesn't fire a new query.  So say just 1 DB query. 
-
-In the second approach probably since there is a where query it ends up firing 2 queries to the DB. 
-
-Could you let me know if this is this is the case and any information on how rails caches these queries? I tried it only in a rails console.
-## [12][Writing to a file is taking a lot of time in the prod environment](https://www.reddit.com/r/rails/comments/hdrubu/writing_to_a_file_is_taking_a_lot_of_time_in_the/)
-- url: https://www.reddit.com/r/rails/comments/hdrubu/writing_to_a_file_is_taking_a_lot_of_time_in_the/
----
-I know it's kind of weird. I have changed the in-memory generation of csv to a file-based one. Locally, it  generates the file relatively faster 20 k records in 20 mins or so. But in the production environment it's taking too much time. It's writing 1 k records over 20 mins. Is it because of I/O overhead? or am I looking at this wrong
-
-This is the code I have
-
-`tempfile = File.open(Rails.root.join('tmp', "#{SecureRandom.hex(8)}.csv"), 'wb')CSV.open(tempfile.path, 'w') do |csv|ActiveRecord::Base.uncached doModel.find_each do |model|csv &lt;&lt; ["foobar"]endendendtempfile`
-
-&amp;#x200B;
-
-Looks like writing to file is indeed an overhead, what are my options now? I cannot create file in memory due to RAM reasons
-
-This is how much Benchmark results looks like
-
-0.019205 0.001835 0.021040 ( 0.021893) - local
-
-0.455934 0.035429 0.491363 ( 0.725257) - prod
-
-&amp;#x200B;
-
-&amp;#x200B;
+## Couldn't find Leave without an ID

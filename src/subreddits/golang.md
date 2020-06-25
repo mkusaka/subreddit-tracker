@@ -1,13 +1,59 @@
 # golang
-## [1][A distributed workflow runner focusing on simplicity and performance.](https://www.reddit.com/r/golang/comments/hey2lm/a_distributed_workflow_runner_focusing_on/)
-- url: https://github.com/fristonio/xene
+## [1][fgprof - The Full Go Profiler](https://www.reddit.com/r/golang/comments/hf4n3k/fgprof_the_full_go_profiler/)
+- url: https://github.com/felixge/fgprof
 ---
 
-## [2][Go Library for Common Lisp style format](https://www.reddit.com/r/golang/comments/hez14g/go_library_for_common_lisp_style_format/)
-- url: https://github.com/Ragnaroek/format
+## [2][PostgreSQL packages](https://www.reddit.com/r/golang/comments/hflveh/postgresql_packages/)
+- url: https://www.reddit.com/r/golang/comments/hflveh/postgresql_packages/
+---
+Hi,
+
+I would like to use PostgreSQL in my project. Could you recommend form or query builder to use?
+
+I used Gorm and pure pg driver but I don't know which is the best nowadays.
+
+Thanks.
+## [3][Go's History in Code](https://www.reddit.com/r/golang/comments/hfcahs/gos_history_in_code/)
+- url: https://seh.dev/go-legacy/
 ---
 
-## [3][Apps or tools that you wish were in Go](https://www.reddit.com/r/golang/comments/hezy1b/apps_or_tools_that_you_wish_were_in_go/)
+## [4][Advanced topics in GO](https://www.reddit.com/r/golang/comments/hfm0cd/advanced_topics_in_go/)
+- url: https://www.reddit.com/r/golang/comments/hfm0cd/advanced_topics_in_go/
+---
+Hello everyone, I started using GO about 2 weeks ago and I want to take it to the next level. anybody knows of courses or books that can help me with that? If not, can you recommend some advanced topics that I can self-study to up my game?
+
+Thanks in advance!
+## [5][Sast Tool opensource](https://www.reddit.com/r/golang/comments/hfl9dz/sast_tool_opensource/)
+- url: https://github.com/insidersec/insider
+---
+
+## [6][What is the best way to build a dynamic configuration service for distributed system?](https://www.reddit.com/r/golang/comments/hfiggo/what_is_the_best_way_to_build_a_dynamic/)
+- url: https://www.reddit.com/r/golang/comments/hfiggo/what_is_the_best_way_to_build_a_dynamic/
+---
+There is a use case where we need some way to distribute configuration across machines in distributed system i.e. when a configuration at one machine changes it gets changed  across all machines as well.
+
+I am planning to use [etcd](https://etcd.io/) (which is a distributed KV store) but not sure about the approach. Any suggestion or guidance will be very helpful.
+
+Thanks!
+
+&amp;#x200B;
+
+Edit: Also is there any approach to let the service running to know in near real-time that something has changed and it need to re-configure?
+## [7][Range over map[string]interface{}](https://www.reddit.com/r/golang/comments/hfkoy3/range_over_mapstringinterface/)
+- url: https://www.reddit.com/r/golang/comments/hfkoy3/range_over_mapstringinterface/
+---
+I have a yaml file whose contents keep changing. I want to fetch a component from it which is called data.   
+existingData = fetchedFile\["data"\]  
+existingData is of type map\[string\]interface{} now. I want to range over this, how can I do so?
+## [8][GORM Playground, play GORM V2 and submit high-quality bug reports with code to reproduce the problem with just a few clicks ;)](https://www.reddit.com/r/golang/comments/hf3rzr/gorm_playground_play_gorm_v2_and_submit/)
+- url: https://github.com/go-gorm/playground
+---
+
+## [9][How to Benchmark: dbq vs sqlx vs GORM](https://www.reddit.com/r/golang/comments/hfghd2/how_to_benchmark_dbq_vs_sqlx_vs_gorm/)
+- url: https://medium.com/@rocketlaunchr.cloud/how-to-benchmark-dbq-vs-sqlx-vs-gorm-e814caacecb5
+---
+
+## [10][Apps or tools that you wish were in Go](https://www.reddit.com/r/golang/comments/hezy1b/apps_or_tools_that_you_wish_were_in_go/)
 - url: https://www.reddit.com/r/golang/comments/hezy1b/apps_or_tools_that_you_wish_were_in_go/
 ---
 What are some apps or tools you wish that were written in Go and the reason?
@@ -20,61 +66,3 @@ Here is my list:
 * Kafka. Don't like Java dependency but not a big deal.  Great tool.
 
 Mostly for me it dependencies and performance.
-## [4][Learn Golang by building a fintech banking app - Lesson5: Bank transfers PART 2](https://www.reddit.com/r/golang/comments/heuae8/learn_golang_by_building_a_fintech_banking_app/)
-- url: https://morioh.com/p/077822b7e273
----
-
-## [5][klauspost/compress - Optimized compression (gzip, zstd) packages in pure Go.](https://www.reddit.com/r/golang/comments/hehlmg/klauspostcompress_optimized_compression_gzip_zstd/)
-- url: https://github.com/klauspost/compress
----
-
-## [6][Go-bindata not found](https://www.reddit.com/r/golang/comments/hexvgo/gobindata_not_found/)
-- url: https://www.reddit.com/r/golang/comments/hexvgo/gobindata_not_found/
----
-Hello,
-
-I'm writing a wallpaper app in golang, and I want to bundle some assets in the executable, but after running go get on the package, and having it in my go.mod, it doesn't work in my command line when i try to run it on the assets folder. If any of you know what might be the cause, I'd highly appreciate if you could enlighten me.
-
-Many thanks in advance
-## [7][Gitea 1.12.0 and 1.12.1 are released](https://www.reddit.com/r/golang/comments/hep7ms/gitea_1120_and_1121_are_released/)
-- url: https://blog.gitea.io/2020/06/gitea-1.12.0-and-1.12.1-are-released/
----
-
-## [8][segmentio/encoding - Much faster drop-in replacement for encoding/json.](https://www.reddit.com/r/golang/comments/hehjdp/segmentioencoding_much_faster_dropin_replacement/)
-- url: https://github.com/segmentio/encoding
----
-
-## [9][Loosing a part of data from a struct when it is passed to a function.](https://www.reddit.com/r/golang/comments/hexg4l/loosing_a_part_of_data_from_a_struct_when_it_is/)
-- url: https://www.reddit.com/r/golang/comments/hexg4l/loosing_a_part_of_data_from_a_struct_when_it_is/
----
-I am passing a struct type DataIn by Paas by Value to a function in Golang. DataIn has key "Message" which contains a large string. This key along with its value is LOST in the called function though it is presest in callee function.
-
-Below are the details.
-
-    type DataIn struct {
-        Message string `json:"data"`
-        OrderingKey string `json:"orderkey"`
-	Nil bool // Fake null
-	Config map[string]string `json:"config"`
-    }
-
-
-    func No_op_task(in core.DataIn)(core.DataOut, error){
-
-    log := fmt.Sprintf("Input message  %v", in)
-    core.LogMessage("", log) //Output:  { e5606cc9-927d-4d8e-85c0-f4b2414078cb false map[]}\
-    temp, err := json.Marshal(in)
-    if in.Message == "" {// This is key lost along with data
-        log := fmt.Sprintf("No op task data %v", in)
-	core.LogMessage("[Kafka Dynamo Writer] ", log)
-    }
-
-    // some code
-    }
-
-Kindly help here , any resoltion will be helpful.
-Let me know if any other information is required.
-## [10][Graphic Go Algorithms](https://www.reddit.com/r/golang/comments/hezudf/graphic_go_algorithms/)
-- url: https://www.reddit.com/r/golang/comments/hezudf/graphic_go_algorithms/
----
-Search by Graphic Go Algorithms in amazon website to get free promotion book.  just 5 day!

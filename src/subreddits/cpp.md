@@ -125,19 +125,62 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][How to write SOLID C++](https://www.reddit.com/r/cpp/comments/hey696/how_to_write_solid_c/)
+## [3][In a hypothetical situation, backwards compatibility is no longer an issue in C++. What would you change about the core language or the standard library? [DISCUSSION]](https://www.reddit.com/r/cpp/comments/hf99xw/in_a_hypothetical_situation_backwards/)
+- url: https://www.reddit.com/r/cpp/comments/hf99xw/in_a_hypothetical_situation_backwards/
+---
+Considered posting this to r/cpp_questions, but I felt this sub would be more appropriate for a discussion about a hypothetical situation since this is not a question about real world C++ usage.
+## [4][How to write SOLID C++](https://www.reddit.com/r/cpp/comments/hey696/how_to_write_solid_c/)
 - url: https://www.youtube.com/watch?v=PakbXnLht1I
 ---
 
-## [4][Moving From Intel to ARM - Apple's Big Performance Mistake?](https://www.reddit.com/r/cpp/comments/hewo53/moving_from_intel_to_arm_apples_big_performance/)
-- url: https://youtu.be/JAr0c6le_F8
+## [5][Thoughts on using Conan with CMake as a library developer](https://www.reddit.com/r/cpp/comments/hf4kbg/thoughts_on_using_conan_with_cmake_as_a_library/)
+- url: https://www.reddit.com/r/cpp/comments/hf4kbg/thoughts_on_using_conan_with_cmake_as_a_library/
 ---
+I'm a library developer who's been tasked with evaluating Conan for managing our subdependencies. I've spent a couple of weeks [hacking away at a POC](https://github.com/CraigANV/cpp-project-skeleton), and thought I'd share my observations here.
 
-## [5][I have created my very own first library. It's called cpp-lazy and it can be used for lazy evuluation in C++14/17/20. I'm a 23 year old CS student so feedback (especially in terms of speed) is welcome.](https://www.reddit.com/r/cpp/comments/hey0fe/i_have_created_my_very_own_first_library_its/)
+Firstly; for end-users I think Conan is excellent.
+
+For library developers though, I'm not sure I can recommend it - at least when using CMake. One of our requirements is that our libs should be Conan-agnostic (i.e. the end user should be able to use an alternative package management if they want). The way the Conan generators import targets makes this really difficult, as you can see in my [POC project I've had to add some hacky workarounds](https://github.com/CraigANV/cpp-project-skeleton/blob/d282732b1603a659868190d5c3007202906c4f49/libskeleton/CMakeLists.txt#L28) to decouple my targets from the Conan imports.
+
+Are there any library developers out there using Conan like this? If so, I'd love to hear your thoughts.
+
+Edit: I managed to get rid of the alias hack by just providing my own FindPoco.cmake and setting POCO\_ROOT to the CONAN\_POCO\_ROOT from the cmake\_path generator. Pretty happy with it now!
+## [6][Thoughts on implementing a math expression evaluator that can handle various data types?](https://www.reddit.com/r/cpp/comments/hfjo9r/thoughts_on_implementing_a_math_expression/)
+- url: https://www.reddit.com/r/cpp/comments/hfjo9r/thoughts_on_implementing_a_math_expression/
+---
+so im in the process of implementing this and I wanted some input / opinions from people. How could I handle the different data types when parsing? 
+for example:
+
+a = matrix.zero(5, 5)
+b = matrix.one(5, 5)
+a * b
+a * 5
+a * 3.2
+b
+a + sin(15)
+
+Each of these expressions would have to store the value to a variable (if its an assignment) and also print the result. What im not sure about, again, is how to handle the different data types inside the program.
+
+Thanks!
+## [7][Group adopting an "older" Cpp code base](https://www.reddit.com/r/cpp/comments/hfdd3w/group_adopting_an_older_cpp_code_base/)
+- url: https://www.reddit.com/r/cpp/comments/hfdd3w/group_adopting_an_older_cpp_code_base/
+---
+My group is planning on adopting an older cpp code base as our solver. We mainly deal with numerical software written in fortran, but recently a few people in our groups  decided to takeover another code base written in cpp. Only three of us have any experience in cpp, but aren't really software developers. 
+
+The person spearheading this effort wants to start adopting a more modern software design based workflow than what we have been doing. It's probably not going to be a full makeover, but I was wondering what information or tools we can use to become more "modern"? If that makes sense.
+
+We plan to adopt git for the effort and are looking at other forms of version control. 
+
+While, I am asking this is more from my perspective but are there are resourcing on best practices with working with "legacy" code bases in cpp?
+## [8][I have created my very own first library. It's called cpp-lazy and it can be used for lazy evuluation in C++14/17/20. I'm a 23 year old CS student so feedback (especially in terms of speed) is welcome.](https://www.reddit.com/r/cpp/comments/hey0fe/i_have_created_my_very_own_first_library_its/)
 - url: https://github.com/MarcDirven/cpp-lazy
 ---
 
-## [6][I am a developer and just started learning C++, and I'm LOVING it! Programs feel real for the first time!](https://www.reddit.com/r/cpp/comments/hebc9f/i_am_a_developer_and_just_started_learning_c_and/)
+## [9][Moving From Intel to ARM - Apple's Big Performance Mistake?](https://www.reddit.com/r/cpp/comments/hewo53/moving_from_intel_to_arm_apples_big_performance/)
+- url: https://youtu.be/JAr0c6le_F8
+---
+
+## [10][I am a developer and just started learning C++, and I'm LOVING it! Programs feel real for the first time!](https://www.reddit.com/r/cpp/comments/hebc9f/i_am_a_developer_and_just_started_learning_c_and/)
 - url: https://www.reddit.com/r/cpp/comments/hebc9f/i_am_a_developer_and_just_started_learning_c_and/
 ---
 **Or how I was so bored with Java that I switched from software to mechanical engineering, became a web developer, and finally started to love C++!**
@@ -149,7 +192,7 @@ Fast forward to about three years ago, that I had this startup idea of mine \[is
 To my surprise, the focus on functional programming in the JavaScript community, at least the niche I was dwelling in - I was learning React/redux which is big on functional and immutably, made it much more relatable to me than Java. It felt more like math; no more weird analogy between classes and the world and stuff. Then a friend of my introduced me to [SICP](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html) and for the first time I was having fun reading an academic book on software... Yet JavaScript had started to wear me down as well and started toying with the idea of leaving my programming career unfinished. I took algorithm courses, learned about complexity analysis, TLA and distributed systems, but still felt something was missing, there was a hole that I just couldn't pin point.
 
 I had been told, since ages ago and till now, that C++ is a flawed language; that we use it just because we have to, because there's just so much legacy of it lying around. What I didn't know, what that I'm going to love it exactly because of  what I presume are the roots of it's flaws! I've been taking [a course in C++](https://www.coursera.org/specializations/cs-fundamentals) and it starts by discussing \* and &amp; and heap memory vs stack and how the memory allocation grows and such, and, what little did I know, this is exactly what I had been missing! The link between the never-feeling-real codes on my screen and the real physical world that runs these codes. To end on a dramatic note - I know if I had to deal with all the memory related issues in my actual job I might not have said this \[though probably I still would\], thanks for not dying out C++ and having yourself replaced with all the other languages that do away with the real stuff and replace it with garbage collection and more abstractions, I love seeing your garbages!
-## [7][Are these critiques of C++ still valid?](https://www.reddit.com/r/cpp/comments/hf0qau/are_these_critiques_of_c_still_valid/)
+## [11][Are these critiques of C++ still valid?](https://www.reddit.com/r/cpp/comments/hf0qau/are_these_critiques_of_c_still_valid/)
 - url: https://www.reddit.com/r/cpp/comments/hf0qau/are_these_critiques_of_c_still_valid/
 ---
 I'm reading some documents by the author of FontForge and he discusses why didn't choose C++ to write the application. He has the following criticisms:
@@ -159,40 +202,7 @@ I'm reading some documents by the author of FontForge and he discusses why didn'
 * I find it extremely difficult to debug C++. Stepping through a statement often involves many unexpected procedure calls (some of which are inlined and not obvious). This distracts from my main purpose in debugging.
 
 Have recent standard versions of C++ addressed these issues? Are they real issues for others? They seem like ninja-level problems to me.
-## [8][refl-cpp header only C++17 static reflection](https://www.reddit.com/r/cpp/comments/hedsl9/reflcpp_header_only_c17_static_reflection/)
+## [12][refl-cpp header only C++17 static reflection](https://www.reddit.com/r/cpp/comments/hedsl9/reflcpp_header_only_c17_static_reflection/)
 - url: https://github.com/veselink1/refl-cpp
 ---
 
-## [9][Virtual DC C++ User Group Meeting on July 14: Intro to Opensurgsim](https://www.reddit.com/r/cpp/comments/helvuq/virtual_dc_c_user_group_meeting_on_july_14_intro/)
-- url: https://www.meetup.com/dccppug/events/271481350/
----
-
-## [10][std::bitset and finding first set bit.](https://www.reddit.com/r/cpp/comments/hebcnu/stdbitset_and_finding_first_set_bit/)
-- url: https://www.reddit.com/r/cpp/comments/hebcnu/stdbitset_and_finding_first_set_bit/
----
-I want to implement an allocator for small sizes using a bitmask.  I have seen that there are fast intrinsics for finding the first set or unset bit and returning the index.  Stackoverflow has some super interesting discussions on the subject i.e. [https://stackoverflow.com/questions/757059/position-of-least-significant-bit-that-is-set](https://stackoverflow.com/questions/757059/position-of-least-significant-bit-that-is-set)
-
-I would much rather use std::bitset than roll my own solution and was suprised to see that bitset does NOT have any special ability to find the first set or unset index with or without using intrinsics.
-
-There is a whole wiki page devoted to the "Find First Set" instructions on different platforms: [https://en.wikipedia.org/wiki/Find\_first\_set](https://en.wikipedia.org/wiki/Find_first_set)
-
-So I was wondering at what point do people just stick within the C++ standard or actually get there hands dirty with intrinsics.  When should we expect the standard to already be doing the job where clearly in a simple case like this it is not doing it?
-## [11][SIMDe 0.5.0 Released](https://www.reddit.com/r/cpp/comments/he4a1h/simde_050_released/)
-- url: https://simd-everywhere.github.io/blog/announcements/release/2020/06/21/0.5.0-release.html
----
-
-## [12][Conan best practices ?](https://www.reddit.com/r/cpp/comments/hedgw3/conan_best_practices/)
-- url: https://www.reddit.com/r/cpp/comments/hedgw3/conan_best_practices/
----
-I'm currently making a few small libraries that I want to distribute easily (teaching scenario), and Conan seems a good option for that. 
-
-My only concern is that I can't really find any documentation or blog post or anything about what the best practices are for packaging C++ libraries with Conan.
-
-In particular, here are the main questions I have:
-
-1. In source or out of source recipes?
-2. Which CMake generator to use?
-3. Is it ok to impose Conan on my users or should I leave them a choice?
-4. How to deal properly with GCC 5.2 ABI break? My solution so far is to modify the default profile to force the new ABI so that I don't end up with linking issues but I don't like very much.
-
-Do you have any resource available on these subjects? If not but you are a Conan user, what's your opinion on that and am I missing some important points?

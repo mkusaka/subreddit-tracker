@@ -22,7 +22,39 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Get union type from property type shared by different types](https://www.reddit.com/r/typescript/comments/hezem0/get_union_type_from_property_type_shared_by/)
+## [2][simple algo visualizer -- reverse an array](https://www.reddit.com/r/typescript/comments/hfcnnp/simple_algo_visualizer_reverse_an_array/)
+- url: https://www.reddit.com/r/typescript/comments/hfcnnp/simple_algo_visualizer_reverse_an_array/
+---
+A simple little app to visualize reversing an array.   
+
+
+Want to start doing more algorithms as well as visualizing them.   
+
+
+Starting off very basic! 
+
+&amp;#x200B;
+
+ [https://github.com/risingBirdSong/visualizeReverseArray](https://github.com/risingBirdSong/visualizeReverseArray)
+## [3][8 Visual Studio Code Assistant rules for nasty TypeScript / Angular bugs](https://www.reddit.com/r/typescript/comments/hfhu2t/8_visual_studio_code_assistant_rules_for_nasty/)
+- url: https://medium.com/@tomaszs2/8-visual-studio-code-assistant-rules-for-nasty-angular-bugs-9f186277e0ab
+---
+
+## [4][Getting Map value type](https://www.reddit.com/r/typescript/comments/hf5g3a/getting_map_value_type/)
+- url: https://www.reddit.com/r/typescript/comments/hf5g3a/getting_map_value_type/
+---
+Let's say I have a custom Map type, like this:
+
+```
+type shapeMap = Map&lt;string, [number, number][]&gt;
+```
+
+How do I get the value type of this Map back (`[number, number][]`)? I can do something stupid like this, but it seems very incorrect:
+
+```
+type shapeMapValue = Exclude&lt;ReturnType&lt;shapeMap["get"]&gt;, undefined&gt;
+```
+## [5][Get union type from property type shared by different types](https://www.reddit.com/r/typescript/comments/hezem0/get_union_type_from_property_type_shared_by/)
 - url: https://www.reddit.com/r/typescript/comments/hezem0/get_union_type_from_property_type_shared_by/
 ---
 Sorry for the weird title, but I don't really know how to describe it in a short way :D So here is an example:
@@ -43,7 +75,76 @@ BUT without explicitly writing v1 and v2 again. Is there some way to extract the
     type PropType = ExtractPropertyType&lt;T1 | T2, 'prop'&gt;;
 
 Thanks for any help!
-## [3][Best approach for video streaming web app](https://www.reddit.com/r/typescript/comments/heqpdn/best_approach_for_video_streaming_web_app/)
+## [6][An alternative to Google Geocoder API (in Node.js)](https://www.reddit.com/r/typescript/comments/hf2jyh/an_alternative_to_google_geocoder_api_in_nodejs/)
+- url: https://www.reddit.com/r/typescript/comments/hf2jyh/an_alternative_to_google_geocoder_api_in_nodejs/
+---
+Yesterday I started writing a few web scrapers in Node.js to gather some data for a personal project of mine (wait for it). One of the things I had to deal, is how to convert addresses to geolocation (latitude and longitude, basically.) So I started doing what we do best as Javascript developers: 
+
+*Hm… there must be a package for that.*
+
+&amp;#x200B;
+
+[https://medium.com/@armand1m\_/an-alternative-to-google-geocoder-api-in-node-js-78728c7b9faa?source=friends\_link&amp;sk=914c1b3acee09686d740675b1e8424d7](https://medium.com/@armand1m_/an-alternative-to-google-geocoder-api-in-node-js-78728c7b9faa?source=friends_link&amp;sk=914c1b3acee09686d740675b1e8424d7)
+## [7][Help passing generic callback arguments to a utility method's callback](https://www.reddit.com/r/typescript/comments/hf10mx/help_passing_generic_callback_arguments_to_a/)
+- url: https://www.reddit.com/r/typescript/comments/hf10mx/help_passing_generic_callback_arguments_to_a/
+---
+    export default class Utilities {
+    
+       /* take a generic callback argument. Store all return values 
+          of the callback until the callback returns false
+    
+       Then, end looping. Return an array of all prior return values
+       */
+       static loopUntilFalse&lt;Args, CallbackReturn&gt;(callback: (args: Args) =&gt; CallbackReturn|false): unknown {
+          let continueLooping = true;
+          const returnValues: Array&lt;CallbackReturn&gt; = [];
+    
+          while (continueLooping === true) {
+    
+             // any
+             // Cannot find name 'args'.ts(2304)
+             const latestReturnValue = callback(args);
+    
+             if (latestReturnValue === false) { 
+                continueLooping = false 
+             } else if (typeof latestReturnValue !== "boolean") {
+                returnValues.push(latestReturnValue);
+             }
+          }
+    
+          return returnValues;
+       }
+    }
+
+How should an unknown shape of arguments be passed into the method here? I'm a little rough on generics and also function argument syntax in TS, so I suspect the problem is on one of those, or a combination of both.
+
+Also if my generic return syntax looks off any feedback there is also welcome.
+
+&amp;#x200B;
+## [8][Compile-time null/undefined check confusion](https://www.reddit.com/r/typescript/comments/hf39oc/compiletime_nullundefined_check_confusion/)
+- url: https://www.reddit.com/r/typescript/comments/hf39oc/compiletime_nullundefined_check_confusion/
+---
+I'm having trouble understanding the static analysis in TypeScript, can anyone tell me why this works:
+
+    const myFunc = (aParam?: string, upper?: boolean): string =&gt; {
+      if (aParam &amp;&amp; upper) {
+        return aParam.toUpperCase();
+      }
+      return 'Hello';
+    }
+
+but not this:
+
+    const myFunc = (aParam?: string, upper?: boolean): string =&gt; {
+      const x = aParam &amp;&amp; upper;
+      if (x) {
+        return aParam.toUpperCase();
+      }
+      return 'Hello';
+    }
+
+The bottom code results in "Object is possibly 'undefined'" for aParam
+## [9][Best approach for video streaming web app](https://www.reddit.com/r/typescript/comments/heqpdn/best_approach_for_video_streaming_web_app/)
 - url: https://www.reddit.com/r/typescript/comments/heqpdn/best_approach_for_video_streaming_web_app/
 ---
 Hey there! 
@@ -55,29 +156,7 @@ I've read about webrtc a bit, but there aren't a ton of resources out there and 
 Any ideas / suggestions / alternatives? 
 
 Thank you!
-## [4][Help passing generic callback arguments to a utility method's callback](https://www.reddit.com/r/typescript/comments/hf10mx/help_passing_generic_callback_arguments_to_a/)
-- url: https://www.reddit.com/r/typescript/comments/hf10mx/help_passing_generic_callback_arguments_to_a/
----
-    export default class Utilities {
-    
-       static loopUntilFalse&lt;Args, CallbackReturn&gt;(callback: (args: Args) =&gt; boolean): unknown {
-          let continueLooping = true;
-          let returnValue: CallbackReturn;
-    
-          while (continueLooping === true) {
-    
-             let returnValue = callback(args);
-             if (returnValue === false) { continueLooping = false }
-          }
-    
-          return returnValue;
-       }
-    }
-
-How should an unknown shape of arguments be passed into the method here? I'm a little rough on generics and also function argument syntax in TS, so I suspect the problem is on one of those, or a combination of both.
-
-&amp;#x200B;
-## [5][Generic type defined at class-level](https://www.reddit.com/r/typescript/comments/hewb4z/generic_type_defined_at_classlevel/)
+## [10][Generic type defined at class-level](https://www.reddit.com/r/typescript/comments/hewb4z/generic_type_defined_at_classlevel/)
 - url: https://www.reddit.com/r/typescript/comments/hewb4z/generic_type_defined_at_classlevel/
 ---
 I'm trying to approach something like this:
@@ -120,94 +199,7 @@ test.ts:12:5 - error TS2322: Type 'User' is not assignable to type 'T'.
 ```
 
 how can I fix this?
-## [6][(Beta) I've written a guide to architecting Node TypeScript apps - still WIP but has a runnable companion repo and full documentation](https://www.reddit.com/r/typescript/comments/hed665/beta_ive_written_a_guide_to_architecting_node/)
+## [11][(Beta) I've written a guide to architecting Node TypeScript apps - still WIP but has a runnable companion repo and full documentation](https://www.reddit.com/r/typescript/comments/hed665/beta_ive_written_a_guide_to_architecting_node/)
 - url: https://jbreckmckye.gitbook.io/node-ts-architecture/
 ---
 
-## [7][Is there any way to prevent type collision?](https://www.reddit.com/r/typescript/comments/henw82/is_there_any_way_to_prevent_type_collision/)
-- url: https://www.reddit.com/r/typescript/comments/henw82/is_there_any_way_to_prevent_type_collision/
----
-I have two libs, Electron and react-dropzone that conflict because Electron decide it was going to add 'path' into File in the global namespace.
-
-So now if I use both projects together, they conflict.  
-
-Is there a way to force some types to be ignored or somehow force them to be compatible?
-## [8][Assigning Buffer to string issue](https://www.reddit.com/r/typescript/comments/hej52r/assigning_buffer_to_string_issue/)
-- url: https://www.reddit.com/r/typescript/comments/hej52r/assigning_buffer_to_string_issue/
----
-    // doesn't work
-          const configDataRaw = fs.readFileSync(
-             path.join(__dirname, "../../../configuration.json", "utf8")
-          );
-    
-          const configData = JSON.parse(configDataRaw);
-    // const configDataRaw: Buffer
-    // Argument of type 'Buffer' is not assignable to parameter of type 'string'.ts(2345)
-    
-    // works
-          const configData2 = JSON.parse(path.join(__dirname, 
-            "../../../configuration.json", "utf8")
-          );
-
-All of the following failed:
-
-     const configDataRaw as string = fs.readFileSync(
-    
-     const configDataRaw&lt;string&gt; = fs.readFileSync(
-    
-    
-          const configData = JSON.parse((configDataRaw as string));
-    
-          const configData = JSON.parse(configDataRaw&lt;string&gt;);
-
-What is the correct way to assert this is not a buffer, but a string? 
-
-In the first code block, code sample #2, it seems to infer properly, I don't understand why the more iterative version acts differently here.
-## [9][Pool about strict mode](https://www.reddit.com/r/typescript/comments/her1r3/pool_about_strict_mode/)
-- url: https://www.reddit.com/r/typescript/comments/her1r3/pool_about_strict_mode/
----
-Most projects that I start, I start in strict mode.
-
-Strict mode avoid a lot of simples bugs, avoid run time errors, but some programmers consider ir more difficult...
-
-Do you prefer to program in strict mode?
-
-[View Poll](https://www.reddit.com/poll/her1r3)
-## [10][Help reating this type](https://www.reddit.com/r/typescript/comments/heehno/help_reating_this_type/)
-- url: https://www.reddit.com/r/typescript/comments/heehno/help_reating_this_type/
----
-     translationServiceStub?: Promise&lt;{
-            [name: string]: Function;
-        }&gt;;
-
-I see this is an optional type. It is a returned promise. The promise contains an object. The object has a key `name` that is a string. the value of `name` is a function (in other words `name` is a method).
-
-Is that accurate?
-
-If so can someone tell me why it wasn't written more concisely like this:
-
-     translationServiceStub?: Promise&lt;{
-            name: Function;
-        }&gt;;
-
-Or even:
-
-     translationServiceStub?: Promise&lt;{
-            name: () =&gt; void // or whatever the expected return type is
-        }&gt;;
-## [11][Typescript interfaces for i18 translations?](https://www.reddit.com/r/typescript/comments/heh3ou/typescript_interfaces_for_i18_translations/)
-- url: https://www.reddit.com/r/typescript/comments/heh3ou/typescript_interfaces_for_i18_translations/
----
-I want to have our app translated into multiple languages but I also want to do it the 'typescript way' where our strings aren't just in an 'object' but are in a TS interface.
-
-Has anyone done anything like this before?
-
-I've only seen these mapped to basic JSON objects and not typescript interfaces.
-
-I think the following issues exist for Typescript:
-
- - how do you do hierarchy?  I'd like to avoid excessive nesting and possibly without the need to constantly name and define a new interface for each component.  For example a key of onboarding.hello could/should be used so that the 'onboarding' component can have multiple keys.
-
-- Is it better to isolate internationalizations per component rather than have one big internationalization blob with all of the internationalizations?  So for example you could have a React component like Onboarding.tsx and then a translation of Onboarding.i18 that is a properties file with each translation inside it...  That might be cleaner rather than having one big object. One challenge here is it would have to survive refactoring and still work with the translation service.
-
-- How do you handle interpolation with Typescript strings and get compiler safety?  For example, an interpolation could take 'name' and 'date' properties and these would need to be applied at runtime. If we forget one we would need to get a compiler error.

@@ -21,96 +21,83 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][Samsung Database Migration Case Study: 1.1 Billion Users across Three Continents from Oracle to Amazon Aurora with AWS Database Migration Service](https://www.reddit.com/r/aws/comments/heo21x/samsung_database_migration_case_study_11_billion/)
-- url: https://aws.amazon.com/solutions/case-studies/samsung-migrates-off-oracle-to-amazon-aurora/
+## [2][Serverless GitLab CI/CD on AWS Fargate](https://www.reddit.com/r/aws/comments/hfl31z/serverless_gitlab_cicd_on_aws_fargate/)
+- url: https://www.reddit.com/r/aws/comments/hfl31z/serverless_gitlab_cicd_on_aws_fargate/
+---
+On this really nice article, [**Daniel Coutinho de Miranda**](https://www.linkedin.com/in/ACoAAAMhSJQBtT3u2qPU27N8D3dNyXP5wLFgybU) shows how to serverless run the GitLab Runner Manager and Fargate driver on AWS Fargate.
+
+  
+Really nice content!
+
+https://medium.com/ci-t/serverless-gitlab-ci-cd-on-aws-fargate-da2a106ad39c
+## [3][Introducing Amazon Honeycode – Build Web &amp; Mobile Apps Without Writing Code](https://www.reddit.com/r/aws/comments/hf8ee9/introducing_amazon_honeycode_build_web_mobile/)
+- url: https://aws.amazon.com/blogs/aws/introducing-amazon-honeycode-build-web-mobile-apps-without-writing-code/
 ---
 
-## [3][Creating a cloudwatch event with terraform](https://www.reddit.com/r/aws/comments/hezj08/creating_a_cloudwatch_event_with_terraform/)
-- url: https://www.reddit.com/r/aws/comments/hezj08/creating_a_cloudwatch_event_with_terraform/
+## [4][closing aws account?](https://www.reddit.com/r/aws/comments/hfk9fq/closing_aws_account/)
+- url: https://www.reddit.com/r/aws/comments/hfk9fq/closing_aws_account/
 ---
-Hi all,
+currently I have my amazon.co.uk account, and I have an aws account with the same email/ password. I'm pretty sure both accounts are linked.
 
-Can somebody please point me in the direction of a terraform example creating a cloudwatch event that is triggered by aws config rules that then targets a lambda function?
-
-Cheers,
-Adam
-## [4][Amazon Workspaces - Setting up a user &amp; restricting user from installing programs](https://www.reddit.com/r/aws/comments/hezeyj/amazon_workspaces_setting_up_a_user_restricting/)
-- url: https://www.reddit.com/r/aws/comments/hezeyj/amazon_workspaces_setting_up_a_user_restricting/
+If i was to close my aws account, would that also close my amazon.co.uk?
+## [5][Automatic blocking of IPs](https://www.reddit.com/r/aws/comments/hfje4b/automatic_blocking_of_ips/)
+- url: https://www.reddit.com/r/aws/comments/hfje4b/automatic_blocking_of_ips/
 ---
-Sorry, total noob here.
+Hi All,
 
-I just discovered Amazon workspaces and had no problem setting up a workspace for a remote worker.
+I'm running a dash webapp (python) which is running some data visualization for a group of engineers. It's rough and ready, is running on an ec2.nano instance on port 80 (I'm a data scientist, not a software engineer so apologies if I get nomenclature incorrect).
 
-However, I can't figure out how to add restrictions to that persons accounts.
+I've installed fail2ban, but I'm not sure it's what I want.
 
-For example:
+The reason I want to block IPs is because on the terminal I can see multiple attempts of IPs trying to exploit unpatched weaknesses:
 
-I have their workspace set up.
+""POST /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 405 -" etc
 
-I installed programs they need (nothing crazy, chrome, ringcentral)
+What can I do to protect against this kind of brute force stuff?
 
-That user on the workspace is an administrator.
-
-How do I restrict that user and make them standard? I see I can change it from within windows but I can also change it back.
-
-In short: I want to restrict the user from installing anything on the workspace.
-
-&amp;#x200B;
-
-Thank you so much for your help. I'm sure it's something really simple.
-## [5][Packer + Ansible still relevant?](https://www.reddit.com/r/aws/comments/hf0z87/packer_ansible_still_relevant/)
-- url: https://www.reddit.com/r/aws/comments/hf0z87/packer_ansible_still_relevant/
+Thanks in advance.
+## [6][Amazon Rekignition](https://www.reddit.com/r/aws/comments/hfllrv/amazon_rekignition/)
+- url: https://www.reddit.com/r/aws/comments/hfllrv/amazon_rekignition/
 ---
-Hi guys
-
-Due to actions outside of my control I have been out of the workplace since February, previously I was working in DevOps (AWS) for a very long time.
-
-I have enjoyed the enforced break but soon I want to get back on the wagon now as it were and I am looking to the people who are heavily involved in DevOps based around AWS for a little steer if you don't mind?
-
-My question is, is Ansible + Packet still relevant in the market place in respect of building AMIs / automating deployments.
-
-My last position used Packer + Ansible + Terraform to build AMI images (via GitLab automation pipelines), has anything changed here or is it still widely utilised?
-
-Obviously Terraform is still used extensively, but any tips on what else I should be looking at?
-
-The question I always had in my mind is is Jenkins still used more widely than GitLab for automation as well, or has this moved on to actual AWS pipelines themselves.
-
-Thanks for any tips you can provide
-## [6][OPENVPN in public subnet and pinging instances in private subnet](https://www.reddit.com/r/aws/comments/hf037r/openvpn_in_public_subnet_and_pinging_instances_in/)
-- url: https://www.reddit.com/r/aws/comments/hf037r/openvpn_in_public_subnet_and_pinging_instances_in/
+Hello all! Sorry I’m really new to AWS in general and I’m working using rekognition with python. I’m attempting to use client.detect_labels but I for some reason do not get any response. Does anyone have any advice or can help me out? Thank you!
+## [7][Having trouble running tensorflow docker containers as AWS Batch jobs](https://www.reddit.com/r/aws/comments/hfli7p/having_trouble_running_tensorflow_docker/)
+- url: https://www.reddit.com/r/aws/comments/hfli7p/having_trouble_running_tensorflow_docker/
 ---
-Hi there, 
+I have a containerized tensorflow application that does not need to use GPUs (CPU only). When calling the internal script with a command like "python [doTheThing.py](https://doTheThing.py) input1 input2" on an individual EC2 instance, the application runs smoothly and completes somewhere between 30 seconds and 4 minutes (depending on the inputs) then Exit(0)'s (shuts down the container). Transitioning to AWS Batch, I created a compute env (managed, max vcpu=512, instance type=r5 family, allocation strat = BEST\_FIT), attached a job queue and then created a job definition(vcpu reqs = 4, mem reqs = 8000MB, no timeout or retires). The jobs are then submitted via cli, adding the command like the one shown above. 
 
-For various reasons I am making a lab in a private subnet. I want to be able to use Openvpn to access that lab and do things like ping instances, etc. 
+Here is where things get strange. If I submit a small chunk of jobs (100-1000) jobs, the jobs move through pretty quickly as normal. But if I submit a full load (in my case about 20000 jobs), AWS Batch appears to "choke". For a given job, a container is created with the command but then the application does not appear to run within the containers. Worse the containers do not even fail and exist and those that do actually succeed also do not Exit(0); they just stay up and running. 
 
-I have set up OpenVPN in a public subnet, but I'm not sure what I need to do in order to get the service running. When I connect, I am unable to ping instances in the private subnet.
-
-Does anyone have experience with this and possibly provide information and help?
-
-&amp;#x200B;
-
-Thanks in advance
-## [7][Useful article on how to pass the AWS SA-02 exam quickly](https://www.reddit.com/r/aws/comments/heftqn/useful_article_on_how_to_pass_the_aws_sa02_exam/)
-- url: https://medium.com/capital-one-tech/advice-on-taking-the-aws-solutions-architect-associate-exam-from-someone-who-just-passed-eaaaabaf8c1c
+I'm new to using AWS Batch, I have used ECS alot but AWS Batch abstracts some of the controls (for better and for worse I guess). Does anyone have any tips, solutions, advice? Is this possible a tensorflow problem than I am just missing?
+## [8][IFTT for AWS](https://www.reddit.com/r/aws/comments/hf41rb/iftt_for_aws/)
+- url: https://www.reddit.com/r/aws/comments/hf41rb/iftt_for_aws/
 ---
+Hi all – I have always gotten great feedback from this community :) 
 
-## [8][CORS issue with Application Load Balancer and Fargate Microservices](https://www.reddit.com/r/aws/comments/heuyhq/cors_issue_with_application_load_balancer_and/)
-- url: https://www.reddit.com/r/aws/comments/heuyhq/cors_issue_with_application_load_balancer_and/
----
-We have Microservices hosted on Fargate via an ALB.  We set our Microservices' CORS policy to accept any origin, any method.  They are REST apis consumed by an SPA client.  However, about 10% of the time, we would get CORS errors.  We are new to AWS and not quite sure why this is happening.  Any tips or hints on what we should look at?  Thanks!
-## [9][When using CloudFront OAI for serving static content stored in S3, can I restrict which path in the bucket CloudFront can access to?](https://www.reddit.com/r/aws/comments/hexqnu/when_using_cloudfront_oai_for_serving_static/)
-- url: https://www.reddit.com/r/aws/comments/hexqnu/when_using_cloudfront_oai_for_serving_static/
----
-Can I allow CloudFront to read anything inside my-bucket/public, but disallow reading anything inside my-bucket/private?
+Just launched a new product called Relay ([https://relay.sh](https://relay.sh)). It's an event-driven DevOps platform that listens to events from 3rd party services like AWS, Datadog, PagerDuty, Jira and triggers workflows – sort of like IFTTT or Zapier for DevOps.
 
-I have files in S3 which I don't want to allow access without logging in my app. The app is hosted on EC2.
+A bunch of [use cases](https://relay.sh/workflows) we sourced from the AWS Well-Architected framework. Lot of people we talked to were using Lambda for some of these scenarios, but looking for something simpler than writing their own functions. 
 
-I don't want to allow access to S3 bucket directly even for public files because that would disable caching and optimized routing by CloudFront, and don't want to have another bucket just for public content.
-## [10][Serving gzipped video file from s3](https://www.reddit.com/r/aws/comments/hexhcv/serving_gzipped_video_file_from_s3/)
-- url: https://www.reddit.com/r/aws/comments/hexhcv/serving_gzipped_video_file_from_s3/
+Would love to get feedback from this crew!
+## [9][Anyone running AWS outposts and how would you rate it?](https://www.reddit.com/r/aws/comments/hfb7p7/anyone_running_aws_outposts_and_how_would_you/)
+- url: https://www.reddit.com/r/aws/comments/hfb7p7/anyone_running_aws_outposts_and_how_would_you/
 ---
-I gzipped a .mov file and uploaded to s3. The content type is set to video/quicktime, and content encoding is set to gzip. However when I use the url as a source for video element, it shows CONTENT_DECODING_FAILED. I am not sure if this is the correct way to do this, please help
-## [11][What are the scenarios where you would use multiple VPCs?](https://www.reddit.com/r/aws/comments/heg7sh/what_are_the_scenarios_where_you_would_use/)
-- url: https://www.reddit.com/r/aws/comments/heg7sh/what_are_the_scenarios_where_you_would_use/
+What is your experience so far? What is missing?
+## [10][AWS SDK nodejs for AWS IoT Shadow service - Bug updating Shadows?](https://www.reddit.com/r/aws/comments/hfj5p5/aws_sdk_nodejs_for_aws_iot_shadow_service_bug/)
+- url: https://www.reddit.com/r/aws/comments/hfj5p5/aws_sdk_nodejs_for_aws_iot_shadow_service_bug/
 ---
-Just curious. At the startup I work for, uses just one VPC for everything and we feel our design is secure and efficient. I understand big orgs might would have good use cases for multiple VPCs but I can't think of any myself
+I am writing this API using lambdas to be able to access the IoT devices shadows ie a JSON document for each device holding its configuration. Its API is fairly simple, having the classical GET/DELETE/UPDATE methods. Everything was going smooth until I was testing my update method. The way it works is:
+
+    let params = {  
+     thingName: your\_thing\_id,  
+     payload: your\_shadow\_document  
+    }
+    
+    response = await iotdata.updateThingShadow(params).promise  
+
+The method is working as expected, modifying the shadow document for existing devices. The problem I am having is that when using a **non existent device id**, instead for getting the expected error and 404 status code, the function happily gives me a 200 as if trying to modify the shadow for a non existing device wasn't a problem?
+
+Anyone else using this? Do you care to test?
+## [11][What does the AWS Educate Software Development Engineer final project entail in?](https://www.reddit.com/r/aws/comments/hfidf9/what_does_the_aws_educate_software_development/)
+- url: https://www.reddit.com/r/aws/comments/hfidf9/what_does_the_aws_educate_software_development/
+---
+Could you tell me what the final project is? What do you need to do? And which programming languages are to be used?

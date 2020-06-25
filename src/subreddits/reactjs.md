@@ -109,101 +109,58 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/gk41zb/whos_available_may_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][My second full-stack project - A Twitter Clone](https://www.reddit.com/r/reactjs/comments/henrwi/my_second_fullstack_project_a_twitter_clone/)
-- url: https://v.redd.it/kn1aqp2wcq651
+## [3][My First Project guys. Check it out and give me some feedbacks and reviews on it. It'll really help me grow.. Thank you : ) website link : https://electrofocus-website.firebaseapp.com/](https://www.reddit.com/r/reactjs/comments/hf6pgw/my_first_project_guys_check_it_out_and_give_me/)
+- url: https://v.redd.it/4771dnmzjw651
 ---
 
 ## [4][An in-depth beginner's guide to testing React applications](https://www.reddit.com/r/reactjs/comments/hezhuj/an_indepth_beginners_guide_to_testing_react/)
 - url: https://jkettmann.com/beginners-guide-to-testing-react/
 ---
 
-## [5][VS Code extension with React snippets and other useful libraries](https://www.reddit.com/r/reactjs/comments/heexd5/vs_code_extension_with_react_snippets_and_other/)
-- url: https://github.com/snipsnapdev/snipsnap
+## [5][What is your project file structure?](https://www.reddit.com/r/reactjs/comments/hfhpub/what_is_your_project_file_structure/)
+- url: https://www.reddit.com/r/reactjs/comments/hfhpub/what_is_your_project_file_structure/
+---
+How you deploy your project? Do you make separate project for front end and backend? Or make a same project for both?
+## [6][urql vs Apollo Client 3.0](https://www.reddit.com/r/reactjs/comments/hfhnr9/urql_vs_apollo_client_30/)
+- url: https://www.reddit.com/r/reactjs/comments/hfhnr9/urql_vs_apollo_client_30/
+---
+GraphQL clients were discussed few times with the general notion that Apollo Client 2.x is inferior. Is this still the case with the 3.0 version? Did anyone already test thoroughly the 3.0 version?
+
+Or is there anything better than urql and Apollo Client 3.0 to handle GQL on the client side?
+## [7][Server Side Rendering React App with Deno](https://www.reddit.com/r/reactjs/comments/hfm3ac/server_side_rendering_react_app_with_deno/)
+- url: https://dev.p.ota.to/post/server-side-rendering-react-app-with-deno-4qf28vm8axb/
 ---
 
-## [6][Sentry.io releasesd @sentry/react including a prebuilt ErrorBoundary &amp; APM Tracing Profiler](https://www.reddit.com/r/reactjs/comments/heiwsf/sentryio_releasesd_sentryreact_including_a/)
-- url: https://github.com/getsentry/sentry-javascript/blob/master/packages/react/README.md
+## [8][Listen Together – Listen to Spotify with your friends (or anyone) completely in sync](https://www.reddit.com/r/reactjs/comments/hflurq/listen_together_listen_to_spotify_with_your/)
+- url: https://www.reddit.com/r/reactjs/comments/hflurq/listen_together_listen_to_spotify_with_your/
 ---
+I recently built Listen Together for a weekend hackathon and thought I'd share it with anyone who was interested. Let me know if you have any questions! 
 
-## [7][I made a chrome extension with react](https://www.reddit.com/r/reactjs/comments/hf10m1/i_made_a_chrome_extension_with_react/)
-- url: https://www.reddit.com/r/reactjs/comments/hf10m1/i_made_a_chrome_extension_with_react/
+App: https://listen.henryfellerhoff.com/
+GitHub: https://github.com/hfellerhoff/listentogether
+## [9][Example.](https://www.reddit.com/r/reactjs/comments/hflimu/example/)
+- url: https://www.reddit.com/r/reactjs/comments/hflimu/example/
 ---
-[https://github.com/jshan2017/tabash](https://github.com/jshan2017/tabash/blob/master/README.md)
-
-Hi! I made a bash-like 'new tab' page for chrome/edge.
-
-You can manage url shortcuts with simple command line interface.
-
-Also you can develop and install custom javascript packages on the shell
-
-Following commands are supported now ..
-
-    ls, mv, rm, echo, tire(package installer)
-
-If you install the program and give me a review, it would  be very helpful for me studying react.
-
-&amp;#x200B;
-## [8][12 Powerful Principles for Robust React Apps](https://www.reddit.com/r/reactjs/comments/hf0xrk/12_powerful_principles_for_robust_react_apps/)
-- url: https://medium.com/@lukebrandonfarrell/12-powerful-principles-for-robust-react-apps-industry-secrets-revealed-16a2a0159e11?source=friends_link&amp;sk=dcc42944448f77455c632c05351c0e07
+In [notion.so](http://notion.so/) app you can create any element by hitting / and it will pop up a window with all types of options like heading box or image box or table box ..etc. How can I create something like that with ReactJs?
+## [10][Help with authenticating a SAML 2.0 OpenAM token](https://www.reddit.com/r/reactjs/comments/hfl67x/help_with_authenticating_a_saml_20_openam_token/)
+- url: https://www.reddit.com/r/reactjs/comments/hfl67x/help_with_authenticating_a_saml_20_openam_token/
 ---
+Hey guys, I know this probably isn't the best place to ask this but the nodejs sub is dead.
 
-## [9][Passing props to next component when using Link](https://www.reddit.com/r/reactjs/comments/hey2zt/passing_props_to_next_component_when_using_link/)
-- url: https://www.reddit.com/r/reactjs/comments/hey2zt/passing_props_to_next_component_when_using_link/
+Essentially, my react app needs to consume a SAML 2.0 token coming from a client's IDP. I have an express server to do this. I am using passport-saml, but I'm not quite sure if this is even the right thing to use. I've never heard of SAML before this week. 
+
+Can anyone please just let me know if I'm on the right track? As far as I can tell, the redirect is happening after the user authenticates, but when it comes back to my app it redirects back to sign in, so I assume I'm not properly authenticating the token.
+
+Here is the snippet that I think is relevant, ANY help at all with this would be greatly appreciated, as I'm totally lost.
+
+https://pastebin.com/1bVg1k0g
+## [11][Help finding a React post on Reddit](https://www.reddit.com/r/reactjs/comments/hfer4f/help_finding_a_react_post_on_reddit/)
+- url: https://www.reddit.com/r/reactjs/comments/hfer4f/help_finding_a_react_post_on_reddit/
 ---
-`&lt;Router&gt;`  
- `&lt;div className="App"&gt;`  
- `&lt;Switch&gt;`  
- `&lt;Route path="/group/:id" component={GroupDetails}/&gt;`  
- `&lt;Route exact path="/" component={Intro}/&gt;`   
- `&lt;Route path="/dashboard" component={Dashboard}/&gt;`   
-   
-   
- `&lt;/Switch&gt;`  
-   
- `&lt;/div&gt;`  
- `&lt;/Router&gt;`
-
-this is my app.js routes  
-now I need to open the group details page when I click on a link in a list  
-this is my list component  
-
-
-`const GroupList = ({groups}) =&gt;{`  
-   
- `return(`  
- `&lt;div className="row"&gt;`  
- `{groups&amp;&amp;groups.map(group=&gt;{`  
-   
- `return(`  
- `&lt;div className="col s12 m6 l3"&gt;`  
- `&lt;Link to={'/group/'+group._id}&gt;`  
- `&lt;GroupCard group={group}/&gt;`  
- `&lt;/Link&gt;`  
- `&lt;/div&gt;`  
-`)`  
-`})}`  
-   
-   
-   
- `&lt;/div&gt;`  
-`)`  
-`}`
-
-Here as you can see i am passing the {group} prop to GroupCard component and it works  
-now I need to pass the {group} prop  to the link which calls the GroupDetails component. Can anyone tell me how should i do this
-## [10][React state management and side-effects with Redux and RxJS](https://www.reddit.com/r/reactjs/comments/hf0vnx/react_state_management_and_sideeffects_with_redux/)
-- url: https://subvisual.com/blog/posts/react-state-management-and-side-effects-with-redux-and-rxjs/
+A  while back I saw a really neat project someone posted on Reddit where  they set up their UI to be interactive and for changes to the UI to  modify code. Unfortunately, I lost the link and tried to find it but  can't because I don't know what the title was or even what subreddit. I  was wondering if y'all could help me find it?
+## [12][Ionic vs React Native: Pros and Cons](https://www.reddit.com/r/reactjs/comments/hfkg0j/ionic_vs_react_native_pros_and_cons/)
+- url: https://www.reddit.com/r/reactjs/comments/hfkg0j/ionic_vs_react_native_pros_and_cons/
 ---
+Hi folks, I often see this question about hybrid development, so I decided to write a blog post about it. You can check it out in the link below:
 
-## [11][Woof Vs. Meow: Data Fetching and React Component Lifecycle](https://www.reddit.com/r/reactjs/comments/hf0tte/woof_vs_meow_data_fetching_and_react_component/)
-- url: https://dev.to/ranaemad/woof-vs-meow-data-fetching-and-react-component-lifecycle-17gd
----
-
-## [12][Passing data to child component vs fetching data in child component?](https://www.reddit.com/r/reactjs/comments/hezn7c/passing_data_to_child_component_vs_fetching_data/)
-- url: https://www.reddit.com/r/reactjs/comments/hezn7c/passing_data_to_child_component_vs_fetching_data/
----
-Hey folks, so I was wondering about a certain use case I have on my project at the moment.
-
-I have a table component that is filled with notifications. Each notification in the table has a name, date and id. On each table row click a new modal component is displayed and notification id is passed as a prop to the modal. Modal component then makes another call to the server and displays the current notification details.
-
-I was wondering if there is any benefit to making the call in the *onRowClick()* function in the table component, getting the whole notification object with the details and passing the whole object to the modal?
+[https://www.imaginarycloud.com/blog/ionic-vs-react-native-pros-and-cons/](https://www.imaginarycloud.com/blog/ionic-vs-react-native-pros-and-cons/)

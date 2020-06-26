@@ -22,7 +22,105 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][simple algo visualizer -- reverse an array](https://www.reddit.com/r/typescript/comments/hfcnnp/simple_algo_visualizer_reverse_an_array/)
+## [2][Introduction React Native, Typescript, Redux, Rxjs, Node.js, Mongo, Mongoose, Nexus Aurora Platform](https://www.reddit.com/r/typescript/comments/hg5g8z/introduction_react_native_typescript_redux_rxjs/)
+- url: https://www.youtube.com/watch?v=06wsg2f76hQ
+---
+
+## [3][Stryker Plugin in Webstorm for easier Mutation Testing](https://www.reddit.com/r/typescript/comments/hfrnm0/stryker_plugin_in_webstorm_for_easier_mutation/)
+- url: https://plugins.jetbrains.com/plugin/14482-stryker
+---
+
+## [4][Requiring property on a type based on the presence of another property.](https://www.reddit.com/r/typescript/comments/hg52p4/requiring_property_on_a_type_based_on_the/)
+- url: https://www.reddit.com/r/typescript/comments/hg52p4/requiring_property_on_a_type_based_on_the/
+---
+So, I am not really sure what to search to find out more about this concept, and therefore I apologise in advance if this is a duplicate, but I have been stuck for a day now and need some help.
+
+I am using TS 3.6.4 in a React project, and I am using an interface to validate props passed to a component.
+
+So, let's say I have an interface called IButton as follows:
+
+    interface IButton {
+      label: string;
+      iconName?: string;
+      iconColor?: string;
+    }
+
+Is there a way I can only require `iconColor` be supplied only if `iconName` is present, and if `iconName` is not present, then have both required to be undefined?
+
+For some context, the reason I want to do this is because the button may not always have an icon, but when an icon is being used, the color for said icon is required alongside it.
+## [5][A naive ECS implementation in typescript!](https://www.reddit.com/r/typescript/comments/hfnjsn/a_naive_ecs_implementation_in_typescript/)
+- url: https://github.com/Avokadoen/ts-ecs-waveshoot
+---
+
+## [6][Best way to handle family members in People objects?](https://www.reddit.com/r/typescript/comments/hfu5cz/best_way_to_handle_family_members_in_people/)
+- url: https://www.reddit.com/r/typescript/comments/hfu5cz/best_way_to_handle_family_members_in_people/
+---
+Let's say I have a list of patrons, People&lt;&gt;. What is the best pattern to have a single source of truth for who their family members are? (Parties of people, no need for family trees.) Do I need to create Family objects?
+## [7][Intersección de tipos en Typescript](https://www.reddit.com/r/typescript/comments/hg42h0/intersección_de_tipos_en_typescript/)
+- url: https://emanuelpeg.blogspot.com/2020/06/interseccion-de-tipos-en-typescript.html#.XvW3595FkMw.reddit
+---
+
+## [8][What is New in Angular 10?](https://www.reddit.com/r/typescript/comments/hfmox0/what_is_new_in_angular_10/)
+- url: https://volosoft.com/blog/what-is-new-in-angular-10
+---
+
+## [9][Type 'Promise&lt;X&gt;' is not a valid async function return type in ES5/ES3 because it does not refer to a Promise-compatible constructor value.ts(1055)](https://www.reddit.com/r/typescript/comments/hfq8co/type_promisex_is_not_a_valid_async_function/)
+- url: https://www.reddit.com/r/typescript/comments/hfq8co/type_promisex_is_not_a_valid_async_function/
+---
+Method was looking good until I had to convert it to async because I needed to await another internal method that makes an API call.
+
+I still have trouble with return types on async functions and this current error totally confuses me, hopefully someone knows what it means:
+
+    /* 
+       Asks for the foreign word
+       
+       Gets a definition, asks for confirmation or an adjustment.
+       Returns an object with the foreign word and definition pair
+       
+       Returns false if user marks "done" commands
+       */
+       async protected getForeignWordAndDefinition()
+          : Promise&lt;ForeignWordDefinitionPair&gt; | Promise&lt;false&gt; {
+        // (alias) interface ForeignWordDefinitionPair
+        // import ForeignWordDefinitionPair
+        // Type 'Promise&lt;ForeignWordDefinitionPair&gt; | Promise&lt;false&gt;' 
+        // is not a valid async function return type in ES5/ES3 because 
+        // it does not refer to a Promise-compatible constructor value. ts(1055)
+    
+        // Originally it was   : ForeignWordDefinitionPair | false
+        // same error occured
+    
+          console.log("prompt text")
+          const userInput = readLine.question();
+    
+          const userHasExited = this.isDone(userInput);
+          if (userHasExited) return false;
+    
+          // translate foreign to english
+          const foreignWord = userInput;
+    
+          const googleOfferedDefinition: string = await this.textTranslate(
+             foreignWord, translationDirection.toEnglish
+          );
+    
+          console.log("prompt text")
+          console.log(googleOfferedDefinition);
+          const userDefinition: string = readLine.question();
+    
+          let acceptedDefinition = googleOfferedDefinition;
+          if (userDefinition !== "") {
+             acceptedDefinition = userDefinition;
+          } 
+    
+          // shape the object and return it
+          const foreignWordDefinitionPair: ForeignWordDefinitionPair = {
+             foreignWord
+             , englishDefinition: acceptedDefinition
+          }
+    
+          return foreignWordDefinitionPair;
+       }
+## [10][simple algo visualizer -- reverse an array](https://www.reddit.com/r/typescript/comments/hfcnnp/simple_algo_visualizer_reverse_an_array/)
 - url: https://www.reddit.com/r/typescript/comments/hfcnnp/simple_algo_visualizer_reverse_an_array/
 ---
 A simple little app to visualize reversing an array.   
@@ -36,170 +134,7 @@ Starting off very basic!
 &amp;#x200B;
 
  [https://github.com/risingBirdSong/visualizeReverseArray](https://github.com/risingBirdSong/visualizeReverseArray)
-## [3][8 Visual Studio Code Assistant rules for nasty TypeScript / Angular bugs](https://www.reddit.com/r/typescript/comments/hfhu2t/8_visual_studio_code_assistant_rules_for_nasty/)
+## [11][8 Visual Studio Code Assistant rules for nasty TypeScript / Angular bugs](https://www.reddit.com/r/typescript/comments/hfhu2t/8_visual_studio_code_assistant_rules_for_nasty/)
 - url: https://medium.com/@tomaszs2/8-visual-studio-code-assistant-rules-for-nasty-angular-bugs-9f186277e0ab
----
-
-## [4][Getting Map value type](https://www.reddit.com/r/typescript/comments/hf5g3a/getting_map_value_type/)
-- url: https://www.reddit.com/r/typescript/comments/hf5g3a/getting_map_value_type/
----
-Let's say I have a custom Map type, like this:
-
-```
-type shapeMap = Map&lt;string, [number, number][]&gt;
-```
-
-How do I get the value type of this Map back (`[number, number][]`)? I can do something stupid like this, but it seems very incorrect:
-
-```
-type shapeMapValue = Exclude&lt;ReturnType&lt;shapeMap["get"]&gt;, undefined&gt;
-```
-## [5][Get union type from property type shared by different types](https://www.reddit.com/r/typescript/comments/hezem0/get_union_type_from_property_type_shared_by/)
-- url: https://www.reddit.com/r/typescript/comments/hezem0/get_union_type_from_property_type_shared_by/
----
-Sorry for the weird title, but I don't really know how to describe it in a short way :D So here is an example:
-
-    type T1 = {
-        prop: 'v1';
-    }
-    type T2 = {
-        prop: 'v2';
-    }
-
-Now, I want to have something like that:
-
-    type PropType = 'v1' | 'v2';
-
-BUT without explicitly writing v1 and v2 again. Is there some way to extract the type from "prop" off T1 and T2? Something like:
-
-    type PropType = ExtractPropertyType&lt;T1 | T2, 'prop'&gt;;
-
-Thanks for any help!
-## [6][An alternative to Google Geocoder API (in Node.js)](https://www.reddit.com/r/typescript/comments/hf2jyh/an_alternative_to_google_geocoder_api_in_nodejs/)
-- url: https://www.reddit.com/r/typescript/comments/hf2jyh/an_alternative_to_google_geocoder_api_in_nodejs/
----
-Yesterday I started writing a few web scrapers in Node.js to gather some data for a personal project of mine (wait for it). One of the things I had to deal, is how to convert addresses to geolocation (latitude and longitude, basically.) So I started doing what we do best as Javascript developers: 
-
-*Hm… there must be a package for that.*
-
-&amp;#x200B;
-
-[https://medium.com/@armand1m\_/an-alternative-to-google-geocoder-api-in-node-js-78728c7b9faa?source=friends\_link&amp;sk=914c1b3acee09686d740675b1e8424d7](https://medium.com/@armand1m_/an-alternative-to-google-geocoder-api-in-node-js-78728c7b9faa?source=friends_link&amp;sk=914c1b3acee09686d740675b1e8424d7)
-## [7][Help passing generic callback arguments to a utility method's callback](https://www.reddit.com/r/typescript/comments/hf10mx/help_passing_generic_callback_arguments_to_a/)
-- url: https://www.reddit.com/r/typescript/comments/hf10mx/help_passing_generic_callback_arguments_to_a/
----
-    export default class Utilities {
-    
-       /* take a generic callback argument. Store all return values 
-          of the callback until the callback returns false
-    
-       Then, end looping. Return an array of all prior return values
-       */
-       static loopUntilFalse&lt;Args, CallbackReturn&gt;(callback: (args: Args) =&gt; CallbackReturn|false): unknown {
-          let continueLooping = true;
-          const returnValues: Array&lt;CallbackReturn&gt; = [];
-    
-          while (continueLooping === true) {
-    
-             // any
-             // Cannot find name 'args'.ts(2304)
-             const latestReturnValue = callback(args);
-    
-             if (latestReturnValue === false) { 
-                continueLooping = false 
-             } else if (typeof latestReturnValue !== "boolean") {
-                returnValues.push(latestReturnValue);
-             }
-          }
-    
-          return returnValues;
-       }
-    }
-
-How should an unknown shape of arguments be passed into the method here? I'm a little rough on generics and also function argument syntax in TS, so I suspect the problem is on one of those, or a combination of both.
-
-Also if my generic return syntax looks off any feedback there is also welcome.
-
-&amp;#x200B;
-## [8][Compile-time null/undefined check confusion](https://www.reddit.com/r/typescript/comments/hf39oc/compiletime_nullundefined_check_confusion/)
-- url: https://www.reddit.com/r/typescript/comments/hf39oc/compiletime_nullundefined_check_confusion/
----
-I'm having trouble understanding the static analysis in TypeScript, can anyone tell me why this works:
-
-    const myFunc = (aParam?: string, upper?: boolean): string =&gt; {
-      if (aParam &amp;&amp; upper) {
-        return aParam.toUpperCase();
-      }
-      return 'Hello';
-    }
-
-but not this:
-
-    const myFunc = (aParam?: string, upper?: boolean): string =&gt; {
-      const x = aParam &amp;&amp; upper;
-      if (x) {
-        return aParam.toUpperCase();
-      }
-      return 'Hello';
-    }
-
-The bottom code results in "Object is possibly 'undefined'" for aParam
-## [9][Best approach for video streaming web app](https://www.reddit.com/r/typescript/comments/heqpdn/best_approach_for_video_streaming_web_app/)
-- url: https://www.reddit.com/r/typescript/comments/heqpdn/best_approach_for_video_streaming_web_app/
----
-Hey there! 
-
-I have a project in mind that would require broadcasting video from user to user, with some features that allow for applying filters to video frames in-between (in node/typescript backend service). 
-
-I've read about webrtc a bit, but there aren't a ton of resources out there and the examples on webrtc site are a bit vague. 
-
-Any ideas / suggestions / alternatives? 
-
-Thank you!
-## [10][Generic type defined at class-level](https://www.reddit.com/r/typescript/comments/hewb4z/generic_type_defined_at_classlevel/)
-- url: https://www.reddit.com/r/typescript/comments/hewb4z/generic_type_defined_at_classlevel/
----
-I'm trying to approach something like this:
-
-```
-class Document {}
-
-class User extends Document {
-  email: string;
-}
-
-export class Service&lt;T extends Document&gt; {
-  constructor() {}
-  find(): T {
-    const user = new User();
-    user.email = 'info@example.com';
-    return user;
-  }
-}
-
-export class UserService extends Service&lt;User&gt; {
-  constructor() {
-    super();
-  }
-}
-
-const userService = new UserService();
-const user = userService.find();
-console.log("user &gt;&gt;&gt;&gt;", user);
-```
-
-this gives me the error: 
-
-```
-test.ts:12:5 - error TS2322: Type 'User' is not assignable to type 'T'.
-  'User' is assignable to the constraint of type 'T', but 'T' could be instantiated with a different subtype of constraint 'Document'.
-
-12     return user;
-       ~~~~~~~~~~~~
-```
-
-how can I fix this?
-## [11][(Beta) I've written a guide to architecting Node TypeScript apps - still WIP but has a runnable companion repo and full documentation](https://www.reddit.com/r/typescript/comments/hed665/beta_ive_written_a_guide_to_architecting_node/)
-- url: https://jbreckmckye.gitbook.io/node-ts-architecture/
 ---
 

@@ -125,27 +125,72 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][In a hypothetical situation, backwards compatibility is no longer an issue in C++. What would you change about the core language or the standard library? [DISCUSSION]](https://www.reddit.com/r/cpp/comments/hf99xw/in_a_hypothetical_situation_backwards/)
+## [3][Small vector implementation using propagate_on_container_move_assignment / blog post about stateful custom allocators](https://www.reddit.com/r/cpp/comments/hfv24j/small_vector_implementation_using_propagate_on/)
+- url: https://github.com/KonanM/small_vector
+---
+
+## [4][plf::indiesort has been released](https://www.reddit.com/r/cpp/comments/hg45hz/plfindiesort_has_been_released/)
+- url: https://www.reddit.com/r/cpp/comments/hg45hz/plfindiesort_has_been_released/
+---
+[https://plflib.org/indiesort.htm](https://plflib.org/indiesort.htm)  
+
+
+This is a sort-wrapper which enables the use of std::sort (or other random-access sort techniques) with non-random-access containers. And it also speeds up sorting of large types in random-access containers.  
+ 
+
+It is, on average across all numbers of sorted elements:
+
+&amp;#x200B;
+
+* \+130% faster than std::sort when used on vectors or arrays of large structs (\~480 bytes)
+* \+28% faster than std::list's internal sort, on types smaller than a large struct.
+
+std::list's internal sort is faster for large structs (as it only  writes previous and next pointers) and std::sort is faster on vectors  and arrays for smaller types.
+
+More info at the link above, but basically it works by obtaining pointers to elements, then sorting them via the values of the elements they point to. Hence it has a temporary memory cost.
+## [5][CppCast: Azure IoT](https://www.reddit.com/r/cpp/comments/hg01ft/cppcast_azure_iot/)
+- url: https://cppcast.com/azure-iot-tara-walker/
+---
+
+## [6][What're the best resources you've come across on hashing, particularly wrt associative containers?](https://www.reddit.com/r/cpp/comments/hg3kf0/whatre_the_best_resources_youve_come_across_on/)
+- url: https://www.reddit.com/r/cpp/comments/hg3kf0/whatre_the_best_resources_youve_come_across_on/
+---
+
+## [7][Docker as builder system for C++](https://www.reddit.com/r/cpp/comments/hfmw3g/docker_as_builder_system_for_c/)
+- url: /r/docker/comments/hfilm3/docker_as_builder_system_for_c/
+---
+
+## [8][C++ based Rest web server for large scale production environment](https://www.reddit.com/r/cpp/comments/hftn0w/c_based_rest_web_server_for_large_scale/)
+- url: https://www.reddit.com/r/cpp/comments/hftn0w/c_based_rest_web_server_for_large_scale/
+---
+Hi,   
+Can you guys point me to some production ready: REST API frameworks designed in C++ Or a Webserver http backend service library over which i can create REST APIS. The requirement is: 
+
+  
+1. MIT license. 
+
+2. production ready. 
+
+3. should be able to handle 10k - 20 k requests per second with ease.   
+
+
+Will be grateful.   
+
+
+Regards.
+## [9][ApprovalTests.cpp v.10.1.1 released - much faster build times](https://www.reddit.com/r/cpp/comments/hfuvr6/approvaltestscpp_v1011_released_much_faster_build/)
+- url: https://github.com/approvals/ApprovalTests.cpp/releases/tag/v.10.1.1
+---
+
+## [10][How to use Google Benchmark for C++ programs](https://www.reddit.com/r/cpp/comments/hfpfk8/how_to_use_google_benchmark_for_c_programs/)
+- url: https://youtu.be/9VKR8u9odrA
+---
+
+## [11][In a hypothetical situation, backwards compatibility is no longer an issue in C++. What would you change about the core language or the standard library? [DISCUSSION]](https://www.reddit.com/r/cpp/comments/hf99xw/in_a_hypothetical_situation_backwards/)
 - url: https://www.reddit.com/r/cpp/comments/hf99xw/in_a_hypothetical_situation_backwards/
 ---
 Considered posting this to r/cpp_questions, but I felt this sub would be more appropriate for a discussion about a hypothetical situation since this is not a question about real world C++ usage.
-## [4][How to write SOLID C++](https://www.reddit.com/r/cpp/comments/hey696/how_to_write_solid_c/)
-- url: https://www.youtube.com/watch?v=PakbXnLht1I
----
-
-## [5][Thoughts on using Conan with CMake as a library developer](https://www.reddit.com/r/cpp/comments/hf4kbg/thoughts_on_using_conan_with_cmake_as_a_library/)
-- url: https://www.reddit.com/r/cpp/comments/hf4kbg/thoughts_on_using_conan_with_cmake_as_a_library/
----
-I'm a library developer who's been tasked with evaluating Conan for managing our subdependencies. I've spent a couple of weeks [hacking away at a POC](https://github.com/CraigANV/cpp-project-skeleton), and thought I'd share my observations here.
-
-Firstly; for end-users I think Conan is excellent.
-
-For library developers though, I'm not sure I can recommend it - at least when using CMake. One of our requirements is that our libs should be Conan-agnostic (i.e. the end user should be able to use an alternative package management if they want). The way the Conan generators import targets makes this really difficult, as you can see in my [POC project I've had to add some hacky workarounds](https://github.com/CraigANV/cpp-project-skeleton/blob/d282732b1603a659868190d5c3007202906c4f49/libskeleton/CMakeLists.txt#L28) to decouple my targets from the Conan imports.
-
-Are there any library developers out there using Conan like this? If so, I'd love to hear your thoughts.
-
-Edit: I managed to get rid of the alias hack by just providing my own FindPoco.cmake and setting POCO\_ROOT to the CONAN\_POCO\_ROOT from the cmake\_path generator. Pretty happy with it now!
-## [6][Thoughts on implementing a math expression evaluator that can handle various data types?](https://www.reddit.com/r/cpp/comments/hfjo9r/thoughts_on_implementing_a_math_expression/)
+## [12][Thoughts on implementing a math expression evaluator that can handle various data types?](https://www.reddit.com/r/cpp/comments/hfjo9r/thoughts_on_implementing_a_math_expression/)
 - url: https://www.reddit.com/r/cpp/comments/hfjo9r/thoughts_on_implementing_a_math_expression/
 ---
 so im in the process of implementing this and I wanted some input / opinions from people. How could I handle the different data types when parsing? 
@@ -162,47 +207,3 @@ a + sin(15)
 Each of these expressions would have to store the value to a variable (if its an assignment) and also print the result. What im not sure about, again, is how to handle the different data types inside the program.
 
 Thanks!
-## [7][Group adopting an "older" Cpp code base](https://www.reddit.com/r/cpp/comments/hfdd3w/group_adopting_an_older_cpp_code_base/)
-- url: https://www.reddit.com/r/cpp/comments/hfdd3w/group_adopting_an_older_cpp_code_base/
----
-My group is planning on adopting an older cpp code base as our solver. We mainly deal with numerical software written in fortran, but recently a few people in our groups  decided to takeover another code base written in cpp. Only three of us have any experience in cpp, but aren't really software developers. 
-
-The person spearheading this effort wants to start adopting a more modern software design based workflow than what we have been doing. It's probably not going to be a full makeover, but I was wondering what information or tools we can use to become more "modern"? If that makes sense.
-
-We plan to adopt git for the effort and are looking at other forms of version control. 
-
-While, I am asking this is more from my perspective but are there are resourcing on best practices with working with "legacy" code bases in cpp?
-## [8][I have created my very own first library. It's called cpp-lazy and it can be used for lazy evuluation in C++14/17/20. I'm a 23 year old CS student so feedback (especially in terms of speed) is welcome.](https://www.reddit.com/r/cpp/comments/hey0fe/i_have_created_my_very_own_first_library_its/)
-- url: https://github.com/MarcDirven/cpp-lazy
----
-
-## [9][Moving From Intel to ARM - Apple's Big Performance Mistake?](https://www.reddit.com/r/cpp/comments/hewo53/moving_from_intel_to_arm_apples_big_performance/)
-- url: https://youtu.be/JAr0c6le_F8
----
-
-## [10][I am a developer and just started learning C++, and I'm LOVING it! Programs feel real for the first time!](https://www.reddit.com/r/cpp/comments/hebc9f/i_am_a_developer_and_just_started_learning_c_and/)
-- url: https://www.reddit.com/r/cpp/comments/hebc9f/i_am_a_developer_and_just_started_learning_c_and/
----
-**Or how I was so bored with Java that I switched from software to mechanical engineering, became a web developer, and finally started to love C++!**
-
-So my programming related story: before joining university, I thought I wanted to become a software engineering, I think I wanted to make games at that point. Then, after taking a year of general engineering courses, calculus, physics, intro programming (in Pascal :D), I had my first semester at computer science department. The object oriented programming course was in Java. I hated it so much that I dropped all of my courses, switched field to mechanical engineering, and for almost ten years didn't touch any programs that wasn't directly related to my mechanical engineering jobs (I did assembly and embedded C for micro-controllers and  matlab and labview). I was so happy with my decision to do mechanical engineering, it felt so real!
-
-Fast forward to about three years ago, that I had this startup idea of mine \[is it a phase that we all go through?\] and it needed me to develop an app for it. I'm one of those people who likes to gets hands on and do everything himself \[I suppose that's a euphemism for being a lone wolf who doesn't know how to lead/persuade people to follow him\] and I started learning web development, which is obviously mostly in JavaScript.
-
-To my surprise, the focus on functional programming in the JavaScript community, at least the niche I was dwelling in - I was learning React/redux which is big on functional and immutably, made it much more relatable to me than Java. It felt more like math; no more weird analogy between classes and the world and stuff. Then a friend of my introduced me to [SICP](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html) and for the first time I was having fun reading an academic book on software... Yet JavaScript had started to wear me down as well and started toying with the idea of leaving my programming career unfinished. I took algorithm courses, learned about complexity analysis, TLA and distributed systems, but still felt something was missing, there was a hole that I just couldn't pin point.
-
-I had been told, since ages ago and till now, that C++ is a flawed language; that we use it just because we have to, because there's just so much legacy of it lying around. What I didn't know, what that I'm going to love it exactly because of  what I presume are the roots of it's flaws! I've been taking [a course in C++](https://www.coursera.org/specializations/cs-fundamentals) and it starts by discussing \* and &amp; and heap memory vs stack and how the memory allocation grows and such, and, what little did I know, this is exactly what I had been missing! The link between the never-feeling-real codes on my screen and the real physical world that runs these codes. To end on a dramatic note - I know if I had to deal with all the memory related issues in my actual job I might not have said this \[though probably I still would\], thanks for not dying out C++ and having yourself replaced with all the other languages that do away with the real stuff and replace it with garbage collection and more abstractions, I love seeing your garbages!
-## [11][Are these critiques of C++ still valid?](https://www.reddit.com/r/cpp/comments/hf0qau/are_these_critiques_of_c_still_valid/)
-- url: https://www.reddit.com/r/cpp/comments/hf0qau/are_these_critiques_of_c_still_valid/
----
-I'm reading some documents by the author of FontForge and he discusses why didn't choose C++ to write the application. He has the following criticisms:
-
-* The semantics of a C++ program cannot be specified. The compiler is free to generate temporaries as it wishes. In C this is not a problem, but in C++ the creation of a temporary can involve calling a constructor and a destructor which may have untold side-effects. I find this frightening.
-* The order of execution of external constructors is unspecified. I have seen many inexplicable bugs caused by this.
-* I find it extremely difficult to debug C++. Stepping through a statement often involves many unexpected procedure calls (some of which are inlined and not obvious). This distracts from my main purpose in debugging.
-
-Have recent standard versions of C++ addressed these issues? Are they real issues for others? They seem like ninja-level problems to me.
-## [12][refl-cpp header only C++17 static reflection](https://www.reddit.com/r/cpp/comments/hedsl9/reflcpp_header_only_c17_static_reflection/)
-- url: https://github.com/veselink1/refl-cpp
----
-

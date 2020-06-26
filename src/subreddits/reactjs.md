@@ -109,58 +109,82 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/gk41zb/whos_available_may_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][My First Project guys. Check it out and give me some feedbacks and reviews on it. It'll really help me grow.. Thank you : ) website link : https://electrofocus-website.firebaseapp.com/](https://www.reddit.com/r/reactjs/comments/hf6pgw/my_first_project_guys_check_it_out_and_give_me/)
-- url: https://v.redd.it/4771dnmzjw651
+## [3][I teach React courses - here's my collection of over 600 slides on various React topics (hosted on GitHub, licensed under CC-BY-SA)](https://www.reddit.com/r/reactjs/comments/hfpxo3/i_teach_react_courses_heres_my_collection_of_over/)
+- url: https://marko-knoebl.github.io/slides/
 ---
 
-## [4][An in-depth beginner's guide to testing React applications](https://www.reddit.com/r/reactjs/comments/hezhuj/an_indepth_beginners_guide_to_testing_react/)
-- url: https://jkettmann.com/beginners-guide-to-testing-react/
+## [4][Deploying to Github Pages? Don't Forget to Fix Your Links](https://www.reddit.com/r/reactjs/comments/hfmzmy/deploying_to_github_pages_dont_forget_to_fix_your/)
+- url: https://maximorlov.com/deploying-to-github-pages-dont-forget-to-fix-your-links
 ---
 
-## [5][What is your project file structure?](https://www.reddit.com/r/reactjs/comments/hfhpub/what_is_your_project_file_structure/)
-- url: https://www.reddit.com/r/reactjs/comments/hfhpub/what_is_your_project_file_structure/
----
-How you deploy your project? Do you make separate project for front end and backend? Or make a same project for both?
-## [6][urql vs Apollo Client 3.0](https://www.reddit.com/r/reactjs/comments/hfhnr9/urql_vs_apollo_client_30/)
-- url: https://www.reddit.com/r/reactjs/comments/hfhnr9/urql_vs_apollo_client_30/
----
-GraphQL clients were discussed few times with the general notion that Apollo Client 2.x is inferior. Is this still the case with the 3.0 version? Did anyone already test thoroughly the 3.0 version?
-
-Or is there anything better than urql and Apollo Client 3.0 to handle GQL on the client side?
-## [7][Server Side Rendering React App with Deno](https://www.reddit.com/r/reactjs/comments/hfm3ac/server_side_rendering_react_app_with_deno/)
-- url: https://dev.p.ota.to/post/server-side-rendering-react-app-with-deno-4qf28vm8axb/
+## [5][[Twitter-guessr] My first big React project. Would appreciate any feedback or criticism!](https://www.reddit.com/r/reactjs/comments/hg1ajw/twitterguessr_my_first_big_react_project_would/)
+- url: https://twitter-guessr.netlify.app/
 ---
 
-## [8][Listen Together – Listen to Spotify with your friends (or anyone) completely in sync](https://www.reddit.com/r/reactjs/comments/hflurq/listen_together_listen_to_spotify_with_your/)
-- url: https://www.reddit.com/r/reactjs/comments/hflurq/listen_together_listen_to_spotify_with_your/
+## [6][What are some key things and practices to include in a large scale react app in 2020?](https://www.reddit.com/r/reactjs/comments/hg0hz7/what_are_some_key_things_and_practices_to_include/)
+- url: https://www.reddit.com/r/reactjs/comments/hg0hz7/what_are_some_key_things_and_practices_to_include/
 ---
-I recently built Listen Together for a weekend hackathon and thought I'd share it with anyone who was interested. Let me know if you have any questions! 
+I've joined a new team where we're basically rewriting a large scale production application using React. At a high level, this application works on live data input by multiple sources and shares data across several different components.
 
-App: https://listen.henryfellerhoff.com/
-GitHub: https://github.com/hfellerhoff/listentogether
-## [9][Example.](https://www.reddit.com/r/reactjs/comments/hflimu/example/)
-- url: https://www.reddit.com/r/reactjs/comments/hflimu/example/
+The project is just my manager and I, but there may be several engineers touching it in the future. We want to establish a solid framework for the app before diving in. I used React two years ago and used primarily MERN stack (react, redux, nodejs, with Flow), but only as an intern.
+
+I was thinking of the following:
+
+- Typescript for static type checking
+- Styled components for CSS
+- Redux for state management? I've always found Redux to be great but am wondering if there's something better to be used
+- react-router for routing 
+
+Also, I'm looking for pointers on how to compartmentalize business logic/API calls in applications from components themselves. I've originally used Redux for this (using thunk to do things like api calls), but I'm wondering if there is a practice I should adapt for this. For example, in Android there is the View-ViewModel pattern where the View is very dumb and the ViewModel is an entity handles all business logic that the view subscribes to; I'd like to do this with React.
+## [7][Introduction React Native, Typescript, Redux, Rxjs, Node.js, Mongo, Mongoose. Nexus Aurora Platform](https://www.reddit.com/r/reactjs/comments/hg5nja/introduction_react_native_typescript_redux_rxjs/)
+- url: https://youtu.be/06wsg2f76hQ
 ---
-In [notion.so](http://notion.so/) app you can create any element by hitting / and it will pop up a window with all types of options like heading box or image box or table box ..etc. How can I create something like that with ReactJs?
-## [10][Help with authenticating a SAML 2.0 OpenAM token](https://www.reddit.com/r/reactjs/comments/hfl67x/help_with_authenticating_a_saml_20_openam_token/)
-- url: https://www.reddit.com/r/reactjs/comments/hfl67x/help_with_authenticating_a_saml_20_openam_token/
+
+## [8][Wes Bos: Fullstack Advanced React Course or Newline: Tinyhouse - A Fullstack React Masterclass?](https://www.reddit.com/r/reactjs/comments/hfz7hf/wes_bos_fullstack_advanced_react_course_or/)
+- url: https://www.reddit.com/r/reactjs/comments/hfz7hf/wes_bos_fullstack_advanced_react_course_or/
 ---
-Hey guys, I know this probably isn't the best place to ask this but the nodejs sub is dead.
+Hey React Community,
 
-Essentially, my react app needs to consume a SAML 2.0 token coming from a client's IDP. I have an express server to do this. I am using passport-saml, but I'm not quite sure if this is even the right thing to use. I've never heard of SAML before this week. 
+I've been working with AngularJS and Angular for the last 5.5 years and only been doing frontend work. My goal is to learn React and some backend technologies to become a full-stack developer.
 
-Can anyone please just let me know if I'm on the right track? As far as I can tell, the redirect is happening after the user authenticates, but when it comes back to my app it redirects back to sign in, so I assume I'm not properly authenticating the token.
+I am almost finished with Wes Bos' 'React For Beginners' course and starting to look for a course that builds a full-stack app (then go build my own!). Two courses are sticking out for me:
 
-Here is the snippet that I think is relevant, ANY help at all with this would be greatly appreciated, as I'm totally lost.
+Wes Bos: [Fullstack Advanced React &amp; GraphQL course](https://advancedreact.com/)
 
-https://pastebin.com/1bVg1k0g
-## [11][Help finding a React post on Reddit](https://www.reddit.com/r/reactjs/comments/hfer4f/help_finding_a_react_post_on_reddit/)
-- url: https://www.reddit.com/r/reactjs/comments/hfer4f/help_finding_a_react_post_on_reddit/
+and 
+
+Newline: [Tinyhouse - A Fullstack React Masterclass](https://www.newline.co/tinyhouse)
+
+My preference is to go through a course that builds a full-stack app. So I'm wondering if folks here have experience with either of these courses and/or have suggestions?
+
+Thanks!
+## [9][Are we able to use optional chaining yet?](https://www.reddit.com/r/reactjs/comments/hg7mp3/are_we_able_to_use_optional_chaining_yet/)
+- url: https://www.reddit.com/r/reactjs/comments/hg7mp3/are_we_able_to_use_optional_chaining_yet/
 ---
-A  while back I saw a really neat project someone posted on Reddit where  they set up their UI to be interactive and for changes to the UI to  modify code. Unfortunately, I lost the link and tried to find it but  can't because I don't know what the title was or even what subreddit. I  was wondering if y'all could help me find it?
-## [12][Ionic vs React Native: Pros and Cons](https://www.reddit.com/r/reactjs/comments/hfkg0j/ionic_vs_react_native_pros_and_cons/)
-- url: https://www.reddit.com/r/reactjs/comments/hfkg0j/ionic_vs_react_native_pros_and_cons/
----
-Hi folks, I often see this question about hybrid development, so I decided to write a blog post about it. You can check it out in the link below:
+ [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional\_chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) 
 
-[https://www.imaginarycloud.com/blog/ionic-vs-react-native-pros-and-cons/](https://www.imaginarycloud.com/blog/ionic-vs-react-native-pros-and-cons/)
+Will babel transpile this for browsers that doesn't support it?
+
+Anyone using it already, regardless?
+## [10][Add a contact form to Next.js](https://www.reddit.com/r/reactjs/comments/hg7l8m/add_a_contact_form_to_nextjs/)
+- url: https://www.reddit.com/r/reactjs/comments/hg7l8m/add_a_contact_form_to_nextjs/
+---
+Hi all,
+
+I'm trying to add a simple secured contact form on my next.js app, without any success.. I've tried to follow this tutorial from Vercel ([https://docs-git-success-185-add-nextjs-sengrid-guide.zeit.now.sh/guides/deploying-nextjs-nodejs-and-sendgrid-with-zeit-now](https://docs-git-success-185-add-nextjs-sengrid-guide.zeit.now.sh/guides/deploying-nextjs-nodejs-and-sendgrid-with-zeit-now)) but when i try to use the contact form, i'm getting errors in the console (error 500, error 502 or error 503).
+
+Can anyone explains to me how to add a free contact form, using Sendgrid or anything else, that i can deploy on vercel? It's the first time i try to do this, and i've already spent 6 hours trying multiple things without success...
+
+Thanks a lot!
+## [11][Why does this work?](https://www.reddit.com/r/reactjs/comments/hg7b5z/why_does_this_work/)
+- url: https://www.reddit.com/r/reactjs/comments/hg7b5z/why_does_this_work/
+---
+New to react, please explain!
+
+AppCompt is an array of objects..how is this rendered without looping through each element in return statement?
+
+https://postimg.cc/SXQ9Mhz9
+## [12][15+ Best Dark admin template for 2020](https://www.reddit.com/r/reactjs/comments/hg6cf5/15_best_dark_admin_template_for_2020/)
+- url: https://dev.to/codedthemes/15-best-dark-admin-template-for-2020-3pbo
+---
+

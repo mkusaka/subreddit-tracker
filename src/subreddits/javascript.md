@@ -13,45 +13,49 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][Chrome DevTools now supports style editing for CSS-in-JS frameworks (Chrome 85+)](https://www.reddit.com/r/javascript/comments/hfji4s/chrome_devtools_now_supports_style_editing_for/)
+## [3][Angular 10 officially released and drops support for IE 9, 10 &amp; Mobile](https://www.reddit.com/r/javascript/comments/hg4rgh/angular_10_officially_released_and_drops_support/)
+- url: https://themesberg.com/blog/angular/angular-10-officialy-released
+---
+
+## [4][Is using default exports considered a bad practice? Here’s why!](https://www.reddit.com/r/javascript/comments/hg3wl4/is_using_default_exports_considered_a_bad/)
+- url: https://blog.piotrnalepa.pl/2020/06/26/default-exports-vs-named-exports/
+---
+
+## [5][TIL: You can use background-repeat: round/space to avoid clipping the background images](https://www.reddit.com/r/javascript/comments/hg3zrz/til_you_can_use_backgroundrepeat_roundspace_to/)
+- url: https://css-tricks.com/almanac/properties/b/background-repeat/
+---
+
+## [6][I'm creating a video series all about binary. If you've ever wondered about how bit twiddling, twos complement, sign and zero extension, endianness, and other esoteric concepts work, and how they can apply in JavaScript, you might want to check this out](https://www.reddit.com/r/javascript/comments/hg6mpz/im_creating_a_video_series_all_about_binary_if/)
+- url: https://www.youtube.com/watch?v=pOM86M1pGb4&amp;list=PLP29wDx6QmW47oPsNBFNEi_SYTOLDJXqQ&amp;index=2
+---
+
+## [7][New Nullish Coalescing (?? Double question mark ) Operator in Typescript &amp; Javascript](https://www.reddit.com/r/javascript/comments/hg6f3c/new_nullish_coalescing_double_question_mark/)
+- url: https://shareablecode.com/snippets/double-question-mark-in-typescript-javascript-nullish-coalescing-operator-rNqS-wPhv
+---
+
+## [8][Chrome DevTools now supports style editing for CSS-in-JS frameworks (Chrome 85+)](https://www.reddit.com/r/javascript/comments/hfji4s/chrome_devtools_now_supports_style_editing_for/)
 - url: https://developers.google.com/web/updates/2020/06/devtools
 ---
 
-## [4][r/LearnHTML is under new ownership and is now public and a support sub like r/LearnJavascript for those who need help with HTML.](https://www.reddit.com/r/javascript/comments/hfefnr/rlearnhtml_is_under_new_ownership_and_is_now/)
-- url: https://www.Reddit.com/r/LearnHTML
+## [9][A Javascript Library for Building the DOM](https://www.reddit.com/r/javascript/comments/hg6kmk/a_javascript_library_for_building_the_dom/)
+- url: https://mudgen.github.io/webscript/docs/
 ---
 
-## [5][Slack's now using the Electron Sandbox](https://www.reddit.com/r/javascript/comments/hf6rco/slacks_now_using_the_electron_sandbox/)
-- url: https://slack.engineering/the-app-sandbox-94178f77e5e3
+## [10][[AskJS] How do sites like F*xnews play ad videos that are hidden?](https://www.reddit.com/r/javascript/comments/hg6e7i/askjs_how_do_sites_like_fxnews_play_ad_videos/)
+- url: https://www.reddit.com/r/javascript/comments/hg6e7i/askjs_how_do_sites_like_fxnews_play_ad_videos/
+---
+When I go to check out the FUD propaganda and FN there will often be 2 video ads running simultaneously. One of the videos will often be audio only.
+
+How is this accomplished?
+
+Why isn't this violating the terms of service with the video ad providers? They are paying for a video ad, they are only getting audio ads.
+
+How can I block this?
+## [11][(WIP) I created an (opinionated) guide to architecting Node.js applications (mainly in TypeScript, but will work in plain JS too). Guide is accompanied by a full, runnable project. Feedback would be invaluable.](https://www.reddit.com/r/javascript/comments/hg7n69/wip_i_created_an_opinionated_guide_to/)
+- url: https://jbreckmckye.gitbook.io/node-ts-architecture/
 ---
 
-## [6][defi-react - another state management library for React](https://www.reddit.com/r/javascript/comments/hfjhi8/defireact_another_state_management_library_for/)
-- url: https://github.com/finom/defi/tree/master/packages/react
----
-
-## [7][[AskJS] Looking for a package that would help me generate beautiful code snippets.](https://www.reddit.com/r/javascript/comments/hfii3x/askjs_looking_for_a_package_that_would_help_me/)
-- url: https://www.reddit.com/r/javascript/comments/hfii3x/askjs_looking_for_a_package_that_would_help_me/
----
-Hey, I'd like some recommendation on package that helps you generate code snippets, preferably supports different languages such as PHP, JavaScript, Node.js, Ruby etc.
-
-What's your go to?
-## [8][Client-Side Architecture Basics [Guide]](https://www.reddit.com/r/javascript/comments/hf4ihv/clientside_architecture_basics_guide/)
-- url: https://khalilstemmler.com/articles/client-side-architecture/introduction
----
-
-## [9][Async Method Chaining in Node: A quick study on building a Promise Queue Pipeline](https://www.reddit.com/r/javascript/comments/hf0fhe/async_method_chaining_in_node_a_quick_study_on/)
-- url: https://medium.com/@hgmaxwellking/async-method-chaining-in-node-8c24c8c3a28d
----
-
-## [10][Fullstack JavaScript Microservice Web App in Minutes](https://www.reddit.com/r/javascript/comments/hev6rk/fullstack_javascript_microservice_web_app_in/)
-- url: https://medium.com/@krawa76/fullstack-javascript-microservice-web-app-in-minutes-448c523a919b
----
-
-## [11][In-depth research of Front-end Frameworks on the developer market](https://www.reddit.com/r/javascript/comments/hf1dci/indepth_research_of_frontend_frameworks_on_the/)
-- url: https://devquarterly.com/report/q2_2020/web/frontend
----
-
-## [12][Improving performance through better architecture](https://www.reddit.com/r/javascript/comments/hf9ynq/improving_performance_through_better_architecture/)
-- url: https://www.atlassian.com/engineering/react-resource-router-deep-dive
+## [12][Building a dev portfolio page in an hour with building blocks](https://www.reddit.com/r/javascript/comments/hg71gk/building_a_dev_portfolio_page_in_an_hour_with/)
+- url: https://medium.com/componently/building-a-dev-portfolio-page-in-an-hour-with-building-blocks-3c6f47e2e2a2
 ---
 

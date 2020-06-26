@@ -21,7 +21,74 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][Serverless GitLab CI/CD on AWS Fargate](https://www.reddit.com/r/aws/comments/hfl31z/serverless_gitlab_cicd_on_aws_fargate/)
+## [2][I wrote a thing that improves ui of several aws-cli cloudformation commands.](https://www.reddit.com/r/aws/comments/hg31lu/i_wrote_a_thing_that_improves_ui_of_several/)
+- url: https://www.reddit.com/r/aws/comments/hg31lu/i_wrote_a_thing_that_improves_ui_of_several/
+---
+[https://github.com/molecule-man/stack-assembly/blob/master/docs/aws-drop-in.md](https://github.com/molecule-man/stack-assembly/blob/master/docs/aws-drop-in.md)
+
+aws-cli is a great tool to automate cloudformation deployments. But a bit low-level. When I need to use some old script that does `aws cloudformation update-stack` then there are always two feelings inside me: from one side I fear to break my production as update-stack doesn't show if it's going to replace resource (data-loss) and from the other side I understand how hard it's going to be to rewrite all those small deployment scripts scattered across organisation's codebase with the ones that at least use change-sets.
+
+I got tired of fearing and finally wrote the thing that allows to continue using those old deployment scripts and at the same time improve safety of the deployment. [The tool I wrote](https://github.com/molecule-man/stack-assembly/blob/master/docs/aws-drop-in.md) wraps aws-cli and replaces  [create-stack](https://docs.aws.amazon.com/cli/latest/reference/cloudformation/create-stack.html), [update-stack](https://docs.aws.amazon.com/cli/latest/reference/cloudformation/update-stack.html) and [deploy](https://docs.aws.amazon.com/cli/latest/reference/cloudformation/deploy.html) commands with improved versions of those commands that:
+
+* use change sets
+* present changes and give ability to approve/disapprove deployment
+* give possibility to view diff of the template to be deployed
+* display cloudformation events while stack is being deployed
+
+https://i.redd.it/psdub5ur97751.gif
+## [3][Automatically configure Linux Workspaces without a custom bundle](https://www.reddit.com/r/aws/comments/hfucgb/automatically_configure_linux_workspaces_without/)
+- url: https://www.reddit.com/r/aws/comments/hfucgb/automatically_configure_linux_workspaces_without/
+---
+As Linux doesn’t support group policy, I’m looking for ways to configure my Linux workspaces. And I don’t want to create a custom bundle. Ideas? 
+
+Chef and ansible seem like you need to create custom images.
+## [4][Another Tax question](https://www.reddit.com/r/aws/comments/hg6vy3/another_tax_question/)
+- url: https://www.reddit.com/r/aws/comments/hg6vy3/another_tax_question/
+---
+I have a new business that I have registered for VAT in the UK with AWS that has been accepted but I still have to pay VAT at 20%. Am I missing something?
+## [5][How do I make the CloudWatch Alarm for Lambda Errors Default Email Body better?](https://www.reddit.com/r/aws/comments/hfulwq/how_do_i_make_the_cloudwatch_alarm_for_lambda/)
+- url: https://www.reddit.com/r/aws/comments/hfulwq/how_do_i_make_the_cloudwatch_alarm_for_lambda/
+---
+The alarm only says when  a threshold is broken, I wish it would give me a print out of the lambda(s) that caused the alarm in the email body.
+## [6][Hashtag in AWS cognito URL callback](https://www.reddit.com/r/aws/comments/hg5oqm/hashtag_in_aws_cognito_url_callback/)
+- url: https://www.reddit.com/r/aws/comments/hg5oqm/hashtag_in_aws_cognito_url_callback/
+---
+I am creating a Single Page App that uses Oauth2 authentication using AWS Cognito. As a part of the configuration in Cognito I need to supply an url to reach the app after the authentication is performed, this is usually something like [http://domain/login](http://domain/login). The problem is that since the app I am creating is a SPA in React the url should be [http://domain/#/login](http://domain/#login) (note the hashtag) but the hashtag is a forbidden character for Cognito's callback URLs and it doesn't let me configure it that way. Any solutions?
+## [7][I swear S3 just corrupted an event linked to a Lambda function. Now it doesn't work, I can't delete it, and I cant create any other event using the same prefix. Arg!](https://www.reddit.com/r/aws/comments/hg03at/i_swear_s3_just_corrupted_an_event_linked_to_a/)
+- url: https://www.reddit.com/r/aws/comments/hg03at/i_swear_s3_just_corrupted_an_event_linked_to_a/
+---
+
+## [8][Which service combination should I use for hosting many Laravel app containers?](https://www.reddit.com/r/aws/comments/hg4tbt/which_service_combination_should_i_use_for/)
+- url: https://www.reddit.com/r/aws/comments/hg4tbt/which_service_combination_should_i_use_for/
+---
+Hi,
+
+Currently we have a SaaS like setup where you could spinup a new Laravel app on a subdomain.
+
+Present solution is:
+
+* Send a POST request to API Gateway
+* Stepfunctions spin up RDS, S3 and EC2
+* Register EC2 with Route53
+* Send SSM RunCommand to deploy the app
+* Send callback request to our "master"/management app.
+
+While this is working fine there are many drawbacks and major underutilisation.
+
+I am thinking of moving the setup to a more cloud friendly infra setup.
+
+Right now reading and going through examples of AppMesh/ECS Ec2 type of setup (in the future Fargate but concepts are the same)
+
+We will have thousands of these small Laravel app services each running on its own subdomain.
+
+Ideally the app would be containerised with just the code and PHP-FPM process. Sidecar container would be Nginx with proxy to PHP-FPM.
+
+How should I approach routing based on virtual hosts here? Could I use AWS ALB for SSL (wildcard) offload only and route using Envoy Proxy.
+
+What are my limits here?
+
+Any thoughts are welcome.
+## [9][Serverless GitLab CI/CD on AWS Fargate](https://www.reddit.com/r/aws/comments/hfl31z/serverless_gitlab_cicd_on_aws_fargate/)
 - url: https://www.reddit.com/r/aws/comments/hfl31z/serverless_gitlab_cicd_on_aws_fargate/
 ---
 On this really nice article, [**Daniel Coutinho de Miranda**](https://www.linkedin.com/in/ACoAAAMhSJQBtT3u2qPU27N8D3dNyXP5wLFgybU) shows how to serverless run the GitLab Runner Manager and Fargate driver on AWS Fargate.
@@ -30,74 +97,13 @@ On this really nice article, [**Daniel Coutinho de Miranda**](https://www.linked
 Really nice content!
 
 https://medium.com/ci-t/serverless-gitlab-ci-cd-on-aws-fargate-da2a106ad39c
-## [3][Introducing Amazon Honeycode – Build Web &amp; Mobile Apps Without Writing Code](https://www.reddit.com/r/aws/comments/hf8ee9/introducing_amazon_honeycode_build_web_mobile/)
-- url: https://aws.amazon.com/blogs/aws/introducing-amazon-honeycode-build-web-mobile-apps-without-writing-code/
+## [10][AWS Tax](https://www.reddit.com/r/aws/comments/hfyp09/aws_tax/)
+- url: https://www.reddit.com/r/aws/comments/hfyp09/aws_tax/
 ---
-
-## [4][closing aws account?](https://www.reddit.com/r/aws/comments/hfk9fq/closing_aws_account/)
-- url: https://www.reddit.com/r/aws/comments/hfk9fq/closing_aws_account/
+How tax works if we consume resources in other countries' data centers? Do we only pay for the local one which we live in?
+## [11][Backup from Win Server 2016 to AWS S3](https://www.reddit.com/r/aws/comments/hg0b76/backup_from_win_server_2016_to_aws_s3/)
+- url: https://www.reddit.com/r/aws/comments/hg0b76/backup_from_win_server_2016_to_aws_s3/
 ---
-currently I have my amazon.co.uk account, and I have an aws account with the same email/ password. I'm pretty sure both accounts are linked.
+I was wanting to do an automated backup from a window server 2016 to a AWS S3 of a file server.  Looking for recommendations possibly no or low cost.
 
-If i was to close my aws account, would that also close my amazon.co.uk?
-## [5][Automatic blocking of IPs](https://www.reddit.com/r/aws/comments/hfje4b/automatic_blocking_of_ips/)
-- url: https://www.reddit.com/r/aws/comments/hfje4b/automatic_blocking_of_ips/
----
-Hi All,
-
-I'm running a dash webapp (python) which is running some data visualization for a group of engineers. It's rough and ready, is running on an ec2.nano instance on port 80 (I'm a data scientist, not a software engineer so apologies if I get nomenclature incorrect).
-
-I've installed fail2ban, but I'm not sure it's what I want.
-
-The reason I want to block IPs is because on the terminal I can see multiple attempts of IPs trying to exploit unpatched weaknesses:
-
-""POST /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 405 -" etc
-
-What can I do to protect against this kind of brute force stuff?
-
-Thanks in advance.
-## [6][Amazon Rekignition](https://www.reddit.com/r/aws/comments/hfllrv/amazon_rekignition/)
-- url: https://www.reddit.com/r/aws/comments/hfllrv/amazon_rekignition/
----
-Hello all! Sorry I’m really new to AWS in general and I’m working using rekognition with python. I’m attempting to use client.detect_labels but I for some reason do not get any response. Does anyone have any advice or can help me out? Thank you!
-## [7][Having trouble running tensorflow docker containers as AWS Batch jobs](https://www.reddit.com/r/aws/comments/hfli7p/having_trouble_running_tensorflow_docker/)
-- url: https://www.reddit.com/r/aws/comments/hfli7p/having_trouble_running_tensorflow_docker/
----
-I have a containerized tensorflow application that does not need to use GPUs (CPU only). When calling the internal script with a command like "python [doTheThing.py](https://doTheThing.py) input1 input2" on an individual EC2 instance, the application runs smoothly and completes somewhere between 30 seconds and 4 minutes (depending on the inputs) then Exit(0)'s (shuts down the container). Transitioning to AWS Batch, I created a compute env (managed, max vcpu=512, instance type=r5 family, allocation strat = BEST\_FIT), attached a job queue and then created a job definition(vcpu reqs = 4, mem reqs = 8000MB, no timeout or retires). The jobs are then submitted via cli, adding the command like the one shown above. 
-
-Here is where things get strange. If I submit a small chunk of jobs (100-1000) jobs, the jobs move through pretty quickly as normal. But if I submit a full load (in my case about 20000 jobs), AWS Batch appears to "choke". For a given job, a container is created with the command but then the application does not appear to run within the containers. Worse the containers do not even fail and exist and those that do actually succeed also do not Exit(0); they just stay up and running. 
-
-I'm new to using AWS Batch, I have used ECS alot but AWS Batch abstracts some of the controls (for better and for worse I guess). Does anyone have any tips, solutions, advice? Is this possible a tensorflow problem than I am just missing?
-## [8][IFTT for AWS](https://www.reddit.com/r/aws/comments/hf41rb/iftt_for_aws/)
-- url: https://www.reddit.com/r/aws/comments/hf41rb/iftt_for_aws/
----
-Hi all – I have always gotten great feedback from this community :) 
-
-Just launched a new product called Relay ([https://relay.sh](https://relay.sh)). It's an event-driven DevOps platform that listens to events from 3rd party services like AWS, Datadog, PagerDuty, Jira and triggers workflows – sort of like IFTTT or Zapier for DevOps.
-
-A bunch of [use cases](https://relay.sh/workflows) we sourced from the AWS Well-Architected framework. Lot of people we talked to were using Lambda for some of these scenarios, but looking for something simpler than writing their own functions. 
-
-Would love to get feedback from this crew!
-## [9][Anyone running AWS outposts and how would you rate it?](https://www.reddit.com/r/aws/comments/hfb7p7/anyone_running_aws_outposts_and_how_would_you/)
-- url: https://www.reddit.com/r/aws/comments/hfb7p7/anyone_running_aws_outposts_and_how_would_you/
----
-What is your experience so far? What is missing?
-## [10][AWS SDK nodejs for AWS IoT Shadow service - Bug updating Shadows?](https://www.reddit.com/r/aws/comments/hfj5p5/aws_sdk_nodejs_for_aws_iot_shadow_service_bug/)
-- url: https://www.reddit.com/r/aws/comments/hfj5p5/aws_sdk_nodejs_for_aws_iot_shadow_service_bug/
----
-I am writing this API using lambdas to be able to access the IoT devices shadows ie a JSON document for each device holding its configuration. Its API is fairly simple, having the classical GET/DELETE/UPDATE methods. Everything was going smooth until I was testing my update method. The way it works is:
-
-    let params = {  
-     thingName: your\_thing\_id,  
-     payload: your\_shadow\_document  
-    }
-    
-    response = await iotdata.updateThingShadow(params).promise  
-
-The method is working as expected, modifying the shadow document for existing devices. The problem I am having is that when using a **non existent device id**, instead for getting the expected error and 404 status code, the function happily gives me a 200 as if trying to modify the shadow for a non existing device wasn't a problem?
-
-Anyone else using this? Do you care to test?
-## [11][What does the AWS Educate Software Development Engineer final project entail in?](https://www.reddit.com/r/aws/comments/hfidf9/what_does_the_aws_educate_software_development/)
-- url: https://www.reddit.com/r/aws/comments/hfidf9/what_does_the_aws_educate_software_development/
----
-Could you tell me what the final project is? What do you need to do? And which programming languages are to be used?
+Thanks in advance

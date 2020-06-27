@@ -23,21 +23,48 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/06/23/this-week-in-rust-344/
 ---
 
-## [3][WWM: Windows Window Manager is now feature complete](https://www.reddit.com/r/rust/comments/hg37c5/wwm_windows_window_manager_is_now_feature_complete/)
-- url: https://www.reddit.com/r/rust/comments/hg37c5/wwm_windows_window_manager_is_now_feature_complete/
+## [3][png crate is now ~4x faster, supports APNG](https://www.reddit.com/r/rust/comments/hgrum2/png_crate_is_now_4x_faster_supports_apng/)
+- url: https://www.reddit.com/r/rust/comments/hgrum2/png_crate_is_now_4x_faster_supports_apng/
 ---
-Hey!
+[`png`](https://crates.io/crates/png) crate provides a pure-Rust, 100% safe PNG encoder and decoder.
 
-I am now posting again, after I finally managed to implement all of the features that I needed.  Now is the phase where I need to find bugs and fix them, so I'd appreciate it if you open an issue once you find one.
+ * Switched from `inflate` to `miniz_oxide` crate for DEFLATE decompression for up to 3x speedup
+ * 30% speedup from taking advantage of auto-vectorization in filtering
+ * Added support for APNG decoding. `image` crate also updated to support APNG
+ * Performed extensive fuzzing, incl. on 32-bit which uncovered some panics and integer overflows
+ * Tested the decoder on hundreds of thousands of real-world images, found no decoding failures
 
-Since this is my first rust project, I am also asking for some feedback on my source code. I had to refactor it numerous times, because of either borrow checker limitations or windows api related stuff.
+This brings `png` crate roughly on par with the C `libpng` in terms of performance! And most of the above has been accomplished nearly single-handedly by /u/HeroicKatora. Kudos!
 
-I suck at writing documentation, so if there is anything confusing or missing, please let me know.
+---
 
-Overall I'm very happy that I decided to use Rust, because after using it in this project and getting to know the quirks of the language I can say that I really enjoy writing Rust.
+`png` is part of the [image-rs](https://github.com/image-rs) organization that maintains pure-Rust, memory-safe decoders for common image formats. If you have ever loaded an image in Rust, it was through one of these crates.
 
-[Repository](https://github.com/TimUntersberger/wwm) [Latest Release](https://github.com/TimUntersberger/wwm/releases/tag/v0.9) [Demo](https://gfycat.com/glisteningbrighthound)
-## [4][cargo-fuzz is now 10x faster, better supports sanitizers](https://www.reddit.com/r/rust/comments/hg6x3s/cargofuzz_is_now_10x_faster_better_supports/)
+However, there are still some outstanding issues, and the maintainers have a lot on their plate as it is. If you'd like to get involved, here's a list of self-contained work items that would make for valuable contributions:
+
+* ["no data found" error on decoding a valid JPEG image](https://github.com/image-rs/image/issues/1234)
+* ["Index out of range" panic on decoding some GIF files](https://github.com/image-rs/image/issues/1238)
+* [infinite loop in into_stream_writer_with_size](https://github.com/image-rs/image/issues/862)
+* [Document BitDepth::Sixteen encoding](https://github.com/image-rs/image-png/issues/203)
+* [Panic: attempt to subtract with overflow](https://github.com/image-rs/jpeg-decoder/issues/132)
+
+And if you are interested in optimization, help on these issues would be much appreciated:
+
+* [Decoder::decode_internal is slow](https://github.com/image-rs/jpeg-decoder/issues/155) - this is a major performance bottleneck in JPEG decoding, taking up 75% of decoding time.
+* [inflate::core::init_tree() is slow](https://github.com/Frommi/miniz_oxide/issues/82) - this slows down decoding of very small PNG images.
+## [4][Examining ARM vs X86 Memory Models with Rust](https://www.reddit.com/r/rust/comments/hgkgg2/examining_arm_vs_x86_memory_models_with_rust/)
+- url: https://www.nickwilcox.com/blog/arm_vs_x86_memory_model/
+---
+
+## [5][Statistics on dynamic linking](https://www.reddit.com/r/rust/comments/hgphem/statistics_on_dynamic_linking/)
+- url: https://drewdevault.com/dynlib.html
+---
+
+## [6][I found a crate that prints a diff in test failures to help you spot the difference more easily](https://www.reddit.com/r/rust/comments/hgm2kq/i_found_a_crate_that_prints_a_diff_in_test/)
+- url: https://github.com/colin-kiegel/rust-pretty-assertions
+---
+
+## [7][cargo-fuzz is now 10x faster, better supports sanitizers](https://www.reddit.com/r/rust/comments/hg6x3s/cargofuzz_is_now_10x_faster_better_supports/)
 - url: https://www.reddit.com/r/rust/comments/hg6x3s/cargofuzz_is_now_10x_faster_better_supports/
 ---
 [Fuzzing](https://en.wikipedia.org/wiki/Fuzzing) is a [highly](https://lcamtuf.coredump.cx/afl/#bugs) [effective](https://github.com/rust-fuzz/trophy-case) way of discovering bugs, including security vulnerabilities. [`cargo-fuzz`](https://github.com/rust-fuzz/cargo-fuzz) is a cargo subcommand that makes fuzzing easy.
@@ -52,90 +79,72 @@ Overall I'm very happy that I decided to use Rust, because after using it in thi
  * [Many smaller improvements and fixes.](https://github.com/rust-fuzz/cargo-fuzz/blob/master/CHANGELOG.md)
 
 Fuzzing Rust code has never been easier! Check out the [Rust Fuzz Book](https://rust-fuzz.github.io/book/cargo-fuzz.html) to get started.
-## [5][nanoserde: How I cut 50s of clean build time and 1s of incremental build time](https://www.reddit.com/r/rust/comments/hfru5a/nanoserde_how_i_cut_50s_of_clean_build_time_and/)
-- url: https://www.reddit.com/r/rust/comments/hfru5a/nanoserde_how_i_cut_50s_of_clean_build_time_and/
+## [8][Question to chapter 17.3 of the book](https://www.reddit.com/r/rust/comments/hgpjgl/question_to_chapter_173_of_the_book/)
+- url: https://www.reddit.com/r/rust/comments/hgpjgl/question_to_chapter_173_of_the_book/
 ---
-I tried to benchmark how much of build time I actually saved by migrating from serde to nanoserde. 
+[Here](https://doc.rust-lang.org/book/ch17-03-oo-design-patterns.html) it is said that:
 
-https://github.com/not-fl3/nanoserde-bench
-https://github.com/not-fl3/nanoserde/
+&gt;We need to set `state` to `None` temporarily rather than setting it directly with code like  
+`self.state = self.state.request_review();` to get ownership of the `state` value. This ensures `Post` cannot use the old `state` value after we have transformed it into a new state.
 
-The benchmark is pretty close to my typical serde use case: read some json and send some binary serialized messages.
+My question is, why? If I modify the definition of `Post` to not use `Option` so that the `self.state = ...` is valid, I get the error:
 
-Turned out that nanoserde reduced clean build time by ~50s, incremental build time by ~1s and stripped ~50Kb from wasm filesize a bonus.
-## [6][Yew or Seed for the frontend, which one would you pick and for which reason(s)?](https://www.reddit.com/r/rust/comments/hfzeqm/yew_or_seed_for_the_frontend_which_one_would_you/)
-- url: https://www.reddit.com/r/rust/comments/hfzeqm/yew_or_seed_for_the_frontend_which_one_would_you/
+https://preview.redd.it/i3nn58u7te751.png?width=1357&amp;format=png&amp;auto=webp&amp;s=2e59deaf2ea247b9d36c105b6471900e5a362429
+
+Could someone ELI5 to me why taking the ownership is necessary via .take()?
+## [9][Rust Stream: Iterators [video]](https://www.reddit.com/r/rust/comments/hgt03b/rust_stream_iterators_video/)
+- url: https://youtu.be/lQt0adYPdfQ
 ---
 
-## [7][Is this a proper functor?](https://www.reddit.com/r/rust/comments/hg3tk1/is_this_a_proper_functor/)
-- url: https://www.reddit.com/r/rust/comments/hg3tk1/is_this_a_proper_functor/
+## [10][French security agency's Rust guide for secured applications](https://www.reddit.com/r/rust/comments/hg85b3/french_security_agencys_rust_guide_for_secured/)
+- url: https://anssi-fr.github.io/rust-guide/
 ---
-I got this code compiling on the latest nightly(1.46) and it runs properly too, but I'm not sure if it has the proper functor functionality. Can someone with some fp experience tell me if there's anything wrong with the code?
 
-    #![feature(generic_associated_types)]
-    trait Functor {
-    	type Unplug;
-    	type Plug&lt;B&gt;: Functor;
+## [11][Is using an array as a const generic type parameter impossible?](https://www.reddit.com/r/rust/comments/hgju6q/is_using_an_array_as_a_const_generic_type/)
+- url: https://www.reddit.com/r/rust/comments/hgju6q/is_using_an_array_as_a_const_generic_type/
+---
+I recently discovered that const generics made quite a progress in rust and tried to make a tensor (is just a multidimensional array) with it. However, `rustc` panics when compiling the below codes.
+
+    #![feature(const_fn)]
+    #![feature(const_generics)]
+    #![feature(const_if_match)]
+    #![feature(const_loop)]
     
-    	fn fmap&lt;B, F&gt;(self, f: F) -&gt; Self::Plug&lt;B&gt;
-    	where
-    		F: Fn(Self::Unplug) -&gt; B;
+    struct Tensor&lt;const RANK: usize, const SHAPE: [usize; RANK]&gt; {
+        shape: [usize; RANK],
+        v: [f64; product(SHAPE)] // Remove this, and the error is gone.
     }
     
-    #[derive(Debug)]
-    struct MyFunctor&lt;A&gt;(A);
+    const fn product&lt;const N: usize&gt;(v: [usize; N]) -&gt; usize {
+        if v.len() &gt; 0 {
+            let mut p = 1;
+            let mut i = 0;
+            while i &lt; v.len() {
+                p *= v[i];
+                i += 1;
+            }
     
-    impl&lt;A&gt; Functor for MyFunctor&lt;A&gt; {
-    	type Unplug = A;
-    	type Plug&lt;B&gt; = MyFunctor&lt;B&gt;;
-    
-    	fn fmap&lt;B, F&gt;(self, f: F) -&gt; MyFunctor&lt;B&gt;
-    	where F: Fn(Self::Unplug) -&gt; B {
-    	    MyFunctor(f(self.0))
-    	}
+            p
+        } else {
+            0
+        }
     }
+
+Error message
+
+    error: internal compiler error: src\librustc_middle\ty\subst.rs:592:17: const parameter `RANK/#0` (Const { ty: usize, val: Param(RANK/#0) }/0) out of range when substituting substs=[]
     
+    thread 'rustc' panicked at 'Box&lt;Any&gt;', /rustc/50fc24d8a172a853b5dfe40702d6550e3b8562ba\src\libstd\macros.rs:13:23
+
+I'm confused since this works.
+
     fn main() {
-        let a = MyFunctor(vec!{1,2,3});
-        let b = a.fmap(|inner| format!{"{:?}", inner}).fmap(|inner| inner.len());
-        println!{"{:?}", b};
+        const SHAPE: [usize; 5] = [1, 2, 3, 4, 5];
+        let v: [f64; product(SHAPE)] = [0f64; product(SHAPE)];
     }
 
-[playground](https://play.rust-lang.org/?version=nightly&amp;mode=debug&amp;edition=2018&amp;gist=bd66179ca8ee90087d53e76970edf218)
-## [8][Crabapple - A framework for creating iOS tweaks using the Rust programming language](https://www.reddit.com/r/rust/comments/hfyjiq/crabapple_a_framework_for_creating_ios_tweaks/)
-- url: https://github.com/Crabapple-iOS/crabapple
----
-
-## [9][A practical guide to async in Rust](https://www.reddit.com/r/rust/comments/hg7hp8/a_practical_guide_to_async_in_rust/)
+Is this a compiler bug, or I'm doing something wrong here?
+## [12][A practical guide to async in Rust](https://www.reddit.com/r/rust/comments/hg7hp8/a_practical_guide_to_async_in_rust/)
 - url: http://blog.logrocket.com/a-practical-guide-to-async-in-rust/
 ---
 
-## [10][Possible rustc bug with panic=abort flag](https://www.reddit.com/r/rust/comments/hg4ody/possible_rustc_bug_with_panicabort_flag/)
-- url: https://www.reddit.com/r/rust/comments/hg4ody/possible_rustc_bug_with_panicabort_flag/
----
-Hi all,
-
-I believe I have found a rustc bug, but I wanted to get a second opinion first. Maybe I'm just stupid.
-
-Adding `-Cpanic=abort` to my RUSTFLAGS causes a build which compiled perfectly fine before to exit with SIGABRT. Here is a link to a minimal CI job that reproduces this problem:
-
-[https://github.com/rageagainsthepc/libmicrovmi/runs/810490910#step:5:99](https://github.com/rageagainsthepc/libmicrovmi/runs/810490910#step:5:99)
-
-Unfortunately I was unable to narrow the issue down any further because the build also compiles just fine if I use a subset of those dependencies.
-
-My rust toolchain version:
-
-    stable-x86_64-unknown-linux-gnu (default)
-    rustc 1.44.1 (c7087fe00 2020-06-17)
-
-Any help/hints would be greatly appreciated.
-## [11][The Matrix homeserver Conduit just got support for cross-signing](https://www.reddit.com/r/rust/comments/hfs8si/the_matrix_homeserver_conduit_just_got_support/)
-- url: https://www.youtube.com/watch?v=lPAAxyg2UD4
----
-
-## [12][Web App using React Rocket Framework](https://www.reddit.com/r/rust/comments/hg51sw/web_app_using_react_rocket_framework/)
-- url: https://www.reddit.com/r/rust/comments/hg51sw/web_app_using_react_rocket_framework/
----
-Getting started with rocket framework understand and build a web app with rocket
-
-[Getting Started with Rust Rocket](https://frogtok.com/extremely-simple-rust-rocket-framework-tutorial/)

@@ -27,7 +27,339 @@ Please use this thread to discuss **cool** but relatively **unknown** gems you'v
 You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
 Please include a **description** and a **link** to the gem's homepage in your comment.
-## [3][Issue with nested form](https://www.reddit.com/r/rails/comments/hg6fc8/issue_with_nested_form/)
+## [3][Rails &amp; Amazon SES for emails. Best practices and throttling?](https://www.reddit.com/r/rails/comments/hgrr27/rails_amazon_ses_for_emails_best_practices_and/)
+- url: https://www.reddit.com/r/rails/comments/hgrr27/rails_amazon_ses_for_emails_best_practices_and/
+---
+Hi all,
+
+For a Rails site I'd like to switch to Amazon SES for sending emails because we're having some trouble delivering to the big providers from our own servers.
+
+Now, SES has a pretty low throttling threshold by default (1/sec) which is a problem due to the nature of my application. My users send out invoices once a month, in bursts of thousands. Once I exceed Amazon's rate, emails get rejected. I need to do some throttling / queuing *somewhere*.
+
+The way I see it, I can do that in 2 different ways:
+
+1. Have the Rails app talk directly to the SES SMTP and do the throttling in-app, perhaps through something like DelayedJob?
+2. Have the Rails app talk to a local MTA like Exim, which sets up a relay to SES, including throttling and retries.
+
+Options 2 seems to be more robust, but it requires yet another service to be configured and maintained.
+
+&amp;#x200B;
+
+Secondly, anyone know any good guides how to set up SES with SNS on AWS to get insight into the individual bounces, rejects, etc.? I found their original documentation a bit lacking.
+## [4][Exploring Rails View Components](https://www.reddit.com/r/rails/comments/hgbe2n/exploring_rails_view_components/)
+- url: https://www.reddit.com/r/rails/comments/hgbe2n/exploring_rails_view_components/
+---
+I recorded a short exploration of the view\_component gem from Github. I have to say I'm pretty excited about it. There's some good stuff going on in the Stimulus Reflex community around ViewComponentReflex([https://github.com/joshleblanc/view\_component\_reflex](https://github.com/joshleblanc/view_component_reflex)), so I figured I'd start here before jumping into that: [https://youtu.be/oKqJmEAn-X0](https://youtu.be/oKqJmEAn-X0)
+## [5][Acts as Tracked gem: selectively track changes made on your AR models](https://www.reddit.com/r/rails/comments/hg8fe0/acts_as_tracked_gem_selectively_track_changes/)
+- url: https://www.reddit.com/r/rails/comments/hg8fe0/acts_as_tracked_gem_selectively_track_changes/
+---
+Hi, i've made a gem to selectively track changes on AR models, where audited gem would be an overkill. ActsAsTracked can be plugged into ActiveRecord model, and then used whenever you need a history of changes and actors made on the record.
+
+You can find docs in the [repository](https://github.com/ramblingcode/acts-as-tracked)
+
+Blog post [here](https://www.ramblingcode.dev/posts/track_changes_on_your_activerecord_models/)
+
+Example usage in this [project](https://github.com/ramblingcode/rails6-acts-as-tracked-usage)
+
+Hope you find it useful.
+## [6][Glimmer DSL for Opal v0.0.8 (Rails Web GUI Adapter for Desktop Apps)](https://www.reddit.com/r/rails/comments/hgb3q5/glimmer_dsl_for_opal_v008_rails_web_gui_adapter/)
+- url: https://www.reddit.com/r/rails/comments/hgb3q5/glimmer_dsl_for_opal_v008_rails_web_gui_adapter/
+---
+Glimmer DSL for Opal v0.0.8 is out with table data-binding support, including selection, sorting, and editing (can be easily styled with standard CSS). Glimmer DSL for Opal is an experimental web GUI adaptor for webifying [Glimmer](https://github.com/AndyObtiva/glimmer) desktop apps (i.e. apps built with [Glimmer DSL for SWT](https://github.com/AndyObtiva/glimmer-dsl-swt)) via [Rails](https://rubyonrails.org/) and [Opal](https://opalrb.com/) without changing a line of code. Apps may then be custom-styled for the web via standard CSS.
+
+[https://github.com/AndyObtiva/glimmer-dsl-opal](https://github.com/AndyObtiva/glimmer-dsl-opal)
+
+&amp;#x200B;
+
+[Glimmer DSL for SWT \(Desktop App\)](https://preview.redd.it/3bapevj4aa751.png?width=393&amp;format=png&amp;auto=webp&amp;s=a7d788bbe54350ef0378d507d72d3ed4c26be914)
+
+[Glimmer DSL for Opal \(Rails Web App\)](https://preview.redd.it/asyhz831aa751.png?width=612&amp;format=png&amp;auto=webp&amp;s=df6751b0a364bf836524992f3c979a864e7604e2)
+## [7][How can I get amount from Braintree in a safe way?](https://www.reddit.com/r/rails/comments/hgcqvv/how_can_i_get_amount_from_braintree_in_a_safe_way/)
+- url: https://www.reddit.com/r/rails/comments/hgcqvv/how_can_i_get_amount_from_braintree_in_a_safe_way/
+---
+I'm currently trying to integrate Braintree into my app. Basically, I want to allow customers to top up their account's credit via PayPal. The way I wanted it to work would be that the customers visit `Billing#new`, are able to select/type the amount that they, then click the "Pay with PayPal" button and after that was successful they get their selected amount as credit to their account. 
+
+After reading through the Braintree ["Get started guide"](https://developers.braintreepayments.com/start/overview) I got nearly everything working in sandbox mode. The only thing that I don't have is a safe way to get the selected/typed amount from the client. Basically what they teach in their starter guide and what I have done so far is to create a form in `Billing#new` where they render the PayPal button via their JS SDK. After the customer has clicked on the button and payed with PayPal, the SDK provides a callback function where I then submit the form with the payment_nonce to `Billing#create`. Inside `Billing#create` I currently have this code:
+
+&gt; result = gateway.transaction.sale(amount: "10.00", payment_method_nonce: nonce_from_the_client)
+
+This code creates the entire transaction but hardcodes the required amount. [In their example app](https://github.com/braintree/braintree_rails_example/blob/master/app/controllers/checkouts_controller.rb#L22) they handle the amount via `params[:amount]` but add a note to not do this in production. But they don't say what to use instead.
+
+I'm feeling a little bit lost here. They say not to use `params[:amount]` but every other option that I have explored quickly falls apart too. I'd like to use something like webhooks but can't find any usage example in their documentation or online.
+## [8][How to access a variable from a ruby controller action in JS?](https://www.reddit.com/r/rails/comments/hgcijg/how_to_access_a_variable_from_a_ruby_controller/)
+- url: https://www.reddit.com/r/rails/comments/hgcijg/how_to_access_a_variable_from_a_ruby_controller/
+---
+I have a variable created in an action within one of my ruby controllers. I can access it from the corresponding view, but how can I pass it so that my JS can grab it? Does it need to be embedded in the view as a hidden tag/variable?
+## [9][Rails: One-to-One relationship not working](https://www.reddit.com/r/rails/comments/hg9kdj/rails_onetoone_relationship_not_working/)
+- url: https://www.reddit.com/r/rails/comments/hg9kdj/rails_onetoone_relationship_not_working/
+---
+I am working on a Rails project and I am using namespacing for the models and controllers. That is the child models (`admin` and `student`) are put in a directory called `user` and the controllers are put in a directory called `users`.
+
+I also have `admins_controller` and `students_controller` that use the `admin` model and the `student` model respectively. These controllers are namespaced using  `users` directory.
+
+&amp;#x200B;
+
+I then have a `personal_info` model that contains more details about the `user`, such as gender, age, date of birth. The `personal_info` table has a **one-to-one** relationship with the `user` model.
+
+&amp;#x200B;
+
+**Here's my code**;
+
+&amp;#x200B;
+
+**Personal Info model**:
+
+    class PersonalInfo &lt; ApplicationRecord
+    
+      belongs_to :user
+    end
+
+&amp;#x200B;
+
+**User model**:
+
+    class User &lt; ApplicationRecord
+    
+      has_secure_password
+      has_one :personal_info, class_name: 'PersonalInfo', dependent: :destroy
+      accepts_nested_attributes_for :personal_info, allow_destroy: true
+    end
+
+&amp;#x200B;
+
+**Admin model**:
+
+    class User::Admin &lt; User
+    end
+
+&amp;#x200B;
+
+**Admin Controller**:
+
+    class Users::AdminsController &lt; ApplicationController
+      before_action :set_admin, only: [:show, :edit, :update, :destroy]
+    
+      # GET /admins
+      # GET /admins.json
+      def index
+        @admins = User::Admin.all
+      end
+    
+      # GET /admins/1
+      # GET /admins/1.json
+      def show
+      end
+    
+      # GET /admins/new
+      def new
+        @admin = User::Admin.new
+        @admin.build_personal_info
+      end
+    
+      # GET /admins/1/edit
+      def edit
+      end
+    
+      # POST /admins
+      # POST /admins.json
+      def create
+        @admin = User::Admin.new(admin_params)
+        @admin.build_personal_info
+    
+        respond_to do |format|
+          if @admin.save
+            format.html { redirect_to users_admin_path(@admin), notice: 'Admin was successfully created.' }
+            format.json { render :show, status: :created, location: users_admin_path(@admin) }
+          else
+            format.html { render :new }
+            format.json { render json: @admin.errors, status: :unprocessable_entity }
+          end
+        end
+      end
+    
+      # PATCH/PUT /admins/1
+      # PATCH/PUT /admins/1.json
+      def update
+        respond_to do |format|
+          if @admin.update(admin_params)
+            format.html { redirect_to users_admin_path(@admin), notice: 'Admin was successfully updated.' }
+            format.json { render :show, status: :ok, location: users_admin_path(@admin) }
+          else
+            format.html { render :edit }
+            format.json { render json: @admin.errors, status: :unprocessable_entity }
+          end
+        end
+      end
+    
+      # DELETE /admins/1
+      # DELETE /admins/1.json
+      def destroy
+        @admin.destroy
+        respond_to do |format|
+          format.html { redirect_to users_admins_url, notice: 'Admin was successfully destroyed.' }
+          format.json { head :no_content }
+        end
+      end
+    
+      private
+      # Use callbacks to share common setup or constraints between actions.
+      def set_admin
+        @admin = User::Admin.find(params[:id])
+      end
+    
+      # Only allow a list of trusted parameters through.
+      def admin_params
+        params.require(:user_admin).permit(
+          :email, :password, :role_id, 
+          personal_info_attributes: [ :id, :first_name, :last_name, :phone, 
+                                       :gender, :dob, :address, :city, :state, 
+                                       :country ]
+        )
+      end
+    end
+
+&amp;#x200B;
+
+**Routes**:
+
+    Rails.application.routes.draw do
+     namespace :users do
+      resources :admins
+      resources :students
+     end
+    end
+
+&amp;#x200B;
+
+**\_form.html.erb:**
+
+    &lt;% if @admin.errors.any? %&gt;
+      &lt;div id="error_explanation"&gt;
+        &lt;h2&gt;&lt;%= pluralize(@admin.errors.count, "error") %&gt; prohibited this admin from being saved:&lt;/h2&gt;
+    
+        &lt;ul&gt;
+          &lt;% @admin.errors.full_messages.each do |message| %&gt;
+            &lt;li&gt;&lt;%= message %&gt;&lt;/li&gt;
+          &lt;% end %&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;% end %&gt;
+    
+    &lt;%= fields_for :personal_info do |form| %&gt;
+      &lt;div class="field"&gt;
+        &lt;%= form.label :first_name %&gt;
+        &lt;%= form.text_field :first_name %&gt;
+      &lt;/div&gt;
+    
+      &lt;div class="field"&gt;
+        &lt;%= form.label :last_name %&gt;
+        &lt;%= form.text_field :last_name %&gt;
+      &lt;/div&gt;
+    &lt;% end %&gt;
+    
+    &lt;div class="field"&gt;
+      &lt;%= form.label :email %&gt;
+      &lt;%= form.text_field :email %&gt;
+    &lt;/div&gt;
+    
+    &lt;%= fields_for :personal_info do |form| %&gt;
+      &lt;div class="field"&gt;
+        &lt;%= form.label :phone %&gt;
+        &lt;%= form.text_field :phone %&gt;
+      &lt;/div&gt;
+    &lt;% end %&gt;
+    
+    &lt;div class="field"&gt;
+      &lt;%= form.label :password %&gt;
+      &lt;%= form.text_field :password %&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="actions"&gt;
+      &lt;%= form.submit %&gt;
+    &lt;/div&gt;
+
+&amp;#x200B;
+
+**new.html.erb**:
+
+    &lt;h1&gt;New Admin&lt;/h1&gt;
+    
+    
+    &lt;%= form_with(model: @admin, url: users_admins_path, local: true) do |form| %&gt;
+      &lt;%= render partial: 'form', admin: @admin, locals: { form: form } %&gt;
+    &lt;% end %&gt;
+    
+    &lt;%= link_to 'Back', users_admins_path %&gt;
+
+&amp;#x200B;
+
+However, when I try to create a new `admin` or update an already existing admin after adding inputs to the displayed form no `Personal Info` data is saved on the database. They are all **nil**.
+
+&amp;#x200B;
+
+    PersonalInfo Load (0.3ms) SELECT "personal_infos".* FROM "personal_infos" WHERE "personal_infos"."user_id" = $1 LIMIT $2 [["user_id", 6], ["LIMIT", 1]]
+    
+    =&gt; #&lt;PersonalInfo id: 2, first_name: nil, last_name: nil, phone: nil, gender: nil, dob: nil, address: nil, city: nil, state: nil, country: nil, user_id: 6, created_at: "2020-06-26 13:37:16", updated_at: "2020-06-26 13:37:16"&gt;
+
+&amp;#x200B;
+
+I have tried to get this resolved, but no luck yet. Any form of help will be highly appreciated.
+## [10][Help choosing model associations](https://www.reddit.com/r/rails/comments/hgb12a/help_choosing_model_associations/)
+- url: https://www.reddit.com/r/rails/comments/hgb12a/help_choosing_model_associations/
+---
+So i have a multi user blog platform, it's a simple crud app but my issue is with the association because i have many types of users (i have simple user that can write blog post and it show his name) and i have a company account (which is like the user but have other information like company website instead of the user username)
+
+
+my issue is how to handle the association (i already implemented the user model using device) which have_many blog 
+
+so every blog have the belong to associated to the user
+
+how to add another user type (Company) which have the the same many blog 
+
+i searched and found the STI but it's not what i need as there is differences between the users types ( i may add another type later) 
+
+
+
+should i use polymorphic association or are there another method to this relationship    
+
+
+
+
+
+TL;DR i have user, CompanyUser, blablaUser which all of them can make blog post how to make the association ?
+## [11][I need help logging someone out using devise on the backend, and react on the frontend.](https://www.reddit.com/r/rails/comments/hgagz6/i_need_help_logging_someone_out_using_devise_on/)
+- url: https://www.reddit.com/r/rails/comments/hgagz6/i_need_help_logging_someone_out_using_devise_on/
+---
+Hello all,
+
+I'm making a simple messaging application using React as my frontend and devise/rails as my backend.  Making a fetch call to sign in and register work just fine but signing out does not.  Whenever I make a delete request to /users/sign\_out I get the following error: 
+
+Filter chain halted as :verify\_signed\_out\_user rendered or redirected.
+
+My fetch call is written as such: 
+
+ 
+
+const *logout* = (*event*) =&gt; {  
+ *event.preventDefault*();  
+ *fetch*('http://localhost:3000/users/sign\_out'  
+   
+ , {  
+        *method*: 'DELETE',  
+        *headers*: {  
+ 'Content-type': 'application/json',  
+ 'Accept': 'application/json'  
+ },  
+        *body*: *JSON.stringify*({ *data*: *JSON.parse*(*localStorage.getItem*('user'))})  
+ }  
+   
+ )  
+    *.then*(*res* =&gt; *res.json*())  
+    *.then*(*resp* =&gt; *console.log*(resp))  
+}
+
+I cannot seem to find much help elsewhere online, and any help is much appreciated!
+## [12][Issue with nested form](https://www.reddit.com/r/rails/comments/hg6fc8/issue_with_nested_form/)
 - url: https://www.reddit.com/r/rails/comments/hg6fc8/issue_with_nested_form/
 ---
 I am having a problem with a nested form setup. I have a products model that has product\_options from that model. What I am trying to do is have a button to add a new product option name/value within the product form. I also want to list within the product the current options and be able to delete them if needed. I do not see any form fields displaying though for the product\_options fields. What am I doing worng?
@@ -206,127 +538,3 @@ Products controller
     
 
 Any help is appreciated. Thanks!
-## [4][Show a list of each database entry on html page](https://www.reddit.com/r/rails/comments/hfo5hs/show_a_list_of_each_database_entry_on_html_page/)
-- url: https://www.reddit.com/r/rails/comments/hfo5hs/show_a_list_of_each_database_entry_on_html_page/
----
-Currently, I use &lt;%= @ places.each do |place| %&gt; within a table to display all records of places that have been created. they order out one after the other, and I am searching for an easy way to list them out one beneath the other on the page. Any ideas? And thank you in advance.
-## [5][Attaching a source to customer for payment method with rails &amp; stripe?](https://www.reddit.com/r/rails/comments/hfm4hf/attaching_a_source_to_customer_for_payment_method/)
-- url: https://www.reddit.com/r/rails/comments/hfm4hf/attaching_a_source_to_customer_for_payment_method/
----
-I have a rails app and in test mode I have no problem accepting payments, but in live mode I get an error like "Stripe::InvalidRequestError (A source must be attached to a customer to be used as a `payment_method`.)". I've attached a token to the customer when it is created (see code below), but not sure where else it needs to be.
-
-    customer = if current_user.stripe_id[connected_acct].present?
-        Stripe::Customer.retrieve(current_user.stripe_id[connected_acct], {stripe_account: item.stripe_id})
-    else
-        Stripe::Customer.create({
-                    email: current_user.email, 
-                    source: token,
-                },
-                {
-                    stripe_account: item.stripe_id,
-                })
-
-Confirming the payment intent looks like this:
-
-    payment_method_card = params[:user][:card_id]
-     confirm_payment = Stripe::PaymentIntent.confirm(
-                payment_intent.id,
-                {payment_method: payment_method_card},
-            )
-## [6][Confirm a payment intent in Live Mode (Rails &amp; Stripe)](https://www.reddit.com/r/rails/comments/hfd8uv/confirm_a_payment_intent_in_live_mode_rails_stripe/)
-- url: https://www.reddit.com/r/rails/comments/hfd8uv/confirm_a_payment_intent_in_live_mode_rails_stripe/
----
-I have a rails application that uses stripe to handle payments &amp; fees. In test mode my code works well, but when I attempt to move it over to live mode I run into issues. I'm now using production/live API keys, the issue is around confirming a basic intent. In test mode the confirmation looks something like so (where card_brand = 'visa' or 'mastercard' etc)
-
-    payment_method_card = 'pm_card_' + card_brand
-    confirm_payment = Stripe::PaymentIntent.confirm(
-                payment_intent.id,
-                {payment_method: payment_method_card},
-    )
-
-This doesn't fly in production and I'm just wondering what parameter needs to be passed to the payment_method attribute in the confirmation. Any/all help is appreciated.
-## [7][Advice for background multiple long-running tasks](https://www.reddit.com/r/rails/comments/hfag0c/advice_for_background_multiple_longrunning_tasks/)
-- url: https://www.reddit.com/r/rails/comments/hfag0c/advice_for_background_multiple_longrunning_tasks/
----
-Hi guys,
-
-I currently have numerous sidekiq workers that interact with ActiveRecord to store/retrieve data that is being pushed to via HTTP POST requests to an API Controller.
-
-When I run a health check on my customers' networks, an agent on their system interacts with my API, which  looks in ActiveRecord for records that my sidekiq workers have created, retrieves the commands to run and then sends it back to the agents via HTTP response. As the agent completes each task, it submits an HTTP POST request back to the API, which then stores the data in ActiveRecord. The sidekiq worker obtains this data and updates other attributes within the application.
-
-Since it is not a best practice to store lots of code in sidekiq workers, or even have them run for a long time, what are some other alternatives?
-
-Ultimately, I just need to push a series of commands and get their responses, regardless if it takes 5 seconds or 15 minutes.
-
-Here's an example of what several workers are doing:
-
-`Task.create(command: "ipconfig")`  
-`# waits for task.status == "completed" by running continuous task.status calls every second`  
-`if task.output.include? "this"`  
-   `do this`  
-`else`   
-   `do this instead`  
-`end`  
-`Task.create(command: "next command")`  
-`# waits for task.status == "completed" by running continuous task.status calls every second`
-## [8][Should I load the pipeline JS and CSS using a CDN like Cloudinary?](https://www.reddit.com/r/rails/comments/hf1r1h/should_i_load_the_pipeline_js_and_css_using_a_cdn/)
-- url: https://www.reddit.com/r/rails/comments/hf1r1h/should_i_load_the_pipeline_js_and_css_using_a_cdn/
----
-My webapp's pipeline asset size is making the first page load quite delayed. Hence, I am thinking of uploading the precompiled and minified CSS and JS files to Cloudinary. Is it a good practice?
-## [9][Is Ruby on Rails front and back end development](https://www.reddit.com/r/rails/comments/hf2w7s/is_ruby_on_rails_front_and_back_end_development/)
-- url: https://www.reddit.com/r/rails/comments/hf2w7s/is_ruby_on_rails_front_and_back_end_development/
----
-
-## [10][How should I write my frontend code with rails?](https://www.reddit.com/r/rails/comments/hf6ta8/how_should_i_write_my_frontend_code_with_rails/)
-- url: https://www.reddit.com/r/rails/comments/hf6ta8/how_should_i_write_my_frontend_code_with_rails/
----
-Using "vanilla" tecnologies such as css, js and so goes on or creating/customizing themes from bulma/bootstrap? I'm confused.
-## [11][Solidus won't display images out of the box - Paperclip and ImageMagick error](https://www.reddit.com/r/rails/comments/hf0te0/solidus_wont_display_images_out_of_the_box/)
-- url: https://www.reddit.com/r/rails/comments/hf0te0/solidus_wont_display_images_out_of_the_box/
----
-I'm just starting with Solidus, though I do know my way around Rails. I've created a Solidus project on my Mac, and I installed all the required gems as well as ImageMagick through Homebrew.  Both `identify` and `magick` work as terminal commands as my `/usr/local/bin` directory is in my PATH. I've also specified the path to `identify` in the `application.rb` file (I'm guessing it's supposed to go in side the `Application` class). However, none of the images show up in Solidus, and when I try and manually add an image, I get the following error (it's related to paperclip). 
-
-Any help here would be - Google has not been my friend this time. BTW, the same thing happens on both Mac and Windows running WSL (Debian). The error message is shown below:
-
-    [paperclip] Trying to link /tmp/RackMultipart20200622-9041-8gndhx.jpg to /tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-1t35lnu.jpg
-    [paperclip] Trying to link /tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-1t35lnu.jpg to /tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-62aumc.jpg
-    Command :: PATH=/usr/local/bin/identify:$PATH; file -b --mime '/tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-62aumc.jpg'
-    Command :: PATH=/usr/local/bin/identify:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-1t35lnu.jpg[0]' 2&gt;/dev/null
-    [paperclip] An error was received while processing: #&lt;Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError&gt;
-    Command :: PATH=/usr/local/bin/identify:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-1t35lnu.jpg[0]' 2&gt;/dev/null
-    [paperclip] An error was received while processing: #&lt;Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError&gt;
-    Command :: PATH=/usr/local/bin/identify:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-1t35lnu.jpg[0]' 2&gt;/dev/null
-    [paperclip] An error was received while processing: #&lt;Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError&gt;
-    Command :: PATH=/usr/local/bin/identify:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-1t35lnu.jpg[0]' 2&gt;/dev/null
-    [paperclip] An error was received while processing: #&lt;Paperclip::Errors::NotIdentifiedByImageMagickError: Paperclip::Errors::NotIdentifiedByImageMagickError&gt;
-    [paperclip] Trying to link /tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-1t35lnu.jpg to /tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-1dlkgdw.jpg
-    Command :: PATH=/usr/local/bin/identify:$PATH; file -b --mime '/tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-1dlkgdw.jpg'
-    [paperclip] Trying to link /tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-1t35lnu.jpg to /tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-16yjulo.jpg
-    Command :: PATH=/usr/local/bin/identify:$PATH; file -b --mime '/tmp/cdcf58ad03be2998ea64da8e6cd3e43c20200622-9041-16yjulo.jpg'
-      Rendering /Library/Ruby/Gems/2.6.0/gems/solidus_backend-2.10.1/app/views/spree/admin/images/create.js.erb
-      Rendered /Library/Ruby/Gems/2.6.0/gems/solidus_backend-2.10.1/app/views/spree/admin/images/create.js.erb (Duration: 3.4ms | Allocations: 874)
-    Completed 200 OK in 836ms (Views: 20.7ms | ActiveRecord: 7.6ms | Allocations: 29100)
-## [12][undefined local variable or method `resource' for #&lt;PostController:0x00007fd90d028990&gt;](https://www.reddit.com/r/rails/comments/hf7kck/undefined_local_variable_or_method_resource_for/)
-- url: https://www.reddit.com/r/rails/comments/hf7kck/undefined_local_variable_or_method_resource_for/
----
-I can create posts from  [http://localhost3030/posts/new](http://localhost3030/posts/new) and they save to the database. but I get the above error on the \* line below. Also below is how I called user\_path(resource) within a after\_sign\_in method within my applications controller yesterday and it worked. I figured calling the same in my post controller create method would re\_direct to the same route, but it resolved the above error. Any ideas why? And thank you in advance. 
-
-def create
-
-  @ post = current\_user.posts.create(post\_params)
-
-  if @ post.valid?
-
-\*    redirect\_to user\_path(resource) 
-
-  else
-
-render :new, status: :unprocessable\_entity
-
-  end
-
-  end
-
-&amp;#x200B;
-
- [https://www.reddit.com/r/rails/comments/heku7v/no\_route\_matches\_actionshow\_controllerusers/](https://www.reddit.com/r/rails/comments/heku7v/no_route_matches_actionshow_controllerusers/)

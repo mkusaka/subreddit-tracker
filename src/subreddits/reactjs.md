@@ -109,82 +109,59 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/gk41zb/whos_available_may_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][I teach React courses - here's my collection of over 600 slides on various React topics (hosted on GitHub, licensed under CC-BY-SA)](https://www.reddit.com/r/reactjs/comments/hfpxo3/i_teach_react_courses_heres_my_collection_of_over/)
-- url: https://marko-knoebl.github.io/slides/
+## [3][New HackerNews Frontend built with React](https://www.reddit.com/r/reactjs/comments/hgp83a/new_hackernews_frontend_built_with_react/)
+- url: https://www.reddit.com/r/reactjs/comments/hgp83a/new_hackernews_frontend_built_with_react/
+---
+Built a cleaner frontend for hackernews with React/Typescript.
+
+Url: https://hackernews-kappa.vercel.app/
+
+Source: https://github.com/mickykebe/hackernews
+## [4][✨ useWebAnimations x Animate.css](https://www.reddit.com/r/reactjs/comments/hgrfse/usewebanimations_x_animatecss/)
+- url: https://v.redd.it/oqomp8pzlf751
 ---
 
-## [4][Deploying to Github Pages? Don't Forget to Fix Your Links](https://www.reddit.com/r/reactjs/comments/hfmzmy/deploying_to_github_pages_dont_forget_to_fix_your/)
-- url: https://maximorlov.com/deploying-to-github-pages-dont-forget-to-fix-your-links
+## [5][can learning firebase be a good way to get the concept of backend development??](https://www.reddit.com/r/reactjs/comments/hglh8s/can_learning_firebase_be_a_good_way_to_get_the/)
+- url: https://www.reddit.com/r/reactjs/comments/hglh8s/can_learning_firebase_be_a_good_way_to_get_the/
+---
+I am not asking about languages or tools, but i am a frontend developer and i don't have an idea of what is going in the other side, the side of backend, so why i am asking, can learning firebase give me what i am missing, so it would be easier in the future to learn backend development languages and tools and how they work, Thanks in advance!
+## [6][React Material-UI Themes: Customize Material Components for your Project](https://www.reddit.com/r/reactjs/comments/hg7zxe/react_materialui_themes_customize_material/)
+- url: https://www.youtube.com/watch?v=bDkB3LoQKxs&amp;feature=share
 ---
 
-## [5][[Twitter-guessr] My first big React project. Would appreciate any feedback or criticism!](https://www.reddit.com/r/reactjs/comments/hg1ajw/twitterguessr_my_first_big_react_project_would/)
-- url: https://twitter-guessr.netlify.app/
+## [7][How many projects i need to start applying for jobs](https://www.reddit.com/r/reactjs/comments/hgpwyx/how_many_projects_i_need_to_start_applying_for/)
+- url: https://www.reddit.com/r/reactjs/comments/hgpwyx/how_many_projects_i_need_to_start_applying_for/
+---
+How many project i need to start applying for jobs
+
+hey guys, so managed to build two websites with react the first one is a card collection website for a card game called hearthstone and the other one is a movie website with redux so i was wondering is that enough to start applying for jobs or i need more projects?
+## [8][Create react app vs next js (CRS vs SSR)](https://www.reddit.com/r/reactjs/comments/hgraav/create_react_app_vs_next_js_crs_vs_ssr/)
+- url: https://www.reddit.com/r/reactjs/comments/hgraav/create_react_app_vs_next_js_crs_vs_ssr/
+---
+when I googled why should one use next.js over create-react app , most of the articles made the point of server side rendering, how next,js use ssr which make the application fast. Now if we implement server-side rendering in CRA, will it performance be similar to next.js !
+## [9][Next.js E-Commerce Store Demo (rewritten from React CRA)](https://www.reddit.com/r/reactjs/comments/hgtej7/nextjs_ecommerce_store_demo_rewritten_from_react/)
+- url: https://www.reddit.com/r/reactjs/comments/hgtej7/nextjs_ecommerce_store_demo_rewritten_from_react/
+---
+Greetings, everyone! 
+
+I made an E-Commerce Store Demo with Next.js (rewritten from React CRA). Study it, if you find something curious for yourself (links to different code examples in the readme file in repo).
+
+Demo: [https://next-js-e-commerce-online-store.vercel.app/](https://next-js-e-commerce-online-store.vercel.app/)
+
+Repo: [https://github.com/AlexTechNoir/Next.js-e-commerce-online-store](https://github.com/AlexTechNoir/Next.js-e-commerce-online-store)
+## [10][Just made this app. Would really appreciate any sort of feedback!](https://www.reddit.com/r/reactjs/comments/hgslhn/just_made_this_app_would_really_appreciate_any/)
+- url: http://koondelick.herokuapp.com/
 ---
 
-## [6][What are some key things and practices to include in a large scale react app in 2020?](https://www.reddit.com/r/reactjs/comments/hg0hz7/what_are_some_key_things_and_practices_to_include/)
-- url: https://www.reddit.com/r/reactjs/comments/hg0hz7/what_are_some_key_things_and_practices_to_include/
----
-I've joined a new team where we're basically rewriting a large scale production application using React. At a high level, this application works on live data input by multiple sources and shares data across several different components.
-
-The project is just my manager and I, but there may be several engineers touching it in the future. We want to establish a solid framework for the app before diving in. I used React two years ago and used primarily MERN stack (react, redux, nodejs, with Flow), but only as an intern.
-
-I was thinking of the following:
-
-- Typescript for static type checking
-- Styled components for CSS
-- Redux for state management? I've always found Redux to be great but am wondering if there's something better to be used
-- react-router for routing 
-
-Also, I'm looking for pointers on how to compartmentalize business logic/API calls in applications from components themselves. I've originally used Redux for this (using thunk to do things like api calls), but I'm wondering if there is a practice I should adapt for this. For example, in Android there is the View-ViewModel pattern where the View is very dumb and the ViewModel is an entity handles all business logic that the view subscribes to; I'd like to do this with React.
-## [7][Introduction React Native, Typescript, Redux, Rxjs, Node.js, Mongo, Mongoose. Nexus Aurora Platform](https://www.reddit.com/r/reactjs/comments/hg5nja/introduction_react_native_typescript_redux_rxjs/)
-- url: https://youtu.be/06wsg2f76hQ
+## [11][React Hooks — The Ins and Outs](https://www.reddit.com/r/reactjs/comments/hgrl24/react_hooks_the_ins_and_outs/)
+- url: https://medium.com/@michaelzheng/react-hooks-the-ins-and-outs-a5b85bac678?source=friends_link&amp;sk=2ede9d1500c898a9c832769b2e369fa3
 ---
 
-## [8][Wes Bos: Fullstack Advanced React Course or Newline: Tinyhouse - A Fullstack React Masterclass?](https://www.reddit.com/r/reactjs/comments/hfz7hf/wes_bos_fullstack_advanced_react_course_or/)
-- url: https://www.reddit.com/r/reactjs/comments/hfz7hf/wes_bos_fullstack_advanced_react_course_or/
+## [12][Worpress Job just to get started](https://www.reddit.com/r/reactjs/comments/hgrhpn/worpress_job_just_to_get_started/)
+- url: https://www.reddit.com/r/reactjs/comments/hgrhpn/worpress_job_just_to_get_started/
 ---
-Hey React Community,
+Hi all so I was just wondering about a job offer I received. I always hear from developers that it is a good idea to just get your foot in the door for your first job and not worry too much. 
 
-I've been working with AngularJS and Angular for the last 5.5 years and only been doing frontend work. My goal is to learn React and some backend technologies to become a full-stack developer.
+What I am not sure about is the fact that I have been studying the MERN stack(React, Express, Redux, NodeJs) for the past 3 years. I know I am not supposed to get hung up on technology as I am willing to learn whatever is best to get a certain task done. 
 
-I am almost finished with Wes Bos' 'React For Beginners' course and starting to look for a course that builds a full-stack app (then go build my own!). Two courses are sticking out for me:
-
-Wes Bos: [Fullstack Advanced React &amp; GraphQL course](https://advancedreact.com/)
-
-and 
-
-Newline: [Tinyhouse - A Fullstack React Masterclass](https://www.newline.co/tinyhouse)
-
-My preference is to go through a course that builds a full-stack app. So I'm wondering if folks here have experience with either of these courses and/or have suggestions?
-
-Thanks!
-## [9][Are we able to use optional chaining yet?](https://www.reddit.com/r/reactjs/comments/hg7mp3/are_we_able_to_use_optional_chaining_yet/)
-- url: https://www.reddit.com/r/reactjs/comments/hg7mp3/are_we_able_to_use_optional_chaining_yet/
----
- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional\_chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) 
-
-Will babel transpile this for browsers that doesn't support it?
-
-Anyone using it already, regardless?
-## [10][Add a contact form to Next.js](https://www.reddit.com/r/reactjs/comments/hg7l8m/add_a_contact_form_to_nextjs/)
-- url: https://www.reddit.com/r/reactjs/comments/hg7l8m/add_a_contact_form_to_nextjs/
----
-Hi all,
-
-I'm trying to add a simple secured contact form on my next.js app, without any success.. I've tried to follow this tutorial from Vercel ([https://docs-git-success-185-add-nextjs-sengrid-guide.zeit.now.sh/guides/deploying-nextjs-nodejs-and-sendgrid-with-zeit-now](https://docs-git-success-185-add-nextjs-sengrid-guide.zeit.now.sh/guides/deploying-nextjs-nodejs-and-sendgrid-with-zeit-now)) but when i try to use the contact form, i'm getting errors in the console (error 500, error 502 or error 503).
-
-Can anyone explains to me how to add a free contact form, using Sendgrid or anything else, that i can deploy on vercel? It's the first time i try to do this, and i've already spent 6 hours trying multiple things without success...
-
-Thanks a lot!
-## [11][Why does this work?](https://www.reddit.com/r/reactjs/comments/hg7b5z/why_does_this_work/)
-- url: https://www.reddit.com/r/reactjs/comments/hg7b5z/why_does_this_work/
----
-New to react, please explain!
-
-AppCompt is an array of objects..how is this rendered without looping through each element in return statement?
-
-https://postimg.cc/SXQ9Mhz9
-## [12][15+ Best Dark admin template for 2020](https://www.reddit.com/r/reactjs/comments/hg6cf5/15_best_dark_admin_template_for_2020/)
-- url: https://dev.to/codedthemes/15-best-dark-admin-template-for-2020-3pbo
----
-
+Would you developers out there recommend that I take a job with a lot of Wordpress and PHP involved just to get started( I can obviously still work on whatever Technologies I want in my spare time) or keep on studying and wait for another opportunity?

@@ -1,15 +1,31 @@
 # Kotlin
-## [1][Kotlin Flows and Channels for Android](https://www.reddit.com/r/Kotlin/comments/hg6940/kotlin_flows_and_channels_for_android/)
+## [1][Creating a BitTorrent client in Kotlin](https://www.reddit.com/r/Kotlin/comments/hg7ym2/creating_a_bittorrent_client_in_kotlin/)
+- url: https://kcianfarini.dev/corbit-bencoding/
+---
+
+## [2][I have worked with Python extensively. Can any one suggest me resources to get started with Kotlin?](https://www.reddit.com/r/Kotlin/comments/hgpao5/i_have_worked_with_python_extensively_can_any_one/)
+- url: https://www.reddit.com/r/Kotlin/comments/hgpao5/i_have_worked_with_python_extensively_can_any_one/
+---
+I would prefer it would direct me somehow toward mobile application development for Android.
+## [3][A question about nulls](https://www.reddit.com/r/Kotlin/comments/hgjdy1/a_question_about_nulls/)
+- url: https://www.reddit.com/r/Kotlin/comments/hgjdy1/a_question_about_nulls/
+---
+Hey guys!
+
+I wanted to ask you a (quick?) question about null types in Kotlin. To give you an idea about my background, I'm a little bit of a newbie programmer that started with Python about a year ago. I started because I wanted to automate some of the activities we do at my office and I really liked it, so I dived into it. Now I wanted to try to get into some app programming and I understood that Kotlin is great for Android development.  And It's also pretty fun actually.
+
+I'm taking some courses and trying things step by step but, maybe mostly because I come from Python as first language, I'm having a really hard time with the static type way of creating variables and stating everything. The hardest thing to understand to me is the "null" type. I can't understand what it stands for and why I should use a nullable type in general.
+
+In Python everything is dynamically stated, so I don't have to think about what type of var I'm creating. Here, on the other hand, it seems to be the base of the workflow. And the fact that I don't seem to properly understand this worries me a bit. Even worse with the null type.
+
+Can you please give me an advice about this? Maybe then I can stop to wrap my head around this with your help.
+
+Thanks guys!
+## [4][Kotlin Flows and Channels for Android](https://www.reddit.com/r/Kotlin/comments/hg6940/kotlin_flows_and_channels_for_android/)
 - url: https://youtu.be/xch4aw7hNcY?list=PLEx5khR4g7PL-JwckuOkkc5cR6X5hn6ug
 ---
 
-## [2][How do I bring array information from one intent to another?](https://www.reddit.com/r/Kotlin/comments/hfzlpy/how_do_i_bring_array_information_from_one_intent/)
-- url: https://www.reddit.com/r/Kotlin/comments/hfzlpy/how_do_i_bring_array_information_from_one_intent/
----
-As in I have a home page and a game page for my app. On the home screen I get the list of names of players. I want to know how to transfer that array to the next page of the app. I’ve tried writing to a file, but File() crashes the app. This is the missing link between both pages.
-
-Might be a rookie mistake, but I’ve tried for the past two days trying.
-## [3][Possible bug with generic where clause and star projection.](https://www.reddit.com/r/Kotlin/comments/hg6npk/possible_bug_with_generic_where_clause_and_star/)
+## [5][Possible bug with generic where clause and star projection.](https://www.reddit.com/r/Kotlin/comments/hg6npk/possible_bug_with_generic_where_clause_and_star/)
 - url: https://www.reddit.com/r/Kotlin/comments/hg6npk/possible_bug_with_generic_where_clause_and_star/
 ---
 It appears that star projections only understand the first where clause. I'm not sure how to best articulate it, so have some code.
@@ -43,7 +59,23 @@ Here's the code:
         thing.value.foo() // compile error
         thing.value.bar() // fine
     }
-## [4][Single line if statement without brances](https://www.reddit.com/r/Kotlin/comments/hft79x/single_line_if_statement_without_brances/)
+## [6][Spring Security Webflux with Kotlin coroutines explained](https://www.reddit.com/r/Kotlin/comments/hg90t1/spring_security_webflux_with_kotlin_coroutines/)
+- url: https://www.reddit.com/r/Kotlin/comments/hg90t1/spring_security_webflux_with_kotlin_coroutines/
+---
+Hi there!
+
+I just publish a small contribution to the Kotlin and Spring Security Webflux community. If you are struggling to find out how to add security to your reactive project I created this little repository to explain how it works. Also I added a little frontend app and a simple CI/CD pipeline. It's a work in progress but I think that it could give you some hints to you.
+
+[https://github.com/soasada/kotlin-coroutines-webflux-security](https://github.com/soasada/kotlin-coroutines-webflux-security) 
+
+Please feel free to ask me questions, suggestions or contributions. Hope you enjoy it
+## [7][How do I bring array information from one intent to another?](https://www.reddit.com/r/Kotlin/comments/hfzlpy/how_do_i_bring_array_information_from_one_intent/)
+- url: https://www.reddit.com/r/Kotlin/comments/hfzlpy/how_do_i_bring_array_information_from_one_intent/
+---
+As in I have a home page and a game page for my app. On the home screen I get the list of names of players. I want to know how to transfer that array to the next page of the app. I’ve tried writing to a file, but File() crashes the app. This is the missing link between both pages.
+
+Might be a rookie mistake, but I’ve tried for the past two days trying.
+## [8][Single line if statement without brances](https://www.reddit.com/r/Kotlin/comments/hft79x/single_line_if_statement_without_brances/)
 - url: https://www.reddit.com/r/Kotlin/comments/hft79x/single_line_if_statement_without_brances/
 ---
 I was curious what people's thoughts are on not using braces for `if` statements that are single line and have no else if/else?
@@ -64,11 +96,11 @@ Also, I feel like that single line if with no braces fits well with other Kotlin
     val result = value ?: null
     value ?: null
     value ?: return
-## [5][Ideas for naming a Kotlin/Common Telegram library (the MTProto API, not the HTTP bot API)](https://www.reddit.com/r/Kotlin/comments/hft5bb/ideas_for_naming_a_kotlincommon_telegram_library/)
+## [9][Ideas for naming a Kotlin/Common Telegram library (the MTProto API, not the HTTP bot API)](https://www.reddit.com/r/Kotlin/comments/hft5bb/ideas_for_naming_a_kotlincommon_telegram_library/)
 - url: https://www.reddit.com/r/Kotlin/comments/hft5bb/ideas_for_naming_a_kotlincommon_telegram_library/
 ---
 Ideally with a K in it. Kotlogram is already taken.
-## [6][Problem reaching a piece of code outside of it's method](https://www.reddit.com/r/Kotlin/comments/hfr08k/problem_reaching_a_piece_of_code_outside_of_its/)
+## [10][Problem reaching a piece of code outside of it's method](https://www.reddit.com/r/Kotlin/comments/hfr08k/problem_reaching_a_piece_of_code_outside_of_its/)
 - url: https://www.reddit.com/r/Kotlin/comments/hfr08k/problem_reaching_a_piece_of_code_outside_of_its/
 ---
 Hey all
@@ -114,41 +146,3 @@ I've tried to do things like make returnLocation return a string with the url, b
 &amp;#x200B;
 
 Any help would be greatly appreciated, thanks in advance! :D
-## [7][Announcing Lingua 1.0.0: The most accurate natural language detection library for the JVM](https://www.reddit.com/r/Kotlin/comments/hf59dc/announcing_lingua_100_the_most_accurate_natural/)
-- url: https://github.com/pemistahl/lingua
----
-
-## [8][How do I deep copy a Kotlin object?](https://www.reddit.com/r/Kotlin/comments/hfcrzu/how_do_i_deep_copy_a_kotlin_object/)
-- url: https://www.reddit.com/r/Kotlin/comments/hfcrzu/how_do_i_deep_copy_a_kotlin_object/
----
-I have a method that takes a MutableList of objects and needs return a MutableList of the same objects but with significant modifications. However, the original versions of the objects are still needed. Running the method on objects that have already been modified would generate invalid data. WHat's the best way to deep copy the list object so I can make modifications without affecting the originals?
-## [9][Kotlin/Native extra imports](https://www.reddit.com/r/Kotlin/comments/hf59n1/kotlinnative_extra_imports/)
-- url: https://www.reddit.com/r/Kotlin/comments/hf59n1/kotlinnative_extra_imports/
----
-I'm trying to import an existing swift library of ours, and while it exports to obj-c just fine, when kotlin goes to generate headers it adds in some classes related to UIPointer and an import for UIAxis, which then cant be resolved. These aren't used anywhere in our swift library, and I'm not sure how to get rid of them. Using Kotlin 1.3.72, Xcode 11.5, targeting iOS 13.4 (i've tried targeting older to see if that would fix it. it did not). Current best guess is that kotlin/native is importing the fields from the UIKit header in the swift library, but not mapping these particular ones across to the provided platform library correctly. Is there a way I can force that to regenerate?
-## [10][Discussion: Do you think this would be a cool feature?](https://www.reddit.com/r/Kotlin/comments/hexe8l/discussion_do_you_think_this_would_be_a_cool/)
-- url: https://www.reddit.com/r/Kotlin/comments/hexe8l/discussion_do_you_think_this_would_be_a_cool/
----
-TL;DR let the Kotlin compiler generate the boilerplate code for reifying typeargs in order to circumvent type erasure. Or, in other words, a `reified` keyword for class / non-inline function typeargs.
-
-Working with Java (and reflection) a lot, I frequently feel the urge of banging my head against the table because of type erasure. Kotlin having a `reified` keyword for inline function typeargs is already a helpful thing, but I feel like there could be done more. In order to manually reify typeargs, I found myself using this boilerplate pattern:
-
-1. Store a `Class&lt;?&gt;` instance in the class (this usually requires passing that instance to the constructor)
-2. Perform instance checks using `clazz.isInstance(obj)`
-3. Perform an unchecked cast to the requested typearg.
-
-Kotlin is already known as a language that mostly uses syntactic sugar to improve Java, while still ensuring interoperability. Therefore it would be quite fitting if Kotlin provided an universally usable `reified` keyword that hides the boilerplate pattern from you and lets you use your typearg as if it wasn't subject to type erasure. So you could do
-
-```
-var inner: T
-// ...
-fun set(newval: Any) {
-    if (newval is T) {
-        inner = newval // smartcast
-    }
-}
-```
-
-Which would actually store the KClass representation of T and performs an isInstance check in the background.
-
-What are your thoughts? Is this a good idea? Is it useful? How would you improve it? And ultimately, do you think it should be a feature request on YouTrack?

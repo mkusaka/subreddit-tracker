@@ -1,12 +1,27 @@
 # androiddev
-## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/hg6u0q/weekly_anything_goes_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/hg6u0q/weekly_anything_goes_thread/
+## [1][App Feedback Thread - June 27, 2020](https://www.reddit.com/r/androiddev/comments/hgsozi/app_feedback_thread_june_27_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/hgsozi/app_feedback_thread_june_27_2020/
 ---
-Here's your chance to talk about whatever!
+This thread is for getting feedback on your own apps.
 
-Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
+####Developers:
 
-Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
+- must **provide feedback** for others
+- must include **Play Store**, **GitHub**, or **BitBucket** link
+- must make top level comment
+- must make effort to respond to questions and feedback from commenters
+- may be open or closed source
+
+####Commenters:
+
+- must give **constructive feedback** in replies to top level comments
+- must not include links to other apps
+
+To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
+
+As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
+
+\- Da Mods
 ## [2][Announcement: Three upcoming AMAs with the Android team!](https://www.reddit.com/r/androiddev/comments/hf6l0h/announcement_three_upcoming_amas_with_the_android/)
 - url: https://www.reddit.com/r/androiddev/comments/hf6l0h/announcement_three_upcoming_amas_with_the_android/
 ---
@@ -19,59 +34,92 @@ The team there will submit posts for collecting questions ~1 week before answeri
 | 9th July | TBD | Android Team | Android Platform | TBD |
 | 30th July | TBD | Android Team | Android Studio | TBD |
 | 27th August | TBD | Android Team | Android Jetpack &amp; Jetpack Compose | TBD |
-## [3][Android Studio 4.0 removed the option to disable "Include fragment factory methods" and "Include interface callbacks"](https://www.reddit.com/r/androiddev/comments/hfzgue/android_studio_40_removed_the_option_to_disable/)
+## [3][Hi guys! I've made a simple android game, where you need to identify characters based on their visual clues (they are randomly generated). Github link: https://github.com/rosspetukhov/SuspectMatch. Let me know your thoughts :)](https://www.reddit.com/r/androiddev/comments/hga8rv/hi_guys_ive_made_a_simple_android_game_where_you/)
+- url: https://i.redd.it/igkec4vm1a751.png
+---
+
+## [4][Why Android Gradle documentation sucks and feels like it is not updated frequently?](https://www.reddit.com/r/androiddev/comments/hghzs8/why_android_gradle_documentation_sucks_and_feels/)
+- url: https://www.reddit.com/r/androiddev/comments/hghzs8/why_android_gradle_documentation_sucks_and_feels/
+---
+I don't know much about Gradle for Android
+
+I am really trying to learn something from this documentation [https://developer.android.com/studio/build](https://developer.android.com/studio/build) but I feel it is just an unordered piece of \*\*\*\* that just mention some "tips" put in some legacy type of documentation
+
+I thought that it can be some just ordered type of documentation when you learn stuff incrementally. But in this type of documentation it is really hard to understand some topic, when it includes several types of information (considered even advanced) from other topic.
+
+What is more I feel that this documentation is not updated frequently
+
+For example:
+
+\- here [https://developer.android.com/studio/build/dependencies](https://developer.android.com/studio/build/dependencies) not mention anything about kapt which is required for Kotlin code
+
+\- here [https://developer.android.com/studio/build/optimize-your-build#optimize](https://developer.android.com/studio/build/optimize-your-build#optimize) mentioning something about Android Studio 2.3 (really?)
+
+&amp;#x200B;
+
+It is really totally pushing me away when try to learn something from it and I give up
+
+Do you guys know some good source from which I can learn Gradle for Android?
+## [5][I want to fire off a notification when entering a room.](https://www.reddit.com/r/androiddev/comments/hgs7d6/i_want_to_fire_off_a_notification_when_entering_a/)
+- url: https://www.reddit.com/r/androiddev/comments/hgs7d6/i_want_to_fire_off_a_notification_when_entering_a/
+---
+I basically want to make a function where If you go into a room (doesn't have to be super accurate) a notification can fire.  
+
+I am just not sure which way to go.  I was thinking anything from something like an RFID in the room or could an alexa, echo dot or other device solve this? I would prefer cheaper hardware if possible.
+
+Or could I use just the phone alone to say "when you get 10 feet near this point in space, fire a notification.  I don't need insane accuracy like realtime tracking but I would like to denote if someone goes into one room vs another.  
+
+Is there a platform for this already? Just having a hard time figuring out what would make the most sense to start with.
+## [6][Has anyone noticed that Firebase Authentication doesn't even follow Google's one activity guideline. Does it matter?](https://www.reddit.com/r/androiddev/comments/hgimem/has_anyone_noticed_that_firebase_authentication/)
+- url: https://www.reddit.com/r/androiddev/comments/hgimem/has_anyone_noticed_that_firebase_authentication/
+---
+[If you go to the Firebase Authentication guide it directly contradicts having one activity.](https://firebase.google.com/docs/auth/android/phone-auth?fbclid=IwAR0Do4bdXfPA8_YXAigjxguUe2VQ7aWpEPp3xsaFr0cfJYAPrM1YkJx3mT8#kotlin+ktx) It uses PhoneAuthentication as it's own activity? Is this recommended or just outdated, and on top of that they write all their business logic in the Activity. So what's the deal? Auth Management is tricky as hell to manage the "right way" did they also just say screw it throw it all in an activity because it's easier.
+
+https://github.com/firebase/quickstart-android/blob/09b3db061c66499ff8a48d5a1f3d84acf6f56bed/auth/app/src/main/java/com/google/firebase/quickstart/auth/java/PhoneAuthActivity.java#L191-L191
+## [7][How to use/control RxJava Observable.cache](https://www.reddit.com/r/androiddev/comments/hgptcg/how_to_usecontrol_rxjava_observablecache/)
+- url: https://www.reddit.com/r/androiddev/comments/hgptcg/how_to_usecontrol_rxjava_observablecache/
+---
+I am trying to use the RxJava caching mechanism but i can't seem to  catch how it works or how can i control the cached contents since there  is the `cache` operator.
+
+I want to verify the cached data with some conditions before emitting the new data.
+
+for example
+
+    someObservable.
+    repeat().
+    filter { it.age &lt; maxAge }.
+    map(it.name).
+    cache() 
+
+There is also `ObservableCache&lt;T&gt;` class but i can't find any resources of using it.
+
+how can i get the cached content and verify it (or do any operation on it) before emitting a new value
+
+Any help would be much appreciated. Thanks.
+## [8][Was Google measure ar app made in Android studio or unity?](https://www.reddit.com/r/androiddev/comments/hgpscf/was_google_measure_ar_app_made_in_android_studio/)
+- url: https://www.reddit.com/r/androiddev/comments/hgpscf/was_google_measure_ar_app_made_in_android_studio/
+---
+
+## [9][Android Context Full Guide](https://www.reddit.com/r/androiddev/comments/hga4fe/android_context_full_guide/)
+- url: https://www.reddit.com/r/androiddev/comments/hga4fe/android_context_full_guide/
+---
+We have different types of Android Context, and sometimes developers get confused about which Context to use 🤷‍♂️  
+More than that, wrong context usage can lead to problems, for example, memory leaks 😕
+
+Master the Android Context and use it correctly.  
+[https://vladsonkin.com/android-context-full-guide/](https://vladsonkin.com/android-context-full-guide/)
+## [10][Do you use any mobile attribution partners (Adjust, Appsflyer, Kochava, Branch, Tenjin...)?](https://www.reddit.com/r/androiddev/comments/hgk3jc/do_you_use_any_mobile_attribution_partners_adjust/)
+- url: https://www.reddit.com/r/androiddev/comments/hgk3jc/do_you_use_any_mobile_attribution_partners_adjust/
+---
+We are looking to buy installs from the top non-self attributing video ad networks i.e. UnityAds, Vungle, etc. and are looking for any recommendations or inside knowledge about attribution partners from those that may already be doing so. If you are open to discussing which genre your app/game is in, and any experiences you may have using attribution partners and non-SAN networks for your UA, please feel free to connect with us via DM.
+## [11][Android Studio 4.0 removed the option to disable "Include fragment factory methods" and "Include interface callbacks"](https://www.reddit.com/r/androiddev/comments/hfzgue/android_studio_40_removed_the_option_to_disable/)
 - url: https://i.redd.it/xvieraqv26751.png
 ---
 
-## [4][How To Record Automated Tests For Mobile Apps](https://www.reddit.com/r/androiddev/comments/hg5kqd/how_to_record_automated_tests_for_mobile_apps/)
-- url: https://mobile-devs-open-source-resources.s3.eu-west-2.amazonaws.com/record-mobile-tests.htm
+## [12][Should I continue to learn native development with kotlin](https://www.reddit.com/r/androiddev/comments/hgcfou/should_i_continue_to_learn_native_development/)
+- url: https://www.reddit.com/r/androiddev/comments/hgcfou/should_i_continue_to_learn_native_development/
 ---
-
-## [5][Using Kotlin’s Delegation to Add Superpowers to a Data Class](https://www.reddit.com/r/androiddev/comments/hfynqb/using_kotlins_delegation_to_add_superpowers_to_a/)
-- url: https://medium.com/capital-one-tech/using-kotlins-delegation-to-add-superpowers-to-a-data-class-5060a93c0943
----
-
-## [6][Where should I get free to use graphic elements and designs?](https://www.reddit.com/r/androiddev/comments/hg2xiu/where_should_i_get_free_to_use_graphic_elements/)
-- url: https://www.reddit.com/r/androiddev/comments/hg2xiu/where_should_i_get_free_to_use_graphic_elements/
----
-Hi all!
-
-I used to develop android applications in the past but the last few years I mostly worked as a backend developer. Time to time some smaller app idea came into my mind so I decided it to implement some of those in my free time to up to date my android skills. The problem is that I have 0 UI/UX skills. I mean at my workplace were UI plans to implement so it was way easier. But now I'm alone and I can't implement anything that would be as ugly as hell. So here is my question. Is there any place where talented peoples share their designs for free so I can search for something that I like and I can implement the design?  
-
-
-I really like the light, flat stylized designs like [this](https://imgur.com/AKuHtHw).
-
-I found [dribbble](https://dribbble.com/shots/popular/mobile) but it is paid and maybe too good. I mean I just wanna polish my skills with some hobby project. I don't want to pay a professional designer to create a 10/10 design for me. A free *kinda good* template is ok for me.  
- 
-
-Thanks for help!
-## [7][Why do you guys keep mentioning Jake Wharton? Who is Jake Wharton?](https://www.reddit.com/r/androiddev/comments/hfw1ev/why_do_you_guys_keep_mentioning_jake_wharton_who/)
-- url: https://www.reddit.com/r/androiddev/comments/hfw1ev/why_do_you_guys_keep_mentioning_jake_wharton_who/
----
-
-## [8][Looking for feedback on my proof of concept regarding Hilt (MVVM, UseCases, Repositories, Coroutines Flow,..)](https://www.reddit.com/r/androiddev/comments/hg7lrl/looking_for_feedback_on_my_proof_of_concept/)
-- url: https://www.reddit.com/r/androiddev/comments/hg7lrl/looking_for_feedback_on_my_proof_of_concept/
----
-Hey everyone!
-
-I'm looking for a feedback on a simple app i created as a proof of concept regarding the Hilt library. I wonder what improvements would you make regarding the architecture design or any notes that i should keep in mind while working on my next project.
-
-Any comment will be greatly appreciated.
-
-Github -&gt;  [https://github.com/stanej14/Quotes-Hilt](https://github.com/stanej14/Quotes-Hilt)
-## [9][AWS launches Amazon Honeycode, a no-code app building service](https://www.reddit.com/r/androiddev/comments/hg76wz/aws_launches_amazon_honeycode_a_nocode_app/)
-- url: https://www.zdnet.com/article/aws-launches-honeycode-a-no-code-app-building-service/
----
-
-## [10][Overlapping in Constraint Layout (more details in comments)](https://www.reddit.com/r/androiddev/comments/hg3y3t/overlapping_in_constraint_layout_more_details_in/)
-- url: https://i.redd.it/ahiynyb1w7751.jpg
----
-
-## [11][Kotlin Flows and Channels for Android](https://www.reddit.com/r/androiddev/comments/hg695u/kotlin_flows_and_channels_for_android/)
-- url: https://youtu.be/xch4aw7hNcY?list=PLEx5khR4g7PL-JwckuOkkc5cR6X5hn6ug
----
-
-## [12][In app notifications?](https://www.reddit.com/r/androiddev/comments/hg5mc4/in_app_notifications/)
-- url: https://www.reddit.com/r/androiddev/comments/hg5mc4/in_app_notifications/
----
-I’m building an app that allows users to search train times, journeys and display details about each train etc. I have a backend web service that listens to updates for trains that users have requested to get updates for.  If it receives a message for that particular train it sends a firebase message to the associated device, if the app is in background displaying a notification makes sense.  But if the app is in foreground, should I use some other mechanism/ui element to inform the user that there has been an update, I just think that overlaying the UI while the user is already engaged with my app is a bit much, or is it the standard?
+I am quite new to android development and have beem developing apps with kotlin for a 6 moths now.
+But I am concerned that when Fuchsia arrives, all the things I have learnt will go useless.
+Moreover there's is always a chance that with tools like react native, native app development may not be required.
+What are your views regarding the demand of native app development in the future?

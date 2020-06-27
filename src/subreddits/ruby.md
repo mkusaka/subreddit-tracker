@@ -1,9 +1,96 @@
 # ruby
-## [1][Anonymous Struct literal `${a:1, b:2}` by ko1](https://www.reddit.com/r/ruby/comments/hg2bm1/anonymous_struct_literal_a1_b2_by_ko1/)
+## [1][Fun Facts about Ruby #6](https://www.reddit.com/r/ruby/comments/hgokpp/fun_facts_about_ruby_6/)
+- url: https://i.redd.it/r9rmstmyde751.png
+---
+
+## [2][How to return the output of a If/Else in ruby](https://www.reddit.com/r/ruby/comments/hgqxln/how_to_return_the_output_of_a_ifelse_in_ruby/)
+- url: https://www.reddit.com/r/ruby/comments/hgqxln/how_to_return_the_output_of_a_ifelse_in_ruby/
+---
+I have a method that returns one this if it is true and another thing if it is false.
+
+    def has_perm?(item)
+      return 
+          if(true)
+            item.this?
+          else 
+            item.that?
+          end
+    end
+
+I wanted to write like this but it doesn't work. What is some clean way I can write code for this? The below looks fine but seems unnecessary assignment
+
+    def has_perm?(item)
+      result =  
+          if(true)
+            item.this?
+          else 
+            item.that?
+          end
+      result
+    end
+## [3][If you're using GraphQL with ruby these generators will save you many keystrokes](https://www.reddit.com/r/ruby/comments/hgb82l/if_youre_using_graphql_with_ruby_these_generators/)
+- url: https://www.reddit.com/r/ruby/comments/hgb82l/if_youre_using_graphql_with_ruby_these_generators/
+---
+I released this library of graphql rails generators a few months ago after doing an ungodly amount of typing on a data-heavy application backed by a graphql API. The generators look at your Rails models and generate graphql types, mutations and input types from your database scheme (currently only activerecord supported, but other databases would be trivial to add). 
+
+Hope people find some use from this and saves you a few thousand keystrokes. Cheers.
+
+[https://github.com/ajsharp/graphql-rails-generators](https://github.com/ajsharp/graphql-rails-generators)
+## [4][Add NEWS entries about JIT optimizations · ruby/ruby@200c5f4 · GitHub](https://www.reddit.com/r/ruby/comments/hg8787/add_news_entries_about_jit_optimizations/)
+- url: https://github.com/ruby/ruby/commit/200c5f4075cb1d179c2eba5b30b5b0a500870f67
+---
+
+## [5][Acts As Tracked: Selectively track changes made on your ActiveRecord Models](https://www.reddit.com/r/ruby/comments/hg8evn/acts_as_tracked_selectively_track_changes_made_on/)
+- url: https://www.reddit.com/r/ruby/comments/hg8evn/acts_as_tracked_selectively_track_changes_made_on/
+---
+Hi, i've made a gem to selectively track changes on AR models, where audited gem would be an overkill. ActsAsTracked can be plugged into ActiveRecord model, and then used whenever you need a history of changes and actors made on the record.
+
+You can find docs in the [repository](https://github.com/ramblingcode/acts-as-tracked)
+
+Blog post [here](https://www.ramblingcode.dev/posts/track_changes_on_your_activerecord_models/)
+
+Example usage in this [project](https://github.com/ramblingcode/rails6-acts-as-tracked-usage)
+
+Hope you find it useful.
+## [6][Anonymous Struct literal `${a:1, b:2}` by ko1](https://www.reddit.com/r/ruby/comments/hg2bm1/anonymous_struct_literal_a1_b2_by_ko1/)
 - url: https://github.com/ruby/ruby/pull/3259
 ---
 
-## [2][Ruby can't access file it creates. ls -l can't view into that folder unless I pwd into it?](https://www.reddit.com/r/ruby/comments/hg0iu5/ruby_cant_access_file_it_creates_ls_l_cant_view/)
+## [7][Soo, I have this error on my kali nethunter its some ruby error how do I fix it any help?](https://www.reddit.com/r/ruby/comments/hgj59z/soo_i_have_this_error_on_my_kali_nethunter_its/)
+- url: https://i.redd.it/4l259vl5gc751.png
+---
+
+## [8][Homework trouble](https://www.reddit.com/r/ruby/comments/hg9mns/homework_trouble/)
+- url: https://www.reddit.com/r/ruby/comments/hg9mns/homework_trouble/
+---
+I've got some homework from my mentor who's helping me get back into Ruby after 3 years of not doing it.
+He gave me this homework:
+
+Fruit = Struct.new(:name, :color)
+
+fruits = [
+  Fruit.new("apple", "green"),
+  Fruit.new("apricot", "orange")
+  Fruit.new("banana", "yellow"),
+  Fruit.new("grapes", "green"),
+  Fruit.new("orange", "orange"),
+  Fruit.new("lemon", "yellow"),
+  Fruit.new("lime", "green"),
+  Fruit.new("kiwi", "green")
+]
+```
+
+How do I....
+
+1. produce a list of all the green fruit
+2. produce a list of all the fruits whose name starts with "a"
+3. produce a list of all the fruits that aren't yellow
+4. break the list down into a hash of smaller lists that are grouped by color?
+
+
+And I am so lost already.
+Can anyone help me with some hints?
+## [9][Ruby can't access file it creates. ls -l can't view into that folder unless I pwd into it?](https://www.reddit.com/r/ruby/comments/hg0iu5/ruby_cant_access_file_it_creates_ls_l_cant_view/)
 - url: https://www.reddit.com/r/ruby/comments/hg0iu5/ruby_cant_access_file_it_creates_ls_l_cant_view/
 ---
 I've got a web application I am troubleshooting that' I'm not sure why it's failing. below is a segment of the code where it fails trying to open the file with:
@@ -45,70 +132,7 @@ sudo su _sfta then running:
     -rw-rw----. 1 _sfta _sfta 833 Jun 25 22:06 asdf
 
 What am I missing with this File.Open that it can't access the file?
-## [3][Rubyist teaches Elasticsearch in a fun way](https://www.reddit.com/r/ruby/comments/hfpr6p/rubyist_teaches_elasticsearch_in_a_fun_way/)
+## [10][Rubyist teaches Elasticsearch in a fun way](https://www.reddit.com/r/ruby/comments/hfpr6p/rubyist_teaches_elasticsearch_in_a_fun_way/)
 - url: https://realptsdengineer.com/learn-elasticsearch-fun-way/
----
-
-## [4][HEY’s Gemfile](https://www.reddit.com/r/ruby/comments/hfhrcb/heys_gemfile/)
-- url: https://gist.github.com/dhh/782fb925b57450da28c1e15656779556
----
-
-## [5][Ruby / gRPC Skeleton. I tried to make an ideal jump off point for Ruby micro-services with docker-compose, github-actions, hanami-model, and postgres. I'd love your feedback for improvements!](https://www.reddit.com/r/ruby/comments/hfpyfg/ruby_grpc_skeleton_i_tried_to_make_an_ideal_jump/)
-- url: https://github.com/dudo/ruby_grpc_skeleton
----
-
-## [6][til-rb, a gem to help you write and manage a TIL repo](https://www.reddit.com/r/ruby/comments/hflzrs/tilrb_a_gem_to_help_you_write_and_manage_a_til/)
-- url: https://www.reddit.com/r/ruby/comments/hflzrs/tilrb_a_gem_to_help_you_write_and_manage_a_til/
----
-Hey there 👋
-
-&amp;#x200B;
-
-I recently published an early version of [a small gem](https://github.com/pjambet/til-rb/) I've been working on to manage a "TIL repo", like [this one](https://github.com/jbranchaud/til) that made the rounds recently. It essentially creates a new commit for you, using the GH API, with a new file containing the content of the new TIL, and maintains a table of content in the [README.md](https://README.md) file.
-
-&amp;#x200B;
-
-Building it was really interesting and [I wrote a post about it](https://blog.pjam.me/posts/til-cli/), thought it would be worth sharing here!
-
-&amp;#x200B;
-
-I've been using it for a week or so, and while I'm sure it has a lot of bugs (almost total lack of validation on user input for instance), it has worked reasonably well so far.
-
-&amp;#x200B;
-
-Let me know if you have questions or feedback.
-## [7][Exception tracking: Airbrake vs Honeybadger vs Sentry vs AppSignal](https://www.reddit.com/r/ruby/comments/hfk47b/exception_tracking_airbrake_vs_honeybadger_vs/)
-- url: https://www.reddit.com/r/ruby/comments/hfk47b/exception_tracking_airbrake_vs_honeybadger_vs/
----
-Which one do you use / have recently decided for? And why?
-
-What do you hate about the current ones that you (have to) use?
-
-Did I miss an important one for the ruby ecosystem?
-## [8][Moving from EventMachine to Async](https://www.reddit.com/r/ruby/comments/hfgsdf/moving_from_eventmachine_to_async/)
-- url: https://blog.joshsoftware.com/2020/06/19/moving-from-eventmachine-to-async/
----
-
-## [9][Lingohub - removing unused translation keys](https://www.reddit.com/r/ruby/comments/hfk697/lingohub_removing_unused_translation_keys/)
-- url: https://www.reddit.com/r/ruby/comments/hfk697/lingohub_removing_unused_translation_keys/
----
-Is there any way to remove unused keys on Lingohub?
-
-I'm just deleting a bunch of unused keys in the translation yml file. Is there any good and safe way to do this?
-
-edit:
-
-Answer from Lingohub team:
-
-&gt;Hi xyz,LingoHub will automatically deactivate keys when they are removed from a file. So for example you had a file with the following keys:A B CAnd you then upload the same file with the keysA CThe B key would be deactivated and not shown in the editor or exported anymore.Please note, this behavior is changeable through project settings. So make sure you check them before.Hope that helps.Best,
-
-This is a partial answer that I wanted. Can I somehow reverse these keys if the mistake is created?or create more environments?
-
-stackoverflow q: [https://stackoverflow.com/questions/62556336/lingohub-removing-unused-translation-keys](https://stackoverflow.com/questions/62556336/lingohub-removing-unused-translation-keys)
-
-  
-Lingohub service for translates: [https://lingohub.com/](https://lingohub.com/)
-## [10][Introducing UndercoverCI - a GitHub code review app that finds untested methods you've changed](https://www.reddit.com/r/ruby/comments/hf8070/introducing_undercoverci_a_github_code_review_app/)
-- url: https://medium.com/@mrgrodo/introducing-undercoverci-98c6c50793f2
 ---
 

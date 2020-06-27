@@ -21,89 +21,144 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][I wrote a thing that improves ui of several aws-cli cloudformation commands.](https://www.reddit.com/r/aws/comments/hg31lu/i_wrote_a_thing_that_improves_ui_of_several/)
-- url: https://www.reddit.com/r/aws/comments/hg31lu/i_wrote_a_thing_that_improves_ui_of_several/
+## [2][Reminder: Terminate your free WorkSpaces by 30-Jun-20](https://www.reddit.com/r/aws/comments/hgl5hz/reminder_terminate_your_free_workspaces_by_30jun20/)
+- url: https://www.reddit.com/r/aws/comments/hgl5hz/reminder_terminate_your_free_workspaces_by_30jun20/
 ---
-[https://github.com/molecule-man/stack-assembly/blob/master/docs/aws-drop-in.md](https://github.com/molecule-man/stack-assembly/blob/master/docs/aws-drop-in.md)
+Just a quick reminder, AWS' free WorkSpaces offer ends 30-Jun-2020. If you were using it to test out the service, please remember to terminate it to avoid additional charges.
 
-aws-cli is a great tool to automate cloudformation deployments. But a bit low-level. When I need to use some old script that does `aws cloudformation update-stack` then there are always two feelings inside me: from one side I fear to break my production as update-stack doesn't show if it's going to replace resource (data-loss) and from the other side I understand how hard it's going to be to rewrite all those small deployment scripts scattered across organisation's codebase with the ones that at least use change-sets.
-
-I got tired of fearing and finally wrote the thing that allows to continue using those old deployment scripts and at the same time improve safety of the deployment. [The tool I wrote](https://github.com/molecule-man/stack-assembly/blob/master/docs/aws-drop-in.md) wraps aws-cli and replaces  [create-stack](https://docs.aws.amazon.com/cli/latest/reference/cloudformation/create-stack.html), [update-stack](https://docs.aws.amazon.com/cli/latest/reference/cloudformation/update-stack.html) and [deploy](https://docs.aws.amazon.com/cli/latest/reference/cloudformation/deploy.html) commands with improved versions of those commands that:
-
-* use change sets
-* present changes and give ability to approve/disapprove deployment
-* give possibility to view diff of the template to be deployed
-* display cloudformation events while stack is being deployed
-
-https://i.redd.it/psdub5ur97751.gif
-## [3][Automatically configure Linux Workspaces without a custom bundle](https://www.reddit.com/r/aws/comments/hfucgb/automatically_configure_linux_workspaces_without/)
-- url: https://www.reddit.com/r/aws/comments/hfucgb/automatically_configure_linux_workspaces_without/
----
-As Linux doesn’t support group policy, I’m looking for ways to configure my Linux workspaces. And I don’t want to create a custom bundle. Ideas? 
-
-Chef and ansible seem like you need to create custom images.
-## [4][Another Tax question](https://www.reddit.com/r/aws/comments/hg6vy3/another_tax_question/)
-- url: https://www.reddit.com/r/aws/comments/hg6vy3/another_tax_question/
----
-I have a new business that I have registered for VAT in the UK with AWS that has been accepted but I still have to pay VAT at 20%. Am I missing something?
-## [5][How do I make the CloudWatch Alarm for Lambda Errors Default Email Body better?](https://www.reddit.com/r/aws/comments/hfulwq/how_do_i_make_the_cloudwatch_alarm_for_lambda/)
-- url: https://www.reddit.com/r/aws/comments/hfulwq/how_do_i_make_the_cloudwatch_alarm_for_lambda/
----
-The alarm only says when  a threshold is broken, I wish it would give me a print out of the lambda(s) that caused the alarm in the email body.
-## [6][Hashtag in AWS cognito URL callback](https://www.reddit.com/r/aws/comments/hg5oqm/hashtag_in_aws_cognito_url_callback/)
-- url: https://www.reddit.com/r/aws/comments/hg5oqm/hashtag_in_aws_cognito_url_callback/
----
-I am creating a Single Page App that uses Oauth2 authentication using AWS Cognito. As a part of the configuration in Cognito I need to supply an url to reach the app after the authentication is performed, this is usually something like [http://domain/login](http://domain/login). The problem is that since the app I am creating is a SPA in React the url should be [http://domain/#/login](http://domain/#login) (note the hashtag) but the hashtag is a forbidden character for Cognito's callback URLs and it doesn't let me configure it that way. Any solutions?
-## [7][I swear S3 just corrupted an event linked to a Lambda function. Now it doesn't work, I can't delete it, and I cant create any other event using the same prefix. Arg!](https://www.reddit.com/r/aws/comments/hg03at/i_swear_s3_just_corrupted_an_event_linked_to_a/)
-- url: https://www.reddit.com/r/aws/comments/hg03at/i_swear_s3_just_corrupted_an_event_linked_to_a/
+Thank you to Amazon for offering this.
+## [3][AWS Copilot CLI: create, release and manage production ready containerized applications on Amazon ECS and AWS Fargate](https://www.reddit.com/r/aws/comments/hgbvsa/aws_copilot_cli_create_release_and_manage/)
+- url: https://github.com/aws/copilot-cli
 ---
 
-## [8][Which service combination should I use for hosting many Laravel app containers?](https://www.reddit.com/r/aws/comments/hg4tbt/which_service_combination_should_i_use_for/)
-- url: https://www.reddit.com/r/aws/comments/hg4tbt/which_service_combination_should_i_use_for/
+## [4][DynamoDB Filtering by Date Partition Keys](https://www.reddit.com/r/aws/comments/hgs0t0/dynamodb_filtering_by_date_partition_keys/)
+- url: https://www.reddit.com/r/aws/comments/hgs0t0/dynamodb_filtering_by_date_partition_keys/
 ---
-Hi,
+Hi, I have been exploring DynamoDb a lot recently but I am stuck on learning how to model the data appropriately.
 
-Currently we have a SaaS like setup where you could spinup a new Laravel app on a subdomain.
+I have an example table with columns as follows:
 
-Present solution is:
+|shop\_id|last\_visited|opened|revenue|balance|average\_daily\_revenue|
+|:-|:-|:-|:-|:-|:-|
+|b4f4f00c07f|2020-06-27T08:20:14Z|2004-03-21T08:20:14Z|80000|1000|500|
 
-* Send a POST request to API Gateway
-* Stepfunctions spin up RDS, S3 and EC2
-* Register EC2 with Route53
-* Send SSM RunCommand to deploy the app
-* Send callback request to our "master"/management app.
+&amp;#x200B;
 
-While this is working fine there are many drawbacks and major underutilisation.
+Following these points from AWS documentation:
 
-I am thinking of moving the setup to a more cloud friendly infra setup.
+* **Hashkey/Parition Key should be a high cardinality attribute** \- therefore shop\_id is an obvious choice.
+* **If you are retrieving items by a single field - that field should either be a hash\_key or a GSI**. So it seems fine to have shop\_id as the partition key as a large number of cases requires me to retrieve a single shop.
 
-Right now reading and going through examples of AppMesh/ECS Ec2 type of setup (in the future Fargate but concepts are the same)
+So at this point I am fairly certain that I can select shop\_id as the partition key for the table, making inserting and selecting single record by id very fast. So far so good.
 
-We will have thousands of these small Laravel app services each running on its own subdomain.
+The next challenge is that I would like to be able to filter based on all the other columns in the table: last\_visited, opened, revenue, balance etc. without knowing the shop\_id. All filters are optional except last\_visited which is compulsory. So I make the following decisions:
 
-Ideally the app would be containerised with just the code and PHP-FPM process. Sidecar container would be Nginx with proxy to PHP-FPM.
+1. Since using **query** call requires you to use the partition key (shop\_id). I need to create a GSI. Ok great.
+2. So now to select a GSI hashkey, knowing that last\_visited is the most common attribute in queries, I select that as the **partition key**.
+3. BUT it turns out, I cannot perform a "BETWEEN" condition on the partition key, and therefore must use **scan** (which is discouraged).
 
-How should I approach routing based on virtual hosts here? Could I use AWS ALB for SSL (wildcard) offload only and route using Envoy Proxy.
+The way I see it, inside dynamodb it is impossible to have a date key as partition key while using the query operation. This seems like a fairly common scenario. **(Please prove me wrong).**
 
-What are my limits here?
+The only other method I can think of is using last\_visited as both the partition key and the range key inside a GSI. But this feels a bit wrong. **Am I missing something?**
 
-Any thoughts are welcome.
-## [9][Serverless GitLab CI/CD on AWS Fargate](https://www.reddit.com/r/aws/comments/hfl31z/serverless_gitlab_cicd_on_aws_fargate/)
-- url: https://www.reddit.com/r/aws/comments/hfl31z/serverless_gitlab_cicd_on_aws_fargate/
+Side question: are all other filter fields are included as LSIs. **Are LSIs also operational on GSIs?**
+## [5][Apache - (104)Connection reset by peer: [client x.x.x.x:4712] AH03308: ap_proxy_transfer_between_connections: error on sock - ap_get_brigade](https://www.reddit.com/r/aws/comments/hgsd7l/apache_104connection_reset_by_peer_client/)
+- url: https://www.reddit.com/r/aws/comments/hgsd7l/apache_104connection_reset_by_peer_client/
 ---
-On this really nice article, [**Daniel Coutinho de Miranda**](https://www.linkedin.com/in/ACoAAAMhSJQBtT3u2qPU27N8D3dNyXP5wLFgybU) shows how to serverless run the GitLab Runner Manager and Fargate driver on AWS Fargate.
+I have a django app deployed to elastic beanstalk:
 
-  
-Really nice content!
+[http://django-env.eba-bcvm9cxz.us-west-2.elasticbeanstalk.com/chart/](http://django-env.eba-bcvm9cxz.us-west-2.elasticbeanstalk.com/chart/)
 
-https://medium.com/ci-t/serverless-gitlab-ci-cd-on-aws-fargate-da2a106ad39c
-## [10][AWS Tax](https://www.reddit.com/r/aws/comments/hfyp09/aws_tax/)
-- url: https://www.reddit.com/r/aws/comments/hfyp09/aws_tax/
+I'm following this tutorial: [https://medium.com/@elspanishgeek/how-to-deploy-django-channels-2-x-on-aws-elastic-beanstalk-8621771d4ff0](https://medium.com/@elspanishgeek/how-to-deploy-django-channels-2-x-on-aws-elastic-beanstalk-8621771d4ff0) and using architecture number 2.
+
+My relevant configuration files are the folllowing:
+
+        option_settings:  
+          aws:elasticbeanstalk:application:environment:
+            DJANGO_SETTINGS_MODULE: dashboard.settings
+            PYTHONPATH: /opt/python/current/app/dashboard:$PYTHONPATH
+          aws:elasticbeanstalk:container:python:
+            WSGIPath: dashboard/wsgi.py
+        
+          aws:elbv2:listener:80:
+            ListenerEnabled: 'true'
+            Protocol: HTTP
+          aws:elbv2:listener:5000:
+            ListenerEnabled: 'true'
+            Protocol: HTTP
+
+\--
+
+        files:
+          "/etc/httpd/conf.d/proxy.conf":
+            mode: "000644"
+            owner: root
+            group: root
+            content: |
+              ProxyPass /websockets/ ws://127.0.0.1:5000/websockets/ upgrade=NONE
+              ProxyPassReverse /websockets/ ws://127.0.0.1:5000/websockets/
+
+I needed to add \`upgrade=NONE\` in proxy.conf, which isn't in the tutorial, but I for me I always got a 503 on the client when it was establishing the websocket.
+
+I have a daphne server listening on 5000, which is successfuly receiving the websocket request from the client, but the client never gets to receive the response from the server. On chrome console I get:
+
+    WebSocket connection to 'ws://django-env.eba-bcvm9cxz.us-west-2.elasticbeanstalk.com/websockets/' failed: Error during WebSocket handshake: Unexpected response code: 408
+
+Apache's logs show the following:
+
+        [Sat Jun 27 11:42:11.962267 2020] [watchdog:debug] [pid 9855] mod_watchdog.c(590): AH02981: Watchdog: Created child worker thread (_proxy_hcheck_).
+        [Sat Jun 27 11:42:11.962286 2020] [proxy:debug] [pid 9855] proxy_util.c(1940): AH00925: initializing worker ws://127.0.0.1:5000/websockets/ shared
+        [Sat Jun 27 11:42:11.962298 2020] [proxy:debug] [pid 9855] proxy_util.c(2000): AH00927: initializing worker ws://127.0.0.1:5000/websockets/ local
+        [Sat Jun 27 11:42:11.962319 2020] [proxy:debug] [pid 9855] proxy_util.c(2035): AH00930: initialized pool in child 9855 for (127.0.0.1) min=0 max=4 smax=4
+        [Sat Jun 27 11:42:11.962330 2020] [proxy:debug] [pid 9855] proxy_util.c(1940): AH00925: initializing worker proxy:reverse shared
+        [Sat Jun 27 11:42:11.962334 2020] [proxy:debug] [pid 9855] proxy_util.c(2000): AH00927: initializing worker proxy:reverse local
+        [Sat Jun 27 11:42:11.962341 2020] [proxy:debug] [pid 9855] proxy_util.c(2035): AH00930: initialized pool in child 9855 for (*) min=0 max=4 smax=4
+        [Sat Jun 27 11:42:11.962345 2020] [proxy:debug] [pid 9855] proxy_util.c(1935): AH00924: worker ws://127.0.0.1:5000/websockets/ shared already initialized
+        [Sat Jun 27 11:42:11.962347 2020] [proxy:debug] [pid 9855] proxy_util.c(1992): AH00926: worker ws://127.0.0.1:5000/websockets/ local already initialized
+        [Sat Jun 27 11:42:30.521413 2020] [proxy:debug] [pid 9625] proxy_util.c(4059): (104)Connection reset by peer: [client 172.31.42.96:4452] AH03308: ap_proxy_transfer_between_connections: error on sock - ap_get_brigade
+        [Sat Jun 27 11:42:30.521453 2020] [proxy:debug] [pid 9625] proxy_util.c(2353): AH00943: WS: has released connection for (127.0.0.1)
+
+What's wrong with my configuration?
+## [6][Event bus, kinesis or sns + sqs?](https://www.reddit.com/r/aws/comments/hg9jod/event_bus_kinesis_or_sns_sqs/)
+- url: https://www.reddit.com/r/aws/comments/hg9jod/event_bus_kinesis_or_sns_sqs/
 ---
-How tax works if we consume resources in other countries' data centers? Do we only pay for the local one which we live in?
-## [11][Backup from Win Server 2016 to AWS S3](https://www.reddit.com/r/aws/comments/hg0b76/backup_from_win_server_2016_to_aws_s3/)
-- url: https://www.reddit.com/r/aws/comments/hg0b76/backup_from_win_server_2016_to_aws_s3/
+Which one should I use for a generic event bus that would be used in multiple services? I have lots of handlers in my data pipeline and to do sns fanout I would need a queue per function. Is that too many queues? Can you create queues at runtime?
+## [7][Anyone else seeing a lot of random timeouts with lambda? Started about an hour ago in the us-west-2 region](https://www.reddit.com/r/aws/comments/hgel50/anyone_else_seeing_a_lot_of_random_timeouts_with/)
+- url: https://www.reddit.com/r/aws/comments/hgel50/anyone_else_seeing_a_lot_of_random_timeouts_with/
 ---
-I was wanting to do an automated backup from a window server 2016 to a AWS S3 of a file server.  Looking for recommendations possibly no or low cost.
+We haven't really changed anything or deployed anything new but all of a sudden starting around 11:20am Pacific Time, a lot of our lambda functions started timing out randomly.
 
-Thanks in advance
+Wondering if it's just us?
+
+Edit: We make a lot of S3 calls in these aforementioned lambdas, as one of the commenters mentioned here, it might be related to that
+
+&amp;#x200B;
+## [8][Network packages analysis?](https://www.reddit.com/r/aws/comments/hgibs1/network_packages_analysis/)
+- url: https://www.reddit.com/r/aws/comments/hgibs1/network_packages_analysis/
+---
+A customer is asking to implement a Firewall that can analyze network packages using Sandbox in their AWS infrastructure.
+
+I haven't seen such product on AWS. Does WAF or Shield include that? This is a simple website that would be using Cloudflare.
+## [9][Provisioned IOPS throughput calculation](https://www.reddit.com/r/aws/comments/hgn2nt/provisioned_iops_throughput_calculation/)
+- url: https://www.reddit.com/r/aws/comments/hgn2nt/provisioned_iops_throughput_calculation/
+---
+I am trying to understand how throughput is calculated on provisioned IOPS drives. Can someone help me understand this graph?  Apparently an io1 drive set to 2K IOPS can go up to 500 MBps throughput. Does that just mean 32K to 64K can go up to 1,000 MBps? The graph in the documentation is difficult to read.
+
+[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#EBSVolumeTypes\_piops](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#EBSVolumeTypes_piops) 
+
+&amp;#x200B;
+
+Thank you!
+## [10][Difficulty connecting to RDS instance](https://www.reddit.com/r/aws/comments/hggviz/difficulty_connecting_to_rds_instance/)
+- url: https://www.reddit.com/r/aws/comments/hggviz/difficulty_connecting_to_rds_instance/
+---
+I have a MariaDB 10.3.13 instance running, but I think I'm missing something, cause can't connect from a Lightsail instance.
+
+Public accessibility: Yes  
+VPC security groups: Inbound [0.0.0.0/0](https://0.0.0.0/0)
+
+What else am I overlooking here?
+## [11][Dow Jones Hammer: A multi-account cloud security tool for AWS.](https://www.reddit.com/r/aws/comments/hgdqxc/dow_jones_hammer_a_multiaccount_cloud_security/)
+- url: https://github.com/dowjones/hammer
+---
+

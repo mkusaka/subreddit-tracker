@@ -21,144 +21,111 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][Reminder: Terminate your free WorkSpaces by 30-Jun-20](https://www.reddit.com/r/aws/comments/hgl5hz/reminder_terminate_your_free_workspaces_by_30jun20/)
+## [2][Is it cheaper to run a wordpress server using spot instances and external files(s3) and db behind an LB on Autoscale, than buying a reserved instance?](https://www.reddit.com/r/aws/comments/hh5rmj/is_it_cheaper_to_run_a_wordpress_server_using/)
+- url: https://www.reddit.com/r/aws/comments/hh5rmj/is_it_cheaper_to_run_a_wordpress_server_using/
+---
+We're running a few wordpress sites, some get spikes but generally low traffic. I keep seeing, 'save up to 90% on spot intsances' but it seems that the disappearance of a spot instance would bring the service down. Does anyone have any experience with trying this setup?
+## [3][Locked out of EC2 instance](https://www.reddit.com/r/aws/comments/hhdxbg/locked_out_of_ec2_instance/)
+- url: https://www.reddit.com/r/aws/comments/hhdxbg/locked_out_of_ec2_instance/
+---
+I've installed firewalld on a linux instance to make some port configurations and I remember setting up SSH ports permanent. But for some reason I'm locked out and no port responds which makes me wonder if I somehow haven't made the changes permanent.
+
+I can't get into it. Does anyone have an idea? Thanks ahed!
+## [4][Calling IOT Shadow Rest APIs with API Gateway?](https://www.reddit.com/r/aws/comments/hh9v2l/calling_iot_shadow_rest_apis_with_api_gateway/)
+- url: https://www.reddit.com/r/aws/comments/hh9v2l/calling_iot_shadow_rest_apis_with_api_gateway/
+---
+I'm working on a project where I'm trying to get my IOT thing's shadow's state and update it from a web application. I'm thinking to doing this by using API gateway. I've created an IAM Role to allow Get/Update requests for that Thing.
+
+I've tried a couple of ways to do this:
+
+1. I set the integration type to HTTP, and set the endpoint to the shadow's URI. The issue with this is I can't set an IAM role that authenticates this request
+2. I change the integration type to AWS Service, and then to either IoT or IoT Data, and set the IAM Role, but neither of them work, because I can't set the endpoint.
+
+Not sure how to proceed with this, the only other thing I can think of is using Lambda, but I'd like to know if it's possible to do this without lambda.
+
+Thank you.
+## [5][Does the Elastic Beanstalk setup of Nginx have caching or similar enabled by default?](https://www.reddit.com/r/aws/comments/hh0ye2/does_the_elastic_beanstalk_setup_of_nginx_have/)
+- url: https://www.reddit.com/r/aws/comments/hh0ye2/does_the_elastic_beanstalk_setup_of_nginx_have/
+---
+I just deployed my first Python Flask website through Elastic Beanstalk. I've been slowly working through the issues and have mostly resolved them. But now I'm trying to submit data through my API so I can populate my database. I was able to send my initial data for one table in which consisted of about 12500 POST requests. But as soon as I started on my second table's data I was only able to get one POST submitted before I started getting 500 errors. 
+
+In reading the logs it *feels* like something is cached by Nginx but I've tried restarting the application servers with no success getting past the issue.
+
+**Question**: Does the Nginx instance for Elastic Beanstalk do some sort of caching by default that will not allow my data to change for new POST requests?
+
+This is the related application log of note:
+
+* Jun 27 20:01:09 ip-172-31-33-164 web: sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1062, "Duplicate entry '**1111**' for key 'PRIMARY'")
+* Jun 27 20:01:09 ip-172-31-33-164 web: [SQL: INSERT INTO product (sku, title, media_id) VALUES (%(sku)s, %(title)s, %(media_id)s)]
+* Jun 27 20:01:09 ip-172-31-33-164 web: [parameters: {'sku': **2222**, 'title': 'Product1', 'media_id': 3}]
+
+The above is what happens when my API tries writing my POST request to the DB. But for some reason the first highlighted value of **1111** keeps being used for sku field instead of the one sent by the POST request, in this example **2222**. When running my code locally I don't have any issues and can make successful POST requests and input the data. Which is why I believe it's something with the deployment and not the code itself. The code is doing what it should and rejecting the database write but no matter how many requests with different data I send it always uses that same initial sku value of **1111** and won't change. I've looked for a hard-coded value in my code but there is none to be found.
+
+Here is the relevant python code from my API which should be adjusting the sku value every time.
+
+        product = Product(
+            sku=request.json['sku'],
+            title=request.json['title'],
+            media_id=determine_media_id(request.json['media'])
+        )
+
+Does anyone have any ideas of what may be going on?
+## [6][Trying to send data to API Gateway from Wordpress](https://www.reddit.com/r/aws/comments/hh8rto/trying_to_send_data_to_api_gateway_from_wordpress/)
+- url: https://www.reddit.com/r/aws/comments/hh8rto/trying_to_send_data_to_api_gateway_from_wordpress/
+---
+I am new to using AWS, and I have a wordpress website with a form and I am trying to send the strings from the form to be processed by a Lambda function. I was told I should use an API Gateway which would work with a REST API to send to the Lambda function. I installed the AWS SDK for PHP on my wordpress website, but am lost at how I am supposed to send the data to the API Gateway. Any help is appreciated!
+## [7][AWS Rekognition Custom Label model failing](https://www.reddit.com/r/aws/comments/hgzxc4/aws_rekognition_custom_label_model_failing/)
+- url: https://www.reddit.com/r/aws/comments/hgzxc4/aws_rekognition_custom_label_model_failing/
+---
+When I try to train a model using Rekognition Custom Labels, it gives me this error:
+
+&amp;#x200B;
+
+Less than 50% of labels overlap between the training and test datasets.
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+What does this mean and how can I fix it?
+## [8][CloudFormation - Get AutoscalingGroup ARN for use in IAM?](https://www.reddit.com/r/aws/comments/hh5wvr/cloudformation_get_autoscalinggroup_arn_for_use/)
+- url: https://www.reddit.com/r/aws/comments/hh5wvr/cloudformation_get_autoscalinggroup_arn_for_use/
+---
+I'm sure this is a stupid question with an easy solution, but I can't seem to figure this out.
+
+I create an autoscaling group in my CF template and want to create an IAM role granting permissions to users to adjust the desired count. The IAM policy expects the ARN of the scaling group, but the autoscaling group resources only returns the Name if you use the Ref function and there is no Get::Att values. Since those names have UUID's in them, you can't  construct a very specific ARN yourself, since you don't know what the UUID is.
+
+How would I set the permissions then? Is there a way to get the ARN?
+## [9][Stream Processing Q for twitter data streaming](https://www.reddit.com/r/aws/comments/hh2yyw/stream_processing_q_for_twitter_data_streaming/)
+- url: https://www.reddit.com/r/aws/comments/hh2yyw/stream_processing_q_for_twitter_data_streaming/
+---
+Hello,
+
+I'm in the process of hashing out my ideas for a streaming data personal project. My intention is to capture streaming data from the twitter API based on hashtags that interest me. I have the data capture logic working locally and intend on deploying the py script over to an EC2 instance.
+
+I have a separate py script where I'd like to do the NLP-related tasks in a streaming fashion (e.g.  tokenization, sentiment analysis, bigram frequency, etc) and want to create a real-time dashboard where I can start doing some exploration with simple frequency-based bar charts in JS and put on my resume.
+
+I originally intended on using an Amazon Elasticsearch cluster but ran into a wall when I saw the complexity in sharing my kibana dashboard to the public.
+
+**My main concern is in the streaming ETL stage**, as there are endless options out there, but since i'm within the AWS ecosystem I'd like to use Kinesis. From what I read, kinesis data firehose would be my best bet where I can rapidly load json documents onto S3 and have an event-triggered AWS lambda that picks up new JSON objects as they come in to the S3 store, loads them and possibly calculates the NLP stuff via the lambda function or using a Amazon EMR pyspark job? (kind of lost if this is the best approach for the nlp-stage). Also, I'm a bit lost on why It would be best to use s3 as a data lake and not do the ETL as it's streamed onto kinesis, then store it to something like PostgreSQL on RDS?
+
+With the AWS architecture, is this the best pipeline to use for my use case? Or would it be more efficient to run batch jobs and do the analysis at the end of the day? ultimately I'd like to have a dashboard where I can view people's sentiment on a political hashtag that interests me and thought it would be cool to have this automated and in near-real time.
+## [10][Reminder: Terminate your free WorkSpaces by 30-Jun-20](https://www.reddit.com/r/aws/comments/hgl5hz/reminder_terminate_your_free_workspaces_by_30jun20/)
 - url: https://www.reddit.com/r/aws/comments/hgl5hz/reminder_terminate_your_free_workspaces_by_30jun20/
 ---
 Just a quick reminder, AWS' free WorkSpaces offer ends 30-Jun-2020. If you were using it to test out the service, please remember to terminate it to avoid additional charges.
 
 Thank you to Amazon for offering this.
-## [3][AWS Copilot CLI: create, release and manage production ready containerized applications on Amazon ECS and AWS Fargate](https://www.reddit.com/r/aws/comments/hgbvsa/aws_copilot_cli_create_release_and_manage/)
-- url: https://github.com/aws/copilot-cli
+## [11][Storage from Cellphone to S3](https://www.reddit.com/r/aws/comments/hh6opq/storage_from_cellphone_to_s3/)
+- url: https://www.reddit.com/r/aws/comments/hh6opq/storage_from_cellphone_to_s3/
 ---
+Hello
 
-## [4][DynamoDB Filtering by Date Partition Keys](https://www.reddit.com/r/aws/comments/hgs0t0/dynamodb_filtering_by_date_partition_keys/)
-- url: https://www.reddit.com/r/aws/comments/hgs0t0/dynamodb_filtering_by_date_partition_keys/
----
-Hi, I have been exploring DynamoDb a lot recently but I am stuck on learning how to model the data appropriately.
+I want to stop using google photos, but I still want to do the storage of my photos in some cloud service, I was wondering if I could use S3 Glacier Deep Archive, based on the simulation I did, I would pay something like $0.3 month (I just need to upload 35Gb one time, this is the size my backup of photos since 2010).
 
-I have an example table with columns as follows:
+I don't need to do a lot of retrievals. The "tricky part" is I want to sync my photos from cell phone directly to S3.
 
-|shop\_id|last\_visited|opened|revenue|balance|average\_daily\_revenue|
-|:-|:-|:-|:-|:-|:-|
-|b4f4f00c07f|2020-06-27T08:20:14Z|2004-03-21T08:20:14Z|80000|1000|500|
+I was thinking in using a python script on my phone and using AWS SDK to upload to S3 and after a success upload, delete the photo from my phone.
 
-&amp;#x200B;
-
-Following these points from AWS documentation:
-
-* **Hashkey/Parition Key should be a high cardinality attribute** \- therefore shop\_id is an obvious choice.
-* **If you are retrieving items by a single field - that field should either be a hash\_key or a GSI**. So it seems fine to have shop\_id as the partition key as a large number of cases requires me to retrieve a single shop.
-
-So at this point I am fairly certain that I can select shop\_id as the partition key for the table, making inserting and selecting single record by id very fast. So far so good.
-
-The next challenge is that I would like to be able to filter based on all the other columns in the table: last\_visited, opened, revenue, balance etc. without knowing the shop\_id. All filters are optional except last\_visited which is compulsory. So I make the following decisions:
-
-1. Since using **query** call requires you to use the partition key (shop\_id). I need to create a GSI. Ok great.
-2. So now to select a GSI hashkey, knowing that last\_visited is the most common attribute in queries, I select that as the **partition key**.
-3. BUT it turns out, I cannot perform a "BETWEEN" condition on the partition key, and therefore must use **scan** (which is discouraged).
-
-The way I see it, inside dynamodb it is impossible to have a date key as partition key while using the query operation. This seems like a fairly common scenario. **(Please prove me wrong).**
-
-The only other method I can think of is using last\_visited as both the partition key and the range key inside a GSI. But this feels a bit wrong. **Am I missing something?**
-
-Side question: are all other filter fields are included as LSIs. **Are LSIs also operational on GSIs?**
-## [5][Apache - (104)Connection reset by peer: [client x.x.x.x:4712] AH03308: ap_proxy_transfer_between_connections: error on sock - ap_get_brigade](https://www.reddit.com/r/aws/comments/hgsd7l/apache_104connection_reset_by_peer_client/)
-- url: https://www.reddit.com/r/aws/comments/hgsd7l/apache_104connection_reset_by_peer_client/
----
-I have a django app deployed to elastic beanstalk:
-
-[http://django-env.eba-bcvm9cxz.us-west-2.elasticbeanstalk.com/chart/](http://django-env.eba-bcvm9cxz.us-west-2.elasticbeanstalk.com/chart/)
-
-I'm following this tutorial: [https://medium.com/@elspanishgeek/how-to-deploy-django-channels-2-x-on-aws-elastic-beanstalk-8621771d4ff0](https://medium.com/@elspanishgeek/how-to-deploy-django-channels-2-x-on-aws-elastic-beanstalk-8621771d4ff0) and using architecture number 2.
-
-My relevant configuration files are the folllowing:
-
-        option_settings:  
-          aws:elasticbeanstalk:application:environment:
-            DJANGO_SETTINGS_MODULE: dashboard.settings
-            PYTHONPATH: /opt/python/current/app/dashboard:$PYTHONPATH
-          aws:elasticbeanstalk:container:python:
-            WSGIPath: dashboard/wsgi.py
-        
-          aws:elbv2:listener:80:
-            ListenerEnabled: 'true'
-            Protocol: HTTP
-          aws:elbv2:listener:5000:
-            ListenerEnabled: 'true'
-            Protocol: HTTP
-
-\--
-
-        files:
-          "/etc/httpd/conf.d/proxy.conf":
-            mode: "000644"
-            owner: root
-            group: root
-            content: |
-              ProxyPass /websockets/ ws://127.0.0.1:5000/websockets/ upgrade=NONE
-              ProxyPassReverse /websockets/ ws://127.0.0.1:5000/websockets/
-
-I needed to add \`upgrade=NONE\` in proxy.conf, which isn't in the tutorial, but I for me I always got a 503 on the client when it was establishing the websocket.
-
-I have a daphne server listening on 5000, which is successfuly receiving the websocket request from the client, but the client never gets to receive the response from the server. On chrome console I get:
-
-    WebSocket connection to 'ws://django-env.eba-bcvm9cxz.us-west-2.elasticbeanstalk.com/websockets/' failed: Error during WebSocket handshake: Unexpected response code: 408
-
-Apache's logs show the following:
-
-        [Sat Jun 27 11:42:11.962267 2020] [watchdog:debug] [pid 9855] mod_watchdog.c(590): AH02981: Watchdog: Created child worker thread (_proxy_hcheck_).
-        [Sat Jun 27 11:42:11.962286 2020] [proxy:debug] [pid 9855] proxy_util.c(1940): AH00925: initializing worker ws://127.0.0.1:5000/websockets/ shared
-        [Sat Jun 27 11:42:11.962298 2020] [proxy:debug] [pid 9855] proxy_util.c(2000): AH00927: initializing worker ws://127.0.0.1:5000/websockets/ local
-        [Sat Jun 27 11:42:11.962319 2020] [proxy:debug] [pid 9855] proxy_util.c(2035): AH00930: initialized pool in child 9855 for (127.0.0.1) min=0 max=4 smax=4
-        [Sat Jun 27 11:42:11.962330 2020] [proxy:debug] [pid 9855] proxy_util.c(1940): AH00925: initializing worker proxy:reverse shared
-        [Sat Jun 27 11:42:11.962334 2020] [proxy:debug] [pid 9855] proxy_util.c(2000): AH00927: initializing worker proxy:reverse local
-        [Sat Jun 27 11:42:11.962341 2020] [proxy:debug] [pid 9855] proxy_util.c(2035): AH00930: initialized pool in child 9855 for (*) min=0 max=4 smax=4
-        [Sat Jun 27 11:42:11.962345 2020] [proxy:debug] [pid 9855] proxy_util.c(1935): AH00924: worker ws://127.0.0.1:5000/websockets/ shared already initialized
-        [Sat Jun 27 11:42:11.962347 2020] [proxy:debug] [pid 9855] proxy_util.c(1992): AH00926: worker ws://127.0.0.1:5000/websockets/ local already initialized
-        [Sat Jun 27 11:42:30.521413 2020] [proxy:debug] [pid 9625] proxy_util.c(4059): (104)Connection reset by peer: [client 172.31.42.96:4452] AH03308: ap_proxy_transfer_between_connections: error on sock - ap_get_brigade
-        [Sat Jun 27 11:42:30.521453 2020] [proxy:debug] [pid 9625] proxy_util.c(2353): AH00943: WS: has released connection for (127.0.0.1)
-
-What's wrong with my configuration?
-## [6][Event bus, kinesis or sns + sqs?](https://www.reddit.com/r/aws/comments/hg9jod/event_bus_kinesis_or_sns_sqs/)
-- url: https://www.reddit.com/r/aws/comments/hg9jod/event_bus_kinesis_or_sns_sqs/
----
-Which one should I use for a generic event bus that would be used in multiple services? I have lots of handlers in my data pipeline and to do sns fanout I would need a queue per function. Is that too many queues? Can you create queues at runtime?
-## [7][Anyone else seeing a lot of random timeouts with lambda? Started about an hour ago in the us-west-2 region](https://www.reddit.com/r/aws/comments/hgel50/anyone_else_seeing_a_lot_of_random_timeouts_with/)
-- url: https://www.reddit.com/r/aws/comments/hgel50/anyone_else_seeing_a_lot_of_random_timeouts_with/
----
-We haven't really changed anything or deployed anything new but all of a sudden starting around 11:20am Pacific Time, a lot of our lambda functions started timing out randomly.
-
-Wondering if it's just us?
-
-Edit: We make a lot of S3 calls in these aforementioned lambdas, as one of the commenters mentioned here, it might be related to that
-
-&amp;#x200B;
-## [8][Network packages analysis?](https://www.reddit.com/r/aws/comments/hgibs1/network_packages_analysis/)
-- url: https://www.reddit.com/r/aws/comments/hgibs1/network_packages_analysis/
----
-A customer is asking to implement a Firewall that can analyze network packages using Sandbox in their AWS infrastructure.
-
-I haven't seen such product on AWS. Does WAF or Shield include that? This is a simple website that would be using Cloudflare.
-## [9][Provisioned IOPS throughput calculation](https://www.reddit.com/r/aws/comments/hgn2nt/provisioned_iops_throughput_calculation/)
-- url: https://www.reddit.com/r/aws/comments/hgn2nt/provisioned_iops_throughput_calculation/
----
-I am trying to understand how throughput is calculated on provisioned IOPS drives. Can someone help me understand this graph?  Apparently an io1 drive set to 2K IOPS can go up to 500 MBps throughput. Does that just mean 32K to 64K can go up to 1,000 MBps? The graph in the documentation is difficult to read.
-
-[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#EBSVolumeTypes\_piops](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#EBSVolumeTypes_piops) 
-
-&amp;#x200B;
-
-Thank you!
-## [10][Difficulty connecting to RDS instance](https://www.reddit.com/r/aws/comments/hggviz/difficulty_connecting_to_rds_instance/)
-- url: https://www.reddit.com/r/aws/comments/hggviz/difficulty_connecting_to_rds_instance/
----
-I have a MariaDB 10.3.13 instance running, but I think I'm missing something, cause can't connect from a Lightsail instance.
-
-Public accessibility: Yes  
-VPC security groups: Inbound [0.0.0.0/0](https://0.0.0.0/0)
-
-What else am I overlooking here?
-## [11][Dow Jones Hammer: A multi-account cloud security tool for AWS.](https://www.reddit.com/r/aws/comments/hgdqxc/dow_jones_hammer_a_multiaccount_cloud_security/)
-- url: https://github.com/dowjones/hammer
----
-
+1. Do you think it's possible to do that?
+2. Any other idea?

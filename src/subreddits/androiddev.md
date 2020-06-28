@@ -34,92 +34,92 @@ The team there will submit posts for collecting questions ~1 week before answeri
 | 9th July | TBD | Android Team | Android Platform | TBD |
 | 30th July | TBD | Android Team | Android Studio | TBD |
 | 27th August | TBD | Android Team | Android Jetpack &amp; Jetpack Compose | TBD |
-## [3][Hi guys! I've made a simple android game, where you need to identify characters based on their visual clues (they are randomly generated). Github link: https://github.com/rosspetukhov/SuspectMatch. Let me know your thoughts :)](https://www.reddit.com/r/androiddev/comments/hga8rv/hi_guys_ive_made_a_simple_android_game_where_you/)
-- url: https://i.redd.it/igkec4vm1a751.png
+## [3][I made a 200 line Android app to track coronavirus cases across the USA. Link: https://github.com/rpandey1234/Covid19Tracker. Would love your thoughts or feedback!](https://www.reddit.com/r/androiddev/comments/hh7oyr/i_made_a_200_line_android_app_to_track/)
+- url: https://i.redd.it/rt9txmehok751.gif
 ---
 
-## [4][Why Android Gradle documentation sucks and feels like it is not updated frequently?](https://www.reddit.com/r/androiddev/comments/hghzs8/why_android_gradle_documentation_sucks_and_feels/)
-- url: https://www.reddit.com/r/androiddev/comments/hghzs8/why_android_gradle_documentation_sucks_and_feels/
+## [4][Anyone experienced this lately? I am an indie developer and have a game with 500k+ downloads, it has a stable 2-3k downloads/day. About 1 month ago the downloads begin to decrease day by day, first it was 1500 then 1000 and now it is ~50/day.](https://www.reddit.com/r/androiddev/comments/hhazv8/anyone_experienced_this_lately_i_am_an_indie/)
+- url: https://www.reddit.com/r/androiddev/comments/hhazv8/anyone_experienced_this_lately_i_am_an_indie/
 ---
-I don't know much about Gradle for Android
+According to play console the day 1,7,30 retention is way over the average, the crash rate is much lower then the average, the rating of the game is stable 4.7+. Do you have any idea why is this happening?
+## [5][How hard is it to make money off of android apps?](https://www.reddit.com/r/androiddev/comments/hgzner/how_hard_is_it_to_make_money_off_of_android_apps/)
+- url: https://www.reddit.com/r/androiddev/comments/hgzner/how_hard_is_it_to_make_money_off_of_android_apps/
+---
+A lot of posts make it sound impossible to create a lucrative app. What makes generating app revenue so difficult
+## [6][How can an open source app by me can be more secure than closed source?](https://www.reddit.com/r/androiddev/comments/hhc8l8/how_can_an_open_source_app_by_me_can_be_more/)
+- url: https://www.reddit.com/r/androiddev/comments/hhc8l8/how_can_an_open_source_app_by_me_can_be_more/
+---
+Okay simple question, I'm planning making an app and I am debating with myself whether I should make it OS or not. If I make an app now, why should anybody review it, except people doing it to expose it in whatever way? If nobody looks at my source code, except people who are trying to figure out how to get userbased data for exmple, how can open source be more secure? 
 
-I am really trying to learn something from this documentation [https://developer.android.com/studio/build](https://developer.android.com/studio/build) but I feel it is just an unordered piece of \*\*\*\* that just mention some "tips" put in some legacy type of documentation
+I understand that something big is reviewed a lot and it makes sense that it's open source, I just don't think anyone with good things in mind would ever bother looking at my source code, because: why? 
 
-I thought that it can be some just ordered type of documentation when you learn stuff incrementally. But in this type of documentation it is really hard to understand some topic, when it includes several types of information (considered even advanced) from other topic.
+So I'd like to get some opinions on what you think about this and what I should do. Thanks a lot
+## [7][Mistakenly made a production release.](https://www.reddit.com/r/androiddev/comments/hhc495/mistakenly_made_a_production_release/)
+- url: https://www.reddit.com/r/androiddev/comments/hhc495/mistakenly_made_a_production_release/
+---
+Hi guys,
 
-What is more I feel that this documentation is not updated frequently
+I'm in panic. My app doesn't work yet and I made a production release from alpha in the Google Play Console mistakenly. What can I do to reverse this?
+## [8][newbie help, how to implement a file picker?](https://www.reddit.com/r/androiddev/comments/hhe57c/newbie_help_how_to_implement_a_file_picker/)
+- url: https://www.reddit.com/r/androiddev/comments/hhe57c/newbie_help_how_to_implement_a_file_picker/
+---
+Hi, I'm very new to android development, and I wanna know how to make a file picker or implement something that lets the user pick a file, and returns the path of it, so my application can access it, I've tried a OPEN_DOCUMENT &amp; GET_CONTENT intent method but always get some different path that ends in numbers ,not sure how to work with it
 
-For example:
+Thanks in advance, I'm working in Kotlin, minimum api android 6
+## [9][Unsolvable AdMob issue from Google, unfixed for the last three months](https://www.reddit.com/r/androiddev/comments/hhdizz/unsolvable_admob_issue_from_google_unfixed_for/)
+- url: https://www.reddit.com/r/androiddev/comments/hhdizz/unsolvable_admob_issue_from_google_unfixed_for/
+---
+Greetings to the AndroidDev community 🖐,
 
-\- here [https://developer.android.com/studio/build/dependencies](https://developer.android.com/studio/build/dependencies) not mention anything about kapt which is required for Kotlin code
+I've been using AdMob for over a year now, but in March 2020, I got this sudden issue. This means that I get around 3-10% match rate for my ads at best, meaning that pretty much none of my ads work. I went through all the Google Forums and saw hundreds that has this issue, but the only solution Google provides is an unhelpful "Continue to develop your app and hope for the best!".
 
-\- here [https://developer.android.com/studio/build/optimize-your-build#optimize](https://developer.android.com/studio/build/optimize-your-build#optimize) mentioning something about Android Studio 2.3 (really?)
+All of my ad traffic has been organic, I tried to reset my ad IDs etc. but nothing seems to work. Is there anyone else that had this issue, and I would be greatful if I can get a more definitive and logical solution other than what is already provided to us by Google. 
+
+https://preview.redd.it/iflc68i79n751.jpg?width=1036&amp;format=pjpg&amp;auto=webp&amp;s=09b51fff735b993564480658893c9acb2f5485b3
+## [10][How compile android applications against aar libraries without gradle?](https://www.reddit.com/r/androiddev/comments/hhapo4/how_compile_android_applications_against_aar/)
+- url: https://www.reddit.com/r/androiddev/comments/hhapo4/how_compile_android_applications_against_aar/
+---
+Hi. I'm following this super article about developing an android application without android-studio + gradle:
+
+[https://medium.com/@authmane512/how-to-build-an-apk-from-command-line-without-ide-7260e1e22676](https://medium.com/@authmane512/how-to-build-an-apk-from-command-line-without-ide-7260e1e22676)  
+
+
+Everything's fine, except one little problem.  
+If i want to compile my application against an .aar library, what should i do?  
+
+
+In article, writer said that we can compile jar libraries with our application like this:  
+`./dx --dex --output=$PROJ/bin/classes.dex $PROJ/*.jar $PROJ/obj`
+
+But it won't works for .aar libraries.
+## [11][Added that little arrow at the edge of the screen, what do you think?](https://www.reddit.com/r/androiddev/comments/hhcrvn/added_that_little_arrow_at_the_edge_of_the_screen/)
+- url: https://v.redd.it/b7h77kukxm751
+---
+
+## [12][Issue with layout](https://www.reddit.com/r/androiddev/comments/hh9ug0/issue_with_layout/)
+- url: https://www.reddit.com/r/androiddev/comments/hh9ug0/issue_with_layout/
+---
+Hello, I'm having an issue with this design, for some reason the list appears over the top of the screen instead of being matching parent as it should be with the constraint layout. Any clue?
 
 &amp;#x200B;
 
-It is really totally pushing me away when try to learn something from it and I give up
+`&lt;?xml version="1.0" encoding="utf-8"?&gt;`  
+`&lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"`  
+ `xmlns:app="http://schemas.android.com/apk/res-auto"`  
+ `xmlns:tools="http://schemas.android.com/tools"`  
+ `android:layout_width="match_parent"`  
+ `android:layout_height="match_parent"`  
+ `android:background="@drawable/background_default"`  
+ `app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior"&gt;`  
+`&lt;androidx.recyclerview.widget.RecyclerView`  
+ `android:id="@+id/rutasList"`  
+ `android:layout_width="0dp"`  
+ `android:layout_height="0dp"`  
+ `app:layout_constraintBottom_toBottomOf="parent"`  
+ `app:layout_constraintEnd_toEndOf="parent"`  
+ `app:layout_constraintHorizontal_bias="0.496"`  
+ `app:layout_constraintStart_toStartOf="parent"`  
+ `app:layout_constraintTop_toTopOf="parent" /&gt;`  
+`&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;`
 
-Do you guys know some good source from which I can learn Gradle for Android?
-## [5][I want to fire off a notification when entering a room.](https://www.reddit.com/r/androiddev/comments/hgs7d6/i_want_to_fire_off_a_notification_when_entering_a/)
-- url: https://www.reddit.com/r/androiddev/comments/hgs7d6/i_want_to_fire_off_a_notification_when_entering_a/
----
-I basically want to make a function where If you go into a room (doesn't have to be super accurate) a notification can fire.  
-
-I am just not sure which way to go.  I was thinking anything from something like an RFID in the room or could an alexa, echo dot or other device solve this? I would prefer cheaper hardware if possible.
-
-Or could I use just the phone alone to say "when you get 10 feet near this point in space, fire a notification.  I don't need insane accuracy like realtime tracking but I would like to denote if someone goes into one room vs another.  
-
-Is there a platform for this already? Just having a hard time figuring out what would make the most sense to start with.
-## [6][Has anyone noticed that Firebase Authentication doesn't even follow Google's one activity guideline. Does it matter?](https://www.reddit.com/r/androiddev/comments/hgimem/has_anyone_noticed_that_firebase_authentication/)
-- url: https://www.reddit.com/r/androiddev/comments/hgimem/has_anyone_noticed_that_firebase_authentication/
----
-[If you go to the Firebase Authentication guide it directly contradicts having one activity.](https://firebase.google.com/docs/auth/android/phone-auth?fbclid=IwAR0Do4bdXfPA8_YXAigjxguUe2VQ7aWpEPp3xsaFr0cfJYAPrM1YkJx3mT8#kotlin+ktx) It uses PhoneAuthentication as it's own activity? Is this recommended or just outdated, and on top of that they write all their business logic in the Activity. So what's the deal? Auth Management is tricky as hell to manage the "right way" did they also just say screw it throw it all in an activity because it's easier.
-
-https://github.com/firebase/quickstart-android/blob/09b3db061c66499ff8a48d5a1f3d84acf6f56bed/auth/app/src/main/java/com/google/firebase/quickstart/auth/java/PhoneAuthActivity.java#L191-L191
-## [7][How to use/control RxJava Observable.cache](https://www.reddit.com/r/androiddev/comments/hgptcg/how_to_usecontrol_rxjava_observablecache/)
-- url: https://www.reddit.com/r/androiddev/comments/hgptcg/how_to_usecontrol_rxjava_observablecache/
----
-I am trying to use the RxJava caching mechanism but i can't seem to  catch how it works or how can i control the cached contents since there  is the `cache` operator.
-
-I want to verify the cached data with some conditions before emitting the new data.
-
-for example
-
-    someObservable.
-    repeat().
-    filter { it.age &lt; maxAge }.
-    map(it.name).
-    cache() 
-
-There is also `ObservableCache&lt;T&gt;` class but i can't find any resources of using it.
-
-how can i get the cached content and verify it (or do any operation on it) before emitting a new value
-
-Any help would be much appreciated. Thanks.
-## [8][Was Google measure ar app made in Android studio or unity?](https://www.reddit.com/r/androiddev/comments/hgpscf/was_google_measure_ar_app_made_in_android_studio/)
-- url: https://www.reddit.com/r/androiddev/comments/hgpscf/was_google_measure_ar_app_made_in_android_studio/
----
-
-## [9][Android Context Full Guide](https://www.reddit.com/r/androiddev/comments/hga4fe/android_context_full_guide/)
-- url: https://www.reddit.com/r/androiddev/comments/hga4fe/android_context_full_guide/
----
-We have different types of Android Context, and sometimes developers get confused about which Context to use 🤷‍♂️  
-More than that, wrong context usage can lead to problems, for example, memory leaks 😕
-
-Master the Android Context and use it correctly.  
-[https://vladsonkin.com/android-context-full-guide/](https://vladsonkin.com/android-context-full-guide/)
-## [10][Do you use any mobile attribution partners (Adjust, Appsflyer, Kochava, Branch, Tenjin...)?](https://www.reddit.com/r/androiddev/comments/hgk3jc/do_you_use_any_mobile_attribution_partners_adjust/)
-- url: https://www.reddit.com/r/androiddev/comments/hgk3jc/do_you_use_any_mobile_attribution_partners_adjust/
----
-We are looking to buy installs from the top non-self attributing video ad networks i.e. UnityAds, Vungle, etc. and are looking for any recommendations or inside knowledge about attribution partners from those that may already be doing so. If you are open to discussing which genre your app/game is in, and any experiences you may have using attribution partners and non-SAN networks for your UA, please feel free to connect with us via DM.
-## [11][Android Studio 4.0 removed the option to disable "Include fragment factory methods" and "Include interface callbacks"](https://www.reddit.com/r/androiddev/comments/hfzgue/android_studio_40_removed_the_option_to_disable/)
-- url: https://i.redd.it/xvieraqv26751.png
----
-
-## [12][Should I continue to learn native development with kotlin](https://www.reddit.com/r/androiddev/comments/hgcfou/should_i_continue_to_learn_native_development/)
-- url: https://www.reddit.com/r/androiddev/comments/hgcfou/should_i_continue_to_learn_native_development/
----
-I am quite new to android development and have beem developing apps with kotlin for a 6 moths now.
-But I am concerned that when Fuchsia arrives, all the things I have learnt will go useless.
-Moreover there's is always a chance that with tools like react native, native app development may not be required.
-What are your views regarding the demand of native app development in the future?
+https://preview.redd.it/wljmfvwkjl751.png?width=383&amp;format=png&amp;auto=webp&amp;s=5fba4e9d3bf7090e4320f2c335f89c41ab4a972d

@@ -1,13 +1,157 @@
 # Kotlin
-## [1][Creating a BitTorrent client in Kotlin](https://www.reddit.com/r/Kotlin/comments/hg7ym2/creating_a_bittorrent_client_in_kotlin/)
-- url: https://kcianfarini.dev/corbit-bencoding/
+## [1][Physics Algorithm (in Kotlin)](https://www.reddit.com/r/Kotlin/comments/hha9gn/physics_algorithm_in_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/hha9gn/physics_algorithm_in_kotlin/
+---
+Hi all, this is my first post on this. I've been writing a book about Physics Algorithms (still fairly early)- how to do simulations. I'm aiming it at undergraduate physics students (who aren't necessarily good at programming), and computer scientists, engineers, mathematicians, and people with coding experience already.
+
+I chose Kotlin for most of the algorithms in the book, and source code is presented too --- I did this because Kotlin is an amazing language for doing physics simulations in: it's fast, concise and easy to work with --- I would say that C and Python, although popular for this, are inadequate for teaching physics algorithms because C is too difficult to manage for largish projects, and python is too slow. I'm not expecting much disagreement on that here.
+
+Anyway, so I'm looking for feedback or even just interest. Part of my reason to post this is to get the motivation to finish the book.
+
+So if you're interested, the link is here:
+
+[http://www.articlesbyaphysicist.com/book\_physics\_algorithm.html](http://www.articlesbyaphysicist.com/book_physics_algorithm.html)
+
+And please do just leave a message here saying whether the idea is interesting, or whether you have definite feedback.
+
+Bear in mind that it's early days, and I'll be adding a lot to this in all chapters.
+## [2][Creating a GraphQL Api automatically with Kotlin, Ktor and Postgres](https://www.reddit.com/r/Kotlin/comments/hgzxb6/creating_a_graphql_api_automatically_with_kotlin/)
+- url: https://medium.com/@chris.hinshaw/creating-a-graphql-database-service-with-kotlin-ktor-and-postgres-18b3a5ea9998
 ---
 
-## [2][I have worked with Python extensively. Can any one suggest me resources to get started with Kotlin?](https://www.reddit.com/r/Kotlin/comments/hgpao5/i_have_worked_with_python_extensively_can_any_one/)
+## [3][How could you clear the terminal in Kotlin?](https://www.reddit.com/r/Kotlin/comments/hhbat8/how_could_you_clear_the_terminal_in_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/hhbat8/how_could_you_clear_the_terminal_in_kotlin/
+---
+Hi! I'm new to programming in Kotlin and I want know how you could clear the terminal. (I'm not using Android Studio)
+
+code:
+
+    fun clear() {
+        // code to clear screen
+    }
+    
+    fun main() {
+        print("enter text: ")
+        e = readLine()
+        if (e == "clear") {
+            clear()
+        }
+    }
+
+Any help appreciated!
+## [4][Can JS Kotlin and Java Kotlin interact?](https://www.reddit.com/r/Kotlin/comments/hgwjbf/can_js_kotlin_and_java_kotlin_interact/)
+- url: https://www.reddit.com/r/Kotlin/comments/hgwjbf/can_js_kotlin_and_java_kotlin_interact/
+---
+Title.
+## [5][I have worked with Python extensively. Can any one suggest me resources to get started with Kotlin?](https://www.reddit.com/r/Kotlin/comments/hgpao5/i_have_worked_with_python_extensively_can_any_one/)
 - url: https://www.reddit.com/r/Kotlin/comments/hgpao5/i_have_worked_with_python_extensively_can_any_one/
 ---
 I would prefer it would direct me somehow toward mobile application development for Android.
-## [3][A question about nulls](https://www.reddit.com/r/Kotlin/comments/hgjdy1/a_question_about_nulls/)
+## [6][Can I import classes from other modules when using spring boot?](https://www.reddit.com/r/Kotlin/comments/hgvcac/can_i_import_classes_from_other_modules_when/)
+- url: https://www.reddit.com/r/Kotlin/comments/hgvcac/can_i_import_classes_from_other_modules_when/
+---
+For some weird reasons, I kept on getting Unresolved reference: &lt;ClassName&gt; when I try to import a class from different module.
+
+When I try to remove the spring dependencies in application module and just make a basic kotlin class and import that,, I don't get those unresolved reference issues. I don't understand what's happening now.
+
+First time trying out spring so maybe they're doing some kind of magic here.
+
+Can anyone check my config? Really weird.
+
+&amp;#x200B;
+
+    Application module build.gradle
+    
+    plugins {
+        kotlin("jvm")
+        id("org.springframework.boot")
+        id("io.spring.dependency-management")
+        kotlin("plugin.spring")
+        kotlin("plugin.jpa")
+    }
+    
+    dependencies {
+        implementation(project(":domain"))
+        implementation("org.springframework.boot:spring-boot-starter-web")
+        implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+        implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+        implementation("org.jetbrains.kotlin:kotlin-reflect")
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+        developmentOnly("org.springframework.boot:spring-boot-devtools")
+        runtimeOnly("com.h2database:h2")
+    }
+    
+    Delivery module
+    plugins {
+    	kotlin("jvm")
+    	id("org.springframework.boot")
+    	id("io.spring.dependency-management")
+    	kotlin("plugin.spring")
+    	kotlin("plugin.jpa")
+    }
+    
+    dependencies {
+    	implementation(project(":domain"))
+    	implementation(project(":application"))
+    
+    	implementation("org.springframework.boot:spring-boot-starter-web")
+    	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    	implementation("org.jetbrains.kotlin:kotlin-reflect")
+    	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    	developmentOnly("org.springframework.boot:spring-boot-devtools")
+    	runtimeOnly("com.h2database:h2")
+    	testImplementation("org.springframework.boot:spring-boot-starter-test") {
+    		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
+    	}
+    }
+    
+    Root gradle.build
+    import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+    
+    plugins {
+        kotlin("jvm") version "1.3.72"
+        id("org.springframework.boot") version "2.3.1.RELEASE"
+        id("io.spring.dependency-management") version "1.0.9.RELEASE"
+        kotlin("plugin.spring") version "1.3.72"
+        kotlin("plugin.jpa") version "1.3.72"
+    }
+    
+    buildscript {
+        repositories {
+            mavenCentral()
+        }
+    }
+    
+    allprojects {
+        group = "com.example"
+        version = "0.0.1-SNAPSHOT"
+    
+        tasks.withType&lt;JavaCompile&gt; {
+            sourceCompatibility = "1.8"
+            targetCompatibility = "1.8"
+        }
+    
+        tasks.withType&lt;KotlinCompile&gt; {
+            kotlinOptions {
+                freeCompilerArgs = listOf("-Xjsr305=strict")
+                jvmTarget = "1.8"
+            }
+        }
+    
+        tasks.withType&lt;Test&gt; {
+            useJUnitPlatform()
+        }
+    
+        repositories {
+            mavenCentral()
+        }
+    }
+## [7][Creating a BitTorrent client in Kotlin](https://www.reddit.com/r/Kotlin/comments/hg7ym2/creating_a_bittorrent_client_in_kotlin/)
+- url: https://kcianfarini.dev/corbit-bencoding/
+---
+
+## [8][A question about nulls](https://www.reddit.com/r/Kotlin/comments/hgjdy1/a_question_about_nulls/)
 - url: https://www.reddit.com/r/Kotlin/comments/hgjdy1/a_question_about_nulls/
 ---
 Hey guys!
@@ -21,11 +165,11 @@ In Python everything is dynamically stated, so I don't have to think about what 
 Can you please give me an advice about this? Maybe then I can stop to wrap my head around this with your help.
 
 Thanks guys!
-## [4][Kotlin Flows and Channels for Android](https://www.reddit.com/r/Kotlin/comments/hg6940/kotlin_flows_and_channels_for_android/)
+## [9][Kotlin Flows and Channels for Android](https://www.reddit.com/r/Kotlin/comments/hg6940/kotlin_flows_and_channels_for_android/)
 - url: https://youtu.be/xch4aw7hNcY?list=PLEx5khR4g7PL-JwckuOkkc5cR6X5hn6ug
 ---
 
-## [5][Possible bug with generic where clause and star projection.](https://www.reddit.com/r/Kotlin/comments/hg6npk/possible_bug_with_generic_where_clause_and_star/)
+## [10][Possible bug with generic where clause and star projection.](https://www.reddit.com/r/Kotlin/comments/hg6npk/possible_bug_with_generic_where_clause_and_star/)
 - url: https://www.reddit.com/r/Kotlin/comments/hg6npk/possible_bug_with_generic_where_clause_and_star/
 ---
 It appears that star projections only understand the first where clause. I'm not sure how to best articulate it, so have some code.
@@ -59,90 +203,3 @@ Here's the code:
         thing.value.foo() // compile error
         thing.value.bar() // fine
     }
-## [6][Spring Security Webflux with Kotlin coroutines explained](https://www.reddit.com/r/Kotlin/comments/hg90t1/spring_security_webflux_with_kotlin_coroutines/)
-- url: https://www.reddit.com/r/Kotlin/comments/hg90t1/spring_security_webflux_with_kotlin_coroutines/
----
-Hi there!
-
-I just publish a small contribution to the Kotlin and Spring Security Webflux community. If you are struggling to find out how to add security to your reactive project I created this little repository to explain how it works. Also I added a little frontend app and a simple CI/CD pipeline. It's a work in progress but I think that it could give you some hints to you.
-
-[https://github.com/soasada/kotlin-coroutines-webflux-security](https://github.com/soasada/kotlin-coroutines-webflux-security) 
-
-Please feel free to ask me questions, suggestions or contributions. Hope you enjoy it
-## [7][How do I bring array information from one intent to another?](https://www.reddit.com/r/Kotlin/comments/hfzlpy/how_do_i_bring_array_information_from_one_intent/)
-- url: https://www.reddit.com/r/Kotlin/comments/hfzlpy/how_do_i_bring_array_information_from_one_intent/
----
-As in I have a home page and a game page for my app. On the home screen I get the list of names of players. I want to know how to transfer that array to the next page of the app. I’ve tried writing to a file, but File() crashes the app. This is the missing link between both pages.
-
-Might be a rookie mistake, but I’ve tried for the past two days trying.
-## [8][Single line if statement without brances](https://www.reddit.com/r/Kotlin/comments/hft79x/single_line_if_statement_without_brances/)
-- url: https://www.reddit.com/r/Kotlin/comments/hft79x/single_line_if_statement_without_brances/
----
-I was curious what people's thoughts are on not using braces for `if` statements that are single line and have no else if/else?
-
-For example:
-```
-if (value == null) return
-```
-
-I found [Android Kotlin Guidelines](https://developer.android.com/kotlin/style-guide) advocating it's okay but not many other well-known sources. I personally like it and although it isn't 100% foolproof, I believe it is safer/better than using multi-line `if` without braces.
-    
-    if (value == null)
-      return
-
-Also, I feel like that single line if with no braces fits well with other Kotlin conventions:
-
-    if (true) 1 else 0
-    val result = value ?: null
-    value ?: null
-    value ?: return
-## [9][Ideas for naming a Kotlin/Common Telegram library (the MTProto API, not the HTTP bot API)](https://www.reddit.com/r/Kotlin/comments/hft5bb/ideas_for_naming_a_kotlincommon_telegram_library/)
-- url: https://www.reddit.com/r/Kotlin/comments/hft5bb/ideas_for_naming_a_kotlincommon_telegram_library/
----
-Ideally with a K in it. Kotlogram is already taken.
-## [10][Problem reaching a piece of code outside of it's method](https://www.reddit.com/r/Kotlin/comments/hfr08k/problem_reaching_a_piece_of_code_outside_of_its/)
-- url: https://www.reddit.com/r/Kotlin/comments/hfr08k/problem_reaching_a_piece_of_code_outside_of_its/
----
-Hey all
-
-I'm having a small problem trying to grab some info from a method, I seem stuck in a loop of unreachable code. 
-
-I've spent the day creating a bunch of methods handling permissions for getting locations in my little weather forecasting app, and I've finally got it returning correct longitudes and latitudes. So I want to use them in the URL string I have for my weather data API, however I'm having trouble just getting to that info, I feel like I'm stuck in a loop.
-
-The method where I get the local co-ordinates is this:
-
-        private fun returnLocation() {
-            var lat : Double? = 0.0
-            var lon : Double? = 0.0
-            fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-            fusedLocationClient.lastLocation.addOnSuccessListener { location : Location? -&gt;
-                // Got last known location. In some rare situations this can be null.
-                lat = location?.latitude
-                lon = location?.longitude
-    
-                //for troubleshooting in console
-                println("THE LATITUDE IS: $lat\n\n THE LONGITUDE IS: $lon")
-            }
-        }
-
-The problem is I want to do something like, val localUrl = "[https://api.openweathermap.org/data/2.5/onecall?lat=***$lat***&amp;lon=***$lon***&amp;exclude=minutely&amp;appid=ee3cc93e43ef00b96a6bb4e56902d020](https://api.openweathermap.org/data/2.5/onecall?lat=$lat&amp;lon=$lon&amp;exclude=minutely&amp;appid=ee3cc93e43ef00b96a6bb4e56902d020)"
-
-and use that in my JSON method where I use 
-
-    val urlLondon = "https://api.openweathermap.org/data/2.5/onecall?lat=51.51&amp;lon=-0.19&amp;exclude=minutely&amp;appid=ee3cc93e43ef00b96a6bb4e56902d020"
-    val urlNewYork =
-                "https://api.openweathermap.org/data/2.5/onecall?lat=40.785091&amp;lon=-73.968285&amp;exclude=minutely&amp;appid=ee3cc93e43ef00b96a6bb4e56902d020"
-    val urlLosAngeles =
-                "https://api.openweathermap.org/data/2.5/onecall?lat=34.0522&amp;lon=-118.24&amp;exclude=minutely&amp;appid=ee3cc93e43ef00b96a6bb4e56902d020"
-    
-    //////My local URL here//////
-    
-    val request = Request.Builder().url(urlLondon).build()
-
-&amp;#x200B;
-
-I've tried to do things like make returnLocation return a string with the url, but I can't put the Return statement in the fusedLocationClient.*lastLocation*.addOnSuccessListener **{** location : Location? **-&gt;** ...} lamba, and outside of it lon, lat, and even a top level localUrlString are back to their default values.
-
-&amp;#x200B;
-
-Any help would be greatly appreciated, thanks in advance! :D

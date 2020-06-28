@@ -125,27 +125,35 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][GCC 11: Change the default dialect to C++17](https://www.reddit.com/r/cpp/comments/hgjjcz/gcc_11_change_the_default_dialect_to_c17/)
+## [3][HTML++: Write HTML documents using C++ templates](https://www.reddit.com/r/cpp/comments/hh0cjp/html_write_html_documents_using_c_templates/)
+- url: https://github.com/csb6/html-plus-plus
+---
+
+## [4][doctest (the fastest feature-rich single-header testing framework) version 2.4.0 released - with JUnit reporting support!](https://www.reddit.com/r/cpp/comments/hh917p/doctest_the_fastest_featurerich_singleheader/)
+- url: https://github.com/onqtam/doctest/releases/tag/2.4.0
+---
+
+## [5][Declarative GUI frameworks in C++?](https://www.reddit.com/r/cpp/comments/hhacmh/declarative_gui_frameworks_in_c/)
+- url: https://www.reddit.com/r/cpp/comments/hhacmh/declarative_gui_frameworks_in_c/
+---
+There are a lot of declarative GUI frameworks (or libraries) in different languages. The difference with the imperative approach is that you tell the framework *what* and now *how*, it's explained for example [here](https://flutter.dev/docs/get-started/flutter-for/declarative).
+
+In C++, there's QML. However declarative framework doesn't exactly mean a markup language, UI can be declaratively built in code as well, like it's done in [Elements](https://github.com/cycfi/elements/blob/master/examples/buttons/main.cpp#L64) project.
+
+Is there anything else built on top of, for example, wxWidgets and other existing libraries?
+## [6][CLI library v.1.2 Released](https://www.reddit.com/r/cpp/comments/hh1t12/cli_library_v12_released/)
+- url: https://github.com/daniele77/cli
+---
+
+## [7][GCC 11: Change the default dialect to C++17](https://www.reddit.com/r/cpp/comments/hgjjcz/gcc_11_change_the_default_dialect_to_c17/)
 - url: https://gcc.gnu.org/git/?p=gcc.git;a=commitdiff;h=0801f419440c14f6772b28f763ad7d40f7f7a580
 ---
 
-## [4][Herb Sutter - Bridge to NewThingia: How to answer "why will yours succeed, when others have failed?"](https://www.reddit.com/r/cpp/comments/hgpryx/herb_sutter_bridge_to_newthingia_how_to_answer/)
+## [8][Herb Sutter - Bridge to NewThingia: How to answer "why will yours succeed, when others have failed?"](https://www.reddit.com/r/cpp/comments/hgpryx/herb_sutter_bridge_to_newthingia_how_to_answer/)
 - url: https://www.youtube.com/watch?v=wIHfaH9Kffs
 ---
 
-## [5][Compile-time integer-to-string conversion (C++17)](https://www.reddit.com/r/cpp/comments/hgcaih/compiletime_integertostring_conversion_c17/)
-- url: https://github.com/tcsullivan/constexpr-to-string
----
-
-## [6][Intel vs ARM memory model](https://www.reddit.com/r/cpp/comments/hggkpw/intel_vs_arm_memory_model/)
-- url: https://www.reddit.com/r/cpp/comments/hggkpw/intel_vs_arm_memory_model/
----
-The x86 has strong memory model. But what about ARM?
-
-With the Apple switch, I am wondering if code that uses C++ std::atomics, and that runs bug-free with Intel CPUs,
-could in fact reveal bugs when compiled for ARM (in case ARM has a weaker memory model).
-I am not speaking about compiler bugs of course, but about wrong use of std::atomics that are "hidden" when used on Intel CPUs.
-## [7][How did CMake happen?](https://www.reddit.com/r/cpp/comments/hggpvj/how_did_cmake_happen/)
+## [9][How did CMake happen?](https://www.reddit.com/r/cpp/comments/hggpvj/how_did_cmake_happen/)
 - url: https://www.reddit.com/r/cpp/comments/hggpvj/how_did_cmake_happen/
 ---
 A programmer got up one day and thought to himself "I'm going to create something so bad, it will piss off everyone that has to touch it". This project was a cruel inside joke of a group of friends that hung around on IRC. They figured that if you create something over-engineered, badly designed, and uses pretty colors at the stdout, people will use it. You can even get funded by some government entity if you present your project with a nice powerpoint presentation.
@@ -155,64 +163,31 @@ Fast-forward 20 years, and we're stuck with CMake. The joke became reality, and 
 Now don't tell me CMake was not a joke. It is simply not possible for someone, or a group of people, to create such an abomination. They would have set fire to every physical copy of CMake known to mankind early in it's development after realizing it's horrible nature. Myth has it that if you use CMake, you must find another person within a week and get them to integrate CMake else you die in highly suspicious circumstances. Did you know that CMake is causing global warming due to the countless CPU cycles wasted trying to compile from source? Oh, the pure insanity that is the documentation. You want to compile a program? Take my advice, type those `g++` and `ld` commands by hand - doesn't matter how big your project is. Anything that avoids using CMake is a win in my book. 
 
 Know that some people, somewhere, are having the time of their lifes, rolling around in stacks of money earned through billed CMake consultancy hours, books, and conference talks.
-## [8][Implementation of a base85 decoder for Tom's Data Onion to test state-of-the-art Modern-C++ workflows](https://www.reddit.com/r/cpp/comments/hg90d0/implementation_of_a_base85_decoder_for_toms_data/)
-- url: https://www.reddit.com/r/cpp/comments/hg90d0/implementation_of_a_base85_decoder_for_toms_data/
----
-Hello everyone,
-
-&amp;#x200B;
-
-The other day I stumbled upon this website:  [https://www.tomdalling.com/toms-data-onion/](https://www.tomdalling.com/toms-data-onion/)
-
-This website has a payload encoded in base85 with some challenges inside.
-
-&amp;#x200B;
-
-As I was curious about testing a Modern C++ workflow (not in the sense of only-language Modern C++ but in the sense of add dependencies + build system + code completion + C++ itself, from a point of view of productivity) , I took the challenge and I implemented the base85 decoder that could decode the first layer of the challenge. This is a base85 decoder.
-
-I wrote an article with the experience I had compared to when I started to code in 2002, where code completion was a fantasy, refactoring was inexistent and the build tools and dependency management were either autotools or platform-specific things or do-your-own stuff.
-
-I named the resulting project onionbase85 as a tribute to Tom's Data Onion challenge and I published it in Github.
-
-At the end of the article you can find the link to the Github repo, but if you want to skip the article altogether, just go here: [https://github.com/germandiagogomez/onionbase85](https://github.com/germandiagogomez/onionbase85)
-
-&amp;#x200B;
-
-Here is my article: [https://medium.com/@germandiagogomez/testing-a-modern-c-workflow-by-coding-a-base85-decoder-from-scratch-c6cde64984a9](https://medium.com/@germandiagogomez/testing-a-modern-c-workflow-by-coding-a-base85-decoder-from-scratch-c6cde64984a9)
-
-&amp;#x200B;
-
-Thanks for reading!
-## [9][Motivation for learning C++: This developer taught himself the language by making a basic C++ console game and selling 20k+ copies!](https://www.reddit.com/r/cpp/comments/hgb5ne/motivation_for_learning_c_this_developer_taught/)
-- url: https://www.reddit.com/r/cpp/comments/hgb5ne/motivation_for_learning_c_this_developer_taught/
----
-Warsim is a modern text based game that has now sold over 20,000 copies. Huw Millward started the project by just trying to learn the basics of C++ by creating I/O console applications. If you a re struggling with C++ as I did, this might be the motivation necessary!
-
-[https://www.youtube.com/watch?v=lE5gqOxLpjg&amp;feature=youtu.be](https://www.youtube.com/watch?v=lE5gqOxLpjg&amp;feature=youtu.be)
-## [10][plf::indiesort has been released](https://www.reddit.com/r/cpp/comments/hg45hz/plfindiesort_has_been_released/)
-- url: https://www.reddit.com/r/cpp/comments/hg45hz/plfindiesort_has_been_released/
----
-[https://plflib.org/indiesort.htm](https://plflib.org/indiesort.htm)  
-
-
-This is a sort-wrapper which enables the use of std::sort (or other random-access sort techniques) with non-random-access containers. And it also speeds up sorting of large types in random-access containers.  
- 
-
-It is, on average across all numbers of sorted elements:
-
-&amp;#x200B;
-
-* \+130% faster than std::sort when used on vectors or arrays of large structs (\~480 bytes)
-* \+28% faster than std::list's internal sort, on types smaller than a large struct.
-
-std::list's internal sort is faster for large structs (as it only  writes previous and next pointers) and std::sort is faster on vectors  and arrays for smaller types.
-
-More info at the link above, but basically it works by obtaining pointers to elements, then sorting them via the values of the elements they point to. Hence it has a temporary memory cost.
-## [11][Small vector implementation using propagate_on_container_move_assignment / blog post about stateful custom allocators](https://www.reddit.com/r/cpp/comments/hfv24j/small_vector_implementation_using_propagate_on/)
-- url: https://github.com/KonanM/small_vector
+## [10][Compile-time integer-to-string conversion (C++17)](https://www.reddit.com/r/cpp/comments/hgcaih/compiletime_integertostring_conversion_c17/)
+- url: https://github.com/tcsullivan/constexpr-to-string
 ---
 
-## [12][CppCast: Azure IoT](https://www.reddit.com/r/cpp/comments/hg01ft/cppcast_azure_iot/)
-- url: https://cppcast.com/azure-iot-tara-walker/
+## [11][In need of a console / reverse terminal](https://www.reddit.com/r/cpp/comments/hgxq96/in_need_of_a_console_reverse_terminal/)
+- url: https://www.reddit.com/r/cpp/comments/hgxq96/in_need_of_a_console_reverse_terminal/
 ---
+## The problem
+I have bunch of apps (mostly games) running on Windows/Mac/iOS/Android. They print/log stuff on terminals. On Android I got logcat. On Windows I can print in DevStudio debugger output or create an ugly terminal window and print there. On iOS I can see things in Xcode. None of these are convenient enough.
 
+## What I would like to have
+Some unified console in one place accepting connections over tcp and printing everything it receives. So no matter where I run the app everything will be displayed in one window on one machine. Preferably this console would support tabs, filtering, VT terminal colors, "exporting" to some HTML, timing, etc.
+
+## What I have
+I have some very simple logger which can connect to tcp and send stuff there. It can also redirect `stdout` there. I can also use `spdlog`. I can adopt their `tcp sink`:
+
+&lt;https://github.com/gabime/spdlog&gt;
+
+## What is missing
+The actual console application. Kind of like a reverse terminal which just accepts the connections and displays everything it receives. Does anybody know of anything like that is already available? I can probably carve up one rather quick around QTcpServer. I just don't want to reinvent the wheel if something like that already exists.
+## [12][Intel vs ARM memory model](https://www.reddit.com/r/cpp/comments/hggkpw/intel_vs_arm_memory_model/)
+- url: https://www.reddit.com/r/cpp/comments/hggkpw/intel_vs_arm_memory_model/
+---
+The x86 has strong memory model. But what about ARM?
+
+With the Apple switch, I am wondering if code that uses C++ std::atomics, and that runs bug-free with Intel CPUs,
+could in fact reveal bugs when compiled for ARM (in case ARM has a weaker memory model).
+I am not speaking about compiler bugs of course, but about wrong use of std::atomics that are "hidden" when used on Intel CPUs.

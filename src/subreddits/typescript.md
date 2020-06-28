@@ -22,7 +22,38 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][I’m creating an open source team management app - Troup. I’d love your opinion on it!](https://www.reddit.com/r/typescript/comments/hgjlq0/im_creating_an_open_source_team_management_app/)
+## [2][How does testing work with an IoC container like Inversify?](https://www.reddit.com/r/typescript/comments/hhd1pn/how_does_testing_work_with_an_ioc_container_like/)
+- url: https://www.reddit.com/r/typescript/comments/hhd1pn/how_does_testing_work_with_an_ioc_container_like/
+---
+I have a project using [Inversify](http://inversify.io/) for IoC/DI and I want to start writing tests, but I'm very confused on how to properly approach it, and for some reason I can't find any good articles or examples regarding this topic. I thought IoC was specifically made to make testing easier, as it decouples the direct implementation of classes with interfaces instead, but so far I can't find any evidence for this online in Inversify's case.
+
+I have written tests for a simple Logger class, one with the IoC container (`container.get(Logger)`) and one with a direct implementation (`new Logger()`) and both work, but I don't know how to approach it for the more complex parts of my code, where a lot more injection is happening.
+
+Does anyone have some tips on how to approach testing with Inversify or just IoC in general? Would love to read some good articles about it, or hear from your experiences.
+## [3][Why does ESlint think an object is a string?](https://www.reddit.com/r/typescript/comments/hh9i3w/why_does_eslint_think_an_object_is_a_string/)
+- url: https://i.redd.it/kcd6itqcel751.png
+---
+
+## [4][Any optimizing compilers yet (like the Closure compiler)](https://www.reddit.com/r/typescript/comments/hh1rdt/any_optimizing_compilers_yet_like_the_closure/)
+- url: https://www.reddit.com/r/typescript/comments/hh1rdt/any_optimizing_compilers_yet_like_the_closure/
+---
+Hi all – Do you know of any third-party Typescript compilers, especially optimizing ones? I figured there would be more than one at this point, but I haven't found any.
+
+There seems to be some room for improvement in optimization of the outputted JS. Google's Closure compiler seems to be the best JS optimizer right now, but it doesn't take Typescript input.
+
+Thanks.
+## [5][Exploring possible JS-APIs that mix between classes and inline-styling - Rosebox](https://www.reddit.com/r/typescript/comments/hgtpfg/exploring_possible_jsapis_that_mix_between/)
+- url: https://www.reddit.com/r/typescript/comments/hgtpfg/exploring_possible_jsapis_that_mix_between/
+---
+Hi guys!I'm working on [https://www.rosebox.dev/](https://www.rosebox.dev/) which is an active project for building a complete TS framework for styling and which has the following goals:
+
+1. Design and implement narrower types of properties than the ones in React.CSSProperties. This means help with auto-completion/IntelliSense and fewer typos.
+2. Manage UI-state in JS instead of CSS.
+
+So far RB  has been producing inline-styles but currently I'm exploring ways to reduce performance issues that might arise when using inline-styling with big lists which obviously increases the time the browser spends parsing HTML/CSS which is unnecessary and can be avoided using classes. So I want to give the user the ability to decide which parts of the style should go into a class and which parts need to be computed for each element in the list using the same object-based API. This is my first draft [https://codesandbox.io/s/blissful-joliot-4m5iw?file=/src/index.tsx](https://codesandbox.io/s/blissful-joliot-4m5iw?file=/src/index.tsx). I'd love to hear your opinions.
+
+I'd also like to take the opportunity to announce that there is a now a discord-channel for RB https://discord.gg/bd7BHf2
+## [6][I’m creating an open source team management app - Troup. I’d love your opinion on it!](https://www.reddit.com/r/typescript/comments/hgjlq0/im_creating_an_open_source_team_management_app/)
 - url: https://www.reddit.com/r/typescript/comments/hgjlq0/im_creating_an_open_source_team_management_app/
 ---
 Hey guys,
@@ -101,7 +132,11 @@ Thanks!
 **Edit:** Updated the repo link for the client.
 
 **Edit:** Added background and premise to give a bit more context.
-## [3][Passing a function as a parameter to another function](https://www.reddit.com/r/typescript/comments/hgg8lw/passing_a_function_as_a_parameter_to_another/)
+## [7][Unión de tipos en Typescript](https://www.reddit.com/r/typescript/comments/hh3bo6/unión_de_tipos_en_typescript/)
+- url: https://emanuelpeg.blogspot.com/2020/06/union-de-tipos-en-typescript.html#.XvfMh0VVD6I.reddit
+---
+
+## [8][Passing a function as a parameter to another function](https://www.reddit.com/r/typescript/comments/hgg8lw/passing_a_function_as_a_parameter_to_another/)
 - url: https://www.reddit.com/r/typescript/comments/hgg8lw/passing_a_function_as_a_parameter_to_another/
 ---
 I'm brand new to TypeScript/Angular so forgive my lack of clarity in my explanation but I'm having trouble figuring out if this scenario is possible.
@@ -125,26 +160,29 @@ But nothing I try seems to work. Is it possible? What would the parameter to my
     confirmActionDialog()
 
 function need to be in order to do something like this? Again, I'm brand new to this world so if I need to provide more detail, please let me know. Thanks in advance!
-## [4][Understanding TypeScript enum | Const and Ambient Enum](https://www.reddit.com/r/typescript/comments/hgogw4/understanding_typescript_enum_const_and_ambient/)
-- url: https://appdividend.com/2020/06/27/understanding-typescript-enum/
+## [9][Mapping An Interface (Array)](https://www.reddit.com/r/typescript/comments/hgk3lc/mapping_an_interface_array/)
+- url: https://www.reddit.com/r/typescript/comments/hgk3lc/mapping_an_interface_array/
 ---
+Hi. I'm pretty new to `TypeScript` but have experience in other typed languages. I'm trying to do this:
 
-## [5][[sci-fi]My Story](https://www.reddit.com/r/typescript/comments/hgpyp0/scifimy_story/)
-- url: https://www.reddit.com/r/typescript/comments/hgpyp0/scifimy_story/
----
-My story really began 2 years ago while working as a biochem intern at my local uni. I was updating the department webpage and had some styling notes written on a Post-It. A coworker startled me, causing me to knock over my note and a Petri dish containing *acidyminococcus* bacteria. I picked everything up and went back to work. We had known that this bacteria possessed an enzyme called cpf1 that could be used to edit genes. What we definitely did not know is that if the bacteria consumed code written for the web, it would affect that editing.  
+```
+interface Foo {
+  foo: string;
+}
 
-Almost immediately after my mishap, the color in my face began to change into the exact same shade of aqua blue as the header on our department webpage. Terrified but incredibly curious, I grabbed another post-it and scribbled some CSS to change the style back to inherit.  I set it in another dish with the bacteria, waited a few seconds, then wiped the post-it on my face. My face color returned to normal!!!
+interface Foos {
+  [index: string]: Foo[];
+}
 
-Fast forward a few months, and the world had completely changed. I was the head of a new company, HumanCSS, and designer styling was now available for people to patch their own genetics.
-Want your features to be more bold? We could do that. Want your muscles to grow when you flex? We had you covered. Want every other hair to have a glowing effect? Yep, we could do that too. My Post-it/bacteria accident had given birth to the greatest genetic discovery of our times and I did what any intelligent human would--I found a way to monetize it.
+let response: Foos;
 
-Before you judge me, know that my company had also discovered some bugs in the entire process. Not allowing the bacteria to consume the entire code could cause half of your body to be transparent or your legs to _literally have no width_. We worked hard to test all of our "Sheets" as we called them. The safe ones were marketed and the unsafe ones were set aside to be fixed.
+response = requestFoo.payload.map((p) =&gt; ({
+   foo: p.foo_field
+} as Foos))
+```
 
-R&amp;D had just discovered we could give basic bits of javascript code to the bacteria. The results were unexpected. We stored them with our unsafe sheets.
-
-Someone broke into our lab. They stole the unsafe ones, not knowing what they were doing. Now there are people walking around in circles or randomly just...stopping. That would be bad enough, except that the genetic code...is communicable. Apparently RNA is the greatest flash drive ever, and copies of bad code are transferring now from person to person, replicating itself every broken line by broken line. People are dying. People are becoming _undefined_ and it is all my fault. Maybe if we'd used TypeScript instead...
-## [6][I need a repo/github example that shows a project with BOTH js/tsx files?](https://www.reddit.com/r/typescript/comments/hgppi7/i_need_a_repogithub_example_that_shows_a_project/)
+But I'm getting a type error that `Type Foo[] is not assignable to type Foos`. What am I doing wrong?
+## [10][I need a repo/github example that shows a project with BOTH js/tsx files?](https://www.reddit.com/r/typescript/comments/hgppi7/i_need_a_repogithub_example_that_shows_a_project/)
 - url: https://www.reddit.com/r/typescript/comments/hgppi7/i_need_a_repogithub_example_that_shows_a_project/
 ---
 Basically, I have a legacy site in ".js" (react). I am moving it over to ".tsx", BUT I get sooo many errors when I change any file names to ".tsx". Its not only type errors, but I literally get errors on something simple like:  
@@ -329,29 +367,7 @@ Basically, I have a legacy site in ".js" (react). I am moving it over to ".tsx",
         "./src/**/*.jsx"
       ]
     }
-## [7][Mapping An Interface (Array)](https://www.reddit.com/r/typescript/comments/hgk3lc/mapping_an_interface_array/)
-- url: https://www.reddit.com/r/typescript/comments/hgk3lc/mapping_an_interface_array/
----
-Hi. I'm pretty new to `TypeScript` but have experience in other typed languages. I'm trying to do this:
-
-```
-interface Foo {
-  foo: string;
-}
-
-interface Foos {
-  [index: string]: Foo[];
-}
-
-let response: Foos;
-
-response = requestFoo.payload.map((p) =&gt; ({
-   foo: p.foo_field
-} as Foos))
-```
-
-But I'm getting a type error that `Type Foo[] is not assignable to type Foos`. What am I doing wrong?
-## [8][TypeScript React with Material-ui's makeStyles/withStyles/createStyles](https://www.reddit.com/r/typescript/comments/hggp5k/typescript_react_with_materialuis/)
+## [11][TypeScript React with Material-ui's makeStyles/withStyles/createStyles](https://www.reddit.com/r/typescript/comments/hggp5k/typescript_react_with_materialuis/)
 - url: https://www.reddit.com/r/typescript/comments/hggp5k/typescript_react_with_materialuis/
 ---
 I'm coming to react from the angular world, and I'm having a bit of trouble making sense of how react uses material-ui's makeStyles/withStyles/createStyles functionality. 
@@ -488,37 +504,3 @@ My stab at the middle component is this:
     
 
   It all works, but I don't know that this is the kosher way to do it...especially because of `classes={classes || { value: styles.value }}` i had to do `if (classes) delete classes.delta` as the `CaptionedValue` component complained about having  `.delta` passed to it.
-## [9][Introduction React Native, Typescript, Redux, Rxjs, Node.js, Mongo, Mongoose, Nexus Aurora Platform](https://www.reddit.com/r/typescript/comments/hg5g8z/introduction_react_native_typescript_redux_rxjs/)
-- url: https://www.youtube.com/watch?v=06wsg2f76hQ
----
-
-## [10][How to properly package a module for type definitions](https://www.reddit.com/r/typescript/comments/hg810t/how_to_properly_package_a_module_for_type/)
-- url: https://www.reddit.com/r/typescript/comments/hg810t/how_to_properly_package_a_module_for_type/
----
-I'm trying to create a module for type definitions to be shared across multiple typescript projects (mostly angular, but also typescript cloud functions). I was able to create a simple package with just a single index.d.ts file with all my types exported. However I've come across the issue of wanting a union type that I also need to access the members of in an array. What I did before I tried creating the shared module was the following:
-
-`export const UnionTypeList= [ 'type1', 'type2'] as const;`
-
-`export interface UnionType = typeof UnionTypeList[number]`
-
-However if I try declare a const array in the index.d.ts file it won't let me. I've moved it to a separate ts file and imported that into the definition file, but now Angular is telling me that file is not being included in typescript compilation despite me adding it to the .tsconfig files array.
-
-Is there any easier way I should be doing this? And please don't just tell me to use a monorepo, that's not the answer I'm looking for.
-## [11][Requiring property on a type based on the presence of another property.](https://www.reddit.com/r/typescript/comments/hg52p4/requiring_property_on_a_type_based_on_the/)
-- url: https://www.reddit.com/r/typescript/comments/hg52p4/requiring_property_on_a_type_based_on_the/
----
-So, I am not really sure what to search to find out more about this concept, and therefore I apologise in advance if this is a duplicate, but I have been stuck for a day now and need some help.
-
-I am using TS 3.6.4 in a React project, and I am using an interface to validate props passed to a component.
-
-So, let's say I have an interface called IButton as follows:
-
-    interface IButton {
-      label: string;
-      iconName?: string;
-      iconColor?: string;
-    }
-
-Is there a way I can only require `iconColor` be supplied only if `iconName` is present, and if `iconName` is not present, then have both required to be undefined?
-
-For some context, the reason I want to do this is because the button may not always have an icon, but when an icon is being used, the color for said icon is required alongside it.

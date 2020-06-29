@@ -21,111 +21,88 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][Is it cheaper to run a wordpress server using spot instances and external files(s3) and db behind an LB on Autoscale, than buying a reserved instance?](https://www.reddit.com/r/aws/comments/hh5rmj/is_it_cheaper_to_run_a_wordpress_server_using/)
-- url: https://www.reddit.com/r/aws/comments/hh5rmj/is_it_cheaper_to_run_a_wordpress_server_using/
+## [2][How do I check what access is available for a given Credentials programmatically?](https://www.reddit.com/r/aws/comments/hhx7kd/how_do_i_check_what_access_is_available_for_a/)
+- url: https://www.reddit.com/r/aws/comments/hhx7kd/how_do_i_check_what_access_is_available_for_a/
 ---
-We're running a few wordpress sites, some get spikes but generally low traffic. I keep seeing, 'save up to 90% on spot intsances' but it seems that the disappearance of a spot instance would bring the service down. Does anyone have any experience with trying this setup?
-## [3][Locked out of EC2 instance](https://www.reddit.com/r/aws/comments/hhdxbg/locked_out_of_ec2_instance/)
-- url: https://www.reddit.com/r/aws/comments/hhdxbg/locked_out_of_ec2_instance/
+I have a couple of aws credentials (Access + Security Key) and would like to know what are all the things it has access to.
+
+I do not have console access however. Just the keys and if there are any tools/scripts that can do it for me
+## [3][Full dark mode (for both text + code samples) now available on the AWS documentation](https://www.reddit.com/r/aws/comments/hhgh82/full_dark_mode_for_both_text_code_samples_now/)
+- url: https://www.reddit.com/r/aws/comments/hhgh82/full_dark_mode_for_both_text_code_samples_now/
 ---
-I've installed firewalld on a linux instance to make some port configurations and I remember setting up SSH ports permanent. But for some reason I'm locked out and no port responds which makes me wonder if I somehow haven't made the changes permanent.
-
-I can't get into it. Does anyone have an idea? Thanks ahed!
-## [4][Calling IOT Shadow Rest APIs with API Gateway?](https://www.reddit.com/r/aws/comments/hh9v2l/calling_iot_shadow_rest_apis_with_api_gateway/)
-- url: https://www.reddit.com/r/aws/comments/hh9v2l/calling_iot_shadow_rest_apis_with_api_gateway/
+Click 'Preferences' in the top right
+## [4][If you had $10,000 in AWS credits, what would you build?](https://www.reddit.com/r/aws/comments/hhxti4/if_you_had_10000_in_aws_credits_what_would_you/)
+- url: https://www.reddit.com/r/aws/comments/hhxti4/if_you_had_10000_in_aws_credits_what_would_you/
 ---
-I'm working on a project where I'm trying to get my IOT thing's shadow's state and update it from a web application. I'm thinking to doing this by using API gateway. I've created an IAM Role to allow Get/Update requests for that Thing.
-
-I've tried a couple of ways to do this:
-
-1. I set the integration type to HTTP, and set the endpoint to the shadow's URI. The issue with this is I can't set an IAM role that authenticates this request
-2. I change the integration type to AWS Service, and then to either IoT or IoT Data, and set the IAM Role, but neither of them work, because I can't set the endpoint.
-
-Not sure how to proceed with this, the only other thing I can think of is using Lambda, but I'd like to know if it's possible to do this without lambda.
-
-Thank you.
-## [5][Does the Elastic Beanstalk setup of Nginx have caching or similar enabled by default?](https://www.reddit.com/r/aws/comments/hh0ye2/does_the_elastic_beanstalk_setup_of_nginx_have/)
-- url: https://www.reddit.com/r/aws/comments/hh0ye2/does_the_elastic_beanstalk_setup_of_nginx_have/
+Free tier is often insufficient to get a great idea off the ground without going into debt. If you had $10,000 in AWS credits, what would you build?
+## [5][Power of Amazon Web Services](https://www.reddit.com/r/aws/comments/hhyljy/power_of_amazon_web_services/)
+- url: https://www.inflexguide.com/amazon-web-services-is-the-unbelievable-power-of-amazon/
 ---
-I just deployed my first Python Flask website through Elastic Beanstalk. I've been slowly working through the issues and have mostly resolved them. But now I'm trying to submit data through my API so I can populate my database. I was able to send my initial data for one table in which consisted of about 12500 POST requests. But as soon as I started on my second table's data I was only able to get one POST submitted before I started getting 500 errors. 
 
-In reading the logs it *feels* like something is cached by Nginx but I've tried restarting the application servers with no success getting past the issue.
-
-**Question**: Does the Nginx instance for Elastic Beanstalk do some sort of caching by default that will not allow my data to change for new POST requests?
-
-This is the related application log of note:
-
-* Jun 27 20:01:09 ip-172-31-33-164 web: sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1062, "Duplicate entry '**1111**' for key 'PRIMARY'")
-* Jun 27 20:01:09 ip-172-31-33-164 web: [SQL: INSERT INTO product (sku, title, media_id) VALUES (%(sku)s, %(title)s, %(media_id)s)]
-* Jun 27 20:01:09 ip-172-31-33-164 web: [parameters: {'sku': **2222**, 'title': 'Product1', 'media_id': 3}]
-
-The above is what happens when my API tries writing my POST request to the DB. But for some reason the first highlighted value of **1111** keeps being used for sku field instead of the one sent by the POST request, in this example **2222**. When running my code locally I don't have any issues and can make successful POST requests and input the data. Which is why I believe it's something with the deployment and not the code itself. The code is doing what it should and rejecting the database write but no matter how many requests with different data I send it always uses that same initial sku value of **1111** and won't change. I've looked for a hard-coded value in my code but there is none to be found.
-
-Here is the relevant python code from my API which should be adjusting the sku value every time.
-
-        product = Product(
-            sku=request.json['sku'],
-            title=request.json['title'],
-            media_id=determine_media_id(request.json['media'])
-        )
-
-Does anyone have any ideas of what may be going on?
-## [6][Trying to send data to API Gateway from Wordpress](https://www.reddit.com/r/aws/comments/hh8rto/trying_to_send_data_to_api_gateway_from_wordpress/)
-- url: https://www.reddit.com/r/aws/comments/hh8rto/trying_to_send_data_to_api_gateway_from_wordpress/
+## [6][Personal data backup using S3 buckets](https://www.reddit.com/r/aws/comments/hhev13/personal_data_backup_using_s3_buckets/)
+- url: https://www.reddit.com/r/aws/comments/hhev13/personal_data_backup_using_s3_buckets/
 ---
-I am new to using AWS, and I have a wordpress website with a form and I am trying to send the strings from the form to be processed by a Lambda function. I was told I should use an API Gateway which would work with a REST API to send to the Lambda function. I installed the AWS SDK for PHP on my wordpress website, but am lost at how I am supposed to send the data to the API Gateway. Any help is appreciated!
-## [7][AWS Rekognition Custom Label model failing](https://www.reddit.com/r/aws/comments/hgzxc4/aws_rekognition_custom_label_model_failing/)
-- url: https://www.reddit.com/r/aws/comments/hgzxc4/aws_rekognition_custom_label_model_failing/
----
-When I try to train a model using Rekognition Custom Labels, it gives me this error:
+Has anyone tried to do backup of personal data using Amazon S3 - without a third party service like dropbox or [box.com](https://box.com) ?
 
 &amp;#x200B;
 
-Less than 50% of labels overlap between the training and test datasets.
+wondering if that combined with Glacier can provide better value for secondary offsite backups for bulky data like years of personal photos and videos, or bulky media files generated when working with audio/video tools
 
 &amp;#x200B;
 
-&amp;#x200B;
-
-What does this mean and how can I fix it?
-## [8][CloudFormation - Get AutoscalingGroup ARN for use in IAM?](https://www.reddit.com/r/aws/comments/hh5wvr/cloudformation_get_autoscalinggroup_arn_for_use/)
-- url: https://www.reddit.com/r/aws/comments/hh5wvr/cloudformation_get_autoscalinggroup_arn_for_use/
+are there any simple (open source) tools that can help us manage such backups, say schedule backups from home network from select drives, avoid duplicates, etc?
+## [7][Account Locked, No Help Gotten](https://www.reddit.com/r/aws/comments/hhuksh/account_locked_no_help_gotten/)
+- url: https://www.reddit.com/r/aws/comments/hhuksh/account_locked_no_help_gotten/
 ---
-I'm sure this is a stupid question with an easy solution, but I can't seem to figure this out.
-
-I create an autoscaling group in my CF template and want to create an IAM role granting permissions to users to adjust the desired count. The IAM policy expects the ARN of the scaling group, but the autoscaling group resources only returns the Name if you use the Ref function and there is no Get::Att values. Since those names have UUID's in them, you can't  construct a very specific ARN yourself, since you don't know what the UUID is.
-
-How would I set the permissions then? Is there a way to get the ARN?
-## [9][Stream Processing Q for twitter data streaming](https://www.reddit.com/r/aws/comments/hh2yyw/stream_processing_q_for_twitter_data_streaming/)
-- url: https://www.reddit.com/r/aws/comments/hh2yyw/stream_processing_q_for_twitter_data_streaming/
+Last month I connected my django project to AWS S3. I've configured my payment methods and the bill was around a few cents. The next month, my site was stripped off the database and I checked my bucket only to see it locked. I checked my payment and it says nothing is due. I have set the payment method to automatic and despite seeing that I have nothing due for the month, my account is locked. I've emailed them but have not gotten any replies. How do I go about this?
+## [8][Architecting S3 and Lambda for configuration snapshots that do not change that often?](https://www.reddit.com/r/aws/comments/hhn4n6/architecting_s3_and_lambda_for_configuration/)
+- url: https://www.reddit.com/r/aws/comments/hhn4n6/architecting_s3_and_lambda_for_configuration/
 ---
-Hello,
+We want to store a snapshot of a resource configuration every 5 minutes in S3.
 
-I'm in the process of hashing out my ideas for a streaming data personal project. My intention is to capture streaming data from the twitter API based on hashtags that interest me. I have the data capture logic working locally and intend on deploying the py script over to an EC2 instance.
+The key is unique (based on value hash and timestamp) and the value contains json value of the configuration.
 
-I have a separate py script where I'd like to do the NLP-related tasks in a streaming fashion (e.g.  tokenization, sentiment analysis, bigram frequency, etc) and want to create a real-time dashboard where I can start doing some exploration with simple frequency-based bar charts in JS and put on my resume.
+We know that most users don't change their configuration 99% of times so 99% of data will be duplicate by the value. We are currently okay with this as we want to display configuration history to the users so they would know what their configuration was at any given timepoint. (How could you optimise that part so we wouldn't store duplicate data all the time?)
 
-I originally intended on using an Amazon Elasticsearch cluster but ran into a wall when I saw the complexity in sharing my kibana dashboard to the public.
+Anyways, the S3 put object event triggers Lambda function that checks if resource configuration changed and if that is true, then does its magic, if not, then it does nothing.
 
-**My main concern is in the streaming ETL stage**, as there are endless options out there, but since i'm within the AWS ecosystem I'd like to use Kinesis. From what I read, kinesis data firehose would be my best bet where I can rapidly load json documents onto S3 and have an event-triggered AWS lambda that picks up new JSON objects as they come in to the S3 store, loads them and possibly calculates the NLP stuff via the lambda function or using a Amazon EMR pyspark job? (kind of lost if this is the best approach for the nlp-stage). Also, I'm a bit lost on why It would be best to use s3 as a data lake and not do the ETL as it's streamed onto kinesis, then store it to something like PostgreSQL on RDS?
+Now the thing is, how the heck would you know what the previous resource value was as S3 doesn't support indexing?
 
-With the AWS architecture, is this the best pipeline to use for my use case? Or would it be more efficient to run batch jobs and do the analysis at the end of the day? ultimately I'd like to have a dashboard where I can view people's sentiment on a political hashtag that interests me and thought it would be cool to have this automated and in near-real time.
-## [10][Reminder: Terminate your free WorkSpaces by 30-Jun-20](https://www.reddit.com/r/aws/comments/hgl5hz/reminder_terminate_your_free_workspaces_by_30jun20/)
-- url: https://www.reddit.com/r/aws/comments/hgl5hz/reminder_terminate_your_free_workspaces_by_30jun20/
+Some options:
+1) Store processed value in redis and fetch it every time Lambda function is called and compare it to current value.
+2) Save metainfo (timestamp, and resource hash) into DynamoDB as well and query last resource hash with the latest timestamp to check if resource is different or not. Although I am not sure if DynamoDB is great fit for this, perhaps traditional RDS approach is better or maybe ElasticSearch?
+3) Use value hash as key instead, this means that each poller result is not unique anymore. So imagine a scenario, where:
+User configures resource and the hash of json is 1234.
+User changes a small detail and therefore the hash of json is 4321.
+User reverts the change, and we are back to the hash of 1234.
+Poller keepings polling, and we get 1234 hash all the time, and this key value is all overwritten in S3 all the time.
+However, the Lambda function doesn't know what the previous hash was, so this is always processed.
+
+What other options are there? How would you solve this?
+
+TL;DR: a resource configuration json is polled every 5 minutes and saved to S3, most of the times it does not change. How to make Lambda function, that gets triggered by S3 upload, aware what the previous hash was so that it would not do anything if the resource configuration did not change?
+## [9][DynamoDB Global Table with Lambda@Edge](https://www.reddit.com/r/aws/comments/hht7dg/dynamodb_global_table_with_lambdaedge/)
+- url: https://www.reddit.com/r/aws/comments/hht7dg/dynamodb_global_table_with_lambdaedge/
 ---
-Just a quick reminder, AWS' free WorkSpaces offer ends 30-Jun-2020. If you were using it to test out the service, please remember to terminate it to avoid additional charges.
+When using a DyanamoDB global table that is replicated to multiple regions there does not seem to be an easy way in Lambda@Edge to determine what is the closest AWS region to make API calls against.
 
-Thank you to Amazon for offering this.
-## [11][Storage from Cellphone to S3](https://www.reddit.com/r/aws/comments/hh6opq/storage_from_cellphone_to_s3/)
-- url: https://www.reddit.com/r/aws/comments/hh6opq/storage_from_cellphone_to_s3/
+It seems the way to do this would be to setup multiple CloudFront distributions, then have Route53 perform latency based routing to those CF distributions.  Finally in each CF distribution the Lambda@Edge function would map the CF DistributionId back to the particular AWS region as specified in the Route53 latency record.
+
+Is there a better approach that I'm missing?
+## [10][How to upload a file to s3 with Cognito auth](https://www.reddit.com/r/aws/comments/hhp8ph/how_to_upload_a_file_to_s3_with_cognito_auth/)
+- url: https://www.reddit.com/r/aws/comments/hhp8ph/how_to_upload_a_file_to_s3_with_cognito_auth/
 ---
-Hello
+I need to use an existing API to get access to upload a file to s3. The api should grant me enough info to upload a file to their s3 bucket. The API gives me the following info:
 
-I want to stop using google photos, but I still want to do the storage of my photos in some cloud service, I was wondering if I could use S3 Glacier Deep Archive, based on the simulation I did, I would pay something like $0.3 month (I just need to upload 35Gb one time, this is the size my backup of photos since 2010).
+1. a region
+2. s3 bucket name
+3. cognito identity id us-east-1:aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa
+4. A JWT Token (valid for a very short period of time)
 
-I don't need to do a lot of retrievals. The "tricky part" is I want to sync my photos from cell phone directly to S3.
+I'm not entirely sure what I can do with the jwt? When I decode it. it has an `amr":["authenticated","my-app","my-app:us-east-1:&lt;id&gt;:&lt;user id&gt;"` part to it. Can anyone tell me what this jwt is exactly?
 
-I was thinking in using a python script on my phone and using AWS SDK to upload to S3 and after a success upload, delete the photo from my phone.
-
-1. Do you think it's possible to do that?
-2. Any other idea?
+I'd like to use python to do the uploading, but not sure how this works. Can anyone point me in the right direction?
+## [11][Temporarily increasing hard disk storage?](https://www.reddit.com/r/aws/comments/hhs3ew/temporarily_increasing_hard_disk_storage/)
+- url: https://www.reddit.com/r/aws/comments/hhs3ew/temporarily_increasing_hard_disk_storage/
+---
+I am on 30GB free tier in my Windows ec2, sometimes I needed 80GB of storage for 2 hours, how do I increase the storage and revert it to 30GB free tier in a cost efficient way?

@@ -1,6 +1,6 @@
 # rust
-## [1][Hey Rustaceans! Got an easy question? Ask here (26/2020)!](https://www.reddit.com/r/rust/comments/hdku4k/hey_rustaceans_got_an_easy_question_ask_here/)
-- url: https://www.reddit.com/r/rust/comments/hdku4k/hey_rustaceans_got_an_easy_question_ask_here/
+## [1][Hey Rustaceans! Got an easy question? Ask here (27/2020)!](https://www.reddit.com/r/rust/comments/hhv4z1/hey_rustaceans_got_an_easy_question_ask_here/)
+- url: https://www.reddit.com/r/rust/comments/hhv4z1/hey_rustaceans_got_an_easy_question_ask_here/
 ---
 Mystified about strings? Borrow checker have you in a headlock? Seek help here! There are no stupid questions, only docs that haven't been written yet.
 
@@ -16,264 +16,191 @@ The official Rust Programming Language Discord: [https://discord.gg/rust-lang](h
 
 The unofficial Rust community Discord: [https://bit.ly/rust-community](https://bit.ly/rust-community)
 
-Also check out [last week's thread](https://reddit.com/r/rust/comments/h98zfz/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
+Also check out [last week's thread](https://reddit.com/r/rust/comments/hdku4k/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][This Week in Rust 344](https://www.reddit.com/r/rust/comments/hepkfq/this_week_in_rust_344/)
-- url: https://this-week-in-rust.org/blog/2020/06/23/this-week-in-rust-344/
+## [2][What's everyone working on this week (27/2020)?](https://www.reddit.com/r/rust/comments/hhv5ks/whats_everyone_working_on_this_week_272020/)
+- url: https://www.reddit.com/r/rust/comments/hhv5ks/whats_everyone_working_on_this_week_272020/
+---
+New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-27-2020/45101?u=llogiq)!
+## [3][#[feature(const_if_match)] has been stabilized](https://www.reddit.com/r/rust/comments/hhtl0q/featureconst_if_match_has_been_stabilized/)
+- url: https://github.com/rust-lang/rust/pull/72437#issuecomment-650814084
 ---
 
-## [3][xi-editor retrospective](https://www.reddit.com/r/rust/comments/hgzdu5/xieditor_retrospective/)
-- url: https://raphlinus.github.io/xi/2020/06/27/xi-retrospective.html
+## [4][TIL cargo has aliases like `cargo b` for `cargo build`](https://www.reddit.com/r/rust/comments/hhjvaj/til_cargo_has_aliases_like_cargo_b_for_cargo_build/)
+- url: https://www.reddit.com/r/rust/comments/hhjvaj/til_cargo_has_aliases_like_cargo_b_for_cargo_build/
 ---
+Might save you a few keystrokes !  
 
-## [4][Announcing autograph! A Machine Learning Library for Rust.](https://www.reddit.com/r/rust/comments/hh6fcs/announcing_autograph_a_machine_learning_library/)
-- url: https://www.reddit.com/r/rust/comments/hh6fcs/announcing_autograph_a_machine_learning_library/
+
+You can also declare custom aliases using `[alias]` in the `.cargo/config` file.  
+List of default aliases is:  
+
+    b = "build"
+    c = "check"
+    t = "test"
+    r = "run"
+## [5][Frustrated with the state of crates.io](https://www.reddit.com/r/rust/comments/hho5ec/frustrated_with_the_state_of_cratesio/)
+- url: https://www.reddit.com/r/rust/comments/hho5ec/frustrated_with_the_state_of_cratesio/
 ---
-# autograph
-Machine Learning Library for Rust
+I've been looking to create small but useful libraries, and looking for a name has been a very frustrating adventure between all the taken names that have no owners... And I don't mind if the library is well maintained or if it's used.
 
-# Features
-- Safe API
-- Thread Safe
-- CPU and CUDA are fully supported
-- Flexible (Dynamic Backward Graph)
+My current project is a light-weight type-safe Inversion-of-Control library. It could be used like this (actual tests):
 
-## Layers
-- Dense
-- Conv2d
-- MaxPool2d
-- Relu
-## Loss Functions
-- CrossEntropyLoss
-## Datasets
-- MNIST
+```rust
+    #[test]
+    fn it_works_with_non_copy_types() {
+        fn plus_one(a: &amp;Arc&lt;Mutex&lt;u32&gt;&gt;) -&gt; u32 {
+            *a.lock().unwrap() + 1
+        }
+        fn inc(a: &amp;Arc&lt;Mutex&lt;u32&gt;&gt;) -&gt; () {
+            *a.lock().unwrap() += 1;
+        }
 
-Available on crates.io: https://crates.io/crates/autograph  or github: https://github.com/charles-r-earp/autograph
+        let mut i = Injector::default();
+        i.add_value(Arc::new(Mutex::new(20u32)));
 
-One of the key goals of this crate is creating a Rust native environment for deep learning. It uses high performance libraries (oneDNN, cuDNN) for most operations, but operations can be implemented independently.
-There are some examples that train models on the MNIST dataset.  Defining a model looks like this:
+        assert_eq!(i.call(plus_one), 21);
+        i.call(inc);
+        assert_eq!(i.call(plus_one), 22);
+    }
 ```
-// A version of the LeNet5 Model
-struct Lenet5 {
-    conv1: Conv2d,
-    conv2: Conv2d,
-    dense1: Dense,
-    dense2: Dense,
-    dense3: Dense,
-}
 
-impl Lenet5 {
-    // new is the primary constructor for a struct
-    // Here we construct the model on the given device
-    // Note that currently Conv2d and Dense layers fill their parameters with zeros, so the model must be manually initialized
-    pub fn new(device: &amp;Device) -&gt; Self {
-        let conv1 = Conv2d::builder()
-            .device(&amp;device)
-            .inputs(1)
-            .outputs(6)
-            .kernel(5)
-            .build();
-        let conv2 = Conv2d::builder()
-            .device(&amp;device)
-            .inputs(6)
-            .outputs(16)
-            .kernel(5)
-            .build();
-        let dense1 = Dense::builder()
-            .device(&amp;device)
-            .inputs(256)
-            .outputs(120)
-            .build();
-        let dense2 = Dense::builder()
-            .device(&amp;device)
-            .inputs(120)
-            .outputs(84)
-            .build();
-        let dense3 = Dense::builder()
-            .device(&amp;device)
-            .inputs(84)
-            .outputs(10)
-            .bias()
-            .build();
-        Self {
-            conv1,
-            conv2,
-            dense1,
-            dense2,
-            dense3,
+Thought it could be useful, as I haven't seen any projects do that yet. I'm planning some stuff like value factories and singletons (right now it's all singletons), adding context and move semantics, etc.
+
+So the first name that came to mind is [Injector](https://crates.io/crates/injector) which stated, two years ago;
+
+&gt; Repository will be filled with existing source code soon. Thanks for your patience.
+
+The repository pointed at doesn't exist, there's no docs, and no dependents.
+
+So I started looking for another good name. [Tapioca](https://crates.io/crates/tapioca)? v0.0.1, 3 years ago, no repo again. [Brioche](https://crates.io/crates/brioche) seems like an actual project, and I'll give it the benefit of the doubt, but there isn't much. Just plain [Ioc](https://crates.io/crates/ioc)? 4 years old, but at least it's used; [di](https://crates.io/crates/di) hasn't been for 5 years.
+
+Geez. This reminds me of the early days of NPM, where people were just reserving names without any projects, just in case...
+
+I'm still looking, if you think of something. /rant
+## [6][Even Better TOML - Proper TOML Support for Visual Studio Code](https://www.reddit.com/r/rust/comments/hhq5ar/even_better_toml_proper_toml_support_for_visual/)
+- url: https://www.reddit.com/r/rust/comments/hhq5ar/even_better_toml_proper_toml_support_for_visual/
+---
+_No more "ugh what was that setting..."_
+
+[tl;dr: a TOML extension for VSCode.](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml)
+
+With Rust Analyzer becoming more awesome than ever, I felt that `Cargo.toml` and TOML in general needed some attention as well.
+
+There has also been a need for a format-preserving TOML parser in Rust, and I haven't really written any parsers in my life so it was time for one (and TOML is simple enough for a start, or so I thought).
+
+I originally wanted to contribute to Rust Analyzer (and still do), so a month ago I started working on a TOML parser in my favourite language. However I am not entirely happy with it yet (it is [Taplo](https://github.com/tamasfe/taplo) by the way), so instead of focusing on making a generic-purpose parser library I decided to make a VSCode extension based on it to test it out and shape it as I go.
+
+This is how [Even Better TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml) was born.
+
+It is not yet complete nor bug-free, but I consider it somewhat usable in its current state.
+I've just added experimental auto completion and such for `Cargo.toml` in it, which I personally was really missing.
+
+I haven't abandoned my original goal of contributing to Rust Analyzer, but I'm a bit hesitant as the code quality might not be up to par with that project's. I will probably contact them in the near future anyway.
+
+For now I invite you guys to check the extension out, and I hope you like it and/or find it useful!
+## [7][Show /r/rust: 🔥 in WASM](https://www.reddit.com/r/rust/comments/hhpchk/show_rrust_in_wasm/)
+- url: https://smmalis37.github.io/wasm-playground/
+---
+
+## [8][Sai - A minimal IoC/DI framework for Rust](https://www.reddit.com/r/rust/comments/hhyft8/sai_a_minimal_iocdi_framework_for_rust/)
+- url: https://github.com/zhming0/sai
+---
+
+## [9][Manipulating ports, virtual ports and pseudo terminals [Rust Wrocław Webinar, 06/10/2020]](https://www.reddit.com/r/rust/comments/hhvdw2/manipulating_ports_virtual_ports_and_pseudo/)
+- url: https://youtu.be/_cYz03jS7tk
+---
+
+## [10][rust-analyzer changelog #31](https://www.reddit.com/r/rust/comments/hhzlsq/rustanalyzer_changelog_31/)
+- url: https://rust-analyzer.github.io/thisweek/2020/06/29/changelog-31.html
+---
+
+## [11][Heliocron 0.4.0 - combine with cron to execute tasks relative to sunset/sunrise. Now has support for civil, nautical and astronomical dusk/dawn](https://www.reddit.com/r/rust/comments/hhnat5/heliocron_040_combine_with_cron_to_execute_tasks/)
+- url: https://www.reddit.com/r/rust/comments/hhnat5/heliocron_040_combine_with_cron_to_execute_tasks/
+---
+Long time Python programmer, relatively new Rust programmer. I've been steadily working on this command line application, Heliocron, which works hand in hand with cron to fire your crontab entries at times relative to various solar events.
+
+Originally supporting just sunrise and sunset (with an optional additional offset), support has now been added for civil, nautical and astronomical dawn and dusk.
+
+For reference
+
+* Sunset/rise is when the top of the sun disappears below the horizon
+* Civil dawn/dusk is when the centre of the sun is 6 degrees below the horizon
+* Nautical dawn/dusk is when the centre of the sun is 12 degrees below the horizon
+* Astronomical dawn/dusk is when the centre of the sun is 18 degrees below the horizon
+
+It's been tricky but very enjoyable learning a much lower level language, and it's been difficult to shake the python idioms and replace them with rust idioms. 
+
+[Here is the github repo to read further about the project.](https://github.com/mfreeborn/heliocron) 
+
+Open to suggestions for improvements both in functionality and code style.
+## [12][Rust structs - Wasm Loading dynamically](https://www.reddit.com/r/rust/comments/hhzmao/rust_structs_wasm_loading_dynamically/)
+- url: https://www.reddit.com/r/rust/comments/hhzmao/rust_structs_wasm_loading_dynamically/
+---
+Hey People,
+
+I got a small Problem with WebAssembly and its imports. I want to load the wasm file dynamically to my javascript file. It looks something like this:
+
+    //javascriptfile.js
+    
+    const rust = import('./../eye-move-image/pkg/eye_move_image_bg.wasm')
+    let code;
+    
+    function setup(m){
+        code = m;
+        console.log(code.greet());
+        let instance = code.Foo.new();
+        console.log(code.bar());
+    }
+    
+    rust
+        .then(m =&gt; setup(m))
+        .catch(console.error)
+
+And here the Rust file:
+
+    //rustfile.rs
+    use wasm_bindgen::prelude::*;
+    
+    #[wasm_bindgen]
+    pub fn greet() -&gt; i32{
+        42
+    }
+    
+    
+    #[wasm_bindgen]
+    pub struct Foo{
+        val : i32,
+    }
+    
+    #[wasm_bindgen]
+    impl  Foo{
+        pub fn new() -&gt; Foo{
+            Foo {
+                val: 3,
+            }
+        }
+    
+        pub fn bar(&amp;self) -&gt; i32{
+            self.val
         }
     }
-}
 
-// Layer is a core trait for Layers and Models
-impl Layer for Lenet5 {
-    // Gathers all the parameters in the model
-    fn parameters(&amp;self) -&gt; Vec&lt;ParameterD&gt; {
-        self.conv1
-            .parameters()
-            .into_iter()
-            .chain(self.conv2.parameters())
-            .chain(self.dense1.parameters())
-            .chain(self.dense2.parameters())
-            .chain(self.dense3.parameters())
-            .collect()
-    }
-    // Prepares the model for training (or evaluation)
-    fn set_training(&amp;mut self, training: bool) {
-        self.conv1.set_training(training);
-        self.conv2.set_training(training);
-        self.dense1.set_training(training);
-        self.dense2.set_training(training);
-        self.dense3.set_training(training);
-    }
-}
+I am compiling the rust code with the following Command without flags.
 
-// Forward is a trait for Layers and Models
-// Forward executes the forward pass, returning the prediction of the model
-impl Forward&lt;Ix4&gt; for Lenet5 {
-    type OutputDim = Ix2;
-    fn forward(&amp;self, input: &amp;Variable4) -&gt; Variable2 {
-        let pool_args = Pool2dArgs::default().kernel(2).strides(2);
-        // Variable has a forward(layer: impl Forward) method
-        // This makes it easy to chain several operations
-        input
-            .forward(&amp;self.conv1)
-            .relu()
-            .max_pool2d(&amp;pool_args)
-            .forward(&amp;self.conv2)
-            .relu()
-            .max_pool2d(&amp;pool_args)
-            .flatten()
-            .forward(&amp;self.dense1)
-            .relu()
-            .forward(&amp;self.dense2)
-            .relu()
-            .forward(&amp;self.dense3)
-    }
-}
-```
-There is a branch called extend_api, which provides the feature xapi, that enables certain methods to access otherwise private members necessary to add new ops to autograph. There is an example mnist_xapi_relu which demonstrates implementing ReLU from scratch in pure Rust and using it in a model. You can add new operations this way without using unsafe.
-Feedback and contributions welcome! This is very much a work in progress. Thanks for reading.
-## [5][png crate is now ~4x faster, supports APNG](https://www.reddit.com/r/rust/comments/hgrum2/png_crate_is_now_4x_faster_supports_apng/)
-- url: https://www.reddit.com/r/rust/comments/hgrum2/png_crate_is_now_4x_faster_supports_apng/
----
-[`png`](https://crates.io/crates/png) crate provides a pure-Rust, 100% safe PNG encoder and decoder.
+    wasm-pack build
 
- * Switched from `inflate` to `miniz_oxide` crate for DEFLATE decompression for up to 3x speedup
- * 30% speedup from taking advantage of auto-vectorization in filtering
- * Added support for APNG decoding. `image` crate also updated to support APNG
- * Performed extensive fuzzing, incl. on 32-bit which uncovered some panics and integer overflows
- * Tested the decoder on hundreds of thousands of real-world images, found no decoding failures
+By the wasm\_bindgen Guide( [https://rustwasm.github.io/docs/wasm-bindgen/examples/char.html](https://rustwasm.github.io/docs/wasm-bindgen/examples/char.html) )this should work, shouldn't it? I am kinda frustrated right now.
 
-This brings `png` crate roughly on par with the C `libpng` in terms of performance! And most of the above has been accomplished nearly single-handedly by /u/HeroicKatora. Kudos!
-
----
-
-`png` is part of the [image-rs](https://github.com/image-rs) organization that maintains pure-Rust, memory-safe decoders for common image formats. If you have ever loaded an image in Rust, it was through one of these crates.
-
-However, there are still some outstanding issues, and the maintainers have a lot on their plate as it is. If you'd like to get involved, here's a list of self-contained work items that would make for valuable contributions:
-
-* ["no data found" error on decoding a valid JPEG image](https://github.com/image-rs/image/issues/1234)
-* ["Index out of range" panic on decoding some GIF files](https://github.com/image-rs/image/issues/1238)
-* [infinite loop in into_stream_writer_with_size](https://github.com/image-rs/image-png/issues/206)
-* [Resizing causes artifacts on some images](https://github.com/image-rs/image/issues/862)
-* [Document BitDepth::Sixteen encoding](https://github.com/image-rs/image-png/issues/203)
-* [Panic: attempt to subtract with overflow](https://github.com/image-rs/jpeg-decoder/issues/132)
-
-And if you are interested in optimization, help on these issues would be much appreciated:
-
-* [Decoder::decode_internal is slow](https://github.com/image-rs/jpeg-decoder/issues/155) - this is a major performance bottleneck in JPEG decoding, taking up 75% of decoding time.
-* [inflate::core::init_tree() is slow](https://github.com/Frommi/miniz_oxide/issues/82) - this slows down decoding of very small PNG images.
-## [6][Best crate to convert DynamoDB JSON to a struct or a simpler JSON?](https://www.reddit.com/r/rust/comments/hhc5pm/best_crate_to_convert_dynamodb_json_to_a_struct/)
-- url: https://www.reddit.com/r/rust/comments/hhc5pm/best_crate_to_convert_dynamodb_json_to_a_struct/
----
-Can someone recommend a crate for converting \[DynamoDB JSON\]([https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API\_GetItem.html](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetItem.html)) to/from either a struct or plain JSON?
-
-This is what I found so far:
-
-* [https://github.com/mockersf/serde\_dynamodb](https://github.com/mockersf/serde_dynamodb) \- didn't compile, looks a bit bloated
-* [https://github.com/colbyn/dynamodb\_data](https://github.com/colbyn/dynamodb_data) \- worked out of the box, is quite minimal, but doesn't have much following
-
-I'm very new to Rust (2 weeks) and can't really tell if there are any major problems with either of them. Your opinions will be much appreciated.
-## [7]['Label', a library to annotate your functions](https://www.reddit.com/r/rust/comments/hh0es3/label_a_library_to_annotate_your_functions/)
-- url: https://www.reddit.com/r/rust/comments/hh0es3/label_a_library_to_annotate_your_functions/
----
-I made a thing!
-
-I created a library I called '[label](https://github.com/jonay2000/label)' which you can use to annotate functions with a custom label. It allows you to iterate over all labeled functions. Labels can be exported by libraries, for user to annotate their functions with. The library can then iterate over all annotated functions and call them. The idea for it was inspired by the way you can use python decorators to do a similar thing. In theory a system like label could be used for libraries such as rocket to find route functions instead of users needing to mount them.
-(this is just an example,  I doubt large libraries like rocket would ever use this haha). It is important to state that this library uses no global state during the compilation process.
-
-Label is fully typed, and the use of it has no overhead. When iterating, you are directly calling function pointers.
-
-        
-    use label::create_label;
-
-	// create a label named test
-	create_label!(fn test() -&gt; ());
-
-	// annotate a function by using the path to the label, followed by ::label.
-	#[test::label]
-	fn my_fn() {
-	    println!("Test!");
-	}
-
-	fn main() {
-	    println!("calling all functions with label 'test'");
-	    // using iter you can go through all functions with this annotation.
-	    for i in test::iter() {
-		i();
-	    }
-	}
+The console.log(greet()) call works. But The call of the new() methode doesnt, do you have to call the methods in a different way, or what is the problem?  
 
 
-Though the library is not done yet, it's now in a usable state. Any contributions are welcomed. 
-You can find the library at https://crates.io/crates/label
-## [8][Any way to make vim do this for rust?](https://www.reddit.com/r/rust/comments/hh6cue/any_way_to_make_vim_do_this_for_rust/)
-- url: https://www.reddit.com/r/rust/comments/hh6cue/any_way_to_make_vim_do_this_for_rust/
----
-Using the rust-analyzer plugin for Vscode.
+I am getting the error Message  
 
-There are inline hints about types and parameters.
 
-https://preview.redd.it/uf5kpv1t6k751.png?width=979&amp;format=png&amp;auto=webp&amp;s=9247cdc4ed7a3791b77ee81553dee8fff242a1f7
+    TypeError: Cannot read property 'new' of undefined
+        at setup (tets.js:8)
+        at eval (tets.js:13)
 
-I use the rust-analyser language server on neovim and used vim languageClient. but these type / parameters hints are not available. However, there are error hints
-
-&amp;#x200B;
-
-Any expert vim users know what is missing?
-## [9][compress-tools 0.6.0 released](https://www.reddit.com/r/rust/comments/hhe37l/compresstools_060_released/)
-- url: https://crates.io/crates/compress-tools
----
-
-## [10][Does rust have a production ready web server?](https://www.reddit.com/r/rust/comments/hh9tz6/does_rust_have_a_production_ready_web_server/)
-- url: https://www.reddit.com/r/rust/comments/hh9tz6/does_rust_have_a_production_ready_web_server/
----
-I found this post from 3 years ago, it says no: https://www.reddit.com/r/rust/comments/4rg3dy/production_ready_web_server/
-
-Has that changed?
-
-I would like to rewrite my NodeJS/Express + SocketIO backend in Rust with generic WebSockets, AWS, and the top web server framework (it doesn't look like theres a leader though, unlike javascript with express, correct me if I'm wrong) to get a slice of Rust's speedy fast performance. Is now a good time?
-
-Would I be getting the same degree of reliability?
-## [11][chrome-pwd-dumper-rs v0.3.0](https://www.reddit.com/r/rust/comments/hhaq5u/chromepwddumperrs_v030/)
-- url: https://www.reddit.com/r/rust/comments/hhaq5u/chromepwddumperrs_v030/
----
-Hello r/rust, version 0.3.0 of chrome-pwd-dumper-rs has been released!
-
-## Background
-chrome-pwd-dumper-rs was initially a learning project I started last year when I was transitioning from Kotlin to Rust. It only supported getting of passwords from Google chrome
-&amp;#x200B;
-
-## 0.3.0
-This version now supports over 20 chromium based browsers and is able to decrypt any browser that uses chromium v80 and above. Any feedback is appreciated!
-&amp;#x200B;
-
-[https://github.com/BudiNverse/chrome-pwd-dumper-rs](https://github.com/BudiNverse/chrome-pwd-dumper-rs)
-## [12][How to get into concurrency](https://www.reddit.com/r/rust/comments/hh16uv/how_to_get_into_concurrency/)
-- url: https://www.reddit.com/r/rust/comments/hh16uv/how_to_get_into_concurrency/
----
-I'm a web dev by trade becoming more and more familiar with async rust. I have had a decent education in academic computer science. 
-
-Any recommendations for papers or RFCs to read? In particular those relevant to eg tokio that I can use to get some background before diving in to some of the more serious uses of async?
+And i am using the npm start command to start my local server.

@@ -125,69 +125,65 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][HTML++: Write HTML documents using C++ templates](https://www.reddit.com/r/cpp/comments/hh0cjp/html_write_html_documents_using_c_templates/)
-- url: https://github.com/csb6/html-plus-plus
+## [3][Polymorphic Allocators, std::vector Growth and Hacking](https://www.reddit.com/r/cpp/comments/hhvyzb/polymorphic_allocators_stdvector_growth_and/)
+- url: https://www.bfilipek.com/2020/06/pmr-hacking.html
 ---
 
-## [4][doctest (the fastest feature-rich single-header testing framework) version 2.4.0 released - with JUnit reporting support!](https://www.reddit.com/r/cpp/comments/hh917p/doctest_the_fastest_featurerich_singleheader/)
+## [4]["An array of problems. An array of solutions" - Joel Falcou, MUC++](https://www.reddit.com/r/cpp/comments/hhvwb2/an_array_of_problems_an_array_of_solutions_joel/)
+- url: https://www.youtube.com/watch?v=IwBG_JjfcIA
+---
+
+## [5][Understand compile-time programming](https://www.reddit.com/r/cpp/comments/hho1bz/understand_compiletime_programming/)
+- url: https://www.reddit.com/r/cpp/comments/hho1bz/understand_compiletime_programming/
+---
+Hi everyone,
+
+I'm quite new to C++ programming, and it seems that compile-time programming is very trendy (at least in this sub).
+
+I struggle to understand the use-case of compile-time programming. From what I understand, the compiler does most of the computation, and it results in a very small binary, where you're basically only outputting the result of the compiler computations (It is  probably a very simplistic understanding, probably even false ..!)
+
+But as I understand it, there is no free-lunch, and someone still has to do the computation. With this approach, the work happens at compile time instead of runtime, but how can it be applied in the real world, where most programs receive input data, do some stuff, then output a result ?
+
+If I understand correctly, a compile time program can not do any sort of IO at runtime, and would therefore be useless in an application that needs to process data ?
+
+I would be really grateful to anyone capable of explaining how compile-time programming can be used, or just pointing me to the right link (I did not find the answer to my question on Google :()
+
+Thanks!
+## [6][GroundUpDb: Creating a database from the ground up in C++ for fun!](https://www.reddit.com/r/cpp/comments/hhzkag/groundupdb_creating_a_database_from_the_ground_up/)
+- url: https://www.reddit.com/r/cpp/comments/hhzkag/groundupdb_creating_a_database_from_the_ground_up/
+---
+Hi!
+
+I wanted to share the channel of Adam Fowler. I discovered trough a retweet of Andreas Kling. 
+
+&amp;#x200B;
+
+He is making a database from the ground up in modern C++ using TDD and good practices for carrying on the project. His roadmap covers a lot of really interesting things about SQL and No-SQL databases. He is on the third video of the series.
+
+[https://www.youtube.com/user/adamfowleruk/videos](https://www.youtube.com/user/adamfowleruk/videos)
+
+This is the github repo: [https://github.com/adamfowleruk/groundupdb](https://github.com/adamfowleruk/groundupdb)
+## [7][Effects of CPU Task Migration with C++ Async](https://www.reddit.com/r/cpp/comments/hhs96n/effects_of_cpu_task_migration_with_c_async/)
+- url: http://www.mycpu.org/task-migrations-c++/
+---
+
+## [8]["'tag_invoke' - An Actually Good Way to Do Customization Points" - Gašper Ažman, C++ London](https://www.reddit.com/r/cpp/comments/hhvwgt/tag_invoke_an_actually_good_way_to_do/)
+- url: https://www.youtube.com/watch?v=T_bijOA1jts
+---
+
+## [9][C++ Build Benchmarks](https://www.reddit.com/r/cpp/comments/hhh77h/c_build_benchmarks/)
+- url: https://build-bench.com/
+---
+
+## [10][Setup C++ and Visual Studio 2019](https://www.reddit.com/r/cpp/comments/hhz3d8/setup_c_and_visual_studio_2019/)
+- url: https://www.youtube.com/watch?v=ZixCyiMVFqc&amp;feature=share
+---
+
+## [11][Why don't we see CPP representation in tags like #100DaysOfCode?](https://www.reddit.com/r/cpp/comments/hhvzts/why_dont_we_see_cpp_representation_in_tags_like/)
+- url: https://www.reddit.com/r/cpp/comments/hhvzts/why_dont_we_see_cpp_representation_in_tags_like/
+---
+
+## [12][doctest (the fastest feature-rich single-header testing framework) version 2.4.0 released - with JUnit reporting support!](https://www.reddit.com/r/cpp/comments/hh917p/doctest_the_fastest_featurerich_singleheader/)
 - url: https://github.com/onqtam/doctest/releases/tag/2.4.0
 ---
 
-## [5][Declarative GUI frameworks in C++?](https://www.reddit.com/r/cpp/comments/hhacmh/declarative_gui_frameworks_in_c/)
-- url: https://www.reddit.com/r/cpp/comments/hhacmh/declarative_gui_frameworks_in_c/
----
-There are a lot of declarative GUI frameworks (or libraries) in different languages. The difference with the imperative approach is that you tell the framework *what* and now *how*, it's explained for example [here](https://flutter.dev/docs/get-started/flutter-for/declarative).
-
-In C++, there's QML. However declarative framework doesn't exactly mean a markup language, UI can be declaratively built in code as well, like it's done in [Elements](https://github.com/cycfi/elements/blob/master/examples/buttons/main.cpp#L64) project.
-
-Is there anything else built on top of, for example, wxWidgets and other existing libraries?
-## [6][CLI library v.1.2 Released](https://www.reddit.com/r/cpp/comments/hh1t12/cli_library_v12_released/)
-- url: https://github.com/daniele77/cli
----
-
-## [7][GCC 11: Change the default dialect to C++17](https://www.reddit.com/r/cpp/comments/hgjjcz/gcc_11_change_the_default_dialect_to_c17/)
-- url: https://gcc.gnu.org/git/?p=gcc.git;a=commitdiff;h=0801f419440c14f6772b28f763ad7d40f7f7a580
----
-
-## [8][Herb Sutter - Bridge to NewThingia: How to answer "why will yours succeed, when others have failed?"](https://www.reddit.com/r/cpp/comments/hgpryx/herb_sutter_bridge_to_newthingia_how_to_answer/)
-- url: https://www.youtube.com/watch?v=wIHfaH9Kffs
----
-
-## [9][How did CMake happen?](https://www.reddit.com/r/cpp/comments/hggpvj/how_did_cmake_happen/)
-- url: https://www.reddit.com/r/cpp/comments/hggpvj/how_did_cmake_happen/
----
-A programmer got up one day and thought to himself "I'm going to create something so bad, it will piss off everyone that has to touch it". This project was a cruel inside joke of a group of friends that hung around on IRC. They figured that if you create something over-engineered, badly designed, and uses pretty colors at the stdout, people will use it. You can even get funded by some government entity if you present your project with a nice powerpoint presentation.
-
-Fast-forward 20 years, and we're stuck with CMake. The joke became reality, and countless hours of high salary office workers have been wasted attempting to debug arcane messages, behavior, and a DSL that was designed in the darkest corners of hell.
-
-Now don't tell me CMake was not a joke. It is simply not possible for someone, or a group of people, to create such an abomination. They would have set fire to every physical copy of CMake known to mankind early in it's development after realizing it's horrible nature. Myth has it that if you use CMake, you must find another person within a week and get them to integrate CMake else you die in highly suspicious circumstances. Did you know that CMake is causing global warming due to the countless CPU cycles wasted trying to compile from source? Oh, the pure insanity that is the documentation. You want to compile a program? Take my advice, type those `g++` and `ld` commands by hand - doesn't matter how big your project is. Anything that avoids using CMake is a win in my book. 
-
-Know that some people, somewhere, are having the time of their lifes, rolling around in stacks of money earned through billed CMake consultancy hours, books, and conference talks.
-## [10][Compile-time integer-to-string conversion (C++17)](https://www.reddit.com/r/cpp/comments/hgcaih/compiletime_integertostring_conversion_c17/)
-- url: https://github.com/tcsullivan/constexpr-to-string
----
-
-## [11][In need of a console / reverse terminal](https://www.reddit.com/r/cpp/comments/hgxq96/in_need_of_a_console_reverse_terminal/)
-- url: https://www.reddit.com/r/cpp/comments/hgxq96/in_need_of_a_console_reverse_terminal/
----
-## The problem
-I have bunch of apps (mostly games) running on Windows/Mac/iOS/Android. They print/log stuff on terminals. On Android I got logcat. On Windows I can print in DevStudio debugger output or create an ugly terminal window and print there. On iOS I can see things in Xcode. None of these are convenient enough.
-
-## What I would like to have
-Some unified console in one place accepting connections over tcp and printing everything it receives. So no matter where I run the app everything will be displayed in one window on one machine. Preferably this console would support tabs, filtering, VT terminal colors, "exporting" to some HTML, timing, etc.
-
-## What I have
-I have some very simple logger which can connect to tcp and send stuff there. It can also redirect `stdout` there. I can also use `spdlog`. I can adopt their `tcp sink`:
-
-&lt;https://github.com/gabime/spdlog&gt;
-
-## What is missing
-The actual console application. Kind of like a reverse terminal which just accepts the connections and displays everything it receives. Does anybody know of anything like that is already available? I can probably carve up one rather quick around QTcpServer. I just don't want to reinvent the wheel if something like that already exists.
-## [12][Intel vs ARM memory model](https://www.reddit.com/r/cpp/comments/hggkpw/intel_vs_arm_memory_model/)
-- url: https://www.reddit.com/r/cpp/comments/hggkpw/intel_vs_arm_memory_model/
----
-The x86 has strong memory model. But what about ARM?
-
-With the Apple switch, I am wondering if code that uses C++ std::atomics, and that runs bug-free with Intel CPUs,
-could in fact reveal bugs when compiled for ARM (in case ARM has a weaker memory model).
-I am not speaking about compiler bugs of course, but about wrong use of std::atomics that are "hidden" when used on Intel CPUs.

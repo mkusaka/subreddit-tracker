@@ -125,15 +125,87 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Polymorphic Allocators, std::vector Growth and Hacking](https://www.reddit.com/r/cpp/comments/hhvyzb/polymorphic_allocators_stdvector_growth_and/)
+## [3][constexpr perfect hash functions with gperf](https://www.reddit.com/r/cpp/comments/hife4d/constexpr_perfect_hash_functions_with_gperf/)
+- url: https://www.reddit.com/r/cpp/comments/hife4d/constexpr_perfect_hash_functions_with_gperf/
+---
+I was toying around with gperf in an attempt to make code like
+
+    header["host"] = "https://foo.bar";
+
+more efficient: Because teh key "host" is known at compile time, there shouldn't be any runtime lookup code generated. So I tried to add a C++ constexpr hash function generator to gperf.
+
+Here is a little example gperf output: [https://godbolt.org/z/5dkdRL](https://godbolt.org/z/5dkdRL)
+
+Now with the help of gperf my header\["host"\]
+
+*  is completely resolved at compile time
+*  can even be used in a constexpr context (comfy static validation)
+*  and also transparently transfers into runtime.
+
+It worked out quite well and the gperf implementation appears less hackish than I anticipated it to be and the result seems useful and functional enough to share it for those who are interested. You can grab the changes from
+
+    wget https://0x1b04.eu/data/gperf.tar.xz
+    tar -xf gperf.tar.xz
+    cd gperf
+    git checkout constexpr
+    build as usual
+
+Usage:
+
+        %language=C++
+        %constexpr
+
+Generated hash functions compile very quickly and even if you use a big dictionary you still only pay for what you actually use as you can see here:
+
+[https://godbolt.org/z/-NLF5Z](https://godbolt.org/z/-NLF5Z)
+
+Only a single string ends up in the binary.
+
+Also added option %no-lines to suppress #line commands.
+## [4][[PROPOSAL] New way of defining main for C++23](https://www.reddit.com/r/cpp/comments/hikpil/proposal_new_way_of_defining_main_for_c23/)
+- url: https://www.reddit.com/r/cpp/comments/hikpil/proposal_new_way_of_defining_main_for_c23/
+---
+With C++20, we got `std::span`, a lightweight version of array wrappers like `std::array`. This container/view is even recommended by the Core C++ Guidelines to be used instead of pointers to C-style arrays, `std::vector` or `std::array` when passed as a parameter to functions, as it cheap to copy. What do you think, is it better if we have a "new" signature for `main`, defined like this:
+```c++
+int main(std::span&lt;std::string_view&gt; args)
+```
+
+EDIT: Changed `char*` to `std::string_view` as suggested by u/stilgarpl.
+## [5][GroundUpDb: Creating a database from the ground up in C++ for fun!](https://www.reddit.com/r/cpp/comments/hhzkag/groundupdb_creating_a_database_from_the_ground_up/)
+- url: https://www.reddit.com/r/cpp/comments/hhzkag/groundupdb_creating_a_database_from_the_ground_up/
+---
+Hi!
+
+I wanted to share the channel of Adam Fowler. I discovered trough a retweet of Andreas Kling. 
+
+&amp;#x200B;
+
+He is making a database from the ground up in modern C++ using TDD and good practices for carrying on the project. His roadmap covers a lot of really interesting things about SQL and No-SQL databases. He is on the third video of the series.
+
+[https://www.youtube.com/user/adamfowleruk/videos](https://www.youtube.com/user/adamfowleruk/videos)
+
+This is the github repo: [https://github.com/adamfowleruk/groundupdb](https://github.com/adamfowleruk/groundupdb)
+## [6][Visual Studio Workload Installation](https://www.reddit.com/r/cpp/comments/hievee/visual_studio_workload_installation/)
+- url: https://www.reddit.com/r/cpp/comments/hievee/visual_studio_workload_installation/
+---
+I've been trying to install my workloads for c++ to a different drive but the option is greyed out. I managed to change the installation path via regedit, but it is still asking me to have at least 5.13GB free on my C drive. It also appears when checking off each workload that the installation path was not changed, but only the displayed text was (Displayed text at the bottom of "Workloads" page showed C drive while the "Installation Locations" page showed as my other, correct drive.). If anyone has a fix for this, please reply. I have already searched a handful of subreddits that involve visual studio but couldn't find an answer.
+## [7][Polymorphic Allocators, std::vector Growth and Hacking](https://www.reddit.com/r/cpp/comments/hhvyzb/polymorphic_allocators_stdvector_growth_and/)
 - url: https://www.bfilipek.com/2020/06/pmr-hacking.html
 ---
 
-## [4]["An array of problems. An array of solutions" - Joel Falcou, MUC++](https://www.reddit.com/r/cpp/comments/hhvwb2/an_array_of_problems_an_array_of_solutions_joel/)
+## [8][Is there something like regexr.com but for C++? (explaining the code line by line)](https://www.reddit.com/r/cpp/comments/hi3m54/is_there_something_like_regexrcom_but_for_c/)
+- url: https://www.reddit.com/r/cpp/comments/hi3m54/is_there_something_like_regexrcom_but_for_c/
+---
+
+## [9]["An array of problems. An array of solutions" - Joel Falcou, MUC++](https://www.reddit.com/r/cpp/comments/hhvwb2/an_array_of_problems_an_array_of_solutions_joel/)
 - url: https://www.youtube.com/watch?v=IwBG_JjfcIA
 ---
 
-## [5][Understand compile-time programming](https://www.reddit.com/r/cpp/comments/hho1bz/understand_compiletime_programming/)
+## [10][Is there a C++ community similar to openJDK for Java?](https://www.reddit.com/r/cpp/comments/hi01lz/is_there_a_c_community_similar_to_openjdk_for_java/)
+- url: https://www.reddit.com/r/cpp/comments/hi01lz/is_there_a_c_community_similar_to_openjdk_for_java/
+---
+Just a general question about how C++ is maintained: is there an open source community (backed by companies) like the openJDK for Java? Or how is it maintained and developed?
+## [11][Understand compile-time programming](https://www.reddit.com/r/cpp/comments/hho1bz/understand_compiletime_programming/)
 - url: https://www.reddit.com/r/cpp/comments/hho1bz/understand_compiletime_programming/
 ---
 Hi everyone,
@@ -149,41 +221,7 @@ If I understand correctly, a compile time program can not do any sort of IO at r
 I would be really grateful to anyone capable of explaining how compile-time programming can be used, or just pointing me to the right link (I did not find the answer to my question on Google :()
 
 Thanks!
-## [6][GroundUpDb: Creating a database from the ground up in C++ for fun!](https://www.reddit.com/r/cpp/comments/hhzkag/groundupdb_creating_a_database_from_the_ground_up/)
-- url: https://www.reddit.com/r/cpp/comments/hhzkag/groundupdb_creating_a_database_from_the_ground_up/
----
-Hi!
-
-I wanted to share the channel of Adam Fowler. I discovered trough a retweet of Andreas Kling. 
-
-&amp;#x200B;
-
-He is making a database from the ground up in modern C++ using TDD and good practices for carrying on the project. His roadmap covers a lot of really interesting things about SQL and No-SQL databases. He is on the third video of the series.
-
-[https://www.youtube.com/user/adamfowleruk/videos](https://www.youtube.com/user/adamfowleruk/videos)
-
-This is the github repo: [https://github.com/adamfowleruk/groundupdb](https://github.com/adamfowleruk/groundupdb)
-## [7][Effects of CPU Task Migration with C++ Async](https://www.reddit.com/r/cpp/comments/hhs96n/effects_of_cpu_task_migration_with_c_async/)
-- url: http://www.mycpu.org/task-migrations-c++/
----
-
-## [8]["'tag_invoke' - An Actually Good Way to Do Customization Points" - Gašper Ažman, C++ London](https://www.reddit.com/r/cpp/comments/hhvwgt/tag_invoke_an_actually_good_way_to_do/)
+## [12]["'tag_invoke' - An Actually Good Way to Do Customization Points" - Gašper Ažman, C++ London](https://www.reddit.com/r/cpp/comments/hhvwgt/tag_invoke_an_actually_good_way_to_do/)
 - url: https://www.youtube.com/watch?v=T_bijOA1jts
----
-
-## [9][C++ Build Benchmarks](https://www.reddit.com/r/cpp/comments/hhh77h/c_build_benchmarks/)
-- url: https://build-bench.com/
----
-
-## [10][Setup C++ and Visual Studio 2019](https://www.reddit.com/r/cpp/comments/hhz3d8/setup_c_and_visual_studio_2019/)
-- url: https://www.youtube.com/watch?v=ZixCyiMVFqc&amp;feature=share
----
-
-## [11][Why don't we see CPP representation in tags like #100DaysOfCode?](https://www.reddit.com/r/cpp/comments/hhvzts/why_dont_we_see_cpp_representation_in_tags_like/)
-- url: https://www.reddit.com/r/cpp/comments/hhvzts/why_dont_we_see_cpp_representation_in_tags_like/
----
-
-## [12][doctest (the fastest feature-rich single-header testing framework) version 2.4.0 released - with JUnit reporting support!](https://www.reddit.com/r/cpp/comments/hh917p/doctest_the_fastest_featurerich_singleheader/)
-- url: https://github.com/onqtam/doctest/releases/tag/2.4.0
 ---
 

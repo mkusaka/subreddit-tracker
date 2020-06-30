@@ -1,5 +1,45 @@
 # ruby
-## [1]["Feels good to be in Rails right now"](https://www.reddit.com/r/ruby/comments/hhm3uj/feels_good_to_be_in_rails_right_now/)
+## [1][Rails 6.1 tracks Active Storage variant in the database](https://www.reddit.com/r/ruby/comments/hii694/rails_61_tracks_active_storage_variant_in_the/)
+- url: https://blog.bigbinary.com/2020/06/30/rails-6-1-tracks-active-storage-variant-in-the-database.html
+---
+
+## [2][Bubble sort](https://www.reddit.com/r/ruby/comments/hike73/bubble_sort/)
+- url: https://www.reddit.com/r/ruby/comments/hike73/bubble_sort/
+---
+Hi! Beginner here.
+
+So currently I'm trying to write a simple bubble sort code. In fact it works pretty well, but there's a problem with sorting at this point: gets.chomp.split(",") .
+
+    def bubble_sort(array)
+    n = array.length
+    loop do 
+    swapped = false
+    (n-1).times do |i| 
+    if array[i] &gt; array[i+1] 
+    array[i], array[i+1] = array[i+1], array[i] 
+    swapped = true end
+    end
+     break if not swapped
+    end 
+    array 
+    end
+    puts "Type your array:" array = gets.chomp.split(",")
+    p bubble_sort(array)
+
+When I type for example: 100,1,10 the output is correct. But then if I type: 10,1,4,66,0 the output is \["0", "1", "10", "4", "66"\].
+## [3][Fun Facts about Ruby #7](https://www.reddit.com/r/ruby/comments/hik1wb/fun_facts_about_ruby_7/)
+- url: https://i.redd.it/vb5p3jt4o0851.png
+---
+
+## [4][Build The World’s Simplest ETL (Extract, Transform, Load) Pipeline in Ruby With Kiba](https://www.reddit.com/r/ruby/comments/hi6loi/build_the_worlds_simplest_etl_extract_transform/)
+- url: https://towardsdatascience.com/build-the-worlds-simplest-etl-extract-transform-load-pipeline-in-ruby-with-kiba-e7093a29d35
+---
+
+## [5][The Ruby Spec Suite Compatibility Report](https://www.reddit.com/r/ruby/comments/hi5xnh/the_ruby_spec_suite_compatibility_report/)
+- url: https://eregon.me/blog/2020/06/27/ruby-spec-compatibility-report.html
+---
+
+## [6]["Feels good to be in Rails right now"](https://www.reddit.com/r/ruby/comments/hhm3uj/feels_good_to_be_in_rails_right_now/)
 - url: https://www.reddit.com/r/ruby/comments/hhm3uj/feels_good_to_be_in_rails_right_now/
 ---
 New rails tech is coming around and new big projects are launched on rails (like basecamp has released the new awesome [hey.com](https://hey.com) email platform running on rails without any major JS frameworks).
@@ -9,11 +49,7 @@ Chris Oliver from gorails discussed it in the [freshest remote ruby podcast](htt
 &gt;"It feels good to be in Rails right now"
 
 Do you share this feeling?
-## [2][The ancestor chain in Ruby](https://www.reddit.com/r/ruby/comments/hhxdz8/the_ancestor_chain_in_ruby/)
-- url: https://www.rubycademy.com/screencasts/12
----
-
-## [3][Is there a cleaner way of splitting strings multiple times](https://www.reddit.com/r/ruby/comments/hhyjzx/is_there_a_cleaner_way_of_splitting_strings/)
+## [7][Is there a cleaner way of splitting strings multiple times](https://www.reddit.com/r/ruby/comments/hhyjzx/is_there_a_cleaner_way_of_splitting_strings/)
 - url: https://www.reddit.com/r/ruby/comments/hhyjzx/is_there_a_cleaner_way_of_splitting_strings/
 ---
 Hi all,
@@ -72,7 +108,7 @@ Also any general feedback on construction would be appreciated as well.
     end
 
 &amp;#x200B;
-## [4][Noob to Ruby master recommendations](https://www.reddit.com/r/ruby/comments/hhtfl0/noob_to_ruby_master_recommendations/)
+## [8][Noob to Ruby master recommendations](https://www.reddit.com/r/ruby/comments/hhtfl0/noob_to_ruby_master_recommendations/)
 - url: https://www.reddit.com/r/ruby/comments/hhtfl0/noob_to_ruby_master_recommendations/
 ---
 I'm just getting started with programming, my current job is willing to pay for me to get a course or attend a conference. All though I'll probably would go for an interactive course so I can ask questions. Can I get some recommendations from the community? 
@@ -84,7 +120,7 @@ SQL advance queries
 ActiveRecord advance queries
 
 I work with a lot of data so having a depth knowledge of the last two would be awesome. Thank you in advance!
-## [5][Just started to publish API-only ruby on rails course. We’re building an Instapaper clone from scratch.](https://www.reddit.com/r/ruby/comments/hhb1ib/just_started_to_publish_apionly_ruby_on_rails/)
+## [9][Just started to publish API-only ruby on rails course. We’re building an Instapaper clone from scratch.](https://www.reddit.com/r/ruby/comments/hhb1ib/just_started_to_publish_apionly_ruby_on_rails/)
 - url: https://www.reddit.com/r/ruby/comments/hhb1ib/just_started_to_publish_apionly_ruby_on_rails/
 ---
 I'm happy that I just published the first two chapters of **API-only** ruby on rails course that I [mentioned](https://www.reddit.com/r/ruby/comments/gpebe0/im_planning_to_build_a_rails_course_would_you/) almost one month ago on this subreddit. 🎉🎉
@@ -94,7 +130,7 @@ In this course, we will build a functional clone of Instapaper from scratch. A
 You can reach the content from [https://duetcode.io/rails-api-only-course](https://duetcode.io/rails-api-only-course). Even though it's just two chapters, I wanted to share as early as possible to get some insights and feedback from the audience.
 
 Please, let me know if you have any thoughts/feedback about the content or the website in general.
-## [6][tapping_device - A new tool that helps you debug with ease](https://www.reddit.com/r/ruby/comments/hh93ss/tapping_device_a_new_tool_that_helps_you_debug/)
+## [10][tapping_device - A new tool that helps you debug with ease](https://www.reddit.com/r/ruby/comments/hh93ss/tapping_device_a_new_tool_that_helps_you_debug/)
 - url: https://www.reddit.com/r/ruby/comments/hh93ss/tapping_device_a_new_tool_that_helps_you_debug/
 ---
 Knowing what your objects "exactly" do can be hard when debugging a ruby program. Either using \`puts\` or debuggers requires you to jump between files and insert debugging code everywhere.
@@ -103,27 +139,3 @@ That's why I created a gem called [tapping\_device](https://github.com/st0012/ta
 
 
 https://preview.redd.it/9m2n2eib7l751.png?width=1200&amp;format=png&amp;auto=webp&amp;s=a69b519a2f8ba78a2e576e58ffe3c5f732570a40
-## [7][Gladiator (Glimmer Editor) - Ugliest Text Editor Ever!](https://www.reddit.com/r/ruby/comments/hgve8k/gladiator_glimmer_editor_ugliest_text_editor_ever/)
-- url: https://www.reddit.com/r/ruby/comments/hgve8k/gladiator_glimmer_editor_ugliest_text_editor_ever/
----
-&amp;#x200B;
-
-[Gladiator \(Glimmer Editor\)](https://preview.redd.it/9kstmde20h751.png?width=1233&amp;format=png&amp;auto=webp&amp;s=90b3e5edebba2916b4d220145ed3959374bae4ce)
-
-[https://github.com/AndyObtiva/glimmer-cs-gladiator](https://github.com/AndyObtiva/glimmer-cs-gladiator)
-## [8][Deploy Ruby On Rails On Google Cloud](https://www.reddit.com/r/ruby/comments/hgtok7/deploy_ruby_on_rails_on_google_cloud/)
-- url: https://youtu.be/3d7xBvmu6Z4
----
-
-## [9][rubocop and docker in vscode](https://www.reddit.com/r/ruby/comments/hhalj1/rubocop_and_docker_in_vscode/)
-- url: https://www.reddit.com/r/ruby/comments/hhalj1/rubocop_and_docker_in_vscode/
----
-Hello Folks, any idea how i can include rubocop in rails app with docker ?
-
-update Problem Solved with : 
-https://code.visualstudio.com/docs/remote/containers
-https://stelligent.com/2020/03/20/development-acceleration-through-vs-code-remote-containers-an-introduction/
-## [10][Fun Facts about Ruby #6](https://www.reddit.com/r/ruby/comments/hgokpp/fun_facts_about_ruby_6/)
-- url: https://i.redd.it/r9rmstmyde751.png
----
-

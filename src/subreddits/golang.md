@@ -1,58 +1,117 @@
 # golang
-## [1][go-app PWAs can now be deployed to github pages](https://www.reddit.com/r/golang/comments/hhqyte/goapp_pwas_can_now_be_deployed_to_github_pages/)
-- url: https://www.reddit.com/r/golang/comments/hhqyte/goapp_pwas_can_now_be_deployed_to_github_pages/
+## [1][The absence of const reference parameters in Go](https://www.reddit.com/r/golang/comments/hikq9s/the_absence_of_const_reference_parameters_in_go/)
+- url: https://www.reddit.com/r/golang/comments/hikq9s/the_absence_of_const_reference_parameters_in_go/
 ---
-[go-app](https://github.com/maxence-charriere/go-app) is a package to build progressive web apps with Go and WebAssembly.
+Why does Go not support const reference parameters similar to C++? Passing by value has overhead in making a copy and passing by pointer sacrifices the benefits of immutability. For a language that prides itself on performance and concurrency, const reference seems like such an obviously needed feature.
 
-Version 7 was released today, it now supports generating a static site, which can then be deployed on github pages.
+    // Simple Go struct
+    type Player struct {
+    	Name            string
+    	Team            string
+    	Age             int
+    	PointsPerGame   float64
+    	AssistsPerGame  float64
+    	ReboundsPerGame float64
+    }
+    
+    // An entire new Player Struct is created everytime function is called
+    func (p Player) SomeFunction() string {
+        return fmt.Sprintf("%s is %d years old.", p.Name, p.Age)
+    }
+    
+    // Vs pointer where copy is avoided but now allowing function to alter the struct
+    // when that's not necessary.
+    func (p *Player) SomeFunction() string {
+        return fmt.Sprintf("%s is %d years old.", p.Name, p.Age)
+    }
+    
+    // Why not have the best of both worlds with something like
+    func (p const *Player) SomeFunction() string {
+        return fmt.Sprintf("%s is %d years old.", p.Name, p.Age)
+    }
 
-I used this to build a web interface for [astextract](https://github.com/lu4p/astextract):  https://lu4p.github.io/astextract/
+Maybe I am overestimating the amount of resources spent on making a copy. But even in cases where the struct is small, it bothers me to think that anytime at all is being spent on making an unnecessary copy. Do you guys find yourselves using predominantly pointers (even when the function doesn't modify the struct) or is worrying about this just me trying to prematurely optimize?
 
-It was really easy (took only a few hours).
-
-Full Changelog: https://github.com/maxence-charriere/go-app/releases/tag/v7.0.2
-## [2][Goto: A dynamically typed interpreted programming language written in go.](https://www.reddit.com/r/golang/comments/hhylaa/goto_a_dynamically_typed_interpreted_programming/)
-- url: https://github.com/pandeykartikey/goto
+Any input is appreciated, I come from a Java and C++ background so the idea of pass by value for anything outside of primitive variable types is foreign to me.
+## [2][A sample task engine](https://www.reddit.com/r/golang/comments/hifopt/a_sample_task_engine/)
+- url: https://www.reddit.com/r/golang/comments/hifopt/a_sample_task_engine/
 ---
+I am writing a multi-coroutine task processing engine. Anyone want with me together.
 
-## [3][Using Docker &amp; private Go modules from Bitbucket](https://www.reddit.com/r/golang/comments/hhy176/using_docker_private_go_modules_from_bitbucket/)
-- url: https://akondas.com/Tales-of-Docker-and-Go-Part-II/
----
+I have 2+ years experience with golang, but i am just like a beginner. Maybe this is the philosophy of golang.
 
-## [4][How we improved performance and scored 100/100 by migrating to Hugo, S3 and AMP step by step tutorial](https://www.reddit.com/r/golang/comments/hhz8d7/how_we_improved_performance_and_scored_100100_by/)
-- url: https://medium.com/@fabisiakradoslaw/how-we-improved-performance-and-scored-100-100-by-migrating-to-hugo-s3-and-amp-step-by-step-d59283f8ae4b?source=friends_link&amp;sk=33b66b4f72bb4961241340c38acb56dd
----
+https://github.com/90634/gotaskengine
 
-## [5][plug - Minimal protobuf generated plugins for go](https://www.reddit.com/r/golang/comments/hhyukq/plug_minimal_protobuf_generated_plugins_for_go/)
-- url: https://github.com/elliotmr/plug
----
-
-## [6][Make, New and Literals Cheat Sheet - Slice and Map Initialization in Go](https://www.reddit.com/r/golang/comments/hhzwc5/make_new_and_literals_cheat_sheet_slice_and_map/)
-- url: https://qvault.io/2020/06/29/make-new-and-literals-cheat-sheet-slice-and-map-initialization-in-go/
----
-
-## [7][Clivern/Beetle - Kubernetes multi-cluster deployment automation service](https://www.reddit.com/r/golang/comments/hhzprf/clivernbeetle_kubernetes_multicluster_deployment/)
-- url: https://github.com/Clivern/Beetle
----
-
-## [8][Why you should write interfaces per-package](https://www.reddit.com/r/golang/comments/hha3pa/why_you_should_write_interfaces_perpackage/)
-- url: https://github.com/Evertras/go-interface-examples/tree/master/local-interfaces
----
-
-## [9][Effortless Versioning of Go Tools for Your Project? BinGo!](https://www.reddit.com/r/golang/comments/hhyaxr/effortless_versioning_of_go_tools_for_your/)
-- url: https://www.reddit.com/r/golang/comments/hhyaxr/effortless_versioning_of_go_tools_for_your/
----
-Since Go Team does not have yet full answer for the problem of versioning tools written in Go, we wrote a small open-source CLI tool that makes it easy and is built on Go Modules: [https://github.com/bwplotka/bingo](https://github.com/bwplotka/bingo)   
-
-
-You can read about it more here: [https://www.bwplotka.dev/2020/bingo/](https://www.bwplotka.dev/2020/bingo/)
-
-Feel free to check it out, give us feedback and contribute!  It's open-source so we can improve it together! (: 
-
-&amp;#x200B;
-
-HackerNews discussion: [https://news.ycombinator.com/item?id=23676587](https://news.ycombinator.com/item?id=23676587)
-## [10][Building a high performance JSON parser](https://www.reddit.com/r/golang/comments/hhb215/building_a_high_performance_json_parser/)
-- url: https://dave.cheney.net/high-performance-json.html
+This is my first post. Is this correct behavior?
+## [3][What are the limits of channels, and just how 'fast' are they?](https://www.reddit.com/r/golang/comments/hilolk/what_are_the_limits_of_channels_and_just_how_fast/)
+- url: https://tpaschalis.github.io/channels-limitations-speed/
 ---
 
+## [4][Question about Go channels.](https://www.reddit.com/r/golang/comments/hikks9/question_about_go_channels/)
+- url: https://www.reddit.com/r/golang/comments/hikks9/question_about_go_channels/
+---
+Hi, I am learning Go and I have the following example
+
+    package main
+    import (
+    	"fmt"
+    	"sync"
+    )
+    var wg = sync.WaitGroup{}
+    func main() {
+    	ch := make(chan int)
+    	counter := 0
+    	for j := 0; j &lt; 5; j++ {
+    		wg.Add(2)
+    		go func() {
+    			i := &lt;-ch
+    			fmt.Println(i)
+    			wg.Done()
+    		}()
+    		go func() {
+    			ch &lt;- counter
+    			counter++
+    			wg.Done()
+    		}()
+    	}
+    	wg.Wait()
+    }
+
+the output is   
+
+
+    0
+    1
+    1
+    0
+    2
+
+How can the output contain two 0's and two 1's, because numbers 0,1,2,3,4 enter the channel exactly once and after receiving a number from the channel the channel becomes empty. Thanks in advance.
+## [5][Senior Remote Golang Job](https://www.reddit.com/r/golang/comments/hil0ox/senior_remote_golang_job/)
+- url: https://www.works-hub.com/jobs/remote-senior-go-engineer-e69?utm_source=Linkedin&amp;utm_medium=Recruiter_Social&amp;utm_campaign=p.gubbey
+---
+
+## [6][Multi-Select Facet with Solr, Vue and Go](https://www.reddit.com/r/golang/comments/hijv8c/multiselect_facet_with_solr_vue_and_go/)
+- url: https://stevenferrer.github.io/posts/multi-select-facet-solr-vue-go
+---
+
+## [7][[Q] files with _debug.go suffix](https://www.reddit.com/r/golang/comments/hikygn/q_files_with_debuggo_suffix/)
+- url: https://www.reddit.com/r/golang/comments/hikygn/q_files_with_debuggo_suffix/
+---
+I've come across a project with files ending with _debug.go. For example there are two files in a folder. One is called security.go, the other is security_debug.go. Both these files have the same function signatures, so I'm not sure how the package even compiles The debug file has slightly modified function definitions.   
+
+I can't really find a reference to this. Are _debug files a golang feature similar to _test.go, or am I looking at some in-house solution, maybe an IDE feature?
+## [8][The How and Why of Go, Part 1: Tooling](https://www.reddit.com/r/golang/comments/hin7sn/the_how_and_why_of_go_part_1_tooling/)
+- url: http://okigiveup.net/the-how-and-why-of-go-part-1-tooling/
+---
+
+## [9][Vendor is suggesting concurrency for api calls](https://www.reddit.com/r/golang/comments/hin4ke/vendor_is_suggesting_concurrency_for_api_calls/)
+- url: https://www.reddit.com/r/golang/comments/hin4ke/vendor_is_suggesting_concurrency_for_api_calls/
+---
+ I have an api project using go-chi/chi and one of the calls is registering a user by inserting into a table. The performance is quite poor about 20 users/sec and the hosting vendor suggested we use concurrency libraries to fix this issue because the app is not using more memory available on the machine. Maybe I'm missing something but I've not seen concurrency for simple api calls and such usage on the interwebs.
+## [10][My second golang project.](https://www.reddit.com/r/golang/comments/himyba/my_second_golang_project/)
+- url: https://www.reddit.com/r/golang/comments/himyba/my_second_golang_project/
+---
+Check out [https://github.com/FarzamAlam/short-url](https://github.com/FarzamAlam/short-url) 
+
+Thank you golang community for making such amazing libraries and learning content free and opensource.

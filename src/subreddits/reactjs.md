@@ -109,11 +109,52 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/gk41zb/whos_available_may_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][I have a good corporate job not programming but I taught myself js and react for fun and I just kind of like it.](https://www.reddit.com/r/reactjs/comments/hhplsv/i_have_a_good_corporate_job_not_programming_but_i/)
-- url: https://www.reddit.com/r/reactjs/comments/hhplsv/i_have_a_good_corporate_job_not_programming_but_i/
+## [3][A one minute Demo of an app I made with React](https://www.reddit.com/r/reactjs/comments/hi5qhh/a_one_minute_demo_of_an_app_i_made_with_react/)
+- url: https://v.redd.it/hsj3khugip751
 ---
-I dont really need the extra money but should i freelance react development  outside of work and maybe move into full time in a few years?
-## [4][Papyr CMS - a jumping off point so you don't have to reinvent the wheel](https://www.reddit.com/r/reactjs/comments/hhyv4x/papyr_cms_a_jumping_off_point_so_you_dont_have_to/)
+
+## [4][Most simple shared state with React](https://www.reddit.com/r/reactjs/comments/hik3bx/most_simple_shared_state_with_react/)
+- url: https://twitter.com/sebastienlorber/status/1277897032057991171
+---
+
+## [5][React Styling Method](https://www.reddit.com/r/reactjs/comments/hilgs3/react_styling_method/)
+- url: https://www.reddit.com/r/reactjs/comments/hilgs3/react_styling_method/
+---
+I'm struggling to find an efficient and structured way for styling my components. I am currently using Sass and the BEM technique for styling.
+
+These are the methods I have tried so far:
+
+* Inline Styling - Great for scoping and convenient since logic, markup and styling are in the same file but lacks a lot of css functionality like psuedo-classes and sass functionality like nesting. It can get really long for large components unless I import it from a separate file.
+* Sass - Gives full functionality but lacks the ability to be scoped unless I give all component root elements a different className.
+* CSS Modules - Allows for scoping but classNames need to be applied using a variable `className={styles.button}` which makes the code look messy and hard to read.
+* Custom - Using a &lt;Box&gt; component as an alternative to &lt;div&gt; which gives additional functionality like conditional rendering. Also takes in tailwind-like classNames like `ml-4` but takes in these classNames in separate props like `position` and `spacing` which makes the class styling more understandable. This is purely for readability since all these props are simply combined in the Box component using `className={className + ' ' spacing + ' ' + position}` Also accepts custom class names like `col` and `cross-center` which I style using flexbox. An example of a Box component looks like  `&lt;Box position="col main-end cross-start" spacing="pb-8"&gt;&lt;/Box&gt;`.
+
+I recently learned Vue and found that having a `&lt;style lang="scss" scoped&gt;&lt;/style&gt;` in the same file along with the scoped attribute made it really convenient as it is scoped and logic, markup and styling are in the same file. I love working with react however the methods it offers for styling is something I have always been unhappy with especially when the project becomes very large.
+## [6][Are classes dead?](https://www.reddit.com/r/reactjs/comments/hik9pz/are_classes_dead/)
+- url: https://www.reddit.com/r/reactjs/comments/hik9pz/are_classes_dead/
+---
+I'm teaching myself React and I realized that classes can entirely be replaced by using hooks so is there really any point in using classes??
+## [7][React Resource Router - a performance focused router for React apps](https://www.reddit.com/r/reactjs/comments/hijpbm/react_resource_router_a_performance_focused/)
+- url: https://github.com/atlassian-labs/react-resource-router
+---
+
+## [8][Setting up Mobx with React context](https://www.reddit.com/r/reactjs/comments/him6nv/setting_up_mobx_with_react_context/)
+- url: https://www.reddit.com/r/reactjs/comments/him6nv/setting_up_mobx_with_react_context/
+---
+Mobx's Provider/inject pattern is obsolete from mobx-react 6.x and it is recommened to use Mobx with react context from 6.x but the docs are confusing as to how to setup Mobx with react context API so I wrote a detailed guide on how to setup Mobx with react context. It also works with React native. Please have a look - [https://codingislove.com/setup-mobx-react-context/](https://codingislove.com/setup-mobx-react-context/?ref=reddit)
+## [9][Virtual art gallery and studio I build using react](https://www.reddit.com/r/reactjs/comments/hilaii/virtual_art_gallery_and_studio_i_build_using_react/)
+- url: https://www.mondrian.fun/
+---
+
+## [10][API confusion.](https://www.reddit.com/r/reactjs/comments/hil3r7/api_confusion/)
+- url: https://www.reddit.com/r/reactjs/comments/hil3r7/api_confusion/
+---
+Hi, I am new to web development. I am highly confused about Api. What I understand is api is kind of like application interface which provides us ( browser) data from the third party websites. For eg I can use NASA's api to have weather data and also images. But many people are talking about customer api ...api being used as a server. For eg:
+
+" To the browser, also known as the *client*, Facebook’s server is an API. This means that every time you visit a page on the Web, you interact with some remote server’s API. "
+
+Can someone explain what really is Api ( especially in that facebook case)??
+## [11][Papyr CMS - a jumping off point so you don't have to reinvent the wheel](https://www.reddit.com/r/reactjs/comments/hhyv4x/papyr_cms_a_jumping_off_point_so_you_dont_have_to/)
 - url: https://www.reddit.com/r/reactjs/comments/hhyv4x/papyr_cms_a_jumping_off_point_so_you_dont_have_to/
 ---
 Hello r/reactjs,
@@ -136,67 +177,20 @@ Besides everything that comes packaged with Next.js, key features that come out 
 
 While I did not hit everything in that list, many of those features are common and necessary for most web applications and websites, making Papyr a perfect jumping-off point to build an even more robust web application, or to simply spin up a quick website.
 
-You can visit the home website at [https://papyrcms.herokuapp.com](https://papyrcms.herokuapp.com). Since great content is not necessarily my specialty, I have also created an example website with dummy content to show off more of what Papyr is capable of at [https://drkgrntt.herouapp.com](https://drkgrntt.herouapp.com). Check out the code at [https://github.com/drkgrntt/papyr-cms](https://github.com/drkgrntt/papyr-cms). 
+You can visit the home website at [https://papyrcms.herokuapp.com](https://papyrcms.herokuapp.com). Since great content is not necessarily my specialty, I have also created an example website with dummy content to show off more of what Papyr is capable of at [https://drkgrntt.herokuapp.com](https://drkgrntt.herokuapp.com). Check out the code at [https://github.com/drkgrntt/papyr-cms](https://github.com/drkgrntt/papyr-cms).
 
 While Papyr is designed to be super easy for developers to spin up a site and extend it easily, I have also tried to keep the non-developer client in mind as I build it. I have tried to keep it as simple as I can, but there is still the major issue of the setup process being non-dev-unfriendly (connecting to MongoDB and Heroku, etc). It is far from complete, but at this point, I feel like it is presentable and definitely usable.
 
 While I am mostly looking for feedback right now, if you think this is cool or useful, please feel free to clone and use it. Setup instructions are in the readme. I would love to answer any questions as well!
 
 Thanks for reading!
-## [5][CMS for unstructured data](https://www.reddit.com/r/reactjs/comments/hhxem6/cms_for_unstructured_data/)
-- url: https://www.reddit.com/r/reactjs/comments/hhxem6/cms_for_unstructured_data/
----
-Hi guys! I want to build a React application consisting of a registration form and some landing pages. Now what would be nice is if the marketing team can easily create or edit landing pages using some kind of editor. All those Headless CMS  work really well for structured data like blogs. But landing pages have different styles and different content.  Do you know something appropriate for this kind of job ?
-## [6][A highly scalable, performance focused React starter template, that focuses on best practices and a great developer experience.](https://www.reddit.com/r/reactjs/comments/hh9rxn/a_highly_scalable_performance_focused_react/)
-- url: https://github.com/react-boilerplate/react-boilerplate-cra-template/
----
 
-## [7][Best React Native course?](https://www.reddit.com/r/reactjs/comments/hhtdh5/best_react_native_course/)
-- url: https://www.reddit.com/r/reactjs/comments/hhtdh5/best_react_native_course/
----
-I usually love Stephen Grider's courses, but I was disappointed by his React Native course, because the UI looked completely shit and it's probably even more important than how the app is engineered since it's what managers care about the most in the end. Is there any better course? I tried Maximilian Schwarzmüller's course and didn't like it very much.
-## [8][How to properly structure reactjs projects](https://www.reddit.com/r/reactjs/comments/hhzp2g/how_to_properly_structure_reactjs_projects/)
-- url: https://www.reddit.com/r/reactjs/comments/hhzp2g/how_to_properly_structure_reactjs_projects/
----
-Howdy,
+&amp;#x200B;
 
-Currently learning react so I don't have any professional experience working on projects.
+Edit: typo
 
-Can anyone point me in the right direction for how to properly structure a react project that doesn't make me look like a complete noob.
-
-Typically strucutre like this - might be wrong/bad please let me know how to up my organisation game (very basic outline but can view [here](https://github.com/MitchAhoy/react-google-calc)) 
-
-* Project
-   * public
-      * index.html
-   * src
-      * components (folder)
-      * \-----dashboard (folder)
-      * \-----------------Dashboard.js
-      * helpers (folder)
-      * index.js
-      * App.js
-   * package.json
-   * package-lock.json
-
-Cheers
-## [9][In Git, Should i commit any change or just important changes in the project?](https://www.reddit.com/r/reactjs/comments/hhsqgm/in_git_should_i_commit_any_change_or_just/)
-- url: https://www.reddit.com/r/reactjs/comments/hhsqgm/in_git_should_i_commit_any_change_or_just/
----
-This part about using Git is confusing to me, should i commit every change like adding semicolon, or adding an empty line, or just i should pick only important changes in my code to commit, is there a golden rule??..Thanks in advance!
-## [10][Trendzz - Github trending PWA](https://www.reddit.com/r/reactjs/comments/hhyqyt/trendzz_github_trending_pwa/)
-- url: https://trendzz.netlify.app/
----
-
-## [11][Mimic Redux with the Context API](https://www.reddit.com/r/reactjs/comments/hhymes/mimic_redux_with_the_context_api/)
-- url: https://www.reddit.com/r/reactjs/comments/hhymes/mimic_redux_with_the_context_api/
----
-Yes, if you Google the title of this post you will find a lot of articles and videos on this topic. However, as of today I still haven't found code where a: rootReducer and Store is used.
-
-I want to keep my reducers separate from each other but on the other hand have to possibility to wrap all the components in App.js in a single Provider. Using multiple &lt;XContext.Provider&gt; components looks a bit burdensome to me. I love Redux for the fact that I can pass down the whole store to all App components with &lt;Provider&gt;.
-
-Anyone that has an example?
-## [12][Is React JS a library or framework and why?](https://www.reddit.com/r/reactjs/comments/hhy2uf/is_react_js_a_library_or_framework_and_why/)
-- url: https://webmobileappcreator.wordpress.com/2020/06/29/is-react-js-a-library-or-framework-and-why/
+Edit 2: Thank you all so much for the feedback and interest! I'm so excited you all like the idea and can't wait to continue working on it and sharing new updates along the way!
+## [12][A day in the life of a full stack developer.](https://www.reddit.com/r/reactjs/comments/hijva9/a_day_in_the_life_of_a_full_stack_developer/)
+- url: https://medium.com/@alex.leansquad/a-day-in-the-life-of-a-full-stack-developer-7efde6235ed7
 ---
 

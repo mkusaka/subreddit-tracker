@@ -21,88 +21,122 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][How do I check what access is available for a given Credentials programmatically?](https://www.reddit.com/r/aws/comments/hhx7kd/how_do_i_check_what_access_is_available_for_a/)
-- url: https://www.reddit.com/r/aws/comments/hhx7kd/how_do_i_check_what_access_is_available_for_a/
----
-I have a couple of aws credentials (Access + Security Key) and would like to know what are all the things it has access to.
-
-I do not have console access however. Just the keys and if there are any tools/scripts that can do it for me
-## [3][Full dark mode (for both text + code samples) now available on the AWS documentation](https://www.reddit.com/r/aws/comments/hhgh82/full_dark_mode_for_both_text_code_samples_now/)
-- url: https://www.reddit.com/r/aws/comments/hhgh82/full_dark_mode_for_both_text_code_samples_now/
----
-Click 'Preferences' in the top right
-## [4][If you had $10,000 in AWS credits, what would you build?](https://www.reddit.com/r/aws/comments/hhxti4/if_you_had_10000_in_aws_credits_what_would_you/)
-- url: https://www.reddit.com/r/aws/comments/hhxti4/if_you_had_10000_in_aws_credits_what_would_you/
----
-Free tier is often insufficient to get a great idea off the ground without going into debt. If you had $10,000 in AWS credits, what would you build?
-## [5][Power of Amazon Web Services](https://www.reddit.com/r/aws/comments/hhyljy/power_of_amazon_web_services/)
-- url: https://www.inflexguide.com/amazon-web-services-is-the-unbelievable-power-of-amazon/
+## [2][Looking to stay up to date on the latest #AWS Public Roadmaps? Here is a a Github repo which lists them so that you can find them in one place and stay updated.](https://www.reddit.com/r/aws/comments/hicf1p/looking_to_stay_up_to_date_on_the_latest_aws/)
+- url: https://github.com/johnculkin/UnofficialListOfPublicAWSRoadmaps
 ---
 
-## [6][Personal data backup using S3 buckets](https://www.reddit.com/r/aws/comments/hhev13/personal_data_backup_using_s3_buckets/)
-- url: https://www.reddit.com/r/aws/comments/hhev13/personal_data_backup_using_s3_buckets/
+## [3][Elemental Video on Demand diagram](https://www.reddit.com/r/aws/comments/himckb/elemental_video_on_demand_diagram/)
+- url: https://www.reddit.com/r/aws/comments/himckb/elemental_video_on_demand_diagram/
 ---
-Has anyone tried to do backup of personal data using Amazon S3 - without a third party service like dropbox or [box.com](https://box.com) ?
+As an exercise, I decided to make a diagram of AWS's [Video on Demand](https://aws.amazon.com/solutions/implementations/video-on-demand-on-aws/) solution. I did this in part because I felt the diagram they provided in the docs wasn't anywhere near detailed enough.
+
+Diagram Link:  [**https://app.ilograph.com/demo.ilograph.AWS%2520Video-On-Demand/Ingest%2520Workflow**](https://app.ilograph.com/demo.ilograph.AWS%2520Video-On-Demand/Ingest%2520Workflow)
+
+A few thoughts I had while working on this:
+
+* As you might expect, ingesting video it is a complex process (60 + steps), even with AWS Elemental doing the heavy lifting.
+* The example solution provided by AWS makes some interesting choices, such as re-using a lambda to kick off one of three different state machines depending on the input. This lambda is also invoked three different ways (S3 trigger, CloudWatch trigger, and invoked by another lambda). Hopefully this is conveyed clearly in the diagram above.
+* Some of the names the solution gives the resources are... not great. Examples include "Endpoint" (a MediaConvert endpoint), "DynamoDB Table", and "Sns Topic". As far as I can tell, there is no easy way to change these in the solution before deploying (or after, for that matter).
+## [4][Your own AI-powered Call Center on AWS in less than 1 hour](https://www.reddit.com/r/aws/comments/hinf9j/your_own_aipowered_call_center_on_aws_in_less/)
+- url: https://www.reddit.com/r/aws/comments/hinf9j/your_own_aipowered_call_center_on_aws_in_less/
+---
+Amazon Connect has always been a curiosity of mine, and I briefly worked in a startup whose primary focus was to make Call Center’s life easier for its operators. During that time, I went to Manilla to shadow one of those places, and the amount of energy, effort, and patience to run such a business is fantastic!
+
+[https://medium.com/@thiagodefaria/your-own-ai-powered-call-center-on-aws-in-less-than-1-hour-d0494049977c](https://medium.com/@thiagodefaria/your-own-ai-powered-call-center-on-aws-in-less-than-1-hour-d0494049977c)
+## [5][Amazon Virtual Private Cloud (VPC) customers can now use their own Prefix Lists to simplify the configuration of security groups and route tables](https://www.reddit.com/r/aws/comments/hia8fb/amazon_virtual_private_cloud_vpc_customers_can/)
+- url: https://aws.amazon.com/about-aws/whats-new/2020/06/amazon-virtual-private-cloud-customers-use-prefix-lists-simplify-configuration-security-groups-route-tables/
+---
+
+## [6][Сloud Security Fundamentals: Infrastructure Hardening and Cloud Computin...](https://www.reddit.com/r/aws/comments/hi19mo/сloud_security_fundamentals_infrastructure/)
+- url: https://www.reddit.com/r/aws/comments/hi19mo/сloud_security_fundamentals_infrastructure/
+---
+Learn cloud security fundamentals, explore popular benchmarks, learn how to protect different types of services, automate cloud compliance checks, and enhance operational security:  [**https://youtu.be/d52-fYISrLQ**](https://youtu.be/d52-fYISrLQ)  
+
+**About the Webinar:**
+
+During the Сloud Security Fundamentals webinar, DataArt’s experts delved into the aspects of shared responsibility in cloud security and compliance check automation. They reviewed the popular benchmarks such as TrendMicro and CloudSploit, shared the approaches to identity and access management hardening, and much more.
+
+In this cloud security tutorial, get insight on:
+
+— Key differences in security requirements for on-prem and cloud security architecture
+
+— Your duties keeping the cloud resources safe as a part of responsibility shared with the cloud provider
+
+— Cloud infrastructure hardening methods and ultimate cloud security goals
+
+— Popular security auditing benchmarks and tools, and how to adapt them to achieve your desired security level
+
+— Installing software updates and vulnerability management after migrating to the cloud
+## [7][Terraform / AWS &amp; Secrets](https://www.reddit.com/r/aws/comments/hik0vj/terraform_aws_secrets/)
+- url: https://www.reddit.com/r/aws/comments/hik0vj/terraform_aws_secrets/
+---
+Hi all
+
+How are you guys currently storing secrets created via Terraform (on AWS)?
 
 &amp;#x200B;
 
-wondering if that combined with Glacier can provide better value for secondary offsite backups for bulky data like years of personal photos and videos, or bulky media files generated when working with audio/video tools
+Previously I have used Hashicorp Vault for this but I want to explore other options as well with a view to avoiding storing the secret in the terraform state (which is what the Vault solution successfully achieved).
 
-&amp;#x200B;
+Do you just accept that it will be in the terraform state and lock down accordingly or are you using some other solution?
 
-are there any simple (open source) tools that can help us manage such backups, say schedule backups from home network from select drives, avoid duplicates, etc?
-## [7][Account Locked, No Help Gotten](https://www.reddit.com/r/aws/comments/hhuksh/account_locked_no_help_gotten/)
-- url: https://www.reddit.com/r/aws/comments/hhuksh/account_locked_no_help_gotten/
+Vault is very good, and I would recommend it, but I want to check out the other options too whilst I have some down time.
+
+Thanks
+## [8][another billing post](https://www.reddit.com/r/aws/comments/hijnqr/another_billing_post/)
+- url: https://www.reddit.com/r/aws/comments/hijnqr/another_billing_post/
 ---
-Last month I connected my django project to AWS S3. I've configured my payment methods and the bill was around a few cents. The next month, my site was stripped off the database and I checked my bucket only to see it locked. I checked my payment and it says nothing is due. I have set the payment method to automatic and despite seeing that I have nothing due for the month, my account is locked. I've emailed them but have not gotten any replies. How do I go about this?
-## [8][Architecting S3 and Lambda for configuration snapshots that do not change that often?](https://www.reddit.com/r/aws/comments/hhn4n6/architecting_s3_and_lambda_for_configuration/)
-- url: https://www.reddit.com/r/aws/comments/hhn4n6/architecting_s3_and_lambda_for_configuration/
+hi all,
+
+i know this gets asked often but i'd like to see if anyone has made recent progress.
+
+what i'd like to do is basically create stuff in aws, add tags, and have a single dashboard that shows everything with this tag show x amount dollars per time query. i have started using grafana because its flexible and powerful but i can't see any examples of people using tags to filter dashboards.
+
+has anyone used another products to query aws billing data with some success? do i need to get the data into another service or db to then query it.
+
+thanks.
+## [9][How to stay sane when managing tens-to-hundreds of lambda-backed repositories.](https://www.reddit.com/r/aws/comments/hi0wkv/how_to_stay_sane_when_managing_tenstohundreds_of/)
+- url: https://www.reddit.com/r/aws/comments/hi0wkv/how_to_stay_sane_when_managing_tenstohundreds_of/
 ---
-We want to store a snapshot of a resource configuration every 5 minutes in S3.
-
-The key is unique (based on value hash and timestamp) and the value contains json value of the configuration.
-
-We know that most users don't change their configuration 99% of times so 99% of data will be duplicate by the value. We are currently okay with this as we want to display configuration history to the users so they would know what their configuration was at any given timepoint. (How could you optimise that part so we wouldn't store duplicate data all the time?)
-
-Anyways, the S3 put object event triggers Lambda function that checks if resource configuration changed and if that is true, then does its magic, if not, then it does nothing.
-
-Now the thing is, how the heck would you know what the previous resource value was as S3 doesn't support indexing?
-
-Some options:
-1) Store processed value in redis and fetch it every time Lambda function is called and compare it to current value.
-2) Save metainfo (timestamp, and resource hash) into DynamoDB as well and query last resource hash with the latest timestamp to check if resource is different or not. Although I am not sure if DynamoDB is great fit for this, perhaps traditional RDS approach is better or maybe ElasticSearch?
-3) Use value hash as key instead, this means that each poller result is not unique anymore. So imagine a scenario, where:
-User configures resource and the hash of json is 1234.
-User changes a small detail and therefore the hash of json is 4321.
-User reverts the change, and we are back to the hash of 1234.
-Poller keepings polling, and we get 1234 hash all the time, and this key value is all overwritten in S3 all the time.
-However, the Lambda function doesn't know what the previous hash was, so this is always processed.
-
-What other options are there? How would you solve this?
-
-TL;DR: a resource configuration json is polled every 5 minutes and saved to S3, most of the times it does not change. How to make Lambda function, that gets triggered by S3 upload, aware what the previous hash was so that it would not do anything if the resource configuration did not change?
-## [9][DynamoDB Global Table with Lambda@Edge](https://www.reddit.com/r/aws/comments/hht7dg/dynamodb_global_table_with_lambdaedge/)
-- url: https://www.reddit.com/r/aws/comments/hht7dg/dynamodb_global_table_with_lambdaedge/
+If you already use or are considering adopting lambdas/kinesis for data processing, [I wrote an article](https://medium.com/whispering-data/tackling-fragmentation-in-serverless-data-pipelines-b4027f506ee5) on dealing with deploying tens-to-hundreds of lambda-based repos in a sane manner.
+## [10][Permission boundary policy denying VPC "edit dns resolution" and "edit dns hostnames" how?](https://www.reddit.com/r/aws/comments/hiibcf/permission_boundary_policy_denying_vpc_edit_dns/)
+- url: https://www.reddit.com/r/aws/comments/hiibcf/permission_boundary_policy_denying_vpc_edit_dns/
 ---
-When using a DyanamoDB global table that is replicated to multiple regions there does not seem to be an easy way in Lambda@Edge to determine what is the closest AWS region to make API calls against.
+Hello fellow Cloud-fans
 
-It seems the way to do this would be to setup multiple CloudFront distributions, then have Route53 perform latency based routing to those CF distributions.  Finally in each CF distribution the Lambda@Edge function would map the CF DistributionId back to the particular AWS region as specified in the Route53 latency record.
+Im currently hardening our organizations primary VPC and a subtask here is to strengthen the Permission Boundary on the role that all regular users are using, and here occurs a problem for me. I need to deny the users access to edit  "dns resolution" and "dns hostnames" for this specific VPC, however, I see no IAM actions that cover these 2 actions, so how do I deny it without using a wildcard?  
+   
+For reference: Other hardening actions I've already implemented to protect this specific VPC(if you have suggestions for additions please do share):
 
-Is there a better approach that I'm missing?
-## [10][How to upload a file to s3 with Cognito auth](https://www.reddit.com/r/aws/comments/hhp8ph/how_to_upload_a_file_to_s3_with_cognito_auth/)
-- url: https://www.reddit.com/r/aws/comments/hhp8ph/how_to_upload_a_file_to_s3_with_cognito_auth/
+* Block modification/Deletion of DHCP options for our specific VPC
+   * ec2:DeleteDhcpOptions 
+   * ec2:AssociateDhcpOptions 
+* Block modification of CIDR blocks for our specific VPC
+   * ec2:DisassociateVpcCidrBlock 
+* Block deletion of our specific VPC
+   * ec2:DeleteVpc 
+* **Block "edit dns resolution" for our specific VPC?**
+* **Block "edit dns hostnames" for our specific VPC**
+* Block modification of tags for our specific VPC
+   * ec2:DeleteTags
+* Block modification of ACLs for our specific VPC
+   * ec2:ReplaceNetworkAclAssociation
+   * ec2:DeleteNetworkAclEntry 
+   * ec2:CreateNetworkAclEntry 
+* Block modification of RouteTable for our specific VPC
+   * ec2:DisassociateRouteTable 
+   * ec2:ReplaceRoute 
+* Block modification of subnets for our specific VPC
+   * ec2:DisassociateSubnetCidrBlock 
+   * ec2:AssociateSubnetCidrBlock 
+   * ec2:DeleteSubnet 
+
+ I don't want to block them from all VPC changes as they need to be able to perform certain ones.
+
+I guess an alternative could be to use the deny everything wildcard and then use NotActions for the select few actions that the user should be allowed to perform. I would very much prefer to only deny those I need to deny though as I might unexpectedly block the users from performing actions I'm not aware of right now.
+## [11][Best way to log very small amounts of data from Lambda/python?](https://www.reddit.com/r/aws/comments/hiht4o/best_way_to_log_very_small_amounts_of_data_from/)
+- url: https://www.reddit.com/r/aws/comments/hiht4o/best_way_to_log_very_small_amounts_of_data_from/
 ---
-I need to use an existing API to get access to upload a file to s3. The api should grant me enough info to upload a file to their s3 bucket. The API gives me the following info:
+I'm writing a small lambda function to be used by the public, and I'd like to keep a record of the data submitted. It will be very low volume, so even SES could be used for this; but ideally I'd like to just have a csv of the data. 
 
-1. a region
-2. s3 bucket name
-3. cognito identity id us-east-1:aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa
-4. A JWT Token (valid for a very short period of time)
-
-I'm not entirely sure what I can do with the jwt? When I decode it. it has an `amr":["authenticated","my-app","my-app:us-east-1:&lt;id&gt;:&lt;user id&gt;"` part to it. Can anyone tell me what this jwt is exactly?
-
-I'd like to use python to do the uploading, but not sure how this works. Can anyone point me in the right direction?
-## [11][Temporarily increasing hard disk storage?](https://www.reddit.com/r/aws/comments/hhs3ew/temporarily_increasing_hard_disk_storage/)
-- url: https://www.reddit.com/r/aws/comments/hhs3ew/temporarily_increasing_hard_disk_storage/
----
-I am on 30GB free tier in my Windows ec2, sometimes I needed 80GB of storage for 2 hours, how do I increase the storage and revert it to 30GB free tier in a cost efficient way?
+Can anyone recommend the simplest way to log a few pieces of data from python/lambda? Wondering if cloudtrail might be the easiest.

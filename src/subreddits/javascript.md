@@ -85,43 +85,43 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][The JS1024 javascript golfing competition is about to start!](https://www.reddit.com/r/javascript/comments/hhwdip/the_js1024_javascript_golfing_competition_is/)
-- url: http://js1024.fun/
+## [3][A cross-platform and open-source document scanner that I built with React Native at a hackathon](https://www.reddit.com/r/javascript/comments/higgdw/a_crossplatform_and_opensource_document_scanner/)
+- url: https://github.com/burhanuday/invoice-scanner-react-native
 ---
 
-## [4][Write better tests with "Testing Hooks" pattern](https://www.reddit.com/r/javascript/comments/hhvdji/write_better_tests_with_testing_hooks_pattern/)
-- url: https://gregberge.com/blog/testing-hooks
+## [4][Determine the best build tool for your next web project](https://www.reddit.com/r/javascript/comments/hiia95/determine_the_best_build_tool_for_your_next_web/)
+- url: https://bundlers.tooling.report/
 ---
 
-## [5][Papyr CMS - a jumping off point so you don't have to reinvent the wheel](https://www.reddit.com/r/javascript/comments/hhyy5k/papyr_cms_a_jumping_off_point_so_you_dont_have_to/)
-- url: https://papyrcms.herokuapp.com
+## [5][Awesome list of finite state machines and statecharts content](https://www.reddit.com/r/javascript/comments/himkd7/awesome_list_of_finite_state_machines_and/)
+- url: https://github.com/leonardomso/awesome-fsm
 ---
 
-## [6][angeal185/clonescript A lightning fast, ultra small javascript template engine](https://www.reddit.com/r/javascript/comments/hhys3v/angeal185clonescript_a_lightning_fast_ultra_small/)
-- url: https://github.com/angeal185/clonescript
+## [6][8 Steps to Get 100 Stars on GitHub](https://www.reddit.com/r/javascript/comments/him1fy/8_steps_to_get_100_stars_on_github/)
+- url: https://dev.to/nastyox1/8-concrete-steps-to-get-stars-on-github-355c
 ---
 
-## [7][I made a website with react.js and firebase as backend that syncs up media in a party. Anyone can create a party an join with friends, add a queue, etc. Github source in comments](https://www.reddit.com/r/javascript/comments/hhhanf/i_made_a_website_with_reactjs_and_firebase_as/)
-- url: https://everything-party.web.app
+## [7][Braille, and the evolution of software development](https://www.reddit.com/r/javascript/comments/hijexx/braille_and_the_evolution_of_software_development/)
+- url: https://stitcher.io/blog/braille-and-the-history-of-software
 ---
 
-## [8][Transfer Files from Microsoft OneDrive to Google Cloud Storage](https://www.reddit.com/r/javascript/comments/hhf3sz/transfer_files_from_microsoft_onedrive_to_google/)
-- url: https://github.com/mehmetsefabalik/onedrive-to-gcs
+## [8][Synchly - CLI to automate database backups with customizable recurring schedules.](https://www.reddit.com/r/javascript/comments/hijym8/synchly_cli_to_automate_database_backups_with/)
+- url: https://github.com/hariprasanths/synchly
 ---
 
-## [9][How to Assign an Avatar and Shield Based on Username in React](https://www.reddit.com/r/javascript/comments/hht49b/how_to_assign_an_avatar_and_shield_based_on/)
-- url: https://medium.com/@kennethscoggins/how-to-assign-an-avatar-and-shield-based-on-username-in-react-5b9553fc0700?source=friends_link&amp;sk=0c0e00136b82704b121aa16fc419092a
+## [9][parallax-effect - Parallax effect in javascript using webcam face tracking](https://www.reddit.com/r/javascript/comments/hi0xvd/parallaxeffect_parallax_effect_in_javascript/)
+- url: https://github.com/munrocket/parallax-effect
 ---
 
-## [10][Library that helps to solve open-redirection vulnerability](https://www.reddit.com/r/javascript/comments/hhvrti/library_that_helps_to_solve_openredirection/)
-- url: https://github.com/Trendyol/safe-redirect
+## [10][Service Workers Explained - Introduction to the JavaScript API](https://www.reddit.com/r/javascript/comments/hi1br9/service_workers_explained_introduction_to_the/)
+- url: https://felixgerschau.com/service-workers-explained-introduction-javascript-api/
 ---
 
-## [11][peer-cdn · Lightweight library providing peer to peer CDN functionality](https://www.reddit.com/r/javascript/comments/hh6qsp/peercdn_lightweight_library_providing_peer_to/)
-- url: https://rafallorenz.com/peer-cdn/
+## [11][Textures.js - SVG patterns for Data Visualization](https://www.reddit.com/r/javascript/comments/hi0ppd/texturesjs_svg_patterns_for_data_visualization/)
+- url: https://riccardoscalco.it/textures/
 ---
 
-## [12][How I Faked Millions of NPM Downloads with 10 lines of code! (My First ever Blog!)](https://www.reddit.com/r/javascript/comments/hhw1y0/how_i_faked_millions_of_npm_downloads_with_10/)
-- url: https://elitedamyth.xyz/2020-06-29-Faking-NPM-Downloads/
+## [12][NPM eco-system needs an update... Thoughts?](https://www.reddit.com/r/javascript/comments/hian1n/npm_ecosystem_needs_an_update_thoughts/)
+- url: https://news.ycombinator.com/item?id=23678409
 ---
 

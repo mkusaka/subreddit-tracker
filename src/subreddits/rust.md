@@ -23,184 +23,65 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/hhv5ks/whats_everyone_working_on_this_week_272020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-27-2020/45101?u=llogiq)!
-## [3][#[feature(const_if_match)] has been stabilized](https://www.reddit.com/r/rust/comments/hhtl0q/featureconst_if_match_has_been_stabilized/)
-- url: https://github.com/rust-lang/rust/pull/72437#issuecomment-650814084
+## [3][We really need to avoid npm fate](https://www.reddit.com/r/rust/comments/hiew1o/we_really_need_to_avoid_npm_fate/)
+- url: https://sambleckley.com/writing/npm.html
 ---
 
-## [4][TIL cargo has aliases like `cargo b` for `cargo build`](https://www.reddit.com/r/rust/comments/hhjvaj/til_cargo_has_aliases_like_cargo_b_for_cargo_build/)
-- url: https://www.reddit.com/r/rust/comments/hhjvaj/til_cargo_has_aliases_like_cargo_b_for_cargo_build/
----
-Might save you a few keystrokes !  
-
-
-You can also declare custom aliases using `[alias]` in the `.cargo/config` file.  
-List of default aliases is:  
-
-    b = "build"
-    c = "check"
-    t = "test"
-    r = "run"
-## [5][Frustrated with the state of crates.io](https://www.reddit.com/r/rust/comments/hho5ec/frustrated_with_the_state_of_cratesio/)
-- url: https://www.reddit.com/r/rust/comments/hho5ec/frustrated_with_the_state_of_cratesio/
----
-I've been looking to create small but useful libraries, and looking for a name has been a very frustrating adventure between all the taken names that have no owners... And I don't mind if the library is well maintained or if it's used.
-
-My current project is a light-weight type-safe Inversion-of-Control library. It could be used like this (actual tests):
-
-```rust
-    #[test]
-    fn it_works_with_non_copy_types() {
-        fn plus_one(a: &amp;Arc&lt;Mutex&lt;u32&gt;&gt;) -&gt; u32 {
-            *a.lock().unwrap() + 1
-        }
-        fn inc(a: &amp;Arc&lt;Mutex&lt;u32&gt;&gt;) -&gt; () {
-            *a.lock().unwrap() += 1;
-        }
-
-        let mut i = Injector::default();
-        i.add_value(Arc::new(Mutex::new(20u32)));
-
-        assert_eq!(i.call(plus_one), 21);
-        i.call(inc);
-        assert_eq!(i.call(plus_one), 22);
-    }
-```
-
-Thought it could be useful, as I haven't seen any projects do that yet. I'm planning some stuff like value factories and singletons (right now it's all singletons), adding context and move semantics, etc.
-
-So the first name that came to mind is [Injector](https://crates.io/crates/injector) which stated, two years ago;
-
-&gt; Repository will be filled with existing source code soon. Thanks for your patience.
-
-The repository pointed at doesn't exist, there's no docs, and no dependents.
-
-So I started looking for another good name. [Tapioca](https://crates.io/crates/tapioca)? v0.0.1, 3 years ago, no repo again. [Brioche](https://crates.io/crates/brioche) seems like an actual project, and I'll give it the benefit of the doubt, but there isn't much. Just plain [Ioc](https://crates.io/crates/ioc)? 4 years old, but at least it's used; [di](https://crates.io/crates/di) hasn't been for 5 years.
-
-Geez. This reminds me of the early days of NPM, where people were just reserving names without any projects, just in case...
-
-I'm still looking, if you think of something. /rant
-## [6][Even Better TOML - Proper TOML Support for Visual Studio Code](https://www.reddit.com/r/rust/comments/hhq5ar/even_better_toml_proper_toml_support_for_visual/)
-- url: https://www.reddit.com/r/rust/comments/hhq5ar/even_better_toml_proper_toml_support_for_visual/
----
-_No more "ugh what was that setting..."_
-
-[tl;dr: a TOML extension for VSCode.](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml)
-
-With Rust Analyzer becoming more awesome than ever, I felt that `Cargo.toml` and TOML in general needed some attention as well.
-
-There has also been a need for a format-preserving TOML parser in Rust, and I haven't really written any parsers in my life so it was time for one (and TOML is simple enough for a start, or so I thought).
-
-I originally wanted to contribute to Rust Analyzer (and still do), so a month ago I started working on a TOML parser in my favourite language. However I am not entirely happy with it yet (it is [Taplo](https://github.com/tamasfe/taplo) by the way), so instead of focusing on making a generic-purpose parser library I decided to make a VSCode extension based on it to test it out and shape it as I go.
-
-This is how [Even Better TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml) was born.
-
-It is not yet complete nor bug-free, but I consider it somewhat usable in its current state.
-I've just added experimental auto completion and such for `Cargo.toml` in it, which I personally was really missing.
-
-I haven't abandoned my original goal of contributing to Rust Analyzer, but I'm a bit hesitant as the code quality might not be up to par with that project's. I will probably contact them in the near future anyway.
-
-For now I invite you guys to check the extension out, and I hope you like it and/or find it useful!
-## [7][Show /r/rust: 🔥 in WASM](https://www.reddit.com/r/rust/comments/hhpchk/show_rrust_in_wasm/)
-- url: https://smmalis37.github.io/wasm-playground/
+## [4][Disk space and LTO improvements | Inside Rust Blog](https://www.reddit.com/r/rust/comments/hi80zh/disk_space_and_lto_improvements_inside_rust_blog/)
+- url: https://blog.rust-lang.org/inside-rust/2020/06/29/lto-improvements.html
 ---
 
-## [8][Sai - A minimal IoC/DI framework for Rust](https://www.reddit.com/r/rust/comments/hhyft8/sai_a_minimal_iocdi_framework_for_rust/)
-- url: https://github.com/zhming0/sai
+## [5][A Few More Reasons Rust Compiles Slowly](https://www.reddit.com/r/rust/comments/hi80xt/a_few_more_reasons_rust_compiles_slowly/)
+- url: https://pingcap.com/blog/reasons-rust-compiles-slowly/
 ---
 
-## [9][Manipulating ports, virtual ports and pseudo terminals [Rust Wrocław Webinar, 06/10/2020]](https://www.reddit.com/r/rust/comments/hhvdw2/manipulating_ports_virtual_ports_and_pseudo/)
-- url: https://youtu.be/_cYz03jS7tk
+## [6][Platform keyboard event handling](https://www.reddit.com/r/rust/comments/hi9aq2/platform_keyboard_event_handling/)
+- url: https://www.reddit.com/r/rust/comments/hi9aq2/platform_keyboard_event_handling/
 ---
+We just landed [druid#1049](https://github.com/linebender/druid/pull/1049), which significantly reworks and improves keyboard event handling in Druid. In particular, I think it has a really good implementation of platform keyboard handling on Windows, and good enough on macOS, Gtk, and Web. Windows keyboard handling is especially tricky to get right, and in researching this I found a range of implementation quality from hopelessly broken to basically right but quite complex (particularly the browser implementations).
 
-## [10][rust-analyzer changelog #31](https://www.reddit.com/r/rust/comments/hhzlsq/rustanalyzer_changelog_31/)
+Another nice feature of this patch is that we're moving more towards standard types - it's using the [keyboard-types](https://crates.io/crates/keyboard-types) crate (though doing a few of our own newtypes, and having conversations with upstream about converging even more).
+
+I should also point out that the larger task of keyboard handling is still work in progress. There are some things to fix about hotkeys (especially with non-Latin keyboard layouts), and we don't yet do IME.
+
+The reason I am posting here, rather than just on our Zulip, is that I'd like to open some discussion about how to improve things across the ecosystem, not just in Druid. The simplest thing is for people responsible for other UI platform bindings to be aware of our implementation, study it, and adapt it.
+
+Are there other ways the ecosystem can work together? Should we be investing in "vocabulary types" like keyboard-types? What are the best ways to do this without running into difficult coordination problems?
+
+Discussion welcome.
+## [7][rust-analyzer changelog #31](https://www.reddit.com/r/rust/comments/hhzlsq/rustanalyzer_changelog_31/)
 - url: https://rust-analyzer.github.io/thisweek/2020/06/29/changelog-31.html
 ---
 
-## [11][Heliocron 0.4.0 - combine with cron to execute tasks relative to sunset/sunrise. Now has support for civil, nautical and astronomical dusk/dawn](https://www.reddit.com/r/rust/comments/hhnat5/heliocron_040_combine_with_cron_to_execute_tasks/)
-- url: https://www.reddit.com/r/rust/comments/hhnat5/heliocron_040_combine_with_cron_to_execute_tasks/
+## [8][Timetill.rs | Find Rust conferences; Now updated with remote Rust conferences for 2020.](https://www.reddit.com/r/rust/comments/hijdwr/timetillrs_find_rust_conferences_now_updated_with/)
+- url: https://timetill.rs/
 ---
-Long time Python programmer, relatively new Rust programmer. I've been steadily working on this command line application, Heliocron, which works hand in hand with cron to fire your crontab entries at times relative to various solar events.
 
-Originally supporting just sunrise and sunset (with an optional additional offset), support has now been added for civil, nautical and astronomical dawn and dusk.
-
-For reference
-
-* Sunset/rise is when the top of the sun disappears below the horizon
-* Civil dawn/dusk is when the centre of the sun is 6 degrees below the horizon
-* Nautical dawn/dusk is when the centre of the sun is 12 degrees below the horizon
-* Astronomical dawn/dusk is when the centre of the sun is 18 degrees below the horizon
-
-It's been tricky but very enjoyable learning a much lower level language, and it's been difficult to shake the python idioms and replace them with rust idioms. 
-
-[Here is the github repo to read further about the project.](https://github.com/mfreeborn/heliocron) 
-
-Open to suggestions for improvements both in functionality and code style.
-## [12][Rust structs - Wasm Loading dynamically](https://www.reddit.com/r/rust/comments/hhzmao/rust_structs_wasm_loading_dynamically/)
-- url: https://www.reddit.com/r/rust/comments/hhzmao/rust_structs_wasm_loading_dynamically/
+## [9][Announcing const-sha1: a sha1 implementation for use in const contexts 🎉](https://www.reddit.com/r/rust/comments/hi11op/announcing_constsha1_a_sha1_implementation_for/)
+- url: https://crates.io/crates/const-sha1
 ---
-Hey People,
 
-I got a small Problem with WebAssembly and its imports. I want to load the wasm file dynamically to my javascript file. It looks something like this:
+## [10][Panic no longer being caught by catch_unwind](https://www.reddit.com/r/rust/comments/hiju01/panic_no_longer_being_caught_by_catch_unwind/)
+- url: https://www.reddit.com/r/rust/comments/hiju01/panic_no_longer_being_caught_by_catch_unwind/
+---
+I'm building a library that interfaces with a C API using FFI. The only I've come up with to handle certain interrupt polling in the host application is to `panic!` and catch the unwind. After some refactoring this is no longer working.
 
-    //javascriptfile.js
-    
-    const rust = import('./../eye-move-image/pkg/eye_move_image_bg.wasm')
-    let code;
-    
-    function setup(m){
-        code = m;
-        console.log(code.greet());
-        let instance = code.Foo.new();
-        console.log(code.bar());
-    }
-    
-    rust
-        .then(m =&gt; setup(m))
-        .catch(console.error)
+The `catch_unwind` was previously in the main crate, but I now moved it into the child "sys" crate. Both crates have `panic="unwind"` in cargo.toml for the release profile, but for some reason the panic seems to be compiled to an abort now instead of an unwind when I do a release build. Apart from the refactoring I also added a cargo config file to set the default target to x86\_64-pc-windows-gnu where I was previously building with `--target` manually.
 
-And here the Rust file:
+In case anyone has a better idea how to handle this, the reason I am using this approach is that the host application performs a `longjmp` on said interrupt, but allows you to pass a callback to run for cleanup before resuming the `longjmp`. If the Rust callback returns normally to C then execution never returns to Rust so I never have a chance to clean up outer scope.
 
-    //rustfile.rs
-    use wasm_bindgen::prelude::*;
-    
-    #[wasm_bindgen]
-    pub fn greet() -&gt; i32{
-        42
-    }
-    
-    
-    #[wasm_bindgen]
-    pub struct Foo{
-        val : i32,
-    }
-    
-    #[wasm_bindgen]
-    impl  Foo{
-        pub fn new() -&gt; Foo{
-            Foo {
-                val: 3,
-            }
-        }
-    
-        pub fn bar(&amp;self) -&gt; i32{
-            self.val
-        }
-    }
+After catching the panic, I am returning an `Err` result, and then allowing the host to resume after the Rust stack has largely finished unwinding.
+## [11][IntelliJ Rust Changelog #125](https://www.reddit.com/r/rust/comments/hi0hpg/intellij_rust_changelog_125/)
+- url: https://intellij-rust.github.io/2020/06/29/changelog-125.html
+---
 
-I am compiling the rust code with the following Command without flags.
+## [12][crossfire: yet another async mpmc/mpsc based on crossbeam-channel](https://www.reddit.com/r/rust/comments/hi9vhj/crossfire_yet_another_async_mpmcmpsc_based_on/)
+- url: https://www.reddit.com/r/rust/comments/hi9vhj/crossfire_yet_another_async_mpmcmpsc_based_on/
+---
+When last year I began to work on our storage project, there were no mpmc to support async code, and we need something fast enough to serve as backbone I/O pipeline. So I decided to build this base on crossbeam.  Lately I feel it's finally stable enough to open source, and it has been heavily tested along with our storage project. I took the name "crossfire" as a derive from crossbeam.
 
-    wasm-pack build
+A few days ago @[stjepang](https://www.reddit.com/user/stjepang/) publish async-channel, it has simular goal.  But crossfire took some different aproach, since waker is wrapped from std waker and require less denpendency. Additionally crossfire support comunication between async code and threaded code. (This feature is not seen elsewhere).
 
-By the wasm\_bindgen Guide( [https://rustwasm.github.io/docs/wasm-bindgen/examples/char.html](https://rustwasm.github.io/docs/wasm-bindgen/examples/char.html) )this should work, shouldn't it? I am kinda frustrated right now.
+You are welcome to give it a try.
 
-The console.log(greet()) call works. But The call of the new() methode doesnt, do you have to call the methods in a different way, or what is the problem?  
-
-
-I am getting the error Message  
-
-
-    TypeError: Cannot read property 'new' of undefined
-        at setup (tets.js:8)
-        at eval (tets.js:13)
-
-And i am using the npm start command to start my local server.
+[https://docs.rs/crossfire/](https://docs.rs/crossfire/)

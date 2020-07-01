@@ -31,49 +31,69 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Rendering PDFs on Android the easy way](https://www.reddit.com/r/androiddev/comments/hii01o/rendering_pdfs_on_android_the_easy_way/)
-- url: https://proandroiddev.com/rendering-pdfs-on-android-the-easy-way-c05635b2c3a8
+## [3][Google Console - An unexpected error occurred. Please try again later.](https://www.reddit.com/r/androiddev/comments/hj4z9y/google_console_an_unexpected_error_occurred/)
+- url: https://www.reddit.com/r/androiddev/comments/hj4z9y/google_console_an_unexpected_error_occurred/
+---
+&amp;#x200B;
+
+https://preview.redd.it/a03ib9upw6851.png?width=1356&amp;format=png&amp;auto=webp&amp;s=65311109ce69025fc087ef57bd6d842c5a7d5eda
+## [4][Our app got stolen again. They decompiled our app and still using our codebase. They gave all our premium features for free. Please let us know how to convey this to Google.](https://www.reddit.com/r/androiddev/comments/hiwk7i/our_app_got_stolen_again_they_decompiled_our_app/)
+- url: https://www.reddit.com/r/androiddev/comments/hiwk7i/our_app_got_stolen_again_they_decompiled_our_app/
 ---
 
-## [4][HTTP Toolkit for Android - Inspect, mock &amp; debug HTTP(S) from any Android app](https://www.reddit.com/r/androiddev/comments/himokx/http_toolkit_for_android_inspect_mock_debug_https/)
+## [5][NoCopy compiler plugin for Kotlin.](https://www.reddit.com/r/androiddev/comments/hj3yq8/nocopy_compiler_plugin_for_kotlin/)
+- url: https://www.reddit.com/r/androiddev/comments/hj3yq8/nocopy_compiler_plugin_for_kotlin/
+---
+Just released NoCopy, a Kotlin compiler plugin that enables using data classes as value-based classes by moderating usage of their \`copy\` method.
+
+[https://github.com/AhmedMourad0/no-copy](https://github.com/AhmedMourad0/no-copy)
+## [6][HTTP Toolkit for Android - Inspect, mock &amp; debug HTTP(S) from any Android app](https://www.reddit.com/r/androiddev/comments/himokx/http_toolkit_for_android_inspect_mock_debug_https/)
 - url: https://httptoolkit.tech/android
 ---
 
-## [5][What's next for my path as a self-taught freelance Android developer?](https://www.reddit.com/r/androiddev/comments/hij81v/whats_next_for_my_path_as_a_selftaught_freelance/)
-- url: https://www.reddit.com/r/androiddev/comments/hij81v/whats_next_for_my_path_as_a_selftaught_freelance/
+## [7][Simple question studying app](https://www.reddit.com/r/androiddev/comments/hj4vcq/simple_question_studying_app/)
+- url: https://www.reddit.com/r/androiddev/comments/hj4vcq/simple_question_studying_app/
 ---
-I have already completed a few demo apps made in Android, but what is next for me?
-
-I browsed job posts online as well as freelance projects and a lot of them feature requirements like needing apps developed for both Android and IOS. 
-
-So do I need to start learning Flutter or Kotlin Multiplatform in order to tackle these jobs? I still would like to specialize in native Android development, so I fear that I might end up shooting myself in the foot by not being able to find any freelance work to do - or even full-time work at a company for that matter. 
-
-Also on a somewhat related note - what are employers' actual perception towards developers without a CS background, who learnt Android development through self-study? Am I going to be at a serious disadvantage simply because I didn't choose CS as my undergrad major a decade ago?
-## [6][Flutter vs Native vs React Native: Deep Performance Comparison](https://www.reddit.com/r/androiddev/comments/hi5hyo/flutter_vs_native_vs_react_native_deep/)
-- url: https://medium.com/swlh/flutter-vs-react-native-vs-native-deep-performance-comparison-990b90c11433
+Good afternoon, I am looking to create a simple app with 122 questions that will randomize the questions and answers every time you take or restart the quiz. Is there any database that people share open source apps?
+## [8][System hardening in Android 11](https://www.reddit.com/r/androiddev/comments/hit75b/system_hardening_in_android_11/)
+- url: https://android-developers.googleblog.com/2020/06/system-hardening-in-android-11.html
 ---
 
-## [7][Does date convert to default device timezone? (Java)](https://www.reddit.com/r/androiddev/comments/him77p/does_date_convert_to_default_device_timezone_java/)
-- url: https://www.reddit.com/r/javahelp/comments/him4qc/does_date_convert_to_defaultdevice_timezone/
+## [9][[DEV] HUSTLE - A Simple Counter App](https://www.reddit.com/r/androiddev/comments/hj9d6t/dev_hustle_a_simple_counter_app/)
+- url: https://www.reddit.com/r/androiddev/comments/hj9d6t/dev_hustle_a_simple_counter_app/
 ---
+This app was created during me learning Flutter, as I wanted to experiment with some kind of CRUD, and shared preferences as well as implementation of dark theme. Since this app, I have been able to learn much more and even landed myself an internship. 
+I finally decided to compile this, and publish it, as some people may find something like this useful.
 
-## [8][Android 12 exposure: Google wants to abandon 32-bit support](https://www.reddit.com/r/androiddev/comments/hhwtaz/android_12_exposure_google_wants_to_abandon_32bit/)
-- url: https://taskboot.com/2020/06/29/android-12-exposure-google-wants-to-abandon-32-bit-support/
----
+A very simple app created to track habits or chores or any
+particular task.
+Provides simple counters and an easy to use interface. 
+Deleting a counter is as simple as swiping it away.
 
-## [9][What is the language resource contamination and how to fix it?](https://www.reddit.com/r/androiddev/comments/hikobk/what_is_the_language_resource_contamination_and/)
-- url: https://localazy.com/docs/android/what-is-the-language-resource-contamination-and-how-to-fix-it
----
+A dark theme also exists, for ease of use at night.
 
-## [10][Change DI library from Koin to Dagger-Hilt](https://www.reddit.com/r/androiddev/comments/hijljp/change_di_library_from_koin_to_daggerhilt/)
-- url: https://www.reddit.com/r/androiddev/comments/hijljp/change_di_library_from_koin_to_daggerhilt/
----
-[https://proandroiddev.com/change-di-library-from-koin-to-dagger-hilt-53a4fb3e8dd0](https://proandroiddev.com/change-di-library-from-koin-to-dagger-hilt-53a4fb3e8dd0)
-## [11][Microsoft guides Flutter developers on building Surface Duo apps](https://www.reddit.com/r/androiddev/comments/hiizrh/microsoft_guides_flutter_developers_on_building/)
-- url: https://developer-tech.com/news/2020/may/18/microsoft-guides-flutter-developers-building-surface-duo-apps/
----
+Hope you all check it out.
 
-## [12][Getting device unique id via Bluetooth or wifi](https://www.reddit.com/r/androiddev/comments/hiiv7l/getting_device_unique_id_via_bluetooth_or_wifi/)
-- url: https://www.reddit.com/r/androiddev/comments/hiiv7l/getting_device_unique_id_via_bluetooth_or_wifi/
+https://play.google.com/store/apps/details?id=com.rr.hustle2
+## [10][Does showing list of apps with their screenshots violate Google Play policy?](https://www.reddit.com/r/androiddev/comments/hj9aur/does_showing_list_of_apps_with_their_screenshots/)
+- url: https://www.reddit.com/r/androiddev/comments/hj9aur/does_showing_list_of_apps_with_their_screenshots/
 ---
-Is it possible to get the host device id of the wifi or bluetooth in android . I am able to get the Bluetooth and wify network available list but is it possible . Anyone worked in that short of product ?? Any resourc will be helpful
+I'm thinking of an app idea which involves showing apps by other developers. Like show list of them and user can follow the Google Play url to download it. Does it violate Google Play policy?
+## [11][New to Android App Dev, Looking for Suggestions/Resources](https://www.reddit.com/r/androiddev/comments/hj6i8c/new_to_android_app_dev_looking_for/)
+- url: https://www.reddit.com/r/androiddev/comments/hj6i8c/new_to_android_app_dev_looking_for/
+---
+My background includes programming and project management with a software/SaaS dev team for a few years.
+
+I am looking to create my own app and I'm trying to figure out how to start.  It seems there are many options with programming languages, frameworks, etc.
+
+My app is like a point of interest finder.  So it will be doing geolocating, and pulling POI data from someplace like Google, Factual or Sygic.
+
+I know I want to use SQLite to store some info local for speed, and to cut down on API calls.   Still debating building my own database of POI specific for my app to further save on API calls.  Should I use something like MySQL, or a JSON approach like MongoDB?
+
+I looked at no-code places like [appery.io](https://appery.io) and AppyPie but could quite figure them out.  The front end is pretty straight forward, it everything on the back end that's complicated.  So... I'm looking for suggestions on where to start.  Android SDK?   Java, Kotlin, C++?  Any suggestions for some quick tutorials to get me started?  Code snippets (other than StackOverflow)?
+
+THANKS!!!
+## [12][NSFW ad networks for android apps?](https://www.reddit.com/r/androiddev/comments/hj91y5/nsfw_ad_networks_for_android_apps/)
+- url: https://www.reddit.com/r/androiddev/comments/hj91y5/nsfw_ad_networks_for_android_apps/
+---
+Anyone got any experience with NSFW ad networks on android? or is there one that allows NSFW apps? I have used exoclick. Pretty good so far on revenue. Support is A+ as well. only drawback is the implementation of the library which uses webviews (not too gentle on recyclerviews and also can be a security concern). thanks :)

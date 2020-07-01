@@ -125,103 +125,69 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][constexpr perfect hash functions with gperf](https://www.reddit.com/r/cpp/comments/hife4d/constexpr_perfect_hash_functions_with_gperf/)
-- url: https://www.reddit.com/r/cpp/comments/hife4d/constexpr_perfect_hash_functions_with_gperf/
+## [3][Best online data structures /algorithms c++ courses?](https://www.reddit.com/r/cpp/comments/hj4hql/best_online_data_structures_algorithms_c_courses/)
+- url: https://www.reddit.com/r/cpp/comments/hj4hql/best_online_data_structures_algorithms_c_courses/
 ---
-I was toying around with gperf in an attempt to make code like
+Howdy, Computer Science student here
 
-    header["host"] = "https://foo.bar";
-
-more efficient: Because teh key "host" is known at compile time, there shouldn't be any runtime lookup code generated. So I tried to add a C++ constexpr hash function generator to gperf.
-
-Here is a little example gperf output: [https://godbolt.org/z/5dkdRL](https://godbolt.org/z/5dkdRL)
-
-Now with the help of gperf my header\["host"\]
-
-*  is completely resolved at compile time
-*  can even be used in a constexpr context (comfy static validation)
-*  and also transparently transfers into runtime.
-
-It worked out quite well and the gperf implementation appears less hackish than I anticipated it to be and the result seems useful and functional enough to share it for those who are interested. You can grab the changes from
-
-    wget https://0x1b04.eu/data/gperf.tar.xz
-    tar -xf gperf.tar.xz
-    cd gperf
-    git checkout constexpr
-    build as usual
-
-Usage:
-
-        %language=C++
-        %constexpr
-
-Generated hash functions compile very quickly and even if you use a big dictionary you still only pay for what you actually use as you can see here:
-
-[https://godbolt.org/z/-NLF5Z](https://godbolt.org/z/-NLF5Z)
-
-Only a single string ends up in the binary.
-
-Also added option %no-lines to suppress #line commands.
-## [4][[PROPOSAL] New way of defining main for C++23](https://www.reddit.com/r/cpp/comments/hikpil/proposal_new_way_of_defining_main_for_c23/)
-- url: https://www.reddit.com/r/cpp/comments/hikpil/proposal_new_way_of_defining_main_for_c23/
----
-With C++20, we got `std::span`, a lightweight version of array wrappers like `std::array`. This container/view is even recommended by the Core C++ Guidelines to be used instead of pointers to C-style arrays, `std::vector` or `std::array` when passed as a parameter to functions, as it cheap to copy. What do you think, is it better if we have a "new" signature for `main`, defined like this:
-```c++
-int main(std::span&lt;std::string_view&gt; args)
-```
-
-EDIT: Changed `char*` to `std::string_view` as suggested by u/stilgarpl.
-## [5][GroundUpDb: Creating a database from the ground up in C++ for fun!](https://www.reddit.com/r/cpp/comments/hhzkag/groundupdb_creating_a_database_from_the_ground_up/)
-- url: https://www.reddit.com/r/cpp/comments/hhzkag/groundupdb_creating_a_database_from_the_ground_up/
----
-Hi!
-
-I wanted to share the channel of Adam Fowler. I discovered trough a retweet of Andreas Kling. 
-
-&amp;#x200B;
-
-He is making a database from the ground up in modern C++ using TDD and good practices for carrying on the project. His roadmap covers a lot of really interesting things about SQL and No-SQL databases. He is on the third video of the series.
-
-[https://www.youtube.com/user/adamfowleruk/videos](https://www.youtube.com/user/adamfowleruk/videos)
-
-This is the github repo: [https://github.com/adamfowleruk/groundupdb](https://github.com/adamfowleruk/groundupdb)
-## [6][Visual Studio Workload Installation](https://www.reddit.com/r/cpp/comments/hievee/visual_studio_workload_installation/)
-- url: https://www.reddit.com/r/cpp/comments/hievee/visual_studio_workload_installation/
----
-I've been trying to install my workloads for c++ to a different drive but the option is greyed out. I managed to change the installation path via regedit, but it is still asking me to have at least 5.13GB free on my C drive. It also appears when checking off each workload that the installation path was not changed, but only the displayed text was (Displayed text at the bottom of "Workloads" page showed C drive while the "Installation Locations" page showed as my other, correct drive.). If anyone has a fix for this, please reply. I have already searched a handful of subreddits that involve visual studio but couldn't find an answer.
-## [7][Polymorphic Allocators, std::vector Growth and Hacking](https://www.reddit.com/r/cpp/comments/hhvyzb/polymorphic_allocators_stdvector_growth_and/)
-- url: https://www.bfilipek.com/2020/06/pmr-hacking.html
+I am taking a Data Structures and Algorithms in c++ class next semester and I am wondering if there are any free or cheap courses online that I can take to prepare for it. Any help is appreciated, thank you!
+## [4][In terms of compilation speedup, how does clang precompiled headers compare with c++20 modules ?](https://www.reddit.com/r/cpp/comments/hixgyq/in_terms_of_compilation_speedup_how_does_clang/)
+- url: https://www.reddit.com/r/cpp/comments/hixgyq/in_terms_of_compilation_speedup_how_does_clang/
 ---
 
-## [8][Is there something like regexr.com but for C++? (explaining the code line by line)](https://www.reddit.com/r/cpp/comments/hi3m54/is_there_something_like_regexrcom_but_for_c/)
-- url: https://www.reddit.com/r/cpp/comments/hi3m54/is_there_something_like_regexrcom_but_for_c/
+## [5][C++ is too slow to compile, can you share all your tips to lower compilation time ?](https://www.reddit.com/r/cpp/comments/hj66pd/c_is_too_slow_to_compile_can_you_share_all_your/)
+- url: https://www.reddit.com/r/cpp/comments/hj66pd/c_is_too_slow_to_compile_can_you_share_all_your/
+---
+C++ compilation time is killing my productivity and will probably by my #1 reason of not using this language anymore. Can you share any tips that you used to lower the compilation time of your c++ projects ?
+
+Anything is welcome: optimizing any step of the compilation (header, template instantiation, link, ...), tools, hardware, build systems, not using expensive language features, compilation time profiler ...
+
+If you propose a tip, please follow this guideline as much as you can:
+
+* Overall description
+* Speedup observed on your project
+* All steps to reproduce your tip (command lines, code, hardware specs,...)
+* Why does it reduce compilation time ?
+* What is the conditions to observe the same speedup or what type of projects won't benefit from you tip ?
+
+If this thread is successful, one next step would be to gather all tips in a git repository and maintain it by asking r/cpp for PRs maybe once or twice per year.
+## [6][Scoped (class) enums: fundamentals and examples](https://www.reddit.com/r/cpp/comments/hj96js/scoped_class_enums_fundamentals_and_examples/)
+- url: https://www.nextptr.com/tutorial/ta1423015134/scoped-class-enums-fundamentals-and-examples
 ---
 
-## [9]["An array of problems. An array of solutions" - Joel Falcou, MUC++](https://www.reddit.com/r/cpp/comments/hhvwb2/an_array_of_problems_an_array_of_solutions_joel/)
-- url: https://www.youtube.com/watch?v=IwBG_JjfcIA
+## [7][The joys and perils of aliasing in C and C++, Part 2](https://www.reddit.com/r/cpp/comments/hj8bdg/the_joys_and_perils_of_aliasing_in_c_and_c_part_2/)
+- url: https://developers.redhat.com/blog/2020/06/03/the-joys-and-perils-of-aliasing-in-c-and-c-part-2/
 ---
 
-## [10][Is there a C++ community similar to openJDK for Java?](https://www.reddit.com/r/cpp/comments/hi01lz/is_there_a_c_community_similar_to_openjdk_for_java/)
-- url: https://www.reddit.com/r/cpp/comments/hi01lz/is_there_a_c_community_similar_to_openjdk_for_java/
+## [8][Best C++ online learning resources](https://www.reddit.com/r/cpp/comments/hj5nvn/best_c_online_learning_resources/)
+- url: https://www.reddit.com/r/cpp/comments/hj5nvn/best_c_online_learning_resources/
 ---
-Just a general question about how C++ is maintained: is there an open source community (backed by companies) like the openJDK for Java? Or how is it maintained and developed?
-## [11][Understand compile-time programming](https://www.reddit.com/r/cpp/comments/hho1bz/understand_compiletime_programming/)
-- url: https://www.reddit.com/r/cpp/comments/hho1bz/understand_compiletime_programming/
+I have a BSc in Computer Science, and want to learn modern C++. I usually learn by doing projects and reading about the areas and problems I encounter, but I have trouble finding somewhere to read about best practices and examples with modern C++.
+## [9][Simplest DEV environment for "introduction to C++" class?](https://www.reddit.com/r/cpp/comments/hj9y5n/simplest_dev_environment_for_introduction_to_c/)
+- url: https://www.reddit.com/r/cpp/comments/hj9y5n/simplest_dev_environment_for_introduction_to_c/
 ---
-Hi everyone,
+Hello everyone,
 
-I'm quite new to C++ programming, and it seems that compile-time programming is very trendy (at least in this sub).
+My wife is taking an "introduction to programming" class next semester, where the curriculum starts with "hello world" and ends with "nested for loops". She won't be going further than that in programming, it's solely for the requirements for her degree in genetics.
 
-I struggle to understand the use-case of compile-time programming. From what I understand, the compiler does most of the computation, and it results in a very small binary, where you're basically only outputting the result of the compiler computations (It is  probably a very simplistic understanding, probably even false ..!)
+I'm a developer, but it's been 15 years since I used c++ so i have no idea about the current development environments.
 
-But as I understand it, there is no free-lunch, and someone still has to do the computation. With this approach, the work happens at compile time instead of runtime, but how can it be applied in the real world, where most programs receive input data, do some stuff, then output a result ?
+What's the basic software setup for her laptop? Compiler? IDE? 
 
-If I understand correctly, a compile time program can not do any sort of IO at runtime, and would therefore be useless in an application that needs to process data ?
+During the summer I'll be teaching her the basics of programming, and she'll watch some tutorials too. I want her to get acquainted with writing basic stuff and compiling. I'm looking for the easiest setup for her convenience.
 
-I would be really grateful to anyone capable of explaining how compile-time programming can be used, or just pointing me to the right link (I did not find the answer to my question on Google :()
+She will stop using c++ once she passes her class, so anything too advanced or future-proof is unnecessary.
 
-Thanks!
-## [12]["'tag_invoke' - An Actually Good Way to Do Customization Points" - Gašper Ažman, C++ London](https://www.reddit.com/r/cpp/comments/hhvwgt/tag_invoke_an_actually_good_way_to_do/)
-- url: https://www.youtube.com/watch?v=T_bijOA1jts
+Thanks for any help!
+## [10][JSExport: C++ in the browser made easy](https://www.reddit.com/r/cpp/comments/hio150/jsexport_c_in_the_browser_made_easy/)
+- url: https://medium.com/leaningtech/jsexport-cpp-in-the-browser-made-easy-710b2982046e
+---
+
+## [11][Automation with C++](https://www.reddit.com/r/cpp/comments/hj1a5v/automation_with_c/)
+- url: https://www.reddit.com/r/cpp/comments/hj1a5v/automation_with_c/
+---
+Hey guys! I was thinking if automation and web scrapping is a possible way in python it would also be possible how in c++. But I don’t know how to to do that. Can somebody help.
+## [12][ModernCppStarter &amp; PVS-Studio Static Code Analyzer](https://www.reddit.com/r/cpp/comments/hj78yr/moderncppstarter_pvsstudio_static_code_analyzer/)
+- url: https://github.com/viva64/pvs-studio-cmake-examples/tree/master/modern-cpp-starter
 ---
 

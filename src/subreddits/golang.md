@@ -1,117 +1,122 @@
 # golang
-## [1][The absence of const reference parameters in Go](https://www.reddit.com/r/golang/comments/hikq9s/the_absence_of_const_reference_parameters_in_go/)
-- url: https://www.reddit.com/r/golang/comments/hikq9s/the_absence_of_const_reference_parameters_in_go/
+## [1][[Q&amp;A] //go:build draft design](https://www.reddit.com/r/golang/comments/hitexe/qa_gobuild_draft_design/)
+- url: https://www.reddit.com/r/golang/comments/hitexe/qa_gobuild_draft_design/
 ---
-Why does Go not support const reference parameters similar to C++? Passing by value has overhead in making a copy and passing by pointer sacrifices the benefits of immutability. For a language that prides itself on performance and concurrency, const reference seems like such an obviously needed feature.
+I posted a draft design today for updating the // +build lines to fix some usability problems. 
 
-    // Simple Go struct
-    type Player struct {
-    	Name            string
-    	Team            string
-    	Age             int
-    	PointsPerGame   float64
-    	AssistsPerGame  float64
-    	ReboundsPerGame float64
-    }
-    
-    // An entire new Player Struct is created everytime function is called
-    func (p Player) SomeFunction() string {
-        return fmt.Sprintf("%s is %d years old.", p.Name, p.Age)
-    }
-    
-    // Vs pointer where copy is avoided but now allowing function to alter the struct
-    // when that's not necessary.
-    func (p *Player) SomeFunction() string {
-        return fmt.Sprintf("%s is %d years old.", p.Name, p.Age)
-    }
-    
-    // Why not have the best of both worlds with something like
-    func (p const *Player) SomeFunction() string {
-        return fmt.Sprintf("%s is %d years old.", p.Name, p.Age)
-    }
+Video: [https://golang.org/s/go-build-video](https://golang.org/s/go-build-video)\
+Design: [https://golang.org/s/go-build-design](https://golang.org/s/go-build-design)
 
-Maybe I am overestimating the amount of resources spent on making a copy. But even in cases where the struct is small, it bothers me to think that anytime at all is being spent on making an unnecessary copy. Do you guys find yourselves using predominantly pointers (even when the function doesn't modify the struct) or is worrying about this just me trying to prematurely optimize?
+As an experiment, let's try doing Q&amp;A about the design here in Reddit.
+My hope is that the threading support will help keep questions and answers matched.
 
-Any input is appreciated, I come from a Java and C++ background so the idea of pass by value for anything outside of primitive variable types is foreign to me.
-## [2][A sample task engine](https://www.reddit.com/r/golang/comments/hifopt/a_sample_task_engine/)
-- url: https://www.reddit.com/r/golang/comments/hifopt/a_sample_task_engine/
----
-I am writing a multi-coroutine task processing engine. Anyone want with me together.
-
-I have 2+ years experience with golang, but i am just like a beginner. Maybe this is the philosophy of golang.
-
-https://github.com/90634/gotaskengine
-
-This is my first post. Is this correct behavior?
-## [3][What are the limits of channels, and just how 'fast' are they?](https://www.reddit.com/r/golang/comments/hilolk/what_are_the_limits_of_channels_and_just_how_fast/)
-- url: https://tpaschalis.github.io/channels-limitations-speed/
+**Please start a new top-level comment for each new question.**
+## [2][Improved docker Go module dependency cache for faster builds in CI/CD](https://www.reddit.com/r/golang/comments/hj4n44/improved_docker_go_module_dependency_cache_for/)
+- url: https://github.com/montanaflynn/golang-docker-cache
 ---
 
-## [4][Question about Go channels.](https://www.reddit.com/r/golang/comments/hikks9/question_about_go_channels/)
-- url: https://www.reddit.com/r/golang/comments/hikks9/question_about_go_channels/
----
-Hi, I am learning Go and I have the following example
-
-    package main
-    import (
-    	"fmt"
-    	"sync"
-    )
-    var wg = sync.WaitGroup{}
-    func main() {
-    	ch := make(chan int)
-    	counter := 0
-    	for j := 0; j &lt; 5; j++ {
-    		wg.Add(2)
-    		go func() {
-    			i := &lt;-ch
-    			fmt.Println(i)
-    			wg.Done()
-    		}()
-    		go func() {
-    			ch &lt;- counter
-    			counter++
-    			wg.Done()
-    		}()
-    	}
-    	wg.Wait()
-    }
-
-the output is   
-
-
-    0
-    1
-    1
-    0
-    2
-
-How can the output contain two 0's and two 1's, because numbers 0,1,2,3,4 enter the channel exactly once and after receiving a number from the channel the channel becomes empty. Thanks in advance.
-## [5][Senior Remote Golang Job](https://www.reddit.com/r/golang/comments/hil0ox/senior_remote_golang_job/)
-- url: https://www.works-hub.com/jobs/remote-senior-go-engineer-e69?utm_source=Linkedin&amp;utm_medium=Recruiter_Social&amp;utm_campaign=p.gubbey
+## [3][When microservices in Go are not enough: introduction to DDD Lite](https://www.reddit.com/r/golang/comments/hj9cxw/when_microservices_in_go_are_not_enough/)
+- url: https://threedots.tech/post/ddd-lite-in-go-introduction/
 ---
 
-## [6][Multi-Select Facet with Solr, Vue and Go](https://www.reddit.com/r/golang/comments/hijv8c/multiselect_facet_with_solr_vue_and_go/)
-- url: https://stevenferrer.github.io/posts/multi-select-facet-solr-vue-go
----
-
-## [7][[Q] files with _debug.go suffix](https://www.reddit.com/r/golang/comments/hikygn/q_files_with_debuggo_suffix/)
-- url: https://www.reddit.com/r/golang/comments/hikygn/q_files_with_debuggo_suffix/
----
-I've come across a project with files ending with _debug.go. For example there are two files in a folder. One is called security.go, the other is security_debug.go. Both these files have the same function signatures, so I'm not sure how the package even compiles The debug file has slightly modified function definitions.   
-
-I can't really find a reference to this. Are _debug files a golang feature similar to _test.go, or am I looking at some in-house solution, maybe an IDE feature?
-## [8][The How and Why of Go, Part 1: Tooling](https://www.reddit.com/r/golang/comments/hin7sn/the_how_and_why_of_go_part_1_tooling/)
+## [4][The How and Why of Go, Part 1: Tooling](https://www.reddit.com/r/golang/comments/hin7sn/the_how_and_why_of_go_part_1_tooling/)
 - url: http://okigiveup.net/the-how-and-why-of-go-part-1-tooling/
 ---
 
-## [9][Vendor is suggesting concurrency for api calls](https://www.reddit.com/r/golang/comments/hin4ke/vendor_is_suggesting_concurrency_for_api_calls/)
-- url: https://www.reddit.com/r/golang/comments/hin4ke/vendor_is_suggesting_concurrency_for_api_calls/
+## [5][Setting up CircleCI and Sonarcloud integration with Go projects](https://www.reddit.com/r/golang/comments/hj9sz2/setting_up_circleci_and_sonarcloud_integration/)
+- url: https://akondas.com/Tales-of-Devops-and-Go-Part-III/
 ---
- I have an api project using go-chi/chi and one of the calls is registering a user by inserting into a table. The performance is quite poor about 20 users/sec and the hosting vendor suggested we use concurrency libraries to fix this issue because the app is not using more memory available on the machine. Maybe I'm missing something but I've not seen concurrency for simple api calls and such usage on the interwebs.
-## [10][My second golang project.](https://www.reddit.com/r/golang/comments/himyba/my_second_golang_project/)
-- url: https://www.reddit.com/r/golang/comments/himyba/my_second_golang_project/
----
-Check out [https://github.com/FarzamAlam/short-url](https://github.com/FarzamAlam/short-url) 
 
-Thank you golang community for making such amazing libraries and learning content free and opensource.
+## [6][How to send POST request service when using Traefik and Docker](https://www.reddit.com/r/golang/comments/hj9rst/how_to_send_post_request_service_when_using/)
+- url: https://www.reddit.com/r/golang/comments/hj9rst/how_to_send_post_request_service_when_using/
+---
+Hi!
+
+I recently started project based on microservices architecture and I have problem with calling from service A service B. I set up docker-compose and traefik, but I have problem with calling it when I use docker. Talk is cheap, so I'll show you code:
+
+    req, err := http.NewRequest(http.MethodPost, http://127.0.0.1/api/v1/user/validate", bytes.NewBuffer(jsonCreds))
+    if err != nil {
+        log.Errorf("Couldn't prepare request: %v", err)
+        return nil, err
+    }
+    req.Header.Set("Content-Type", "application/json")
+    req.Host = "usersvc"
+    res, err := s.httpClient.Do(req)
+    if err != nil {
+        log.Errorf("Couldn't to execute request: %v", err)
+        return nil, err
+    }
+
+That's the part when I'm calling service B. When I run service A and service B separately and call `http://127.0.0.1/api/v1/user/validate` with `Host=usersvc` everything works ok, but when I want to execute the same code when I use \`docker-compose up\` I get this error: `{"level":"error","msg":"Couldn't to execute request: Post \"[``http://127.0.0.1/api/v1/user/validate\](http://127.0.0.1/api/v1/user/validate)``": dial tcp` [`127.0.0.1:80`](https://127.0.0.1:80)`: connect: connection refused","time":"2020-07-01T14:59:58Z"}`.
+
+I guess there is problem with networking, but I don't really know how to fix it. How can I call that service using \`docker\`?
+
+Thanks in advance for the help!
+## [7][Rate Limiting in Golang](https://www.reddit.com/r/golang/comments/hj9ejw/rate_limiting_in_golang/)
+- url: https://medium.com/@justin.graber/rate-limiting-in-golang-f3ed2c62df36
+---
+
+## [8][Pointer and value semantics in Go](https://www.reddit.com/r/golang/comments/hj98n4/pointer_and_value_semantics_in_go/)
+- url: https://developer20.com/pointer-and-value-semantics-in-go/
+---
+
+## [9][Learning GO - version numbers in go.mod confusing me...](https://www.reddit.com/r/golang/comments/hj8z0q/learning_go_version_numbers_in_gomod_confusing_me/)
+- url: https://www.reddit.com/r/golang/comments/hj8z0q/learning_go_version_numbers_in_gomod_confusing_me/
+---
+Hi,
+
+Love the language - but versioning in go.mod is doing my head in.
+
+[**https://github.com/alexellis/blinkt\_go**](https://github.com/alexellis/blinkt_go) **has a tag of "v1.0" but if I specify v1.0 in go.mod:**
+
+    require github.com/alexellis/blinkt_go v1.0
+
+**I get**
+
+     /home/pi/projects/blinkt_test/go.mod:5: invalid module version "v1.0": no matching versions for query "v1.0"
+
+Substituting **v1.0.0 for v1.0 works though.**
+
+*If I remove the require line and leave the replace line, go get adds this:*
+
+    require github.com/alexellis/blinkt_go v0.0.0-20180120180744-cc0ca163e0bc
+
+**How does module versioning work?** I don't seem to be able to find a good explanation on the web. cc0ca16 is the commit ID of HEAD. Not sure where the rest is coming from - I see a date maybe.
+
+**Am I better off just omitting require lines from go.mod, but supplying replace lines with versions that match tags I add to my forks\[1\]- and letting go get do what it wants?**
+
+\[1\] In another Reddit post, I explain why I fork copies of code to my own repos - but in essence as insurance against them going away.
+
+Cheers folks
+## [10][Replacing GO import repos with my own forked copies - correct approach?](https://www.reddit.com/r/golang/comments/hj8sum/replacing_go_import_repos_with_my_own_forked/)
+- url: https://www.reddit.com/r/golang/comments/hj8sum/replacing_go_import_repos_with_my_own_forked/
+---
+I am a paranoid type, so when building code, I don't want to assume a 3rd party repo will always be around. So I clone what I use into my own gitlab repo. eg:
+
+[https://github.com/alexellis/blinkt\_go](https://github.com/alexellis/blinkt_go) =&gt; 
+
+[https://gitlab.com/&lt;me&gt;-grp/ext/go/github.com/alexellis/blinkt\_go](https://gitlab.com/timjwatts-grp/ext/go/github.com/alexellis/blinkt_go)
+
+(using gitlab groups to keep some symmetry of naming)
+
+&amp;#x200B;
+
+**1) So... if I add a** 
+
+***replace*** [***https://github.com/alexellis/blinkt\_go***](https://github.com/alexellis/blinkt_go) ***=&gt;*** [***https://gitlab.com/&lt;me&gt;-grp/ext/go/github.com/alexellis/blinkt\_go***](https://gitlab.com/timjwatts-grp/ext/go/github.com/alexellis/blinkt_go) ***&lt;version&gt;***
+
+**into my go.mod, this is the correct approach? (Seems to work)**
+
+&amp;#x200B;
+
+**2) If a library brings in other libraries indirectly - do I just need to add more replace statements to my final go.mod after cloning, or do I need to add go.mod files to my repo clone that is itself bringing in other libraries? It's the internals of the "go get" methodology I am struggling with.**
+
+&amp;#x200B;
+
+Cheers folks :)
+## [11][How do I fix this error when running 'go build' or 'go install'](https://www.reddit.com/r/golang/comments/hj7t82/how_do_i_fix_this_error_when_running_go_build_or/)
+- url: https://www.reddit.com/r/golang/comments/hj7t82/how_do_i_fix_this_error_when_running_go_build_or/
+---
+I'm getting this error when I try to run go install or go build. Would someone mind helping me out? Thanks.
+
+can't load package: package .: no Go files in /Users/myname/projectname

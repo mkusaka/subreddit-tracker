@@ -1,9 +1,29 @@
 # ruby
-## [1][Rails 6.1 tracks Active Storage variant in the database](https://www.reddit.com/r/ruby/comments/hii694/rails_61_tracks_active_storage_variant_in_the/)
+## [1][Data Analyst new to Ruby - our devs at work need me to use Sidekiq APIs to provide visibility on the number of retries at any given point, as well as breakdown on the type of retries.](https://www.reddit.com/r/ruby/comments/hioh4x/data_analyst_new_to_ruby_our_devs_at_work_need_me/)
+- url: https://www.reddit.com/r/ruby/comments/hioh4x/data_analyst_new_to_ruby_our_devs_at_work_need_me/
+---
+Hi Ruby community!
+
+Virtually all of our company's products are built on rails. I understand that Ruby uses a cron scheduler called sidekiq that handles tries and retries. 
+
+This is all unfamiliar territory for me because I'm not familiar with Ruby. I'm familiar however with other tools like Python. I'm curious as to what the best way of doing this would be. Is there an API I can query that would serve this exact info?
+## [2][Fun Facts about Ruby #7](https://www.reddit.com/r/ruby/comments/hik1wb/fun_facts_about_ruby_7/)
+- url: https://i.redd.it/vb5p3jt4o0851.png
+---
+
+## [3][Rails 6.1 tracks Active Storage variant in the database](https://www.reddit.com/r/ruby/comments/hii694/rails_61_tracks_active_storage_variant_in_the/)
 - url: https://blog.bigbinary.com/2020/06/30/rails-6-1-tracks-active-storage-variant-in-the-database.html
 ---
 
-## [2][Bubble sort](https://www.reddit.com/r/ruby/comments/hike73/bubble_sort/)
+## [4][What type of blog posts do you want to read?](https://www.reddit.com/r/ruby/comments/hiolnu/what_type_of_blog_posts_do_you_want_to_read/)
+- url: https://www.reddit.com/r/ruby/comments/hiolnu/what_type_of_blog_posts_do_you_want_to_read/
+---
+My company and I are working on Ruby on Rails projects and thinking about starting blog posts.The blog post of all natures. Short, long, technical, or something like a case study.My team on average has more than 10 years of experience in developing and managing an agency company.
+
+What do you want to hear from us?
+
+We are using Ruby on Rails and bunch of technology around that. At big projects, we are going without major frontend js frameworks like at basecamp and hey.
+## [5][Bubble sort](https://www.reddit.com/r/ruby/comments/hike73/bubble_sort/)
 - url: https://www.reddit.com/r/ruby/comments/hike73/bubble_sort/
 ---
 Hi! Beginner here.
@@ -27,19 +47,15 @@ So currently I'm trying to write a simple bubble sort code. In fact it works pre
     p bubble_sort(array)
 
 When I type for example: 100,1,10 the output is correct. But then if I type: 10,1,4,66,0 the output is \["0", "1", "10", "4", "66"\].
-## [3][Fun Facts about Ruby #7](https://www.reddit.com/r/ruby/comments/hik1wb/fun_facts_about_ruby_7/)
-- url: https://i.redd.it/vb5p3jt4o0851.png
----
-
-## [4][Build The World’s Simplest ETL (Extract, Transform, Load) Pipeline in Ruby With Kiba](https://www.reddit.com/r/ruby/comments/hi6loi/build_the_worlds_simplest_etl_extract_transform/)
+## [6][Build The World’s Simplest ETL (Extract, Transform, Load) Pipeline in Ruby With Kiba](https://www.reddit.com/r/ruby/comments/hi6loi/build_the_worlds_simplest_etl_extract_transform/)
 - url: https://towardsdatascience.com/build-the-worlds-simplest-etl-extract-transform-load-pipeline-in-ruby-with-kiba-e7093a29d35
 ---
 
-## [5][The Ruby Spec Suite Compatibility Report](https://www.reddit.com/r/ruby/comments/hi5xnh/the_ruby_spec_suite_compatibility_report/)
+## [7][The Ruby Spec Suite Compatibility Report](https://www.reddit.com/r/ruby/comments/hi5xnh/the_ruby_spec_suite_compatibility_report/)
 - url: https://eregon.me/blog/2020/06/27/ruby-spec-compatibility-report.html
 ---
 
-## [6]["Feels good to be in Rails right now"](https://www.reddit.com/r/ruby/comments/hhm3uj/feels_good_to_be_in_rails_right_now/)
+## [8]["Feels good to be in Rails right now"](https://www.reddit.com/r/ruby/comments/hhm3uj/feels_good_to_be_in_rails_right_now/)
 - url: https://www.reddit.com/r/ruby/comments/hhm3uj/feels_good_to_be_in_rails_right_now/
 ---
 New rails tech is coming around and new big projects are launched on rails (like basecamp has released the new awesome [hey.com](https://hey.com) email platform running on rails without any major JS frameworks).
@@ -49,7 +65,7 @@ Chris Oliver from gorails discussed it in the [freshest remote ruby podcast](htt
 &gt;"It feels good to be in Rails right now"
 
 Do you share this feeling?
-## [7][Is there a cleaner way of splitting strings multiple times](https://www.reddit.com/r/ruby/comments/hhyjzx/is_there_a_cleaner_way_of_splitting_strings/)
+## [9][Is there a cleaner way of splitting strings multiple times](https://www.reddit.com/r/ruby/comments/hhyjzx/is_there_a_cleaner_way_of_splitting_strings/)
 - url: https://www.reddit.com/r/ruby/comments/hhyjzx/is_there_a_cleaner_way_of_splitting_strings/
 ---
 Hi all,
@@ -108,7 +124,7 @@ Also any general feedback on construction would be appreciated as well.
     end
 
 &amp;#x200B;
-## [8][Noob to Ruby master recommendations](https://www.reddit.com/r/ruby/comments/hhtfl0/noob_to_ruby_master_recommendations/)
+## [10][Noob to Ruby master recommendations](https://www.reddit.com/r/ruby/comments/hhtfl0/noob_to_ruby_master_recommendations/)
 - url: https://www.reddit.com/r/ruby/comments/hhtfl0/noob_to_ruby_master_recommendations/
 ---
 I'm just getting started with programming, my current job is willing to pay for me to get a course or attend a conference. All though I'll probably would go for an interactive course so I can ask questions. Can I get some recommendations from the community? 
@@ -120,22 +136,3 @@ SQL advance queries
 ActiveRecord advance queries
 
 I work with a lot of data so having a depth knowledge of the last two would be awesome. Thank you in advance!
-## [9][Just started to publish API-only ruby on rails course. We’re building an Instapaper clone from scratch.](https://www.reddit.com/r/ruby/comments/hhb1ib/just_started_to_publish_apionly_ruby_on_rails/)
-- url: https://www.reddit.com/r/ruby/comments/hhb1ib/just_started_to_publish_apionly_ruby_on_rails/
----
-I'm happy that I just published the first two chapters of **API-only** ruby on rails course that I [mentioned](https://www.reddit.com/r/ruby/comments/gpebe0/im_planning_to_build_a_rails_course_would_you/) almost one month ago on this subreddit. 🎉🎉
-
-In this course, we will build a functional clone of Instapaper from scratch. Also, it targets the developers already familiar with rails tech stack and has a written format. It's an ongoing course, and I'm planning to share new chapters weekly basis.
-
-You can reach the content from [https://duetcode.io/rails-api-only-course](https://duetcode.io/rails-api-only-course). Even though it's just two chapters, I wanted to share as early as possible to get some insights and feedback from the audience.
-
-Please, let me know if you have any thoughts/feedback about the content or the website in general.
-## [10][tapping_device - A new tool that helps you debug with ease](https://www.reddit.com/r/ruby/comments/hh93ss/tapping_device_a_new_tool_that_helps_you_debug/)
-- url: https://www.reddit.com/r/ruby/comments/hh93ss/tapping_device_a_new_tool_that_helps_you_debug/
----
-Knowing what your objects "exactly" do can be hard when debugging a ruby program. Either using \`puts\` or debuggers requires you to jump between files and insert debugging code everywhere.
-
-That's why I created a gem called [tapping\_device](https://github.com/st0012/tapping_device), which can track objects and print all the traces in a nice format with just 1 line of code.  
-
-
-https://preview.redd.it/9m2n2eib7l751.png?width=1200&amp;format=png&amp;auto=webp&amp;s=a69b519a2f8ba78a2e576e58ffe3c5f732570a40

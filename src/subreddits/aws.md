@@ -21,122 +21,108 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][Looking to stay up to date on the latest #AWS Public Roadmaps? Here is a a Github repo which lists them so that you can find them in one place and stay updated.](https://www.reddit.com/r/aws/comments/hicf1p/looking_to_stay_up_to_date_on_the_latest_aws/)
-- url: https://github.com/johnculkin/UnofficialListOfPublicAWSRoadmaps
+## [2][Amazon RDS Proxy – Now Generally Available](https://www.reddit.com/r/aws/comments/hiy0lp/amazon_rds_proxy_now_generally_available/)
+- url: https://aws.amazon.com/blogs/aws/amazon-rds-proxy-now-generally-available/
 ---
 
-## [3][Elemental Video on Demand diagram](https://www.reddit.com/r/aws/comments/himckb/elemental_video_on_demand_diagram/)
-- url: https://www.reddit.com/r/aws/comments/himckb/elemental_video_on_demand_diagram/
+## [3][Amazon's AWS establishes new aerospace cloud unit as Jeff Bezos increases bets on outer space](https://www.reddit.com/r/aws/comments/hiqf1e/amazons_aws_establishes_new_aerospace_cloud_unit/)
+- url: https://www.reddit.com/r/aws/comments/hiqf1e/amazons_aws_establishes_new_aerospace_cloud_unit/
 ---
-As an exercise, I decided to make a diagram of AWS's [Video on Demand](https://aws.amazon.com/solutions/implementations/video-on-demand-on-aws/) solution. I did this in part because I felt the diagram they provided in the docs wasn't anywhere near detailed enough.
+[Amazon's AWS establishes new aerospace cloud unit as Jeff Bezos increases bets on outer space](https://www.cnbc.com/2020/06/30/amazons-aws-establishes-aerospace-and-satellite-solutions-space-unit.html)
 
-Diagram Link:  [**https://app.ilograph.com/demo.ilograph.AWS%2520Video-On-Demand/Ingest%2520Workflow**](https://app.ilograph.com/demo.ilograph.AWS%2520Video-On-Demand/Ingest%2520Workflow)
+By Michael Sheetz
 
-A few thoughts I had while working on this:
+* Amazon Web Services announced on Tuesday it was establishing a new space unit called Aerospace and Satellite Solutions.
 
-* As you might expect, ingesting video it is a complex process (60 + steps), even with AWS Elemental doing the heavy lifting.
-* The example solution provided by AWS makes some interesting choices, such as re-using a lambda to kick off one of three different state machines depending on the input. This lambda is also invoked three different ways (S3 trigger, CloudWatch trigger, and invoked by another lambda). Hopefully this is conveyed clearly in the diagram above.
-* Some of the names the solution gives the resources are... not great. Examples include "Endpoint" (a MediaConvert endpoint), "DynamoDB Table", and "Sns Topic". As far as I can tell, there is no easy way to change these in the solution before deploying (or after, for that matter).
-## [4][Your own AI-powered Call Center on AWS in less than 1 hour](https://www.reddit.com/r/aws/comments/hinf9j/your_own_aipowered_call_center_on_aws_in_less/)
-- url: https://www.reddit.com/r/aws/comments/hinf9j/your_own_aipowered_call_center_on_aws_in_less/
+* Job listings for the AWS unit identify it's looking to provide services for nearly every space sub-sector, including rocket launches, human spaceflight support, robotic systems, mission control operations, space stations, satellite networks and more.
+
+* Amazon has steadily grown its influence in the space industry in recent years, with a satellite connection service called AWS Ground Station and a satellite internet venture called Project Kuiper.
+
+The company announced on Tuesday that AWS is establishing a new unit called Aerospace and Satellite Solutions, led by former U.S. Air Force Maj. Gen. Clint Crosier — who most recently directed the establishment of the U.S. Space Force.
+
+"We find ourselves in the most exciting time in space since the Apollo missions," Crosier said in a statement.
+
+#####Edit:
+
+Replaced AMP link with the Correct the Non-AMP link
+## [4][When AWS Support asks "if we helped resolve your issue", should I click YES or NO, if the support person effectively informed me of some limitation of AWS, or successfully lodged a feature request?](https://www.reddit.com/r/aws/comments/hizej6/when_aws_support_asks_if_we_helped_resolve_your/)
+- url: https://www.reddit.com/r/aws/comments/hizej6/when_aws_support_asks_if_we_helped_resolve_your/
 ---
-Amazon Connect has always been a curiosity of mine, and I briefly worked in a startup whose primary focus was to make Call Center’s life easier for its operators. During that time, I went to Manilla to shadow one of those places, and the amount of energy, effort, and patience to run such a business is fantastic!
+My problem still exists, so do I click NO?
 
-[https://medium.com/@thiagodefaria/your-own-ai-powered-call-center-on-aws-in-less-than-1-hour-d0494049977c](https://medium.com/@thiagodefaria/your-own-ai-powered-call-center-on-aws-in-less-than-1-hour-d0494049977c)
-## [5][Amazon Virtual Private Cloud (VPC) customers can now use their own Prefix Lists to simplify the configuration of security groups and route tables](https://www.reddit.com/r/aws/comments/hia8fb/amazon_virtual_private_cloud_vpc_customers_can/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/06/amazon-virtual-private-cloud-customers-use-prefix-lists-simplify-configuration-security-groups-route-tables/
+But *the support person* did their job well.
+
+If the problem is with AWS itself, not the support person, what do I click?
+
+AWS seems like the kind of company that would ruthlessly enforce KPIs for support people. I don't want someone to lose their job because they told me that AWS can't do X, so my problem can't be solved.
+## [5][sync two EBS volumes](https://www.reddit.com/r/aws/comments/hj8ut0/sync_two_ebs_volumes/)
+- url: https://www.reddit.com/r/aws/comments/hj8ut0/sync_two_ebs_volumes/
+---
+I have an auto-scaling group with two EC2 instances , each with a persistent EBS mounted. My application requires the data on EBS to be in sync, how do I achieve that ? 
+
+I can think of introducing an s3 where both the EBS sync their data but wondering if there's a better solution.
+
+PS - Can't use multi-attach functionality. Also, can only use EBS (not EFS)
+## [6][Route 53 and subdomain Hosted Zones](https://www.reddit.com/r/aws/comments/hj8rqh/route_53_and_subdomain_hosted_zones/)
+- url: https://www.reddit.com/r/aws/comments/hj8rqh/route_53_and_subdomain_hosted_zones/
+---
+Not sure if my understanding of DNS is correct, is there any way to create a CNAME record for a hosted zone. I have a zone called "subdomain.domain.com."  - for this I wanted to create a CNAME record. However it wants a subdomain at a second level for me to create it. It displays a box wanting me to put "something.subdomain.domain.com" - Is there any way to create a record that point "subdomain.domain.com" to "anotherdomain.com"?
+
+Thanks in advance
+## [7][AWS App2Container – A New Containerizing Tool for Java and ASP.NET Applications](https://www.reddit.com/r/aws/comments/hizzp3/aws_app2container_a_new_containerizing_tool_for/)
+- url: https://aws.amazon.com/blogs/aws/aws-app2container-a-new-containerizing-tool-for-java-and-asp-net-applications/
 ---
 
-## [6][Сloud Security Fundamentals: Infrastructure Hardening and Cloud Computin...](https://www.reddit.com/r/aws/comments/hi19mo/сloud_security_fundamentals_infrastructure/)
-- url: https://www.reddit.com/r/aws/comments/hi19mo/сloud_security_fundamentals_infrastructure/
+## [8][Traditional Lambda vs. Lambda Proxy, good writeups on differences in how API Gateway processes the event lambda receives?](https://www.reddit.com/r/aws/comments/hiwrbd/traditional_lambda_vs_lambda_proxy_good_writeups/)
+- url: https://www.reddit.com/r/aws/comments/hiwrbd/traditional_lambda_vs_lambda_proxy_good_writeups/
 ---
-Learn cloud security fundamentals, explore popular benchmarks, learn how to protect different types of services, automate cloud compliance checks, and enhance operational security:  [**https://youtu.be/d52-fYISrLQ**](https://youtu.be/d52-fYISrLQ)  
+We are moving over to a build process using Terraform/Serverless and someone decided to make all the Lambda functions which were previously traditional Lambda functions, Lambda proxy functions.
 
-**About the Webinar:**
-
-During the Сloud Security Fundamentals webinar, DataArt’s experts delved into the aspects of shared responsibility in cloud security and compliance check automation. They reviewed the popular benchmarks such as TrendMicro and CloudSploit, shared the approaches to identity and access management hardening, and much more.
-
-In this cloud security tutorial, get insight on:
-
-— Key differences in security requirements for on-prem and cloud security architecture
-
-— Your duties keeping the cloud resources safe as a part of responsibility shared with the cloud provider
-
-— Cloud infrastructure hardening methods and ultimate cloud security goals
-
-— Popular security auditing benchmarks and tools, and how to adapt them to achieve your desired security level
-
-— Installing software updates and vulnerability management after migrating to the cloud
-## [7][Terraform / AWS &amp; Secrets](https://www.reddit.com/r/aws/comments/hik0vj/terraform_aws_secrets/)
-- url: https://www.reddit.com/r/aws/comments/hik0vj/terraform_aws_secrets/
+The event that arrives at the Lambda is completely different when API Gateway uses a Lambda proxy. Is there any good writeup on the differences? My app is broken AF right now :( I don't see much in the way of configuring or parsing input from the frontend in API Gateway, and Serverless-Domain-Manager which is creating the API Gateway is 4 lines of magic code.
+## [9][Route53: How to add kibana endpoint in Route53 to have a proper URL](https://www.reddit.com/r/aws/comments/hj57yr/route53_how_to_add_kibana_endpoint_in_route53_to/)
+- url: https://www.reddit.com/r/aws/comments/hj57yr/route53_how_to_add_kibana_endpoint_in_route53_to/
 ---
-Hi all
+Is anyone knows how to add a proper URL using route53 to AWS Elastic search Kibana endpoint. I got this endpoint from my AWS elastic search
 
-How are you guys currently storing secrets created via Terraform (on AWS)?
+[https://xxxxxxxxxxxxxxxxxx.eu-west-2.es.amazonaws.com/\_plugin/kibana/](https://xxxxxxxxxxxxxxxxxx.eu-west-2.es.amazonaws.com/_plugin/kibana/)
 
-&amp;#x200B;
-
-Previously I have used Hashicorp Vault for this but I want to explore other options as well with a view to avoiding storing the secret in the terraform state (which is what the Vault solution successfully achieved).
-
-Do you just accept that it will be in the terraform state and lock down accordingly or are you using some other solution?
-
-Vault is very good, and I would recommend it, but I want to check out the other options too whilst I have some down time.
-
-Thanks
-## [8][another billing post](https://www.reddit.com/r/aws/comments/hijnqr/another_billing_post/)
-- url: https://www.reddit.com/r/aws/comments/hijnqr/another_billing_post/
+I tried adding a CNAME in route53 but it's not working.
+## [10][Private subnet: NAT vs NACL for security](https://www.reddit.com/r/aws/comments/hj1zzb/private_subnet_nat_vs_nacl_for_security/)
+- url: https://www.reddit.com/r/aws/comments/hj1zzb/private_subnet_nat_vs_nacl_for_security/
 ---
-hi all,
+Hi, I've searched in some whitepapers (including the VPC user's guide) and I've not found a comparison of creating a private subnet that allows out traffic trough a NAT vs just only allowing inbound to the VPC IP CIDR and still using a Internet gateway and the instances having a public IP.
 
-i know this gets asked often but i'd like to see if anyone has made recent progress.
-
-what i'd like to do is basically create stuff in aws, add tags, and have a single dashboard that shows everything with this tag show x amount dollars per time query. i have started using grafana because its flexible and powerful but i can't see any examples of people using tags to filter dashboards.
-
-has anyone used another products to query aws billing data with some success? do i need to get the data into another service or db to then query it.
-
-thanks.
-## [9][How to stay sane when managing tens-to-hundreds of lambda-backed repositories.](https://www.reddit.com/r/aws/comments/hi0wkv/how_to_stay_sane_when_managing_tenstohundreds_of/)
-- url: https://www.reddit.com/r/aws/comments/hi0wkv/how_to_stay_sane_when_managing_tenstohundreds_of/
+I'm new to the security and network stuff and it may be basic, but is there any advantage of using a NAT considering security?
+## [11][how to make a local app assume an IAM role?](https://www.reddit.com/r/aws/comments/hj4vct/how_to_make_a_local_app_assume_an_iam_role/)
+- url: https://www.reddit.com/r/aws/comments/hj4vct/how_to_make_a_local_app_assume_an_iam_role/
 ---
-If you already use or are considering adopting lambdas/kinesis for data processing, [I wrote an article](https://medium.com/whispering-data/tackling-fragmentation-in-serverless-data-pipelines-b4027f506ee5) on dealing with deploying tens-to-hundreds of lambda-based repos in a sane manner.
-## [10][Permission boundary policy denying VPC "edit dns resolution" and "edit dns hostnames" how?](https://www.reddit.com/r/aws/comments/hiibcf/permission_boundary_policy_denying_vpc_edit_dns/)
-- url: https://www.reddit.com/r/aws/comments/hiibcf/permission_boundary_policy_denying_vpc_edit_dns/
----
-Hello fellow Cloud-fans
+I have a locally running app that uses an AWS SDK to access resources on my AWS account. I would like the local app to assume an IAM role, just as a live EC2 instance would.
 
-Im currently hardening our organizations primary VPC and a subtask here is to strengthen the Permission Boundary on the role that all regular users are using, and here occurs a problem for me. I need to deny the users access to edit  "dns resolution" and "dns hostnames" for this specific VPC, however, I see no IAM actions that cover these 2 actions, so how do I deny it without using a wildcard?  
-   
-For reference: Other hardening actions I've already implemented to protect this specific VPC(if you have suggestions for additions please do share):
+To find out how to do this, I read up on these two pages:
 
-* Block modification/Deletion of DHCP options for our specific VPC
-   * ec2:DeleteDhcpOptions 
-   * ec2:AssociateDhcpOptions 
-* Block modification of CIDR blocks for our specific VPC
-   * ec2:DisassociateVpcCidrBlock 
-* Block deletion of our specific VPC
-   * ec2:DeleteVpc 
-* **Block "edit dns resolution" for our specific VPC?**
-* **Block "edit dns hostnames" for our specific VPC**
-* Block modification of tags for our specific VPC
-   * ec2:DeleteTags
-* Block modification of ACLs for our specific VPC
-   * ec2:ReplaceNetworkAclAssociation
-   * ec2:DeleteNetworkAclEntry 
-   * ec2:CreateNetworkAclEntry 
-* Block modification of RouteTable for our specific VPC
-   * ec2:DisassociateRouteTable 
-   * ec2:ReplaceRoute 
-* Block modification of subnets for our specific VPC
-   * ec2:DisassociateSubnetCidrBlock 
-   * ec2:AssociateSubnetCidrBlock 
-   * ec2:DeleteSubnet 
+* [https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-role.html](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-role.html)
+* [https://docs.aws.amazon.com/cli/latest/topic/config-vars.html#using-aws-iam-roles](https://docs.aws.amazon.com/cli/latest/topic/config-vars.html#using-aws-iam-roles)
 
- I don't want to block them from all VPC changes as they need to be able to perform certain ones.
+So far, this is my understanding, written as steps required to achieve this:
 
-I guess an alternative could be to use the deny everything wildcard and then use NotActions for the select few actions that the user should be allowed to perform. I would very much prefer to only deny those I need to deny though as I might unexpectedly block the users from performing actions I'm not aware of right now.
-## [11][Best way to log very small amounts of data from Lambda/python?](https://www.reddit.com/r/aws/comments/hiht4o/best_way_to_log_very_small_amounts_of_data_from/)
-- url: https://www.reddit.com/r/aws/comments/hiht4o/best_way_to_log_very_small_amounts_of_data_from/
----
-I'm writing a small lambda function to be used by the public, and I'd like to keep a record of the data submitted. It will be very low volume, so even SES could be used for this; but ideally I'd like to just have a csv of the data. 
+1) create two IAM resources: `user1`, `role1`
 
-Can anyone recommend the simplest way to log a few pieces of data from python/lambda? Wondering if cloudtrail might be the easiest.
+2) locally, create a CLI profile config and credentials for `user1`
+
+3) locally, create a CLI profile for `role1`, which looks like
+
+```
+[role1]
+role_arn = arn:aws:iam::123456789012:role/myapprole
+source_profile = user1
+```
+
+4. create an IAM policy attached to `user1` that allows `user1` to assume `role1` 
+
+5. set the local profile: `export AWS_PROFILE=role1` 
+
+6. the current profile will now have permissions of the policies attached to `role1` 
+
+7. run the app locally, and the AWS SDK will effectively have the permissions of `role1`
+
+Can someone please advise whether my understanding is correct and explain anything I'm missing? Thank you!

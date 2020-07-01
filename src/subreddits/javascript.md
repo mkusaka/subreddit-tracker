@@ -85,43 +85,58 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][A cross-platform and open-source document scanner that I built with React Native at a hackathon](https://www.reddit.com/r/javascript/comments/higgdw/a_crossplatform_and_opensource_document_scanner/)
-- url: https://github.com/burhanuday/invoice-scanner-react-native
+## [3][Watcher - all web development blogs in one place](https://www.reddit.com/r/javascript/comments/hj92fb/watcher_all_web_development_blogs_in_one_place/)
+- url: https://watcherapp.online/
 ---
 
-## [4][Determine the best build tool for your next web project](https://www.reddit.com/r/javascript/comments/hiia95/determine_the_best_build_tool_for_your_next_web/)
-- url: https://bundlers.tooling.report/
+## [4][Reno 1.0.0 released! A lightweight router for Deno's standard HTTP server](https://www.reddit.com/r/javascript/comments/hixl9g/reno_100_released_a_lightweight_router_for_denos/)
+- url: https://github.com/reno-router/reno
 ---
 
-## [5][Awesome list of finite state machines and statecharts content](https://www.reddit.com/r/javascript/comments/himkd7/awesome_list_of_finite_state_machines_and/)
+## [5][Observables, Reactive Programming, and RxJs](https://www.reddit.com/r/javascript/comments/hiqoxk/observables_reactive_programming_and_rxjs/)
+- url: https://dev.to/benlesh/observables-reactive-programming-and-regret-4jm6
+---
+
+## [6][Awesome list of finite state machines and statecharts content](https://www.reddit.com/r/javascript/comments/himkd7/awesome_list_of_finite_state_machines_and/)
 - url: https://github.com/leonardomso/awesome-fsm
 ---
 
-## [6][8 Steps to Get 100 Stars on GitHub](https://www.reddit.com/r/javascript/comments/him1fy/8_steps_to_get_100_stars_on_github/)
-- url: https://dev.to/nastyox1/8-concrete-steps-to-get-stars-on-github-355c
+## [7][Nextjs blog in less than 1 hour](https://www.reddit.com/r/javascript/comments/hj8ozk/nextjs_blog_in_less_than_1_hour/)
+- url: https://telmo.im/writings/nextjs-blog-in-less-than-1-hour
 ---
 
-## [7][Braille, and the evolution of software development](https://www.reddit.com/r/javascript/comments/hijexx/braille_and_the_evolution_of_software_development/)
-- url: https://stitcher.io/blog/braille-and-the-history-of-software
+## [8][[AskJS] Best way to access nodes after template clone?](https://www.reddit.com/r/javascript/comments/hj21ak/askjs_best_way_to_access_nodes_after_template/)
+- url: https://www.reddit.com/r/javascript/comments/hj21ak/askjs_best_way_to_access_nodes_after_template/
+---
+So I write a template element, I `document.importNode` it, but now I want to get references to specific nodes to add event listeners, insert content, etc. What is the best way to do that?
+
+* In the past I would use `getElementById()` or `querySelector()` but I think these are a single DOM traversal each.
+* I've been using comment nodes and then using a `treeWalker` that is filtered to just comment nodes. Then I get access to the `.nextElementSibling` and add my listener to that.  This is what lit-html does I think?
+
+Are there any other ways?
+
+There was a proposal for a template instantiation API, but it had a render function and Handlebars syntax which I wasn't interested in.
+
+Lastly, I've thought that maybe having a &lt;marker&gt; node that you could somehow clone the template and then have direct access to all the marker nodes within the template could be a way of solving template instantiation.  It would tell the parser that you want to access this node from JavaScript later so it should make a reference available.  What do you think about that?
+## [9][Neo Website: Sneak Preview](https://www.reddit.com/r/javascript/comments/hj8wpn/neo_website_sneak_preview/)
+- url: https://neomjs.github.io/pages/node_modules/neo.mjs/dist/production/apps/website/index.html#mainview=blog
 ---
 
-## [8][Synchly - CLI to automate database backups with customizable recurring schedules.](https://www.reddit.com/r/javascript/comments/hijym8/synchly_cli_to_automate_database_backups_with/)
-- url: https://github.com/hariprasanths/synchly
+## [10][JSExport: C++ functions/structs/classes compiled to JavaScipt. Examples/discussion of the limits/some fun experiments](https://www.reddit.com/r/javascript/comments/hitgpg/jsexport_c_functionsstructsclasses_compiled_to/)
+- url: https://medium.com/leaningtech/jsexport-cpp-in-the-browser-made-easy-710b2982046e
 ---
 
-## [9][parallax-effect - Parallax effect in javascript using webcam face tracking](https://www.reddit.com/r/javascript/comments/hi0xvd/parallaxeffect_parallax_effect_in_javascript/)
-- url: https://github.com/munrocket/parallax-effect
+## [11][Prints a dependency graph in dot format for your typescript project.](https://www.reddit.com/r/javascript/comments/hj7gxi/prints_a_dependency_graph_in_dot_format_for_your/)
+- url: https://github.com/PSeitz/ts-dependency-graph
 ---
 
-## [10][Service Workers Explained - Introduction to the JavaScript API](https://www.reddit.com/r/javascript/comments/hi1br9/service_workers_explained_introduction_to_the/)
-- url: https://felixgerschau.com/service-workers-explained-introduction-javascript-api/
+## [12][[AskJS] I'm about to start adding tests to a framework I built. What are some "BEFORE YOU START" tips, or strong opinions, you guys can share?](https://www.reddit.com/r/javascript/comments/hiw5sv/askjs_im_about_to_start_adding_tests_to_a/)
+- url: https://www.reddit.com/r/javascript/comments/hiw5sv/askjs_im_about_to_start_adding_tests_to_a/
 ---
+For background, I built a framework for webhosting with NodeJS, aptly named [webhoster](https://github.com/clshortfuse/webhoster). Zero dependencies, leans to allowing full control over all aspects of request/respond system, pure Javascript, all ES modules, documented with types for TS, blah, blah, blah. I like it. I want to share it. But I don't think people should use something without tests.
 
-## [11][Textures.js - SVG patterns for Data Visualization](https://www.reddit.com/r/javascript/comments/hi0ppd/texturesjs_svg_patterns_for_data_visualization/)
-- url: https://riccardoscalco.it/textures/
----
+So, I feel like I have to get started with the tests I need to build. I've built tests before for `angular/material` which seems to use `karma` and `jasmine`. It was weird, but I managed. I've done some for `cssnano` which is `jest`. A little less confusing, but pretty okay. The latest ones I've done were for `nodejs/node` and it uses regular only `.js` files and as long as `assert()` doesn't throw an error. I liked the simplicity of that, but don't know about the long-term consequences.
 
-## [12][NPM eco-system needs an update... Thoughts?](https://www.reddit.com/r/javascript/comments/hian1n/npm_ecosystem_needs_an_update_thoughts/)
-- url: https://news.ycombinator.com/item?id=23678409
----
+I don't know what I should choose, because "choose what you like" doesn't really inspire confidence. One may be less strenuous, but it doesn't mean it's best. I don't know about code coverage and stuff either, since I usually just submit PRs and the packages I've used already have everything like `travis` already setup.
 
+So any community-based guidance as to what works, what doesn't, and what's better long-term would be appreciated. Thanks!

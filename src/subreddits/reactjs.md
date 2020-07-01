@@ -109,88 +109,132 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/gk41zb/whos_available_may_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][A one minute Demo of an app I made with React](https://www.reddit.com/r/reactjs/comments/hi5qhh/a_one_minute_demo_of_an_app_i_made_with_react/)
-- url: https://v.redd.it/hsj3khugip751
+## [3][React Hook Form V6 is released.](https://www.reddit.com/r/reactjs/comments/hj62o0/react_hook_form_v6_is_released/)
+- url: https://react-hook-form.com/
 ---
 
-## [4][Most simple shared state with React](https://www.reddit.com/r/reactjs/comments/hik3bx/most_simple_shared_state_with_react/)
-- url: https://twitter.com/sebastienlorber/status/1277897032057991171
+## [4][Building the Tailwind Blog with Next.js – Tailwind CSS](https://www.reddit.com/r/reactjs/comments/hj17yx/building_the_tailwind_blog_with_nextjs_tailwind/)
+- url: https://blog.tailwindcss.com/building-the-tailwind-blog
 ---
 
-## [5][React Styling Method](https://www.reddit.com/r/reactjs/comments/hilgs3/react_styling_method/)
-- url: https://www.reddit.com/r/reactjs/comments/hilgs3/react_styling_method/
----
-I'm struggling to find an efficient and structured way for styling my components. I am currently using Sass and the BEM technique for styling.
-
-These are the methods I have tried so far:
-
-* Inline Styling - Great for scoping and convenient since logic, markup and styling are in the same file but lacks a lot of css functionality like psuedo-classes and sass functionality like nesting. It can get really long for large components unless I import it from a separate file.
-* Sass - Gives full functionality but lacks the ability to be scoped unless I give all component root elements a different className.
-* CSS Modules - Allows for scoping but classNames need to be applied using a variable `className={styles.button}` which makes the code look messy and hard to read.
-* Custom - Using a &lt;Box&gt; component as an alternative to &lt;div&gt; which gives additional functionality like conditional rendering. Also takes in tailwind-like classNames like `ml-4` but takes in these classNames in separate props like `position` and `spacing` which makes the class styling more understandable. This is purely for readability since all these props are simply combined in the Box component using `className={className + ' ' spacing + ' ' + position}` Also accepts custom class names like `col` and `cross-center` which I style using flexbox. An example of a Box component looks like  `&lt;Box position="col main-end cross-start" spacing="pb-8"&gt;&lt;/Box&gt;`.
-
-I recently learned Vue and found that having a `&lt;style lang="scss" scoped&gt;&lt;/style&gt;` in the same file along with the scoped attribute made it really convenient as it is scoped and logic, markup and styling are in the same file. I love working with react however the methods it offers for styling is something I have always been unhappy with especially when the project becomes very large.
-## [6][Are classes dead?](https://www.reddit.com/r/reactjs/comments/hik9pz/are_classes_dead/)
-- url: https://www.reddit.com/r/reactjs/comments/hik9pz/are_classes_dead/
----
-I'm teaching myself React and I realized that classes can entirely be replaced by using hooks so is there really any point in using classes??
-## [7][React Resource Router - a performance focused router for React apps](https://www.reddit.com/r/reactjs/comments/hijpbm/react_resource_router_a_performance_focused/)
-- url: https://github.com/atlassian-labs/react-resource-router
+## [5][React’s useImperativeHandle made simple](https://www.reddit.com/r/reactjs/comments/hivjqd/reacts_useimperativehandle_made_simple/)
+- url: https://medium.com/@Dylan.Kerler/reacts-useimperativehandle-made-simple-81035a21eef0
 ---
 
-## [8][Setting up Mobx with React context](https://www.reddit.com/r/reactjs/comments/him6nv/setting_up_mobx_with_react_context/)
-- url: https://www.reddit.com/r/reactjs/comments/him6nv/setting_up_mobx_with_react_context/
+## [6][Regarding fetching data and saving to the app's state.](https://www.reddit.com/r/reactjs/comments/hj6s0h/regarding_fetching_data_and_saving_to_the_apps/)
+- url: https://www.reddit.com/r/reactjs/comments/hj6s0h/regarding_fetching_data_and_saving_to_the_apps/
 ---
-Mobx's Provider/inject pattern is obsolete from mobx-react 6.x and it is recommened to use Mobx with react context from 6.x but the docs are confusing as to how to setup Mobx with react context API so I wrote a detailed guide on how to setup Mobx with react context. It also works with React native. Please have a look - [https://codingislove.com/setup-mobx-react-context/](https://codingislove.com/setup-mobx-react-context/?ref=reddit)
-## [9][Virtual art gallery and studio I build using react](https://www.reddit.com/r/reactjs/comments/hilaii/virtual_art_gallery_and_studio_i_build_using_react/)
-- url: https://www.mondrian.fun/
+Hey devs.
+
+I came across this question and I really would appreciate some guidance in the common/best practice.
+
+I am building a system where companies can sign up, and this will generate a job portal for them. Through a dashboard, they will be able to manage their job positions and the candidates that applied for each position.
+
+From the perspective of a guest (someone looking for a job in the particular company), this person will go to 
+www.domain.com/companyName and this route will fetch all the job positions from the specific company.
+
+So:
+
+route /companyName - all the job positions 
+
+route /companyName/:jobId - specific job listing
+
+Question:
+
+-Should I fetch the data only in the main route (all listings) component and save it to my state (Context API, Redux, etc ...) so I don't need to make API calls in other components (like the page with data for a specific job)?
+
+OR
+
+-Should I make API calls in every component and forget saving it to the state?
+
+Both ways will work, but what is the common practice?
+Why one way would be better than the other?
+
+Thank you all in advance.
+## [7][React devs who like wine](https://www.reddit.com/r/reactjs/comments/hja6z5/react_devs_who_like_wine/)
+- url: https://www.reddit.com/r/reactjs/comments/hja6z5/react_devs_who_like_wine/
+---
+Any React devs who also happen to like wine?  I recognize this is a 'funny' post but I am serious.  I started a personal project back in 2018 to give me something to build on and learn for work and personal growth.  It was super simple at first as I followed a tutorial for the initial build.  Eventually a senior dev (Principal Engineer) at Red Hat reached out as he was studying the WSET to become a Sommelier.  Here we are a year later and it has grown well beyond what I ever could have imagined.  
+
+I have the main project up which has our Spring MVC and Rest Controllers.  Our frontend is in HTML/Thymeleaf currently but have decided that React is the future.  Just last night I added the React project.
+
+I am a Java backend dev by day so learning React is for fun and slow going.  If you're interested there are a few ways I could use some help:
+
+1. Actual dev work in the form of pull requests or even project ownership
+2. Creating issues to help guide me or other junior devs who want to help
+3. Notes of any kind
+
+[https://github.com/My-Wine-Cellar/winecellar-webapp](https://github.com/My-Wine-Cellar/winecellar-webapp)
+
+[https://github.com/My-Wine-Cellar/winecellar-react](https://github.com/My-Wine-Cellar/winecellar-react)
+
+Many many thanks to anyone who posts or decides to help!
+## [8][Hand over deployable React project to client without sharing source code?](https://www.reddit.com/r/reactjs/comments/hj6xna/hand_over_deployable_react_project_to_client/)
+- url: https://www.reddit.com/r/reactjs/comments/hj6xna/hand_over_deployable_react_project_to_client/
+---
+I am working on my first **React** (`create-react-app`) project that will ultimately be delivered to a client I am implementing the app for. We agreed on me delivering a "ready to deploy" build, as the client intends to host the app by himself. As we agreed that the source code of the app will still remain my intellectual property (IP), I'd like to know if there are any best practices of how this can go down without me simply sharing the entire project (e.g. giving access to the git repo) including all source code files?
+
+So far I have figured out that you can create a production build (`npm run build`) and disable source map generation (`GENERATE_SOURCEMAP=false`) in the build step. This will essentially make the code non human readable.
+
+Now my question: Is it feasible to only share the **build folder** created with `npm run build`with the client and will he be able to deploy this? Or are there any better suggestions?
+## [9][Feedback request: react-tree, a tiny, accessible drag &amp; drop tree component for React](https://www.reddit.com/r/reactjs/comments/hj6gtk/feedback_request_reacttree_a_tiny_accessible_drag/)
+- url: https://github.com/mpkelly/react-tree
 ---
 
-## [10][API confusion.](https://www.reddit.com/r/reactjs/comments/hil3r7/api_confusion/)
-- url: https://www.reddit.com/r/reactjs/comments/hil3r7/api_confusion/
+## [10][How important is advanced CSS to a React developer?](https://www.reddit.com/r/reactjs/comments/hj969i/how_important_is_advanced_css_to_a_react_developer/)
+- url: https://www.reddit.com/r/reactjs/comments/hj969i/how_important_is_advanced_css_to_a_react_developer/
 ---
-Hi, I am new to web development. I am highly confused about Api. What I understand is api is kind of like application interface which provides us ( browser) data from the third party websites. For eg I can use NASA's api to have weather data and also images. But many people are talking about customer api ...api being used as a server. For eg:
-
-" To the browser, also known as the *client*, Facebook’s server is an API. This means that every time you visit a page on the Web, you interact with some remote server’s API. "
-
-Can someone explain what really is Api ( especially in that facebook case)??
-## [11][Papyr CMS - a jumping off point so you don't have to reinvent the wheel](https://www.reddit.com/r/reactjs/comments/hhyv4x/papyr_cms_a_jumping_off_point_so_you_dont_have_to/)
-- url: https://www.reddit.com/r/reactjs/comments/hhyv4x/papyr_cms_a_jumping_off_point_so_you_dont_have_to/
+I understand React and have a basic understanding of CSS. Just wondering how important it is to learn advanced CSS for a React dev?
+## [11][NextJS app with custom express server](https://www.reddit.com/r/reactjs/comments/hj967e/nextjs_app_with_custom_express_server/)
+- url: https://www.reddit.com/r/reactjs/comments/hj967e/nextjs_app_with_custom_express_server/
 ---
-Hello r/reactjs,
+Hi guys!
 
-I have been working for a while on a project I have named Papyr CMS. Papyr is a content management system built on Next.js, making it an incredibly powerful web application for the end user and a easy to extend for the developer.
+I've this problem that I can't figure a way of solving it...
 
-Besides everything that comes packaged with Next.js, key features that come out of the box include:
+So, I've one NextJS app built with a custom express server. One of my routes is responsible to handle image uploads to the server and then saving them in public folder.
 
-* A quick initialization process once the site is running to create the admin user and first page
-* Customizable content
-* A dynamic, extendable page builder and renderer for custom landing pages
-* A selection of commonly used page sections for the page builder
-* User authentication
-* Site notifications
-* Blog
-* Events
-* Ecommerce
-* Google maps, Google analytics, Gmail, Stripe, and Cloudinary integration,
-* Contact and donation forms
+During development I made some tests and I had some files in `public/images/articles` folder. 
 
-While I did not hit everything in that list, many of those features are common and necessary for most web applications and websites, making Papyr a perfect jumping-off point to build an even more robust web application, or to simply spin up a quick website.
+I ran `next build` and everything works well in `production`. If I upload some file in `production`, the file is being saved correctly, however, when I go to `https://&lt;myurl&gt;/images/articles/&lt;new file added&gt;` I get a 404. The file is in the filesystem but it's not being served by my app. 
 
-You can visit the home website at [https://papyrcms.herokuapp.com](https://papyrcms.herokuapp.com). Since great content is not necessarily my specialty, I have also created an example website with dummy content to show off more of what Papyr is capable of at [https://drkgrntt.herokuapp.com](https://drkgrntt.herokuapp.com). Check out the code at [https://github.com/drkgrntt/papyr-cms](https://github.com/drkgrntt/papyr-cms).
+The files that existed in `public` folder are served right. Is there anything that I should do in my server file to serve files from public that were added after the current build? 
 
-While Papyr is designed to be super easy for developers to spin up a site and extend it easily, I have also tried to keep the non-developer client in mind as I build it. I have tried to keep it as simple as I can, but there is still the major issue of the setup process being non-dev-unfriendly (connecting to MongoDB and Heroku, etc). It is far from complete, but at this point, I feel like it is presentable and definitely usable.
-
-While I am mostly looking for feedback right now, if you think this is cool or useful, please feel free to clone and use it. Setup instructions are in the readme. I would love to answer any questions as well!
-
-Thanks for reading!
-
-&amp;#x200B;
-
-Edit: typo
-
-Edit 2: Thank you all so much for the feedback and interest! I'm so excited you all like the idea and can't wait to continue working on it and sharing new updates along the way!
-## [12][A day in the life of a full stack developer.](https://www.reddit.com/r/reactjs/comments/hijva9/a_day_in_the_life_of_a_full_stack_developer/)
-- url: https://medium.com/@alex.leansquad/a-day-in-the-life-of-a-full-stack-developer-7efde6235ed7
+Thanks!
+## [12][New to Reactjs and indepth JS and having problems understanding the flow of things when setting state on a list of objects (includes a loop)](https://www.reddit.com/r/reactjs/comments/hj5szk/new_to_reactjs_and_indepth_js_and_having_problems/)
+- url: https://www.reddit.com/r/reactjs/comments/hj5szk/new_to_reactjs_and_indepth_js_and_having_problems/
 ---
+The function below loops through a list of objects, changes a couple of values of each object and then performs a DB update. After the forEach loop I set the state of two variables: athletes and startTime.
 
+The output in the console displays the message: 'DISPLAYING _ATHLETES' with the correct updated data **before** the messages in the .then block.
+
+Is this correct? Although I'm getting the correct results, it seems odd. If the last message in the function is printed first, I'm assuming the setAthlete and setStartTime would also be called at the same time and in the case of setAthletes, it would be set with the data of athletes when I made the copy and not the correct updated values.
+
+I hope that's clear.
+
+I also feel as though the way I have done it is not the React way so any pointers would be great on how to adopt better coding style.
+
+
+    const setInitialStartTime = () =&gt; {
+        const startTime = new Date()
+
+        // make a copy of athletes so I can be sure that the console.log 
+        // at the bottom really refers to changed data
+        const _athletes = [...athletes]
+
+        athletes.forEach((athlete, index) =&gt; {  
+      
+          athlete.laps = []
+          athlete.lapStartTime = startTime
+
+          athleteService.update(athlete)
+            .then(response =&gt; {
+              console.log('UPDATED ATHLETE', athlete)
+              _athletes[index] = athlete
+            })
+            .catch(error =&gt; console.log('error:', error))
+        })
+        console.log('DISPLAYING _ATHLETES', _athletes)
+        setAthletes(_athletes)
+        setSStartTime(startTime.toString());
+      }

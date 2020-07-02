@@ -39,118 +39,191 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Any gems that will create a seeds script from my current DB?](https://www.reddit.com/r/rails/comments/hj783p/any_gems_that_will_create_a_seeds_script_from_my/)
-- url: https://www.reddit.com/r/rails/comments/hj783p/any_gems_that_will_create_a_seeds_script_from_my/
+## [3][Pick up rails again after a break: advice needed](https://www.reddit.com/r/rails/comments/hjsu59/pick_up_rails_again_after_a_break_advice_needed/)
+- url: https://www.reddit.com/r/rails/comments/hjsu59/pick_up_rails_again_after_a_break_advice_needed/
 ---
-Looking for a gem that will look at my current DB and create a script so I can drop it and recreate it if required.
+A few years ago (2015) I learned to develop full-stack web applications by following an online bootcamp. The bootcamp used Ruby on Rails as a framework. After the bootcamp I was able to develop my own web applications by using RoR.
 
-My goal is to push my local db up to Heroku but you can’t do this on free plans.
-## [4][Gem for passwordless Auth in Rails API](https://www.reddit.com/r/rails/comments/hj8zf6/gem_for_passwordless_auth_in_rails_api/)
+Since 2017 I had hardly the time to develop since I had other career opportunities. However, now I would like to start building a new small application as a hobby project.
+
+The app will mostly consist of CRUD operations and a real-time chat functionality. Nothing groundbreaking though. However I would like to experiment with providing the content in a true mobile app as well for iOS &amp; Android.
+
+Before starting out though I have 2 questions where I hope you guys can help me with.
+
+&amp;#x200B;
+
+**Rails refresher**  
+Before starting out I would like to refresh and recap my RoR skills. I was looking at the following two possibilities:
+
+* Udemy course:  [The Complete Ruby on Rails Developer Course](https://www.udemy.com/course/the-complete-ruby-on-rails-developer-course/)
+* Book: [Agile Web Development with Rails 6](https://pragprog.com/titles/rails6/)
+
+Which one would you guys recommend? Any other recommendations?
+
+&amp;#x200B;
+
+**Feedback on application structure**  
+My first idea was to follow the JS hype and build an API in Express and use VUE for the frontend. However after following some courses, I had the feeling that this setup was way too complex for a one-man hobby project. Furthermore my content should be optimised for SEO as well. In the JS world that would mean that I should use a Framework like Nuxt for example to serve SSR-content.
+
+That's why I would chose for a "classic" RoR application. I could use Stimulus for the limited "interactive" functionalities and developing a native mobile app could be fairly easy [by wrapping web views](https://www.youtube.com/watch?v=SWEts0rlezA).
+
+Is this a good idea or should I follow the trend by using Rails as the API and develop a separate VUE front-end app?
+
+&amp;#x200B;
+
+Thanks a lot for the feedback!
+## [4][Rails 6 deployment with Passenger and Docker](https://www.reddit.com/r/rails/comments/hjuu1x/rails_6_deployment_with_passenger_and_docker/)
+- url: https://www.reddit.com/r/rails/comments/hjuu1x/rails_6_deployment_with_passenger_and_docker/
+---
+Hi all,
+
+Is there any good guide/resource on how to prepare and deploy Rails 6 application with Passenger/NGINX as Docker containers?
+## [5][Google OAuth2.0 Pricing using omniauth-google-oauth2 gem?](https://www.reddit.com/r/rails/comments/hjhr3d/google_oauth20_pricing_using_omniauthgoogleoauth2/)
+- url: https://www.reddit.com/r/rails/comments/hjhr3d/google_oauth20_pricing_using_omniauthgoogleoauth2/
+---
+Has anyone had experience using the [**omniauth-google-oauth2**](https://github.com/zquestz/omniauth-google-oauth2) gem for an app with a fairly large user base? 
+
+I am trying to figure out which [Google Identity Platform pricing tier](https://cloud.google.com/identity-platform/pricing) it falls under, Tier 1 or Tier 2.
+
+Anyone know?
+## [6][2013-08, Train trip in Beroun and station transit.](https://www.reddit.com/r/rails/comments/hjsrb0/201308_train_trip_in_beroun_and_station_transit/)
+- url: https://www.reddit.com/r/rails/comments/hjsrb0/201308_train_trip_in_beroun_and_station_transit/
+---
+Beroun, 22-08-2013. Journey from Praha Hlavní Nádraží station to Beroun and resumption of rail freight and passenger traffic. Good vision.
+
+https://youtu.be/GIyyXVAX8-c
+
+\#Beroun #Praha\_Hlavní\_Nádraží #Prague #Praha #Czech\_Republic #Europe #České\_dráhy #nádraží #International\_Train #Maintainers\_track\_rail\_vehicle #train #rail #eisenbahn #bahn #railway #railroad #travelblog #railwayphotography #railroadlife #railplanet #railfan #loverailways #fallenflag #station #passengertrains #freight\_trains #trainspotting #travel #travel\_video #trip #film #video #photography #youtube
+## [7][What should I use to document my Rails API end points?](https://www.reddit.com/r/rails/comments/hjfx4q/what_should_i_use_to_document_my_rails_api_end/)
+- url: https://www.reddit.com/r/rails/comments/hjfx4q/what_should_i_use_to_document_my_rails_api_end/
+---
+I'm building a simple JSON API and id like to document some basic usage info about it -
+
+- what the routes are
+- what the params are (required, options, etc...)
+- what the response looks like. 
+
+I'm new to both ruby and rails. 
+
+I'd love to just keep it simple with a comment on the controller action (is that the right place?) It would be icing on the cake to also auto-generate documentation, but it's not strictly needed. 
+
+1. What's the best approach to document this info? Is there a comment standard or an open source tool that helps generate this in a certain format?
+
+2. Are there any publicly viewable projects that I can use as an example guide?
+
+
+Thanks so much!
+## [8][HTML Query](https://www.reddit.com/r/rails/comments/hjlpw8/html_query/)
+- url: https://www.reddit.com/r/rails/comments/hjlpw8/html_query/
+---
+So I'm trying to query an HTML link, already have that much covered to gather the information I need. But I'm having some syntax problems on the Rails end of things to display it. I'm trying to do this on the controller level in order to make the request AJAX. As I said, I'm having a problem with syntax here and can't seem to find any explicit answers via google - so here's what's up:  
+
+
+**API Query (from controller)** 
+
+https://www.database.com/params 
+
+**Expected return:** 
+
+\["data1", "data2", "data3", "etc"\] 
+
+I'd like to take this information and separate them into different arrays. So.. data1 could be a name and I want to pair it with names, data2 could be a location and I'd like to separate it into different locations, really just manipulate this data in general since I'm not sure how I want it to display on chartkick just yet. 
+
+That's the general idea of it, here's the code I'm having a hard time with:
+
+&amp;#x200B;
+
+`class Charts_Controller &lt; ApplicationController`
+
+`def query` 
+
+`Above_Query`
+
+`Transfer query results into different arrays (can probably figure this out myself once I know how to take in the results)`
+
+`Result_Of_Query do render json: NewData.ChartkickParams` 
+
+`end` 
+
+`end`
+
+I may be way off on the whole thing. If you have a better way of doing this, that's fine by me. It's just a rather large database that may contain a lot of information, so it'd be nice to do this via AJAX, but it is a personal project so I can cut a few corners for now.
+## [9][Rails 6 - problem with method Stale? not working properly](https://www.reddit.com/r/rails/comments/hjl335/rails_6_problem_with_method_stale_not_working/)
+- url: https://www.reddit.com/r/rails/comments/hjl335/rails_6_problem_with_method_stale_not_working/
+---
+Hi guys. I'm using Rails 6 and I'm facing a problem while using the method stale? on AR relations - collections. The method stale? isn't recognizing changes on the collection, e.g updating the attribute 'updated\_at' of one record, therefore returning the 304 http code - page not modified. As result, the browser use the cached page instead of refreshing with a new one.
+
+I found the same problem here [https://github.com/rails/rails/issues/37310](https://github.com/rails/rails/issues/37310)
+
+I copy the example from the above link to clarify what I explained above:
+
+    # Controller 
+    def index   
+      @articles = Article.all
+      if stale?(@articles)
+        respond_to do |format|
+          # all the supported formats
+        end
+      end 
+    end  
+    
+    # Test 
+    it "updates cache when one of articles is updated" do
+      all_articles = create_list(:article, 10)
+      response = get '/articles'
+      etag = response.headers['ETag']
+      expect(response.status).to eq(200)
+      get '/articles', headers: { 'HTTP_IF_NONE_MATCH' =&gt; etag } 
+      expect(response.status).to eq(304)
+    
+      all_articles.sample.touch   
+      get '/articles', headers: { 'HTTP_IF_NONE_MATCH' =&gt; etag }   
+      # HERE on next line assert will fail because server will respond with 304,    
+      # because cache key for ActiveRecord::Relation will stay the same 
+      expect(response.status).to eq(200) # =&gt; 304 
+    end  
+
+From my research, from Rails 6 and above, rails uses the following logic for creating key caches
+
+    # collection_cache_versioning
+    
+    ### cache_key holds the stable information - generate from the SQL query
+    Product.where("name like ?", "%Cosmic Encounter%").cache_key 
+    # =&gt; "products/query-1850ab3d302391b85b8693e941286659"
+    
+    ### cache_version holds the volatile information - generate from updated_at and count
+    Product.where("name like ?", "%Cosmic Encounter%").cache_version
+    # =&gt; "3-20190522172326885804" 
+
+From what I see and hopes, when cache\_version is updated (e.g updating updated\_at or count) the method stale? should stale the collection and create a new query and view, but for me that is not happening. One solution that I found is deactivate the collection\_cache\_versioning system to use the old system - the old system would create only one key, without versions.
+
+I did test on my system using rails console and saw that cache\_version was changing when touching one record.
+
+Does anyone faced the same problem? I didn't find another solution.
+## [10][is Rails API Mode suitable for micro-services](https://www.reddit.com/r/rails/comments/hjby7u/is_rails_api_mode_suitable_for_microservices/)
+- url: https://www.reddit.com/r/rails/comments/hjby7u/is_rails_api_mode_suitable_for_microservices/
+---
+i have question rails suitable  for micro-services ? i search for if rails suitable  for micro-services or not . 
+
+when search `sinatra ruby`  is faster than if small things but sinatra is not suitable for scale . 
+
+i am not want after year regret for my choose .   
+
+
+rails have more advantages any other
+## [11][Rails build a dashboard](https://www.reddit.com/r/rails/comments/hjihb4/rails_build_a_dashboard/)
+- url: https://www.reddit.com/r/rails/comments/hjihb4/rails_build_a_dashboard/
+---
+Hi, 
+
+I'm trying to build a dashboard that includes a navbar and the container below it. So far I have the navbar and it includes a link\_to edit user profile, though I'm trying to rather than open it in a new page, render it in the container. 
+
+I thought of adding it as a partial but I don't think that's the right solution as it will always be there (currently with devise's alerts are also always present too). What do you suggest would be the best way to do it? 
+
+Basically I want to be able to show different components in the dashboard's container depending on what the user clicks. 
+
+Thanks!
+## [12][Gem for passwordless Auth in Rails API](https://www.reddit.com/r/rails/comments/hj8zf6/gem_for_passwordless_auth_in_rails_api/)
 - url: https://www.reddit.com/r/rails/comments/hj8zf6/gem_for_passwordless_auth_in_rails_api/
 ---
 I am on the lookout for a gem that enables passwordless auth (ie you only have to enter an email to be sent a magic link to login) in a rails API. Having looked this morning I’ve found examples that work when using rails for views but not any that are setup to work with only rails APIs. Just wondered if anyone knew of any?
-## [5][what best way to Encrypt &amp; Decrypt data using ruby(rails)](https://www.reddit.com/r/rails/comments/hj7jre/what_best_way_to_encrypt_decrypt_data_using/)
-- url: https://www.reddit.com/r/rails/comments/hj7jre/what_best_way_to_encrypt_decrypt_data_using/
----
-i take from user token and i think must encrypt this token before save in database . and need decrypt token for use get some data .
-
-i generate private key and save it in db &amp;  public key save in csv in local server .  
-
-
-i need suggest way or gem to help  me .
-## [6][Just a thank you](https://www.reddit.com/r/rails/comments/hipz4t/just_a_thank_you/)
-- url: https://www.reddit.com/r/rails/comments/hipz4t/just_a_thank_you/
----
-One of the main reasons why I dived into Rails was because I heard about how good the community is - and boy did I experience that. Here and the Slack group.
-
-I dived into this with pretty much zero experience in Rails about two months ago and a month ago I deployed a production ready API using ECS. 
-
-I have this wonderful community here to guide me along the way and clear any pesky little doubts I had. 
-
-So, thank y’all!
-## [7][Apps with multiple webpacker packs, how do you organize your app/javascript folder?](https://www.reddit.com/r/rails/comments/hixnme/apps_with_multiple_webpacker_packs_how_do_you/)
-- url: https://www.reddit.com/r/rails/comments/hixnme/apps_with_multiple_webpacker_packs_how_do_you/
----
-We have a large app with multiple `packs` entry points. Then each pack gets its own folder under `app/javascript`. There's one `shared` folder where we obviously put shared stuff. It's not bad, but I'm wondering how other people are solving this.
-
-Are you doing something different?
-## [8][Confusion about Rails API Security](https://www.reddit.com/r/rails/comments/hj0isx/confusion_about_rails_api_security/)
-- url: https://www.reddit.com/r/rails/comments/hj0isx/confusion_about_rails_api_security/
----
-So far I've set up my rails grape API to use JWT for authentication using the [**grape-jwt-authentication**](https://github.com/hausgold/grape-jwt-authentication) gem.
-
-I am confused about whether the data payload being exchanged between my server and client's server should also be encrypted using the RSA key pairs? Or should there be a separate encryption key between the server for this?
-
-Or does HTTPS already take care of encrypting the data in transition?
-## [9][Shopify App + Devise. Company website registration/login for stores?](https://www.reddit.com/r/rails/comments/hiwn21/shopify_app_devise_company_website/)
-- url: https://www.reddit.com/r/rails/comments/hiwn21/shopify_app_devise_company_website/
----
-I have built a few different Shopify Applications using the shopify\_app gem (Shopify Application Rails engine and generator). This is great for redirecting a user from an app developer's website to the shopify store to download the application.
-
-However, how would one setup a registration/login at the app developer's website (using devise) to then be able to connect to the store owners shopify app/install it in the shopify store?
-
-Note: using the shopify\_app gem a route is created that directs the user to a shopify login page, like so:
-
-    Rails.application.routes.draw do
-      root :to =&gt; 'home#index'
-      mount ShopifyApp::Engine, at: '/'
-      # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-    end
-
-Also I am wondering how one would allow a shop that has installed your application to then be able to go to your company website and register/login? I was thinking about setting a new account for each app install (store name would be the subdomain - so it is reserved), and allowing the user to sign up by using the forget password route? Would this be ok?
-## [10][How do you handle form spam? What about scoring/grading/filtering of content/leads/etc?](https://www.reddit.com/r/rails/comments/hinhsm/how_do_you_handle_form_spam_what_about/)
-- url: https://www.reddit.com/r/rails/comments/hinhsm/how_do_you_handle_form_spam_what_about/
----
-Hey group!  
-
-
-I am almost done writing the first version of a gem that's meant to easily and intelligently handle form spam. It's a process that I had already incorporated into a current project, and I've gone ahead and extracted it and abstracted everything into a more flexible set of classes and methods.
-
-But the reason for this post is... well I'm experiencing a little imposter syndrome. I was all fired up about writing the gem and getting it out into the world, but now I'm just wondering if it would even be useful to people.  
-
-
-So, can you the community help me out? I'd really like to know what you do to handle spammy form submissions from public forms. We all know, those dam bots are AWFUL. But I felt like there were so many different ways that I saw people handling it.  
-
-
-For what it's worth, here's the breakdown of my gem's initial core features:  
-
-
-1. A rule based system that allows for detecting matching keywords, links, WP formatted comments. emails and domains, and scoring the object being analyzed. (90% Done)
-   1. Allows for positive &amp; negative point assignments to a matching keyword, email, or domain, which use either the default point values from the initializer or the point value you assign in the rule.
-   2. Has a 'Ban' list to automatically 'fail' any input that matches anything you absolutely want blocked from the site. However, it does not block anything, it just calculates a score that would be considered 'failing' automatically.
-   3. Has a 'Pass' list to automatically bypass the rest of the scoring process and assign the lowest/highest passing score possible.
-   4. I also have a handful of public methods that allow you to run your own detections for counting the number of links in a string (of any size), that allow you to detect keywords, emails, or domains and return a True/False value if the value is found.
-   5. I have a couple of public methods that also have a customizable sensitivity level, so if you've having issues where some submissions are getting crafty with how they are submitting content you want scored, then you can pass in an additional param to set the sensitivity to 'High' and get a slightly more broad match. Useful for spammers who write URLs like 'http blahblahblah com'
-   6. The scoring can also be used in a positive way, like scoring inbound leads to set them as a priority based on their email domain, or keywords in their submission details.
-
-&amp;#x200B;
-
-Features I plan to extract from my current app into the gem:
-
-1. Adding a 'honeypot' feature to form\_with and form\_for methods.
-   1. The honeypot would detect the fields that the programmer created, and then inject commonly abused/used fields that are not in the original field list as hidden input fields.
-   2. During scoring, honeypot fields would be checked for any value being present (because they should be blank, they are hidden fields after all). Anything being detected means a bot filled out the form and the submission automatically fails scoring. The IP address gets logged for the abusive behavior.
-2. Add the IP address logging for submissions that have failed the scoring for spam. Other scoring models would/could be excluded since you can also use the scoring for positive methods as well that are entirely unrelated to bad behavior.
-3. Integrating with Rack to intercept bad actors and BAN THOSE MOFOS. Seriously, I'm bringing down the ban-hammer on these bots. I have no sympathy for abusers.
-   1. Over time, the log of bad actors submitting can keep track of abusive/unwanted behavior and allow you to put restrictions on actions taken.
-   2. Outright ban IP addresses who have bad behavior patterns. I'd like to setup some defaults, but allow this to be configurable and flexible for however someone decides to use this in their app. It's really meant to work at the Rack level so that it intercepts and stops processing an entire request through the Rails stack and saves on processing. It's very useful when getting spam bombed.
-
-&amp;#x200B;
-
-Anyway, that's my idea that I've been slowly working on in the dark. Would this even be useful to people out there? I know it's useful to me, so I'm going to do it regardless, but it would be nice to know if I'm actually solving a problem for others.
-## [11][Anyone figure out a way to add structure to actiontext columns? ActionList?](https://www.reddit.com/r/rails/comments/hit4l8/anyone_figure_out_a_way_to_add_structure_to/)
-- url: https://www.reddit.com/r/rails/comments/hit4l8/anyone_figure_out_a_way_to_add_structure_to/
----
-I would like to add a "list" to a product table without adding a new JSON Column. 
-
-would love `has_rich_list :features` with a form input that is strictly list elements. 
-
-I have not yet seen any custom "actiontext" gems but i imagine this coming as people get more familiar with the data models. 
-
-yolo
-## [12][Best way to add a search/filter/sort to a list of records?](https://www.reddit.com/r/rails/comments/hinagw/best_way_to_add_a_searchfiltersort_to_a_list_of/)
-- url: https://www.reddit.com/r/rails/comments/hinagw/best_way_to_add_a_searchfiltersort_to_a_list_of/
----
-I'm looking for a package or gem that will let me add this functionality rather than having to code it from scratch.  What's the best solution for this?
-
-Ideally, it would be nice to have it async so I don't have to refresh the page but that's not too important.

@@ -66,16 +66,15 @@ Group | Location | Status | Until
 [Bulgaria C++ Meetup](https://dev.bg/groups/c-c-plus-plus/) | Sofia, Bulgaria | [Virtual](https://dev.bg/groups/c-c-plus-plus/) | Indefinitely
 [C++ London](https://www.meetup.com/CppLondon) | London, UK | [Virtual](https://www.meetup.com/CppLondon) | Indefinitely
 [Core C++](https://www.meetup.com/CoreCpp/) | Israel | [Virtual](https://www.meetup.com/CoreCpp/) | Indefinitely
-## [2][C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-- url: https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/
+## [2][C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
+- url: https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/
 ---
 Rules For Individuals
 ---------------------
 
 * **Don't** create top-level comments - those are for employers.
 * Feel free to reply to top-level comments with **on-topic** questions.
-* I will create one top-level comment for **meta** discussion.
-* I will create another top-level comment for **individuals looking for work**.
+* I will create top-level comments for **meta** discussion and **individuals looking for work**.
 
 Rules For Employers
 ---------------------
@@ -85,7 +84,6 @@ Rules For Employers
 * **Don't** use URL shorteners. [reddiquette](https://www.reddithelp.com/en/categories/reddit-101/reddit-basics/reddiquette) forbids them because they're opaque to the spam filter.
 * Templates are awesome. Please **use** the following template. As the "formatting help" says, use \*\*two stars\*\* to **bold text**. Use empty lines to separate sections.
 * **Proofread** your comment after posting it, and edit any formatting mistakes.
-* 🚨 **Updated Remote section.** 🚨 You must follow its guidance, or your post will be removed.
 
 ---
 
@@ -105,7 +103,7 @@ Rules For Employers
 
 &amp;nbsp;
 
-\*\*Remote:\*\* [🚨 **Updated!** 🚨 Is this permanently a remote job, or is this remote (including new employee orientation) for the duration of the crisis? If so, do you require employees to live in certain areas or time zones? If you require programmers to be physically present, please explain either why you're essential infrastructure (e.g. programmers must physically interact with manufacturing/medical equipment) or why you're recklessly foolish.]
+\*\*Remote:\*\* [Do you offer the option of working remotely (permanently, or for the duration of the pandemic)? If so, do you require employees to live in certain areas or time zones?]
 
 &amp;nbsp;
 
@@ -113,7 +111,7 @@ Rules For Employers
 
 &amp;nbsp;
 
-\*\*Technologies:\*\* [Required: do you mainly use C++98/03, C++11, C++14, C++17, or the C++20 working draft? Optional: do you use Linux/Mac/Windows, are there languages you use in addition to C++, are there technologies like OpenGL or libraries like Boost that you need/want/like experience with, etc.]
+\*\*Technologies:\*\* [Required: do you mainly use C++98/03, C++11, C++14, C++17, or C++20? Optional: do you use Linux/Mac/Windows, are there languages you use in addition to C++, are there technologies like OpenGL or libraries like Boost that you need/want/like experience with, etc.]
 
 &amp;nbsp;
 
@@ -124,70 +122,129 @@ Rules For Employers
 Previous Post
 --------------
 
-* [C++ Jobs - Q1 2020](https://www.reddit.com/r/cpp/comments/eiila4/c_jobs_q1_2020/)
-## [3][Best online data structures /algorithms c++ courses?](https://www.reddit.com/r/cpp/comments/hj4hql/best_online_data_structures_algorithms_c_courses/)
-- url: https://www.reddit.com/r/cpp/comments/hj4hql/best_online_data_structures_algorithms_c_courses/
----
-Howdy, Computer Science student here
-
-I am taking a Data Structures and Algorithms in c++ class next semester and I am wondering if there are any free or cheap courses online that I can take to prepare for it. Any help is appreciated, thank you!
-## [4][In terms of compilation speedup, how does clang precompiled headers compare with c++20 modules ?](https://www.reddit.com/r/cpp/comments/hixgyq/in_terms_of_compilation_speedup_how_does_clang/)
-- url: https://www.reddit.com/r/cpp/comments/hixgyq/in_terms_of_compilation_speedup_how_does_clang/
+* [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
+## [3][C++20 Features and Fixes in VS 2019 16.1 through 16.6](https://www.reddit.com/r/cpp/comments/hjn4uv/c20_features_and_fixes_in_vs_2019_161_through_166/)
+- url: https://devblogs.microsoft.com/cppblog/c20-features-and-fixes-in-vs-2019-16-1-through-16-6/
 ---
 
-## [5][C++ is too slow to compile, can you share all your tips to lower compilation time ?](https://www.reddit.com/r/cpp/comments/hj66pd/c_is_too_slow_to_compile_can_you_share_all_your/)
-- url: https://www.reddit.com/r/cpp/comments/hj66pd/c_is_too_slow_to_compile_can_you_share_all_your/
----
-C++ compilation time is killing my productivity and will probably by my #1 reason of not using this language anymore. Can you share any tips that you used to lower the compilation time of your c++ projects ?
-
-Anything is welcome: optimizing any step of the compilation (header, template instantiation, link, ...), tools, hardware, build systems, not using expensive language features, compilation time profiler ...
-
-If you propose a tip, please follow this guideline as much as you can:
-
-* Overall description
-* Speedup observed on your project
-* All steps to reproduce your tip (command lines, code, hardware specs,...)
-* Why does it reduce compilation time ?
-* What is the conditions to observe the same speedup or what type of projects won't benefit from you tip ?
-
-If this thread is successful, one next step would be to gather all tips in a git repository and maintain it by asking r/cpp for PRs maybe once or twice per year.
-## [6][Scoped (class) enums: fundamentals and examples](https://www.reddit.com/r/cpp/comments/hj96js/scoped_class_enums_fundamentals_and_examples/)
-- url: https://www.nextptr.com/tutorial/ta1423015134/scoped-class-enums-fundamentals-and-examples
+## [4][Magnum Engine 2020.06 released with redesigned asset pipeline and several new examples](https://www.reddit.com/r/cpp/comments/hjwbrb/magnum_engine_202006_released_with_redesigned/)
+- url: https://blog.magnum.graphics/announcements/2020.06/
 ---
 
-## [7][The joys and perils of aliasing in C and C++, Part 2](https://www.reddit.com/r/cpp/comments/hj8bdg/the_joys_and_perils_of_aliasing_in_c_and_c_part_2/)
+## [5][C++ package managers in CMake: Hunter and Conan](https://www.reddit.com/r/cpp/comments/hjpwd0/c_package_managers_in_cmake_hunter_and_conan/)
+- url: https://www.reddit.com/r/cpp/comments/hjpwd0/c_package_managers_in_cmake_hunter_and_conan/
+---
+What are the advantages of each? Are either missing anything major? Do you have any stories using either?
+
+Conan: [https://conan.io/](https://conan.io/)
+
+Hunter: [https://github.com/cpp-pm/hunter](https://github.com/cpp-pm/hunter)
+
+I am not trying to start an argument. I am just curious in how others feel because I don't have much experience with either.
+## [6][Zipping By The Longest Range](https://www.reddit.com/r/cpp/comments/hjr0nh/zipping_by_the_longest_range/)
+- url: https://m-peko.github.io/craft-cpp/posts/zipping-by-the-longest-range/
+---
+
+## [7][C ++ Beginner Tutorial Variables and Datatypes](https://www.reddit.com/r/cpp/comments/hjvsbb/c_beginner_tutorial_variables_and_datatypes/)
+- url: https://www.youtube.com/watch?v=cARnMT7nmdE&amp;feature=share
+---
+
+## [8][Where can I find information on modern c++ techniques/?](https://www.reddit.com/r/cpp/comments/hjop5b/where_can_i_find_information_on_modern_c/)
+- url: https://www.reddit.com/r/cpp/comments/hjop5b/where_can_i_find_information_on_modern_c/
+---
+I am a student looking to learn more of c++ but mostly I find things related to c++11 but I assume there should be more updates to c++ later than that. Where could I find resources to learn more modern c++ techniques?
+## [9][The joys and perils of aliasing in C and C++, Part 2](https://www.reddit.com/r/cpp/comments/hj8bdg/the_joys_and_perils_of_aliasing_in_c_and_c_part_2/)
 - url: https://developers.redhat.com/blog/2020/06/03/the-joys-and-perils-of-aliasing-in-c-and-c-part-2/
 ---
 
-## [8][Best C++ online learning resources](https://www.reddit.com/r/cpp/comments/hj5nvn/best_c_online_learning_resources/)
-- url: https://www.reddit.com/r/cpp/comments/hj5nvn/best_c_online_learning_resources/
----
-I have a BSc in Computer Science, and want to learn modern C++. I usually learn by doing projects and reading about the areas and problems I encounter, but I have trouble finding somewhere to read about best practices and examples with modern C++.
-## [9][Simplest DEV environment for "introduction to C++" class?](https://www.reddit.com/r/cpp/comments/hj9y5n/simplest_dev_environment_for_introduction_to_c/)
-- url: https://www.reddit.com/r/cpp/comments/hj9y5n/simplest_dev_environment_for_introduction_to_c/
----
-Hello everyone,
-
-My wife is taking an "introduction to programming" class next semester, where the curriculum starts with "hello world" and ends with "nested for loops". She won't be going further than that in programming, it's solely for the requirements for her degree in genetics.
-
-I'm a developer, but it's been 15 years since I used c++ so i have no idea about the current development environments.
-
-What's the basic software setup for her laptop? Compiler? IDE? 
-
-During the summer I'll be teaching her the basics of programming, and she'll watch some tutorials too. I want her to get acquainted with writing basic stuff and compiling. I'm looking for the easiest setup for her convenience.
-
-She will stop using c++ once she passes her class, so anything too advanced or future-proof is unnecessary.
-
-Thanks for any help!
-## [10][JSExport: C++ in the browser made easy](https://www.reddit.com/r/cpp/comments/hio150/jsexport_c_in_the_browser_made_easy/)
-- url: https://medium.com/leaningtech/jsexport-cpp-in-the-browser-made-easy-710b2982046e
+## [10][Corobatch - Batch operations, simply, with coroutines (C++ London 2020; Francesco Zoffoli)](https://www.reddit.com/r/cpp/comments/hjucq2/corobatch_batch_operations_simply_with_coroutines/)
+- url: https://www.youtube.com/watch?v=vzi0lTVyb-g&amp;t=3264
 ---
 
-## [11][Automation with C++](https://www.reddit.com/r/cpp/comments/hj1a5v/automation_with_c/)
-- url: https://www.reddit.com/r/cpp/comments/hj1a5v/automation_with_c/
----
-Hey guys! I was thinking if automation and web scrapping is a possible way in python it would also be possible how in c++. But I don’t know how to to do that. Can somebody help.
-## [12][ModernCppStarter &amp; PVS-Studio Static Code Analyzer](https://www.reddit.com/r/cpp/comments/hj78yr/moderncppstarter_pvsstudio_static_code_analyzer/)
-- url: https://github.com/viva64/pvs-studio-cmake-examples/tree/master/modern-cpp-starter
+## [11][Programming project of calculator in c++(using codeblocks)](https://www.reddit.com/r/cpp/comments/hjvmnm/programming_project_of_calculator_in_cusing/)
+- url: https://www.scitechtop.com/programming-project-of-calculator-in-cusing-codeblocks/
 ---
 
+## [12][Named tuples/multiple return values in C++14 with magic_get](https://www.reddit.com/r/cpp/comments/hjen9m/named_tuplesmultiple_return_values_in_c14_with/)
+- url: https://www.reddit.com/r/cpp/comments/hjen9m/named_tuplesmultiple_return_values_in_c14_with/
+---
+If someone is not familiar with magic\_get (because i wasn't): [https://github.com/apolukhin/magic\_get](https://github.com/apolukhin/magic_get) 
+
+CppCon 2016 video: [https://www.youtube.com/watch?v=abdeAew3gmQ](https://www.youtube.com/watch?v=abdeAew3gmQ)
+
+tl;dr: it can convert struct to tuple and tuple to struct (and do some other things) in C++14
+
+If we can can convert structs to tuples and vice versa, perhaps we can also pack and unpack tuples into compatible tuples and create sort of named tuples by using the structs like this:
+
+    auto f1() {
+    	struct {
+    		int x = 5;
+    		std::string s = "hello world";
+    	} ret;
+    	return ret;
+    }
+
+I believe this is a standard C++14 without any hacks. To unpack (repack) such return value into another "named tuple":
+
+    template &lt;typename To, typename From&gt;
+    constexpr To unpack(const From &amp;from) {
+    	remove_cvref&lt;To&gt; to = {};
+    	boost::pfr::structure_tie(to) =
+    		boost::pfr::structure_to_tuple(from);
+    	return to;
+    }
+
+Return value of `f1()` can also be accessed a lot like a named tuple like so:
+
+    auto f2() {
+    	auto s1 = f1();
+    	return std::make_tuple(s1.x + 2, "hello tuple"); // mind the const char*
+    }
+
+This is also standard C++14 without hacks, it returns \`std::tuple&lt;int, const char \*&gt;\`.
+
+Usage of `unpack()`:
+
+    const struct {
+    	int y;
+    	std::string str;
+    } s1 = unpack&lt;decltype(s1)&gt;(f1());
+
+And we can ignore some values using "idiomatic underscore" and `std::ignore` too:
+
+    const struct {
+    	//float f;
+    	decltype(std::ignore) _;
+    	std::string s;
+    } s2 = unpack&lt;decltype(s2)&gt;(f2());
+
+To complete this, "unrolling" a tuple into list of function arguments is `std::apply()`, even though `std::apply` (obviously) can't apply a struct, but `apply()` based on magic\_get can do that and if struct can be converted to tuple, then perhaps `std::apply()` should be able to do that too, right?
+
+Potentially it could be possible to call a function similarly to this (pseudocode++20):
+
+    void g(int x, const std::string &amp;y); // forward declaration
+    
+    g({ .x = 17, .y = "hello world" });
+
+If `{}` expression can be converted into type-deduced anonymous struct that then can be converted into a tuple (not necessarily named) that in turn can be "unrolled" into compatible function arguments.
+
+I pasted working example (without magic\_get based `apply()`) here: [https://godbolt.org/z/jeatU5](https://godbolt.org/z/jeatU5)
+
+Godbolt can't compile it because of missing includes, but GCC 5/6/7/8/9 can if magic\_get is cloned locally. Note that clang 8 crashes, i didn't check with clang 9/10, but at least clang 7 works too.
+
+To sum this up:
+
+1. This works similarly to structured bindings except it's explicitly typed and compiler do check types during conversions instead of deducing types with `auto`
+2. This works in C++14, although it depends on underlying tricks that are not very pretty, readable or maintainable. But it technically works.
+3. There are some limitations listed on magic\_get's Github page
+4. It's not very pretty overall, namely `decltype()` is all over the place, there are a lot of brackets and so on
+5. Nonetheless i think conformant C++14 compiler can already do multiple return values and so to speak "named tuples" (represented as anonymous structs) if some inconveniences and redundancy is ignored
+6. It actually synergizes with type deducing and structured bindings
+
+I assume this wheel was already invented elsewhere
+
+1. Are there any related proposals ongoing?
+2. Does anyone know what is the status of [P0222R0](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0222r0.html)?
+3. Any chance of getting multiple return values and named tuples into C++, preferably without templates hacks or other kinds of hacks any time soon?
+
+Any ideas?

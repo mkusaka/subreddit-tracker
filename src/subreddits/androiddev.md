@@ -31,69 +31,63 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Google Console - An unexpected error occurred. Please try again later.](https://www.reddit.com/r/androiddev/comments/hj4z9y/google_console_an_unexpected_error_occurred/)
-- url: https://www.reddit.com/r/androiddev/comments/hj4z9y/google_console_an_unexpected_error_occurred/
+## [3][[Discussion] Android Developers of Reddit, What are the Harsh Truths that People should know about being a Android Developer?](https://www.reddit.com/r/androiddev/comments/hjs5yx/discussion_android_developers_of_reddit_what_are/)
+- url: https://www.reddit.com/r/androiddev/comments/hjs5yx/discussion_android_developers_of_reddit_what_are/
 ---
-&amp;#x200B;
+I took inspiration from [r/ITCareerQuestions](https://www.reddit.com/r/ITCareerQuestions/) and I want to hear on the Android Developers specifically so I want to hear the harsh truths that newcomers should know before choosing to be a Android Developer?
 
-https://preview.redd.it/a03ib9upw6851.png?width=1356&amp;format=png&amp;auto=webp&amp;s=65311109ce69025fc087ef57bd6d842c5a7d5eda
-## [4][Our app got stolen again. They decompiled our app and still using our codebase. They gave all our premium features for free. Please let us know how to convey this to Google.](https://www.reddit.com/r/androiddev/comments/hiwk7i/our_app_got_stolen_again_they_decompiled_our_app/)
-- url: https://www.reddit.com/r/androiddev/comments/hiwk7i/our_app_got_stolen_again_they_decompiled_our_app/
----
-
-## [5][NoCopy compiler plugin for Kotlin.](https://www.reddit.com/r/androiddev/comments/hj3yq8/nocopy_compiler_plugin_for_kotlin/)
-- url: https://www.reddit.com/r/androiddev/comments/hj3yq8/nocopy_compiler_plugin_for_kotlin/
----
-Just released NoCopy, a Kotlin compiler plugin that enables using data classes as value-based classes by moderating usage of their \`copy\` method.
-
-[https://github.com/AhmedMourad0/no-copy](https://github.com/AhmedMourad0/no-copy)
-## [6][HTTP Toolkit for Android - Inspect, mock &amp; debug HTTP(S) from any Android app](https://www.reddit.com/r/androiddev/comments/himokx/http_toolkit_for_android_inspect_mock_debug_https/)
-- url: https://httptoolkit.tech/android
+Also, do you have to be good at Math? Or a College Degree would help or required?
+## [4][RedHat Mandrel Makes Java Native](https://www.reddit.com/r/androiddev/comments/hjr3h0/redhat_mandrel_makes_java_native/)
+- url: https://www.infoq.com/news/2020/07/mandrel-graalvm/
 ---
 
-## [7][Simple question studying app](https://www.reddit.com/r/androiddev/comments/hj4vcq/simple_question_studying_app/)
-- url: https://www.reddit.com/r/androiddev/comments/hj4vcq/simple_question_studying_app/
----
-Good afternoon, I am looking to create a simple app with 122 questions that will randomize the questions and answers every time you take or restart the quiz. Is there any database that people share open source apps?
-## [8][System hardening in Android 11](https://www.reddit.com/r/androiddev/comments/hit75b/system_hardening_in_android_11/)
-- url: https://android-developers.googleblog.com/2020/06/system-hardening-in-android-11.html
+## [5][Promoted app updates? How do we get our apps promoted?](https://www.reddit.com/r/androiddev/comments/hjd2tl/promoted_app_updates_how_do_we_get_our_apps/)
+- url: https://i.redd.it/x1e0a4q2q9851.png
 ---
 
-## [9][[DEV] HUSTLE - A Simple Counter App](https://www.reddit.com/r/androiddev/comments/hj9d6t/dev_hustle_a_simple_counter_app/)
-- url: https://www.reddit.com/r/androiddev/comments/hj9d6t/dev_hustle_a_simple_counter_app/
+## [6][What are the requirements for showing your custom banner ad in your app?](https://www.reddit.com/r/androiddev/comments/hjsayo/what_are_the_requirements_for_showing_your_custom/)
+- url: https://www.reddit.com/r/androiddev/comments/hjsayo/what_are_the_requirements_for_showing_your_custom/
 ---
-This app was created during me learning Flutter, as I wanted to experiment with some kind of CRUD, and shared preferences as well as implementation of dark theme. Since this app, I have been able to learn much more and even landed myself an internship. 
-I finally decided to compile this, and publish it, as some people may find something like this useful.
+I want to promote a service without AdMob, but using my custom native ad banner (ImageView for icon, TextView for text, and Button in a LinearLayout). I am trying to find the rules regarding this without much luck, and certainly don't want to get the app removed from Play Store. Asking Google directly (through Play Console help email or chat) doesn't help as the answer is just that they can't comment on specific implementations, but the ads should respect their policies, which they do (I make sure the service that I promote fits into [Google Ads Policies](https://support.google.com/adspolicy/answer/6008942?hl=en) as well as [Google Play Developer Policies (Ads section)](https://support.google.com/googleplay/android-developer/answer/9857753?hl=en&amp;ref_topic=9857752)).  
 
-A very simple app created to track habits or chores or any
-particular task.
-Provides simple counters and an easy to use interface. 
-Deleting a counter is as simple as swiping it away.
 
-A dark theme also exists, for ease of use at night.
+However, there is no clear example about custom banner ads. I tried replicating AdMob banner ad and added a small "Ad 🛈" attribution text to bottom left of the banner. If clicked, it redirects to privacy policy of my app. Is this required?  
 
-Hope you all check it out.
 
-https://play.google.com/store/apps/details?id=com.rr.hustle2
-## [10][Does showing list of apps with their screenshots violate Google Play policy?](https://www.reddit.com/r/androiddev/comments/hj9aur/does_showing_list_of_apps_with_their_screenshots/)
-- url: https://www.reddit.com/r/androiddev/comments/hj9aur/does_showing_list_of_apps_with_their_screenshots/
+Otherwise, if user clicks anywhere inside of the banner ad, he gets redirected to promoted website.  
+
+
+Does this sound alright? Anyone tried to do it before?   
+
+
+[Example of my custom banner ad](https://preview.redd.it/2ba1sr9v7e851.jpg?width=400&amp;format=pjpg&amp;auto=webp&amp;s=aeee2734a1af98e25f52c105174593fe9a64a879)
+## [7][Relevant, cheap, generic Android phones for development](https://www.reddit.com/r/androiddev/comments/hjw3sq/relevant_cheap_generic_android_phones_for/)
+- url: https://www.reddit.com/r/androiddev/comments/hjw3sq/relevant_cheap_generic_android_phones_for/
 ---
-I'm thinking of an app idea which involves showing apps by other developers. Like show list of them and user can follow the Google Play url to download it. Does it violate Google Play policy?
-## [11][New to Android App Dev, Looking for Suggestions/Resources](https://www.reddit.com/r/androiddev/comments/hj6i8c/new_to_android_app_dev_looking_for/)
-- url: https://www.reddit.com/r/androiddev/comments/hj6i8c/new_to_android_app_dev_looking_for/
+Could you guys recommend some good phones for testing during development of the Android version of my app? I've been out of the mobile dev game for nearly 2 years and unsure which phones are most representative of the current Android user landscape.
+
+One or two phones that are cheap, popular and typical of what an Android phone offers these days. Any ideas? Thanks guys
+## [8][Data Encryption on Android with Jetpack Security](https://www.reddit.com/r/androiddev/comments/hjaiam/data_encryption_on_android_with_jetpack_security/)
+- url: https://medium.com/androiddevelopers/data-encryption-on-android-with-jetpack-security-e4cb0b2d2a9
 ---
-My background includes programming and project management with a software/SaaS dev team for a few years.
 
-I am looking to create my own app and I'm trying to figure out how to start.  It seems there are many options with programming languages, frameworks, etc.
-
-My app is like a point of interest finder.  So it will be doing geolocating, and pulling POI data from someplace like Google, Factual or Sygic.
-
-I know I want to use SQLite to store some info local for speed, and to cut down on API calls.   Still debating building my own database of POI specific for my app to further save on API calls.  Should I use something like MySQL, or a JSON approach like MongoDB?
-
-I looked at no-code places like [appery.io](https://appery.io) and AppyPie but could quite figure them out.  The front end is pretty straight forward, it everything on the back end that's complicated.  So... I'm looking for suggestions on where to start.  Android SDK?   Java, Kotlin, C++?  Any suggestions for some quick tutorials to get me started?  Code snippets (other than StackOverflow)?
-
-THANKS!!!
-## [12][NSFW ad networks for android apps?](https://www.reddit.com/r/androiddev/comments/hj91y5/nsfw_ad_networks_for_android_apps/)
-- url: https://www.reddit.com/r/androiddev/comments/hj91y5/nsfw_ad_networks_for_android_apps/
+## [9][Gradle vs Bazel for JVM Projects](https://www.reddit.com/r/androiddev/comments/hjg3gv/gradle_vs_bazel_for_jvm_projects/)
+- url: https://blog.gradle.org/gradle-vs-bazel-jvm
 ---
-Anyone got any experience with NSFW ad networks on android? or is there one that allows NSFW apps? I have used exoclick. Pretty good so far on revenue. Support is A+ as well. only drawback is the implementation of the library which uses webviews (not too gentle on recyclerviews and also can be a security concern). thanks :)
+
+## [10][Package visibility in Android 11](https://www.reddit.com/r/androiddev/comments/hjda71/package_visibility_in_android_11/)
+- url: https://medium.com/androiddevelopers/package-visibility-in-android-11-cc857f221cd9
+---
+
+## [11][Information about obb files.](https://www.reddit.com/r/androiddev/comments/hjrvnr/information_about_obb_files/)
+- url: https://www.reddit.com/r/androiddev/comments/hjrvnr/information_about_obb_files/
+---
+Hello, I am trying to edit the voice files in an apps obb with custom English lines instead of the current language that I cannot understand. The problem is that whenever I make any changes to the obb and save it to the folder, the app fails to load up. It gives me a "download failed because you might not have purchased the app". Is there any way around this? Thank you.
+## [12][How many devs here developing for iOS, as a primary android developer ?](https://www.reddit.com/r/androiddev/comments/hjdoy6/how_many_devs_here_developing_for_ios_as_a/)
+- url: https://www.reddit.com/r/androiddev/comments/hjdoy6/how_many_devs_here_developing_for_ios_as_a/
+---
+I’m developing for android from past 4 years and so far i have good experience in android, now i want to try out iOS development, but for that i need to purchase MBP, so that’s why before making investment in MacBook i want to know how’s your experience in developing for both platforms? How successfully we can develop for both ? 
+
+i know at starting it might be difficult but i think if i have experience in android development then it is also going to help me to develop for iOS. because at end we have to do same things but in iOS style. 
+
+so please let me know how many people here are developing for both and how is your experience?

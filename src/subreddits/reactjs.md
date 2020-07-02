@@ -1,6 +1,6 @@
 # reactjs
-## [1][Beginner's Thread / Easy Questions (June 2020)](https://www.reddit.com/r/reactjs/comments/gukkex/beginners_thread_easy_questions_june_2020/)
-- url: https://www.reddit.com/r/reactjs/comments/gukkex/beginners_thread_easy_questions_june_2020/
+## [1][Beginner's Thread / Easy Questions (July 2020)](https://www.reddit.com/r/reactjs/comments/hjbhkp/beginners_thread_easy_questions_july_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/hjbhkp/beginners_thread_easy_questions_july_2020/
 ---
 You can find [previous threads][wiki previous threads] in the wiki.
 
@@ -61,180 +61,167 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [2][Who's Available? [June 2020]](https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/)
-- url: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
+## [2][Who's Hiring? [July 2020]](https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
 ---
-We alternate between hirers (on the 1st of the month) and agencies/freelancers/jobseekers (on the 15th).  
-If you are looking to post or reply to React job postings, please check [this month's Who's Hiring post here.][hiring:this month]
+We alternate between **Who's Hiring** (on the 1st of the month, [most recent one here][hiring:most recent]) and **Who's Available** (on the 15th, [most recent one here][available:most recent])
 
+Welcome to **the biggest React job board in the world!** This is like Hacker News' **Who's Hiring** but just for React. Top Level comments must be **Job Opportunities.**
+
+⚠️ NEW: WE ARE REQUESTING EVERYBODY FOLLOW [THE HN Who's Hiring FORMAT][format:hiring:hn]
+
+**Company inc. | Job Title | City/State Location | Full-time/Part-Time | On-site/Remote | (Optional) Salary range | Website jobs page, other hard requirements etc.**
+
+examples:
+
+- **Thorn | San Francisco or Remote (US based) | Full-time Contract | $100k - $150k | Software Engineer | https://www.wearethorn.org/**
+- **PolicyStat | Full-Stack Python+Django Software Engineer | Indianapolis, Vancouver, or REMOTE | Full Time | +\$80k**
+
+Please include as much information as possible. **If you are remote-friendly, or open to sponsoring work visas to your country, say so! These are the top 2 questions!**
+
+If you are looking for jobs, send a PM to the poster or post in our [Who's Available thread!][available:most recent]
+
+[hiring:most recent]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
+[available:most recent]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
+## [3][Can I use YouTube Data API in a production app?](https://www.reddit.com/r/reactjs/comments/hjvf2y/can_i_use_youtube_data_api_in_a_production_app/)
+- url: https://www.reddit.com/r/reactjs/comments/hjvf2y/can_i_use_youtube_data_api_in_a_production_app/
+---
+This's not React specific, but can I rely on YouTube Data API in a production app that can be used by many users in the future?
+## [4][Introduction to GraphQL](https://www.reddit.com/r/reactjs/comments/hjwx39/introduction_to_graphql/)
+- url: https://blog.graphqleditor.com/introduction-to-graphql/
 ---
 
-If your post or comment is removed wrongly, please [send a message][message:mods] to mods  
-because Automods bot is not perfect :)
-
----
-
-Top Level comments must be Agencies and React Devs available for contract/permanent work.
-
-Please include Location or any other Requirements in your comment. You can choose to use this format if it helps:
-
-## (Fulltime | Contract | USA | Remote)
-
-or
-
-## (Agency | Europe | Remote)
-
-Then we recommend adding a 2-3 sentence bio as well.
-
-Not required, but may help:
-
-- Link to Github/Portfolio
-- Notable [r/reactjs][r/reactjs] submissions
-- Preferred stack
-- Former companies or clients
-- Design or backend dev experience
-- anything else you consider relevant. Put on your best show!
-- Listing years of experience NOT required, it's a poor metric
-
-If you are looking to hire, you can send a PM, or reply so that others might see your job opening.  
-**Note**: Due to the sensitive nature of availability while currently in a job, users may be using alternate accounts.
-
-For more ideas on what to include, look at the [last Who's Available posts][available:last month].
-
-If you just want some portfolio feedback, check the stickied post below.
-
-Good luck! #WriteOnceApplyEverywhere
-
-[r/reactjs]: https://www.reddit.com/r/reactjs/
-[available:last month]: https://www.reddit.com/r/reactjs/comments/gk41zb/whos_available_may_2020/
-[hiring:this month]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
-[message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][React Hook Form V6 is released.](https://www.reddit.com/r/reactjs/comments/hj62o0/react_hook_form_v6_is_released/)
+## [5][React Hook Form V6 is released.](https://www.reddit.com/r/reactjs/comments/hj62o0/react_hook_form_v6_is_released/)
 - url: https://react-hook-form.com/
 ---
 
-## [4][Building the Tailwind Blog with Next.js – Tailwind CSS](https://www.reddit.com/r/reactjs/comments/hj17yx/building_the_tailwind_blog_with_nextjs_tailwind/)
-- url: https://blog.tailwindcss.com/building-the-tailwind-blog
+## [6][React Query](https://www.reddit.com/r/reactjs/comments/hju0cn/react_query/)
+- url: https://www.reddit.com/r/reactjs/comments/hju0cn/react_query/
+---
+Was going through Tanner [Linsley's talk on react query](https://www.youtube.com/watch?v=seU46c6Jz7E&amp;feature=youtu.be).  I have one doubt at 12:07. why we are using ref to keep track if the current promise is resolved or not ? why can't we simply use a variable.
+
+code - 
+
+\`\`\`
+
+const activePromiseRef = React.useRef(false);
+
+const refresh = () =&gt; {
+
+if (!activePromiseRef.current){
+
+activePromiseRef.current = async () =&gt; {
+
+// fetch data here and   after that
+
+setData(data) // updates the state
+
+activePromiseRef.current = false;
+
+}
+
+}
+
+}
+
+\`\`\`
+
+main reason for this code is that, if two requests occur simultaneously, then instead of firing another request we return the previous promise.
+
+**My questions is why do we need a ref in this case, why not a simple variable.**
+## [7][useContext in Action.js (outside of React Component)](https://www.reddit.com/r/reactjs/comments/hjweay/usecontext_in_actionjs_outside_of_react_component/)
+- url: https://www.reddit.com/r/reactjs/comments/hjweay/usecontext_in_actionjs_outside_of_react_component/
+---
+Currently I have some state stored in DataContext.js, however, I'd like to access this data from in an Action.js file.
+
+The DataContext is normally pulled with the useContext hook and this is possible since a component is wrapped in DataContextProvider.
+
+However, my Action.js is not a React component (and thus not wrapped in the DataContextProvider). Is there any way I can access the state?
+## [8][Just Created my first ReactJS Application. |](https://www.reddit.com/r/reactjs/comments/hjc2ks/just_created_my_first_reactjs_application/)
+- url: https://www.reddit.com/r/reactjs/comments/hjc2ks/just_created_my_first_reactjs_application/
+---
+&amp;#x200B;
+
+[Using Sync In](https://reddit.com/link/hjc2ks/video/wihpsiwmh9851/player)
+
+Hey Guys,
+
+I Just created [www.syncin.app](https://www.syncin.app/) . Sync In is my first full stack javascript project. I used the MERN stack, WebRTC and socketIO to build this. Sync In lets you watch Videos with your friends online in sync. Sync In adds group chat and voice call to your favorite videos on Youtube, Vimeo, SoundCloud and Twitch
+
+Do Check it out @ [syncin.app](https://syncin.app/) and let me know your views on my project
+## [9][Mastering Promise.allSettled in React](https://www.reddit.com/r/reactjs/comments/hjvr7v/mastering_promiseallsettled_in_react/)
+- url: https://medium.com/@Dylan.Kerler/mastering-promise-allsettled-in-react-9fcecb7da479?sk=0928688b074748da03341ec69fe1d246
 ---
 
-## [5][React’s useImperativeHandle made simple](https://www.reddit.com/r/reactjs/comments/hivjqd/reacts_useimperativehandle_made_simple/)
-- url: https://medium.com/@Dylan.Kerler/reacts-useimperativehandle-made-simple-81035a21eef0
+## [10][Best ways to handle rendering one component vs. another when dealing with media queries and SSR?](https://www.reddit.com/r/reactjs/comments/hjvnji/best_ways_to_handle_rendering_one_component_vs/)
+- url: https://www.reddit.com/r/reactjs/comments/hjvnji/best_ways_to_handle_rendering_one_component_vs/
 ---
+Hey /r/react, I have an app that I am developing using next.js which uses server side rendering. I have a table in which I want to show information about `item`s (to keep things generic). I would like to display cards when the user is viewing the table on mobile, and a proper table when viewed on desktop.
 
-## [6][Regarding fetching data and saving to the app's state.](https://www.reddit.com/r/reactjs/comments/hj6s0h/regarding_fetching_data_and_saving_to_the_apps/)
-- url: https://www.reddit.com/r/reactjs/comments/hj6s0h/regarding_fetching_data_and_saving_to_the_apps/
----
-Hey devs.
+Since next.js server side renders, I cannot use solutions like [react-media-match](https://www.npmjs.com/package/react-media-match) since the `window` object is not available on the server. Since that is the case, I have opted to rendering both views and wrapping them with divs that will be hidden by media queries using `display: none;`.
 
-I came across this question and I really would appreciate some guidance in the common/best practice.
+My question is: is this the best approach? I am wary that since both tables will be rendered this will impact performance and potentially SEO (since there's duplicated meaningless content on the page). Ideally I would have a way to conditionally render either component based on whether the user is viewing on mobile or desktop.
 
-I am building a system where companies can sign up, and this will generate a job portal for them. Through a dashboard, they will be able to manage their job positions and the candidates that applied for each position.
+Here's my code:
 
-From the perspective of a guest (someone looking for a job in the particular company), this person will go to 
-www.domain.com/companyName and this route will fetch all the job positions from the specific company.
+    interface IItemTableProps {}
 
-So:
+    const ItemTable: React.FC&lt;IItemTableProps&gt; = () =&gt; {
+      const { items, loading } = useFetchedItems()
 
-route /companyName - all the job positions 
-
-route /companyName/:jobId - specific job listing
-
-Question:
-
--Should I fetch the data only in the main route (all listings) component and save it to my state (Context API, Redux, etc ...) so I don't need to make API calls in other components (like the page with data for a specific job)?
-
-OR
-
--Should I make API calls in every component and forget saving it to the state?
-
-Both ways will work, but what is the common practice?
-Why one way would be better than the other?
-
-Thank you all in advance.
-## [7][React devs who like wine](https://www.reddit.com/r/reactjs/comments/hja6z5/react_devs_who_like_wine/)
-- url: https://www.reddit.com/r/reactjs/comments/hja6z5/react_devs_who_like_wine/
----
-Any React devs who also happen to like wine?  I recognize this is a 'funny' post but I am serious.  I started a personal project back in 2018 to give me something to build on and learn for work and personal growth.  It was super simple at first as I followed a tutorial for the initial build.  Eventually a senior dev (Principal Engineer) at Red Hat reached out as he was studying the WSET to become a Sommelier.  Here we are a year later and it has grown well beyond what I ever could have imagined.  
-
-I have the main project up which has our Spring MVC and Rest Controllers.  Our frontend is in HTML/Thymeleaf currently but have decided that React is the future.  Just last night I added the React project.
-
-I am a Java backend dev by day so learning React is for fun and slow going.  If you're interested there are a few ways I could use some help:
-
-1. Actual dev work in the form of pull requests or even project ownership
-2. Creating issues to help guide me or other junior devs who want to help
-3. Notes of any kind
-
-[https://github.com/My-Wine-Cellar/winecellar-webapp](https://github.com/My-Wine-Cellar/winecellar-webapp)
-
-[https://github.com/My-Wine-Cellar/winecellar-react](https://github.com/My-Wine-Cellar/winecellar-react)
-
-Many many thanks to anyone who posts or decides to help!
-## [8][Hand over deployable React project to client without sharing source code?](https://www.reddit.com/r/reactjs/comments/hj6xna/hand_over_deployable_react_project_to_client/)
-- url: https://www.reddit.com/r/reactjs/comments/hj6xna/hand_over_deployable_react_project_to_client/
----
-I am working on my first **React** (`create-react-app`) project that will ultimately be delivered to a client I am implementing the app for. We agreed on me delivering a "ready to deploy" build, as the client intends to host the app by himself. As we agreed that the source code of the app will still remain my intellectual property (IP), I'd like to know if there are any best practices of how this can go down without me simply sharing the entire project (e.g. giving access to the git repo) including all source code files?
-
-So far I have figured out that you can create a production build (`npm run build`) and disable source map generation (`GENERATE_SOURCEMAP=false`) in the build step. This will essentially make the code non human readable.
-
-Now my question: Is it feasible to only share the **build folder** created with `npm run build`with the client and will he be able to deploy this? Or are there any better suggestions?
-## [9][Feedback request: react-tree, a tiny, accessible drag &amp; drop tree component for React](https://www.reddit.com/r/reactjs/comments/hj6gtk/feedback_request_reacttree_a_tiny_accessible_drag/)
-- url: https://github.com/mpkelly/react-tree
----
-
-## [10][How important is advanced CSS to a React developer?](https://www.reddit.com/r/reactjs/comments/hj969i/how_important_is_advanced_css_to_a_react_developer/)
-- url: https://www.reddit.com/r/reactjs/comments/hj969i/how_important_is_advanced_css_to_a_react_developer/
----
-I understand React and have a basic understanding of CSS. Just wondering how important it is to learn advanced CSS for a React dev?
-## [11][NextJS app with custom express server](https://www.reddit.com/r/reactjs/comments/hj967e/nextjs_app_with_custom_express_server/)
-- url: https://www.reddit.com/r/reactjs/comments/hj967e/nextjs_app_with_custom_express_server/
----
-Hi guys!
-
-I've this problem that I can't figure a way of solving it...
-
-So, I've one NextJS app built with a custom express server. One of my routes is responsible to handle image uploads to the server and then saving them in public folder.
-
-During development I made some tests and I had some files in `public/images/articles` folder. 
-
-I ran `next build` and everything works well in `production`. If I upload some file in `production`, the file is being saved correctly, however, when I go to `https://&lt;myurl&gt;/images/articles/&lt;new file added&gt;` I get a 404. The file is in the filesystem but it's not being served by my app. 
-
-The files that existed in `public` folder are served right. Is there anything that I should do in my server file to serve files from public that were added after the current build? 
-
-Thanks!
-## [12][New to Reactjs and indepth JS and having problems understanding the flow of things when setting state on a list of objects (includes a loop)](https://www.reddit.com/r/reactjs/comments/hj5szk/new_to_reactjs_and_indepth_js_and_having_problems/)
-- url: https://www.reddit.com/r/reactjs/comments/hj5szk/new_to_reactjs_and_indepth_js_and_having_problems/
----
-The function below loops through a list of objects, changes a couple of values of each object and then performs a DB update. After the forEach loop I set the state of two variables: athletes and startTime.
-
-The output in the console displays the message: 'DISPLAYING _ATHLETES' with the correct updated data **before** the messages in the .then block.
-
-Is this correct? Although I'm getting the correct results, it seems odd. If the last message in the function is printed first, I'm assuming the setAthlete and setStartTime would also be called at the same time and in the case of setAthletes, it would be set with the data of athletes when I made the copy and not the correct updated values.
-
-I hope that's clear.
-
-I also feel as though the way I have done it is not the React way so any pointers would be great on how to adopt better coding style.
-
-
-    const setInitialStartTime = () =&gt; {
-        const startTime = new Date()
-
-        // make a copy of athletes so I can be sure that the console.log 
-        // at the bottom really refers to changed data
-        const _athletes = [...athletes]
-
-        athletes.forEach((athlete, index) =&gt; {  
-      
-          athlete.laps = []
-          athlete.lapStartTime = startTime
-
-          athleteService.update(athlete)
-            .then(response =&gt; {
-              console.log('UPDATED ATHLETE', athlete)
-              _athletes[index] = athlete
-            })
-            .catch(error =&gt; console.log('error:', error))
-        })
-        console.log('DISPLAYING _ATHLETES', _athletes)
-        setAthletes(_athletes)
-        setSStartTime(startTime.toString());
+      if (loading) {
+        return &lt;div&gt;loading...&lt;/div&gt;
       }
+
+      return (
+        &lt;Container&gt;
+          &lt;div className="mobile-cards-container"&gt;
+            &lt;MobileCards items={items} /&gt;
+          &lt;/div&gt;
+          &lt;div className="desktop-table-container"&gt;
+            &lt;DesktopTable items={items} /&gt;
+          &lt;/div&gt;
+        &lt;/Container&gt;
+      )
+    }
+
+    const Container = styled.div`
+      .mobile-cards-container {
+        display: block;
+      }
+
+      .desktop-table-container {
+        display: none;
+      }
+
+      ${media.desktop} {
+        .mobile-cards-container {
+          display: none;
+        }
+
+        .desktop-table-container {
+          display: block;
+        }
+      }
+    `
+## [11][What specific projects for HTML, CSS, JS to do before learning ReactJs?](https://www.reddit.com/r/reactjs/comments/hjumdw/what_specific_projects_for_html_css_js_to_do/)
+- url: https://www.reddit.com/r/reactjs/comments/hjumdw/what_specific_projects_for_html_css_js_to_do/
+---
+Hi I’m currently going through the web developer bootcamp on Udemy and want to be ready to learn react afterwards. Please let me know any specific projects that I should do that will help me further master these 3 languages especially JS, before starting to learn React. Thank you!
+## [12][Suggestions for a MERN-based app](https://www.reddit.com/r/reactjs/comments/hjtvnp/suggestions_for_a_mernbased_app/)
+- url: https://www.reddit.com/r/reactjs/comments/hjtvnp/suggestions_for_a_mernbased_app/
+---
+Hello, 
+
+I'm in my third year of undergrad program and I just started writing my thesis on the topic of MERN stack. I will lay out theoretical foundation of the technologies used in the stack and then I will focus on implementing a practical app in the MERN stack. However, I still haven't decided on what the app would be about. So far things that I have come up with are: 
+
+* A marketplace for a local business to sell various stuff (IT, groceries or sth else)
+* Simplified social media platform clone (Instagram, Twitter), I've seen projects like these pop up here and there on this subreddit
+
+One of the things I want to make sure to include in my app is the ability to chat in real-time with other users, for what I plan to use WebSockets. Though I'd want to make sure to not stray too far off the main topic (MERN technologies).
+
+What are your suggestions for an application implemented using MERN stack? Is there something that hasn't yet been seen, but you would like see it implemented?
+
+Thanks in advance!
+
+NB. My experience level with JS and programming in general is intermediate I would say - I already created a relatively simple full stack app using bootstrap on the front end and PHP &amp; MySQL on the backend

@@ -21,108 +21,79 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][Amazon RDS Proxy – Now Generally Available](https://www.reddit.com/r/aws/comments/hiy0lp/amazon_rds_proxy_now_generally_available/)
-- url: https://aws.amazon.com/blogs/aws/amazon-rds-proxy-now-generally-available/
+## [2][Does anyone else feel that Step Functions have great potential, but the implementation was half-arsed, so they're not very practical?](https://www.reddit.com/r/aws/comments/hju8or/does_anyone_else_feel_that_step_functions_have/)
+- url: https://www.reddit.com/r/aws/comments/hju8or/does_anyone_else_feel_that_step_functions_have/
+---
+Does anyone else feel like Step Functions have a lot of potential, but the implementation was kind of half arsed? There's so much basic functionality lacking. There are so few comparison operators for Choice statements, and error handling is ridiculous.
+
+
+* AWS documentation says that `States.ALL` catches all errors. But if you reference `$.myvar` and that doesn't exist, it will cause an error which is *not* caught by `States.ALL`. **There is no way to catch all errors*. I had to make a second step function which does nothing but invoke the first one, and then handle an error.
+* You cannot catch errors from a Choice task (e.g. from looking up a path that doesn't exist), because `Catch` is not supported for `Choice`
+* You cannot compare two variables in a Choice task. You can only compare variable to hard coded constant  
+* You cannot check the length of an array in a Choice task  
+* You cannot check whether a variable is defined in a Choice task. ie. It's not possible to say `if 'x' in d and d['x'] == 1: foo(d['x']) else: bar()`  
+* They say you can use JSONPath, but when I try JSONPath errors I get errors. I've had different support agents give me confliction advice about whether this is possible.  
+* AWS recommend adding `TimeoutSeconds` to tasks, and say they can be used on any task. But they're not allowed in Parallel tasks. **The documentation is incorrect.**  
+* AWS recommend using Pass tasks as placeholders for Lambdas while you're constructing your step function. But Pass tasks can't take `Retry` or `Catch` fields. This means it's not possible to draft a step function with Pass tasks as placeholders if you have tasks that are only used to handle caught errors.
+* You can't write step functions in Yaml. That means you can't have comments, and it's very easy to write invalid code because of a comma trailing at the end of a list.  
+* If one branch in a Map or Parallel task fails, all other tasks are immediately cancelled. It's not feasible to configure it to continue executing the other branches. I want to say "for each piece of equipment, send a signal". If piece 500 fails to be actuated, I don't want pieces 1 to 499 to be cancelled mid-way through actuation
+* you can't do a dictionary lookup
+* you can't decrement a variable to do `for(a = 10; a &gt; 0; a-- )`
+## [3][DDB-Table v1.0: Safe TypeScript schemas for DynamoDB](https://www.reddit.com/r/aws/comments/hjtaj6/ddbtable_v10_safe_typescript_schemas_for_dynamodb/)
+- url: https://github.com/neuledge/ddb-table
 ---
 
-## [3][Amazon's AWS establishes new aerospace cloud unit as Jeff Bezos increases bets on outer space](https://www.reddit.com/r/aws/comments/hiqf1e/amazons_aws_establishes_new_aerospace_cloud_unit/)
-- url: https://www.reddit.com/r/aws/comments/hiqf1e/amazons_aws_establishes_new_aerospace_cloud_unit/
----
-[Amazon's AWS establishes new aerospace cloud unit as Jeff Bezos increases bets on outer space](https://www.cnbc.com/2020/06/30/amazons-aws-establishes-aerospace-and-satellite-solutions-space-unit.html)
-
-By Michael Sheetz
-
-* Amazon Web Services announced on Tuesday it was establishing a new space unit called Aerospace and Satellite Solutions.
-
-* Job listings for the AWS unit identify it's looking to provide services for nearly every space sub-sector, including rocket launches, human spaceflight support, robotic systems, mission control operations, space stations, satellite networks and more.
-
-* Amazon has steadily grown its influence in the space industry in recent years, with a satellite connection service called AWS Ground Station and a satellite internet venture called Project Kuiper.
-
-The company announced on Tuesday that AWS is establishing a new unit called Aerospace and Satellite Solutions, led by former U.S. Air Force Maj. Gen. Clint Crosier — who most recently directed the establishment of the U.S. Space Force.
-
-"We find ourselves in the most exciting time in space since the Apollo missions," Crosier said in a statement.
-
-#####Edit:
-
-Replaced AMP link with the Correct the Non-AMP link
-## [4][When AWS Support asks "if we helped resolve your issue", should I click YES or NO, if the support person effectively informed me of some limitation of AWS, or successfully lodged a feature request?](https://www.reddit.com/r/aws/comments/hizej6/when_aws_support_asks_if_we_helped_resolve_your/)
-- url: https://www.reddit.com/r/aws/comments/hizej6/when_aws_support_asks_if_we_helped_resolve_your/
----
-My problem still exists, so do I click NO?
-
-But *the support person* did their job well.
-
-If the problem is with AWS itself, not the support person, what do I click?
-
-AWS seems like the kind of company that would ruthlessly enforce KPIs for support people. I don't want someone to lose their job because they told me that AWS can't do X, so my problem can't be solved.
-## [5][sync two EBS volumes](https://www.reddit.com/r/aws/comments/hj8ut0/sync_two_ebs_volumes/)
-- url: https://www.reddit.com/r/aws/comments/hj8ut0/sync_two_ebs_volumes/
----
-I have an auto-scaling group with two EC2 instances , each with a persistent EBS mounted. My application requires the data on EBS to be in sync, how do I achieve that ? 
-
-I can think of introducing an s3 where both the EBS sync their data but wondering if there's a better solution.
-
-PS - Can't use multi-attach functionality. Also, can only use EBS (not EFS)
-## [6][Route 53 and subdomain Hosted Zones](https://www.reddit.com/r/aws/comments/hj8rqh/route_53_and_subdomain_hosted_zones/)
-- url: https://www.reddit.com/r/aws/comments/hj8rqh/route_53_and_subdomain_hosted_zones/
----
-Not sure if my understanding of DNS is correct, is there any way to create a CNAME record for a hosted zone. I have a zone called "subdomain.domain.com."  - for this I wanted to create a CNAME record. However it wants a subdomain at a second level for me to create it. It displays a box wanting me to put "something.subdomain.domain.com" - Is there any way to create a record that point "subdomain.domain.com" to "anotherdomain.com"?
-
-Thanks in advance
-## [7][AWS App2Container – A New Containerizing Tool for Java and ASP.NET Applications](https://www.reddit.com/r/aws/comments/hizzp3/aws_app2container_a_new_containerizing_tool_for/)
-- url: https://aws.amazon.com/blogs/aws/aws-app2container-a-new-containerizing-tool-for-java-and-asp-net-applications/
+## [4][Announcing the Porting Assistant for .NET](https://www.reddit.com/r/aws/comments/hjjfnv/announcing_the_porting_assistant_for_net/)
+- url: https://aws.amazon.com/blogs/aws/announcing-the-porting-assistant-for-net/
 ---
 
-## [8][Traditional Lambda vs. Lambda Proxy, good writeups on differences in how API Gateway processes the event lambda receives?](https://www.reddit.com/r/aws/comments/hiwrbd/traditional_lambda_vs_lambda_proxy_good_writeups/)
-- url: https://www.reddit.com/r/aws/comments/hiwrbd/traditional_lambda_vs_lambda_proxy_good_writeups/
+## [5][What are some cool things you can do with dead-letter queues (DLQ)?](https://www.reddit.com/r/aws/comments/hjcwhz/what_are_some_cool_things_you_can_do_with/)
+- url: https://www.reddit.com/r/aws/comments/hjcwhz/what_are_some_cool_things_you_can_do_with/
 ---
-We are moving over to a build process using Terraform/Serverless and someone decided to make all the Lambda functions which were previously traditional Lambda functions, Lambda proxy functions.
+I've learned that SNS, SQS, and Lambda support DLQs for when an event fails all processing attempts or expires without being processed. The obvious use case is to use DLQs to implement some kind of retry logic.
 
-The event that arrives at the Lambda is completely different when API Gateway uses a Lambda proxy. Is there any good writeup on the differences? My app is broken AF right now :( I don't see much in the way of configuring or parsing input from the frontend in API Gateway, and Serverless-Domain-Manager which is creating the API Gateway is 4 lines of magic code.
-## [9][Route53: How to add kibana endpoint in Route53 to have a proper URL](https://www.reddit.com/r/aws/comments/hj57yr/route53_how_to_add_kibana_endpoint_in_route53_to/)
-- url: https://www.reddit.com/r/aws/comments/hj57yr/route53_how_to_add_kibana_endpoint_in_route53_to/
+I'm sure there are other interesting use cases for DLQs as well. What kinds of interesting things can you do with DLQs?
+## [6][EKS Fargate pricing question](https://www.reddit.com/r/aws/comments/hjvdqz/eks_fargate_pricing_question/)
+- url: https://www.reddit.com/r/aws/comments/hjvdqz/eks_fargate_pricing_question/
 ---
-Is anyone knows how to add a proper URL using route53 to AWS Elastic search Kibana endpoint. I got this endpoint from my AWS elastic search
-
-[https://xxxxxxxxxxxxxxxxxx.eu-west-2.es.amazonaws.com/\_plugin/kibana/](https://xxxxxxxxxxxxxxxxxx.eu-west-2.es.amazonaws.com/_plugin/kibana/)
-
-I tried adding a CNAME in route53 but it's not working.
-## [10][Private subnet: NAT vs NACL for security](https://www.reddit.com/r/aws/comments/hj1zzb/private_subnet_nat_vs_nacl_for_security/)
-- url: https://www.reddit.com/r/aws/comments/hj1zzb/private_subnet_nat_vs_nacl_for_security/
+It appears that pricing is based on vCPU/memory *requests* but I can't find any mention of *limits* to the pods. Are limits automatically set the same as requests? If not....How can that be fair to AWS?
+## [7][How to invalidate cache of an S3 bucket object?](https://www.reddit.com/r/aws/comments/hjv44n/how_to_invalidate_cache_of_an_s3_bucket_object/)
+- url: https://www.reddit.com/r/aws/comments/hjv44n/how_to_invalidate_cache_of_an_s3_bucket_object/
 ---
-Hi, I've searched in some whitepapers (including the VPC user's guide) and I've not found a comparison of creating a private subnet that allows out traffic trough a NAT vs just only allowing inbound to the VPC IP CIDR and still using a Internet gateway and the instances having a public IP.
-
-I'm new to the security and network stuff and it may be basic, but is there any advantage of using a NAT considering security?
-## [11][how to make a local app assume an IAM role?](https://www.reddit.com/r/aws/comments/hj4vct/how_to_make_a_local_app_assume_an_iam_role/)
-- url: https://www.reddit.com/r/aws/comments/hj4vct/how_to_make_a_local_app_assume_an_iam_role/
+Hi, since I can manually set metadata cache-control max-age on an s3 bucket object using a browser, I was wondering how can I manually invalidate that same object?
+## [8][Serving private content with cloudfront](https://www.reddit.com/r/aws/comments/hjpi90/serving_private_content_with_cloudfront/)
+- url: https://www.reddit.com/r/aws/comments/hjpi90/serving_private_content_with_cloudfront/
 ---
-I have a locally running app that uses an AWS SDK to access resources on my AWS account. I would like the local app to assume an IAM role, just as a live EC2 instance would.
+Today I am setting up a cloudfront distribution serving documents from a s3 bucket. I am intending to use cloudfront signed urls, but I am really shocked that you need to use the root account to generate/upload the cloudfront keys to do url signing. 
 
-To find out how to do this, I read up on these two pages:
 
-* [https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-role.html](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-role.html)
-* [https://docs.aws.amazon.com/cli/latest/topic/config-vars.html#using-aws-iam-roles](https://docs.aws.amazon.com/cli/latest/topic/config-vars.html#using-aws-iam-roles)
+What I expected to be able to do was either call a service to generate a signed url, or store the key in secrets manager that the application can retrieve in order to sign urls. Also being able to generate / rotate the keys using iac.
 
-So far, this is my understanding, written as steps required to achieve this:
 
-1) create two IAM resources: `user1`, `role1`
+I'm curious if anyone else is using this feature, and how you manage key generation and rotation. Requiring the root account for this seems counter intuitive to aws best practices.
+## [9][How to run/re-run subset of jobs AWS Glue workflow?](https://www.reddit.com/r/aws/comments/hjtcqv/how_to_runrerun_subset_of_jobs_aws_glue_workflow/)
+- url: https://www.reddit.com/r/aws/comments/hjtcqv/how_to_runrerun_subset_of_jobs_aws_glue_workflow/
+---
+Hi guys, I was wondering if it's possible to run only a subset of steps on my AWS Glue Workflow in case one of the jobs fail.
 
-2) locally, create a CLI profile config and credentials for `user1`
+Thank you so much in advance.
+## [10][Cloudflare Workers vs AWS Lambda@Edge?](https://www.reddit.com/r/aws/comments/hjss5d/cloudflare_workers_vs_aws_lambdaedge/)
+- url: https://www.reddit.com/r/aws/comments/hjss5d/cloudflare_workers_vs_aws_lambdaedge/
+---
+ What is the difference between these two services? They appear to do the exact same thing.
 
-3) locally, create a CLI profile for `role1`, which looks like
+Are there certain things which one is able to do that the other is not?
+## [11][Pretty new to AWS Have some questions about the usage of public IPs and general instance management](https://www.reddit.com/r/aws/comments/hjsf5x/pretty_new_to_aws_have_some_questions_about_the/)
+- url: https://www.reddit.com/r/aws/comments/hjsf5x/pretty_new_to_aws_have_some_questions_about_the/
+---
+Hi! I'm currently starting my journey in the AWS management certification world.
 
-```
-[role1]
-role_arn = arn:aws:iam::123456789012:role/myapprole
-source_profile = user1
-```
+I've so far taken the most basic (free) courses and have been managing a pretty simple account for some months now.
 
-4. create an IAM policy attached to `user1` that allows `user1` to assume `role1` 
+I have a couple of questions that would probably be no-brainers for experienced AWS admins, so please, bear with me.
 
-5. set the local profile: `export AWS_PROFILE=role1` 
+1. I keep having to request more public IP addressess everytime I create new VMs for different clients (I've already reached my max number of public IP address). So far, it's just pretty simple ~~VMs~~  instances that I plan to optimise and improve once I get my certs and my knowledge on place but until then.. how do you manage with so many public IPs? - I understand I should assign a new different public IP addesss for each client at least but, how to manage, for example, multiple services that need public visibility for the same client? Should I set up a load balancer so it redirects traffic depending on the dns the request comes through and set up a unique public IP address?
+2. Probably a stupid question but... it wouldn't be the first time I mess up an ~~VM~~ instance's net configuration (bear with me, I come from VMware on-premise world) -  
+I'm used to having the direct console, so I can "attach" myself to the VM and just operate as if I was in front of the VM's screen but can't for the life of me, find the way to do so on AWS instances... I understand this is due to the different approach of the whole concept of instances VS VMs... but I still wouldn't know how to deal with issues like these: I rely on the premise that the networking works as intended and don't know how to deal with this kind of issues.
 
-6. the current profile will now have permissions of the policies attached to `role1` 
-
-7. run the app locally, and the AWS SDK will effectively have the permissions of `role1`
-
-Can someone please advise whether my understanding is correct and explain anything I'm missing? Thank you!
+I know I'm still pretty green on some basic concepts regarding the whole AWS infrastructure world and usage but I'm trying my best to gain the knowledge ASAP. :)

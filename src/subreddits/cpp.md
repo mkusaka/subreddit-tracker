@@ -123,128 +123,96 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [3][C++20 Features and Fixes in VS 2019 16.1 through 16.6](https://www.reddit.com/r/cpp/comments/hjn4uv/c20_features_and_fixes_in_vs_2019_161_through_166/)
-- url: https://devblogs.microsoft.com/cppblog/c20-features-and-fixes-in-vs-2019-16-1-through-16-6/
+## [3][Documentation options](https://www.reddit.com/r/cpp/comments/hke35s/documentation_options/)
+- url: https://www.reddit.com/r/cpp/comments/hke35s/documentation_options/
+---
+Hi,
+
+I have the opportunity to introduce a documentation platform for a project I’m involved on. The documentation is for a large C/C++ code base. I’ve never been responsible for externally facing documentation for developers, so I’m hoping to get some opinions and insight. Has anyone used a documentation, platform, format, etc that they would recommend? I’m aware of Doxygen and have used it in the past, but have mixed feelings about how useful those documents tend to be and it’s impact on the readability of header files. Maybe I’ve never configured Doxygen enough, though. Any opinions would be greatly appreciated! :)
+## [4][Bug in MSVC?](https://www.reddit.com/r/cpp/comments/hkfedn/bug_in_msvc/)
+- url: https://www.reddit.com/r/cpp/comments/hkfedn/bug_in_msvc/
+---
+I've recently had to move from gcc to msvc, and got a very strange error message. It seems the compiler is interpreting the lambda body as an initializer list being passed to the lambda constructor? Anyway, gcc and clang have absolutely no problem compiling this code, no warnings occur even with all the warning flags provided. Are there some obscure rules about nesting lambdas I'm not aware of? I'd be grateful if someone could take a look, I'm honestly stumped.
+
+The (stripped down) code: [https://godbolt.org/z/WmBpuH](https://godbolt.org/z/WmBpuH)
+## [5][SonarQube / SonarCloud Improved C++ Analysis](https://www.reddit.com/r/cpp/comments/hkjnb0/sonarqube_sonarcloud_improved_c_analysis/)
+- url: https://community.sonarsource.com/t/c-c-analysis-engine-supports-more-compilers-and-detects-buffer-overflow-security-sensitive-apis/26542
 ---
 
-## [4][Magnum Engine 2020.06 released with redesigned asset pipeline and several new examples](https://www.reddit.com/r/cpp/comments/hjwbrb/magnum_engine_202006_released_with_redesigned/)
+## [6][Magnum Engine 2020.06 released with redesigned asset pipeline and several new examples](https://www.reddit.com/r/cpp/comments/hjwbrb/magnum_engine_202006_released_with_redesigned/)
 - url: https://blog.magnum.graphics/announcements/2020.06/
 ---
 
-## [5][C++ package managers in CMake: Hunter and Conan](https://www.reddit.com/r/cpp/comments/hjpwd0/c_package_managers_in_cmake_hunter_and_conan/)
-- url: https://www.reddit.com/r/cpp/comments/hjpwd0/c_package_managers_in_cmake_hunter_and_conan/
----
-What are the advantages of each? Are either missing anything major? Do you have any stories using either?
-
-Conan: [https://conan.io/](https://conan.io/)
-
-Hunter: [https://github.com/cpp-pm/hunter](https://github.com/cpp-pm/hunter)
-
-I am not trying to start an argument. I am just curious in how others feel because I don't have much experience with either.
-## [6][Zipping By The Longest Range](https://www.reddit.com/r/cpp/comments/hjr0nh/zipping_by_the_longest_range/)
-- url: https://m-peko.github.io/craft-cpp/posts/zipping-by-the-longest-range/
+## [7][Program to show the use of virtual destructor in C++.](https://www.reddit.com/r/cpp/comments/hkiuwg/program_to_show_the_use_of_virtual_destructor_in_c/)
+- url: https://www.scitechtop.com/write-a-program-to-show-the-use-of-virtual-destructor-in-c/
 ---
 
-## [7][C ++ Beginner Tutorial Variables and Datatypes](https://www.reddit.com/r/cpp/comments/hjvsbb/c_beginner_tutorial_variables_and_datatypes/)
-- url: https://www.youtube.com/watch?v=cARnMT7nmdE&amp;feature=share
+## [8][CppCast: SYCL 2020](https://www.reddit.com/r/cpp/comments/hkboi7/cppcast_sycl_2020/)
+- url: https://cppcast.com/sycl-michael-wong/
 ---
 
-## [8][Where can I find information on modern c++ techniques/?](https://www.reddit.com/r/cpp/comments/hjop5b/where_can_i_find_information_on_modern_c/)
-- url: https://www.reddit.com/r/cpp/comments/hjop5b/where_can_i_find_information_on_modern_c/
----
-I am a student looking to learn more of c++ but mostly I find things related to c++11 but I assume there should be more updates to c++ later than that. Where could I find resources to learn more modern c++ techniques?
-## [9][The joys and perils of aliasing in C and C++, Part 2](https://www.reddit.com/r/cpp/comments/hj8bdg/the_joys_and_perils_of_aliasing_in_c_and_c_part_2/)
-- url: https://developers.redhat.com/blog/2020/06/03/the-joys-and-perils-of-aliasing-in-c-and-c-part-2/
+## [9][Warning: __attribute__((const)) does not mean function purity](https://www.reddit.com/r/cpp/comments/hjxtfg/warning_attribute_const_does_not_mean_function/)
+- url: https://tylerayoung.com/2020/07/02/warning-__attribute__const-does-not-mean-function-purity/
 ---
 
-## [10][Corobatch - Batch operations, simply, with coroutines (C++ London 2020; Francesco Zoffoli)](https://www.reddit.com/r/cpp/comments/hjucq2/corobatch_batch_operations_simply_with_coroutines/)
-- url: https://www.youtube.com/watch?v=vzi0lTVyb-g&amp;t=3264
+## [10][I think there's a bug in MSVC std::unordered_set](https://www.reddit.com/r/cpp/comments/hkf04w/i_think_theres_a_bug_in_msvc_stdunordered_set/)
+- url: https://www.reddit.com/r/cpp/comments/hkf04w/i_think_theres_a_bug_in_msvc_stdunordered_set/
 ---
-
-## [11][Programming project of calculator in c++(using codeblocks)](https://www.reddit.com/r/cpp/comments/hjvmnm/programming_project_of_calculator_in_cusing/)
-- url: https://www.scitechtop.com/programming-project-of-calculator-in-cusing-codeblocks/
----
-
-## [12][Named tuples/multiple return values in C++14 with magic_get](https://www.reddit.com/r/cpp/comments/hjen9m/named_tuplesmultiple_return_values_in_c14_with/)
-- url: https://www.reddit.com/r/cpp/comments/hjen9m/named_tuplesmultiple_return_values_in_c14_with/
----
-If someone is not familiar with magic\_get (because i wasn't): [https://github.com/apolukhin/magic\_get](https://github.com/apolukhin/magic_get) 
-
-CppCon 2016 video: [https://www.youtube.com/watch?v=abdeAew3gmQ](https://www.youtube.com/watch?v=abdeAew3gmQ)
-
-tl;dr: it can convert struct to tuple and tuple to struct (and do some other things) in C++14
-
-If we can can convert structs to tuples and vice versa, perhaps we can also pack and unpack tuples into compatible tuples and create sort of named tuples by using the structs like this:
-
-    auto f1() {
-    	struct {
-    		int x = 5;
-    		std::string s = "hello world";
-    	} ret;
-    	return ret;
-    }
-
-I believe this is a standard C++14 without any hacks. To unpack (repack) such return value into another "named tuple":
-
-    template &lt;typename To, typename From&gt;
-    constexpr To unpack(const From &amp;from) {
-    	remove_cvref&lt;To&gt; to = {};
-    	boost::pfr::structure_tie(to) =
-    		boost::pfr::structure_to_tuple(from);
-    	return to;
-    }
-
-Return value of `f1()` can also be accessed a lot like a named tuple like so:
-
-    auto f2() {
-    	auto s1 = f1();
-    	return std::make_tuple(s1.x + 2, "hello tuple"); // mind the const char*
-    }
-
-This is also standard C++14 without hacks, it returns \`std::tuple&lt;int, const char \*&gt;\`.
-
-Usage of `unpack()`:
-
-    const struct {
-    	int y;
-    	std::string str;
-    } s1 = unpack&lt;decltype(s1)&gt;(f1());
-
-And we can ignore some values using "idiomatic underscore" and `std::ignore` too:
-
-    const struct {
-    	//float f;
-    	decltype(std::ignore) _;
-    	std::string s;
-    } s2 = unpack&lt;decltype(s2)&gt;(f2());
-
-To complete this, "unrolling" a tuple into list of function arguments is `std::apply()`, even though `std::apply` (obviously) can't apply a struct, but `apply()` based on magic\_get can do that and if struct can be converted to tuple, then perhaps `std::apply()` should be able to do that too, right?
-
-Potentially it could be possible to call a function similarly to this (pseudocode++20):
-
-    void g(int x, const std::string &amp;y); // forward declaration
+    int main() {
+    	std::unordered_set&lt;int&gt; set;
+    	set.emplace(1);
     
-    g({ .x = 17, .y = "hello world" });
+    	for (auto&amp; i : set)
+    	{
+    		std::cout &lt;&lt; i &lt;&lt; std::endl;
+    		if (i == 1)
+    		{
+    			set.erase(i);
+    		}
+    	}
+    
+    
+    	std::getchar();
+    	return 0;
+    }
 
-If `{}` expression can be converted into type-deduced anonymous struct that then can be converted into a tuple (not necessarily named) that in turn can be "unrolled" into compatible function arguments.
+this creates a segmentation fault.
 
-I pasted working example (without magic\_get based `apply()`) here: [https://godbolt.org/z/jeatU5](https://godbolt.org/z/jeatU5)
+According to [cppreference](https://en.cppreference.com/w/cpp/container/unordered_set/erase):
 
-Godbolt can't compile it because of missing includes, but GCC 5/6/7/8/9 can if magic\_get is cloned locally. Note that clang 8 crashes, i didn't check with clang 9/10, but at least clang 7 works too.
+&gt;References and iterators to the erased elements are invalidated. Other iterators and references are not invalidated.
 
-To sum this up:
+and also
 
-1. This works similarly to structured bindings except it's explicitly typed and compiler do check types during conversions instead of deducing types with `auto`
-2. This works in C++14, although it depends on underlying tricks that are not very pretty, readable or maintainable. But it technically works.
-3. There are some limitations listed on magic\_get's Github page
-4. It's not very pretty overall, namely `decltype()` is all over the place, there are a lot of brackets and so on
-5. Nonetheless i think conformant C++14 compiler can already do multiple return values and so to speak "named tuples" (represented as anonymous structs) if some inconveniences and redundancy is ignored
-6. It actually synergizes with type deducing and structured bindings
+&gt;The order of the elements that are not erased is preserved. (This makes  it possible to erase individual elements while iterating through the  container.)
 
-I assume this wheel was already invented elsewhere
+&amp;#x200B;
 
-1. Are there any related proposals ongoing?
-2. Does anyone know what is the status of [P0222R0](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0222r0.html)?
-3. Any chance of getting multiple return values and named tuples into C++, preferably without templates hacks or other kinds of hacks any time soon?
+According to the standard, the above code is perfectly fine, and the loop should stop immediately after the first iteration . In real life, `erase` does corrupt the internal state of the set, causing segmentation fault. commenting the `erase` code "fixes" the bug.
 
-Any ideas?
+&amp;#x200B;
+
+Am I wrong?
+## [11][Why taking the address of an xvalue (&amp;std::move(...)) is an error?](https://www.reddit.com/r/cpp/comments/hkc3qv/why_taking_the_address_of_an_xvalue_stdmove_is_an/)
+- url: https://www.reddit.com/r/cpp/comments/hkc3qv/why_taking_the_address_of_an_xvalue_stdmove_is_an/
+---
+I came across this [article](https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/cpp-value-categories) while trying to understand the glvalues. The source of the article is "Stroustrup, 2013 - The C++ Programming Language, Fourth Edition". 
+
+More specifically, i wanted to understand why lvalues and xvalues are grouped together as glvalues. Turned out, it is the concept of identity. 
+
+The article says that a glvalue (lvalue or xvalue) has an identity, where identity is explained as:
+
+&amp;gt; If you have (or you can take) the memory address of a value and use it safely, then the value has identity.
+
+However, taking the address of an xvalue is an error:
+
+    std::string str;
+    auto p = &amp;std::move(str); //Error (can't take address of an rvalue)
+
+I understand that there should not be a reason to take an address of an xvalue but I want to understand the rationale behind flagging it as an error when it goes against the concept of an xvalue having an identity. 
+
+Thank You
+## [12][C++20 Features and Fixes in VS 2019 16.1 through 16.6](https://www.reddit.com/r/cpp/comments/hjn4uv/c20_features_and_fixes_in_vs_2019_161_through_166/)
+- url: https://devblogs.microsoft.com/cppblog/c20-features-and-fixes-in-vs-2019-16-1-through-16-6/
+---
+

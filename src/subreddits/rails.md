@@ -39,7 +39,224 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Pick up rails again after a break: advice needed](https://www.reddit.com/r/rails/comments/hjsu59/pick_up_rails_again_after_a_break_advice_needed/)
+## [3][Sidekiq + NetSSH for running remote commands, or something else?](https://www.reddit.com/r/rails/comments/hkbjpu/sidekiq_netssh_for_running_remote_commands_or/)
+- url: https://www.reddit.com/r/rails/comments/hkbjpu/sidekiq_netssh_for_running_remote_commands_or/
+---
+Right now, I am using the net-ssh gem to run commands remotely on multiple linux systems via SSH, starting within sidekiq workers. I used to have alternative approach that involved HTTP POST/GET requests to an API + ActiveRecord, but that became way too complicated -- database pooling issues, constant database polling issues, managing the agents, etc.
+
+I just recently started running into an issue to where a job that runs in Sidekiq every minute and lasts 2-3 seconds would actually start hanging while I'm pushing commands to remote agents via net-ssh. Here's an example of the issue:
+
+    [root:a8cd613bc7a5:~/myapp]# sidekiq -e production -q production
+    2020-07-02T21:44:45.024Z pid=1807172 tid=go3qqgj28 INFO: Booted Rails 5.2.4 application in production environment
+    2020-07-02T21:44:45.024Z pid=1807172 tid=go3qqgj28 INFO: Running in ruby 2.5.8p224 (2020-03-31 revision 67882) [x86_64-linux]
+    2020-07-02T21:44:45.024Z pid=1807172 tid=go3qqgj28 INFO: See LICENSE and the LGPL-3.0 for licensing details.
+    2020-07-02T21:44:45.024Z pid=1807172 tid=go3qqgj28 INFO: Upgrade to Sidekiq Pro for more features and support: http://sidekiq.org
+    2020-07-02T21:44:45.024Z pid=1807172 tid=go3qqgj28 INFO: Booting Sidekiq 6.0.4 with redis options {:id=&gt;"Sidekiq-server-PID-1807172", :url=&gt;nil}
+    2020-07-02T21:44:45.027Z pid=1807172 tid=go3qqgj28 INFO: Loading Schedule
+    2020-07-02T21:44:45.028Z pid=1807172 tid=go3qqgj28 INFO: Scheduling every_minute_worker {"cron"=&gt;"0 * * * * *", "class"=&gt;"EveryMinuteWorker", "queue"=&gt;"production"}
+    2020-07-02T21:44:45.031Z pid=1807172 tid=go3qqgj28 INFO: Scheduling daily_job_worker {"cron"=&gt;"00 12 * * * America/Detroit", "class"=&gt;"DailyJobWorker", "queue"=&gt;"production"}
+    2020-07-02T21:44:45.036Z pid=1807172 tid=go3qqgj28 INFO: Schedules Loaded
+    2020-07-02T21:44:51.599Z pid=1807172 tid=go3rto2tc class=EnumerationWorker jid=6c151ebb7275ac6d3eda1f24 INFO: start
+    2020-07-02T21:45:00.044Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T21:45:00.044Z pid=1807172 tid=go3rto384 class=EveryMinuteWorker jid=a54d8cacf904da8599eafb98 INFO: start
+    2020-07-02T21:45:02.313Z pid=1807172 tid=go3rto384 class=EveryMinuteWorker jid=a54d8cacf904da8599eafb98 elapsed=2.268 INFO: done
+    2020-07-02T21:45:12.601Z pid=1807172 tid=go3rto384 class=HttpWorker jid=949ba99e2dae36872d3a6bfd INFO: start
+    2020-07-02T21:45:12.602Z pid=1807172 tid=go3rto19s class=HttpsWorker jid=981f165c4daa82b4c0c065bc INFO: start
+    2020-07-02T21:46:00.102Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T21:46:00.102Z pid=1807172 tid=go3rto0nc class=EveryMinuteWorker jid=1aecdcc734c173c953bb6052 INFO: start
+    2020-07-02T21:46:02.501Z pid=1807172 tid=go3rto0nc class=EveryMinuteWorker jid=1aecdcc734c173c953bb6052 elapsed=2.399 INFO: done
+    2020-07-02T21:47:00.160Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T21:47:00.160Z pid=1807172 tid=go3rto1us class=EveryMinuteWorker jid=c5d878b4884d6bffeed222ba INFO: start
+    2020-07-02T21:47:03.009Z pid=1807172 tid=go3rto1us class=EveryMinuteWorker jid=c5d878b4884d6bffeed222ba elapsed=2.849 INFO: done
+    2020-07-02T21:48:00.222Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T21:48:00.223Z pid=1807172 tid=go3rto0gk class=EveryMinuteWorker jid=c05a9e7548c76a986ff90b2c INFO: start
+    2020-07-02T21:48:02.581Z pid=1807172 tid=go3rto0gk class=EveryMinuteWorker jid=c05a9e7548c76a986ff90b2c elapsed=2.358 INFO: done
+    2020-07-02T21:49:00.282Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T21:49:00.283Z pid=1807172 tid=go3rto0gk class=EveryMinuteWorker jid=1c00160fa0d8c909dc874ca0 INFO: start
+    2020-07-02T21:49:02.653Z pid=1807172 tid=go3rto0gk class=EveryMinuteWorker jid=1c00160fa0d8c909dc874ca0 elapsed=2.369 INFO: done
+    2020-07-02T21:50:00.042Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T21:50:00.043Z pid=1807172 tid=go3rto1h0 class=EveryMinuteWorker jid=3eae22a8af2730a0c524727a INFO: start
+    2020-07-02T21:51:00.102Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T21:51:00.102Z pid=1807172 tid=go3rto218 class=EveryMinuteWorker jid=6ccbbd6e7dec18c5b0cd270d INFO: start
+    2020-07-02T21:52:00.159Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T21:52:00.160Z pid=1807172 tid=go3rto0co class=EveryMinuteWorker jid=521026754ce0d517fa2dcd33 INFO: start
+    2020-07-02T21:53:00.218Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T21:53:00.219Z pid=1807172 tid=go3rto0gk class=EveryMinuteWorker jid=ce17658e7bf76c25adfeabae INFO: start
+    2020-07-02T21:54:00.275Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T21:54:00.276Z pid=1807172 tid=go3rto2f0 class=EveryMinuteWorker jid=a9ba8969acae516b07d837bd INFO: start
+    2020-07-02T21:55:00.033Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T21:55:00.034Z pid=1807172 tid=go3rto0nc class=EveryMinuteWorker jid=2d66f0045c8ab7bcb28fa28b INFO: start
+    2020-07-02T21:56:00.093Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T21:56:00.094Z pid=1807172 tid=go3rto1us class=EveryMinuteWorker jid=285067110201c2586a7fd07c INFO: start
+    2020-07-02T21:57:00.151Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T21:58:00.207Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T21:59:00.263Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T22:00:00.020Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T22:01:00.077Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T22:01:02.176Z pid=1807172 tid=go3rto384 class=HttpWorker jid=949ba99e2dae36872d3a6bfd elapsed=949.575 INFO: done
+    2020-07-02T22:01:02.177Z pid=1807172 tid=go3rto384 class=EveryMinuteWorker jid=a856fc66c1a0e81046714c71 INFO: start
+    2020-07-02T22:02:00.136Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T22:03:00.196Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T22:04:00.254Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T22:05:00.012Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T22:06:00.072Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T22:07:00.131Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T22:08:00.190Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T22:09:00.248Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T22:10:00.006Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T22:11:00.062Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T22:12:00.120Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T22:13:00.178Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T22:14:00.234Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T22:15:00.291Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T22:16:00.050Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T22:17:00.109Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T22:18:00.167Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T22:19:00.224Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T22:20:00.282Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T22:20:49.618Z pid=1807172 tid=go3rto19s class=HttpsWorker jid=981f165c4daa82b4c0c065bc elapsed=2137.017 INFO: done
+    2020-07-02T22:20:49.619Z pid=1807172 tid=go3rto19s class=EveryMinuteWorker jid=72cc6c5060105e45e872c7f6 INFO: start
+    2020-07-02T22:20:53.160Z pid=1807172 tid=go3rto2tc class=EnumerationWorker jid=6c151ebb7275ac6d3eda1f24 elapsed=2161.56 INFO: done
+    2020-07-02T22:20:53.161Z pid=1807172 tid=go3rto2tc class=EveryMinuteWorker jid=358f556d7f5e49ad0130b1b5 INFO: start
+    2020-07-02T22:20:56.982Z pid=1807172 tid=go3rto1h0 class=EveryMinuteWorker jid=3eae22a8af2730a0c524727a elapsed=1856.938 INFO: done
+    2020-07-02T22:20:56.983Z pid=1807172 tid=go3rto1h0 class=EveryMinuteWorker jid=fecc3022964b8c2833381033 INFO: start
+    2020-07-02T22:21:00.066Z pid=1807172 tid=otv92mi6o INFO: queueing EveryMinuteWorker (every_minute_worker)
+    2020-07-02T22:21:04.267Z pid=1807172 tid=go3rto0nc class=EveryMinuteWorker jid=2d66f0045c8ab7bcb28fa28b elapsed=1564.233 INFO: done
+    2020-07-02T22:21:04.268Z pid=1807172 tid=go3rto0nc class=EveryMinuteWorker jid=4dc55fec933e63d8a2375928 INFO: start
+    2020-07-02T22:21:04.396Z pid=1807172 tid=go3rto0gk class=EveryMinuteWorker jid=ce17658e7bf76c25adfeabae elapsed=1684.177 INFO: done
+    2020-07-02T22:21:04.406Z pid=1807172 tid=go3rto1h0 class=EveryMinuteWorker jid=fecc3022964b8c2833381033 elapsed=7.423 INFO: done
+    2020-07-02T22:21:04.507Z pid=1807172 tid=go3rto384 class=EveryMinuteWorker jid=a856fc66c1a0e81046714c71 elapsed=1202.33 INFO: done
+    2020-07-02T22:21:04.543Z pid=1807172 tid=go3rto2f0 class=EveryMinuteWorker jid=a9ba8969acae516b07d837bd elapsed=1624.267 INFO: done
+    2020-07-02T22:21:04.842Z pid=1807172 tid=go3rto0co class=EveryMinuteWorker jid=521026754ce0d517fa2dcd33 elapsed=1744.682 INFO: done
+    2020-07-02T22:21:05.051Z pid=1807172 tid=go3rto2tc class=EveryMinuteWorker jid=358f556d7f5e49ad0130b1b5 elapsed=11.89 INFO: done
+    2020-07-02T22:21:05.077Z pid=1807172 tid=go3rto19s class=EveryMinuteWorker jid=72cc6c5060105e45e872c7f6 elapsed=15.458 INFO: done
+    2020-07-02T22:21:05.097Z pid=1807172 tid=go3rto1us class=EveryMinuteWorker jid=285067110201c2586a7fd07c elapsed=1505.003 INFO: done
+    2020-07-02T22:21:05.223Z pid=1807172 tid=go3rto218 class=EveryMinuteWorker jid=6ccbbd6e7dec18c5b0cd270d elapsed=1805.121 INFO: done
+    2020-07-02T22:21:06.930Z pid=1807172 tid=go3rto0nc class=EveryMinuteWorker jid=4dc55fec933e63d8a2375928 elapsed=2.663 INFO: done
+
+As you can see, the worker that runs every minute for 2-3 seconds eventually stopped running and started overlapping. It never finished until the last worker (HttpsWorker) completed, which is just simply pushing commands to a linux system via net-ssh.
+
+Now that this is happening, I'm starting to question this entire process. My rails app provides a UI for customers to schedule tasks, and Sidekiq processes those tasks on a Linux VM that sits on their network at a predefined time. Sidekiq is really nice for me because I can queue multiple simultaneous tasks, and also see straight from the console what's failing, manually re-queue if necessary, etc.
+
+Here are the few questions that I have regarding this:
+
+1. Are there potential scalability issues that may exist with this method? So far, so good, but I have a small customer base, so no issues yet other than jobs hanging.
+2. Is there a better way to manage something like this while still being able to enjoy the benefits that I appreciate (e.g. tracking crashes, re-tries, etc.)
+3. If this method is actually something that should be OK, what could be causing Sidekiq to do this with the jobs? I thought each job was 100% independent of any other job as long it's running, but this hiccup and lag is very intermittent and only when I have other jobs running, and not all of the time.
+## [4][Rails 6 with semantic ui and icons](https://www.reddit.com/r/rails/comments/hki5sm/rails_6_with_semantic_ui_and_icons/)
+- url: https://www.reddit.com/r/rails/comments/hki5sm/rails_6_with_semantic_ui_and_icons/
+---
+Hi, i have a problem. I create a rails 6 project and add fomantic-ui(fork from semantic-ui) and its work. But i can't use a icon, i  instaled fontawesome(how to says a doc [https://semantic-ui.com/elements/icon.html](https://semantic-ui.com/elements/icon.html)) but system try found icons [http://localhost:3000/assets/themes/default/assets/fonts/icons.woff2](http://localhost:3000/assets/themes/default/assets/fonts/icons.woff2) how i can change path to my node\_module ? I think i need change my webpack settings, but i don't how
+## [5][How do you organize Stripe Resources?](https://www.reddit.com/r/rails/comments/hk7qhb/how_do_you_organize_stripe_resources/)
+- url: https://www.reddit.com/r/rails/comments/hk7qhb/how_do_you_organize_stripe_resources/
+---
+I'm building an app that uses Stripe as a backend for credit card issuing. I started off with an Account model that would keep a local copy of the Stripe Connected Account that I was associating with the User. I used a jsonb field to just store the json blob that Stripe returns via their API. 
+
+Then, I need to create a Source (i.e. a bank account I could draw money from on behalf of the user). I did the hackiest thing I could and just added a jsonb "source" field to the Account model. Now I've got 2 json blobs that are keeping a local copy of Objects over at Stripe.
+
+As I build this out, I'm going to need to cache a copy of a Stripe Balance Object maybe keep track of TopUPs, etc... 
+
+I was just wondering how others deal with the complexity of Stripe. Are you creating separate models for each of the Stripe objects you need to cache? I've already gotten into a little trouble just with an Account model because I have to load it async into the front end. If I have a bunch of other models, how would I keep track of what's necessary in the front-end?
+## [6][Rails &amp; Gatsby anyone?](https://www.reddit.com/r/rails/comments/hk22vq/rails_gatsby_anyone/)
+- url: https://www.reddit.com/r/rails/comments/hk22vq/rails_gatsby_anyone/
+---
+I have a personal/portfolio website that I've built with a Rails 6 backend and a React frontend.  It's currently deployed to Heroku and using SendGrid for emails.  I'm also considering using the Comfortable Mexican Couch gem for blogs - but there is probably a Gatsby plugin for that too.
+
+My biggest concern right now is search engine optimization and I would also like to increase the initial load time of the site.  
+
+Since Gatsby just takes your dynamic React content and builds it into static resources, I figured that would take care of both issues.
+
+Has anyone here attempted such a project?  Any advice or potential hurdles to look out for?
+## [7][How to “call” custom fonts within with SLIM templates](https://www.reddit.com/r/rails/comments/hk9fxl/how_to_call_custom_fonts_within_with_slim/)
+- url: https://www.reddit.com/r/rails/comments/hk9fxl/how_to_call_custom_fonts_within_with_slim/
+---
+Hello I've placed custom fonts for my app use, but I have no clue of how to display the asset pipeline fonts using SLIM templates in the *temas/index* pages, I was successful with images but I don't have any clue if (it's even possible?) to use custom fonts with asset pipeline using slim templates.
+
+[https://github.com/LeoFragozo/notika\_slim\_test/blob/master/app/views/temas/index.html.slim](https://github.com/LeoFragozo/notika_slim_test/blob/master/app/views/temas/index.html.slim)
+
+I've tried to put fonts in the asset pipeline, creating the font .scss file, and it's apparently not loading hence [https://postimg.cc/QVytpngz](https://postimg.cc/QVytpngz), so I'm here to ask for help.
+## [8][Trailblazer 2.1 - new features, landingpage and documentation](https://www.reddit.com/r/rails/comments/hjyz5r/trailblazer_21_new_features_landingpage_and/)
+- url: https://www.reddit.com/r/rails/comments/hjyz5r/trailblazer_21_new_features_landingpage_and/
+---
+For those who know trailblazer - you know that TRB evolved few times, introduced a lot of great ideas but also had his problems:  missing documentation, lack of communication with the community, and not consistent approach to some problems. We strongly believe that the current version with the support of core team and the new landing page with complete documentation is something that is worth working with.  
+
+
+For those who somehow didn't hear about Trailblazer - check it out, probably for some complex projects where Rails aren't sufficient that tool could be really helpful and joyfull.  
+
+
+Either you know TRB already or you never heard about it, check out the blog post about the history and changes of trailblazer 2.1 : [https://trailblazer.to/2.1/blog.html](https://trailblazer.to/2.1/blog.html) and give us feedback!
+## [9][How would you set this up?](https://www.reddit.com/r/rails/comments/hk671l/how_would_you_set_this_up/)
+- url: https://www.reddit.com/r/rails/comments/hk671l/how_would_you_set_this_up/
+---
+Hey Rails guys (and gals),
+
+Part of a project am working on (basically a job board) should have the functionality for sending out a weekly email to a bunch of users. The email should contain a list of jobs the user can apply to. 
+
+The list of jobs in the emails sent is different for each user since a user can create a subscription for the types of job notifications they want to be getting e.g. a subscription for "marketing jobs", "developer jobs" but the differences are based on "job category" 
+
+The models are as below:
+
+&amp;#x200B;
+
+https://preview.redd.it/d990df9iii851.png?width=3693&amp;format=png&amp;auto=webp&amp;s=886f760d837b3224fe9019b347fabf9efc5c19c9
+
+I've already created the notification mailer as below:
+
+    class NotifyMailer &lt; ApplicationMailer
+      default from: 'notify@domain.com'
+      def self.send_request(payload)
+        # first grab all users who are non-admins..then fetch all their active subscriptions...
+        active_subscriptions = User.normal_users.with_active_subs
+        emails = []
+        active_subscriptions.each do |sub|
+          emails &lt;&lt; sub.email 
+        end
+    
+        emails.each do |email|
+          new_request(email, payload).deliver_later
+        end
+      end
+    end
+
+...I've also created a background job as below:
+
+    class SendNotificationsJob &lt; ApplicationJob
+      queue_as :default
+      def perform(*args)
+        # Do something later
+        NotifyMailer.send_request(payload)
+      end
+    end
+
+Now this is where things feel a bit over my head - Essentially, I would like to send the emails once per week on a particular day, say Wednesday at 9am but I'm wondering:
+
+&amp;#x200B;
+
+1. Have I even set this up correctly? 
+2. Where do I tell the app that the emails should be sent "once per week on a particular day, say Wednesday at 9am"? (Forgive the rather newbish question...am still learning -  All tutorials regarding sending email that I've come across mostly discuss the aspect of sending an email like after a user registers so this methodology is easily input in that particular controller method....but where do I put functionality for automatic email sending on particular dates/times? 
+
+Thanks. 
+
+PS: In case I've missed out on a detail that may help me out lemme know.
+## [10][Nested form question](https://www.reddit.com/r/rails/comments/hk2rll/nested_form_question/)
+- url: https://www.reddit.com/r/rails/comments/hk2rll/nested_form_question/
+---
+Hello people. 
+I have a composite question. Have asked this here a few weeks ago, haven’t solved this since.
+Part 1:
+I am creating an e-commerce website with a cart. Cart has many LineItems. Both inherit from ApplicationRecord. I want LineItem to belong_to a Product, where a Product would be a class of external API, in this case ShopifyAPI::Product. Is it accomplishable?
+(Hacky fix which I now did and don’t like: Right now the LineItem has a product_id column, respective product I find when needed through an API call)
+Part 2: 
+Product has two Options. Option has a range of possible values, say [‘1’, ‘2’, ‘3’]. Cart has many LineItems. On the cart page ‘carts/show’ I have a listing of all the LineItems. Each LineItem is rendered as it’s id and combination of options of the Product that belongs to the LineItem. So far so good. Each option is rendered as a dropdown of it’s range.
+When the button ‘Submit’ on the Cart page is clicked, I try to save the cart with chosen options, I want the LineItems with respective selected options to be passed as the params in the next way: 
+cart: { 
+  line_items: [
+    {...}, {...}
+  ]
+}. Where {...} are the combination of options. Would you know how to accomplish this? 
+
+Thanks for reading. My guess is the second question would be easier solved with the first one, hence at first i thought of the second question, neither of which I know how to answer.
+## [11][Pick up rails again after a break: advice needed](https://www.reddit.com/r/rails/comments/hjsu59/pick_up_rails_again_after_a_break_advice_needed/)
 - url: https://www.reddit.com/r/rails/comments/hjsu59/pick_up_rails_again_after_a_break_advice_needed/
 ---
 A few years ago (2015) I learned to develop full-stack web applications by following an online bootcamp. The bootcamp used Ruby on Rails as a framework. After the bootcamp I was able to develop my own web applications by using RoR.
@@ -72,158 +289,9 @@ Is this a good idea or should I follow the trend by using Rails as the API and d
 &amp;#x200B;
 
 Thanks a lot for the feedback!
-## [4][Rails 6 deployment with Passenger and Docker](https://www.reddit.com/r/rails/comments/hjuu1x/rails_6_deployment_with_passenger_and_docker/)
+## [12][Rails 6 deployment with Passenger and Docker](https://www.reddit.com/r/rails/comments/hjuu1x/rails_6_deployment_with_passenger_and_docker/)
 - url: https://www.reddit.com/r/rails/comments/hjuu1x/rails_6_deployment_with_passenger_and_docker/
 ---
 Hi all,
 
 Is there any good guide/resource on how to prepare and deploy Rails 6 application with Passenger/NGINX as Docker containers?
-## [5][Google OAuth2.0 Pricing using omniauth-google-oauth2 gem?](https://www.reddit.com/r/rails/comments/hjhr3d/google_oauth20_pricing_using_omniauthgoogleoauth2/)
-- url: https://www.reddit.com/r/rails/comments/hjhr3d/google_oauth20_pricing_using_omniauthgoogleoauth2/
----
-Has anyone had experience using the [**omniauth-google-oauth2**](https://github.com/zquestz/omniauth-google-oauth2) gem for an app with a fairly large user base? 
-
-I am trying to figure out which [Google Identity Platform pricing tier](https://cloud.google.com/identity-platform/pricing) it falls under, Tier 1 or Tier 2.
-
-Anyone know?
-## [6][2013-08, Train trip in Beroun and station transit.](https://www.reddit.com/r/rails/comments/hjsrb0/201308_train_trip_in_beroun_and_station_transit/)
-- url: https://www.reddit.com/r/rails/comments/hjsrb0/201308_train_trip_in_beroun_and_station_transit/
----
-Beroun, 22-08-2013. Journey from Praha Hlavní Nádraží station to Beroun and resumption of rail freight and passenger traffic. Good vision.
-
-https://youtu.be/GIyyXVAX8-c
-
-\#Beroun #Praha\_Hlavní\_Nádraží #Prague #Praha #Czech\_Republic #Europe #České\_dráhy #nádraží #International\_Train #Maintainers\_track\_rail\_vehicle #train #rail #eisenbahn #bahn #railway #railroad #travelblog #railwayphotography #railroadlife #railplanet #railfan #loverailways #fallenflag #station #passengertrains #freight\_trains #trainspotting #travel #travel\_video #trip #film #video #photography #youtube
-## [7][What should I use to document my Rails API end points?](https://www.reddit.com/r/rails/comments/hjfx4q/what_should_i_use_to_document_my_rails_api_end/)
-- url: https://www.reddit.com/r/rails/comments/hjfx4q/what_should_i_use_to_document_my_rails_api_end/
----
-I'm building a simple JSON API and id like to document some basic usage info about it -
-
-- what the routes are
-- what the params are (required, options, etc...)
-- what the response looks like. 
-
-I'm new to both ruby and rails. 
-
-I'd love to just keep it simple with a comment on the controller action (is that the right place?) It would be icing on the cake to also auto-generate documentation, but it's not strictly needed. 
-
-1. What's the best approach to document this info? Is there a comment standard or an open source tool that helps generate this in a certain format?
-
-2. Are there any publicly viewable projects that I can use as an example guide?
-
-
-Thanks so much!
-## [8][HTML Query](https://www.reddit.com/r/rails/comments/hjlpw8/html_query/)
-- url: https://www.reddit.com/r/rails/comments/hjlpw8/html_query/
----
-So I'm trying to query an HTML link, already have that much covered to gather the information I need. But I'm having some syntax problems on the Rails end of things to display it. I'm trying to do this on the controller level in order to make the request AJAX. As I said, I'm having a problem with syntax here and can't seem to find any explicit answers via google - so here's what's up:  
-
-
-**API Query (from controller)** 
-
-https://www.database.com/params 
-
-**Expected return:** 
-
-\["data1", "data2", "data3", "etc"\] 
-
-I'd like to take this information and separate them into different arrays. So.. data1 could be a name and I want to pair it with names, data2 could be a location and I'd like to separate it into different locations, really just manipulate this data in general since I'm not sure how I want it to display on chartkick just yet. 
-
-That's the general idea of it, here's the code I'm having a hard time with:
-
-&amp;#x200B;
-
-`class Charts_Controller &lt; ApplicationController`
-
-`def query` 
-
-`Above_Query`
-
-`Transfer query results into different arrays (can probably figure this out myself once I know how to take in the results)`
-
-`Result_Of_Query do render json: NewData.ChartkickParams` 
-
-`end` 
-
-`end`
-
-I may be way off on the whole thing. If you have a better way of doing this, that's fine by me. It's just a rather large database that may contain a lot of information, so it'd be nice to do this via AJAX, but it is a personal project so I can cut a few corners for now.
-## [9][Rails 6 - problem with method Stale? not working properly](https://www.reddit.com/r/rails/comments/hjl335/rails_6_problem_with_method_stale_not_working/)
-- url: https://www.reddit.com/r/rails/comments/hjl335/rails_6_problem_with_method_stale_not_working/
----
-Hi guys. I'm using Rails 6 and I'm facing a problem while using the method stale? on AR relations - collections. The method stale? isn't recognizing changes on the collection, e.g updating the attribute 'updated\_at' of one record, therefore returning the 304 http code - page not modified. As result, the browser use the cached page instead of refreshing with a new one.
-
-I found the same problem here [https://github.com/rails/rails/issues/37310](https://github.com/rails/rails/issues/37310)
-
-I copy the example from the above link to clarify what I explained above:
-
-    # Controller 
-    def index   
-      @articles = Article.all
-      if stale?(@articles)
-        respond_to do |format|
-          # all the supported formats
-        end
-      end 
-    end  
-    
-    # Test 
-    it "updates cache when one of articles is updated" do
-      all_articles = create_list(:article, 10)
-      response = get '/articles'
-      etag = response.headers['ETag']
-      expect(response.status).to eq(200)
-      get '/articles', headers: { 'HTTP_IF_NONE_MATCH' =&gt; etag } 
-      expect(response.status).to eq(304)
-    
-      all_articles.sample.touch   
-      get '/articles', headers: { 'HTTP_IF_NONE_MATCH' =&gt; etag }   
-      # HERE on next line assert will fail because server will respond with 304,    
-      # because cache key for ActiveRecord::Relation will stay the same 
-      expect(response.status).to eq(200) # =&gt; 304 
-    end  
-
-From my research, from Rails 6 and above, rails uses the following logic for creating key caches
-
-    # collection_cache_versioning
-    
-    ### cache_key holds the stable information - generate from the SQL query
-    Product.where("name like ?", "%Cosmic Encounter%").cache_key 
-    # =&gt; "products/query-1850ab3d302391b85b8693e941286659"
-    
-    ### cache_version holds the volatile information - generate from updated_at and count
-    Product.where("name like ?", "%Cosmic Encounter%").cache_version
-    # =&gt; "3-20190522172326885804" 
-
-From what I see and hopes, when cache\_version is updated (e.g updating updated\_at or count) the method stale? should stale the collection and create a new query and view, but for me that is not happening. One solution that I found is deactivate the collection\_cache\_versioning system to use the old system - the old system would create only one key, without versions.
-
-I did test on my system using rails console and saw that cache\_version was changing when touching one record.
-
-Does anyone faced the same problem? I didn't find another solution.
-## [10][is Rails API Mode suitable for micro-services](https://www.reddit.com/r/rails/comments/hjby7u/is_rails_api_mode_suitable_for_microservices/)
-- url: https://www.reddit.com/r/rails/comments/hjby7u/is_rails_api_mode_suitable_for_microservices/
----
-i have question rails suitable  for micro-services ? i search for if rails suitable  for micro-services or not . 
-
-when search `sinatra ruby`  is faster than if small things but sinatra is not suitable for scale . 
-
-i am not want after year regret for my choose .   
-
-
-rails have more advantages any other
-## [11][Rails build a dashboard](https://www.reddit.com/r/rails/comments/hjihb4/rails_build_a_dashboard/)
-- url: https://www.reddit.com/r/rails/comments/hjihb4/rails_build_a_dashboard/
----
-Hi, 
-
-I'm trying to build a dashboard that includes a navbar and the container below it. So far I have the navbar and it includes a link\_to edit user profile, though I'm trying to rather than open it in a new page, render it in the container. 
-
-I thought of adding it as a partial but I don't think that's the right solution as it will always be there (currently with devise's alerts are also always present too). What do you suggest would be the best way to do it? 
-
-Basically I want to be able to show different components in the dashboard's container depending on what the user clicks. 
-
-Thanks!
-## [12][Gem for passwordless Auth in Rails API](https://www.reddit.com/r/rails/comments/hj8zf6/gem_for_passwordless_auth_in_rails_api/)
-- url: https://www.reddit.com/r/rails/comments/hj8zf6/gem_for_passwordless_auth_in_rails_api/
----
-I am on the lookout for a gem that enables passwordless auth (ie you only have to enter an email to be sent a magic link to login) in a rails API. Having looked this morning I’ve found examples that work when using rails for views but not any that are setup to work with only rails APIs. Just wondered if anyone knew of any?

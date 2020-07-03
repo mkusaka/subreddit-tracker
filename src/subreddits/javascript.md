@@ -13,43 +13,43 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][I’m making a series about building a full-stack app from scratch in TypeScript using Node.js, Vue.js &amp; PostgreSQL. My goal is to show the full development cycle: connecting front-end with back-end, deploying, etc.](https://www.reddit.com/r/javascript/comments/hjacz2/im_making_a_series_about_building_a_fullstack_app/)
-- url: https://taski.app/
+## [3][Understading JSON Web Token](https://www.reddit.com/r/javascript/comments/hkdyal/understading_json_web_token/)
+- url: https://9sh.re/ZxiYixYYpp
 ---
 
-## [4][Watcher - all web development blogs in one place](https://www.reddit.com/r/javascript/comments/hj92fb/watcher_all_web_development_blogs_in_one_place/)
-- url: https://watcherapp.online/
+## [4][Mastering Promise.allSettled in React](https://www.reddit.com/r/javascript/comments/hk0tg9/mastering_promiseallsettled_in_react/)
+- url: https://medium.com/@Dylan.Kerler/mastering-promise-allsettled-in-react-9fcecb7da479
 ---
 
-## [5][My former teacher made a slim test framework that's really good for writing exercises](https://www.reddit.com/r/javascript/comments/hjt1t9/my_former_teacher_made_a_slim_test_framework/)
-- url: https://github.com/happy-bits/dud
+## [5][Introduction to Progressive Web App with example in Vanilla JS](https://www.reddit.com/r/javascript/comments/hkffrx/introduction_to_progressive_web_app_with_example/)
+- url: https://9sh.re/ObiHvxYYM#6
 ---
 
-## [6][A database software completely built as JSON files in backend. A powerful, portable and simple database works on top of JSON files.](https://www.reddit.com/r/javascript/comments/hjw03n/a_database_software_completely_built_as_json/)
+## [6][Build your own JavaScript property based testing framework - Let's take a deep dive into the internals of property based testing through this tutorial explaining how fast-check framework has been built (part 1 over 4)](https://www.reddit.com/r/javascript/comments/hkhneg/build_your_own_javascript_property_based_testing/)
+- url: https://dev.to/dubzzz/your-own-property-based-testing-framework-part-1-generators-3afi
+---
+
+## [7][financial: A TypeScript/JavaScript financial library for Node.js, Deno and browser](https://www.reddit.com/r/javascript/comments/hkhk2c/financial_a_typescriptjavascript_financial/)
+- url: https://github.com/lmammino/financial
+---
+
+## [8][A database software completely built as JSON files in backend. A powerful, portable and simple database works on top of JSON files.](https://www.reddit.com/r/javascript/comments/hjw03n/a_database_software_completely_built_as_json/)
 - url: https://github.com/Devs-Garden/jsonbase#readme
 ---
 
-## [7][Are you preparing for Front-end/JS interviews? Codenami.io can help you!](https://www.reddit.com/r/javascript/comments/hjvesp/are_you_preparing_for_frontendjs_interviews/)
-- url: https://www.codenami.io/?ref=reddit-javascript
+## [9][Im making a Visual Based Programming Language for Discord Bots](https://www.reddit.com/r/javascript/comments/hk8ht7/im_making_a_visual_based_programming_language_for/)
+- url: https://github.com/Team-Nope/Botly
 ---
 
-## [8][GitHub - xstable/xst-google-calendar-events: A react Component, which fetch Calendar entries from Google Calender and output them to your Webpage. It's based on Javascript (react) and create an sortable Event-List Table. No need for PHP or Database-Connection.](https://www.reddit.com/r/javascript/comments/hjs7eq/github_xstablexstgooglecalendarevents_a_react/)
-- url: https://github.com/xstable/xst-google-calendar-events
+## [10][Found my first bug in the V8 engine](https://www.reddit.com/r/javascript/comments/hkenpc/found_my_first_bug_in_the_v8_engine/)
+- url: https://stackoverflow.com/questions/62704854/why-is-the-execution-time-of-this-function-call-changing
 ---
 
-## [9][Using Remote Containers in WSL 2](https://www.reddit.com/r/javascript/comments/hjgwqo/using_remote_containers_in_wsl_2/)
-- url: https://code.visualstudio.com/blogs/2020/07/01/containers-wsl
+## [11][Find fully functional hosted features for your WebApp](https://www.reddit.com/r/javascript/comments/hkjndl/find_fully_functional_hosted_features_for_your/)
+- url: https://www.componently.com/
 ---
 
-## [10][Best Programming Languages To Learn About](https://www.reddit.com/r/javascript/comments/hjs5ny/best_programming_languages_to_learn_about/)
-- url: https://shiv1367.com/whatisprogramming
----
-
-## [11][Comparing Test Runners AVA, Jest, Mocha, and mocha-parallel-tests](https://www.reddit.com/r/javascript/comments/hjeloz/comparing_test_runners_ava_jest_mocha_and/)
-- url: https://github.com/scraggo/comparing-javascript-test-runners
----
-
-## [12][Reno 1.0.0 released! A lightweight router for Deno's standard HTTP server](https://www.reddit.com/r/javascript/comments/hixl9g/reno_100_released_a_lightweight_router_for_denos/)
-- url: https://github.com/reno-router/reno
+## [12][How to call a function on URL change in javascript](https://www.reddit.com/r/javascript/comments/hkjb3s/how_to_call_a_function_on_url_change_in_javascript/)
+- url: https://itsopensource.com/how-to-call-a-function-on-URL-change-in-javascript/
 ---
 

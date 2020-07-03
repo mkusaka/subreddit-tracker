@@ -11,54 +11,145 @@ As an experiment, let's try doing Q&amp;A about the design here in Reddit.
 My hope is that the threading support will help keep questions and answers matched.
 
 **Please start a new top-level comment for each new question.**
-## [2][Size doesn't matter](https://www.reddit.com/r/golang/comments/hjuyfv/size_doesnt_matter/)
+## [2][Github-like calendar heatmap in plain Go](https://www.reddit.com/r/golang/comments/hkgcz9/githublike_calendar_heatmap_in_plain_go/)
+- url: https://github.com/nikolaydubina/calendarheatmap
+---
+
+## [3][Started learning Go today. Is my understanding correct that GOPATH is no longer required in favour of Go modules?](https://www.reddit.com/r/golang/comments/hkishj/started_learning_go_today_is_my_understanding/)
+- url: https://www.reddit.com/r/golang/comments/hkishj/started_learning_go_today_is_my_understanding/
+---
+My [Go Programming Language](https://www.gopl.io/) book mentions the use of GOPATH as a means to store Go code related to source files, packages and a bin directory. I'm slightly confused about this, does that mean that the only place I can write go code would be in the $GOPATH ?
+
+Also, [go w/tests](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/install-go#go-modules) states that GOPATH will be deprecated soon. So should I just forget about this concept and move on with Go modules?
+
+Truth be told, I haven't researched into the benefits of Go modules too much as of yet as I'm just trying to set up my local Go environment before I start coding. It seems that I should just forget about GOPATH and just get cracking with code. Would anyone be able to ease my mind off this issue?
+
+Much appreciated :)
+## [4][Size doesn't matter](https://www.reddit.com/r/golang/comments/hjuyfv/size_doesnt_matter/)
 - url: https://i.redd.it/m5tjssbydf851.jpg
 ---
 
-## [3][Go is Boring...And That’s Fantastic!](https://www.reddit.com/r/golang/comments/hjqouw/go_is_boringand_thats_fantastic/)
-- url: https://www.capitalone.com/tech/software-engineering/go-is-boring/
+## [5][How do you deal with private dependencies in CI?](https://www.reddit.com/r/golang/comments/hkiyfo/how_do_you_deal_with_private_dependencies_in_ci/)
+- url: https://www.reddit.com/r/golang/comments/hkiyfo/how_do_you_deal_with_private_dependencies_in_ci/
+---
+What are people doing for private dependencies these days in your CI?
+
+Vendoring? Do you put credentials into your builder nodes? SSH key? Access token?
+
+What's considered standard these days?
+## [6][Is it possible to get multiple AWS S3 object tags in batch using Go?](https://www.reddit.com/r/golang/comments/hkipr3/is_it_possible_to_get_multiple_aws_s3_object_tags/)
+- url: https://www.reddit.com/r/golang/comments/hkipr3/is_it_possible_to_get_multiple_aws_s3_object_tags/
+---
+Hello everyone, I asked the following question on StackOverflow too but did not receive a response. I was wondering if anyone here could help me.
+
+Suppose I have a given bucket name `bucket` and a slice of (string) item keys `keys`. I can get the tags for all of these objects by doing the following:
+
+    sess, _ := session.NewSession(&amp;aws.Config{
+    	Region: aws.String("eu-west-2"),
+    })
+    
+    svc := s3.New(sess)
+    
+    for _, key := range(keys) {
+        response, _ := svc.GetObjectTagging(
+            &amp;s3.GetObjectTaggingInput{
+    	        Bucket: aws.String(bucket),
+    	        Key:    aws.String(key),
+    	    }
+        )
+    	fmt.Println(response.TagSet)
+    }
+
+In my program, I am finding this quite slow. Is there a way to get all the tags in one go, instead of calling this multiple times?
+
+Any help would be much appreciated, thank you.
+## [7][WaitGroup in Go](https://www.reddit.com/r/golang/comments/hkibg3/waitgroup_in_go/)
+- url: https://chenpy.com/article/87235493714501274
 ---
 
-## [4][Good example web applications to learn from? (production-ready, best practice, tech stack)](https://www.reddit.com/r/golang/comments/hjj0l6/good_example_web_applications_to_learn_from/)
-- url: https://www.reddit.com/r/golang/comments/hjj0l6/good_example_web_applications_to_learn_from/
----
-I'm learning Golang, and right now I'm looking for a good opensource (full-stack) web application that employs best practice and a well-chosen tech stack.
-
-When I got started with Node.js and GraphQL, there was a project called [Spectrum](https://github.com/withspectrum/spectrum), which was tremendously helpful as a reference project. Does the Go community have some projects similar (not necessarily a chat room like Spectrum)?
-## [5][Compare chromedp with rod with real examples](https://www.reddit.com/r/golang/comments/hju2j0/compare_chromedp_with_rod_with_real_examples/)
-- url: https://github.com/go-rod/rod/tree/master/lib/examples/compare-chromedp
+## [8][A Journey building a fast JSON parser and full JSONPath, Oj for Go](https://www.reddit.com/r/golang/comments/hk1hm6/a_journey_building_a_fast_json_parser_and_full/)
+- url: https://github.com/ohler55/ojg/blob/master/design.md
 ---
 
-## [6][Surge — A fast and efficient binary marshaler for Byzantine networks](https://www.reddit.com/r/golang/comments/hjs0o9/surge_a_fast_and_efficient_binary_marshaler_for/)
-- url: https://github.com/renproject/surge
+## [9][How to substitute io.Reader for os.Stdin](https://www.reddit.com/r/golang/comments/hkgahy/how_to_substitute_ioreader_for_osstdin/)
+- url: https://www.reddit.com/r/golang/comments/hkgahy/how_to_substitute_ioreader_for_osstdin/
+---
+I wanted to pass an `io.Reader` to a function to replace `os.Stdin` for testing. Unfortunately my function started behaving differently when using `strings.NewReader()`. Below is a simplified reproduction.
+
+The first line of `INPUT` gives the number of records I want to read from stdin. Each record consists of two lines: the number of integers and the integers separated by spaces.
+
+    package main
+    
+    import (
+    	"fmt"
+    	"io"
+    	"os"
+    	"strings"
+    )
+    
+    func main() {
+    	INPUT := `2
+    2
+    1 2
+    3
+    1 2 3
+    `
+    	fmt.Println(ReadInput(strings.NewReader(INPUT)))
+    	fmt.Println(ReadInput(os.Stdin))
+    }
+    
+    func ReadInput(reader io.Reader) [][]int {
+    	var countRecords int
+    	_, _ = fmt.Fscanln(reader, &amp;countRecords)
+    
+    	records := make([][]int, countRecords)
+    	for i := 0; i &lt; countRecords; i++ {
+    		var countNumbers int
+    		_, _ = fmt.Fscanln(reader, &amp;countNumbers)
+    
+    		numbers := make([]int, countNumbers)
+    		for j := 0; j &lt; countNumbers; j++ {
+    			fmt.Fscan(reader, &amp;numbers[j])
+    		}
+    
+    		records[i] = numbers
+    		// fmt.Fscanln(reader) // FIXME
+    	}
+    	return records
+    }
+
+If I `go run` this code, I get the following:
+
+    [[1 2] []]
+    ... [copy INPUT to Stdin]
+    [[1 2] [1 2 3]]
+
+Here I get the expected result (`[[1 2] [1 2 3]]`) when reading from `os.Stdin` but not from `strings.NewReader`.
+
+If I uncomment the last `Fscanln` marked with FIXME, I get the opposite:
+
+    [[1 2] [1 2 3]]
+    ... [copy INPUT to Stdin]
+    [[1 2] []]
+
+I would have expected this code to produce the same result with both `strings.NewReader` and `os.Stdin`. What is happening here?
+
+What can I substitute for `os.Stdin` in my test function?
+## [10][Go driven rpc code generation tool for right now.](https://www.reddit.com/r/golang/comments/hk6u9a/go_driven_rpc_code_generation_tool_for_right_now/)
+- url: https://github.com/pacedotdev/oto
 ---
 
-## [7][Qvault Classroom Launches Golang Crash Course](https://www.reddit.com/r/golang/comments/hjw7ji/qvault_classroom_launches_golang_crash_course/)
-- url: https://qvault.io/2020/07/02/qvault-classroom-launches-golang-crash-course/
+## [11][Which is the best way to convert int to string in golang ?](https://www.reddit.com/r/golang/comments/hkcgms/which_is_the_best_way_to_convert_int_to_string_in/)
+- url: https://www.reddit.com/r/golang/comments/hkcgms/which_is_the_best_way_to_convert_int_to_string_in/
 ---
+There are some solutions:
 
-## [8][Release gopls/v0.4.2 · golang/tools · GitHub](https://www.reddit.com/r/golang/comments/hjbyy4/release_goplsv042_golangtools_github/)
-- url: https://github.com/golang/tools/releases/tag/gopls%2Fv0.4.2
----
+1. stringValue = string(intValue)
 
-## [9][Debugging an evil Go runtime bug - marcan.st](https://www.reddit.com/r/golang/comments/hjl0lf/debugging_an_evil_go_runtime_bug_marcanst/)
-- url: https://marcan.st/2017/12/debugging-an-evil-go-runtime-bug/
----
+1. stringValue = strconv.Itoa(intValue)
 
-## [10][Looking for a library recommendation for a P2P publish/subscribe system](https://www.reddit.com/r/golang/comments/hjumz6/looking_for_a_library_recommendation_for_a_p2p/)
-- url: https://www.reddit.com/r/golang/comments/hjumz6/looking_for_a_library_recommendation_for_a_p2p/
----
-Dear fellow gophers! I'm looking for recommendations and experiences with using P2P libraries, because I'm really unsure which one to use. I need publishing of data on a topic and subscribing as well as sending messages to individual users via some handle or public key that represents them. It's for a non-open-source hobby project that may later have a potentially large user base. It does not involve any file sharing or low-latency connections, only small data transfers. It should ideally support NAT traversal or at least require only few ports to be opened. The P2P network needs to be able to start by itself, using existing bootstrap nodes.
+1. stringValue = fmt.Sprintf("%d", intValue)
 
-Currently, I'm considering:
+I checked a project by a Guru at Google Engineers (link below), they use the third one. Could someone explain why ?
 
-* LibP2P: [https://github.com/libp2p](https://github.com/libp2p)
-* Noise: [https://github.com/perlin-network/noise](https://github.com/perlin-network/noise)
-
-LibP2P seems to be the safe choice, it's actively maintained. But it is not well documented and seems  cumbersome to use. The examples seem to all use local peer discovery only and it's not obvious to me how to use the DHT component for bootstrapping the network. Noise, on the other hand, appears to be very easy to use. The problem is just that the author doesn't seem to update it very actively right now. 
-
-Has anyone used the above libraries for non-trivial purposes? Are there other P2P libraries for Go?
-## [11][git-get - a better way to clone and organize git repos (inspired by go get)](https://www.reddit.com/r/golang/comments/hjx2l9/gitget_a_better_way_to_clone_and_organize_git/)
-- url: https://github.com/grdl/git-get
----
-
+[https://github.com/google/exposure-notifications-server/blob/main/internal/database/connection.go](https://github.com/google/exposure-notifications-server/blob/main/internal/database/connection.go)

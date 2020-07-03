@@ -21,7 +21,65 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][Does anyone else feel that Step Functions have great potential, but the implementation was half-arsed, so they're not very practical?](https://www.reddit.com/r/aws/comments/hju8or/does_anyone_else_feel_that_step_functions_have/)
+## [2][CloudFront IP Ranges](https://www.reddit.com/r/aws/comments/hkg4ms/cloudfront_ip_ranges/)
+- url: https://www.reddit.com/r/aws/comments/hkg4ms/cloudfront_ip_ranges/
+---
+Hi All,
+
+On one of our applications that is deployed though cloudFront,  when i ping the website it gives me an IP address that matches one of the IP's listed by AWS that are used by CloudFront which is expected.
+
+Looking further into the CloudFront IP ranges you can search for them through the AWS PowerShell Tools, and filter the IP addresses by region for example:
+
+    Get-AWSPublicIpAddressRange -Region global -ServiceKey CLOUDFRONT | select IpPrefix
+
+Searching this gives me a nice list of all the global IP ranges used by CloudFront. However you can search for specific regions by changing the search to "-Region eu-west-2" instead of "-Region global" and it only returns one IP range - [52.56.127.0/25](https://52.56.127.0/25)
+
+&amp;#x200B;
+
+Does anyone know what the difference between the two IP ranges are? i dont understand why they would have region specific IP ranges aswell as global ones since i would assume the global ones could be used by CloudFront in any region.
+## [3][Network load balancer with many ports](https://www.reddit.com/r/aws/comments/hkj9kr/network_load_balancer_with_many_ports/)
+- url: https://www.reddit.com/r/aws/comments/hkj9kr/network_load_balancer_with_many_ports/
+---
+Ive been asked to look at adding a load balancer to one of our AWS environments.
+
+The application servers which will sit behind the LB currently listen on ports anywhere in the tcp/6800-6999 range and can change frequently.
+
+I did a few initial checks but when I go to configure an NLB, I am unable to pick a range of ports when configuring listeners. I could manually enter each port but this would take a long time and it got me thinking if the AWS NLB is the right tool for this job?
+
+Would there be a better way of doing this?
+## [4][AWS Security Maturity Roadmap for 2020](https://www.reddit.com/r/aws/comments/hk3nm8/aws_security_maturity_roadmap_for_2020/)
+- url: https://summitroute.com/downloads/aws_security_maturity_roadmap-Summit_Route.pdf
+---
+
+## [5][AWS Fargate for Amazon Elastic Kubernetes Service](https://www.reddit.com/r/aws/comments/hkj7va/aws_fargate_for_amazon_elastic_kubernetes_service/)
+- url: https://caylent.com/aws-fargate-for-amazon-elastic-kubernetes-service
+---
+
+## [6][A Python -&gt; Step Functions compiler](https://www.reddit.com/r/aws/comments/hk7fqn/a_python_step_functions_compiler/)
+- url: https://www.reddit.com/r/aws/comments/hk7fqn/a_python_step_functions_compiler/
+---
+Hey all, 
+
+I've been working on a Python -&gt; Step Functions compiler, and after seeing /u/mlda065's [post](https://www.reddit.com/r/aws/comments/hju8or/does_anyone_else_feel_that_step_functions_have/), I figured it might be interesting to post a preview/demo here.
+
+It's called [Cohesion.dev](https://cohesion.dev) and I've been working on it for a few months.  There's a web-based demo at [https://preview.cohesion.dev](https://preview.cohesion.dev).
+
+The way it works: it adds a library called Cohesion that lets you call Lambdas, Activities etc. as if they are just Python functions.  Then it parses your code and splits it up into little pieces that it outputs as Lambdas, and outputs a Step Function that stitches it all back together.
+
+For now it's a bit rough around the edges, but if you'd like a preview and to follow along as it improves, please check it out at that link!
+## [7][Does Quicksight have an option to add customized objects, like Tableau allows users to develop extensions?](https://www.reddit.com/r/aws/comments/hkj5g5/does_quicksight_have_an_option_to_add_customized/)
+- url: https://www.reddit.com/r/aws/comments/hkj5g5/does_quicksight_have_an_option_to_add_customized/
+---
+The title basically says it. E.g. Tableau cannot render dynamically images, so there are extensions for that. Is there such an option in Quicksight (for developing, not for rendering images).
+## [8][Change lambda code with SAM](https://www.reddit.com/r/aws/comments/hkhfiw/change_lambda_code_with_sam/)
+- url: https://www.reddit.com/r/aws/comments/hkhfiw/change_lambda_code_with_sam/
+---
+Hello everyone. Can someone please tell me how can I deploy only code to my SAM's lambdas? When I want to deploy new changes, I have to run sam build and then run sam deploy and it is overkill if I want to make small bug fixes to my lambdas. Is there a way I can change lambda code and not having to go directly to lambda code over aws ui. Thanks.
+## [9][Open Source Multi-Cloud Security Assessment Tool ScoutSuite 5.9.0 Released](https://www.reddit.com/r/aws/comments/hk5ccj/open_source_multicloud_security_assessment_tool/)
+- url: https://research.nccgroup.com/2020/07/02/tool-release-scoutsuite-5-9-0/
+---
+
+## [10][Does anyone else feel that Step Functions have great potential, but the implementation was half-arsed, so they're not very practical?](https://www.reddit.com/r/aws/comments/hju8or/does_anyone_else_feel_that_step_functions_have/)
 - url: https://www.reddit.com/r/aws/comments/hju8or/does_anyone_else_feel_that_step_functions_have/
 ---
 Does anyone else feel like Step Functions have a lot of potential, but the implementation was kind of half arsed? There's so much basic functionality lacking. There are so few comparison operators for Choice statements, and error handling is ridiculous.
@@ -39,61 +97,9 @@ Does anyone else feel like Step Functions have a lot of potential, but the imple
 * If one branch in a Map or Parallel task fails, all other tasks are immediately cancelled. It's not feasible to configure it to continue executing the other branches. I want to say "for each piece of equipment, send a signal". If piece 500 fails to be actuated, I don't want pieces 1 to 499 to be cancelled mid-way through actuation
 * you can't do a dictionary lookup
 * you can't decrement a variable to do `for(a = 10; a &gt; 0; a-- )`
-## [3][DDB-Table v1.0: Safe TypeScript schemas for DynamoDB](https://www.reddit.com/r/aws/comments/hjtaj6/ddbtable_v10_safe_typescript_schemas_for_dynamodb/)
-- url: https://github.com/neuledge/ddb-table
+## [11][Discount for partial storage month](https://www.reddit.com/r/aws/comments/hkgchl/discount_for_partial_storage_month/)
+- url: https://www.reddit.com/r/aws/comments/hkgchl/discount_for_partial_storage_month/
 ---
+Can you please explain **Discount for partial storage month** in the context of this estimate https://calculator.aws/#/estimate?id=ff3c92481f6df0d8d4dc5913eb79fcba1aba8e08 ?
 
-## [4][Announcing the Porting Assistant for .NET](https://www.reddit.com/r/aws/comments/hjjfnv/announcing_the_porting_assistant_for_net/)
-- url: https://aws.amazon.com/blogs/aws/announcing-the-porting-assistant-for-net/
----
-
-## [5][What are some cool things you can do with dead-letter queues (DLQ)?](https://www.reddit.com/r/aws/comments/hjcwhz/what_are_some_cool_things_you_can_do_with/)
-- url: https://www.reddit.com/r/aws/comments/hjcwhz/what_are_some_cool_things_you_can_do_with/
----
-I've learned that SNS, SQS, and Lambda support DLQs for when an event fails all processing attempts or expires without being processed. The obvious use case is to use DLQs to implement some kind of retry logic.
-
-I'm sure there are other interesting use cases for DLQs as well. What kinds of interesting things can you do with DLQs?
-## [6][EKS Fargate pricing question](https://www.reddit.com/r/aws/comments/hjvdqz/eks_fargate_pricing_question/)
-- url: https://www.reddit.com/r/aws/comments/hjvdqz/eks_fargate_pricing_question/
----
-It appears that pricing is based on vCPU/memory *requests* but I can't find any mention of *limits* to the pods. Are limits automatically set the same as requests? If not....How can that be fair to AWS?
-## [7][How to invalidate cache of an S3 bucket object?](https://www.reddit.com/r/aws/comments/hjv44n/how_to_invalidate_cache_of_an_s3_bucket_object/)
-- url: https://www.reddit.com/r/aws/comments/hjv44n/how_to_invalidate_cache_of_an_s3_bucket_object/
----
-Hi, since I can manually set metadata cache-control max-age on an s3 bucket object using a browser, I was wondering how can I manually invalidate that same object?
-## [8][Serving private content with cloudfront](https://www.reddit.com/r/aws/comments/hjpi90/serving_private_content_with_cloudfront/)
-- url: https://www.reddit.com/r/aws/comments/hjpi90/serving_private_content_with_cloudfront/
----
-Today I am setting up a cloudfront distribution serving documents from a s3 bucket. I am intending to use cloudfront signed urls, but I am really shocked that you need to use the root account to generate/upload the cloudfront keys to do url signing. 
-
-
-What I expected to be able to do was either call a service to generate a signed url, or store the key in secrets manager that the application can retrieve in order to sign urls. Also being able to generate / rotate the keys using iac.
-
-
-I'm curious if anyone else is using this feature, and how you manage key generation and rotation. Requiring the root account for this seems counter intuitive to aws best practices.
-## [9][How to run/re-run subset of jobs AWS Glue workflow?](https://www.reddit.com/r/aws/comments/hjtcqv/how_to_runrerun_subset_of_jobs_aws_glue_workflow/)
-- url: https://www.reddit.com/r/aws/comments/hjtcqv/how_to_runrerun_subset_of_jobs_aws_glue_workflow/
----
-Hi guys, I was wondering if it's possible to run only a subset of steps on my AWS Glue Workflow in case one of the jobs fail.
-
-Thank you so much in advance.
-## [10][Cloudflare Workers vs AWS Lambda@Edge?](https://www.reddit.com/r/aws/comments/hjss5d/cloudflare_workers_vs_aws_lambdaedge/)
-- url: https://www.reddit.com/r/aws/comments/hjss5d/cloudflare_workers_vs_aws_lambdaedge/
----
- What is the difference between these two services? They appear to do the exact same thing.
-
-Are there certain things which one is able to do that the other is not?
-## [11][Pretty new to AWS Have some questions about the usage of public IPs and general instance management](https://www.reddit.com/r/aws/comments/hjsf5x/pretty_new_to_aws_have_some_questions_about_the/)
-- url: https://www.reddit.com/r/aws/comments/hjsf5x/pretty_new_to_aws_have_some_questions_about_the/
----
-Hi! I'm currently starting my journey in the AWS management certification world.
-
-I've so far taken the most basic (free) courses and have been managing a pretty simple account for some months now.
-
-I have a couple of questions that would probably be no-brainers for experienced AWS admins, so please, bear with me.
-
-1. I keep having to request more public IP addressess everytime I create new VMs for different clients (I've already reached my max number of public IP address). So far, it's just pretty simple ~~VMs~~  instances that I plan to optimise and improve once I get my certs and my knowledge on place but until then.. how do you manage with so many public IPs? - I understand I should assign a new different public IP addesss for each client at least but, how to manage, for example, multiple services that need public visibility for the same client? Should I set up a load balancer so it redirects traffic depending on the dns the request comes through and set up a unique public IP address?
-2. Probably a stupid question but... it wouldn't be the first time I mess up an ~~VM~~ instance's net configuration (bear with me, I come from VMware on-premise world) -  
-I'm used to having the direct console, so I can "attach" myself to the VM and just operate as if I was in front of the VM's screen but can't for the life of me, find the way to do so on AWS instances... I understand this is due to the different approach of the whole concept of instances VS VMs... but I still wouldn't know how to deal with issues like these: I rely on the premise that the networking works as intended and don't know how to deal with this kind of issues.
-
-I know I'm still pretty green on some basic concepts regarding the whole AWS infrastructure world and usage but I'm trying my best to gain the knowledge ASAP. :)
+https://s.natalian.org/2020-07-03/1593759825_2560x1440.png

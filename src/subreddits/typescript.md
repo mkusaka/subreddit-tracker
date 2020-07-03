@@ -22,27 +22,93 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][epubjs library](https://www.reddit.com/r/typescript/comments/hjrtwl/epubjs_library/)
-- url: https://www.reddit.com/r/typescript/comments/hjrtwl/epubjs_library/
+## [2][Valuable compiler options](https://www.reddit.com/r/typescript/comments/hkhdur/valuable_compiler_options/)
+- url: https://www.reddit.com/r/typescript/comments/hkhdur/valuable_compiler_options/
 ---
-I am new with typescript and I had before .net / C# experience, nowadays I am dealing with typescript epubjs library. I developed epub-reader component and it is working as it should work, but there are cases with some epub files, where first page of book is always aligned on left side, when normally is on center. Those alignments are setup on popup window where you can choose "spread to one page" OR "spread to two pages"
+After forgetting `strictNullChecks` I've forgotten how helpful it is to constantly have to account for `null | undefined` during my initial drafting phase.
+
+Any others you guys would promote for most projects? I also have `noImplicitAny`, and of course the `esModuleInterop`
+## [3][TS2464: A computed property name must be of type 'string', 'number', 'symbol', or 'any'. 54 [x.y] : z](https://www.reddit.com/r/typescript/comments/hkiodn/ts2464_a_computed_property_name_must_be_of_type/)
+- url: https://www.reddit.com/r/typescript/comments/hkiodn/ts2464_a_computed_property_name_must_be_of_type/
+---
+    // TS2464: A computed property name must be of type 'string', 'number', 'symbol', or 'any'.
+    
+    54  [currentStepInstance.configDataKey] : validatedUserInput
+
+I'm trying to use -- I think it's called "scope resolution" -- here on the key name, since property access requires dot notation. The key name is a string. 
+
+The below syntax didn't work, how should it be written?
+
+             if (currentStepInstance.hasSaveableData) {
+                Object.assign(returnObject, {
+                   [currentStepInstance.configDataKey: string] : validatedUserInput
+                });
+             }
+## [4][How do I de-structure express request.body without "Unsafe assignment of an any value." error?](https://www.reddit.com/r/typescript/comments/hk1mp8/how_do_i_destructure_express_requestbody_without/)
+- url: https://www.reddit.com/r/typescript/comments/hk1mp8/how_do_i_destructure_express_requestbody_without/
+---
+I am very new to typescript and when vscode threw that error after doing some search I mixed few stuffs from the results and came up with this solution.
+
+`interface Body {`  
+   `name: string;`  
+   `email: string;`  
+   `password: string;`  
+ `}`  
+ `const body: Body = request.body as Body;`  
+ `const { name, email, password } = body;`
+
+How can I improve this as it seems a lot of code for de-structuring.
+## [5][How to deal with array of different class instances in typescript](https://www.reddit.com/r/typescript/comments/hk2z2a/how_to_deal_with_array_of_different_class/)
+- url: https://www.reddit.com/r/typescript/comments/hk2z2a/how_to_deal_with_array_of_different_class/
+---
+So my code looks like this:
+
+An abstract class named Component with nothing inside which all component inherit from.
+
+An abstract generic base Entity class functioning as an Array abstraction with methods to add/get instances of classes,
+
+A Entity class which extends BaseEntity with all the getters, one for each component, the reason I created it is because I must always force the type like &lt;Health&gt; this.getComponent(Health), I want to get rid of it, is there a way to type check BaseEntity so that when I do  this.getComponent(Health), the compiler knows its Health instance?
 
 &amp;#x200B;
 
-dialog example : 
-
-    &lt;mat-radio-group [(ngModel)]="epubTextOptions.selectedTwoPages" class="inline-button"&gt; &lt;mat-radio-button [value]="false" [checked]="!epubTextOptions.selectedTwoPages" class="inline-button"&gt;{{'reader.textOptions.dialog.onePage' | translate}}&lt;/mat-radio-button&gt; &lt;mat-radio-button [value]="true" [checked]="epubTextOptions.selectedTwoPages" class="inline-button"&gt;{{'reader.textOptions.dialog.twoPages' | translate}}&lt;/mat-radio-button&gt; &lt;/mat-radio-group&gt;
-
- typescript example:  
-
-    export class MyClass implements OnInit {   book: Book;   rendition: Rendition; private myMethod() { this.rendition = this.book.renderTo(this.ePub.nativeElement, {       width: '100%',       height: '100%' }); this.rendition.spread(this.epubTextOptions.selectedTwoPages ? 'always' : 'none'); } }
-
- html component : 
-
-    &lt;div id="epubContent" class="d-flex align-items-center" [style.height]="contentHeight + 'px'"&gt; &lt;app-button *ngIf="displayPrevPageButton() &amp;&amp; !isMobileDevice()" (btnClick)="prevPage()"               btnClass="mat-icon-button epub-action"&gt;&lt;span class="far fa-chevron-left"&gt;&lt;/span&gt;&lt;/app-button&gt; &lt;div #ePub class="epub-container"&gt;&lt;/div&gt; &lt;app-button *ngIf="displayNextPageButton() &amp;&amp; !isMobileDevice()" (btnClick)="nextPage()"               btnClass="mat-icon-button epub-action"&gt;&lt;span class="far fa-chevron-right"&gt;&lt;/span&gt;&lt;/app-button&gt; &lt;/div&gt;
-
- Everything is implemented from epubjs library examples and adapted to reader, but as I said with most of epub spread() functionality is working, but there are epub files, where first page align to left side when "one page" is selected instead of center align. Maybe some how I can check if file have no more than one page and if yes, then force to align to center?
-## [3][Type 'string' is not assignable to type '"X" | "Y" | "Z"'](https://www.reddit.com/r/typescript/comments/hjvw3n/type_string_is_not_assignable_to_type_x_y_z/)
+    export class Component {}
+    export class Health extends Component { ............}
+    export class Position extends Component { ............. }
+    
+    .....................
+    export abstract class BaseEntity&lt;R&gt; {
+        private readonly entity: Array&lt;R&gt; = [];
+    
+        protected getComponent&lt;T extends { new(...args: any[]): R }&gt;(component: T): R {
+            return this.entity.find(
+                currentComponent =&gt; currentComponent instanceof component
+            );     
+        } 
+    
+        addComponent(component: R): R {
+            const index = this.entity.indexOf(component)
+    
+            if (index === -1) {
+                 this.entity.push(component)
+    
+                 return component
+            }
+        }
+    }
+    
+    .....................
+    export abstract class Entity extends BaseEntity&lt;Component | Entity&gt; {
+        get getHealth(): Health {
+            return &lt;Health&gt; this.getComponent(Health)
+        }
+    
+        get getPosition(): Position {
+            return &lt;Position&gt; this.getComponent(Position)
+        }
+    }
+    export class Player extends Entity {}
+    export class Monster extends Entity {}
+## [6][Type 'string' is not assignable to type '"X" | "Y" | "Z"'](https://www.reddit.com/r/typescript/comments/hjvw3n/type_string_is_not_assignable_to_type_x_y_z/)
 - url: https://www.reddit.com/r/typescript/comments/hjvw3n/type_string_is_not_assignable_to_type_x_y_z/
 ---
 Recently I had to use the `ReturnType` generic type constructor to build a type for me, that was the return shape of an obsurely documented method in Google Text To Speech's API:
@@ -106,7 +172,27 @@ But now the title error shows on the error-commented lines below. I thought a sp
     
       The types of 'audioConfig.audioEncoding' are incompatible between these types.
         Type 'string' is not assignable to type '"OGG_OPUS" | "AUDIO_ENCODING_UNSPECIFIED" | "LINEAR16" | "MP3"'. ts(2345)
-## [4][TIL What TypeScript Is](https://www.reddit.com/r/typescript/comments/hj8azp/til_what_typescript_is/)
+## [7][epubjs library](https://www.reddit.com/r/typescript/comments/hjrtwl/epubjs_library/)
+- url: https://www.reddit.com/r/typescript/comments/hjrtwl/epubjs_library/
+---
+I am new with typescript and I had before .net / C# experience, nowadays I am dealing with typescript epubjs library. I developed epub-reader component and it is working as it should work, but there are cases with some epub files, where first page of book is always aligned on left side, when normally is on center. Those alignments are setup on popup window where you can choose "spread to one page" OR "spread to two pages"
+
+&amp;#x200B;
+
+dialog example : 
+
+    &lt;mat-radio-group [(ngModel)]="epubTextOptions.selectedTwoPages" class="inline-button"&gt; &lt;mat-radio-button [value]="false" [checked]="!epubTextOptions.selectedTwoPages" class="inline-button"&gt;{{'reader.textOptions.dialog.onePage' | translate}}&lt;/mat-radio-button&gt; &lt;mat-radio-button [value]="true" [checked]="epubTextOptions.selectedTwoPages" class="inline-button"&gt;{{'reader.textOptions.dialog.twoPages' | translate}}&lt;/mat-radio-button&gt; &lt;/mat-radio-group&gt;
+
+ typescript example:  
+
+    export class MyClass implements OnInit {   book: Book;   rendition: Rendition; private myMethod() { this.rendition = this.book.renderTo(this.ePub.nativeElement, {       width: '100%',       height: '100%' }); this.rendition.spread(this.epubTextOptions.selectedTwoPages ? 'always' : 'none'); } }
+
+ html component : 
+
+    &lt;div id="epubContent" class="d-flex align-items-center" [style.height]="contentHeight + 'px'"&gt; &lt;app-button *ngIf="displayPrevPageButton() &amp;&amp; !isMobileDevice()" (btnClick)="prevPage()"               btnClass="mat-icon-button epub-action"&gt;&lt;span class="far fa-chevron-left"&gt;&lt;/span&gt;&lt;/app-button&gt; &lt;div #ePub class="epub-container"&gt;&lt;/div&gt; &lt;app-button *ngIf="displayNextPageButton() &amp;&amp; !isMobileDevice()" (btnClick)="nextPage()"               btnClass="mat-icon-button epub-action"&gt;&lt;span class="far fa-chevron-right"&gt;&lt;/span&gt;&lt;/app-button&gt; &lt;/div&gt;
+
+ Everything is implemented from epubjs library examples and adapted to reader, but as I said with most of epub spread() functionality is working, but there are epub files, where first page align to left side when "one page" is selected instead of center align. Maybe some how I can check if file have no more than one page and if yes, then force to align to center?
+## [8][TIL What TypeScript Is](https://www.reddit.com/r/typescript/comments/hj8azp/til_what_typescript_is/)
 - url: https://www.reddit.com/r/typescript/comments/hj8azp/til_what_typescript_is/
 ---
 So last night, I finally watched a short intro on what exactly typescript is, and... Wow.
@@ -114,7 +200,13 @@ So last night, I finally watched a short intro on what exactly typescript is, an
 I wish I had known about this years ago; as someone who loves languages like C++, and never really was a fan of JS, TS makes the web world so much more inviting.
 
 Anyway, happy to be here, sad it took me so long to learn about it.
-## [5][Checking for interface collisions .](https://www.reddit.com/r/typescript/comments/hjif2w/checking_for_interface_collisions/)
+## [9][How often do you guys use the NotNullable utility type constructor?](https://www.reddit.com/r/typescript/comments/hjssdd/how_often_do_you_guys_use_the_notnullable_utility/)
+- url: https://www.reddit.com/r/typescript/comments/hjssdd/how_often_do_you_guys_use_the_notnullable_utility/
+---
+Seems especially useful for kicking undesired null or undefined values out of an expected API response type.
+
+For my own defined types, I thought it was not needed since they are already sharply defined. But this video says TS allows any type definition to be overridden by null/undefined by default, which surprised me: [https://www.youtube.com/watch?v=Fgcu\_iB2X04?m=16&amp;s=20](https://www.youtube.com/watch?v=Fgcu_iB2X04?m=16&amp;s=20)
+## [10][Checking for interface collisions .](https://www.reddit.com/r/typescript/comments/hjif2w/checking_for_interface_collisions/)
 - url: https://www.reddit.com/r/typescript/comments/hjif2w/checking_for_interface_collisions/
 ---
 Imagine having multiple different interfaces that all together are mixed into a big interface .
@@ -129,7 +221,7 @@ Before some time I [asked](https://www.reddit.com/r/typescript/comments/gab4ic/h
 Now I have to merge more than two interfaces . With that way , for n interfaces I need to do `n!/(2!(n-2)!) = n(n-1)/2` manual checks (if you are interested in how that number is calculated take a look [here](https://en.wikipedia.org/wiki/Combination)) , something that is not practical .
 
 Is there any solution via using a type function like I have already done that is not unpractical or should I create a unit test ?
-## [6][How to ensure the right function is called with the right arguments?](https://www.reddit.com/r/typescript/comments/hjlrr1/how_to_ensure_the_right_function_is_called_with/)
+## [11][How to ensure the right function is called with the right arguments?](https://www.reddit.com/r/typescript/comments/hjlrr1/how_to_ensure_the_right_function_is_called_with/)
 - url: https://www.reddit.com/r/typescript/comments/hjlrr1/how_to_ensure_the_right_function_is_called_with/
 ---
 Suppose I've got a login and a logout function:
@@ -146,118 +238,3 @@ And a handler decides which function to call depending on a variable:
 I know that if f is logout, then x is going to be a string. Likewise if f is login, then x is going to be a credentials object. Can you help to model that?
 
 Thanks!
-## [7][skipLibCheck but for .ts files?](https://www.reddit.com/r/typescript/comments/hjgd30/skiplibcheck_but_for_ts_files/)
-- url: https://www.reddit.com/r/typescript/comments/hjgd30/skiplibcheck_but_for_ts_files/
----
-I am trying to use the [tfjs](https://github.com/tensorflow/tfjs) library for machine learning in a typescript project with `strictNullChecks`. Unfortunately, tfjs doesn't use strictNullChecks internally. As a result, TypeScript fails to compile my project, because there are .ts files in tfjs where null or undefined is passed to functions without being explicitly allowed.
-
-I know that `skipLibCheck` option exists for these cases, but it seems like it only affects `.d.ts` files. In the case of tfjs, there are actual `.ts` files (e.g. `node_modules/@tensorflow/tfjs-core/src/environment.ts`) which cause the failure. This seems strange, because while these files exist, they are not used in my project (only .d.ts definitions and pre-built .js files are required).
-
-It also seems like adding "node_modules/@tensorflow" to tsconfig's "exclude" does not  fix the problem.
-
-What can I do to make my project build without issues?
-
-Thanks!
-## [8][How to check if a whole number (1.0) is a double in TypeScript](https://www.reddit.com/r/typescript/comments/hj9qtk/how_to_check_if_a_whole_number_10_is_a_double_in/)
-- url: https://www.reddit.com/r/typescript/comments/hj9qtk/how_to_check_if_a_whole_number_10_is_a_double_in/
----
-I have a library for developers with a method like this:
-
-        function add (value: number | string) {
-          if (typeof value === 'number') {
-            if (value % 1 == 0) {
-              // post to database as an int
-            } else {
-              // post to database as a double
-            }
-          }
-          ...
-        }
-
-The problem here arises when *value* is something like 2.0 or 10.0, this gets treated as an int. However, I need those values to be passed as doubles. How can I check for these 'whole numbers' (10.0 or 2.0) to be doubles?
-## [9][Prints a dependency graph in dot format for your typescript project.](https://www.reddit.com/r/typescript/comments/hj7hct/prints_a_dependency_graph_in_dot_format_for_your/)
-- url: https://github.com/PSeitz/ts-dependency-graph
----
-
-## [10][Help digging a return type out of a big library (Google Cloud)](https://www.reddit.com/r/typescript/comments/hj6evi/help_digging_a_return_type_out_of_a_big_library/)
-- url: https://www.reddit.com/r/typescript/comments/hj6evi/help_digging_a_return_type_out_of_a_big_library/
----
-[https://googleapis.dev/nodejs/text-to-speech/latest/v1.TextToSpeechClient.html](https://googleapis.dev/nodejs/text-to-speech/latest/v1.TextToSpeechClient.html)
-
-&gt;synthesizeSpeech(request, optionsopt) → {Promise}  
-&gt;  
-&gt;Synthesizes speech synchronously: receive results after all text input has been processed.
-
-The library comment on this method:
-
-    * @returns {Promise} - The promise which resolves to an array.
-         *   The first element of the array is an object representing [SynthesizeSpeechResponse]{@link google.cloud.texttospeech.v1.SynthesizeSpeechResponse}.
-         *   The promise has a method named "cancel" which cancels the ongoing API call.
-         */
-
-And on that page:
-
-[https://cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1#google.cloud.texttospeech.v1.SynthesizeSpeechResponse](https://cloud.google.com/text-to-speech/docs/reference/rpc/google.cloud.texttospeech.v1#google.cloud.texttospeech.v1.SynthesizeSpeechResponse)
-
-&gt;SynthesizeSpeechResponse  
-&gt;  
-&gt;The message returned to the client by the SynthesizeSpeech method.
-
-&amp;#x200B;
-
-My code so far:
-
-    const TextToSpeechClient = require("@google-cloud/text-to-speech").TextToSpeechClient;
-    
-    // Cannot find namespace 'TextToSpeechClient'.ts(2503)
-          : Promise&lt;TextToSpeechClient.SynthesizeSpeechResponse&gt; 
-
-Full method below. I got close but I'm still rough with digging around an API, trying to extract these obscure types.
-
-I want to learn how to do it though. Marking `any` is easy, specifying the correct type on a fetch especially is a lot more insightful and easy to backtrace later.
-
-Thanks for any pointers on getting it right.
-
-&amp;#x200B;
-
-Full method (PS: I plan to split the fetch and save next. Maybe also implement a named `options` interface)
-
-       protected async fetchAndWriteAudio(options: {
-          input : { text : string }
-          , voice : { languageCode : string, ssmlGender: voiceGender }
-          , audioConfig : { audioEncoding : string }
-       }, fileNameAndPath: string)
-          : Promise&lt;TextToSpeechClient.SynthesizeSpeechResponse&gt; {
-    
-          const textToSpeech = new TextToSpeechClient();
-          const writeFileAsync = util.promisify(writeFile);
-    
-          try {
-             const [audioResponse] = await textToSpeech.synthesizeSpeech(options);
-             await writeFileAsync(fileNameAndPath, audioResponse.audioContent);
-          }
-          catch(error) { console.log(error); }
-       }
-## [11][Compiler gives no warning with wrong extended class fed into a constructor](https://www.reddit.com/r/typescript/comments/hj67q0/compiler_gives_no_warning_with_wrong_extended/)
-- url: https://www.reddit.com/r/typescript/comments/hj67q0/compiler_gives_no_warning_with_wrong_extended/
----
-Is there a way for the compiler to give warning/error because I am giving Y class instead of Z class on P constructor?
-
-    class X { }
-    
-    class Y extends X { } 
-    class Z extends X { }
-    
-    const y = new Y()
-    
-    class P { 
-        constructor(private z: Z) { }
-    
-        get get(): Z { 
-            return this.z  
-        } 
-    }
-    const p = new P(y) 
-    console.log(p.get)
-
-&amp;#x200B;

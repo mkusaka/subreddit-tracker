@@ -83,145 +83,54 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
-## [3][Can I use YouTube Data API in a production app?](https://www.reddit.com/r/reactjs/comments/hjvf2y/can_i_use_youtube_data_api_in_a_production_app/)
-- url: https://www.reddit.com/r/reactjs/comments/hjvf2y/can_i_use_youtube_data_api_in_a_production_app/
----
-This's not React specific, but can I rely on YouTube Data API in a production app that can be used by many users in the future?
-## [4][Introduction to GraphQL](https://www.reddit.com/r/reactjs/comments/hjwx39/introduction_to_graphql/)
-- url: https://blog.graphqleditor.com/introduction-to-graphql/
+## [3][What do you prefer for styling?](https://www.reddit.com/r/reactjs/comments/hkhs0s/what_do_you_prefer_for_styling/)
+- url: https://www.reddit.com/r/reactjs/comments/hkhs0s/what_do_you_prefer_for_styling/
 ---
 
-## [5][React Hook Form V6 is released.](https://www.reddit.com/r/reactjs/comments/hj62o0/react_hook_form_v6_is_released/)
-- url: https://react-hook-form.com/
+
+[View Poll](https://www.reddit.com/poll/hkhs0s)
+## [4][Just finished implementing the dark-mode toggle on the hero section of my personal site - You've got to have fun with these things!](https://www.reddit.com/r/reactjs/comments/hjxblx/just_finished_implementing_the_darkmode_toggle_on/)
+- url: https://sld.codes/
 ---
 
-## [6][React Query](https://www.reddit.com/r/reactjs/comments/hju0cn/react_query/)
-- url: https://www.reddit.com/r/reactjs/comments/hju0cn/react_query/
+## [5][Need help with localIdentName, CSS- loader](https://www.reddit.com/r/reactjs/comments/hkh75h/need_help_with_localidentname_css_loader/)
+- url: https://www.reddit.com/r/reactjs/comments/hkh75h/need_help_with_localidentname_css_loader/
 ---
-Was going through Tanner [Linsley's talk on react query](https://www.youtube.com/watch?v=seU46c6Jz7E&amp;feature=youtu.be).  I have one doubt at 12:07. why we are using ref to keep track if the current promise is resolved or not ? why can't we simply use a variable.
-
-code - 
-
-\`\`\`
-
-const activePromiseRef = React.useRef(false);
-
-const refresh = () =&gt; {
-
-if (!activePromiseRef.current){
-
-activePromiseRef.current = async () =&gt; {
-
-// fetch data here and   after that
-
-setData(data) // updates the state
-
-activePromiseRef.current = false;
-
-}
-
-}
-
-}
-
-\`\`\`
-
-main reason for this code is that, if two requests occur simultaneously, then instead of firing another request we return the previous promise.
-
-**My questions is why do we need a ref in this case, why not a simple variable.**
-## [7][useContext in Action.js (outside of React Component)](https://www.reddit.com/r/reactjs/comments/hjweay/usecontext_in_actionjs_outside_of_react_component/)
-- url: https://www.reddit.com/r/reactjs/comments/hjweay/usecontext_in_actionjs_outside_of_react_component/
+Hello,  I have been learning React through a Udemy course.  Before beginning a project, I have to run npm run eject and modify the css-loader property (localIdentName) from webpack.config.dev.js, webpack.config.prodigy.js files. But, even after running the eject command, I don't see these files. Please help.
+## [6][Enjoy some art while quarentined](https://www.reddit.com/r/reactjs/comments/hkcwq3/enjoy_some_art_while_quarentined/)
+- url: https://www.reddit.com/r/reactjs/comments/hkcwq3/enjoy_some_art_while_quarentined/
 ---
-Currently I have some state stored in DataContext.js, however, I'd like to access this data from in an Action.js file.
+one of my first deployed projects with react. absolutely addicted now and tried to create an online art museum since we cant go out right now :( the api I used has tons of data so let me know any ideas to add I would love some feedback. github is linked through the site so enjoy! 
 
-The DataContext is normally pulled with the useContext hook and this is possible since a component is wrapped in DataContextProvider.
-
-However, my Action.js is not a React component (and thus not wrapped in the DataContextProvider). Is there any way I can access the state?
-## [8][Just Created my first ReactJS Application. |](https://www.reddit.com/r/reactjs/comments/hjc2ks/just_created_my_first_reactjs_application/)
-- url: https://www.reddit.com/r/reactjs/comments/hjc2ks/just_created_my_first_reactjs_application/
+[Random Clicks Of Art](https://randomclicksofart.netlify.app/)
+## [7][React app performance issue](https://www.reddit.com/r/reactjs/comments/hkjn30/react_app_performance_issue/)
+- url: https://www.reddit.com/r/reactjs/comments/hkjn30/react_app_performance_issue/
 ---
-&amp;#x200B;
+Hello all,
 
-[Using Sync In](https://reddit.com/link/hjc2ks/video/wihpsiwmh9851/player)
+I have created a large react application. After building it for the production, it is taking a lot of time to lot and the \[number\].\[hash\].chunk.js file is more than 30MB. Due to which, it is taking more time. During code splitting by lazy loading is not helpful.
 
-Hey Guys,
-
-I Just created [www.syncin.app](https://www.syncin.app/) . Sync In is my first full stack javascript project. I used the MERN stack, WebRTC and socketIO to build this. Sync In lets you watch Videos with your friends online in sync. Sync In adds group chat and voice call to your favorite videos on Youtube, Vimeo, SoundCloud and Twitch
-
-Do Check it out @ [syncin.app](https://syncin.app/) and let me know your views on my project
-## [9][Mastering Promise.allSettled in React](https://www.reddit.com/r/reactjs/comments/hjvr7v/mastering_promiseallsettled_in_react/)
-- url: https://medium.com/@Dylan.Kerler/mastering-promise-allsettled-in-react-9fcecb7da479?sk=0928688b074748da03341ec69fe1d246
+Can you please suggest a way to optimize the performance?
+## [8][A directory of fully functional hosted features for your WebApp](https://www.reddit.com/r/reactjs/comments/hkjed2/a_directory_of_fully_functional_hosted_features/)
+- url: https://www.componently.com/
 ---
 
-## [10][Best ways to handle rendering one component vs. another when dealing with media queries and SSR?](https://www.reddit.com/r/reactjs/comments/hjvnji/best_ways_to_handle_rendering_one_component_vs/)
-- url: https://www.reddit.com/r/reactjs/comments/hjvnji/best_ways_to_handle_rendering_one_component_vs/
+## [9][How do I prevent React-Bootstrap from resizing?](https://www.reddit.com/r/reactjs/comments/hkjdst/how_do_i_prevent_reactbootstrap_from_resizing/)
+- url: https://www.reddit.com/r/reactjs/comments/hkjdst/how_do_i_prevent_reactbootstrap_from_resizing/
 ---
-Hey /r/react, I have an app that I am developing using next.js which uses server side rendering. I have a table in which I want to show information about `item`s (to keep things generic). I would like to display cards when the user is viewing the table on mobile, and a proper table when viewed on desktop.
-
-Since next.js server side renders, I cannot use solutions like [react-media-match](https://www.npmjs.com/package/react-media-match) since the `window` object is not available on the server. Since that is the case, I have opted to rendering both views and wrapping them with divs that will be hidden by media queries using `display: none;`.
-
-My question is: is this the best approach? I am wary that since both tables will be rendered this will impact performance and potentially SEO (since there's duplicated meaningless content on the page). Ideally I would have a way to conditionally render either component based on whether the user is viewing on mobile or desktop.
-
-Here's my code:
-
-    interface IItemTableProps {}
-
-    const ItemTable: React.FC&lt;IItemTableProps&gt; = () =&gt; {
-      const { items, loading } = useFetchedItems()
-
-      if (loading) {
-        return &lt;div&gt;loading...&lt;/div&gt;
-      }
-
-      return (
-        &lt;Container&gt;
-          &lt;div className="mobile-cards-container"&gt;
-            &lt;MobileCards items={items} /&gt;
-          &lt;/div&gt;
-          &lt;div className="desktop-table-container"&gt;
-            &lt;DesktopTable items={items} /&gt;
-          &lt;/div&gt;
-        &lt;/Container&gt;
-      )
-    }
-
-    const Container = styled.div`
-      .mobile-cards-container {
-        display: block;
-      }
-
-      .desktop-table-container {
-        display: none;
-      }
-
-      ${media.desktop} {
-        .mobile-cards-container {
-          display: none;
-        }
-
-        .desktop-table-container {
-          display: block;
-        }
-      }
-    `
-## [11][What specific projects for HTML, CSS, JS to do before learning ReactJs?](https://www.reddit.com/r/reactjs/comments/hjumdw/what_specific_projects_for_html_css_js_to_do/)
-- url: https://www.reddit.com/r/reactjs/comments/hjumdw/what_specific_projects_for_html_css_js_to_do/
+I made a searchbar for my navbar, but when ever I do searches it also expands the navbar because of the search options. How do I set it up so the options expand past the navbar without resizing navbar.
+## [10][Async Redux Actions using Hooks](https://www.reddit.com/r/reactjs/comments/hkim7c/async_redux_actions_using_hooks/)
+- url: https://able.bio/pepsighan/async-redux-actions-using-hooks--4a74c7f7
 ---
-Hi I’m currently going through the web developer bootcamp on Udemy and want to be ready to learn react afterwards. Please let me know any specific projects that I should do that will help me further master these 3 languages especially JS, before starting to learn React. Thank you!
-## [12][Suggestions for a MERN-based app](https://www.reddit.com/r/reactjs/comments/hjtvnp/suggestions_for_a_mernbased_app/)
-- url: https://www.reddit.com/r/reactjs/comments/hjtvnp/suggestions_for_a_mernbased_app/
+
+## [11][react-error-overlay is eating up a lot of CPU. What can I do?](https://www.reddit.com/r/reactjs/comments/hkic8h/reacterroroverlay_is_eating_up_a_lot_of_cpu_what/)
+- url: https://www.reddit.com/r/reactjs/comments/hkic8h/reacterroroverlay_is_eating_up_a_lot_of_cpu_what/
 ---
-Hello, 
+Hi all. Here is a performance profile with my issue [https://share.firefox.dev/2Zw5AiA](https://share.firefox.dev/2Zw5AiA) 
 
-I'm in my third year of undergrad program and I just started writing my thesis on the topic of MERN stack. I will lay out theoretical foundation of the technologies used in the stack and then I will focus on implementing a practical app in the MERN stack. However, I still haven't decided on what the app would be about. So far things that I have come up with are: 
-
-* A marketplace for a local business to sell various stuff (IT, groceries or sth else)
-* Simplified social media platform clone (Instagram, Twitter), I've seen projects like these pop up here and there on this subreddit
-
-One of the things I want to make sure to include in my app is the ability to chat in real-time with other users, for what I plan to use WebSockets. Though I'd want to make sure to not stray too far off the main topic (MERN technologies).
-
-What are your suggestions for an application implemented using MERN stack? Is there something that hasn't yet been seen, but you would like see it implemented?
-
-Thanks in advance!
-
-NB. My experience level with JS and programming in general is intermediate I would say - I already created a relatively simple full stack app using bootstrap on the front end and PHP &amp; MySQL on the backend
+Here is a print screen if you are on mobile [https://imgur.com/a/ffliCT2](https://imgur.com/a/ffliCT2)  
+Am I using it wrong? Should I report a bug? How to troubleshoot?
+## [12][What are some web development channels on youtube that provide good quality code??](https://www.reddit.com/r/reactjs/comments/hkc1rm/what_are_some_web_development_channels_on_youtube/)
+- url: https://www.reddit.com/r/reactjs/comments/hkc1rm/what_are_some_web_development_channels_on_youtube/
+---
+I am searching for youtube channels that provide code with good quality, people keep saying that learning from youtube is not good as most channel creators are people with no experience in programming and provide code that is not adopted in production environment, so i would be thankful if some good reddit folks guided me on that, I really search for channels that provide real world projects with good code. Thanks in advance!

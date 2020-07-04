@@ -123,96 +123,74 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [3][Documentation options](https://www.reddit.com/r/cpp/comments/hke35s/documentation_options/)
+## [3][Constexpr circular queue with C++17, by me. When you need a queue and know the size at compile time.](https://www.reddit.com/r/cpp/comments/hklmag/constexpr_circular_queue_with_c17_by_me_when_you/)
+- url: https://github.com/SteveZhangSZ/ConstexprCircularQueue
+---
+
+## [4][SonarQube / SonarCloud Improved C++ Analysis](https://www.reddit.com/r/cpp/comments/hkjnb0/sonarqube_sonarcloud_improved_c_analysis/)
+- url: https://community.sonarsource.com/t/c-c-analysis-engine-supports-more-compilers-and-detects-buffer-overflow-security-sensitive-apis/26542
+---
+
+## [5][What would it take to make C++ safer and eliminate common pitfalls?](https://www.reddit.com/r/cpp/comments/hksk1c/what_would_it_take_to_make_c_safer_and_eliminate/)
+- url: https://www.reddit.com/r/cpp/comments/hksk1c/what_would_it_take_to_make_c_safer_and_eliminate/
+---
+Backwards compatibility is great because it helps ease the adoption of technology be it hardware or software, but it can potentially leads to solutions with degraded efficiency, unnecessary complexity, poorer security implications and much more. As a example, read Intel's x64 design docs which had to use rather complex components merely because of providing backwards compatibility.
+
+C++ had to be backwards compatible with C in order to ease adoption (among other possible reasons), but many realized that changes had to be made such as introducing smart pointers, abandoning C-style arrays, and going functional with ranges, just to name a few. Change is good, in-fact it's great! The problem however is that unless you're up-to-date with the latest best-practice guidelines usually given out by the other more-experienced community members, it can be significantly easier to shoot yourself in the foot. Even though compilers and a handful of other techniques/tools (such as static analysis, ASAN) do an amazing job at helping you to avoid common pitfalls (e.g detecting possible memory corruptions) and to follow best-practices, yet it's hard to train programmers to always write safe code, and even harder to integrate these into large-scale build pipelines. This is exactly why Rust, which is aimed at being safer (e.g by built-in memory sanitization) and (almost) as fast at C++, was developed. No wonder why Microsoft released a statement saying, "Rust is the Industry's 'Best Chance' at safe systems", and increasingly we see more teams choosing to use Rust for their new projects as opposed to C++.
+
+Now, I've played around with Rust and it seems promising in terms of performance and safety, however (don't take my word for it) it could be missing some cool C++-like features/abstractions e.g static reflection, ranges etc. Additionally, C++ has a huge community which is growing everyday and a lot of people are doing groundbreaking research in order to introduce cool features to the language such as dynamic reflection, executors etc. Of course, these features can be implemented in one form or another in other programmer languages like Rust, but languages can differ 1) in terms of performance for an implementation of the same abstraction (e.g C++ templates with concepts could be faster than Rust generics?) 2) grammar (which can make implementation of some language features easier/harder) 3) syntax (e.g Rust tries too hard not to mimic C-family syntax). Given this and perhaps other reasons, some programmer might still prefer to use C++ for its cool new features which are coming out every 3 years (big thanks to all the researchers and implementers behind it!).
+
+I think some people will agree that C++ code can be just as fast as C and in some even cases even faster, thanks to a great set of low-to-zero cost abstractions and the incredibly-smart compilers (with their RVOs etc) for generating optimized machine code. I feel like there's a need for a C++ compiler made just for (post-)modern C++ without any regard for backwards-compatibility which would strictly implement some of the fundamental best-practices, such as, making all variables `const` unless they don't have to be, forbidding uninitialized variables or even forcing you to abandon raw pointers, while offering built-in memory sanitization at compile times among other things. This is just an initial suggestion for desired features, but if we explore, I'm sure there are other undesirable, unsafe things that language permits yet we would not like to see them in our codes anymore. I think that a modern C++ compiler which would outright reject *horrible, unsafe C++98 code* (which is what most recent college graduates write because their professors taught them C++98) seems invaluable, and, maybe a step in the right direction towards building safer and faster systems!
+
+P.S This is just a thought, so I would love to hear what people here think!
+## [6][Charset transcoding and string formatting with strf.](https://www.reddit.com/r/cpp/comments/hkkqw9/charset_transcoding_and_string_formatting_with/)
+- url: https://www.reddit.com/r/cpp/comments/hkkqw9/charset_transcoding_and_string_formatting_with/
+---
+Strf is a formatting library that provides a convenient way for converting one character encoding to another.
+
+It allows you to choose whether the presence of nonconformant surrogate codepoints is allowed ( sometimes we want to allow them ).
+
+The documentation is not complete — particularly on how to extend the library, which I may change — but I think there is enough material for one to have a pretty good idea:
+
+* [Overview](https://robhz786.github.io/strf/v0.12.0/introduction.html)
+* [Charset transcoding](https://robhz786.github.io/strf/v0.11.1/quick_reference.html#character_encoding)
+* [Repository](https://github.com/robhz786/strf)
+
+Maybe someone can spot any design flaw or suggest any worthy breaking change before I release version 1.0. 
+
+Best Regards
+## [7][Documentation options](https://www.reddit.com/r/cpp/comments/hke35s/documentation_options/)
 - url: https://www.reddit.com/r/cpp/comments/hke35s/documentation_options/
 ---
 Hi,
 
 I have the opportunity to introduce a documentation platform for a project I’m involved on. The documentation is for a large C/C++ code base. I’ve never been responsible for externally facing documentation for developers, so I’m hoping to get some opinions and insight. Has anyone used a documentation, platform, format, etc that they would recommend? I’m aware of Doxygen and have used it in the past, but have mixed feelings about how useful those documents tend to be and it’s impact on the readability of header files. Maybe I’ve never configured Doxygen enough, though. Any opinions would be greatly appreciated! :)
-## [4][Bug in MSVC?](https://www.reddit.com/r/cpp/comments/hkfedn/bug_in_msvc/)
+## [8][Variadic Tuple Keyed Unordered Map Implementation (in under 20 lines)](https://www.reddit.com/r/cpp/comments/hksj8e/variadic_tuple_keyed_unordered_map_implementation/)
+- url: https://www.reddit.com/r/cpp/comments/hksj8e/variadic_tuple_keyed_unordered_map_implementation/
+---
+For those who want a to use a tuple as a key, with a variable number of types, to an unordered map, I've made a tutorial on how to implement it in under twenty lines using C++17 Features. Let me know what you think.
+
+https://youtu.be/1DafW0nLvQ0
+## [9][Bug in MSVC?](https://www.reddit.com/r/cpp/comments/hkfedn/bug_in_msvc/)
 - url: https://www.reddit.com/r/cpp/comments/hkfedn/bug_in_msvc/
 ---
 I've recently had to move from gcc to msvc, and got a very strange error message. It seems the compiler is interpreting the lambda body as an initializer list being passed to the lambda constructor? Anyway, gcc and clang have absolutely no problem compiling this code, no warnings occur even with all the warning flags provided. Are there some obscure rules about nesting lambdas I'm not aware of? I'd be grateful if someone could take a look, I'm honestly stumped.
 
 The (stripped down) code: [https://godbolt.org/z/WmBpuH](https://godbolt.org/z/WmBpuH)
-## [5][SonarQube / SonarCloud Improved C++ Analysis](https://www.reddit.com/r/cpp/comments/hkjnb0/sonarqube_sonarcloud_improved_c_analysis/)
-- url: https://community.sonarsource.com/t/c-c-analysis-engine-supports-more-compilers-and-detects-buffer-overflow-security-sensitive-apis/26542
+## [10][Why ‘accelerated C++’ is considered a good book?](https://www.reddit.com/r/cpp/comments/hkmg7u/why_accelerated_c_is_considered_a_good_book/)
+- url: https://www.reddit.com/r/cpp/comments/hkmg7u/why_accelerated_c_is_considered_a_good_book/
 ---
+I am genuinely curious to why ‘Accelerated C++’ book is considered a good book. Could people who truly used it to get into C++ comment?
 
-## [6][Magnum Engine 2020.06 released with redesigned asset pipeline and several new examples](https://www.reddit.com/r/cpp/comments/hjwbrb/magnum_engine_202006_released_with_redesigned/)
-- url: https://blog.magnum.graphics/announcements/2020.06/
----
+I am trying to find a complete, easy to digest and memorable reference to learn C++. When I reviewed AC++ I found it dated, using long examples that are hard to remember. 
+On the other hand, I looked at ‘C++ Crash Course’ and found it much easier to digest, short examples and updated. Although it doesn’t get much love on this sub.  
 
-## [7][Program to show the use of virtual destructor in C++.](https://www.reddit.com/r/cpp/comments/hkiuwg/program_to_show_the_use_of_virtual_destructor_in_c/)
-- url: https://www.scitechtop.com/write-a-program-to-show-the-use-of-virtual-destructor-in-c/
----
-
-## [8][CppCast: SYCL 2020](https://www.reddit.com/r/cpp/comments/hkboi7/cppcast_sycl_2020/)
+I am just trying to find what is the criteria used when deciding a good, easy and complete C++ book to start with.
+## [11][CppCast: SYCL 2020](https://www.reddit.com/r/cpp/comments/hkboi7/cppcast_sycl_2020/)
 - url: https://cppcast.com/sycl-michael-wong/
 ---
 
-## [9][Warning: __attribute__((const)) does not mean function purity](https://www.reddit.com/r/cpp/comments/hjxtfg/warning_attribute_const_does_not_mean_function/)
-- url: https://tylerayoung.com/2020/07/02/warning-__attribute__const-does-not-mean-function-purity/
----
-
-## [10][I think there's a bug in MSVC std::unordered_set](https://www.reddit.com/r/cpp/comments/hkf04w/i_think_theres_a_bug_in_msvc_stdunordered_set/)
-- url: https://www.reddit.com/r/cpp/comments/hkf04w/i_think_theres_a_bug_in_msvc_stdunordered_set/
----
-    int main() {
-    	std::unordered_set&lt;int&gt; set;
-    	set.emplace(1);
-    
-    	for (auto&amp; i : set)
-    	{
-    		std::cout &lt;&lt; i &lt;&lt; std::endl;
-    		if (i == 1)
-    		{
-    			set.erase(i);
-    		}
-    	}
-    
-    
-    	std::getchar();
-    	return 0;
-    }
-
-this creates a segmentation fault.
-
-According to [cppreference](https://en.cppreference.com/w/cpp/container/unordered_set/erase):
-
-&gt;References and iterators to the erased elements are invalidated. Other iterators and references are not invalidated.
-
-and also
-
-&gt;The order of the elements that are not erased is preserved. (This makes  it possible to erase individual elements while iterating through the  container.)
-
-&amp;#x200B;
-
-According to the standard, the above code is perfectly fine, and the loop should stop immediately after the first iteration . In real life, `erase` does corrupt the internal state of the set, causing segmentation fault. commenting the `erase` code "fixes" the bug.
-
-&amp;#x200B;
-
-Am I wrong?
-## [11][Why taking the address of an xvalue (&amp;std::move(...)) is an error?](https://www.reddit.com/r/cpp/comments/hkc3qv/why_taking_the_address_of_an_xvalue_stdmove_is_an/)
-- url: https://www.reddit.com/r/cpp/comments/hkc3qv/why_taking_the_address_of_an_xvalue_stdmove_is_an/
----
-I came across this [article](https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/cpp-value-categories) while trying to understand the glvalues. The source of the article is "Stroustrup, 2013 - The C++ Programming Language, Fourth Edition". 
-
-More specifically, i wanted to understand why lvalues and xvalues are grouped together as glvalues. Turned out, it is the concept of identity. 
-
-The article says that a glvalue (lvalue or xvalue) has an identity, where identity is explained as:
-
-&amp;gt; If you have (or you can take) the memory address of a value and use it safely, then the value has identity.
-
-However, taking the address of an xvalue is an error:
-
-    std::string str;
-    auto p = &amp;std::move(str); //Error (can't take address of an rvalue)
-
-I understand that there should not be a reason to take an address of an xvalue but I want to understand the rationale behind flagging it as an error when it goes against the concept of an xvalue having an identity. 
-
-Thank You
-## [12][C++20 Features and Fixes in VS 2019 16.1 through 16.6](https://www.reddit.com/r/cpp/comments/hjn4uv/c20_features_and_fixes_in_vs_2019_161_through_166/)
-- url: https://devblogs.microsoft.com/cppblog/c20-features-and-fixes-in-vs-2019-16-1-through-16-6/
+## [12][Magnum Engine 2020.06 released with redesigned asset pipeline and several new examples](https://www.reddit.com/r/cpp/comments/hjwbrb/magnum_engine_202006_released_with_redesigned/)
+- url: https://blog.magnum.graphics/announcements/2020.06/
 ---
 

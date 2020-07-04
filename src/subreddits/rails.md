@@ -39,7 +39,177 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Sidekiq + NetSSH for running remote commands, or something else?](https://www.reddit.com/r/rails/comments/hkbjpu/sidekiq_netssh_for_running_remote_commands_or/)
+## [3][Job Queue Design for Multiple Small Transactions](https://www.reddit.com/r/rails/comments/hkz9pf/job_queue_design_for_multiple_small_transactions/)
+- url: https://www.reddit.com/r/rails/comments/hkz9pf/job_queue_design_for_multiple_small_transactions/
+---
+Hi everyone
+
+I have a task that I run via Sidekiq + ActiveJob + Redis. The task is a collection of ActiveRecord instances with a one to many relation to another model which performs updates on the "to many" table for each "belongs\_to". Is it considered best practice to have a single task for it in a loop or should I break it down to multiple smaller tasks to be put on queue?
+
+Thanks
+## [4][[Help] Link_to Remote, Cookies, and Jquery](https://www.reddit.com/r/rails/comments/hkqqfj/help_link_to_remote_cookies_and_jquery/)
+- url: https://www.reddit.com/r/rails/comments/hkqqfj/help_link_to_remote_cookies_and_jquery/
+---
+I have an older application I'm updating where a user can rotate the order of a set of images and turn the visibility of those images on and off. I am using jquery to accomplish this and link_to remote. 
+
+When I toggle the images on/off it works correctly. 
+When I refresh the page manually the toggle state of the images is correct - I store them in cookies. 
+If I refresh the partial to change the order, it changes the order but all images appear regardless of their toggle state. 
+
+Is this an issue of using link_to remote with the partial and not passing some type of information to it?
+
+Jquery Code:
+
+    $("#distractorselecta").each(function() {
+        $(this).toggle($.cookie('show-' + this.id) != 
+    'collapsed');
+    });
+
+    $( ".toggle-distractora" ).click(function() {
+      $( "#distractorselecta" ).toggle( "slow", function() {
+    	  $.cookie('show-' + $(this).attr("id"), 
+    $(this).is(":hidden") ? 'collapsed' : 'expanded');  
+      });
+    });
+
+js.erb file for the partials and link_to remote
+
+    $("#matching").html("&lt;%= escape_javascript(render(:partial =&gt; "fsets/matching")) %&gt;");
+    $(".position-box").html("&lt;%=escape_javascript(render(:partial =&gt;"fsets/matchingposition")) %&gt;");
+    $(".navbox").html("&lt;%=escape_javascript(render(:partial =&gt; "fsets/matchingnavigation")) %&gt;"); setMatching();
+
+Here is a video of me testing it - the little refresh icon is the link_to remote which resets the images but ignores their toggle state. 
+[video](https://imgur.com/a/mqznHSx)
+
+Thank you.
+
+Update: 
+
+After messing around with everything a bit more, if I place the query code in the partial with some &lt;script&gt; tags then everything works as I want it to. I just don’t really understand why that would be. Currently the code is in the application.js file, but moving it to the partial next to the divs that get replaced keeps the toggle state working correctly. 
+
+It just feels wrong...can anyone explain what’s happening here?
+## [5][Vue slider component replacing on a vanilla POST rails form?](https://www.reddit.com/r/rails/comments/hkqpyn/vue_slider_component_replacing_on_a_vanilla_post/)
+- url: https://www.reddit.com/r/rails/comments/hkqpyn/vue_slider_component_replacing_on_a_vanilla_post/
+---
+I am building a rails form with a number of input type="range" entries (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) which I need to style in a specific way.
+
+This need let me to the excellent https://nightcatsama.github.io/vue-slider-component/#/ component which meets my needs perfectly.
+
+What I'd like to do is to use the slider component for entry but still submit a regular rails view form via POST.
+
+Currently the form uses numerical values.
+
+My plan is
+
+1. install vue and stimulus
+2. change the form to use hidden inputs for the slider-controlled values
+3. change the form view to display the slider component
+4. use a stimulus controller to copy the hidden fields data into the vue app data store on connect()
+5. use a stimulus controller to copy the vue app data store back to the hidden fields on form submit
+
+Is this feasible? Have you done something like this? I am trying to go as simple as possible, and only use Vue for the component I need.
+
+Any advice on how to make this even simpler/bulletproof?
+
+I am not 100% sure on how to combine both stimulus and vue in one js bundle, but found this gist of using a stimulus controller to load a view app: https://gist.github.com/crispinheneise/c9de022dc94c16131971b64d49c0778d
+## [6][Building SMS with Twilio for bulk SMS text messages?](https://www.reddit.com/r/rails/comments/hkw8bp/building_sms_with_twilio_for_bulk_sms_text/)
+- url: https://www.reddit.com/r/rails/comments/hkw8bp/building_sms_with_twilio_for_bulk_sms_text/
+---
+Yes, I did say SMS text message.
+
+&amp;#x200B;
+
+I am building an SMS platform.
+
+let us assume they have 100,000 phone numbers.
+
+&amp;#x200B;
+
+I am using Twilio as well with Active Job and will later implement Redis with a 3rd party server alongside with it.
+
+&amp;#x200B;
+
+For anyone with experience, is this enough?
+
+It's fairly simple, I have a form to enter the message body and then submit it.  It then does something like:
+
+    Subscriber.each do |s|
+        NotificationsJob.perform_later(message, s)
+    end 
+
+Then in the qued job, it sends the message.
+
+Nothing needs to look pretty, it just needs to actually function and work.
+
+Aside from regulatory stuff .. from a programming standpoint, is there anything else do or worry about when it comes to doing the background job task I need to worry about?
+## [7][Cannot get RSpec/Capybara test to pass for user password change](https://www.reddit.com/r/rails/comments/hkkemy/cannot_get_rspeccapybara_test_to_pass_for_user/)
+- url: https://www.reddit.com/r/rails/comments/hkkemy/cannot_get_rspeccapybara_test_to_pass_for_user/
+---
+Hi all, I've got several tests similar to this, but for some reason, I can't get this one to pass.
+
+    Failure/Error: expect(u.valid_password?('new password')).to be true
+           expected true
+                got false
+
+Here's the test:
+
+    it "allows a user to change their password", focus: true do
+      sign_in u
+      visit '/users/edit'
+      within("#edit_user") do
+        fill_in 'user[password]', with: "new password"
+        fill_in 'user[password_confirmation]', with: "new password"
+        fill_in 'user[current_password]', with: u.password
+      end
+      click_button 'Save changes'
+      u.reload
+      expect(u.valid_password?('new password')).to be true
+      expect(page).to have_content 'Your account has been updated successfully'
+    end
+
+[Here](https://imgur.com/xVH8pJ9) is a screenshot of  `tail -f log/test.log`
+
+I don't get any errors when I run the test, it just returns false rather than true. When I test for what `u.password` is, it is the old password (it remains unchanged). I'm using devise.
+
+Thanks in advance.  
+
+
+  
+EDIT: FIXED  
+
+
+Turns out it was to do with my dodgy override for registrations/update, which was supposed to be allowing certain account updates without requiring a password. I had the following:  
+
+
+    class Users::RegistrationsController &lt; Devise::RegistrationsController
+      
+      protected
+    
+      def update_resource(resource, params)
+        params.delete :current_password
+        resource.update_without_password(params)
+      end
+    
+    end
+
+I needed to change this to:  
+
+
+    class Users::RegistrationsController &lt; Devise::RegistrationsController
+      
+      protected
+    
+      def update_resource(resource, params)
+        # Require current password if user is trying to change password.
+        return super if params["password"]&amp;.present?
+    
+        # Allows user to update registration information without password.
+        resource.update_without_password(params.except("current_password"))
+      end
+    end
+
+&amp;#x200B;
+## [8][Sidekiq + NetSSH for running remote commands, or something else?](https://www.reddit.com/r/rails/comments/hkbjpu/sidekiq_netssh_for_running_remote_commands_or/)
 - url: https://www.reddit.com/r/rails/comments/hkbjpu/sidekiq_netssh_for_running_remote_commands_or/
 ---
 Right now, I am using the net-ssh gem to run commands remotely on multiple linux systems via SSH, starting within sidekiq workers. I used to have alternative approach that involved HTTP POST/GET requests to an API + ActiveRecord, but that became way too complicated -- database pooling issues, constant database polling issues, managing the agents, etc.
@@ -143,11 +313,11 @@ Here are the few questions that I have regarding this:
 1. Are there potential scalability issues that may exist with this method? So far, so good, but I have a small customer base, so no issues yet other than jobs hanging.
 2. Is there a better way to manage something like this while still being able to enjoy the benefits that I appreciate (e.g. tracking crashes, re-tries, etc.)
 3. If this method is actually something that should be OK, what could be causing Sidekiq to do this with the jobs? I thought each job was 100% independent of any other job as long it's running, but this hiccup and lag is very intermittent and only when I have other jobs running, and not all of the time.
-## [4][Rails 6 with semantic ui and icons](https://www.reddit.com/r/rails/comments/hki5sm/rails_6_with_semantic_ui_and_icons/)
+## [9][Rails 6 with semantic ui and icons](https://www.reddit.com/r/rails/comments/hki5sm/rails_6_with_semantic_ui_and_icons/)
 - url: https://www.reddit.com/r/rails/comments/hki5sm/rails_6_with_semantic_ui_and_icons/
 ---
 Hi, i have a problem. I create a rails 6 project and add fomantic-ui(fork from semantic-ui) and its work. But i can't use a icon, i  instaled fontawesome(how to says a doc [https://semantic-ui.com/elements/icon.html](https://semantic-ui.com/elements/icon.html)) but system try found icons [http://localhost:3000/assets/themes/default/assets/fonts/icons.woff2](http://localhost:3000/assets/themes/default/assets/fonts/icons.woff2) how i can change path to my node\_module ? I think i need change my webpack settings, but i don't how
-## [5][How do you organize Stripe Resources?](https://www.reddit.com/r/rails/comments/hk7qhb/how_do_you_organize_stripe_resources/)
+## [10][How do you organize Stripe Resources?](https://www.reddit.com/r/rails/comments/hk7qhb/how_do_you_organize_stripe_resources/)
 - url: https://www.reddit.com/r/rails/comments/hk7qhb/how_do_you_organize_stripe_resources/
 ---
 I'm building an app that uses Stripe as a backend for credit card issuing. I started off with an Account model that would keep a local copy of the Stripe Connected Account that I was associating with the User. I used a jsonb field to just store the json blob that Stripe returns via their API. 
@@ -157,7 +327,7 @@ Then, I need to create a Source (i.e. a bank account I could draw money from on 
 As I build this out, I'm going to need to cache a copy of a Stripe Balance Object maybe keep track of TopUPs, etc... 
 
 I was just wondering how others deal with the complexity of Stripe. Are you creating separate models for each of the Stripe objects you need to cache? I've already gotten into a little trouble just with an Account model because I have to load it async into the front end. If I have a bunch of other models, how would I keep track of what's necessary in the front-end?
-## [6][Rails &amp; Gatsby anyone?](https://www.reddit.com/r/rails/comments/hk22vq/rails_gatsby_anyone/)
+## [11][Rails &amp; Gatsby anyone?](https://www.reddit.com/r/rails/comments/hk22vq/rails_gatsby_anyone/)
 - url: https://www.reddit.com/r/rails/comments/hk22vq/rails_gatsby_anyone/
 ---
 I have a personal/portfolio website that I've built with a Rails 6 backend and a React frontend.  It's currently deployed to Heroku and using SendGrid for emails.  I'm also considering using the Comfortable Mexican Couch gem for blogs - but there is probably a Gatsby plugin for that too.
@@ -167,7 +337,7 @@ My biggest concern right now is search engine optimization and I would also like
 Since Gatsby just takes your dynamic React content and builds it into static resources, I figured that would take care of both issues.
 
 Has anyone here attempted such a project?  Any advice or potential hurdles to look out for?
-## [7][How to “call” custom fonts within with SLIM templates](https://www.reddit.com/r/rails/comments/hk9fxl/how_to_call_custom_fonts_within_with_slim/)
+## [12][How to “call” custom fonts within with SLIM templates](https://www.reddit.com/r/rails/comments/hk9fxl/how_to_call_custom_fonts_within_with_slim/)
 - url: https://www.reddit.com/r/rails/comments/hk9fxl/how_to_call_custom_fonts_within_with_slim/
 ---
 Hello I've placed custom fonts for my app use, but I have no clue of how to display the asset pipeline fonts using SLIM templates in the *temas/index* pages, I was successful with images but I don't have any clue if (it's even possible?) to use custom fonts with asset pipeline using slim templates.
@@ -175,123 +345,3 @@ Hello I've placed custom fonts for my app use, but I have no clue of how to disp
 [https://github.com/LeoFragozo/notika\_slim\_test/blob/master/app/views/temas/index.html.slim](https://github.com/LeoFragozo/notika_slim_test/blob/master/app/views/temas/index.html.slim)
 
 I've tried to put fonts in the asset pipeline, creating the font .scss file, and it's apparently not loading hence [https://postimg.cc/QVytpngz](https://postimg.cc/QVytpngz), so I'm here to ask for help.
-## [8][Trailblazer 2.1 - new features, landingpage and documentation](https://www.reddit.com/r/rails/comments/hjyz5r/trailblazer_21_new_features_landingpage_and/)
-- url: https://www.reddit.com/r/rails/comments/hjyz5r/trailblazer_21_new_features_landingpage_and/
----
-For those who know trailblazer - you know that TRB evolved few times, introduced a lot of great ideas but also had his problems:  missing documentation, lack of communication with the community, and not consistent approach to some problems. We strongly believe that the current version with the support of core team and the new landing page with complete documentation is something that is worth working with.  
-
-
-For those who somehow didn't hear about Trailblazer - check it out, probably for some complex projects where Rails aren't sufficient that tool could be really helpful and joyfull.  
-
-
-Either you know TRB already or you never heard about it, check out the blog post about the history and changes of trailblazer 2.1 : [https://trailblazer.to/2.1/blog.html](https://trailblazer.to/2.1/blog.html) and give us feedback!
-## [9][How would you set this up?](https://www.reddit.com/r/rails/comments/hk671l/how_would_you_set_this_up/)
-- url: https://www.reddit.com/r/rails/comments/hk671l/how_would_you_set_this_up/
----
-Hey Rails guys (and gals),
-
-Part of a project am working on (basically a job board) should have the functionality for sending out a weekly email to a bunch of users. The email should contain a list of jobs the user can apply to. 
-
-The list of jobs in the emails sent is different for each user since a user can create a subscription for the types of job notifications they want to be getting e.g. a subscription for "marketing jobs", "developer jobs" but the differences are based on "job category" 
-
-The models are as below:
-
-&amp;#x200B;
-
-https://preview.redd.it/d990df9iii851.png?width=3693&amp;format=png&amp;auto=webp&amp;s=886f760d837b3224fe9019b347fabf9efc5c19c9
-
-I've already created the notification mailer as below:
-
-    class NotifyMailer &lt; ApplicationMailer
-      default from: 'notify@domain.com'
-      def self.send_request(payload)
-        # first grab all users who are non-admins..then fetch all their active subscriptions...
-        active_subscriptions = User.normal_users.with_active_subs
-        emails = []
-        active_subscriptions.each do |sub|
-          emails &lt;&lt; sub.email 
-        end
-    
-        emails.each do |email|
-          new_request(email, payload).deliver_later
-        end
-      end
-    end
-
-...I've also created a background job as below:
-
-    class SendNotificationsJob &lt; ApplicationJob
-      queue_as :default
-      def perform(*args)
-        # Do something later
-        NotifyMailer.send_request(payload)
-      end
-    end
-
-Now this is where things feel a bit over my head - Essentially, I would like to send the emails once per week on a particular day, say Wednesday at 9am but I'm wondering:
-
-&amp;#x200B;
-
-1. Have I even set this up correctly? 
-2. Where do I tell the app that the emails should be sent "once per week on a particular day, say Wednesday at 9am"? (Forgive the rather newbish question...am still learning -  All tutorials regarding sending email that I've come across mostly discuss the aspect of sending an email like after a user registers so this methodology is easily input in that particular controller method....but where do I put functionality for automatic email sending on particular dates/times? 
-
-Thanks. 
-
-PS: In case I've missed out on a detail that may help me out lemme know.
-## [10][Nested form question](https://www.reddit.com/r/rails/comments/hk2rll/nested_form_question/)
-- url: https://www.reddit.com/r/rails/comments/hk2rll/nested_form_question/
----
-Hello people. 
-I have a composite question. Have asked this here a few weeks ago, haven’t solved this since.
-Part 1:
-I am creating an e-commerce website with a cart. Cart has many LineItems. Both inherit from ApplicationRecord. I want LineItem to belong_to a Product, where a Product would be a class of external API, in this case ShopifyAPI::Product. Is it accomplishable?
-(Hacky fix which I now did and don’t like: Right now the LineItem has a product_id column, respective product I find when needed through an API call)
-Part 2: 
-Product has two Options. Option has a range of possible values, say [‘1’, ‘2’, ‘3’]. Cart has many LineItems. On the cart page ‘carts/show’ I have a listing of all the LineItems. Each LineItem is rendered as it’s id and combination of options of the Product that belongs to the LineItem. So far so good. Each option is rendered as a dropdown of it’s range.
-When the button ‘Submit’ on the Cart page is clicked, I try to save the cart with chosen options, I want the LineItems with respective selected options to be passed as the params in the next way: 
-cart: { 
-  line_items: [
-    {...}, {...}
-  ]
-}. Where {...} are the combination of options. Would you know how to accomplish this? 
-
-Thanks for reading. My guess is the second question would be easier solved with the first one, hence at first i thought of the second question, neither of which I know how to answer.
-## [11][Pick up rails again after a break: advice needed](https://www.reddit.com/r/rails/comments/hjsu59/pick_up_rails_again_after_a_break_advice_needed/)
-- url: https://www.reddit.com/r/rails/comments/hjsu59/pick_up_rails_again_after_a_break_advice_needed/
----
-A few years ago (2015) I learned to develop full-stack web applications by following an online bootcamp. The bootcamp used Ruby on Rails as a framework. After the bootcamp I was able to develop my own web applications by using RoR.
-
-Since 2017 I had hardly the time to develop since I had other career opportunities. However, now I would like to start building a new small application as a hobby project.
-
-The app will mostly consist of CRUD operations and a real-time chat functionality. Nothing groundbreaking though. However I would like to experiment with providing the content in a true mobile app as well for iOS &amp; Android.
-
-Before starting out though I have 2 questions where I hope you guys can help me with.
-
-&amp;#x200B;
-
-**Rails refresher**  
-Before starting out I would like to refresh and recap my RoR skills. I was looking at the following two possibilities:
-
-* Udemy course:  [The Complete Ruby on Rails Developer Course](https://www.udemy.com/course/the-complete-ruby-on-rails-developer-course/)
-* Book: [Agile Web Development with Rails 6](https://pragprog.com/titles/rails6/)
-
-Which one would you guys recommend? Any other recommendations?
-
-&amp;#x200B;
-
-**Feedback on application structure**  
-My first idea was to follow the JS hype and build an API in Express and use VUE for the frontend. However after following some courses, I had the feeling that this setup was way too complex for a one-man hobby project. Furthermore my content should be optimised for SEO as well. In the JS world that would mean that I should use a Framework like Nuxt for example to serve SSR-content.
-
-That's why I would chose for a "classic" RoR application. I could use Stimulus for the limited "interactive" functionalities and developing a native mobile app could be fairly easy [by wrapping web views](https://www.youtube.com/watch?v=SWEts0rlezA).
-
-Is this a good idea or should I follow the trend by using Rails as the API and develop a separate VUE front-end app?
-
-&amp;#x200B;
-
-Thanks a lot for the feedback!
-## [12][Rails 6 deployment with Passenger and Docker](https://www.reddit.com/r/rails/comments/hjuu1x/rails_6_deployment_with_passenger_and_docker/)
-- url: https://www.reddit.com/r/rails/comments/hjuu1x/rails_6_deployment_with_passenger_and_docker/
----
-Hi all,
-
-Is there any good guide/resource on how to prepare and deploy Rails 6 application with Passenger/NGINX as Docker containers?

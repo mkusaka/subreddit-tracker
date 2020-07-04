@@ -1,29 +1,123 @@
 # Kotlin
-## [1][The Best Kotlin online courses and tutorials for beginners to learn Kotlin programming language in 2020](https://www.reddit.com/r/Kotlin/comments/hkhq9j/the_best_kotlin_online_courses_and_tutorials_for/)
+## [1][Announcing LA4K: Logging API for Kotlin](https://www.reddit.com/r/Kotlin/comments/hkrz4x/announcing_la4k_logging_api_for_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/hkrz4x/announcing_la4k_logging_api_for_kotlin/
+---
+Greetings!
+
+I have been working on an original logging API for Kotlin Multiplatform for over a year now. I have done this because every other API I have found has really just been an extension of an existing JVM-only API, usually SLF4J. Right now, it can be bound to Android (Logcat), Log4j2, SLF4J and JUL. JS and native targets are planned for future releases.
+
+I invite everyone to [check out its GitHub repo](https://github.com/wswartzendruber/la4k) (which includes a ReadMe). I have also [published the initial release, v0.1.0, to Bintray](https://bintray.com/wswartzendruber/la4k). I am especially interested in the community's assessment of the project, as any shortcommings need to be identified.
+
+It is my intention for this to mature as Kotlin Multiplatform does the same. I would like for the v1.0.0 release to coincide with Multiplatform's initial, stable release.
+
+I appreciate any feedback on this project.
+## [2][Null Safety in Kotlin](https://www.reddit.com/r/Kotlin/comments/hl0ich/null_safety_in_kotlin/)
+- url: https://medium.com/swlh/null-safety-in-kotlin-88298e64a1dc?source=friends_link&amp;sk=a3f75e55a492b26416fe36907f69e09c
+---
+
+## [3][Multiplatform Persistence with SQLDelight](https://www.reddit.com/r/Kotlin/comments/hkqf1e/multiplatform_persistence_with_sqldelight/)
+- url: http://gh.jdoneill.com/2020/06/28/sqldelight/
+---
+
+## [4][Can Kotlin.JS And Javascript be in the same project?](https://www.reddit.com/r/Kotlin/comments/hl1440/can_kotlinjs_and_javascript_be_in_the_same_project/)
+- url: https://www.reddit.com/r/Kotlin/comments/hl1440/can_kotlinjs_and_javascript_be_in_the_same_project/
+---
+I was making some basic website after going through the React and Kotlin.JS tutorial of JetBrains and then my friend expressed his desire to contribute. But the problem is that he doesn't knows Kotlin and only Javascript and I have just started so I only know Javascript.
+AFAIK, Java and Kotlin can be used in the same project but is there any way to use Kotlin.JS with simple Javascript. Or will one of us have to learn a new language?
+## [5][Is there a good way to share code between projects in Kotlin Multiplatform?](https://www.reddit.com/r/Kotlin/comments/hkrkul/is_there_a_good_way_to_share_code_between/)
+- url: https://www.reddit.com/r/Kotlin/comments/hkrkul/is_there_a_good_way_to_share_code_between/
+---
+I have a library I wrote all in Kotlin, which currently builds using Gradle and uploads an artifact to Maven. I can then use it in JVM projects, and it works fine.  
+
+However if I use it in a multiplatform project (based on https://korge.org/), build.gradle.kts throws an error on the implementation.  I assume this is because Maven libraries are compiled into a jar and the build.gradle.kts script doesn't support that.
+
+Is there a way to make a Kotlin specific library, in such a way that it can be imported into other projects?  I could use git submodules to include the src directory, but that's kind of messy.  Is there a better solution?
+## [6][The Best Kotlin online courses and tutorials for beginners to learn Kotlin programming language in 2020](https://www.reddit.com/r/Kotlin/comments/hkhq9j/the_best_kotlin_online_courses_and_tutorials_for/)
 - url: https://www.reddit.com/r/Kotlin/comments/hkhq9j/the_best_kotlin_online_courses_and_tutorials_for/
 ---
 Found an amazing list of all the top-rated [Kotlin courses](https://blog.coursesity.com/best-kotlin-tutorials?utm_source=reddit&amp;utm_medium=social&amp;utm_campaign=redditPost&amp;utm_term=best-kotlin-js) of all time.  
 
 Many of these courses are very helpful to Kotlin for the beginners.
-## [2][Integrating Kotlin JS with Typescript](https://www.reddit.com/r/Kotlin/comments/hka8l5/integrating_kotlin_js_with_typescript/)
-- url: https://www.reddit.com/r/Kotlin/comments/hka8l5/integrating_kotlin_js_with_typescript/
+## [7][Kotlin Spring Boot throws an error getting a DateTime out of a MongoDB Database using Graph-QL Java](https://www.reddit.com/r/Kotlin/comments/hks4ea/kotlin_spring_boot_throws_an_error_getting_a/)
+- url: https://www.reddit.com/r/Kotlin/comments/hks4ea/kotlin_spring_boot_throws_an_error_getting_a/
 ---
-I recently joined a project and they have a development system typed from backend to frontend:
+I have been working on a Kotlin App using Spring Boot and GraphQL with all my data stored in a MongoDB database. I have started using the GraphQL-Java-Extended-Scalars to try to deal with my DateTimes in my Database but it keeps throwing the error Expected something we can convert to 'java.time.OffsetDateTime' but was 'LocalDateTime'.  I was wonder how do you correctly setup GraphQL-Java-Extended-Scalars and what data type should I use for my DateTimes?
 
-1. A project with DTOs and service interfaces
-2. A backend that uses those DTOs, and implements those service interfaces to an HTTP API
-3. JSweet converts those DTOs to TypeScript types, and creates HTTP clients for the service interfaces
+My GraphQL Schema is set up like this:
 
-As a result, you can re-use the same `User` class in the backend or frontend, fully typed everywhere.
+    scalar DateTime
+    scalar Date
+    
+    type Query {
+       users: [User]
+    }
+    
+    type User {
+      id: ID!
+      username: String!
+      password: String!
+      email: String!
+      dateOfBirth: Date
+      dateCreated: DateTime!
+    }
 
-It's nice but a bit kludgey: Jsweet is stuck on Java 8, and the service code is a bit of a mystery. Kotlin seems like it would be the perfect use case here, and I've seen a few projects with Kotlin JVM backends and Kotlin JS clients all integrated together.
+I defined the custom mapping and extended scalars like this:
 
-However, I'd like to hear from others that have done something like this. Ideally, I'd keep something similar, with my services' interfaces implemented with Kotlin on the backend, and also as Kotlin JS clients for the frontend, and data classes for use on both.
+    @Component
+    class scalars() {
+    
+    
+    @Bean
+    fun objectMapper(): ObjectMapper? {
+        return ObjectMapper().registerModule(JavaTimeModule())
+                .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
+    }
+    
+    @Bean
+    fun schemaParserOptions(): SchemaParserOptions? {
+        return SchemaParserOptions.newOptions()
+                .objectMapperProvider(PerFieldObjectMapperProvider { fieldDefinition: FieldDefinition? -&gt; objectMapper() }).build()
+    }
+    
+    @Bean
+    fun date(): GraphQLScalarType? {
+        return ExtendedScalars.Date
+    }
+    
+    @Bean
+    fun datetime(): GraphQLScalarType? {
+        return ExtendedScalars.DateTime
+    }
+    }
 
-But I think I'd lose type support - one thing we really appreciate is the shared DTOs and their TypeScript definitions. I see there is a TS generator that can do this (https://github.com/ntrrgc/ts-generator) -is anyone using it today? Or are there other pitfalls we should be considering? Would appreciate any advice from others who've done something similar.
+Then  I created the user object with these data type set up:
 
-edit: I just found this: https://youtrack.jetbrains.com/issue/KT-16604 - apparently Kotlin 1.4-M1 will generate d.ts files when using the new compiler, which should help a lot.
-## [3][Any more pleasant way to type this?](https://www.reddit.com/r/Kotlin/comments/hkfjxw/any_more_pleasant_way_to_type_this/)
+    @Document(collection = "users")
+    data class UserEntity(
+        var username: String,
+        var password: String,
+        var email: String,
+        var dateOfBirth: LocalDate,
+        var dateCreated: LocalDateTime
+     ) {
+        @Id
+        var id: String = ""
+     }
+
+and lastly, my DateTime in the MongoDB database is in this form:
+
+    "dateCreated" : ISODate("2020-0703T04:30:52.237Z")
+
+Hopefully, this is information to help solve the error it keeps throwing when I run the query for dateCreated of the user. Thank you for all your help in advance
+## [8][Zoe: Discover the new release of the command line tool for Kafka written in Kotlin (with a new Katacoda environment to try it out from the browser)](https://www.reddit.com/r/Kotlin/comments/hki8r1/zoe_discover_the_new_release_of_the_command_line/)
+- url: https://www.reddit.com/r/Kotlin/comments/hki8r1/zoe_discover_the_new_release_of_the_command_line/
+---
+[https://github.com/adevinta/zoe/releases/tag/v0.24.0](https://github.com/adevinta/zoe/releases/tag/v0.24.0)
+## [9][Whats the best way to implement comment system in kotlin android. I am using firebase for backend. I came across only a single article for this but that too is cumbersome. Link https://medium.com/@pedrocarrillo/comments-in-a-recylcerview-e7537235cd33](https://www.reddit.com/r/Kotlin/comments/hkocem/whats_the_best_way_to_implement_comment_system_in/)
+- url: https://www.reddit.com/r/Kotlin/comments/hkocem/whats_the_best_way_to_implement_comment_system_in/
+---
+
+## [10][Any more pleasant way to type this?](https://www.reddit.com/r/Kotlin/comments/hkfjxw/any_more_pleasant_way_to_type_this/)
 - url: https://www.reddit.com/r/Kotlin/comments/hkfjxw/any_more_pleasant_way_to_type_this/
 ---
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -37,64 +131,3 @@ edit: I just found this: https://youtrack.jetbrains.com/issue/KT-16604 - apparen
         context?.let { layout = SomeView(it); layout }
 
 &amp;#x200B;
-## [4][Zoe: Discover the new release of the command line tool for Kafka written in Kotlin (with a new Katacoda environment to try it out from the browser)](https://www.reddit.com/r/Kotlin/comments/hki8r1/zoe_discover_the_new_release_of_the_command_line/)
-- url: https://www.reddit.com/r/Kotlin/comments/hki8r1/zoe_discover_the_new_release_of_the_command_line/
----
-[https://github.com/adevinta/zoe/releases/tag/v0.24.0](https://github.com/adevinta/zoe/releases/tag/v0.24.0)
-## [5][Kotlin and IntelliJ Idea](https://www.reddit.com/r/Kotlin/comments/hkhbkz/kotlin_and_intellij_idea/)
-- url: https://www.reddit.com/r/Kotlin/comments/hkhbkz/kotlin_and_intellij_idea/
----
-Hi everyone !
-
-I have a problem with Intellij Idea and Kotlin. In fact, Kotlin code compilation works, but IDEA says that Kotlin is not configured and throws "unresolved reference" for "println" or "TODO".
-
-I tried everything I could find on the internet, like invalidating the cache, trying to reconfigure Kotlin, but nothing works. 
-
-I'm am trying to make a native app, and the informations about native Kotlin apps are pretty rare, so maybe it is linked.
-
-If you have other ideas, tell them, right now, I'm blocked...
-
-Thanks,
-## [6][Kotlin scripting API request](https://www.reddit.com/r/Kotlin/comments/hjv2fn/kotlin_scripting_api_request/)
-- url: https://www.reddit.com/r/Kotlin/comments/hjv2fn/kotlin_scripting_api_request/
----
-Hi, I'm definetly not new to Kotlin, but new to scripting.
-
-The script I want to make should fetch data from an API and save it inside a text file. The file part is doable, but I struggle with the API part.
-
-Do I need to use a library and if so, which one? I know Retrofit and OkHTTP from Android development. And how do I integrate that into a script?
-
-&amp;#x200B;
-
-Thanks in advance!
-## [7][Is there something like JSHint and JSLint for Kotlin?](https://www.reddit.com/r/Kotlin/comments/hk198b/is_there_something_like_jshint_and_jslint_for/)
-- url: https://www.reddit.com/r/Kotlin/comments/hk198b/is_there_something_like_jshint_and_jslint_for/
----
-
-## [8][NoCopy compiler plugin for Kotlin.](https://www.reddit.com/r/Kotlin/comments/hjoyxx/nocopy_compiler_plugin_for_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/hjoyxx/nocopy_compiler_plugin_for_kotlin/
----
-Just released NoCopy, a Kotlin compiler plugin that enables using data classes as value-based classes by moderating usage of their \`copy\` method.
-
-[https://github.com/AhmedMourad0/no-copy](https://github.com/AhmedMourad0/no-copy)
-## [9][KVision 3.11.0 is released (with support for Onsen UI web components)](https://www.reddit.com/r/Kotlin/comments/hjfe5y/kvision_3110_is_released_with_support_for_onsen/)
-- url: https://www.reddit.com/r/Kotlin/comments/hjfe5y/kvision_3110_is_released_with_support_for_onsen/
----
-[KVision](https://github.com/rjaros/kvision) is an open source web framework created for Kotlin/JS. It allows developers to build modern web applications with the Kotlin language.
-
-I have released KVision 3.11.0, after a few weeks of effort to fully implement [Onsen UI](https://onsen.io/) library bindings. Now you can create hybrid and mobile web applications, with natively designed web components, that automatically choose the look and feel based on the platform on which they are running. All with fully type-safe, consistent Kotlin API and readable DSL builders.
-
-There is a [new example application](https://github.com/rjaros/kvision-examples/tree/master/onsenui-kitchensink), which is almost one to one rewrite of an official [Vue Kitchen Sink example](https://github.com/OnsenUI/vue-onsenui-kitchensink). You can see live demo for both [iOS](https://rjaros.github.io/kvision-examples/onsenui-kitchensink/?platform=ios) and [Android](https://rjaros.github.io/kvision-examples/onsenui-kitchensink/?platform=android) design.
-
-Other highlights of this release:
-
-* extended functionality of the Maps module (contributed by Jörg Rade)
-* upgraded dependencies (Javalin 3.9.0, Jooby 2.8.8, Spring Boot 2.3.1, ReduxKotlin 0.5.1, Tabulator 4.7.1, Chart.js 2.9.3 and others)
-
-For more details see the [changelog](https://github.com/rjaros/kvision/releases/tag/3.11.0).
-
-As always any feedback is welcomed :-)
-## [10][With the receiver in scope](https://www.reddit.com/r/Kotlin/comments/hjfy4s/with_the_receiver_in_scope/)
-- url: https://medium.com/@elizarov/with-the-receiver-in-scope-7b52bdcca6e9
----
-

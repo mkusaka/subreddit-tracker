@@ -1,36 +1,27 @@
 # androiddev
-## [1][We're on the Android engineering team. Ask us Anything about Android 11 updates to the Android Platform! (starts July 9)](https://www.reddit.com/r/androiddev/comments/hk3hrq/were_on_the_android_engineering_team_ask_us/)
-- url: https://www.reddit.com/r/androiddev/comments/hk3hrq/were_on_the_android_engineering_team_ask_us/
+## [1][App Feedback Thread - July 04, 2020](https://www.reddit.com/r/androiddev/comments/hl2jor/app_feedback_thread_july_04_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/hl2jor/app_feedback_thread_july_04_2020/
 ---
-We’re the Android engineering team, and we are excited to participate in another AMA on [r/androiddev](https://www.reddit.com/r/androiddev/) next week, on **July 9th**!
+This thread is for getting feedback on your own apps.
 
-For our [launch](https://android-developers.googleblog.com/2020/06/unwrapping-android-11-beta-plus-more.html) of the [Android 11 Beta](http://d.android.com/android11), we introduced [\#11WeeksOfAndroid](https://developer.android.com/11weeksofandroid), where next week we’re diving deep into Android 11 Compatibility, with a look at some of the new tools and milestones. As part of the week, we’re hosting an AMA on the recent updates we’ve made to the platform in Android 11.
+####Developers:
 
-This is your chance to ask us *technical* questions related to Android 11 features and changes. Please note that we want to keep the conversation focused strictly on the engineering of the platform.
+- must **provide feedback** for others
+- must include **Play Store**, **GitHub**, or **BitBucket** link
+- must make top level comment
+- must make effort to respond to questions and feedback from commenters
+- may be open or closed source
 
-&amp;#x200B;
+####Commenters:
 
-We'll start answering questions on **Thursday, July 9 at 12:00 PM PST / 3:00 PM EST (UTC 1900)** and will continue until 1:20 PM PST / 4:20 PM EST. **Feel free to submit your questions ahead of time**. This thread will be used for both questions and answers. Please adhere to our [community guidelines](https://developer.android.com/community-guidelines) when participating in this conversation.
+- must give **constructive feedback** in replies to top level comments
+- must not include links to other apps
 
-&amp;#x200B;
+To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
 
-**We’ll have many participants in this AMA from across Android, including:**
+As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
 
-* [Chet Haase](https://www.reddit.com/u/chethaase), Android Chief Advocate, Developer Relations
-* [Dianne Hackborn](https://www.reddit.com/user/hackbod), Manager of the Android framework team (Resources, Window Manager, Activity Manager, Multi-user, Printing, Accessibility, etc.)
-* [Jacob Lehrbaum](https://www.reddit.com/user/jlehrbaum), Director, Android Developer Relations
-* [Romain Guy](https://www.reddit.com/user/romainguy/), Manager of the Android Toolkit/Jetpack team
-* [Stephanie Cuthbertson](https://www.reddit.com/user/steph---), Senior Director of Product Management, Android
-* [Yigit Boyar](https://www.reddit.com/user/yboyar), TLM on Architecture Components; +RecyclerView, +Data Binding
-* Adam Powell, TLM on UI toolkit/framework; views, Compose
-* Ian Lake, Software Engineer, Jetpack (Fragments, Activity, Navigation, Architecture Components)
-
-&amp;#x200B;
-
-**Other upcoming AMAs include:**
-
-1. Android Studio AMA on July 30th (part of the “Android Developer Tools” week of #11WeeksOfAndroid)
-2. Android Jetpack &amp; Jetpack Compose on August 27th (part of the “UI” week of #11WeeksOfAndroid)
+\- Da Mods
 ## [2][Weekly Questions Thread - June 29, 2020](https://www.reddit.com/r/androiddev/comments/hhxrtu/weekly_questions_thread_june_29_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/hhxrtu/weekly_questions_thread_june_29_2020/
 ---
@@ -49,49 +40,81 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Google's Maven Repo got a new design](https://www.reddit.com/r/androiddev/comments/hkgmm0/googles_maven_repo_got_a_new_design/)
+## [3][Feedback - Fluid Card Animation Android](https://www.reddit.com/r/androiddev/comments/hkzb39/feedback_fluid_card_animation_android/)
+- url: https://www.reddit.com/r/androiddev/comments/hkzb39/feedback_fluid_card_animation_android/
+---
+&amp;#x200B;
+
+https://reddit.com/link/hkzb39/video/erg3zsi0ks851/player
+
+Hello guys,
+
+I had currently shaw an animation on  Dribbble  [https://dribbble.com/shots/6442474-Fluid-Card-Open-Source](https://dribbble.com/shots/6442474-Fluid-Card-Open-Source)  which is created by Cuberto lab in after effect so,  I tried to implement in android using avd
+
+Do check out animation at  [https://github.com/pratikKataria/FluidCard](https://github.com/pratikKataria/FluidCard)
+
+&amp;#x200B;
+
+https://preview.redd.it/gyvq7ozmls851.png?width=1920&amp;format=png&amp;auto=webp&amp;s=5b6a61b39cdb62daa1881d713572fc2368495cc8
+## [4][I just released my first android library, WheelView](https://www.reddit.com/r/androiddev/comments/hkzg2a/i_just_released_my_first_android_library_wheelview/)
+- url: https://www.reddit.com/r/androiddev/comments/hkzg2a/i_just_released_my_first_android_library_wheelview/
+---
+&amp;#x200B;
+
+https://i.redd.it/l3sxu1yhms851.gif
+
+\[LINK\] [https://github.com/psuzn/WheelView](https://github.com/psuzn/WheelView)
+## [5][Any developers having issues with their apps getting killed on OnePlus phones?](https://www.reddit.com/r/androiddev/comments/hkt6io/any_developers_having_issues_with_their_apps/)
+- url: https://www.reddit.com/r/androiddev/comments/hkt6io/any_developers_having_issues_with_their_apps/
+---
+Hi guys. I'm an editor at Android Police. I'm working on a story regarding background app issues on OnePlus devices, and I'm looking for some anecdotes and technical details from developers that may have run into issues with the overly aggressive background app management present on OnePlus phones.
+
+Anecdotally, I think even some consumers know know it's an issue on OnePlus devices because of things like delayed notifications, but I've spoken to a handful of app developers that claim Oxygen OS's aggressive background app management doesn't just result in issues with their apps working correctly (as they do on other Android devices), but also extra support overhead: A disproportionately larger number of support tickets come from customers with OnePlus phones.
+
+OnePlus [previously said they'd do something to fix aggressive background app killing](https://www.androidpolice.com/2019/09/10/oneplus-promises-to-stop-killing-apps-in-the-background/), but according to the developers I have already spoken to, our own experiences at Android Police with delayed notifications on OnePlus devices, and our tests with [the new DontKillMyApp benchmark](https://www.androidpolice.com/2020/07/02/dontkillmyapp-is-a-new-benchmark-for-how-aggressively-your-phone-kills-background-apps/), they either haven't addressed the issue, or they've done too little to fix it.
+
+I am currently in contact with the company trying to get that to change, and I'm working on a story regarding the issue to increase that pressure. This post has been approved by the /r/androiddev mods, and I'd really like to hear any issues you may have run into as a developer when it comes to this problem.
+
+Feel free to reach out to me either here via PM or through [any of my listed contact details](https://www.androidpolice.com/author/ryne-hager/) including email at our site.
+## [6][Google Codelab with instructions to simulate process death](https://www.reddit.com/r/androiddev/comments/hkojvg/google_codelab_with_instructions_to_simulate/)
+- url: https://codelabs.developers.google.com/codelabs/kotlin-android-training-complex-lifecycle/#4
+---
+
+## [7][Can someone explain the pros and cons of MVI vs MVP, vs MVVM, vs MVC?](https://www.reddit.com/r/androiddev/comments/hkt2zz/can_someone_explain_the_pros_and_cons_of_mvi_vs/)
+- url: https://www.reddit.com/r/androiddev/comments/hkt2zz/can_someone_explain_the_pros_and_cons_of_mvi_vs/
+---
+
+## [8][Any recommendations for an emulator for testing games?](https://www.reddit.com/r/androiddev/comments/hl0sxu/any_recommendations_for_an_emulator_for_testing/)
+- url: https://www.reddit.com/r/androiddev/comments/hl0sxu/any_recommendations_for_an_emulator_for_testing/
+---
+I am developing for Android with Unity and would like to test the Google Play Service integration. It seems that uploading for internal test via the play console is taking some time, I was wondering if anyone has any good experience with an emulator to quickly test a build?
+
+Thanks
+## [9][Google's Maven Repo got a new design](https://www.reddit.com/r/androiddev/comments/hkgmm0/googles_maven_repo_got_a_new_design/)
 - url: https://i.redd.it/iuqdtohubm851.png
 ---
 
-## [4][Android Versioning Gradle Plugin - APK/AAB renaming, version by git commit count/tag](https://www.reddit.com/r/androiddev/comments/hkg6i4/android_versioning_gradle_plugin_apkaab_renaming/)
-- url: https://github.com/nanogiants/android-versioning
+## [10][Android Codebase Modernisation](https://www.reddit.com/r/androiddev/comments/hl2tc2/android_codebase_modernisation/)
+- url: https://proandroiddev.com/android-legacy-codebase-refactoring-ade849d9b55f
 ---
 
-## [5][Anubis Malware attacks Turkish banks - Technical Reverse Engineering report - March 2020](https://www.reddit.com/r/androiddev/comments/hkfc5a/anubis_malware_attacks_turkish_banks_technical/)
-- url: https://androidreverse.wordpress.com/2020/06/30/reverse-engineering-of-the-anubis-malware%e2%80%8a-%e2%80%8apandemistek-intended-for-the-turkish-market/?preview=true
+## [11][Has anyone done an Amazon Pay integration in Android?](https://www.reddit.com/r/androiddev/comments/hl2dxj/has_anyone_done_an_amazon_pay_integration_in/)
+- url: https://www.reddit.com/r/androiddev/comments/hl2dxj/has_anyone_done_an_amazon_pay_integration_in/
 ---
+I'm trying to integrate Amazon Pay into my app.
 
-## [6][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/hkid8e/weekly_anything_goes_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/hkid8e/weekly_anything_goes_thread/
----
-Here's your chance to talk about whatever!
+https://developer.amazon.com/docs/eu/amazon-pay-onetime/amazon-pay-and-login-with-amazon-introduction.html
 
-Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
+However it says:
 
-Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
-## [7][Major Factors to Consider When Choosing a Website Design Company](https://www.reddit.com/r/androiddev/comments/hkjo12/major_factors_to_consider_when_choosing_a_website/)
-- url: https://www.reddit.com/r/androiddev/comments/hkjo12/major_factors_to_consider_when_choosing_a_website/
----
-[Sparx IT Solutions](https://www.sparxitsolutions.com/web-design.shtml) ensures to deliver cutting-edge website design services, globally! We are adept at designing responsive, fast-loading, and user-friendly websites that offer an intriguing look and feel across different web browsers.
-## [8][Getting rid of TikTok? Build your own using this tiny library! Happy The Independent Day.](https://www.reddit.com/r/androiddev/comments/hkjnse/getting_rid_of_tiktok_build_your_own_using_this/)
-- url: https://ene.im/2020/07/03/clone-tiktok-using-kohii
----
+Note: The Amazon Pay and Login with Amazon services have been designed and developed for use within a web browser only. Our services cannot be used within a native application (including, without limitation, iOS, Android, RIM, and Windows operating systems). Amazon Pay reserves the right to suspend the payment account of any user of our services that has implemented our service within a native application.
 
-## [9][Scrcpy help](https://www.reddit.com/r/androiddev/comments/hkiwtf/scrcpy_help/)
-- url: https://www.reddit.com/r/androiddev/comments/hkiwtf/scrcpy_help/
----
-I am using the gui version of scrcpy, and the quality is great compared to the terminal version. But there is lag. How would I fix this? It is annoying as a am using it for media purposes.
-## [10][Top Android Projects with Source Code](https://www.reddit.com/r/androiddev/comments/hki4mz/top_android_projects_with_source_code/)
-- url: https://googleweblight.com/i?u=https://data-flair.training/blogs/android-projects-with-source-code/
----
+Not sure what this means, because they have a Java SDK
 
-## [11][[Discussion] Android Developers of Reddit, What are the Harsh Truths that People should know about being a Android Developer?](https://www.reddit.com/r/androiddev/comments/hjs5yx/discussion_android_developers_of_reddit_what_are/)
-- url: https://www.reddit.com/r/androiddev/comments/hjs5yx/discussion_android_developers_of_reddit_what_are/
----
-I took inspiration from [r/ITCareerQuestions](https://www.reddit.com/r/ITCareerQuestions/) and I want to hear on the Android Developers specifically so I want to hear the harsh truths that newcomers should know before choosing to be a Android Developer?
+https://github.com/amzn/amazon-pay-sdk-java
 
-Also, do you have to be good at Math? Or a College Degree would help or required?
-## [12][Phrase provides a way to translate user-generated content to any target language using different translation engines or options of your choice.](https://www.reddit.com/r/androiddev/comments/hk6j2y/phrase_provides_a_way_to_translate_usergenerated/)
-- url: https://github.com/KingsMentor/Phrase
+would that not work with Android?
+## [12][Free idea](https://www.reddit.com/r/androiddev/comments/hl1xuz/free_idea/)
+- url: https://www.reddit.com/r/androiddev/comments/hl1xuz/free_idea/
 ---
-
+Is there an app to search words by definition? A reverse dictionary ? For people that forget words.. I know there's a word for this but I forgot it

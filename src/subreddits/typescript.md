@@ -22,13 +22,120 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Valuable compiler options](https://www.reddit.com/r/typescript/comments/hkhdur/valuable_compiler_options/)
+## [2][Typescript and mutually exclusive variables ?](https://www.reddit.com/r/typescript/comments/hl1af0/typescript_and_mutually_exclusive_variables/)
+- url: https://www.reddit.com/r/typescript/comments/hl1af0/typescript_and_mutually_exclusive_variables/
+---
+I know that there are Boolean types for true or false. However I would like to have a value pairs, or some might call them interdependent polarities. The world around us is full of that. Like temperature = is warm or is cold. Or age = young vs old. Light = dark | bright. I was thinking about two methods in an object that will set to true or false the corresponding properties. But again, these are propreties and not actual variables. Or maybe there is some other way? It must be simpler than I think it is
+## [3][WHERE to put my types/interfaces?](https://www.reddit.com/r/typescript/comments/hknqf4/where_to_put_my_typesinterfaces/)
+- url: https://www.reddit.com/r/typescript/comments/hknqf4/where_to_put_my_typesinterfaces/
+---
+Hey,  
+So, I am working on my first TS project and I want to make sure I start off correctly.   
+What is the general concensus in terms of architecture? This is a website, not a library.  
+
+
+1. Do you have your types/interfaces in a seperate file?
+   1. If so, do you name it with a '\*.d.ts" or is that ONLY for libraries/modules to be used outside the codebase?
+2. Do you put your types IN the same file that is being used? If you have to re-use that type to you just export it? (won't that get a bit disorganized after a while?)
+3. Do you have a "types" folder that you define by feature?
+
+&amp;#8203;
+
+    /src
+      /src/products
+         --- product.tsx
+         --- product.types.ts // these can be used in this feature or wherever?
+
+Basically, what I am asking is HOW do you structure your typings that is robust &amp; expandable?
+## [4][Why isn't filter kicking out undefined from this array?](https://www.reddit.com/r/typescript/comments/hkndzx/why_isnt_filter_kicking_out_undefined_from_this/)
+- url: https://www.reddit.com/r/typescript/comments/hkndzx/why_isnt_filter_kicking_out_undefined_from_this/
+---
+       protected validateAndSetSentenceCandidates(candidates: string[]) {
+          const passedAndUndefined: Array&lt;Sentence | undefined&gt; = candidates
+             .map(candidate =&gt; {
+                if (candidate.length &gt;= 2) {
+                   return new Sentence(candidate);
+                }
+                // else undefined returned implicitly
+             });
+    
+          const passedTest: Sentence[] = passedAndUndefined
+             .filter((item: Sentence | undefined) =&gt; item !== undefined);
+          // .filter((item: Sentence | undefined) =&gt; typeof item !== "undefined");
+    
+    */
+    const passedTest: Sentence[]
+    Type '(Sentence | undefined)[]' is not assignable to type 'Sentence[]'.
+      Type 'Sentence | undefined' is not assignable to type 'Sentence'.
+        Type 'undefined' is not assignable to type 'Sentence'.ts(2322)
+    /*
+
+Both attempts to filter them out above failed
+## [5][How to tell TS a certain path is unreachable?](https://www.reddit.com/r/typescript/comments/hkpin3/how_to_tell_ts_a_certain_path_is_unreachable/)
+- url: https://www.reddit.com/r/typescript/comments/hkpin3/how_to_tell_ts_a_certain_path_is_unreachable/
+---
+Without the final (hacky) return statement on the empty string, Typescript demands that the return type include `void`. But the `while` loop should never exit without returning a string.
+
+Is there any way to tell TS this? Or is this hack necessary?
+
+       protected getValidInput(configStep: WizardSteps): string {
+          while (true) {
+             const rawInput: string = configStep.prompt();
+    
+             // check for an exit value
+             this.exitCheck(rawInput);
+    
+             const inputIsValid: boolean = configStep.validateInput(rawInput);
+    
+             if (inputIsValid) {
+                return rawInput;
+             } else {
+                console.log(configStep.invalidInputMessage)
+             }
+          }
+    
+          // unreachable code, needed for TS compiler
+          return "";
+       }
+## [6][Valuable compiler options](https://www.reddit.com/r/typescript/comments/hkhdur/valuable_compiler_options/)
 - url: https://www.reddit.com/r/typescript/comments/hkhdur/valuable_compiler_options/
 ---
 After forgetting `strictNullChecks` I've forgotten how helpful it is to constantly have to account for `null | undefined` during my initial drafting phase.
 
 Any others you guys would promote for most projects? I also have `noImplicitAny`, and of course the `esModuleInterop`
-## [3][TS2464: A computed property name must be of type 'string', 'number', 'symbol', or 'any'. 54 [x.y] : z](https://www.reddit.com/r/typescript/comments/hkiodn/ts2464_a_computed_property_name_must_be_of_type/)
+## [7][Cannot invoke an object which is possibly 'undefined'.ts(2722)](https://www.reddit.com/r/typescript/comments/hklt5q/cannot_invoke_an_object_which_is_possibly/)
+- url: https://www.reddit.com/r/typescript/comments/hklt5q/cannot_invoke_an_object_which_is_possibly/
+---
+Only the Not Null assertion operator (!) on validateFile worked below, not any of the other attempts at constraining null/undefined:
+
+          const configData = this.steps.reduce(
+             (accumulator: Partial&lt;ConfigData&gt;, currentStepInstance: NonNullable&lt;WizardSteps&gt;): Partial&lt;ConfigData&gt; =&gt; {
+    
+             if (currentStepInstance.needsFileValidation &amp;&amp; currentStepInstance.hasOwnProperty("validateFile")) { // also tried "in" keyword
+    
+    // (parameter) currentStepInstance: WizardSteps
+    // Cannot invoke an object which is possibly 'undefined'.ts(2722)
+                currentStepInstance.validateFile!();
+             }
+
+In general I try to avoid the ! operator as it isn't always honest. Is it necessary here or is there a better way?
+
+The interface:
+
+    export default interface WizardSteps {
+       readonly hasSaveableData: boolean
+       , readonly needsFileValidation: boolean
+       , readonly invalidInputMessage?: string
+       , readonly configDataKey?: string
+    
+       , explain(): void
+       , prompt(): string
+       , validateInput(userInput?: string): boolean
+       , validateFile?(filePath?: string): boolean
+    }
+
+&amp;#x200B;
+## [8][TS2464: A computed property name must be of type 'string', 'number', 'symbol', or 'any'. 54 [x.y] : z](https://www.reddit.com/r/typescript/comments/hkiodn/ts2464_a_computed_property_name_must_be_of_type/)
 - url: https://www.reddit.com/r/typescript/comments/hkiodn/ts2464_a_computed_property_name_must_be_of_type/
 ---
     // TS2464: A computed property name must be of type 'string', 'number', 'symbol', or 'any'.
@@ -44,7 +151,7 @@ The below syntax didn't work, how should it be written?
                    [currentStepInstance.configDataKey: string] : validatedUserInput
                 });
              }
-## [4][How do I de-structure express request.body without "Unsafe assignment of an any value." error?](https://www.reddit.com/r/typescript/comments/hk1mp8/how_do_i_destructure_express_requestbody_without/)
+## [9][How do I de-structure express request.body without "Unsafe assignment of an any value." error?](https://www.reddit.com/r/typescript/comments/hk1mp8/how_do_i_destructure_express_requestbody_without/)
 - url: https://www.reddit.com/r/typescript/comments/hk1mp8/how_do_i_destructure_express_requestbody_without/
 ---
 I am very new to typescript and when vscode threw that error after doing some search I mixed few stuffs from the results and came up with this solution.
@@ -58,7 +165,7 @@ I am very new to typescript and when vscode threw that error after doing some se
  `const { name, email, password } = body;`
 
 How can I improve this as it seems a lot of code for de-structuring.
-## [5][How to deal with array of different class instances in typescript](https://www.reddit.com/r/typescript/comments/hk2z2a/how_to_deal_with_array_of_different_class/)
+## [10][How to deal with array of different class instances in typescript](https://www.reddit.com/r/typescript/comments/hk2z2a/how_to_deal_with_array_of_different_class/)
 - url: https://www.reddit.com/r/typescript/comments/hk2z2a/how_to_deal_with_array_of_different_class/
 ---
 So my code looks like this:
@@ -108,7 +215,7 @@ A Entity class which extends BaseEntity with all the getters, one for each compo
     }
     export class Player extends Entity {}
     export class Monster extends Entity {}
-## [6][Type 'string' is not assignable to type '"X" | "Y" | "Z"'](https://www.reddit.com/r/typescript/comments/hjvw3n/type_string_is_not_assignable_to_type_x_y_z/)
+## [11][Type 'string' is not assignable to type '"X" | "Y" | "Z"'](https://www.reddit.com/r/typescript/comments/hjvw3n/type_string_is_not_assignable_to_type_x_y_z/)
 - url: https://www.reddit.com/r/typescript/comments/hjvw3n/type_string_is_not_assignable_to_type_x_y_z/
 ---
 Recently I had to use the `ReturnType` generic type constructor to build a type for me, that was the return shape of an obsurely documented method in Google Text To Speech's API:
@@ -172,69 +279,3 @@ But now the title error shows on the error-commented lines below. I thought a sp
     
       The types of 'audioConfig.audioEncoding' are incompatible between these types.
         Type 'string' is not assignable to type '"OGG_OPUS" | "AUDIO_ENCODING_UNSPECIFIED" | "LINEAR16" | "MP3"'. ts(2345)
-## [7][epubjs library](https://www.reddit.com/r/typescript/comments/hjrtwl/epubjs_library/)
-- url: https://www.reddit.com/r/typescript/comments/hjrtwl/epubjs_library/
----
-I am new with typescript and I had before .net / C# experience, nowadays I am dealing with typescript epubjs library. I developed epub-reader component and it is working as it should work, but there are cases with some epub files, where first page of book is always aligned on left side, when normally is on center. Those alignments are setup on popup window where you can choose "spread to one page" OR "spread to two pages"
-
-&amp;#x200B;
-
-dialog example : 
-
-    &lt;mat-radio-group [(ngModel)]="epubTextOptions.selectedTwoPages" class="inline-button"&gt; &lt;mat-radio-button [value]="false" [checked]="!epubTextOptions.selectedTwoPages" class="inline-button"&gt;{{'reader.textOptions.dialog.onePage' | translate}}&lt;/mat-radio-button&gt; &lt;mat-radio-button [value]="true" [checked]="epubTextOptions.selectedTwoPages" class="inline-button"&gt;{{'reader.textOptions.dialog.twoPages' | translate}}&lt;/mat-radio-button&gt; &lt;/mat-radio-group&gt;
-
- typescript example:  
-
-    export class MyClass implements OnInit {   book: Book;   rendition: Rendition; private myMethod() { this.rendition = this.book.renderTo(this.ePub.nativeElement, {       width: '100%',       height: '100%' }); this.rendition.spread(this.epubTextOptions.selectedTwoPages ? 'always' : 'none'); } }
-
- html component : 
-
-    &lt;div id="epubContent" class="d-flex align-items-center" [style.height]="contentHeight + 'px'"&gt; &lt;app-button *ngIf="displayPrevPageButton() &amp;&amp; !isMobileDevice()" (btnClick)="prevPage()"               btnClass="mat-icon-button epub-action"&gt;&lt;span class="far fa-chevron-left"&gt;&lt;/span&gt;&lt;/app-button&gt; &lt;div #ePub class="epub-container"&gt;&lt;/div&gt; &lt;app-button *ngIf="displayNextPageButton() &amp;&amp; !isMobileDevice()" (btnClick)="nextPage()"               btnClass="mat-icon-button epub-action"&gt;&lt;span class="far fa-chevron-right"&gt;&lt;/span&gt;&lt;/app-button&gt; &lt;/div&gt;
-
- Everything is implemented from epubjs library examples and adapted to reader, but as I said with most of epub spread() functionality is working, but there are epub files, where first page align to left side when "one page" is selected instead of center align. Maybe some how I can check if file have no more than one page and if yes, then force to align to center?
-## [8][TIL What TypeScript Is](https://www.reddit.com/r/typescript/comments/hj8azp/til_what_typescript_is/)
-- url: https://www.reddit.com/r/typescript/comments/hj8azp/til_what_typescript_is/
----
-So last night, I finally watched a short intro on what exactly typescript is, and... Wow.
-
-I wish I had known about this years ago; as someone who loves languages like C++, and never really was a fan of JS, TS makes the web world so much more inviting.
-
-Anyway, happy to be here, sad it took me so long to learn about it.
-## [9][How often do you guys use the NotNullable utility type constructor?](https://www.reddit.com/r/typescript/comments/hjssdd/how_often_do_you_guys_use_the_notnullable_utility/)
-- url: https://www.reddit.com/r/typescript/comments/hjssdd/how_often_do_you_guys_use_the_notnullable_utility/
----
-Seems especially useful for kicking undesired null or undefined values out of an expected API response type.
-
-For my own defined types, I thought it was not needed since they are already sharply defined. But this video says TS allows any type definition to be overridden by null/undefined by default, which surprised me: [https://www.youtube.com/watch?v=Fgcu\_iB2X04?m=16&amp;s=20](https://www.youtube.com/watch?v=Fgcu_iB2X04?m=16&amp;s=20)
-## [10][Checking for interface collisions .](https://www.reddit.com/r/typescript/comments/hjif2w/checking_for_interface_collisions/)
-- url: https://www.reddit.com/r/typescript/comments/hjif2w/checking_for_interface_collisions/
----
-Imagine having multiple different interfaces that all together are mixed into a big interface .
-
-Before some time I [asked](https://www.reddit.com/r/typescript/comments/gab4ic/how_to_make_ts_or_eslint_or_vscode_warn_me_about/) how can I check for collisions when I merge two interfaces and I got an answer that worked . Here is a more simple version of it :
-
-    type isNever&lt;T extends never&gt; = T;
-    //I just look if I get a linting error in the following type 
-    //If yes then there is a collision
-    type mustBeNever = isNever&lt;keyof interface1 &amp; keyof interface2&gt;;
-
-Now I have to merge more than two interfaces . With that way , for n interfaces I need to do `n!/(2!(n-2)!) = n(n-1)/2` manual checks (if you are interested in how that number is calculated take a look [here](https://en.wikipedia.org/wiki/Combination)) , something that is not practical .
-
-Is there any solution via using a type function like I have already done that is not unpractical or should I create a unit test ?
-## [11][How to ensure the right function is called with the right arguments?](https://www.reddit.com/r/typescript/comments/hjlrr1/how_to_ensure_the_right_function_is_called_with/)
-- url: https://www.reddit.com/r/typescript/comments/hjlrr1/how_to_ensure_the_right_function_is_called_with/
----
-Suppose I've got a login and a logout function:
-
-    login(creds: { user: string, pass: string }): string;
-    logout(token: string): void;
-
-And a handler decides which function to call depending on a variable:
-
-    let f = command === 'login' ? login : logout;
-    let x = command === 'login' ? creds : token;
-    return f(x);
-
-I know that if f is logout, then x is going to be a string. Likewise if f is login, then x is going to be a credentials object. Can you help to model that?
-
-Thanks!

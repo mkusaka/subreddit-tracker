@@ -11,11 +11,75 @@ As an experiment, let's try doing Q&amp;A about the design here in Reddit.
 My hope is that the threading support will help keep questions and answers matched.
 
 **Please start a new top-level comment for each new question.**
-## [2][Github-like calendar heatmap in plain Go](https://www.reddit.com/r/golang/comments/hkgcz9/githublike_calendar_heatmap_in_plain_go/)
-- url: https://github.com/nikolaydubina/calendarheatmap
+## [2][What is the most idiomatic way of getting input from the terminal?](https://www.reddit.com/r/golang/comments/hkz1im/what_is_the_most_idiomatic_way_of_getting_input/)
+- url: https://www.reddit.com/r/golang/comments/hkz1im/what_is_the_most_idiomatic_way_of_getting_input/
+---
+I have been spoilt by the simple `input()` function in Python. 
+
+What is the most simple way of getting input from an external source? I have made several google searches and everyone often seems to recommend using different methods.
+
+There is a `bufio.NewReader`. There is also a `bufio.NewScanner` , and then there's also a `fmt.Scanln`...
+## [3][An opinionated guideline for structuring web applications/services](https://www.reddit.com/r/golang/comments/hl2fnw/an_opinionated_guideline_for_structuring_web/)
+- url: https://www.reddit.com/r/golang/comments/hl2fnw/an_opinionated_guideline_for_structuring_web/
+---
+hello all, I made an opinionated guideline for creating/structuring a web application. I’ve seen a few out there some felt too complex, and some seemed confusing. I tried using a sample (non-functional app) app to explain how to make use of the structure. And explain why things are setup the way they are. Hope you find it useful! [https://github.com/bnkamalesh/goapp](https://github.com/bnkamalesh/goapp)
+## [4][Ways to avoid an import cycle when keeping interface definition and implementation separate ?](https://www.reddit.com/r/golang/comments/hkzbou/ways_to_avoid_an_import_cycle_when_keeping/)
+- url: https://www.reddit.com/r/golang/comments/hkzbou/ways_to_avoid_an_import_cycle_when_keeping/
+---
+Hi everyone!
+
+I've been writing a go application in which I've two packages: a "db" package that interacts with database to execute queries and a "X" package that imports "db" and uses its methods. "db" package defines an interface and I've kept the implementation of this interface in the same package, which is "db" itself:
+
+    package db
+    
+    type Store interface {
+        GetUserByID(ctx context.Context, userID string) (user, error)
+        GetUserByName(ctx context.Context, name string) (user, error)
+    }
+
+&amp;#x200B;
+
+    package db
+    
+    type postgresClient struct {}
+    
+    func New() Store {
+        return postgresClient{}
+    }
+    
+    func (pg postgresClient) GetUserByID(ctx context.Context, userID string) ...
+    func (pg postgresClient) GetUserByName(ctx context.Context, name string) ...
+
+&amp;#x200B;
+
+    package X
+    
+    type x struct {
+        store db.Store
+    }
+    
+    func NewX() x {
+        dbInstance := db.New()
+        
+        return x{store: dbInstance}
+    }
+
+I've found that interfaces should be defined where they are being used. But If I had defined the "Store" interface inside the "X" package then I'd have to import it inside "db" package and that would create an import cycle. In that case, I would require a third package to initialize a "postgresClient" instance and pass it to the "New" function of package "X". But, With my current approach, I just need two packages.
+
+It would be very helpful to know how would you guys structure the above application, keeping the interface definition and implementation in separate packages. I understand that there's no absolute solution to this and it totally depends on the use case, application etc, but getting some ideas would definitely help me.
+
+Note: This might be a very silly question but please bear with me, I'm still learning. Thanks for your patience and efforts.
+
+EDIT: I forgot to mention that the "user" type currently lives in the "db" package but according to the business logic it makes more sense to keep it inside package "X" but just to avoid import cycle, I kept it inside "db" package.  So, to add more complexity to my question, in addition to having interfaces defined inside package "X", I would also want to keep the "user" type inside "X".
+## [5][Canvas API built with Gio](https://www.reddit.com/r/golang/comments/hkzz12/canvas_api_built_with_gio/)
+- url: https://github.com/ajstarks/giocanvas
 ---
 
-## [3][Started learning Go today. Is my understanding correct that GOPATH is no longer required in favour of Go modules?](https://www.reddit.com/r/golang/comments/hkishj/started_learning_go_today_is_my_understanding/)
+## [6][Finding the correct PATH](https://www.reddit.com/r/golang/comments/hl0jfa/finding_the_correct_path/)
+- url: https://blog.haroldadmin.com/finding-right-path/
+---
+
+## [7][Started learning Go today. Is my understanding correct that GOPATH is no longer required in favour of Go modules?](https://www.reddit.com/r/golang/comments/hkishj/started_learning_go_today_is_my_understanding/)
 - url: https://www.reddit.com/r/golang/comments/hkishj/started_learning_go_today_is_my_understanding/
 ---
 My [Go Programming Language](https://www.gopl.io/) book mentions the use of GOPATH as a means to store Go code related to source files, packages and a bin directory. I'm slightly confused about this, does that mean that the only place I can write go code would be in the $GOPATH ?
@@ -25,131 +89,19 @@ Also, [go w/tests](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/i
 Truth be told, I haven't researched into the benefits of Go modules too much as of yet as I'm just trying to set up my local Go environment before I start coding. It seems that I should just forget about GOPATH and just get cracking with code. Would anyone be able to ease my mind off this issue?
 
 Much appreciated :)
-## [4][Size doesn't matter](https://www.reddit.com/r/golang/comments/hjuyfv/size_doesnt_matter/)
-- url: https://i.redd.it/m5tjssbydf851.jpg
+## [8][An introduction to concurrency in Go (as a beginner)](https://www.reddit.com/r/golang/comments/hkn4tj/an_introduction_to_concurrency_in_go_as_a_beginner/)
+- url: https://therebelsource.com/blog/an-introduction-to-concurrency-in-go-as-a-beginner/wBHuGLZRt0l
 ---
 
-## [5][How do you deal with private dependencies in CI?](https://www.reddit.com/r/golang/comments/hkiyfo/how_do_you_deal_with_private_dependencies_in_ci/)
-- url: https://www.reddit.com/r/golang/comments/hkiyfo/how_do_you_deal_with_private_dependencies_in_ci/
+## [9][will Go generics remove the need of the interface{} wildcard type?](https://www.reddit.com/r/golang/comments/hl2402/will_go_generics_remove_the_need_of_the_interface/)
+- url: https://www.reddit.com/r/golang/comments/hl2402/will_go_generics_remove_the_need_of_the_interface/
 ---
-What are people doing for private dependencies these days in your CI?
-
-Vendoring? Do you put credentials into your builder nodes? SSH key? Access token?
-
-What's considered standard these days?
-## [6][Is it possible to get multiple AWS S3 object tags in batch using Go?](https://www.reddit.com/r/golang/comments/hkipr3/is_it_possible_to_get_multiple_aws_s3_object_tags/)
-- url: https://www.reddit.com/r/golang/comments/hkipr3/is_it_possible_to_get_multiple_aws_s3_object_tags/
----
-Hello everyone, I asked the following question on StackOverflow too but did not receive a response. I was wondering if anyone here could help me.
-
-Suppose I have a given bucket name `bucket` and a slice of (string) item keys `keys`. I can get the tags for all of these objects by doing the following:
-
-    sess, _ := session.NewSession(&amp;aws.Config{
-    	Region: aws.String("eu-west-2"),
-    })
-    
-    svc := s3.New(sess)
-    
-    for _, key := range(keys) {
-        response, _ := svc.GetObjectTagging(
-            &amp;s3.GetObjectTaggingInput{
-    	        Bucket: aws.String(bucket),
-    	        Key:    aws.String(key),
-    	    }
-        )
-    	fmt.Println(response.TagSet)
-    }
-
-In my program, I am finding this quite slow. Is there a way to get all the tags in one go, instead of calling this multiple times?
-
-Any help would be much appreciated, thank you.
-## [7][WaitGroup in Go](https://www.reddit.com/r/golang/comments/hkibg3/waitgroup_in_go/)
-- url: https://chenpy.com/article/87235493714501274
+Basically a generic type T without any constraints is the interface{} type? So will this replace the use of interface{} in go code? Will generics break compatibility or best practices and when will they arrive in the language?
+## [10][Github-like calendar heatmap in plain Go](https://www.reddit.com/r/golang/comments/hkgcz9/githublike_calendar_heatmap_in_plain_go/)
+- url: https://github.com/nikolaydubina/calendarheatmap
 ---
 
-## [8][A Journey building a fast JSON parser and full JSONPath, Oj for Go](https://www.reddit.com/r/golang/comments/hk1hm6/a_journey_building_a_fast_json_parser_and_full/)
-- url: https://github.com/ohler55/ojg/blob/master/design.md
+## [11][Module and package management](https://www.reddit.com/r/golang/comments/hkzqz3/module_and_package_management/)
+- url: https://www.reddit.com/r/golang/comments/hkzqz3/module_and_package_management/
 ---
-
-## [9][How to substitute io.Reader for os.Stdin](https://www.reddit.com/r/golang/comments/hkgahy/how_to_substitute_ioreader_for_osstdin/)
-- url: https://www.reddit.com/r/golang/comments/hkgahy/how_to_substitute_ioreader_for_osstdin/
----
-I wanted to pass an `io.Reader` to a function to replace `os.Stdin` for testing. Unfortunately my function started behaving differently when using `strings.NewReader()`. Below is a simplified reproduction.
-
-The first line of `INPUT` gives the number of records I want to read from stdin. Each record consists of two lines: the number of integers and the integers separated by spaces.
-
-    package main
-    
-    import (
-    	"fmt"
-    	"io"
-    	"os"
-    	"strings"
-    )
-    
-    func main() {
-    	INPUT := `2
-    2
-    1 2
-    3
-    1 2 3
-    `
-    	fmt.Println(ReadInput(strings.NewReader(INPUT)))
-    	fmt.Println(ReadInput(os.Stdin))
-    }
-    
-    func ReadInput(reader io.Reader) [][]int {
-    	var countRecords int
-    	_, _ = fmt.Fscanln(reader, &amp;countRecords)
-    
-    	records := make([][]int, countRecords)
-    	for i := 0; i &lt; countRecords; i++ {
-    		var countNumbers int
-    		_, _ = fmt.Fscanln(reader, &amp;countNumbers)
-    
-    		numbers := make([]int, countNumbers)
-    		for j := 0; j &lt; countNumbers; j++ {
-    			fmt.Fscan(reader, &amp;numbers[j])
-    		}
-    
-    		records[i] = numbers
-    		// fmt.Fscanln(reader) // FIXME
-    	}
-    	return records
-    }
-
-If I `go run` this code, I get the following:
-
-    [[1 2] []]
-    ... [copy INPUT to Stdin]
-    [[1 2] [1 2 3]]
-
-Here I get the expected result (`[[1 2] [1 2 3]]`) when reading from `os.Stdin` but not from `strings.NewReader`.
-
-If I uncomment the last `Fscanln` marked with FIXME, I get the opposite:
-
-    [[1 2] [1 2 3]]
-    ... [copy INPUT to Stdin]
-    [[1 2] []]
-
-I would have expected this code to produce the same result with both `strings.NewReader` and `os.Stdin`. What is happening here?
-
-What can I substitute for `os.Stdin` in my test function?
-## [10][Go driven rpc code generation tool for right now.](https://www.reddit.com/r/golang/comments/hk6u9a/go_driven_rpc_code_generation_tool_for_right_now/)
-- url: https://github.com/pacedotdev/oto
----
-
-## [11][Which is the best way to convert int to string in golang ?](https://www.reddit.com/r/golang/comments/hkcgms/which_is_the_best_way_to_convert_int_to_string_in/)
-- url: https://www.reddit.com/r/golang/comments/hkcgms/which_is_the_best_way_to_convert_int_to_string_in/
----
-There are some solutions:
-
-1. stringValue = string(intValue)
-
-1. stringValue = strconv.Itoa(intValue)
-
-1. stringValue = fmt.Sprintf("%d", intValue)
-
-I checked a project by a Guru at Google Engineers (link below), they use the third one. Could someone explain why ?
-
-[https://github.com/google/exposure-notifications-server/blob/main/internal/database/connection.go](https://github.com/google/exposure-notifications-server/blob/main/internal/database/connection.go)
+Hi everyone, I'm new in go and I have a simple question. When I'm running `go get "some package"` it is just changing my go.mod file and adding the new package with the version, but actually it is not downloading to my $GOPATH/src/. I have run  the `go get` command in the $GOPATH and then it has downloaded. Is it the right way how it should work?

@@ -83,54 +83,92 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
-## [3][What do you prefer for styling?](https://www.reddit.com/r/reactjs/comments/hkhs0s/what_do_you_prefer_for_styling/)
+## [3][Screenshot.rocks - Web app to create browser mockups from screenshots](https://www.reddit.com/r/reactjs/comments/hl1l9b/screenshotrocks_web_app_to_create_browser_mockups/)
+- url: https://v.redd.it/gqemcgmhot851
+---
+
+## [4][Quick and Easy app: Vector Field Generator!](https://www.reddit.com/r/reactjs/comments/hklmz7/quick_and_easy_app_vector_field_generator/)
+- url: https://v.redd.it/g7g183qp0o851
+---
+
+## [5][I would love some feedback on my new project: React Capsule 💊, an easy to use and understand global state in under 1 kB with no Context API](https://www.reddit.com/r/reactjs/comments/hkykad/i_would_love_some_feedback_on_my_new_project/)
+- url: https://www.npmjs.com/package/react-capsule
+---
+
+## [6][Is there any case we have to use flexbox but grid of CSS layout?](https://www.reddit.com/r/reactjs/comments/hl2jn5/is_there_any_case_we_have_to_use_flexbox_but_grid/)
+- url: https://www.reddit.com/r/reactjs/comments/hl2jn5/is_there_any_case_we_have_to_use_flexbox_but_grid/
+---
+Just want to ask a question about flexbox and grid layout.
+
+I see some articles says combine flexbox and grid is correct the best solution of CSS layout  
+.
+
+But from what I can see, grid can do everything that flexbox can do, may I ask whether there is any case flexbox is better than grid?
+## [7][Modern React From The Beginning - Free Video Course You Can Use To Get Started With React](https://www.reddit.com/r/reactjs/comments/hl1ua7/modern_react_from_the_beginning_free_video_course/)
+- url: https://codingthesmartway.com/modern-react-from-the-beginning-course/
+---
+
+## [8][Shouldn't I create Row, Col components for the grid?](https://www.reddit.com/r/reactjs/comments/hl1jtx/shouldnt_i_create_row_col_components_for_the_grid/)
+- url: https://www.reddit.com/r/reactjs/comments/hl1jtx/shouldnt_i_create_row_col_components_for_the_grid/
+---
+I went to an interview and did a code test, the reviewer said the only part he does like my code is I had a Grid.tsx file includes Row, Col components. 
+
+In my code, in src/components/Grid.txs file, I have two components Row and Col like
+
+```
+export const Row: React.FC&lt;IRowProps&gt; = (props) =&gt; {
+   // ...
+}
+```
+and
+```
+export const Col: React.FC&lt;IColProps&gt; = (props) =&gt; {
+   // ...
+}
+```
+
+And in my other components, I can layout elements by
+```
+&lt;Row&gt;
+    &lt;Col unit={1}&gt;
+    &lt;Col unit={2}&gt;
+&lt;/Row&gt;
+```
+
+He said it's over-structured, I should just use flexbox to do that instead of having a separate component, may I ask whether I did it wrong, or it's just his personal preference?
+
+Thanks for any opinion. I just want to learn what's the correct way and improve. I am really confused now.
+## [9][Which one do you prefer/is better, grid or flexbox?](https://www.reddit.com/r/reactjs/comments/hl1xar/which_one_do_you_preferis_better_grid_or_flexbox/)
+- url: https://www.reddit.com/r/reactjs/comments/hl1xar/which_one_do_you_preferis_better_grid_or_flexbox/
+---
+
+
+[View Poll](https://www.reddit.com/poll/hl1xar)
+## [10][What do you prefer for styling?](https://www.reddit.com/r/reactjs/comments/hkhs0s/what_do_you_prefer_for_styling/)
 - url: https://www.reddit.com/r/reactjs/comments/hkhs0s/what_do_you_prefer_for_styling/
 ---
 
 
 [View Poll](https://www.reddit.com/poll/hkhs0s)
-## [4][Just finished implementing the dark-mode toggle on the hero section of my personal site - You've got to have fun with these things!](https://www.reddit.com/r/reactjs/comments/hjxblx/just_finished_implementing_the_darkmode_toggle_on/)
-- url: https://sld.codes/
+## [11][[off] where can I advertise a donation campaign to get a computer to work?](https://www.reddit.com/r/reactjs/comments/hl0ggm/off_where_can_i_advertise_a_donation_campaign_to/)
+- url: /r/djangolearning/comments/hkzfnq/off_where_can_i_advertise_a_donation_campaign_to/
 ---
 
-## [5][Need help with localIdentName, CSS- loader](https://www.reddit.com/r/reactjs/comments/hkh75h/need_help_with_localidentname_css_loader/)
-- url: https://www.reddit.com/r/reactjs/comments/hkh75h/need_help_with_localidentname_css_loader/
+## [12][Meet Astrale, the open source astrology app I've made with React Native and Expo (Python + Mongo)](https://www.reddit.com/r/reactjs/comments/hl0bjb/meet_astrale_the_open_source_astrology_app_ive/)
+- url: https://www.reddit.com/r/reactjs/comments/hl0bjb/meet_astrale_the_open_source_astrology_app_ive/
 ---
-Hello,  I have been learning React through a Udemy course.  Before beginning a project, I have to run npm run eject and modify the css-loader property (localIdentName) from webpack.config.dev.js, webpack.config.prodigy.js files. But, even after running the eject command, I don't see these files. Please help.
-## [6][Enjoy some art while quarentined](https://www.reddit.com/r/reactjs/comments/hkcwq3/enjoy_some_art_while_quarentined/)
-- url: https://www.reddit.com/r/reactjs/comments/hkcwq3/enjoy_some_art_while_quarentined/
----
-one of my first deployed projects with react. absolutely addicted now and tried to create an online art museum since we cant go out right now :( the api I used has tons of data so let me know any ideas to add I would love some feedback. github is linked through the site so enjoy! 
+Good morning!
 
-[Random Clicks Of Art](https://randomclicksofart.netlify.app/)
-## [7][React app performance issue](https://www.reddit.com/r/reactjs/comments/hkjn30/react_app_performance_issue/)
-- url: https://www.reddit.com/r/reactjs/comments/hkjn30/react_app_performance_issue/
----
-Hello all,
+These last months I have been developing an application with React Native + Expo. It's not that I like astrology, it was just an excuse to play with Python (For scraping) and NoSQL with Mongo. And also to learn more React and more Native!
 
-I have created a large react application. After building it for the production, it is taking a lot of time to lot and the \[number\].\[hash\].chunk.js file is more than 30MB. Due to which, it is taking more time. During code splitting by lazy loading is not helpful.
+Here you have the repo:
 
-Can you please suggest a way to optimize the performance?
-## [8][A directory of fully functional hosted features for your WebApp](https://www.reddit.com/r/reactjs/comments/hkjed2/a_directory_of_fully_functional_hosted_features/)
-- url: https://www.componently.com/
----
+[https://github.com/jvidalv/astrale](https://github.com/jvidalv/astrale)
 
-## [9][How do I prevent React-Bootstrap from resizing?](https://www.reddit.com/r/reactjs/comments/hkjdst/how_do_i_prevent_reactbootstrap_from_resizing/)
-- url: https://www.reddit.com/r/reactjs/comments/hkjdst/how_do_i_prevent_reactbootstrap_from_resizing/
----
-I made a searchbar for my navbar, but when ever I do searches it also expands the navbar because of the search options. How do I set it up so the options expand past the navbar without resizing navbar.
-## [10][Async Redux Actions using Hooks](https://www.reddit.com/r/reactjs/comments/hkim7c/async_redux_actions_using_hooks/)
-- url: https://able.bio/pepsighan/async-redux-actions-using-hooks--4a74c7f7
----
+You can run it on your device with Expo on this link:
 
-## [11][react-error-overlay is eating up a lot of CPU. What can I do?](https://www.reddit.com/r/reactjs/comments/hkic8h/reacterroroverlay_is_eating_up_a_lot_of_cpu_what/)
-- url: https://www.reddit.com/r/reactjs/comments/hkic8h/reacterroroverlay_is_eating_up_a_lot_of_cpu_what/
----
-Hi all. Here is a performance profile with my issue [https://share.firefox.dev/2Zw5AiA](https://share.firefox.dev/2Zw5AiA) 
+[https://expo.io/@vidalv/astrale](https://expo.io/@vidalv/astrale)
 
-Here is a print screen if you are on mobile [https://imgur.com/a/ffliCT2](https://imgur.com/a/ffliCT2)  
-Am I using it wrong? Should I report a bug? How to troubleshoot?
-## [12][What are some web development channels on youtube that provide good quality code??](https://www.reddit.com/r/reactjs/comments/hkc1rm/what_are_some_web_development_channels_on_youtube/)
-- url: https://www.reddit.com/r/reactjs/comments/hkc1rm/what_are_some_web_development_channels_on_youtube/
----
-I am searching for youtube channels that provide code with good quality, people keep saying that learning from youtube is not good as most channel creators are people with no experience in programming and provide code that is not adopted in production environment, so i would be thankful if some good reddit folks guided me on that, I really search for channels that provide real world projects with good code. Thanks in advance!
+Apple is not accepting  more astrology "apps" in iOs (Nice monopoly you are creating there Apple), so its only for download in Android PlayStore.
+
+I hope you like it!

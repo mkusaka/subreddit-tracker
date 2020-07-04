@@ -23,66 +23,93 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/06/30/this-week-in-rust-345/
 ---
 
-## [3][Artichoke Ruby is 2.2% faster after reimplementing the symbol table in Rust](https://www.reddit.com/r/rust/comments/hk8nwr/artichoke_ruby_is_22_faster_after_reimplementing/)
-- url: https://www.reddit.com/r/rust/comments/hk8nwr/artichoke_ruby_is_22_faster_after_reimplementing/
----
-[Artichoke Ruby](https://github.com/artichoke/artichoke) is an alternative Ruby implementation written in Rust. I recently reimplemented the VM's symbol table with [intaglio](https://crates.io/crates/intaglio) to replace the C implementation in the mruby base.
-
-[The resulting Ruby is 2.2% faster when running a portion of the ruby/spec suite](https://github.com/artichoke/artichoke/pull/730).
-
-The Ruby symbol table is a bytestring interner that is used mostly during interpreter boot and source loading.
-## [4][React core team discussing re-writing internals in Rust](https://www.reddit.com/r/rust/comments/hkaxgl/react_core_team_discussing_rewriting_internals_in/)
-- url: https://www.reddit.com/r/rust/comments/hkaxgl/react_core_team_discussing_rewriting_internals_in/
----
-At 39:05 — https://www.twitch.tv/videos/667925289?t=00h39m05s
-## [5][Ringbahn II: the central state machine](https://www.reddit.com/r/rust/comments/hk8lab/ringbahn_ii_the_central_state_machine/)
-- url: https://without.boats/blog/ringbahn-ii/
+## [3][so: A terminal interface for StackOverflow](https://www.reddit.com/r/rust/comments/hktgsu/so_a_terminal_interface_for_stackoverflow/)
+- url: https://github.com/samtay/so
 ---
 
-## [6][Boa v0.9: measureme &amp; optimisations](https://www.reddit.com/r/rust/comments/hkifvb/boa_v09_measureme_optimisations/)
-- url: https://boa-dev.github.io/2020/07/03/boa-release-09.html
+## [4][How do you avoid getting google results about the game instead of the language?](https://www.reddit.com/r/rust/comments/hkueg9/how_do_you_avoid_getting_google_results_about_the/)
+- url: https://www.reddit.com/r/rust/comments/hkueg9/how_do_you_avoid_getting_google_results_about_the/
+---
+I'm (very) new to rust. My problem is how do you avoid ending up on a search page about the game instead of the language? 
+
+e.g: when I type "rust \[something here\]", I get results about the game. I tried typing "rustlang etc.." but it doesn't always help. 
+
+Pardon my blatant ignorance.
+## [5][autodiscovery-rs: library to help discover other instance on the net, and connect to them](https://www.reddit.com/r/rust/comments/hkzh50/autodiscoveryrs_library_to_help_discover_other/)
+- url: https://www.reddit.com/r/rust/comments/hkzh50/autodiscoveryrs_library_to_help_discover_other/
+---
+Hi all,
+
+I uploaded a new library to [Github](https://github.com/over-codes/autodiscover-rs) today, and would love some feedback. Short summary from the README:
+
+autodiscover-rs implements a simple algorithm to detect peers on an IP network, connects to them, and calls back with the connected stream.  The algorthm supports both UDP broadcast and multicasting.
+
+It can be found at [https://github.com/over-codes/autodiscover-rs](https://github.com/over-codes/autodiscover-rs)
+## [6][log only info and error to terminal, everything else to file](https://www.reddit.com/r/rust/comments/hl1kzb/log_only_info_and_error_to_terminal_everything/)
+- url: https://www.reddit.com/r/rust/comments/hl1kzb/log_only_info_and_error_to_terminal_everything/
+---
+I'm using simplelog but don't care which logger to use at this point.
+
+```
+    CombinedLogger::init(vec![
+        TermLogger::new(LevelFilter::Info, Config::default(), TerminalMode::Mixed).unwrap(),
+        WriteLogger::new(
+            LevelFilter::Debug,
+            Config::default(),
+            std::fs::File::create("/tmp/dfclient.log").unwrap(),
+        ),
+    ])
+    .unwrap();
+```
+
+This is wrong since it logs warnings to the terminal as well... which is kinda annoying in a network / p2p app with disconnects and so on happening often. How can I get the warnings not to appear on the terminal? About to just write my own logger at this point.
+## [7][RustPython: Building a Python 3 interpreter in Rust (FOSDEM 2019)](https://www.reddit.com/r/rust/comments/hkjpgx/rustpython_building_a_python_3_interpreter_in/)
+- url: https://www.youtube.com/watch?v=nJDY9ASuiLc
 ---
 
-## [7][Compiler team roadmap 2020-2021](https://www.reddit.com/r/rust/comments/hjx82b/compiler_team_roadmap_20202021/)
-- url: https://rust-lang.github.io/compiler-team/minutes/design-meeting/2020-05-29-Roadmap-2020-2021/
+## [8][Graceful keyboard shutdown of thread pool in Rust](https://www.reddit.com/r/rust/comments/hl2kdm/graceful_keyboard_shutdown_of_thread_pool_in_rust/)
+- url: https://killavus.github.io/posts/thread-pool-graceful-shutdown/
 ---
 
-## [8][Finished implementing OpenDataStructures in Rust](https://www.reddit.com/r/rust/comments/hk2nbp/finished_implementing_opendatastructures_in_rust/)
-- url: https://www.reddit.com/r/rust/comments/hk2nbp/finished_implementing_opendatastructures_in_rust/
+## [9][What are the benefits of using Rust async HTTP clients?](https://www.reddit.com/r/rust/comments/hkw74o/what_are_the_benefits_of_using_rust_async_http/)
+- url: https://www.reddit.com/r/rust/comments/hkw74o/what_are_the_benefits_of_using_rust_async_http/
 ---
-I have completed a Rust implementation of OpenDataStructures.
+Generally it seems like async only has a real benefit when there are many connections.
 
-I hope this project will be helpful to anyone trying to learn data structures with Rust. Please use it as an unofficial reference implementation. 
-And all contributions are welcome! : [Open Data Structures (in Rust)](https://github.com/o8vm/ods)
-## [9][Eye: cross platform camera capture &amp; control](https://www.reddit.com/r/rust/comments/hk7v95/eye_cross_platform_camera_capture_control/)
-- url: https://www.reddit.com/r/rust/comments/hk7v95/eye_cross_platform_camera_capture_control/
----
-Hi r/rust, I'm working on implementing computer vision libraries and primitives in native Rust. One essential building block is image capture (mostly using USB cameras such as the Intel RealSense D435 I'm using). Naturally, I looked around but could not find much in the way of good, native Rust camera capture libraries.
-
-rscam or webcam\_capture are unfit for the cause: their API is either too limited or the pipeline is not efficient enough for realtime conditions (e.g. by copying buffers around needlessly).
-
-Thus, I decided to start a new crate for cross platform camera capture and control: Eye ([https://github.com/raymanfx/eye-rs](https://github.com/raymanfx/eye-rs)). It features platform abstractions to create capture devices and streams to capture images from those devices. So far, I implemented a Linux backend using my own v4l-rs crate. Zero-copy image streaming is implemented by mapping buffers into userspace and directly returning them to the caller through a layer of abstractions.
-
-Soon, I will leverage another crate of mine ([https://github.com/raymanfx/ffimage](https://github.com/raymanfx/ffimage)) for automatic buffer conversion so one can request e.g. a RGB stream from devices which normally only support YUYV or other formats common for USB webcams such as the Logitech C922 Pro. ffimage features parallel image conversion by using Rayon and is quite fast, on my machine it's actually more than suitable for realtime buffer conversion.
-
-If you are interested in running the code right now (on Linux), the `next` branch features a GTK GUI example: [https://github.com/raymanfx/eye-rs/blob/next/examples/gtk.rs](https://github.com/raymanfx/eye-rs/blob/next/examples/gtk.rs).
-
-You can find version 0.1.0 on [crates.io](https://crates.io): [https://crates.io/crates/eye](https://crates.io/crates/eye).
-
-I'm hoping to find people interested in collaborating and adding Windows and macOS backends. My next steps include automatic format conversion and control parameter support (autofocus, white balance etc).
-## [10][Ownership of the standard library implementation | Inside Rust Blog](https://www.reddit.com/r/rust/comments/hjuh2f/ownership_of_the_standard_library_implementation/)
-- url: https://blog.rust-lang.org/inside-rust/2020/07/02/Ownership-Std-Implementation.html
----
-
-## [11][A boilerplate template for starting web services using Warp + SQLx (PostgreSQL) + Redis + Juniper (GraphQL)](https://www.reddit.com/r/rust/comments/hk34gw/a_boilerplate_template_for_starting_web_services/)
-- url: https://www.reddit.com/r/rust/comments/hk34gw/a_boilerplate_template_for_starting_web_services/
----
-[https://github.com/rusty-crab/warp-api-starter-template](https://github.com/rusty-crab/warp-api-starter-template) 
-
-The project is inspired by [Meh's blog post](https://meh.schizofreni.co/2020-04-18/comfy-web-services-in-rust). An attempt to put together what is described in the blog post code excerpts and missing pieces. This is far from finished to be called an actual template for someone to get started. But it has all the pieces from the blog post. I will continue to make it more modular and usable. Meanwhile, contributions, suggestions, directions are welcome (PRs, Issues, etc..). 
-
-Thank you.
-## [12][Nick Cameron: Early Impressions of Go from a Rust Programmer](https://www.reddit.com/r/rust/comments/hkjs96/nick_cameron_early_impressions_of_go_from_a_rust/)
+Is there a scenario where using an HTTP client implemented with Rust's async features gives a substantive performance benefit?
+## [10][Nick Cameron: Early Impressions of Go from a Rust Programmer](https://www.reddit.com/r/rust/comments/hkjs96/nick_cameron_early_impressions_of_go_from_a_rust/)
 - url: https://pingcap.com/blog/early-impressions-of-go-from-a-rust-programmer
+---
+
+## [11][RustyPipe - A youtube extractor and frontend made in Rust](https://www.reddit.com/r/rust/comments/hkr9bx/rustypipe_a_youtube_extractor_and_frontend_made/)
+- url: https://www.reddit.com/r/rust/comments/hkr9bx/rustypipe_a_youtube_extractor_and_frontend_made/
+---
+Website Link: [https://rustypipe.deepraven.co](https://rustypipe.deepraven.co)
+
+Linux AppImage Link: [https://github.com/deep-gaurav/rusty\_pipe\_front/releases/tag/20200703205931-4819d47](https://github.com/deep-gaurav/rusty_pipe_front/releases/tag/20200703205931-4819d47)
+
+&amp;#x200B;
+
+Some Story,
+
+So as a second project in **learning rust** I decided to rewrite [NewPipeExtractor](https://github.com/TeamNewPipe/NewPipeExtractor) in rust.I rewrote the youtube extraction part it's available at [https://github.com/deep-gaurav/rusty\_pipe](https://github.com/deep-gaurav/rusty_pipe).
+
+My initial plans were to make a graphql api of rustypipe and use it to make website/app like [invidio.us](https://invidio.us).
+
+So I made a graphql server using juniper avaiable at [rustypipe.herokuapp.com](https://rustypipe.herokuapp.com) ([https://github.com/deep-gaurav/rusty\_pipe\_server](https://github.com/deep-gaurav/rusty_pipe_server)).
+
+When making frontend website to server I decided to use [yew.rs](https://yew.rs) but when implementing graphql client, i realised that i could use extracter in browser itself instead of relying on the graphql server which was slow and added quite burden to server, moreover heroku minutes were limited.But Cors was problem so i implemented a simple cors proxy using vercel serverless function and deployed the site on vercel.
+
+So the current version does all the extraction and parsing on client side and only relies on vercel serverless function as a cors proxy.
+
+This also led me to make a desktop version by wrapping it in cordova, since there is no cors in cordova/electron, it does not relies on any external server (Except youtube ofcourse) and behaves pretty much like newpipe for desktop.
+
+I also made a custom video element to be used with app in typescript.It's highly work in progress, would love any sort of feedback/criticism on it.
+
+P.S: If on linux consider using desktop release, it's faster and should be able to play even encrypted videos, like songs from official channels which web version cannot ( just like [invidio.us](https://invidio.us) ) as url is ip bound (and ip is of cors proxy).
+
+If on chrome desktop it'll also show a Picture in Picture mode button, and on chrome android it'll use mediasession api to customize notification
+## [12][Canrun: A logic programming library inspired by the *Kanren family](https://www.reddit.com/r/rust/comments/hkp1hi/canrun_a_logic_programming_library_inspired_by/)
+- url: https://esimmler.com/announcing-canrun/
 ---
 

@@ -21,85 +21,162 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][CloudFront IP Ranges](https://www.reddit.com/r/aws/comments/hkg4ms/cloudfront_ip_ranges/)
-- url: https://www.reddit.com/r/aws/comments/hkg4ms/cloudfront_ip_ranges/
+## [2][Build quickly a system that filter CloudWatch logs and post to Slack, via CDK.](https://www.reddit.com/r/aws/comments/hkx584/build_quickly_a_system_that_filter_cloudwatch/)
+- url: https://github.com/TheDesignium/cdk-log-notifier
 ---
-Hi All,
 
-On one of our applications that is deployed though cloudFront,  when i ping the website it gives me an IP address that matches one of the IP's listed by AWS that are used by CloudFront which is expected.
+## [3][EC2 Spot Instances](https://www.reddit.com/r/aws/comments/hkwnf7/ec2_spot_instances/)
+- url: https://www.reddit.com/r/aws/comments/hkwnf7/ec2_spot_instances/
+---
+Completely new to AWS so sorry if this question sounds elementary. I was just reading up about spot instances and from what I understand the prices fluctuates based on supply and demand and depending if your max price doesn't fall below the spot price you'll be continuing to get service. With this drawback I understand that it's a much cheaper option than on-demand however, can a spot price ever exceed the on demand price?
 
-Looking further into the CloudFront IP ranges you can search for them through the AWS PowerShell Tools, and filter the IP addresses by region for example:
+Let's say on demand price is .10/hour, wouldn't it make sense to set MAX price to exactly .10 for your spot so that youll be guaranteed service all the time? Everyone else's objective is to spend less than on demand
 
-    Get-AWSPublicIpAddressRange -Region global -ServiceKey CLOUDFRONT | select IpPrefix
+Hope the question made sense.
+## [4][AWS purchasing with credit](https://www.reddit.com/r/aws/comments/hl2u79/aws_purchasing_with_credit/)
+- url: https://www.reddit.com/r/aws/comments/hl2u79/aws_purchasing_with_credit/
+---
+Hello all,
 
-Searching this gives me a nice list of all the global IP ranges used by CloudFront. However you can search for specific regions by changing the search to "-Region eu-west-2" instead of "-Region global" and it only returns one IP range - [52.56.127.0/25](https://52.56.127.0/25)
+Is it available to buy a reserved or saving plan EC2 instance with full upfront with my credit ?
+## [5][I want to point my godaddy domain to lightsail instance. Three red marked ones are currently pointing to GoDaddy address. Do I have to change all the three ones or just the one with @ in the A record as suggested in tutorials??](https://www.reddit.com/r/aws/comments/hkz1qo/i_want_to_point_my_godaddy_domain_to_lightsail/)
+- url: https://i.redd.it/xe56hloofs851.png
+---
+
+## [6][SNS &gt; AWS Lambda asyncronous invocation queue vs. SNS &gt; SQS &gt; Lambda](https://www.reddit.com/r/aws/comments/hkpwj9/sns_aws_lambda_asyncronous_invocation_queue_vs/)
+- url: https://www.reddit.com/r/aws/comments/hkpwj9/sns_aws_lambda_asyncronous_invocation_queue_vs/
+---
+Looking for some help regarding Lambda, asyncronous invocations and whether I need to bother with SQS.
+
+# Background
+
+This archhitecture relies solely on Lambda's asyncronous invocation mechanism as described here:
+
+[https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html](https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html)
+
+I have a collector function that is invoked once a minute and fetches a batch of data that can vary drastically in size (tens of of KB to potentially 1-3MB). The data contains a JSON array containing one-to-many records. The collector function segregates these records and publishes them individually to an SNS topic.
+
+A parser function is subribed the SNS topic and has a concurrency limit of 3. SNS asynchronously invokes the parser function per record, meaning that the built-in AWS managed Lambda asyncronous queue begins to fill up as the instances of the parser maxes out at 3. The Lambda queueing mechanism initiates retries at incremental backups when throttling occurs, until the invocation request can be processed by the parser function.
+
+It is imperitive that a record does not get lost during this process as they can not be resurrected. I will be using dead letter queues where needed to ensure they ultimately  end up somewhere in case of error.
+
+Testing this method out resulted in no lost invocation. Everything worked as expected. Lambda reported hundreds of throttle responses but I'm relying on this to initiate the Lambda retry behaviour for async invocations. My understanding is that this behaivour is effectively the same as that which I'd have to develop and initiate myself if I wanted to retry consuming a message coming from SQS.
+
+# Questions
+
+**1. Is the built-in AWS managed Lambda asyncronous queue reliable?**
+
+The parser could be subject to a consistent load of 200+ invocations per minute for prelonged periods so I want to understand whether the Lambda queue can handle this as sensibly as an SQS service. The main part that concerns me is this statement:
+
+&gt;Even if your function doesn't return an error, it's possible for it to receive the same event from Lambda multiple times because the queue itself is eventually consistent. If the function can't keep up with incoming events, events might also be deleted from the queue without being sent to the function. Ensure that your function code gracefully handles duplicate events, and that you have enough concurrency available to handle all invocations.
+
+This implies that an incoming invocation may just be *deleted* out of thin air. Also in my implementation I'm relying on the retry behaviour when a function throttles.
+
+**2. When a message is in the queue, what happens when the message timeout is exceeded?**
+
+I can't find a difinitive answer but I'm hoping the message would end up in the configured dead letter queue.
+
+**3. Why would I use SQS over the Lambda queue when SQS presents other problems?**
+
+See the articles below for arguments against SQS. Overpulling (described in the second link) is of particular concern:
+
+[https://lumigo.io/blog/sqs-and-lambda-the-missing-guide-on-failure-modes/](https://lumigo.io/blog/sqs-and-lambda-the-missing-guide-on-failure-modes/)
+
+[https://medium.com/@zaccharles/lambda-concurrency-limits-and-sqs-triggers-dont-mix-well-sometimes-eb23d90122e0](https://medium.com/@zaccharles/lambda-concurrency-limits-and-sqs-triggers-dont-mix-well-sometimes-eb23d90122e0)
+
+I can't find any articles or discussions of how the Lambda queue performs.
+
+**Thanks for reading!**
+## [7][How to Enforce Tagging?](https://www.reddit.com/r/aws/comments/hkrdnr/how_to_enforce_tagging/)
+- url: https://www.reddit.com/r/aws/comments/hkrdnr/how_to_enforce_tagging/
+---
+This is something that seems so simple, yet I haven't found any way to do it despite some searching.
+
+I want to prevent any user in my Organization from creating any taggable resource unless it has certain tags. (Currently, I want AppName and Environment.) 
+
+I thought tagging policy would be a way to do it, but I created a tagging policy requiring an AppName tag for all available resource types, yet AWS allowed me to instantiate an EC2 instance without the AppName tag.
+
+Is there really no easy way to tell AWS, "don't let users create instances unless the instance have this tag?"
+## [8][CI/CD with CDK](https://www.reddit.com/r/aws/comments/hkwwsm/cicd_with_cdk/)
+- url: https://www.reddit.com/r/aws/comments/hkwwsm/cicd_with_cdk/
+---
+Howdy folks,
+
+We are currently looking at CDK and we are thinking about different ways to integrate it with CI/CD (CodeCommit / Build / Pipeline/ Deploy).    The focus is on our "server less" applications (CloudFront, s3, API Gateway, Lambda, etc....) ... One scenario that we are looking at is to run cdk synth in Codebuild and then apply the resulting template.  It would look something like
 
 &amp;#x200B;
 
-Does anyone know what the difference between the two IP ranges are? i dont understand why they would have region specific IP ranges aswell as global ones since i would assume the global ones could be used by CloudFront in any region.
-## [3][Network load balancer with many ports](https://www.reddit.com/r/aws/comments/hkj9kr/network_load_balancer_with_many_ports/)
-- url: https://www.reddit.com/r/aws/comments/hkj9kr/network_load_balancer_with_many_ports/
+* A CDK Stack that define the pipeline itself.  It would be deployed using "cdk deploy" and would probably don't change much. It  would include the following stages:
+
+1. CodeCommit as source repo
+2. CodeBuild for Lambda's -&gt; Artifacts to S3
+3. CodeBuild for FrontEnd -&gt; Artifacts to S3
+4. CodeBuild that run "cdk synth" for the AppStack (see below) -&gt; Artifact (cf template) to S3
+5. CodePipeline Action (CloudFormationCreateReplaceChangeSetAction) (the cf template created at step 4)
+6. CodePipeline Approval
+7. CodePipeline Action (CloudFormationExecuteChangeSetAction)
+8. CodePipeline Action (S3DeployAction) (to deploy the Frontend Artifact to S3)
+
+&amp;#x200B;
+
+* A "AppStack" CDK stack that actually defines all the ressources:  
+
+1. That stack would be "synthesize" by the Pipeline each time there's a code change (either to the AppStack CDK code itself or the Frontend / Lambda code) 
+
+&amp;#x200B;
+
+The idea is similar to this example: [https://docs.aws.amazon.com/cdk/latest/guide/codepipeline\_example.html](https://docs.aws.amazon.com/cdk/latest/guide/codepipeline_example.html)
+
+One of the limitation is that we can't use (as far as I know) "asset" so we have to use the special "lambda.Code.fromCfnParameters()" as explained in the doc above.  Deploying the FrontEnd to a S3 bucket from the CodePipeline Artifact would also required an additional step (step 8 in the example above).
+
+Does anyone is using a similar solution?  Any gotcha that we should be aware of?
+
+I would also love to hear how you implemented CI/CD using CDK.  Any ideas are welcome!
+
+PS: We looked into the App Delivery construct but as of now, it's cannot do cross-account and that's a requirements for us.  I skipped that details in the step above to keep it simple.
+
+Thanks!
+## [9][AWS Lambda for Monitoring and Alerting](https://www.reddit.com/r/aws/comments/hkz9kr/aws_lambda_for_monitoring_and_alerting/)
+- url: https://www.reddit.com/r/aws/comments/hkz9kr/aws_lambda_for_monitoring_and_alerting/
 ---
-Ive been asked to look at adding a load balancer to one of our AWS environments.
+I am a Site Reliability Engineer at my company, and I have been asked to setup and create alerts on a variety of things
 
-The application servers which will sit behind the LB currently listen on ports anywhere in the tcp/6800-6999 range and can change frequently.
+I need to create alerts related to events in AWS, such as: AWS Batch failures, unhealthy target groups, checking whether a file exists in S3 at a specific time of the day, whether certain EC2 instances are healthy, etc
 
-I did a few initial checks but when I go to configure an NLB, I am unable to pick a range of ports when configuring listeners. I could manually enter each port but this would take a long time and it got me thinking if the AWS NLB is the right tool for this job?
+&amp;#x200B;
 
-Would there be a better way of doing this?
-## [4][AWS Security Maturity Roadmap for 2020](https://www.reddit.com/r/aws/comments/hk3nm8/aws_security_maturity_roadmap_for_2020/)
-- url: https://summitroute.com/downloads/aws_security_maturity_roadmap-Summit_Route.pdf
+I also need to create several alerts that would execute a query on our production databases (MSSQL and MongoDB), and trigger if certain conditions are met based on the results of the query. Some of these  alerts would run at specific times of the day, but others might run somewhat constantly, like every 5-10 minutes.
+
+&amp;#x200B;
+
+I believe I am able to create all of these alerts as Python scripts. (Side note: these alerts will call on the PagerDuty API to send alerts to whoever is on call)
+
+&amp;#x200B;
+
+I also have to create automated emails that send at specific times of day
+
+&amp;#x200B;
+
+My question is, should I use AWS Lambda to run and execute these scripts? I am not completely sure if these Python scripts I'm planning to make are a good use case for AWS Lambda. If not, could I ask what might be a better alternative? Is it better I set up the scripts on some server and have them run there?
+## [10][aws lake formation - ingesting from msk (kafka)](https://www.reddit.com/r/aws/comments/hkvqi0/aws_lake_formation_ingesting_from_msk_kafka/)
+- url: https://www.reddit.com/r/aws/comments/hkvqi0/aws_lake_formation_ingesting_from_msk_kafka/
 ---
+I came across this aws blog post where it mentions that msk can be used for data ingestion but I can't find any documentation on this. When I try to add a data source for ingestion it doesn't five me the MSK option. anyone has experience working with lake formation and msk?
 
-## [5][AWS Fargate for Amazon Elastic Kubernetes Service](https://www.reddit.com/r/aws/comments/hkj7va/aws_fargate_for_amazon_elastic_kubernetes_service/)
-- url: https://caylent.com/aws-fargate-for-amazon-elastic-kubernetes-service
+https://aws.amazon.com/blogs/big-data/building-securing-and-managing-data-lakes-with-aws-lake-formation/
+## [11][AWS setup for multiple accounts (engineering firm)](https://www.reddit.com/r/aws/comments/hkobe8/aws_setup_for_multiple_accounts_engineering_firm/)
+- url: https://www.reddit.com/r/aws/comments/hkobe8/aws_setup_for_multiple_accounts_engineering_firm/
 ---
+Hi everyone,
 
-## [6][A Python -&gt; Step Functions compiler](https://www.reddit.com/r/aws/comments/hk7fqn/a_python_step_functions_compiler/)
-- url: https://www.reddit.com/r/aws/comments/hk7fqn/a_python_step_functions_compiler/
----
-Hey all, 
+&amp;#x200B;
 
-I've been working on a Python -&gt; Step Functions compiler, and after seeing /u/mlda065's [post](https://www.reddit.com/r/aws/comments/hju8or/does_anyone_else_feel_that_step_functions_have/), I figured it might be interesting to post a preview/demo here.
+My engineering firm is looking to consolidate our cloud workflows into one platform with AWS. We have several clients and would like to bill them directly for the resources used on their projects rather than paying for the resources ourselves upfront and billing them later.
 
-It's called [Cohesion.dev](https://cohesion.dev) and I've been working on it for a few months.  There's a web-based demo at [https://preview.cohesion.dev](https://preview.cohesion.dev).
+&amp;#x200B;
 
-The way it works: it adds a library called Cohesion that lets you call Lambdas, Activities etc. as if they are just Python functions.  Then it parses your code and splits it up into little pieces that it outputs as Lambdas, and outputs a Step Function that stitches it all back together.
+I know that AWS has the 'organisations' feature - is this the correct way to do this? Is there a better way to organize resources by clients? Any other tips you might have for this kind of set up? We are growing rapidly so would like to get a hold of this before it becomes a bigger problem.
 
-For now it's a bit rough around the edges, but if you'd like a preview and to follow along as it improves, please check it out at that link!
-## [7][Does Quicksight have an option to add customized objects, like Tableau allows users to develop extensions?](https://www.reddit.com/r/aws/comments/hkj5g5/does_quicksight_have_an_option_to_add_customized/)
-- url: https://www.reddit.com/r/aws/comments/hkj5g5/does_quicksight_have_an_option_to_add_customized/
----
-The title basically says it. E.g. Tableau cannot render dynamically images, so there are extensions for that. Is there such an option in Quicksight (for developing, not for rendering images).
-## [8][Change lambda code with SAM](https://www.reddit.com/r/aws/comments/hkhfiw/change_lambda_code_with_sam/)
-- url: https://www.reddit.com/r/aws/comments/hkhfiw/change_lambda_code_with_sam/
----
-Hello everyone. Can someone please tell me how can I deploy only code to my SAM's lambdas? When I want to deploy new changes, I have to run sam build and then run sam deploy and it is overkill if I want to make small bug fixes to my lambdas. Is there a way I can change lambda code and not having to go directly to lambda code over aws ui. Thanks.
-## [9][Open Source Multi-Cloud Security Assessment Tool ScoutSuite 5.9.0 Released](https://www.reddit.com/r/aws/comments/hk5ccj/open_source_multicloud_security_assessment_tool/)
-- url: https://research.nccgroup.com/2020/07/02/tool-release-scoutsuite-5-9-0/
----
+&amp;#x200B;
 
-## [10][Does anyone else feel that Step Functions have great potential, but the implementation was half-arsed, so they're not very practical?](https://www.reddit.com/r/aws/comments/hju8or/does_anyone_else_feel_that_step_functions_have/)
-- url: https://www.reddit.com/r/aws/comments/hju8or/does_anyone_else_feel_that_step_functions_have/
----
-Does anyone else feel like Step Functions have a lot of potential, but the implementation was kind of half arsed? There's so much basic functionality lacking. There are so few comparison operators for Choice statements, and error handling is ridiculous.
-
-
-* AWS documentation says that `States.ALL` catches all errors. But if you reference `$.myvar` and that doesn't exist, it will cause an error which is *not* caught by `States.ALL`. **There is no way to catch all errors*. I had to make a second step function which does nothing but invoke the first one, and then handle an error.
-* You cannot catch errors from a Choice task (e.g. from looking up a path that doesn't exist), because `Catch` is not supported for `Choice`
-* You cannot compare two variables in a Choice task. You can only compare variable to hard coded constant  
-* You cannot check the length of an array in a Choice task  
-* You cannot check whether a variable is defined in a Choice task. ie. It's not possible to say `if 'x' in d and d['x'] == 1: foo(d['x']) else: bar()`  
-* They say you can use JSONPath, but when I try JSONPath errors I get errors. I've had different support agents give me confliction advice about whether this is possible.  
-* AWS recommend adding `TimeoutSeconds` to tasks, and say they can be used on any task. But they're not allowed in Parallel tasks. **The documentation is incorrect.**  
-* AWS recommend using Pass tasks as placeholders for Lambdas while you're constructing your step function. But Pass tasks can't take `Retry` or `Catch` fields. This means it's not possible to draft a step function with Pass tasks as placeholders if you have tasks that are only used to handle caught errors.
-* You can't write step functions in Yaml. That means you can't have comments, and it's very easy to write invalid code because of a comma trailing at the end of a list.  
-* If one branch in a Map or Parallel task fails, all other tasks are immediately cancelled. It's not feasible to configure it to continue executing the other branches. I want to say "for each piece of equipment, send a signal". If piece 500 fails to be actuated, I don't want pieces 1 to 499 to be cancelled mid-way through actuation
-* you can't do a dictionary lookup
-* you can't decrement a variable to do `for(a = 10; a &gt; 0; a-- )`
-## [11][Discount for partial storage month](https://www.reddit.com/r/aws/comments/hkgchl/discount_for_partial_storage_month/)
-- url: https://www.reddit.com/r/aws/comments/hkgchl/discount_for_partial_storage_month/
----
-Can you please explain **Discount for partial storage month** in the context of this estimate https://calculator.aws/#/estimate?id=ff3c92481f6df0d8d4dc5913eb79fcba1aba8e08 ?
-
-https://s.natalian.org/2020-07-03/1593759825_2560x1440.png
+Thanks!

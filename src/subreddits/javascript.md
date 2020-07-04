@@ -5,51 +5,49 @@
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [2][WTF Wednesday (July 01, 2020)](https://www.reddit.com/r/javascript/comments/hjd4wh/wtf_wednesday_july_01_2020/)
-- url: https://www.reddit.com/r/javascript/comments/hjd4wh/wtf_wednesday_july_01_2020/
+## [2][Showoff Saturday (July 04, 2020)](https://www.reddit.com/r/javascript/comments/hl22ty/showoff_saturday_july_04_2020/)
+- url: https://www.reddit.com/r/javascript/comments/hl22ty/showoff_saturday_july_04_2020/
 ---
-Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
-Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
-this is the place.
+Did you find or create something cool this week in javascript? 
 
-[Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][Understading JSON Web Token](https://www.reddit.com/r/javascript/comments/hkdyal/understading_json_web_token/)
+Show us here!
+## [3][Do you want to make an impact to improve the way App development works? The opensource neomjs UI framework project is looking for more contributors.](https://www.reddit.com/r/javascript/comments/hl114g/do_you_want_to_make_an_impact_to_improve_the_way/)
+- url: https://github.com/neomjs/neo
+---
+
+## [4][tsParticles - What particles.js could be if it wasn't abandoned years ago](https://www.reddit.com/r/javascript/comments/hkkj2y/tsparticles_what_particlesjs_could_be_if_it_wasnt/)
+- url: https://github.com/matteobruni/tsparticles
+---
+
+## [5][Don't make assumptions about JS performance](https://www.reddit.com/r/javascript/comments/hkv8nv/dont_make_assumptions_about_js_performance/)
+- url: https://www.samdawson.dev/article/js-perf-assumptions
+---
+
+## [6][Vue Composition API for automatic fetch data when condition has been changed](https://www.reddit.com/r/javascript/comments/hl1o6n/vue_composition_api_for_automatic_fetch_data_when/)
+- url: https://github.com/runkids/vue-condition-watcher
+---
+
+## [7][Atomically - Write files atomically and reliably](https://www.reddit.com/r/javascript/comments/hkv5ax/atomically_write_files_atomically_and_reliably/)
+- url: https://github.com/fabiospampinato/atomically
+---
+
+## [8][A WYSIWYG WebAssembly client-side LaTeX Editor, supporting PDFTeX and XeTeX](https://www.reddit.com/r/javascript/comments/hkxjjy/a_wysiwyg_webassembly_clientside_latex_editor/)
+- url: https://github.com/SwiftLaTeX/SwiftLaTeX
+---
+
+## [9][Understanding Javascript Array's .reduce() method and exploring its use-cases](https://www.reddit.com/r/javascript/comments/hl24vz/understanding_javascript_arrays_reduce_method_and/)
+- url: https://gosink.in/understanding-javascript-array-reduce-method-and-its-use-cases-is-it-underrated/?utm_source=reddit&amp;utm_medium=javascript
+---
+
+## [10][Understading JSON Web Token](https://www.reddit.com/r/javascript/comments/hkdyal/understading_json_web_token/)
 - url: https://9sh.re/ZxiYixYYpp
 ---
 
-## [4][Mastering Promise.allSettled in React](https://www.reddit.com/r/javascript/comments/hk0tg9/mastering_promiseallsettled_in_react/)
-- url: https://medium.com/@Dylan.Kerler/mastering-promise-allsettled-in-react-9fcecb7da479
+## [11][jsplot - tiny website/tool where you can paste any js code that returns a number sequence to plot it](https://www.reddit.com/r/javascript/comments/hkrim5/jsplot_tiny_websitetool_where_you_can_paste_any/)
+- url: https://fredriknoren.github.io/jsplot/
 ---
 
-## [5][Introduction to Progressive Web App with example in Vanilla JS](https://www.reddit.com/r/javascript/comments/hkffrx/introduction_to_progressive_web_app_with_example/)
-- url: https://9sh.re/ObiHvxYYM#6
----
-
-## [6][Build your own JavaScript property based testing framework - Let's take a deep dive into the internals of property based testing through this tutorial explaining how fast-check framework has been built (part 1 over 4)](https://www.reddit.com/r/javascript/comments/hkhneg/build_your_own_javascript_property_based_testing/)
-- url: https://dev.to/dubzzz/your-own-property-based-testing-framework-part-1-generators-3afi
----
-
-## [7][financial: A TypeScript/JavaScript financial library for Node.js, Deno and browser](https://www.reddit.com/r/javascript/comments/hkhk2c/financial_a_typescriptjavascript_financial/)
-- url: https://github.com/lmammino/financial
----
-
-## [8][A database software completely built as JSON files in backend. A powerful, portable and simple database works on top of JSON files.](https://www.reddit.com/r/javascript/comments/hjw03n/a_database_software_completely_built_as_json/)
-- url: https://github.com/Devs-Garden/jsonbase#readme
----
-
-## [9][Im making a Visual Based Programming Language for Discord Bots](https://www.reddit.com/r/javascript/comments/hk8ht7/im_making_a_visual_based_programming_language_for/)
-- url: https://github.com/Team-Nope/Botly
----
-
-## [10][Found my first bug in the V8 engine](https://www.reddit.com/r/javascript/comments/hkenpc/found_my_first_bug_in_the_v8_engine/)
-- url: https://stackoverflow.com/questions/62704854/why-is-the-execution-time-of-this-function-call-changing
----
-
-## [11][Find fully functional hosted features for your WebApp](https://www.reddit.com/r/javascript/comments/hkjndl/find_fully_functional_hosted_features_for_your/)
-- url: https://www.componently.com/
----
-
-## [12][How to call a function on URL change in javascript](https://www.reddit.com/r/javascript/comments/hkjb3s/how_to_call_a_function_on_url_change_in_javascript/)
-- url: https://itsopensource.com/how-to-call-a-function-on-URL-change-in-javascript/
+## [12][Handling Multiple Inputs FrontEnd Frameworks [React, Vue and Sevelt]](https://www.reddit.com/r/javascript/comments/hkvbmb/handling_multiple_inputs_frontend_frameworks/)
+- url: https://h3manth.com/new/blog/2020/handling-multiple-inputs-frontend-frameworks/
 ---
 

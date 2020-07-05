@@ -21,162 +21,123 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][Build quickly a system that filter CloudWatch logs and post to Slack, via CDK.](https://www.reddit.com/r/aws/comments/hkx584/build_quickly_a_system_that_filter_cloudwatch/)
+## [2][Static Hosting in S3 bucket question](https://www.reddit.com/r/aws/comments/hlhomf/static_hosting_in_s3_bucket_question/)
+- url: https://www.reddit.com/r/aws/comments/hlhomf/static_hosting_in_s3_bucket_question/
+---
+I am going through the guide of hosting a static website in an s3 bucket. The guidances says i should create:
+
+1. S3 bucket of [example.com](https://example.com)
+2. Another S3 bucket of [www.example.com](https://www.example.com) and redirect to [example.com](https://example.com)
+
+Questions:
+
+1. Can i not just point both [example.com](https://example.com) and [www.example.com](https://www.example.com) to the same S3 bucket instead of doing a redirect on the buckets?
+2. Why do the names of the buckets have to match my DNS? Can i not have [example.com](https://example.com) point to s3 bucket randomly named?
+## [3][Permissions denied when using cross account roles for Jenkins](https://www.reddit.com/r/aws/comments/hldel3/permissions_denied_when_using_cross_account_roles/)
+- url: https://www.reddit.com/r/aws/comments/hldel3/permissions_denied_when_using_cross_account_roles/
+---
+I am trying to get a Jenkins server in the root account of an organization to be able to push a serverless application (nodejs using serverless framework) to a new development account. I have setup a JenkinsAccessRole that has a trust relationship with the main account.
+
+IAM Policy for JenkinsAccessRole in the new development account
+
+    {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::&lt;account ID for root account&gt;:root"
+          },
+          "Action": "sts:AssumeRole",
+          "Condition": {}
+        }
+      ]
+    }
+
+The role has permissions for cloudformation, sqs, sns and s3
+
+Error message seen in Jenkins
+
+    com.amazonaws.services.securitytoken.model.AWSSecurityTokenServiceException: User: arn:aws:sts::&lt;root account ID&gt;:assumed-role/Jenkins/i-015333655393dd020 is not authorized to perform: sts:AssumeRole on resource: arn:aws:iam::&lt;new dev account ID&gt;:role/JenkinsAccessRole (Service: AWSSecurityTokenService; Status Code: 403; Error Code: AccessDenied;
+
+Jenkins code
+
+    withAWS(role: 'JenkinsAccessRole', roleAccount: '&lt;main&gt;', duration: 3600, roleSessionName: 'Serverless-Deploy') {
+         sh "npm run deployDev"
+    }
+
+Can anyone spot the issue or give suggestions on what might be wrong?
+
+&amp;#x200B;
+
+EDIT\*\* 
+
+Figured out my issue, I had a policy for the other dev account that allowed my Jenkins server to assume the role which connected the accounts. 
+## [4][Easy Web Server in AWS Ec2](https://www.reddit.com/r/aws/comments/hlh0br/easy_web_server_in_aws_ec2/)
+- url: https://www.reddit.com/r/aws/comments/hlh0br/easy_web_server_in_aws_ec2/
+---
+I wrote some super detailed documentation awhile ago on how to setup a web server on Ec2 in AWS and it always helps me time and time again.   
+So I thought it could be helpful to anyone here trying to start a web server on AWS:  
+[https://github.com/stevegardiner26/aws-webservers-creation-guide](https://github.com/stevegardiner26/aws-webservers-creation-guide)
+## [5][Amazon Polly - where do I choose regular TTS vs neural network?](https://www.reddit.com/r/aws/comments/hljd5t/amazon_polly_where_do_i_choose_regular_tts_vs/)
+- url: https://www.reddit.com/r/aws/comments/hljd5t/amazon_polly_where_do_i_choose_regular_tts_vs/
+---
+I'm new to AWS, I'm in the console on the page that says:
+
+Text-to-Speech
+
+Listen, customize, and download speech. Integrate when you're ready.
+
+Type or paste your text in the window, choose your language and region, choose a voice, choose Listen to speech, and then integrate it into your applications and services.
+
+With up to 3000 characters you can listen, download, or save immediately. For up to 100,000 characters, your task must be saved to an S3 bucket.
+## [6][Can IAM user with AWSPriceListServiceFullAccess policy access any other resources if keys are exposed?](https://www.reddit.com/r/aws/comments/hlg7b7/can_iam_user_with_awspricelistservicefullaccess/)
+- url: https://www.reddit.com/r/aws/comments/hlg7b7/can_iam_user_with_awspricelistservicefullaccess/
+---
+I have created a user with AWSPriceListServiceFullAccess policy attached. I wanted to use this to call AWS pricelist API for an application that I was building. The code of the application was on Github in a private repository. As soon as I changed it to public repo, the AWS warned me about a potential security breach and they told (forced) me to delete the user.
+
+I don't think that on exposing those keys, there is any threat to my AWS account. Can anyone explain if there is any threat to that?
+## [7][Amazon SES Security?](https://www.reddit.com/r/aws/comments/hl7wpk/amazon_ses_security/)
+- url: https://www.reddit.com/r/aws/comments/hl7wpk/amazon_ses_security/
+---
+I logged into my SES today to see that over 1400 emails were sent, but I haven't run any campaigns which is a problem.   
+
+
+I'm not sure how to isolate where these emails were sent from, perhaps it was because of a server error or perhaps not. But how do I isolate it so that I know for sure that I wasn't hacked or had my SMTP details compromised?
+## [8][Build quickly a system that filter CloudWatch logs and post to Slack, via CDK.](https://www.reddit.com/r/aws/comments/hkx584/build_quickly_a_system_that_filter_cloudwatch/)
 - url: https://github.com/TheDesignium/cdk-log-notifier
 ---
 
-## [3][EC2 Spot Instances](https://www.reddit.com/r/aws/comments/hkwnf7/ec2_spot_instances/)
-- url: https://www.reddit.com/r/aws/comments/hkwnf7/ec2_spot_instances/
+## [9][Custom CloudWatch Metrics vs DynamoDB](https://www.reddit.com/r/aws/comments/hl55p7/custom_cloudwatch_metrics_vs_dynamodb/)
+- url: https://www.reddit.com/r/aws/comments/hl55p7/custom_cloudwatch_metrics_vs_dynamodb/
 ---
-Completely new to AWS so sorry if this question sounds elementary. I was just reading up about spot instances and from what I understand the prices fluctuates based on supply and demand and depending if your max price doesn't fall below the spot price you'll be continuing to get service. With this drawback I understand that it's a much cheaper option than on-demand however, can a spot price ever exceed the on demand price?
+I want to track the number of requests by user to my API, and the API runs via Lambda in every AWS region  (20 regions) because of latency.
 
-Let's say on demand price is .10/hour, wouldn't it make sense to set MAX price to exactly .10 for your spot so that youll be guaranteed service all the time? Everyone else's objective is to spend less than on demand
+Does it make sense to use CloudWatch metrics when operating in a multi-region format?
 
-Hope the question made sense.
-## [4][AWS purchasing with credit](https://www.reddit.com/r/aws/comments/hl2u79/aws_purchasing_with_credit/)
-- url: https://www.reddit.com/r/aws/comments/hl2u79/aws_purchasing_with_credit/
+CloudWatch endpoints are per region, meaning a custom metric will have to be created for each user in each region where they run.
+
+If I had one metric per user that means I'd be spending $0.30 \* 20 = $6 a month per user to track their requests over time.  That seems a bit too much to spend.
+
+If I had one DynamoDB table in a single region that tracked traffic with TTLs on the records it seems that is the more efficient way, but would suffer the problem of implementing the retry logic if that region isn't reachable for some region.
+
+How have you all solved this problem before?
+## [10][Cost effectively connecting to Aurora Serverless for personal project](https://www.reddit.com/r/aws/comments/hla44b/cost_effectively_connecting_to_aurora_serverless/)
+- url: https://www.reddit.com/r/aws/comments/hla44b/cost_effectively_connecting_to_aurora_serverless/
 ---
-Hello all,
+I'm attempting to use Aurora Serverless, but I'm getting tripped up by how to cost effectively manage my VPC. My requirements:
 
-Is it available to buy a reserved or saving plan EC2 instance with full upfront with my credit ?
-## [5][I want to point my godaddy domain to lightsail instance. Three red marked ones are currently pointing to GoDaddy address. Do I have to change all the three ones or just the one with @ in the A record as suggested in tutorials??](https://www.reddit.com/r/aws/comments/hkz1qo/i_want_to_point_my_godaddy_domain_to_lightsail/)
-- url: https://i.redd.it/xe56hloofs851.png
+1. Aurora must be accessible from a Lambda (the Lambda must have public internet access)
+2. I'd like to use a desktop client for connecting to my DB (for configuring tables, etc)
+
+I believe I'd want to use a private subnet with a NAT Gateway in a production environment, but I'd like to avoid that here since NAT Gateways are expensive. Should I just use a public subnet and accept the security implications (not that there are many for this project)?
+
+If I go with the public subnet, should I be able to connect to the DB from a desktop client without needing a VPN? I was expecting to, but I can't get it working. I'm not sure if I just need to update something like my security group/ACL, or if I have a misunderstanding in how this all works.
+## [11][Front or back end for Cognito](https://www.reddit.com/r/aws/comments/hl4tdh/front_or_back_end_for_cognito/)
+- url: https://www.reddit.com/r/aws/comments/hl4tdh/front_or_back_end_for_cognito/
 ---
-
-## [6][SNS &gt; AWS Lambda asyncronous invocation queue vs. SNS &gt; SQS &gt; Lambda](https://www.reddit.com/r/aws/comments/hkpwj9/sns_aws_lambda_asyncronous_invocation_queue_vs/)
-- url: https://www.reddit.com/r/aws/comments/hkpwj9/sns_aws_lambda_asyncronous_invocation_queue_vs/
----
-Looking for some help regarding Lambda, asyncronous invocations and whether I need to bother with SQS.
-
-# Background
-
-This archhitecture relies solely on Lambda's asyncronous invocation mechanism as described here:
-
-[https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html](https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html)
-
-I have a collector function that is invoked once a minute and fetches a batch of data that can vary drastically in size (tens of of KB to potentially 1-3MB). The data contains a JSON array containing one-to-many records. The collector function segregates these records and publishes them individually to an SNS topic.
-
-A parser function is subribed the SNS topic and has a concurrency limit of 3. SNS asynchronously invokes the parser function per record, meaning that the built-in AWS managed Lambda asyncronous queue begins to fill up as the instances of the parser maxes out at 3. The Lambda queueing mechanism initiates retries at incremental backups when throttling occurs, until the invocation request can be processed by the parser function.
-
-It is imperitive that a record does not get lost during this process as they can not be resurrected. I will be using dead letter queues where needed to ensure they ultimately  end up somewhere in case of error.
-
-Testing this method out resulted in no lost invocation. Everything worked as expected. Lambda reported hundreds of throttle responses but I'm relying on this to initiate the Lambda retry behaviour for async invocations. My understanding is that this behaivour is effectively the same as that which I'd have to develop and initiate myself if I wanted to retry consuming a message coming from SQS.
-
-# Questions
-
-**1. Is the built-in AWS managed Lambda asyncronous queue reliable?**
-
-The parser could be subject to a consistent load of 200+ invocations per minute for prelonged periods so I want to understand whether the Lambda queue can handle this as sensibly as an SQS service. The main part that concerns me is this statement:
-
-&gt;Even if your function doesn't return an error, it's possible for it to receive the same event from Lambda multiple times because the queue itself is eventually consistent. If the function can't keep up with incoming events, events might also be deleted from the queue without being sent to the function. Ensure that your function code gracefully handles duplicate events, and that you have enough concurrency available to handle all invocations.
-
-This implies that an incoming invocation may just be *deleted* out of thin air. Also in my implementation I'm relying on the retry behaviour when a function throttles.
-
-**2. When a message is in the queue, what happens when the message timeout is exceeded?**
-
-I can't find a difinitive answer but I'm hoping the message would end up in the configured dead letter queue.
-
-**3. Why would I use SQS over the Lambda queue when SQS presents other problems?**
-
-See the articles below for arguments against SQS. Overpulling (described in the second link) is of particular concern:
-
-[https://lumigo.io/blog/sqs-and-lambda-the-missing-guide-on-failure-modes/](https://lumigo.io/blog/sqs-and-lambda-the-missing-guide-on-failure-modes/)
-
-[https://medium.com/@zaccharles/lambda-concurrency-limits-and-sqs-triggers-dont-mix-well-sometimes-eb23d90122e0](https://medium.com/@zaccharles/lambda-concurrency-limits-and-sqs-triggers-dont-mix-well-sometimes-eb23d90122e0)
-
-I can't find any articles or discussions of how the Lambda queue performs.
-
-**Thanks for reading!**
-## [7][How to Enforce Tagging?](https://www.reddit.com/r/aws/comments/hkrdnr/how_to_enforce_tagging/)
-- url: https://www.reddit.com/r/aws/comments/hkrdnr/how_to_enforce_tagging/
----
-This is something that seems so simple, yet I haven't found any way to do it despite some searching.
-
-I want to prevent any user in my Organization from creating any taggable resource unless it has certain tags. (Currently, I want AppName and Environment.) 
-
-I thought tagging policy would be a way to do it, but I created a tagging policy requiring an AppName tag for all available resource types, yet AWS allowed me to instantiate an EC2 instance without the AppName tag.
-
-Is there really no easy way to tell AWS, "don't let users create instances unless the instance have this tag?"
-## [8][CI/CD with CDK](https://www.reddit.com/r/aws/comments/hkwwsm/cicd_with_cdk/)
-- url: https://www.reddit.com/r/aws/comments/hkwwsm/cicd_with_cdk/
----
-Howdy folks,
-
-We are currently looking at CDK and we are thinking about different ways to integrate it with CI/CD (CodeCommit / Build / Pipeline/ Deploy).    The focus is on our "server less" applications (CloudFront, s3, API Gateway, Lambda, etc....) ... One scenario that we are looking at is to run cdk synth in Codebuild and then apply the resulting template.  It would look something like
+I'm building an application that will use AWS Cognito for handling user authentication and such. I have seen a few tutorials that use everything in the front end including the pool and client ID, this seems like a security issue to me. However when I try to make it in a backend service it results in an error about missing fetch and some googling shows it's because I'm using Node.js isnstead of something like Vue.js on the front end.
 
 &amp;#x200B;
 
-* A CDK Stack that define the pipeline itself.  It would be deployed using "cdk deploy" and would probably don't change much. It  would include the following stages:
-
-1. CodeCommit as source repo
-2. CodeBuild for Lambda's -&gt; Artifacts to S3
-3. CodeBuild for FrontEnd -&gt; Artifacts to S3
-4. CodeBuild that run "cdk synth" for the AppStack (see below) -&gt; Artifact (cf template) to S3
-5. CodePipeline Action (CloudFormationCreateReplaceChangeSetAction) (the cf template created at step 4)
-6. CodePipeline Approval
-7. CodePipeline Action (CloudFormationExecuteChangeSetAction)
-8. CodePipeline Action (S3DeployAction) (to deploy the Frontend Artifact to S3)
-
-&amp;#x200B;
-
-* A "AppStack" CDK stack that actually defines all the ressources:  
-
-1. That stack would be "synthesize" by the Pipeline each time there's a code change (either to the AppStack CDK code itself or the Frontend / Lambda code) 
-
-&amp;#x200B;
-
-The idea is similar to this example: [https://docs.aws.amazon.com/cdk/latest/guide/codepipeline\_example.html](https://docs.aws.amazon.com/cdk/latest/guide/codepipeline_example.html)
-
-One of the limitation is that we can't use (as far as I know) "asset" so we have to use the special "lambda.Code.fromCfnParameters()" as explained in the doc above.  Deploying the FrontEnd to a S3 bucket from the CodePipeline Artifact would also required an additional step (step 8 in the example above).
-
-Does anyone is using a similar solution?  Any gotcha that we should be aware of?
-
-I would also love to hear how you implemented CI/CD using CDK.  Any ideas are welcome!
-
-PS: We looked into the App Delivery construct but as of now, it's cannot do cross-account and that's a requirements for us.  I skipped that details in the step above to keep it simple.
-
-Thanks!
-## [9][AWS Lambda for Monitoring and Alerting](https://www.reddit.com/r/aws/comments/hkz9kr/aws_lambda_for_monitoring_and_alerting/)
-- url: https://www.reddit.com/r/aws/comments/hkz9kr/aws_lambda_for_monitoring_and_alerting/
----
-I am a Site Reliability Engineer at my company, and I have been asked to setup and create alerts on a variety of things
-
-I need to create alerts related to events in AWS, such as: AWS Batch failures, unhealthy target groups, checking whether a file exists in S3 at a specific time of the day, whether certain EC2 instances are healthy, etc
-
-&amp;#x200B;
-
-I also need to create several alerts that would execute a query on our production databases (MSSQL and MongoDB), and trigger if certain conditions are met based on the results of the query. Some of these  alerts would run at specific times of the day, but others might run somewhat constantly, like every 5-10 minutes.
-
-&amp;#x200B;
-
-I believe I am able to create all of these alerts as Python scripts. (Side note: these alerts will call on the PagerDuty API to send alerts to whoever is on call)
-
-&amp;#x200B;
-
-I also have to create automated emails that send at specific times of day
-
-&amp;#x200B;
-
-My question is, should I use AWS Lambda to run and execute these scripts? I am not completely sure if these Python scripts I'm planning to make are a good use case for AWS Lambda. If not, could I ask what might be a better alternative? Is it better I set up the scripts on some server and have them run there?
-## [10][aws lake formation - ingesting from msk (kafka)](https://www.reddit.com/r/aws/comments/hkvqi0/aws_lake_formation_ingesting_from_msk_kafka/)
-- url: https://www.reddit.com/r/aws/comments/hkvqi0/aws_lake_formation_ingesting_from_msk_kafka/
----
-I came across this aws blog post where it mentions that msk can be used for data ingestion but I can't find any documentation on this. When I try to add a data source for ingestion it doesn't five me the MSK option. anyone has experience working with lake formation and msk?
-
-https://aws.amazon.com/blogs/big-data/building-securing-and-managing-data-lakes-with-aws-lake-formation/
-## [11][AWS setup for multiple accounts (engineering firm)](https://www.reddit.com/r/aws/comments/hkobe8/aws_setup_for_multiple_accounts_engineering_firm/)
-- url: https://www.reddit.com/r/aws/comments/hkobe8/aws_setup_for_multiple_accounts_engineering_firm/
----
-Hi everyone,
-
-&amp;#x200B;
-
-My engineering firm is looking to consolidate our cloud workflows into one platform with AWS. We have several clients and would like to bill them directly for the resources used on their projects rather than paying for the resources ourselves upfront and billing them later.
-
-&amp;#x200B;
-
-I know that AWS has the 'organisations' feature - is this the correct way to do this? Is there a better way to organize resources by clients? Any other tips you might have for this kind of set up? We are growing rapidly so would like to get a hold of this before it becomes a bigger problem.
-
-&amp;#x200B;
-
-Thanks!
+Should the request (and client/pool ID) come from the front end or the back end? How big of security issue is having the ID's in the front end?

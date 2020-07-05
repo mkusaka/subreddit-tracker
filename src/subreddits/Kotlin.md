@@ -1,5 +1,59 @@
 # Kotlin
-## [1][Announcing LA4K: Logging API for Kotlin](https://www.reddit.com/r/Kotlin/comments/hkrz4x/announcing_la4k_logging_api_for_kotlin/)
+## [1][Kotlin 1.4-M3-eap-* of the IDEA Plugin](https://www.reddit.com/r/Kotlin/comments/hljfbh/kotlin_14m3eap_of_the_idea_plugin/)
+- url: https://www.reddit.com/r/Kotlin/comments/hljfbh/kotlin_14m3eap_of_the_idea_plugin/
+---
+I can see Kotlin 1.4-M3 artifacts are being pushed to the `kotlin-dev` channel.  
+
+However I can't find a build of the IDEA Plugin. Any idea where I could look? I would like to avoid building it myself.
+## [2][Released KHipster 1.9.0](https://www.reddit.com/r/Kotlin/comments/hld2qu/released_khipster_190/)
+- url: https://www.npmjs.com/package/generator-jhipster-kotlin
+---
+
+## [3][lndmflngs/line-to-telegram - Tool to prepare a set of Line stickers into Telegram stickers [Rewrote on the use of Executors, Need some code review]](https://www.reddit.com/r/Kotlin/comments/hlkmj5/lndmflngslinetotelegram_tool_to_prepare_a_set_of/)
+- url: https://github.com/lndmflngs/line-to-telegram
+---
+
+## [4][java.lang.ExceptionInInitializerError in self-referential objects?](https://www.reddit.com/r/Kotlin/comments/hlhuvu/javalangexceptionininitializererror_in/)
+- url: https://www.reddit.com/r/Kotlin/comments/hlhuvu/javalangexceptionininitializererror_in/
+---
+I'm having problems with the jvm compiler.
+
+I'm trying to write a factory method for classes. The factory method has an init() block that helps to define behaviour for the new object. While this method compiles for JVM, I encounter a problem when running it:
+
+java.lang.ExceptionInInitializerError
+
+Caused by: java.lang.IllegalArgumentException: Parameter specified as non-null is null: method type.ProblematicKt.nullable, parameter $this$nullable
+
+&amp;#x200B;
+
+Apparently, the object isn't yet defined when I attempt to run the problematicInit() block. How do I fix this?
+
+Seems to be a JVM problem. It seems to work for Javascript compilations. My understanding was that getProblematic would be hoisted, but what's inside the scope would be deferred until it's run designed to be run later - after the factory method is completed.
+
+    interface ProblematicBuilderScope {
+      fun problematicInit(getX: () -&gt; ProblematicInterface)
+    }
+    
+    fun getProblematic() = X
+    class Problematic(...): ProblematicInterface
+    
+    // Factory method with init() block
+    val X = Problematic.factory(...) {
+      problematicInit{ getProblematic() }
+    } 
+    
+    fun factory(init: ProblematicBuilderScope.() -&gt; Unit): Problematic {
+      val newObject = Problematic(...)
+      val scope = ProblematicBuilderScope(newObject)
+      scope.init()
+      return newObject
+    }
+## [5][Can Kotlin.JS And Javascript be in the same project?](https://www.reddit.com/r/Kotlin/comments/hl1440/can_kotlinjs_and_javascript_be_in_the_same_project/)
+- url: https://www.reddit.com/r/Kotlin/comments/hl1440/can_kotlinjs_and_javascript_be_in_the_same_project/
+---
+I was making some basic website after going through the React and Kotlin.JS tutorial of JetBrains and then my friend expressed his desire to contribute. But the problem is that he doesn't knows Kotlin and only Javascript and I have just started so I only know Javascript.
+AFAIK, Java and Kotlin can be used in the same project but is there any way to use Kotlin.JS with simple Javascript. Or will one of us have to learn a new language?
+## [6][Announcing LA4K: Logging API for Kotlin](https://www.reddit.com/r/Kotlin/comments/hkrz4x/announcing_la4k_logging_api_for_kotlin/)
 - url: https://www.reddit.com/r/Kotlin/comments/hkrz4x/announcing_la4k_logging_api_for_kotlin/
 ---
 Greetings!
@@ -11,20 +65,15 @@ I invite everyone to [check out its GitHub repo](https://github.com/wswartzendru
 It is my intention for this to mature as Kotlin Multiplatform does the same. I would like for the v1.0.0 release to coincide with Multiplatform's initial, stable release.
 
 I appreciate any feedback on this project.
-## [2][Null Safety in Kotlin](https://www.reddit.com/r/Kotlin/comments/hl0ich/null_safety_in_kotlin/)
-- url: https://medium.com/swlh/null-safety-in-kotlin-88298e64a1dc?source=friends_link&amp;sk=a3f75e55a492b26416fe36907f69e09c
----
-
-## [3][Multiplatform Persistence with SQLDelight](https://www.reddit.com/r/Kotlin/comments/hkqf1e/multiplatform_persistence_with_sqldelight/)
+## [7][Multiplatform Persistence with SQLDelight](https://www.reddit.com/r/Kotlin/comments/hkqf1e/multiplatform_persistence_with_sqldelight/)
 - url: http://gh.jdoneill.com/2020/06/28/sqldelight/
 ---
 
-## [4][Can Kotlin.JS And Javascript be in the same project?](https://www.reddit.com/r/Kotlin/comments/hl1440/can_kotlinjs_and_javascript_be_in_the_same_project/)
-- url: https://www.reddit.com/r/Kotlin/comments/hl1440/can_kotlinjs_and_javascript_be_in_the_same_project/
+## [8][Null Safety in Kotlin](https://www.reddit.com/r/Kotlin/comments/hl0ich/null_safety_in_kotlin/)
+- url: https://medium.com/swlh/null-safety-in-kotlin-88298e64a1dc?source=friends_link&amp;sk=a3f75e55a492b26416fe36907f69e09c
 ---
-I was making some basic website after going through the React and Kotlin.JS tutorial of JetBrains and then my friend expressed his desire to contribute. But the problem is that he doesn't knows Kotlin and only Javascript and I have just started so I only know Javascript.
-AFAIK, Java and Kotlin can be used in the same project but is there any way to use Kotlin.JS with simple Javascript. Or will one of us have to learn a new language?
-## [5][Is there a good way to share code between projects in Kotlin Multiplatform?](https://www.reddit.com/r/Kotlin/comments/hkrkul/is_there_a_good_way_to_share_code_between/)
+
+## [9][Is there a good way to share code between projects in Kotlin Multiplatform?](https://www.reddit.com/r/Kotlin/comments/hkrkul/is_there_a_good_way_to_share_code_between/)
 - url: https://www.reddit.com/r/Kotlin/comments/hkrkul/is_there_a_good_way_to_share_code_between/
 ---
 I have a library I wrote all in Kotlin, which currently builds using Gradle and uploads an artifact to Maven. I can then use it in JVM projects, and it works fine.  
@@ -32,13 +81,7 @@ I have a library I wrote all in Kotlin, which currently builds using Gradle and 
 However if I use it in a multiplatform project (based on https://korge.org/), build.gradle.kts throws an error on the implementation.  I assume this is because Maven libraries are compiled into a jar and the build.gradle.kts script doesn't support that.
 
 Is there a way to make a Kotlin specific library, in such a way that it can be imported into other projects?  I could use git submodules to include the src directory, but that's kind of messy.  Is there a better solution?
-## [6][The Best Kotlin online courses and tutorials for beginners to learn Kotlin programming language in 2020](https://www.reddit.com/r/Kotlin/comments/hkhq9j/the_best_kotlin_online_courses_and_tutorials_for/)
-- url: https://www.reddit.com/r/Kotlin/comments/hkhq9j/the_best_kotlin_online_courses_and_tutorials_for/
----
-Found an amazing list of all the top-rated [Kotlin courses](https://blog.coursesity.com/best-kotlin-tutorials?utm_source=reddit&amp;utm_medium=social&amp;utm_campaign=redditPost&amp;utm_term=best-kotlin-js) of all time.  
-
-Many of these courses are very helpful to Kotlin for the beginners.
-## [7][Kotlin Spring Boot throws an error getting a DateTime out of a MongoDB Database using Graph-QL Java](https://www.reddit.com/r/Kotlin/comments/hks4ea/kotlin_spring_boot_throws_an_error_getting_a/)
+## [10][Kotlin Spring Boot throws an error getting a DateTime out of a MongoDB Database using Graph-QL Java](https://www.reddit.com/r/Kotlin/comments/hks4ea/kotlin_spring_boot_throws_an_error_getting_a/)
 - url: https://www.reddit.com/r/Kotlin/comments/hks4ea/kotlin_spring_boot_throws_an_error_getting_a/
 ---
 I have been working on a Kotlin App using Spring Boot and GraphQL with all my data stored in a MongoDB database. I have started using the GraphQL-Java-Extended-Scalars to try to deal with my DateTimes in my Database but it keeps throwing the error Expected something we can convert to 'java.time.OffsetDateTime' but was 'LocalDateTime'.  I was wonder how do you correctly setup GraphQL-Java-Extended-Scalars and what data type should I use for my DateTimes?
@@ -109,25 +152,3 @@ and lastly, my DateTime in the MongoDB database is in this form:
     "dateCreated" : ISODate("2020-0703T04:30:52.237Z")
 
 Hopefully, this is information to help solve the error it keeps throwing when I run the query for dateCreated of the user. Thank you for all your help in advance
-## [8][Zoe: Discover the new release of the command line tool for Kafka written in Kotlin (with a new Katacoda environment to try it out from the browser)](https://www.reddit.com/r/Kotlin/comments/hki8r1/zoe_discover_the_new_release_of_the_command_line/)
-- url: https://www.reddit.com/r/Kotlin/comments/hki8r1/zoe_discover_the_new_release_of_the_command_line/
----
-[https://github.com/adevinta/zoe/releases/tag/v0.24.0](https://github.com/adevinta/zoe/releases/tag/v0.24.0)
-## [9][Whats the best way to implement comment system in kotlin android. I am using firebase for backend. I came across only a single article for this but that too is cumbersome. Link https://medium.com/@pedrocarrillo/comments-in-a-recylcerview-e7537235cd33](https://www.reddit.com/r/Kotlin/comments/hkocem/whats_the_best_way_to_implement_comment_system_in/)
-- url: https://www.reddit.com/r/Kotlin/comments/hkocem/whats_the_best_way_to_implement_comment_system_in/
----
-
-## [10][Any more pleasant way to type this?](https://www.reddit.com/r/Kotlin/comments/hkfjxw/any_more_pleasant_way_to_type_this/)
-- url: https://www.reddit.com/r/Kotlin/comments/hkfjxw/any_more_pleasant_way_to_type_this/
----
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-    savedInstanceState: Bundle?): View? = 
-        context?.run { SomeView(this).also { layout = it } } 
-
-&amp;#x200B;
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-    savedInstanceState: Bundle?): View? =
-        context?.let { layout = SomeView(it); layout }
-
-&amp;#x200B;

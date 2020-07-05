@@ -11,43 +11,45 @@ Show us here!
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][Do you want to make an impact to improve the way App development works? The opensource neomjs UI framework project is looking for more contributors.](https://www.reddit.com/r/javascript/comments/hl114g/do_you_want_to_make_an_impact_to_improve_the_way/)
+## [3][I wasn't satisfied with existing social share buttons so I made my own — they look nice and don't track you](https://www.reddit.com/r/javascript/comments/hlb0pb/i_wasnt_satisfied_with_existing_social_share/)
+- url: https://shareon.js.org/
+---
+
+## [4][I made a new way to throw online parties - All in JavaScript](https://www.reddit.com/r/javascript/comments/hlcaox/i_made_a_new_way_to_throw_online_parties_all_in/)
+- url: https://streamable.com/yujhz1
+---
+
+## [5][Svelte.js and Malina.js](https://www.reddit.com/r/javascript/comments/hllkbb/sveltejs_and_malinajs/)
+- url: https://medium.com/@lega911/svelte-js-and-malina-js-b33c55253271
+---
+
+## [6][mediakit: a package to stop audio elements playing at the same time](https://www.reddit.com/r/javascript/comments/hlhq9k/mediakit_a_package_to_stop_audio_elements_playing/)
+- url: https://github.com/tj-mc/mediakit
+---
+
+## [7][Do you want to make an impact to improve the way App development works? The opensource neomjs UI framework project is looking for more contributors.](https://www.reddit.com/r/javascript/comments/hl114g/do_you_want_to_make_an_impact_to_improve_the_way/)
 - url: https://github.com/neomjs/neo
 ---
 
-## [4][tsParticles - What particles.js could be if it wasn't abandoned years ago](https://www.reddit.com/r/javascript/comments/hkkj2y/tsparticles_what_particlesjs_could_be_if_it_wasnt/)
-- url: https://github.com/matteobruni/tsparticles
+## [8][Avoid writing Javascript when working with classes. It only takes up 1Kb!](https://www.reddit.com/r/javascript/comments/hlkpq0/avoid_writing_javascript_when_working_with/)
+- url: https://codepen.io/androsfenollosa/pen/dyGdRVE
 ---
 
-## [5][Don't make assumptions about JS performance](https://www.reddit.com/r/javascript/comments/hkv8nv/dont_make_assumptions_about_js_performance/)
-- url: https://www.samdawson.dev/article/js-perf-assumptions
+## [9][[AskJS] Desktop app or web app for creating mock server](https://www.reddit.com/r/javascript/comments/hlbvy6/askjs_desktop_app_or_web_app_for_creating_mock/)
+- url: https://www.reddit.com/r/javascript/comments/hlbvy6/askjs_desktop_app_or_web_app_for_creating_mock/
 ---
+Hi, I had an idea for a mock server desktop app. I don't know if this has been done before, or what features the existing ones have. So it would be great if you could share any such app that you have come across or used sometime.
 
-## [6][Vue Composition API for automatic fetch data when condition has been changed](https://www.reddit.com/r/javascript/comments/hl1o6n/vue_composition_api_for_automatic_fetch_data_when/)
+The basic functionality of the app is to return json data based on a schema entered by the user
+## [10][Vue Composition API for automatic fetch data when condition has been changed](https://www.reddit.com/r/javascript/comments/hl1o6n/vue_composition_api_for_automatic_fetch_data_when/)
 - url: https://github.com/runkids/vue-condition-watcher
 ---
 
-## [7][Atomically - Write files atomically and reliably](https://www.reddit.com/r/javascript/comments/hkv5ax/atomically_write_files_atomically_and_reliably/)
-- url: https://github.com/fabiospampinato/atomically
+## [11][Celebrate 4th of July with fireworks - 60 lines of pure JS](https://www.reddit.com/r/javascript/comments/hl3qi3/celebrate_4th_of_july_with_fireworks_60_lines_of/)
+- url: https://slicker.me/javascript/fireworks.htm
 ---
 
-## [8][A WYSIWYG WebAssembly client-side LaTeX Editor, supporting PDFTeX and XeTeX](https://www.reddit.com/r/javascript/comments/hkxjjy/a_wysiwyg_webassembly_clientside_latex_editor/)
-- url: https://github.com/SwiftLaTeX/SwiftLaTeX
----
-
-## [9][Understanding Javascript Array's .reduce() method and exploring its use-cases](https://www.reddit.com/r/javascript/comments/hl24vz/understanding_javascript_arrays_reduce_method_and/)
-- url: https://gosink.in/understanding-javascript-array-reduce-method-and-its-use-cases-is-it-underrated/?utm_source=reddit&amp;utm_medium=javascript
----
-
-## [10][Understading JSON Web Token](https://www.reddit.com/r/javascript/comments/hkdyal/understading_json_web_token/)
-- url: https://9sh.re/ZxiYixYYpp
----
-
-## [11][jsplot - tiny website/tool where you can paste any js code that returns a number sequence to plot it](https://www.reddit.com/r/javascript/comments/hkrim5/jsplot_tiny_websitetool_where_you_can_paste_any/)
-- url: https://fredriknoren.github.io/jsplot/
----
-
-## [12][Handling Multiple Inputs FrontEnd Frameworks [React, Vue and Sevelt]](https://www.reddit.com/r/javascript/comments/hkvbmb/handling_multiple_inputs_frontend_frameworks/)
-- url: https://h3manth.com/new/blog/2020/handling-multiple-inputs-frontend-frameworks/
+## [12][immurl - An immutable alternative to the native URL API](https://www.reddit.com/r/javascript/comments/hl4gfg/immurl_an_immutable_alternative_to_the_native_url/)
+- url: https://github.com/tom-sherman/immurl
 ---
 

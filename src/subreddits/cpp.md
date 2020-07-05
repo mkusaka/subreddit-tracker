@@ -123,15 +123,57 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [3][Constexpr circular queue with C++17, by me. When you need a queue and know the size at compile time.](https://www.reddit.com/r/cpp/comments/hklmag/constexpr_circular_queue_with_c17_by_me_when_you/)
+## [3][what is the "difficult" part of C++?](https://www.reddit.com/r/cpp/comments/hlittq/what_is_the_difficult_part_of_c/)
+- url: https://www.reddit.com/r/cpp/comments/hlittq/what_is_the_difficult_part_of_c/
+---
+Hi,
+
+I Just started learning C++ for UE 4 game development, still learning basic syntax, I'm just curious, why everyone says C++ is difficult comparing to other languages.
+
+I'm still a beginner and I didn't start learning deep concepts
+
+thanks.
+## [4][What is the best way to embed python on a Qt/C++ applicattion [closed]](https://www.reddit.com/r/cpp/comments/hlabb3/what_is_the_best_way_to_embed_python_on_a_qtc/)
+- url: https://www.reddit.com/r/cpp/comments/hlabb3/what_is_the_best_way_to_embed_python_on_a_qtc/
+---
+So, I do not know if this is the right place for me to ask that kind of question. Sorry if it is not.
+
+I am working on a Qt project using C++ and I am needing to embed a python script.
+
+Researching, I have seen that there are several ways of doing this -- using one of those tools [PythonQt](https://mevislab.github.io/pythonqt/index.html), [Boost Python](https://www.boost.org/doc/libs/1_72_0/libs/python/doc/html/index.html), [pybind11](https://github.com/pybind/pybind11) and [Python/C API](https://docs.python.org/3/extending/embedding.html).
+
+On my application, it will be necessary for the C++ code part to  execute functions -- with arguments -- on a python module and get the  output of it. However, the opposite will not be necessary (The Python  part will not need to know the "existence" of the C++ part). That way,  it will not be necessary to do something like extending and embedding at  the same time, just the embedding part.
+
+In my application, the response time of the tasks and code  readability are extremely important, I want this process to be as  optimized as possible and I want that any code partner could understand  and maintain the code -- and maybe replicate something similar in the  future -- without too many obstacles.
+
+What is the best way to perform such an operation? Would it be using one of the those options: [PythonQt](https://mevislab.github.io/pythonqt/index.html), [Boost Python](https://www.boost.org/doc/libs/1_72_0/libs/python/doc/html/index.html), [pybind11](https://github.com/pybind/pybind11) or [Python/C API](https://docs.python.org/3/extending/embedding.html)? What are the advantages and disadvantages of these options?
+## [5][Cross-platform memory manager and pool allocator for isolated RAM regions](https://www.reddit.com/r/cpp/comments/hljyf9/crossplatform_memory_manager_and_pool_allocator/)
+- url: https://www.reddit.com/r/cpp/comments/hljyf9/crossplatform_memory_manager_and_pool_allocator/
+---
+[https://github.com/balazs-bamer/cpp-memory-manager](https://github.com/balazs-bamer/cpp-memory-manager)
+
+This is not compatible with STL smart pointers. Perhaps once I will investigate the possibility to create smart pointers with limited functionality to use with the Fibonacci memory manager.
+## [6][C++ STL Arrays Tutorial for Beginners](https://www.reddit.com/r/cpp/comments/hlkibm/c_stl_arrays_tutorial_for_beginners/)
+- url: https://www.youtube.com/watch?v=eN_uT1xgIlM&amp;feature=share
+---
+
+## [7][Pareto Fronts and Archives](https://www.reddit.com/r/cpp/comments/hlbvhe/pareto_fronts_and_archives/)
+- url: https://www.reddit.com/r/cpp/comments/hlbvhe/pareto_fronts_and_archives/
+---
+This is a container representing a data structure to cache and query multi-dimensional Pareto fronts and archives with its most expensive operations in O(n log n) time. Pareto fronts can be used to cache objects in any situation where there is a trade-off between the quality of multiple objectives. Whenever the front pushes an element better than the other in all dimensions, the dominated points are automatically removed from the set. In a Pareto archive, whenever the front pushes an element better than the other in all dimensions, the dominated points are moved to higher fronts in the archive.
+
+[https://github.com/alandefreitas/pareto-front](https://github.com/alandefreitas/pareto-front)
+## [8][C++ Open source projects with best Code Coverage](https://www.reddit.com/r/cpp/comments/hldhfd/c_open_source_projects_with_best_code_coverage/)
+- url: https://www.reddit.com/r/cpp/comments/hldhfd/c_open_source_projects_with_best_code_coverage/
+---
+Hi Guys, 
+
+  I'm searching for GitHub open source projects with good code coverage (at least &gt; 50%). Preferably coverage measured using gcov. Kindly point out to good blog comparing projects or links to project.
+## [9][Constexpr circular queue with C++17, by me. When you need a queue and know the size at compile time.](https://www.reddit.com/r/cpp/comments/hklmag/constexpr_circular_queue_with_c17_by_me_when_you/)
 - url: https://github.com/SteveZhangSZ/ConstexprCircularQueue
 ---
 
-## [4][SonarQube / SonarCloud Improved C++ Analysis](https://www.reddit.com/r/cpp/comments/hkjnb0/sonarqube_sonarcloud_improved_c_analysis/)
-- url: https://community.sonarsource.com/t/c-c-analysis-engine-supports-more-compilers-and-detects-buffer-overflow-security-sensitive-apis/26542
----
-
-## [5][What would it take to make C++ safer and eliminate common pitfalls?](https://www.reddit.com/r/cpp/comments/hksk1c/what_would_it_take_to_make_c_safer_and_eliminate/)
+## [10][What would it take to make C++ safer and eliminate common pitfalls?](https://www.reddit.com/r/cpp/comments/hksk1c/what_would_it_take_to_make_c_safer_and_eliminate/)
 - url: https://www.reddit.com/r/cpp/comments/hksk1c/what_would_it_take_to_make_c_safer_and_eliminate/
 ---
 Backwards compatibility is great because it helps ease the adoption of technology be it hardware or software, but it can potentially leads to solutions with degraded efficiency, unnecessary complexity, poorer security implications and much more. As a example, read Intel's x64 design docs which had to use rather complex components merely because of providing backwards compatibility.
@@ -143,7 +185,28 @@ Now, I've played around with Rust and it seems promising in terms of performance
 I think some people will agree that C++ code can be just as fast as C and in some even cases even faster, thanks to a great set of low-to-zero cost abstractions and the incredibly-smart compilers (with their RVOs etc) for generating optimized machine code. I feel like there's a need for a C++ compiler made just for (post-)modern C++ without any regard for backwards-compatibility which would strictly implement some of the fundamental best-practices, such as, making all variables `const` unless they don't have to be, forbidding uninitialized variables or even forcing you to abandon raw pointers, while offering built-in memory sanitization at compile times among other things. This is just an initial suggestion for desired features, but if we explore, I'm sure there are other undesirable, unsafe things that language permits yet we would not like to see them in our codes anymore. I think that a modern C++ compiler which would outright reject *horrible, unsafe C++98 code* (which is what most recent college graduates write because their professors taught them C++98) seems invaluable, and, maybe a step in the right direction towards building safer and faster systems!
 
 P.S This is just a thought, so I would love to hear what people here think!
-## [6][Charset transcoding and string formatting with strf.](https://www.reddit.com/r/cpp/comments/hkkqw9/charset_transcoding_and_string_formatting_with/)
+
+**Edit: FAQs**
+
+Q: What about the safety vs speed trade-off?  
+A: Lightweight abstractions like `std::unique_pointer` are still as fast albeit with greater safety in the general case. As someone pointed out in comments, a great swath of UB can be avoided transparently. UB for something trivial like integers addition doesn't need to exist today! Ask any scalable systems programmer, and they will want more "defined behavior" from their programming language than "undefined behavior".
+
+Q: I know when to delete my pointers or how to tackle UB, why should I care?  
+A: Well, you know better (good for you!), but not an average-joe-programmer who's starting to learn C++. Kids spend dozens of hours dealing with "seg faults" because they accessed a pointer that had already been freed. To make lifetime analysis easier for compilers, you need clear well-defined ownerships rules which is what smart pointers (minus std::weak\_ptr) give you. Permit weakly-typed pointers (like pointer to void types) and suddenly there's too much complexity to deal with.
+
+Q: What about the backwards compatibility? What's the migration strategy?  
+A: You can have the choice to use either (post-)modern C++ or not in existing compilers (using \[\[safe/unsafe\]\] attributes as people suggested) but if that leads to unnecessary complexity, I'd rather start with a fresh compiler built-only for modern/post-modern C++ which would only accepts a *safe subset of the language*.
+
+Q: What's included in safe C++?  
+A: People have pointed out really amazing things in comments below. There's a great deal of literature out there. For example, I read a book on C++17 and realized I'd rather only use `std::variant` than unsafe-type `union`s. I don't any reason why we, as a community, cannot agree on what safe C++ is.
+
+Q: If you want safe C++, there's Rust, Swift etc?  
+A: I love C++ too much to abandon it, and I want more people to program in it while making the core language easier for beginners. Don't you?
+## [11][SonarQube / SonarCloud Improved C++ Analysis](https://www.reddit.com/r/cpp/comments/hkjnb0/sonarqube_sonarcloud_improved_c_analysis/)
+- url: https://community.sonarsource.com/t/c-c-analysis-engine-supports-more-compilers-and-detects-buffer-overflow-security-sensitive-apis/26542
+---
+
+## [12][Charset transcoding and string formatting with strf.](https://www.reddit.com/r/cpp/comments/hkkqw9/charset_transcoding_and_string_formatting_with/)
 - url: https://www.reddit.com/r/cpp/comments/hkkqw9/charset_transcoding_and_string_formatting_with/
 ---
 Strf is a formatting library that provides a convenient way for converting one character encoding to another.
@@ -159,38 +222,3 @@ The documentation is not complete — particularly on how to extend the library,
 Maybe someone can spot any design flaw or suggest any worthy breaking change before I release version 1.0. 
 
 Best Regards
-## [7][Documentation options](https://www.reddit.com/r/cpp/comments/hke35s/documentation_options/)
-- url: https://www.reddit.com/r/cpp/comments/hke35s/documentation_options/
----
-Hi,
-
-I have the opportunity to introduce a documentation platform for a project I’m involved on. The documentation is for a large C/C++ code base. I’ve never been responsible for externally facing documentation for developers, so I’m hoping to get some opinions and insight. Has anyone used a documentation, platform, format, etc that they would recommend? I’m aware of Doxygen and have used it in the past, but have mixed feelings about how useful those documents tend to be and it’s impact on the readability of header files. Maybe I’ve never configured Doxygen enough, though. Any opinions would be greatly appreciated! :)
-## [8][Variadic Tuple Keyed Unordered Map Implementation (in under 20 lines)](https://www.reddit.com/r/cpp/comments/hksj8e/variadic_tuple_keyed_unordered_map_implementation/)
-- url: https://www.reddit.com/r/cpp/comments/hksj8e/variadic_tuple_keyed_unordered_map_implementation/
----
-For those who want a to use a tuple as a key, with a variable number of types, to an unordered map, I've made a tutorial on how to implement it in under twenty lines using C++17 Features. Let me know what you think.
-
-https://youtu.be/1DafW0nLvQ0
-## [9][Bug in MSVC?](https://www.reddit.com/r/cpp/comments/hkfedn/bug_in_msvc/)
-- url: https://www.reddit.com/r/cpp/comments/hkfedn/bug_in_msvc/
----
-I've recently had to move from gcc to msvc, and got a very strange error message. It seems the compiler is interpreting the lambda body as an initializer list being passed to the lambda constructor? Anyway, gcc and clang have absolutely no problem compiling this code, no warnings occur even with all the warning flags provided. Are there some obscure rules about nesting lambdas I'm not aware of? I'd be grateful if someone could take a look, I'm honestly stumped.
-
-The (stripped down) code: [https://godbolt.org/z/WmBpuH](https://godbolt.org/z/WmBpuH)
-## [10][Why ‘accelerated C++’ is considered a good book?](https://www.reddit.com/r/cpp/comments/hkmg7u/why_accelerated_c_is_considered_a_good_book/)
-- url: https://www.reddit.com/r/cpp/comments/hkmg7u/why_accelerated_c_is_considered_a_good_book/
----
-I am genuinely curious to why ‘Accelerated C++’ book is considered a good book. Could people who truly used it to get into C++ comment?
-
-I am trying to find a complete, easy to digest and memorable reference to learn C++. When I reviewed AC++ I found it dated, using long examples that are hard to remember. 
-On the other hand, I looked at ‘C++ Crash Course’ and found it much easier to digest, short examples and updated. Although it doesn’t get much love on this sub.  
-
-I am just trying to find what is the criteria used when deciding a good, easy and complete C++ book to start with.
-## [11][CppCast: SYCL 2020](https://www.reddit.com/r/cpp/comments/hkboi7/cppcast_sycl_2020/)
-- url: https://cppcast.com/sycl-michael-wong/
----
-
-## [12][Magnum Engine 2020.06 released with redesigned asset pipeline and several new examples](https://www.reddit.com/r/cpp/comments/hjwbrb/magnum_engine_202006_released_with_redesigned/)
-- url: https://blog.magnum.graphics/announcements/2020.06/
----
-

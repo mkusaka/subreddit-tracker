@@ -83,92 +83,71 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
-## [3][Screenshot.rocks - Web app to create browser mockups from screenshots](https://www.reddit.com/r/reactjs/comments/hl1l9b/screenshotrocks_web_app_to_create_browser_mockups/)
+## [3][Understanding Event Handling in React.js (with React Hooks)](https://www.reddit.com/r/reactjs/comments/hll7ei/understanding_event_handling_in_reactjs_with/)
+- url: https://www.youtube.com/watch?v=rgxSs6cYhVw&amp;t=1s
+---
+
+## [4][Screenshot.rocks - Web app to create browser mockups from screenshots](https://www.reddit.com/r/reactjs/comments/hl1l9b/screenshotrocks_web_app_to_create_browser_mockups/)
 - url: https://v.redd.it/gqemcgmhot851
 ---
 
-## [4][Quick and Easy app: Vector Field Generator!](https://www.reddit.com/r/reactjs/comments/hklmz7/quick_and_easy_app_vector_field_generator/)
-- url: https://v.redd.it/g7g183qp0o851
+## [5][A simple library to automate redux](https://www.reddit.com/r/reactjs/comments/hlm83n/a_simple_library_to_automate_redux/)
+- url: https://github.com/spaceuptech/automate-redux
 ---
 
-## [5][I would love some feedback on my new project: React Capsule 💊, an easy to use and understand global state in under 1 kB with no Context API](https://www.reddit.com/r/reactjs/comments/hkykad/i_would_love_some_feedback_on_my_new_project/)
-- url: https://www.npmjs.com/package/react-capsule
+## [6][Rebuilt my portfolio website using React.js](https://www.reddit.com/r/reactjs/comments/hlmk54/rebuilt_my_portfolio_website_using_reactjs/)
+- url: https://www.reddit.com/r/reactjs/comments/hlmk54/rebuilt_my_portfolio_website_using_reactjs/
+---
+Hello everyone 
+
+I’ve built a new portfolio website using JSS, Bootstrap and React.js
+Working with React has been very delightful and sped up my development process a lot.
+
+Link: https://achrafhamrit.com
+
+Any feedback is welcome.
+## [7][A short demo on how to efficiently render Formik forms with in-depth explanation in the README](https://www.reddit.com/r/reactjs/comments/hlf36k/a_short_demo_on_how_to_efficiently_render_formik/)
+- url: https://github.com/resolritter/efficient-formik-demo
 ---
 
-## [6][Is there any case we have to use flexbox but grid of CSS layout?](https://www.reddit.com/r/reactjs/comments/hl2jn5/is_there_any_case_we_have_to_use_flexbox_but_grid/)
-- url: https://www.reddit.com/r/reactjs/comments/hl2jn5/is_there_any_case_we_have_to_use_flexbox_but_grid/
----
-Just want to ask a question about flexbox and grid layout.
-
-I see some articles says combine flexbox and grid is correct the best solution of CSS layout  
-.
-
-But from what I can see, grid can do everything that flexbox can do, may I ask whether there is any case flexbox is better than grid?
-## [7][Modern React From The Beginning - Free Video Course You Can Use To Get Started With React](https://www.reddit.com/r/reactjs/comments/hl1ua7/modern_react_from_the_beginning_free_video_course/)
-- url: https://codingthesmartway.com/modern-react-from-the-beginning-course/
+## [8][How to replicate the Zelda BOTW interface: Part 2](https://www.reddit.com/r/reactjs/comments/hlmh6w/how_to_replicate_the_zelda_botw_interface_part_2/)
+- url: https://dev.to/flagrede/how-to-replicate-the-zelda-botw-interface-with-react-tailwind-and-framer-motion-part-2-3nd4
 ---
 
-## [8][Shouldn't I create Row, Col components for the grid?](https://www.reddit.com/r/reactjs/comments/hl1jtx/shouldnt_i_create_row_col_components_for_the_grid/)
-- url: https://www.reddit.com/r/reactjs/comments/hl1jtx/shouldnt_i_create_row_col_components_for_the_grid/
----
-I went to an interview and did a code test, the reviewer said the only part he does like my code is I had a Grid.tsx file includes Row, Col components. 
-
-In my code, in src/components/Grid.txs file, I have two components Row and Col like
-
-```
-export const Row: React.FC&lt;IRowProps&gt; = (props) =&gt; {
-   // ...
-}
-```
-and
-```
-export const Col: React.FC&lt;IColProps&gt; = (props) =&gt; {
-   // ...
-}
-```
-
-And in my other components, I can layout elements by
-```
-&lt;Row&gt;
-    &lt;Col unit={1}&gt;
-    &lt;Col unit={2}&gt;
-&lt;/Row&gt;
-```
-
-He said it's over-structured, I should just use flexbox to do that instead of having a separate component, may I ask whether I did it wrong, or it's just his personal preference?
-
-Thanks for any opinion. I just want to learn what's the correct way and improve. I am really confused now.
-## [9][Which one do you prefer/is better, grid or flexbox?](https://www.reddit.com/r/reactjs/comments/hl1xar/which_one_do_you_preferis_better_grid_or_flexbox/)
-- url: https://www.reddit.com/r/reactjs/comments/hl1xar/which_one_do_you_preferis_better_grid_or_flexbox/
+## [9][Feed.gg - Follow streamers and e-sport profiles | Side project](https://www.reddit.com/r/reactjs/comments/hlm08o/feedgg_follow_streamers_and_esport_profiles_side/)
+- url: https://feed.gg
 ---
 
+## [10][Mini social media application](https://www.reddit.com/r/reactjs/comments/hllizo/mini_social_media_application/)
+- url: https://www.reddit.com/r/reactjs/comments/hllizo/mini_social_media_application/
+---
+ 
 
-[View Poll](https://www.reddit.com/poll/hl1xar)
-## [10][What do you prefer for styling?](https://www.reddit.com/r/reactjs/comments/hkhs0s/what_do_you_prefer_for_styling/)
-- url: https://www.reddit.com/r/reactjs/comments/hkhs0s/what_do_you_prefer_for_styling/
+ 
+
+I would like to get some feedback. Thank you
+
+This is a social media  web application built with  React , Node,  SocketIo, Mongodb amongst other things and offers multiple  functionalities such as:
+
+&amp;#x200B;
+
+* Posting status
+* Liking and Commenting
+* Messaging Users
+* Authentication
+
+I should note that there are multiple registration steps.
+
+Link: [https://socializers-app.herokuapp.com/](https://socializers-app.herokuapp.com/auth/register)
+
+&amp;#x200B;
+
+Thank you for your time
+## [11][I create a super simple hello world using class based component. But i get this error everytime i run local server at port 3000. Can someone help?](https://www.reddit.com/r/reactjs/comments/hll8ls/i_create_a_super_simple_hello_world_using_class/)
+- url: https://www.reddit.com/r/reactjs/comments/hll8ls/i_create_a_super_simple_hello_world_using_class/
+---
+ Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports
+## [12][Build A Simple Website With ExpressJS &amp; Nunjucks Using API Endpoint's](https://www.reddit.com/r/reactjs/comments/hlhfoa/build_a_simple_website_with_expressjs_nunjucks/)
+- url: https://youtu.be/1ViMigYBCf4
 ---
 
-
-[View Poll](https://www.reddit.com/poll/hkhs0s)
-## [11][[off] where can I advertise a donation campaign to get a computer to work?](https://www.reddit.com/r/reactjs/comments/hl0ggm/off_where_can_i_advertise_a_donation_campaign_to/)
-- url: /r/djangolearning/comments/hkzfnq/off_where_can_i_advertise_a_donation_campaign_to/
----
-
-## [12][Meet Astrale, the open source astrology app I've made with React Native and Expo (Python + Mongo)](https://www.reddit.com/r/reactjs/comments/hl0bjb/meet_astrale_the_open_source_astrology_app_ive/)
-- url: https://www.reddit.com/r/reactjs/comments/hl0bjb/meet_astrale_the_open_source_astrology_app_ive/
----
-Good morning!
-
-These last months I have been developing an application with React Native + Expo. It's not that I like astrology, it was just an excuse to play with Python (For scraping) and NoSQL with Mongo. And also to learn more React and more Native!
-
-Here you have the repo:
-
-[https://github.com/jvidalv/astrale](https://github.com/jvidalv/astrale)
-
-You can run it on your device with Expo on this link:
-
-[https://expo.io/@vidalv/astrale](https://expo.io/@vidalv/astrale)
-
-Apple is not accepting  more astrology "apps" in iOs (Nice monopoly you are creating there Apple), so its only for download in Android PlayStore.
-
-I hope you like it!

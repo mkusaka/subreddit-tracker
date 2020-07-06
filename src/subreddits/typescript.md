@@ -22,7 +22,58 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Strict null checks and default values](https://www.reddit.com/r/typescript/comments/hll24h/strict_null_checks_and_default_values/)
+## [2][Help me understand .d.ts files](https://www.reddit.com/r/typescript/comments/hly19w/help_me_understand_dts_files/)
+- url: https://www.reddit.com/r/typescript/comments/hly19w/help_me_understand_dts_files/
+---
+Every time I think I know enough about `.d.ts` files to use them in my own code, I'm soon reminded that I don't have a clue about them. I know the basics of JS and TS, but I'm not familiar with what ES* is or how JS import statements work.
+
+As I understand it, `.d.ts` files:
+
+- are "declaration" files that can only contain compile-time types. Is that right? Only `interface`s and `enum`s and `type`s, no `class`es or `function`s?
+- are auto-imported by other files in the same directory, somehow? What's going on here?
+
+Right now I'm using a `.d.ts` file to hold my API's types and enums for my project. My API client is in the same folder:
+
+    src
+    ├── api
+    │   ├── api-client.ts
+    │   └── interfaces.d.ts
+    ├── login
+    ├── navbar
+    └── sidebar
+
+I want to be able to use these types anywhere I might need them. I can import `api-client.ts` from a file in one of those other folders under `src/` but those files then can't see `interfaces`. If there's a way to import it, I don't know how.
+
+If anyone knows any articles I can read to understand how all this importing stuff works, that would be awesome. Or you can try to ELI5 it for me.
+
+A few other related questions that I fear may otherwise go unanswered:
+
+- _Can_ you manually import a `.d.ts` file? If not, why not?
+- Is there a compiler setting I can tweak to make it so that `interfaces` is imported into every `.ts` file under `src/`?
+- ELI5 `export` / `declare` / `default export` assuming a linked article does not cover it
+## [3][Function return type as an object where the keys are values from the input.](https://www.reddit.com/r/typescript/comments/hlwk9g/function_return_type_as_an_object_where_the_keys/)
+- url: https://www.reddit.com/r/typescript/comments/hlwk9g/function_return_type_as_an_object_where_the_keys/
+---
+So I have an interface that looks like this:
+```
+interface Task {
+   name: string;
+   command: string;
+   ...
+}
+```
+And I want to make a function that would take an array of that interface, something like this: 
+```
+function execute([{ name: "TEST", ... }, { name: "MSG", ... }]) 
+```
+do some things and return an object looking like this: `{ TEST: any, MSG: any }`
+
+But the trick is that the typescript compiler would be aware of the keys and not return the generic `[key: string]: any` or anything like that.
+
+I've seen it being implemented in the `@types/inquirer` but I couldn't implement it myself even after looking at that code for several hours. 
+
+Can someone guide me into solving this or give me a solution on how to do this? Please.
+## [4][Strict null checks and default values](https://www.reddit.com/r/typescript/comments/hll24h/strict_null_checks_and_default_values/)
 - url: https://www.reddit.com/r/typescript/comments/hll24h/strict_null_checks_and_default_values/
 ---
 In my code I want to have optional output parameter (as ref or ptr in C++), and actual return value of the same parameter.
@@ -44,11 +95,15 @@ const foo = (out?: Buffer): Buffer {
 ```
 
 Why `out.length` after `if(!out)` check still generates that error?
-## [3][Levenshtein Distance in TypeScript](https://www.reddit.com/r/typescript/comments/hla0ei/levenshtein_distance_in_typescript/)
+## [5][Union and Intersection notation](https://www.reddit.com/r/typescript/comments/hlnswd/union_and_intersection_notation/)
+- url: https://www.reddit.com/r/typescript/comments/hlnswd/union_and_intersection_notation/
+---
+How is a Union different than a logical OR? How is an Intersection different than a logical AND. If they do conceptually correspond to the aforementioned logical operators, why do they use different notation (| instead of ||, and &amp; instead of &amp;&amp;)?
+## [6][Levenshtein Distance in TypeScript](https://www.reddit.com/r/typescript/comments/hla0ei/levenshtein_distance_in_typescript/)
 - url: https://medium.com//levenshtein-distance-in-typescript-6de81ea2fb63?source=friends_link&amp;sk=81db1fe3f82a039f967dd477029aa451
 ---
 
-## [4][A type-safe MobX router with parallel routing and full lifecycle hooks support](https://www.reddit.com/r/typescript/comments/hl87k3/a_typesafe_mobx_router_with_parallel_routing_and/)
+## [7][A type-safe MobX router with parallel routing and full lifecycle hooks support](https://www.reddit.com/r/typescript/comments/hl87k3/a_typesafe_mobx_router_with_parallel_routing_and/)
 - url: https://www.reddit.com/r/typescript/comments/hl87k3/a_typesafe_mobx_router_with_parallel_routing_and/
 ---
 We have been actively developing [Boring Router](https://makeflow.github.io/boring-router/) along with our own main project for two years. It's no longer as light-weight as it was, but it also gets some unique and useful features.
@@ -68,7 +123,7 @@ Dedicated `BrowserHistory` implementation that tracks the history stack and is c
 
 * GitHub [https://github.com/makeflow/boring-router](https://github.com/makeflow/boring-router)
 * Examples [https://makeflow.github.io/boring-router/examples](https://makeflow.github.io/boring-router/examples)
-## [5][Why? (Codesanbox included)](https://www.reddit.com/r/typescript/comments/hlgai2/why_codesanbox_included/)
+## [8][Why? (Codesanbox included)](https://www.reddit.com/r/typescript/comments/hlgai2/why_codesanbox_included/)
 - url: https://www.reddit.com/r/typescript/comments/hlgai2/why_codesanbox_included/
 ---
 \`SwitchType\` has a name field, why do I get this error?
@@ -76,7 +131,7 @@ Dedicated `BrowserHistory` implementation that tracks the history stack and is c
 https://preview.redd.it/9hjpy4nvny851.png?width=777&amp;format=png&amp;auto=webp&amp;s=417193bfebdb05e0cafe208e697d023a00fcd3f7
 
 Full code:  [https://codesandbox.io/s/unruffled-gauss-f08r8?file=/src/index.ts](https://codesandbox.io/s/unruffled-gauss-f08r8?file=/src/index.ts)
-## [6][`unions can't be used in index signatures, use a mapped object type instead`](https://www.reddit.com/r/typescript/comments/hl3svn/unions_cant_be_used_in_index_signatures_use_a/)
+## [9][`unions can't be used in index signatures, use a mapped object type instead`](https://www.reddit.com/r/typescript/comments/hl3svn/unions_cant_be_used_in_index_signatures_use_a/)
 - url: https://www.reddit.com/r/typescript/comments/hl3svn/unions_cant_be_used_in_index_signatures_use_a/
 ---
 I am trying to clear the errors in the below code block. After getting the error \`unions can't be used in index signatures, use a mapped object type instead\` I am now attempting to convert a string literal union (key names of an interface) to a mapped object: [https://github.com/microsoft/TypeScript/issues/24220#issuecomment-390063153](https://github.com/microsoft/TypeScript/issues/24220#issuecomment-390063153)
@@ -151,11 +206,11 @@ Anyone know how to fix this? These last two attempts have me in circles. The com
       Types of property 'languageCode' are incompatible.
         Type 'string | undefined' is not assignable to type 'Partial&lt;ConfigData&gt;'.
           Type 'undefined' is not assignable to type 'Partial&lt;ConfigData&gt;'.ts(2322)
-## [7][Typescript and mutually exclusive variables ?](https://www.reddit.com/r/typescript/comments/hl1af0/typescript_and_mutually_exclusive_variables/)
+## [10][Typescript and mutually exclusive variables ?](https://www.reddit.com/r/typescript/comments/hl1af0/typescript_and_mutually_exclusive_variables/)
 - url: https://www.reddit.com/r/typescript/comments/hl1af0/typescript_and_mutually_exclusive_variables/
 ---
 I know that there are Boolean types for true or false. However I would like to have a value pairs, or some might call them interdependent polarities. The world around us is full of that. Like temperature = is warm or is cold. Or age = young vs old. Light = dark | bright. I was thinking about two methods in an object that will set to true or false the corresponding properties. But again, these are propreties and not actual variables. Or maybe there is some other way? It must be simpler than I think it is
-## [8][WHERE to put my types/interfaces?](https://www.reddit.com/r/typescript/comments/hknqf4/where_to_put_my_typesinterfaces/)
+## [11][WHERE to put my types/interfaces?](https://www.reddit.com/r/typescript/comments/hknqf4/where_to_put_my_typesinterfaces/)
 - url: https://www.reddit.com/r/typescript/comments/hknqf4/where_to_put_my_typesinterfaces/
 ---
 Hey,  
@@ -176,59 +231,3 @@ What is the general concensus in terms of architecture? This is a website, not a
          --- product.types.ts // these can be used in this feature or wherever?
 
 Basically, what I am asking is HOW do you structure your typings that is robust &amp; expandable?
-## [9][Why isn't filter kicking out undefined from this array?](https://www.reddit.com/r/typescript/comments/hkndzx/why_isnt_filter_kicking_out_undefined_from_this/)
-- url: https://www.reddit.com/r/typescript/comments/hkndzx/why_isnt_filter_kicking_out_undefined_from_this/
----
-       protected validateAndSetSentenceCandidates(candidates: string[]) {
-          const passedAndUndefined: Array&lt;Sentence | undefined&gt; = candidates
-             .map(candidate =&gt; {
-                if (candidate.length &gt;= 2) {
-                   return new Sentence(candidate);
-                }
-                // else undefined returned implicitly
-             });
-    
-          const passedTest: Sentence[] = passedAndUndefined
-             .filter((item: Sentence | undefined) =&gt; item !== undefined);
-          // .filter((item: Sentence | undefined) =&gt; typeof item !== "undefined");
-    
-    */
-    const passedTest: Sentence[]
-    Type '(Sentence | undefined)[]' is not assignable to type 'Sentence[]'.
-      Type 'Sentence | undefined' is not assignable to type 'Sentence'.
-        Type 'undefined' is not assignable to type 'Sentence'.ts(2322)
-    /*
-
-Both attempts to filter them out above failed
-## [10][How to tell TS a certain path is unreachable?](https://www.reddit.com/r/typescript/comments/hkpin3/how_to_tell_ts_a_certain_path_is_unreachable/)
-- url: https://www.reddit.com/r/typescript/comments/hkpin3/how_to_tell_ts_a_certain_path_is_unreachable/
----
-Without the final (hacky) return statement on the empty string, Typescript demands that the return type include `void`. But the `while` loop should never exit without returning a string.
-
-Is there any way to tell TS this? Or is this hack necessary?
-
-       protected getValidInput(configStep: WizardSteps): string {
-          while (true) {
-             const rawInput: string = configStep.prompt();
-    
-             // check for an exit value
-             this.exitCheck(rawInput);
-    
-             const inputIsValid: boolean = configStep.validateInput(rawInput);
-    
-             if (inputIsValid) {
-                return rawInput;
-             } else {
-                console.log(configStep.invalidInputMessage)
-             }
-          }
-    
-          // unreachable code, needed for TS compiler
-          return "";
-       }
-## [11][Valuable compiler options](https://www.reddit.com/r/typescript/comments/hkhdur/valuable_compiler_options/)
-- url: https://www.reddit.com/r/typescript/comments/hkhdur/valuable_compiler_options/
----
-After forgetting `strictNullChecks` I've forgotten how helpful it is to constantly have to account for `null | undefined` during my initial drafting phase.
-
-Any others you guys would promote for most projects? I also have `noImplicitAny`, and of course the `esModuleInterop`

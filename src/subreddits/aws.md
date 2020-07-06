@@ -21,123 +21,160 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][Static Hosting in S3 bucket question](https://www.reddit.com/r/aws/comments/hlhomf/static_hosting_in_s3_bucket_question/)
-- url: https://www.reddit.com/r/aws/comments/hlhomf/static_hosting_in_s3_bucket_question/
+## [2][I wrote a guide on deploying a Lambda/API Gateway API with AWS Serverless Application Model (SAM)](https://www.reddit.com/r/aws/comments/hlshss/i_wrote_a_guide_on_deploying_a_lambdaapi_gateway/)
+- url: https://seanjziegler.com/how-to-build-an-api-with-aws-lambda-and-api-gateway-using-aws-sam/
 ---
-I am going through the guide of hosting a static website in an s3 bucket. The guidances says i should create:
 
-1. S3 bucket of [example.com](https://example.com)
-2. Another S3 bucket of [www.example.com](https://www.example.com) and redirect to [example.com](https://example.com)
-
-Questions:
-
-1. Can i not just point both [example.com](https://example.com) and [www.example.com](https://www.example.com) to the same S3 bucket instead of doing a redirect on the buckets?
-2. Why do the names of the buckets have to match my DNS? Can i not have [example.com](https://example.com) point to s3 bucket randomly named?
-## [3][Permissions denied when using cross account roles for Jenkins](https://www.reddit.com/r/aws/comments/hldel3/permissions_denied_when_using_cross_account_roles/)
-- url: https://www.reddit.com/r/aws/comments/hldel3/permissions_denied_when_using_cross_account_roles/
+## [3][A Cost Calculator Project](https://www.reddit.com/r/aws/comments/hm23kn/a_cost_calculator_project/)
+- url: https://www.reddit.com/r/aws/comments/hm23kn/a_cost_calculator_project/
 ---
-I am trying to get a Jenkins server in the root account of an organization to be able to push a serverless application (nodejs using serverless framework) to a new development account. I have setup a JenkinsAccessRole that has a trust relationship with the main account.
+Hello guys,
 
-IAM Policy for JenkinsAccessRole in the new development account
-
-    {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "AWS": "arn:aws:iam::&lt;account ID for root account&gt;:root"
-          },
-          "Action": "sts:AssumeRole",
-          "Condition": {}
-        }
-      ]
-    }
-
-The role has permissions for cloudformation, sqs, sns and s3
-
-Error message seen in Jenkins
-
-    com.amazonaws.services.securitytoken.model.AWSSecurityTokenServiceException: User: arn:aws:sts::&lt;root account ID&gt;:assumed-role/Jenkins/i-015333655393dd020 is not authorized to perform: sts:AssumeRole on resource: arn:aws:iam::&lt;new dev account ID&gt;:role/JenkinsAccessRole (Service: AWSSecurityTokenService; Status Code: 403; Error Code: AccessDenied;
-
-Jenkins code
-
-    withAWS(role: 'JenkinsAccessRole', roleAccount: '&lt;main&gt;', duration: 3600, roleSessionName: 'Serverless-Deploy') {
-         sh "npm run deployDev"
-    }
-
-Can anyone spot the issue or give suggestions on what might be wrong?
+I have created a very basic Cloud Cost Calculator for AWS Services. This project was intended to learn angular and how to use AWS API with that. Please take a look at it [here](https://github.com/hetjagani/CloudCostCalculator) and suggest ideas if any. This project would be a good start if anyone is learning angular development or using AWS SDK for javascript. Feel free to extend the project and submit pull requests.
 
 &amp;#x200B;
 
-EDIT\*\* 
-
-Figured out my issue, I had a policy for the other dev account that allowed my Jenkins server to assume the role which connected the accounts. 
-## [4][Easy Web Server in AWS Ec2](https://www.reddit.com/r/aws/comments/hlh0br/easy_web_server_in_aws_ec2/)
-- url: https://www.reddit.com/r/aws/comments/hlh0br/easy_web_server_in_aws_ec2/
+[Demo](https://i.redd.it/10lus6tpg6951.gif)
+## [4][Possible to convert EC2 reserved instance to RDS?](https://www.reddit.com/r/aws/comments/hm7gns/possible_to_convert_ec2_reserved_instance_to_rds/)
+- url: https://www.reddit.com/r/aws/comments/hm7gns/possible_to_convert_ec2_reserved_instance_to_rds/
 ---
-I wrote some super detailed documentation awhile ago on how to setup a web server on Ec2 in AWS and it always helps me time and time again.   
-So I thought it could be helpful to anyone here trying to start a web server on AWS:  
-[https://github.com/stevegardiner26/aws-webservers-creation-guide](https://github.com/stevegardiner26/aws-webservers-creation-guide)
-## [5][Amazon Polly - where do I choose regular TTS vs neural network?](https://www.reddit.com/r/aws/comments/hljd5t/amazon_polly_where_do_i_choose_regular_tts_vs/)
-- url: https://www.reddit.com/r/aws/comments/hljd5t/amazon_polly_where_do_i_choose_regular_tts_vs/
+We recently moved a SQL server from an EC2 r5 large to an RDS r5 large.  I thought the reserved instance we had on EC2 would apply to RDS but it seems that is not the case.  Is there a way to transfer it?
+## [5][HTTP API: OAuth scopes for user-level ACL](https://www.reddit.com/r/aws/comments/hm7214/http_api_oauth_scopes_for_userlevel_acl/)
+- url: https://www.reddit.com/r/aws/comments/hm7214/http_api_oauth_scopes_for_userlevel_acl/
 ---
-I'm new to AWS, I'm in the console on the page that says:
+Hi there,
 
-Text-to-Speech
+I'm currently developing a web application using an HTTP API from API Gateway and Cognito.
 
-Listen, customize, and download speech. Integrate when you're ready.
+As described in [the docs](https://aws.amazon.com/premiumsupport/knowledge-center/cognito-custom-scopes-api-gateway/?nc1=h_ls), I'd like to use OAuth scopes for user-level access-control management. More precisely, I would like to set the users' roles (admin, superadmin etc...) in their JWTs "scope" claim, and have API Gateway compare them to the scopes of the ressource they're trying to access, allowing early deny if both don't match.
 
-Type or paste your text in the window, choose your language and region, choose a voice, choose Listen to speech, and then integrate it into your applications and services.
+It seems like the OAuth scopes are usually reserved for third-party apps access-control, and that the only way to do that would be to store the roles in a db, and adding them manually with a pre-token generation lambda.
 
-With up to 3000 characters you can listen, download, or save immediately. For up to 100,000 characters, your task must be saved to an S3 bucket.
-## [6][Can IAM user with AWSPriceListServiceFullAccess policy access any other resources if keys are exposed?](https://www.reddit.com/r/aws/comments/hlg7b7/can_iam_user_with_awspricelistservicefullaccess/)
-- url: https://www.reddit.com/r/aws/comments/hlg7b7/can_iam_user_with_awspricelistservicefullaccess/
+This solution seems a bit hacky, but much easier to set-up and use compared to placing users in Cognito groups with given IAM roles.
+
+[ACL with scopes](https://preview.redd.it/omt7721fh8951.jpg?width=929&amp;format=pjpg&amp;auto=webp&amp;s=755d521135ddd6ae23ce9cf2ee00590d0b00a824)
+
+Do you think it a good idea ? Is there any impact I didn't see that would mean a no-go ?
+## [6][Choosing RDS/Aurora instance](https://www.reddit.com/r/aws/comments/hm360q/choosing_rdsaurora_instance/)
+- url: https://www.reddit.com/r/aws/comments/hm360q/choosing_rdsaurora_instance/
 ---
-I have created a user with AWSPriceListServiceFullAccess policy attached. I wanted to use this to call AWS pricelist API for an application that I was building. The code of the application was on Github in a private repository. As soon as I changed it to public repo, the AWS warned me about a potential security breach and they told (forced) me to delete the user.
+I have a 7Gb MySQL database in the cloud which is only used by 8 users (and this user base will not increase significantly, since it is not for an application, but for own usage for research purposes). We are currently being billed around 250$/month, which sounded like too much for just 7Gb to me.  
 
-I don't think that on exposing those keys, there is any threat to my AWS account. Can anyone explain if there is any threat to that?
-## [7][Amazon SES Security?](https://www.reddit.com/r/aws/comments/hl7wpk/amazon_ses_security/)
-- url: https://www.reddit.com/r/aws/comments/hl7wpk/amazon_ses_security/
+
+I did some research and found out that RDS provide up to 64 Tb of database, and the price tag seems to be more related with the CPU power than with the size of the database.  
+
+
+Hence, the only problem now is choosing the correct instance. A T3-XL instance costs aprox. the same amount we are currently paying, while T3-L provides around 60% of savings, and a T3-M about 80% of savings. Given the small amount of users, even with concurrent usage, we might be able to go even for a lower instance, or even T2 or M5 (I don't know which one is better, but again I feel that our needs are not too high when compared with a massive userbase web app).  
+
+
+What kind of instance would you recommend? Is there an easy way of migrating to a larger instance later on if neccessary? Can we allocate more memory when our database increase, or do I need to pay for, for example, 50 Gb from day 1 even if we are only using 7Gb at the moment?  
+
+
+Thanks for your time
+## [7][access key id and secret key id not working](https://www.reddit.com/r/aws/comments/hm5lqi/access_key_id_and_secret_key_id_not_working/)
+- url: https://www.reddit.com/r/aws/comments/hm5lqi/access_key_id_and_secret_key_id_not_working/
 ---
-I logged into my SES today to see that over 1400 emails were sent, but I haven't run any campaigns which is a problem.   
+I am trying to use amazon web hosting for my new website but when i generate access key id and secret key id it shows it is active on AWS site but when i am trying to use this keys in word press to create a new cloud it is not working and this message pop up on screen
 
-
-I'm not sure how to isolate where these emails were sent from, perhaps it was because of a server error or perhaps not. But how do I isolate it so that I know for sure that I wasn't hacked or had my SMTP details compromised?
-## [8][Build quickly a system that filter CloudWatch logs and post to Slack, via CDK.](https://www.reddit.com/r/aws/comments/hkx584/build_quickly_a_system_that_filter_cloudwatch/)
-- url: https://github.com/TheDesignium/cdk-log-notifier
+https://preview.redd.it/bjcpbd2yx7951.jpg?width=4000&amp;format=pjpg&amp;auto=webp&amp;s=c7bbcd269cf9ce2580a8b912e608807435591549
+## [8][aws-cli question](https://www.reddit.com/r/aws/comments/hm5b2h/awscli_question/)
+- url: https://www.reddit.com/r/aws/comments/hm5b2h/awscli_question/
 ---
+Hello All,
 
-## [9][Custom CloudWatch Metrics vs DynamoDB](https://www.reddit.com/r/aws/comments/hl55p7/custom_cloudwatch_metrics_vs_dynamodb/)
-- url: https://www.reddit.com/r/aws/comments/hl55p7/custom_cloudwatch_metrics_vs_dynamodb/
----
-I want to track the number of requests by user to my API, and the API runs via Lambda in every AWS region  (20 regions) because of latency.
-
-Does it make sense to use CloudWatch metrics when operating in a multi-region format?
-
-CloudWatch endpoints are per region, meaning a custom metric will have to be created for each user in each region where they run.
-
-If I had one metric per user that means I'd be spending $0.30 \* 20 = $6 a month per user to track their requests over time.  That seems a bit too much to spend.
-
-If I had one DynamoDB table in a single region that tracked traffic with TTLs on the records it seems that is the more efficient way, but would suffer the problem of implementing the retry logic if that region isn't reachable for some region.
-
-How have you all solved this problem before?
-## [10][Cost effectively connecting to Aurora Serverless for personal project](https://www.reddit.com/r/aws/comments/hla44b/cost_effectively_connecting_to_aurora_serverless/)
-- url: https://www.reddit.com/r/aws/comments/hla44b/cost_effectively_connecting_to_aurora_serverless/
----
-I'm attempting to use Aurora Serverless, but I'm getting tripped up by how to cost effectively manage my VPC. My requirements:
-
-1. Aurora must be accessible from a Lambda (the Lambda must have public internet access)
-2. I'd like to use a desktop client for connecting to my DB (for configuring tables, etc)
-
-I believe I'd want to use a private subnet with a NAT Gateway in a production environment, but I'd like to avoid that here since NAT Gateways are expensive. Should I just use a public subnet and accept the security implications (not that there are many for this project)?
-
-If I go with the public subnet, should I be able to connect to the DB from a desktop client without needing a VPN? I was expecting to, but I can't get it working. I'm not sure if I just need to update something like my security group/ACL, or if I have a misunderstanding in how this all works.
-## [11][Front or back end for Cognito](https://www.reddit.com/r/aws/comments/hl4tdh/front_or_back_end_for_cognito/)
-- url: https://www.reddit.com/r/aws/comments/hl4tdh/front_or_back_end_for_cognito/
----
-I'm building an application that will use AWS Cognito for handling user authentication and such. I have seen a few tutorials that use everything in the front end including the pool and client ID, this seems like a security issue to me. However when I try to make it in a backend service it results in an error about missing fetch and some googling shows it's because I'm using Node.js isnstead of something like Vue.js on the front end.
+I have an aws-cli question. I will admit I'm using wasabi instead of the official aws s3 services, but they claim to be fully compatible. when I run the aws s3 sync command, I am able to sync and upload everything in the folder I'm trying to sync. It is a folder with only a few GB in it and so it sync's fairly quickly, however, if I wait a minute and run it again it actually uploads a significant portion AGAIN! I have run the command several times back-to-back and it keeps uploading. I see that the modified date/time is accurate to the upload, but I can't seem to figure out why? when none of the known attributes have changed.
 
 &amp;#x200B;
 
-Should the request (and client/pool ID) come from the front end or the back end? How big of security issue is having the ID's in the front end?
+any thoughts?
+## [9][Periodically Trigger AWS Lambda to Download CSV Files Off a Server and Upload to S3](https://www.reddit.com/r/aws/comments/hm0kwg/periodically_trigger_aws_lambda_to_download_csv/)
+- url: https://www.reddit.com/r/aws/comments/hm0kwg/periodically_trigger_aws_lambda_to_download_csv/
+---
+New to AWS, I was wondering if it's possible to create a lambda that would periodically download (say, every hour) CSV files from a secure server which obeys SFTP protocol. This would then be uploaded into a S3 bucket automatically for further analysis. 
+
+Currently the process is being done via FileZilla transfer, which is why I'm trying to automate this. I'm trying to look for documentation and videos online but haven't found any good examples yet. How would be the best way to go about this?
+## [10][Amazon Lex proactively asking questions](https://www.reddit.com/r/aws/comments/hm4bg6/amazon_lex_proactively_asking_questions/)
+- url: https://www.reddit.com/r/aws/comments/hm4bg6/amazon_lex_proactively_asking_questions/
+---
+Hey there!
+
+I want to build a „virtual trainer“ bot that actively asks a series of (more or less predefined) questions to a specific topic, collects responses and provides feedback on the given responses. All of that in a conversational manner (as far as that is possible). 
+
+However, from what I have seen, the problem with Lex is that it is mostly designed as a Question -&gt; Answer system, that responds to a user‘s intent and gives responses based on that information. However, it can not directly initiate questions itself without any hacky workarounds.
+
+Any ideas / thoughts on how this could possibly work?
+
+Thanks!
+## [11][Overtly complex bash script to create an encrypted AMI: is there a better approach available?](https://www.reddit.com/r/aws/comments/hm3xd8/overtly_complex_bash_script_to_create_an/)
+- url: https://www.reddit.com/r/aws/comments/hm3xd8/overtly_complex_bash_script_to_create_an/
+---
+### Background
+
+I have two accounts:
+
+* Account "1111" where our organization stores its custom baked AMIs in
+* Account "2222" that is dedicated to a new app/service we are building
+
+The `2222` account has acccess to AMIs owned by `1111`.
+
+We also have a custom API that allows us to query for the latest patched AMI we should use for building new EC2 instances:
+
+    https://ami.example.com
+
+We can send a request to this endpoint to get our latest RHEL (RedHat Enterprise Linux) AMI:
+
+    curl https://ami.example.com?distro=rhel&amp;distroVersion=7&amp;amiVersion=latest
+
+This will return a response like this:
+
+    ami-1234
+
+Whose owner is the `1111` account.
+
+### Problem
+
+Now instead of creating the EC2 instance using the `ami-1234` AMI, there's a script that performs the following activities:
+
+    #!/bin/bash
+
+    # This returns something like ami-1234, an AMI owned by the 1111 account
+    source_image_id=$(curl -s https://ami.example.com?distro=rhel&amp;distroVersion=7&amp;amiVersion=latest)
+
+    # This returns something like snap-1415
+    source_snapshot_id=$(aws ec2 describe-images --region ... -- image_id ${image_id} --query "Images[*].BlockDeviceMappings[*].Ebs.SnapshotId" --output text)
+
+    # This returns something like source-rhel-7-20200701
+    source_ami_name=$(aws ec2 describe-images --region ... -- image_id ${image_id} --query "Images[*].Name" --output text)
+
+    # This returns something like AppName-source-rhel-7-20200701
+    target_ami_name=$(aws ec2 describe-images --region ... --query "Images[*].Name" --filters "Name=owner-id,Values=2222" | sort ... | tail ... | awk ...)
+
+    if [ "$target_ami_name" == "AppName-${source_ami_name}-encrypted" ]; then
+        // AMI is up to date, fetch the AMI ID
+        ami_id=$(aws ec2 describe-images --region ... --query "Images[*].ImageId" --filters "Name=owner-id,Values=2222,Name=name,Values=${target_ami_name}" --output text)
+    else
+        encrypted_snapshot_id=$(aws ec2 copy-snapshot --region ... --source-region ... --source-snapshot-id ${source_snapshot_id} --encrypted --kms-key-id "alias/AppNameKmsKey" -- description "Encrypted AppName snapshot created from ${source_snapshot_id}")
+        
+        # Wait for the snapshot to become ready
+        status=pending
+        whle ["${status}" != "completed"]; do
+            sleep 10
+            status=$(aws ec2 describe-snapshots --snapshot-ids ${encrypted_snapshot_id} --query "Snapshots[*].State" --output text)
+        done
+    end
+
+    ami_id=$(aws ec2 register-image --region ... --name "AppName-${source_ami_name}-encrypted" --description ... --virtualization-type hvm --architecture x86_64 --root-device-name /dev/sda1 \
+             --block-device-mappings '[{"DeviceName" : "/dev/sda1", "Ebs" : {"SnapshotId" : "encrypted_snapshot_id"}, "VolumeType": "gp2", "VolumeSize" : 60}]' --output text)
+
+
+    echo "${ami_id}"
+
+As far as I can tell this script:
+
+* Copies the `source_snapshot_id` snapshot from the `1111` account to the `2222` account,
+* Encrypyts the new snapshot using a KMS key owned by the `2222` account (i.e. `encrypted_snapshot_id`)
+* Creates an EBS backed AMI using the `encrypted_snapshot_id` snapshot
+
+Then the output of this script (the new AMI's ID) is passed to various CloudFormation templates to be used as the image for EC2 instances created in new stacks.
+
+Browsing through our organization's requirements for EC2 instances, I can see there's a requirement for certain apps to use encrypted EBS volumes. But isn't there a more elegant method to achieve this, ideally with the logic inside CloudFormation templates?

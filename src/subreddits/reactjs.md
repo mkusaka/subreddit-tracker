@@ -83,71 +83,119 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
-## [3][Understanding Event Handling in React.js (with React Hooks)](https://www.reddit.com/r/reactjs/comments/hll7ei/understanding_event_handling_in_reactjs_with/)
+## [3][Liquid swipe](https://www.reddit.com/r/reactjs/comments/hlo841/liquid_swipe/)
+- url: https://v.redd.it/xfbt46cp12951
+---
+
+## [4][7 Awesome React Hooks](https://www.reddit.com/r/reactjs/comments/hm3r8q/7_awesome_react_hooks/)
+- url: https://livecodestream.dev/post/2020-07-04-7-awesome-react-hooks/
+---
+
+## [5][Set with Friends - Online, real-time multiplayer card game built with React and Firebase](https://www.reddit.com/r/reactjs/comments/hlvaka/set_with_friends_online_realtime_multiplayer_card/)
+- url: https://v.redd.it/db0090xx34951
+---
+
+## [6][Is there a way to adjust the day START/END time in system time modals? E.g. for a Journaling app, if they want to include for an entry at 3am in the day before (but showing after e.g. 10pm if they have another entry), is this possible instead of having to create a custom clock modal?](https://www.reddit.com/r/reactjs/comments/hm6kkq/is_there_a_way_to_adjust_the_day_startend_time_in/)
+- url: https://www.reddit.com/r/reactjs/comments/hm6kkq/is_there_a_way_to_adjust_the_day_startend_time_in/
+---
+I want to give users the option to adjust their start/end times in the app so that it lines up more with their body clock. But I'm not sure if you can get the system time modals to change like this, for example getting them to go from 3am to 2:59am or 2am to 1:59am instead of 12am to 11:59pm.
+
+For example say someone makes a diary entry at 10pm and then enters one at 3am but wants the 3am one to appear after 10pm in the same day.
+
+Does anyone know if this is possible without having to create a custom clock modal?
+
+Thanks
+## [7][How do I check the create-react-app version that my app used?](https://www.reddit.com/r/reactjs/comments/hm6fum/how_do_i_check_the_createreactapp_version_that_my/)
+- url: https://www.reddit.com/r/reactjs/comments/hm6fum/how_do_i_check_the_createreactapp_version_that_my/
+---
+since I used `npx create-react-app` to create my React app, after a really long while (\~1 year), I totally forgot which CRA version i used... now that I want to configure my custom webpack config, I need to know my CRA version to decide whether to use craco or react-app-rewired.. how do I find out which CRA version I used? gosh thanks!
+## [8][filbert | A light weight(~1KB) css-in-js solution(framework) - similar API to styled-components/emotion for 8% the size](https://www.reddit.com/r/reactjs/comments/hm3an2/filbert_a_light_weight1kb_cssinjs/)
+- url: https://filbert-js.vercel.app/docs/introduction
+---
+
+## [9][ReactJS web app is too slow and exceeds the recommended size limit](https://www.reddit.com/r/reactjs/comments/hm5hzx/reactjs_web_app_is_too_slow_and_exceeds_the/)
+- url: https://www.reddit.com/r/reactjs/comments/hm5hzx/reactjs_web_app_is_too_slow_and_exceeds_the/
+---
+I'm starting off on ReactJS and new. My web app is slow and I'm wondering what can be done to improve the situation. My speed is just about 5mbps now. Working remotely.
+
+Here's the screenshot of the **npm run build**: [https://imgur.com/a/ndaXnf5](https://imgur.com/a/ndaXnf5)
+
+It also gives a warning during the build:
+
+`WARNING in asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).This can impact web performance.Assets:17.3a6330634085ecb2c9c3.chunk.js (952 KiB)17.3a6330634085ecb2c9c3.chunk.js.gz (246 KiB)`
+
+Statistics on Chrome dev but it varies. The total size of the web app is 2.1MB
+
+HXR  
+`9 / 41 requests`  
+`25.5 kB / 2.1 MB transferred`  
+`21.4 kB / 2.1 MB resources`  
+`Finish: 16.03 s`  
+`DOMContentLoaded: 5.55 s`
+
+JS  
+`9 / 41 requests`  
+`25.5 kB / 2.1 MB transferred`  
+`21.4 kB / 2.1 MB resources`  
+`Finish: 16.03 s`  
+`DOMContentLoaded: 5.55 s`
+
+CSS  
+`1 / 49 requests`  
+`1.2 kB / 2.1 MB transferred`  
+`8.2 kB / 2.1 MB resources`  
+`Finish: 1.6 min`  
+`DOMContentLoaded: 5.55 s`
+
+IMG  
+`2 / 51 requests`  
+`1.9 kB / 2.1 MB transferred`  
+`4.8 kB / 2.1 MB resources`  
+`Finish: 1.9 min`  
+`DOMContentLoaded: 5.55 s`
+
+Font  
+`1 / 53 requests`  
+`6.9 kB / 2.1 MB transferred`  
+`6.7 kB / 2.1 MB resources`  
+`Finish: 2.2 min`  
+`DOMContentLoaded: 5.55 s`
+
+I'm also getting an error on my console:  
+`main.f711ca02cef820d58efb.chunk.js:1 Uncaught (in promise) Error: 3000ms timeout exceeded`
+
+What can I do to improve the speed? We are on nginx server if that helps.
+## [10][Completed my first React Project, wanted to share with all of you](https://www.reddit.com/r/reactjs/comments/hm52h5/completed_my_first_react_project_wanted_to_share/)
+- url: https://www.reddit.com/r/reactjs/comments/hm52h5/completed_my_first_react_project_wanted_to_share/
+---
+ Hi all, 
+
+I just completed my first React project and wanted to share it with all of you people.
+
+Here's the website link: [https://ayushaggarwal.com/](https://ayushaggarwal.com/)
+
+Do check out and provide your feedback.
+
+Here's the Github repository link: [https://github.com/ayushagg31/portfolio-app](https://github.com/ayushagg31/portfolio-app/blob/master/README.md), if you are interested. The code has some redundancy issues. I am working on fixing it. If you have any suggestions related to code, please consider raising an issue on the repository.
+
+Thanks!!!
+## [11][Covid-19 Tracker Website](https://www.reddit.com/r/reactjs/comments/hm4qcg/covid19_tracker_website/)
+- url: https://www.reddit.com/r/reactjs/comments/hm4qcg/covid19_tracker_website/
+---
+Coronavirus has impacted all of us and definitely changed our lives. Even though few countries have eased their restrictions, many are yet quarantined at their homes. With the astonishing number of cases at a rise both Globally and in India, I decided to create a project on coronavirus which would help us track the daily cases globally and give us a country-wise split of cases with graphs for visual aid.  
+I developed a fully responsive [Covid-19 Tracker Website](https://covid19-cases-tracker.herokuapp.com/). This website keeps track of the total cases, recovered cases, and deaths globally and country-wise in real-time. It further displays the data in a graphical format.  
+Moreover, with the rising demand for dark-mode in various applications, I decided to add a toggle button to change the display mode according to user preference.  
+Please check it out and let me know if you have any suggestions or advice.  
+[https://covid19-cases-tracker.herokuapp.com/](https://covid19-cases-tracker.herokuapp.com/)   
+
+
+https://reddit.com/link/hm4qcg/video/gl7xlfwvk7951/player
+
+A special thanks to the YouTube channel JavaScript Mastery that helped me build the skills required for this project.  
+
+
+[**#javascript**](https://www.linkedin.com/feed/hashtag/?keywords=javascript&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6681917920303546369) [**#reactjs**](https://www.linkedin.com/feed/hashtag/?keywords=reactjs&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6681917920303546369) [**#coronavirus**](https://www.linkedin.com/feed/hashtag/?keywords=coronavirus&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6681917920303546369) [**#covid19tracker**](https://www.linkedin.com/feed/hashtag/?keywords=covid19tracker&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6681917920303546369)
+## [12][Understanding Event Handling in React.js (with React Hooks)](https://www.reddit.com/r/reactjs/comments/hll7ei/understanding_event_handling_in_reactjs_with/)
 - url: https://www.youtube.com/watch?v=rgxSs6cYhVw&amp;t=1s
----
-
-## [4][Screenshot.rocks - Web app to create browser mockups from screenshots](https://www.reddit.com/r/reactjs/comments/hl1l9b/screenshotrocks_web_app_to_create_browser_mockups/)
-- url: https://v.redd.it/gqemcgmhot851
----
-
-## [5][A simple library to automate redux](https://www.reddit.com/r/reactjs/comments/hlm83n/a_simple_library_to_automate_redux/)
-- url: https://github.com/spaceuptech/automate-redux
----
-
-## [6][Rebuilt my portfolio website using React.js](https://www.reddit.com/r/reactjs/comments/hlmk54/rebuilt_my_portfolio_website_using_reactjs/)
-- url: https://www.reddit.com/r/reactjs/comments/hlmk54/rebuilt_my_portfolio_website_using_reactjs/
----
-Hello everyone 
-
-I’ve built a new portfolio website using JSS, Bootstrap and React.js
-Working with React has been very delightful and sped up my development process a lot.
-
-Link: https://achrafhamrit.com
-
-Any feedback is welcome.
-## [7][A short demo on how to efficiently render Formik forms with in-depth explanation in the README](https://www.reddit.com/r/reactjs/comments/hlf36k/a_short_demo_on_how_to_efficiently_render_formik/)
-- url: https://github.com/resolritter/efficient-formik-demo
----
-
-## [8][How to replicate the Zelda BOTW interface: Part 2](https://www.reddit.com/r/reactjs/comments/hlmh6w/how_to_replicate_the_zelda_botw_interface_part_2/)
-- url: https://dev.to/flagrede/how-to-replicate-the-zelda-botw-interface-with-react-tailwind-and-framer-motion-part-2-3nd4
----
-
-## [9][Feed.gg - Follow streamers and e-sport profiles | Side project](https://www.reddit.com/r/reactjs/comments/hlm08o/feedgg_follow_streamers_and_esport_profiles_side/)
-- url: https://feed.gg
----
-
-## [10][Mini social media application](https://www.reddit.com/r/reactjs/comments/hllizo/mini_social_media_application/)
-- url: https://www.reddit.com/r/reactjs/comments/hllizo/mini_social_media_application/
----
- 
-
- 
-
-I would like to get some feedback. Thank you
-
-This is a social media  web application built with  React , Node,  SocketIo, Mongodb amongst other things and offers multiple  functionalities such as:
-
-&amp;#x200B;
-
-* Posting status
-* Liking and Commenting
-* Messaging Users
-* Authentication
-
-I should note that there are multiple registration steps.
-
-Link: [https://socializers-app.herokuapp.com/](https://socializers-app.herokuapp.com/auth/register)
-
-&amp;#x200B;
-
-Thank you for your time
-## [11][I create a super simple hello world using class based component. But i get this error everytime i run local server at port 3000. Can someone help?](https://www.reddit.com/r/reactjs/comments/hll8ls/i_create_a_super_simple_hello_world_using_class/)
-- url: https://www.reddit.com/r/reactjs/comments/hll8ls/i_create_a_super_simple_hello_world_using_class/
----
- Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports
-## [12][Build A Simple Website With ExpressJS &amp; Nunjucks Using API Endpoint's](https://www.reddit.com/r/reactjs/comments/hlhfoa/build_a_simple_website_with_expressjs_nunjucks/)
-- url: https://youtu.be/1ViMigYBCf4
 ---
 

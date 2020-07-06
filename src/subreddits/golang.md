@@ -11,71 +11,111 @@ As an experiment, let's try doing Q&amp;A about the design here in Reddit.
 My hope is that the threading support will help keep questions and answers matched.
 
 **Please start a new top-level comment for each new question.**
-## [2][Mocking your SQL database in Go tests has never been easier.](https://www.reddit.com/r/golang/comments/hlhj8v/mocking_your_sql_database_in_go_tests_has_never/)
-- url: https://github.com/cockroachdb/copyist
+## [2][How I Structure Go Packages](https://www.reddit.com/r/golang/comments/hm34kq/how_i_structure_go_packages/)
+- url: https://bencane.com/stories/2020/07/06/how-i-structure-go-packages/
 ---
 
-## [3][Building Go Services with DDD Approach / Eddy Kiselman](https://www.reddit.com/r/golang/comments/hlj8dc/building_go_services_with_ddd_approach_eddy/)
+## [3][[How to?] Design a Chat application](https://www.reddit.com/r/golang/comments/hm2ck3/how_to_design_a_chat_application/)
+- url: https://www.reddit.com/r/golang/comments/hm2ck3/how_to_design_a_chat_application/
+---
+I am developing a synced and persists (like Messenger, Telegram where messages will be synced with server, and be available on all the devices and be available from new devices when logging in, unlike WhstsApp) chat application, with basic functionalities like one-to-one chat, group chat, ability to delete a message, ability to delete a message for everyone and ability to edit a message. 
+I've developed the basic websocket for one-to-one and group chat, however, I'm not sure how to develop the following features:
+
+****##NOTE: If you don't wanna read the whole thing, jump to point 3, as 3 is the most important question.****
+
+1. "Delete for me": In case of group or one to one chat, a person can delete a certain message and it will be deleted for all his synced devices. Even if he logs in using a new devices, all his old chat will be fetched and displayed there, apart from the deleted message. The other parties of the chat, however, will still have the message, and it will be displayed from their devices.
+The naive approach will be to maintain a separate chat table for each person, as by doing that deletion will be really easy.
+But the issue will be that for a group of 500 people, every message will be duplicated 500 times in the server!
+To avoid that, another approach might be to have a centralized message table and add a "visibleTo" field to message, which will by default have ids of all the recipients, but whenever an user deletes a message, the visibleTo field will remove his id. I think second approach will be better. What do you think?
+2. Delete for everyone / edit will simply reach out to the server, and edit or delete the message.
+
+3. Now, the most important question is syncing.
+Suppose the client is offline. Another user send few new messages or edit or deletes a message. After hours the client comes online. How to reflect these changes there? Obviously it'll not be optimal to always fetch all the messages and update the client. How to do it efficiently? Also, a client sends few messages or edits / deletes few messages while being online. How to reflect these changes in the server, and also to other recipients of the messages?
+
+Any suggestion, idea is welcomed!
+
+Thanks in advance!
+## [4][Is there a package that multiplex based on string pattern but not for http router?](https://www.reddit.com/r/golang/comments/hlxxtm/is_there_a_package_that_multiplex_based_on_string/)
+- url: https://www.reddit.com/r/golang/comments/hlxxtm/is_there_a_package_that_multiplex_based_on_string/
+---
+I want a switch statement based on a certain named params that execute an arbitrary function. Preferably using {} pattern so that it is easier for users, instead of regex patterns.
+
+Basically what an http router does but not for handling http requests.
+
+Edit: I ended up making [my own library]( https://github.com/didip/switcheroo ) as I wanted something simple and lightweight.
+## [5][I’m writing a lossless compression algorithm. Is there anyway I can write individual bits to a file in go?](https://www.reddit.com/r/golang/comments/hm6yd4/im_writing_a_lossless_compression_algorithm_is/)
+- url: https://www.reddit.com/r/golang/comments/hm6yd4/im_writing_a_lossless_compression_algorithm_is/
+---
+
+## [6][Please help me with eazye](https://www.reddit.com/r/golang/comments/hm6ulp/please_help_me_with_eazye/)
+- url: https://www.reddit.com/r/golang/comments/hm6ulp/please_help_me_with_eazye/
+---
+I find package eazye ([github](https://github.com/jprobinson/eazye)) to simple read email from outlook server
+
+Found it in [this subreddit](https://www.reddit.com/r/golang/comments/3eqy9y/receiving_emails_in_go/)
+
+Here is my code:
+
+    func main() {
+    	info:=eazye.MailboxInfo{}
+    	info.Host= "serveraddr:26"
+    	info.TLS=false
+    	info.User= "username@domain.com"
+    	info.Pwd= "pass"
+    	info.Folder= "Inbox"
+    	ch,err:=eazye.GenerateAll(info,false,false)
+    	if err!=nil{
+    		log.Println(err)
+    	}
+    	log.Println(&lt;-ch)
+    }
+
+I get in out:
+
+    2020/07/06 15:29:34 uid search failed: imap: bad response tag ("220 serveraddr ESMTP Company")
+    2020/07/06 15:29:34 {{&lt;nil&gt; &lt;nil&gt; [] 0001-01-01 00:00:00 +0000 UTC   [] [] false 0} &lt;nil&gt;}
+
+Am I stupid or I use lib wrong?  
+Thanks.
+## [7][Usecase-Survey](https://www.reddit.com/r/golang/comments/hm6qnv/usecasesurvey/)
+- url: https://www.reddit.com/r/golang/comments/hm6qnv/usecasesurvey/
+---
+Hi all!
+
+&amp;#x200B;
+
+My current work-environment is heavily based on Java and Spring and I'd like to convince my fellow coworkers that Go might be a great option for some of our use cases.
+
+Therefore I've created a short survey with the goal to collect some common use-cases.
+
+[https://forms.gle/CY5BaE23hpdYwFrx5](https://forms.gle/CY5BaE23hpdYwFrx5)
+
+&amp;#x200B;
+
+It would be very nice of you to take 5 minutes to participate, the results will be published here:
+
+[https://github.com/ledex/go-survey-results](https://github.com/ledex/go-survey-results)
+
+&amp;#x200B;
+
+Thanks in advance!
+## [8][Building Go Services with DDD Approach / Eddy Kiselman](https://www.reddit.com/r/golang/comments/hlj8dc/building_go_services_with_ddd_approach_eddy/)
 - url: https://youtu.be/YfLPZOpJQjY
 ---
 
-## [4][I just found a website to create custom gopher's](https://www.reddit.com/r/golang/comments/hl55cc/i_just_found_a_website_to_create_custom_gophers/)
-- url: https://gopherize.me/
+## [9][Case Study - How a startup in Fintech increases throughput by 62% doing Load Testing](https://www.reddit.com/r/golang/comments/hm5yup/case_study_how_a_startup_in_fintech_increases/)
+- url: https://www.reddit.com/r/golang/comments/hm5yup/case_study_how_a_startup_in_fintech_increases/
+---
+I wrote a blog post on how I helped a Fintech SaaS startup increase throughput on their platform while lowering their costs at the same time using Rungutan.
+
+https://rungutan.com/blog/startup-fintech-increase-throughput-load-testing/
+
+FULL DISCLOSURE: I'm the CTO of Rungutan.
+## [10][Broadcast: Send on one channel and receive on many. An example of a generic library using reflect.](https://www.reddit.com/r/golang/comments/hm5iuw/broadcast_send_on_one_channel_and_receive_on_many/)
+- url: https://github.com/malcsm/broadcast
 ---
 
-## [5][Logo for a Go project](https://www.reddit.com/r/golang/comments/hlk1dr/logo_for_a_go_project/)
-- url: https://www.reddit.com/r/golang/comments/hlk1dr/logo_for_a_go_project/
----
-Hey folks! I'd like to resurrect [an old hobby project of mine](https://github.com/jaksi/sshesame), and I'd like a somewhat fancy logo incorporating the gopher mascot for the project (like for example [the logo](https://raw.githubusercontent.com/hybridgroup/gobot-site/master/source/images/elements/gobot-logo-small.png) for the [gobot project](https://github.com/hybridgroup/gobot/)).
-
-Do y'all know anyone doing this kind of work? Obviously happy to pay for it.
-## [6][HTML Frameworks](https://www.reddit.com/r/golang/comments/hlljvx/html_frameworks/)
-- url: https://www.reddit.com/r/golang/comments/hlljvx/html_frameworks/
----
-Hello Gophers! I just wanted to quickly ask if it would make any sense to build a desktop application with something like Sciter or Wails even if its just an offline app, just because i dont see any other method of creating good looking modern (really modern) GUIs
-## [7][Roast my first ever Go project | A terminal-based websites monitor](https://www.reddit.com/r/golang/comments/hl516z/roast_my_first_ever_go_project_a_terminalbased/)
-- url: https://www.reddit.com/r/golang/comments/hl516z/roast_my_first_ever_go_project_a_terminalbased/
----
-Hello
-
-&amp;#x200B;
-
-I recently started fiddling around with Go. I'm loving it so far, I find myself writing code in a different, and I dare say cleaner way than I used to with other languages.
-
-&amp;#x200B;
-
-Now, I want the opinion of real gophers. I want to know what are the things that I'm not doing in an idiomatic way. What are the things that are so wrong about my project, that make you grunt audibly? You can roast away, but I would love it if it's based on actual constructive criticism. Thank you all in advance!
-
-&amp;#x200B;
-
-Link to the project: [https://gitlab.com/AyoubEd/httpmonitor](https://gitlab.com/AyoubEd/httpmonitor/)
-
-&amp;#x200B;
-
-Have a good weekend!
-## [8][An opinionated guideline for structuring web applications/services](https://www.reddit.com/r/golang/comments/hl2fnw/an_opinionated_guideline_for_structuring_web/)
-- url: https://www.reddit.com/r/golang/comments/hl2fnw/an_opinionated_guideline_for_structuring_web/
----
-hello all, I made an opinionated guideline for creating/structuring a web application. I’ve seen a few out there some felt too complex, and some seemed confusing. I tried using a sample (non-functional app) app to explain how to make use of the structure. And explain why things are setup the way they are. Hope you find it useful! [https://github.com/bnkamalesh/goapp](https://github.com/bnkamalesh/goapp)
-## [9][Recommendations for collecting periodic heap dumps](https://www.reddit.com/r/golang/comments/hlcln4/recommendations_for_collecting_periodic_heap_dumps/)
-- url: https://www.reddit.com/r/golang/comments/hlcln4/recommendations_for_collecting_periodic_heap_dumps/
----
-Just wondering if anyone here has found a tool which allows you to easily collect heap dumps of Go applications running in production/production-like environments.
-
-I'm thinking about adding code to my services to do this and dump the heap data to an S3 bucket. However, I'm guessing that there are off the shelf tools which can do this i.e. SaaS products.
-
-I'm fine with either approach and willing to pay for a service if it's convenient/flexible.
-
-This is definitely something I don't want to run all the time. If I go the homegrown direction, I'll add instrumentation which is toggled via an environment variables and dumps the heap every N seconds.
-## [10][Functional programming in Go [case study]](https://www.reddit.com/r/golang/comments/hl5l3o/functional_programming_in_go_case_study/)
-- url: https://yourbasic.org/golang/your-basic-func/
+## [11][Mocking your SQL database in Go tests has never been easier.](https://www.reddit.com/r/golang/comments/hlhj8v/mocking_your_sql_database_in_go_tests_has_never/)
+- url: https://github.com/cockroachdb/copyist
 ---
 
-## [11][What is the most idiomatic way of getting input from the terminal?](https://www.reddit.com/r/golang/comments/hkz1im/what_is_the_most_idiomatic_way_of_getting_input/)
-- url: https://www.reddit.com/r/golang/comments/hkz1im/what_is_the_most_idiomatic_way_of_getting_input/
----
-I have been spoilt by the simple `input()` function in Python. 
-
-What is the most simple way of getting input from an external source? I have made several google searches and everyone often seems to recommend using different methods.
-
-There is a `bufio.NewReader`. There is also a `bufio.NewScanner` , and then there's also a `fmt.Scanln`...

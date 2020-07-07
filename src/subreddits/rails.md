@@ -19,7 +19,15 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Rails is about giving the power of a 10 person development team to one person through simplicity](https://www.reddit.com/r/rails/comments/hm7mex/rails_is_about_giving_the_power_of_a_10_person/)
+## [2][Up to date resource for starting to learn rails](https://www.reddit.com/r/rails/comments/hmod8i/up_to_date_resource_for_starting_to_learn_rails/)
+- url: https://www.reddit.com/r/rails/comments/hmod8i/up_to_date_resource_for_starting_to_learn_rails/
+---
+Hey guys. I'm looking to get into rails development and I'm wondering if there are any recommended up to date resources. The JHU Coursera course seemed tempting but it is from 2015 and uses rails 4 which I feel like is a bad place to start. There's also the learn enough [railstutorial.org](https://railstutorial.org) which seems tempting, but I'd like to look around for a free resource first. 
+
+Any recommendations and advice are appreciated.
+
+Cheers.
+## [3][Rails is about giving the power of a 10 person development team to one person through simplicity](https://www.reddit.com/r/rails/comments/hm7mex/rails_is_about_giving_the_power_of_a_10_person/)
 - url: https://www.reddit.com/r/rails/comments/hm7mex/rails_is_about_giving_the_power_of_a_10_person/
 ---
 Having built SPA using front end frameworks before, and now building the same web app with Rails I was thinking about the following:
@@ -37,11 +45,99 @@ There's some nuances here and I'm probably wrong in some regards, but an interes
 &amp;#x200B;
 
 edit; spelling
-## [3][How to build guest cart/checkout?](https://www.reddit.com/r/rails/comments/hm6xjd/how_to_build_guest_cartcheckout/)
-- url: https://www.reddit.com/r/rails/comments/hm6xjd/how_to_build_guest_cartcheckout/
+## [4][How to create a form to embed into other websites?](https://www.reddit.com/r/rails/comments/hmrp3q/how_to_create_a_form_to_embed_into_other_websites/)
+- url: https://www.reddit.com/r/rails/comments/hmrp3q/how_to_create_a_form_to_embed_into_other_websites/
 ---
-Currently I have an ecommerce app that allows users to add items to a cart and checkout if they have an existing user account (the cart object is associated with user object and product object). I want to create the ability for guest checkout, but not sure how this would work from an architecture perspective if a user doesn't have an account. Any thoughts? Thanks in advance.
-## [4][Spree Commerce Help](https://www.reddit.com/r/rails/comments/hm6hfg/spree_commerce_help/)
+I want to create a form that lives in my app but I can then embed it into any other website that I give a piece of code to place into their website.
+
+&amp;#x200B;
+
+What is the best way to go about this with Rails?
+
+&amp;#x200B;
+
+I assume I should be using an iframe but wondering any obstacles I may need to watch out for and any opinions on how I should go about doing this?
+## [5][Should I upgrade my Rails 4 API project to Rails 5 or Rails 6?](https://www.reddit.com/r/rails/comments/hmbm7k/should_i_upgrade_my_rails_4_api_project_to_rails/)
+- url: https://www.reddit.com/r/rails/comments/hmbm7k/should_i_upgrade_my_rails_4_api_project_to_rails/
+---
+This API is not that big and it has about 87% test coverage. I was thinking it's better to upgrade to latest major to avoid a new upgrade in the next 2 years.
+
+Also, I'd like to use Rails 6 parallel tests feature.
+
+I'm more concerned about Active Model Serializers, I am currently using version 0.9.7 which seems outdated and there are probably breaking changes to next major 0.10
+
+Also Paperclip is dead in Rais 6, I would need to migrate to Active Storage.
+
+What do you guys think?
+## [6][I'm trying to import a theme nav-bar with but it's has being difficult.](https://www.reddit.com/r/rails/comments/hm9g59/im_trying_to_import_a_theme_navbar_with_but_its/)
+- url: https://www.reddit.com/r/rails/comments/hm9g59/im_trying_to_import_a_theme_navbar_with_but_its/
+---
+Hello, I'm trying to import a navbar from a theme with stim but I'm having difficulties such as the navbar getting too "thick" or the styles of the navbar not loading properly
+
+Here are images
+
+[https://postimg.cc/RqL0FmS7](https://postimg.cc/RqL0FmS7) here it's how supposed to be.
+
+Here is how my RoR implementation result: [https://postimg.cc/PpNMqyZZ](https://postimg.cc/PpNMqyZZ)
+
+here is the slim file: [https://github.com/LeoFragozo/notika\_slim\_test/blob/master/app/views/temas/index.html.slim](https://github.com/LeoFragozo/notika_slim_test/blob/master/app/views/temas/index.html.slim)
+
+News: apparently it's not loading the "::before" selector how I can put these in rails? also the inside div is in the wrong size.
+
+[https://postimg.cc/xJc3Mpz0](https://postimg.cc/xJc3Mpz0) here is the working version
+
+[https://postimg.cc/5YTq35B8](https://postimg.cc/5YTq35B8) here is my version  
+
+here is the css file: [https://github.com/LeoFragozo/notika\_slim\_test/blob/master/app/assets/stylesheets/temas.scss](https://github.com/LeoFragozo/notika_slim_test/blob/master/app/assets/stylesheets/temas.scss)
+## [7][How make changes on production database](https://www.reddit.com/r/rails/comments/hm9h8o/how_make_changes_on_production_database/)
+- url: https://www.reddit.com/r/rails/comments/hm9h8o/how_make_changes_on_production_database/
+---
+Can someone give me some guide here on how to change production database with good manners. I don't have experience at all with this.
+
+This is the first time I will be maintaining a production server and I was thinking how is the right way to make changes on production DB. I have only been on development until now, and on deploying on staging I always reset the database then populate it with seeds files. As that is impossible on production, how should I proceed on this task. 
+
+One thing to note about my project is that my migrations file are a mess. I don't usually create migration using the "up" and "down" (is this still used by rails?) and a make a lot of changes, so I'm not confident to used them for recreating the database. Futures migrations can be more "organized", but the past ones will probably raise exceptions. 
+
+From my understating I should do something like:
+
+* First deploy on production, database will be created from schema.
+* After first deploy, create a BK if, don't already exist, before make changes
+* New changes must be working on development before going to prod.
+* For changing the DB, run the last migrations (not sure how to proceed here - maybe should delete the old migrations before?) 
+* If works right, than good. Else, reverse migrations.
+
+Any advice?
+## [8][Containerized Development + CI -- is there need for instructional posts/videos?](https://www.reddit.com/r/rails/comments/hmbzfq/containerized_development_ci_is_there_need_for/)
+- url: https://www.reddit.com/r/rails/comments/hmbzfq/containerized_development_ci_is_there_need_for/
+---
+Hi all .. 
+
+I've been developing on a rails container based platform (Che Eclipse) and have had a CI/CD setup running using gitlab.
+
+This is for personal development at home (not a business) -- i've been a developer for 20+ years and the last 5 on this setup have been the most satisfying from a toolbox pov (once setup, its easy to tweak without breaking something else).
+
+I was hoping to gauge if this sort of info would be useful to some (if you are already an expert, i appreciate feedback too), there is already lots of info out there, this sort of setup has been around for many years, so before creating some material i just want to see if it would be useful to some. -- let me know if you would like to see some guides about how to set this up. -- I've never made instructional videos / posts, but i'd like to try.
+
+I was thinking of making a multi-part series -- 
+
+\- setting up eclipse/che, 
+
+\- setting up gitlab, 
+
+\- git basics, 
+
+\- che/basics, 
+
+\- setting up rails 6 on che (setting up your development container)
+
+\- simple app -&gt; CI/CD for container based rails apps.
+
+\- docker container registries (running your ow).
+
+\- deployment on docker
+
+thats already tons of info there -- my target would be basic knowledge, starting from almost zero -- so very basic instruction and basic examples.
+## [9][Spree Commerce Help](https://www.reddit.com/r/rails/comments/hm6hfg/spree_commerce_help/)
 - url: https://www.reddit.com/r/rails/comments/hm6hfg/spree_commerce_help/
 ---
 Hi There,
@@ -55,233 +151,11 @@ Rails 6.0.3 &amp; Spree 4.1
 &amp;#x200B;
 
 Thank you in advance!
-## [5][Unable to disable asset fingerprinting for emails only?](https://www.reddit.com/r/rails/comments/hlymis/unable_to_disable_asset_fingerprinting_for_emails/)
-- url: https://www.reddit.com/r/rails/comments/hlymis/unable_to_disable_asset_fingerprinting_for_emails/
+## [10][I’m starting a new project and having a hard time determining whether to use react, vuejs, or stimulus. It will start out as a simple photo sharing app but will eventually need to pull in data after image processing and provide visualization. Any thoughts on which route to go?](https://www.reddit.com/r/rails/comments/hmajmg/im_starting_a_new_project_and_having_a_hard_time/)
+- url: https://www.reddit.com/r/rails/comments/hmajmg/im_starting_a_new_project_and_having_a_hard_time/
 ---
-tl:dr; Images in emails work when fingerprinted, but not for static images in the public folder
 
-Problem:
-
-I'm embedding images in my ActionMailer / Devise sent emails, like logos etc.
-
-This works when I use images in my assets folder, but are fingerprinted.
-
-I don't want them to be fingerprinted or to use the fingerprinted assets that I use do use elsewhere in the application, so that these images don't break in future.
-
-Putting images in the public folder works locally, but not on higher environments.
-
-Asset folder working with fingerprinting:
-
-    &lt;%= image_url('emails/header-Logo.png') %&gt; 
-    &lt;%= asset_url('emails/header-Logo.png', :skip_pipeline =&gt; false) %&gt; 
-    # Generates fingerprint local + remote src=http://cdn.local.me:3000/assets/emails/header-Logo-57b82ca2de25bbafe57e4b21ed884d8c972344fca646ee08873fdbbfd9db8259.png 
-
-Public folder working (locally only), with no fingerprinting:
-
-    &lt;%= asset_url('images/emails/Email-Welcome-Features.png', :skip_pipeline =&gt; true) %&gt; 
-    # Generates locally src="http://cdn.local.me:3000/images/emails/Email-Welcome-Features.png" 
-    # Generates remote src="http:///images/emails/Email-Welcome-Features.png"
-
-Prod config:
-
-    if ENV['CDN_HOSTNAME']   
-    config.action_controller.asset_host = ENV['CDN_HOSTNAME']   config.action_mailer.asset_host = ENV['CDN_HOSTNAME'] 
-    end
-
-Other assets, like on the view templates, js content etc, do come correctly (fingerprinted) from the cdn in prod..
-
-Rails version: rails ([6.0.2.2](https://6.0.2.2))
-
-Any help appreciated :)
-## [6][Insight into cause of "Completed 401 Unauthorized" error after being redirected to app from an external service](https://www.reddit.com/r/rails/comments/hlz7bn/insight_into_cause_of_completed_401_unauthorized/)
-- url: https://www.reddit.com/r/rails/comments/hlz7bn/insight_into_cause_of_completed_401_unauthorized/
+## [11][How to build guest cart/checkout?](https://www.reddit.com/r/rails/comments/hm6xjd/how_to_build_guest_cartcheckout/)
+- url: https://www.reddit.com/r/rails/comments/hm6xjd/how_to_build_guest_cartcheckout/
 ---
-Users are directed to Stripe Connect as part of the onboarding process for my app. When they finish with Stripe, they are sent back to my site with two params in the url: `code` and an encoded `state`. In this case, the latter param was previously saved to the db in decoded form, then encoded and passed to Stripe to prevent CSRF forgery.
-
-My problem is that users are signed out when redirected back to my app upon the first pass through onboarding, whereas the second pass goes through just fine. In other words, if they complete the sign in and do everything over again, they are allowed to proceed. A `Completed 401 Unauthorized` in the console is all I have to go off of. Presumably this has something to do with Devise and it's `authenticate_user!` method?
-
-    2020-07-06T00:29:24.121304+00:00 app[web.1]: Started GET "/onboard/id_verification?code=ac_Tau1R4hyn47LGrwiisUpFDEEMmpWVBrw&amp;state=YTVmNGZmOTUtMjc3ZC00YjIyLThjZDctNTliODBlMzY1OThk" for ###.##.##.## at 2020-07-06 00:29:24 +0000
-    2020-07-06T00:29:24.123838+00:00 app[web.1]: Processing by Users::OnboardsController#id_verification as HTML
-    2020-07-06T00:29:24.123891+00:00 app[web.1]: Parameters: {"code"=&gt;"ac_Tau1R4hyn47LGrwiisUpFDEEMmpWVBrw", "state"=&gt;"YTVmNGZmOTUtMjc3ZC00YjIyLThjZDctNTliODBlMzY1OThk"}
-    2020-07-06T00:29:24.127212+00:00 app[web.1]: Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
-    2020-07-06T00:29:24.261889+00:00 app[web.1]: Started GET "/users/sign_in" for ###.##.##.## at 2020-07-06 00:29:24 +0000
-    2020-07-06T00:29:24.265479+00:00 app[web.1]: Processing by Users::SessionsController#new as HTML
-
-Assuming a happy path (decoded `state` param equals what is saved to the db, `code` is `present?`, and `stripe_user_id` is either `present?` or `nil`) the user is taken to a form for uploading some documentation. The stuff they upload is encrypted and saved to a private AWS bucket with IAM policies appropriately set, but the way that works is outside the scope of this question. Here's the relevant controller action:
-
-    class Users::OnboardsController &lt; ApplicationController
-    
-      def id_verification
-        if params[:state].blank? || params[:code].blank?
-          redirect_to onboard_stripe_path
-        elsif Base64.decode64(params[:state]) != current_user.stripe_state_token
-          flash[:error] = "CSRF forgery detected"
-          redirect_to onboard_stripe_path
-        elsif Base64.decode64(params[:state]) == current_user.stripe_state_token &amp;&amp; params[:code].present? &amp;&amp; current_user.stripe_user_id.present?
-          @user = current_user
-          respond_to do |format| 
-            format.html { render '/users/onboard/id_verification.html.erb' } 
-          end
-        elsif Base64.decode64(params[:state]) == current_user.stripe_state_token &amp;&amp; params[:code].present? &amp;&amp; current_user.stripe_user_id == nil
-          get_stripe_id = StripeUser.connect(params[:code])
-          current_user.stripe_user_id = get_stripe_id.stripe_user_id
-          current_user.save
-          @user = current_user
-    
-          respond_to do |format|
-            format.html { render '/users/onboard/id_verification.html.erb' } 
-          end
-        end
-      end
-    end
-
-Does anyone have any insight as to the source of that `Completed 401 Unauthorized` error, and why it is only an issue on the first pass through onboarding? Thank you!
-## [7][Turbolinks and preserving focus state](https://www.reddit.com/r/rails/comments/hlmmhy/turbolinks_and_preserving_focus_state/)
-- url: https://www.reddit.com/r/rails/comments/hlmmhy/turbolinks_and_preserving_focus_state/
----
-Howdy.
-
-Is there a way of preserving focus state? My use case is that I want the "new" form to autosave with a debounce, and once it saves it should become the "edit" form of the saved entry. I can manually replace the history state but I think that it would be cool to get it for free from Turbolinks, almost like Inertia.
-
-Edit: \`data-turbolinks-permanent\` didn't work for me. Not sure if that's only an issue I'm experimenting because I'm writing buggy code. I use it somewhere else in the app and it works well, but it does not preserve the focus state when I'm inside an element, as if they still removing the element from the DOM.
-## [8][Best and cheapest hosting options?](https://www.reddit.com/r/rails/comments/hlgze5/best_and_cheapest_hosting_options/)
-- url: https://www.reddit.com/r/rails/comments/hlgze5/best_and_cheapest_hosting_options/
----
-What would you recommend for a good, Rails-tailored hosting plan (like Heroku) for around $7-8 per month? That is what my client told me she would like to pay. Heroku Hobby is $7, but is that good enough for a production e-commerce site?
-
-If not, what else would you recommend? I'd like something like Heroku that is specifically tailored to Rails where you can push your code from GitHub and it works. I tried and failed to deploy my app to Digital Ocean's Rails droplet (and I'm far from being a noob when it comes to the Linux CLI).
-## [9][Devs who dislike or has been bitten by Active Record's default_scope, how about we include it in style guides?](https://www.reddit.com/r/rails/comments/hlakkq/devs_who_dislike_or_has_been_bitten_by_active/)
-- url: https://www.reddit.com/r/rails/comments/hlakkq/devs_who_dislike_or_has_been_bitten_by_active/
----
-[https://github.com/rubocop-hq/rails-style-guide/issues/266](https://github.com/rubocop-hq/rails-style-guide/issues/266)
-## [10][Trying to understand If-Modified-Since HTTP Header](https://www.reddit.com/r/rails/comments/hlgzev/trying_to_understand_ifmodifiedsince_http_header/)
-- url: https://www.reddit.com/r/rails/comments/hlgzev/trying_to_understand_ifmodifiedsince_http_header/
----
-I'm building a Rails app that consumes an API that accepts this header.
-
-&gt; "The server then determines based on these headers if the client's cached copy is the most recent version of this file. If so, the server returns an HTTP status 304 code, letting the client know it can reuse its cached copy."
-
-But I don't know if I understand the idea, does this mean I have to always save the result of each API request to a file or database? and if the request's result has an HTTP status 304 should I rescue it from the database? What if I don't have the result in the database? Do I send you a request without that header to get the result again?
-## [11][New bootstrap toasts, pretty neat](https://www.reddit.com/r/rails/comments/hli2tq/new_bootstrap_toasts_pretty_neat/)
-- url: https://www.reddit.com/r/rails/comments/hli2tq/new_bootstrap_toasts_pretty_neat/
----
-&amp;#x200B;
-
-[toasts](https://i.redd.it/q4zhf2oxez851.gif)
-
-&amp;#x200B;
-
-My application.html.erb  
-
-
-    &lt;!DOCTYPE html&gt;
-    &lt;html&gt;
-      &lt;head&gt;
-        ...
-        &lt;%= javascript_pack_tag 'flash', 'data-turbolinks-track': 'reload' %&gt;
-      &lt;/head&gt;
-    
-      &lt;body&gt;
-        ...
-        &lt;%= render '/flashes' %&gt;
-        &lt;%= render '/toasts' %&gt;
-        &lt;%= yield %&gt;
-      &lt;/body&gt;
-    &lt;/html&gt;
-
-
- app/views/\_flashes.html.erb   
-
-
-    &lt;div class="acme-flashes notice d-none"&gt;
-      &lt;%= flash[:notice] %&gt;
-    &lt;/div&gt;
-    &lt;div class="acme-flashes alert d-none"&gt;
-      &lt;%= flash[:alert] %&gt;
-    &lt;/div&gt;
-
- 
-
-app/views/\_toasts.html.erb 
-
-    &lt;div class="acme-toasts position-absolute w-100 p-4 d-flex flex-column align-items-end" style="z-index: 1"&gt;
-      &lt;div class="w-25 inner"&gt;
-        &lt;!-- empty --&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-
-&amp;#x200B;
-
-app/javascript/packs/flash.js
-
-    require("acme/flash").start()
-
-app/javascript/acme/flash.js
-
-    export function start() {
-      document.addEventListener("turbolinks:load", () =&gt; {
-        create()
-        show()
-      })
-    }
-    
-    function show() {
-      $('.toast')
-        .toast({ delay: 2000 })
-        .toast('show')
-    }
-    
-    function create() {
-      $.each( getFlashesInDom(), function(index, value) {
-        $(".acme-toasts .inner").append(
-          template(value)
-        )
-      })
-    }
-    
-    function template(body) {
-      return `
-        &lt;div class="toast" role="status" aria-live="polite" aria-atomic="true" zdata-delay=3000 style="z-index: 1"&gt;
-          &lt;div class="toast-header"&gt;
-            &lt;!-- an icon can be here --&gt;
-            &lt;strong class="mr-auto"&gt;
-              &lt;!-- title here --&gt;
-            &lt;/strong&gt;
-            &lt;small class="text-muted"&gt;just now&lt;/small&gt;
-            &lt;button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close"&gt;
-              &lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;
-            &lt;/button&gt;
-          &lt;/div&gt;
-          &lt;div class="toast-body"&gt;
-            ${body}
-          &lt;/div&gt;
-        &lt;/div&gt;`
-    }
-    
-    function getFlashesInDom() {
-      return $.map( $(".acme-flashes"), function(val,i) {
-        let html = $.trim( $(val).html() )
-        if ( html.length == 0 ) { return }
-        return html
-      })
-    }
-
-config/webpack/environment.js  
-
-
-    const { environment } = require('@rails/webpacker')
-    
-    // https://github.com/webpack-contrib/expose-loader/blob/master/README.md
-    environment.loaders.append('expose', {
-            test: require.resolve('jquery'),
-            loader: 'expose-loader',
-            options: {
-              // For `underscore` library, it can be `_.map map` or `_.map|map`
-              exposes: ['jquery', '$', 'jQuery']
-            }
-    });
-    
-    module.exports = environment
-
-My yarn.lock has  bootstrap@\^4.5.0  
-btw.
+Currently I have an ecommerce app that allows users to add items to a cart and checkout if they have an existing user account (the cart object is associated with user object and product object). I want to create the ability for guest checkout, but not sure how this would work from an architecture perspective if a user doesn't have an account. Any thoughts? Thanks in advance.

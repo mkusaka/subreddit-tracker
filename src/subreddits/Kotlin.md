@@ -1,9 +1,71 @@
 # Kotlin
-## [1][Getting Started with Kotlin on iOS, Part 3: The Build](https://www.reddit.com/r/Kotlin/comments/hm1jck/getting_started_with_kotlin_on_ios_part_3_the/)
+## [1][vscode autoimport](https://www.reddit.com/r/Kotlin/comments/hmre0s/vscode_autoimport/)
+- url: https://www.reddit.com/r/Kotlin/comments/hmre0s/vscode_autoimport/
+---
+Привет! Do you know some ways, to use autoimport in vscode? Or any external tools? Thanks in advance!
+
+in autoimport - I mean, that vscode automatilally import needed packages.
+
+P.S: I use neovim plugin, and I can additionaly use vim's plugins
+## [2][Anyone here using Ktor and / or Exposed in production ?](https://www.reddit.com/r/Kotlin/comments/hmo9d4/anyone_here_using_ktor_and_or_exposed_in/)
+- url: https://www.reddit.com/r/Kotlin/comments/hmo9d4/anyone_here_using_ktor_and_or_exposed_in/
+---
+I know Exposed is 0.x software, but I was wondering if it or Ktor was in production use by any of you guys.
+
+I'm currently using both for a professional project for a client.
+
+Would like to hear your experiences.
+## [3][Kotlin 1.4-M3 is Out: Standard Library Changes – Kotlin Blog](https://www.reddit.com/r/Kotlin/comments/hmaqpa/kotlin_14m3_is_out_standard_library_changes/)
+- url: https://blog.jetbrains.com/kotlin/2020/07/kotlin-1-4-m3-is-out-standard-library-changes/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+kotlin+%28Project+Kotlin%29
+---
+
+## [4][Getting Started with Kotlin on iOS, Part 3: The Build](https://www.reddit.com/r/Kotlin/comments/hm1jck/getting_started_with_kotlin_on_ios_part_3_the/)
 - url: https://benasher.co/kotlin-ios-getting-started-build/
 ---
 
-## [2][Wrapper for Wikia API with minmal abstractions in Kotlin (WIP)](https://www.reddit.com/r/Kotlin/comments/hlw66z/wrapper_for_wikia_api_with_minmal_abstractions_in/)
+## [5][1-on-1 direct chat app.](https://www.reddit.com/r/Kotlin/comments/hmhk81/1on1_direct_chat_app/)
+- url: https://www.reddit.com/r/Kotlin/comments/hmhk81/1on1_direct_chat_app/
+---
+I have background in proramming.  I come from c#.  I'm trying to create my first android app using Kotlin.  I was wondering if it is possible to create my own chat app (without using twillio, other chat platforms sdk, or the phone number of the phones (via SMS)).  
+
+--
+
+I cannot seem to find any tutorial on this matter.
+
+--
+
+1 - Is it possible to send data directly between two phones (can use mobile data network)?
+
+2 - If so, are there any tutorial out there for this?
+
+3 - Is there a built in android library for what I'm trying to do?
+
+4 - Would I be able to test this app using the android VM?  The the SDK allow launching two android VM simutaneously?
+
+--
+
+Thanks.
+## [6][Reversed index?](https://www.reddit.com/r/Kotlin/comments/hmh0wi/reversed_index/)
+- url: https://www.reddit.com/r/Kotlin/comments/hmh0wi/reversed_index/
+---
+Hey guys,
+
+is there a way to parse a string by a reversed index, indicating the starting index from the end of the string? Like in Python one could call:
+
+    &gt;&gt;&gt; word = "bumblebee"
+    &gt;&gt;&gt; word[-3:]
+    "bee"
+
+Is there a way to get the same result in Kotlin?
+
+Thank you very much in advance!
+## [7][Tools for generating the function call graph of a project?](https://www.reddit.com/r/Kotlin/comments/hmeyc7/tools_for_generating_the_function_call_graph_of_a/)
+- url: https://www.reddit.com/r/Kotlin/comments/hmeyc7/tools_for_generating_the_function_call_graph_of_a/
+---
+Hi!
+
+I am new to kotlin. I have this project which I'd like to have some kind of "map" of it. I've seen this kind of tool where there is some kind of graph where function calls are represented by arrows, and I was wondering if such a thing was available for kotlin.
+## [8][Wrapper for Wikia API with minmal abstractions in Kotlin (WIP)](https://www.reddit.com/r/Kotlin/comments/hlw66z/wrapper_for_wikia_api_with_minmal_abstractions_in/)
 - url: https://www.reddit.com/r/Kotlin/comments/hlw66z/wrapper_for_wikia_api_with_minmal_abstractions_in/
 ---
 [Github](https://github.com/Gabgab2003/WikiaKT/)
@@ -11,77 +73,13 @@
 I wrote an API Wrapper (wrote = about 60% of API methods implemented and no tests yet, pretty WIP) for the Wikia API. If someone wants to offer Feedback, implement some methods, or write Tests, you are free to do so.
 
 Id love some feedback on the namespacing, as I wanted the API to be as close to the original API as possible, which is why every module (\`Activity\` for example) is a class, as that allows people to call \`api.activity.(somemethod)\` which looks better than \`api.activity(Somemethod)\`
-## [3][Kotlin 1.4-M3-eap-* of the IDEA Plugin](https://www.reddit.com/r/Kotlin/comments/hljfbh/kotlin_14m3eap_of_the_idea_plugin/)
+## [9][Kotlin 1.4-M3-eap-* of the IDEA Plugin](https://www.reddit.com/r/Kotlin/comments/hljfbh/kotlin_14m3eap_of_the_idea_plugin/)
 - url: https://www.reddit.com/r/Kotlin/comments/hljfbh/kotlin_14m3eap_of_the_idea_plugin/
 ---
 I can see Kotlin 1.4-M3 artifacts are being pushed to the `kotlin-dev` channel.  
 
 However I can't find a build of the IDEA Plugin. Any idea where I could look? I would like to avoid building it myself.
-## [4][VisualVM with Kotlin?](https://www.reddit.com/r/Kotlin/comments/hlqex6/visualvm_with_kotlin/)
+## [10][VisualVM with Kotlin?](https://www.reddit.com/r/Kotlin/comments/hlqex6/visualvm_with_kotlin/)
 - url: https://www.reddit.com/r/Kotlin/comments/hlqex6/visualvm_with_kotlin/
 ---
 Can I use VisualVM with Kotlin applications?
-## [5][lndmflngs/line-to-telegram - Tool to prepare a set of Line stickers into Telegram stickers [Rewrote on the use of Executors, Need some code review]](https://www.reddit.com/r/Kotlin/comments/hlkmj5/lndmflngslinetotelegram_tool_to_prepare_a_set_of/)
-- url: https://github.com/lndmflngs/line-to-telegram
----
-
-## [6][Released KHipster 1.9.0](https://www.reddit.com/r/Kotlin/comments/hld2qu/released_khipster_190/)
-- url: https://www.npmjs.com/package/generator-jhipster-kotlin
----
-
-## [7][java.lang.ExceptionInInitializerError in self-referential objects?](https://www.reddit.com/r/Kotlin/comments/hlhuvu/javalangexceptionininitializererror_in/)
-- url: https://www.reddit.com/r/Kotlin/comments/hlhuvu/javalangexceptionininitializererror_in/
----
-I'm having problems with the jvm compiler.
-
-I'm trying to write a factory method for classes. The factory method has an init() block that helps to define behaviour for the new object. While this method compiles for JVM, I encounter a problem when running it:
-
-java.lang.ExceptionInInitializerError
-
-Caused by: java.lang.IllegalArgumentException: Parameter specified as non-null is null: method type.ProblematicKt.nullable, parameter $this$nullable
-
-&amp;#x200B;
-
-Apparently, the object isn't yet defined when I attempt to run the problematicInit() block. How do I fix this?
-
-Seems to be a JVM problem. It seems to work for Javascript compilations. My understanding was that getProblematic would be hoisted, but what's inside the scope would be deferred until it's run designed to be run later - after the factory method is completed.
-
-    interface ProblematicBuilderScope {
-      fun problematicInit(getX: () -&gt; ProblematicInterface)
-    }
-    
-    fun getProblematic() = X
-    class Problematic(...): ProblematicInterface
-    
-    // Factory method with init() block
-    val X = Problematic.factory(...) {
-      problematicInit{ getProblematic() }
-    } 
-    
-    fun factory(init: ProblematicBuilderScope.() -&gt; Unit): Problematic {
-      val newObject = Problematic(...)
-      val scope = ProblematicBuilderScope(newObject)
-      scope.init()
-      return newObject
-    }
-## [8][Can Kotlin.JS And Javascript be in the same project?](https://www.reddit.com/r/Kotlin/comments/hl1440/can_kotlinjs_and_javascript_be_in_the_same_project/)
-- url: https://www.reddit.com/r/Kotlin/comments/hl1440/can_kotlinjs_and_javascript_be_in_the_same_project/
----
-I was making some basic website after going through the React and Kotlin.JS tutorial of JetBrains and then my friend expressed his desire to contribute. But the problem is that he doesn't knows Kotlin and only Javascript and I have just started so I only know Javascript.
-AFAIK, Java and Kotlin can be used in the same project but is there any way to use Kotlin.JS with simple Javascript. Or will one of us have to learn a new language?
-## [9][Announcing LA4K: Logging API for Kotlin](https://www.reddit.com/r/Kotlin/comments/hkrz4x/announcing_la4k_logging_api_for_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/hkrz4x/announcing_la4k_logging_api_for_kotlin/
----
-Greetings!
-
-I have been working on an original logging API for Kotlin Multiplatform for over a year now. I have done this because every other API I have found has really just been an extension of an existing JVM-only API, usually SLF4J. Right now, it can be bound to Android (Logcat), Log4j2, SLF4J and JUL. JS and native targets are planned for future releases.
-
-I invite everyone to [check out its GitHub repo](https://github.com/wswartzendruber/la4k) (which includes a ReadMe). I have also [published the initial release, v0.1.0, to Bintray](https://bintray.com/wswartzendruber/la4k). I am especially interested in the community's assessment of the project, as any shortcommings need to be identified.
-
-It is my intention for this to mature as Kotlin Multiplatform does the same. I would like for the v1.0.0 release to coincide with Multiplatform's initial, stable release.
-
-I appreciate any feedback on this project.
-## [10][Multiplatform Persistence with SQLDelight](https://www.reddit.com/r/Kotlin/comments/hkqf1e/multiplatform_persistence_with_sqldelight/)
-- url: http://gh.jdoneill.com/2020/06/28/sqldelight/
----
-

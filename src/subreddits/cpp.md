@@ -123,7 +123,103 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [3][New library: Font Chef](https://www.reddit.com/r/cpp/comments/hlvmqf/new_library_font_chef/)
+## [3][C++ is brilliant](https://www.reddit.com/r/cpp/comments/hmj4s5/c_is_brilliant/)
+- url: https://www.reddit.com/r/cpp/comments/hmj4s5/c_is_brilliant/
+---
+I'm working on a Vulkan renderer, and needed to delay destruction of render scenes since the graphics pipeline has render buffers in flight, so destruction has to happen N frames after the user destroys a class.  With C++, I can use **private destructors** to force users to add the scene to a managed destructor queue (aka garbage collect queue).  Normally language purists will scorn a language which allows such shenanigans, however in real world production code, its features like this which allows developers to create modern software.   So with a couple of lines of code, I solved my delayed destructor issue.  Thank you C++ committee for creating a usable language.
+## [4][What would it take to allow forward declaration of typedefs?](https://www.reddit.com/r/cpp/comments/hmpult/what_would_it_take_to_allow_forward_declaration/)
+- url: https://www.reddit.com/r/cpp/comments/hmpult/what_would_it_take_to_allow_forward_declaration/
+---
+Quite a lot of the time it would be conveniant to allow forward declaration of typedefs. So lets say I'm using the rapidjson library as an example, and I want to create `Thing` out of a rapidjson value, but I don't want to leak that whole library to everyone who consumes `Thing`. What I want to do is this.
+
+    namespace rapidjson {
+        typedef Value;
+    }
+    
+    class Thing
+    {
+        Thing( const rapidjson::Value&amp; v );
+        ...
+    };
+
+But you can't forward declare a typedef. Instead you have to redeclare the whole thing like so:
+
+    typedef GenericValue&lt;UTF8&lt;char&gt;, MemoryPoolAllocator&lt;CrtAllocator&gt; &gt; Value;
+
+Ah, but I don't have any of those classes declared either. So we need these too.
+
+    template&lt;typename CharType&gt; struct UTF8;
+    template &lt;typename Encoding, typename Allocator&gt; 
+    class GenericValue;
+    class CrtAllocator;
+    template &lt;typename BaseAllocator&gt;
+    class MemoryPoolAllocator;
+    typedef GenericValue&lt;UTF8&lt;char&gt;, MemoryPoolAllocator&lt;CrtAllocator&gt; &gt; Value;
+
+And look, we just barfed a whole pile of garbage into the top of our file, not to mention that this could easily become out of date when the library is updated.
+
+So a typical solution to that is each library having some header like `#include &lt;rapidjson/fwd.h&gt;` in order to forward declare all the various template types. In the case of rapidjson this header is itself 150 lines. All I wanted was to forward declare a type!
+
+Now the reason I have seen given that we can't do this is that typedefs don't really create a type, just an alias. This means that the compiler converts your typedef to the mangled name.
+
+But is that really all there is to it? Can nobody think of a way?
+
+What we if we made it so you can't call a function with a declared but not defined typedef? That way we could be sure that by the time the compiler actually needs to care to resolve the typedef, the actual definition is available? Would that be enough of a rule to allow compilers to easily implement something like this?
+
+The other road would be allowing for typedefs that are actually seperate types, which I would be suprised if it had not been proposed before.
+
+`typedef class` maybe?
+
+Anyone have any suggestions?
+## [5][{fmt} 7.0 released with code size, performance and compile time optimizations, improved compatibility with C++20 std::format and more](https://www.reddit.com/r/cpp/comments/hm7gz0/fmt_70_released_with_code_size_performance_and/)
+- url: https://github.com/fmtlib/fmt/releases/tag/7.0.0
+---
+
+## [6][A Concurrency Cost Hierarchy](https://www.reddit.com/r/cpp/comments/hmaocb/a_concurrency_cost_hierarchy/)
+- url: https://travisdowns.github.io/blog/2020/07/06/concurrency-costs.html
+---
+
+## [7][History of pure virtual syntax](https://www.reddit.com/r/cpp/comments/hmguf8/history_of_pure_virtual_syntax/)
+- url: https://www.reddit.com/r/cpp/comments/hmguf8/history_of_pure_virtual_syntax/
+---
+I was searching for the historical rationale behind the `= 0` syntax for pure virtual functions (just curiosity). It seems to me that this could have been at the time some kind of abuse of how vtables where generated, such that it actually initialized a null pointer or something. So far, I haven't been able to find whatever would back this up or otherwise explain this syntax. Any hints?
+## [8][Why std::to_string is note templated?](https://www.reddit.com/r/cpp/comments/hmqg6i/why_stdto_string_is_note_templated/)
+- url: https://www.reddit.com/r/cpp/comments/hmqg6i/why_stdto_string_is_note_templated/
+---
+As stated [here][1] `std::string` is not a template function but rather the standard choose to use function overloading to provide this function for different types. My question is why use overloading when template/specialisation seems to make more sense to me in this case? Consider that if the standard has defined something like this:
+
+```
+template &lt;typename T&gt;
+std::string std::to_string(const T&amp; v);
+```
+
+Then we can freely add specialisation for any type in our program to conform to this signature, thus C++ will have a uniform way to transform types into human-readable strings. Why not do this? What's the thinking behind the current design?
+
+
+  [1]: https://stackoverflow.com/questions/36533199/is-specialization-of-stdto-string-for-custom-types-allowed-by-the-c-standard/36533280
+## [9][Wrapping C++ Member Function Calls](https://www.reddit.com/r/cpp/comments/hmbwcj/wrapping_c_member_function_calls/)
+- url: https://www.reddit.com/r/cpp/comments/hmbwcj/wrapping_c_member_function_calls/
+---
+In this paper [https://stroustrup.com/wrapper.pdf](https://stroustrup.com/wrapper.pdf) Bjarne Stroustrup overloaded operator-&gt;()  to insert pieces of code before and after each function calls.
+
+In paragraph 10 "Limitations" he wrote 
+
+&gt; A  fundamental  limitation  of  this  prefix/suffix  approach  is  that  neither  prefix  nor  suffix  has  access  to  the arguments  to  the  called  function  or  the  result  produced.   For  example,  it  is  not  possible  to  provide  a prefix/suffix  to  record  the  results  of  calls  or  to  map  calls  into  message  send  operations.   In  this,  the prefix/suffix approach differs from the Tiemann wrappers \[Tiemann,1988\]. 
+
+&amp;#x200B;
+
+Does anyone have any idea of what Tiemann's approach was ?
+
+Bjarne put in his references *"\[Tiemann,1988\] Michael Tiemann:‘‘Wrappers:’’  Solving  the  RPC  problem  in  GNU  C++.   Proc.USENIX C++Conference.  Denver,  CO.  October  1988."*  but my google-fu is not sharp enough to find the source.
+## [10][how to create a socket in CPP that should work on windows and Linux](https://www.reddit.com/r/cpp/comments/hmrhes/how_to_create_a_socket_in_cpp_that_should_work_on/)
+- url: https://www.reddit.com/r/cpp/comments/hmrhes/how_to_create_a_socket_in_cpp_that_should_work_on/
+---
+ how to create a socket in CPP that should  work on windows and Linux
+## [11][C++ On Sea: Full schedule, Nico Josuttis Keynote and Remo as a platform](https://www.reddit.com/r/cpp/comments/hm5wwt/c_on_sea_full_schedule_nico_josuttis_keynote_and/)
+- url: https://cpponsea.uk/news/full-schedule-nico-josuttis-keynote-and-remo-as-a-platform.html
+---
+
+## [12][New library: Font Chef](https://www.reddit.com/r/cpp/comments/hlvmqf/new_library_font_chef/)
 - url: https://www.reddit.com/r/cpp/comments/hlvmqf/new_library_font_chef/
 ---
 Hey all!
@@ -171,143 +267,3 @@ Opinions and constructive criticism are very much welcome.
 * Manual: [https://mobius3.github.io/font-chef/manual.html](https://mobius3.github.io/font-chef/manual.html)
 
 This was also posted on /r/c_programming
-## [4][{fmt} 7.0 released with code size, performance and compile time optimizations, improved compatibility with C++20 std::format and more](https://www.reddit.com/r/cpp/comments/hm7gz0/fmt_70_released_with_code_size_performance_and/)
-- url: https://github.com/fmtlib/fmt/releases/tag/7.0.0
----
-
-## [5][C++20 std::stop_token support for blocking linux syscalls (Musl's pthread_cancel based on, but without any exceptions and thread termination).](https://www.reddit.com/r/cpp/comments/hlwj9d/c20_stdstop_token_support_for_blocking_linux/)
-- url: https://github.com/sargarass/isc
----
-
-## [6][C++ On Sea: Full schedule, Nico Josuttis Keynote and Remo as a platform](https://www.reddit.com/r/cpp/comments/hm5wwt/c_on_sea_full_schedule_nico_josuttis_keynote_and/)
-- url: https://cpponsea.uk/news/full-schedule-nico-josuttis-keynote-and-remo-as-a-platform.html
----
-
-## [7][Converting POD to std::tuple using structured-bindings](https://www.reddit.com/r/cpp/comments/hm439p/converting_pod_to_stdtuple_using/)
-- url: https://www.reddit.com/r/cpp/comments/hm439p/converting_pod_to_stdtuple_using/
----
-After some initial struggle ( [https://stackoverflow.com/questions/62692631/reflection-using-structured-bindings](https://stackoverflow.com/questions/62692631/reflection-using-structured-bindings)) where I was also suggested "magic get" (but that seemed like a complicated library), I ended up with this piece of code, that allows you to transform a POD into a std::tuple using C++17's structured-bindings:
-
-    template&lt;std::size_t N, typename T, typename = void&gt;
-    struct bind
-    	: std::integral_constant&lt;std::size_t, 0U&gt;
-    {};
-    
-    template&lt;typename T&gt;
-    struct bind&lt;1U, T, std::void_t&lt;decltype(T{ {} })&gt;&gt;
-    	: std::integral_constant&lt;std::size_t, 1U&gt;
-    {};
-    
-    template&lt;typename T&gt;
-    struct bind&lt;2U, T, std::void_t&lt;decltype(T{ {}, {} })&gt;&gt;
-    	: std::integral_constant&lt;std::size_t, 2U&gt;
-    {};
-    
-    template&lt;typename T&gt;
-    struct bind&lt;3U, T, std::void_t&lt;decltype(T{ {}, {}, {} })&gt;&gt;
-    	: std::integral_constant&lt;std::size_t, 3U&gt;
-    {};
-    
-    template&lt;std::size_t N, typename T&gt;
-    inline static constexpr auto bind_v = bind&lt;N, T&gt;::value;
-    
-    template&lt;std::size_t N, typename T&gt;
-    struct to_tuple;
-    
-    template&lt;typename T&gt;
-    struct to_tuple&lt;0U, T&gt; {
-    	static constexpr auto make = [](auto&amp;&amp; x) noexcept {
-    		return std::make_tuple();
-    	};
-    
-    	using type = decltype(make(std::declval&lt;T&gt;()));
-    };
-    
-    template&lt;typename T&gt;
-    struct to_tuple&lt;1U, T&gt; {
-    	static constexpr auto make = [](auto&amp;&amp; x) noexcept {
-    		auto [_1] = x;
-    		return std::make_tuple(_1);
-    	};
-    
-    	using type = decltype(make(std::declval&lt;T&gt;()));
-    };
-    
-    template&lt;typename T&gt;
-    struct to_tuple&lt;2U, T&gt; {
-    	static constexpr auto make = [](auto&amp;&amp; x) noexcept {
-    		auto [_1, _2] = x;
-    		return std::make_tuple(_1, _2);
-    	};
-    
-    	using type = decltype(make(std::declval&lt;T&gt;()));
-    };
-    
-    template&lt;typename T&gt;
-    struct to_tuple&lt;3U, T&gt; {
-    	static constexpr auto make = [](auto&amp;&amp; x) noexcept {
-    		auto [_1, _2, _3] = x;
-    		return std::make_tuple(_1, _2, _3);
-    	};
-    
-    	using type = decltype(make(std::declval&lt;T&gt;()));
-    };
-    
-    template&lt;typename T&gt;
-    static constexpr auto max_bind = std::max({ bind_v&lt;0U, T&gt;, bind_v&lt;1U, T&gt;, bind_v&lt;2U, T&gt;, bind_v&lt;3U, T&gt; });
-    
-    template&lt;typename T&gt;
-    using to_tuple_t = typename to_tuple&lt;max_bind&lt;T&gt;, T&gt;::type;
-    
-    template&lt;typename T&gt;
-    inline static constexpr auto make_to_tuple = to_tuple&lt;max_bind&lt;T&gt;, T&gt;::make;
-
-Working example [https://godbolt.org/z/sEpVeK](https://godbolt.org/z/sEpVeK)
-## [8][what is the "difficult" part of C++?](https://www.reddit.com/r/cpp/comments/hlittq/what_is_the_difficult_part_of_c/)
-- url: https://www.reddit.com/r/cpp/comments/hlittq/what_is_the_difficult_part_of_c/
----
-Hi,
-
-I Just started learning C++ for UE 4 game development, still learning basic syntax, I'm just curious, why everyone says C++ is difficult comparing to other languages.
-
-I'm still a beginner and I didn't start learning deep concepts
-
-thanks.
-## [9][Is there a standard way to convert between string, wstring, and the unicode strings?](https://www.reddit.com/r/cpp/comments/hlpdec/is_there_a_standard_way_to_convert_between_string/)
-- url: https://www.reddit.com/r/cpp/comments/hlpdec/is_there_a_standard_way_to_convert_between_string/
----
-I'm looking for a standard way to convert between string, wstring, and the unicode strings. I have code to convert the unicode strings between each other (ie. utf8 -&gt; utf16, utf8 -&gt; utf32, etc...) which is straightforward as they don't depend on the compiler, platform, etc... What I need is to convert string to wstring, wstring to string, and both to any (or all) of the unicode strings.
-
-Up till now I've been using MultiByteToWideChar() and WideCharToMultiByte() with the code page set to either CP\_ACP or CP\_UTF8 as necessary. Of course this is windows only and I'd like to move to a platform agnostic method.
-
-I looked at codecvt (in &lt;locale&gt;), which seems designed for this purpose, but it as I understand it will be deprecated ([http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0618r0](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0618r0)) and is unsafe. &lt;cuchar&gt; also has a set of conversion functions (mbrtoc16, c16rtomb, etc...) but I'm unsure exactly what they are converting from/to. I don't know what a 'narrow multibyte character representation' is, or how that relates to strings, wstrings, etc...
-
-I'm not looking for a dumb static\_cast, I want to properly convert the code points, when possible.
-## [10][How effective is using c++17 extract and insert move on ordered maps for minimizing memory fragmentation?](https://www.reddit.com/r/cpp/comments/hlwx2g/how_effective_is_using_c17_extract_and_insert/)
-- url: https://www.reddit.com/r/cpp/comments/hlwx2g/how_effective_is_using_c17_extract_and_insert/
----
-I assume if a program requires many erases and insertions in an ordered map, but keeps the same size, then the memory storing the map's nodes will not be recycled but rather point to new address in memory, thus creating fragmented memory.
-
-If this assumption is true, then I ask can the use of c++17 extract and insert move be used to recycle the  memory that contains existing nodes in order to minimize memory fragmentation?
-
-Is it possible that a pool allocator would have already have taken care of this problem?
-## [11][Discussion on how to get much smaller and cleaner C++ in particular code base](https://www.reddit.com/r/cpp/comments/hls275/discussion_on_how_to_get_much_smaller_and_cleaner/)
-- url: https://www.reddit.com/r/cpp/comments/hls275/discussion_on_how_to_get_much_smaller_and_cleaner/
----
-“Within C++, there is a much smaller and cleaner language struggling to get out”
-
-Bjarne Stroustrup
-
-We all know that c++ is about strong backward compatibility. The only way of fixing an unsound language feature is to add a new feature along with the old one.
-
-I just want to discuss here about a way to restrict language features to get “smaller and cleaner language” inside particular project code base. 
-
-*Is it possible to have static analysis tools that preprocess the code and forbid compilation with undesired old features?*
-
-Not full list of undesired features, but just for example: implicit conversions, C-style casts, avoid some initialization rules, .. (for sure you can continue the list)
-
-What do you think? Does someone have particular experience with that?
-## [12][Unity builds. They exist. Use Them.](https://www.reddit.com/r/cpp/comments/hlss8d/unity_builds_they_exist_use_them/)
-- url: https://github.com/j-jorge/unity-build
----
-

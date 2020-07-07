@@ -83,119 +83,81 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
-## [3][Liquid swipe](https://www.reddit.com/r/reactjs/comments/hlo841/liquid_swipe/)
-- url: https://v.redd.it/xfbt46cp12951
+## [3][3D skateboard swipe (threejs &amp; react-spring)](https://www.reddit.com/r/reactjs/comments/hmg410/3d_skateboard_swipe_threejs_reactspring/)
+- url: https://v.redd.it/pxd4pcseta951
 ---
 
-## [4][7 Awesome React Hooks](https://www.reddit.com/r/reactjs/comments/hm3r8q/7_awesome_react_hooks/)
-- url: https://livecodestream.dev/post/2020-07-04-7-awesome-react-hooks/
+## [4][Building an isometric frogger style game with React and Recoil](https://www.reddit.com/r/reactjs/comments/hm8pj0/building_an_isometric_frogger_style_game_with/)
+- url: https://www.youtube.com/watch?v=hRRXe8e7VeM
 ---
 
-## [5][Set with Friends - Online, real-time multiplayer card game built with React and Firebase](https://www.reddit.com/r/reactjs/comments/hlvaka/set_with_friends_online_realtime_multiplayer_card/)
-- url: https://v.redd.it/db0090xx34951
+## [5][Server Side Rendering In React Without Using Any Framework](https://www.reddit.com/r/reactjs/comments/hmrsb8/server_side_rendering_in_react_without_using_any/)
+- url: https://youtu.be/JNLiPMgQrrI
 ---
 
-## [6][Is there a way to adjust the day START/END time in system time modals? E.g. for a Journaling app, if they want to include for an entry at 3am in the day before (but showing after e.g. 10pm if they have another entry), is this possible instead of having to create a custom clock modal?](https://www.reddit.com/r/reactjs/comments/hm6kkq/is_there_a_way_to_adjust_the_day_startend_time_in/)
-- url: https://www.reddit.com/r/reactjs/comments/hm6kkq/is_there_a_way_to_adjust_the_day_startend_time_in/
+## [6][Need help with abstraction](https://www.reddit.com/r/reactjs/comments/hmu9pt/need_help_with_abstraction/)
+- url: https://www.reddit.com/r/reactjs/comments/hmu9pt/need_help_with_abstraction/
 ---
-I want to give users the option to adjust their start/end times in the app so that it lines up more with their body clock. But I'm not sure if you can get the system time modals to change like this, for example getting them to go from 3am to 2:59am or 2am to 1:59am instead of 12am to 11:59pm.
+I've got some experience with React in the general sense - I know how to use functional components (or the theory of the class components) and I've got a basic app (based on Microsoft Fluent UI) working. I'm using typescript, react-redux toolkit.
 
-For example say someone makes a diary entry at 10pm and then enters one at 3am but wants the 3am one to appear after 10pm in the same day.
+I've worked on a large functional component containing everything I need, and I'm now looking to abstract the code. Right now the structure is:
 
-Does anyone know if this is possible without having to create a custom clock modal?
+[https://i.ibb.co/27QdYdV/image.png](https://i.ibb.co/27QdYdV/image.png)
 
-Thanks
-## [7][How do I check the create-react-app version that my app used?](https://www.reddit.com/r/reactjs/comments/hm6fum/how_do_i_check_the_createreactapp_version_that_my/)
-- url: https://www.reddit.com/r/reactjs/comments/hm6fum/how_do_i_check_the_createreactapp_version_that_my/
----
-since I used `npx create-react-app` to create my React app, after a really long while (\~1 year), I totally forgot which CRA version i used... now that I want to configure my custom webpack config, I need to know my CRA version to decide whether to use craco or react-app-rewired.. how do I find out which CRA version I used? gosh thanks!
-## [8][filbert | A light weight(~1KB) css-in-js solution(framework) - similar API to styled-components/emotion for 8% the size](https://www.reddit.com/r/reactjs/comments/hm3an2/filbert_a_light_weight1kb_cssinjs/)
-- url: https://filbert-js.vercel.app/docs/introduction
----
+\`\`\`Page  
+\-- CommandBar  
+\----- Refresh action  
+\----- Upload action  
+\----- Export to CSV action  
+\-- DetailsList (grid) with entities  
+\----- Row X  
+\----- Row Y  
+\----- Row Z\`\`\`
 
-## [9][ReactJS web app is too slow and exceeds the recommended size limit](https://www.reddit.com/r/reactjs/comments/hm5hzx/reactjs_web_app_is_too_slow_and_exceeds_the/)
-- url: https://www.reddit.com/r/reactjs/comments/hm5hzx/reactjs_web_app_is_too_slow_and_exceeds_the/
----
-I'm starting off on ReactJS and new. My web app is slow and I'm wondering what can be done to improve the situation. My speed is just about 5mbps now. Working remotely.
+Best practice is to apply the single responsibility principle.
 
-Here's the screenshot of the **npm run build**: [https://imgur.com/a/ndaXnf5](https://imgur.com/a/ndaXnf5)
+The \`CommandBar\` is a FluentUI Component containing multiple  \`ICommandBarItemProps\` to render, each with their own \`onClick\`-handler. Some have impact on the UI (refresh), some have actions attached to them (CSV-export the current grid items on the page).
 
-It also gives a warning during the build:
+Since the action (such as refresh) should act on the DetailsList to refresh the grid, I need to somehow link these two together.  As I want to use the actions in a generic sense, so for possibly every grid, this poses a mental problem for me
 
-`WARNING in asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).This can impact web performance.Assets:17.3a6330634085ecb2c9c3.chunk.js (952 KiB)17.3a6330634085ecb2c9c3.chunk.js.gz (246 KiB)`
+I see three ways:
 
-Statistics on Chrome dev but it varies. The total size of the web app is 2.1MB
+1. Pass down the onclick handler as a prop from the "\`Page\`" or "\`CommandBar\`".This seems highly unpractical, because the page will become a a controlling entity, and will become a huge TSX file full of event handlers as the list of actions grows.
+2. Trigger the update using reduxOnClick on the button could result in a dispatch() to the redux store. In this case I would need to create an additional prop in the state (shouldRefresh), to which the DetailsList needs to listen to. Alternatively I could dispatch GetData(), which automatically updates the grid.
+3. Create a wrapper for every "CommandBar" type I'm going to offer, placing the logic in there, so I will have a "FileListCommmandBar" component. It will then still need to be linked to the DetailsList, which will in case lead to the problem being moved elsewhere.
 
-HXR  
-`9 / 41 requests`  
-`25.5 kB / 2.1 MB transferred`  
-`21.4 kB / 2.1 MB resources`  
-`Finish: 16.03 s`  
-`DOMContentLoaded: 5.55 s`
+What is the proposed way of doing this if you want to keep function-components loosely coupled. Please keep in mind that some actions trigger a dialog (upload file) that has its own logic. The Actions should be 'agnostic'. I'm a bit at a loss, and it feels that I'm going to use redux as a glorified event-system rather than a state management machine.
 
-JS  
-`9 / 41 requests`  
-`25.5 kB / 2.1 MB transferred`  
-`21.4 kB / 2.1 MB resources`  
-`Finish: 16.03 s`  
-`DOMContentLoaded: 5.55 s`
-
-CSS  
-`1 / 49 requests`  
-`1.2 kB / 2.1 MB transferred`  
-`8.2 kB / 2.1 MB resources`  
-`Finish: 1.6 min`  
-`DOMContentLoaded: 5.55 s`
-
-IMG  
-`2 / 51 requests`  
-`1.9 kB / 2.1 MB transferred`  
-`4.8 kB / 2.1 MB resources`  
-`Finish: 1.9 min`  
-`DOMContentLoaded: 5.55 s`
-
-Font  
-`1 / 53 requests`  
-`6.9 kB / 2.1 MB transferred`  
-`6.7 kB / 2.1 MB resources`  
-`Finish: 2.2 min`  
-`DOMContentLoaded: 5.55 s`
-
-I'm also getting an error on my console:  
-`main.f711ca02cef820d58efb.chunk.js:1 Uncaught (in promise) Error: 3000ms timeout exceeded`
-
-What can I do to improve the speed? We are on nginx server if that helps.
-## [10][Completed my first React Project, wanted to share with all of you](https://www.reddit.com/r/reactjs/comments/hm52h5/completed_my_first_react_project_wanted_to_share/)
-- url: https://www.reddit.com/r/reactjs/comments/hm52h5/completed_my_first_react_project_wanted_to_share/
----
- Hi all, 
-
-I just completed my first React project and wanted to share it with all of you people.
-
-Here's the website link: [https://ayushaggarwal.com/](https://ayushaggarwal.com/)
-
-Do check out and provide your feedback.
-
-Here's the Github repository link: [https://github.com/ayushagg31/portfolio-app](https://github.com/ayushagg31/portfolio-app/blob/master/README.md), if you are interested. The code has some redundancy issues. I am working on fixing it. If you have any suggestions related to code, please consider raising an issue on the repository.
-
-Thanks!!!
-## [11][Covid-19 Tracker Website](https://www.reddit.com/r/reactjs/comments/hm4qcg/covid19_tracker_website/)
-- url: https://www.reddit.com/r/reactjs/comments/hm4qcg/covid19_tracker_website/
----
-Coronavirus has impacted all of us and definitely changed our lives. Even though few countries have eased their restrictions, many are yet quarantined at their homes. With the astonishing number of cases at a rise both Globally and in India, I decided to create a project on coronavirus which would help us track the daily cases globally and give us a country-wise split of cases with graphs for visual aid.  
-I developed a fully responsive [Covid-19 Tracker Website](https://covid19-cases-tracker.herokuapp.com/). This website keeps track of the total cases, recovered cases, and deaths globally and country-wise in real-time. It further displays the data in a graphical format.  
-Moreover, with the rising demand for dark-mode in various applications, I decided to add a toggle button to change the display mode according to user preference.  
-Please check it out and let me know if you have any suggestions or advice.  
-[https://covid19-cases-tracker.herokuapp.com/](https://covid19-cases-tracker.herokuapp.com/)   
-
-
-https://reddit.com/link/hm4qcg/video/gl7xlfwvk7951/player
-
-A special thanks to the YouTube channel JavaScript Mastery that helped me build the skills required for this project.  
-
-
-[**#javascript**](https://www.linkedin.com/feed/hashtag/?keywords=javascript&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6681917920303546369) [**#reactjs**](https://www.linkedin.com/feed/hashtag/?keywords=reactjs&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6681917920303546369) [**#coronavirus**](https://www.linkedin.com/feed/hashtag/?keywords=coronavirus&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6681917920303546369) [**#covid19tracker**](https://www.linkedin.com/feed/hashtag/?keywords=covid19tracker&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6681917920303546369)
-## [12][Understanding Event Handling in React.js (with React Hooks)](https://www.reddit.com/r/reactjs/comments/hll7ei/understanding_event_handling_in_reactjs_with/)
-- url: https://www.youtube.com/watch?v=rgxSs6cYhVw&amp;t=1s
+Hopefully someone can give me some guidance, maybe I'm way off (I hope I am, so I can learn) but i'm a bit stuck.
+## [7][My first contribution to OSS, react-truncate-list. Please check it out and let me know if you'd find this useful.](https://www.reddit.com/r/reactjs/comments/hmu9bd/my_first_contribution_to_oss_reacttruncatelist/)
+- url: https://github.com/maladr0it/react-truncate-list
 ---
 
+## [8][Youtube clone (PERN stack)](https://www.reddit.com/r/reactjs/comments/hmu0dt/youtube_clone_pern_stack/)
+- url: https://v.redd.it/ihnd4migmf951
+---
+
+## [9][React Recoil for New Project](https://www.reddit.com/r/reactjs/comments/hmtzcf/react_recoil_for_new_project/)
+- url: https://www.reddit.com/r/reactjs/comments/hmtzcf/react_recoil_for_new_project/
+---
+I'm just starting a new reactjs project. It has a UI but it's only used to write data to the backend that will later be consumed via API calls.  Speed is a necessity but only for serving the data via API. 
+
+My questions are... 
+
+1. would you guys recommend me using the new and shiny Recoil since it's a new project? 
+2. do you think recoil is overkill?
+3. do you think maybe I should just use Context?
+## [10][React on twitter](https://www.reddit.com/r/reactjs/comments/hmtnp5/react_on_twitter/)
+- url: https://www.reddit.com/r/reactjs/comments/hmtnp5/react_on_twitter/
+---
+I’ve heard that Twitter can be an awesome resource for web developers. Anybody have any suggestions for must-follow software gurus on twitter?
+## [11][A REST View of GraphQL](https://www.reddit.com/r/reactjs/comments/hmtlzl/a_rest_view_of_graphql/)
+- url: https://hasura.io/blog/rest-view-of-graphql/
+---
+
+## [12][What do you think is the current best CSS framework for working with react?](https://www.reddit.com/r/reactjs/comments/hmt0bt/what_do_you_think_is_the_current_best_css/)
+- url: https://www.reddit.com/r/reactjs/comments/hmt0bt/what_do_you_think_is_the_current_best_css/
+---
+I want to learn either Boostrap or Material UI or Ant 
+
+Just wanted to know what other people use

@@ -1,121 +1,103 @@
 # golang
-## [1][[Q&amp;A] //go:build draft design](https://www.reddit.com/r/golang/comments/hitexe/qa_gobuild_draft_design/)
-- url: https://www.reddit.com/r/golang/comments/hitexe/qa_gobuild_draft_design/
+## [1][Why Go’s Error Handling is Awesome](https://www.reddit.com/r/golang/comments/hmnhkz/why_gos_error_handling_is_awesome/)
+- url: https://rauljordan.com/2020/07/06/why-go-error-handling-is-awesome.html
 ---
-I posted a draft design today for updating the // +build lines to fix some usability problems. 
 
-Video: [https://golang.org/s/go-build-video](https://golang.org/s/go-build-video)\
-Design: [https://golang.org/s/go-build-design](https://golang.org/s/go-build-design)
+## [2][gosh now supports snippets](https://www.reddit.com/r/golang/comments/hmujvh/gosh_now_supports_snippets/)
+- url: https://www.reddit.com/r/golang/comments/hmujvh/gosh_now_supports_snippets/
+---
+`gosh`, the tool for writing command line scripts in Go now lets you keep snippets of code and embed them by name in your scripts. For instance you can check for errors and report them by having a file called `iferr` and then after every line that sets the error you can add the snippet.
 
-As an experiment, let's try doing Q&amp;A about the design here in Reddit.
-My hope is that the threading support will help keep questions and answers matched.
+You install `gosh` by running this command
 
-**Please start a new top-level comment for each new question.**
-## [2][How I Structure Go Packages](https://www.reddit.com/r/golang/comments/hm34kq/how_i_structure_go_packages/)
+`go get -u` [`github.com/nickwells/utilities/gosh`](https://github.com/nickwells/utilities/gosh)
+
+Once you have installed it you can see a usage message by running
+
+`gosh -help`
+## [3][Help with an algorithm to cut string into multiple strings](https://www.reddit.com/r/golang/comments/hmugl2/help_with_an_algorithm_to_cut_string_into/)
+- url: https://www.reddit.com/r/golang/comments/hmugl2/help_with_an_algorithm_to_cut_string_into/
+---
+Hi!
+
+&amp;#x200B;
+
+I have a string of characters like so:
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+999923999999866544487221888888899988
+
+&amp;#x200B;
+
+And would like to cut it so that I only have the numbers greater than 2 into a slice of strings:
+
+&amp;#x200B;
+
+9999
+
+3999999866544487
+
+888888899988
+
+&amp;#x200B;
+
+Is this possible please?
+
+Thank you in advance!
+## [4][A Data Engineering Perspective on Go vs. Python (Part 2 - Dataflow)](https://www.reddit.com/r/golang/comments/hmu216/a_data_engineering_perspective_on_go_vs_python/)
+- url: https://chollinger.com/blog/2020/07/a-data-engineering-perspective-on-go-vs.-python-part-2-dataflow/
+---
+
+## [5][How I Structure Go Packages](https://www.reddit.com/r/golang/comments/hm34kq/how_i_structure_go_packages/)
 - url: https://bencane.com/stories/2020/07/06/how-i-structure-go-packages/
 ---
 
-## [3][[How to?] Design a Chat application](https://www.reddit.com/r/golang/comments/hm2ck3/how_to_design_a_chat_application/)
-- url: https://www.reddit.com/r/golang/comments/hm2ck3/how_to_design_a_chat_application/
----
-I am developing a synced and persists (like Messenger, Telegram where messages will be synced with server, and be available on all the devices and be available from new devices when logging in, unlike WhstsApp) chat application, with basic functionalities like one-to-one chat, group chat, ability to delete a message, ability to delete a message for everyone and ability to edit a message. 
-I've developed the basic websocket for one-to-one and group chat, however, I'm not sure how to develop the following features:
-
-****##NOTE: If you don't wanna read the whole thing, jump to point 3, as 3 is the most important question.****
-
-1. "Delete for me": In case of group or one to one chat, a person can delete a certain message and it will be deleted for all his synced devices. Even if he logs in using a new devices, all his old chat will be fetched and displayed there, apart from the deleted message. The other parties of the chat, however, will still have the message, and it will be displayed from their devices.
-The naive approach will be to maintain a separate chat table for each person, as by doing that deletion will be really easy.
-But the issue will be that for a group of 500 people, every message will be duplicated 500 times in the server!
-To avoid that, another approach might be to have a centralized message table and add a "visibleTo" field to message, which will by default have ids of all the recipients, but whenever an user deletes a message, the visibleTo field will remove his id. I think second approach will be better. What do you think?
-2. Delete for everyone / edit will simply reach out to the server, and edit or delete the message.
-
-3. Now, the most important question is syncing.
-Suppose the client is offline. Another user send few new messages or edit or deletes a message. After hours the client comes online. How to reflect these changes there? Obviously it'll not be optimal to always fetch all the messages and update the client. How to do it efficiently? Also, a client sends few messages or edits / deletes few messages while being online. How to reflect these changes in the server, and also to other recipients of the messages?
-
-Any suggestion, idea is welcomed!
-
-Thanks in advance!
-## [4][Is there a package that multiplex based on string pattern but not for http router?](https://www.reddit.com/r/golang/comments/hlxxtm/is_there_a_package_that_multiplex_based_on_string/)
-- url: https://www.reddit.com/r/golang/comments/hlxxtm/is_there_a_package_that_multiplex_based_on_string/
----
-I want a switch statement based on a certain named params that execute an arbitrary function. Preferably using {} pattern so that it is easier for users, instead of regex patterns.
-
-Basically what an http router does but not for handling http requests.
-
-Edit: I ended up making [my own library]( https://github.com/didip/switcheroo ) as I wanted something simple and lightweight.
-## [5][I’m writing a lossless compression algorithm. Is there anyway I can write individual bits to a file in go?](https://www.reddit.com/r/golang/comments/hm6yd4/im_writing_a_lossless_compression_algorithm_is/)
-- url: https://www.reddit.com/r/golang/comments/hm6yd4/im_writing_a_lossless_compression_algorithm_is/
+## [6][Little Go CLI tool to flatten JSON input](https://www.reddit.com/r/golang/comments/hmo8my/little_go_cli_tool_to_flatten_json_input/)
+- url: https://gist.github.com/benhoyt/05e22f0d52f7feaf88b0a37f8b739f91
 ---
 
-## [6][Please help me with eazye](https://www.reddit.com/r/golang/comments/hm6ulp/please_help_me_with_eazye/)
-- url: https://www.reddit.com/r/golang/comments/hm6ulp/please_help_me_with_eazye/
----
-I find package eazye ([github](https://github.com/jprobinson/eazye)) to simple read email from outlook server
-
-Found it in [this subreddit](https://www.reddit.com/r/golang/comments/3eqy9y/receiving_emails_in_go/)
-
-Here is my code:
-
-    func main() {
-    	info:=eazye.MailboxInfo{}
-    	info.Host= "serveraddr:26"
-    	info.TLS=false
-    	info.User= "username@domain.com"
-    	info.Pwd= "pass"
-    	info.Folder= "Inbox"
-    	ch,err:=eazye.GenerateAll(info,false,false)
-    	if err!=nil{
-    		log.Println(err)
-    	}
-    	log.Println(&lt;-ch)
-    }
-
-I get in out:
-
-    2020/07/06 15:29:34 uid search failed: imap: bad response tag ("220 serveraddr ESMTP Company")
-    2020/07/06 15:29:34 {{&lt;nil&gt; &lt;nil&gt; [] 0001-01-01 00:00:00 +0000 UTC   [] [] false 0} &lt;nil&gt;}
-
-Am I stupid or I use lib wrong?  
-Thanks.
-## [7][Usecase-Survey](https://www.reddit.com/r/golang/comments/hm6qnv/usecasesurvey/)
-- url: https://www.reddit.com/r/golang/comments/hm6qnv/usecasesurvey/
----
-Hi all!
-
-&amp;#x200B;
-
-My current work-environment is heavily based on Java and Spring and I'd like to convince my fellow coworkers that Go might be a great option for some of our use cases.
-
-Therefore I've created a short survey with the goal to collect some common use-cases.
-
-[https://forms.gle/CY5BaE23hpdYwFrx5](https://forms.gle/CY5BaE23hpdYwFrx5)
-
-&amp;#x200B;
-
-It would be very nice of you to take 5 minutes to participate, the results will be published here:
-
-[https://github.com/ledex/go-survey-results](https://github.com/ledex/go-survey-results)
-
-&amp;#x200B;
-
-Thanks in advance!
-## [8][Building Go Services with DDD Approach / Eddy Kiselman](https://www.reddit.com/r/golang/comments/hlj8dc/building_go_services_with_ddd_approach_eddy/)
-- url: https://youtu.be/YfLPZOpJQjY
+## [7][dgraph-io/ristretto v0.0.3 Released - Ristretto is a fast, concurrent cache (Go) library built with a focus on performance and correctness.](https://www.reddit.com/r/golang/comments/hmdwzn/dgraphioristretto_v003_released_ristretto_is_a/)
+- url: https://github.com/dgraph-io/ristretto/blob/master/CHANGELOG.md#003---2020-07-06
 ---
 
-## [9][Case Study - How a startup in Fintech increases throughput by 62% doing Load Testing](https://www.reddit.com/r/golang/comments/hm5yup/case_study_how_a_startup_in_fintech_increases/)
-- url: https://www.reddit.com/r/golang/comments/hm5yup/case_study_how_a_startup_in_fintech_increases/
+## [8][Help, portscanner cant get past port 1017!](https://www.reddit.com/r/golang/comments/hmohoo/help_portscanner_cant_get_past_port_1017/)
+- url: https://www.reddit.com/r/golang/comments/hmohoo/help_portscanner_cant_get_past_port_1017/
 ---
-I wrote a blog post on how I helped a Fintech SaaS startup increase throughput on their platform while lowering their costs at the same time using Rungutan.
+[https://github.com/blackhat-go/bhg/blob/master/ch-2/tcp-scanner-final/main.go](https://github.com/blackhat-go/bhg/blob/master/ch-2/tcp-scanner-final/main.go)
 
-https://rungutan.com/blog/startup-fintech-increase-throughput-load-testing/
-
-FULL DISCLOSURE: I'm the CTO of Rungutan.
-## [10][Broadcast: Send on one channel and receive on many. An example of a generic library using reflect.](https://www.reddit.com/r/golang/comments/hm5iuw/broadcast_send_on_one_channel_and_receive_on_many/)
-- url: https://github.com/malcsm/broadcast
+I have been following a book and recreated the code above. I added a print statement right above "port := &lt;-results" in the third for loop. I wouldn't go past 1017. I believe this is because the requests channel only has 1017 but i don't know why this could be. I'm also not sure if this is just a problem with my computer or the code. The book this is from is quite new and from a publisher with a good reputation so I think it might be my computer.
+## [9][Python and Go : Part II - Extending Python With Go](https://www.reddit.com/r/golang/comments/hmakgs/python_and_go_part_ii_extending_python_with_go/)
+- url: https://www.ardanlabs.com/blog/2020/07/extending-python-with-go.html
 ---
 
-## [11][Mocking your SQL database in Go tests has never been easier.](https://www.reddit.com/r/golang/comments/hlhj8v/mocking_your_sql_database_in_go_tests_has_never/)
-- url: https://github.com/cockroachdb/copyist
+## [10][[PROJECT] GhostDB - A distributed, in-memory, general purpose datastore](https://www.reddit.com/r/golang/comments/hmbwqs/project_ghostdb_a_distributed_inmemory_general/)
+- url: https://www.reddit.com/r/golang/comments/hmbwqs/project_ghostdb_a_distributed_inmemory_general/
 ---
+TLDR; We have built a distributed in-memory datastore, would love feedback and if you're interested - some contributions (beginners welcome)!
 
+Hi everyone,
+
+First off, I'd like to thank a lot of people on this subreddit, you've been a huge help throughout the development of this project.
+
+We have been working on this project for a little while now and we're ready to release it. It was originally developed as a final year project for university but it turned out to be pretty useful. When we started development on this, we had 0 knowledge of golang and have learned a tonne since we started.
+
+Below is a description but you can check out the repo [here](https://github.com/GhostDB/GhostDB):
+
+GhostDB is a distributed, in-memory, general purpose key-value data store that delivers microsecond performance at any scale.
+
+GhostDB provides a very large hash table that is distributed across multiple machines and stores large numbers of key-value pairs within the hash table. However, it's more than just a big hash table. GhostDB has multiple levels of on-disk persistence in the form of point-in-time snapshots and an append-only-file used to restore a cache node if it crashes, concurrent crawlers that will automatically evict stale data, fine grained metrics, and if configured correctly, can serve 200k+ requests per second from more than 1.5M concurrent keep-alive connections per physical server.
+
+Users of GhostDB can configure GhostDB nodes on machines they have control over. The clients application servers will be capable of interacting with GhostDB through the GhostDB SDKs much the same way their application servers may interface with a MySQL or MongoDB instance.
+
+Our SDKs are available for Python and Node.js (Java and Golang SDKs in development) and are simple to use. With just 4 lines of extra code in your application servers, you are able to achieve up to a 25x increase in data retrieval speeds when compared to databases such as MongoDB and MySQL.
+
+We have a vision for GhostDB and have spent some time refactoring it before releasing it as open source in order to facilitate extending it further.
+
+In the future we plan to add: direct support for queues and other data structures, transactional read/write operations and a whole bunch more.
+
+We would love to hear feedback and if it's something you're interested in, we would love you to contribute - we're beginner friendly!
+
+Check out the repo here:  [https://github.com/GhostDB/GhostDB](https://github.com/GhostDB/GhostDB)

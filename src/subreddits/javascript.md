@@ -1,6 +1,6 @@
 # javascript
-## [1][Showoff Saturday (June 27, 2020)](https://www.reddit.com/r/javascript/comments/hgs73j/showoff_saturday_june_27_2020/)
-- url: https://www.reddit.com/r/javascript/comments/hgs73j/showoff_saturday_june_27_2020/
+## [1][Showoff Saturday (July 04, 2020)](https://www.reddit.com/r/javascript/comments/hl22ty/showoff_saturday_july_04_2020/)
+- url: https://www.reddit.com/r/javascript/comments/hl22ty/showoff_saturday_july_04_2020/
 ---
 Did you find or create something cool this week in javascript? 
 
@@ -85,43 +85,43 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][I make my first Electron application that document your journey as Junior developer in a timelapse video which takes screenshots of my screen, merge them and add a soundtrack](https://www.reddit.com/r/javascript/comments/hm5977/i_make_my_first_electron_application_that/)
+## [3][Maybe this can help somebody... How to Use Recursion in Javascript: A Practical Application](https://www.reddit.com/r/javascript/comments/hmme2h/maybe_this_can_help_somebody_how_to_use_recursion/)
+- url: https://medium.com/@kennethscoggins/how-to-use-recursion-in-javascript-a-practical-application-cf10a9a00c4e?source=friends_link&amp;sk=d1cd13d3fdb07b7fb184e5caa7618787
+---
+
+## [4][I made a simpler alternative to nodemon. let me know what you think!](https://www.reddit.com/r/javascript/comments/hmdbfy/i_made_a_simpler_alternative_to_nodemon_let_me/)
+- url: https://gitlab.com/Thann/nodemon
+---
+
+## [5][Resizing Rotated Elements](https://www.reddit.com/r/javascript/comments/hmeuxn/resizing_rotated_elements/)
+- url: https://shihn.ca/posts/2020/resizing-rotated-elements/
+---
+
+## [6][How a DevTools Extension is Made](https://www.reddit.com/r/javascript/comments/hmtc0i/how_a_devtools_extension_is_made/)
+- url: https://goshi.dev/blog/how-a-devtools-extension-is-made
+---
+
+## [7][I make my first Electron application that document your journey as Junior developer in a timelapse video which takes screenshots of my screen, merge them and add a soundtrack](https://www.reddit.com/r/javascript/comments/hm5977/i_make_my_first_electron_application_that/)
 - url: https://github.com/IliasHad/makerlapse-app
 ---
 
-## [4][Why you should not use your app state as a remote data cache](https://www.reddit.com/r/javascript/comments/hm1fzl/why_you_should_not_use_your_app_state_as_a_remote/)
-- url: https://www.data-provider.org/docs/motivation
----
-
-## [5][Making custom import paths in Typescript and JavaScript projects](https://www.reddit.com/r/javascript/comments/hm4m7v/making_custom_import_paths_in_typescript_and/)
-- url: https://blog.piotrnalepa.pl/2020/07/06/how-to-configure-custom-absolute-imports-in-your-typescript-project/
----
-
-## [6][State of Frontend 2020 Survey](https://www.reddit.com/r/javascript/comments/hm7h6d/state_of_frontend_2020_survey/)
+## [8][State of Frontend 2020 Survey](https://www.reddit.com/r/javascript/comments/hm7h6d/state_of_frontend_2020_survey/)
 - url: https://tsh.io/state-of-frontend/?utm_source=reddit&amp;utm_medium=social&amp;utm_campaign=sofe_survey&amp;utm_content=redditjavascript
 ---
 
-## [7][Using WASM and D3 for super fast data viz: NYC Covid Data Trends](https://www.reddit.com/r/javascript/comments/hm6unm/using_wasm_and_d3_for_super_fast_data_viz_nyc/)
-- url: https://kingtech.dev/covid-data
+## [9][Top 5 Popular JavaScript Libraries for Web Scraping in 2020](https://www.reddit.com/r/javascript/comments/hmp4ly/top_5_popular_javascript_libraries_for_web/)
+- url: https://scrapingant.com/top-5-popular-javascript-libraries-for-web-scraping-in-2020/
 ---
 
-## [8][Rust for JavaScript Developers - Functions and Control Flow](https://www.reddit.com/r/javascript/comments/hm6tr5/rust_for_javascript_developers_functions_and/)
-- url: http://www.sheshbabu.com/posts/rust-for-javascript-developers-functions-and-control-flow/
+## [10][I made a new and better discord bot for current coronavirus cases and visualizations](https://www.reddit.com/r/javascript/comments/hmtumh/i_made_a_new_and_better_discord_bot_for_current/)
+- url: https://github.com/puf17640/covid-bot
 ---
 
-## [9][Svelte.js and Malina.js](https://www.reddit.com/r/javascript/comments/hllkbb/sveltejs_and_malinajs/)
-- url: https://medium.com/@lega911/svelte-js-and-malina-js-b33c55253271
+## [11][An experimental React-like framework inspired by syntax features of SwiftUI, and built off of React itself.](https://www.reddit.com/r/javascript/comments/hmcx9m/an_experimental_reactlike_framework_inspired_by/)
+- url: https://github.com/tvler/experimental-react-like-framework
 ---
 
-## [10][CA11 - WebRTC-based (video) telephony and conferencing](https://www.reddit.com/r/javascript/comments/hlqs57/ca11_webrtcbased_video_telephony_and_conferencing/)
-- url: https://github.com/open-voip-alliance/ca11
----
-
-## [11][I wasn't satisfied with existing social share buttons so I made my own — they look nice and don't track you](https://www.reddit.com/r/javascript/comments/hlb0pb/i_wasnt_satisfied_with_existing_social_share/)
-- url: https://shareon.js.org/
----
-
-## [12][I made a new way to throw online parties - All in JavaScript](https://www.reddit.com/r/javascript/comments/hlcaox/i_made_a_new_way_to_throw_online_parties_all_in/)
-- url: https://streamable.com/yujhz1
+## [12][Modern Redux with Redux Toolkit](https://www.reddit.com/r/javascript/comments/hmf8pw/modern_redux_with_redux_toolkit/)
+- url: https://wunnle.com/modern-redux-with-redux-toolkit
 ---
 

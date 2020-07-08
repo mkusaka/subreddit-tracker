@@ -83,81 +83,77 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
-## [3][3D skateboard swipe (threejs &amp; react-spring)](https://www.reddit.com/r/reactjs/comments/hmg410/3d_skateboard_swipe_threejs_reactspring/)
-- url: https://v.redd.it/pxd4pcseta951
----
-
-## [4][Building an isometric frogger style game with React and Recoil](https://www.reddit.com/r/reactjs/comments/hm8pj0/building_an_isometric_frogger_style_game_with/)
-- url: https://www.youtube.com/watch?v=hRRXe8e7VeM
----
-
-## [5][Server Side Rendering In React Without Using Any Framework](https://www.reddit.com/r/reactjs/comments/hmrsb8/server_side_rendering_in_react_without_using_any/)
-- url: https://youtu.be/JNLiPMgQrrI
----
-
-## [6][Need help with abstraction](https://www.reddit.com/r/reactjs/comments/hmu9pt/need_help_with_abstraction/)
-- url: https://www.reddit.com/r/reactjs/comments/hmu9pt/need_help_with_abstraction/
----
-I've got some experience with React in the general sense - I know how to use functional components (or the theory of the class components) and I've got a basic app (based on Microsoft Fluent UI) working. I'm using typescript, react-redux toolkit.
-
-I've worked on a large functional component containing everything I need, and I'm now looking to abstract the code. Right now the structure is:
-
-[https://i.ibb.co/27QdYdV/image.png](https://i.ibb.co/27QdYdV/image.png)
-
-\`\`\`Page  
-\-- CommandBar  
-\----- Refresh action  
-\----- Upload action  
-\----- Export to CSV action  
-\-- DetailsList (grid) with entities  
-\----- Row X  
-\----- Row Y  
-\----- Row Z\`\`\`
-
-Best practice is to apply the single responsibility principle.
-
-The \`CommandBar\` is a FluentUI Component containing multiple  \`ICommandBarItemProps\` to render, each with their own \`onClick\`-handler. Some have impact on the UI (refresh), some have actions attached to them (CSV-export the current grid items on the page).
-
-Since the action (such as refresh) should act on the DetailsList to refresh the grid, I need to somehow link these two together.  As I want to use the actions in a generic sense, so for possibly every grid, this poses a mental problem for me
-
-I see three ways:
-
-1. Pass down the onclick handler as a prop from the "\`Page\`" or "\`CommandBar\`".This seems highly unpractical, because the page will become a a controlling entity, and will become a huge TSX file full of event handlers as the list of actions grows.
-2. Trigger the update using reduxOnClick on the button could result in a dispatch() to the redux store. In this case I would need to create an additional prop in the state (shouldRefresh), to which the DetailsList needs to listen to. Alternatively I could dispatch GetData(), which automatically updates the grid.
-3. Create a wrapper for every "CommandBar" type I'm going to offer, placing the logic in there, so I will have a "FileListCommmandBar" component. It will then still need to be linked to the DetailsList, which will in case lead to the problem being moved elsewhere.
-
-What is the proposed way of doing this if you want to keep function-components loosely coupled. Please keep in mind that some actions trigger a dialog (upload file) that has its own logic. The Actions should be 'agnostic'. I'm a bit at a loss, and it feels that I'm going to use redux as a glorified event-system rather than a state management machine.
-
-Hopefully someone can give me some guidance, maybe I'm way off (I hope I am, so I can learn) but i'm a bit stuck.
-## [7][My first contribution to OSS, react-truncate-list. Please check it out and let me know if you'd find this useful.](https://www.reddit.com/r/reactjs/comments/hmu9bd/my_first_contribution_to_oss_reacttruncatelist/)
-- url: https://github.com/maladr0it/react-truncate-list
----
-
-## [8][Youtube clone (PERN stack)](https://www.reddit.com/r/reactjs/comments/hmu0dt/youtube_clone_pern_stack/)
+## [3][Youtube clone (PERN stack)](https://www.reddit.com/r/reactjs/comments/hmu0dt/youtube_clone_pern_stack/)
 - url: https://v.redd.it/ihnd4migmf951
 ---
 
-## [9][React Recoil for New Project](https://www.reddit.com/r/reactjs/comments/hmtzcf/react_recoil_for_new_project/)
-- url: https://www.reddit.com/r/reactjs/comments/hmtzcf/react_recoil_for_new_project/
----
-I'm just starting a new reactjs project. It has a UI but it's only used to write data to the backend that will later be consumed via API calls.  Speed is a necessity but only for serving the data via API. 
-
-My questions are... 
-
-1. would you guys recommend me using the new and shiny Recoil since it's a new project? 
-2. do you think recoil is overkill?
-3. do you think maybe I should just use Context?
-## [10][React on twitter](https://www.reddit.com/r/reactjs/comments/hmtnp5/react_on_twitter/)
-- url: https://www.reddit.com/r/reactjs/comments/hmtnp5/react_on_twitter/
----
-I’ve heard that Twitter can be an awesome resource for web developers. Anybody have any suggestions for must-follow software gurus on twitter?
-## [11][A REST View of GraphQL](https://www.reddit.com/r/reactjs/comments/hmtlzl/a_rest_view_of_graphql/)
-- url: https://hasura.io/blog/rest-view-of-graphql/
+## [4][Cards of Personality: A responsive multiplayer card game built with React and inspired by Cards Against Humanity](https://www.reddit.com/r/reactjs/comments/hn3qk6/cards_of_personality_a_responsive_multiplayer/)
+- url: https://v.redd.it/62y2xaol8i951
 ---
 
-## [12][What do you think is the current best CSS framework for working with react?](https://www.reddit.com/r/reactjs/comments/hmt0bt/what_do_you_think_is_the_current_best_css/)
-- url: https://www.reddit.com/r/reactjs/comments/hmt0bt/what_do_you_think_is_the_current_best_css/
+## [5][How I recreated the Hey "Feed" with AWS Lambda, SES and React](https://www.reddit.com/r/reactjs/comments/hnh0mh/how_i_recreated_the_hey_feed_with_aws_lambda_ses/)
+- url: https://francescodilorenzo.com/hey-feed-ses-lambda-react
 ---
-I want to learn either Boostrap or Material UI or Ant 
 
-Just wanted to know what other people use
+## [6][Introducing BIGKit - a new RAD platform](https://www.reddit.com/r/reactjs/comments/hnfaow/introducing_bigkit_a_new_rad_platform/)
+- url: https://www.reddit.com/r/reactjs/comments/hnfaow/introducing_bigkit_a_new_rad_platform/
+---
+A react app I have been working on that may be of interest:
+
+[https://medium.com/@alex.leansquad/introducing-bigkit-95dc874ee689](https://medium.com/@alex.leansquad/introducing-bigkit-95dc874ee689)
+
+Feedback welcome.
+## [7][Use Express.js, React and NoSql in Firebase to create contact form](https://www.reddit.com/r/reactjs/comments/hngzpb/use_expressjs_react_and_nosql_in_firebase_to/)
+- url: https://www.reddit.com/r/reactjs/comments/hngzpb/use_expressjs_react_and_nosql_in_firebase_to/
+---
+Hey everyone,
+I wrote a short guide [How to use Express with Firebase](https://pantaley.com/blog/Use-Express-React-and-NoSql-in-Firebase-to-create-contact-form/).
+## [8][Free 100 web application security issues training - I will include 50+ reactjs security issues too](https://www.reddit.com/r/reactjs/comments/hngyhu/free_100_web_application_security_issues_training/)
+- url: https://www.reddit.com/r/reactjs/comments/hngyhu/free_100_web_application_security_issues_training/
+---
+
+I have uploaded around 50 lessons and I am uploading daily 2 videos. 100+ unique security test cases learning and 100+ ways of ethical web hacking in just 2 months without any preskills. 
+https://youtu.be/FIpZ1eOkUj0
+
+If you like it please give feedback here guys 
+https://www.youtube.com/playlist?list=PL_bkTzUc1BufnQyGt6-9hSly2PqsDmd09
+## [9][Where should you decide the width of an element?](https://www.reddit.com/r/reactjs/comments/hnf8bi/where_should_you_decide_the_width_of_an_element/)
+- url: https://www.reddit.com/r/reactjs/comments/hnf8bi/where_should_you_decide_the_width_of_an_element/
+---
+I'm absolutely new to react and pretty new to html. To prove this I shall ask the following question:
+
+Where is it the most appropriate to determine the width and height of an element? Is it preffered to: 
+
+A: return an element which has a class that sets the width to be, lets say: X %.
+
+B: return an element that in itself doesn't have a size restriction, but then returning into a container in which the element is given X columns. 
+
+Hope you understand the question. 
+
+Thanks!
+## [10][Making an embeddable Podcast player?](https://www.reddit.com/r/reactjs/comments/hnf31v/making_an_embeddable_podcast_player/)
+- url: https://www.reddit.com/r/reactjs/comments/hnf31v/making_an_embeddable_podcast_player/
+---
+Hello everyone, I've been working on a personal project revolving around the Podcasting space.
+
+I want to make an embeddable Podcast player with Waveforms that my users could.embed into their websites, somewhat like Clyp.it 
+
+I've used VanillaJS for waveforms but it's not very optimal tbh.
+
+Any ideas on how to go about this?
+
+Thanks!
+## [11][Server side rendering with React and NodeJs](https://www.reddit.com/r/reactjs/comments/hnce7j/server_side_rendering_with_react_and_nodejs/)
+- url: https://aparnajoshi.netlify.app//server-side-rendering-with-react-and-nodejs
+---
+
+## [12][[Question] What is the correct way to use react-redux hooks for data?](https://www.reddit.com/r/reactjs/comments/hne49c/question_what_is_the_correct_way_to_use/)
+- url: https://www.reddit.com/r/reactjs/comments/hne49c/question_what_is_the_correct_way_to_use/
+---
+The title pretty much explains my question.  
+
+
+Hi, im refreshing myself with React, working on a small project.  
+My architecture is pretty simple: MainPage that used as a controller, and MessagesComponent  as child component (data is passed down to the child via props).  
+Now I connected Redux to my whole ecosystem to fetch/post data. and my question is:   
+What is the best practice for such thing? Who should use the react-redux useSelector hook? is it the MainPage controller, passing down the data via props, or the child function component MessageComponent?

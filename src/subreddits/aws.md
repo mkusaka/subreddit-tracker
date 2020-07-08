@@ -21,83 +21,125 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][PSA: Anyone Just Getting Into AWS, Set Budget Alerts and Remove Unused Databases / Instances](https://www.reddit.com/r/aws/comments/hmtmtw/psa_anyone_just_getting_into_aws_set_budget/)
+## [2][CI/CD For a static website on S3](https://www.reddit.com/r/aws/comments/hne21x/cicd_for_a_static_website_on_s3/)
+- url: https://www.reddit.com/r/aws/comments/hne21x/cicd_for_a_static_website_on_s3/
+---
+Hi all , newbie here.
+
+I just setup a static site with S3 ,CF and route53 , however I figure I need to update the site here and there.
+
+Was just wondering what’s the best and less tedious way to setup a CI/CD for this? Do I use GitHub actions and Sync with the S3 , or is there an AWS specific tool I can use for this?
+## [3][PSA: Anyone Just Getting Into AWS, Set Budget Alerts and Remove Unused Databases / Instances](https://www.reddit.com/r/aws/comments/hmtmtw/psa_anyone_just_getting_into_aws_set_budget/)
 - url: https://i.redd.it/ui2es8bgif951.jpg
 ---
 
-## [3][Best practices for allowing an outside developer access to my AWS instance?](https://www.reddit.com/r/aws/comments/hmtyc1/best_practices_for_allowing_an_outside_developer/)
-- url: https://www.reddit.com/r/aws/comments/hmtyc1/best_practices_for_allowing_an_outside_developer/
----
-We have an outside developer that we have hired to build a piece of enterprise software for us.  They are going to be using an S3 bucket (creating it and filling it) as part of the development process.  Post-development, the application will obviously need access to the bucket, but the developer will not.  
-
-What are the best practices for giving the outside guy enough permissions to develop and test the app, but not so much they can do damage within my AWS instance.  I also want to be able to revoke their access once the development process is complete and add them back for future development and feature add-ons.  
-
-Thoughts?  Anything I should definitely NOT do in this process?
-
-Thanks in advance for your comments...
-## [4][Is it possible for an S3 to trigger a Lambda but the Lambda be too fast to get the actual file the first run?](https://www.reddit.com/r/aws/comments/hmt15e/is_it_possible_for_an_s3_to_trigger_a_lambda_but/)
-- url: https://www.reddit.com/r/aws/comments/hmt15e/is_it_possible_for_an_s3_to_trigger_a_lambda_but/
----
-after a frustratingly long several hours of investigation, i’ve come to the conclusion that it is not wholly uncommon for an s3 triggered event to fail on the first attempt to do something with it, then try again later.
-
-eg. i write 100 59 MB files to an S3 prefix.  a lambda executes for each to process it.  99 work as expected.  1 fails.  not because the code logic is bad, or there was a timeout, actually the exception i catch is that it *fails to retrieve the s3 object that triggered it* with a 404.   it then ran again (automatically), about a minute later, successfully.  is this normal expected behavior?
-## [5][How does Amazon Linux relate to CentOS and RHEL?](https://www.reddit.com/r/aws/comments/hmnrb6/how_does_amazon_linux_relate_to_centos_and_rhel/)
-- url: https://www.reddit.com/r/aws/comments/hmnrb6/how_does_amazon_linux_relate_to_centos_and_rhel/
----
-My understanding of Amazon Linux is like a mixture of CentOS and RHEL. Some of the "stuff" from both like yum for example would work on Amazon Linux. However I am searching for a more clear answer on this, for example if I am installing a software that is supported on CentOS7 / RHEL7 and CentOS6 / RHEL6. Given that my machine is Amazon Linux, I am not sure which version to install. Thanks.
-## [6][13 lessons learned from taking 8 AWS certification tests in 4 weeks](https://www.reddit.com/r/aws/comments/hma3bk/13_lessons_learned_from_taking_8_aws/)
-- url: https://medium.com/@quinn.richard/14-lessons-learned-from-taking-8-aws-certification-tests-in-4-weeks-b10b2c296c14
+## [4]["You're not ready for feature flags": some reflections on the recent Amazon continuous deployment paper. Get the CI/CD basics right, the fancy stuff will follow.](https://www.reddit.com/r/aws/comments/hmus6b/youre_not_ready_for_feature_flags_some/)
+- url: https://cloudirregular.substack.com/p/youre-not-ready-for-feature-flags
 ---
 
-## [7][Uploading multipart/data-form image through api gateway with mapping templates generates “cannot read property buffer of undefined” NodeJS](https://www.reddit.com/r/aws/comments/hmskvq/uploading_multipartdataform_image_through_api/)
-- url: https://www.reddit.com/r/aws/comments/hmskvq/uploading_multipartdataform_image_through_api/
+## [5][Middle Eastern servers](https://www.reddit.com/r/aws/comments/hndyba/middle_eastern_servers/)
+- url: https://www.reddit.com/r/aws/comments/hndyba/middle_eastern_servers/
+---
+Why do western middle eastern countries like Israel, Jordan, Lebanon etc. Get 150+ ping when geographically they should be getting 30-50 ping, since the servers are in Bahrain. It doesnt make sense. I read somewhere that its cuz of lack of terrestrial cables in the area and if that is true, when are they going to be set up? Because its really dumb making a cloud server for middle east, when the majority of the region cant get a good connection to it, and its only gulf countries that actually benefit from it, which is just a small portion of the region.
+## [6][Strange dips in New Flow Count of ELB?](https://www.reddit.com/r/aws/comments/hndl0i/strange_dips_in_new_flow_count_of_elb/)
+- url: https://www.reddit.com/r/aws/comments/hndl0i/strange_dips_in_new_flow_count_of_elb/
+---
+Hiya,
+
+I've been seeing more and more strange dips on New Flow Count on our main load balancer. I saw a couple every few days every now and then in the past, but nowadays I see a lot per day, every day. 
+
+Is this happening to anyone else? I am assuming this is a Cloudwatch error because I don't believe the actual traffic has dips of this kind that last one minute. So I'm not worried because I trust this is a graphing error. Still, it's getting more annoying. Anyone else? I'm including a screenshot:
+
+https://imgur.com/a/8NdyFyj
+## [7][AWS Lambda 502 error](https://www.reddit.com/r/aws/comments/hnd4fl/aws_lambda_502_error/)
+- url: https://www.reddit.com/r/aws/comments/hnd4fl/aws_lambda_502_error/
+---
+Hi Guys, hope yall doing good!
+
+I've just started playing around with AWS lambda and dynamo but one error is bugging the hell out of me. So I'm using the python HTTP template and  trying to make a rest API, for starters a GET that will retrieve items from dynamo, it works just fine in the AWS test console, but when I try to make the same request on postman it returns "internal server error"... by looking at the logs this is what I get:
+
+&amp;#x200B;
+
+&gt;Endpoint response body before transformations: {"errorMessage": "scan() argument after \*\* must be a mapping, not NoneType. 'GET': lambda dynamo, x: dynamo.scan(\*\*x),\\n"\]} Lambda execution failed with status 200 due to customer function error: scan() argument after \*\* must be a mapping, not NoneType.
+
+This is the code
+
+    def lambda_handler(event, context):
+        operations = {
+            'GET': lambda dynamo, x: dynamo.scan(**x),
+        }
+    
+        operation = event['httpMethod']
+    
+        if operation in operations:
+            payload = event['queryStringParameters'] if operation == 'GET' else json.loads(event['body'])
+            return respond(None, operations[operation](dynamo, payload))
+        else:
+            return respond(ValueError('Unsupported method "{}"'.format(operation)))
+
+The event:  
+
+
+    {
+      "httpMethod": "GET",
+      "queryStringParameters": {
+        "TableName": "MyTable",
+        "FilterExpression": "id = :val",
+        "ExpressionAttributeValues": {
+          ":val": {
+            "S": "0000"
+          }
+        }
+      }
+    }
+
+
+This is the http response:
+
+    def respond(err, res=None):
+       return {
+            'statusCode': '400' if err else '200',
+            'body': err.message if err else res,
+            'headers': {
+                'Content-Type': 'application/json',
+            },}
+
+Any tips would be appreciated!
+
+Thanks.
+## [8][[EC2] Windows - UserData Powershell script - How to avoid applications starting in background.](https://www.reddit.com/r/aws/comments/hncvmo/ec2_windows_userdata_powershell_script_how_to/)
+- url: https://www.reddit.com/r/aws/comments/hncvmo/ec2_windows_userdata_powershell_script_how_to/
+---
+Hi - hopefully someone can help me troubleshoot a trivial issue I'm having...
+
+&amp;#x200B;
+
+I'm currently using UserData to run a Powershell script at boot of my instance.
+
+This script is responsible for downloading, installing and starting this an application.
+
+However, it seems that the application starts as a background process - is there anyway I can start the application without it being forced to the background (as I want the GUI available).
+
+&amp;#x200B;
+
+The executable is invoked in the follow fashion:
+
+`Start-Process -FilePath $exe`
+
+I suspect this is because UserData scripts are run as Administrator at boot...
+
+&amp;#x200B;
+
+Thanks!
+## [9][Wildcard custom domain support for Lambda via CloudFront behaviors](https://www.reddit.com/r/aws/comments/hnclma/wildcard_custom_domain_support_for_lambda_via/)
+- url: https://medium.com/@travispaxton/wildcard-custom-domain-support-for-lambda-via-cloudfront-behaviors-d6d9e140b4e2
 ---
 
-
-I'm trying to use api gateway to upload an image to s3, i'm using http integration (no proxy, no lambda), the problem is that i have to set a condition on the headers in order to accept a POST request, so i have to edit template mappings, the image upload works fine with no mapping templates applied (passthrough option), but when i add the conditions or anything else in the mapping templates, the request will fail and i will get this error "cannot read property buffer of undefined" I suspect that the body has been changed, ans so is the buffer lost in there, i want to know how to use template mappings to keep the body (image) intact when uploading, while at the same time keeping my header conditions functional.
-
-I'm using :
-
-content-type:multipart/form-data. Backend is in Nodejs. Multer in NodeJS.
-## [8][Made this serverless URL shortener using Python and AWS as a learning project, feedbacks are welcome](https://www.reddit.com/r/aws/comments/hm98b9/made_this_serverless_url_shortener_using_python/)
-- url: https://github.com/SkullTech/shorty.serverless
+## [10][Using FIDO with Amazon Cognito?](https://www.reddit.com/r/aws/comments/hn3y90/using_fido_with_amazon_cognito/)
+- url: https://www.reddit.com/r/aws/comments/hn3y90/using_fido_with_amazon_cognito/
 ---
-
-## [9][New – Create Amazon RDS DB Instances on AWS Outposts](https://www.reddit.com/r/aws/comments/hmg1at/new_create_amazon_rds_db_instances_on_aws_outposts/)
-- url: https://aws.amazon.com/blogs/aws/new-create-amazon-rds-db-instances-on-aws-outposts/
+Does anyone have an example of implementing FIDO from a high level with a Cognito User Pool? Is it possible with the challenge lambda triggers?
+## [11][Are "sticky sessions" the best option for maintaining session state at an ELB?](https://www.reddit.com/r/aws/comments/hn5zoe/are_sticky_sessions_the_best_option_for/)
+- url: https://www.reddit.com/r/aws/comments/hn5zoe/are_sticky_sessions_the_best_option_for/
 ---
-
-## [10][Deploying Docker app to AWS ElasticBeanstalk](https://www.reddit.com/r/aws/comments/hmp3n2/deploying_docker_app_to_aws_elasticbeanstalk/)
-- url: https://www.reddit.com/r/aws/comments/hmp3n2/deploying_docker_app_to_aws_elasticbeanstalk/
----
-Recently I experienced a strange problem that I hadn't had before with AWS EB.
-
-My AWS EB foobar-api application has 2 environments:
-- foobar-api-staging
-- foobar-api-production
-
-It's a Docker environment with single container setup. Containers are built and deployed to AWS ECR. 
-
-All of a sudden stuff from my development branch ended up in production environment that was obviously not wanted. 
-
-In my Dockerrun.aws.json the docker repo URL is specified like that:
-```
- "Image": {
-    "Name": "foo.dkr.ecr.us-east-1.amazonaws.com/bar/foobar-api:latest",
-    "Update": "true"
-  }
-```
-
-So I thought about it and it seems to me there are 2 possible issues:
-1. Update should be set to "false"?
-2. I could use separate repository URL-s / tags for production and staging.
-
-While 1. is simple fix the second is a bit trickier.
-
-So here's the question - how does anyone handle setups like these? How have you configured it?
-
-Thanks for thinking along.
-## [11][Linux running on Amazon Workspaces has discrepancy with IP addresses](https://www.reddit.com/r/aws/comments/hmovvg/linux_running_on_amazon_workspaces_has/)
-- url: https://www.reddit.com/r/aws/comments/hmovvg/linux_running_on_amazon_workspaces_has/
----
-In my AWS console, it lists a particular IP address. I see this same IP address listed as one of the addresses listed when I do ifconfig -a. However there are a lot of other addresses so I'm not sure which one is the "right" one. And then finally when I do one of those online "what's my IP address sites", I get an IP address that I have never seen before. Just trying to understand these discrepancies. What am I not understanding? Is this a known Workspaces issue? Thanks.
+Are sticky sessions or session affinity the best way to maintain session state for a web application at an ELB? I know this binds a user's session to a specific instance but I thought I read somewhere (can't find it now) that this is bad because of the possibility to overwhelm an instance. Is this true? Does it matter the ELB type (CLB, ALB, NLB)? And is there a better way to maintain session state?

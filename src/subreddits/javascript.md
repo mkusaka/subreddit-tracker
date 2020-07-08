@@ -85,43 +85,47 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][Maybe this can help somebody... How to Use Recursion in Javascript: A Practical Application](https://www.reddit.com/r/javascript/comments/hmme2h/maybe_this_can_help_somebody_how_to_use_recursion/)
-- url: https://medium.com/@kennethscoggins/how-to-use-recursion-in-javascript-a-practical-application-cf10a9a00c4e?source=friends_link&amp;sk=d1cd13d3fdb07b7fb184e5caa7618787
+## [3][Debounce Explained – How to Make Your JavaScript Wait For Your User To Finish Typing](https://www.reddit.com/r/javascript/comments/hng2pg/debounce_explained_how_to_make_your_javascript/)
+- url: https://www.freecodecamp.org/news/debounce-explained-how-to-make-your-javascript-wait-for-your-user-to-finish-typing-2/
 ---
 
-## [4][I made a simpler alternative to nodemon. let me know what you think!](https://www.reddit.com/r/javascript/comments/hmdbfy/i_made_a_simpler_alternative_to_nodemon_let_me/)
-- url: https://gitlab.com/Thann/nodemon
+## [4][Understand JavaScript’s Generators in 3 minutes](https://www.reddit.com/r/javascript/comments/hmv12l/understand_javascripts_generators_in_3_minutes/)
+- url: https://medium.com/@Dylan.Kerler/understand-javascripts-generators-in-3-minutes-8af75c9c4f5f
 ---
 
-## [5][Resizing Rotated Elements](https://www.reddit.com/r/javascript/comments/hmeuxn/resizing_rotated_elements/)
-- url: https://shihn.ca/posts/2020/resizing-rotated-elements/
+## [5][Wrote a small library for generating text based avatars in SVG like Gmail does.](https://www.reddit.com/r/javascript/comments/hnbo1d/wrote_a_small_library_for_generating_text_based/)
+- url: https://github.com/utkarshdubey/silhouette
 ---
 
-## [6][How a DevTools Extension is Made](https://www.reddit.com/r/javascript/comments/hmtc0i/how_a_devtools_extension_is_made/)
-- url: https://goshi.dev/blog/how-a-devtools-extension-is-made
+## [6][Bringing the power of customization through user scripts back to browsers with the Platypush browser extension](https://www.reddit.com/r/javascript/comments/hnfujl/bringing_the_power_of_customization_through_user/)
+- url: https://medium.com/@automationguru/one-browser-extension-to-rule-them-all-3118dc7f9c9b
 ---
 
-## [7][I make my first Electron application that document your journey as Junior developer in a timelapse video which takes screenshots of my screen, merge them and add a soundtrack](https://www.reddit.com/r/javascript/comments/hm5977/i_make_my_first_electron_application_that/)
-- url: https://github.com/IliasHad/makerlapse-app
+## [7][[AskJS] GUI live editor for javascript Object](https://www.reddit.com/r/javascript/comments/hngqii/askjs_gui_live_editor_for_javascript_object/)
+- url: https://www.reddit.com/r/javascript/comments/hngqii/askjs_gui_live_editor_for_javascript_object/
+---
+Hi everyone, I'm searching a GUI editor for complex javascript objects.
+I tried dat.GUI but it's not working well with arrays and optional (undefined) properties.
+Anyone can suggest me an alternative or at least knows a package like this?
+I'm starting to create one on my own but it's a lot of work and I have other priorities.
+If you want to see what I need to edit checkout this: https://github.com/matteobruni/tsparticles/wiki/tsParticles-Options
+## [8][Created a dead weight search library for fast client-side searching of data. Idk, might help someone?](https://www.reddit.com/r/javascript/comments/hn2my9/created_a_dead_weight_search_library_for_fast/)
+- url: https://github.com/utkarshdubey/searchzilla
 ---
 
-## [8][State of Frontend 2020 Survey](https://www.reddit.com/r/javascript/comments/hm7h6d/state_of_frontend_2020_survey/)
-- url: https://tsh.io/state-of-frontend/?utm_source=reddit&amp;utm_medium=social&amp;utm_campaign=sofe_survey&amp;utm_content=redditjavascript
+## [9][Serverless: a backend thing that gives superpowers to frontend developers](https://www.reddit.com/r/javascript/comments/hnekri/serverless_a_backend_thing_that_gives_superpowers/)
+- url: https://dev.to/aws-heroes/serverless-a-backend-thing-that-gives-superpowers-to-frontend-developers-163c
 ---
 
-## [9][Top 5 Popular JavaScript Libraries for Web Scraping in 2020](https://www.reddit.com/r/javascript/comments/hmp4ly/top_5_popular_javascript_libraries_for_web/)
-- url: https://scrapingant.com/top-5-popular-javascript-libraries-for-web-scraping-in-2020/
+## [10][Building a multiplayer game using WebSockets - Part 1](https://www.reddit.com/r/javascript/comments/hmvxm5/building_a_multiplayer_game_using_websockets_part/)
+- url: https://dev.to/sauravmh/building-a-multiplayer-game-using-websockets-1n63
 ---
 
-## [10][I made a new and better discord bot for current coronavirus cases and visualizations](https://www.reddit.com/r/javascript/comments/hmtumh/i_made_a_new_and_better_discord_bot_for_current/)
-- url: https://github.com/puf17640/covid-bot
+## [11][1 Kilobyte JavaScript Piano Open Source on GitHub](https://www.reddit.com/r/javascript/comments/hmzbhq/1_kilobyte_javascript_piano_open_source_on_github/)
+- url: https://github.com/KilledByAPixel/1Keys
 ---
 
-## [11][An experimental React-like framework inspired by syntax features of SwiftUI, and built off of React itself.](https://www.reddit.com/r/javascript/comments/hmcx9m/an_experimental_reactlike_framework_inspired_by/)
-- url: https://github.com/tvler/experimental-react-like-framework
----
-
-## [12][Modern Redux with Redux Toolkit](https://www.reddit.com/r/javascript/comments/hmf8pw/modern_redux_with_redux_toolkit/)
-- url: https://wunnle.com/modern-redux-with-redux-toolkit
+## [12][1-minute-set-up express middleware for file upload](https://www.reddit.com/r/javascript/comments/hn4ehs/1minutesetup_express_middleware_for_file_upload/)
+- url: https://github.com/iAmShakil/honeyglobe
 ---
 

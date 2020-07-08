@@ -123,11 +123,68 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [3][C++ is brilliant](https://www.reddit.com/r/cpp/comments/hmj4s5/c_is_brilliant/)
+## [3][I made a 3D renderer in C++](https://www.reddit.com/r/cpp/comments/hna4bz/i_made_a_3d_renderer_in_c/)
+- url: https://www.reddit.com/r/cpp/comments/hna4bz/i_made_a_3d_renderer_in_c/
+---
+It’s quite simple and not many features are here yet. I’m also quite inexperienced with C++ so any criticism is appreciated.
+
+GitHub Repo: https://github.com/MysteryCoder456/ThreeCEngine
+## [4][differential timer: Profile C++ by selectively skipping the execution of code parts](https://www.reddit.com/r/cpp/comments/hn0hkq/differential_timer_profile_c_by_selectively/)
+- url: https://github.com/s9w/dt
+---
+
+## [5][C++ class member initializations the right way](https://www.reddit.com/r/cpp/comments/hnftsc/c_class_member_initializations_the_right_way/)
+- url: https://www.reddit.com/r/cpp/comments/hnftsc/c_class_member_initializations_the_right_way/
+---
+[https://medium.com/pranayaggarwal25/using-modern-class-members-and-initializations-c11e931c3ba?source=friends\_link&amp;sk=fc19e4cce9ff3b5af6024949b780837a](https://medium.com/pranayaggarwal25/using-modern-class-members-and-initializations-c11e931c3ba?source=friends_link&amp;sk=fc19e4cce9ff3b5af6024949b780837a)
+
+Hi All,
+
+I have compiled a collection and article on how to correctly follow C++ class member initializations, constructors, and member functions.
+
+After reading C++ guidelines, and a few other references I have put together this article.
+
+This article covers the following -
+
+1. Use member initializers in the same order as their declaration
+2. Prefer in-class member initializer over constant initializations OR over default constructor.
+3. Don’t cast away const, ever!
+4. Use delegating constructors to represent common actions for all constructors of a class.
+
+:) Please help me in improving anything which is incorrect or missing in this.
+## [6][Blogging platform that supports C/C++](https://www.reddit.com/r/cpp/comments/hnem1b/blogging_platform_that_supports_cc/)
+- url: https://www.reddit.com/r/cpp/comments/hnem1b/blogging_platform_that_supports_cc/
+---
+DISCLAIMER: This might be understood as self promotion and in a way it is, since I did create this project. I posted this same project on [haskell subreddit](https://www.reddit.com/r/haskell/comments/hljinx/blogging_platform_that_supports_haskell/) and they liked it. If you think this is some kind of self promotion, check it out and tell me in the comments and I will remove it. Or the moderators can remove it. But I hope you're going to like it. 
+
+I created a blogging platform that  supports creating blogs that can executing code. There is also an integrated code editor with which you can create complete projects and import them into your blog. After that, the readers of your blog can execute/edit your code without having to setup environments locally, or cloning github repos and all other pain that goes with "just trying things out". There is much improvement to be done but its slowly going there. 
+
+Yesterday,  I integrated support for C/C++ so you can create blog posts and coders/beginners can edit/run your code. As I said in Haskell group, I hope this will help beginners in C/C++ a little bit. You can learn more in a [help blog post](https://therebelsource.com/blog/help-blog/8mYgnax8Nj) and on the [about page](https://therebelsource.com/about). Unfortunately, for C/C++ and Haskell, it is not yet possible to create code projects. Compiling those languages is not so straightforwared like in Go, for example where I can just do `go run /my/dir` and it just works. But support for them is coming. 
+
+Thank you for your time and I hope you like it.
+## [7][Best open-source cpp projects for contibute](https://www.reddit.com/r/cpp/comments/hnebbr/best_opensource_cpp_projects_for_contibute/)
+- url: https://www.reddit.com/r/cpp/comments/hnebbr/best_opensource_cpp_projects_for_contibute/
+---
+My experience as a professional programmer is for 3 years.   
+(high-performance, some computer vision, network, some cryptocurrency)
+
+But I still don't have experience in open-source projects.
+
+My goal is to improve my skills and back debt for community.  
+Please, advise projects for contributing.
+## [8][I made a video on c++ 17's std::byte](https://www.reddit.com/r/cpp/comments/hn8xjc/i_made_a_video_on_c_17s_stdbyte/)
+- url: https://youtu.be/VTsOJIcBpRQ
+---
+
+## [9][C++ is brilliant](https://www.reddit.com/r/cpp/comments/hmj4s5/c_is_brilliant/)
 - url: https://www.reddit.com/r/cpp/comments/hmj4s5/c_is_brilliant/
 ---
 I'm working on a Vulkan renderer, and needed to delay destruction of render scenes since the graphics pipeline has render buffers in flight, so destruction has to happen N frames after the user destroys a class.  With C++, I can use **private destructors** to force users to add the scene to a managed destructor queue (aka garbage collect queue).  Normally language purists will scorn a language which allows such shenanigans, however in real world production code, its features like this which allows developers to create modern software.   So with a couple of lines of code, I solved my delayed destructor issue.  Thank you C++ committee for creating a usable language.
-## [4][What would it take to allow forward declaration of typedefs?](https://www.reddit.com/r/cpp/comments/hmpult/what_would_it_take_to_allow_forward_declaration/)
+## [10][Clash of Code - Dare to join me!](https://www.reddit.com/r/cpp/comments/hng5fw/clash_of_code_dare_to_join_me/)
+- url: https://www.codingame.com/clashofcode/clash/12855259cd910fa3ba9c499a94918229869b2d1?utm_source=reddit&amp;utm_medium=clash%20of%20code&amp;utm_content=3626792&amp;utm_campaign=Share%20options
+---
+
+## [11][What would it take to allow forward declaration of typedefs?](https://www.reddit.com/r/cpp/comments/hmpult/what_would_it_take_to_allow_forward_declaration/)
 - url: https://www.reddit.com/r/cpp/comments/hmpult/what_would_it_take_to_allow_forward_declaration/
 ---
 Quite a lot of the time it would be conveniant to allow forward declaration of typedefs. So lets say I'm using the rapidjson library as an example, and I want to create `Thing` out of a rapidjson value, but I don't want to leak that whole library to everyone who consumes `Thing`. What I want to do is this.
@@ -171,99 +228,7 @@ The other road would be allowing for typedefs that are actually seperate types, 
 `typedef class` maybe?
 
 Anyone have any suggestions?
-## [5][{fmt} 7.0 released with code size, performance and compile time optimizations, improved compatibility with C++20 std::format and more](https://www.reddit.com/r/cpp/comments/hm7gz0/fmt_70_released_with_code_size_performance_and/)
+## [12][{fmt} 7.0 released with code size, performance and compile time optimizations, improved compatibility with C++20 std::format and more](https://www.reddit.com/r/cpp/comments/hm7gz0/fmt_70_released_with_code_size_performance_and/)
 - url: https://github.com/fmtlib/fmt/releases/tag/7.0.0
 ---
 
-## [6][A Concurrency Cost Hierarchy](https://www.reddit.com/r/cpp/comments/hmaocb/a_concurrency_cost_hierarchy/)
-- url: https://travisdowns.github.io/blog/2020/07/06/concurrency-costs.html
----
-
-## [7][History of pure virtual syntax](https://www.reddit.com/r/cpp/comments/hmguf8/history_of_pure_virtual_syntax/)
-- url: https://www.reddit.com/r/cpp/comments/hmguf8/history_of_pure_virtual_syntax/
----
-I was searching for the historical rationale behind the `= 0` syntax for pure virtual functions (just curiosity). It seems to me that this could have been at the time some kind of abuse of how vtables where generated, such that it actually initialized a null pointer or something. So far, I haven't been able to find whatever would back this up or otherwise explain this syntax. Any hints?
-## [8][Why std::to_string is note templated?](https://www.reddit.com/r/cpp/comments/hmqg6i/why_stdto_string_is_note_templated/)
-- url: https://www.reddit.com/r/cpp/comments/hmqg6i/why_stdto_string_is_note_templated/
----
-As stated [here][1] `std::string` is not a template function but rather the standard choose to use function overloading to provide this function for different types. My question is why use overloading when template/specialisation seems to make more sense to me in this case? Consider that if the standard has defined something like this:
-
-```
-template &lt;typename T&gt;
-std::string std::to_string(const T&amp; v);
-```
-
-Then we can freely add specialisation for any type in our program to conform to this signature, thus C++ will have a uniform way to transform types into human-readable strings. Why not do this? What's the thinking behind the current design?
-
-
-  [1]: https://stackoverflow.com/questions/36533199/is-specialization-of-stdto-string-for-custom-types-allowed-by-the-c-standard/36533280
-## [9][Wrapping C++ Member Function Calls](https://www.reddit.com/r/cpp/comments/hmbwcj/wrapping_c_member_function_calls/)
-- url: https://www.reddit.com/r/cpp/comments/hmbwcj/wrapping_c_member_function_calls/
----
-In this paper [https://stroustrup.com/wrapper.pdf](https://stroustrup.com/wrapper.pdf) Bjarne Stroustrup overloaded operator-&gt;()  to insert pieces of code before and after each function calls.
-
-In paragraph 10 "Limitations" he wrote 
-
-&gt; A  fundamental  limitation  of  this  prefix/suffix  approach  is  that  neither  prefix  nor  suffix  has  access  to  the arguments  to  the  called  function  or  the  result  produced.   For  example,  it  is  not  possible  to  provide  a prefix/suffix  to  record  the  results  of  calls  or  to  map  calls  into  message  send  operations.   In  this,  the prefix/suffix approach differs from the Tiemann wrappers \[Tiemann,1988\]. 
-
-&amp;#x200B;
-
-Does anyone have any idea of what Tiemann's approach was ?
-
-Bjarne put in his references *"\[Tiemann,1988\] Michael Tiemann:‘‘Wrappers:’’  Solving  the  RPC  problem  in  GNU  C++.   Proc.USENIX C++Conference.  Denver,  CO.  October  1988."*  but my google-fu is not sharp enough to find the source.
-## [10][how to create a socket in CPP that should work on windows and Linux](https://www.reddit.com/r/cpp/comments/hmrhes/how_to_create_a_socket_in_cpp_that_should_work_on/)
-- url: https://www.reddit.com/r/cpp/comments/hmrhes/how_to_create_a_socket_in_cpp_that_should_work_on/
----
- how to create a socket in CPP that should  work on windows and Linux
-## [11][C++ On Sea: Full schedule, Nico Josuttis Keynote and Remo as a platform](https://www.reddit.com/r/cpp/comments/hm5wwt/c_on_sea_full_schedule_nico_josuttis_keynote_and/)
-- url: https://cpponsea.uk/news/full-schedule-nico-josuttis-keynote-and-remo-as-a-platform.html
----
-
-## [12][New library: Font Chef](https://www.reddit.com/r/cpp/comments/hlvmqf/new_library_font_chef/)
-- url: https://www.reddit.com/r/cpp/comments/hlvmqf/new_library_font_chef/
----
-Hey all!
-
-I'm releasing a new library, called Font Chef, to assist in text rendering. Its purpose is to create an atlas of selected glyphs from unicode blocks and produce source and target rectangles to clip and render the atlas into the screen. It is basically an abstraction of the great [stb\_truetype](https://github.com/nothings/stb/blob/master/stb_truetype.h)
-
-It handles kerning, wrapping (line breaking) and alignment. It is also fully documented with examples and a manual.
-
-Example for C:
-
-    fc_font * font = fc_construct(font_data, fc_px(30), fc_color_black);
-    fc_add(fc_basic_latin.start, fc_basic_latin.end);
-    fc_cook(font);
-    // use fc_get_pixels(font) to make a texture
-        
-    const char hello[] = "Hello, world!";
-    fc_character_mapping output[32];
-    int count = fc_render(font, text, strlen(hello), &amp;output);
-    for (int i = 0; i &lt; count; i++) {
-        render(texture, output[i].source, output[i].target
-    }
-
-It comes with a C++ wrapper. Example for C++:
-
-    fc::font font = fc
-          ::from(font_data, fc::px(30), fc_color_black)
-          .add(fc_basic_latin)
-          .cook();
-    
-    // use font.pixels() to make a texture
-    
-    fc::render_result result = font.render("Hello, world!");
-    for (auto &amp; map : result) {
-        render(texture, map.source, map.target);
-    }
-
-I believe this is mostly useful to those handling directly with graphics rendering (aka game developers with their own engine) but I hope it is useful to you if you're not in that group.
-
-Opinions and constructive criticism are very much welcome.
-
-**Links**
-
-* Source code: [https://github.com/mobius3/font-chef](https://github.com/mobius3/font-chef)
-* Documentation: [https://mobius3.github.io/font-chef](https://mobius3.github.io/font-chef)
-* Manual: [https://mobius3.github.io/font-chef/manual.html](https://mobius3.github.io/font-chef/manual.html)
-
-This was also posted on /r/c_programming

@@ -1,5 +1,52 @@
 # ruby
-## [1][Hard Code Price - Shopify Script](https://www.reddit.com/r/ruby/comments/hmu1mh/hard_code_price_shopify_script/)
+## [1][Ruby income from side projects. Do you?](https://www.reddit.com/r/ruby/comments/hnav7i/ruby_income_from_side_projects_do_you/)
+- url: https://www.reddit.com/r/ruby/comments/hnav7i/ruby_income_from_side_projects_do_you/
+---
+I've seen this question on a few other subreddits, so I thought i'd ask here. Apart from your main job or full time work, do you make any side income from Ruby? Even if it's only a small amount, I would love to hear about it. Come tell all!!
+## [2][Performance -- What about making a GCC front-end for Ruby?](https://www.reddit.com/r/ruby/comments/hnfz58/performance_what_about_making_a_gcc_frontend_for/)
+- url: https://www.reddit.com/r/ruby/comments/hnfz58/performance_what_about_making_a_gcc_frontend_for/
+---
+I am working on my own programming language, with a native compiler.  
+
+
+Since LLVM is kinda slow, I thought that maybe making a GCC front-end will be faster (and indeed it is).  
+
+
+Yesterday, I saw an article about Ruby3\*3 and all that stuff, including optimizations of MJIT (the current JIT compiler for Ruby) and for a second I had a crazy idea: making Ruby as fast as C/Crystal by compiling it to native code, with a simple garbage collector and runtime.  
+
+
+Thanks to the gem \`parser\` a Ruby to abstract syntax tree compiler isn't even needed, I can call the MRI from C via \`fork()\` and then \`execv()\` (will probably take up to 10 seconds more than a parser written in pure C).  
+
+
+I already know about the pain of porting the core library and standard library and a package manager like RubyGems, but probably the most painful thing will be adding the possibility for creating C extensions, of course.  
+
+
+What do you guys about this idea?
+## [3][Redis in Ruby - A work in progress online book about reimplementing redis ... in ruby](https://www.reddit.com/r/ruby/comments/hmxcgv/redis_in_ruby_a_work_in_progress_online_book/)
+- url: https://www.reddit.com/r/ruby/comments/hmxcgv/redis_in_ruby_a_work_in_progress_online_book/
+---
+I'm really excited to share a project I've been working on for a few months now, as the title says, I'm writing an online book about reimplementing Redis, but in Ruby:
+
+[https://redis.pjam.me/](https://redis.pjam.me/)
+
+Why you may ask? Because I think it's a lot of fun and there's a lot to learn on the way, tcp servers, tcp sockets, system calls (select, read, ...), threads, processes, we'll touch on all of these.
+
+There are three chapters currently available, "Creating a Basic TCP server", "Implementing the first commands, GET &amp; SET", and "Handling multiple clients".
+
+I laid out what I think the next chapters will be: [https://redis.pjam.me/chapters](https://redis.pjam.me/chapters)
+
+If you have feedback, please let me know, and I hope you'll enjoy it as much as I enjoy writing it.
+
+One of the inspirations for this is this ebook that I love and absolutely recommend: [https://shop.jcoglan.com/building-git/](https://shop.jcoglan.com/building-git/)
+## [4][A Fast Car Needs Good Brakes: How We Added Client Rate Throttling to the Platform API Gem](https://www.reddit.com/r/ruby/comments/hngu5n/a_fast_car_needs_good_brakes_how_we_added_client/)
+- url: https://blog.heroku.com/rate-throttle-api-client
+---
+
+## [5][Anonymous Struct Literals Might Be Coming To Ruby](https://www.reddit.com/r/ruby/comments/hmvn1k/anonymous_struct_literals_might_be_coming_to_ruby/)
+- url: https://supergood.software/ruby-anonymous-struct-literals/
+---
+
+## [6][Hard Code Price - Shopify Script](https://www.reddit.com/r/ruby/comments/hmu1mh/hard_code_price_shopify_script/)
 - url: https://www.reddit.com/r/ruby/comments/hmu1mh/hard_code_price_shopify_script/
 ---
 So I used the Shopify Script Generator to generate a script that discounts Shipping Rates by a number or percentage. However I want to adapt this code so I can just hardcode the price rather than discount it, so for example I can explicitly set it to £5 for arguments sake, I'm more of a Python dev so I'm having alot of trouble adapting! Code below  
@@ -156,11 +203,11 @@ So I used the Shopify Script Generator to generate a script that discounts Shipp
     end
     
     Output.shipping_rates = Input.shipping_rates
-## [2][Why validation matchers are the only Shoulda matchers I use](https://www.reddit.com/r/ruby/comments/hmmdza/why_validation_matchers_are_the_only_shoulda/)
+## [7][Why validation matchers are the only Shoulda matchers I use](https://www.reddit.com/r/ruby/comments/hmmdza/why_validation_matchers_are_the_only_shoulda/)
 - url: https://www.codewithjason.com/validation-matchers-shoulda-matchers-use/
 ---
 
-## [3][Best deep-dive Ruby course?](https://www.reddit.com/r/ruby/comments/hmg444/best_deepdive_ruby_course/)
+## [8][Best deep-dive Ruby course?](https://www.reddit.com/r/ruby/comments/hmg444/best_deepdive_ruby_course/)
 - url: https://www.reddit.com/r/ruby/comments/hmg444/best_deepdive_ruby_course/
 ---
 Hey,
@@ -178,43 +225,11 @@ Thank you for your suggestions!
 Edit:
 
 I’m currently reading Why’s guide to Ruby. And I’m learning a bunch. I’ve also considered just reading a bunch of docs etc. But sometimes something in video format is easier to digest. Or a more carefully written (series of) articles.
-## [4][All About Ruby](https://www.reddit.com/r/ruby/comments/hmgjql/all_about_ruby/)
+## [9][All About Ruby](https://www.reddit.com/r/ruby/comments/hmgjql/all_about_ruby/)
 - url: https://medium.com/@jinglis12/all-about-ruby-fc83a0a18bd3
 ---
 
-## [5][Continuous Integration Testing: Basics + What to Test](https://www.reddit.com/r/ruby/comments/hmb5qu/continuous_integration_testing_basics_what_to_test/)
+## [10][Continuous Integration Testing: Basics + What to Test](https://www.reddit.com/r/ruby/comments/hmb5qu/continuous_integration_testing_basics_what_to_test/)
 - url: https://www.youtube.com/watch?v=f-1Q896R1no
 ---
 
-## [6][Soft Delete with Discard](https://www.reddit.com/r/ruby/comments/hm6wju/soft_delete_with_discard/)
-- url: https://www.driftingruby.com/episodes/soft-delete-with-discard?utm_medium=social&amp;utm_campaign=weekly_episode&amp;utm_source=reddit
----
-
-## [7][Looking for an old Ruby blog post.](https://www.reddit.com/r/ruby/comments/hmb4ut/looking_for_an_old_ruby_blog_post/)
-- url: https://www.reddit.com/r/ruby/comments/hmb4ut/looking_for_an_old_ruby_blog_post/
----
-Sorry if this seems insignificant, but I've been looking for this old article for ages and I just can't seem to find it. It was a blog post about Ruby's culture/community on a blog that was otherwise mainly about sushi, folk music, and Discworld. I think it was British. The article was linked to quite a bit back in the day. I've been trying to Google it for ages but not luck.
-## [8][What is the use of Ruby and how its development is proceeding?](https://www.reddit.com/r/ruby/comments/hmt1he/what_is_the_use_of_ruby_and_how_its_development/)
-- url: https://www.reddit.com/r/ruby/comments/hmt1he/what_is_the_use_of_ruby_and_how_its_development/
----
-Ruby is a nice language to type, but I'm unable to understand its use case.  
-C-C++ is used for performance  
-R-Python is used for data science and AI.  
-What is the use of Ruby?  
-Is Ruby an evolving language?
-## [9][A 65 LOC Instagram scraper powered by Kimurai](https://www.reddit.com/r/ruby/comments/hm5mh5/a_65_loc_instagram_scraper_powered_by_kimurai/)
-- url: https://github.com/glaucocustodio/inspider
----
-
-## [10][rubocop-graphql—a rubocop plugin that enforces graphql-ruby best practices](https://www.reddit.com/r/ruby/comments/hm2mrz/rubocopgraphqla_rubocop_plugin_that_enforces/)
-- url: https://www.reddit.com/r/ruby/comments/hm2mrz/rubocopgraphqla_rubocop_plugin_that_enforces/
----
-Source code is [here](https://github.com/DmitryTsepelev/rubocop-graphql).
-
-For now, the gem can do following things:
-
-- makes sure fields and arguments have snake–cased names;
-- suggests to add descriptions to entities;
-- forces grouping field definitions together/with their resolvers;
-- suggests using input types in complex mutations;
-- proposes replacing long resolver methods with resolver objects.

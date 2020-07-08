@@ -1,103 +1,106 @@
 # golang
-## [1][Why Go’s Error Handling is Awesome](https://www.reddit.com/r/golang/comments/hmnhkz/why_gos_error_handling_is_awesome/)
+## [1][Any good beginner books in Go that is updated covering from basics to intermediate concepts?](https://www.reddit.com/r/golang/comments/hneda0/any_good_beginner_books_in_go_that_is_updated/)
+- url: https://www.reddit.com/r/golang/comments/hneda0/any_good_beginner_books_in_go_that_is_updated/
+---
+Very new to Go language. I know basics like conditionals,arrays,slice,loops,etc. But I see there are lots of terminologies like Buffered I/o, bufio, using command lines, flags, etc. I am finding it hard to understand all these things. Is there any beginner books,resources or any video tutorials/courses to understand these things from Scratch?
+## [2][[can-haz-password] A Library for Generating Random, Rule Based Passwords](https://www.reddit.com/r/golang/comments/hne7bf/canhazpassword_a_library_for_generating_random/)
+- url: https://github.com/kloeckner-i/can-haz-password
+---
+
+## [3][[PROJECT] Odin - The Programmable, Observable and Distributed Job Scheduler](https://www.reddit.com/r/golang/comments/hmy4mb/project_odin_the_programmable_observable_and/)
+- url: https://www.reddit.com/r/golang/comments/hmy4mb/project_odin_the_programmable_observable_and/
+---
+TLDR; Odin is a programmable, observable and distributed job orchestration  system which allows for the scheduling, management and unattended  background execution of individual user created tasks on Linux based  systems. 
+
+I worked on this as a final year project in college, and consulted this subreddit a lot during that time! I built Odin to change the way in which one can run and manage scheduled jobs, and now I'm looking for help to manifest it's potential!
+ 
+You can check out the project [here](https://github.com/theycallmemac/odin). More info about the project can be found below!
+
+I've set up [this Discord Server](https://discord.gg/gFr2Yq) to concentrate the development process as we get closer to v2.0.0! If you are interested in helping out in anyway feel free to join!
+
+The primary objective of such a system is to provide users/teams a  shared platform for jobs that allows individual members to package their  code for periodic execution, providing a set of metrics and variable  insights which will in turn lend transparency and understanding into the  execution of all system run jobs. Odin aims to do this by changing the  way in which we approach scheduling and managing jobs.
+
+Job schedulers by definition are supposed to eliminate toil, a kind  of work tied to running a service which is manual, repetitive and most  importantly - automatable. Classically, job schedulers are ad-hoc  systems that treat it’s jobs as code to be executed, specifying the  parameters of what is to be executed, and when it is to be executed.  This presents a problem for those implementing the best practices of  DevOps. DevOps is something to be practiced in the tools a team uses,  and when traditional job schedulers fail they introduce a new level of  toil in debugging what went wrong.
+
+Odin treats it’s jobs as code to be managed before and after  execution. While caring about what is to be executed and when it will be  executed, Odin is equally concerned with the expected behavior of your  job, which is to be described entirely by the user’s code. This  observability can be achieved through a web facing user interface which  displays job logs and metrics. All of this will be gathered through the  use of Odin libraries (written in Go, Python, Bash and Node.js) and will help  infer the internal state of jobs. For teams, this means Odin can  directly help diagnose where the problems are and get to the root cause  of any interruptions. Debugging, but faster!
+
+Again, if there's any interest in helping out or you have any suggestions please feel free to comment! Appreciate any stars also!
+## [4][Keeping Your Modules Compatible](https://www.reddit.com/r/golang/comments/hmz28j/keeping_your_modules_compatible/)
+- url: https://blog.golang.org/module-compatibility
+---
+
+## [5][How do you guys manage sql queries?](https://www.reddit.com/r/golang/comments/hn96kt/how_do_you_guys_manage_sql_queries/)
+- url: https://www.reddit.com/r/golang/comments/hn96kt/how_do_you_guys_manage_sql_queries/
+---
+Hi everyone, i'm new to golang and still learning about it. Previously when I was developing on Laravel or Play Framework, I was used to using an ORM library. I've decided not to use any ORM library in golang.
+
+`stmt := "select id, name, email, created from users where id = $1"`
+
+`row := u.DB.QueryRow(stmt, id)`
+
+`user := &amp;models.User{}`
+
+`err := row.Scan(&amp;user.ID, &amp;user.Name, &amp;user.Email, &amp;user.Created)`
+
+`if err != nil {`
+
+`return nil, err`
+
+`}`
+
+I've have a few repeating queries in several locations (as shown above). It is fine until it gets too repeating, for example, if I needed a user in another table, I would have to copy the above query and repeats it again. I normally run the all queries in transaction. How to manage the repeating sql query in several different location of your code? If I were to change a field in the user table, I would have to add the changes to the several different locations of the code. which is bad as I will miss out one of them by accident one day.
+## [6][convert source code to png image](https://www.reddit.com/r/golang/comments/hn78wd/convert_source_code_to_png_image/)
+- url: https://www.reddit.com/r/golang/comments/hn78wd/convert_source_code_to_png_image/
+---
+https://i.redd.it/qg7e40rl8j951.gif
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+[https://github.com/skanehira/code2img](https://github.com/skanehira/code2img)
+## [7][Build highly-scalable realtime apps with Super Graph GraphQL subscriptions](https://www.reddit.com/r/golang/comments/hmyrij/build_highlyscalable_realtime_apps_with_super/)
+- url: https://www.reddit.com/r/golang/comments/hmyrij/build_highlyscalable_realtime_apps_with_super/
+---
+Super Graph is a GO library and standalone service that automagically compiles GraphQL into efficient SQL. Its goal is to make it fast and easy to work with databases. No more struggling with ORMs or managing handwritten SQL.
+
+We've recently added what I feel hands-down is the coolest feature ever, GraphQL subscriptions. Subscribe to a query and instant updated results as soon as data related to the query changes. It's also designed to be highly scalable where only a single query is used for tens of thousands of subscriptions. A 100K plus subscriptions would only result in under 10 queries on your database. 
+
+Take this example below even if 100K subscribers want to watch for comments on an equally large number of varied posts this would still only result in about 20 queries on the database every few seconds which even for the simplest of databases is a breeze to handle. 
+
+```
+subscription query {
+   comments(where: { post_id: $post_id }) {
+     id
+     body
+   }
+}
+```
+
+https://github.com/dosco/super-graph
+## [8][Looking for feedback on Go program - parses AWS credentials file and helps you set one as $AWS_PROFILE](https://www.reddit.com/r/golang/comments/hn6iu2/looking_for_feedback_on_go_program_parses_aws/)
+- url: https://www.reddit.com/r/golang/comments/hn6iu2/looking_for_feedback_on_go_program_parses_aws/
+---
+Hey,
+
+As someone who is just starting to learn Go and also has a job that requires dozens of AWS profiles in my \~/.aws/credentials file, I wrote this little program today. It parses through the credentials file and lets you pick an AWS profile and will copy the command to set that as your active profile to the clipboard. I tried to have it set the environment variable directly but learned that is not possible ([https://stackoverflow.com/questions/24938877/how-to-set-environment-variables-that-last-in-go](https://stackoverflow.com/questions/24938877/how-to-set-environment-variables-that-last-in-go)).
+
+I'm definitely in the "just try and make it work" phase so looking for any feedback on best practices.
+
+The program: [https://gist.github.com/gingimli/b97026c7b35b68b744861b37fdaacd01](https://gist.github.com/gingimli/b97026c7b35b68b744861b37fdaacd01)
+
+Thanks!
+## [9][Why Go’s Error Handling is Awesome](https://www.reddit.com/r/golang/comments/hmnhkz/why_gos_error_handling_is_awesome/)
 - url: https://rauljordan.com/2020/07/06/why-go-error-handling-is-awesome.html
 ---
 
-## [2][gosh now supports snippets](https://www.reddit.com/r/golang/comments/hmujvh/gosh_now_supports_snippets/)
-- url: https://www.reddit.com/r/golang/comments/hmujvh/gosh_now_supports_snippets/
+## [10][How to optimize this Golang job queue processor](https://www.reddit.com/r/golang/comments/hndhl8/how_to_optimize_this_golang_job_queue_processor/)
+- url: https://www.reddit.com/r/golang/comments/hndhl8/how_to_optimize_this_golang_job_queue_processor/
 ---
-`gosh`, the tool for writing command line scripts in Go now lets you keep snippets of code and embed them by name in your scripts. For instance you can check for errors and report them by having a file called `iferr` and then after every line that sets the error you can add the snippet.
+I have written an engine in Go which receives successful payment information from 5 - 6 sources (web payment, offline payment, multiple mobile payment vendors) and then writes them to a final mysql table according to some business rules.
 
-You install `gosh` by running this command
+Before writing into the final db, some preprocessing has to happen, so I allow all the requests to land in an SQLITE database, which I use as a temporary job queue. A Go process checks sqlite every 300 ms, processes jobs in a sequential manner (FIFO) and writes a payment id to it which is generated after successful insertion in final mysql table. Multiple services from multiple vendors just leave their payment data there, get a job id in return and leave all further operations to my go job processor.
 
-`go get -u` [`github.com/nickwells/utilities/gosh`](https://github.com/nickwells/utilities/gosh)
+A new scenario has cropped up where the requesting call needs payment id in response immediately, it totally screws up my pub/sub kind of architecture. One solution (which is very inefficient) is to ask that service to write data to sqlite, sleep for a second and then check sqlite again if that item has been processed and get its payment id.
 
-Once you have installed it you can see a usage message by running
-
-`gosh -help`
-## [3][Help with an algorithm to cut string into multiple strings](https://www.reddit.com/r/golang/comments/hmugl2/help_with_an_algorithm_to_cut_string_into/)
-- url: https://www.reddit.com/r/golang/comments/hmugl2/help_with_an_algorithm_to_cut_string_into/
----
-Hi!
-
-&amp;#x200B;
-
-I have a string of characters like so:
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-999923999999866544487221888888899988
-
-&amp;#x200B;
-
-And would like to cut it so that I only have the numbers greater than 2 into a slice of strings:
-
-&amp;#x200B;
-
-9999
-
-3999999866544487
-
-888888899988
-
-&amp;#x200B;
-
-Is this possible please?
-
-Thank you in advance!
-## [4][A Data Engineering Perspective on Go vs. Python (Part 2 - Dataflow)](https://www.reddit.com/r/golang/comments/hmu216/a_data_engineering_perspective_on_go_vs_python/)
-- url: https://chollinger.com/blog/2020/07/a-data-engineering-perspective-on-go-vs.-python-part-2-dataflow/
----
-
-## [5][How I Structure Go Packages](https://www.reddit.com/r/golang/comments/hm34kq/how_i_structure_go_packages/)
-- url: https://bencane.com/stories/2020/07/06/how-i-structure-go-packages/
----
-
-## [6][Little Go CLI tool to flatten JSON input](https://www.reddit.com/r/golang/comments/hmo8my/little_go_cli_tool_to_flatten_json_input/)
-- url: https://gist.github.com/benhoyt/05e22f0d52f7feaf88b0a37f8b739f91
----
-
-## [7][dgraph-io/ristretto v0.0.3 Released - Ristretto is a fast, concurrent cache (Go) library built with a focus on performance and correctness.](https://www.reddit.com/r/golang/comments/hmdwzn/dgraphioristretto_v003_released_ristretto_is_a/)
-- url: https://github.com/dgraph-io/ristretto/blob/master/CHANGELOG.md#003---2020-07-06
----
-
-## [8][Help, portscanner cant get past port 1017!](https://www.reddit.com/r/golang/comments/hmohoo/help_portscanner_cant_get_past_port_1017/)
-- url: https://www.reddit.com/r/golang/comments/hmohoo/help_portscanner_cant_get_past_port_1017/
----
-[https://github.com/blackhat-go/bhg/blob/master/ch-2/tcp-scanner-final/main.go](https://github.com/blackhat-go/bhg/blob/master/ch-2/tcp-scanner-final/main.go)
-
-I have been following a book and recreated the code above. I added a print statement right above "port := &lt;-results" in the third for loop. I wouldn't go past 1017. I believe this is because the requests channel only has 1017 but i don't know why this could be. I'm also not sure if this is just a problem with my computer or the code. The book this is from is quite new and from a publisher with a good reputation so I think it might be my computer.
-## [9][Python and Go : Part II - Extending Python With Go](https://www.reddit.com/r/golang/comments/hmakgs/python_and_go_part_ii_extending_python_with_go/)
-- url: https://www.ardanlabs.com/blog/2020/07/extending-python-with-go.html
----
-
-## [10][[PROJECT] GhostDB - A distributed, in-memory, general purpose datastore](https://www.reddit.com/r/golang/comments/hmbwqs/project_ghostdb_a_distributed_inmemory_general/)
-- url: https://www.reddit.com/r/golang/comments/hmbwqs/project_ghostdb_a_distributed_inmemory_general/
----
-TLDR; We have built a distributed in-memory datastore, would love feedback and if you're interested - some contributions (beginners welcome)!
-
-Hi everyone,
-
-First off, I'd like to thank a lot of people on this subreddit, you've been a huge help throughout the development of this project.
-
-We have been working on this project for a little while now and we're ready to release it. It was originally developed as a final year project for university but it turned out to be pretty useful. When we started development on this, we had 0 knowledge of golang and have learned a tonne since we started.
-
-Below is a description but you can check out the repo [here](https://github.com/GhostDB/GhostDB):
-
-GhostDB is a distributed, in-memory, general purpose key-value data store that delivers microsecond performance at any scale.
-
-GhostDB provides a very large hash table that is distributed across multiple machines and stores large numbers of key-value pairs within the hash table. However, it's more than just a big hash table. GhostDB has multiple levels of on-disk persistence in the form of point-in-time snapshots and an append-only-file used to restore a cache node if it crashes, concurrent crawlers that will automatically evict stale data, fine grained metrics, and if configured correctly, can serve 200k+ requests per second from more than 1.5M concurrent keep-alive connections per physical server.
-
-Users of GhostDB can configure GhostDB nodes on machines they have control over. The clients application servers will be capable of interacting with GhostDB through the GhostDB SDKs much the same way their application servers may interface with a MySQL or MongoDB instance.
-
-Our SDKs are available for Python and Node.js (Java and Golang SDKs in development) and are simple to use. With just 4 lines of extra code in your application servers, you are able to achieve up to a 25x increase in data retrieval speeds when compared to databases such as MongoDB and MySQL.
-
-We have a vision for GhostDB and have spent some time refactoring it before releasing it as open source in order to facilitate extending it further.
-
-In the future we plan to add: direct support for queues and other data structures, transactional read/write operations and a whole bunch more.
-
-We would love to hear feedback and if it's something you're interested in, we would love you to contribute - we're beginner friendly!
-
-Check out the repo here:  [https://github.com/GhostDB/GhostDB](https://github.com/GhostDB/GhostDB)
+It works for now but it's gonna pose a problem when volume of calls grow, looking for better suggestions. Thanks in advance.

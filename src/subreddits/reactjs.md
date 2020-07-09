@@ -83,77 +83,95 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
-## [3][Youtube clone (PERN stack)](https://www.reddit.com/r/reactjs/comments/hmu0dt/youtube_clone_pern_stack/)
-- url: https://v.redd.it/ihnd4migmf951
+## [3][Javascript Testing Masterclass (React, Jest, React Testing Library, Cypress)](https://www.reddit.com/r/reactjs/comments/hnv62b/javascript_testing_masterclass_react_jest_react/)
+- url: https://www.reddit.com/r/reactjs/comments/hnv62b/javascript_testing_masterclass_react_jest_react/
 ---
+Video Part 1/2:  
+[https://youtu.be/MAFGRx0HYKo](https://youtu.be/MAFGRx0HYKo)
 
-## [4][Cards of Personality: A responsive multiplayer card game built with React and inspired by Cards Against Humanity](https://www.reddit.com/r/reactjs/comments/hn3qk6/cards_of_personality_a_responsive_multiplayer/)
-- url: https://v.redd.it/62y2xaol8i951
+Video Part 2/2:  
+[https://youtu.be/GTaVTa4QuAM](https://youtu.be/GTaVTa4QuAM)
+
+Slides:  
+[https://docs.google.com/presentation/d/1ljMA8glel6hCopJ9Ib221A-pZ6brnibuwpzRLf1A3OM/edit?usp=sharing](https://docs.google.com/presentation/d/1ljMA8glel6hCopJ9Ib221A-pZ6brnibuwpzRLf1A3OM/edit?usp=sharing)
+## [4][Favourite Personal Project?](https://www.reddit.com/r/reactjs/comments/ho08eu/favourite_personal_project/)
+- url: https://www.reddit.com/r/reactjs/comments/ho08eu/favourite_personal_project/
 ---
+Hey! I'm still fairly new to react and coding in general and am really looking to improve by doing some hands-on personal projects (and get out of tutorial hell!). So, what have been your favourite personal projects that aren't super advanced, but also not a To-Do app!
+## [5][Plotting Code-Quality-metric changes of a React and a node repository over time](https://www.reddit.com/r/reactjs/comments/ho2mbl/plotting_codequalitymetric_changes_of_a_react_and/)
+- url: https://www.reddit.com/r/reactjs/comments/ho2mbl/plotting_codequalitymetric_changes_of_a_react_and/
+---
+Hey there,
 
-## [5][How I recreated the Hey "Feed" with AWS Lambda, SES and React](https://www.reddit.com/r/reactjs/comments/hnh0mh/how_i_recreated_the_hey_feed_with_aws_lambda_ses/)
+For a project i need a tool that would go over a React (and a Node) repository and would analyze every commit in it using common code metrics like lines of code per file, cyclomatic complexity etc.
+
+I want to create some graphs out of this data to show the changes over time.
+
+While i found no immediate solution that could tackle this this specific problem i suspect you could write a bash script that utilizes ESLint somehow to output the data into a file.
+
+So before i go down this road i wanted to ask if someone knows either a tool that does the job or a hint to a better way than i proposed.
+
+Thanks for reading,
+
+Have a great day!
+## [6][How I recreated the Hey "Feed" with AWS Lambda, SES and React](https://www.reddit.com/r/reactjs/comments/hnh0mh/how_i_recreated_the_hey_feed_with_aws_lambda_ses/)
 - url: https://francescodilorenzo.com/hey-feed-ses-lambda-react
 ---
 
-## [6][Introducing BIGKit - a new RAD platform](https://www.reddit.com/r/reactjs/comments/hnfaow/introducing_bigkit_a_new_rad_platform/)
-- url: https://www.reddit.com/r/reactjs/comments/hnfaow/introducing_bigkit_a_new_rad_platform/
----
-A react app I have been working on that may be of interest:
-
-[https://medium.com/@alex.leansquad/introducing-bigkit-95dc874ee689](https://medium.com/@alex.leansquad/introducing-bigkit-95dc874ee689)
-
-Feedback welcome.
-## [7][Use Express.js, React and NoSql in Firebase to create contact form](https://www.reddit.com/r/reactjs/comments/hngzpb/use_expressjs_react_and_nosql_in_firebase_to/)
-- url: https://www.reddit.com/r/reactjs/comments/hngzpb/use_expressjs_react_and_nosql_in_firebase_to/
----
-Hey everyone,
-I wrote a short guide [How to use Express with Firebase](https://pantaley.com/blog/Use-Express-React-and-NoSql-in-Firebase-to-create-contact-form/).
-## [8][Free 100 web application security issues training - I will include 50+ reactjs security issues too](https://www.reddit.com/r/reactjs/comments/hngyhu/free_100_web_application_security_issues_training/)
-- url: https://www.reddit.com/r/reactjs/comments/hngyhu/free_100_web_application_security_issues_training/
+## [7][What's New in React | Ioniconf 2020](https://www.reddit.com/r/reactjs/comments/hnxspm/whats_new_in_react_ioniconf_2020/)
+- url: https://www.youtube.com/watch?v=Qox56z4xH6o
 ---
 
-I have uploaded around 50 lessons and I am uploading daily 2 videos. 100+ unique security test cases learning and 100+ ways of ethical web hacking in just 2 months without any preskills. 
-https://youtu.be/FIpZ1eOkUj0
-
-If you like it please give feedback here guys 
-https://www.youtube.com/playlist?list=PL_bkTzUc1BufnQyGt6-9hSly2PqsDmd09
-## [9][Where should you decide the width of an element?](https://www.reddit.com/r/reactjs/comments/hnf8bi/where_should_you_decide_the_width_of_an_element/)
-- url: https://www.reddit.com/r/reactjs/comments/hnf8bi/where_should_you_decide_the_width_of_an_element/
+## [8][SpaceX Dashboard](https://www.reddit.com/r/reactjs/comments/ho1hn7/spacex_dashboard/)
+- url: https://www.reddit.com/r/reactjs/comments/ho1hn7/spacex_dashboard/
 ---
-I'm absolutely new to react and pretty new to html. To prove this I shall ask the following question:
+I've built a SpaceX launches dashboard using Tailwind CSS. [https://spacex-launches-dashboard.netlify.app/](https://spacex-launches-dashboard.netlify.app/).
 
-Where is it the most appropriate to determine the width and height of an element? Is it preffered to: 
+&amp;#x200B;
 
-A: return an element which has a class that sets the width to be, lets say: X %.
-
-B: return an element that in itself doesn't have a size restriction, but then returning into a container in which the element is given X columns. 
-
-Hope you understand the question. 
-
-Thanks!
-## [10][Making an embeddable Podcast player?](https://www.reddit.com/r/reactjs/comments/hnf31v/making_an_embeddable_podcast_player/)
-- url: https://www.reddit.com/r/reactjs/comments/hnf31v/making_an_embeddable_podcast_player/
----
-Hello everyone, I've been working on a personal project revolving around the Podcasting space.
-
-I want to make an embeddable Podcast player with Waveforms that my users could.embed into their websites, somewhat like Clyp.it 
-
-I've used VanillaJS for waveforms but it's not very optimal tbh.
-
-Any ideas on how to go about this?
-
-Thanks!
-## [11][Server side rendering with React and NodeJs](https://www.reddit.com/r/reactjs/comments/hnce7j/server_side_rendering_with_react_and_nodejs/)
-- url: https://aparnajoshi.netlify.app//server-side-rendering-with-react-and-nodejs
+https://reddit.com/link/ho1hn7/video/oc8g3qirht951/player
+## [9][react-native released v0.63.0 🎉](https://www.reddit.com/r/reactjs/comments/hno4c8/reactnative_released_v0630/)
+- url: https://app.releasly.co/releases/facebook/react-native/0_63_0?ref=notificationEmail
 ---
 
-## [12][[Question] What is the correct way to use react-redux hooks for data?](https://www.reddit.com/r/reactjs/comments/hne49c/question_what_is_the_correct_way_to_use/)
-- url: https://www.reddit.com/r/reactjs/comments/hne49c/question_what_is_the_correct_way_to_use/
+## [10][DRY-ing up the most commonly used React pattern using Higher Order Component](https://www.reddit.com/r/reactjs/comments/hnuq2a/drying_up_the_most_commonly_used_react_pattern/)
+- url: https://medium.com/@mdazmainamin/dry-ing-up-the-most-commonly-used-react-pattern-using-higher-order-components-f513436bf15b
 ---
-The title pretty much explains my question.  
 
+## [11][🍪 A highly scalable, professional boilerplate for building fast, robust and adaptable mern web apps 🚀](https://www.reddit.com/r/reactjs/comments/ho0c8m/a_highly_scalable_professional_boilerplate_for/)
+- url: https://www.reddit.com/r/reactjs/comments/ho0c8m/a_highly_scalable_professional_boilerplate_for/
+---
+In programming, the term boilerplate code refers to blocks of code used over and over again
 
-Hi, im refreshing myself with React, working on a small project.  
-My architecture is pretty simple: MainPage that used as a controller, and MessagesComponent  as child component (data is passed down to the child via props).  
-Now I connected Redux to my whole ecosystem to fetch/post data. and my question is:   
-What is the best practice for such thing? Who should use the react-redux useSelector hook? is it the MainPage controller, passing down the data via props, or the child function component MessageComponent?
+Let’s assume your development stack consists of several libraries, such as React, Babel, Express, Jest, Webpack, etc. When you start a new project, you initialize all these libraries and configure them to work with each other.
+
+With every new project that you start, you will be repeating yourself. You could also introduce inconsistencies in how these libraries are set up in each project. This can cause confusion when you switch between projects.
+
+This is where boilerplates come in. A boilerplate is a template that you can clone and reuse for every project.
+
+CookieScript Boilerplate uses familiar tools and implements best practices around them to provide you a SOLID development experience. This project does not impose a specific development philosophy or framework, so you're free to architect your code in the way that you want.
+
+Here are some of the awesome CookieScript features you'll enjoy
+
+* ***Quick scaffolding***  
+CookieScript offers a built-in tool for the command line is known as Geek which allows performing the majority of those tedious and repetitive programming tasks that many JavaScript developers avoid performing manually.
+* ***Next generation JavaScript***  
+Use template strings, object destructuring, arrow functions, JSX syntax and more.
+* ***No Lock-In***  
+Under the hood, we use webpack, Babel, ESLint, and other amazing projects to power your app.
+* ***SEO friendly***  
+There are a few problems for search engine rankings when it comes to a vanilla \`React app\`. We follow best practices to make your web app attractive to \`Google\`.
+* ***Authentication***  
+Authentication is the most important factor in a web application, and developers need to spend a lot of time writing the authentication code. CookieScript contains an inbuilt authentication system, you only need to configure models, views, and controllers to make the application work.
+
+Whether you're helping us fix bugs, improve the docs, or spread the word, we'd love to have you as part of the community! See CONTRIBUTING.md for more information on what we're looking for and how to get started.
+
+GitHub : [https://github.com/getspooky/CookieScript](https://github.com/getspooky/CookieScript)
+## [12][I recently deployed my portfolio website built with React and made the source code available on Github.](https://www.reddit.com/r/reactjs/comments/ho2ukz/i_recently_deployed_my_portfolio_website_built/)
+- url: https://www.reddit.com/r/reactjs/comments/ho2ukz/i_recently_deployed_my_portfolio_website_built/
+---
+I recently redesigned my portfolio website using React and made the source code available on Github.  I'm interested in some feedback on design or code quality, or any criticism at all if possible.
+
+Website: [https://jarolin.com](https://jarolin.com)
+
+github: [https://github.com/JarolinVargas/jarolin.com](https://github.com/JarolinVargas/jarolin.com)

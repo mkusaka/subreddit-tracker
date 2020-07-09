@@ -123,17 +123,42 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [3][I made a 3D renderer in C++](https://www.reddit.com/r/cpp/comments/hna4bz/i_made_a_3d_renderer_in_c/)
+## [3][Fixing a common antipattern when loading translations in Qt](https://www.reddit.com/r/cpp/comments/ho032u/fixing_a_common_antipattern_when_loading/)
+- url: https://www.kdab.com/fixing-a-common-antipattern-when-loading-translations-in-qt/
+---
+
+## [4][kilopp - an ongoing effort to port an editor written in C into modern C++](https://www.reddit.com/r/cpp/comments/ho0p4d/kilopp_an_ongoing_effort_to_port_an_editor/)
+- url: https://github.com/r-darwish/kilopp
+---
+
+## [5][C++ Linux development with Visual Studio: incremental build improvements and expanded shell support](https://www.reddit.com/r/cpp/comments/hnzqt7/c_linux_development_with_visual_studio/)
+- url: https://devblogs.microsoft.com/cppblog/c-linux-development-with-visual-studio-incremental-build-improvements-and-expanded-shell-support/
+---
+
+## [6][How to erase from an STL container](https://www.reddit.com/r/cpp/comments/hnzsnq/how_to_erase_from_an_stl_container/)
+- url: https://quuxplusone.github.io/blog/2020/07/08/erase-if/
+---
+
+## [7][Question for Microsoft Devs: how is the Windows O/S developed?](https://www.reddit.com/r/cpp/comments/hnnyae/question_for_microsoft_devs_how_is_the_windows_os/)
+- url: https://www.reddit.com/r/cpp/comments/hnnyae/question_for_microsoft_devs_how_is_the_windows_os/
+---
+Are Microsoft developers presented with a single GIT repository with the entire Windows code? Or the operating system is broken down into projects/subsystems to which a given developer is granted access?
+## [8][I/O in Plywood](https://www.reddit.com/r/cpp/comments/hnzr31/io_in_plywood/)
+- url: https://preshing.com/20200708/io-in-plywood/
+---
+
+## [9][Complex desktop ui](https://www.reddit.com/r/cpp/comments/hnkdl0/complex_desktop_ui/)
+- url: https://www.reddit.com/r/cpp/comments/hnkdl0/complex_desktop_ui/
+---
+If its the wrong sub just point me to the place where i might find the answers.  
+Im coming from a world of web dev and right now im working on a pretty big project with complex dragndrop ui and my question to all of the desktop developers of big and complex things like photoshop is - how do you keep your sanity? How do you manage tech debt? What abstractions do you use for building your UI?. Im asking because the web way of doing thing like google maps/ spreadsheets is unmanageable madness(How many times was facebook rewritten? 3?)
+## [10][I made a 3D renderer in C++](https://www.reddit.com/r/cpp/comments/hna4bz/i_made_a_3d_renderer_in_c/)
 - url: https://www.reddit.com/r/cpp/comments/hna4bz/i_made_a_3d_renderer_in_c/
 ---
 It’s quite simple and not many features are here yet. I’m also quite inexperienced with C++ so any criticism is appreciated.
 
 GitHub Repo: https://github.com/MysteryCoder456/ThreeCEngine
-## [4][differential timer: Profile C++ by selectively skipping the execution of code parts](https://www.reddit.com/r/cpp/comments/hn0hkq/differential_timer_profile_c_by_selectively/)
-- url: https://github.com/s9w/dt
----
-
-## [5][C++ class member initializations the right way](https://www.reddit.com/r/cpp/comments/hnftsc/c_class_member_initializations_the_right_way/)
+## [11][C++ class member initializations the right way](https://www.reddit.com/r/cpp/comments/hnftsc/c_class_member_initializations_the_right_way/)
 - url: https://www.reddit.com/r/cpp/comments/hnftsc/c_class_member_initializations_the_right_way/
 ---
 [https://medium.com/pranayaggarwal25/using-modern-class-members-and-initializations-c11e931c3ba?source=friends\_link&amp;sk=fc19e4cce9ff3b5af6024949b780837a](https://medium.com/pranayaggarwal25/using-modern-class-members-and-initializations-c11e931c3ba?source=friends_link&amp;sk=fc19e4cce9ff3b5af6024949b780837a)
@@ -152,7 +177,7 @@ This article covers the following -
 4. Use delegating constructors to represent common actions for all constructors of a class.
 
 :) Please help me in improving anything which is incorrect or missing in this.
-## [6][Blogging platform that supports C/C++](https://www.reddit.com/r/cpp/comments/hnem1b/blogging_platform_that_supports_cc/)
+## [12][Blogging platform that supports C/C++](https://www.reddit.com/r/cpp/comments/hnem1b/blogging_platform_that_supports_cc/)
 - url: https://www.reddit.com/r/cpp/comments/hnem1b/blogging_platform_that_supports_cc/
 ---
 DISCLAIMER: This might be understood as self promotion and in a way it is, since I did create this project. I posted this same project on [haskell subreddit](https://www.reddit.com/r/haskell/comments/hljinx/blogging_platform_that_supports_haskell/) and they liked it. If you think this is some kind of self promotion, check it out and tell me in the comments and I will remove it. Or the moderators can remove it. But I hope you're going to like it. 
@@ -162,73 +187,3 @@ I created a blogging platform that  supports creating blogs that can executing c
 Yesterday,  I integrated support for C/C++ so you can create blog posts and coders/beginners can edit/run your code. As I said in Haskell group, I hope this will help beginners in C/C++ a little bit. You can learn more in a [help blog post](https://therebelsource.com/blog/help-blog/8mYgnax8Nj) and on the [about page](https://therebelsource.com/about). Unfortunately, for C/C++ and Haskell, it is not yet possible to create code projects. Compiling those languages is not so straightforwared like in Go, for example where I can just do `go run /my/dir` and it just works. But support for them is coming. 
 
 Thank you for your time and I hope you like it.
-## [7][Best open-source cpp projects for contibute](https://www.reddit.com/r/cpp/comments/hnebbr/best_opensource_cpp_projects_for_contibute/)
-- url: https://www.reddit.com/r/cpp/comments/hnebbr/best_opensource_cpp_projects_for_contibute/
----
-My experience as a professional programmer is for 3 years.   
-(high-performance, some computer vision, network, some cryptocurrency)
-
-But I still don't have experience in open-source projects.
-
-My goal is to improve my skills and back debt for community.  
-Please, advise projects for contributing.
-## [8][I made a video on c++ 17's std::byte](https://www.reddit.com/r/cpp/comments/hn8xjc/i_made_a_video_on_c_17s_stdbyte/)
-- url: https://youtu.be/VTsOJIcBpRQ
----
-
-## [9][C++ is brilliant](https://www.reddit.com/r/cpp/comments/hmj4s5/c_is_brilliant/)
-- url: https://www.reddit.com/r/cpp/comments/hmj4s5/c_is_brilliant/
----
-I'm working on a Vulkan renderer, and needed to delay destruction of render scenes since the graphics pipeline has render buffers in flight, so destruction has to happen N frames after the user destroys a class.  With C++, I can use **private destructors** to force users to add the scene to a managed destructor queue (aka garbage collect queue).  Normally language purists will scorn a language which allows such shenanigans, however in real world production code, its features like this which allows developers to create modern software.   So with a couple of lines of code, I solved my delayed destructor issue.  Thank you C++ committee for creating a usable language.
-## [10][Clash of Code - Dare to join me!](https://www.reddit.com/r/cpp/comments/hng5fw/clash_of_code_dare_to_join_me/)
-- url: https://www.codingame.com/clashofcode/clash/12855259cd910fa3ba9c499a94918229869b2d1?utm_source=reddit&amp;utm_medium=clash%20of%20code&amp;utm_content=3626792&amp;utm_campaign=Share%20options
----
-
-## [11][What would it take to allow forward declaration of typedefs?](https://www.reddit.com/r/cpp/comments/hmpult/what_would_it_take_to_allow_forward_declaration/)
-- url: https://www.reddit.com/r/cpp/comments/hmpult/what_would_it_take_to_allow_forward_declaration/
----
-Quite a lot of the time it would be conveniant to allow forward declaration of typedefs. So lets say I'm using the rapidjson library as an example, and I want to create `Thing` out of a rapidjson value, but I don't want to leak that whole library to everyone who consumes `Thing`. What I want to do is this.
-
-    namespace rapidjson {
-        typedef Value;
-    }
-    
-    class Thing
-    {
-        Thing( const rapidjson::Value&amp; v );
-        ...
-    };
-
-But you can't forward declare a typedef. Instead you have to redeclare the whole thing like so:
-
-    typedef GenericValue&lt;UTF8&lt;char&gt;, MemoryPoolAllocator&lt;CrtAllocator&gt; &gt; Value;
-
-Ah, but I don't have any of those classes declared either. So we need these too.
-
-    template&lt;typename CharType&gt; struct UTF8;
-    template &lt;typename Encoding, typename Allocator&gt; 
-    class GenericValue;
-    class CrtAllocator;
-    template &lt;typename BaseAllocator&gt;
-    class MemoryPoolAllocator;
-    typedef GenericValue&lt;UTF8&lt;char&gt;, MemoryPoolAllocator&lt;CrtAllocator&gt; &gt; Value;
-
-And look, we just barfed a whole pile of garbage into the top of our file, not to mention that this could easily become out of date when the library is updated.
-
-So a typical solution to that is each library having some header like `#include &lt;rapidjson/fwd.h&gt;` in order to forward declare all the various template types. In the case of rapidjson this header is itself 150 lines. All I wanted was to forward declare a type!
-
-Now the reason I have seen given that we can't do this is that typedefs don't really create a type, just an alias. This means that the compiler converts your typedef to the mangled name.
-
-But is that really all there is to it? Can nobody think of a way?
-
-What we if we made it so you can't call a function with a declared but not defined typedef? That way we could be sure that by the time the compiler actually needs to care to resolve the typedef, the actual definition is available? Would that be enough of a rule to allow compilers to easily implement something like this?
-
-The other road would be allowing for typedefs that are actually seperate types, which I would be suprised if it had not been proposed before.
-
-`typedef class` maybe?
-
-Anyone have any suggestions?
-## [12][{fmt} 7.0 released with code size, performance and compile time optimizations, improved compatibility with C++20 std::format and more](https://www.reddit.com/r/cpp/comments/hm7gz0/fmt_70_released_with_code_size_performance_and/)
-- url: https://github.com/fmtlib/fmt/releases/tag/7.0.0
----
-

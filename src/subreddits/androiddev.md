@@ -49,59 +49,71 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][If anyone's interested, I do English-Filipino translation for small apps for free](https://www.reddit.com/r/androiddev/comments/hnbocp/if_anyones_interested_i_do_englishfilipino/)
-- url: https://www.reddit.com/r/androiddev/comments/hnbocp/if_anyones_interested_i_do_englishfilipino/
+## [3][Why not ban JioMeet and JioChat on Playstore since they are exact copies of zoom and whatsapp respectively.](https://www.reddit.com/r/androiddev/comments/ho1w8u/why_not_ban_jiomeet_and_jiochat_on_playstore/)
+- url: https://www.reddit.com/r/androiddev/comments/ho1w8u/why_not_ban_jiomeet_and_jiochat_on_playstore/
 ---
-The title says it all. For anyone that is interested, dm me. 
-Any app that has &lt;300 items in strings.xml
+I have heard and read so many reddit posts on indie developers who have had their apps banned due to being remotely close with certain other apps in look and feel. Going with that logic, why is the Jio meet and Jio chat not banned? They look and function as total ripoffs.
+Is google against indie developers and they bow down to big organisations?
+## [4][I’m excited to announce that my open-source sample project about “Android Modular Architecture” just reach 1K ⭐️ on github.](https://www.reddit.com/r/androiddev/comments/hnp4qm/im_excited_to_announce_that_my_opensource_sample/)
+- url: https://www.reddit.com/r/androiddev/comments/hnp4qm/im_excited_to_announce_that_my_opensource_sample/
+---
+Maybe sounds insignificant if you compare with video reproductions or a post likes on twitter. But isn’t, the project is among top 10 github projects in Kotlin related with Android Architecture Sample with several mentions/references like Android Weekly, AndroidSweets, Droidcon and KotlinBy.
 
-Edit: clarification for a "small" app
-## [4][Is Google's "Developing Android Apps" Udacity course still relevant?](https://www.reddit.com/r/androiddev/comments/hndq7k/is_googles_developing_android_apps_udacity_course/)
-- url: https://www.reddit.com/r/androiddev/comments/hndq7k/is_googles_developing_android_apps_udacity_course/
----
-This same question has been posted here 4 years ago. I'm wondering if anyone knows if the course has been updated since then. [The course](https://www.udacity.com/course/new-android-fundamentals--ud851) for reference.
-## [5][Need some info about YouTube API](https://www.reddit.com/r/androiddev/comments/hne95n/need_some_info_about_youtube_api/)
-- url: https://www.reddit.com/r/androiddev/comments/hne95n/need_some_info_about_youtube_api/
----
-I am developing an android app which will show list of YouTube videos from my custom JSON file and I want to play those videos in EXO player. But I am not sure about the restrictions.
-1. Like can I fetch videos using my custom list?
-2. Using Exo player and publishing on Play Store is allowed?
-If someone have any experience, Please let me know also.
-## [6][Android Studio 4.1 Beta 3 available](https://www.reddit.com/r/androiddev/comments/hmzn7i/android_studio_41_beta_3_available/)
-- url: https://androidstudio.googleblog.com/2020/07/android-studio-41-beta-3-available.html
+I want to say thank you ❤️   in this way for all the support received by the android/kotlin developer community and I hope that some of the architecture decisions taken help you to apply/inspire to your current or next project.
+
+Of course, nothing is perfect and this project isn’t an exception, there are a lot of things to improve, but the iteration is the key to my point of view.
+
+Project Link: https://github.com/VMadalin/android-modular-architecture
+## [5][The final version of Android 11 will be released on September 8](https://www.reddit.com/r/androiddev/comments/hnkbbh/the_final_version_of_android_11_will_be_released/)
+- url: https://taskboot.com/2020/07/08/final-version-of-android-11-will-be-released-on-september-8/
 ---
 
-## [7][ConstraintLayout 2.0.0 beta 8](https://www.reddit.com/r/androiddev/comments/hn5a22/constraintlayout_200_beta_8/)
-- url: https://androidstudio.googleblog.com/2020/07/constraintlayout-200-beta-8.html
+## [6][Flutter for Linux](https://www.reddit.com/r/androiddev/comments/hnn5r1/flutter_for_linux/)
+- url: https://snapcraft.io/blog/canonical-enables-linux-desktop-app-support-with-flutter
 ---
 
-## [8][What will be the future of Android &amp; Android Developer?](https://www.reddit.com/r/androiddev/comments/hngs8n/what_will_be_the_future_of_android_android/)
-- url: https://www.sensationsolutions.com/predicting-the-future-of-android-developer-in-india/
+## [7][Make Recyclerview more fluid when populating with items](https://www.reddit.com/r/androiddev/comments/ho1aeg/make_recyclerview_more_fluid_when_populating_with/)
+- url: https://www.reddit.com/r/androiddev/comments/ho1aeg/make_recyclerview_more_fluid_when_populating_with/
+---
+I have already asked on SO but didnt get any response so I thought to try my luck here. 
+
+I have a recyclerview with a grid layout which I populate with data from a local database. The problem that occurs is that when there is roughly more 20 items comming back as a result a lag occurs when populating the recyclerview. I am using all the stuff recommended by google, but cant get past this lag (the lag comes when I submit the list to the recyclerview, the data from the database comes fast) 
+
+I have stripped down my list item to just one TextView, but the lag is still there (so it can't be because of a too complex layout).  I should say that the Recyclerview is inside a Nestedscrollview.
+
+Here is a video with the issue:  [https://streamable.com/jdjdwi](https://streamable.com/jdjdwi) 
+
+And if some is interested in all the details:  [https://stackoverflow.com/questions/62757066/recyclerview-blocks-ui-when-setting-up-items](https://stackoverflow.com/questions/62757066/recyclerview-blocks-ui-when-setting-up-items) 
+
+&amp;#x200B;
+
+Is there a way to somehow "prepopulate" the recyclerview with the right number of empty items and then somehow fill the data async? I am somehow stuck here because I don't see how I can move past the main thread to fill the recyclerview.
+## [8][Android 11 will let devs block network access in parts of their apps for better security](https://www.reddit.com/r/androiddev/comments/hnpfdq/android_11_will_let_devs_block_network_access_in/)
+- url: https://www.androidpolice.com/2020/07/08/android-11-will-let-devs-block-network-access-in-parts-of-their-apps-for-better-security
 ---
 
-## [9][Developed an app using Flutter and Firebase which provides a better tourism experience. Tourists can sign up and book local guides based on the current city they are present in. It shows a map of their current location and all the guides present in that area.](https://www.reddit.com/r/androiddev/comments/hnfka1/developed_an_app_using_flutter_and_firebase_which/)
-- url: https://www.reddit.com/r/androiddev/comments/hnfka1/developed_an_app_using_flutter_and_firebase_which/
+## [9][Google drops app ranking on new update](https://www.reddit.com/r/androiddev/comments/hnwnvq/google_drops_app_ranking_on_new_update/)
+- url: https://www.reddit.com/r/androiddev/comments/hnwnvq/google_drops_app_ranking_on_new_update/
 ---
- [https://github.com/ahmedgulabkhan/TouristAssist](https://github.com/ahmedgulabkhan/TouristAssist)
-## [10][Cross Platform Apps (Progressive Web Apps, React Native Apps, Ionic Capacitor Apps)](https://www.reddit.com/r/androiddev/comments/hnf1ny/cross_platform_apps_progressive_web_apps_react/)
-- url: https://www.reddit.com/r/androiddev/comments/hnf1ny/cross_platform_apps_progressive_web_apps_react/
+Hi,
+I have noticed one thing since last few months. Whenever i update my app google drops the position of the app in the play store ranking and after 1,2 days app comes back to it's original position.
+
+Did you also noticed it? Why it is happening?
+## [10][Coding with Mitch - Explaining/Showing how to use Dagger Hilt (YoutTube Playlist) - Really well explained &amp; easy to follow even for DI newbies!](https://www.reddit.com/r/androiddev/comments/ho31zs/coding_with_mitch_explainingshowing_how_to_use/)
+- url: https://www.youtube.com/watch?v=zTpM2olXCok&amp;list=PLgCYzUzKIBE_MUlyvbCiOWsfq0nFgGXQ9
 ---
-Are cross platform apps in scope of this subreddit, or is r/androiddev only for Android-only apps? 
 
-Also, do you develop for Android only or for cross platform?
-
-[View Poll](https://www.reddit.com/poll/hnf1ny)
-## [11][The Best AdMob alternative Ad networks](https://www.reddit.com/r/androiddev/comments/hmygpo/the_best_admob_alternative_ad_networks/)
-- url: https://www.reddit.com/r/androiddev/comments/hmygpo/the_best_admob_alternative_ad_networks/
+## [11][The emulator process for AVD API_30 was killed.](https://www.reddit.com/r/androiddev/comments/ho2l8a/the_emulator_process_for_avd_api_30_was_killed/)
+- url: https://www.reddit.com/r/androiddev/comments/ho2l8a/the_emulator_process_for_avd_api_30_was_killed/
 ---
-Hi guys, hope you're doing well, based on your experience, what's the best AdMob  alternative ad network, here're some info of my apps statistics :   
+I cannot get an emulator with API 30 to work. I've tried all the system images for API 30 (x86, x64, Google Play, Google APIs and combinations). It always crashes right away with this error message.
 
+&amp;#x200B;
 
-1)  +1 million active users (USA, Brazil, Russia)  
-2)  With AdMob, I reach a 350K ad requests per day &amp; 320K impressions  
+https://preview.redd.it/19gxokpvwt951.png?width=380&amp;format=png&amp;auto=webp&amp;s=9a3ed4274f99fa402a0bf0ce9b67595a73c97ab7
 
-Thank you
-## [12][End Game Boss Podcast Interview with Blight Night Main Game Dev](https://www.reddit.com/r/androiddev/comments/hmwqk3/end_game_boss_podcast_interview_with_blight_night/)
-- url: https://endgameoffice.podbean.com/?fbclid=IwAR3mvrz7cMg9OUlHnrBZkEPek2jevteJdbPCL3qVADeS2vw2Gb4ZKAH2O6s
+I've tried another PC with a fresh install of Android Studio via JetBrains Toolbox but I get the same error. Any ideas?
+## [12][Insights from porting my engine to Android, mostly OpenGL related. Questions welcomed, I can go more deep if someone is interested.](https://www.reddit.com/r/androiddev/comments/hnxvai/insights_from_porting_my_engine_to_android_mostly/)
+- url: https://enterprisemath.com/opengl-pc-and-android/
 ---
 

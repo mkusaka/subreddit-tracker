@@ -13,60 +13,43 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][Video Recording For Selenium WebDriver](https://www.reddit.com/r/javascript/comments/ho1ggx/video_recording_for_selenium_webdriver/)
-- url: https://dev.to/liviufromendtest/video-recording-for-selenium-webdriver-530e
+## [3][Visual Studio Code June 2020](https://www.reddit.com/r/javascript/comments/hoae97/visual_studio_code_june_2020/)
+- url: https://code.visualstudio.com/updates/v1_47
 ---
 
-## [4][Web Monetization · A JavaScript browser API which allows the creation of a payment stream from the user agent to the website](https://www.reddit.com/r/javascript/comments/hnvazd/web_monetization_a_javascript_browser_api_which/)
-- url: https://webmonetization.org/
+## [4][I'm Making a Video Series about Building a Bit-level Binary Library from the Ground up in Javascript. This One Implements and Explains Addition in Terms of Logic Gates.](https://www.reddit.com/r/javascript/comments/hoo885/im_making_a_video_series_about_building_a/)
+- url: https://www.youtube.com/watch?v=VMOyiYRFm8A
 ---
 
-## [5][[AskJS] Do you think Javascript is a good programming language to learn in 2020 or the Java stack or C# stack with Blazor etc are more suited for webdev and a stable career ?](https://www.reddit.com/r/javascript/comments/hnx5wn/askjs_do_you_think_javascript_is_a_good/)
-- url: https://www.reddit.com/r/javascript/comments/hnx5wn/askjs_do_you_think_javascript_is_a_good/
+## [5][Building Open Source Web Analytics Platform with Cube.js](https://www.reddit.com/r/javascript/comments/ho5u6y/building_open_source_web_analytics_platform_with/)
+- url: https://web-analytics.cube.dev/
 ---
-(french man from Quebec excuse my english)
 
-**A)** Do you think Javascript is a good programming language to learn in 2020 or the Java stack or C# stack with Blazor etc are more suited for webdev and a stable career ?
+## [6][How to Build a Roman Numeral Converter and an Interactive Roman Numerals Chart](https://www.reddit.com/r/javascript/comments/hof6w3/how_to_build_a_roman_numeral_converter_and_an/)
+- url: https://www.freecodecamp.org/news/roman-numeral-converter-interactive-roman-numerals-chart/
+---
 
-**B)** Do you feel that the performance of native programming language like C++ could threaten Javascript dominance in webdev with Web assembly (or another language) or it's too far away down the road or not "production ready" to worry about it ?
+## [7][Javascript | Code snippets | shareablecode.com](https://www.reddit.com/r/javascript/comments/honf76/javascript_code_snippets_shareablecodecom/)
+- url: https://shareablecode.com/browse/tags/javascript
+---
 
-**C)** Why most C# or Java programmer keep doing web development in their stack and keep thinking it's better and JS is shit...is it because they don't want to take the time to learn JS the right way ? or they are stuck in the 80's with their OO concept and dislike functional programming ?
-## [6][react native 0.63.0 is here: Release v0.63.0 · facebook/react-native · GitHub](https://www.reddit.com/r/javascript/comments/ho1dhe/react_native_0630_is_here_release_v0630/)
+## [8][Perf Track - see how popular frameworks are used across the web](https://www.reddit.com/r/javascript/comments/ho3eep/perf_track_see_how_popular_frameworks_are_used/)
+- url: https://perf-track.web.app/
+---
+
+## [9][Throwaway: my first Vue.js app! Disposable email helper for all you tin foil hat wearers](https://www.reddit.com/r/javascript/comments/hoc0ol/throwaway_my_first_vuejs_app_disposable_email/)
+- url: https://erresen.github.io/throwaway/
+---
+
+## [10][How can I make a link from one html element to another and keep adding more to make something like this?](https://www.reddit.com/r/javascript/comments/hoo4ab/how_can_i_make_a_link_from_one_html_element_to/)
+- url: https://raw.githubusercontent.com/learn-anything/react-mindmap/master/screenshot.png
+---
+
+## [11][react native 0.63.0 is here: Release v0.63.0 · facebook/react-native · GitHub](https://www.reddit.com/r/javascript/comments/ho1dhe/react_native_0630_is_here_release_v0630/)
 - url: https://github.com/facebook/react-native/releases/tag/v0.63.0
 ---
 
-## [7][Debounce Explained – How to Make Your JavaScript Wait For Your User To Finish Typing](https://www.reddit.com/r/javascript/comments/hng2pg/debounce_explained_how_to_make_your_javascript/)
-- url: https://www.freecodecamp.org/news/debounce-explained-how-to-make-your-javascript-wait-for-your-user-to-finish-typing-2/
----
-
-## [8][Buy vs. build for web features](https://www.reddit.com/r/javascript/comments/ho2d9y/buy_vs_build_for_web_features/)
-- url: https://forms.gle/1DNMrF2p3JLw6ouL6
----
-
-## [9][[AskJS] Insightful JS questions/answers](https://www.reddit.com/r/javascript/comments/hnvoxr/askjs_insightful_js_questionsanswers/)
-- url: https://www.reddit.com/r/javascript/comments/hnvoxr/askjs_insightful_js_questionsanswers/
----
-I posted a JS quiz from an app that I built yesterday and it turned out that some of the questions were incorrect and/or badly worded. Thanks to those that took the time to provide constructive responses. I am also sorry since it seems that i might have broken some reddit rules by posting the link.
-
-I was wondering if this community will be interested in providing some questions and answers as comments to this thread. I know there are a lot of experienced programmers in the channel that might even have the privilege of conducting interviews for their teams . I also know that this channel is not for learning JS but I think current/future developers might benefit from some shared knowledge/experience.
-
-For those that are willing to contribute, I am looking for non-library/framework-specific questions, preferably in multiple choice format, that sheds a light on whether one truly understands JS and all its intricacies.
-
-Thanks!
-## [10][Improve performance of your React app with Debouncing, build your own useDebounce() hook!](https://www.reddit.com/r/javascript/comments/hnrnwe/improve_performance_of_your_react_app_with/)
-- url: https://dev.to/arpit73/improve-performance-of-your-react-app-with-debouncing-build-your-own-usedebounce-hook-1fb1
----
-
-## [11][[AskJS] Coming from Processing, p5js got me into Js, but clueless with “canvas”](https://www.reddit.com/r/javascript/comments/ho359d/askjs_coming_from_processing_p5js_got_me_into_js/)
-- url: https://www.reddit.com/r/javascript/comments/ho359d/askjs_coming_from_processing_p5js_got_me_into_js/
----
-Trying to shift career paths. I’m taking a course and reading a ton, but am a little lost. 
-
-I was able to rewrite my code, link the HTML/css and host on AWS, which was a feat in itself for me (accomplished by persistent googling). It’s  a simple music visualizer. 
-
-As far as the page layout though...
-One thing I’m having trouble with in Js is how to position things. From the resources I’m reading, layout can be done via css, HTML and in fact the Js script itself. I guess I am confused about how you mentally organize this process? It seems hard to figure out exactly what point to start at, or rather which file should be controlling what, how the hierarchy of files works.. can someone do a breakdown? Maybe not ELI5, but ELI15?
-## [12][Bumblebee - a JavaScript voice app framework](https://www.reddit.com/r/javascript/comments/hnl2b0/bumblebee_a_javascript_voice_app_framework/)
-- url: https://github.com/jaxcore/bumblebee
+## [12][Web Monetization · A JavaScript browser API which allows the creation of a payment stream from the user agent to the website](https://www.reddit.com/r/javascript/comments/hnvazd/web_monetization_a_javascript_browser_api_which/)
+- url: https://webmonetization.org/
 ---
 

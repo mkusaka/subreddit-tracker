@@ -123,67 +123,64 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [3][Fixing a common antipattern when loading translations in Qt](https://www.reddit.com/r/cpp/comments/ho032u/fixing_a_common_antipattern_when_loading/)
+## [3][Shortest Bjarne talk ever](https://www.reddit.com/r/cpp/comments/hoks6d/shortest_bjarne_talk_ever/)
+- url: https://www.youtube.com/watch?v=tbNe-3FXqFM
+---
+
+## [4][spdlog 1.7.0 released (FMT 7.x, compile time format checking)](https://www.reddit.com/r/cpp/comments/hofxr2/spdlog_170_released_fmt_7x_compile_time_format/)
+- url: https://github.com/gabime/spdlog/releases/tag/v1.7.0
+---
+
+## [5][Implementing a better views::split](https://www.reddit.com/r/cpp/comments/ho8sw6/implementing_a_better_viewssplit/)
+- url: https://brevzin.github.io/c++/2020/07/06/split-view/
+---
+
+## [6][C++ libraries vulnerability check](https://www.reddit.com/r/cpp/comments/homb16/c_libraries_vulnerability_check/)
+- url: https://www.reddit.com/r/cpp/comments/homb16/c_libraries_vulnerability_check/
+---
+Hello!
+
+I'm looking for recommendations regarding some automated (or at least semi-automated) vulnerability check of open-source libraries used in a C++ project. E.g. having a specific version of \`cppkafka\` and \`boost\` I'd like to know if there are some issues and perhaps I need to update the dependencies. Something along the lines of [https://github.com/RustSec/cargo-audit](https://github.com/RustSec/cargo-audit) . Is there anything similar available for C++?
+
+The project is in Bazel, pulling dependencies from GH repositories, though I'd be fine in maintaining a text file with libraries + versions used.
+## [7]["Structure of Arrays" wrapper for POD-Types](https://www.reddit.com/r/cpp/comments/hoabrd/structure_of_arrays_wrapper_for_podtypes/)
+- url: https://www.reddit.com/r/cpp/comments/hoabrd/structure_of_arrays_wrapper_for_podtypes/
+---
+I am working on a wrapper `struct_array` in C++20 that takes any POD-type e.g. `foo`
+
+```c++
+struct foo {
+    T0 x;
+    T1 y;
+};
+```
+and treats it internally as `std::tuple&lt;std::vector&lt;T0&gt;, std::vector&lt;T1&gt;&gt;`
+
+I am using the technique I posted about here 
+https://www.reddit.com/r/cpp/comments/hm439p/converting_pod_to_stdtuple_using/
+to transform the POD-type automatically without having to provide the tuple type yourself.
+
+Here's the github page if someone's interested https://github.com/Yamahari/struct_array
+
+This is the most complicated template programming I've done in a while/ever so there might be some errors. Right now the `iterator::reference` isn't swappable so you can't sort with `std::sort` for example, but I am working on getting that fixed :)
+Next step is to allow custom allocator so you can make use of libraries like xsimd
+## [8][CppCast: Hyperion Renderer](https://www.reddit.com/r/cpp/comments/hohi9l/cppcast_hyperion_renderer/)
+- url: https://cppcast.com/hyperion-renderer-karl-li-david-adler/
+---
+
+## [9][Duck Invoke — tag_invoke for C++11](https://www.reddit.com/r/cpp/comments/hop01w/duck_invoke_tag_invoke_for_c11/)
+- url: https://bfgroup.github.io/duck_invoke/
+---
+
+## [10][Best C++ books for intermediary programmers?](https://www.reddit.com/r/cpp/comments/hohsch/best_c_books_for_intermediary_programmers/)
+- url: /r/learnprogramming/comments/hohs6b/best_c_books_for_intermediary_programmers/
+---
+
+## [11][Fixing a common antipattern when loading translations in Qt](https://www.reddit.com/r/cpp/comments/ho032u/fixing_a_common_antipattern_when_loading/)
 - url: https://www.kdab.com/fixing-a-common-antipattern-when-loading-translations-in-qt/
 ---
 
-## [4][kilopp - an ongoing effort to port an editor written in C into modern C++](https://www.reddit.com/r/cpp/comments/ho0p4d/kilopp_an_ongoing_effort_to_port_an_editor/)
-- url: https://github.com/r-darwish/kilopp
+## [12][Avoiding compile time recursion](https://www.reddit.com/r/cpp/comments/hoasne/avoiding_compile_time_recursion/)
+- url: https://ngathanasiou.wordpress.com/2020/07/09/avoiding-compile-time-recursion/
 ---
 
-## [5][C++ Linux development with Visual Studio: incremental build improvements and expanded shell support](https://www.reddit.com/r/cpp/comments/hnzqt7/c_linux_development_with_visual_studio/)
-- url: https://devblogs.microsoft.com/cppblog/c-linux-development-with-visual-studio-incremental-build-improvements-and-expanded-shell-support/
----
-
-## [6][How to erase from an STL container](https://www.reddit.com/r/cpp/comments/hnzsnq/how_to_erase_from_an_stl_container/)
-- url: https://quuxplusone.github.io/blog/2020/07/08/erase-if/
----
-
-## [7][Question for Microsoft Devs: how is the Windows O/S developed?](https://www.reddit.com/r/cpp/comments/hnnyae/question_for_microsoft_devs_how_is_the_windows_os/)
-- url: https://www.reddit.com/r/cpp/comments/hnnyae/question_for_microsoft_devs_how_is_the_windows_os/
----
-Are Microsoft developers presented with a single GIT repository with the entire Windows code? Or the operating system is broken down into projects/subsystems to which a given developer is granted access?
-## [8][I/O in Plywood](https://www.reddit.com/r/cpp/comments/hnzr31/io_in_plywood/)
-- url: https://preshing.com/20200708/io-in-plywood/
----
-
-## [9][Complex desktop ui](https://www.reddit.com/r/cpp/comments/hnkdl0/complex_desktop_ui/)
-- url: https://www.reddit.com/r/cpp/comments/hnkdl0/complex_desktop_ui/
----
-If its the wrong sub just point me to the place where i might find the answers.  
-Im coming from a world of web dev and right now im working on a pretty big project with complex dragndrop ui and my question to all of the desktop developers of big and complex things like photoshop is - how do you keep your sanity? How do you manage tech debt? What abstractions do you use for building your UI?. Im asking because the web way of doing thing like google maps/ spreadsheets is unmanageable madness(How many times was facebook rewritten? 3?)
-## [10][I made a 3D renderer in C++](https://www.reddit.com/r/cpp/comments/hna4bz/i_made_a_3d_renderer_in_c/)
-- url: https://www.reddit.com/r/cpp/comments/hna4bz/i_made_a_3d_renderer_in_c/
----
-It’s quite simple and not many features are here yet. I’m also quite inexperienced with C++ so any criticism is appreciated.
-
-GitHub Repo: https://github.com/MysteryCoder456/ThreeCEngine
-## [11][C++ class member initializations the right way](https://www.reddit.com/r/cpp/comments/hnftsc/c_class_member_initializations_the_right_way/)
-- url: https://www.reddit.com/r/cpp/comments/hnftsc/c_class_member_initializations_the_right_way/
----
-[https://medium.com/pranayaggarwal25/using-modern-class-members-and-initializations-c11e931c3ba?source=friends\_link&amp;sk=fc19e4cce9ff3b5af6024949b780837a](https://medium.com/pranayaggarwal25/using-modern-class-members-and-initializations-c11e931c3ba?source=friends_link&amp;sk=fc19e4cce9ff3b5af6024949b780837a)
-
-Hi All,
-
-I have compiled a collection and article on how to correctly follow C++ class member initializations, constructors, and member functions.
-
-After reading C++ guidelines, and a few other references I have put together this article.
-
-This article covers the following -
-
-1. Use member initializers in the same order as their declaration
-2. Prefer in-class member initializer over constant initializations OR over default constructor.
-3. Don’t cast away const, ever!
-4. Use delegating constructors to represent common actions for all constructors of a class.
-
-:) Please help me in improving anything which is incorrect or missing in this.
-## [12][Blogging platform that supports C/C++](https://www.reddit.com/r/cpp/comments/hnem1b/blogging_platform_that_supports_cc/)
-- url: https://www.reddit.com/r/cpp/comments/hnem1b/blogging_platform_that_supports_cc/
----
-DISCLAIMER: This might be understood as self promotion and in a way it is, since I did create this project. I posted this same project on [haskell subreddit](https://www.reddit.com/r/haskell/comments/hljinx/blogging_platform_that_supports_haskell/) and they liked it. If you think this is some kind of self promotion, check it out and tell me in the comments and I will remove it. Or the moderators can remove it. But I hope you're going to like it. 
-
-I created a blogging platform that  supports creating blogs that can executing code. There is also an integrated code editor with which you can create complete projects and import them into your blog. After that, the readers of your blog can execute/edit your code without having to setup environments locally, or cloning github repos and all other pain that goes with "just trying things out". There is much improvement to be done but its slowly going there. 
-
-Yesterday,  I integrated support for C/C++ so you can create blog posts and coders/beginners can edit/run your code. As I said in Haskell group, I hope this will help beginners in C/C++ a little bit. You can learn more in a [help blog post](https://therebelsource.com/blog/help-blog/8mYgnax8Nj) and on the [about page](https://therebelsource.com/about). Unfortunately, for C/C++ and Haskell, it is not yet possible to create code projects. Compiling those languages is not so straightforwared like in Go, for example where I can just do `go run /my/dir` and it just works. But support for them is coming. 
-
-Thank you for your time and I hope you like it.

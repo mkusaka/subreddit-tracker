@@ -83,95 +83,160 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
-## [3][Javascript Testing Masterclass (React, Jest, React Testing Library, Cypress)](https://www.reddit.com/r/reactjs/comments/hnv62b/javascript_testing_masterclass_react_jest_react/)
-- url: https://www.reddit.com/r/reactjs/comments/hnv62b/javascript_testing_masterclass_react_jest_react/
----
-Video Part 1/2:  
-[https://youtu.be/MAFGRx0HYKo](https://youtu.be/MAFGRx0HYKo)
-
-Video Part 2/2:  
-[https://youtu.be/GTaVTa4QuAM](https://youtu.be/GTaVTa4QuAM)
-
-Slides:  
-[https://docs.google.com/presentation/d/1ljMA8glel6hCopJ9Ib221A-pZ6brnibuwpzRLf1A3OM/edit?usp=sharing](https://docs.google.com/presentation/d/1ljMA8glel6hCopJ9Ib221A-pZ6brnibuwpzRLf1A3OM/edit?usp=sharing)
-## [4][Favourite Personal Project?](https://www.reddit.com/r/reactjs/comments/ho08eu/favourite_personal_project/)
-- url: https://www.reddit.com/r/reactjs/comments/ho08eu/favourite_personal_project/
----
-Hey! I'm still fairly new to react and coding in general and am really looking to improve by doing some hands-on personal projects (and get out of tutorial hell!). So, what have been your favourite personal projects that aren't super advanced, but also not a To-Do app!
-## [5][Plotting Code-Quality-metric changes of a React and a node repository over time](https://www.reddit.com/r/reactjs/comments/ho2mbl/plotting_codequalitymetric_changes_of_a_react_and/)
-- url: https://www.reddit.com/r/reactjs/comments/ho2mbl/plotting_codequalitymetric_changes_of_a_react_and/
----
-Hey there,
-
-For a project i need a tool that would go over a React (and a Node) repository and would analyze every commit in it using common code metrics like lines of code per file, cyclomatic complexity etc.
-
-I want to create some graphs out of this data to show the changes over time.
-
-While i found no immediate solution that could tackle this this specific problem i suspect you could write a bash script that utilizes ESLint somehow to output the data into a file.
-
-So before i go down this road i wanted to ask if someone knows either a tool that does the job or a hint to a better way than i proposed.
-
-Thanks for reading,
-
-Have a great day!
-## [6][How I recreated the Hey "Feed" with AWS Lambda, SES and React](https://www.reddit.com/r/reactjs/comments/hnh0mh/how_i_recreated_the_hey_feed_with_aws_lambda_ses/)
-- url: https://francescodilorenzo.com/hey-feed-ses-lambda-react
+## [3][Next.js: Server-side Rendering vs. Static Generation](https://www.reddit.com/r/reactjs/comments/hog86c/nextjs_serverside_rendering_vs_static_generation/)
+- url: https://vercel.com/blog/nextjs-server-side-rendering-vs-static-generation
 ---
 
-## [7][What's New in React | Ioniconf 2020](https://www.reddit.com/r/reactjs/comments/hnxspm/whats_new_in_react_ioniconf_2020/)
-- url: https://www.youtube.com/watch?v=Qox56z4xH6o
+## [4][How do you start a React Project after you watched a bunch of tutorial videos and you don't know where to begin?](https://www.reddit.com/r/reactjs/comments/hog04a/how_do_you_start_a_react_project_after_you/)
+- url: https://www.reddit.com/r/reactjs/comments/hog04a/how_do_you_start_a_react_project_after_you/
+---
+Lets say you want to create a simple carousel app and you had no clue wear to begin
+## [5][Building Open Source Web Analytics Platform with Cube.js and React](https://www.reddit.com/r/reactjs/comments/ho64ky/building_open_source_web_analytics_platform_with/)
+- url: https://web-analytics.cube.dev/
 ---
 
-## [8][SpaceX Dashboard](https://www.reddit.com/r/reactjs/comments/ho1hn7/spacex_dashboard/)
-- url: https://www.reddit.com/r/reactjs/comments/ho1hn7/spacex_dashboard/
----
-I've built a SpaceX launches dashboard using Tailwind CSS. [https://spacex-launches-dashboard.netlify.app/](https://spacex-launches-dashboard.netlify.app/).
-
-&amp;#x200B;
-
-https://reddit.com/link/ho1hn7/video/oc8g3qirht951/player
-## [9][react-native released v0.63.0 🎉](https://www.reddit.com/r/reactjs/comments/hno4c8/reactnative_released_v0630/)
-- url: https://app.releasly.co/releases/facebook/react-native/0_63_0?ref=notificationEmail
+## [6]["Will It Render?": A visual cheatsheet for React rendering behavior](https://www.reddit.com/r/reactjs/comments/ho4ylt/will_it_render_a_visual_cheatsheet_for_react/)
+- url: https://will-it-render.vercel.app/
 ---
 
-## [10][DRY-ing up the most commonly used React pattern using Higher Order Component](https://www.reddit.com/r/reactjs/comments/hnuq2a/drying_up_the_most_commonly_used_react_pattern/)
-- url: https://medium.com/@mdazmainamin/dry-ing-up-the-most-commonly-used-react-pattern-using-higher-order-components-f513436bf15b
+## [7][Rewrote my person website in React (from PHP)](https://www.reddit.com/r/reactjs/comments/hom1im/rewrote_my_person_website_in_react_from_php/)
+- url: https://www.reddit.com/r/reactjs/comments/hom1im/rewrote_my_person_website_in_react_from_php/
+---
+Howdy folks,  
+
+
+I recently rewrote my PHP website in React and am super happy with the results. React is so nice to write and my code feels a lot more modular and flexible.  
+
+
+I thought I'd ask for a code review here so others could point out things I did wrong or possible improvements to make. Just let me know as I'm looking to improve my work.  
+
+
+Thanks!  
+
+
+Code base:  [https://github.com/mobeigi/mobeigi.com](https://github.com/mobeigi/mobeigi.com) 
+
+React Website:  [https://mobeigi.com/](https://mobeigi.com/)   
+Old PHP Website (for comparison):  [https://old.mobeigi.com/](https://old.mobeigi.com/)
+## [8][How to pass a react dropdown npm package into a knockout-react binder which utilize custom element tag?](https://www.reddit.com/r/reactjs/comments/hoolnk/how_to_pass_a_react_dropdown_npm_package_into_a/)
+- url: https://www.reddit.com/r/reactjs/comments/hoolnk/how_to_pass_a_react_dropdown_npm_package_into_a/
+---
+Hi,
+
+Lets say I want to pass a npm package dropdown,
+
+How can I pass it into the component in "component" if I use a custom element tag such as 
+
+    &lt;container component="npm package" props={}&gt;
+
+ Here is the actually binding handler.
+
+    ko.bindingHandlers.react = {  
+        ko.register("container");   
+        init() { return {controlsDescendantBindings: true}; },     
+        update(element, valueAccessor) { const {component, props} = valueAccessor();                        ReactDOM.render(React.createElement(component, props), element); } 
+    
+    };
+## [9][React router dom and React Material UI tabs...](https://www.reddit.com/r/reactjs/comments/hoohgw/react_router_dom_and_react_material_ui_tabs/)
+- url: https://www.reddit.com/r/reactjs/comments/hoohgw/react_router_dom_and_react_material_ui_tabs/
+---
+I'm using React material UI with react router dom and I'm not sure if I solved this issue correctly.
+
+Let me share the code first.
+
+This part is used in AppBar  and it represents the main menu via Tabs:
+
+    &lt;Tabs
+    	value={value}
+    	onChange={handleChange}
+    	aria-label="Meni"
+    	variant="scrollable"
+    	scrollButtons="on"&gt;
+    	{routes.map(({ label, path }, i) =&gt; (
+    		&lt;Tab key={i} label={label} component={Link} to={path} /&gt;
+    	))}
+    &lt;/Tabs&gt;
+
+As evident, I have an array of routes, all having the label, path, component etc. properties and I'm foreaching them so that the meanu can be dynamically generated.
+
+When the user switches between tabs, the index of the tab is passed (handleChange) - that's how Material UI tabs work.
+
+    const handleChange = (_, newValue) =&gt; {
+    	setValue(newValue);
+    };
+
+Now as long as the user is clicking the tabs, it all works perfectly fine. 
+
+However, when I encounter a path where any kind of redirect is encountered, naturally, the tab is not selected. Here's an example:
+
+    export default function PrivateRoute({ children, ...rest }) {
+    	return (
+    		&lt;Route
+    			{...rest}
+    			render={({ location }) =&gt;
+    				fakeAuth.isAuthenticated ? (
+    					children
+    				) : (
+    					&lt;Redirect
+    						to={{
+    							pathname: '/',
+    							state: { from: location },
+    						}}
+    					/&gt;
+    				)
+    			}
+    		/&gt;
+    	);
+    }
+    
+
+So my current solution is as follows. Since the state is passed in the case of redirect, I can use that in the useEffect part of the main component. So, if the state is not undefined, we can assume that some kind of redirection took place. Additionally, I'm using a function that gets the index of the currently selected path, so that the appropriate tabs can be selected.
+
+Here's the code:
+
+    export default function Main() {
+    	const classes = useStyles();
+    	const location = useLocation();
+    	const routeIndex = useMemo(
+    		() =&gt; routes.findIndex(({ path }) =&gt; path === location.pathname),
+    		[location.pathname]
+    	);
+    	const [value, setValue] = useState(() =&gt; {
+    		return routeIndex &gt; -1 ? routeIndex : false;
+    	});
+    
+    	// ! useEffect for redirect-to cases.
+    	// TODO: any other way?
+    	useEffect(() =&gt; {
+    		if (location.state !== undefined) {
+    			if (routeIndex &gt; -1) setValue(routeIndex);
+    		}
+    	}, [location, routeIndex]);
+    
+    	const handleChange = (_, newValue) =&gt; {
+    		setValue(newValue);
+    	};
+    
+    	return (...
+
+Again, this works perfectly fine, but it feels hack-ish.
+
+So I was wondering if there's any other way to call setValue (in order to set the value of the selected tab) than to hack it in useEffect?
+
+Thanks for any kind of feedback!
+## [10][How can I pass the npm package as a component to the React and knockout binding? Student help](https://www.reddit.com/r/reactjs/comments/hoocxw/how_can_i_pass_the_npm_package_as_a_component_to/)
+- url: https://www.reddit.com/r/reactjs/comments/hoocxw/how_can_i_pass_the_npm_package_as_a_component_to/
+---
+I'm trying to implement this tutorial, but I'm wondering how can I pass the actual component as from a react.js npm package? [http://intelligiblebabble.com/making-reactjs-and-knockoutjs-play-nice/](http://intelligiblebabble.com/making-reactjs-and-knockoutjs-play-nice/)
+## [11][Change the row colour when the button is clicked and vice versa](https://www.reddit.com/r/reactjs/comments/hon4nw/change_the_row_colour_when_the_button_is_clicked/)
+- url: https://www.reddit.com/r/reactjs/comments/hon4nw/change_the_row_colour_when_the_button_is_clicked/
+---
+Hey guys, I am very new to reactjs. I want to change the the color of the row next to the button when it is pressed. In my code a have created a button using a heart image. The link to my code is below.
+Is there any way to change the row colour when that button is pressed ?
+Thank you in advance
+ 
+https://codepen.io/Lelouch65428/pen/KKVeMzP?editors=0110
+## [12][I've created a React library for generating avatars for your apps and games](https://www.reddit.com/r/reactjs/comments/ho3k2k/ive_created_a_react_library_for_generating/)
+- url: https://bigheads.io/
 ---
 
-## [11][🍪 A highly scalable, professional boilerplate for building fast, robust and adaptable mern web apps 🚀](https://www.reddit.com/r/reactjs/comments/ho0c8m/a_highly_scalable_professional_boilerplate_for/)
-- url: https://www.reddit.com/r/reactjs/comments/ho0c8m/a_highly_scalable_professional_boilerplate_for/
----
-In programming, the term boilerplate code refers to blocks of code used over and over again
-
-Let’s assume your development stack consists of several libraries, such as React, Babel, Express, Jest, Webpack, etc. When you start a new project, you initialize all these libraries and configure them to work with each other.
-
-With every new project that you start, you will be repeating yourself. You could also introduce inconsistencies in how these libraries are set up in each project. This can cause confusion when you switch between projects.
-
-This is where boilerplates come in. A boilerplate is a template that you can clone and reuse for every project.
-
-CookieScript Boilerplate uses familiar tools and implements best practices around them to provide you a SOLID development experience. This project does not impose a specific development philosophy or framework, so you're free to architect your code in the way that you want.
-
-Here are some of the awesome CookieScript features you'll enjoy
-
-* ***Quick scaffolding***  
-CookieScript offers a built-in tool for the command line is known as Geek which allows performing the majority of those tedious and repetitive programming tasks that many JavaScript developers avoid performing manually.
-* ***Next generation JavaScript***  
-Use template strings, object destructuring, arrow functions, JSX syntax and more.
-* ***No Lock-In***  
-Under the hood, we use webpack, Babel, ESLint, and other amazing projects to power your app.
-* ***SEO friendly***  
-There are a few problems for search engine rankings when it comes to a vanilla \`React app\`. We follow best practices to make your web app attractive to \`Google\`.
-* ***Authentication***  
-Authentication is the most important factor in a web application, and developers need to spend a lot of time writing the authentication code. CookieScript contains an inbuilt authentication system, you only need to configure models, views, and controllers to make the application work.
-
-Whether you're helping us fix bugs, improve the docs, or spread the word, we'd love to have you as part of the community! See CONTRIBUTING.md for more information on what we're looking for and how to get started.
-
-GitHub : [https://github.com/getspooky/CookieScript](https://github.com/getspooky/CookieScript)
-## [12][I recently deployed my portfolio website built with React and made the source code available on Github.](https://www.reddit.com/r/reactjs/comments/ho2ukz/i_recently_deployed_my_portfolio_website_built/)
-- url: https://www.reddit.com/r/reactjs/comments/ho2ukz/i_recently_deployed_my_portfolio_website_built/
----
-I recently redesigned my portfolio website using React and made the source code available on Github.  I'm interested in some feedback on design or code quality, or any criticism at all if possible.
-
-Website: [https://jarolin.com](https://jarolin.com)
-
-github: [https://github.com/JarolinVargas/jarolin.com](https://github.com/JarolinVargas/jarolin.com)

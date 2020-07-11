@@ -123,64 +123,64 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [3][Shortest Bjarne talk ever](https://www.reddit.com/r/cpp/comments/hoks6d/shortest_bjarne_talk_ever/)
+## [3][Is C++ a good language for server side code?](https://www.reddit.com/r/cpp/comments/hp06wx/is_c_a_good_language_for_server_side_code/)
+- url: https://www.reddit.com/r/cpp/comments/hp06wx/is_c_a_good_language_for_server_side_code/
+---
+Just wondering if I am going down the right path. I want to do it in C++ but sometimes installing these dependencies (Mongo driver/RabbitMQ driver) take a long time and lots of research.
+## [4][The most aesthetically pleasing video on Searching Algorithms](https://www.reddit.com/r/cpp/comments/hp63bi/the_most_aesthetically_pleasing_video_on/)
+- url: https://youtu.be/FBJKwjTwNTo
+---
+
+## [5][jsoncons v0.154.0 supports JMESPath](https://www.reddit.com/r/cpp/comments/hp2e37/jsoncons_v01540_supports_jmespath/)
+- url: https://github.com/danielaparker/jsoncons/blob/master/doc/ref/jmespath/jmespath.md
+---
+
+## [6][Writing an LLVM optimization (my quarantine training video)](https://www.reddit.com/r/cpp/comments/hopfg3/writing_an_llvm_optimization_my_quarantine/)
+- url: https://youtu.be/MagR2KY8MQI
+---
+
+## [7][Shortest Bjarne talk ever](https://www.reddit.com/r/cpp/comments/hoks6d/shortest_bjarne_talk_ever/)
 - url: https://www.youtube.com/watch?v=tbNe-3FXqFM
 ---
 
-## [4][spdlog 1.7.0 released (FMT 7.x, compile time format checking)](https://www.reddit.com/r/cpp/comments/hofxr2/spdlog_170_released_fmt_7x_compile_time_format/)
-- url: https://github.com/gabime/spdlog/releases/tag/v1.7.0
----
-
-## [5][Implementing a better views::split](https://www.reddit.com/r/cpp/comments/ho8sw6/implementing_a_better_viewssplit/)
-- url: https://brevzin.github.io/c++/2020/07/06/split-view/
----
-
-## [6][C++ libraries vulnerability check](https://www.reddit.com/r/cpp/comments/homb16/c_libraries_vulnerability_check/)
-- url: https://www.reddit.com/r/cpp/comments/homb16/c_libraries_vulnerability_check/
----
-Hello!
-
-I'm looking for recommendations regarding some automated (or at least semi-automated) vulnerability check of open-source libraries used in a C++ project. E.g. having a specific version of \`cppkafka\` and \`boost\` I'd like to know if there are some issues and perhaps I need to update the dependencies. Something along the lines of [https://github.com/RustSec/cargo-audit](https://github.com/RustSec/cargo-audit) . Is there anything similar available for C++?
-
-The project is in Bazel, pulling dependencies from GH repositories, though I'd be fine in maintaining a text file with libraries + versions used.
-## [7]["Structure of Arrays" wrapper for POD-Types](https://www.reddit.com/r/cpp/comments/hoabrd/structure_of_arrays_wrapper_for_podtypes/)
-- url: https://www.reddit.com/r/cpp/comments/hoabrd/structure_of_arrays_wrapper_for_podtypes/
----
-I am working on a wrapper `struct_array` in C++20 that takes any POD-type e.g. `foo`
-
-```c++
-struct foo {
-    T0 x;
-    T1 y;
-};
-```
-and treats it internally as `std::tuple&lt;std::vector&lt;T0&gt;, std::vector&lt;T1&gt;&gt;`
-
-I am using the technique I posted about here 
-https://www.reddit.com/r/cpp/comments/hm439p/converting_pod_to_stdtuple_using/
-to transform the POD-type automatically without having to provide the tuple type yourself.
-
-Here's the github page if someone's interested https://github.com/Yamahari/struct_array
-
-This is the most complicated template programming I've done in a while/ever so there might be some errors. Right now the `iterator::reference` isn't swappable so you can't sort with `std::sort` for example, but I am working on getting that fixed :)
-Next step is to allow custom allocator so you can make use of libraries like xsimd
-## [8][CppCast: Hyperion Renderer](https://www.reddit.com/r/cpp/comments/hohi9l/cppcast_hyperion_renderer/)
-- url: https://cppcast.com/hyperion-renderer-karl-li-david-adler/
+## [8][CodeChecker now has a new UI, supports more analyzers, ...](https://www.reddit.com/r/cpp/comments/hovpw6/codechecker_now_has_a_new_ui_supports_more/)
+- url: https://github.com/Ericsson/codechecker/releases/tag/v6.13.0
 ---
 
 ## [9][Duck Invoke — tag_invoke for C++11](https://www.reddit.com/r/cpp/comments/hop01w/duck_invoke_tag_invoke_for_c11/)
 - url: https://bfgroup.github.io/duck_invoke/
 ---
 
-## [10][Best C++ books for intermediary programmers?](https://www.reddit.com/r/cpp/comments/hohsch/best_c_books_for_intermediary_programmers/)
-- url: /r/learnprogramming/comments/hohs6b/best_c_books_for_intermediary_programmers/
+## [10][spdlog 1.7.0 released (FMT 7.x, compile time format checking)](https://www.reddit.com/r/cpp/comments/hofxr2/spdlog_170_released_fmt_7x_compile_time_format/)
+- url: https://github.com/gabime/spdlog/releases/tag/v1.7.0
 ---
 
-## [11][Fixing a common antipattern when loading translations in Qt](https://www.reddit.com/r/cpp/comments/ho032u/fixing_a_common_antipattern_when_loading/)
-- url: https://www.kdab.com/fixing-a-common-antipattern-when-loading-translations-in-qt/
+## [11][Any examples (with source code) of text adventure games that follow a similar style?](https://www.reddit.com/r/cpp/comments/houh6a/any_examples_with_source_code_of_text_adventure/)
+- url: https://www.reddit.com/r/cpp/comments/houh6a/any_examples_with_source_code_of_text_adventure/
 ---
+Hey guys, beginner here. I started making a text adventure game and I'm really into it now would like to complete it but it's difficult as I don't know exactly what kind of code I need to implement for this to work as I'd like it to. I thought it would be a good idea to look at some source code for a text adventure that's already been made but they're usually too different from the kind of text adventure I want to make.
 
-## [12][Avoiding compile time recursion](https://www.reddit.com/r/cpp/comments/hoasne/avoiding_compile_time_recursion/)
-- url: https://ngathanasiou.wordpress.com/2020/07/09/avoiding-compile-time-recursion/
+&amp;#x200B;
+
+Here's the code I have now. (I know it's messy) Hopefully this gives an idea of what I'm after: [https://pastebin.com/8x1yz5GV](https://pastebin.com/8x1yz5GV)
+## [12][Is any optimizer able to cache same calls?](https://www.reddit.com/r/cpp/comments/horbq2/is_any_optimizer_able_to_cache_same_calls/)
+- url: https://www.reddit.com/r/cpp/comments/horbq2/is_any_optimizer_able_to_cache_same_calls/
 ---
+Hello everybody!
 
+I have a function which does the same call twice.
+
+    double compute(const char *) __attribute__ ((pure));
+    
+    double f(const char* const data, const bool flag)
+    {
+        if (!flag &amp;&amp; compute(data) == 0.0)
+            return 4.2;
+        return compute(data) &lt; 100.0 ? -0.1 : 100.0;
+    }
+
+Is it possible to hint somehow the compiler to optimize such calls? I tried using `__attribute__((pure))`, but that didn't help.
+
+Maybe some other compliers can do this?
+
+For reference [https://godbolt.org/z/9T8Yod](https://godbolt.org/z/9T8Yod)

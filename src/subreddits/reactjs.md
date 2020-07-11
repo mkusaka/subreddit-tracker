@@ -83,160 +83,110 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
-## [3][Next.js: Server-side Rendering vs. Static Generation](https://www.reddit.com/r/reactjs/comments/hog86c/nextjs_serverside_rendering_vs_static_generation/)
-- url: https://vercel.com/blog/nextjs-server-side-rendering-vs-static-generation
+## [3][Astrofox - I made a motion graphics program for turning music visualizations into videos. Built with React, WebGL, and Electron. Free to use.](https://www.reddit.com/r/reactjs/comments/hp5jiy/astrofox_i_made_a_motion_graphics_program_for/)
+- url: https://astrofox.io
 ---
 
-## [4][How do you start a React Project after you watched a bunch of tutorial videos and you don't know where to begin?](https://www.reddit.com/r/reactjs/comments/hog04a/how_do_you_start_a_react_project_after_you/)
-- url: https://www.reddit.com/r/reactjs/comments/hog04a/how_do_you_start_a_react_project_after_you/
+## [4][A demo of the new beta for my trip planning app, Tour, built completely with React Native.](https://www.reddit.com/r/reactjs/comments/horafr/a_demo_of_the_new_beta_for_my_trip_planning_app/)
+- url: https://www.reddit.com/r/reactjs/comments/horafr/a_demo_of_the_new_beta_for_my_trip_planning_app/
 ---
-Lets say you want to create a simple carousel app and you had no clue wear to begin
-## [5][Building Open Source Web Analytics Platform with Cube.js and React](https://www.reddit.com/r/reactjs/comments/ho64ky/building_open_source_web_analytics_platform_with/)
-- url: https://web-analytics.cube.dev/
+&amp;#x200B;
+
+https://reddit.com/link/horafr/video/0z6sirm3v1a51/player
+
+Hey /r/reactjs!
+
+It's been about a year and a half now since I posted the original beta of my trip planning app, Tour here. Well, since covid happened I've had the chance to completely rethink the trip planning app and rebuild Tour again from scratch to try to be better than before. (The best part of this was getting rid of all that spaghetti code).
+
+You can get the beta here: [https://tourapp.co/beta](https://tourapp.co/beta) *(on iOS only again, but, I'm going to get it on Android in a couple weeks for real this time)*
+
+Please let me know what you guys think of it!
+## [5][Guide To Array Functions: Why you should pick the least powerful tool for the job](https://www.reddit.com/r/reactjs/comments/hozjwi/guide_to_array_functions_why_you_should_pick_the/)
+- url: https://www.reddit.com/r/reactjs/comments/hozjwi/guide_to_array_functions_why_you_should_pick_the/
 ---
+After coming across some strange usages of array functions in my team's React codebase, I decided to write a guide to thinking about which functions to use in which situations. Let me know what you think!  
 
-## [6]["Will It Render?": A visual cheatsheet for React rendering behavior](https://www.reddit.com/r/reactjs/comments/ho4ylt/will_it_render_a_visual_cheatsheet_for_react/)
-- url: https://will-it-render.vercel.app/
+
+[https://jesseduffield.com/array-functions-and-the-rule-of-least-power/](https://jesseduffield.com/array-functions-and-the-rule-of-least-power/)
+## [6][Test Case Generator for competitive programmers](https://www.reddit.com/r/reactjs/comments/hp8nmq/test_case_generator_for_competitive_programmers/)
+- url: https://www.reddit.com/r/reactjs/comments/hp8nmq/test_case_generator_for_competitive_programmers/
 ---
+I recently got my hands on React and for my first project, I made a single page application, that generates test cases that can be used to perform stress testing on your competitive programming solutions. Many of the top coders have said that they use this technique as a last resort to identify any corner cases which they might have forgot to consider.
 
-## [7][Rewrote my person website in React (from PHP)](https://www.reddit.com/r/reactjs/comments/hom1im/rewrote_my_person_website_in_react_from_php/)
-- url: https://www.reddit.com/r/reactjs/comments/hom1im/rewrote_my_person_website_in_react_from_php/
+[Here is the link to the deployed site](https://test-case-gen.herokuapp.com/)
+
+https://reddit.com/link/hp8nmq/video/f5bg0cprt7a51/player
+
+All feedbacks are appreciated.
+## [7][React Typescript Framer Motion Routing](https://www.reddit.com/r/reactjs/comments/hp6ic5/react_typescript_framer_motion_routing/)
+- url: https://www.reddit.com/r/reactjs/comments/hp6ic5/react_typescript_framer_motion_routing/
 ---
-Howdy folks,  
+Hi all, I was trying to implement a boilerplate that also has framer-motion to handle page transitions.  
 
 
-I recently rewrote my PHP website in React and am super happy with the results. React is so nice to write and my code feels a lot more modular and flexible.  
+At the moment wrapping the Switch component with AnimatePresence stops the page to be rendered ( they render only by refreshing) 
 
+Here there's a sample [https://codesandbox.io/s/loving-fire-le5jm?file=/src/router/config.tsx](https://codesandbox.io/s/loving-fire-le5jm?file=/src/router/config.tsx)
 
-I thought I'd ask for a code review here so others could point out things I did wrong or possible improvements to make. Just let me know as I'm looking to improve my work.  
+&amp;#x200B;
 
+anybody could help me understanding where I'm messing up ?
 
-Thanks!  
+&amp;#x200B;
 
-
-Code base:  [https://github.com/mobeigi/mobeigi.com](https://github.com/mobeigi/mobeigi.com) 
-
-React Website:  [https://mobeigi.com/](https://mobeigi.com/)   
-Old PHP Website (for comparison):  [https://old.mobeigi.com/](https://old.mobeigi.com/)
-## [8][How to pass a react dropdown npm package into a knockout-react binder which utilize custom element tag?](https://www.reddit.com/r/reactjs/comments/hoolnk/how_to_pass_a_react_dropdown_npm_package_into_a/)
-- url: https://www.reddit.com/r/reactjs/comments/hoolnk/how_to_pass_a_react_dropdown_npm_package_into_a/
----
-Hi,
-
-Lets say I want to pass a npm package dropdown,
-
-How can I pass it into the component in "component" if I use a custom element tag such as 
-
-    &lt;container component="npm package" props={}&gt;
-
- Here is the actually binding handler.
-
-    ko.bindingHandlers.react = {  
-        ko.register("container");   
-        init() { return {controlsDescendantBindings: true}; },     
-        update(element, valueAccessor) { const {component, props} = valueAccessor();                        ReactDOM.render(React.createElement(component, props), element); } 
-    
-    };
-## [9][React router dom and React Material UI tabs...](https://www.reddit.com/r/reactjs/comments/hoohgw/react_router_dom_and_react_material_ui_tabs/)
-- url: https://www.reddit.com/r/reactjs/comments/hoohgw/react_router_dom_and_react_material_ui_tabs/
----
-I'm using React material UI with react router dom and I'm not sure if I solved this issue correctly.
-
-Let me share the code first.
-
-This part is used in AppBar  and it represents the main menu via Tabs:
-
-    &lt;Tabs
-    	value={value}
-    	onChange={handleChange}
-    	aria-label="Meni"
-    	variant="scrollable"
-    	scrollButtons="on"&gt;
-    	{routes.map(({ label, path }, i) =&gt; (
-    		&lt;Tab key={i} label={label} component={Link} to={path} /&gt;
-    	))}
-    &lt;/Tabs&gt;
-
-As evident, I have an array of routes, all having the label, path, component etc. properties and I'm foreaching them so that the meanu can be dynamically generated.
-
-When the user switches between tabs, the index of the tab is passed (handleChange) - that's how Material UI tabs work.
-
-    const handleChange = (_, newValue) =&gt; {
-    	setValue(newValue);
-    };
-
-Now as long as the user is clicking the tabs, it all works perfectly fine. 
-
-However, when I encounter a path where any kind of redirect is encountered, naturally, the tab is not selected. Here's an example:
-
-    export default function PrivateRoute({ children, ...rest }) {
-    	return (
-    		&lt;Route
-    			{...rest}
-    			render={({ location }) =&gt;
-    				fakeAuth.isAuthenticated ? (
-    					children
-    				) : (
-    					&lt;Redirect
-    						to={{
-    							pathname: '/',
-    							state: { from: location },
-    						}}
-    					/&gt;
-    				)
-    			}
-    		/&gt;
-    	);
-    }
-    
-
-So my current solution is as follows. Since the state is passed in the case of redirect, I can use that in the useEffect part of the main component. So, if the state is not undefined, we can assume that some kind of redirection took place. Additionally, I'm using a function that gets the index of the currently selected path, so that the appropriate tabs can be selected.
-
-Here's the code:
-
-    export default function Main() {
-    	const classes = useStyles();
-    	const location = useLocation();
-    	const routeIndex = useMemo(
-    		() =&gt; routes.findIndex(({ path }) =&gt; path === location.pathname),
-    		[location.pathname]
-    	);
-    	const [value, setValue] = useState(() =&gt; {
-    		return routeIndex &gt; -1 ? routeIndex : false;
-    	});
-    
-    	// ! useEffect for redirect-to cases.
-    	// TODO: any other way?
-    	useEffect(() =&gt; {
-    		if (location.state !== undefined) {
-    			if (routeIndex &gt; -1) setValue(routeIndex);
-    		}
-    	}, [location, routeIndex]);
-    
-    	const handleChange = (_, newValue) =&gt; {
-    		setValue(newValue);
-    	};
-    
-    	return (...
-
-Again, this works perfectly fine, but it feels hack-ish.
-
-So I was wondering if there's any other way to call setValue (in order to set the value of the selected tab) than to hack it in useEffect?
-
-Thanks for any kind of feedback!
-## [10][How can I pass the npm package as a component to the React and knockout binding? Student help](https://www.reddit.com/r/reactjs/comments/hoocxw/how_can_i_pass_the_npm_package_as_a_component_to/)
-- url: https://www.reddit.com/r/reactjs/comments/hoocxw/how_can_i_pass_the_npm_package_as_a_component_to/
----
-I'm trying to implement this tutorial, but I'm wondering how can I pass the actual component as from a react.js npm package? [http://intelligiblebabble.com/making-reactjs-and-knockoutjs-play-nice/](http://intelligiblebabble.com/making-reactjs-and-knockoutjs-play-nice/)
-## [11][Change the row colour when the button is clicked and vice versa](https://www.reddit.com/r/reactjs/comments/hon4nw/change_the_row_colour_when_the_button_is_clicked/)
-- url: https://www.reddit.com/r/reactjs/comments/hon4nw/change_the_row_colour_when_the_button_is_clicked/
----
-Hey guys, I am very new to reactjs. I want to change the the color of the row next to the button when it is pressed. In my code a have created a button using a heart image. The link to my code is below.
-Is there any way to change the row colour when that button is pressed ?
-Thank you in advance
- 
-https://codepen.io/Lelouch65428/pen/KKVeMzP?editors=0110
-## [12][I've created a React library for generating avatars for your apps and games](https://www.reddit.com/r/reactjs/comments/ho3k2k/ive_created_a_react_library_for_generating/)
-- url: https://bigheads.io/
+Cheers
+## [8][You Might Not Need useEffect | Dan Abramov on Twitter](https://www.reddit.com/r/reactjs/comments/hovje2/you_might_not_need_useeffect_dan_abramov_on/)
+- url: https://twitter.com/dan_abramov/status/1281669881667162112?s=20
 ---
 
+## [9][Creating a react website without making the APIs public](https://www.reddit.com/r/reactjs/comments/hp6jt3/creating_a_react_website_without_making_the_apis/)
+- url: https://www.reddit.com/r/reactjs/comments/hp6jt3/creating_a_react_website_without_making_the_apis/
+---
+I've been building a website called [FinancialSatellite](https://www.financialsatellite.com/) in ReactJS. I chose React because I use it as part of my day job too and the development experience feels so good. Usually I would just use fetch for the API and everything would be fine, but in this case we wanted to protect the APIs so that our hard-worked-for financial data wouldn't get stolen. I'm wondering whether the approach I've taken has some issues.
+
+**How we did it**
+
+Stack: ReactJS, NextJS, Django
+
+Servers: Frontend (public), Backend A (public APIs), Backend B (private APIs)
+
+Private/public refers to whether they are accessible from the internet
+
+By using `&lt;a&gt;` links versus NextJs's link, we can control whether the page is loaded on the client side or server side. We use `getInitialProps` on the pages loaded on the server, and `useEffect` on the client to call the API. The API code will then check `process.browser` to decide whether to fetch from Backend A or B. Fetch is only on the client, so we use fetch from the [isomorphic-unfetch](https://www.npmjs.com/package/isomorphic-unfetch) library.
+
+There is a local network connection between the Frontend and Backend B, which is how Backend B can stay private and still be accessible.
+
+**Good points with this approach**
+
+* Able to choose on a page-to-page basis between asynchronous and public vs synchronous and private
+
+**Issues with this approach**
+
+* Extra effort fixing bugs related to accidentally client-side fetching data from Backend B
+* NextJs sends the data returned from `getInitialProps` to the client so that you can keep re-rendering in the client. This means there's a chance users could use your API through your website
+
+Please see our website to see how it works, and I can't wait to hear your opinions/criticism of this approach. I have tried to look at other websites providing financial data services, but they don't seem to use React.
+## [10][React Developer Tools Chrome extension bug: pause in debugging.](https://www.reddit.com/r/reactjs/comments/hp52xw/react_developer_tools_chrome_extension_bug_pause/)
+- url: https://www.reddit.com/r/reactjs/comments/hp52xw/react_developer_tools_chrome_extension_bug_pause/
+---
+At first I thought I have activated something by mistake, maybe a keyboard shortcut while in chrome devtools, but the annoying behaviour of pausing in debugging is been caused by a bug in the latest release of the react Developer Tools. You may face this error as well.
+
+https://github.com/facebook/react/issues/19308#issuecomment-656682924
+
+The issue was addressed and solved, but the release is still waiting for approval on chrome extension store.
+## [11][Hosting S3 vs Netlify/Heroku](https://www.reddit.com/r/reactjs/comments/hp8g2h/hosting_s3_vs_netlifyheroku/)
+- url: https://www.reddit.com/r/reactjs/comments/hp8g2h/hosting_s3_vs_netlifyheroku/
+---
+Hey guys,
+I'm looking at hosting a create react app and seen that using s3 for hosting is an option. 
+I currently have a s3 bucket setup for hosting the applications images and seen that you can also host react apps there. 
+I was wondering if anyone had experience of doing this and what the drawbacks would be of using a bucket compared to other hosting platforms like netlify or heroku. 
+Thanks
+## [12][Help me with weird html rendering issue](https://www.reddit.com/r/reactjs/comments/hp843s/help_me_with_weird_html_rendering_issue/)
+- url: https://www.reddit.com/r/reactjs/comments/hp843s/help_me_with_weird_html_rendering_issue/
+---
+I'm trying to render the message with html tags inside it. The rendering is working fine if  the string is passed as prop, but when the same is passed from a variable the display text has encoded text.
+
+Any idea how do I get it working in both scenarios.? 
+
+Fiddle link -  [https://jsfiddle.net/d6s7be1f/2/](https://jsfiddle.net/d6s7be1f/2/)

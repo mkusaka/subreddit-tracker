@@ -19,11 +19,123 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][How to implement refresh tokens?](https://www.reddit.com/r/rails/comments/hohl6i/how_to_implement_refresh_tokens/)
+## [2][Draper decoration seems to disappear..? I've looked at this took long.](https://www.reddit.com/r/rails/comments/hp9xnz/draper_decoration_seems_to_disappear_ive_looked/)
+- url: https://www.reddit.com/r/rails/comments/hp9xnz/draper_decoration_seems_to_disappear_ive_looked/
+---
+Hey all -
+
+I'm new to using Draper, and I'm really confused by this behaviour below.
+
+I have a really simple setup:
+
+Post model, belongs\_to :user. Has a decorator, decorates\_association :user.
+
+User model, has\_many :posts, also has a decorator.
+
+In my PostController I declare `decorates_assigned :post`, and all I do in #edit is assign `@post`.
+
+This is where my confusion starts.
+
+From the `post` variable (the decorated Post object) I'm able to get a collection of peer post objects, and then I want to render them all through a partial. So I did it like this:
+
+    render partial: 'posts/post', collection: posts
+
+And the \_post.html.haml partial displays the post with some author details (using `post.user`), and importantly uses one of the User decorator methods: `UserDecorator#full_name` as `post.user.full_name`.
+
+When I do it this way I get an error: #full\_name not found on the User object. Other User model methods work fine, so I guess my User is no longer decorated?
+
+Out of curiosity, I switched to this in my top level view where the partial is called - I enumerate the collection rather than getting the rails view helper to do it:
+
+    - posts.each do |p|
+      = render partial: 'posts/post', post: p
+
+AND THAT WORKS! In the partial, the call to UserDecorator#full\_name works perfectly! Literally the only change I made was to introduce the use of Enum#each in the top level view and it works.
+
+Can someone please explain that to me? I'm totally confused.
+
+Thanks!
+## [3][Retrieve the most liked article](https://www.reddit.com/r/rails/comments/hp8npu/retrieve_the_most_liked_article/)
+- url: https://www.reddit.com/r/rails/comments/hp8npu/retrieve_the_most_liked_article/
+---
+So I have add a Like feature on my blog app and now I'm trying to retrieve the most liked article to display on my home page.
+
+I have been following this documentation on active record calculations [here](https://api.rubyonrails.org/classes/ActiveRecord/Calculations.html).
+
+I have a Like model which belongs\_to an article and belongs\_to an user.
+
+I don't know if this is the issue but I tried to retrieve the most liked article by doing Article.maximum(:likes) but it says the column "likes" does not exist. And yeah its perfectly fine since the article I followed up does not implemented that way.
+
+The thing is I think I should check the most liked article by using my Like model  and check who is the article\_id that most appears. I couldn't grasp yet how to do that. It always results in error whatever I try.
+
+My [repo](https://github.com/Gregory280/alpha-blog-5.1.4)
+
+By the way, should I put this on my view or on a "popular" method in likes controller?
+## [4][random GET request for "/.git/HEAD"](https://www.reddit.com/r/rails/comments/hp22vr/random_get_request_for_githead/)
+- url: https://www.reddit.com/r/rails/comments/hp22vr/random_get_request_for_githead/
+---
+ I just checked the console for my app and saw this:
+
+    2020-07-10T01:26:50.166768+00:00 app[web.1]: Started GET "/.git/HEAD" for 88.99.161.235 at 2020-07-10 01:26:50 +0000
+    2020-07-10T01:26:50.169376+00:00 app[web.1]: 
+    2020-07-10T01:26:50.169428+00:00 app[web.1]: ActionController::RoutingError (No route matches [GET] "/.git/HEAD"):
+
+The route doesn't exist on my site because I have zero need to create it, and I see no indication of anyone else with similar requests. Is this request for `/.git/HEAD` *shady business* or is it nothing to worry about?
+## [5][Running Rails App inside Vagrant](https://www.reddit.com/r/rails/comments/hovx43/running_rails_app_inside_vagrant/)
+- url: https://www.reddit.com/r/rails/comments/hovx43/running_rails_app_inside_vagrant/
+---
+I am trying to run a working app inside vagrant file, but when I hit localhost:3000 I get default rails error:
+
+'The page you were looking for doesn't exist.'
+
+I assume I need to set domain here:
+
+    class ApplicationController &lt; ActionController::Base
+    ...
+    
+    def set_current_website
+        @current_website = Website.where(domain: request.domain).first!
+    end
+    
+    ...
+
+how do I pass the domain name to the app if I am running it on localhost and not on an actual server with a domain?
+
+&amp;#x200B;
+
+EDIT:
+
+SOLUTION: I have created website with name 'localhost' and it worked. Thanks for all who helped ;)
+## [6][Creating form with calculated fields](https://www.reddit.com/r/rails/comments/hos1c1/creating_form_with_calculated_fields/)
+- url: https://www.reddit.com/r/rails/comments/hos1c1/creating_form_with_calculated_fields/
+---
+I am a bit of a noobie with rails so bear with me...
+
+I want to create a simple webpage with some fields. Let's say there are just two of them for the sake of learning. Field one is Cost1, and field two is Cost2. I want a total, Total.
+
+In the first instance I don't need to store the data in a database, although in future, I might want to change that.
+
+How would you do this in Ruby on Rails? Would you have to click a Submit button or can it instantly update via some schenanegans?
+## [7][Accept TCP connections from remote devices in a Rails 5 project](https://www.reddit.com/r/rails/comments/hoqc47/accept_tcp_connections_from_remote_devices_in_a/)
+- url: https://www.reddit.com/r/rails/comments/hoqc47/accept_tcp_connections_from_remote_devices_in_a/
+---
+Hello all,
+
+I have a Rails 5 API-only project that deals with IRL physical devices that control remote farming equipment. The remote devices offer 2 methods of communication. I was originally using one that talked over HTTP, but there is a bug with the devices where over longer periods of time, they "stall" if using only 1 method and begin to not send/receive payloads until you physically turn them on and off. Apparently this is either technically or economically unfixable by the device manufacturer, so they suggested that I move to a dual-communication strategy where I send outbound messages via HTTP and receive the inbound messages via TCP.
+
+I have never worked with TCP connections before beyond a sending a few notifications with ActionCable, and don't really know where to start.
+
+I currently receive the string message the device sends back in a webhook, save the message to the DB, and fire off a series of background processes using the stored message. I shouldn't have to change much there, the biggest change that needs to occur is how the message enters my system to begin with.
+
+I need to provide the devices with a TCP endpoint they can hit to send their payloads. How do I receive a TCP connection in a Rails 5 project? I'm assuming I can use all of the normal Rails functionality from a TCP connection (saving a model to the DB, firing off a background process, etc). I have never done such a thing before and there's not much guidance online I could find for implementing such a thing.
+## [8][After an action is executed trigger a download using rails](https://www.reddit.com/r/rails/comments/hov9a8/after_an_action_is_executed_trigger_a_download/)
+- url: https://www.reddit.com/r/rails/comments/hov9a8/after_an_action_is_executed_trigger_a_download/
+---
+I'm looking for a user to input some information (ex: email, phone number, etc) in a form and after they hit the submit button it triggers a pdf download in their browser. Are there any common architectures or gems I can use to accomplish this?
+## [9][How to implement refresh tokens?](https://www.reddit.com/r/rails/comments/hohl6i/how_to_implement_refresh_tokens/)
 - url: https://www.reddit.com/r/rails/comments/hohl6i/how_to_implement_refresh_tokens/
 ---
 Hey, I current use devise-jwt with an access token that expires in 2 weeks. I want to reduce the time it takes for access tokens to live, but I also don't want users logging in every 30 minutes. devise-jwt doesn't support refresh tokens out of the box. How do you folks do it?
-## [3][Vagrant alternatives? Coding environment failures](https://www.reddit.com/r/rails/comments/hoeo0a/vagrant_alternatives_coding_environment_failures/)
+## [10][Vagrant alternatives? Coding environment failures](https://www.reddit.com/r/rails/comments/hoeo0a/vagrant_alternatives_coding_environment_failures/)
 - url: https://www.reddit.com/r/rails/comments/hoeo0a/vagrant_alternatives_coding_environment_failures/
 ---
 Hi there. I'm just fed up with continuing trying to use Vagrant at this point. I've had many troubles in trying to build my own Vagrantbox for my Rails web dev environment. I had one going from what my bootcamp gave me, basically just a small file system with their vagrant box they provided and their own instructions for things. But sine a couple months ago I was trying to branch out and see what else is out there, and I think initially my issues started when I tried to use Docker. That's a whole other thing I won't get into, but will still probably try again sometime cause I was having issues there too. 
@@ -83,7 +195,7 @@ Here's my full first "vagrant up" output:
     
 
 Any help would be great.  And honestly, if I can't get this to work, I would love other suggestions on how to set up an environment without Vagrant. I know I should still use VMs with Linux for Rails development. I was perfectly comfortable during bootcamp just vagrant up, vagrant ssh, and boom. IDK what happened and it's so discouraging :(
-## [4][Efficiently searching for text from several .pdf](https://www.reddit.com/r/rails/comments/ho8g9m/efficiently_searching_for_text_from_several_pdf/)
+## [11][Efficiently searching for text from several .pdf](https://www.reddit.com/r/rails/comments/ho8g9m/efficiently_searching_for_text_from_several_pdf/)
 - url: https://www.reddit.com/r/rails/comments/ho8g9m/efficiently_searching_for_text_from_several_pdf/
 ---
 Hi,  
@@ -102,92 +214,3 @@ Beyond the challenge, if there's any working (not necessarily online) tool, I'd 
 &amp;#x200B;
 
 Thank you in advance ! :)
-## [5][What is the best way to do full CRUD views for a model within a form of another?](https://www.reddit.com/r/rails/comments/ho6nwa/what_is_the_best_way_to_do_full_crud_views_for_a/)
-- url: https://www.reddit.com/r/rails/comments/ho6nwa/what_is_the_best_way_to_do_full_crud_views_for_a/
----
-Say I have a form for products and within products I want to be able create, update, delete option\_types. I would like to do all those actions within the product form. I have the create set up so it works, but when I transition between index, edit, show for option\_types it moves me out of the product form to the respective view pages. 
-
-What is the best way to stay within the product form always? Iframe, or something else?
-## [6][Job uniqueness for ActiveJob](https://www.reddit.com/r/rails/comments/hnmbq8/job_uniqueness_for_activejob/)
-- url: https://www.reddit.com/r/rails/comments/hnmbq8/job_uniqueness_for_activejob/
----
-The [activejob-uniqueness](https://github.com/veeqo/activejob-uniqueness) is an attempt to implement something similar to sidekiq-unique-jobs, but working on more high-level abstraction, like ActiveJob callbacks, what makes it compatible with any ActiveJob adapter (including Sidekiq). It uses [redlock-rb](https://github.com/leandromoreira/redlock-rb) (implementation of [Redlock algorithm](https://redis.io/topics/distlock)) and therefore depends on Redis.
-## [7][Migrate WordPress site to Rails CMS](https://www.reddit.com/r/rails/comments/hnmder/migrate_wordpress_site_to_rails_cms/)
-- url: https://www.reddit.com/r/rails/comments/hnmder/migrate_wordpress_site_to_rails_cms/
----
-Hey everyone! 
-
-I just finished a Full Stack Development bootcamp (based on the Rails framework) and I loved everything about Rails !
-
-Before doing the bootcamp, I was working on my own website about dogs, built with WordPress. Now, I look at it and I think about all the stuff I could add with my Rails knowledge (instead of only being a pure content website, i could really add web app features, like a way to find the nearest vets, breeders, etc.)
-
-I could try to learn some PHP and do it on WordPress but I honestly really don't want to do that, and Rails and PHP work differently.
-
-I was then thinking about taking all the already existing content and migrate it in a Rails CMS. That could be doable but i dont really know which CMS suits my needs.
-
-Do you guys have any experience with this? Thanks a lot in advance !
-## [8][Ruby on rails and React stack](https://www.reddit.com/r/rails/comments/hnjauk/ruby_on_rails_and_react_stack/)
-- url: https://www.reddit.com/r/rails/comments/hnjauk/ruby_on_rails_and_react_stack/
----
-Just curious. While going for a Rails and React webapp which code architecture is recommended.
-
-1. React stack in the same Rails codebase OR
-
-2.  a separate Rails api code base and a separate React stack.  
-
-When it comes to community support and efficiency, which one is recommended?
-## [9][How to make friendly_id backfilling migration faster? You can skip all the callbacks.](https://www.reddit.com/r/rails/comments/hndvj5/how_to_make_friendly_id_backfilling_migration/)
-- url: https://www.reddit.com/r/rails/comments/hndvj5/how_to_make_friendly_id_backfilling_migration/
----
-I am currently working on integrating friendly_id gem into some of the models in Talenox. Basically, it makes our in app URLs look nicer with human and company names in front, instead of just incremental primary key IDs. Oh boy… `Employee.all.each(&amp;:save)` is fucking slow in production.
-
-There are several things that can cause update and insert to slow down a lot for an ActiveRecord model:
-
-* Validations - especially when it involves multiple models
-* Callbacks - especially when they cause a chain of callbacks in other models
-* `belongs_to :parent, touch: true` - technically a callback to bust russian doll caches, but adding a slug does not necessitate busting caches
-
-Guess what, we can skip all those. How? By backfilling with an empty model class.
-
-Assuming we have an Employee model with a relation employees, what you can do is: Create an ActiveRecord model class in that migration class with none of the callbacks EXCEPT friendly_id and slug_candidate method.
-
-    class BackfillEmployeesWithFriendlyId &lt; ActiveRecord::Migration[5.0]
-    
-      # Using a blank class allows us to easily skip all callbacks that can make
-      # mass migration slow.
-      class FriendlyIdEmployee &lt; ActiveRecord::Base
-        self.table_name = 'employees'
-        extend FriendlyId
-        friendly_id :slug_candidate, use: [:slugged, :finders]
-    
-        def slug_candidate
-          if first_name || last_name
-            "#{first_name} #{last_name}"[0, 20]
-          else
-            "employee"
-          end + " #{SecureRandom.hex[0, 8]}"
-        end
-      end
-    
-      def up
-        print "Updating friendly_id slug for employees"
-        FriendlyIdEmployee.where(slug: nil).each do |row|
-          row.save; print('.')
-        end
-        puts ''
-      end
-    end
-    
-However, I couldn’t get the friendly_id history plug in to work properly yet. friendly_id history is implemented using ActiveRecord polymorphic. When the backfilling migration above is run, it will end up creating FriendlyId::Slug records with sluggable type of `BackfillEmployeesWithFriendlyId::FriendlyIdEmployee` instead of just `Employee`. That also means you can’t do subclassing of ActiveRecord models with friendly_id and expect history to work. Luckily we don’t need it.
-
-[Source](https://anonoz.github.io/tech/2020/07/08/faster-friendly_id-mass-migration.html)
-## [10][Rails Frontend Development Resources](https://www.reddit.com/r/rails/comments/hnhez6/rails_frontend_development_resources/)
-- url: https://www.reddit.com/r/rails/comments/hnhez6/rails_frontend_development_resources/
----
-Hi everyone, 
-
-I've been doing Ruby and RoR for a couple of years now, but have always worked on API only projects with little or no frontend at all. Im looking for resources to learn the concepts of structuring a frontend rails app, guides on how to properly use layouts, view helpers etc. If anyone has any tutorials, books or videos that would be helpful I would really appreciate if you could share them. Thanks
-## [11][Best architecture for preferred sort for e-commerce products?](https://www.reddit.com/r/rails/comments/hn78ue/best_architecture_for_preferred_sort_for/)
-- url: https://www.reddit.com/r/rails/comments/hn78ue/best_architecture_for_preferred_sort_for/
----
-I have an ecommerce app on rails and was wondering what's the best architecture for ordering products on a page. I'm aware of how to use .order(:table_attribute), but was wondering if there is a cleaner/more dynamic way to bubble offerings to the top that you want to highlight. Any recommended practices for this?

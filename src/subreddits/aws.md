@@ -21,68 +21,124 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][AWS and Docker collaborate to simplify the developer experience](https://www.reddit.com/r/aws/comments/hoifac/aws_and_docker_collaborate_to_simplify_the/)
-- url: https://aws.amazon.com/blogs/containers/aws-docker-collaborate-simplify-developer-experience/
+## [2][Cognito User Pool: storing user ids &amp; tenant ids](https://www.reddit.com/r/aws/comments/hp73lc/cognito_user_pool_storing_user_ids_tenant_ids/)
+- url: https://www.reddit.com/r/aws/comments/hp73lc/cognito_user_pool_storing_user_ids_tenant_ids/
 ---
+I'm building a **multi-tenant** web application in AWS, with Amazon Cognito as user directory and DynamoDB as data store.
 
-## [3][Introducing AWS Copilot](https://www.reddit.com/r/aws/comments/ho6vyh/introducing_aws_copilot/)
-- url: https://aws.amazon.com/blogs/containers/introducing-aws-copilot/
+Ps: “Tenant” here means a paying customer account. Each tenant can contain one or multiple users.
+
+**My architecture choices**:
+
+1. I would like to use Cognito (User Pool) as an autonomous source and “single source of truth” for my app's users.
+2. I need to create my own custom **userIds** and **tenantIds** for each user (they will be referred to in DynamoDB items also), and store both of these in Cognito through **User Pool attributes**.  
+(These attributes are automatically passed to the **id tokens** issued by Cognito upon user logins.)
+3. I need to be able to retrieve a list of users (from my User Pool) that belong to any specific tenant within the system.
+
+I could store the **userId** and **tenantId** as User Pool “**custom attributes**”. However, these custom attributes are not searchable by Cognito's [ListUsers API](https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUsers.html). This API can however search by the Cognito **standard user attributes** (username, email, name, given\_name, family\_name, sub, etc.).
+
+To address this limitation of the ListUsers API, the idea I had was to store the **userId** and **tenantId** in one of these standard attributes, like ***given\_name*** and ***family\_name***, which I won't need to use, since I already have a "***name***" attribute that I can use to store the user's name.
+
+**My question is****:**
+
+**Is there any problem with this strategy? Anything I'm not seeing that could create problems?**
+
+Or maybe there is a simpler way of dealing with this problem?
+## [3][HTTPS on EC2 instance running python project](https://www.reddit.com/r/aws/comments/hp49to/https_on_ec2_instance_running_python_project/)
+- url: https://www.reddit.com/r/aws/comments/hp49to/https_on_ec2_instance_running_python_project/
 ---
+I'm having considerable difficulty getting HTTPS to resolve on my EC2 instance, which runs a python project. The request just times out (ERR\_CONNECTION\_TIMED\_OUT). HTTP runs ok, however. The steps I've taken are as follows.
 
-## [4][Did CloudWatch just fall over for anyone else?](https://www.reddit.com/r/aws/comments/hon8t1/did_cloudwatch_just_fall_over_for_anyone_else/)
-- url: https://www.reddit.com/r/aws/comments/hon8t1/did_cloudwatch_just_fall_over_for_anyone_else/
----
-A large chunk of my CloudWatch alarms in eu-west-2 have lost all their history and aren't collecting data.  Things seem to be coming back one by one, by dashboards seem dead too.  First time I've seen it fall over like this.
-## [5][Top 5 Things to Learn First with AWS and How to Get Started with Amazon Web Services](https://www.reddit.com/r/aws/comments/hoowwm/top_5_things_to_learn_first_with_aws_and_how_to/)
-- url: https://www.colbyfayock.com/2020/07/top-5-things-to-learn-first-with-aws-and-how-to-get-started-with-amazon-web-services
----
+1. I've created a certificate in ACM for the following domains: \*.mywebsite.com and mywebsite.com
 
-## [6][Bootstrapping Kubernetes clusters on AWS with Terraform](https://www.reddit.com/r/aws/comments/hom921/bootstrapping_kubernetes_clusters_on_aws_with/)
-- url: https://www.reddit.com/r/aws/comments/hom921/bootstrapping_kubernetes_clusters_on_aws_with/
----
-[This article](https://itnext.io/bootstrapping-kubernetes-clusters-on-aws-with-terraform-b7c0371aaea0?source=friends_link&amp;sk=ba05826d468bc83bd04493aeeffb4a5e) presents a Terraform module for creating bare-bones Kubernetes clusters with kubeadm on AWS.
-## [7][Enable ping in EC2 / Elastic IPs](https://www.reddit.com/r/aws/comments/hootu8/enable_ping_in_ec2_elastic_ips/)
-- url: https://www.reddit.com/r/aws/comments/hootu8/enable_ping_in_ec2_elastic_ips/
----
-Hello Folks,
-
-I worked with AWS for the first time. I created a EC2 instance for wowza streaming engine.
-
-Is there any way to enable ping in an EC2 in order to test connectivity ??
-
-I was able to test TCP connection from my network over the port that I need, but I would also like to have ping feature enable.
-
-No idea if that is possible in an AWS EC2, is it?
-
-Also as soon as I created the EC2 instance it was given a public IP by default, I was digging and I realized that if I stop the EC2 instance, when I start it again, it will get a different IP. So I found out about elastic IPs. Did I understand wrong or Elastic IPs are free as long as they are used in a EC2 instance??? Is that correct ???, I am able to own a public  static IP for free as along as I actually use it??
-
-Are elastic IPs  kinda static public IPs for AWS context??
-
-Thank you all !!
-## [8][Input lag on my EC2 instance (SSH)](https://www.reddit.com/r/aws/comments/hoohyq/input_lag_on_my_ec2_instance_ssh/)
-- url: https://www.reddit.com/r/aws/comments/hoohyq/input_lag_on_my_ec2_instance_ssh/
----
-So i have been having some issues with my EC2 instance:
-
-There is a huge time lag while i am typing on PuTTY. I tried running it on Termius on a separate computer but there's still quite a lot of lag. I googled it but couldn't find much. Any suggestion or fixes for this?
-## [9][EBS Direct APIs to Create Snapshots From Any Block Storage](https://www.reddit.com/r/aws/comments/hobz0w/ebs_direct_apis_to_create_snapshots_from_any/)
-- url: https://aws.amazon.com/blogs/aws/new-create-snapshots-from-any-block-storage/
----
-
-## [10][Aurora read replica failure modes](https://www.reddit.com/r/aws/comments/hon2pz/aurora_read_replica_failure_modes/)
-- url: https://www.reddit.com/r/aws/comments/hon2pz/aurora_read_replica_failure_modes/
----
-Hey, wondering if someone can answer the following (I have been looking through AWS docs for hours now and can't find the answer there)
-
-If you have a read replica and it dies for some reason, does AWS automagically spin up a new replica?  
-
-
-We are specifically thinking of using postgres and the global DB option.
+[https://i.stack.imgur.com/QCTbF.png](https://i.stack.imgur.com/QCTbF.png)
 
 &amp;#x200B;
 
-Cheers!
-## [11][AWS User Data is Being Stored &amp; Used by Amazon Outside Users' Chosen Regions](https://www.reddit.com/r/aws/comments/ho2dts/aws_user_data_is_being_stored_used_by_amazon/)
-- url: https://www.cbronline.com/news/aws-user-data
+2. I've setup Route 53 as follows:
+
+[https://i.stack.imgur.com/qsdAm.png](https://i.stack.imgur.com/qsdAm.png)
+
+Routing policy on the A records is Simple.
+
+&amp;#x200B;
+
+3. I've gone into the Listener for my Load Balancer for my EC2 instance and **CHANGED** the port from 80 (HTTP) TO 443 (HTTPS) and added my certificate.
+
+Note: the "Forward To" is a Target Group running on port 80 (HTTP). I've read that this is correct.
+
+[https://i.stack.imgur.com/8yYxQ.png](https://i.stack.imgur.com/8yYxQ.png)
+
+&amp;#x200B;
+
+4. I've then gone into the Inbound Rules for my Security group, and added HTTPS
+
+[https://i.stack.imgur.com/TO8Wz.png](https://i.stack.imgur.com/TO8Wz.png)
+
+&amp;#x200B;
+
+At this point, I've got the following questions:
+
+a) Given that this is a python/Django project, is enabling HTTPS for EC2 possible to do this through the AWS website or do I need to add config files and deploy to my instance?
+
+b) Do I need to create a target group running on HTTPS?
+
+c) Do I need listeners on my load balance for port 80 and port 443 or just port 443?
+
+d) On my security group, do I need port 80 to go to 0.0.0.0/0 and ::0/?
+
+e) Should the A record by the DNS name of the load balancer or should it be the CNAME of my environment?
+
+Thanks for your help!
+## [4][Is it possible to authenticate users with cognito ~without~ the web UI?](https://www.reddit.com/r/aws/comments/hp7rkm/is_it_possible_to_authenticate_users_with_cognito/)
+- url: https://www.reddit.com/r/aws/comments/hp7rkm/is_it_possible_to_authenticate_users_with_cognito/
+---
+I'm familiar with using a user pool client id+secret to obtain a scoped access token but I'm having a hard time figuring out if it's possible to log in as a user in a similar manner—eg, using cURL or the AWS CLI.
+
+I have gotten as far as using the `InitiateAuth` method with the `USER_PASSWORD_AUTH` flow to get a token but its only scope is `aws.cognito.signin.user.admin`.
+## [5][pagination for workspaces, boto3, python, sdk](https://www.reddit.com/r/aws/comments/hp9qqj/pagination_for_workspaces_boto3_python_sdk/)
+- url: https://www.reddit.com/r/aws/comments/hp9qqj/pagination_for_workspaces_boto3_python_sdk/
+---
+not a programmer by trade but trying to put together script to go through Workspaces and change the idle time shutdown settings on the autostop unit. Got the script to list the units that are set too high... didn't realize there was pagination and now am kinda confused. Was going to loop through NextToken but first set doesn't have a token. And yes, love stackoverflow, but can't find anything there to help (or is clear to me). Thx!
+## [6][I cannot login into AWS using Vivaldi web browser, anyone having the same issue?](https://www.reddit.com/r/aws/comments/hp76ht/i_cannot_login_into_aws_using_vivaldi_web_browser/)
+- url: https://www.reddit.com/r/aws/comments/hp76ht/i_cannot_login_into_aws_using_vivaldi_web_browser/
+---
+I've tried both the root account and the IAM user I've created for the console. Login request just returns me 400 Bad Request and says to clean cookies, however, it doesn't help at all.
+
+Tried Chrome Stable and Firefox - works, so it must be something wrong with Vivaldi or how I set it up.
+
+Anyone having the same issue?
+## [7][AWS and Docker collaborate to simplify the developer experience](https://www.reddit.com/r/aws/comments/hoifac/aws_and_docker_collaborate_to_simplify_the/)
+- url: https://aws.amazon.com/blogs/containers/aws-docker-collaborate-simplify-developer-experience/
 ---
 
+## [8][Very long start times for RDS export to S3 tasks](https://www.reddit.com/r/aws/comments/hozoxu/very_long_start_times_for_rds_export_to_s3_tasks/)
+- url: https://www.reddit.com/r/aws/comments/hozoxu/very_long_start_times_for_rds_export_to_s3_tasks/
+---
+I started playing around with RDS export to S3 feature. So far it seems like every task takes about 30 minutes just to start-up. Even before it accesses the data it just sits there on `STARTING` for 30 minutes. The export itself then takes about 10 minutes which makes sense. But having to wait 40 minutes total just to get an error that I got the table name wrong is disappointing.
+
+Has anyone else had similar experience? Or are the servers doing the export just overloaded today?
+## [9][Videos from fwd:cloudsec 2020 are now online](https://www.reddit.com/r/aws/comments/hoqw4u/videos_from_fwdcloudsec_2020_are_now_online/)
+- url: https://www.reddit.com/r/aws/comments/hoqw4u/videos_from_fwdcloudsec_2020_are_now_online/
+---
+fwd:cloudsec is a non-profit community organized cloud security conference that was planned for the day before re:Inforce, but switched to being a virtual conference when re:Inforce cancelled.
+
+Playlist: [https://www.youtube.com/playlist?list=PLCPCP1pNWD7OBQvDY7vLCFhxWxok9DITl](https://www.youtube.com/playlist?list=PLCPCP1pNWD7OBQvDY7vLCFhxWxok9DITl)
+
+Sign up on the mailing list for announcements for next year's conference: [https://fwdcloudsec.org/](https://fwdcloudsec.org/)
+## [10][Can I set up my lambda to not trigger more than once every X minutes?](https://www.reddit.com/r/aws/comments/hp2z71/can_i_set_up_my_lambda_to_not_trigger_more_than/)
+- url: https://www.reddit.com/r/aws/comments/hp2z71/can_i_set_up_my_lambda_to_not_trigger_more_than/
+---
+I have a Lambda that I'm invoking, hopefully, once every X minutes. But I'd like to be safe and make sure it's not being invoked any more often than that. Is this possible?
+## [11][Creating a comment section tutorial using AWS Lambda, DynamoDB, SES](https://www.reddit.com/r/aws/comments/hp353d/creating_a_comment_section_tutorial_using_aws/)
+- url: https://www.reddit.com/r/aws/comments/hp353d/creating_a_comment_section_tutorial_using_aws/
+---
+Hey guys!
+
+I created a tutorial on how to build a simple comment section as part of getting familiar with some of  AWS' services.
+
+[https://github.com/mannyray/AWScommentSection](https://github.com/mannyray/AWScommentSection)
+
+&amp;#x200B;
+
+What do you guys recommend I explore next in AWS?

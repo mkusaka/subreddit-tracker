@@ -19,42 +19,248 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Draper decoration seems to disappear..? I've looked at this took long.](https://www.reddit.com/r/rails/comments/hp9xnz/draper_decoration_seems_to_disappear_ive_looked/)
-- url: https://www.reddit.com/r/rails/comments/hp9xnz/draper_decoration_seems_to_disappear_ive_looked/
+## [2][Namespaced Active Record models in models/ar folder? Does anyone here do this?](https://www.reddit.com/r/rails/comments/hpomzh/namespaced_active_record_models_in_modelsar/)
+- url: https://www.reddit.com/r/rails/comments/hpomzh/namespaced_active_record_models_in_modelsar/
 ---
-Hey all -
+I just listened to the excellent [Rails with Jason podcast with Sandi Metz](https://www.codewithjason.com/sandi-metz-author-poodr-special-guest-tj-stankus-rails-jason-podcast/). 
 
-I'm new to using Draper, and I'm really confused by this behaviour below.
+Sandi mentioned that when she starts a new Rails app, she always moves AR models to a "models/ar" subfolder and namespaces them.
 
-I have a really simple setup:
+The idea being that AR models are no longer the central concept in the app, and become dedicated to specifically database access. Leaving space for PORO business objects taking the center stage, which use the AR models when necessary. One of the outcomes being that AR are no longer the default place for functionality and thus do not grow into god objects.
 
-Post model, belongs\_to :user. Has a decorator, decorates\_association :user.
+This makes a lot of sense and I tried it in a test app, but am noticing a few things:
 
-User model, has\_many :posts, also has a decorator.
+1. To properly namespace models in "models/ar", I need to name them like Ar::Post and not AR::Post. A small thing but it bugs me. What's a way to fix this?
+2. Some Rails conventions no longer work, like `link_to 'Show', post` must become `link_to 'Show', post_path(post)` because the rails magic gets confused by the absence of the default AR name.
 
-In my PostController I declare `decorates_assigned :post`, and all I do in #edit is assign `@post`.
+Luckily, associations seem to work OK, so `user.posts` still works out of the box.
 
-This is where my confusion starts.
+**Does anyone here use this kind of conventions and what kinds of other adjustments did you need to make?**
 
-From the `post` variable (the decorated Post object) I'm able to get a collection of peer post objects, and then I want to render them all through a partial. So I did it like this:
 
-    render partial: 'posts/post', collection: posts
+Edit: The answer to 1. is adding an inflector rule in config/inflections.rb
 
-And the \_post.html.haml partial displays the post with some author details (using `post.user`), and importantly uses one of the User decorator methods: `UserDecorator#full_name` as `post.user.full_name`.
 
-When I do it this way I get an error: #full\_name not found on the User object. Other User model methods work fine, so I guess my User is no longer decorated?
+    ActiveSupport::Inflector.inflections(:en) do |inflect|
+      inflect.acronym 'AR'
+    end
+## [3][Rails creating development database with different name?](https://www.reddit.com/r/rails/comments/hpsv0n/rails_creating_development_database_with/)
+- url: https://www.reddit.com/r/rails/comments/hpsv0n/rails_creating_development_database_with/
+---
+My database.yml file says this:
 
-Out of curiosity, I switched to this in my top level view where the partial is called - I enumerate the collection rather than getting the rails view helper to do it:
+    development:
+      &lt;&lt;: *default
+      database: project_name_development
+    
+    test:
+      &lt;&lt;: *default
+      database: project_name_test
 
-    - posts.each do |p|
-      = render partial: 'posts/post', post: p
+However, when I run bundle exec rails db:create, the databases created are:
 
-AND THAT WORKS! In the partial, the call to UserDecorator#full\_name works perfectly! Literally the only change I made was to introduce the use of Enum#each in the top level view and it works.
+    Created database '123'
+    Created database 'project_name_test'
 
-Can someone please explain that to me? I'm totally confused.
+I'm kind of new to Rails so I don't quite know what is happening here. Isn't the '123' database supposed to be named 'project\_name\_development'? I made no changes after running 'rails new' command, so why is it different? Does it matter if it is different or can I just move on?
+## [4][Help with running RSpec with spring in rails 4.2.3 application](https://www.reddit.com/r/rails/comments/hprklk/help_with_running_rspec_with_spring_in_rails_423/)
+- url: https://www.reddit.com/r/rails/comments/hprklk/help_with_running_rspec_with_spring_in_rails_423/
+---
+I wanted to run the RSpec via the spring preloader so I added this and this after bundle install i can see I'm using these two gems
 
-Thanks!
-## [3][Retrieve the most liked article](https://www.reddit.com/r/rails/comments/hp8npu/retrieve_the_most_liked_article/)
+    Using spring 2.0.2
+    Using spring-commands-rspec 1.0.4
+
+I then generate the binstub 
+
+    bundle exec spring binstub --all
+
+and when I do \`bin/rspec path\_to\_spec.rb\` I get this error  
+ 
+
+    activesupport-4.2.11.3/lib/active_support/concern.rb:126:in `included': Cannot define multiple 'included' blocks for a Concern (ActiveSupport::Concern::MultipleIncludedBlocks)
+
+When I try it without the bin/rspec and do just rspec it works fine. Can someone help me with this?
+## [5][How to use find_by_username with case_sensitive: false?](https://www.reddit.com/r/rails/comments/hprbfc/how_to_use_find_by_username_with_case_sensitive/)
+- url: https://www.reddit.com/r/rails/comments/hprbfc/how_to_use_find_by_username_with_case_sensitive/
+---
+How to use `find_by_username` with `case_sensitive: false`?
+
+I explain my issue. I have this script to take the username tagged (after @) and to check if it is a "existing user" or not.
+
+        text.gsub! (/@(\S+)/) do |match|
+          user = User.find_by_username($1)
+            if
+            else
+            end
+          end
+
+In this way if the text is `@Mike` and the user signed is `Mike`, it is ok.
+
+BUT if the text is `@mike` and the user signed is `Mike`, it doesn't work.
+
+**Hot to add a case\_sensitive false in find\_by\_username?**
+## [6][[Help] remote: true not sending an AJAX request even though data-remote-"true" is there](https://www.reddit.com/r/rails/comments/hpm2b6/help_remote_true_not_sending_an_ajax_request_even/)
+- url: https://www.reddit.com/r/rails/comments/hpm2b6/help_remote_true_not_sending_an_ajax_request_even/
+---
+Hey everyone, I've been having some trouble recently with a course I've been following. 
+
+I'm trying to render a partial through a respond_to. I have been following the course strictly, and I'm very confused about why my project is now showing an error while the instructor's project up to this point is running fine.
+
+*app/controllers/stocks_controller.rb*
+
+    &lt;h1&gt;My Portfolio&lt;/h1&gt;
+    &lt;div class='search-area'&gt;
+      &lt;h3&gt;Search Stocks&lt;/h3&gt;
+      &lt;%= form_tag search_stock_path, remote: true, method: :get do %&gt;
+        &lt;div class="form-group row"&gt;
+          &lt;div class="col-sm-9 no-right-padding"&gt;
+            &lt;%= text_field_tag :stock, params[:stock], placeholder: "Stock ticker symbol", autofocus: true, class: "form-control form-control-lg" %&gt;
+          &lt;/div&gt;
+          &lt;div class="col-sm-3 no-left-padding"&gt;
+            &lt;%= button_tag type: :submit, class: "btn btn-success" do %&gt;
+              &lt;%= fa_icon 'search 2x' %&gt;
+            &lt;% end %&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;% end %&gt;
+    &lt;/div&gt;
+ 
+    &lt;div id="results"&gt;
+     
+    &lt;/div&gt;
+
+It seems like the **remote: true** part of this is not working at all. When I follow the instructor's commands before the section this question pertains to, no ajax is called, and the page reloads again.
+
+What I mean is that the page is loading the search_stock endpoint from the /my_portfolio endpoint (where I start the search from) instead of staying on /my_portfolio and waiting for a js response. The form tag does correctly have the data-remote="true" show up in the inspector though.
+
+[Here is an image of what I'm describing](https://i.stack.imgur.com/olQDO.png)
+
+The goal is to get the controller to respond to js and return a partial js.erb file
+
+*app/controllers/stocks_controller.rb*
+
+    class StocksController &lt;ApplicationController
+        
+        def search
+            if params[:stock].present?            
+                 @stock = Stock.new_lookup(params[:stock])
+                 if @stock            
+                    respond_to do |format|
+                        format.js { render partial: 'users/result' }
+                    end         
+                 else
+                    flash[:alert] = "Please enter a valid symbol to search"
+                    redirect_to my_portfolio_path
+                 end             
+            else 
+                flash[:alert] = "Please enter a symbol to search"
+               redirect_to my_portfolio_path
+            end
+        end
+    
+    end
+
+There is both a _result.html.erb and _result.js.erb in my app/views/users folder. _result.js.erb simply contains an alert to make sure the ajax call is working. I already have rails-ujs in my application.js file, and I have not modified anything related to rails-ujs myself.
+
+    // This file is automatically compiled by Webpack, along with any other files
+    // present in this directory. You're encouraged to place your actual application logic in
+    // a relevant structure within app/javascript and only use these pack files to reference
+    // that code so it'll be compiled.
+    
+    require("@rails/ujs").start()
+    require("turbolinks").start()
+    require("@rails/activestorage").start()
+    require("channels")
+    
+    // Uncomment to copy all static images under ../images to the output folder and reference
+    // them with the image_pack_tag helper in views (e.g &lt;%= image_pack_tag 'rails.png' %&gt;)
+    // or the `imagePath` JavaScript helper below.
+    //
+    // const images = require.context('../images', true)
+    // const imagePath = (name) =&gt; images(name, true)
+    
+    import "bootstrap"
+
+
+I am using Rails 6.0.3.2, so I don't think there should be an issue I hope.
+## [7][What route should I use?](https://www.reddit.com/r/rails/comments/hpj5we/what_route_should_i_use/)
+- url: https://www.reddit.com/r/rails/comments/hpj5we/what_route_should_i_use/
+---
+I have a Category model and a WordlistEntry model. They have a has_and_belongs_to_many relationship between them.
+
+I'm trying to decide what request to make from the frontend when the user adds some Categories to a WordlistEntry.
+
+The Categories may or may not already exist in the database.
+
+I'm thinking it should be PATCH /wordlist_entries/:id/categories
+
+But I'm really not sure on this. What do you think?
+## [8][Can't get test to pass without 'reload' in after_create instance method.](https://www.reddit.com/r/rails/comments/hpe3a6/cant_get_test_to_pass_without_reload_in_after/)
+- url: https://www.reddit.com/r/rails/comments/hpe3a6/cant_get_test_to_pass_without_reload_in_after/
+---
+Hey I'm having an issue with a method, which, when I test it, requires a `reload` in the model in order to pass my RSpec test.  
+
+
+Here is my test, which is essentially checks to see if the venue correctly updates it's own boolean value (in this case "serves\_food") if the truthy/falsy declaration for the two most recent reviews for that venue are the same.  
+
+
+    describe 'truthy/falsy venue values if the last two review values are the same' do
+      let!(:rev1) { create(:review, user: u, venue: ven, serves_food: true) }
+      let!(:rev2) { create(:review, user: u, venue: ven, serves_food: false) }
+      let!(:rev3) { create(:review, user: u, venue: ven, serves_food: false) }
+      it 'should update' do
+        expect(ven.serves_food).to be false
+      end
+    end
+
+  
+Here is the method which handles that logic (which is on the venue model, but is triggered in an "after\_update" action on the review model):  
+
+
+    def truth_checked_val(attribute, value)
+      if self.reviews.count == 0
+        nil
+      # executes if there is only one review, or the last review value matches current
+      elsif self.reviews.count == 1 || self.reviews[-2].send(attribute) == value
+        value
+      else
+        # returns the previous value if it does not match the current
+        self.reviews[-2].send(attribute)
+      end
+    end
+
+  
+Now, I know why the test fails. It is because, for some reason, when the third `Review` factory is created, when I put a `byebug` at the beginning of the method, even though when I test it with `self.review``s.count` I get the correct number returned (3), if I try to return those reviews with `self.reviews`, only 2 of them (the first two) are returned.  
+
+
+So the only thing I have found which will fix this is to put a `.reload` on the first line of the method like so:
+
+    def truth_checked_val(attribute, value)
+      self.reviews.reload
+      ...
+    end
+
+This is a solution and the test will pass, but it seems very hacky. However I have as yet found no other way to get it to work.  
+
+
+TLDR; My test is failing because my conditional in my instance method is returning FALSE for the line `self.reviews[-2].send(attribute) == value` because it is returning the third to last review for `self.reviews[-2]` rather than the second to last. Only a `.reload` in the method is working, which is hacky but I can't find another way to resolve it.  
+
+
+Help appreciated.
+## [9][Building a blockchain app without using Etheream](https://www.reddit.com/r/rails/comments/hpfw4c/building_a_blockchain_app_without_using_etheream/)
+- url: https://www.reddit.com/r/rails/comments/hpfw4c/building_a_blockchain_app_without_using_etheream/
+---
+I am a Rails developer and I have been reading a lot about Blockchain a lot since last year.
+
+I saw a video of how a transaction works in a chain manner in Blockchain, based on a sha256 byte hash string.  Let us say I wanted to build a "Funding tracker" app. Do I have to learn Solidity to do that? Is it possible to build a blockchain concept app without using Solidity and instead using other backend languages such as ruby or python?
+## [10][best practices on creating users with Devise?](https://www.reddit.com/r/rails/comments/hpbhjd/best_practices_on_creating_users_with_devise/)
+- url: https://www.reddit.com/r/rails/comments/hpbhjd/best_practices_on_creating_users_with_devise/
+---
+\[I'm a newb\]. going through Hartl's tutorial, i decided to try to use Devise Gem instead of manually creating users/authentication.
+
+Is the best practice to use Devise and then manually generate a migration to add a column to users and then update code in the application controller?
+## [11][Retrieve the most liked article](https://www.reddit.com/r/rails/comments/hp8npu/retrieve_the_most_liked_article/)
 - url: https://www.reddit.com/r/rails/comments/hp8npu/retrieve_the_most_liked_article/
 ---
 So I have add a Like feature on my blog app and now I'm trying to retrieve the most liked article to display on my home page.
@@ -70,147 +276,3 @@ The thing is I think I should check the most liked article by using my Like mode
 My [repo](https://github.com/Gregory280/alpha-blog-5.1.4)
 
 By the way, should I put this on my view or on a "popular" method in likes controller?
-## [4][random GET request for "/.git/HEAD"](https://www.reddit.com/r/rails/comments/hp22vr/random_get_request_for_githead/)
-- url: https://www.reddit.com/r/rails/comments/hp22vr/random_get_request_for_githead/
----
- I just checked the console for my app and saw this:
-
-    2020-07-10T01:26:50.166768+00:00 app[web.1]: Started GET "/.git/HEAD" for 88.99.161.235 at 2020-07-10 01:26:50 +0000
-    2020-07-10T01:26:50.169376+00:00 app[web.1]: 
-    2020-07-10T01:26:50.169428+00:00 app[web.1]: ActionController::RoutingError (No route matches [GET] "/.git/HEAD"):
-
-The route doesn't exist on my site because I have zero need to create it, and I see no indication of anyone else with similar requests. Is this request for `/.git/HEAD` *shady business* or is it nothing to worry about?
-## [5][Running Rails App inside Vagrant](https://www.reddit.com/r/rails/comments/hovx43/running_rails_app_inside_vagrant/)
-- url: https://www.reddit.com/r/rails/comments/hovx43/running_rails_app_inside_vagrant/
----
-I am trying to run a working app inside vagrant file, but when I hit localhost:3000 I get default rails error:
-
-'The page you were looking for doesn't exist.'
-
-I assume I need to set domain here:
-
-    class ApplicationController &lt; ActionController::Base
-    ...
-    
-    def set_current_website
-        @current_website = Website.where(domain: request.domain).first!
-    end
-    
-    ...
-
-how do I pass the domain name to the app if I am running it on localhost and not on an actual server with a domain?
-
-&amp;#x200B;
-
-EDIT:
-
-SOLUTION: I have created website with name 'localhost' and it worked. Thanks for all who helped ;)
-## [6][Creating form with calculated fields](https://www.reddit.com/r/rails/comments/hos1c1/creating_form_with_calculated_fields/)
-- url: https://www.reddit.com/r/rails/comments/hos1c1/creating_form_with_calculated_fields/
----
-I am a bit of a noobie with rails so bear with me...
-
-I want to create a simple webpage with some fields. Let's say there are just two of them for the sake of learning. Field one is Cost1, and field two is Cost2. I want a total, Total.
-
-In the first instance I don't need to store the data in a database, although in future, I might want to change that.
-
-How would you do this in Ruby on Rails? Would you have to click a Submit button or can it instantly update via some schenanegans?
-## [7][Accept TCP connections from remote devices in a Rails 5 project](https://www.reddit.com/r/rails/comments/hoqc47/accept_tcp_connections_from_remote_devices_in_a/)
-- url: https://www.reddit.com/r/rails/comments/hoqc47/accept_tcp_connections_from_remote_devices_in_a/
----
-Hello all,
-
-I have a Rails 5 API-only project that deals with IRL physical devices that control remote farming equipment. The remote devices offer 2 methods of communication. I was originally using one that talked over HTTP, but there is a bug with the devices where over longer periods of time, they "stall" if using only 1 method and begin to not send/receive payloads until you physically turn them on and off. Apparently this is either technically or economically unfixable by the device manufacturer, so they suggested that I move to a dual-communication strategy where I send outbound messages via HTTP and receive the inbound messages via TCP.
-
-I have never worked with TCP connections before beyond a sending a few notifications with ActionCable, and don't really know where to start.
-
-I currently receive the string message the device sends back in a webhook, save the message to the DB, and fire off a series of background processes using the stored message. I shouldn't have to change much there, the biggest change that needs to occur is how the message enters my system to begin with.
-
-I need to provide the devices with a TCP endpoint they can hit to send their payloads. How do I receive a TCP connection in a Rails 5 project? I'm assuming I can use all of the normal Rails functionality from a TCP connection (saving a model to the DB, firing off a background process, etc). I have never done such a thing before and there's not much guidance online I could find for implementing such a thing.
-## [8][After an action is executed trigger a download using rails](https://www.reddit.com/r/rails/comments/hov9a8/after_an_action_is_executed_trigger_a_download/)
-- url: https://www.reddit.com/r/rails/comments/hov9a8/after_an_action_is_executed_trigger_a_download/
----
-I'm looking for a user to input some information (ex: email, phone number, etc) in a form and after they hit the submit button it triggers a pdf download in their browser. Are there any common architectures or gems I can use to accomplish this?
-## [9][How to implement refresh tokens?](https://www.reddit.com/r/rails/comments/hohl6i/how_to_implement_refresh_tokens/)
-- url: https://www.reddit.com/r/rails/comments/hohl6i/how_to_implement_refresh_tokens/
----
-Hey, I current use devise-jwt with an access token that expires in 2 weeks. I want to reduce the time it takes for access tokens to live, but I also don't want users logging in every 30 minutes. devise-jwt doesn't support refresh tokens out of the box. How do you folks do it?
-## [10][Vagrant alternatives? Coding environment failures](https://www.reddit.com/r/rails/comments/hoeo0a/vagrant_alternatives_coding_environment_failures/)
-- url: https://www.reddit.com/r/rails/comments/hoeo0a/vagrant_alternatives_coding_environment_failures/
----
-Hi there. I'm just fed up with continuing trying to use Vagrant at this point. I've had many troubles in trying to build my own Vagrantbox for my Rails web dev environment. I had one going from what my bootcamp gave me, basically just a small file system with their vagrant box they provided and their own instructions for things. But sine a couple months ago I was trying to branch out and see what else is out there, and I think initially my issues started when I tried to use Docker. That's a whole other thing I won't get into, but will still probably try again sometime cause I was having issues there too. 
-
-Anyway, I'm now kind of at my last resort using this box using Ubuntu 20.04 that's at this github link:  [https://github.com/rails/rails-dev-box](https://github.com/rails/rails-dev-box) 
-
-I cloned it, and let it do its thing. But now it's getting hung up on the default: SSH auth method: private key line. Really this has been my main issue after setting up the box. The first time I run vagrant up, it gets hung up here. I've tried running ssh-keygen again to replace my keys in my .ssh folder, but it doesn't do anything. I'm still a newb though and may be missing something. 
-
-Here's my full first "vagrant up" output: 
-
-    C:\Users\Kyle_\Dev\rails-dev-box&gt;vagrant up
-    Bringing machine 'default' up with 'virtualbox' provider...
-    ==&gt; default: Box 'ubuntu/focal64' could not be found. Attempting to find and install...
-        default: Box Provider: virtualbox
-        default: Box Version: &gt;= 0
-    ==&gt; default: Loading metadata for box 'ubuntu/focal64'
-        default: URL: https://vagrantcloud.com/ubuntu/focal64
-    ==&gt; default: Adding box 'ubuntu/focal64' (v20200707.0.0) for provider: virtualbox
-        default: Downloading: https://vagrantcloud.com/ubuntu/boxes/focal64/versions/20200707.0.0/providers/virtualbox.box
-    Download redirected to host: cloud-images.ubuntu.com
-        default:
-    ==&gt; default: Successfully added box 'ubuntu/focal64' (v20200707.0.0) for 'virtualbox'!
-    ==&gt; default: Importing base box 'ubuntu/focal64'...
-    ==&gt; default: Matching MAC address for NAT networking...
-    ==&gt; default: Checking if box 'ubuntu/focal64' version '20200707.0.0' is up to date...
-    ==&gt; default: Setting the name of the VM: rails-dev-box_default_1594339592541_33376
-    ==&gt; default: Clearing any previously set network interfaces...
-    ==&gt; default: Preparing network interfaces based on configuration...
-        default: Adapter 1: nat
-    ==&gt; default: Forwarding ports...
-        default: 3000 (guest) =&gt; 3000 (host) (adapter 1)
-        default: 22 (guest) =&gt; 2222 (host) (adapter 1)
-    ==&gt; default: Running 'pre-boot' VM customizations...
-    ==&gt; default: Booting VM...
-    ==&gt; default: Waiting for machine to boot. This may take a few minutes...
-        default: SSH address: 127.0.0.1:2222
-        default: SSH username: vagrant
-        default: SSH auth method: private key
-    Timed out while waiting for the machine to boot. This means that
-    Vagrant was unable to communicate with the guest machine within
-    the configured ("config.vm.boot_timeout" value) time period.
-    
-    If you look above, you should be able to see the error(s) that
-    Vagrant had when attempting to connect to the machine. These errors
-    are usually good hints as to what may be wrong.
-    
-    If you're using a custom box, make sure that networking is properly
-    working and you're able to connect to the machine. It is a common
-    problem that networking isn't setup properly in these boxes.
-    Verify that authentication configurations are also setup properly,
-    as well.
-    
-    If the box appears to be booting properly, you may want to increase
-    the timeout ("config.vm.boot_timeout") value.
-    
-    C:\Users\Kyle_\Dev\rails-dev-box&gt;
-    
-
-Any help would be great.  And honestly, if I can't get this to work, I would love other suggestions on how to set up an environment without Vagrant. I know I should still use VMs with Linux for Rails development. I was perfectly comfortable during bootcamp just vagrant up, vagrant ssh, and boom. IDK what happened and it's so discouraging :(
-## [11][Efficiently searching for text from several .pdf](https://www.reddit.com/r/rails/comments/ho8g9m/efficiently_searching_for_text_from_several_pdf/)
-- url: https://www.reddit.com/r/rails/comments/ho8g9m/efficiently_searching_for_text_from_several_pdf/
----
-Hi,  
-A friend of mine needs a search engine that searches from a lot of PDF. I though it could be a great challenge (I'm not a professional at all). I'm looking for advise since I've never deal with such a huge amount of data.  
-
-
-Here's my plan:
-
-* allow him to upload as many .pdf as he wants
-* extract text from PDF using [this gem](https://github.com/yob/pdf-reader) (pdf-reader) and async jobs
-* store extracted text into a database
-* set up Elasticsearch to search from extracted text (never done that before)
-
-Beyond the challenge, if there's any working (not necessarily online) tool, I'd glad to test it and share it with him
-
-&amp;#x200B;
-
-Thank you in advance ! :)

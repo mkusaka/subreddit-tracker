@@ -23,84 +23,43 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/07/08/this-week-in-rust-346/
 ---
 
-## [3][Linux kernel in-tree Rust support](https://www.reddit.com/r/rust/comments/hp560p/linux_kernel_intree_rust_support/)
-- url: https://lore.kernel.org/lkml/CAKwvOdmuYc8rW_H4aQG4DsJzho=F+djd68fp7mzmBp3-wY--Uw@mail.gmail.com/T/#u
+## [3][LKML: Linus Torvalds: Re: Linux kernel in-tree Rust support](https://www.reddit.com/r/rust/comments/hplaz4/lkml_linus_torvalds_re_linux_kernel_intree_rust/)
+- url: https://lkml.org/lkml/2020/7/10/1261
 ---
 
-## [4][What feature of Rust is used very often by experienced programmers, but not so much by a newbie?](https://www.reddit.com/r/rust/comments/hp6guz/what_feature_of_rust_is_used_very_often_by/)
-- url: https://www.reddit.com/r/rust/comments/hp6guz/what_feature_of_rust_is_used_very_often_by/
+## [4][Tour of Rust](https://www.reddit.com/r/rust/comments/hpt01d/tour_of_rust/)
+- url: https://tourofrust.com/
 ---
 
-## [5][Idiomatic custom number types](https://www.reddit.com/r/rust/comments/hp6dx4/idiomatic_custom_number_types/)
-- url: https://www.reddit.com/r/rust/comments/hp6dx4/idiomatic_custom_number_types/
----
-Hi all,
-
-I've got a situation where it would be useful to have multiple customer number types so that it's clear that they mean different things. In my native Go, I would use separate types, which can't then interact ([playground](https://play.golang.org/p/J8nkgbDkgp5)).
-
-As far as I can tell from the Rust book, I have two options, neither of which feels quite right. I can either use the [Newtype Pattern](https://doc.rust-lang.org/book/ch19-03-advanced-traits.html#using-the-newtype-pattern-to-implement-external-traits-on-external-types) to wrap a numerical type, but then using values of those types gets rather clumsy, as I can't do arithmetic without re-adding the operators ([playground](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=5da92bba6ff0da476948a61fa509518e)), or I can use [Type Aliases](https://doc.rust-lang.org/book/ch19-04-advanced-types.html#creating-type-synonyms-with-type-aliases) to define new number types, but then the compiler doesn't seem to distinguish between them, so it feels prone to type confusion bugs ([playground](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=fd3ab67f5c7139607d30b8ebbe0ed483)).
-
-Is there another option I've missed? Is there a different, more idiomatic solution to the problem? I know I'm trying to recreate what I'd do in Go, which might not be the right approach in Rust.
-
-Thanks!
-## [6][cargo-todo : a simple rust tool](https://www.reddit.com/r/rust/comments/hos1um/cargotodo_a_simple_rust_tool/)
-- url: https://www.reddit.com/r/rust/comments/hos1um/cargotodo_a_simple_rust_tool/
----
-hi guys,
-
-Just made [cargo-todo](https://crates.io/crates/cargo-todo), a really (i mean really) simple tool for cargo.
-
-Just type in cargo todo inside your project directory and it will display every //todo lines inside the source code.
-
-I'm open for feedback and requests.
-
-I also made some other crates, feel free to check them right [here](https://crates.io/users/ProbablyClem)
-
-edit : i'm kinda bored right know so feel free to give me any feedback or even projects to contribute to
-## [7][Programming Servo: the bird’s-eyes view](https://www.reddit.com/r/rust/comments/hp4pde/programming_servo_the_birdseyes_view/)
-- url: https://www.reddit.com/r/rust/comments/hp4pde/programming_servo_the_birdseyes_view/
----
-A high-level overview of the architecture of the Servo Web engine, a large concurrent and multi-process system written in the Rust programming language. 
-
-[https://medium.com/programming-servo/programming-servo-the-birds-eyes-view-201d28220b9a?source=friends\_link&amp;sk=b8610f254bf6faf8b81c81729c1b3498](https://medium.com/programming-servo/programming-servo-the-birds-eyes-view-201d28220b9a?source=friends_link&amp;sk=b8610f254bf6faf8b81c81729c1b3498)
-## [8][What is Yew and Seed lacking when compared to things like React?](https://www.reddit.com/r/rust/comments/hp4p6q/what_is_yew_and_seed_lacking_when_compared_to/)
-- url: https://www.reddit.com/r/rust/comments/hp4p6q/what_is_yew_and_seed_lacking_when_compared_to/
----
-How is following
-
-* Tooling, ex: Webpack, CRA
-* Styling: ex: Styled components, Emotion
-* Static site generation. ex: Gatsbyjs
-* State management: ex: Redux
-* Browser support with Polyfills
-* Performance 
-   *  Is DOM API problem solved?
-   * Lazy loading possible?
-   * How is bundle sizes and bundle splitting
-## [9][mind: A productive mind](https://www.reddit.com/r/rust/comments/hp6yxx/mind_a_productive_mind/)
-- url: https://www.reddit.com/r/rust/comments/hp6yxx/mind_a_productive_mind/
----
-I've been working on [github.com/sayanarijit/mind](https://github.com/sayanarijit/mind), a super simple rust project to simplify keeping track of pending tasks. It's aimed at increasing productivity using the terminal any way possible.
-
-This is not yet complete. In fact, I'm posting this to get feedback on what I should be working on next.
-
-* Better error handling.
-* More interactivity. (eliminate the need to press ENTER, fuzzy search, auto completion etc.)
-* Sync (with drives, other todo/task manager apps e.g. todoist, any.do etc.)
-* Reminders (so that you don't need to manually edit \`reminders.yml\`)
-* Key shortcuts.
-* \[mention your own suggestion\]
-## [10][Target Feature vs Target CPU for Rust](https://www.reddit.com/r/rust/comments/hozs31/target_feature_vs_target_cpu_for_rust/)
-- url: https://www.nickwilcox.com/blog/target_cpu_vs_target_feature/
+## [5][This Month in Rust OSDev (June 2020)](https://www.reddit.com/r/rust/comments/hpsowl/this_month_in_rust_osdev_june_2020/)
+- url: https://rust-osdev.com/this-month/2020-06/
 ---
 
-## [11][Error chaining](https://www.reddit.com/r/rust/comments/hp92f6/error_chaining/)
-- url: https://www.reddit.com/r/rust/comments/hp92f6/error_chaining/
+## [6][gitoxide v0.1 - verify pack files, fast and in style](https://www.reddit.com/r/rust/comments/hprgjw/gitoxide_v01_verify_pack_files_fast_and_in_style/)
+- url: https://github.com/Byron/git-oxide
 ---
-I'm a newbie at Rust and I'm struggling to find a straight answer on how to deal with different error types in a `Result`. I'm coming from Scala where everything just gets boiled down to a single `Throwable` type for the most part.
 
-Can I have my function return types be `Result&lt;T, impl Error&gt;` and chain them together that way?
-## [12][Typeracer game you can play from Neovim live coded in Rust, the first alpha gameplay with an audience member!](https://www.reddit.com/r/rust/comments/hp7w3p/typeracer_game_you_can_play_from_neovim_live/)
-- url: https://clips.twitch.tv/CrypticFastGaurLeeroyJenkins
+## [7][r/systems need a lot more love and I think the content is relevant for many Rust programmers](https://www.reddit.com/r/rust/comments/hpmb75/rsystems_need_a_lot_more_love_and_i_think_the/)
+- url: https://www.reddit.com/r/systems
+---
+
+## [8][Rust support for Event Tracing for Windows (ETW)](https://www.reddit.com/r/rust/comments/hpoj6f/rust_support_for_event_tracing_for_windows_etw/)
+- url: https://github.com/microsoft/rust_win_etw
+---
+
+## [9][I decided to dip my feet into proc macros, and bada bing, bada boom, introducing "compiletime"! Like the __TIME__ define in C but better.](https://www.reddit.com/r/rust/comments/hpjypn/i_decided_to_dip_my_feet_into_proc_macros_and/)
+- url: https://lib.rs/crates/compiletime
+---
+
+## [10][String interners in Rust](https://www.reddit.com/r/rust/comments/hpg70o/string_interners_in_rust/)
+- url: https://dev.to/cad97/string-interners-in-rust-797
+---
+
+## [11][Golf-club - a new weapon in CrateBeforeAttack, an MP-grappling hook game being made in Rust.](https://www.reddit.com/r/rust/comments/hpm0zx/golfclub_a_new_weapon_in_cratebeforeattack_an/)
+- url: https://i.redd.it/p3ci2fu3xba51.gif
+---
+
+## [12][Live loudness normalization in GStreamer &amp; experiences with porting a C audio filter to Rust](https://www.reddit.com/r/rust/comments/hpfceg/live_loudness_normalization_in_gstreamer/)
+- url: https://coaxion.net/blog/2020/07/live-loudness-normalization-in-gstreamer-experiences-with-porting-a-c-audio-filter-to-rust/
 ---
 

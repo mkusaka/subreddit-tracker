@@ -22,17 +22,115 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][[ Help ] Create new method (wrapping)](https://www.reddit.com/r/typescript/comments/hp5gao/help_create_new_method_wrapping/)
-- url: https://www.reddit.com/r/typescript/comments/hp5gao/help_create_new_method_wrapping/
+## [2][After learning Rust, I was surprised that the concept of "match" (also in Haskell) didn't make it to ES2020/TS4.0. So I created my own little class for it. Thoughts?](https://www.reddit.com/r/typescript/comments/hphpu8/after_learning_rust_i_was_surprised_that_the/)
+- url: https://gist.github.com/brianboyko/1decb88a793b92c06ad7d13f73d88854
 ---
-Hi you! As the title says I need to create a new method and I know there is a prototype way but isn't encouraged.
-I was told about wrapping and then I looked into the documentation and Stack Overflow but I couldn't find any clear explanation/answer.
 
-I want achieve something like this:
-numberInstance.myMethod(anyNumber)
+## [3][Importing .ts files without extension](https://www.reddit.com/r/typescript/comments/hps207/importing_ts_files_without_extension/)
+- url: https://www.reddit.com/r/typescript/comments/hps207/importing_ts_files_without_extension/
+---
+Hi, I recently migrated a vue project to typescript manually without cli, and I managed to set everything up except importing ts files. Somehow I need to specify the .ts on the import path.
 
-Thanks for helping me !
-## [3]["--isolatedModules flag" in typescript](https://www.reddit.com/r/typescript/comments/hp440a/isolatedmodules_flag_in_typescript/)
+Can someone please help?
+## [4][Q: Using yarn workspace but Typescript isn't aware of it](https://www.reddit.com/r/typescript/comments/hpqnrm/q_using_yarn_workspace_but_typescript_isnt_aware/)
+- url: https://www.reddit.com/r/typescript/comments/hpqnrm/q_using_yarn_workspace_but_typescript_isnt_aware/
+---
+When I import something from an another workspace I get `Cannot find module @org/common/Movie or its corresponding type...` from the TS compiler/Intellisense. How can make TS aware of my workspace structure?
+## [5][Type '"X"' does not satisfy the constraint 'keyof NamingOption'.ts(2344)](https://www.reddit.com/r/typescript/comments/hpranq/type_x_does_not_satisfy_the_constraint_keyof/)
+- url: https://www.reddit.com/r/typescript/comments/hpranq/type_x_does_not_satisfy_the_constraint_keyof/
+---
+       protected combineAndSave &lt;NamingOption&gt;(
+          audiosAndPauseFiles: Array&lt;string&gt;
+          , savePath: string
+          , fileNameOptions : 
+             Pick&lt;NamingOption, "prefix"&gt; |
+             Pick&lt;NamingOption, "name"&gt;
+       ) : void {
+    
+    /*
+    Type '"prefix"' does not satisfy the constraint 'keyof NamingOption'.ts(2344)
+    Type '"name"' does not satisfy the constraint 'keyof NamingOption'.ts(2344)
+    */
+
+I'm still rough with generics, why isn't `NamingOption` being treated as amorphous in shape above? I thought that's the point of a generic type, maybe my concept of them is wrong, or maybe it's a syntax error.
+
+PS: The intent of the above is that argument 3 receive an object with a single key, for either `prefix` or `name` (not both). I know an object union could also do this but I want to learn the generic type way.
+## [6][Object argument: Any way to enforce one of two keys must be present?](https://www.reddit.com/r/typescript/comments/hpg1mr/object_argument_any_way_to_enforce_one_of_two/)
+- url: https://www.reddit.com/r/typescript/comments/hpg1mr/object_argument_any_way_to_enforce_one_of_two/
+---
+       protected combineAndSave(
+          audiosAndPauseFiles: Array&lt;string&gt;
+          , savePath: string
+          , fileNameOptions : {
+             prefix?: string
+             , name?: string
+          }
+       ) : void {
+          const {prefix, name} = fileNameOptions;
+          let finalFileSavePath: string;
+          
+          // used to save sentence files
+          if (prefix) {
+             finalFileSavePath = `${savePath}/${prefix} - ${this.sentence.folderName}.ogg`;
+          } else {
+             finalFileSavePath = `${savePath}/${name}`;
+          }
+
+I think there's a hole above. Looks like someone may be able to pass an empty object, or even exclude the 3rd argument completely, which would hit the `else` clause with an `undefined` variable and cause a `TypeError` (if this is wrong please let me know).
+
+Is there any way to constrain the `fileNameOptions` object so that one of the keys must be specified?
+
+I tried this
+
+          , fileNameOptions : Partial&lt;{
+             prefix?: string
+             , name?: string
+          }&gt;
+
+But on review of the docs this apparently does nothing the dual `?` don't already do.
+
+I may leave it anyways for code clarity, if anyone has an opinion on that please share.
+## [7][[Showoff Saturday] Platform for uploading and tracking Applications build with TypeScript](https://www.reddit.com/r/typescript/comments/hpia6e/showoff_saturday_platform_for_uploading_and/)
+- url: https://progressiveapp.store/home
+---
+
+## [8][Noob Question: how do I enforce the implementation of a static method on a child class?](https://www.reddit.com/r/typescript/comments/hpj5h2/noob_question_how_do_i_enforce_the_implementation/)
+- url: https://www.reddit.com/r/typescript/comments/hpj5h2/noob_question_how_do_i_enforce_the_implementation/
+---
+I know I can do this
+
+```
+abstract class A {
+  myMethod();
+}
+
+class B extends A {
+    myMethod() {
+        console.log("implemented");
+    }
+}
+```
+
+and I can do this
+
+```
+class B {
+    static myProperty = "hello";
+
+    static myMethod() {
+        console.log("hello");
+    }
+}
+```
+
+but I can't seem to mix the two.
+
+I want to make sure that all child classes of a parent (abstract) class override a certain static property (or method).
+
+Specifically, I want all descendants of `FromSQL` to have a static property `TABLE_NAME`, so that I can have a method `fetch&lt;T extends FromSQL&gt;` and then use `TABLE_NAME` to fetch from the correct table.
+
+Is there any way to do this? If not, is there a workaround I can use?
+## [9]["--isolatedModules flag" in typescript](https://www.reddit.com/r/typescript/comments/hp440a/isolatedmodules_flag_in_typescript/)
 - url: https://www.reddit.com/r/typescript/comments/hp440a/isolatedmodules_flag_in_typescript/
 ---
 &gt; All files must be modules when the '--isolatedModules' flag is provided
@@ -53,7 +151,17 @@ The error occurs at "(1,1)"..so  the first character.
 I have an almost exactly similar file that doesn't produce the error. It is also super strange because when I was working on this file yesterday and saved it in this state, it was rendering fine. But right now as I run the app again..I get that error. Does anyone know what it could be?
 
 One answer from S/O: This error happens when there is no import or export statement in a file (these make a file a module). But I do have an export statement..
-## [4][How to share common typings in a project? [Lerna / Workspaces]](https://www.reddit.com/r/typescript/comments/hor78i/how_to_share_common_typings_in_a_project_lerna/)
+## [10][[ Help ] Create new method (wrapping)](https://www.reddit.com/r/typescript/comments/hp5gao/help_create_new_method_wrapping/)
+- url: https://www.reddit.com/r/typescript/comments/hp5gao/help_create_new_method_wrapping/
+---
+Hi you! As the title says I need to create a new method and I know there is a prototype way but isn't encouraged.
+I was told about wrapping and then I looked into the documentation and Stack Overflow but I couldn't find any clear explanation/answer.
+
+I want achieve something like this:
+numberInstance.myMethod(anyNumber)
+
+Thanks for helping me !
+## [11][How to share common typings in a project? [Lerna / Workspaces]](https://www.reddit.com/r/typescript/comments/hor78i/how_to_share_common_typings_in_a_project_lerna/)
 - url: https://www.reddit.com/r/typescript/comments/hor78i/how_to_share_common_typings_in_a_project_lerna/
 ---
 I did bit of a searching and couldn't find a real example anywhere.  
@@ -67,173 +175,3 @@ It'd be great if I get some ELI5 on `module` vs `namespace`, and how to organize
 Thanks!  
 
 Edit: Big thanks to u/intrepidsovereign for creating a [boilerplate](https://github.com/RyanChristian4427/example-monorepo-ts)
-## [5][Typescript generating a type error when calling a function (in a variable) from an event handler](https://www.reddit.com/r/typescript/comments/hos6d2/typescript_generating_a_type_error_when_calling_a/)
-- url: https://www.reddit.com/r/typescript/comments/hos6d2/typescript_generating_a_type_error_when_calling_a/
----
-I have the following class component:  
-
-
-    class MyComponent extends Component&lt;MyProps&gt; {
-    ...
-       public componentDidMount() {
-       ...
-          window.addEventListener('resize', this.resizeHandler)
-       }
-       
-       private sendResizeInfo = _.debounce((info) =&gt; {...});
-    
-       private resizeHandler() {
-          this.sendResizeInfo('extra_info')
-       }
-    ...
-    }
-
-I get the following error:
-
-`Uncaught [TypeError: sendResizeInfo is not a function]`
-
-when the resizeHandler is called. Does anyone know why?
-## [6][Help with falsey value in union type?](https://www.reddit.com/r/typescript/comments/hoq4dp/help_with_falsey_value_in_union_type/)
-- url: https://www.reddit.com/r/typescript/comments/hoq4dp/help_with_falsey_value_in_union_type/
----
-My error:
-
-    if (obj.details.onDay === 0) {
-     // ^^ throws TS error ^^
-    }
-    
-    (property) onDay: 1 | 2 | 3 | 4 | 5 | 6 | "Day" | "Weekday" | "Weekend day"
-    This condition will always return 'false' since the types '1 | 2 | 3 | 4 | 5 | 6 | "Day" | "Weekday" | "Weekend day"' and '0' have no overlap.ts(2367)
-
-Types and structures:
-
-    monthly: {
-        // ...
-    
-        details?: {
-          // ...
-    
-          onDay: MonthlyDayOfWeekInterval;
-        }
-      }
-    
-    export type MonthlyDayOfWeekInterval = DayOfWeekInterval | 'Day' | 'Weekday' | 'Weekend day';
-    export type DayOfWeekInterval = 0 | 1 | 2 | 3 | 4 | 5 | 6;
-
-I am new to union types, my only assumption is because it's a falsey 0?
-## [7][Help with using Parameters&lt;T&gt; utility type while calling methods via string method names in generic function?](https://www.reddit.com/r/typescript/comments/hos02f/help_with_using_parameterst_utility_type_while/)
-- url: https://www.reddit.com/r/typescript/comments/hos02f/help_with_using_parameterst_utility_type_while/
----
-Hi everyone,
-
-I'm running into an issue while using the `Parameters&lt;T&gt;` utility type while trying to write a function that can call dynamically call methods via their method names in a type-safe way.
-
-This is what I have so far:
-
-```
-class Foo {
-  greet(name: string) {
-    console.log(`Hello, ${name}!`);
-  }
-
-  greetNumber(num: number) {
-    console.log(`Hello, ${num} v2!`);
-  }
-}
-
-function callFooDynamic&lt;K extends "greet" | "greetNumber"&gt;(
-  foo: Foo,
-  target: K,
-  ...args: Parameters&lt;Foo[K]&gt;
-) {
-  foo[target](...args);
-}
-
-const foo = new Foo();
-callFooDynamic(foo, "greet", "world");
-```
-
-However, I get this error when compiling:
-
-```
-error TS2556: Expected 1 arguments, but got 0 or more.
-
-20   foo[target](...args);
-                 ~~~~~~~
-
-  src/lib/dynamic.ts:4:9
-    4   greet(name: string) {
-              ~~~~~~~~~~~~
-    An argument for 'name' was not provided.
-
-```
-
-I would've expected that the `args` array would have been of the correct type, not sure why TypeScript isn't inferring the type correctly? Thanks in advance for your help!
-## [8][Q: Why aren’t TS private methods, actually private?](https://www.reddit.com/r/typescript/comments/hoctyy/q_why_arent_ts_private_methods_actually_private/)
-- url: https://www.reddit.com/r/typescript/comments/hoctyy/q_why_arent_ts_private_methods_actually_private/
----
-It’s compile time only. If you use compiled code in vanilla JavaScript, you can access the private instance properties like any other property.
-
-It could compile classes down to old function style classes, and put all the private members inside the function, and then not attach them to the instance.
-
-Is it because typescript would then have to also “adjust” all this.&lt;private-thing&gt; references? That seems... arbitrary as a blocker.
-
-What other problems would their be?
-## [9][Anyone willing to mentor?](https://www.reddit.com/r/typescript/comments/ho63g6/anyone_willing_to_mentor/)
-- url: https://www.reddit.com/r/typescript/comments/ho63g6/anyone_willing_to_mentor/
----
-Not exactly mentor, but I guess more of a guide. I am fairly capable of learning by myself but there are times where I don’t understand a concept and it would be easier to have someone walk me thru and explain to me. I’m not looking for someone for me to ask questions 24/7 but rather someone who is willing to answer the questions I have from time to time. The TS discord is great but I often get ignored when I ask a question
-## [10][Optional parameters, specifying undefined vs null](https://www.reddit.com/r/typescript/comments/ho736x/optional_parameters_specifying_undefined_vs_null/)
-- url: https://www.reddit.com/r/typescript/comments/ho736x/optional_parameters_specifying_undefined_vs_null/
----
-       protected combineAndSave(
-          audiosAndPauseFiles: Array&lt;string&gt;
-          , savePath: string
-          , filePrefix?: string
-          , fileName?: string
-       ): void {
-
-I noticed when calling this, I had to specify `undefined` on the 3rd arg (4th will be implicitly undefined if not specified). Is that the best way to do it? In general I think `null` is more explicit but maybe that does apply for this case.
-
-Also if anyone knows a way to more tightly constrain this method so that one of the last two params must be specifed, I appreciate any further advice on that front.
-## [11][How to make compiled JS enforce required properties?](https://www.reddit.com/r/typescript/comments/ho69ir/how_to_make_compiled_js_enforce_required/)
-- url: https://www.reddit.com/r/typescript/comments/ho69ir/how_to_make_compiled_js_enforce_required/
----
-I am trying to make an API and TS looks like a good way to do it as it's sort of self-documenting.  
-
-However, when I try to test whether the compiled JS throws an error when the user does not include a required param/property, it does not and just gives it a value of undefined.
-
-1. Is there a way to force the compiled JS to throw errors if the user is using the API incorrectly?
-2. Is there a better 'standard' way to enforce correct usage of the API by the user rather than throwing errors?
-
-&amp;#x200B;
-
-Example code:
-
-    // index.ts
-    class Example {
-      req1: string;
-      req2: string;
-    
-      constructor(req1: string, req2: string) {
-        this.req1 = req1;
-        this.req2 = req2;
-      }
-    }
-    
-    module.exports = Example;
-    
-    /** ts file is compiled into index.js */
-    
-    // JS User that consumes index.js
-    const Example = require('index');
-    
-    const ex1 = new Example("Hello"); // Expect API to throw error here as req2 was not passed
-    console.log(ex1); // Actual: Example { req1: "Hello", req2: undefined }
-    
-    const ex2 = new Example("Hello", 2); // Expect API to throw error here as req2 is an incorrect type
-    console.log(ex2); // Actual: Example { req1: "Hello", req2: 2 }
-
-&amp;#x200B;
-
-The only way I've found to enforce error throwing is doing type checks, etc. and throwing my own errors in the constructor, but then that's like regular JS, isn't it?

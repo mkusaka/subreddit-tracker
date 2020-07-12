@@ -1,13 +1,17 @@
 # Kotlin
-## [1][Write extension functions for your own classes in Kotlin](https://www.reddit.com/r/Kotlin/comments/how9eq/write_extension_functions_for_your_own_classes_in/)
+## [1][Is There An ETA For When Unsigned Types Will No Longer Be Experimental?](https://www.reddit.com/r/Kotlin/comments/hpip9f/is_there_an_eta_for_when_unsigned_types_will_no/)
+- url: https://www.reddit.com/r/Kotlin/comments/hpip9f/is_there_an_eta_for_when_unsigned_types_will_no/
+---
+
+## [2][Write extension functions for your own classes in Kotlin](https://www.reddit.com/r/Kotlin/comments/how9eq/write_extension_functions_for_your_own_classes_in/)
 - url: https://blog.frankel.ch/write-extension-functions-own-classes-kotlin/
 ---
 
-## [2][Home automation library for Home Assistant written in Kotlin/jvm](https://www.reddit.com/r/Kotlin/comments/hoqn33/home_automation_library_for_home_assistant/)
+## [3][Home automation library for Home Assistant written in Kotlin/jvm](https://www.reddit.com/r/Kotlin/comments/hoqn33/home_automation_library_for_home_assistant/)
 - url: /r/homeassistant/comments/hoob9y/khome_new_kid_on_the_block_home_automation/
 ---
 
-## [3][Kotlin/JavaFX vs web vs Qt/C++](https://www.reddit.com/r/Kotlin/comments/how59r/kotlinjavafx_vs_web_vs_qtc/)
+## [4][Kotlin/JavaFX vs web vs Qt/C++](https://www.reddit.com/r/Kotlin/comments/how59r/kotlinjavafx_vs_web_vs_qtc/)
 - url: https://www.reddit.com/r/Kotlin/comments/how59r/kotlinjavafx_vs_web_vs_qtc/
 ---
 Hi, I was looking for advice and your opinion.
@@ -23,15 +27,19 @@ That seems to leave Kotlin for the best alternative. In that case, I would want 
 Since I'm familiar with Qt/C++/Python, I'm wondering how Kotlin/JavaFX will compare to Qt as far as ease of development, once I learn Kotlin and JavaFX? Is it worth learning Kotlin/JavaFX for this project and maybe others in the future as compared to slogging along in Qt/C++?
 
 Thanks in advance!
-## [4][Switch statements in Kotlin](https://www.reddit.com/r/Kotlin/comments/howc67/switch_statements_in_kotlin/)
+## [5][Give This A +1 If You'd Like To See Enhanced If Statements In Kotlin](https://www.reddit.com/r/Kotlin/comments/hpfyuj/give_this_a_1_if_youd_like_to_see_enhanced_if/)
+- url: https://www.reddit.com/r/Kotlin/comments/hpfyuj/give_this_a_1_if_youd_like_to_see_enhanced_if/
+---
+https://youtrack.jetbrains.com/issue/KT-40222
+## [6][Switch statements in Kotlin](https://www.reddit.com/r/Kotlin/comments/howc67/switch_statements_in_kotlin/)
 - url: https://twitter.com/PavitraGolchha/status/1281682378486738944
 ---
 
-## [5][Receive body with Ktor multipart request](https://www.reddit.com/r/Kotlin/comments/hoijoq/receive_body_with_ktor_multipart_request/)
+## [7][Receive body with Ktor multipart request](https://www.reddit.com/r/Kotlin/comments/hoijoq/receive_body_with_ktor_multipart_request/)
 - url: https://www.reddit.com/r/Kotlin/comments/hoijoq/receive_body_with_ktor_multipart_request/
 ---
 [https://stackoverflow.com/questions/62823689/check-whether-all-parameter-exist-or-not-in-multipart-request-body-with-ktor](https://stackoverflow.com/questions/62823689/check-whether-all-parameter-exist-or-not-in-multipart-request-body-with-ktor)
-## [6][Anyone else have weird bugs with `withDefault` for maps?](https://www.reddit.com/r/Kotlin/comments/hoaw5t/anyone_else_have_weird_bugs_with_withdefault_for/)
+## [8][Anyone else have weird bugs with `withDefault` for maps?](https://www.reddit.com/r/Kotlin/comments/hoaw5t/anyone_else_have_weird_bugs_with_withdefault_for/)
 - url: https://www.reddit.com/r/Kotlin/comments/hoaw5t/anyone_else_have_weird_bugs_with_withdefault_for/
 ---
 I just filed https://youtrack.jetbrains.com/issue/KT-40167 to be safe, but wanted to see if anyone can just say "/u/SolaireDeSun you're nuts!".
@@ -50,7 +58,7 @@ Is this [playground](https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS4zLjcxIiwicG
     ): Map&lt;String, Int&gt; by freq
 
 to just print 0.
-## [7][I’m excited to announce that my open-source sample project about “Android Modular Architecture” just reach 1K ⭐️ on Github.](https://www.reddit.com/r/Kotlin/comments/hnydey/im_excited_to_announce_that_my_opensource_sample/)
+## [9][I’m excited to announce that my open-source sample project about “Android Modular Architecture” just reach 1K ⭐️ on Github.](https://www.reddit.com/r/Kotlin/comments/hnydey/im_excited_to_announce_that_my_opensource_sample/)
 - url: https://www.reddit.com/r/Kotlin/comments/hnydey/im_excited_to_announce_that_my_opensource_sample/
 ---
 Maybe sounds insignificant if you compare with video reproductions or a post likes on twitter. But isn’t, the project is among top 10 github projects in Kotlin related with Android Architecture Sample with several mentions/references like Android Weekly, AndroidSweets, Droidcon and KotlinBy.
@@ -60,7 +68,7 @@ I want to say thank you ❤️ in this way for all the support received by the a
 Of course, nothing is perfect and this project isn’t an exception, there are a lot of things to improve, but the iteration is the key to my point of view.
 
 Project Link: [https://github.com/VMadalin/android-modular-architecture](https://github.com/VMadalin/android-modular-architecture)
-## [8][Kotlin can't handle range requests?](https://www.reddit.com/r/Kotlin/comments/hoool0/kotlin_cant_handle_range_requests/)
+## [10][Kotlin can't handle range requests?](https://www.reddit.com/r/Kotlin/comments/hoool0/kotlin_cant_handle_range_requests/)
 - url: https://www.reddit.com/r/Kotlin/comments/hoool0/kotlin_cant_handle_range_requests/
 ---
 I'm new to Kotlin so I might not make any sense. But I need help and I can't find the answer I need browsing the net.
@@ -68,33 +76,3 @@ I'm new to Kotlin so I might not make any sense. But I need help and I can't fin
 I'm trying to make a media app similar to YouTube or Netflix where you can just stream videos from my server. I'm trying to make a request to my server which is made from Node.js. My server sends streams to the client to handle partial content. The server is originally made for a Vue.js app for the same purpose as the app I'm currently making. It is working for the Vue app but when I try to use it in the `videoView` I'm getting a `java.io.FileNotFoundException: No content provider: [IPADDRESS/PATH]`.
 
 I compared the `toString()` Uri from my Kotlin app to the Uri from the Vue app and they're exactly the same. So I'm out of ideas.I followed [this](https://www.youtube.com/watch?v=gDEGd174K_Q) tutorial as a Crash-course and [this](https://www.youtube.com/watch?v=Jd3nTm-wvyA) one for the video tutorial.
-## [9][Recyclerview is overfilling parent](https://www.reddit.com/r/Kotlin/comments/hocch9/recyclerview_is_overfilling_parent/)
-- url: https://www.reddit.com/r/Kotlin/comments/hocch9/recyclerview_is_overfilling_parent/
----
-I am working with recyclerview and it is overfilling the parent. I have checkbox constrain to end of parent and a textview constraint to start of a parent. When I launch the application, I don't see the checkbox and when I go landscape mode, I see the checkbox and half of the textview.
-
-cardview xml:   [https://pastebin.com/7Y792vCn](https://pastebin.com/7Y792vCn)
-
-Recyclerview adapter:  [https://pastebin.com/bhf8Srfw](https://pastebin.com/bhf8Srfw)
-
-Recyclerview xml:  [https://pastebin.com/HH4wPKf6](https://pastebin.com/HH4wPKf6)
-
-\*edit
-
-fix the issue. navhostfragment wasn't set to match parent and had fix width and height.
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-[not in landscape mode](https://preview.redd.it/u6jao2u4mw951.png?width=335&amp;format=png&amp;auto=webp&amp;s=0c7a362af20d285f1e1d4bd842f121443aabcce2)
-
-[Landscape mode](https://preview.redd.it/xujj4uiklw951.png?width=2400&amp;format=png&amp;auto=webp&amp;s=393dd75c50cac3a8c05b4e1f56b8a73c99cfeda4)
-
-&amp;#x200B;
-
-&amp;#x200B;
-## [10][A introduction to the MVVM architecture in Android](https://www.reddit.com/r/Kotlin/comments/ho64t9/a_introduction_to_the_mvvm_architecture_in_android/)
-- url: https://youtu.be/ItzIm2oXLo0
----
-

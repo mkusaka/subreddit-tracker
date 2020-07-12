@@ -40,7 +40,77 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][I'm confused about the direction of android](https://www.reddit.com/r/androiddev/comments/hp690u/im_confused_about_the_direction_of_android/)
+## [3][I made an open-source news app then use NYTimes API as the backend](https://www.reddit.com/r/androiddev/comments/hpqaql/i_made_an_opensource_news_app_then_use_nytimes/)
+- url: https://www.reddit.com/r/androiddev/comments/hpqaql/i_made_an_opensource_news_app_then_use_nytimes/
+---
+This is my first open-source app. It shows top stories from different sections. It uses Kotlin and jetpack libraries.
+
+Pls, tell me what you think about it.
+
+Github: [https://github.com/DhirajBorana/Newz](https://github.com/DhirajBorana/Newz)
+## [4][MarkdownEditText](https://www.reddit.com/r/androiddev/comments/hps4uz/markdownedittext/)
+- url: https://www.reddit.com/r/androiddev/comments/hps4uz/markdownedittext/
+---
+I needed a way to backup Rich Text in my notes app and view it on other platforms (Without using webviews) so i made an editor that convert styled text into Markdown so i can view it on other platforms.  
+Github: [https://github.com/YahiaAngelo/MarkdownEditText](https://github.com/YahiaAngelo/MarkdownEditText)  
+
+
+Any advice or suggestions will be greatly appreciated.
+## [5][When did you feel ready to accept a job as a Android developer?](https://www.reddit.com/r/androiddev/comments/hpfmqw/when_did_you_feel_ready_to_accept_a_job_as_a/)
+- url: https://www.reddit.com/r/androiddev/comments/hpfmqw/when_did_you_feel_ready_to_accept_a_job_as_a/
+---
+This is a question especially for those who didnt learn coding at uni. How do you know you know enough? Theres always more knowledge to learn so where is that tipping point? Was there a project you did on your own that made you confident you were ready?
+## [6][Opening the last app programatically](https://www.reddit.com/r/androiddev/comments/hpsfgm/opening_the_last_app_programatically/)
+- url: https://www.reddit.com/r/androiddev/comments/hpsfgm/opening_the_last_app_programatically/
+---
+Hello,
+
+I have an application with a background service.  
+When there is a certain signal, my application goes to foreground and shows something.
+
+When the signal is removed, it shall go back to the last app that was open.
+
+How can I do this?
+
+Maybe: How can I simulate double pressing the back button?
+
+&amp;#x200B;
+
+Thanks in advance.
+## [7][Too early to ditch Java from Kotlin?](https://www.reddit.com/r/androiddev/comments/hptbje/too_early_to_ditch_java_from_kotlin/)
+- url: https://www.reddit.com/r/androiddev/comments/hptbje/too_early_to_ditch_java_from_kotlin/
+---
+Hi everyone. First year CS student here who finished the Java MOOC except the JavaFX parts and just dove in google's android tutorials in Java. Apart from the MOOC, I don't have much experience with Java, but I do have experience with C from Uni and Python before uni. Learned a bit of OOP from GUI programming in python, but it got solidified doing Java's MOOC  which was mostly easy and I do think I've got the basics down.  Like I know how Abstraction, Encapsulation, Polymorphism, Inheritance, Abstract Classes, Interfaces, Anonymous Classes, Lambdas, Streams, Generics, basic unit testing and so on work. I've also recently got hold of a copy for Effective Java and Head First Design Patterns to help me write better and more efficient code. Just really want to dive into android atm and focus on that to get really used to one language and just keep making projects instead of jumping from one language to another.
+
+Keeping these previous points in mind, will it be too soon to ditch Java for Kotlin? Should I get more comfortable with Java first and just power through google's slightly dated android tutorials in Java? Just heard that the Kotlin ones are the only ones getting updated frequently if I'm not mistaken? 
+
+Thanks!
+## [8][[Blog] How to handle Android Notifications Extensible way](https://www.reddit.com/r/androiddev/comments/hpe80c/blog_how_to_handle_android_notifications/)
+- url: https://link.medium.com/zOAviYAv27
+---
+
+## [9][Anti-Reset Rob](https://www.reddit.com/r/androiddev/comments/hprdqe/antireset_rob/)
+- url: https://www.reddit.com/r/androiddev/comments/hprdqe/antireset_rob/
+---
+I would like that they could add more security for the following functions not to allow reset of the phone by buttons or screen if you do not have the unlocking pin of the cell phone to do it.
+It also does not give the ability to turn off the device without the unlock pin.
+Do not allow the unlock pin to be accessed without the corresponding pin.
+
+It is now easy to steal a cell phone and to be able to restart it from the factory by pressing buttons and skipping the Security verification.
+This encourages crime.
+## [10][Recommendation?](https://www.reddit.com/r/androiddev/comments/hpqqs1/recommendation/)
+- url: https://www.reddit.com/r/androiddev/comments/hpqqs1/recommendation/
+---
+Greetings everyone! 
+
+Experienced devs, what would you recommend for newcomers?
+
+[View Poll](https://www.reddit.com/poll/hpqqs1)
+## [11][How to create design like top free top grossing trending etc in kotlin ??](https://www.reddit.com/r/androiddev/comments/hpqocu/how_to_create_design_like_top_free_top_grossing/)
+- url: https://i.redd.it/c79xb37rtda51.jpg
+---
+
+## [12][I'm confused about the direction of android](https://www.reddit.com/r/androiddev/comments/hp690u/im_confused_about_the_direction_of_android/)
 - url: https://www.reddit.com/r/androiddev/comments/hp690u/im_confused_about_the_direction_of_android/
 ---
 So my first app I built/am building with Java and traditional android views and I found the experience to be a bit painful (java is very verbose, compiling takes ages, themes and animations are a pain in the ass etc)
@@ -48,66 +118,3 @@ So my first app I built/am building with Java and traditional android views and 
 So now I'm interested in starting another app and maybe porting my current app to better tech but there seems to be two competing technologies? Dart+flutter and Kotlin+jetpack? Is that right? Why do both exist and which is better to learn? I like the idea of Flutter if it's cross platform but then why does Kotlin+Jetpack exist, does Flutter have limitations on native apps? Is Flutter something Google is likely to drop because it's not as popular? etc
 
 Thanks for your advice and sorry if this is a stupid question.
-## [4][How many downloads per day your app can get on Google Play?](https://www.reddit.com/r/androiddev/comments/hp5myd/how_many_downloads_per_day_your_app_can_get_on/)
-- url: https://www.reddit.com/r/androiddev/comments/hp5myd/how_many_downloads_per_day_your_app_can_get_on/
----
-For my 1 year old app, it is always 200-300 downloads per day. From 10k+ to 50k+ to 100k+, daily downloads never grow. I think it is controlled by some sort of algorithms. Once my app got 200-300 downloads everyday, Google Play will stop recommending it to users. (Possibly in similar app section) What can I do to get more downloads?
-## [5][Does content://sms/inbox need to be updated manually?](https://www.reddit.com/r/androiddev/comments/hp4vmu/does_contentsmsinbox_need_to_be_updated_manually/)
-- url: https://www.reddit.com/r/androiddev/comments/hp4vmu/does_contentsmsinbox_need_to_be_updated_manually/
----
-Started learning android for college project recently.
-I have created an sms app which is capable of being a default app(minimalistic app though). When I set it to default sms app, my phone's inbuilt ap stopped receiving new messages. 
-Questions:
-
-1. Do all new messages automatically go in content://sms/inbox or do we have to update it manually ? I am asking this because my inbuilt sms app doesn't reflect the sms recieved while it was not  default sms app.
-
-2. Is it necessary to forward new messages to other apps listening for new sms received?
-## [6][What is the MOST annoying part of actual Android development to you?](https://www.reddit.com/r/androiddev/comments/hookfi/what_is_the_most_annoying_part_of_actual_android/)
-- url: https://www.reddit.com/r/androiddev/comments/hookfi/what_is_the_most_annoying_part_of_actual_android/
----
-Which process/action/library or anything (any part of the dev process) causes you the most frustration or what part of the dev process feels like a chore?
-
-Just really interested in hearing as many different opinions or points of view as possible on this front?  
-
-
-Edit: Sorry folks turned out i accidentally posted this same post 5 times on this sub-reddit, totally did not mean to do that, not sure what happened! So just incase you responded to one of the other posts i removed the duplicates, sorry about that! Great answers so far folks!
-## [7][Can an AVD accept FIDO U2F security key from host by USB passthrough? (Advanced Protection Question)](https://www.reddit.com/r/androiddev/comments/hp4ufq/can_an_avd_accept_fido_u2f_security_key_from_host/)
-- url: https://www.reddit.com/r/androiddev/comments/hp4ufq/can_an_avd_accept_fido_u2f_security_key_from_host/
----
-Hi,
-
-Just a question about Android Studio Emulator. I have an Advanced Protection account that requires hardware FIDO U2F security key. Can the emulator do a USB passthrough for the AVD to detect the security key?
-
-Thank you!
-## [8][Can I build an android app with anything but JAVA?](https://www.reddit.com/r/androiddev/comments/hp8rpk/can_i_build_an_android_app_with_anything_but_java/)
-- url: https://www.reddit.com/r/androiddev/comments/hp8rpk/can_i_build_an_android_app_with_anything_but_java/
----
-I have good programming knowledge and have worked on many ML and Web development projects. I want to get into app development now and so I wanted to know that can I develop an entire android app with anything other than JAVA. The problem is that I hate JAVA and I don't want to do anything with that language. So can I build an entire android app with languages like  C++/Python/Javascript etc.? Also, I want to build something that can be released on play store so please don't suggest webapps or anything that can't be released on play store. Thanks.
-## [9][Simple sparkline chart with MPAndroidChart](https://www.reddit.com/r/androiddev/comments/hoyzwy/simple_sparkline_chart_with_mpandroidchart/)
-- url: https://www.rockandnull.com/mpandroidchart-line-chart-example/
----
-
-## [10][Can I get banned if I load videos list in my app from my custom JSON?](https://www.reddit.com/r/androiddev/comments/hp657j/can_i_get_banned_if_i_load_videos_list_in_my_app/)
-- url: https://www.reddit.com/r/androiddev/comments/hp657j/can_i_get_banned_if_i_load_videos_list_in_my_app/
----
-I am developing an android app in which I want to load data from my custom JSON and after play it from YouTube official recommended method. Cause list of videos are from different different sources that's why it is necessary to make custom JSON. Does this get me banned on Playstore? Does anyone have any experience about it?
-## [11][Google Play Beta Ratings &amp; different languages](https://www.reddit.com/r/androiddev/comments/hournx/google_play_beta_ratings_different_languages/)
-- url: https://www.reddit.com/r/androiddev/comments/hournx/google_play_beta_ratings_different_languages/
----
-I just received a 3 star review saying *"Fun game but you need to translate into different languages."* I'm just a solo dev and my app has probably 10,000 words in different forms, so translating into even one other language would be difficult and expensive.  
-
-
-I have a couple of questions which I can't find answers for in Google's documentation. My game is currently in open beta.
-
-**Q1)** Do ratings given and reviews given to an app during open beta appear to everyone when you go live?  
-**Q2)** Are ratings country specific?  I seem to find conflicting opinions on this. Will a user in Italy see the same rating and reviews as someone in the UK?  
-**Q3)** Slightly trickier to answer perhaps - If I don't release in different countries, people complain that my game isn't available to them and that they would be happy with just an English language version (I had complaints to this effect even pre-Alpha). If I do release in different countries people will rate it badly because the app is not in their language. What - in your opinion - is the best way to go?  
-
-
-Thanks!
-## [12][Do you use the One Activity, Multiple Fragments Navigation Pattern?](https://www.reddit.com/r/androiddev/comments/hotgt8/do_you_use_the_one_activity_multiple_fragments/)
-- url: https://www.reddit.com/r/androiddev/comments/hotgt8/do_you_use_the_one_activity_multiple_fragments/
----
-
-
-[View Poll](https://www.reddit.com/poll/hotgt8)

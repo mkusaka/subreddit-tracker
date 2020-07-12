@@ -123,64 +123,59 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [3][Is C++ a good language for server side code?](https://www.reddit.com/r/cpp/comments/hp06wx/is_c_a_good_language_for_server_side_code/)
-- url: https://www.reddit.com/r/cpp/comments/hp06wx/is_c_a_good_language_for_server_side_code/
----
-Just wondering if I am going down the right path. I want to do it in C++ but sometimes installing these dependencies (Mongo driver/RabbitMQ driver) take a long time and lots of research.
-## [4][The most aesthetically pleasing video on Searching Algorithms](https://www.reddit.com/r/cpp/comments/hp63bi/the_most_aesthetically_pleasing_video_on/)
-- url: https://youtu.be/FBJKwjTwNTo
+## [3][What is the std::swap two-step?](https://www.reddit.com/r/cpp/comments/hpqbdz/what_is_the_stdswap_twostep/)
+- url: https://quuxplusone.github.io/blog/2020/07/11/the-std-swap-two-step/
 ---
 
-## [5][jsoncons v0.154.0 supports JMESPath](https://www.reddit.com/r/cpp/comments/hp2e37/jsoncons_v01540_supports_jmespath/)
-- url: https://github.com/danielaparker/jsoncons/blob/master/doc/ref/jmespath/jmespath.md
+## [4][What's the status of clang concepts?](https://www.reddit.com/r/cpp/comments/hpci88/whats_the_status_of_clang_concepts/)
+- url: https://www.reddit.com/r/cpp/comments/hpci88/whats_the_status_of_clang_concepts/
+---
+I tried some very simple [test](https://godbolt.org/z/E6r9z3). Seems the short-circuiting (once fixed in old concepts branch in 2018) still not working.
+## [5][Best ide?](https://www.reddit.com/r/cpp/comments/hprsek/best_ide/)
+- url: https://www.reddit.com/r/cpp/comments/hprsek/best_ide/
+---
+just wandering what ide people think is best
+## [6][Mobile Development with C++ in Visual Studio 2019](https://www.reddit.com/r/cpp/comments/hptaoj/mobile_development_with_c_in_visual_studio_2019/)
+- url: https://youtu.be/3SJmf1HsVQU
 ---
 
-## [6][Writing an LLVM optimization (my quarantine training video)](https://www.reddit.com/r/cpp/comments/hopfg3/writing_an_llvm_optimization_my_quarantine/)
-- url: https://youtu.be/MagR2KY8MQI
+## [7][What do you think about Juce?](https://www.reddit.com/r/cpp/comments/hpdhdh/what_do_you_think_about_juce/)
+- url: https://www.reddit.com/r/cpp/comments/hpdhdh/what_do_you_think_about_juce/
 ---
-
-## [7][Shortest Bjarne talk ever](https://www.reddit.com/r/cpp/comments/hoks6d/shortest_bjarne_talk_ever/)
-- url: https://www.youtube.com/watch?v=tbNe-3FXqFM
+I recently came across Juce.com and I thought it was quite interesting. I always go the Qt route if I need a GUI, but this project seems promising. Has anyone used this before? What were your opinion of it?
+## [8][I think my program accidentally generated a new symbol...](https://www.reddit.com/r/cpp/comments/hpty1q/i_think_my_program_accidentally_generated_a_new/)
+- url: https://www.reddit.com/r/cpp/comments/hpty1q/i_think_my_program_accidentally_generated_a_new/
 ---
-
-## [8][CodeChecker now has a new UI, supports more analyzers, ...](https://www.reddit.com/r/cpp/comments/hovpw6/codechecker_now_has_a_new_ui_supports_more/)
-- url: https://github.com/Ericsson/codechecker/releases/tag/v6.13.0
----
-
-## [9][Duck Invoke — tag_invoke for C++11](https://www.reddit.com/r/cpp/comments/hop01w/duck_invoke_tag_invoke_for_c11/)
-- url: https://bfgroup.github.io/duck_invoke/
----
-
-## [10][spdlog 1.7.0 released (FMT 7.x, compile time format checking)](https://www.reddit.com/r/cpp/comments/hofxr2/spdlog_170_released_fmt_7x_compile_time_format/)
-- url: https://github.com/gabime/spdlog/releases/tag/v1.7.0
----
-
-## [11][Any examples (with source code) of text adventure games that follow a similar style?](https://www.reddit.com/r/cpp/comments/houh6a/any_examples_with_source_code_of_text_adventure/)
-- url: https://www.reddit.com/r/cpp/comments/houh6a/any_examples_with_source_code_of_text_adventure/
----
-Hey guys, beginner here. I started making a text adventure game and I'm really into it now would like to complete it but it's difficult as I don't know exactly what kind of code I need to implement for this to work as I'd like it to. I thought it would be a good idea to look at some source code for a text adventure that's already been made but they're usually too different from the kind of text adventure I want to make.
+. If I google it, I get a question mark.
 
 &amp;#x200B;
 
-Here's the code I have now. (I know it's messy) Hopefully this gives an idea of what I'm after: [https://pastebin.com/8x1yz5GV](https://pastebin.com/8x1yz5GV)
-## [12][Is any optimizer able to cache same calls?](https://www.reddit.com/r/cpp/comments/horbq2/is_any_optimizer_able_to_cache_same_calls/)
-- url: https://www.reddit.com/r/cpp/comments/horbq2/is_any_optimizer_able_to_cache_same_calls/
+H O W
+## [9][cpprouter v0.0.2 released with better slug routing. Callbacks can now directly accept slug data either as separate parameters, or as an std::tuple. This greatly simplifies the registration of callbacks, as it is no longer required to create a unique struct for each callback.](https://www.reddit.com/r/cpp/comments/hpdnpu/cpprouter_v002_released_with_better_slug_routing/)
+- url: https://github.com/omartijn/cpprouter/tree/v0.0.2
 ---
-Hello everybody!
 
-I have a function which does the same call twice.
+## [10][Is C++ a good language for server side code?](https://www.reddit.com/r/cpp/comments/hp06wx/is_c_a_good_language_for_server_side_code/)
+- url: https://www.reddit.com/r/cpp/comments/hp06wx/is_c_a_good_language_for_server_side_code/
+---
+Just wondering if I am going down the right path. I want to do it in C++ but sometimes installing these dependencies (Mongo driver/RabbitMQ driver) take a long time and lots of research.
+## [11][Make a compiler](https://www.reddit.com/r/cpp/comments/hplux3/make_a_compiler/)
+- url: https://www.reddit.com/r/cpp/comments/hplux3/make_a_compiler/
+---
+Could someone help me in "How to make a compiler" i want to make my own programming laguage (just for fun), I've read a lot of stuff about it, but i didn't get it yet, like in theory it's all fine but in practice i didn't get anywhere.
+## [12][Function that parses the method signature in c++](https://www.reddit.com/r/cpp/comments/hppy5t/function_that_parses_the_method_signature_in_c/)
+- url: https://www.reddit.com/r/cpp/comments/hppy5t/function_that_parses_the_method_signature_in_c/
+---
+for example writing a test names 
 
-    double compute(const char *) __attribute__ ((pure));
-    
-    double f(const char* const data, const bool flag)
-    {
-        if (!flag &amp;&amp; compute(data) == 0.0)
-            return 4.2;
-        return compute(data) &lt; 100.0 ? -0.1 : 100.0;
-    }
+ public void testManCanWalk() 
 
-Is it possible to hint somehow the compiler to optimize such calls? I tried using `__attribute__((pure))`, but that didn't help.
+public void testBirdCanFly()
 
-Maybe some other compliers can do this?
+When run the test the output should displayed 
 
-For reference [https://godbolt.org/z/9T8Yod](https://godbolt.org/z/9T8Yod)
+Man Can Walk
+
+Bird Can Fly
+
+Can any one please explain how to  write a function that parses the method signature and returns the equivalent display version.

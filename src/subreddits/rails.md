@@ -19,260 +19,125 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Namespaced Active Record models in models/ar folder? Does anyone here do this?](https://www.reddit.com/r/rails/comments/hpomzh/namespaced_active_record_models_in_modelsar/)
-- url: https://www.reddit.com/r/rails/comments/hpomzh/namespaced_active_record_models_in_modelsar/
+## [2][Good service pattern architecture guides?](https://www.reddit.com/r/rails/comments/hqe0zs/good_service_pattern_architecture_guides/)
+- url: https://www.reddit.com/r/rails/comments/hqe0zs/good_service_pattern_architecture_guides/
 ---
-I just listened to the excellent [Rails with Jason podcast with Sandi Metz](https://www.codewithjason.com/sandi-metz-author-poodr-special-guest-tj-stankus-rails-jason-podcast/). 
+When first getting into Rails (or even web development in general) there is great documentation that explains the basics as well as the Rails framework itself doing a lot of the heavy lifting such as scaffolding, migrations, routing, etc.
 
-Sandi mentioned that when she starts a new Rails app, she always moves AR models to a "models/ar" subfolder and namespaces them.
+If the Rails guides are to be believed, all you need are some models doing simple validations with all logic happening in the controllers wiring them together. At the same time, as a best practice, models should not get too fat and no business logic should happen in the controller. It seems like we're missing a layer in-between: the service. (for convenience lets consider an API-only project without the views)
 
-The idea being that AR models are no longer the central concept in the app, and become dedicated to specifically database access. Leaving space for PORO business objects taking the center stage, which use the AR models when necessary. One of the outcomes being that AR are no longer the default place for functionality and thus do not grow into god objects.
+Coming from the Java / Spring world, it's very clear-cut where the separation happens between controller, service and 'models'. I don't see how this would be applied in Rails, if it is even necessary or what best practices are. Creating something like a *hexagonal architecture* seems completely alien to me in the Rails world. Does that even make sense?
 
-This makes a lot of sense and I tried it in a test app, but am noticing a few things:
-
-1. To properly namespace models in "models/ar", I need to name them like Ar::Post and not AR::Post. A small thing but it bugs me. What's a way to fix this?
-2. Some Rails conventions no longer work, like `link_to 'Show', post` must become `link_to 'Show', post_path(post)` because the rails magic gets confused by the absence of the default AR name.
-
-Luckily, associations seem to work OK, so `user.posts` still works out of the box.
-
-**Does anyone here use this kind of conventions and what kinds of other adjustments did you need to make?**
-
-
-Edit: The answer to 1. is adding an inflector rule in config/inflections.rb
-
-
-    ActiveSupport::Inflector.inflections(:en) do |inflect|
-      inflect.acronym 'AR'
-    end
-## [3][Rails creating development database with different name?](https://www.reddit.com/r/rails/comments/hpsv0n/rails_creating_development_database_with/)
-- url: https://www.reddit.com/r/rails/comments/hpsv0n/rails_creating_development_database_with/
+Can you recommend any good guides that touch this of bridging the gap between Controller and Model for anything a bit fancier than *just* a CRUD? Or maybe explain whether I might be thinking with the completely wrong mindset?
+## [3][app has different sessions for www and non-www](https://www.reddit.com/r/rails/comments/hq7tua/app_has_different_sessions_for_www_and_nonwww/)
+- url: https://www.reddit.com/r/rails/comments/hq7tua/app_has_different_sessions_for_www_and_nonwww/
 ---
-My database.yml file says this:
+The www and non-www versions of my Rails app on Heroku are two completely different sessions (I'm using Devise), and I want to prevent www by redirecting to https.
 
-    development:
-      &lt;&lt;: *default
-      database: project_name_development
-    
-    test:
-      &lt;&lt;: *default
-      database: project_name_test
-
-However, when I run bundle exec rails db:create, the databases created are:
-
-    Created database '123'
-    Created database 'project_name_test'
-
-I'm kind of new to Rails so I don't quite know what is happening here. Isn't the '123' database supposed to be named 'project\_name\_development'? I made no changes after running 'rails new' command, so why is it different? Does it matter if it is different or can I just move on?
-## [4][Help with running RSpec with spring in rails 4.2.3 application](https://www.reddit.com/r/rails/comments/hprklk/help_with_running_rspec_with_spring_in_rails_423/)
-- url: https://www.reddit.com/r/rails/comments/hprklk/help_with_running_rspec_with_spring_in_rails_423/
+[This](https://help.heroku.com/J2R1S4T8/can-heroku-force-an-application-to-use-ssl-tls) says to use `config.force_ssl = true` in `config/environments/production.rb` to force https, but that just redirects http to https. How can I redirect all www requests to https as well?
+## [4][Rails API + React Authentication](https://www.reddit.com/r/rails/comments/hq9oja/rails_api_react_authentication/)
+- url: https://www.reddit.com/r/rails/comments/hq9oja/rails_api_react_authentication/
 ---
-I wanted to run the RSpec via the spring preloader so I added this and this after bundle install i can see I'm using these two gems
+So im pretty familiar with rails and "somewhat" familiar with using rails as an API. I've done a bit with react (enough to know the basics/etc..)
 
-    Using spring 2.0.2
-    Using spring-commands-rspec 1.0.4
+However im a bit confused on the react side on how to handle authentication. Im guessing JWT is probably the most popular? I've used devise before, but it was years ago and only with rails.
 
-I then generate the binstub 
+I assume I just essentially want to store the user on react side on the state (I guess I would just store the user and whether they are logged in?) Seems like this would be ideal for redux store (I just need to get more familiar with redux) so it'd be pretty annoying to have to keep track of that user/logged in state for every component.
 
-    bundle exec spring binstub --all
+Anyways, is there a standard way to do this currently?
 
-and when I do \`bin/rspec path\_to\_spec.rb\` I get this error  
- 
-
-    activesupport-4.2.11.3/lib/active_support/concern.rb:126:in `included': Cannot define multiple 'included' blocks for a Concern (ActiveSupport::Concern::MultipleIncludedBlocks)
-
-When I try it without the bin/rspec and do just rspec it works fine. Can someone help me with this?
-## [5][How to use find_by_username with case_sensitive: false?](https://www.reddit.com/r/rails/comments/hprbfc/how_to_use_find_by_username_with_case_sensitive/)
-- url: https://www.reddit.com/r/rails/comments/hprbfc/how_to_use_find_by_username_with_case_sensitive/
+Thanks! (FWIW Im re-writing a "facebook clone" app with rails/react that I created for TheOdinProject)
+## [5][read messages when deliver Immediately in rabbitmq](https://www.reddit.com/r/rails/comments/hqfcc9/read_messages_when_deliver_immediately_in_rabbitmq/)
+- url: https://www.reddit.com/r/rails/comments/hqfcc9/read_messages_when_deliver_immediately_in_rabbitmq/
 ---
-How to use `find_by_username` with `case_sensitive: false`?
-
-I explain my issue. I have this script to take the username tagged (after @) and to check if it is a "existing user" or not.
-
-        text.gsub! (/@(\S+)/) do |match|
-          user = User.find_by_username($1)
-            if
-            else
-            end
-          end
-
-In this way if the text is `@Mike` and the user signed is `Mike`, it is ok.
-
-BUT if the text is `@mike` and the user signed is `Mike`, it doesn't work.
-
-**Hot to add a case\_sensitive false in find\_by\_username?**
-## [6][[Help] remote: true not sending an AJAX request even though data-remote-"true" is there](https://www.reddit.com/r/rails/comments/hpm2b6/help_remote_true_not_sending_an_ajax_request_even/)
-- url: https://www.reddit.com/r/rails/comments/hpm2b6/help_remote_true_not_sending_an_ajax_request_even/
+i want way to read messages when deliver Immediately in rabbitmq . for example when services send message to exchange , another services receives this message Immediately .
+## [6][How are Rails' "scaling issues" different from any other framework?](https://www.reddit.com/r/rails/comments/hq0744/how_are_rails_scaling_issues_different_from_any/)
+- url: https://www.reddit.com/r/rails/comments/hq0744/how_are_rails_scaling_issues_different_from_any/
 ---
-Hey everyone, I've been having some trouble recently with a course I've been following. 
+I've heard people complain before that "Rails doesn't scale", because: 
 
-I'm trying to render a partial through a respond_to. I have been following the course strictly, and I'm very confused about why my project is now showing an error while the instructor's project up to this point is running fine.
+* the fact that Ruby/Rails processes seem to consume a lot of memory
+* "Ruby is slow" which I don't think is true... always... [https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/yarv-python3.html](https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/yarv-python3.html) (I guess Node is faster than Ruby JIT now?)
+* You have to run workers, either on the same instance as your web server daemons or on other instance. 
+* You have to be able to scale said workers and web servers for high loads
+* Rails codebases encourage monolithic design patterns that causes them to grow too much, even if Ruby can handle boilerplate code really well (through Procs and Metaprogramming).
 
-*app/controllers/stocks_controller.rb*
+So these all seem like reasonable complaints, but what about Django, or even Phoenix?
 
-    &lt;h1&gt;My Portfolio&lt;/h1&gt;
-    &lt;div class='search-area'&gt;
-      &lt;h3&gt;Search Stocks&lt;/h3&gt;
-      &lt;%= form_tag search_stock_path, remote: true, method: :get do %&gt;
-        &lt;div class="form-group row"&gt;
-          &lt;div class="col-sm-9 no-right-padding"&gt;
-            &lt;%= text_field_tag :stock, params[:stock], placeholder: "Stock ticker symbol", autofocus: true, class: "form-control form-control-lg" %&gt;
-          &lt;/div&gt;
-          &lt;div class="col-sm-3 no-left-padding"&gt;
-            &lt;%= button_tag type: :submit, class: "btn btn-success" do %&gt;
-              &lt;%= fa_icon 'search 2x' %&gt;
-            &lt;% end %&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;% end %&gt;
-    &lt;/div&gt;
- 
-    &lt;div id="results"&gt;
-     
-    &lt;/div&gt;
+Just to be clear: I've never developed in Django or Phoenix, but I'd like to hear about the experiences of people here who worked with Django. It's a very similar framework, built on an interpreted language, using the same architectural patterns and migration system. Maybe this is some sort of selection bias, but I haven't heard anyone say "Django doesn't scale". Wouldn't these issues be present in any framework that follows MVC and encourages codebases like this? Laravel? Ember? Etc.
+## [7]['="?](https://www.reddit.com/r/rails/comments/hqd9m8/_/)
+- url: https://www.reddit.com/r/rails/comments/hqd9m8/_/
+---
+Very simple one this. In code, I see ' and ". Can you use either for the same thing? i.e. are they the same?
+## [8][Having trouble getting a view helper method to not return an array using haml](https://www.reddit.com/r/rails/comments/hq6o28/having_trouble_getting_a_view_helper_method_to/)
+- url: https://www.reddit.com/r/rails/comments/hq6o28/having_trouble_getting_a_view_helper_method_to/
+---
+Hello all,
 
-It seems like the **remote: true** part of this is not working at all. When I follow the instructor's commands before the section this question pertains to, no ajax is called, and the page reloads again.
+I am working on a small project where I am needing to loop through an array to decide which partial to render.
 
-What I mean is that the page is loading the search_stock endpoint from the /my_portfolio endpoint (where I start the search from) instead of staying on /my_portfolio and waiting for a js response. The form tag does correctly have the data-remote="true" show up in the inspector though.
+The primary view has the following
 
-[Here is an image of what I'm describing](https://i.stack.imgur.com/olQDO.png)
+    =sections_list
 
-The goal is to get the controller to respond to js and return a partial js.erb file
+Which corresponds to the following code
 
-*app/controllers/stocks_controller.rb*
-
-    class StocksController &lt;ApplicationController
+    def sections_list
+      sections = []
         
-        def search
-            if params[:stock].present?            
-                 @stock = Stock.new_lookup(params[:stock])
-                 if @stock            
-                    respond_to do |format|
-                        format.js { render partial: 'users/result' }
-                    end         
-                 else
-                    flash[:alert] = "Please enter a valid symbol to search"
-                    redirect_to my_portfolio_path
-                 end             
-            else 
-                flash[:alert] = "Please enter a symbol to search"
-               redirect_to my_portfolio_path
-            end
+      (@document.sections + [@document]).sort_by(&amp;:sort_order).each do |record|
+        if record.respond_to?(:document_id)
+          sections &lt;&lt; render('admin/sections/section_row', section: record)
+        else
+          sections &lt;&lt; render('admin/documents/approve_button_row', document: record)
         end
-    
+      end
+      raw sections
     end
 
-There is both a _result.html.erb and _result.js.erb in my app/views/users folder. _result.js.erb simply contains an alert to make sure the ajax call is working. I already have rails-ujs in my application.js file, and I have not modified anything related to rails-ujs myself.
+In the view, the partials show correctly but the array is being returned with the following in it:
 
-    // This file is automatically compiled by Webpack, along with any other files
-    // present in this directory. You're encouraged to place your actual application logic in
-    // a relevant structure within app/javascript and only use these pack files to reference
-    // that code so it'll be compiled.
-    
-    require("@rails/ujs").start()
-    require("turbolinks").start()
-    require("@rails/activestorage").start()
-    require("channels")
-    
-    // Uncomment to copy all static images under ../images to the output folder and reference
-    // them with the image_pack_tag helper in views (e.g &lt;%= image_pack_tag 'rails.png' %&gt;)
-    // or the `imagePath` JavaScript helper below.
-    //
-    // const images = require.context('../images', true)
-    // const imagePath = (name) =&gt; images(name, true)
-    
-    import "bootstrap"
+    ["\n\n\n\n\n\n\n", "\n\n\n\n\n\n\n"]
 
+The array has the same number of elements as what is being displayed in the view. 
 
-I am using Rails 6.0.3.2, so I don't think there should be an issue I hope.
-## [7][What route should I use?](https://www.reddit.com/r/rails/comments/hpj5we/what_route_should_i_use/)
-- url: https://www.reddit.com/r/rails/comments/hpj5we/what_route_should_i_use/
+As I know it, if I use a `-` instead of `=` in the view, the array wouldn't be returned, but since this is in a helper I have not figured out how to not get the array to return. I have tried doing things like return an empty value but since that is the last thing evaluated, the records don't show up in the view at all.
+
+Does anyone have any ideas I could try?
+## [9][would you rather write (A) or (B) ?](https://www.reddit.com/r/rails/comments/hq936d/would_you_rather_write_a_or_b/)
+- url: https://www.reddit.com/r/rails/comments/hq936d/would_you_rather_write_a_or_b/
 ---
-I have a Category model and a WordlistEntry model. They have a has_and_belongs_to_many relationship between them.
+  
 
-I'm trying to decide what request to make from the frontend when the user adds some Categories to a WordlistEntry.
-
-The Categories may or may not already exist in the database.
-
-I'm thinking it should be PATCH /wordlist_entries/:id/categories
-
-But I'm really not sure on this. What do you think?
-## [8][Can't get test to pass without 'reload' in after_create instance method.](https://www.reddit.com/r/rails/comments/hpe3a6/cant_get_test_to_pass_without_reload_in_after/)
-- url: https://www.reddit.com/r/rails/comments/hpe3a6/cant_get_test_to_pass_without_reload_in_after/
----
-Hey I'm having an issue with a method, which, when I test it, requires a `reload` in the model in order to pass my RSpec test.  
-
-
-Here is my test, which is essentially checks to see if the venue correctly updates it's own boolean value (in this case "serves\_food") if the truthy/falsy declaration for the two most recent reviews for that venue are the same.  
-
-
-    describe 'truthy/falsy venue values if the last two review values are the same' do
-      let!(:rev1) { create(:review, user: u, venue: ven, serves_food: true) }
-      let!(:rev2) { create(:review, user: u, venue: ven, serves_food: false) }
-      let!(:rev3) { create(:review, user: u, venue: ven, serves_food: false) }
-      it 'should update' do
-        expect(ven.serves_food).to be false
+    # exhibit (A)
+    module ApplicationHelper
+      def title(str)
+        content_for(:title) { str }
       end
     end
-
-  
-Here is the method which handles that logic (which is on the venue model, but is triggered in an "after\_update" action on the review model):  
-
-
-    def truth_checked_val(attribute, value)
-      if self.reviews.count == 0
-        nil
-      # executes if there is only one review, or the last review value matches current
-      elsif self.reviews.count == 1 || self.reviews[-2].send(attribute) == value
-        value
-      else
-        # returns the previous value if it does not match the current
-        self.reviews[-2].send(attribute)
+    
+    # exhibit (B)
+    module ApplicationHelper
+      def title(title)
+        content_for(:title) { title }
       end
     end
-
-  
-Now, I know why the test fails. It is because, for some reason, when the third `Review` factory is created, when I put a `byebug` at the beginning of the method, even though when I test it with `self.review``s.count` I get the correct number returned (3), if I try to return those reviews with `self.reviews`, only 2 of them (the first two) are returned.  
-
-
-So the only thing I have found which will fix this is to put a `.reload` on the first line of the method like so:
-
-    def truth_checked_val(attribute, value)
-      self.reviews.reload
-      ...
-    end
-
-This is a solution and the test will pass, but it seems very hacky. However I have as yet found no other way to get it to work.  
-
-
-TLDR; My test is failing because my conditional in my instance method is returning FALSE for the line `self.reviews[-2].send(attribute) == value` because it is returning the third to last review for `self.reviews[-2]` rather than the second to last. Only a `.reload` in the method is working, which is hacky but I can't find another way to resolve it.  
-
-
-Help appreciated.
-## [9][Building a blockchain app without using Etheream](https://www.reddit.com/r/rails/comments/hpfw4c/building_a_blockchain_app_without_using_etheream/)
-- url: https://www.reddit.com/r/rails/comments/hpfw4c/building_a_blockchain_app_without_using_etheream/
+## [10][I want to run an old rails 3.3.2 project, seeking particular and specific steps for that](https://www.reddit.com/r/rails/comments/hq3f8s/i_want_to_run_an_old_rails_332_project_seeking/)
+- url: https://www.reddit.com/r/rails/comments/hq3f8s/i_want_to_run_an_old_rails_332_project_seeking/
 ---
-I am a Rails developer and I have been reading a lot about Blockchain a lot since last year.
 
-I saw a video of how a transaction works in a chain manner in Blockchain, based on a sha256 byte hash string.  Let us say I wanted to build a "Funding tracker" app. Do I have to learn Solidity to do that? Is it possible to build a blockchain concept app without using Solidity and instead using other backend languages such as ruby or python?
-## [10][best practices on creating users with Devise?](https://www.reddit.com/r/rails/comments/hpbhjd/best_practices_on_creating_users_with_devise/)
-- url: https://www.reddit.com/r/rails/comments/hpbhjd/best_practices_on_creating_users_with_devise/
+I want to run this project, https://github.com/ebidadmin/ebid33 I tried rails s and bundle install but was instead faced upon a series of different bundler version compatability and dependency issues. It's been a week or so that I'm trying to run. I just feel like I've reached a dead end.
+
+My Ruby Version is 2.6.3, I also have 1.8.7 Installed. My rails version is 6.0.3.2
+## [11][When, if ever, should Associations be avoided?](https://www.reddit.com/r/rails/comments/hq85h8/when_if_ever_should_associations_be_avoided/)
+- url: https://www.reddit.com/r/rails/comments/hq85h8/when_if_ever_should_associations_be_avoided/
 ---
-\[I'm a newb\]. going through Hartl's tutorial, i decided to try to use Devise Gem instead of manually creating users/authentication.
+Learning RoR now. My prototype is a stock app. I have one table that holds all the trade information (e.g. symbol, date, price etc...). Now I want to add another table that holds all the information about the individual stocks (e.g. symbol, last price, description, beta, etc...).
 
-Is the best practice to use Devise and then manually generate a migration to add a column to users and then update code in the application controller?
-## [11][Retrieve the most liked article](https://www.reddit.com/r/rails/comments/hp8npu/retrieve_the_most_liked_article/)
-- url: https://www.reddit.com/r/rails/comments/hp8npu/retrieve_the_most_liked_article/
----
-So I have add a Like feature on my blog app and now I'm trying to retrieve the most liked article to display on my home page.
+My plan was just to have the trade model refer to the stock table just with a `stock_id` and without an association, because a trade isn’t a child of a stock, nor is it a parent.
 
-I have been following this documentation on active record calculations [here](https://api.rubyonrails.org/classes/ActiveRecord/Calculations.html).
+However, their is some sort of ‘relationship’ going on there. The stock table has master data that the trade table refers to. The info in the stock table **should** never be deleted (since stocks are rarely de-listed), so no need to cascade deletes, which is where I see associations and foreign keys being necessary.
 
-I have a Like model which belongs\_to an article and belongs\_to an user.
+In this master/referrer relationship, does establishing has_many/belongs_to associations in the models provide any real benefit? Or just add unneeded complexity?
 
-I don't know if this is the issue but I tried to retrieve the most liked article by doing Article.maximum(:likes) but it says the column "likes" does not exist. And yeah its perfectly fine since the article I followed up does not implemented that way.
-
-The thing is I think I should check the most liked article by using my Like model  and check who is the article\_id that most appears. I couldn't grasp yet how to do that. It always results in error whatever I try.
-
-My [repo](https://github.com/Gregory280/alpha-blog-5.1.4)
-
-By the way, should I put this on my view or on a "popular" method in likes controller?
+Thanks!

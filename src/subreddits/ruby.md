@@ -1,9 +1,60 @@
 # ruby
-## [1][Fun Facts about Ruby #10: Joining array elements without using Array#join](https://www.reddit.com/r/ruby/comments/hpsfzc/fun_facts_about_ruby_10_joining_array_elements/)
+## [1][99 Bottles of OOP - 2nd Edition Released](https://www.reddit.com/r/ruby/comments/hpzdxf/99_bottles_of_oop_2nd_edition_released/)
+- url: https://sandimetz.com/99bottles
+---
+
+## [2][Looking for some kind of "quick" database implementation](https://www.reddit.com/r/ruby/comments/hqf3wb/looking_for_some_kind_of_quick_database/)
+- url: https://www.reddit.com/r/ruby/comments/hqf3wb/looking_for_some_kind_of_quick_database/
+---
+Hey everyone. Some quick background: I lead a QA team full of ruby-ists where we build and maintain end to end tests in Webdriver and Capybara. We also have a set of "monitoring" scripts that are run via Cron.
+
+These monitoring scripts are run each and every minute. Pieces of the script require a snapshot of the "state" of the system (basic things like true/false flags + statuses). So we thought it would be clever to just write them to text file.
+
+That seems to work fine, however we've added so many flags that it's getting very messy to maintain, and the code is getting more and more difficult to understand.
+
+I was thinking of writing a JSON representation of this information to a file, but it seems like what makes the most sense is to run a basic database implementation in order to store the 'state' of what our scripts are monitoring.
+
+We're intimately familiar with MongoDB, but that seems really "heavy" for our needs. Is there something where I can just add a gem to our bundle and hit the ground running very quickly? Looking to avoid any new installations to our servers also.
+
+I know that Rails has its own db implementation, but we have 0 familiarity with Rails and activerecord.
+## [3][A Ruby Developer’s Adventures in Elixir](https://www.reddit.com/r/ruby/comments/hq5jkk/a_ruby_developers_adventures_in_elixir/)
+- url: https://medium.com/@minghz42/a-ruby-developers-adventures-in-elixir-515380986bc3
+---
+
+## [4][What does the 'take' keyword do?](https://www.reddit.com/r/ruby/comments/hq7wlh/what_does_the_take_keyword_do/)
+- url: https://www.reddit.com/r/ruby/comments/hq7wlh/what_does_the_take_keyword_do/
+---
+Edit: Solved - looks like this is a Shopify-specific keyword.
+
+I'm trying to learn the basic Ruby and came across this line: 
+
+     discounted_item = line_item.split(take: count)
+
+`Count` is a variable that equates to 0 or 1.
+
+Can anyone explain to me what the `take` parameter is called so I can Google it? I tried Googling a few things but can't seem to find what this is called or what it does.
+
+Edit: In this context, `line_item` is one of the values in an array of items in a shopping cart, one line per item. Each line_item refers to a Shopify object, which looks like this when logged: 
+`#&lt;LineItem:0x7febeed017a0 @grams=0, @original_line_price=#&lt;Money:0x7febeed01c20&gt;, @quantity=2, @discounts=[], @properties_was={}, @line_price=#&lt;Money:0x7febeed01d70&gt;, @adjustments=[], @variant=#&lt;Variant:0x7febeed022b0&gt;, @line_price_was=#&lt;Money:0x7febeed01d70&gt;, @source_indices={"32713989750828:24f88f9647288e16aec75d4feed7c66a"=&gt;2}, @properties={}&gt;`
+## [5][Introducing Devpack - custom development stack for Bundler](https://www.reddit.com/r/ruby/comments/hpvwzn/introducing_devpack_custom_development_stack_for/)
+- url: https://www.reddit.com/r/ruby/comments/hpvwzn/introducing_devpack_custom_development_stack_for/
+---
+Hi, Rubyists. I would like to introduce *Devpack*, a gem that allows developers to create a local `.devpack` file (either in the working directory or any parent directory) which specifies the developer's preferred development toolchain (i.e. a list of gems).
+
+This allows a single gem (which has no external dependencies) to be added to a `Gemfile` instead of each developer adding their favourite debugging gems. This helps avoid conflicting functionality and simplifies dependency resolution while still allowing for flexibility and personal preference.
+
+The gem is available here: [https://rubygems.org/gems/devpack](https://rubygems.org/gems/devpack)
+
+And the source code is here: [https://github.com/bobf/devpack](https://github.com/bobf/devpack)
+
+Feedback, questions, and bug reports are very welcome !
+
+Enjoy the rest of the weekend.
+## [6][Fun Facts about Ruby #10: Joining array elements without using Array#join](https://www.reddit.com/r/ruby/comments/hpsfzc/fun_facts_about_ruby_10_joining_array_elements/)
 - url: https://i.redd.it/664sl5gtnea51.png
 ---
 
-## [2][I am tired of hearing that Ruby is fine](https://www.reddit.com/r/ruby/comments/hpta1o/i_am_tired_of_hearing_that_ruby_is_fine/)
+## [7][I am tired of hearing that Ruby is fine](https://www.reddit.com/r/ruby/comments/hpta1o/i_am_tired_of_hearing_that_ruby_is_fine/)
 - url: https://www.reddit.com/r/ruby/comments/hpta1o/i_am_tired_of_hearing_that_ruby_is_fine/
 ---
 Let me prefix this with words of gratitude. You are all wonderful people and a very welcoming community.
@@ -61,11 +112,11 @@ To me Ruby as a project is complete. I have lowered my expectations for Ruby and
 
 Things like JavaScript or C# are not as nice to work with but they allow me to do stuff I could not really do with Ruby.
 Ruby to me is like Swift. Really nice to work with if you can (iOS apps) but absolutely disappointing for anything else (android,windows).
-## [3][I am tired of hearing that Ruby is dead](https://www.reddit.com/r/ruby/comments/hp3yar/i_am_tired_of_hearing_that_ruby_is_dead/)
+## [8][I am tired of hearing that Ruby is dead](https://www.reddit.com/r/ruby/comments/hp3yar/i_am_tired_of_hearing_that_ruby_is_dead/)
 - url: https://www.reddit.com/r/ruby/comments/hp3yar/i_am_tired_of_hearing_that_ruby_is_dead/
 ---
 Ruby has always been my favorite development language, which is why seeing all the posts about its death kind of sucks. I wrote an article on whether [Ruby is not dead in 2020](https://syndicode.com/2020/07/08/why-is-ruby-still-our-choice-in-2020-2/), but developers on my team didn't seem to agree on all the points. What do you think?
-## [4][How should I best convert Article.last into a URL path?](https://www.reddit.com/r/ruby/comments/hpbqn9/how_should_i_best_convert_articlelast_into_a_url/)
+## [9][How should I best convert Article.last into a URL path?](https://www.reddit.com/r/ruby/comments/hpbqn9/how_should_i_best_convert_articlelast_into_a_url/)
 - url: https://www.reddit.com/r/ruby/comments/hpbqn9/how_should_i_best_convert_articlelast_into_a_url/
 ---
 I'm going to apologise in advance, if this is an exceedingly basic question that I should be able to answer myself. I've been learning ruby/rails for a hot minute and this is the first time I'm trying to go off-script from the course.
@@ -82,7 +133,7 @@ And then similar code for the other 3 cards - i.e. second_to_last, third_to_last
 Is there any chance anyone could send me to a specific page of documentation or guide on exactly how to do this? If you could explain it then that would be amazing, but a boot in the right direction is great.
 
 I guess a bonus question is: should I actually be referencing database entries like that directly on a page, or should I be putting it somewhere more out of the way?
-## [5][Testing views in Sinatra application?](https://www.reddit.com/r/ruby/comments/hph1rj/testing_views_in_sinatra_application/)
+## [10][Testing views in Sinatra application?](https://www.reddit.com/r/ruby/comments/hph1rj/testing_views_in_sinatra_application/)
 - url: https://www.reddit.com/r/ruby/comments/hph1rj/testing_views_in_sinatra_application/
 ---
 We have some legacy code that keeps breaking because the code in the views are not checking for empty values in the response from an API. Here is an example from the SLIM file that was causing an error:  
@@ -96,74 +147,3 @@ We have some legacy code that keeps breaking because the code in the views are n
 While we have gone back and added checks, we still might be missing some. 
 
 I know how to do TDD with MiniTest and Ruby for unit testing, but I've never implemented testing with SLIM views. What testing framework should I use to mock up different responses with missing data to make sure the view logic in the SLIM files are good? Cucumber?
-## [6][Integrate activemodel serializers - API only ruby on rails course (chapter 4)](https://www.reddit.com/r/ruby/comments/hp7dai/integrate_activemodel_serializers_api_only_ruby/)
-- url: https://duetcode.io/rails-api-only-course/integrate-activemodel-serializers
----
-
-## [7][Replacing a range of objects within an array](https://www.reddit.com/r/ruby/comments/hp9che/replacing_a_range_of_objects_within_an_array/)
-- url: https://www.reddit.com/r/ruby/comments/hp9che/replacing_a_range_of_objects_within_an_array/
----
-I'm a bit of a newb so forgive my perhaps simple question.
-
-Is there an easy way to replace multiple objects within an array with another object?
-
-I want to start with an array that will return 0-9 and then replace 4, 5 &amp; 6 with say "apple" so that the array would return 0, 1, 2, 3, "apple", "apple", "apple",  7, 8, 9
-
-My code:
-
-array1 = Array.new(10) { | i | i.to_i }
-
-p array1.map { | i | i == 4 ? "apple" : i }
-
-Will return 0-9 but replace 4 with "apple" but when I want to replace a range...
-
-p array1.map { | i | i == 4..6 ? "apple" : i }
-
-It returns "warning: integer literal in conditional range"
-and 0-3 but the 5th through to 10th index are all "apple"
-
-Which I don't understand why it does that.
-
-Or do I just have to replace index's one at a time?🤔
-## [8][Ruby-on-Rails beginner question: How do I get the value of :id?](https://www.reddit.com/r/ruby/comments/hp2bvz/rubyonrails_beginner_question_how_do_i_get_the/)
-- url: https://www.reddit.com/r/ruby/comments/hp2bvz/rubyonrails_beginner_question_how_do_i_get_the/
----
-I'm trying to learn Ruby on Rails to broaden my horizon a bit and become a generally better programmer. My native tongue is Python and I usually make websites in Flask. Right now I'm trying to put together a simple REST api to host some files in directories off my disk. I have this route from rails:
-
-post GET    /posts/:id(.:format)                                                                     posts#show
-
-which then maps into my controller:
-
-&amp;#x200B;
-
-    class PostsController &lt; ApplicationController
-    	def index
-    		@posts = Array.new
-    		@directories = Dir["/home/narco/Code/blog/*-*-*"]
-    		for directory in @directories
-    			@post = {}
-    			@post["date"] = directory[22..32]
-    			info = JSON.load File.open directory+"/info.json"
-    			@post['title'] = info['title']
-    			@post['cover'] = info['cover']
-    			@post['author'] = info['author']
-    			@posts.push @post
-    		end
-    		render :json =&gt; @posts
-    	end
-    	
-    	def show
-    		info = JSON.load File.open "/home/narco/Code/blog/" + :id + "/info.json"
-    		render :json =&gt; info
-    	end
-    end
-
-The show method is where I have run into my problems. In flask I would pass in the url as a variable, in this case I assumed ":id" and then I could do this string concatenation like I am doing here. I have come to understand that symbols are a very different thing, there are plenty of guides to their differences online so I'm reading those right now. But I feel like even if I understand what a symbol is I am approach this problem wrong. I'm approaching it like a python programmer not a Ruby programmer. Can some one give me some guidance on how I am supposed to go about this specific task?
-## [9][How to create native encrypted attributes for Rails with ActiveModel attributes](https://www.reddit.com/r/ruby/comments/hosxlt/how_to_create_native_encrypted_attributes_for/)
-- url: https://alexc.link/blog/native-encrypted-attributes-for-rails-active-model
----
-
-## [10][All You Need to Know About Comments in Ruby - Tarka Labs](https://www.reddit.com/r/ruby/comments/horh49/all_you_need_to_know_about_comments_in_ruby_tarka/)
-- url: https://medium.com/tarkalabs/all-you-need-to-know-about-comments-in-ruby-97d991714cf3
----
-

@@ -1,6 +1,6 @@
 # rust
-## [1][Hey Rustaceans! Got an easy question? Ask here (28/2020)!](https://www.reddit.com/r/rust/comments/hm1pws/hey_rustaceans_got_an_easy_question_ask_here/)
-- url: https://www.reddit.com/r/rust/comments/hm1pws/hey_rustaceans_got_an_easy_question_ask_here/
+## [1][Hey Rustaceans! Got an easy question? Ask here (29/2020)!](https://www.reddit.com/r/rust/comments/hq8id7/hey_rustaceans_got_an_easy_question_ask_here/)
+- url: https://www.reddit.com/r/rust/comments/hq8id7/hey_rustaceans_got_an_easy_question_ask_here/
 ---
 Mystified about strings? Borrow checker have you in a headlock? Seek help here! There are no stupid questions, only docs that haven't been written yet.
 
@@ -16,50 +16,74 @@ The official Rust Programming Language Discord: [https://discord.gg/rust-lang](h
 
 The unofficial Rust community Discord: [https://bit.ly/rust-community](https://bit.ly/rust-community)
 
-Also check out [last week's thread](https://reddit.com/r/rust/comments/hhv4z1/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
+Also check out [last week's thread](https://reddit.com/r/rust/comments/hm1pws/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][This Week in Rust 346](https://www.reddit.com/r/rust/comments/hnkws3/this_week_in_rust_346/)
-- url: https://this-week-in-rust.org/blog/2020/07/08/this-week-in-rust-346/
+## [2][What's everyone working on this week (29/2020)?](https://www.reddit.com/r/rust/comments/hq8j8i/whats_everyone_working_on_this_week_292020/)
+- url: https://www.reddit.com/r/rust/comments/hq8j8i/whats_everyone_working_on_this_week_292020/
+---
+New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-29-2020/45746?u=llogiq)!
+## [3][rust-analyzer changelog #33](https://www.reddit.com/r/rust/comments/hqdgli/rustanalyzer_changelog_33/)
+- url: https://rust-analyzer.github.io/thisweek/2020/07/13/changelog-33.html
 ---
 
-## [3][LKML: Linus Torvalds: Re: Linux kernel in-tree Rust support](https://www.reddit.com/r/rust/comments/hplaz4/lkml_linus_torvalds_re_linux_kernel_intree_rust/)
-- url: https://lkml.org/lkml/2020/7/10/1261
+## [4][nnnoiseless: porting audio code from C to rust](https://www.reddit.com/r/rust/comments/hq2g8e/nnnoiseless_porting_audio_code_from_c_to_rust/)
+- url: https://jneem.github.io/nnnoiseless/
 ---
 
-## [4][Tour of Rust](https://www.reddit.com/r/rust/comments/hpt01d/tour_of_rust/)
+## [5][Announcing yew-state: providing Yew components with ergonomic access to globally shared (and optionally persistent) state](https://www.reddit.com/r/rust/comments/hqbzgr/announcing_yewstate_providing_yew_components_with/)
+- url: https://github.com/intendednull/yew-state
+---
+
+## [6][My first crate, StructConf! A structopt-like derive macro to combine argument parsing and an ini config file. Would love some feedback ;)](https://www.reddit.com/r/rust/comments/hqcetf/my_first_crate_structconf_a_structoptlike_derive/)
+- url: https://github.com/vidify/structconf
+---
+
+## [7][Check if an email address exists without sending any email](https://www.reddit.com/r/rust/comments/hqbuqu/check_if_an_email_address_exists_without_sending/)
+- url: https://www.reddit.com/r/rust/comments/hqbuqu/check_if_an_email_address_exists_without_sending/
+---
+[github repo](https://github.com/amaurymartiny/check-if-email-exists) | [docs](https://docs.rs/check-if-email-exists/0.8.11/check_if_email_exists/) | [live demo](https://reacher.email)
+
+`check-if-email-exists` is a tool to check if an email exists without sending any email. The tool connects to the target email's SMTP server, and parses the response of the `RCPT TO:` command.
+
+This lib is only half of the equation for email verification. Companies use a bunch of techniques (greylisting, IP blacklisting, ISPs block port 25...) to prevent spam. During this lockdown, I created a SaaS to get around these restrictions: https://reacher.email (also 100% open-source, backend in Rust). It scales with AWS Lambda, and to avoid IP blacklisting, I use Tor. I get decent results with it: ~85% of the emails I verify return a result.
+
+Looking for feedback!
+## [8][1.0 release of the Rust client for Apache Pulsar](https://www.reddit.com/r/rust/comments/hqbmz3/10_release_of_the_rust_client_for_apache_pulsar/)
+- url: https://www.reddit.com/r/rust/comments/hqbmz3/10_release_of_the_rust_client_for_apache_pulsar/
+---
+I'm please to announce the stable release of the [pulsar crate](https://crates.io/crates/pulsar), a Rust client for [Apache Pulsar](https://pulsar.apache.org/), a distributed pub-sub system that is gaining steam this year.  
+
+
+A few features:
+
+&amp;#x200B;
+
+* async/await interface
+* TLS connections
+* message batching
+* compression (LZ4, zlib, zstd or Snappy)
+* automatic reconnection with configurable exponential back off
+* configurable executor: tokio, async-std, or any custom executor that wraps one of those
+## [9][Rust is Surprisingly Good as a Server Language](https://www.reddit.com/r/rust/comments/hpzmeu/rust_is_surprisingly_good_as_a_server_language/)
+- url: https://stu2b50.dev/posts/rust-is-surpris76171
+---
+
+## [10][Are there any latest best practices for no_std crates](https://www.reddit.com/r/rust/comments/hqdku7/are_there_any_latest_best_practices_for_no_std/)
+- url: https://www.reddit.com/r/rust/comments/hqdku7/are_there_any_latest_best_practices_for_no_std/
+---
+Hey rustaceans,
+
+I'm getting started with Rust and doing some hobby project for home automation. I've decided to split my project in 2 crates (so far) - a tiny core (mostly for data representation and some pieces of transport layer) that is supposed to be re-usable potentially on embedded devices (thus no\_std) and a regular binary crate.
+
+I've read about no\_std crates in the book and I've checked some existing crates, however it's not entirely clear what's the best practice of writing a crate that is supposed to work with both std/no\_std. 
+
+It definitely might be an overkill for me to play with no\_std at my current level of Rust knowledge, however I have a strong feeling that some experience with no\_std will help me understanding Rust way better.
+## [11][Tour of Rust](https://www.reddit.com/r/rust/comments/hpt01d/tour_of_rust/)
 - url: https://tourofrust.com/
 ---
 
-## [5][This Month in Rust OSDev (June 2020)](https://www.reddit.com/r/rust/comments/hpsowl/this_month_in_rust_osdev_june_2020/)
-- url: https://rust-osdev.com/this-month/2020-06/
----
-
-## [6][gitoxide v0.1 - verify pack files, fast and in style](https://www.reddit.com/r/rust/comments/hprgjw/gitoxide_v01_verify_pack_files_fast_and_in_style/)
-- url: https://github.com/Byron/git-oxide
----
-
-## [7][r/systems need a lot more love and I think the content is relevant for many Rust programmers](https://www.reddit.com/r/rust/comments/hpmb75/rsystems_need_a_lot_more_love_and_i_think_the/)
-- url: https://www.reddit.com/r/systems
----
-
-## [8][Rust support for Event Tracing for Windows (ETW)](https://www.reddit.com/r/rust/comments/hpoj6f/rust_support_for_event_tracing_for_windows_etw/)
-- url: https://github.com/microsoft/rust_win_etw
----
-
-## [9][I decided to dip my feet into proc macros, and bada bing, bada boom, introducing "compiletime"! Like the __TIME__ define in C but better.](https://www.reddit.com/r/rust/comments/hpjypn/i_decided_to_dip_my_feet_into_proc_macros_and/)
-- url: https://lib.rs/crates/compiletime
----
-
-## [10][String interners in Rust](https://www.reddit.com/r/rust/comments/hpg70o/string_interners_in_rust/)
-- url: https://dev.to/cad97/string-interners-in-rust-797
----
-
-## [11][Golf-club - a new weapon in CrateBeforeAttack, an MP-grappling hook game being made in Rust.](https://www.reddit.com/r/rust/comments/hpm0zx/golfclub_a_new_weapon_in_cratebeforeattack_an/)
-- url: https://i.redd.it/p3ci2fu3xba51.gif
----
-
-## [12][Live loudness normalization in GStreamer &amp; experiences with porting a C audio filter to Rust](https://www.reddit.com/r/rust/comments/hpfceg/live_loudness_normalization_in_gstreamer/)
-- url: https://coaxion.net/blog/2020/07/live-loudness-normalization-in-gstreamer-experiences-with-porting-a-c-audio-filter-to-rust/
+## [12][The Soul of a New Debugger](https://www.reddit.com/r/rust/comments/hpy44d/the_soul_of_a_new_debugger/)
+- url: https://nbaksalyar.github.io/2020/07/12/soul-of-a-new-debugger.html
 ---
 

@@ -123,59 +123,422 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [3][What is the std::swap two-step?](https://www.reddit.com/r/cpp/comments/hpqbdz/what_is_the_stdswap_twostep/)
+## [3][Ask Me Anything with Bjarne Stroustrup, hosted by John Regehr (PLDI 2020)](https://www.reddit.com/r/cpp/comments/hqdnx5/ask_me_anything_with_bjarne_stroustrup_hosted_by/)
+- url: https://www.youtube.com/watch?v=Bycec3UQxOc
+---
+
+## [4][Patch for GCC 10 to implement P0222](https://www.reddit.com/r/cpp/comments/hqbqjd/patch_for_gcc_10_to_implement_p0222/)
+- url: https://www.reddit.com/r/cpp/comments/hqbqjd/patch_for_gcc_10_to_implement_p0222/
+---
+P0222: [https://github.com/mwoehlke/cpp-proposals/blob/master/p0222r0-anonymous-struct-return.rst](https://github.com/mwoehlke/cpp-proposals/blob/master/p0222r0-anonymous-struct-return.rst)
+
+GCC: [https://gcc.gnu.org/git.html](https://gcc.gnu.org/git.html)
+
+This patch lifts the restriction described in P0222 + it is possible to define types in function arguments, so it's possible to write code like this:
+
+    struct { int x; }
+    g(const struct { int y; } &amp;args) {
+    	return { .x = args.y };
+    }
+    
+    int main() {
+    	return g({ .y = 11 }).x;
+    }
+
+This code generates the following assembly with `-O3`:
+
+    movl    $11, %eax
+    ret
+
+Patch:
+
+    diff --git a/gcc/cp/parser.c b/gcc/cp/parser.c
+    index 45ad2c05288..b1e0b871777 100644
+    --- a/gcc/cp/parser.c
+    +++ b/gcc/cp/parser.c
+    @@ -3115,6 +3115,7 @@ cp_parser_check_for_definition_in_return_type (cp_declarator *declarator,
+       /* [dcl.fct] forbids type definitions in return types.
+          Unfortunately, it's not easy to know whether or not we are
+          processing a return type until after the fact.  */
+    +  /*
+       while (declarator
+             &amp;&amp; (declarator-&gt;kind == cdk_pointer
+                 || declarator-&gt;kind == cdk_reference
+    @@ -3129,6 +3130,7 @@ cp_parser_check_for_definition_in_return_type (cp_declarator *declarator,
+                  "(perhaps a semicolon is missing after the definition of %qT)",
+                  type);
+         }
+    +    */
+     }
+     
+     /* A type-specifier (TYPE) has been parsed which cannot be followed by
+    @@ -22764,8 +22766,10 @@ cp_parser_parameter_declaration (cp_parser *parser,
+     
+       /* Type definitions may not appear in parameter types.  */
+       saved_message = parser-&gt;type_definition_forbidden_message;
+    +  /*
+       parser-&gt;type_definition_forbidden_message
+         = G_("types may not be defined in parameter types");
+    +  */
+     
+       int template_parm_idx = (function_being_declared_is_template_p (parser) ?
+                               TREE_VEC_LENGTH (INNERMOST_TEMPLATE_PARMS
+
+Patch is trivial and even if it does not apply, it should be possible to replicate it on other versions of GCC.
+
+IMO it is a bit of overkill because it allows to write code like this:
+
+    struct {
+    	int x = 0;
+    
+    	operator int () const {
+    		// this executes when struct is converted to int but not before that
+    		std::cout &lt;&lt; x &lt;&lt; std::endl;
+    		return 0;
+    	}
+    
+    	struct tors {
+    		tors() { std::cout &lt;&lt; "got ctor" &lt;&lt; std::endl; }
+    		~tors() { std::cout &lt;&lt; "got dtor?" &lt;&lt; std::endl; }
+    	} tors = {};
+    }
+    f(const struct { int y; } &amp;args) {
+    	return { .x = args.y };
+    }
+
+This isn't exactly footgun, more like a tactical nuke, looks funny, but probably under export restrictions. But this is very powerful and could be a solid basis for more refined language features i think. However if you think about it, this is nothing that can not be implemented with non anonymous structures. For designated initializers `-std=c++2a` is need to be set of course.
+
+Any ideas?
+## [5][Best Practices for A C Programmer](https://www.reddit.com/r/cpp/comments/hpz198/best_practices_for_a_c_programmer/)
+- url: https://www.reddit.com/r/cpp/comments/hpz198/best_practices_for_a_c_programmer/
+---
+Hi all,
+
+Long time C programmer here, primarily working in the embedded industry (particularly involving safety-critical code). I've been a lurker on this sub for a while but I'm hoping to ask some questions regarding best practices. I've been trying to start using c++ on a lot of my work - particularly taking advantage of some of the code-reuse and power of C++ (particularly constexpr, some loose template programming, stronger type checking, RAII etc).
+
+I would consider myself maybe an 8/10 C programmer but I would conservatively maybe rate myself as 3/10 in C++ (with 1/10 meaning the absolute minmum ability to write, google syntax errata, diagnose, and debug a program). Perhaps I should preface the post that I am more than aware that C is by no means a subset of C++ and there are many language constructs permitted in one that are not in the other.
+
+In any case, I was hoping to get a few answers regarding best practices for c++. Keep in mind that the typical target device I work with does not have a heap of any sort and so a lot of the features that constitute "modern" C++ (non-initialization use of dynamic memory, STL meta-programming, hash-maps, lambdas (as I currently understand them) are a big no-no in terms of passing safety review.
+
+### **When do I overload operators inside a class as opposed to outisde?** ###
+
+... And what are the arguments for/against each paradigm? See below:
+
+    /* Overload example 1 (overloaded inside class) */
+    class myclass
+    {
+    private:
+        unsigned int a;
+        unsigned int b;
+
+    public:
+        myclass(void);
+
+        unsigned int get_a(void) const;
+
+        bool operator==(const myclass &amp;rhs);
+    };
+
+    bool myclass::operator==(const myclass &amp;rhs)
+    {
+        if (this == &amp;rhs)
+        {
+            return true;
+        }
+        else
+        {
+            if (this-&gt;a == rhs.a &amp;&amp; this-&gt;b == rhs.b)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+As opposed to this:
+    
+    /* Overload example 2 (overloaded outside of class) */
+    class CD
+    {
+        private:
+            unsigned int c;
+            unsigned int d;
+        public:
+            CD(unsigned int _c, unsigned int _d) : d(_d), c(_c) {}; /* CTOR */
+            unsigned int get_c(void) const; /* trival getters */
+            unsigned int get_d(void) const; /* trival getters */
+    };
+
+
+    /* In this implementation, If I don't make the getters (get_c, get_d) constant, 
+     * it won't  compile despite their access specifiers being public. 
+     * 
+     * It seems like the const keyword in C++ really should be interpretted as 
+     * "read-only AND no side effects" rather than just read only as in C. 
+     * But my current understanding may just be flawed...
+     * 
+     * My confusion is as follows: The function args are constant references 
+     * so why do I have to promise that the function methods have no side-effects on
+     * the private object members? Is this something specific to the == operator?
+     */
+    bool operator==(const CD &amp; lhs, const CD &amp; rhs)
+    {   
+        if(&amp;lhs == &amp;rhs)
+            return true;
+        else if((lhs.get_c() == rhs.get_c()) &amp;&amp; (lhs.get_d() == rhs.get_d()))
+            return true;
+        return false;
+    }
+
+
+When should I use the example 1 style over the example 2 style? What are the pros and cons of 1 vs 2? 
+
+### **What's the deal with const member functions?** ###
+
+This is more of a subtle confusion but it seems like in C++ the const keyword means different things base on the context in which it is used. I'm trying to develop a relatively nuanced understanding of what's happening under the hood and I most certainly have misunderstood many language features, especially because C++ has likely changed greatly in the last ~6-8 years.
+
+### **When should I use enum classes versus plain old enum?** ###
+
+To be honest I'm not entirely certain I fully understand the implications of using enum versus enum class in C++. 
+
+This is made more confusing by the fact that there are subtle differences between the way C and C++ treat or permit various language constructs (const, enum, typedef, struct, void\*, pointer aliasing, type puning, tentative declarations). 
+
+In C, enums decay to integer values at compile time. But in C++, the way I currently understand it, enums are their own type. Thus, in C, the following code would be valid, but a C++ compiler would generate a warning (or an error, haven't actually tested it)
+    
+
+    /* Example 3: (enums : Valid in C, invalid in C++ ) */
+    enum COLOR
+    {
+        RED,
+        BLUE,
+        GREY
+    };
+
+    enum PET
+    {
+        CAT,
+        DOG,
+        FROG
+    };
+
+    /* This is compatible with a C-style enum conception but not C++ */
+    enum SHAPE
+    {
+        BALL = RED, /* In C, these work because int = int is valid */
+        CUBE = DOG, 
+    };
+
+If my understanding is indeed the case, do enums have an implicit namespace (language construct, not the C++ keyword) as in C? As an add-on to that, in C++, you can also declare enums as a sort of inherited type (below). What am I supposed to make of this? Should I just be using it to reduce code size when possible (similar to gcc option -fuse-packed-enums)? Since most processors are word based, would it be more performant to use the processor's word type than the syntax specified above?
+    
+    /* Example 4: (Purely C++ style enums, use of enum class/ enum struct) */
+    /* C++ permits forward enum declaration with type specified */
+    enum FRUIT : int;
+    enum VEGGIE : short;
+
+    enum FRUIT /* As I understand it, these are ints */
+    {
+        APPLE,
+        ORANGE,
+    };
+
+    enum VEGGIE /* As I understand it, these are shorts */
+    {
+        CARROT,
+        TURNIP,
+    };
+
+Complicating things even further, I've also seen the following syntax:
+
+    /* What the heck is an enum class anyway? When should I use them */
+    enum class THING
+    {
+        THING1,
+        THING2,
+        THING3
+    };
+
+    /* And if classes and structs are interchangable (minus assumptions
+     * about default access specifiers), what does that mean for
+     * the following definition?
+     */
+    enum struct FOO /* Is this even valid syntax? */
+    {
+        FOO1,
+        FOO2,
+        FOO3
+    };
+
+
+Given that enumerated types greatly improve code readability, I've been trying to wrap my head around all this. When should I be using the various language constructs? Are there any pitfalls in a given method?
+
+### **When to use POD structs (a-la C style) versus a class implementation?** ###
+
+If I had to take a stab at answering this question, my intuition would be to use POD structs for passing aggregate types (as in function arguments) and using classes for interface abstractions / object abstractions as in the example below:
+
+    struct aggregate
+    {
+        unsigned int related_stuff1;
+        unsigned int related_stuff2;
+        char         name_of_the_related_stuff[20];
+    };
+
+
+    class abstraction
+    {
+    private:
+        unsigned int private_member1;
+        unsigned int private_member2;
+
+    protected:
+        unsigned int stuff_for_child_classes;
+
+    public:
+        /* big 3 */
+        abstraction(void);
+        abstraction(const abstraction &amp;other);
+        ~abstraction(void);
+
+        /* COPY semantic ( I have a better grasp on this abstraction than MOVE) */
+        abstraction &amp;operator=(const abstraction &amp;rhs);
+
+        /* MOVE semantic (subtle semantics of which I don't full grasp yet) */
+        abstraction &amp;operator=(abstraction &amp;&amp;rhs);
+
+        /*
+         * I've seen implentations of this that use a copy + swap design pattern
+         * but that relies on std::move and I realllllly don't get what is
+         * happening under the hood in std::move
+         */
+        abstraction &amp;operator=(abstraction rhs);
+
+        void do_some_stuff(void); /* member function */
+    };
+
+
+Is there an accepted best practice for thsi or is it entirely preference? Are there arguments for only using classes? What about vtables (where byte-wise alignment such as device register overlays and I have to guarantee placement of precise members)
+
+### **Is there a best practice for integrating C code?** ###
+
+Typically (and up to this point), I've just done the following:
+     
+    /* Example 5 : Linking a C library */
+    /* Disable name-mangling, and then give the C++ linker / 
+     * toolchain the compiled
+     * binaries 
+     */
+    #ifdef __cplusplus
+    extern "C" {
+    #endif /* C linkage */
+
+    #include "device_driver_header_or_a_c_library.h" 
+
+    #ifdef __cplusplus
+    }
+    #endif /* C linkage */
+
+    /* C++ code goes here */
+
+As far as I know, this is the only way to prevent the C++ compiler from generating different object symbols than those in the C header file. Again, this may just be ignorance of C++ standards on my part.
+
+### **What is the proper way to selectively incorporate RTTI without code size bloat?** ###
+
+Is there even a way? I'm relatively fluent in CMake but I guess the underlying question is if binaries that incorporate RTTI are compatible with those that dont (and the pitfalls that may ensue when mixing the two).
+
+### **What about compile time string formatting?** ###
+
+One of my biggest gripes about C (particularly regarding string manipulation) frequently (especially on embedded targets) variadic arguments get handled at runtime. This makes string manipulation via the C standard library (printf-style format strings) uncomputable at compile time in C.
+
+This is sadly the case even when the ranges and values of paramers and formatting outputs is entirely known beforehand. C++ template programming seems to be a big thing in "modern" C++ and I've seen a few projects on this sub that use the turing-completeness of the template system to do some crazy things at compile time. Is there a way to bypass this ABI limitation using C++ features like constexpr, templates, and lambdas? My (somewhat pessimistic) suspicion is that since the generated assembly must be ABI-compliant this isn't possible. Is there a way around this? What about the std::format stuff I've been seeing on this sub periodically?
+
+### **Is there a standard practice for namespaces and when to start incorporating them?** ###
+
+Is it from the start? Is it when the boundaries of a module become clearly defined? Or is it just personal preference / based on project scale and modularity?
+
+If I had to make a guess it would be at the point that you get a "build group" for a project (group of source files that should be compiled together) as that would loosely define the boundaries of a series of abstractions APIs you may provide to other parts of a project.
+
+--EDIT-- markdown formatting
+## [6][CppCon 2020 will be held entirely online :(](https://www.reddit.com/r/cpp/comments/hqf0tc/cppcon_2020_will_be_held_entirely_online/)
+- url: https://cppcon.org/going-virtual/
+---
+
+## [7][5 Curious C++ Lambda Examples: Recursion, constexpr, Containers and More](https://www.reddit.com/r/cpp/comments/hqc1a4/5_curious_c_lambda_examples_recursion_constexpr/)
+- url: https://www.bfilipek.com/2020/07/lambdas5ex.html
+---
+
+## [8][How Cheerp supports 64-bit integers in both JavaScript and WebAssembly](https://www.reddit.com/r/cpp/comments/hqf9fp/how_cheerp_supports_64bit_integers_in_both/)
+- url: https://medium.com/leaningtech/how-cheerp-supports-64-bit-integers-in-both-javascript-and-webassembly-79485761615a
+---
+
+## [9][Optimize function-level computation which is not used in some execution paths](https://www.reddit.com/r/cpp/comments/hqbjkm/optimize_functionlevel_computation_which_is_not/)
+- url: https://www.reddit.com/r/cpp/comments/hqbjkm/optimize_functionlevel_computation_which_is_not/
+---
+Hello cpp!
+
+(This is related to but does not assume [Is any optimizer able to cache same calls?](https://www.reddit.com/r/cpp/comments/horbq2/is_any_optimizer_able_to_cache_same_calls/))
+
+I have following code:
+
+    [[gnu::pure]] bool compute(const uint64_t n) noexcept;
+    
+    int f(const bool flag1, const bool flag2, const uint64_t n)
+    {
+        const auto c = compute(n);
+        if (flag1 &amp;&amp; c)
+            return 1;
+        return flag2 || c ? 3 : 2;
+    }
+
+It's clear that when `flag1=false` and `flag2=true` value of `c` is unused.
+
+So, I am wondering how to make compiler to unroll if-statements for me, to compute `c` only when required? e.g. to have asm equivalent to the following code:
+
+    int f(const bool flag1, const bool flag2, const uint64_t n)
+    {
+        if (flag1)
+        {
+            if (compute(n))
+                return 1;
+            return flag2 ? 3 : 2;
+        }
+        else
+        {
+            return flag2 || compute(n) ? 3 : 2;
+        }
+    }
+
+Code of `compute` doesn't matter (I just need something to model heavy computation). Here it is for reference. It's *available* to compiler:
+
+    [[gnu::pure]] bool compute(const uint64_t n) noexcept
+    {
+        std::vector&lt;uint64_t&gt; primes;
+        for (uint64_t i = 2; n / i &gt;= i; ++i)
+        {
+            if (std::none_of(std::begin(primes), std::end(primes),
+                             [i](const auto p) { return i % p == 0; }))
+                primes.push_back(i);
+        }
+        return primes.size() % 2 == 0;
+    }
+## [10][I'm new to c++ and need guidance](https://www.reddit.com/r/cpp/comments/hqdwte/im_new_to_c_and_need_guidance/)
+- url: https://www.reddit.com/r/cpp/comments/hqdwte/im_new_to_c_and_need_guidance/
+---
+Hello everyone! I'm new to programming and have been learning from sololearn. I will list down what i have learned so far. Could you please guide what to learn next? .
+I've learned:
+Loops, 
+Vectors, 
+Arrays, 
+Variables, 
+Class and objects, 
+Templates, function temp, class templates, 
+Polymorphism, 
+Inheritance, 
+Text files (Write and read files), 
+I have created student database, calculator and very basic projects.
+## [11][Version 0.55.0 of the Meson build system is out, here's what's new](https://www.reddit.com/r/cpp/comments/hpw9xd/version_0550_of_the_meson_build_system_is_out/)
+- url: https://mesonbuild.com/Release-notes-for-0-55-0.html
+---
+
+## [12][What is the std::swap two-step?](https://www.reddit.com/r/cpp/comments/hpqbdz/what_is_the_stdswap_twostep/)
 - url: https://quuxplusone.github.io/blog/2020/07/11/the-std-swap-two-step/
 ---
 
-## [4][What's the status of clang concepts?](https://www.reddit.com/r/cpp/comments/hpci88/whats_the_status_of_clang_concepts/)
-- url: https://www.reddit.com/r/cpp/comments/hpci88/whats_the_status_of_clang_concepts/
----
-I tried some very simple [test](https://godbolt.org/z/E6r9z3). Seems the short-circuiting (once fixed in old concepts branch in 2018) still not working.
-## [5][Best ide?](https://www.reddit.com/r/cpp/comments/hprsek/best_ide/)
-- url: https://www.reddit.com/r/cpp/comments/hprsek/best_ide/
----
-just wandering what ide people think is best
-## [6][Mobile Development with C++ in Visual Studio 2019](https://www.reddit.com/r/cpp/comments/hptaoj/mobile_development_with_c_in_visual_studio_2019/)
-- url: https://youtu.be/3SJmf1HsVQU
----
-
-## [7][What do you think about Juce?](https://www.reddit.com/r/cpp/comments/hpdhdh/what_do_you_think_about_juce/)
-- url: https://www.reddit.com/r/cpp/comments/hpdhdh/what_do_you_think_about_juce/
----
-I recently came across Juce.com and I thought it was quite interesting. I always go the Qt route if I need a GUI, but this project seems promising. Has anyone used this before? What were your opinion of it?
-## [8][I think my program accidentally generated a new symbol...](https://www.reddit.com/r/cpp/comments/hpty1q/i_think_my_program_accidentally_generated_a_new/)
-- url: https://www.reddit.com/r/cpp/comments/hpty1q/i_think_my_program_accidentally_generated_a_new/
----
-. If I google it, I get a question mark.
-
-&amp;#x200B;
-
-H O W
-## [9][cpprouter v0.0.2 released with better slug routing. Callbacks can now directly accept slug data either as separate parameters, or as an std::tuple. This greatly simplifies the registration of callbacks, as it is no longer required to create a unique struct for each callback.](https://www.reddit.com/r/cpp/comments/hpdnpu/cpprouter_v002_released_with_better_slug_routing/)
-- url: https://github.com/omartijn/cpprouter/tree/v0.0.2
----
-
-## [10][Is C++ a good language for server side code?](https://www.reddit.com/r/cpp/comments/hp06wx/is_c_a_good_language_for_server_side_code/)
-- url: https://www.reddit.com/r/cpp/comments/hp06wx/is_c_a_good_language_for_server_side_code/
----
-Just wondering if I am going down the right path. I want to do it in C++ but sometimes installing these dependencies (Mongo driver/RabbitMQ driver) take a long time and lots of research.
-## [11][Make a compiler](https://www.reddit.com/r/cpp/comments/hplux3/make_a_compiler/)
-- url: https://www.reddit.com/r/cpp/comments/hplux3/make_a_compiler/
----
-Could someone help me in "How to make a compiler" i want to make my own programming laguage (just for fun), I've read a lot of stuff about it, but i didn't get it yet, like in theory it's all fine but in practice i didn't get anywhere.
-## [12][Function that parses the method signature in c++](https://www.reddit.com/r/cpp/comments/hppy5t/function_that_parses_the_method_signature_in_c/)
-- url: https://www.reddit.com/r/cpp/comments/hppy5t/function_that_parses_the_method_signature_in_c/
----
-for example writing a test names 
-
- public void testManCanWalk() 
-
-public void testBirdCanFly()
-
-When run the test the output should displayed 
-
-Man Can Walk
-
-Bird Can Fly
-
-Can any one please explain how to  write a function that parses the method signature and returns the equivalent display version.

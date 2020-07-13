@@ -1,29 +1,20 @@
 # androiddev
-## [1][App Feedback Thread - July 11, 2020](https://www.reddit.com/r/androiddev/comments/hp96qf/app_feedback_thread_july_11_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/hp96qf/app_feedback_thread_july_11_2020/
+## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/hqeluj/weekly_whos_hiring_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/hqeluj/weekly_whos_hiring_thread/
 ---
-This thread is for getting feedback on your own apps.
+Looking for Android developers? Heard about a cool job posting? Let people know!
 
-####Developers:
+Here is a suggested posting template:
 
-- must **provide feedback** for others
-- must include **Play Store**, **GitHub**, or **BitBucket** link
-- must make top level comment
-- must make effort to respond to questions and feedback from commenters
-- may be open or closed source
+&gt; Company: &lt;Best Company Ever&gt;  
+&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
+&gt; Location: &lt;City, State, Country&gt;  
+&gt; Allows remote: &lt;Yes/No&gt;  
+&gt; Visa: &lt;Yes/No&gt;  
 
-####Commenters:
-
-- must give **constructive feedback** in replies to top level comments
-- must not include links to other apps
-
-To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
-
-As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
-
-\- Da Mods
-## [2][Weekly Questions Thread - July 06, 2020](https://www.reddit.com/r/androiddev/comments/hm5itj/weekly_questions_thread_july_06_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/hm5itj/weekly_questions_thread_july_06_2020/
+Feel free to include any other information about the job.
+## [2][Weekly Questions Thread - July 13, 2020](https://www.reddit.com/r/androiddev/comments/hqd7s0/weekly_questions_thread_july_13_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/hqd7s0/weekly_questions_thread_july_13_2020/
 ---
 This thread is for simple questions that don't warrant their own thread (although we suggest checking the sidebar, [the wiki](http://www.reddit.com/r/androiddev/wiki/), [our Discord](https://discord.gg/D2cNrqX), or [Stack Overflow](http://stackoverflow.com) before posting). Examples of questions:
 
@@ -40,81 +31,56 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][I made an open-source news app then use NYTimes API as the backend](https://www.reddit.com/r/androiddev/comments/hpqaql/i_made_an_opensource_news_app_then_use_nytimes/)
-- url: https://www.reddit.com/r/androiddev/comments/hpqaql/i_made_an_opensource_news_app_then_use_nytimes/
----
-This is my first open-source app. It shows top stories from different sections. It uses Kotlin and jetpack libraries.
-
-Pls, tell me what you think about it.
-
-Github: [https://github.com/DhirajBorana/Newz](https://github.com/DhirajBorana/Newz)
-## [4][MarkdownEditText](https://www.reddit.com/r/androiddev/comments/hps4uz/markdownedittext/)
-- url: https://www.reddit.com/r/androiddev/comments/hps4uz/markdownedittext/
----
-I needed a way to backup Rich Text in my notes app and view it on other platforms (Without using webviews) so i made an editor that convert styled text into Markdown so i can view it on other platforms.  
-Github: [https://github.com/YahiaAngelo/MarkdownEditText](https://github.com/YahiaAngelo/MarkdownEditText)  
-
-
-Any advice or suggestions will be greatly appreciated.
-## [5][When did you feel ready to accept a job as a Android developer?](https://www.reddit.com/r/androiddev/comments/hpfmqw/when_did_you_feel_ready_to_accept_a_job_as_a/)
-- url: https://www.reddit.com/r/androiddev/comments/hpfmqw/when_did_you_feel_ready_to_accept_a_job_as_a/
----
-This is a question especially for those who didnt learn coding at uni. How do you know you know enough? Theres always more knowledge to learn so where is that tipping point? Was there a project you did on your own that made you confident you were ready?
-## [6][Opening the last app programatically](https://www.reddit.com/r/androiddev/comments/hpsfgm/opening_the_last_app_programatically/)
-- url: https://www.reddit.com/r/androiddev/comments/hpsfgm/opening_the_last_app_programatically/
----
-Hello,
-
-I have an application with a background service.  
-When there is a certain signal, my application goes to foreground and shows something.
-
-When the signal is removed, it shall go back to the last app that was open.
-
-How can I do this?
-
-Maybe: How can I simulate double pressing the back button?
-
-&amp;#x200B;
-
-Thanks in advance.
-## [7][Too early to ditch Java from Kotlin?](https://www.reddit.com/r/androiddev/comments/hptbje/too_early_to_ditch_java_from_kotlin/)
-- url: https://www.reddit.com/r/androiddev/comments/hptbje/too_early_to_ditch_java_from_kotlin/
----
-Hi everyone. First year CS student here who finished the Java MOOC except the JavaFX parts and just dove in google's android tutorials in Java. Apart from the MOOC, I don't have much experience with Java, but I do have experience with C from Uni and Python before uni. Learned a bit of OOP from GUI programming in python, but it got solidified doing Java's MOOC  which was mostly easy and I do think I've got the basics down.  Like I know how Abstraction, Encapsulation, Polymorphism, Inheritance, Abstract Classes, Interfaces, Anonymous Classes, Lambdas, Streams, Generics, basic unit testing and so on work. I've also recently got hold of a copy for Effective Java and Head First Design Patterns to help me write better and more efficient code. Just really want to dive into android atm and focus on that to get really used to one language and just keep making projects instead of jumping from one language to another.
-
-Keeping these previous points in mind, will it be too soon to ditch Java for Kotlin? Should I get more comfortable with Java first and just power through google's slightly dated android tutorials in Java? Just heard that the Kotlin ones are the only ones getting updated frequently if I'm not mistaken? 
-
-Thanks!
-## [8][[Blog] How to handle Android Notifications Extensible way](https://www.reddit.com/r/androiddev/comments/hpe80c/blog_how_to_handle_android_notifications/)
-- url: https://link.medium.com/zOAviYAv27
+## [3][Am from Zambia and started a Youtube channel to help my friends learn Android development. Asking for suggestions on how i can do better.](https://www.reddit.com/r/androiddev/comments/hq7mj2/am_from_zambia_and_started_a_youtube_channel_to/)
+- url: https://youtu.be/5HgfLTY5Z1M
 ---
 
-## [9][Anti-Reset Rob](https://www.reddit.com/r/androiddev/comments/hprdqe/antireset_rob/)
-- url: https://www.reddit.com/r/androiddev/comments/hprdqe/antireset_rob/
----
-I would like that they could add more security for the following functions not to allow reset of the phone by buttons or screen if you do not have the unlocking pin of the cell phone to do it.
-It also does not give the ability to turn off the device without the unlock pin.
-Do not allow the unlock pin to be accessed without the corresponding pin.
-
-It is now easy to steal a cell phone and to be able to restart it from the factory by pressing buttons and skipping the Security verification.
-This encourages crime.
-## [10][Recommendation?](https://www.reddit.com/r/androiddev/comments/hpqqs1/recommendation/)
-- url: https://www.reddit.com/r/androiddev/comments/hpqqs1/recommendation/
----
-Greetings everyone! 
-
-Experienced devs, what would you recommend for newcomers?
-
-[View Poll](https://www.reddit.com/poll/hpqqs1)
-## [11][How to create design like top free top grossing trending etc in kotlin ??](https://www.reddit.com/r/androiddev/comments/hpqocu/how_to_create_design_like_top_free_top_grossing/)
-- url: https://i.redd.it/c79xb37rtda51.jpg
+## [4][WebView - Android's most convenient footgun](https://www.reddit.com/r/androiddev/comments/hqbf8u/webview_androids_most_convenient_footgun/)
+- url: https://byte.how/posts/webview-androids-most-convenient-footgun/
 ---
 
-## [12][I'm confused about the direction of android](https://www.reddit.com/r/androiddev/comments/hp690u/im_confused_about_the_direction_of_android/)
-- url: https://www.reddit.com/r/androiddev/comments/hp690u/im_confused_about_the_direction_of_android/
+## [5][Process voice input with StanfordNLP](https://www.reddit.com/r/androiddev/comments/hqct46/process_voice_input_with_stanfordnlp/)
+- url: https://codingtroops.com/android/process-voice-input-in-android-with-stanfordnlp/
 ---
-So my first app I built/am building with Java and traditional android views and I found the experience to be a bit painful (java is very verbose, compiling takes ages, themes and animations are a pain in the ass etc)
 
-So now I'm interested in starting another app and maybe porting my current app to better tech but there seems to be two competing technologies? Dart+flutter and Kotlin+jetpack? Is that right? Why do both exist and which is better to learn? I like the idea of Flutter if it's cross platform but then why does Kotlin+Jetpack exist, does Flutter have limitations on native apps? Is Flutter something Google is likely to drop because it's not as popular? etc
+## [6][Avatar Face Creation System](https://www.reddit.com/r/androiddev/comments/hqdivg/avatar_face_creation_system/)
+- url: https://www.reddit.com/r/androiddev/comments/hqdivg/avatar_face_creation_system/
+---
+Hey guys, I have been creating a mobile game and I really wanted to have an avatar face creation/customization system in the game so players can each make their unique avatars. I've seen lots of apps recently that all use a very similar style of avatars (trivia royale as an example and they all look like memojis). I was wondering if they all made their own avatar system independently that just all happened to look pretty much the same, or is there some avatar face customization SDK or asset that all of these companies are using. As a quick follow up question, if I were to make my own avatar face customization system, how would i go about doing it? Thanks guys!
+## [7][MockK Guidebook, upcoming all-in-one guide for the Kotlin mocking library](https://www.reddit.com/r/androiddev/comments/hpxf8e/mockk_guidebook_upcoming_allinone_guide_for_the/)
+- url: https://notwoods.github.io/mockk-guidebook/
+---
 
-Thanks for your advice and sorry if this is a stupid question.
+## [8][What are your experiences with take-home-assignments before the interview?](https://www.reddit.com/r/androiddev/comments/hqcve8/what_are_your_experiences_with/)
+- url: https://www.reddit.com/r/androiddev/comments/hqcve8/what_are_your_experiences_with/
+---
+Posting from a throwaway account.
+
+I recently got shortlisted at a Jakarta based startup. I have 5+ years of exp building a handful of successful apps for startups. I also have 2 side projects that are doing well. They shortlisted my profile and assigned a coding test - it was basically about building an offline-first app using MVVM and Kotlin. I properly architected the app, focused on every tiny detail and met every requirement to ensure it's high quality. A week after, they reverted with a positive response and scheduled a call. However, the person interviewing me is a CTO and did not talk anything about the submitted assignment, and held a 1 hour database-design-interview for an specific offline feature. I basically failed this round, because my hands-on experience with SQL is confined to trivial queries on Android. Not that it was super-hard, I just don't have the muscle memory for it to think quickly. Their job-description did not say anything about wanting good skills with SQL either.
+
+I was hoping the interviewer would be curious and ask questions regarding my approach in the assignment and so on. But none of that happened!
+
+Anyone had a similar experience? Is it expected that once coding assignment is cleared, the following rounds often have nothing to do with it? If yes, then what is the point of assigning coding tests in such a manner?
+## [9][scenemerge - a python build tool to allow reuse of MotionScene contents via templates.](https://www.reddit.com/r/androiddev/comments/hqf80f/scenemerge_a_python_build_tool_to_allow_reuse_of/)
+- url: https://github.com/beatonma/motionscene-merger
+---
+
+## [10][Google play submission delayed since 25th June](https://www.reddit.com/r/androiddev/comments/hq80po/google_play_submission_delayed_since_25th_june/)
+- url: https://www.reddit.com/r/androiddev/comments/hq80po/google_play_submission_delayed_since_25th_june/
+---
+Our app is on the store for 5 years now, we have had over dozen updates last year or so, our latest submission is being delayed since 25th June, no response other than we are prioritizing reviews for app (Which apparently isn't).  
+Contacted google play via twitter DM, the only response is stay tuned, we are prioritizing reviews for app, thats it nothing else, ah and advising us to refrain from resubmitting the app so the cycle is not reset.
+
+Anyone else experiencing the same issues ? We are a B2B company, and our clients are already complaining (Promised bug fixes and paid features for them).
+## [11][Developer Name for App Publishing](https://www.reddit.com/r/androiddev/comments/hqb981/developer_name_for_app_publishing/)
+- url: https://www.reddit.com/r/androiddev/comments/hqb981/developer_name_for_app_publishing/
+---
+Is it possible to choose the displayed developer name for an app(a name that is not the google account name)? I want to publish an app to the play store, and want to use my main google account, but I a worried that it will show as my name instead of my company name as the app maker in the listing.
+## [12][what is the alternative of setFragmentResult?](https://www.reddit.com/r/androiddev/comments/hqd113/what_is_the_alternative_of_setfragmentresult/)
+- url: https://www.reddit.com/r/androiddev/comments/hqd113/what_is_the_alternative_of_setfragmentresult/
+---
+I am trying to communicate between fragments. 
+On attach I set a reference to the  parent Activity which is a FragmentActivity on child fragments.
+I tried to call `parent.getSupportFragmentManager.setFragmentResult("key", bundleOf("k" to "v" ))`
+but apparently setFragmentResult no longer exists under FragmentManager. 
+Is there any alternative to this for message passing between fragments or am i supposed to pass callbacks all over the place through the main activity ?

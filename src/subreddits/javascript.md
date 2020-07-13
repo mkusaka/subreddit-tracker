@@ -7,88 +7,146 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [2][Showoff Saturday (July 11, 2020)](https://www.reddit.com/r/javascript/comments/hp8pa9/showoff_saturday_july_11_2020/)
-- url: https://www.reddit.com/r/javascript/comments/hp8pa9/showoff_saturday_july_11_2020/
+## [2][Your /r/javascript recap for the week of July 06 - July 12](https://www.reddit.com/r/javascript/comments/hqbxf0/your_rjavascript_recap_for_the_week_of_july_06/)
+- url: https://www.reddit.com/r/javascript/comments/hqbxf0/your_rjavascript_recap_for_the_week_of_july_06/
 ---
-Did you find or create something cool this week in javascript? 
+**Monday, July 06 - Sunday, July 12**
 
-Show us here!
-## [3][SbAdmin2 build with LitElement, what do you think?](https://www.reddit.com/r/javascript/comments/hpr9tf/sbadmin2_build_with_litelement_what_do_you_think/)
-- url: https://slekrem.github.io/sb-admin-2-lit-version/
+###Top Posts
+
+| score | comments | title &amp; link |
+|--|--|--|
+| 463  | [22 comments](https://www.reddit.com/r/javascript/comments/hopwh9/developer_handbook_2020_was_created_to_cover_the/) | [Developer Handbook 2020 - was created to cover the most common technical questions and requirements appearing prior to job interviews, during onboarding or personal goals / career planning at our company Apptension.](https://github.com/apptension/developer-handbook)|
+| 448  | [65 comments](https://www.reddit.com/r/javascript/comments/hmv12l/understand_javascripts_generators_in_3_minutes/) | [Understand JavaScript’s Generators in 3 minutes](https://medium.com/@Dylan.Kerler/understand-javascripts-generators-in-3-minutes-8af75c9c4f5f)|
+| 218  | [50 comments](https://www.reddit.com/r/javascript/comments/hng2pg/debounce_explained_how_to_make_your_javascript/) | [Debounce Explained – How to Make Your JavaScript Wait For Your User To Finish Typing](https://www.freecodecamp.org/news/debounce-explained-how-to-make-your-javascript-wait-for-your-user-to-finish-typing-2/)|
+| 176  | [28 comments](https://www.reddit.com/r/javascript/comments/hm5977/i_make_my_first_electron_application_that/) | [I make my first Electron application that document your journey as Junior developer in a timelapse video which takes screenshots of my screen, merge them and add a soundtrack](https://github.com/IliasHad/makerlapse-app)|
+| 169  | [7 comments](https://www.reddit.com/r/javascript/comments/hpvabe/rust_for_javascript_developers_pattern_matching/) | [Rust for JavaScript Developers - Pattern Matching and Enums](http://www.sheshbabu.com/posts/rust-for-javascript-developers-pattern-matching-and-enums/)|
+| 157  | [11 comments](https://www.reddit.com/r/javascript/comments/ho5u6y/building_open_source_web_analytics_platform_with/) | [Building Open Source Web Analytics Platform with Cube.js](https://web-analytics.cube.dev/)|
+| 152  | [24 comments](https://www.reddit.com/r/javascript/comments/hoae97/visual_studio_code_june_2020/) | [Visual Studio Code June 2020](https://code.visualstudio.com/updates/v1_47)|
+| 137  | [30 comments](https://www.reddit.com/r/javascript/comments/hoz6hr/guide_to_javascript_array_functions_why_you/) | [Guide To Javascript Array Functions: Why you should pick the least powerful tool for the job](https://jesseduffield.com/array-functions-and-the-rule-of-least-power/)|
+| 127  | [25 comments](https://www.reddit.com/r/javascript/comments/ho3eep/perf_track_see_how_popular_frameworks_are_used/) | [Perf Track - see how popular frameworks are used across the web](https://perf-track.web.app/)|
+| 124  | [16 comments](https://www.reddit.com/r/javascript/comments/hp9nby/the_traversal_order_of_object_properties_in_es6/) | [The traversal order of object properties in ES6](https://2ality.com/2015/10/property-traversal-order-es6.html)|
+
+
+
+
+&amp;nbsp;
+
+###Most Commented Posts
+
+| score | comments | title &amp; link |
+|--|--|--|
+| 43  | [83 comments](https://www.reddit.com/r/javascript/comments/hnx5wn/askjs_do_you_think_javascript_is_a_good/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Do you think Javascript is a good programming language to learn in 2020 or the Java stack or C# stack with Blazor etc are more suited for webdev and a stable career ?|
+| 91  | [60 comments](https://www.reddit.com/r/javascript/comments/hmdbfy/i_made_a_simpler_alternative_to_nodemon_let_me/) | [I made a simpler alternative to nodemon. let me know what you think!](https://gitlab.com/Thann/nodemon)|
+| 38  | [43 comments](https://www.reddit.com/r/javascript/comments/hp91ta/askjs_trick_for_destructuring_reassignment/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Trick for destructuring re-assignment without parenthesis|
+| 98  | [33 comments](https://www.reddit.com/r/javascript/comments/hm7h6d/state_of_frontend_2020_survey/) | [State of Frontend 2020 Survey](https://tsh.io/state-of-frontend/?utm_source=reddit&amp;amp;utm_medium=social&amp;amp;utm_campaign=sofe_survey&amp;amp;utm_content=redditjavascript)|
+| 102  | [23 comments](https://www.reddit.com/r/javascript/comments/hnvazd/web_monetization_a_javascript_browser_api_which/) | [Web Monetization · A JavaScript browser API which allows the creation of a payment stream from the user agent to the website](https://webmonetization.org/)|
+
+
+
+
+&amp;nbsp;
+
+###Top Ask JS
+
+| score | comments | title &amp; link |
+|--|--|--|
+| 83  | [21 comments](https://www.reddit.com/r/javascript/comments/hplh9l/askjs_which_framework_do_you_prefer_from_scraping/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Which framework do you prefer from scraping data from website? &amp;#40;building a chrome extension&amp;#41;|
+| 11  | [7 comments](https://www.reddit.com/r/javascript/comments/hnvoxr/askjs_insightful_js_questionsanswers/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Insightful JS questions/answers|
+| 6  | [4 comments](https://www.reddit.com/r/javascript/comments/hm85df/askjs_what_does_set_apart_those_two_people/) | `[AskJS]` &amp;#91;AskJS&amp;#93; What does set apart those two people?|
+
+
+
+
+&amp;nbsp;
+
+###Top Showoffs
+
+| score  |  comment  |
+|--|--|
+| 5  |  /u/allinhumor said [I made my first npm package. It's not much but I'm proud.  React Native inputs with built in validations.  &amp;#91;inputs-react-native&amp;#93;&amp;#40;https://github.com/JazibJafri/inputs-react-native&amp;#41;  Any...](/r/javascript/comments/hp8pa9/showoff_saturday_july_11_2020/fxnvaz5/?context=5) |
+| 3  |  /u/sebe324 said [Hey, I made an unbeatable tic tac toe game! If you somehow win, let me know. http://tic-tac-toes.glitch.me/ &amp;#40;don't look at the code, even I don't know what is going on there lmao&amp;#41;](/r/javascript/comments/hp8pa9/showoff_saturday_july_11_2020/fxsrw4e/?context=5) |
+| 3  |  /u/longfallsdamroad said [I've been working on two projects with Leaflet, some vanilla JS, and basic jquery &amp;#40;using Flask as the backend for both&amp;#41;.  A running map of Philadelphia: &amp;#91;http://www.phillytrails.com/&amp;#93;&amp;...](/r/javascript/comments/hp8pa9/showoff_saturday_july_11_2020/fxoookj/?context=5) |
+
+
+
+
+&amp;nbsp;
+
+###Top Comments
+
+| score  |  comment  |
+|--|--|
+| 87  |  /u/grumpkot said [maybe someone could explain debounce to github devs who did repositories search update](/r/javascript/comments/hng2pg/debounce_explained_how_to_make_your_javascript/fxb40py/?context=5) |
+| 64  |  /u/Kerrits said [Upvote for giving real world examples where it could be used.](/r/javascript/comments/hmv12l/understand_javascripts_generators_in_3_minutes/fx7prpo/?context=5) |
+| 60  |  /u/aradil said [It’s generally not useful to give examples of recursive programs that could be trivially written with a normal loop unless you wanted to compare and contrast them.  Obviously this can be written with ...](/r/javascript/comments/hmme2h/maybe_this_can_help_somebody_how_to_use_recursion/fx6k874/?context=5) |
+| 55  |  /u/license-bot said [Thanks for sharing your open source project, but it looks like you haven't specified a license.  &amp;gt; When you make a creative work &amp;#40;which includes code&amp;#41;, the work is under exclusive copyright...](/r/javascript/comments/hm5977/i_make_my_first_electron_application_that/fx35gzb/?context=5) |
+| 46  |  /u/slgard said [check the job postings in your region.  in the UK I'd say the biggest demand for full stack developers is for C# + Angular  I've seen 0 jobs asking for experience of Blazor.](/r/javascript/comments/hnx5wn/askjs_do_you_think_javascript_is_a_good/fxej245/?context=5) |
+
+
+
+
+&amp;nbsp;
+## [3][Generating billions of UUIDs in the browser](https://www.reddit.com/r/javascript/comments/hqbie4/generating_billions_of_uuids_in_the_browser/)
+- url: https://medium.com/teads-engineering/generating-uuids-at-scale-on-the-web-2877f529d2a2
 ---
 
-## [4][[AskJS] Which framework do you prefer from scraping data from website? (building a chrome extension)](https://www.reddit.com/r/javascript/comments/hplh9l/askjs_which_framework_do_you_prefer_from_scraping/)
-- url: https://www.reddit.com/r/javascript/comments/hplh9l/askjs_which_framework_do_you_prefer_from_scraping/
----
-I mostly develop in python. Recently built data scraping tools for a few websites to extract and recalculated users data in a more useful way. I used selenium due to ease of use and ability to use DOM to access the data.
-
-Now I want to rebuild that python data scraper as a chrome extension. Obviously in javascript. Between security issues and javascript libraries I need to choose an architecture.
-
-any tips/suggestions on javascript packages to work with?
-
-Hoping to fast track tool selection before digging too deep into my spare time.  
-
-
-\[edit: fixed grammar\]  
-
-## [5][Is monorepo for you?](https://www.reddit.com/r/javascript/comments/hpr830/is_monorepo_for_you/)
-- url: https://medium.com/@him_jar/is-monorepo-for-you-2020-78cc1717a4f1
+## [4][Hukum - Github Action progress in your terminal](https://www.reddit.com/r/javascript/comments/hq89l1/hukum_github_action_progress_in_your_terminal/)
+- url: https://github.com/abskmj/hukum
 ---
 
-## [6][The traversal order of object properties in ES6](https://www.reddit.com/r/javascript/comments/hp9nby/the_traversal_order_of_object_properties_in_es6/)
-- url: https://2ality.com/2015/10/property-traversal-order-es6.html
+## [5]["The Plague of Linters": Controversial, but painfully real thoughts on common linting mistakes](https://www.reddit.com/r/javascript/comments/hqayn1/the_plague_of_linters_controversial_but_painfully/)
+- url: https://redd.one/blog/the-plague-of-linters
 ---
 
-## [7][An open-source web component for voice-enabled chatbots. Simply provide the URL to an FAQ as an attribute. Heuristic algorithms, tensorflow.js, etc. everything is fully coded in JavaScript.](https://www.reddit.com/r/javascript/comments/hphnha/an_opensource_web_component_for_voiceenabled/)
-- url: https://github.com/uihilab/instant-expert
+## [6][Rust for JavaScript Developers - Pattern Matching and Enums](https://www.reddit.com/r/javascript/comments/hpvabe/rust_for_javascript_developers_pattern_matching/)
+- url: http://www.sheshbabu.com/posts/rust-for-javascript-developers-pattern-matching-and-enums/
 ---
 
-## [8][eSlayers part 4 - More user info](https://www.reddit.com/r/javascript/comments/hpo65c/eslayers_part_4_more_user_info/)
-- url: https://dev.to/rembrandtreyes/eslayers-part-4-more-user-info-23oe
+## [7][LucidSuggest: autocomplete made with Rust and WebAssembly](https://www.reddit.com/r/javascript/comments/hqd0e5/lucidsuggest_autocomplete_made_with_rust_and/)
+- url: https://github.com/thaumant/lucid-suggest/blob/master/javascript/README.md
 ---
 
-## [9][BloggerJS - script to modify the format of URLs in a Blogger / Blogspot blog, visually creating better navigation. The script "cleans" the URL, removing the date or date from it, as the case may be, as well as the making it a more convenient URL to share](https://www.reddit.com/r/javascript/comments/hpu1nk/bloggerjs_script_to_modify_the_format_of_urls_in/)
-- url: https://github.com/jokenox/bloggerjs/
+## [8][Best way to keep users safe while using Google Analytics](https://www.reddit.com/r/javascript/comments/hpxp1k/best_way_to_keep_users_safe_while_using_google/)
+- url: https://itsopensource.com/best-way-to-keep-users-safe-while-using-google-analytics/
 ---
 
-## [10][ToastMaker - Open Source JavaScript Library for Showing Toast Notifications on Web Page](https://www.reddit.com/r/javascript/comments/hp85j0/toastmaker_open_source_javascript_library_for/)
-- url: https://toastmaker.wirehall.com/
+## [9][Catching clicks outside your element with useClickOutside](https://www.reddit.com/r/javascript/comments/hqemo2/catching_clicks_outside_your_element_with/)
+- url: https://www.selbekk.io/blog/2020/07/catching-clicks-outside-your-element-with-useclickoutside/
 ---
 
-## [11][[AskJS] Trick for destructuring re-assignment without parenthesis](https://www.reddit.com/r/javascript/comments/hp91ta/askjs_trick_for_destructuring_reassignment/)
-- url: https://www.reddit.com/r/javascript/comments/hp91ta/askjs_trick_for_destructuring_reassignment/
+## [10][[AskJS] Trying to create a custom function to scrape some data to a google sheet](https://www.reddit.com/r/javascript/comments/hqel0j/askjs_trying_to_create_a_custom_function_to/)
+- url: https://www.reddit.com/r/javascript/comments/hqel0j/askjs_trying_to_create_a_custom_function_to/
 ---
-For context of what I'm talking about, see either [here](https://stackoverflow.com/questions/27386234/object-destructuring-without-var) or [here on stackoverflow](https://stackoverflow.com/questions/48714689/javascript-re-assign-let-variable-with-destructuring/48714713) (short) or the [notes here on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Assignment_without_declaration) (detailed).
+I'm a tottaly noob with js and regex, and I'm trying to create a function to scrape some data from a brazilian stocks website to insert in a spreadsheet. I was using xPath with the IMPORTXML function, but as my sheet was growing, the IMPORTXML function couldn't handle too many requests, and ended up not loading anything.
 
+I'm using [this](https://statusinvest.com.br/) website to get the data from. Taking [this](https://statusinvest.com.br/acoes/abev3) stock as example.
+
+My goals here are:
+
+1. I want to take some of the indicators from [this](https://i.imgur.com/que6tXI.png) div area (such as P/L, LPA, M. LÍQUIDA, and others);
+2. And some of the numbers from [this](https://i.imgur.com/lA8q7pC.png) tables's first column (such as row 11, 15, and others).
+
+My sheet can be found [here](https://docs.google.com/spreadsheets/d/1PQV8exagIIbuME214F5Q6HU52Q01sFvo3AL-E2KKRxE/edit?usp=sharing).
+
+What is the easiset way to achieve my goals? And as for I have 10 columns to get different things, should I have 10 different functions?
+
+Since now, I thank you guys!
+## [11][[AskJS] Has anyone done reinforcement learning with tensorflow.js or ml5?](https://www.reddit.com/r/javascript/comments/hqeclj/askjs_has_anyone_done_reinforcement_learning_with/)
+- url: https://www.reddit.com/r/javascript/comments/hqeclj/askjs_has_anyone_done_reinforcement_learning_with/
 ---
-*Edit to summarize for the lazy ones: you want to do
+I'm not new to JavaScript, but have been exploring machine learning lately.
 
-     // beginning of function:    
-     let { latitude, longitude } = startingCoordinates()
-     // ...
-     // other parts of function
-     // ...
-     { latitude, longitude } = updatedCoordinates()
-but this is a syntax error on the second assignment; instead you have to do
+I can't find *any* examples of this, and as I'm new to machine learning, any guidance would be much appreciated :)
 
-     ;({ latitude, longitude } = updatedCoordinates())
+There are a number of reinforcement learning libraries out there, but they implement their own neuronal networks... Which aren't performant. Tensor flow uses webgl, which is 100x faster than the CPU in my testing.
 
----
+There are also reinforcement algorithm only libs, but don't show how to integrate with a neural network. :/
 
-I hate this requirement of parenthesis around an assignment, for me it seems to communicate things that are not true ("this is an expression, we are going to use the return value"). Also it doesn't allow for a semicolon-free coding style (which may be a good thing for some people, but I don't like it), since otherwise the parenthesis might be interpreted as trying to call the previous line as a function. Also it's cumbersome to wrap assignments.
+Basically, I'm lost.
 
-So I've came up with the following trick for reassignment instead. You can simply write
-
-     let {} = { latitude, longitude } = updatedCoordinates()
-
-This works, needs no parenthesis, needs no semicolons, and doesn't pollute the namespace with any more variables. And while it still doesn't communicate the correct thing clearly ("a destructuring reassignment is happening here"), at least it doesn't seem to communicate anything else either (or worst case it communicates "what the heck is this").
-
-That's it, just wanted to let y'all know about this, maybe someone else finds this useful too. And, of course, if someone has an even better solution, I'm all ears.
-
-----
-
-Offtopic: I don't feel like the [AskJS] tag rings very true here as there's no explicit question in my post, but the guide says it's also for "debating best practices", so I guess this post should be ok.
-## [12][A New RegExp Engine in SpiderMonkey (Firefox 78+)](https://www.reddit.com/r/javascript/comments/hpbe5i/a_new_regexp_engine_in_spidermonkey_firefox_78/)
-- url: https://hacks.mozilla.org/2020/06/a-new-regexp-engine-in-spidermonkey/
+ thanks.  :)
+## [12][Symbolic math with javascript. I really recommend!](https://www.reddit.com/r/javascript/comments/hpwqed/symbolic_math_with_javascript_i_really_recommend/)
+- url: https://nerdamer.com/
 ---
 

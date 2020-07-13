@@ -83,57 +83,90 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
-## [3][Stems - Mac + Windows app built using React/Typescript/Electron that takes a song and breaks it apart into isolated vocal, instrumental, drum, and bass tracks.](https://www.reddit.com/r/reactjs/comments/hpdfp3/stems_mac_windows_app_built_using/)
-- url: https://v.redd.it/bknv56q7e9a51
+## [3][Our React Wish List — Syntax Podcast 262](https://www.reddit.com/r/reactjs/comments/hq9l3c/our_react_wish_list_syntax_podcast_262/)
+- url: https://syntax.fm/show/262/our-react-wish-list
 ---
 
-## [4][Demo video for a rota application I've been working on using React/Django](https://www.reddit.com/r/reactjs/comments/hptb8z/demo_video_for_a_rota_application_ive_been/)
-- url: https://v.redd.it/4moi8ykn1fa51
+## [4][Best, lightweight React UI libraries?](https://www.reddit.com/r/reactjs/comments/hq5kkm/best_lightweight_react_ui_libraries/)
+- url: https://www.reddit.com/r/reactjs/comments/hq5kkm/best_lightweight_react_ui_libraries/
+---
+I've tried Material UI, but it's just wayyyy too big. Anyone got any suggestions?
+## [5][Catching clicks outside your element with useClickOutside](https://www.reddit.com/r/reactjs/comments/hqdoyx/catching_clicks_outside_your_element_with/)
+- url: https://www.selbekk.io/blog/2020/07/catching-clicks-outside-your-element-with-useclickoutside/
 ---
 
-## [5][A problem with Redux and my new job](https://www.reddit.com/r/reactjs/comments/hpsstj/a_problem_with_redux_and_my_new_job/)
-- url: https://www.reddit.com/r/reactjs/comments/hpsstj/a_problem_with_redux_and_my_new_job/
+## [6][Nextjs routing seems slow](https://www.reddit.com/r/reactjs/comments/hqezzq/nextjs_routing_seems_slow/)
+- url: https://www.reddit.com/r/reactjs/comments/hqezzq/nextjs_routing_seems_slow/
 ---
-So I got my first job as a react developer and after I checked out the code that they use, I noticed that they use Redux as a state management. To be honest, I've tried to watch several videos about it and I can't seem to understand it. I've never used redux and im going to start the job in a few days and I don't know what to do. (I've already told them that I don't know redux during the interview) 
+Hello everyone,
+
+I don't know if it's just me by I feel like my pages load slow on Reactjs. I recently switched from create-react-app with react-router to nextjs. I never had a problem like this with react-router. The pages can take up to 2 seconds to switch, rather with react-router, they would be loaded as soon as it is requested. Is there something that I doing that might cause this delay?
+
+Thanks
+## [7][Best practice of how to structure a shared module/code lib between frontend and backend](https://www.reddit.com/r/reactjs/comments/hqc5t4/best_practice_of_how_to_structure_a_shared/)
+- url: https://www.reddit.com/r/reactjs/comments/hqc5t4/best_practice_of_how_to_structure_a_shared/
+---
+I have a `shared` module in my monorepo which is just an unpublished folder next to my modules for my frontend and backend, It just contains classes for validation both for the backend and frontend.
+
+How to a structure this `shared` module now? Just putting all files into that folder with one `index.ts` like following snippet?
+```
+import SomeClass from './SomeClass.ts'
+import SomeClass2 from './SomeClass2.ts'
+import SomeClass3 from './SomeClass3.ts'
+...
+
+export SomecClass
+export SomecClass2
+export SomecClass2
+...
+```
+There must be a better way with less DRY or not? FYI, somehow the TypeScript Compilers complains if I try to just `import SomeClass2 from 'shared/SomeClass2'` directly skipping `index.ts`.
+
+**Edit:**
+Easiest solution I found till now:
+https://github.com/tc39/proposal-export-ns-from
+
+```
+export * from SomeClass
+export * from SomeClass2
+export * from SomeClass3
+```
+And look the exports/imports are symmetrical in terms of default or not.
+## [8][PageSpeed Insights: Minimize main-thread work &amp; Reduce JavaScript execution time](https://www.reddit.com/r/reactjs/comments/hqaaxv/pagespeed_insights_minimize_mainthread_work/)
+- url: /r/gatsbyjs/comments/hqaar8/pagespeed_insights_minimize_mainthread_work/
+---
+
+## [9][Beginner project for learning](https://www.reddit.com/r/reactjs/comments/hqe6t3/beginner_project_for_learning/)
+- url: https://www.reddit.com/r/reactjs/comments/hqe6t3/beginner_project_for_learning/
+---
+What's a good project that you recommend for a beginner that I can also use in my portfolio later
+## [10][mkcomp - highly configurable cli tool to scaffold react component folders.](https://www.reddit.com/r/reactjs/comments/hqbjxt/mkcomp_highly_configurable_cli_tool_to_scaffold/)
+- url: https://www.reddit.com/r/reactjs/comments/hqbjxt/mkcomp_highly_configurable_cli_tool_to_scaffold/
+---
+Just published my first npm package at [https://npmjs.com/package/mkcomp](https://t.co/bmWeb8Esbx?amp=1)
+
+it's a CLI tool for react that lets you easily scaffold component folders.   Idea came after I started a new project and I realized I have to manually create so many component folders, test files, style files... boring!
+
+so I got a little sidetracked and made a cli tool to do just that! highly configurable - you can set if you want it to generate ts/js files, if the extension for react components should be tsx/ts/jsx/js, if it should generate test files and where, if you want style or index file. 
 
 &amp;#x200B;
 
-Any advice?
-## [6][My first open source project, I created a web app for manage task](https://www.reddit.com/r/reactjs/comments/hpue23/my_first_open_source_project_i_created_a_web_app/)
-- url: https://www.reddit.com/r/reactjs/comments/hpue23/my_first_open_source_project_i_created_a_web_app/
+ install it globally so you can access it everywhere. Run \`mkcomp --init {name}\` to set it up. then just do \`mkcomp FirstComponent -p src/components\`. It will automagically create the folders recursively and the files according to what you configured it. 
+
+ oh yeah! and it also supports multiple profiles. So, if you have a project running on typescript and another on javascript, just create another profile \`mkcomp --init javascript\`, set it up with javascript config and done! You can switch between profiles: \`mkcomp --switch | -sw\` 
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+https://raw.githubusercontent.com/bamtheboozle/mkcomp/master/readmeImages/initFirstProject.PNG
+
+https://raw.githubusercontent.com/bamtheboozle/mkcomp/master/readmeImages/initFiles.PNG
+## [11][How to implement something like a daily check-in feature?](https://www.reddit.com/r/reactjs/comments/hqducw/how_to_implement_something_like_a_daily_checkin/)
+- url: https://www.reddit.com/r/reactjs/comments/hqducw/how_to_implement_something_like_a_daily_checkin/
 ---
-Hey all, thanks for your attention, I created this because I need to manage my task every day,
-
-It's open-source on Github if you want to contribute, that'  would be really appreciated
-
-here is the repo link
-
-\[Check Github link\](https://github.com/judicaelandria/check)
-## [7][Skynet is coming](https://www.reddit.com/r/reactjs/comments/hpu27m/skynet_is_coming/)
-- url: https://twitter.com/i/status/1282261783147958272
+Hello people! I'm wondering if there's any tutorial guides or npm package that gives a visual representation of user's daily check-ins. For example, Github has this small section on a user's profile page that shows how many commits a user has made throughout the year. Any help would be greatly appreciated!
+## [12][Should I use styled-component with css module(SCSS)](https://www.reddit.com/r/reactjs/comments/hqdmyg/should_i_use_styledcomponent_with_css_modulescss/)
+- url: https://www.reddit.com/r/reactjs/comments/hqdmyg/should_i_use_styledcomponent_with_css_modulescss/
 ---
-
-## [8][Using Custom Hooks for Double Back Press to Exit in React](https://www.reddit.com/r/reactjs/comments/hppxvx/using_custom_hooks_for_double_back_press_to_exit/)
-- url: https://ayusch.com/double-back-button-press-to-exit-in-react-native/
----
-
-## [9][Astrofox - I made a motion graphics program for turning music visualizations into videos. Built with React, WebGL, and Electron. Free to use.](https://www.reddit.com/r/reactjs/comments/hp5jiy/astrofox_i_made_a_motion_graphics_program_for/)
-- url: https://astrofox.io
----
-
-## [10][a React Intercom integration powered by hooks](https://www.reddit.com/r/reactjs/comments/hpswcq/a_react_intercom_integration_powered_by_hooks/)
-- url: https://github.com/devrnt/react-use-intercom/
----
-
-## [11][Create your own useInViewPort hook and use it lazy load Google Maps](https://www.reddit.com/r/reactjs/comments/hpsocj/create_your_own_useinviewport_hook_and_use_it/)
-- url: https://twitter.com/tinloof/status/1282261209107005441?s=20
----
-
-## [12][Hello guys I need help your to refactor my exercise tracker app into login/password base single page application](https://www.reddit.com/r/reactjs/comments/hpskj3/hello_guys_i_need_help_your_to_refactor_my/)
-- url: https://www.reddit.com/r/reactjs/comments/hpskj3/hello_guys_i_need_help_your_to_refactor_my/
----
-I am building exercise tracker app using MERN stack . repo is available on github . Can you please help me to refactor the app into usrname/password based app .
-
-github repo link : https://github.com/krishnak141/exercise-tracker-app/commits/master
-
-I am beginner in web development . Help needed .
+I used to use css module in react projects, recently I found some feature is hard to be implemented by css module and easy by styled-components. On the other hand, I found in most of cases, css module is still easier for me. Can I use styled components with css module , or should I just use one of them in a project?

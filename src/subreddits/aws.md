@@ -21,7 +21,41 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][Analysing up to 100k messages per second, what approach to take?](https://www.reddit.com/r/aws/comments/hpqf22/analysing_up_to_100k_messages_per_second_what/)
+## [2][EKS now supports 1.17](https://www.reddit.com/r/aws/comments/hq0f4d/eks_now_supports_117/)
+- url: https://github.com/awsdocs/amazon-eks-user-guide/blob/master/doc_source/kubernetes-versions.md#kubernetes-117
+---
+
+## [3][Best practises, when adding new Admin users to IAM](https://www.reddit.com/r/aws/comments/hqcc5e/best_practises_when_adding_new_admin_users_to_iam/)
+- url: https://www.reddit.com/r/aws/comments/hqcc5e/best_practises_when_adding_new_admin_users_to_iam/
+---
+I'm a bit new to AWS and IAM. I'm wondering what is the best practises, when onboarding a new (admin) user, which has an existing aws account. 
+
+Is it best practises to create a new account (form the IAM console or elsewhere), and make the user sign in with that account. Then use the process everytime a new user needs to access our AWS solution?
+
+Or should i invite their existing user to our IAM group, and just le the users keep their original account (if this is the case, would could i do this?)?
+
+Thank you in advance.
+## [4][EC2 - what makes an instance "different"](https://www.reddit.com/r/aws/comments/hqbaaq/ec2_what_makes_an_instance_different/)
+- url: https://www.reddit.com/r/aws/comments/hqbaaq/ec2_what_makes_an_instance_different/
+---
+Terrible title, but I couldn't think of a snappy way to word this.  I have a client that has installed a desktop version of some editing software on a Windows EC2 instance to make use of more power/memory.  If the instance is stopped for a couple of hours and then restarted the software in question thinks it has been installed on a different machine and needs to be reactivated.
+
+I was wondering, how does the instance change so that it looks different to the software running on it? The IP address / machine name stays constant.  I'm thinking it's probably the MAC address that is different? (Which I'll be checking in an hour or two when we restart).
+
+It's been a while since I did much with EC2 so I might be missing something very obvious here.
+## [5][Where to find Master Username for AWS RDS?](https://www.reddit.com/r/aws/comments/hqc5ot/where_to_find_master_username_for_aws_rds/)
+- url: https://www.reddit.com/r/aws/comments/hqc5ot/where_to_find_master_username_for_aws_rds/
+---
+See title. Want to connect to my database but every article regarding the Master Username seems to be outdated.
+
+EDIT: Solved!
+## [6][AWS SageMaker "default app" billing me?](https://www.reddit.com/r/aws/comments/hqc6mq/aws_sagemaker_default_app_billing_me/)
+- url: https://www.reddit.com/r/aws/comments/hqc6mq/aws_sagemaker_default_app_billing_me/
+---
+Does the SageMaker default app being "ready" mean I am being billed for an instance? This is not clear. I can delete it everytime I finish using the studio (as it gets created when I open a studio(, but that would be one extra step I might not need to do.
+
+https://preview.redd.it/bmezz2jrela51.png?width=1275&amp;format=png&amp;auto=webp&amp;s=4bf848f533c67dfb6f135f3bb16759e66e583023
+## [7][Analysing up to 100k messages per second, what approach to take?](https://www.reddit.com/r/aws/comments/hpqf22/analysing_up_to_100k_messages_per_second_what/)
 - url: https://www.reddit.com/r/aws/comments/hpqf22/analysing_up_to_100k_messages_per_second_what/
 ---
 So I got the nice challenge to process messages from up to 100k users per second on a web page and the results need to be calculated in (near)realtime. The data coming in is structured and consists of a string and and amount and what I need to achieve is to get the combined sum of amounts for the unique strings (ie; some kind of voting system). So input looks something like:
@@ -49,162 +83,53 @@ B) Send IoT data to Kinesis Firehose and then attach a Kinesis Analytics stream,
 I'm leaning towards option B as this seems to be quite cost efficient. For scaling solution B I'm thinking I could create multiple IoT rules/firehose/analytics streams and let clients send their data to one of those rules round robin. Then combine results of these streams in Redis or DynamoDB and push them to the moderator.
 
 Curious on your thoughts if I'm missing something here or if you have any experiences of your own ingesting/analysing this amount of data. I prefer to do everything using Cloudformation and serverless/managed solutions.
-## [3][Migration from On-prem to AWS](https://www.reddit.com/r/aws/comments/hpm1ak/migration_from_onprem_to_aws/)
-- url: https://www.reddit.com/r/aws/comments/hpm1ak/migration_from_onprem_to_aws/
+## [8][Open &amp; click event tracking](https://www.reddit.com/r/aws/comments/hq92l8/open_click_event_tracking/)
+- url: https://www.reddit.com/r/aws/comments/hq92l8/open_click_event_tracking/
 ---
-Does anyone have a diary of how they migrated their servers from on-prem to AWS? I'm interested in what AWS services you used to connect your on-prem network to AWS. I'm also interested to hear on how you were able to successfully migrated applications to AWS. And if you're going to repeat it again, what will you revise, improve or not do?
+Actually  i am going to track open &amp; click event of sent mail via amazon ses  .I am using our subdomain actually for this event but still after  configuring it with sns We get notification for DELIVERY EVENT, but not  receiving notification for OPEN and CLICK Event
 
-Thanks in advance!
-## [4][Cognito: create a custom “username” in the background (for userIds)](https://www.reddit.com/r/aws/comments/hprudj/cognito_create_a_custom_username_in_the/)
-- url: https://www.reddit.com/r/aws/comments/hprudj/cognito_create_a_custom_username_in_the/
+I  have read reagarding this on amazon page that we have to disable the  dkim settings but if suppose we want to getting such emails without  disabling the dkim settings is it possible to do it? If yes then how?
+
+[https://forums.aws.amazon.com/thread.jspa?messageID=894418](https://forums.aws.amazon.com/thread.jspa?messageID=894418)
+## [9][Sync Local Database Across Multiple Devices](https://www.reddit.com/r/aws/comments/hq5hzd/sync_local_database_across_multiple_devices/)
+- url: https://www.reddit.com/r/aws/comments/hq5hzd/sync_local_database_across_multiple_devices/
 ---
-I'm using **Amazon Cognito User Pools** for user management.
+Hi All
 
-I want to use the ***username*** attribute from the user record inside the Cognito User Pool to store a custom **userId**, created internally by my application, without the user even knowing.
+I am a complete beginner learning programming and currently working on an app built with Flutter.
 
-The reason is that this ***username*** attribute is a great solution for storing a userId: it's **non-mutable**, **forcibly unique**, and **queryable** by [Cognito's APIs](https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_Operations.html) (ListUsers, AdminListGroupsForUser, AdminAddUserToGroup, etc.). Cognito's custom attributes for example are not a good alternative because they can't be used to query those APIs.
+The user will store data locally on the mobile device, but I am currently looking for a way whereby the user can still have access to that data across multiple devices or in the case they were to change phone etc they will still have retained that data.
 
-So by using the ***username*** attribute I'll be able to fully manage my users within Cognito, without the need to maintain user records in another database and keep them in sync.
+I am looking for a way that this can happen automatically, so as whenever there is an update to the local DB i.e. users makes a change, input etc it is automatically updated elsewhere also.
 
-Additionally, I want the users to sign up and sign in using an **email address** and **password** (while in the background I use the ***username*** attribute for my own purpose).
-
-In [this page](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html) of Amazon Cognito's guide, it says this:
-
-&gt;If your application does not require a username, you do not need to ask users to provide one. **Your app can create a unique username for users in the background**. This is useful if, for example, you want users to register and sign in with an email address and password.
-
-This paragraph above suggests that what I need can actually be done with Cognito.
-
-However, Amazon Cognito's documentation doesn't explain anything further on how to make that particular setup happen.
-
-When setting up a Cognito User Pool, there's this configuration: “**How do you want your end users to sign-up and sign-in?**”
-
-The options given are
-
-* **Username**
-* **Email address or phone number**
-
-**Which of these options should I pick?** What other configuration must be set for this to wok?
-## [5][Error lambda with gateway api](https://www.reddit.com/r/aws/comments/hprixr/error_lambda_with_gateway_api/)
-- url: https://www.reddit.com/r/aws/comments/hprixr/error_lambda_with_gateway_api/
+I see that there is the CloudKit option for iOS, which is not an option as I am building in Flutter. Forgive me if I am way off here, however having done some reading is AWS Datastore and Appsync a similar thing? i.e. - user stores data locally using local SQLite and with Datastore and Appsync constant querying via GraphQL can see any updates made to local database and sync them across devices?
+## [10][Static website on S3 + CloudFront. Is there a way to set up wildcard and splat URL redirect rules? (Aka all urls with ` /blog/* ` redirects to ` /articles/* `](https://www.reddit.com/r/aws/comments/hq0jed/static_website_on_s3_cloudfront_is_there_a_way_to/)
+- url: https://www.reddit.com/r/aws/comments/hq0jed/static_website_on_s3_cloudfront_is_there_a_way_to/
 ---
-Hi, everybody, I wrote a lambda function that takes data from a postgres database in RDS. To do this I used the psycopg2 library, when I run the tests the function works correctly. so I added a gateway api get as lambda trigger, but when I call the url of the get it gives me this error:
+I have around 200 old redirects on a website I need to preserve.  I see that one option is writing XML redirect rules in the S3 config, but that is limited to only 50 redirects. I saw another method with no rule limit is to set `x-amz-website-redirect-location` metadata on objects. However, these methods still require writing the exact URL and I can't use `/blog/*` or `/blog/:title`
 
-`{"errorMessage": "Unable to import module 'lambda_function': /var/task/psycopg2/_psycopg.so: undefined symbol: PyUnicodeUCS4_DecodeUTF8", "errorType": "Runtime.ImportModuleError"}`
-
-Can you help me? Why tests work and give me back the query data while if I call them through a get it doesn't work? Thank you.
-## [6][RDS Snapshot](https://www.reddit.com/r/aws/comments/hpnx15/rds_snapshot/)
-- url: https://www.reddit.com/r/aws/comments/hpnx15/rds_snapshot/
+Is there another way to be able to redirect with these type of rules? I read somewhere that Lamdba@Edge might be an option? I have not seen any examples and have never used it, so any resources I could be pointed to would be a big help!
+## [11][(ACM) Certificate validation via DNS configuration](https://www.reddit.com/r/aws/comments/hq1x6h/acm_certificate_validation_via_dns_configuration/)
+- url: https://www.reddit.com/r/aws/comments/hq1x6h/acm_certificate_validation_via_dns_configuration/
 ---
-Hi Everyone,  
+Hi everyone,
 
+I've created an SSL certificate via ACM and I'm attempting to validate it via DNS configuration. 
 
-First, I want to thank you all for a very helpful community. I really appreciate how you help everyone here.  
+I've got the CNAME record for the DNS configuration, but I've run into something that I'm not sure about. My registar, namecheap, won't allow me to set a CNAME on a domain while still keeping the custom DNS nameservers on the domain.
 
+Eg. 
 
-I do have another question regarding RDS Snapshot. I've been using snapshot for 1 and a half yr now and it's my first time to come across this issue. After I restore my snapshot, I wouldn't be able to log in even I change the Master Password. Can anyone help me why I can't log in to it?  
+ns-1281.awsdns
 
+[ns-1702.awsdns-26.co.uk](https://ns-1747.awsdns-26.co.uk)
 
-But the original Instance is still running and I can still log into it.
-
-https://preview.redd.it/vuvmfbc1mca51.png?width=732&amp;format=png&amp;auto=webp&amp;s=d5285098b386d57da0c97cd1d29330e95122b989
-## [7][What is the best approach to providing managed AWS services to clients?](https://www.reddit.com/r/aws/comments/hpq65h/what_is_the_best_approach_to_providing_managed/)
-- url: https://www.reddit.com/r/aws/comments/hpq65h/what_is_the_best_approach_to_providing_managed/
----
-I am thinking of creating a managed cloud service for my clients, generally AWS. There are many services that already do this. But my agency has our own long term clients and I want our company to provide a complete ecosystem for them so that a single login is all they need.
-
-I am not sure how to manage AWS account of hundreds of clients. What is the best approach to give them AWS services without them having to create an account? We thought about two ways to do this.
-
-1. Programatically create AWS account for each client using our organization account. There are limits to the number of accounts, which we think we will be able to increase on requesting. And the advantage is monitoring of billing of each accounts.
-2. Create different VPC for each client on our own AWS account, which comes at a cost of no individual client monitoring and ban on any services caused by one account will affect every other client. WE DON'T WANT TO DO THIS.
-
-These are the two ways we though of implementing this. Is there any other approach? If someone else is already doing this, what is your approach to this.
-## [8][Attempting to find private key for ssh into EC2](https://www.reddit.com/r/aws/comments/hpoq8v/attempting_to_find_private_key_for_ssh_into_ec2/)
-- url: https://www.reddit.com/r/aws/comments/hpoq8v/attempting_to_find_private_key_for_ssh_into_ec2/
----
-When creating my EC2 instance on aws (For ELASTIC BEANSTALK), I indicated that I wanted to setup ssh. I was ask for a user name and a password. In return, I was given an SHA256 key and the key's art. No idea what either of these are or how these can be used right now, but I have them saved.
+[ns-211.awsdns-42.com](https://ns-343.awsdns-42.com)
 
 &amp;#x200B;
 
-I now want to connect to my instance via ssh, but I need a .pem or .ppk file for the private key. I have neither and have no idea where to find these or how to create them.
-
-&amp;#x200B;
-
-When I created my instance via awsebcli, would the private key have been saved somewhere on my computer?
+In order for AWS to validate the domain, would the DNS nameservers not need to be set in addition to the CNAME?
 
 &amp;#x200B;
 
 Thanks!
-## [9][Cloudformation GetAtt method from inside my resolver request mapping template](https://www.reddit.com/r/aws/comments/hpfs2p/cloudformation_getatt_method_from_inside_my/)
-- url: https://www.reddit.com/r/aws/comments/hpfs2p/cloudformation_getatt_method_from_inside_my/
----
-I have a template for updating cognito user attributes:
-
-```
-Resources:
-  UpdateUserAttributeMutation:
-    Type: AWS::AppSync::Resolver
-    Properties:
-      ApiId:
-        Ref: AppSyncApi
-      TypeName: Mutation
-      FieldName: updateUserAttribute
-      DataSourceName:
-        Ref: AppsyncDynamoDBTableDataSource
-      RequestMappingTemplate: |
-        set($body = {})
-
-        #set($attribute={})
-        $util.qr($attribute.put("Name", "email_verified"))
-        $util.qr($attribute.put("Value", "true"))
-
-        #set($UserAttributes = [])
-        $util.qr($UserAttributes.add($attribute))
-        $util.qr($body.put("UserAttributes", $UserAttributes))
-
-        #set($body.Username = $ctx.identity.sub)
-        #set($body.UserPoolId = ***MY_COGNITO_ID***)
-
-        {
-          "version": "2018-05-29",
-          "method": "POST",
-          "resourcePath": "/",
-          "params": {
-            "headers": {
-              "content-type": "application/x-amz-json-1.1",
-              "x-amz-target":"AWSCognitoIdentityProviderService.AdminUpdateUserAttributes"
-            },
-            "body": $util.toJson($body)
-          }
-        }
-      ResponseMappingTemplate: |
-        #if($ctx.error)
-          $util.error($ctx.error.message, $ctx.error.type)
-        #end
-        #if($ctx.result.statusCode == 200)
-            true
-        #else
-         false
-        #end
-```
-
-I have multiple environments, so I would love to be able to pass the `MY_COGNITO_ID` value into my template dynamically, is there a way to achieve this using GetAtt cloudformation helper method or do I need to use something different?
-## [10][Can instance-store images not be used with current gen instance types?](https://www.reddit.com/r/aws/comments/hpi6qa/can_instancestore_images_not_be_used_with_current/)
-- url: https://www.reddit.com/r/aws/comments/hpi6qa/can_instancestore_images_not_be_used_with_current/
----
-For my application, I do not need EBS volumes (nor can I afford 8GB of EBS volume per server per month).
-
-I'm using Ubuntu provided AMIs: https://cloud-images.ubuntu.com/locator/ec2/
-
-I have chose ami-0921ae3f2ab9e0efc which is Ubuntu 18.04 and everything is great on it.  I have several running now.
-
-The only problem is, I can only choose old instance types like "m1.medium", which is comparable in price to the newer "t3a.medium" except the T3A machines are faster and better.
-
-What gives? Can instance-store only AMIs not be launched on t3a servers?
-## [11][question about client vpn](https://www.reddit.com/r/aws/comments/hpmit0/question_about_client_vpn/)
-- url: https://www.reddit.com/r/aws/comments/hpmit0/question_about_client_vpn/
----
-when you create a client vpn to connect to a vpc, your instances don't see you with your client CIDR and instead they see you as connecting from the subnet that you associated in the vpn endpoint
-
-when you take a look at the endpoint you see a route table being added and it shows up as nat. i used netstat and was able to find out the specific ip address inside the subnet that actually was connected to the instance.
-
-is this nat information stored somewhere? can i control which exact ip with that subnet is being used?

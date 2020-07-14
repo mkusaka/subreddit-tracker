@@ -123,59 +123,131 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [3][What is the std::swap two-step?](https://www.reddit.com/r/cpp/comments/hpqbdz/what_is_the_stdswap_twostep/)
-- url: https://quuxplusone.github.io/blog/2020/07/11/the-std-swap-two-step/
+## [3][Qt Creator 4.13 Beta Released - Finally Offers Meson Build System Integration](https://www.reddit.com/r/cpp/comments/hqx4vo/qt_creator_413_beta_released_finally_offers_meson/)
+- url: https://www.phoronix.com/scan.php?page=news_item&amp;px=Qt-Creator-4.13-Beta-Released
 ---
 
-## [4][What's the status of clang concepts?](https://www.reddit.com/r/cpp/comments/hpci88/whats_the_status_of_clang_concepts/)
-- url: https://www.reddit.com/r/cpp/comments/hpci88/whats_the_status_of_clang_concepts/
----
-I tried some very simple [test](https://godbolt.org/z/E6r9z3). Seems the short-circuiting (once fixed in old concepts branch in 2018) still not working.
-## [5][Best ide?](https://www.reddit.com/r/cpp/comments/hprsek/best_ide/)
-- url: https://www.reddit.com/r/cpp/comments/hprsek/best_ide/
----
-just wandering what ide people think is best
-## [6][Mobile Development with C++ in Visual Studio 2019](https://www.reddit.com/r/cpp/comments/hptaoj/mobile_development_with_c_in_visual_studio_2019/)
-- url: https://youtu.be/3SJmf1HsVQU
+## [4][Introducing Epigraph: A modern C++ interface to Quadratic and Second Order Cone Solvers](https://www.reddit.com/r/cpp/comments/hqymiy/introducing_epigraph_a_modern_c_interface_to/)
+- url: https://github.com/EmbersArc/Epigraph
 ---
 
-## [7][What do you think about Juce?](https://www.reddit.com/r/cpp/comments/hpdhdh/what_do_you_think_about_juce/)
-- url: https://www.reddit.com/r/cpp/comments/hpdhdh/what_do_you_think_about_juce/
+## [5][TimeTracker: A simple C++ 11 header only library for measuring the execution time of your code block using chrono steady_clock.](https://www.reddit.com/r/cpp/comments/hqtjf7/timetracker_a_simple_c_11_header_only_library_for/)
+- url: https://www.reddit.com/r/cpp/comments/hqtjf7/timetracker_a_simple_c_11_header_only_library_for/
 ---
-I recently came across Juce.com and I thought it was quite interesting. I always go the Qt route if I need a GUI, but this project seems promising. Has anyone used this before? What were your opinion of it?
-## [8][I think my program accidentally generated a new symbol...](https://www.reddit.com/r/cpp/comments/hpty1q/i_think_my_program_accidentally_generated_a_new/)
-- url: https://www.reddit.com/r/cpp/comments/hpty1q/i_think_my_program_accidentally_generated_a_new/
----
-. If I google it, I get a question mark.
+TimeTracker: A simple C++ 11 header only library for measuring the execution time of your code block using chrono steady\_clock. 
 
-&amp;#x200B;
+It will also calculate the minimum, maximum and average execution time in a given period, which is called report interval. Every report interval, TimeTracker can generate formatted strings for later usage, or TimeTrack can print the report to standard output.
 
-H O W
-## [9][cpprouter v0.0.2 released with better slug routing. Callbacks can now directly accept slug data either as separate parameters, or as an std::tuple. This greatly simplifies the registration of callbacks, as it is no longer required to create a unique struct for each callback.](https://www.reddit.com/r/cpp/comments/hpdnpu/cpprouter_v002_released_with_better_slug_routing/)
-- url: https://github.com/omartijn/cpprouter/tree/v0.0.2
+[https://github.com/jacoblica/timetracker](https://github.com/jacoblica/timetracker)
+## [6][Ask Me Anything with Bjarne Stroustrup, hosted by John Regehr (PLDI 2020)](https://www.reddit.com/r/cpp/comments/hqdnx5/ask_me_anything_with_bjarne_stroustrup_hosted_by/)
+- url: https://www.youtube.com/watch?v=Bycec3UQxOc
 ---
 
-## [10][Is C++ a good language for server side code?](https://www.reddit.com/r/cpp/comments/hp06wx/is_c_a_good_language_for_server_side_code/)
-- url: https://www.reddit.com/r/cpp/comments/hp06wx/is_c_a_good_language_for_server_side_code/
+## [7][Header only C++17 template library: PEG parser and AST builder](https://www.reddit.com/r/cpp/comments/hr0svb/header_only_c17_template_library_peg_parser_and/)
+- url: https://www.reddit.com/r/cpp/comments/hr0svb/header_only_c17_template_library_peg_parser_and/
 ---
-Just wondering if I am going down the right path. I want to do it in C++ but sometimes installing these dependencies (Mongo driver/RabbitMQ driver) take a long time and lots of research.
-## [11][Make a compiler](https://www.reddit.com/r/cpp/comments/hplux3/make_a_compiler/)
-- url: https://www.reddit.com/r/cpp/comments/hplux3/make_a_compiler/
+[https://github.com/MoserMichael/cppcombinator](https://github.com/MoserMichael/cppcombinator)  
+
+Please  check out my side project, it's a  library for building PEG parsers  (top-down parser) that build an  in-memory parse tree, Each template  instantiation stands for a grammar  rule, and translates directly into a  node in the parse tree. In this  respect this project differs from  PEGTL. The project taught me a lot  about C++ metaprogramming.
+
+BTW:  I am also looking for a job right now.  I do C++, Golang, Python and  Java on Linux. Looking for remote job as  contractor or full time  (on-site in Israel). I have worked with  kubernetes, storage,  networking, security.
+
+Linked in profile: [www.linkedin.com/in/michael-moser-32211b1](https://www.linkedin.com/in/michael-moser-32211b1)
+## [8][CppCon 2020 will be held entirely online :(](https://www.reddit.com/r/cpp/comments/hqf0tc/cppcon_2020_will_be_held_entirely_online/)
+- url: https://cppcon.org/going-virtual/
 ---
-Could someone help me in "How to make a compiler" i want to make my own programming laguage (just for fun), I've read a lot of stuff about it, but i didn't get it yet, like in theory it's all fine but in practice i didn't get anywhere.
-## [12][Function that parses the method signature in c++](https://www.reddit.com/r/cpp/comments/hppy5t/function_that_parses_the_method_signature_in_c/)
-- url: https://www.reddit.com/r/cpp/comments/hppy5t/function_that_parses_the_method_signature_in_c/
+
+## [9][VisualStudio/MSBuild integration added to BuildCache v0.19.0 (compiler accelerator)](https://www.reddit.com/r/cpp/comments/hqk7vt/visualstudiomsbuild_integration_added_to/)
+- url: https://github.com/mbitsnbites/buildcache
 ---
-for example writing a test names 
 
- public void testManCanWalk() 
+## [10][How Cheerp supports 64-bit integers in both JavaScript and WebAssembly](https://www.reddit.com/r/cpp/comments/hqf9fp/how_cheerp_supports_64bit_integers_in_both/)
+- url: https://medium.com/leaningtech/how-cheerp-supports-64-bit-integers-in-both-javascript-and-webassembly-79485761615a
+---
 
-public void testBirdCanFly()
+## [11][Patch for GCC 10 to implement P0222](https://www.reddit.com/r/cpp/comments/hqbqjd/patch_for_gcc_10_to_implement_p0222/)
+- url: https://www.reddit.com/r/cpp/comments/hqbqjd/patch_for_gcc_10_to_implement_p0222/
+---
+P0222: [https://github.com/mwoehlke/cpp-proposals/blob/master/p0222r0-anonymous-struct-return.rst](https://github.com/mwoehlke/cpp-proposals/blob/master/p0222r0-anonymous-struct-return.rst)
 
-When run the test the output should displayed 
+GCC: [https://gcc.gnu.org/git.html](https://gcc.gnu.org/git.html)
 
-Man Can Walk
+This patch lifts the restriction described in P0222 + it is possible to define types in function arguments, so it's possible to write code like this:
 
-Bird Can Fly
+    struct { int x; }
+    g(const struct { int y; } &amp;args) {
+    	return { .x = args.y };
+    }
+    
+    int main() {
+    	return g({ .y = 11 }).x;
+    }
 
-Can any one please explain how to  write a function that parses the method signature and returns the equivalent display version.
+This code generates the following assembly with `-O3`:
+
+    movl    $11, %eax
+    ret
+
+Patch:
+
+    diff --git a/gcc/cp/parser.c b/gcc/cp/parser.c
+    index 45ad2c05288..b1e0b871777 100644
+    --- a/gcc/cp/parser.c
+    +++ b/gcc/cp/parser.c
+    @@ -3115,6 +3115,7 @@ cp_parser_check_for_definition_in_return_type (cp_declarator *declarator,
+       /* [dcl.fct] forbids type definitions in return types.
+          Unfortunately, it's not easy to know whether or not we are
+          processing a return type until after the fact.  */
+    +  /*
+       while (declarator
+             &amp;&amp; (declarator-&gt;kind == cdk_pointer
+                 || declarator-&gt;kind == cdk_reference
+    @@ -3129,6 +3130,7 @@ cp_parser_check_for_definition_in_return_type (cp_declarator *declarator,
+                  "(perhaps a semicolon is missing after the definition of %qT)",
+                  type);
+         }
+    +    */
+     }
+     
+     /* A type-specifier (TYPE) has been parsed which cannot be followed by
+    @@ -22764,8 +22766,10 @@ cp_parser_parameter_declaration (cp_parser *parser,
+     
+       /* Type definitions may not appear in parameter types.  */
+       saved_message = parser-&gt;type_definition_forbidden_message;
+    +  /*
+       parser-&gt;type_definition_forbidden_message
+         = G_("types may not be defined in parameter types");
+    +  */
+     
+       int template_parm_idx = (function_being_declared_is_template_p (parser) ?
+                               TREE_VEC_LENGTH (INNERMOST_TEMPLATE_PARMS
+
+Patch is trivial and even if it does not apply, it should be possible to replicate it on other versions of GCC.
+
+IMO it is a bit of overkill because it allows to write code like this:
+
+    struct {
+    	int x = 0;
+    
+    	operator int () const {
+    		// this executes when struct is converted to int but not before that
+    		std::cout &lt;&lt; x &lt;&lt; std::endl;
+    		return 0;
+    	}
+    
+    	struct tors {
+    		tors() { std::cout &lt;&lt; "got ctor" &lt;&lt; std::endl; }
+    		~tors() { std::cout &lt;&lt; "got dtor?" &lt;&lt; std::endl; }
+    	} tors = {};
+    }
+    f(const struct { int y; } &amp;args) {
+    	return { .x = args.y };
+    }
+
+This isn't exactly footgun, more like a tactical nuke, looks funny, but probably under export restrictions. But this is very powerful and could be a solid basis for more refined language features i think. However if you think about it, this is nothing that can not be implemented with non anonymous structures. For designated initializers `-std=c++2a` is need to be set of course.
+
+Any ideas?
+## [12][5 Curious C++ Lambda Examples: Recursion, constexpr, Containers and More](https://www.reddit.com/r/cpp/comments/hqc1a4/5_curious_c_lambda_examples_recursion_constexpr/)
+- url: https://www.bfilipek.com/2020/07/lambdas5ex.html
+---
+

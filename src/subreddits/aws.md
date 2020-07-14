@@ -21,190 +21,113 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][Analysing up to 100k messages per second, what approach to take?](https://www.reddit.com/r/aws/comments/hpqf22/analysing_up_to_100k_messages_per_second_what/)
-- url: https://www.reddit.com/r/aws/comments/hpqf22/analysing_up_to_100k_messages_per_second_what/
+## [2][I built an IP geolocation module optimized for AWS lambda](https://www.reddit.com/r/aws/comments/hqmhia/i_built_an_ip_geolocation_module_optimized_for/)
+- url: https://github.com/corollari/fast-geoip
 ---
-So I got the nice challenge to process messages from up to 100k users per second on a web page and the results need to be calculated in (near)realtime. The data coming in is structured and consists of a string and and amount and what I need to achieve is to get the combined sum of amounts for the unique strings (ie; some kind of voting system). So input looks something like:
 
-TEAM\_A;10  
-TEAM\_A:2  
-TEAM\_B:1  
-TEAM\_B:12  
-TEAM\_A:4  
-TEAM\_B:5  
-
-
-output must be something like:  
-TEAM\_A:16  
-TEAM\_B:18  
-
-
-and this must basically process every second. I've created 2 proof of concepts and both are using IoT Core over MQTT to send results to AWS; this works great. To process the incoming data I have 2 proof of concepts right now that work (not tested with 100k though!):  
-
-
-A) Send IoT data to SQS and attach a Lambda. The Lambda will read up to 10 messages and store the data in ElastiCache Redis. While this works great for \~10k users, I don't think it will scale to 100k because it will require way too many concurrent Lambdas.
-
-B) Send IoT data to Kinesis Firehose and then attach a Kinesis Analytics stream, the results will be pushed every second to a Lambda. This works really well however I'm reading Firehose has a 5k message/second limit which seems really low for a service called "Firehose". Also; if it could be adjusted to 100k/s, maybe the amount of data would be too big for Kinesis Analytics.
-
-I'm leaning towards option B as this seems to be quite cost efficient. For scaling solution B I'm thinking I could create multiple IoT rules/firehose/analytics streams and let clients send their data to one of those rules round robin. Then combine results of these streams in Redis or DynamoDB and push them to the moderator.
-
-Curious on your thoughts if I'm missing something here or if you have any experiences of your own ingesting/analysing this amount of data. I prefer to do everything using Cloudformation and serverless/managed solutions.
-## [3][Migration from On-prem to AWS](https://www.reddit.com/r/aws/comments/hpm1ak/migration_from_onprem_to_aws/)
-- url: https://www.reddit.com/r/aws/comments/hpm1ak/migration_from_onprem_to_aws/
+## [3][1 VPC with 80 IPSEC VPNs](https://www.reddit.com/r/aws/comments/hqy6jv/1_vpc_with_80_ipsec_vpns/)
+- url: https://www.reddit.com/r/aws/comments/hqy6jv/1_vpc_with_80_ipsec_vpns/
 ---
-Does anyone have a diary of how they migrated their servers from on-prem to AWS? I'm interested in what AWS services you used to connect your on-prem network to AWS. I'm also interested to hear on how you were able to successfully migrated applications to AWS. And if you're going to repeat it again, what will you revise, improve or not do?
+Hi all,
 
-Thanks in advance!
-## [4][Cognito: create a custom “username” in the background (for userIds)](https://www.reddit.com/r/aws/comments/hprudj/cognito_create_a_custom_username_in_the/)
-- url: https://www.reddit.com/r/aws/comments/hprudj/cognito_create_a_custom_username_in_the/
----
-I'm using **Amazon Cognito User Pools** for user management.
+I need to connect a VPC with 80 on-premise networks, using industrial cellular routers and IPSEC. Running 24/7, dataflow is expected to be negligible. No high availability is requested for the "individual" VPN connections. And even if not requested yet, we must be prepared to support a redundant VPN server.
 
-I want to use the ***username*** attribute from the user record inside the Cognito User Pool to store a custom **userId**, created internally by my application, without the user even knowing.
+VGW and Site-to-site VPNs look like a great option but it's nearly 3k USD/month and there are some soft limits (50 site-to-site VPNs/regions + 10 site-to-site VPNs/VGW). 
 
-The reason is that this ***username*** attribute is a great solution for storing a userId: it's **non-mutable**, **forcibly unique**, and **queryable** by [Cognito's APIs](https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_Operations.html) (ListUsers, AdminListGroupsForUser, AdminAddUserToGroup, etc.). Cognito's custom attributes for example are not a good alternative because they can't be used to query those APIs.
-
-So by using the ***username*** attribute I'll be able to fully manage my users within Cognito, without the need to maintain user records in another database and keep them in sync.
-
-Additionally, I want the users to sign up and sign in using an **email address** and **password** (while in the background I use the ***username*** attribute for my own purpose).
-
-In [this page](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html) of Amazon Cognito's guide, it says this:
-
-&gt;If your application does not require a username, you do not need to ask users to provide one. **Your app can create a unique username for users in the background**. This is useful if, for example, you want users to register and sign in with an email address and password.
-
-This paragraph above suggests that what I need can actually be done with Cognito.
-
-However, Amazon Cognito's documentation doesn't explain anything further on how to make that particular setup happen.
-
-When setting up a Cognito User Pool, there's this configuration: “**How do you want your end users to sign-up and sign-in?**”
-
-The options given are
-
-* **Username**
-* **Email address or phone number**
-
-**Which of these options should I pick?** What other configuration must be set for this to wok?
-## [5][Error lambda with gateway api](https://www.reddit.com/r/aws/comments/hprixr/error_lambda_with_gateway_api/)
-- url: https://www.reddit.com/r/aws/comments/hprixr/error_lambda_with_gateway_api/
----
-Hi, everybody, I wrote a lambda function that takes data from a postgres database in RDS. To do this I used the psycopg2 library, when I run the tests the function works correctly. so I added a gateway api get as lambda trigger, but when I call the url of the get it gives me this error:
-
-`{"errorMessage": "Unable to import module 'lambda_function': /var/task/psycopg2/_psycopg.so: undefined symbol: PyUnicodeUCS4_DecodeUTF8", "errorType": "Runtime.ImportModuleError"}`
-
-Can you help me? Why tests work and give me back the query data while if I call them through a get it doesn't work? Thank you.
-## [6][RDS Snapshot](https://www.reddit.com/r/aws/comments/hpnx15/rds_snapshot/)
-- url: https://www.reddit.com/r/aws/comments/hpnx15/rds_snapshot/
----
-Hi Everyone,  
-
-
-First, I want to thank you all for a very helpful community. I really appreciate how you help everyone here.  
-
-
-I do have another question regarding RDS Snapshot. I've been using snapshot for 1 and a half yr now and it's my first time to come across this issue. After I restore my snapshot, I wouldn't be able to log in even I change the Master Password. Can anyone help me why I can't log in to it?  
-
-
-But the original Instance is still running and I can still log into it.
-
-https://preview.redd.it/vuvmfbc1mca51.png?width=732&amp;format=png&amp;auto=webp&amp;s=d5285098b386d57da0c97cd1d29330e95122b989
-## [7][What is the best approach to providing managed AWS services to clients?](https://www.reddit.com/r/aws/comments/hpq65h/what_is_the_best_approach_to_providing_managed/)
-- url: https://www.reddit.com/r/aws/comments/hpq65h/what_is_the_best_approach_to_providing_managed/
----
-I am thinking of creating a managed cloud service for my clients, generally AWS. There are many services that already do this. But my agency has our own long term clients and I want our company to provide a complete ecosystem for them so that a single login is all they need.
-
-I am not sure how to manage AWS account of hundreds of clients. What is the best approach to give them AWS services without them having to create an account? We thought about two ways to do this.
-
-1. Programatically create AWS account for each client using our organization account. There are limits to the number of accounts, which we think we will be able to increase on requesting. And the advantage is monitoring of billing of each accounts.
-2. Create different VPC for each client on our own AWS account, which comes at a cost of no individual client monitoring and ban on any services caused by one account will affect every other client. WE DON'T WANT TO DO THIS.
-
-These are the two ways we though of implementing this. Is there any other approach? If someone else is already doing this, what is your approach to this.
-## [8][Attempting to find private key for ssh into EC2](https://www.reddit.com/r/aws/comments/hpoq8v/attempting_to_find_private_key_for_ssh_into_ec2/)
-- url: https://www.reddit.com/r/aws/comments/hpoq8v/attempting_to_find_private_key_for_ssh_into_ec2/
----
-When creating my EC2 instance on aws (For ELASTIC BEANSTALK), I indicated that I wanted to setup ssh. I was ask for a user name and a password. In return, I was given an SHA256 key and the key's art. No idea what either of these are or how these can be used right now, but I have them saved.
+To overcome VGW limits, we could use a Transit Gateway but it's 3k USD/month only because of 81 attachements. I also have to add the price of site-to-site VPNs, correct ? 3k + 3k = 6k USD/month ?
 
 &amp;#x200B;
 
-I now want to connect to my instance via ssh, but I need a .pem or .ppk file for the private key. I have neither and have no idea where to find these or how to create them.
+Do you think we could push VGW soft limits to 80 VPNs/VGW ?
+
+Is it a good architecture to use Site-to-site VPNs &amp; VGW/Transit Gateway for that kind of use ?
+
+What would you recommend instead for a more cost effective solution ? Have a pair of IPSec server instances (strongswan?) in my public subnets ?
 
 &amp;#x200B;
 
-When I created my instance via awsebcli, would the private key have been saved somewhere on my computer?
+Thanks
+## [4][Attempting to get SSM param gives error: ParameterNotFound: null](https://www.reddit.com/r/aws/comments/hqx65m/attempting_to_get_ssm_param_gives_error/)
+- url: https://www.reddit.com/r/aws/comments/hqx65m/attempting_to_get_ssm_param_gives_error/
+---
+I have simple nodejs code that grabs a param, but I get `ParameterNotFound: null` for reasons I don't understand. What could I be doing wrong here?
+
+`const AWS = require('aws-sdk')`  
+`const ssm = new AWS.SSM({region: '&lt;region&gt;'});`  
+`const getParameterValue = async (params) =&gt; {`  
+ `var request = await ssm.getParameter(params).promise();`  
+ `console.log(request.Parameter.Value);`   
+`};`  
+
 
 &amp;#x200B;
 
-Thanks!
-## [9][Cloudformation GetAtt method from inside my resolver request mapping template](https://www.reddit.com/r/aws/comments/hpfs2p/cloudformation_getatt_method_from_inside_my/)
-- url: https://www.reddit.com/r/aws/comments/hpfs2p/cloudformation_getatt_method_from_inside_my/
+Params:  
+ `var params = {`  
+ `Name: '&lt;param_name&gt;',`   
+ `WithDecryption: true`  
+ `};`
+## [5][SQS IAM EC2 policy access](https://www.reddit.com/r/aws/comments/hqymke/sqs_iam_ec2_policy_access/)
+- url: https://www.reddit.com/r/aws/comments/hqymke/sqs_iam_ec2_policy_access/
 ---
-I have a template for updating cognito user attributes:
+my inline sqs policy has receive message on an ec2 iam role; however i can't dequeue a message from the cli on the box.  what might be wrong?
 
-```
-Resources:
-  UpdateUserAttributeMutation:
-    Type: AWS::AppSync::Resolver
-    Properties:
-      ApiId:
-        Ref: AppSyncApi
-      TypeName: Mutation
-      FieldName: updateUserAttribute
-      DataSourceName:
-        Ref: AppsyncDynamoDBTableDataSource
-      RequestMappingTemplate: |
-        set($body = {})
+aws sqs receive-message --queue-url &lt;my url&gt;
 
-        #set($attribute={})
-        $util.qr($attribute.put("Name", "email_verified"))
-        $util.qr($attribute.put("Value", "true"))
+An error occurred (AccessDenied) when calling the ReceiveMessage operation: Access to the resource https://queue.amazonaws.com/ is denied.
 
-        #set($UserAttributes = [])
-        $util.qr($UserAttributes.add($attribute))
-        $util.qr($body.put("UserAttributes", $UserAttributes))
-
-        #set($body.Username = $ctx.identity.sub)
-        #set($body.UserPoolId = ***MY_COGNITO_ID***)
-
-        {
-          "version": "2018-05-29",
-          "method": "POST",
-          "resourcePath": "/",
-          "params": {
-            "headers": {
-              "content-type": "application/x-amz-json-1.1",
-              "x-amz-target":"AWSCognitoIdentityProviderService.AdminUpdateUserAttributes"
-            },
-            "body": $util.toJson($body)
-          }
-        }
-      ResponseMappingTemplate: |
-        #if($ctx.error)
-          $util.error($ctx.error.message, $ctx.error.type)
-        #end
-        #if($ctx.result.statusCode == 200)
-            true
-        #else
-         false
-        #end
-```
-
-I have multiple environments, so I would love to be able to pass the `MY_COGNITO_ID` value into my template dynamically, is there a way to achieve this using GetAtt cloudformation helper method or do I need to use something different?
-## [10][Can instance-store images not be used with current gen instance types?](https://www.reddit.com/r/aws/comments/hpi6qa/can_instancestore_images_not_be_used_with_current/)
-- url: https://www.reddit.com/r/aws/comments/hpi6qa/can_instancestore_images_not_be_used_with_current/
+policy:   
+"Effect": "Allow",  
+"Action": \[  
+"sqs:DeleteMessage",  
+"sqs:GetQueueUrl",  
+"sqs:ChangeMessageVisibility",  
+"sqs:SendMessageBatch",  
+"sqs:ReceiveMessage",  
+"sqs:SendMessage",  
+"sqs:GetQueueAttributes",  
+"sqs:ListQueueTags",  
+"sqs:ListDeadLetterSourceQueues",  
+"sqs:DeleteMessageBatch",  
+"sqs:PurgeQueue",  
+"sqs:DeleteQueue",  
+"sqs:CreateQueue",  
+"sqs:ChangeMessageVisibilityBatch",  
+"sqs:SetQueueAttributes"  
+\],
+## [6][How to analyze a form via textract and A2I using lambda function?](https://www.reddit.com/r/aws/comments/hqxyub/how_to_analyze_a_form_via_textract_and_a2i_using/)
+- url: https://www.reddit.com/r/aws/comments/hqxyub/how_to_analyze_a_form_via_textract_and_a2i_using/
 ---
-For my application, I do not need EBS volumes (nor can I afford 8GB of EBS volume per server per month).
+Hey guys, I am trying to send the form extraction from textract to A2I using a lambda function but I have no clue how to go about implementing it. 
 
-I'm using Ubuntu provided AMIs: https://cloud-images.ubuntu.com/locator/ec2/
+Currently, after following some guides, I can send the output of a textract back to S3 in a .txt format. 
 
-I have chose ami-0921ae3f2ab9e0efc which is Ubuntu 18.04 and everything is great on it.  I have several running now.
-
-The only problem is, I can only choose old instance types like "m1.medium", which is comparable in price to the newer "t3a.medium" except the T3A machines are faster and better.
-
-What gives? Can instance-store only AMIs not be launched on t3a servers?
-## [11][question about client vpn](https://www.reddit.com/r/aws/comments/hpmit0/question_about_client_vpn/)
-- url: https://www.reddit.com/r/aws/comments/hpmit0/question_about_client_vpn/
+How can I send the output to A2I for human review? Thank you!
+## [7][Learning Opportunity.](https://www.reddit.com/r/aws/comments/hqg29q/learning_opportunity/)
+- url: https://www.reddit.com/r/aws/comments/hqg29q/learning_opportunity/
 ---
-when you create a client vpn to connect to a vpc, your instances don't see you with your client CIDR and instead they see you as connecting from the subnet that you associated in the vpn endpoint
+I have not  yet seen this posted here, but I wanted to share something a co-worker has been developing and wanted to share with a wider audience.  A great way to learn to code and use AWS at the same time.
 
-when you take a look at the endpoint you see a route table being added and it shows up as nat. i used netstat and was able to find out the specific ip address inside the subnet that actually was connected to the instance.
+ [https://learn-to-code.workshop.aws](https://learn-to-code.workshop.aws/) 
 
-is this nat information stored somewhere? can i control which exact ip with that subnet is being used?
+All feedback is welcome.
+## [8][Static Website Hosting &amp; Redirect Error](https://www.reddit.com/r/aws/comments/hqxd3n/static_website_hosting_redirect_error/)
+- url: https://www.reddit.com/r/aws/comments/hqxd3n/static_website_hosting_redirect_error/
+---
+[http://example.org/](http://algostem.org/), [http://www.example.org/](http://www.algostem.org/), and [https://www.example.org/](https://www.algostem.org/) all resolve to [https://www.example.org/](https://www.woorank.com/en/www/algostem.org#) (correct). However, I get a timeout error for [https://example.org/](https://algostem.org/). I'm hosting a static website using S3, CloudFront, and Route 53. The domain is registered through Google Domains. [This](https://dev.to/razcodes/how-to-host-a-static-website-with-aws-s3-and-ssl-using-cloudfront-3e37) is the tutorial I followed (I know no one likes to open links on Reddit but it's just too long to summarize here). Any help would be greatly appreciated!
+## [9][Migrate password-less, no oidc compatible user database to cognito](https://www.reddit.com/r/aws/comments/hqwm6u/migrate_passwordless_no_oidc_compatible_user/)
+- url: https://www.reddit.com/r/aws/comments/hqwm6u/migrate_passwordless_no_oidc_compatible_user/
+---
+So I have a user database, which is a combination of facebook and email authentication, catch is that instead of password for email auth, we use some kind of "passcode" which has different meaning in the business. the fields for my user database are general, email, first name, last name, created at, updated at and uuid, used to identify users in our business. also those users are attached to another table, which contains these "passcodes". how could i migrate to cognito, and also introduce normal passwords as well?
+## [10][Why some EC2 instances have "N/A" for ECU? What does N/A mean here?](https://www.reddit.com/r/aws/comments/hqyyrj/why_some_ec2_instances_have_na_for_ecu_what_does/)
+- url: https://www.reddit.com/r/aws/comments/hqyyrj/why_some_ec2_instances_have_na_for_ecu_what_does/
+---
+For example r5d.large is a bit more expensive than r5ad.large, while having the same specs. The former has 10 ECUs, the latter has "N/A"
+## [11][Egis - a handy Ruby interface for AWS Athena](https://www.reddit.com/r/aws/comments/hqye6m/egis_a_handy_ruby_interface_for_aws_athena/)
+- url: https://www.reddit.com/r/aws/comments/hqye6m/egis_a_handy_ruby_interface_for_aws_athena/
+---
+Together with my team at [https://www.u2i.com/](https://www.u2i.com/) we have recently built a wrapper for AWS Athena SDK providing a convenient, higher-level interface for defining schemas, creating tables and executing queries. It reduces boilerplate and repetitive code allowing you to process large data sets easily.
+
+[https://github.com/u2i/egis](https://github.com/u2i/egis)
+
+Do you find it useful? Please give it a star. ;)

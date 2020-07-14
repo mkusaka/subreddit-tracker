@@ -83,57 +83,181 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
-## [3][Stems - Mac + Windows app built using React/Typescript/Electron that takes a song and breaks it apart into isolated vocal, instrumental, drum, and bass tracks.](https://www.reddit.com/r/reactjs/comments/hpdfp3/stems_mac_windows_app_built_using/)
-- url: https://v.redd.it/bknv56q7e9a51
+## [3][I made a Snapchat clone in the browser!](https://www.reddit.com/r/reactjs/comments/hqfm86/i_made_a_snapchat_clone_in_the_browser/)
+- url: https://v.redd.it/t6bp0tgaqma51
 ---
 
-## [4][Demo video for a rota application I've been working on using React/Django](https://www.reddit.com/r/reactjs/comments/hptb8z/demo_video_for_a_rota_application_ive_been/)
-- url: https://v.redd.it/4moi8ykn1fa51
+## [4][Relay vs Apollo vs Amplify DataStore as client for a GraphQL backend](https://www.reddit.com/r/reactjs/comments/hqzm4l/relay_vs_apollo_vs_amplify_datastore_as_client/)
+- url: https://www.reddit.com/r/reactjs/comments/hqzm4l/relay_vs_apollo_vs_amplify_datastore_as_client/
+---
+I’m building a React Native app and have realised I need a more scalable way of talking to my GraphQL backend. I work more as a quant than a dev so please forgive any misconceptions.
+
+I’ve set up my backend using DynamoDB and have built a GraphQL layer over it using AppSync. The default way AWS suggests talking to AppSync isn’t easily scalable, plus I’ve ended up writing what is essentially a small library of hooks and other helpers to build local persistence using Recoil + AsyncStorage with atoms modelled after my graph schema.
+
+So I’ve got 3 options:
+
+* Apollo: big community, popular, nice API, AppSync uses (used? Can only find sources from 2017) it under the hood, built-in persistence
+
+* Relay: very similar to Apollo, smaller community, API seems more complicated and setup seems a bit longer, but assume the flexibility could be beneficial further down the line
+
+* AWS Amplify DataStore: works immediately, TypeScript type defs generated from my GraphQL schema are designed for this library, have to write hook wrappers, just very wary of committing to an Amplify library as I’ve been burned in the past by bugs and poor documentation (no fault of the devs, I think the Amplify guys are stretched too thin)
+
+Is there a clear winner? Is Apollo still GraphQL king? I’ve heard Relay has come a long way recently.
+
+Thanks
+## [5][How to connect two APIs requests?](https://www.reddit.com/r/reactjs/comments/hr0cfk/how_to_connect_two_apis_requests/)
+- url: https://www.reddit.com/r/reactjs/comments/hr0cfk/how_to_connect_two_apis_requests/
+---
+Hey guys, so i'm working on a movie app using [TheMovieDb](https://www.themoviedb.org/) API and the problem is that when I request Trending movies the genre of each movie is just an id and to get the genre text I have to make another request to get all genres and then get the name of the genres from the second request,so my question is how to do it because I tried but I'm stuck right now
+
+    // I called each request in useEffect separately 
+    
+    
+    &lt;div className={classes.SliderContainer}&gt;
+     &lt;Slider {...settings}&gt; 
+       {movies.map((movie) =&gt; ( 
+         &lt;HomeSlider 
+            genre={genres[movie.id]} // here's my lastest try but it didn't work 
+            src={ImgUrl(movie.backdrop_path)} 
+            title={movie.title}     
+            key={movie.id} 
+            rating={movie.vote_average} /&gt;   
+       ))}  
+     &lt;/Slider&gt; 
+    &lt;/div&gt;
+
+&amp;#x200B;
+## [6][Whiteboard: React Hooks 🎣](https://www.reddit.com/r/reactjs/comments/hqzzb3/whiteboard_react_hooks/)
+- url: https://blog.ranaemad.com/whiteboard-react-hooks-ckclrvccg0005fls16f1h80mc
 ---
 
-## [5][A problem with Redux and my new job](https://www.reddit.com/r/reactjs/comments/hpsstj/a_problem_with_redux_and_my_new_job/)
-- url: https://www.reddit.com/r/reactjs/comments/hpsstj/a_problem_with_redux_and_my_new_job/
+## [7][Creating A React App With Webpack &amp; Babel From Scratch - Part 1](https://www.reddit.com/r/reactjs/comments/hqrh5e/creating_a_react_app_with_webpack_babel_from/)
+- url: https://youtu.be/AC1bCJh_3O8
 ---
-So I got my first job as a react developer and after I checked out the code that they use, I noticed that they use Redux as a state management. To be honest, I've tried to watch several videos about it and I can't seem to understand it. I've never used redux and im going to start the job in a few days and I don't know what to do. (I've already told them that I don't know redux during the interview) 
+
+## [8][RxDeep: Reactive (Deep) State Management using RxJS](https://www.reddit.com/r/reactjs/comments/hr1ilx/rxdeep_reactive_deep_state_management_using_rxjs/)
+- url: https://loreanvictor.github.io/rxdeep/
+---
+
+## [9][Function into class component](https://www.reddit.com/r/reactjs/comments/hr1aqs/function_into_class_component/)
+- url: https://www.reddit.com/r/reactjs/comments/hr1aqs/function_into_class_component/
+---
+Hi,
+
+I am fairly new to react and programming in general. I started programming last year with the basics(CSS, HTML, Java) and since a few weeks I am  working on a project that uses react, typescript, Material-ui etc. The team almost exclusively uses class components  and I have to migrate some of the functional components into class components. So here is the code that I have (Link: [demo](https://material-ui-pickers.dev/demo/datetime-picker) ):
 
 &amp;#x200B;
 
-Any advice?
-## [6][My first open source project, I created a web app for manage task](https://www.reddit.com/r/reactjs/comments/hpue23/my_first_open_source_project_i_created_a_web_app/)
-- url: https://www.reddit.com/r/reactjs/comments/hpue23/my_first_open_source_project_i_created_a_web_app/
+    import React, { Fragment, useState } from "react";
+    import { DateTimePicker } from "@material-ui/pickers";
+    
+    function BasicDateTimePicker() {
+    const [selectedDate, handleDateChange] = useState(new Date());
+    
+    return (
+        &lt;Fragment&gt;
+            &lt;DateTimePicker
+                value={selectedDate}
+                disablePast
+                onChange={handleDateChange}
+                label="System Date and Time"
+                showTodayButton
+            /&gt;
+        &lt;/Fragment&gt;
+
+            );
+    }
+    export default BasicDateTimePicker;
+    
+
+&amp;#x200B;
+
+And I want to make it into a class Component.
+
+It should, in the end, look something like this:
+
+    import React, { Fragment, useState } from "react";
+    import { DateTimePicker } from "@material-ui/pickers";
+    
+    interface OptionalCompProps {}
+    
+    interface CompProps extends OptionalCompProps {
+    }
+    
+    type CompAllProps = CompProps &amp; WithStyles&lt;ClassNames&gt; &amp; WithApplicationBaseProps &amp; WithSnackbarProps;
+    
+    class ControlPanel extends React.Component&lt;CompAllProps, CompState&gt; {
+    	static defaultProps: OptionalCompProps = {};
+    
+    	constructor(props: CompAllProps) {
+    		super(props);
+    		this.state = {
+    		    date: undefined,
+    		};
+    	}
+    
+    private selectedDate = () =&gt; useState(new Date());
+    private onChange = () =&gt; useState(this.selectedDate);
+    
+    render(): React.ReactNode {
+        const { date } = this.state;
+            return(
+                &lt;MuiPickersUtilsProvider utils={DateFnsUtil}   
+                     &lt;Fragment&gt;	                             
+                          &lt;DateTimePicker 
+                                disablePast
+                                size="small"
+                                value={this.onChange}
+                                onChange={this.selectedDate}
+                                label="System Date and Time: "
+                                showTodayButton
+                          /&gt;
+    	        &lt;/Fragment&gt;
+                &lt;/MuiPickersUtilsProvider&gt;
+                    );
+    }
+    
+    
+    export default withSnackbar(withApplicationBase(withStyles(componentStyles)(ControlPanel)));
+    
+    
+
+I know this is wrong but its what I have... I am able to change the date/time with it, but the datetimepicker doesnt take the input/unable to accept. Can anyone help converting the funtional component to a class component?
+## [10][Functional components, class, or mix?](https://www.reddit.com/r/reactjs/comments/hr0qe8/functional_components_class_or_mix/)
+- url: https://www.reddit.com/r/reactjs/comments/hr0qe8/functional_components_class_or_mix/
 ---
-Hey all, thanks for your attention, I created this because I need to manage my task every day,
+If I'm building a new app should I go with functional based components, class based, or case dependent?
 
-It's open-source on Github if you want to contribute, that'  would be really appreciated
+&amp;#x200B;
 
-here is the repo link
+[View Poll](https://www.reddit.com/poll/hr0qe8)
+## [11][Best way to manage/maintain/implement plugins's code with a core application](https://www.reddit.com/r/reactjs/comments/hr0hg1/best_way_to_managemaintainimplement_pluginss_code/)
+- url: https://www.reddit.com/r/reactjs/comments/hr0hg1/best_way_to_managemaintainimplement_pluginss_code/
+---
+Let's first clarify the situation. I'm currently working on a product with a configurable part for each client and a core part where you have the application kernel. For the frontend part we have implemented something like nylas mail ([https://nylas.github.io/nylas-mail/guides/React.html](https://nylas.github.io/nylas-mail/guides/React.html)). The client is able to register some components, changing theme etc... It's possible to have access to some functions from the core trough a specific object defined inside global variable. The client part is builded on his side then every components is registered during runtime. It works very well an most of time this is so far enough for clients. 
 
-\[Check Github link\](https://github.com/judicaelandria/check)
-## [7][Skynet is coming](https://www.reddit.com/r/reactjs/comments/hpu27m/skynet_is_coming/)
-- url: https://twitter.com/i/status/1282261783147958272
+&amp;#x200B;
+
+But recently we are facing to a problem. Some clients want even more specific and bigger specific fonctionnalities. And this is not possible to just say "No it's now possible to do that". We must find a way to  implement and have something more flexible. So we are currently looking for the better solution to manage that. Of course with the current implementation we could able to do that and say "Let's just continue to add some fonctionalities inisde the global object from core". But somethimes this is very specific thing and another problem is that by always adding more possibilities it's will becomes untenable. 
+
+Another problem with the current situation is that all dependencies are duplicated inisde the core and client parts and inside client part (just React is passed as a global variable). In this situation,  We have no access to the core DOM inside the client part (for example no access to all providers). And this is very problematic. For example you want do a drag and drop between a component inside the core and another one inside the client. It's not possible... 
+
+The goal now is to find a better solution where we can easily add very specific code while having something maintainable for the next few years.
+
+&amp;#x200B;
+
+A first possible way to implement that could be to inject directly the client code during build time. 
+
+\- A first possiblity could be to add the client as part of the core (as a dependcies) or the opposite and build everything together. 
+
+\- Another solution could be to replace components. React work as components inside a tree so why not say ok let's define specific components inside the client part then add/replace them during build time with a specific babel plugin maybe. It's could be interesting but what's going on if we switch soon to TypeScript... ? 
+
+&amp;#x200B;
+
+I didn't find a lot's of documentation who speak arround the problematic to inject code during build time. 
+
+Feel free to share you feeback, what you are currently using, your idea etc...
+## [12][About the comparison algorithm behind useEffect](https://www.reddit.com/r/reactjs/comments/hr00ls/about_the_comparison_algorithm_behind_useeffect/)
+- url: https://twitter.com/tinloof/status/1282976284696473601
 ---
 
-## [8][Using Custom Hooks for Double Back Press to Exit in React](https://www.reddit.com/r/reactjs/comments/hppxvx/using_custom_hooks_for_double_back_press_to_exit/)
-- url: https://ayusch.com/double-back-button-press-to-exit-in-react-native/
----
-
-## [9][Astrofox - I made a motion graphics program for turning music visualizations into videos. Built with React, WebGL, and Electron. Free to use.](https://www.reddit.com/r/reactjs/comments/hp5jiy/astrofox_i_made_a_motion_graphics_program_for/)
-- url: https://astrofox.io
----
-
-## [10][a React Intercom integration powered by hooks](https://www.reddit.com/r/reactjs/comments/hpswcq/a_react_intercom_integration_powered_by_hooks/)
-- url: https://github.com/devrnt/react-use-intercom/
----
-
-## [11][Create your own useInViewPort hook and use it lazy load Google Maps](https://www.reddit.com/r/reactjs/comments/hpsocj/create_your_own_useinviewport_hook_and_use_it/)
-- url: https://twitter.com/tinloof/status/1282261209107005441?s=20
----
-
-## [12][Hello guys I need help your to refactor my exercise tracker app into login/password base single page application](https://www.reddit.com/r/reactjs/comments/hpskj3/hello_guys_i_need_help_your_to_refactor_my/)
-- url: https://www.reddit.com/r/reactjs/comments/hpskj3/hello_guys_i_need_help_your_to_refactor_my/
----
-I am building exercise tracker app using MERN stack . repo is available on github . Can you please help me to refactor the app into usrname/password based app .
-
-github repo link : https://github.com/krishnak141/exercise-tracker-app/commits/master
-
-I am beginner in web development . Help needed .

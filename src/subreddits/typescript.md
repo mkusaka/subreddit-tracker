@@ -22,156 +22,231 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][After learning Rust, I was surprised that the concept of "match" (also in Haskell) didn't make it to ES2020/TS4.0. So I created my own little class for it. Thoughts?](https://www.reddit.com/r/typescript/comments/hphpu8/after_learning_rust_i_was_surprised_that_the/)
-- url: https://gist.github.com/brianboyko/1decb88a793b92c06ad7d13f73d88854
+## [2][Cool helper type that will allow you to recursively replace all types in an object with another type.](https://www.reddit.com/r/typescript/comments/hr19a2/cool_helper_type_that_will_allow_you_to/)
+- url: https://www.reddit.com/r/typescript/comments/hr19a2/cool_helper_type_that_will_allow_you_to/
 ---
+Figured this out recently, when I had to transform large plain objects of different shapes, and replace some leaf value with a different one. `Replaced` type takes 4 generic arguments:
 
-## [3][Importing .ts files without extension](https://www.reddit.com/r/typescript/comments/hps207/importing_ts_files_without_extension/)
-- url: https://www.reddit.com/r/typescript/comments/hps207/importing_ts_files_without_extension/
----
-Hi, I recently migrated a vue project to typescript manually without cli, and I managed to set everything up except importing ts files. Somehow I need to specify the .ts on the import path.
+* `T` the object to be transformed.
+* `TReplace` the type to be replaced with
+* `TWith` the type to use instead of `TReplace`
+* `TKeep` the type to not transform. Defaults to primitive values.  
 
-Can someone please help?
-## [4][Q: Using yarn workspace but Typescript isn't aware of it](https://www.reddit.com/r/typescript/comments/hpqnrm/q_using_yarn_workspace_but_typescript_isnt_aware/)
-- url: https://www.reddit.com/r/typescript/comments/hpqnrm/q_using_yarn_workspace_but_typescript_isnt_aware/
----
-When I import something from an another workspace I get `Cannot find module @org/common/Movie or its corresponding type...` from the TS compiler/Intellisense. How can make TS aware of my workspace structure?
-## [5][Type '"X"' does not satisfy the constraint 'keyof NamingOption'.ts(2344)](https://www.reddit.com/r/typescript/comments/hpranq/type_x_does_not_satisfy_the_constraint_keyof/)
-- url: https://www.reddit.com/r/typescript/comments/hpranq/type_x_does_not_satisfy_the_constraint_keyof/
----
-       protected combineAndSave &lt;NamingOption&gt;(
-          audiosAndPauseFiles: Array&lt;string&gt;
-          , savePath: string
-          , fileNameOptions : 
-             Pick&lt;NamingOption, "prefix"&gt; |
-             Pick&lt;NamingOption, "name"&gt;
-       ) : void {
+
+Obviously to be used as the return type of some function that does the actual transformation.
+
+    type Primitive = string | number | bigint | boolean | null | undefined;
     
-    /*
-    Type '"prefix"' does not satisfy the constraint 'keyof NamingOption'.ts(2344)
-    Type '"name"' does not satisfy the constraint 'keyof NamingOption'.ts(2344)
+    type Replaced&lt;T, TReplace, TWith, TKeep = Primitive&gt; = T extends TReplace | TKeep
+        ? (T extends TReplace
+            ? TWith | Exclude&lt;T, TReplace&gt;
+            : T)
+        : {
+            [P in keyof T]: Replaced&lt;T[P], TReplace, TWith, TKeep&gt;
+        }
+    
+    type Foo = symbol;
+    type Bar = "3";
+    
+    type ToReplace = {
+        x?: {
+            y: Foo | number;
+            z: string;
+        }[]
+    } | undefined;
+    
+    type WasReplaced = Replaced&lt;ToReplace, Foo, Bar&gt;;
+    /* Output:
+    {
+        x?: {
+            y: number | "3";
+            z: string;
+        }[];
+    }
     */
-
-I'm still rough with generics, why isn't `NamingOption` being treated as amorphous in shape above? I thought that's the point of a generic type, maybe my concept of them is wrong, or maybe it's a syntax error.
-
-PS: The intent of the above is that argument 3 receive an object with a single key, for either `prefix` or `name` (not both). I know an object union could also do this but I want to learn the generic type way.
-## [6][Object argument: Any way to enforce one of two keys must be present?](https://www.reddit.com/r/typescript/comments/hpg1mr/object_argument_any_way_to_enforce_one_of_two/)
-- url: https://www.reddit.com/r/typescript/comments/hpg1mr/object_argument_any_way_to_enforce_one_of_two/
----
-       protected combineAndSave(
-          audiosAndPauseFiles: Array&lt;string&gt;
-          , savePath: string
-          , fileNameOptions : {
-             prefix?: string
-             , name?: string
-          }
-       ) : void {
-          const {prefix, name} = fileNameOptions;
-          let finalFileSavePath: string;
-          
-          // used to save sentence files
-          if (prefix) {
-             finalFileSavePath = `${savePath}/${prefix} - ${this.sentence.folderName}.ogg`;
-          } else {
-             finalFileSavePath = `${savePath}/${name}`;
-          }
-
-I think there's a hole above. Looks like someone may be able to pass an empty object, or even exclude the 3rd argument completely, which would hit the `else` clause with an `undefined` variable and cause a `TypeError` (if this is wrong please let me know).
-
-Is there any way to constrain the `fileNameOptions` object so that one of the keys must be specified?
-
-I tried this
-
-          , fileNameOptions : Partial&lt;{
-             prefix?: string
-             , name?: string
-          }&gt;
-
-But on review of the docs this apparently does nothing the dual `?` don't already do.
-
-I may leave it anyways for code clarity, if anyone has an opinion on that please share.
-## [7][[Showoff Saturday] Platform for uploading and tracking Applications build with TypeScript](https://www.reddit.com/r/typescript/comments/hpia6e/showoff_saturday_platform_for_uploading_and/)
-- url: https://progressiveapp.store/home
+## [3][I made a Snapchat clone in the browser!](https://www.reddit.com/r/typescript/comments/hqfzmn/i_made_a_snapchat_clone_in_the_browser/)
+- url: https://v.redd.it/gnbkqf8duma51
 ---
 
-## [8][Noob Question: how do I enforce the implementation of a static method on a child class?](https://www.reddit.com/r/typescript/comments/hpj5h2/noob_question_how_do_i_enforce_the_implementation/)
-- url: https://www.reddit.com/r/typescript/comments/hpj5h2/noob_question_how_do_i_enforce_the_implementation/
+## [4][Discord Community: Code Review, Paired Programming, Collab, and Live Instruction for TS Devs!](https://www.reddit.com/r/typescript/comments/hqw7ts/discord_community_code_review_paired_programming/)
+- url: https://www.reddit.com/r/typescript/comments/hqw7ts/discord_community_code_review_paired_programming/
 ---
-I know I can do this
+ A community of student and professional developers. Join us for free instruction, paired programming, code/project review, collaboration, and more. Looking for exposure to new concepts? Engage in peer review on your projects? Looking for help getting through your latest assignment or project? **Looking to spread the "Good News" and show the rest of us Typescript isn't just good for Angular?** If you can ask a good question you're like to find a good answer here!
 
-```
-abstract class A {
-  myMethod();
-}
+Engage in the Feinberg method of learning, where you reinforce what you do know and spot weaknesses in your own studies, by teaching a few code-along courses or just share your latest project.
 
-class B extends A {
-    myMethod() {
-        console.log("implemented");
+**In short:** We'd love to have you. Come on in!
+
+[https://discord.gg/5vphZ5s](https://discord.gg/5vphZ5s)
+## [5][Create a library with only type definitions](https://www.reddit.com/r/typescript/comments/hqnc8g/create_a_library_with_only_type_definitions/)
+- url: https://www.reddit.com/r/typescript/comments/hqnc8g/create_a_library_with_only_type_definitions/
+---
+Hello, I'm a novice typescript developer that is loving the language so far but is having some issues understanding how types definitions works.
+
+What I'm trying to achieve is creating a library that I would like to publish in a github repo and that should contains type definitions shared between multiple projects.   
+
+
+What's the best approach to achieve something similar?
+## [6][ESLint TS-specific errors (interfaces/enums "not used")](https://www.reddit.com/r/typescript/comments/hqlv93/eslint_tsspecific_errors_interfacesenums_not_used/)
+- url: https://www.reddit.com/r/typescript/comments/hqlv93/eslint_tsspecific_errors_interfacesenums_not_used/
+---
+    import ConfigData from '../setupWizard/ConfigDataInterface';
+    
+    // (alias) interface ConfigData
+    // import ConfigData
+    // 'ConfigData' is defined but never used.eslintno-unused-vars
+
+When removed the interface references become undefined as one would expect.
+
+&amp;#x200B;
+
+    export enum translationDirection { toForeign, toEnglish }
+    // (alias) interface ConfigData
+    // import ConfigData
+    // 'ConfigData' is defined but never used.eslintno-unused-vars
+    // same for toEnglish
+    
+    export enum voiceGender { male = 'MALE', female = 'FEMALE' }
+    
+    // (enum member) voiceGender.male = "MALE"
+    'male' is assigned a value but never used.eslintno-unused-vars
+    // (enum member) voiceGender.female = "FEMALE"
+    'female' is assigned a value but never used.eslintno-unused-vars
+
+There is another enum defined inside of a method in the consuming file, even that one throws the lint/error for "defined but not used".
+
+&amp;#x200B;
+
+Anyone know how to fix these? The error fixing page seems JS-specific: [https://eslint.org/docs/rules/no-unused-vars](https://eslint.org/docs/rules/no-unused-vars)
+
+    // .eslintrc.js
+    module.exports = {
+      env: {
+        browser: false,
+        es2020: true,
+      },
+      extends: [
+        'airbnb-base',
+      ],
+      parser: '@typescript-eslint/parser',
+      parserOptions: {
+        ecmaVersion: 11,
+        sourceType: 'module',
+      },
+      plugins: [
+        '@typescript-eslint',
+      ],
+      rules: {
+        'import/extensions': 0, // off
+      },
+      settings: {
+        'import/resolver': {
+          node: {
+            extensions: ['.ts'],
+            moduleDirectory: ['node_modules', 'src'],
+          },
+        },
+      },
+    };
+## [7][Am I being pedantic when it comes to helper methods in classes?](https://www.reddit.com/r/typescript/comments/hqar0k/am_i_being_pedantic_when_it_comes_to_helper/)
+- url: https://www.reddit.com/r/typescript/comments/hqar0k/am_i_being_pedantic_when_it_comes_to_helper/
+---
+For the most part, I try to program in a functional style - simple, reusable functions, accessing state, where needed, via closure, etc.  And certainly \*anything\* you can write as a class in JS/TS can be written as functions.  But sometimes classes are a simpler, easier solution and I find that when you have complex state to manage, they're nice to use. (Basically, when I start thinking that something will require a monad, I think it might be okay to switch to classes. :) ) 
+
+The question occurs when I have a class definition that Is more or less useless outside the class, but is purely functional - that is, no access to state, no mutations. 
+
+Now, I would insist these functions be defined \*outside the class\* so that they can be independently unit tested.  (Though to keep concerns together, I'd put them in the same \*file\* where the class is the default export).  But is that being pedantic?    
+
+
+In other words, I'm refactoring this: 
+
+```typescript
+export default class Match {
+  private checkCondition = (condition: Condition, input: any): boolean =&gt; {
+    if (typeof condition === "function") {
+      return condition(input);
     }
+    return condition === input;
+  };
 }
 ```
 
-and I can do this
+to this:
+```typescript
+export const checkCondition = (condition: Condition, input: any): boolean =&gt; {
+  if (typeof condition === "function") {
+    return condition(input);
+  }
+  return condition === input;
+};
 
+export default class Match {
+  /* OPTIONAL!
+  private checkCondition = checkCondition;
+  */
+}
 ```
-class B {
-    static myProperty = "hello";
+## [8][New to TypeScript. How do you know what types to use for things other than strings and booleans?](https://www.reddit.com/r/typescript/comments/hqty7o/new_to_typescript_how_do_you_know_what_types_to/)
+- url: https://www.reddit.com/r/typescript/comments/hqty7o/new_to_typescript_how_do_you_know_what_types_to/
+---
+I've never been able to figure this out. For complex things like array, objects and other components what type do you give them?
+## [9][Express.js course with TypeScript Lesson 2 — Apollo &amp; WebSockets](https://www.reddit.com/r/typescript/comments/hqcfqa/expressjs_course_with_typescript_lesson_2_apollo/)
+- url: https://medium.com//express-js-course-with-typescript-lesson-2-apollo-websockets-7eb2063186bf?source=friends_link&amp;sk=123f4b00527f5080717f1cbfa6f34ac2
+---
 
-    static myMethod() {
-        console.log("hello");
+## [10][Access mapped type by index](https://www.reddit.com/r/typescript/comments/hqc4h2/access_mapped_type_by_index/)
+- url: https://www.reddit.com/r/typescript/comments/hqc4h2/access_mapped_type_by_index/
+---
+I'm trying to wrap my head around the following behavior, say I have the following type definitions
+
+    type RMap = {
+        a: { foo: string }
+        b: { foo: unknown }
     }
-}
-```
-
-but I can't seem to mix the two.
-
-I want to make sure that all child classes of a parent (abstract) class override a certain static property (or method).
-
-Specifically, I want all descendants of `FromSQL` to have a static property `TABLE_NAME`, so that I can have a method `fetch&lt;T extends FromSQL&gt;` and then use `TABLE_NAME` to fetch from the correct table.
-
-Is there any way to do this? If not, is there a workaround I can use?
-## [9]["--isolatedModules flag" in typescript](https://www.reddit.com/r/typescript/comments/hp440a/isolatedmodules_flag_in_typescript/)
-- url: https://www.reddit.com/r/typescript/comments/hp440a/isolatedmodules_flag_in_typescript/
----
-&gt; All files must be modules when the '--isolatedModules' flag is provided
-
-I've googled this error but I honestly don't think I'm violating anything. 
-
-    import React from 'react';
-    import Hero from '../components/Hero';
     
-    const About: React.FC = () =&gt; (
-      &lt;Hero /&gt;
-    );
+    type RType = keyof RMap
     
-    export default About;
+    type RState = {
+        [k: string]: {
+            s: RMap[RType]
+        }
+    }
+
+Given these, what's the difference between f1 and f2 below? Why does the first one not compile?
+
+    declare const map: RState
     
-The error occurs at "(1,1)"..so  the first character. 
-
-I have an almost exactly similar file that doesn't produce the error. It is also super strange because when I was working on this file yesterday and saved it in this state, it was rendering fine. But right now as I run the app again..I get that error. Does anyone know what it could be?
-
-One answer from S/O: This error happens when there is no import or export statement in a file (these make a file a module). But I do have an export statement..
-## [10][[ Help ] Create new method (wrapping)](https://www.reddit.com/r/typescript/comments/hp5gao/help_create_new_method_wrapping/)
-- url: https://www.reddit.com/r/typescript/comments/hp5gao/help_create_new_method_wrapping/
+    function f1&lt;R extends RType&gt;(k: string, f: (r: RMap[R]) =&gt; void): void {
+        f(map[k].s)
+    }
+    
+    function f2(k: string, f: (r: RMap[RType]) =&gt; void): void {
+        f(map[k].s)
+    }
+## [11][Having a hard time Typing a ref that is a function that gets assigned to ref.curent](https://www.reddit.com/r/typescript/comments/hq8tnc/having_a_hard_time_typing_a_ref_that_is_a/)
+- url: https://www.reddit.com/r/typescript/comments/hq8tnc/having_a_hard_time_typing_a_ref_that_is_a/
 ---
-Hi you! As the title says I need to create a new method and I know there is a prototype way but isn't encouraged.
-I was told about wrapping and then I looked into the documentation and Stack Overflow but I couldn't find any clear explanation/answer.
+Code:
 
-I want achieve something like this:
-numberInstance.myMethod(anyNumber)
+    const memoizedHandler = useCallback((e) =&gt; handler(e), dependencies);useEventListener({ eventName: 'click', handler: memoizedHandler }); // &lt;-- error here
+    ERROR:Error:(17, 42) TS2741: Property 'current' is missing in type '(e: any) =&gt; void' but required in type 'RefObject&lt;HTMLDivElement&gt;'.
 
-Thanks for helping me !
-## [11][How to share common typings in a project? [Lerna / Workspaces]](https://www.reddit.com/r/typescript/comments/hor78i/how_to_share_common_typings_in_a_project_lerna/)
-- url: https://www.reddit.com/r/typescript/comments/hor78i/how_to_share_common_typings_in_a_project_lerna/
----
-I did bit of a searching and couldn't find a real example anywhere.  
+I am assigning to "current", WHY do I need it on the function I am trying to assign to it?
 
-I'm about to create a project (both backend and frontend) that might share common typings (especially models etc). I haven't set up the lerna yet (the only share-able components are these typings at the moment). What's the best way to organize this? Can someone shed some light on this?  
+which says it is originating from:
 
-Ideally, I guess, this common types would export two modules (if I understand the `module`s correctly) that matches the package names of the frontend and backend packages.
+    useEffect(() =&gt; {
+      savedHandler.current = handler;
+    }, [handler]);
+    
+    useEffect(() =&gt; {
+      const isSupported = element &amp;&amp; element.addEventListener;
+      if (!isSupported) return;
+    
+      const eventListener = (event: React.ChangeEvent&lt;HTMLDivElement&gt;) =&gt; 
+      savedHandler?.current?.(event);
+    
+    // error at "current" says TS2349: This expression is not callable.
+    // Type 'RefObject&lt;HTMLDivElement&gt;' has no call signatures
 
-It'd be great if I get some ELI5 on `module` vs `namespace`, and how to organize typings that spans across multiple files.
-
-Thanks!  
-
-Edit: Big thanks to u/intrepidsovereign for creating a [boilerplate](https://github.com/RyanChristian4427/example-monorepo-ts)
+getting so frustrated. lol

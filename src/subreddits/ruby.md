@@ -1,169 +1,88 @@
 # ruby
-## [1][Fun Facts about Ruby #10: Joining array elements without using Array#join](https://www.reddit.com/r/ruby/comments/hpsfzc/fun_facts_about_ruby_10_joining_array_elements/)
-- url: https://i.redd.it/664sl5gtnea51.png
+## [1][Rails 6.1 adds support for where with a comparison operator](https://www.reddit.com/r/ruby/comments/hqwq96/rails_61_adds_support_for_where_with_a_comparison/)
+- url: https://blog.bigbinary.com/2020/07/14/rails-6-1-adds-support-for-where-with-comparison-operator.html
 ---
 
-## [2][I am tired of hearing that Ruby is fine](https://www.reddit.com/r/ruby/comments/hpta1o/i_am_tired_of_hearing_that_ruby_is_fine/)
-- url: https://www.reddit.com/r/ruby/comments/hpta1o/i_am_tired_of_hearing_that_ruby_is_fine/
+## [2][Handing infinite loop](https://www.reddit.com/r/ruby/comments/hr0aip/handing_infinite_loop/)
+- url: https://www.reddit.com/r/ruby/comments/hr0aip/handing_infinite_loop/
 ---
-Let me prefix this with words of gratitude. You are all wonderful people and a very welcoming community.
+Hello! 
 
-Ruby is not dying but its health is not great either.
+I am writing a simple jumping game - the player jumps within a row of 
+wooden posts on a lake. Each post has a number on it that indicates
+where the player should jump to: the number itself describes the number of posts to jump over, the sign indicates the direction. On positive numbers the player jumps to the right, on negative numbers to the left. The number of posts is limited, thus it may happen to the player that he jumps into the water.
 
-Is Ruby and Ruby on Rails dead 2020?
+If I have an input like this (post A: 1, post B: 1, post C: -1), player would jump between the post B and post C infinitely. 
 
-No but just by the title alone you see how tightly coupled with RoR Ruby is. People no longer consider the happiness factor that Ruby brings relevant in the grand scheme of things.
+How should I handle this? I was thinking about tracking the visited posts somehow and if it has been repeated for some times, the program would stop.
 
-1) Name some CLI applications written in Ruby that are pleasant to use.
-I have recently tried Vagrant and oh boy is it a slow and dreadful thing.
-More often than not the CLI/DevOps tooling is not really liked that much by the wider community of developers and users. It is tolerated but not liked.
+Is there any other better way of handling cases like this? 
 
-2) No growth curve
-This is simply a sad reality. Ruby no longer offers solutions to people's problems.
-
-a) Can I build a desktop app with Ruby? Yes I can but it's not pleasant and people are not really doing it anymore anyway.
-
-b) Can I build a mobile app with Ruby? Yes but it's an entirely different can of worms and not even the biggest Ruby shops are working with that technology. Looking at you RubyMotion. It's simply because the experience and community around it is super small.
-
-c) Building CLI tools and devops tooling? Yes people do this but the user experience is usually bad and nobody really likes to work with those tools written in Ruby.
-
-d) frontend? Almost non existent.
-
-e) backend? Mostly RoR and projects we never hear about 
-
-3) Naming the big companies. Github,Stripe,Shopify.
-
-Yes they use Ruby but we hear more and more microservices that are written in Go and other faster languages doing the heavy lifting. People are not interested in writing C extensions and then gluing it with Ruby code. It sucks. The experience is bad.
-
-4) Ruby is regional.
-While Ruby is healthy and fine in places like the US,London,Berlin it's rapidly disappearing from Singapore, Asia in general or the rest of the Western world.
-Even if you like Ruby and want to write Ruby you just simply can't in some parts of the world.
-
-5) Ruby will not get significantly faster and if it will so will the other languages.
-Yes Ruby is not getting faster anytime soon. At least not in a sense that would be significantly noticeable by most of people.
-If Ruby gets faster with GraalVM, well so will Python and whatever GraalVM supports.
-
-6) Ruby community is dived, fractured and its presence on the internet is weak.
-
-Just look at this sub. This sub has fewer visitors than some irrelevant niche subs.
-I have not been able to find a decent Discord or IRC. They all have very few visitors.
-This signifies that Ruby is no longer interesting to newbies.
-
-7) All the low hanging fruits are gone and significant improvements are hard to get right
-All the 3x3, JIT and other perf improvements are really appreciated but nowhere near as important to most of real world production applications in RoR.
-
-8) Lack of vision
-We keep hearing about all those great additions to Ruby like pipe operator,anonymous struct literals etc...I think they make the language less readable and ergonomic. They bring more problems than solutions to be honest.
-Also they are mostly "cosmetic" changes which could be the main problem.
-
-
-To me Ruby as a project is complete. I have lowered my expectations for Ruby and realized I will never be able to use it in areas where I would use other programming languages. I have realized that the constant tech/context switching is not worth it anymore. 
-
-Things like JavaScript or C# are not as nice to work with but they allow me to do stuff I could not really do with Ruby.
-Ruby to me is like Swift. Really nice to work with if you can (iOS apps) but absolutely disappointing for anything else (android,windows).
-## [3][I am tired of hearing that Ruby is dead](https://www.reddit.com/r/ruby/comments/hp3yar/i_am_tired_of_hearing_that_ruby_is_dead/)
-- url: https://www.reddit.com/r/ruby/comments/hp3yar/i_am_tired_of_hearing_that_ruby_is_dead/
----
-Ruby has always been my favorite development language, which is why seeing all the posts about its death kind of sucks. I wrote an article on whether [Ruby is not dead in 2020](https://syndicode.com/2020/07/08/why-is-ruby-still-our-choice-in-2020-2/), but developers on my team didn't seem to agree on all the points. What do you think?
-## [4][How should I best convert Article.last into a URL path?](https://www.reddit.com/r/ruby/comments/hpbqn9/how_should_i_best_convert_articlelast_into_a_url/)
-- url: https://www.reddit.com/r/ruby/comments/hpbqn9/how_should_i_best_convert_articlelast_into_a_url/
----
-I'm going to apologise in advance, if this is an exceedingly basic question that I should be able to answer myself. I've been learning ruby/rails for a hot minute and this is the first time I'm trying to go off-script from the course.
-
-For a blog site I have set up 4 cards on the home page for the 4 latest articles, each showing a title and a truncated section of the text. I can display the title and text easily enough for each of the articles I want, e.g.:
-
-    &lt;%= Article.last.title %&gt;
-    &lt;%= simple_format(Article.last.description.truncate(100)) %&gt;
-
-And then similar code for the other 3 cards - i.e. second_to_last, third_to_last, Article.order(id: :desc).fourth
-
-**HOWEVER**, my problem starts when I then try to create a link for a show action, so you can click through and read the article. I've been trying to google-fu and RTFM my way out of it but I'm a little lost on where to actually look. I am still searching, but am hoping this speeds up the process.
-
-Is there any chance anyone could send me to a specific page of documentation or guide on exactly how to do this? If you could explain it then that would be amazing, but a boot in the right direction is great.
-
-I guess a bonus question is: should I actually be referencing database entries like that directly on a page, or should I be putting it somewhere more out of the way?
-## [5][Testing views in Sinatra application?](https://www.reddit.com/r/ruby/comments/hph1rj/testing_views_in_sinatra_application/)
-- url: https://www.reddit.com/r/ruby/comments/hph1rj/testing_views_in_sinatra_application/
----
-We have some legacy code that keeps breaking because the code in the views are not checking for empty values in the response from an API. Here is an example from the SLIM file that was causing an error:  
-
-
-     - @response.keys.each do |account|
-        - if !@params.empty?
-          - next unless @params.include? account
-        - if @cache[account][0] == 200
-
-While we have gone back and added checks, we still might be missing some. 
-
-I know how to do TDD with MiniTest and Ruby for unit testing, but I've never implemented testing with SLIM views. What testing framework should I use to mock up different responses with missing data to make sure the view logic in the SLIM files are good? Cucumber?
-## [6][Integrate activemodel serializers - API only ruby on rails course (chapter 4)](https://www.reddit.com/r/ruby/comments/hp7dai/integrate_activemodel_serializers_api_only_ruby/)
-- url: https://duetcode.io/rails-api-only-course/integrate-activemodel-serializers
+(Also, before someone mentions it, I am aware of the Halting problem :) )
+## [3][Value objects - a complete guide to Ruby code that is testable, readable and simple](https://www.reddit.com/r/ruby/comments/hqz2p0/value_objects_a_complete_guide_to_ruby_code_that/)
+- url: https://pdabrowski.com/articles/rails-design-patterns-value-object
 ---
 
-## [7][Replacing a range of objects within an array](https://www.reddit.com/r/ruby/comments/hp9che/replacing_a_range_of_objects_within_an_array/)
-- url: https://www.reddit.com/r/ruby/comments/hp9che/replacing_a_range_of_objects_within_an_array/
+## [4][Need suggestions for CMS/Rails API](https://www.reddit.com/r/ruby/comments/hqp8ay/need_suggestions_for_cmsrails_api/)
+- url: https://www.reddit.com/r/ruby/comments/hqp8ay/need_suggestions_for_cmsrails_api/
 ---
-I'm a bit of a newb so forgive my perhaps simple question.
+Hi all!
 
-Is there an easy way to replace multiple objects within an array with another object?
+So I've got a little bit of experience with ruby now but never had to integrate CMS into it or anything like that. I'm trying to make a news website and was originally hoping to make a rails API, with a javascript/react front end that would allow an admins/owners of the website to just add new articles, photos, headlines, sports scores, etc to the API via the front end, in which the react front end would then fetch from the DB and just keep posting it in the template of the website.
 
-I want to start with an array that will return 0-9 and then replace 4, 5 &amp; 6 with say "apple" so that the array would return 0, 1, 2, 3, "apple", "apple", "apple",  7, 8, 9
+I was wondering about any kinds of CMS for ruby such as Refinery that anyone has experience using. I only say refinery because that's the first one I read about a bit and it seems pretty straight forward but I want to know if I can still use it with a javascript/react front end or if I should keep the front end Rails? 
 
-My code:
+The website should be pretty straightforward, nothing too crazy just sorting news by categories and having a small editorial page. I'm making this for a few reasons, first it seems super interesting to work with something new like this for me when I'm used to just front end dev, and two I think its a great project experience for my resume as I'm a recent grad.
 
-array1 = Array.new(10) { | i | i.to_i }
-
-p array1.map { | i | i == 4 ? "apple" : i }
-
-Will return 0-9 but replace 4 with "apple" but when I want to replace a range...
-
-p array1.map { | i | i == 4..6 ? "apple" : i }
-
-It returns "warning: integer literal in conditional range"
-and 0-3 but the 5th through to 10th index are all "apple"
-
-Which I don't understand why it does that.
-
-Or do I just have to replace index's one at a time?🤔
-## [8][Ruby-on-Rails beginner question: How do I get the value of :id?](https://www.reddit.com/r/ruby/comments/hp2bvz/rubyonrails_beginner_question_how_do_i_get_the/)
-- url: https://www.reddit.com/r/ruby/comments/hp2bvz/rubyonrails_beginner_question_how_do_i_get_the/
----
-I'm trying to learn Ruby on Rails to broaden my horizon a bit and become a generally better programmer. My native tongue is Python and I usually make websites in Flask. Right now I'm trying to put together a simple REST api to host some files in directories off my disk. I have this route from rails:
-
-post GET    /posts/:id(.:format)                                                                     posts#show
-
-which then maps into my controller:
-
-&amp;#x200B;
-
-    class PostsController &lt; ApplicationController
-    	def index
-    		@posts = Array.new
-    		@directories = Dir["/home/narco/Code/blog/*-*-*"]
-    		for directory in @directories
-    			@post = {}
-    			@post["date"] = directory[22..32]
-    			info = JSON.load File.open directory+"/info.json"
-    			@post['title'] = info['title']
-    			@post['cover'] = info['cover']
-    			@post['author'] = info['author']
-    			@posts.push @post
-    		end
-    		render :json =&gt; @posts
-    	end
-    	
-    	def show
-    		info = JSON.load File.open "/home/narco/Code/blog/" + :id + "/info.json"
-    		render :json =&gt; info
-    	end
-    end
-
-The show method is where I have run into my problems. In flask I would pass in the url as a variable, in this case I assumed ":id" and then I could do this string concatenation like I am doing here. I have come to understand that symbols are a very different thing, there are plenty of guides to their differences online so I'm reading those right now. But I feel like even if I understand what a symbol is I am approach this problem wrong. I'm approaching it like a python programmer not a Ruby programmer. Can some one give me some guidance on how I am supposed to go about this specific task?
-## [9][How to create native encrypted attributes for Rails with ActiveModel attributes](https://www.reddit.com/r/ruby/comments/hosxlt/how_to_create_native_encrypted_attributes_for/)
-- url: https://alexc.link/blog/native-encrypted-attributes-for-rails-active-model
+Any advice is much appreciated!
+## [5][Loading Ruby Scripts from the JVM Classpath with JRuby](https://www.reddit.com/r/ruby/comments/hqjnst/loading_ruby_scripts_from_the_jvm_classpath_with/)
+- url: https://github.com/jruby/jruby/wiki/Loading-Scripts-From-Classpath
 ---
 
-## [10][All You Need to Know About Comments in Ruby - Tarka Labs](https://www.reddit.com/r/ruby/comments/horh49/all_you_need_to_know_about_comments_in_ruby_tarka/)
-- url: https://medium.com/tarkalabs/all-you-need-to-know-about-comments-in-ruby-97d991714cf3
+## [6][What should I use to get started with broadcasting services on the local network with .local domains? Like how Raspberry Pi uses a .local domain to advertise itself on the network.](https://www.reddit.com/r/ruby/comments/hqp21d/what_should_i_use_to_get_started_with/)
+- url: https://www.reddit.com/r/ruby/comments/hqp21d/what_should_i_use_to_get_started_with/
+---
+This is the type of thing I'm talking about.
+
+https://www.howtogeek.com/167190/how-and-why-to-assign-the-.local-domain-to-your-raspberry-pi/
+
+
+It says it uses mDNS and so after looking into that I found the gem called dnssd, ( http://docs.seattlerb.org/dnssd/) but when trying to install it on my ubuntu system I get this error, https://pastebin.com/raw/vs5EVQYw (which I thought I solved already by installing ruby via rvm and not from the repos like I was told. So I'm stuck. What should I try now?
+## [7][[notes only] ActiveStorage Direct Upload to Azure Blob when Ruby or Rails used as JSON API only](https://www.reddit.com/r/ruby/comments/hqxsk7/notes_only_activestorage_direct_upload_to_azure/)
+- url: https://github.com/equivalent/scrapbook2/blob/master/active-storage_direct-upload_api-investigation.md
+---
+
+## [8][Looking for some kind of "quick" database implementation](https://www.reddit.com/r/ruby/comments/hqf3wb/looking_for_some_kind_of_quick_database/)
+- url: https://www.reddit.com/r/ruby/comments/hqf3wb/looking_for_some_kind_of_quick_database/
+---
+Hey everyone. Some quick background: I lead a QA team full of ruby-ists where we build and maintain end to end tests in Webdriver and Capybara. We also have a set of "monitoring" scripts that are run via Cron.
+
+These monitoring scripts are run each and every minute. Pieces of the script require a snapshot of the "state" of the system (basic things like true/false flags + statuses). So we thought it would be clever to just write them to text file.
+
+That seems to work fine, however we've added so many flags that it's getting very messy to maintain, and the code is getting more and more difficult to understand.
+
+I was thinking of writing a JSON representation of this information to a file, but it seems like what makes the most sense is to run a basic database implementation in order to store the 'state' of what our scripts are monitoring.
+
+We're intimately familiar with MongoDB, but that seems really "heavy" for our needs. Is there something where I can just add a gem to our bundle and hit the ground running very quickly? Looking to avoid any new installations to our servers also.
+
+I know that Rails has its own db implementation, but we have 0 familiarity with Rails and activerecord.
+## [9][Explain the following syntax](https://www.reddit.com/r/ruby/comments/hql0w9/explain_the_following_syntax/)
+- url: https://www.reddit.com/r/ruby/comments/hql0w9/explain_the_following_syntax/
+---
+Hi y'all,
+
+I'm new to Ruby and just stumbled upon the following syntax being used to define a route in a Rails project:
+
+```ruby
+Rails.application.routes.draw do
+    # ...
+    get 'about' =&gt; 'pages#about' # &lt;= THIS
+    # ...
+end
+```
+
+What would that look like in, say, PHP, C or JavaScript?
+## [10][99 Bottles of OOP - 2nd Edition Released](https://www.reddit.com/r/ruby/comments/hpzdxf/99_bottles_of_oop_2nd_edition_released/)
+- url: https://sandimetz.com/99bottles
 ---
 

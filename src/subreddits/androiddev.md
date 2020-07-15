@@ -31,251 +31,101 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][A Rick and Morty app tutorial using Hilt, MVVM, LiveData, Kotlin Coroutines and Repository pattern :)](https://www.reddit.com/r/androiddev/comments/hqsy98/a_rick_and_morty_app_tutorial_using_hilt_mvvm/)
-- url: https://medium.com/@sberoch/android-architecture-hilt-mvvm-kotlin-coroutines-live-data-room-and-retrofit-ft-8b746cab4a06
+## [3][EU regulations now require app stores to provide 30-day notice and clear reasoning before removing apps](https://www.reddit.com/r/androiddev/comments/hr5aef/eu_regulations_now_require_app_stores_to_provide/)
+- url: https://www.gamesindustry.biz/articles/2020-07-13-european-union-sets-limits-on-platform-madness
 ---
 
-## [4][How to plan a refactor for better architecture](https://www.reddit.com/r/androiddev/comments/hqzwrf/how_to_plan_a_refactor_for_better_architecture/)
-- url: https://www.reddit.com/r/androiddev/comments/hqzwrf/how_to_plan_a_refactor_for_better_architecture/
+## [4][I've composed 174 songs and sound effects and released them under the CC BY 4.0 license which you can use in any personal and commercial project and they're all free!](https://www.reddit.com/r/androiddev/comments/hrlslz/ive_composed_174_songs_and_sound_effects_and/)
+- url: https://www.reddit.com/r/androiddev/comments/hrlslz/ive_composed_174_songs_and_sound_effects_and/
 ---
-The current structure of my app is as follows:
+**How to download the songs?**
 
-* One activity and multiple fragments (about 25 fragments)
-* One huge monolithic repository
-* One huge monolithic viewmodel
-* Databinding is being used but with one huge monolithic handler class
-* Navigation Component with one nav graph for the entire application
+You can download all of them in one RAR &amp; ZIP file by following this [Bandcamp](https://onemansymphony.bandcamp.com/releases) link.
 
-I've been learning as I go and I now realize my architecture is very poor. I want to achieve proper MVVM and also to modularize the project. My end goal is to have an architecture that is more maintainable and testable. I'm aiming for the following:
+**What's the total size of the library and in which format do they come in?**
 
-* Separate viewmodels for each fragment
-* Separate repositories for each entity (or roughly each data access object)
-* Separate data binding handlers for each fragment
-* The entire project split into different library modules, with each module being specific to a feature or core function
+Total file size varies in format. You can download the songs in MP3, FLAC, AAC, OGG, ALAC, WAV and AIFF formats.
 
-In order to achieve the above outcome, is the following a reasonable plan?
+**What about the license? (CC BY 4.0)**
 
-1. Create separate viewmodels for each fragment
-2. Create separate repositories for each entity
-3. Create separate handler classes for each fragment
-4. Divide the entire project into separate modules
+You can use any song in this library in anyway you want, be it as a sound effect in your game or as a background music in one of your Youtube &amp; Twitch videos, even commercially. If you'd like to find more information about the license, please check this [creativecommons.org](https://creativecommons.org/licenses/by/4.0/) link. Providing an appropriate credit (Either Composed by [onemansymphony.bandcamp.com](https://onemansymphony.bandcamp.com) or patreon.com/onemansymphony) is required.
 
-Some of the sources I've come across while researching are:
+**What is the future of this library? How can I support it?**
 
-* [https://developer.android.com/jetpack/guide](https://developer.android.com/jetpack/guide)
-* [https://proandroiddev.com/intro-to-app-modularization-42411e4c421e](https://proandroiddev.com/intro-to-app-modularization-42411e4c421e)
-* [https://stackoverflow.com/questions/44375276/when-using-mvvm-on-android-should-each-activity-have-one-and-only-one-viewmod?rq=1](https://stackoverflow.com/questions/44375276/when-using-mvvm-on-android-should-each-activity-have-one-and-only-one-viewmod?rq=1)
-* [https://stackoverflow.com/questions/51263301/multi-module-navigation-with-architecture-components](https://stackoverflow.com/questions/51263301/multi-module-navigation-with-architecture-components)
-* [https://medium.com/swlh/using-the-navigation-component-in-a-modular-world-e7578825962](https://medium.com/swlh/using-the-navigation-component-in-a-modular-world-e7578825962)
-* [https://stackoverflow.com/questions/50466743/should-we-create-a-separate-repository-for-each-activity-or-single-repository-fo](https://stackoverflow.com/questions/50466743/should-we-create-a-separate-repository-for-each-activity-or-single-repository-fo)
+I'm planning to expand this library's content as much as possible, and doing so takes a great amount of time, and calls for new virtual instruments and tools to create songs in rich and different sound. My current goal is to keep adding more songs in different genres into this library as well as creating environmental sound effects in high quality.  Also Bandcamp limits the quantity of free downloads so I need to buy more "free download credits" to make the album even more accessible. More information about the subject can be found [​here](https://blog.bandcamp.com/2010/09/09/free-downloads-power-ups/). Due to these reasons, I created a [Patreon](https://www.patreon.com/onemansymphony) page if you'd like to support this project. By becoming a Patron, **you'll get access to the loop files, bonus and alternative songs and sound effects** that are not included in the public library hosted on Bandcamp.
 
-Is the above rough plan a good one? Are there any pitfalls I should look out for?
-## [5][Lightweight android library for image compression](https://www.reddit.com/r/androiddev/comments/hqod1r/lightweight_android_library_for_image_compression/)
-- url: https://github.com/jeziellago/image-minifier
+**Can I remix the songs in the library?**
+
+As long as you provide an appropriate credit to the original album, you can do whatever you want to do with them.
+
+**Are these songs loopable?**
+
+Almost every single song in the album (with a few exceptions here and there) is loopable. While producing these songs, I always paid extra attention to make them as loopable as possible since some users would like to break a song into seperate pieces and just want to use that specific section of the song in their projects, and some people might like to extend a specific part of the song for adaptive sound design purposes. I am very well aware of that modern video games call for an application of adaptive sound design. A song which is made of different sections should be easily loopable &amp; cuttable and any section of the song should be easily extandable. And whenever a transition occurs, it should sound as smooth as possible. These were the things that I kept in my mind while composing these pieces. If you'd like to create your own loop files out of these songs, you can use a free software such as [Audacity](https://www.audacityteam.org/) to do so and refer to its [manual](https://manual.audacityteam.org/) to learn more about how looping is done. If you don't want to spend your time with the process of looping, you can subscribe to my $1 tier on Patreon where you can get access to the loop files of the songs in the library.
+
+**Is this album updated regularly?**
+
+Yes! Whenever I add a new song or sound effect to the library, I announce it on my [Twitter](https://twitter.com/onemansymphony). I would suggest checking the tweets or the album page regularly if you're in need of new music frequently.
+
+Feel free to ask if you guys have any questions.
+## [5][Got app rejection this month saying just 2 words as a clue of what's wrong](https://www.reddit.com/r/androiddev/comments/hrkaq5/got_app_rejection_this_month_saying_just_2_words/)
+- url: https://www.reddit.com/r/androiddev/comments/hrkaq5/got_app_rejection_this_month_saying_just_2_words/
+---
+This month I got an app rejection that :
+
+For [this spare time app](https://play.google.com/store/apps/details?id=com.lb.contacts_sync), I got a letter talking about "Metadata policy" and that there is an issue with “Disclaimer / Disclaimer:” :
+
+[https://i.imgur.com/AD8YIs1.png](https://i.imgur.com/AD8YIs1.png)
+
+The only thing I updated for the app was targeting API 30 (Android 11), so it was weird for me and I kept asking what's wrong with the disclaimer, as I was told before that I should add it. Not only that, but I didn't change anything about strings for quite a while.
+
+Since the main language of the app is in English, I was sure it's some issue with it. Especially when the email writes only in English.
+
+After sending an appeal, requesting to understand what's wrong, it turns out that one of the translators (Vietnamese) showed both his translation and the English one for this word (in the app description), meaning : "Disclaimer/sanggahan:" . 
+
+Why is it an issue? Because it was detected by Google as "**excessive keywords"**   **:**
+
+&gt;Please remove excessive keywords from all translations of your store listing.
+
+[https://i.imgur.com/AH3kLfH.png](https://i.imgur.com/AH3kLfH.png)
+
+I don't understand how could the word "disclaimer" be a keyword that could be abusing the system. I also don't understand how I could have understood all of this by the first letter, especially when it's written in English... 
+
+Anyway, I removed the English one from there, and now all is fine again...
+
+¯\\\_(ツ)\_/¯
+## [6][Support for newer Java language APIs](https://www.reddit.com/r/androiddev/comments/hrjdfz/support_for_newer_java_language_apis/)
+- url: https://medium.com/androiddevelopers/support-for-newer-java-language-apis-bca79fc8ef65
 ---
 
-## [6][How to Monetize Hyper-Casual Games with Success](https://www.reddit.com/r/androiddev/comments/hqzfiw/how_to_monetize_hypercasual_games_with_success/)
-- url: https://www.appodeal.com/home/blog/monetize-hyper-casual-games-success/
+## [7][adb-event-mirror: Mirror the touch/key/button events of one device onto one or more other devices in real-time](https://www.reddit.com/r/androiddev/comments/hr8xwo/adbeventmirror_mirror_the_touchkeybutton_events/)
+- url: https://github.com/JakeWharton/adb-event-mirror/
 ---
 
-## [7][How to create expandable ViewGroup like this?](https://www.reddit.com/r/androiddev/comments/hqylxt/how_to_create_expandable_viewgroup_like_this/)
-- url: https://v.redd.it/wkl3nrblmsa51
+## [8][Only 120Kb Pdf viewer For Android while most of them are about 16Mb.](https://www.reddit.com/r/androiddev/comments/hr1sx0/only_120kb_pdf_viewer_for_android_while_most_of/)
+- url: https://github.com/afreakyelf/Pdf-Viewer
 ---
 
-## [8][Android assistant - MediaBrowserService - Voice command - “Play x on appName” not working](https://www.reddit.com/r/androiddev/comments/hqxoqz/android_assistant_mediabrowserservice_voice/)
-- url: https://www.reddit.com/r/androiddev/comments/hqxoqz/android_assistant_mediabrowserservice_voice/
+## [9][Non Dev here with a question. What is the best way to present your app ideas/requirements to developers? Is there a preferred format? I'm guessing scribbles on napkins and/or matchbooks doesn't cut it.](https://www.reddit.com/r/androiddev/comments/hri1tc/non_dev_here_with_a_question_what_is_the_best_way/)
+- url: https://www.reddit.com/r/androiddev/comments/hri1tc/non_dev_here_with_a_question_what_is_the_best_way/
 ---
-I'm having trouble with the Play \[song\] on \[appName\] command; specifically the "app" is not being recognised by google assistant.
-
-&amp;#x200B;
-
-I followed the instruction form [https://developer.android.com/guide/topics/media-apps/interacting-with-assistant](https://developer.android.com/guide/topics/media-apps/interacting-with-assistant) and the demo app form [https://github.com/android/uamp](https://github.com/android/uamp)
-
-My AndroidManifest:
-
-&amp;#x200B;
-
-&lt;?xml version="1.0" encoding="utf-8"?&gt;
-
-&lt;manifest xmlns:android="[http://schemas.android.com/apk/res/android](http://schemas.android.com/apk/res/android)"
-
-xmlns:tools="[http://schemas.android.com/tools](http://schemas.android.com/tools)"
-
-package="com.xx"&gt;
-
-&amp;#x200B;
-
-&lt;uses-permission android:name="android.permission.FOREGROUND\_SERVICE" /&gt;
-
-&lt;uses-permission android:name="android.permission.INTERNET" /&gt;
-
-&lt;uses-permission android:name="android.permission.ACCESS\_NETWORK\_STATE" /&gt;
-
-&lt;uses-permission android:name="android.permission.ACCESS\_FINE\_LOCATION" /&gt;
-
-&lt;uses-permission android:name="android.permission.ACCESS\_COARSE\_LOCATION" /&gt;
-
-&amp;#x200B;
-
-&lt;application
-
-android:name=".XApplication"
-
-android:allowBackup="false"
-
-android:icon="@mipmap/ic\_launcher"
-
-android:label="@string/app\_name" // app\_name = appX 101.1
-
-android:roundIcon="@mipmap/ic\_launcher\_round"
-
-android:supportsRtl="false"
-
-android:theme="@style/AppTheme"&gt;
-
-&amp;#x200B;
-
-&lt;activity
-
-android:name=".ui.splash.SplashActivity"
-
-android:exported="true"
-
-android:launchMode="singleTop"
-
-android:screenOrientation="portrait"
-
-android:theme="@style/AppTheme.AppFullScreenTheme"
-
-android:windowSoftInputMode="adjustPan|stateHidden"&gt;
-
-&lt;intent-filter&gt;
-
-&lt;action android:name="android.intent.action.MAIN" /&gt;
-
-&lt;category android:name="android.intent.category.LAUNCHER" /&gt;
-
-&lt;/intent-filter&gt;
-
-&lt;intent-filter&gt;
-
-&lt;action android:name="android.media.action.MEDIA\_PLAY\_FROM\_SEARCH" /&gt;
-
-&lt;category android:name="android.intent.category.DEFAULT" /&gt;
-
-&lt;/intent-filter&gt;
-
-&lt;/activity&gt;
-
-...
-
-...
-
-&lt;service
-
-android:name="com.music.android.xx.media.MusicService"
-
-android:enabled="true"
-
-android:exported="true"
-
-tools:ignore="ExportedService"&gt;
-
-&lt;intent-filter&gt;
-
-&lt;action android:name="android.media.browse.MediaBrowserService" /&gt;
-
-&lt;/intent-filter&gt;
-
-&lt;/service&gt;
-
-&lt;service
-
-android:name=".service.LocationUpdatesService"
-
-android:foregroundServiceType="location" /&gt;
-
-&amp;#x200B;
-
-&lt;receiver android:name=".service.StopServiceReceiver" /&gt;
-
-&lt;receiver android:name=".service.PlayRadioReceiver" /&gt;
-
-&amp;#x200B;
-
-&lt;service
-
-android:name=".service.MyFirebaseService"
-
-android:exported="false"&gt;
-
-&lt;intent-filter&gt;
-
-&lt;action android:name="com.google.firebase.MESSAGING\_EVENT" /&gt;
-
-&lt;/intent-filter&gt;
-
-&lt;/service&gt;
-
-&lt;/application&gt;
-
-&lt;/manifest&gt;
-
-&amp;#x200B;
-
-I have a problem figuring out what I did wrong or what I missed . Any help will be greatly appreciated..
-
-PS: My app had been in the store for 3days
-## [9][How to update an app on a KIOSK device using a launcher.](https://www.reddit.com/r/androiddev/comments/hqzozd/how_to_update_an_app_on_a_kiosk_device_using_a/)
-- url: https://www.reddit.com/r/androiddev/comments/hqzozd/how_to_update_an_app_on_a_kiosk_device_using_a/
+I need an  app built for my business which has a specific use and requirements. I want to present it as clearly as possible to make everyone's life easier, any suggestions would be appreciated!
+## [10][Android Scroll system explanation. Any good resource available?](https://www.reddit.com/r/androiddev/comments/hrklvp/android_scroll_system_explanation_any_good/)
+- url: https://www.reddit.com/r/androiddev/comments/hrklvp/android_scroll_system_explanation_any_good/
 ---
-I have three different tablets (no-name brand) that will only run my app in a KIOSK mode. I want to update the app on these devices.
-
-So far my progress:
-
-\- I have a "Launcher" application that starts and handles the updating of the "Main" application.
-
-\- The Launcher app receives the new APK over HTTP and saves it in its getFilesDir() (/data/data/packagename/files/)
-
-My goal at this point to install this APK without prompting the user to allow this installation. AFAIK this is not possible without root access
-
-I tried this:
-
-    Runtime.getRuntime().exec("chmod 777" + apkLocation);
-    String command; command = "pm install -r " + apkLocation;
-    Process proc = Runtime.getRuntime().exec(new String[]{"su", "-c", command});
-    proc.waitFor();
-
-But this fails and returns 1. I assume this is because the application does not have root access.
-
-Also, the application is the active-admin and the device-owner of the device, but still, these permissions don't seem like they gave me the right to do what I mentioned above.
-
-EDIT: My target API version is 24.
-
-EDIT2: Another question. Is it possible to silently install an APK by calling the hidden API using reflection?
-## [10][How to see number of app downloads from google play Developer console? Not Graphs, But Total in number](https://www.reddit.com/r/androiddev/comments/hqvb36/how_to_see_number_of_app_downloads_from_google/)
-- url: https://www.reddit.com/r/androiddev/comments/hqvb36/how_to_see_number_of_app_downloads_from_google/
+Are there any in-depth explanations of how Androids scrolling system works? (onScrollChanged, overScroll, Scroller, NestedScrolling, etc.)
+## [11][Should I use Android Studio for serious App Development in Kotlin, or is IntelliJ good enough?](https://www.reddit.com/r/androiddev/comments/hrm5mz/should_i_use_android_studio_for_serious_app/)
+- url: https://www.reddit.com/r/androiddev/comments/hrm5mz/should_i_use_android_studio_for_serious_app/
 ---
-I have uploaded an app to google play. I want to know how many people already downloads the app. Not active users or any other.  Not graphs. I need to know the total. How to do that?
-## [11][Updating our game to Google Play is a nightmare...](https://www.reddit.com/r/androiddev/comments/hqywbq/updating_our_game_to_google_play_is_a_nightmare/)
-- url: https://www.reddit.com/r/androiddev/comments/hqywbq/updating_our_game_to_google_play_is_a_nightmare/
+I've been trying to get into Android App Development recently, and since Kotlin is supposedly the future of the OS, I've been going through [Big Nerd Ranch's Kotlin Book](https://www.amazon.com/Kotlin-Programming-Nerd-Ranch-Guide/dp/0135161630) on it. The book itself focuses more on Kotlin as a language than the process of app-building itself, so the fact that it uses IntelliJ to do so doesn't give me the utmost confidence to continue with the IDE without question after the book.
+
+As far as I understand, AS is catered for app development, whereas IntelliJ is just general Java/Android programming, with the potential to be made for app development with enough workaround and installments.
+
+But I've also heard that AS can slow down your computer quite a bit, as well. I haven't really heard these complaints about IntelliJ, so I guess there's a tradeoff?
+
+Since I'm early in the Android Dev game, I figured I should pick the best road in the beginning, rather than hopping back and forth every year.
+
+Any help is greatly appreciated.
+## [12][Android Studio 4.0.1 available](https://www.reddit.com/r/androiddev/comments/hr6hz6/android_studio_401_available/)
+- url: https://androidstudio.googleblog.com/2020/07/android-studio-401-available.html
 ---
-I am the developer of world-famous board game Tic Tac Toe. 
 
-Recently, I have a problem updating the application. Google bot rejects our updates because of ... well ... using in long description word "COCK"
-
-"Jogo de Galo" is the common name for Tic Tac Toe in Brazil. I hope one day machine will learn or it will be a living hell of political correctness... 
-
-[Tic Tac Toe Club](https://play.google.com/store/apps/details?id=com.mobilearts.game.tictactoe)
-
-https://preview.redd.it/k5lctdw7qsa51.png?width=1310&amp;format=png&amp;auto=webp&amp;s=9804643e3064a140510f4e58a81c3b36c55da67d
-## [12][Multiple APK support with Android TV](https://www.reddit.com/r/androiddev/comments/hqvtfp/multiple_apk_support_with_android_tv/)
-- url: https://www.reddit.com/r/androiddev/comments/hqvtfp/multiple_apk_support_with_android_tv/
----
-I have been using android app bundle to deploy my app, which currently supports phone and tablets, to play store. Now I am working on TV app but as a separate project, but I wish to keep the package id same as my phone app (single play store entry for both apps).
-
-My TV app will generate a separate APK and I was wondering how do I upload the apk to my existing play store application. I read through \[multiple apk support\] ([https://developer.android.com/google/play/publishing/multiple-apks](https://developer.android.com/google/play/publishing/multiple-apks)), but I still have questions.
-
-1. Can I upload both AAB and APK for the same app in play store. I know I can uploaded multiple APKs.
-
-2. How do I clearly mark my APK to be for TV only. Current way of differentiating is using screen size &lt;supports-screens&gt; or &lt;compatible-screens&gt;, which is not really a very clear way of differentiation.

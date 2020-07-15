@@ -83,181 +83,288 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
-## [3][I made a Snapchat clone in the browser!](https://www.reddit.com/r/reactjs/comments/hqfm86/i_made_a_snapchat_clone_in_the_browser/)
-- url: https://v.redd.it/t6bp0tgaqma51
+## [3][A look at React Router 6](https://www.reddit.com/r/reactjs/comments/hrgpy4/a_look_at_react_router_6/)
+- url: https://www.carlrippon.com/a-look-at-react-router-6/
 ---
 
-## [4][Relay vs Apollo vs Amplify DataStore as client for a GraphQL backend](https://www.reddit.com/r/reactjs/comments/hqzm4l/relay_vs_apollo_vs_amplify_datastore_as_client/)
-- url: https://www.reddit.com/r/reactjs/comments/hqzm4l/relay_vs_apollo_vs_amplify_datastore_as_client/
----
-I’m building a React Native app and have realised I need a more scalable way of talking to my GraphQL backend. I work more as a quant than a dev so please forgive any misconceptions.
-
-I’ve set up my backend using DynamoDB and have built a GraphQL layer over it using AppSync. The default way AWS suggests talking to AppSync isn’t easily scalable, plus I’ve ended up writing what is essentially a small library of hooks and other helpers to build local persistence using Recoil + AsyncStorage with atoms modelled after my graph schema.
-
-So I’ve got 3 options:
-
-* Apollo: big community, popular, nice API, AppSync uses (used? Can only find sources from 2017) it under the hood, built-in persistence
-
-* Relay: very similar to Apollo, smaller community, API seems more complicated and setup seems a bit longer, but assume the flexibility could be beneficial further down the line
-
-* AWS Amplify DataStore: works immediately, TypeScript type defs generated from my GraphQL schema are designed for this library, have to write hook wrappers, just very wary of committing to an Amplify library as I’ve been burned in the past by bugs and poor documentation (no fault of the devs, I think the Amplify guys are stretched too thin)
-
-Is there a clear winner? Is Apollo still GraphQL king? I’ve heard Relay has come a long way recently.
-
-Thanks
-## [5][How to connect two APIs requests?](https://www.reddit.com/r/reactjs/comments/hr0cfk/how_to_connect_two_apis_requests/)
-- url: https://www.reddit.com/r/reactjs/comments/hr0cfk/how_to_connect_two_apis_requests/
----
-Hey guys, so i'm working on a movie app using [TheMovieDb](https://www.themoviedb.org/) API and the problem is that when I request Trending movies the genre of each movie is just an id and to get the genre text I have to make another request to get all genres and then get the name of the genres from the second request,so my question is how to do it because I tried but I'm stuck right now
-
-    // I called each request in useEffect separately 
-    
-    
-    &lt;div className={classes.SliderContainer}&gt;
-     &lt;Slider {...settings}&gt; 
-       {movies.map((movie) =&gt; ( 
-         &lt;HomeSlider 
-            genre={genres[movie.id]} // here's my lastest try but it didn't work 
-            src={ImgUrl(movie.backdrop_path)} 
-            title={movie.title}     
-            key={movie.id} 
-            rating={movie.vote_average} /&gt;   
-       ))}  
-     &lt;/Slider&gt; 
-    &lt;/div&gt;
-
-&amp;#x200B;
-## [6][Whiteboard: React Hooks 🎣](https://www.reddit.com/r/reactjs/comments/hqzzb3/whiteboard_react_hooks/)
-- url: https://blog.ranaemad.com/whiteboard-react-hooks-ckclrvccg0005fls16f1h80mc
+## [4][This sub has grown 100% since 1 year ago](https://www.reddit.com/r/reactjs/comments/hr4fuu/this_sub_has_grown_100_since_1_year_ago/)
+- url: https://www.reddit.com/r/reactjs/comments/dzuy8h/this_sub_has_grown_50_since_july/
 ---
 
-## [7][Creating A React App With Webpack &amp; Babel From Scratch - Part 1](https://www.reddit.com/r/reactjs/comments/hqrh5e/creating_a_react_app_with_webpack_babel_from/)
-- url: https://youtu.be/AC1bCJh_3O8
+## [5][Create simple POS with React.js, Node.js, and MongoDB #8: CRUD POS Machine](https://www.reddit.com/r/reactjs/comments/hrl0au/create_simple_pos_with_reactjs_nodejs_and_mongodb/)
+- url: https://blog.soshace.com/create-simple-pos-with-react-js-node-js-and-mongodb-8-crud-pos-machine/
 ---
 
-## [8][RxDeep: Reactive (Deep) State Management using RxJS](https://www.reddit.com/r/reactjs/comments/hr1ilx/rxdeep_reactive_deep_state_management_using_rxjs/)
-- url: https://loreanvictor.github.io/rxdeep/
+## [6][Apollo 3.0 is out](https://www.reddit.com/r/reactjs/comments/hr4vie/apollo_30_is_out/)
+- url: https://www.apollographql.com/docs/react/api/core/ApolloClient/
 ---
 
-## [9][Function into class component](https://www.reddit.com/r/reactjs/comments/hr1aqs/function_into_class_component/)
-- url: https://www.reddit.com/r/reactjs/comments/hr1aqs/function_into_class_component/
+## [7][Cannot find store in context of Connect(App)](https://www.reddit.com/r/reactjs/comments/hrmu6e/cannot_find_store_in_context_of_connectapp/)
+- url: https://www.reddit.com/r/reactjs/comments/hrmu6e/cannot_find_store_in_context_of_connectapp/
 ---
-Hi,
+# Need help with the below error
 
-I am fairly new to react and programming in general. I started programming last year with the basics(CSS, HTML, Java) and since a few weeks I am  working on a project that uses react, typescript, Material-ui etc. The team almost exclusively uses class components  and I have to migrate some of the functional components into class components. So here is the code that I have (Link: [demo](https://material-ui-pickers.dev/demo/datetime-picker) ):
+**Could not find "store" in the context of "Connect(App)". Either wrap the root component in a &lt;Provider&gt;, or pass a custom React context provider to &lt;Provider&gt; and the corresponding React context consumer to Connect(App) in connect options**
 
-&amp;#x200B;
+========================================
+**Here is my index.js file**
+```
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import App from "./App";
 
-    import React, { Fragment, useState } from "react";
-    import { DateTimePicker } from "@material-ui/pickers";
-    
-    function BasicDateTimePicker() {
-    const [selectedDate, handleDateChange] = useState(new Date());
-    
-    return (
-        &lt;Fragment&gt;
-            &lt;DateTimePicker
-                value={selectedDate}
-                disablePast
-                onChange={handleDateChange}
-                label="System Date and Time"
-                showTodayButton
+import { Provider } from "react-redux";
+import configureStore from "./components/redux/store/configureStore";
+import { loadProduct } from "./components/redux/actions/productActions";
+import { loadUser } from "./components/redux/actions/userActions";
+
+const store = configureStore();
+
+store.dispatch(loadProduct())
+store.dispatch(loadUser())
+ReactDOM.render(
+  &lt;Provider store={store}&gt;
+    &lt;App /&gt;
+  &lt;/Provider&gt;,
+  document.getElementById("root")
+);
+
+```
+
+===========================================
+
+**Here is my App.js file**
+```
+import React, { useState,lazy, Suspense } from "react";
+import { BrowserRouter as Router,Route,Switch,NavLink,Link,Redirect} from "react-router-dom";
+import { Button, Nav } from "react-bootstrap";
+import Navbar from "react-bootstrap/Navbar";
+import logo from "./assets/images/MainLogo.jpeg";
+import * as productActions from "./components/redux/actions/productActions";
+import * as userActions from './components/redux/actions/userActions'
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { FaFileExport } from "react-icons/fa";
+import {MdAccountCircle,MdContentPaste} from 'react-icons/md'
+const Login = lazy(()=&gt;import('./components/user/Login'))
+const Register=lazy(()=&gt;import("./components/user/Register"))
+const MostViewed = lazy(()=&gt;import('./components/chart/MostViewed'))
+const Profile = lazy(()=&gt;import('./components/user/Profile'))
+const AllProductsPage = lazy(()=&gt;import("./components/products/AllProductsPage"))
+const ProductDetail = lazy(()=&gt;import('./components/products/ProductDetail'))
+const AddProduct = lazy(()=&gt;import('./components/products/AddProduct'))
+const About = lazy(()=&gt;import('./components/user/About'))
+// import Login from "./components/user/Login";
+// import Register from "./components/user/Register";
+// import MostViewed from './components/chart/MostViewed';
+// import Profile from './components/user/Profile';
+// import AllProductsPage from "./components/products/AllProductsPage";
+// import ProductDetail from './components/products/ProductDetail'
+// import AddProduct from './components/products/AddProduct'
+// import About from './components/user/About';
+
+function App(props) {
+  //Login modal
+  const [show, setShow] = useState(false);
+  const handleClose     = () =&gt; setShow(false);
+  const handleShow      = () =&gt; {setShow(true)}
+  //Login Status
+  
+  const [loggedIn, setLogin] = useState(localStorage.getItem("auth")!==null? JSON.parse(localStorage.getItem("auth")) :false);
+  const handleLogin = () =&gt; {setLogin(JSON.parse(localStorage.getItem("auth")))}
+
+  const currentUser = JSON.parse(localStorage.getItem("user"));
+  const NavStyle = { color: "white","textDecoration":"none","outline":"none","fontWeight": "bold","padding":"0px 8px 0px 8px"  }
+  
+  
+
+
+
+
+  const Header = (props) =&gt; (
+   
+    &lt;div className="App"&gt;
+      &lt;Navbar bg="dark" variant="dark" expand="lg"&gt;
+        
+          &lt;Navbar.Brand&gt;
+          &lt;Link to="/"&gt;
+            &lt;img
+              alt=""
+              src={logo}
+              style={{ paddingRight: "20px","borderRadius":"50px" }}
+              width="80"
+              height="50"
+              className="d-inline-block align-top"
             /&gt;
-        &lt;/Fragment&gt;
+            &lt;/Link&gt;
+          &lt;/Navbar.Brand&gt;
+        
+        &lt;Navbar.Toggle aria-controls="responsive-navbar-nav" /&gt;
+        &lt;Navbar.Collapse id="basic-navbar-nav"&gt;
+          &lt;Nav className="mr-auto"&gt;
+          &lt;NavLink to="/" exact={true} style={NavStyle} activeStyle={{ "color": "red"}} &gt;
+                Home
+              &lt;/NavLink&gt;
+            
+              &lt;NavLink to="/about" exact={true} style={NavStyle} activeStyle={{ "color": "red"}} &gt;
+                About
+              &lt;/NavLink&gt;
 
-            );
-    }
-    export default BasicDateTimePicker;
-    
+            {loggedIn &amp;&amp;
+            (
 
-&amp;#x200B;
+              &lt;NavLink to="/chart" exact={true} style={NavStyle} activeStyle={{ "color": "red" }} &gt;
+              Most Viewed Products
+              &lt;/NavLink&gt;
+            )}
 
-And I want to make it into a class Component.
+            {loggedIn &amp;&amp;
+            (
+              
+              &lt;NavLink to="/profile" exact={true} style={NavStyle} activeStyle={{ "color": "red" }} &gt;
+                  My Profile
+                &lt;/NavLink&gt;
+            )}
+          &lt;/Nav&gt;
+        &lt;/Navbar.Collapse&gt;
 
-It should, in the end, look something like this:
 
-    import React, { Fragment, useState } from "react";
-    import { DateTimePicker } from "@material-ui/pickers";
-    
-    interface OptionalCompProps {}
-    
-    interface CompProps extends OptionalCompProps {
-    }
-    
-    type CompAllProps = CompProps &amp; WithStyles&lt;ClassNames&gt; &amp; WithApplicationBaseProps &amp; WithSnackbarProps;
-    
-    class ControlPanel extends React.Component&lt;CompAllProps, CompState&gt; {
-    	static defaultProps: OptionalCompProps = {};
-    
-    	constructor(props: CompAllProps) {
-    		super(props);
-    		this.state = {
-    		    date: undefined,
-    		};
-    	}
-    
-    private selectedDate = () =&gt; useState(new Date());
-    private onChange = () =&gt; useState(this.selectedDate);
-    
-    render(): React.ReactNode {
-        const { date } = this.state;
-            return(
-                &lt;MuiPickersUtilsProvider utils={DateFnsUtil}   
-                     &lt;Fragment&gt;	                             
-                          &lt;DateTimePicker 
-                                disablePast
-                                size="small"
-                                value={this.onChange}
-                                onChange={this.selectedDate}
-                                label="System Date and Time: "
-                                showTodayButton
-                          /&gt;
-    	        &lt;/Fragment&gt;
-                &lt;/MuiPickersUtilsProvider&gt;
-                    );
-    }
-    
-    
-    export default withSnackbar(withApplicationBase(withStyles(componentStyles)(ControlPanel)));
-    
-    
+          {!loggedIn &amp;&amp; (
+            &lt;Link to='/register'&gt;
+            &lt;Button variant="success" style={{"marginRight":"30px","fontWeight":"bold"}}&gt;  
+              &lt;MdContentPaste/&gt;{" "}Register
+            &lt;/Button&gt;
+              &lt;/Link&gt;
+          )}
 
-I know this is wrong but its what I have... I am able to change the date/time with it, but the datetimepicker doesnt take the input/unable to accept. Can anyone help converting the funtional component to a class component?
-## [10][Functional components, class, or mix?](https://www.reddit.com/r/reactjs/comments/hr0qe8/functional_components_class_or_mix/)
-- url: https://www.reddit.com/r/reactjs/comments/hr0qe8/functional_components_class_or_mix/
+          {loggedIn ? (
+            &lt;div&gt;
+              &lt;Navbar.Text style={{ color: "white", paddingRight: "20px" }}&gt;
+              &lt;MdAccountCircle/&gt; {currentUser!==null ? (currentUser.map(user=&gt;user.name.firstName)) : false }
+              &lt;/Navbar.Text&gt;
+
+              &lt;Button variant="danger" onClick={()=&gt;{localStorage.setItem("auth",false);
+                                                    setLogin(JSON.parse(localStorage.getItem("auth")));
+                                                    localStorage.clear();}}&gt;
+              &lt;FaFileExport/&gt;{" "}Logout
+              &lt;/Button&gt;
+            &lt;/div&gt;
+          ) : (
+            &lt;Button variant="primary" onClick={()=&gt;handleShow()} style={{"fontWeight":"bold"}}&gt;{" "}
+              Login{" "}
+            &lt;/Button&gt;
+          )}
+      &lt;/Navbar&gt;
+
+      &lt;Login show={show} handleClose={handleClose} handleLogin={handleLogin} users={props.users}/&gt;
+    &lt;/div&gt;
+  );
+
+
+  const Footer = ()=&gt;{
+    return(&lt;footer&gt;
+          &lt;p style={{"textAlign":"center","backgroundColor":"#333","color":"white","padding":"20px"}}&gt;Copyright @2020, Rohit K F&lt;/p&gt;
+        &lt;/footer&gt;)
+  }
+
+  return (
+    &lt;Suspense fallback={&lt;h1&gt;Loading.....&lt;/h1&gt;}&gt;
+    &lt;Router&gt;
+      &lt;Header loggedIn={loggedIn} handleLogin={handleLogin} users={props.users}/&gt;
+      &lt;Switch&gt;
+        &lt;Route exact={true} path="/"     render={(props)=&gt;&lt;AllProductsPage {...props} loggedIn={loggedIn} /&gt;}   /&gt;
+        &lt;Route path="/about"             component={About}/&gt; 
+        &lt;Route path="/register"          component={Register}/&gt;
+        &lt;Route path="/ProductDetail"     component={() =&gt; loggedIn ? (&lt;ProductDetail/&gt;) : ( &lt;Redirect to="/"/&gt;) }/&gt;
+        &lt;Route path="/ProductDetail/:id" component={() =&gt; loggedIn ? (&lt;ProductDetail/&gt;) : ( &lt;Redirect to="/"/&gt;) }/&gt;
+        &lt;Route path="/addProduct"        component={() =&gt; loggedIn ? (&lt;AddProduct/&gt;)    : ( &lt;Redirect to="/"/&gt;) }/&gt;
+        &lt;Route path="/chart"             component={() =&gt; loggedIn ? (&lt;MostViewed/&gt;)    : ( &lt;Redirect to="/"/&gt;) }/&gt; 
+        &lt;Route path="/profile"           component={() =&gt; loggedIn ? (&lt;Profile/&gt;)       : ( &lt;Redirect to="/"/&gt;) }/&gt;
+        &lt;Route                           component={() =&gt; &lt;h1 style={{"display":"flex","justifyContent":"center","padding-top":"150px","minHeight":"100vh"}}&gt;Page NOT FOUND&lt;/h1&gt; }/&gt;      
+      &lt;/Switch&gt;
+      &lt;Footer/&gt;
+    &lt;/Router&gt;
+    &lt;/Suspense&gt;
+  );
+}
+
+function mapStateToProps(state, ownProps) {
+  return {
+    products: state.products,
+    users : state.users
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(productActions, dispatch),
+    userAction : bindActionCreators(userActions,dispatch)
+  };
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(App);
+```
+
+==================================================
+
+**Here is what i wrote in App.test.js(Not so familiar with test cases)**
+
+```
+import React from 'react'
+import App from './App';
+import {mount} from 'enzyme';
+
+describe('All Products Page Snapshot', () =&gt; {
+    let mountwrapper;
+    
+    beforeEach(()=&gt;{
+        mountwrapper =mount(&lt;App/&gt;);
+    })    
+
+    afterEach(()=&gt;{
+        mountwrapper.unmount();
+    })
+
+    it('renders correctly', () =&gt; {
+        expect(mountwrapper).toMatchSnapshot();
+    });
+
+});
+```
+
+# Please help me solve the issue soon. Thank you guys !!
+## [8][Where is the definition for componentDidMount in the React repo?](https://www.reddit.com/r/reactjs/comments/hrmbbl/where_is_the_definition_for_componentdidmount_in/)
+- url: https://www.reddit.com/r/reactjs/comments/hrmbbl/where_is_the_definition_for_componentdidmount_in/
 ---
-If I'm building a new app should I go with functional based components, class based, or case dependent?
-
-&amp;#x200B;
-
-[View Poll](https://www.reddit.com/poll/hr0qe8)
-## [11][Best way to manage/maintain/implement plugins's code with a core application](https://www.reddit.com/r/reactjs/comments/hr0hg1/best_way_to_managemaintainimplement_pluginss_code/)
-- url: https://www.reddit.com/r/reactjs/comments/hr0hg1/best_way_to_managemaintainimplement_pluginss_code/
----
-Let's first clarify the situation. I'm currently working on a product with a configurable part for each client and a core part where you have the application kernel. For the frontend part we have implemented something like nylas mail ([https://nylas.github.io/nylas-mail/guides/React.html](https://nylas.github.io/nylas-mail/guides/React.html)). The client is able to register some components, changing theme etc... It's possible to have access to some functions from the core trough a specific object defined inside global variable. The client part is builded on his side then every components is registered during runtime. It works very well an most of time this is so far enough for clients. 
-
-&amp;#x200B;
-
-But recently we are facing to a problem. Some clients want even more specific and bigger specific fonctionnalities. And this is not possible to just say "No it's now possible to do that". We must find a way to  implement and have something more flexible. So we are currently looking for the better solution to manage that. Of course with the current implementation we could able to do that and say "Let's just continue to add some fonctionalities inisde the global object from core". But somethimes this is very specific thing and another problem is that by always adding more possibilities it's will becomes untenable. 
-
-Another problem with the current situation is that all dependencies are duplicated inisde the core and client parts and inside client part (just React is passed as a global variable). In this situation,  We have no access to the core DOM inside the client part (for example no access to all providers). And this is very problematic. For example you want do a drag and drop between a component inside the core and another one inside the client. It's not possible... 
-
-The goal now is to find a better solution where we can easily add very specific code while having something maintainable for the next few years.
-
-&amp;#x200B;
-
-A first possible way to implement that could be to inject directly the client code during build time. 
-
-\- A first possiblity could be to add the client as part of the core (as a dependcies) or the opposite and build everything together. 
-
-\- Another solution could be to replace components. React work as components inside a tree so why not say ok let's define specific components inside the client part then add/replace them during build time with a specific babel plugin maybe. It's could be interesting but what's going on if we switch soon to TypeScript... ? 
-
-&amp;#x200B;
-
-I didn't find a lot's of documentation who speak arround the problematic to inject code during build time. 
-
-Feel free to share you feeback, what you are currently using, your idea etc...
-## [12][About the comparison algorithm behind useEffect](https://www.reddit.com/r/reactjs/comments/hr00ls/about_the_comparison_algorithm_behind_useeffect/)
-- url: https://twitter.com/tinloof/status/1282976284696473601
+I was looking through the React repo to understand how it works under the hood. I'm not able to find the definitions for the lifecycle hooks such as componentDidMount.
+## [9][A library to generate the maximally efficient series of unique keys for a given alphabet.](https://www.reddit.com/r/reactjs/comments/hrm4xh/a_library_to_generate_the_maximally_efficient/)
+- url: https://github.com/gactjs/key
 ---
 
+## [10][Is there repo so one can practice fixing react performance issues?](https://www.reddit.com/r/reactjs/comments/hr3ujv/is_there_repo_so_one_can_practice_fixing_react/)
+- url: https://www.reddit.com/r/reactjs/comments/hr3ujv/is_there_repo_so_one_can_practice_fixing_react/
+---
+I have coworkers that don't know how to fix these issues. Some project that is setup to be riddled with issues and has them fix them themselves while also showing what the issues are would be great. Anything like that?   
+
+
+Examples
+
+\- Update to a list item which causes the whole list the render    
+\- using shallowEqual in useSelector hook  
+\- Passing callbacks to React Children   
+\- Virtualize Long Lists  
+\- Memo and useCallback  
+\- Mutating state or redux state  
+\- List goes on
+## [11][Stock Research + Unusual Options Activity + Reddit Research Platform](https://www.reddit.com/r/reactjs/comments/hralr5/stock_research_unusual_options_activity_reddit/)
+- url: https://www.reddit.com/r/reactjs/comments/hralr5/stock_research_unusual_options_activity_reddit/
+---
+I made a stock research platform. It helps me find plays with all the information I am looking for without the noise, as well as scraping finance subreddits to aggregate all research posts in one place. I also added unusual options activity to make it more robust. Let me know what you think!
+
+[ ](https://reddit.com/link/hralr5/video/kp8143956wa51/player)
+## [12][React App - Fallen Film Stars](https://www.reddit.com/r/reactjs/comments/hre5wt/react_app_fallen_film_stars/)
+- url: https://www.reddit.com/r/reactjs/comments/hre5wt/react_app_fallen_film_stars/
+---
+I've been watching a series of Hitchcock movies lately while in quarantine, and kept wondering who in the cast is still alive. IMDB got a little tedious, so I decided to make a quick app out of it, where you can search a movie and see who in the cast and crew has passed on. Here it is: [https://www.fallenfilmstars.com/film/1924](https://www.fallenfilmstars.com/film/1924)

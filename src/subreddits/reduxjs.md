@@ -1,5 +1,9 @@
 # reduxjs
-## [1][Are graphs better than normalized state for complex apps ?](https://www.reddit.com/r/reduxjs/comments/hotwnp/are_graphs_better_than_normalized_state_for/)
+## [1][New "Redux Essentials" core docs tutorial is LIVE! Teaches how to use Redux the right way, using our latest recommended APIs and practices](https://www.reddit.com/r/reduxjs/comments/hr3yx1/new_redux_essentials_core_docs_tutorial_is_live/)
+- url: https://redux.js.org/tutorials/essentials/part-1-overview-concepts
+---
+
+## [2][Are graphs better than normalized state for complex apps ?](https://www.reddit.com/r/reduxjs/comments/hotwnp/are_graphs_better_than_normalized_state_for/)
 - url: https://www.reddit.com/r/reduxjs/comments/hotwnp/are_graphs_better_than_normalized_state_for/
 ---
 I have never used redux . But I have spent time looking at the docs of redux and mobx (I have used mobx) . I was reading [this](https://medium.com/hackernoon/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254) article about mobx and I stumbled upon the following sentence :
@@ -9,11 +13,11 @@ I have never used redux . But I have spent time looking at the docs of redux and
 I really find this sentence confusing . We can normalize our state [as explained nicely in the redux docs](https://redux.js.org/recipes/structuring-reducers/normalizing-state-shape/) and we can create relationships tables between the entities with their ids  . I can not understand how can that break in a complex app . Can anyone help me here ?
 
 Edit : Maybe the answer is [here](https://medium.com/@katedoesdev/normalized-vs-denormalized-databases-210e1d67927d) .
-## [2][Modern Redux with Redux Toolkit [OC]](https://www.reddit.com/r/reduxjs/comments/hm8bvh/modern_redux_with_redux_toolkit_oc/)
+## [3][Modern Redux with Redux Toolkit [OC]](https://www.reddit.com/r/reduxjs/comments/hm8bvh/modern_redux_with_redux_toolkit_oc/)
 - url: https://wunnle.com/modern-redux-with-redux-toolkit
 ---
 
-## [3][Do I need Redux if I have Firebase?](https://www.reddit.com/r/reduxjs/comments/hmag1s/do_i_need_redux_if_i_have_firebase/)
+## [4][Do I need Redux if I have Firebase?](https://www.reddit.com/r/reduxjs/comments/hmag1s/do_i_need_redux_if_i_have_firebase/)
 - url: https://www.reddit.com/r/reduxjs/comments/hmag1s/do_i_need_redux_if_i_have_firebase/
 ---
 I use Firebase Authentication and my app works fine. I want to implement a way to simply store username, first name, last name and a JSON object after the user is signed in, so that I don’t have to fetch for them on render of each screen (which may get costly).
@@ -21,7 +25,7 @@ I use Firebase Authentication and my app works fine. I want to implement a way t
 I read many of articles online and everyone is insisting on Redux, but it is really so much code to simply store 3 string variables and 1 object, globally. I have class based components so I can’t use `React.useContext` either. 
 
 How else could I do this? Perhaps Asyncstorage? Is that a good idea? Any help is much appreciated :)
-## [4][Build a Shopping Cart with React, Redux, and React-DnD by Eyong Kevin](https://www.reddit.com/r/reduxjs/comments/hla4vw/build_a_shopping_cart_with_react_redux_and/)
+## [5][Build a Shopping Cart with React, Redux, and React-DnD by Eyong Kevin](https://www.reddit.com/r/reduxjs/comments/hla4vw/build_a_shopping_cart_with_react_redux_and/)
 - url: https://www.reddit.com/r/reduxjs/comments/hla4vw/build_a_shopping_cart_with_react_redux_and/
 ---
 Series on building a simple shopping cart that takes advantage of React DnD. A set of React utilities to help build complex drag and drop interfaces while keeping your components decoupled.
@@ -31,7 +35,7 @@ Series on building a simple shopping cart that takes advantage of React DnD. A s
 [Part 2](https://itnext.io/build-a-shopping-cart-with-react-redux-and-react-dnd-part-2-b4cd649e25db?source=friends_link&amp;sk=29b34207bc446ff51c420f34575d968e)
 
 [Part 3](https://itnext.io/build-a-shopping-cart-with-react-redux-and-react-dnd-part-3-f1e1e8265d14?source=friends_link&amp;sk=83a5cb1a1b3df19d0db6d48dd4fce14c)
-## [5][How to use redux-saga with graphql?](https://www.reddit.com/r/reduxjs/comments/hk26jy/how_to_use_reduxsaga_with_graphql/)
+## [6][How to use redux-saga with graphql?](https://www.reddit.com/r/reduxjs/comments/hk26jy/how_to_use_reduxsaga_with_graphql/)
 - url: https://www.reddit.com/r/reduxjs/comments/hk26jy/how_to_use_reduxsaga_with_graphql/
 ---
 &amp;#x200B;
@@ -41,7 +45,7 @@ Hey guys,
 I'm a bit confused about where should I have to call graphql query in react component or redux action?
 
 I wanna use the best way.
-## [6][I need to write an async action creator to set and hide (dispatch) notification messages with setTimeout. I don't understand how to do this.](https://www.reddit.com/r/reduxjs/comments/hjj8ga/i_need_to_write_an_async_action_creator_to_set/)
+## [7][I need to write an async action creator to set and hide (dispatch) notification messages with setTimeout. I don't understand how to do this.](https://www.reddit.com/r/reduxjs/comments/hjj8ga/i_need_to_write_an_async_action_creator_to_set/)
 - url: https://www.reddit.com/r/reduxjs/comments/hjj8ga/i_need_to_write_an_async_action_creator_to_set/
 ---
 I have already refactored my axios requests to fit this pattern, like so:
@@ -153,11 +157,11 @@ It ***technically*** fulfills the exercise requirements, which call for using th
 But I have no idea what good it does to use async/await for the message content! It's dumb, I know! 
 
 Any help is appreciated, even if it is just to help me find some remedial tutorials or examples to help me understand how redux/redux-thunk uses async/await. Without any extra packages, please!
-## [7][Opt Redux to Manage the Application States](https://www.reddit.com/r/reduxjs/comments/hjqklc/opt_redux_to_manage_the_application_states/)
+## [8][Opt Redux to Manage the Application States](https://www.reddit.com/r/reduxjs/comments/hjqklc/opt_redux_to_manage_the_application_states/)
 - url: https://www.ucodice.com/technology/hire-redux-developer-team
 ---
 
-## [8][Is this right? Whatsapp Analogy for Redux](https://www.reddit.com/r/reduxjs/comments/hj5ys5/is_this_right_whatsapp_analogy_for_redux/)
+## [9][Is this right? Whatsapp Analogy for Redux](https://www.reddit.com/r/reduxjs/comments/hj5ys5/is_this_right_whatsapp_analogy_for_redux/)
 - url: https://www.reddit.com/r/reduxjs/comments/hj5ys5/is_this_right_whatsapp_analogy_for_redux/
 ---
 Hey I am trying to learn redux and have written this up. 
@@ -165,11 +169,7 @@ Hey I am trying to learn redux and have written this up.
 Does this make sense? Is it right? What should I change?
 
 [https://medium.com/@acgoff/what-redux-do-do-de4525c6f5d7](https://medium.com/@acgoff/what-redux-do-do-de4525c6f5d7)
-## [9][A Complete reference guide to Redux: State of the art state management](https://www.reddit.com/r/reduxjs/comments/hhvew0/a_complete_reference_guide_to_redux_state_of_the/)
+## [10][A Complete reference guide to Redux: State of the art state management](https://www.reddit.com/r/reduxjs/comments/hhvew0/a_complete_reference_guide_to_redux_state_of_the/)
 - url: https://blog.soshace.com/a-complete-reference-guide-to-redux-state-of-the-art-state-management/
 ---
 
-## [10][Redux-toolkit + redux-orm](https://www.reddit.com/r/reduxjs/comments/hhhvqz/reduxtoolkit_reduxorm/)
-- url: https://www.reddit.com/r/reduxjs/comments/hhhvqz/reduxtoolkit_reduxorm/
----
-Hi, I'm trying to use both redux-toolkit and redux-orm in my project, and having troubles marrying the two. If anyone has links to any projects that successfully achieve that, please share!

@@ -1,78 +1,87 @@
 # golang
-## [1][Recently switched from bbolt &amp; storm to badger &amp; custom ORM. Extremely pleased.](https://www.reddit.com/r/golang/comments/hquntm/recently_switched_from_bbolt_storm_to_badger/)
-- url: https://www.reddit.com/r/golang/comments/hquntm/recently_switched_from_bbolt_storm_to_badger/
----
-I was surprised how easy it was to implement buckets (aka nodes) on top of badger, which was the only major feature missing for me compared to bbolt.  Once I had proper node interfaces, implementing tree structures with their own indexes and decoders was also very easy.  Now I can do exactly the lookups I need using the node indexes and get around 10 to 100 times the performance of storm and bbolt.  I do have to manually code the indexes and relationships, but the performance tradeoff is well worth it.
-
-
-One downside is my heap usage doubled, but ram is cheap.  I'd rather measure page loads in 10's of milliseconds instead of 100's.
-
-
-Anyone have similar experiences or some cool abstrations on top of badger?
-
-
-    func (ndb *BadgerNode) NewNode(id string) (Database, error) {
-        if len(id) &lt; 1 || strings.Contains(id, NodeSeparator) {
-    		return nil, ErrorInvalidID
-    	}
-    	if ndb.db == nil {
-    		return nil, ErrorDatabaseNil
-    	}
-    	var node BadgerNode
-    	node.db = ndb.db
-    	node.id = id
-    	node.prefix = ndb.prefix + NodeSeparator + id + NodeSeparator
-    	return &amp;node, nil
-    }
-
-https://github.com/madman22/database
-## [2][google/trillian](https://www.reddit.com/r/golang/comments/hqxvms/googletrillian/)
-- url: https://github.com/google/trillian
+## [1][Go generics will use square brackets [] not parenthesis ()](https://www.reddit.com/r/golang/comments/hrce8e/go_generics_will_use_square_brackets_not/)
+- url: https://groups.google.com/forum/#!topic/golang-nuts/7t-Q2vt60J8
 ---
 
-## [3][[serialize v0.1.1] Binary serialization library for structures using go:generate](https://www.reddit.com/r/golang/comments/hqzeaw/serialize_v011_binary_serialization_library_for/)
-- url: https://www.reddit.com/r/golang/comments/hqzeaw/serialize_v011_binary_serialization_library_for/
+## [2][performance cost of dockerizing a Go app](https://www.reddit.com/r/golang/comments/hr5yzx/performance_cost_of_dockerizing_a_go_app/)
+- url: https://www.reddit.com/r/golang/comments/hr5yzx/performance_cost_of_dockerizing_a_go_app/
 ---
-Hello everyone,
+In [this](https://levelup.gitconnected.com/docker-for-go-development-a27141f36ba9) Go+Docker tutorial, one the the [comments](https://medium.com/p/a27141f36ba9/responses/show) says:
 
-I recently started learning Go and as I love learning by building stuff, I've decided to build a simple home-made blockchain app. While working on it I realised that it implies a lot of serializing structures to bytes, hashing them, broadcasting them, all over again. At first, I simply implemented the interface BinaryMarshaler for all structures, but I quickly came to the conclusion that it's tedious and prone to errors. 
+&gt;Docker is great for development, but the performance gains you get from Golang, you lose with Docker, you may as well go php or python, since the whole point of golang is a single distributable binary. build in Docker, deploy to bare metal is my advice.
 
-So, I started searching for a library to do the job for me, but I couldn't find anything satisfying enough. It goes as following:
+I can't help but to think that this is inaccurate. It seems like the runtime performance cost of dockerizing would be independent of what gets run inside it. You would still incur that cost regardless of the app's language.
 
-1. I didn't find a library that could support omitting part of the struct fields in a easy way
-2. Some of the most known tools (like ProtoBuf)  requires a separate DSL to describe the structures
-3. Most of the tools don't support polymorphism using empty interfaces or it's a pain to use it
+Furthermore, the performance cost is practically negligible, according to [this SO answer](https://stackoverflow.com/questions/21889053/what-is-the-runtime-performance-cost-of-a-docker-container#answer-26149994):
 
-Thus I decided to write my own library, my approach is to parse Go structures directly, generating the necessary code for serialization, allowing flexibility for multiple serializers with different options and polymorphism support. In this way there is no need for complex data formats and runtime information is kept only for array sizes and `interface{}`types.
+&gt;An excellent 2014 IBM research paper “An Updated Performance Comparison of Virtual Machines and Linux Containers” by Felter et al. provides a comparison between bare metal, KVM, and Docker containers. The general result is: **Docker is nearly identical to native performance** and faster than KVM in every category.
 
-You can find the library at [https://github.com/JustBeYou/serialize](https://github.com/JustBeYou/serialize) with some more detailed explanations and examples. If you find it useful I would love to get your feedback, thoughts and suggestions. 
+Lastly, containerization is so common practice, and I've never heard/read about not containerizing due to performance concerns.
 
-PS. I'm not used to Go idioms yet, so if anyone would like to point out any bad practices in my code, I would be grateful :)
-## [4][Hugo 0.74.0 released: Adds Native JS Bundler, Open API Support and Inline Partials](https://www.reddit.com/r/golang/comments/hqx78m/hugo_0740_released_adds_native_js_bundler_open/)
+As a fairly inexperienced backend dev, I was hoping to get a few thoughts on this from more experienced devs. Thanks
+## [3][Go 1.14.5 is just released](https://www.reddit.com/r/golang/comments/hr82o2/go_1145_is_just_released/)
+- url: https://www.reddit.com/r/golang/comments/hr82o2/go_1145_is_just_released/
+---
+[https://golang.org/dl/](https://golang.org/dl/)
+
+[https://golang.org/doc/go1.14](https://golang.org/doc/go1.14)
+
+[https://golang.org/doc/devel/release.html#go1.14](https://golang.org/doc/devel/release.html#go1.14)
+## [4][Build a REST API with Go, PostgreSQL, and Test-Driven Development](https://www.reddit.com/r/golang/comments/hr7euq/build_a_rest_api_with_go_postgresql_and/)
+- url: https://medium.com/@juancurti.it/go-tutorial-tdd-with-go-and-postgresql-part-ii-489c929f02c9
+---
+
+## [5][Golang Templates](https://www.reddit.com/r/golang/comments/hrl187/golang_templates/)
+- url: https://www.reddit.com/r/golang/comments/hrl187/golang_templates/
+---
+ 
+
+    &lt;div class="horzontialList" id="List"&gt;{{range .}} {{if ne .Symbol " "}} &lt;span&gt;{{.Symbol}}&lt;/span&gt; {{end}} {{end}}
+    var div=document.getElementById('List');
+var point = div.getElementsByTagName('span');
+
+console.log(point[0].innerHTML)
+
+Actual Output: Empty stringExcepted Output: Y How to resolve this 
+## [6][Virtual Meetup on Generics Proposal Tomorrow](https://www.reddit.com/r/golang/comments/hr955o/virtual_meetup_on_generics_proposal_tomorrow/)
+- url: https://www.reddit.com/r/golang/comments/hr955o/virtual_meetup_on_generics_proposal_tomorrow/
+---
+Pacific Northwest Go is hosting Bill Kennedy tomorrow night at 6pm US Pacific Time (UTC-7). He will review the new generics proposal. All are welcome to join and participate and we'd love to see you there.
+
+Register here:  [https://www.crowdcast.io/e/virtual-pnw-go-meetup--/register](https://www.crowdcast.io/e/virtual-pnw-go-meetup--/register)
+## [7][Looking for an idea to make a solution to a problem](https://www.reddit.com/r/golang/comments/hremvv/looking_for_an_idea_to_make_a_solution_to_a/)
+- url: https://www.reddit.com/r/golang/comments/hremvv/looking_for_an_idea_to_make_a_solution_to_a/
+---
+I'm not very good at Go but I am faced with a challenge I would like to work on and get better at. I'm hoping someone can provide some knowledge on how to go about my issue.
+
+Scenario :
+
+I have a Redis DB that I get data from every hour.  There can be different number of data, for example 00:00 may give 5 sets of data while 00:01 may give 80. The data comes in the form of syntax :
+
+`0x03948f44fee48548cf5b11aa26d76acf8430ff7c232095ce4975791ac222fa25da:6701:0x4fee48548cf5b11:0x0000000000000ce8`
+
+It's the same syntax of data every time.
+
+The data must be given to TCP connections but with criteria.
+
+For example data can't be given to no more than 3 TCP Clients that are currently online. Meaning if one disconnections, the data can be given to a new or existing TCP client that doesn't already have data.
+
+Something like if there three TCP Clients that has the same data, mark that data so that it can't be given out anymore times unless a TCP Client disconnects and the number of TCP Clients that have the data is no longer == 3.
+
+TCP Clients use the data for their needs then sends True to the TCP server eventually. When TCP Clients that have the same data sends True, then all TCP Clients that have the data is given a new Data that doesn't have the true flag sent to it and also meets the criteria that data can't be given to anymore than 3 TCP clients.
+
+That's it. 
+
+Any ideas will be greatly appreciated.
+## [8][Adrian - An image glitcher](https://www.reddit.com/r/golang/comments/hrd58e/adrian_an_image_glitcher/)
+- url: https://github.com/manoloesparta/adrian
+---
+
+## [9][Hugo 0.74.0 released: Adds Native JS Bundler, Open API Support and Inline Partials](https://www.reddit.com/r/golang/comments/hqx78m/hugo_0740_released_adds_native_js_bundler_open/)
 - url: https://gohugo.io/news/0.74.0-relnotes/
 ---
 
-## [5][A tool that is written in Go to securely share your terminal session for remote pair programming](https://www.reddit.com/r/golang/comments/hqj9oz/a_tool_that_is_written_in_go_to_securely_share/)
-- url: https://owenou.com/upterm
----
-
-## [6][GopherCon Europe: Online 2020 Playlist](https://www.reddit.com/r/golang/comments/hqic0a/gophercon_europe_online_2020_playlist/)
-- url: https://www.youtube.com/watch?v=eRqCe_VHs6M&amp;list=PLtoVuM73AmsKnUvoFizEmvWo0BbegkSIG
----
-
-## [7][Scaling WebSocket in Go and beyond](https://www.reddit.com/r/golang/comments/hqjies/scaling_websocket_in_go_and_beyond/)
-- url: https://centrifugal.github.io/centrifugo/blog/scaling_websocket/
----
-
-## [8][Is %v is better for log messages?](https://www.reddit.com/r/golang/comments/hqs7oi/is_v_is_better_for_log_messages/)
-- url: https://www.reddit.com/r/golang/comments/hqs7oi/is_v_is_better_for_log_messages/
----
-I usually print with formatter %d %s ... But I don't have a good answer for why %v should not we used.
-## [9][What makes Golang so cool to be used for building blockchain and p2p networked systems ?](https://www.reddit.com/r/golang/comments/hqvlgv/what_makes_golang_so_cool_to_be_used_for_building/)
-- url: https://www.reddit.com/r/golang/comments/hqvlgv/what_makes_golang_so_cool_to_be_used_for_building/
----
-I am really excited about the language and have noticed that a lot of blockchain projects were implemented in Golang. I know it is a systems language and very versatile and performant for many use cases. But what makes it a good candidate for a blockchain implementation specifically?
-## [10][Why Golang and Not Python? Which Language is Perfect for AI?](https://www.reddit.com/r/golang/comments/hqypgk/why_golang_and_not_python_which_language_is/)
-- url: https://levelup.gitconnected.com/why-golang-and-not-python-which-language-is-perfect-for-ai-687d2e8accb5
+## [10][Help Wanted: Implement seek support in FLAC library](https://www.reddit.com/r/golang/comments/hrbyil/help_wanted_implement_seek_support_in_flac_library/)
+- url: https://github.com/mewkiz/flac/issues/16
 ---
 

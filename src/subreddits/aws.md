@@ -21,113 +21,93 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][I built an IP geolocation module optimized for AWS lambda](https://www.reddit.com/r/aws/comments/hqmhia/i_built_an_ip_geolocation_module_optimized_for/)
-- url: https://github.com/corollari/fast-geoip
+## [2][Build a work-from-home posture tracker with AWS DeepLens and GluonCV](https://www.reddit.com/r/aws/comments/hr8kwc/build_a_workfromhome_posture_tracker_with_aws/)
+- url: https://aws.amazon.com/blogs/machine-learning/build-a-work-from-home-posture-tracker-with-aws-deeplens-and-gluoncv/
 ---
 
-## [3][1 VPC with 80 IPSEC VPNs](https://www.reddit.com/r/aws/comments/hqy6jv/1_vpc_with_80_ipsec_vpns/)
-- url: https://www.reddit.com/r/aws/comments/hqy6jv/1_vpc_with_80_ipsec_vpns/
+## [3][trying to connect to an RDS from my EC2 instance.... not sure what to do?](https://www.reddit.com/r/aws/comments/hrlh2r/trying_to_connect_to_an_rds_from_my_ec2_instance/)
+- url: https://www.reddit.com/r/aws/comments/hrlh2r/trying_to_connect_to_an_rds_from_my_ec2_instance/
 ---
-Hi all,
-
-I need to connect a VPC with 80 on-premise networks, using industrial cellular routers and IPSEC. Running 24/7, dataflow is expected to be negligible. No high availability is requested for the "individual" VPN connections. And even if not requested yet, we must be prepared to support a redundant VPN server.
-
-VGW and Site-to-site VPNs look like a great option but it's nearly 3k USD/month and there are some soft limits (50 site-to-site VPNs/regions + 10 site-to-site VPNs/VGW). 
-
-To overcome VGW limits, we could use a Transit Gateway but it's 3k USD/month only because of 81 attachements. I also have to add the price of site-to-site VPNs, correct ? 3k + 3k = 6k USD/month ?
+so i have an ec2 instance with same VPC/SecurityGroup as an RDS.. but i cant seem to connect to it 📷  
+i have even added in a custom inbound rule so ec2 can connect to RDS.. but still no luck ;/
 
 &amp;#x200B;
 
-Do you think we could push VGW soft limits to 80 VPNs/VGW ?
+Ec2 instance was created first.. with VPC/security group.. the mysql is currently in it so i am trying to 'extract' it out so the first step is creating an RDS...   
 
-Is it a good architecture to use Site-to-site VPNs &amp; VGW/Transit Gateway for that kind of use ?
 
-What would you recommend instead for a more cost effective solution ? Have a pair of IPSec server instances (strongswan?) in my public subnets ?
+tried sshing into ec2 instance and mysql -h ... and it just hangs...   
+
+
+followed: [https://aws.amazon.com/premiumsupport/knowledge-center/rds-connect-ec2-bastion-host/](https://aws.amazon.com/premiumsupport/knowledge-center/rds-connect-ec2-bastion-host/)
+## [4][EC2 on demand prices for AL2, Centos 7 and RedHat 7](https://www.reddit.com/r/aws/comments/hrle2c/ec2_on_demand_prices_for_al2_centos_7_and_redhat_7/)
+- url: https://www.reddit.com/r/aws/comments/hrle2c/ec2_on_demand_prices_for_al2_centos_7_and_redhat_7/
+---
+Am I correct in thinking that:
+
+Amazon Linux 2 EC2 price = Centos7 EC2 price ?
+
+With RedHat7 price slightly more expensive than AL2/Centos7 ?
+
+For cost reasons, I'm investigating migrating our custom built AMIs from centos7 to AL2.  I assumed AL2 would be cheapest of the 3 variants, but if AL2 is the same price as Centos7, then I don't really see much point migrating.
+
+eu-west-1, c4.large, on-demand.  I assume "Linux on demand cost" in the excellent below link is AL2 (or Centos7) ?
+
+https://www.ec2instances.info/?region=eu-west-1
+## [5][Keeping your secrets out of Ansible playbooks](https://www.reddit.com/r/aws/comments/hrmn2y/keeping_your_secrets_out_of_ansible_playbooks/)
+- url: https://steampunk.si/blog/aws-credentials-safety/
+---
+
+## [6][The Well-Architected Framework](https://www.reddit.com/r/aws/comments/hrkwd1/the_wellarchitected_framework/)
+- url: https://www.reddit.com/r/aws/comments/hrkwd1/the_wellarchitected_framework/
+---
+Hi guys.  
+I hope everyone is well :)
+
+I've been working on the Well-Architected Framework for a while and the customers adherence seems to be very low.
+
+I believe the problem here is related to the costs. Customers tend to look at the 5k USD credits the program offers, but the point is: the more remediations, more expensive is the consulting. In the end, the 5k USD credits barely pays the consulting. With this in mind, I would like to hear from this group how you guys been dealing with this situation. Are you struggling in different ways or having the same problems? How is your strategy here, if you can share  :)
 
 &amp;#x200B;
 
-Thanks
-## [4][Attempting to get SSM param gives error: ParameterNotFound: null](https://www.reddit.com/r/aws/comments/hqx65m/attempting_to_get_ssm_param_gives_error/)
-- url: https://www.reddit.com/r/aws/comments/hqx65m/attempting_to_get_ssm_param_gives_error/
+Thank you
+## [7][How do you organize your CDK stacks?](https://www.reddit.com/r/aws/comments/hrj5tv/how_do_you_organize_your_cdk_stacks/)
+- url: https://www.reddit.com/r/aws/comments/hrj5tv/how_do_you_organize_your_cdk_stacks/
 ---
-I have simple nodejs code that grabs a param, but I get `ParameterNotFound: null` for reasons I don't understand. What could I be doing wrong here?
+Hi /r/aws,
 
-`const AWS = require('aws-sdk')`  
-`const ssm = new AWS.SSM({region: '&lt;region&gt;'});`  
-`const getParameterValue = async (params) =&gt; {`  
- `var request = await ssm.getParameter(params).promise();`  
- `console.log(request.Parameter.Value);`   
-`};`  
+Recently we've been capturing our existing infrastructure (mostly configured through the console + CLI) as code by using the CDK. We're very happy with the tool as it allows us to translate our infrastructure very quickly (as opposed to raw CloudFormation through YAML/JSON). However, we are currently trying to figure out how best to structure/organize our stacks.
 
+Since the CDK is still fairly new, we've been looking into CloudFormation best practices for organizing our stacks. [The official documentation](https://docs.amazonaws.cn/en_us/AWSCloudFormation/latest/UserGuide/best-practices.html) seems to recommend organizing your stacks **by lifecycle**. However, [another good thread on this sub](https://old.reddit.com/r/aws/comments/en5ieo/cdk_everything_in_one_stack/) has /u/birdgovorun [making some good points](https://old.reddit.com/r/aws/comments/en5ieo/cdk_everything_in_one_stack/fduxsz2/) as well: let the stack separation be guided **by the domain**. Another [set of notes](https://github.com/kevinslin/open-cdk#stacks) also seems to recommend grouping resources according to service/purpose instead of strictly by lifecycle.
 
-&amp;#x200B;
+For us this contradicts the CloudFormation docs recommendation of organizing by lifecycle a bit, as we would have to put the lambda's into their own stack. When guided by our domain, it makes more sense to have a stack put together certain lambda's with the resources they act upon. As an example: we have a lambda that operates upon a Kinesis stream (i.e. as an event source). The lambda here is changed more often and thus according to the "by lifecycle" philosophy we would put it in a separate stack (maybe with other lambda's).
 
-Params:  
- `var params = {`  
- `Name: '&lt;param_name&gt;',`   
- `WithDecryption: true`  
- `};`
-## [5][SQS IAM EC2 policy access](https://www.reddit.com/r/aws/comments/hqymke/sqs_iam_ec2_policy_access/)
-- url: https://www.reddit.com/r/aws/comments/hqymke/sqs_iam_ec2_policy_access/
+**I tend to prefer the philosophy of letting the domain guide the CDK stack organization**. In addition, it seems that the lifecycle recommendation stems from a time where stacks could still end up in a failed state without any way to recover from it. **I wonder whether (such) a non-recoverable stack state is still possible when for example changing a lambda?**
+
+During development, I've noticed that when quickly creating a test event for the lambdas in the console, the stack would end up in a failed state due to drift. However, these drift situations will of course not happen in a setting where everything is deployed through CloudFormation.
+
+That being said, if there's any possibility of having a CloudFormation stack end up in failed state in production such that it would require the recreation of stateful resources (DDB tables, etc.) then I would rather organize the stacks by lifecycle. In that way, I am at least sure that the probability of that happening is a lot lower since resources that change more often will be in a separate stack.
+
+**My main question then is if anybody has any recommendations on this topic? Or maybe any (regretful?) experience with splitting up their CF stacks by domain instead of by lifecycle or vice-versa?**
+It seems like this is something that we have to get right from the beginning, as changing it later will be a pain.
+
+Thank you!
+## [8][What have you automated using python with AWS ?](https://www.reddit.com/r/aws/comments/hrn15b/what_have_you_automated_using_python_with_aws/)
+- url: https://www.reddit.com/r/aws/comments/hrn15b/what_have_you_automated_using_python_with_aws/
 ---
-my inline sqs policy has receive message on an ec2 iam role; however i can't dequeue a message from the cli on the box.  what might be wrong?
-
-aws sqs receive-message --queue-url &lt;my url&gt;
-
-An error occurred (AccessDenied) when calling the ReceiveMessage operation: Access to the resource https://queue.amazonaws.com/ is denied.
-
-policy:   
-"Effect": "Allow",  
-"Action": \[  
-"sqs:DeleteMessage",  
-"sqs:GetQueueUrl",  
-"sqs:ChangeMessageVisibility",  
-"sqs:SendMessageBatch",  
-"sqs:ReceiveMessage",  
-"sqs:SendMessage",  
-"sqs:GetQueueAttributes",  
-"sqs:ListQueueTags",  
-"sqs:ListDeadLetterSourceQueues",  
-"sqs:DeleteMessageBatch",  
-"sqs:PurgeQueue",  
-"sqs:DeleteQueue",  
-"sqs:CreateQueue",  
-"sqs:ChangeMessageVisibilityBatch",  
-"sqs:SetQueueAttributes"  
-\],
-## [6][How to analyze a form via textract and A2I using lambda function?](https://www.reddit.com/r/aws/comments/hqxyub/how_to_analyze_a_form_via_textract_and_a2i_using/)
-- url: https://www.reddit.com/r/aws/comments/hqxyub/how_to_analyze_a_form_via_textract_and_a2i_using/
+Hey everyone, I would love to know what everyone automated using python :)
+## [9][Redshift Question](https://www.reddit.com/r/aws/comments/hrmtik/redshift_question/)
+- url: https://www.reddit.com/r/aws/comments/hrmtik/redshift_question/
 ---
-Hey guys, I am trying to send the form extraction from textract to A2I using a lambda function but I have no clue how to go about implementing it. 
-
-Currently, after following some guides, I can send the output of a textract back to S3 in a .txt format. 
-
-How can I send the output to A2I for human review? Thank you!
-## [7][Learning Opportunity.](https://www.reddit.com/r/aws/comments/hqg29q/learning_opportunity/)
-- url: https://www.reddit.com/r/aws/comments/hqg29q/learning_opportunity/
+With the dc/ds Redshift nodes, you must always use at least two with one acting as a leader node.  Is this also true of the newer ra3 node types?  I assume yes but want to confirm.
+## [10][How to configure the spam filter for AWS WorkMail?](https://www.reddit.com/r/aws/comments/hrmkia/how_to_configure_the_spam_filter_for_aws_workmail/)
+- url: https://www.reddit.com/r/aws/comments/hrmkia/how_to_configure_the_spam_filter_for_aws_workmail/
 ---
-I have not  yet seen this posted here, but I wanted to share something a co-worker has been developing and wanted to share with a wider audience.  A great way to learn to code and use AWS at the same time.
-
- [https://learn-to-code.workshop.aws](https://learn-to-code.workshop.aws/) 
-
-All feedback is welcome.
-## [8][Static Website Hosting &amp; Redirect Error](https://www.reddit.com/r/aws/comments/hqxd3n/static_website_hosting_redirect_error/)
-- url: https://www.reddit.com/r/aws/comments/hqxd3n/static_website_hosting_redirect_error/
+Hi there! Currently WorkMail marks a lot of mails as spam that it shouldn't. Where can I configure the spam filter? At the moment, even just turning it off would be better than having it on.
+## [11][How to run AWS EC2 spot on predefined dates.](https://www.reddit.com/r/aws/comments/hrjw9q/how_to_run_aws_ec2_spot_on_predefined_dates/)
+- url: https://www.reddit.com/r/aws/comments/hrjw9q/how_to_run_aws_ec2_spot_on_predefined_dates/
 ---
-[http://example.org/](http://algostem.org/), [http://www.example.org/](http://www.algostem.org/), and [https://www.example.org/](https://www.algostem.org/) all resolve to [https://www.example.org/](https://www.woorank.com/en/www/algostem.org#) (correct). However, I get a timeout error for [https://example.org/](https://algostem.org/). I'm hosting a static website using S3, CloudFront, and Route 53. The domain is registered through Google Domains. [This](https://dev.to/razcodes/how-to-host-a-static-website-with-aws-s3-and-ssl-using-cloudfront-3e37) is the tutorial I followed (I know no one likes to open links on Reddit but it's just too long to summarize here). Any help would be greatly appreciated!
-## [9][Migrate password-less, no oidc compatible user database to cognito](https://www.reddit.com/r/aws/comments/hqwm6u/migrate_passwordless_no_oidc_compatible_user/)
-- url: https://www.reddit.com/r/aws/comments/hqwm6u/migrate_passwordless_no_oidc_compatible_user/
----
-So I have a user database, which is a combination of facebook and email authentication, catch is that instead of password for email auth, we use some kind of "passcode" which has different meaning in the business. the fields for my user database are general, email, first name, last name, created at, updated at and uuid, used to identify users in our business. also those users are attached to another table, which contains these "passcodes". how could i migrate to cognito, and also introduce normal passwords as well?
-## [10][Why some EC2 instances have "N/A" for ECU? What does N/A mean here?](https://www.reddit.com/r/aws/comments/hqyyrj/why_some_ec2_instances_have_na_for_ecu_what_does/)
-- url: https://www.reddit.com/r/aws/comments/hqyyrj/why_some_ec2_instances_have_na_for_ecu_what_does/
----
-For example r5d.large is a bit more expensive than r5ad.large, while having the same specs. The former has 10 ECUs, the latter has "N/A"
-## [11][Egis - a handy Ruby interface for AWS Athena](https://www.reddit.com/r/aws/comments/hqye6m/egis_a_handy_ruby_interface_for_aws_athena/)
-- url: https://www.reddit.com/r/aws/comments/hqye6m/egis_a_handy_ruby_interface_for_aws_athena/
----
-Together with my team at [https://www.u2i.com/](https://www.u2i.com/) we have recently built a wrapper for AWS Athena SDK providing a convenient, higher-level interface for defining schemas, creating tables and executing queries. It reduces boilerplate and repetitive code allowing you to process large data sets easily.
-
-[https://github.com/u2i/egis](https://github.com/u2i/egis)
-
-Do you find it useful? Please give it a star. ;)
+Hi all
+There is work load that I need to run each month on 10th.
+For this I need 10 more EC2 instances which should be running for at most 24 hour to finish of the job. 
+Since I need to run them on a particular date each month and I want them to run for 24 hr without interrupting. Can I use spot to lower the price. As far as I know I spot can interupt the ecosystem if the pricing go down.

@@ -87,81 +87,43 @@ this is the place.
 
 
 &amp;nbsp;
-## [3][Array Methods Cheatsheet](https://www.reddit.com/r/javascript/comments/hqr1up/array_methods_cheatsheet/)
-- url: https://media-exp1.licdn.com/dms/image/C4E22AQGzUMgv0rl6hg/feedshare-shrink_1280/0?e=1597881600&amp;v=beta&amp;t=P2rH4tNTOLGiCSMjeyS-6EaRhPzwKHhHWon4WvxigCM
+## [3][Moveable Editor Tool 0.18 Release! Drag, Resize, Scale, Rotate, Clip, Group, Snap](https://www.reddit.com/r/javascript/comments/hrg2n0/moveable_editor_tool_018_release_drag_resize/)
+- url: https://daybrush.com/moveable/
 ---
 
-## [4][A Simple Explanation of Event Delegation in JavaScript](https://www.reddit.com/r/javascript/comments/hr0ex8/a_simple_explanation_of_event_delegation_in/)
+## [4][Developers can't fix bad management](https://www.reddit.com/r/javascript/comments/hrhpo1/developers_cant_fix_bad_management/)
+- url: https://iism.org/article/developers-can-t-fix-bad-management-57
+---
+
+## [5][Super Expressive - a Zero-dependency JavaScript Library For Building Regular Expressions in (Almost) Natural Language](https://www.reddit.com/r/javascript/comments/hrlv0w/super_expressive_a_zerodependency_javascript/)
+- url: https://github.com/francisrstokes/super-expressive
+---
+
+## [6][How to create statically generated, serverless site with NextJS, AWS CloudFront and Terraform](https://www.reddit.com/r/javascript/comments/hrlg9c/how_to_create_statically_generated_serverless/)
+- url: https://sosnowski.dev/post/static-serverless-site-with-nextjs
+---
+
+## [7][Webpack plugins and tools for faster sites](https://www.reddit.com/r/javascript/comments/hrm5lh/webpack_plugins_and_tools_for_faster_sites/)
+- url: https://github.com/iamakulov/awesome-webpack-perf
+---
+
+## [8][Understanding the math behind Math.random() function](https://www.reddit.com/r/javascript/comments/hrn7ta/understanding_the_math_behind_mathrandom_function/)
+- url: https://coderwhodreams.com/blog/understanding-the-randomness-behind-math-random-function/
+---
+
+## [9][WTF is a closure?](https://www.reddit.com/r/javascript/comments/hr0i3p/wtf_is_a_closure/)
+- url: https://whatthefuck.is/closure
+---
+
+## [10][A Simple Explanation of Event Delegation in JavaScript](https://www.reddit.com/r/javascript/comments/hr0ex8/a_simple_explanation_of_event_delegation_in/)
 - url: https://dmitripavlutin.com/javascript-event-delegation/
 ---
 
-## [5][[AskJS] Thoughts on package auditability?](https://www.reddit.com/r/javascript/comments/hqm4i8/askjs_thoughts_on_package_auditability/)
-- url: https://www.reddit.com/r/javascript/comments/hqm4i8/askjs_thoughts_on_package_auditability/
----
-Recently, I was writing the README of one of my modules, and, by describing the implementation choices I made, I accidentally ended up writing a short manifest on things that I believe would help make npm modules more auditable. I thought it would be interesting to post it here in order to get the opinions of some other people:
-
-**On auditability**
-
-When glazing over a list of npm modules while choosing one for the task at hand, most people, myself included, base their decision on metrics such as the popularity contest of github stars and npm weekly downloads or the recency of the latest publish. However, I believe that this kind of decision-making misses a fundamental module attribute: auditability, the ability for anyone to easily audit the code and make sure that it does what it's meant to do and nothing more.
-
-This may seem useless in this day and age, where it's common to have a node\_modules directory with thousands of packages, but I firmly believe that by making it possible for people to read all the code in a package in under one hour, some people will actually do it, and even if only a few do, these provide guarantees for everyone else that is consuming the library, as, if something turns out to be wrong with the library, the few that audit the code will make it known to everyone else.
-
-At this point, you may ask what exactly is auditability, as the definition provided so far is quite vague. Well, for me, an auditable module is one that makes it possible to just enter its folder on node\_modules, open its files with your favorite editor, and directly read them. Nobody has the time to build a package from source and compare the artifacts with those on npm, and it's absolutely impossible to read minified code, so nobody is going to audit a package if they run into that, the solution is simple: just ship readable code.
-
-Concretely, I believe that can be done by following these principles:
-
-* Minimal dependencies: it's impossible to audit a package with dependencies that also bring along other dependencies, as the amount of code at play just grows exponentially to unmanageable levels.
-* Use Javascript's standard library as much as possible, for example by going for JSON instead of developing your own binary parsing code.
-* Keep it simple, the simpler the code the easier it is to read.
-* Offload work to the OS as much as possible. Do you need an efficient indexing system? Modern OSes use B-trees to keep track of the files in a directory, so just split your data into files and request the filesystem to read a specific file.
-* All the important code should be in a low number of files where line count is kept as low as possible, jumping through tons of 5-line files to piece a function together is a nightmare.
-* Make the code use known patterns to keep it as dumb as possible
-* No minification nor transpilation: auditing minified code requires getting the source, building it, comparing it with the minified code and trusting the transpiler/minifier not to change the code's behaviour. Unminified code can be audited by simply reading the files in node\_modules.
-
-&amp;#x200B;
-
-Thoughts?
-
-&amp;#x200B;
-
-For anyone curious, the whole README is [here](https://github.com/corollari/fast-geoip) for context.
-## [6][Modern JavaScript for Django Developers (Parts 1 and 2)](https://www.reddit.com/r/javascript/comments/hqzgvl/modern_javascript_for_django_developers_parts_1/)
-- url: https://www.saaspegasus.com/guides/modern-javascript-for-django-developers/
+## [11][A library to generate the maximally efficient series of unique keys for a given alphabet.](https://www.reddit.com/r/javascript/comments/hrm3xd/a_library_to_generate_the_maximally_efficient/)
+- url: https://github.com/gactjs/key
 ---
 
-## [7][New "Redux Essentials" core docs tutorial is LIVE! Teaches how to use Redux the right way, using our latest recommended APIs and practices](https://www.reddit.com/r/javascript/comments/hqfrf1/new_redux_essentials_core_docs_tutorial_is_live/)
-- url: https://redux.js.org/tutorials/essentials/part-1-overview-concepts
+## [12][tinyhttp – tiny web framework as a replacement of Express, written in TypeScript, with Native ESM and async routes support](https://www.reddit.com/r/javascript/comments/hr1e0a/tinyhttp_tiny_web_framework_as_a_replacement_of/)
+- url: https://github.com/talentlessguy/tinyhttp
 ---
 
-## [8][VSCode Extension: Toggle Case](https://www.reddit.com/r/javascript/comments/hqzmt9/vscode_extension_toggle_case/)
-- url: https://marketplace.visualstudio.com/items?itemName=PranshuAgrawal.toggle-case
----
-
-## [9][Implementing A Global Progress Bar In React](https://www.reddit.com/r/javascript/comments/hr0sgi/implementing_a_global_progress_bar_in_react/)
-- url: https://dev.to/ayoalfonso/implementing-a-global-progress-bar-in-react-5hmb
----
-
-## [10][Stranger Changer](https://www.reddit.com/r/javascript/comments/hqhgb9/stranger_changer/)
-- url: http://dwhiffing.github.io/grocer
----
-
-## [11][Skypack - a new kind of JavaScript delivery network](https://www.reddit.com/r/javascript/comments/hqyno1/skypack_a_new_kind_of_javascript_delivery_network/)
-- url: https://www.skypack.dev/
----
-
-## [12][[AskJS] What is the best GraphQL client right now? Which would you use and why?](https://www.reddit.com/r/javascript/comments/hqzoqw/askjs_what_is_the_best_graphql_client_right_now/)
-- url: https://www.reddit.com/r/javascript/comments/hqzoqw/askjs_what_is_the_best_graphql_client_right_now/
----
-I’m building a React Native app and have realised I need a more scalable way of talking to my GraphQL backend. I work more as a quant than a dev so please forgive any misconceptions.
-
-I’ve set up my backend using DynamoDB and have built a GraphQL layer over it using AppSync. The default way AWS suggests talking to AppSync isn’t easily scalable, plus I’ve ended up writing what is essentially a small library of hooks and other helpers to build local persistence using Recoil + AsyncStorage with atoms modelled after my graph schema.
-
-So I’ve got 3 options:
-
-* Apollo: big community, popular, nice API, AppSync uses (used? Can only find sources from 2017) it under the hood, built-in persistence
-
-* Relay: very similar to Apollo, smaller community, API seems more complicated and setup seems a bit longer, but assume the flexibility could be beneficial further down the line
-
-* AWS Amplify DataStore: works immediately, TypeScript type defs generated from my GraphQL schema are designed for this library, have to write hook wrappers, just very wary of committing to an Amplify library as I’ve been burned in the past by bugs and poor documentation (no fault of the devs, I think the Amplify guys are stretched too thin)
-
-Is there a clear winner? Is Apollo still GraphQL king? I’ve heard Relay has come a long way recently

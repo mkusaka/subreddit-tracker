@@ -123,131 +123,108 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [3][Qt Creator 4.13 Beta Released - Finally Offers Meson Build System Integration](https://www.reddit.com/r/cpp/comments/hqx4vo/qt_creator_413_beta_released_finally_offers_meson/)
-- url: https://www.phoronix.com/scan.php?page=news_item&amp;px=Qt-Creator-4.13-Beta-Released
+## [3][Searching for old production code](https://www.reddit.com/r/cpp/comments/hrjzba/searching_for_old_production_code/)
+- url: https://www.reddit.com/r/cpp/comments/hrjzba/searching_for_old_production_code/
+---
+I'm looking for codebases written with old versions of C++ -- stuff meant to be compiled with Cfront, etc.  Preferably something that has been in production at some point.  I'm looking to research different "dialects" and history of the language by taking a look at codebases of different eras.
+
+C&amp;C remastered collection is available and from the first glance, seems to be a decent pre-c++98 look at things, I'm currently digging through sourceforge to find some old stuff but finding codebases like this that I could actually access seems to be a chore.
+
+Anyone know a project or something where I could dig really old examples from?  I can try to dig old books from the library as well if anyone can name those.
+## [4][What are my chances of success at self-teaching C++ and creating my own game?](https://www.reddit.com/r/cpp/comments/hri1h6/what_are_my_chances_of_success_at_selfteaching_c/)
+- url: https://www.reddit.com/r/cpp/comments/hri1h6/what_are_my_chances_of_success_at_selfteaching_c/
+---
+I've no coding experience besides a tiny bit of HTML. I want to make my own game using c++ (UE), im wondering how hard the learning curve is self-teaching it, and my chances of success doing this. Its worth noting I've spent the past week watching youtube tutorials, and to my surprise its nothing even close to the difficulty I thought it would be, which has given me some confidence. The type of game I'd like to make would be something like your typical 3d FPS
+
+Im already 27 years old, is it too late for me?
+
+Some other questions: how important is it to know higher level math when creating a c++ game? 
+
+Do you know any people who self taught programming and are now making a living out of it?
+
+Should i go for a 2d game for my first time, is it that much easier than 3d?
+
+Would C# be easier?
+
+Should i give up on this dream, is it too far out of my scope? Please give it to me bluntly as I don't want to waste time.
+
+Thank you.
+## [5][Richard’s June C++ Alliance Update](https://www.reddit.com/r/cpp/comments/hrl4rm/richards_june_c_alliance_update/)
+- url: https://cppalliance.org/richard/2020/07/01/RichardsJuneUpdate.html
 ---
 
-## [4][Introducing Epigraph: A modern C++ interface to Quadratic and Second Order Cone Solvers](https://www.reddit.com/r/cpp/comments/hqymiy/introducing_epigraph_a_modern_c_interface_to/)
+## [6][Enjoy C++ STL in the another language TypeScript](https://www.reddit.com/r/cpp/comments/hrmju6/enjoy_c_stl_in_the_another_language_typescript/)
+- url: https://github.com/samchon/tstl
+---
+
+## [7][c++ environment for beginners](https://www.reddit.com/r/cpp/comments/hr7dl0/c_environment_for_beginners/)
+- url: https://www.reddit.com/r/cpp/comments/hr7dl0/c_environment_for_beginners/
+---
+Does a simple, easy to use, cross platform c++ programming environment exist?  
+
+
+I am working on material for teaching c++ to physics students at my university. This class is a general overview of advanced programming concepts using c++ as an "example", so I really hope to use as little time as possible on setting up the programming environments on peoples computers. I really don't want to scare the students before even introducing the c++ language. Additionally, I would far prefer it if the same toolchain is used on mac, linux and windows so students are able to  cooperate with one another.
+
+For windows, it seems to be easy to install Visual Studio, and include the clang/llvm compiler during the install. Visual Studio also has the build-in MS Build, which all in all results in a simple startup experience. But unfortunately Visual Studio is windows only.
+
+VS code, on the other hand, is a cross platform IDE, but does not include either the compiler (which would thus have to be seperately installed). Also, since it does not have a buildin build system, one would have to be installed. This is not necessarily a problem, but I am not able to find one which integrates nicely with VS code. I would prefer not to have to also teach cmake, since the curriculum is plenty packed already. 
+
+Outside of Visual Studio, I have yet to find a IDE which includes both a compiler and build system though a simple GUI. 
+
+Any suggestions or tips are very helpful! I am currently considering having the students run code on a central computer, either through a web interface or by ssh-ing with vs code into a central server with everything up and running, but i hope to introduce them to a setup which they could use themselves after the course.
+## [8][std::size() &amp; indirections](https://www.reddit.com/r/cpp/comments/hrkhxf/stdsize_indirections/)
+- url: https://www.reddit.com/r/cpp/comments/hrkhxf/stdsize_indirections/
+---
+    #include &lt;type_traits&gt;
+    #include &lt;iterator&gt;
+    
+    int main()
+    {
+        struct s
+        {
+            char Buffer[42];
+        };
+    
+        s S;
+    
+        constexpr auto Size1 = std::size(S.Buffer);
+    
+        const auto&amp; Ref = S;
+    
+        // The type of Ref.Buffer is known at compile time.
+    
+        // The expression "Ref.Buffer" is constexpr enough for decltype:
+        static_assert(std::is_same_v&lt;decltype(Ref.Buffer), char[42]&gt;);
+        // as well as for sizeof:
+        static_assert(sizeof(Ref.Buffer) == 42);
+    
+        // However, it's not constexpr enough for std::size:
+        constexpr auto Size2 = std::size(Ref.Buffer);
+    
+        // Typical std::size implementation:
+        // https://en.cppreference.com/w/cpp/iterator/size
+    
+        // Is it a defect?
+    }
+
+[https://godbolt.org/z/K4dPfE](https://godbolt.org/z/K4dPfE)
+## [9][Introducing Epigraph: A modern C++ interface to Quadratic and Second Order Cone Solvers](https://www.reddit.com/r/cpp/comments/hqymiy/introducing_epigraph_a_modern_c_interface_to/)
 - url: https://github.com/EmbersArc/Epigraph
 ---
 
-## [5][TimeTracker: A simple C++ 11 header only library for measuring the execution time of your code block using chrono steady_clock.](https://www.reddit.com/r/cpp/comments/hqtjf7/timetracker_a_simple_c_11_header_only_library_for/)
-- url: https://www.reddit.com/r/cpp/comments/hqtjf7/timetracker_a_simple_c_11_header_only_library_for/
----
-TimeTracker: A simple C++ 11 header only library for measuring the execution time of your code block using chrono steady\_clock. 
-
-It will also calculate the minimum, maximum and average execution time in a given period, which is called report interval. Every report interval, TimeTracker can generate formatted strings for later usage, or TimeTrack can print the report to standard output.
-
-[https://github.com/jacoblica/timetracker](https://github.com/jacoblica/timetracker)
-## [6][Ask Me Anything with Bjarne Stroustrup, hosted by John Regehr (PLDI 2020)](https://www.reddit.com/r/cpp/comments/hqdnx5/ask_me_anything_with_bjarne_stroustrup_hosted_by/)
-- url: https://www.youtube.com/watch?v=Bycec3UQxOc
+## [10][Cross Platform Development in Visual Studio 2019](https://www.reddit.com/r/cpp/comments/hrl3sa/cross_platform_development_in_visual_studio_2019/)
+- url: https://youtu.be/wb44QN3G2LE
 ---
 
-## [7][Header only C++17 template library: PEG parser and AST builder](https://www.reddit.com/r/cpp/comments/hr0svb/header_only_c17_template_library_peg_parser_and/)
-- url: https://www.reddit.com/r/cpp/comments/hr0svb/header_only_c17_template_library_peg_parser_and/
+## [11][libstdc++ vs libstdc++11 when using gcc version 8+ and -std=c++17](https://www.reddit.com/r/cpp/comments/hr8g9k/libstdc_vs_libstdc11_when_using_gcc_version_8_and/)
+- url: https://www.reddit.com/r/cpp/comments/hr8g9k/libstdc_vs_libstdc11_when_using_gcc_version_8_and/
 ---
-[https://github.com/MoserMichael/cppcombinator](https://github.com/MoserMichael/cppcombinator)  
+Is there a difference between libstdc++ and libstdc++11 in the current releases of gcc (or at least gcc &gt;=8)?
 
-Please  check out my side project, it's a  library for building PEG parsers  (top-down parser) that build an  in-memory parse tree, Each template  instantiation stands for a grammar  rule, and translates directly into a  node in the parse tree. In this  respect this project differs from  PEGTL. The project taught me a lot  about C++ metaprogramming.
+I want to create libraries that support code using the C++17 standard.  
 
-BTW:  I am also looking for a job right now.  I do C++, Golang, Python and  Java on Linux. Looking for remote job as  contractor or full time  (on-site in Israel). I have worked with  kubernetes, storage,  networking, security.
-
-Linked in profile: [www.linkedin.com/in/michael-moser-32211b1](https://www.linkedin.com/in/michael-moser-32211b1)
-## [8][CppCon 2020 will be held entirely online :(](https://www.reddit.com/r/cpp/comments/hqf0tc/cppcon_2020_will_be_held_entirely_online/)
-- url: https://cppcon.org/going-virtual/
----
-
-## [9][VisualStudio/MSBuild integration added to BuildCache v0.19.0 (compiler accelerator)](https://www.reddit.com/r/cpp/comments/hqk7vt/visualstudiomsbuild_integration_added_to/)
-- url: https://github.com/mbitsnbites/buildcache
----
-
-## [10][How Cheerp supports 64-bit integers in both JavaScript and WebAssembly](https://www.reddit.com/r/cpp/comments/hqf9fp/how_cheerp_supports_64bit_integers_in_both/)
-- url: https://medium.com/leaningtech/how-cheerp-supports-64-bit-integers-in-both-javascript-and-webassembly-79485761615a
----
-
-## [11][Patch for GCC 10 to implement P0222](https://www.reddit.com/r/cpp/comments/hqbqjd/patch_for_gcc_10_to_implement_p0222/)
-- url: https://www.reddit.com/r/cpp/comments/hqbqjd/patch_for_gcc_10_to_implement_p0222/
----
-P0222: [https://github.com/mwoehlke/cpp-proposals/blob/master/p0222r0-anonymous-struct-return.rst](https://github.com/mwoehlke/cpp-proposals/blob/master/p0222r0-anonymous-struct-return.rst)
-
-GCC: [https://gcc.gnu.org/git.html](https://gcc.gnu.org/git.html)
-
-This patch lifts the restriction described in P0222 + it is possible to define types in function arguments, so it's possible to write code like this:
-
-    struct { int x; }
-    g(const struct { int y; } &amp;args) {
-    	return { .x = args.y };
-    }
-    
-    int main() {
-    	return g({ .y = 11 }).x;
-    }
-
-This code generates the following assembly with `-O3`:
-
-    movl    $11, %eax
-    ret
-
-Patch:
-
-    diff --git a/gcc/cp/parser.c b/gcc/cp/parser.c
-    index 45ad2c05288..b1e0b871777 100644
-    --- a/gcc/cp/parser.c
-    +++ b/gcc/cp/parser.c
-    @@ -3115,6 +3115,7 @@ cp_parser_check_for_definition_in_return_type (cp_declarator *declarator,
-       /* [dcl.fct] forbids type definitions in return types.
-          Unfortunately, it's not easy to know whether or not we are
-          processing a return type until after the fact.  */
-    +  /*
-       while (declarator
-             &amp;&amp; (declarator-&gt;kind == cdk_pointer
-                 || declarator-&gt;kind == cdk_reference
-    @@ -3129,6 +3130,7 @@ cp_parser_check_for_definition_in_return_type (cp_declarator *declarator,
-                  "(perhaps a semicolon is missing after the definition of %qT)",
-                  type);
-         }
-    +    */
-     }
-     
-     /* A type-specifier (TYPE) has been parsed which cannot be followed by
-    @@ -22764,8 +22766,10 @@ cp_parser_parameter_declaration (cp_parser *parser,
-     
-       /* Type definitions may not appear in parameter types.  */
-       saved_message = parser-&gt;type_definition_forbidden_message;
-    +  /*
-       parser-&gt;type_definition_forbidden_message
-         = G_("types may not be defined in parameter types");
-    +  */
-     
-       int template_parm_idx = (function_being_declared_is_template_p (parser) ?
-                               TREE_VEC_LENGTH (INNERMOST_TEMPLATE_PARMS
-
-Patch is trivial and even if it does not apply, it should be possible to replicate it on other versions of GCC.
-
-IMO it is a bit of overkill because it allows to write code like this:
-
-    struct {
-    	int x = 0;
-    
-    	operator int () const {
-    		// this executes when struct is converted to int but not before that
-    		std::cout &lt;&lt; x &lt;&lt; std::endl;
-    		return 0;
-    	}
-    
-    	struct tors {
-    		tors() { std::cout &lt;&lt; "got ctor" &lt;&lt; std::endl; }
-    		~tors() { std::cout &lt;&lt; "got dtor?" &lt;&lt; std::endl; }
-    	} tors = {};
-    }
-    f(const struct { int y; } &amp;args) {
-    	return { .x = args.y };
-    }
-
-This isn't exactly footgun, more like a tactical nuke, looks funny, but probably under export restrictions. But this is very powerful and could be a solid basis for more refined language features i think. However if you think about it, this is nothing that can not be implemented with non anonymous structures. For designated initializers `-std=c++2a` is need to be set of course.
-
-Any ideas?
-## [12][5 Curious C++ Lambda Examples: Recursion, constexpr, Containers and More](https://www.reddit.com/r/cpp/comments/hqc1a4/5_curious_c_lambda_examples_recursion_constexpr/)
-- url: https://www.bfilipek.com/2020/07/lambdas5ex.html
+I can't find any concise answer on which lib to use or if it even matters.
+## [12][Qt Creator 4.13 Beta Released - Finally Offers Meson Build System Integration](https://www.reddit.com/r/cpp/comments/hqx4vo/qt_creator_413_beta_released_finally_offers_meson/)
+- url: https://www.phoronix.com/scan.php?page=news_item&amp;px=Qt-Creator-4.13-Beta-Released
 ---
 

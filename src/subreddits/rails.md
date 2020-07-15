@@ -19,13 +19,74 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Pagination and Scroll Restoration with Turbolinks](https://www.reddit.com/r/rails/comments/hqo8c3/pagination_and_scroll_restoration_with_turbolinks/)
-- url: https://www.reddit.com/r/rails/comments/hqo8c3/pagination_and_scroll_restoration_with_turbolinks/
+## [2][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/hrnm2o/personal_projects_show_off_your_own_project_andor/)
+- url: https://www.reddit.com/r/rails/comments/hrnm2o/personal_projects_show_off_your_own_project_andor/
 ---
-A lot of JS folks seemed to criticize some strange aspects of Hey's different approach to the front-end. This is a good post about a possible solution for one of the issues raised:
+In this thread you can showcase your personal pet project to other redditors.
 
-[http://blog.graykemmey.com/2020/07/07/pagination-and-scroll-restoration-with-turbolinks/](http://blog.graykemmey.com/2020/07/07/pagination-and-scroll-restoration-with-turbolinks/)
-## [3][Everything you want to know about writing your own form objects in rails](https://www.reddit.com/r/rails/comments/hr1aol/everything_you_want_to_know_about_writing_your/)
+Need help with a specific problem or just wanna have some extra eyeballs on your code? Ask away!
+
+A suggested format to get you started:
+
+1. **Name of your project**
+2. **A short description**
+3. **Application stack**
+4. **Link to Live app**
+5. **Link to GitHub**
+6. **You experience level**
+7. **Other information or areas that you would like advice on**
+
+ 
+
+^(Many thanks to Kritnc for getting the ball rolling.)
+## [3][OMG! I just got my first user on my rails app](https://www.reddit.com/r/rails/comments/hr6ms0/omg_i_just_got_my_first_user_on_my_rails_app/)
+- url: https://www.reddit.com/r/rails/comments/hr6ms0/omg_i_just_got_my_first_user_on_my_rails_app/
+---
+Doing webdev for almost a 2 years, started with JS, drove me crazy. Just wanted to learn to build something without doing to much my self. Found out about rails, started building some simple stuff, like a blog. After that build a app for my brother, and wrote some SEO about it.... and finally got my first user today! even if it is just a free user (have a free restricted plan and a premium plan) it is a great feeling!
+## [4][Rails 6 and Active Job : a simple tutorial](https://www.reddit.com/r/rails/comments/hrnisf/rails_6_and_active_job_a_simple_tutorial/)
+- url: https://www.reddit.com/r/rails/comments/hrnisf/rails_6_and_active_job_a_simple_tutorial/
+---
+Active Job is quite difficult to start with. The documentation is very good, but to just to start an "hello world" job example, it requires redis, sidekiq (or another implementation), and some configuration. I tried to create a small tutorial in which 1) you have everything that just works in a couple of minutes and 2) everything works in complete isolation of your environment. [http://bdavidxyz.com/blog/rails-6-activejob-tutorial/](http://bdavidxyz.com/blog/rails-6-activejob-tutorial/)
+## [5][Is action cable in rails 6 production ready?](https://www.reddit.com/r/rails/comments/hrhjuw/is_action_cable_in_rails_6_production_ready/)
+- url: https://www.reddit.com/r/rails/comments/hrhjuw/is_action_cable_in_rails_6_production_ready/
+---
+Has any one used action cable for over 1000+ connections and had it work reliably with low latency? I'm just testing websockets in my app but it seems to be incredibly slow, is there something I could be doing wrong?
+## [6][How do I link to a :delete action on a resource inside a module?](https://www.reddit.com/r/rails/comments/hrmhrv/how_do_i_link_to_a_delete_action_on_a_resource/)
+- url: https://www.reddit.com/r/rails/comments/hrmhrv/how_do_i_link_to_a_delete_action_on_a_resource/
+---
+Hi All - I can't figure out the syntax for a `link_to` for the `#destroy` action on a controller in a module.
+
+I have a `Post` resource with a `posts_controller` for normal user interaction with the most. I created another `posts_controller` in an `admin` module for Administrator actions.
+
+    resources :posts 
+    namespace :admin do
+      resources :posts
+    end
+
+The `controllers/admin/posts_controller.rb` is defined as:
+
+    module Admin
+      class PostsController &lt; ApplicationController
+        # normal resource methods
+      end
+    end
+
+That all works exactly as expected, and I can create a link to the admin's view of all posts with:
+
+    link_to 'Admin View of Posts', admin_posts_path
+
+What I can't figure out is how to create a link to `admin/posts_controller.rb#destroy` in my `admin/posts/show.html.haml` view. If I do:
+
+    link_to 'Delete', post, method: :delete, data: { confirm: '...' }
+
+Then that generates a link to the normal user `posts_controller` not the admin one. How do I create the destroy action link on the admin posts controller?
+
+Thanks!
+## [7][Print PDF with Page Number](https://www.reddit.com/r/rails/comments/hrizi8/print_pdf_with_page_number/)
+- url: https://www.reddit.com/r/rails/comments/hrizi8/print_pdf_with_page_number/
+---
+Any recommendation for PDF generation with Rails? Need one with custom header and page number. Simply printing a page from javascript print is nice but I ran into some issues with formatting and page numbers. `wkhtmltopdf` seems to be outdated and doesn't place nice as well. `prawn` is a little too low level. Any other solutions out there? Something like crystal reports would be nice.
+## [8][Everything you want to know about writing your own form objects in rails](https://www.reddit.com/r/rails/comments/hr1aol/everything_you_want_to_know_about_writing_your/)
 - url: https://www.reddit.com/r/rails/comments/hr1aol/everything_you_want_to_know_about_writing_your/
 ---
 Hey r/rails, I've written up a 3-part series on form objects (3 years in the making). If you've wrestled with rails' form helpers and builders to trying to make some frontend design work or with models that don't seem to cooperate, then you've probably already tried implementing form objects, or using a form object gem.
@@ -51,61 +112,163 @@ Thing is, there are many bad ways to do form objects, so I've compiled technique
 * A look at form object (as a opposed to form builder) gems, and whether to use them
 
 It's a bit of a slog, but I promise you it's less of a slog than wading through 1000-line ERB files on a daily basis!
-## [4][Crucial Resources](https://www.reddit.com/r/rails/comments/hqwfyg/crucial_resources/)
-- url: https://www.reddit.com/r/rails/comments/hqwfyg/crucial_resources/
+## [9][Using Greek Alphabet](https://www.reddit.com/r/rails/comments/hr7j3b/using_greek_alphabet/)
+- url: https://www.reddit.com/r/rails/comments/hr7j3b/using_greek_alphabet/
 ---
-Hey everyone! I posted about two months ago a [repo](https://github.com/tylertomlinson/crucial_resources) with all the resources I've collected while starting out. I'm somewhat new to programming (10 months now!). Learning rails and so far its awesome! I had a bunch of local files and was told to put them in a [repo](https://github.com/tylertomlinson/crucial_resources) for others to use. They have helped me tremendously. They are also great when I'm traveling or without internet as they are local. Feel free to use and would love if you had any helpful so called "cheat sheets" you would want to throw in there.
-
-Cheers!
-
-Heres the repo
-
-[https://github.com/tylertomlinson/crucial\_resources](https://github.com/tylertomlinson/crucial_resources)
-## [5][redirect_to in conjunction with send_file?](https://www.reddit.com/r/rails/comments/hqsyhy/redirect_to_in_conjunction_with_send_file/)
-- url: https://www.reddit.com/r/rails/comments/hqsyhy/redirect_to_in_conjunction_with_send_file/
+I have a couple of fields in my database that I need to be able to copy and paste Greek letters into and then display on their respective pages, is there an easy way to accomplish this?
+## [10][Tips for building a "subscribe &amp; save" ecommerce store?](https://www.reddit.com/r/rails/comments/hr7azo/tips_for_building_a_subscribe_save_ecommerce_store/)
+- url: https://www.reddit.com/r/rails/comments/hr7azo/tips_for_building_a_subscribe_save_ecommerce_store/
 ---
-I'm trying to allow a user to download a file and then redirect them to a separate page, but I'm reading that this would trigger two responses so the rails controller won't allow it. Are there any standard workarounds for this?
-## [6][Good service pattern architecture guides?](https://www.reddit.com/r/rails/comments/hqe0zs/good_service_pattern_architecture_guides/)
-- url: https://www.reddit.com/r/rails/comments/hqe0zs/good_service_pattern_architecture_guides/
+I'm looking to create a basic "subscribe and save" subscription for a physical product. At a high level, the user will signup for a monthly, 3, 6, 9 or 12 month subscription. Nothing groundbreaking or innovative there... (right?)
+
+To date, all my RoR efforts have been for random side projects. Now that I'm thinking about dabbling with payments and physical products, I'm finding it to seem a little more daunting.
+
+Should I be building on top of something like Spree? Or rolling my own billing, inventory, shipping code? Or approaching this problem a different way?
+
+Edit: I realize both Spree and Solidus have subscription add-ons for products... I'm getting hung up on what happens if the subscription renews but, for example, my suppliers haven't sent me any inventory.
+## [11][Renaming webpackers "javascript" folder...](https://www.reddit.com/r/rails/comments/hr3cw7/renaming_webpackers_javascript_folder/)
+- url: https://www.reddit.com/r/rails/comments/hr3cw7/renaming_webpackers_javascript_folder/
 ---
-When first getting into Rails (or even web development in general) there is great documentation that explains the basics as well as the Rails framework itself doing a lot of the heavy lifting such as scaffolding, migrations, routing, etc.
-
-If the Rails guides are to be believed, all you need are some models doing simple validations with all logic happening in the controllers wiring them together. At the same time, as a best practice, models should not get too fat and no business logic should happen in the controller. It seems like we're missing a layer in-between: the service. (for convenience lets consider an API-only project without the views)
-
-Coming from the Java / Spring world, it's very clear-cut where the separation happens between controller, service and 'models'. I don't see how this would be applied in Rails, if it is even necessary or what best practices are. Creating something like a *hexagonal architecture* seems completely alien to me in the Rails world. Does that even make sense?
-
-Can you recommend any good guides that touch this of bridging the gap between Controller and Model for anything a bit fancier than *just* a CRUD? Or maybe explain whether I might be thinking with the completely wrong mindset?
-## [7][Using Action Mailbox in Rails 6 to Receive Mail](https://www.reddit.com/r/rails/comments/hqi0lg/using_action_mailbox_in_rails_6_to_receive_mail/)
-- url: https://www.reddit.com/r/rails/comments/hqi0lg/using_action_mailbox_in_rails_6_to_receive_mail/
+I like webpacker but it annoys me that everything goes in a folder "javascript", stylesheets, (images?), etc.  Might this folder be better renamed to "webpacker"?  Is that possible?
+## [12][Having a problem with has_many through joins](https://www.reddit.com/r/rails/comments/hr5k5s/having_a_problem_with_has_many_through_joins/)
+- url: https://www.reddit.com/r/rails/comments/hr5k5s/having_a_problem_with_has_many_through_joins/
 ---
-A “mostly real-life” tutorial on using ActionMailbox to receive and parse incoming mail.
+EDIT: Got it.
 
-[https://robrace.dev/using-action-mailbox-in-rails-6-to-receive-mail/](https://robrace.dev/using-action-mailbox-in-rails-6-to-receive-mail/)
-## [8][How to Helpers and API's](https://www.reddit.com/r/rails/comments/hqgh3w/how_to_helpers_and_apis/)
-- url: https://www.reddit.com/r/rails/comments/hqgh3w/how_to_helpers_and_apis/
----
-I am in the process of upgrading my knowledge as I upgrade my project from Rails 4 to Rails 6. I would like to know more about how to utilize **Helpers** and pulling in data from **External API's**. Can anyone point me to resources for these subjects.
+In my controller index method:
 
-When I google API's and rails I get results about how to create good API's and none on how to pulling data from other API's.
-## [9][Rails API + React Authentication](https://www.reddit.com/r/rails/comments/hq9oja/rails_api_react_authentication/)
-- url: https://www.reddit.com/r/rails/comments/hq9oja/rails_api_react_authentication/
----
-So im pretty familiar with rails and "somewhat" familiar with using rails as an API. I've done a bit with react (enough to know the basics/etc..)
+    @option_values = @variants.joins(option_values: {option_value_variants: :option_value}).uniq
 
-However im a bit confused on the react side on how to handle authentication. Im guessing JWT is probably the most popular? I've used devise before, but it was years ago and only with rails.
+In my index page:
 
-I assume I just essentially want to store the user on react side on the state (I guess I would just store the user and whether they are logged in?) Seems like this would be ideal for redux store (I just need to get more familiar with redux) so it'd be pretty annoying to have to keep track of that user/logged in state for every component.
+     &lt;% @option_values.each do |option_type| %&gt;
+       &lt;%= option_type.option_values.map {|ov| ov.name}.join(' , ') %&gt;
+     &lt;% end %&gt;
 
-Anyways, is there a standard way to do this currently?
+&amp;#x200B;
 
-Thanks! (FWIW Im re-writing a "facebook clone" app with rails/react that I created for TheOdinProject)
-## [10][app has different sessions for www and non-www](https://www.reddit.com/r/rails/comments/hq7tua/app_has_different_sessions_for_www_and_nonwww/)
-- url: https://www.reddit.com/r/rails/comments/hq7tua/app_has_different_sessions_for_www_and_nonwww/
----
-The www and non-www versions of my Rails app on Heroku are two completely different sessions (I'm using Devise), and I want to prevent www by redirecting to https.
+Say I have these models:
 
-[This](https://help.heroku.com/J2R1S4T8/can-heroku-force-an-application-to-use-ssl-tls) says to use `config.force_ssl = true` in `config/environments/production.rb` to force https, but that just redirects http to https. How can I redirect all www requests to https as well?
-## [11][read messages when deliver Immediately in rabbitmq](https://www.reddit.com/r/rails/comments/hqfcc9/read_messages_when_deliver_immediately_in_rabbitmq/)
-- url: https://www.reddit.com/r/rails/comments/hqfcc9/read_messages_when_deliver_immediately_in_rabbitmq/
----
-i want way to read messages when deliver Immediately in rabbitmq . for example when services send message to exchange , another services receives this message Immediately .
+    class OptionType &lt; ApplicationRecord
+      belongs_to :product
+      has_many :option_values, dependent: :destroy
+    end
+    
+    class OptionValue &lt; ApplicationRecord
+      belongs_to :option_type
+      has_many :option_value_variants, dependent: :destroy
+      has_many :variants, through: :option_value_variants
+    end
+    
+    class Variant &lt; ApplicationRecord
+      belongs_to :product
+      has_many :option_value_variants, dependent: :destroy
+      has_many :option_values, through: :option_value_variants
+    end
+    
+    class OptionValueVariant &lt; ApplicationRecord
+      belongs_to :option_value
+      belongs_to :variant
+    end
+
+In the Variant index page I am trying to output a list of the option\_value names that are associated with that particular variant. How would I get that in the controller? Everything I have been trying produces active record join errors.
+
+ovv = OptionValueVariant.first
+
+ovv.option\_value gives me the correct answer for that particular one, but when I try to get all option\_value\_variants for a variant I get active record association join errors.
+
+Any ideas?
+
+    class Admin::VariantsController &lt; Admin::ApplicationController
+      before_action :set_variant, only: [:show, :edit, :update, :destroy]
+      before_action :set_product
+      # GET /variants
+      # GET /variants.json
+      def index
+        prodid = params[:product_id]
+        if !prodid.nil?
+          @variants = Variant.where(:product_id =&gt; prodid)
+        else
+          @variants = Variant.all
+        end
+        @option_types = @product.option_types
+        @option_values = @variants.joins(option_values: {option_value_variants: :option_value}).uniq
+      end
+    
+    
+      # GET /variants/1
+      # GET /variants/1.json
+      def show
+      end
+    
+      # GET /variants/new
+      def new
+        @variant = Variant.new
+        @option_types = @product.option_types
+      end
+    
+      # GET /variants/1/edit
+      def edit
+        @option_types = @product.option_types
+      end
+    
+      # POST /variants
+      # POST /variants.json
+      def create
+        @variant = Variant.new(variant_params)
+    
+        respond_to do |format|
+          if @variant.save
+    
+            @option_types = @product.option_types
+            format.html { redirect_to admin_product_variants_url, notice: 'Variant was successfully created.' }
+            format.json { render :show, status: :created, location: @variant }
+          else
+            format.html { render :new }
+            format.json { render json: @variant.errors, status: :unprocessable_entity }
+          end
+        end
+      end
+    
+      # PATCH/PUT /variants/1
+      # PATCH/PUT /variants/1.json
+      def update
+        @option_types = @product.option_types
+        respond_to do |format|
+          if @variant.update(variant_params)
+    
+            format.html { redirect_to admin_product_variants_url, notice: 'Variant was successfully updated.' }
+            format.json { render :show, status: :ok, location: @variant }
+          else
+            format.html { render :edit }
+            format.json { render json: @variant.errors, status: :unprocessable_entity }
+          end
+        end
+      end
+    
+      # DELETE /variants/1
+      # DELETE /variants/1.json
+      def destroy
+        @variant.destroy
+        respond_to do |format|
+          format.html { redirect_to admin_product_variants_url, notice: 'Variant was successfully destroyed.' }
+          format.json { head :no_content }
+        end
+      end
+    
+    
+      private
+        # Use callbacks to share common setup or constraints between actions.
+        def set_variant
+          @variant = Variant.find(params[:id])
+        end
+        def set_product
+          @product = Product.find(params[:product_id])
+        end
+        # Only allow a list of trusted parameters through.
+        def variant_params
+          params.require(:variant).permit(:sku, :price_cents, :price_currency, :is_master, :product_id, :count_in_stock, option_value_ids: [])
+        end
+    end
+
+&amp;#x200B;

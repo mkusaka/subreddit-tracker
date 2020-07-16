@@ -83,288 +83,147 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
-## [3][A look at React Router 6](https://www.reddit.com/r/reactjs/comments/hrgpy4/a_look_at_react_router_6/)
-- url: https://www.carlrippon.com/a-look-at-react-router-6/
+## [3][New from Adobe: Introducing React Spectrum](https://www.reddit.com/r/reactjs/comments/hru4ov/new_from_adobe_introducing_react_spectrum/)
+- url: https://react-spectrum.adobe.com/blog/introducing-react-spectrum.html
 ---
 
-## [4][This sub has grown 100% since 1 year ago](https://www.reddit.com/r/reactjs/comments/hr4fuu/this_sub_has_grown_100_since_1_year_ago/)
-- url: https://www.reddit.com/r/reactjs/comments/dzuy8h/this_sub_has_grown_50_since_july/
+## [4][Movie time calculator](https://www.reddit.com/r/reactjs/comments/hs6e7e/movie_time_calculator/)
+- url: https://v.redd.it/v2gp0x1gr6b51
 ---
 
-## [5][Create simple POS with React.js, Node.js, and MongoDB #8: CRUD POS Machine](https://www.reddit.com/r/reactjs/comments/hrl0au/create_simple_pos_with_reactjs_nodejs_and_mongodb/)
-- url: https://blog.soshace.com/create-simple-pos-with-react-js-node-js-and-mongodb-8-crud-pos-machine/
+## [5][Today @ 1PM ET - Learn about React at scale, monorepos, and how Etsy gets it done](https://www.reddit.com/r/reactjs/comments/hro9gf/today_1pm_et_learn_about_react_at_scale_monorepos/)
+- url: https://www.reddit.com/r/reactjs/comments/hro9gf/today_1pm_et_learn_about_react_at_scale_monorepos/
+---
+Today on React Wednesday we talk to u/technoheads about his work with large JS/React codebases at u/Etsy. They have 12k modules in a monorepo and deal with massive scaling challenges. 
+
+&amp;#x200B;
+
+Come learn about React at scale with us at 1:00 Eastern (\~ 3 hours from now) 
+
+[https://www.twitch.tv/codeitlive](https://www.twitch.tv/codeitlive)  
+
+&amp;#x200B;
+
+Learn more about React Wednesdays and get calendar reminders at: [https://www.telerik.com/react-wednesdays](https://www.telerik.com/react-wednesdays)
+## [6][I built an app that lets you stream PC output to Sonos devices](https://www.reddit.com/r/reactjs/comments/hrri09/i_built_an_app_that_lets_you_stream_pc_output_to/)
+- url: https://v.redd.it/ns6iytkfz1b51
 ---
 
-## [6][Apollo 3.0 is out](https://www.reddit.com/r/reactjs/comments/hr4vie/apollo_30_is_out/)
-- url: https://www.apollographql.com/docs/react/api/core/ApolloClient/
+## [7][How to handle Async operations with Redux | Imaginary Cloud](https://www.reddit.com/r/reactjs/comments/hs836y/how_to_handle_async_operations_with_redux/)
+- url: https://www.imaginarycloud.com/blog/how-to-handle-async-operations-with-redux/
 ---
 
-## [7][Cannot find store in context of Connect(App)](https://www.reddit.com/r/reactjs/comments/hrmu6e/cannot_find_store_in_context_of_connectapp/)
-- url: https://www.reddit.com/r/reactjs/comments/hrmu6e/cannot_find_store_in_context_of_connectapp/
+## [8][Render static page, then lazy load react bundle](https://www.reddit.com/r/reactjs/comments/hs7ohy/render_static_page_then_lazy_load_react_bundle/)
+- url: https://www.reddit.com/r/reactjs/comments/hs7ohy/render_static_page_then_lazy_load_react_bundle/
 ---
-# Need help with the below error
+Hi there,
 
-**Could not find "store" in the context of "Connect(App)". Either wrap the root component in a &lt;Provider&gt;, or pass a custom React context provider to &lt;Provider&gt; and the corresponding React context consumer to Connect(App) in connect options**
+I am new to react and i was wondering how to lazy load my "massive" react bundle after showing just the static landing page (entry point "/" , like login, sign up). 
 
-========================================
-**Here is my index.js file**
-```
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import App from "./App";
+&amp;#x200B;
 
-import { Provider } from "react-redux";
-import configureStore from "./components/redux/store/configureStore";
-import { loadProduct } from "./components/redux/actions/productActions";
-import { loadUser } from "./components/redux/actions/userActions";
+basically i want to load the landing page which is just sign up and login forms FAST, before loading the react bundle (including a massive Firebase dependency) while the user is on the landing page.
 
-const store = configureStore();
+&amp;#x200B;
 
-store.dispatch(loadProduct())
-store.dispatch(loadUser())
-ReactDOM.render(
-  &lt;Provider store={store}&gt;
-    &lt;App /&gt;
-  &lt;/Provider&gt;,
-  document.getElementById("root")
-);
+how do I split my static landing page from the rest of my app? 
 
-```
+&amp;#x200B;
 
-===========================================
-
-**Here is my App.js file**
-```
-import React, { useState,lazy, Suspense } from "react";
-import { BrowserRouter as Router,Route,Switch,NavLink,Link,Redirect} from "react-router-dom";
-import { Button, Nav } from "react-bootstrap";
-import Navbar from "react-bootstrap/Navbar";
-import logo from "./assets/images/MainLogo.jpeg";
-import * as productActions from "./components/redux/actions/productActions";
-import * as userActions from './components/redux/actions/userActions'
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { FaFileExport } from "react-icons/fa";
-import {MdAccountCircle,MdContentPaste} from 'react-icons/md'
-const Login = lazy(()=&gt;import('./components/user/Login'))
-const Register=lazy(()=&gt;import("./components/user/Register"))
-const MostViewed = lazy(()=&gt;import('./components/chart/MostViewed'))
-const Profile = lazy(()=&gt;import('./components/user/Profile'))
-const AllProductsPage = lazy(()=&gt;import("./components/products/AllProductsPage"))
-const ProductDetail = lazy(()=&gt;import('./components/products/ProductDetail'))
-const AddProduct = lazy(()=&gt;import('./components/products/AddProduct'))
-const About = lazy(()=&gt;import('./components/user/About'))
-// import Login from "./components/user/Login";
-// import Register from "./components/user/Register";
-// import MostViewed from './components/chart/MostViewed';
-// import Profile from './components/user/Profile';
-// import AllProductsPage from "./components/products/AllProductsPage";
-// import ProductDetail from './components/products/ProductDetail'
-// import AddProduct from './components/products/AddProduct'
-// import About from './components/user/About';
-
-function App(props) {
-  //Login modal
-  const [show, setShow] = useState(false);
-  const handleClose     = () =&gt; setShow(false);
-  const handleShow      = () =&gt; {setShow(true)}
-  //Login Status
-  
-  const [loggedIn, setLogin] = useState(localStorage.getItem("auth")!==null? JSON.parse(localStorage.getItem("auth")) :false);
-  const handleLogin = () =&gt; {setLogin(JSON.parse(localStorage.getItem("auth")))}
-
-  const currentUser = JSON.parse(localStorage.getItem("user"));
-  const NavStyle = { color: "white","textDecoration":"none","outline":"none","fontWeight": "bold","padding":"0px 8px 0px 8px"  }
-  
-  
+using create-react-app FYI
+## [9][Testing a wrapper component](https://www.reddit.com/r/reactjs/comments/hs7iel/testing_a_wrapper_component/)
+- url: https://www.reddit.com/r/reactjs/comments/hs7iel/testing_a_wrapper_component/
+---
+I am using Jest and Enzyme to write tests for my application. I have run into an issue testing a wrapping component that uses a custom hook. I'm a bit unsure if my whole approach is wrong.  
 
 
+I have the following component:
 
-
-  const Header = (props) =&gt; (
-   
-    &lt;div className="App"&gt;
-      &lt;Navbar bg="dark" variant="dark" expand="lg"&gt;
-        
-          &lt;Navbar.Brand&gt;
-          &lt;Link to="/"&gt;
-            &lt;img
-              alt=""
-              src={logo}
-              style={{ paddingRight: "20px","borderRadius":"50px" }}
-              width="80"
-              height="50"
-              className="d-inline-block align-top"
-            /&gt;
-            &lt;/Link&gt;
-          &lt;/Navbar.Brand&gt;
-        
-        &lt;Navbar.Toggle aria-controls="responsive-navbar-nav" /&gt;
-        &lt;Navbar.Collapse id="basic-navbar-nav"&gt;
-          &lt;Nav className="mr-auto"&gt;
-          &lt;NavLink to="/" exact={true} style={NavStyle} activeStyle={{ "color": "red"}} &gt;
-                Home
-              &lt;/NavLink&gt;
-            
-              &lt;NavLink to="/about" exact={true} style={NavStyle} activeStyle={{ "color": "red"}} &gt;
-                About
-              &lt;/NavLink&gt;
-
-            {loggedIn &amp;&amp;
-            (
-
-              &lt;NavLink to="/chart" exact={true} style={NavStyle} activeStyle={{ "color": "red" }} &gt;
-              Most Viewed Products
-              &lt;/NavLink&gt;
-            )}
-
-            {loggedIn &amp;&amp;
-            (
-              
-              &lt;NavLink to="/profile" exact={true} style={NavStyle} activeStyle={{ "color": "red" }} &gt;
-                  My Profile
-                &lt;/NavLink&gt;
-            )}
-          &lt;/Nav&gt;
-        &lt;/Navbar.Collapse&gt;
-
-
-          {!loggedIn &amp;&amp; (
-            &lt;Link to='/register'&gt;
-            &lt;Button variant="success" style={{"marginRight":"30px","fontWeight":"bold"}}&gt;  
-              &lt;MdContentPaste/&gt;{" "}Register
-            &lt;/Button&gt;
-              &lt;/Link&gt;
-          )}
-
-          {loggedIn ? (
-            &lt;div&gt;
-              &lt;Navbar.Text style={{ color: "white", paddingRight: "20px" }}&gt;
-              &lt;MdAccountCircle/&gt; {currentUser!==null ? (currentUser.map(user=&gt;user.name.firstName)) : false }
-              &lt;/Navbar.Text&gt;
-
-              &lt;Button variant="danger" onClick={()=&gt;{localStorage.setItem("auth",false);
-                                                    setLogin(JSON.parse(localStorage.getItem("auth")));
-                                                    localStorage.clear();}}&gt;
-              &lt;FaFileExport/&gt;{" "}Logout
-              &lt;/Button&gt;
-            &lt;/div&gt;
-          ) : (
-            &lt;Button variant="primary" onClick={()=&gt;handleShow()} style={{"fontWeight":"bold"}}&gt;{" "}
-              Login{" "}
-            &lt;/Button&gt;
-          )}
-      &lt;/Navbar&gt;
-
-      &lt;Login show={show} handleClose={handleClose} handleLogin={handleLogin} users={props.users}/&gt;
-    &lt;/div&gt;
-  );
-
-
-  const Footer = ()=&gt;{
-    return(&lt;footer&gt;
-          &lt;p style={{"textAlign":"center","backgroundColor":"#333","color":"white","padding":"20px"}}&gt;Copyright @2020, Rohit K F&lt;/p&gt;
-        &lt;/footer&gt;)
-  }
-
-  return (
-    &lt;Suspense fallback={&lt;h1&gt;Loading.....&lt;/h1&gt;}&gt;
-    &lt;Router&gt;
-      &lt;Header loggedIn={loggedIn} handleLogin={handleLogin} users={props.users}/&gt;
-      &lt;Switch&gt;
-        &lt;Route exact={true} path="/"     render={(props)=&gt;&lt;AllProductsPage {...props} loggedIn={loggedIn} /&gt;}   /&gt;
-        &lt;Route path="/about"             component={About}/&gt; 
-        &lt;Route path="/register"          component={Register}/&gt;
-        &lt;Route path="/ProductDetail"     component={() =&gt; loggedIn ? (&lt;ProductDetail/&gt;) : ( &lt;Redirect to="/"/&gt;) }/&gt;
-        &lt;Route path="/ProductDetail/:id" component={() =&gt; loggedIn ? (&lt;ProductDetail/&gt;) : ( &lt;Redirect to="/"/&gt;) }/&gt;
-        &lt;Route path="/addProduct"        component={() =&gt; loggedIn ? (&lt;AddProduct/&gt;)    : ( &lt;Redirect to="/"/&gt;) }/&gt;
-        &lt;Route path="/chart"             component={() =&gt; loggedIn ? (&lt;MostViewed/&gt;)    : ( &lt;Redirect to="/"/&gt;) }/&gt; 
-        &lt;Route path="/profile"           component={() =&gt; loggedIn ? (&lt;Profile/&gt;)       : ( &lt;Redirect to="/"/&gt;) }/&gt;
-        &lt;Route                           component={() =&gt; &lt;h1 style={{"display":"flex","justifyContent":"center","padding-top":"150px","minHeight":"100vh"}}&gt;Page NOT FOUND&lt;/h1&gt; }/&gt;      
-      &lt;/Switch&gt;
-      &lt;Footer/&gt;
-    &lt;/Router&gt;
-    &lt;/Suspense&gt;
-  );
-}
-
-function mapStateToProps(state, ownProps) {
-  return {
-    products: state.products,
-    users : state.users
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(productActions, dispatch),
-    userAction : bindActionCreators(userActions,dispatch)
-  };
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(App);
-```
-
-==================================================
-
-**Here is what i wrote in App.test.js(Not so familiar with test cases)**
-
-```
-import React from 'react'
-import App from './App';
-import {mount} from 'enzyme';
-
-describe('All Products Page Snapshot', () =&gt; {
-    let mountwrapper;
+    ....
+    import api from "../api/api"
+    import useHttpErrorHandler from "../hooks/httpErrorHandling"
     
-    beforeEach(()=&gt;{
-        mountwrapper =mount(&lt;App/&gt;);
-    })    
+    const withErrorHandler = (WrappedComponent) =&gt; {
+        return props =&gt; {
+            const [error, clearError] = useHttpErrorHandler(api)
+    
+            const errorDismissed = () =&gt; {
+                clearError()
+                props.history.push("/")
+            }
+    
+            return (
+                &lt;React.Fragment&gt;
+                    &lt;WrappedComponent {...props}/&gt;
+                    {error ? &lt;Alert variant="danger" dismissible onClose={() =&gt; errorDismissed()}&gt;
+                        &lt;Alert.Heading&gt;Oh snap! You got an error while fetching posts!&lt;/Alert.Heading&gt;
+                        &lt;p&gt;
+                            Please try again another time. Sorry for the inconvenience 
+                        &lt;/p&gt;
+                    &lt;/Alert&gt; : null}
+                &lt;/React.Fragment&gt;)
+        }
+    }
+    export default withErrorHandler;
 
-    afterEach(()=&gt;{
-        mountwrapper.unmount();
-    })
+and assume I have a &lt;Posts/&gt; component, I am just wrapping it like:
 
-    it('renders correctly', () =&gt; {
-        expect(mountwrapper).toMatchSnapshot();
-    });
+export default *withErrorHandler(Posts)*  
 
-});
-```
 
-# Please help me solve the issue soon. Thank you guys !!
-## [8][Where is the definition for componentDidMount in the React repo?](https://www.reddit.com/r/reactjs/comments/hrmbbl/where_is_the_definition_for_componentdidmount_in/)
-- url: https://www.reddit.com/r/reactjs/comments/hrmbbl/where_is_the_definition_for_componentdidmount_in/
+So, I am a bit unsure how to change \[error, clearError\] since it is inside the component. Basically, I want to write a test like:
+
+    const wrapper = shallow(&lt;withErrorHandler/&gt;)
+    // change the error value so it is true
+    expect(wrapper.contains(&lt;Alert/&gt;)).toEqual(true)
+
+1. How do I change the error value inside the component? 
+2. Can I even do this: shallow(&lt;withErrorHandler/&gt;), since it expects a component as an input. Should I do something like shallow(withErrorHandler(&lt;p/&gt;)) \*this throws an error\*
+
+Or am I just tackling the whole situation wrong? Is this more an integration test?
+## [10][The new layout animation APIs in Framer Motion 2](https://www.reddit.com/r/reactjs/comments/hrpn9b/the_new_layout_animation_apis_in_framer_motion_2/)
+- url: https://www.framer.com/api/motion/animation/#layout-animations
 ---
-I was looking through the React repo to understand how it works under the hood. I'm not able to find the definitions for the lifecycle hooks such as componentDidMount.
-## [9][A library to generate the maximally efficient series of unique keys for a given alphabet.](https://www.reddit.com/r/reactjs/comments/hrm4xh/a_library_to_generate_the_maximally_efficient/)
-- url: https://github.com/gactjs/key
+
+## [11][React Hooks useEffect() dependencies. Not sure if I'm doing this right.](https://www.reddit.com/r/reactjs/comments/hs4jd5/react_hooks_useeffect_dependencies_not_sure_if_im/)
+- url: https://www.reddit.com/r/reactjs/comments/hs4jd5/react_hooks_useeffect_dependencies_not_sure_if_im/
+---
+I'm hoping someone can explain where I'm going wrong with React hooks.
+
+I created a reusable `useTimer()` hook (it's essentially state that can trigger events like `onStart()`, `onTick()`, etc.). The idea is that I can add this to any presentational component that needs timer functionality.
+
+What I've written *appears* to work as expected. However, there are a few issues. For example, I put a `console.log('Render!');` statement in the presentation component and it's getting called twice, when I'd expect the component to only render once. Oddly enough, this doesn't seem to be happening when I run the code on codepen (see link below). But outside of codepen, everytime an effect fires, I get:  
+*Render!*
+
+*Render!*
+
+The other issue is the multiple eslint warnings in the console, like the following:
+
+&gt;*"React Hook useEffect has missing dependencies: 'duration' and 'onTick'. Either include them or remove the dependency array. If 'onTick' changes too often, find the parent component that defines it and wrap that definition in useCallback"*  
+&gt;  
+&gt;*"React Hook useEffect has missing dependencies: 'duration', 'elapsed', 'onPause', 'onResume', 'onStart', 'onStop', 'onTimeout', and 'prevStatus'. Either include them or remove the dependency array. If 'onStart' changes too often, find the parent component that defines it and wrap that definition in useCallback"*
+
+This is where my understanding of `useEffect()` and `useCallback()` is lacking. For example, I only want the following code to run when the value of `elapsed` changes:
+
+      // Handle tick event. (i.e. when elapsed is incremented)
+      useEffect(() =&gt; {
+        if (elapsed &gt; 0 &amp;&amp; isFunction(onTick)) {
+          onTick(duration, elapsed); // call onTick function passed in from presentational component
+        }
+      }, [elapsed]);
+
+If I add `duration` and `onTick` to the list of dependencies, then this code will also trigger when, say, `duration` changes, which is not when I want it to be triggered. Right now it does what I want but I suspect, based on the warnings I'm receiving, that I'm using `useEffect()` incorrectly. I'm also using this approach in a few other places in my useTimer() hook.
+
+I don't understand how `useCallback()` (i.e. creating a memoized function) would be beneficial here, or what other approaches I could take in designing this hook. I've read the official docs and numerous articles and I'm struggling to find an example that handles events in this way.
+
+Below is a codepen with my `useTimer()` code. I've purposely stripped out a lot of the formatting and error-checking and merged everything into a single file for simplicity sake. If you run the timer, you'll see the output in the console. However, in order to see the eslint warnings and duplicate *Rendering!* messages, you'd probably need to run it from a regular command line app.
+
+[https://codepen.io/robertmarriott/pen/bGEmEPV](https://codepen.io/robertmarriott/pen/bGEmEPV)
+
+Any help/feedback is greatly appreciated. If my design is way off, then please let me know. I'm trying to get my head around the React hooks way of building things.
+
+Thanks
+## [12][Hello folks. I wrote this custom boilerplate for react apps as an alternative to CRA. Feedback and contributions are well](https://www.reddit.com/r/reactjs/comments/hs6yer/hello_folks_i_wrote_this_custom_boilerplate_for/)
+- url: https://react-sling.netlify.app/
 ---
 
-## [10][Is there repo so one can practice fixing react performance issues?](https://www.reddit.com/r/reactjs/comments/hr3ujv/is_there_repo_so_one_can_practice_fixing_react/)
-- url: https://www.reddit.com/r/reactjs/comments/hr3ujv/is_there_repo_so_one_can_practice_fixing_react/
----
-I have coworkers that don't know how to fix these issues. Some project that is setup to be riddled with issues and has them fix them themselves while also showing what the issues are would be great. Anything like that?   
-
-
-Examples
-
-\- Update to a list item which causes the whole list the render    
-\- using shallowEqual in useSelector hook  
-\- Passing callbacks to React Children   
-\- Virtualize Long Lists  
-\- Memo and useCallback  
-\- Mutating state or redux state  
-\- List goes on
-## [11][Stock Research + Unusual Options Activity + Reddit Research Platform](https://www.reddit.com/r/reactjs/comments/hralr5/stock_research_unusual_options_activity_reddit/)
-- url: https://www.reddit.com/r/reactjs/comments/hralr5/stock_research_unusual_options_activity_reddit/
----
-I made a stock research platform. It helps me find plays with all the information I am looking for without the noise, as well as scraping finance subreddits to aggregate all research posts in one place. I also added unusual options activity to make it more robust. Let me know what you think!
-
-[ ](https://reddit.com/link/hralr5/video/kp8143956wa51/player)
-## [12][React App - Fallen Film Stars](https://www.reddit.com/r/reactjs/comments/hre5wt/react_app_fallen_film_stars/)
-- url: https://www.reddit.com/r/reactjs/comments/hre5wt/react_app_fallen_film_stars/
----
-I've been watching a series of Hitchcock movies lately while in quarantine, and kept wondering who in the cast is still alive. IMDB got a little tedious, so I decided to make a quick app out of it, where you can search a movie and see who in the cast and crew has passed on. Here it is: [https://www.fallenfilmstars.com/film/1924](https://www.fallenfilmstars.com/film/1924)

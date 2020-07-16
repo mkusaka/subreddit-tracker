@@ -1,5 +1,68 @@
 # Kotlin
-## [1][A problem with reading files. Might be encoding-related.](https://www.reddit.com/r/Kotlin/comments/hrkxg7/a_problem_with_reading_files_might_be/)
+## [1][Which Kotlin web development framework to learn?](https://www.reddit.com/r/Kotlin/comments/hs80qw/which_kotlin_web_development_framework_to_learn/)
+- url: https://www.reddit.com/r/Kotlin/comments/hs80qw/which_kotlin_web_development_framework_to_learn/
+---
+I have been using Java/Spring for web development for years.
+
+I recently have started learning Kotlin. I want to explore more and use/try different web development framework with Kotlin.
+
+I know Spring  has a good support for Kotlin but I want to learn new framework that I can use in Production if chance permits.
+
+Any suggestion between Ktor, Vertx or Micronaut and why?
+## [2][Kotlin 1.4-M3: Generating Default Methods in Interfaces](https://www.reddit.com/r/Kotlin/comments/hs92c0/kotlin_14m3_generating_default_methods_in/)
+- url: https://blog.jetbrains.com/kotlin/2020/07/kotlin-1-4-m3-generating-default-methods-in-interfaces/
+---
+
+## [3][Should I first learn Kotlin/Native (multiplatform) or Swift?](https://www.reddit.com/r/Kotlin/comments/hs8e2d/should_i_first_learn_kotlinnative_multiplatform/)
+- url: https://www.reddit.com/r/Kotlin/comments/hs8e2d/should_i_first_learn_kotlinnative_multiplatform/
+---
+I've done a lot of research, and Kotlin/Native and JVM finally seems like the answer to the endless quest for the best "write once, run anywhere" toolset.
+
+I have very minimal programming experience, but I refuse to start with Python first for a few reasons. I'd eventually like to be able to have high-performance iOS and Android apps, macOS, Linux, and Windows apps using TornadoFX (or Kotlin/Native?), and run on the web via WebAssembly.
+
+My problems are:
+
+* I'll end up having to learn multiple languages (Swift, Kotlin, TypeScript, maybe Go) if I don't choose Kotlin Multiplatform, though I feel like this will happen anyway since I'm working with multiple SDKs and frameworks
+* I don't have access to an Android device (Apple-based household), so physically running Android apps isn't viable and I'm not familiar with Google's ecosystem (don't want to be, but I have to be)
+* Unlike Swift, there aren't a ton of resources to learn Kotlin, though I do own the continuously updated Atomic Kotlin book/Stepik course
+* Multiplatform projects are still experimental, but I doubt I'll have a professional app ready before it's considered stable. I'm afraid a lot will change and break, making a more stable solution better for learning and getting things up and running
+* I've heard Xcode is garbage compared to IntelliJ IDEA/Android Studio
+## [4][jasync-sql and object mapping](https://www.reddit.com/r/Kotlin/comments/hs1isx/jasyncsql_and_object_mapping/)
+- url: https://www.reddit.com/r/Kotlin/comments/hs1isx/jasyncsql_and_object_mapping/
+---
+Coming from the dotnet world and using dapper to map to a class, wondering if there's a way to use the speed of jasync-sql along with either a supporting library or by itself to do something like:
+
+     val future = con.sendPreparedStatement(query, values)
+     val result = future.get&lt;MyDataClass&gt;()
+
+Is there an easy way to map to a data class - or should I be looking into jdbi, jooq, exposed, or something else entirely instead?
+## [5][Kotlin extensions (KTX) for the Places SDK for Android](https://www.reddit.com/r/Kotlin/comments/hrtjfg/kotlin_extensions_ktx_for_the_places_sdk_for/)
+- url: https://github.com/googlemaps/android-places-ktx
+---
+
+## [6][[Open Source] I'm working on an selfhosted web app for remote planning poker using Ktor and KotlinJS/React](https://www.reddit.com/r/Kotlin/comments/hrt1ul/open_source_im_working_on_an_selfhosted_web_app/)
+- url: https://github.com/Foso/Showdown
+---
+
+## [7][Flym is a android app build kotlin it is open source and anyone can contribute to it.](https://www.reddit.com/r/Kotlin/comments/hs6d1v/flym_is_a_android_app_build_kotlin_it_is_open/)
+- url: https://www.reddit.com/r/Kotlin/comments/hs6d1v/flym_is_a_android_app_build_kotlin_it_is_open/
+---
+Try the app it is I think best RSS reader app for Android and developer try to contribute to the I am not promoting the app I is really too good and serve best job
+## [8][passing safe args to one fragment](https://www.reddit.com/r/Kotlin/comments/hrwd5o/passing_safe_args_to_one_fragment/)
+- url: https://www.reddit.com/r/Kotlin/comments/hrwd5o/passing_safe_args_to_one_fragment/
+---
+I am currently working on todolist app and got stuck working with safe args. I have recyclerview adapter items and when I click on one item I want to navigate to that item and pass my data from the adapter to the detail fragment. If I tried creating a new item, I get the toast message "updated" instead of "created" and my cardview is blank. So it somehow is updating a non existence item. I have one layout and want to use this layout to either create a new item or pass existing item data into it and updated that said item.
+
+Detail Fragment:  [https://pastebin.com/bYTxTWj7](https://pastebin.com/bYTxTWj7)
+
+nav\_graph xml:  [https://pastebin.com/9cWbWWrY](https://pastebin.com/9cWbWWrY)
+
+List adapter:  [https://pastebin.com/khsDFh4L](https://pastebin.com/khsDFh4L)
+
+Cardview : [https://pastebin.com/XxAJgnnY](https://pastebin.com/XxAJgnnY)
+
+github: [https://github.com/ikassim9/TodoList](https://github.com/ikassim9/TodoList) 
+## [9][A problem with reading files. Might be encoding-related.](https://www.reddit.com/r/Kotlin/comments/hrkxg7/a_problem_with_reading_files_might_be/)
 - url: https://www.reddit.com/r/Kotlin/comments/hrkxg7/a_problem_with_reading_files_might_be/
 ---
 Hello! So I'm going through JetBrains Academy's Kotlin course, and I'm stuck with one of their projects, ASCII New Roman. Basically I am to render the text in ASCII form.
@@ -51,49 +114,7 @@ Unfortunately the output spits out the following:
       
 
 I suspected this might be some encoding error, but I already verified that the file is in UTF-8. I already tinkered with a few settings in the IDE to no avail. Other users seem to be experiencing this problem as well. I really don't know why special characters are getting converted to HTML codes.
-## [2][Multiplatform Encryption with SQLDelight and SQLCipher](https://www.reddit.com/r/Kotlin/comments/hra59x/multiplatform_encryption_with_sqldelight_and/)
+## [10][Multiplatform Encryption with SQLDelight and SQLCipher](https://www.reddit.com/r/Kotlin/comments/hra59x/multiplatform_encryption_with_sqldelight_and/)
 - url: https://dev.to/samhill303/multiplatform-encryption-with-sqldelight-and-sqlcipher-5do4
----
-
-## [3][Help. Started using Kotlin few hours ago. Got compiler. Started with atomic kotlin course. First Exercise got me error. Installed other version of gradle. But now there is simple problem i can't resolve](https://www.reddit.com/r/Kotlin/comments/hr842l/help_started_using_kotlin_few_hours_ago_got/)
-- url: https://www.reddit.com/r/Kotlin/comments/hr842l/help_started_using_kotlin_few_hours_ago_got/
----
-Please tell me where i am wrong
-
-https://preview.redd.it/anzc5okijva51.png?width=908&amp;format=png&amp;auto=webp&amp;s=6c17a06b1da554d4c901b3f37302970e1121d72e
-## [4][Talking Kotlin - Gradient Descent](https://www.reddit.com/r/Kotlin/comments/hr7z89/talking_kotlin_gradient_descent/)
-- url: https://talkingkotlin.com/gradient-descent/
----
-
-## [5][Kotlin - A Better, More Cloud-Friendly Java](https://www.reddit.com/r/Kotlin/comments/hqx6fs/kotlin_a_better_more_cloudfriendly_java/)
-- url: https://www.youtube.com/watch?v=e0y1GJ7CfAk
----
-
-## [6][Using C in Kotlin](https://www.reddit.com/r/Kotlin/comments/hr7zr7/using_c_in_kotlin/)
-- url: https://www.youtube.com/watch?v=WlNzx6GEpkM
----
-
-## [7][How do I make a custom getter for a hashmap?](https://www.reddit.com/r/Kotlin/comments/hrcj55/how_do_i_make_a_custom_getter_for_a_hashmap/)
-- url: https://www.reddit.com/r/Kotlin/comments/hrcj55/how_do_i_make_a_custom_getter_for_a_hashmap/
----
-    fun getArenaSpawn(id: Int): Location = Location(
-            plugin.config.getString("arenas.${id}.world")?.let { Bukkit.getWorld(it) },
-            plugin.config.getDouble("arenas.${id}.x", 0.0),
-            plugin.config.getDouble("arenas.${id}.y", 0.0),
-            plugin.config.getDouble("arenas.${id}.z", 0.0),
-            plugin.config.getDouble("arenas.${id}.yaw", 0.0).toFloat(),
-            plugin.config.getDouble("arenas.${id}.pitch", 0.0).toFloat())
-
-So I have the following getter code but I don't want to use getArenaSpawn(id) I want to be able to do arenaSpawn\[id\] but when I try making a hashmap with a custom getter I'm completely lost because I don't know what the keyword to reference the index being used is. So my question is, for a HashMap*&lt;*Int, Location*&gt;* hashmap how would I reference the Int in the getter?
-## [8][Kotlin Microservices On Kubernetes - Part 4: Best Practices](https://www.reddit.com/r/Kotlin/comments/hr1vo4/kotlin_microservices_on_kubernetes_part_4_best/)
-- url: https://www.youtube.com/watch?v=ayoT9U4Pd8Y&amp;feature=share
----
-
-## [9][Should we always use the `this` keyword?](https://www.reddit.com/r/Kotlin/comments/hr3rak/should_we_always_use_the_this_keyword/)
-- url: https://www.reddit.com/r/Kotlin/comments/hr3rak/should_we_always_use_the_this_keyword/
----
-IMO the `this` keyword is an outdated java construct that should only be used when absolutely necessary in Kotlin. However, at my current job, we are forced to use the `this` keyword everywhere we can because it makes your code more concise and easier to understand in a text editor (or GitHub). I do not believe we should write code for GitHub, I believe we write code for our environment. Modern IDE's have plenty of syntaxes that makes the `this` keyword obsolete. What are your thoughts on using `this` in your Kotlin code?
-## [10][Getting started with Ktor](https://www.reddit.com/r/Kotlin/comments/hqwhqz/getting_started_with_ktor/)
-- url: https://www.mscharhag.com/kotlin/ktor-getting-started
 ---
 

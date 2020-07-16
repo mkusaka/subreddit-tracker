@@ -39,236 +39,236 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][OMG! I just got my first user on my rails app](https://www.reddit.com/r/rails/comments/hr6ms0/omg_i_just_got_my_first_user_on_my_rails_app/)
-- url: https://www.reddit.com/r/rails/comments/hr6ms0/omg_i_just_got_my_first_user_on_my_rails_app/
+## [3][Why is this migration giving a 'no such table' error?](https://www.reddit.com/r/rails/comments/hs4rgg/why_is_this_migration_giving_a_no_such_table_error/)
+- url: https://www.reddit.com/r/rails/comments/hs4rgg/why_is_this_migration_giving_a_no_such_table_error/
 ---
-Doing webdev for almost a 2 years, started with JS, drove me crazy. Just wanted to learn to build something without doing to much my self. Found out about rails, started building some simple stuff, like a blog. After that build a app for my brother, and wrote some SEO about it.... and finally got my first user today! even if it is just a free user (have a free restricted plan and a premium plan) it is a great feeling!
-## [4][Rails 6 and Active Job : a simple tutorial](https://www.reddit.com/r/rails/comments/hrnisf/rails_6_and_active_job_a_simple_tutorial/)
+I have a table named object\_classes with a column named ClassList\_id. From schema.rb:
+
+      create_table "object_classes", force: :cascade do |t|
+        t.string "name"
+        t.integer "ClassList_id", null: false
+        t.datetime "created_at", precision: 6, null: false
+        t.datetime "updated_at", precision: 6, null: false
+        t.index ["ClassList_id"], name: "index_object_classes_on_ClassList_id"
+      end
+
+I've realized that the column should be named class\_list\_id to conform with Rails expected naming convention. Therefore, I have generated a new migration:
+
+    class FixColumnName &lt; ActiveRecord::Migration[6.0]
+      def change
+        rename_column :object_classes, :ClassList_id, :class_list_id
+      end
+    end
+
+However, when I run this migration, I get the following error:
+
+    /bin/bash -c "env RBENV_VERSION=2.6.1 /home/asfarley/.rbenv/libexec/rbenv exec bundle exec ruby /home/asfarley/imgseq/bin/spring rails 'db:migrate'"
+    == 20200716060501 FixColumnName: migrating ====================================
+    -- rename_column(:object_classes, :ClassList_id, :class_list_id)
+    rails aborted!
+    StandardError: An error has occurred, this and all later migrations canceled:
+    
+    SQLite3::SQLException: no such table: main.ClassLists
+    /home/asfarley/imgseq/db/migrate/20200716060501_fix_column_name.rb:3:in `change'
+    /home/asfarley/imgseq/bin/rails:9:in `&lt;top (required)&gt;'
+    /home/asfarley/imgseq/bin/spring:15:in `require'
+    /home/asfarley/imgseq/bin/spring:15:in `&lt;main&gt;'
+    
+    Caused by:
+    ActiveRecord::StatementInvalid: SQLite3::SQLException: no such table: main.ClassLists
+    /home/asfarley/imgseq/db/migrate/20200716060501_fix_column_name.rb:3:in `change'
+    /home/asfarley/imgseq/bin/rails:9:in `&lt;top (required)&gt;'
+    /home/asfarley/imgseq/bin/spring:15:in `require'
+    /home/asfarley/imgseq/bin/spring:15:in `&lt;main&gt;'
+    
+    Caused by:
+    SQLite3::SQLException: no such table: main.ClassLists
+    /home/asfarley/imgseq/db/migrate/20200716060501_fix_column_name.rb:3:in `change'
+    /home/asfarley/imgseq/bin/rails:9:in `&lt;top (required)&gt;'
+    /home/asfarley/imgseq/bin/spring:15:in `require'
+    /home/asfarley/imgseq/bin/spring:15:in `&lt;main&gt;'
+    Tasks: TOP =&gt; db:migrate
+    (See full trace by running task with --trace)
+    
+    Process finished with exit code 1
+    
+
+What am I doing wrong here?
+## [4][Is RailsCasts.com still relevant for learning Rails?](https://www.reddit.com/r/rails/comments/hrr3y3/is_railscastscom_still_relevant_for_learning_rails/)
+- url: https://www.reddit.com/r/rails/comments/hrr3y3/is_railscastscom_still_relevant_for_learning_rails/
+---
+Seeing as how the videos have not been updated for years, can this site still be used for learning, or have the Rails APIs changed too much since 2012-2013?
+## [5][Resources](https://www.reddit.com/r/rails/comments/hs2kv7/resources/)
+- url: https://www.reddit.com/r/rails/comments/hs2kv7/resources/
+---
+Just dropping this repo again. Would love to get a bunch of contributors to add. 
+
+Cheers!
+
+Heres the repo
+
+[https://github.com/tylertomlinson/crucial\_resources](https://github.com/tylertomlinson/crucial_resources)
+## [6][Chill full project videos](https://www.reddit.com/r/rails/comments/hs2g9n/chill_full_project_videos/)
+- url: https://www.reddit.com/r/rails/comments/hs2g9n/chill_full_project_videos/
+---
+I'm looking for chill videos of people doing rails projects from start to finish (it could be a long series of videos), preferably by someone with a lot of experience, so I don't pick up bad habits. I'm not looking for tutorials exactly. Just something I can de-stress to after a long day of work. 
+Does anyone have any suggestions?
+## [7][Is there a more beautiful way to declare and populate an array from ActiveRecord data?](https://www.reddit.com/r/rails/comments/hs3e6g/is_there_a_more_beautiful_way_to_declare_and/)
+- url: https://www.reddit.com/r/rails/comments/hs3e6g/is_there_a_more_beautiful_way_to_declare_and/
+---
+Still learning Ruby and Rails. Ruby is so elegant! However, it pains me that I have to declare an array and populate it from ActiveRecord on two lines. Surely, Ruby has a more majestic way to do this on a single line?
+
+```
+underlyings = []
+Underlying.all.each { |underlying| underlyings &lt;&lt; underlying.symbol }
+```
+## [8][Rails 6 and Active Job : a simple tutorial](https://www.reddit.com/r/rails/comments/hrnisf/rails_6_and_active_job_a_simple_tutorial/)
 - url: https://www.reddit.com/r/rails/comments/hrnisf/rails_6_and_active_job_a_simple_tutorial/
 ---
 Active Job is quite difficult to start with. The documentation is very good, but to just to start an "hello world" job example, it requires redis, sidekiq (or another implementation), and some configuration. I tried to create a small tutorial in which 1) you have everything that just works in a couple of minutes and 2) everything works in complete isolation of your environment. [http://bdavidxyz.com/blog/rails-6-activejob-tutorial/](http://bdavidxyz.com/blog/rails-6-activejob-tutorial/)
-## [5][Is action cable in rails 6 production ready?](https://www.reddit.com/r/rails/comments/hrhjuw/is_action_cable_in_rails_6_production_ready/)
-- url: https://www.reddit.com/r/rails/comments/hrhjuw/is_action_cable_in_rails_6_production_ready/
+## [9][General advise on creating and updating a model instance](https://www.reddit.com/r/rails/comments/hrqyka/general_advise_on_creating_and_updating_a_model/)
+- url: https://www.reddit.com/r/rails/comments/hrqyka/general_advise_on_creating_and_updating_a_model/
 ---
-Has any one used action cable for over 1000+ connections and had it work reliably with low latency? I'm just testing websockets in my app but it seems to be incredibly slow, is there something I could be doing wrong?
-## [6][How do I link to a :delete action on a resource inside a module?](https://www.reddit.com/r/rails/comments/hrmhrv/how_do_i_link_to_a_delete_action_on_a_resource/)
-- url: https://www.reddit.com/r/rails/comments/hrmhrv/how_do_i_link_to_a_delete_action_on_a_resource/
----
-Hi All - I can't figure out the syntax for a `link_to` for the `#destroy` action on a controller in a module.
+Hi. I'm a beginner at web programming. **I want to make the user navigate different questions, each updating an instance of the model Item.** 
 
-I have a `Post` resource with a `posts_controller` for normal user interaction with the most. I created another `posts_controller` in an `admin` module for Administrator actions.
+My plan was to create two links that create this instance, one adding the value "found" and the other the value "lost" to a "Category" parameter. I also wanted this link to redirect to an update form, which will be a search box and a submit button that will edit the parameter "Name" value.
 
-    resources :posts 
-    namespace :admin do
-      resources :posts
-    end
-
-The `controllers/admin/posts_controller.rb` is defined as:
-
-    module Admin
-      class PostsController &lt; ApplicationController
-        # normal resource methods
-      end
-    end
-
-That all works exactly as expected, and I can create a link to the admin's view of all posts with:
-
-    link_to 'Admin View of Posts', admin_posts_path
-
-What I can't figure out is how to create a link to `admin/posts_controller.rb#destroy` in my `admin/posts/show.html.haml` view. If I do:
-
-    link_to 'Delete', post, method: :delete, data: { confirm: '...' }
-
-Then that generates a link to the normal user `posts_controller` not the admin one. How do I create the destroy action link on the admin posts controller?
-
-Thanks!
-## [7][Print PDF with Page Number](https://www.reddit.com/r/rails/comments/hrizi8/print_pdf_with_page_number/)
-- url: https://www.reddit.com/r/rails/comments/hrizi8/print_pdf_with_page_number/
----
-Any recommendation for PDF generation with Rails? Need one with custom header and page number. Simply printing a page from javascript print is nice but I ran into some issues with formatting and page numbers. `wkhtmltopdf` seems to be outdated and doesn't place nice as well. `prawn` is a little too low level. Any other solutions out there? Something like crystal reports would be nice.
-## [8][Everything you want to know about writing your own form objects in rails](https://www.reddit.com/r/rails/comments/hr1aol/everything_you_want_to_know_about_writing_your/)
-- url: https://www.reddit.com/r/rails/comments/hr1aol/everything_you_want_to_know_about_writing_your/
----
-Hey r/rails, I've written up a 3-part series on form objects (3 years in the making). If you've wrestled with rails' form helpers and builders to trying to make some frontend design work or with models that don't seem to cooperate, then you've probably already tried implementing form objects, or using a form object gem.
-
-Thing is, there are many bad ways to do form objects, so I've compiled techniques and patterns I think are most compliant with The Rails Way (remember the days when this was still a thing). Here's what it covers:
-
-[Part 1 - Ground rules for form objects](https://medium.com/@jaryl/disciplined-rails-form-object-techniques-patterns-part-1-23cfffcaf429)
-
-* Implementing `ActiveModel` and its lifecycle
-* Jumping from virtual objects to `ActiveRecord` instances
-* Working with multiple models in one form object using `fields_for`
-
-[Part 2 - Dealing with Collections](https://medium.com/@jaryl/disciplined-rails-form-object-techniques-patterns-part-2-12b8d530143d)
-
-* Collections of primitive values, to virtual objects, to `ActiveRecord` instances
-* Taking control of nested\_attributes and your form object's interface
-* Using `ActiveModel` validations and promoting errors to your UI
-
-[Part 3 - Tying up loose ends](https://medium.com/@jaryl/disciplined-rails-form-object-techniques-patterns-part-3-8ed1e4f62ce4)
-
-* Simplifying complex forms (like advanced search) by working with `Arel`
-* Some additional thoughts on validations and nesting
-* A look at form object (as a opposed to form builder) gems, and whether to use them
-
-It's a bit of a slog, but I promise you it's less of a slog than wading through 1000-line ERB files on a daily basis!
-## [9][Using Greek Alphabet](https://www.reddit.com/r/rails/comments/hr7j3b/using_greek_alphabet/)
-- url: https://www.reddit.com/r/rails/comments/hr7j3b/using_greek_alphabet/
----
-I have a couple of fields in my database that I need to be able to copy and paste Greek letters into and then display on their respective pages, is there an easy way to accomplish this?
-## [10][Tips for building a "subscribe &amp; save" ecommerce store?](https://www.reddit.com/r/rails/comments/hr7azo/tips_for_building_a_subscribe_save_ecommerce_store/)
-- url: https://www.reddit.com/r/rails/comments/hr7azo/tips_for_building_a_subscribe_save_ecommerce_store/
----
-I'm looking to create a basic "subscribe and save" subscription for a physical product. At a high level, the user will signup for a monthly, 3, 6, 9 or 12 month subscription. Nothing groundbreaking or innovative there... (right?)
-
-To date, all my RoR efforts have been for random side projects. Now that I'm thinking about dabbling with payments and physical products, I'm finding it to seem a little more daunting.
-
-Should I be building on top of something like Spree? Or rolling my own billing, inventory, shipping code? Or approaching this problem a different way?
-
-Edit: I realize both Spree and Solidus have subscription add-ons for products... I'm getting hung up on what happens if the subscription renews but, for example, my suppliers haven't sent me any inventory.
-## [11][Renaming webpackers "javascript" folder...](https://www.reddit.com/r/rails/comments/hr3cw7/renaming_webpackers_javascript_folder/)
-- url: https://www.reddit.com/r/rails/comments/hr3cw7/renaming_webpackers_javascript_folder/
----
-I like webpacker but it annoys me that everything goes in a folder "javascript", stylesheets, (images?), etc.  Might this folder be better renamed to "webpacker"?  Is that possible?
-## [12][Having a problem with has_many through joins](https://www.reddit.com/r/rails/comments/hr5k5s/having_a_problem_with_has_many_through_joins/)
-- url: https://www.reddit.com/r/rails/comments/hr5k5s/having_a_problem_with_has_many_through_joins/
----
-EDIT: Got it.
-
-In my controller index method:
-
-    @option_values = @variants.joins(option_values: {option_value_variants: :option_value}).uniq
-
-In my index page:
-
-     &lt;% @option_values.each do |option_type| %&gt;
-       &lt;%= option_type.option_values.map {|ov| ov.name}.join(' , ') %&gt;
-     &lt;% end %&gt;
+So far, what I could do is, in my home view:
 
 &amp;#x200B;
 
-Say I have these models:
+&gt;&lt;button type="button" class="btn btn-info mb-4 "&gt;&lt;%= link\_to "I lost something", new\_item\_path(category: "lost")%&gt; &lt;/button&gt;
 
-    class OptionType &lt; ApplicationRecord
-      belongs_to :product
-      has_many :option_values, dependent: :destroy
-    end
-    
-    class OptionValue &lt; ApplicationRecord
-      belongs_to :option_type
-      has_many :option_value_variants, dependent: :destroy
-      has_many :variants, through: :option_value_variants
-    end
-    
-    class Variant &lt; ApplicationRecord
-      belongs_to :product
-      has_many :option_value_variants, dependent: :destroy
-      has_many :option_values, through: :option_value_variants
-    end
-    
-    class OptionValueVariant &lt; ApplicationRecord
-      belongs_to :option_value
-      belongs_to :variant
-    end
-
-In the Variant index page I am trying to output a list of the option\_value names that are associated with that particular variant. How would I get that in the controller? Everything I have been trying produces active record join errors.
-
-ovv = OptionValueVariant.first
-
-ovv.option\_value gives me the correct answer for that particular one, but when I try to get all option\_value\_variants for a variant I get active record association join errors.
-
-Any ideas?
-
-    class Admin::VariantsController &lt; Admin::ApplicationController
-      before_action :set_variant, only: [:show, :edit, :update, :destroy]
-      before_action :set_product
-      # GET /variants
-      # GET /variants.json
-      def index
-        prodid = params[:product_id]
-        if !prodid.nil?
-          @variants = Variant.where(:product_id =&gt; prodid)
-        else
-          @variants = Variant.all
-        end
-        @option_types = @product.option_types
-        @option_values = @variants.joins(option_values: {option_value_variants: :option_value}).uniq
-      end
-    
-    
-      # GET /variants/1
-      # GET /variants/1.json
-      def show
-      end
-    
-      # GET /variants/new
-      def new
-        @variant = Variant.new
-        @option_types = @product.option_types
-      end
-    
-      # GET /variants/1/edit
-      def edit
-        @option_types = @product.option_types
-      end
-    
-      # POST /variants
-      # POST /variants.json
-      def create
-        @variant = Variant.new(variant_params)
-    
-        respond_to do |format|
-          if @variant.save
-    
-            @option_types = @product.option_types
-            format.html { redirect_to admin_product_variants_url, notice: 'Variant was successfully created.' }
-            format.json { render :show, status: :created, location: @variant }
-          else
-            format.html { render :new }
-            format.json { render json: @variant.errors, status: :unprocessable_entity }
-          end
-        end
-      end
-    
-      # PATCH/PUT /variants/1
-      # PATCH/PUT /variants/1.json
-      def update
-        @option_types = @product.option_types
-        respond_to do |format|
-          if @variant.update(variant_params)
-    
-            format.html { redirect_to admin_product_variants_url, notice: 'Variant was successfully updated.' }
-            format.json { render :show, status: :ok, location: @variant }
-          else
-            format.html { render :edit }
-            format.json { render json: @variant.errors, status: :unprocessable_entity }
-          end
-        end
-      end
-    
-      # DELETE /variants/1
-      # DELETE /variants/1.json
-      def destroy
-        @variant.destroy
-        respond_to do |format|
-          format.html { redirect_to admin_product_variants_url, notice: 'Variant was successfully destroyed.' }
-          format.json { head :no_content }
-        end
-      end
-    
-    
-      private
-        # Use callbacks to share common setup or constraints between actions.
-        def set_variant
-          @variant = Variant.find(params[:id])
-        end
-        def set_product
-          @product = Product.find(params[:product_id])
-        end
-        # Only allow a list of trusted parameters through.
-        def variant_params
-          params.require(:variant).permit(:sku, :price_cents, :price_currency, :is_master, :product_id, :count_in_stock, option_value_ids: [])
-        end
-    end
+ Then on my Item controller,
 
 &amp;#x200B;
+
+&gt;def new  
+ item = Item.new  
+ item.category = params\[:category\]  
+ item.user = current\_user  
+ item.save  
+ end
+
+This allowed me to create an instance and get the "lost" value for the :category parameter. 
+
+This is my .new view, where I was thinking to put a search box and a submit button. Right now there is a form.
+
+&gt;&lt;%= simple\_form\_for(item) do |f| %&gt;  
+&lt;%= f.input :name %&gt;  
+&lt;%= f.submit %&gt;  
+&lt;% end %&gt;
+
+Now, I want to update the same instance with that form and I got completely lost. How do I make this submit button update the instance? Should I call an update action from my ItemsController with the SimpleForm? Anyone knows how to do that?
+
+I hope my question is clear. Maybe there is a more convenient way to do this. 
+
+Any help is appreciated, with our without code
+## [10][How to transform my app layout to the desired idea?](https://www.reddit.com/r/rails/comments/hrt03n/how_to_transform_my_app_layout_to_the_desired_idea/)
+- url: https://www.reddit.com/r/rails/comments/hrt03n/how_to_transform_my_app_layout_to_the_desired_idea/
+---
+Hello, I'm developing an app (I'm more familiar with the backend side) and its current state is like this: [https://postimg.cc/cKLBhSnt](https://postimg.cc/cKLBhSnt) but, my superior edited the picture in PS and it ideally should look like this: [https://postimg.cc/T56ykV4N](https://postimg.cc/T56ykV4N) how I can fix the buttons to the desired positions? What is this, a templating pattern? here is the code: [https://github.com/LeoFragozo/sistema\_loja/blob/master/app/views/products/index.html.slim](https://github.com/LeoFragozo/sistema_loja/blob/master/app/views/products/index.html.slim)
+## [11][OMG! I just got my first user on my rails app](https://www.reddit.com/r/rails/comments/hr6ms0/omg_i_just_got_my_first_user_on_my_rails_app/)
+- url: https://www.reddit.com/r/rails/comments/hr6ms0/omg_i_just_got_my_first_user_on_my_rails_app/
+---
+Doing webdev for almost a 2 years, started with JS, drove me crazy. Just wanted to learn to build something without doing to much my self. Found out about rails, started building some simple stuff, like a blog. After that build a app for my brother, and wrote some SEO about it.... and finally got my first user today! even if it is just a free user (have a free restricted plan and a premium plan) it is a great feeling!
+## [12][TDD, I can't create post model because some association are empty](https://www.reddit.com/r/rails/comments/hrpcp2/tdd_i_cant_create_post_model_because_some/)
+- url: https://www.reddit.com/r/rails/comments/hrpcp2/tdd_i_cant_create_post_model_because_some/
+---
+Hi everyone, I'm trying to use rails in api mode with TDD behavior.
+
+I use rspec, factoryBot , Faker for my test. So here is my code
+
+    #post_request_spec
+    require 'rails_helper'
+    
+    RSpec.describe "Posts", type: :request do
+        #initialize test data
+        
+        let!(:user) { FactoryBot.create(:user)}
+        let!(:category) { FactoryBot.create(:category)}
+        let!(:posts) { create_list(:post, 10) }
+        let(:post_id) { post.first.id }
+        
+        #Test suite for Get api/v0/posts
+        describe 'GET/api/v0/posts' do
+            #make HTTP get request before each example
+            before { get '/posts' }
+    
+            it 'returns posts' do
+                # Note 'json' is a custom helper to parse JSON response
+                expect(json).not_to be_empty
+            end
+    
+            it 'returns status code 200' do
+                expect(response).to have_http_status(200)
+            end
+        end
+    ...
+
+there are a lot more test but they've got the same problem:
+
+    Failures:
+    
+      1) Posts GET/api/v0/posts returns posts
+         Failure/Error: let!(:posts) { create_list(:post, 10) }
+         
+         ActiveRecord::RecordInvalid:
+           Validation failed: Category can't be blank
+
+I try to create Category before Post but it look like my Category is empty even if i create it with FactoryBot.
+
+    2.6.0 :003 &gt; Category
+     =&gt; Category(id: integer, title: string, created_at: datetime, updated_at: datetime)
+     
+    #app/models/category.rb
+    class Category &lt; ApplicationRecord
+        #model association
+        has_many :posts, dependent: :destroy
+        
+        #Validations
+        validates_presence_of :title
+    end
+    
+    #spec/factories/category.rb
+    FactoryBot.define do
+        factory :category do
+          title { Faker::Games::SonicTheHedgehog.character }
+        end
+      end
+
+I also have a FactoryBot for my Post
+
+    2.6.0 :002 &gt; Post
+     =&gt; Post(id: integer, title: string, content: text, created_by: string, entry: integer, category_id: integer, rdv: datetime, tag1: string, tag2: string, tag3: string, created_at: datetime, updated_at: datetime, user_id: integer) 
+     
+    #app/models/post.rb
+    class Post &lt; ApplicationRecord
+      #model association
+      belongs_to :category
+      belongs_to :user
+    
+      #Validations
+      validates_presence_of :title, :content, :created_by, :entry, :category_id, :rdv, :tag1
+      
+    end
+    
+    #spec/factories/posts.rb
+    FactoryBot.define do
+        factory :post do
+          title { Faker::Lorem.word }
+          content{ Faker::Lorem.paragraph }
+          created_by "User"
+          entry 5
+          association :category, strategy: :build #builds user factory for test but doesn't save to test database
+          category_id {category.id} #foreign key 
+          rdv {Faker::Time.between(from: DateTime.now + 1, to: DateTime.now + 4, format: :default)}
+          tag1 "tag1"
+          tag2 nil
+          tag3 nil
+          association :user, strategy: :build #builds user factory for test but doesn't save to test database
+          user_id {user.id} #foreign key 
+        end
+      end
+
+So if you have any tips for learning TDD don't hesitate thank u.

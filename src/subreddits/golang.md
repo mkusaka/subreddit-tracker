@@ -1,172 +1,364 @@
 # golang
-## [1][wk8/go-ordered-map: Ordered Maps in Go](https://www.reddit.com/r/golang/comments/hs55vw/wk8goorderedmap_ordered_maps_in_go/)
-- url: https://github.com/wk8/go-ordered-map
+## [1][Go 1.14.6 is out now](https://www.reddit.com/r/golang/comments/hsqdak/go_1146_is_out_now/)
+- url: https://www.reddit.com/r/golang/comments/hsqdak/go_1146_is_out_now/
+---
+[https://golang.org/dl/](https://golang.org/dl/)  
+[https://golang.org/doc/go1.14](https://golang.org/doc/go1.14)  
+[https://golang.org/doc/devel/release.html#go1.14](https://golang.org/doc/devel/release.html#go1.14)
+## [2][GoLand 2020.2 hits Beta with experimental support for generics a.k.a. type parameters](https://www.reddit.com/r/golang/comments/hsgx4r/goland_20202_hits_beta_with_experimental_support/)
+- url: https://blog.jetbrains.com/2020/07/16/goland-2020-2-reaches-beta
 ---
 
-## [2][Open-source tool to automatically validate import boundaries for Go projects](https://www.reddit.com/r/golang/comments/hs5t71/opensource_tool_to_automatically_validate_import/)
-- url: https://www.reddit.com/r/golang/comments/hs5t71/opensource_tool_to_automatically_validate_import/
----
-Import Boundary Checker is a tool to automatically check if import boundaries are violated or not. Examples of where this tool is useful:
-
-* **Hexagonal/clean architecture** where domain logic cannot import infrastructure code
-* **Mono-repositories with multiple microservices** where you don't allow services to import code from other microservices
-* **Layered architecture** where layers cannot import certain other layers
-
-Why is this tool useful, and why consider using it over alternative tools?
-
-* Import boundaries are checked **automatically** (meaning you don't have to spend time in code review on manually checking)
-* It is extremely **fast** (sub-second speeds with medium sized projects)
-* Configuration is **easy** (within a few minutes you can define forbidden imports for your projects and have everything set up)
-* The tool is **independent** (you don't need to change any production or testing code for the tool to work)
-* Usage of the tool requires **zero dependencies** (so no outside dependencies are needed for running the tool, only the source code of your project)
-
-**GitHub link to project:** [**https://github.com/BytecodeAgency/import-boundary-checker**](https://github.com/BytecodeAgency/import-boundary-checker)
-
-Feel free to give feedback on the project!
-## [3][Benchmarking gRPC in Rust &amp; Go](https://www.reddit.com/r/golang/comments/hs7rp4/benchmarking_grpc_in_rust_go/)
-- url: https://medium.com/@Rustling_gopher/benchmarking-grpc-in-rust-go-184545e7688a
+## [3][InfraMap: Terraform infrastructure diagram showing only the resources that are relevant](https://www.reddit.com/r/golang/comments/hsuhe0/inframap_terraform_infrastructure_diagram_showing/)
+- url: /r/devops/comments/hsavh3/inframap_terraform_infrastructure_diagram_showing/
 ---
 
-## [4][Newbie going through the golang tour on slices. Which solution is better?](https://www.reddit.com/r/golang/comments/hrwz6o/newbie_going_through_the_golang_tour_on_slices/)
-- url: https://www.reddit.com/r/golang/comments/hrwz6o/newbie_going_through_the_golang_tour_on_slices/
+## [4][I Automated the Official Go Install Guide, for $HOME (and %USERPROFILE%)](https://www.reddit.com/r/golang/comments/hsumy5/i_automated_the_official_go_install_guide_for/)
+- url: https://www.reddit.com/r/golang/comments/hsumy5/i_automated_the_official_go_install_guide_for/
 ---
-For [https://tour.golang.org/moretypes/18](https://tour.golang.org/moretypes/18) , I wrote two solutions.
+Pretty nifty, eh?
 
-Which is preferred and why?  And also, is there an even better way?
+```
+curl -fsS https://webinstall.dev/golang@1.14 | bash
+```
 
-**SOLUTION 1**
+And I'll explain just how this solves _many_ of your Go-install woes, but first:
 
-&gt; // Use nil slices and append  
-func Pic(dx, dy int) \[\]\[\]uint8 {  
-	// s is nil slice referencing an array of array of uint8s  
-	var s \[\]\[\]uint8  
-	for i := 0; i &lt; dy; i++ {  
-		// t is nil slice referencing an array of uint8s  
-		var t \[\]uint8  
-		for j := 0; j &lt; dx; j++ {  
-			t = append(t,uint8((i + j) / 2))  
-		}  
-		s = append(s,t)  
-	}  
-	fmt.Println("dx=",dx,"dy=",dy,"s=",s)  
-	return s  
+# Wait Before Hating
+
+I know this is going to get a lot of hate.
+
+I believe most people are going to either **love this** (because we share similar pains), **or not understand** the problem it solves (which is fine - **we don't all have the same problems**).
+
+But the small number of those who really hate this, really hate it... and I don't get why.
+
+So if you've get an **emotional knee-jerk reaction**, or a have **moral argument**, such as
+
+- _I_ would _never_ do it that way! (but why not?)
+- You _shouldn't_ do that! (by what authority?)
+- This is not _the way_! (says who!? why?)
+- You've _offended_ my sensibilities! (do they deserve an upgrade?)
+
+Please note that I'm trying to solve a technical problem that I have, that I know many other (but not all) people have.
+
+There's literally nothing I know of to do that can solve the non-technical dislike for my solution.
+
+As such, it's **not productive** - not for me, nor anyone else - to just say something to the effect of "This is such a crappy solution, it's so bad, ugh" - because such a sentence carries **NO ACTIONABLE INFORMATION** - I don't learn anything. No one else learns anything. None of us know how to make it better.
+
+So before you **downvote** or **leave a hasty comment** I challenge you to **read** my explanation
+and come up with a **valid logical argument** that identifies something I've done that violates a
+technical principle (and if you do, I can probably fix it).
+
+If you read this and it's apparent to you how I could better explain this in a way that is more appropriate, please let me know.
+
+# The Official Go Install Guide
+
+If you haven't Googled "install golang" and then read https://golang.org/doc/install, I'd suggest that you do.
+
+The explanation is really good, but it's almost too much explanation, which can make it difficult to follow, maybe more so if you're not as strong in the Linux-fu and bash-fu.
+
+Essentially, it says to do this:
+
+- Download
+- Unpack
+- Add to PATH
+
+That looks kinda like this:
+
+```
+# The hard part (sans GUI)
+#OFFICIAL_RELEASE_API=https://golang.org/dl/?mode=json
+#OFFICIAL_DOWNLOAD_URL=$(curl "$OFFICIAL_RELEASE_API" | jq magic magic magic | sort-by-latest-stable-acceptable-version)
+
+# The easy part
+curl "$OFFICIAL_DOWNLOAD_URL" -o golang-xxx.tar.gz
+tar xvf golang-xxx.tar.gz
+mv ./go ~/.local/opt/go
+echo 'PATH="$HOME/.local/opt/go/bin:$HOME/go/bin:$PATH"' &gt; ~/.profile
+export PATH="$HOME/.local/opt/go/bin:$HOME/go/bin:$PATH"
+```
+
+Obviously I kinda hand-waved away "the hard part"... EXCEPT THAT I DIDN'T (I did the work for it!):
+
+- https://webinstall.dev/api/releases/golang@1.14.tab?os=macos&amp;arch=amd64&amp;ext=tar,zip,xz&amp;limit=100
+    - `1.14.6	lts	stable	1970-01-01	macos	amd64	tar.gz	-	https://dl.google.com/go/go1.14.6.darwin-amd64.tar.gz`
+- https://github.com/webinstall/packages/blob/master/golang/releases.js
+    - (yeah yeah, it's node, I'm a traitor - or node.js is just better for quick-n-dirty JSON transforms: fight me)
+
+# I automated it. And many other things.
+
+This is my solution: https://webinstall.dev/golang
+
+So we've got it Mac and Linux, which you saw before:
+
+```
+curl -fsS https://webinstall.dev/golang@1.14 | bash
+```
+
+But wait, there's more...
+
+Please join me in welcoming (drum roll please) Windows 10 to the new age!!
+
+```
+curl.exe -fsSA "MS" https://webinstall.dev/golang@1.14 | powershell
+```
+
+(Windows 10 has come a long way. It has `curl.exe`, `tar.exe`, `ssh.exe`, and all sorts of goodies _baked in_ - **NO WSL** or msysgit, etc needed)
+
+And one last thing:
+
+You also get a _teensy_ tiny `bash` or `powershell` script called `webi` that lets you do things like this:
+
+```
+webi golang@stable
+webi golang@beta
+webi golang@1.14
+```
+
+And whatever you build with version _x_ stays with version _x_. No mismatched binaries or caches!
+
+Version switching, without a package manager.
+
+(basically it's just a wrapper around curl that sets the "User-Agent" header to the proper OS and CPU arch so that it can query the webi API to grab the correct build)
+
+W00t!
+
+## It. Is. Awesome!
+
+Hate it if you wish, but it's awesome.
+
+"Awesome" is one of those terrible moral / emotional arguments, so let me break that down technically:
+
+- it's **memorable**
+    - (no need to look up documentation - I'm a _dev_, I use _webinstall_, duh)
+    - (and `go` redirects to `golang`, if you ever forget)
+- it's **convenient**
+    - (cute little website, cute little shell command, cute little cheat sheet, how cute!)
+    - (and cross-platform to boot! hooray!)
+- it's **FAST**
+    - (just download what you NEED - not a whole freaking last 10 years and 600gb of brew commit history... guh!)
+- it **WILL NOT** rely on or screw up your **system permissions**
+    - (no more having `node`, `brew`, `apt` and `go` all fighting over who owns `/usr/local`!!)
+- Look Ma, **NO ADMIN**
+   - (sans `sudo`, sans root, sans... Windows UAC?)
+   - (exception: `spctl` on macOS behave different between High Sierra and Catalina, so sometimes it prompts when it shouldn't, #WILLFIX)
+- it gives you the **OFFICIAL BUILD**
+    - (grrrr `apt`!! always giving weird patches and strange paths... hate 3rd party builds)
+- it's **UP TO DATE**
+    - (grrrrr `apt` again!! always 6 months to 6 years behind...)
+    - (max of 15-minute cache lag behind golang.org's Release API)
+
+Basically, anything that I use on a regular basis that is self-contained and dependency-free (as are `go`, `node`, `rust`, `jq`, `postgres` and just about **every other modern tool that I care about**), I'm adding to webinstall.dev. (and so could you!)
+
+# Deflecting the Arguments
+
+If you love what I did, that's all. Thumbs up if you've got 'em. :)
+
+If you hate what I'm doing... this is really just for the benefit of others coming by, because I don't think any sort of logical argument will convince you that I actually did something good that will benefit the community at large.
+
+## STOP! Read this!
+
+Before you go any further I want you to do a quick search of your `.bash_history` and look at your last 10 or so of these:
+
+```
+go run xxx
+```
+
+```
+npm install xxx
+```
+
+Before you _dare_ leave a nasty comment:
+
+- look at all those **unverified** `curl | go` or `curl | node` that you did
+- look at the list of _HUNDREDS_ or _THOUSANDS_ of completely random, often **anonymous**, authors that you "trust"
+
+Just let that... hypocrisy... sink in for a good 5 seconds before you hit me with your best shot.
+
+If you don't understand what _npm postinstall scripts_ are, or how anything you `go get` can `init()` or `import _ xxxx` to run with the same `sudo` permissions that you used to bind your app to ports 80 and 443... then you need to go understand that.
+
+## NOT a replacement for `apt` / `brew` / `x` - it's just better
+
+You want some 6 year-old package with 100,000 dependencies? Well... through some odd combination of `apt` and `npm` and I'm sure you can manage (maybe `sudo apt install nodejs; sudo npm install create-react-app`?).
+
+Anyway, lots of software needs hard-core package managers because it's complicated software.
+
+Go is NOT LIKE THAT.
+
+- Go is simple!
+- Go is self-contained!
+- Go doesn't even need libstd! (`CGO_ENABLED=0`, ftw)
+- Go programs can run in [Docker scratch](https://rollout.io/blog/building-minimal-docker-containers-for-go-applications/)! 
+
+`webi` is for simple things. `go` and `webi` can be happy together.
+
+## curl | bash is bad because bobby blogger said so...
+
+False. And True. But mostly False.
+
+Consider this:
+
+&gt; Claim: Flying in a plane is dangerous. (true)
+&gt; 
+&gt; Counter-Claim: Flying in a plane is not _more dangerous_ than driving a car, riding a bike, or walking. (also true)
+
+So essentially: `curl | bash` is less secure... than what? And since when?
+
+Back in 1997, yeah, `curl | bash` had some issues. They were solved. A. Long. Time. Ago.
+
+`brew`, `rust`, and many others install via `curl | bash`.
+
+There's nothing inherently dangerous about `bash` or `curl`, _assuming_ that **HTTPS** (with the **S**) is used, and that you _trust_ the _build_ and the _vendor_.
+
+## I don't _trust_ you! You're evil in disguise!
+
+Installing anything **from a vendor that you don't trust** is dangerous - whether it's a `.exe`, `.pkg`, `go run`, or `npm install` or a `curl | bash` makes ZERO technical difference. That's why we've got all of this:
+
+- https://webinstall.dev/about/
+- https://webinstall.dev/legal/#privacy
+- https://webinstall.dev/faq/#security
+- https://github.com/webinstall/packages/blob/master/golang/
+
+(again, how many authors in your `go.sum` or `package-lock.json` are _completely anonymous_ and definitely _NOT_ security experts?)
+
+Also, I'm fairly public in general - podcasts and blogs and companies and such.
+
+I'm no Rob Pike and not quite up there with mholt6 (who I chat with regularly) or indutny (who has fixed TLS bugs in node for me more than once) either, but I'm mostly likely mentioned if you grep your `node_modules` for `coolaj86`, or check the LICENSES of your AppleTV-enabled smart TV, I'm probably in there.
+
+Ryan (co-creator of the project) is a bit more private, but very deliberate about putting his name to something.
+
+The buddy who's been helping with the powershell stuff is literally the guy who analyses the kernel dumps that upload after a Windows 10 BSOD. He's the reason that Node.js works on Windows 10 on ARM (and he'll likely be involved in some of the upcoming Go porting as well).
+
+## Fight me
+
+But if you're going to fight me, do it honestly.
+
+1. Do you even have the problem that this solves?
+2. What technical problem do you see? What's my blind spot?
+
+If you can't agree to anything in the "This. Is. Awesome." then either you're not being honest, or we just live in separate worlds. That's okay (the second part).
+
+Can you admit to be doing something that results in a technical issue? If you can point it out, I can find and deploy a solution (and I'd be happy to have your help in doing so!)
+## [5][Considering dropping GO386=387](https://www.reddit.com/r/golang/comments/hsnwto/considering_dropping_go386387/)
+- url: https://groups.google.com/forum/#!topic/golang-nuts/Gl6bODRX1NE
+---
+
+## [6][Lightweight validation library that can export rules as JSON so browsers can apply the same rules](https://www.reddit.com/r/golang/comments/hsrn3o/lightweight_validation_library_that_can_export/)
+- url: https://github.com/AgentCosmic/xvalid
+---
+
+## [7][Add semver, based on `git describe`, easy as 1, 2, 3 (and less than 150 LoC)](https://www.reddit.com/r/golang/comments/hso4zb/add_semver_based_on_git_describe_easy_as_1_2_3/)
+- url: https://www.reddit.com/r/golang/comments/hso4zb/add_semver_based_on_git_describe_easy_as_1_2_3/
+---
+I created this a while back, but I'm not very social on reddit.
+There may be some other tool that does similar that I didn't find before.
+
+However, this is my solution and I think that it's simple enough that most people can appreciate it:
+
+https://git.rootprojects.org/root/go-gitver
+
+In short:
+
+## 0) You already use `git tag` with SEMVER (in the form `vX.Y.Z`)
+
+If you don't already use semver `git tag`s, then this post probably isn't something you care about
+(but maybe you should - so go read up on those first).
+
+## 1) You add **3 special variables** to your `main.go` (with optional `go generate`):
+
+These are the fallback if `git` is not installed or unavailable.
+
+```
+//go:generate go run -mod=vendor git.rootprojects.org/root/go-gitver --fail
+
+package main
+
+var (
+	GitRev       = "0000000"
+	GitVersion   = "v0.0.0-pre0+0000000"
+	GitTimestamp = "0000-00-00T00:00:00+0000"
+)
+
+func main() {
+	if (len(os.Args) &gt; 1 &amp;&amp; "version" === os.Args[1]) {
+		fmt.Printf("Foobar v%s (%s)", GitVersion, GitTimestamp)
+	}
+	// ...
+}}
+```
+
+## 2) Generate `xversion.go`, which overwrites those vars:
+
+```
+go generate
+```
+
+or 
+
+```
+go run git.rootprojects.org/root/go-gitver
+```
+
+That will produce `xversion.go`, for example:
+
+```
+// Code generated by go generate; DO NOT EDIT.
+package main
+
+func init() {
+	GitRev = "6dace8255b52e123297a44629bc32c015add310a"
+	GitVersion = "v1.1.4-pre2+g6dace82"
+	GitTimestamp = "2020-07-16T20:48:15-06:00"
 }
-
-**SOLUTION 2**
-
-&gt; // Use make to create zeroed arrays and then overwrite  
-func Pic(dx, dy int) \[\]\[\]uint8 {  
-	// s is a slice to a zeroed array of size dy  
-	s := make(\[\]\[\]uint8,dy)  
-	for i := 0; i &lt; dy; i++ {  
-		// t is a slice to a zeroed array of size dx   
-		t := make(\[\]uint8, dx)  
-		for j := 0; j &lt; dx; j++ {  
-			t\[j\] = uint8((i + j) / 2)  
-		}  
-		s\[i\] = t  
-	}  
-	fmt.Println("dx=",dx,"dy=",dy,"s=",s)  
-	return s  
-}
-
-&amp;#x200B;
-## [5][The Repository pattern: a painless way to simplify your Go service logic](https://www.reddit.com/r/golang/comments/hs71iy/the_repository_pattern_a_painless_way_to_simplify/)
-- url: https://threedots.tech/post/repository-pattern-in-go
----
-
-## [6][Utility tool to print JSON / CSV formatted as table](https://www.reddit.com/r/golang/comments/hrwcxh/utility_tool_to_print_json_csv_formatted_as_table/)
-- url: https://www.reddit.com/r/golang/comments/hrwcxh/utility_tool_to_print_json_csv_formatted_as_table/
----
-[https://github.com/elwin/table](https://github.com/elwin/table)
-
-While there are already tools available that do something similar I thought I'd be a nice exercise to build a utility tool that prints JSON or CSV documents formatted as a table. It's my first project that I  share publicly, and I'm very glad for any kind of feedback!
-## [7][Go generics will use square brackets [] not parenthesis ()](https://www.reddit.com/r/golang/comments/hrce8e/go_generics_will_use_square_brackets_not/)
-- url: https://groups.google.com/forum/#!topic/golang-nuts/7t-Q2vt60J8
----
-
-## [8][highperforming tcp socket server with many clients and 'broadcast' functionality in go ?](https://www.reddit.com/r/golang/comments/hs3z0z/highperforming_tcp_socket_server_with_many/)
-- url: https://www.reddit.com/r/golang/comments/hs3z0z/highperforming_tcp_socket_server_with_many/
----
-i am in need of an ultrafast tcp-server that should handle up to 10000 live connections at the same time.
-
-There are 3 basic task of this server :
-
-1) continous ping during idle time between server &amp; client ( 10.000 active clients online all the time ) 
-
-2) if one socket sends data to the server, then this data has to be sent to all other 9999 clients ( if one client 'speaks' then this will be sent to all connected clients right away ) - the requirement for this is that it has to be ultra fast.
-
-3) small client management, the client will know if its allowed to speak or its allowed to listen to broadcasts
-
-And ofcourse theres a packet-protocol handling of the data sent back and forth, so there will be tcp packet processing to handle the data that is being sent and passed on - but as little processing as possible here.
-
-&amp;#x200B;
-
-So the task itself is not very complicated to do and i can easily do a small tcp server that is doing this, but i am wondering about :
-
-1) what is the correct term of  such a server, i would call it tcp-router, or multiplexer or broadcaster but all these seems to point to other terms, so wondering if it has a a real name
-
-2) speed is essential here of the broadcast as i want it to be as instant as possible that data is broadcasted til all clients and want it to be snappy to connect and recognize disconnects etc.
-
-&amp;#x200B;
-
-I looked at the C10K problem and the Go version of handling millions of connections but i fell his examples are not quite hitting me as they arent doing anything - so maybe someone could help me along and would it be right to use Go in this case or should i go towards C or Erlang ?
-
-&amp;#x200B;
-
-Any examples of not a simple TCP server but something that actually scales for speed and many concurrent connections that are handling it right for scaling would also be super nice to look at as most articles is about doing basic servers which wont scale very well with real numbers.
-## [9][How to use {{ range }} within a {{ range }} with two []maps?](https://www.reddit.com/r/golang/comments/hrwc15/how_to_use_range_within_a_range_with_two_maps/)
-- url: https://www.reddit.com/r/golang/comments/hrwc15/how_to_use_range_within_a_range_with_two_maps/
----
-HI! 
-
-I want to execute a template and gave it this struct as data:
-
-```
-type AllData struct {
-	Cards    []map[string]interface{}
-	Comments []map[string]interface{}
-}
 ```
 
-`Cards` and `Comments` are both structs themselves with multiple strings inside them. Now when I execute the template I want to iterate over all Cards structs and for each of them iterate also over all Comments (and check if a comment is matching a card).
-
-So I tried something like this:
-
-```
-tmpl.ExecuteTemplate(w, "home.tmpl", data)
-// data is of type AllData.
-```
+If you do use `go generate`, you'll want to add `go-gitver` to your `tools/tools.go`
+(so that `go mod tidy` can track it in `go.mod`)
 
 ```
-{{ range.Cards }}
-&lt;b&gt;{{.username}}&lt;/b
-    {{ range.Comments }}
-          &lt;b&gt;{{.author}}&lt;/b&gt;
-          {{.comment}}
-      {{ else }}
-            &lt;b&gt;No comments yet... :(&lt;/b&gt;
-      {{ end }}
-{{ else }}
-Nothing to see here...
-{{ end }}
+// +build tools
+
+// This is a dummy package for build tooling
+package tools
+
+import (
+	_ "git.rootprojects.org/root/go-gitver"
+)
 ```
 
-When I debug I can see there is a Comment map inside the Comments part of the passed AllData struct, but no comments show in the rendered html file.
-The iterating over the Cards works fine.
-## [10][performance cost of dockerizing a Go app](https://www.reddit.com/r/golang/comments/hr5yzx/performance_cost_of_dockerizing_a_go_app/)
-- url: https://www.reddit.com/r/golang/comments/hr5yzx/performance_cost_of_dockerizing_a_go_app/
+## 3) Build your app as per usual:
+
+For me that looks like this:
+
+```
+go mod tidy
+go mod vendor
+go generate -mod=vendor ./...
+go build -mod=vendor .
+```
+
+## *) That's it.
+
+There's some other options in the `README.md`, but I think this should hit the spot for most people.
+
+Upvote if it helps. Downvote if it hurts. Comment with suggestions or questions.
+## [8][Let's Go! is an outstanding book.](https://www.reddit.com/r/golang/comments/hsh39f/lets_go_is_an_outstanding_book/)
+- url: https://www.reddit.com/r/golang/comments/hsh39f/lets_go_is_an_outstanding_book/
 ---
-In [this](https://levelup.gitconnected.com/docker-for-go-development-a27141f36ba9) Go+Docker tutorial, one the the [comments](https://medium.com/p/a27141f36ba9/responses/show) says:
+I recently finished "Let's Go" by Alex Edwards.  I took my time and coded the application along with the book.  My background is mostly in Rails development with a smaller amount of Go api development.
 
-&gt;Docker is great for development, but the performance gains you get from Golang, you lose with Docker, you may as well go php or python, since the whole point of golang is a single distributable binary. build in Docker, deploy to bare metal is my advice.
+This book was very educational.  It makes me want to go back and re-develop the Go api application I built for my current job.  Alex does a fantastic job of covering not just the basics of web development using Go, but he also shows you how to properly structure it and how to architect it to make testing easier.  Along the way, he covers about everything you need to know to build a full-fledged web app.
 
-I can't help but to think that this is inaccurate. It seems like the runtime performance cost of dockerizing would be independent of what gets run inside it. You would still incur that cost regardless of the app's language.
+The book doesn't skimp on testing either.  Also, he does this mostly using just Go, with a few small, focused third-party packages thrown in.  And he doesn't just tell you what to do, he fully explains why you would want to do it this way.  I learned a lot about things that are not Go-specific.
 
-Furthermore, the performance cost is practically negligible, according to [this SO answer](https://stackoverflow.com/questions/21889053/what-is-the-runtime-performance-cost-of-a-docker-container#answer-26149994):
+This book would work for someone who knows the basics of Go and wants to learn how to build a "real" web app and it also would work for a web developer coming from another language who wants to get up to speed quickly on transferring their skills to Go.
+## [9][I start writing a basic framework for multi agent system (mas)](https://www.reddit.com/r/golang/comments/hstc39/i_start_writing_a_basic_framework_for_multi_agent/)
+- url: https://github.com/JusticeN/chaos
+---
 
-&gt;An excellent 2014 IBM research paper “An Updated Performance Comparison of Virtual Machines and Linux Containers” by Felter et al. provides a comparison between bare metal, KVM, and Docker containers. The general result is: **Docker is nearly identical to native performance** and faster than KVM in every category.
+## [10][How does everyone use the standard library efficiently?](https://www.reddit.com/r/golang/comments/hsuhn9/how_does_everyone_use_the_standard_library/)
+- url: https://www.reddit.com/r/golang/comments/hsuhn9/how_does_everyone_use_the_standard_library/
+---
+I’ve been learning go and I’m curious how does everyone go about efficiently implementing the standard libraries ? I’ve found myself looking at the libraries for about 20min and ultimately going to stack overflow as they lack examples or don’t explain its usage very well.
 
-Lastly, containerization is so common practice, and I've never heard/read about not containerizing due to performance concerns.
-
-As a fairly inexperienced backend dev, I was hoping to get a few thoughts on this from more experienced devs. Thanks
+For example, interfaces available to a method are not very well documented

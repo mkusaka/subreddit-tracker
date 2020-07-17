@@ -1,18 +1,12 @@
 # androiddev
-## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/hqeluj/weekly_whos_hiring_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/hqeluj/weekly_whos_hiring_thread/
+## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/hsuz5k/weekly_anything_goes_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/hsuz5k/weekly_anything_goes_thread/
 ---
-Looking for Android developers? Heard about a cool job posting? Let people know!
+Here's your chance to talk about whatever!
 
-Here is a suggested posting template:
+Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
 
-&gt; Company: &lt;Best Company Ever&gt;  
-&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
-&gt; Location: &lt;City, State, Country&gt;  
-&gt; Allows remote: &lt;Yes/No&gt;  
-&gt; Visa: &lt;Yes/No&gt;  
-
-Feel free to include any other information about the job.
+Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
 ## [2][Weekly Questions Thread - July 13, 2020](https://www.reddit.com/r/androiddev/comments/hqd7s0/weekly_questions_thread_july_13_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/hqd7s0/weekly_questions_thread_july_13_2020/
 ---
@@ -31,73 +25,98 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Just a quick heads up. Make sure your app description doesn't contain duplicate words back to back](https://www.reddit.com/r/androiddev/comments/hs7qjy/just_a_quick_heads_up_make_sure_your_app/)
+## [3][Google Home for Android seeing fewer crashes after adopting Kotlin](https://www.reddit.com/r/androiddev/comments/hsn3jb/google_home_for_android_seeing_fewer_crashes/)
+- url: https://9to5google.com/2020/07/16/google-home-crashing/
+---
+
+## [4][Completed the creation of a game in the genre of a transport tycoon. I made the game alone.](https://www.reddit.com/r/androiddev/comments/hsvih2/completed_the_creation_of_a_game_in_the_genre_of/)
+- url: https://www.reddit.com/r/androiddev/comments/hsvih2/completed_the_creation_of_a_game_in_the_genre_of/
+---
+ How nice it was when I was able to make my own game. Made the game alone  (code and graphics) without buying assets or anything else, only I used  music under the CC 3.0 license. 
+
+&amp;#x200B;
+
+https://preview.redd.it/luvvsiwy3fb51.png?width=1280&amp;format=png&amp;auto=webp&amp;s=e0c4ff46ff43d160bbeca2f2effaebec52099106
+
+ 
+
+In the game you will be engaged in  freight transportation: raw materials, materials and goods. Raw  materials must be delivered to factories for processing into materials  and goods. Goods can be sold in cities (where the price depends on the  number of imported goods) or sent for export (to a port or railway  station). Enterprises themselves can be improved, as well as cities in  which raw materials and materials need to be imported for improvement  (improving cities also gives bonuses for pre-crippled plants). In  cities, you can build bonus buildings that will give various bonuses.  Also in the game there is a special big city "megapolis" which you will  build yourself.
+
+In the game, you  can execute contracts to transport resources and tasks from the list,  which are more complex but give more reward.
+
+Trucks  in the game can also be improved and changed to specialized trucks that  can carry only one type of goods but do it more efficiently. Trucks  have fuel that ends over time and must be sent to a gas station. There  is also a special "personal truck," which improves for the experience  gained from medals that are issued for fulfilling achievements.
+
+For  example, I can show what parameters affect, for example, the production  of goods. Basic production speed, improvement at the factory, bonus  from the laboratory, bonuses from the quarterly newspaper, bonuses from  cards, bonus from improvement of the city to which the factory is  attached, bonus of 25% from activation of the temporary bonus, bonuses  from buildings that can be built in cities, quantity of electricity or  adjustment of power consumption at the plant.
+
+&amp;#x200B;
+
+https://preview.redd.it/22rk5az04fb51.png?width=1280&amp;format=png&amp;auto=webp&amp;s=b72e0d4b57baa3f18bc97ecc683e18e13fa63dfb
+
+&amp;#x200B;
+
+https://preview.redd.it/rkrexl824fb51.png?width=1280&amp;format=png&amp;auto=webp&amp;s=caa58a1fdcb3791841710aed8df18195b4063b3e
+## [5][Emulator 30.0.22 Canary](https://www.reddit.com/r/androiddev/comments/hsqgqo/emulator_30022_canary/)
+- url: https://androidstudio.googleblog.com/2020/07/emulator-30022-canary.html
+---
+
+## [6][Articles or topics for a deep understanding of Android to become a better senior](https://www.reddit.com/r/androiddev/comments/hsmkew/articles_or_topics_for_a_deep_understanding_of/)
+- url: https://www.reddit.com/r/androiddev/comments/hsmkew/articles_or_topics_for_a_deep_understanding_of/
+---
+Hi guys!  
+
+
+I work with android for 5 years and it is the only technology that I ever worked on profissionally. In my career, I always focused on software engineering and architecture and I never really liked the UI part of the job. Because of that, even that I know how to write layouts and have a understanding of how android works, sometimes I feel like I'm missing some deep knowledge on the Android framework, specially on the UI, but not limited to it.  
+
+
+I'd like to some advice for what you guys think that I should study and some recommendations for topics / articles. Looking at the internet, It's really hard to find articles for more advanced stuff, I feel like we have several tutorials teaching how to do some specific thing, than articles explain how things work or other cool things that it's important to know and we don't really focus on a daily basis when our job is just to delivery features (for example: gradle, dependencies resolution, code generation, or other cool things that I don't know and I can't quote).  
+
+
+Thank you all!
+## [7][what tool do you use for UI ?](https://www.reddit.com/r/androiddev/comments/hsvpw3/what_tool_do_you_use_for_ui/)
+- url: https://www.reddit.com/r/androiddev/comments/hsvpw3/what_tool_do_you_use_for_ui/
+---
+Do you guys know a design app that can export a project easily to android studio ?
+
+i've seen Invision and Sketch but i don't think they can export project directly on android studio.
+## [8][I'm facing this crash! can anyone please guide me to solve this issue, This is hard to me to understand the issue it doesn't seems to be like Google ads issue](https://www.reddit.com/r/androiddev/comments/hsv4j5/im_facing_this_crash_can_anyone_please_guide_me/)
+- url: https://www.reddit.com/r/androiddev/comments/hsv4j5/im_facing_this_crash_can_anyone_please_guide_me/
+---
+ 
+
+1. java.lang.Error: FATAL EXCEPTION \[main\]
+2. Unity version     : 2018.4.9f1
+3. Device model      : samsung SM-J410F
+4. Device fingerprint: samsung/j4coreltejx/j4corelte:8.1.0/M1AJB/J410FXXU1ASB1:user/release-keys
+5. **Caused by**
+6.   at com.unity3d.player.UnityPlayer.nativeRestartActivityIndicator (Native Method)
+7.   at com.unity3d.player.UnityPlayer.resume (Unknown Source:23)
+8.   at com.unity3d.player.UnityPlayerActivity.onResume (Unknown Source:5)
+9.   at android.app.Instrumentation.callActivityOnResume (Instrumentation.java:1355)
+10.   **at android.app.Activity.performResume** **(Activity.java:7117)**
+11.   at android.app.ActivityThread.performResumeActivity (ActivityThread.java:3572)
+12.   at android.app.ActivityThread.handleResumeActivity (ActivityThread.java:3637)
+13.   at android.app.ActivityThread.handleLaunchActivity (ActivityThread.java:2878)
+14.   at android.app.ActivityThread.-wrap11 (Unknown Source)
+15.   **at android.app.ActivityThread$H.handleMessage** **(ActivityThread.java:1595)**
+16.   at android.os.Handler.dispatchMessage (Handler.java:106)
+17.   at android.os.Looper.loop (Looper.java:164)
+18.   at android.app.ActivityThread.main (ActivityThread.java:6543)
+19.   at java.lang.reflect.Method.invoke (Native Method)
+20.   **at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run** **(RuntimeInit.java:440)**
+21.   at com.android.**internal**.os.ZygoteInit.main (ZygoteInit.java:810)
+## [9][Just a quick heads up. Make sure your app description doesn't contain duplicate words back to back](https://www.reddit.com/r/androiddev/comments/hs7qjy/just_a_quick_heads_up_make_sure_your_app/)
 - url: https://www.reddit.com/r/androiddev/comments/hs7qjy/just_a_quick_heads_up_make_sure_your_app/
 ---
 I just had an update rejected as it contained "much much more" which apparently triggered the reject.
-## [4][I've composed 174 songs and sound effects and released them under the CC BY 4.0 license which you can use in any personal and commercial project and they're all free!](https://www.reddit.com/r/androiddev/comments/hrlslz/ive_composed_174_songs_and_sound_effects_and/)
-- url: https://www.reddit.com/r/androiddev/comments/hrlslz/ive_composed_174_songs_and_sound_effects_and/
----
-**How to download the songs?**
-
-You can download all of them in one RAR &amp; ZIP file by following this [Bandcamp](https://onemansymphony.bandcamp.com/releases) link.
-
-**What's the total size of the library and in which format do they come in?**
-
-Total file size varies in format. You can download the songs in MP3, FLAC, AAC, OGG, ALAC, WAV and AIFF formats.
-
-**What about the license? (CC BY 4.0)**
-
-You can use any song in this library in anyway you want, be it as a sound effect in your game or as a background music in one of your Youtube &amp; Twitch videos, even commercially. If you'd like to find more information about the license, please check this [creativecommons.org](https://creativecommons.org/licenses/by/4.0/) link. Providing an appropriate credit (Either Composed by [onemansymphony.bandcamp.com](https://onemansymphony.bandcamp.com) or patreon.com/onemansymphony) is required.
-
-**What is the future of this library? How can I support it?**
-
-I'm planning to expand this library's content as much as possible, and doing so takes a great amount of time, and calls for new virtual instruments and tools to create songs in rich and different sound. My current goal is to keep adding more songs in different genres into this library as well as creating environmental sound effects in high quality.  Also Bandcamp limits the quantity of free downloads so I need to buy more "free download credits" to make the album even more accessible. More information about the subject can be found [​here](https://blog.bandcamp.com/2010/09/09/free-downloads-power-ups/). Due to these reasons, I created a [Patreon](https://www.patreon.com/onemansymphony) page if you'd like to support this project. By becoming a Patron, **you'll get access to the loop files, bonus and alternative songs and sound effects** that are not included in the public library hosted on Bandcamp.
-
-**Can I remix the songs in the library?**
-
-As long as you provide an appropriate credit to the original album, you can do whatever you want to do with them.
-
-**Are these songs loopable?**
-
-Almost every single song in the album (with a few exceptions here and there) is loopable. While producing these songs, I always paid extra attention to make them as loopable as possible since some users would like to break a song into seperate pieces and just want to use that specific section of the song in their projects, and some people might like to extend a specific part of the song for adaptive sound design purposes. I am very well aware of that modern video games call for an application of adaptive sound design. A song which is made of different sections should be easily loopable &amp; cuttable and any section of the song should be easily extandable. And whenever a transition occurs, it should sound as smooth as possible. These were the things that I kept in my mind while composing these pieces. If you'd like to create your own loop files out of these songs, you can use a free software such as [Audacity](https://www.audacityteam.org/) to do so and refer to its [manual](https://manual.audacityteam.org/) to learn more about how looping is done. If you don't want to spend your time with the process of looping, you can subscribe to my $1 tier on Patreon where you can get access to the loop files of the songs in the library.
-
-**Is this album updated regularly?**
-
-Yes! Whenever I add a new song or sound effect to the library, I announce it on my [Twitter](https://twitter.com/onemansymphony). I would suggest checking the tweets or the album page regularly if you're in need of new music frequently.
-
-Feel free to ask if you guys have any questions.
-## [5][Why is Google not updating the YouTube Sdk ?](https://www.reddit.com/r/androiddev/comments/hs70dl/why_is_google_not_updating_the_youtube_sdk/)
-- url: https://www.reddit.com/r/androiddev/comments/hs70dl/why_is_google_not_updating_the_youtube_sdk/
+## [10][Refactoring Android Themes with Style](https://www.reddit.com/r/androiddev/comments/hsmy2s/refactoring_android_themes_with_style/)
+- url: https://medium.com/@ataulm/refactoring-android-themes-with-style-6ff14cb2b0be
 ---
 
-## [6][Maintained libraries for making recyclerviews with less code?](https://www.reddit.com/r/androiddev/comments/hrzrld/maintained_libraries_for_making_recyclerviews/)
-- url: https://www.reddit.com/r/androiddev/comments/hrzrld/maintained_libraries_for_making_recyclerviews/
----
-Title says it all tired of writing boilerplate code, but looking for an up to date library that won't break the app
-## [7][Suggest some good resources for Kotlin + Jetpack and Architecture Components](https://www.reddit.com/r/androiddev/comments/hs9n78/suggest_some_good_resources_for_kotlin_jetpack/)
-- url: https://www.reddit.com/r/androiddev/comments/hs9n78/suggest_some_good_resources_for_kotlin_jetpack/
----
-Please suggest some good courses or resources (Udemy or otherwise) for Kotlin + Jetpack and Architecture Component Libraries for modern Android app development techniques that are the best and use MVVM. Thanks.
-## [8][Kotlin 1.4-M3: Generating Default Methods in Interfaces](https://www.reddit.com/r/androiddev/comments/hs92om/kotlin_14m3_generating_default_methods_in/)
-- url: https://blog.jetbrains.com/kotlin/2020/07/kotlin-1-4-m3-generating-default-methods-in-interfaces/
+## [11][Android Studio 4.1 Beta 4 available](https://www.reddit.com/r/androiddev/comments/hseqi0/android_studio_41_beta_4_available/)
+- url: https://androidstudio.googleblog.com/2020/07/android-studio-41-beta-4-available.html
 ---
 
-## [9][Freelance Developers](https://www.reddit.com/r/androiddev/comments/hs8rwg/freelance_developers/)
-- url: https://www.reddit.com/r/androiddev/comments/hs8rwg/freelance_developers/
+## [12][Are apps that uses web scrapping allowed in playstore](https://www.reddit.com/r/androiddev/comments/hsracy/are_apps_that_uses_web_scrapping_allowed_in/)
+- url: https://www.reddit.com/r/androiddev/comments/hsracy/are_apps_that_uses_web_scrapping_allowed_in/
 ---
-Hello!
-
-Are there any developers here that do freelance work on the side? I'm just starting out and I would appreciate if you could share some of your wisdom with me. Anyway, I hope you're all having a great day today!
-## [10][So do I use livedata in the repository or not??](https://www.reddit.com/r/androiddev/comments/hrt27p/so_do_i_use_livedata_in_the_repository_or_not/)
-- url: https://www.reddit.com/r/androiddev/comments/hrt27p/so_do_i_use_livedata_in_the_repository_or_not/
----
-I see so many posts as to why I shouldn’t be using Livedata in the repository and then I see the google arch samples like the github browser app which has Livedata in the repository layer itself. So what is the best practice here?
-## [11][How To: Sorting and Reporting Your Dependencies Versions with Gradle](https://www.reddit.com/r/androiddev/comments/hrshsh/how_to_sorting_and_reporting_your_dependencies/)
-- url: https://ed-george.github.io/articles/15-07-2020/gradle-sorting-reporting
----
-
-## [12][How we ensure credible analytics on Dropbox mobile apps](https://www.reddit.com/r/androiddev/comments/hrrimu/how_we_ensure_credible_analytics_on_dropbox/)
-- url: https://dropbox.tech/mobile/how-we-ensure-credible-analytics-on-dropbox-mobile-apps
----
-
+My app won't harm any website and only extracts information that is open in that website.

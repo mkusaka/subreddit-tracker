@@ -39,236 +39,112 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Why is this migration giving a 'no such table' error?](https://www.reddit.com/r/rails/comments/hs4rgg/why_is_this_migration_giving_a_no_such_table_error/)
-- url: https://www.reddit.com/r/rails/comments/hs4rgg/why_is_this_migration_giving_a_no_such_table_error/
+## [3][Cryptic error. Any clue?](https://www.reddit.com/r/rails/comments/hsubkv/cryptic_error_any_clue/)
+- url: https://www.reddit.com/r/rails/comments/hsubkv/cryptic_error_any_clue/
 ---
-I have a table named object\_classes with a column named ClassList\_id. From schema.rb:
+Hi Guys.
 
-      create_table "object_classes", force: :cascade do |t|
-        t.string "name"
-        t.integer "ClassList_id", null: false
-        t.datetime "created_at", precision: 6, null: false
-        t.datetime "updated_at", precision: 6, null: false
-        t.index ["ClassList_id"], name: "index_object_classes_on_ClassList_id"
-      end
+So far I have been using capistrano for my production app, and all was good, but trying to set up a staging environment, I get an error in the last moment and I don't know how to interpret it well.  
 
-I've realized that the column should be named class\_list\_id to conform with Rails expected naming convention. Therefore, I have generated a new migration:
 
-    class FixColumnName &lt; ActiveRecord::Migration[6.0]
-      def change
-        rename_column :object_classes, :ClassList_id, :class_list_id
-      end
-    end
-
-However, when I run this migration, I get the following error:
-
-    /bin/bash -c "env RBENV_VERSION=2.6.1 /home/asfarley/.rbenv/libexec/rbenv exec bundle exec ruby /home/asfarley/imgseq/bin/spring rails 'db:migrate'"
-    == 20200716060501 FixColumnName: migrating ====================================
-    -- rename_column(:object_classes, :ClassList_id, :class_list_id)
-    rails aborted!
-    StandardError: An error has occurred, this and all later migrations canceled:
-    
-    SQLite3::SQLException: no such table: main.ClassLists
-    /home/asfarley/imgseq/db/migrate/20200716060501_fix_column_name.rb:3:in `change'
-    /home/asfarley/imgseq/bin/rails:9:in `&lt;top (required)&gt;'
-    /home/asfarley/imgseq/bin/spring:15:in `require'
-    /home/asfarley/imgseq/bin/spring:15:in `&lt;main&gt;'
-    
-    Caused by:
-    ActiveRecord::StatementInvalid: SQLite3::SQLException: no such table: main.ClassLists
-    /home/asfarley/imgseq/db/migrate/20200716060501_fix_column_name.rb:3:in `change'
-    /home/asfarley/imgseq/bin/rails:9:in `&lt;top (required)&gt;'
-    /home/asfarley/imgseq/bin/spring:15:in `require'
-    /home/asfarley/imgseq/bin/spring:15:in `&lt;main&gt;'
-    
-    Caused by:
-    SQLite3::SQLException: no such table: main.ClassLists
-    /home/asfarley/imgseq/db/migrate/20200716060501_fix_column_name.rb:3:in `change'
-    /home/asfarley/imgseq/bin/rails:9:in `&lt;top (required)&gt;'
-    /home/asfarley/imgseq/bin/spring:15:in `require'
-    /home/asfarley/imgseq/bin/spring:15:in `&lt;main&gt;'
-    Tasks: TOP =&gt; db:migrate
-    (See full trace by running task with --trace)
-    
-    Process finished with exit code 1
-    
-
-What am I doing wrong here?
-## [4][Is RailsCasts.com still relevant for learning Rails?](https://www.reddit.com/r/rails/comments/hrr3y3/is_railscastscom_still_relevant_for_learning_rails/)
-- url: https://www.reddit.com/r/rails/comments/hrr3y3/is_railscastscom_still_relevant_for_learning_rails/
----
-Seeing as how the videos have not been updated for years, can this site still be used for learning, or have the Rails APIs changed too much since 2012-2013?
-## [5][Resources](https://www.reddit.com/r/rails/comments/hs2kv7/resources/)
-- url: https://www.reddit.com/r/rails/comments/hs2kv7/resources/
----
-Just dropping this repo again. Would love to get a bunch of contributors to add. 
-
-Cheers!
-
-Heres the repo
-
-[https://github.com/tylertomlinson/crucial\_resources](https://github.com/tylertomlinson/crucial_resources)
-## [6][Chill full project videos](https://www.reddit.com/r/rails/comments/hs2g9n/chill_full_project_videos/)
-- url: https://www.reddit.com/r/rails/comments/hs2g9n/chill_full_project_videos/
----
-I'm looking for chill videos of people doing rails projects from start to finish (it could be a long series of videos), preferably by someone with a lot of experience, so I don't pick up bad habits. I'm not looking for tutorials exactly. Just something I can de-stress to after a long day of work. 
-Does anyone have any suggestions?
-## [7][Is there a more beautiful way to declare and populate an array from ActiveRecord data?](https://www.reddit.com/r/rails/comments/hs3e6g/is_there_a_more_beautiful_way_to_declare_and/)
-- url: https://www.reddit.com/r/rails/comments/hs3e6g/is_there_a_more_beautiful_way_to_declare_and/
----
-Still learning Ruby and Rails. Ruby is so elegant! However, it pains me that I have to declare an array and populate it from ActiveRecord on two lines. Surely, Ruby has a more majestic way to do this on a single line?
-
-```
-underlyings = []
-Underlying.all.each { |underlying| underlyings &lt;&lt; underlying.symbol }
-```
-## [8][Rails 6 and Active Job : a simple tutorial](https://www.reddit.com/r/rails/comments/hrnisf/rails_6_and_active_job_a_simple_tutorial/)
-- url: https://www.reddit.com/r/rails/comments/hrnisf/rails_6_and_active_job_a_simple_tutorial/
----
-Active Job is quite difficult to start with. The documentation is very good, but to just to start an "hello world" job example, it requires redis, sidekiq (or another implementation), and some configuration. I tried to create a small tutorial in which 1) you have everything that just works in a couple of minutes and 2) everything works in complete isolation of your environment. [http://bdavidxyz.com/blog/rails-6-activejob-tutorial/](http://bdavidxyz.com/blog/rails-6-activejob-tutorial/)
-## [9][General advise on creating and updating a model instance](https://www.reddit.com/r/rails/comments/hrqyka/general_advise_on_creating_and_updating_a_model/)
-- url: https://www.reddit.com/r/rails/comments/hrqyka/general_advise_on_creating_and_updating_a_model/
----
-Hi. I'm a beginner at web programming. **I want to make the user navigate different questions, each updating an instance of the model Item.** 
-
-My plan was to create two links that create this instance, one adding the value "found" and the other the value "lost" to a "Category" parameter. I also wanted this link to redirect to an update form, which will be a search box and a submit button that will edit the parameter "Name" value.
-
-So far, what I could do is, in my home view:
+Can you give me any help?
 
 &amp;#x200B;
 
-&gt;&lt;button type="button" class="btn btn-info mb-4 "&gt;&lt;%= link\_to "I lost something", new\_item\_path(category: "lost")%&gt; &lt;/button&gt;
+https://preview.redd.it/t045d3jvoeb51.png?width=1666&amp;format=png&amp;auto=webp&amp;s=04de65012fc28e162b404dfcc78bfa2cfddfc95f
 
- Then on my Item controller,
-
-&amp;#x200B;
-
-&gt;def new  
- item = Item.new  
- item.category = params\[:category\]  
- item.user = current\_user  
- item.save  
- end
-
-This allowed me to create an instance and get the "lost" value for the :category parameter. 
-
-This is my .new view, where I was thinking to put a search box and a submit button. Right now there is a form.
-
-&gt;&lt;%= simple\_form\_for(item) do |f| %&gt;  
-&lt;%= f.input :name %&gt;  
-&lt;%= f.submit %&gt;  
-&lt;% end %&gt;
-
-Now, I want to update the same instance with that form and I got completely lost. How do I make this submit button update the instance? Should I call an update action from my ItemsController with the SimpleForm? Anyone knows how to do that?
-
-I hope my question is clear. Maybe there is a more convenient way to do this. 
-
-Any help is appreciated, with our without code
-## [10][How to transform my app layout to the desired idea?](https://www.reddit.com/r/rails/comments/hrt03n/how_to_transform_my_app_layout_to_the_desired_idea/)
-- url: https://www.reddit.com/r/rails/comments/hrt03n/how_to_transform_my_app_layout_to_the_desired_idea/
+https://preview.redd.it/lg8z25jvoeb51.png?width=1666&amp;format=png&amp;auto=webp&amp;s=aaffabffcef25030478a08d0490178e86bd6e505
+## [4][Writing a good Rails app CSP, and how to build a report_uri](https://www.reddit.com/r/rails/comments/hspydx/writing_a_good_rails_app_csp_and_how_to_build_a/)
+- url: https://www.reddit.com/r/rails/comments/hspydx/writing_a_good_rails_app_csp_and_how_to_build_a/
 ---
-Hello, I'm developing an app (I'm more familiar with the backend side) and its current state is like this: [https://postimg.cc/cKLBhSnt](https://postimg.cc/cKLBhSnt) but, my superior edited the picture in PS and it ideally should look like this: [https://postimg.cc/T56ykV4N](https://postimg.cc/T56ykV4N) how I can fix the buttons to the desired positions? What is this, a templating pattern? here is the code: [https://github.com/LeoFragozo/sistema\_loja/blob/master/app/views/products/index.html.slim](https://github.com/LeoFragozo/sistema_loja/blob/master/app/views/products/index.html.slim)
-## [11][OMG! I just got my first user on my rails app](https://www.reddit.com/r/rails/comments/hr6ms0/omg_i_just_got_my_first_user_on_my_rails_app/)
-- url: https://www.reddit.com/r/rails/comments/hr6ms0/omg_i_just_got_my_first_user_on_my_rails_app/
----
-Doing webdev for almost a 2 years, started with JS, drove me crazy. Just wanted to learn to build something without doing to much my self. Found out about rails, started building some simple stuff, like a blog. After that build a app for my brother, and wrote some SEO about it.... and finally got my first user today! even if it is just a free user (have a free restricted plan and a premium plan) it is a great feeling!
-## [12][TDD, I can't create post model because some association are empty](https://www.reddit.com/r/rails/comments/hrpcp2/tdd_i_cant_create_post_model_because_some/)
-- url: https://www.reddit.com/r/rails/comments/hrpcp2/tdd_i_cant_create_post_model_because_some/
----
-Hi everyone, I'm trying to use rails in api mode with TDD behavior.
+The [official documentation](https://edgeguides.rubyonrails.org/security.html#content-security-policy) suggests starting with a global policy, and making changes as needed. In trying to understand this, I've made some very minor changes:
 
-I use rspec, factoryBot , Faker for my test. So here is my code
-
-    #post_request_spec
-    require 'rails_helper'
+    Rails.application.config.content_security_policy do |policy|
+      policy.default_src :self, :https
+      config.font_src    :self, :https, 'fonts.googleapis.com'
+      policy.img_src     :self, :https, :data, 'blahblah.s3-us-east-1.amazonaws.com'
+      policy.object_src  :none
+      config.script_src  :self, :https, 'stripe.com'
+      policy.style_src   :self, :https
     
-    RSpec.describe "Posts", type: :request do
-        #initialize test data
-        
-        let!(:user) { FactoryBot.create(:user)}
-        let!(:category) { FactoryBot.create(:category)}
-        let!(:posts) { create_list(:post, 10) }
-        let(:post_id) { post.first.id }
-        
-        #Test suite for Get api/v0/posts
-        describe 'GET/api/v0/posts' do
-            #make HTTP get request before each example
-            before { get '/posts' }
-    
-            it 'returns posts' do
-                # Note 'json' is a custom helper to parse JSON response
-                expect(json).not_to be_empty
-            end
-    
-            it 'returns status code 200' do
-                expect(response).to have_http_status(200)
-            end
-        end
-    ...
-
-there are a lot more test but they've got the same problem:
-
-    Failures:
-    
-      1) Posts GET/api/v0/posts returns posts
-         Failure/Error: let!(:posts) { create_list(:post, 10) }
-         
-         ActiveRecord::RecordInvalid:
-           Validation failed: Category can't be blank
-
-I try to create Category before Post but it look like my Category is empty even if i create it with FactoryBot.
-
-    2.6.0 :003 &gt; Category
-     =&gt; Category(id: integer, title: string, created_at: datetime, updated_at: datetime)
-     
-    #app/models/category.rb
-    class Category &lt; ApplicationRecord
-        #model association
-        has_many :posts, dependent: :destroy
-        
-        #Validations
-        validates_presence_of :title
+      # Specify URI for violation reports
+      policy.report_uri "/csp-violation-report-endpoint"
     end
-    
-    #spec/factories/category.rb
-    FactoryBot.define do
-        factory :category do
-          title { Faker::Games::SonicTheHedgehog.character }
-        end
-      end
 
-I also have a FactoryBot for my Post
+Two questions about this. 
 
-    2.6.0 :002 &gt; Post
-     =&gt; Post(id: integer, title: string, content: text, created_by: string, entry: integer, category_id: integer, rdv: datetime, tag1: string, tag2: string, tag3: string, created_at: datetime, updated_at: datetime, user_id: integer) 
-     
-    #app/models/post.rb
-    class Post &lt; ApplicationRecord
-      #model association
-      belongs_to :category
-      belongs_to :user
-    
-      #Validations
-      validates_presence_of :title, :content, :created_by, :entry, :category_id, :rdv, :tag1
-      
-    end
-    
-    #spec/factories/posts.rb
-    FactoryBot.define do
-        factory :post do
-          title { Faker::Lorem.word }
-          content{ Faker::Lorem.paragraph }
-          created_by "User"
-          entry 5
-          association :category, strategy: :build #builds user factory for test but doesn't save to test database
-          category_id {category.id} #foreign key 
-          rdv {Faker::Time.between(from: DateTime.now + 1, to: DateTime.now + 4, format: :default)}
-          tag1 "tag1"
-          tag2 nil
-          tag3 nil
-          association :user, strategy: :build #builds user factory for test but doesn't save to test database
-          user_id {user.id} #foreign key 
-        end
-      end
+1. Should excluding the `blahblah.s3-us-east-1.amazonaws.com` from `policy.img_src` effectively prevent those resources from loading? I would think so, but the resource still loads.
+2. Same for `fonts_src.` Should excluding `fonts.googleapis.com` prevent that font from loading? I get a console warning that says it's not loading due to a Content Security Policy violation, but the font still seems to be used when checking the styles in Inspector.
+3. Exactly what is this `report_uri`? I can seem to find anything that explains it. Presumably it needs a `POST` route, a controller, and a view accessible only to an admin?
+## [5][How to use a Transaction Script(aka Service Objects) in Ruby on Rails. Simple example](https://www.reddit.com/r/rails/comments/hssf51/how_to_use_a_transaction_scriptaka_service/)
+- url: https://www.reddit.com/r/rails/comments/hssf51/how_to_use_a_transaction_scriptaka_service/
+---
+The logic of small applications can be present as a series of transactions. Using the Transaction Scripts pattern, we get an application that is easier to maintain, to cover with tests, and to scale.
 
-So if you have any tips for learning TDD don't hesitate thank u.
+In the [tutorial](https://jtway.co/how-to-use-a-transaction-script-aka-service-objects-in-ruby-on-rails-simple-example-161b7e228942) we will develop an [application](https://github.com/dgorodnichy/transaction-script-example) that has Post, User, and Like models. Users should be able to like posts. The first version of the controller will contain extra code, which we will extract into a separate Transaction Script. We also describe when we need to use the Transaction Scripts and the pros of the transaction script usage.  
+
+
+Full tutorial: [How to use a Transaction Script (aka Service Objects) in Ruby on Rails. Simple example](https://jtway.co/how-to-use-a-transaction-script-aka-service-objects-in-ruby-on-rails-simple-example-161b7e228942)
+## [6][Best way to do this](https://www.reddit.com/r/rails/comments/hsuxs4/best_way_to_do_this/)
+- url: https://www.reddit.com/r/rails/comments/hsuxs4/best_way_to_do_this/
+---
+Hello,
+
+Am in building an app using activeadmin for the admin functionalities and am trying to integrate with Plivo (like Twilio). In order for the app to receive sms's sent to my Plivo number, I need to supply a post route to be called. My question is how to provide such a post route when all routes are behind the authenticated "admin" parent route? Thanks.
+## [7][Hi everyone.](https://www.reddit.com/r/rails/comments/hsolu9/hi_everyone/)
+- url: https://www.reddit.com/r/rails/comments/hsolu9/hi_everyone/
+---
+HI everyone, i hope that everyone is doing good through these times we are experiencing and everyone is safe, i was just wondering if ruby and rails is still the best framework for prototyping? coming from python :). 
+
+any advice would be appreciated. Thank you
+## [8][Is innovation needed anyway ?](https://www.reddit.com/r/rails/comments/hsskui/is_innovation_needed_anyway/)
+- url: https://www.reddit.com/r/rails/comments/hsskui/is_innovation_needed_anyway/
+---
+Here is a tweet quote from excellent Chris Oliver (GoRails) "If we want the Ruby community to grow, we need to get back to innovating and talking about it." My feeling is : is there any need to innovate anyway ?   
+Even the JS hype of the last years concern only a few pages that need more interactions... only small parts of a standard business app. My feeling is that innovation do not concern anymore the vast majority of every day problems. Any thought ?
+## [9][How are background jobs scaled?](https://www.reddit.com/r/rails/comments/hsktek/how_are_background_jobs_scaled/)
+- url: https://www.reddit.com/r/rails/comments/hsktek/how_are_background_jobs_scaled/
+---
+I am wondering on how backend jobs are scaled.
+
+If you have a background job that is running but another user initiates a job at the same time, is there a way to "split" or multiple the job into 2 servers automatically so they run in parallel instead of linearly?
+
+Like, what would an app do if 1000 users hit submit on a form that would then submit to a background job that each would take 10 mins?  Like, how would this be done in parallel so the 1000th user doesn't need to wait 10,000 minutes?
+
+Would a situation like this just need to have thousands of workers just waiting? How can you implement this dynamically?
+
+I've been looking up how to concurrently or in parallel to background jobs but can't find many with good explanations
+## [10][First freelance site - Spree Commerce RoR - thoughts?](https://www.reddit.com/r/rails/comments/hscuc0/first_freelance_site_spree_commerce_ror_thoughts/)
+- url: https://www.reddit.com/r/rails/comments/hscuc0/first_freelance_site_spree_commerce_ror_thoughts/
+---
+ Hi Guys,
+
+Short time scroller first time poster. Started coding at the start of lockdown (late March here in the UK), first on Codecademy, then did a React Nanodegree with Udacity and found my way to Hartl's Rails tutorial. Reached out to a small business to offer to build an ecommerce site to assist with their business - pushed myself in the deep end to be honest but enough I felt I knew enough to start freelancing!
+
+Let me know your thoughts: [https://voyage-fromage-60583.herokuapp.com/](https://voyage-fromage-60583.herokuapp.com/)
+
+Modified Spree Commerce App. I have the .co.uk domain but not pushing until the client is ready.
+
+If you're still reading (thanks), an eye on my portfolio site would be great! [https://www.badenashford.me](https://www.badenashford.me/)
+
+Cheers!!
+## [11][Rails &amp; iSeries DB2...Again](https://www.reddit.com/r/rails/comments/hsks6x/rails_iseries_db2again/)
+- url: https://www.reddit.com/r/rails/comments/hsks6x/rails_iseries_db2again/
+---
+Alight guys...Has anyone successfully connected a rails app...hell, even from a ruby console...to the DB2 database (library) on an iSeries, AS400, System i? I'm trying to use the ODBC driver on Linux. When I try to connect it seems to hang indefinitely. I can use and ODBC query tool on my windows PC and it works great. I can't get rails on my PC to connect either. Any insights here?
+## [12][Show a pre-filled form when clicking "Back" from a form submission?](https://www.reddit.com/r/rails/comments/hsjgbt/show_a_prefilled_form_when_clicking_back_from_a/)
+- url: https://www.reddit.com/r/rails/comments/hsjgbt/show_a_prefilled_form_when_clicking_back_from_a/
+---
+Is this possible?
+
+I have a scenario where submitting a form shows a calculation and would prefer to not show the form on the resulting screen. The form does not create a record so multiple submisisons are not an issue. 
+
+The natural UX for updating for values is hitting back on the browser, fixing the values and re-submitting.
+
+But, the default behavior of Rails in this case is to show the empty "new" state before entering any values.
+
+Any way to show the form in its filled state on hitting the "back" button?
+
+It's the default browser behavior for forms which do not involve a redirect.
+
+I've explored other options, like a link to "edit" state, but would like to see if I can stick with the simplest possible most intuitive default.

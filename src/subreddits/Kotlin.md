@@ -1,5 +1,13 @@
 # Kotlin
-## [1][Which Kotlin web development framework to learn?](https://www.reddit.com/r/Kotlin/comments/hs80qw/which_kotlin_web_development_framework_to_learn/)
+## [1][Google Home for Android seeing fewer crashes after adopting Kotlin](https://www.reddit.com/r/Kotlin/comments/hsn47u/google_home_for_android_seeing_fewer_crashes/)
+- url: https://9to5google.com/2020/07/16/google-home-crashing/
+---
+
+## [2][Kotlin 1.4-M3: Generating Default Methods in Interfaces](https://www.reddit.com/r/Kotlin/comments/hs92c0/kotlin_14m3_generating_default_methods_in/)
+- url: https://blog.jetbrains.com/kotlin/2020/07/kotlin-1-4-m3-generating-default-methods-in-interfaces/
+---
+
+## [3][Which Kotlin web development framework to learn?](https://www.reddit.com/r/Kotlin/comments/hs80qw/which_kotlin_web_development_framework_to_learn/)
 - url: https://www.reddit.com/r/Kotlin/comments/hs80qw/which_kotlin_web_development_framework_to_learn/
 ---
 I have been using Java/Spring for web development for years.
@@ -9,11 +17,43 @@ I recently have started learning Kotlin. I want to explore more and use/try diff
 I know Spring  has a good support for Kotlin but I want to learn new framework that I can use in Production if chance permits.
 
 Any suggestion between Ktor, Vertx or Micronaut and why?
-## [2][Kotlin 1.4-M3: Generating Default Methods in Interfaces](https://www.reddit.com/r/Kotlin/comments/hs92c0/kotlin_14m3_generating_default_methods_in/)
-- url: https://blog.jetbrains.com/kotlin/2020/07/kotlin-1-4-m3-generating-default-methods-in-interfaces/
+## [4][TextView Coding Help](https://www.reddit.com/r/Kotlin/comments/hsph20/textview_coding_help/)
+- url: https://www.reddit.com/r/Kotlin/comments/hsph20/textview_coding_help/
 ---
+I'm stumped on how I can make a textview display a certain string based on an outcome. For instance, if a dice rolled a 4, then the textview changes to "You rolled a 4!". I feel like the answer is something I should definitely know but I'm having a brainfart. Please point me in the right direction.
+## [5][How can I initialize a variable within a listener and keep it's data outside the listener?](https://www.reddit.com/r/Kotlin/comments/hsdfgv/how_can_i_initialize_a_variable_within_a_listener/)
+- url: https://www.reddit.com/r/Kotlin/comments/hsdfgv/how_can_i_initialize_a_variable_within_a_listener/
+---
+I have a simple OnDateSetListener for a calender, and within the listener I set a var called "birthdate" to the inputted date. I then want to use that date outside of the listener, but I can't find anything that explains it. I tried creating the var outside the listener rather than inside like so:
 
-## [3][Should I first learn Kotlin/Native (multiplatform) or Swift?](https://www.reddit.com/r/Kotlin/comments/hs8e2d/should_i_first_learn_kotlinnative_multiplatform/)
+    var birthDate : Date
+
+and then initializing it on the inside of the listener:
+
+    birthDate = birth
+
+but then my println outside the listener still says its not initialized. How can I keep the data even outside the listener?
+
+&amp;#x200B;
+
+edit:  [https://pastebin.com/acYXNEcU](https://pastebin.com/acYXNEcU) 
+## [6][Nexss Programmer - Open Source tool for the programmers - Kotlin included](https://www.reddit.com/r/Kotlin/comments/hshuy0/nexss_programmer_open_source_tool_for_the/)
+- url: https://www.reddit.com/r/Kotlin/comments/hshuy0/nexss_programmer_open_source_tool_for_the/
+---
+Hi guys,
+
+We have made Open Source Tool for the Programmers - Nexss Programmer. 
+
+50 different programming languages together... 
+
+Kotlin is included so you can combine it with other languages!
+
+If you guys want to check it out here is the link for the video presentation: [https://www.youtube.com/watch?v=7WbnYyEnBNk](https://www.youtube.com/watch?v=7WbnYyEnBNk)
+
+It would be great if we can get more feedback on it.
+
+Have a nice day!
+## [7][Should I first learn Kotlin/Native (multiplatform) or Swift?](https://www.reddit.com/r/Kotlin/comments/hs8e2d/should_i_first_learn_kotlinnative_multiplatform/)
 - url: https://www.reddit.com/r/Kotlin/comments/hs8e2d/should_i_first_learn_kotlinnative_multiplatform/
 ---
 I've done a lot of research, and Kotlin/Native and JVM finally seems like the answer to the endless quest for the best "write once, run anywhere" toolset.
@@ -27,7 +67,11 @@ My problems are:
 * Unlike Swift, there aren't a ton of resources to learn Kotlin, though I do own the continuously updated Atomic Kotlin book/Stepik course
 * Multiplatform projects are still experimental, but I doubt I'll have a professional app ready before it's considered stable. I'm afraid a lot will change and break, making a more stable solution better for learning and getting things up and running
 * I've heard Xcode is garbage compared to IntelliJ IDEA/Android Studio
-## [4][jasync-sql and object mapping](https://www.reddit.com/r/Kotlin/comments/hs1isx/jasyncsql_and_object_mapping/)
+## [8][Kotlin Microservices On Kubernetes: Part 5 - Inter-communication &amp; gateway](https://www.reddit.com/r/Kotlin/comments/hsa7xg/kotlin_microservices_on_kubernetes_part_5/)
+- url: https://www.youtube.com/watch?v=vT-tUogVOhk&amp;feature=share
+---
+
+## [9][jasync-sql and object mapping](https://www.reddit.com/r/Kotlin/comments/hs1isx/jasyncsql_and_object_mapping/)
 - url: https://www.reddit.com/r/Kotlin/comments/hs1isx/jasyncsql_and_object_mapping/
 ---
 Coming from the dotnet world and using dapper to map to a class, wondering if there's a way to use the speed of jasync-sql along with either a supporting library or by itself to do something like:
@@ -36,85 +80,7 @@ Coming from the dotnet world and using dapper to map to a class, wondering if th
      val result = future.get&lt;MyDataClass&gt;()
 
 Is there an easy way to map to a data class - or should I be looking into jdbi, jooq, exposed, or something else entirely instead?
-## [5][Kotlin extensions (KTX) for the Places SDK for Android](https://www.reddit.com/r/Kotlin/comments/hrtjfg/kotlin_extensions_ktx_for_the_places_sdk_for/)
+## [10][Kotlin extensions (KTX) for the Places SDK for Android](https://www.reddit.com/r/Kotlin/comments/hrtjfg/kotlin_extensions_ktx_for_the_places_sdk_for/)
 - url: https://github.com/googlemaps/android-places-ktx
----
-
-## [6][[Open Source] I'm working on an selfhosted web app for remote planning poker using Ktor and KotlinJS/React](https://www.reddit.com/r/Kotlin/comments/hrt1ul/open_source_im_working_on_an_selfhosted_web_app/)
-- url: https://github.com/Foso/Showdown
----
-
-## [7][Flym is a android app build kotlin it is open source and anyone can contribute to it.](https://www.reddit.com/r/Kotlin/comments/hs6d1v/flym_is_a_android_app_build_kotlin_it_is_open/)
-- url: https://www.reddit.com/r/Kotlin/comments/hs6d1v/flym_is_a_android_app_build_kotlin_it_is_open/
----
-Try the app it is I think best RSS reader app for Android and developer try to contribute to the I am not promoting the app I is really too good and serve best job
-## [8][passing safe args to one fragment](https://www.reddit.com/r/Kotlin/comments/hrwd5o/passing_safe_args_to_one_fragment/)
-- url: https://www.reddit.com/r/Kotlin/comments/hrwd5o/passing_safe_args_to_one_fragment/
----
-I am currently working on todolist app and got stuck working with safe args. I have recyclerview adapter items and when I click on one item I want to navigate to that item and pass my data from the adapter to the detail fragment. If I tried creating a new item, I get the toast message "updated" instead of "created" and my cardview is blank. So it somehow is updating a non existence item. I have one layout and want to use this layout to either create a new item or pass existing item data into it and updated that said item.
-
-Detail Fragment:  [https://pastebin.com/bYTxTWj7](https://pastebin.com/bYTxTWj7)
-
-nav\_graph xml:  [https://pastebin.com/9cWbWWrY](https://pastebin.com/9cWbWWrY)
-
-List adapter:  [https://pastebin.com/khsDFh4L](https://pastebin.com/khsDFh4L)
-
-Cardview : [https://pastebin.com/XxAJgnnY](https://pastebin.com/XxAJgnnY)
-
-github: [https://github.com/ikassim9/TodoList](https://github.com/ikassim9/TodoList) 
-## [9][A problem with reading files. Might be encoding-related.](https://www.reddit.com/r/Kotlin/comments/hrkxg7/a_problem_with_reading_files_might_be/)
-- url: https://www.reddit.com/r/Kotlin/comments/hrkxg7/a_problem_with_reading_files_might_be/
----
-Hello! So I'm going through JetBrains Academy's Kotlin course, and I'm stuck with one of their projects, ASCII New Roman. Basically I am to render the text in ASCII form.
-
-Provided is a file containing the "font". I first started with reading the file then simply spitting out all the lines, using this code:
-
-    package signature
-    
-    import java.io.File
-    import java.nio.charset.Charset
-    import java.util.*
-    
-    fun main() {
-        val roman = File("roman.txt").bufferedReader().readLines()
-
-        for (s in roman) {
-            println(s)
-        }
-    }
-
-A portion of the file looks like this:
-
-    10 52
-    a 10
-              
-              
-     .oooo.   
-    `P  )88b  
-     .oP"888  
-    d8(  888  
-    `Y888""8o 
-              
-              
-              
-
-Unfortunately the output spits out the following:
-
-    10 52
-    a 10
-              
-              
-     .oooo.   
-    `P  )88b  
-     .oP&amp;quot;888  
-    d8(  888  
-    `Y888&amp;quot;&amp;quot;8o 
-              
-              
-      
-
-I suspected this might be some encoding error, but I already verified that the file is in UTF-8. I already tinkered with a few settings in the IDE to no avail. Other users seem to be experiencing this problem as well. I really don't know why special characters are getting converted to HTML codes.
-## [10][Multiplatform Encryption with SQLDelight and SQLCipher](https://www.reddit.com/r/Kotlin/comments/hra59x/multiplatform_encryption_with_sqldelight_and/)
-- url: https://dev.to/samhill303/multiplatform-encryption-with-sqldelight-and-sqlcipher-5do4
 ---
 

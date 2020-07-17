@@ -21,204 +21,92 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][Announcing CDK Pipelines Preview, continuous delivery for AWS CDK applications](https://www.reddit.com/r/aws/comments/hrtcpm/announcing_cdk_pipelines_preview_continuous/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/07/announcing-cdk-pipelines-preview/
+## [2][Introducing the Cloud Development Kit for Terraform](https://www.reddit.com/r/aws/comments/hsio6z/introducing_the_cloud_development_kit_for/)
+- url: https://aws.amazon.com/pt/blogs/developer/introducing-the-cloud-development-kit-for-terraform-preview/
 ---
 
-## [3][EC2 instance connect - black screen of death, unable to SSH](https://www.reddit.com/r/aws/comments/hs7gkv/ec2_instance_connect_black_screen_of_death_unable/)
-- url: https://www.reddit.com/r/aws/comments/hs7gkv/ec2_instance_connect_black_screen_of_death_unable/
+## [3][CodeDeploy and containers](https://www.reddit.com/r/aws/comments/hsvq9u/codedeploy_and_containers/)
+- url: https://www.reddit.com/r/aws/comments/hsvq9u/codedeploy_and_containers/
 ---
-I am not able to use Instance Connect to SSH into EC2 instances via the console.
+I've been looking at using Code\* as a replacement for self-managed Jenkins, and I was a bit surprised that it doesn't really seem to natively support non-ECS Docker hosts *or* EKS.  
 
-My instances are in US East 1, so I allowed SSH traffic on the defined IP address range of  18.202.216.48/29 , which I pulled from here :  [https://ip-ranges.amazonaws.com/ip-ranges.json](https://ip-ranges.amazonaws.com/ip-ranges.json) 
+To clarify, I have code in CodeCommit which feeds into CodeBuild to produce a container image and push it into ECR.  I want to take that image and deploy it to either Docker running on an EC2 instance or an EKS cluster.
 
-&amp;#x200B;
+Googling has turned up a few work-arounds which leverage Lambdas to do the deployment, but they honestly feel pretty kludgey.
 
-However, when I click on the instance and try to Connect (selecting "EC2 Instance Connect (browser-based SSH connection)  " instead of being able to SSH into my instance, I get a pop up / black screen of death that I can't do anything with.  
-
-
-The black screen eventually times out (maybe 3 min later) and is replaced by the following error message: 
-
-"There was a problem setting up the instance connection
-
-An error occurred and we were unable to connect or stay connected to your instance. If this instance has just started up, try again in a minute or two."
-## [4][How To Build A GitOps Pipeline On A Stack Of AWS Services](https://www.reddit.com/r/aws/comments/hs6ukc/how_to_build_a_gitops_pipeline_on_a_stack_of_aws/)
-- url: https://www.reddit.com/r/aws/comments/hs6ukc/how_to_build_a_gitops_pipeline_on_a_stack_of_aws/
+Is it just not possible, or did I miss something?  Does anyone have docs or recommended guides on how to do this?
+## [4][Lambda function response to API Gateway not working on success](https://www.reddit.com/r/aws/comments/hsvjfy/lambda_function_response_to_api_gateway_not/)
+- url: https://www.reddit.com/r/aws/comments/hsvjfy/lambda_function_response_to_api_gateway_not/
 ---
-The author is using ArgoCD and other AWS services like CodeCommit, CodePipeline, CodeBuild, Amazon EKS. You can find the complete tutorial --&gt; [here](https://itnext.io/how-to-build-a-gitops-pipeline-on-a-stack-of-aws-services-63f7670b5f95?source=friends_link&amp;sk=f8674e6bcd583995a7b7e78b2cf3ce84) &lt;--
-## [5][Amazon Interactive Video Service – Add Live Video to Your Apps and Websites](https://www.reddit.com/r/aws/comments/hrvmlw/amazon_interactive_video_service_add_live_video/)
-- url: https://aws.amazon.com/blogs/aws/amazon-interactive-video-service-add-live-video-to-your-apps-and-websites/
+Hello,
+
+I have a Lambda function that sends a contact-us email that is handling all statusCodes that need to be returned to API Gateway.
+
+When I get to the final function to actually send an email via SES, the email sends and I receive it, but API Gateway returns an Internal Server Error after timing out after 10 seconds. My function executes in 1-2 seconds (depending on if it's warmed), so I know the timeout doesn't need to be increased.
+
+Does the final callback have to be different than the previous callbacks? It actually logs "Email successfully sent.", the email arrives, but then it sits there for 10 seconds before it times out. It's not doing the final callback to API Gateway with a 200, so API Gateway responds with an Internal Server Error.
+
+I've tried moving the callback out of the else, tried context.done(event). All of the other callbacks in the function, I have a return in front so that it stops execution of the Lambda. The last callback, I have tried with and without return.
+
+Does anyone spot an error that I'm missing? Thank you so much!
+
+    var DEBUG = false;
+    var ses = new AWS.SES({ region: 'us-east-1' });
+    ses.sendEmail(emailParams, function (error, sesResponse) {
+      if (error) {
+        console.log('Error:', error);
+        console.log('sesResponse:', sesResponse);
+        return callback(null, {
+          statusCode: '500',
+          headers: apiHeaders,
+          body: JSON.stringify({message:'Error sending email.'})
+        });
+      } else {
+        if (DEBUG) console.log('sesResponse:', sesResponse);
+        console.log("Email successfully sent.");
+      }
+      callback(null, {
+        statusCode: '200',
+        headers: apiHeaders,
+        body: JSON.stringify({message:'Email sent.'})
+      });
+    });
+## [5][The DynamoDB Place - A forum for DDB questions](https://www.reddit.com/r/aws/comments/hsjk42/the_dynamodb_place_a_forum_for_ddb_questions/)
+- url: https://dynamodbplace.com/
 ---
 
-## [6][AWS S3-User Defined Metadata](https://www.reddit.com/r/aws/comments/hs8f68/aws_s3user_defined_metadata/)
-- url: https://www.reddit.com/r/aws/comments/hs8f68/aws_s3user_defined_metadata/
+## [6][Why to avoid kubernetes:](https://www.reddit.com/r/aws/comments/hscvl4/why_to_avoid_kubernetes/)
+- url: https://blog.coinbase.com/container-technologies-at-coinbase-d4ae118dcb6c#62f4
 ---
-Hi ,
 
-I have a question regarding the user defined metadata.
-
-I understand that we need to apply 'x-amz-meta-key:value' using aws sdk , to seperate from HTTP headers and aws s3 stores them in lowercase and returns them in header on GET request.
-
-Is there any document where it explains how aws S3 reads this user defined metadata on PUT/POST?
-
-&amp;#x200B;
-
-Thanks
-## [7][Kafka vs SQS](https://www.reddit.com/r/aws/comments/hs87ny/kafka_vs_sqs/)
-- url: https://www.reddit.com/r/aws/comments/hs87ny/kafka_vs_sqs/
+## [7][Upload image to AWS S3 made simple — Flutter](https://www.reddit.com/r/aws/comments/hssx1w/upload_image_to_aws_s3_made_simple_flutter/)
+- url: https://medium.com//upload-image-to-aws-s3-made-simple-flutter-fd3356b5b5bb?source=friends_link&amp;sk=a032cf101eb66e20a305079f7348c97f
 ---
-I have an application that uses AWS SQS with Lambda to process the messages pushed on the Queue. The Lambda keeps on polling the Queue, and when a new message appears it process the message.
 
-For this scenario, is it possible to replace the SQS with Kafka on the AWS. In other words, can we use Kafka as a Queue for this use case?
-## [8][Terraform's data object equivalent in AWS CloudFormation](https://www.reddit.com/r/aws/comments/hs7q2b/terraforms_data_object_equivalent_in_aws/)
-- url: https://www.reddit.com/r/aws/comments/hs7q2b/terraforms_data_object_equivalent_in_aws/
+## [8][Amazon EKS Is Eating My IPs!](https://www.reddit.com/r/aws/comments/hssr1e/amazon_eks_is_eating_my_ips/)
+- url: https://medium.com/better-programming/amazon-eks-is-eating-my-ips-e18ea057e045
 ---
-Hey there,
 
-could anyone tell me if there is an equivalent of `data` from Terraform in CFN's world? 
-
-I guess it is possible, because CDK often has `fromXXX()` so that you can "import" an existing VPC to your Stack to get some data about it, and CDK is just a wrapper over CFN(kinda).
-## [9][CloudFront to Ingress Controler giving 308 redirects](https://www.reddit.com/r/aws/comments/hs5ov2/cloudfront_to_ingress_controler_giving_308/)
-- url: https://www.reddit.com/r/aws/comments/hs5ov2/cloudfront_to_ingress_controler_giving_308/
+## [9][Any plans to bundle a JSON schema extension and the new graph database extension with RDS PostgreSQL?](https://www.reddit.com/r/aws/comments/hssjel/any_plans_to_bundle_a_json_schema_extension_and/)
+- url: https://www.reddit.com/r/aws/comments/hssjel/any_plans_to_bundle_a_json_schema_extension_and/
 ---
-In the company we have an ingress controller (nginx), which we use for redirecting HTTP to HTTPS for some services. I wanted to put the URL presented by the ingress controller behind CloudFront by setting the origin of the CloudFront distribution to the URL. However, I am experiencing 308 redirects to the ingress controller URL.  
+To be precise:
 
-
-What could be the problem here?
-## [10][Intermittent roblems with apt get on Xenial EC2 instance](https://www.reddit.com/r/aws/comments/hs6knk/intermittent_roblems_with_apt_get_on_xenial_ec2/)
-- url: https://www.reddit.com/r/aws/comments/hs6knk/intermittent_roblems_with_apt_get_on_xenial_ec2/
+* https://www.postgresql.org/about/news/2050/
+* https://github.com/furstenheim/is_jsonb_valid (or a similar extension developed by AWS)
+## [10][Amazon Glacier - Am I doing this right?](https://www.reddit.com/r/aws/comments/hskmza/amazon_glacier_am_i_doing_this_right/)
+- url: https://www.reddit.com/r/aws/comments/hskmza/amazon_glacier_am_i_doing_this_right/
 ---
-Anyone had any issues doing an apt-get install on the ubuntu xenial image (ami-09623236df3ab2b4e) whilst running in EC2.   
+I've been searching for an option to archive large amounts of data for a good price and I've found the Amazon Glacier service.
 
+I've started uploading 225 GBs of data there.
 
-I've got a packer job in codebuild that 70% of the time works OK, but, intermittently fails when installing packages. Retrying the build usually succeeds immediately.
+But I'm confused about the pricing regarding downloading the data back.
 
-    amazon-ebs: Get:22 http://archive.ubuntu.com/ubuntu xenial-backports/universe Translation-en [4476 B]
-    amazon-ebs: Fetched 16.4 MB in 4s (3622 kB/s)
-    amazon-ebs: Reading package lists...
-    amazon-ebs: Reading package lists...
-    amazon-ebs: Building dependency tree...
-    amazon-ebs: Reading state information...
-    amazon-ebs: Package python is not available, but is referred to by another package.
-    amazon-ebs: This may mean that the package is missing, has been obsoleted, or
-    amazon-ebs: is only available from another source
-    amazon-ebs:
-    ==&gt; amazon-ebs: E: Package 'autoconf' has no installation candidate
-        amazon-ebs: Package pkg-config is not available, but is referred to by another package.
-        amazon-ebs: This may mean that the package is missing, has been obsoleted, or
-        amazon-ebs: is only available from another source
-    ==&gt; amazon-ebs: E: Package 'bison' has no installation candidate
-    ==&gt; amazon-ebs: E: Package 'build-essential' has no installation candidate
-    ==&gt; amazon-ebs: E: Unable to locate package libyaml-dev
-        amazon-ebs:
-        amazon-ebs: Package libreadline-dev is not available, but is referred to by another package.
-    ==&gt; amazon-ebs: E: Package 'libreadline-dev' has no installation candidate
-        amazon-ebs: This may mean that the package is missing, has been obsoleted, or
-        amazon-ebs: is only available from another source
-    ==&gt; amazon-ebs: E: Unable to locate package libncurses5-dev
-        amazon-ebs:
-    ==&gt; amazon-ebs: E: Package 'libffi-dev' has no installation candidate
-        amazon-ebs: Package libffi-dev is not available, but is referred to by another package.
-        amazon-ebs: This may mean that the package is missing, has been obsoleted, or
-        amazon-ebs: is only available from another source
-        amazon-ebs:
-        amazon-ebs: Package autoconf is not available, but is referred to by another package.
-    ==&gt; amazon-ebs: E: Unable to locate package libgdbm-dev
-    ==&gt; amazon-ebs: E: Unable to locate package libgeos-3.5.0
-    ==&gt; amazon-ebs: E: Couldn't find any package by glob 'libgeos-3.5.0'
-    ==&gt; amazon-ebs: E: Couldn't find any package by regex 'libgeos-3.5.0'
-    ==&gt; amazon-ebs: E: Unable to locate package libgeos++-dev
-        amazon-ebs: This may mean that the package is missing, has been obsoleted, or
-    ==&gt; amazon-ebs: E: Couldn't find any package by regex 'libgeos++-dev'
-        amazon-ebs: is only available from another source
-        amazon-ebs:
-    ==&gt; amazon-ebs: E: Unable to locate package libproj-dev
-        amazon-ebs: Package build-essential is not available, but is referred to by another package.
-        amazon-ebs: This may mean that the package is missing, has been obsoleted, or
-        amazon-ebs: is only available from another source
-        amazon-ebs:
-        amazon-ebs: Package bison is not available, but is referred to by another package.
-        amazon-ebs: This may mean that the package is missing, has been obsoleted, or
-        amazon-ebs: is only available from another source
-        amazon-ebs:
-    ==&gt; amazon-ebs: E: Package 'pkg-config' has no installation candidate
-    ==&gt; amazon-ebs: E: Package 'python' has no installation candidate
-    ==&gt; amazon-ebs: E: Unable to locate package stunnel4
-
-From booting the source image, the apt.sources has 
-
-    deb http://eu-west-2.ec2.archive.ubuntu.com/ubuntu/ xenial main restricted
-    deb http://eu-west-2.ec2.archive.ubuntu.com/ubuntu/ xenial-updates main restricted
-    deb http://eu-west-2.ec2.archive.ubuntu.com/ubuntu/ xenial universe
-    deb http://eu-west-2.ec2.archive.ubuntu.com/ubuntu/ xenial-updates universe
-    deb http://eu-west-2.ec2.archive.ubuntu.com/ubuntu/ xenial multiverse
-    deb http://eu-west-2.ec2.archive.ubuntu.com/ubuntu/ xenial-updates multiverse
-    deb http://eu-west-2.ec2.archive.ubuntu.com/ubuntu/ xenial-backports main restricted universe multiverse
-    deb http://security.ubuntu.com/ubuntu xenial-security main restricted
-    deb http://security.ubuntu.com/ubuntu xenial-security universe
-    deb http://security.ubuntu.com/ubuntu xenial-security multiverse
-    
-
-Which seems to be injected by cloud-init; from my packer output this doesn't appear to be happening (see [archive.ubuntu.com](https://archive.ubuntu.com)) but I can't see why that wouldn't be. I'm not suppressing that in my packer builder.
-
-      "builders": [
-        {
-          "type": "amazon-ebs",
-          "profile": "xxxx",
-          "access_key": "{{user `aws_access_key`}}",
-          "secret_key": "{{user `aws_secret_key`}}",
-          "region": "eu-west-2",
-          "source_ami": "ami-09623236df3ab2b4e",
-          "instance_type": "t3.medium",
-          "ssh_username": "ubuntu",
-          "ami_name": "xxxx-webapp-{{timestamp}}"
-        }
-      ],
-    
-
-It feels like the upstream is having problems, I'm not sure if forcing the ec2 mirrors is causing a problem or would solve the problem and I'm not sure what to try next.  
-
-
-Thanks for any advice.
-## [11][rds postgres: db restore with geo location column returns string instead of object](https://www.reddit.com/r/aws/comments/hs4u9e/rds_postgres_db_restore_with_geo_location_column/)
-- url: https://www.reddit.com/r/aws/comments/hs4u9e/rds_postgres_db_restore_with_geo_location_column/
+Could someone more experienced give me an estimate on how much that would be? I'm very new to AWS stuff.
+## [11][Migrate Hive Metastore to AWS Glue](https://www.reddit.com/r/aws/comments/hsqe9s/migrate_hive_metastore_to_aws_glue/)
+- url: https://www.reddit.com/r/aws/comments/hsqe9s/migrate_hive_metastore_to_aws_glue/
 ---
-I have an automated restore script which has been running for about 1y, but within the last month'ish something has changed, which is causing the geo request to come back as a string instead of an object. Older databases in the same cluster return correctly with exactly the same value, so i am struggling to work out whats wrong with the column/data after I have done a restore?? 
+Hi,
 
-I have a test nodejs script, which is using sequelize as the ORM to test agains the dbs in isolation. I originally thought it was an issue with the ORM but considering it works on one db and not the other, with exactly the same data, and in the same instance, makes me think there is something wrong with the restore. 
-
-Also of note, this same dump file restored into non RDS instances works fine. 
-
-From the database it "looks" like they are exactly the same but obviously i am missing something? 
-
-query executed by the framework : 
-
-    SELECT "name", "address", "geoPointLocation" FROM "Locations" AS "Locations" WHERE "Locations"."name" = 'this-issue-sucks';
-
-Working database &lt;&lt;
-
-    postgres@working_db=&gt; select ST_IsValid("geoPointLocation") from "Locations" where name = 'this-issue-sucks';
-    -[ RECORD 1 ]-
-    st_isvalid | t
-    
-    postgres@working_db=&gt; select st_asText("geoPointLocation") from "Locations" where name = 'this-issue-sucks';
-    -[ RECORD 1 ]----------------------------
-    st_astext | POINT(-77.0365739 38.8976633)
-    
-    postgres@working_db=&gt; select "geoPointLocation" from "Locations" where name = 'this-issue-sucks';
-    -[ RECORD 1 ]----+-------------------------------------------
-    geoPointLocation | 0101000000C7180E3A574253C0E3288AA1E6724340
-
-Failing database &lt;&lt;
-
-    postgres@temp_geo=&gt; select ST_IsValid("geoPointLocation") from "Locations" where name = 'this-issue-sucks';
-    -[ RECORD 1 ]-
-    st_isvalid | t
-    
-    postgres@temp_geo=&gt; select st_asText("geoPointLocation") from "Locations" where name = 'this-issue-sucks';
-    -[ RECORD 1 ]----------------------------
-    st_astext | POINT(-77.0365739 38.8976633)
-    
-    postgres@temp_geo=&gt; select "geoPointLocation" from "Locations" where name = 'this-issue-sucks';
-    -[ RECORD 1 ]----+---------------------------------------------------
-    geoPointLocation | 0101000020E6100000C7180E3A574253C0E3288AA1E6724340
+I am running a single node hadoop-hive cluster on a VM for test purposes. I want to link the hive metastore to AWS Glue Catalog for persistent storage. I searched but couldn’t find any good resources to do so. Can anyone help?

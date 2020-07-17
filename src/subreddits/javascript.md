@@ -1,13 +1,5 @@
 # javascript
-## [1][WTF Wednesday (July 08, 2020)](https://www.reddit.com/r/javascript/comments/hnjqff/wtf_wednesday_july_08_2020/)
-- url: https://www.reddit.com/r/javascript/comments/hnjqff/wtf_wednesday_july_08_2020/
----
-Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
-Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
-this is the place.
-
-[Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [2][WTF Wednesday (July 15, 2020)](https://www.reddit.com/r/javascript/comments/hrqb20/wtf_wednesday_july_15_2020/)
+## [1][WTF Wednesday (July 15, 2020)](https://www.reddit.com/r/javascript/comments/hrqb20/wtf_wednesday_july_15_2020/)
 - url: https://www.reddit.com/r/javascript/comments/hrqb20/wtf_wednesday_july_15_2020/
 ---
 Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
@@ -15,43 +7,47 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][Learn React by building your own version of the framework](https://www.reddit.com/r/javascript/comments/hs79y5/learn_react_by_building_your_own_version_of_the/)
+## [2][Made a URL shortener using MongoDB and Express for fun!](https://www.reddit.com/r/javascript/comments/hsnijo/made_a_url_shortener_using_mongodb_and_express/)
+- url: https://moocow.ml/cow
+---
+
+## [3][Building a Github Repo Template Part 3: Jest Testing Setup with TypeScript](https://www.reddit.com/r/javascript/comments/hssf49/building_a_github_repo_template_part_3_jest/)
+- url: https://hashnode.blainegarrett.com/building-a-github-repo-template-part-3-jest-testing-setup-with-typescript-ckcp0cssw000btvs14e88fws4
+---
+
+## [4][Hide all the clutter on StackOverflow - Chrome plugin](https://www.reddit.com/r/javascript/comments/hsk7zj/hide_all_the_clutter_on_stackoverflow_chrome/)
+- url: https://github.com/elrumo/stackOverflow_focus
+---
+
+## [5][Learn React by building your own version of the framework](https://www.reddit.com/r/javascript/comments/hs79y5/learn_react_by_building_your_own_version_of_the/)
 - url: https://dev.to/iainfreestone/9-examples-of-building-your-own-version-of-react-51a8
 ---
 
-## [4][Why You Should Love Not Fear “Interview Questions”](https://www.reddit.com/r/javascript/comments/hs3rd9/why_you_should_love_not_fear_interview_questions/)
-- url: https://medium.com/@kennethscoggins/why-you-should-love-interview-questions-7b32d8aa2254?source=friends_link&amp;sk=2a6729cb6b2d461cd5248d2662c731bc
+## [6][WebRTC JavaScript Library for Audio+Video+Screen+Canvas Recording](https://www.reddit.com/r/javascript/comments/hsvjq3/webrtc_javascript_library_for/)
+- url: https://recordrtc.org/
 ---
 
-## [5][Super Expressive - a Zero-dependency JavaScript Library For Building Regular Expressions in (Almost) Natural Language](https://www.reddit.com/r/javascript/comments/hrlv0w/super_expressive_a_zerodependency_javascript/)
-- url: https://github.com/francisrstokes/super-expressive
+## [7][D3.js based chart library billboard.js 2.0 is out!, more smaller and faster.](https://www.reddit.com/r/javascript/comments/hsr4lz/d3js_based_chart_library_billboardjs_20_is_out/)
+- url: https://medium.com/@alberto.park/billboard-js-2-0-is-out-15e84b52ab11
 ---
 
-## [6][Working with objects in a JavaScript Arrow Function](https://www.reddit.com/r/javascript/comments/hs84rk/working_with_objects_in_a_javascript_arrow/)
-- url: https://debugmode.net/2020/07/15/working-with-objects-in-a-javascript-arrow-function/
+## [8][Why choose Multi-Tenant Architecture for a SaaS application?](https://www.reddit.com/r/javascript/comments/hsusbj/why_choose_multitenant_architecture_for_a_saas/)
+- url: http://selleo-tenant.icu
 ---
 
-## [7][What is the difference between ___ and ___ in the front-end development?](https://www.reddit.com/r/javascript/comments/hs68mf/what_is_the_difference_between_and_in_the/)
-- url: https://thisthat.dev
+## [9][Minimalist Roadmap to Becoming a Full-Stack Developer](https://www.reddit.com/r/javascript/comments/hsmyz4/minimalist_roadmap_to_becoming_a_fullstack/)
+- url: https://dev.to/ericdouglas/minimalist-roadmap-to-becoming-a-full-stack-developer-259b
 ---
 
-## [8][Moveable Editor Tool 0.18 Release! Drag, Resize, Scale, Rotate, Clip, Group, Snap](https://www.reddit.com/r/javascript/comments/hrg2n0/moveable_editor_tool_018_release_drag_resize/)
-- url: https://daybrush.com/moveable/
+## [10][[AskJS] Good JavaScript book for experienced programmers](https://www.reddit.com/r/javascript/comments/hsmvl6/askjs_good_javascript_book_for_experienced/)
+- url: https://www.reddit.com/r/javascript/comments/hsmvl6/askjs_good_javascript_book_for_experienced/
 ---
+Hello everyone,
 
-## [9][axios v0.20 Released](https://www.reddit.com/r/javascript/comments/hrqofv/axios_v020_released/)
-- url: https://github.com/axios/axios/releases/tag/v0.20.0-0
----
+I have been a software developer for a few years now and have programmed in Java, C, C++, Python, a bit of Haskell (not a fan). So I am fairly experienced with programming but I have not written a single line of JS in my entire life (I don't even completely understand what the DOM is). I am moving jobs, however, and my future position requires familiarity with JavaScript. And from what I understand, Javascript is the most volatile language out there with books written a couple of years ago not completely reflecting the current state of JS. So can anyone please recommend me a good book that is still relevant with the current JS (libraries, features, tool-chains, paradigms ...etc)
 
-## [10][[AskJS] Have my first interview coming up and I am very nervous.](https://www.reddit.com/r/javascript/comments/hruw49/askjs_have_my_first_interview_coming_up_and_i_am/)
-- url: https://www.reddit.com/r/javascript/comments/hruw49/askjs_have_my_first_interview_coming_up_and_i_am/
----
-I recently graduated with a degree in CS and have started applying for full-time positions. Got through an HR interview at a small company and have now been assigned a coding assessment (which I am almost done with). In the meantime, they have scheduled me for an interview with two lead UI/UX designers at the company. Having applied for a front-end engineering position, I fully expected to be interviewed by the lead developers but not lead UI/UX designers. And since I don't have a formal background in design, I am panicking about the interview. I would sincerely appreciate any advice on questions I can expect, things I should glance through, or just anything in general regarding interviews with designers. Thank you.
-## [11][How to create statically generated, serverless site with NextJS, AWS CloudFront and Terraform](https://www.reddit.com/r/javascript/comments/hrlg9c/how_to_create_statically_generated_serverless/)
-- url: https://sosnowski.dev/post/static-serverless-site-with-nextjs
----
-
-## [12][Practical Functional Programming in JavaScript - Techniques for Composing Data](https://www.reddit.com/r/javascript/comments/hrrssv/practical_functional_programming_in_javascript/)
-- url: https://dev.to/richytong/practical-functional-programming-in-javascript-techniques-for-composing-data-c39
+Thanks in advance
+## [11][My first JS project turned out to be a cool web player! (Next.js)](https://www.reddit.com/r/javascript/comments/hsja3w/my_first_js_project_turned_out_to_be_a_cool_web/)
+- url: https://github.com/orhun/CoolModFiles
 ---
 

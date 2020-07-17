@@ -22,26 +22,182 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][T | undefined === T ???](https://www.reddit.com/r/typescript/comments/hrza4i/t_undefined_t/)
-- url: https://www.reddit.com/r/typescript/comments/hrza4i/t_undefined_t/
+## [2][Converting the few left at my work to TS](https://www.reddit.com/r/typescript/comments/hsr3ri/converting_the_few_left_at_my_work_to_ts/)
+- url: https://www.reddit.com/r/typescript/comments/hsr3ri/converting_the_few_left_at_my_work_to_ts/
 ---
-I want to create an optional type, something like `type Optional&lt;T&gt; = T | undefined` but TypeScript is telling me that such a type is equivalent to `type Optional&lt;T&gt; = T` - for some reason the undefined is lost.
+Every other week, folks in my group are able to host a 40 minute technical talk. I’m looking at hosting one in an attempt to convert some of the late adopters in the group to TS. Some background, we primarily work in a rapid prototyping space so the old “Typescript is slower to develop with” argument is what has kept the last few from adopting. I’m trying to attack that head on while also talking about other benefits to push my argument over the edge. I’m thinking about half of the talk will be demonstration and questions so I want to keep to the most obvious wins.
 
-I assume the cause of this is something to do with the fact the T can be of type undefined; maybe?
+The rough outline of my presentation is this:
 
-I want to use this type to create a type guard called `isOptional` that can be used like this: `isOptional(isNumber)(foo)`. Where  `isOptional` would essentially just run `isUndefined(foo) || isNumber(foo)`.
+- Intellisense: by identifying and defining your types up front you earn intellisense which speeds up development 
+- Runtimes errors/refactoring: Property changes and differences are caught at compile time rather than runtime.
+- Coordination/documentation: TS improves the ability to communicate through though code. Often we return to prototypes a year after the initial work was done and have to spin up and develop on a code rot ridden app.
 
-So from a top level approach, this is my issue:
+Any advice is very welcome. Specifically, does anyone have any additional points they think I should make or angles I should address?
+## [3][Use mongoose FilterQuery&lt;T&gt; + check if the keys exists](https://www.reddit.com/r/typescript/comments/hsrstk/use_mongoose_filterqueryt_check_if_the_keys_exists/)
+- url: https://www.reddit.com/r/typescript/comments/hsrstk/use_mongoose_filterqueryt_check_if_the_keys_exists/
+---
+Right now in our project (using NestJS) we do have some methods in our service like this:
 
 ```
-if (isOptional(isNumber)(foo)) {  
-  // expected: `foo` should be of type `number | undefined`  
-  // actual: `foo` is of type `number`  
+import { Model, CreateQuery, FilterQuery } from 'mongoose';
+import { User } from './user.schema';
+
+class UsersService {
+  constructor(
+    @InjectModel(User.name) private readonly usersModel: Model&lt;User&gt;,
+  ) {}
+
+  async findOne(conditions: Partial&lt;Record&lt;keyof User, unknown&gt;&gt;) {
+    this.usersModel.findOne(conditions as FilterQuery&lt;User&gt;);
+  }
+
+  async create(fields: Partial&lt;Record&lt;keyof User, unknown&gt;&gt;) {
+    this.usersModel.create(fields as CreateQuery&lt;User&gt;);
+  }
+
+  async updateOne(id, fields: Partial&lt;Record&lt;keyof User, unknown&gt;&gt;) {
+    this.usersModel.updateById(id, fields as UpdateQuery&lt;User&gt;);
+  }
 }
 ```
 
-Is this a bug with TypeScript or am I doing something wrong?
-## [3][Trying to model a function declaration that returns a class instance](https://www.reddit.com/r/typescript/comments/hs8544/trying_to_model_a_function_declaration_that/)
+In the above code it makes sure through TypeScript that when I do:
+
+```
+this.usersService.create({
+  name: 'John',
+  countryy: 'USA', // &lt;-- error because it should be 'country'
+})
+```
+
+This works perfectly, but advanced query syntax is not supported through this method. For example:
+
+```
+this.usersService.findOne({
+  'myObject.nestedKey.nestedKey2': 'test',
+})
+```
+
+due to this I decided to just change the `conditions` parameter in UsersService.findOne() function to be `Record&lt;string, unknown&gt;`.
+
+Is there a possibility to allow this types of advanced syntax and still check whether those keys are valid? This means that TypeScript should know, when doing `myObject.nestedKey.nestedKey2`, that `myObject` is a valid key, `nestedKey` is also a valid key inside `myObject` etc ...
+
+Mongoose is using `FilterQuery&lt;T&gt;` but it doesn't check for valid keys I believe
+
+Would love to know some solutions.
+## [4][Foal TS - Node.JS and TypeScript framework - July Release - Management of several environments &amp; Simplified authentication](https://www.reddit.com/r/typescript/comments/hsup8w/foal_ts_nodejs_and_typescript_framework_july/)
+- url: https://www.reddit.com/r/typescript/comments/hsup8w/foal_ts_nodejs_and_typescript_framework_july/
+---
+Foal TS version 1.11 is here!
+
+This version facilitates the management of several environments thanks to its abstract services and it also reduces the code to produce to build an authentication.
+
+The documentation of the new features can be found here:
+
+\- [https://foalts.gitbook.io/docs/topic-guides/architecture/services-and-dependency-injection#abstract-services](https://foalts.gitbook.io/docs/topic-guides/architecture/services-and-dependency-injection#abstract-services)
+
+\- [https://foalts.gitbook.io/docs/topic-guides/authentication-and-access-control/session-tokens#specify-the-name-of-the-session-store-in-the-configuration](https://foalts.gitbook.io/docs/topic-guides/authentication-and-access-control/session-tokens#specify-the-name-of-the-session-store-in-the-configuration)
+
+\- [https://foalts.gitbook.io/docs/topic-guides/validation-and-sanitization#usage-with-a-hook](https://foalts.gitbook.io/docs/topic-guides/validation-and-sanitization#usage-with-a-hook)
+
+&amp;#x200B;
+
+In a few words, Foal TS is a [**Node.Js**](http://node.js/) and **TypeScript** framework that **provides the bricks to build a complete web application** while keeping a **simple and intuitive code**.
+
+Backed by **thousands of tests**, it offers more than **11,000 lines of documentation**. [**#typescript**](https://www.linkedin.com/feed/hashtag/?keywords=typescript&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6689863897433829376) [**#javascript**](https://www.linkedin.com/feed/hashtag/?keywords=javascript&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6689863897433829376) [**#nodejs**](https://www.linkedin.com/feed/hashtag/?keywords=nodejs&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6689863897433829376)
+
+&amp;#x200B;
+
+https://preview.redd.it/8fpseb3rteb51.png?width=1064&amp;format=png&amp;auto=webp&amp;s=659f65321229a00a7ae887a53cc246f54709bcaf
+## [5][Terminal](https://www.reddit.com/r/typescript/comments/hsu03i/terminal/)
+- url: https://v.redd.it/3zarniw4keb51
+---
+
+## [6][Typing a recursive camelize function?](https://www.reddit.com/r/typescript/comments/hstaxp/typing_a_recursive_camelize_function/)
+- url: https://www.reddit.com/r/typescript/comments/hstaxp/typing_a_recursive_camelize_function/
+---
+It would be nice to not lose type of the object but IDK if this is far beyond what TypeScript is capable of:
+
+    export function camelize&lt;T&gt;(source: T, reverse = false) {
+      // console.log('snakeCaseObject', source);
+      const dest: Record&lt;string, any&gt; = {};
+      const fn = reverse ? snakeCase : camelCase;
+
+      for (let [key, value] of Object.entries(source)) {
+        if (isPlainObject(value)) {
+          // checks that a value is a plain object or an array - for recursive key conversion
+          value = camelize(value, reverse); // recursively update keys of any values that are also objects
+        }
+        if (isArray(value)) {
+          value = value.map(v =&gt; (isPlainObject(v) ? camelize(v, reverse) : v));
+        }
+        dest[fn(key)] = value;
+      }
+
+      return dest;
+    }
+
+
+This is what I have so far, but surely the actual return type is T but with camelCased(or uncamelcased) keys.
+## [7][Currying function parameters - Convert to Numbers](https://www.reddit.com/r/typescript/comments/hshhsn/currying_function_parameters_convert_to_numbers/)
+- url: https://www.reddit.com/r/typescript/comments/hshhsn/currying_function_parameters_convert_to_numbers/
+---
+I have function like:
+
+*export* const isGreaterThan = (operand1: unknown, operand2: unknown) =&gt;
+
+Number(operand1) &gt;Number(operand2)
+
+I would like to have a curried function in the middle that takes \`operand1\` and \`operand2\` and converts them into numbers so I don't have to do that explictly in my function body.
+
+Is there a way to do this with function currying? Thank you
+## [8][Is there a way to implement a custom behaviour when casting a class to a boolean?](https://www.reddit.com/r/typescript/comments/hsn96u/is_there_a_way_to_implement_a_custom_behaviour/)
+- url: https://www.reddit.com/r/typescript/comments/hsn96u/is_there_a_way_to_implement_a_custom_behaviour/
+---
+If you have a class in TypeScript where whether it casts to true or false depends on a custom set of conditions, is there a way to implement that like you can implement something like `toString()`, where it will also work with regular if statements?
+## [9][ReacType - export a baseline React or Next.js app written in Typescript in minutes!](https://www.reddit.com/r/typescript/comments/hsdcpp/reactype_export_a_baseline_react_or_nextjs_app/)
+- url: https://www.reddit.com/r/typescript/comments/hsdcpp/reactype_export_a_baseline_react_or_nextjs_app/
+---
+Hello Reddit! My colleagues and I would like to invite you to check out our new open source project ReacType (version 3.0)! ReacType is a prototyping tool that allows you to create the skeleton of a Next.js or classic React application in minutes. Use our drag-n-drop interface to create reusable components, add basic layout and styling, and implement routing. Export your project as a fully functional Next.js or classic React application built with Typescript and functional components.
+
+What’s new with this release:
+
+- Export your code as a Next.js application with routing
+- Build your application with a drag-n-drop interface and watch as your code is dynamically generated
+- Save your project to the cloud
+
+Check out our [github repo](https://github.com/open-source-labs/ReacType) for more information.
+
+This is also a [link to a medium article](https://medium.com/@tylersullberg/letters-from-the-dark-world-of-react-boilerplate-5de9b4b8e2a3) one of our developers wrote.
+
+Thank you!
+## [10][Better syntax for optional return type value](https://www.reddit.com/r/typescript/comments/hshahi/better_syntax_for_optional_return_type_value/)
+- url: https://www.reddit.com/r/typescript/comments/hshahi/better_syntax_for_optional_return_type_value/
+---
+    export const getClients = (): Promise&lt;ClientList | undefined&gt; =&gt; api.get&lt;ClientList&gt;({
+        uri: '/clients',
+        errorMsg: 'Error getting all clients'
+    });
+
+So I'm hoping to find a better way to express the above type than ClientList | undefined. Something that expresses the optional nature of the result. I think my API get() function might need a modification too, it returns the ClientList if successful and undefined if not (it contains the exception thrown and internally handles logging it and showing it to the user.
+
+Anyway, I've always been a big fan of TypeScript in concept but kept sticking with JavaScript, so I'm trying to force myself to use it more.
+
+PS. Here is the api.get function definition:
+
+    const get = async &lt;T&gt;(req: RequestConfig): Promise&lt;T | undefined&gt; =&gt; {
+        try {
+            const res = await axios.get(req.uri, req.config);
+            return res.data;
+        } catch (ex) {
+            handleError(ex, req.errorMsg, req.suppressError);
+            return undefined;
+        }
+    };
+
+&amp;#x200B;
+## [11][Trying to model a function declaration that returns a class instance](https://www.reddit.com/r/typescript/comments/hs8544/trying_to_model_a_function_declaration_that/)
 - url: https://www.reddit.com/r/typescript/comments/hs8544/trying_to_model_a_function_declaration_that/
 ---
 The Error and surrounding context:
@@ -136,172 +292,3 @@ What exactly is the issue here? Below is the index.js containing the full librar
     
       return renderer
     }
-## [4][Setting up React Typescript Monorepo with Lerna](https://www.reddit.com/r/typescript/comments/hrrur2/setting_up_react_typescript_monorepo_with_lerna/)
-- url: https://www.reddit.com/r/typescript/comments/hrrur2/setting_up_react_typescript_monorepo_with_lerna/
----
-While working on complicated software solutions, many times we need to create multiple projects which may have some common building blocks, or some other sharing code.
-
-One good approach to create such solutions is to create monorepos.
-
-I have written this blog post to create one such typescript react monorepo using Lerna.
-
-[http://devwithabhi.com/setting-up-react-typescript-monorepo-with-lerna/](http://devwithabhi.com/setting-up-react-typescript-monorepo-with-lerna/)
-
-Hope you guys like it.
-## [5][Active Open source server project in GitHub](https://www.reddit.com/r/typescript/comments/hs37ce/active_open_source_server_project_in_github/)
-- url: https://www.reddit.com/r/typescript/comments/hs37ce/active_open_source_server_project_in_github/
----
-Hey Guys,
-
-Can you please let me know good opensource node(may be with typescript) project that are active in GitHub.
-## [6][[mutex-server] mutex and semaphore in the network level](https://www.reddit.com/r/typescript/comments/hrrcyy/mutexserver_mutex_and_semaphore_in_the_network/)
-- url: https://www.reddit.com/r/typescript/comments/hrrcyy/mutexserver_mutex_and_semaphore_in_the_network/
----
-Critical sections in the network level.
-
-* [https://github.com/samchon/mutex-server](https://github.com/samchon/mutex-server)
-* [https://mutex.dev/api](https://mutex.dev/api)
-
-The `mutex-server` is an npm module that can be used for building a mutex server. When you need to control a critical section on the entire system level, like distributed processing system using the network communications, this `mutex-server` can be a good solution.
-
-Installs and opens a `mutex-server` and let clients to connect to the server. The clients who're connecting to the `mutex-server` can utilize remote critical section components like [mutex](https://mutex.dev/api/classes/msv.remotemutex.html) or [semaphore](https://mutex.dev/api/classes/msv.remotesemaphore.html).
-
-Also, `mutex-server` has a safety device for network disconnections. When a client has been suddenly disconnected, all of the locks had acquired or tried by the client would be automatically unlocked or cancelled. Therefore, you don't worry about any network disconnection accident and just enjoy the `mutex-server` with confidence.
-## [7][A library to generate the maximally efficient series of unique keys for a given alphabet.](https://www.reddit.com/r/typescript/comments/hrm45x/a_library_to_generate_the_maximally_efficient/)
-- url: https://github.com/gactjs/key
----
-
-## [8][Overload Method declaration error(s)](https://www.reddit.com/r/typescript/comments/hrqqpl/overload_method_declaration_errors/)
-- url: https://www.reddit.com/r/typescript/comments/hrqqpl/overload_method_declaration_errors/
----
-    declare class audioconcat {
-      constructor(audios: Array&lt;string&gt;);
-    
-      VERSION: string;
-    
-      ffmpeg: Function;
-    
-      concat(images: string[], options: any): this;
-    
-      on(hook: string, callback(command: any): void): this;
-      on(hook: string, callback(err: any, stdout: any, stderr: any): void): this;
-      on(hook: string, callback(output: any): void): this;
-    /*
-    (parameter) callback: any
-    'callback' is declared but its value is never read.ts(6133)
-    Parsing error: ',' expected.eslint
-    Parameter 'callback' implicitly has an 'any' type.ts(7006)
-    */
-    }
-
-I'm not sure if I erred due to special syntax for a callback, or a method overload.
-
-Also, I have this in `project/src/declarations.d.ts.` TS seems unable to find this file. Why isn't it being picked up? I thought it should be found recursively.
-
-    import audioConcat from 'audioconcat';
-    
-    /*
-    Could not find a declaration file for module 'audioconcat'.
-     '/home/owner/cp/project/node_modules/audioconcat/index.js' 
-    implicitly has an 'any' type.
-    
-    Try `npm install @types/audioconcat` if it exists or add 
-    a new declaration (.d.ts) file containing `declare module 
-    'audioconcat';`ts(7016)
-    */
-
-Here is the library: [https://www.npmjs.com/package/audioconcat](https://www.npmjs.com/package/audioconcat)
-
-    audioconcat(songs)
-      .concat('all.mp3')
-      .on('start', function (command) {
-        console.log('ffmpeg process started:', command)
-      })
-      .on('error', function (err, stdout, stderr) {
-        console.error('Error:', err)
-        console.error('ffmpeg stderr:', stderr)
-      })
-      .on('end', function (output) {
-        console.error('Audio created in:', output)
-      })
-## [9][Marking Optional Parameters in Callbacks As NonOptional?](https://www.reddit.com/r/typescript/comments/hrmj9s/marking_optional_parameters_in_callbacks_as/)
-- url: https://www.reddit.com/r/typescript/comments/hrmj9s/marking_optional_parameters_in_callbacks_as/
----
-From the official docs:
-
-## Optional Parameters in Callbacks [\#](https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html#optional-parameters-in-callbacks)
-
-*Don’t* use optional parameters in callbacks unless you really mean it:
-
-    /* WRONG */ 
-    interface Fetcher {    
-      getObject(done: (data: any, elapsedTime?: number) =&gt; void): void; 
-    } 
-
-This has a very specific meaning: the `done` callback might be invoked with 1 argument or might be invoked with 2 arguments. The author probably intended to say that the callback might not care about the elapsedTime parameter, but **there’s no need to make the parameter optional to accomplish this – it’s always legal to provide a callback that accepts fewer arguments.**
-
-*Do* write callback parameters as non-optional:
-
-    /* OK */ 
-    interface Fetcher {    
-      getObject(done: (data: any, elapsedTime: number) =&gt; void): void; 
-    }
-
-\----------
-
-Unless callbacks are unusual, I seem to remember a lot of lint errors thrown by TSC along the lines of `Expected 2 arguments, but received only 1`. I have a hard time squaring this with the above, can anyone clarify this?
-## [10][Why does my typescript file complain about not finding the declared variable and assign its number?](https://www.reddit.com/r/typescript/comments/hrkrr3/why_does_my_typescript_file_complain_about_not/)
-- url: https://www.reddit.com/r/typescript/comments/hrkrr3/why_does_my_typescript_file_complain_about_not/
----
- I'm getting an error say that it cannot find age, when trying to assign to 18, 
-
-Does someone know why?
-
-    declare var age: number  
-    
-    age = 18 // error
-
-
-When I try to build binder with webpack it say variable cannot be found.
-## [11][Cool helper type that will allow you to recursively replace all types in an object with another type.](https://www.reddit.com/r/typescript/comments/hr19a2/cool_helper_type_that_will_allow_you_to/)
-- url: https://www.reddit.com/r/typescript/comments/hr19a2/cool_helper_type_that_will_allow_you_to/
----
-Figured this out recently, when I had to transform large plain objects of different shapes, and replace some leaf value with a different one. `Replaced` type takes 4 generic arguments:
-
-* `T` the object to be transformed.
-* `TReplace` the type to be replaced with
-* `TWith` the type to use instead of `TReplace`
-* `TKeep` the type to not transform. Defaults to primitive values.  
-
-
-Obviously to be used as the return type of some function that does the actual transformation.
-
-    type Primitive = string | number | bigint | boolean | null | undefined;
-    
-    type Replaced&lt;T, TReplace, TWith, TKeep = Primitive&gt; = T extends TReplace | TKeep
-        ? (T extends TReplace
-            ? TWith | Exclude&lt;T, TReplace&gt;
-            : T)
-        : {
-            [P in keyof T]: Replaced&lt;T[P], TReplace, TWith, TKeep&gt;
-        }
-    
-    type Foo = symbol;
-    type Bar = "3";
-    
-    type ToReplace = {
-        x?: {
-            y: Foo | number;
-            z: string;
-        }[]
-    } | undefined;
-    
-    type WasReplaced = Replaced&lt;ToReplace, Foo, Bar&gt;;
-    /* Output:
-    {
-        x?: {
-            y: number | "3";
-            z: string;
-        }[];
-    }
-    */

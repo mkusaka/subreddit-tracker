@@ -1,207 +1,117 @@
 # ruby
-## [1][Defining gem dependencies in single-file Ruby scripts](https://www.reddit.com/r/ruby/comments/hrzy5d/defining_gem_dependencies_in_singlefile_ruby/)
+## [1][How Heroku Sped Up Time-Related Syscalls on Dynos](https://www.reddit.com/r/ruby/comments/hsv9bc/how_heroku_sped_up_timerelated_syscalls_on_dynos/)
+- url: https://blog.heroku.com/clocksource-tuning
+---
+
+## [2][How to use a Transaction Script(aka Service Objects) in Ruby on Rails. Simple example](https://www.reddit.com/r/ruby/comments/hssfqu/how_to_use_a_transaction_scriptaka_service/)
+- url: https://www.reddit.com/r/ruby/comments/hssfqu/how_to_use_a_transaction_scriptaka_service/
+---
+The logic of small applications can be present as a series of transactions. Using the Transaction Scripts pattern, we get an application that is easier to maintain, to cover with tests, and to scale.
+
+In the [tutorial](https://jtway.co/how-to-use-a-transaction-script-aka-service-objects-in-ruby-on-rails-simple-example-161b7e228942) we will develop an [application](https://github.com/dgorodnichy/transaction-script-example) that has Post, User, and Like models. Users should be able to like posts. The first version of the controller will contain extra code, which we will extract into a separate Transaction Script. We also describe when we need to use the Transaction Scripts and the pros of the transaction script usage.
+
+Full tutorial: [How to use a Transaction Script (aka Service Objects) in Ruby on Rails. Simple example](https://jtway.co/how-to-use-a-transaction-script-aka-service-objects-in-ruby-on-rails-simple-example-161b7e228942)
+## [3][First gem, interested in feedback](https://www.reddit.com/r/ruby/comments/hsbta7/first_gem_interested_in_feedback/)
+- url: https://www.reddit.com/r/ruby/comments/hsbta7/first_gem_interested_in_feedback/
+---
+Gem name: Backpedal
+
+Repo: [https://github.com/Greyoxide/backpedal](https://github.com/Greyoxide/backpedal)
+
+RubyGems: [https://rubygems.org/gems/backpedal/versions/0.1.2](https://rubygems.org/gems/backpedal/versions/0.1.2)
+
+The goal with this gem is to provide developers with an easy way to move users back on their respective navigational path.  I found myself arriving at views from different angles and I wanted to develop a utilitarian method for moving users back along their respective navigational path.
+
+For example: /orders/22 -&gt; /products/141 In this case the back\_link on the product view would take the user back to /orders/22.  Using this same example: /product\_lines/41 -&gt; /products/141 This controller action renders the same template as before, however the back button would take the user back to /product\_lines/41
+
+This is my first gem, and I'd love some feedback.
+## [4][Question regarding using end in flow control blocks](https://www.reddit.com/r/ruby/comments/hsgyf3/question_regarding_using_end_in_flow_control/)
+- url: https://www.reddit.com/r/ruby/comments/hsgyf3/question_regarding_using_end_in_flow_control/
+---
+Hello everyone.
+
+I have recently started learning ruby and currently I am trying to write the Tic Tac Toe game.
+
+However, I am really confused by the usage of end in Ruby. I have this method and I keep getting errors saying expecting end.
+
+        def play
+          has_won = false
+          turn = 1
+          winner = nil
+          until !has_won &amp;&amp; turn &lt; 10 do
+            puts print_board
+            if turn.odd?
+              selection = 0
+              until valid_move?(selection) do
+                puts "#{players[0].name} select where you want to put your symbol (O): "
+                selection = gets.chomp.to_i
+                if valid_move?(selection)
+                  @board[selection] = player[0].symbol
+                  has_won = won?(player[0])
+                  winner = player[0] if has_won
+                else
+                  puts "Wrong selection. Try again."
+                end
+              end
+            else 
+              selection = 0
+              until valid_move?(selection) do
+                puts "#{players[1].name} select where you want to put your symbol (O): "
+                selection = gets.chomp.to_i
+                if valid_move?(selection)
+                  @board[selection] = player[1].symbol
+                  has_won = won?(player[1])
+                  winner = player[1] if has_won
+                else
+                  puts "Wrong selection. Try again."
+                end
+              end
+            end
+    
+            turn++
+          end
+          
+    
+          if has_won ?
+            puts("#{winner.name} has won the game. Congratulations! "):
+            puts("The game ended in a draw!")
+            
+        end
+
+My question is when exactly do I need to use end? What is wrong in this method? Do I need to use end in such cases as `winner = player[1] if has_won`
+## [5][RubyMine vs IntelliJ + RubyMine plugin](https://www.reddit.com/r/ruby/comments/hsbcg5/rubymine_vs_intellij_rubymine_plugin/)
+- url: https://www.reddit.com/r/ruby/comments/hsbcg5/rubymine_vs_intellij_rubymine_plugin/
+---
+Is there any difference between RubyMine and IntelliJ + RubyMine plugin? I'd rather use one IDE (IntelliJ) for everything rather than separate ones for each language.
+## [6][Defining gem dependencies in single-file Ruby scripts](https://www.reddit.com/r/ruby/comments/hrzy5d/defining_gem_dependencies_in_singlefile_ruby/)
 - url: https://nithinbekal.com/posts/bundler-inline-gemfile/
 ---
 
-## [2][Ruby VS Python](https://www.reddit.com/r/ruby/comments/hs2nsk/ruby_vs_python/)
+## [7][Nexss Programmer - Open Source tool for the programmers - Ruby included](https://www.reddit.com/r/ruby/comments/hsi0rj/nexss_programmer_open_source_tool_for_the/)
+- url: https://www.reddit.com/r/ruby/comments/hsi0rj/nexss_programmer_open_source_tool_for_the/
+---
+Hi guys,
+
+We have made Open Source Tool for the Programmers - Nexss Programmer. 
+
+50 different programming languages together... 
+
+Ruby is included so you can combine it with other languages!
+
+If you guys want to check it out here is the link for the video presentation: [https://www.youtube.com/watch?v=7WbnYyEnBNk](https://www.youtube.com/watch?v=7WbnYyEnBNk)
+
+It would be great if we can get more feedback on it.
+
+Have a nice day!
+## [8][Ruby VS Python](https://www.reddit.com/r/ruby/comments/hs2nsk/ruby_vs_python/)
 - url: https://www.reddit.com/r/ruby/comments/hs2nsk/ruby_vs_python/
 ---
 More than a versus (it's more striking) I would really like to know what things they have in common and how they differ, what their main advantages are compared to the other and of course their opinion of them. One point to take into account is because they believe that python is more used in AI and Machine learning developments.
-## [3][System of a test: Proper browser testing in Ruby on Rails](https://www.reddit.com/r/ruby/comments/hs54c6/system_of_a_test_proper_browser_testing_in_ruby/)
+## [9][System of a test: Proper browser testing in Ruby on Rails](https://www.reddit.com/r/ruby/comments/hs54c6/system_of_a_test_proper_browser_testing_in_ruby/)
 - url: https://evilmartians.com/chronicles/system-of-a-test-setting-up-end-to-end-rails-testing
 ---
 
-## [4][Patching Ruby? How to handle mixing Module#prepend with method aliasing](https://www.reddit.com/r/ruby/comments/hs20zh/patching_ruby_how_to_handle_mixing_moduleprepend/)
+## [10][Patching Ruby? How to handle mixing Module#prepend with method aliasing](https://www.reddit.com/r/ruby/comments/hs20zh/patching_ruby_how_to_handle_mixing_moduleprepend/)
 - url: https://www.mayerdan.com/ruby/2020/07/15/ruby-gems-patching-std-lib
 ---
 
-## [5][.times method - how to describe what it does?](https://www.reddit.com/r/ruby/comments/hrtcc7/times_method_how_to_describe_what_it_does/)
-- url: https://www.reddit.com/r/ruby/comments/hrtcc7/times_method_how_to_describe_what_it_does/
----
-Hi all, Ruby beginner here. I am preparing for an assessment where I need to describe what happens on each line of code and got a bit stuck with the .times method. Specifically the following code: 
-
-`a = 5` 
-
-`3.times do |n|` 
-
-  `a = 3` 
-
-`end` 
-
-`puts a`
-
-Here is my description: 
-
-On line 1 variable `a` is initialized in the outer scope which references an Integer Object with the value `5`.
-
-**On line 2 we call the .times method on Integer 3 and pass the do..end block to it as an argument. We pass |n| as an argument as well.** The times method iterates the given block 3 times, passing the values from 0 to 2 and returns self (3 in this case).
-
-On line 3 the variable `a` is reassigned to Integer `3`, so it points to a different object.
-
-On line 5 method `puts` is called passing variable `a` as an argument.
-
-The method outputs `3` and returns `nil`. The variable `a` is available to the inner scope created by `3.times do..end` which allowed the code to re-assign the value of `a`.
-
-This example demonstrates local variable scoping Rules in Ruby - variables initialized in the outer scope are accessible inside the block.
-
-\--- 
-
-**My question is - is it correct to say that we call the times method on integer 3 and pass block do..end and |n| as an argument?**
-## [6][Looking for feedback on new gem: ops_team](https://www.reddit.com/r/ruby/comments/hrqjpi/looking_for_feedback_on_new_gem_ops_team/)
-- url: https://www.reddit.com/r/ruby/comments/hrqjpi/looking_for_feedback_on_new_gem_ops_team/
----
-Hey all,
-
-I've been working on a gem for a while that aims to make it easy to provide simple and discoverable automation for your projects, without complexities like DSLs or namespaces. It's only config file is a single, plain `YAML` file in the root of your repo. The tagline is "The operations team for your project".
-
-[https://github.com/nickthecook/ops](https://github.com/nickthecook/ops)
-
-    actions:
-      connect-to-db:
-        command: psql ssl_mode=verify-full -h $DB_HOST -U $DB_USER -d $DB_DATABASE
-      alias: db
-      load_secrets: true
-
-It's written in Ruby, but works for projects written in any language. I started it because I was struggling to automate a `terraform` project properly (`terraform` doesn't have tools for loading environment-specific config or secrets like Rails does). Also, a company I worked at had a tool like this, and it was a huge help to have a single tool to work with thousands of repos. Sadly, that tool was private.
-
-We've been using \`ops\_team\` at my new company for a few months now, but I'd love feedback from a broader audience. Please have a look and lmk what you think.
-## [7][Custom directory for Webpacker in Rails apps](https://www.reddit.com/r/ruby/comments/hrpvxe/custom_directory_for_webpacker_in_rails_apps/)
-- url: https://prathamesh.tech/2020/07/15/custom-directory-for-webpacker-in-rails-apps/
----
-
-## [8][Is it possible to make a nested loop more efficient than O(N^2)](https://www.reddit.com/r/ruby/comments/hrxzbw/is_it_possible_to_make_a_nested_loop_more/)
-- url: https://www.reddit.com/r/ruby/comments/hrxzbw/is_it_possible_to_make_a_nested_loop_more/
----
-Consider a 'game', where the player jumps from a wooden post to a wooden post. Each post has a number on it that that describes the number of posts to jump over. On positive numbers the player jumps to the right, on negative numbers to the left.  
-
-The number of posts is limited, thus it may happen that the player jumps into the water. 
-
-Input: `input_array = [[1,1,1,1,-2], [1,1,1,1], [1,1,-1], [1,0,1,0]]`
-
-So, my current solution is:
-
-- loop over the input array
-  - run a nested while loop until there can be made successful jump: check each integer and determine whether the player stays dry or jumps into the water
-
-
-```
-    input_array.each do |posts|
-    
-    # create a new round 
-    	round = Round.new(posts)
-    	# initialize new iterator
-    	iterator = round.iterator
-    	
-    	while iterator.has_next?
-    		# add current index to visited posts list
-    		iterator.visited &lt;&lt; iterator.ind
-    		# update next index
-    		iterator.update_next_index
-    		# set the index for the next cycle
-    		iterator.ind = iterator.next_index
-    		# update the current element
-    		iterator.element = iterator.array[iterator.ind]
-    	end
-    end
-
-```
-
-
-
-    class WoodenPostsIterator
-    	include IteratorHelpers
-    
-    	attr_reader :array, :visited
-    	attr_accessor :ind, :next_index, :element
-    
-      def initialize(array)
-        @array = array
-        @ind = 0
-        @visited = []
-        @element = array[@ind]
-        @next_index = nil
-      end
-    
-      # @return [boolean] indicating whether there is a next post
-      def has_next?
-      	# player stops jumping if they come across number '0'
-    		if post_zero?(element)
-    			puts "The player stays dry due to innactivity"
-    			return false
-    		end
-    
-    		# check if post already visited: if yes, stop the program
-    		if post_is_visited?(ind)
-    			puts "The player stays dry."
-    			return false
-    		end
-    
-    		next_index = calculate_next_index
-    		# halt the game if the player jumped into the water
-    		if water_jump(array, next_index)
-    			puts "The player gets wet!"
-    			return false 
-    		end
-    
-    		true
-      end
-      
-      # @return [nil] 
-      def update_next_index
-      	# update the next index
-    		self.next_index = calculate_next_index
-      end
-    
-      private
-      # @return [Integer] indicating next index
-      def calculate_next_index
-      	# determine the sign
-    		sign = define_operator(element)
-    		# calculate next index (next wooden post)
-    		ind.public_send(sign, element.abs)
-      end
-    
-      # @param [Integer] post for checking
-    	# @return [boolean] indicating whether the passed element is zero
-     	def post_zero?(element)
-     		# halt the program if the element is zero
-    		element == 0
-    	end
-    
-    	# @param [Integer] index for checking
-    	# @return [Boolean]  indicating whether 'visited' list contains passed index 
-    	def post_is_visited?(ind)
-    		# if node (post) has been visited, halt the program
-    		# reason: The player stays dry due to the infinite jumping
-    		# NOTE: this method can be made to be more efficient by removing visited 
-    		# posts from the array. 
-    		visited.include?(ind)
-    	end
-    
-    	# @param [Array] posts list
-    	# @param [Integer] next index
-    	# @return [Boolean] indicating if the player is jumping in the water
-    	def water_jump(arr, next_index)
-    		# returns true if player jumps into the 
-    		# water (try to access an element out of the range)
-    		true if next_index + 1 &gt; arr.length || next_index &lt; 0
-    	end
-    end
-
-This solution is `O(N^2)`. How can I make it more efficient?
-## [9][System of a test: Proper browser testing in Ruby on Rails. Ditch Selenium for Ferrum and CDP, embrace Docker.](https://www.reddit.com/r/ruby/comments/hr2fyl/system_of_a_test_proper_browser_testing_in_ruby/)
-- url: https://evilmartians.com/chronicles/system-of-a-test-setting-up-end-to-end-rails-testing
----
-
-## [10][Experiences using slack-ruby-client?](https://www.reddit.com/r/ruby/comments/hra3zb/experiences_using_slackrubyclient/)
-- url: https://www.reddit.com/r/ruby/comments/hra3zb/experiences_using_slackrubyclient/
----
-Evening all,
-
-I'm going to be building a Slack integration between my SaaS Rails app and our customer's Slack channels. Initially it's going to be basic slash command but if anticipate making it much more interactive over time.
-
-In the past I've done a basic Slack posting without any special gems / library. I recently came across [**slack-ruby-client**](https://github.com/slack-ruby/slack-ruby-client) and it certainly looks fully featured and potentially useful.
-
-I'm interested to hear if anyone has used this library and how was their experience? 
-
-thanks!

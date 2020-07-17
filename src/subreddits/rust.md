@@ -23,51 +23,76 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/07/14/this-week-in-rust-347/
 ---
 
-## [3][Benchmarking gRPC in Rust and Go](https://www.reddit.com/r/rust/comments/hs5k36/benchmarking_grpc_in_rust_and_go/)
-- url: https://medium.com/@Rustling_gopher/benchmarking-grpc-in-rust-go-184545e7688a
+## [3][Programming languages: Now Rust project looks for a way into the Linux kernel | ZDNet](https://www.reddit.com/r/rust/comments/hstd2v/programming_languages_now_rust_project_looks_for/)
+- url: https://www.zdnet.com/article/programming-languages-now-rust-project-looks-for-a-way-into-the-linux-kernel/
 ---
 
-## [4][Blog Post: Two Beautiful Rust Programs](https://www.reddit.com/r/rust/comments/hrwckz/blog_post_two_beautiful_rust_programs/)
-- url: https://matklad.github.io//2020/07/15/two-beautiful-programs.html
+## [4][Programming Servo: just hanging around](https://www.reddit.com/r/rust/comments/hssdct/programming_servo_just_hanging_around/)
+- url: https://www.reddit.com/r/rust/comments/hssdct/programming_servo_just_hanging_around/
+---
+An overview of how Servo, a large concurrent and multi-process code-base written in the Rust programming language, dealt with hanging threads.
+
+[https://medium.com/programming-servo/programming-servo-just-hanging-around-d8f660c33df2?source=friends\_link&amp;sk=6efbf13743aec335bd11834c2df71783](https://medium.com/programming-servo/programming-servo-just-hanging-around-d8f660c33df2?source=friends_link&amp;sk=6efbf13743aec335bd11834c2df71783)
+## [5][Announcing Rust 1.45.0 | Rust Blog](https://www.reddit.com/r/rust/comments/hsa7ca/announcing_rust_1450_rust_blog/)
+- url: https://blog.rust-lang.org/2020/07/16/Rust-1.45.0.html
 ---
 
-## [5][Shipping Const Generics in 2020](https://www.reddit.com/r/rust/comments/hs9hbn/shipping_const_generics_in_2020/)
+## [6][Shipping Const Generics in 2020](https://www.reddit.com/r/rust/comments/hs9hbn/shipping_const_generics_in_2020/)
 - url: https://without.boats/blog/shipping-const-generics/
 ---
 
-## [6][Writing a kernel driver with Rust.](https://www.reddit.com/r/rust/comments/hrwyl8/writing_a_kernel_driver_with_rust/)
-- url: https://not-matthias.github.io/kernel-driver-with-rust/
+## [7][The new luminance is there](https://www.reddit.com/r/rust/comments/hsgfav/the_new_luminance_is_there/)
+- url: https://phaazon.net/blog/luminance-0.40
 ---
 
-## [7][j4rs v0.12.0: Java to Rust direction](https://www.reddit.com/r/rust/comments/hs4677/j4rs_v0120_java_to_rust_direction/)
-- url: https://astonbitecode.github.io/blog/post/j4rs_0.12.0/
+## [8][What an extraordinary language](https://www.reddit.com/r/rust/comments/hso2kr/what_an_extraordinary_language/)
+- url: https://www.reddit.com/r/rust/comments/hso2kr/what_an_extraordinary_language/
 ---
+    pub fn find(&amp;self) -&gt; Option&lt;Box&lt;indextree::Node&lt;TransactionState&gt;&gt;&gt; {
+            match arenaReader()
+                .arena
+                .lock()
+                .unwrap()
+                .iter()
+                .find(|t2| *self == *t2.get().trans())
+            {
+                Some(x) =&gt; Some(Box::new(x.clone())),
+                _ =&gt; None,
+            }
+        }
 
-## [8][Function overloading in Rust](https://www.reddit.com/r/rust/comments/hrxzpi/function_overloading_in_rust/)
-- url: https://medium.com/@nrabulinski/function-overloading-in-rust-d591aff64a03
+See [stackoverflow.com/questions/27791532/how-do-i-create-a-global-mutable-singleton](https://stackoverflow.com/questions/27791532/how-do-i-create-a-global-mutable-singleton)
+## [9][Can anything in Rust currently match the performance of uWebSockets?](https://www.reddit.com/r/rust/comments/hsmhas/can_anything_in_rust_currently_match_the/)
+- url: https://www.reddit.com/r/rust/comments/hsmhas/can_anything_in_rust_currently_match_the/
 ---
+[https://github.com/uNetworking/uWebSockets](https://github.com/uNetworking/uWebSockets)
 
-## [9][Building and debugging a high-throughput daemon in Rust](https://www.reddit.com/r/rust/comments/hrvu2t/building_and_debugging_a_highthroughput_daemon_in/)
-- url: https://brokenco.de/2020/07/15/high-throughput-in-rust.html
+This is currently known as possibly the fastest pub/sub WebSocket server out there in terms of single-core performance (number of messages/bytes per second it can push out to clients/number of concurrent connected clients). I'm wondering if anyone knows if it's possible to roughly match the performance of uWebSockets in Rust.
+
+I've tried putting together a simple single-core asynchronous tokio-based broadcast server in Rust based on Warp that broadcasts a message by just directly looping over an Arc&lt;Mutex&lt;Vec&gt;&gt; of connected clients. It's not slow, but uWebSockets can handle about 2.3x as many concurrent clients under my benchmarks (streaming about 150 broadcasts per second) before latency starts spiking.
+
+Are there any other libraries or techniques I should be looking at that might possibly equal the performance of uWebSockets without requiring a Herculean effort? If I can get within, say, 10-30% of uWebSockets, that's probably close enough to pick Rust. However, a 2.3x difference is currently too much to ignore.
+## [10][Having a hard time understanding atomic operations in Rust.](https://www.reddit.com/r/rust/comments/hskm11/having_a_hard_time_understanding_atomic/)
+- url: https://www.reddit.com/r/rust/comments/hskm11/having_a_hard_time_understanding_atomic/
 ---
+Hello everyone. Today I decided to take a break and watch the Jon Gjengset's stream of [porting Java's ConcurrentHashMap in Rust](https://www.youtube.com/watch?v=yQFWmGaFBjk). Part of the implementation, perhaps if not the majority, relies mostly on atomic operations, which I'm having a hard time understanding. This had been an unknown term for me until I checked the crossbeam crate. But it is still unclear, nonetheless, the purpose of this abstraction. May I ask; would anyone mind further explaining a little bit more about the basis of atomics and the motivation behind the crossbeam crate in which is related?
 
-## [10][IntelliJ Rust 0.3: New Macro Expansion Engine](https://www.reddit.com/r/rust/comments/hrknxy/intellij_rust_03_new_macro_expansion_engine/)
-- url: https://blog.jetbrains.com/clion/2020/07/intellij-rust-0-3-new-macro-expansion-engine/
+I'd deeply appreciate some guidance. Thanks in advance.
+## [11][git-cm: A tool for generating conventional-commits style commits](https://www.reddit.com/r/rust/comments/hsuihh/gitcm_a_tool_for_generating_conventionalcommits/)
+- url: https://www.reddit.com/r/rust/comments/hsuihh/gitcm_a_tool_for_generating_conventionalcommits/
 ---
+Hey!
 
-## [11][How to handle asynchrony in otherwise blocking code for WASM?](https://www.reddit.com/r/rust/comments/hs8tre/how_to_handle_asynchrony_in_otherwise_blocking/)
-- url: https://www.reddit.com/r/rust/comments/hs8tre/how_to_handle_asynchrony_in_otherwise_blocking/
+I just published a custom git command, `git-cm`. It lets you interactively generate conventional-commits styled commit messages by asking you questions.
+
+[Here](https://github.com/SirWindfield/git-cm) is a link to the repo.
+
+Hopefully this is as useful to others as it is to me :)
+If you have ideas or found bugs, just open up a new issue :)
+## [12][How do I convert &amp;str to *const c_char?](https://www.reddit.com/r/rust/comments/hsssrf/how_do_i_convert_str_to_const_c_char/)
+- url: https://www.reddit.com/r/rust/comments/hsssrf/how_do_i_convert_str_to_const_c_char/
 ---
-Hey,
+I know how to convert c_char to String and &amp;str. How do I do the opposite? 
 
-in recent efforts on progressing my rust-skills I have been working on a little toy project called [poppy](https://github.com/liona24/poppy), which is basically a simple framework to play poker. Originally I planned on re-implementing the [Pluribus AI](https://science.sciencemag.org/content/365/6456/885), but time is scarce. Eventually we will get there.
 
-Anyway I wanted to make a little demo build targeting WASM. This turned out to be quite challenging since I made some unfortunate design decisions: Currently the game is owning each player and hence *awakes* each one when it is his/her time to shine. This is a simple blocking design and seemed fine at that point in time since I wanted to implement an AI anyway.
-
-Now however I am failing to implement user interaction in a javascript-callback-world, since I cannot simply return from the invoked function until I (the player) know what to do. I was wondering how to solve this problem? Is this something I should have foreseen in the first place or are there some patterns which can be used here? 
-
-I suspect in a multi-threaded environment one could create a polling thread or fallback to actual async/await operations though I am not sure if this is the right place here. Is it generally advisable to implement anything that might require user interaction in a callback-oriented design?
-## [12][Why even unused data needs to be valid](https://www.reddit.com/r/rust/comments/hrlozh/why_even_unused_data_needs_to_be_valid/)
-- url: https://www.ralfj.de/blog/2020/07/15/unused-data.html
----
-
+Specifically, `&amp;str`  -&gt;  `*const c_char`

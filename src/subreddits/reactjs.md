@@ -61,169 +61,151 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [2][Who's Hiring? [July 2020]](https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/)
-- url: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
+## [2][Who's Available? [July 2020]](https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
 ---
-We alternate between **Who's Hiring** (on the 1st of the month, [most recent one here][hiring:most recent]) and **Who's Available** (on the 15th, [most recent one here][available:most recent])
+We alternate between hirers (on the 1st of the month) and agencies/freelancers/jobseekers (on the 15th).  
+If you are looking to post or reply to React job postings, please check [this month's Who's Hiring post here.][hiring:this month]
 
-Welcome to **the biggest React job board in the world!** This is like Hacker News' **Who's Hiring** but just for React. Top Level comments must be **Job Opportunities.**
-
-⚠️ NEW: WE ARE REQUESTING EVERYBODY FOLLOW [THE HN Who's Hiring FORMAT][format:hiring:hn]
-
-**Company inc. | Job Title | City/State Location | Full-time/Part-Time | On-site/Remote | (Optional) Salary range | Website jobs page, other hard requirements etc.**
-
-examples:
-
-- **Thorn | San Francisco or Remote (US based) | Full-time Contract | $100k - $150k | Software Engineer | https://www.wearethorn.org/**
-- **PolicyStat | Full-Stack Python+Django Software Engineer | Indianapolis, Vancouver, or REMOTE | Full Time | +\$80k**
-
-Please include as much information as possible. **If you are remote-friendly, or open to sponsoring work visas to your country, say so! These are the top 2 questions!**
-
-If you are looking for jobs, send a PM to the poster or post in our [Who's Available thread!][available:most recent]
-
-[hiring:most recent]: https://www.reddit.com/r/reactjs/comments/gudtmn/whos_hiring_june_2020/
-[available:most recent]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
-## [3][New from Adobe: Introducing React Spectrum](https://www.reddit.com/r/reactjs/comments/hru4ov/new_from_adobe_introducing_react_spectrum/)
-- url: https://react-spectrum.adobe.com/blog/introducing-react-spectrum.html
 ---
 
-## [4][Movie time calculator](https://www.reddit.com/r/reactjs/comments/hs6e7e/movie_time_calculator/)
+If your post or comment is removed wrongly, please [send a message][message:mods] to mods  
+because Automods bot is not perfect :)
+
+---
+
+Top Level comments must be Agencies and React Devs available for contract/permanent work.
+
+Please include Location or any other Requirements in your comment. You can choose to use this format if it helps:
+
+## (Fulltime | Contract | USA | Remote)
+
+or
+
+## (Agency | Europe | Remote)
+
+Then we recommend adding a 2-3 sentence bio as well.
+
+Not required, but may help:
+
+- Link to Github/Portfolio
+- Notable [r/reactjs][r/reactjs] submissions
+- Preferred stack
+- Former companies or clients
+- Design or backend dev experience
+- anything else you consider relevant. Put on your best show!
+- Listing years of experience NOT required, it's a poor metric
+
+If you are looking to hire, you can send a PM, or reply so that others might see your job opening.  
+**Note**: Due to the sensitive nature of availability while currently in a job, users may be using alternate accounts.
+
+For more ideas on what to include, look at the [last Who's Available posts][available:last month].
+
+If you just want some portfolio feedback, check the stickied post below.
+
+Good luck! #WriteOnceApplyEverywhere
+
+[r/reactjs]: https://www.reddit.com/r/reactjs/
+[available:last month]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
+[hiring:this month]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
+[message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
+## [3][Stream Party: watch and search YouTube videos in sync with your friends](https://www.reddit.com/r/reactjs/comments/hsh9bg/stream_party_watch_and_search_youtube_videos_in/)
+- url: https://v.redd.it/kjor97lzz9b51
+---
+
+## [4][Hi! I just want to share my personal site.](https://www.reddit.com/r/reactjs/comments/hstcg3/hi_i_just_want_to_share_my_personal_site/)
+- url: https://www.reddit.com/r/reactjs/comments/hstcg3/hi_i_just_want_to_share_my_personal_site/
+---
+Will appreciate some feedback. Thanks!
+
+[https://amviillanueva.github.io/angelika/](https://amviillanueva.github.io/angelika/)
+## [5][We have just released an open source React dev tool for time-travel state debugging, and would love your feedback!](https://www.reddit.com/r/reactjs/comments/hslxuw/we_have_just_released_an_open_source_react_dev/)
+- url: https://www.reddit.com/r/reactjs/comments/hslxuw/we_have_just_released_an_open_source_react_dev/
+---
+Hi /r/reactjs! We are super excited to share with you our new open-source React dev tool, Reactime (v4.0). Reactime is a Chrome DevTools extension for performing time-travel state debugging of React applications. Previous versions of Reactime required an npm package to be added to your React applications, but the newest version can pull state from any application, as long as React DevTools is installed in your Chrome browser.
+
+Please check it out on the [Chrome store](https://chrome.google.com/webstore/detail/reactime/cgibknllccemdnfhfpmjhffpjfeidjga?hl=en-US) and [our website](https://reactime.io/).
+
+If you want to learn more about how Reactime v4.0 was made, check out [this article](https://medium.com/@aquinojardim/react-fiber-reactime-4-0-f200f02e7fa8) by one of our team members. You can also watch a short demo [here](https://www.youtube.com/watch?v=q7qP2a9KEnk).
+
+Let us know what you think!
+## [6][My first JS project turned out to be a cool web player! (Next.js)](https://www.reddit.com/r/reactjs/comments/hsjena/my_first_js_project_turned_out_to_be_a_cool_web/)
+- url: https://v.redd.it/ntso8vqhkab51
+---
+
+## [7][Remote react app as component](https://www.reddit.com/r/reactjs/comments/hstuco/remote_react_app_as_component/)
+- url: https://www.reddit.com/r/reactjs/comments/hstuco/remote_react_app_as_component/
+---
+I have a react app and I want to make extensions for it and let other users also create extensions.
+
+The problem is with loading the extension. I was thinking of fetching the url (index.html) and displaying it with dangerouslySetInnerHTML. And let the extension communicate via a shared store(not sure about this part but can find out) 
+
+There is probably someone who had a similar problem and point me in a better direction than dangerouslySetInnerHTML.
+## [8][Movie time calculator](https://www.reddit.com/r/reactjs/comments/hs6e7e/movie_time_calculator/)
 - url: https://v.redd.it/v2gp0x1gr6b51
 ---
 
-## [5][Today @ 1PM ET - Learn about React at scale, monorepos, and how Etsy gets it done](https://www.reddit.com/r/reactjs/comments/hro9gf/today_1pm_et_learn_about_react_at_scale_monorepos/)
-- url: https://www.reddit.com/r/reactjs/comments/hro9gf/today_1pm_et_learn_about_react_at_scale_monorepos/
+## [9][How to retrieve authorized info from Fantasy Premier League Using React?](https://www.reddit.com/r/reactjs/comments/hsvnoz/how_to_retrieve_authorized_info_from_fantasy/)
+- url: https://www.reddit.com/r/reactjs/comments/hsvnoz/how_to_retrieve_authorized_info_from_fantasy/
 ---
-Today on React Wednesday we talk to u/technoheads about his work with large JS/React codebases at u/Etsy. They have 12k modules in a monorepo and deal with massive scaling challenges. 
+ 
 
-&amp;#x200B;
+I was hoping that someone could help me out here.
 
-Come learn about React at scale with us at 1:00 Eastern (\~ 3 hours from now) 
+I am creating a small Fantasy Football Premier League app using React. There is user specific information that needs authentication before requesting information from the Fantasy Premier League API.
 
-[https://www.twitch.tv/codeitlive](https://www.twitch.tv/codeitlive)  
+The idea is for the app to start with a login page, where the user inputs their username and password. The app will then post this information to the login URL and return a token, that can be used to retrieve information that requires authentication.
 
-&amp;#x200B;
-
-Learn more about React Wednesdays and get calendar reminders at: [https://www.telerik.com/react-wednesdays](https://www.telerik.com/react-wednesdays)
-## [6][I built an app that lets you stream PC output to Sonos devices](https://www.reddit.com/r/reactjs/comments/hrri09/i_built_an_app_that_lets_you_stream_pc_output_to/)
-- url: https://v.redd.it/ns6iytkfz1b51
----
-
-## [7][How to handle Async operations with Redux | Imaginary Cloud](https://www.reddit.com/r/reactjs/comments/hs836y/how_to_handle_async_operations_with_redux/)
-- url: https://www.imaginarycloud.com/blog/how-to-handle-async-operations-with-redux/
----
-
-## [8][Render static page, then lazy load react bundle](https://www.reddit.com/r/reactjs/comments/hs7ohy/render_static_page_then_lazy_load_react_bundle/)
-- url: https://www.reddit.com/r/reactjs/comments/hs7ohy/render_static_page_then_lazy_load_react_bundle/
----
-Hi there,
-
-I am new to react and i was wondering how to lazy load my "massive" react bundle after showing just the static landing page (entry point "/" , like login, sign up). 
-
-&amp;#x200B;
-
-basically i want to load the landing page which is just sign up and login forms FAST, before loading the react bundle (including a massive Firebase dependency) while the user is on the landing page.
-
-&amp;#x200B;
-
-how do I split my static landing page from the rest of my app? 
-
-&amp;#x200B;
-
-using create-react-app FYI
-## [9][Testing a wrapper component](https://www.reddit.com/r/reactjs/comments/hs7iel/testing_a_wrapper_component/)
-- url: https://www.reddit.com/r/reactjs/comments/hs7iel/testing_a_wrapper_component/
----
-I am using Jest and Enzyme to write tests for my application. I have run into an issue testing a wrapping component that uses a custom hook. I'm a bit unsure if my whole approach is wrong.  
+previously, I created the app in python which worked, below was the code:  
 
 
-I have the following component:
+     login':USERNAME, 'password':PASSWORD, 'redirect_uri': 'https://fantasy.premierleague.com/', 'app':'plfpl-web' } s = requests.session() s.post("https://users.premierleague.com/accounts/login/", data=payload) myData = s.get('https://fantasy.premierleague.com/api/me').json(); 
 
-    ....
-    import api from "../api/api"
-    import useHttpErrorHandler from "../hooks/httpErrorHandling"
+ How I know this worked is that when authorized, the variable myData can successfully access 'https://fantasy.premierleague.com/api/me' and gets assigned to all of my authorized information. When my details are incorrect (not authorized), the myData variable is "null" (the values of the keys are of nullType). Using this method, I can request all Authorized information off of the 's' variable.
+
+Now when converting the code to React, I am struggling to successfully Authenticate. I print out the response from a GET call to the "https://fantasy.premierleague.com/api/me" API url and I get the NULL values like I was talking about above. My username and password is correct.
+
+Below is the current code.
+
+  
+ 
+
+    formData:any = {
+        'login': USERNAME, 
+        'password': PASSWORD, 
+        'app': 'plfpl-web',     
+        'redirect_uri': 'https://fantasy.premierleague.com/' };
     
-    const withErrorHandler = (WrappedComponent) =&gt; {
-        return props =&gt; {
-            const [error, clearError] = useHttpErrorHandler(api)
-    
-            const errorDismissed = () =&gt; {
-                clearError()
-                props.history.push("/")
-            }
-    
-            return (
-                &lt;React.Fragment&gt;
-                    &lt;WrappedComponent {...props}/&gt;
-                    {error ? &lt;Alert variant="danger" dismissible onClose={() =&gt; errorDismissed()}&gt;
-                        &lt;Alert.Heading&gt;Oh snap! You got an error while fetching posts!&lt;/Alert.Heading&gt;
-                        &lt;p&gt;
-                            Please try again another time. Sorry for the inconvenience 
-                        &lt;/p&gt;
-                    &lt;/Alert&gt; : null}
-                &lt;/React.Fragment&gt;)
-        }
-    }
-    export default withErrorHandler;
+    login = async (username:string = this.formData.login,password:string = this.formData.password) =&gt; { return axios
+        .post("https://cors-anywhere.herokuapp.com/https://users.premierleague.com/accounts/login/", this.formData)
+        .then((response)=&gt; { 
+        axios.get("https://cors-anywhere.herokuapp.com/https://fantasy.premierleague.com/api/me")
+            .then(result =&gt; {         
+                console.log(result); 
+            }); 
+        }); 
 
-and assume I have a &lt;Posts/&gt; component, I am just wrapping it like:
+ 
 
-export default *withErrorHandler(Posts)*  
+Please could someone help me out with the following:
 
+1. What am I doing wrong and how do I successfully login to FPL via react?
+2. Once I successfully achieve authentication, I have heard that I may need to retrieve a token number to use in my succeeding calls. How would I do this?
 
-So, I am a bit unsure how to change \[error, clearError\] since it is inside the component. Basically, I want to write a test like:
+Any help would be greatly appreciated.
 
-    const wrapper = shallow(&lt;withErrorHandler/&gt;)
-    // change the error value so it is true
-    expect(wrapper.contains(&lt;Alert/&gt;)).toEqual(true)
-
-1. How do I change the error value inside the component? 
-2. Can I even do this: shallow(&lt;withErrorHandler/&gt;), since it expects a component as an input. Should I do something like shallow(withErrorHandler(&lt;p/&gt;)) \*this throws an error\*
-
-Or am I just tackling the whole situation wrong? Is this more an integration test?
-## [10][The new layout animation APIs in Framer Motion 2](https://www.reddit.com/r/reactjs/comments/hrpn9b/the_new_layout_animation_apis_in_framer_motion_2/)
-- url: https://www.framer.com/api/motion/animation/#layout-animations
+Thank you
+## [10][Learn how to create a shared element transition effect in React Native](https://www.reddit.com/r/reactjs/comments/hsremj/learn_how_to_create_a_shared_element_transition/)
+- url: https://www.youtube.com/watch?v=42BkfJ-h54E
 ---
 
-## [11][React Hooks useEffect() dependencies. Not sure if I'm doing this right.](https://www.reddit.com/r/reactjs/comments/hs4jd5/react_hooks_useeffect_dependencies_not_sure_if_im/)
-- url: https://www.reddit.com/r/reactjs/comments/hs4jd5/react_hooks_useeffect_dependencies_not_sure_if_im/
+## [11][Multiple stylesheets / themes for react components](https://www.reddit.com/r/reactjs/comments/hsvibo/multiple_stylesheets_themes_for_react_components/)
+- url: https://www.reddit.com/r/reactjs/comments/hsvibo/multiple_stylesheets_themes_for_react_components/
 ---
-I'm hoping someone can explain where I'm going wrong with React hooks.
+Hi does anyone know of an elegant solution to have multiple themes across a react app, for example if at the top level I change the app to theme 2 how can I update my button.css component file if I am styling at the component level.
 
-I created a reusable `useTimer()` hook (it's essentially state that can trigger events like `onStart()`, `onTick()`, etc.). The idea is that I can add this to any presentational component that needs timer functionality.
-
-What I've written *appears* to work as expected. However, there are a few issues. For example, I put a `console.log('Render!');` statement in the presentation component and it's getting called twice, when I'd expect the component to only render once. Oddly enough, this doesn't seem to be happening when I run the code on codepen (see link below). But outside of codepen, everytime an effect fires, I get:  
-*Render!*
-
-*Render!*
-
-The other issue is the multiple eslint warnings in the console, like the following:
-
-&gt;*"React Hook useEffect has missing dependencies: 'duration' and 'onTick'. Either include them or remove the dependency array. If 'onTick' changes too often, find the parent component that defines it and wrap that definition in useCallback"*  
-&gt;  
-&gt;*"React Hook useEffect has missing dependencies: 'duration', 'elapsed', 'onPause', 'onResume', 'onStart', 'onStop', 'onTimeout', and 'prevStatus'. Either include them or remove the dependency array. If 'onStart' changes too often, find the parent component that defines it and wrap that definition in useCallback"*
-
-This is where my understanding of `useEffect()` and `useCallback()` is lacking. For example, I only want the following code to run when the value of `elapsed` changes:
-
-      // Handle tick event. (i.e. when elapsed is incremented)
-      useEffect(() =&gt; {
-        if (elapsed &gt; 0 &amp;&amp; isFunction(onTick)) {
-          onTick(duration, elapsed); // call onTick function passed in from presentational component
-        }
-      }, [elapsed]);
-
-If I add `duration` and `onTick` to the list of dependencies, then this code will also trigger when, say, `duration` changes, which is not when I want it to be triggered. Right now it does what I want but I suspect, based on the warnings I'm receiving, that I'm using `useEffect()` incorrectly. I'm also using this approach in a few other places in my useTimer() hook.
-
-I don't understand how `useCallback()` (i.e. creating a memoized function) would be beneficial here, or what other approaches I could take in designing this hook. I've read the official docs and numerous articles and I'm struggling to find an example that handles events in this way.
-
-Below is a codepen with my `useTimer()` code. I've purposely stripped out a lot of the formatting and error-checking and merged everything into a single file for simplicity sake. If you run the timer, you'll see the output in the console. However, in order to see the eslint warnings and duplicate *Rendering!* messages, you'd probably need to run it from a regular command line app.
-
-[https://codepen.io/robertmarriott/pen/bGEmEPV](https://codepen.io/robertmarriott/pen/bGEmEPV)
-
-Any help/feedback is greatly appreciated. If my design is way off, then please let me know. I'm trying to get my head around the React hooks way of building things.
-
-Thanks
-## [12][Hello folks. I wrote this custom boilerplate for react apps as an alternative to CRA. Feedback and contributions are well](https://www.reddit.com/r/reactjs/comments/hs6yer/hello_folks_i_wrote_this_custom_boilerplate_for/)
-- url: https://react-sling.netlify.app/
+Thanks!
+## [12][Reddit SyncR - reddit sync clone made for the browser](https://www.reddit.com/r/reactjs/comments/hskhcw/reddit_syncr_reddit_sync_clone_made_for_the/)
+- url: https://v.redd.it/uiv1lo4yvab51
 ---
 

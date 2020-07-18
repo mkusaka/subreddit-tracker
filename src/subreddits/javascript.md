@@ -7,47 +7,59 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [2][Made a URL shortener using MongoDB and Express for fun!](https://www.reddit.com/r/javascript/comments/hsnijo/made_a_url_shortener_using_mongodb_and_express/)
-- url: https://moocow.ml/cow
+## [2][Showoff Saturday (July 18, 2020)](https://www.reddit.com/r/javascript/comments/htfbxq/showoff_saturday_july_18_2020/)
+- url: https://www.reddit.com/r/javascript/comments/htfbxq/showoff_saturday_july_18_2020/
+---
+Did you find or create something cool this week in javascript? 
+
+Show us here!
+## [3][Puppeteer Recorder - a Chrome extension that records your browser interactions and generates a Puppeteer script](https://www.reddit.com/r/javascript/comments/ht5d7e/puppeteer_recorder_a_chrome_extension_that/)
+- url: https://github.com/checkly/puppeteer-recorder
 ---
 
-## [3][Building a Github Repo Template Part 3: Jest Testing Setup with TypeScript](https://www.reddit.com/r/javascript/comments/hssf49/building_a_github_repo_template_part_3_jest/)
-- url: https://hashnode.blainegarrett.com/building-a-github-repo-template-part-3-jest-testing-setup-with-typescript-ckcp0cssw000btvs14e88fws4
+## [4][Brush-up your JS/Front-end fundamentals with Codenami.io!](https://www.reddit.com/r/javascript/comments/htfntv/brushup_your_jsfrontend_fundamentals_with/)
+- url: https://www.codenami.io/?ref=hkn
 ---
 
-## [4][Hide all the clutter on StackOverflow - Chrome plugin](https://www.reddit.com/r/javascript/comments/hsk7zj/hide_all_the_clutter_on_stackoverflow_chrome/)
-- url: https://github.com/elrumo/stackOverflow_focus
+## [5][Vue 3 is now in RC](https://www.reddit.com/r/javascript/comments/ht5ibv/vue_3_is_now_in_rc/)
+- url: https://github.com/vuejs/rfcs/issues/189
 ---
 
-## [5][Learn React by building your own version of the framework](https://www.reddit.com/r/javascript/comments/hs79y5/learn_react_by_building_your_own_version_of_the/)
-- url: https://dev.to/iainfreestone/9-examples-of-building-your-own-version-of-react-51a8
+## [6][We made an open source rpg adventure game you can play in your, or our, Discord server](https://www.reddit.com/r/javascript/comments/htcxqw/we_made_an_open_source_rpg_adventure_game_you_can/)
+- url: https://github.com/Three-Horned-Helmet/mega-rpg
 ---
 
-## [6][WebRTC JavaScript Library for Audio+Video+Screen+Canvas Recording](https://www.reddit.com/r/javascript/comments/hsvjq3/webrtc_javascript_library_for/)
+## [7][WebRTC JavaScript Library for Audio+Video+Screen+Canvas Recording](https://www.reddit.com/r/javascript/comments/hsvjq3/webrtc_javascript_library_for/)
 - url: https://recordrtc.org/
 ---
 
-## [7][D3.js based chart library billboard.js 2.0 is out!, more smaller and faster.](https://www.reddit.com/r/javascript/comments/hsr4lz/d3js_based_chart_library_billboardjs_20_is_out/)
-- url: https://medium.com/@alberto.park/billboard-js-2-0-is-out-15e84b52ab11
+## [8][[AskJS] a good book on advanced JavaScript](https://www.reddit.com/r/javascript/comments/htb2ng/askjs_a_good_book_on_advanced_javascript/)
+- url: https://www.reddit.com/r/javascript/comments/htb2ng/askjs_a_good_book_on_advanced_javascript/
+---
+I've been looking to learn more JavaScript, couldn't find much resource online. Is there any resource you know that might help me learn it more? Of not, do you know any good book about the topic?
+## [9][Say Play - Play, pause, forward and rewind any video with your voice.](https://www.reddit.com/r/javascript/comments/ht9glo/say_play_play_pause_forward_and_rewind_any_video/)
+- url: https://thanesh.dev/say-play
 ---
 
-## [8][Why choose Multi-Tenant Architecture for a SaaS application?](https://www.reddit.com/r/javascript/comments/hsusbj/why_choose_multitenant_architecture_for_a_saas/)
-- url: http://selleo-tenant.icu
+## [10][[AskJS] Made a sorting visualizer. feedback please](https://www.reddit.com/r/javascript/comments/htebwk/askjs_made_a_sorting_visualizer_feedback_please/)
+- url: https://www.reddit.com/r/javascript/comments/htebwk/askjs_made_a_sorting_visualizer_feedback_please/
+---
+The name says it all.
+
+This was my first project (and my first Github repo). I took my inspiration form coding train. I have implemented the basic sorting algorithms.
+
+&amp;#x200B;
+
+I would love get some **feedback** on how I can improve.
+
+[Project](https://github.com/shubh67678/sorting-visualizer)
+
+Thank you for your time.
+## [11][navigate your website like a slideshow](https://www.reddit.com/r/javascript/comments/htdxlt/navigate_your_website_like_a_slideshow/)
+- url: https://github.com/jedzoka/solarwin/
 ---
 
-## [9][Minimalist Roadmap to Becoming a Full-Stack Developer](https://www.reddit.com/r/javascript/comments/hsmyz4/minimalist_roadmap_to_becoming_a_fullstack/)
-- url: https://dev.to/ericdouglas/minimalist-roadmap-to-becoming-a-full-stack-developer-259b
----
-
-## [10][[AskJS] Good JavaScript book for experienced programmers](https://www.reddit.com/r/javascript/comments/hsmvl6/askjs_good_javascript_book_for_experienced/)
-- url: https://www.reddit.com/r/javascript/comments/hsmvl6/askjs_good_javascript_book_for_experienced/
----
-Hello everyone,
-
-I have been a software developer for a few years now and have programmed in Java, C, C++, Python, a bit of Haskell (not a fan). So I am fairly experienced with programming but I have not written a single line of JS in my entire life (I don't even completely understand what the DOM is). I am moving jobs, however, and my future position requires familiarity with JavaScript. And from what I understand, Javascript is the most volatile language out there with books written a couple of years ago not completely reflecting the current state of JS. So can anyone please recommend me a good book that is still relevant with the current JS (libraries, features, tool-chains, paradigms ...etc)
-
-Thanks in advance
-## [11][My first JS project turned out to be a cool web player! (Next.js)](https://www.reddit.com/r/javascript/comments/hsja3w/my_first_js_project_turned_out_to_be_a_cool_web/)
-- url: https://github.com/orhun/CoolModFiles
+## [12][longtweet.io — a use case for on-demand static site generation](https://www.reddit.com/r/javascript/comments/hsw3t9/longtweetio_a_use_case_for_ondemand_static_site/)
+- url: https://longtweet.io/3hiz8afxa
 ---
 

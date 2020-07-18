@@ -22,7 +22,98 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Converting the few left at my work to TS](https://www.reddit.com/r/typescript/comments/hsr3ri/converting_the_few_left_at_my_work_to_ts/)
+## [2][What is needed to get source maps working?](https://www.reddit.com/r/typescript/comments/htg5jx/what_is_needed_to_get_source_maps_working/)
+- url: https://www.reddit.com/r/typescript/comments/htg5jx/what_is_needed_to_get_source_maps_working/
+---
+I''m using NDB which is like the google chrome debugger but for Node.js apps. I'm able to set breakpoints in compiled .js files but not source files in .ts. I see this notice in the app:
+
+[ndb source map notice](https://preview.redd.it/czi5qwyx4mb51.jpg?width=1912&amp;format=pjpg&amp;auto=webp&amp;s=a43c92123fb5807a5d001bfa85e5a9c347f9d99d)
+
+I don't see any additional config options in the settings menu. Anyone know what step I'm likely missing for my .ts file breakpoints to be ignored here? 
+
+I am running the bottom most script in the bottom left panel, `node compiled/index.js -b`  I want it to map to my ts files in the `src` folder so I can figure out where the problems are.
+
+    // tsconfig.json for this project
+    {
+       "compilerOptions": {
+           "target" : "ES5",
+           "module": "commonjs",
+           "noImplicitAny": true,
+           "removeComments": true,
+           "sourceMap": true
+           , "outDir": "compiled/"
+           , "esModuleInterop": true
+           , "strict": true
+           , "typeRoots": ["./src/types", "node_modules/@types"]
+       },
+       "include": ["src/**/*"]
+       , "exclude": ["node_modules", "compiled", "__tests__", "types"]
+    }
+## [3][How to dynamically assign a property](https://www.reddit.com/r/typescript/comments/htfsm7/how_to_dynamically_assign_a_property/)
+- url: https://www.reddit.com/r/typescript/comments/htfsm7/how_to_dynamically_assign_a_property/
+---
+So I'm working on a React/Typescript project, and I am trying to make this piece of code work:
+
+    const inputChange = (event: ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {
+            setState((draft) =&gt; {
+                draft.client[event.target.name] = event.target.value;
+            });
+        };
+
+First, I'm using Immer and useImmer for my state setting, so the above code is safe and properly modifying immutable state.
+
+Second, my main problem is in the square brackets. This function receives a ChangeEvent from an input element. The "name" property on that element matches one of the keys on the "client" object. I want to be able to assign the input's value to that property using this dynamic syntax.
+
+The problem is TypeScript errors out because of issues trying to figure out the types here. I'm really not sure how to handle this properly. Help would be appreciated. Here is the error:
+
+    Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ accessTokenTimeoutSecs?: number | undefined; allowAuthCode?: boolean | undefined; allowClientCredentials?: boolean | undefined; allowPassword?: boolean | undefined; clientKey?: string | undefined; ... 4 more ...; refreshTokenTimeoutSecs?: number | undefined; }'.
+      No index signature with a parameter of type 'string' was found on type '{ accessTokenTimeoutSecs?: number | undefined; allowAuthCode?: boolean | undefined; allowClientCredentials?: boolean | undefined; allowPassword?: boolean | undefined; clientKey?: string | undefined; ... 4 more ...; refreshTokenTimeoutSecs?: number | undefined; }'
+
+Edit: More investigation, the problem seems twofold. First, knowing what property [event.target.name](https://event.target.name) that I'm passing into the square brackets matches. Second, ensuring that event.target.value, which has type 'string', is acceptable by that property. Again, help would be appreciated. Thanks.
+## [4][Excess property check question](https://www.reddit.com/r/typescript/comments/htbn6t/excess_property_check_question/)
+- url: https://www.reddit.com/r/typescript/comments/htbn6t/excess_property_check_question/
+---
+https://www.typescriptlang.org/docs/handbook/interfaces.html#excess-property-checks
+
+It says "If an object literal has any properties that the “target type” doesn’t have, you’ll get an error:". The error is only because of the typo of color/colour. So by excess property checking does it mean it typescript checks for what it thinks is an error, i.e. a typo error? Because in the previous example when it was
+
+    interface LabeledValue {
+        label: string;
+    }
+    
+    function printLabel(labeledObj: LabeledValue) {
+        console.log(labeledObj.label);
+    }
+    
+    let myObj = {size: 10, label: "Size 10 Object"};
+    printLabel(myObj);
+
+"it’s only the shape that matters. If the object we pass to the function meets the requirements listed, then it’s allowed.", so it's allowed here even though there's no size. So what I'm trying to figure out is what's the criteria for the typescript amigo to judge? Possible typos and?
+## [5][Foal TS - Node.JS and TypeScript framework - July Release - Management of several environments &amp; Simplified authentication](https://www.reddit.com/r/typescript/comments/hsup8w/foal_ts_nodejs_and_typescript_framework_july/)
+- url: https://www.reddit.com/r/typescript/comments/hsup8w/foal_ts_nodejs_and_typescript_framework_july/
+---
+Foal TS version 1.11 is here!
+
+This version facilitates the management of several environments thanks to its abstract services and it also reduces the code to produce to build an authentication.
+
+The documentation of the new features can be found here:
+
+\- [https://foalts.gitbook.io/docs/topic-guides/architecture/services-and-dependency-injection#abstract-services](https://foalts.gitbook.io/docs/topic-guides/architecture/services-and-dependency-injection#abstract-services)
+
+\- [https://foalts.gitbook.io/docs/topic-guides/authentication-and-access-control/session-tokens#specify-the-name-of-the-session-store-in-the-configuration](https://foalts.gitbook.io/docs/topic-guides/authentication-and-access-control/session-tokens#specify-the-name-of-the-session-store-in-the-configuration)
+
+\- [https://foalts.gitbook.io/docs/topic-guides/validation-and-sanitization#usage-with-a-hook](https://foalts.gitbook.io/docs/topic-guides/validation-and-sanitization#usage-with-a-hook)
+
+&amp;#x200B;
+
+In a few words, Foal TS is a [**Node.Js**](http://node.js/) and **TypeScript** framework that **provides the bricks to build a complete web application** while keeping a **simple and intuitive code**.
+
+Backed by **thousands of tests**, it offers more than **11,000 lines of documentation**. [**#typescript**](https://www.linkedin.com/feed/hashtag/?keywords=typescript&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6689863897433829376) [**#javascript**](https://www.linkedin.com/feed/hashtag/?keywords=javascript&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6689863897433829376) [**#nodejs**](https://www.linkedin.com/feed/hashtag/?keywords=nodejs&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6689863897433829376)
+
+&amp;#x200B;
+
+https://preview.redd.it/8fpseb3rteb51.png?width=1064&amp;format=png&amp;auto=webp&amp;s=659f65321229a00a7ae887a53cc246f54709bcaf
+## [6][Converting the few left at my work to TS](https://www.reddit.com/r/typescript/comments/hsr3ri/converting_the_few_left_at_my_work_to_ts/)
 - url: https://www.reddit.com/r/typescript/comments/hsr3ri/converting_the_few_left_at_my_work_to_ts/
 ---
 Every other week, folks in my group are able to host a 40 minute technical talk. I’m looking at hosting one in an attempt to convert some of the late adopters in the group to TS. Some background, we primarily work in a rapid prototyping space so the old “Typescript is slower to develop with” argument is what has kept the last few from adopting. I’m trying to attack that head on while also talking about other benefits to push my argument over the edge. I’m thinking about half of the talk will be demonstration and questions so I want to keep to the most obvious wins.
@@ -34,7 +125,56 @@ The rough outline of my presentation is this:
 - Coordination/documentation: TS improves the ability to communicate through though code. Often we return to prototypes a year after the initial work was done and have to spin up and develop on a code rot ridden app.
 
 Any advice is very welcome. Specifically, does anyone have any additional points they think I should make or angles I should address?
-## [3][Use mongoose FilterQuery&lt;T&gt; + check if the keys exists](https://www.reddit.com/r/typescript/comments/hsrstk/use_mongoose_filterqueryt_check_if_the_keys_exists/)
+## [7][Intersection of Enum Types](https://www.reddit.com/r/typescript/comments/hswsoo/intersection_of_enum_types/)
+- url: https://www.reddit.com/r/typescript/comments/hswsoo/intersection_of_enum_types/
+---
+I'm trying to make an intersection of two enum types, but I have trouble making an instance of that new type. This is the smallest example I could think of.
+
+    enum Element {
+        WATER,
+        FIRE
+    }
+    
+    enum Target {
+        PLAYER,
+        ENEMY
+    }
+    
+    type Attack = Element &amp; Target;
+
+​Element.FIRE &amp; Target.ENEMY // doesn't work. treated like numbers  
+{} as Attack // no error, but doesn't seem to have anything to do with element or target.
+
+**Question: How would I make an Attack object?**
+
+If that is not possible, I might just go with a tuple type that contains the two enums.
+## [8][Typing a recursive camelize function?](https://www.reddit.com/r/typescript/comments/hstaxp/typing_a_recursive_camelize_function/)
+- url: https://www.reddit.com/r/typescript/comments/hstaxp/typing_a_recursive_camelize_function/
+---
+It would be nice to not lose type of the object but IDK if this is far beyond what TypeScript is capable of:
+
+    export function camelize&lt;T&gt;(source: T, reverse = false) {
+      // console.log('snakeCaseObject', source);
+      const dest: Record&lt;string, any&gt; = {};
+      const fn = reverse ? snakeCase : camelCase;
+
+      for (let [key, value] of Object.entries(source)) {
+        if (isPlainObject(value)) {
+          // checks that a value is a plain object or an array - for recursive key conversion
+          value = camelize(value, reverse); // recursively update keys of any values that are also objects
+        }
+        if (isArray(value)) {
+          value = value.map(v =&gt; (isPlainObject(v) ? camelize(v, reverse) : v));
+        }
+        dest[fn(key)] = value;
+      }
+
+      return dest;
+    }
+
+
+This is what I have so far, but surely the actual return type is T but with camelCased(or uncamelcased) keys.
+## [9][Use mongoose FilterQuery&lt;T&gt; + check if the keys exists](https://www.reddit.com/r/typescript/comments/hsrstk/use_mongoose_filterqueryt_check_if_the_keys_exists/)
 - url: https://www.reddit.com/r/typescript/comments/hsrstk/use_mongoose_filterqueryt_check_if_the_keys_exists/
 ---
 Right now in our project (using NestJS) we do have some methods in our service like this:
@@ -86,61 +226,7 @@ Is there a possibility to allow this types of advanced syntax and still check wh
 Mongoose is using `FilterQuery&lt;T&gt;` but it doesn't check for valid keys I believe
 
 Would love to know some solutions.
-## [4][Foal TS - Node.JS and TypeScript framework - July Release - Management of several environments &amp; Simplified authentication](https://www.reddit.com/r/typescript/comments/hsup8w/foal_ts_nodejs_and_typescript_framework_july/)
-- url: https://www.reddit.com/r/typescript/comments/hsup8w/foal_ts_nodejs_and_typescript_framework_july/
----
-Foal TS version 1.11 is here!
-
-This version facilitates the management of several environments thanks to its abstract services and it also reduces the code to produce to build an authentication.
-
-The documentation of the new features can be found here:
-
-\- [https://foalts.gitbook.io/docs/topic-guides/architecture/services-and-dependency-injection#abstract-services](https://foalts.gitbook.io/docs/topic-guides/architecture/services-and-dependency-injection#abstract-services)
-
-\- [https://foalts.gitbook.io/docs/topic-guides/authentication-and-access-control/session-tokens#specify-the-name-of-the-session-store-in-the-configuration](https://foalts.gitbook.io/docs/topic-guides/authentication-and-access-control/session-tokens#specify-the-name-of-the-session-store-in-the-configuration)
-
-\- [https://foalts.gitbook.io/docs/topic-guides/validation-and-sanitization#usage-with-a-hook](https://foalts.gitbook.io/docs/topic-guides/validation-and-sanitization#usage-with-a-hook)
-
-&amp;#x200B;
-
-In a few words, Foal TS is a [**Node.Js**](http://node.js/) and **TypeScript** framework that **provides the bricks to build a complete web application** while keeping a **simple and intuitive code**.
-
-Backed by **thousands of tests**, it offers more than **11,000 lines of documentation**. [**#typescript**](https://www.linkedin.com/feed/hashtag/?keywords=typescript&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6689863897433829376) [**#javascript**](https://www.linkedin.com/feed/hashtag/?keywords=javascript&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6689863897433829376) [**#nodejs**](https://www.linkedin.com/feed/hashtag/?keywords=nodejs&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6689863897433829376)
-
-&amp;#x200B;
-
-https://preview.redd.it/8fpseb3rteb51.png?width=1064&amp;format=png&amp;auto=webp&amp;s=659f65321229a00a7ae887a53cc246f54709bcaf
-## [5][Terminal](https://www.reddit.com/r/typescript/comments/hsu03i/terminal/)
-- url: https://v.redd.it/3zarniw4keb51
----
-
-## [6][Typing a recursive camelize function?](https://www.reddit.com/r/typescript/comments/hstaxp/typing_a_recursive_camelize_function/)
-- url: https://www.reddit.com/r/typescript/comments/hstaxp/typing_a_recursive_camelize_function/
----
-It would be nice to not lose type of the object but IDK if this is far beyond what TypeScript is capable of:
-
-    export function camelize&lt;T&gt;(source: T, reverse = false) {
-      // console.log('snakeCaseObject', source);
-      const dest: Record&lt;string, any&gt; = {};
-      const fn = reverse ? snakeCase : camelCase;
-
-      for (let [key, value] of Object.entries(source)) {
-        if (isPlainObject(value)) {
-          // checks that a value is a plain object or an array - for recursive key conversion
-          value = camelize(value, reverse); // recursively update keys of any values that are also objects
-        }
-        if (isArray(value)) {
-          value = value.map(v =&gt; (isPlainObject(v) ? camelize(v, reverse) : v));
-        }
-        dest[fn(key)] = value;
-      }
-
-      return dest;
-    }
-
-
-This is what I have so far, but surely the actual return type is T but with camelCased(or uncamelcased) keys.
-## [7][Currying function parameters - Convert to Numbers](https://www.reddit.com/r/typescript/comments/hshhsn/currying_function_parameters_convert_to_numbers/)
+## [10][Currying function parameters - Convert to Numbers](https://www.reddit.com/r/typescript/comments/hshhsn/currying_function_parameters_convert_to_numbers/)
 - url: https://www.reddit.com/r/typescript/comments/hshhsn/currying_function_parameters_convert_to_numbers/
 ---
 I have function like:
@@ -152,143 +238,7 @@ Number(operand1) &gt;Number(operand2)
 I would like to have a curried function in the middle that takes \`operand1\` and \`operand2\` and converts them into numbers so I don't have to do that explictly in my function body.
 
 Is there a way to do this with function currying? Thank you
-## [8][Is there a way to implement a custom behaviour when casting a class to a boolean?](https://www.reddit.com/r/typescript/comments/hsn96u/is_there_a_way_to_implement_a_custom_behaviour/)
+## [11][Is there a way to implement a custom behaviour when casting a class to a boolean?](https://www.reddit.com/r/typescript/comments/hsn96u/is_there_a_way_to_implement_a_custom_behaviour/)
 - url: https://www.reddit.com/r/typescript/comments/hsn96u/is_there_a_way_to_implement_a_custom_behaviour/
 ---
 If you have a class in TypeScript where whether it casts to true or false depends on a custom set of conditions, is there a way to implement that like you can implement something like `toString()`, where it will also work with regular if statements?
-## [9][ReacType - export a baseline React or Next.js app written in Typescript in minutes!](https://www.reddit.com/r/typescript/comments/hsdcpp/reactype_export_a_baseline_react_or_nextjs_app/)
-- url: https://www.reddit.com/r/typescript/comments/hsdcpp/reactype_export_a_baseline_react_or_nextjs_app/
----
-Hello Reddit! My colleagues and I would like to invite you to check out our new open source project ReacType (version 3.0)! ReacType is a prototyping tool that allows you to create the skeleton of a Next.js or classic React application in minutes. Use our drag-n-drop interface to create reusable components, add basic layout and styling, and implement routing. Export your project as a fully functional Next.js or classic React application built with Typescript and functional components.
-
-What’s new with this release:
-
-- Export your code as a Next.js application with routing
-- Build your application with a drag-n-drop interface and watch as your code is dynamically generated
-- Save your project to the cloud
-
-Check out our [github repo](https://github.com/open-source-labs/ReacType) for more information.
-
-This is also a [link to a medium article](https://medium.com/@tylersullberg/letters-from-the-dark-world-of-react-boilerplate-5de9b4b8e2a3) one of our developers wrote.
-
-Thank you!
-## [10][Better syntax for optional return type value](https://www.reddit.com/r/typescript/comments/hshahi/better_syntax_for_optional_return_type_value/)
-- url: https://www.reddit.com/r/typescript/comments/hshahi/better_syntax_for_optional_return_type_value/
----
-    export const getClients = (): Promise&lt;ClientList | undefined&gt; =&gt; api.get&lt;ClientList&gt;({
-        uri: '/clients',
-        errorMsg: 'Error getting all clients'
-    });
-
-So I'm hoping to find a better way to express the above type than ClientList | undefined. Something that expresses the optional nature of the result. I think my API get() function might need a modification too, it returns the ClientList if successful and undefined if not (it contains the exception thrown and internally handles logging it and showing it to the user.
-
-Anyway, I've always been a big fan of TypeScript in concept but kept sticking with JavaScript, so I'm trying to force myself to use it more.
-
-PS. Here is the api.get function definition:
-
-    const get = async &lt;T&gt;(req: RequestConfig): Promise&lt;T | undefined&gt; =&gt; {
-        try {
-            const res = await axios.get(req.uri, req.config);
-            return res.data;
-        } catch (ex) {
-            handleError(ex, req.errorMsg, req.suppressError);
-            return undefined;
-        }
-    };
-
-&amp;#x200B;
-## [11][Trying to model a function declaration that returns a class instance](https://www.reddit.com/r/typescript/comments/hs8544/trying_to_model_a_function_declaration_that/)
-- url: https://www.reddit.com/r/typescript/comments/hs8544/trying_to_model_a_function_declaration_that/
----
-The Error and surrounding context:
-
-    /*
-    [6:38:31 PM] File change detected. Starting incremental compilation...
-    
-    src/classes/sentenceBuilder/AudioMaker.ts:370:6 - error TS2349: This expression is not callable.
-      Type 'typeof import("audioconcat")' has no call signatures.
-    
-    370      audioConcat(audiosAndPauseFiles)
-             ~~~~~~~~~~~
-    
-    [6:38:31 PM] Found 1 error. Watching for file changes.
-    */
-         audioConcat(audiosAndPauseFiles)
-           .concat(finalFileSavePath)
-           .on('start', () =&gt; {
-             console.log(`ffmpeg build process started on file at: ${finalFileSavePath}`);
-           })
-           .on('end', () =&gt; {
-             console.log(`Sucessfully created file at: ${finalFileSavePath}`);
-           })
-           .on('error', (error: any, stdout: any, stderr: any) =&gt; {
-             console.log('error', error);
-             console.log('stdout', stdout);
-             console.log('stderr', stderr);
-           });
-       }
-
-My declaration file
-
-    declare module "audioconcat" {
-        class AudioConcat {
-         constructor(audios: Array&lt;string&gt;);
-    
-         VERSION: string;
-    
-         ffmpeg: Function;
-    
-         concat(images: string[], options: any): this;
-    
-         on(event: 'start', callback: (command: any) =&gt; void): this;
-         on(event: 'error', callback: (err: any, stdout: any, stderr: any) =&gt; void):  this;
-         on(event: 'end', callback: (output: any) =&gt; void): this; 
-      }
-    
-      export function AudioConcat(inputs: string[], opts: any): AudioConcat
-    }
-
-What exactly is the issue here? Below is the index.js containing the full library code:
-
-    var merge = require('lodash.merge')
-    var ffmpeg = require('fluent-ffmpeg')
-    var version = require('./package.json').version
-    
-    module.exports = exports = function (inputs, opts) {
-      return new Audioconcat(inputs, opts)
-    }
-    
-    exports.VERSION = version
-    exports.ffmpeg = ffmpeg
-    
-    function Audioconcat(inputs, opts) {
-      this.inputs = inputs || []
-      this.opts = opts || {}
-    }
-    
-    Audioconcat.prototype.options = function (opts) {
-      merge(this.opts, opts)
-      return this
-    }
-    
-    Audioconcat.prototype.concat = function (file) {
-      if (file) {
-        this.opts.output = file
-      }
-      return concat(this.inputs, this.opts)
-    }
-    
-    function concat(inputs, opts) {
-      var filter = 'concat:' + inputs.join('|')
-    
-      var renderer = ffmpeg()
-        .input(filter)
-        .outputOptions('-acodec copy')
-    
-      var output = opts.output
-      if (output) {
-        return renderer.save(output)
-      }
-    
-      return renderer
-    }

@@ -21,92 +21,94 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][Introducing the Cloud Development Kit for Terraform](https://www.reddit.com/r/aws/comments/hsio6z/introducing_the_cloud_development_kit_for/)
-- url: https://aws.amazon.com/pt/blogs/developer/introducing-the-cloud-development-kit-for-terraform-preview/
+## [2][What is the proper way to build many Lambda functions and updated them later?](https://www.reddit.com/r/aws/comments/htfa9z/what_is_the_proper_way_to_build_many_lambda/)
+- url: https://www.reddit.com/r/aws/comments/htfa9z/what_is_the_proper_way_to_build_many_lambda/
+---
+I want to make a bot that makes other bots on Telegram platform. I want to use AWS infrastructure, look like their Lamdba functions are perfect fit, pay for them only when they are active. In my concept, each bot equal to one lambda function, and they all share the same codebase.
+
+At the starting point, I thought to make each new Lambda function programmatically, but this will bring me problems later I think, like need to attach many services programmatically via AWS SDK: Gateway API, DynamoDB. But the main problem, how I will update the codebase for these 1000+ functions later? I think that bash script is a bad idea here.
+
+So, I moved forward and found SAM (AWS Serverless Application Model) and CloudFormatting, which should help me I guess. But I can't understand the concept. I can make a stack with all the required resources, but how will I make new bots from this one stack? Or should I build a template and make new stacks for each new bot programmatically via AWS SDK from this template?
+
+Next, how to update them later? For example, I want to update all bots that have version 1.1 to version 1.2. How I will replace them? Should I make a new stack or can I update older ones? I don't see any options in UI of CloudFormatting or any related methods in AWS SDK for that.
+
+Thanks
+## [3][Do I need to rewrite my app to use Aurora?](https://www.reddit.com/r/aws/comments/htdj3m/do_i_need_to_rewrite_my_app_to_use_aurora/)
+- url: https://www.reddit.com/r/aws/comments/htdj3m/do_i_need_to_rewrite_my_app_to_use_aurora/
+---
+I see that Aurora has a write endpoint and a read endpoint. Does. That mean to take advantage of read endpoints I need to specify a different endpoint for read queries?
+
+i.e go through my existing application, figure out the reads, and then change the endpoints for those queries?
+
+I tried searching online, but couldn’t get a definitive answer. Most apps I know have only one IP/DNS specified for the DB, making no difference between reads and writes.
+## [4][Approzium: Observable, password-less authentication to databases - built on AWS IAM](https://www.reddit.com/r/aws/comments/ht2bnj/approzium_observable_passwordless_authentication/)
+- url: https://github.com/cyralinc/approzium
 ---
 
-## [3][CodeDeploy and containers](https://www.reddit.com/r/aws/comments/hsvq9u/codedeploy_and_containers/)
-- url: https://www.reddit.com/r/aws/comments/hsvq9u/codedeploy_and_containers/
+## [5][ECS - our server response time has dropped from 0.3s to 2.5s](https://www.reddit.com/r/aws/comments/htgbnj/ecs_our_server_response_time_has_dropped_from_03s/)
+- url: https://www.reddit.com/r/aws/comments/htgbnj/ecs_our_server_response_time_has_dropped_from_03s/
 ---
-I've been looking at using Code\* as a replacement for self-managed Jenkins, and I was a bit surprised that it doesn't really seem to natively support non-ECS Docker hosts *or* EKS.  
+I've been updating a legacy PHP app (no version control for 10 years) and I've gotten it working pretty nicely on AWS now. I have some problems I can't really fix.
 
-To clarify, I have code in CodeCommit which feeds into CodeBuild to produce a container image and push it into ECR.  I want to take that image and deploy it to either Docker running on an EC2 instance or an EKS cluster.
+1. CPU usage for the ECS service is always above 130%. I don't understand why as the CPU for the EC2 box is only 8%, docker process says the same. This isn't an intensive site, it's just some really old PHP code.
+2. We have a response time of 2.5s instead of 0.3s. In Google lighthouse this is indicated by \`Reduce server response times (TTFB)**\`.** The apache server setup is the same, and the code running the site is the same. Only difference is my code runs on ECS instances, and the old code runs directly on an IP exposed EC2 box.
 
-Googling has turned up a few work-arounds which leverage Lambdas to do the deployment, but they honestly feel pretty kludgey.
+Our setup is roughly this:
 
-Is it just not possible, or did I miss something?  Does anyone have docs or recommended guides on how to do this?
-## [4][Lambda function response to API Gateway not working on success](https://www.reddit.com/r/aws/comments/hsvjfy/lambda_function_response_to_api_gateway_not/)
-- url: https://www.reddit.com/r/aws/comments/hsvjfy/lambda_function_response_to_api_gateway_not/
+Application Load Balancer
+
+2 target groups, HTTPS and HTTP.
+
+HTTP does a 301 redirect to out HTTPS group. (I set this up as the site kept defaulting to HTTP - is this normal?)
+
+At the moment we have 1 cluster, 1 service and 1 task running on ECS using EC2.
+
+Our EC2 box is dedicated, t2 medium.
+
+Our files are on EFS. Here we store all of our cache files, image files and session files so they are shared.
+
+We have a certificate issued by Route53 and the site validates fine.
+
+Docker is running Apache *20051115*, the site is on PHP5.4 and the database is MySQL 5.5.
+
+Does anyone have any idea what could be happening? Thanks!
+## [6][Completely new to AWS and lost on what to do next](https://www.reddit.com/r/aws/comments/ht7xfb/completely_new_to_aws_and_lost_on_what_to_do_next/)
+- url: https://www.reddit.com/r/aws/comments/ht7xfb/completely_new_to_aws_and_lost_on_what_to_do_next/
 ---
-Hello,
-
-I have a Lambda function that sends a contact-us email that is handling all statusCodes that need to be returned to API Gateway.
-
-When I get to the final function to actually send an email via SES, the email sends and I receive it, but API Gateway returns an Internal Server Error after timing out after 10 seconds. My function executes in 1-2 seconds (depending on if it's warmed), so I know the timeout doesn't need to be increased.
-
-Does the final callback have to be different than the previous callbacks? It actually logs "Email successfully sent.", the email arrives, but then it sits there for 10 seconds before it times out. It's not doing the final callback to API Gateway with a 200, so API Gateway responds with an Internal Server Error.
-
-I've tried moving the callback out of the else, tried context.done(event). All of the other callbacks in the function, I have a return in front so that it stops execution of the Lambda. The last callback, I have tried with and without return.
-
-Does anyone spot an error that I'm missing? Thank you so much!
-
-    var DEBUG = false;
-    var ses = new AWS.SES({ region: 'us-east-1' });
-    ses.sendEmail(emailParams, function (error, sesResponse) {
-      if (error) {
-        console.log('Error:', error);
-        console.log('sesResponse:', sesResponse);
-        return callback(null, {
-          statusCode: '500',
-          headers: apiHeaders,
-          body: JSON.stringify({message:'Error sending email.'})
-        });
-      } else {
-        if (DEBUG) console.log('sesResponse:', sesResponse);
-        console.log("Email successfully sent.");
-      }
-      callback(null, {
-        statusCode: '200',
-        headers: apiHeaders,
-        body: JSON.stringify({message:'Email sent.'})
-      });
-    });
-## [5][The DynamoDB Place - A forum for DDB questions](https://www.reddit.com/r/aws/comments/hsjk42/the_dynamodb_place_a_forum_for_ddb_questions/)
-- url: https://dynamodbplace.com/
+I'm trying to learn aws by building an infrastructure for a website. I built an vpc, made ec2 instances, made a elastic load balencer with an auto scaling group , an rds database and connected it to one of my instances, an efs to share a file system between my ec2 instances, and even transferred my ec2 logs to cloudwatchlogs  all with the help of youtube. The thing that I am completely stumped on is how to transfer my my cloudwatchlogs to my s3 bucket. Thank you for taking time to read my post and I am truly sorry if this sounds like gibberish, I am under the weather and frustrated. Thanks again
+## [7][Cloud formation or Terraform](https://www.reddit.com/r/aws/comments/ht3oec/cloud_formation_or_terraform/)
+- url: https://www.reddit.com/r/aws/comments/ht3oec/cloud_formation_or_terraform/
 ---
-
-## [6][Why to avoid kubernetes:](https://www.reddit.com/r/aws/comments/hscvl4/why_to_avoid_kubernetes/)
-- url: https://blog.coinbase.com/container-technologies-at-coinbase-d4ae118dcb6c#62f4
+Hi. 
+Just starting a Greenfield SaaS product. Could go with Terraform or Cloud formation. SaaS will be mainly lamdas, rds. 
+Which would you go for?
+## [8][What is a notebook instance type?](https://www.reddit.com/r/aws/comments/htcew9/what_is_a_notebook_instance_type/)
+- url: https://www.reddit.com/r/aws/comments/htcew9/what_is_a_notebook_instance_type/
 ---
-
-## [7][Upload image to AWS S3 made simple — Flutter](https://www.reddit.com/r/aws/comments/hssx1w/upload_image_to_aws_s3_made_simple_flutter/)
-- url: https://medium.com//upload-image-to-aws-s3-made-simple-flutter-fd3356b5b5bb?source=friends_link&amp;sk=a032cf101eb66e20a305079f7348c97f
+When you create a new notebook instance you have to specify an instance type, choosing which between different size(?). But what do this sizes mean. Are they an allocation of computer capacity?
+## [9][Configure ALB health check based on JSON response](https://www.reddit.com/r/aws/comments/htc1ih/configure_alb_health_check_based_on_json_response/)
+- url: https://www.reddit.com/r/aws/comments/htc1ih/configure_alb_health_check_based_on_json_response/
 ---
+Backend servers behind ALB returns JSON response `curl http://backend_srv1/healthapi`
 
-## [8][Amazon EKS Is Eating My IPs!](https://www.reddit.com/r/aws/comments/hssr1e/amazon_eks_is_eating_my_ips/)
-- url: https://medium.com/better-programming/amazon-eks-is-eating-my-ips-e18ea057e045
+    "health" : {
+      "status" : "success"
+    },
+
+Is there a way to configure ALB health check based on success/fail JSON response?
+## [10][Question on aws s3 cp](https://www.reddit.com/r/aws/comments/hszkea/question_on_aws_s3_cp/)
+- url: https://www.reddit.com/r/aws/comments/hszkea/question_on_aws_s3_cp/
 ---
+If the source and destination are s3 buckets, does the file ever leave AWS, or is the copy direct from s3 bucket to s3 bucket?
 
-## [9][Any plans to bundle a JSON schema extension and the new graph database extension with RDS PostgreSQL?](https://www.reddit.com/r/aws/comments/hssjel/any_plans_to_bundle_a_json_schema_extension_and/)
-- url: https://www.reddit.com/r/aws/comments/hssjel/any_plans_to_bundle_a_json_schema_extension_and/
+Example:
+
+    aws s3 cp s3://foo/bar.tgz s3://baz/
+## [11][CloudFormation Designer - How do you know what you need to define?](https://www.reddit.com/r/aws/comments/ht7kvx/cloudformation_designer_how_do_you_know_what_you/)
+- url: https://www.reddit.com/r/aws/comments/ht7kvx/cloudformation_designer_how_do_you_know_what_you/
 ---
-To be precise:
+I am trying to build a stack that runs an ECS cluster for an application that acts as a server to listen for HTTP requests.
 
-* https://www.postgresql.org/about/news/2050/
-* https://github.com/furstenheim/is_jsonb_valid (or a similar extension developed by AWS)
-## [10][Amazon Glacier - Am I doing this right?](https://www.reddit.com/r/aws/comments/hskmza/amazon_glacier_am_i_doing_this_right/)
-- url: https://www.reddit.com/r/aws/comments/hskmza/amazon_glacier_am_i_doing_this_right/
----
-I've been searching for an option to archive large amounts of data for a good price and I've found the Amazon Glacier service.
+With that simple premise, how am I supposed to throw together a CF design? Is there any way to validate it as you go? When I open the designer it's pretty intimidating to see literally a blank slate.
 
-I've started uploading 225 GBs of data there.
-
-But I'm confused about the pricing regarding downloading the data back.
-
-Could someone more experienced give me an estimate on how much that would be? I'm very new to AWS stuff.
-## [11][Migrate Hive Metastore to AWS Glue](https://www.reddit.com/r/aws/comments/hsqe9s/migrate_hive_metastore_to_aws_glue/)
-- url: https://www.reddit.com/r/aws/comments/hsqe9s/migrate_hive_metastore_to_aws_glue/
----
-Hi,
-
-I am running a single node hadoop-hive cluster on a VM for test purposes. I want to link the hive metastore to AWS Glue Catalog for persistent storage. I searched but couldn’t find any good resources to do so. Can anyone help?
+For example, I added an ECS cluster to the screen. Now what? This is not very intuitive - any tips are appreciated.

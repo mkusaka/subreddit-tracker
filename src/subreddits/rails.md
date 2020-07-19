@@ -39,7 +39,168 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Deployment problem with HTTP Active Record adapter](https://www.reddit.com/r/rails/comments/htbgz9/deployment_problem_with_http_active_record_adapter/)
+## [3][[Help] Slow JSON Post -&gt; JSONB Column in Postgres](https://www.reddit.com/r/rails/comments/htsmbw/help_slow_json_post_jsonb_column_in_postgres/)
+- url: https://www.reddit.com/r/rails/comments/htsmbw/help_slow_json_post_jsonb_column_in_postgres/
+---
+HI!
+
+I've dabbled in rails off and on over the years and I'm back to an old project trying to squeeze some life out of it.
+
+The long and skinny of it is this:
+
+I have a client that is posting a json array of 30,000'ish elements to Rails, and then rails is putting that straight into a JSONB column in postgres. This is slower than I like. 10 full seconds or so on Heroku...
+
+It's not nearly that slow to query it back out?
+
+Curious if I'm missing something obvious about possibly skipping the json object creation on the post or something. Or is it possible that posting this many records at once will always be slow?
+
+Thanks! Here is the create method on the controller.
+
+    @songbook = current_user.songbooks.build(songbook_params)
+
+    if @songbook.save
+      flash[:notice] = "Successfully created songbook."
+
+      respond_to do |format|
+        format.html { redirect_to :action =&gt; "index" }
+        format.json { render :json =&gt; @songbook }
+      end
+    else
+      flash[:error] = @songbook.errors.full_messages.join(": ")
+
+      respond_to do |format|
+        format.html { render :action =&gt; "new" }
+        format.json { render :json =&gt; @songbook.errors }
+      end
+    end
+## [4][How to generate a persistent URL for ActiveStorage Blob so that can be included in a content page.](https://www.reddit.com/r/rails/comments/httsxe/how_to_generate_a_persistent_url_for/)
+- url: https://www.reddit.com/r/rails/comments/httsxe/how_to_generate_a_persistent_url_for/
+---
+Hi everyone,
+
+I create a content page where I let people use any of their already uploaded media, for that I need to generate an URL. If people chose any media the URL of that media (e.g. image, video, doc) will be then attached to the content page.
+
+    def url
+       rails_blob_path(resource, only_path: true)`
+    end
+
+This is how I generate url for a media. I searched the documentation and found that urls generated from active stroage are not permanent and having a permanent url generated from a media is not a good practice.
+
+I've `config.active_storage_service` set to local. I use local file system to store uploaded media. I use rails 6.0.3.  
+I would be really glad if someone can help point me towards the right solution.  
+
+
+Thank You.  
+
+## [5][Demonstrating turbolinks?](https://www.reddit.com/r/rails/comments/htu9n5/demonstrating_turbolinks/)
+- url: https://www.reddit.com/r/rails/comments/htu9n5/demonstrating_turbolinks/
+---
+Curious if anyone has any ideas here... I'm doing a presentation on doing responsive rails apps without a JS framework (building an app and enhancing it with turbolinks, UJS, stimulus and stimulus reflex). 
+
+Most of this is fairly easy to show off, but turbolinks is kind of invisible. I mean really the only noticeable thing about it is that page "loads" seem faster, but with covidpalooza I'll be doing this all over a screen share, that's going to be hard to demo. 
+
+Does anyone have any ideas on something that would come across as showing the benefit of turbolinks? I was thinking some kind of timer that displays the load time from the browser perspective might be neat but I don't know how to pull that off...
+## [6][Solution for revision functionality](https://www.reddit.com/r/rails/comments/htjloy/solution_for_revision_functionality/)
+- url: https://www.reddit.com/r/rails/comments/htjloy/solution_for_revision_functionality/
+---
+Hi there,
+
+Imagine that we have a model, let's call it Article. An Article is created by someone and it can also have associations to other models like Tag, etc.
+
+Now, a couple of years later, we need to support what I will call the "revision" functionality. When someone revisions an Article can  pretty much change anything (properties, assoations, etc). However, that revision should not replace the original article right away, it should be stored so someone else can see the changes and approve or reject then. Only then, upon approval, should the revision replace the original Article.
+
+The revision functionality is not that hard to implement upfront, but implementing it on a long running project is like changing the rules of the game at half time: it won't be pretty. I don't want to have a parallel/replic model called ArticleRevision, and any assoation to a revision should not mess with the logic I have now. 
+
+I was wondering, do you know any gem/solution that can magically help us achieving this functionality?
+## [7][How to register an user with SteamAPI and custom email, username etc.](https://www.reddit.com/r/rails/comments/hthahm/how_to_register_an_user_with_steamapi_and_custom/)
+- url: https://www.reddit.com/r/rails/comments/hthahm/how_to_register_an_user_with_steamapi_and_custom/
+---
+Hello! I am using SteamAPI to register the user(with `omniauth-steam` gem). I only need Steam UID and the profile image from their API. I want the user to enter the email address and the username and some other fields manually. 
+
+At this point, I need to note that I am using Rails 6 API and React. 
+
+When user clicks on the "Sign in with Steam" button I redirect him to `localhost:3000/auth/steam` which goes to Steam's own login page. After the login is successful, Omniauth automatically redirects the user to `localhost:3000/auth/steam/callback`. Here I can create a new user with let's say `User.create(uid: auth.uid, image: auth.info['profile_image'])` with `auth` being the Steam user object that just logged in. But I don't know how to add the user's own email, username, birth date, etc. which I would ask for in the text fields on my React front-end.
+
+Since I can't just call `POST /auth/steam/callback` I can't pass some data to it let's say from Axios or something and add other custom fields. 
+
+If it helps, here is the `auth_callback` function that get's called by omniauth:
+```ruby
+class SteamController &lt; ApplicationController
+  skip_before_action :verify_authenticity_token, only: :auth_callback
+
+  def auth_callback
+    # Get Steam user data
+    auth = request.env['omniauth.auth']
+    # Create new User
+    user = User.new(steam_uid: auth['uid'], birthday_date: DateTime.now.to_date)
+    if user.save
+      render json: user, status: 201
+    else
+      render json: user.errors.full_messages, status: 400
+    end
+  end
+end
+```
+
+As you can see for now I am creating the user with only Steam UID and birthday date which doesn't really matter right now.
+
+I would really appreciate any help, tips, or resources to look into. Thanks!
+## [8][Getting unique record Id's into iFrame form?](https://www.reddit.com/r/rails/comments/htn20o/getting_unique_record_ids_into_iframe_form/)
+- url: https://www.reddit.com/r/rails/comments/htn20o/getting_unique_record_ids_into_iframe_form/
+---
+I have created an iframe that can be in other websites.
+
+I am doing something like this:
+
+    &lt;iframe id="unique_id" token="1235235" src="https://1234567890.ngrok.io/widgets/form" &gt;&lt;/iframe&gt;
+
+the \`token\` will be a record of some sort so I can connect the form to a user or record so i know exactly what the form is related to when submitted.  Basically, I want to make sure i know which user the form is for so when it submits i can relate it correctly, etc.
+
+**1st Attempt**
+
+My first thought was to use nested resources for the iframe url like: /users/1/form/widget
+
+Although, I am unsure how giving a url like that would benefit as none of the iframe url ID's come into the form submit.
+
+**Second**
+
+I then figured i could makea variable into the iframe element itself, as mentioned in the beginning, with "token" or any other name.
+
+Although, I have an issue doing this with the javascript and jquery as i am unable to get it on load.  I also tried after form submit but that also isn't working.  It is odd because...
+
+&amp;#x200B;
+
+My issue is, seemingly, mainly in the javascript and jquery.  I am trying to get the form submit info so before the form submits, I grab the iframe token, create an input hidden field, add the token to the hidden field value and then submit.
+
+&amp;#x200B;
+
+When I use:
+
+    $('iForm).submit(function() {
+        console.log("A");
+    });
+
+I get nothing but the error ahead of time is: `$ is not defined`, which is understandable but how would i even get the attributes from the iframe?
+
+I am able to within the browsers console.  
+
+But if I do something like:
+
+    document.createElement('input');
+    input.setAttribute('type', 'hidden');
+    ...;
+    document.getElementById('iForm').appendChild(input);
+
+It will create a hidden field and work.
+
+&amp;#x200B;
+
+How can I make this work?
+
+&amp;#x200B;
+
+Also, should I be doing this like that with the javascript or jquery, or is there a routing and/or rails way?
+## [9][Deployment problem with HTTP Active Record adapter](https://www.reddit.com/r/rails/comments/htbgz9/deployment_problem_with_http_active_record_adapter/)
 - url: https://www.reddit.com/r/rails/comments/htbgz9/deployment_problem_with_http_active_record_adapter/
 ---
 I'm trying to install a Rails app (Spree E-commerce) on a Digital Ocean droplet using the [Tomo CLI](https://github.com/mattbrictson/tomo) tool. You run it on your local machine, give it the login credentials for the server, and it will deploy your Rails app for you. At least in theory.
@@ -234,7 +395,7 @@ Here is the error message provided by Tomo. Googling has brought me zilch so far
       /home/deployer/.rbenv/versions/2.6.5/bin/bundle:23:in `&lt;main&gt;'
       Tasks: TOP =&gt; db:create =&gt; db:load_config =&gt; environment
       (See full trace by running task with --trace)
-## [4][A little help from our friends](https://www.reddit.com/r/rails/comments/ht5g1c/a_little_help_from_our_friends/)
+## [10][A little help from our friends](https://www.reddit.com/r/rails/comments/ht5g1c/a_little_help_from_our_friends/)
 - url: https://www.reddit.com/r/rails/comments/ht5g1c/a_little_help_from_our_friends/
 ---
 Would love if anyone can add what they have resource wise. I've have some solid feedback and help thus far. I no longer have to have 100 bookmarks or google something. 
@@ -242,11 +403,7 @@ Would love if anyone can add what they have resource wise. I've have some solid 
 Cheers!
 
 Heres the repo  [https://github.com/tylertomlinson/crucial\_resources](https://github.com/tylertomlinson/crucial_resources)
-## [5][Looking for opinions on Rails with Elasticsearch gems - does Elasticsearch work well for your application? Was it easy to integrate? Are there good alternatives?](https://www.reddit.com/r/rails/comments/hszo1o/looking_for_opinions_on_rails_with_elasticsearch/)
-- url: https://www.reddit.com/r/rails/comments/hszo1o/looking_for_opinions_on_rails_with_elasticsearch/
----
-I'm looking at elasticsearch-model gem and the elasticsearch-rails gem. I'm also curious if you had issues with elasticsearch? Any thoughts are appreciated!
-## [6][Rspec undefined method ... for ?](https://www.reddit.com/r/rails/comments/ht5sth/rspec_undefined_method_for/)
+## [11][Rspec undefined method ... for ?](https://www.reddit.com/r/rails/comments/ht5sth/rspec_undefined_method_for/)
 - url: https://www.reddit.com/r/rails/comments/ht5sth/rspec_undefined_method_for/
 ---
 Hi everyone, So i try to run my test but i've got this failure message that i just don't understand. 
@@ -270,81 +427,7 @@ And this is my spec:
                 end
 
 I don't have any clue so if you have any tips Post it, thanks.
-## [7][Cryptic error. Any clue?](https://www.reddit.com/r/rails/comments/hsubkv/cryptic_error_any_clue/)
-- url: https://www.reddit.com/r/rails/comments/hsubkv/cryptic_error_any_clue/
+## [12][Looking for opinions on Rails with Elasticsearch gems - does Elasticsearch work well for your application? Was it easy to integrate? Are there good alternatives?](https://www.reddit.com/r/rails/comments/hszo1o/looking_for_opinions_on_rails_with_elasticsearch/)
+- url: https://www.reddit.com/r/rails/comments/hszo1o/looking_for_opinions_on_rails_with_elasticsearch/
 ---
-Hi Guys.
-
-So far I have been using capistrano for my production app, and all was good, but trying to set up a staging environment, I get an error in the last moment and I don't know how to interpret it well.  
-
-
-Can you give me any help?
-
-&amp;#x200B;
-
-https://preview.redd.it/t045d3jvoeb51.png?width=1666&amp;format=png&amp;auto=webp&amp;s=04de65012fc28e162b404dfcc78bfa2cfddfc95f
-
-https://preview.redd.it/lg8z25jvoeb51.png?width=1666&amp;format=png&amp;auto=webp&amp;s=aaffabffcef25030478a08d0490178e86bd6e505
-## [8][How to use a Transaction Script(aka Service Objects) in Ruby on Rails. Simple example](https://www.reddit.com/r/rails/comments/hssf51/how_to_use_a_transaction_scriptaka_service/)
-- url: https://www.reddit.com/r/rails/comments/hssf51/how_to_use_a_transaction_scriptaka_service/
----
-The logic of small applications can be present as a series of transactions. Using the Transaction Scripts pattern, we get an application that is easier to maintain, to cover with tests, and to scale.
-
-In the [tutorial](https://jtway.co/how-to-use-a-transaction-script-aka-service-objects-in-ruby-on-rails-simple-example-161b7e228942) we will develop an [application](https://github.com/dgorodnichy/transaction-script-example) that has Post, User, and Like models. Users should be able to like posts. The first version of the controller will contain extra code, which we will extract into a separate Transaction Script. We also describe when we need to use the Transaction Scripts and the pros of the transaction script usage.  
-
-
-Full tutorial: [How to use a Transaction Script (aka Service Objects) in Ruby on Rails. Simple example](https://jtway.co/how-to-use-a-transaction-script-aka-service-objects-in-ruby-on-rails-simple-example-161b7e228942)
-## [9][Logic/db help for a New Programmer](https://www.reddit.com/r/rails/comments/hsxl3p/logicdb_help_for_a_new_programmer/)
-- url: https://www.reddit.com/r/rails/comments/hsxl3p/logicdb_help_for_a_new_programmer/
----
-Making a simple community website for a niche community of gamers. 
-
-Hung up on how to associate and display
-Users to Games and platforms. 
-
-Do I store a game ID and platform ID in the user profile, or store the platform specific username in the game card. 
-
-
-User has many games
-Game has many users
-
-Do I just store it twice?
-User gamelist
-Game userlist 
-
-When UserA adds PS-Fortnite to their list, there is also an entry made for PS-Fortnite registering UserA?
-
-Does it need to be one or the other, or both?
-## [10][Writing a good Rails app CSP, and how to build a report_uri](https://www.reddit.com/r/rails/comments/hspydx/writing_a_good_rails_app_csp_and_how_to_build_a/)
-- url: https://www.reddit.com/r/rails/comments/hspydx/writing_a_good_rails_app_csp_and_how_to_build_a/
----
-The [official documentation](https://edgeguides.rubyonrails.org/security.html#content-security-policy) suggests starting with a global policy, and making changes as needed. In trying to understand this, I've made some very minor changes:
-
-    Rails.application.config.content_security_policy do |policy|
-      policy.default_src :self, :https
-      config.font_src    :self, :https, 'fonts.googleapis.com'
-      policy.img_src     :self, :https, :data, 'blahblah.s3-us-east-1.amazonaws.com'
-      policy.object_src  :none
-      config.script_src  :self, :https, 'stripe.com'
-      policy.style_src   :self, :https
-    
-      # Specify URI for violation reports
-      policy.report_uri "/csp-violation-report-endpoint"
-    end
-
-Two questions about this.
-
-1. Should excluding the `blahblah.s3-us-east-1.amazonaws.com` from `policy.img_src` effectively prevent those resources from loading? I would think so, but the resource still loads.
-2. Same for `fonts_src.` Should excluding `fonts.googleapis.com` prevent that font from loading? I get a console warning that says it's not loading due to a Content Security Policy violation, but the font still seems to be used when checking the styles in Inspector.
-3. Exactly what is this `report_uri`? I can't seem to find anything that explains it. Presumably it needs a `POST` route, a controller, and a view accessible only to an admin?
-## [11][Is innovation needed anyway ?](https://www.reddit.com/r/rails/comments/hsskui/is_innovation_needed_anyway/)
-- url: https://www.reddit.com/r/rails/comments/hsskui/is_innovation_needed_anyway/
----
-Here is a tweet quote from excellent Chris Oliver (GoRails) "If we want the Ruby community to grow, we need to get back to innovating and talking about it." My feeling is : is there any need to innovate anyway ?   
-Even the JS hype of the last years concern only a few pages that need more interactions... only small parts of a standard business app. My feeling is that innovation do not concern anymore the vast majority of every day problems. Any thought ?
-## [12][Hi everyone.](https://www.reddit.com/r/rails/comments/hsolu9/hi_everyone/)
-- url: https://www.reddit.com/r/rails/comments/hsolu9/hi_everyone/
----
-HI everyone, i hope that everyone is doing good through these times we are experiencing and everyone is safe, i was just wondering if ruby and rails is still the best framework for prototyping? coming from python :). 
-
-any advice would be appreciated. Thank you
+I'm looking at elasticsearch-model gem and the elasticsearch-rails gem. I'm also curious if you had issues with elasticsearch? Any thoughts are appreciated!

@@ -22,7 +22,62 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][What is needed to get source maps working?](https://www.reddit.com/r/typescript/comments/htg5jx/what_is_needed_to_get_source_maps_working/)
+## [2][Any VSCode users? How to stop it from thinking type constructors are JSX code?](https://www.reddit.com/r/typescript/comments/htx1ez/any_vscode_users_how_to_stop_it_from_thinking/)
+- url: https://www.reddit.com/r/typescript/comments/htx1ez/any_vscode_users_how_to_stop_it_from_thinking/
+---
+For example when I try to type:
+
+    Promise&lt;string&gt;
+
+The moment I type that closing angle bracket VSCode autocompletes with this:
+
+    Promise&lt;string&gt;&lt;/string&gt;
+
+This is in .ts files by the way. 
+
+Has anyone figured out a way to get VSCode to get smarter about when it incorporates this autocompletion?
+
+I'm sure there's a way to restrict it to .tsx files which I could implement on personal projects. But if dealing with a company project that uses JSX code in .ts files I don't think an extension level restriction would work. And even then, sometimes you want to use type constructors in files with JSX code.
+
+If anyone else currently deals with this, the best practice I currently use, when I remember to, is to first type this out to prevent the autocompleting "closing tag":
+
+    Promise&lt;&gt;
+## [3][What's the weirdest, most odd-looking and/or most complex generic you've seen or made?](https://www.reddit.com/r/typescript/comments/htukg1/whats_the_weirdest_most_oddlooking_andor_most/)
+- url: https://www.reddit.com/r/typescript/comments/htukg1/whats_the_weirdest_most_oddlooking_andor_most/
+---
+
+## [4][Finally I Developed SQL Query Generating App](https://www.reddit.com/r/typescript/comments/htw2nd/finally_i_developed_sql_query_generating_app/)
+- url: https://youtu.be/K9uG63QSW-I
+---
+
+## [5][Is it acceptable to use switch(true) to match the first met condition?](https://www.reddit.com/r/typescript/comments/htqokr/is_it_acceptable_to_use_switchtrue_to_match_the/)
+- url: https://www.reddit.com/r/typescript/comments/htqokr/is_it_acceptable_to_use_switchtrue_to_match_the/
+---
+I currently have the following switch statement in a TypeScript file:
+
+    switch (true) {
+        case reminder.repeat != ReminderRepeatType.ONCE: {
+            this.reminders.repeating.push(reminder);
+            break;
+        }
+        case reminder.date.toDateString() == today.toDateString(): {
+            this.reminders.today.push(reminder);
+            break;
+        }
+        case reminder.date &lt; today: {
+            this.reminders.pending.push(reminder);
+            break;
+        }
+        case reminder.date &gt; today: {
+            this.reminders.past.push(reminder);
+            break;
+        }
+    }
+
+I only want each reminder object to appear in one array in order to prevent displaying a reminder twice.
+
+Is this an acceptable way of using the switch statement? Is there a better way of doing this?
+## [6][What is needed to get source maps working?](https://www.reddit.com/r/typescript/comments/htg5jx/what_is_needed_to_get_source_maps_working/)
 - url: https://www.reddit.com/r/typescript/comments/htg5jx/what_is_needed_to_get_source_maps_working/
 ---
 I''m using NDB which is like the google chrome debugger but for Node.js apps. I'm able to set breakpoints in compiled .js files but not source files in .ts. I see this notice in the app:
@@ -49,7 +104,39 @@ I am running the bottom most script in the bottom left panel, `node compiled/ind
        "include": ["src/**/*"]
        , "exclude": ["node_modules", "compiled", "__tests__", "types"]
     }
-## [3][How to dynamically assign a property](https://www.reddit.com/r/typescript/comments/htfsm7/how_to_dynamically_assign_a_property/)
+## [7][How do I get around this error?](https://www.reddit.com/r/typescript/comments/htm7aj/how_do_i_get_around_this_error/)
+- url: https://www.reddit.com/r/typescript/comments/htm7aj/how_do_i_get_around_this_error/
+---
+I'm working on an in memory expressJs typescript project. It is currenlty in memory because I haven't set up any sort of database to work with.  I'm trying to set up a delete request to the api and get this error:
+
+S7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'
+
+Here is the weights object:
+
+*let* weights = {};
+
+&amp;#x200B;
+
+Here is my delete request:
+
+&amp;#x200B;
+
+app.delete('weights/:id', (req , res) =&gt; {  
+
+
+// This is where the error is  
+weights\[req.body.id\] = *null*;  
+res.status(200).send({message: 'Delete successful.'})  
+});
+
+&amp;#x200B;
+
+I apologize for the lack of formatting, it won't work for me. What am I missing?
+## [8][Promise &gt; Observable](https://www.reddit.com/r/typescript/comments/htu56a/promise_observable/)
+- url: https://www.stackchief.com/blog/Observable%20vs%20Promise%20%7C%20When%20to%20use%20Promise
+---
+
+## [9][How to dynamically assign a property](https://www.reddit.com/r/typescript/comments/htfsm7/how_to_dynamically_assign_a_property/)
 - url: https://www.reddit.com/r/typescript/comments/htfsm7/how_to_dynamically_assign_a_property/
 ---
 So I'm working on a React/Typescript project, and I am trying to make this piece of code work:
@@ -70,7 +157,43 @@ The problem is TypeScript errors out because of issues trying to figure out the 
       No index signature with a parameter of type 'string' was found on type '{ accessTokenTimeoutSecs?: number | undefined; allowAuthCode?: boolean | undefined; allowClientCredentials?: boolean | undefined; allowPassword?: boolean | undefined; clientKey?: string | undefined; ... 4 more ...; refreshTokenTimeoutSecs?: number | undefined; }'
 
 Edit: More investigation, the problem seems twofold. First, knowing what property [event.target.name](https://event.target.name) that I'm passing into the square brackets matches. Second, ensuring that event.target.value, which has type 'string', is acceptable by that property. Again, help would be appreciated. Thanks.
-## [4][Excess property check question](https://www.reddit.com/r/typescript/comments/htbn6t/excess_property_check_question/)
+
+Edit 2: Thank you to everyone for your help. I decided to post my solution here.
+
+    // Constants for all the property names go here, along with arrays grouping them by type.
+    
+    type ClientStringProperty = typeof NAME | typeof CLIENT_KEY | typeof CLIENT_SECRET;
+    type ClientNumberProperty = typeof ACCESS_TOKEN_TIMEOUT | typeof REFRESH_TOKEN_TIMEOUT;
+    type ClientBooleanProperty = typeof ENABLED | typeof ALLOW_CLIENT_CREDS | typeof ALLOW_PASSWORD | typeof ALLOW_AUTH_CODE;
+    
+    const isStringProperty = (name: string): name is ClientStringProperty =&gt; {
+        return STRING_PROPS.includes(name);
+    };
+    
+    const isNumberProperty = (name: string): name is ClientNumberProperty =&gt; {
+        return NUMBER_PROPS.includes(name);
+    };
+    
+    const isBooleanProperty = (name: string): name is ClientBooleanProperty =&gt; {
+        return BOOLEAN_PROPS.includes(name);
+    };
+    
+    // Inside component
+    const inputChange = (event: ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {
+            const { name, value, checked } = event.target;
+            setState((draft) =&gt; {
+                if (isStringProperty(name)) {
+                    draft.client[name] = value;
+                } else if (isNumberProperty(name)) {
+                    draft.client[name] = value ? parseInt(value) : 0;
+                } else if (isBooleanProperty(name)) {
+                    draft.client[name] = checked;
+                }
+            });
+        };
+
+&amp;#x200B;
+## [10][Excess property check question](https://www.reddit.com/r/typescript/comments/htbn6t/excess_property_check_question/)
 - url: https://www.reddit.com/r/typescript/comments/htbn6t/excess_property_check_question/
 ---
 https://www.typescriptlang.org/docs/handbook/interfaces.html#excess-property-checks
@@ -89,156 +212,7 @@ It says "If an object literal has any properties that the “target type” does
     printLabel(myObj);
 
 "it’s only the shape that matters. If the object we pass to the function meets the requirements listed, then it’s allowed.", so it's allowed here even though there's no size. So what I'm trying to figure out is what's the criteria for the typescript amigo to judge? Possible typos and?
-## [5][Foal TS - Node.JS and TypeScript framework - July Release - Management of several environments &amp; Simplified authentication](https://www.reddit.com/r/typescript/comments/hsup8w/foal_ts_nodejs_and_typescript_framework_july/)
-- url: https://www.reddit.com/r/typescript/comments/hsup8w/foal_ts_nodejs_and_typescript_framework_july/
+## [11][TypeScript developers interested in decentralization should be aware of Shardus.](https://www.reddit.com/r/typescript/comments/htmh0w/typescript_developers_interested_in/)
+- url: https://medium.com/@Shardus/shardus-the-foundation-of-our-decentralized-future-976ae5106938?source=social.tw
 ---
-Foal TS version 1.11 is here!
 
-This version facilitates the management of several environments thanks to its abstract services and it also reduces the code to produce to build an authentication.
-
-The documentation of the new features can be found here:
-
-\- [https://foalts.gitbook.io/docs/topic-guides/architecture/services-and-dependency-injection#abstract-services](https://foalts.gitbook.io/docs/topic-guides/architecture/services-and-dependency-injection#abstract-services)
-
-\- [https://foalts.gitbook.io/docs/topic-guides/authentication-and-access-control/session-tokens#specify-the-name-of-the-session-store-in-the-configuration](https://foalts.gitbook.io/docs/topic-guides/authentication-and-access-control/session-tokens#specify-the-name-of-the-session-store-in-the-configuration)
-
-\- [https://foalts.gitbook.io/docs/topic-guides/validation-and-sanitization#usage-with-a-hook](https://foalts.gitbook.io/docs/topic-guides/validation-and-sanitization#usage-with-a-hook)
-
-&amp;#x200B;
-
-In a few words, Foal TS is a [**Node.Js**](http://node.js/) and **TypeScript** framework that **provides the bricks to build a complete web application** while keeping a **simple and intuitive code**.
-
-Backed by **thousands of tests**, it offers more than **11,000 lines of documentation**. [**#typescript**](https://www.linkedin.com/feed/hashtag/?keywords=typescript&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6689863897433829376) [**#javascript**](https://www.linkedin.com/feed/hashtag/?keywords=javascript&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6689863897433829376) [**#nodejs**](https://www.linkedin.com/feed/hashtag/?keywords=nodejs&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6689863897433829376)
-
-&amp;#x200B;
-
-https://preview.redd.it/8fpseb3rteb51.png?width=1064&amp;format=png&amp;auto=webp&amp;s=659f65321229a00a7ae887a53cc246f54709bcaf
-## [6][Converting the few left at my work to TS](https://www.reddit.com/r/typescript/comments/hsr3ri/converting_the_few_left_at_my_work_to_ts/)
-- url: https://www.reddit.com/r/typescript/comments/hsr3ri/converting_the_few_left_at_my_work_to_ts/
----
-Every other week, folks in my group are able to host a 40 minute technical talk. I’m looking at hosting one in an attempt to convert some of the late adopters in the group to TS. Some background, we primarily work in a rapid prototyping space so the old “Typescript is slower to develop with” argument is what has kept the last few from adopting. I’m trying to attack that head on while also talking about other benefits to push my argument over the edge. I’m thinking about half of the talk will be demonstration and questions so I want to keep to the most obvious wins.
-
-The rough outline of my presentation is this:
-
-- Intellisense: by identifying and defining your types up front you earn intellisense which speeds up development 
-- Runtimes errors/refactoring: Property changes and differences are caught at compile time rather than runtime.
-- Coordination/documentation: TS improves the ability to communicate through though code. Often we return to prototypes a year after the initial work was done and have to spin up and develop on a code rot ridden app.
-
-Any advice is very welcome. Specifically, does anyone have any additional points they think I should make or angles I should address?
-## [7][Intersection of Enum Types](https://www.reddit.com/r/typescript/comments/hswsoo/intersection_of_enum_types/)
-- url: https://www.reddit.com/r/typescript/comments/hswsoo/intersection_of_enum_types/
----
-I'm trying to make an intersection of two enum types, but I have trouble making an instance of that new type. This is the smallest example I could think of.
-
-    enum Element {
-        WATER,
-        FIRE
-    }
-    
-    enum Target {
-        PLAYER,
-        ENEMY
-    }
-    
-    type Attack = Element &amp; Target;
-
-​Element.FIRE &amp; Target.ENEMY // doesn't work. treated like numbers  
-{} as Attack // no error, but doesn't seem to have anything to do with element or target.
-
-**Question: How would I make an Attack object?**
-
-If that is not possible, I might just go with a tuple type that contains the two enums.
-## [8][Typing a recursive camelize function?](https://www.reddit.com/r/typescript/comments/hstaxp/typing_a_recursive_camelize_function/)
-- url: https://www.reddit.com/r/typescript/comments/hstaxp/typing_a_recursive_camelize_function/
----
-It would be nice to not lose type of the object but IDK if this is far beyond what TypeScript is capable of:
-
-    export function camelize&lt;T&gt;(source: T, reverse = false) {
-      // console.log('snakeCaseObject', source);
-      const dest: Record&lt;string, any&gt; = {};
-      const fn = reverse ? snakeCase : camelCase;
-
-      for (let [key, value] of Object.entries(source)) {
-        if (isPlainObject(value)) {
-          // checks that a value is a plain object or an array - for recursive key conversion
-          value = camelize(value, reverse); // recursively update keys of any values that are also objects
-        }
-        if (isArray(value)) {
-          value = value.map(v =&gt; (isPlainObject(v) ? camelize(v, reverse) : v));
-        }
-        dest[fn(key)] = value;
-      }
-
-      return dest;
-    }
-
-
-This is what I have so far, but surely the actual return type is T but with camelCased(or uncamelcased) keys.
-## [9][Use mongoose FilterQuery&lt;T&gt; + check if the keys exists](https://www.reddit.com/r/typescript/comments/hsrstk/use_mongoose_filterqueryt_check_if_the_keys_exists/)
-- url: https://www.reddit.com/r/typescript/comments/hsrstk/use_mongoose_filterqueryt_check_if_the_keys_exists/
----
-Right now in our project (using NestJS) we do have some methods in our service like this:
-
-```
-import { Model, CreateQuery, FilterQuery } from 'mongoose';
-import { User } from './user.schema';
-
-class UsersService {
-  constructor(
-    @InjectModel(User.name) private readonly usersModel: Model&lt;User&gt;,
-  ) {}
-
-  async findOne(conditions: Partial&lt;Record&lt;keyof User, unknown&gt;&gt;) {
-    this.usersModel.findOne(conditions as FilterQuery&lt;User&gt;);
-  }
-
-  async create(fields: Partial&lt;Record&lt;keyof User, unknown&gt;&gt;) {
-    this.usersModel.create(fields as CreateQuery&lt;User&gt;);
-  }
-
-  async updateOne(id, fields: Partial&lt;Record&lt;keyof User, unknown&gt;&gt;) {
-    this.usersModel.updateById(id, fields as UpdateQuery&lt;User&gt;);
-  }
-}
-```
-
-In the above code it makes sure through TypeScript that when I do:
-
-```
-this.usersService.create({
-  name: 'John',
-  countryy: 'USA', // &lt;-- error because it should be 'country'
-})
-```
-
-This works perfectly, but advanced query syntax is not supported through this method. For example:
-
-```
-this.usersService.findOne({
-  'myObject.nestedKey.nestedKey2': 'test',
-})
-```
-
-due to this I decided to just change the `conditions` parameter in UsersService.findOne() function to be `Record&lt;string, unknown&gt;`.
-
-Is there a possibility to allow this types of advanced syntax and still check whether those keys are valid? This means that TypeScript should know, when doing `myObject.nestedKey.nestedKey2`, that `myObject` is a valid key, `nestedKey` is also a valid key inside `myObject` etc ...
-
-Mongoose is using `FilterQuery&lt;T&gt;` but it doesn't check for valid keys I believe
-
-Would love to know some solutions.
-## [10][Currying function parameters - Convert to Numbers](https://www.reddit.com/r/typescript/comments/hshhsn/currying_function_parameters_convert_to_numbers/)
-- url: https://www.reddit.com/r/typescript/comments/hshhsn/currying_function_parameters_convert_to_numbers/
----
-I have function like:
-
-*export* const isGreaterThan = (operand1: unknown, operand2: unknown) =&gt;
-
-Number(operand1) &gt;Number(operand2)
-
-I would like to have a curried function in the middle that takes \`operand1\` and \`operand2\` and converts them into numbers so I don't have to do that explictly in my function body.
-
-Is there a way to do this with function currying? Thank you
-## [11][Is there a way to implement a custom behaviour when casting a class to a boolean?](https://www.reddit.com/r/typescript/comments/hsn96u/is_there_a_way_to_implement_a_custom_behaviour/)
-- url: https://www.reddit.com/r/typescript/comments/hsn96u/is_there_a_way_to_implement_a_custom_behaviour/
----
-If you have a class in TypeScript where whether it casts to true or false depends on a custom set of conditions, is there a way to implement that like you can implement something like `toString()`, where it will also work with regular if statements?

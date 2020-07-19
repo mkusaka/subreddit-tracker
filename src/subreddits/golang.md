@@ -1,86 +1,99 @@
 # golang
-## [1][Can we talk about how user-friendly Go's time formatting is?](https://www.reddit.com/r/golang/comments/ht8m3s/can_we_talk_about_how_userfriendly_gos_time/)
-- url: https://www.reddit.com/r/golang/comments/ht8m3s/can_we_talk_about_how_userfriendly_gos_time/
+## [1][Brian Kernighan: UNIX, C, AWK, AMPL, and Go Programming | AI Podcast #109 with Lex Fridman](https://www.reddit.com/r/golang/comments/htwr7e/brian_kernighan_unix_c_awk_ampl_and_go/)
+- url: https://www.youtube.com/watch?v=O9upVbGSBFo
 ---
-I've been working with Go for a while now, but I'd never had much cause to get into time arithmetic in Go. Coming from JavaScript, SQL, and Python, I've always avoided date-math where possible--Python makes it bearable, but SQL and JavaScript tend to be annoying. The worst with many languages is learning the format strings required to output times in whatever way you want. For example, in the dialect of SQL I use most often, formatting a DATETIME in ISO format requires a format string of "%Y-%m-%d %H-%M-%S", or "%F %T", if you happen to know about that shortcut. And remembering the difference between a capital or lowercase M has messed me up several times.
 
-Imagine my joy when I saw how the time.Format function worked.
+## [2][Static code analyzer for TODO comments, written in Go](https://www.reddit.com/r/golang/comments/htkvik/static_code_analyzer_for_todo_comments_written_in/)
+- url: https://github.com/preslavmihaylov/todocheck
+---
 
-Seriously, if you haven't seen it, go look it up. Bravo, designers.
-## [2][reflink: very small package for btrfs/xfs copy-on-write file copy in native go](https://www.reddit.com/r/golang/comments/htfdhh/reflink_very_small_package_for_btrfsxfs/)
+## [3][How do I make my prime program faster than JS?](https://www.reddit.com/r/golang/comments/hty9ij/how_do_i_make_my_prime_program_faster_than_js/)
+- url: https://www.reddit.com/r/golang/comments/hty9ij/how_do_i_make_my_prime_program_faster_than_js/
+---
+Golang noob here.
+
+I have a similar GO &amp; JS program to find the first N primes(naive). The golang code takes ~twice the time. What am I doing wrong?
+
+**GO**
+```
+  const TARGET = 20000 // assume user input, unknown at compile.
+  var count = 0
+  var num = 2
+  var primes []int
+
+  for count &lt; TARGET {
+    divisible := false
+    for i := 2; i &lt; num; i++ {
+      if (num % i == 0) {
+        divisible = true 
+        break
+      }
+    } 
+    if (divisible == false) {
+      primes = append(primes, num) // suspect doing this wrong
+      count++
+    }
+    num++
+  }
+```
+
+**Javscript**
+```
+let now = performance.now();
+const TARGET = 20000;
+let primes = [];
+let num = 2;
+let count = 0;
+
+while (count &lt; TARGET) {
+  let divisible = false
+  for (let i = 2; i &lt; num; i++) {
+    if (num % i == 0) {
+      divisible = true;
+      break;
+    }
+  }
+  if (divisible == false) {
+    primes.push(num);
+    count++;
+  }
+  num++
+}
+
+```
+## [4][cockroachdb/pebble -- RocksDB/LevelDB inspired key-value database in Go](https://www.reddit.com/r/golang/comments/htre6o/cockroachdbpebble_rocksdbleveldb_inspired/)
+- url: https://github.com/cockroachdb/pebble
+---
+
+## [5][What is the stack should I use to build my go backend service (API)](https://www.reddit.com/r/golang/comments/hu051j/what_is_the_stack_should_i_use_to_build_my_go/)
+- url: https://www.reddit.com/r/golang/comments/hu051j/what_is_the_stack_should_i_use_to_build_my_go/
+---
+As you know, there are a lot of frameworks for GO, database connectors, and stuff.
+
+So my options are a bit cluttered as I don't know the use cases... So I'm posting here for guidance.
+## [6][k8s pod scheduler a simple k8s scheduler to run long-running tasks with a gRPC Interface](https://www.reddit.com/r/golang/comments/htwpsq/k8s_pod_scheduler_a_simple_k8s_scheduler_to_run/)
+- url: https://github.com/ahmagdy/k8s-pod-scheduler
+---
+
+## [7][Using Go build directives to optionally use new APIs in the standard library](https://www.reddit.com/r/golang/comments/htyzsx/using_go_build_directives_to_optionally_use_new/)
+- url: https://utcc.utoronto.ca/~cks/space/blog/programming/GoBuildUsingNewAPIs
+---
+
+## [8][Module declares its path as, but was required as...](https://www.reddit.com/r/golang/comments/htyn0l/module_declares_its_path_as_but_was_required_as/)
+- url: https://www.reddit.com/r/golang/comments/htyn0l/module_declares_its_path_as_but_was_required_as/
+---
+Trying to use argon2 with go.mod and getting the following error:
+
+    go: github.com/golang/crypto/argon2: github.com/golang/crypto@v0.0.0-20200709230013-948cd5f35899: parsing go.mod:
+    	module declares its path as: golang.org/x/crypto
+    	        but was required as: github.com/golang/crypto
+
+I've tried changing go.mod and the import address, but not having much luck. Any ideas?
+## [9][reflink: very small package for btrfs/xfs copy-on-write file copy in native go](https://www.reddit.com/r/golang/comments/htfdhh/reflink_very_small_package_for_btrfsxfs/)
 - url: https://github.com/KarpelesLab/reflink
 ---
 
-## [3][GoScope - Gin Gonic Middleware](https://www.reddit.com/r/golang/comments/htfbep/goscope_gin_gonic_middleware/)
-- url: https://www.reddit.com/r/golang/comments/htfbep/goscope_gin_gonic_middleware/
----
-Watch incoming requests and outgoing responses as well as logs from your Go Gin  application. All is logged into a database for persistence and paginated  for performance.
-
-The aim of this application is to be a plug and play addition to your  application, not a hurdle, thus to setup, you only require a one-liner  in your main function.
-
-Any addition, contribution and criticism to the project is highly welcome.
-
-[https://github.com/averageflow/goscope](https://github.com/averageflow/goscope)
-
-&amp;#x200B;
-
-https://preview.redd.it/am0x43yuslb51.png?width=800&amp;format=png&amp;auto=webp&amp;s=c5679a54b5d511b05673fbad15bbc9b616552f66
-## [4][[2006.09973] Breaking Type-Safety in Go: An Empirical Study on the Usage of the unsafe Package](https://www.reddit.com/r/golang/comments/ht7hyl/200609973_breaking_typesafety_in_go_an_empirical/)
-- url: https://arxiv.org/abs/2006.09973
+## [10][Deploying Your Go Apps to AWS Elastic Beanstalk](https://www.reddit.com/r/golang/comments/htm1e0/deploying_your_go_apps_to_aws_elastic_beanstalk/)
+- url: https://youtu.be/1WXJTlkf0S4
 ---
 
-## [5][Wordpress in Golang?](https://www.reddit.com/r/golang/comments/htehlt/wordpress_in_golang/)
-- url: https://www.reddit.com/r/golang/comments/htehlt/wordpress_in_golang/
----
-Hello all,
-
-Would it be a good idea to convert/re-write wordpress into golang? Personally when I use a self hosted wordpress, pages takes 2 to 4 seconds to load with default theme and no additional plugins. There are many tweaks that we can make to php and apache using which performance can be improved however still wordpress will get run in php.
-
-As I understood, golang creates a compiled binary and leads to improved performance, would it be good idea to port WP to golang? In my observations, I traced latest wordpress using Xdebug, it ran over 40K functions, can its performance improve by injecting everything into binaries that will make wordpress to run as a service? (I am not saying 40K function = slow performance)
-
-I understood there would be another story of plugins and themes but is it good idea to spend time on designing this thing?
-## [6][Clivern/Beetle - Kubernetes multi-cluster deployment automation service.](https://www.reddit.com/r/golang/comments/ht0ebt/clivernbeetle_kubernetes_multicluster_deployment/)
-- url: https://github.com/Clivern/Beetle
----
-
-## [7][Interfaces and the Outside World](https://www.reddit.com/r/golang/comments/htfs67/interfaces_and_the_outside_world/)
-- url: https://github.com/Evertras/go-interface-examples/tree/master/outside-world
----
-
-## [8][New to golang trying to convert simple pyhton script to golang.](https://www.reddit.com/r/golang/comments/htf9nl/new_to_golang_trying_to_convert_simple_pyhton/)
-- url: https://www.reddit.com/r/golang/comments/htf9nl/new_to_golang_trying_to_convert_simple_pyhton/
----
-Hi
-
-Im new to golang . And i am trying to learn by converting my simple python scripts. But i have no idea how to do it.
-
-here is my python script.
-
-    import math
-    
-    barlength = 400
-    cutlength = int(input("what is your cut length? In cm: "))
-    
-    print('{} / {} = '.format(barlength, cutlength))
-    print(barlength / cutlength)
-    
-    lengtheverybar = (barlength / cutlength)
-    cutbars = math.floor(lengtheverybar)
-    
-    print("You will get", cutbars, "every 4 meters bar.")
-
-Could any one help me out?
-## [9][Go 1.14.6 is out now](https://www.reddit.com/r/golang/comments/hsqdak/go_1146_is_out_now/)
-- url: https://www.reddit.com/r/golang/comments/hsqdak/go_1146_is_out_now/
----
-[https://golang.org/dl/](https://golang.org/dl/)  
-[https://golang.org/doc/go1.14](https://golang.org/doc/go1.14)  
-[https://golang.org/doc/devel/release.html#go1.14](https://golang.org/doc/devel/release.html#go1.14)
-## [10][What are your thoughts on using Go for REST APIs?](https://www.reddit.com/r/golang/comments/htb1gh/what_are_your_thoughts_on_using_go_for_rest_apis/)
-- url: https://www.reddit.com/r/golang/comments/htb1gh/what_are_your_thoughts_on_using_go_for_rest_apis/
----
-I have had the pleasure of learning Go lately and I must say that I like many aspects of the language. Type safety, go routines, native performance. It has the feel of C/C++ without all of the nonsense and I look forward to continuing to use it.
-
-However, coming from the C#, Java, Python, and Ruby world, creating REST APIs in Go seems to be quite arduous compared to these other languages. What could be accomplished with relatively few lines of code in those languages seems to take much, much more setup and plumbing to get even a basic API up and running.
-
-What are your thoughts and experiences on using Go as a web service development language? Am I maybe missing some helpful packages that would streamline the process a bit?

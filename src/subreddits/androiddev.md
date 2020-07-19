@@ -40,66 +40,71 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][People who got hired as an android developer ! What's your story?](https://www.reddit.com/r/androiddev/comments/htf9qb/people_who_got_hired_as_an_android_developer/)
+## [3][PreLaunch Report showing issues of Google Play app and not my app.](https://www.reddit.com/r/androiddev/comments/htxibt/prelaunch_report_showing_issues_of_google_play/)
+- url: https://i.redd.it/ikzlqnny2sb51.png
+---
+
+## [4][🍫 A lightweight bottom navigation view, fully customizable with an indicator and animations.](https://www.reddit.com/r/androiddev/comments/htxxfw/a_lightweight_bottom_navigation_view_fully/)
+- url: https://i.redd.it/q9b0x2brasb51.gif
+---
+
+## [5][Scaling Your Android Build (Part 1): Going Beyond Modularization with Gradle](https://www.reddit.com/r/androiddev/comments/htmgwv/scaling_your_android_build_part_1_going_beyond/)
+- url: https://www.youtube.com/watch?v=dmAXnXRbHYo
+---
+
+## [6][My pc can't really run androidd studio any alternatives?](https://www.reddit.com/r/androiddev/comments/hu07ml/my_pc_cant_really_run_androidd_studio_any/)
+- url: https://www.reddit.com/r/androiddev/comments/hu07ml/my_pc_cant_really_run_androidd_studio_any/
+---
+
+## [7][Push notifications aren't reliable](https://www.reddit.com/r/androiddev/comments/htzpka/push_notifications_arent_reliable/)
+- url: https://www.reddit.com/r/androiddev/comments/htzpka/push_notifications_arent_reliable/
+---
+Hi guys,
+
+came here to ask for some help to the most experienced developers.
+
+I'm currently building a trivia multiplayer Android game. I have my backend in Java Spring that handles all the status in every party the players are. So, the way im sending the data back to the clients is using a MQTT service, Firebase and Pushy, but they are giving me too many problems. Sometimes the notifications are too slow and sometimes they dont even arrive to the client. It is so much inconsistent.
+
+I thought about using a websocket structure instead but, ain't that too much of an overkill? This game is not a shoother or a fighting game where latency needs to be the lowest possible, players just select an option and when they all are ready, the next question comes to their screens.
+
+Is there something I'm doing wrong with Firebase or Pushy or do I need to rely in something better?
+
+Thanks in advance.
+## [8][Kalman Filter for Fusing Acc and Gyro Data](https://www.reddit.com/r/androiddev/comments/htyz5t/kalman_filter_for_fusing_acc_and_gyro_data/)
+- url: https://www.reddit.com/r/androiddev/comments/htyz5t/kalman_filter_for_fusing_acc_and_gyro_data/
+---
+Hello everyone,
+
+I am looking for a Kalman Filter that fuses first acc and gyro data, and later on magnotometer data.
+
+I think I understand the underlying principles of the Kalman Filter in general, but somehow I can't seem to make it work in Android Studio.  
+There are many tutorials on how to implement such a filter but I found none specifically for Android.  
+Since I'm stuck and I need a Kalman Filter Implementation of Orientation Estimate, this subreddit is my last resort.  
+Does anyone know where to find the source code for my problem?  
+Kind regards
+## [9][Is it possible to open a shared google maps location on your own app?](https://www.reddit.com/r/androiddev/comments/htyust/is_it_possible_to_open_a_shared_google_maps/)
+- url: https://www.reddit.com/r/androiddev/comments/htyust/is_it_possible_to_open_a_shared_google_maps/
+---
+I hope I'm not breaking #2, but I'm not soliciting how to do it - but more whether its possible or not so I don't waste my time.  
+Someone shared me a location on whatsapp, I want to open it with my app and extract the latitude and longitude. I'm getting that you'd deep filter it (i'm using Java), but I can't seem to get it to choose anything other than google maps.  
+
+
+Is this possible?
+## [10][Optimizing for tablet](https://www.reddit.com/r/androiddev/comments/htyrun/optimizing_for_tablet/)
+- url: https://www.reddit.com/r/androiddev/comments/htyrun/optimizing_for_tablet/
+---
+i pass the test of tablet app quality for some of my apps, is this made my app in the top search over the apps with same key word for tablet or is this only differnce in user experience no effect in search result for tablet
+## [11][People who got hired as an android developer ! What's your story?](https://www.reddit.com/r/androiddev/comments/htf9qb/people_who_got_hired_as_an_android_developer/)
 - url: https://www.reddit.com/r/androiddev/comments/htf9qb/people_who_got_hired_as_an_android_developer/
 ---
 I am 19 and I am learning Java right now! A couple months back I tried the android development and I loved it ! I don't have have any apps in my portfolio yet but soon ! I am constantly learning stuff ! And I would love to hear your story of how you got hired ?
-## [4][Why is android pushing Flutter(Dart) and Kotlin at the same time?](https://www.reddit.com/r/androiddev/comments/ht45ek/why_is_android_pushing_flutterdart_and_kotlin_at/)
-- url: https://www.reddit.com/r/androiddev/comments/ht45ek/why_is_android_pushing_flutterdart_and_kotlin_at/
+## [12][How to remove padding at the bottom and right from WebView](https://www.reddit.com/r/androiddev/comments/htxn99/how_to_remove_padding_at_the_bottom_and_right/)
+- url: https://www.reddit.com/r/androiddev/comments/htxn99/how_to_remove_padding_at_the_bottom_and_right/
 ---
-I'm aware that google is promoting the use of Android Studio and Kotlin for android app development. But at the same time they promote Flutter and Dart for app development.
+I am using SVG into WebView and having few interactions. Below is the code
 
-Since apps based on flutter can run both on android and ios, it seems like a better choice. Why is google pushing both?
+`var pageText = "&lt;!DOCTYPE HTML&gt;\n" + "&lt;html&gt;" + "&lt;head&gt;" + "&lt;meta name='viewport' content='target-densityDpi=device-dpi'/&gt;" + "&lt;style type="text/css"&gt;\n" + "html, body { padding:0px; margin:0px; background:blue; border: 1px solid orange;}" + ".container{width:100%; height:100%; background:red; }" + "&lt;/style&gt;\n" + "&lt;script src="jquery-3.5.1.min.js"&gt;&lt;/script&gt;" + "&lt;/head&gt;" + "&lt;body style="margin: 0px; padding: 0px"&gt;" + "&lt;div id="div" class="container"&gt;" + svgString.trim() + "&lt;/div&gt;" + "&lt;script src="my_js_to_handle_interaction.js"&gt;&lt;/script&gt;" + "&lt;/body&gt;" + "&lt;/html&gt;"`
 
-Sorry I'm a noob.
-## [5][Android Fragment Lifecycle in 137 Seconds](https://www.reddit.com/r/androiddev/comments/htg5yp/android_fragment_lifecycle_in_137_seconds/)
-- url: https://www.reddit.com/r/androiddev/comments/htg5yp/android_fragment_lifecycle_in_137_seconds/
----
-Android Fragment Lifecycle is complicated, and official documentation is even worse. But don’t panic, there is an easy way to understand and use it correctly. It’ll take you 137 seconds, start your timer.
+But on zooming, I can see there is some extra space after SVG at the right side and bottom of WebView. And this is being increased by some ratio, depending on zoom-in level.
 
-https://vladsonkin.com/android-fragment-lifecycle-in-137-seconds/
-## [6][Spock Adb Android Studio Plugin](https://www.reddit.com/r/androiddev/comments/htdku9/spock_adb_android_studio_plugin/)
-- url: https://plugins.jetbrains.com/plugin/11591-spock-adb
----
-
-## [7][First episode in a series of Android development tutorials building a Real estate app. In this episode the focus is on User Flows and User Stories as you begin to build your app](https://www.reddit.com/r/androiddev/comments/htgmdk/first_episode_in_a_series_of_android_development/)
-- url: https://youtu.be/fwrj_kpUVFE
----
-
-## [8][Is kotlin treated as pure native language in android or does it get translated or converted to java?](https://www.reddit.com/r/androiddev/comments/ht0mdy/is_kotlin_treated_as_pure_native_language_in/)
-- url: https://www.reddit.com/r/androiddev/comments/ht0mdy/is_kotlin_treated_as_pure_native_language_in/
----
-Hi, I am very new in android programming. Seeing some posts in this subs about kotlin intrigue me to try to move away from Android Java to kotlin since android still stuck with the old java 8. 
-
-Like the question in the title, is kotlin treated as native or will it be translated to java during compile or running? Does android has two VMs ( Java and Kotlin)? Will there be performance impact to move to kotlin? Like speed and file size?
-
-I am using features such as webview from javafx that is available only in Java 8 for android. Now java has gone to Java 14, but android atill stuck with java 8. This stresses me out since we also integrate some APIs that uses later version of Java.
-
-Any infos are very appreciated.
-## [9][I created this library for Android for easier SQL database management. Please, give it a try and let me know if you liked it. thanks](https://www.reddit.com/r/androiddev/comments/htgc1x/i_created_this_library_for_android_for_easier_sql/)
-- url: https://github.com/p32929/EasiestSqlLibrary
----
-
-## [10][Creating a video casting app](https://www.reddit.com/r/androiddev/comments/htfxof/creating_a_video_casting_app/)
-- url: https://www.reddit.com/r/androiddev/comments/htfxof/creating_a_video_casting_app/
----
- 
-
-I am trying to create a video casting app that will cast the video to tv and will support multiple brands. I tried dlna , android cast, but couldn't make them work , there aren't much tutorial about them or maybe I couldn't find them.
-
-So a guide / tutorial links how to create cast sender android app will be great help Ps: I already saw google's codelab , their sample app isn't showing sony KLV 48W652D
-## [11][Anyone not yet received Fb audience network payout invoice?](https://www.reddit.com/r/androiddev/comments/htefy9/anyone_not_yet_received_fb_audience_network/)
-- url: https://www.reddit.com/r/androiddev/comments/htefy9/anyone_not_yet_received_fb_audience_network/
----
-I usually get the on the 11th of each month by email.
-## [12][Creating an for automated web browsing (logging into facebook, google search, etc.) in python](https://www.reddit.com/r/androiddev/comments/ht883m/creating_an_for_automated_web_browsing_logging/)
-- url: https://www.reddit.com/r/androiddev/comments/ht883m/creating_an_for_automated_web_browsing_logging/
----
-Hello everyone, 
-
-I'm trying to get into app development, with a background in python. I know Java is what's primarily used, but there are packages for python (e.g. Kivy), that enable you to design GUIs and various functions. However, I have yet to find something for automated web browsing (like selenium). I know  you can use WebView for this, but that is in Java/Kotlin. I'm looking for something within Python.   
-
-
-The app would take a user input, and then input that information into an online site (e.g. input logic information in the app, and it opens up a chrome browser, goes to [facebook.com](https://facebook.com), enters the inputs, click login button to log you in. Or input something in the app, chrome opens up and goes to google.com , and searches the entry). I've been able to successfully design a GUI using Kivy, and compile it into apk using buildozer, and I've tested this apk both on my own phone, and the emulator. However, I have yet to find any tools that I can write in python, for automated web browsing. 
-
-Any suggestions or feedback would be greatly appreciated!
+I am unable to find the root cause of the issue.

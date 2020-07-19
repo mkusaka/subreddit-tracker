@@ -21,31 +21,125 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][What is the proper way to build many Lambda functions and updated them later?](https://www.reddit.com/r/aws/comments/htfa9z/what_is_the_proper_way_to_build_many_lambda/)
-- url: https://www.reddit.com/r/aws/comments/htfa9z/what_is_the_proper_way_to_build_many_lambda/
+## [2][ECS - our server response time has dropped from 0.3s to 2.5s - part 2](https://www.reddit.com/r/aws/comments/htxrzr/ecs_our_server_response_time_has_dropped_from_03s/)
+- url: https://www.reddit.com/r/aws/comments/htxrzr/ecs_our_server_response_time_has_dropped_from_03s/
 ---
-I want to make a bot that makes other bots on Telegram platform. I want to use AWS infrastructure, look like their Lamdba functions are perfect fit, pay for them only when they are active. In my concept, each bot equal to one lambda function, and they all share the same codebase.
+Hi everyone, wanted to thank you all for your contributions, your response was fantastic and so helpful. I resolved my CPU cloudwatch issue, which was due to a very low default cpu setting (thanks [rehevkor5](https://www.reddit.com/user/rehevkor5/) &amp; [jIsraelTurner](https://www.reddit.com/user/jIsraelTurner/)).
 
-At the starting point, I thought to make each new Lambda function programmatically, but this will bring me problems later I think, like need to attach many services programmatically via AWS SDK: Gateway API, DynamoDB. But the main problem, how I will update the codebase for these 1000+ functions later? I think that bash script is a bad idea here.
+I have also ruled out a number of things in my first post which are not causing the 2.2s discrepancy. [Previous post here.](https://www.reddit.com/r/aws/comments/htgbnj/ecs_our_server_response_time_has_dropped_from_03s/)
 
-So, I moved forward and found SAM (AWS Serverless Application Model) and CloudFormatting, which should help me I guess. But I can't understand the concept. I can make a stack with all the required resources, but how will I make new bots from this one stack? Or should I build a template and make new stacks for each new bot programmatically via AWS SDK from this template?
+1. It isn't related to the php version, apache version or the code as far as I can tell.
+2. It isn't related to the RDS.
+3. EFS isn't causing this issue.
 
-Next, how to update them later? For example, I want to update all bots that have version 1.1 to version 1.2. How I will replace them? Should I make a new stack or can I update older ones? I don't see any options in UI of CloudFormatting or any related methods in AWS SDK for that.
+I ruled these all out by setting up an identical site without a certificate. This site has a TTFB of 0.1s.
 
-Thanks
-## [3][Do I need to rewrite my app to use Aurora?](https://www.reddit.com/r/aws/comments/htdj3m/do_i_need_to_rewrite_my_app_to_use_aurora/)
-- url: https://www.reddit.com/r/aws/comments/htdj3m/do_i_need_to_rewrite_my_app_to_use_aurora/
+I'm now assuming my problem is related to my load balancer or is something to do with the certificate or Route53.
+
+My ALB has two listeners:
+
+`HTTP:80 - redirecting to HTTPS://#{host}:443/#{path}?#{query}HTTPS:443 - forwarding to http-target-group w/ ssl certificate`
+
+I direct the domain to the ALB using an Alias record in Route53. I use google lighthouse to get the TTFB value. The http-target-group directs to a randomly assigned port on the EC2 target, which is created by ECS.
+
+I use this meta tag `&lt;meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"&gt;` as the server assumes it is running on HTTP because traffic enters on port 80. This ensures the browser loads everything over HTTPS.
+
+On the "fast" version, I just have `HTTP: 80 forwarded to http-target-group` and it works fine.
+
+&amp;#x200B;
+
+Does anyone have any ideas? I'd also welcome advice on configuring the load balancer.
+## [3][Looking for advice on how best to store data in a serverless project: DynamoDB, Athena/S3 or Aurora Postgres Serverless](https://www.reddit.com/r/aws/comments/htpjzi/looking_for_advice_on_how_best_to_store_data_in_a/)
+- url: https://www.reddit.com/r/aws/comments/htpjzi/looking_for_advice_on_how_best_to_store_data_in_a/
 ---
-I see that Aurora has a write endpoint and a read endpoint. Does. That mean to take advantage of read endpoints I need to specify a different endpoint for read queries?
+I have a question about a project I'm doing to learn more about serverless technologies on AWS. Here are the goals of the project:
 
-i.e go through my existing application, figure out the reads, and then change the endpoints for those queries?
+* Collect and consolidate Quarterly 13F filing data from the SEC
+* Generate a single CSV file containing all holdings from every 13F filing since 2013
+* Use only serverless technologies on AWS
+* Define and deploy all of the project infrastructure using AWS CDK
+* Learn more about the SEC, 13F and do analytics on the collected data
+* Share my experience and get feedback on serverless architecture patterns and best practices
 
-I tried searching online, but couldn’t get a definitive answer. Most apps I know have only one IP/DNS specified for the DB, making no difference between reads and writes.
-## [4][Approzium: Observable, password-less authentication to databases - built on AWS IAM](https://www.reddit.com/r/aws/comments/ht2bnj/approzium_observable_passwordless_authentication/)
-- url: https://github.com/cyralinc/approzium
+Here's my approach so far:
+
+[AWS Serverless architecture for consolidating 13F filing data from the SEC](https://preview.redd.it/z4uoyr7hyob51.png?width=761&amp;format=png&amp;auto=webp&amp;s=bb2fcf2fea3a9742cfe09ed8de08441792162a11)
+
+1. The SEC makes available a file each quarter that contains a list of all SEC filings, including 13F filings.
+
+* The file is called the `Master Index of EDGAR Dissemination Feed`
+* The file contains the following fields: `CIK|Company Name|Form Type|Date Filed|Filename`
+* There are about 200,000+ filings per quarter, \~6,000 of which are 13F filings
+* This file will be uploaded to an S3 bucket (`feed_bucket`) that triggers a Lambda function (`feed_lambda`)
+
+1. `feed_lambda` parses the Quarterly file and sends messages to an SQS Queue
+
+* The messages sent to SQS contain the information from each row that is a 13F filing: `CIK` (an company index), `Company Name`, `Form Type` (there are some variants to 13F filings), `Date Filed` and `Filename`
+* `Filename` is the location of the 13F filing on `https://www.sec.gov/Archives/`, for example `https://www.sec.gov/Archives/edgar/data/1000097/0001000097-19-000001.txt`.
+* SQS messages are processed by by a lambda function called `save_filing`
+
+1. `save_filing` fetches 13F filings from `sec.gov` and saves these raw files to S3
+
+* The `save_filing` Lambda function process up to 10 SQS messages at a time.
+* `save_filing` saves raw `.txt` file filings to a `filings` S3 bucket that triggers a `process_filing` Lambda function.
+
+1. `process_filing` uses regular expressions and Python's native XML parsing library to read the filing data
+
+* Each filing contains a list of holdings that are read into a `namedtuple`. Additional processing, cleaning and validation are done for each holding listed in the given 13F filing.
+* To save the cleaned holdings, I'm unsure of which option would the best fit. Some options I have considered are listed below:
+
+## Options for storing 13F data
+
+1. Store each holding as an Item in DynamoDB
+
+* I think that getting data in to DynamoDB would be easy, but there's no easy way to export the full set of items from **DynamoDB** (possibly over 100 million items)
+* I haven't used DynamoDB before and I'm interested in trying it out.
+
+1. Save holding data to CSV files stored in an S3 bucket and export the data using a `select *` query on **AWS Athena**
+
+* This could be a good option, but I would have lots of small files which might not be optimal for use with Athena
+* The speed of the query to export data is not super important, but the size of the dataset is nowhere close to the petabyte scale that Athena can handle
+
+1. Store data in **Aurora Postgres Serverless**
+
+* I'm familiar with Postgres, but I'm not sure if I need it
+* This would also involve a VPC which would make things slightly more complicated, I think
+
+As I mentioned above, my goal is to export large CSV with all 13F holding data that I can use in a Business Intelligence tool such as Google Data Studio, Tableau or Qlik.
+
+Does anyone have suggestions on how best to store data for this project?
+## [4][AWS Glue Job Runs forever with a joined PySpark dataframe but not the other dataframes](https://www.reddit.com/r/aws/comments/htodbb/aws_glue_job_runs_forever_with_a_joined_pyspark/)
+- url: https://www.reddit.com/r/aws/comments/htodbb/aws_glue_job_runs_forever_with_a_joined_pyspark/
 ---
+As you can see below, at line 48, I am converting the dataframe df3 into a dynamic frame. There is code out of view that then writes the dynamic frame to a specific location.
 
-## [5][ECS - our server response time has dropped from 0.3s to 2.5s](https://www.reddit.com/r/aws/comments/htgbnj/ecs_our_server_response_time_has_dropped_from_03s/)
+The issue is using df3, which is a dataframe created via the joining of 2 other dataframes, causes the Glue Job to run forever. I know if I change line 48 to use the other dataframes, df2, df1, or df, the glue job runs successfully and stops.
+
+I also know that df3 is created successfully, as I tested it in a jupyter notebook. I'm not sure why the glue job would run forever. Any ideas?
+
+https://preview.redd.it/4z97v45xlob51.png?width=1093&amp;format=png&amp;auto=webp&amp;s=497e0c96b27c576f61ee02b449cbe9f5f55cdf42
+## [5][If you were tasked to build a consumer Internet app (say Instagram), and have confidence that it grow big, would you build it entirely with serverless (api-gateway + lambda) or backend or server oriented (ECS)?](https://www.reddit.com/r/aws/comments/htrfco/if_you_were_tasked_to_build_a_consumer_internet/)
+- url: https://www.reddit.com/r/aws/comments/htrfco/if_you_were_tasked_to_build_a_consumer_internet/
+---
+A couple of friends had an interesting thought experiment last week, roughly as stated in the title.
+
+“and have confidence that it grow big” — this point seemed to lead to to go ECS route 
+  - because of long term infrastructure cost seems to favor server model
+  - also because of well understood scalability model
+
+I felt it seemed reasonable, but I am not fully convinced because those discussions were fairly high level , not data driven.
+
+Anyone had similar analysis?
+## [6][EKS Fargate Spot capacity provider ever coming?](https://www.reddit.com/r/aws/comments/hty34m/eks_fargate_spot_capacity_provider_ever_coming/)
+- url: https://www.reddit.com/r/aws/comments/hty34m/eks_fargate_spot_capacity_provider_ever_coming/
+---
+From the looks of it, the feature request is more dead than alive  
+[https://github.com/aws/containers-roadmap/issues/622](https://github.com/aws/containers-roadmap/issues/622) 
+
+Does anyone have any inside scoop?
+
+IMHO, this is will be the ultimate kubernetes cloud offering once realized. What do you think?
+## [7][ECS - our server response time has dropped from 0.3s to 2.5s](https://www.reddit.com/r/aws/comments/htgbnj/ecs_our_server_response_time_has_dropped_from_03s/)
 - url: https://www.reddit.com/r/aws/comments/htgbnj/ecs_our_server_response_time_has_dropped_from_03s/
 ---
 I've been updating a legacy PHP app (no version control for 10 years) and I've gotten it working pretty nicely on AWS now. I have some problems I can't really fix.
@@ -72,43 +166,38 @@ We have a certificate issued by Route53 and the site validates fine.
 Docker is running Apache *20051115*, the site is on PHP5.4 and the database is MySQL 5.5.
 
 Does anyone have any idea what could be happening? Thanks!
-## [6][Completely new to AWS and lost on what to do next](https://www.reddit.com/r/aws/comments/ht7xfb/completely_new_to_aws_and_lost_on_what_to_do_next/)
-- url: https://www.reddit.com/r/aws/comments/ht7xfb/completely_new_to_aws_and_lost_on_what_to_do_next/
+## [8][Essential knowledge javascript and typescript for AWS CDK](https://www.reddit.com/r/aws/comments/htk5ad/essential_knowledge_javascript_and_typescript_for/)
+- url: https://www.reddit.com/r/aws/comments/htk5ad/essential_knowledge_javascript_and_typescript_for/
 ---
-I'm trying to learn aws by building an infrastructure for a website. I built an vpc, made ec2 instances, made a elastic load balencer with an auto scaling group , an rds database and connected it to one of my instances, an efs to share a file system between my ec2 instances, and even transferred my ec2 logs to cloudwatchlogs  all with the help of youtube. The thing that I am completely stumped on is how to transfer my my cloudwatchlogs to my s3 bucket. Thank you for taking time to read my post and I am truly sorry if this sounds like gibberish, I am under the weather and frustrated. Thanks again
-## [7][Cloud formation or Terraform](https://www.reddit.com/r/aws/comments/ht3oec/cloud_formation_or_terraform/)
-- url: https://www.reddit.com/r/aws/comments/ht3oec/cloud_formation_or_terraform/
+In our company, we've started the migration process to AWS CDK. Does someone know which level of typescript and javascript I should have to work properly with this IaaC? I'm no novice in programming and have three years of experience with python. Could you recommend me a list of books/course/videos for studying js and ts? P.S. I know that AWS CDK is also available in python, but we decided to use typescript because it's a native language for it.
+## [9][Running my First API on AWS](https://www.reddit.com/r/aws/comments/htsihp/running_my_first_api_on_aws/)
+- url: https://www.reddit.com/r/aws/comments/htsihp/running_my_first_api_on_aws/
 ---
-Hi. 
-Just starting a Greenfield SaaS product. Could go with Terraform or Cloud formation. SaaS will be mainly lamdas, rds. 
-Which would you go for?
-## [8][What is a notebook instance type?](https://www.reddit.com/r/aws/comments/htcew9/what_is_a_notebook_instance_type/)
-- url: https://www.reddit.com/r/aws/comments/htcew9/what_is_a_notebook_instance_type/
+I am planning on running my first API to connect Salesforce Data to my website.
+
+&amp;#x200B;
+
+I am using the Flask framework and am struggling with understanding:
+
+&amp;#x200B;
+
+1. Which Amazon Product Should I be Using - Lambda Functions?
+2. What the price would be for me to host this for an application that would receive under 1 million requests.
+
+&amp;#x200B;
+
+I have never hosted anything on AWS and this feels a bit daunting. Reaching out to the community for some guidance!
+## [10][Couchbase as a service](https://www.reddit.com/r/aws/comments/htp2a6/couchbase_as_a_service/)
+- url: https://www.reddit.com/r/aws/comments/htp2a6/couchbase_as_a_service/
 ---
-When you create a new notebook instance you have to specify an instance type, choosing which between different size(?). But what do this sizes mean. Are they an allocation of computer capacity?
-## [9][Configure ALB health check based on JSON response](https://www.reddit.com/r/aws/comments/htc1ih/configure_alb_health_check_based_on_json_response/)
-- url: https://www.reddit.com/r/aws/comments/htc1ih/configure_alb_health_check_based_on_json_response/
+Short question as in topic, is there any couchbase as a service thing available on AWS? Thanks for feedback
+## [11][Different NICE-DCV instances in unique EC2 instance](https://www.reddit.com/r/aws/comments/htpgdt/different_nicedcv_instances_in_unique_ec2_instance/)
+- url: https://www.reddit.com/r/aws/comments/htpgdt/different_nicedcv_instances_in_unique_ec2_instance/
 ---
-Backend servers behind ALB returns JSON response `curl http://backend_srv1/healthapi`
+My friend and I would like to access the same Windows EC2 instance with different sessions.
 
-    "health" : {
-      "status" : "success"
-    },
+We've read the documentation, yet we don't understand the notion of session with this tool. Does 1 NICE-DCV Server = 1 Session? Or is it something else?
 
-Is there a way to configure ALB health check based on success/fail JSON response?
-## [10][Question on aws s3 cp](https://www.reddit.com/r/aws/comments/hszkea/question_on_aws_s3_cp/)
-- url: https://www.reddit.com/r/aws/comments/hszkea/question_on_aws_s3_cp/
----
-If the source and destination are s3 buckets, does the file ever leave AWS, or is the copy direct from s3 bucket to s3 bucket?
+I'd appreciate a clarification on this topic.
 
-Example:
-
-    aws s3 cp s3://foo/bar.tgz s3://baz/
-## [11][CloudFormation Designer - How do you know what you need to define?](https://www.reddit.com/r/aws/comments/ht7kvx/cloudformation_designer_how_do_you_know_what_you/)
-- url: https://www.reddit.com/r/aws/comments/ht7kvx/cloudformation_designer_how_do_you_know_what_you/
----
-I am trying to build a stack that runs an ECS cluster for an application that acts as a server to listen for HTTP requests.
-
-With that simple premise, how am I supposed to throw together a CF design? Is there any way to validate it as you go? When I open the designer it's pretty intimidating to see literally a blank slate.
-
-For example, I added an ECS cluster to the screen. Now what? This is not very intuitive - any tips are appreciated.
+Thanks in advance!

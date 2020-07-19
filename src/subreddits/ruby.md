@@ -1,5 +1,55 @@
 # ruby
-## [1][SAML 2.0 in Ruby](https://www.reddit.com/r/ruby/comments/ht6whl/saml_20_in_ruby/)
+## [1][How we migrated application servers from Unicorn to Puma (GitLab)](https://www.reddit.com/r/ruby/comments/htw2iy/how_we_migrated_application_servers_from_unicorn/)
+- url: https://about.gitlab.com/blog/2020/07/08/migrating-to-puma-on-gitlab/
+---
+
+## [2][Using async/await syntax in ruby with async-await gem](https://www.reddit.com/r/ruby/comments/htpwuf/using_asyncawait_syntax_in_ruby_with_asyncawait/)
+- url: https://www.reddit.com/r/ruby/comments/htpwuf/using_asyncawait_syntax_in_ruby_with_asyncawait/
+---
+Hello! My question is about such a popular concept in other programming languages - async/await. Have you tried out a gem [async-await](https://github.com/socketry/async-await) which is built on top of [async](https://github.com/socketry/async) that gives us async decorator for functions and await method (accepting a block)?
+```
+class AsyncClass
+  include Async::Await
+  
+  async def foo
+    # some sutff
+  end
+  async def bar
+    # some bar stuff
+  end
+end
+
+include Async::Await
+a_cl = AsynClass.new
+foo_result = await { a_cl.foo }
+bar_result = await { a_cl.bar }
+puts "Foo: #{foo_result}"
+puts "Bar: #{bar_result}"
+```
+Please share your thoughts/experience about it.
+## [3][How can I create class instance and run a class method when .txt file gets added to the directory in Ruby?](https://www.reddit.com/r/ruby/comments/htz846/how_can_i_create_class_instance_and_run_a_class/)
+- url: https://www.reddit.com/r/ruby/comments/htz846/how_can_i_create_class_instance_and_run_a_class/
+---
+
+## [4][Intermediate/Advanced Ruby and Rails Resources](https://www.reddit.com/r/ruby/comments/hthhzz/intermediateadvanced_ruby_and_rails_resources/)
+- url: https://www.reddit.com/r/ruby/comments/hthhzz/intermediateadvanced_ruby_and_rails_resources/
+---
+Hi everyone. I haven't ever held a job as a ruby developer, but I have developed a number of pretty large applications on my own with rails. Now I'm looking to land a position as a developer, but I'm learning there are a lot of more advanced ruby concepts that I have never been exposed to.
+
+I first learned ruby and rails using online courses and by completing the Rails Tutorial. I think I have a really good grip on the basics, but I recently had an interview with a technical questionnaire that asked some fill in the blank questions about more advanced ruby and rails topics and I was pretty lost. Some of the topics I remember were polymorphic associations, ActiveSupport::Concern, Metaprogramming hook methods, and block vs proc vs lambda.
+
+What resources would you recommend to get a deeper knowledge of ruby and rails which would expose me to more of these topics? I prefer hands on learning, which is why I loved the rails tutorial, but I don't know of anything that exists which dives deeper into the language.
+
+Thanks in advance for your help!
+## [5][How to control the enqueuing speed of Sidekiq jobs and their concurrency](https://www.reddit.com/r/ruby/comments/hthnne/how_to_control_the_enqueuing_speed_of_sidekiq/)
+- url: https://minhajuddin.com/2020/07/13/how-to-control-enqueuing-speed-of-sidekiq-jobs-and-their-execution-concurrency/
+---
+
+## [6][Introduce renderer module - API only ruby on rails course (chapter 5)](https://www.reddit.com/r/ruby/comments/hth8hh/introduce_renderer_module_api_only_ruby_on_rails/)
+- url: https://duetcode.io/rails-api-only-course/introduce-renderer-module
+---
+
+## [7][SAML 2.0 in Ruby](https://www.reddit.com/r/ruby/comments/ht6whl/saml_20_in_ruby/)
 - url: https://www.reddit.com/r/ruby/comments/ht6whl/saml_20_in_ruby/
 ---
 Hi guys. I am writing a post here appealing to the help of the community since my googling hasn't worked out at all.
@@ -22,11 +72,11 @@ So I have one question here:
 
 1. If encryption is required on both ends, that means that both the Sdp and Idp generate a private key which they will use for encryption and a public certificate that the other party will use for decryption right?
 2. What's the signature for then? Cannot we skip it? If we are using HTTPS already, why I am concerned about the signature and why the Idp cert is necessary?
-## [2][Generating Melodies With Markov Chains In Ruby](https://www.reddit.com/r/ruby/comments/ht238k/generating_melodies_with_markov_chains_in_ruby/)
+## [8][Generating Melodies With Markov Chains In Ruby](https://www.reddit.com/r/ruby/comments/ht238k/generating_melodies_with_markov_chains_in_ruby/)
 - url: https://mattbettinson.com/2020/07/13/markov-melody-generation-with-ruby.html
 ---
 
-## [3][Metaprogramming Ruby 2 Notes](https://www.reddit.com/r/ruby/comments/hswppm/metaprogramming_ruby_2_notes/)
+## [9][Metaprogramming Ruby 2 Notes](https://www.reddit.com/r/ruby/comments/hswppm/metaprogramming_ruby_2_notes/)
 - url: https://www.reddit.com/r/ruby/comments/hswppm/metaprogramming_ruby_2_notes/
 ---
 Hello Rubyists -
@@ -40,7 +90,7 @@ I thought I'd share my chapter by chapter notes here for anyone interested.
 I highly recommend you pick up a copy and work through it as well.
 
 [https://github.com/Jberczel/metaprogramming\_ruby\_2\_notes](https://github.com/Jberczel/metaprogramming_ruby_2_notes)
-## [4][Sidekiq/ActiveJob style guide](https://www.reddit.com/r/ruby/comments/hswx6b/sidekiqactivejob_style_guide/)
+## [10][Sidekiq/ActiveJob style guide](https://www.reddit.com/r/ruby/comments/hswx6b/sidekiqactivejob_style_guide/)
 - url: https://www.reddit.com/r/ruby/comments/hswx6b/sidekiqactivejob_style_guide/
 ---
 Finally, [the guide on how to painlessly work with Sidekiq and  ActiveJob](https://github.com/toptal/active-job-style-guide) I've been working on for so long is out. I'm extremely happy to share it with you.
@@ -79,120 +129,3 @@ There's [a ticket which I used as a todo list](https://github.com/toptal/active-
 You can help here, too.
 
 Pull requests, additions to the todo list and any feedback are kindly appreciated.
-## [5][Using self](https://www.reddit.com/r/ruby/comments/ht4dqu/using_self/)
-- url: https://www.reddit.com/r/ruby/comments/ht4dqu/using_self/
----
-Could someone give me an explanation of self as if you were explaining to a 6 year old? Every time I think I get, I see it applied differently and get pretty confused. 
-
-Thank all!
-## [6][Recursion in Ruby](https://www.reddit.com/r/ruby/comments/ht7hnu/recursion_in_ruby/)
-- url: https://www.reddit.com/r/ruby/comments/ht7hnu/recursion_in_ruby/
----
-Hey folks, I'm having a problem that for the life of my I can figure out. Practicing some recursion for some interview prep and I'm getting some very strange output.
-
-    require 'byebug'
-    module Solution
-        def self.route_between_nodes(graph)
-            paths = []
-            graph[0].each do |child_array_index|
-               arr = follow_index(graph, child_array_index, [0])
-               puts "The returned arr is #{arr}"
-               puts ""
-               paths.append(arr)
-            end
-            paths
-        end
-    
-        private
-        def self.follow_index(graph, index, path)
-            puts "The path before processing #{path}"
-            if (graph[index].length == 0)
-                puts "The value of the array is #{graph[index]}"
-                puts "The current index value is #{index}"
-                puts ""
-                path.append(index)
-                puts "The current path is #{path}"
-                puts ""
-                return path
-            end
-    
-            graph[index].each do |new_index|
-                path.append(index)
-                puts "Adding the current index of #{index}"
-                puts "The new index is #{new_index}"
-                puts "The path is #{path}"
-                puts ""
-                follow_index(graph, new_index, path)
-            end
-        end
-    end
-    
-    require_relative 'solution'
-    RSpec.describe Solution do
-        it "should return the number of paths" do
-            input = [[1, 2], [3], [3], []]
-            expect(Solution.route_between_nodes(input)).to eq([[0,1,3], [0,2,3]])
-        end
-    end
-
-Above is the code and the test case. It should return \[\[0,1,3\], \[0,2,3\]\] but when I run the code I get \[\[3\],\[3\]\]. The strange part is that with all the print lines i've added it seems that the code should return what I expect but alas the return array is always the same. Below is an example of a run of the test case.
-
-&amp;#x200B;
-
-    The path before processing [0]
-    Adding the current index of 1
-    The new index is 3
-    The path is [0, 1]
-    
-    The path before processing [0, 1]
-    The value of the array is []
-    The current index value is 3
-    
-    The current path is [0, 1, 3]
-    
-    The returned arr is [3]
-    
-    The path before processing [0]
-    Adding the current index of 2
-    The new index is 3
-    The path is [0, 2]
-    
-    The path before processing [0, 2]
-    The value of the array is []
-    The current index value is 3
-    
-    The current path is [0, 2, 3]
-    
-    The returned arr is [3]
-
-As you can see in the above, the code does successful generate the proper array but it returns \[3\]. I'm hoping that it is something very obvious I am missing but it is really driving me insane.
-## [7][How Heroku Sped Up Time-Related Syscalls on Dynos](https://www.reddit.com/r/ruby/comments/hsv9bc/how_heroku_sped_up_timerelated_syscalls_on_dynos/)
-- url: https://blog.heroku.com/clocksource-tuning
----
-
-## [8][The Ruby Blend #18: Interviewing](https://www.reddit.com/r/ruby/comments/ht0mm6/the_ruby_blend_18_interviewing/)
-- url: https://fireside.fm/s/ouBAUjGy+v8e3cfms
----
-
-## [9][How to use a Transaction Script(aka Service Objects) in Ruby on Rails. Simple example](https://www.reddit.com/r/ruby/comments/hssfqu/how_to_use_a_transaction_scriptaka_service/)
-- url: https://www.reddit.com/r/ruby/comments/hssfqu/how_to_use_a_transaction_scriptaka_service/
----
-The logic of small applications can be present as a series of transactions. Using the Transaction Scripts pattern, we get an application that is easier to maintain, to cover with tests, and to scale.
-
-In the [tutorial](https://jtway.co/how-to-use-a-transaction-script-aka-service-objects-in-ruby-on-rails-simple-example-161b7e228942) we will develop an [application](https://github.com/dgorodnichy/transaction-script-example) that has Post, User, and Like models. Users should be able to like posts. The first version of the controller will contain extra code, which we will extract into a separate Transaction Script. We also describe when we need to use the Transaction Scripts and the pros of the transaction script usage.
-
-Full tutorial: [How to use a Transaction Script (aka Service Objects) in Ruby on Rails. Simple example](https://jtway.co/how-to-use-a-transaction-script-aka-service-objects-in-ruby-on-rails-simple-example-161b7e228942)
-## [10][First gem, interested in feedback](https://www.reddit.com/r/ruby/comments/hsbta7/first_gem_interested_in_feedback/)
-- url: https://www.reddit.com/r/ruby/comments/hsbta7/first_gem_interested_in_feedback/
----
-Gem name: Backpedal
-
-Repo: [https://github.com/Greyoxide/backpedal](https://github.com/Greyoxide/backpedal)
-
-RubyGems: [https://rubygems.org/gems/backpedal/versions/0.1.2](https://rubygems.org/gems/backpedal/versions/0.1.2)
-
-The goal with this gem is to provide developers with an easy way to move users back on their respective navigational path.  I found myself arriving at views from different angles and I wanted to develop a utilitarian method for moving users back along their respective navigational path.
-
-For example: /orders/22 -&gt; /products/141 In this case the back\_link on the product view would take the user back to /orders/22.  Using this same example: /product\_lines/41 -&gt; /products/141 This controller action renders the same template as before, however the back button would take the user back to /product\_lines/41
-
-This is my first gem, and I'd love some feedback.

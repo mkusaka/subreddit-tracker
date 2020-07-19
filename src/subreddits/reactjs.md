@@ -109,128 +109,114 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Plasmic - enables developers and designers to compose React UIs visually. It lets you start with rough designs from Figma/Sketch or from scratch, and refactor them into maintainable, production-ready presentational components](https://www.reddit.com/r/reactjs/comments/ht5l5z/plasmic_enables_developers_and_designers_to/)
-- url: https://www.plasmic.app/
+## [3][A React component library based on Tailwind CSS](https://www.reddit.com/r/reactjs/comments/htsep3/a_react_component_library_based_on_tailwind_css/)
+- url: https://reactjsexample.com/a-react-component-library-based-on-tailwind-css/
 ---
 
-## [4][Feedback request: Made a clone of the iOS home screen](https://www.reddit.com/r/reactjs/comments/htcw9l/feedback_request_made_a_clone_of_the_ios_home/)
-- url: https://www.reddit.com/r/reactjs/comments/htcw9l/feedback_request_made_a_clone_of_the_ios_home/
+## [4][Made my first MERN full stack e-commerce app after 7 months of learning](https://www.reddit.com/r/reactjs/comments/htxokf/made_my_first_mern_full_stack_ecommerce_app_after/)
+- url: https://www.reddit.com/r/reactjs/comments/htxokf/made_my_first_mern_full_stack_ecommerce_app_after/
 ---
-&amp;#x200B;
-
-[ReactJS, NextJS, TypeScript, emotion-js, react-beautiful-dnd, and PWA](https://reddit.com/link/htcw9l/video/8f81dtxoekb51/player)
-
-Hello everyone!
-
-I built this project to improve my front-end skills and learn more about web capabilities using ReactJS. This project doesn't even come close to the real iOS home screen, my goal was to focus on things like drag and drop and native browser scrolling interactions.
-
-BTW at some point  I got concerned about releasing this project due to possible copyright issues. Could anyone confirm that this project is not a copyright infringement? All application icons are from icons8 and are based on the license agreement.
-
-Feel free to make a PR review and please and let me know what I'm doing wrong.
-
-Hosted in: [https://ios-homescreen.now.sh/](https://ios-homescreen.now.sh/)
-
-[https://github.com/erickbogarin/ios-homescreen](https://github.com/erickbogarin/ios-homescreen)
-
-Any feedback is appreciated. Thansk!
-## [5][Hi! I just want to share my personal site.](https://www.reddit.com/r/reactjs/comments/hstcg3/hi_i_just_want_to_share_my_personal_site/)
-- url: https://www.reddit.com/r/reactjs/comments/hstcg3/hi_i_just_want_to_share_my_personal_site/
----
-Will appreciate some feedback. Thanks!
-
-[https://amviillanueva.github.io/angelika/](https://amviillanueva.github.io/angelika/)
-## [6][Testing a React App (Typescript, Redux, Jest, React Testing Library, Cypress) - From Unit tests to E2E tests](https://www.reddit.com/r/reactjs/comments/hswq9t/testing_a_react_app_typescript_redux_jest_react/)
-- url: https://www.rrebase.com/posts/full-guide-to-testing-javascript-react
----
-
-## [7][I created my open source portfolio using ReactJS. Feel free to star, fork or create your own. Thanks](https://www.reddit.com/r/reactjs/comments/htgjiu/i_created_my_open_source_portfolio_using_reactjs/)
-- url: https://p32929.github.io/
----
-
-## [8][Creating an animation that involves elements of multiple components.](https://www.reddit.com/r/reactjs/comments/htg71k/creating_an_animation_that_involves_elements_of/)
-- url: https://www.reddit.com/r/reactjs/comments/htg71k/creating_an_animation_that_involves_elements_of/
----
-Hi, beginner to React here.
-
-I am using GSAP for my animations, but I think this question would apply to any method of animating multiple elements from multiple components.
-
-For example, I have a video page which has 2 components, the actial video and a section along the bottom of the page which contains textual information about the video.
-
-When the page loads I am animating the text in the bottom component first but then I want to animate some things in the video component, in the same timeline.
-
-Now, where do I write my animation code which uses the Refs. Because if I write this in my video component then the Refs from the text component will be missing and it won't work.
-
-Do I need to write the animation in the App component?
-
-Or do I need to somehow communicate between components?
-## [9][React Hash Router with Django on server side - Refreshing page returns to base, home, URL](https://www.reddit.com/r/reactjs/comments/htf6cc/react_hash_router_with_django_on_server_side/)
-- url: https://www.reddit.com/r/reactjs/comments/htf6cc/react_hash_router_with_django_on_server_side/
----
- 
-
-Hey guys,
-
-I've been stuck on this issue for a while now and I need your help. Hopefully this is not much to ask.
-
-I have a full stack project on my hands, backend built with django and frontend with react. I am facing an issue with React router whenever I refresh the page it goes back to the base URL ("[example.com/](https://example.com/)"). Since I am hosting backend and frontend on the same port I have setup Django URL '/' to serve index.html file where React scripts are sitting.
-
-All of my routes are working as I have planned but the only problem is if a user refreshes the page it goes back to home page and it's driving me nuts. I understand that server is the first one that is parsing an URL and react router is loaded only when scripts in index.html file are loaded. How can I resolve this issue? I am using HashRouter to avoid 404 errors on server side.
-
-Hopefully I was clear with my question, as always, any help/answer is appreciated. Thanks!
-## [10][At which point does Context API become unreliable and Redux is required?](https://www.reddit.com/r/reactjs/comments/htel86/at_which_point_does_context_api_become_unreliable/)
-- url: https://www.reddit.com/r/reactjs/comments/htel86/at_which_point_does_context_api_become_unreliable/
----
-Hi guys. I'm pretty new to React. Recently learned about Context API and based on some Googling, Context API supposed to solve props drilling issues. As I understand, prior to Context API, Redux was used to solve this issue. I also understand that Redux can do "so much more". Now, my question is, what is that "so much more"? In what kind of situation we should use Redux instead of Context API?
-## [11][Code Pair platform](https://www.reddit.com/r/reactjs/comments/htecxu/code_pair_platform/)
-- url: https://www.reddit.com/r/reactjs/comments/htecxu/code_pair_platform/
----
-I just made a code pair platform. In this application, users can share an interactive editor and write code together. It has language support for C++, Java and python. This application is based on the concept of operational transformation which forms the basis for a shared editor. Video calling is also provided within this application. It has some similar features as provided by [HackerRank's CodePair](https://www.hackerrank.com/products/codepair/) platform. You can see the code here - [https://github.com/RisingGeek/CodeEditor](https://github.com/RisingGeek/CodeEditor)
-
-Live demo - [http://codepair.netlify.app/](http://codepair.netlify.app/)
+TLDR; i studied MERN full stack from The Odin Project for 6 months and made my first app, link for repo and demo at the end. 
 
 &amp;#x200B;
 
-https://reddit.com/link/htecxu/video/bmghu6srclb51/player
+Before i start doing anything i was so confused, what to start, where to start, etc..., i wasted enough time comparing and reading "the difference between "bla" and "bla bla bla".
 
-What are your thoughts on this?
-## [12][Help needed with HERE maps (clustering) integration to react app](https://www.reddit.com/r/reactjs/comments/htdh96/help_needed_with_here_maps_clustering_integration/)
-- url: https://www.reddit.com/r/reactjs/comments/htdh96/help_needed_with_here_maps_clustering_integration/
----
-I am able to integrate the Here maps clustering overlay with dummy data but not able to manipulate the data I am getting from an api to use it correctly.
+I never had interest in web dev, but after trying android dev for one months i didn't like, then i came by [This thread](https://www.reddit.com/r/learnprogramming/comments/ef6ers/top_best_plans_to_learn_fullstack_web_development/) which was a treasure for me and i read the comments and asked some people in the field then i started with "The Odin Project" which i think it's really amazing and got me through a lot.
 
-I have been messing about with so many different JS array and object methods for the last 2 days the I have lost track of what I have tried and haven't tried.
-
-My JSON response from the api is:
-
-    [0 … 99]
-    0:
-    coordinates: Array(2)
-    0: 24.77234
-    1: 59.43862
-    length: 2
-    __proto__: Array(0)
-    type: "Point"
-    __proto__: Object
-    1: {type: "Point", coordinates: Array(2)}
-
-and code for this function:
-
-    const getTlnBusData = async () =&gt; {
-
-const test = await gpsData.flatMap((vehicle) =&gt; \[vehicle.geometry\]); console.log('test', test); const testValues = Object.values(test); console.log('testValues', testValues); // const coords = \[el.geometry.coordinates\]; // console.log('batman', coords);
-
-const dataPoints = \[\]; dataPoints.push(new H.clustering.DataPoint(51.01, 0.01)); dataPoints.push(new H.clustering.DataPoint(50.04, 1.01)); dataPoints.push(new H.clustering.DataPoint(51.45, 1.01)); dataPoints.push(new H.clustering.DataPoint(51.01, 2.01));
-
-/\*\* \* Assuming that 'dataPoints' and 'map' \* is initialized and available, create a data provider: \*/ const clusteredDataProvider = new H.clustering.Provider(dataPoints);
-
-// Create a layer that includes the data provider and its data points: const layer = new H.map.layer.ObjectLayer(clusteredDataProvider);
-
-// Add the layer to the map: hMap.addLayer(layer); }; getTlnBusData();
-
-I have tried variations of forEach, loop, map/flatMap and I can't seem to replace the dummy data with any of my solutions.
-
-Can anyone point me in the right direction please?
+and i finished it (MERN full stack) in like 6 months (not really committed)
 
 &amp;#x200B;
 
-TIA!
+what i learned through all this time:
+
+\- Don't waste time comparing between languages or technologies, just start away
+
+\- You will learn more by doing not only reading or watching videos
+
+\- stackoverflow or (google) is your best friend
+
+\- you will never stop learning, cause that field (CS) is really huge like omg
+
+\- i always used existing libraries cause i don't wanna reinvent the wheel
+
+\- literally i found library for everything i wanted
+
+\- I really know nothing lol
+
+&amp;#x200B;
+
+I made this app which I'm really happy about as a newbie started from 0
+
+i will be glad if you take a look and evaluate my work (just ignore the ugly design lol)
+
+and give me a review about my code.
+
+\*\*Should i start looking for a job now or just wait and finish other big projects? 
+
+&amp;#x200B;
+
+and This is the [Github Repo](https://github.com/hamohuh/inventory-application) and this is the [LIVE demo](https://afternoon-atoll-93127.herokuapp.com/)
+
+&amp;#x200B;
+
+Thank you so much
+## [5][As a Florida resident, I was tired of visiting several slow mobile-unfriendly Covid Dashboards to get the info I wanted (including my local Tampa Bay stats). So I built COVJOSH.COM for my friends and myself to get real-time data.](https://www.reddit.com/r/reactjs/comments/htiqy8/as_a_florida_resident_i_was_tired_of_visiting/)
+- url: https://covjosh.com
+---
+
+## [6][A guide to creating optimized react applications](https://www.reddit.com/r/reactjs/comments/hty971/a_guide_to_creating_optimized_react_applications/)
+- url: https://medium.com/dev-genius/optimizing-your-react-application-part-1-fb1a9398cc30
+---
+
+## [7][I made a dice roll simulator for DnD](https://www.reddit.com/r/reactjs/comments/htyjv5/i_made_a_dice_roll_simulator_for_dnd/)
+- url: https://www.reddit.com/r/reactjs/comments/htyjv5/i_made_a_dice_roll_simulator_for_dnd/
+---
+Hi guys, in the past couple of days I created a dice roll simulator for DnD.
+
+You can find the repo [here](https://github.com/mhogeveen/dnd_dice_roller/?)
+
+and the deployed version [here](https://mhogeveen.github.io/dnd_dice_roller/)
+
+I would love some feedback on the code I wrote. I'm still very new to React (and Redux) and could use all the help I can get.
+
+I'm working up to finding a job as front-end developer and will use this as a portfolio piece. So I would like make it as good as possible!
+
+Thanks in advance:)
+## [8][React-Express boilerplate CRUD app using a global state store with only hooks](https://www.reddit.com/r/reactjs/comments/htsimt/reactexpress_boilerplate_crud_app_using_a_global/)
+- url: https://github.com/cnebs/rh-bp
+---
+
+## [9][Ethereum portfolio tracker](https://www.reddit.com/r/reactjs/comments/htxfol/ethereum_portfolio_tracker/)
+- url: https://www.reddit.com/r/reactjs/comments/htxfol/ethereum_portfolio_tracker/
+---
+I made an Ethereum portfolio tracker over the weekend, by default it just tracks my portfolio but you can enter any ETH address and get all tokens from that wallet, let me know what you guys think and how I can improve it :) 
+
+[https://crypto.jaykch.com/](https://crypto.jaykch.com/)
+## [10][Help choosing DB to learn](https://www.reddit.com/r/reactjs/comments/htzds5/help_choosing_db_to_learn/)
+- url: https://www.reddit.com/r/reactjs/comments/htzds5/help_choosing_db_to_learn/
+---
+Hi guys. Been using Reactjs for a while now fourth Firebase DB and not want to learn something else. Where should I go next? Mongodb?
+And is there any good article or video guide to help choose the right db for the different project?
+Appreciate any help. Thanks.
+## [11][Stoo POST requests to api](https://www.reddit.com/r/reactjs/comments/htyu8f/stoo_post_requests_to_api/)
+- url: https://www.reddit.com/r/reactjs/comments/htyu8f/stoo_post_requests_to_api/
+---
+Hey,
+
+Im building a react redux ecommerce.
+Ive an api for a contact form which sends requests by email to buy products in the store. 
+
+Ive set up required fields(email and click products) on the form but if i get the POST request from network tab in Chrome and testing this in POSTMAN application i can send this over and over without required.
+
+
+Any suggestions on how to prevent Spamming the api?
+## [12][readline error out of nowhere](https://www.reddit.com/r/reactjs/comments/htypo1/readline_error_out_of_nowhere/)
+- url: https://www.reddit.com/r/reactjs/comments/htypo1/readline_error_out_of_nowhere/
+---
+A project I've been working on (create-react-app) was working fine, but out of the blue stopped working and gives this error:
+
+    ./node_modules/sass/sass.dart.js
+Module not found: Can't resolve 'readline'
+
+Have tried updating/reinstalling all modules and undoing all changes before the error, but no luck. Any idea what happened?

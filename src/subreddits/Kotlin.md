@@ -1,9 +1,41 @@
 # Kotlin
-## [1][Kotlin Actors – No Drama Concurrency](https://www.reddit.com/r/Kotlin/comments/htlgjt/kotlin_actors_no_drama_concurrency/)
+## [1][[X-POST] JetBrains is porting Compose to desktop and other platforms : androiddev](https://www.reddit.com/r/Kotlin/comments/huidyh/xpost_jetbrains_is_porting_compose_to_desktop_and/)
+- url: https://www.reddit.com/r/androiddev/comments/hufnjq/_/
+---
+
+## [2][Android app with the Room database](https://www.reddit.com/r/Kotlin/comments/hug5wx/android_app_with_the_room_database/)
+- url: https://youtu.be/kF0TPehhIx0
+---
+
+## [3][Tips for newbies](https://www.reddit.com/r/Kotlin/comments/hukd3y/tips_for_newbies/)
+- url: https://www.reddit.com/r/Kotlin/comments/hukd3y/tips_for_newbies/
+---
+                Hello people!
+ 
+                I have not any experience at programming. I started to learn Java. But java seems to me difficult to learn. Then I tried Kotlin. It is looking not easy. But not hard as Java.
+
+                I am watching Udemy videos. When I print "Hello World!" I was so excited. I said "That's magic!". I know it is a veeeeerryy basic thing but i liked that.
+
+                My goal is coding budget app. There is so much and so good apps in Google Play but i want to build my own app.
+
+                What do you advise for starters who know nothing?
+## [4][Artifacts failing to build for my Kotlin program, getting a frustrating "main class not found" error at compile time.](https://www.reddit.com/r/Kotlin/comments/hu1gq7/artifacts_failing_to_build_for_my_kotlin_program/)
+- url: https://www.reddit.com/r/Kotlin/comments/hu1gq7/artifacts_failing_to_build_for_my_kotlin_program/
+---
+I've moved a Kotlin project of mine into a new repository, which has necessitated re-configuring IntelliJ to use a new project. I had an artifact output which was a fat JAR containing all my dependencies, however this move has caused an extremely frustrating issue in that the JAR will build, but it won't run. Looking around in my manifest file, the IDE is moaning that my Main-Class attribute is invalid, but I can't figure out why. 
+
+&gt;Manifest-Version: 1.0
+
+&gt;Main-Class: uniFessSvr.MainKt
+
+&gt;Class-Path: h2-1.4.199.jar websocket-api-9.3.6.v20151106.jar [...]
+
+Any ideas what might be causing this?
+## [5][Kotlin Actors – No Drama Concurrency](https://www.reddit.com/r/Kotlin/comments/htlgjt/kotlin_actors_no_drama_concurrency/)
 - url: https://handstandsam.com/2020/07/18/kotlin-actors-no-drama-concurrency/
 ---
 
-## [2][How to update mutable state in a gRPC client app?](https://www.reddit.com/r/Kotlin/comments/htu9af/how_to_update_mutable_state_in_a_grpc_client_app/)
+## [6][How to update mutable state in a gRPC client app?](https://www.reddit.com/r/Kotlin/comments/htu9af/how_to_update_mutable_state_in_a_grpc_client_app/)
 - url: https://www.reddit.com/r/Kotlin/comments/htu9af/how_to_update_mutable_state_in_a_grpc_client_app/
 ---
 This is a design question about the optimal/recommended way of maintaining shared mutable state using Kotlin concurrency primitives. For that, I need to establish the context first, please bear with me.  
@@ -31,7 +63,11 @@ Questions:
 2. I don’t feel particularly good about passing the client state to the commands. Is there a different way of achieving requirement #4 without doing this? (actors, may be)
 
 *Disclaimer: Also posted on kotlin forum, but haven't received any replies. People tend to avoid long posts.*
-## [3][Firebase competitors.](https://www.reddit.com/r/Kotlin/comments/htfidl/firebase_competitors/)
+## [7][📣 Calling all Kotlin/JS developers! 📣](https://www.reddit.com/r/Kotlin/comments/hth3e9/calling_all_kotlinjs_developers/)
+- url: https://twitter.com/kotlin/status/1284114694702346240?s=19
+---
+
+## [8][Firebase competitors.](https://www.reddit.com/r/Kotlin/comments/htfidl/firebase_competitors/)
 - url: https://www.reddit.com/r/Kotlin/comments/htfidl/firebase_competitors/
 ---
 I'm interested in building my first Android app using Kotlin.  Base on my research thus far, Firebase seem to be a good solution to help minimize some of the development start up work.
@@ -43,108 +79,13 @@ I was wondering if there are alternatives / competitors to Firebase that I shoul
 --
 
 Thanks.
-## [4][📣 Calling all Kotlin/JS developers! 📣](https://www.reddit.com/r/Kotlin/comments/hth3e9/calling_all_kotlinjs_developers/)
-- url: https://twitter.com/kotlin/status/1284114694702346240?s=19
----
-
-## [5][Android Kotlin RecyclerView Tutorial - In-Depth Guide incl. Different View Types](https://www.reddit.com/r/Kotlin/comments/hth7c2/android_kotlin_recyclerview_tutorial_indepth/)
+## [9][Android Kotlin RecyclerView Tutorial - In-Depth Guide incl. Different View Types](https://www.reddit.com/r/Kotlin/comments/hth7c2/android_kotlin_recyclerview_tutorial_indepth/)
 - url: https://www.reddit.com/r/Kotlin/comments/hth7c2/android_kotlin_recyclerview_tutorial_indepth/
 ---
 I watched this video. It is amazing it is really very depth knowledge as I am familiar with android development but if any beginner wants to learn android it is really amazing. I loved it.
 
 Video Link: [https://youtu.be/oDfl-xLXiac](https://youtu.be/oDfl-xLXiac)
-## [6][Java Slack SDK 1.1.0 includes a Kotlin DSL for building messages](https://www.reddit.com/r/Kotlin/comments/hswsr4/java_slack_sdk_110_includes_a_kotlin_dsl_for/)
+## [10][Java Slack SDK 1.1.0 includes a Kotlin DSL for building messages](https://www.reddit.com/r/Kotlin/comments/hswsr4/java_slack_sdk_110_includes_a_kotlin_dsl_for/)
 - url: https://slack.dev/java-slack-sdk/guides/composing-messages#block-kit-kotlin-dsl
 ---
 
-## [7][Learn Android and Kotlin with no programming experience (google)](https://www.reddit.com/r/Kotlin/comments/ht35ju/learn_android_and_kotlin_with_no_programming/)
-- url: https://android-developers.googleblog.com/2020/07/learn-android-and-kotlin-with-no-experience.html
----
-
-## [8][Framework similar to Blazor/Meteor/LiveView?](https://www.reddit.com/r/Kotlin/comments/ht0o9w/framework_similar_to_blazormeteorliveview/)
-- url: https://www.reddit.com/r/Kotlin/comments/ht0o9w/framework_similar_to_blazormeteorliveview/
----
-Do we have some framework like C#'s Blazor, or JS's Meteor or Elixir's Phoenix LiveView in Kotlin or JVM worlds? In a sence that framework will do automatic client side and server side communications using WebSockets for me. While still allowing me to write templates in HTML and CSS.
-
-I'd prefer some framework with embedded server (like Javalin for example) so I could deploy my web app as a single jar-file without setting up a server. 
-
-I know of Vaadin and ZK. But they are like doing web in a desktop way of doing things. And both of them requier serverlet containers.
-## [9][Google Home for Android seeing fewer crashes after adopting Kotlin](https://www.reddit.com/r/Kotlin/comments/hsn47u/google_home_for_android_seeing_fewer_crashes/)
-- url: https://9to5google.com/2020/07/16/google-home-crashing/
----
-
-## [10][Help with in coming notifications](https://www.reddit.com/r/Kotlin/comments/ht3n4p/help_with_in_coming_notifications/)
-- url: https://www.reddit.com/r/Kotlin/comments/ht3n4p/help_with_in_coming_notifications/
----
-So I'm using the firebase console to send a message notification to users, those notifications are being displayed in a notificationsActivity using  recyclerView and cardView. The problem I have is that those notifications can't appear automatically. You have to go to the previous activity and then enter to the notifications activity.
-
-Here is my code
-
-    class ventanaNotif : AppCompatActivity() {
-    
-    
-        val notifList = ArrayList&lt;Notificaciones&gt;()
-        lateinit var adapter: NotifAdapter
-        lateinit var shared: SharedPreferences
-        private val PREF = "Notificaciones"
-        private val COUNT_KEY = "Conteo"
-        var borrar: ImageButton? = null
-    
-        var swipeRefreshLayout: SwipeRefreshLayout? = null
-    
-    
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-            setContentView(R.layout.activity_ventana_notif)
-    
-            setRecyclerView()
-    
-            shared = getSharedPreferences("Notificaciones", Context.MODE_PRIVATE)
-            var count = shared.getInt(COUNT_KEY, 0)
-    
-    
-            notificaciones()
-            adapter.notifyItemInserted(adapter.itemCount)
-    
-        }
-    
-    
-        fun setRecyclerView() {
-    
-            adapter = NotifAdapter(notifList)
-    
-            rv_notif.adapter = adapter
-            rv_notif.setHasFixedSize(true)
-        }
-    
-    
-    
-        fun notificaciones() {
-    
-            shared = getSharedPreferences("Notificaciones", Context.MODE_PRIVATE)
-            var count = shared.getInt(COUNT_KEY, 0)
-    
-            for ((x, valor) in (1..count).withIndex()) {
-    
-    
-                notifList.add(
-                    Notificaciones(
-                        "${shared.getString("Titulo${valor}", "Todo bien")}",
-                        "${shared.getString("Cuerpo${valor}", "No hay más notificaciones")}",
-                        "${shared.getString("Fecha${valor}", "Sin fecha ")}"
-                    )
-                )
-    
-            }
-    
-    
-        }
-    }
-
-Here I'm trying to use a notifyItemInserted to show last notification automatically, but it doesn't work. I have to go to the previous activity and then notifications activity to show the entire notifications.
-
-&amp;#x200B;
-
-I was hopping you could find the error here, any help will be very much appreciated.
-
-Thank you

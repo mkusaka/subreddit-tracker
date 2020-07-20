@@ -1,99 +1,74 @@
 # golang
-## [1][Brian Kernighan: UNIX, C, AWK, AMPL, and Go Programming | AI Podcast #109 with Lex Fridman](https://www.reddit.com/r/golang/comments/htwr7e/brian_kernighan_unix_c_awk_ampl_and_go/)
+## [1][Go compiler doesn't like unused variables](https://www.reddit.com/r/golang/comments/hufqpl/go_compiler_doesnt_like_unused_variables/)
+- url: https://i.redd.it/1oobvnrzwub51.jpg
+---
+
+## [2][autocert vs certmagic](https://www.reddit.com/r/golang/comments/huiffe/autocert_vs_certmagic/)
+- url: https://www.reddit.com/r/golang/comments/huiffe/autocert_vs_certmagic/
+---
+Lately I have been experimenting with [autocert](https://pkg.go.dev/golang.org/x/crypto/acme/autocert) for my reverse proxy project ([ServiceQ](https://github.com/gptankit/serviceq)). I feel it satisfies all my current requirements - auto cert generation, tls-alpn-01 challenge, auto renewals etc. It also provides me fine grained control over tls config. I have also heard a lot about [certmagic](https://github.com/caddyserver/certmagic) but never got to use it any of the projects. Is there any reason why someone should be choosing certmagic over autocert given that autocert is supported by core team and might also some day make its way into the standard library? Looking to find real feature differences.
+## [3][Brian Kernighan: UNIX, C, AWK, AMPL, and Go Programming | AI Podcast #109 with Lex Fridman](https://www.reddit.com/r/golang/comments/htwr7e/brian_kernighan_unix_c_awk_ampl_and_go/)
 - url: https://www.youtube.com/watch?v=O9upVbGSBFo
 ---
 
-## [2][Static code analyzer for TODO comments, written in Go](https://www.reddit.com/r/golang/comments/htkvik/static_code_analyzer_for_todo_comments_written_in/)
-- url: https://github.com/preslavmihaylov/todocheck
+## [4][Create a Color Cli in Golang](https://www.reddit.com/r/golang/comments/hujpan/create_a_color_cli_in_golang/)
+- url: https://schadokar.dev/posts/create-a-color-cli-in-golang/
 ---
 
-## [3][How do I make my prime program faster than JS?](https://www.reddit.com/r/golang/comments/hty9ij/how_do_i_make_my_prime_program_faster_than_js/)
-- url: https://www.reddit.com/r/golang/comments/hty9ij/how_do_i_make_my_prime_program_faster_than_js/
+## [5][Interested in Contribution to Go [New to Open-Source]](https://www.reddit.com/r/golang/comments/hu514j/interested_in_contribution_to_go_new_to_opensource/)
+- url: https://www.reddit.com/r/golang/comments/hu514j/interested_in_contribution_to_go_new_to_opensource/
 ---
-Golang noob here.
+Hi,
 
-I have a similar GO &amp; JS program to find the first N primes(naive). The golang code takes ~twice the time. What am I doing wrong?
+I and a couple of my friends recently started with Go and are excited to contribute to Open-source. We do not have a lot of experience in the same and were hoping for some advice as to how to proceed with Open-source. I searched for some projects on Github but could not decide on how to proceed or choose a project to contribute to. Any suggestions or projects to contribute to would be helpful. Thanks.
 
-**GO**
-```
-  const TARGET = 20000 // assume user input, unknown at compile.
-  var count = 0
-  var num = 2
-  var primes []int
+TLDR: New to open-source, looking to contribute
+## [6][HTTP/REST gateway to gRPC](https://www.reddit.com/r/golang/comments/hujf2k/httprest_gateway_to_grpc/)
+- url: https://www.reddit.com/r/golang/comments/hujf2k/httprest_gateway_to_grpc/
+---
+Can you share some examples of code that is an endpoint / gateway between a web client and microservices.  
+I do not quite understand, I have to write a service (for example, in go-gin) to receive http requests on it and somehow process them. Then make requests by gRPC to internal services.
 
-  for count &lt; TARGET {
-    divisible := false
-    for i := 2; i &lt; num; i++ {
-      if (num % i == 0) {
-        divisible = true 
-        break
-      }
-    } 
-    if (divisible == false) {
-      primes = append(primes, num) // suspect doing this wrong
-      count++
-    }
-    num++
-  }
-```
-
-**Javscript**
-```
-let now = performance.now();
-const TARGET = 20000;
-let primes = [];
-let num = 2;
-let count = 0;
-
-while (count &lt; TARGET) {
-  let divisible = false
-  for (let i = 2; i &lt; num; i++) {
-    if (num % i == 0) {
-      divisible = true;
-      break;
-    }
-  }
-  if (divisible == false) {
-    primes.push(num);
-    count++;
-  }
-  num++
-}
-
-```
-## [4][cockroachdb/pebble -- RocksDB/LevelDB inspired key-value database in Go](https://www.reddit.com/r/golang/comments/htre6o/cockroachdbpebble_rocksdbleveldb_inspired/)
-- url: https://github.com/cockroachdb/pebble
+Waiting for your advice
+## [7][Checking Kafka advertised.listeners with Go](https://www.reddit.com/r/golang/comments/huidxo/checking_kafka_advertisedlisteners_with_go/)
+- url: /r/apachekafka/comments/huid7o/checking_kafka_advertisedlisteners_with_go/
 ---
 
-## [5][What is the stack should I use to build my go backend service (API)](https://www.reddit.com/r/golang/comments/hu051j/what_is_the_stack_should_i_use_to_build_my_go/)
-- url: https://www.reddit.com/r/golang/comments/hu051j/what_is_the_stack_should_i_use_to_build_my_go/
+## [8][Cannot send email using Amazon SES and Golang](https://www.reddit.com/r/golang/comments/huhp1s/cannot_send_email_using_amazon_ses_and_golang/)
+- url: https://www.reddit.com/r/golang/comments/huhp1s/cannot_send_email_using_amazon_ses_and_golang/
 ---
-As you know, there are a lot of frameworks for GO, database connectors, and stuff.
+On my local Ubuntu machine, I'm trying [this](https://stackoverflow.com/questions/41176256/how-to-integrate-aws-sdk-ses-in-golang/41181934#41181934) example snippet on Stackoverflow with my existing SES credentials,  I get
 
-So my options are a bit cluttered as I don't know the use cases... So I'm posting here for guidance.
-## [6][k8s pod scheduler a simple k8s scheduler to run long-running tasks with a gRPC Interface](https://www.reddit.com/r/golang/comments/htwpsq/k8s_pod_scheduler_a_simple_k8s_scheduler_to_run/)
-- url: https://github.com/ahmagdy/k8s-pod-scheduler
+`MissingEndpoint: 'Endpoint' configuration is required for this service.`
+
+My go version is \`1.14.6\` and I've just got the aws package from github.  I'm wondering what is wrong here? Has SES API changed since then? Or I'm missing something?
+## [9][Suggest database package to work well with graphql server](https://www.reddit.com/r/golang/comments/huh4ii/suggest_database_package_to_work_well_with/)
+- url: https://www.reddit.com/r/golang/comments/huh4ii/suggest_database_package_to_work_well_with/
 ---
+Hi, 
 
-## [7][Using Go build directives to optionally use new APIs in the standard library](https://www.reddit.com/r/golang/comments/htyzsx/using_go_build_directives_to_optionally_use_new/)
-- url: https://utcc.utoronto.ca/~cks/space/blog/programming/GoBuildUsingNewAPIs
+
+I build a graphql server with [gqlgen](https://github.com/99designs/gqlgen) for generate api from schema. 
+For fetching data from database, I get two options: 
+
+
++ using go orm (like gorm, xorm or sqlboiler).
++ write SQL query and using. [sqlc](https://github.com/kyleconroy/sqlc) for generate Go code.
+
+
+
+How do you fetch data from database(like mysql or postgres) and fill it to api? Anyone, whose done some project like that. Do you have any recommendation about db package to work well with grapql.
+## [10][GoSlice - an experimental slicer for 3d printing](https://www.reddit.com/r/golang/comments/hu5u86/goslice_an_experimental_slicer_for_3d_printing/)
+- url: https://www.reddit.com/r/golang/comments/hu5u86/goslice_an_experimental_slicer_for_3d_printing/
 ---
+Hi,
 
-## [8][Module declares its path as, but was required as...](https://www.reddit.com/r/golang/comments/htyn0l/module_declares_its_path_as_but_was_required_as/)
-- url: https://www.reddit.com/r/golang/comments/htyn0l/module_declares_its_path_as_but_was_required_as/
----
-Trying to use argon2 with go.mod and getting the following error:
+as I am interested in both, 3d printing and Go programming, the best way to go was creating a new slicer software in Go. So...
 
-    go: github.com/golang/crypto/argon2: github.com/golang/crypto@v0.0.0-20200709230013-948cd5f35899: parsing go.mod:
-    	module declares its path as: golang.org/x/crypto
-    	        but was required as: github.com/golang/crypto
+... I would like to introduce you [GoSlice!](https://github.com/aligator/GoSlice)
 
-I've tried changing go.mod and the import address, but not having much luck. Any ideas?
-## [9][reflink: very small package for btrfs/xfs copy-on-write file copy in native go](https://www.reddit.com/r/golang/comments/htfdhh/reflink_very_small_package_for_btrfsxfs/)
-- url: https://github.com/KarpelesLab/reflink
----
+If you are not into 3d printing: A slicer is basically a software which converts a 3d model into commands for the printer.
 
-## [10][Deploying Your Go Apps to AWS Elastic Beanstalk](https://www.reddit.com/r/golang/comments/htm1e0/deploying_your_go_apps_to_aws_elastic_beanstalk/)
-- url: https://youtu.be/1WXJTlkf0S4
----
+It is very experimental and there is still much to do (and there are many things, I have currently no idea how to do it, so any help would be great), but it can already slice stl files.I also got a great print of the well known 3DBenchy out of it -&gt; So the POC is done :-)
 
+If you are interested in how such a slicer (can) work, look at the source and docs folder as I tried to comment and explain everything because there is nearly no information about the inner workings of a slicer yet. Basically the code of the existing ones, e.g. PrusaSlicer, Cura, Slic3r is nearly the only docu I could find about this topic and it's not always obvious code...

@@ -109,114 +109,69 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][A React component library based on Tailwind CSS](https://www.reddit.com/r/reactjs/comments/htsep3/a_react_component_library_based_on_tailwind_css/)
-- url: https://reactjsexample.com/a-react-component-library-based-on-tailwind-css/
+## [3][Hi everyone, I have been working on this file upload UI. Have been following some references and trying to improve on it.](https://www.reddit.com/r/reactjs/comments/huappa/hi_everyone_i_have_been_working_on_this_file/)
+- url: https://raw.githubusercontent.com/cheersmas/upload-animation/reducer/fileupload.gif
 ---
 
-## [4][Made my first MERN full stack e-commerce app after 7 months of learning](https://www.reddit.com/r/reactjs/comments/htxokf/made_my_first_mern_full_stack_ecommerce_app_after/)
-- url: https://www.reddit.com/r/reactjs/comments/htxokf/made_my_first_mern_full_stack_ecommerce_app_after/
+## [4][UI Playbook — the documented collection of UI components](https://www.reddit.com/r/reactjs/comments/huimrb/ui_playbook_the_documented_collection_of_ui/)
+- url: https://uiplaybook.dev
 ---
-TLDR; i studied MERN full stack from The Odin Project for 6 months and made my first app, link for repo and demo at the end. 
+
+## [5][My web app with 100+ beautiful, copy-paste-ready code sections is (ALMOST) here 🥳](https://www.reddit.com/r/reactjs/comments/hu13hu/my_web_app_with_100_beautiful_copypasteready_code/)
+- url: https://www.reddit.com/r/reactjs/comments/hu13hu/my_web_app_with_100_beautiful_copypasteready_code/
+---
+My friend and I have ALMOST finished a super fun side project called Pastepanda ([https://try.pastepanda.com/early-access-beta](https://try.pastepanda.com/early-access-beta)): a library of copy-paste-ready and neatly coded sections for different kinds of web projects!! Boy, have we fought to get it out in the open! 😅
+
+After many iterations, going from an extremely wide scope to a more modest first version, we finally thought: let’s just release the landing page and hope for the best.
+
+I’m so pumped to hear what you all in the React community think!! 😃
+## [6][Flatlogic One React.js Admin Template (paid product, React 16 &amp; Redux)](https://www.reddit.com/r/reactjs/comments/hugy9k/flatlogic_one_reactjs_admin_template_paid_product/)
+- url: https://flatlogic.com/templates/one-react-template
+---
+
+## [7][Looking for a React.js frontend UI/UX developer or agency](https://www.reddit.com/r/reactjs/comments/hui56g/looking_for_a_reactjs_frontend_uiux_developer_or/)
+- url: https://www.reddit.com/r/reactjs/comments/hui56g/looking_for_a_reactjs_frontend_uiux_developer_or/
+---
+We are looking for a good React.js developer (or agency) to help create a frontend UI/UX from an existing web API. We already have a frontend but want to move away from the current implementation to using React.js + the API.
 
 &amp;#x200B;
 
-Before i start doing anything i was so confused, what to start, where to start, etc..., i wasted enough time comparing and reading "the difference between "bla" and "bla bla bla".
-
-I never had interest in web dev, but after trying android dev for one months i didn't like, then i came by [This thread](https://www.reddit.com/r/learnprogramming/comments/ef6ers/top_best_plans_to_learn_fullstack_web_development/) which was a treasure for me and i read the comments and asked some people in the field then i started with "The Odin Project" which i think it's really amazing and got me through a lot.
-
-and i finished it (MERN full stack) in like 6 months (not really committed)
+The application that we want to redesign the frontend UI/UX of is; [https://wpvulndb.com/](https://wpvulndb.com/)
 
 &amp;#x200B;
 
-what i learned through all this time:
-
-\- Don't waste time comparing between languages or technologies, just start away
-
-\- You will learn more by doing not only reading or watching videos
-
-\- stackoverflow or (google) is your best friend
-
-\- you will never stop learning, cause that field (CS) is really huge like omg
-
-\- i always used existing libraries cause i don't wanna reinvent the wheel
-
-\- literally i found library for everything i wanted
-
-\- I really know nothing lol
+Can anyone recommend a good developer or agency? Or, where I should be looking to find one?
 
 &amp;#x200B;
 
-I made this app which I'm really happy about as a newbie started from 0
-
-i will be glad if you take a look and evaluate my work (just ignore the ugly design lol)
-
-and give me a review about my code.
-
-\*\*Should i start looking for a job now or just wait and finish other big projects? 
-
-&amp;#x200B;
-
-and This is the [Github Repo](https://github.com/hamohuh/inventory-application) and this is the [LIVE demo](https://afternoon-atoll-93127.herokuapp.com/)
-
-&amp;#x200B;
-
-Thank you so much
-## [5][As a Florida resident, I was tired of visiting several slow mobile-unfriendly Covid Dashboards to get the info I wanted (including my local Tampa Bay stats). So I built COVJOSH.COM for my friends and myself to get real-time data.](https://www.reddit.com/r/reactjs/comments/htiqy8/as_a_florida_resident_i_was_tired_of_visiting/)
-- url: https://covjosh.com
+Thanks!
+## [8][Unit testing for React developers - What you need to know](https://www.reddit.com/r/reactjs/comments/hui4sr/unit_testing_for_react_developers_what_you_need/)
+- url: https://felixgerschau.com/unit-testing-react-introduction/
 ---
 
-## [6][A guide to creating optimized react applications](https://www.reddit.com/r/reactjs/comments/hty971/a_guide_to_creating_optimized_react_applications/)
-- url: https://medium.com/dev-genius/optimizing-your-react-application-part-1-fb1a9398cc30
+## [9][My first npm package is made with react 😊](https://www.reddit.com/r/reactjs/comments/hui7qv/my_first_npm_package_is_made_with_react/)
+- url: https://www.reddit.com/r/reactjs/comments/hui7qv/my_first_npm_package_is_made_with_react/
+---
+Hey guys, today I made my first npm package, it's called **react-pagination-nav** 
+
+ [https://github.com/mohitkyadav/react-pagination-nav](https://github.com/mohitkyadav/react-pagination-nav) 
+
+I'm still a beginner, if you find any bugs or cool new feature requests, create an issue on the repo.
+
+And you can find the package here.
+
+[https://www.npmjs.com/package/react-pagination-nav](https://www.npmjs.com/package/react-pagination-nav)
+
+Have a great day. ✌
+## [10][How we boosted the performance of a Gatsby website by 80%](https://www.reddit.com/r/reactjs/comments/huj069/how_we_boosted_the_performance_of_a_gatsby/)
+- url: https://tinloof.com/blog/How-we-boosted-the-performance-of-a-Gatsby-website-by-80/
 ---
 
-## [7][I made a dice roll simulator for DnD](https://www.reddit.com/r/reactjs/comments/htyjv5/i_made_a_dice_roll_simulator_for_dnd/)
-- url: https://www.reddit.com/r/reactjs/comments/htyjv5/i_made_a_dice_roll_simulator_for_dnd/
----
-Hi guys, in the past couple of days I created a dice roll simulator for DnD.
-
-You can find the repo [here](https://github.com/mhogeveen/dnd_dice_roller/?)
-
-and the deployed version [here](https://mhogeveen.github.io/dnd_dice_roller/)
-
-I would love some feedback on the code I wrote. I'm still very new to React (and Redux) and could use all the help I can get.
-
-I'm working up to finding a job as front-end developer and will use this as a portfolio piece. So I would like make it as good as possible!
-
-Thanks in advance:)
-## [8][React-Express boilerplate CRUD app using a global state store with only hooks](https://www.reddit.com/r/reactjs/comments/htsimt/reactexpress_boilerplate_crud_app_using_a_global/)
-- url: https://github.com/cnebs/rh-bp
+## [11][Build Beautiful Websites Fast With Semantic UI And React](https://www.reddit.com/r/reactjs/comments/hui7jd/build_beautiful_websites_fast_with_semantic_ui/)
+- url: https://alterclass.hashnode.dev/build-beautiful-websites-fast-with-semantic-ui-and-react-ckcuany00003461s1cpw60zwy
 ---
 
-## [9][Ethereum portfolio tracker](https://www.reddit.com/r/reactjs/comments/htxfol/ethereum_portfolio_tracker/)
-- url: https://www.reddit.com/r/reactjs/comments/htxfol/ethereum_portfolio_tracker/
+## [12][Using Tailwind with Create React App, CSS Modules and PostCSS with no hassle](https://www.reddit.com/r/reactjs/comments/hui0d8/using_tailwind_with_create_react_app_css_modules/)
+- url: https://dev.to/ryandunn/how-to-use-tailwind-with-create-react-app-and-postcss-with-no-hassle-2i09
 ---
-I made an Ethereum portfolio tracker over the weekend, by default it just tracks my portfolio but you can enter any ETH address and get all tokens from that wallet, let me know what you guys think and how I can improve it :) 
 
-[https://crypto.jaykch.com/](https://crypto.jaykch.com/)
-## [10][Help choosing DB to learn](https://www.reddit.com/r/reactjs/comments/htzds5/help_choosing_db_to_learn/)
-- url: https://www.reddit.com/r/reactjs/comments/htzds5/help_choosing_db_to_learn/
----
-Hi guys. Been using Reactjs for a while now fourth Firebase DB and not want to learn something else. Where should I go next? Mongodb?
-And is there any good article or video guide to help choose the right db for the different project?
-Appreciate any help. Thanks.
-## [11][Stoo POST requests to api](https://www.reddit.com/r/reactjs/comments/htyu8f/stoo_post_requests_to_api/)
-- url: https://www.reddit.com/r/reactjs/comments/htyu8f/stoo_post_requests_to_api/
----
-Hey,
-
-Im building a react redux ecommerce.
-Ive an api for a contact form which sends requests by email to buy products in the store. 
-
-Ive set up required fields(email and click products) on the form but if i get the POST request from network tab in Chrome and testing this in POSTMAN application i can send this over and over without required.
-
-
-Any suggestions on how to prevent Spamming the api?
-## [12][readline error out of nowhere](https://www.reddit.com/r/reactjs/comments/htypo1/readline_error_out_of_nowhere/)
-- url: https://www.reddit.com/r/reactjs/comments/htypo1/readline_error_out_of_nowhere/
----
-A project I've been working on (create-react-app) was working fine, but out of the blue stopped working and gives this error:
-
-    ./node_modules/sass/sass.dart.js
-Module not found: Can't resolve 'readline'
-
-Have tried updating/reinstalling all modules and undoing all changes before the error, but no luck. Any idea what happened?

@@ -1,29 +1,20 @@
 # androiddev
-## [1][App Feedback Thread - July 18, 2020](https://www.reddit.com/r/androiddev/comments/htftu3/app_feedback_thread_july_18_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/htftu3/app_feedback_thread_july_18_2020/
+## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/huklpf/weekly_whos_hiring_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/huklpf/weekly_whos_hiring_thread/
 ---
-This thread is for getting feedback on your own apps.
+Looking for Android developers? Heard about a cool job posting? Let people know!
 
-####Developers:
+Here is a suggested posting template:
 
-- must **provide feedback** for others
-- must include **Play Store**, **GitHub**, or **BitBucket** link
-- must make top level comment
-- must make effort to respond to questions and feedback from commenters
-- may be open or closed source
+&gt; Company: &lt;Best Company Ever&gt;  
+&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
+&gt; Location: &lt;City, State, Country&gt;  
+&gt; Allows remote: &lt;Yes/No&gt;  
+&gt; Visa: &lt;Yes/No&gt;  
 
-####Commenters:
-
-- must give **constructive feedback** in replies to top level comments
-- must not include links to other apps
-
-To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
-
-As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
-
-\- Da Mods
-## [2][Weekly Questions Thread - July 13, 2020](https://www.reddit.com/r/androiddev/comments/hqd7s0/weekly_questions_thread_july_13_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/hqd7s0/weekly_questions_thread_july_13_2020/
+Feel free to include any other information about the job.
+## [2][Weekly Questions Thread - July 20, 2020](https://www.reddit.com/r/androiddev/comments/huj9uy/weekly_questions_thread_july_20_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/huj9uy/weekly_questions_thread_july_20_2020/
 ---
 This thread is for simple questions that don't warrant their own thread (although we suggest checking the sidebar, [the wiki](http://www.reddit.com/r/androiddev/wiki/), [our Discord](https://discord.gg/D2cNrqX), or [Stack Overflow](http://stackoverflow.com) before posting). Examples of questions:
 
@@ -40,71 +31,76 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][PreLaunch Report showing issues of Google Play app and not my app.](https://www.reddit.com/r/androiddev/comments/htxibt/prelaunch_report_showing_issues_of_google_play/)
-- url: https://i.redd.it/ikzlqnny2sb51.png
+## [3][JetBrains is porting Compose to desktop and other platforms](https://www.reddit.com/r/androiddev/comments/hufnjq/jetbrains_is_porting_compose_to_desktop_and_other/)
+- url: https://www.reddit.com/r/androiddev/comments/hufnjq/jetbrains_is_porting_compose_to_desktop_and_other/
+---
+It's no news that JetBrains employees are working on Compose. But this job offer: https://www.jetbrains.com/careers/jobs/ui-framework-developer-401/ makes it clear what the goal is - "Our team is working to port it to desktop and other platforms.".
+## [4][I have made this 🗽 NY Times App with JSoup to Crawl data from NYtimes with MVVM Architecture 💡](https://www.reddit.com/r/androiddev/comments/huea2b/i_have_made_this_ny_times_app_with_jsoup_to_crawl/)
+- url: https://github.com/TheCodeMonks/NYTimes-App
 ---
 
-## [4][🍫 A lightweight bottom navigation view, fully customizable with an indicator and animations.](https://www.reddit.com/r/androiddev/comments/htxxfw/a_lightweight_bottom_navigation_view_fully/)
-- url: https://i.redd.it/q9b0x2brasb51.gif
+## [5][Beagle debug menu library v2 + showcase app](https://www.reddit.com/r/androiddev/comments/huh589/beagle_debug_menu_library_v2_showcase_app/)
+- url: https://www.reddit.com/r/androiddev/comments/huh589/beagle_debug_menu_library_v2_showcase_app/
+---
+This debug menu library has been rewritten from scratch to support more ways to display its UI (side drawer, bottom sheet, dialog, etc), custom modules, easier integration and a simpler API. I'm still actively testing it (that's the reason for the beta tag) but I'm not aware of any blockers at the moment so I'm very much looking forward to see what you think about it!
+
+I've also created a [showcase app](https://play.google.com/store/apps/details?id=com.pandulapeter.beagle) to convince you that you need it in your project, and it also acts as a tutorial for implementing the different features. The source code for the app, as well as the library itself can be found in this [GitHub repo](https://github.com/pandulapeter/beagle).
+
+Without going into details about what can be done with the various modules: one of my main goals was to make this as simple to use as possible, and based on the feedback I got from colleagues as well as QA people working on projects where Beagle is used, it's well worth the 5-10 minutes it takes to add it to the apps. Let me know if you have any questions / issues / ideas to make it better :)
+## [6][Hilt in Android 11 (Android Dependency Injection)](https://www.reddit.com/r/androiddev/comments/hul3on/hilt_in_android_11_android_dependency_injection/)
+- url: https://www.youtube.com/watch?v=B56oV3IHMxg
 ---
 
-## [5][Scaling Your Android Build (Part 1): Going Beyond Modularization with Gradle](https://www.reddit.com/r/androiddev/comments/htmgwv/scaling_your_android_build_part_1_going_beyond/)
-- url: https://www.youtube.com/watch?v=dmAXnXRbHYo
+## [7][Android Studio + headless Emulator knocking down Macbook](https://www.reddit.com/r/androiddev/comments/hul1fp/android_studio_headless_emulator_knocking_down/)
+- url: https://www.reddit.com/r/androiddev/comments/hul1fp/android_studio_headless_emulator_knocking_down/
+---
+Hi,  
+
+
+I'm running 4.2 (canary 4) to use the embedded emulator inside Studio.  
+Unfortunately it's actually not usable as the emulator is taking so much CPU of my new Macbook pro (2019, 2,6 Ghz i7, 32g ram).  
+Is anyone else having this issue?
+## [8][Exoplayer not work in huawei devices containing Huawei Mobile Services](https://www.reddit.com/r/androiddev/comments/huk17t/exoplayer_not_work_in_huawei_devices_containing/)
+- url: https://www.reddit.com/r/androiddev/comments/huk17t/exoplayer_not_work_in_huawei_devices_containing/
+---
+In my huawei test device which contains huawei mobile services, exoplayer does not work both audio and video files. Do you know why? Does exoplayer not support devices including hms?
+## [9][What are the ways to read SMS and sub-second latencies?](https://www.reddit.com/r/androiddev/comments/hujtcv/what_are_the_ways_to_read_sms_and_subsecond/)
+- url: https://www.reddit.com/r/androiddev/comments/hujtcv/what_are_the_ways_to_read_sms_and_subsecond/
+---
+I am making an app that reads users SMS and sends them to a secure server and then notifies about some actions on a web-portal.
+
+This complete flow is striving to do this in 4-5 seconds since the SMS is received. I want to discuss what are the pain points I can anticipate and if possible, how I can mitigate them.
+
+There are a couple on the top of my head:
+
+* There are some OS and mobile models that put the app in the sleep mode and then we can miss getting to know about the new SMS.
+   * This might be handled by making the app exempt from the \`battery saver\` mode. 
+* Playstore might not allow an app to read the users' SMS (for good reasons, but the use case, in particular, can be solved by reading SMS).
+   * I can have this app available at other app stores like f-droid.  
+
+
+Can there be more pain points that I am not considering at this moment? Any tips on how to take care of those.
+## [10][Distributing android app outside of play store possible with app signing enabled for Google Play?](https://www.reddit.com/r/androiddev/comments/huaoe7/distributing_android_app_outside_of_play_store/)
+- url: https://www.reddit.com/r/androiddev/comments/huaoe7/distributing_android_app_outside_of_play_store/
+---
+ 0
+
+I have an android app that is currently being distributed through google play store. Google upcoming deadline requires that [apps must target API level 29](https://developer.android.com/distribute/play-policies#apps-must-target-api-level-29) or I won't be able to update app after 2nd November 2020.
+
+I can not change targetSdkVersion  
+ 29 or above because of the app core functionality relies on an Android API that has been removed in API level 29 and above.
+
+My plan was to acquire new installs via Google Play Store and then update the app later from my own server or somewhere else. But I have opted for [App signing for Google Play](https://support.google.com/googleplay/android-developer/answer/7384423?hl=en) which resigns the APKs before redistributing them to users.
+
+My Second Plan was to upload the APK to play store and not publish there and download the signed APK and distribute that from outside. Assuming google play will let me upload the APK after 2 November 2020. To test it out I changed targetSdkVersion  
+ from 28 to 27. Current google play requirement is app must target API level 28. So google play rejected my APK.
+
+I am wondering if there is a way to distribute app updates to the existing user outside of Google Play store.
+## [11][Meet Google Play Billing Library Version 3](https://www.reddit.com/r/androiddev/comments/hugs84/meet_google_play_billing_library_version_3/)
+- url: https://android-developers.googleblog.com/2020/06/meet-google-play-billing-library.html
 ---
 
-## [6][My pc can't really run androidd studio any alternatives?](https://www.reddit.com/r/androiddev/comments/hu07ml/my_pc_cant_really_run_androidd_studio_any/)
-- url: https://www.reddit.com/r/androiddev/comments/hu07ml/my_pc_cant_really_run_androidd_studio_any/
+## [12][Begginers guide to build modules on Android](https://www.reddit.com/r/androiddev/comments/hubk7z/begginers_guide_to_build_modules_on_android/)
+- url: https://medium.com/@shalommathews05/modularization-in-android-make-your-code-reusable-and-maintainable-beginner-db5d6185a247
 ---
 
-## [7][Push notifications aren't reliable](https://www.reddit.com/r/androiddev/comments/htzpka/push_notifications_arent_reliable/)
-- url: https://www.reddit.com/r/androiddev/comments/htzpka/push_notifications_arent_reliable/
----
-Hi guys,
-
-came here to ask for some help to the most experienced developers.
-
-I'm currently building a trivia multiplayer Android game. I have my backend in Java Spring that handles all the status in every party the players are. So, the way im sending the data back to the clients is using a MQTT service, Firebase and Pushy, but they are giving me too many problems. Sometimes the notifications are too slow and sometimes they dont even arrive to the client. It is so much inconsistent.
-
-I thought about using a websocket structure instead but, ain't that too much of an overkill? This game is not a shoother or a fighting game where latency needs to be the lowest possible, players just select an option and when they all are ready, the next question comes to their screens.
-
-Is there something I'm doing wrong with Firebase or Pushy or do I need to rely in something better?
-
-Thanks in advance.
-## [8][Kalman Filter for Fusing Acc and Gyro Data](https://www.reddit.com/r/androiddev/comments/htyz5t/kalman_filter_for_fusing_acc_and_gyro_data/)
-- url: https://www.reddit.com/r/androiddev/comments/htyz5t/kalman_filter_for_fusing_acc_and_gyro_data/
----
-Hello everyone,
-
-I am looking for a Kalman Filter that fuses first acc and gyro data, and later on magnotometer data.
-
-I think I understand the underlying principles of the Kalman Filter in general, but somehow I can't seem to make it work in Android Studio.  
-There are many tutorials on how to implement such a filter but I found none specifically for Android.  
-Since I'm stuck and I need a Kalman Filter Implementation of Orientation Estimate, this subreddit is my last resort.  
-Does anyone know where to find the source code for my problem?  
-Kind regards
-## [9][Is it possible to open a shared google maps location on your own app?](https://www.reddit.com/r/androiddev/comments/htyust/is_it_possible_to_open_a_shared_google_maps/)
-- url: https://www.reddit.com/r/androiddev/comments/htyust/is_it_possible_to_open_a_shared_google_maps/
----
-I hope I'm not breaking #2, but I'm not soliciting how to do it - but more whether its possible or not so I don't waste my time.  
-Someone shared me a location on whatsapp, I want to open it with my app and extract the latitude and longitude. I'm getting that you'd deep filter it (i'm using Java), but I can't seem to get it to choose anything other than google maps.  
-
-
-Is this possible?
-## [10][Optimizing for tablet](https://www.reddit.com/r/androiddev/comments/htyrun/optimizing_for_tablet/)
-- url: https://www.reddit.com/r/androiddev/comments/htyrun/optimizing_for_tablet/
----
-i pass the test of tablet app quality for some of my apps, is this made my app in the top search over the apps with same key word for tablet or is this only differnce in user experience no effect in search result for tablet
-## [11][People who got hired as an android developer ! What's your story?](https://www.reddit.com/r/androiddev/comments/htf9qb/people_who_got_hired_as_an_android_developer/)
-- url: https://www.reddit.com/r/androiddev/comments/htf9qb/people_who_got_hired_as_an_android_developer/
----
-I am 19 and I am learning Java right now! A couple months back I tried the android development and I loved it ! I don't have have any apps in my portfolio yet but soon ! I am constantly learning stuff ! And I would love to hear your story of how you got hired ?
-## [12][How to remove padding at the bottom and right from WebView](https://www.reddit.com/r/androiddev/comments/htxn99/how_to_remove_padding_at_the_bottom_and_right/)
-- url: https://www.reddit.com/r/androiddev/comments/htxn99/how_to_remove_padding_at_the_bottom_and_right/
----
-I am using SVG into WebView and having few interactions. Below is the code
-
-`var pageText = "&lt;!DOCTYPE HTML&gt;\n" + "&lt;html&gt;" + "&lt;head&gt;" + "&lt;meta name='viewport' content='target-densityDpi=device-dpi'/&gt;" + "&lt;style type="text/css"&gt;\n" + "html, body { padding:0px; margin:0px; background:blue; border: 1px solid orange;}" + ".container{width:100%; height:100%; background:red; }" + "&lt;/style&gt;\n" + "&lt;script src="jquery-3.5.1.min.js"&gt;&lt;/script&gt;" + "&lt;/head&gt;" + "&lt;body style="margin: 0px; padding: 0px"&gt;" + "&lt;div id="div" class="container"&gt;" + svgString.trim() + "&lt;/div&gt;" + "&lt;script src="my_js_to_handle_interaction.js"&gt;&lt;/script&gt;" + "&lt;/body&gt;" + "&lt;/html&gt;"`
-
-But on zooming, I can see there is some extra space after SVG at the right side and bottom of WebView. And this is being increased by some ratio, depending on zoom-in level.
-
-I am unable to find the root cause of the issue.

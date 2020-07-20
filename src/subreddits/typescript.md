@@ -22,7 +22,248 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Any VSCode users? How to stop it from thinking type constructors are JSX code?](https://www.reddit.com/r/typescript/comments/htx1ez/any_vscode_users_how_to_stop_it_from_thinking/)
+## [2][How to Infer Types from Schema](https://www.reddit.com/r/typescript/comments/hub8rd/how_to_infer_types_from_schema/)
+- url: https://www.reddit.com/r/typescript/comments/hub8rd/how_to_infer_types_from_schema/
+---
+Hi all. I've recently started using typescript more heavily, and  I'm working a generic form-validation library. One of the things I'd like to be able to do is pass in a data model, and be able to get type inference/intellisense from the keys from that object. I've not learned all the details of how to use generics yet, which I know will be key for this question, so any pointers towards what I am missing would be greatly appreciated.
+
+A simplified example:
+
+```
+interface SpecificSchemaInterface {
+    fields: Record&lt;String, any&gt;
+}
+
+interface SpecificSchemaInterface {
+    fields: {
+      firstName: string;
+      lastName: string;
+      age: number;
+    }
+}
+
+const schema = {
+  fields: {
+    firstName: 'Bob,
+    lastName: 'Bobson',
+    age: 25,
+  },
+};
+
+function createValidatorFromSchema(s: SpecificSchemaInterface) {
+  // ???
+}
+
+const validator: Validator&lt;SpecificSchemaInterface&gt; = createValidatorFromSchema(schema)
+
+// Then validator would have an interface like:
+interface Validator {
+  rules: {
+    firstName(firstName: string): boolean,
+    lastName(lastName: string): boolean,
+    age(age: number): boolean, // note that the type is inferred here from the schema
+  }
+}
+```
+
+My questions are that then
+1) I probably want something like `Validator&lt;SpecificSchemaInterface&gt;`?
+2) I need to be able to both extract the object keys, and the types from the schema in a reusable way inside my new `Validator`
+
+I hope this isn't too vague, but if there is some terminology I should be looking into (beyond just "look at generics") or guides that go into this sort of thing, that would be very helpful.
+## [3][Am I generating `index.d.ts` file for an `npm` module `@camwiegert/typical` correctly?](https://www.reddit.com/r/typescript/comments/hugbmu/am_i_generating_indexdts_file_for_an_npm_module/)
+- url: https://www.reddit.com/r/typescript/comments/hugbmu/am_i_generating_indexdts_file_for_an_npm_module/
+---
+I am a noob at TS &amp; certainly don't know how to write `index.d.ts`. Guided by some auto-completion inside VSCode &amp; some of my existing knowledge, I managed to cobble this together.
+
+I am writing types for `@camwiegert/typical` npm module. Source code could be found at https://github.com/camwiegert/typical
+
+Here is the main file `typical.js` for brevity:
+
+```js
+export async function type(node, ...args) {
+    for (const arg of args) {
+        switch (typeof arg) {
+            case 'string':
+                await edit(node, arg);
+                break;
+            case 'number':
+                await wait(arg);
+                break;
+            case 'function':
+                await arg(node, ...args);
+                break;
+            default:
+                await arg;
+        }
+    }
+}
+
+async function edit(node, text) {
+    const overlap = getOverlap(node.textContent, text);
+    await perform(node, [...deleter(node.textContent, overlap), ...writer(text, overlap)]);
+}
+
+async function wait(ms) {
+    await new Promise(resolve =&gt; setTimeout(resolve, ms));
+}
+
+async function perform(node, edits, speed = 60) {
+    for (const op of editor(edits)) {
+        op(node);
+        await wait(speed + speed * (Math.random() - 0.5));
+    }
+}
+
+export function* editor(edits) {
+    for (const edit of edits) {
+        yield (node) =&gt; requestAnimationFrame(() =&gt; node.textContent = edit);
+    }
+}
+
+export function* writer([...text], startIndex = 0, endIndex = text.length) {
+    while (startIndex &lt; endIndex) {
+        yield text.slice(0, ++startIndex).join('');
+    }
+}
+
+export function* deleter([...text], startIndex = 0, endIndex = text.length) {
+    while (endIndex &gt; startIndex) {
+        yield text.slice(0, --endIndex).join('');
+    }
+}
+
+export function getOverlap(start, [...end]) {
+    return [...start, NaN].findIndex((char, i) =&gt; end[i] !== char);
+}
+```
+
+I want to write types for this file. So I made `src/@types/@camwiegert/typical/index.d.ts` like:
+
+```ts
+declare module '@camwiegert/typical' {
+	export function type(node: HTMLElement, ...args: any[]): Promise&lt;void&gt;
+
+	declare function edit(node: HTMLElement, text: string): Promise&lt;void&gt;
+
+	declare function wait(ms: number): Promise&lt;void&gt;
+
+	declare function perform(node: HTMLElement, edits: any, speed?: number): Promise&lt;void&gt;
+
+	export function editor(edits: any): Generator&lt;(node: any) =&gt; number, void, unknown&gt;
+
+	export function writer(
+		[...text]: Iterable&lt;any&gt;,
+		startIndex?: number,
+		endIndex?: number
+	): Generator&lt;string, void, unknown&gt;
+
+	export function deleter(
+		[...text]: Iterable&lt;any&gt;,
+		startIndex?: number,
+		endIndex?: number
+	): Generator&lt;string, void, unknown&gt;
+
+	export function getOverlap(start: any, [...end]: Iterable&lt;any&gt;): number
+}
+```
+
+Idk if I converted it correctly or not. Can anyone check if it's correct?
+## [4][Custom hook with typescript?](https://www.reddit.com/r/typescript/comments/hub5ci/custom_hook_with_typescript/)
+- url: https://www.reddit.com/r/typescript/comments/hub5ci/custom_hook_with_typescript/
+---
+Hey guys, I'm pretty stuck as to how to get around using :any here. Any ideas?
+
+&amp;#x200B;
+
+    import { useState } from 'react';
+    
+    export const useFormFields = (initialState: any) =&gt; {
+      const [fields, setValues] = useState(initialState);
+    
+      return [
+        fields,
+        (event: React.ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {
+          setValues({
+            ...fields,
+            [event.target.name]: event.target.value,
+          });
+        },
+      ];
+    };
+
+I've tried using interfaces and types and then adding it in, but ...fields expects an object and the whole thing breaks.
+## [5][A directory structure for React projects](https://www.reddit.com/r/typescript/comments/hui3yt/a_directory_structure_for_react_projects/)
+- url: https://medium.com//a-directory-structure-for-react-projects-99fb084c61f1?source=friends_link&amp;sk=e5c0c00d0e03e6661ec7e710f84eebfb
+---
+
+## [6][React Router Is Not Working With Typescript?](https://www.reddit.com/r/typescript/comments/hufp62/react_router_is_not_working_with_typescript/)
+- url: https://www.reddit.com/r/typescript/comments/hufp62/react_router_is_not_working_with_typescript/
+---
+When the image is clicked in **Header Component via &lt;Link&gt;**, React is not rendering **Content Component**
+
+Visual representation of the problem:
+
+[https://gyazo.com/bb14af9cb3f0870107ec775a328e60c0](https://gyazo.com/bb14af9cb3f0870107ec775a328e60c0)
+
+&amp;#x200B;
+
+I'm not sure what the issue is, my previous react projects works fine with this setup, but here's what i have
+
+&amp;#x200B;
+
+    import { Route, Router, Switch } from "react-router-dom";
+    import history from "../history";
+    
+    const App: React.FC&lt;{}&gt; = () =&gt; {
+        return (
+            &lt;React.Fragment&gt;
+                &lt;Router history={history}&gt;
+                    &lt;Header /&gt;
+                    &lt;Switch&gt;
+                        &lt;Route path="/" exact component={Content} /&gt;
+                    &lt;/Switch&gt;
+                &lt;/Router&gt;
+            &lt;/React.Fragment&gt;
+        );
+    };
+    
+    export default App;
+
+**history.tsx**
+
+    import { createBrowserHistory } from "history";
+    export default createBrowserHistory();
+
+&amp;#x200B;
+
+**Header**
+
+    const Header: React.FC&lt;HeaderProps&gt; = (props) =&gt; {
+        //const history = useHistory();
+        return (
+            &lt;nav&gt;
+                &lt;Link to="/"&gt;
+                    &lt;img
+                        className="logo"
+                        src={logo}
+                        alt="pixar-logo"
+                    /&gt;
+                &lt;/Link&gt;
+    ...
+    export default Header;
+
+**Content**
+
+    const Content: React.FC&lt;{}&gt; = () =&gt; {
+        return (
+            &lt;div&gt;
+                &lt;div className="contentContainer"&gt;
+                    &lt;h2 className="quote"&gt;
+    ...
+    
+    export default Content;
+## [7][Any VSCode users? How to stop it from thinking type constructors are JSX code?](https://www.reddit.com/r/typescript/comments/htx1ez/any_vscode_users_how_to_stop_it_from_thinking/)
 - url: https://www.reddit.com/r/typescript/comments/htx1ez/any_vscode_users_how_to_stop_it_from_thinking/
 ---
 For example when I try to type:
@@ -42,15 +283,15 @@ I'm sure there's a way to restrict it to .tsx files which I could implement on p
 If anyone else currently deals with this, the best practice I currently use, when I remember to, is to first type this out to prevent the autocompleting "closing tag":
 
     Promise&lt;&gt;
-## [3][What's the weirdest, most odd-looking and/or most complex generic you've seen or made?](https://www.reddit.com/r/typescript/comments/htukg1/whats_the_weirdest_most_oddlooking_andor_most/)
+## [8][What's the weirdest, most odd-looking and/or most complex generic you've seen or made?](https://www.reddit.com/r/typescript/comments/htukg1/whats_the_weirdest_most_oddlooking_andor_most/)
 - url: https://www.reddit.com/r/typescript/comments/htukg1/whats_the_weirdest_most_oddlooking_andor_most/
 ---
 
-## [4][Finally I Developed SQL Query Generating App](https://www.reddit.com/r/typescript/comments/htw2nd/finally_i_developed_sql_query_generating_app/)
+## [9][Finally I Developed SQL Query Generating App](https://www.reddit.com/r/typescript/comments/htw2nd/finally_i_developed_sql_query_generating_app/)
 - url: https://youtu.be/K9uG63QSW-I
 ---
 
-## [5][Is it acceptable to use switch(true) to match the first met condition?](https://www.reddit.com/r/typescript/comments/htqokr/is_it_acceptable_to_use_switchtrue_to_match_the/)
+## [10][Is it acceptable to use switch(true) to match the first met condition?](https://www.reddit.com/r/typescript/comments/htqokr/is_it_acceptable_to_use_switchtrue_to_match_the/)
 - url: https://www.reddit.com/r/typescript/comments/htqokr/is_it_acceptable_to_use_switchtrue_to_match_the/
 ---
 I currently have the following switch statement in a TypeScript file:
@@ -77,7 +318,7 @@ I currently have the following switch statement in a TypeScript file:
 I only want each reminder object to appear in one array in order to prevent displaying a reminder twice.
 
 Is this an acceptable way of using the switch statement? Is there a better way of doing this?
-## [6][What is needed to get source maps working?](https://www.reddit.com/r/typescript/comments/htg5jx/what_is_needed_to_get_source_maps_working/)
+## [11][What is needed to get source maps working?](https://www.reddit.com/r/typescript/comments/htg5jx/what_is_needed_to_get_source_maps_working/)
 - url: https://www.reddit.com/r/typescript/comments/htg5jx/what_is_needed_to_get_source_maps_working/
 ---
 I''m using NDB which is like the google chrome debugger but for Node.js apps. I'm able to set breakpoints in compiled .js files but not source files in .ts. I see this notice in the app:
@@ -104,115 +345,3 @@ I am running the bottom most script in the bottom left panel, `node compiled/ind
        "include": ["src/**/*"]
        , "exclude": ["node_modules", "compiled", "__tests__", "types"]
     }
-## [7][How do I get around this error?](https://www.reddit.com/r/typescript/comments/htm7aj/how_do_i_get_around_this_error/)
-- url: https://www.reddit.com/r/typescript/comments/htm7aj/how_do_i_get_around_this_error/
----
-I'm working on an in memory expressJs typescript project. It is currenlty in memory because I haven't set up any sort of database to work with.  I'm trying to set up a delete request to the api and get this error:
-
-S7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'
-
-Here is the weights object:
-
-*let* weights = {};
-
-&amp;#x200B;
-
-Here is my delete request:
-
-&amp;#x200B;
-
-app.delete('weights/:id', (req , res) =&gt; {  
-
-
-// This is where the error is  
-weights\[req.body.id\] = *null*;  
-res.status(200).send({message: 'Delete successful.'})  
-});
-
-&amp;#x200B;
-
-I apologize for the lack of formatting, it won't work for me. What am I missing?
-## [8][Promise &gt; Observable](https://www.reddit.com/r/typescript/comments/htu56a/promise_observable/)
-- url: https://www.stackchief.com/blog/Observable%20vs%20Promise%20%7C%20When%20to%20use%20Promise
----
-
-## [9][How to dynamically assign a property](https://www.reddit.com/r/typescript/comments/htfsm7/how_to_dynamically_assign_a_property/)
-- url: https://www.reddit.com/r/typescript/comments/htfsm7/how_to_dynamically_assign_a_property/
----
-So I'm working on a React/Typescript project, and I am trying to make this piece of code work:
-
-    const inputChange = (event: ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {
-            setState((draft) =&gt; {
-                draft.client[event.target.name] = event.target.value;
-            });
-        };
-
-First, I'm using Immer and useImmer for my state setting, so the above code is safe and properly modifying immutable state.
-
-Second, my main problem is in the square brackets. This function receives a ChangeEvent from an input element. The "name" property on that element matches one of the keys on the "client" object. I want to be able to assign the input's value to that property using this dynamic syntax.
-
-The problem is TypeScript errors out because of issues trying to figure out the types here. I'm really not sure how to handle this properly. Help would be appreciated. Here is the error:
-
-    Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ accessTokenTimeoutSecs?: number | undefined; allowAuthCode?: boolean | undefined; allowClientCredentials?: boolean | undefined; allowPassword?: boolean | undefined; clientKey?: string | undefined; ... 4 more ...; refreshTokenTimeoutSecs?: number | undefined; }'.
-      No index signature with a parameter of type 'string' was found on type '{ accessTokenTimeoutSecs?: number | undefined; allowAuthCode?: boolean | undefined; allowClientCredentials?: boolean | undefined; allowPassword?: boolean | undefined; clientKey?: string | undefined; ... 4 more ...; refreshTokenTimeoutSecs?: number | undefined; }'
-
-Edit: More investigation, the problem seems twofold. First, knowing what property [event.target.name](https://event.target.name) that I'm passing into the square brackets matches. Second, ensuring that event.target.value, which has type 'string', is acceptable by that property. Again, help would be appreciated. Thanks.
-
-Edit 2: Thank you to everyone for your help. I decided to post my solution here.
-
-    // Constants for all the property names go here, along with arrays grouping them by type.
-    
-    type ClientStringProperty = typeof NAME | typeof CLIENT_KEY | typeof CLIENT_SECRET;
-    type ClientNumberProperty = typeof ACCESS_TOKEN_TIMEOUT | typeof REFRESH_TOKEN_TIMEOUT;
-    type ClientBooleanProperty = typeof ENABLED | typeof ALLOW_CLIENT_CREDS | typeof ALLOW_PASSWORD | typeof ALLOW_AUTH_CODE;
-    
-    const isStringProperty = (name: string): name is ClientStringProperty =&gt; {
-        return STRING_PROPS.includes(name);
-    };
-    
-    const isNumberProperty = (name: string): name is ClientNumberProperty =&gt; {
-        return NUMBER_PROPS.includes(name);
-    };
-    
-    const isBooleanProperty = (name: string): name is ClientBooleanProperty =&gt; {
-        return BOOLEAN_PROPS.includes(name);
-    };
-    
-    // Inside component
-    const inputChange = (event: ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {
-            const { name, value, checked } = event.target;
-            setState((draft) =&gt; {
-                if (isStringProperty(name)) {
-                    draft.client[name] = value;
-                } else if (isNumberProperty(name)) {
-                    draft.client[name] = value ? parseInt(value) : 0;
-                } else if (isBooleanProperty(name)) {
-                    draft.client[name] = checked;
-                }
-            });
-        };
-
-&amp;#x200B;
-## [10][Excess property check question](https://www.reddit.com/r/typescript/comments/htbn6t/excess_property_check_question/)
-- url: https://www.reddit.com/r/typescript/comments/htbn6t/excess_property_check_question/
----
-https://www.typescriptlang.org/docs/handbook/interfaces.html#excess-property-checks
-
-It says "If an object literal has any properties that the “target type” doesn’t have, you’ll get an error:". The error is only because of the typo of color/colour. So by excess property checking does it mean it typescript checks for what it thinks is an error, i.e. a typo error? Because in the previous example when it was
-
-    interface LabeledValue {
-        label: string;
-    }
-    
-    function printLabel(labeledObj: LabeledValue) {
-        console.log(labeledObj.label);
-    }
-    
-    let myObj = {size: 10, label: "Size 10 Object"};
-    printLabel(myObj);
-
-"it’s only the shape that matters. If the object we pass to the function meets the requirements listed, then it’s allowed.", so it's allowed here even though there's no size. So what I'm trying to figure out is what's the criteria for the typescript amigo to judge? Possible typos and?
-## [11][TypeScript developers interested in decentralization should be aware of Shardus.](https://www.reddit.com/r/typescript/comments/htmh0w/typescript_developers_interested_in/)
-- url: https://medium.com/@Shardus/shardus-the-foundation-of-our-decentralized-future-976ae5106938?source=social.tw
----
-

@@ -56,19 +56,87 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][Aku - Toy Backtesting/Trading Engine in C++.](https://www.reddit.com/r/cpp/comments/htwmiq/aku_toy_backtestingtrading_engine_in_c/)
-- url: https://github.com/flouthoc/aku
+## [2][Advanced C/C++ side projects](https://www.reddit.com/r/cpp/comments/huh7d2/advanced_cc_side_projects/)
+- url: https://www.reddit.com/r/cpp/comments/huh7d2/advanced_cc_side_projects/
 ---
+Hi.
 
-## [3][Good youtube playlist for someone who already knows C very well](https://www.reddit.com/r/cpp/comments/htxlyp/good_youtube_playlist_for_someone_who_already/)
+After a resume review by a fellow engineer, I was told that I should build some advanced C and C++ projects to show my competency.  Although my long term goal is to become a sensor fusion engineer, now I am just looking for entry-level positions.  The industry I want to get into is self-drivig cars/robotics/autonomy development.  What are some advanced C and C++ based projects that I can build along the lines of this industry?  These projects are also going to help me learn the languages a lot better as well.
+
+I apologize if this is a dumb post. I figured that this is a good place to ask.
+
+Thanks.
+## [3][Looking for an UI framework easy to integrate with C++ for mobile platforms](https://www.reddit.com/r/cpp/comments/huhppm/looking_for_an_ui_framework_easy_to_integrate/)
+- url: https://www.reddit.com/r/cpp/comments/huhppm/looking_for_an_ui_framework_easy_to_integrate/
+---
+Hi guys,
+
+I've been working for the last couple of years in a codebase in C++.
+
+ I did manage to crosscompile to different platforms: iOS &amp; Android and now I'm looking forward to work in the frontend of the application.
+
+For the desktop application, I'm using Qt and it works just fine for all desktop platforms.
+
+I've been doing some research about the different technologies that can be used for the mobile UIs and I would like to know about your experiences or any recomendation.
+
+I'm considering:
+- Qt (QML) and try to get the startup/indie license
+- Flutter 
+- Native development
+- Whatever JavaScript framework
+
+How hard was the integration of the C/C++ code with the framework? Limitations? Any license issues?
+
+I want to create a serverless isolated application, so implementing a back-end service and query the data is something I'm not considering. 
+
+Thanks
+## [4][Looking for an argument parsing library](https://www.reddit.com/r/cpp/comments/hudlgw/looking_for_an_argument_parsing_library/)
+- url: https://www.reddit.com/r/cpp/comments/hudlgw/looking_for_an_argument_parsing_library/
+---
+Any suggestions on argument parser for C++ just like argparse for Python?
+## [5][Have you completed an Embedded C/C++ Internship?](https://www.reddit.com/r/cpp/comments/huhvnr/have_you_completed_an_embedded_cc_internship/)
+- url: https://www.reddit.com/r/cpp/comments/huhvnr/have_you_completed_an_embedded_cc_internship/
+---
+Has anyone here ever taken part of an embedded c/c++ internship? I need some help finding tutorials for this, as I don't really know what should I search for. Please help if you do know.
+## [6][Clang OpenMP for Loops](https://www.reddit.com/r/cpp/comments/hu9yl7/clang_openmp_for_loops/)
+- url: https://www.reddit.com/r/cpp/comments/hu9yl7/clang_openmp_for_loops/
+---
+I wrote some code that needs parallelized (just a for loop), and am trying to make sure my code builds on GCC and Clang. I wrote my code on an Ubuntu system (20.04) and everything builds fine with both compilers. When I tried to build it on my Gentoo system, it builds fine with GCC, but fails with Clang. This is particularly odd since both systems have exactly the same versions of the compilers (GCC 10.0.1 and Clang 10.0.0 with libomp-10). Here is the relevant section of my code:
+
+    #pragma omp parallel for default(shared)
+    for (auto v = my_vector.begin(); v &lt; my_vector.end(); ++v) {
+      // use v
+    }
+
+On my Gentoo system, if I use Clang it complains that I am not using a relational operator on \`v\`, and that I should use \`&lt;, &lt;=, &gt;, or &gt;=\`. If I re-write the loop to use indexing instead of iterators, it works fine.
+
+libomp-10 has partial support for OpenMP 5.0, including support for ranged for loops. If I rewrite my code to use a range, I get exactly the same error.
+
+Any idea why this error is happening?
+## [7][Digging in member method pointers in C++](https://www.reddit.com/r/cpp/comments/hukjrf/digging_in_member_method_pointers_in_c/)
+- url: https://www.reddit.com/r/cpp/comments/hukjrf/digging_in_member_method_pointers_in_c/
+---
+Hi guys
+
+Recently  was dealing with member method pointers in C++  
+I tried to deal with it a little bit deep, and somehow my brain generated an article.
+
+[https://medium.com/@helloooooooooooooooooooooooooo/method-member-pointers-in-c-6a2e0190b3e0](https://medium.com/@helloooooooooooooooooooooooooo/method-member-pointers-in-c-6a2e0190b3e0)
+
+Hope it will be useful
+## [8][Good youtube playlist for someone who already knows C very well](https://www.reddit.com/r/cpp/comments/htxlyp/good_youtube_playlist_for_someone_who_already/)
 - url: https://www.reddit.com/r/cpp/comments/htxlyp/good_youtube_playlist_for_someone_who_already/
 ---
 Im going to learn C++ my next year of college, and I was wondering what are some good yt playlist to learn it, im already very good at C so if there are any that playlists that skip the basic stuff feel free to share them. Thanks!
-## [4][Quick setup for a new C++ project in Visual Studio Code](https://www.reddit.com/r/cpp/comments/hu00cg/quick_setup_for_a_new_c_project_in_visual_studio/)
+## [9][Quick setup for a new C++ project in Visual Studio Code](https://www.reddit.com/r/cpp/comments/hu00cg/quick_setup_for_a_new_c_project_in_visual_studio/)
 - url: https://github.com/IvanSafonov/cpp-boilerplate
 ---
 
-## [5][Open sourcing my CQC automation platform](https://www.reddit.com/r/cpp/comments/hti9zs/open_sourcing_my_cqc_automation_platform/)
+## [10][Aku - Toy Backtesting/Trading Engine in C++.](https://www.reddit.com/r/cpp/comments/htwmiq/aku_toy_backtestingtrading_engine_in_c/)
+- url: https://github.com/flouthoc/aku
+---
+
+## [11][Open sourcing my CQC automation platform](https://www.reddit.com/r/cpp/comments/hti9zs/open_sourcing_my_cqc_automation_platform/)
 - url: https://www.reddit.com/r/cpp/comments/hti9zs/open_sourcing_my_cqc_automation_platform/
 ---
 A while back I opened sourced by CIDLib C++ development platform:
@@ -98,63 +166,3 @@ Currently it is Windows only (in terms of the back end and system management UI,
 So, if some Linux folks got on board, we could get the back end cleanly supporting Windows and Linux in a heterogenous network way. I got started on resurrecting the Linux platform support but my Linux skills sort of bottomed out. I have my own build infrastructure which seamlessly supports both platforms, and inherently understands the needs of CIDLib and CQC. This makes it easy to develop on both. I use Visual Studio Code since it's equivalent on both, but that's not a requirement.
 
 Anyhoo, if anyone is interested, start delving into it as a user. I'm going to eat the cost of keeping the web site and forums up. I'll start a new section on the forums for development discussion, so you can sign up there and ask questions, make suggestions, etc...
-## [6][What's in a function pointer? Machine code, actually!](https://www.reddit.com/r/cpp/comments/htekog/whats_in_a_function_pointer_machine_code_actually/)
-- url: https://youtu.be/I_g7CSoNNxc?t=758
----
-
-## [7][Introduction - redo: a recursive build system](https://www.reddit.com/r/cpp/comments/htjmtj/introduction_redo_a_recursive_build_system/)
-- url: https://redo.readthedocs.io/en/latest/
----
-
-## [8][Web framework recommendations](https://www.reddit.com/r/cpp/comments/htht3h/web_framework_recommendations/)
-- url: https://www.reddit.com/r/cpp/comments/htht3h/web_framework_recommendations/
----
-I've decided to learn some C++ mostly for my own amusement. My hobby projects tend to be web focussed so I was going to rewrite a couple of those in order to learn but I'm having a little bit of an issue finding the right framework. I've come across things like Crow which look like what I'm after, only that doesn't appear to be maintained anymore, likewise Wayward. 
-
-Drogon I think is the leading contender at the moment given WT looks way too heavyweight for what I'm after. Drogon does look more convoluted than I'd ideally like, though I'm not necessarily expecting things to be a walk in the park 
-
-Coming from a python background I'm ideally looking for something in the realms of Flask or Django, ie backend only and delivering either rest or full content via templates.
-
-Are there any others I should look at before I sink my teeth into Drogon or wt?
-## [9][Not going to impress you, but I wanted to share: Structuring your code is so rewarding :)](https://www.reddit.com/r/cpp/comments/ht3htx/not_going_to_impress_you_but_i_wanted_to_share/)
-- url: https://www.reddit.com/r/cpp/comments/ht3htx/not_going_to_impress_you_but_i_wanted_to_share/
----
-So I have this project - biggest one I have worked on so far, but probably small in comparison to any software I have ever heard of.
-
-I am working on this alone, but I will hand it over with full and proper documentation + handover training at the end, with the aim that other people can support and debug it as well.
-
-*Not counting empty lines and pure comment lines, the project now has 33 header files with 1274 loc, and 24 code modules with 4353 loc.* 
-
-*I have a ratio of 0.46 comments per line of code and a Makefile of 168 lines*
-
-I spent the first two months working on the framework:
-
-* Setting up a nice build folder, with subfolders for each module, according obj folder and subfolders, and a manually generated well-structured Makefile without redundant information.
-* learning &amp; "proof-of-concepting" the (for me new) technologies I was going to use: snmp agents, boost program\_options, dynamic loading of a plugin (dlopen), atomic variables, function pointers
-* implementing the application interaction: basic telemetry from the diagnostics module, inter-application communication via posix message queues, a general logging framework and configuration file logic
-* ensuring full compatibility with both gcc on linux and gcc on cygwin64/Windows 10
-* building proper test scenarios and test scripts
-
-It was sometimes frustratingly slow, and especially debugging net-snmp mistakes I had in my code was a challenge (documentation is none too great, not even all of the tutorial examples are complete).
-
-**But now**, now I am actually implementing the application functionality and the experience is like none before: I have so many utility functions at my disposal, thanks to the clear structure of the project I always know where to find stuff, and I have parameter checks in my functions left and right so that I always get meaningful error messages if I use a function wrongly.
-
-I can work on a module and change a hundred lines of code in three different interacting functions - I build my project, and once I eliminate all the obvious bugs that the compiler complains about, the executables just work as they are intended to! I hardly ever manage to produce a crash bug - my thread handling is 99% clean and I don't cause race conditions or deadlocks. And when I decide to implement something more complex, it ends up falling apart into many easy steps that can be done with the tools of my framework.
-
-&amp;#x200B;
-
-This post is not intended to pat myself on the back, but rather to re-emphasize
-
-**TL;DR Damn, does a clean and structured project feel rewarding! :)**
-## [10][A lib for adding a stacktrace to every c++ exception in windows platform](https://www.reddit.com/r/cpp/comments/ht93d5/a_lib_for_adding_a_stacktrace_to_every_c/)
-- url: https://www.reddit.com/r/cpp/comments/ht93d5/a_lib_for_adding_a_stacktrace_to_every_c/
----
- exceptions-stacktrace is a c++17 library which its purpose is to add a stacktrace to exception, even if it was thrown from some external lib you use like stl/boost/any other third party lib, with no code changes to your original code.  
-
-https://twitter.com/ykfre1/status/1284308246472339457?s=20
-## [11][C++ Template Library for Probabilistic Programming](https://www.reddit.com/r/cpp/comments/htbv8e/c_template_library_for_probabilistic_programming/)
-- url: https://www.reddit.com/r/cpp/comments/htbv8e/c_template_library_for_probabilistic_programming/
----
-Hi everyone,
-
-I just wanted to share this library [autoppl](https://github.com/JamesYang007/autoppl) that a couple of my friends and I started for a class final project. We found that there was quite a lack of low-level tools for probabilistic programming and wanted to try making something for C++. I have been recently working on it more and have found it to be pretty successful for some examples. Any comments or feedbacks would be appreciated!

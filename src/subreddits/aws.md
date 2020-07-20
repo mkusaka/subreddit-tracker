@@ -21,183 +21,127 @@ u/jeffbarr Is this the experience AWS is hoping to get with their testing partne
 For what its worth, people should IGNORE the advice that the web chat is the fastest way of getting help.  Find the phone number and dial and re-dial it as fast as you can when you get a busy signal.  Despite the fact that it took 20+ minutes to get the number to pickup (and was 'waiting' 20 minutes less from the phones point of view) I got a faster response from someone on the phone.  Web based chat never picked up, even though I left it running during my entire phone conversation.
 
 *Update #2*: It took two more days than the charge, but the refund did show up in the correct amount on my credit card.  I am actually quite surprised.
-## [2][ECS - our server response time has dropped from 0.3s to 2.5s - part 2](https://www.reddit.com/r/aws/comments/htxrzr/ecs_our_server_response_time_has_dropped_from_03s/)
-- url: https://www.reddit.com/r/aws/comments/htxrzr/ecs_our_server_response_time_has_dropped_from_03s/
+## [2][Amplify: What is the best approach to customize sign up?](https://www.reddit.com/r/aws/comments/huivpb/amplify_what_is_the_best_approach_to_customize/)
+- url: https://www.reddit.com/r/aws/comments/huivpb/amplify_what_is_the_best_approach_to_customize/
 ---
-Hi everyone, wanted to thank you all for your contributions, your response was fantastic and so helpful. I resolved my CPU cloudwatch issue, which was due to a very low default cpu setting (thanks [rehevkor5](https://www.reddit.com/user/rehevkor5/) &amp; [jIsraelTurner](https://www.reddit.com/user/jIsraelTurner/)).
+I'm building a web application, using Amplify's Auth module and its components to help me out interfacing with Cognito and providing authentication.  
+**I need to customize Amplify's sign up process so that users are signed up (to Cognito) with an auto-generated username**, instead of them creating their own username. The users will just fill in their email and password during sign up, and then also for sign in (the username will be used only internally, hidden from users).
 
-I have also ruled out a number of things in my first post which are not causing the 2.2s discrepancy. [Previous post here.](https://www.reddit.com/r/aws/comments/htgbnj/ecs_our_server_response_time_has_dropped_from_03s/)
+So I need a slight modification to the sign up process.
 
-1. It isn't related to the php version, apache version or the code as far as I can tell.
-2. It isn't related to the RDS.
-3. EFS isn't causing this issue.
+**What is the recommended approach to do this?**  
+(taking in consideration also the recent updates to the Amplify framework)
 
-I ruled these all out by setting up an identical site without a certificate. This site has a TTFB of 0.1s.
+So far I've found these possibilities, but I don't know which is right:  
 
-I'm now assuming my problem is related to my load balancer or is something to do with the certificate or Route53.
 
-My ALB has two listeners:
+1. **Extend the** `Component` **class overriding its** `signUp` **method** (in which I will call [Auth.signUp](https://aws-amplify.github.io/amplify-js/api/classes/authclass.html#signup) myself and pass it my auto-generated username together with the email and password the user filled in the form).  
+Example: [https://egghead.io/lessons/react-native-manually-sign-up-new-users-in-react-with-aws-amplify-auth-class](https://egghead.io/lessons/react-native-manually-sign-up-new-users-in-react-with-aws-amplify-auth-class)   
 
-`HTTP:80 - redirecting to HTTPS://#{host}:443/#{path}?#{query}HTTPS:443 - forwarding to http-target-group w/ ssl certificate`
+2. **Extend the** `SignUp` **component class overriding its** `handleSubmit` **event handler** (calling Auth.signUp as described above).  
+Example: [https://github.com/aws-amplify/amplify-js/issues/1436](https://github.com/aws-amplify/amplify-js/issues/1436)   
 
-I direct the domain to the ALB using an Alias record in Route53. I use google lighthouse to get the TTFB value. The http-target-group directs to a randomly assigned port on the EC2 target, which is created by ECS.
+3. **Pass a custom function as a prop to** `handleSubmit` **to the sign up component** (calling Auth.signUp as described above).  
+Example: [https://github.com/aws-amplify/amplify-js/issues/5480](https://github.com/aws-amplify/amplify-js/issues/5480)  
 
-I use this meta tag `&lt;meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"&gt;` as the server assumes it is running on HTTP because traffic enters on port 80. This ensures the browser loads everything over HTTPS.
+4. **Use the sign up component** `formField` **property to pass a default value to the username form field, then hide this field with CSS** (I don't even know if this is possible, and it sounds too gimmicky to me and maybe risky)  
+Example: [https://docs.amplify.aws/ui/auth/authenticator/q/framework/react#custom-form-fields](https://docs.amplify.aws/ui/auth/authenticator/q/framework/react#custom-form-fields)
 
-On the "fast" version, I just have `HTTP: 80 forwarded to http-target-group` and it works fine.
+**I think one of these ways (or some other) may be the proper way of accomplishing it, but I don't have the code-wisdom to know it. So, if anyone can illuminate me on this it would be very helpful.**
 
-&amp;#x200B;
+Ps: I'm using Svelte as framework, so I'm using the Web Components version of Amplify's components (and not React, Vue, etc.).
 
-Does anyone have any ideas? I'd also welcome advice on configuring the load balancer.
-## [3][Looking for advice on how best to store data in a serverless project: DynamoDB, Athena/S3 or Aurora Postgres Serverless](https://www.reddit.com/r/aws/comments/htpjzi/looking_for_advice_on_how_best_to_store_data_in_a/)
-- url: https://www.reddit.com/r/aws/comments/htpjzi/looking_for_advice_on_how_best_to_store_data_in_a/
+Thanks for reading this!
+## [3][Question about Launch Templates](https://www.reddit.com/r/aws/comments/huj9g8/question_about_launch_templates/)
+- url: https://www.reddit.com/r/aws/comments/huj9g8/question_about_launch_templates/
 ---
-I have a question about a project I'm doing to learn more about serverless technologies on AWS. Here are the goals of the project:
+ is it possible to have a Launch Template with a list of AMIs to spin up differently configured instances? 
 
-* Collect and consolidate Quarterly 13F filing data from the SEC
-* Generate a single CSV file containing all holdings from every 13F filing since 2013
-* Use only serverless technologies on AWS
-* Define and deploy all of the project infrastructure using AWS CDK
-* Learn more about the SEC, 13F and do analytics on the collected data
-* Share my experience and get feedback on serverless architecture patterns and best practices
-
-Here's my approach so far:
-
-[AWS Serverless architecture for consolidating 13F filing data from the SEC](https://preview.redd.it/z4uoyr7hyob51.png?width=761&amp;format=png&amp;auto=webp&amp;s=bb2fcf2fea3a9742cfe09ed8de08441792162a11)
-
-1. The SEC makes available a file each quarter that contains a list of all SEC filings, including 13F filings.
-
-* The file is called the `Master Index of EDGAR Dissemination Feed`
-* The file contains the following fields: `CIK|Company Name|Form Type|Date Filed|Filename`
-* There are about 200,000+ filings per quarter, \~6,000 of which are 13F filings
-* This file will be uploaded to an S3 bucket (`feed_bucket`) that triggers a Lambda function (`feed_lambda`)
-
-1. `feed_lambda` parses the Quarterly file and sends messages to an SQS Queue
-
-* The messages sent to SQS contain the information from each row that is a 13F filing: `CIK` (an company index), `Company Name`, `Form Type` (there are some variants to 13F filings), `Date Filed` and `Filename`
-* `Filename` is the location of the 13F filing on `https://www.sec.gov/Archives/`, for example `https://www.sec.gov/Archives/edgar/data/1000097/0001000097-19-000001.txt`.
-* SQS messages are processed by by a lambda function called `save_filing`
-
-1. `save_filing` fetches 13F filings from `sec.gov` and saves these raw files to S3
-
-* The `save_filing` Lambda function process up to 10 SQS messages at a time.
-* `save_filing` saves raw `.txt` file filings to a `filings` S3 bucket that triggers a `process_filing` Lambda function.
-
-1. `process_filing` uses regular expressions and Python's native XML parsing library to read the filing data
-
-* Each filing contains a list of holdings that are read into a `namedtuple`. Additional processing, cleaning and validation are done for each holding listed in the given 13F filing.
-* To save the cleaned holdings, I'm unsure of which option would the best fit. Some options I have considered are listed below:
-
-## Options for storing 13F data
-
-1. Store each holding as an Item in DynamoDB
-
-* I think that getting data in to DynamoDB would be easy, but there's no easy way to export the full set of items from **DynamoDB** (possibly over 100 million items)
-* I haven't used DynamoDB before and I'm interested in trying it out.
-
-1. Save holding data to CSV files stored in an S3 bucket and export the data using a `select *` query on **AWS Athena**
-
-* This could be a good option, but I would have lots of small files which might not be optimal for use with Athena
-* The speed of the query to export data is not super important, but the size of the dataset is nowhere close to the petabyte scale that Athena can handle
-
-1. Store data in **Aurora Postgres Serverless**
-
-* I'm familiar with Postgres, but I'm not sure if I need it
-* This would also involve a VPC which would make things slightly more complicated, I think
-
-As I mentioned above, my goal is to export large CSV with all 13F holding data that I can use in a Business Intelligence tool such as Google Data Studio, Tableau or Qlik.
-
-Does anyone have suggestions on how best to store data for this project?
-## [4][AWS Glue Job Runs forever with a joined PySpark dataframe but not the other dataframes](https://www.reddit.com/r/aws/comments/htodbb/aws_glue_job_runs_forever_with_a_joined_pyspark/)
-- url: https://www.reddit.com/r/aws/comments/htodbb/aws_glue_job_runs_forever_with_a_joined_pyspark/
+As far as I’m aware, the ratio between AMIs and LT is 1:1. However in my case I want to have a list of AMIs in my launch template not just one.
+## [4][Cognito CSV Import Broken?](https://www.reddit.com/r/aws/comments/huey2g/cognito_csv_import_broken/)
+- url: https://www.reddit.com/r/aws/comments/huey2g/cognito_csv_import_broken/
 ---
-As you can see below, at line 48, I am converting the dataframe df3 into a dynamic frame. There is code out of view that then writes the dynamic frame to a specific location.
+I'm trying to test CSV importing for users into Cognito however am getting some strange errors in the console:
 
-The issue is using df3, which is a dataframe created via the joining of 2 other dataframes, causes the Glue Job to run forever. I know if I change line 48 to use the other dataframes, df2, df1, or df, the glue job runs successfully and stops.
+https://preview.redd.it/44m54ggwoxb51.png?width=1920&amp;format=png&amp;auto=webp&amp;s=eb568983e58c9057f970dea0d08f6f5a594a2d4e
 
-I also know that df3 is created successfully, as I tested it in a jupyter notebook. I'm not sure why the glue job would run forever. Any ideas?
+The error message to look at is:
 
-https://preview.redd.it/4z97v45xlob51.png?width=1093&amp;format=png&amp;auto=webp&amp;s=497e0c96b27c576f61ee02b449cbe9f5f55cdf42
-## [5][If you were tasked to build a consumer Internet app (say Instagram), and have confidence that it grow big, would you build it entirely with serverless (api-gateway + lambda) or backend or server oriented (ECS)?](https://www.reddit.com/r/aws/comments/htrfco/if_you_were_tasked_to_build_a_consumer_internet/)
-- url: https://www.reddit.com/r/aws/comments/htrfco/if_you_were_tasked_to_build_a_consumer_internet/
+    Refused to connect to ...
+
+This looks like an error in the Cognito javascript.
+
+I'm pretty certain it's not an issue with the CSV file; in the past, incorrect CSV files can still be uploaded but when you go to process it (by clicking Start), an error occurs in the web interface (the failed jobs show this):
+
+https://preview.redd.it/1dmx2gdzwxb51.png?width=1202&amp;format=png&amp;auto=webp&amp;s=7ec8361c5b22ea76a0c64b79dd84a64dbb95b2e0
+
+Is anyone else able to create import jobs with a CSV file, or having a similar error?
+## [5][I need help to move multiple subdomains on single EC2 instance?](https://www.reddit.com/r/aws/comments/hujd0m/i_need_help_to_move_multiple_subdomains_on_single/)
+- url: https://www.reddit.com/r/aws/comments/hujd0m/i_need_help_to_move_multiple_subdomains_on_single/
 ---
-A couple of friends had an interesting thought experiment last week, roughly as stated in the title.
+Dear AWS community,
 
-“and have confidence that it grow big” — this point seemed to lead to to go ECS route 
-  - because of long term infrastructure cost seems to favor server model
-  - also because of well understood scalability model
+I need a bit of help to save my EC2 server costs.
 
-I felt it seemed reasonable, but I am not fully convinced because those discussions were fairly high level , not data driven.
+I have 4 EC2 (+4 RDS) instances, each running its own subdomain - www.&lt;domain&gt;.com, abc.&lt;domain&gt;.com, def.&lt;domain&gt;.com, xyz.&lt;domain&gt;.com.
 
-Anyone had similar analysis?
-## [6][EKS Fargate Spot capacity provider ever coming?](https://www.reddit.com/r/aws/comments/hty34m/eks_fargate_spot_capacity_provider_ever_coming/)
-- url: https://www.reddit.com/r/aws/comments/hty34m/eks_fargate_spot_capacity_provider_ever_coming/
+Currently, none of the is generating any revenue, so to save the costs, I wish to merge them all to single EC2 instance.
+
+Each of the webcode is setup to deploy through bitbucket code based CI/CD (continuous development/integration)
+
+Any pointers are really helpful.
+
+Thanks!
+## [6][Question about free tier for AWS Lambda](https://www.reddit.com/r/aws/comments/hughfl/question_about_free_tier_for_aws_lambda/)
+- url: https://www.reddit.com/r/aws/comments/hughfl/question_about_free_tier_for_aws_lambda/
 ---
-From the looks of it, the feature request is more dead than alive  
-[https://github.com/aws/containers-roadmap/issues/622](https://github.com/aws/containers-roadmap/issues/622) 
+I want to start learning AWS Lambda and deploy a few functions. The services I believe I will use are 
 
-Does anyone have any inside scoop?
+* Lambda
+* Gateway (to convert to my lambda functions to REST APIs)
+* DynamoDB
 
-IMHO, this is will be the ultimate kubernetes cloud offering once realized. What do you think?
-## [7][ECS - our server response time has dropped from 0.3s to 2.5s](https://www.reddit.com/r/aws/comments/htgbnj/ecs_our_server_response_time_has_dropped_from_03s/)
-- url: https://www.reddit.com/r/aws/comments/htgbnj/ecs_our_server_response_time_has_dropped_from_03s/
+I know that AWS has a 12 month free trial in which all should be covered. What I am not sure is what will happen after this trial period is over.
+
+**Lambda**: Is it true that I get 1 million requests per month even after the free tier?
+
+**Gateway:** After the 12 months, do you have to pay no matter what? I think this is true after reading the pricing page: [https://aws.amazon.com/api-gateway/pricing/](https://aws.amazon.com/api-gateway/pricing/)
+
+**DynamoDB**: I was a little confused about their free tier here: [https://aws.amazon.com/dynamodb/pricing/](https://aws.amazon.com/dynamodb/pricing/)
+
+Base on [this page](https://aws.amazon.com/free/?sc_icontent=awssm-evergreen-free_tier&amp;sc_iplace=2up&amp;trk=ha_awssm-evergreen-free_tier&amp;sc_ichannel=ha&amp;sc_icampaign=evergreen-free_tier&amp;all-free-tier.sort-by=item.additionalFields.SortRank&amp;all-free-tier.sort-order=asc&amp;awsf.Free%20Tier%20Types=tier%23always-free&amp;awsm.page-all-free-tier=1), I see that I'm getting 1 million requests per month on **Lambda** and 25 GB of **DynamoDB** storage. Just to confirm, will I continue getting these services after the 12 month free tier? Does this mean that I will only have to pay for AWS **Gateway**?
+
+Sorry for the basic questions. I just wanted to confirm before creating an account, and didn't want to risk getting a high bill
+## [7][What should be the IAM policy to provide S3 access to a federated user of a different AWS account?](https://www.reddit.com/r/aws/comments/huh86g/what_should_be_the_iam_policy_to_provide_s3/)
+- url: https://www.reddit.com/r/aws/comments/huh86g/what_should_be_the_iam_policy_to_provide_s3/
 ---
-I've been updating a legacy PHP app (no version control for 10 years) and I've gotten it working pretty nicely on AWS now. I have some problems I can't really fix.
-
-1. CPU usage for the ECS service is always above 130%. I don't understand why as the CPU for the EC2 box is only 8%, docker process says the same. This isn't an intensive site, it's just some really old PHP code.
-2. We have a response time of 2.5s instead of 0.3s. In Google lighthouse this is indicated by \`Reduce server response times (TTFB)**\`.** The apache server setup is the same, and the code running the site is the same. Only difference is my code runs on ECS instances, and the old code runs directly on an IP exposed EC2 box.
-
-Our setup is roughly this:
-
-Application Load Balancer
-
-2 target groups, HTTPS and HTTP.
-
-HTTP does a 301 redirect to out HTTPS group. (I set this up as the site kept defaulting to HTTP - is this normal?)
-
-At the moment we have 1 cluster, 1 service and 1 task running on ECS using EC2.
-
-Our EC2 box is dedicated, t2 medium.
-
-Our files are on EFS. Here we store all of our cache files, image files and session files so they are shared.
-
-We have a certificate issued by Route53 and the site validates fine.
-
-Docker is running Apache *20051115*, the site is on PHP5.4 and the database is MySQL 5.5.
-
-Does anyone have any idea what could be happening? Thanks!
-## [8][Essential knowledge javascript and typescript for AWS CDK](https://www.reddit.com/r/aws/comments/htk5ad/essential_knowledge_javascript_and_typescript_for/)
-- url: https://www.reddit.com/r/aws/comments/htk5ad/essential_knowledge_javascript_and_typescript_for/
+I do know to provide IAM policies to normal IAM users of other accounts but how do I provide access to federated login users? Please help me here. Thank you!
+## [8][Looking for a website I remember being posted here](https://www.reddit.com/r/aws/comments/huh7nm/looking_for_a_website_i_remember_being_posted_here/)
+- url: https://www.reddit.com/r/aws/comments/huh7nm/looking_for_a_website_i_remember_being_posted_here/
 ---
-In our company, we've started the migration process to AWS CDK. Does someone know which level of typescript and javascript I should have to work properly with this IaaC? I'm no novice in programming and have three years of experience with python. Could you recommend me a list of books/course/videos for studying js and ts? P.S. I know that AWS CDK is also available in python, but we decided to use typescript because it's a native language for it.
-## [9][Running my First API on AWS](https://www.reddit.com/r/aws/comments/htsihp/running_my_first_api_on_aws/)
-- url: https://www.reddit.com/r/aws/comments/htsihp/running_my_first_api_on_aws/
+Hey, sorry if this is a dumb post.   
+  
+I remember seeing a comment somewhere here regarding a website of an AWS expert who will send your CV to his mail list if you complete an AWS hosted website with a load of steps including good source control management and CI/CD.  
+  
+Does anyone know the link?  
+  
+Looking for a mate who is trying to build up a GitHub portfolio for his CV.
+## [9][AWS Static Website Cost Risks?](https://www.reddit.com/r/aws/comments/hu857x/aws_static_website_cost_risks/)
+- url: https://www.reddit.com/r/aws/comments/hu857x/aws_static_website_cost_risks/
 ---
-I am planning on running my first API to connect Salesforce Data to my website.
+Are there any cost associated risks to hosting a static personal blog on AWS with resources stored in S3?
 
-&amp;#x200B;
+For example if there was a DDOS attack would I be 100% responsible for footing the bill if it somehow wasn’t or only partially blocked by AWS shield? (I’m sure I could go a million years before getting some kind of attack on a blog, but I still want to know if there are risks no matter how insignificant)
 
-I am using the Flask framework and am struggling with understanding:
-
-&amp;#x200B;
-
-1. Which Amazon Product Should I be Using - Lambda Functions?
-2. What the price would be for me to host this for an application that would receive under 1 million requests.
-
-&amp;#x200B;
-
-I have never hosted anything on AWS and this feels a bit daunting. Reaching out to the community for some guidance!
-## [10][Couchbase as a service](https://www.reddit.com/r/aws/comments/htp2a6/couchbase_as_a_service/)
-- url: https://www.reddit.com/r/aws/comments/htp2a6/couchbase_as_a_service/
+I can can create a website with HTML, bootstrap, css, and JavaScript, but I’m definitely not a developer or architect. I’m just looking for cheap web hosting options that give me complete control of the website.
+## [10][odd question is it possible to separate a single beanstalk api that does login,registration,verification to their own route 53 record set without the other routes being accessible and without splitting beanstalk project?](https://www.reddit.com/r/aws/comments/hukri6/odd_question_is_it_possible_to_separate_a_single/)
+- url: https://www.reddit.com/r/aws/comments/hukri6/odd_question_is_it_possible_to_separate_a_single/
 ---
-Short question as in topic, is there any couchbase as a service thing available on AWS? Thanks for feedback
-## [11][Different NICE-DCV instances in unique EC2 instance](https://www.reddit.com/r/aws/comments/htpgdt/different_nicedcv_instances_in_unique_ec2_instance/)
-- url: https://www.reddit.com/r/aws/comments/htpgdt/different_nicedcv_instances_in_unique_ec2_instance/
+or is it better to split them up to their own beanstalk
+like Dashboard , Verification ,Registration.
+## [11][Attempting to upload files to AWS - Error - "No etag was provided by S3."](https://www.reddit.com/r/aws/comments/huef1s/attempting_to_upload_files_to_aws_error_no_etag/)
+- url: https://www.reddit.com/r/aws/comments/huef1s/attempting_to_upload_files_to_aws_error_no_etag/
 ---
-My friend and I would like to access the same Windows EC2 instance with different sessions.
+First time I've received this error, have been using AWS for years...  I've repeatedly got this error trying to upload images to my AWS today, and can't seem to find anything online regarding this.
 
-We've read the documentation, yet we don't understand the notion of session with this tool. Does 1 NICE-DCV Server = 1 Session? Or is it something else?
-
-I'd appreciate a clarification on this topic.
-
-Thanks in advance!
+Any chance someone around here knows what could be causing this?

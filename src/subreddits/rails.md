@@ -39,267 +39,142 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][How do you think votes or scores are handled in gargantuanly gigantic web apps? Help me guess how they do it...](https://www.reddit.com/r/rails/comments/hude4e/how_do_you_think_votes_or_scores_are_handled_in/)
-- url: https://www.reddit.com/r/rails/comments/hude4e/how_do_you_think_votes_or_scores_are_handled_in/
+## [3][Looking for a mentor/coding buddies](https://www.reddit.com/r/rails/comments/hv74j4/looking_for_a_mentorcoding_buddies/)
+- url: https://www.reddit.com/r/rails/comments/hv74j4/looking_for_a_mentorcoding_buddies/
 ---
-I want to make a [reddit-like web app](https://www.reddit.com/r/RedditAlternatives/comments/hi97fz/list_of_active_reddit_alternatives_v5/) using Rails, but I've always wondered how these platforms handle so much traffic, like votes, post submissions, posts/comments sorting (hot, rising, etc.) in Reddit or likes/reactions in Facebook, there must be millions of these events within a couple of hours. Don't tell me Rails is not efficient for these kinds of apps, GitHub was built on Rails.
+Hi, everyone. Over the past 5 years I've been working as a solo in-house dev for two companies. In the first role I developed a CMS-backed corporate website, and in the second I developed a web app. Both projects are Rails-based and both are up and running in production (but the CMS and app parts are not public).
 
-I come up with very vague ideas, like:
+While I'm comfortable with getting a Rails app to production, there are many aspects of Rails and webdev in general that I'm not familiar with due to being a solo dev.
 
-* When making a comment or upvoting/downvoting, run a background job to save that record (`comment` or `vote`) in the database. I guess to calculate the number of votes or comments we shouldn't run a `count` query, but the best option would be to have columns like `votes_count`, `comments_count`, etc., which should be updated by the same background jobs (obviously we would have to use a huge pool of mutexes to atomically increase the values of these columns)
-* I guess that there are processes that calculates and updates the score of each post submission and comment and saves them (in columns like `score_hot`, `score_rising`, etc.) from time to time. This may be done with an ultra optimized Postgres (or another DBMS) function and for the sort-paginate (for each subreddit or Facebook group) we could use some Redis low-level caching, that way we don't do a query for each visit, only once every few minutes.
-* etc.
+If any experienced developers would be willing to give me some guidance on how things are done in bigger companies/teams or in enterprise level apps, I'd really appreciate the help. As some examples, I'd like to know more about user authentication (e.g. a Rails API backend with a SPA frontend), error handling and TDD.
 
-But what happens if for some reason several instances of Redis die and I can't cache for a couple of seconds, the databases would explode doing queries, and how are the logs handled? I'm full of questions, how do you think these apps handle all these stuff that seem unmanageable? What kind of databases are most useful in these cases? Or is it enough with postgres for most tasks?
+I'd also really enjoy chatting with anyone who is in a similar position as me, as I don't really know anyone else who codes with Rails and I know how frustrating and lonely it can be as a solo dev.
 
-I invite you to think about these issues or if someone with more experience knows the answers, please enlighten us.
-## [4][Roadmap Ruby and Ruby On Rails](https://www.reddit.com/r/rails/comments/huf6mq/roadmap_ruby_and_ruby_on_rails/)
-- url: https://www.reddit.com/r/rails/comments/huf6mq/roadmap_ruby_and_ruby_on_rails/
+A bit more about me: I'm an Australian living in Hong Kong and apart from webdev, I research computational linguistics and NLP.
+
+Feel free to get in touch.
+## [4][Do you run commands remotely using Rails?](https://www.reddit.com/r/rails/comments/huzqhf/do_you_run_commands_remotely_using_rails/)
+- url: https://www.reddit.com/r/rails/comments/huzqhf/do_you_run_commands_remotely_using_rails/
 ---
-You know of a roadmap (similar [https://roadmap.sh/roadmaps](https://roadmap.sh/roadmaps) [https://www.quora.com/What-is-Ruby-On-Rails-framework-learning-road-map](https://www.quora.com/What-is-Ruby-On-Rails-framework-learning-road-map)) but for Ruby or Ruby On Rails, I'd like to create one for Ruby and another for Ruby On Rails, but first I'd like to know if you know of one that already exists and thus extend it or develop it as a learning path that can help novice programmers in their learning. Thanks for your input!
-## [5][Rookie here, wanting to start hitting front-end a little stronger since I'm somewhat confident on building a functional back-end.](https://www.reddit.com/r/rails/comments/hucftn/rookie_here_wanting_to_start_hitting_frontend_a/)
-- url: https://www.reddit.com/r/rails/comments/hucftn/rookie_here_wanting_to_start_hitting_frontend_a/
+Currently using Rails + Sidekiq + Net-Ssh gem to run commands, wait on responses, and perform additional steps. While this is extremely fast and convenient, it's also unreliable. Over the past several weeks, I've been absolutely exhausted trying to troubleshoot why my sidekiq workers are hanging at random, unpredictable times during the execution of sidekiq workers that may run for minutes at a time. 
+
+Mike has been an absolutely amazing amount of help thus far but I find that I'm only able to make little bits of progress with researching and understanding the "behind the scenes" of threading, "thread-safe", sidekiq, and Rails 5. 
+
+For example, I have a worker that runs every minute and lasts 3 seconds. Usually runs just fine. However, I have another worker that, when a task is executed based on sidekiq's perform_at schedule, it starts a worker that uses the net ssh gem. 
+
+Sometimes this worker may last a few seconds and sometimes it may last 20 minutes (or longer). However, in very random and unreproducible circumstances, it'll cause other sidekiq workers to "back up" if you will. They just queue and I wake up with 700 workers in the queue that haven't processed because of one worker that's using this net ssh gem that may have not finished. 
+
+Essentially this worker uses net ssh to run commands, wait on responses, runs other tasks, and then finishes. Depending on the size of my customers' network, the time just simply varies greatly.
+
+Here are the important key things that I'm trying to accomplish:
+
+- Run commands in parallel and remotely and know when they finish
+- Use results of previously run commands to determine next command to run
+- Currently using an ssh connection (obviously) and would prefer this channel if possible
+- Scalability
+
+Does anyone do anything very similar by chance?
+## [5][Using Mocks/Stubs with Rspec](https://www.reddit.com/r/rails/comments/hv4cgn/using_mocksstubs_with_rspec/)
+- url: https://www.reddit.com/r/rails/comments/hv4cgn/using_mocksstubs_with_rspec/
 ---
-As  the title says, I have a grand total of maybe 5 months of  self-studying. I'm comfortable with building a functional back-end and  integrating multiple libraries using Ruby on Rails. I'm also pretty  comfortable using HTML &amp; CSS, along with some frameworks such as:  Bulma, SemanticUI, Bootstrap, MaterializeCSS, and (my personal favorite)  TailwindCSS. But the current state of the internet leaves these wanting  a lot, particularly in the field of JS. Which I have absolutely no clue  about. It looks like something straight out of hell to read through. So  I have a mild plan to learn it, it's a simple 3 step familiarization  process.
+Hi, I need help with stubing and mocking with rspec.
+So here is a very simplified version of my problem. I want to mock Balance class that is instantiated inside the SomethingSmart class.
 
-3 resources: W3schools, FreeCodeCamp, and the TypeScript Deep Dive book.
+```ruby
+class SomethingSmart
+  def run
+    account_balance = Balance.new.fetch_balance
 
-3 weeks: each covering the aforementioned in their respective order.
+    if account_balance &lt; 1000
+      # return something
+    else
+      # return something else
+    end
+  end
+end
+```
 
-3  goals: Understand JS, replicate/personalize JS, build at least 3  features without vicariously googling every other line of code as if my  life depended on it.
+```ruby
+describe SomethingSmart do
+  subject { described_class.new.run }
+  context 'when balance is under the limit' do
+    before do
+      # here I want to mock the Balance class and fetch_balance method
+    end
 
-Thoughts/recommendations?
+    it 'does something' do
+      expec(subject).to eq('something')
+    end
+  end
+end
+```
 
-Bonus  question: Would this be handled as usual  (via WebPacker:Install:Typescript and just type away in the Apps &gt;  Javascripts &gt; Packs &gt; MyFile.js/ts/tsx)? Or is there some super  annoying and buggy method to incorporating TS front end to the app?
-
-TL;DR
-
-Wanting to improve front-end skills. Unsure of what the best way to do it is. Am I headed the right direction or getting lost in the infinite stream of information?
-
-EDIT:
-
-Fixed wordiness.
-## [6][Noob question: How to use module namespaced classes placed under /app](https://www.reddit.com/r/rails/comments/huhxnu/noob_question_how_to_use_module_namespaced/)
-- url: https://www.reddit.com/r/rails/comments/huhxnu/noob_question_how_to_use_module_namespaced/
+So how would I mock this. I tried to google the solution and to be honest I felt kinda lost. It seems that allow_any_instance_of method is deprecated and is not used anymore for some reason. Whatever I copy/paste and try is not working. And I'm not sure how to use doubles here since I'm not using dependency injection and passing Balance class as an argument.
+## [6][is there a gem for linked form elements](https://www.reddit.com/r/rails/comments/hv2k96/is_there_a_gem_for_linked_form_elements/)
+- url: https://www.reddit.com/r/rails/comments/hv2k96/is_there_a_gem_for_linked_form_elements/
 ---
-Hi guys
+before i go and start putting ideas to code, i wanted to see if it already exists. I’d imagine it’s an obscure gem.
 
-I apologize if this is a silly question but so far I haven't found a clear answer yet.
+i want to build server side rails forms but with inputs that are dependent upon other inputs in the form. for example, if you have two select tags, one for state and one for city, the city select tag should change its list of options depending on what the user selects for the state select tag. the catch is, i want to do this without javascript and with css but without actually writing all the css rules.
 
-I know that Rails auto loads the folders stored under /app and sure enough, when I make a folder and place a file directly in that folder, it does load that class automatically.
+I understand that this will significantly increase the css and html on page render but i have some js fatigue and i’m in a legacy angular 1.x app. 
 
-However, I would love to be able to namespace those classes under a module so I can call them in my rails code like so Module::Class.  
+most of the angular was just binding the form elements to one another so that combinations of values were valid. so i started to wonder if i can create ruby-land form helpers.
+## [7][eil5 how can I implement JWT with devise?](https://www.reddit.com/r/rails/comments/hv3yn0/eil5_how_can_i_implement_jwt_with_devise/)
+- url: https://www.reddit.com/r/rails/comments/hv3yn0/eil5_how_can_i_implement_jwt_with_devise/
+---
+I searched a lot about this particular subject. I found a lot of blogs, video tutorials, etc. But most of them actually contradict each other and some of them are just about the implementation of the user by yourself. 
 
+I really like devise, as it's a safe and secure way to implement user management system. So, I'm currently writing an API, and JWT authentication is really needed.
+## [8][Question on "static" videos.](https://www.reddit.com/r/rails/comments/huxkqd/question_on_static_videos/)
+- url: https://www.reddit.com/r/rails/comments/huxkqd/question_on_static_videos/
+---
+So I'm working on a project (turned out to be quite large based on my rookie skillset) and I sort of hit a big fat "?" on handling video. I know AWS offers nice features for uploading files (videos or photos) into the application and they're sort of the gold standard for handling them based on my current research. However, my Rich Text can already take in an image, and I don't really need such a robust service as AWS to host videos or anything like that. At least not considering this is just a personal project (extension to my portfolio). Wouldn't it be easier to just use embedded code for a YouTube video?
+## [9][prefer stimulus reflex over js frameworks](https://www.reddit.com/r/rails/comments/hutotr/prefer_stimulus_reflex_over_js_frameworks/)
+- url: https://www.reddit.com/r/rails/comments/hutotr/prefer_stimulus_reflex_over_js_frameworks/
+---
+For people who worked with ROR, do you prefer Stimulus Reflex over js frameworks like Vuejs or react?
+## [10][Morph Modes in Stimulus Reflex](https://www.reddit.com/r/rails/comments/huvrav/morph_modes_in_stimulus_reflex/)
+- url: https://www.reddit.com/r/rails/comments/huvrav/morph_modes_in_stimulus_reflex/
+---
+Stimulus Reflex v3.3.0 is adding different morph modes, and I think it could be a game changer. I put together a short demo if you're interested: [https://youtu.be/VoA86Id3vjg](https://youtu.be/VoA86Id3vjg)
+## [11][Rails 6 Production Master.key](https://www.reddit.com/r/rails/comments/huuvym/rails_6_production_masterkey/)
+- url: https://www.reddit.com/r/rails/comments/huuvym/rails_6_production_masterkey/
+---
+I am in the middle of setting up my production environment on my server in order to go live. I have come to something I am not familiar with enough to move forward. When I attempt to set up my `rake db:migrate` for production, I get the following error:
 
-Now, when I try to wrap my class in a module or use subfolders in the folder placed under /app, I'm getting errors regarding uninitialized constants.   
+`ArgumentError: Missing \`secret_key_base\` for 'production' environment, set this string with \`rails credentials:edit\``
 
+When I run `EDITOR="vim" bin/rails credentials:edit`
 
-I tried adding the path under auto\_load\_paths in application.rb but to no avail.
+I get the following response: 
+
+`Adding config/master.key to store the encryption key: 111111111111111111111111`
+
+`Save this in a password manager your team can access.`
+
+`If you lose the key, no one, including you, can access anything encrypted with it.`
+
+`create  config/master.key`
+
+`Couldn't decrypt config/credentials.yml.enc. Perhaps you passed the wrong key?`
 
 &amp;#x200B;
 
-Is there anyone that can help me out?  
+I am not sure if I missed something in the development environment or if this something that I need to handle on the server itself.  
 
+I am running Rails 6.0.2, Ruby 2.6.3, Capistrano 3.14, Apache2, Passenger.
 
-Thanks in advance!
-## [7][Getting Rubocop Lint to work on VS Code for Windows](https://www.reddit.com/r/rails/comments/hufc93/getting_rubocop_lint_to_work_on_vs_code_for/)
-- url: https://www.reddit.com/r/rails/comments/hufc93/getting_rubocop_lint_to_work_on_vs_code_for/
+I am happy to give any file code that I need to to figure this out. 
+
+Thanks!!
+## [12][[HELP] Does having hundreds of connections to hundreds of ActionCable channels make sense?](https://www.reddit.com/r/rails/comments/hus8qk/help_does_having_hundreds_of_connections_to/)
+- url: https://www.reddit.com/r/rails/comments/hus8qk/help_does_having_hundreds_of_connections_to/
 ---
-Hey guys,
+I have a fairly complex data model with numerous models that are all connected to a Person. I have a dashboard that displays, possibly, hundreds of Persons and each row of that dashboard can display information from different models that Person has. For example, it could pull their Car, it could pull their Address through their Home, etc. 
 
-Finally got around to trying out WSL for Rails dev on my Windows machine and seems pretty great so far, but I am struggling to get Rubocop/Linter to work with VSCode.
+I also have other views where I am interacting with each Person one at a time. I would like to be able to live-reload all of these associated data points when any part of the Person is updated.
 
-I've read quite a few gists and posts that range from creating a bat that points to the shim your Rubocop is using, to creating a \`.rubocop.yaml\` file and pre-populating a config, to assigning the profile variables as the directions tell you but I'm still having issues.
+The biggest thing holding me back is the performance concern of possible hundreds of users making subscriptions to hundreds of channels each.
 
-&amp;#x200B;
-
-At this point I have the bat - Which occasionally VSCode will tell me "it is not executable".
-
-The bats content is:
-
-`u/echo off`
-
-`wsl "/home/user/.rbenv/versions/2.7.1/bin/rubocop $^(echo '%*' ^| sed -e 's^|\\^|/^|g' -e 's^|\^([A-Za-z]\^)\:/\^(.*\^)^|/mnt/\L\1\E/\2^|g'^)`
-
-I then have settings.json (VSCode) set with
-
-&amp;#x200B;
-
-`{"ruby.rubocop.executePath": "/mnt/c/bin/",// "ruby.rubocop.configFilePath": "/mnt/d/Misc Projects (Coding)/Rails/weatherWalk/.rubocop.yml"}`
-
-I copied out the rubocop.yml because it didn't do anything. Right now when I hit Cntrl-Shift-F to format it tells me "An error occurred during auto-correction." which diving into just takes me to the Rubocop extension page.
-
-&amp;#x200B;
-
-One side-note, and I forget where I even read this but 
-
-`which rubocop`
-
-returns 
-
-`/home/user/.rbenv/shims/rubocop`
-
-Which is slightly different than I have in my .bat file.
-
-Is anyone able to have gotten it to work, or know of a VScode alternative for WSL?
-## [8][Rails yield and content_for weird behavior, `yield :filter` only work if placed after default yield](https://www.reddit.com/r/rails/comments/hu1bb1/rails_yield_and_content_for_weird_behavior_yield/)
-- url: https://www.reddit.com/r/rails/comments/hu1bb1/rails_yield_and_content_for_weird_behavior_yield/
----
-# SOLVED
-
-Lets say i have this partial i am trying to render
-
-    #layouts/_subheader.html.erb 
-    &lt;div class="subheader"&gt; 
-       &lt;%= yield %&gt; 
-       &lt;%= yield :filters %&gt; 
-    &lt;/div&gt;
-
-when i use this partial in a view like this
-
-    &lt;%= render 'layouts/sub_header' do %&gt;   
-       &lt;h2&gt; Content For Yield &lt;/h2&gt; 
-       &lt;% content_for :filters do %&gt;      
-         &lt;h2&gt; Content for Filters &lt;/h2&gt; 
-        &lt;% end %&gt; 
-    &lt;% end %&gt;
-
-i am getting the HTML output as
-
-    &lt;div class="subheader"&gt; 
-       &lt;h2&gt; Content For Yield &lt;/h2&gt; 
-       &lt;h2&gt; Content for Filters &lt;/h2&gt; 
-    &lt;/div&gt;
-
-this works as expected, but the problem arises when i change the order of the yieldtags in the partial
-
-instead of the above, if i rewrite the partial as
-
-    #layouts/_subheader.html.erb 
-    &lt;div class="subheader"&gt; 
-       &lt;%= yield :filters %&gt; 
-       &lt;%= yield %&gt; 
-    &lt;/div&gt;
-
-i am getting output as
-
-    &lt;div class="subheader"&gt; 
-      &lt;h2&gt; Content For Yield &lt;/h2&gt; 
-    &lt;/div&gt;
-
-the content\_for :filtersis not being rendered.
-
-what an i doing wrong here ? is this the correct behavior or am i doing something wrong ?
-
-what should i do if i have to make the content of the yield :filtersappear before the plain yield
-
-&amp;#x200B;
-
-EDIT
-
-&amp;#x200B;
-
-thanks to u/[module85](https://www.reddit.com/user/module85/), u/[pacMakaveli90](https://www.reddit.com/user/pacMakaveli90/), u/[Flimsy\_Pomelo](https://www.reddit.com/user/Flimsy_Pomelo/)
-
-ITS NOW WORKING.
-
-&amp;#x200B;
-
-this is what i did.
-
-    #index.html.erb 
-    &lt;% content_for :filters do %&gt;         
-    &lt;h2&gt; Content for Filters &lt;/h2&gt;  
-    &lt;% end %&gt;   
-    &lt;%= render 'layouts/sub_header' do %&gt;      
-    &lt;h2&gt; Content For Yield &lt;/h2&gt;  
-    &lt;% end %&gt;   
-    
-    
-    #layouts/_subheader.html.erb  
-    &lt;div class="subheader"&gt;         
-       &lt;%= content_for :filters %&gt;         
-       &lt;%= yield %&gt; 
-    &lt;/div&gt; 
-
-&amp;#x200B;
-## [9][Hello guys, trying to build a Rails API but having issues with postgress gem](https://www.reddit.com/r/rails/comments/hu4bba/hello_guys_trying_to_build_a_rails_api_but_having/)
-- url: https://www.reddit.com/r/rails/comments/hu4bba/hello_guys_trying_to_build_a_rails_api_but_having/
----
-Hello everyone, I want to use postgresql database for my rails API but i am unable to bundle install or even install the pg gem on its own. I know I have postgres downloaded because I see the little elephant icon on the top right hand of my imac screen. 
-
-    sehrishbaloch@Sehrishs-iMac ~ % gem install pg
-    Building native extensions. This could take a while...
-    ERROR:  Error installing pg:
-    ERROR: Failed to build gem native extension.
-
-    current directory: /Users/sehrishbaloch/.rvm/gems/ruby-2.6.1/gems/pg-1.2.3/ext
-    /Users/sehrishbaloch/.rvm/rubies/ruby-2.6.1/bin/ruby -I 
-    /Users/sehrishbaloch/.rvm/rubies/ruby-2.6.1/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200719- 
-    1496-1qwk47i.rb extconf.rb
-    checking for pg_config... no
-       No pg_config... trying anyway. If building fails, please try again with
-       --with-pg-config=/path/to/pg_config
-       checking for libpq-fe.h... no
-      Can't find the 'libpq-fe.h header
-    *** extconf.rb failed ***
-    Could not create Makefile due to some reason, probably lack of necessary
-     l.   ibraries and/or headers.  Check the mkmf.log file for more details.  You may
-    need configuration options.
-
-    Provided configuration options:
-	--with-opt-dir
-	--with-opt-include
-	--without-opt-include=${opt-dir}/include
-	--with-opt-lib
-	--without-opt-lib=${opt-dir}/lib
-	--with-make-prog
-	--without-make-prog
-	--srcdir=.
-	--curdir
-	--ruby=/Users/sehrishbaloch/.rvm/rubies/ruby-2.6.1/bin/$(RUBY_BASE_NAME)
-	--with-pg
-	--without-pg
-	--enable-windows-cross
-	--disable-windows-cross
-	--with-pg-config
-	--without-pg-config
-	--with-pg_config
-	--without-pg_config
-	--with-pg-dir
-	--without-pg-dir
-	--with-pg-include
-	--without-pg-include=${pg-dir}/include
-	--with-pg-lib
-	--without-pg-lib=${pg-dir}/lib
-
-    To see why this extension failed to compile, please check the mkmf.log which can be found here:
-
-      /Users/sehrishbaloch/.rvm/gems/ruby-2.6.1/extensions/x86_64-darwin-18/2.6.0/pg-1.2.3/mkmf.log
-
-    extconf failed, exit code 1
-
-    Gem files will remain installed in /Users/sehrishbaloch/.rvm/gems/ruby-2.6.1/gems/pg-1.2.3 for inspection.
-    Results logged to /Users/sehrishbaloch/.rvm/gems/ruby-2.6.1/extensions/x86_64-darwin-18/2.6.0/pg-1.2.3/gem_make.out
-    sehrishbaloch@Sehrishs-iMac ~ % 
-
-
-Thats the error I get
-## [10][[video] Integration Testing Best Practices](https://www.reddit.com/r/rails/comments/hu2rl3/video_integration_testing_best_practices/)
-- url: https://www.reddit.com/r/rails/comments/hu2rl3/video_integration_testing_best_practices/
----
-Watch here: [https://www.semicolonandsons.com/episode/integration-testing-best-practices](https://www.semicolonandsons.com/episode/integration-testing-best-practices)
-## [11][Any way to set up emails on a custom domain with Heroku for free?](https://www.reddit.com/r/rails/comments/hu47jt/any_way_to_set_up_emails_on_a_custom_domain_with/)
-- url: https://www.reddit.com/r/rails/comments/hu47jt/any_way_to_set_up_emails_on_a_custom_domain_with/
----
-I'm looking at options like Mailgun and CloudMailIn and they all need you to be on a paid plan if you want custom domain/email.
-
-Is there any way of setting up my email for free via Gmail or similar?
-## [12][SLIM HTML Help With Flexbox](https://www.reddit.com/r/rails/comments/hu1nea/slim_html_help_with_flexbox/)
-- url: https://www.reddit.com/r/rails/comments/hu1nea/slim_html_help_with_flexbox/
----
-I'm enduring my whole weekend with this, I want to let my current screens ([https://postimg.cc/t1gHLSyF](https://postimg.cc/t1gHLSyF))  like this: [https://postimg.cc/T56ykV4N](https://postimg.cc/T56ykV4N) \- it's no the same model, but I will adapt them all to the same pattern: 
-
-[https://github.com/LeoFragozo/sistema\_loja/blob/master/app/views/categories/index.html.slim](https://github.com/LeoFragozo/sistema_loja/blob/master/app/views/categories/index.html.slim)
-
-can someone help me?
+How does ActionCable handle multiple subscriptions in a single WebSocket connection?

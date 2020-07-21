@@ -1,74 +1,77 @@
 # golang
-## [1][Go compiler doesn't like unused variables](https://www.reddit.com/r/golang/comments/hufqpl/go_compiler_doesnt_like_unused_variables/)
+## [1][moshebe/gebug: A tool that makes debugging of Dockerized Go applications super easy by enabling Debugger and Hot-Reload features, seamlessly.](https://www.reddit.com/r/golang/comments/hv2ncw/moshebegebug_a_tool_that_makes_debugging_of/)
+- url: https://github.com/moshebe/gebug
+---
+
+## [2][RTSP to WebRTC Server for large scale broadcast benchmarks (written in Go!)](https://www.reddit.com/r/golang/comments/hv2yu4/rtsp_to_webrtc_server_for_large_scale_broadcast/)
+- url: https://github.com/pion/rtsp-bench
+---
+
+## [3][Useful packages Gophers should know](https://www.reddit.com/r/golang/comments/hv608d/useful_packages_gophers_should_know/)
+- url: https://www.golangprograms.com/go-programming-language-packages.html
+---
+
+## [4][Did you guys read all of the topics like "Animated GIFS" and "complex numbers" in a book called "The Go progamming Langauge"?](https://www.reddit.com/r/golang/comments/hv6yvq/did_you_guys_read_all_of_the_topics_like_animated/)
+- url: https://www.reddit.com/r/golang/comments/hv6yvq/did_you_guys_read_all_of_the_topics_like_animated/
+---
+New to Go language and I am reading a book "Go Programming Language" by Alan A. A. and Brian W. I know it's popular book among all Golang developers. My question is "Do I need to learn the "Animated GIfs " Four Lissajous figures. " from the book as well as "complex numbers" parts? Are these necessary while doing the development works with GO? Did you guys skip this part or dive into it just to make your language better? Cause I feel it's too complicated and also useless in real development scenario.
+## [5][Go compiler doesn't like unused variables](https://www.reddit.com/r/golang/comments/hufqpl/go_compiler_doesnt_like_unused_variables/)
 - url: https://i.redd.it/1oobvnrzwub51.jpg
 ---
 
-## [2][autocert vs certmagic](https://www.reddit.com/r/golang/comments/huiffe/autocert_vs_certmagic/)
-- url: https://www.reddit.com/r/golang/comments/huiffe/autocert_vs_certmagic/
+## [6][Embedding interface{} in interface](https://www.reddit.com/r/golang/comments/hv6lxr/embedding_interface_in_interface/)
+- url: https://www.reddit.com/r/golang/comments/hv6lxr/embedding_interface_in_interface/
 ---
-Lately I have been experimenting with [autocert](https://pkg.go.dev/golang.org/x/crypto/acme/autocert) for my reverse proxy project ([ServiceQ](https://github.com/gptankit/serviceq)). I feel it satisfies all my current requirements - auto cert generation, tls-alpn-01 challenge, auto renewals etc. It also provides me fine grained control over tls config. I have also heard a lot about [certmagic](https://github.com/caddyserver/certmagic) but never got to use it any of the projects. Is there any reason why someone should be choosing certmagic over autocert given that autocert is supported by core team and might also some day make its way into the standard library? Looking to find real feature differences.
-## [3][Brian Kernighan: UNIX, C, AWK, AMPL, and Go Programming | AI Podcast #109 with Lex Fridman](https://www.reddit.com/r/golang/comments/htwr7e/brian_kernighan_unix_c_awk_ampl_and_go/)
-- url: https://www.youtube.com/watch?v=O9upVbGSBFo
+I was reading some code recently and ran into the following:
+
+    type Expander interface{}
+    
+    type Foo interface {
+        Bar()
+        Expander
+    }
+
+
+How would I use the `Expander` concept? I know this isn't best practice but it was interesting.
+## [7][Datadog Go API and Contexts](https://www.reddit.com/r/golang/comments/hv2aus/datadog_go_api_and_contexts/)
+- url: https://www.reddit.com/r/golang/comments/hv2aus/datadog_go_api_and_contexts/
 ---
+Reading up on [Datadog's announcement of their new official Go API client](https://www.datadoghq.com/blog/java-go-libraries/), and at first blush I like their implementation. I'm intrigued by their use of contexts to pass the credentials in. I've seen similar uses in `context` examples -- and I feel it's following idiomatic Go principles -- but this is the first time I've ever seen `context.WithValue()` used in an official library in the wild.
 
-## [4][Create a Color Cli in Golang](https://www.reddit.com/r/golang/comments/hujpan/create_a_color_cli_in_golang/)
-- url: https://schadokar.dev/posts/create-a-color-cli-in-golang/
+Curious about what everyone's opinions are on it. Do you see it as a solid pattern when building client libraries?
+## [8][Anyone Willing to look over my Twitter Bot](https://www.reddit.com/r/golang/comments/huy9o3/anyone_willing_to_look_over_my_twitter_bot/)
+- url: https://www.reddit.com/r/golang/comments/huy9o3/anyone_willing_to_look_over_my_twitter_bot/
 ---
+Hey guys,
 
-## [5][Interested in Contribution to Go [New to Open-Source]](https://www.reddit.com/r/golang/comments/hu514j/interested_in_contribution_to_go_new_to_opensource/)
-- url: https://www.reddit.com/r/golang/comments/hu514j/interested_in_contribution_to_go_new_to_opensource/
+So I recently started learning Go.  I'm pretty early on in my programming journey.  Started learning python and have kind of jumped over to Go.  This is basically my first real program written in Go.  Based on what I could find online, I think I setup my project structure correctly.  I still need to add more to the README, but here's the gist of what the bot does.
+
+Makes a daily API request to the NASA Insight Rover data and tweets out the daily weather.  If no new weather is available, it provides a list of the most recent readings.
+
+It also will reply to a user if they tweet at the bot with specific tweets.  Similar style to the above sentence.
+
+I've also stumbled through Docker and AWS and was able to get it deployed onto the free tier of an EC2 instance, so it is currently up and running.
+
+I'm still trying to gain an understanding of pointers and such.  
+
+Appreciate any criticism.  Here is the link to my github repo.
+
+[Mars Weather Bot Github Repo](https://github.com/zacharygilliom/marsweatherbot)
+## [9][How wrong is this?](https://www.reddit.com/r/golang/comments/hv608o/how_wrong_is_this/)
+- url: https://www.reddit.com/r/golang/comments/hv608o/how_wrong_is_this/
 ---
-Hi,
+Hi Gophers,
 
-I and a couple of my friends recently started with Go and are excited to contribute to Open-source. We do not have a lot of experience in the same and were hoping for some advice as to how to proceed with Open-source. I searched for some projects on Github but could not decide on how to proceed or choose a project to contribute to. Any suggestions or projects to contribute to would be helpful. Thanks.
+I'm trying to find a way to stop cluttering my functions and methods with all that error checking.
 
-TLDR: New to open-source, looking to contribute
-## [6][HTTP/REST gateway to gRPC](https://www.reddit.com/r/golang/comments/hujf2k/httprest_gateway_to_grpc/)
-- url: https://www.reddit.com/r/golang/comments/hujf2k/httprest_gateway_to_grpc/
+I know there are (in)famous articles about how errors are values and such, but there was still functionality I was missing there.
+
+What I came up with is the following, and I am wondering how bad it is really that I am basically throwing panics all over the place for errors, however, I am recovering them and handling the error states.
+
+[https://github.com/TheApeMachine/errnie](https://github.com/TheApeMachine/errnie)
+
+I welcome any feedback before I continue working on this or even worse, actually use it.
+## [10][Is there a pm2 like process manager to manage applications written in golang?](https://www.reddit.com/r/golang/comments/hv5i6f/is_there_a_pm2_like_process_manager_to_manage/)
+- url: https://www.reddit.com/r/golang/comments/hv5i6f/is_there_a_pm2_like_process_manager_to_manage/
 ---
-Can you share some examples of code that is an endpoint / gateway between a web client and microservices.  
-I do not quite understand, I have to write a service (for example, in go-gin) to receive http requests on it and somehow process them. Then make requests by gRPC to internal services.
-
-Waiting for your advice
-## [7][Checking Kafka advertised.listeners with Go](https://www.reddit.com/r/golang/comments/huidxo/checking_kafka_advertisedlisteners_with_go/)
-- url: /r/apachekafka/comments/huid7o/checking_kafka_advertisedlisteners_with_go/
----
-
-## [8][Cannot send email using Amazon SES and Golang](https://www.reddit.com/r/golang/comments/huhp1s/cannot_send_email_using_amazon_ses_and_golang/)
-- url: https://www.reddit.com/r/golang/comments/huhp1s/cannot_send_email_using_amazon_ses_and_golang/
----
-On my local Ubuntu machine, I'm trying [this](https://stackoverflow.com/questions/41176256/how-to-integrate-aws-sdk-ses-in-golang/41181934#41181934) example snippet on Stackoverflow with my existing SES credentials,  I get
-
-`MissingEndpoint: 'Endpoint' configuration is required for this service.`
-
-My go version is \`1.14.6\` and I've just got the aws package from github.  I'm wondering what is wrong here? Has SES API changed since then? Or I'm missing something?
-## [9][Suggest database package to work well with graphql server](https://www.reddit.com/r/golang/comments/huh4ii/suggest_database_package_to_work_well_with/)
-- url: https://www.reddit.com/r/golang/comments/huh4ii/suggest_database_package_to_work_well_with/
----
-Hi, 
-
-
-I build a graphql server with [gqlgen](https://github.com/99designs/gqlgen) for generate api from schema. 
-For fetching data from database, I get two options: 
-
-
-+ using go orm (like gorm, xorm or sqlboiler).
-+ write SQL query and using. [sqlc](https://github.com/kyleconroy/sqlc) for generate Go code.
-
-
-
-How do you fetch data from database(like mysql or postgres) and fill it to api? Anyone, whose done some project like that. Do you have any recommendation about db package to work well with grapql.
-## [10][GoSlice - an experimental slicer for 3d printing](https://www.reddit.com/r/golang/comments/hu5u86/goslice_an_experimental_slicer_for_3d_printing/)
-- url: https://www.reddit.com/r/golang/comments/hu5u86/goslice_an_experimental_slicer_for_3d_printing/
----
-Hi,
-
-as I am interested in both, 3d printing and Go programming, the best way to go was creating a new slicer software in Go. So...
-
-... I would like to introduce you [GoSlice!](https://github.com/aligator/GoSlice)
-
-If you are not into 3d printing: A slicer is basically a software which converts a 3d model into commands for the printer.
-
-It is very experimental and there is still much to do (and there are many things, I have currently no idea how to do it, so any help would be great), but it can already slice stl files.I also got a great print of the well known 3DBenchy out of it -&gt; So the POC is done :-)
-
-If you are interested in how such a slicer (can) work, look at the source and docs folder as I tried to comment and explain everything because there is nearly no information about the inner workings of a slicer yet. Basically the code of the existing ones, e.g. PrusaSlicer, Cura, Slic3r is nearly the only docu I could find about this topic and it's not always obvious code...
+By managing, I mean daemonizing the process so that it starts when the system reboots, starting and stopping the process, see how much memory it consumes. I've tried [apm](https://github.com/topfreegames/apm) and [pmgo](https://github.com/struCoder/pmgo) but none of them worked properly or I was unable to get them to work. I follow the instructions to start the app using the process manager but the app does not start. There is not a single log telling that some of the things have gone wrong as well.

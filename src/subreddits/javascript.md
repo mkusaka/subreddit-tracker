@@ -85,43 +85,50 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][A Website that simulates a strobe illusion](https://www.reddit.com/r/javascript/comments/hujnvk/a_website_that_simulates_a_strobe_illusion/)
-- url: https://strobe.cool/
+## [3][Uppy file uploader launches image cropping (beta)](https://www.reddit.com/r/javascript/comments/hv5pqq/uppy_file_uploader_launches_image_cropping_beta/)
+- url: https://uppy.io/blog/2020/07/1.18-image-editor/
 ---
 
-## [4][Common JavaScript Debugging Problems and How to Solve Them](https://www.reddit.com/r/javascript/comments/huiqoc/common_javascript_debugging_problems_and_how_to/)
-- url: https://medium.com/javascript-in-plain-english/common-javascript-debugging-problems-and-how-to-solve-them-300316d949d5
+## [4][Rollup Svelte Sapper with Sass, Typescript, and Path Resolver Boilerplate](https://www.reddit.com/r/javascript/comments/hv0wrr/rollup_svelte_sapper_with_sass_typescript_and/)
+- url: https://github.com/MichealPearce/sapped-svelte-ts-boilerplate
 ---
 
-## [5][Deta.sh - Deploy node js application easily in seconds](https://www.reddit.com/r/javascript/comments/hui74v/detash_deploy_node_js_application_easily_in/)
-- url: https://www.codersgram.com/2020/07/deta-cloud-platfom.html
----
-
-## [6][Here's a GitHub Action that would update README with the recent activity of a user](https://www.reddit.com/r/javascript/comments/hu3j6w/heres_a_github_action_that_would_update_readme/)
-- url: https://github.com/jamesgeorge007/github-activity-readme
----
-
-## [7][Attacking and defending JavaScript sandboxes](https://www.reddit.com/r/javascript/comments/hul8pm/attacking_and_defending_javascript_sandboxes/)
-- url: https://portswigger.net/research/attacking-and-defending-javascript-sandboxes
----
-
-## [8][Build Instagram Using TypeScript, Node, Express and Vue](https://www.reddit.com/r/javascript/comments/hukxcz/build_instagram_using_typescript_node_express_and/)
+## [5][Build Instagram Using TypeScript, Node, Express and Vue](https://www.reddit.com/r/javascript/comments/hukxcz/build_instagram_using_typescript_node_express_and/)
 - url: https://dev.to/calvintwr/build-instagram-using-typescript-node-express-and-vue-part-1-57do
 ---
 
-## [9][I am building a open source mindmap editor](https://www.reddit.com/r/javascript/comments/hturg4/i_am_building_a_open_source_mindmap_editor/)
-- url: https://github.com/unhandledrejection/mindx
+## [6][Building Scalable Redux-First Apps](https://www.reddit.com/r/javascript/comments/huyvlh/building_scalable_reduxfirst_apps/)
+- url: https://medium.com/@robbiehall26/building-scalable-redux-first-apps-5a8d09e9bd04?sk=23a705bcad8d07e47500bf382213619d
 ---
 
-## [10][A minimal, fast, intuitive, and customisable type-checking helper that you are missing.](https://www.reddit.com/r/javascript/comments/hu0zos/a_minimal_fast_intuitive_and_customisable/)
-- url: https://github.com/calvintwr/you-are-not
+## [7][Handling Rate Limiting - JavaScript Web Scraping Guy](https://www.reddit.com/r/javascript/comments/hv5wx8/handling_rate_limiting_javascript_web_scraping_guy/)
+- url: https://javascriptwebscrapingguy.com/jordan-handles-rate-limiting/
 ---
 
-## [11][A quick look into `Number.range();` Stage-1 proposal](https://www.reddit.com/r/javascript/comments/htvp1r/a_quick_look_into_numberrange_stage1_proposal/)
-- url: https://dev.to/hemanth/number-range-stage-1-proposal-opc
+## [8][Best Practices for Building JavaScript SDKs With TypeScript](https://www.reddit.com/r/javascript/comments/hv57qd/best_practices_for_building_javascript_sdks_with/)
+- url: https://medium.com/swlh/best-practices-for-building-javascript-sdks-with-typescript-7192490d9fcc
 ---
 
-## [12][Pitfall when updating Subjects synchronously](https://www.reddit.com/r/javascript/comments/hu0rro/pitfall_when_updating_subjects_synchronously/)
-- url: https://dev.to/gelio/pitfall-when-updating-subjects-synchronously-42c5
+## [9][[AskJS] Did anyone manage to create a good emacs config for React webdev (jsx, graphql, styled components)? I struggle to get it to work. Can you help?](https://www.reddit.com/r/javascript/comments/hv3t4l/askjs_did_anyone_manage_to_create_a_good_emacs/)
+- url: https://www.reddit.com/r/javascript/comments/hv3t4l/askjs_did_anyone_manage_to_create_a_good_emacs/
+---
+Hi! I love emacs, but the deeper I go into react programming, the harder it gets to use. No indentation or syntax highlighting for GraphQL and Styled Components, web-mode constantly loses syntax highlighting and must be reloaded, unhelpful quotes being added for me where they shouldn't be.
+
+I tried VSCode and it has so many slick and convenient features, but feels way slower and more sluggish than emacs, I don't want to switch, I'm still more productive in emacs despite all the issues.
+
+Did anyone manage to create a good emacs config that works well for react webdev? Can you please share?
+
+(I did post this question on /r/emacs, stackoverflow, and emacs stackexchange, but received no helpful replies so far, so I'm hoping maybe you guys could help?)
+## [10][The Jailer is free! New release of the outstanding database subsetter and browser is available.](https://www.reddit.com/r/javascript/comments/hv1i7g/the_jailer_is_free_new_release_of_the_outstanding/)
+- url: https://github.com/Wisser/Jailer
+---
+
+## [11][[AskJS] Window move up](https://www.reddit.com/r/javascript/comments/hv5hg6/askjs_window_move_up/)
+- url: https://www.reddit.com/r/javascript/comments/hv5hg6/askjs_window_move_up/
+---
+ how i can create this window move up , or what is name ? I can't find it in Google
+Like the video in comments
+## [12][Dev utility tool: This code takes any image (png, jpeg, svg, gif) as input, it then traces the outline of the image, and outputs the path of the image in terms of cartesian coordinates to console. I hope people find some use for this, as it took ageees :)](https://www.reddit.com/r/javascript/comments/hureo4/dev_utility_tool_this_code_takes_any_image_png/)
+- url: https://github.com/trozler/ImageToPoints
 ---
 

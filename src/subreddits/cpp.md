@@ -56,7 +56,43 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][Advanced C/C++ side projects](https://www.reddit.com/r/cpp/comments/huh7d2/advanced_cc_side_projects/)
+## [2][[Question] What are convincing (preferably perf-unrelated) ways to argue against passing everything by shared_ptr?](https://www.reddit.com/r/cpp/comments/hv45lw/question_what_are_convincing_preferably/)
+- url: https://www.reddit.com/r/cpp/comments/hv45lw/question_what_are_convincing_preferably/
+---
+Since C++11, I noticed that programmers in some circles started using `std::shared_ptr` for everything (possibly type-aliasing it as e.g.`Ptr`) and passing everything by `shared_ptr` copy, but this makes me personally uneasy due to the loss in visibility into RAII-based resource release times.
+
+Unfortunately, I'm not good at coming up with the kind of concrete arguments that truly speak to people, so to say, so here I am.
+
+Most notably, I'm having a hard time conveying why destruction times are Important™, and why you don't want your object relationships to turn into a strongly connected graph.
+
+What's your guys' take? How would you (amiably) approach the issue?
+## [3][Optimizing 128-bit Division](https://www.reddit.com/r/cpp/comments/hurl3f/optimizing_128bit_division/)
+- url: https://danlark.org/2020/06/14/128-bit-division/
+---
+
+## [4][std::ref and std::reference_wrapper: common use cases](https://www.reddit.com/r/cpp/comments/hv6d9k/stdref_and_stdreference_wrapper_common_use_cases/)
+- url: https://www.nextptr.com/tutorial/ta1441164581/stdref-and-stdreference_wrapper-common-use-cases
+---
+
+## [5][Versioning and other C++ Boilerplate](https://www.reddit.com/r/cpp/comments/huuisv/versioning_and_other_c_boilerplate/)
+- url: https://thephd.github.io/versioning-and-other-boilerplate
+---
+
+## [6][TIL static_assert error messages are not printed consistently across compilers.](https://www.reddit.com/r/cpp/comments/hupykm/til_static_assert_error_messages_are_not_printed/)
+- url: https://www.reddit.com/r/cpp/comments/hupykm/til_static_assert_error_messages_are_not_printed/
+---
+Obligatory compiler explorer: [https://godbolt.org/z/bcaxGs](https://godbolt.org/z/bcaxGs)
+
+Ran into this today when I realized that my nice helpful static assertion messages were being turned into absolute garbage by Clang. Google yielded [this SO post](https://stackoverflow.com/questions/46376309/why-arent-newlines-other-control-sequences-printed-with-static-assert) quoting this excerpt from the standard:
+
+&gt;the resulting diagnostic message (4.1) shall include the text of the string-literal, if one is supplied, except that characters not in the basic source character set (5.3) are not required to appear in the diagnostic message.
+
+I ended up getting around it by offering a simpler version of my error messages on clang, which is... 'fine', but it almost defies understanding that the standard isn't stricter about it to begin with. Does anyone know the historical context behind this, or if there's any existing moves to clear it up? The current discrepancy between the way the messages are rendered significantly hinders the usefulness of allowing messages in static assertions to begin with, imo.
+## [7][Using std::map Wisely With Modern C++](https://www.reddit.com/r/cpp/comments/hulelk/using_stdmap_wisely_with_modern_c/)
+- url: http://www.vishalchovatiya.com/using-std-map-wisely-with-modern-cpp/
+---
+
+## [8][Advanced C/C++ side projects](https://www.reddit.com/r/cpp/comments/huh7d2/advanced_cc_side_projects/)
 - url: https://www.reddit.com/r/cpp/comments/huh7d2/advanced_cc_side_projects/
 ---
 Hi.
@@ -66,103 +102,17 @@ After a resume review by a fellow engineer, I was told that I should build some 
 I apologize if this is a dumb post. I figured that this is a good place to ask.
 
 Thanks.
-## [3][Looking for an UI framework easy to integrate with C++ for mobile platforms](https://www.reddit.com/r/cpp/comments/huhppm/looking_for_an_ui_framework_easy_to_integrate/)
-- url: https://www.reddit.com/r/cpp/comments/huhppm/looking_for_an_ui_framework_easy_to_integrate/
+## [9][C++ audio projects](https://www.reddit.com/r/cpp/comments/hv2930/c_audio_projects/)
+- url: https://www.reddit.com/r/cpp/comments/hv2930/c_audio_projects/
 ---
-Hi guys,
+Hello,
 
-I've been working for the last couple of years in a codebase in C++.
-
- I did manage to crosscompile to different platforms: iOS &amp; Android and now I'm looking forward to work in the frontend of the application.
-
-For the desktop application, I'm using Qt and it works just fine for all desktop platforms.
-
-I've been doing some research about the different technologies that can be used for the mobile UIs and I would like to know about your experiences or any recomendation.
-
-I'm considering:
-- Qt (QML) and try to get the startup/indie license
-- Flutter 
-- Native development
-- Whatever JavaScript framework
-
-How hard was the integration of the C/C++ code with the framework? Limitations? Any license issues?
-
-I want to create a serverless isolated application, so implementing a back-end service and query the data is something I'm not considering. 
-
-Thanks
-## [4][Looking for an argument parsing library](https://www.reddit.com/r/cpp/comments/hudlgw/looking_for_an_argument_parsing_library/)
-- url: https://www.reddit.com/r/cpp/comments/hudlgw/looking_for_an_argument_parsing_library/
----
-Any suggestions on argument parser for C++ just like argparse for Python?
-## [5][Have you completed an Embedded C/C++ Internship?](https://www.reddit.com/r/cpp/comments/huhvnr/have_you_completed_an_embedded_cc_internship/)
-- url: https://www.reddit.com/r/cpp/comments/huhvnr/have_you_completed_an_embedded_cc_internship/
----
-Has anyone here ever taken part of an embedded c/c++ internship? I need some help finding tutorials for this, as I don't really know what should I search for. Please help if you do know.
-## [6][Clang OpenMP for Loops](https://www.reddit.com/r/cpp/comments/hu9yl7/clang_openmp_for_loops/)
-- url: https://www.reddit.com/r/cpp/comments/hu9yl7/clang_openmp_for_loops/
----
-I wrote some code that needs parallelized (just a for loop), and am trying to make sure my code builds on GCC and Clang. I wrote my code on an Ubuntu system (20.04) and everything builds fine with both compilers. When I tried to build it on my Gentoo system, it builds fine with GCC, but fails with Clang. This is particularly odd since both systems have exactly the same versions of the compilers (GCC 10.0.1 and Clang 10.0.0 with libomp-10). Here is the relevant section of my code:
-
-    #pragma omp parallel for default(shared)
-    for (auto v = my_vector.begin(); v &lt; my_vector.end(); ++v) {
-      // use v
-    }
-
-On my Gentoo system, if I use Clang it complains that I am not using a relational operator on \`v\`, and that I should use \`&lt;, &lt;=, &gt;, or &gt;=\`. If I re-write the loop to use indexing instead of iterators, it works fine.
-
-libomp-10 has partial support for OpenMP 5.0, including support for ranged for loops. If I rewrite my code to use a range, I get exactly the same error.
-
-Any idea why this error is happening?
-## [7][Digging in member method pointers in C++](https://www.reddit.com/r/cpp/comments/hukjrf/digging_in_member_method_pointers_in_c/)
-- url: https://www.reddit.com/r/cpp/comments/hukjrf/digging_in_member_method_pointers_in_c/
----
-Hi guys
-
-Recently  was dealing with member method pointers in C++  
-I tried to deal with it a little bit deep, and somehow my brain generated an article.
-
-[https://medium.com/@helloooooooooooooooooooooooooo/method-member-pointers-in-c-6a2e0190b3e0](https://medium.com/@helloooooooooooooooooooooooooo/method-member-pointers-in-c-6a2e0190b3e0)
-
-Hope it will be useful
-## [8][Good youtube playlist for someone who already knows C very well](https://www.reddit.com/r/cpp/comments/htxlyp/good_youtube_playlist_for_someone_who_already/)
-- url: https://www.reddit.com/r/cpp/comments/htxlyp/good_youtube_playlist_for_someone_who_already/
----
-Im going to learn C++ my next year of college, and I was wondering what are some good yt playlist to learn it, im already very good at C so if there are any that playlists that skip the basic stuff feel free to share them. Thanks!
-## [9][Quick setup for a new C++ project in Visual Studio Code](https://www.reddit.com/r/cpp/comments/hu00cg/quick_setup_for_a_new_c_project_in_visual_studio/)
-- url: https://github.com/IvanSafonov/cpp-boilerplate
+I'm more of a Javascript developer but I've been getting deep into C++ the past few months. My goal is to be an audio developer. Can anyone suggest any good projects to build or good resources? I have built a synthesizer simulator on the keyboard but trying to think of others that are in a way easy to tackle.
+## [10][build2 0.13.0 released, adds support for ad hoc recipes, source layout customization](https://www.reddit.com/r/cpp/comments/hum1nw/build2_0130_released_adds_support_for_ad_hoc/)
+- url: https://build2.org/release/0.13.0.xhtml
 ---
 
-## [10][Aku - Toy Backtesting/Trading Engine in C++.](https://www.reddit.com/r/cpp/comments/htwmiq/aku_toy_backtestingtrading_engine_in_c/)
-- url: https://github.com/flouthoc/aku
+## [11][The ABI stability matryoshka](https://www.reddit.com/r/cpp/comments/hum7oz/the_abi_stability_matryoshka/)
+- url: https://nibblestew.blogspot.com/2020/07/the-abi-stability-matryoshka.html
 ---
 
-## [11][Open sourcing my CQC automation platform](https://www.reddit.com/r/cpp/comments/hti9zs/open_sourcing_my_cqc_automation_platform/)
-- url: https://www.reddit.com/r/cpp/comments/hti9zs/open_sourcing_my_cqc_automation_platform/
----
-A while back I opened sourced by CIDLib C++ development platform:
-
-[https://github.com/DeanRoddey/CIDLib](https://github.com/DeanRoddey/CIDLib)
-
-This is a large (450K'ish lines of code) general purpose C++ development system. It's basically a virtual OS, written in C++, very powerful and very clean.
-
-Built on top of CIDLib is my CQC automation platform, which is an even bigger (about 650K'ish lines of code), full on, commercial quality home/business automation system. This is something I tried to make a success of for a long time, but ultimately have failed, after sacrificing the bulk of my adult life. That sucks on a fairly cosmic scale, but it is what it is.
-
-It's sort of a poster-boy for why technical people shouldn't make marketing decisions I guess. I selected automation because I thought it was cool and interesting, not because I had any really solid proof that I could sell it. Ultimately, it ended up being an amazing product that just didn't have a commercial market. It's too powerful (aka complex) for the hoi polloi to really be interested in it. It's very well suited technically for professionally installed systems, but there are a number of big players in that space and no way to break into it without big investment that was never going to materialize.
-
-The folks who would be potential customers were mostly folks who won't spend a dime if they can avoid it, i.e. more technical hobbyist types. There are other open source products out there, and those folks would use anything free, no matter how less refined, rather than pay for something.
-
-So, anyhoo, my abject failure is the community's potential gain. I'm moving towards open sourcing it. It may be another month before I'm ready since I have to do things like strip out all of the licensing stuff and make various other tweaks, get the docs updated to reflect those changes, get a repo set up up, build environment documented, etc...
-
-But, I'm heading in that direction and anyone who might be interested in contributing to it as an open product would probably want to be getting familiar with it as a product before trying to contribute as a developer so that you know what it is and how it works. The current commercial version has a 40 day trial period so it should be good until the open source version arrives.
-
-[https://www.youtube.com/user/CharmedQuarkSystems](https://www.youtube.com/user/CharmedQuarkSystems)
-
-[https://www.charmedquark.com/](https://www.charmedquark.com/)
-
-Ultimately, because CQC is built on top of CIDLib, which is incredibly powerful (as evidenced by the fact that I, a single person, could create such a massive product with it), it could be a lot more than an automation system. It really could become a home IT infrastructure system in general. With some more resources it could go in a number of directions.
-
-Currently it is Windows only (in terms of the back end and system management UI, there's a web based touch screen client in addition to the Windows client.) But CIDLib it highly portable. It was designed from day one to support Windows and Linux and actually used to support Linux. And I mean in a very clean way, not conditional code all over the place. That's why it was created as a virtual OS type system.
-
-So, if some Linux folks got on board, we could get the back end cleanly supporting Windows and Linux in a heterogenous network way. I got started on resurrecting the Linux platform support but my Linux skills sort of bottomed out. I have my own build infrastructure which seamlessly supports both platforms, and inherently understands the needs of CIDLib and CQC. This makes it easy to develop on both. I use Visual Studio Code since it's equivalent on both, but that's not a requirement.
-
-Anyhoo, if anyone is interested, start delving into it as a user. I'm going to eat the cost of keeping the web site and forums up. I'll start a new section on the forums for development discussion, so you can sign up there and ask questions, make suggestions, etc...

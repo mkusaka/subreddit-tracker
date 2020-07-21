@@ -31,76 +31,70 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][JetBrains is porting Compose to desktop and other platforms](https://www.reddit.com/r/androiddev/comments/hufnjq/jetbrains_is_porting_compose_to_desktop_and_other/)
+## [3][The greatest versionCode that is allowed by Google Play is 2100000000. Does that mean once uploading with that versionCode will lead to no possibility to update the app afterwards?](https://www.reddit.com/r/androiddev/comments/hur9m3/the_greatest_versioncode_that_is_allowed_by/)
+- url: https://www.reddit.com/r/androiddev/comments/hur9m3/the_greatest_versioncode_that_is_allowed_by/
+---
+Not that it's likely or a problem I'm encountering, just wondering what the options would be.
+## [4][Multiple Backstack Management using Navigation Component](https://www.reddit.com/r/androiddev/comments/hv1i76/multiple_backstack_management_using_navigation/)
+- url: https://github.com/vipulasri/Multiple-Backstack-Navigation
+---
+
+## [5][Colors with opacity performance](https://www.reddit.com/r/androiddev/comments/hv4oys/colors_with_opacity_performance/)
+- url: https://www.reddit.com/r/androiddev/comments/hv4oys/colors_with_opacity_performance/
+---
+Hello, I was wondering whether it is more efficient to have a color with opacity built in for example #80FFFFFF which is white with 50% transparency, or have it be #FFFFFF and then add alpha value on the view 0.5f, either on XML or through code. Are there any differences that you know of? Or are they basically the same?
+Thank you!
+## [6][Getting on the same page with Paging 3](https://www.reddit.com/r/androiddev/comments/hv7cyg/getting_on_the_same_page_with_paging_3/)
+- url: https://android-developers.googleblog.com/2020/07/getting-on-same-page-with-paging-3.html
+---
+
+## [7][Hilt and Dagger annotations cheat sheet](https://www.reddit.com/r/androiddev/comments/huo9jp/hilt_and_dagger_annotations_cheat_sheet/)
+- url: https://medium.com/androiddevelopers/hilt-and-dagger-annotations-cheat-sheet-9adea070e495
+---
+
+## [8][How do I merge/aggregate unit test reports from an multi-module android project?](https://www.reddit.com/r/androiddev/comments/hv5qo1/how_do_i_mergeaggregate_unit_test_reports_from_an/)
+- url: https://www.reddit.com/r/androiddev/comments/hv5qo1/how_do_i_mergeaggregate_unit_test_reports_from_an/
+---
+
+## [9][What do I need to do to implement a system similar to a smart home, but for storages?](https://www.reddit.com/r/androiddev/comments/hv33q7/what_do_i_need_to_do_to_implement_a_system/)
+- url: https://www.reddit.com/r/androiddev/comments/hv33q7/what_do_i_need_to_do_to_implement_a_system/
+---
+I have a main storage on which an android tablet is installed as a control center.  and there are the same storage modules, only without screens.  you need to implement their connection to the main control center.  what technologies can i use to achieve the goal?
+## [10][I'm confused about 'Maps API for Android' API Key!](https://www.reddit.com/r/androiddev/comments/hv4new/im_confused_about_maps_api_for_android_api_key/)
+- url: https://www.reddit.com/r/androiddev/comments/hv4new/im_confused_about_maps_api_for_android_api_key/
+---
+Everywhere it says that you need a billing account to get an API Key. Even though you never cross the free quota billing account is a must to start using the API. That's what I've read in the official documentations and StackOverflow.
+
+Now the thing is, yesterday I tried to get an API Key without a billing account and I was able get one. I enabled the Maps API for Android and added the API Key to an app. Tried to load the map. It worked.
+
+My question is – how is this possible? What's happening? 
+
+I'm really confused. Can anyone clear me up?
+## [11][Does DI code belong to modules?](https://www.reddit.com/r/androiddev/comments/hv0c93/does_di_code_belong_to_modules/)
+- url: https://www.reddit.com/r/androiddev/comments/hv0c93/does_di_code_belong_to_modules/
+---
+I'm working on a multi app modular codebase. Its natural to put dagger/koin/whatever DI code modules inside given gradle modules. Also, Hephaestus and Hilt sort of enable you to do that easier.
+
+But, should you?
+
+Granted, module owner knows best about scopes of partucilar dependencies
+
+However, with dagger, you need to slap explicit scope annotation, effectively hardcoding it to that scope. You cannot just say "Single instance per whatever component I'm in". This limits reuse -- what if you want to use the module in a different scope per app it is in
+
+Also, retrofit doesnt provide no dagger modules
+
+Also, multiplatform?
+
+So, this leads me to believe DI setup should maybe only live in the top level :app module
+
+However if it only lives in app, then it needs to be duplicated per app, as it cannot be shared. Which is a bummer
+
+Also, not sure how would inter module communication would work if component interfaces were not available. This is necessary, until we get ui constructor back (compose)
+
+I think what I really want is for dagger to implement the mentioned @SinglePerWhateverComponentThisIsIn 🤔
+
+Thoughts?
+## [12][JetBrains is porting Compose to desktop and other platforms](https://www.reddit.com/r/androiddev/comments/hufnjq/jetbrains_is_porting_compose_to_desktop_and_other/)
 - url: https://www.reddit.com/r/androiddev/comments/hufnjq/jetbrains_is_porting_compose_to_desktop_and_other/
 ---
 It's no news that JetBrains employees are working on Compose. But this job offer: https://www.jetbrains.com/careers/jobs/ui-framework-developer-401/ makes it clear what the goal is - "Our team is working to port it to desktop and other platforms.".
-## [4][I have made this 🗽 NY Times App with JSoup to Crawl data from NYtimes with MVVM Architecture 💡](https://www.reddit.com/r/androiddev/comments/huea2b/i_have_made_this_ny_times_app_with_jsoup_to_crawl/)
-- url: https://github.com/TheCodeMonks/NYTimes-App
----
-
-## [5][Beagle debug menu library v2 + showcase app](https://www.reddit.com/r/androiddev/comments/huh589/beagle_debug_menu_library_v2_showcase_app/)
-- url: https://www.reddit.com/r/androiddev/comments/huh589/beagle_debug_menu_library_v2_showcase_app/
----
-This debug menu library has been rewritten from scratch to support more ways to display its UI (side drawer, bottom sheet, dialog, etc), custom modules, easier integration and a simpler API. I'm still actively testing it (that's the reason for the beta tag) but I'm not aware of any blockers at the moment so I'm very much looking forward to see what you think about it!
-
-I've also created a [showcase app](https://play.google.com/store/apps/details?id=com.pandulapeter.beagle) to convince you that you need it in your project, and it also acts as a tutorial for implementing the different features. The source code for the app, as well as the library itself can be found in this [GitHub repo](https://github.com/pandulapeter/beagle).
-
-Without going into details about what can be done with the various modules: one of my main goals was to make this as simple to use as possible, and based on the feedback I got from colleagues as well as QA people working on projects where Beagle is used, it's well worth the 5-10 minutes it takes to add it to the apps. Let me know if you have any questions / issues / ideas to make it better :)
-## [6][Hilt in Android 11 (Android Dependency Injection)](https://www.reddit.com/r/androiddev/comments/hul3on/hilt_in_android_11_android_dependency_injection/)
-- url: https://www.youtube.com/watch?v=B56oV3IHMxg
----
-
-## [7][Android Studio + headless Emulator knocking down Macbook](https://www.reddit.com/r/androiddev/comments/hul1fp/android_studio_headless_emulator_knocking_down/)
-- url: https://www.reddit.com/r/androiddev/comments/hul1fp/android_studio_headless_emulator_knocking_down/
----
-Hi,  
-
-
-I'm running 4.2 (canary 4) to use the embedded emulator inside Studio.  
-Unfortunately it's actually not usable as the emulator is taking so much CPU of my new Macbook pro (2019, 2,6 Ghz i7, 32g ram).  
-Is anyone else having this issue?
-## [8][Exoplayer not work in huawei devices containing Huawei Mobile Services](https://www.reddit.com/r/androiddev/comments/huk17t/exoplayer_not_work_in_huawei_devices_containing/)
-- url: https://www.reddit.com/r/androiddev/comments/huk17t/exoplayer_not_work_in_huawei_devices_containing/
----
-In my huawei test device which contains huawei mobile services, exoplayer does not work both audio and video files. Do you know why? Does exoplayer not support devices including hms?
-## [9][What are the ways to read SMS and sub-second latencies?](https://www.reddit.com/r/androiddev/comments/hujtcv/what_are_the_ways_to_read_sms_and_subsecond/)
-- url: https://www.reddit.com/r/androiddev/comments/hujtcv/what_are_the_ways_to_read_sms_and_subsecond/
----
-I am making an app that reads users SMS and sends them to a secure server and then notifies about some actions on a web-portal.
-
-This complete flow is striving to do this in 4-5 seconds since the SMS is received. I want to discuss what are the pain points I can anticipate and if possible, how I can mitigate them.
-
-There are a couple on the top of my head:
-
-* There are some OS and mobile models that put the app in the sleep mode and then we can miss getting to know about the new SMS.
-   * This might be handled by making the app exempt from the \`battery saver\` mode. 
-* Playstore might not allow an app to read the users' SMS (for good reasons, but the use case, in particular, can be solved by reading SMS).
-   * I can have this app available at other app stores like f-droid.  
-
-
-Can there be more pain points that I am not considering at this moment? Any tips on how to take care of those.
-## [10][Distributing android app outside of play store possible with app signing enabled for Google Play?](https://www.reddit.com/r/androiddev/comments/huaoe7/distributing_android_app_outside_of_play_store/)
-- url: https://www.reddit.com/r/androiddev/comments/huaoe7/distributing_android_app_outside_of_play_store/
----
- 0
-
-I have an android app that is currently being distributed through google play store. Google upcoming deadline requires that [apps must target API level 29](https://developer.android.com/distribute/play-policies#apps-must-target-api-level-29) or I won't be able to update app after 2nd November 2020.
-
-I can not change targetSdkVersion  
- 29 or above because of the app core functionality relies on an Android API that has been removed in API level 29 and above.
-
-My plan was to acquire new installs via Google Play Store and then update the app later from my own server or somewhere else. But I have opted for [App signing for Google Play](https://support.google.com/googleplay/android-developer/answer/7384423?hl=en) which resigns the APKs before redistributing them to users.
-
-My Second Plan was to upload the APK to play store and not publish there and download the signed APK and distribute that from outside. Assuming google play will let me upload the APK after 2 November 2020. To test it out I changed targetSdkVersion  
- from 28 to 27. Current google play requirement is app must target API level 28. So google play rejected my APK.
-
-I am wondering if there is a way to distribute app updates to the existing user outside of Google Play store.
-## [11][Meet Google Play Billing Library Version 3](https://www.reddit.com/r/androiddev/comments/hugs84/meet_google_play_billing_library_version_3/)
-- url: https://android-developers.googleblog.com/2020/06/meet-google-play-billing-library.html
----
-
-## [12][Begginers guide to build modules on Android](https://www.reddit.com/r/androiddev/comments/hubk7z/begginers_guide_to_build_modules_on_android/)
-- url: https://medium.com/@shalommathews05/modularization-in-android-make-your-code-reusable-and-maintainable-beginner-db5d6185a247
----
-

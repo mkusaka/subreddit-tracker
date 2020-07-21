@@ -109,69 +109,77 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Hi everyone, I have been working on this file upload UI. Have been following some references and trying to improve on it.](https://www.reddit.com/r/reactjs/comments/huappa/hi_everyone_i_have_been_working_on_this_file/)
-- url: https://raw.githubusercontent.com/cheersmas/upload-animation/reducer/fileupload.gif
+## [3][I curated all the remote job openings from Hacker News who is hiring thread](https://www.reddit.com/r/reactjs/comments/hv5c3z/i_curated_all_the_remote_job_openings_from_hacker/)
+- url: https://www.reddit.com/r/reactjs/comments/hv5c3z/i_curated_all_the_remote_job_openings_from_hacker/
+---
+This list contains 258 remote jobs and you can filter them by location or skills.
+
+Here I would like to share the entire remote jobs list from the big list of opportunities. All these are 100% remote jobs not just allowed to work from home during this crisis. These are 100% remote jobs and will continue to follow that after the crisis.
+
+https://remoteleaf.com/whoishiring   
+Note: Select "javascript" in the skills filter to see javascript dev jobs.
+
+✅ 100% remote full-time jobs.   
+✅ Spent more than 32 hours to curate this information
+## [4][Preact CLI v3: modern JS with fallback, critical CSS inlining, custom prerendering, automatic data hydration, customizable service workers and prefresh support](https://www.reddit.com/r/reactjs/comments/huwc9i/preact_cli_v3_modern_js_with_fallback_critical/)
+- url: https://github.com/preactjs/preact-cli/releases/tag/v3.0.0
 ---
 
-## [4][UI Playbook — the documented collection of UI components](https://www.reddit.com/r/reactjs/comments/huimrb/ui_playbook_the_documented_collection_of_ui/)
+## [5][What is the best way to do web development remote? Is the only option Remote Desktop?](https://www.reddit.com/r/reactjs/comments/hv41hf/what_is_the_best_way_to_do_web_development_remote/)
+- url: https://www.reddit.com/r/reactjs/comments/hv41hf/what_is_the_best_way_to_do_web_development_remote/
+---
+What is the best way to do web development remote? Is the only option Remote Desktop?
+
+Anyone with experience of how it works? :)
+## [6][A simple blog app](https://www.reddit.com/r/reactjs/comments/hv6hmt/a_simple_blog_app/)
+- url: https://github.com/KavishShah09/Blabber
+---
+
+## [7][React Fundamentals course on udemy (FREE for 3 days only)](https://www.reddit.com/r/reactjs/comments/hv64co/react_fundamentals_course_on_udemy_free_for_3/)
+- url: https://www.reddit.com/r/reactjs/comments/hv64co/react_fundamentals_course_on_udemy_free_for_3/
+---
+[https://www.udemy.com/course/first-met-react/?couponCode=F5EFE08B82CC25100CE3](https://www.udemy.com/course/first-met-react/?couponCode=F5EFE08B82CC25100CE3)
+
+Hello, developers!
+
+I just launched a React lecture for real beginners.
+
+The lecture only covers the basic fundamentals of React,
+
+excluding Hooks, Context API, and other difficult content.
+
+So, this lecture is the best way to start learning React.
+
+&amp;#x200B;
+
+The lecture is charged,
+
+but I attached **FREE** coupon link above(valid only 3 days).
+
+(Expires 07/24/2020 04:07 AM PDT (GMT -7))
+
+So, if anyone who wants to learn React,
+
+apply before the coupon expires.
+
+Thank you 😀
+## [8][How To Build A Marketplace With Reaction Commerce](https://www.reddit.com/r/reactjs/comments/hv5w32/how_to_build_a_marketplace_with_reaction_commerce/)
+- url: http://selleo-marketplace.icu
+---
+
+## [9][UI Playbook — the documented collection of UI components](https://www.reddit.com/r/reactjs/comments/huimrb/ui_playbook_the_documented_collection_of_ui/)
 - url: https://uiplaybook.dev
 ---
 
-## [5][My web app with 100+ beautiful, copy-paste-ready code sections is (ALMOST) here 🥳](https://www.reddit.com/r/reactjs/comments/hu13hu/my_web_app_with_100_beautiful_copypasteready_code/)
-- url: https://www.reddit.com/r/reactjs/comments/hu13hu/my_web_app_with_100_beautiful_copypasteready_code/
----
-My friend and I have ALMOST finished a super fun side project called Pastepanda ([https://try.pastepanda.com/early-access-beta](https://try.pastepanda.com/early-access-beta)): a library of copy-paste-ready and neatly coded sections for different kinds of web projects!! Boy, have we fought to get it out in the open! 😅
-
-After many iterations, going from an extremely wide scope to a more modest first version, we finally thought: let’s just release the landing page and hope for the best.
-
-I’m so pumped to hear what you all in the React community think!! 😃
-## [6][Flatlogic One React.js Admin Template (paid product, React 16 &amp; Redux)](https://www.reddit.com/r/reactjs/comments/hugy9k/flatlogic_one_reactjs_admin_template_paid_product/)
-- url: https://flatlogic.com/templates/one-react-template
+## [10][Boilerplate for Next.js + typescript + yarn workspaces](https://www.reddit.com/r/reactjs/comments/hv5fw1/boilerplate_for_nextjs_typescript_yarn_workspaces/)
+- url: /r/nextjs/comments/hv5fp9/boilerplate_for_nextjs_typescript_yarn_workspaces/
 ---
 
-## [7][Looking for a React.js frontend UI/UX developer or agency](https://www.reddit.com/r/reactjs/comments/hui56g/looking_for_a_reactjs_frontend_uiux_developer_or/)
-- url: https://www.reddit.com/r/reactjs/comments/hui56g/looking_for_a_reactjs_frontend_uiux_developer_or/
+## [11][Redux Question](https://www.reddit.com/r/reactjs/comments/hv7578/redux_question/)
+- url: https://www.reddit.com/r/reactjs/comments/hv7578/redux_question/
 ---
-We are looking for a good React.js developer (or agency) to help create a frontend UI/UX from an existing web API. We already have a frontend but want to move away from the current implementation to using React.js + the API.
-
-&amp;#x200B;
-
-The application that we want to redesign the frontend UI/UX of is; [https://wpvulndb.com/](https://wpvulndb.com/)
-
-&amp;#x200B;
-
-Can anyone recommend a good developer or agency? Or, where I should be looking to find one?
-
-&amp;#x200B;
-
-Thanks!
-## [8][Unit testing for React developers - What you need to know](https://www.reddit.com/r/reactjs/comments/hui4sr/unit_testing_for_react_developers_what_you_need/)
-- url: https://felixgerschau.com/unit-testing-react-introduction/
----
-
-## [9][My first npm package is made with react 😊](https://www.reddit.com/r/reactjs/comments/hui7qv/my_first_npm_package_is_made_with_react/)
-- url: https://www.reddit.com/r/reactjs/comments/hui7qv/my_first_npm_package_is_made_with_react/
----
-Hey guys, today I made my first npm package, it's called **react-pagination-nav** 
-
- [https://github.com/mohitkyadav/react-pagination-nav](https://github.com/mohitkyadav/react-pagination-nav) 
-
-I'm still a beginner, if you find any bugs or cool new feature requests, create an issue on the repo.
-
-And you can find the package here.
-
-[https://www.npmjs.com/package/react-pagination-nav](https://www.npmjs.com/package/react-pagination-nav)
-
-Have a great day. ✌
-## [10][How we boosted the performance of a Gatsby website by 80%](https://www.reddit.com/r/reactjs/comments/huj069/how_we_boosted_the_performance_of_a_gatsby/)
-- url: https://tinloof.com/blog/How-we-boosted-the-performance-of-a-Gatsby-website-by-80/
----
-
-## [11][Build Beautiful Websites Fast With Semantic UI And React](https://www.reddit.com/r/reactjs/comments/hui7jd/build_beautiful_websites_fast_with_semantic_ui/)
-- url: https://alterclass.hashnode.dev/build-beautiful-websites-fast-with-semantic-ui-and-react-ckcuany00003461s1cpw60zwy
----
-
-## [12][Using Tailwind with Create React App, CSS Modules and PostCSS with no hassle](https://www.reddit.com/r/reactjs/comments/hui0d8/using_tailwind_with_create_react_app_css_modules/)
-- url: https://dev.to/ryandunn/how-to-use-tailwind-with-create-react-app-and-postcss-with-no-hassle-2i09
+Is Redux state supposed to remain when you navigate to another page (not refresh), using the history.push() method?
+## [12][Wrote a library for easy service injection in components using context + hooks, would love some feedback on its usefulness!](https://www.reddit.com/r/reactjs/comments/huw3ck/wrote_a_library_for_easy_service_injection_in/)
+- url: https://github.com/traviskaufman/react-service-container
 ---
 

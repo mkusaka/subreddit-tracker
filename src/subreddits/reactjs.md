@@ -109,77 +109,153 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][I curated all the remote job openings from Hacker News who is hiring thread](https://www.reddit.com/r/reactjs/comments/hv5c3z/i_curated_all_the_remote_job_openings_from_hacker/)
-- url: https://www.reddit.com/r/reactjs/comments/hv5c3z/i_curated_all_the_remote_job_openings_from_hacker/
----
-This list contains 258 remote jobs and you can filter them by location or skills.
-
-Here I would like to share the entire remote jobs list from the big list of opportunities. All these are 100% remote jobs not just allowed to work from home during this crisis. These are 100% remote jobs and will continue to follow that after the crisis.
-
-https://remoteleaf.com/whoishiring   
-Note: Select "javascript" in the skills filter to see javascript dev jobs.
-
-✅ 100% remote full-time jobs.   
-✅ Spent more than 32 hours to curate this information
-## [4][Preact CLI v3: modern JS with fallback, critical CSS inlining, custom prerendering, automatic data hydration, customizable service workers and prefresh support](https://www.reddit.com/r/reactjs/comments/huwc9i/preact_cli_v3_modern_js_with_fallback_critical/)
-- url: https://github.com/preactjs/preact-cli/releases/tag/v3.0.0
+## [3][Completed my Portfolio Website](https://www.reddit.com/r/reactjs/comments/hvppm3/completed_my_portfolio_website/)
+- url: https://v.redd.it/ei3mq1ww7dc51
 ---
 
-## [5][What is the best way to do web development remote? Is the only option Remote Desktop?](https://www.reddit.com/r/reactjs/comments/hv41hf/what_is_the_best_way_to_do_web_development_remote/)
-- url: https://www.reddit.com/r/reactjs/comments/hv41hf/what_is_the_best_way_to_do_web_development_remote/
+## [4][[Meta] Am I the only one finding there are too many posts about people's portfolios / showcases?](https://www.reddit.com/r/reactjs/comments/hvqrgv/meta_am_i_the_only_one_finding_there_are_too_many/)
+- url: https://www.reddit.com/r/reactjs/comments/hvqrgv/meta_am_i_the_only_one_finding_there_are_too_many/
 ---
-What is the best way to do web development remote? Is the only option Remote Desktop?
-
-Anyone with experience of how it works? :)
-## [6][A simple blog app](https://www.reddit.com/r/reactjs/comments/hv6hmt/a_simple_blog_app/)
-- url: https://github.com/KavishShah09/Blabber
+Some mods seem very excited by this sub's constant growth (for example: [This sub has grown 100% since 1 year ago](https://www.reddit.com/r/reactjs/comments/hr4fuu/this_sub_has_grown_100_since_1_year_ago/)). But I find that the signal to noise ratio is getting worse and worse - it's becoming an endless stream of "I have created my online portfolio with React!" and "I built my very first project!! SO EXCITED!!" and the interesting discussions rarer and rarer. I'm on the verge of unsubscribing for that reason. Am I the only one feeling that way?
+## [5][A comparison of formik, final-form and react-hook-form](https://www.reddit.com/r/reactjs/comments/hvm080/a_comparison_of_formik_finalform_and_reacthookform/)
+- url: https://blog.jslancer.com/blog/2020/07/21/a-comparison-of-formik-final-form-and-react-hoo-form/
 ---
 
-## [7][React Fundamentals course on udemy (FREE for 3 days only)](https://www.reddit.com/r/reactjs/comments/hv64co/react_fundamentals_course_on_udemy_free_for_3/)
-- url: https://www.reddit.com/r/reactjs/comments/hv64co/react_fundamentals_course_on_udemy_free_for_3/
----
-[https://www.udemy.com/course/first-met-react/?couponCode=F5EFE08B82CC25100CE3](https://www.udemy.com/course/first-met-react/?couponCode=F5EFE08B82CC25100CE3)
-
-Hello, developers!
-
-I just launched a React lecture for real beginners.
-
-The lecture only covers the basic fundamentals of React,
-
-excluding Hooks, Context API, and other difficult content.
-
-So, this lecture is the best way to start learning React.
-
-&amp;#x200B;
-
-The lecture is charged,
-
-but I attached **FREE** coupon link above(valid only 3 days).
-
-(Expires 07/24/2020 04:07 AM PDT (GMT -7))
-
-So, if anyone who wants to learn React,
-
-apply before the coupon expires.
-
-Thank you 😀
-## [8][How To Build A Marketplace With Reaction Commerce](https://www.reddit.com/r/reactjs/comments/hv5w32/how_to_build_a_marketplace_with_reaction_commerce/)
-- url: http://selleo-marketplace.icu
+## [6][Update: Added some more feature to file upload component. (link to prev post in comments). What do you guys think on the hover actions buttons?](https://www.reddit.com/r/reactjs/comments/hvta1x/update_added_some_more_feature_to_file_upload/)
+- url: https://github.com/cheersmas/upload-animation/raw/master/fileupload.gif
 ---
 
-## [9][UI Playbook — the documented collection of UI components](https://www.reddit.com/r/reactjs/comments/huimrb/ui_playbook_the_documented_collection_of_ui/)
-- url: https://uiplaybook.dev
+## [7][Five common mistakes writing react components (with hooks) in 2020](https://www.reddit.com/r/reactjs/comments/hv8chq/five_common_mistakes_writing_react_components/)
+- url: https://www.lorenzweiss.de/common_mistakes_react_hooks/
 ---
 
-## [10][Boilerplate for Next.js + typescript + yarn workspaces](https://www.reddit.com/r/reactjs/comments/hv5fw1/boilerplate_for_nextjs_typescript_yarn_workspaces/)
-- url: /r/nextjs/comments/hv5fp9/boilerplate_for_nextjs_typescript_yarn_workspaces/
+## [8][Hello there! Here's a brand new platform that helps you deploy and manage your React app within only one command line](https://www.reddit.com/r/reactjs/comments/hvsm68/hello_there_heres_a_brand_new_platform_that_helps/)
+- url: https://scaledynamics.io/solution-deploy-react
 ---
 
-## [11][Redux Question](https://www.reddit.com/r/reactjs/comments/hv7578/redux_question/)
-- url: https://www.reddit.com/r/reactjs/comments/hv7578/redux_question/
----
-Is Redux state supposed to remain when you navigate to another page (not refresh), using the history.push() method?
-## [12][Wrote a library for easy service injection in components using context + hooks, would love some feedback on its usefulness!](https://www.reddit.com/r/reactjs/comments/huw3ck/wrote_a_library_for_easy_service_injection_in/)
-- url: https://github.com/traviskaufman/react-service-container
+## [9][Create React App With Webpack &amp; Babel From Scratch -PART 2](https://www.reddit.com/r/reactjs/comments/hvt6z8/create_react_app_with_webpack_babel_from_scratch/)
+- url: https://youtu.be/Vx0AiZ6SQFY
 ---
 
+## [10][How can I protect a route using Router v6?](https://www.reddit.com/r/reactjs/comments/hvq7vg/how_can_i_protect_a_route_using_router_v6/)
+- url: https://www.reddit.com/r/reactjs/comments/hvq7vg/how_can_i_protect_a_route_using_router_v6/
+---
+In v5 I would do this:
+
+    &lt;AuthGuard exact path="/userForm" component={ UserForm } /&gt;
+
+What's the equivalent for v6? Also, I would prefer to do that in the array that's passed into the **useRoutes** hook!
+## [11][Does a Refs provider make sense without state?](https://www.reddit.com/r/reactjs/comments/hvso6p/does_a_refs_provider_make_sense_without_state/)
+- url: https://www.reddit.com/r/reactjs/comments/hvso6p/does_a_refs_provider_make_sense_without_state/
+---
+I have a vertical "nav" sidebar, which keeps track of elements.  If i scroll down manually, the links in the sidebar change between which section is "active".  Or, if I click on a sidebar "link" it will scroll me to that section.  
+
+The developer who originally implemented this is using `document.getElementById`  however, this isn't ideal React logic, since we should keep track of components instead of going into the DOM and finding things.
+
+My first thought was to use a Provider so that it can wrap entire sections and contain the scroll logic as well.  It feels possibly over-engineered which is why I am asking here.  I don't want to put Ref's into state, since it will cause re-rending issues, but I need to make sure the Provider `value` gets updated so that the scroll listeners and click callbacks work.
+
+I think the same issue might happen with a hook, since that also would require state to be updated.
+
+My goal is to have something like "state" with a bunch of refs:
+
+    myRefs = useRef();
+
+and then in the actual element callback it will call setRefs, which looks something like this:
+
+     const setRefs = (name: string, el: Component): void =&gt; {
+        refs = {
+          ...refs,
+          current: {
+            ...refs.current,
+            [name]: el,
+          },
+        };
+      };
+
+this way I can look up the `refsContext` like a regular object: `myRefs[name]`
+
+Something isn't lining up right for me with this thought process, so what would you do to keep the list like this?
+## [12][Regarding relational GraphQL schema in AppSync and Amplify DataStore](https://www.reddit.com/r/reactjs/comments/hvslea/regarding_relational_graphql_schema_in_appsync/)
+- url: https://www.reddit.com/r/reactjs/comments/hvslea/regarding_relational_graphql_schema_in_appsync/
+---
+First of all: mods feel free to remove this, I posted here because of the large overlap between React and GraphQL so I thought this discussion might be relevant to a lot of users here. I know Amplify is popular in the React community too.
+
+---
+
+I've noticed some discrepancies in the AWS docs that have me scratching my head. If you head over to the Amplify-js docs you'll see they suggest setting up one-to-many relationships using `@connection` and `@key` directives. Like this:
+
+```graphql
+type Post @model {
+  id: ID!
+  title: String!
+  comments: [Comment] @connection(keyName: "byPost", fields: ["id"])
+}
+
+type Comment @model
+  @key(name: "byPost", fields: ["postID", "content"]) {
+  id: ID!
+  postID: ID!
+  content: String!
+}
+```
+First of all this seems quite unintuitive and it's not clear what use the directives actually have here. I'm sure they're doing something, but what that is I don't know. This becomes more apparent when you see the official suggested method of retrieving "related" records:
+
+```js
+const post = await DataStore.query(Post, "123");
+const comments = (await DataStore.query(Comment)).filter(c =&gt; c.postID === post.id);
+```
+
+I'm honestly baffled. Nobody at AWS could surely expect this to scale could they? Why have they not suggested using the predicate argument in `DataStore.query`? (`c =&gt; c.postID('eq', post.id)`?
+
+Furthermore, one would intuitively assume that when querying a specific `Post` that the `Comment` models would be pulled in automatically, but this is not the case. In the above examples, taken straight from the [docs site](https://docs.amplify.aws/lib/datastore/relational/q/platform/js#updated-schema), it's not obvious why I should even use any directives for my "relational" schema.
+
+To compound my confusion further, I checked out the iOS Amplify docs. The relationships shown there make a lot more sense - just using 2 `@connection` directives - but my front end should be completely irrelevant to my backend, so which way of creating relationships is correct?
+
+IMO this makes much more sense:
+
+```graphql
+type Post @model {
+  id: ID!
+  title: String!
+  rating: Int!
+  status: PostStatus!
+  # New field with @connection
+  comments: [Comment] @connection(name: "PostComments")
+}
+
+# New model
+type Comment @model {
+  id: ID!
+  content: String
+  post: Post @connection(name: "PostComments")
+}
+```
+
+Also the way of querying models using the iOS library is how I would expect it to work in JS:
+
+```swift
+Amplify.DataStore.query(Post.self, byId: "123") {
+    switch $0 {
+    case .success(let post):
+        if let postWithComments = post {
+            if let comments = postWithComments.comments {
+                for comment in comments {
+                    print(comment.content)
+                }
+            }
+        } else {
+            print("Post not found")
+        }
+    case .failure(let error):
+        print("Post not found - \(error.localizedDescription)")
+    }
+}
+```
+
+So why can't the JS client library work like the above Swift one?
+
+I'm the last guy to bash open source maintainers, and I know the stress involved, but I'm just not following. (Also I guess while this is technically OSS, we are paying for a service).
+
+So what gives - which is the correct way of defining relationships? And why does the JS library differ so fundamentally from the Swift library - should the related objects not be built on the backend meaning the client side libraries should query in a somewhat similar fashion? Also if that isn't the case, and all these relationships are being joined on the client, surely that means Amplify will be pretty bad when working at scale?
+
+Sorry for the long post and thanks for reading my rambling if you made it this far 😅

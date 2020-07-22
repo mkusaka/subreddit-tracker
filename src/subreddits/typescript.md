@@ -22,11 +22,129 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][A deployed version of my ECS circles demo!](https://www.reddit.com/r/typescript/comments/hv3y5h/a_deployed_version_of_my_ecs_circles_demo/)
-- url: https://avokadoen.github.io/ts-ecs-circles-deployed/
+## [2][Type 'string' not assignable to a custom type](https://www.reddit.com/r/typescript/comments/hvre75/type_string_not_assignable_to_a_custom_type/)
+- url: https://www.reddit.com/r/typescript/comments/hvre75/type_string_not_assignable_to_a_custom_type/
+---
+(Typescript beginner using React here)
+
+I am trying to use a custom type definition (`type Ingredients = 'bread-bottom' | 'bread-top' | 'meat' | 'cheese' | 'salad' | 'bacon';`) to set the type of the input value in a map method.
+
+Here is the code I am running
+
+      const ingredients: ReactElement[] = Object.entries(props.ingredients)
+        .reduce((acc: Array&lt;string&gt;, [ing, num]: [string, number]) =&gt; {
+          let arr: Array&lt;string&gt; = [];
+          for (let i = 0; i &lt; num; i++) {
+            arr.push(ing)
+          };
+          return [...acc, ...arr];
+        }, [])
+        .map((ingredient: Ingredients, i: number) =&gt; {
+          return (
+            &lt;Ingredient
+              key={i}
+              type={ingredient}
+            /&gt;
+          );
+        });
+
+I know the exact string values of the elements that will be returned in the array, as I have set a `Props` interface above to check. Therefore, in the `.map` method, I know that the value, which I name `ingredient` will have the type `Ingredients`, however, I believe that the compiler does not know this. The type property in the `&lt;Ingredient&gt;` element already has type checking, the same as the `Ingredients` type. The error thrown is
+
+    Argument of type '(ingredient: Ingredients, i: number) =&gt; JSX.Element' is not assignable to parameter of type '(value: string, index: number, array: string[]) =&gt; Element'.
+      Types of parameters 'ingredient' and 'value' are incompatible.
+        Type 'string' is not assignable to type 'Ingredient'.  TS2345
+    
+        14 |       return [...acc, ...arr];
+        15 |     }, [])
+      &gt; 16 |     .map((ingredient: Ingredients, i: number) =&gt; {
+           |          ^
+        17 |       return (
+        18 |         &lt;Ingredient
+        19 |           key={i}
+
+Changing the type of `ingredient` to `string` will remove the error, but cause another one on the `type` attribute as I implement the same type checking on it through the props in `&lt;Ingredient&gt;`. Removing both specific type string checks will remove the errors. Should I leave it as that, or is there a way to fix this?
+## [3][Question around Using an enum as an interface type](https://www.reddit.com/r/typescript/comments/hvkm3s/question_around_using_an_enum_as_an_interface_type/)
+- url: https://www.reddit.com/r/typescript/comments/hvkm3s/question_around_using_an_enum_as_an_interface_type/
+---
+If I'm defining an enum to use as a type on an interface, which of these options would it be better to write as?
+
+    export enum someEnum {
+      A = "A",
+      B = "B"
+    }
+    
+    export interface Foo {
+        / * Option 1 */ 
+       prop: someEnum.A | someEnum.B
+        / * Option 2 */ 
+       props: someEnum;
+    }
+
+I'm not sure if I should assign the whole enum as the type or the individual pieces, especially if there are only two. Could anyone tell me which one is better here?
+## [4][Enforcing type on the result of Papaparse](https://www.reddit.com/r/typescript/comments/hvtkta/enforcing_type_on_the_result_of_papaparse/)
+- url: https://www.reddit.com/r/typescript/comments/hvtkta/enforcing_type_on_the_result_of_papaparse/
+---
+Here's the thing. I have a RAW CSV file, and I am trying to change into an array of, say, `TestType`. I am using PapaParser for the job. Unfortunately, the result has the type `Papa.ParseResult&lt;unknown&gt;.data` . I can transform it to an array of objects of type `TestType` like so:
+
+    const objs: TestType[] = (parsedResult.data as unknown) as TestType[];
+
+However it feels like a bad pattern. Is there any way to use duck typing to coerce the result into an array of different type?
+## [5][Intro to Typescript Generics](https://www.reddit.com/r/typescript/comments/hvccoj/intro_to_typescript_generics/)
+- url: https://www.youtube.com/watch?v=h6L7egCOai4
 ---
 
-## [3][Using an AWS sdk call in class contructor](https://www.reddit.com/r/typescript/comments/hv5qbr/using_an_aws_sdk_call_in_class_contructor/)
+## [6][Conversion of String to Enum](https://www.reddit.com/r/typescript/comments/hvigps/conversion_of_string_to_enum/)
+- url: https://www.reddit.com/r/typescript/comments/hvigps/conversion_of_string_to_enum/
+---
+Here's the thing. I have an Enum in my Prisma schema like so:
+
+    enum Exchange {
+      NSE
+      BSE
+      MCX
+    }
+
+For all intents and purposes, it can be considered as typescript enum. Now let's say, I have a string `const x = "NSE"`. Is there any way to convert x into `Exchange.NSE`, without using pesky ternary operations or a pattern matching switch-case or cascading if statements?
+## [7][It looks like there’s yarn-based lerna alternative to consider now](https://www.reddit.com/r/typescript/comments/hvbvgo/it_looks_like_theres_yarnbased_lerna_alternative/)
+- url: https://github.com/guigrpa/oao
+---
+
+## [8][String not being detected in else.](https://www.reddit.com/r/typescript/comments/hvg22e/string_not_being_detected_in_else/)
+- url: https://www.reddit.com/r/typescript/comments/hvg22e/string_not_being_detected_in_else/
+---
+The following code doesn't compile. It complains
+
+`"Argument of type 'T' is not assignable to parameter of type 'string'."`
+
+    type StringReturn = {};
+    type MinusOneReturn = {};
+    
+    
+    const myFunction = &lt;T extends string | -1&gt; ( 
+        param: T
+    ): T extends string ? StringReturn : MinusOneReturn  =&gt; { 
+        if (param === -1) { 
+            minusOneFunction(param); // error
+        } else { 
+            stringFunction(param); // error
+        } 
+    }
+    
+    const stringFunction = (stringParam: string): StringReturn;
+    const minusOneFunction = (minusOneParam: -1): MinusOneReturn;
+
+Any idea how to solve it?
+## [9][What's your preferred tool for testing type definitions?](https://www.reddit.com/r/typescript/comments/hvhrhm/whats_your_preferred_tool_for_testing_type/)
+- url: https://www.reddit.com/r/typescript/comments/hvhrhm/whats_your_preferred_tool_for_testing_type/
+---
+What do you use to write tests for asserting that things have correct type, and to assert that there are type error when you expect? I work on libraries and it's something would help a lot. I tried dts-lint before but it was too opinionated, I want something which just tests types and nothing else.
+
+The new `$ExpectError` in TS is nice, but since you don't specify what error it is, it's not very useful for testing.
+## [10][TypeTypeScript with Promises, Async/Await, and Generator Functions](https://www.reddit.com/r/typescript/comments/hvh6op/typetypescript_with_promises_asyncawait_and/)
+- url: https://medium.com/@binyamin/typescript-with-promises-and-async-await-63623b8e5e2a?source=friends_link&amp;sk=3b00110853a3ef98a7797d7ce83a0f9f
+---
+
+## [11][Using an AWS sdk call in class contructor](https://www.reddit.com/r/typescript/comments/hv5qbr/using_an_aws_sdk_call_in_class_contructor/)
 - url: https://www.reddit.com/r/typescript/comments/hv5qbr/using_an_aws_sdk_call_in_class_contructor/
 ---
 Hey guys, I am trying to use a call to AWS Secret Manager in the constructor of an API class. The instance will be used to send calls to that API, and the call to AWS Secret Manager is needed to fill the auth.
@@ -74,252 +192,3 @@ export class SOMEServiceAPI {
 }
 
 ```
-## [4][Trying to follow an article for implementing Context with Typescript but getting an error. Anyone know how to resolve this error?](https://www.reddit.com/r/typescript/comments/hv0sa6/trying_to_follow_an_article_for_implementing/)
-- url: https://www.reddit.com/r/typescript/comments/hv0sa6/trying_to_follow_an_article_for_implementing/
----
-**Article for reference:** https://kentcdodds.com/blog/how-to-use-react-context-effectively
-
-**My code for reference:** https://pastebin.com/xNPH1pRf
-
-I am getting the following error:
-
-&gt;No overload matches this call.
-  Overload 1 of 5, '(reducer: ReducerWithoutAction&lt;any&gt;, initializerArg: any, initializer?: undefined): [any, DispatchWithoutAction]', gave the following error.
-    Argument of type '(state: State, action: Action) =&gt; {}' is not assignable to parameter of type 'ReducerWithoutAction&lt;any&gt;'.
-  Overload 2 of 5, '(reducer: (state: State, action: Action) =&gt; {}, initialState: never, initializer?: undefined): [never, Dispatch&lt;Action&gt;]', gave the following error.
-    Type 'number' is not assignable to type 'never'.ts(2769)
-
-The line of code (line 25) the error appears on:
-
-`const [state, dispatch] = React.useReducer(orderReducer, { count: 0 })`
-
-Any help would be much appreciated!
-## [5][How do you run a firebase cloud function snapshot that tou coded in swift?](https://www.reddit.com/r/typescript/comments/hv5ydj/how_do_you_run_a_firebase_cloud_function_snapshot/)
-- url: https://www.reddit.com/r/typescript/comments/hv5ydj/how_do_you_run_a_firebase_cloud_function_snapshot/
----
-How do you run an elaborate firebase snapshot via cloud functions instead of on the client?
-
-//Here is the structure of the RT DB
-
-    "people" : {
-     "1ZWT7FAE2qThNQfBj7tbMO7BnMo1" : {
-      "Coordinates" : {
-         "latitude" : 50.054738,
-         "longitude" : 8.226809826085624
-       "peopleWhoLike2" : {
-         "1vLVFwrXrHUoakmDrnQKwbv08Yj1" : 1581548952597,
-         "F9NX0UCG4fVHCKFk2VZ1NZKsLro2" : 1586210112155,
-         "IrrBgFY9C1ekMmHUkQRzc5LhbDu1" : 1581547417432,
-
-///Here is the elaborate snapshot that I want to run via cloud functions. I already have the JS,TS files setup, but have never coded in JS.
-
-    refArtists.observe(DataEventType.value,  with: {snapshot in
-            
-            if snapshot.childrenCount&gt;0{
-                
-                self.people.removeAll()
-                
-                for people in snapshot.children.allObjects as! [DataSnapshot] {
-                    
-                        if people.key != thisUsersUid {
-                            print("peoplekey",people.key)
-                            
-    
-                   
-                        let peopleObject = people.value as? [String: AnyObject]
-                        let peopleEducation = peopleObject?["Education"] as? String
-                        let peopleWhatIamConsideringBuying = peopleObject?["WhatIamConsideringBuying"] as? String
-                        let peoplePhotoPosts = peopleObject?["PhotoPosts"]  as? String
-                        let peopleimageDownloadURL = peopleObject?["imageDownloadURL"]  as? String
-                      ......
-         let peopl = Userx(Education: peopleEducation, .........)
-                     
-                        self.people.append(peopl)
-    
-                            } else {
-                                print ("w")
-                            }
-                                        } else {
-                                print ("alphaaa")
-                                                                                                                                                              
-                         }
-    }}
-            }   
-        })
-## [6][VS Code and TS: Type error parser for these errors?](https://www.reddit.com/r/typescript/comments/hup5uj/vs_code_and_ts_type_error_parser_for_these_errors/)
-- url: https://i.redd.it/ts5fqfqho1c51.png
----
-
-## [7][Best resources to learn Typescript](https://www.reddit.com/r/typescript/comments/hv2nhf/best_resources_to_learn_typescript/)
-- url: https://www.reddit.com/r/typescript/comments/hv2nhf/best_resources_to_learn_typescript/
----
-Hello everyone, i was wondering what is the best way to learn Typescript since it seems like a solid option for web development.
-## [8][Can I make multiple assertions with a single function?](https://www.reddit.com/r/typescript/comments/hultk9/can_i_make_multiple_assertions_with_a_single/)
-- url: https://www.reddit.com/r/typescript/comments/hultk9/can_i_make_multiple_assertions_with_a_single/
----
-I have a case where a condition being true describes the state of two entities.  Here's an example:
-
-    const compare(x: UnknownEntity, y: UnknownEntity): x is EntityA =&gt; {
-        return x.property === y.property;
-    }
-
-The above example works, but it only asserts that `x is EntityA`.  In my case this condition also proves that `y is EntityB` but I don't know how (or if it's possible) to make the return type something like:
-
-    x is EntityA AND y is EntityB
-
-Is it possible to make two assertions with a single function?
-
-Appreciate any help.
-
-Edit: More context here: https://www.reddit.com/r/typescript/comments/hultk9/can_i_make_multiple_assertions_with_a_single/fynv0mr/
-## [9][A directory structure for React projects](https://www.reddit.com/r/typescript/comments/hui3yt/a_directory_structure_for_react_projects/)
-- url: https://medium.com//a-directory-structure-for-react-projects-99fb084c61f1?source=friends_link&amp;sk=e5c0c00d0e03e6661ec7e710f84eebfb
----
-
-## [10][How to Infer Types from Schema](https://www.reddit.com/r/typescript/comments/hub8rd/how_to_infer_types_from_schema/)
-- url: https://www.reddit.com/r/typescript/comments/hub8rd/how_to_infer_types_from_schema/
----
-Hi all. I've recently started using typescript more heavily, and  I'm working a generic form-validation library. One of the things I'd like to be able to do is pass in a data model, and be able to get type inference/intellisense from the keys from that object. I've not learned all the details of how to use generics yet, which I know will be key for this question, so any pointers towards what I am missing would be greatly appreciated.
-
-A simplified example:
-
-```
-interface SpecificSchemaInterface {
-    fields: Record&lt;String, any&gt;
-}
-
-interface SpecificSchemaInterface {
-    fields: {
-      firstName: string;
-      lastName: string;
-      age: number;
-    }
-}
-
-const schema = {
-  fields: {
-    firstName: 'Bob,
-    lastName: 'Bobson',
-    age: 25,
-  },
-};
-
-function createValidatorFromSchema(s: SpecificSchemaInterface) {
-  // ???
-}
-
-const validator: Validator&lt;SpecificSchemaInterface&gt; = createValidatorFromSchema(schema)
-
-// Then validator would have an interface like:
-interface Validator {
-  rules: {
-    firstName(firstName: string): boolean,
-    lastName(lastName: string): boolean,
-    age(age: number): boolean, // note that the type is inferred here from the schema
-  }
-}
-```
-
-My questions are that then
-1) I probably want something like `Validator&lt;SpecificSchemaInterface&gt;`?
-2) I need to be able to both extract the object keys, and the types from the schema in a reusable way inside my new `Validator`
-
-I hope this isn't too vague, but if there is some terminology I should be looking into (beyond just "look at generics") or guides that go into this sort of thing, that would be very helpful.
-## [11][Am I generating `index.d.ts` file for an `npm` module `@camwiegert/typical` correctly?](https://www.reddit.com/r/typescript/comments/hugbmu/am_i_generating_indexdts_file_for_an_npm_module/)
-- url: https://www.reddit.com/r/typescript/comments/hugbmu/am_i_generating_indexdts_file_for_an_npm_module/
----
-I am a noob at TS &amp; certainly don't know how to write `index.d.ts`. Guided by some auto-completion inside VSCode &amp; some of my existing knowledge, I managed to cobble this together.
-
-I am writing types for `@camwiegert/typical` npm module. Source code could be found at https://github.com/camwiegert/typical
-
-Here is the main file `typical.js` for brevity:
-
-```js
-export async function type(node, ...args) {
-    for (const arg of args) {
-        switch (typeof arg) {
-            case 'string':
-                await edit(node, arg);
-                break;
-            case 'number':
-                await wait(arg);
-                break;
-            case 'function':
-                await arg(node, ...args);
-                break;
-            default:
-                await arg;
-        }
-    }
-}
-
-async function edit(node, text) {
-    const overlap = getOverlap(node.textContent, text);
-    await perform(node, [...deleter(node.textContent, overlap), ...writer(text, overlap)]);
-}
-
-async function wait(ms) {
-    await new Promise(resolve =&gt; setTimeout(resolve, ms));
-}
-
-async function perform(node, edits, speed = 60) {
-    for (const op of editor(edits)) {
-        op(node);
-        await wait(speed + speed * (Math.random() - 0.5));
-    }
-}
-
-export function* editor(edits) {
-    for (const edit of edits) {
-        yield (node) =&gt; requestAnimationFrame(() =&gt; node.textContent = edit);
-    }
-}
-
-export function* writer([...text], startIndex = 0, endIndex = text.length) {
-    while (startIndex &lt; endIndex) {
-        yield text.slice(0, ++startIndex).join('');
-    }
-}
-
-export function* deleter([...text], startIndex = 0, endIndex = text.length) {
-    while (endIndex &gt; startIndex) {
-        yield text.slice(0, --endIndex).join('');
-    }
-}
-
-export function getOverlap(start, [...end]) {
-    return [...start, NaN].findIndex((char, i) =&gt; end[i] !== char);
-}
-```
-
-I want to write types for this file. So I made `src/@types/@camwiegert/typical/index.d.ts` like:
-
-```ts
-declare module '@camwiegert/typical' {
-	export function type(node: HTMLElement, ...args: any[]): Promise&lt;void&gt;
-
-	declare function edit(node: HTMLElement, text: string): Promise&lt;void&gt;
-
-	declare function wait(ms: number): Promise&lt;void&gt;
-
-	declare function perform(node: HTMLElement, edits: any, speed?: number): Promise&lt;void&gt;
-
-	export function editor(edits: any): Generator&lt;(node: any) =&gt; number, void, unknown&gt;
-
-	export function writer(
-		[...text]: Iterable&lt;any&gt;,
-		startIndex?: number,
-		endIndex?: number
-	): Generator&lt;string, void, unknown&gt;
-
-	export function deleter(
-		[...text]: Iterable&lt;any&gt;,
-		startIndex?: number,
-		endIndex?: number
-	): Generator&lt;string, void, unknown&gt;
-
-	export function getOverlap(start: any, [...end]: Iterable&lt;any&gt;): number
-}
-```
-
-Idk if I converted it correctly or not. Can anyone check if it's correct?

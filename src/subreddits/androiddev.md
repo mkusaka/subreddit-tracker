@@ -31,70 +31,93 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][The greatest versionCode that is allowed by Google Play is 2100000000. Does that mean once uploading with that versionCode will lead to no possibility to update the app afterwards?](https://www.reddit.com/r/androiddev/comments/hur9m3/the_greatest_versioncode_that_is_allowed_by/)
-- url: https://www.reddit.com/r/androiddev/comments/hur9m3/the_greatest_versioncode_that_is_allowed_by/
----
-Not that it's likely or a problem I'm encountering, just wondering what the options would be.
-## [4][Multiple Backstack Management using Navigation Component](https://www.reddit.com/r/androiddev/comments/hv1i76/multiple_backstack_management_using_navigation/)
-- url: https://github.com/vipulasri/Multiple-Backstack-Navigation
+## [3][Kotlin/Native Memory Management Roadmap](https://www.reddit.com/r/androiddev/comments/hvorvh/kotlinnative_memory_management_roadmap/)
+- url: https://blog.jetbrains.com/kotlin/2020/07/kotlin-native-memory-management-roadmap/
 ---
 
-## [5][Colors with opacity performance](https://www.reddit.com/r/androiddev/comments/hv4oys/colors_with_opacity_performance/)
-- url: https://www.reddit.com/r/androiddev/comments/hv4oys/colors_with_opacity_performance/
+## [4][How to do a RecyclerView OnItemClickListener the right way?](https://www.reddit.com/r/androiddev/comments/hvkvsa/how_to_do_a_recyclerview_onitemclicklistener_the/)
+- url: https://www.reddit.com/r/androiddev/comments/hvkvsa/how_to_do_a_recyclerview_onitemclicklistener_the/
 ---
-Hello, I was wondering whether it is more efficient to have a color with opacity built in for example #80FFFFFF which is white with 50% transparency, or have it be #FFFFFF and then add alpha value on the view 0.5f, either on XML or through code. Are there any differences that you know of? Or are they basically the same?
-Thank you!
-## [6][Getting on the same page with Paging 3](https://www.reddit.com/r/androiddev/comments/hv7cyg/getting_on_the_same_page_with_paging_3/)
-- url: https://android-developers.googleblog.com/2020/07/getting-on-same-page-with-paging-3.html
+I've seen people arguing on stack overflow on the right way to to this. Some say  implement a click listener in onbindviewholder, other say create your own custom interface. I've come to you guys to ask how do you go about creating your click listeners?
+## [5][[Feedback] - I need feedback about an Adnetwork I have developed.](https://www.reddit.com/r/androiddev/comments/hvr4za/feedback_i_need_feedback_about_an_adnetwork_i/)
+- url: https://www.reddit.com/r/androiddev/comments/hvr4za/feedback_i_need_feedback_about_an_adnetwork_i/
+---
+ 
+
+Hi guys 👋, for the past 7 months i have been working tirelessly to bring my startup idea to life.
+
+**AppBoost** is an ad-network that is developed to help developers promote their apps for free. It is very easy to use, with less than 7 lines of code, developers can boost traffic to their apps and monitor the statistics. The sdk is currently available for android apps developed using Java. My plan is to see if their is market for such a tool, then develop it for other platforms and languages too.
+
+**Appboost** drives traffic to apps through cross-promotion. Each developer that implements the sdk in his/her app gets their app promoted inside other developers apps and vice-versa. 
+
+**It is still in a super rough beta state. I have been busy with another project recently, but now am fully invested in AppBoost, and am interested in understanding if this tool is actually helpful and what direction I should take it in. I only want to create something if people really love it.**
+
+The app stores are getting more and more saturated and competitive with thousands of apps being published everyday, Developers and Businesses with little to no budgets are finding it difficult to sustain their app businesses.
+
+**AppBoost** Aims to solve this problem by helping developers and businesses drive traffic to their apps and thereby increase their revenues. 
+
+We aim to create a community of developers helping each other succeed in these tough times.
+
+Would love to hear your feedback.
+
+Thanks for reading this 🙏
+
+Sharif.
+## [6][What happened to the "Stylized" tag on google play?](https://www.reddit.com/r/androiddev/comments/hvsp5f/what_happened_to_the_stylized_tag_on_google_play/)
+- url: https://www.reddit.com/r/androiddev/comments/hvsp5f/what_happened_to_the_stylized_tag_on_google_play/
+---
+I can find hundreds of games using the "Stylized" tag, such as Viridi, Alto's Odyssey, Fishing Life, etc.  
+Yet I can't seem to be able to add it through the Tag manager on my Google Play Console. Same goes for "Offline", "Single player". I quite literally cannot find as little as two tags that will do my game justice in that list.  It's basically useless to me.  
+
+
+Any idea why that is or if there's any solution to this problem?
+## [7][Double the review process, half of the fun (beta channel)](https://www.reddit.com/r/androiddev/comments/hvqxeo/double_the_review_process_half_of_the_fun_beta/)
+- url: https://www.reddit.com/r/androiddev/comments/hvqxeo/double_the_review_process_half_of_the_fun_beta/
+---
+For a while now, the review process on the Play store has been slower, and we are greeted on the console with the following message: "We're experiencing longer than usual review times"
+
+Because of the current context, that is totally fair.
+
+But what I have seen as well is that if you are using the beta channel to publish your app, then your app gets reviewed twice: once when you create your beta release, and once when you promote your beta build to prod.
+
+Is it a new development or has it always been the case?
+## [8][Interstitial video ads and the new Google Play's July policy update](https://www.reddit.com/r/androiddev/comments/hvmtar/interstitial_video_ads_and_the_new_google_plays/)
+- url: https://www.reddit.com/r/androiddev/comments/hvmtar/interstitial_video_ads_and_the_new_google_plays/
+---
+Hi Everyone,
+
+Recently, Google Play updated its policy regarding the ads. As per https://youtu.be/d0bN5JYuowY?t=433 , there is a time restriction on a few kinds of ads. 
+
+Is this time restriction affects the interstitial video ads?
+## [9][Paging with Paging 3](https://www.reddit.com/r/androiddev/comments/hvbc9u/paging_with_paging_3/)
+- url: https://youtu.be/1cwqGOku2a4
 ---
 
-## [7][Hilt and Dagger annotations cheat sheet](https://www.reddit.com/r/androiddev/comments/huo9jp/hilt_and_dagger_annotations_cheat_sheet/)
-- url: https://medium.com/androiddevelopers/hilt-and-dagger-annotations-cheat-sheet-9adea070e495
+## [10][Entry level positions during COVID-19?](https://www.reddit.com/r/androiddev/comments/hvi8yr/entry_level_positions_during_covid19/)
+- url: https://www.reddit.com/r/androiddev/comments/hvi8yr/entry_level_positions_during_covid19/
+---
+Hi everyone. Any insight is much appreciated!
+
+I’ve been practicing and applying for entry level Android Developer positions on/off for about two and a half years without any offers, and as tortuous as it has been, I’ve been continuing to practice, make apps, and Leetcode as often as I can.
+
+I was furloughed from my service job at the beginning of the COVID shut down, and it has given me a lot of time I would not otherwise have to code. Now, I’m applying to jobs, practicing Leetcode, and working on my new project at all waking hours.
+
+However, I’ve been told by a few companies (some FAANG) that they currently have a freeze on hiring entry level positions. I already have had difficulty locating junior positions, and am very unwillingly preparing myself to go back into my restaurant service job any day now. I’ve also been reaching out to recruiters and companies that don’t necessarily have listed open positions.
+
+Can anyone within the industry give me any insight and/or advice on how to navigate entry level positions during this time? I’m also slightly restricted to the West Coast for my son, which I understand doesn’t help the matter.
+
+For reference, I do not have a CS degree. I have a Udacity Android Nanodegree, two published (albeit not well marketed) apps, and I'm at a point of desperation that I’d be willing to take any amount of pay to just get my foot in the door.
+## [11][Immutability we can afford](https://www.reddit.com/r/androiddev/comments/hvtmbv/immutability_we_can_afford/)
+- url: https://medium.com/@elizarov/immutability-we-can-afford-10c0dcb8351d
 ---
 
-## [8][How do I merge/aggregate unit test reports from an multi-module android project?](https://www.reddit.com/r/androiddev/comments/hv5qo1/how_do_i_mergeaggregate_unit_test_reports_from_an/)
-- url: https://www.reddit.com/r/androiddev/comments/hv5qo1/how_do_i_mergeaggregate_unit_test_reports_from_an/
+## [12][AndroidStudio - Vertical Screen Setup](https://www.reddit.com/r/androiddev/comments/hvqep9/androidstudio_vertical_screen_setup/)
+- url: https://www.reddit.com/r/androiddev/comments/hvqep9/androidstudio_vertical_screen_setup/
 ---
+It's so hard to search the subject as all I get is results for Portrait mode in an Android app.
 
-## [9][What do I need to do to implement a system similar to a smart home, but for storages?](https://www.reddit.com/r/androiddev/comments/hv33q7/what_do_i_need_to_do_to_implement_a_system/)
-- url: https://www.reddit.com/r/androiddev/comments/hv33q7/what_do_i_need_to_do_to_implement_a_system/
----
-I have a main storage on which an android tablet is installed as a control center.  and there are the same storage modules, only without screens.  you need to implement their connection to the main control center.  what technologies can i use to achieve the goal?
-## [10][I'm confused about 'Maps API for Android' API Key!](https://www.reddit.com/r/androiddev/comments/hv4new/im_confused_about_maps_api_for_android_api_key/)
-- url: https://www.reddit.com/r/androiddev/comments/hv4new/im_confused_about_maps_api_for_android_api_key/
----
-Everywhere it says that you need a billing account to get an API Key. Even though you never cross the free quota billing account is a must to start using the API. That's what I've read in the official documentations and StackOverflow.
+I use a dual screen setup for Android development with one of the screens rotated vertically. I usually have the Project and Logcat windows in the horizontal screen and the code in the vertical.
 
-Now the thing is, yesterday I tried to get an API Key without a billing account and I was able get one. I enabled the Maps API for Android and added the API Key to an app. Tried to load the map. It worked.
+I was wondering if you guys have any recommendation on how to position the windows or if there's any default configuration in AndroidStudio for such setups.
 
-My question is – how is this possible? What's happening? 
-
-I'm really confused. Can anyone clear me up?
-## [11][Does DI code belong to modules?](https://www.reddit.com/r/androiddev/comments/hv0c93/does_di_code_belong_to_modules/)
-- url: https://www.reddit.com/r/androiddev/comments/hv0c93/does_di_code_belong_to_modules/
----
-I'm working on a multi app modular codebase. Its natural to put dagger/koin/whatever DI code modules inside given gradle modules. Also, Hephaestus and Hilt sort of enable you to do that easier.
-
-But, should you?
-
-Granted, module owner knows best about scopes of partucilar dependencies
-
-However, with dagger, you need to slap explicit scope annotation, effectively hardcoding it to that scope. You cannot just say "Single instance per whatever component I'm in". This limits reuse -- what if you want to use the module in a different scope per app it is in
-
-Also, retrofit doesnt provide no dagger modules
-
-Also, multiplatform?
-
-So, this leads me to believe DI setup should maybe only live in the top level :app module
-
-However if it only lives in app, then it needs to be duplicated per app, as it cannot be shared. Which is a bummer
-
-Also, not sure how would inter module communication would work if component interfaces were not available. This is necessary, until we get ui constructor back (compose)
-
-I think what I really want is for dagger to implement the mentioned @SinglePerWhateverComponentThisIsIn 🤔
-
-Thoughts?
-## [12][JetBrains is porting Compose to desktop and other platforms](https://www.reddit.com/r/androiddev/comments/hufnjq/jetbrains_is_porting_compose_to_desktop_and_other/)
-- url: https://www.reddit.com/r/androiddev/comments/hufnjq/jetbrains_is_porting_compose_to_desktop_and_other/
----
-It's no news that JetBrains employees are working on Compose. But this job offer: https://www.jetbrains.com/careers/jobs/ui-framework-developer-401/ makes it clear what the goal is - "Our team is working to port it to desktop and other platforms.".
+Thanks!

@@ -1,77 +1,125 @@
 # golang
-## [1][moshebe/gebug: A tool that makes debugging of Dockerized Go applications super easy by enabling Debugger and Hot-Reload features, seamlessly.](https://www.reddit.com/r/golang/comments/hv2ncw/moshebegebug_a_tool_that_makes_debugging_of/)
-- url: https://github.com/moshebe/gebug
+## [1][[Q&amp;A] io/fs draft design](https://www.reddit.com/r/golang/comments/hv976o/qa_iofs_draft_design/)
+- url: https://www.reddit.com/r/golang/comments/hv976o/qa_iofs_draft_design/
+---
+I posted a draft design today for new file system interfaces for Go.
+
+Video: https://golang.org/s/draft-iofs-video
+
+Design: https://golang.org/s/draft-iofs-design
+
+Let's do the Q&amp;A about the design here in Reddit. My hope is that the threading support will help keep questions and answers matched.
+
+Please start a new top-level comment for each new question.
+
+See also the related [Q&amp;A for the //go:embed draft design](https://golang.org/s/draft-iofs-reddit).
+## [2][[Q&amp;A] //go:embed draft design](https://www.reddit.com/r/golang/comments/hv96ny/qa_goembed_draft_design/)
+- url: https://www.reddit.com/r/golang/comments/hv96ny/qa_goembed_draft_design/
+---
+I posted a draft design today for embedding files into Go programs.
+
+Video: https://golang.org/s/draft-embed-video
+
+Design: https://golang.org/s/draft-embed-design
+
+Let's do the Q&amp;A about the design here in Reddit. My hope is that the threading support will help keep questions and answers matched.
+
+Please start a new top-level comment for each new question.
+
+See also the related [Q&amp;A for the io/fs draft design](https://golang.org/s/draft-iofs-reddit).
+## [3][Go2 playground now supports square brackets for Generics](https://www.reddit.com/r/golang/comments/hvpis5/go2_playground_now_supports_square_brackets_for/)
+- url: https://www.reddit.com/r/golang/comments/hvpis5/go2_playground_now_supports_square_brackets_for/
+---
+[https://go2goplay.golang.org](https://go2goplay.golang.org/) 
+
+&gt;// The playground now supports parentheses or square brackets (only one at  
+&gt;  
+&gt;// a time) for generic type and function declarations and instantiations.  
+&gt;  
+&gt;// By default, parentheses are expected. To switch to square brackets,  
+&gt;  
+&gt;// the first generic declaration in the source must use square brackets.
+
+Sample: [https://go2goplay.golang.org/p/7zFKUcpzhvZ](https://go2goplay.golang.org/p/7zFKUcpzhvZ)
+## [4][Design Draft: First Class Fuzzing](https://www.reddit.com/r/golang/comments/hvpr96/design_draft_first_class_fuzzing/)
+- url: https://go.googlesource.com/proposal/+/refs/heads/master/design/40307-fuzzing.md
 ---
 
-## [2][RTSP to WebRTC Server for large scale broadcast benchmarks (written in Go!)](https://www.reddit.com/r/golang/comments/hv2yu4/rtsp_to_webrtc_server_for_large_scale_broadcast/)
-- url: https://github.com/pion/rtsp-bench
----
-
-## [3][Useful packages Gophers should know](https://www.reddit.com/r/golang/comments/hv608d/useful_packages_gophers_should_know/)
+## [5][Useful packages Gophers should know](https://www.reddit.com/r/golang/comments/hv608d/useful_packages_gophers_should_know/)
 - url: https://www.golangprograms.com/go-programming-language-packages.html
 ---
 
-## [4][Did you guys read all of the topics like "Animated GIFS" and "complex numbers" in a book called "The Go progamming Langauge"?](https://www.reddit.com/r/golang/comments/hv6yvq/did_you_guys_read_all_of_the_topics_like_animated/)
-- url: https://www.reddit.com/r/golang/comments/hv6yvq/did_you_guys_read_all_of_the_topics_like_animated/
----
-New to Go language and I am reading a book "Go Programming Language" by Alan A. A. and Brian W. I know it's popular book among all Golang developers. My question is "Do I need to learn the "Animated GIfs " Four Lissajous figures. " from the book as well as "complex numbers" parts? Are these necessary while doing the development works with GO? Did you guys skip this part or dive into it just to make your language better? Cause I feel it's too complicated and also useless in real development scenario.
-## [5][Go compiler doesn't like unused variables](https://www.reddit.com/r/golang/comments/hufqpl/go_compiler_doesnt_like_unused_variables/)
-- url: https://i.redd.it/1oobvnrzwub51.jpg
+## [6][moshebe/gebug: A tool that makes debugging of Dockerized Go applications super easy by enabling Debugger and Hot-Reload features, seamlessly.](https://www.reddit.com/r/golang/comments/hv2ncw/moshebegebug_a_tool_that_makes_debugging_of/)
+- url: https://github.com/moshebe/gebug
 ---
 
-## [6][Embedding interface{} in interface](https://www.reddit.com/r/golang/comments/hv6lxr/embedding_interface_in_interface/)
-- url: https://www.reddit.com/r/golang/comments/hv6lxr/embedding_interface_in_interface/
+## [7][trouble with godoc](https://www.reddit.com/r/golang/comments/hvirja/trouble_with_godoc/)
+- url: https://www.reddit.com/r/golang/comments/hvirja/trouble_with_godoc/
 ---
-I was reading some code recently and ran into the following:
+Hey everyone, I am having trouble getting godoc to work and figured I would ask if anyone has any insight.
 
-    type Expander interface{}
-    
-    type Foo interface {
-        Bar()
-        Expander
-    }
+I have a folder name test under my src folder with one package "main".
 
+&amp;#x200B;
 
-How would I use the `Expander` concept? I know this isn't best practice but it was interesting.
-## [7][Datadog Go API and Contexts](https://www.reddit.com/r/golang/comments/hv2aus/datadog_go_api_and_contexts/)
-- url: https://www.reddit.com/r/golang/comments/hv2aus/datadog_go_api_and_contexts/
+When I run the command
+
+go doc -all -u ./test 
+
+It creates documentation just fine. However when running godoc I cant seem to get anything. The documentation says to control presentation mode with the url parameter m and gives this as an example to use to get all unexported methods
+
+For instance, [https://golang.org/pkg/math/big/?m=all](https://golang.org/pkg/math/big/?m=all) shows the documentation for all (not just the exported) declarations of package big.
+
+&amp;#x200B;
+
+so I ran the http server with 
+
+godoc -http=localhost:6060   
+
+and it hosts correctly, however when i navigate to my package both
+
+[http://localhost:6060/pkg/test/?m=all](http://localhost:6060/pkg/test/?m=all) 
+
+and
+
+[http://localhost:6060/pkg/test/](http://localhost:6060/pkg/test/)
+
+display an empty page with the header Command Test. 
+
+Any insight would be great appreciated.
+## [8][get random from given numbers](https://www.reddit.com/r/golang/comments/hvqnct/get_random_from_given_numbers/)
+- url: https://www.reddit.com/r/golang/comments/hvqnct/get_random_from_given_numbers/
 ---
-Reading up on [Datadog's announcement of their new official Go API client](https://www.datadoghq.com/blog/java-go-libraries/), and at first blush I like their implementation. I'm intrigued by their use of contexts to pass the credentials in. I've seen similar uses in `context` examples -- and I feel it's following idiomatic Go principles -- but this is the first time I've ever seen `context.WithValue()` used in an official library in the wild.
+i'm new to go, how do i get a random value from a choice of numbers
 
-Curious about what everyone's opinions are on it. Do you see it as a solid pattern when building client libraries?
-## [8][Anyone Willing to look over my Twitter Bot](https://www.reddit.com/r/golang/comments/huy9o3/anyone_willing_to_look_over_my_twitter_bot/)
-- url: https://www.reddit.com/r/golang/comments/huy9o3/anyone_willing_to_look_over_my_twitter_bot/
+ex: (1,9,36) and i get 1,9 or 36
+## [9][[poll] what's your i18n/l11n solution](https://www.reddit.com/r/golang/comments/hvneur/poll_whats_your_i18nl11n_solution/)
+- url: https://www.reddit.com/r/golang/comments/hvneur/poll_whats_your_i18nl11n_solution/
 ---
-Hey guys,
+Go programmers - what do you use when writing software in Go that needs to support multiple languages? I'm tryna decide which to choose.
 
-So I recently started learning Go.  I'm pretty early on in my programming journey.  Started learning python and have kind of jumped over to Go.  This is basically my first real program written in Go.  Based on what I could find online, I think I setup my project structure correctly.  I still need to add more to the README, but here's the gist of what the bot does.
+I'm leaning towards po files just because I don't want to ask an external translation company to write Go or manage gotext.json (as good as that looks, almost nobody knows about it and there's no docs)
 
-Makes a daily API request to the NASA Insight Rover data and tweets out the daily weather.  If no new weather is available, it provides a list of the most recent readings.
-
-It also will reply to a user if they tweet at the bot with specific tweets.  Similar style to the above sentence.
-
-I've also stumbled through Docker and AWS and was able to get it deployed onto the free tier of an EC2 instance, so it is currently up and running.
-
-I'm still trying to gain an understanding of pointers and such.  
-
-Appreciate any criticism.  Here is the link to my github repo.
-
-[Mars Weather Bot Github Repo](https://github.com/zacharygilliom/marsweatherbot)
-## [9][How wrong is this?](https://www.reddit.com/r/golang/comments/hv608o/how_wrong_is_this/)
-- url: https://www.reddit.com/r/golang/comments/hv608o/how_wrong_is_this/
+[View Poll](https://www.reddit.com/poll/hvneur)
+## [10][How to add a header to every request in Go](https://www.reddit.com/r/golang/comments/hvn7u3/how_to_add_a_header_to_every_request_in_go/)
+- url: https://developer20.com/add-header-to-every-request-in-go/?utm_source=reddit&amp;utm_medium=link&amp;utm_campaign=headers-in-go
 ---
-Hi Gophers,
 
-I'm trying to find a way to stop cluttering my functions and methods with all that error checking.
-
-I know there are (in)famous articles about how errors are values and such, but there was still functionality I was missing there.
-
-What I came up with is the following, and I am wondering how bad it is really that I am basically throwing panics all over the place for errors, however, I am recovering them and handling the error states.
-
-[https://github.com/TheApeMachine/errnie](https://github.com/TheApeMachine/errnie)
-
-I welcome any feedback before I continue working on this or even worse, actually use it.
-## [10][Is there a pm2 like process manager to manage applications written in golang?](https://www.reddit.com/r/golang/comments/hv5i6f/is_there_a_pm2_like_process_manager_to_manage/)
-- url: https://www.reddit.com/r/golang/comments/hv5i6f/is_there_a_pm2_like_process_manager_to_manage/
+## [11][query2metric - A tool to run db queries in defined frequency and expose the count as Prometheus metrics.](https://www.reddit.com/r/golang/comments/hvdluz/query2metric_a_tool_to_run_db_queries_in_defined/)
+- url: https://github.com/yolossn/query2metric/
 ---
-By managing, I mean daemonizing the process so that it starts when the system reboots, starting and stopping the process, see how much memory it consumes. I've tried [apm](https://github.com/topfreegames/apm) and [pmgo](https://github.com/struCoder/pmgo) but none of them worked properly or I was unable to get them to work. I follow the instructions to start the app using the process manager but the app does not start. There is not a single log telling that some of the things have gone wrong as well.
+
+## [12][Is Golang really viable for back end dev?](https://www.reddit.com/r/golang/comments/hvr0ol/is_golang_really_viable_for_back_end_dev/)
+- url: https://www.reddit.com/r/golang/comments/hvr0ol/is_golang_really_viable_for_back_end_dev/
+---
+Hello, i did some google research and they said golang was viable for writing apis and stuff (am new to programing bare with me), but is it really viable for back end, i heard about the fiber framework is it any good?
+
+also i know i have to learn a lot of thing in web dev (i mean a roadmap would be hepful if you guys have one)
+
+am not looking for a job am only a 16 year old kid who wants to dive into programming (\*cough\* tried 3 years ago btw)
+
+&amp;#x200B;
+
+also i heard alot of people hating on golang whats the problem?
+
+sorry if this question is asked again, Thanks for your anwsers.

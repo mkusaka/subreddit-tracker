@@ -1,5 +1,33 @@
 # Kotlin
-## [1][An old unnoticed bug causes memory safety issue in Kotlin Native.](https://www.reddit.com/r/Kotlin/comments/hv5uqz/an_old_unnoticed_bug_causes_memory_safety_issue/)
+## [1][Kotlin Microservices On Kubernetes: Part 6 - Service mesh](https://www.reddit.com/r/Kotlin/comments/hvql7d/kotlin_microservices_on_kubernetes_part_6_service/)
+- url: https://www.youtube.com/watch?v=TYpRzK03N80&amp;feature=share
+---
+
+## [2][Immutability we can afford](https://www.reddit.com/r/Kotlin/comments/hvtlzd/immutability_we_can_afford/)
+- url: https://medium.com/@elizarov/immutability-we-can-afford-10c0dcb8351d
+---
+
+## [3][Squasher](https://www.reddit.com/r/Kotlin/comments/hvtl4k/squasher/)
+- url: https://dkandalov.github.io/squasher
+---
+
+## [4][Kotlin’s Noinline &amp; Crossline, once for all](https://www.reddit.com/r/Kotlin/comments/hvt4vh/kotlins_noinline_crossline_once_for_all/)
+- url: https://medium.com/@cortinico/kotlins-noinline-crossline-once-for-all-c942fd07b7a3
+---
+
+## [5][What's up with Kotlin/native?](https://www.reddit.com/r/Kotlin/comments/hvhpvd/whats_up_with_kotlinnative/)
+- url: https://www.reddit.com/r/Kotlin/comments/hvhpvd/whats_up_with_kotlinnative/
+---
+As a .NET developer, I love Kotlin. It allows me to take advantage of the JVM ecosystem without THAT language, and also introduce it to people at work(I love Scala as well, but selling it to the average corporate dev is a different story).     
+That being said, Kotlin is obviously a JVM language. All the primitive wrapper magic, type erasure, collection wrappers, lack of value types and so on scream "I'm made to fix Java's crap".      
+My question is, when do you actually use Kotlin/Native? For low-level stuff/SP, Rust is amazing and very expressive and fast. For mobile development, I'd rather use the native languages. For tools, well, I can use F# or Python to drop some quick scripts. For me, it's a bit weird to offer a native implementation of a language spec that's realistically stunted by the JVM limitations.
+## [6][Do you consider using labels in kotlin bad practice?](https://www.reddit.com/r/Kotlin/comments/hvq24v/do_you_consider_using_labels_in_kotlin_bad/)
+- url: https://www.reddit.com/r/Kotlin/comments/hvq24v/do_you_consider_using_labels_in_kotlin_bad/
+---
+[SOLVED]
+
+Hey!Im going through the kotlin reference right now and i came across the section break and continue labels a while ago.I tried to find some usage examples in code of others but i didnt found any,so it came to my mind that using labels in kotlin could be considered bad practice just like in other languages.I wonder what you guys think about it.Is it bad practice?Is it just not used so much but actually even  encouraged to use it??If you got production code experience with kotlin i would like to know about your experience and view onto the use of labels.
+## [7][An old unnoticed bug causes memory safety issue in Kotlin Native.](https://www.reddit.com/r/Kotlin/comments/hv5uqz/an_old_unnoticed_bug_causes_memory_safety_issue/)
 - url: https://www.reddit.com/r/Kotlin/comments/hv5uqz/an_old_unnoticed_bug_causes_memory_safety_issue/
 ---
 [KT-7972](https://youtrack.jetbrains.com/issue/KT-7972) is a bug that causes unsafe cast when smartcasting with generics. The following code
@@ -8,7 +36,7 @@
 open class Base&lt;out T&gt;
 class Derive&lt;T&gt;(var value: T) : Base&lt;T&gt;()
 
-fun unsound() {
+fun main() {
     val d = Derive(0)
     val b: Base&lt;Any&gt; = d
     if (b is Derive) {
@@ -18,80 +46,37 @@ fun unsound() {
 }
 ```
 
-will crashes on Kotlin JVM.
+will crash on Kotlin JVM.
 
 This bug is quite old and not be considered as a huge problem. Maybe it is not on JVM because the program would crash eventually if any incorrect cast involved. But when I run it with Kotlin Native targeting Linux x64, the program does not crash and output `12`. 
 
 I guess the reason is that it unsafely cast `"0123456789"` to `Int` , and `d.value` reads the first 32 bits of the string object, which happens to be the length of the string.
 
 Unsafe memory access may involve because of this bug, which is a big problem. I think we should pay more attention to this bug, either fix it at language level, or at least do more runtime check to prevent unsafe memory access on Kotlin Native.
-## [2][Kotlin/Native Concurrency Changes…](https://www.reddit.com/r/Kotlin/comments/hutcjb/kotlinnative_concurrency_changes/)
-- url: https://medium.com/@kpgalligan/kotlin-native-concurrency-changes-bbb1a5147e6
+
+=========================
+
+Edit: the reason it compiles is that, `d` has type `Derive&lt;Int&gt;`, which is a subtype of `Base&lt;Int&gt;` because `Derive` is a subclass of `Base`, which is a subtype of `Base&lt;Any&gt;` because `T` in `Base&lt;out T&gt;` is covariance. Expressing by code,
+
+```kotlin
+val d: Derive&lt;Int&gt; = Derive(0)
+val tmp: Base&lt;Int&gt; = d
+val b: Base&lt;Any&gt; = tmp
+```
+## [8][An example of stateful sequence operation](https://www.reddit.com/r/Kotlin/comments/hvbixu/an_example_of_stateful_sequence_operation/)
+- url: https://www.reddit.com/r/Kotlin/comments/hvbixu/an_example_of_stateful_sequence_operation/
+---
+I am currently studying Kotlin [Sequences - Sequence Operations](https://kotlinlang.org/docs/reference/sequences.html#sequence-operations)  
+Is there an example to demonstrate a stateful sequence operation?
+## [9][Android Model-View-Intent with the new Kotlin StateFlow! - Replacing LiveData](https://www.reddit.com/r/Kotlin/comments/hvdkda/android_modelviewintent_with_the_new_kotlin/)
+- url: https://proandroiddev.com/android-model-view-intent-with-kotlin-flow-ca5945316ec
 ---
 
-## [3][Kotlin/Native Memory Management Roadmap](https://www.reddit.com/r/Kotlin/comments/hup358/kotlinnative_memory_management_roadmap/)
-- url: https://blog.jetbrains.com/kotlin/2020/07/kotlin-native-memory-management-roadmap/
+## [10][Best non-mutating way to add an element to a Map&lt;T, List&lt;R&gt;&gt;?](https://www.reddit.com/r/Kotlin/comments/hv7tii/best_nonmutating_way_to_add_an_element_to_a_mapt/)
+- url: https://www.reddit.com/r/Kotlin/comments/hv7tii/best_nonmutating_way_to_add_an_element_to_a_mapt/
 ---
+So, I have a `Map&lt;T, List&lt;R&gt;&gt;` and I have elements `val t: T = foo()` and `val r: R = bar()`.
 
-## [4][[X-POST] JetBrains is porting Compose to desktop and other platforms : androiddev](https://www.reddit.com/r/Kotlin/comments/huidyh/xpost_jetbrains_is_porting_compose_to_desktop_and/)
-- url: https://www.reddit.com/r/androiddev/comments/hufnjq/_/
----
+I want to return a new map with the list at key `t` replaced with a list that is the original + `r`. 
 
-## [5][Can I use Kotlin serialization to serialize to very compact ByteArrays?](https://www.reddit.com/r/Kotlin/comments/huxjsz/can_i_use_kotlin_serialization_to_serialize_to/)
-- url: https://www.reddit.com/r/Kotlin/comments/huxjsz/can_i_use_kotlin_serialization_to_serialize_to/
----
-I have a use-case where I need to serialize data to very compact `ByteArray`s, in particular serializing `ByteArray`s properties of an object to compact representations - which need to fit in a UDP packet - max 1040 bytes.
-
-I've been playing with CBOR, but it only seems marginally more efficient than JSON, `ByteArray`s are more than doubled in size, and - like JSON - the format includes property names in the serialized data.
-
-[Avro](https://github.com/sksamuel/avro4k)'s `binary` serialization format looks promising, but the documentation isn't great, it's not clear how to configure it to do `binary` serialization to `ByteArray`s.
-
-Has anyone dug into this?  Would appreciate any suggestions.
-## [6][How do I check if a date minus a number of days is still in the future in Kotlin JVM?](https://www.reddit.com/r/Kotlin/comments/huyhvz/how_do_i_check_if_a_date_minus_a_number_of_days/)
-- url: https://www.reddit.com/r/Kotlin/comments/huyhvz/how_do_i_check_if_a_date_minus_a_number_of_days/
----
-I need to take a date (where the raw input is a string in the format `YYYY-MM-DD`) and an integer, where the integer represents the number of days *earlier* from that date, and determine if that new date is in the past, today, or the future.
-
-Basically, how do I subtract a certain number of days from a date, and how do I determine if a date is today, or before or after today?
-## [7][Is using named arguments in your function calls encouraged in kotlin?](https://www.reddit.com/r/Kotlin/comments/huy757/is_using_named_arguments_in_your_function_calls/)
-- url: https://www.reddit.com/r/Kotlin/comments/huy757/is_using_named_arguments_in_your_function_calls/
----
-I'm learning kotlin now and just learned about named arguments, where you can provide the argument name when calling a function. This seems like a lot, considering most modern IDEs should allow me to preview the arguments, and even if not this is something that shouldn't be too difficult to figure out using a ctrl+f if I have to.
-
-    fun namedArguments() {
-        printUserInfo(firstName = "Donn", lastName = "Felker", age = 32, isSunburned = false, likesMovies = true, lovesPopcorn = true)
-    }
-    
-    fun printUserInfo(firstName: String, lastName: String, age: Int, isSunburned: Boolean, likesMovies: Boolean, lovesPopcorn: Boolean) {
-        println("$firstName $lastName is of age $age. Sunburned: $isSunburned, Likes Movies: $likesMovies, Loves Popcorn: $lovesPopcorn")
-    }
-
-This is a concise example (from [this](https://caster.io/courses/kotlin-programming-language) great course)
-
-Do you always explicitly name your argument when calling a function? I can see how it improves readability, but it is also pretty verbose.
-## [8][Learn Kotlin by building Android AR app series by Radoslaw Fabisiak](https://www.reddit.com/r/Kotlin/comments/hundrn/learn_kotlin_by_building_android_ar_app_series_by/)
-- url: https://www.reddit.com/r/Kotlin/comments/hundrn/learn_kotlin_by_building_android_ar_app_series_by/
----
-In the first lesson, we will build the Android augmented reality mobile app&amp; we will learn how to setup Android Studio with ARCore for augmented reality projects.
-
-In the second lesson of the Kotlin course, we will learn how to build a login form.
-
-[Lesson1: Android Studio setup](https://itnext.io/learn-kotlin-by-building-android-ar-app-lesson1-android-studio-setup-d51a3568453a?source=friends_link&amp;sk=7ebd18d7243dde9d96a0cf6854643bcd) 
-
-[Lesson2: How to build login form](https://itnext.io/learn-kotlin-by-building-android-ar-app-lesson2-how-to-build-login-form-725dcafbd00d?source=friends_link&amp;sk=634a0208d0ca97bdbd40d1bafdf51353)
-## [9][Tips for newbies](https://www.reddit.com/r/Kotlin/comments/hukd3y/tips_for_newbies/)
-- url: https://www.reddit.com/r/Kotlin/comments/hukd3y/tips_for_newbies/
----
-                Hello people!
- 
-                I have not any experience at programming. I started to learn Java. But java seems to me difficult to learn. Then I tried Kotlin. It is looking not easy. But not hard as Java.
-
-                I am watching Udemy videos. When I print "Hello World!" I was so excited. I said "That's magic!". I know it is a veeeeerryy basic thing but i liked that.
-
-                My goal is coding budget app. There is so much and so good apps in Google Play but i want to build my own app.
-
-                What do you advise for starters who know nothing?
-## [10][Android app with the Room database](https://www.reddit.com/r/Kotlin/comments/hug5wx/android_app_with_the_room_database/)
-- url: https://youtu.be/kF0TPehhIx0
----
-
+What's the most elegant way to do so?

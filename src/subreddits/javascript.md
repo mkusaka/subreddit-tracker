@@ -85,50 +85,47 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][Uppy file uploader launches image cropping (beta)](https://www.reddit.com/r/javascript/comments/hv5pqq/uppy_file_uploader_launches_image_cropping_beta/)
+## [3][Along with replaceAll, Promise.any, WeakRefs, and Logical Assignment Operators are now at stage 4](https://www.reddit.com/r/javascript/comments/hvequw/along_with_replaceall_promiseany_weakrefs_and/)
+- url: https://github.com/tc39/proposals/blob/master/finished-proposals.md
+---
+
+## [4][WTF is memoization?](https://www.reddit.com/r/javascript/comments/hvcb1z/wtf_is_memoization/)
+- url: https://whatthefuck.is/memoization
+---
+
+## [5][Integrating a Modern JavaScript Pipeline into a Django Application](https://www.reddit.com/r/javascript/comments/hvsv3k/integrating_a_modern_javascript_pipeline_into_a/)
+- url: https://www.saaspegasus.com/guides/modern-javascript-for-django-developers/integrating-javascript-pipeline/
+---
+
+## [6][Multiweb — Making the World Wide Web a Truly Distributed Computing Platform](https://www.reddit.com/r/javascript/comments/hvte3y/multiweb_making_the_world_wide_web_a_truly/)
+- url: https://github.com/udexon/Multiweb
+---
+
+## [7][Keep Legacy Code or Rewrite? A Middle Way](https://www.reddit.com/r/javascript/comments/hvoq4w/keep_legacy_code_or_rewrite_a_middle_way/)
+- url: https://medium.com/thron-tech/keep-legacy-code-or-rewrite-a-middle-way-dc77c2f76e5f
+---
+
+## [8][Uppy file uploader launches image cropping (beta)](https://www.reddit.com/r/javascript/comments/hv5pqq/uppy_file_uploader_launches_image_cropping_beta/)
 - url: https://uppy.io/blog/2020/07/1.18-image-editor/
 ---
 
-## [4][Rollup Svelte Sapper with Sass, Typescript, and Path Resolver Boilerplate](https://www.reddit.com/r/javascript/comments/hv0wrr/rollup_svelte_sapper_with_sass_typescript_and/)
-- url: https://github.com/MichealPearce/sapped-svelte-ts-boilerplate
+## [9][[AskJS] very large number of arrays filled with numbers vs very large number of arrays with references](https://www.reddit.com/r/javascript/comments/hvoxii/askjs_very_large_number_of_arrays_filled_with/)
+- url: https://www.reddit.com/r/javascript/comments/hvoxii/askjs_very_large_number_of_arrays_filled_with/
+---
+What's the memory difference of an array of 1000 objects all being one of like 1-5 references to the same objects vs an array of 1000 integers? Im dealing with a large number of objects in one of my projects and i'm trying to optimize as much as possible, I was going to pass the indexes of functions around instead of an array of bound functions, but I'm not sure what some of the lower level implications are.
+## [10][Svelte and TypeScript](https://www.reddit.com/r/javascript/comments/hv8y28/svelte_and_typescript/)
+- url: https://svelte.dev/blog/svelte-and-typescript
 ---
 
-## [5][Build Instagram Using TypeScript, Node, Express and Vue](https://www.reddit.com/r/javascript/comments/hukxcz/build_instagram_using_typescript_node_express_and/)
-- url: https://dev.to/calvintwr/build-instagram-using-typescript-node-express-and-vue-part-1-57do
+## [11][[AskJS] JavaScript is always one day early when parsing dates?](https://www.reddit.com/r/javascript/comments/hvo97s/askjs_javascript_is_always_one_day_early_when/)
+- url: https://www.reddit.com/r/javascript/comments/hvo97s/askjs_javascript_is_always_one_day_early_when/
 ---
+[This is what I'm referring to.](https://i.redd.it/530vtwzl3cc51.png)
 
-## [6][Building Scalable Redux-First Apps](https://www.reddit.com/r/javascript/comments/huyvlh/building_scalable_reduxfirst_apps/)
-- url: https://medium.com/@robbiehall26/building-scalable-redux-first-apps-5a8d09e9bd04?sk=23a705bcad8d07e47500bf382213619d
+What is causing this, and how do I fix it short of just adding a day to the date object?
+## [12][[AskJS] what are the strengths and weaknesses of each popular frontend framework? And where/when do those strengths/weaknesses tend to show up?](https://www.reddit.com/r/javascript/comments/hvnt3c/askjs_what_are_the_strengths_and_weaknesses_of/)
+- url: https://www.reddit.com/r/javascript/comments/hvnt3c/askjs_what_are_the_strengths_and_weaknesses_of/
 ---
-
-## [7][Handling Rate Limiting - JavaScript Web Scraping Guy](https://www.reddit.com/r/javascript/comments/hv5wx8/handling_rate_limiting_javascript_web_scraping_guy/)
-- url: https://javascriptwebscrapingguy.com/jordan-handles-rate-limiting/
----
-
-## [8][Best Practices for Building JavaScript SDKs With TypeScript](https://www.reddit.com/r/javascript/comments/hv57qd/best_practices_for_building_javascript_sdks_with/)
-- url: https://medium.com/swlh/best-practices-for-building-javascript-sdks-with-typescript-7192490d9fcc
----
-
-## [9][[AskJS] Did anyone manage to create a good emacs config for React webdev (jsx, graphql, styled components)? I struggle to get it to work. Can you help?](https://www.reddit.com/r/javascript/comments/hv3t4l/askjs_did_anyone_manage_to_create_a_good_emacs/)
-- url: https://www.reddit.com/r/javascript/comments/hv3t4l/askjs_did_anyone_manage_to_create_a_good_emacs/
----
-Hi! I love emacs, but the deeper I go into react programming, the harder it gets to use. No indentation or syntax highlighting for GraphQL and Styled Components, web-mode constantly loses syntax highlighting and must be reloaded, unhelpful quotes being added for me where they shouldn't be.
-
-I tried VSCode and it has so many slick and convenient features, but feels way slower and more sluggish than emacs, I don't want to switch, I'm still more productive in emacs despite all the issues.
-
-Did anyone manage to create a good emacs config that works well for react webdev? Can you please share?
-
-(I did post this question on /r/emacs, stackoverflow, and emacs stackexchange, but received no helpful replies so far, so I'm hoping maybe you guys could help?)
-## [10][The Jailer is free! New release of the outstanding database subsetter and browser is available.](https://www.reddit.com/r/javascript/comments/hv1i7g/the_jailer_is_free_new_release_of_the_outstanding/)
-- url: https://github.com/Wisser/Jailer
----
-
-## [11][[AskJS] Window move up](https://www.reddit.com/r/javascript/comments/hv5hg6/askjs_window_move_up/)
-- url: https://www.reddit.com/r/javascript/comments/hv5hg6/askjs_window_move_up/
----
- how i can create this window move up , or what is name ? I can't find it in Google
-Like the video in comments
-## [12][Dev utility tool: This code takes any image (png, jpeg, svg, gif) as input, it then traces the outline of the image, and outputs the path of the image in terms of cartesian coordinates to console. I hope people find some use for this, as it took ageees :)](https://www.reddit.com/r/javascript/comments/hureo4/dev_utility_tool_this_code_takes_any_image_png/)
-- url: https://github.com/trozler/ImageToPoints
----
-
+- I have worked with react quite a lot, but have never worked with vue, angular, svelete, etc... 
+- I am not asking “what is best?” Or “which should I choose?” (I find those posts annoying)
+- which types of web apps would play to the strengths of each framework?

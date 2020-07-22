@@ -56,7 +56,31 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][[Question] What are convincing (preferably perf-unrelated) ways to argue against passing everything by shared_ptr?](https://www.reddit.com/r/cpp/comments/hv45lw/question_what_are_convincing_preferably/)
+## [2][I Made an Esoteric Programming Language with ANTLR4 and C++ which let's you code in Cats' language.](https://www.reddit.com/r/cpp/comments/hvsdax/i_made_an_esoteric_programming_language_with/)
+- url: https://github.com/bauripalash/mewmew
+---
+
+## [3][Improving code generation time with C++ Build Insights](https://www.reddit.com/r/cpp/comments/hvi7l8/improving_code_generation_time_with_c_build/)
+- url: https://devblogs.microsoft.com/cppblog/improving-code-generation-time-with-cpp-build-insights/
+---
+
+## [4][Doxygen comments and Logpoints support for VS Code C++ Extension](https://www.reddit.com/r/cpp/comments/hvc1gw/doxygen_comments_and_logpoints_support_for_vs/)
+- url: https://devblogs.microsoft.com/cppblog/visual-studio-code-c-extension-july-2020-update-doxygen-comments-and-logpoints/
+---
+
+## [5][grpc_bench: a clear, objective gRPC benchmark](https://www.reddit.com/r/cpp/comments/hvs4f0/grpc_bench_a_clear_objective_grpc_benchmark/)
+- url: /r/grpc/comments/hv7h6i/grpc_bench_a_clear_objective_grpc_benchmark/
+---
+
+## [6][How Relocations and Thread Local Store are Implemented](https://www.reddit.com/r/cpp/comments/hvi1s2/how_relocations_and_thread_local_store_are/)
+- url: https://stffrdhrn.github.io/software/toolchain/openrisc/2020/07/21/relocs_tls_impl.html
+---
+
+## [7][std::ref and std::reference_wrapper: common use cases](https://www.reddit.com/r/cpp/comments/hv6d9k/stdref_and_stdreference_wrapper_common_use_cases/)
+- url: https://www.nextptr.com/tutorial/ta1441164581/stdref-and-stdreference_wrapper-common-use-cases
+---
+
+## [8][[Question] What are convincing (preferably perf-unrelated) ways to argue against passing everything by shared_ptr?](https://www.reddit.com/r/cpp/comments/hv45lw/question_what_are_convincing_preferably/)
 - url: https://www.reddit.com/r/cpp/comments/hv45lw/question_what_are_convincing_preferably/
 ---
 Since C++11, I noticed that programmers in some circles started using `std::shared_ptr` for everything (possibly type-aliasing it as e.g.`Ptr`) and passing everything by `shared_ptr` copy, but this makes me personally uneasy due to the loss in visibility into RAII-based resource release times.
@@ -66,53 +90,23 @@ Unfortunately, I'm not good at coming up with the kind of concrete arguments tha
 Most notably, I'm having a hard time conveying why destruction times are Important™, and why you don't want your object relationships to turn into a strongly connected graph.
 
 What's your guys' take? How would you (amiably) approach the issue?
-## [3][Optimizing 128-bit Division](https://www.reddit.com/r/cpp/comments/hurl3f/optimizing_128bit_division/)
-- url: https://danlark.org/2020/06/14/128-bit-division/
----
 
-## [4][std::ref and std::reference_wrapper: common use cases](https://www.reddit.com/r/cpp/comments/hv6d9k/stdref_and_stdreference_wrapper_common_use_cases/)
-- url: https://www.nextptr.com/tutorial/ta1441164581/stdref-and-stdreference_wrapper-common-use-cases
----
-
-## [5][Versioning and other C++ Boilerplate](https://www.reddit.com/r/cpp/comments/huuisv/versioning_and_other_c_boilerplate/)
-- url: https://thephd.github.io/versioning-and-other-boilerplate
----
-
-## [6][TIL static_assert error messages are not printed consistently across compilers.](https://www.reddit.com/r/cpp/comments/hupykm/til_static_assert_error_messages_are_not_printed/)
-- url: https://www.reddit.com/r/cpp/comments/hupykm/til_static_assert_error_messages_are_not_printed/
----
-Obligatory compiler explorer: [https://godbolt.org/z/bcaxGs](https://godbolt.org/z/bcaxGs)
-
-Ran into this today when I realized that my nice helpful static assertion messages were being turned into absolute garbage by Clang. Google yielded [this SO post](https://stackoverflow.com/questions/46376309/why-arent-newlines-other-control-sequences-printed-with-static-assert) quoting this excerpt from the standard:
-
-&gt;the resulting diagnostic message (4.1) shall include the text of the string-literal, if one is supplied, except that characters not in the basic source character set (5.3) are not required to appear in the diagnostic message.
-
-I ended up getting around it by offering a simpler version of my error messages on clang, which is... 'fine', but it almost defies understanding that the standard isn't stricter about it to begin with. Does anyone know the historical context behind this, or if there's any existing moves to clear it up? The current discrepancy between the way the messages are rendered significantly hinders the usefulness of allowing messages in static assertions to begin with, imo.
-## [7][Using std::map Wisely With Modern C++](https://www.reddit.com/r/cpp/comments/hulelk/using_stdmap_wisely_with_modern_c/)
-- url: http://www.vishalchovatiya.com/using-std-map-wisely-with-modern-cpp/
----
-
-## [8][Advanced C/C++ side projects](https://www.reddit.com/r/cpp/comments/huh7d2/advanced_cc_side_projects/)
-- url: https://www.reddit.com/r/cpp/comments/huh7d2/advanced_cc_side_projects/
----
-Hi.
-
-After a resume review by a fellow engineer, I was told that I should build some advanced C and C++ projects to show my competency.  Although my long term goal is to become a sensor fusion engineer, now I am just looking for entry-level positions.  The industry I want to get into is self-drivig cars/robotics/autonomy development.  What are some advanced C and C++ based projects that I can build along the lines of this industry?  These projects are also going to help me learn the languages a lot better as well.
-
-I apologize if this is a dumb post. I figured that this is a good place to ask.
-
-Thanks.
-## [9][C++ audio projects](https://www.reddit.com/r/cpp/comments/hv2930/c_audio_projects/)
-- url: https://www.reddit.com/r/cpp/comments/hv2930/c_audio_projects/
+Edit: Thank you all for the responses! I didn't go through quite all of them yet, but I will over the next day or so. I didn't expect this to get as much attention as it did, but I'm happy that it did :)
+## [9][Macro for accessors methods](https://www.reddit.com/r/cpp/comments/hvor0t/macro_for_accessors_methods/)
+- url: https://www.reddit.com/r/cpp/comments/hvor0t/macro_for_accessors_methods/
 ---
 Hello,
 
-I'm more of a Javascript developer but I've been getting deep into C++ the past few months. My goal is to be an audio developer. Can anyone suggest any good projects to build or good resources? I have built a synthesizer simulator on the keyboard but trying to think of others that are in a way easy to tackle.
-## [10][build2 0.13.0 released, adds support for ad hoc recipes, source layout customization](https://www.reddit.com/r/cpp/comments/hum1nw/build2_0130_released_adds_support_for_ad_hoc/)
-- url: https://build2.org/release/0.13.0.xhtml
----
+In a new project where I am working now there are a lot of macros that help to write accessors and other things.
+As example you can write GETSET(int, counter) in a class definition an the macro will exapnds into the code of set / get and member definition.
+I don't like very much this but you don't have to write a lot of trivial code.
 
-## [11][The ABI stability matryoshka](https://www.reddit.com/r/cpp/comments/hum7oz/the_abi_stability_matryoshka/)
-- url: https://nibblestew.blogspot.com/2020/07/the-abi-stability-matryoshka.html
+What do you think? Is it a bad practice? Or you like this approach?
+## [10][Better IDE for linux](https://www.reddit.com/r/cpp/comments/hvelig/better_ide_for_linux/)
+- url: https://www.reddit.com/r/cpp/comments/hvelig/better_ide_for_linux/
+---
+I am using g++ through terminal, it works fine for small projects but for complicated project like that using cmake , g++ gave me little choices compared to VS on Windows. What is the best IDE to use in Ubuntu?
+## [11][static code analyzer for annotated TODO comments \w C++ support](https://www.reddit.com/r/cpp/comments/hv8p56/static_code_analyzer_for_annotated_todo_comments/)
+- url: https://github.com/preslavmihaylov/todocheck
 ---
 

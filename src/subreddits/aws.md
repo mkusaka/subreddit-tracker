@@ -1,90 +1,102 @@
 # aws
-## [1][Introducing The CIS Amazon EKS Benchmark | Amazon Web Services](https://www.reddit.com/r/aws/comments/hvlj36/introducing_the_cis_amazon_eks_benchmark_amazon/)
-- url: https://aws.amazon.com/blogs/containers/introducing-cis-amazon-eks-benchmark/
+## [1][On-demand CI/CD infrastructure with GitLab and AWS Fargate - How to reduce costs and scale GitLab Runner down to zero](https://www.reddit.com/r/aws/comments/hwe4hx/ondemand_cicd_infrastructure_with_gitlab_and_aws/)
+- url: https://www.reddit.com/r/aws/comments/hwe4hx/ondemand_cicd_infrastructure_with_gitlab_and_aws/
 ---
+In his new article, Daniel Miranda shows how we can use **AWS Lambda** functions to stop the Runner manager hosted on **AWS Fargate** when there are no CI/CD jobs to process and start it when a new pipeline is triggered. This configuration can significantly reduce the costs when we have considerable idle times between builds.
 
-## [2][Amazon EC2 Spot Instances integrations public roadmap](https://www.reddit.com/r/aws/comments/hvg3ja/amazon_ec2_spot_instances_integrations_public/)
-- url: https://www.reddit.com/r/aws/comments/hvg3ja/amazon_ec2_spot_instances_integrations_public/
+[https://medium.com/ci-t/on-demand-ci-cd-infrastructure-with-gitlab-and-aws-fargate-376edc7afcda](https://medium.com/ci-t/on-demand-ci-cd-infrastructure-with-gitlab-and-aws-fargate-376edc7afcda)
+## [2][IAM role for automatic AWS CDK deployment](https://www.reddit.com/r/aws/comments/hwc4jf/iam_role_for_automatic_aws_cdk_deployment/)
+- url: https://www.reddit.com/r/aws/comments/hwc4jf/iam_role_for_automatic_aws_cdk_deployment/
 ---
-We just launched the [Amazon EC2 Spot Instances integrations public roadmap](https://github.com/aws/ec2-spot-instances-integrations-roadmap)! Tell us what open source software and frameworks you'd like us to integrate EC2 Spot Instances with!
+Hi there! Is there a pre-defined policy or best-practices for creating an IAM role that the CI server uses to deploy via AWS CDK? I don't want to only list the services we are currently using, as this would mean manually logging into and updating this role whenever we need a new service, but I also don't think that the CI will need the ability to e. g. read from our database.
 
-[https://github.com/aws/ec2-spot-instances-integrations-roadmap/projects/1](https://github.com/aws/ec2-spot-instances-integrations-roadmap/projects/1)
-## [3][Network Chaos Testing?](https://www.reddit.com/r/aws/comments/hvtnqy/network_chaos_testing/)
-- url: https://www.reddit.com/r/aws/comments/hvtnqy/network_chaos_testing/
+This is talking about production only, staging and local environments live in different AWS accounts.
+## [3][Cross-account AWS Backup - possible or not?](https://www.reddit.com/r/aws/comments/hwcchr/crossaccount_aws_backup_possible_or_not/)
+- url: https://www.reddit.com/r/aws/comments/hwcchr/crossaccount_aws_backup_possible_or_not/
 ---
-Hello everyone,
-
-Does something like this exist? It seems like most of the chaos tools I've been seeing mostly target architectures. Like: ECS, EC2, Lambda, EKS, Cloudwatch, Elasticache, ELB, RDS, IAM, etc. [Gremlin/ChaosIQ/Toolkit]
-
-But nothing on ALB, VPC, Route53, etc.
-
-Or is this one of those things where we have to test manually? Or can Lambda handle account wide tasks for network chaos testing?
-## [4][AWS Batch - why Job Queue can have multiple Compute Environments?](https://www.reddit.com/r/aws/comments/hvprgt/aws_batch_why_job_queue_can_have_multiple_compute/)
-- url: https://www.reddit.com/r/aws/comments/hvprgt/aws_batch_why_job_queue_can_have_multiple_compute/
+Is it possible to set up AWS Backup to backup resources located on different account, or to store backups in a vault located on different account?
+## [4][Cloud Batch](https://www.reddit.com/r/aws/comments/hwe7wa/cloud_batch/)
+- url: https://www.reddit.com/r/aws/comments/hwe7wa/cloud_batch/
 ---
-I am looking for concrete examples why Job Queue could have more than one Compute Environment specified.
-
-At first I thought "maybe I have multiple compute environments with different instance types and I let the queue know which order is preferred". However, one Compute Environment itself can have multiple types of instances specified and with proper `allocationStrategy` on a `MANAGED` cluster will automatically provision a suitable instance(in theory at least). That fact ruled out my initial idea.
-
-So far I thought about following use cases:
-
-* run tasks on SPOT instances, if none are available then fallback to compute environment with on demand ones
-* use my own ECS Cluster but if no compute resources are available fallback to Batch managed cluster
-* use environment with compute optimised instances but if none are available fallback to some generic, cheaper ones defined in other compute environment
-
-Why else could that feature be useful?
-## [5][create a workspaces usage report with cloudwatch events](https://www.reddit.com/r/aws/comments/hvnww0/create_a_workspaces_usage_report_with_cloudwatch/)
-- url: https://www.reddit.com/r/aws/comments/hvnww0/create_a_workspaces_usage_report_with_cloudwatch/
+I was trying to come up with a technique to run the Offline processes on AWS. I tempted to use Lambda processes, but it appears to be lasting for 15 minutes only. Some of my jobs read huge files with 100,000 records for which processing takes hours.. Lambda will not support these long running processes. The other solution is to run an dedicated ec2 instance and spin it for the Job, and use SQS /Cloud watch to push the events.. this should work.. however i will always have to keep this containers up and running despite my jobs run for no more than 1-2 hours on different time of the day. Wanted to know your views?
+## [5][CloudFormation - IAM policy already exists](https://www.reddit.com/r/aws/comments/hwfc31/cloudformation_iam_policy_already_exists/)
+- url: https://www.reddit.com/r/aws/comments/hwfc31/cloudformation_iam_policy_already_exists/
 ---
-so i want to create a usage report to track the use of workspaces and there's documentation mentioning to use a cloudwatch event with workspaces as a source event. however the article does not explain how to configure the target
+Hi all,
 
-i selected cloudwatch log group as a target but i don't see any log group there. I even tried creating one. i am using an admin account so i don't think it's a permission issue. 
+I am running in to a situation where when updating a CFn stack it fails on an existing IAM policy.
 
-what am i doing wrong? i don't want to overcomplicate things by using lambda
-## [6][How would you do continuous archiving on a 30TB windows file share](https://www.reddit.com/r/aws/comments/hvgzy3/how_would_you_do_continuous_archiving_on_a_30tb/)
-- url: https://www.reddit.com/r/aws/comments/hvgzy3/how_would_you_do_continuous_archiving_on_a_30tb/
----
-We have an analytics company with a quickly growing 30TB windows file share. Most of the data is automatically created in the share (by an on-prem app, that must stay on-prem) and NEVER accessed. There is possibility that any of it may NEED to be accessed at any time. So the data needs to be kept indefinitely. The on-prem storage is quickly running out of space and we're working on a solution to archive data to AWS.
+&gt;dev-emr-policy already exists
 
-The goal would be to move any data older than 30 days to S3 glacier. 
+I have several such policies in that stack but its complaining only for this one. To give you some background, this is a nested template setup where we have a main.yml which calls this stack and other stacks(TemplateURL) with the required parameters, this stack has several IAM resources we are creating/controlling through CFn. Just like this policy there are other pre existing IAM policies but its not complaining about those. This is happening when I modified some other stack which is part of the nested stack setup. There were no errors on the modified stack but this IAM stack is errorring out.  When I comment out this policy update works without any errors.
 
-We're unsure of the best way to accomplish this is an automated and reliable fashion.
+I am stuck here and could use some help please.
 
-3rd party solutions that I've experience with COPY/Backup the data, requiring us to manually delete it from on-premise.
-
-Anyone have any ideas for a use case like this? Otherwise we'll have to look at manually archiving data on a periodic basis.
-## [7][Database solution for small serverless website?](https://www.reddit.com/r/aws/comments/hvh6ht/database_solution_for_small_serverless_website/)
-- url: https://www.reddit.com/r/aws/comments/hvh6ht/database_solution_for_small_serverless_website/
----
-Aurora serverless has a ~30 second startup time from paused. What is a cheap solution to having a serverless website with light database use that won't break the moment that there is more than 1 user?
-## [8][Where are the AWS Reference Architecture Diagrams?!](https://www.reddit.com/r/aws/comments/hv38ac/where_are_the_aws_reference_architecture_diagrams/)
-- url: https://www.reddit.com/r/aws/comments/hv38ac/where_are_the_aws_reference_architecture_diagrams/
----
-"No documents found that match the selected criteria." is what I see when looking for *AWS Reference Architecture Diagrams* upon https://aws.amazon.com/architecture
-
-I'm looking for https://aws.amazon.com/architecture/icons/ in the shape of basic Well Architected architecture diagram. You know something showing:
-
-1) Account for IAM
-2) Account for Audit/Logs with CloudTrail enabled
-3) Maybe a staging, but certainly a production workload account
-4) Icing on the cake is Guard duty etc setup in accordance to https://d1.awsstatic.com/whitepapers/Security/AWS_Security_Checklist.pdf
-
-Are there such diagrams out there I can refer to?
-
-Thank you in advance!
-## [9][Amazon EBS Fast Snapshot Restore for Shared EBS Snapshots](https://www.reddit.com/r/aws/comments/hve8b0/amazon_ebs_fast_snapshot_restore_for_shared_ebs/)
-- url: https://aws.amazon.com/blogs/aws/amazon-ebs-fast-snapshot-restore-for-shared-ebs-snapshots/
----
-
-## [10][How do you access your private subnets in your VPC?](https://www.reddit.com/r/aws/comments/hvby7x/how_do_you_access_your_private_subnets_in_your_vpc/)
-- url: https://www.reddit.com/r/aws/comments/hvby7x/how_do_you_access_your_private_subnets_in_your_vpc/
----
-I'm building my small startup infrastructure in AWS and am trying to solve the access problem. Everything is internal to the VPC with NAT Gateways for internet access. (We have a single public facing load balancer). I need to access things like the Kubernetes control plane, ssh to ec2, load internal dashboards, etc.
+Thanks
 
 &amp;#x200B;
 
-Previously I've always solved this with OpenVPN on a small EC2 with a public IP, but I'm curious if there's something better? I've seen more and more about people using a Bastion and dynamically opening/closing the security group as needed. But this still makes things like dashboards hard. I was looking into AWS SSM Session Manager, but no support for macOS, so that can't work. Interested to hear what others are doing!
+    emrPolicy:
+      Type: AWS::IAM::ManagedPolicy
+      Properties:
+        ManagedPolicyName: !Sub ${EnvironmentName}-emr-policy
+        PolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+            -
+              Effect: "Allow"
+              Action:
+                - "XXX"
+                - "YYY"
+                - "ZZZ"
+              Resource:
+                - !Sub arn:aws:AAA:${AWS::Region}:${AWS::AccountId}:something:/${EnvironmentName}/blah/ABC-??????
 
 &amp;#x200B;
+## [6][Lambda function is not invoking the attached destination, no matter how i invoke the function](https://www.reddit.com/r/aws/comments/hwesif/lambda_function_is_not_invoking_the_attached/)
+- url: https://www.reddit.com/r/aws/comments/hwesif/lambda_function_is_not_invoking_the_attached/
+---
+Hi,
 
-EDIT: I was incorrect here, You can use Session Manager on macOS. You just can't install the \_agent\_ on it. So It looks like I'm going to try our Session Manager, looks really promising! Thanks
+So i have the setup as following,
+
+* A lambda function whose role has full access to EC2, SNS, SQS, Lambda, etc.
+* A SNS to invoke the function
+* A SNS topic with EMAIL subscription to send emails to a particular email
+* Lambda function can execute without any issue or throw an error if something goes wrong.
+* A destination attached which send Async success or failure updates to the SNS topic with EMAIL subscription
+
+Now, I tried invoking this lambda using using the attached SNS topic, or using cli with invoke --invocation-type EVENT  
+ or using invoke-async  
+ but nothing is triggering the destination it seems as i'm not getting any email.
+
+Can anyone please suggest or indicate what could be wrong or if i'm doing anything wrong?
+
+Please let me know if you need any other information regarding this.
+## [7][Is CodeCommit Really a Thing?](https://www.reddit.com/r/aws/comments/hvyd6h/is_codecommit_really_a_thing/)
+- url: https://www.reddit.com/r/aws/comments/hvyd6h/is_codecommit_really_a_thing/
+---
+Just wondering if anyone out there actually uses it (and if so, why).
+
+Seems kind of... forced.
+## [8][AWS MediaLive and MediaStore](https://www.reddit.com/r/aws/comments/hw8z27/aws_medialive_and_mediastore/)
+- url: https://www.reddit.com/r/aws/comments/hw8z27/aws_medialive_and_mediastore/
+---
+Hey everyone,
+Has anyone implemented an encoder for IPTV using MediaStore and MediaLive??
+We currently have a physical encoder receiving multicast traffic on one of its interfaces, after processing the traffic its configured to send the traffic to another server.
+ The AWS MediaLive doesn't seem to be able to receive multicast traffic at all, at least I couldn't see a way.
+Has anyone implemented an encoder in AWS able to receive that multicast traffic??? Is MediaLive and MediaStore the way to do that???? Im.not sure MediaLive is able.to received bare multicast traffic.
+Any insights??
+## [9][API Gateway: Include stage in custom URL](https://www.reddit.com/r/aws/comments/hwbete/api_gateway_include_stage_in_custom_url/)
+- url: https://www.reddit.com/r/aws/comments/hwbete/api_gateway_include_stage_in_custom_url/
+---
+Let me start with that I am a pretty novice user of AWS and don't use CLI or anything for it. I am using AWS for a little Slack tool I built for me and others. I am familiar with CLI tools just don't use it for AWS yet.
+
+I am using API Gateway to communicate to a set of Lambda functions for the Slack tool. It uses a custom domain that used to have the following URL pattern [api.example.com/v1/{stage}/{resource}](https://api.example.com/v1/{stage}/{resource}). I needed to reset the config because of an issue with certificates. I did that through the custom domain UI in AWS console and I can only get it to serve the API with a pattern of [api.example.com/v1/{resource}](https://api.example.com/v1/{resource}) 
+
+This is a huge concern since some of the URLs are used by clients I don't control. Is there any way to replicate the old behaviour? Thanks for any help!
+## [10][How to get ReadWriteMany persistent volume without losing its resilience?](https://www.reddit.com/r/aws/comments/hwfaz8/how_to_get_readwritemany_persistent_volume/)
+- url: https://www.reddit.com/r/aws/comments/hwfaz8/how_to_get_readwritemany_persistent_volume/
+---
+To get a resilient ReadWriteMany persistent volume on AWS, you could use EFS provisioner. This tutorial shows you [how to use Kubernetes PVCs with EFS provisioner](https://www.padok.fr/en/blog/efs-provisioner-kubernetes) to get a more resilient solution.

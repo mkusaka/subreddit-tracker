@@ -109,153 +109,111 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Completed my Portfolio Website](https://www.reddit.com/r/reactjs/comments/hvppm3/completed_my_portfolio_website/)
+## [3][Just found this site "useHooks.com" - super helpful collection of react hooks!](https://www.reddit.com/r/reactjs/comments/hw3mzw/just_found_this_site_usehookscom_super_helpful/)
+- url: https://usehooks.com/
+---
+
+## [4][Me and my friend built a hosting platform where you can deploy frontend apps for free, with just a few clicks. I would love to hear some feedback from you!](https://www.reddit.com/r/reactjs/comments/hw9oy7/me_and_my_friend_built_a_hosting_platform_where/)
+- url: https://www.reddit.com/r/reactjs/comments/hw9oy7/me_and_my_friend_built_a_hosting_platform_where/
+---
+For that, we are also providing a $50 credit (no credit card required), which you can use to host your backend apps.
+
+Here's the link: http://hostman.com/?coupon=reddit50
+
+Any feedback/ criticism will be highly appreciated!
+## [5][Completed my Portfolio Website](https://www.reddit.com/r/reactjs/comments/hvppm3/completed_my_portfolio_website/)
 - url: https://v.redd.it/ei3mq1ww7dc51
 ---
 
-## [4][[Meta] Am I the only one finding there are too many posts about people's portfolios / showcases?](https://www.reddit.com/r/reactjs/comments/hvqrgv/meta_am_i_the_only_one_finding_there_are_too_many/)
-- url: https://www.reddit.com/r/reactjs/comments/hvqrgv/meta_am_i_the_only_one_finding_there_are_too_many/
+## [6][Storing fetched data without a database?](https://www.reddit.com/r/reactjs/comments/hwfn7u/storing_fetched_data_without_a_database/)
+- url: https://www.reddit.com/r/reactjs/comments/hwfn7u/storing_fetched_data_without_a_database/
 ---
-Some mods seem very excited by this sub's constant growth (for example: [This sub has grown 100% since 1 year ago](https://www.reddit.com/r/reactjs/comments/hr4fuu/this_sub_has_grown_100_since_1_year_ago/)). But I find that the signal to noise ratio is getting worse and worse - it's becoming an endless stream of "I have created my online portfolio with React!" and "I built my very first project!! SO EXCITED!!" and the interesting discussions rarer and rarer. I'm on the verge of unsubscribing for that reason. Am I the only one feeling that way?
-## [5][A comparison of formik, final-form and react-hook-form](https://www.reddit.com/r/reactjs/comments/hvm080/a_comparison_of_formik_finalform_and_reacthookform/)
-- url: https://blog.jslancer.com/blog/2020/07/21/a-comparison-of-formik-final-form-and-react-hoo-form/
+Is there a way to store the response data without using a database? The reason i want to do this is to limit the amount of api calls I make. In this specific case I want to make calls to pokeapi to get  pokemon data and then store it somehow in the frontend. Then I want to use that data later on so that if a user revisits the same pokemon's page, it wont make a GET request again and instead uses the saved/cached data.
+## [7][What is the 'practice' called when you call a functionName() in the child of a component instead of using the JSX?](https://www.reddit.com/r/reactjs/comments/hwfm0v/what_is_the_practice_called_when_you_call_a/)
+- url: https://www.reddit.com/r/reactjs/comments/hwfm0v/what_is_the_practice_called_when_you_call_a/
+---
+You could do the below:
+
+    const MyComponent = (props) =&gt; {
+    
+        return (
+            &lt;div&gt;
+                &lt;h1&gt;Heading Here&lt;/h1&gt;
+                &lt;div&gt;
+                    {props.stuff.map(({title})=&gt;&lt;h3&gt;title&lt;/h3&gt;)}
+                &lt;/div&gt;
+            &lt;/div&gt;
+        )
+    }
+    
+    export default MyComponent
+
+Or you could call a function instead:
+
+    import React from 'react'
+    
+    const MyComponent = (props) =&gt; {
+    
+        const renderChildren = () =&gt; props.stuff.map(({title})=&gt;&lt;h3&gt;title&lt;/h3&gt;)
+        
+        return (
+            &lt;div&gt;
+                &lt;h1&gt;Heading Here&lt;/h1&gt;
+                &lt;div&gt;
+                    {renderChildren()}
+                &lt;/div&gt;
+            &lt;/div&gt;
+        )
+    }
+    
+    export default MyComponent
+
+
+
+
+
+----
+
+What is the latter called? renderFunctions? And what is their main purpose? 
+
+For me, I use them when the map/renderChildren return is very long. So having the renderChildren() function keeps the main component more readable. But in that case I think "why not make it a brand new component"
+## [8][⚛️ ReactJS: A Simple Custom Hook - Time to Hack](https://www.reddit.com/r/reactjs/comments/hwfb5g/reactjs_a_simple_custom_hook_time_to_hack/)
+- url: https://time2hack.com/reactjs-simple-custom-hook/
 ---
 
-## [6][Update: Added some more feature to file upload component. (link to prev post in comments). What do you guys think on the hover actions buttons?](https://www.reddit.com/r/reactjs/comments/hvta1x/update_added_some_more_feature_to_file_upload/)
+## [9][Update: Added some more feature to file upload component. (link to prev post in comments). What do you guys think on the hover actions buttons?](https://www.reddit.com/r/reactjs/comments/hvta1x/update_added_some_more_feature_to_file_upload/)
 - url: https://github.com/cheersmas/upload-animation/raw/master/fileupload.gif
 ---
 
-## [7][Five common mistakes writing react components (with hooks) in 2020](https://www.reddit.com/r/reactjs/comments/hv8chq/five_common_mistakes_writing_react_components/)
-- url: https://www.lorenzweiss.de/common_mistakes_react_hooks/
+## [10][How Overlay compiles React and Vue.js components from designer tools?](https://www.reddit.com/r/reactjs/comments/hweuar/how_overlay_compiles_react_and_vuejs_components/)
+- url: https://www.reddit.com/r/reactjs/comments/hweuar/how_overlay_compiles_react_and_vuejs_components/
+---
+You want know more about how compiler work ?
+
+In this article, discover how Overlay engineering team built the first prod-ready web component compiler for design tools.
+
+[https://medium.com/overlay-blog/how-overlay-compiles-react-and-vue-js-components-from-designer-tools-96592760a640?sk=80789e1d27cbc4c4b6bc7dfde4b5c911](https://medium.com/overlay-blog/how-overlay-compiles-react-and-vue-js-components-from-designer-tools-96592760a640?sk=80789e1d27cbc4c4b6bc7dfde4b5c911)
+## [11][RxJS Observables in React — a tiny npm package](https://www.reddit.com/r/reactjs/comments/hwestp/rxjs_observables_in_react_a_tiny_npm_package/)
+- url: https://github.com/kosich/react-rxjs-elements#readme
 ---
 
-## [8][Hello there! Here's a brand new platform that helps you deploy and manage your React app within only one command line](https://www.reddit.com/r/reactjs/comments/hvsm68/hello_there_heres_a_brand_new_platform_that_helps/)
-- url: https://scaledynamics.io/solution-deploy-react
+## [12][Fetching data from an API: Avoid multiple calls](https://www.reddit.com/r/reactjs/comments/hwe0z1/fetching_data_from_an_api_avoid_multiple_calls/)
+- url: https://www.reddit.com/r/reactjs/comments/hwe0z1/fetching_data_from_an_api_avoid_multiple_calls/
 ---
+Hi All,
 
-## [9][Create React App With Webpack &amp; Babel From Scratch -PART 2](https://www.reddit.com/r/reactjs/comments/hvt6z8/create_react_app_with_webpack_babel_from_scratch/)
-- url: https://youtu.be/Vx0AiZ6SQFY
----
+I am working on a tutorial wherein I am trying to build a twitter like application with a Django backend and a React frontend. I am following the tutorial steps but trying to implement my solution with the hooks and context api.
 
-## [10][How can I protect a route using Router v6?](https://www.reddit.com/r/reactjs/comments/hvq7vg/how_can_i_protect_a_route_using_router_v6/)
-- url: https://www.reddit.com/r/reactjs/comments/hvq7vg/how_can_i_protect_a_route_using_router_v6/
----
-In v5 I would do this:
+There is one place I am stuck on. So on the home page, when say a guest user visits the website, I want to show all tweets. But on a profile page, I want to show only the tweets of a particular user. I am using react-router to pick up the username from the URL.
 
-    &lt;AuthGuard exact path="/userForm" component={ UserForm } /&gt;
+The problem I am facing is, on the second route i.e. the one with the username, 2 api calls are being made to the backend. One is when the tweets-context is first created and the second when the username gets set. Because of this, since both of calls are being made to the backend, whichever call gets fulfilled by the backend later, gets rendered on the screen. Ideally I would want to make the call on this route only after the username has been set.
 
-What's the equivalent for v6? Also, I would prefer to do that in the array that's passed into the **useRoutes** hook!
-## [11][Does a Refs provider make sense without state?](https://www.reddit.com/r/reactjs/comments/hvso6p/does_a_refs_provider_make_sense_without_state/)
-- url: https://www.reddit.com/r/reactjs/comments/hvso6p/does_a_refs_provider_make_sense_without_state/
----
-I have a vertical "nav" sidebar, which keeps track of elements.  If i scroll down manually, the links in the sidebar change between which section is "active".  Or, if I click on a sidebar "link" it will scroll me to that section.  
+How do I avoid these multiple calls?
 
-The developer who originally implemented this is using `document.getElementById`  however, this isn't ideal React logic, since we should keep track of components instead of going into the DOM and finding things.
+Here is the link to the sandbox with my code:
 
-My first thought was to use a Provider so that it can wrap entire sections and contain the scroll logic as well.  It feels possibly over-engineered which is why I am asking here.  I don't want to put Ref's into state, since it will cause re-rending issues, but I need to make sure the Provider `value` gets updated so that the scroll listeners and click callbacks work.
+ [https://codesandbox.io/s/tender-pascal-tbf0s](https://codesandbox.io/s/tender-pascal-tbf0s) 
 
-I think the same issue might happen with a hook, since that also would require state to be updated.
+The actual code might not run on another machine because the APIs are not hosted anywhere, they are on my local machine only. But I hope someone can identify the issue and provide a solution.
 
-My goal is to have something like "state" with a bunch of refs:
-
-    myRefs = useRef();
-
-and then in the actual element callback it will call setRefs, which looks something like this:
-
-     const setRefs = (name: string, el: Component): void =&gt; {
-        refs = {
-          ...refs,
-          current: {
-            ...refs.current,
-            [name]: el,
-          },
-        };
-      };
-
-this way I can look up the `refsContext` like a regular object: `myRefs[name]`
-
-Something isn't lining up right for me with this thought process, so what would you do to keep the list like this?
-## [12][Regarding relational GraphQL schema in AppSync and Amplify DataStore](https://www.reddit.com/r/reactjs/comments/hvslea/regarding_relational_graphql_schema_in_appsync/)
-- url: https://www.reddit.com/r/reactjs/comments/hvslea/regarding_relational_graphql_schema_in_appsync/
----
-First of all: mods feel free to remove this, I posted here because of the large overlap between React and GraphQL so I thought this discussion might be relevant to a lot of users here. I know Amplify is popular in the React community too.
-
----
-
-I've noticed some discrepancies in the AWS docs that have me scratching my head. If you head over to the Amplify-js docs you'll see they suggest setting up one-to-many relationships using `@connection` and `@key` directives. Like this:
-
-```graphql
-type Post @model {
-  id: ID!
-  title: String!
-  comments: [Comment] @connection(keyName: "byPost", fields: ["id"])
-}
-
-type Comment @model
-  @key(name: "byPost", fields: ["postID", "content"]) {
-  id: ID!
-  postID: ID!
-  content: String!
-}
-```
-First of all this seems quite unintuitive and it's not clear what use the directives actually have here. I'm sure they're doing something, but what that is I don't know. This becomes more apparent when you see the official suggested method of retrieving "related" records:
-
-```js
-const post = await DataStore.query(Post, "123");
-const comments = (await DataStore.query(Comment)).filter(c =&gt; c.postID === post.id);
-```
-
-I'm honestly baffled. Nobody at AWS could surely expect this to scale could they? Why have they not suggested using the predicate argument in `DataStore.query`? (`c =&gt; c.postID('eq', post.id)`?
-
-Furthermore, one would intuitively assume that when querying a specific `Post` that the `Comment` models would be pulled in automatically, but this is not the case. In the above examples, taken straight from the [docs site](https://docs.amplify.aws/lib/datastore/relational/q/platform/js#updated-schema), it's not obvious why I should even use any directives for my "relational" schema.
-
-To compound my confusion further, I checked out the iOS Amplify docs. The relationships shown there make a lot more sense - just using 2 `@connection` directives - but my front end should be completely irrelevant to my backend, so which way of creating relationships is correct?
-
-IMO this makes much more sense:
-
-```graphql
-type Post @model {
-  id: ID!
-  title: String!
-  rating: Int!
-  status: PostStatus!
-  # New field with @connection
-  comments: [Comment] @connection(name: "PostComments")
-}
-
-# New model
-type Comment @model {
-  id: ID!
-  content: String
-  post: Post @connection(name: "PostComments")
-}
-```
-
-Also the way of querying models using the iOS library is how I would expect it to work in JS:
-
-```swift
-Amplify.DataStore.query(Post.self, byId: "123") {
-    switch $0 {
-    case .success(let post):
-        if let postWithComments = post {
-            if let comments = postWithComments.comments {
-                for comment in comments {
-                    print(comment.content)
-                }
-            }
-        } else {
-            print("Post not found")
-        }
-    case .failure(let error):
-        print("Post not found - \(error.localizedDescription)")
-    }
-}
-```
-
-So why can't the JS client library work like the above Swift one?
-
-I'm the last guy to bash open source maintainers, and I know the stress involved, but I'm just not following. (Also I guess while this is technically OSS, we are paying for a service).
-
-So what gives - which is the correct way of defining relationships? And why does the JS library differ so fundamentally from the Swift library - should the related objects not be built on the backend meaning the client side libraries should query in a somewhat similar fashion? Also if that isn't the case, and all these relationships are being joined on the client, surely that means Amplify will be pretty bad when working at scale?
-
-Sorry for the long post and thanks for reading my rambling if you made it this far 😅
+Thanks in advance!

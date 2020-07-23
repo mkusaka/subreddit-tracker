@@ -31,93 +31,83 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Kotlin/Native Memory Management Roadmap](https://www.reddit.com/r/androiddev/comments/hvorvh/kotlinnative_memory_management_roadmap/)
-- url: https://blog.jetbrains.com/kotlin/2020/07/kotlin-native-memory-management-roadmap/
+## [3][Android 11 beta just updated the Google screen recorder audio and it sounds great!](https://www.reddit.com/r/androiddev/comments/hw7ht7/android_11_beta_just_updated_the_google_screen/)
+- url: https://www.youtube.com/watch?v=3u7GaBmNgvY&amp;feature=share
 ---
 
-## [4][How to do a RecyclerView OnItemClickListener the right way?](https://www.reddit.com/r/androiddev/comments/hvkvsa/how_to_do_a_recyclerview_onitemclicklistener_the/)
-- url: https://www.reddit.com/r/androiddev/comments/hvkvsa/how_to_do_a_recyclerview_onitemclicklistener_the/
+## [4][When the keyboard meets Coroutines](https://www.reddit.com/r/androiddev/comments/hw797b/when_the_keyboard_meets_coroutines/)
+- url: https://www.reddit.com/r/androiddev/comments/hw797b/when_the_keyboard_meets_coroutines/
 ---
-I've seen people arguing on stack overflow on the right way to to this. Some say  implement a click listener in onbindviewholder, other say create your own custom interface. I've come to you guys to ask how do you go about creating your click listeners?
-## [5][[Feedback] - I need feedback about an Adnetwork I have developed.](https://www.reddit.com/r/androiddev/comments/hvr4za/feedback_i_need_feedback_about_an_adnetwork_i/)
-- url: https://www.reddit.com/r/androiddev/comments/hvr4za/feedback_i_need_feedback_about_an_adnetwork_i/
----
- 
+**Article Intro**
 
-Hi guys 👋, for the past 7 months i have been working tirelessly to bring my startup idea to life.
+The keyboard management is one of the biggest problems of the Android platform since API 1. That was almost 12 years ago. However, there are mentions of a very promising API on the horizon. In Android 11, most probably, we will finally get the control of the Soft Input Keyboard. The SDK level 30 is right now in a beta stage (July 2020) and there is currently no evidence that these functions will work on older SDKs. You can wait for a support library, that will probably be in the alpha stage for some time, or you can check what are the other options to tame the beast.
 
-**AppBoost** is an ad-network that is developed to help developers promote their apps for free. It is very easy to use, with less than 7 lines of code, developers can boost traffic to their apps and monitor the statistics. The sdk is currently available for android apps developed using Java. My plan is to see if their is market for such a tool, then develop it for other platforms and languages too.
+**Article UR**L
 
-**Appboost** drives traffic to apps through cross-promotion. Each developer that implements the sdk in his/her app gets their app promoted inside other developers apps and vice-versa. 
-
-**It is still in a super rough beta state. I have been busy with another project recently, but now am fully invested in AppBoost, and am interested in understanding if this tool is actually helpful and what direction I should take it in. I only want to create something if people really love it.**
-
-The app stores are getting more and more saturated and competitive with thousands of apps being published everyday, Developers and Businesses with little to no budgets are finding it difficult to sustain their app businesses.
-
-**AppBoost** Aims to solve this problem by helping developers and businesses drive traffic to their apps and thereby increase their revenues. 
-
-We aim to create a community of developers helping each other succeed in these tough times.
-
-Would love to hear your feedback.
-
-Thanks for reading this 🙏
-
-Sharif.
-## [6][What happened to the "Stylized" tag on google play?](https://www.reddit.com/r/androiddev/comments/hvsp5f/what_happened_to_the_stylized_tag_on_google_play/)
-- url: https://www.reddit.com/r/androiddev/comments/hvsp5f/what_happened_to_the_stylized_tag_on_google_play/
----
-I can find hundreds of games using the "Stylized" tag, such as Viridi, Alto's Odyssey, Fishing Life, etc.  
-Yet I can't seem to be able to add it through the Tag manager on my Google Play Console. Same goes for "Offline", "Single player". I quite literally cannot find as little as two tags that will do my game justice in that list.  It's basically useless to me.  
-
-
-Any idea why that is or if there's any solution to this problem?
-## [7][Double the review process, half of the fun (beta channel)](https://www.reddit.com/r/androiddev/comments/hvqxeo/double_the_review_process_half_of_the_fun_beta/)
-- url: https://www.reddit.com/r/androiddev/comments/hvqxeo/double_the_review_process_half_of_the_fun_beta/
----
-For a while now, the review process on the Play store has been slower, and we are greeted on the console with the following message: "We're experiencing longer than usual review times"
-
-Because of the current context, that is totally fair.
-
-But what I have seen as well is that if you are using the beta channel to publish your app, then your app gets reviewed twice: once when you create your beta release, and once when you promote your beta build to prod.
-
-Is it a new development or has it always been the case?
-## [8][Interstitial video ads and the new Google Play's July policy update](https://www.reddit.com/r/androiddev/comments/hvmtar/interstitial_video_ads_and_the_new_google_plays/)
-- url: https://www.reddit.com/r/androiddev/comments/hvmtar/interstitial_video_ads_and_the_new_google_plays/
----
-Hi Everyone,
-
-Recently, Google Play updated its policy regarding the ads. As per https://youtu.be/d0bN5JYuowY?t=433 , there is a time restriction on a few kinds of ads. 
-
-Is this time restriction affects the interstitial video ads?
-## [9][Paging with Paging 3](https://www.reddit.com/r/androiddev/comments/hvbc9u/paging_with_paging_3/)
-- url: https://youtu.be/1cwqGOku2a4
+[https://medium.com/schibsted-tech-polska/when-the-keyboard-meets-coroutines-9b09c0b159e1](https://medium.com/schibsted-tech-polska/when-the-keyboard-meets-coroutines-9b09c0b159e1)
+## [5][Mysterious SQLite bugs and how to solve them](https://www.reddit.com/r/androiddev/comments/hvvm48/mysterious_sqlite_bugs_and_how_to_solve_them/)
+- url: https://www.alecstrong.com/2020/07/sqlite-sdk-30/
 ---
 
-## [10][Entry level positions during COVID-19?](https://www.reddit.com/r/androiddev/comments/hvi8yr/entry_level_positions_during_covid19/)
-- url: https://www.reddit.com/r/androiddev/comments/hvi8yr/entry_level_positions_during_covid19/
+## [6][Best way create notification](https://www.reddit.com/r/androiddev/comments/hwfemi/best_way_create_notification/)
+- url: https://www.reddit.com/r/androiddev/comments/hwfemi/best_way_create_notification/
 ---
-Hi everyone. Any insight is much appreciated!
+Hi all
 
-I’ve been practicing and applying for entry level Android Developer positions on/off for about two and a half years without any offers, and as tortuous as it has been, I’ve been continuing to practice, make apps, and Leetcode as often as I can.
-
-I was furloughed from my service job at the beginning of the COVID shut down, and it has given me a lot of time I would not otherwise have to code. Now, I’m applying to jobs, practicing Leetcode, and working on my new project at all waking hours.
-
-However, I’ve been told by a few companies (some FAANG) that they currently have a freeze on hiring entry level positions. I already have had difficulty locating junior positions, and am very unwillingly preparing myself to go back into my restaurant service job any day now. I’ve also been reaching out to recruiters and companies that don’t necessarily have listed open positions.
-
-Can anyone within the industry give me any insight and/or advice on how to navigate entry level positions during this time? I’m also slightly restricted to the West Coast for my son, which I understand doesn’t help the matter.
-
-For reference, I do not have a CS degree. I have a Udacity Android Nanodegree, two published (albeit not well marketed) apps, and I'm at a point of desperation that I’d be willing to take any amount of pay to just get my foot in the door.
-## [11][Immutability we can afford](https://www.reddit.com/r/androiddev/comments/hvtmbv/immutability_we_can_afford/)
-- url: https://medium.com/@elizarov/immutability-we-can-afford-10c0dcb8351d
+I want to create notification in my app. But I'm really confused because of android battery optimization and network &amp; background restrictions.  I'm not sure if notification will be shown to user at exact time. My notification requeres internet connection.  I mean it will check my own api every 30 minutes and if api responses ok  it must exact time notification. Which is the best way?
+## [7][Jetpack Compose 0.1.0-dev15 is out](https://www.reddit.com/r/androiddev/comments/hw1qv6/jetpack_compose_010dev15_is_out/)
+- url: https://developer.android.com/jetpack/androidx/releases/ui
 ---
 
-## [12][AndroidStudio - Vertical Screen Setup](https://www.reddit.com/r/androiddev/comments/hvqep9/androidstudio_vertical_screen_setup/)
-- url: https://www.reddit.com/r/androiddev/comments/hvqep9/androidstudio_vertical_screen_setup/
+## [8][Created a new Animated Toast library Android](https://www.reddit.com/r/androiddev/comments/hwed0k/created_a_new_animated_toast_library_android/)
+- url: https://www.reddit.com/r/androiddev/comments/hwed0k/created_a_new_animated_toast_library_android/
 ---
-It's so hard to search the subject as all I get is results for Portrait mode in an Android app.
+Few months back I created a Animated Toast library. It has 4 types of animation which looks super awesome. 
+You can check out if you want 😊 
+https://github.com/vedraj360/AnimatedToast?files=1
+And suggestions are welcome.
+## [9][Email App](https://www.reddit.com/r/androiddev/comments/hwe8br/email_app/)
+- url: https://www.reddit.com/r/androiddev/comments/hwe8br/email_app/
+---
+I wanted to create an email app which can receive emails from servers of Google,Yahoo etc. Basically it's my verison of Gmail and Outlook. If anyone could help me regarding how to proceed that would be very helpful.
+## [10][Some help on whether i am calculating CPM properly for banner ads](https://www.reddit.com/r/androiddev/comments/hwe6fs/some_help_on_whether_i_am_calculating_cpm/)
+- url: https://www.reddit.com/r/androiddev/comments/hwe6fs/some_help_on_whether_i_am_calculating_cpm/
+---
+Hi, hypothetically:
 
-I use a dual screen setup for Android development with one of the screens rotated vertically. I usually have the Project and Logcat windows in the horizontal screen and the code in the vertical.
+Let’s say my app has 
+1. 1 banner ad on a stagnant page
+2. $1 CPM + 30 seconds refresh rate. 
 
-I was wondering if you guys have any recommendation on how to position the windows or if there's any default configuration in AndroidStudio for such setups.
+If there are the SAME 1000 active users viewing that page 24/7 while the 1 ad refreshes every 30 seconds.
 
-Thanks!
+Does that mean every 30 seconds, i will earn $1? Can CPM be counted by impressions with the same viewers? 
+
+
+Also,
+1. If i add 2 banner ads on the static page, does that mean $2 after 30 seconds
+2. Recommended ad network for banner ads with best cpm.
+
+Thanks. Hypothetical scenario ofc to understand how revenue is earned better :)
+## [11][Automate Android/iOS app localization or minimize cost of professional translation [free offer]](https://www.reddit.com/r/androiddev/comments/hwa3ia/automate_androidios_app_localization_or_minimize/)
+- url: https://www.reddit.com/r/androiddev/comments/hwa3ia/automate_androidios_app_localization_or_minimize/
+---
+Many of our users at [Hotpot.ai](https://Hotpot.ai) could not afford professional localization for their Android and iOS apps, so they would manually copy/paste from Google Translate.
+
+Our service automates this for 70+ languages, letting you translate strings.xml files (or snippets) within seconds.
+
+Professional translation is ideal if you can afford it.
+
+If you can't afford professionals, a hybrid approach could help: instead of raw strings.xml files, give machine-translated ones. This allows professionals to finish faster and at lower cost because they can focus on proofreading and tricky words.
+
+We can localize content for Android, iOS, Flutter, YouTube, Xamarin, and other platforms.
+
+How it works: (1) upload strings.xml file or paste in strings.xml snippets; (2) pick languages; (3) download files.
+
+We can offer this sub free localization. Just comment if you would like a promo code, and please share feedback. Please don't DM as Reddit search is horrible.
+
+URL: [https://hotpot.ai/localization/app\_localization](https://hotpot.ai/localization/app_localization)
+## [12][Now in Android #20](https://www.reddit.com/r/androiddev/comments/hwdzfe/now_in_android_20/)
+- url: https://medium.com/androiddevelopers/now-in-android-20-9f2072f43ed6
+---
+

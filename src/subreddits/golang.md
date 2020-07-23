@@ -12,7 +12,7 @@ Let's do the Q&amp;A about the design here in Reddit. My hope is that the thread
 
 Please start a new top-level comment for each new question.
 
-See also the related [Q&amp;A for the //go:embed draft design](https://golang.org/s/draft-iofs-reddit).
+See also the related [Q&amp;A for the //go:embed draft design](https://golang.org/s/draft-embed-reddit).
 ## [2][[Q&amp;A] //go:embed draft design](https://www.reddit.com/r/golang/comments/hv96ny/qa_goembed_draft_design/)
 - url: https://www.reddit.com/r/golang/comments/hv96ny/qa_goembed_draft_design/
 ---
@@ -27,7 +27,57 @@ Let's do the Q&amp;A about the design here in Reddit. My hope is that the thread
 Please start a new top-level comment for each new question.
 
 See also the related [Q&amp;A for the io/fs draft design](https://golang.org/s/draft-iofs-reddit).
-## [3][Go2 playground now supports square brackets for Generics](https://www.reddit.com/r/golang/comments/hvpis5/go2_playground_now_supports_square_brackets_for/)
+## [3][fullstorydev/grpcurl: a command-line tool that lets you interact with gRPC servers. It's basically curl for gRPC servers](https://www.reddit.com/r/golang/comments/hwbmdx/fullstorydevgrpcurl_a_commandline_tool_that_lets/)
+- url: https://www.reddit.com/r/golang/comments/hwbmdx/fullstorydevgrpcurl_a_commandline_tool_that_lets/
+---
+[https://github.com/fullstorydev/grpcurl](https://github.com/fullstorydev/grpcurl)
+## [4][The official ls-lint documentation is here](https://www.reddit.com/r/golang/comments/hwcl1y/the_official_lslint_documentation_is_here/)
+- url: https://ls-lint.org
+---
+
+## [5][Exactly 10 years ago, Rob Pike spoke at OSCON about Go. Unfortunately, some slides were barely shown, and the video quality wasn't that great. Hence I recorded 16:9 facsimile slides in 1080p.](https://www.reddit.com/r/golang/comments/hvu1hh/exactly_10_years_ago_rob_pike_spoke_at_oscon/)
+- url: https://www.youtube.com/watch?v=ZG_ReFc-bFU
+---
+
+## [6][Acker: AMQP producer/consumer CLI](https://www.reddit.com/r/golang/comments/hwcu1f/acker_amqp_producerconsumer_cli/)
+- url: https://www.reddit.com/r/golang/comments/hwcu1f/acker_amqp_producerconsumer_cli/
+---
+I made a small CLI application, named Acker, to produce/consume messages to/from AMQP servers, e.g. RabbitMQ. It can be used for debugging queues, consumers and producers:  
+[https://github.com/mostafa/acker](https://github.com/mostafa/acker)
+## [7][Monolithic Component Architecture in Go](https://www.reddit.com/r/golang/comments/hwfo4v/monolithic_component_architecture_in_go/)
+- url: https://www.reddit.com/r/golang/comments/hwfo4v/monolithic_component_architecture_in_go/
+---
+Caveat: I'm a long-term Java developer, so a lot of my thinking is coloured by that.
+
+I'm coming back to Go and this time things are making a lot more sense to me - yay :)
+
+What I'm trying to do right now is work out a sensible architecture for my project. It's a monolithic web app (monolith because I want to only install one thing), and is going to have a series of components that work together. As such, things that I want to be able to do are:
+
+* Each component will have an internal API that is the only way for other components to interact with it.
+* Many components - though not all - will expose HTTP endpoints for the public API.
+
+So, for example, the `users` component might have use cases for: "GetUser", "UpdateUser" and "CreateUser". The first two of these are available both on the internal and HTTP API, but the third is only on the internal API, because it's only ever called by the code that logs in via Google.
+
+So - presumably what I want is for each component to be it's own package. And for each component to only have as public the bits that are on the internal API. So in this case I would have as public: `GetUserUseCase`, `UpdateUserUseCase`, `CreateUserUseCase`, `UserID`, `UserData` and `UserModel`. The actual service that implements those use cases, the repositories that back it, and the HTTP stuff are all private to the package.
+
+I can then repeat this pattern for each component as needed and it all works.
+
+Is this reasonable? Is this in any way Go-like? Or is this too coloured by my Java experience?
+
+I'm particularly concerned that this will mean each package is going to have files covering many different concerns - API, Service Layer, Repositories, HTTP Endpoints, etc - and that's going to make it harder to work with.
+
+Or is there a more Go-like architecture that's recommended for something like this? Is there a standard way that this kind of thing is/should be structured to better fit with how Go works?
+
+Cheers
+## [8][I hope Golang cheat sheet will be useful to you](https://www.reddit.com/r/golang/comments/hvylv9/i_hope_golang_cheat_sheet_will_be_useful_to_you/)
+- url: https://simplecheatsheet.com/tag/golang-cheat-sheet/
+---
+
+## [9][Implementing "Sign In With Google" in Go From Scratch](https://www.reddit.com/r/golang/comments/hvvu9o/implementing_sign_in_with_google_in_go_from/)
+- url: https://qvault.io/2020/07/22/how-to-implement-sign-in-with-google-in-golang/
+---
+
+## [10][Go2 playground now supports square brackets for Generics](https://www.reddit.com/r/golang/comments/hvpis5/go2_playground_now_supports_square_brackets_for/)
 - url: https://www.reddit.com/r/golang/comments/hvpis5/go2_playground_now_supports_square_brackets_for/
 ---
 [https://go2goplay.golang.org](https://go2goplay.golang.org/) 
@@ -41,85 +91,17 @@ See also the related [Q&amp;A for the io/fs draft design](https://golang.org/s/d
 &gt;// the first generic declaration in the source must use square brackets.
 
 Sample: [https://go2goplay.golang.org/p/7zFKUcpzhvZ](https://go2goplay.golang.org/p/7zFKUcpzhvZ)
-## [4][Design Draft: First Class Fuzzing](https://www.reddit.com/r/golang/comments/hvpr96/design_draft_first_class_fuzzing/)
+## [11][Design Draft: First Class Fuzzing](https://www.reddit.com/r/golang/comments/hvpr96/design_draft_first_class_fuzzing/)
 - url: https://go.googlesource.com/proposal/+/refs/heads/master/design/40307-fuzzing.md
 ---
 
-## [5][Useful packages Gophers should know](https://www.reddit.com/r/golang/comments/hv608d/useful_packages_gophers_should_know/)
-- url: https://www.golangprograms.com/go-programming-language-packages.html
+## [12][Sending custom errors in headers to reduce memory](https://www.reddit.com/r/golang/comments/hwacaf/sending_custom_errors_in_headers_to_reduce_memory/)
+- url: https://www.reddit.com/r/golang/comments/hwacaf/sending_custom_errors_in_headers_to_reduce_memory/
 ---
+I have a Microservice that makes multiple API calls and creates one json out of all the responses. The response code for the Microservice is supposed to represent the health of the Microservice, so I can’t use it for the actual error code of the multiple API calls if there is one. I return a 200 no matter what. 
 
-## [6][moshebe/gebug: A tool that makes debugging of Dockerized Go applications super easy by enabling Debugger and Hot-Reload features, seamlessly.](https://www.reddit.com/r/golang/comments/hv2ncw/moshebegebug_a_tool_that_makes_debugging_of/)
-- url: https://github.com/moshebe/gebug
----
+Currently, I’m putting a custom error in the body, but this requires that I read the entire response into memory, but that doesn’t utilize Go’s streaming capabilities. This is because in all cases, I read the whole response and exhaust the stream then create another reader pointing to memory of the response. 
 
-## [7][trouble with godoc](https://www.reddit.com/r/golang/comments/hvirja/trouble_with_godoc/)
-- url: https://www.reddit.com/r/golang/comments/hvirja/trouble_with_godoc/
----
-Hey everyone, I am having trouble getting godoc to work and figured I would ask if anyone has any insight.
+I’m not too familiar with what goes on behind the scenes in the http package, so I was wondering if adding a header named ‘API-Error-Code’ with the response  would solve this problem. If there is an error code, I don’t want to read any of the body into memory. 
 
-I have a folder name test under my src folder with one package "main".
-
-&amp;#x200B;
-
-When I run the command
-
-go doc -all -u ./test 
-
-It creates documentation just fine. However when running godoc I cant seem to get anything. The documentation says to control presentation mode with the url parameter m and gives this as an example to use to get all unexported methods
-
-For instance, [https://golang.org/pkg/math/big/?m=all](https://golang.org/pkg/math/big/?m=all) shows the documentation for all (not just the exported) declarations of package big.
-
-&amp;#x200B;
-
-so I ran the http server with 
-
-godoc -http=localhost:6060   
-
-and it hosts correctly, however when i navigate to my package both
-
-[http://localhost:6060/pkg/test/?m=all](http://localhost:6060/pkg/test/?m=all) 
-
-and
-
-[http://localhost:6060/pkg/test/](http://localhost:6060/pkg/test/)
-
-display an empty page with the header Command Test. 
-
-Any insight would be great appreciated.
-## [8][get random from given numbers](https://www.reddit.com/r/golang/comments/hvqnct/get_random_from_given_numbers/)
-- url: https://www.reddit.com/r/golang/comments/hvqnct/get_random_from_given_numbers/
----
-i'm new to go, how do i get a random value from a choice of numbers
-
-ex: (1,9,36) and i get 1,9 or 36
-## [9][[poll] what's your i18n/l11n solution](https://www.reddit.com/r/golang/comments/hvneur/poll_whats_your_i18nl11n_solution/)
-- url: https://www.reddit.com/r/golang/comments/hvneur/poll_whats_your_i18nl11n_solution/
----
-Go programmers - what do you use when writing software in Go that needs to support multiple languages? I'm tryna decide which to choose.
-
-I'm leaning towards po files just because I don't want to ask an external translation company to write Go or manage gotext.json (as good as that looks, almost nobody knows about it and there's no docs)
-
-[View Poll](https://www.reddit.com/poll/hvneur)
-## [10][How to add a header to every request in Go](https://www.reddit.com/r/golang/comments/hvn7u3/how_to_add_a_header_to_every_request_in_go/)
-- url: https://developer20.com/add-header-to-every-request-in-go/?utm_source=reddit&amp;utm_medium=link&amp;utm_campaign=headers-in-go
----
-
-## [11][query2metric - A tool to run db queries in defined frequency and expose the count as Prometheus metrics.](https://www.reddit.com/r/golang/comments/hvdluz/query2metric_a_tool_to_run_db_queries_in_defined/)
-- url: https://github.com/yolossn/query2metric/
----
-
-## [12][Is Golang really viable for back end dev?](https://www.reddit.com/r/golang/comments/hvr0ol/is_golang_really_viable_for_back_end_dev/)
-- url: https://www.reddit.com/r/golang/comments/hvr0ol/is_golang_really_viable_for_back_end_dev/
----
-Hello, i did some google research and they said golang was viable for writing apis and stuff (am new to programing bare with me), but is it really viable for back end, i heard about the fiber framework is it any good?
-
-also i know i have to learn a lot of thing in web dev (i mean a roadmap would be hepful if you guys have one)
-
-am not looking for a job am only a 16 year old kid who wants to dive into programming (\*cough\* tried 3 years ago btw)
-
-&amp;#x200B;
-
-also i heard alot of people hating on golang whats the problem?
-
-sorry if this question is asked again, Thanks for your anwsers.
+Would this solve my problem? I’m not 100% sure what r.Headers.get() will do memory wise.

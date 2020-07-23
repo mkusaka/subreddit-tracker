@@ -56,57 +56,56 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][I Made an Esoteric Programming Language with ANTLR4 and C++ which let's you code in Cats' language.](https://www.reddit.com/r/cpp/comments/hvsdax/i_made_an_esoteric_programming_language_with/)
+## [2][GCC 10.2 Released](https://www.reddit.com/r/cpp/comments/hwc5sc/gcc_102_released/)
+- url: https://www.reddit.com/r/cpp/comments/hwc5sc/gcc_102_released/
+---
+GCC 10.2 is a bug-fix release from the GCC 10 branch containing important fixes for regressions and serious bugs in GCC 10.1 with more than 94 bugs fixed since the previous release. Bug list: [https://gcc.gnu.org/bugzilla/buglist.cgi?bug\_status=RESOLVED&amp;resolution=FIXED&amp;target\_milestone=10.2](https://gcc.gnu.org/bugzilla/buglist.cgi?bug_status=RESOLVED&amp;resolution=FIXED&amp;target_milestone=10.2)
+## [3][New 3.1.4 release of wxWidgets, free and open source library for creating portable native GUI applications, adding macOS 11/ARM support and much more, is now available.](https://www.reddit.com/r/cpp/comments/hvyk11/new_314_release_of_wxwidgets_free_and_open_source/)
+- url: http://wxwidgets.org/news/2020/07/wxwidgets-3.1.4-released/
+---
+
+## [4][nonstd::uniform_real_distribution, a drop-in replacement for std::uniform_real_distribution (msvc) with proper mathematical properties](https://www.reddit.com/r/cpp/comments/hw4cdl/nonstduniform_real_distribution_a_dropin/)
+- url: https://www.reddit.com/r/cpp/comments/hw4cdl/nonstduniform_real_distribution_a_dropin/
+---
+The standard is in a dilemma regarding `std::uniform_real_distribution(a, b)`: On one side it's asking for the distr. to generate uniformly distributed values on [a, b), on the other it's dictating an implementation which results in *non*-uniform values being generated on [a, b], meaning it's inconsistent and unfulfillable at this point.
+
+Microsoft opts for the dictated implementation forfeiting uniformity. Seeing as nobody can be standard-conform anyway, true uniformity was more important for us, let me present [`nonstd::uniform_real_distribution`](https://github.com/denniskb/uniform_real_distr), which is a (close to) drop-in replacement for `std::uniform_real_distribution`, the only differences being:
+- We do not support (de-)serialization from/to streams.
+- We only support float and double for now.
+
+Advantages over `std`:
+- We generate perfectly distributed uniform values on [a, b) for a=0. (All values are equally far spaced apart and have an equal probability of occurring.)
+- We generate values on [min(), max()] with min()==a and max()&lt;b for a=0.
+- We guarantee to invoke your RNG at most `ceil({24|53} / log2(rng.max()-rng.min()+1))` times.
+- We are just as fast as `std::uniform_real_distribution`.
+- We can also generate right-inclusive values on (a, b] (for a=0) if desired, simply instantiate with `right_inc` equal to `true`: `nonstd::uniform_real_distribution&lt;float, true&gt; iid;`
+
+This header was extracted from a current, thoroughly tested production-level codebase. If there's sufficient interest I'd be happy to extract the corresponding unit tests as well.
+## [5][C++ on Sea 2020 video - "A refresher on the floating-point computations and the standard library" - Boguslaw Cyganek](https://www.reddit.com/r/cpp/comments/hwbpgj/c_on_sea_2020_video_a_refresher_on_the/)
+- url: https://www.youtube.com/watch?v=7aZbYJ5UTC8
+---
+
+## [6][July update on COVID-19 and Meeting C++ 2020](https://www.reddit.com/r/cpp/comments/hwbr8z/july_update_on_covid19_and_meeting_c_2020/)
+- url: http://meetingcpp.com/meetingcpp/news/items/July-update-on-COVID-19-and-Meeting-Cpp-2020.html
+---
+
+## [7][July 2020 C++ standard mailing](https://www.reddit.com/r/cpp/comments/hw2s5k/july_2020_c_standard_mailing/)
+- url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/#mailing2020-07
+---
+
+## [8][C++ on Sea 2020 video - "Hypercritical C++ Code Review" - Yuri Minaev](https://www.reddit.com/r/cpp/comments/hwe16k/c_on_sea_2020_video_hypercritical_c_code_review/)
+- url: https://www.youtube.com/watch?v=f1_Iwh33f9I
+---
+
+## [9][I Made an Esoteric Programming Language with ANTLR4 and C++ which let's you code in Cats' language.](https://www.reddit.com/r/cpp/comments/hvsdax/i_made_an_esoteric_programming_language_with/)
 - url: https://github.com/bauripalash/mewmew
 ---
 
-## [3][Improving code generation time with C++ Build Insights](https://www.reddit.com/r/cpp/comments/hvi7l8/improving_code_generation_time_with_c_build/)
-- url: https://devblogs.microsoft.com/cppblog/improving-code-generation-time-with-cpp-build-insights/
+## [10][C++ on Sea video - "Quickly and Effectively Testing Legacy C++ Code with Approval Tests" - Clare Macrae](https://www.reddit.com/r/cpp/comments/hwcywb/c_on_sea_video_quickly_and_effectively_testing/)
+- url: https://www.youtube.com/watch?v=tXEuf_3VzRE
 ---
 
-## [4][Doxygen comments and Logpoints support for VS Code C++ Extension](https://www.reddit.com/r/cpp/comments/hvc1gw/doxygen_comments_and_logpoints_support_for_vs/)
-- url: https://devblogs.microsoft.com/cppblog/visual-studio-code-c-extension-july-2020-update-doxygen-comments-and-logpoints/
----
-
-## [5][grpc_bench: a clear, objective gRPC benchmark](https://www.reddit.com/r/cpp/comments/hvs4f0/grpc_bench_a_clear_objective_grpc_benchmark/)
-- url: /r/grpc/comments/hv7h6i/grpc_bench_a_clear_objective_grpc_benchmark/
----
-
-## [6][How Relocations and Thread Local Store are Implemented](https://www.reddit.com/r/cpp/comments/hvi1s2/how_relocations_and_thread_local_store_are/)
-- url: https://stffrdhrn.github.io/software/toolchain/openrisc/2020/07/21/relocs_tls_impl.html
----
-
-## [7][std::ref and std::reference_wrapper: common use cases](https://www.reddit.com/r/cpp/comments/hv6d9k/stdref_and_stdreference_wrapper_common_use_cases/)
-- url: https://www.nextptr.com/tutorial/ta1441164581/stdref-and-stdreference_wrapper-common-use-cases
----
-
-## [8][[Question] What are convincing (preferably perf-unrelated) ways to argue against passing everything by shared_ptr?](https://www.reddit.com/r/cpp/comments/hv45lw/question_what_are_convincing_preferably/)
-- url: https://www.reddit.com/r/cpp/comments/hv45lw/question_what_are_convincing_preferably/
----
-Since C++11, I noticed that programmers in some circles started using `std::shared_ptr` for everything (possibly type-aliasing it as e.g.`Ptr`) and passing everything by `shared_ptr` copy, but this makes me personally uneasy due to the loss in visibility into RAII-based resource release times.
-
-Unfortunately, I'm not good at coming up with the kind of concrete arguments that truly speak to people, so to say, so here I am.
-
-Most notably, I'm having a hard time conveying why destruction times are Important™, and why you don't want your object relationships to turn into a strongly connected graph.
-
-What's your guys' take? How would you (amiably) approach the issue?
-
-Edit: Thank you all for the responses! I didn't go through quite all of them yet, but I will over the next day or so. I didn't expect this to get as much attention as it did, but I'm happy that it did :)
-## [9][Macro for accessors methods](https://www.reddit.com/r/cpp/comments/hvor0t/macro_for_accessors_methods/)
-- url: https://www.reddit.com/r/cpp/comments/hvor0t/macro_for_accessors_methods/
----
-Hello,
-
-In a new project where I am working now there are a lot of macros that help to write accessors and other things.
-As example you can write GETSET(int, counter) in a class definition an the macro will exapnds into the code of set / get and member definition.
-I don't like very much this but you don't have to write a lot of trivial code.
-
-What do you think? Is it a bad practice? Or you like this approach?
-## [10][Better IDE for linux](https://www.reddit.com/r/cpp/comments/hvelig/better_ide_for_linux/)
-- url: https://www.reddit.com/r/cpp/comments/hvelig/better_ide_for_linux/
----
-I am using g++ through terminal, it works fine for small projects but for complicated project like that using cmake , g++ gave me little choices compared to VS on Windows. What is the best IDE to use in Ubuntu?
-## [11][static code analyzer for annotated TODO comments \w C++ support](https://www.reddit.com/r/cpp/comments/hv8p56/static_code_analyzer_for_annotated_todo_comments/)
-- url: https://github.com/preslavmihaylov/todocheck
+## [11][C++ on Sea 2020 video: "C++20: All the small things" - Fergus Cooper](https://www.reddit.com/r/cpp/comments/hvxjyr/c_on_sea_2020_video_c20_all_the_small_things/)
+- url: https://www.youtube.com/watch?v=LL_NrM7MY44
 ---
 

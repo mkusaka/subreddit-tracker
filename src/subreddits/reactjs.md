@@ -34,6 +34,7 @@ No question is too simple. 🙂
 - [FreeCodeCamp's React course][freecodecamp's react course]
 - [Kent Dodd's Egghead.io course][kent dodd's egghead.io course]
 - [New to Hooks? Check Amelia Wattenberger's Thinking in React Hooks][thinking in react hooks]
+- and these React Hook recipes on [useHooks.com](https://usehooks.com/) by [Gabe Ragland](https://twitter.com/gabe_ragland)
 - What other updated resources do you suggest?
 
 Any ideas/suggestions to improve this thread - feel free to comment here!
@@ -109,111 +110,62 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Just found this site "useHooks.com" - super helpful collection of react hooks!](https://www.reddit.com/r/reactjs/comments/hw3mzw/just_found_this_site_usehookscom_super_helpful/)
-- url: https://usehooks.com/
+## [3][SpreadSheet Grid: Excel-like DataGrid component for React JS. Built for high performance rendering similar to google sheets.](https://www.reddit.com/r/reactjs/comments/hwqsc9/spreadsheet_grid_excellike_datagrid_component_for/)
+- url: https://rowsncolumns.app/
 ---
 
-## [4][Me and my friend built a hosting platform where you can deploy frontend apps for free, with just a few clicks. I would love to hear some feedback from you!](https://www.reddit.com/r/reactjs/comments/hw9oy7/me_and_my_friend_built_a_hosting_platform_where/)
-- url: https://www.reddit.com/r/reactjs/comments/hw9oy7/me_and_my_friend_built_a_hosting_platform_where/
+## [4][Opensource music collection explorer and migrator](https://www.reddit.com/r/reactjs/comments/hx1cah/opensource_music_collection_explorer_and_migrator/)
+- url: https://www.reddit.com/r/reactjs/comments/hx1cah/opensource_music_collection_explorer_and_migrator/
 ---
-For that, we are also providing a $50 credit (no credit card required), which you can use to host your backend apps.
+My [friend](https://www.reddit.com/user/srinskit) and I have built a web app where you can explore and migrate your song collection across different music services.
 
-Here's the link: http://hostman.com/?coupon=reddit50
+Services currently integrated
 
-Any feedback/ criticism will be highly appreciated!
-## [5][Completed my Portfolio Website](https://www.reddit.com/r/reactjs/comments/hvppm3/completed_my_portfolio_website/)
-- url: https://v.redd.it/ei3mq1ww7dc51
----
+1. Amazon Music India
+2. Spotify
 
-## [6][Storing fetched data without a database?](https://www.reddit.com/r/reactjs/comments/hwfn7u/storing_fetched_data_without_a_database/)
-- url: https://www.reddit.com/r/reactjs/comments/hwfn7u/storing_fetched_data_without_a_database/
----
-Is there a way to store the response data without using a database? The reason i want to do this is to limit the amount of api calls I make. In this specific case I want to make calls to pokeapi to get  pokemon data and then store it somehow in the frontend. Then I want to use that data later on so that if a user revisits the same pokemon's page, it wont make a GET request again and instead uses the saved/cached data.
-## [7][What is the 'practice' called when you call a functionName() in the child of a component instead of using the JSX?](https://www.reddit.com/r/reactjs/comments/hwfm0v/what_is_the_practice_called_when_you_call_a/)
-- url: https://www.reddit.com/r/reactjs/comments/hwfm0v/what_is_the_practice_called_when_you_call_a/
----
-You could do the below:
+The codebase is three parts
 
-    const MyComponent = (props) =&gt; {
-    
-        return (
-            &lt;div&gt;
-                &lt;h1&gt;Heading Here&lt;/h1&gt;
-                &lt;div&gt;
-                    {props.stuff.map(({title})=&gt;&lt;h3&gt;title&lt;/h3&gt;)}
-                &lt;/div&gt;
-            &lt;/div&gt;
-        )
-    }
-    
-    export default MyComponent
+1. [Web app](https://github.com/shreyasseshadri/potential-invention/tree/master/webapp)
+2. [Browser extensions (Chrome and Firefox](https://github.com/shreyasseshadri/potential-invention/tree/master/extensions)[) for Amazon integration](https://github.com/shreyasseshadri/potential-invention/tree/master/extensions)
+3. [Backend](https://github.com/shreyasseshadri/music_jump)
 
-Or you could call a function instead:
+Contributions are welcome for integrating new services and helping out with issues in the repo.
 
-    import React from 'react'
-    
-    const MyComponent = (props) =&gt; {
-    
-        const renderChildren = () =&gt; props.stuff.map(({title})=&gt;&lt;h3&gt;title&lt;/h3&gt;)
-        
-        return (
-            &lt;div&gt;
-                &lt;h1&gt;Heading Here&lt;/h1&gt;
-                &lt;div&gt;
-                    {renderChildren()}
-                &lt;/div&gt;
-            &lt;/div&gt;
-        )
-    }
-    
-    export default MyComponent
-
-
-
-
-
-----
-
-What is the latter called? renderFunctions? And what is their main purpose? 
-
-For me, I use them when the map/renderChildren return is very long. So having the renderChildren() function keeps the main component more readable. But in that case I think "why not make it a brand new component"
-## [8][⚛️ ReactJS: A Simple Custom Hook - Time to Hack](https://www.reddit.com/r/reactjs/comments/hwfb5g/reactjs_a_simple_custom_hook_time_to_hack/)
-- url: https://time2hack.com/reactjs-simple-custom-hook/
+[UI Demo](https://reddit.com/link/hx1cah/video/4r5dbtmzwsc51/player)
+## [5][Understanding React.useEffect hook and Creating a Simple Custom Hook](https://www.reddit.com/r/reactjs/comments/hwxwom/understanding_reactuseeffect_hook_and_creating_a/)
+- url: https://youtu.be/r3yDMZpHbXQ
 ---
 
-## [9][Update: Added some more feature to file upload component. (link to prev post in comments). What do you guys think on the hover actions buttons?](https://www.reddit.com/r/reactjs/comments/hvta1x/update_added_some_more_feature_to_file_upload/)
-- url: https://github.com/cheersmas/upload-animation/raw/master/fileupload.gif
+## [6][Data fetching in Next.js 9.3+](https://www.reddit.com/r/reactjs/comments/hwzvrn/data_fetching_in_nextjs_93/)
+- url: https://www.williamkurniawan.com/blog/data-fetching-in-next-js-9-3
 ---
 
-## [10][How Overlay compiles React and Vue.js components from designer tools?](https://www.reddit.com/r/reactjs/comments/hweuar/how_overlay_compiles_react_and_vuejs_components/)
-- url: https://www.reddit.com/r/reactjs/comments/hweuar/how_overlay_compiles_react_and_vuejs_components/
----
-You want know more about how compiler work ?
-
-In this article, discover how Overlay engineering team built the first prod-ready web component compiler for design tools.
-
-[https://medium.com/overlay-blog/how-overlay-compiles-react-and-vue-js-components-from-designer-tools-96592760a640?sk=80789e1d27cbc4c4b6bc7dfde4b5c911](https://medium.com/overlay-blog/how-overlay-compiles-react-and-vue-js-components-from-designer-tools-96592760a640?sk=80789e1d27cbc4c4b6bc7dfde4b5c911)
-## [11][RxJS Observables in React — a tiny npm package](https://www.reddit.com/r/reactjs/comments/hwestp/rxjs_observables_in_react_a_tiny_npm_package/)
-- url: https://github.com/kosich/react-rxjs-elements#readme
+## [7][Guide on setting up Chakra UI with React using CRA](https://www.reddit.com/r/reactjs/comments/hwzt40/guide_on_setting_up_chakra_ui_with_react_using_cra/)
+- url: https://raptis.wtf/chakra-ui-react-setup
 ---
 
-## [12][Fetching data from an API: Avoid multiple calls](https://www.reddit.com/r/reactjs/comments/hwe0z1/fetching_data_from_an_api_avoid_multiple_calls/)
-- url: https://www.reddit.com/r/reactjs/comments/hwe0z1/fetching_data_from_an_api_avoid_multiple_calls/
+## [8][🎉 gatsby-remark-embedder 3.0.0 is released! 🥳](https://www.reddit.com/r/reactjs/comments/hwzcg9/gatsbyremarkembedder_300_is_released/)
+- url: https://github.com/MichaelDeBoey/gatsby-remark-embedder/releases/tag/v3.0.0
 ---
-Hi All,
 
-I am working on a tutorial wherein I am trying to build a twitter like application with a Django backend and a React frontend. I am following the tutorial steps but trying to implement my solution with the hooks and context api.
+## [9][React router 6 question](https://www.reddit.com/r/reactjs/comments/hx17ul/react_router_6_question/)
+- url: https://www.reddit.com/r/reactjs/comments/hx17ul/react_router_6_question/
+---
+Have been testing the new react router (6.0.0-beta.0) and I couldn't manage to make optional parameters to work. This was working in 5.2.0 path="/:lang?" and now it doesn't. Has something changed?
+## [10][ReactJS Training in Bangalore](https://www.reddit.com/r/reactjs/comments/hx17fj/reactjs_training_in_bangalore/)
+- url: http://infocampus.co.in/react-js-training-in-bangalore
+---
 
-There is one place I am stuck on. So on the home page, when say a guest user visits the website, I want to show all tweets. But on a profile page, I want to show only the tweets of a particular user. I am using react-router to pick up the username from the URL.
+## [11][Which is the best react wizard / steps plugin](https://www.reddit.com/r/reactjs/comments/hx0ski/which_is_the_best_react_wizard_steps_plugin/)
+- url: https://www.reddit.com/r/reactjs/comments/hx0ski/which_is_the_best_react_wizard_steps_plugin/
+---
+Does any one have idea about the best open source react wizard / steps plugin available with step validation and vertical steps as I couldn't find one. I use [bs-stepper](https://johann-s.github.io/bs-stepper/) in HTML version and need similar in React.
+## [12][Is it a bad practice to listen to window.onunhandledrejection event or not?](https://www.reddit.com/r/reactjs/comments/hwzuqi/is_it_a_bad_practice_to_listen_to/)
+- url: https://www.reddit.com/r/reactjs/comments/hwzuqi/is_it_a_bad_practice_to_listen_to/
+---
+Hi folks, I have been practicing React.js for a while and tried to figure out to implement a Global Error Handling that would catch all errors that might occur in the entire app. 
 
-The problem I am facing is, on the second route i.e. the one with the username, 2 api calls are being made to the backend. One is when the tweets-context is first created and the second when the username gets set. Because of this, since both of calls are being made to the backend, whichever call gets fulfilled by the backend later, gets rendered on the screen. Ideally I would want to make the call on this route only after the username has been set.
+As you know, `componentDidCatch` lifecycle hook cannot catch the errors that are occurred in an async operation. There might be a case that there is an async operation which you forgot to handle or don't want to handle manually but you still don't want to show the ugly error screen to the user, To solve this problem, I came up with listening to `window.onunhandledrejection` in the `ErrorBoundary` component. My concern is, that if it is, someway, a bad practice to listen to this particular event in React, or generally in any JS app. Is there any disadvantage of listening to it?
 
-How do I avoid these multiple calls?
-
-Here is the link to the sandbox with my code:
-
- [https://codesandbox.io/s/tender-pascal-tbf0s](https://codesandbox.io/s/tender-pascal-tbf0s) 
-
-The actual code might not run on another machine because the APIs are not hosted anywhere, they are on my local machine only. But I hope someone can identify the issue and provide a solution.
-
-Thanks in advance!
+Any thoughts?

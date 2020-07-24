@@ -27,24 +27,105 @@ Let's do the Q&amp;A about the design here in Reddit. My hope is that the thread
 Please start a new top-level comment for each new question.
 
 See also the related [Q&amp;A for the io/fs draft design](https://golang.org/s/draft-iofs-reddit).
-## [3][fullstorydev/grpcurl: a command-line tool that lets you interact with gRPC servers. It's basically curl for gRPC servers](https://www.reddit.com/r/golang/comments/hwbmdx/fullstorydevgrpcurl_a_commandline_tool_that_lets/)
+## [3][How to deploy a Go backend with a React frontend separately on Kubernetes with (silly) drawings!](https://www.reddit.com/r/golang/comments/hworna/how_to_deploy_a_go_backend_with_a_react_frontend/)
+- url: https://skarlso.github.io/2020/07/23/kubernetes-deploy-golang-react-apps-separately-part1/
+---
+
+## [4][Boilerplate on the top of Fiber Web framework](https://www.reddit.com/r/golang/comments/hwz1y3/boilerplate_on_the_top_of_fiber_web_framework/)
+- url: https://www.reddit.com/r/golang/comments/hwz1y3/boilerplate_on_the_top_of_fiber_web_framework/
+---
+I'm new to Golang world. While playing with different libraries and tools, I've created following boilterplate on that top of Fiber Framework [https://github.com/gofiber/fiber](https://github.com/gofiber/fiber)
+
+Please use this boilerplate for any purpose and let me know if anyone have suggestions [https://github.com/itsursujit/fiber-boilerplate](https://github.com/itsursujit/fiber-boilerplate)
+
+&amp;#x200B;
+
+Any PRs are welcome
+## [5][Me and my friend built a self-host monitoring, alert and incident system. We would love to hear some feedback from you!](https://www.reddit.com/r/golang/comments/hwpbss/me_and_my_friend_built_a_selfhost_monitoring/)
+- url: https://www.reddit.com/r/golang/comments/hwpbss/me_and_my_friend_built_a_selfhost_monitoring/
+---
+Hello everyone. We want to show Reddit community our full open-source (and free) self-host monitoring, incident, and alerting system. We have chosen "Squzy" as a product name.
+
+**Our goals were to**:
+
+1. Provide amazing and free monitoring complex for a lot of cases
+2. Provide product which doesn't collect data for external resources
+3. Support by open-source community
+4. Open protocol for support user own realisations/plugins
+
+[**GITHUB**](https://github.com/squzy/squzy)
+
+[**DEMO**](https://demo.squzy.app/)
+
+[**DOCS**](https://squzy.app/)
+## [6][Getting an error when trying to test with t.Errorf()](https://www.reddit.com/r/golang/comments/hx1pij/getting_an_error_when_trying_to_test_with_terrorf/)
+- url: https://www.reddit.com/r/golang/comments/hx1pij/getting_an_error_when_trying_to_test_with_terrorf/
+---
+Here is my code ... [https://github.com/jsquardo/GoCards](https://github.com/jsquardo/GoCards) 
+
+Whenever I run the test I get this error... 
+
+    Errorf call has arguments but no formatting directives
+    
+
+This is my first day learning Go so I'm sure its something stupid I am missing. Thanks in advance.
+## [7][proposal: Go 1 : accept multiple return values as the rest arguments · Issue #40387 · golang/go · GitHub](https://www.reddit.com/r/golang/comments/hx1ace/proposal_go_1_accept_multiple_return_values_as/)
+- url: https://github.com/golang/go/issues/40387
+---
+
+## [8][[Advice] Rewrite partly finished project in go?](https://www.reddit.com/r/golang/comments/hx17wm/advice_rewrite_partly_finished_project_in_go/)
+- url: https://www.reddit.com/r/golang/comments/hx17wm/advice_rewrite_partly_finished_project_in_go/
+---
+Hi there community,
+
+this is my first post in /r/golang and I am quite new to go. I hope that some of you guys might be able to help me out a little with a decision. So this is kind of a combined question and I am also looking to get some insights into professional software programming strategies and design decisions. 
+
+I have written a darts scoreboard application a time ago using python with flask and jinja2 templates as a viewing engine. That project is quite old and I decided to rewrite it using modern technology. Therefore I learned react and decided to use a combination of a RESTful API design and graphql for transfering big data junks to my frontend fpr easier parsing.
+
+As the backend also needs to integrate the game logic the software is quite big afterwards and not that easy to handle an maintaine.
+
+I do love the fact, that go is easy to learn (I did a few programs in go already) and that it is simple and straight forward. Also it is compilable which means I could release single file applications at the long run.
+
+So do you guys think it might be worth it to start over using go as a backend language (which works quite well with react) and build out my API there?
+
+I did not do that much yet, so there will be not much time lost by restarting once again.
+
+Also I would like your opinion on design. To get you a little more detail information I want to point out what the software will do.
+
+One is able to configure and start a game of darts (add player with profile and picture, choose game type and player playing, start the game).
+
+One Index page will then be redirected to a scoreboard page and one admin page will be redirected to a controller page. The scoreboard page shows the game stats to the players playing darts and the controller page is there to add throws in. (If you do not use a recognition software which will send the api requests automatically).
+
+So the backend needs to fetch the throws (/throw/20/1 - is single 20, /throw/20/2 is double twenty ..) and then run some logic.
+
+If you know a game of darts there is quite a lot to handle. Winning conditions, Bust, etc... And I want to store the game state in a database (sqlite or something like that).
+
+How would you guys approach this? Cause right now I have a hybrid API running which will add throws but also handle gameplay.
+
+There are other difficulties like undoing falsly booked throws or changing to the next player and so on.
+
+So I am quite unsure if I do that in a well design and if this will even be possible or advisable to do in go.
+
+I will leave my "old" scoreboard code ([https://github.com/patrickhener/dart-o-mat-3000](https://github.com/patrickhener/dart-o-mat-3000), [https://dart-o-mat-3000.readthedocs.io/en/latest/](https://dart-o-mat-3000.readthedocs.io/en/latest/)) here. The new one is intended to work like the old one does if my design concept is good. Otherwise I am grateful and thankful for every guidance I can receive from you guys.
+
+If someone wants to elaborate more on how to do it right I can also add you to the github repo for the new software approach. Just shoot me a dm.
+
+Thanks in advance,  
+best regards,  
+Patrick
+## [9][armon/go-metrics: instrument code, expose application metrics, and profile runtime performance in a flexible manner](https://www.reddit.com/r/golang/comments/hx0k21/armongometrics_instrument_code_expose_application/)
+- url: https://www.reddit.com/r/golang/comments/hx0k21/armongometrics_instrument_code_expose_application/
+---
+[https://github.com/armon/go-metrics](https://github.com/armon/go-metrics)
+## [10][Authentication in Golang with JWTs](https://www.reddit.com/r/golang/comments/hx06h4/authentication_in_golang_with_jwts/)
+- url: https://auth0.com/blog/authentication-in-golang/
+---
+
+## [11][fullstorydev/grpcurl: a command-line tool that lets you interact with gRPC servers. It's basically curl for gRPC servers](https://www.reddit.com/r/golang/comments/hwbmdx/fullstorydevgrpcurl_a_commandline_tool_that_lets/)
 - url: https://www.reddit.com/r/golang/comments/hwbmdx/fullstorydevgrpcurl_a_commandline_tool_that_lets/
 ---
 [https://github.com/fullstorydev/grpcurl](https://github.com/fullstorydev/grpcurl)
-## [4][The official ls-lint documentation is here](https://www.reddit.com/r/golang/comments/hwcl1y/the_official_lslint_documentation_is_here/)
-- url: https://ls-lint.org
----
-
-## [5][Exactly 10 years ago, Rob Pike spoke at OSCON about Go. Unfortunately, some slides were barely shown, and the video quality wasn't that great. Hence I recorded 16:9 facsimile slides in 1080p.](https://www.reddit.com/r/golang/comments/hvu1hh/exactly_10_years_ago_rob_pike_spoke_at_oscon/)
-- url: https://www.youtube.com/watch?v=ZG_ReFc-bFU
----
-
-## [6][Acker: AMQP producer/consumer CLI](https://www.reddit.com/r/golang/comments/hwcu1f/acker_amqp_producerconsumer_cli/)
-- url: https://www.reddit.com/r/golang/comments/hwcu1f/acker_amqp_producerconsumer_cli/
----
-I made a small CLI application, named Acker, to produce/consume messages to/from AMQP servers, e.g. RabbitMQ. It can be used for debugging queues, consumers and producers:  
-[https://github.com/mostafa/acker](https://github.com/mostafa/acker)
-## [7][Monolithic Component Architecture in Go](https://www.reddit.com/r/golang/comments/hwfo4v/monolithic_component_architecture_in_go/)
+## [12][Monolithic Component Architecture in Go](https://www.reddit.com/r/golang/comments/hwfo4v/monolithic_component_architecture_in_go/)
 - url: https://www.reddit.com/r/golang/comments/hwfo4v/monolithic_component_architecture_in_go/
 ---
 Caveat: I'm a long-term Java developer, so a lot of my thinking is coloured by that.
@@ -69,39 +150,3 @@ I'm particularly concerned that this will mean each package is going to have fil
 Or is there a more Go-like architecture that's recommended for something like this? Is there a standard way that this kind of thing is/should be structured to better fit with how Go works?
 
 Cheers
-## [8][I hope Golang cheat sheet will be useful to you](https://www.reddit.com/r/golang/comments/hvylv9/i_hope_golang_cheat_sheet_will_be_useful_to_you/)
-- url: https://simplecheatsheet.com/tag/golang-cheat-sheet/
----
-
-## [9][Implementing "Sign In With Google" in Go From Scratch](https://www.reddit.com/r/golang/comments/hvvu9o/implementing_sign_in_with_google_in_go_from/)
-- url: https://qvault.io/2020/07/22/how-to-implement-sign-in-with-google-in-golang/
----
-
-## [10][Go2 playground now supports square brackets for Generics](https://www.reddit.com/r/golang/comments/hvpis5/go2_playground_now_supports_square_brackets_for/)
-- url: https://www.reddit.com/r/golang/comments/hvpis5/go2_playground_now_supports_square_brackets_for/
----
-[https://go2goplay.golang.org](https://go2goplay.golang.org/) 
-
-&gt;// The playground now supports parentheses or square brackets (only one at  
-&gt;  
-&gt;// a time) for generic type and function declarations and instantiations.  
-&gt;  
-&gt;// By default, parentheses are expected. To switch to square brackets,  
-&gt;  
-&gt;// the first generic declaration in the source must use square brackets.
-
-Sample: [https://go2goplay.golang.org/p/7zFKUcpzhvZ](https://go2goplay.golang.org/p/7zFKUcpzhvZ)
-## [11][Design Draft: First Class Fuzzing](https://www.reddit.com/r/golang/comments/hvpr96/design_draft_first_class_fuzzing/)
-- url: https://go.googlesource.com/proposal/+/refs/heads/master/design/40307-fuzzing.md
----
-
-## [12][Sending custom errors in headers to reduce memory](https://www.reddit.com/r/golang/comments/hwacaf/sending_custom_errors_in_headers_to_reduce_memory/)
-- url: https://www.reddit.com/r/golang/comments/hwacaf/sending_custom_errors_in_headers_to_reduce_memory/
----
-I have a Microservice that makes multiple API calls and creates one json out of all the responses. The response code for the Microservice is supposed to represent the health of the Microservice, so I can’t use it for the actual error code of the multiple API calls if there is one. I return a 200 no matter what. 
-
-Currently, I’m putting a custom error in the body, but this requires that I read the entire response into memory, but that doesn’t utilize Go’s streaming capabilities. This is because in all cases, I read the whole response and exhaust the stream then create another reader pointing to memory of the response. 
-
-I’m not too familiar with what goes on behind the scenes in the http package, so I was wondering if adding a header named ‘API-Error-Code’ with the response  would solve this problem. If there is an error code, I don’t want to read any of the body into memory. 
-
-Would this solve my problem? I’m not 100% sure what r.Headers.get() will do memory wise.

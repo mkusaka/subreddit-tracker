@@ -56,56 +56,70 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][GCC 10.2 Released](https://www.reddit.com/r/cpp/comments/hwc5sc/gcc_102_released/)
+## [2][Smart Pointers: When and Why? (walk-through video with motivational example)](https://www.reddit.com/r/cpp/comments/hwyhc8/smart_pointers_when_and_why_walkthrough_video/)
+- url: https://www.youtube.com/watch?v=Zt0zUcDHi7I
+---
+
+## [3][C++ on Sea 2020 video - "Live Compiler Development with Cross-Platform Tooling" - Sy Brand](https://www.reddit.com/r/cpp/comments/hwyrh2/c_on_sea_2020_video_live_compiler_development/)
+- url: https://www.youtube.com/watch?v=Jw2n5QSul34
+---
+
+## [4][fork of compiler explorer (godbolt.org) editing and displaying SDL in the browser with WebAssembly](https://www.reddit.com/r/cpp/comments/hwk1se/fork_of_compiler_explorer_godboltorg_editing_and/)
+- url: https://v.redd.it/dsxz9xt07nc51
+---
+
+## [5][Avoid character-by-character processing when performance matters](https://www.reddit.com/r/cpp/comments/hx0o1g/avoid_characterbycharacter_processing_when/)
+- url: https://lemire.me/blog/2020/07/21/avoid-character-by-character-processing-when-performance-matters/
+---
+
+## [6][C++ on Sea 2020 video - "Correct by Construction: APIs That Are Easy to Use and Hard to Misuse" - Matt Godbolt](https://www.reddit.com/r/cpp/comments/hwm4so/c_on_sea_2020_video_correct_by_construction_apis/)
+- url: https://www.youtube.com/watch?v=nLSm3Haxz0I
+---
+
+## [7][GCC 10.2 Released](https://www.reddit.com/r/cpp/comments/hwc5sc/gcc_102_released/)
 - url: https://www.reddit.com/r/cpp/comments/hwc5sc/gcc_102_released/
 ---
 GCC 10.2 is a bug-fix release from the GCC 10 branch containing important fixes for regressions and serious bugs in GCC 10.1 with more than 94 bugs fixed since the previous release. Bug list: [https://gcc.gnu.org/bugzilla/buglist.cgi?bug\_status=RESOLVED&amp;resolution=FIXED&amp;target\_milestone=10.2](https://gcc.gnu.org/bugzilla/buglist.cgi?bug_status=RESOLVED&amp;resolution=FIXED&amp;target_milestone=10.2)
-## [3][New 3.1.4 release of wxWidgets, free and open source library for creating portable native GUI applications, adding macOS 11/ARM support and much more, is now available.](https://www.reddit.com/r/cpp/comments/hvyk11/new_314_release_of_wxwidgets_free_and_open_source/)
-- url: http://wxwidgets.org/news/2020/07/wxwidgets-3.1.4-released/
+## [8][Google C++ Libraries are garbage](https://www.reddit.com/r/cpp/comments/hwr6u9/google_c_libraries_are_garbage/)
+- url: https://www.reddit.com/r/cpp/comments/hwr6u9/google_c_libraries_are_garbage/
+---
+Take a look at this [masterpiece](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/platform/default/logging.cc#L39). The level of amateurism in Google's C++ libraries is stunning. This is just one link to one problem, but there are numerous places I can point to. I think Google fell into the trap of hiring a bunch of smart graduates who are good at solving puzzles. Now they have inmates running the asylum. They hire what they think are best of the best. In reality, they hire a bunch of kids that have no experience and no perspective. What they get is falling way behind the industry in best practices. They're basically just throwing money at every problem. I think I've ranted enough, any comments/opinions?
+## [9][A C++14 Lambda Library](https://www.reddit.com/r/cpp/comments/hwh2hv/a_c14_lambda_library/)
+- url: https://pdimov.github.io/blog/2020/07/22/a-c14-lambda-library/
 ---
 
-## [4][nonstd::uniform_real_distribution, a drop-in replacement for std::uniform_real_distribution (msvc) with proper mathematical properties](https://www.reddit.com/r/cpp/comments/hw4cdl/nonstduniform_real_distribution_a_dropin/)
-- url: https://www.reddit.com/r/cpp/comments/hw4cdl/nonstduniform_real_distribution_a_dropin/
+## [10][Could C++23 executors be used for GPU?](https://www.reddit.com/r/cpp/comments/hwrphi/could_c23_executors_be_used_for_gpu/)
+- url: https://www.reddit.com/r/cpp/comments/hwrphi/could_c23_executors_be_used_for_gpu/
 ---
-The standard is in a dilemma regarding `std::uniform_real_distribution(a, b)`: On one side it's asking for the distr. to generate uniformly distributed values on [a, b), on the other it's dictating an implementation which results in *non*-uniform values being generated on [a, b], meaning it's inconsistent and unfulfillable at this point.
+I just want to put out there that the C++23 spec isn't set in stone, etc, etc.
 
-Microsoft opts for the dictated implementation forfeiting uniformity. Seeing as nobody can be standard-conform anyway, true uniformity was more important for us, let me present [`nonstd::uniform_real_distribution`](https://github.com/denniskb/uniform_real_distr), which is a (close to) drop-in replacement for `std::uniform_real_distribution`, the only differences being:
-- We do not support (de-)serialization from/to streams.
-- We only support float and double for now.
-
-Advantages over `std`:
-- We generate perfectly distributed uniform values on [a, b) for a=0. (All values are equally far spaced apart and have an equal probability of occurring.)
-- We generate values on [min(), max()] with min()==a and max()&lt;b for a=0.
-- We guarantee to invoke your RNG at most `ceil({24|53} / log2(rng.max()-rng.min()+1))` times.
-- We are just as fast as `std::uniform_real_distribution`.
-- We can also generate right-inclusive values on (a, b] (for a=0) if desired, simply instantiate with `right_inc` equal to `true`: `nonstd::uniform_real_distribution&lt;float, true&gt; iid;`
-
-This header was extracted from a current, thoroughly tested production-level codebase. If there's sufficient interest I'd be happy to extract the corresponding unit tests as well.
-## [5][C++ on Sea 2020 video - "A refresher on the floating-point computations and the standard library" - Boguslaw Cyganek](https://www.reddit.com/r/cpp/comments/hwbpgj/c_on_sea_2020_video_a_refresher_on_the/)
-- url: https://www.youtube.com/watch?v=7aZbYJ5UTC8
+But upon reading about C++ executors I've noticed one of the goals was for it to be heterogeneous with the goal of running a callable object on an internal or external processor and reading it back to an internal or external processor. Would GPU's qualify for this?
+## [11][moderncom - Modern C++ COM lightweight wrapper](https://www.reddit.com/r/cpp/comments/hwntfa/moderncom_modern_c_com_lightweight_wrapper/)
+- url: https://www.reddit.com/r/cpp/comments/hwntfa/moderncom_modern_c_com_lightweight_wrapper/
 ---
+[ModernCOM on GitHub](https://github.com/AlexBAV/moderncom)
 
-## [6][July update on COVID-19 and Meeting C++ 2020](https://www.reddit.com/r/cpp/comments/hwbr8z/july_update_on_covid19_and_meeting_c_2020/)
-- url: http://meetingcpp.com/meetingcpp/news/items/July-update-on-COVID-19-and-Meeting-Cpp-2020.html
----
+This library is a header-only lightweight wrapper for utilizing, declaring and implementing of Windows COM (Component Object Model)  interfaces.
 
-## [7][July 2020 C++ standard mailing](https://www.reddit.com/r/cpp/comments/hw2s5k/july_2020_c_standard_mailing/)
-- url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/#mailing2020-07
----
+This is the code required to define `MyObject` class that implements two COM interfaces, `IFirstInterface` and `ISecondInterface`:
 
-## [8][C++ on Sea 2020 video - "Hypercritical C++ Code Review" - Yuri Minaev](https://www.reddit.com/r/cpp/comments/hwe16k/c_on_sea_2020_video_hypercritical_c_code_review/)
-- url: https://www.youtube.com/watch?v=f1_Iwh33f9I
----
+```c++
+#include &lt;moderncpp/interfaces.h&gt;
 
-## [9][I Made an Esoteric Programming Language with ANTLR4 and C++ which let's you code in Cats' language.](https://www.reddit.com/r/cpp/comments/hvsdax/i_made_an_esoteric_programming_language_with/)
-- url: https://github.com/bauripalash/mewmew
----
+class MyObject :
+  public belt::com::object&lt;
+    MyObject, // our class
+    IFirstInterface,  // any number of interfaces
+    ISecondInterface&gt; // we implement
+{
+  // Implement methods of IFirstInterface
+  ...
+  // Implement methods of ISecondInterface
+  ...
 
-## [10][C++ on Sea video - "Quickly and Effectively Testing Legacy C++ Code with Approval Tests" - Clare Macrae](https://www.reddit.com/r/cpp/comments/hwcywb/c_on_sea_video_quickly_and_effectively_testing/)
-- url: https://www.youtube.com/watch?v=tXEuf_3VzRE
----
-
-## [11][C++ on Sea 2020 video: "C++20: All the small things" - Fergus Cooper](https://www.reddit.com/r/cpp/comments/hvxjyr/c_on_sea_2020_video_c20_all_the_small_things/)
-- url: https://www.youtube.com/watch?v=LL_NrM7MY44
----
-
+  public:
+    // MyObject may optionally have non-empty constructor that is
+    // allowed to throw exceptions
+    MyObject(int a, int b);
+};
+```

@@ -1,102 +1,115 @@
 # aws
-## [1][On-demand CI/CD infrastructure with GitLab and AWS Fargate - How to reduce costs and scale GitLab Runner down to zero](https://www.reddit.com/r/aws/comments/hwe4hx/ondemand_cicd_infrastructure_with_gitlab_and_aws/)
-- url: https://www.reddit.com/r/aws/comments/hwe4hx/ondemand_cicd_infrastructure_with_gitlab_and_aws/
+## [1][Managing AWS accounts for an organization: AWS Control Tower v.s. Landing Zone v.s. Terraform?](https://www.reddit.com/r/aws/comments/hwwy1u/managing_aws_accounts_for_an_organization_aws/)
+- url: https://www.reddit.com/r/aws/comments/hwwy1u/managing_aws_accounts_for_an_organization_aws/
 ---
-In his new article, Daniel Miranda shows how we can use **AWS Lambda** functions to stop the Runner manager hosted on **AWS Fargate** when there are no CI/CD jobs to process and start it when a new pipeline is triggered. This configuration can significantly reduce the costs when we have considerable idle times between builds.
+Hello,
 
-[https://medium.com/ci-t/on-demand-ci-cd-infrastructure-with-gitlab-and-aws-fargate-376edc7afcda](https://medium.com/ci-t/on-demand-ci-cd-infrastructure-with-gitlab-and-aws-fargate-376edc7afcda)
-## [2][IAM role for automatic AWS CDK deployment](https://www.reddit.com/r/aws/comments/hwc4jf/iam_role_for_automatic_aws_cdk_deployment/)
-- url: https://www.reddit.com/r/aws/comments/hwc4jf/iam_role_for_automatic_aws_cdk_deployment/
+I'm looking into the best way to manage a relatively small number (&lt;50) of AWS accounts in an organization. AWS is trying to push for Control Tower or Landing Zone, but I'm not sure of the added-value compared to Terraform.
+
+More precisely, I've PoC'ed managing the following with Terraform:
+
+* Master account: Organization, children accounts, OUs, service control policies, tagging policies
+* Children accounts: SAML IdP, IAM roles, CloudTrail...
+
+I have a setup where I use 1 Terraform module for children accounts, allowing the AWS Terraform to assume a role in the child account to provision the right resources in here - so far it works like a charm and seems to be automation-friendly.
+
+Why would I want to go for Control Tower / Landing Zone? Any experience with these?
+
+Thank you
+## [2][[Announcement] Lightsail now offers a CDN to optimize your website delivery](https://www.reddit.com/r/aws/comments/hwplbo/announcement_lightsail_now_offers_a_cdn_to/)
+- url: https://www.reddit.com/r/aws/comments/hwplbo/announcement_lightsail_now_offers_a_cdn_to/
 ---
-Hi there! Is there a pre-defined policy or best-practices for creating an IAM role that the CI server uses to deploy via AWS CDK? I don't want to only list the services we are currently using, as this would mean manually logging into and updating this role whenever we need a new service, but I also don't think that the CI will need the ability to e. g. read from our database.
+Hello redditors,
 
-This is talking about production only, staging and local environments live in different AWS accounts.
-## [3][Cross-account AWS Backup - possible or not?](https://www.reddit.com/r/aws/comments/hwcchr/crossaccount_aws_backup_possible_or_not/)
-- url: https://www.reddit.com/r/aws/comments/hwcchr/crossaccount_aws_backup_possible_or_not/
+Today we announced Lightsail CDN, a new feature on Amazon Lightsail that allows you to create CDN distributions to accelerate the delivery of your website’s content to users all over the world. You can create Lightsail CDN distributions with Lightsail instances or load balancers as origins. We even made it easy to setup CDN for common use cases like Wordpress, Static sites with predefined configurations. So, you can enable CDN for your applications with just a few clicks.
+
+We offer an introductory plan that's free for 12 months to make it easy to get started. Give it a try!
+
+What’s New post: [https://aws.amazon.com/about-aws/whats-new/2020/07/amazon-lightsail-now-offers-cdn-distributions-to-accelerate-content-delivery/](https://aws.amazon.com/about-aws/whats-new/2020/07/amazon-lightsail-now-offers-cdn-distributions-to-accelerate-content-delivery/)
+
+Blog post: [https://aws.amazon.com/blogs/compute/improving-website-performance-with-lightsail-content-delivery-network/](https://aws.amazon.com/blogs/compute/improving-website-performance-with-lightsail-content-delivery-network/)
+
+Pricing -  [https://aws.amazon.com/lightsail/pricing](https://aws.amazon.com/lightsail/pricing)
+
+*Here's a general discussion thread on Lightsail-*  [*https://www.reddit.com/r/aws/comments/ftpvbb/heard\_of\_lightsail\_use\_lightsail\_let\_us\_know\_your/*](https://www.reddit.com/r/aws/comments/ftpvbb/heard_of_lightsail_use_lightsail_let_us_know_your/)
+
+We’re excited for you to try it out and would love to hear your feedback.
+
+Thanks!
+## [3][Prometheus: yet-another-cloudwatch-exporter — collecting AWS CloudWatch metrics](https://www.reddit.com/r/aws/comments/hwyke6/prometheus_yetanothercloudwatchexporter/)
+- url: https://medium.com//prometheus-yet-another-cloudwatch-exporter-collecting-aws-cloudwatch-metrics-806bd34818a8?source=friends_link&amp;sk=46fc121c07b7de4939eb69f78a1cca24
 ---
-Is it possible to set up AWS Backup to backup resources located on different account, or to store backups in a vault located on different account?
-## [4][Cloud Batch](https://www.reddit.com/r/aws/comments/hwe7wa/cloud_batch/)
-- url: https://www.reddit.com/r/aws/comments/hwe7wa/cloud_batch/
+
+## [4][[Humour] The "UK power cable" that came with our most recent Snowball. Note the amazing disappearing earth...](https://www.reddit.com/r/aws/comments/hwep2d/humour_the_uk_power_cable_that_came_with_our_most/)
+- url: https://i.imgur.com/QJW53Hc.jpg
 ---
-I was trying to come up with a technique to run the Offline processes on AWS. I tempted to use Lambda processes, but it appears to be lasting for 15 minutes only. Some of my jobs read huge files with 100,000 records for which processing takes hours.. Lambda will not support these long running processes. The other solution is to run an dedicated ec2 instance and spin it for the Job, and use SQS /Cloud watch to push the events.. this should work.. however i will always have to keep this containers up and running despite my jobs run for no more than 1-2 hours on different time of the day. Wanted to know your views?
-## [5][CloudFormation - IAM policy already exists](https://www.reddit.com/r/aws/comments/hwfc31/cloudformation_iam_policy_already_exists/)
-- url: https://www.reddit.com/r/aws/comments/hwfc31/cloudformation_iam_policy_already_exists/
+
+## [5][Managing users in AWS Directory Services Microsoft AD](https://www.reddit.com/r/aws/comments/hwxt4w/managing_users_in_aws_directory_services/)
+- url: https://www.reddit.com/r/aws/comments/hwxt4w/managing_users_in_aws_directory_services/
 ---
-Hi all,
-
-I am running in to a situation where when updating a CFn stack it fails on an existing IAM policy.
-
-&gt;dev-emr-policy already exists
-
-I have several such policies in that stack but its complaining only for this one. To give you some background, this is a nested template setup where we have a main.yml which calls this stack and other stacks(TemplateURL) with the required parameters, this stack has several IAM resources we are creating/controlling through CFn. Just like this policy there are other pre existing IAM policies but its not complaining about those. This is happening when I modified some other stack which is part of the nested stack setup. There were no errors on the modified stack but this IAM stack is errorring out.  When I comment out this policy update works without any errors.
-
-I am stuck here and could use some help please.
-
-Thanks
+According to the docs, to manage users in an AWS Directory Services Microsoft AD domain we need a windows machine that can join the new domain, and then use the AD Tools within windows to manage users and groups.
 
 &amp;#x200B;
 
-    emrPolicy:
-      Type: AWS::IAM::ManagedPolicy
-      Properties:
-        ManagedPolicyName: !Sub ${EnvironmentName}-emr-policy
-        PolicyDocument:
-          Version: "2012-10-17"
-          Statement:
-            -
-              Effect: "Allow"
-              Action:
-                - "XXX"
-                - "YYY"
-                - "ZZZ"
-              Resource:
-                - !Sub arn:aws:AAA:${AWS::Region}:${AWS::AccountId}:something:/${EnvironmentName}/blah/ABC-??????
+Is there an alternative to this?
 
-&amp;#x200B;
-## [6][Lambda function is not invoking the attached destination, no matter how i invoke the function](https://www.reddit.com/r/aws/comments/hwesif/lambda_function_is_not_invoking_the_attached/)
-- url: https://www.reddit.com/r/aws/comments/hwesif/lambda_function_is_not_invoking_the_attached/
+We really really don't want to run any EC2 windows servers for *reasons*.
+
+So, looking for some way of managing users and groups outwith windows - any other AD tools that would do the job - any CLI options?
+## [6][How do you provide read access on AWS Console and write access through Terraform provisions to enforce security and transparency among developers?](https://www.reddit.com/r/aws/comments/hx1jlq/how_do_you_provide_read_access_on_aws_console_and/)
+- url: https://www.reddit.com/r/aws/comments/hx1jlq/how_do_you_provide_read_access_on_aws_console_and/
 ---
-Hi,
+It is generally best practice to maintain your infrastructure through Terraform state if you've provisioned through it in the first place because otherwise any manual provisions, directly on AWS console per se, will cause a mismatch from the state and it will cause troubles going forward.
 
-So i have the setup as following,
+So how do we give developers read access on AWS Console but write access through Terraform provisions? This enforces consistency such that all infrastructure changes require an explicit transparent PR/merge.
 
-* A lambda function whose role has full access to EC2, SNS, SQS, Lambda, etc.
-* A SNS to invoke the function
-* A SNS topic with EMAIL subscription to send emails to a particular email
-* Lambda function can execute without any issue or throw an error if something goes wrong.
-* A destination attached which send Async success or failure updates to the SNS topic with EMAIL subscription
-
-Now, I tried invoking this lambda using using the attached SNS topic, or using cli with invoke --invocation-type EVENT  
- or using invoke-async  
- but nothing is triggering the destination it seems as i'm not getting any email.
-
-Can anyone please suggest or indicate what could be wrong or if i'm doing anything wrong?
-
-Please let me know if you need any other information regarding this.
-## [7][Is CodeCommit Really a Thing?](https://www.reddit.com/r/aws/comments/hvyd6h/is_codecommit_really_a_thing/)
-- url: https://www.reddit.com/r/aws/comments/hvyd6h/is_codecommit_really_a_thing/
+Please let me know if there's a better practice that I'm not aware of.
+## [7][V2.0 of ElectricEye is now ready!](https://www.reddit.com/r/aws/comments/hwq4km/v20_of_electriceye_is_now_ready/)
+- url: https://www.reddit.com/r/aws/comments/hwq4km/v20_of_electriceye_is_now_ready/
 ---
-Just wondering if anyone out there actually uses it (and if so, why).
+Hey folks, a few months back I posted about a new tool I wrote when I left AWS to add additional checks and capabilities into AWS Security Hub called ElectricEye:  [https://github.com/jonrau1/ElectricEye](https://github.com/jonrau1/ElectricEye) 
 
-Seems kind of... forced.
-## [8][AWS MediaLive and MediaStore](https://www.reddit.com/r/aws/comments/hw8z27/aws_medialive_and_mediastore/)
-- url: https://www.reddit.com/r/aws/comments/hw8z27/aws_medialive_and_mediastore/
----
-Hey everyone,
-Has anyone implemented an encoder for IPTV using MediaStore and MediaLive??
-We currently have a physical encoder receiving multicast traffic on one of its interfaces, after processing the traffic its configured to send the traffic to another server.
- The AWS MediaLive doesn't seem to be able to receive multicast traffic at all, at least I couldn't see a way.
-Has anyone implemented an encoder in AWS able to receive that multicast traffic??? Is MediaLive and MediaStore the way to do that???? Im.not sure MediaLive is able.to received bare multicast traffic.
-Any insights??
-## [9][API Gateway: Include stage in custom URL](https://www.reddit.com/r/aws/comments/hwbete/api_gateway_include_stage_in_custom_url/)
-- url: https://www.reddit.com/r/aws/comments/hwbete/api_gateway_include_stage_in_custom_url/
----
-Let me start with that I am a pretty novice user of AWS and don't use CLI or anything for it. I am using AWS for a little Slack tool I built for me and others. I am familiar with CLI tools just don't use it for AWS yet.
+It has come a long way since I first wrote it, featuring more 3rd party integrations, over 200 checks, added extra compliance requirements to the checks, aligns to the latest versions of the AWS Security Finding Format and the latest rendition makes it much more efficient. This is in a very large part due to the awesome crew from DisruptOps (no , they didn't pay me to say this). I got to work with them closely when I was at AWS and they really made ElectricEye into an awesome tool.
 
-I am using API Gateway to communicate to a set of Lambda functions for the Slack tool. It uses a custom domain that used to have the following URL pattern [api.example.com/v1/{stage}/{resource}](https://api.example.com/v1/{stage}/{resource}). I needed to reset the config because of an issue with certificates. I did that through the custom domain UI in AWS console and I can only get it to serve the API with a pattern of [api.example.com/v1/{resource}](https://api.example.com/v1/{resource}) 
+New features include the addition of tests, a developer guide, a new integration with DisruptOps, addition of more checks and a ton of efficiencies such as less AWS API calls, the addition of a CLI and the ability to export findings into CSV (in talks about other formats too, but, you can convert CSV easy enough to JSON or something).
 
-This is a huge concern since some of the URLs are used by clients I don't control. Is there any way to replicate the old behaviour? Thanks for any help!
-## [10][How to get ReadWriteMany persistent volume without losing its resilience?](https://www.reddit.com/r/aws/comments/hwfaz8/how_to_get_readwritemany_persistent_volume/)
-- url: https://www.reddit.com/r/aws/comments/hwfaz8/how_to_get_readwritemany_persistent_volume/
+As always, here is the language from my repo:
+
+Continuously monitor your AWS services for configurations that can lead to degradation of confidentiality, integrity or availability. All results will be sent to Security Hub for further aggregation and analysis.
+
+* 100% native Security Hub integration &amp; 100% serverless with full CloudFormation &amp; Terraform support in AWS Commercial and GovCloud Regions
+* 220+ security &amp; best practice detections including services not covered by Security Hub/Config (AppStream, Cognito, EKS, ECR, DocDB, etc.)
+* Detections aligned to NIST CSF, NIST 800-53, AICPA TSC and ISO 27001:2013 using the Compliance.RelatedRequirements field.
+* 60+ multi-account SOAR playbooks
+* AWS &amp; 3rd Party Integrations: DisruptOps, Config Recorder, Pagerduty, Slack, ServiceNow Incident Management, Jira, Azure DevOps, Shodan and Microsoft Teams
+## [8][Why does a subnet with a /28 cider have 11 available ips not 16?](https://www.reddit.com/r/aws/comments/hwqkng/why_does_a_subnet_with_a_28_cider_have_11/)
+- url: https://www.reddit.com/r/aws/comments/hwqkng/why_does_a_subnet_with_a_28_cider_have_11/
 ---
-To get a resilient ReadWriteMany persistent volume on AWS, you could use EFS provisioner. This tutorial shows you [how to use Kubernetes PVCs with EFS provisioner](https://www.padok.fr/en/blog/efs-provisioner-kubernetes) to get a more resilient solution.
+What are the other 5 used for.
+
+
+I have a lambda useing 3 subnets each with a /28 cider with the Lambda connected to an api gateway.
+
+I’m I’m not sure how many simsltanius invocations of the lambda function this will allow?
+
+Each invocation should last 3 seconds.
+
+I was restricted to using /28 ciders due to limited available ip range.
+
+I discussed the usage with a backend developer on my team and It’s invoked from the front end with 700 users I was told to build it like this and under pressure to do so quickly so have already built it and applied it to dev as of today so backend is able to test there code on the lambda function but I’m still concerned about if the number of invocations allowed at once could potentially cause performance issues?
+## [9][[S3] How to manage file accessibility of s3 objects while working via a web app?](https://www.reddit.com/r/aws/comments/hx0trk/s3_how_to_manage_file_accessibility_of_s3_objects/)
+- url: https://www.reddit.com/r/aws/comments/hx0trk/s3_how_to_manage_file_accessibility_of_s3_objects/
+---
+I am working with a flask app where I use s3 to store images(using the boto3 python library), and also dynamically render the images to the front-end after getting the objects(images) from s3. My question is what is the correct way to render back the images to the front-end for files stored in s3.
+
+For eg. if I was storing the files in the server's file system, every image requested via the user would go through the server's validation to check the accessibility of the user and only then give the result. But if I directly give back the object's s3 URL(eg [https://bucketName.s3.amazonaws.com/fileName](https://bucketName.s3.amazonaws.com/fileName)), I won't get to check the user's access(like for those images only belonging to one user).
+
+I want to get the image from the s3 bucket and dynamically create the &lt;img&gt; tag in my HTML  and render the image there.
+
+So how do I approach this problem?
+
+I know the question sounds dumb, but I'm not very familiar with aws and s3. I'll try to clarify the problem if you have any problem understanding the question.
+## [10][Amazon Elastic File System doubles per-client throughput](https://www.reddit.com/r/aws/comments/hwq0sy/amazon_elastic_file_system_doubles_perclient/)
+- url: https://www.reddit.com/r/aws/comments/hwq0sy/amazon_elastic_file_system_doubles_perclient/
+---
+[https://aws.amazon.com/about-aws/whats-new/2020/07/amazon-elastic-file-system-increases-per-client-throughput/](https://aws.amazon.com/about-aws/whats-new/2020/07/amazon-elastic-file-system-increases-per-client-throughput/)

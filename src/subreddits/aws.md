@@ -1,115 +1,158 @@
 # aws
-## [1][Managing AWS accounts for an organization: AWS Control Tower v.s. Landing Zone v.s. Terraform?](https://www.reddit.com/r/aws/comments/hwwy1u/managing_aws_accounts_for_an_organization_aws/)
-- url: https://www.reddit.com/r/aws/comments/hwwy1u/managing_aws_accounts_for_an_organization_aws/
----
-Hello,
-
-I'm looking into the best way to manage a relatively small number (&lt;50) of AWS accounts in an organization. AWS is trying to push for Control Tower or Landing Zone, but I'm not sure of the added-value compared to Terraform.
-
-More precisely, I've PoC'ed managing the following with Terraform:
-
-* Master account: Organization, children accounts, OUs, service control policies, tagging policies
-* Children accounts: SAML IdP, IAM roles, CloudTrail...
-
-I have a setup where I use 1 Terraform module for children accounts, allowing the AWS Terraform to assume a role in the child account to provision the right resources in here - so far it works like a charm and seems to be automation-friendly.
-
-Why would I want to go for Control Tower / Landing Zone? Any experience with these?
-
-Thank you
-## [2][[Announcement] Lightsail now offers a CDN to optimize your website delivery](https://www.reddit.com/r/aws/comments/hwplbo/announcement_lightsail_now_offers_a_cdn_to/)
-- url: https://www.reddit.com/r/aws/comments/hwplbo/announcement_lightsail_now_offers_a_cdn_to/
----
-Hello redditors,
-
-Today we announced Lightsail CDN, a new feature on Amazon Lightsail that allows you to create CDN distributions to accelerate the delivery of your website’s content to users all over the world. You can create Lightsail CDN distributions with Lightsail instances or load balancers as origins. We even made it easy to setup CDN for common use cases like Wordpress, Static sites with predefined configurations. So, you can enable CDN for your applications with just a few clicks.
-
-We offer an introductory plan that's free for 12 months to make it easy to get started. Give it a try!
-
-What’s New post: [https://aws.amazon.com/about-aws/whats-new/2020/07/amazon-lightsail-now-offers-cdn-distributions-to-accelerate-content-delivery/](https://aws.amazon.com/about-aws/whats-new/2020/07/amazon-lightsail-now-offers-cdn-distributions-to-accelerate-content-delivery/)
-
-Blog post: [https://aws.amazon.com/blogs/compute/improving-website-performance-with-lightsail-content-delivery-network/](https://aws.amazon.com/blogs/compute/improving-website-performance-with-lightsail-content-delivery-network/)
-
-Pricing -  [https://aws.amazon.com/lightsail/pricing](https://aws.amazon.com/lightsail/pricing)
-
-*Here's a general discussion thread on Lightsail-*  [*https://www.reddit.com/r/aws/comments/ftpvbb/heard\_of\_lightsail\_use\_lightsail\_let\_us\_know\_your/*](https://www.reddit.com/r/aws/comments/ftpvbb/heard_of_lightsail_use_lightsail_let_us_know_your/)
-
-We’re excited for you to try it out and would love to hear your feedback.
-
-Thanks!
-## [3][Prometheus: yet-another-cloudwatch-exporter — collecting AWS CloudWatch metrics](https://www.reddit.com/r/aws/comments/hwyke6/prometheus_yetanothercloudwatchexporter/)
-- url: https://medium.com//prometheus-yet-another-cloudwatch-exporter-collecting-aws-cloudwatch-metrics-806bd34818a8?source=friends_link&amp;sk=46fc121c07b7de4939eb69f78a1cca24
+## [1][Longer Console Sessions](https://www.reddit.com/r/aws/comments/hxbq9i/longer_console_sessions/)
+- url: https://aws.amazon.com/about-aws/whats-new/2020/07/now-gain-longer-access-to-your-aws-resources-when-switching-roles-in-the-aws-management-console/
 ---
 
-## [4][[Humour] The "UK power cable" that came with our most recent Snowball. Note the amazing disappearing earth...](https://www.reddit.com/r/aws/comments/hwep2d/humour_the_uk_power_cable_that_came_with_our_most/)
-- url: https://i.imgur.com/QJW53Hc.jpg
+## [2][HTTP API microservice separation](https://www.reddit.com/r/aws/comments/hxlpu8/http_api_microservice_separation/)
+- url: https://www.reddit.com/r/aws/comments/hxlpu8/http_api_microservice_separation/
 ---
+How are folks managing things like resource-ownership for microservices with the new HTTP APIs? As far as I can tell it is fairly simple to allow each microservice to maintain control over its own routes/integrations/etc. The main problem is that I haven't been able to work out is how to enable route-level throttling since, as far as I can tell, it needs to be defined on the stage rather than the route itself.
 
-## [5][Managing users in AWS Directory Services Microsoft AD](https://www.reddit.com/r/aws/comments/hwxt4w/managing_users_in_aws_directory_services/)
-- url: https://www.reddit.com/r/aws/comments/hwxt4w/managing_users_in_aws_directory_services/
+The only solution I can come up with is having each service export a list of routes and their desired throttling limits, then importing all of them into a service that auto-updates the stage as needed.
+## [3][How to video stream for a month for less than $10](https://www.reddit.com/r/aws/comments/hxh6yl/how_to_video_stream_for_a_month_for_less_than_10/)
+- url: https://www.reddit.com/r/aws/comments/hxh6yl/how_to_video_stream_for_a_month_for_less_than_10/
 ---
-According to the docs, to manage users in an AWS Directory Services Microsoft AD domain we need a windows machine that can join the new domain, and then use the AD Tools within windows to manage users and groups.
+I am trying to understand how can people video stream HD for a whole month for less than $10. I understand Netflix uses AWS but wouldnt their EC2 costs be huge for video streaming.
+
+How is it made efficient ?
+## [4][AWS new private IP address inside my bash script](https://www.reddit.com/r/aws/comments/hxk1yw/aws_new_private_ip_address_inside_my_bash_script/)
+- url: https://www.reddit.com/r/aws/comments/hxk1yw/aws_new_private_ip_address_inside_my_bash_script/
+---
+Hello guys,
+
+I am trying to create a GHE (GitHub Enterprise) inside AWS and once it's up and running I need to perform a few curls to install the license, settings.json file and my public key.
+
+How can I grab the IP of this new instance during "building" time, and use this IP inside my curls commands?
+
+packer.json file
+
+[https://gist.github.com/rmarcandier/64786b129b0e936042961f2007879a78](https://gist.github.com/rmarcandier/64786b129b0e936042961f2007879a78)
+
+conf.sh script
+
+[https://gist.github.com/rmarcandier/9e412169656b7b17f154251c4c8bf338](https://gist.github.com/rmarcandier/9e412169656b7b17f154251c4c8bf338)
+
+Thank you in advance
+
+Regards
+
+RG
+## [5][Does a dynamodb scan return items in any particular order?](https://www.reddit.com/r/aws/comments/hxa1pr/does_a_dynamodb_scan_return_items_in_any/)
+- url: https://www.reddit.com/r/aws/comments/hxa1pr/does_a_dynamodb_scan_return_items_in_any/
+---
+In particular say I begin scanning my table, is it guaranteed that items written to the table mid-scan will also be returned? For instance, if the primary key were integers, and it returned in sorted batches, then the first batch might return the entries 1,2,5,7,11,13 where 13 is the LastEvaluatedKey. While this is happening say that 12 is written to the table, under such an ordering some newly written entries may be missed, while others would be included. This question isn't application specific, but more out of curiosity since I don't see much written about it in the aws docs.
+## [6][My Lambda Function is not inforcing CORS.](https://www.reddit.com/r/aws/comments/hxjot6/my_lambda_function_is_not_inforcing_cors/)
+- url: https://www.reddit.com/r/aws/comments/hxjot6/my_lambda_function_is_not_inforcing_cors/
+---
+I have already put the CORS headers and body in my Lambda function code however it doesn't seem to work, I still have to use a CORS remover/blocker to view my Javascript code in the console.
+
+Also in my Lambda function results it shows the headers,body and status code which I don't need for my script, does anyone know how to fix all of this and get my CORS to work? I just want the number to show the "357".
+Do i have to add a wild card?
+
+    {
+    "statusCode": 200,
+    "headers": {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+    "Allow": "GET, OPTIONS, POST",
+    "Access-Control-Allow-Methods": "GET, OPTIONS, POST",
+    "Access-Control-Allow-Headers": "*"
+    },
+    "body": "\"357\""
+    }
+
+
+----------
+
+    import boto3
+    import json
+    def lambda_handler(event, context):
+    dynamodb = boto3.client('dynamodb')
+    response = dynamodb.update_item(
+    TableName='resumecounter', 
+    Key={
+        'url':{'S': "etc.com"}
+    },
+    UpdateExpression='SET visits = visits + :inc',
+    ExpressionAttributeValues={
+        ':inc': {'N': '1'}
+    },
+    ReturnValues="UPDATED_NEW"
+    )
+
+    print("UPDATING ITEM")
+    response = {
+    'statusCode': 200,
+    'headers': {
+        "Content-Type" : "application/json",
+        "Access-Control-Allow-Origin" : "*",
+        "Allow" : "GET, OPTIONS, POST",
+        "Access-Control-Allow-Methods" : "GET, OPTIONS, POST",
+        "Access-Control-Allow-Headers" : "*"
+    },
+    'body': json.dumps(response["Attributes"]["visits"]["N"])
+    }
+     return response
+## [7][Is my S3 Bucket secure from public access?](https://www.reddit.com/r/aws/comments/hxj1fq/is_my_s3_bucket_secure_from_public_access/)
+- url: https://www.reddit.com/r/aws/comments/hxj1fq/is_my_s3_bucket_secure_from_public_access/
+---
+I have my mongodb backed up to my S3 Bucket. Is my data reasonably secure? 
+
+\- I have no CORS configurations defined. All Public Access is blocked.
+
+Here is my S3 bucket policy: 
+
+{
+
+"Version": "2012-10-17",
+
+"Id": "Policy",
+
+"Statement": \[
+
+{
+
+"Sid": "statement",
+
+"Effect": "Allow",
+
+"Principal": {
+
+"AWS": "arn:aws:iam::xxxxxxxxxxxx:user/s3-bucket"
+
+},
+
+"Action": "s3:\*",
+
+"Resource": \[
+
+"arn:aws:s3:::my-backups/\*",
+
+"arn:aws:s3:::my-backups"
+
+\]
+
+}
+
+\]
+
+}
+
+I believe I need my policies as such to allow my Iam user to run the AWS sync command. 
 
 &amp;#x200B;
 
-Is there an alternative to this?
-
-We really really don't want to run any EC2 windows servers for *reasons*.
-
-So, looking for some way of managing users and groups outwith windows - any other AD tools that would do the job - any CLI options?
-## [6][How do you provide read access on AWS Console and write access through Terraform provisions to enforce security and transparency among developers?](https://www.reddit.com/r/aws/comments/hx1jlq/how_do_you_provide_read_access_on_aws_console_and/)
-- url: https://www.reddit.com/r/aws/comments/hx1jlq/how_do_you_provide_read_access_on_aws_console_and/
+  
+Let me know if all is good or its full of obvious flaws.
+## [8][Api gateway returning cors error instead of token expired](https://www.reddit.com/r/aws/comments/hxitbk/api_gateway_returning_cors_error_instead_of_token/)
+- url: https://www.reddit.com/r/aws/comments/hxitbk/api_gateway_returning_cors_error_instead_of_token/
 ---
-It is generally best practice to maintain your infrastructure through Terraform state if you've provisioned through it in the first place because otherwise any manual provisions, directly on AWS console per se, will cause a mismatch from the state and it will cause troubles going forward.
-
-So how do we give developers read access on AWS Console but write access through Terraform provisions? This enforces consistency such that all infrastructure changes require an explicit transparent PR/merge.
-
-Please let me know if there's a better practice that I'm not aware of.
-## [7][V2.0 of ElectricEye is now ready!](https://www.reddit.com/r/aws/comments/hwq4km/v20_of_electriceye_is_now_ready/)
-- url: https://www.reddit.com/r/aws/comments/hwq4km/v20_of_electriceye_is_now_ready/
+I am working on a project that is configured with cognito for user authentication.usually after login , the APIs return responses without failure (refreshing token has not been configured yet). After the token expires , though each api call from browser is returning cors instead of token expired error. Invoking in postman gives the correct error that the incoming token has expired.please advice wat I am missing here
+## [9][HTTP web proxy for browser (IP:port) - cheapest (on-demand?) AWS solution?](https://www.reddit.com/r/aws/comments/hxl168/http_web_proxy_for_browser_ipport_cheapest/)
+- url: https://www.reddit.com/r/aws/comments/hxl168/http_web_proxy_for_browser_ipport_cheapest/
 ---
-Hey folks, a few months back I posted about a new tool I wrote when I left AWS to add additional checks and capabilities into AWS Security Hub called ElectricEye:  [https://github.com/jonrau1/ElectricEye](https://github.com/jonrau1/ElectricEye) 
-
-It has come a long way since I first wrote it, featuring more 3rd party integrations, over 200 checks, added extra compliance requirements to the checks, aligns to the latest versions of the AWS Security Finding Format and the latest rendition makes it much more efficient. This is in a very large part due to the awesome crew from DisruptOps (no , they didn't pay me to say this). I got to work with them closely when I was at AWS and they really made ElectricEye into an awesome tool.
-
-New features include the addition of tests, a developer guide, a new integration with DisruptOps, addition of more checks and a ton of efficiencies such as less AWS API calls, the addition of a CLI and the ability to export findings into CSV (in talks about other formats too, but, you can convert CSV easy enough to JSON or something).
-
-As always, here is the language from my repo:
-
-Continuously monitor your AWS services for configurations that can lead to degradation of confidentiality, integrity or availability. All results will be sent to Security Hub for further aggregation and analysis.
-
-* 100% native Security Hub integration &amp; 100% serverless with full CloudFormation &amp; Terraform support in AWS Commercial and GovCloud Regions
-* 220+ security &amp; best practice detections including services not covered by Security Hub/Config (AppStream, Cognito, EKS, ECR, DocDB, etc.)
-* Detections aligned to NIST CSF, NIST 800-53, AICPA TSC and ISO 27001:2013 using the Compliance.RelatedRequirements field.
-* 60+ multi-account SOAR playbooks
-* AWS &amp; 3rd Party Integrations: DisruptOps, Config Recorder, Pagerduty, Slack, ServiceNow Incident Management, Jira, Azure DevOps, Shodan and Microsoft Teams
-## [8][Why does a subnet with a /28 cider have 11 available ips not 16?](https://www.reddit.com/r/aws/comments/hwqkng/why_does_a_subnet_with_a_28_cider_have_11/)
-- url: https://www.reddit.com/r/aws/comments/hwqkng/why_does_a_subnet_with_a_28_cider_have_11/
+For example, to bypass geo-blocking.
+## [10][Experience with choosing AWS Glue as an ETL platform](https://www.reddit.com/r/aws/comments/hx8i6s/experience_with_choosing_aws_glue_as_an_etl/)
+- url: https://www.reddit.com/r/dataengineering/comments/hx8h1j/experience_with_choosing_aws_glue_as_an_etl/
 ---
-What are the other 5 used for.
 
-
-I have a lambda useing 3 subnets each with a /28 cider with the Lambda connected to an api gateway.
-
-I’m I’m not sure how many simsltanius invocations of the lambda function this will allow?
-
-Each invocation should last 3 seconds.
-
-I was restricted to using /28 ciders due to limited available ip range.
-
-I discussed the usage with a backend developer on my team and It’s invoked from the front end with 700 users I was told to build it like this and under pressure to do so quickly so have already built it and applied it to dev as of today so backend is able to test there code on the lambda function but I’m still concerned about if the number of invocations allowed at once could potentially cause performance issues?
-## [9][[S3] How to manage file accessibility of s3 objects while working via a web app?](https://www.reddit.com/r/aws/comments/hx0trk/s3_how_to_manage_file_accessibility_of_s3_objects/)
-- url: https://www.reddit.com/r/aws/comments/hx0trk/s3_how_to_manage_file_accessibility_of_s3_objects/
----
-I am working with a flask app where I use s3 to store images(using the boto3 python library), and also dynamically render the images to the front-end after getting the objects(images) from s3. My question is what is the correct way to render back the images to the front-end for files stored in s3.
-
-For eg. if I was storing the files in the server's file system, every image requested via the user would go through the server's validation to check the accessibility of the user and only then give the result. But if I directly give back the object's s3 URL(eg [https://bucketName.s3.amazonaws.com/fileName](https://bucketName.s3.amazonaws.com/fileName)), I won't get to check the user's access(like for those images only belonging to one user).
-
-I want to get the image from the s3 bucket and dynamically create the &lt;img&gt; tag in my HTML  and render the image there.
-
-So how do I approach this problem?
-
-I know the question sounds dumb, but I'm not very familiar with aws and s3. I'll try to clarify the problem if you have any problem understanding the question.
-## [10][Amazon Elastic File System doubles per-client throughput](https://www.reddit.com/r/aws/comments/hwq0sy/amazon_elastic_file_system_doubles_perclient/)
-- url: https://www.reddit.com/r/aws/comments/hwq0sy/amazon_elastic_file_system_doubles_perclient/
----
-[https://aws.amazon.com/about-aws/whats-new/2020/07/amazon-elastic-file-system-increases-per-client-throughput/](https://aws.amazon.com/about-aws/whats-new/2020/07/amazon-elastic-file-system-increases-per-client-throughput/)

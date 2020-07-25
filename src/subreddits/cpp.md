@@ -56,70 +56,65 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][Smart Pointers: When and Why? (walk-through video with motivational example)](https://www.reddit.com/r/cpp/comments/hwyhc8/smart_pointers_when_and_why_walkthrough_video/)
+## [2][BrainFuckStudio written on C++ using Qt](https://www.reddit.com/r/cpp/comments/hxkaep/brainfuckstudio_written_on_c_using_qt/)
+- url: https://www.reddit.com/r/cpp/comments/hxkaep/brainfuckstudio_written_on_c_using_qt/
+---
+Pretty fast &amp; useful app for BF code writing &amp; executing
+
+Supports working with files, personal interface customization, working with interpreter and etc.
+
+[https://github.com/Djivs/BrainFuckStudio](https://github.com/Djivs/BrainFuckStudio)
+
+That's my first post here, so I'm sorry if I did something wrong
+## [3][How do you contribute to MSVC STL?](https://www.reddit.com/r/cpp/comments/hx764k/how_do_you_contribute_to_msvc_stl/)
+- url: https://www.reddit.com/r/cpp/comments/hx764k/how_do_you_contribute_to_msvc_stl/
+---
+I recently ran into a bug in MSVC's &lt;random&gt; implementation:
+
+[https://github.com/microsoft/STL/issues/1084](https://github.com/microsoft/STL/issues/1084)
+
+I know how to fix their implementation, but was a bit unclear on the logistics of how to deliver the fix to them. Specifically:
+
+1. What branch do I make a pull request into, `master`? How does Microsoft get these changes into the desired versions (15.9 vs 16.6)? I don't see any specific branches or tags that indicate specific MSVC versions.
+2. I am used to the workflow (in our codebases) that every bug fix should come along with new unit tests to prevent the bug from ever regressing. Where is the appropriate place to add such unit tests, `std` or `libcxx`?
+
+Not sure if /u/STL, another Microsoft dev, or anyone else can advise on this process?
+## [4][C++ on Sea 2020 video: "Structured bindings uncovered" - Dawid Zalewski](https://www.reddit.com/r/cpp/comments/hxmhsj/c_on_sea_2020_video_structured_bindings_uncovered/)
+- url: https://www.youtube.com/watch?v=uZCvz-E1heA
+---
+
+## [5][Embedding lightweight scripting into C++: Lua vs. QuickJS](https://www.reddit.com/r/cpp/comments/hxmctr/embedding_lightweight_scripting_into_c_lua_vs/)
+- url: https://www.reddit.com/r/cpp/comments/hxmctr/embedding_lightweight_scripting_into_c_lua_vs/
+---
+Looking for an advice from those who have experience in embedding scripting langauges into C++, e.g., to provide app API. In my case, APIs are mostly for processing of unicode texts (including regexps usage for searching and replacements). My app is rather small, so I don't think I want to embed python or V8 javascript engine, as they will bloat it. Thus far, my choices are Lua (specifically, via [sol2](https://github.com/ThePhD/sol2)) and [QuickJS](https://bellard.org/quickjs/), developed a year ago by Fabrice Bellard; and claimed to be very efficient. Both sol2 and QuickJS are designed specificaly for embedding, both are quite lightweight and seem to yield comparable size overhead for the host app. Lua has no standard regexp, but that's not a big problem, as I can expose regexp-related functionaly through the host interface (e.g., using regexps from C++ standard library). What really interests me is how they would compare in performance when used as callback functions from the host app to crunch string data.
+
+Based on your knowledge and/or experience, given these two options (Lua vs QuickJS), which one would you choose for an embedded API interface in general, and for string manipulations in particular?
+## [6][Smart Pointers: When and Why? (walk-through video with motivational example)](https://www.reddit.com/r/cpp/comments/hwyhc8/smart_pointers_when_and_why_walkthrough_video/)
 - url: https://www.youtube.com/watch?v=Zt0zUcDHi7I
 ---
 
-## [3][C++ on Sea 2020 video - "Live Compiler Development with Cross-Platform Tooling" - Sy Brand](https://www.reddit.com/r/cpp/comments/hwyrh2/c_on_sea_2020_video_live_compiler_development/)
-- url: https://www.youtube.com/watch?v=Jw2n5QSul34
+## [7][Best C++ Alternatives to Pandas](https://www.reddit.com/r/cpp/comments/hx3fd9/best_c_alternatives_to_pandas/)
+- url: https://www.reddit.com/r/cpp/comments/hx3fd9/best_c_alternatives_to_pandas/
+---
+Hi everyone,
+
+I've been developing with python for years and have extensively used pandas.  I have a new project that requires me to code in C++ and I'm looking for a library that is similar to pandas.  I'd like to work with dataframes that have mixed data types.  It would be okay to have a fixed data type for each column in the dataframe but having columns with different data type is essential.  Ideally it could read data from csv files or json strings into the dataframe.  Speed is less important for me.  What do you guys suggest?  
+
+
+Thanks!
+## [8][C++ on Sea 2020 video - "Improving Readability With Class Template Argument Deduction" - A.J. Orians](https://www.reddit.com/r/cpp/comments/hx96c1/c_on_sea_2020_video_improving_readability_with/)
+- url: https://www.youtube.com/watch?v=vgeOjM4X2K0
 ---
 
-## [4][fork of compiler explorer (godbolt.org) editing and displaying SDL in the browser with WebAssembly](https://www.reddit.com/r/cpp/comments/hwk1se/fork_of_compiler_explorer_godboltorg_editing_and/)
-- url: https://v.redd.it/dsxz9xt07nc51
----
-
-## [5][Avoid character-by-character processing when performance matters](https://www.reddit.com/r/cpp/comments/hx0o1g/avoid_characterbycharacter_processing_when/)
+## [9][Avoid character-by-character processing when performance matters](https://www.reddit.com/r/cpp/comments/hx0o1g/avoid_characterbycharacter_processing_when/)
 - url: https://lemire.me/blog/2020/07/21/avoid-character-by-character-processing-when-performance-matters/
 ---
 
-## [6][C++ on Sea 2020 video - "Correct by Construction: APIs That Are Easy to Use and Hard to Misuse" - Matt Godbolt](https://www.reddit.com/r/cpp/comments/hwm4so/c_on_sea_2020_video_correct_by_construction_apis/)
-- url: https://www.youtube.com/watch?v=nLSm3Haxz0I
+## [10][C++ on Sea 2020 video - "Live Compiler Development with Cross-Platform Tooling" - Sy Brand](https://www.reddit.com/r/cpp/comments/hwyrh2/c_on_sea_2020_video_live_compiler_development/)
+- url: https://www.youtube.com/watch?v=Jw2n5QSul34
 ---
 
-## [7][GCC 10.2 Released](https://www.reddit.com/r/cpp/comments/hwc5sc/gcc_102_released/)
-- url: https://www.reddit.com/r/cpp/comments/hwc5sc/gcc_102_released/
----
-GCC 10.2 is a bug-fix release from the GCC 10 branch containing important fixes for regressions and serious bugs in GCC 10.1 with more than 94 bugs fixed since the previous release. Bug list: [https://gcc.gnu.org/bugzilla/buglist.cgi?bug\_status=RESOLVED&amp;resolution=FIXED&amp;target\_milestone=10.2](https://gcc.gnu.org/bugzilla/buglist.cgi?bug_status=RESOLVED&amp;resolution=FIXED&amp;target_milestone=10.2)
-## [8][Google C++ Libraries are garbage](https://www.reddit.com/r/cpp/comments/hwr6u9/google_c_libraries_are_garbage/)
-- url: https://www.reddit.com/r/cpp/comments/hwr6u9/google_c_libraries_are_garbage/
----
-Take a look at this [masterpiece](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/platform/default/logging.cc#L39). The level of amateurism in Google's C++ libraries is stunning. This is just one link to one problem, but there are numerous places I can point to. I think Google fell into the trap of hiring a bunch of smart graduates who are good at solving puzzles. Now they have inmates running the asylum. They hire what they think are best of the best. In reality, they hire a bunch of kids that have no experience and no perspective. What they get is falling way behind the industry in best practices. They're basically just throwing money at every problem. I think I've ranted enough, any comments/opinions?
-## [9][A C++14 Lambda Library](https://www.reddit.com/r/cpp/comments/hwh2hv/a_c14_lambda_library/)
-- url: https://pdimov.github.io/blog/2020/07/22/a-c14-lambda-library/
+## [11][fork of compiler explorer (godbolt.org) editing and displaying SDL in the browser with WebAssembly](https://www.reddit.com/r/cpp/comments/hwk1se/fork_of_compiler_explorer_godboltorg_editing_and/)
+- url: https://v.redd.it/dsxz9xt07nc51
 ---
 
-## [10][Could C++23 executors be used for GPU?](https://www.reddit.com/r/cpp/comments/hwrphi/could_c23_executors_be_used_for_gpu/)
-- url: https://www.reddit.com/r/cpp/comments/hwrphi/could_c23_executors_be_used_for_gpu/
----
-I just want to put out there that the C++23 spec isn't set in stone, etc, etc.
-
-But upon reading about C++ executors I've noticed one of the goals was for it to be heterogeneous with the goal of running a callable object on an internal or external processor and reading it back to an internal or external processor. Would GPU's qualify for this?
-## [11][moderncom - Modern C++ COM lightweight wrapper](https://www.reddit.com/r/cpp/comments/hwntfa/moderncom_modern_c_com_lightweight_wrapper/)
-- url: https://www.reddit.com/r/cpp/comments/hwntfa/moderncom_modern_c_com_lightweight_wrapper/
----
-[ModernCOM on GitHub](https://github.com/AlexBAV/moderncom)
-
-This library is a header-only lightweight wrapper for utilizing, declaring and implementing of Windows COM (Component Object Model)  interfaces.
-
-This is the code required to define `MyObject` class that implements two COM interfaces, `IFirstInterface` and `ISecondInterface`:
-
-```c++
-#include &lt;moderncpp/interfaces.h&gt;
-
-class MyObject :
-  public belt::com::object&lt;
-    MyObject, // our class
-    IFirstInterface,  // any number of interfaces
-    ISecondInterface&gt; // we implement
-{
-  // Implement methods of IFirstInterface
-  ...
-  // Implement methods of ISecondInterface
-  ...
-
-  public:
-    // MyObject may optionally have non-empty constructor that is
-    // allowed to throw exceptions
-    MyObject(int a, int b);
-};
-```

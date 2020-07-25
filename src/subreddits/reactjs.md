@@ -110,62 +110,169 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][SpreadSheet Grid: Excel-like DataGrid component for React JS. Built for high performance rendering similar to google sheets.](https://www.reddit.com/r/reactjs/comments/hwqsc9/spreadsheet_grid_excellike_datagrid_component_for/)
-- url: https://rowsncolumns.app/
+## [3][Redux-thunk vs redux-saga](https://www.reddit.com/r/reactjs/comments/hxdtqo/reduxthunk_vs_reduxsaga/)
+- url: https://www.reddit.com/r/reactjs/comments/hxdtqo/reduxthunk_vs_reduxsaga/
+---
+Hi guys, so I’m creating an e-commerce platform and I wanted to get your opinions on using either redux thunk or redux saga, because they both do the same thing but I think saga let’s you control what happens more than thunk.. Id love to hear your opinions on why either would be better and the useCases for both as I am still in the process of learning all the quirks react has to offer :)
+## [4][Serverless Node.js Function Protected with Auth0 and React](https://www.reddit.com/r/reactjs/comments/hxff2i/serverless_nodejs_function_protected_with_auth0/)
+- url: https://github.com/fleetfn/examples/tree/master/api-auth-protected-with-auth0-react
 ---
 
-## [4][Opensource music collection explorer and migrator](https://www.reddit.com/r/reactjs/comments/hx1cah/opensource_music_collection_explorer_and_migrator/)
-- url: https://www.reddit.com/r/reactjs/comments/hx1cah/opensource_music_collection_explorer_and_migrator/
----
-My [friend](https://www.reddit.com/user/srinskit) and I have built a web app where you can explore and migrate your song collection across different music services.
-
-Services currently integrated
-
-1. Amazon Music India
-2. Spotify
-
-The codebase is three parts
-
-1. [Web app](https://github.com/shreyasseshadri/potential-invention/tree/master/webapp)
-2. [Browser extensions (Chrome and Firefox](https://github.com/shreyasseshadri/potential-invention/tree/master/extensions)[) for Amazon integration](https://github.com/shreyasseshadri/potential-invention/tree/master/extensions)
-3. [Backend](https://github.com/shreyasseshadri/music_jump)
-
-Contributions are welcome for integrating new services and helping out with issues in the repo.
-
-[UI Demo](https://reddit.com/link/hx1cah/video/4r5dbtmzwsc51/player)
-## [5][Understanding React.useEffect hook and Creating a Simple Custom Hook](https://www.reddit.com/r/reactjs/comments/hwxwom/understanding_reactuseeffect_hook_and_creating_a/)
-- url: https://youtu.be/r3yDMZpHbXQ
+## [5][GraphQL first full-stack starter kit with Node, React. Powered by TypeScript](https://www.reddit.com/r/reactjs/comments/hxm9ti/graphql_first_fullstack_starter_kit_with_node/)
+- url: https://github.com/karanpratapsingh/fullstack-starterkit
 ---
 
-## [6][Data fetching in Next.js 9.3+](https://www.reddit.com/r/reactjs/comments/hwzvrn/data_fetching_in_nextjs_93/)
-- url: https://www.williamkurniawan.com/blog/data-fetching-in-next-js-9-3
+## [6][React Highcharts Example with Cube.js](https://www.reddit.com/r/reactjs/comments/hx2fy9/react_highcharts_example_with_cubejs/)
+- url: https://cube.dev/blog/react-highcharts-example/
 ---
 
-## [7][Guide on setting up Chakra UI with React using CRA](https://www.reddit.com/r/reactjs/comments/hwzt40/guide_on_setting_up_chakra_ui_with_react_using_cra/)
-- url: https://raptis.wtf/chakra-ui-react-setup
+## [7][A few questions about redux /toolkit](https://www.reddit.com/r/reactjs/comments/hxk2mr/a_few_questions_about_redux_toolkit/)
+- url: https://www.reddit.com/r/reactjs/comments/hxk2mr/a_few_questions_about_redux_toolkit/
+---
+Hello guys and gals I am a long time angular dev started working on react native about 3 years ago  and since then switched to react.
+
+Worked on a few react projects where each screen was driven by an api endpoint and had no need for state management.
+
+I am about to start a new one where the data flow is more complex and I have integrated redux toolkit as state management.
+
+
+1) In your opinion is redux toolkit the best state management solution.
+
+2) Do you keep everything in the state? Routing? Let's say a user is typing in a text box do you record that in a slice?
+
+3) what are some pitfalls you had with state management I should try to avoid.
+## [8][Access data / Structure data in ReactJS / Firebase](https://www.reddit.com/r/reactjs/comments/hxmbxq/access_data_structure_data_in_reactjs_firebase/)
+- url: https://www.reddit.com/r/reactjs/comments/hxmbxq/access_data_structure_data_in_reactjs_firebase/
+---
+I'm a little bit losted coming from Rails to React/Firebase. I have the following realtime database structure. As you can see, a product can have a brand and multiple sellers.
+
+If a brand is `true`, i'd like to get / display the brand contents on my page (the avatar, name, link etc.). Same for the sellers.
+
+Right now, if i try to display the brand content, i get "true" when i'd like an object containing the infos i've stored in `brands` or `sellers`.
+
+So i'd like for example to be able to do something like this : 
+`&lt;p&gt;{this.props.brands.name}&lt;/p&gt;` (it can only have one brand for now)
+
+As for the sellers i'd like for example to be able to do something like this :
+```
+this.state.sellers.map((seller) =&gt;
+  &lt;div&gt;
+    &lt;img src={seller.avatar} /&gt;
+    &lt;p&gt;{seller.name}&lt;/p&gt;
+  &lt;/div&gt;
+);
+```
+
+Here is my firebase realtime database structure (json) :
+
+```
+{
+    "products": {
+        "1": {
+            "name": "Nike HyperAdapt 1.0",
+            "tagline": "Self-lacing running shoes",
+            "releaseDate": "20.08.2020",
+            "brands": {
+                "Nike": true
+            },
+            "thumbnail": "/img/thumbnails/nike-hyperadapt-thumbnail.jpg",
+            "media": "/img/media/nike-hyperadapt-media-01.jpeg",
+            "isRaffle": true,
+            "description": "Nike HyperAdapt 1.0 is Nike's first line of shoes that can lace themselves, thanks to an internal cable system comprised of fishing line and a pressure sensor located in the sole that responds to the weight of your foot as you move with an algorithmic pressure equation.",
+            "upvote": "169",
+            "sellers": {
+                "Opium Paris": true,
+                "Nike": true
+            }
+        },
+        "2": {
+            "name": "Puma Fi",
+            "tagline": "Self lacing shoes by Puma",
+            "releaseDate": "22.08.2020",
+            "brands": {
+                "Puma": true
+            },
+            "thumbnail": "/img/thumbnails/puma-fi-thumbnail.jpg",
+            "media": "/img/media/puma-fi-media-01.jpeg",
+            "isRaffle": true,
+            "description": "The technology platform Fit Intelligence (Fi) is designed to automate and finetune performance for our footwear. The very first Fi footwear style is a self-lacing training shoe made for workouts and light running.",
+            "upvote": "88",
+            "sellers": {
+                "Opium Paris": true,
+                "Puma": true
+            }
+        }
+    },
+    "brands": {
+        "Nike": {
+            "name": "Nike",
+            "avatar": "/img/brands/nike-logo.png",
+            "link": "https://www.nike.com/fr",
+            "products": {
+                "1": true
+            }
+        },
+        "Puma": {
+            "name": "Puma",
+            "avatar": "/img/brands/puma-logo.png",
+            "link": "https://eu.puma.com/fr/fr/home",
+            "products": {
+                "2": true
+            }
+        }
+    },
+    "sellers": {
+        "Opium Paris": {
+            "name": "Opium Paris",
+            "avatar": "/img/sellers/opium-paris-logo.png",
+            "link": "https://www.opiumparis.com/fr/71-raffles",
+            "products": {
+                "1": true,
+                "2": true
+            }
+        },
+        "Nike": {
+            "name": "Nike",
+            "avatar": "/img/sellers/nike-store-logo.png",
+            "link": "https://www.nike.com/fr/launch",
+            "products": {
+                "1": true
+            }
+        },
+        "Puma": {
+            "name": "Puma",
+            "avatar": "/img/sellers/puma-logo.png",
+            "link": "https://eu.puma.com/fr/fr/home",
+            "products": {
+                "2": true
+            }
+        }
+    }
+}
+```
+## [9][How to show cookie message only once?](https://www.reddit.com/r/reactjs/comments/hxhdbd/how_to_show_cookie_message_only_once/)
+- url: https://www.reddit.com/r/reactjs/comments/hxhdbd/how_to_show_cookie_message_only_once/
+---
+Hello all!  
+
+
+I want to show a message telling about cookies only the very first time a user enters the website. Until the user closes the message, it will appear every time he enters into the website. After closing the message, it should not appear anymore.
+
+Please, can someone point me out what are the steps do I need to do for this? Does people normally use browser's local storage for this? Does someone has an example of this by any chance?  
+
+
+Thank you very much and regards.
+## [10][In your job, what does your process from start to finish look like when implementing a new feature?](https://www.reddit.com/r/reactjs/comments/hxk5ba/in_your_job_what_does_your_process_from_start_to/)
+- url: https://www.reddit.com/r/reactjs/comments/hxk5ba/in_your_job_what_does_your_process_from_start_to/
+---
+When you receive a task or story what is your process from start to finish?
+## [11][Can't use Postman to get JSON data served from Flask backend to create-react-app frontend](https://www.reddit.com/r/reactjs/comments/hxdpfa/cant_use_postman_to_get_json_data_served_from/)
+- url: https://www.reddit.com/r/reactjs/comments/hxdpfa/cant_use_postman_to_get_json_data_served_from/
+---
+Currently I have a create-react-app frontend and Flask backend hosted separately on heroku. I am able to get a JSON file when I type [www.example.herokuapp.com/bob](https://www.example.herokuapp.com/bob), but when I try to do use postman to make get requests to that link, it just returns 200 error and my index.html file from build. Can someone help with this?
+
+EDIT: Seems like the issue is due to the asynchronous nature of the calls, and how GET requests do not "await" for the JSON returned from the promise
+## [12][RT plone "Great Progress on Volto at the 2020 Beethoven Sprint https://t.co/23lhIFsJvq #plone"](https://www.reddit.com/r/reactjs/comments/hxjlko/rt_plone_great_progress_on_volto_at_the_2020/)
+- url: https://mobile.twitter.com/planetplone/status/1286855725109719050
 ---
 
-## [8][🎉 gatsby-remark-embedder 3.0.0 is released! 🥳](https://www.reddit.com/r/reactjs/comments/hwzcg9/gatsbyremarkembedder_300_is_released/)
-- url: https://github.com/MichaelDeBoey/gatsby-remark-embedder/releases/tag/v3.0.0
----
-
-## [9][React router 6 question](https://www.reddit.com/r/reactjs/comments/hx17ul/react_router_6_question/)
-- url: https://www.reddit.com/r/reactjs/comments/hx17ul/react_router_6_question/
----
-Have been testing the new react router (6.0.0-beta.0) and I couldn't manage to make optional parameters to work. This was working in 5.2.0 path="/:lang?" and now it doesn't. Has something changed?
-## [10][ReactJS Training in Bangalore](https://www.reddit.com/r/reactjs/comments/hx17fj/reactjs_training_in_bangalore/)
-- url: http://infocampus.co.in/react-js-training-in-bangalore
----
-
-## [11][Which is the best react wizard / steps plugin](https://www.reddit.com/r/reactjs/comments/hx0ski/which_is_the_best_react_wizard_steps_plugin/)
-- url: https://www.reddit.com/r/reactjs/comments/hx0ski/which_is_the_best_react_wizard_steps_plugin/
----
-Does any one have idea about the best open source react wizard / steps plugin available with step validation and vertical steps as I couldn't find one. I use [bs-stepper](https://johann-s.github.io/bs-stepper/) in HTML version and need similar in React.
-## [12][Is it a bad practice to listen to window.onunhandledrejection event or not?](https://www.reddit.com/r/reactjs/comments/hwzuqi/is_it_a_bad_practice_to_listen_to/)
-- url: https://www.reddit.com/r/reactjs/comments/hwzuqi/is_it_a_bad_practice_to_listen_to/
----
-Hi folks, I have been practicing React.js for a while and tried to figure out to implement a Global Error Handling that would catch all errors that might occur in the entire app. 
-
-As you know, `componentDidCatch` lifecycle hook cannot catch the errors that are occurred in an async operation. There might be a case that there is an async operation which you forgot to handle or don't want to handle manually but you still don't want to show the ugly error screen to the user, To solve this problem, I came up with listening to `window.onunhandledrejection` in the `ErrorBoundary` component. My concern is, that if it is, someway, a bad practice to listen to this particular event in React, or generally in any JS app. Is there any disadvantage of listening to it?
-
-Any thoughts?

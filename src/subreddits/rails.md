@@ -27,7 +27,76 @@ Please use this thread to discuss **cool** but relatively **unknown** gems you'v
 You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
 Please include a **description** and a **link** to the gem's homepage in your comment.
-## [3][config.active_record.default_timezone = :local in rails 5.2.4 not working](https://www.reddit.com/r/rails/comments/hx1ca3/configactive_recorddefault_timezone_local_in/)
+## [3][What's the 'Rails' way of writing clean code (and adhering to the single responsibility principle)?](https://www.reddit.com/r/rails/comments/hxl330/whats_the_rails_way_of_writing_clean_code_and/)
+- url: https://www.reddit.com/r/rails/comments/hxl330/whats_the_rails_way_of_writing_clean_code_and/
+---
+I just finished the [lesson 1 of writing clean code by "Uncle Bob"](https://www.youtube.com/watch?v=7EmboKQH8lM), and my biggest takeaway was the single responsibility principle — that "a function does one thing only" — and "polite code": all lines in a function should be on the same abstraction level, and they should call functions on a lower abstraction level, going all the way down to implementation.
+
+It's like newspaper: you read the heading to see what it's about; if you're interesting in learning more, you read the first paragraph; then the next; etc. It's being polite to the person trying to understand the codebase — they can take a look at the high-level function and understand its purpose without having to learn the unnecessary details in the process.
+
+His way of avoiding thousands of little functions as a result of this was to put everything into its own class, and to find those sometimes-non-obvious classes. In a Java-like language, that makes sense, but should we do the same in Ruby on Rails?
+
+I'm a beginner at Rails, but from what I can see it has a pretty strict structure ("convention over configuration") of MVC, where each "C" has several actions where the code goes. Should we split that code into other classes and compose everything inside the action? Or is there some other, better, more "Rails" way of doing things?
+## [4][Ruby on Rails and IoT](https://www.reddit.com/r/rails/comments/hxhhti/ruby_on_rails_and_iot/)
+- url: https://www.reddit.com/r/rails/comments/hxhhti/ruby_on_rails_and_iot/
+---
+Hello Everyone,
+
+I'm new to ruby on rails and I'm trying to build a web app that lets me subscribe to a topic through mqtt and recieve a payload from a simulated node-red IoT device that send de data to AWS IoT core. So what I'm trying to do is to have a web page that lets me click on a subscribe button and I can start getting data from the simulated device. My question is first of all if this is possible and second can somebody guide me to where I can learn to do this.
+
+Notes: What I've found is that for ruby there are gems for mqtt. But I'm not sure how to integrate with the web page. I've already sent a payload using irb and it was succesful. This is the repo I'm using: [njh/ruby-mqtt](https://github.com/njh/ruby-mqtt)
+
+Thanks.
+## [5][Having issues with adding gallery to a listing website am working on for some time now. Rails 6. Version](https://www.reddit.com/r/rails/comments/hxmsb4/having_issues_with_adding_gallery_to_a_listing/)
+- url: https://www.reddit.com/r/rails/comments/hxmsb4/having_issues_with_adding_gallery_to_a_listing/
+---
+Please ur opinions will be of a great help to me.
+## [6][How to Ignore raise error sidekiq worker | Capybara](https://www.reddit.com/r/rails/comments/hx8u87/how_to_ignore_raise_error_sidekiq_worker_capybara/)
+- url: https://www.reddit.com/r/rails/comments/hx8u87/how_to_ignore_raise_error_sidekiq_worker_capybara/
+---
+I am pretty new to rails and my team recently moved to use sidekiq, I'm currently having troubles trying to create a Worker that retries upon a given condition (fails) and retrying it.
+
+Calling a worker with this instruction within model
+
+    CoolClassJob.perform_async(...) 
+
+I'm using a worker with a code similar to this:
+
+    class CoolClassJob   
+      include Sidekiq::Worker   
+        sidekiq_options queue: "payment", retry: 5    
+        sidekiq_retry_in do |count| 
+          10 
+        end
+     
+        def perform() 
+          ...         
+          whatever = {...} 
+          if whatever.status == 'successful'           
+            thisCoolFunction                  # successfully ends job 
+          elsif whatever.status == 'failed'           
+            anotherCoolFunction               # successfully ends job 
+          else whatever.pending?              # I want to retry if it falls in this condition since it is "waiting" for another task to complete. 
+            raise 'We are trying again' 
+          end 
+          ... 
+        end 
+      ... 
+      end
+    ... 
+
+I tried with
+
+    begin raise 'We are trying again!' rescue nil end
+
+But when I run my tests, I get this error:
+
+    Failure/Error: raise 'We are trying again!' RuntimeError: 'We are trying again!' ...
+
+Which of course, makes sense to me, since I'm raising the error, I tried searching but wasn't able to come up with a solution. I'm wondering whether its able toa) retry again without raising an error orb) tell Capybara (rspec) to keep trying without throwing an error.
+
+I posted the question here: [https://stackoverflow.com/questions/63068356/rails-how-to-ignore-raise-error-sidekiq-worker-capybara](https://stackoverflow.com/questions/63068356/rails-how-to-ignore-raise-error-sidekiq-worker-capybara)
+## [7][config.active_record.default_timezone = :local in rails 5.2.4 not working](https://www.reddit.com/r/rails/comments/hx1ca3/configactive_recorddefault_timezone_local_in/)
 - url: https://www.reddit.com/r/rails/comments/hx1ca3/configactive_recorddefault_timezone_local_in/
 ---
 I'd like to set all records in my database to my local timezone. I have had     
@@ -35,7 +104,7 @@ I'd like to set all records in my database to my local timezone. I have had
     config.active_record.default_timezone = :local
     
     in my application.rb for months, and it doesn't work. Does anybody have a solution?
-## [4][Last used rails version 3.2](https://www.reddit.com/r/rails/comments/hwnyuf/last_used_rails_version_32/)
+## [8][Last used rails version 3.2](https://www.reddit.com/r/rails/comments/hwnyuf/last_used_rails_version_32/)
 - url: https://www.reddit.com/r/rails/comments/hwnyuf/last_used_rails_version_32/
 ---
 ending early 2013
@@ -43,11 +112,11 @@ ending early 2013
 what's the most important thing to know about version 6 compared to 3.2?
 
 bonus question : I did notice people are charging for gems,  which is new.  How has that gone?
-## [5][What's the difference between stimulus_reflex and stimulus.js?](https://www.reddit.com/r/rails/comments/hwm4et/whats_the_difference_between_stimulus_reflex_and/)
+## [9][What's the difference between stimulus_reflex and stimulus.js?](https://www.reddit.com/r/rails/comments/hwm4et/whats_the_difference_between_stimulus_reflex_and/)
 - url: https://www.reddit.com/r/rails/comments/hwm4et/whats_the_difference_between_stimulus_reflex_and/
 ---
 Hello, I am kinda new to the rails world, and I am wondering what is the difference between  stimulus\_reflex and stimulus.js? since they're doing the same job.
-## [6][Server Issue Serving](https://www.reddit.com/r/rails/comments/hwmmbs/server_issue_serving/)
+## [10][Server Issue Serving](https://www.reddit.com/r/rails/comments/hwmmbs/server_issue_serving/)
 - url: https://www.reddit.com/r/rails/comments/hwmmbs/server_issue_serving/
 ---
 I am in dire need of help, as I am about to pull out what is left of my hair. I am trying to get my new server up and running, and I realize this may not be the right place for this post, but I am hopefully at least someone can point me in the right direction.
@@ -183,7 +252,11 @@ Apache.conf
 `IncludeOptional conf-enabled/*.conf`
 
 `IncludeOptional sites-enabled/*.conf`
-## [7][Discovered SimpleCov, what can I do with it ?](https://www.reddit.com/r/rails/comments/hwf6um/discovered_simplecov_what_can_i_do_with_it/)
+## [11][Good templates/examples for action mailer email templates?](https://www.reddit.com/r/rails/comments/hwgd1t/good_templatesexamples_for_action_mailer_email/)
+- url: https://www.reddit.com/r/rails/comments/hwgd1t/good_templatesexamples_for_action_mailer_email/
+---
+Anyone have resources for nice/good-looking action mailer email templates? Thinking one that incorporates a logo, has social links at the bottom, centered text etc. Any/all resources are appreciated.
+## [12][Discovered SimpleCov, what can I do with it ?](https://www.reddit.com/r/rails/comments/hwf6um/discovered_simplecov_what_can_i_do_with_it/)
 - url: https://www.reddit.com/r/rails/comments/hwf6um/discovered_simplecov_what_can_i_do_with_it/
 ---
 Hi, I just discovered [SimpleCov](https://github.com/colszowka/simplecov) and looove the html output and the conclusions we can draw with it.
@@ -205,84 +278,3 @@ Thanks !
       _      _      _
     &gt;(.)__ &lt;(.)__ =(.)__
      (___/  (___/  (___/
-## [8][Good templates/examples for action mailer email templates?](https://www.reddit.com/r/rails/comments/hwgd1t/good_templatesexamples_for_action_mailer_email/)
-- url: https://www.reddit.com/r/rails/comments/hwgd1t/good_templatesexamples_for_action_mailer_email/
----
-Anyone have resources for nice/good-looking action mailer email templates? Thinking one that incorporates a logo, has social links at the bottom, centered text etc. Any/all resources are appreciated.
-## [9][Having trouble with Capybara not waiting for remote form](https://www.reddit.com/r/rails/comments/hwdxnr/having_trouble_with_capybara_not_waiting_for/)
-- url: https://www.reddit.com/r/rails/comments/hwdxnr/having_trouble_with_capybara_not_waiting_for/
----
-I have a view where customers can change the delivery date of their shipments by selecting a date in [Flatpickr](https://flatpickr.js.org/). The flatpickr instance is connected to a remote `form_with`input field which submits the form on change via stimulus. 
-
-This is all working manually in the browser but I obviously also want to test it automatically via system tests (I'm using Rails' system tests with rspec, selenium and capybara). However, it looks like Capybara doesn't wait long enough for the remote form to submit. I currently have the following test:
-
-&gt; delivery_date = find("span", text: "27")
-
-&gt; expect {
-
-&gt; &gt;delivery_date.click
-
-&gt; }.to change { shipment.reload.delivery_date }
-
-which fails. However, if I change it to sleep for a second it works:
-
-&gt; delivery_date = find("span", text: "27")
-
-&gt; expect {
-
-&gt; &gt; delivery_date.click
-
-&gt; &gt; sleep 1
-
-&gt; }.to change { shipment.reload.delivery_date }
-
-Is there something that I'm doing wrong here like some syntax that I'm not following? The only thing that I manually added to rspec regarding system tests is the following in my `rails_helper.rb`:
-
-&gt;  config.before(:each, type: :system) do
-
-&gt;    driven_by :rack_test
-
-&gt;  end
-
-&gt;  config.before(:each, type: :system, js: true) do
-
-&gt;    driven_by :selenium_chrome_headless
-
-&gt;  end
-
-which just changes the driver based on whether or not the test needs js (which I have enabled for the above test). I also tried changing the `Capybara.default_max_wait_time` to 10 in a before action without luck.
-## [10][Trouble with Elasticsearch DSL in a Ruby on Rails Project](https://www.reddit.com/r/rails/comments/hw5p69/trouble_with_elasticsearch_dsl_in_a_ruby_on_rails/)
-- url: https://www.reddit.com/r/rails/comments/hw5p69/trouble_with_elasticsearch_dsl_in_a_ruby_on_rails/
----
-Hey All, I'm trying to implement fuzzy search with Elasticsearch. I'm able to return results when I type in the query correctly, but now I am having trouble with fuzziness. I'm not having any luck with any of the online guides, does anyone have suggestions for a rails article with elasticsearch and a simple fuzzy search set up?  
-
-
-`def search`  
- `@elasticsearchresults = Car.__elasticsearch__.search(`  
-`{`  
- `query: {`  
- `match: {`  
- `message: {`  
- `query: params[:q],`  
- `fuzziness: 1`  
-`}`  
-`}`  
-`}`  
-`}).records`  
-`end`
-## [11][Security issues with generating temporary passwords](https://www.reddit.com/r/rails/comments/hw2ile/security_issues_with_generating_temporary/)
-- url: https://www.reddit.com/r/rails/comments/hw2ile/security_issues_with_generating_temporary/
----
-Hello. So I am developing an app with an application system. The user applies to my platform and then an admin or somebody with high enough permissions decides whether to accept the application or deny it. 
-
-Let's say he accepts it. When he accepts it, the user is automatically created. I am wondering if it is safe to generate a temporary password with something like [Passgen gem](https://github.com/cryptice/Passgen) and then store it as the user's password until he changes it.
-
-I would also need to send a confirmation email to his email address with a success message and a temporary password. Is it safe to send a password like that?
-
-I am also wondering. If I hash that random password, how do I send it in plain text for a user to understand in the email?
-
-Or is there any other, better way to handle this situation. Thanks!
-## [12][How to insert font-awesome icons into action mailer views?](https://www.reddit.com/r/rails/comments/hw7ppm/how_to_insert_fontawesome_icons_into_action/)
-- url: https://www.reddit.com/r/rails/comments/hw7ppm/how_to_insert_fontawesome_icons_into_action/
----
-No problem embedding images, but haven't had luck leveraging FA-icons for this.

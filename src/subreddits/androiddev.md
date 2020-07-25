@@ -1,43 +1,28 @@
 # androiddev
-## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/hx129s/weekly_anything_goes_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/hx129s/weekly_anything_goes_thread/
+## [1][App Feedback Thread - July 25, 2020](https://www.reddit.com/r/androiddev/comments/hxlxir/app_feedback_thread_july_25_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/hxlxir/app_feedback_thread_july_25_2020/
 ---
-Here's your chance to talk about whatever!
+This thread is for getting feedback on your own apps.
 
-Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
+####Developers:
 
-Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
-## [2][Weekly Questions Thread - July 20, 2020](https://www.reddit.com/r/androiddev/comments/huj9uy/weekly_questions_thread_july_20_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/huj9uy/weekly_questions_thread_july_20_2020/
----
-This thread is for simple questions that don't warrant their own thread (although we suggest checking the sidebar, [the wiki](http://www.reddit.com/r/androiddev/wiki/), [our Discord](https://discord.gg/D2cNrqX), or [Stack Overflow](http://stackoverflow.com) before posting). Examples of questions:
+- must **provide feedback** for others
+- must include **Play Store**, **GitHub**, or **BitBucket** link
+- must make top level comment
+- must make effort to respond to questions and feedback from commenters
+- may be open or closed source
 
-* How do I pass data between my Activities?
-* Does anyone have a link to the source for the AOSP messaging app?
-* Is it possible to programmatically change the color of the status bar without targeting API 21?
+####Commenters:
 
-**Important: Downvotes are strongly discouraged in this thread. Sorting by new is strongly encouraged.**
+- must give **constructive feedback** in replies to top level comments
+- must not include links to other apps
 
-Large code snippets don't read well on reddit and take up a lot of space, so please don't paste them in your comments. Consider linking [Gists](https://gist.github.com) instead.
+To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
 
-Have a question about the subreddit or otherwise for /r/androiddev mods? [We welcome your mod mail!](http://www.reddit.com/message/compose?to=%2Fr%2Fandroiddev)
+As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
 
-Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
-
-Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Using LiveData to monitor network](https://www.reddit.com/r/androiddev/comments/hwzfqy/using_livedata_to_monitor_network/)
-- url: https://www.reddit.com/r/androiddev/comments/hwzfqy/using_livedata_to_monitor_network/
----
-A small gist with an "explanation" on how to use LiveData to monitor network connection
-
-Link -&gt; [https://medium.com/@brhargett/yanm-yet-another-network-monitor-86a57495e011](https://medium.com/@brhargett/yanm-yet-another-network-monitor-86a57495e011) 
-
-Critiques are welcomed
-## [4][Google's silent treatment to Android app developers](https://www.reddit.com/r/androiddev/comments/hx0zgs/googles_silent_treatment_to_android_app_developers/)
-- url: https://www.crazylegend.dev/2020/07/googles-silent-treatment-to-android-app.html
----
-
-## [5][We’re on the engineering team for Android Studio. Ask us Anything! (starts July 30)](https://www.reddit.com/r/androiddev/comments/hwiffd/were_on_the_engineering_team_for_android_studio/)
+\- Da Mods
+## [2][We’re on the engineering team for Android Studio. Ask us Anything! (starts July 30)](https://www.reddit.com/r/androiddev/comments/hwiffd/were_on_the_engineering_team_for_android_studio/)
 - url: https://www.reddit.com/r/androiddev/comments/hwiffd/were_on_the_engineering_team_for_android_studio/
 ---
 We’re on the engineering team for Android Studio, and we are excited to participate in another AMA on r/androiddev on **Thursday, July 30**!
@@ -90,39 +75,75 @@ We'll start answering questions on **Thursday, July 30 at 12:00 PM PDT / 3:00 PM
 * **Tor Norbye** (u/tnorbye) - Engineering Director for Android Studio
 * **Wojtek Kaliciński** (u/wkalicinski) - Android Developer Relations
 * **Xavier Ducrohet** (u/droidxav) - Tech lead for Android SDK
-## [6][Introducing Jetpack on GitHub](https://www.reddit.com/r/androiddev/comments/hx1lco/introducing_jetpack_on_github/)
+## [3][COVID-19 tracing apps may fail to notify exposed users due to aggressive OEM battery saving measures](https://www.reddit.com/r/androiddev/comments/hxduj8/covid19_tracing_apps_may_fail_to_notify_exposed/)
+- url: https://www.androidpolice.com/2020/07/24/covid-19-tracing-apps-may-fail-to-notify-exposed-users-due-to-aggressive-oem-battery-saving-measures/
+---
+
+## [4][What is your experience in encountering large legacy android codebase?](https://www.reddit.com/r/androiddev/comments/hxiotr/what_is_your_experience_in_encountering_large/)
+- url: https://www.reddit.com/r/androiddev/comments/hxiotr/what_is_your_experience_in_encountering_large/
+---
+Hi,  
+The reason I wanted your opinion is that I just moved to a new team and their project is being developed for 4 years now. and this is the first time in my career that I'm experiencing this.
+
+There are tons of classes, tons of base classes..., some parts don't have any architectures at all(imagine Activities with 600 lines of code, no DI, API calls in Activity and etc.) and some minor parts do have MVVM/CleanArch implemented.
+
+\-How do you start reading these large codebases that have mixed architectures/no architecture in order to be able to understand and contribute to?
+## [5][Introducing Jetpack on GitHub](https://www.reddit.com/r/androiddev/comments/hx1lco/introducing_jetpack_on_github/)
 - url: https://medium.com/androiddevelopers/introducing-jetpack-on-github-c2c9f12e62a9
 ---
 
-## [7][Android Jetpack is back in GitHub as a mirror to AOSP.](https://www.reddit.com/r/androiddev/comments/hwus66/android_jetpack_is_back_in_github_as_a_mirror_to/)
-- url: https://github.com/androidx/androidx
+## [6][How Discord Made Android In-App Navigation Easier](https://www.reddit.com/r/androiddev/comments/hx7vld/how_discord_made_android_inapp_navigation_easier/)
+- url: https://blog.discord.com/how-discord-made-android-in-app-navigation-easier-fbd904d12521
 ---
 
-## [8][Improving inter-activity communication with Jetpack ActivityResult](https://www.reddit.com/r/androiddev/comments/hwo28i/improving_interactivity_communication_with/)
-- url: https://android-developers.googleblog.com/2020/07/jetpack-activityresult.html
+## [7][Issue implementing callback in library module when using Jetpack Navigation.](https://www.reddit.com/r/androiddev/comments/hxm5us/issue_implementing_callback_in_library_module/)
+- url: https://www.reddit.com/r/androiddev/comments/hxm5us/issue_implementing_callback_in_library_module/
 ---
-
-## [9][No more SMS &amp; Call Log permissions, for Digital lenders and Financial inclusion Android Apps, Now…](https://www.reddit.com/r/androiddev/comments/hwz52j/no_more_sms_call_log_permissions_for_digital/)
-- url: https://www.reddit.com/r/androiddev/comments/hwz52j/no_more_sms_call_log_permissions_for_digital/
+How can I implement a callback / listener from a Fragment in an Android Library Module included as an .aar file, when using Jetpack Navigation Component in base application?
+## [8][Using Jetpack Compose](https://www.reddit.com/r/androiddev/comments/hxllbk/using_jetpack_compose/)
+- url: https://www.reddit.com/r/androiddev/comments/hxllbk/using_jetpack_compose/
 ---
-Google restricting the apps [that access SMS, Call Logs](https://medium.com/@benabrin/no-more-sms-call-log-permissions-for-digital-lenders-and-financial-inclusion-android-apps-now-280bea00df06) permission groups from the users and 80 percent rejection rate for applications?
-## [10][RecyclerView](https://www.reddit.com/r/androiddev/comments/hx1hnd/recyclerview/)
-- url: https://www.reddit.com/r/androiddev/comments/hx1hnd/recyclerview/
+On a scale of "you can but at your own risk" to "pretty foolish", how would you rate using Jetpack Compose in production?
+
+Currently want to start a new project and investigating how foolish using Jetpack Compose might be
+## [9][Where to find documentation for android features that require root permission?](https://www.reddit.com/r/androiddev/comments/hxkp4k/where_to_find_documentation_for_android_features/)
+- url: https://www.reddit.com/r/androiddev/comments/hxkp4k/where_to_find_documentation_for_android_features/
 ---
-This might probably not be the most interesting post, but I have been working on my first android application and its almost done except the RecyclerView. 
-I have tried to follow multiple tutorials -CodingWithMitch, stack overflow answers, developer docs, and even GitHub APIs, but somehow I am always running into an error. 
-My need for a RecyclerView is very simple. A simple card view and text. That's it. 
-Could anyone be nice enough to point me in the direction to a correct working link or perhaps give some insight into any alternatives on GitHub or something like that? 
+I mean is there a community or a specific place that I can look for docs/tutorial for features that are only available for devices with root privilege.
 
-Thanks. 
+A list of thing that I can do with root privilege and code samples for that will be helpful. 
 
-Best,
-A budding android developer.
-## [11][MaxTube APK Download](https://www.reddit.com/r/androiddev/comments/hx0m6g/maxtube_apk_download/)
-- url: https://nanohub.org/projects/maxtubeapkdownload
+Forgive me it this question is stupid..
+## [10][Opinions on Litho](https://www.reddit.com/r/androiddev/comments/hxi8g1/opinions_on_litho/)
+- url: https://www.reddit.com/r/androiddev/comments/hxi8g1/opinions_on_litho/
 ---
+I'm about to start a new project and would love to use Jetpack Compose but it seems far from production ready (please correct me if I'm wrong).
 
-## [12][What’s New in Navigation 2020](https://www.reddit.com/r/androiddev/comments/hwi9rr/whats_new_in_navigation_2020/)
-- url: https://android-developers.googleblog.com/2020/07/whats-new-in-navigation-2020.html
+So far, I've come across Litho(https://fblitho.com/) and will like to ask what this subs opinion on the framework is.
+## [11][Widgets do not refresh, until I specifically turn off "Manage apps automatically" in battery section [VIDEOPROOF] - WHY?](https://www.reddit.com/r/androiddev/comments/hxkerv/widgets_do_not_refresh_until_i_specifically_turn/)
+- url: https://www.reddit.com/r/androiddev/comments/hxkerv/widgets_do_not_refresh_until_i_specifically_turn/
 ---
+I know that widgets, or pretty much anything running on background SOMETIMES does not work properly until excluded from battery optimization - but this is brand new problem I recently discovered.
 
+[Here is video of my widget which refuses to update](https://imgur.com/a/JeUV3Om) until I turn off "Manage apps automatically" in battery section, on android 10 emulator. I can reproduce it on most phones or emulator (with A9/10), but sometimes (maybe 20% cases) its totally random and works even with if manage apps automatically is checked on.
+
+It is really pain in the ass developping anything background-related - nothing works as it should, nothing is reliable. It is very frustrating...**Anybody has experiences how to make widgets refresh properly?** Thanks a lot for help!
+
+*PS: Sure I can upload code, but even minimalistic example has a lot, lot of code (widgets provider, widget background JobIntentService, android manifest declaration, layout, layout provider, etc) so maybe somebody had same problem before and knows the answer without code*
+## [12][Frequently Asked Questions about Jetpack Compose](https://www.reddit.com/r/androiddev/comments/hxhndv/frequently_asked_questions_about_jetpack_compose/)
+- url: https://www.reddit.com/r/androiddev/comments/hxhndv/frequently_asked_questions_about_jetpack_compose/
+---
+Hello Droids!  
+Some of you might remember me from a couple Jetpack Compose related projects that I posted here -[https://www.reddit.com/r/androiddev/comments/fvmktf/learn\_jetpack\_compose\_from\_examples\_that\_show\_the/](https://www.reddit.com/r/androiddev/comments/fvmktf/learn_jetpack_compose_from_examples_that_show_the/)
+
+[https://www.reddit.com/r/androiddev/comments/h98l3u/introducing\_jetpackcomposeapp\_find\_answers\_to/](https://www.reddit.com/r/androiddev/comments/h98l3u/introducing_jetpackcomposeapp_find_answers_to/)
+
+In preparation for a talk that I recently gave, I decided to answer some "Frequently Asked Questions" about Jetpack Compose. In order to share it more widely, I decided to host it on a site that I maintain. You can find it here - [https://jetpackcompose.app/faq](https://jetpackcompose.app/faq)
+
+https://preview.redd.it/mgblmkj0yxc51.png?width=1440&amp;format=png&amp;auto=webp&amp;s=aa8ee37c266b563e01ec1cd549af120225fced82
+
+Since not everyone is a fan of clicking on random links, here is what to expect -
+
+https://reddit.com/link/hxhndv/video/ddbhuv5ayxc51/player
+
+I would love to know if there are any more questions that should be a part of the list. And yes, I promise to add a question that addresses "Process Death" in Jetpack Compose(given how popular that topic is on this subreddit :D).

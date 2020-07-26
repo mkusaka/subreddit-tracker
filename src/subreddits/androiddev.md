@@ -75,11 +75,98 @@ We'll start answering questions on **Thursday, July 30 at 12:00 PM PDT / 3:00 PM
 * **Tor Norbye** (u/tnorbye) - Engineering Director for Android Studio
 * **Wojtek Kaliciński** (u/wkalicinski) - Android Developer Relations
 * **Xavier Ducrohet** (u/droidxav) - Tech lead for Android SDK
-## [3][COVID-19 tracing apps may fail to notify exposed users due to aggressive OEM battery saving measures](https://www.reddit.com/r/androiddev/comments/hxduj8/covid19_tracing_apps_may_fail_to_notify_exposed/)
+## [3][How does your CI/CD workflow look like?](https://www.reddit.com/r/androiddev/comments/hy44kb/how_does_your_cicd_workflow_look_like/)
+- url: https://www.reddit.com/r/androiddev/comments/hy44kb/how_does_your_cicd_workflow_look_like/
+---
+While this is the workflow we follow I am interested to know how does your workflow looks and any feedback on the above workflow.  
+
+
+  
+Whether you are working for a services company, a start-up, or an indie developer, we can share our workflow here.  
+
+
+I'll start with mine:  
+
+
+**develop branch:** Whenever a feature branch PR raised to be merged in currently active development branch, we run tests to check if all test cases are passing and code coverage to check via jacoco to ensure our test code coverage does not go below 70%.  
+After the PR is merged build is generated with Bitrise and the latest build is sent to developers, testers, and PMs for testing and other stuff. (staging flavour)  
+
+
+**pre-master branch:** We run a 2-week sprint and after every 2 weeks, we send a build to the client to see the work we have done till yet and give feedback.   
+The code on develop branch is merged in the pre-master branch and the latest build is sent to the client, developers, testers, and PMs. (staging flavor)  
+
+
+**master/main branch:**  The code in pre-master branch is merged into the master to push build live to Play store. (Production flavor)  
+
+
+**note**: All the above-mentioned branches are protected i.e no one can push directly to them, it has to be done via PR.  
+
+
+While this is the workflow we follow I am interested to know how does your workflow looks like and any feedback on the above workflow.
+## [4][Is this even possible without bots? - this app is a 1:1 stickman Hook clone not published through by a published](https://www.reddit.com/r/androiddev/comments/hxsq49/is_this_even_possible_without_bots_this_app_is_a/)
+- url: https://i.redd.it/mj6a1gcs22d51.jpg
+---
+
+## [5][Android Studio with AMD chipset](https://www.reddit.com/r/androiddev/comments/hy6si6/android_studio_with_amd_chipset/)
+- url: https://www.reddit.com/r/androiddev/comments/hy6si6/android_studio_with_amd_chipset/
+---
+Has anyone run into any issues with utilising the inbuilt emulator on AS with any AMD A-series processors? I thought it may be a Windows-specific problem with Hyper-V but even after compiling and trying to test emulation on my Linux machine with an A9 CPU I'm still seeing major problems. 
+Has anyone come across this before? Switch to Intel entirely?
+## [6][What’s your favorite language for Android app development.](https://www.reddit.com/r/androiddev/comments/hy5xso/whats_your_favorite_language_for_android_app/)
+- url: https://www.reddit.com/r/androiddev/comments/hy5xso/whats_your_favorite_language_for_android_app/
+---
+Am kind of stuck in choosing my next programming language. For those of you who’ve had the chance to explore the different language options to develop android apps. From your experience, which have you found to be the best for you and why?
+## [7][Urgent advice needed. When is it better to use SQLite and when to use FireBase?](https://www.reddit.com/r/androiddev/comments/hy55oz/urgent_advice_needed_when_is_it_better_to_use/)
+- url: https://www.reddit.com/r/androiddev/comments/hy55oz/urgent_advice_needed_when_is_it_better_to_use/
+---
+My only experience with databases so far is postgres but I need to make an app in 3 weeks that requires a database. The database would mostly handle text and I would need it to have String questions stored in it and I also would need the app to write to the database on user performance (to keep it simple, it will be a quiz app of sorts).
+
+In case it makes any difference, I am using Java, not Kotlin.
+
+\*This is general and should not be indicated as a "help me" post as indicated by the rules. I urgently need advice for this matter. If for whatever reason a mod sees it as unacceptable, please direct me to where I can ask this.
+## [8][Making An MMORPG Platformer (Like Mario)](https://www.reddit.com/r/androiddev/comments/hy4d2v/making_an_mmorpg_platformer_like_mario/)
+- url: https://www.reddit.com/r/androiddev/comments/hy4d2v/making_an_mmorpg_platformer_like_mario/
+---
+Hello!
+
+I've made plenty of games before and have been burned out from my web-dev job. I started to mess around in Unity again, going back to my roots, and started falling in love with coding again. I'm hoping to start a big project that will keep me pre-occupied when I don't wanna hang out with people (my girlfriend because I don't have many friends).
+
+TMI SORRY
+
+I've seen a large amount of MMO released for android and iOS. UNITY is great BUT they are planning on depreciating their current MMO solution and I'm wondering what all these games in the android store are built on. Any ideas?
+
+I'm wondering if it is GameMaker Studio , Unity, or UnRealEngine.
+
+I want to be pre-occupied but I want it to go smoothly, so I actually have a finished product and not just another one of the many games I've started and abandoned (It makes me feel like that dad that went to go get cigarettes).
+
+ADVICE APPRECIATED!! Also my game idea isn't anything special but if it's finished I think it will at least be fun and funny - til it isn't. :) It will be physics based (platformer 2d sidescroller) with projectiles.
+
+&amp;#x200B;
+
+Edit: In case no one answers, I'll post a bit of what I'm finding here for future search queries.
+
+\- [https://improbable.io/blog/spatialos-mobile-pre-alpha](https://improbable.io/blog/spatialos-mobile-pre-alpha)
+
+\-uMMORPG is not good for anyone making a platform game because it doesn't use gravity. It uses navmesh. It's great if you are doing zelda style games, based on what I'm seeing.
+
+\- Because Unity is the best at 2D games, and I'm very familiar with it, going to make it using that. I'm going to use SpatialOS and have them host it for me. I'm not 100% sure how it is going to work but it looks very promising at first glance and it appears that many indie studios have used it. Here is a link to their documentation for anyone who is interested.
+
+ [https://documentation.improbable.io/gdk-for-unity/docs/setup-and-dependencies](https://documentation.improbable.io/gdk-for-unity/docs/setup-and-dependencies) 
+
+comments and advice appreciated still, even though I'm pretty sure this is the path I'm going to take. Now I need sleep. I still get crazy on weekends and don't sleep til, apparently about 7:33am
+## [9][Video Walkie Talkie](https://www.reddit.com/r/androiddev/comments/hy18oq/video_walkie_talkie/)
+- url: https://www.reddit.com/r/androiddev/comments/hy18oq/video_walkie_talkie/
+---
+How hard would it be to develop a video walkie talkie app, like Marco Polo or Glide?
+## [10][COVID-19 tracing apps may fail to notify exposed users due to aggressive OEM battery saving measures](https://www.reddit.com/r/androiddev/comments/hxduj8/covid19_tracing_apps_may_fail_to_notify_exposed/)
 - url: https://www.androidpolice.com/2020/07/24/covid-19-tracing-apps-may-fail-to-notify-exposed-users-due-to-aggressive-oem-battery-saving-measures/
 ---
 
-## [4][What is your experience in encountering large legacy android codebase?](https://www.reddit.com/r/androiddev/comments/hxiotr/what_is_your_experience_in_encountering_large/)
+## [11][Glad to share that my library 'TextWriter' crossed 100 stars ⭐ on Github. Thanks a lot to everyone 🙏](https://www.reddit.com/r/androiddev/comments/hy4fiu/glad_to_share_that_my_library_textwriter_crossed/)
+- url: https://github.com/sarnavakonar/TextWriter
+---
+
+## [12][What is your experience in encountering large legacy android codebase?](https://www.reddit.com/r/androiddev/comments/hxiotr/what_is_your_experience_in_encountering_large/)
 - url: https://www.reddit.com/r/androiddev/comments/hxiotr/what_is_your_experience_in_encountering_large/
 ---
 Hi,  
@@ -88,62 +175,3 @@ The reason I wanted your opinion is that I just moved to a new team and their pr
 There are tons of classes, tons of base classes..., some parts don't have any architectures at all(imagine Activities with 600 lines of code, no DI, API calls in Activity and etc.) and some minor parts do have MVVM/CleanArch implemented.
 
 \-How do you start reading these large codebases that have mixed architectures/no architecture in order to be able to understand and contribute to?
-## [5][Introducing Jetpack on GitHub](https://www.reddit.com/r/androiddev/comments/hx1lco/introducing_jetpack_on_github/)
-- url: https://medium.com/androiddevelopers/introducing-jetpack-on-github-c2c9f12e62a9
----
-
-## [6][How Discord Made Android In-App Navigation Easier](https://www.reddit.com/r/androiddev/comments/hx7vld/how_discord_made_android_inapp_navigation_easier/)
-- url: https://blog.discord.com/how-discord-made-android-in-app-navigation-easier-fbd904d12521
----
-
-## [7][Issue implementing callback in library module when using Jetpack Navigation.](https://www.reddit.com/r/androiddev/comments/hxm5us/issue_implementing_callback_in_library_module/)
-- url: https://www.reddit.com/r/androiddev/comments/hxm5us/issue_implementing_callback_in_library_module/
----
-How can I implement a callback / listener from a Fragment in an Android Library Module included as an .aar file, when using Jetpack Navigation Component in base application?
-## [8][Using Jetpack Compose](https://www.reddit.com/r/androiddev/comments/hxllbk/using_jetpack_compose/)
-- url: https://www.reddit.com/r/androiddev/comments/hxllbk/using_jetpack_compose/
----
-On a scale of "you can but at your own risk" to "pretty foolish", how would you rate using Jetpack Compose in production?
-
-Currently want to start a new project and investigating how foolish using Jetpack Compose might be
-## [9][Where to find documentation for android features that require root permission?](https://www.reddit.com/r/androiddev/comments/hxkp4k/where_to_find_documentation_for_android_features/)
-- url: https://www.reddit.com/r/androiddev/comments/hxkp4k/where_to_find_documentation_for_android_features/
----
-I mean is there a community or a specific place that I can look for docs/tutorial for features that are only available for devices with root privilege.
-
-A list of thing that I can do with root privilege and code samples for that will be helpful. 
-
-Forgive me it this question is stupid..
-## [10][Opinions on Litho](https://www.reddit.com/r/androiddev/comments/hxi8g1/opinions_on_litho/)
-- url: https://www.reddit.com/r/androiddev/comments/hxi8g1/opinions_on_litho/
----
-I'm about to start a new project and would love to use Jetpack Compose but it seems far from production ready (please correct me if I'm wrong).
-
-So far, I've come across Litho(https://fblitho.com/) and will like to ask what this subs opinion on the framework is.
-## [11][Widgets do not refresh, until I specifically turn off "Manage apps automatically" in battery section [VIDEOPROOF] - WHY?](https://www.reddit.com/r/androiddev/comments/hxkerv/widgets_do_not_refresh_until_i_specifically_turn/)
-- url: https://www.reddit.com/r/androiddev/comments/hxkerv/widgets_do_not_refresh_until_i_specifically_turn/
----
-I know that widgets, or pretty much anything running on background SOMETIMES does not work properly until excluded from battery optimization - but this is brand new problem I recently discovered.
-
-[Here is video of my widget which refuses to update](https://imgur.com/a/JeUV3Om) until I turn off "Manage apps automatically" in battery section, on android 10 emulator. I can reproduce it on most phones or emulator (with A9/10), but sometimes (maybe 20% cases) its totally random and works even with if manage apps automatically is checked on.
-
-It is really pain in the ass developping anything background-related - nothing works as it should, nothing is reliable. It is very frustrating...**Anybody has experiences how to make widgets refresh properly?** Thanks a lot for help!
-
-*PS: Sure I can upload code, but even minimalistic example has a lot, lot of code (widgets provider, widget background JobIntentService, android manifest declaration, layout, layout provider, etc) so maybe somebody had same problem before and knows the answer without code*
-## [12][Frequently Asked Questions about Jetpack Compose](https://www.reddit.com/r/androiddev/comments/hxhndv/frequently_asked_questions_about_jetpack_compose/)
-- url: https://www.reddit.com/r/androiddev/comments/hxhndv/frequently_asked_questions_about_jetpack_compose/
----
-Hello Droids!  
-Some of you might remember me from a couple Jetpack Compose related projects that I posted here -[https://www.reddit.com/r/androiddev/comments/fvmktf/learn\_jetpack\_compose\_from\_examples\_that\_show\_the/](https://www.reddit.com/r/androiddev/comments/fvmktf/learn_jetpack_compose_from_examples_that_show_the/)
-
-[https://www.reddit.com/r/androiddev/comments/h98l3u/introducing\_jetpackcomposeapp\_find\_answers\_to/](https://www.reddit.com/r/androiddev/comments/h98l3u/introducing_jetpackcomposeapp_find_answers_to/)
-
-In preparation for a talk that I recently gave, I decided to answer some "Frequently Asked Questions" about Jetpack Compose. In order to share it more widely, I decided to host it on a site that I maintain. You can find it here - [https://jetpackcompose.app/faq](https://jetpackcompose.app/faq)
-
-https://preview.redd.it/mgblmkj0yxc51.png?width=1440&amp;format=png&amp;auto=webp&amp;s=aa8ee37c266b563e01ec1cd549af120225fced82
-
-Since not everyone is a fan of clicking on random links, here is what to expect -
-
-https://reddit.com/link/hxhndv/video/ddbhuv5ayxc51/player
-
-I would love to know if there are any more questions that should be a part of the list. And yes, I promise to add a question that addresses "Process Death" in Jetpack Compose(given how popular that topic is on this subreddit :D).

@@ -13,186 +13,120 @@ Let's do the Q&amp;A about the design here in Reddit. My hope is that the thread
 Please start a new top-level comment for each new question.
 
 See also the related [Q&amp;A for the //go:embed draft design](https://golang.org/s/draft-embed-reddit).
-## [2][[Q&amp;A] //go:embed draft design](https://www.reddit.com/r/golang/comments/hv96ny/qa_goembed_draft_design/)
-- url: https://www.reddit.com/r/golang/comments/hv96ny/qa_goembed_draft_design/
+## [2][Design Draft: First Class Fuzzing](https://www.reddit.com/r/golang/comments/hvpr96/design_draft_first_class_fuzzing/)
+- url: https://go.googlesource.com/proposal/+/refs/heads/master/design/40307-fuzzing.md
 ---
-I posted a draft design today for embedding files into Go programs.
 
-Video: https://golang.org/s/draft-embed-video
+## [3][I made a Telegram bot to control Docker](https://www.reddit.com/r/golang/comments/hy2gbl/i_made_a_telegram_bot_to_control_docker/)
+- url: https://github.com/MrMarble/teledock
+---
 
-Design: https://golang.org/s/draft-embed-design
+## [4][This is my first project in Go: pong in terminal. I come from higher level languages, I am still getting familiar with the "ways of Go". Any feedback regarding code quality (and gameplay) is appreciated!](https://www.reddit.com/r/golang/comments/hxvnzd/this_is_my_first_project_in_go_pong_in_terminal_i/)
+- url: https://github.com/spinzed/tpong
+---
 
-Let's do the Q&amp;A about the design here in Reddit. My hope is that the threading support will help keep questions and answers matched.
-
-Please start a new top-level comment for each new question.
-
-See also the related [Q&amp;A for the io/fs draft design](https://golang.org/s/draft-iofs-reddit).
-## [3][A Growing Collection of Challenges to help you learn Go and Math!](https://www.reddit.com/r/golang/comments/hxkpxt/a_growing_collection_of_challenges_to_help_you/)
+## [5][A Growing Collection of Challenges to help you learn Go and Math!](https://www.reddit.com/r/golang/comments/hxkpxt/a_growing_collection_of_challenges_to_help_you/)
 - url: https://tutorialedge.net/challenges/go/
 ---
 
-## [4][Go 1.15 Release Candidate 1 is released](https://www.reddit.com/r/golang/comments/hx98am/go_115_release_candidate_1_is_released/)
-- url: https://groups.google.com/forum/m/#!msg/golang-announce/irEtdvYep-Y/rOH3sqouCAAJ
+## [6][Another generics proposal based on their (Go team) experemental branch](https://www.reddit.com/r/golang/comments/hxvm6d/another_generics_proposal_based_on_their_go_team/)
+- url: https://www.reddit.com/r/golang/comments/hxvm6d/another_generics_proposal_based_on_their_go_team/
+---
+In short, Go team considers a possibility not to make `type` keyword for generic params mandatory when it can be state safely this is not a slice declaration. These are the following situations:
+
+* more than one generic type parameter
+* generic type parameter is followed with a trailing comma
+* when a single generic type parameter has a constraint
+
+And this already works in the Go2 playground.
+
+Some person (Clara Pfaff) [proposed](https://groups.google.com/g/golang-nuts/c/pxDVtPjatXo) an idea to drop leading `type` keyword completely,  introduce alias `type any = interface{}` in `builtin` and make type constraint mandatory, with using `any` as an empty constraint what allows any type.
+
+How it looks like
+
+https://go2goplay.golang.org/p/IQV5LTAIuDr
+
+I must say I found this a lot better for readbility. Just look at that:
+
+
+    type OrderedMap[T any] struct {
+        …
+    }
+
+vs
+
+    type OrderedMap[type T] struct {
+        …
+    }
+## [7][This repository provides a mechanism for constructing multiple, isolated, IPFS storage instances (blockstore, filestore, DAGService) on top of a single go-datastore instance.](https://www.reddit.com/r/golang/comments/hy1dqt/this_repository_provides_a_mechanism_for/)
+- url: https://github.com/filecoin-project/go-multistore
 ---
 
-## [5][A simple HTTP Server to share files over WiFi via Qr Code](https://www.reddit.com/r/golang/comments/hxlxfr/a_simple_http_server_to_share_files_over_wifi_via/)
+## [8][Introduction to Fiber - An Express-inspired web framework](https://www.reddit.com/r/golang/comments/hxp9mf/introduction_to_fiber_an_expressinspired_web/)
+- url: https://youtu.be/MfFi4Gt-tos
+---
+
+## [9][Yet another flag parsing library](https://www.reddit.com/r/golang/comments/hy4ygx/yet_another_flag_parsing_library/)
+- url: https://www.reddit.com/r/golang/comments/hy4ygx/yet_another_flag_parsing_library/
+---
+Hello!
+
+I made a flag parsing library for some of my yet to be released open-source project. Perhaps some of you would have a use for it as well!
+
+https://github.com/Mattemagikern/Flags
+
+Best regards,
+## [10][A simple HTTP Server to share files over WiFi via Qr Code](https://www.reddit.com/r/golang/comments/hxlxfr/a_simple_http_server_to_share_files_over_wifi_via/)
 - url: https://github.com/prdpx7/go-fileserver
 ---
 
-## [6][Deploy a private GoDoc server on Google Kubernetes Engine](https://www.reddit.com/r/golang/comments/hx3uoq/deploy_a_private_godoc_server_on_google/)
-- url: https://cloud.google.com/community/tutorials/godoc-for-github-on-k8s
+## [11][Help ID this please](https://www.reddit.com/r/golang/comments/hy3bia/help_id_this_please/)
+- url: https://www.reddit.com/r/golang/comments/hy3bia/help_id_this_please/
 ---
+Total beginner to GO here. I really like the language. I'm learning to implement a stream with go lang and stumbled across a simple example online. I understand everything else except the line with the "-&lt;" 
 
-## [7][what is the most productive way to learn concurrency with go?](https://www.reddit.com/r/golang/comments/hxjdmq/what_is_the_most_productive_way_to_learn/)
-- url: https://www.reddit.com/r/golang/comments/hxjdmq/what_is_the_most_productive_way_to_learn/
+var waitc = make(chan struct{})
+
+close waitc() // This was inside a conditional for the error
+
+&lt;-waitc
+
+What does the "&lt;-" symbol mean? Any resources where I can find this?
+## [12][Best practices testing functions with large output](https://www.reddit.com/r/golang/comments/hxz2mx/best_practices_testing_functions_with_large_output/)
+- url: https://www.reddit.com/r/golang/comments/hxz2mx/best_practices_testing_functions_with_large_output/
 ---
-Learning concurrency is little hard.
+I work on a code base which has a substantial amount of code that is basically a pure transformation of some input to some output. Normally these are the easiest to unit test, especially with table driven tests. The issue I run into is the outputs of our code are *massive*, often 10k+ lines when written to JSON, and this is mostly a result of large, deeply nested objects rather than large lists.
 
-I have read "concurrency in go" book but i didn't work with me maybe good general idea.
 
-What about you? What is the best way that make you fluent in write high performance go concurrency code?
+These objects also happen to be protobuf generated, and changes to the expected output is fairly common - additions or minor tweaks to fields happen regularly, and every few months the entire structure may dramatically change.
 
-Thanks in advance.
-## [8][I created a Mandelbrot Set visualizer using distributed computing and parallelism with Go, gRPC and Raylib](https://www.reddit.com/r/golang/comments/hxl08d/i_created_a_mandelbrot_set_visualizer_using/)
-- url: https://www.reddit.com/r/golang/comments/hxl08d/i_created_a_mandelbrot_set_visualizer_using/
----
-I want to share with the Golang community a side-project I made to calculate the **Mandelbrot Set** using **parallelism** and **distributed computing** with **Go**, **gRPC** and **Raylib**. Here you can see a video-demo running a local cluster of 2 nodes with 8 virtual cores each one.
+I was wondering if there are any recommended patterns/examples of good tests for this type of code. Note this is a large ~100k LOC codebase with thousands of tests, so we need a fairly scalable approach.
 
-https://reddit.com/link/hxl08d/video/iz9elv21kzc51/player
+Historically, we have had a few different patterns for testing, all of which have substantial issues:
 
-Source code: [https://github.com/albertnadal/MandelbrotGoLang](https://github.com/albertnadal/MandelbrotGoLang)
 
-YouTube: [https://youtu.be/pDbuClfEAIY](https://youtu.be/pDbuClfEAIY)
+1. Golden tests
 
-I hope you find it really interesting and educative.
-## [9][Examples for Pointer Semantics](https://www.reddit.com/r/golang/comments/hxklwp/examples_for_pointer_semantics/)
-- url: https://www.reddit.com/r/golang/comments/hxklwp/examples_for_pointer_semantics/
----
-There are a lot of great resources discussing pointer vs value semantics. But I did not understand the recommendation to use pointer semantics when in doubt. So far I understood:
+In our case this generally means having the output dumped to file as json, then asserting that file doesn't change. This is problematic because each test, even for a tiny change or feature, results in thousands of lines of code added/changed. Updates to a single part of the code may result in many, many tests updated. Because the expect output is so easily changed, its easy to accidentally change a test and break it; essentially every change requires the developer to fully understand every test to ensure the new result is valid. Because every change impacts many tests, this also leads to frequent merge conflicts, and huge PRs that are hard to review. This does have the benefit of being very visible as to what the change was, which can make **some** PRs easy to review.
 
-1. Build-in types: Value semantics
-2. Reference types: Value semantics
-3. Pointer semantics for decoding and unmarshalling
-4. If there're already side effects like using File, which must be closed. So we need to work on the original data.
+2. Golden files + JsonPath Filtering
 
-For custom types let's see this example ([https://play.golang.org/p/ySwEqcXgS0A](https://play.golang.org/p/ySwEqcXgS0A)):
+Basically an extension of the above, where instead of dumping the whole object we just look at a portion of the object, selected by JsonPath (or similar). For example, we may check the result of `foo.bar | select(.name == "something")`. This resolves some of the problems above, but does add some complexity to learning jsonpath, as well as issues when developing the tests as there is no types/IDE support for this.
 
-    type Post struct {
-    	votes int
-    }
-    
-    func (p Post) upvoteValueSemantics(newVotes int) Post {
-    	return Post{votes: p.votes + newVotes}
-    }
-    
-    func (p *Post) upvotePointerSemantics(newVotes int) {
-    	p.votes = p.votes + newVotes
-    }
+3. JsonPath directly validating
 
-What semantic should be used here?
-## [10][Beginning web development in Go](https://www.reddit.com/r/golang/comments/hxjr01/beginning_web_development_in_go/)
-- url: https://www.reddit.com/r/golang/comments/hxjr01/beginning_web_development_in_go/
----
-Hey guys,
+Similar to the above, we can also define standard assertions, like `foo.bar == true`. This has similar issues with above
 
-I've been learning go and web development for a few months. But, I have been learning the web basics using **fastHttp** server and it seems like it can do everything. Then why do I see so many people use frameworks like **Gin, Gorilla and Beego**. What are some things that they have that makes people use them?
-## [11][Authentication in Golang with JWTs](https://www.reddit.com/r/golang/comments/hx06h4/authentication_in_golang_with_jwts/)
-- url: https://auth0.com/blog/authentication-in-golang/
----
+4. Direct, specific golang code for each test
 
-## [12][Maximum Salary](https://www.reddit.com/r/golang/comments/hxg4k1/maximum_salary/)
-- url: https://www.reddit.com/r/golang/comments/hxg4k1/maximum_salary/
----
-I am doing the Algorithms and Data Structures Specialization on Coursera and I am hard stuck into problem 3.7. Maximum Salary.
+For example, writing code to check specific parts of the output. This one is really common for us, and results in a lot of fragile tests checking things like `foo[0].bar[1].baz["key"] == "something"` which makes updating the ordering/structure extremely challenging, while also not giving much real coverage. There is also a lot of code with verbose and complex loops to extract the relevant info we need
 
-Basically my code works on pretty all the test cases I can invent, but it failed in case 6 when I submit it.
+5. Matchers/Extractors
 
-`Failed case #6/11: Wrong answer (Time used: 0.00/1.50, memory used: 9138176/536870912.)`
+This involves basically a bunch of helper functions that either validate some data, or extract it for later validation. Possibly using things like https://onsi.github.io/gomega/#adding-your-own-matchers. We would define a lot of functions like `AssertListEqualsUnordered(GetNames(FindAllFooBars()), []string{"name1", "name2"})`. This generally leads to some pretty readable tests, and overall seems like a reasonable approach. It can be challenging to come up with the right abstractions for these matcher functions though, as well as careful maintenance to ensure we don't end up with hyper-specific things like `FindAllFooBarsWithFieldIsGreenAndSizeIsLarge()`
 
-Here you have the problem description:
+6. Property Testing
 
-&gt;Problem Description  
-&gt;  
-&gt;Task. Compose the largest number out of a set of integers.  
-&gt;  
-&gt;Input Format. The first line of the input contains an integer 𝑛. The second line contains integers  
-&gt;  
-&gt;𝑎1,𝑎2,...,𝑎𝑛.  
-&gt;  
-&gt;Constraints. 1≤𝑛≤100;1≤𝑎𝑖 ≤103 forall1≤𝑖≤𝑛.Output Format.  
-&gt;  
-&gt;Output the largest number that can be composed out of 𝑎1, 𝑎2, . . . , 𝑎𝑛.
+This would involve basically defining a series of invariants about our data output and then asserting these apply to any inputs. Ideally with some fuzzing as well. We do a little bit of this, but generally its hard/impossible to define may invariants about our data.
 
-And here my implementation:
-
-    package main
-    
-    import (
-    	"fmt"
-    	"strconv"
-    )
-    
-    func main() {
-    	var n int
-    	var numbers []int
-    
-    	_, _ = fmt.Scan(&amp;n)
-    	for i := 0; i &lt; n; i++ {
-    		var number int
-    		_, _ = fmt.Scan(&amp;number)
-    		numbers = append(numbers, number)
-    	}
-    
-    	fmt.Print(maximumSalary(numbers))
-    }
-    
-    func maximumSalary(numbers []int) string {
-    	var answer string
-    
-    	for i := 0; i &lt; len(numbers); i++ {
-    		maxDigit := 0
-    		for j := i; j &lt; len(numbers); j++ {
-    			if isGreaterOrEqual(numbers[j], maxDigit) {
-    				maxDigit = numbers[j]
-    				numbers[i], numbers[j] = numbers[j], numbers[i]
-    			}
-    		}
-    
-    		answer += strconv.Itoa(maxDigit)
-    	}
-    
-    	return answer
-    }
-    
-    func isGreaterOrEqual(i, j int) bool {
-    	iString := strconv.Itoa(i)
-    	jString := strconv.Itoa(j)
-    	if len(iString) == len(jString) {
-    		return i &gt;= j
-    	} else {
-    		n := 0
-    		for {
-    			if n == len(iString) || n == len(jString) {
-    				if len(iString) &lt; len(jString) {
-    					return true
-    				} else {
-    					return false
-    				}
-    			}
-    			if iString[n] &gt; jString[n] {
-    				return true
-    			}
-    			if n == 0 &amp;&amp; iString[n] &lt; jString[n] {
-    				return false
-    			}
-    
-    			n++
-    		}
-    	}
-    }
-
-I am really out of ideas if someone has achieved the problem before and can let me some advice, would be great.
-
-Edit: More detailed explanation.
-
-https://preview.redd.it/k7io9hyzuxc51.png?width=1804&amp;format=png&amp;auto=webp&amp;s=18686b14a57a56378db531cb5d675e789fd45361
+This ended up being a lot longer than I expected... tl;dr testing large objects is hard, are there better ways to do it?

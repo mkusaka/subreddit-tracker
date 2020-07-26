@@ -13,51 +13,47 @@ this is the place.
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][Mini social network I made as my first project. (MERN stack)](https://www.reddit.com/r/javascript/comments/hxjsbr/mini_social_network_i_made_as_my_first_project/)
+## [3][How to Create a Weather Widget with a Weather API](https://www.reddit.com/r/javascript/comments/hy318b/how_to_create_a_weather_widget_with_a_weather_api/)
+- url: https://developer.climacell.co/blog/how-to-create-a-weather-widget-with-a-weather-api/#
+---
+
+## [4][I built an ES6 fueled cookie and local storage library (crumbsJS)](https://www.reddit.com/r/javascript/comments/hy3i97/i_built_an_es6_fueled_cookie_and_local_storage/)
+- url: https://github.com/nirtz89/crumbsjs
+---
+
+## [5][I built an alternative Reddit client optimized for desktop](https://www.reddit.com/r/javascript/comments/hxwo93/i_built_an_alternative_reddit_client_optimized/)
+- url: https://rdddeck.com
+---
+
+## [6][How to build a chrome extension to analyze text as you write](https://www.reddit.com/r/javascript/comments/hy5wib/how_to_build_a_chrome_extension_to_analyze_text/)
+- url: https://medium.com/@juancurti.it/how-to-build-a-chrome-extension-to-analyze-text-as-you-write-a1c0ab1923f9
+---
+
+## [7][Environments: under the hood of variables • Deep JavaScript](https://www.reddit.com/r/javascript/comments/hy2wps/environments_under_the_hood_of_variables_deep/)
+- url: https://exploringjs.com/deep-js/ch_environments.html
+---
+
+## [8][GraphQL first full-stack starter kit with Node, React. Powered by TypeScript](https://www.reddit.com/r/javascript/comments/hxm70h/graphql_first_fullstack_starter_kit_with_node/)
+- url: https://github.com/karanpratapsingh/fullstack-starterkit
+---
+
+## [9][[AskJS] Have you guys worked 2 contract at a time or full remote what's the gotcha ?](https://www.reddit.com/r/javascript/comments/hxzztr/askjs_have_you_guys_worked_2_contract_at_a_time/)
+- url: https://www.reddit.com/r/javascript/comments/hxzztr/askjs_have_you_guys_worked_2_contract_at_a_time/
+---
+**A)** Have you guys worked 2 contract at a time or ? (being full remote)
+
+**B)** What's the "gotcha" of working full remote ? (not getting paid, or sending code before getting paid, working from Canada in the USA etc how it's all handled ?)
+
+**C)** Do you believe it's possible to build a solid stable career in Javascript only or mostly only JS without going the Java or C# path ?
+## [10][Mini social network I made as my first project. (MERN stack)](https://www.reddit.com/r/javascript/comments/hxjsbr/mini_social_network_i_made_as_my_first_project/)
 - url: https://github.com/misa-j/social-network
 ---
 
-## [4][npx script for testing push messages on mobile](https://www.reddit.com/r/javascript/comments/hxjvrj/npx_script_for_testing_push_messages_on_mobile/)
-- url: https://github.com/AndrejKolar/push-tester
+## [11][Vest - Yet another form validation library](https://www.reddit.com/r/javascript/comments/hxrjgz/vest_yet_another_form_validation_library/)
+- url: https://github.com/ealush/vest
 ---
 
-## [5][Web RPC: Share method signatures between front-end &amp; back-end over HTTP with TypeScript](https://www.reddit.com/r/javascript/comments/hxjqcd/web_rpc_share_method_signatures_between_frontend/)
-- url: https://kretes.dev/docs/howtos/how-to-connect-frontend-backend-webrpc/
----
-
-## [6][I made an opensource bar chart race generator](https://www.reddit.com/r/javascript/comments/hx3mcw/i_made_an_opensource_bar_chart_race_generator/)
-- url: https://fabdevgit.github.io/barchartrace
----
-
-## [7][I am working on a discord bot which can show GitHub profile details , repositories etc in discord](https://www.reddit.com/r/javascript/comments/hxfvo9/i_am_working_on_a_discord_bot_which_can_show/)
-- url: https://github.com/barath121/Github-Discord-Bot
----
-
-## [8][Functional Programming principles in JavaScript](https://www.reddit.com/r/javascript/comments/hxeuy3/functional_programming_principles_in_javascript/)
-- url: https://blog.maddevs.io/functional-programming-principles-in-javascript-37339f7c9e60?source=friends_link&amp;sk=7ed82308783fb3f3c645d10e0c2fb176
----
-
-## [9][[AskJS] Javascript projects ideas](https://www.reddit.com/r/javascript/comments/hxhoa4/askjs_javascript_projects_ideas/)
-- url: https://www.reddit.com/r/javascript/comments/hxhoa4/askjs_javascript_projects_ideas/
----
- Hey do you guys have any ideas of projects to improve in Javascript? I've found that learning through projects is a lot more efficient and fun than watching youtube videos. Here is what I've done so far :)
-
-\-Meme generator (Pulls most popular memes from a subreddit)
-
-\-Advanced calculator, has allowed me to practice my UI
-
-\-Login System, I wanted to learn how that logins on websites worked
-
-Have you guys worked on any exciting projects, I'm really interested in hearing about them!
-## [10][NodeJS on the Frontend](https://www.reddit.com/r/javascript/comments/hx77qj/nodejs_on_the_frontend/)
-- url: https://zach.codes/es6-import-nodejs-on-the-frontend/
----
-
-## [11][Understanding JavaScript Closure with examples](https://www.reddit.com/r/javascript/comments/hxk3yj/understanding_javascript_closure_with_examples/)
-- url: https://blog.greenroots.info/understanding-javascript-closure-with-example-ckd17fci5001iw5s1fju4f8r0
----
-
-## [12][small and powerful nutrient manager](https://www.reddit.com/r/javascript/comments/hxk2fp/small_and_powerful_nutrient_manager/)
-- url: https://github.com/jedzoka/plantiet
+## [12][Running Electron on PinePhone](https://www.reddit.com/r/javascript/comments/hxs67i/running_electron_on_pinephone/)
+- url: https://github.com/richardanaya/pinephone-electron-starter/
 ---
 

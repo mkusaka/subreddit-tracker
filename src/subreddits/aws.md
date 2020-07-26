@@ -1,158 +1,49 @@
 # aws
-## [1][Longer Console Sessions](https://www.reddit.com/r/aws/comments/hxbq9i/longer_console_sessions/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/07/now-gain-longer-access-to-your-aws-resources-when-switching-roles-in-the-aws-management-console/
+## [1][The AWS bill heard around the world](https://www.reddit.com/r/aws/comments/hy61bb/the_aws_bill_heard_around_the_world/)
+- url: https://chrisshort.net/the-aws-bill-heard-around-the-world/
 ---
 
-## [2][HTTP API microservice separation](https://www.reddit.com/r/aws/comments/hxlpu8/http_api_microservice_separation/)
-- url: https://www.reddit.com/r/aws/comments/hxlpu8/http_api_microservice_separation/
+## [2][What is the main utility of Amazon Sagemaker?](https://www.reddit.com/r/aws/comments/hy4pjb/what_is_the_main_utility_of_amazon_sagemaker/)
+- url: https://www.reddit.com/r/aws/comments/hy4pjb/what_is_the_main_utility_of_amazon_sagemaker/
 ---
-How are folks managing things like resource-ownership for microservices with the new HTTP APIs? As far as I can tell it is fairly simple to allow each microservice to maintain control over its own routes/integrations/etc. The main problem is that I haven't been able to work out is how to enable route-level throttling since, as far as I can tell, it needs to be defined on the stage rather than the route itself.
-
-The only solution I can come up with is having each service export a list of routes and their desired throttling limits, then importing all of them into a service that auto-updates the stage as needed.
-## [3][How to video stream for a month for less than $10](https://www.reddit.com/r/aws/comments/hxh6yl/how_to_video_stream_for_a_month_for_less_than_10/)
-- url: https://www.reddit.com/r/aws/comments/hxh6yl/how_to_video_stream_for_a_month_for_less_than_10/
----
-I am trying to understand how can people video stream HD for a whole month for less than $10. I understand Netflix uses AWS but wouldnt their EC2 costs be huge for video streaming.
-
-How is it made efficient ?
-## [4][AWS new private IP address inside my bash script](https://www.reddit.com/r/aws/comments/hxk1yw/aws_new_private_ip_address_inside_my_bash_script/)
-- url: https://www.reddit.com/r/aws/comments/hxk1yw/aws_new_private_ip_address_inside_my_bash_script/
----
-Hello guys,
-
-I am trying to create a GHE (GitHub Enterprise) inside AWS and once it's up and running I need to perform a few curls to install the license, settings.json file and my public key.
-
-How can I grab the IP of this new instance during "building" time, and use this IP inside my curls commands?
-
-packer.json file
-
-[https://gist.github.com/rmarcandier/64786b129b0e936042961f2007879a78](https://gist.github.com/rmarcandier/64786b129b0e936042961f2007879a78)
-
-conf.sh script
-
-[https://gist.github.com/rmarcandier/9e412169656b7b17f154251c4c8bf338](https://gist.github.com/rmarcandier/9e412169656b7b17f154251c4c8bf338)
-
-Thank you in advance
-
-Regards
-
-RG
-## [5][Does a dynamodb scan return items in any particular order?](https://www.reddit.com/r/aws/comments/hxa1pr/does_a_dynamodb_scan_return_items_in_any/)
-- url: https://www.reddit.com/r/aws/comments/hxa1pr/does_a_dynamodb_scan_return_items_in_any/
----
-In particular say I begin scanning my table, is it guaranteed that items written to the table mid-scan will also be returned? For instance, if the primary key were integers, and it returned in sorted batches, then the first batch might return the entries 1,2,5,7,11,13 where 13 is the LastEvaluatedKey. While this is happening say that 12 is written to the table, under such an ordering some newly written entries may be missed, while others would be included. This question isn't application specific, but more out of curiosity since I don't see much written about it in the aws docs.
-## [6][My Lambda Function is not inforcing CORS.](https://www.reddit.com/r/aws/comments/hxjot6/my_lambda_function_is_not_inforcing_cors/)
-- url: https://www.reddit.com/r/aws/comments/hxjot6/my_lambda_function_is_not_inforcing_cors/
----
-I have already put the CORS headers and body in my Lambda function code however it doesn't seem to work, I still have to use a CORS remover/blocker to view my Javascript code in the console.
-
-Also in my Lambda function results it shows the headers,body and status code which I don't need for my script, does anyone know how to fix all of this and get my CORS to work? I just want the number to show the "357".
-Do i have to add a wild card?
-
-    {
-    "statusCode": 200,
-    "headers": {
-    "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": "*",
-    "Allow": "GET, OPTIONS, POST",
-    "Access-Control-Allow-Methods": "GET, OPTIONS, POST",
-    "Access-Control-Allow-Headers": "*"
-    },
-    "body": "\"357\""
-    }
-
-
-----------
-
-    import boto3
-    import json
-    def lambda_handler(event, context):
-    dynamodb = boto3.client('dynamodb')
-    response = dynamodb.update_item(
-    TableName='resumecounter', 
-    Key={
-        'url':{'S': "etc.com"}
-    },
-    UpdateExpression='SET visits = visits + :inc',
-    ExpressionAttributeValues={
-        ':inc': {'N': '1'}
-    },
-    ReturnValues="UPDATED_NEW"
-    )
-
-    print("UPDATING ITEM")
-    response = {
-    'statusCode': 200,
-    'headers': {
-        "Content-Type" : "application/json",
-        "Access-Control-Allow-Origin" : "*",
-        "Allow" : "GET, OPTIONS, POST",
-        "Access-Control-Allow-Methods" : "GET, OPTIONS, POST",
-        "Access-Control-Allow-Headers" : "*"
-    },
-    'body': json.dumps(response["Attributes"]["visits"]["N"])
-    }
-     return response
-## [7][Is my S3 Bucket secure from public access?](https://www.reddit.com/r/aws/comments/hxj1fq/is_my_s3_bucket_secure_from_public_access/)
-- url: https://www.reddit.com/r/aws/comments/hxj1fq/is_my_s3_bucket_secure_from_public_access/
----
-I have my mongodb backed up to my S3 Bucket. Is my data reasonably secure? 
-
-\- I have no CORS configurations defined. All Public Access is blocked.
-
-Here is my S3 bucket policy: 
-
-{
-
-"Version": "2012-10-17",
-
-"Id": "Policy",
-
-"Statement": \[
-
-{
-
-"Sid": "statement",
-
-"Effect": "Allow",
-
-"Principal": {
-
-"AWS": "arn:aws:iam::xxxxxxxxxxxx:user/s3-bucket"
-
-},
-
-"Action": "s3:\*",
-
-"Resource": \[
-
-"arn:aws:s3:::my-backups/\*",
-
-"arn:aws:s3:::my-backups"
-
-\]
-
-}
-
-\]
-
-}
-
-I believe I need my policies as such to allow my Iam user to run the AWS sync command. 
-
-&amp;#x200B;
-
-  
-Let me know if all is good or its full of obvious flaws.
-## [8][Api gateway returning cors error instead of token expired](https://www.reddit.com/r/aws/comments/hxitbk/api_gateway_returning_cors_error_instead_of_token/)
-- url: https://www.reddit.com/r/aws/comments/hxitbk/api_gateway_returning_cors_error_instead_of_token/
----
-I am working on a project that is configured with cognito for user authentication.usually after login , the APIs return responses without failure (refreshing token has not been configured yet). After the token expires , though each api call from browser is returning cors instead of token expired error. Invoking in postman gives the correct error that the incoming token has expired.please advice wat I am missing here
-## [9][HTTP web proxy for browser (IP:port) - cheapest (on-demand?) AWS solution?](https://www.reddit.com/r/aws/comments/hxl168/http_web_proxy_for_browser_ipport_cheapest/)
-- url: https://www.reddit.com/r/aws/comments/hxl168/http_web_proxy_for_browser_ipport_cheapest/
----
-For example, to bypass geo-blocking.
-## [10][Experience with choosing AWS Glue as an ETL platform](https://www.reddit.com/r/aws/comments/hx8i6s/experience_with_choosing_aws_glue_as_an_etl/)
-- url: https://www.reddit.com/r/dataengineering/comments/hx8h1j/experience_with_choosing_aws_glue_as_an_etl/
+I've never done any deployment of ML models online? So what would you say is the main reason people use Sagemaker? Is the processing capacity or the ability to serve to algorithm to other users?
+## [3][fzfaws: Using fuzzy finder to perform AWS operations on the command line](https://www.reddit.com/r/aws/comments/hy6vq7/fzfaws_using_fuzzy_finder_to_perform_aws/)
+- url: https://github.com/kazhala/fzf.aws
 ---
 
+## [4][Can I use an AWS free tier Windows Server as a domain controller for my PCs at home?](https://www.reddit.com/r/aws/comments/hy6m5i/can_i_use_an_aws_free_tier_windows_server_as_a/)
+- url: https://www.reddit.com/r/aws/comments/hy6m5i/can_i_use_an_aws_free_tier_windows_server_as_a/
+---
+I’m just playing around with AWS... Is it possible to use a cloud server as a domain controller? I’ve spun up the server and configured AD but don’t know where to go from here. I don’t even know if it’s possible. Help?
+## [5][AWS Fundamentals Speedrun](https://www.reddit.com/r/aws/comments/hxqxb0/aws_fundamentals_speedrun/)
+- url: https://techradicals.wordpress.com/2020/07/25/aws-fundamentals-speedrun/
+---
+
+## [6][Second U2F key for root user?](https://www.reddit.com/r/aws/comments/hxr2ba/second_u2f_key_for_root_user/)
+- url: https://www.reddit.com/r/aws/comments/hxr2ba/second_u2f_key_for_root_user/
+---
+I would like to register a second U2F key as a backup for my root user account.  I don't see a way to do this without removing my existing key through the "Manage" option.  Backup keys are recommended in case the primary U2F key fails.  Is there a way to do this?
+## [7][Not able to access static folder in django project using apache2 server in ec2 instance](https://www.reddit.com/r/aws/comments/hy4ify/not_able_to_access_static_folder_in_django/)
+- url: https://www.reddit.com/r/aws/comments/hy4ify/not_able_to_access_static_folder_in_django/
+---
+So i was setting up the django project on aws ec2 instance with the apache2 server everything was working until I tried to upload something to the static folder I checked the aws logs and it says permission denied /static I searched thoroughly on the stackoverflow forum and nothing was able to resolve the issue then I read somewhere that in django if we keep debug true the static folder is handled by the django itself I tried turning it off and now there is no permission denied error in apache error logs but the website is giving a server error and there is nothing uploaded in the static folder too. It is working perfectly in the local development or when I run it locally on a port in aws but when I use apache it is showing this error . I am not able to pinpoint the error or how to proceed from here if someone can get me to the right direction it will be very helpful
+## [8][AWS Lex bot on Zoom ??](https://www.reddit.com/r/aws/comments/hxw6tu/aws_lex_bot_on_zoom/)
+- url: https://www.reddit.com/r/aws/comments/hxw6tu/aws_lex_bot_on_zoom/
+---
+Hello everyone, I am currently researching whether I can create an AWS Lex chat Bot and deploy it on Zoom? Wondering if anyone has been able to do this or if it’s possible at all? I did read their developer guide and it shows the only deployment options as mobile using their aws sdk, Facebook Messenger, Slack, and Twilio. 
+
+Thanks in advance, happy to have joined the community 😊
+## [9][Python Lambda Deployment Package](https://www.reddit.com/r/aws/comments/hxpc6t/python_lambda_deployment_package/)
+- url: https://www.reddit.com/r/aws/comments/hxpc6t/python_lambda_deployment_package/
+---
+I was looking to get some information about deployment packages and AWS Lambda. I'm looking at the following Github Repo:   
+
+
+[https://github.com/alexa/skill-sample-python-audio-player/tree/master/SingleStream](https://github.com/alexa/skill-sample-python-audio-player/tree/master/SingleStream?fbclid=IwAR3Q9HAeV4UpsSd5CxNOC-8P1l4wCICGUd14gusOIY9ZNKptQTMeUW7BZM0)  
+
+
+The instructions are clear, you need to modify certain parameters and eventually you need to create a deployment package for Lambda. I'm wondering which files need to be contained within the deployment package out of the repo? Clearly you need to put in the lambda function and the site packages, but what about the other files within the repo?
+## [10][lambda@edge function invocation location ?](https://www.reddit.com/r/aws/comments/hxszs7/lambdaedge_function_invocation_location/)
+- url: https://www.reddit.com/r/aws/comments/hxszs7/lambdaedge_function_invocation_location/
+---
+According to [cloudfront documentation](https://aws.amazon.com/cloudfront/features/), lambda@edge is triggered near the user but doesn't mention if it is invocated at an edge location or a regional edge cache location. This information is a prerequisite for the design of my solution. Can anybody help me out ?

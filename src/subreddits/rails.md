@@ -1,25 +1,5 @@
 # rails
-## [1][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/hrnm2o/personal_projects_show_off_your_own_project_andor/)
-- url: https://www.reddit.com/r/rails/comments/hrnm2o/personal_projects_show_off_your_own_project_andor/
----
-In this thread you can showcase your personal pet project to other redditors.
-
-Need help with a specific problem or just wanna have some extra eyeballs on your code? Ask away!
-
-A suggested format to get you started:
-
-1. **Name of your project**
-2. **A short description**
-3. **Application stack**
-4. **Link to Live app**
-5. **Link to GitHub**
-6. **You experience level**
-7. **Other information or areas that you would like advice on**
-
- 
-
-^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Gimme Gems Thursdays - Found an awesome new gem? Post it here!](https://www.reddit.com/r/rails/comments/hwehh6/gimme_gems_thursdays_found_an_awesome_new_gem/)
+## [1][Gimme Gems Thursdays - Found an awesome new gem? Post it here!](https://www.reddit.com/r/rails/comments/hwehh6/gimme_gems_thursdays_found_an_awesome_new_gem/)
 - url: https://www.reddit.com/r/rails/comments/hwehh6/gimme_gems_thursdays_found_an_awesome_new_gem/
 ---
 Please use this thread to discuss **cool** but relatively **unknown** gems you've found.
@@ -27,7 +7,76 @@ Please use this thread to discuss **cool** but relatively **unknown** gems you'v
 You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
 Please include a **description** and a **link** to the gem's homepage in your comment.
-## [3][What's the 'Rails' way of writing clean code (and adhering to the single responsibility principle)?](https://www.reddit.com/r/rails/comments/hxl330/whats_the_rails_way_of_writing_clean_code_and/)
+## [2][Where did you learn Stimulus and Stimulus Reflex?](https://www.reddit.com/r/rails/comments/hy3dwd/where_did_you_learn_stimulus_and_stimulus_reflex/)
+- url: https://www.reddit.com/r/rails/comments/hy3dwd/where_did_you_learn_stimulus_and_stimulus_reflex/
+---
+
+## [3][Platform to learn Ruby on rails](https://www.reddit.com/r/rails/comments/hy6iuz/platform_to_learn_ruby_on_rails/)
+- url: https://www.reddit.com/r/rails/comments/hy6iuz/platform_to_learn_ruby_on_rails/
+---
+Hello everyone ,
+
+I am returning to RoR world again , I  want to know if thee a platform  for RoR  like symfonycast or laracast for Symfony and Laravel .
+
+Thank you in advance
+## [4][How to build a book tracker in rails!](https://www.reddit.com/r/rails/comments/hxx6s6/how_to_build_a_book_tracker_in_rails/)
+- url: https://www.reddit.com/r/rails/comments/hxx6s6/how_to_build_a_book_tracker_in_rails/
+---
+Hey guys , this series helps you understand the basics of rails through an interesting project. It takes nothing for granted, teaching you all the nitty gritty details. 
+
+Enjoy.
+
+ [https://www.youtube.com/watch?v=uEwu7D5G-hU&amp;list=PLB4RncStK2LUbl9VWLQAHznLJrYz2YMB4](https://www.youtube.com/watch?v=uEwu7D5G-hU&amp;list=PLB4RncStK2LUbl9VWLQAHznLJrYz2YMB4)
+## [5][Starting a monthly newsletter for cool stuff I encounter on Rails, React and Graphql.](https://www.reddit.com/r/rails/comments/hxp9nm/starting_a_monthly_newsletter_for_cool_stuff_i/)
+- url: https://www.reddit.com/r/rails/comments/hxp9nm/starting_a_monthly_newsletter_for_cool_stuff_i/
+---
+Starting a monthly newsletter on Ruby on Rails, React and GraphQL developers to read about some cool stuff happening in the community.
+
+In a month we come across a lot cool stuff happening in the community, learn new things and contribute to the open-source world and newsletters is the best way to share some of those finding/blogs/videos.
+
+This newsletter would consist of the following things:
+
+* Dev Joke
+* My Blogs.
+* Reading/watching list.
+* Open-source libraries/contributions.
+* Rails changelog.
+* Watching/Reading/Reviews.
+
+If you'd like to read my monthly newsletter. Please do subscribe here [https://buttondown.email/abhaynikam](https://buttondown.email/abhaynikam)
+## [6][Rails equivalent of Django F() Objects?](https://www.reddit.com/r/rails/comments/hxx6ee/rails_equivalent_of_django_f_objects/)
+- url: https://www.reddit.com/r/rails/comments/hxx6ee/rails_equivalent_of_django_f_objects/
+---
+I’m wondering if there’s a library for rails or a rails native implementation of https://docs.djangoproject.com/en/3.0/ref/models/expressions/#f-expressions
+
+EDIT:
+Essentially I’m wanting to increment the number value of a field/value by 1 on multiple model instances.
+## [7][How to use Rails in the server side to make a Web Game](https://www.reddit.com/r/rails/comments/hxuy62/how_to_use_rails_in_the_server_side_to_make_a_web/)
+- url: https://www.reddit.com/r/rails/comments/hxuy62/how_to_use_rails_in_the_server_side_to_make_a_web/
+---
+I'm trying to make a webgame just for fun and start to learn how to make websites, i understand the basic things: HTML is the website, CSS is for make it very cool and Javascript is for animations, process data, etc. Well a simple summary, let me know if i have some bad concept please.
+
+Now i don't understand how to run code(a simple bucle) in the server side, maybe i need a extended library but i would like to use RoR only. I would like if someone guide me for a good simple way to do what i need.
+
+I use RoR because programming is my hobby and i've only done things in Ruby, i have used socket for Ruby to make a simple MMORPG and works fine, that's my experience.
+
+Something to send messages to clients from server side(gameloop) and using javascript to apply the changes in client side.
+## [8][Advice on using GraphQL for an admin dashboard](https://www.reddit.com/r/rails/comments/hxqva1/advice_on_using_graphql_for_an_admin_dashboard/)
+- url: https://www.reddit.com/r/rails/comments/hxqva1/advice_on_using_graphql_for_an_admin_dashboard/
+---
+The app at my company is a Rails REST API. Recently we've started working on a standalone admin dashboard, and I'm trying to figure out the best way to architect it. Each of our clients has a separate server, so this admin dashboard will be hitting many different servers (not sure if that's relevant).
+
+I've read a bit about GraphQL, and think it might offer a unique solution for us here. Rather than having to update the controllers on the API side every time a new admin task is required, would GraphQL allow us to change the requirements from the admin dashboard side? I've never used it and just want to make sure that I have the right idea about it before digging in. From what I've read, it sounds like we can have a very wide-open POST endpoint that will allow whichever updates are necessary, which sounds like a great solution for an admin dashboard.
+
+Because we don't already use it, do you think it would add enough benefit for this use-case, or should we just stick with REST controllers?
+
+We're planning on using Vue to build out the frontend for this dashboard, and if we use GraphQL, I suppose we'll be using Apollo.  
+
+
+EDIT:
+
+Thanks for the advice. It sounds like GraphQL isn't going to be much benefit in this case.
+## [9][What's the 'Rails' way of writing clean code (and adhering to the single responsibility principle)?](https://www.reddit.com/r/rails/comments/hxl330/whats_the_rails_way_of_writing_clean_code_and/)
 - url: https://www.reddit.com/r/rails/comments/hxl330/whats_the_rails_way_of_writing_clean_code_and/
 ---
 I just finished the [lesson 1 of writing clean code by "Uncle Bob"](https://www.youtube.com/watch?v=7EmboKQH8lM), and my biggest takeaway was the single responsibility principle — that "a function does one thing only" — and "polite code": all lines in a function should be on the same abstraction level, and they should call functions on a lower abstraction level, going all the way down to implementation.
@@ -37,7 +86,54 @@ It's like newspaper: you read the heading to see what it's about; if you're inte
 His way of avoiding thousands of little functions as a result of this was to put everything into its own class, and to find those sometimes-non-obvious classes. In a Java-like language, that makes sense, but should we do the same in Ruby on Rails?
 
 I'm a beginner at Rails, but from what I can see it has a pretty strict structure ("convention over configuration") of MVC, where each "C" has several actions where the code goes. Should we split that code into other classes and compose everything inside the action? Or is there some other, better, more "Rails" way of doing things?
-## [4][Ruby on Rails and IoT](https://www.reddit.com/r/rails/comments/hxhhti/ruby_on_rails_and_iot/)
+## [10][Scope not working now I have migrated address data to a separate model](https://www.reddit.com/r/rails/comments/hxq92n/scope_not_working_now_i_have_migrated_address/)
+- url: https://www.reddit.com/r/rails/comments/hxq92n/scope_not_working_now_i_have_migrated_address/
+---
+Hello,  
+
+
+I used to have just one model, `Venue`, which had an attribute called `address`, as well as a `longitude` and a `latitude` value.  
+
+
+But I decided to move all this to a separate model, `Address`, which `belongs_to :venue`.  
+
+
+Now, I had a scope set up for my old Venue model, which is now broken.  
+
+
+Here's the test for it:
+
+    it 'returns an ActiveRecord::Relation of venues which have addresses near given location' do
+      venue = create(:venue, user: create(:user) )
+      address = create(:address, venue: ven)
+            
+      expect(Venue.location("UK")).to eq([venue])
+    end
+
+  
+Here's what the scope used to look like:
+
+    scope :location, -&gt; location { near(location) }
+
+And here's  where I'm up to writing the new scope:
+
+    scope :location, -&gt; location { where(Address.near(location)) }
+
+I'm getting the following error when run the test for my new scope:
+
+    Unsupported argument type: #&lt;Address::ActiveRecord_Relation:0x00007f95df7bbb60&gt; (Address::ActiveRecord_Relation)
+
+  
+Now, I think I know why this is happening, because I actually want my scope to return all the venues which have associated addresses which return from the `.near(location)` search.
+
+But I'm actually getting the `Address` instances themselves returned.  
+
+
+So my question is, how do I fix this so that I'm getting `Venues` returned and not `Addresses` (assuming this is my problem). If that's not what the issue is, any other help would be appreciated.  
+
+
+Thanks.
+## [11][Ruby on Rails and IoT](https://www.reddit.com/r/rails/comments/hxhhti/ruby_on_rails_and_iot/)
 - url: https://www.reddit.com/r/rails/comments/hxhhti/ruby_on_rails_and_iot/
 ---
 Hello Everyone,
@@ -47,234 +143,3 @@ I'm new to ruby on rails and I'm trying to build a web app that lets me subscrib
 Notes: What I've found is that for ruby there are gems for mqtt. But I'm not sure how to integrate with the web page. I've already sent a payload using irb and it was succesful. This is the repo I'm using: [njh/ruby-mqtt](https://github.com/njh/ruby-mqtt)
 
 Thanks.
-## [5][Having issues with adding gallery to a listing website am working on for some time now. Rails 6. Version](https://www.reddit.com/r/rails/comments/hxmsb4/having_issues_with_adding_gallery_to_a_listing/)
-- url: https://www.reddit.com/r/rails/comments/hxmsb4/having_issues_with_adding_gallery_to_a_listing/
----
-Please ur opinions will be of a great help to me.
-## [6][How to Ignore raise error sidekiq worker | Capybara](https://www.reddit.com/r/rails/comments/hx8u87/how_to_ignore_raise_error_sidekiq_worker_capybara/)
-- url: https://www.reddit.com/r/rails/comments/hx8u87/how_to_ignore_raise_error_sidekiq_worker_capybara/
----
-I am pretty new to rails and my team recently moved to use sidekiq, I'm currently having troubles trying to create a Worker that retries upon a given condition (fails) and retrying it.
-
-Calling a worker with this instruction within model
-
-    CoolClassJob.perform_async(...) 
-
-I'm using a worker with a code similar to this:
-
-    class CoolClassJob   
-      include Sidekiq::Worker   
-        sidekiq_options queue: "payment", retry: 5    
-        sidekiq_retry_in do |count| 
-          10 
-        end
-     
-        def perform() 
-          ...         
-          whatever = {...} 
-          if whatever.status == 'successful'           
-            thisCoolFunction                  # successfully ends job 
-          elsif whatever.status == 'failed'           
-            anotherCoolFunction               # successfully ends job 
-          else whatever.pending?              # I want to retry if it falls in this condition since it is "waiting" for another task to complete. 
-            raise 'We are trying again' 
-          end 
-          ... 
-        end 
-      ... 
-      end
-    ... 
-
-I tried with
-
-    begin raise 'We are trying again!' rescue nil end
-
-But when I run my tests, I get this error:
-
-    Failure/Error: raise 'We are trying again!' RuntimeError: 'We are trying again!' ...
-
-Which of course, makes sense to me, since I'm raising the error, I tried searching but wasn't able to come up with a solution. I'm wondering whether its able toa) retry again without raising an error orb) tell Capybara (rspec) to keep trying without throwing an error.
-
-I posted the question here: [https://stackoverflow.com/questions/63068356/rails-how-to-ignore-raise-error-sidekiq-worker-capybara](https://stackoverflow.com/questions/63068356/rails-how-to-ignore-raise-error-sidekiq-worker-capybara)
-## [7][config.active_record.default_timezone = :local in rails 5.2.4 not working](https://www.reddit.com/r/rails/comments/hx1ca3/configactive_recorddefault_timezone_local_in/)
-- url: https://www.reddit.com/r/rails/comments/hx1ca3/configactive_recorddefault_timezone_local_in/
----
-I'd like to set all records in my database to my local timezone. I have had     
-
-    config.active_record.default_timezone = :local
-    
-    in my application.rb for months, and it doesn't work. Does anybody have a solution?
-## [8][Last used rails version 3.2](https://www.reddit.com/r/rails/comments/hwnyuf/last_used_rails_version_32/)
-- url: https://www.reddit.com/r/rails/comments/hwnyuf/last_used_rails_version_32/
----
-ending early 2013
-
-what's the most important thing to know about version 6 compared to 3.2?
-
-bonus question : I did notice people are charging for gems,  which is new.  How has that gone?
-## [9][What's the difference between stimulus_reflex and stimulus.js?](https://www.reddit.com/r/rails/comments/hwm4et/whats_the_difference_between_stimulus_reflex_and/)
-- url: https://www.reddit.com/r/rails/comments/hwm4et/whats_the_difference_between_stimulus_reflex_and/
----
-Hello, I am kinda new to the rails world, and I am wondering what is the difference between  stimulus\_reflex and stimulus.js? since they're doing the same job.
-## [10][Server Issue Serving](https://www.reddit.com/r/rails/comments/hwmmbs/server_issue_serving/)
-- url: https://www.reddit.com/r/rails/comments/hwmmbs/server_issue_serving/
----
-I am in dire need of help, as I am about to pull out what is left of my hair. I am trying to get my new server up and running, and I realize this may not be the right place for this post, but I am hopefully at least someone can point me in the right direction.
-
-I have transferred my app to my server, still working on getting my deployment working properly, but that is an issue for another day. Currently, when I attempt to `curl` `127.0.1.1` I get the following:
-
-`403 Forbidden`
-
-`Forbidden`
-
-`You don't have permission to access this resource.`
-
-`Apache/2.4.38 (Debian) Server at` `127.0.1.1` `Port 80`
-
-&amp;#x200B;
-
-I am at my wits end with this server! My apache2/sites-available/app.conf
-
-`&lt;VirtualHost *:80&gt;`
-
-    `DocumentRoot /var/www/app/releases/current/`
-
-&amp;#x200B;
-
-    `&lt;Location /&gt;`
-
-`Require all granted`
-
-    `&lt;/Location&gt;`	
-
-`&lt;/VirtualHost&gt;`
-
-I am currently only trying to access the site via it's IP address as it will be taking over for an older server. I'll happily add anything that might be needed. Please reddit, you are my only hope!
-
-&amp;#x200B;
-
-Apache error.log
-
-`[Thu Jul 23 15:34:50.275696 2020] [autoindex:error] [pid 7964:tid 140662913619712] [client` [`127.0.0.1:50404`](https://127.0.0.1:50404)`] AH01276: Cannot serve directory /var/www/app/releases/current/: No matching DirectoryIndex (index.html,index.cgi,`[`index.pl`](https://index.pl)`,index.php,index.xhtml,index.htm) found, and server-generated directory index forbidden by Options directive`
-
-&amp;#x200B;
-
-Apache.conf
-
-&amp;#x200B;
-
-`# Global configuration`
-
-`DefaultRuntimeDir ${APACHE_RUN_DIR}`
-
-`PidFile ${APACHE_PID_FILE}`
-
-`Timeout 300`
-
-`KeepAlive On`
-
-`MaxKeepAliveRequests 100`
-
-`KeepAliveTimeout 5`
-
-`User ${APACHE_RUN_USER}`
-
-`Group ${APACHE_RUN_GROUP}`
-
-`HostnameLookups Off`
-
-`ErrorLog ${APACHE_LOG_DIR}/error.log`
-
-`LogLevel warn`
-
-`IncludeOptional mods-enabled/*.load`
-
-`IncludeOptional mods-enabled/*.conf`
-
-`Include ports.conf`
-
-`&lt;Directory /&gt;`
-
-	`Options FollowSymLinks`
-
-	`AllowOverride None`
-
-	`Require all denied`
-
-`&lt;/Directory&gt;`
-
-`&lt;Directory /usr/share&gt;`
-
-	`AllowOverride None`
-
-	`Require all granted`
-
-`&lt;/Directory&gt;`
-
-`&lt;Directory /var/www/&gt;`
-
-	`Options FollowSymLinks`
-
-	`AllowOverride None`
-
-	`Require all granted`
-
-`&lt;/Directory&gt;`
-
-`&lt;Directory /var/www/app&gt;`
-
-	`Options FollowSymLinks`
-
-	`AllowOverride None`
-
-	`Require all granted`
-
-`&lt;/Directory&gt;`
-
-`AccessFileName .htaccess`
-
-`&lt;FilesMatch "^\.ht"&gt;`
-
-	`Require all denied`
-
-`&lt;/FilesMatch&gt;`
-
-`LogFormat "%v:%p %h %l %u %t \"%r\" %&gt;s %O \"%{Referer}i\" \"%{User-Agent}i\"" vhost_combined`
-
-`LogFormat "%h %l %u %t \"%r\" %&gt;s %O \"%{Referer}i\" \"%{User-Agent}i\"" combined`
-
-`LogFormat "%h %l %u %t \"%r\" %&gt;s %O" common`
-
-`LogFormat "%{Referer}i -&gt; %U" referer`
-
-`LogFormat "%{User-agent}i" agent`
-
-`IncludeOptional conf-enabled/*.conf`
-
-`IncludeOptional sites-enabled/*.conf`
-## [11][Good templates/examples for action mailer email templates?](https://www.reddit.com/r/rails/comments/hwgd1t/good_templatesexamples_for_action_mailer_email/)
-- url: https://www.reddit.com/r/rails/comments/hwgd1t/good_templatesexamples_for_action_mailer_email/
----
-Anyone have resources for nice/good-looking action mailer email templates? Thinking one that incorporates a logo, has social links at the bottom, centered text etc. Any/all resources are appreciated.
-## [12][Discovered SimpleCov, what can I do with it ?](https://www.reddit.com/r/rails/comments/hwf6um/discovered_simplecov_what_can_i_do_with_it/)
-- url: https://www.reddit.com/r/rails/comments/hwf6um/discovered_simplecov_what_can_i_do_with_it/
----
-Hi, I just discovered [SimpleCov](https://github.com/colszowka/simplecov) and looove the html output and the conclusions we can draw with it.
-
-However, I can't really find a way to use it effectively. Thus I wonder, how do you use it (if you do of course) and what for ? 
-
-&amp;#x200B;
-
-I learnt about SimpleCov looking around Skunk that uses it at some point; this is IMO a great usage of SimpleCov.
-
-&amp;#x200B;
-
-I'd love a regular check of it on one of our projects that needs to be really well covered, maybe looking around Github action ? Anyway, just wanted to know if anyone uses it and what for. 
-
-&amp;#x200B;
-
-Thanks ! 
-
-      _      _      _
-    &gt;(.)__ &lt;(.)__ =(.)__
-     (___/  (___/  (___/

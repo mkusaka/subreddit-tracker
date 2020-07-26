@@ -56,65 +56,84 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][BrainFuckStudio written on C++ using Qt](https://www.reddit.com/r/cpp/comments/hxkaep/brainfuckstudio_written_on_c_using_qt/)
-- url: https://www.reddit.com/r/cpp/comments/hxkaep/brainfuckstudio_written_on_c_using_qt/
----
-Pretty fast &amp; useful app for BF code writing &amp; executing
-
-Supports working with files, personal interface customization, working with interpreter and etc.
-
-[https://github.com/Djivs/BrainFuckStudio](https://github.com/Djivs/BrainFuckStudio)
-
-That's my first post here, so I'm sorry if I did something wrong
-## [3][How do you contribute to MSVC STL?](https://www.reddit.com/r/cpp/comments/hx764k/how_do_you_contribute_to_msvc_stl/)
-- url: https://www.reddit.com/r/cpp/comments/hx764k/how_do_you_contribute_to_msvc_stl/
----
-I recently ran into a bug in MSVC's &lt;random&gt; implementation:
-
-[https://github.com/microsoft/STL/issues/1084](https://github.com/microsoft/STL/issues/1084)
-
-I know how to fix their implementation, but was a bit unclear on the logistics of how to deliver the fix to them. Specifically:
-
-1. What branch do I make a pull request into, `master`? How does Microsoft get these changes into the desired versions (15.9 vs 16.6)? I don't see any specific branches or tags that indicate specific MSVC versions.
-2. I am used to the workflow (in our codebases) that every bug fix should come along with new unit tests to prevent the bug from ever regressing. Where is the appropriate place to add such unit tests, `std` or `libcxx`?
-
-Not sure if /u/STL, another Microsoft dev, or anyone else can advise on this process?
-## [4][C++ on Sea 2020 video: "Structured bindings uncovered" - Dawid Zalewski](https://www.reddit.com/r/cpp/comments/hxmhsj/c_on_sea_2020_video_structured_bindings_uncovered/)
-- url: https://www.youtube.com/watch?v=uZCvz-E1heA
+## [2][C++ on Sea 2020 video - "Deep C Diving - Fast and Scalable Text Interfaces at the Bottom" - JeanHeyd Meneide](https://www.reddit.com/r/cpp/comments/hy3yzc/c_on_sea_2020_video_deep_c_diving_fast_and/)
+- url: https://www.youtube.com/watch?v=X-FLGsa8LVc
 ---
 
-## [5][Embedding lightweight scripting into C++: Lua vs. QuickJS](https://www.reddit.com/r/cpp/comments/hxmctr/embedding_lightweight_scripting_into_c_lua_vs/)
-- url: https://www.reddit.com/r/cpp/comments/hxmctr/embedding_lightweight_scripting_into_c_lua_vs/
+## [3][subprocess library for c++](https://www.reddit.com/r/cpp/comments/hxqqqu/subprocess_library_for_c/)
+- url: https://www.reddit.com/r/cpp/comments/hxqqqu/subprocess_library_for_c/
 ---
-Looking for an advice from those who have experience in embedding scripting langauges into C++, e.g., to provide app API. In my case, APIs are mostly for processing of unicode texts (including regexps usage for searching and replacements). My app is rather small, so I don't think I want to embed python or V8 javascript engine, as they will bloat it. Thus far, my choices are Lua (specifically, via [sol2](https://github.com/ThePhD/sol2)) and [QuickJS](https://bellard.org/quickjs/), developed a year ago by Fabrice Bellard; and claimed to be very efficient. Both sol2 and QuickJS are designed specificaly for embedding, both are quite lightweight and seem to yield comparable size overhead for the host app. Lua has no standard regexp, but that's not a big problem, as I can expose regexp-related functionaly through the host interface (e.g., using regexps from C++ standard library). What really interests me is how they would compare in performance when used as callback functions from the host app to crunch string data.
+I want to share [subprocess](https://github.com/benman64/subprocess) library. Inspired by python subprocess api. If you have c++20 you can do like so
 
-Based on your knowledge and/or experience, given these two options (Lua vs QuickJS), which one would you choose for an embedded API interface in general, and for string manipulations in particular?
-## [6][Smart Pointers: When and Why? (walk-through video with motivational example)](https://www.reddit.com/r/cpp/comments/hwyhc8/smart_pointers_when_and_why_walkthrough_video/)
-- url: https://www.youtube.com/watch?v=Zt0zUcDHi7I
+&amp;#x200B;
+
+    // capture output. You can do this syntax if you have C++20
+    CompletedProcess process = subprocess::run({"echo", "hello", "world"}, {
+        .cout = PipeOption::pipe,
+        // make true to throw exception
+        .check = false
+    });
+
+or c++14+
+
+    // simplest capture output.
+    CompletedProcess process = subprocess::RunBuilder({"echo", "hello", "world"})
+        .cout(PipeOption::pipe).run();
+
+This is the best I could come up with given c++ is not python. I've been using it for a while in my personal projects and it's been a treat so far. I've grown to accept that it's a bit more wordy than python. API supports advanced techniques like piping one process to another. Works on Windows, Linux, &amp; Mac.
+
+Some notes:
+
+* Because stdout is a macro in C/C++, cout/cin/cerr terms are used instead.
+* on mac/linux posix API is used for launching processes. It does have issues but should be fine for most applications.
+* C++ threading is used to avoid deadlock conditions when necessary. And to help facilitate some convenience. Currently no way to provide your own threading control.
+* has similar issues as python subprocess library. No API is perfect, this one is my favorite I have seen.
+* On windows there is no good way to send signals. Signals work the same way as pythons library, which usually send an abrupt killing of process. Mac/Linux work as expected.
+
+&amp;#x200B;
+
+Thank you and enjoy.
+## [4][Am I a bad C++ programmer because of prefering raw pointers over safer smart pointers?](https://www.reddit.com/r/cpp/comments/hy6uiq/am_i_a_bad_c_programmer_because_of_prefering_raw/)
+- url: https://www.reddit.com/r/cpp/comments/hy6uiq/am_i_a_bad_c_programmer_because_of_prefering_raw/
+---
+So, this is the case: I am the kind of C++ programmer who comes from Java. I struggled at first, but I got used to C++ fast. However I made heavy use of raw pointers, I know how to properly manage memory, as I use C as well, and I wrote a basic operating system in C and Assembly. So long story short: I can manage my memory.
+
+Another point is that I'm developing a game engine as a hobby project. In this engine I have a very specific style of writing the engine, namingly I have to allocate a lot of stuff on the heap as pointers because I make heavy use of inheritance (example: Texture - interface, GLTexture and VKTexture - opengl and vulkan abstractions of textures), and I have to delete them when 1) there are no references to an asset or the level is unloaded, and there are other criteria to meet.
+
+So to sum it up: I like to use raw pointers. That's my style of programming. I make heavy use of the C++ standard library, don't get me wrong, it's just that I don't like smart pointers. And this gets me to my point. Many people think I'm a horrible person because of this. So what's your point on this? (If you're interested in the engine and wanna figure out why I don't use smart pointers, I can link the GitHub repository)
+## [5][How do you write class templates? (Two question survey)](https://www.reddit.com/r/cpp/comments/hxvwov/how_do_you_write_class_templates_two_question/)
+- url: https://forms.gle/ZukANmABYqRvWmbt9
 ---
 
-## [7][Best C++ Alternatives to Pandas](https://www.reddit.com/r/cpp/comments/hx3fd9/best_c_alternatives_to_pandas/)
-- url: https://www.reddit.com/r/cpp/comments/hx3fd9/best_c_alternatives_to_pandas/
----
-Hi everyone,
-
-I've been developing with python for years and have extensively used pandas.  I have a new project that requires me to code in C++ and I'm looking for a library that is similar to pandas.  I'd like to work with dataframes that have mixed data types.  It would be okay to have a fixed data type for each column in the dataframe but having columns with different data type is essential.  Ideally it could read data from csv files or json strings into the dataframe.  Speed is less important for me.  What do you guys suggest?  
-
-
-Thanks!
-## [8][C++ on Sea 2020 video - "Improving Readability With Class Template Argument Deduction" - A.J. Orians](https://www.reddit.com/r/cpp/comments/hx96c1/c_on_sea_2020_video_improving_readability_with/)
-- url: https://www.youtube.com/watch?v=vgeOjM4X2K0
+## [6][C++ on Sea 2020 video - "Algorithmic and microarchitecture optimizations of C++ applications" - Alexander Maslennikov](https://www.reddit.com/r/cpp/comments/hy5836/c_on_sea_2020_video_algorithmic_and/)
+- url: https://www.youtube.com/watch?v=QLHQhzy1W4Y
 ---
 
-## [9][Avoid character-by-character processing when performance matters](https://www.reddit.com/r/cpp/comments/hx0o1g/avoid_characterbycharacter_processing_when/)
-- url: https://lemire.me/blog/2020/07/21/avoid-character-by-character-processing-when-performance-matters/
+## [7][C++ on Sea video - "C++ STL best and worst performance features and how to learn from them" - Danila Kutenin](https://www.reddit.com/r/cpp/comments/hxom99/c_on_sea_video_c_stl_best_and_worst_performance/)
+- url: https://www.youtube.com/watch?v=GRuX31P4Ric
 ---
 
-## [10][C++ on Sea 2020 video - "Live Compiler Development with Cross-Platform Tooling" - Sy Brand](https://www.reddit.com/r/cpp/comments/hwyrh2/c_on_sea_2020_video_live_compiler_development/)
-- url: https://www.youtube.com/watch?v=Jw2n5QSul34
+## [8][A single-header library for build SQL query string in C++11](https://www.reddit.com/r/cpp/comments/hxy27v/a_singleheader_library_for_build_sql_query_string/)
+- url: https://github.com/six-ddc/sql-builder
 ---
 
-## [11][fork of compiler explorer (godbolt.org) editing and displaying SDL in the browser with WebAssembly](https://www.reddit.com/r/cpp/comments/hwk1se/fork_of_compiler_explorer_godboltorg_editing_and/)
-- url: https://v.redd.it/dsxz9xt07nc51
+## [9][C++ on Sea 2020 video - "The Upcoming Evolution Of the Standard Library" - Arno Schoedl](https://www.reddit.com/r/cpp/comments/hxum56/c_on_sea_2020_video_the_upcoming_evolution_of_the/)
+- url: https://www.youtube.com/watch?v=jvCjtGLuuvw
 ---
 
+## [10][C++ project template with Meson build](https://www.reddit.com/r/cpp/comments/hxwwfy/c_project_template_with_meson_build/)
+- url: https://github.com/michaelbrockus/cpp_project_template
+---
+
+## [11][Question about learning C++](https://www.reddit.com/r/cpp/comments/hy5fdk/question_about_learning_c/)
+- url: https://www.reddit.com/r/cpp/comments/hy5fdk/question_about_learning_c/
+---
+Hi,
+
+I am a Data Scientist intern (I know Python) and I need to learn C++for a project. I searched good learning resources online but there is a lot of contradictory informations and I would like to hear from you guys. I need to understand C++, not be proficient, so I don't want to read a 1500 pages book right now .
+
+I don't have money to put on books rn so I'd like free online resource (If it's possible to find good ones). I found [that one](https://www.udemy.com/course/free-learn-c-tutorial-beginners) on Udemy but I'm afraid It would be a bit old.
+
+So is there a major updates that make prior courses outdated ? Or do you guys have any reommandations for beginner ?
+
+Thanks a lot !

@@ -110,169 +110,51 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Redux-thunk vs redux-saga](https://www.reddit.com/r/reactjs/comments/hxdtqo/reduxthunk_vs_reduxsaga/)
-- url: https://www.reddit.com/r/reactjs/comments/hxdtqo/reduxthunk_vs_reduxsaga/
----
-Hi guys, so I’m creating an e-commerce platform and I wanted to get your opinions on using either redux thunk or redux saga, because they both do the same thing but I think saga let’s you control what happens more than thunk.. Id love to hear your opinions on why either would be better and the useCases for both as I am still in the process of learning all the quirks react has to offer :)
-## [4][Serverless Node.js Function Protected with Auth0 and React](https://www.reddit.com/r/reactjs/comments/hxff2i/serverless_nodejs_function_protected_with_auth0/)
-- url: https://github.com/fleetfn/examples/tree/master/api-auth-protected-with-auth0-react
+## [3][How to Create a Weather Widget with a Weather API](https://www.reddit.com/r/reactjs/comments/hy1x7x/how_to_create_a_weather_widget_with_a_weather_api/)
+- url: https://developer.climacell.co/blog/how-to-create-a-weather-widget-with-a-weather-api/#
 ---
 
-## [5][GraphQL first full-stack starter kit with Node, React. Powered by TypeScript](https://www.reddit.com/r/reactjs/comments/hxm9ti/graphql_first_fullstack_starter_kit_with_node/)
+## [4][GraphQL first full-stack starter kit with Node, React. Powered by TypeScript](https://www.reddit.com/r/reactjs/comments/hxm9ti/graphql_first_fullstack_starter_kit_with_node/)
 - url: https://github.com/karanpratapsingh/fullstack-starterkit
 ---
 
-## [6][React Highcharts Example with Cube.js](https://www.reddit.com/r/reactjs/comments/hx2fy9/react_highcharts_example_with_cubejs/)
-- url: https://cube.dev/blog/react-highcharts-example/
+## [5][Generating TypeScript types and React Hooks based on GraphQL endpoint](https://www.reddit.com/r/reactjs/comments/hy6ngn/generating_typescript_types_and_react_hooks_based/)
+- url: https://significa.co/blog/generating-typescript-types-and-react-hooks-based-on-graphql-endpoint
 ---
 
-## [7][A few questions about redux /toolkit](https://www.reddit.com/r/reactjs/comments/hxk2mr/a_few_questions_about_redux_toolkit/)
-- url: https://www.reddit.com/r/reactjs/comments/hxk2mr/a_few_questions_about_redux_toolkit/
----
-Hello guys and gals I am a long time angular dev started working on react native about 3 years ago  and since then switched to react.
-
-Worked on a few react projects where each screen was driven by an api endpoint and had no need for state management.
-
-I am about to start a new one where the data flow is more complex and I have integrated redux toolkit as state management.
-
-
-1) In your opinion is redux toolkit the best state management solution.
-
-2) Do you keep everything in the state? Routing? Let's say a user is typing in a text box do you record that in a slice?
-
-3) what are some pitfalls you had with state management I should try to avoid.
-## [8][Access data / Structure data in ReactJS / Firebase](https://www.reddit.com/r/reactjs/comments/hxmbxq/access_data_structure_data_in_reactjs_firebase/)
-- url: https://www.reddit.com/r/reactjs/comments/hxmbxq/access_data_structure_data_in_reactjs_firebase/
----
-I'm a little bit losted coming from Rails to React/Firebase. I have the following realtime database structure. As you can see, a product can have a brand and multiple sellers.
-
-If a brand is `true`, i'd like to get / display the brand contents on my page (the avatar, name, link etc.). Same for the sellers.
-
-Right now, if i try to display the brand content, i get "true" when i'd like an object containing the infos i've stored in `brands` or `sellers`.
-
-So i'd like for example to be able to do something like this : 
-`&lt;p&gt;{this.props.brands.name}&lt;/p&gt;` (it can only have one brand for now)
-
-As for the sellers i'd like for example to be able to do something like this :
-```
-this.state.sellers.map((seller) =&gt;
-  &lt;div&gt;
-    &lt;img src={seller.avatar} /&gt;
-    &lt;p&gt;{seller.name}&lt;/p&gt;
-  &lt;/div&gt;
-);
-```
-
-Here is my firebase realtime database structure (json) :
-
-```
-{
-    "products": {
-        "1": {
-            "name": "Nike HyperAdapt 1.0",
-            "tagline": "Self-lacing running shoes",
-            "releaseDate": "20.08.2020",
-            "brands": {
-                "Nike": true
-            },
-            "thumbnail": "/img/thumbnails/nike-hyperadapt-thumbnail.jpg",
-            "media": "/img/media/nike-hyperadapt-media-01.jpeg",
-            "isRaffle": true,
-            "description": "Nike HyperAdapt 1.0 is Nike's first line of shoes that can lace themselves, thanks to an internal cable system comprised of fishing line and a pressure sensor located in the sole that responds to the weight of your foot as you move with an algorithmic pressure equation.",
-            "upvote": "169",
-            "sellers": {
-                "Opium Paris": true,
-                "Nike": true
-            }
-        },
-        "2": {
-            "name": "Puma Fi",
-            "tagline": "Self lacing shoes by Puma",
-            "releaseDate": "22.08.2020",
-            "brands": {
-                "Puma": true
-            },
-            "thumbnail": "/img/thumbnails/puma-fi-thumbnail.jpg",
-            "media": "/img/media/puma-fi-media-01.jpeg",
-            "isRaffle": true,
-            "description": "The technology platform Fit Intelligence (Fi) is designed to automate and finetune performance for our footwear. The very first Fi footwear style is a self-lacing training shoe made for workouts and light running.",
-            "upvote": "88",
-            "sellers": {
-                "Opium Paris": true,
-                "Puma": true
-            }
-        }
-    },
-    "brands": {
-        "Nike": {
-            "name": "Nike",
-            "avatar": "/img/brands/nike-logo.png",
-            "link": "https://www.nike.com/fr",
-            "products": {
-                "1": true
-            }
-        },
-        "Puma": {
-            "name": "Puma",
-            "avatar": "/img/brands/puma-logo.png",
-            "link": "https://eu.puma.com/fr/fr/home",
-            "products": {
-                "2": true
-            }
-        }
-    },
-    "sellers": {
-        "Opium Paris": {
-            "name": "Opium Paris",
-            "avatar": "/img/sellers/opium-paris-logo.png",
-            "link": "https://www.opiumparis.com/fr/71-raffles",
-            "products": {
-                "1": true,
-                "2": true
-            }
-        },
-        "Nike": {
-            "name": "Nike",
-            "avatar": "/img/sellers/nike-store-logo.png",
-            "link": "https://www.nike.com/fr/launch",
-            "products": {
-                "1": true
-            }
-        },
-        "Puma": {
-            "name": "Puma",
-            "avatar": "/img/sellers/puma-logo.png",
-            "link": "https://eu.puma.com/fr/fr/home",
-            "products": {
-                "2": true
-            }
-        }
-    }
-}
-```
-## [9][How to show cookie message only once?](https://www.reddit.com/r/reactjs/comments/hxhdbd/how_to_show_cookie_message_only_once/)
-- url: https://www.reddit.com/r/reactjs/comments/hxhdbd/how_to_show_cookie_message_only_once/
----
-Hello all!  
-
-
-I want to show a message telling about cookies only the very first time a user enters the website. Until the user closes the message, it will appear every time he enters into the website. After closing the message, it should not appear anymore.
-
-Please, can someone point me out what are the steps do I need to do for this? Does people normally use browser's local storage for this? Does someone has an example of this by any chance?  
-
-
-Thank you very much and regards.
-## [10][In your job, what does your process from start to finish look like when implementing a new feature?](https://www.reddit.com/r/reactjs/comments/hxk5ba/in_your_job_what_does_your_process_from_start_to/)
-- url: https://www.reddit.com/r/reactjs/comments/hxk5ba/in_your_job_what_does_your_process_from_start_to/
----
-When you receive a task or story what is your process from start to finish?
-## [11][Can't use Postman to get JSON data served from Flask backend to create-react-app frontend](https://www.reddit.com/r/reactjs/comments/hxdpfa/cant_use_postman_to_get_json_data_served_from/)
-- url: https://www.reddit.com/r/reactjs/comments/hxdpfa/cant_use_postman_to_get_json_data_served_from/
----
-Currently I have a create-react-app frontend and Flask backend hosted separately on heroku. I am able to get a JSON file when I type [www.example.herokuapp.com/bob](https://www.example.herokuapp.com/bob), but when I try to do use postman to make get requests to that link, it just returns 200 error and my index.html file from build. Can someone help with this?
-
-EDIT: Seems like the issue is due to the asynchronous nature of the calls, and how GET requests do not "await" for the JSON returned from the promise
-## [12][RT plone "Great Progress on Volto at the 2020 Beethoven Sprint https://t.co/23lhIFsJvq #plone"](https://www.reddit.com/r/reactjs/comments/hxjlko/rt_plone_great_progress_on_volto_at_the_2020/)
-- url: https://mobile.twitter.com/planetplone/status/1286855725109719050
+## [6][Building a simple login form with Material UI and React Hook Form](https://www.reddit.com/r/reactjs/comments/hxzcgl/building_a_simple_login_form_with_material_ui_and/)
+- url: https://www.williamkurniawan.com/blog/building-a-simple-login-form-with-material-ui-and-react-hook-form
 ---
 
+## [7][BLOG - Make Your React Apps Installable - How To Make Any React App a PWA](https://www.reddit.com/r/reactjs/comments/hy000v/blog_make_your_react_apps_installable_how_to_make/)
+- url: https://aniruddh.hashnode.dev/make-your-react-apps-installable-how-to-make-any-react-app-a-pwa-ckd2ftxjw018eaws11uct9osi
+---
+
+## [8][How to build a Chrome Extension to analyze text as you write](https://www.reddit.com/r/reactjs/comments/hy5x5x/how_to_build_a_chrome_extension_to_analyze_text/)
+- url: https://medium.com/@juancurti.it/how-to-build-a-chrome-extension-to-analyze-text-as-you-write-a1c0ab1923f9
+---
+
+## [9][Chrome &amp; Firefox domain blocker extension made with React &amp; Redux Saga.](https://www.reddit.com/r/reactjs/comments/hy5gyx/chrome_firefox_domain_blocker_extension_made_with/)
+- url: https://www.reddit.com/r/reactjs/comments/hy5gyx/chrome_firefox_domain_blocker_extension_made_with/
+---
+Hello guys this is my first try to make browser extension with Reactjs. Hope you will like it. Any feedback is welcome. Thank you
+
+Github Link: [https://github.com/gobeam/go-cold](https://github.com/gobeam/go-cold)
+## [10][Does anybody know the single source where I can read about best practices to handle authentication in reactjs?](https://www.reddit.com/r/reactjs/comments/hy48lj/does_anybody_know_the_single_source_where_i_can/)
+- url: https://www.reddit.com/r/reactjs/comments/hy48lj/does_anybody_know_the_single_source_where_i_can/
+---
+I've been building ReactJS authentication, but after taking a stroll around the internet for how to handle authentication in react, I get that there are multiple ways to do so such as using ContextProviders or by using Redux State. Then to store the authentication token, for some, it is a cookie-based solution, while others add local storage based solution. But I'd like to know if there are any standard practices while handling authentication in ReactJS?
+## [11][Context API vs Redux](https://www.reddit.com/r/reactjs/comments/hy68g0/context_api_vs_redux/)
+- url: https://www.reddit.com/r/reactjs/comments/hy68g0/context_api_vs_redux/
+---
+I am starting a new project and want to explore whether Context API is sufficient on it’s own. Are there any use cases wherein Redux might be needed ?
+## [12][apollo vs redux](https://www.reddit.com/r/reactjs/comments/hy5lvp/apollo_vs_redux/)
+- url: https://www.reddit.com/r/reactjs/comments/hy5lvp/apollo_vs_redux/
+---
+hi. 
+
+i'm starting new project with electron and react. I wanna read local svg files in electron and store it in react app  through ipc. 
+
+i wanna try to use apollo for storing data but my friend said  since there is no backend server redux would be better choice. 
+
+in this situation, which one is suitable for project?

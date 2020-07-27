@@ -56,84 +56,148 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][C++ on Sea 2020 video - "Deep C Diving - Fast and Scalable Text Interfaces at the Bottom" - JeanHeyd Meneide](https://www.reddit.com/r/cpp/comments/hy3yzc/c_on_sea_2020_video_deep_c_diving_fast_and/)
-- url: https://www.youtube.com/watch?v=X-FLGsa8LVc
+## [2][PhysFS performance, a story of threading and locking · Mathieu Ropert](https://www.reddit.com/r/cpp/comments/hyoq8s/physfs_performance_a_story_of_threading_and/)
+- url: https://mropert.github.io/2020/07/26/threading_with_physfs/
 ---
 
-## [3][subprocess library for c++](https://www.reddit.com/r/cpp/comments/hxqqqu/subprocess_library_for_c/)
-- url: https://www.reddit.com/r/cpp/comments/hxqqqu/subprocess_library_for_c/
+## [3][C++ on Sea video - "How to Refactor Millions of Line of Code Without Alienating your Colleagues" - Fred Tingaud](https://www.reddit.com/r/cpp/comments/hyqyt7/c_on_sea_video_how_to_refactor_millions_of_line/)
+- url: https://www.youtube.com/watch?v=Fxe7JoGSyy8
 ---
-I want to share [subprocess](https://github.com/benman64/subprocess) library. Inspired by python subprocess api. If you have c++20 you can do like so
+
+## [4][Why can't we have void type variables?](https://www.reddit.com/r/cpp/comments/hyn2nf/why_cant_we_have_void_type_variables/)
+- url: https://www.reddit.com/r/cpp/comments/hyn2nf/why_cant_we_have_void_type_variables/
+---
+Hello.
+
+Sometime ago I was writing some code, which basically looked like this:
+
+    T result = func();
+    post_func_action();
+    return result;
+
+The problem is, my code doesn't compile when type `T` is `void`. Therefore I had to write a second template for handling cases where `func` returns `void`. In my opinion this is unnecessary, and reduces code reusability. I am aware that allowing `void` type variables would cause some inconvenience with `void*` pointers (which was, if you ask me, a very unfortunate choice for a name), but other than that, is there any particular reason why values of `void` type can't exist?
+## [5][C++ on Sea 2020 video - "Combining Modern C++ and Lua" - James Pascoe](https://www.reddit.com/r/cpp/comments/hyei46/c_on_sea_2020_video_combining_modern_c_and_lua/)
+- url: https://www.youtube.com/watch?v=QwfL72yHZEY
+---
+
+## [6][Differences between old (pre GCC6) and new-style function multi-versioning and how to migrate](https://www.reddit.com/r/cpp/comments/hyfhy3/differences_between_old_pre_gcc6_and_newstyle/)
+- url: https://extensa.tech/blog/migrating-multiversioning/
+---
+
+## [7][Is reentrancy a problem because of recursive calls? When should you worry about code reentrancy?](https://www.reddit.com/r/cpp/comments/hydpyx/is_reentrancy_a_problem_because_of_recursive/)
+- url: https://www.reddit.com/r/cpp/comments/hydpyx/is_reentrancy_a_problem_because_of_recursive/
+---
+I read [this](https://deadbeef.me/2017/09/reentrant-threadsafe) blog post (which seems to be a parrot of [Wiki: Reentrancy (computing)](https://en.wikipedia.org/wiki/Reentrancy_(computing))) about reentrancy and it appears to be a problem because of a recursive call (in their case, indirectly via `my_func()`).
+
+I guess what I'm really asking is under what conditions should you worry about code reentrancy. The examples and wiki mentions two:
+
+1. Recursive calls
+2. An interrupt service routine which, separate from `main()` execution, executes a function that had already been called from `main()`.
+
+If you're writing a multithreaded program and **Thread1** calls *foo()* and **Thread2** also calls *foo(),* would you need to take care to make *foo()* reentrant?
+
+Is that it?
+## [8][Is it sane to do iOS and Android dev in cpp these days?](https://www.reddit.com/r/cpp/comments/hyk0do/is_it_sane_to_do_ios_and_android_dev_in_cpp_these/)
+- url: https://www.reddit.com/r/cpp/comments/hyk0do/is_it_sane_to_do_ios_and_android_dev_in_cpp_these/
+---
+Hi, I'm looking for subjective opinions and real battle stories here, I know it's \*possible\*. I know QT and JUCE and others say they do it, but I've also read lots of folks saying it's actually a fools game....
+
+I'm making some music pedagogy applications. I prototype them on desktop in Max/MSP with the app logic in Scheme, using a Max external I wrote in C to embed S7 Scheme in Max. I love doing the domain logic in Scheme, and prototyping in Max is super productive. But I eventually want to release these as small apps for desktop on windows and OSX, and (if possible) for iOS and Android. With S7, I can plug my domain layer into any C framework, it's got a \*great\* FFI. My apps need to do things like midi i/o, make sounds, run a scheduler (ie schedule making sounds into the future), and draw custom widgets like keyboards and musical notation.  But nothing heavy duty in the audio or graphics realm, this is for practising, not playing live or anything performance critical. The hard part is in the scheme, the C/C++ part is plumbing really. 
+
+I'm trying to get a sense of whether investing time on something like QT or JUCE for their supposed "deploy anywhere" is worthwhile, or if cross-platform mobile dev in C++ is bologna. And if you say these are not good solutions, can you tell me if there is a good way to do mobile in C++ for those platforms? I might be able to live with having to use a different toolkit for each platform, but these are apps for a very small market and it's likely to be just me or me plus 1 person. The only thing I'm married to is Scheme, which thus means C at some level for hosting the scheme interpreter. 
+
+Thanks!
+## [9][Code coverage problem](https://www.reddit.com/r/cpp/comments/hyp2b2/code_coverage_problem/)
+- url: https://www.reddit.com/r/cpp/comments/hyp2b2/code_coverage_problem/
+---
+Hi all. I've been programming in C++ for a while now, but I've always had colleagues who work on the more devopsy side of things. To fill in my gaps in knowledge, I've decided to make my own project starter template (I know there are some great ones out there, but I figured starting from scratch would give me a better understanding of how things work). Long story short, there's one thing which I can't quite figure out how to do: accurate code coverage of functions which are not invoked in tests. I've included a minimum working example [here](https://github.com/kubagalecki/my-cpp-starter). When a function isn't called, I'd like gcov(r) to report 0% coverage of it. Instead, the compiler seems to be optimizing it away (despite -O0 and all the anti-inlining flags) which results in the tool reporting file coverage as 100%. When I split up the declaration and definition into separate files, the file with the definition is omitted in the coverage report altogether. There are some posts on various forums about this problem, but the answers there don't seem to do the trick for me, so I thought I'd take up some of the time of the fine folks on this sub. Any help would be highly appreciated.
+
+Edit for posterity, see below for details: The problem seems to only occur with inlined functions. A possible solution is to mark anything that may be inlined with `__attribute__ ((used))`.  
+
+## [10][C++ Compiler Optimization at work](https://www.reddit.com/r/cpp/comments/hymfod/c_compiler_optimization_at_work/)
+- url: https://www.reddit.com/r/cpp/comments/hymfod/c_compiler_optimization_at_work/
+---
+I am currently in chapter 18 of PPP using C++.  Found the below observation about C++ compiler optimization interesting. Posting it for the benefit of fellow C++ beginners.
+
+So the discussion was about how move constructor is better than copy constructor in the below scenario. 
+
+1) We have an object factory function creating objects of large size and returning them.
+
+2) 2nd function is utilizing the above object factory to create objects.
+
+So the question is should the object factory function return references/values of the created objects?
+
+Object factory returning object reference:-
+
+    object* object_factory()
+    {
+        object *o = new object;
+        return o;
+    }
+    
+    int main()
+    {
+        object *new_obj = object_factory();
+        delete new_obj; //we have to remember to delete this
+    }
+
+The above definition of object\_factory requires the user to "remember to manually free-up space allocated to the object", which is always a bad option. So the alternative is to return the object instead of its reference.
+
+Object factory returning object:-
+
+    object object_factory()
+    {
+        object o{}; //invoking default constructor
+        return o; //invokes destructor implicitly
+    }
+    
+    int main()
+    {
+        object new_obj = object_factory(); //invokes copy-constructor twice
+    }
+
+The above code is "neat". Below is the sequence of events that happen
+
+1) default constructor is invoked when o is created
+
+2) copy-constructor is invoked to make a 'copy of o', when return is called in object\_factory
+
+3) destructor is invoked to destroy o when it goes out of scope at end of object\_factory
+
+4) copy-constructor is invoked to make new\_obj from the 'copy of o'
+
+5) destructor is invoked to destroy 'copy of o'
+
+6) destructor is invoked to destroy new\_obj when it goes out of scope at the end of main.
+
+As you can see, copy-constructor is called "twice". If the object happens to be large, copying it twice is an expensive operation. Can we avoid copying? Actually when o goes out of scope at the end of object\_factory we can no longer use it. If we could somehow move the data elements from 'o to new\_obj' our purpose is served. So if we have a move-constructor in the class definition of "object", the above same code produces a different sequence of events.
 
 &amp;#x200B;
 
-    // capture output. You can do this syntax if you have C++20
-    CompletedProcess process = subprocess::run({"echo", "hello", "world"}, {
-        .cout = PipeOption::pipe,
-        // make true to throw exception
-        .check = false
-    });
+1) default constructor is invoked when o is created
 
-or c++14+
+2) move-constructor is invoked to move 'data elements from o to create "copy of o"', when return is called in object\_factory
 
-    // simplest capture output.
-    CompletedProcess process = subprocess::RunBuilder({"echo", "hello", "world"})
-        .cout(PipeOption::pipe).run();
+3) destructor is invoked to destroy o when it goes out of scope at end of object\_factory
 
-This is the best I could come up with given c++ is not python. I've been using it for a while in my personal projects and it's been a treat so far. I've grown to accept that it's a bit more wordy than python. API supports advanced techniques like piping one process to another. Works on Windows, Linux, &amp; Mac.
+4) move-constructor is invoked to move 'data elements from "copy of o" to create "new\_obj"'
 
-Some notes:
+5) destructor is invoked to destroy "copy of o"
 
-* Because stdout is a macro in C/C++, cout/cin/cerr terms are used instead.
-* on mac/linux posix API is used for launching processes. It does have issues but should be fine for most applications.
-* C++ threading is used to avoid deadlock conditions when necessary. And to help facilitate some convenience. Currently no way to provide your own threading control.
-* has similar issues as python subprocess library. No API is perfect, this one is my favorite I have seen.
-* On windows there is no good way to send signals. Signals work the same way as pythons library, which usually send an abrupt killing of process. Mac/Linux work as expected.
+6) destructor is invoked to destroy new\_obj when it goes out of scope at end of main
 
-&amp;#x200B;
+All copy-constructors have been replaced by less-expensive move-constructors. But when you compile the above code without "special compiler flags" the C++ compiler optimizes further. Below is the actual sequence of events you will see.
 
-Thank you and enjoy.
-## [4][Am I a bad C++ programmer because of prefering raw pointers over safer smart pointers?](https://www.reddit.com/r/cpp/comments/hy6uiq/am_i_a_bad_c_programmer_because_of_prefering_raw/)
-- url: https://www.reddit.com/r/cpp/comments/hy6uiq/am_i_a_bad_c_programmer_because_of_prefering_raw/
----
-So, this is the case: I am the kind of C++ programmer who comes from Java. I struggled at first, but I got used to C++ fast. However I made heavy use of raw pointers, I know how to properly manage memory, as I use C as well, and I wrote a basic operating system in C and Assembly. So long story short: I can manage my memory.
+1) default constructor is invoked when o is created
 
-Another point is that I'm developing a game engine as a hobby project. In this engine I have a very specific style of writing the engine, namingly I have to allocate a lot of stuff on the heap as pointers because I make heavy use of inheritance (example: Texture - interface, GLTexture and VKTexture - opengl and vulkan abstractions of textures), and I have to delete them when 1) there are no references to an asset or the level is unloaded, and there are other criteria to meet.
+2) reference of o is passed to obj\_new
 
-So to sum it up: I like to use raw pointers. That's my style of programming. I make heavy use of the C++ standard library, don't get me wrong, it's just that I don't like smart pointers. And this gets me to my point. Many people think I'm a horrible person because of this. So what's your point on this? (If you're interested in the engine and wanna figure out why I don't use smart pointers, I can link the GitHub repository)
-## [5][How do you write class templates? (Two question survey)](https://www.reddit.com/r/cpp/comments/hxvwov/how_do_you_write_class_templates_two_question/)
-- url: https://forms.gle/ZukANmABYqRvWmbt9
+3) destructor is invoked to destroy obj\_new/o(o and obj\_new both point to same object)
+
+This is super cool. The C++ compiler has avoided 2 move-constructions &amp; 2 destructions!(steps 2 to 5)
+
+    Note:- Inorder to force the compiler not to make the above optimization(to see move-constructors in action) pass the '-fno-elide-constructors' flag to C++ compiler.
+## [11][C++ on Sea 2020 video - "C++ ecosystem: the renaissance edition" - Anastasia Kazakova](https://www.reddit.com/r/cpp/comments/hyoa89/c_on_sea_2020_video_c_ecosystem_the_renaissance/)
+- url: https://www.youtube.com/watch?v=5NuEX6cUpFI
 ---
 
-## [6][C++ on Sea 2020 video - "Algorithmic and microarchitecture optimizations of C++ applications" - Alexander Maslennikov](https://www.reddit.com/r/cpp/comments/hy5836/c_on_sea_2020_video_algorithmic_and/)
-- url: https://www.youtube.com/watch?v=QLHQhzy1W4Y
----
-
-## [7][C++ on Sea video - "C++ STL best and worst performance features and how to learn from them" - Danila Kutenin](https://www.reddit.com/r/cpp/comments/hxom99/c_on_sea_video_c_stl_best_and_worst_performance/)
-- url: https://www.youtube.com/watch?v=GRuX31P4Ric
----
-
-## [8][A single-header library for build SQL query string in C++11](https://www.reddit.com/r/cpp/comments/hxy27v/a_singleheader_library_for_build_sql_query_string/)
-- url: https://github.com/six-ddc/sql-builder
----
-
-## [9][C++ on Sea 2020 video - "The Upcoming Evolution Of the Standard Library" - Arno Schoedl](https://www.reddit.com/r/cpp/comments/hxum56/c_on_sea_2020_video_the_upcoming_evolution_of_the/)
-- url: https://www.youtube.com/watch?v=jvCjtGLuuvw
----
-
-## [10][C++ project template with Meson build](https://www.reddit.com/r/cpp/comments/hxwwfy/c_project_template_with_meson_build/)
-- url: https://github.com/michaelbrockus/cpp_project_template
----
-
-## [11][Question about learning C++](https://www.reddit.com/r/cpp/comments/hy5fdk/question_about_learning_c/)
-- url: https://www.reddit.com/r/cpp/comments/hy5fdk/question_about_learning_c/
----
-Hi,
-
-I am a Data Scientist intern (I know Python) and I need to learn C++for a project. I searched good learning resources online but there is a lot of contradictory informations and I would like to hear from you guys. I need to understand C++, not be proficient, so I don't want to read a 1500 pages book right now .
-
-I don't have money to put on books rn so I'd like free online resource (If it's possible to find good ones). I found [that one](https://www.udemy.com/course/free-learn-c-tutorial-beginners) on Udemy but I'm afraid It would be a bit old.
-
-So is there a major updates that make prior courses outdated ? Or do you guys have any reommandations for beginner ?
-
-Thanks a lot !

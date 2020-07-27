@@ -17,116 +17,112 @@ See also the related [Q&amp;A for the //go:embed draft design](https://golang.or
 - url: https://go.googlesource.com/proposal/+/refs/heads/master/design/40307-fuzzing.md
 ---
 
-## [3][I made a Telegram bot to control Docker](https://www.reddit.com/r/golang/comments/hy2gbl/i_made_a_telegram_bot_to_control_docker/)
-- url: https://github.com/MrMarble/teledock
+## [3][CGo-free SQLite database/sql driver for linux/amd64 v1.4.0-beta1 is released](https://www.reddit.com/r/golang/comments/hyenjh/cgofree_sqlite_databasesql_driver_for_linuxamd64/)
+- url: https://www.reddit.com/r/golang/comments/hyenjh/cgofree_sqlite_databasesql_driver_for_linuxamd64/
+---
+From the change log at https://godoc.org/modernc.org/sqlite#hdr-Changelog
+
+2020-07-26 v1.4.0-beta1:
+
+The project has reached beta status while supporting linux/amd64 only at the moment. The 'extraquick' Tcl testsuite reports
+
+    630 errors out of 200177 tests on  Linux 64-bit little-endian
+
+and some memory leaks
+
+    Unfreed memory: 698816 bytes in 322 allocations
+
+Please try your production load tests and unit tests with the new version. Your help testing these pre-release versions is invaluable.
+
+Report any problems using the issue tracker (requires a GitLab account):
+https://gitlab.com/cznic/sqlite/-/issues/new?issue%5Bassignee_id%5D=&amp;issue%5Bmilestone_id%5D=
+## [4][Examples of how to create a modern &amp; robust RESTful api server?](https://www.reddit.com/r/golang/comments/hy8a96/examples_of_how_to_create_a_modern_robust_restful/)
+- url: https://www.reddit.com/r/golang/comments/hy8a96/examples_of_how_to_create_a_modern_robust_restful/
+---
+I'm looking into a developing a RESTful API server in Go. I'm having a hard time finding a lot of good examples, or common patterns/libraries people use. I can see how to string a bunch of libraries together but I'm looking for suggestions! Here's what I'd to do:
+
+* OAuth2 server
+* API serving. There's 1k ways of doing this, but very few integrate OAuth2
+* Authorizing credential creation via OpenID
+* OpenAPI support. At the very least generating a spec from the API.
+* Desired but not required would be a developer portal
+
+[https://www.ory.sh/](https://www.ory.sh/) is the closest project I've found and I'm currently evaluating it. Any other recommendations?
+## [5][k6 plugin to load test Apache Kafka with support for Avro messages](https://www.reddit.com/r/golang/comments/hyp9rv/k6_plugin_to_load_test_apache_kafka_with_support/)
+- url: https://www.reddit.com/r/golang/comments/hyp9rv/k6_plugin_to_load_test_apache_kafka_with_support/
+---
+I wrote a k6 plugin to load test Apache Kafka with support for Avro messages. k6 is a FOSS performance and load-testing tool, written in Go and scriptable in JavaScript. The k6 [plugin support PR](https://github.com/loadimpact/k6/pull/1396) is not merged yet, and is highly experimental. If you have feedback and questions, reach out to me directly.
+&lt;https://github.com/mostafa/k6-plugin-kafka&gt;
+## [6][really need an advice](https://www.reddit.com/r/golang/comments/hys99n/really_need_an_advice/)
+- url: https://www.reddit.com/r/golang/comments/hys99n/really_need_an_advice/
+---
+first of all, i live somewhere in middle east, i don't have any work experience and i don't consider myself as an real backend developer yet, cause i still need some time. do you think i can get a Go job in an developed country as a junior with no background? maybe a remote job could also work for me. if not in Go, do i have more chance in other langs?
+## [7][JWT and microservices](https://www.reddit.com/r/golang/comments/hyotg8/jwt_and_microservices/)
+- url: https://www.reddit.com/r/golang/comments/hyotg8/jwt_and_microservices/
+---
+Hello everyone ! It seems that people involved in microservices development use JWT or somehow connected with it because most products such as service meshes (e.g. Istio) , so-called gateways (Kraken) and others relies heavily on jwt. 
+
+Today i read https://dchest.com/authbook/ and it seems that author is a well-known developer. 
+Let me quote some things from this book:
+
+"There is a huge weakness: tokens are valid until they expire. There is no real log out or a possibility to revoke other sessions before they expire"
+
+"These weaknesses make this scheme completely unusable for anything other than toy projects.
+The funny thing is that some developers try to fix the first problem by introducing a list of revoked tokens, which the server consults when validating tokens. Then they add bloom filters and other complications to make this list manageable"
+
+Do you agree with an author? How do you manage jwts, including bans, update fields included in jwt, multiple devices? Do you have a resource explaining all the complex stuff without highlighting only advantages? Do you consider jwt as unusable in practice?
+## [8][My First go application, a very simple slack bot](https://www.reddit.com/r/golang/comments/hyrezs/my_first_go_application_a_very_simple_slack_bot/)
+- url: https://www.reddit.com/r/golang/comments/hyrezs/my_first_go_application_a_very_simple_slack_bot/
+---
+[https://github.com/rimonmostafiz/frodobot](https://github.com/rimonmostafiz/frodobot)
+
+I have been playing with GO for the last couple of days and wrote this slack bot.In my workplace, we use slack we have a channel where we post our daily status update (kind of scrum). Team members sometimes forgot to post their status.
+
+1. The bot will start at every day 10:45 AM
+2. Read all the messages from 6.00 AM to 10:45 AM
+3. List out users who didn't post their status
+4. Send a soft reminder message to the channel tagging those users
+
+Please suggest to me how can I improve this project? Thanks :) 
+## [9][What’s the best place to find a go dev who has experience making mobile apps with go? Small demo for a FOSS project I’d like help building, negotiable on the pay.](https://www.reddit.com/r/golang/comments/hyr2su/whats_the_best_place_to_find_a_go_dev_who_has/)
+- url: https://www.reddit.com/r/golang/comments/hyr2su/whats_the_best_place_to_find_a_go_dev_who_has/
 ---
 
-## [4][This is my first project in Go: pong in terminal. I come from higher level languages, I am still getting familiar with the "ways of Go". Any feedback regarding code quality (and gameplay) is appreciated!](https://www.reddit.com/r/golang/comments/hxvnzd/this_is_my_first_project_in_go_pong_in_terminal_i/)
-- url: https://github.com/spinzed/tpong
+## [10][multi-gitter: Personal project I've been working on that allows for changes in multiple git repositories at the same time](https://www.reddit.com/r/golang/comments/hypr3u/multigitter_personal_project_ive_been_working_on/)
+- url: https://github.com/lindell/multi-gitter
 ---
 
-## [5][A Growing Collection of Challenges to help you learn Go and Math!](https://www.reddit.com/r/golang/comments/hxkpxt/a_growing_collection_of_challenges_to_help_you/)
-- url: https://tutorialedge.net/challenges/go/
+## [11][Dynamically layout images of various sizes](https://www.reddit.com/r/golang/comments/hypnod/dynamically_layout_images_of_various_sizes/)
+- url: https://www.reddit.com/r/golang/comments/hypnod/dynamically_layout_images_of_various_sizes/
 ---
+First time poster, long time lurker. I have come across a problem that I would like to solve in go. I am sure I am not the first or the last person to want to do this, yet I am unable to find anything for go. I am hoping the community can assist me. 
 
-## [6][Another generics proposal based on their (Go team) experemental branch](https://www.reddit.com/r/golang/comments/hxvm6d/another_generics_proposal_based_on_their_go_team/)
-- url: https://www.reddit.com/r/golang/comments/hxvm6d/another_generics_proposal_based_on_their_go_team/
+So the idea is to dynamically layout images of different sizes. Yes, this can be done with JS libraries or in-browser with relative ease, but I would like to have a go implementation. I have found an [article](https://medium.com/@jtreitz/the-algorithm-for-a-perfectly-balanced-photo-gallery-914c94a5d8af) doing exactly this, but for web. It also references an SO [post](https://stackoverflow.com/questions/7938809/how-to-understand-the-dynamic-programming-solution-in-linear-partitioning/7942946#7942946) containing some python examples on solving this using linear partitions. Attempting to implement it in go myself however, my math and python skills have let me down. 
+
+If we could have an example of this in go, I am sure others can benefit from it, and we can make a pull request to have it added to [TheAlgorithms/Go](https://github.com/TheAlgorithms/Go)
+## [12][Selectively marshal JSON](https://www.reddit.com/r/golang/comments/hyouiw/selectively_marshal_json/)
+- url: https://www.reddit.com/r/golang/comments/hyouiw/selectively_marshal_json/
 ---
-In short, Go team considers a possibility not to make `type` keyword for generic params mandatory when it can be state safely this is not a slice declaration. These are the following situations:
+If I have a big struct with lots of nested objects, and want to apply a “whitelist” of fields that should be returned in my API, what would be the best way to accomplish this?
 
-* more than one generic type parameter
-* generic type parameter is followed with a trailing comma
-* when a single generic type parameter has a constraint
+E.g. for:
 
-And this already works in the Go2 playground.
-
-Some person (Clara Pfaff) [proposed](https://groups.google.com/g/golang-nuts/c/pxDVtPjatXo) an idea to drop leading `type` keyword completely,  introduce alias `type any = interface{}` in `builtin` and make type constraint mandatory, with using `any` as an empty constraint what allows any type.
-
-How it looks like
-
-https://go2goplay.golang.org/p/IQV5LTAIuDr
-
-I must say I found this a lot better for readbility. Just look at that:
-
-
-    type OrderedMap[T any] struct {
-        …
+    
+    type User struct {
+    	Email   string   `json:"email"`
+    	Address *Address `json:"address"`
+    }
+    
+    type Address struct {
+    	Street  string `json:"street"`
+    	Zipcode string `json:"zipcode"`
     }
 
-vs
+I might want to marshal using something like:
 
-    type OrderedMap[type T] struct {
-        …
+    Ser(user, []string{"email", "address.street"}) =&gt; 
+    
+    {
+        "email": ...,
+        "address": { "street": ... }
     }
-## [7][This repository provides a mechanism for constructing multiple, isolated, IPFS storage instances (blockstore, filestore, DAGService) on top of a single go-datastore instance.](https://www.reddit.com/r/golang/comments/hy1dqt/this_repository_provides_a_mechanism_for/)
-- url: https://github.com/filecoin-project/go-multistore
----
-
-## [8][Introduction to Fiber - An Express-inspired web framework](https://www.reddit.com/r/golang/comments/hxp9mf/introduction_to_fiber_an_expressinspired_web/)
-- url: https://youtu.be/MfFi4Gt-tos
----
-
-## [9][Yet another flag parsing library](https://www.reddit.com/r/golang/comments/hy4ygx/yet_another_flag_parsing_library/)
-- url: https://www.reddit.com/r/golang/comments/hy4ygx/yet_another_flag_parsing_library/
----
-Hello!
-
-I made a flag parsing library for some of my yet to be released open-source project. Perhaps some of you would have a use for it as well!
-
-https://github.com/Mattemagikern/Flags
-
-Best regards,
-## [10][A simple HTTP Server to share files over WiFi via Qr Code](https://www.reddit.com/r/golang/comments/hxlxfr/a_simple_http_server_to_share_files_over_wifi_via/)
-- url: https://github.com/prdpx7/go-fileserver
----
-
-## [11][Help ID this please](https://www.reddit.com/r/golang/comments/hy3bia/help_id_this_please/)
-- url: https://www.reddit.com/r/golang/comments/hy3bia/help_id_this_please/
----
-Total beginner to GO here. I really like the language. I'm learning to implement a stream with go lang and stumbled across a simple example online. I understand everything else except the line with the "-&lt;" 
-
-var waitc = make(chan struct{})
-
-close waitc() // This was inside a conditional for the error
-
-&lt;-waitc
-
-What does the "&lt;-" symbol mean? Any resources where I can find this?
-## [12][Best practices testing functions with large output](https://www.reddit.com/r/golang/comments/hxz2mx/best_practices_testing_functions_with_large_output/)
-- url: https://www.reddit.com/r/golang/comments/hxz2mx/best_practices_testing_functions_with_large_output/
----
-I work on a code base which has a substantial amount of code that is basically a pure transformation of some input to some output. Normally these are the easiest to unit test, especially with table driven tests. The issue I run into is the outputs of our code are *massive*, often 10k+ lines when written to JSON, and this is mostly a result of large, deeply nested objects rather than large lists.
-
-
-These objects also happen to be protobuf generated, and changes to the expected output is fairly common - additions or minor tweaks to fields happen regularly, and every few months the entire structure may dramatically change.
-
-I was wondering if there are any recommended patterns/examples of good tests for this type of code. Note this is a large ~100k LOC codebase with thousands of tests, so we need a fairly scalable approach.
-
-Historically, we have had a few different patterns for testing, all of which have substantial issues:
-
-
-1. Golden tests
-
-In our case this generally means having the output dumped to file as json, then asserting that file doesn't change. This is problematic because each test, even for a tiny change or feature, results in thousands of lines of code added/changed. Updates to a single part of the code may result in many, many tests updated. Because the expect output is so easily changed, its easy to accidentally change a test and break it; essentially every change requires the developer to fully understand every test to ensure the new result is valid. Because every change impacts many tests, this also leads to frequent merge conflicts, and huge PRs that are hard to review. This does have the benefit of being very visible as to what the change was, which can make **some** PRs easy to review.
-
-2. Golden files + JsonPath Filtering
-
-Basically an extension of the above, where instead of dumping the whole object we just look at a portion of the object, selected by JsonPath (or similar). For example, we may check the result of `foo.bar | select(.name == "something")`. This resolves some of the problems above, but does add some complexity to learning jsonpath, as well as issues when developing the tests as there is no types/IDE support for this.
-
-3. JsonPath directly validating
-
-Similar to the above, we can also define standard assertions, like `foo.bar == true`. This has similar issues with above
-
-4. Direct, specific golang code for each test
-
-For example, writing code to check specific parts of the output. This one is really common for us, and results in a lot of fragile tests checking things like `foo[0].bar[1].baz["key"] == "something"` which makes updating the ordering/structure extremely challenging, while also not giving much real coverage. There is also a lot of code with verbose and complex loops to extract the relevant info we need
-
-5. Matchers/Extractors
-
-This involves basically a bunch of helper functions that either validate some data, or extract it for later validation. Possibly using things like https://onsi.github.io/gomega/#adding-your-own-matchers. We would define a lot of functions like `AssertListEqualsUnordered(GetNames(FindAllFooBars()), []string{"name1", "name2"})`. This generally leads to some pretty readable tests, and overall seems like a reasonable approach. It can be challenging to come up with the right abstractions for these matcher functions though, as well as careful maintenance to ensure we don't end up with hyper-specific things like `FindAllFooBarsWithFieldIsGreenAndSizeIsLarge()`
-
-6. Property Testing
-
-This would involve basically defining a series of invariants about our data output and then asserting these apply to any inputs. Ideally with some fuzzing as well. We do a little bit of this, but generally its hard/impossible to define may invariants about our data.
-
-This ended up being a lot longer than I expected... tl;dr testing large objects is hard, are there better ways to do it?

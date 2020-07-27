@@ -1,13 +1,73 @@
 # ruby
-## [1][Optimally distribute and execute RSpec suites among parallel workers; for faster CI builds](https://www.reddit.com/r/ruby/comments/hy4dvk/optimally_distribute_and_execute_rspec_suites/)
+## [1][A silly thing you can do with the Ruby parser](https://www.reddit.com/r/ruby/comments/hyog8p/a_silly_thing_you_can_do_with_the_ruby_parser/)
+- url: https://penelope.zone/2019/12/22/a-silly-thing-you-can-do-with-the-ruby-parser.html
+---
+
+## [2][I am taking a Thinkpad T480s from my workplace (migration from a MacBook setup) Do you think I can work nicely from a Windows 10 directly?](https://www.reddit.com/r/ruby/comments/hypim3/i_am_taking_a_thinkpad_t480s_from_my_workplace/)
+- url: https://www.reddit.com/r/ruby/comments/hypim3/i_am_taking_a_thinkpad_t480s_from_my_workplace/
+---
+Hey channel,  
+After \~10y working with Ruby, always using ubuntu and osx, I am now planning to work/code from the windows 10 directly.   
+What do you think about this approach?  
+
+
+I could have a Virtualbox with ubuntu for code, but not sure if the T480s i5 processor will be enough to have a nice experience on it.  
+
+
+I heard that windows now have some new terminal stuff.. Anyone with similar situation that wanna share some knowledge here?
+## [3][Fun Facts about Ruby #12: unusual ways to call a method](https://www.reddit.com/r/ruby/comments/hyn2ng/fun_facts_about_ruby_12_unusual_ways_to_call_a/)
+- url: https://i.redd.it/put2urv9hcd51.png
+---
+
+## [4][Optimally distribute and execute RSpec suites among parallel workers; for faster CI builds](https://www.reddit.com/r/ruby/comments/hy4dvk/optimally_distribute_and_execute_rspec_suites/)
 - url: https://github.com/skroutz/rspecq
 ---
 
-## [2][Make API payloads generic - API only ruby on rails course (chapter 6)](https://www.reddit.com/r/ruby/comments/hxm279/make_api_payloads_generic_api_only_ruby_on_rails/)
+## [5][MRuby faster than both YARV and MJIT](https://www.reddit.com/r/ruby/comments/hyd73z/mruby_faster_than_both_yarv_and_mjit/)
+- url: https://www.reddit.com/r/ruby/comments/hyd73z/mruby_faster_than_both_yarv_and_mjit/
+---
+I am creating a little project with some benchmark across different languages, and I found MRuby a little bit faster than well, both YARV and MJIT, here's the code of my Mandelbrot algorithm: [https://termbin.com/i91bj](https://termbin.com/i91bj)
+
+Ran this with 8000 as first parameter and and got this, from my "benchmarking algorithm", but for sure you can use \`time\` for measuring it:
+
+`YARV:`
+
+`862.2862342359986`
+
+&amp;#x200B;
+
+`MJIT:`
+
+`847.2985952870004`
+
+&amp;#x200B;
+
+`MRuby:`
+
+`644.4368903609975`
+
+&amp;#x200B;
+
+`MRubyAOT:`
+
+`642.4403260649997`
+
+&amp;#x200B;
+
+MRuby isn't supposed to be just like MRI but smaller and embeddable, and MRI, the core implementation bigger and faster?
+
+EDIT: the first line of the Mandelbrot set, is missing when I ran it with MRuby, naturally.
+## [6][Is there no good way to upload multiple images with Ruby on Rails?](https://www.reddit.com/r/ruby/comments/hyhi4z/is_there_no_good_way_to_upload_multiple_images/)
+- url: https://www.reddit.com/r/ruby/comments/hyhi4z/is_there_no_good_way_to_upload_multiple_images/
+---
+TLDR: Uploading multiple pictures to the cloud is getting annoying, anyone know a better way than Shrinerb?
+
+I've been using Carrierwave on my Heroku-hosted picture gallery app for a bit, and started to notice that large images fail. I found out it was because my server times out after 30 seconds, so I decided I should upload directly to Google Cloud Services. ActiveStorage doesn't let you process images, which would cause preposterous load times, so that's out. [This gem](https://github.com/dwilkie/carrierwave_direct) lets you direct upload with Carrierwave, but only one image at a time, so that's out. The only viable solution I've found seems to be Shrinerb, but I've found direct upload to Google Cloud to be a bottomless rabbit hole, with different documentations pointing to each other but not detailing how to integrate into each other. Is there really no easy way to upload multiple images to the cloud or should I keep going down this rabbit hole?
+## [7][Make API payloads generic - API only ruby on rails course (chapter 6)](https://www.reddit.com/r/ruby/comments/hxm279/make_api_payloads_generic_api_only_ruby_on_rails/)
 - url: https://duetcode.io/rails-api-only-course/make-api-payloads-generic
 ---
 
-## [3][Starting a monthly newsletter for cool stuff I encounter on Rails, React and Graphql.](https://www.reddit.com/r/ruby/comments/hxpads/starting_a_monthly_newsletter_for_cool_stuff_i/)
+## [8][Starting a monthly newsletter for cool stuff I encounter on Rails, React and Graphql.](https://www.reddit.com/r/ruby/comments/hxpads/starting_a_monthly_newsletter_for_cool_stuff_i/)
 - url: https://www.reddit.com/r/ruby/comments/hxpads/starting_a_monthly_newsletter_for_cool_stuff_i/
 ---
 Starting a monthly newsletter on Ruby on Rails, React and GraphQL developers to read about some cool stuff happening in the community.
@@ -24,11 +84,11 @@ This newsletter would consist of the following things:
 * Watching/Reading/Reviews.
 
 If you'd like to read my monthly newsletter. Please do subscribe here [https://buttondown.email/abhaynikam](https://buttondown.email/abhaynikam)
-## [4][Failing to Deploy RoR at DO Droplet](https://www.reddit.com/r/ruby/comments/hxvixo/failing_to_deploy_ror_at_do_droplet/)
+## [9][Failing to Deploy RoR at DO Droplet](https://www.reddit.com/r/ruby/comments/hxvixo/failing_to_deploy_ror_at_do_droplet/)
 - url: /r/rubyonrails/comments/hxtwhv/failing_from_reach_index_page_on_ror_deployed_at/
 ---
 
-## [5][Installing Ruby on VSCode Please Help!](https://www.reddit.com/r/ruby/comments/hxazpb/installing_ruby_on_vscode_please_help/)
+## [10][Installing Ruby on VSCode Please Help!](https://www.reddit.com/r/ruby/comments/hxazpb/installing_ruby_on_vscode_please_help/)
 - url: https://www.reddit.com/r/ruby/comments/hxazpb/installing_ruby_on_vscode_please_help/
 ---
 Hey guys I've been trying to figure out how to use ruby on VSCode for 2 hours on windows and I have no idea. I have Ruby, ruby extension pack, and vscode ruby extensions installed. I made a test.rb file and wrote some code but theres no run option when i right click. If I click run - start debugging on the top all I dont see any code executed.  It says Node.js (preview) in the top right. I dont know what that means?
@@ -38,42 +98,3 @@ Please help! What do I do?
 &amp;#x200B;
 
 https://preview.redd.it/mr6nxvzvnvc51.png?width=1920&amp;format=png&amp;auto=webp&amp;s=f349e3f3bb85d4f3201e4fb3354a25425071eed6
-## [6][sequel-activerecord_connection now fully supports Sequel's transaction API](https://www.reddit.com/r/ruby/comments/hx0pzd/sequelactiverecord_connection_now_fully_supports/)
-- url: https://www.reddit.com/r/ruby/comments/hx0pzd/sequelactiverecord_connection_now_fully_supports/
----
-A while ago I created the [sequel-activerecord_connection](https://github.com/janko/sequel-activerecord_connection) gem, which allows you to use [Sequel](https://github.com/jeremyevans/sequel) alongside ActiveRecord and reuse the same database connection. This makes it easier to try Sequel out or to use libraries that depend on Sequel (e.g. [Rodauth](https://github.com/jeremyevans/rodauth/)) in ActiveRecord-based projects.
-
-Originally the transaction support was partially implemented, where the most common Sequel transaction options were emulated with the ActiveRecord API. In the latest version I've [rewritten the transaction code](https://github.com/janko/sequel-activerecord_connection/pull/8) to fully support Sequel's transaction API.
-
-    require "sequel"
-
-    DB = Sequel.postgres(test: false) # avoid creating a database connection
-    DB.extension :activerecord_connection # use ActiveRecord's database connection
-
-    DB.transaction(isolation: :serializable) do # handles isolation levels
-      DB.after_commit { ... } # runs after transaction commits
-      DB.transaction(savepoint: true) do # creates a savepoint
-        DB.after_rollback { ... } # runs after savepoint rolls back
-      end
-      DB.in_transaction? #=&gt; true
-    end
-
-Supporting Sequel's transaction/savepoint hooks was especially important for me, because it's a very useful feature when implementing business logic, and it's something ActiveRecord doesn't really support (AR supports transactional _model callbacks_, which are tied to model's lifecycle and aren't usable when I want to keep my business logic away from AR callbacks).
-## [7][How can I tell HOW I installed ruby on a Mac?](https://www.reddit.com/r/ruby/comments/hx77se/how_can_i_tell_how_i_installed_ruby_on_a_mac/)
-- url: https://www.reddit.com/r/ruby/comments/hx77se/how_can_i_tell_how_i_installed_ruby_on_a_mac/
----
-So, I've installed Ruby and rails and gems and all that awhile back. I had a directory of Jekyll themes I had been trying, and they worked. Now, when I try to run them I keep getting errors about not having a .bundle directory and other errors. I am trying to figure out what to do, and right now I am trying to figure HOW I installed it all in the first place. Can anyone tell me how I can figure out HOW I installed ruby and rails and whatnot please? For example, how can I tell if I used rbenv, or rmv, or the System, or brew, etc. ? Then, I just want to nuke it all and start over (again, for the 1000th time). Thank you!
-## [8][Fun Facts about Ruby #11: The different ways to generate symbol with special characters](https://www.reddit.com/r/ruby/comments/hwy9c3/fun_facts_about_ruby_11_the_different_ways_to/)
-- url: https://i.redd.it/lnb7dvf6prc51.png
----
-
-## [9][Ideas for Cli app](https://www.reddit.com/r/ruby/comments/hxcx0c/ideas_for_cli_app/)
-- url: https://www.reddit.com/r/ruby/comments/hxcx0c/ideas_for_cli_app/
----
-So like the title says, in school we need to create a cli app using active record and at least 3 classes and tables. Any ideas for such a simple thing? I’m not trying to re create the wheel but something that can easily be done in a week. I have some ideas already but I am interested what others have to say! 
-
-Thanks!!
-## [10][Introducing GoodJob 1.0, a new Postgres-based, multithreaded, ActiveJob backend for Ruby on Rails](https://www.reddit.com/r/ruby/comments/hwqmlf/introducing_goodjob_10_a_new_postgresbased/)
-- url: https://island94.org/2020/07/introducing-goodjob-1-0
----
-

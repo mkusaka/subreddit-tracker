@@ -7,11 +7,77 @@ Please use this thread to discuss **cool** but relatively **unknown** gems you'v
 You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
 Please include a **description** and a **link** to the gem's homepage in your comment.
-## [2][Where did you learn Stimulus and Stimulus Reflex?](https://www.reddit.com/r/rails/comments/hy3dwd/where_did_you_learn_stimulus_and_stimulus_reflex/)
+## [2][Cant access rails web console on Macos Catalina](https://www.reddit.com/r/rails/comments/hypwj0/cant_access_rails_web_console_on_macos_catalina/)
+- url: https://www.reddit.com/r/rails/comments/hypwj0/cant_access_rails_web_console_on_macos_catalina/
+---
+Yesterday i just realized i cant access rails' web console and even better\_errors gem's exception page on my mac.
+
+But the point is everything s cool on my linux machine. Any ideas why can it happen?And its also not only on my mac, my co-workers also cant see the live shell on their macs.
+
+It's the same code, same browser, same exception but different exception pages.
+
+Macos;
+
+[There's not a live shell on macos.](https://preview.redd.it/h5k3w18xndd51.png?width=1072&amp;format=png&amp;auto=webp&amp;s=5a49937d43e6355bdf7eb384b0a7032f653493a2)
+
+Linux;
+
+[better\_errors gem is working and there's a live shell on linux.  ](https://preview.redd.it/bg9ojc8rndd51.png?width=1237&amp;format=png&amp;auto=webp&amp;s=2fba51ce926b6626c88b3fa892f99393b53ffb07)
+
+&amp;#x200B;
+## [3][The more I look take a look at different apps, I see that they're just CRUD applications.](https://www.reddit.com/r/rails/comments/hybezw/the_more_i_look_take_a_look_at_different_apps_i/)
+- url: https://www.reddit.com/r/rails/comments/hybezw/the_more_i_look_take_a_look_at_different_apps_i/
+---
+I'm not sure if I'm thinking about this correctly, but I'm starting to see that the applications that I'm looking at are all perform the same basic functions.
+
+To elaborate, I see that most apps read and display data from a database. For example, an exercise web app shows users the exercise name, target muscles, and a video demonstration. Another example, a restaurant booking app, the app looks at how many time slots are not reserved and shows the data to the person checking for available times. Another example, Mint the personal finance app. It connects with your bank and it shows the user spending and alerts.
+
+There's a lot of times when I visited a website and said to myself "Oh this app is just here to organize and regurgitate my data."
+
+The question I have is, is this considered "business logic", or is there another layer to developing applications?
+## [4][Webpack Environment Config File](https://www.reddit.com/r/rails/comments/hygoa4/webpack_environment_config_file/)
+- url: https://www.reddit.com/r/rails/comments/hygoa4/webpack_environment_config_file/
+---
+Hi folks,
+
+In my Rails 6 project, I have the following `config/webpack/environment.js`:
+
+```javascript
+const { environment } = require('@rails/webpacker')
+const webpack = require('webpack')
+
+environment.plugins.prepend('Provide',
+  new webpack.ProvidePlugin({
+    $: 'jquery/src/jquery',
+    jQuery: 'jquery/src/jquery',
+    Popper: ['popper.js', 'default'],
+  })
+)
+
+module.exports = environment
+```
+
+My understanding is that this configuration is setting global variables `$`, `jQuery`, and `Popper`. Any other JavaScript that I write can use these variables, as they are globally available. 
+
+I have confirmed that this is the case for `$` and for `jQuery`, but when I try to reference `Popper` in the browser's console, I get an uncaught reference error. What am I missing here?
+## [5][Dockerizing a super old rails app, looking for advice](https://www.reddit.com/r/rails/comments/hyd2q1/dockerizing_a_super_old_rails_app_looking_for/)
+- url: https://www.reddit.com/r/rails/comments/hyd2q1/dockerizing_a_super_old_rails_app_looking_for/
+---
+Have any of you had to dockerize an old rails app at some point? I'm talking Ruby on Rails 2.3, Ruby 1.8.6, MySQL 2.7. That's actually what I'm trying to do but I'm having a lot of trouble.
+
+I don't think the official ruby image on Docker Hub even goes back far enough to 1.8, and all of the Dockerfiles I'm finding on Github don't work, or they use SQLite instead of MySQL.
+
+Any advice or resources are super appreciated
+
+## Update
+So I think I finally got it! However there is one small problem, and I cannot find the solution online.
+
+How can I import a database dump (.sql file) into a rails database? In rails 4+, you could just use `rails db &lt; ./path/to/db_dump.sql`, but I have no idea how to do that in rails 2.3 haha. I don't think i'm able to import the sql file using the mysql cli since the mysql container and app container are separate. I think... I learned docker over the weekend so i'm extremely new to all this haha.
+## [6][Where did you learn Stimulus and Stimulus Reflex?](https://www.reddit.com/r/rails/comments/hy3dwd/where_did_you_learn_stimulus_and_stimulus_reflex/)
 - url: https://www.reddit.com/r/rails/comments/hy3dwd/where_did_you_learn_stimulus_and_stimulus_reflex/
 ---
 
-## [3][Platform to learn Ruby on rails](https://www.reddit.com/r/rails/comments/hy6iuz/platform_to_learn_ruby_on_rails/)
+## [7][Platform to learn Ruby on rails](https://www.reddit.com/r/rails/comments/hy6iuz/platform_to_learn_ruby_on_rails/)
 - url: https://www.reddit.com/r/rails/comments/hy6iuz/platform_to_learn_ruby_on_rails/
 ---
 Hello everyone ,
@@ -19,7 +85,7 @@ Hello everyone ,
 I am returning to RoR world again , I  want to know if thee a platform  for RoR  like symfonycast or laracast for Symfony and Laravel .
 
 Thank you in advance
-## [4][How to build a book tracker in rails!](https://www.reddit.com/r/rails/comments/hxx6s6/how_to_build_a_book_tracker_in_rails/)
+## [8][How to build a book tracker in rails!](https://www.reddit.com/r/rails/comments/hxx6s6/how_to_build_a_book_tracker_in_rails/)
 - url: https://www.reddit.com/r/rails/comments/hxx6s6/how_to_build_a_book_tracker_in_rails/
 ---
 Hey guys , this series helps you understand the basics of rails through an interesting project. It takes nothing for granted, teaching you all the nitty gritty details. 
@@ -27,7 +93,7 @@ Hey guys , this series helps you understand the basics of rails through an inter
 Enjoy.
 
  [https://www.youtube.com/watch?v=uEwu7D5G-hU&amp;list=PLB4RncStK2LUbl9VWLQAHznLJrYz2YMB4](https://www.youtube.com/watch?v=uEwu7D5G-hU&amp;list=PLB4RncStK2LUbl9VWLQAHznLJrYz2YMB4)
-## [5][Starting a monthly newsletter for cool stuff I encounter on Rails, React and Graphql.](https://www.reddit.com/r/rails/comments/hxp9nm/starting_a_monthly_newsletter_for_cool_stuff_i/)
+## [9][Starting a monthly newsletter for cool stuff I encounter on Rails, React and Graphql.](https://www.reddit.com/r/rails/comments/hxp9nm/starting_a_monthly_newsletter_for_cool_stuff_i/)
 - url: https://www.reddit.com/r/rails/comments/hxp9nm/starting_a_monthly_newsletter_for_cool_stuff_i/
 ---
 Starting a monthly newsletter on Ruby on Rails, React and GraphQL developers to read about some cool stuff happening in the community.
@@ -44,14 +110,7 @@ This newsletter would consist of the following things:
 * Watching/Reading/Reviews.
 
 If you'd like to read my monthly newsletter. Please do subscribe here [https://buttondown.email/abhaynikam](https://buttondown.email/abhaynikam)
-## [6][Rails equivalent of Django F() Objects?](https://www.reddit.com/r/rails/comments/hxx6ee/rails_equivalent_of_django_f_objects/)
-- url: https://www.reddit.com/r/rails/comments/hxx6ee/rails_equivalent_of_django_f_objects/
----
-I’m wondering if there’s a library for rails or a rails native implementation of https://docs.djangoproject.com/en/3.0/ref/models/expressions/#f-expressions
-
-EDIT:
-Essentially I’m wanting to increment the number value of a field/value by 1 on multiple model instances.
-## [7][How to use Rails in the server side to make a Web Game](https://www.reddit.com/r/rails/comments/hxuy62/how_to_use_rails_in_the_server_side_to_make_a_web/)
+## [10][How to use Rails in the server side to make a Web Game](https://www.reddit.com/r/rails/comments/hxuy62/how_to_use_rails_in_the_server_side_to_make_a_web/)
 - url: https://www.reddit.com/r/rails/comments/hxuy62/how_to_use_rails_in_the_server_side_to_make_a_web/
 ---
 I'm trying to make a webgame just for fun and start to learn how to make websites, i understand the basic things: HTML is the website, CSS is for make it very cool and Javascript is for animations, process data, etc. Well a simple summary, let me know if i have some bad concept please.
@@ -61,85 +120,10 @@ Now i don't understand how to run code(a simple bucle) in the server side, maybe
 I use RoR because programming is my hobby and i've only done things in Ruby, i have used socket for Ruby to make a simple MMORPG and works fine, that's my experience.
 
 Something to send messages to clients from server side(gameloop) and using javascript to apply the changes in client side.
-## [8][Advice on using GraphQL for an admin dashboard](https://www.reddit.com/r/rails/comments/hxqva1/advice_on_using_graphql_for_an_admin_dashboard/)
-- url: https://www.reddit.com/r/rails/comments/hxqva1/advice_on_using_graphql_for_an_admin_dashboard/
+## [11][Rails equivalent of Django F() Objects?](https://www.reddit.com/r/rails/comments/hxx6ee/rails_equivalent_of_django_f_objects/)
+- url: https://www.reddit.com/r/rails/comments/hxx6ee/rails_equivalent_of_django_f_objects/
 ---
-The app at my company is a Rails REST API. Recently we've started working on a standalone admin dashboard, and I'm trying to figure out the best way to architect it. Each of our clients has a separate server, so this admin dashboard will be hitting many different servers (not sure if that's relevant).
-
-I've read a bit about GraphQL, and think it might offer a unique solution for us here. Rather than having to update the controllers on the API side every time a new admin task is required, would GraphQL allow us to change the requirements from the admin dashboard side? I've never used it and just want to make sure that I have the right idea about it before digging in. From what I've read, it sounds like we can have a very wide-open POST endpoint that will allow whichever updates are necessary, which sounds like a great solution for an admin dashboard.
-
-Because we don't already use it, do you think it would add enough benefit for this use-case, or should we just stick with REST controllers?
-
-We're planning on using Vue to build out the frontend for this dashboard, and if we use GraphQL, I suppose we'll be using Apollo.  
-
+I’m wondering if there’s a library for rails or a rails native implementation of https://docs.djangoproject.com/en/3.0/ref/models/expressions/#f-expressions
 
 EDIT:
-
-Thanks for the advice. It sounds like GraphQL isn't going to be much benefit in this case.
-## [9][What's the 'Rails' way of writing clean code (and adhering to the single responsibility principle)?](https://www.reddit.com/r/rails/comments/hxl330/whats_the_rails_way_of_writing_clean_code_and/)
-- url: https://www.reddit.com/r/rails/comments/hxl330/whats_the_rails_way_of_writing_clean_code_and/
----
-I just finished the [lesson 1 of writing clean code by "Uncle Bob"](https://www.youtube.com/watch?v=7EmboKQH8lM), and my biggest takeaway was the single responsibility principle — that "a function does one thing only" — and "polite code": all lines in a function should be on the same abstraction level, and they should call functions on a lower abstraction level, going all the way down to implementation.
-
-It's like newspaper: you read the heading to see what it's about; if you're interesting in learning more, you read the first paragraph; then the next; etc. It's being polite to the person trying to understand the codebase — they can take a look at the high-level function and understand its purpose without having to learn the unnecessary details in the process.
-
-His way of avoiding thousands of little functions as a result of this was to put everything into its own class, and to find those sometimes-non-obvious classes. In a Java-like language, that makes sense, but should we do the same in Ruby on Rails?
-
-I'm a beginner at Rails, but from what I can see it has a pretty strict structure ("convention over configuration") of MVC, where each "C" has several actions where the code goes. Should we split that code into other classes and compose everything inside the action? Or is there some other, better, more "Rails" way of doing things?
-## [10][Scope not working now I have migrated address data to a separate model](https://www.reddit.com/r/rails/comments/hxq92n/scope_not_working_now_i_have_migrated_address/)
-- url: https://www.reddit.com/r/rails/comments/hxq92n/scope_not_working_now_i_have_migrated_address/
----
-Hello,  
-
-
-I used to have just one model, `Venue`, which had an attribute called `address`, as well as a `longitude` and a `latitude` value.  
-
-
-But I decided to move all this to a separate model, `Address`, which `belongs_to :venue`.  
-
-
-Now, I had a scope set up for my old Venue model, which is now broken.  
-
-
-Here's the test for it:
-
-    it 'returns an ActiveRecord::Relation of venues which have addresses near given location' do
-      venue = create(:venue, user: create(:user) )
-      address = create(:address, venue: ven)
-            
-      expect(Venue.location("UK")).to eq([venue])
-    end
-
-  
-Here's what the scope used to look like:
-
-    scope :location, -&gt; location { near(location) }
-
-And here's  where I'm up to writing the new scope:
-
-    scope :location, -&gt; location { where(Address.near(location)) }
-
-I'm getting the following error when run the test for my new scope:
-
-    Unsupported argument type: #&lt;Address::ActiveRecord_Relation:0x00007f95df7bbb60&gt; (Address::ActiveRecord_Relation)
-
-  
-Now, I think I know why this is happening, because I actually want my scope to return all the venues which have associated addresses which return from the `.near(location)` search.
-
-But I'm actually getting the `Address` instances themselves returned.  
-
-
-So my question is, how do I fix this so that I'm getting `Venues` returned and not `Addresses` (assuming this is my problem). If that's not what the issue is, any other help would be appreciated.  
-
-
-Thanks.
-## [11][Ruby on Rails and IoT](https://www.reddit.com/r/rails/comments/hxhhti/ruby_on_rails_and_iot/)
-- url: https://www.reddit.com/r/rails/comments/hxhhti/ruby_on_rails_and_iot/
----
-Hello Everyone,
-
-I'm new to ruby on rails and I'm trying to build a web app that lets me subscribe to a topic through mqtt and recieve a payload from a simulated node-red IoT device that send de data to AWS IoT core. So what I'm trying to do is to have a web page that lets me click on a subscribe button and I can start getting data from the simulated device. My question is first of all if this is possible and second can somebody guide me to where I can learn to do this.
-
-Notes: What I've found is that for ruby there are gems for mqtt. But I'm not sure how to integrate with the web page. I've already sent a payload using irb and it was succesful. This is the repo I'm using: [njh/ruby-mqtt](https://github.com/njh/ruby-mqtt)
-
-Thanks.
+Essentially I’m wanting to increment the number value of a field/value by 1 on multiple model instances.

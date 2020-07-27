@@ -1,49 +1,62 @@
 # aws
-## [1][The AWS bill heard around the world](https://www.reddit.com/r/aws/comments/hy61bb/the_aws_bill_heard_around_the_world/)
+## [1][I've built awsnews.info for people who follow AWS Product Announcements, but are tired of noisy and boring updates](https://www.reddit.com/r/aws/comments/hydnq4/ive_built_awsnewsinfo_for_people_who_follow_aws/)
+- url: https://awsnews.info/
+---
+
+## [2][AWS Sagemaker or EC2 for deep learning](https://www.reddit.com/r/aws/comments/hyr7b3/aws_sagemaker_or_ec2_for_deep_learning/)
+- url: https://www.reddit.com/r/aws/comments/hyr7b3/aws_sagemaker_or_ec2_for_deep_learning/
+---
+ Hi ! I have a question for deep learning practitioners who are familiar with AWS products.
+
+In my workplace, we are assessing two options : using Amazon SageMaker or having an EC2 instance with GPU.
+
+We mainly need the computing power (GPU) and nothing more. We would like to have full control over which version is each package since our app needs specific versions for some packages and won't work otherwise. We are about to train a complex model with many components and loss functions.
+
+Which is more adapted for our case cost-wise and from an ease-of-use point of view ?
+
+Thank you in advance for your help.
+## [3][I wrote an article to help new AWS users get started. It covers 10 fundamental services.](https://www.reddit.com/r/aws/comments/hycswy/i_wrote_an_article_to_help_new_aws_users_get/)
+- url: https://seanjziegler.com/learning-aws-on-your-own-10-services-you-need-to-know/
+---
+
+## [4][The AWS bill heard around the world](https://www.reddit.com/r/aws/comments/hy61bb/the_aws_bill_heard_around_the_world/)
 - url: https://chrisshort.net/the-aws-bill-heard-around-the-world/
 ---
 
-## [2][What is the main utility of Amazon Sagemaker?](https://www.reddit.com/r/aws/comments/hy4pjb/what_is_the_main_utility_of_amazon_sagemaker/)
-- url: https://www.reddit.com/r/aws/comments/hy4pjb/what_is_the_main_utility_of_amazon_sagemaker/
----
-I've never done any deployment of ML models online? So what would you say is the main reason people use Sagemaker? Is the processing capacity or the ability to serve to algorithm to other users?
-## [3][fzfaws: Using fuzzy finder to perform AWS operations on the command line](https://www.reddit.com/r/aws/comments/hy6vq7/fzfaws_using_fuzzy_finder_to_perform_aws/)
-- url: https://github.com/kazhala/fzf.aws
+## [5][Ten Examples of Getting Data from DynamoDB with Python and Boto3](https://www.reddit.com/r/aws/comments/hyg6jo/ten_examples_of_getting_data_from_dynamodb_with/)
+- url: https://www.fernandomc.com/posts/ten-examples-of-getting-data-from-dynamodb-with-python-and-boto3/
 ---
 
-## [4][Can I use an AWS free tier Windows Server as a domain controller for my PCs at home?](https://www.reddit.com/r/aws/comments/hy6m5i/can_i_use_an_aws_free_tier_windows_server_as_a/)
-- url: https://www.reddit.com/r/aws/comments/hy6m5i/can_i_use_an_aws_free_tier_windows_server_as_a/
+## [6][Setting Cache-Control metadata in S3 bucket for static website](https://www.reddit.com/r/aws/comments/hys56p/setting_cachecontrol_metadata_in_s3_bucket_for/)
+- url: https://www.reddit.com/r/aws/comments/hys56p/setting_cachecontrol_metadata_in_s3_bucket_for/
 ---
-I’m just playing around with AWS... Is it possible to use a cloud server as a domain controller? I’ve spun up the server and configured AD but don’t know where to go from here. I don’t even know if it’s possible. Help?
-## [5][AWS Fundamentals Speedrun](https://www.reddit.com/r/aws/comments/hxqxb0/aws_fundamentals_speedrun/)
-- url: https://techradicals.wordpress.com/2020/07/25/aws-fundamentals-speedrun/
+Does adding a cache-control to images on my static website increase the costs of hosting?
+## [7][AWS Connect -&gt; How many rings before missed?](https://www.reddit.com/r/aws/comments/hyrfzo/aws_connect_how_many_rings_before_missed/)
+- url: https://www.reddit.com/r/aws/comments/hyrfzo/aws_connect_how_many_rings_before_missed/
 ---
+Seems like an obvious thing but my Google and Doc searching skills are failing me.
 
-## [6][Second U2F key for root user?](https://www.reddit.com/r/aws/comments/hxr2ba/second_u2f_key_for_root_user/)
-- url: https://www.reddit.com/r/aws/comments/hxr2ba/second_u2f_key_for_root_user/
----
-I would like to register a second U2F key as a backup for my root user account.  I don't see a way to do this without removing my existing key through the "Manage" option.  Backup keys are recommended in case the primary U2F key fails.  Is there a way to do this?
-## [7][Not able to access static folder in django project using apache2 server in ec2 instance](https://www.reddit.com/r/aws/comments/hy4ify/not_able_to_access_static_folder_in_django/)
-- url: https://www.reddit.com/r/aws/comments/hy4ify/not_able_to_access_static_folder_in_django/
----
-So i was setting up the django project on aws ec2 instance with the apache2 server everything was working until I tried to upload something to the static folder I checked the aws logs and it says permission denied /static I searched thoroughly on the stackoverflow forum and nothing was able to resolve the issue then I read somewhere that in django if we keep debug true the static folder is handled by the django itself I tried turning it off and now there is no permission denied error in apache error logs but the website is giving a server error and there is nothing uploaded in the static folder too. It is working perfectly in the local development or when I run it locally on a port in aws but when I use apache it is showing this error . I am not able to pinpoint the error or how to proceed from here if someone can get me to the right direction it will be very helpful
-## [8][AWS Lex bot on Zoom ??](https://www.reddit.com/r/aws/comments/hxw6tu/aws_lex_bot_on_zoom/)
-- url: https://www.reddit.com/r/aws/comments/hxw6tu/aws_lex_bot_on_zoom/
----
-Hello everyone, I am currently researching whether I can create an AWS Lex chat Bot and deploy it on Zoom? Wondering if anyone has been able to do this or if it’s possible at all? I did read their developer guide and it shows the only deployment options as mobile using their aws sdk, Facebook Messenger, Slack, and Twilio. 
+On AWS Connect how many times does it ring an agent before it's considered a missed call? What happens when a call is missed... does it try another agent?
 
-Thanks in advance, happy to have joined the community 😊
-## [9][Python Lambda Deployment Package](https://www.reddit.com/r/aws/comments/hxpc6t/python_lambda_deployment_package/)
-- url: https://www.reddit.com/r/aws/comments/hxpc6t/python_lambda_deployment_package/
+Thanks!
+## [8][Ec2 with APU ? Or anything that supports directx](https://www.reddit.com/r/aws/comments/hylt8q/ec2_with_apu_or_anything_that_supports_directx/)
+- url: https://www.reddit.com/r/aws/comments/hylt8q/ec2_with_apu_or_anything_that_supports_directx/
 ---
-I was looking to get some information about deployment packages and AWS Lambda. I'm looking at the following Github Repo:   
-
-
-[https://github.com/alexa/skill-sample-python-audio-player/tree/master/SingleStream](https://github.com/alexa/skill-sample-python-audio-player/tree/master/SingleStream?fbclid=IwAR3Q9HAeV4UpsSd5CxNOC-8P1l4wCICGUd14gusOIY9ZNKptQTMeUW7BZM0)  
+Hi guys
+I need to run some tasks that requires directx11
+The tasks dont utilise dx11 much- they simply need to meet the dx11 requirement before they can kick in
+At the moment, i can run those tasks  with g3 instances but these instances are really expensive so Im wondering if there is anything out there with APU that Im not aware of. 
+(I have tried standard instances with elastic graphic but it looks like elastic graphics doest support directx)
+Thanks
+## [9][Being charged by RDS master KMS key](https://www.reddit.com/r/aws/comments/hyp58b/being_charged_by_rds_master_kms_key/)
+- url: https://www.reddit.com/r/aws/comments/hyp58b/being_charged_by_rds_master_kms_key/
+---
+I was testing RDS last week on my personal account.  The service created a master key in KMS to encrypt RDS data.  This key is tagged in KMS console as "AWS managed" and I cannot delete it, although I cannot find anything in CloudTrail using it.  
 
 
-The instructions are clear, you need to modify certain parameters and eventually you need to create a deployment package for Lambda. I'm wondering which files need to be contained within the deployment package out of the repo? Clearly you need to put in the lambda function and the site packages, but what about the other files within the repo?
-## [10][lambda@edge function invocation location ?](https://www.reddit.com/r/aws/comments/hxszs7/lambdaedge_function_invocation_location/)
-- url: https://www.reddit.com/r/aws/comments/hxszs7/lambdaedge_function_invocation_location/
+I am being charged $0.03 daily for this key.  Although the amount is negligible I don't want to pay for something I don't need nor I use.  How can I delete this key?  I already tried reaching support (basic) but they cannot help with this as it is not account/billing related.
+## [10][Greengrass Core Questions](https://www.reddit.com/r/aws/comments/hynqmo/greengrass_core_questions/)
+- url: https://www.reddit.com/r/aws/comments/hynqmo/greengrass_core_questions/
 ---
-According to [cloudfront documentation](https://aws.amazon.com/cloudfront/features/), lambda@edge is triggered near the user but doesn't mention if it is invocated at an edge location or a regional edge cache location. This information is a prerequisite for the design of my solution. Can anybody help me out ?
+Hoping to find someone that's used Greengrass. So my intention is to use it to do some basic edge processing and emit events via mqtt. Now I want the configuration of what triggers the events to be made on the cloud via the device shadow. I'll have only one device on the field per site, so I think I could just get away with using the Core for all my needs, but turns out that the Core doesn't support shadow subscription for some reason. Which means I can't receive an event that my config has changed. Also, I will have one device per site, all running the same lambda but different shadow config. Any tips on the architecture?
+Thanks

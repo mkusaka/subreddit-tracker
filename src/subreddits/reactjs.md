@@ -110,51 +110,67 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][How to Create a Weather Widget with a Weather API](https://www.reddit.com/r/reactjs/comments/hy1x7x/how_to_create_a_weather_widget_with_a_weather_api/)
-- url: https://developer.climacell.co/blog/how-to-create-a-weather-widget-with-a-weather-api/#
+## [3][React Complete testing tutorial](https://www.reddit.com/r/reactjs/comments/hyjq81/react_complete_testing_tutorial/)
+- url: https://www.reddit.com/r/reactjs/comments/hyjq81/react_complete_testing_tutorial/
 ---
+if anyone is looking for a good testing tutorial here it is
 
-## [4][GraphQL first full-stack starter kit with Node, React. Powered by TypeScript](https://www.reddit.com/r/reactjs/comments/hxm9ti/graphql_first_fullstack_starter_kit_with_node/)
-- url: https://github.com/karanpratapsingh/fullstack-starterkit
+[https://www.freecodecamp.org/news/testing-react-hooks/](https://www.freecodecamp.org/news/testing-react-hooks/)
+## [4][Gatsby/React Fullstack Starter](https://www.reddit.com/r/reactjs/comments/hyjw79/gatsbyreact_fullstack_starter/)
+- url: https://www.reddit.com/r/reactjs/comments/hyjw79/gatsbyreact_fullstack_starter/
 ---
+hello everyone,
 
+I finished a side project Ive been working on for a while, which is a Gatsby starter that has its own accompanying server, making it a sort of "Fullstack starter".
+
+I noticed most starters are front end only which is a bummer, since Gatsby really shines with an API server.
+
+The server part is a simple Node API server with CRUD operations that talks to a Postgres DB, and I also included instructions to deploy the server to heroku for free.
+
+The front end Gatsby app is also very comprehensive and has everything you would want for a new project. The authentication especially was a little tricky to get right with a decoupled API server.
+
+check it out, let me know what you guys think.
+
+[https://github.com/iqbal125/gatsby\_fullstack\_starter](https://github.com/iqbal125/gatsby_fullstack_starter)
+
+[https://github.com/iqbal125/node-postgres-auth-api-server](https://github.com/iqbal125/node-postgres-auth-api-server)
 ## [5][Generating TypeScript types and React Hooks based on GraphQL endpoint](https://www.reddit.com/r/reactjs/comments/hy6ngn/generating_typescript_types_and_react_hooks_based/)
 - url: https://significa.co/blog/generating-typescript-types-and-react-hooks-based-on-graphql-endpoint
 ---
 
-## [6][Building a simple login form with Material UI and React Hook Form](https://www.reddit.com/r/reactjs/comments/hxzcgl/building_a_simple_login_form_with_material_ui_and/)
-- url: https://www.williamkurniawan.com/blog/building-a-simple-login-form-with-material-ui-and-react-hook-form
+## [6][uber/baseweb : A React Component library implementing the Base design language](https://www.reddit.com/r/reactjs/comments/hyrba5/uberbaseweb_a_react_component_library/)
+- url: https://github.com/uber/baseweb
 ---
 
-## [7][BLOG - Make Your React Apps Installable - How To Make Any React App a PWA](https://www.reddit.com/r/reactjs/comments/hy000v/blog_make_your_react_apps_installable_how_to_make/)
-- url: https://aniruddh.hashnode.dev/make-your-react-apps-installable-how-to-make-any-react-app-a-pwa-ckd2ftxjw018eaws11uct9osi
+## [7][CSS for Reactjs](https://www.reddit.com/r/reactjs/comments/hyrba1/css_for_reactjs/)
+- url: https://www.reddit.com/r/reactjs/comments/hyrba1/css_for_reactjs/
+---
+What's the best or most popular way of implementing CSS in ReactJS?
+## [8][Ways to optimize React applications](https://www.reddit.com/r/reactjs/comments/hypbep/ways_to_optimize_react_applications/)
+- url: https://blog.soshace.com/ways-to-optimize-react-applications/
 ---
 
-## [8][How to build a Chrome Extension to analyze text as you write](https://www.reddit.com/r/reactjs/comments/hy5x5x/how_to_build_a_chrome_extension_to_analyze_text/)
-- url: https://medium.com/@juancurti.it/how-to-build-a-chrome-extension-to-analyze-text-as-you-write-a1c0ab1923f9
+## [9][Getting a job/project](https://www.reddit.com/r/reactjs/comments/hysay8/getting_a_jobproject/)
+- url: https://www.reddit.com/r/reactjs/comments/hysay8/getting_a_jobproject/
 ---
-
-## [9][Chrome &amp; Firefox domain blocker extension made with React &amp; Redux Saga.](https://www.reddit.com/r/reactjs/comments/hy5gyx/chrome_firefox_domain_blocker_extension_made_with/)
-- url: https://www.reddit.com/r/reactjs/comments/hy5gyx/chrome_firefox_domain_blocker_extension_made_with/
+Hi, I recently checked up on Javascript and along with it also React JS( as a new member in coding, If I could say)and I feel like I’m ready to start working with these topics but I don’t know where to start, If you could help me I really would appreciate it.
+## [10][A year ago I published a book on React in German. Now there's a 2nd edition and an English version!](https://www.reddit.com/r/reactjs/comments/hybq3y/a_year_ago_i_published_a_book_on_react_in_german/)
+- url: https://www.reddit.com/r/reactjs/comments/hybq3y/a_year_ago_i_published_a_book_on_react_in_german/
 ---
-Hello guys this is my first try to make browser extension with Reactjs. Hope you will like it. Any feedback is welcome. Thank you
+I'm happy to announce that my German book ["React lernen und verstehen"](https://buch.react-js.dev/) was translated into English and is finally available for sale worldwide! It's available as ebook and paperback. A hardcover version will available soon (only in the EU due to organizational reasons). 
 
-Github Link: [https://github.com/gobeam/go-cold](https://github.com/gobeam/go-cold)
-## [10][Does anybody know the single source where I can read about best practices to handle authentication in reactjs?](https://www.reddit.com/r/reactjs/comments/hy48lj/does_anybody_know_the_single_source_where_i_can/)
-- url: https://www.reddit.com/r/reactjs/comments/hy48lj/does_anybody_know_the_single_source_where_i_can/
+You can find all the information on [https://book.react-js.dev/](https://book.react-js.dev/)
+
+If you have any questions, don't hesitate to ask, I will gladly answer your questions! :)
+## [11][How to deal with separation of components and request logic](https://www.reddit.com/r/reactjs/comments/hykiqn/how_to_deal_with_separation_of_components_and/)
+- url: https://www.reddit.com/r/reactjs/comments/hykiqn/how_to_deal_with_separation_of_components_and/
 ---
-I've been building ReactJS authentication, but after taking a stroll around the internet for how to handle authentication in react, I get that there are multiple ways to do so such as using ContextProviders or by using Redux State. Then to store the authentication token, for some, it is a cookie-based solution, while others add local storage based solution. But I'd like to know if there are any standard practices while handling authentication in ReactJS?
-## [11][Context API vs Redux](https://www.reddit.com/r/reactjs/comments/hy68g0/context_api_vs_redux/)
-- url: https://www.reddit.com/r/reactjs/comments/hy68g0/context_api_vs_redux/
+I have thought that for maintainability, I should implement all request logic separately from my UI components, given that a lot of code handling my async observable functionality clutters my component code. What are your thoughts on this? Just implementing request logic in another js module, and importing for use by the component to fetch data. 
+
+For you folks that have production ready experience with React, what is the most common way you’ve seen this abstracted? I hate to ask “best practice” as it’s highly subjective... just looking for get professional opinion here. Thanks ahead of time.
+## [12][I built a dating website](https://www.reddit.com/r/reactjs/comments/hyiflx/i_built_a_dating_website/)
+- url: https://www.reddit.com/r/reactjs/comments/hyiflx/i_built_a_dating_website/
 ---
-I am starting a new project and want to explore whether Context API is sufficient on it’s own. Are there any use cases wherein Redux might be needed ?
-## [12][apollo vs redux](https://www.reddit.com/r/reactjs/comments/hy5lvp/apollo_vs_redux/)
-- url: https://www.reddit.com/r/reactjs/comments/hy5lvp/apollo_vs_redux/
----
-hi. 
+I built a dating site aimed at helping you find people to go on game dates or have anime watch dates with. I learned a lot while building this site and there is still more I want to add/improve. I'm excited to hear what all your thoughts are on anything you would like to see, or any issues you run into! 
 
-i'm starting new project with electron and react. I wanna read local svg files in electron and store it in react app  through ipc. 
-
-i wanna try to use apollo for storing data but my friend said  since there is no backend server redux would be better choice. 
-
-in this situation, which one is suitable for project?
+Check it out [here](https://playmayte.com/)

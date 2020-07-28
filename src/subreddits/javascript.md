@@ -87,58 +87,43 @@ this is the place.
 
 
 &amp;nbsp;
-## [3][Superfine 8 — Absolute bare minimum view layer for building web interfaces.](https://www.reddit.com/r/javascript/comments/hyqxqo/superfine_8_absolute_bare_minimum_view_layer_for/)
+## [3][I made a classic Minesweeper clone using Svelte, TypeScript and RxJS!](https://www.reddit.com/r/javascript/comments/hza9gu/i_made_a_classic_minesweeper_clone_using_svelte/)
+- url: https://github.com/AlexAegis/svelte-minesweeper
+---
+
+## [4][I made a github profile README generator tool to add awesome addons like visitors count, github stats, etc in one go](https://www.reddit.com/r/javascript/comments/hzbqo2/i_made_a_github_profile_readme_generator_tool_to/)
+- url: https://github.com/rahuldkjain/github-profile-readme-generator
+---
+
+## [5][Superfine 8 — Absolute bare minimum view layer for building web interfaces.](https://www.reddit.com/r/javascript/comments/hyqxqo/superfine_8_absolute_bare_minimum_view_layer_for/)
 - url: https://github.com/jorgebucaran/superfine/
 ---
 
-## [4][When I first tried contributing to open source it was very difficult finding relevant issues that I would enjoy contributing to, In the spirit of open-source, I thought I should make this process a bit simpler for other people who might be facing this issue. So I made a website to do this.](https://www.reddit.com/r/javascript/comments/hyb1z7/when_i_first_tried_contributing_to_open_source_it/)
-- url: https://firstcontrib.herokuapp.com/
+## [6][Object.is() vs Strict Equality Operator in JavaScript](https://www.reddit.com/r/javascript/comments/hze5ex/objectis_vs_strict_equality_operator_in_javascript/)
+- url: https://dmitripavlutin.com/object-is-vs-strict-equality-operator/
 ---
 
-## [5][[AskJS] React, Angular or Vue ?](https://www.reddit.com/r/javascript/comments/hynsmw/askjs_react_angular_or_vue/)
-- url: https://www.reddit.com/r/javascript/comments/hynsmw/askjs_react_angular_or_vue/
----
-**1)** React, Angular or Vue ? Which you prefer and why ? 
-
-
-**2)** Do you love or hate Typescript ? Do you feel it's necessary for each project ? I mean is JS becoming more OO to you or more Functional... would you hate to see JS becoming slowly C# or Java ? 
-
-
-**3)** Is Jquery dead ? Is it still possible/better to develop a large project in native JS without a framework ? or gain performance / programmer time for a senior dev etc ?
-## [6][k6 plugin to load test Apache Kafka with support for Avro messages](https://www.reddit.com/r/javascript/comments/hypan0/k6_plugin_to_load_test_apache_kafka_with_support/)
-- url: https://github.com/mostafa/k6-plugin-kafka
+## [7][How to Receive Webhook Events With Netlify Functions and JavaScript](https://www.reddit.com/r/javascript/comments/hz1j0k/how_to_receive_webhook_events_with_netlify/)
+- url: https://fidel.uk/blog/receive-webhook-events-netlify-functions-javascript/?utm_source=social&amp;utm_medium=reddit&amp;utm_campaign=laka
 ---
 
-## [7][Building a Bitcoin Currency Converter Web App with Javascript &amp; JSON API](https://www.reddit.com/r/javascript/comments/hyq9um/building_a_bitcoin_currency_converter_web_app/)
-- url: https://thecodezine.com/easy-way-to-built-bitcoin-currency-converter-by-json-api/
+## [8][WTF is composition?](https://www.reddit.com/r/javascript/comments/hzdshr/wtf_is_composition/)
+- url: https://whatthefuck.is/composition
 ---
 
-## [8][Create visualization of your sort algorithm](https://www.reddit.com/r/javascript/comments/hyi5f4/create_visualization_of_your_sort_algorithm/)
-- url: https://github.com/SMUsamaShah/VisualizingSorts
+## [9][How JSON Web Tokens work](https://www.reddit.com/r/javascript/comments/hz2fd5/how_json_web_tokens_work/)
+- url: https://medium.com/@javabrainsmain/how-json-web-tokens-work-211ce7b705f7
 ---
 
-## [9][[AskJS] trying to figure out this cycle script enable to increase the cycle time length](https://www.reddit.com/r/javascript/comments/hyl84v/askjs_trying_to_figure_out_this_cycle_script/)
-- url: https://www.reddit.com/r/javascript/comments/hyl84v/askjs_trying_to_figure_out_this_cycle_script/
----
-Hello. I’m currently trying to figure out how I can increase the random cycle time length. It changes around 8 seconds, but I want it to cycle every 20 minutes if possible. I’m currently looking through the palette cycle script am in having trouble reading through it, and I was wondering if someone can help. 
-
-Here is the website: https://www.gjtorikian.com/Earthbound-Battle-Backgrounds-JS/
-
-And here is the script: https://github.com/gjtorikian/Earthbound-Battle-Backgrounds-JS/blob/gh-pages/src/rom/palette_cycle.js
-## [10][How to Create a Weather Widget with a Weather API](https://www.reddit.com/r/javascript/comments/hy318b/how_to_create_a_weather_widget_with_a_weather_api/)
-- url: https://developer.climacell.co/blog/how-to-create-a-weather-widget-with-a-weather-api/#
+## [10][Hey, I've been working on a JS/TS templating library for a while called Haipa](https://www.reddit.com/r/javascript/comments/hzeo3f/hey_ive_been_working_on_a_jsts_templating_library/)
+- url: https://github.com/matteron/Haipa
 ---
 
-## [11][[AskJS] How would I go about making the gifs on this website cycle slower?](https://www.reddit.com/r/javascript/comments/hyh2ug/askjs_how_would_i_go_about_making_the_gifs_on/)
-- url: https://www.reddit.com/r/javascript/comments/hyh2ug/askjs_how_would_i_go_about_making_the_gifs_on/
+## [11][A complete Golang and Nuxt(VueJS) boilerplate for your project with backend API, frontend, tests and CI/CD pipelines.](https://www.reddit.com/r/javascript/comments/hzehqs/a_complete_golang_and_nuxtvuejs_boilerplate_for/)
+- url: https://gitlab.com/gadelkareem/skeleton
 ---
-Hello. When you click on the endless random button in this site, it goes through the combinations. My only issue is that it changes way too fast. I was wondering if there was i way I could inspect the element and change the time change to say a minute or longer?
-https://www.gjtorikian.com/Earthbound-Battle-Backgrounds-JS/
-## [12][[AskJS] May be it's high time to implement a new word for the frameworks of the frameworks in the developers dictionary.](https://www.reddit.com/r/javascript/comments/hynb6t/askjs_may_be_its_high_time_to_implement_a_new/)
-- url: https://www.reddit.com/r/javascript/comments/hynb6t/askjs_may_be_its_high_time_to_implement_a_new/
+
+## [12][I'm building a 16-bit virtual machine in JavaScript, but it only has 64kb of addressable memory. In this episode the bank switching technique common in retro game consoles is implemented, giving it a super charge!](https://www.reddit.com/r/javascript/comments/hze7j6/im_building_a_16bit_virtual_machine_in_javascript/)
+- url: https://www.youtube.com/watch?v=araYkE3KAms
 ---
-You see, eg. Vue itself is a framework of JavaScript, and there are another frameworks of Vue, (eg. Nuxt, Quasar, Framework7, etc).
 
-So eventually it becomes, the framework of a framework. I thinks it's the right time to implement a new word for these (Nuxt, Quasar, etc) in our developers dictionary. 
-
-What you say? What should it be? Or am I wrong about this, correct me if I am. Let's have a discussion over it!

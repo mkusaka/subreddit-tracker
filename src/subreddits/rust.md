@@ -23,92 +23,56 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/hynlvw/whats_everyone_working_on_this_week_312020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-31-2020/46441?u=llogiq)!
-## [3][rust-analyzer changelog #35](https://www.reddit.com/r/rust/comments/hyq5tm/rustanalyzer_changelog_35/)
+## [3][Rust is now a top 20 language in all of the 5 most major language popularity listings](https://www.reddit.com/r/rust/comments/hz7dfp/rust_is_now_a_top_20_language_in_all_of_the_5/)
+- url: https://www.reddit.com/r/rust/comments/hz7dfp/rust_is_now_a_top_20_language_in_all_of_the_5/
+---
+Redmonk's biannual language popularity analysis was just published, and Rust places at 20th: [https://redmonk.com/sogrady/2020/07/27/language-rankings-6-20/](https://redmonk.com/sogrady/2020/07/27/language-rankings-6-20/)
+
+Other popular listings:
+
+* [TIOBE Index](https://www.tiobe.com/tiobe-index/) \- 18th
+* [PYPL PopularitY of Programming Language](http://pypl.github.io/PYPL.html) \- 18th
+* [IEEE Spectrum 2020](https://spectrum.ieee.org/static/interactive-the-top-programming-languages-2020) \- 20th
+* [Stack Overflow survey 2020](https://insights.stackoverflow.com/survey/2020#technology-programming-scripting-and-markup-languages) \- 19th
+
+While any one of these can be thought only as a single datapoint with it's associated biases and uncertainty, I think that together they tell a coherent story: Rust is a reasonably popular, "top 20", language in year 2020. While this has nothing to do with the capabilities of the language itself, this fact might be helpful to convince colleagues and bosses to adopt the language at workplaces where it makes sense.
+## [4][You Can Now Debug Programs Using GDB on Redox OS](https://www.reddit.com/r/rust/comments/hzd35z/you_can_now_debug_programs_using_gdb_on_redox_os/)
+- url: https://www.redox-os.org/news/public-announcement-gdb/
+---
+
+## [5][Host your rust project on {something}.cli.rs!](https://www.reddit.com/r/rust/comments/hz49iu/host_your_rust_project_on_somethingclirs/)
+- url: https://www.reddit.com/r/rust/comments/hz49iu/host_your_rust_project_on_somethingclirs/
+---
+Hello everyone! I've been trying to learn rust over the past few months. I saw that \`starship.rs\` had a really cool domain name so I went and looked for one myself. Realized the registrars are expensive and not that reputable.
+
+So I bought [cli.rs](https://cli.rs). I made a way where anyone can use it. You just need to make a PR to this repo: [https://github.com/zackify/cli.rs](https://github.com/zackify/cli.rs) and the CNAME record for any subdomain will be created for you.
+
+Hope this is okay to post here, I don't get anything out of this, and just thought it was a cool idea :)
+## [6][Writing a file system from scratch in Rust](https://www.reddit.com/r/rust/comments/hyw8oh/writing_a_file_system_from_scratch_in_rust/)
+- url: https://blog.carlosgaldino.com/writing-a-file-system-from-scratch-in-rust.html
+---
+
+## [7][View - SwiftUI like macro now proc_macro_hack free and less restrictive](https://www.reddit.com/r/rust/comments/hz7t24/view_swiftui_like_macro_now_proc_macro_hack_free/)
+- url: https://github.com/richardanaya/view
+---
+
+## [8][Found graph producing an optical illusion, while working on a Rust library for something called "Avatar Graphs" - now added to database of interesting graphs](https://www.reddit.com/r/rust/comments/hzc2eo/found_graph_producing_an_optical_illusion_while/)
+- url: https://github.com/advancedresearch/avatar_graph/issues/43
+---
+
+## [9][Enum or Trait Object](https://www.reddit.com/r/rust/comments/hz5iwm/enum_or_trait_object/)
+- url: https://www.possiblerust.com/guide/enum-or-trait-object
+---
+
+## [10][rust-analyzer changelog #35](https://www.reddit.com/r/rust/comments/hyq5tm/rustanalyzer_changelog_35/)
 - url: https://rust-analyzer.github.io/thisweek/2020/07/27/changelog-35.html
 ---
 
-## [4][Ballista Distributed Compute: One Year Later](https://www.reddit.com/r/rust/comments/hylldh/ballista_distributed_compute_one_year_later/)
-- url: https://andygrove.io/2020/07/ballista-one-year-on/
+## [11][JSONB data with Rust and Diesel](https://www.reddit.com/r/rust/comments/hzbxof/jsonb_data_with_rust_and_diesel/)
+- url: https://vasilakisfil.social/blog/2020/05/09/rust-diesel-jsonb/
 ---
 
-## [5][Richter - a modern Quake engine](https://www.reddit.com/r/rust/comments/hypx17/richter_a_modern_quake_engine/)
-- url: http://c-obrien.org/richter/
----
-
-## [6][My first crate - a runtime-agnostic, 100% safe attempt at scoped asynchronous tasks](https://www.reddit.com/r/rust/comments/hyqyx2/my_first_crate_a_runtimeagnostic_100_safe_attempt/)
-- url: https://docs.rs/safe-async-scoped/0.1.1/safe_async_scoped/
----
-
-## [7][Oak: an infinitely portable language powered by secret, brainf*%! inspired technology.](https://www.reddit.com/r/rust/comments/hygtvb/oak_an_infinitely_portable_language_powered_by/)
-- url: https://github.com/adam-mcdaniel/oakc
----
-
-## [8][autograph v0.0.3](https://www.reddit.com/r/rust/comments/hyjlal/autograph_v003/)
-- url: https://www.reddit.com/r/rust/comments/hyjlal/autograph_v003/
----
-https://crates.io/crates/autograph
-
-# Changes
-  - datasets feature is now default
-  - renamed layer as nn and moved autograd and optimizer into it
-
-# New features
-  - Optimizer trait
-  - Sgd Optimizer
-  - Saving of parameters and checkpoints
-  - Variable / Tensor add() method
-  - Layer can be derived 
-  - impl_forward macro for generating Forward implementation
-  - Sequential Layer
-## [9][IntelliJ Rust Changelog #127](https://www.reddit.com/r/rust/comments/hys35n/intellij_rust_changelog_127/)
+## [12][IntelliJ Rust Changelog #127](https://www.reddit.com/r/rust/comments/hys35n/intellij_rust_changelog_127/)
 - url: https://intellij-rust.github.io/2020/07/27/changelog-127.html
----
-
-## [10][How to iterate in parallel over two hashmaps?](https://www.reddit.com/r/rust/comments/hyrej9/how_to_iterate_in_parallel_over_two_hashmaps/)
-- url: https://www.reddit.com/r/rust/comments/hyrej9/how_to_iterate_in_parallel_over_two_hashmaps/
----
-I am in the process of making a simulation run in parallel on multiple cores. Rayon plus some Arcs and Mutexes got me most of the way there pretty fast, but now I run into the following issue.
-
-One step of my simulation gets a `families_by_location: HashMap&lt;NodeId, Vec&lt;Family&gt;&gt;` generated by one submodel and a `patches: HashMap&lt;NodeId, Patch&gt;` from another submodel. Then some interaction happens on patches, so the core bit of that was something like
-
-    for node_id, families in families_by_location.iter_mut() {
-        match patches.get_mut(node_id) {
-            None =&gt; continue,
-            Some(patch) =&gt; families_exploit_patch(families, patch)
-        }
-    }
-
-This can be naturally parallelized, but my naïve way is 
-
-    let patches_wrapper = Arc::new(Mutex::new(patches));
-    families_by_location.par_iter_mut().map(|(node_id, families)| {
-        match patches_wrapper.lock().unwrap().get_mut(node_id) {
-            None =&gt; {},
-            Some(patch) =&gt; {
-                families_exploit_patch(families, patch)
-            }
-        }
-    }.for_each(|()| ());
-
-and that's obviously a bit unhandy, because all the steps want a lock on the `patches_wrapper` at roughly the same time.
-
-Stuffing the `Patch` structs into `families_by_location` is not optimal because currently these two objects are dealt with quite indepentently until this point. Is there a way to zip two HashSets in a convenient manner, which would allow a construction as
-
-    families_by_location.with_zipped(patches).par_iter_mut().map(|(node_id, (maybe_families, maybe_patch))| {
-        match maybe_patch {
-            None =&gt; {continue},
-            Some(patch) =&gt; {
-                families_exploit_patch(maybe_families.unwrap(), patch)
-            }
-        }
-    }.for_each(|()| ());
-
-or such like? Or do I have to resort to one of the other options – and how do I then assess whether a big compound `HashMap&lt;NodeID, (Vec&lt;Family&gt;, Patch)&gt;` is better than an `Arc&lt;Mutex&lt;HashMap&lt;NodeID, Patch&gt;&gt;&gt;`?
-## [11][PinePhone Gtk Rust Starter](https://www.reddit.com/r/rust/comments/hye132/pinephone_gtk_rust_starter/)
-- url: https://github.com/richardanaya/pinephone-gtk-rs-starter
----
-
-## [12][Per @ryan_levick: If you’re interested in making Windows applications with WinUI and XAML, let the team know by upvoting this issue!](https://www.reddit.com/r/rust/comments/hy65qk/per_ryan_levick_if_youre_interested_in_making/)
-- url: https://github.com/microsoft/microsoft-ui-xaml/issues/2488
 ---
 

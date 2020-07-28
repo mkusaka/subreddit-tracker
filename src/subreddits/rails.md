@@ -7,7 +7,157 @@ Please use this thread to discuss **cool** but relatively **unknown** gems you'v
 You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
 Please include a **description** and a **link** to the gem's homepage in your comment.
-## [2][Cant access rails web console on Macos Catalina](https://www.reddit.com/r/rails/comments/hypwj0/cant_access_rails_web_console_on_macos_catalina/)
+## [2][Best open source/community maintained project templates?](https://www.reddit.com/r/rails/comments/hz8p72/best_open_sourcecommunity_maintained_project/)
+- url: https://www.reddit.com/r/rails/comments/hz8p72/best_open_sourcecommunity_maintained_project/
+---
+Recently I read an article about the Rails templates (sorry, I didn't saved it, but here is the [docs](https://guides.rubyonrails.org/rails_application_templates.html)). I thought that there might be open source or community maintained rails templates, and I found:
+
+* [This thoughtbot gem that builds rails app with certain configurations](https://github.com/thoughtbot/suspenders)
+* [This template](https://github.com/dao42/rails-template)
+* [Also this template](https://github.com/mattbrictson/rails-template)
+* [And some paid templates](https://hixonrails.com/)
+
+&amp;#x200B;
+
+Then I come here to r/rails to see if I could see more, but I didn't found any post about this, that's why I wanted to ask if you use a template for new projects or have any favorite that you want to share. Thanks! :)
+## [3][Would someone be able to explain Redis clients/connections with actioncable to me like I'm a dummy?](https://www.reddit.com/r/rails/comments/hz14wg/would_someone_be_able_to_explain_redis/)
+- url: https://www.reddit.com/r/rails/comments/hz14wg/would_someone_be_able_to_explain_redis/
+---
+So let's pretend for a minute that I am a Rails dev that knows just enough about how the actual servers work to be dangerous.  So when I am connecting to actioncable through an api with redis on heroku, what constitutes a client?  I am asking, first because I don't understand it and I want to learn things.  But second, because I see on heroku there is a 20 client limit on the hobby version heroku redis add-on.  Does that mean that only 20 people can connect to actioncable at a time?  Or is that some other kind of client/connection?
+
+EDIT:  So based on this https://www.ably.io/blog/rails-actioncable-the-good-and-the-bad, what I'm getting is that action cable runs as it's own process, that has one connection to redis.  So every use would not be a client, but the action cable server/process would be one connection/client.  At least that's the way I'm reading it.
+## [4][convert rails api to rails app](https://www.reddit.com/r/rails/comments/hzemhx/convert_rails_api_to_rails_app/)
+- url: https://www.reddit.com/r/rails/comments/hzemhx/convert_rails_api_to_rails_app/
+---
+I have a Rails Api that has a Vue front end (in it's own directory called client). Now we're wanting to add admin screen but the client has indicated they'd prefer those just be rails pages like RailsAdmin. Is there a good guide for converting a Rails Api to a full Rails App while not blowing away the things you've already done? Most guides seem to indicate running rails-new again and carefully selecting things not to overwrite but that doesn't really tell you if you're missing anything once it's done.
+## [5][Why is the Rails object not defined in Javascript?](https://www.reddit.com/r/rails/comments/hz9v3y/why_is_the_rails_object_not_defined_in_javascript/)
+- url: https://www.reddit.com/r/rails/comments/hz9v3y/why_is_the_rails_object_not_defined_in_javascript/
+---
+My understanding was that an object called Rails should be available globally in Javascript. See this link:
+
+ [https://www.rubyguides.com/2019/03/rails-ajax/](https://www.rubyguides.com/2019/03/rails-ajax/) 
+
+&amp;#x200B;
+
+However, opening the Chrome console and typing in Rails gives me:
+
+    VM514:1 Uncaught ReferenceError: Rails is not defined
+        at &lt;anonymous&gt;:1:1
+
+I found [this issue on Github](https://github.com/rails/rails/issues/36686), but it's unclear what the conclusion is. Another user reports that the Rails object is undefined, someone provides a specific sequence of statements to import the object, and then the issue is closed. But why isn't the object available by default? 
+
+If I add the following code to `application.js`, then the Rails object is defined in the Chrome javascript console:
+
+    import Rails from "@rails/ujs";
+    window.Rails = Rails;
+    if(Rails.fire(document, "rails:attachBindings")) {
+        Rails.start();
+    }
+
+Is it normal to have to add this for the Rails object to be defined?
+## [6][What are the dangers of this code?](https://www.reddit.com/r/rails/comments/hz8xvp/what_are_the_dangers_of_this_code/)
+- url: https://www.reddit.com/r/rails/comments/hz8xvp/what_are_the_dangers_of_this_code/
+---
+Hello! 
+
+I have a situation where I have two models connected with an association. 
+
+I want to allow users to copy a set of images from a current set. Sets are just a bunch of associations between the set and the individual images. 
+
+I know that convention says that I should move all this logic from the controller to the model, and I will be doing that next. But I started working on this problem in the controller and wanted to finish my thoughts there to get it to work first. I named the sets something else because they were a reserved word, but using it here for clarity. 
+
+    def copy         
+      set = Set.find(params[:id])
+        set.line_items.each do |item|
+          @line_item = LineItem.new
+          @line_item = item.dup  
+          @line_item.bin_id = current_bin.id
+          @line_item.set_id = nil
+          @line_item.save
+        end
+        redirect_to :controller =&gt; 'exemplars', :action =&gt; 'index'
+    end
+
+I have a link from the set page to the copy action, and everything works. I wanted to create a new @line_item (the association) for each existing line item in the set we are copying from. Then dup it, then set the bin.id to the current bin which is a temporary holding model, and then set the @line_item.set_id to nil. Then it saves each one. 
+
+I know there are probably better ways to do this, but my real question is what happens if something interrupts this copy process? How common would that be, and is there a way to safeguard against that?
+## [7][Can't log in after upgrading 4.0 -&gt; 4.2, advice please](https://www.reddit.com/r/rails/comments/hyvhjd/cant_log_in_after_upgrading_40_42_advice_please/)
+- url: https://www.reddit.com/r/rails/comments/hyvhjd/cant_log_in_after_upgrading_40_42_advice_please/
+---
+Hey everyone.
+
+Title describes the situation.  I used the rake app:upgrade tool to get the various configs updated.  The site launches and appears to run just fine, except login doesn't work.
+
+I'm switching over to other work but I'll be looking at this again later on in the week and I thought I would throw out the question to everyone here.  Do you have any advice on what I should be looking for?  I'm really not super familiar with rails (used it back in the 1.x/2.x days only), so it's not clear to me what the problem could be.  My initial thought is to check if the way passwords are salted/hashed has changed.
+
+Thanks everyone!
+## [8][Importing a database dump into a rails project on Docker](https://www.reddit.com/r/rails/comments/hyupi7/importing_a_database_dump_into_a_rails_project_on/)
+- url: https://www.reddit.com/r/rails/comments/hyupi7/importing_a_database_dump_into_a_rails_project_on/
+---
+Let me preface this post with this: I started learning docker over the weekend, so if you see something here that is bad practice, please please call me out on it.
+
+I know the command in Rails 4+, it's
+
+    rails db &lt; ./path/to/db_dump.sql
+
+but I don't know how to do it with Rails 2.3. I know it's old, but it's all I have to work with.
+
+I cannot use the MySQL CLI. I think have to use a Rake task because the application is dockerized, so my MySQL container doesn't "know" about my rails_app_development database.
+
+Does anyone know the Rails 2.3 command for this, if there is one?
+
+## Things I've tried:
+
+**1. This one i feel like has gotten me the closest**
+
+```ruby
+namespace :db do
+  task :import_from_source =&gt; :environment do
+    Encoding.default_external = Encoding::UTF_8
+    Encoding.default_internal = Encoding::UTF_8
+    ActiveRecord::Base.connection.execute(IO.read("./file.sql"))
+  end
+end
+```
+
+So i basically just made a rake task. Then in docker I can run: 
+
+```
+$ docker-compose run app rake db:import_from_source
+```
+
+And it appears that everything worked. In fact, I see this in my logs:
+
+```
+app_1  | -- Dump completed on 2020-07-24 6:20:02
+app_1  |
+app_1  |   SQL (0.7ms)   SET SQL_AUTO_IS_NULL=0
+```
+
+However when I refresh the page, I still get a "mysql table dosen't exist" error
+
+**2. This doesn't work and I'm not sure why**
+
+First I run:
+
+```
+docker-compose run --rm app rake db:create
+```
+
+and that works, but when I go into my db container using `docker-compose run db bash` and run
+
+```
+mysql -u root -p rails_db_development &lt; /db_dump/db_dump.sql
+```
+
+I get this error:
+
+```
+ERROR 1049 (42000): Unknown database 'rails_db_development'
+```
+
+Even though I created it in the app container.
+## [9][Cant access rails web console on Macos Catalina](https://www.reddit.com/r/rails/comments/hypwj0/cant_access_rails_web_console_on_macos_catalina/)
 - url: https://www.reddit.com/r/rails/comments/hypwj0/cant_access_rails_web_console_on_macos_catalina/
 ---
 Yesterday i just realized i cant access rails' web console and even better\_errors gem's exception page on my mac.
@@ -25,7 +175,7 @@ Linux;
 [better\_errors gem is working and there's a live shell on linux.  ](https://preview.redd.it/bg9ojc8rndd51.png?width=1237&amp;format=png&amp;auto=webp&amp;s=2fba51ce926b6626c88b3fa892f99393b53ffb07)
 
 &amp;#x200B;
-## [3][The more I look take a look at different apps, I see that they're just CRUD applications.](https://www.reddit.com/r/rails/comments/hybezw/the_more_i_look_take_a_look_at_different_apps_i/)
+## [10][The more I look take a look at different apps, I see that they're just CRUD applications.](https://www.reddit.com/r/rails/comments/hybezw/the_more_i_look_take_a_look_at_different_apps_i/)
 - url: https://www.reddit.com/r/rails/comments/hybezw/the_more_i_look_take_a_look_at_different_apps_i/
 ---
 I'm not sure if I'm thinking about this correctly, but I'm starting to see that the applications that I'm looking at are all perform the same basic functions.
@@ -35,7 +185,7 @@ To elaborate, I see that most apps read and display data from a database. For ex
 There's a lot of times when I visited a website and said to myself "Oh this app is just here to organize and regurgitate my data."
 
 The question I have is, is this considered "business logic", or is there another layer to developing applications?
-## [4][Webpack Environment Config File](https://www.reddit.com/r/rails/comments/hygoa4/webpack_environment_config_file/)
+## [11][Webpack Environment Config File](https://www.reddit.com/r/rails/comments/hygoa4/webpack_environment_config_file/)
 - url: https://www.reddit.com/r/rails/comments/hygoa4/webpack_environment_config_file/
 ---
 Hi folks,
@@ -60,70 +210,3 @@ module.exports = environment
 My understanding is that this configuration is setting global variables `$`, `jQuery`, and `Popper`. Any other JavaScript that I write can use these variables, as they are globally available. 
 
 I have confirmed that this is the case for `$` and for `jQuery`, but when I try to reference `Popper` in the browser's console, I get an uncaught reference error. What am I missing here?
-## [5][Dockerizing a super old rails app, looking for advice](https://www.reddit.com/r/rails/comments/hyd2q1/dockerizing_a_super_old_rails_app_looking_for/)
-- url: https://www.reddit.com/r/rails/comments/hyd2q1/dockerizing_a_super_old_rails_app_looking_for/
----
-Have any of you had to dockerize an old rails app at some point? I'm talking Ruby on Rails 2.3, Ruby 1.8.6, MySQL 2.7. That's actually what I'm trying to do but I'm having a lot of trouble.
-
-I don't think the official ruby image on Docker Hub even goes back far enough to 1.8, and all of the Dockerfiles I'm finding on Github don't work, or they use SQLite instead of MySQL.
-
-Any advice or resources are super appreciated
-
-## Update
-So I think I finally got it! However there is one small problem, and I cannot find the solution online.
-
-How can I import a database dump (.sql file) into a rails database? In rails 4+, you could just use `rails db &lt; ./path/to/db_dump.sql`, but I have no idea how to do that in rails 2.3 haha. I don't think i'm able to import the sql file using the mysql cli since the mysql container and app container are separate. I think... I learned docker over the weekend so i'm extremely new to all this haha.
-## [6][Where did you learn Stimulus and Stimulus Reflex?](https://www.reddit.com/r/rails/comments/hy3dwd/where_did_you_learn_stimulus_and_stimulus_reflex/)
-- url: https://www.reddit.com/r/rails/comments/hy3dwd/where_did_you_learn_stimulus_and_stimulus_reflex/
----
-
-## [7][Platform to learn Ruby on rails](https://www.reddit.com/r/rails/comments/hy6iuz/platform_to_learn_ruby_on_rails/)
-- url: https://www.reddit.com/r/rails/comments/hy6iuz/platform_to_learn_ruby_on_rails/
----
-Hello everyone ,
-
-I am returning to RoR world again , I  want to know if thee a platform  for RoR  like symfonycast or laracast for Symfony and Laravel .
-
-Thank you in advance
-## [8][How to build a book tracker in rails!](https://www.reddit.com/r/rails/comments/hxx6s6/how_to_build_a_book_tracker_in_rails/)
-- url: https://www.reddit.com/r/rails/comments/hxx6s6/how_to_build_a_book_tracker_in_rails/
----
-Hey guys , this series helps you understand the basics of rails through an interesting project. It takes nothing for granted, teaching you all the nitty gritty details. 
-
-Enjoy.
-
- [https://www.youtube.com/watch?v=uEwu7D5G-hU&amp;list=PLB4RncStK2LUbl9VWLQAHznLJrYz2YMB4](https://www.youtube.com/watch?v=uEwu7D5G-hU&amp;list=PLB4RncStK2LUbl9VWLQAHznLJrYz2YMB4)
-## [9][Starting a monthly newsletter for cool stuff I encounter on Rails, React and Graphql.](https://www.reddit.com/r/rails/comments/hxp9nm/starting_a_monthly_newsletter_for_cool_stuff_i/)
-- url: https://www.reddit.com/r/rails/comments/hxp9nm/starting_a_monthly_newsletter_for_cool_stuff_i/
----
-Starting a monthly newsletter on Ruby on Rails, React and GraphQL developers to read about some cool stuff happening in the community.
-
-In a month we come across a lot cool stuff happening in the community, learn new things and contribute to the open-source world and newsletters is the best way to share some of those finding/blogs/videos.
-
-This newsletter would consist of the following things:
-
-* Dev Joke
-* My Blogs.
-* Reading/watching list.
-* Open-source libraries/contributions.
-* Rails changelog.
-* Watching/Reading/Reviews.
-
-If you'd like to read my monthly newsletter. Please do subscribe here [https://buttondown.email/abhaynikam](https://buttondown.email/abhaynikam)
-## [10][How to use Rails in the server side to make a Web Game](https://www.reddit.com/r/rails/comments/hxuy62/how_to_use_rails_in_the_server_side_to_make_a_web/)
-- url: https://www.reddit.com/r/rails/comments/hxuy62/how_to_use_rails_in_the_server_side_to_make_a_web/
----
-I'm trying to make a webgame just for fun and start to learn how to make websites, i understand the basic things: HTML is the website, CSS is for make it very cool and Javascript is for animations, process data, etc. Well a simple summary, let me know if i have some bad concept please.
-
-Now i don't understand how to run code(a simple bucle) in the server side, maybe i need a extended library but i would like to use RoR only. I would like if someone guide me for a good simple way to do what i need.
-
-I use RoR because programming is my hobby and i've only done things in Ruby, i have used socket for Ruby to make a simple MMORPG and works fine, that's my experience.
-
-Something to send messages to clients from server side(gameloop) and using javascript to apply the changes in client side.
-## [11][Rails equivalent of Django F() Objects?](https://www.reddit.com/r/rails/comments/hxx6ee/rails_equivalent_of_django_f_objects/)
-- url: https://www.reddit.com/r/rails/comments/hxx6ee/rails_equivalent_of_django_f_objects/
----
-I’m wondering if there’s a library for rails or a rails native implementation of https://docs.djangoproject.com/en/3.0/ref/models/expressions/#f-expressions
-
-EDIT:
-Essentially I’m wanting to increment the number value of a field/value by 1 on multiple model instances.

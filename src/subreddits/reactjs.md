@@ -110,67 +110,62 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][React Complete testing tutorial](https://www.reddit.com/r/reactjs/comments/hyjq81/react_complete_testing_tutorial/)
-- url: https://www.reddit.com/r/reactjs/comments/hyjq81/react_complete_testing_tutorial/
----
-if anyone is looking for a good testing tutorial here it is
-
-[https://www.freecodecamp.org/news/testing-react-hooks/](https://www.freecodecamp.org/news/testing-react-hooks/)
-## [4][Gatsby/React Fullstack Starter](https://www.reddit.com/r/reactjs/comments/hyjw79/gatsbyreact_fullstack_starter/)
-- url: https://www.reddit.com/r/reactjs/comments/hyjw79/gatsbyreact_fullstack_starter/
----
-hello everyone,
-
-I finished a side project Ive been working on for a while, which is a Gatsby starter that has its own accompanying server, making it a sort of "Fullstack starter".
-
-I noticed most starters are front end only which is a bummer, since Gatsby really shines with an API server.
-
-The server part is a simple Node API server with CRUD operations that talks to a Postgres DB, and I also included instructions to deploy the server to heroku for free.
-
-The front end Gatsby app is also very comprehensive and has everything you would want for a new project. The authentication especially was a little tricky to get right with a decoupled API server.
-
-check it out, let me know what you guys think.
-
-[https://github.com/iqbal125/gatsby\_fullstack\_starter](https://github.com/iqbal125/gatsby_fullstack_starter)
-
-[https://github.com/iqbal125/node-postgres-auth-api-server](https://github.com/iqbal125/node-postgres-auth-api-server)
-## [5][Generating TypeScript types and React Hooks based on GraphQL endpoint](https://www.reddit.com/r/reactjs/comments/hy6ngn/generating_typescript_types_and_react_hooks_based/)
-- url: https://significa.co/blog/generating-typescript-types-and-react-hooks-based-on-graphql-endpoint
+## [3][GraphAV - A graph algorithms visualizer built using React and Typescript (links in comments)](https://www.reddit.com/r/reactjs/comments/hysz84/graphav_a_graph_algorithms_visualizer_built_using/)
+- url: https://v.redd.it/b3u1vudqqed51
 ---
 
-## [6][uber/baseweb : A React Component library implementing the Base design language](https://www.reddit.com/r/reactjs/comments/hyrba5/uberbaseweb_a_react_component_library/)
-- url: https://github.com/uber/baseweb
+## [4][Converting your Callback Functions into Async/Await Functions in under 3 minutes! I've been in callback hell and once I discovered async/await. It changed my life!](https://www.reddit.com/r/reactjs/comments/hz7jgv/converting_your_callback_functions_into/)
+- url: https://www.youtube.com/watch?v=xklsibKSSyk
 ---
 
-## [7][CSS for Reactjs](https://www.reddit.com/r/reactjs/comments/hyrba1/css_for_reactjs/)
-- url: https://www.reddit.com/r/reactjs/comments/hyrba1/css_for_reactjs/
----
-What's the best or most popular way of implementing CSS in ReactJS?
-## [8][Ways to optimize React applications](https://www.reddit.com/r/reactjs/comments/hypbep/ways_to_optimize_react_applications/)
-- url: https://blog.soshace.com/ways-to-optimize-react-applications/
+## [5][Visual editor for the Chakra-UI library that generates production-ready code](https://www.reddit.com/r/reactjs/comments/hzcmdk/visual_editor_for_the_chakraui_library_that/)
+- url: https://openchakra.app/
 ---
 
-## [9][Getting a job/project](https://www.reddit.com/r/reactjs/comments/hysay8/getting_a_jobproject/)
-- url: https://www.reddit.com/r/reactjs/comments/hysay8/getting_a_jobproject/
+## [6][Why do you need Unit Testing in React Native application? | Video Tutorial](https://www.reddit.com/r/reactjs/comments/hze3jd/why_do_you_need_unit_testing_in_react_native/)
+- url: https://www.youtube.com/watch?v=JGseou6bwYs
 ---
-Hi, I recently checked up on Javascript and along with it also React JS( as a new member in coding, If I could say)and I feel like I’m ready to start working with these topics but I don’t know where to start, If you could help me I really would appreciate it.
-## [10][A year ago I published a book on React in German. Now there's a 2nd edition and an English version!](https://www.reddit.com/r/reactjs/comments/hybq3y/a_year_ago_i_published_a_book_on_react_in_german/)
-- url: https://www.reddit.com/r/reactjs/comments/hybq3y/a_year_ago_i_published_a_book_on_react_in_german/
+
+## [7][Next.js 9.5: Incremental Static Regeneration, Custom Base Path, Rewrites and Redirects, and More](https://www.reddit.com/r/reactjs/comments/hyvzgt/nextjs_95_incremental_static_regeneration_custom/)
+- url: https://nextjs.org/blog/next-9-5
 ---
-I'm happy to announce that my German book ["React lernen und verstehen"](https://buch.react-js.dev/) was translated into English and is finally available for sale worldwide! It's available as ebook and paperback. A hardcover version will available soon (only in the EU due to organizational reasons). 
 
-You can find all the information on [https://book.react-js.dev/](https://book.react-js.dev/)
-
-If you have any questions, don't hesitate to ask, I will gladly answer your questions! :)
-## [11][How to deal with separation of components and request logic](https://www.reddit.com/r/reactjs/comments/hykiqn/how_to_deal_with_separation_of_components_and/)
-- url: https://www.reddit.com/r/reactjs/comments/hykiqn/how_to_deal_with_separation_of_components_and/
+## [8][TypeScript + React: Component patterns](https://www.reddit.com/r/reactjs/comments/hz24by/typescript_react_component_patterns/)
+- url: https://fettblog.eu/typescript-react-component-patterns/
 ---
-I have thought that for maintainability, I should implement all request logic separately from my UI components, given that a lot of code handling my async observable functionality clutters my component code. What are your thoughts on this? Just implementing request logic in another js module, and importing for use by the component to fetch data. 
 
-For you folks that have production ready experience with React, what is the most common way you’ve seen this abstracted? I hate to ask “best practice” as it’s highly subjective... just looking for get professional opinion here. Thanks ahead of time.
-## [12][I built a dating website](https://www.reddit.com/r/reactjs/comments/hyiflx/i_built_a_dating_website/)
-- url: https://www.reddit.com/r/reactjs/comments/hyiflx/i_built_a_dating_website/
+## [9][useEffect is unwanted API and it lets developers sneak in unwanted code and makes a component impure with side effects](https://www.reddit.com/r/reactjs/comments/hzepjo/useeffect_is_unwanted_api_and_it_lets_developers/)
+- url: https://www.reddit.com/r/reactjs/comments/hzepjo/useeffect_is_unwanted_api_and_it_lets_developers/
 ---
-I built a dating site aimed at helping you find people to go on game dates or have anime watch dates with. I learned a lot while building this site and there is still more I want to add/improve. I'm excited to hear what all your thoughts are on anything you would like to see, or any issues you run into! 
+I like reactJS only because it is simple to render a dynamic component but with useEffect it looks like a bloat API and here is why.
 
-Check it out [here](https://playmayte.com/)
+useEffect doesn't feel like an API because it is doable without it.
+
+A - example for achieving side effect using react's API  
+B - example for achieving side effect without using react's API
+
+Here is a link to image [https://imgur.com/gallery/iCAAhAQ](https://imgur.com/gallery/iCAAhAQ)
+
+By definition of useEffect, it is helps to do changes which causes side effects. But to maintain a component in react, it shouldn't have any side effect. Such function calls should be moved to a utility.
+
+ReactJS is a good framework but things like these is making it bloated. The framework is slick and awesome as it is, but this API sounds like a hype because an API should allow you to do things that is not possible without it but for this use case it doesn't look solid.
+
+I'm asking this question because I'm not sure whether I am misunderstanding something about that API or not.
+## [10][How to do include(searchtern) on a object with multiple arrays?](https://www.reddit.com/r/reactjs/comments/hze6kp/how_to_do_includesearchtern_on_a_object_with/)
+- url: https://www.reddit.com/r/reactjs/comments/hze6kp/how_to_do_includesearchtern_on_a_object_with/
+---
+How to do include(searchtern) on a object with multiple arrays?
+
+Lets say if I have an object with 5 different string arrays containing elements.
+
+How can I in an easy way to an include("string example") on all of them?
+## [11][Importing React via npm in existing (non-React) app](https://www.reddit.com/r/reactjs/comments/hzbb8q/importing_react_via_npm_in_existing_nonreact_app/)
+- url: https://www.reddit.com/r/reactjs/comments/hzbb8q/importing_react_via_npm_in_existing_nonreact_app/
+---
+I have been using React for a few months now. I have an existing Flask app and I use React within key pages to provide interactive features, but it is not a React app overall. I do this using CDN links for 'react' and 'react-dom'. However, I keep hitting moments at which it would be helpful to import an external react module, but this is only possible through npm, not using CDN links.
+
+Can anybody point me in the direction of a guide or tutorial for someone in my position? I would like to use npm, but a) don't really know much about it, and b) do *not* want to create a full React app, just have react running on a few pages within my existing app. I currently use Babel to compile my JSX into JS files that are included via &lt;script&gt; tags in my HTML.
+## [12][UI walkthrough with React hooks](https://www.reddit.com/r/reactjs/comments/hzdqew/ui_walkthrough_with_react_hooks/)
+- url: https://twitter.com/diegohaz/status/1288087268222214144
+---
+

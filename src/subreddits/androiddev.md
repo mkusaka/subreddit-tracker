@@ -70,82 +70,114 @@ We'll start answering questions on **Thursday, July 30 at 12:00 PM PDT / 3:00 PM
 * **Tor Norbye** (u/tnorbye) - Engineering Director for Android Studio
 * **Wojtek Kaliciński** (u/wkalicinski) - Android Developer Relations
 * **Xavier Ducrohet** (u/droidxav) - Tech lead for Android SDK
-## [3][discussion on recent remote interviews](https://www.reddit.com/r/androiddev/comments/hzcmm4/discussion_on_recent_remote_interviews/)
+## [3][I just started with posting videos on my channel. I convert dribbble design shots into actual implementation do give it a look and if you want something to be implemented you can ping me. I'll be more than happy to implement it. Thank you all.](https://www.reddit.com/r/androiddev/comments/hzz8tq/i_just_started_with_posting_videos_on_my_channel/)
+- url: https://youtu.be/aETxy64GaBo
+---
+
+## [4][Blindly following Apple's design guidelines](https://www.reddit.com/r/androiddev/comments/hziqnm/blindly_following_apples_design_guidelines/)
+- url: https://www.reddit.com/r/androiddev/comments/hziqnm/blindly_following_apples_design_guidelines/
+---
+Background: My company has a native iOS and Android app. I'm lead for the Android project. Our design documents for new features and UI usually based on iOS because the designers all have iPhones and the company doesn't have the resources to make mockups for both platforms.
+
+I often have to fight for variations to be accepted in the Android implementation. Sometimes the fight is easy, but there are still many times where I get push back with the argument "well Apple does it this way and Android really isn't known for its UX so..." I'm told to just do it the Apple way.
+
+Today: I won't go into the details, but basically I argued for a change based on Android standards, and because the design doc just didn't make sense. I was shot down because the design was "based on Apple" and therefore better. So I conceded in the conversation, but went to look up the Apple design after the meeting: their design is the same as my suggestion and Android's, but the designer fudged it up in our design document.
+
+How do you all deal with this kind of "Apple did it this way and even if it doesn't make sense to us, Apple knows best" mentality?
+## [5][How can I find an sha-1 digest for a manifest.mf](https://www.reddit.com/r/androiddev/comments/i00h03/how_can_i_find_an_sha1_digest_for_a_manifestmf/)
+- url: https://www.reddit.com/r/androiddev/comments/i00h03/how_can_i_find_an_sha1_digest_for_a_manifestmf/
+---
+I'm making an Android app mod and almost all apps have an manifest.mf file.
+There are text Lines with the path and the Sha-1 digest line. 
+
+I need to add a file to the app.
+
+
+[Manifest.mf](https://drive.google.com/file/d/169nnb_OpzAIZMgil0nXvHgk9yrjbOw98/view?usp=drivesdk)
+
+So is there a way?
+
+Btw I'm not the Creator of this app.
+All I'm doing this modding this app.
+## [6][Playing a video with Jetpack Compose](https://www.reddit.com/r/androiddev/comments/hzyfh8/playing_a_video_with_jetpack_compose/)
+- url: https://medium.com/@hllozercan/playing-a-video-with-jetpack-compose-10a453ff956
+---
+
+## [7][AndroidBites | How to Catch ?: Errors !!](https://www.reddit.com/r/androiddev/comments/hzu5m7/androidbites_how_to_catch_errors/)
+- url: https://chetangupta.net/kotlin-try-null/
+---
+
+## [8][Android Studio 4.2 Canary 6 available](https://www.reddit.com/r/androiddev/comments/hzlv4y/android_studio_42_canary_6_available/)
+- url: https://androidstudio.googleblog.com/2020/07/android-studio-42-canary-6-available.html
+---
+
+## [9][[Question][android.speech.tts] Has anyone managed to programmatically change tts voice quality to QUALITY_VERY_HIGH?](https://www.reddit.com/r/androiddev/comments/hzz0r5/questionandroidspeechtts_has_anyone_managed_to/)
+- url: https://www.reddit.com/r/androiddev/comments/hzz0r5/questionandroidspeechtts_has_anyone_managed_to/
+---
+Hi everyone,
+
+I'm trying to change android.speech.tts's voice quality from QUALITY\_HIGH(400) to QUALITY\_VERY\_HIGH(500).
+
+Has anyone managed to do this?
+
+Thanks.
+## [10][discussion on recent remote interviews](https://www.reddit.com/r/androiddev/comments/hzcmm4/discussion_on_recent_remote_interviews/)
 - url: https://www.reddit.com/r/androiddev/comments/hzcmm4/discussion_on_recent_remote_interviews/
 ---
 For multiple reasons, I have recently been wanting to change jobs. I have been doing Android dev since now about 6 years. I don't have an engineering background, I have a masters in Statistics, and I don't have any education at all in computer science, I am self-learned. I do not lie about this in my CV.  
 Recently I have had many online interviews for Android developer jobs with the same scenario: they bring up the online coding thing and I am asked to solve some algo problem such as reversing a binary tree (for the easiest), or optimising the complexity of an existing algorithm. at the same time, I am not asked a single question on Android at all. I understand that these companies want some high-level engineering people, but why put through all the recruiting process with someone for an Android dev job if they are clearly looking for engineers? I admit, I am not an engineer, my solving problems skills have some limits (which can probably be compensated with a google search) but I still have a scientific approach and tend to always look for optimal solutions to a problem. nevertheless, these companies will probably end up recruiting a very talented person who might not know much on android development rather than a great android developer which will deliver a top quality app in little time.  
 let me guys know what you think about this.
-## [4][I finally wrote the last article about my first app! It shows how I reverse engineered my bus stop service to make my own app!](https://www.reddit.com/r/androiddev/comments/hz0sva/i_finally_wrote_the_last_article_about_my_first/)
-- url: https://therolf.fr/anchor/index.php/posts/optymo-reverse-engineering-part-3
+## [11][[Infographic] Building Journeys and Creating Moments](https://www.reddit.com/r/androiddev/comments/hzjto9/infographic_building_journeys_and_creating_moments/)
+- url: https://i.redd.it/c9il9m0j3nd51.png
 ---
 
-## [5][Android Notification All-in-One](https://www.reddit.com/r/androiddev/comments/hzckr1/android_notification_allinone/)
-- url: https://medium.com/@myrickchow/android-notification-all-in-one-8df3e1218e0e?source=friends_link&amp;sk=73ef00a2aac5654ede9a84218bb83cc5
+## [12][I am a self-taught developer who just finished working on an app for controlling Philips Hue via Samsung Galaxy Edge panel. I invite you to beta test it.](https://www.reddit.com/r/androiddev/comments/hzjuu9/i_am_a_selftaught_developer_who_just_finished/)
+- url: https://www.reddit.com/r/androiddev/comments/hzjuu9/i_am_a_selftaught_developer_who_just_finished/
 ---
+Hello, my name is Nils Trubkin. I am a self-taught developer who just finished working on an app and would like to invite you to test its beta version.
 
-## [6][Introducing the Motion Editor](https://www.reddit.com/r/androiddev/comments/hz50jq/introducing_the_motion_editor/)
-- url: https://android-developers.googleblog.com/2020/07/introducing-motion-editor.html?linkId=95203859
----
+It is called “Hue edge” and offers the control of the Philips Hue lights system. The app is only compatible with the Samsung Galaxy Edge family of phones, that is all the phones with a curved screen edge. It is a panel that you can add to the Edge panels stack. You can get the beta version from the official Galaxy Store via this link:
 
-## [7][Android Room library. How Update DAO works?](https://www.reddit.com/r/androiddev/comments/hzaz02/android_room_library_how_update_dao_works/)
-- url: https://www.reddit.com/r/androiddev/comments/hzaz02/android_room_library_how_update_dao_works/
----
-Hi, I'm learning Android Room library and I found @Update annotation in DAO class. Here's the method:
-
-@Update
-void updateUser(User user);
-
-How is it going to update your table? We don't have WHERE clause. Should I use the same User object that I used during inserting to have the same id?
-## [8][Anyone received reviews like these that says the game/app is nice but vote 1 star? I'm just curious, are they bots or are they just being sarcastic? None of them reply when I tried replying to them. Flagging them or contacting support will not work as they didn't violate the comment policy](https://www.reddit.com/r/androiddev/comments/hyqcwl/anyone_received_reviews_like_these_that_says_the/)
-- url: https://i.redd.it/cqvhf216udd51.jpg
----
-
-## [9][Having hard time with Emulators and Android Studio on Linux](https://www.reddit.com/r/androiddev/comments/hzebeq/having_hard_time_with_emulators_and_android/)
-- url: https://www.reddit.com/r/androiddev/comments/hzebeq/having_hard_time_with_emulators_and_android/
----
-I have an optimus laptop (hybrid graphics) with 8GB of RAM running Fedora. I want to run emulator using hardware acceleration since I have limited RAM. If I am to run emulator  with iGPU whole machine becomes slow since
-
-Android Studio Java VM instance (\~2.0) + Gradle daemons (\~.92 GB) + emulator (\~2.1) &gt;= 5 GB approximately.
-
-In order to make things worse overtime AGP seems to be spawning new gradle daemons which was reported [here](https://issuetracker.google.com/issues/138908544), and overtime AS JVM instance also seems to getting bigger.
-
-When machine is low on RAM it turns to swap which makes things slow and finally totally freezing, so I have to hit power button. Having to make change and waiting to see the result and your machine freeze. This makes Android dev totally unhappy experience. In order to do work for a while have to keep eye on the gradle daemons and kill unused ones manually or restart android studio time to time.
-
-Devs do not have phones from each API version so they have to rely to emulators for testing sometimes.
-
-I have enabled KVM, Virtualization, Emulator settings set to hardware acceleration. Still emulator takes about 2 GB and start to make things slow.
+[http://apps.samsung.com/betastore/openAppDetail.as?appId=com.nilstrubkin.hueedge](http://apps.samsung.com/betastore/openAppDetail.as?appId=com.nilstrubkin.hueedge)
 
 &amp;#x200B;
 
-* Was anyone able to use dGPU with emulator on Linux? 
-* Am I the only one having hard time with emulators and Android Studio? What is the case in Window and MacOS?
-* It seems to be you need at least 16 GB RAM to do Android Dev comfortably? May be need at least 16 cores?
-## [10][Real Time Object and Collision Detection in Mobile Application](https://www.reddit.com/r/androiddev/comments/hzdu7c/real_time_object_and_collision_detection_in/)
-- url: https://www.reddit.com/r/androiddev/comments/hzdu7c/real_time_object_and_collision_detection_in/
----
-Hi
+[Screenshots of the app](https://preview.redd.it/6xl0dvmv3nd51.png?width=1703&amp;format=png&amp;auto=webp&amp;s=8d9fcee2208add48484f0a41dcf2c3b2c1882a3b)
 
-I am trying to develop a mobile application that uses camera to detect objects and give warnings to prevent collisions.
+**The app**
 
-Could you guys please suggest  me what platform I could use for developing the mobile application? I was thinking of using Flutter.
+Edge panel that contains the main functionality of the app is provided in a similar way to the stock panel with app shortcuts. You can control your Philips Hue lights, rooms, zones, and scenes from here. There are 4 categories and one extra for mixed types of buttons. You can long tap to access brightness, color, and saturation adjustments.
 
-Additionally, if there are any tips or suggestions - I am open to those.
-## [11][Kotlin 1.4.0-RC Released – Kotlin Blog](https://www.reddit.com/r/androiddev/comments/hysqze/kotlin_140rc_released_kotlin_blog/)
-- url: https://blog.jetbrains.com/kotlin/2020/07/kotlin-1-4-rc-released/
----
+The first start-up is accompanied by a setup guide that searches for the Philips Hue bridge.
 
-## [12][Does anyone know what is the correct way to handle failed acknowledgement after purchase is success?](https://www.reddit.com/r/androiddev/comments/hzdict/does_anyone_know_what_is_the_correct_way_to/)
-- url: https://www.reddit.com/r/androiddev/comments/hzdict/does_anyone_know_what_is_the_correct_way_to/
----
-According to
+The edit mode that lets you organize the buttons with drag-n-drop.
 
-*  [https://www.reddit.com/r/androiddev/comments/dokbtl/in\_app\_billing\_a\_lot\_of\_weird\_refunds/](https://www.reddit.com/r/androiddev/comments/dokbtl/in_app_billing_a_lot_of_weird_refunds/) 
-*  [https://www.reddit.com/r/androiddev/comments/bsgfx6/play\_store\_automatic\_refunds\_after\_72\_hours/](https://www.reddit.com/r/androiddev/comments/bsgfx6/play_store_automatic_refunds_after_72_hours/) 
-*  [https://www.reddit.com/r/androiddev/comments/f8x9ss/inapp\_purchases\_always\_get\_refunded\_after\_3\_days/](https://www.reddit.com/r/androiddev/comments/f8x9ss/inapp_purchases_always_get_refunded_after_3_days/) 
+**Feedback**
 
-We need to acknowledge a success purchase.
+I am very thankful for any feedback you can provide. You can reach me here, or via [hueedgepanel@gmail.com](mailto:hueedgepanel@gmail.com)
 
-But, what if the acknowledgement failed? Should we retry the acknowledgement? But how? Should we still allow user to access the in-app purchase item?
+I am mostly interested in the following:
 
-Thanks.
+· Did you encounter any bugs, errors or other difficulties using the app?
+
+· Does the app lack some features you would like to see implemented?
+
+· Does the app provide you value for the price of 1$ (one dollar)?
+
+**Technicalities**
+
+Supported down to Android 23, the Samsung SDK sets the limit. Should work up to Android 30. Tested on different screen sizes and should look roughly the same, but if your phone preferences for text size are set to very small it may make the button text hard to read. Supports Hue Bridge 2 (square one) and not tested on the older Hue Bridge (round one).
+
+Source: [https://github.com/nils-trubkin/Hue-Edge](https://github.com/nils-trubkin/Hue-Edge)
+
+**What I learned**
+
+Android Studio IDE, Samsung Slook SDK, threading, executors, callbacks, hash maps, saving to memory, REST requests, layouts, mDNS, UPnP, LAN IP scan, view adapters, animations, and some more.
+
+**Difficulties**
+
+Implementing a full LAN network scan solution was a huge pain given poorly documented APIs on networking. Most solutions online presented code only working for 24 prefix networks, my solution works on any netmask.
+
+**Conclusion**
+
+This app took a good while to create and I am pleased with the result. I hope it brings somebody value and joy to use.

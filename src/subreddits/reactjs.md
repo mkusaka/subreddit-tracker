@@ -110,62 +110,61 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][GraphAV - A graph algorithms visualizer built using React and Typescript (links in comments)](https://www.reddit.com/r/reactjs/comments/hysz84/graphav_a_graph_algorithms_visualizer_built_using/)
-- url: https://v.redd.it/b3u1vudqqed51
+## [3][Rubber Mesh Swipe Transition ( three-js &amp; react-spring)](https://www.reddit.com/r/reactjs/comments/hzfig9/rubber_mesh_swipe_transition_threejs_reactspring/)
+- url: https://v.redd.it/9br9rls4xld51
 ---
 
-## [4][Converting your Callback Functions into Async/Await Functions in under 3 minutes! I've been in callback hell and once I discovered async/await. It changed my life!](https://www.reddit.com/r/reactjs/comments/hz7jgv/converting_your_callback_functions_into/)
-- url: https://www.youtube.com/watch?v=xklsibKSSyk
+## [4][What is a common best practice for the UI when calling a single API to load the content for a page?](https://www.reddit.com/r/reactjs/comments/hzvraq/what_is_a_common_best_practice_for_the_ui_when/)
+- url: https://www.reddit.com/r/reactjs/comments/hzvraq/what_is_a_common_best_practice_for_the_ui_when/
+---
+Hi there, fairly new to React. I'm curious to what design patterns people use when calling a single api to get some data for a page. For example I have a route `/pages/list`. I need to call the API `get_pages` on mount to populate the data of a list.
+
+Is it really necessary to use a loading indicator for this? I would like to just transition to the page naturally like a traditional website does. How would I achieve this? I considered:
+
+1. Calling the API before calling the route but if there is a delay the UI will just do nothing and the user will be confused. I noticed on a traditional website there is a loading bar in the browser. Is it possible to use this with react?
+2. First route and render null, then call the api and render on success, this has the disadvantage that the user sees a blank page.
+
+What are your thoughts?
+## [5][Create simple POS with React.js, Node.js, and MongoDB #10: CRUD Supplier](https://www.reddit.com/r/reactjs/comments/hzwjxh/create_simple_pos_with_reactjs_nodejs_and_mongodb/)
+- url: https://blog.soshace.com/create-simple-pos-with-react-js-node-js-and-mongodb-10-crud-supplier/
 ---
 
-## [5][Visual editor for the Chakra-UI library that generates production-ready code](https://www.reddit.com/r/reactjs/comments/hzcmdk/visual_editor_for_the_chakraui_library_that/)
-- url: https://openchakra.app/
+## [6][Anyone can explain the following syntax to me: function Layout({children}) {...}](https://www.reddit.com/r/reactjs/comments/hzxgg2/anyone_can_explain_the_following_syntax_to_me/)
+- url: https://www.reddit.com/r/reactjs/comments/hzxgg2/anyone_can_explain_the_following_syntax_to_me/
+---
+Reading Next.js docs, I came across this part, which I can't understand. Can anyone explain why the parameter of the function is inside an object?
+
+    function Layout({ children }) { 
+        return &lt;div&gt;{children}&lt;/div&gt; 
+    } 
+    export default Layout
+## [7][Guide to React Context](https://www.reddit.com/r/reactjs/comments/hzhdfn/guide_to_react_context/)
+- url: https://ui.dev/react-context/
 ---
 
-## [6][Why do you need Unit Testing in React Native application? | Video Tutorial](https://www.reddit.com/r/reactjs/comments/hze3jd/why_do_you_need_unit_testing_in_react_native/)
-- url: https://www.youtube.com/watch?v=JGseou6bwYs
+## [8][Animating the Progress Percent Change in React - Time to Hack](https://www.reddit.com/r/reactjs/comments/i00no9/animating_the_progress_percent_change_in_react/)
+- url: https://time2hack.com/animating-the-progress-percent-change-in-react/
 ---
 
-## [7][Next.js 9.5: Incremental Static Regeneration, Custom Base Path, Rewrites and Redirects, and More](https://www.reddit.com/r/reactjs/comments/hyvzgt/nextjs_95_incremental_static_regeneration_custom/)
-- url: https://nextjs.org/blog/next-9-5
+## [9][Reactivated.app is an open-source webapp that keeps an eye on your JS dependency versions (built with React / NestJs / TypeScript / Chakra UI)](https://www.reddit.com/r/reactjs/comments/hzzu7v/reactivatedapp_is_an_opensource_webapp_that_keeps/)
+- url: https://github.com/premieroctet/reactivated-app
 ---
 
-## [8][TypeScript + React: Component patterns](https://www.reddit.com/r/reactjs/comments/hz24by/typescript_react_component_patterns/)
-- url: https://fettblog.eu/typescript-react-component-patterns/
+## [10][Request header field x-auth-token is not allowed by Access-Control-Allow-Headers in preflight response.](https://www.reddit.com/r/reactjs/comments/hzwv1t/request_header_field_xauthtoken_is_not_allowed_by/)
+- url: https://www.reddit.com/r/reactjs/comments/hzwv1t/request_header_field_xauthtoken_is_not_allowed_by/
 ---
-
-## [9][useEffect is unwanted API and it lets developers sneak in unwanted code and makes a component impure with side effects](https://www.reddit.com/r/reactjs/comments/hzepjo/useeffect_is_unwanted_api_and_it_lets_developers/)
-- url: https://www.reddit.com/r/reactjs/comments/hzepjo/useeffect_is_unwanted_api_and_it_lets_developers/
+I'm having the error in the title, as [shown here](https://imgur.com/a/dZSTXNL). I have zero clues as to what it means. I do have the CORS extension enabled, after all, as can be seen in the same screenshot. [Here's my code](https://pastebin.com/sei11i7X), if it helps. I'm COMPLETELY LOST as to why this is happening, and my job is threatened by this bullshit.
+## [11][How to capture a part of URL in localStorage to be used later on a different route?](https://www.reddit.com/r/reactjs/comments/hzy95a/how_to_capture_a_part_of_url_in_localstorage_to/)
+- url: https://www.reddit.com/r/reactjs/comments/hzy95a/how_to_capture_a_part_of_url_in_localstorage_to/
 ---
-I like reactJS only because it is simple to render a dynamic component but with useEffect it looks like a bloat API and here is why.
+Hey, I’m stuck with an issue which I’m unable to resolve.
+I’m working on a webapp whose one of the routes would be of the format 
+webappName.ai/?invite_code=value&amp;fireside=yes
 
-useEffect doesn't feel like an API because it is doable without it.
+From this I have to capture the invite_code in localStorage.
 
-A - example for achieving side effect using react's API  
-B - example for achieving side effect without using react's API
-
-Here is a link to image [https://imgur.com/gallery/iCAAhAQ](https://imgur.com/gallery/iCAAhAQ)
-
-By definition of useEffect, it is helps to do changes which causes side effects. But to maintain a component in react, it shouldn't have any side effect. Such function calls should be moved to a utility.
-
-ReactJS is a good framework but things like these is making it bloated. The framework is slick and awesome as it is, but this API sounds like a hype because an API should allow you to do things that is not possible without it but for this use case it doesn't look solid.
-
-I'm asking this question because I'm not sure whether I am misunderstanding something about that API or not.
-## [10][How to do include(searchtern) on a object with multiple arrays?](https://www.reddit.com/r/reactjs/comments/hze6kp/how_to_do_includesearchtern_on_a_object_with/)
-- url: https://www.reddit.com/r/reactjs/comments/hze6kp/how_to_do_includesearchtern_on_a_object_with/
+How do you do this?
+## [12][I have a question from react developers as a beginner.](https://www.reddit.com/r/reactjs/comments/hzxn4n/i_have_a_question_from_react_developers_as_a/)
+- url: https://www.reddit.com/r/reactjs/comments/hzxn4n/i_have_a_question_from_react_developers_as_a/
 ---
-How to do include(searchtern) on a object with multiple arrays?
-
-Lets say if I have an object with 5 different string arrays containing elements.
-
-How can I in an easy way to an include("string example") on all of them?
-## [11][Importing React via npm in existing (non-React) app](https://www.reddit.com/r/reactjs/comments/hzbb8q/importing_react_via_npm_in_existing_nonreact_app/)
-- url: https://www.reddit.com/r/reactjs/comments/hzbb8q/importing_react_via_npm_in_existing_nonreact_app/
----
-I have been using React for a few months now. I have an existing Flask app and I use React within key pages to provide interactive features, but it is not a React app overall. I do this using CDN links for 'react' and 'react-dom'. However, I keep hitting moments at which it would be helpful to import an external react module, but this is only possible through npm, not using CDN links.
-
-Can anybody point me in the direction of a guide or tutorial for someone in my position? I would like to use npm, but a) don't really know much about it, and b) do *not* want to create a full React app, just have react running on a few pages within my existing app. I currently use Babel to compile my JSX into JS files that are included via &lt;script&gt; tags in my HTML.
-## [12][UI walkthrough with React hooks](https://www.reddit.com/r/reactjs/comments/hzdqew/ui_walkthrough_with_react_hooks/)
-- url: https://twitter.com/diegohaz/status/1288087268222214144
----
-
+I'm taking a udemy course on react, after learning the basics(props, state,...) I want to build a small project. I was wondering what was your first project when you started?

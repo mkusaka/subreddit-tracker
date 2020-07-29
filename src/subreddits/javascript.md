@@ -87,40 +87,40 @@ this is the place.
 
 
 &amp;nbsp;
-## [3][I made a classic Minesweeper clone using Svelte, TypeScript and RxJS!](https://www.reddit.com/r/javascript/comments/hza9gu/i_made_a_classic_minesweeper_clone_using_svelte/)
+## [3][A tiny (~400 B) &amp; modern library for keybindings](https://www.reddit.com/r/javascript/comments/hzuuzi/a_tiny_400_b_modern_library_for_keybindings/)
+- url: https://github.com/jamiebuilds/tinykeys
+---
+
+## [4][A virtual 1991 Macintosh, written in JavaScript](https://www.reddit.com/r/javascript/comments/hzgvqe/a_virtual_1991_macintosh_written_in_javascript/)
+- url: https://github.com/felixrieseberg/macintosh.js
+---
+
+## [5][We built a React app that recommends, visualizes, and generates Python code for machine learning models, as an entry in Facebook's AI hackathon](https://www.reddit.com/r/javascript/comments/hzt0pi/we_built_a_react_app_that_recommends_visualizes/)
+- url: https://github.com/KartikChugh/Otto
+---
+
+## [6][I created the exact same app in React and Vue. Here are the differences. [2020 Edition]](https://www.reddit.com/r/javascript/comments/hzinns/i_created_the_exact_same_app_in_react_and_vue/)
+- url: https://sunilsandhu.com/posts/i-created-the-exact-same-app-in-react-and-vue-2020-edition
+---
+
+## [7][Azure Static Web Apps are Awesome](https://www.reddit.com/r/javascript/comments/hzz0w0/azure_static_web_apps_are_awesome/)
+- url: https://dev.to/david_whitney/azure-static-web-apps-are-awesome-4dn2
+---
+
+## [8][I made a classic Minesweeper clone using Svelte, TypeScript and RxJS!](https://www.reddit.com/r/javascript/comments/hza9gu/i_made_a_classic_minesweeper_clone_using_svelte/)
 - url: https://github.com/AlexAegis/svelte-minesweeper
 ---
 
-## [4][I made a github profile README generator tool to add awesome addons like visitors count, github stats, etc in one go](https://www.reddit.com/r/javascript/comments/hzbqo2/i_made_a_github_profile_readme_generator_tool_to/)
+## [9][Swinging on an AST branch - How to use AST in practice](https://www.reddit.com/r/javascript/comments/hzx338/swinging_on_an_ast_branch_how_to_use_ast_in/)
+- url: https://ckeditor.com/blog/Swinging-on-an-AST-branch/
+---
+
+## [10][I made a simple Tampermonkey script to transform % Upvoted into Up/Down Votes](https://www.reddit.com/r/javascript/comments/hzoa7a/i_made_a_simple_tampermonkey_script_to_transform/)
+- url: https://greasyfork.org/en/scripts/407863-reddit-up-down-votes
+---
+
+## [11][I made a github profile README generator tool to add awesome addons like visitors count, github stats, etc in one go](https://www.reddit.com/r/javascript/comments/hzbqo2/i_made_a_github_profile_readme_generator_tool_to/)
 - url: https://github.com/rahuldkjain/github-profile-readme-generator
----
-
-## [5][Superfine 8 — Absolute bare minimum view layer for building web interfaces.](https://www.reddit.com/r/javascript/comments/hyqxqo/superfine_8_absolute_bare_minimum_view_layer_for/)
-- url: https://github.com/jorgebucaran/superfine/
----
-
-## [6][Object.is() vs Strict Equality Operator in JavaScript](https://www.reddit.com/r/javascript/comments/hze5ex/objectis_vs_strict_equality_operator_in_javascript/)
-- url: https://dmitripavlutin.com/object-is-vs-strict-equality-operator/
----
-
-## [7][How to Receive Webhook Events With Netlify Functions and JavaScript](https://www.reddit.com/r/javascript/comments/hz1j0k/how_to_receive_webhook_events_with_netlify/)
-- url: https://fidel.uk/blog/receive-webhook-events-netlify-functions-javascript/?utm_source=social&amp;utm_medium=reddit&amp;utm_campaign=laka
----
-
-## [8][WTF is composition?](https://www.reddit.com/r/javascript/comments/hzdshr/wtf_is_composition/)
-- url: https://whatthefuck.is/composition
----
-
-## [9][How JSON Web Tokens work](https://www.reddit.com/r/javascript/comments/hz2fd5/how_json_web_tokens_work/)
-- url: https://medium.com/@javabrainsmain/how-json-web-tokens-work-211ce7b705f7
----
-
-## [10][Hey, I've been working on a JS/TS templating library for a while called Haipa](https://www.reddit.com/r/javascript/comments/hzeo3f/hey_ive_been_working_on_a_jsts_templating_library/)
-- url: https://github.com/matteron/Haipa
----
-
-## [11][A complete Golang and Nuxt(VueJS) boilerplate for your project with backend API, frontend, tests and CI/CD pipelines.](https://www.reddit.com/r/javascript/comments/hzehqs/a_complete_golang_and_nuxtvuejs_boilerplate_for/)
-- url: https://gitlab.com/gadelkareem/skeleton
 ---
 
 ## [12][I'm building a 16-bit virtual machine in JavaScript, but it only has 64kb of addressable memory. In this episode the bank switching technique common in retro game consoles is implemented, giving it a super charge!](https://www.reddit.com/r/javascript/comments/hze7j6/im_building_a_16bit_virtual_machine_in_javascript/)

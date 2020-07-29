@@ -7,206 +7,241 @@ Please use this thread to discuss **cool** but relatively **unknown** gems you'v
 You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
 Please include a **description** and a **link** to the gem's homepage in your comment.
-## [2][Best open source/community maintained project templates?](https://www.reddit.com/r/rails/comments/hz8p72/best_open_sourcecommunity_maintained_project/)
-- url: https://www.reddit.com/r/rails/comments/hz8p72/best_open_sourcecommunity_maintained_project/
+## [2][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/i00rha/personal_projects_show_off_your_own_project_andor/)
+- url: https://www.reddit.com/r/rails/comments/i00rha/personal_projects_show_off_your_own_project_andor/
 ---
-Recently I read an article about the Rails templates (sorry, I didn't saved it, but here is the [docs](https://guides.rubyonrails.org/rails_application_templates.html)). I thought that there might be open source or community maintained rails templates, and I found:
+In this thread you can showcase your personal pet project to other redditors.
 
-* [This thoughtbot gem that builds rails app with certain configurations](https://github.com/thoughtbot/suspenders)
-* [This template](https://github.com/dao42/rails-template)
-* [Also this template](https://github.com/mattbrictson/rails-template)
-* [And some paid templates](https://hixonrails.com/)
+Need help with a specific problem or just wanna have some extra eyeballs on your code? Ask away!
+
+A suggested format to get you started:
+
+1. **Name of your project**
+2. **A short description**
+3. **Application stack**
+4. **Link to Live app**
+5. **Link to GitHub**
+6. **You experience level**
+7. **Other information or areas that you would like advice on**
+
+ 
+
+^(Many thanks to Kritnc for getting the ball rolling.)
+## [3][Add Authenticity Token to JavaScript AJAX request](https://www.reddit.com/r/rails/comments/hzvvai/add_authenticity_token_to_javascript_ajax_request/)
+- url: https://www.reddit.com/r/rails/comments/hzvvai/add_authenticity_token_to_javascript_ajax_request/
+---
+I need to send it manually and cannot submit it through a form. Is there a specific request param that Rails looks for in order to verify the Authenticity token? 
+
+Perhaps, I’m going at it wrong. The other idea I had was to make it an API-only route/controller and, maybe then I wouldn’t have to use the authenticity token and just use an API auth token? Sorry, I am new to Rails :D
+## [4][Why redirect_to proc?](https://www.reddit.com/r/rails/comments/hzk7uy/why_redirect_to_proc/)
+- url: https://www.reddit.com/r/rails/comments/hzk7uy/why_redirect_to_proc/
+---
+What is the use case of redirecting to a proc?
+
+As in 
+
+    redirect_to proc { edit_post_url(@post) }
+
+vs 
+
+    redirect_to edit_post_url(@post)
+
+?
+
+What are some uses of this?
+
+Edit: from https://api.rubyonrails.org/classes/ActionController/Redirecting.html
+## [5][Turning a list item into an edit form](https://www.reddit.com/r/rails/comments/hzpgfb/turning_a_list_item_into_an_edit_form/)
+- url: https://www.reddit.com/r/rails/comments/hzpgfb/turning_a_list_item_into_an_edit_form/
+---
+I have a list of employees and an edit button by each one. Instead of the edit button redirecting to a form, I want it to turn the employee's info into text boxes that are auto-filled with the current value of that attribute. The edit button would turn into a submit button. The user would make the changes needed, and after submitting, the employee's new attributes would be listed. 
+
+Here's my understanding of how this would work. 
+
+1. The user clicks on the edit button, which triggers a function that removes the current contents of the employee's div and replaces it with the form built as a document fragment by another function. 
+2. The new submit button is a link to the update action of the employee controller with a data-remote="true" attribute. 
+3. The update action sends back the new employee's instance, which somehow triggers a function that will delete the form and replace it with a new document fragment containing the updated employee information. 
+
+My biggest concern is pulling off the Ajax call properly. I'm trying to use ujs and vanilla JavaScript, but the resources I've found for doing Ajax calls in rails use coffee script and/or jQuery. I've found a few newer articles on medium, but they don't go in enough depth for me to be able to adapt they're examples for my propose.
+
+Do you guys know of any resources that may help me fill in the gaps?
+
+Thanks!
+## [6][Has many through association not working (ActiveRecord::HasManyThroughAssociationNotFoundError)](https://www.reddit.com/r/rails/comments/hzp1k0/has_many_through_association_not_working/)
+- url: https://www.reddit.com/r/rails/comments/hzp1k0/has_many_through_association_not_working/
+---
+Hi I'm getting the following error when I test out either of the following associations:
+
+    Venue.last.users
+    ActiveRecord::HasManyThroughAssociationNotFoundError: Could not find the association :venue_users in model Venue
 
 &amp;#x200B;
 
-Then I come here to r/rails to see if I could see more, but I didn't found any post about this, that's why I wanted to ask if you use a template for new projects or have any favorite that you want to share. Thanks! :)
-## [3][Would someone be able to explain Redis clients/connections with actioncable to me like I'm a dummy?](https://www.reddit.com/r/rails/comments/hz14wg/would_someone_be_able_to_explain_redis/)
-- url: https://www.reddit.com/r/rails/comments/hz14wg/would_someone_be_able_to_explain_redis/
----
-So let's pretend for a minute that I am a Rails dev that knows just enough about how the actual servers work to be dangerous.  So when I am connecting to actioncable through an api with redis on heroku, what constitutes a client?  I am asking, first because I don't understand it and I want to learn things.  But second, because I see on heroku there is a 20 client limit on the hobby version heroku redis add-on.  Does that mean that only 20 people can connect to actioncable at a time?  Or is that some other kind of client/connection?
+    User.last.venues
+    ActiveRecord::HasManyThroughAssociationNotFoundError: Could not find the association :venue_users in model User
 
-EDIT:  So based on this https://www.ably.io/blog/rails-actioncable-the-good-and-the-bad, what I'm getting is that action cable runs as it's own process, that has one connection to redis.  So every use would not be a client, but the action cable server/process would be one connection/client.  At least that's the way I'm reading it.
-## [4][convert rails api to rails app](https://www.reddit.com/r/rails/comments/hzemhx/convert_rails_api_to_rails_app/)
+  
+Here's what my models look like:
+
+    class Venue &lt; ApplicationRecord
+      has_many :users, through: :venue_users
+    end
+
+    class User &lt; ApplicationRecord
+      has_many :venues, through: :venue_users
+    end
+
+  
+This is what the join table looks like in my schema:
+
+    create_table "venue_users", force: :cascade do |t|
+        t.bigint "user_id", null: false
+        t.bigint "venue_id", null: false
+        t.integer "user_type", default: 0
+        t.index ["user_id"], name: "index_venue_users_on_user_id"
+        t.index ["venue_id"], name: "index_venue_users_on_venue_id"
+      end
+
+  
+Can someone help me where I've gone wrong?  
+
+
+Thanks.
+## [7][Rails way of trimming down controller action code size?](https://www.reddit.com/r/rails/comments/hzmath/rails_way_of_trimming_down_controller_action_code/)
+- url: https://www.reddit.com/r/rails/comments/hzmath/rails_way_of_trimming_down_controller_action_code/
+---
+I'd like to move some business logic out of the controller actions.
+## [8][Is skip_before_action :verify_authenticity_token a bad idea?](https://www.reddit.com/r/rails/comments/hzm7ic/is_skip_before_action_verify_authenticity_token_a/)
+- url: https://www.reddit.com/r/rails/comments/hzm7ic/is_skip_before_action_verify_authenticity_token_a/
+---
+Could it, say, allow any unauthenticated user to perform a request on that resource even if I use before\_action :authenticate\_user!  
+
+
+What are the side effects of using skip\_before\_action :verify\_authenticity\_token?
+## [9][Can I add an IF condition in a scss file?](https://www.reddit.com/r/rails/comments/hzmyve/can_i_add_an_if_condition_in_a_scss_file/)
+- url: https://www.reddit.com/r/rails/comments/hzmyve/can_i_add_an_if_condition_in_a_scss_file/
+---
+I have to create a different style of a website for the Arabic users (text-align: right and change a lot of float).
+
+Can I add an if condition in a scss file?
+
+Or should I create two different scss files?
+
+Or should I create a new scss file with !important?
+## [10][i want to show employee working on the project.](https://www.reddit.com/r/rails/comments/hzz8u1/i_want_to_show_employee_working_on_the_project/)
+- url: https://www.reddit.com/r/rails/comments/hzz8u1/i_want_to_show_employee_working_on_the_project/
+---
+i want to show employee working on the project.But i cannot find the way who to impliment that.
+
+    &lt;li class="dropdown"&gt;
+ &lt;%= link_to "path", :class =&gt; "dropdown-toggle", :data =&gt; {:toggle =&gt; "dropdown"} do %&gt; &lt;i class="fa fa-file-text"&gt;&lt;/i&gt;   Contents &lt;span class="caret"&gt;&lt;/span&gt; &lt;% end %&gt;
+          &lt;ul class="dropdown-menu"&gt;
+ &lt;% Project.all.each do |c| %&gt;
+              &lt;li class="dropdown-item list"&gt;&lt;%= link_to c.title, summery_admin_timelogs_path(:id =&gt; c.id) %&gt;&lt;/li&gt;
+ &lt;% end %&gt;
+          &lt;/ul&gt;
+ &lt;/li&gt; 
+    def summery
+project = Project.find(params[:id])
+ employees = u/project.employees
+end
+    
+    
+    resources :timelogs do
+ collection do
+ get :summery
+ end
+ end
+## [11][convert rails api to rails app](https://www.reddit.com/r/rails/comments/hzemhx/convert_rails_api_to_rails_app/)
 - url: https://www.reddit.com/r/rails/comments/hzemhx/convert_rails_api_to_rails_app/
 ---
 I have a Rails Api that has a Vue front end (in it's own directory called client). Now we're wanting to add admin screen but the client has indicated they'd prefer those just be rails pages like RailsAdmin. Is there a good guide for converting a Rails Api to a full Rails App while not blowing away the things you've already done? Most guides seem to indicate running rails-new again and carefully selecting things not to overwrite but that doesn't really tell you if you're missing anything once it's done.
-## [5][Why is the Rails object not defined in Javascript?](https://www.reddit.com/r/rails/comments/hz9v3y/why_is_the_rails_object_not_defined_in_javascript/)
-- url: https://www.reddit.com/r/rails/comments/hz9v3y/why_is_the_rails_object_not_defined_in_javascript/
+## [12][Is Strong Params blocking headers ?](https://www.reddit.com/r/rails/comments/hzf4q2/is_strong_params_blocking_headers/)
+- url: https://www.reddit.com/r/rails/comments/hzf4q2/is_strong_params_blocking_headers/
 ---
-My understanding was that an object called Rails should be available globally in Javascript. See this link:
+Hi everyone,
 
- [https://www.rubyguides.com/2019/03/rails-ajax/](https://www.rubyguides.com/2019/03/rails-ajax/) 
+I m creating a rails api for a react native project, I use devise\_token\_auth gem for my user authentication.
 
-&amp;#x200B;
+ I try to pass params to my server but i always got this
 
-However, opening the Chrome console and typing in Rails gives me:
+    Unpermitted parameter: :format
+    ...
+    Completed 400 Bad Request in 1610ms (Views: 0.4ms | ActiveRecord: 102.4ms | Allocations: 238027)
 
-    VM514:1 Uncaught ReferenceError: Rails is not defined
-        at &lt;anonymous&gt;:1:1
+i think the error comes from my post controller
 
-I found [this issue on Github](https://github.com/rails/rails/issues/36686), but it's unclear what the conclusion is. Another user reports that the Rails object is undefined, someone provides a specific sequence of statements to import the object, and then the issue is closed. But why isn't the object available by default? 
-
-If I add the following code to `application.js`, then the Rails object is defined in the Chrome javascript console:
-
-    import Rails from "@rails/ujs";
-    window.Rails = Rails;
-    if(Rails.fire(document, "rails:attachBindings")) {
-        Rails.start();
-    }
-
-Is it normal to have to add this for the Rails object to be defined?
-## [6][What are the dangers of this code?](https://www.reddit.com/r/rails/comments/hz8xvp/what_are_the_dangers_of_this_code/)
-- url: https://www.reddit.com/r/rails/comments/hz8xvp/what_are_the_dangers_of_this_code/
----
-Hello! 
-
-I have a situation where I have two models connected with an association. 
-
-I want to allow users to copy a set of images from a current set. Sets are just a bunch of associations between the set and the individual images. 
-
-I know that convention says that I should move all this logic from the controller to the model, and I will be doing that next. But I started working on this problem in the controller and wanted to finish my thoughts there to get it to work first. I named the sets something else because they were a reserved word, but using it here for clarity. 
-
-    def copy         
-      set = Set.find(params[:id])
-        set.line_items.each do |item|
-          @line_item = LineItem.new
-          @line_item = item.dup  
-          @line_item.bin_id = current_bin.id
-          @line_item.set_id = nil
-          @line_item.save
+    class Api::V0::PostsController &lt; ApplicationController
+        include DeviseTokenAuth::Concerns::SetUserByToken
+        before_action :authenticate_user!
+        before_action :find_post, only: [:show, :update, :destroy]
+    
+        #GET/post
+        def index
+            @posts = Post.all
+            render :json =&gt; @posts ,  status: 200
         end
-        redirect_to :controller =&gt; 'exemplars', :action =&gt; 'index'
-    end
+    
+        #POST/post
+        def create
+            @post = Post.new(post_params)
+            @post.user
+            if @post.save
+                render json: @post , status: 201
+            else
+                render error: {error: 'Unable to create post.'}, status: 400
+            end
+        end
+        ...
+        private
+        # Use callbacks to share common setup or constraints between actions.
+        def find_post
+            @post = Post.find(params[:id])
+        end
+      
+        # Never trust parameters from the scary internet, only allow the white list through.
+        def post_params
+            params.permit(:title, :content, :created_by, :entry, :category_id, :rdv, :tag1, :tag2, :tag3, :user_id)
+        end
 
-I have a link from the set page to the copy action, and everything works. I wanted to create a new @line_item (the association) for each existing line item in the set we are copying from. Then dup it, then set the bin.id to the current bin which is a temporary holding model, and then set the @line_item.set_id to nil. Then it saves each one. 
+i need to receive token Data from header to be identify as a user but if i do that i got the error. Here is my fetch from my serveur:
 
-I know there are probably better ways to do this, but my real question is what happens if something interrupts this copy process? How common would that be, and is there a way to safeguard against that?
-## [7][Can't log in after upgrading 4.0 -&gt; 4.2, advice please](https://www.reddit.com/r/rails/comments/hyvhjd/cant_log_in_after_upgrading_40_42_advice_please/)
-- url: https://www.reddit.com/r/rails/comments/hyvhjd/cant_log_in_after_upgrading_40_42_advice_please/
----
-Hey everyone.
+    export function onCreate(data){
+        return dispatch =&gt; {
+            dispatch(fetchPostsPending());
+            return fetch('http://localhost/api/v0/posts',{
+              method:'POST',
+              headers:{
+                "access-token": data.accessToken,
+                "token-type":   data.tokenType,
+                "client":       data.client,
+                "expiry":       data.expiry,
+                "uid":          data.uid
+                },
+                body: JSON.stringify({
+                    "title":data.title,
+                    "content":data.content,
+                    "created_by":data.created_by,
+                    "entry":data.entry,
+                    "category_id":data.category_id,
+                    "rdv":data.rdv,
+                    "tag1":data.tag1,
+                    "tag2":data.tag2,
+                    "tag3":data.tag3,
+                    "user_id":data.user_id
+                  })
+            })
 
-Title describes the situation.  I used the rake app:upgrade tool to get the various configs updated.  The site launches and appears to run just fine, except login doesn't work.
+my fetch totally worked with my index def because i don't send a body .
 
-I'm switching over to other work but I'll be looking at this again later on in the week and I thought I would throw out the question to everyone here.  Do you have any advice on what I should be looking for?  I'm really not super familiar with rails (used it back in the 1.x/2.x days only), so it's not clear to me what the problem could be.  My initial thought is to check if the way passwords are salted/hashed has changed.
+thats why i think the problem come from my def post\_params.
 
-Thanks everyone!
-## [8][Importing a database dump into a rails project on Docker](https://www.reddit.com/r/rails/comments/hyupi7/importing_a_database_dump_into_a_rails_project_on/)
-- url: https://www.reddit.com/r/rails/comments/hyupi7/importing_a_database_dump_into_a_rails_project_on/
----
-Let me preface this post with this: I started learning docker over the weekend, so if you see something here that is bad practice, please please call me out on it.
+do i need to do something like that:
 
-I know the command in Rails 4+, it's
+    def post_params
+            params.require(:header).permit(:access-token, :token-type, :client, :expiry ,:uid)
+            params.permit(:title, :content, :created_by, :entry, :category_id, :rdv, :tag1, :tag2, :tag3, :user_id)
+        end
+    
 
-    rails db &lt; ./path/to/db_dump.sql
-
-but I don't know how to do it with Rails 2.3. I know it's old, but it's all I have to work with.
-
-I cannot use the MySQL CLI. I think have to use a Rake task because the application is dockerized, so my MySQL container doesn't "know" about my rails_app_development database.
-
-Does anyone know the Rails 2.3 command for this, if there is one?
-
-## Things I've tried:
-
-**1. This one i feel like has gotten me the closest**
-
-```ruby
-namespace :db do
-  task :import_from_source =&gt; :environment do
-    Encoding.default_external = Encoding::UTF_8
-    Encoding.default_internal = Encoding::UTF_8
-    ActiveRecord::Base.connection.execute(IO.read("./file.sql"))
-  end
-end
-```
-
-So i basically just made a rake task. Then in docker I can run: 
-
-```
-$ docker-compose run app rake db:import_from_source
-```
-
-And it appears that everything worked. In fact, I see this in my logs:
-
-```
-app_1  | -- Dump completed on 2020-07-24 6:20:02
-app_1  |
-app_1  |   SQL (0.7ms)   SET SQL_AUTO_IS_NULL=0
-```
-
-However when I refresh the page, I still get a "mysql table dosen't exist" error
-
-**2. This doesn't work and I'm not sure why**
-
-First I run:
-
-```
-docker-compose run --rm app rake db:create
-```
-
-and that works, but when I go into my db container using `docker-compose run db bash` and run
-
-```
-mysql -u root -p rails_db_development &lt; /db_dump/db_dump.sql
-```
-
-I get this error:
-
-```
-ERROR 1049 (42000): Unknown database 'rails_db_development'
-```
-
-Even though I created it in the app container.
-## [9][Cant access rails web console on Macos Catalina](https://www.reddit.com/r/rails/comments/hypwj0/cant_access_rails_web_console_on_macos_catalina/)
-- url: https://www.reddit.com/r/rails/comments/hypwj0/cant_access_rails_web_console_on_macos_catalina/
----
-Yesterday i just realized i cant access rails' web console and even better\_errors gem's exception page on my mac.
-
-But the point is everything s cool on my linux machine. Any ideas why can it happen?And its also not only on my mac, my co-workers also cant see the live shell on their macs.
-
-It's the same code, same browser, same exception but different exception pages.
-
-Macos;
-
-[There's not a live shell on macos.](https://preview.redd.it/h5k3w18xndd51.png?width=1072&amp;format=png&amp;auto=webp&amp;s=5a49937d43e6355bdf7eb384b0a7032f653493a2)
-
-Linux;
-
-[better\_errors gem is working and there's a live shell on linux.  ](https://preview.redd.it/bg9ojc8rndd51.png?width=1237&amp;format=png&amp;auto=webp&amp;s=2fba51ce926b6626c88b3fa892f99393b53ffb07)
-
-&amp;#x200B;
-## [10][The more I look take a look at different apps, I see that they're just CRUD applications.](https://www.reddit.com/r/rails/comments/hybezw/the_more_i_look_take_a_look_at_different_apps_i/)
-- url: https://www.reddit.com/r/rails/comments/hybezw/the_more_i_look_take_a_look_at_different_apps_i/
----
-I'm not sure if I'm thinking about this correctly, but I'm starting to see that the applications that I'm looking at are all perform the same basic functions.
-
-To elaborate, I see that most apps read and display data from a database. For example, an exercise web app shows users the exercise name, target muscles, and a video demonstration. Another example, a restaurant booking app, the app looks at how many time slots are not reserved and shows the data to the person checking for available times. Another example, Mint the personal finance app. It connects with your bank and it shows the user spending and alerts.
-
-There's a lot of times when I visited a website and said to myself "Oh this app is just here to organize and regurgitate my data."
-
-The question I have is, is this considered "business logic", or is there another layer to developing applications?
-## [11][Webpack Environment Config File](https://www.reddit.com/r/rails/comments/hygoa4/webpack_environment_config_file/)
-- url: https://www.reddit.com/r/rails/comments/hygoa4/webpack_environment_config_file/
----
-Hi folks,
-
-In my Rails 6 project, I have the following `config/webpack/environment.js`:
-
-```javascript
-const { environment } = require('@rails/webpacker')
-const webpack = require('webpack')
-
-environment.plugins.prepend('Provide',
-  new webpack.ProvidePlugin({
-    $: 'jquery/src/jquery',
-    jQuery: 'jquery/src/jquery',
-    Popper: ['popper.js', 'default'],
-  })
-)
-
-module.exports = environment
-```
-
-My understanding is that this configuration is setting global variables `$`, `jQuery`, and `Popper`. Any other JavaScript that I write can use these variables, as they are globally available. 
-
-I have confirmed that this is the case for `$` and for `jQuery`, but when I try to reference `Popper` in the browser's console, I get an uncaught reference error. What am I missing here?
+if i do need to do that how am I suppose to wright thing like a minus sign(-) in my params require ?

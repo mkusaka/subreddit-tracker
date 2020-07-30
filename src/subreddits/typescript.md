@@ -22,7 +22,139 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Add property to a type](https://www.reddit.com/r/typescript/comments/hzvwp6/add_property_to_a_type/)
+## [2][Dependency Injection: inversifyJS vs tsyringe](https://www.reddit.com/r/typescript/comments/i0jdmn/dependency_injection_inversifyjs_vs_tsyringe/)
+- url: https://www.reddit.com/r/typescript/comments/i0jdmn/dependency_injection_inversifyjs_vs_tsyringe/
+---
+ I am new to DI.
+
+I could not find a good comparison of the two frameworks. On the first look tsyringe looks more elegant to me. It seems to auto register classes. In inversifyJS you seem to have to bind every class to the container first before it couls be injected? On the other hanf inversifyJS is much more popular (but is also older). Why is this?
+
+Any PROs &amp; CONs?
+
+Thank you!
+## [3][Rosebox 0.3.0](https://www.reddit.com/r/typescript/comments/i0l1x3/rosebox_030/)
+- url: https://www.reddit.com/r/typescript/comments/i0l1x3/rosebox_030/
+---
+What's new in RB 0.3.0:
+
+\- A new category of properties like (e.g. `paddingX`, `paddingY`).
+
+\- New types for existing properties (e.g. `paddingObject`, `marginObject`, `animationObject)`
+
+\- New properties including the animation properties. Overall, RB 0.3.0 has support for 111 properties.
+
+\- `RBStyle` (or the deprecated `RoseboxProperties`) now supports any implemented CSS property by adding  `[x: string]: any` to it.
+
+I'd also take the chance to share this brief article that serves as an introduction to RB:
+
+[https://levelup.gitconnected.com/the-rosebox-project-30b01e7b3a12?source=your\_stories\_page---------------------------](https://levelup.gitconnected.com/the-rosebox-project-30b01e7b3a12?source=your_stories_page---------------------------) 
+
+&amp;#x200B;
+
+Website: [https://www.rosebox.dev/](https://www.rosebox.dev/)Github: [https://github.com/hugonteifeh/rosebox](https://github.com/hugonteifeh/rosebox)
+
+Discord:  [https://discord.com/invite/bd7BHf2](https://discord.com/invite/bd7BHf2)
+## [4][Running ts-node vs compiled JS files](https://www.reddit.com/r/typescript/comments/i07561/running_tsnode_vs_compiled_js_files/)
+- url: https://www.reddit.com/r/typescript/comments/i07561/running_tsnode_vs_compiled_js_files/
+---
+New TS user here and while setting up a dev workflow, I am confused between the two for local development:  
+
+1. Use `ts-node` to watch for changes and run `*.ts` files without transpiling to JS.
+2. Transpile to JS first and then run the `*.js` files.
+
+Option 1 looks more natural to me but I wouldn't know for sure if my transpiled JS files work as expected. Option 2 would make sure my transpiled JS files work as expected but that would require transpiling on EVERY file change. This question was asked [last year](https://www.reddit.com/r/typescript/comments/9o1zzp/tsnode_vs_compiling_for_development/) as well but I couldn't find a satisfactory answer.
+
+Thanks!
+## [5][Help with mutating functions](https://www.reddit.com/r/typescript/comments/i06arp/help_with_mutating_functions/)
+- url: https://www.reddit.com/r/typescript/comments/i06arp/help_with_mutating_functions/
+---
+I'm having some difficulty wrapping my head around what I'm trying to do using Typescript with a function that mutates data.  
+
+Let's say I have a person entity who can be either sitting or standing.  I want to make a function that will make him "stand up".  The function should only work on sitting entities and not allow you to pass an entity that is already standing.  After the function has done its work, it should assert that the entity is now standing, and after the function has been run allow you to continue with code that operates on standing entities.
+
+Here's an example of the kind of thing I'm trying to do.  The error is obviously that it ends up in the `never` type, because the intersection of an entity that was sitting, but is now standing, is `never`
+
+    interface Person {
+      name: string;
+      position: 'SITTING' | 'STANDING';
+    }
+
+    interface SittingPerson extends Person {
+      position: 'SITTING';
+    }
+
+    interface StandingPerson extends Person {
+      position: 'STANDING';
+    }
+
+    const bob: SittingPerson = { name: 'Bob', position: 'SITTING' };
+
+    function standUp(p: SittingPerson): asserts p is StandingPerson {
+      p.position = 'STANDING';
+    }
+
+    standUp(bob);
+
+On the line:
+
+    function standUp(p: SittingPerson): asserts p is StandingPerson 
+
+there is an error that SittingPerson is not assignable to StandingPerson.  Obviously this is true, but what I'd like to be able to say to Typescript is:
+
+`"Make your assertion based on the value at the end of the function, not at the start"`
+
+I'm aware of this code immediately starts working if I simply make `bob` a `Person` instead of a `SittingPerson`, however the point is that I explicitly know which state he is in already, I don't want to define him as the less specific `Person`.  I don't want people to be able to invoke `standUp` on a person who may already be standing.  I want it to be as clear and concise as possible.
+
+I'm wondering if I'm going about this the wrong way, and if there's a better way to do what I'm trying to do.
+
+The reason it's using mutation rather than just returning a new person entity, is that it's in the context of a game, so these actions could potentially be happening countless times in a short period, so mutation is preferred vs creating new objects.
+
+Thanks for any help
+## [6][Is it possible to default export a type , and default export an interface without name ?](https://www.reddit.com/r/typescript/comments/hzzxti/is_it_possible_to_default_export_a_type_and/)
+- url: https://www.reddit.com/r/typescript/comments/hzzxti/is_it_possible_to_default_export_a_type_and/
+---
+Questions in the title .
+
+Edit :
+
+My bad for not wording it properly .
+
+I am not looking at default exporting two things .
+
+I am looking on being able to default export a type . Also I am looking on being able to default export an interface without name .
+
+There will always be one default export in each module .
+
+I just had two different and not related question not worded properly .
+
+Edit : 
+
+Problem solved : [Here](https://www.reddit.com/r/typescript/comments/hzzxti/is_it_possible_to_default_export_a_type_and/fzmr3t1?utm_source=share&amp;utm_medium=web2x) is how to default export a type . [Here](https://www.reddit.com/r/typescript/comments/hzzxti/is_it_possible_to_default_export_a_type_and/fzmnme2?utm_source=share&amp;utm_medium=web2x) is how to default export an interface (you have to use a name on the definition of the interface ).
+## [7][How to unit test private object variables mocha chai for typescript project?](https://www.reddit.com/r/typescript/comments/i08u9i/how_to_unit_test_private_object_variables_mocha/)
+- url: https://www.reddit.com/r/typescript/comments/i08u9i/how_to_unit_test_private_object_variables_mocha/
+---
+After researching this I found the best response would be to test the private variables of an object against the prototype of the object. Effectively then inside the test creating a prototype and accessing the variables in that way. When I do this, however, it seems that all variables are not null but are undefined. How am I able to test the private variables, so that they remain defined? For reference, this is what I'm doing now:
+
+[https://stackoverflow.com/questions/63162403/how-to-unit-test-private-variables-mocha-chai-for-typescript-project](https://stackoverflow.com/questions/63162403/how-to-unit-test-private-variables-mocha-chai-for-typescript-project)
+## [8][How to resolve Error: error:0909006C:PEM routines:get_name:no start line?](https://www.reddit.com/r/typescript/comments/i069cn/how_to_resolve_error_error0909006cpem_routinesget/)
+- url: https://www.reddit.com/r/typescript/comments/i069cn/how_to_resolve_error_error0909006cpem_routinesget/
+---
+I have a Typescript project where I read in `AmazonRootCA1.pem` for fully functioning `AwsIotRestApi`. That is, when I run the API it seems to be working just fine. I want to test the API with mocha. When I attempt to do so I get the following error:
+
+    Error: error:0909006C:PEM routines:get_name:no start line
+
+`AmazonRootCA1.pem`, the file which is being read is correctly formatted, so I'm not entirely sure how to go about solving this. Would anyone know how to resolve this error?
+## [9][Any ideas to refactor this class any further? (Stong use of `.matchAll`)](https://www.reddit.com/r/typescript/comments/i020ss/any_ideas_to_refactor_this_class_any_further/)
+- url: https://www.reddit.com/r/typescript/comments/i020ss/any_ideas_to_refactor_this_class_any_further/
+---
+I have been experimenting with using \`Array.from\` and \`reduce\` to build the output file instead of the \`for of\`, but keep on running into syntax problems. Any input? Would be great to get a mini code review.
+
+The purpose of the program is to let you copy/paste YouTube chapters from creators' videos and make a chapter file that can be used with .mkv and .mp4 videos. Perfect for videos downloaded with \`youtube-dl\`.
+
+I had the whole thing as a function before, but have been reading about domain-driven design and now think it belongs in a class. The 'chapter file' is definitely a 'domain concept'
+
+[https://www.typescriptlang.org/play/?ssl=1&amp;ssc=1&amp;pln=47&amp;pc=1#code/MYewdgzgLgBAJgQygmBeGADACgJxAKwFNhYBaGAZQFccA3QgTxgQAcWBYAKFJ97-4GkugCmJA8H8wAFAAYAjAC4ArAHY5UgEwBKGAElIyADb6YIBAGsYAMxwIAtoQDuIHOYRg4MCIShUWMAEYIEACWwB6EdOEi4tJqqgDMcgAsMlq60AiG8IRg4JZOzFRQIDZIIWERODA4hOk4sLkWQfqEMMAAFq4A5oRRkuqqAGzxWgCigU1MJWAI3TD0OMHgEMxuWSzZcNnAQTW9MaoAHINaAPI4na5BAF4teIW7nGJ9sVIAnHJxA1oAwtVILQBBQptb7gKB4QzhFbuUBgRqdGgtAAyIE6QTAMAAZDAAEqENHQKF3KAPJ77GQJBSJLQULw+VrgMDEKBBXL2IJQNowACy4E6IAAIgAhPb9GTvRJSH5-EkwACqnkqNhAmyMrncQRsLGadjAsGqBPBpXAotikqSmh0Wp12Vg+lR6NNikSchkXx0egyRjgYOytGhrRlLQAdH7LE1CBguFxgPpAstvh0WCScAAxCMwADeXBguZgLBwQVo-xg+nRNQAKiBuUh2mgYAB6CQAfgAPCy7AA+AA6cEzagAvnJe-2hyPBxpu5OqFJ1FIW632qwUxWOc1O8GAFQaBudADcObzBaLJaXyfCEDkHnB6M6AG0ALr1x8Hzh5-OF4uyxrNABytkIK9oELMB92jN881hYCqBIJwJHRFhCnTP8AKAm9QIAGhgBCkIjNCQM6LRswg99cyCCxJAAQk5IIIGDMsmQgKsaygdpgxJaB4LARCoGQwgNCIw9SNIzk8HsGAACJfxAVokxTbC4ScEoWQaEAqDcCTX2E3MByEkS2lo4Mf0If87HrHDeIjUzCFfPT32aWAzxTX8qBsPwoXQKQtO0hyYGU9pCDgJFy2WdALL44N-LaAFDAkGi6IYytq1rNoNG84SLHyCRfMS4wKKiwLgsYwSSO03NfMzGAO0ILCnPCVcoGaGAB3rRLg06O4WAgSj0rKqqDLouqFmDRCIDaCQ7L63MMG+AAJAEsArEYcQAEkzIaXLc8IB1QNbqoHYNZykbswDmhaltW9a5PCTb3JwAdfwBbkRl2q7l3qtdCAHKNSrKtLJp0vTdNKtSoB4viJBKsrqm8HAMXi4Mhro-AQHRCQJJOiT-tK4H31B8GrIAyGswBqo6ThzA9oGozCbsAcAH0kYwXrgeBmMlkc660wzdAmXExN3u55oJtKgByQgAA9bG1Qh2IlqBRYwvTEGQLhsfZyAQGaejUQkIaIvx3DhYErggA](https://www.typescriptlang.org/play/?ssl=1&amp;ssc=1&amp;pln=47&amp;pc=1#code/MYewdgzgLgBAJgQygmBeGADACgJxAKwFNhYBaGAZQFccA3QgTxgQAcWBYAKFJ97-4GkugCmJA8H8wAFAAYAjAC4ArAHY5UgEwBKGAElIyADb6YIBAGsYAMxwIAtoQDuIHOYRg4MCIShUWMAEYIEACWwB6EdOEi4tJqqgDMcgAsMlq60AiG8IRg4JZOzFRQIDZIIWERODA4hOk4sLkWQfqEMMAAFq4A5oRRkuqqAGzxWgCigU1MJWAI3TD0OMHgEMxuWSzZcNnAQTW9MaoAHINaAPI4na5BAF4teIW7nGJ9sVIAnHJxA1oAwtVILQBBQptb7gKB4QzhFbuUBgRqdGgtAAyIE6QTAMAAZDAAEqENHQKF3KAPJ77GQJBSJLQULw+VrgMDEKBBXL2IJQNowACy4E6IAAIgAhPb9GTvRJSH5-EkwACqnkqNhAmyMrncQRsLGadjAsGqBPBpXAotikqSmh0Wp12Vg+lR6NNikSchkXx0egyRjgYOytGhrRlLQAdH7LE1CBguFxgPpAstvh0WCScAAxCMwADeXBguZgLBwQVo-xg+nRNQAKiBuUh2mgYAB6CQAfgAPCy7AA+AA6cEzagAvnJe-2hyPBxpu5OqFJ1FIW632qwUxWOc1O8GAFQaBudADcObzBaLJaXyfCEDkHnB6M6AG0ALr1x8Hzh5-OF4uyxrNABytkIK9oELMB92jN881hYCqBIJwJHRFhCnTP8AKAm9QIAGhgBCkIjNCQM6LRswg99cyCCxJAAQk5IIIGDMsmQgKsaygdpgxJaB4LARCoGQwgNCIw9SNIzk8HsGAACJfxAVokxTbC4ScEoWQaEAqDcCTX2E3MByEkS2lo4Mf0If87HrHDeIjUzCFfPT32aWAzxTX8qBsPwoXQKQtO0hyYGU9pCDgJFy2WdALL44N-LaAFDAkGi6IYytq1rNoNG84SLHyCRfMS4wKKiwLgsYwSSO03NfMzGAO0ILCnPCVcoGaGAB3rRLg06O4WAgSj0rKqqDLouqFmDRCIDaCQ7L63MMG+AAJAEsArEYcQAEkzIaXLc8IB1QNbqoHYNZykbswDmhaltW9a5PCTb3JwAdfwBbkRl2q7l3qtdCAHKNSrKtLJp0vTdNKtSoB4viJBKsrqm8HAMXi4Mhro-AQHRCQJJOiT-tK4H31B8GrIAyGswBqo6ThzA9oGozCbsAcAH0kYwXrgeBmMlkc660wzdAmXExN3u55oJtKgByQgAA9bG1Qh2IlqBRYwvTEGQLhsfZyAQGaejUQkIaIvx3DhYErggA)
+## [10][Add property to a type](https://www.reddit.com/r/typescript/comments/hzvwp6/add_property_to_a_type/)
 - url: https://www.reddit.com/r/typescript/comments/hzvwp6/add_property_to_a_type/
 ---
 Hi,
@@ -39,11 +171,7 @@ type MyType = {
 This works. However I need to add one more property to it, say `id:number` I have tried using the extends method as well as directly adding it. But it did not work.
 
 Any suggestions to make it work?
-## [3][Is it possible to default export a type , and default export an interface without name ?](https://www.reddit.com/r/typescript/comments/hzzxti/is_it_possible_to_default_export_a_type_and/)
-- url: https://www.reddit.com/r/typescript/comments/hzzxti/is_it_possible_to_default_export_a_type_and/
----
-Questions in the title .
-## [4][Would you guys advise a junior who's put a lot of time into Typescript to hold out for a TS job or pick up whatever comes along?](https://www.reddit.com/r/typescript/comments/hzn9h5/would_you_guys_advise_a_junior_whos_put_a_lot_of/)
+## [11][Would you guys advise a junior who's put a lot of time into Typescript to hold out for a TS job or pick up whatever comes along?](https://www.reddit.com/r/typescript/comments/hzn9h5/would_you_guys_advise_a_junior_whos_put_a_lot_of/)
 - url: https://www.reddit.com/r/typescript/comments/hzn9h5/would_you_guys_advise_a_junior_whos_put_a_lot_of/
 ---
 My situation is I've been studying programming intensely for 3 years now. JS was my first language, then I did a Wordpress plugin in PHP, and now I'm working with Typescript and React. I also know Express and Postgres.
@@ -55,205 +183,3 @@ I'm moving to Atlanta which is an easier job market at the bottom that the top 3
 What do you guys think, take anything that comes along or try to get a TS job? I'm confident in my skils and think I could surely get a React or Angular job, I'm less certain about the quantity of jobs that use TS in Atlanta or the wisdom of wanting to work in that specific tech stack.
 
 PS: To clarify, since TS can be on both ends of the stack, I'd be happy if I got to use TS on either end. No complaints about TS/React with a Rails API for example.
-## [5][Stuck on "Module not found: LOL.png" for past 2 days, tried everything on stackoverflow](https://www.reddit.com/r/typescript/comments/hzlzqf/stuck_on_module_not_found_lolpng_for_past_2_days/)
-- url: https://www.reddit.com/r/typescript/comments/hzlzqf/stuck_on_module_not_found_lolpng_for_past_2_days/
----
-**Big shoutout to this community, y'all are there to share the love and frustration of being a developer.** Been stuck the past 2 days with this.
-
-**ERROR**
-```
-./src/index.tsx
-Failed to compile
-Module not found: Can't resolve 'images/LOL.png'
-```
-----
-
-Tried all the stuff on Stackoverflow like:
-
-1. Using ``index.d.ts, or global.d.ts, or react-app-env.d.ts`` trick with ``/// &lt;reference path='./index.d.ts'/&gt;``
-```
-declare module '*.png';
-
-// or
-declare module "*.png" {
-  const content: string;
-  export default content;
-}
-```
-
-2. Tried ``webpack file-loader``
-
-3. Delete ``node_modules`` and try again
-
-4. Changing up the import like
-```
-import * as LOL from 'images/LOL.png'
-import * as LOL from '../images/LOL.png'
-
-import LOL from 'images/LOL.png'
-import LOL from '../images/LOL.png'
-```
-
-5. Adding ``"esModuleInterop": true,`` to ``tsconfig.json``
-
-------
-
-Still getting the same error. I'm sure this is just some easy thing I overloooked.
-
-------
-
-# EDIT: SOLVED thx to sub
-
-I created fresh react app with typescript and then modified ``react-app-env.d.ts`` with ``typeRoots: [ 'src/react-app-env.d.ts' ]``.
-
-```
-declare module '*.png';
-```
-## [6][Why dependency injection(DI)?](https://www.reddit.com/r/typescript/comments/hzi88y/why_dependency_injectiondi/)
-- url: https://www.reddit.com/r/typescript/comments/hzi88y/why_dependency_injectiondi/
----
-An example using typeorm and typedi;
-
-    // resolver.ts
-    import { Resolver } from "type-graphql";
-    import { Inject } from "typedi";
-    import { User } from "./user.entity";
-    import { UserService } from "./user.service";
-    
-    @Resolver(User)
-    export class UserResolver {
-      @Inject("UserService")
-      public readonly userService: UserService;
-    
-      // ...
-    }
-    =================
-    // service.ts
-    import { Service } from "typedi";
-    import { InjectRepository } from "typeorm-typedi-extensions";
-    import { Repository } from "typeorm";
-    import { User } from "./user.entity";
-    
-    @Service("UserService")
-    export class UserService {
-      @InjectRepository(User)
-      protected readonly userRepo: Repository&lt;User&gt;;
-    
-      // ...
-    }
-
-And
-
-    // resolver.ts
-    import { Resolver } from "type-graphql";
-    import { User } from "./user.entity";
-    import { UserService } from "./user.service";
-    
-    @Resolver(User)
-    export class UserResolver {
-      public readonly userService = new UserService();
-    
-      // ...
-    }
-    =================
-    // service.ts
-    import { getRepository } from "typeorm";
-    import { User } from "./user.entity";
-    
-    export class UserService {
-      protected readonly userRepo = getRepository(User);
-    
-      // ...
-    }
-
-Both works but I genuinely want to know what advantage typedi provides here or is it just a fancy way of writing it
-## [7][Why do you need Unit Testing in React Native application | Video Tutorial](https://www.reddit.com/r/typescript/comments/hzfqdn/why_do_you_need_unit_testing_in_react_native/)
-- url: https://youtu.be/JGseou6bwYs
----
-
-## [8][Can I defined how two types union?](https://www.reddit.com/r/typescript/comments/hzoybx/can_i_defined_how_two_types_union/)
-- url: https://www.reddit.com/r/typescript/comments/hzoybx/can_i_defined_how_two_types_union/
----
-Say I have this type:
-
-    interface MyType&lt;T, U&gt; {
-      foo&lt;V&gt;(cb: (param: T) =&gt; V): MyType&lt;V, U&gt;
-      bar&lt;W&gt;(cb: (param: U) =&gt; W): MyType&lt;W, U&gt;
-    }
-
-Is it possible for me to tell TypeScript that `MyType&lt;T, never&gt; | MyType&lt;never, U&gt;` is equivalent to `MyType&lt;T, U&gt;`?
-
-## Why I want this:
-
-If I have some value that implicitly gets typed as `MyType&lt;T, never&gt; | MyType&lt;never, U&gt;`, I can't use the value as expected.
-
-Example:
-
-    declare function myFunction1(): MyType&lt;number, never&gt; | MyType&lt;never, string&gt;;
-    
-    myFunction1()
-      .foo((myNumber) =&gt; { /* ... */ })
-      .bar((myString) =&gt; { /* ... */});
-
-This results in: `This expression is not callable. Each member of the union type '(&lt;V&gt;(cb: (param: number) =&gt; V) =&gt; MyType&lt;V, never&gt;) | (&lt;V&gt;(cb: (param: never) =&gt; V) =&gt; MyType&lt;V, string&gt;)' has signatures, but none of those signatures are compatible with each other.ts(2349)`
-
-But I want it to work like this:
-
-    declare function myFunction2(): MyType&lt;number, string&gt;;
-    
-    myFunction2()
-      .foo((myNumber) =&gt; { /* ... */ })
-      .bar((myString) =&gt; { /* ... */});
-
-[Playground Link](https://www.staging-typescript.org/play?noLib=true&amp;target=7&amp;jsx=0&amp;ts=4.0.0-beta#code/JYOwLgpgTgZghgYwgAgLIE8Aq6AOEA8mANMgKoB8yA3gFDLIwD2j+AauQBQIBGAXMhxxwocALb9MASmQBeSq0n8M2PGxIUA3HWTdh+AOqce-QcLH9S0ucn2K0WXAX3ryWgL40aAEwgIANsIoMACuIAhgwIwgyKLoAGKh4ZEgAIwcdsqO+CDBotzQJCAQAG7QlAA+9ioERaVQJADOYFCgAOaunrEJYRFRaZLaAHRMjBwcsQByuflQVpS09PQA9ABUyIMbyCtL2m4D9IO6UGOxAMrNbXPU2strG4NbO-R7Wt6+AVBBib3RXd-JACZ0koHKocnkCsgmi0QO1Xn8eoD0kMRid0FMIbNZPMbshVutNttdvt1kc0ecYa0rgtFvj7o9iVogA)
-## [9][A Mental Model to think in Typescript](https://www.reddit.com/r/typescript/comments/hz93ap/a_mental_model_to_think_in_typescript/)
-- url: https://leandrotk.github.io/tk/2020/07/a-mental-model-to-think-in-typescript/
----
-
-## [10][Help with axios method type safety inside function](https://www.reddit.com/r/typescript/comments/hzcyxu/help_with_axios_method_type_safety_inside_function/)
-- url: https://www.reddit.com/r/typescript/comments/hzcyxu/help_with_axios_method_type_safety_inside_function/
----
-Hello guys, I am trying to type safe a react hook that uses axios for making requests, I am not being able to use axios\[method\] inside the function it gives me the error, I don't get it. It works if I only put the get in the enum though...
-
-https://preview.redd.it/y9ieobjgwld51.png?width=739&amp;format=png&amp;auto=webp&amp;s=bcc38555dc3e8d671c85dd8abb873dcbcfaaa8e1
-
-error is: This expression is not callable.Each member of the union type '(&lt;T = any, R = AxiosResponse&lt;T&gt;&gt;(url: string, data?: any, config?: AxiosRequestConfig | undefined) =&gt; Promise&lt;R&gt;) | (&lt;T = any, R = AxiosResponse&lt;T&gt;&gt;(url: string, config?: AxiosRequestConfig | undefined) =&gt; Promise&lt;...&gt;)' has signatures, but none of those signatures are compatible with each other.
-
-&amp;#x200B;
-
-EDIT: fixed by changing to:
-
-`const response = await axios(url, { method, data: body })`
-
-if anyone knows a workaround to keep it with the other syntax I would appreciate.
-## [11][How would you compose a curried function?](https://www.reddit.com/r/typescript/comments/hzfp3d/how_would_you_compose_a_curried_function/)
-- url: https://www.reddit.com/r/typescript/comments/hzfp3d/how_would_you_compose_a_curried_function/
----
-Hello,
-
-So I'm trying to get to grips with functional programming in Typescript and I figured I'd implement the needed functionality myself to understand best. The goal is to have point free code style and implement the framework for that as I go.
-
-Currently I'm a bit stuck at the following problem:
-
-    const fnAnd = (arg1: any) =&gt; (arg2: any) =&gt; Boolean(arg1) &amp;&amp; Boolean(arg2);
-    const fnKey = &lt;T extends object&gt;(key: keyof T) =&gt; (val: T) =&gt; val?.[key];
-    const fnSame = &lt;T&gt;(arg1: T) =&gt; (arg2: T) =&gt; arg1 === arg2;
-    
-    const isZero = fnSame(0); // (arg2: number) =&gt; boolean
-    
-    interface Vector {
-      x: number;
-      y: number;
-    }
-    
-    const vecX = fnKey&lt;Vector&gt;('x'); // (val: Vector) =&gt; number
-    const vecY = fnKey&lt;Vector&gt;('y'); // (val: Vector) =&gt; number
-    
-    // how to do this bit point-free?
-    const isZeroVector = // (vec: Vector) =&gt; boolean
-        (vec: Vector) =&gt;
-            fnAnd
-                (fnCompose(isZero, vecX)(vec))
-                (fnCompose(isZero, vecY)(vec));
-
-What is the fp solution for composing with curried multi-arity functions like fnAnd here?

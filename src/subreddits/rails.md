@@ -27,13 +27,114 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Add Authenticity Token to JavaScript AJAX request](https://www.reddit.com/r/rails/comments/hzvvai/add_authenticity_token_to_javascript_ajax_request/)
+## [3][Shopify on Rails is doing well](https://www.reddit.com/r/rails/comments/i0f8dx/shopify_on_rails_is_doing_well/)
+- url: https://www.reddit.com/r/rails/comments/i0f8dx/shopify_on_rails_is_doing_well/
+---
+I think this is the story that we want Rails to be mentioned in, but unfortunately no one cares much about the stack. Nonetheless, it’s a Rails win to me. They’re doing well as a business, and they’re using Rails.
+
+https://www.wsj.com/articles/shopifys-revenue-nearly-doubles-as-covid-19-pushes-shopping-online-11596057094
+## [4][How do you handle real-time in your applications?](https://www.reddit.com/r/rails/comments/i076f5/how_do_you_handle_realtime_in_your_applications/)
+- url: https://www.reddit.com/r/rails/comments/i076f5/how_do_you_handle_realtime_in_your_applications/
+---
+I can't find anyone covering this issue in a practical manner.
+
+Let's say we have a fairly large SaaS multi tenant Rails app, with a bunch of ActiveRecord models, and a react/vue client to power the SPA front-end.
+
+How do you approach making this app update data for all users in realtime?
+
+I understand most articles out there show that you can use websockets to emit events to the client and listen to them on the frontend, but it's often an over-simplified view that doesn't cover:
+
+- How to abstract out ActiveRecord data sync on both the backend and frontend? (similar to firestore data bind)
+- What about race conditions when emitting the update events from activerecord? should there be versioning to avoid the possible issue of an old update event being received after the newest.
+
+I'm asking because i built out a hackish, standardized way to emit changes from Rails via pusher on all models:
+
+    class ApplicationRecord &lt; ActiveRecord::Base
+      self.abstract_class = true
+    
+      after_commit :sync_payload
+    
+      def sync_payload
+        if respond_to?("pusher_channel_name")
+          channel = pusher_channel_name
+          event = "#{self.class.name.underscore.dasherize}-updated"
+    
+          return if ch.blank? || ch.is_a?(Array) &amp;&amp; ch.empty?
+          
+          if channel
+            if destroyed?
+              push_payload(channel, event, { id: id, _destroyed: true })
+            else
+              push_payload(channel, event, as_json)
+            end
+          end
+        end
+      end
+    end
+
+On the client side (Vue), i built out mixin methods to listen for these events and change data.
+
+As you can see this is subject to race conditions and it doesn't make sure events are sent in order, and there's various concerns on how reliable this is and if users will always have up-to-date data.
+
+I'm curious to see how others approach this problem.
+## [5][I have a coding test coming up, but I'm not sure what this instruction means?](https://www.reddit.com/r/rails/comments/i0am0q/i_have_a_coding_test_coming_up_but_im_not_sure/)
+- url: https://www.reddit.com/r/rails/comments/i0am0q/i_have_a_coding_test_coming_up_but_im_not_sure/
+---
+Hi all,  
+
+
+I have received.a coding test for a job where I have to create a little rails app. The instructions for sharing the code back with them are like this:
+
+    - A link to the Git repository containing the code
+    - A separate, initial commit of any automatically-generated code (For example, from rails new, so we can easily see your changes)
+
+  
+The first point is a no brainer, but I'm a bit unclear on the second point. Is someone able to clarify for me what this means? When I create a new rails app, all I do is "rails new my-project-name". Does this mean I can ignore this second point? Or am I misinterpreting it?  
+
+
+I just wanted to check here before going back to them, as it's my first coding test like this so I don't want to blow it by fumbling over a minor misunderstanding.  
+
+
+Thanks.
+## [6][after 4.0 =&gt; 4.2 upgrade, user.authenticate fails. Any insight?](https://www.reddit.com/r/rails/comments/i080rr/after_40_42_upgrade_userauthenticate_fails_any/)
+- url: https://www.reddit.com/r/rails/comments/i080rr/after_40_42_upgrade_userauthenticate_fails_any/
+---
+Hey guys,
+
+just as the title said.
+
+The user model is setting up the has_secure_password attribute, which uses bcrypt for authentication against a password_digest DB column.
+
+The problem is that after upgrade from rails 4.0 to 4.2, the authentication is now returning false.  I've verified that the password_digest is the exact same between the working 4.0 version and the non-working 4.2 version.
+
+Does anyone have an insight into why this would be?
+
+If I have to I'll start diving into the rails code directly, but I'd prefer not doing that if it's just something easy I'm missing.
+
+I'm not super rails savvy so I apologize if this is something well known, but no upgrade guides mentioned it.
+## [7][Trying to use ActionCable gem locally, but getting LoadError with require statements](https://www.reddit.com/r/rails/comments/i0a19i/trying_to_use_actioncable_gem_locally_but_getting/)
+- url: https://www.reddit.com/r/rails/comments/i0a19i/trying_to_use_actioncable_gem_locally_but_getting/
+---
+I needed to modify action cable and wanted to monkey patch a local version I placed in the lib/ folder.
+
+I added this line to my Gemfile:
+
+    gem 'actioncable', '5.2.3', :path =&gt; "lib/gems/actioncable-5.2.3"
+
+But then I get an error after startup when I load a page that says  **LoadError (cannot load such file -- nio):** on actioncable-5.2.3/lib/action\_cable/connection/stream\_event\_loop.rb
+
+If I go into rails console I can call  `require "nio"` and it works fine.
+
+I've been following the instructions I've found for installing a gem locally [https://rubyglasses.blogspot.com/2009/12/how-to-monkey-patch-gem.html](https://rubyglasses.blogspot.com/2009/12/how-to-monkey-patch-gem.html)  (couldn't find any detailed guides, and I know it's from 2009)
+
+Anyone have an idea what is causing this?
+## [8][Add Authenticity Token to JavaScript AJAX request](https://www.reddit.com/r/rails/comments/hzvvai/add_authenticity_token_to_javascript_ajax_request/)
 - url: https://www.reddit.com/r/rails/comments/hzvvai/add_authenticity_token_to_javascript_ajax_request/
 ---
 I need to send it manually and cannot submit it through a form. Is there a specific request param that Rails looks for in order to verify the Authenticity token? 
 
 Perhaps, I’m going at it wrong. The other idea I had was to make it an API-only route/controller and, maybe then I wouldn’t have to use the authenticity token and just use an API auth token? Sorry, I am new to Rails :D
-## [4][Why redirect_to proc?](https://www.reddit.com/r/rails/comments/hzk7uy/why_redirect_to_proc/)
+## [9][Why redirect_to proc?](https://www.reddit.com/r/rails/comments/hzk7uy/why_redirect_to_proc/)
 - url: https://www.reddit.com/r/rails/comments/hzk7uy/why_redirect_to_proc/
 ---
 What is the use case of redirecting to a proc?
@@ -51,7 +152,7 @@ vs
 What are some uses of this?
 
 Edit: from https://api.rubyonrails.org/classes/ActionController/Redirecting.html
-## [5][Turning a list item into an edit form](https://www.reddit.com/r/rails/comments/hzpgfb/turning_a_list_item_into_an_edit_form/)
+## [10][Turning a list item into an edit form](https://www.reddit.com/r/rails/comments/hzpgfb/turning_a_list_item_into_an_edit_form/)
 - url: https://www.reddit.com/r/rails/comments/hzpgfb/turning_a_list_item_into_an_edit_form/
 ---
 I have a list of employees and an edit button by each one. Instead of the edit button redirecting to a form, I want it to turn the employee's info into text boxes that are auto-filled with the current value of that attribute. The edit button would turn into a submit button. The user would make the changes needed, and after submitting, the employee's new attributes would be listed. 
@@ -67,7 +168,7 @@ My biggest concern is pulling off the Ajax call properly. I'm trying to use ujs 
 Do you guys know of any resources that may help me fill in the gaps?
 
 Thanks!
-## [6][Has many through association not working (ActiveRecord::HasManyThroughAssociationNotFoundError)](https://www.reddit.com/r/rails/comments/hzp1k0/has_many_through_association_not_working/)
+## [11][Has many through association not working (ActiveRecord::HasManyThroughAssociationNotFoundError)](https://www.reddit.com/r/rails/comments/hzp1k0/has_many_through_association_not_working/)
 - url: https://www.reddit.com/r/rails/comments/hzp1k0/has_many_through_association_not_working/
 ---
 Hi I'm getting the following error when I test out either of the following associations:
@@ -107,141 +208,7 @@ Can someone help me where I've gone wrong?
 
 
 Thanks.
-## [7][Rails way of trimming down controller action code size?](https://www.reddit.com/r/rails/comments/hzmath/rails_way_of_trimming_down_controller_action_code/)
+## [12][Rails way of trimming down controller action code size?](https://www.reddit.com/r/rails/comments/hzmath/rails_way_of_trimming_down_controller_action_code/)
 - url: https://www.reddit.com/r/rails/comments/hzmath/rails_way_of_trimming_down_controller_action_code/
 ---
 I'd like to move some business logic out of the controller actions.
-## [8][Is skip_before_action :verify_authenticity_token a bad idea?](https://www.reddit.com/r/rails/comments/hzm7ic/is_skip_before_action_verify_authenticity_token_a/)
-- url: https://www.reddit.com/r/rails/comments/hzm7ic/is_skip_before_action_verify_authenticity_token_a/
----
-Could it, say, allow any unauthenticated user to perform a request on that resource even if I use before\_action :authenticate\_user!  
-
-
-What are the side effects of using skip\_before\_action :verify\_authenticity\_token?
-## [9][Can I add an IF condition in a scss file?](https://www.reddit.com/r/rails/comments/hzmyve/can_i_add_an_if_condition_in_a_scss_file/)
-- url: https://www.reddit.com/r/rails/comments/hzmyve/can_i_add_an_if_condition_in_a_scss_file/
----
-I have to create a different style of a website for the Arabic users (text-align: right and change a lot of float).
-
-Can I add an if condition in a scss file?
-
-Or should I create two different scss files?
-
-Or should I create a new scss file with !important?
-## [10][i want to show employee working on the project.](https://www.reddit.com/r/rails/comments/hzz8u1/i_want_to_show_employee_working_on_the_project/)
-- url: https://www.reddit.com/r/rails/comments/hzz8u1/i_want_to_show_employee_working_on_the_project/
----
-i want to show employee working on the project.But i cannot find the way who to impliment that.
-
-    &lt;li class="dropdown"&gt;
- &lt;%= link_to "path", :class =&gt; "dropdown-toggle", :data =&gt; {:toggle =&gt; "dropdown"} do %&gt; &lt;i class="fa fa-file-text"&gt;&lt;/i&gt;   Contents &lt;span class="caret"&gt;&lt;/span&gt; &lt;% end %&gt;
-          &lt;ul class="dropdown-menu"&gt;
- &lt;% Project.all.each do |c| %&gt;
-              &lt;li class="dropdown-item list"&gt;&lt;%= link_to c.title, summery_admin_timelogs_path(:id =&gt; c.id) %&gt;&lt;/li&gt;
- &lt;% end %&gt;
-          &lt;/ul&gt;
- &lt;/li&gt; 
-    def summery
-project = Project.find(params[:id])
- employees = u/project.employees
-end
-    
-    
-    resources :timelogs do
- collection do
- get :summery
- end
- end
-## [11][convert rails api to rails app](https://www.reddit.com/r/rails/comments/hzemhx/convert_rails_api_to_rails_app/)
-- url: https://www.reddit.com/r/rails/comments/hzemhx/convert_rails_api_to_rails_app/
----
-I have a Rails Api that has a Vue front end (in it's own directory called client). Now we're wanting to add admin screen but the client has indicated they'd prefer those just be rails pages like RailsAdmin. Is there a good guide for converting a Rails Api to a full Rails App while not blowing away the things you've already done? Most guides seem to indicate running rails-new again and carefully selecting things not to overwrite but that doesn't really tell you if you're missing anything once it's done.
-## [12][Is Strong Params blocking headers ?](https://www.reddit.com/r/rails/comments/hzf4q2/is_strong_params_blocking_headers/)
-- url: https://www.reddit.com/r/rails/comments/hzf4q2/is_strong_params_blocking_headers/
----
-Hi everyone,
-
-I m creating a rails api for a react native project, I use devise\_token\_auth gem for my user authentication.
-
- I try to pass params to my server but i always got this
-
-    Unpermitted parameter: :format
-    ...
-    Completed 400 Bad Request in 1610ms (Views: 0.4ms | ActiveRecord: 102.4ms | Allocations: 238027)
-
-i think the error comes from my post controller
-
-    class Api::V0::PostsController &lt; ApplicationController
-        include DeviseTokenAuth::Concerns::SetUserByToken
-        before_action :authenticate_user!
-        before_action :find_post, only: [:show, :update, :destroy]
-    
-        #GET/post
-        def index
-            @posts = Post.all
-            render :json =&gt; @posts ,  status: 200
-        end
-    
-        #POST/post
-        def create
-            @post = Post.new(post_params)
-            @post.user
-            if @post.save
-                render json: @post , status: 201
-            else
-                render error: {error: 'Unable to create post.'}, status: 400
-            end
-        end
-        ...
-        private
-        # Use callbacks to share common setup or constraints between actions.
-        def find_post
-            @post = Post.find(params[:id])
-        end
-      
-        # Never trust parameters from the scary internet, only allow the white list through.
-        def post_params
-            params.permit(:title, :content, :created_by, :entry, :category_id, :rdv, :tag1, :tag2, :tag3, :user_id)
-        end
-
-i need to receive token Data from header to be identify as a user but if i do that i got the error. Here is my fetch from my serveur:
-
-    export function onCreate(data){
-        return dispatch =&gt; {
-            dispatch(fetchPostsPending());
-            return fetch('http://localhost/api/v0/posts',{
-              method:'POST',
-              headers:{
-                "access-token": data.accessToken,
-                "token-type":   data.tokenType,
-                "client":       data.client,
-                "expiry":       data.expiry,
-                "uid":          data.uid
-                },
-                body: JSON.stringify({
-                    "title":data.title,
-                    "content":data.content,
-                    "created_by":data.created_by,
-                    "entry":data.entry,
-                    "category_id":data.category_id,
-                    "rdv":data.rdv,
-                    "tag1":data.tag1,
-                    "tag2":data.tag2,
-                    "tag3":data.tag3,
-                    "user_id":data.user_id
-                  })
-            })
-
-my fetch totally worked with my index def because i don't send a body .
-
-thats why i think the problem come from my def post\_params.
-
-do i need to do something like that:
-
-    def post_params
-            params.require(:header).permit(:access-token, :token-type, :client, :expiry ,:uid)
-            params.permit(:title, :content, :created_by, :entry, :category_id, :rdv, :tag1, :tag2, :tag3, :user_id)
-        end
-    
-
-if i do need to do that how am I suppose to wright thing like a minus sign(-) in my params require ?

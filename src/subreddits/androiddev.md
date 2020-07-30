@@ -64,120 +64,72 @@ We'll start answering questions on **Thursday, July 30 at 12:00 PM PDT / 3:00 PM
 * **Mads Ager** (u/madsager) - Android Studio Compiler Tech Lead
 * **Nicolas Roard** (u/nicolasroard) - Design Tools &amp; ConstraintLayout Tech Lead
 * **Raluca Sauciuc**‎ (u/raluca_sauciuc) - Android Studio Tech Lead
-* **Renaud Paquay‎** \- Android Studio Tech Lead
+* **Renaud Paquay‎** (u/adt\_renaud) - Android Studio Tech Lead
 * **Scott Swarthout** (u/scottswarthout) - Android Studio Product Manager - Motion Tools
 * **Shukang Zhou** (u/shukang) - Android Studio Profiler Tech Lead
 * **Tor Norbye** (u/tnorbye) - Engineering Director for Android Studio
 * **Wojtek Kaliciński** (u/wkalicinski) - Android Developer Relations
 * **Xavier Ducrohet** (u/droidxav) - Tech lead for Android SDK
-## [3][I just started with posting videos on my channel. I convert dribbble design shots into actual implementation do give it a look and if you want something to be implemented you can ping me. I'll be more than happy to implement it. Thank you all.](https://www.reddit.com/r/androiddev/comments/hzz8tq/i_just_started_with_posting_videos_on_my_channel/)
-- url: https://youtu.be/aETxy64GaBo
+## [3][Tim Cook was grilled over arbitrary app store removals. Could this be the beginning of regulations of app marketplaces that protect developers?](https://www.reddit.com/r/androiddev/comments/i0kqed/tim_cook_was_grilled_over_arbitrary_app_store/)
+- url: https://observer.com/2020/07/apple-ceo-tim-cook-congress-antitrust-hearing-app-store-iphone-monopoly/
 ---
 
-## [4][Blindly following Apple's design guidelines](https://www.reddit.com/r/androiddev/comments/hziqnm/blindly_following_apples_design_guidelines/)
-- url: https://www.reddit.com/r/androiddev/comments/hziqnm/blindly_following_apples_design_guidelines/
----
-Background: My company has a native iOS and Android app. I'm lead for the Android project. Our design documents for new features and UI usually based on iOS because the designers all have iPhones and the company doesn't have the resources to make mockups for both platforms.
-
-I often have to fight for variations to be accepted in the Android implementation. Sometimes the fight is easy, but there are still many times where I get push back with the argument "well Apple does it this way and Android really isn't known for its UX so..." I'm told to just do it the Apple way.
-
-Today: I won't go into the details, but basically I argued for a change based on Android standards, and because the design doc just didn't make sense. I was shot down because the design was "based on Apple" and therefore better. So I conceded in the conversation, but went to look up the Apple design after the meeting: their design is the same as my suggestion and Android's, but the designer fudged it up in our design document.
-
-How do you all deal with this kind of "Apple did it this way and even if it doesn't make sense to us, Apple knows best" mentality?
-## [5][How can I find an sha-1 digest for a manifest.mf](https://www.reddit.com/r/androiddev/comments/i00h03/how_can_i_find_an_sha1_digest_for_a_manifestmf/)
-- url: https://www.reddit.com/r/androiddev/comments/i00h03/how_can_i_find_an_sha1_digest_for_a_manifestmf/
----
-I'm making an Android app mod and almost all apps have an manifest.mf file.
-There are text Lines with the path and the Sha-1 digest line. 
-
-I need to add a file to the app.
-
-
-[Manifest.mf](https://drive.google.com/file/d/169nnb_OpzAIZMgil0nXvHgk9yrjbOw98/view?usp=drivesdk)
-
-So is there a way?
-
-Btw I'm not the Creator of this app.
-All I'm doing this modding this app.
-## [6][Playing a video with Jetpack Compose](https://www.reddit.com/r/androiddev/comments/hzyfh8/playing_a_video_with_jetpack_compose/)
-- url: https://medium.com/@hllozercan/playing-a-video-with-jetpack-compose-10a453ff956
+## [4][msasikanth/pinnit - Notification history and pinning. Sharing source for one of my apps, feedback &amp; contributions are appreciated. Mobius, Dagger, Architecture Components](https://www.reddit.com/r/androiddev/comments/i0j3sd/msasikanthpinnit_notification_history_and_pinning/)
+- url: http://github.com/msasikanth/pinnit
 ---
 
-## [7][AndroidBites | How to Catch ?: Errors !!](https://www.reddit.com/r/androiddev/comments/hzu5m7/androidbites_how_to_catch_errors/)
-- url: https://chetangupta.net/kotlin-try-null/
+## [5][AndroidBites | 6 things that you need to know before destructuring Parameters](https://www.reddit.com/r/androiddev/comments/i0fc5l/androidbites_6_things_that_you_need_to_know/)
+- url: https://chetangupta.net/destructuring-limitations/
 ---
 
-## [8][Android Studio 4.2 Canary 6 available](https://www.reddit.com/r/androiddev/comments/hzlv4y/android_studio_42_canary_6_available/)
-- url: https://androidstudio.googleblog.com/2020/07/android-studio-42-canary-6-available.html
+## [6][What is be the best strategy to advertise Android apps?](https://www.reddit.com/r/androiddev/comments/i0kvit/what_is_be_the_best_strategy_to_advertise_android/)
+- url: https://www.reddit.com/r/androiddev/comments/i0kvit/what_is_be_the_best_strategy_to_advertise_android/
 ---
-
-## [9][[Question][android.speech.tts] Has anyone managed to programmatically change tts voice quality to QUALITY_VERY_HIGH?](https://www.reddit.com/r/androiddev/comments/hzz0r5/questionandroidspeechtts_has_anyone_managed_to/)
-- url: https://www.reddit.com/r/androiddev/comments/hzz0r5/questionandroidspeechtts_has_anyone_managed_to/
+I've seen some apps grow from 10k downloads to 1M+ downloads in just a month. How do they do it?
+## [7][I created a Navigation Components tutorial that covers nested NavHostFragments with ViewPager2, BottomNavigationView, Dynamic Feature Modules and more](https://www.reddit.com/r/androiddev/comments/i0jdsp/i_created_a_navigation_components_tutorial_that/)
+- url: https://www.reddit.com/r/androiddev/comments/i0jdsp/i_created_a_navigation_components_tutorial_that/
 ---
-Hi everyone,
-
-I'm trying to change android.speech.tts's voice quality from QUALITY\_HIGH(400) to QUALITY\_VERY\_HIGH(500).
-
-Has anyone managed to do this?
-
-Thanks.
-## [10][discussion on recent remote interviews](https://www.reddit.com/r/androiddev/comments/hzcmm4/discussion_on_recent_remote_interviews/)
-- url: https://www.reddit.com/r/androiddev/comments/hzcmm4/discussion_on_recent_remote_interviews/
----
-For multiple reasons, I have recently been wanting to change jobs. I have been doing Android dev since now about 6 years. I don't have an engineering background, I have a masters in Statistics, and I don't have any education at all in computer science, I am self-learned. I do not lie about this in my CV.  
-Recently I have had many online interviews for Android developer jobs with the same scenario: they bring up the online coding thing and I am asked to solve some algo problem such as reversing a binary tree (for the easiest), or optimising the complexity of an existing algorithm. at the same time, I am not asked a single question on Android at all. I understand that these companies want some high-level engineering people, but why put through all the recruiting process with someone for an Android dev job if they are clearly looking for engineers? I admit, I am not an engineer, my solving problems skills have some limits (which can probably be compensated with a google search) but I still have a scientific approach and tend to always look for optimal solutions to a problem. nevertheless, these companies will probably end up recruiting a very talented person who might not know much on android development rather than a great android developer which will deliver a top quality app in little time.  
-let me guys know what you think about this.
-## [11][[Infographic] Building Journeys and Creating Moments](https://www.reddit.com/r/androiddev/comments/hzjto9/infographic_building_journeys_and_creating_moments/)
-- url: https://i.redd.it/c9il9m0j3nd51.png
----
-
-## [12][I am a self-taught developer who just finished working on an app for controlling Philips Hue via Samsung Galaxy Edge panel. I invite you to beta test it.](https://www.reddit.com/r/androiddev/comments/hzjuu9/i_am_a_selftaught_developer_who_just_finished/)
-- url: https://www.reddit.com/r/androiddev/comments/hzjuu9/i_am_a_selftaught_developer_who_just_finished/
----
-Hello, my name is Nils Trubkin. I am a self-taught developer who just finished working on an app and would like to invite you to test its beta version.
-
-It is called “Hue edge” and offers the control of the Philips Hue lights system. The app is only compatible with the Samsung Galaxy Edge family of phones, that is all the phones with a curved screen edge. It is a panel that you can add to the Edge panels stack. You can get the beta version from the official Galaxy Store via this link:
-
-[http://apps.samsung.com/betastore/openAppDetail.as?appId=com.nilstrubkin.hueedge](http://apps.samsung.com/betastore/openAppDetail.as?appId=com.nilstrubkin.hueedge)
+Tutorials for learning Navigation Components starting with simple set up, continues with adding top menus, passing arguments via navigation graphs and combining them with different Material Design widgets such as BottomNavigationView, ViewPager2, TabLayout, FragmentFactory(not working as i expected with ViewPager2), and dynamic feature module navigation as shown in the image. Here is the [link for repo](https://github.com/SmartToolFactory/NavigationComponents-Tutorials) if you wish to look. 
 
 &amp;#x200B;
 
-[Screenshots of the app](https://preview.redd.it/6xl0dvmv3nd51.png?width=1703&amp;format=png&amp;auto=webp&amp;s=8d9fcee2208add48484f0a41dcf2c3b2c1882a3b)
+And there are some issues including how to change BottomNavigationView extension to be usable with DynamicNavHostFragment when it's included with other fragments in BottomNavigation. I used two ViewPager2 for the example shown in the image. since it crashes with
 
-**The app**
+&gt; Caused by: java.lang.IllegalStateException: Could not find Navigator with name "include-dynamic". You must call NavController.addNavigator() for each navigation type.      at androidx.navigation.NavigatorProvider.getNavigator(NavigatorProvider.java:98)      at androidx.navigation.NavInflater.inflate(NavInflater.java:107)      at androidx.navigation.NavInflater.inflate(NavInflater.java:141)      at androidx.navigation.NavInflater.inflate([NavInflater.java:88](https://NavInflater.java:88))
 
-Edge panel that contains the main functionality of the app is provided in a similar way to the stock panel with app shortcuts. You can control your Philips Hue lights, rooms, zones, and scenes from here. There are 4 categories and one extra for mixed types of buttons. You can long tap to access brightness, color, and saturation adjustments.
+Since NavHostFragment.create returns NavHostFragment instead of type T extends NavHost
 
-The first start-up is accompanied by a setup guide that searches for the Philips Hue bridge.
+&amp;#x200B;
 
-The edit mode that lets you organize the buttons with drag-n-drop.
+https://i.redd.it/78vdlolkvyd51.gif
+## [8][Anyone used Gonative.io to develop an Android app for a website?](https://www.reddit.com/r/androiddev/comments/i0l43q/anyone_used_gonativeio_to_develop_an_android_app/)
+- url: https://www.reddit.com/r/androiddev/comments/i0l43q/anyone_used_gonativeio_to_develop_an_android_app/
+---
 
-**Feedback**
+Hi so I have a simple one page website of links like [Drudgereport.com](https://Drudgereport.com). I wanted to ask if this [Gonative.io](https://Gonative.io) app service can help us create an android app for our website?
 
-I am very thankful for any feedback you can provide. You can reach me here, or via [hueedgepanel@gmail.com](mailto:hueedgepanel@gmail.com)
+Has anyone used [Gonative.io](https://Gonative.io)? Is it any good? Is there a better service? Some tips would be useful. Thanks!
+## [9][I just started with posting videos on my channel. I convert dribbble design shots into actual implementation do give it a look and if you want something to be implemented you can ping me. I'll be more than happy to implement it. Thank you all.](https://www.reddit.com/r/androiddev/comments/hzz8tq/i_just_started_with_posting_videos_on_my_channel/)
+- url: https://youtu.be/aETxy64GaBo
+---
 
-I am mostly interested in the following:
+## [10][Room vs SQLite (+100 tables)](https://www.reddit.com/r/androiddev/comments/i0k5y9/room_vs_sqlite_100_tables/)
+- url: https://www.reddit.com/r/androiddev/comments/i0k5y9/room_vs_sqlite_100_tables/
+---
+Hey! 
 
-· Did you encounter any bugs, errors or other difficulties using the app?
+Im about to start developing an existing app from vb in android studio. The db is already made, i converted it to SQLite db file. 
 
-· Does the app lack some features you would like to see implemented?
+The question is... Is suitable using Room for this? Or i should make entities that comunicates with the Db simply using SQLite.
 
-· Does the app provide you value for the price of 1$ (one dollar)?
+THX
+## [11][Hardware Acceleration for Android Emulator when using Windows 10, AMD Ryzen and Docker](https://www.reddit.com/r/androiddev/comments/i0k181/hardware_acceleration_for_android_emulator_when/)
+- url: https://www.reddit.com/r/androiddev/comments/i0k181/hardware_acceleration_for_android_emulator_when/
+---
+I have a laptop with a Ryzen 4000 CPU, Windows 10 and want to use Android Studio (especially Flutter) alongside with Docker to run linux containers with Backend API logic+database.
 
-**Technicalities**
+Which configuration do I need to have the android emulator running with hardware acceleration and also running Docker containers fast? Enable or Disable Hyper-v, install Android Emulator Accelerator for AMD or not, etc.
+## [12][Shrink your app with R8](https://www.reddit.com/r/androiddev/comments/i04659/shrink_your_app_with_r8/)
+- url: https://medium.com/androiddevelopers/shrinking-your-app-with-r8-909efac25de4
+---
 
-Supported down to Android 23, the Samsung SDK sets the limit. Should work up to Android 30. Tested on different screen sizes and should look roughly the same, but if your phone preferences for text size are set to very small it may make the button text hard to read. Supports Hue Bridge 2 (square one) and not tested on the older Hue Bridge (round one).
-
-Source: [https://github.com/nils-trubkin/Hue-Edge](https://github.com/nils-trubkin/Hue-Edge)
-
-**What I learned**
-
-Android Studio IDE, Samsung Slook SDK, threading, executors, callbacks, hash maps, saving to memory, REST requests, layouts, mDNS, UPnP, LAN IP scan, view adapters, animations, and some more.
-
-**Difficulties**
-
-Implementing a full LAN network scan solution was a huge pain given poorly documented APIs on networking. Most solutions online presented code only working for 24 prefix networks, my solution works on any netmask.
-
-**Conclusion**
-
-This app took a good while to create and I am pleased with the result. I hope it brings somebody value and joy to use.

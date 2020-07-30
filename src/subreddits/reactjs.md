@@ -110,61 +110,250 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Rubber Mesh Swipe Transition ( three-js &amp; react-spring)](https://www.reddit.com/r/reactjs/comments/hzfig9/rubber_mesh_swipe_transition_threejs_reactspring/)
-- url: https://v.redd.it/9br9rls4xld51
+## [3][FREE React Fundamentals course on udemy (FREE for 3 days only)](https://www.reddit.com/r/reactjs/comments/i0ggdb/free_react_fundamentals_course_on_udemy_free_for/)
+- url: https://www.reddit.com/r/reactjs/comments/i0ggdb/free_react_fundamentals_course_on_udemy_free_for/
+---
+[https://www.udemy.com/course/first-met-react/?couponCode=2963035792CCB1BFAD0E](https://www.udemy.com/course/first-met-react/?couponCode=2963035792CCB1BFAD0E)
+
+Hello, developers!
+
+I launched a React lecture for real beginners.
+
+The lecture only covers the basic fundamentals of React,
+
+excluding Hooks, Context API, and other difficult content.
+
+So, this lecture is the best way to start learning React.
+
+The lecture is charged,
+
+but I attached **FREE** coupon link above(valid only 3 days).
+
+(Expires 08/01/2020 22:08 PM PDT (GMT -7))
+
+So, if anyone who wants to learn React,
+
+apply before the coupon expires.
+
+Thank you 😀
+## [4][React Query migrates to TypeScript](https://www.reddit.com/r/reactjs/comments/i08pme/react_query_migrates_to_typescript/)
+- url: https://twitter.com/tannerlinsley/status/1288579941227888640
 ---
 
-## [4][What is a common best practice for the UI when calling a single API to load the content for a page?](https://www.reddit.com/r/reactjs/comments/hzvraq/what_is_a_common_best_practice_for_the_ui_when/)
-- url: https://www.reddit.com/r/reactjs/comments/hzvraq/what_is_a_common_best_practice_for_the_ui_when/
----
-Hi there, fairly new to React. I'm curious to what design patterns people use when calling a single api to get some data for a page. For example I have a route `/pages/list`. I need to call the API `get_pages` on mount to populate the data of a list.
-
-Is it really necessary to use a loading indicator for this? I would like to just transition to the page naturally like a traditional website does. How would I achieve this? I considered:
-
-1. Calling the API before calling the route but if there is a delay the UI will just do nothing and the user will be confused. I noticed on a traditional website there is a loading bar in the browser. Is it possible to use this with react?
-2. First route and render null, then call the api and render on success, this has the disadvantage that the user sees a blank page.
-
-What are your thoughts?
-## [5][Create simple POS with React.js, Node.js, and MongoDB #10: CRUD Supplier](https://www.reddit.com/r/reactjs/comments/hzwjxh/create_simple_pos_with_reactjs_nodejs_and_mongodb/)
-- url: https://blog.soshace.com/create-simple-pos-with-react-js-node-js-and-mongodb-10-crud-supplier/
+## [5][A Simple Guide to React Context with Hooks](https://www.reddit.com/r/reactjs/comments/i0k065/a_simple_guide_to_react_context_with_hooks/)
+- url: https://dev.to/keke_arif/a-simple-guide-to-react-context-with-hooks-34jj
 ---
 
-## [6][Anyone can explain the following syntax to me: function Layout({children}) {...}](https://www.reddit.com/r/reactjs/comments/hzxgg2/anyone_can_explain_the_following_syntax_to_me/)
-- url: https://www.reddit.com/r/reactjs/comments/hzxgg2/anyone_can_explain_the_following_syntax_to_me/
+## [6][Code-splitting in react.js. Patterns and resource](https://www.reddit.com/r/reactjs/comments/i0ilw0/codesplitting_in_reactjs_patterns_and_resource/)
+- url: https://www.reddit.com/r/reactjs/comments/i0ilw0/codesplitting_in_reactjs_patterns_and_resource/
 ---
-Reading Next.js docs, I came across this part, which I can't understand. Can anyone explain why the parameter of the function is inside an object?
-
-    function Layout({ children }) { 
-        return &lt;div&gt;{children}&lt;/div&gt; 
-    } 
-    export default Layout
-## [7][Guide to React Context](https://www.reddit.com/r/reactjs/comments/hzhdfn/guide_to_react_context/)
-- url: https://ui.dev/react-context/
+Hi, I'm using react's lazy and suspense for code-splitting. I use chrome's coverage tab to identify dead code and then lazy load those components. What patterns or resource should be good to look into
+## [7][Finally finished my Jr. React Dev portfolio site!](https://www.reddit.com/r/reactjs/comments/i0jf2i/finally_finished_my_jr_react_dev_portfolio_site/)
+- url: https://cdtech.netlify.app/
 ---
 
-## [8][Animating the Progress Percent Change in React - Time to Hack](https://www.reddit.com/r/reactjs/comments/i00no9/animating_the_progress_percent_change_in_react/)
-- url: https://time2hack.com/animating-the-progress-percent-change-in-react/
+## [8][I recorded me building a React App with a realtime GraphQL API and authentication in 45 minutes](https://www.reddit.com/r/reactjs/comments/i0l82s/i_recorded_me_building_a_react_app_with_a/)
+- url: https://www.youtube.com/watch?v=Kb2V6lTi_qM
 ---
 
-## [9][Reactivated.app is an open-source webapp that keeps an eye on your JS dependency versions (built with React / NestJs / TypeScript / Chakra UI)](https://www.reddit.com/r/reactjs/comments/hzzu7v/reactivatedapp_is_an_opensource_webapp_that_keeps/)
-- url: https://github.com/premieroctet/reactivated-app
+## [9][React Query Essentials Course](https://www.reddit.com/r/reactjs/comments/i08o2s/react_query_essentials_course/)
+- url: https://github.com/tannerlinsley/react-query-essentials
 ---
 
-## [10][Request header field x-auth-token is not allowed by Access-Control-Allow-Headers in preflight response.](https://www.reddit.com/r/reactjs/comments/hzwv1t/request_header_field_xauthtoken_is_not_allowed_by/)
-- url: https://www.reddit.com/r/reactjs/comments/hzwv1t/request_header_field_xauthtoken_is_not_allowed_by/
+## [10][React interviews](https://www.reddit.com/r/reactjs/comments/i09mjc/react_interviews/)
+- url: https://www.reddit.com/r/reactjs/comments/i09mjc/react_interviews/
 ---
-I'm having the error in the title, as [shown here](https://imgur.com/a/dZSTXNL). I have zero clues as to what it means. I do have the CORS extension enabled, after all, as can be seen in the same screenshot. [Here's my code](https://pastebin.com/sei11i7X), if it helps. I'm COMPLETELY LOST as to why this is happening, and my job is threatened by this bullshit.
-## [11][How to capture a part of URL in localStorage to be used later on a different route?](https://www.reddit.com/r/reactjs/comments/hzy95a/how_to_capture_a_part_of_url_in_localstorage_to/)
-- url: https://www.reddit.com/r/reactjs/comments/hzy95a/how_to_capture_a_part_of_url_in_localstorage_to/
----
-Hey, I’m stuck with an issue which I’m unable to resolve.
-I’m working on a webapp whose one of the routes would be of the format 
-webappName.ai/?invite_code=value&amp;fireside=yes
+Hi all!
 
-From this I have to capture the invite_code in localStorage.
+What would be some good examples of problems to stay fresh and be in a sharp coding mentality for pair programming interviews using react. Some quick ones that come to mind are counter and to do list examples. 
 
-How do you do this?
-## [12][I have a question from react developers as a beginner.](https://www.reddit.com/r/reactjs/comments/hzxn4n/i_have_a_question_from_react_developers_as_a/)
-- url: https://www.reddit.com/r/reactjs/comments/hzxn4n/i_have_a_question_from_react_developers_as_a/
+Thanks in advance !
+## [11][Learn how to build a Discord Bot Website/Dashboard with MERN Stack](https://www.reddit.com/r/reactjs/comments/i0lwel/learn_how_to_build_a_discord_bot_websitedashboard/)
+- url: https://www.youtube.com/playlist?list=PL_cUvD4qzbkwCJLEhZJ_DZ4VFV5N3CBLI
 ---
-I'm taking a udemy course on react, after learning the basics(props, state,...) I want to build a small project. I was wondering what was your first project when you started?
+
+## [12][Help with my project!!! I'm using react-redux, redux-thunk and axios.](https://www.reddit.com/r/reactjs/comments/i0lw6k/help_with_my_project_im_using_reactredux/)
+- url: https://www.reddit.com/r/reactjs/comments/i0lw6k/help_with_my_project_im_using_reactredux/
+---
+I am creating a registration form. I'm using redux-thunk to run the async code and the state changes but it doesn't get reflected in my component. I'm using my own api which returns an obj in both cases, in this format {msg:"Success or Failure"} and I want to alert whether the registration has been successful or not and then redirect to "/login", if registration succeeds or to "/register" again if it fails.
+
+registerActions.js
+
+    import axios from "axios";
+    import {
+      REGISTER_INITIATED,
+      REGISTER_SUCCESS,
+      REGISTER_FAILED,
+    } from "./registerTypes";
+    
+    export const register = (registerDetails) =&gt; {
+      return (dispatch, getState) =&gt;
+        new Promise((resolve) =&gt; {
+          dispatch(registerInitiated());
+          axios
+            .post("/api/client/register", registerDetails)
+            .then((response) =&gt; {
+              dispatch(registerSuccess(response.data));
+              resolve();
+            })
+            .catch((error) =&gt; {
+              dispatch(registerFailed(error.response.data));
+              resolve();
+            });
+    
+        });
+    };
+    
+    export const registerInitiated = () =&gt; {
+      return {
+        type: REGISTER_INITIATED,
+      };
+    };
+    export const registerSuccess = (data) =&gt; {
+      return {
+        type: REGISTER_SUCCESS,
+        data,
+      };
+    };
+    export const registerFailed = (data) =&gt; {
+      return {
+        type: REGISTER_FAILED,
+        data,
+      };
+    };
+
+registerReducer.js
+
+    import { REGISTER_INITIATED, REGISTER_SUCCESS, REGISTER_FAILED } from "./registerTypes";
+    
+    const initialState = {
+      loading: false,
+      data: "",
+      error: ""
+    }
+    
+    const reducer = (state = initialState, action) =&gt; {
+      switch (action.type) {
+        case REGISTER_INITIATED:
+          return {
+            ...state,
+            loading: true
+          }
+        case REGISTER_SUCCESS:
+          return {
+            loading: false,
+            data: action.data.msg,
+            error: ""
+          }
+        case REGISTER_FAILED:
+          return {
+            loading: false,
+            data: "",
+            error: action.data.msg
+          }
+        default: return state
+      }
+    }
+    
+    export default reducer
+
+RegisterScreen.js
+
+    import React, { useState } from "react";
+    import "../componentsStyles/RegisterScreen.css";
+    import { register } from "../redux";
+    import { useDispatch, useSelector } from "react-redux";
+    
+    function RegisterScreen({ history }) {
+      const [name, setName] = useState("");
+      const [email, setEmail] = useState("");
+      const [password, setPassword] = useState("");
+      const [company, setCompany] = useState("");
+      const [designation, setDesignation] = useState("");
+    
+      const dispatch = useDispatch();
+      const data = useSelector((state) =&gt; state.register.data);
+      const error = useSelector((state) =&gt; state.register.error);
+      
+      // I'm not able implement this function!!!!
+      // redux-thunk is able to change the state(data and error) but it is not 
+  // reflecting in my component, it is alerting the initial empty values.
+    
+      const submitHandler = (e) =&gt; {
+        e.preventDefault();
+        dispatch(register({ name, email, password, company, designation })).then(
+          () =&gt; {
+            if (error) {
+              alert(error);
+              setEmail("");
+              setPassword("");
+              setPassword("");
+              setCompany("");
+              setDesignation("");
+              history.push("/register");
+            } else {
+              alert(data);
+              history.push("/login");
+            }
+          }
+        );
+      };
+    
+      return (
+        &lt;div className="Register"&gt;
+          &lt;h1&gt;Registration Form&lt;/h1&gt;
+          &lt;h2&gt;Register yourself!&lt;/h2&gt;
+          &lt;form className="Register-Form" onSubmit={submitHandler}&gt;
+            &lt;div&gt;
+              &lt;label&gt;Name: &lt;/label&gt;
+              &lt;input
+                type="text"
+                name="name"
+                value={name}
+                onChange={(e) =&gt; setName(e.target.value)}
+              /&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+              &lt;label&gt;Email: &lt;/label&gt;
+              &lt;input
+                type="email"
+                name="email"
+                value={email}
+                onChange={(e) =&gt; setEmail(e.target.value)}
+              /&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+              &lt;label&gt;Password: &lt;/label&gt;
+              &lt;input
+                type="text"
+                name="password"
+                value={password}
+                onChange={(e) =&gt; setPassword(e.target.value)}
+              /&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+              &lt;label&gt;Company: &lt;/label&gt;
+              &lt;input
+                type="text"
+                name="company"
+                value={company}
+                onChange={(e) =&gt; setCompany(e.target.value)}
+              /&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+              &lt;label&gt;Designation: &lt;/label&gt;
+              &lt;input
+                type="text"
+                name="designation"
+                value={designation}
+                onChange={(e) =&gt; setDesignation(e.target.value)}
+              /&gt;
+            &lt;/div&gt;
+    
+            &lt;button type="submit"&gt;Submit the form&lt;/button&gt;
+          &lt;/form&gt;
+        &lt;/div&gt;
+      );
+    }
+    
+    export default RegisterScreen

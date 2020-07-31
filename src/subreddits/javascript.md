@@ -15,45 +15,51 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][Javascript Event Loop for Concurrency in Javascript](https://www.reddit.com/r/javascript/comments/i0g5l2/javascript_event_loop_for_concurrency_in/)
-- url: https://oddblogger.com/javascript-event-loop-concurrency-javascript/
+## [3][OpenRPC: JSON-RPC now has an Interface Description to rival GraphQL and gRPC](https://www.reddit.com/r/javascript/comments/i0zs6c/openrpc_jsonrpc_now_has_an_interface_description/)
+- url: http://open-rpc.org/
 ---
 
-## [4][Build production grade API with Prisma and GraphQL](https://www.reddit.com/r/javascript/comments/i0l0dk/build_production_grade_api_with_prisma_and_graphql/)
+## [4][How to Build and Deploy Serverless Functions to Netlify](https://www.reddit.com/r/javascript/comments/i173wj/how_to_build_and_deploy_serverless_functions_to/)
+- url: https://hellotunmbi.hashnode.dev/how-to-build-and-deploy-serverless-functions-to-netlify-ckda8hxvz00qqnns13n1h0t0f
+---
+
+## [5][Social Amnesia, an Electron + VueJS app to wipe out your reddit and twitter account histories on a daily schedule.](https://www.reddit.com/r/javascript/comments/i0ukl8/social_amnesia_an_electron_vuejs_app_to_wipe_out/)
+- url: https://github.com/Nick-Gottschlich/Social-Amnesia
+---
+
+## [6][Build production grade API with Prisma and GraphQL](https://www.reddit.com/r/javascript/comments/i0l0dk/build_production_grade_api_with_prisma_and_graphql/)
 - url: https://blog.geographer.fr/prisma-graphql-api
 ---
 
-## [5][Javascript - Understanding the weird parts](https://www.reddit.com/r/javascript/comments/i0lehy/javascript_understanding_the_weird_parts/)
-- url: https://medium.com/@95yashsharma/is-javascript-weird-part-1-c7a704558476
+## [7][[AskJS] Coronavirus Dashboard fully visualised in D3.JS](https://www.reddit.com/r/javascript/comments/i155ml/askjs_coronavirus_dashboard_fully_visualised_in/)
+- url: https://www.reddit.com/r/javascript/comments/i155ml/askjs_coronavirus_dashboard_fully_visualised_in/
+---
+The  title says it all, this is a small dashboard I created with a  coursemate for our Information Visualisation module back in May (we  could only make it public now), requiring us to visualise any dataset  fully in D3.JS, and we naturally chose coronavirus data as it was (and  still is) quite a hype topic.
+
+**You can visit the visualisation here:** [**corona-virus-insights.herokuapp.com**](https://corona-virus-insights.herokuapp.com/)**.**
+
+**The code is open-sourced on GitHub and available here:** [**github.com/Adamouization/Corona-Virus-Insights-Dashboard**](https://github.com/Adamouization/Corona-Virus-Insights-Dashboard)**.**
+
+The data source is originally from [JHU CSSE](https://systems.jhu.edu/research/public-health/ncov/),  while the visualisation is hosted on a Heroku web server. If you have  any further questions about the visualisations or the code, don't  hesitate to ask us!
+
+Any feedback  is obviously welcomed, we'd love to hear on ways to eventually improve  our visualisations and learn more about D3.JS along the way.
+## [8][NSFW Filter: Block NSFW content using AI](https://www.reddit.com/r/javascript/comments/i0nmbe/nsfw_filter_block_nsfw_content_using_ai/)
+- url: https://github.com/navendu-pottekkat/nsfw-filter
 ---
 
-## [6][Guess a date's format](https://www.reddit.com/r/javascript/comments/i01z5i/guess_a_dates_format/)
-- url: https://github.com/apoorv-mishra/moment-guess
+## [9][Tic Tac Toe with javascript. I am a noob programmer. Please feel free to improve my code. And sorry for the unknown bugs.](https://www.reddit.com/r/javascript/comments/i164o7/tic_tac_toe_with_javascript_i_am_a_noob/)
+- url: https://tya149.github.io/Tic-Tac-Toe-v0.1/Tic%20Tac%20Toe/index.html
 ---
 
-## [7][WebStorm 2020.2: Use Prettier as the Default Formatter, Work with Nuxt.js, and Get Full Support for GitHub PRs](https://www.reddit.com/r/javascript/comments/i0jnel/webstorm_20202_use_prettier_as_the_default/)
-- url: https://blog.jetbrains.com/webstorm/2020/07/webstorm-2020-2
+## [10][French Developer First Portfolio !](https://www.reddit.com/r/javascript/comments/i0yg5k/french_developer_first_portfolio/)
+- url: http://jmmpoy.netlify.app
 ---
 
-## [8][Polymorphism in JavaScript](https://www.reddit.com/r/javascript/comments/i07kin/polymorphism_in_javascript/)
-- url: https://zellwk.com/blog/polymorphism-javascript/
+## [11][Javascript Event Loop for Concurrency in Javascript](https://www.reddit.com/r/javascript/comments/i0g5l2/javascript_event_loop_for_concurrency_in/)
+- url: https://oddblogger.com/javascript-event-loop-concurrency-javascript/
 ---
 
-## [9][[AskJS] Fusion in JavaScript - An approach for a better list performance using functional programming principles](https://www.reddit.com/r/javascript/comments/i0djlc/askjs_fusion_in_javascript_an_approach_for_a/)
-- url: https://www.reddit.com/r/javascript/comments/i0djlc/askjs_fusion_in_javascript_an_approach_for_a/
----
-Using composition to remove the intermediary layer for better list performance
-
-[https://medium.com/weekly-webtips/fusion-in-javascript-b568a73f3ebb](https://medium.com/weekly-webtips/fusion-in-javascript-b568a73f3ebb)
-## [10][I just started learning about JavaScript last month and created and basic app which uses the Spotify API to generate your most a playlist with your most listened to artist!](https://www.reddit.com/r/javascript/comments/i00xpd/i_just_started_learning_about_javascript_last/)
-- url: https://github.com/ryanyao2002/Spotify-Playlist-Generator
----
-
-## [11][ElectroCRUD 2 | Create, Read, Update, and Delete (CRUD)](https://www.reddit.com/r/javascript/comments/i07mtl/electrocrud_2_create_read_update_and_delete_crud/)
-- url: https://garrylachman.github.io/ElectroCRUD/
----
-
-## [12][A tiny (~400 B) &amp; modern library for keybindings](https://www.reddit.com/r/javascript/comments/hzuuzi/a_tiny_400_b_modern_library_for_keybindings/)
-- url: https://github.com/jamiebuilds/tinykeys
+## [12][Microfrontends — should I care?](https://www.reddit.com/r/javascript/comments/i0qplc/microfrontends_should_i_care/)
+- url: https://medium.com/jit-team/microfrontends-should-i-care-12b871f70fa3
 ---
 

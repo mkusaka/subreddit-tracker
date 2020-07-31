@@ -23,7 +23,45 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/07/28/this-week-in-rust-349/
 ---
 
-## [3][Firefox 79 now supports WebAssembly threads and reference types!](https://www.reddit.com/r/rust/comments/i0g8r7/firefox_79_now_supports_webassembly_threads_and/)
+## [3][First serious release of Polars DataFrames](https://www.reddit.com/r/rust/comments/i14ab0/first_serious_release_of_polars_dataframes/)
+- url: https://www.reddit.com/r/rust/comments/i14ab0/first_serious_release_of_polars_dataframes/
+---
+I've been working on a DataFrame implementation based on Apache Arrow for the past months. The goal of the project is to be a fast in-memory DataFrame library in Rust.  
+
+Now Apache Arrow 1.0 is out, I could release the first serious version. It has got basic selections, groupbys, joins, arithmetic, sorting, filters/masks, Rust iterators and more. 
+
+Python bindings are being worked on. The goal with regard to Python is to have interaction between Apache arrow and numpy with minimal overhead.
+
+[https://github.com/ritchie46/polars](https://github.com/ritchie46/polars)
+## [4][Rust 1.45.1 is released](https://www.reddit.com/r/rust/comments/i0rfzs/rust_1451_is_released/)
+- url: https://blog.rust-lang.org/2020/07/30/Rust-1.45.1.html
+---
+
+## [5][event-listener: a synchronization primitive to turn non-blocking data structures into async or blocking data structures](https://www.reddit.com/r/rust/comments/i16oly/eventlistener_a_synchronization_primitive_to_turn/)
+- url: https://docs.rs/event-listener
+---
+
+## [6][geos 7.0 release: More type safety, update dependencies and use std TryFrom](https://www.reddit.com/r/rust/comments/i14vla/geos_70_release_more_type_safety_update/)
+- url: https://blog.guillaume-gomez.fr/articles/2020-07-31+geos+7.0+release%3A+More+type+safety%2C+update+dependencies+and+use+std+TryFrom
+---
+
+## [7][Edition 2021 and beyond](https://www.reddit.com/r/rust/comments/i0n78c/edition_2021_and_beyond/)
+- url: https://github.com/rust-lang/rfcs/pull/2966
+---
+
+## [8][tihle, a new emulator targeting TI graphing calculators implemented in C and Rust](https://www.reddit.com/r/rust/comments/i0wi89/tihle_a_new_emulator_targeting_ti_graphing/)
+- url: https://www.taricorp.net/2020/introducing-tihle/
+---
+
+## [9][Reverse engineering a USB device with Rust](https://www.reddit.com/r/rust/comments/i0moov/reverse_engineering_a_usb_device_with_rust/)
+- url: https://gill.net.in/posts/reverse-engineering-a-usb-device-with-rust/
+---
+
+## [10][Using the Rust compiler as your integration testing framework](https://www.reddit.com/r/rust/comments/i0tyjs/using_the_rust_compiler_as_your_integration/)
+- url: https://blog.logrocket.com/using-the-rust-compiler-as-your-integration-testing-framework/
+---
+
+## [11][Firefox 79 now supports WebAssembly threads and reference types!](https://www.reddit.com/r/rust/comments/i0g8r7/firefox_79_now_supports_webassembly_threads_and/)
 - url: https://www.reddit.com/r/rust/comments/i0g8r7/firefox_79_now_supports_webassembly_threads_and/
 ---
 Firefox 79 includes new WebAssembly functionality:
@@ -33,47 +71,11 @@ Firefox 79 includes new WebAssembly functionality:
 * With the return of `SharedArrayBuffer` objects, we’re now also able to support [WebAssembly threads](https://developer.mozilla.org/docs/WebAssembly/Understanding_the_text_format#WebAssembly_threads). Thus, it is now possible for WebAssembly Memory objects to be shared across multiple WebAssembly instances running in separate Web Workers. The outcome? Very fast communication between Workers, as well as significant performance gains in web applications.
 
 (from [https://hacks.mozilla.org/2020/07/firefox-79/](https://hacks.mozilla.org/2020/07/firefox-79/))
-## [4][fixed_vec v0.1.0: avoiding extra bounds checks using Ghosts of Departed Proofs](https://www.reddit.com/r/rust/comments/i0k1y6/fixed_vec_v010_avoiding_extra_bounds_checks_using/)
-- url: https://github.com/Torrencem/fixed_vec/blob/master/post.md
+## [12][Installation using Chocolately](https://www.reddit.com/r/rust/comments/i14zz8/installation_using_chocolately/)
+- url: https://www.reddit.com/r/rust/comments/i14zz8/installation_using_chocolately/
 ---
+I noticed that you can install Rust using Choco on Windows. Any advantages or disadvantages compared with rustup?
 
-## [5][Deno now uses SWC (a TS/JS compiler in Rust) for Typescript type stripping](https://www.reddit.com/r/rust/comments/i02zu3/deno_now_uses_swc_a_tsjs_compiler_in_rust_for/)
-- url: https://www.reddit.com/r/rust/comments/i02zu3/deno_now_uses_swc_a_tsjs_compiler_in_rust_for/
----
-&gt; bartlomieju: Update: type stripping has been implemented using SWC and takes impressive ~70ms compared to ~1s before the change.
+There are two variations, just "rust" and "rust-ms". I am using Microsoft tools, does that mean "rust-ms" is the preferred one?
 
-https://github.com/denoland/deno/issues/5432#issuecomment-665591700
-## [6][Is there a trick for checking lifetime annotations?](https://www.reddit.com/r/rust/comments/i0bzw8/is_there_a_trick_for_checking_lifetime_annotations/)
-- url: https://www.reddit.com/r/rust/comments/i0bzw8/is_there_a_trick_for_checking_lifetime_annotations/
----
-I know that you can check types with 
-
-    let _: () = x;
-
-Is there a simple way to do that but for seeing how lifetimes interact?
-## [7][Build for linux running on raspberry pi?](https://www.reddit.com/r/rust/comments/i0lxoi/build_for_linux_running_on_raspberry_pi/)
-- url: https://www.reddit.com/r/rust/comments/i0lxoi/build_for_linux_running_on_raspberry_pi/
----
-i have ordered an raspberry pi 4 which i will be installing ubuntu server on, but i have no clue how to build for this. i have googled and i cant find any **solid** answers; everything was different, so im not safe on what to do.
-
-I'm on windows and using wsl2
-## [8][Calling functions via null pointers](https://www.reddit.com/r/rust/comments/i0dhgu/calling_functions_via_null_pointers/)
-- url: https://stackoverflow.com/questions/63164973/wat-code-rust-allows-calling-functions-via-null-pointers
----
-
-## [9][Can we VersionReq to any other type?](https://www.reddit.com/r/rust/comments/i0l8gt/can_we_versionreq_to_any_other_type/)
-- url: https://www.reddit.com/r/rust/comments/i0l8gt/can_we_versionreq_to_any_other_type/
----
-I tried to use the value of VersionReq in the PackageId::new() but it return an error like **(the trait 'util::to\_semver::ToSemver\` is not implemented for \`&amp;semver::version\_req::VersionReq\`).** Is there any way to convert the VersionReq value into supported type of PackagId?
-## [10][Creating Linux Packages For Rust Projects (1/2)](https://www.reddit.com/r/rust/comments/i0465c/creating_linux_packages_for_rust_projects_12/)
-- url: https://ebbflow.io/blog/vending-linux-1
----
-
-## [11][Porting NeoCogi's Jude3D to rust](https://www.reddit.com/r/rust/comments/i0k8x9/porting_neocogis_jude3d_to_rust/)
-- url: https://twitter.com/weloraiby/status/1288638269597638663
----
-
-## [12][What actually is a closure](https://www.reddit.com/r/rust/comments/i0cbnz/what_actually_is_a_closure/)
-- url: https://www.reddit.com/r/rust/comments/i0cbnz/what_actually_is_a_closure/
----
-I've recently been working on a project that's involved passing and returning lots of closures, and I realize I don't understand quite how closures are implemented in memory. I was wondering if there was a nice explanation of what it looks like *in memory* when creating or returning a closure? Thanks!
+I especially care about the ability to debug and integrate with Visual Studio Code.

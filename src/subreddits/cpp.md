@@ -56,69 +56,139 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][CLion 2020.2: Makefile Projects, C++20, Enhanced Code analysis, Doctest, and Other Unit Testing Support Improvements](https://www.reddit.com/r/cpp/comments/i0czrr/clion_20202_makefile_projects_c20_enhanced_code/)
-- url: https://blog.jetbrains.com/clion/2020/07/clion-2020-2-makefile-cpp20-doctest/
+## [2][Conan 2.0 announcement](https://www.reddit.com/r/cpp/comments/i13i7m/conan_20_announcement/)
+- url: https://blog.conan.io/2020/07/28/Launching-Conan-2.0-Tribe.html
 ---
 
-## [3][constexpr if and requires expressions changed everything about template metaprogramming](https://www.reddit.com/r/cpp/comments/i0i0e4/constexpr_if_and_requires_expressions_changed/)
-- url: https://www.reddit.com/r/cpp/comments/i0i0e4/constexpr_if_and_requires_expressions_changed/
+## [3][TIL: You can use initializer lists directly in a range-based for loop](https://www.reddit.com/r/cpp/comments/i15o5k/til_you_can_use_initializer_lists_directly_in_a/)
+- url: https://www.reddit.com/r/cpp/comments/i15o5k/til_you_can_use_initializer_lists_directly_in_a/
 ---
-then: [https://gist.github.com/ChemiaAion/4118a3598f0b120b7f9c5884e9799a8b](https://gist.github.com/ChemiaAion/4118a3598f0b120b7f9c5884e9799a8b)
+Maybe everybody else already knew this but for me this was a revelation:
 
-now: [https://godbolt.org/z/KKrPMr](https://godbolt.org/z/KKrPMr)
+    for (int64_t entity_id: {2, 1460, 3525, 5177}) {
+      std::cout &lt;&lt; entity_id &lt;&lt; std::endl;
+    }
+## [4][jwt-cpp: header only JWT library with generic JSON library support (pre-release)](https://www.reddit.com/r/cpp/comments/i0yvib/jwtcpp_header_only_jwt_library_with_generic_json/)
+- url: https://www.reddit.com/r/cpp/comments/i0yvib/jwtcpp_header_only_jwt_library_with_generic_json/
+---
+# [JWT-CPP](https://github.com/Thalhammer/jwt-cpp/tree/v0.5.0-rc.0)
 
-we can finally template-metaprogram in a human readable language.
-## [4][libstud-json: JSON pull-parser/push-serializer library for C++](https://www.reddit.com/r/cpp/comments/i0l6ao/libstudjson_json_pullparserpushserializer_library/)
+## New Release Candidate 0.5.0-rc.0
+
+This new pre-release has a few key features:
+
+- support for *any* JSON library
+- support std::error_code workflow 
+
+Beyond the additional features we have also been working hard to improve the quality so you (but mostly me) can rely on this code in mission critical applications. The doxygen API documentation is now hosted in GitHub Pages to improve readability. 
+
+&gt; Hoping to get your feedback! Looking forward to your contributions
+
+## [JSON Traits](https://github.com/Thalhammer/jwt-cpp/tree/v0.5.0-rc.0#providing-your-own-json-traits)
+The challenge with a lot of the C++ JWT libraries (check out [jwt.io](https://jwt.io/) for other options) is they are fixed to a single JSON library. This forces many developers to rely on 2, 3 or more JSON library to build their application. It's a pain.
+
+A JWT claim, is simply `jwt::basic_claim&lt;my_json_traits&gt;`, which allows the creation and decoding/verification to be generic to the underlying JSON library you are already using. Check out the [read me](https://github.com/Thalhammer/jwt-cpp/tree/v0.5.0-rc.0#providing-your-own-json-traits) for more information!
+
+In order to maintain the API, there's still a `jwt::claim` which is the template specialization of `picojson_traits`. I am in the camp of changing this is a major release for the much more common `nlohmann/json` that everyone is familiar with.
+
+&gt; What JSON libraries would you like to see supported?
+
+## std::error_code overloads
+Exception handling is expensive, for many reasons, and it's one of the reasons behind the addition of these new API overloads. You are no longer forced to do exception handling. If you application is based around error_codes, this offers you a very nice fit.
+
+## What's next?
+- Support more algorithms that are available and we are trying to expend support.
+- Ensure the `json_traits` are sufficient to meet *most* JSON libraries 
+- Testing, testing, testing.
+## [5][Difference between 'new' and 'std::allocator&lt;T&gt;'](https://www.reddit.com/r/cpp/comments/i12cma/difference_between_new_and_stdallocatort/)
+- url: https://www.reddit.com/r/cpp/comments/i12cma/difference_between_new_and_stdallocatort/
+---
+Hi Guys,
+
+I understand that new  operator allocates+calls the default constructor. This basically initializes the memory.
+
+Whereas std::allocator&lt;T&gt;::allocate allocates memory and std::allocator&lt;T&gt;::construct initializes memory.
+
+Below is the code demonstrating my understanding.
+
+    #include&lt;iostream&gt;
+    #include&lt;memory&gt;
+    
+    int main()
+    {  
+      double *p1 = new double(1.0); //initialized memory = allocated+constructed                                                                          
+      std::allocator&lt;double&gt; alloc;
+      double *p2 = alloc.allocate(1); //uninitialized memory = allocated                                                                                  
+      std::cout&lt;&lt;"Value in memory allocated by new is :"&lt;&lt;p1[0]&lt;&lt;"\n";
+      std::cout&lt;&lt;"Value in memory allocated by std::allocator is :"&lt;&lt;*p2&lt;&lt;"\n";
+      alloc.construct(p2,double(1.0)); //initialized memory = constructed                                                                                 
+      std::cout&lt;&lt;"Value in memory initialized by std::construct is :"&lt;&lt;*p2&lt;&lt;"\n";
+      delete p1;
+      alloc.destroy(p2);
+      alloc.deallocate(p2,1);
+    }
+
+When I run the above code, output is:-
+
+    Value in memory allocated by new is :1
+    Value in memory allocated by std::allocator is :-1.28823e-231
+    Value in memory initialized by std::construct is :1
+
+This confirms my understanding. But the question is where is the value add in splitting allocation &amp; initialization steps?  
+
+My understanding is that new invokes only the default constructor, but in the example above I am able to call "new double(1.0)" with my own default value.  In this case what is the value addition of using std::allocator&lt;T&gt; class?
+## [6][Inconsistent incomplete type problem](https://www.reddit.com/r/cpp/comments/i173a6/inconsistent_incomplete_type_problem/)
+- url: https://www.reddit.com/r/cpp/comments/i173a6/inconsistent_incomplete_type_problem/
+---
+Hello all,
+
+I'm trying to make a simple `Config` class for a project I am working on and have run into weird compatibility issue. Issue is that code compiles in MSVC and clang (using libc++), but not in GCC. I do understand why it is an issue and that technically GCC is correct and others imply more lenient.
+
+Code is here: [https://godbolt.org/z/xEjcM1](https://godbolt.org/z/xEjcM1)
+
+What I am trying to figure out how to make this work without loosing the semantics of it. One way I figures is encasing value in `std::unique_ptr`, but that introduces extra allocation and indirection.
+
+Is there a way to refactor it so it is:
+- c++ standard compliant
+- not loose semantics
+- not require extra indirection?
+
+Weirdly enough if I use `std::map` then GCC is happy.
+
+If anyone interested my full implementation is here: https://github.com/albeva/fbide/blob/master/src/Config/Config.hpp
+## [7][Conan 1.28 released](https://www.reddit.com/r/cpp/comments/i1709w/conan_128_released/)
+- url: https://github.com/conan-io/conan/releases/tag/1.28.0
+---
+
+## [8][CppCast: Visual Effects](https://www.reddit.com/r/cpp/comments/i0zbpa/cppcast_visual_effects/)
+- url: https://cppcast.com/josh-filstrup-vfx/
+---
+
+## [9][On the search for ideas](https://www.reddit.com/r/cpp/comments/i16kqj/on_the_search_for_ideas/)
+- url: https://www.reddit.com/r/cpp/comments/i16kqj/on_the_search_for_ideas/
+---
+Hi guys!
+I'm about to start finding a job as a c++ dev. I'm 15 and I have about yearly experience in STL, console apps and algorithms. I'm into maths and I'm good at it. Becouse every project I've done so far was either implementations of algorithms, data structures or solving exercises I'm looking for ideas for a projects I can put in my portfolio, I'm starting to study WxWidgets and if needed I'll learn some graphics engine. If you have any interesting ideas for one-person project I would love to see them in the comments.
+Thanks!
+## [10][libstud-json: JSON pull-parser/push-serializer library for C++](https://www.reddit.com/r/cpp/comments/i0l6ao/libstudjson_json_pullparserpushserializer_library/)
 - url: https://github.com/libstud/libstud-json/
 ---
 
-## [5][Getters and Setters, and Member functions vs the alternative](https://www.reddit.com/r/cpp/comments/i06xfh/getters_and_setters_and_member_functions_vs_the/)
-- url: https://www.reddit.com/r/cpp/comments/i06xfh/getters_and_setters_and_member_functions_vs_the/
+## [11][C++ has become easier to write than Java](https://www.reddit.com/r/cpp/comments/i15g4p/c_has_become_easier_to_write_than_java/)
+- url: https://www.reddit.com/r/cpp/comments/i15g4p/c_has_become_easier_to_write_than_java/
 ---
-I took a class last semester about OOP with C++, but to be honest, I'm still struggling with understanding what good practices are when it comes to making classes and their functions. When I code C++, I usually just make all the variables private, and make member functions to get/set the data, as well as perform other tasks. However, I've heard that using getters and setters is bad practice, but so is public variables, so what should I do? Also, I've seen people not use member functions and instead create global functions where you pass in a constant reference to the class. Is this good practice? What about if you're working with private variables? I'm not too familiar with how to properly structure and organize classes in different ways (I did my whole final project just with private data and getters/setters) so any help would be appreciated.
-## [6][Why does one of these code samples get optimized but not the other one?](https://www.reddit.com/r/cpp/comments/i01cwd/why_does_one_of_these_code_samples_get_optimized/)
-- url: https://www.reddit.com/r/cpp/comments/i01cwd/why_does_one_of_these_code_samples_get_optimized/
----
-I was playing around with inlining in godbolt and I came across a slightly puzzling difference, that I've summarised in these two samples:
+After a while I started to do some Android development with Java (not into Kotlin yet). It's nice to see that after getting used to C++11 features like auto etc, Java now feels VERY cumbersome.
 
-* [inlined](https://godbolt.org/z/rc6rao)
-* [not inlined](https://godbolt.org/z/5v54Gn)
+I hate this pattern in Java:
 
-As you can see, the only difference is that in the first example the variable whose reference I'm returning in the private function lives at global scope for this TU, while in the other example it's a static method variable.
+MyLongNamedClass foo = new MyLongNamedClass();
 
-It seems to me like there's no reason why the compiler shouldn't be able to infer that the memory location is going to be irrelevant in both cases (since the only way to access the variable is through the accessor, which discards the address). So why does it get inlined in one case and not the other? Is it a limitation of the compiler, or is there a language design reason for this?
+In C++ I can, e.g.:
 
-Thanks!
-## [7][Updated version of C++ Coding Standards By Herb Sutter and Andrei Alexandrescu](https://www.reddit.com/r/cpp/comments/i01lt3/updated_version_of_c_coding_standards_by_herb/)
-- url: https://www.reddit.com/r/cpp/comments/i01lt3/updated_version_of_c_coding_standards_by_herb/
----
-Hey guys, just wondering if there is an updated version of this book (or a similar book which talks about good C++ practices). Also, for people who have read this can you please confirm if they methodologies mentioned in the book still apply to modern C++.   
-Linked the book below. 
+auto foo = new MyLongNamedClass;
 
-LINK : [https://www.amazon.com/dp/0321113586](https://www.amazon.com/dp/0321113586)
-## [8][Should you use the inline keyword or not?](https://www.reddit.com/r/cpp/comments/i0haek/should_you_use_the_inline_keyword_or_not/)
-- url: https://www.reddit.com/r/cpp/comments/i0haek/should_you_use_the_inline_keyword_or_not/
----
-I usually add the `inline` keyword when I think a function ought to be inlined. However, I've received some review comments and criticism about this.
+Or just:
 
-Some people argue that `inline` is superfluous because these days compilers do a good job deciding when to inline things by default, and maybe even make a better decision as to what is worth to inline and what isn't.
+MyLongNamedClass foo;
 
-A few years ago I fiddled around with the compiler explorer and found that not every compiler does inlining without the `inline` keyword, even when optimizations are enabled. However, I can't actually reproduce this anymore with more recent versions.
-
-What do you guys think? Should `inline` be avoided because today's compilers are smart enough? Or should we keep using it "just in case"?
-## [9][C++ on Sea 2020 video - "Code samples that actually compile" (lightning talk) - Clare Macrae](https://www.reddit.com/r/cpp/comments/hzktac/c_on_sea_2020_video_code_samples_that_actually/)
-- url: https://www.youtube.com/watch?v=KtxTlBeVYiE
----
-
-## [10][eCAL](https://www.reddit.com/r/cpp/comments/hzc1lo/ecal/)
-- url: https://www.reddit.com/r/cpp/comments/hzc1lo/ecal/
----
-[eCAL](https://github.com/continental/ecal) is a  modern C++ interprocess communication framework designed for low latency and massive data throughput. It was developed by a Continental R&amp;D team to manage distributed high performance computing for autonomous driving prototyping cars.
-
-The API design is inspired by [ROS](https://www.ros.org/) but it has built in shared memory transport from the start and supports modern message protocols like [Google Protobuf](https://developers.google.com/protocol-buffers), [Flatbuffers](https://google.github.io/flatbuffers/) or [Cap'n Proto](https://capnproto.org/) (infinitely fast ;-)).
-
-Finally there are some powerful applications for monitoring, recording and replaying the whole interprocess communication in a distributed manner.
-## [11][C++ on Sea 2020 video - "Decision Fatigue and coding guidelines" (lightning talk) - Sandor Dargo](https://www.reddit.com/r/cpp/comments/hzhebp/c_on_sea_2020_video_decision_fatigue_and_coding/)
-- url: https://www.youtube.com/watch?v=B-VnIakCOsw
----
-
+This was only a single example. Java is lagging behind C++.

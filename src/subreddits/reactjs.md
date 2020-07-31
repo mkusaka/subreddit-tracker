@@ -110,250 +110,93 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][FREE React Fundamentals course on udemy (FREE for 3 days only)](https://www.reddit.com/r/reactjs/comments/i0ggdb/free_react_fundamentals_course_on_udemy_free_for/)
-- url: https://www.reddit.com/r/reactjs/comments/i0ggdb/free_react_fundamentals_course_on_udemy_free_for/
----
-[https://www.udemy.com/course/first-met-react/?couponCode=2963035792CCB1BFAD0E](https://www.udemy.com/course/first-met-react/?couponCode=2963035792CCB1BFAD0E)
-
-Hello, developers!
-
-I launched a React lecture for real beginners.
-
-The lecture only covers the basic fundamentals of React,
-
-excluding Hooks, Context API, and other difficult content.
-
-So, this lecture is the best way to start learning React.
-
-The lecture is charged,
-
-but I attached **FREE** coupon link above(valid only 3 days).
-
-(Expires 08/01/2020 22:08 PM PDT (GMT -7))
-
-So, if anyone who wants to learn React,
-
-apply before the coupon expires.
-
-Thank you 😀
-## [4][React Query migrates to TypeScript](https://www.reddit.com/r/reactjs/comments/i08pme/react_query_migrates_to_typescript/)
-- url: https://twitter.com/tannerlinsley/status/1288579941227888640
+## [3][I've created a react hook to grab a color palette from images. It also renders a skeleton color while your original image still loading. Feedback appreciated](https://www.reddit.com/r/reactjs/comments/i0wug1/ive_created_a_react_hook_to_grab_a_color_palette/)
+- url: https://github.com/jeffersonlicet/use-image-color
 ---
 
-## [5][A Simple Guide to React Context with Hooks](https://www.reddit.com/r/reactjs/comments/i0k065/a_simple_guide_to_react_context_with_hooks/)
+## [4][Can someone help me with interview questions](https://www.reddit.com/r/reactjs/comments/i14m8x/can_someone_help_me_with_interview_questions/)
+- url: https://www.reddit.com/r/reactjs/comments/i14m8x/can_someone_help_me_with_interview_questions/
+---
+I have an interview coming up this wednesday. The recruiter said that the company is looking for a reactjs dev and the company is going to ask questions from my resume. This is going to be my first time giving an interview (a little nervous), what should i expect?
+
+Thanks everyone in advance
+## [5][Use create-react-app to develop Chrome extensions](https://www.reddit.com/r/reactjs/comments/i0nstw/use_createreactapp_to_develop_chrome_extensions/)
+- url: https://www.jamalx31.com/tech-posts/use-create-react-app-to-develop-chrome-extensions
+---
+
+## [6][My fullstackopen final project: multi-player doodling game using Paper.js and React / Express / Node.js / MongoDB](https://www.reddit.com/r/reactjs/comments/i11u7h/my_fullstackopen_final_project_multiplayer/)
+- url: https://www.reddit.com/r/reactjs/comments/i11u7h/my_fullstackopen_final_project_multiplayer/
+---
+Since quarantine started I've been self-learning full stack web development. I made this project to solidify what I learned after completing [https://fullstackopen.com](https://fullstackopen.com/). I'd love to hear your feedback.
+
+[https://skidoodle.herokuapp.com](https://skidoodle.herokuapp.com/)
+
+[https://github.com/annateng/Skidoodle](https://github.com/annateng/Skidoodle)
+## [7][A Simple Guide to React Context with Hooks](https://www.reddit.com/r/reactjs/comments/i0k065/a_simple_guide_to_react_context_with_hooks/)
 - url: https://dev.to/keke_arif/a-simple-guide-to-react-context-with-hooks-34jj
 ---
 
-## [6][Code-splitting in react.js. Patterns and resource](https://www.reddit.com/r/reactjs/comments/i0ilw0/codesplitting_in_reactjs_patterns_and_resource/)
-- url: https://www.reddit.com/r/reactjs/comments/i0ilw0/codesplitting_in_reactjs_patterns_and_resource/
+## [8][State Management / architecture question](https://www.reddit.com/r/reactjs/comments/i17gus/state_management_architecture_question/)
+- url: https://www.reddit.com/r/reactjs/comments/i17gus/state_management_architecture_question/
 ---
-Hi, I'm using react's lazy and suspense for code-splitting. I use chrome's coverage tab to identify dead code and then lazy load those components. What patterns or resource should be good to look into
-## [7][Finally finished my Jr. React Dev portfolio site!](https://www.reddit.com/r/reactjs/comments/i0jf2i/finally_finished_my_jr_react_dev_portfolio_site/)
-- url: https://cdtech.netlify.app/
----
-
-## [8][I recorded me building a React App with a realtime GraphQL API and authentication in 45 minutes](https://www.reddit.com/r/reactjs/comments/i0l82s/i_recorded_me_building_a_react_app_with_a/)
-- url: https://www.youtube.com/watch?v=Kb2V6lTi_qM
+Hello all! My question is how far can you push a React app using only React Hooks for state management before resorting to Redux or something like it? I assume I could make a form-over-fields with some complex validation and perhaps dynamic fields, but I would like some of your thoughts on where and if its got a breaking point.
+## [9][Anix - Stream Animes](https://www.reddit.com/r/reactjs/comments/i179m7/anix_stream_animes/)
+- url: https://v.redd.it/nsr0cqjqz6e51
 ---
 
-## [9][React Query Essentials Course](https://www.reddit.com/r/reactjs/comments/i08o2s/react_query_essentials_course/)
-- url: https://github.com/tannerlinsley/react-query-essentials
+## [10][[Help] How to push data object in state](https://www.reddit.com/r/reactjs/comments/i16xby/help_how_to_push_data_object_in_state/)
+- url: https://www.reddit.com/r/reactjs/comments/i16xby/help_how_to_push_data_object_in_state/
+---
+Hello everyone, I came back to one of my old projects and I have hit a road block. The project is a movie discover app.
+
+The problem I am facing, I am rendering on the FE multiple movie list view components with like movie title, description etc
+
+Desired flow:
+
+Base state
+
+```state = Object.freeze({
+           favorite: []
+         })```
+
+1.	Have button component - “Favorite”
+2.	 When clicked on “Favorite”, populate data set to state (data are comming from props, which are fetched from api)
+3.	If clicked on another, push the next data into state
+4.	In state I should see ```[{...},{...}] ``` as I have added 2 items into state
+5.	Retreive data from state, save into localStorage
+6.	From another component retreive data from localStorage and render it, data from localStorage are used for another component on another route
+
+Current flow:
+
+1.	Clicked on “Favorite”
+2.	Data populated - [{...}]
+3.	Add another item into favorite, data is not pushed into arr, it will overwrite previous data
+
+ [Gist of the helper function](https://github.com/tomasvn/react-repo/blob/80257a770e4f15be8401fc2a3f056204190eb8c1/react-movie-discover-new/src/components/MovieListItem.js#L15)
+
+Tried, failed approach
+
+1.	Use `this.setState(prevState =&gt; ({...prevState.favorite, data})`
+2.	create `const data = []` and use `data.push({...})` and then use setState
+
+If you need more info happy to provide
+## [11][Building greater accessibility into Facebook.com - Facebook Engineering](https://www.reddit.com/r/reactjs/comments/i0unei/building_greater_accessibility_into_facebookcom/)
+- url: https://engineering.fb.com/web/facebook-com-accessibility/
 ---
 
-## [10][React interviews](https://www.reddit.com/r/reactjs/comments/i09mjc/react_interviews/)
-- url: https://www.reddit.com/r/reactjs/comments/i09mjc/react_interviews/
+## [12][What react gallery lightbox component library are you using?](https://www.reddit.com/r/reactjs/comments/i16277/what_react_gallery_lightbox_component_library_are/)
+- url: https://www.reddit.com/r/reactjs/comments/i16277/what_react_gallery_lightbox_component_library_are/
 ---
-Hi all!
+I'm having a hard time trying to find a decent one. Half are unmaintained, others are buggy or missing features. The only potential candidate is a "pro" one that's paid and not open source and the 'lite' version looks like it has a lot of issues on its github.
 
-What would be some good examples of problems to stay fresh and be in a sharp coding mentality for pair programming interviews using react. Some quick ones that come to mind are counter and to do list examples. 
+I'd love something like fancybox for react. This is what I mean: http://fancyapps.com/fancybox/3/ It just works. But it relies on jQuery. Apparently the dev of fancybox is working on making it no longer rely on jQuery, so that should make it easier to use with react, but seems like it'll be a little while off.
 
-Thanks in advance !
-## [11][Learn how to build a Discord Bot Website/Dashboard with MERN Stack](https://www.reddit.com/r/reactjs/comments/i0lwel/learn_how_to_build_a_discord_bot_websitedashboard/)
-- url: https://www.youtube.com/playlist?list=PL_cUvD4qzbkwCJLEhZJ_DZ4VFV5N3CBLI
----
+Here's the one's I've been through
 
-## [12][Help with my project!!! I'm using react-redux, redux-thunk and axios.](https://www.reddit.com/r/reactjs/comments/i0lw6k/help_with_my_project_im_using_reactredux/)
-- url: https://www.reddit.com/r/reactjs/comments/i0lw6k/help_with_my_project_im_using_reactredux/
----
-I am creating a registration form. I'm using redux-thunk to run the async code and the state changes but it doesn't get reflected in my component. I'm using my own api which returns an obj in both cases, in this format {msg:"Success or Failure"} and I want to alert whether the registration has been successful or not and then redirect to "/login", if registration succeeds or to "/register" again if it fails.
+- https://github.com/xiaolin/react-image-gallery - No modal/lightbox (that I can see). Can't swipe on desktop. No zoom (only fullscreen, which is not the same).
+- https://github.com/frontend-collective/react-image-lightbox - Possibly abandoned. 
+- https://github.com/jossmac/react-images - No longer maintained/abandoned.
+- https://www.npmjs.com/package/simple-react-lightbox - Best so far but is super buggy on image zoom, makes the feature unusuable. 
+- https://fslightbox.com/ - the "pro" one I mentioned
 
-registerActions.js
-
-    import axios from "axios";
-    import {
-      REGISTER_INITIATED,
-      REGISTER_SUCCESS,
-      REGISTER_FAILED,
-    } from "./registerTypes";
-    
-    export const register = (registerDetails) =&gt; {
-      return (dispatch, getState) =&gt;
-        new Promise((resolve) =&gt; {
-          dispatch(registerInitiated());
-          axios
-            .post("/api/client/register", registerDetails)
-            .then((response) =&gt; {
-              dispatch(registerSuccess(response.data));
-              resolve();
-            })
-            .catch((error) =&gt; {
-              dispatch(registerFailed(error.response.data));
-              resolve();
-            });
-    
-        });
-    };
-    
-    export const registerInitiated = () =&gt; {
-      return {
-        type: REGISTER_INITIATED,
-      };
-    };
-    export const registerSuccess = (data) =&gt; {
-      return {
-        type: REGISTER_SUCCESS,
-        data,
-      };
-    };
-    export const registerFailed = (data) =&gt; {
-      return {
-        type: REGISTER_FAILED,
-        data,
-      };
-    };
-
-registerReducer.js
-
-    import { REGISTER_INITIATED, REGISTER_SUCCESS, REGISTER_FAILED } from "./registerTypes";
-    
-    const initialState = {
-      loading: false,
-      data: "",
-      error: ""
-    }
-    
-    const reducer = (state = initialState, action) =&gt; {
-      switch (action.type) {
-        case REGISTER_INITIATED:
-          return {
-            ...state,
-            loading: true
-          }
-        case REGISTER_SUCCESS:
-          return {
-            loading: false,
-            data: action.data.msg,
-            error: ""
-          }
-        case REGISTER_FAILED:
-          return {
-            loading: false,
-            data: "",
-            error: action.data.msg
-          }
-        default: return state
-      }
-    }
-    
-    export default reducer
-
-RegisterScreen.js
-
-    import React, { useState } from "react";
-    import "../componentsStyles/RegisterScreen.css";
-    import { register } from "../redux";
-    import { useDispatch, useSelector } from "react-redux";
-    
-    function RegisterScreen({ history }) {
-      const [name, setName] = useState("");
-      const [email, setEmail] = useState("");
-      const [password, setPassword] = useState("");
-      const [company, setCompany] = useState("");
-      const [designation, setDesignation] = useState("");
-    
-      const dispatch = useDispatch();
-      const data = useSelector((state) =&gt; state.register.data);
-      const error = useSelector((state) =&gt; state.register.error);
-      
-      // I'm not able implement this function!!!!
-      // redux-thunk is able to change the state(data and error) but it is not 
-  // reflecting in my component, it is alerting the initial empty values.
-    
-      const submitHandler = (e) =&gt; {
-        e.preventDefault();
-        dispatch(register({ name, email, password, company, designation })).then(
-          () =&gt; {
-            if (error) {
-              alert(error);
-              setEmail("");
-              setPassword("");
-              setPassword("");
-              setCompany("");
-              setDesignation("");
-              history.push("/register");
-            } else {
-              alert(data);
-              history.push("/login");
-            }
-          }
-        );
-      };
-    
-      return (
-        &lt;div className="Register"&gt;
-          &lt;h1&gt;Registration Form&lt;/h1&gt;
-          &lt;h2&gt;Register yourself!&lt;/h2&gt;
-          &lt;form className="Register-Form" onSubmit={submitHandler}&gt;
-            &lt;div&gt;
-              &lt;label&gt;Name: &lt;/label&gt;
-              &lt;input
-                type="text"
-                name="name"
-                value={name}
-                onChange={(e) =&gt; setName(e.target.value)}
-              /&gt;
-            &lt;/div&gt;
-            &lt;div&gt;
-              &lt;label&gt;Email: &lt;/label&gt;
-              &lt;input
-                type="email"
-                name="email"
-                value={email}
-                onChange={(e) =&gt; setEmail(e.target.value)}
-              /&gt;
-            &lt;/div&gt;
-            &lt;div&gt;
-              &lt;label&gt;Password: &lt;/label&gt;
-              &lt;input
-                type="text"
-                name="password"
-                value={password}
-                onChange={(e) =&gt; setPassword(e.target.value)}
-              /&gt;
-            &lt;/div&gt;
-            &lt;div&gt;
-              &lt;label&gt;Company: &lt;/label&gt;
-              &lt;input
-                type="text"
-                name="company"
-                value={company}
-                onChange={(e) =&gt; setCompany(e.target.value)}
-              /&gt;
-            &lt;/div&gt;
-            &lt;div&gt;
-              &lt;label&gt;Designation: &lt;/label&gt;
-              &lt;input
-                type="text"
-                name="designation"
-                value={designation}
-                onChange={(e) =&gt; setDesignation(e.target.value)}
-              /&gt;
-            &lt;/div&gt;
-    
-            &lt;button type="submit"&gt;Submit the form&lt;/button&gt;
-          &lt;/form&gt;
-        &lt;/div&gt;
-      );
-    }
-    
-    export default RegisterScreen
+Any suggestions? At this point I'm wondering if it's worth it to just bite the bullet and pull jquery on the page and use fancybox until the dev can make it vanilla js. But if anyone knows of any decent React based ones, I'm all ears!

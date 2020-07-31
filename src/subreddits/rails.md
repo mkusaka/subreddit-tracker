@@ -27,13 +27,77 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Shopify on Rails is doing well](https://www.reddit.com/r/rails/comments/i0f8dx/shopify_on_rails_is_doing_well/)
+## [3][ActiveStorage and local directory with dockerized app](https://www.reddit.com/r/rails/comments/i14po4/activestorage_and_local_directory_with_dockerized/)
+- url: https://www.reddit.com/r/rails/comments/i14po4/activestorage_and_local_directory_with_dockerized/
+---
+I have a `docker-compose.yml` with a Rails/Postgres app which uses **ActiveStorage** and local storage setup. 
+
+    local:
+ service: Disk
+ root: &lt;%= Rails.root.join("storage") %&gt;
+
+I want all file uploads to be kept safely in the host's disk. What is the safest way of keeping those files intact while pulling/rebuilding the docker images ?
+## [4]["All-to-all" association](https://www.reddit.com/r/rails/comments/i133s9/alltoall_association/)
+- url: https://www.reddit.com/r/rails/comments/i133s9/alltoall_association/
+---
+Obviously this isn't the name for what I want to do, but I can't think of any other way to describe it.  I want to make an "all to all" association between two models.
+
+Imagine I have two models:  A "Customer" model which is what it says on the tin, and probably has hundreds or thousands of records, and some get added every day.  And a "Warehouse" model which probably has a handful of records, and don't change much but still once in a while.
+
+I'd like to store, in every Customer record, the cost of traveling to that customer from each warehouse.
+
+So, as a first crack, you have something like this:
+
+    class WarehouseCost &lt; ApplicationRecord
+      belongs_to :warehouse
+      belongs_to :customer
+     
+      # assume this model has an attribute :travel_cost
+    end
+
+    class Customer &lt; ApplicationRecord
+      has_many :warehouse_costs
+      accepts_nested_attributes_for :warehouse_costs
+    end
+
+Now, this can store the data, and with the right validations you can prevent it from having more than 1 record for each combination of warehouse and customer, but where I'm actually running into trouble is how to make the forms work.  This isn't a job for cocoon, which lets you arbitrarily add records.  I'd like a single input displayed for each Warehouse, regardless of whether any data is already saved in the record or not.
+
+What I've done so far is to put a very kludgy hack in the edit action of the controller:
+
+    Warehouse.all.each do |w|
+      wc = @customer.warehouse_costs.find_by(:warehouse =&gt; w)
+      @customer.warehouse_costs.create(:warehouse =&gt; w) unless wc
+    end
+
+Because the Customer now has a WarehouseCost record explicitly created for each Warehouse, the form "fields_for" works correctly and can draw an input for each one:
+
+    &lt;%= f.fields_for :warehouse_costs do |wc| %&gt;
+      &lt;b&gt;&lt;%= "Cost from " + wc.object.warehouse.name+" warehouse:" %&gt;&lt;/b&gt;
+      &lt;%= wc.text_field :travel_cost, :class =&gt; 'form-control' %&gt;
+    &lt;% end %&gt;
+
+So, even though this works, it feels like I'm going about it the wrong way.  For starters, it doesn't work on new records.  Also, it feels kludgy to add the associated records before drawing the edit form, as surely I could somehow generate the correct form for the associated records without them already being there?
+
+Any suggestions?
+## [5][Rails caching in production](https://www.reddit.com/r/rails/comments/i0tv17/rails_caching_in_production/)
+- url: https://www.reddit.com/r/rails/comments/i0tv17/rails_caching_in_production/
+---
+Could someone explain me how should I configure a rails app in production if I'm fragment caching some views, how I can configure the memcache server In \`Heroku\`, is there a step by step documentation that can help me setting it up?
+## [6][Working with APIs and data in rails.](https://www.reddit.com/r/rails/comments/i0vv42/working_with_apis_and_data_in_rails/)
+- url: https://www.reddit.com/r/rails/comments/i0vv42/working_with_apis_and_data_in_rails/
+---
+So, I'm trying to set up an app that has a feature for making payments with credit ( or debit) cards. I have been looking for tutorials that are type agnostic. Many tutorials use Stripe or paypal as examples but none really teaches the basics. Most also concentrate on building an API app in rails. I want to consume an API
+
+I found a book by Noel Rappin "Take My Money" but it is extremely and needlessly complex (note to rails authors : if you write a book or tutorial, dont use slim or haml in the views and write so even inexperienced newcomers can follow along ...)
+
+Can anyone direct me to a good tutorial on working with apis, data and payments in rails ?
+## [7][Shopify on Rails is doing well](https://www.reddit.com/r/rails/comments/i0f8dx/shopify_on_rails_is_doing_well/)
 - url: https://www.reddit.com/r/rails/comments/i0f8dx/shopify_on_rails_is_doing_well/
 ---
 I think this is the story that we want Rails to be mentioned in, but unfortunately no one cares much about the stack. Nonetheless, it’s a Rails win to me. They’re doing well as a business, and they’re using Rails.
 
 https://www.wsj.com/articles/shopifys-revenue-nearly-doubles-as-covid-19-pushes-shopping-online-11596057094
-## [4][How do you handle real-time in your applications?](https://www.reddit.com/r/rails/comments/i076f5/how_do_you_handle_realtime_in_your_applications/)
+## [8][How do you handle real-time in your applications?](https://www.reddit.com/r/rails/comments/i076f5/how_do_you_handle_realtime_in_your_applications/)
 - url: https://www.reddit.com/r/rails/comments/i076f5/how_do_you_handle_realtime_in_your_applications/
 ---
 I can't find anyone covering this issue in a practical manner.
@@ -77,7 +141,7 @@ On the client side (Vue), i built out mixin methods to listen for these events a
 As you can see this is subject to race conditions and it doesn't make sure events are sent in order, and there's various concerns on how reliable this is and if users will always have up-to-date data.
 
 I'm curious to see how others approach this problem.
-## [5][I have a coding test coming up, but I'm not sure what this instruction means?](https://www.reddit.com/r/rails/comments/i0am0q/i_have_a_coding_test_coming_up_but_im_not_sure/)
+## [9][I have a coding test coming up, but I'm not sure what this instruction means?](https://www.reddit.com/r/rails/comments/i0am0q/i_have_a_coding_test_coming_up_but_im_not_sure/)
 - url: https://www.reddit.com/r/rails/comments/i0am0q/i_have_a_coding_test_coming_up_but_im_not_sure/
 ---
 Hi all,  
@@ -96,7 +160,7 @@ I just wanted to check here before going back to them, as it's my first coding t
 
 
 Thanks.
-## [6][after 4.0 =&gt; 4.2 upgrade, user.authenticate fails. Any insight?](https://www.reddit.com/r/rails/comments/i080rr/after_40_42_upgrade_userauthenticate_fails_any/)
+## [10][after 4.0 =&gt; 4.2 upgrade, user.authenticate fails. Any insight?](https://www.reddit.com/r/rails/comments/i080rr/after_40_42_upgrade_userauthenticate_fails_any/)
 - url: https://www.reddit.com/r/rails/comments/i080rr/after_40_42_upgrade_userauthenticate_fails_any/
 ---
 Hey guys,
@@ -112,7 +176,7 @@ Does anyone have an insight into why this would be?
 If I have to I'll start diving into the rails code directly, but I'd prefer not doing that if it's just something easy I'm missing.
 
 I'm not super rails savvy so I apologize if this is something well known, but no upgrade guides mentioned it.
-## [7][Trying to use ActionCable gem locally, but getting LoadError with require statements](https://www.reddit.com/r/rails/comments/i0a19i/trying_to_use_actioncable_gem_locally_but_getting/)
+## [11][Trying to use ActionCable gem locally, but getting LoadError with require statements](https://www.reddit.com/r/rails/comments/i0a19i/trying_to_use_actioncable_gem_locally_but_getting/)
 - url: https://www.reddit.com/r/rails/comments/i0a19i/trying_to_use_actioncable_gem_locally_but_getting/
 ---
 I needed to modify action cable and wanted to monkey patch a local version I placed in the lib/ folder.
@@ -128,87 +192,9 @@ If I go into rails console I can call  `require "nio"` and it works fine.
 I've been following the instructions I've found for installing a gem locally [https://rubyglasses.blogspot.com/2009/12/how-to-monkey-patch-gem.html](https://rubyglasses.blogspot.com/2009/12/how-to-monkey-patch-gem.html)  (couldn't find any detailed guides, and I know it's from 2009)
 
 Anyone have an idea what is causing this?
-## [8][Add Authenticity Token to JavaScript AJAX request](https://www.reddit.com/r/rails/comments/hzvvai/add_authenticity_token_to_javascript_ajax_request/)
+## [12][Add Authenticity Token to JavaScript AJAX request](https://www.reddit.com/r/rails/comments/hzvvai/add_authenticity_token_to_javascript_ajax_request/)
 - url: https://www.reddit.com/r/rails/comments/hzvvai/add_authenticity_token_to_javascript_ajax_request/
 ---
 I need to send it manually and cannot submit it through a form. Is there a specific request param that Rails looks for in order to verify the Authenticity token? 
 
 Perhaps, I’m going at it wrong. The other idea I had was to make it an API-only route/controller and, maybe then I wouldn’t have to use the authenticity token and just use an API auth token? Sorry, I am new to Rails :D
-## [9][Why redirect_to proc?](https://www.reddit.com/r/rails/comments/hzk7uy/why_redirect_to_proc/)
-- url: https://www.reddit.com/r/rails/comments/hzk7uy/why_redirect_to_proc/
----
-What is the use case of redirecting to a proc?
-
-As in 
-
-    redirect_to proc { edit_post_url(@post) }
-
-vs 
-
-    redirect_to edit_post_url(@post)
-
-?
-
-What are some uses of this?
-
-Edit: from https://api.rubyonrails.org/classes/ActionController/Redirecting.html
-## [10][Turning a list item into an edit form](https://www.reddit.com/r/rails/comments/hzpgfb/turning_a_list_item_into_an_edit_form/)
-- url: https://www.reddit.com/r/rails/comments/hzpgfb/turning_a_list_item_into_an_edit_form/
----
-I have a list of employees and an edit button by each one. Instead of the edit button redirecting to a form, I want it to turn the employee's info into text boxes that are auto-filled with the current value of that attribute. The edit button would turn into a submit button. The user would make the changes needed, and after submitting, the employee's new attributes would be listed. 
-
-Here's my understanding of how this would work. 
-
-1. The user clicks on the edit button, which triggers a function that removes the current contents of the employee's div and replaces it with the form built as a document fragment by another function. 
-2. The new submit button is a link to the update action of the employee controller with a data-remote="true" attribute. 
-3. The update action sends back the new employee's instance, which somehow triggers a function that will delete the form and replace it with a new document fragment containing the updated employee information. 
-
-My biggest concern is pulling off the Ajax call properly. I'm trying to use ujs and vanilla JavaScript, but the resources I've found for doing Ajax calls in rails use coffee script and/or jQuery. I've found a few newer articles on medium, but they don't go in enough depth for me to be able to adapt they're examples for my propose.
-
-Do you guys know of any resources that may help me fill in the gaps?
-
-Thanks!
-## [11][Has many through association not working (ActiveRecord::HasManyThroughAssociationNotFoundError)](https://www.reddit.com/r/rails/comments/hzp1k0/has_many_through_association_not_working/)
-- url: https://www.reddit.com/r/rails/comments/hzp1k0/has_many_through_association_not_working/
----
-Hi I'm getting the following error when I test out either of the following associations:
-
-    Venue.last.users
-    ActiveRecord::HasManyThroughAssociationNotFoundError: Could not find the association :venue_users in model Venue
-
-&amp;#x200B;
-
-    User.last.venues
-    ActiveRecord::HasManyThroughAssociationNotFoundError: Could not find the association :venue_users in model User
-
-  
-Here's what my models look like:
-
-    class Venue &lt; ApplicationRecord
-      has_many :users, through: :venue_users
-    end
-
-    class User &lt; ApplicationRecord
-      has_many :venues, through: :venue_users
-    end
-
-  
-This is what the join table looks like in my schema:
-
-    create_table "venue_users", force: :cascade do |t|
-        t.bigint "user_id", null: false
-        t.bigint "venue_id", null: false
-        t.integer "user_type", default: 0
-        t.index ["user_id"], name: "index_venue_users_on_user_id"
-        t.index ["venue_id"], name: "index_venue_users_on_venue_id"
-      end
-
-  
-Can someone help me where I've gone wrong?  
-
-
-Thanks.
-## [12][Rails way of trimming down controller action code size?](https://www.reddit.com/r/rails/comments/hzmath/rails_way_of_trimming_down_controller_action_code/)
-- url: https://www.reddit.com/r/rails/comments/hzmath/rails_way_of_trimming_down_controller_action_code/
----
-I'd like to move some business logic out of the controller actions.

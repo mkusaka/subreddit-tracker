@@ -1,22 +1,12 @@
 # androiddev
-## [1][Weekly Questions Thread - July 27, 2020](https://www.reddit.com/r/androiddev/comments/hyq58w/weekly_questions_thread_july_27_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/hyq58w/weekly_questions_thread_july_27_2020/
+## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/i16toe/weekly_anything_goes_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/i16toe/weekly_anything_goes_thread/
 ---
-This thread is for simple questions that don't warrant their own thread (although we suggest checking the sidebar, [the wiki](http://www.reddit.com/r/androiddev/wiki/), [our Discord](https://discord.gg/D2cNrqX), or [Stack Overflow](http://stackoverflow.com) before posting). Examples of questions:
+Here's your chance to talk about whatever!
 
-* How do I pass data between my Activities?
-* Does anyone have a link to the source for the AOSP messaging app?
-* Is it possible to programmatically change the color of the status bar without targeting API 21?
+Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
 
-**Important: Downvotes are strongly discouraged in this thread. Sorting by new is strongly encouraged.**
-
-Large code snippets don't read well on reddit and take up a lot of space, so please don't paste them in your comments. Consider linking [Gists](https://gist.github.com) instead.
-
-Have a question about the subreddit or otherwise for /r/androiddev mods? [We welcome your mod mail!](http://www.reddit.com/message/compose?to=%2Fr%2Fandroiddev)
-
-Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
-
-Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
+Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
 ## [2][We’re on the engineering team for Android Studio. Ask us Anything! (starts July 30)](https://www.reddit.com/r/androiddev/comments/hwiffd/were_on_the_engineering_team_for_android_studio/)
 - url: https://www.reddit.com/r/androiddev/comments/hwiffd/were_on_the_engineering_team_for_android_studio/
 ---
@@ -70,66 +60,105 @@ We'll start answering questions on **Thursday, July 30 at 12:00 PM PDT / 3:00 PM
 * **Tor Norbye** (u/tnorbye) - Engineering Director for Android Studio
 * **Wojtek Kaliciński** (u/wkalicinski) - Android Developer Relations
 * **Xavier Ducrohet** (u/droidxav) - Tech lead for Android SDK
-## [3][Tim Cook was grilled over arbitrary app store removals. Could this be the beginning of regulations of app marketplaces that protect developers?](https://www.reddit.com/r/androiddev/comments/i0kqed/tim_cook_was_grilled_over_arbitrary_app_store/)
+## [3][A basic game(?) completely drawn on canvas using Custom Views](https://www.reddit.com/r/androiddev/comments/i1061o/a_basic_game_completely_drawn_on_canvas_using/)
+- url: https://v.redd.it/7gamrvkk14e51
+---
+
+## [4][My app gets a lot of 1 star reviews from non-English users because they don't understand what it is. Any suggestions on how to avoid this?](https://www.reddit.com/r/androiddev/comments/i15zjt/my_app_gets_a_lot_of_1_star_reviews_from/)
+- url: https://www.reddit.com/r/androiddev/comments/i15zjt/my_app_gets_a_lot_of_1_star_reviews_from/
+---
+I've been maintaining a moderately successful app over the past few years that most users love. 99% of my English users rate it at 5 stars and say they love it.
+
+But then I have a lot of non-English (mostly Brazilian) users that download the app not fully understanding what it is. So they end up leaving a 1 star review with comments like "worthless" or "garbage." Over time this has gradually lowered my overall rating.
+
+I don't want to limit what countries I make the app available to as I have a lot of non-English users that do understand the app and love it. Plus non-America sales are about 33% of my income.
+
+I'm also hesitant to add a disclaimer in Spanish to my store page because of the impact it may on on SEO.
+
+Can anybody suggest how I might avoid this problem? Thanks for any ideas!
+## [5][Neumorphism Library for Android.](https://www.reddit.com/r/androiddev/comments/i12kf0/neumorphism_library_for_android/)
+- url: https://www.reddit.com/r/androiddev/comments/i12kf0/neumorphism_library_for_android/
+---
+[Neumorphism Android](https://github.com/thelumiereguy/NeumorphismView-Android)
+
+[A clone of the CRED app as a demo](https://preview.redd.it/p7uglzzmy4e51.png?width=1080&amp;format=png&amp;auto=webp&amp;s=2a95839783875f29ecfb1221ee14f16f28363b9e)
+
+There are already a few libraries to achieve Neumorphism on Android. But I've added a **Custom ConstraintLayout.** So you can directly use this ViewGroup or as a normal CardView. The ConstraintLayout can give you the effect on each of its children, so you don't have to manually wrap each child with the card view. 
+
+This is my first ever library. So, please try it out and am open to suggestions.
+## [6][Tim Cook was grilled over arbitrary app store removals. Could this be the beginning of regulations of app marketplaces that protect developers?](https://www.reddit.com/r/androiddev/comments/i0kqed/tim_cook_was_grilled_over_arbitrary_app_store/)
 - url: https://observer.com/2020/07/apple-ceo-tim-cook-congress-antitrust-hearing-app-store-iphone-monopoly/
 ---
 
-## [4][msasikanth/pinnit - Notification history and pinning. Sharing source for one of my apps, feedback &amp; contributions are appreciated. Mobius, Dagger, Architecture Components](https://www.reddit.com/r/androiddev/comments/i0j3sd/msasikanthpinnit_notification_history_and_pinning/)
-- url: http://github.com/msasikanth/pinnit
+## [7][How to use Composite builds as a replacement of buildSrc in Gradle](https://www.reddit.com/r/androiddev/comments/i15g8a/how_to_use_composite_builds_as_a_replacement_of/)
+- url: https://badootech.badoo.com/how-to-use-composite-builds-as-a-replacement-of-buildsrc-in-gradle-64ff99344b58?source=friends_link&amp;sk=cb6dbf36ef703ab0b38a09472370cc44
 ---
 
-## [5][AndroidBites | 6 things that you need to know before destructuring Parameters](https://www.reddit.com/r/androiddev/comments/i0fc5l/androidbites_6_things_that_you_need_to_know/)
-- url: https://chetangupta.net/destructuring-limitations/
+## [8][Improving inter-activity communication with Jetpack ActivityResult](https://www.reddit.com/r/androiddev/comments/i0x9nu/improving_interactivity_communication_with/)
+- url: https://www.reddit.com/r/androiddev/comments/i0x9nu/improving_interactivity_communication_with/
+---
+Google has released a new way of passing data between Activities/Fragments which replaces the widely used `onActivityResult`.  It's called [ActivityResult](https://android-developers.googleblog.com/2020/07/jetpack-activityresult.html).
+## [9][Android Studio 4.2 Canary 7 available](https://www.reddit.com/r/androiddev/comments/i0x9t7/android_studio_42_canary_7_available/)
+- url: https://androidstudio.googleblog.com/2020/07/android-studio-42-canary-7-available.html
 ---
 
-## [6][What is be the best strategy to advertise Android apps?](https://www.reddit.com/r/androiddev/comments/i0kvit/what_is_be_the_best_strategy_to_advertise_android/)
-- url: https://www.reddit.com/r/androiddev/comments/i0kvit/what_is_be_the_best_strategy_to_advertise_android/
+## [10][Failed an android exam for a job. Would like to ask what I could've done better.](https://www.reddit.com/r/androiddev/comments/i1193q/failed_an_android_exam_for_a_job_would_like_to/)
+- url: https://www.reddit.com/r/androiddev/comments/i1193q/failed_an_android_exam_for_a_job_would_like_to/
 ---
-I've seen some apps grow from 10k downloads to 1M+ downloads in just a month. How do they do it?
-## [7][I created a Navigation Components tutorial that covers nested NavHostFragments with ViewPager2, BottomNavigationView, Dynamic Feature Modules and more](https://www.reddit.com/r/androiddev/comments/i0jdsp/i_created_a_navigation_components_tutorial_that/)
-- url: https://www.reddit.com/r/androiddev/comments/i0jdsp/i_created_a_navigation_components_tutorial_that/
+ Here is the github link for the project:  
+[https://github.com/gmatcat/EnglishCentralExam](https://github.com/gmatcat/EnglishCentralExam)
+
+This was the positions' responsibilities for Android Developer
+
+* Design and develop Android mobile applications using an agile and test-driven development process
+* Unit test code and build instrumented tests
+* Implement custom native user interfaces using latest Android programming techniques
+* Document and maintain design specifications, source code, and archives for new applications and ideas
+* Perform individual project components within the entire development lifecycle including implementation, testing, deployment and maintenance
+* Work from UI/UX requirements, APIs, mockups to build functional, high-performance Android phone and tablet apps
+
+The exam details:
+
+(CRUD person) Given a pre-defined fictional product, account schema, develop a shopping cart
+
+proof of concept application that should show the following key elements:
+
+● Show product listing
+
+● User can select a product
+
+● User can add product to shopping cart
+
+● Shopping cart shows the currently added products
+
+● User can check out, simulates fake payment and a success page.
+
+and use these libraries ( I used all of them )  
+Butterknife, RXJava, Dagger, Retrofit, GreenDAO
+
+The notes I sent them:  
+Inserted mock product/user data on LoginActivity onCreate and on main thread since pre-defined data is required.  
+Created mock retrofit implementation on Presenters and commented it since data source is from GreenDao.   
+GreenDao DB architecture may not be the best since it's my first time using it.  
+Tested with real device Vivo1811.  
+No handling of DB upgrade, shopping cart delete, choose payment method, create account, edit account details.  
+No unit/instrumented tests   
+15 products in total, separated in three categories.
+
+No language was specified so I used native Java. They told me "The final rating of your exam is on the average, not bad but also not that impressive. The open position that we have will undergo a few days of training since we currently have a big project that has to be done as early as possible. We also made some changes with the requirements for this position like senior level with more than 5 years of work experience in android development." I have only 2+.
+
+I'm not able to put on the most effort since I was also working. I also did not put much into design as I would assume they have a UI/UX designer.
+
+They gave me 7 days to work on it but I sent it only after 5 days because I think it was already "good enough" and wouldn't like someone getting ahead of me for the position. In hindsight that was probably a mistake as I would have more time making unit tests. They also did not pull my project which means they just checked the code and the screenshots I sent them.
+
+I felt as though I have become too comfortable since I already have a job at a small company and have plateaued in the last year or so. How would someone with 5 years of experience in Android development do this project with 7 days? I will truly appreciate any feedback that can be done to improve my code. Thank you very much.
+## [11][AdMob strange reporting since 27 July: Clicks with no Impressions](https://www.reddit.com/r/androiddev/comments/i16ldj/admob_strange_reporting_since_27_july_clicks_with/)
+- url: https://www.reddit.com/r/androiddev/comments/i16ldj/admob_strange_reporting_since_27_july_clicks_with/
 ---
-Tutorials for learning Navigation Components starting with simple set up, continues with adding top menus, passing arguments via navigation graphs and combining them with different Material Design widgets such as BottomNavigationView, ViewPager2, TabLayout, FragmentFactory(not working as i expected with ViewPager2), and dynamic feature module navigation as shown in the image. Here is the [link for repo](https://github.com/SmartToolFactory/NavigationComponents-Tutorials) if you wish to look. 
+Since 27 July, my AdMob reporting shows that in some countries (mostly Japan, Australia, South Korea, Taiwan, New Zealand) there are placements (Banner and Interstitials) with Zero Impressions but with a positive number of Clicks (and they generates a revenue too).
 
-&amp;#x200B;
-
-And there are some issues including how to change BottomNavigationView extension to be usable with DynamicNavHostFragment when it's included with other fragments in BottomNavigation. I used two ViewPager2 for the example shown in the image. since it crashes with
-
-&gt; Caused by: java.lang.IllegalStateException: Could not find Navigator with name "include-dynamic". You must call NavController.addNavigator() for each navigation type.      at androidx.navigation.NavigatorProvider.getNavigator(NavigatorProvider.java:98)      at androidx.navigation.NavInflater.inflate(NavInflater.java:107)      at androidx.navigation.NavInflater.inflate(NavInflater.java:141)      at androidx.navigation.NavInflater.inflate([NavInflater.java:88](https://NavInflater.java:88))
-
-Since NavHostFragment.create returns NavHostFragment instead of type T extends NavHost
-
-&amp;#x200B;
-
-https://i.redd.it/78vdlolkvyd51.gif
-## [8][Anyone used Gonative.io to develop an Android app for a website?](https://www.reddit.com/r/androiddev/comments/i0l43q/anyone_used_gonativeio_to_develop_an_android_app/)
-- url: https://www.reddit.com/r/androiddev/comments/i0l43q/anyone_used_gonativeio_to_develop_an_android_app/
----
-
-Hi so I have a simple one page website of links like [Drudgereport.com](https://Drudgereport.com). I wanted to ask if this [Gonative.io](https://Gonative.io) app service can help us create an android app for our website?
-
-Has anyone used [Gonative.io](https://Gonative.io)? Is it any good? Is there a better service? Some tips would be useful. Thanks!
-## [9][I just started with posting videos on my channel. I convert dribbble design shots into actual implementation do give it a look and if you want something to be implemented you can ping me. I'll be more than happy to implement it. Thank you all.](https://www.reddit.com/r/androiddev/comments/hzz8tq/i_just_started_with_posting_videos_on_my_channel/)
-- url: https://youtu.be/aETxy64GaBo
----
-
-## [10][Room vs SQLite (+100 tables)](https://www.reddit.com/r/androiddev/comments/i0k5y9/room_vs_sqlite_100_tables/)
-- url: https://www.reddit.com/r/androiddev/comments/i0k5y9/room_vs_sqlite_100_tables/
----
-Hey! 
-
-Im about to start developing an existing app from vb in android studio. The db is already made, i converted it to SQLite db file. 
-
-The question is... Is suitable using Room for this? Or i should make entities that comunicates with the Db simply using SQLite.
-
-THX
-## [11][Hardware Acceleration for Android Emulator when using Windows 10, AMD Ryzen and Docker](https://www.reddit.com/r/androiddev/comments/i0k181/hardware_acceleration_for_android_emulator_when/)
-- url: https://www.reddit.com/r/androiddev/comments/i0k181/hardware_acceleration_for_android_emulator_when/
----
-I have a laptop with a Ryzen 4000 CPU, Windows 10 and want to use Android Studio (especially Flutter) alongside with Docker to run linux containers with Backend API logic+database.
-
-Which configuration do I need to have the android emulator running with hardware acceleration and also running Docker containers fast? Enable or Disable Hyper-v, install Android Emulator Accelerator for AMD or not, etc.
-## [12][Shrink your app with R8](https://www.reddit.com/r/androiddev/comments/i04659/shrink_your_app_with_r8/)
-- url: https://medium.com/androiddevelopers/shrinking-your-app-with-r8-909efac25de4
+Anyone else facing this?
+## [12][ConstraintLayout 2.0.0 rc1](https://www.reddit.com/r/androiddev/comments/i0ook6/constraintlayout_200_rc1/)
+- url: https://androidstudio.googleblog.com/2020/07/constraintlayout-200-rc1.html
 ---
 

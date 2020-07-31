@@ -1,117 +1,108 @@
 # aws
-## [1][re:Invent 2020 will be free and virtual!](https://www.reddit.com/r/aws/comments/i06b6w/reinvent_2020_will_be_free_and_virtual/)
+## [1][[HELP] Using CloudFront as whole site routing - implications of the limited amount of cache behaviours and other ideas?](https://www.reddit.com/r/aws/comments/i12a6y/help_using_cloudfront_as_whole_site_routing/)
+- url: https://www.reddit.com/r/aws/comments/i12a6y/help_using_cloudfront_as_whole_site_routing/
+---
+Hey guys, i need your assistance :)
+
+My company is in the process of migrating to AWS and we are discussing how to implement frontend routing for our main website. We have quite a load of micro-frontends which are served on a single host, so we have like example.com/search, example.com/details/&lt;id&gt;, example.com/profile etc. which all are different apps under the hood, served via Fargate or Lambda. Routing still is legacy code which uses some old reverse Proxy, so we currently have no on-edge routing (except for assets which are mostly served from CloudFront)
+
+My idea was to create a CloudFront Distribution which uses Cache-Behaviours as routing for the different apps. For more dynamic routing the default behavior could use an ELB as fallback or maybe like a Lambda or Fargate service that serves as a proxy. I also stumbled across [this article](https://aws.amazon.com/de/blogs/networking-and-content-delivery/dynamic-whole-site-delivery-with-amazon-cloudfront/).
+
+What i am not quite sure about is whether the limited amount of cache behaviours (25) has any implications. I know that it can be increased by contacting support, but does the limit have a reason? Like, does it get more expensive if we increase the contingent?
+
+Someone else had the idea to use a lambda@edge with a DynamoDB or something like that for route matching and proxying.
+
+Another idea was that the default behavior for the CloudFront routes to another CloudFront which itself can have another set of cache behaviors to circumvent the 25 limit.
+
+Would love to get some feedback on this.
+## [2][Join the AWS Community Builders Program](https://www.reddit.com/r/aws/comments/i0s77b/join_the_aws_community_builders_program/)
+- url: https://www.reddit.com/r/aws/comments/i0s77b/join_the_aws_community_builders_program/
+---
+I was part of the beta program of AWS Community Builders Program, which became public today.
+
+That means you can apply to join the community too! Check the link for more details! 
+
+[https://aws.amazon.com/developer/community/community-builders/](https://aws.amazon.com/developer/community/community-builders/)
+## [3][AWS ec2 instance autoscaling guidance?](https://www.reddit.com/r/aws/comments/i16ii3/aws_ec2_instance_autoscaling_guidance/)
+- url: https://www.reddit.com/r/aws/comments/i16ii3/aws_ec2_instance_autoscaling_guidance/
+---
+ok so i have successfully created an autoscaling group but i need help with the scale out policy.
+
+So currently my min instances = 1, desired = 1, max = 10..policy = CPU over 70%
+
+so i did load tests and it didnt create new instances, and i was getting lots of 500s
+
+i manually changed my min instances = 4, desired = 4, max = 10..ran the test again and the 500s droppd down to 0...
+
+i looked at the policy and theres another option for network in/out, and load balancer but not sure what numbers to put in?
+
+https://preview.redd.it/c1o8w8g6z6e51.png?width=1012&amp;format=png&amp;auto=webp&amp;s=d262e68599327b3d59946b37cedde272762c5cb2
+## [4][Ebextensions increase max_input_vars allowed](https://www.reddit.com/r/aws/comments/i173vd/ebextensions_increase_max_input_vars_allowed/)
+- url: https://www.reddit.com/r/aws/comments/i173vd/ebextensions_increase_max_input_vars_allowed/
+---
+Hi All, 
+I've got the instance to update the max_input_vars to 3000, but I'm still seeing a message for`PHP Max Input Vars (allowed) 1000`.
+
+Current ebextension file
+
+    files:
+        "/etc/php.d/99uploadsize.ini"
+            mode: "00064"
+            owner: root
+            group: root
+            content: |
+               upload_max_filesize = 100M
+               post_max_size = 100M
+               max_input_vars = 3000
+    commands:
+      remove_old_ini:
+          command: "rm -f /etc/php.d/99uploadsize.ini.bak"
+
+further info: this is for a client's wordpress site. they are insisting that we use this particular backend content builder, and it is throwing these warnings.
+## [5][please help](https://www.reddit.com/r/aws/comments/i158zy/please_help/)
+- url: https://www.reddit.com/r/aws/comments/i158zy/please_help/
+---
+i have started aws free tier a month ago but why am i being charged!??
+
+&amp;#x200B;
+
+https://preview.redd.it/wuks53f476e51.png?width=1124&amp;format=png&amp;auto=webp&amp;s=f6914de62e8772ac6f5486f4a3e4cd14258238d4
+## [6][DLSB Workshop - Access Denied for Java resources](https://www.reddit.com/r/aws/comments/i15490/dlsb_workshop_access_denied_for_java_resources/)
+- url: https://www.reddit.com/r/aws/comments/i15490/dlsb_workshop_access_denied_for_java_resources/
+---
+Hey
+
+I recently attended the QLDB workshop and the Java classes used in the workshop ([App.java](https://App.java) and [SlowUpdate.java](https://SlowUpdate.java)) were provided in the slide deck in the form of URLs. 
+
+I tried to access the java files but it is throwing Access Denied error. Any reason as to why this is happening? And from where can I get these resources if not the links provided in the slide deck.
+
+Thank You.
+## [7][2nd Network Interface Ubuntu EC2](https://www.reddit.com/r/aws/comments/i10tpl/2nd_network_interface_ubuntu_ec2/)
+- url: https://www.reddit.com/r/aws/comments/i10tpl/2nd_network_interface_ubuntu_ec2/
+---
+Hey everyone,
+I have a EC2 instance running Ubuntu. I created a network interface, and I attached it to the instance.
+I SSH'd into the Ubuntu machine and the new second interface is showing down and is not showing any IP address at all.
+What do I need to do to add a 2nd interface to a running EC2 ubuntu instance????
+Thank you all!!!
+## [8][Refactoring a distributed monolith to microservices using Amazon Event Bridge and implementing BASE consistency to decouple our microservices.](https://www.reddit.com/r/aws/comments/i0sok6/refactoring_a_distributed_monolith_to/)
+- url: https://www.rehanvdm.com/serverless/refactoring-a-distributed-monolith-to-microservices/index.html
+---
+
+## [9][Managing more than 5 accounts](https://www.reddit.com/r/aws/comments/i0z8uu/managing_more_than_5_accounts/)
+- url: https://www.reddit.com/r/aws/comments/i0z8uu/managing_more_than_5_accounts/
+---
+How are people managing more than 5 accounts? The console has that fun limit where it will remember the last 5 accounts, I have 6 which I move between regularly enough that I feel the friction.
+
+I have seen chrome extensions like 
+https://github.com/tilfin/aws-extend-switch-roles
+
+But worry about chrome extensions being compromised and session data exfiled. 
+
+I could fork, audit, install locally?
+
+Thoughts?
+## [10][re:Invent 2020 will be free and virtual!](https://www.reddit.com/r/aws/comments/i06b6w/reinvent_2020_will_be_free_and_virtual/)
 - url: https://reinvent.awsevents.com
----
-
-## [2][How to automate AWS resource deployment the right way?](https://www.reddit.com/r/aws/comments/i0lim2/how_to_automate_aws_resource_deployment_the_right/)
-- url: https://www.reddit.com/r/aws/comments/i0lim2/how_to_automate_aws_resource_deployment_the_right/
----
-Over the last few years, I built a rather complex platform on AWS. I used Terraform for everything, and I am pretty happy with it.
-
-Now I am bootstrapping a new project on AWS.
-
-Here are my options (I ignored native CloudFormation on purpose) :
-
-* The easy option is to stick with Terraform. Despite all its quirks. At least I know it well, and I'll be productive with it.
-* Then there is the easy upgrade: using Terragrunt from day one. Still Terraform. But probably fewer headaches. (no experience with it, it just smells good)
-* I could also go with the CDK way. After all, AWS looks committed to make it the reference way to manage infrastructure. No experience with it either. And apparently, new AWS features lag behind the Terraform AWS provider because AWS itself slowly integrates new APIs in CloudFormation. And I have no experience with CF.
-* I was already struggling to pick some tools and stick to it, but there is the new kid on the block: CDK for Terraform. Now, TBH, I'm lost.
-
-In my former platform, I've never achieved full automation: PR -&gt; validation -&gt; infrastructure updated.
-
-What's the fastest but still clean way to achieve this with a blank slate?
-
-PS: I know a missed a few options. Please only raise them if you truly believe they are _much_ better for my use case. :-)
-## [3][Starting CDK](https://www.reddit.com/r/aws/comments/i0j3il/starting_cdk/)
-- url: https://www.reddit.com/r/aws/comments/i0j3il/starting_cdk/
----
-Hi guys, I've been tinkering with CDK and trying to get some infrastructure going. I'm familiar with CFN but I don't have a coding background so I'm struggling a bit with CDK. Trying to use Typescript. If anyone can point me to some resources, finished projects or guides that'd be very helpful.
-## [4][Modifying schema manually on AWS glue](https://www.reddit.com/r/aws/comments/i0lzdz/modifying_schema_manually_on_aws_glue/)
-- url: https://www.reddit.com/r/aws/comments/i0lzdz/modifying_schema_manually_on_aws_glue/
----
-Hey guys,
-
-I'm trying to avoid the cost and complexity of glue crawlers.
-
-I was reading AWS glue documentation and tried a few things in the console, and I'm not sure I understand the need for a glue crawler in order to analyze the schema. In case that I want to store the data as is, and I know about every schema change that is taking place, will there be any issue updating the schema manually, via the console -&gt; edit schema? 
-
-From what I read at the documentation: [https://docs.aws.amazon.com/glue/latest/dg/start-console-overview.html](https://docs.aws.amazon.com/glue/latest/dg/start-console-overview.html)  
-I see 
-
-&gt;You can also populate the Data Catalog with manually created tables. With this method, you provide the schema and other metadata to create table definitions in the Data Catalog. Because this method can be a bit tedious and error prone, it's often better to have a crawler create the table definitions.
-
-Why is it error-prone?
-
-Thank you!
-## [5][IAM support for prefix lists is missing?](https://www.reddit.com/r/aws/comments/i0lvs2/iam_support_for_prefix_lists_is_missing/)
-- url: https://www.reddit.com/r/aws/comments/i0lvs2/iam_support_for_prefix_lists_is_missing/
----
-I'm trying to use the new (1 month ago) customer-managed prefix list functionality (announcement: [https://aws.amazon.com/about-aws/whats-new/2020/06/amazon-virtual-private-cloud-customers-use-prefix-lists-simplify-configuration-security-groups-route-tables/](https://aws.amazon.com/about-aws/whats-new/2020/06/amazon-virtual-private-cloud-customers-use-prefix-lists-simplify-configuration-security-groups-route-tables/)) to try and simplify some management. The announcement says this feature is available in every public region, and the documentation is available publicly. However IAM users are documented as not having permissions by default, with this link ([https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html#managed-prefix-lists-iam](https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html#managed-prefix-lists-iam)) provided in order to document the process of allowing IAM users to operate on managed prefix lists.
-
-But in my account, if I add the Actions outlined from that documentation page (plus I've guessed that the Create and Delete operations should also exist as they are generic verbs available for almost every resource type in IAM) then I get the messages in this screenshot (https://imgur.com/ZhD8QzK). It seems like IAM doesn't know what these operations are even though this service has been available in all public regions for a month.
-
-Is there some kind of "IAM upgrade" I need to do to make my account aware of new stuff like this?
-## [6][Lambda Node.js deleteObjects() doesn't work](https://www.reddit.com/r/aws/comments/i0jstu/lambda_nodejs_deleteobjects_doesnt_work/)
-- url: https://www.reddit.com/r/aws/comments/i0jstu/lambda_nodejs_deleteobjects_doesnt_work/
----
-Hi, I'm using AWS Lambda and trying to delete objects from an S3 bucket but it doesn't work, I don't seem to even get a callback. I don't get any error messages. The function executes and nothing happens. Other operations like uploading and getting object data works. I copied the code from [AWS S3 SDK for JS](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#deleteObjects-property). My bucket doesn't have versioning enabled. I have given my Lambda function full s3 access role. Where could the problem be? My code is this:
-
-&amp;#x200B;
-
-        const params = {
-          Bucket: bucketName, 
-          Delete: { 
-            Objects: [ 
-              {
-                Key: 'images/3---compr/compressed-small/img7.jpg' 
-              },
-              {
-                Key: 'images/3---compr/compressed-small/img2.jpg' 
-              }
-            ]
-          }
-        };
-        
-        s3.deleteObjects(params, function(err, data) {
-          if (err) console.log(err, err.stack);
-          else     console.log(data);
-          console.log("this doesn't get logged");
-        });
-
-edit: I successfully fixed my error. The problem was that i was using async/await incorrectly + I changed s3.deleteObjects(params); to s3.deleteObjects(params).promise();
-## [7][How to find when the vpc or subnets were last used?](https://www.reddit.com/r/aws/comments/i0j0qw/how_to_find_when_the_vpc_or_subnets_were_last_used/)
-- url: https://www.reddit.com/r/aws/comments/i0j0qw/how_to_find_when_the_vpc_or_subnets_were_last_used/
----
-Is there a way to find out when the vpc or the subnets were last used?
-Trying to delete a few dozen VPC's and subnets created by users years back but is not in use now.
-## [8][Future Scheduled Event Triggers (many, programatic) - AWS Native Solution?](https://www.reddit.com/r/aws/comments/i0gh3d/future_scheduled_event_triggers_many_programatic/)
-- url: https://www.reddit.com/r/aws/comments/i0gh3d/future_scheduled_event_triggers_many_programatic/
----
-This seems like a bit of an odd thing that AWS appears to be missing. We have a large number of events that occur throughout the course of each day. Events occur, and at a period of X hours later, another event needs to happen. The X can be variable for each event, and there are literally thousands of events each day. 
-
-&amp;#x200B;
-
-We currently have a system where we are just scanning the database looking for the initial event X hours ago, which was okay at small scale, but performance in this model does not scale well. 
-
-&amp;#x200B;
-
-We have designed a system where the initial event occurs, calculates the X time for itself, and puts a row in the SQL database with the "trigger date/time" -- Then we poll every few minutes that table for any trigger date/time that has now passed, and execute it and remove it from the table. We feel this will work, and will certainly scale better, but it got me thinking that it seems odd that there isn't really a "scheduler" type function that can scale well. CloudWatch events has a pretty low threshold, and even eventBridge has a low cap of how many schedules could exist at a given time. 
-
-&amp;#x200B;
-
-I was thinking about how Alexa works, where you can set a timer, or a reminder for a given duration of time, and it runs it. I figure its not doing it on-device, as you can see the event set in the Alexa app, and you (can) get push notifications back via the app too. So I wonder what Amazon would be using to do that (setting an event to trigger X time in the future) -- Somehow I can't see them using CloudWatch events to fire off Alexa alarms, but I can't imagine they just have tasks scheduling up on an EC2 instance either. 
-
-&amp;#x200B;
-
-I did find this:  
-[https://www.freecodecamp.org/news/how-to-schedule-ad-hoc-tasks-with-dynamodb-ttl-and-lambda-421fa5778993/#:\~:text=The%20default%20limit%20on%20CloudWatch,millions%20of%20ad%2Dhoc%20tasks](https://www.freecodecamp.org/news/how-to-schedule-ad-hoc-tasks-with-dynamodb-ttl-and-lambda-421fa5778993/#:~:text=The%20default%20limit%20on%20CloudWatch,millions%20of%20ad%2Dhoc%20tasks).
-
-Which actually seemed REALLY clever and cool, until I got to the bit where the average delay time from the trigger was 11 minutes, and the specs allow for up to 48 hours delay!
-## [9][Error while running eb init on terminal](https://www.reddit.com/r/aws/comments/i0itun/error_while_running_eb_init_on_terminal/)
-- url: https://www.reddit.com/r/aws/comments/i0itun/error_while_running_eb_init_on_terminal/
----
- I'm getting a service error when I run eb init that says "ServiceError- 'express' not a valid key=value pair...". Someone please help me out! What should I do in order for it to run properly?
-## [10][AWS IAM Footguns &amp; Security Basics](https://www.reddit.com/r/aws/comments/i005rd/aws_iam_footguns_security_basics/)
-- url: https://cloud-fundamentals.com/blog/iam-footguns-security-basics/
 ---
 

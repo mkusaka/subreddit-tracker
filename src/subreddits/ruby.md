@@ -1,55 +1,52 @@
 # ruby
-## [1][Introducing RBS, Ruby’s new type signature language](https://www.reddit.com/r/ruby/comments/i05itb/introducing_rbs_rubys_new_type_signature_language/)
-- url: https://developer.squareup.com/blog/the-state-of-ruby-3-typing
+## [1][LOWREZ JAM 2020 starts this Saturday and is a comfortable 15 days long (no unhealthy all nighters). Here’s your chance to make a video game with Ruby. I’m giving away DragonRuby Game Toolkit licenses for the event :-)](https://www.reddit.com/r/ruby/comments/i0ym7m/lowrez_jam_2020_starts_this_saturday_and_is_a/)
+- url: http://lowrezjam.dragonruby.org
 ---
 
-## [2][The State of Ruby 3 Typing](https://www.reddit.com/r/ruby/comments/i0lfdw/the_state_of_ruby_3_typing/)
+## [2][This applies to Ruby as well](https://www.reddit.com/r/ruby/comments/i0v9to/this_applies_to_ruby_as_well/)
+- url: /r/rails/comments/i0f8dx/shopify_on_rails_is_doing_well/
+---
+
+## [3][The State of Ruby 3 Typing](https://www.reddit.com/r/ruby/comments/i0lfdw/the_state_of_ruby_3_typing/)
 - url: https://developer.squareup.com/blog/the-state-of-ruby-3-typing/
 ---
 
-## [3][Rails 6.1 adds annotate_rendered_view_with_filenames to annotate HTML output](https://www.reddit.com/r/ruby/comments/i0gyjm/rails_61_adds_annotate_rendered_view_with/)
-- url: https://blog.bigbinary.com/2020/07/29/rails-6-1-adds-annotate_rendered_view_with_filenames-to-annotate-html-output.html
+## [4][Autoprefixer Rails was deprecated](https://www.reddit.com/r/ruby/comments/i0txom/autoprefixer_rails_was_deprecated/)
+- url: https://twitter.com/Autoprefixer/status/1288935261842309122
 ---
 
-## [4][Nokogiri - scraping an element by value of it's attribute?!](https://www.reddit.com/r/ruby/comments/i0kchw/nokogiri_scraping_an_element_by_value_of_its/)
-- url: https://www.reddit.com/r/ruby/comments/i0kchw/nokogiri_scraping_an_element_by_value_of_its/
+## [5][How does this code work and why is it here ?](https://www.reddit.com/r/ruby/comments/i0qlba/how_does_this_code_work_and_why_is_it_here/)
+- url: https://www.reddit.com/r/ruby/comments/i0qlba/how_does_this_code_work_and_why_is_it_here/
 ---
-Hello guys :) 
+The following lines of code come from the httparty gem. I do not understand the first line. What does it do and what does it resolve to ?
 
-Is it possible to scrape an element by value of it's attribute? 
 
-So I got **n** &lt;a&gt; elements and i need to scrape src attribute of an &lt;a&gt; element who's title value is, let's say, 'blue'.  The problem is that I don't know how to get the right one because it doesn't have class or id. 
+    dir = File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib')) # The problem is here
 
-I've also thought about going trough each a in that specific block and compare the attribute of &lt;a&gt;element with wanted result.
+    require File.join(dir, 'httparty')
+    require 'pp'
+    config = YAML.load(File.read(File.join(ENV['HOME'], '.twitter')))
 
-can you give me any advice :) 
+ It tried to run it on irb but got the message:   
 
-(im newbie in web scrapping abd ruby btw. )
-## [5][How To Get Funding For An Online Marketplace Startup](https://www.reddit.com/r/ruby/comments/i0k05c/how_to_get_funding_for_an_online_marketplace/)
-- url: http://selleo-funding.icu
----
-
-## [6][Understanding Bundler - To `bundle exec` or not? that is the question](https://www.reddit.com/r/ruby/comments/i05p5a/understanding_bundler_to_bundle_exec_or_not_that/)
-- url: https://www.ombulabs.com/blog/ruby/learning/understanding-bundler.html
+**NameError (undefined local variable or method `File' for main:Object)**
+## [6][Shopify development as a side hustle?](https://www.reddit.com/r/ruby/comments/i0q4p6/shopify_development_as_a_side_hustle/)
+- url: /r/cscareerquestions/comments/i0n9sg/shopify_development_as_a_side_hustle/
 ---
 
-## [7][Top 10 Easy ways to improve programming skills for beginners](https://www.reddit.com/r/ruby/comments/i0ivvv/top_10_easy_ways_to_improve_programming_skills/)
-- url: https://www.codeavail.com/blog/improve-programming-skills/
+## [7][The State of Ruby 3 Typing](https://www.reddit.com/r/ruby/comments/i122g5/the_state_of_ruby_3_typing/)
+- url: https://developer.squareup.com/blog/the-state-of-ruby-3-typing/
 ---
 
-## [8][RubyMine 2020.2 Released!](https://www.reddit.com/r/ruby/comments/i07vve/rubymine_20202_released/)
-- url: https://blog.jetbrains.com/ruby/2020/07/rubymine-2020-2-released/
+## [8][Why MVP Development Should Be Outsourced](https://www.reddit.com/r/ruby/comments/i15f8l/why_mvp_development_should_be_outsourced/)
+- url: http://selleo-mvp-development.icu
 ---
 
-## [9][ActiveInteractor RFC](https://www.reddit.com/r/ruby/comments/i03v6i/activeinteractor_rfc/)
-- url: https://www.reddit.com/r/ruby/comments/i03v6i/activeinteractor_rfc/
+## [9][Ruby for pen-testing](https://www.reddit.com/r/ruby/comments/i0m97d/ruby_for_pentesting/)
+- url: https://www.reddit.com/r/ruby/comments/i0m97d/ruby_for_pentesting/
 ---
-Hey ruby friends, please take a moment to provide some feedback on this RFC. https://github.com/aaronmallen/activeinteractor/issues/229 
-
-&amp;#x200B;
-
-Thanks in advance.
-## [10][Lazy functional ruby](https://www.reddit.com/r/ruby/comments/hzzxva/lazy_functional_ruby/)
-- url: https://minhajuddin.com/2020/07/29/lazy-functional-ruby/
+Hello guys i have learned ruby and I want to learn some libs for penetration testing,what are the most known or the best libs for hacking ?
+## [10][if you like coding you should come join our discord server](https://www.reddit.com/r/ruby/comments/i0zv28/if_you_like_coding_you_should_come_join_our/)
+- url: https://discord.gg/wZQ2d7J
 ---
 

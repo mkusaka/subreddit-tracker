@@ -110,93 +110,153 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/ha504b/whos_available_june_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][I've created a react hook to grab a color palette from images. It also renders a skeleton color while your original image still loading. Feedback appreciated](https://www.reddit.com/r/reactjs/comments/i0wug1/ive_created_a_react_hook_to_grab_a_color_palette/)
-- url: https://github.com/jeffersonlicet/use-image-color
+## [3][Writing dumb React code](https://www.reddit.com/r/reactjs/comments/i1paqm/writing_dumb_react_code/)
+- url: https://www.reddit.com/r/reactjs/comments/i1paqm/writing_dumb_react_code/
 ---
-
-## [4][Can someone help me with interview questions](https://www.reddit.com/r/reactjs/comments/i14m8x/can_someone_help_me_with_interview_questions/)
-- url: https://www.reddit.com/r/reactjs/comments/i14m8x/can_someone_help_me_with_interview_questions/
+I'm currently developing a personal project that has grown quite a bit over the past months, using React + Django REST. Now, here's how I write React: if a component needs state, I make it a class, if it's a simple widget, I make it a function, and that's it. I'm feeling kinda guilty for not using any of the "advanced" features. No HOCs, no hooks, no context or Redux or whatever, and so far everything works great, even though the complexity has increased quite a bit. Anyone else experiencing the same feeling?
+## [4][My first Frontity theme–A restaurant's website with WordPress back end and ReactJS front end](https://www.reddit.com/r/reactjs/comments/i1rguv/my_first_frontity_themea_restaurants_website_with/)
+- url: https://www.reddit.com/r/reactjs/comments/i1rguv/my_first_frontity_themea_restaurants_website_with/
 ---
-I have an interview coming up this wednesday. The recruiter said that the company is looking for a reactjs dev and the company is going to ask questions from my resume. This is going to be my first time giving an interview (a little nervous), what should i expect?
-
-Thanks everyone in advance
-## [5][Use create-react-app to develop Chrome extensions](https://www.reddit.com/r/reactjs/comments/i0nstw/use_createreactapp_to_develop_chrome_extensions/)
-- url: https://www.jamalx31.com/tech-posts/use-create-react-app-to-develop-chrome-extensions
----
-
-## [6][My fullstackopen final project: multi-player doodling game using Paper.js and React / Express / Node.js / MongoDB](https://www.reddit.com/r/reactjs/comments/i11u7h/my_fullstackopen_final_project_multiplayer/)
-- url: https://www.reddit.com/r/reactjs/comments/i11u7h/my_fullstackopen_final_project_multiplayer/
----
-Since quarantine started I've been self-learning full stack web development. I made this project to solidify what I learned after completing [https://fullstackopen.com](https://fullstackopen.com/). I'd love to hear your feedback.
-
-[https://skidoodle.herokuapp.com](https://skidoodle.herokuapp.com/)
-
-[https://github.com/annateng/Skidoodle](https://github.com/annateng/Skidoodle)
-## [7][A Simple Guide to React Context with Hooks](https://www.reddit.com/r/reactjs/comments/i0k065/a_simple_guide_to_react_context_with_hooks/)
-- url: https://dev.to/keke_arif/a-simple-guide-to-react-context-with-hooks-34jj
----
-
-## [8][State Management / architecture question](https://www.reddit.com/r/reactjs/comments/i17gus/state_management_architecture_question/)
-- url: https://www.reddit.com/r/reactjs/comments/i17gus/state_management_architecture_question/
----
-Hello all! My question is how far can you push a React app using only React Hooks for state management before resorting to Redux or something like it? I assume I could make a form-over-fields with some complex validation and perhaps dynamic fields, but I would like some of your thoughts on where and if its got a breaking point.
-## [9][Anix - Stream Animes](https://www.reddit.com/r/reactjs/comments/i179m7/anix_stream_animes/)
+I've been primarily a WordPress theme developer for the last 6 years and have been struggling to find the time to learn React over the last year.  What finally pushed me across the threshold was that recently, I had a number of projects that I decided to use React for.  One of them was [Linda Jean's Restaurant's website](https://lindajeansrestaurantmv.com), which was always meant to be a WordPress site, but I got my feet wet with Frontity in order to use lightning fast React and Vercel deployments.  Full write up [here](https://community.frontity.org/t/linda-jeans-restaurant-website/2516).  Let me know what you think!
+## [5][Anix - Stream Animes](https://www.reddit.com/r/reactjs/comments/i179m7/anix_stream_animes/)
 - url: https://v.redd.it/nsr0cqjqz6e51
 ---
 
-## [10][[Help] How to push data object in state](https://www.reddit.com/r/reactjs/comments/i16xby/help_how_to_push_data_object_in_state/)
-- url: https://www.reddit.com/r/reactjs/comments/i16xby/help_how_to_push_data_object_in_state/
+## [6][How to make a sticky nav that slides up when the user scrolls down the page](https://www.reddit.com/r/reactjs/comments/i1nyjb/how_to_make_a_sticky_nav_that_slides_up_when_the/)
+- url: https://www.reddit.com/r/reactjs/comments/i1nyjb/how_to_make_a_sticky_nav_that_slides_up_when_the/
 ---
-Hello everyone, I came back to one of my old projects and I have hit a road block. The project is a movie discover app.
+[https://www.prwhite.io/blog/sticky-navbar-hides-scroll](https://www.prwhite.io/blog/sticky-navbar-hides-scroll)
 
-The problem I am facing, I am rendering on the FE multiple movie list view components with like movie title, description etc
+This is my first ever post about React on my new site (made with Gatsby).
 
-Desired flow:
+Shows you how to make a navbar that slides up and off the screen as the user scrolls down - this is common especially on good news/blogs sites as it makes for a better user experience when a site has a lot of readable content.
+## [7][How to make animations in react-animations faster?](https://www.reddit.com/r/reactjs/comments/i1re6c/how_to_make_animations_in_reactanimations_faster/)
+- url: https://www.reddit.com/r/reactjs/comments/i1re6c/how_to_make_animations_in_reactanimations_faster/
+---
+Hi guys,
 
-Base state
+I'm a newbie developing in Reactjs, I wonder how can I use the "faster" feature of animate.css in react?
 
-```state = Object.freeze({
-           favorite: []
-         })```
+    import { bounce } from 'react-animations';
+    import { StyleSheet, css } from 'aphrodite';
+    
+    const styles = StyleSheet.create({
+        bounce: {
+            animationName: bounce,
+            animationDuration: '3s',
+            animationDelay: '0s',
+        }
+    })
+    
+     &lt;div className={css(styles.bounce)}&gt;
+                        &lt;img src={require('../../assets/StreamNow.png')} alt="Stream Now Logo" style={{ height: '85px', marginLeft: '50px' }} /&gt;
+                    &lt;/div&gt;
 
-1.	Have button component - “Favorite”
-2.	 When clicked on “Favorite”, populate data set to state (data are comming from props, which are fetched from api)
-3.	If clicked on another, push the next data into state
-4.	In state I should see ```[{...},{...}] ``` as I have added 2 items into state
-5.	Retreive data from state, save into localStorage
-6.	From another component retreive data from localStorage and render it, data from localStorage are used for another component on another route
+Thanks in advance for helping me out.
+## [8][Using Stripe CLI in windows?](https://www.reddit.com/r/reactjs/comments/i1re5o/using_stripe_cli_in_windows/)
+- url: https://www.reddit.com/r/reactjs/comments/i1re5o/using_stripe_cli_in_windows/
+---
+Hi everybody, I want to test stripe webhooks in my local windows dev machine, stripe docs mention stripe CLI as the best /easier way to test webhooks endpoints and sending fake events, I followed the docs to down load stripe CLI into my windows machine, I extracted the executable into my desktop but now I don't know how to properly excute commands in my cmd.
 
-Current flow:
+stripe.exe in my desktop, I first tried just simply clicking it, command prompt opened and showed message bellow, after a few seconds the command prompt closes.
 
-1.	Clicked on “Favorite”
-2.	Data populated - [{...}]
-3.	Add another item into favorite, data is not pushed into arr, it will overwrite previous data
+```
+This is a command line tool.
 
- [Gist of the helper function](https://github.com/tomasvn/react-repo/blob/80257a770e4f15be8401fc2a3f056204190eb8c1/react-movie-discover-new/src/components/MovieListItem.js#L15)
+You need to open cmd.exe and run it from there.
+```
 
-Tried, failed approach
+After that I tried opening a CMD window and drag and dropping stripe.exe into the tab, I get the following list  of commands:
 
-1.	Use `this.setState(prevState =&gt; ({...prevState.favorite, data})`
-2.	create `const data = []` and use `data.push({...})` and then use setState
+```
+C:\Users\GABRIEL&gt;C:\Users\GABRIEL\Desktop\stripe.exe
+The official command-line tool to interact with Stripe.
 
-If you need more info happy to provide
-## [11][Building greater accessibility into Facebook.com - Facebook Engineering](https://www.reddit.com/r/reactjs/comments/i0unei/building_greater_accessibility_into_facebookcom/)
-- url: https://engineering.fb.com/web/facebook-com-accessibility/
+Before using the CLI, you'll need to login:
+
+  $ stripe login
+
+If you're working on multiple projects, you can run the login command with the
+--project-name flag:
+
+  $ stripe login --project-name rocket-rides
+
+Usage:
+  stripe [command]
+
+Webhook commands:
+  listen                        Listen for webhook events
+  trigger                       Trigger test webhook events
+
+Stripe commands:
+  logs                          Interact with Stripe API request logs
+  status                        Check the status of the Stripe API
+
+Resource commands:
+  get                           Quickly retrieve resources from Stripe
+  charges                       Make requests (capture, create, list, etc) on charges
+  customers                     Make requests (create, delete, list, etc) on customers
+  payment_intents               Make requests (cancel, capture, confirm, etc) on payment intents
+  ...                           To see more resource commands, run `stripe resources help`
+
+Other commands:
+  completion                    Generate bash and zsh completion scripts
+  config                        Manually change the config values for the CLI
+  feedback                      Provide us with feedback on the CLI
+  fixtures                      Run fixtures to populate your account with data
+  help                          Help about any command
+  login                         Login to your Stripe account
+  logout                        Logout of your Stripe account
+  open                          Quickly open Stripe pages
+  samples                       Sample integrations built by Stripe
+  serve                         Serve static files locally
+  version                       Get the version of the Stripe CLI
+
+Flags:
+      --api-key string        Your API key to use for the command
+      --color string          turn on/off color output (on, off, auto)
+      --config string         config file (default is
+                              $HOME/.config/stripe/config.toml)
+      --device-name string    device name
+  -h, --help                  help for stripe
+      --log-level string      log level (debug, info, warn, error)
+                              (default "info")
+  -p, --project-name string   the project name to read from for config
+                              (default "default")
+  -v, --version               Get the version of the Stripe CLI
+
+Use "stripe [command] --help" for more information about a command.
+
+C:\Users\GABRIEL&gt;
+```
+as you see I can't type any command, something like
+```
+stripe login
+```
+
+I'm left with no option to do anything with stripe cli in  cmd... please help me out
+## [9][Next Level](https://www.reddit.com/r/reactjs/comments/i1r70b/next_level/)
+- url: https://www.reddit.com/r/reactjs/comments/i1r70b/next_level/
+---
+Been working full time as a react developer for four years. I really want to take my skills to the next level and have been thinking about contributing to open source projects.   
+
+
+But I don't know where to start and thought maybe people here would have tips and ideas and their experience of working with other people on open source projects.
+## [10][React Native: Modal or react-navigation for showing modals](https://www.reddit.com/r/reactjs/comments/i1r4qg/react_native_modal_or_reactnavigation_for_showing/)
+- url: https://www.reddit.com/r/reactjs/comments/i1r4qg/react_native_modal_or_reactnavigation_for_showing/
+---
+native, Modal is like a pop up which obscures everything bellow, according to react navigation docs in order to show your full screen/or not modals you can make use of nested navigators and mode prop in navigator:
+
+https://reactnavigation.org/docs/modal/
+
+Recently I just found there's also the Modal react-native component, so my question is, what should I use for modals? Navigate to them or isVisible prop with Modal element. For now I think I'll use navigation for more native feel but I wanted to know what you guys think.
+## [11][What supercharged your learning?](https://www.reddit.com/r/reactjs/comments/i1r07h/what_supercharged_your_learning/)
+- url: https://www.reddit.com/r/reactjs/comments/i1r07h/what_supercharged_your_learning/
+---
+Hey all, 
+
+I've been learning react for a bit and I'm getting pretty comfortable reading (some) other people's code from maybe a git repo that interested me etc. But, I realize that most devs are always learning. My question is, outside of building you own projects, if you had a breakthrough that really improved the pace at which you learned, what was it?
+## [12][Records &amp; Tuples for React](https://www.reddit.com/r/reactjs/comments/i19y22/records_tuples_for_react/)
+- url: https://sebastienlorber.com/records-and-tuples-for-react
 ---
 
-## [12][What react gallery lightbox component library are you using?](https://www.reddit.com/r/reactjs/comments/i16277/what_react_gallery_lightbox_component_library_are/)
-- url: https://www.reddit.com/r/reactjs/comments/i16277/what_react_gallery_lightbox_component_library_are/
----
-I'm having a hard time trying to find a decent one. Half are unmaintained, others are buggy or missing features. The only potential candidate is a "pro" one that's paid and not open source and the 'lite' version looks like it has a lot of issues on its github.
-
-I'd love something like fancybox for react. This is what I mean: http://fancyapps.com/fancybox/3/ It just works. But it relies on jQuery. Apparently the dev of fancybox is working on making it no longer rely on jQuery, so that should make it easier to use with react, but seems like it'll be a little while off.
-
-Here's the one's I've been through
-
-- https://github.com/xiaolin/react-image-gallery - No modal/lightbox (that I can see). Can't swipe on desktop. No zoom (only fullscreen, which is not the same).
-- https://github.com/frontend-collective/react-image-lightbox - Possibly abandoned. 
-- https://github.com/jossmac/react-images - No longer maintained/abandoned.
-- https://www.npmjs.com/package/simple-react-lightbox - Best so far but is super buggy on image zoom, makes the feature unusuable. 
-- https://fslightbox.com/ - the "pro" one I mentioned
-
-Any suggestions? At this point I'm wondering if it's worth it to just bite the bullet and pull jquery on the page and use fancybox until the dev can make it vanilla js. But if anyone knows of any decent React based ones, I'm all ears!

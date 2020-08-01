@@ -1,6 +1,6 @@
 # typescript
-## [1][Who's hiring Typescript developers - July](https://www.reddit.com/r/typescript/comments/hizg5z/whos_hiring_typescript_developers_july/)
-- url: https://www.reddit.com/r/typescript/comments/hizg5z/whos_hiring_typescript_developers_july/
+## [1][Who's hiring Typescript developers - August](https://www.reddit.com/r/typescript/comments/i1ikj5/whos_hiring_typescript_developers_august/)
+- url: https://www.reddit.com/r/typescript/comments/i1ikj5/whos_hiring_typescript_developers_august/
 ---
 The monthly thread for people to post openings at their companies.
 
@@ -22,7 +22,161 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][How to resolve imports in Typescript Mocha Testing?](https://www.reddit.com/r/typescript/comments/i17kgp/how_to_resolve_imports_in_typescript_mocha_testing/)
+## [2][a tsconfig guide that actually makes sense](https://www.reddit.com/r/typescript/comments/i1m8lg/a_tsconfig_guide_that_actually_makes_sense/)
+- url: https://www.stackchief.com/blog/tsconfig%20%7C%20the%20missing%20docs
+---
+
+## [3][How do you generate, organize and maintain your seeds/fixtures data for integration or e2e testing](https://www.reddit.com/r/typescript/comments/i1nmsk/how_do_you_generate_organize_and_maintain_your/)
+- url: https://www.reddit.com/r/typescript/comments/i1nmsk/how_do_you_generate_organize_and_maintain_your/
+---
+Hello all,
+
+I'd like to write mainly e2e and integration tests but the main challenge to me is to put my system in a certain state.
+
+I'm unable to find good resources about how to generate, organize and maintain fixtures / seeds data.
+
+Everytime I need to start writing an e2e test this part is the most challenging.
+
+I just want to know if there are better alternatives than manually writing your set of fixtures that you reuse and modify per test case.
+
+Is reusing other parts of your own API to generate data in other tests a bad thing? Like imagine testing the case "As a user I can only see my own books", do you insert a user and books in the database directly before running the test or do you use your own API operations like "user register", "user add books" to populate the database?
+
+Do you always start from an empty database or do you have a consistent set of data that you reset between tests? (The consistent set seems easier from a test preparation perspective but is also less explicit as you can't see the whole picture in the test case).
+## [4][Problem exporting typings from a package: module is imported from 'package-name/build'](https://www.reddit.com/r/typescript/comments/i1ozwt/problem_exporting_typings_from_a_package_module/)
+- url: https://www.reddit.com/r/typescript/comments/i1ozwt/problem_exporting_typings_from_a_package_module/
+---
+Hi, I'm having trouble configuring the package.json and tsconfig.json for a package with the following structure:
+
+    package-name
+        build               \
+            lib             |
+                index.js    |
+            test            | tsc output
+                specs.js    |
+            index.js        /
+
+        src                 \
+            lib             |
+                index.ts    |
+            test            | source files
+                specs.ts    |
+            index.ts        /
+        package.json
+        tsconfig.json
+
+When I'm trying to import something from such a package, the auto-import (I'm using Webstorm if that makes a difference)
+is always something like `import { Something } from 'package-name/build';` while I would want it to be simply
+`import { Something } from 'package-name';`.
+
+Imports from `package-name/build` seems to work at runtime, but my IDE can not resolve it properly. If I manually fix
+the import from `package-name/build` to `package-name`, my IDE can resolve the types and it also works fine at runtime.
+
+I tried a lot of things with the `main` and `types` properties in the package.json, also with the `sourceRoot`,
+`baseUrl` and `rootDir` properties in the tsconfig.json but to no avail, I never succeeded at making auto-imports be
+imported from `package-name`.
+
+You can try it yourself by pulling [this repo](https://gitlab.com/gpascal/export-types-example) (which uses yarn workspaces to link the packages locally):
+
+    git clone https://gitlab.com/gpascal/export-types-example
+    cd export-types-example
+    yarn install
+
+Then open the project in your IDE, go to `packages/package-import/src/lib/index.ts`, delete the import statement and try to auto-import `TestType` or `testFunction`.
+
+Any help would be greatly appreciated.
+
+---------------------
+
+For reference, the tsconfig.json and package.json look like this:
+
+tsconfig.json:
+
+    {
+        "compileOnSave": true,
+        "compilerOptions": {
+            "target": "es2017",
+            "module": "commonjs",
+            "outDir": "build",
+            "noImplicitAny": false,
+            "moduleResolution": "node",
+            "inlineSources": true,
+            "inlineSourceMap": true
+        },
+        "include": ["src"]
+    }
+
+package.json:
+
+    {
+        "name": "package-name",
+        "version": "1.0.0",
+        "main": "build/index.js",
+        "types": "src/index.ts",
+        "devDependencies": {
+            "@types/node": "^14.0.27",
+            "typescript": "^3.9.7"
+        }
+    }
+
+
+Edit: added link to the test repo
+## [5][What's the difference?](https://www.reddit.com/r/typescript/comments/i1djdm/whats_the_difference/)
+- url: https://www.reddit.com/r/typescript/comments/i1djdm/whats_the_difference/
+---
+Hey guys, javascript dev here. I've been looking through the Typescript documentation trying to understand why is everybody in love with this programming language.
+
+Apart from the types in javascript and the abstract classes, what are the differences between JS and TS? Apart from the previously said stuff, why is it better to use TS rather than JS?
+
+&amp;#x200B;
+
+Thank you
+## [6][How do I reference an object property by string?](https://www.reddit.com/r/typescript/comments/i17xcj/how_do_i_reference_an_object_property_by_string/)
+- url: https://www.reddit.com/r/typescript/comments/i17xcj/how_do_i_reference_an_object_property_by_string/
+---
+I've been stuck on this for some time trying to simplify my code.
+
+I have an object for building a visualisation, it looks something like
+
+
+```
+const visualisation = {   
+   ...   
+  themes: {   
+   hyper: {  
+    ...  
+}    
+}  
+```
+
+The idea is that the theme is changeable, I have a dropdown where I have various values that match to the name of the themes.
+
+When I reference my object though this works `visualiserThemes.themes['hyper']` and returns the correct object
+However when I get a value as a string I cannot reference the object property anymore.
+so this doesn't work
+```const value = styleSelect.options[styleSelect.selectedIndex].value
+```  
+```
+visualiserThemes.themes[value]
+```  
+where `value` is a string
+
+Setting a custom const as a string manually though does work, like this
+
+```
+const value2 = 'hyper';
+visualiserThemes.themes[value2]
+```
+
+The errors I'm getting 
+
+```
+Element implicitly has an 'any' type because expression of type 'string' can't be used to index type...  
+No index signature with a parameter of type 'string' was found on type...
+```
+
+I really don't understand what I'm doing wrong, in both examples the value and value2 constants are strings but the former just errors out.
+Sorry for the formatting, reddit has horrible code formatting.
+## [7][How to resolve imports in Typescript Mocha Testing?](https://www.reddit.com/r/typescript/comments/i17kgp/how_to_resolve_imports_in_typescript_mocha_testing/)
 - url: https://www.reddit.com/r/typescript/comments/i17kgp/how_to_resolve_imports_in_typescript_mocha_testing/
 ---
 I'm having an issue importing various classes for mocha testing, for my Typescript project. I have included the following stackoverflow post for reference:
@@ -30,11 +184,11 @@ I'm having an issue importing various classes for mocha testing, for my Typescri
 [https://stackoverflow.com/questions/63192719/how-to-resolve-class-is-not-a-constructor-error-in-typescript-mocha-testing](https://stackoverflow.com/questions/63192719/how-to-resolve-class-is-not-a-constructor-error-in-typescript-mocha-testing)
 
 npm start works just fine but npm test is throwing an error where \[Class\] is not a constructor for most classes in my project.
-## [3][Bueno - Modern, composable validation schemas tailored for TypeScript.](https://www.reddit.com/r/typescript/comments/i0oqw9/bueno_modern_composable_validation_schemas/)
+## [8][Bueno - Modern, composable validation schemas tailored for TypeScript.](https://www.reddit.com/r/typescript/comments/i0oqw9/bueno_modern_composable_validation_schemas/)
 - url: https://github.com/philipnilsson/bueno#quickstart
 ---
 
-## [4][Building Angular Projects in Visual Studio!?](https://www.reddit.com/r/typescript/comments/i0ptcs/building_angular_projects_in_visual_studio/)
+## [9][Building Angular Projects in Visual Studio!?](https://www.reddit.com/r/typescript/comments/i0ptcs/building_angular_projects_in_visual_studio/)
 - url: https://www.reddit.com/r/typescript/comments/i0ptcs/building_angular_projects_in_visual_studio/
 ---
 Hi! Im Gabby a Program Manager at Microsoft and I'm here to present my teams latest work:
@@ -46,7 +200,7 @@ Read more here: [https://www.nowayshecodes.com/blog-tech/angular-language-servic
 Reply if you have any questions :)
 
 &amp;#x200B;
-## [5][Dependency Injection: inversifyJS vs tsyringe](https://www.reddit.com/r/typescript/comments/i0jdmn/dependency_injection_inversifyjs_vs_tsyringe/)
+## [10][Dependency Injection: inversifyJS vs tsyringe](https://www.reddit.com/r/typescript/comments/i0jdmn/dependency_injection_inversifyjs_vs_tsyringe/)
 - url: https://www.reddit.com/r/typescript/comments/i0jdmn/dependency_injection_inversifyjs_vs_tsyringe/
 ---
  I am new to DI.
@@ -56,7 +210,7 @@ I could not find a good comparison of the two frameworks. On the first look tsyr
 Any PROs &amp; CONs?
 
 Thank you!
-## [6][Running ts-node vs compiled JS files](https://www.reddit.com/r/typescript/comments/i07561/running_tsnode_vs_compiled_js_files/)
+## [11][Running ts-node vs compiled JS files](https://www.reddit.com/r/typescript/comments/i07561/running_tsnode_vs_compiled_js_files/)
 - url: https://www.reddit.com/r/typescript/comments/i07561/running_tsnode_vs_compiled_js_files/
 ---
 New TS user here and while setting up a dev workflow, I am confused between the two for local development:  
@@ -67,92 +221,3 @@ New TS user here and while setting up a dev workflow, I am confused between the 
 Option 1 looks more natural to me but I wouldn't know for sure if my transpiled JS files work as expected. Option 2 would make sure my transpiled JS files work as expected but that would require transpiling on EVERY file change. This question was asked [last year](https://www.reddit.com/r/typescript/comments/9o1zzp/tsnode_vs_compiling_for_development/) as well but I couldn't find a satisfactory answer.
 
 Thanks!
-## [7][Help with mutating functions](https://www.reddit.com/r/typescript/comments/i06arp/help_with_mutating_functions/)
-- url: https://www.reddit.com/r/typescript/comments/i06arp/help_with_mutating_functions/
----
-I'm having some difficulty wrapping my head around what I'm trying to do using Typescript with a function that mutates data.  
-
-Let's say I have a person entity who can be either sitting or standing.  I want to make a function that will make him "stand up".  The function should only work on sitting entities and not allow you to pass an entity that is already standing.  After the function has done its work, it should assert that the entity is now standing, and after the function has been run allow you to continue with code that operates on standing entities.
-
-Here's an example of the kind of thing I'm trying to do.  The error is obviously that it ends up in the `never` type, because the intersection of an entity that was sitting, but is now standing, is `never`
-
-    interface Person {
-      name: string;
-      position: 'SITTING' | 'STANDING';
-    }
-
-    interface SittingPerson extends Person {
-      position: 'SITTING';
-    }
-
-    interface StandingPerson extends Person {
-      position: 'STANDING';
-    }
-
-    const bob: SittingPerson = { name: 'Bob', position: 'SITTING' };
-
-    function standUp(p: SittingPerson): asserts p is StandingPerson {
-      p.position = 'STANDING';
-    }
-
-    standUp(bob);
-
-On the line:
-
-    function standUp(p: SittingPerson): asserts p is StandingPerson 
-
-there is an error that SittingPerson is not assignable to StandingPerson.  Obviously this is true, but what I'd like to be able to say to Typescript is:
-
-`"Make your assertion based on the value at the end of the function, not at the start"`
-
-I'm aware of this code immediately starts working if I simply make `bob` a `Person` instead of a `SittingPerson`, however the point is that I explicitly know which state he is in already, I don't want to define him as the less specific `Person`.  I don't want people to be able to invoke `standUp` on a person who may already be standing.  I want it to be as clear and concise as possible.
-
-I'm wondering if I'm going about this the wrong way, and if there's a better way to do what I'm trying to do.
-
-The reason it's using mutation rather than just returning a new person entity, is that it's in the context of a game, so these actions could potentially be happening countless times in a short period, so mutation is preferred vs creating new objects.
-
-Thanks for any help
-## [8][How to unit test private object variables mocha chai for typescript project?](https://www.reddit.com/r/typescript/comments/i08u9i/how_to_unit_test_private_object_variables_mocha/)
-- url: https://www.reddit.com/r/typescript/comments/i08u9i/how_to_unit_test_private_object_variables_mocha/
----
-After researching this I found the best response would be to test the private variables of an object against the prototype of the object. Effectively then inside the test creating a prototype and accessing the variables in that way. When I do this, however, it seems that all variables are not null but are undefined. How am I able to test the private variables, so that they remain defined? For reference, this is what I'm doing now:
-
-[https://stackoverflow.com/questions/63162403/how-to-unit-test-private-variables-mocha-chai-for-typescript-project](https://stackoverflow.com/questions/63162403/how-to-unit-test-private-variables-mocha-chai-for-typescript-project)
-## [9][Is it possible to default export a type , and default export an interface without name ?](https://www.reddit.com/r/typescript/comments/hzzxti/is_it_possible_to_default_export_a_type_and/)
-- url: https://www.reddit.com/r/typescript/comments/hzzxti/is_it_possible_to_default_export_a_type_and/
----
-Questions in the title .
-
-Edit :
-
-My bad for not wording it properly .
-
-I am not looking at default exporting two things .
-
-I am looking on being able to default export a type . Also I am looking on being able to default export an interface without name .
-
-There will always be one default export in each module .
-
-I just had two different and not related question not worded properly .
-
-Edit : 
-
-Problem solved : [Here](https://www.reddit.com/r/typescript/comments/hzzxti/is_it_possible_to_default_export_a_type_and/fzmr3t1?utm_source=share&amp;utm_medium=web2x) is how to default export a type . [Here](https://www.reddit.com/r/typescript/comments/hzzxti/is_it_possible_to_default_export_a_type_and/fzmnme2?utm_source=share&amp;utm_medium=web2x) is how to default export an interface (you have to use a name on the definition of the interface ).
-## [10][How to resolve Error: error:0909006C:PEM routines:get_name:no start line?](https://www.reddit.com/r/typescript/comments/i069cn/how_to_resolve_error_error0909006cpem_routinesget/)
-- url: https://www.reddit.com/r/typescript/comments/i069cn/how_to_resolve_error_error0909006cpem_routinesget/
----
-I have a Typescript project where I read in `AmazonRootCA1.pem` for fully functioning `AwsIotRestApi`. That is, when I run the API it seems to be working just fine. I want to test the API with mocha. When I attempt to do so I get the following error:
-
-    Error: error:0909006C:PEM routines:get_name:no start line
-
-`AmazonRootCA1.pem`, the file which is being read is correctly formatted, so I'm not entirely sure how to go about solving this. Would anyone know how to resolve this error?
-## [11][Any ideas to refactor this class any further? (Stong use of `.matchAll`)](https://www.reddit.com/r/typescript/comments/i020ss/any_ideas_to_refactor_this_class_any_further/)
-- url: https://www.reddit.com/r/typescript/comments/i020ss/any_ideas_to_refactor_this_class_any_further/
----
-I have been experimenting with using \`Array.from\` and \`reduce\` to build the output file instead of the \`for of\`, but keep on running into syntax problems. Any input? Would be great to get a mini code review.
-
-The purpose of the program is to let you copy/paste YouTube chapters from creators' videos and make a chapter file that can be used with .mkv and .mp4 videos. Perfect for videos downloaded with \`youtube-dl\`.
-
-I had the whole thing as a function before, but have been reading about domain-driven design and now think it belongs in a class. The 'chapter file' is definitely a 'domain concept'
-
-[https://www.typescriptlang.org/play/?ssl=1&amp;ssc=1&amp;pln=47&amp;pc=1#code/MYewdgzgLgBAJgQygmBeGADACgJxAKwFNhYBaGAZQFccA3QgTxgQAcWBYAKFJ97-4GkugCmJA8H8wAFAAYAjAC4ArAHY5UgEwBKGAElIyADb6YIBAGsYAMxwIAtoQDuIHOYRg4MCIShUWMAEYIEACWwB6EdOEi4tJqqgDMcgAsMlq60AiG8IRg4JZOzFRQIDZIIWERODA4hOk4sLkWQfqEMMAAFq4A5oRRkuqqAGzxWgCigU1MJWAI3TD0OMHgEMxuWSzZcNnAQTW9MaoAHINaAPI4na5BAF4teIW7nGJ9sVIAnHJxA1oAwtVILQBBQptb7gKB4QzhFbuUBgRqdGgtAAyIE6QTAMAAZDAAEqENHQKF3KAPJ77GQJBSJLQULw+VrgMDEKBBXL2IJQNowACy4E6IAAIgAhPb9GTvRJSH5-EkwACqnkqNhAmyMrncQRsLGadjAsGqBPBpXAotikqSmh0Wp12Vg+lR6NNikSchkXx0egyRjgYOytGhrRlLQAdH7LE1CBguFxgPpAstvh0WCScAAxCMwADeXBguZgLBwQVo-xg+nRNQAKiBuUh2mgYAB6CQAfgAPCy7AA+AA6cEzagAvnJe-2hyPBxpu5OqFJ1FIW632qwUxWOc1O8GAFQaBudADcObzBaLJaXyfCEDkHnB6M6AG0ALr1x8Hzh5-OF4uyxrNABytkIK9oELMB92jN881hYCqBIJwJHRFhCnTP8AKAm9QIAGhgBCkIjNCQM6LRswg99cyCCxJAAQk5IIIGDMsmQgKsaygdpgxJaB4LARCoGQwgNCIw9SNIzk8HsGAACJfxAVokxTbC4ScEoWQaEAqDcCTX2E3MByEkS2lo4Mf0If87HrHDeIjUzCFfPT32aWAzxTX8qBsPwoXQKQtO0hyYGU9pCDgJFy2WdALL44N-LaAFDAkGi6IYytq1rNoNG84SLHyCRfMS4wKKiwLgsYwSSO03NfMzGAO0ILCnPCVcoGaGAB3rRLg06O4WAgSj0rKqqDLouqFmDRCIDaCQ7L63MMG+AAJAEsArEYcQAEkzIaXLc8IB1QNbqoHYNZykbswDmhaltW9a5PCTb3JwAdfwBbkRl2q7l3qtdCAHKNSrKtLJp0vTdNKtSoB4viJBKsrqm8HAMXi4Mhro-AQHRCQJJOiT-tK4H31B8GrIAyGswBqo6ThzA9oGozCbsAcAH0kYwXrgeBmMlkc660wzdAmXExN3u55oJtKgByQgAA9bG1Qh2IlqBRYwvTEGQLhsfZyAQGaejUQkIaIvx3DhYErggA](https://www.typescriptlang.org/play/?ssl=1&amp;ssc=1&amp;pln=47&amp;pc=1#code/MYewdgzgLgBAJgQygmBeGADACgJxAKwFNhYBaGAZQFccA3QgTxgQAcWBYAKFJ97-4GkugCmJA8H8wAFAAYAjAC4ArAHY5UgEwBKGAElIyADb6YIBAGsYAMxwIAtoQDuIHOYRg4MCIShUWMAEYIEACWwB6EdOEi4tJqqgDMcgAsMlq60AiG8IRg4JZOzFRQIDZIIWERODA4hOk4sLkWQfqEMMAAFq4A5oRRkuqqAGzxWgCigU1MJWAI3TD0OMHgEMxuWSzZcNnAQTW9MaoAHINaAPI4na5BAF4teIW7nGJ9sVIAnHJxA1oAwtVILQBBQptb7gKB4QzhFbuUBgRqdGgtAAyIE6QTAMAAZDAAEqENHQKF3KAPJ77GQJBSJLQULw+VrgMDEKBBXL2IJQNowACy4E6IAAIgAhPb9GTvRJSH5-EkwACqnkqNhAmyMrncQRsLGadjAsGqBPBpXAotikqSmh0Wp12Vg+lR6NNikSchkXx0egyRjgYOytGhrRlLQAdH7LE1CBguFxgPpAstvh0WCScAAxCMwADeXBguZgLBwQVo-xg+nRNQAKiBuUh2mgYAB6CQAfgAPCy7AA+AA6cEzagAvnJe-2hyPBxpu5OqFJ1FIW632qwUxWOc1O8GAFQaBudADcObzBaLJaXyfCEDkHnB6M6AG0ALr1x8Hzh5-OF4uyxrNABytkIK9oELMB92jN881hYCqBIJwJHRFhCnTP8AKAm9QIAGhgBCkIjNCQM6LRswg99cyCCxJAAQk5IIIGDMsmQgKsaygdpgxJaB4LARCoGQwgNCIw9SNIzk8HsGAACJfxAVokxTbC4ScEoWQaEAqDcCTX2E3MByEkS2lo4Mf0If87HrHDeIjUzCFfPT32aWAzxTX8qBsPwoXQKQtO0hyYGU9pCDgJFy2WdALL44N-LaAFDAkGi6IYytq1rNoNG84SLHyCRfMS4wKKiwLgsYwSSO03NfMzGAO0ILCnPCVcoGaGAB3rRLg06O4WAgSj0rKqqDLouqFmDRCIDaCQ7L63MMG+AAJAEsArEYcQAEkzIaXLc8IB1QNbqoHYNZykbswDmhaltW9a5PCTb3JwAdfwBbkRl2q7l3qtdCAHKNSrKtLJp0vTdNKtSoB4viJBKsrqm8HAMXi4Mhro-AQHRCQJJOiT-tK4H31B8GrIAyGswBqo6ThzA9oGozCbsAcAH0kYwXrgeBmMlkc660wzdAmXExN3u55oJtKgByQgAA9bG1Qh2IlqBRYwvTEGQLhsfZyAQGaejUQkIaIvx3DhYErggA)

@@ -1,5 +1,54 @@
 # Kotlin
-## [1][Why can’t I use val inside Plugins {}?](https://www.reddit.com/r/Kotlin/comments/i15dfs/why_cant_i_use_val_inside_plugins/)
+## [1][What would you say is the best way for a beginner to learn about GUIs and such in Kotlin?](https://www.reddit.com/r/Kotlin/comments/i1bmvk/what_would_you_say_is_the_best_way_for_a_beginner/)
+- url: https://www.reddit.com/r/Kotlin/comments/i1bmvk/what_would_you_say_is_the_best_way_for_a_beginner/
+---
+I'm currently learning Kotlin, and after learning Java, one of the things I always wanted to do is to learn how to create GUIs. Are there any good courses or material on the subject? What about the best frameworks for the job?
+## [2][Can an API throw a compile-time error instead of a runtime one?](https://www.reddit.com/r/Kotlin/comments/i1htcd/can_an_api_throw_a_compiletime_error_instead_of_a/)
+- url: https://www.reddit.com/r/Kotlin/comments/i1htcd/can_an_api_throw_a_compiletime_error_instead_of_a/
+---
+Take this code for example:
+
+    fun example(string: String) {
+        if (string != "123") {
+            println(string)
+        } else {
+            throw Exception("string cannot be equal to \"123\"")
+        }
+    }
+    fun main() {
+        example("123")
+    }
+
+It's obviously going to crash at runtime but Kotlin gives no compile-time warning or error regarding it. Is there a way to throw an error at compile-time and if not is it a planned feature?
+## [3][Is There An Annotation To Do What I'm Trying To Achieve?](https://www.reddit.com/r/Kotlin/comments/i1ny9c/is_there_an_annotation_to_do_what_im_trying_to/)
+- url: https://www.reddit.com/r/Kotlin/comments/i1ny9c/is_there_an_annotation_to_do_what_im_trying_to/
+---
+Is there an annotation to turn this:
+
+    class example : Cancellable {
+        var isCancelled = false
+    }
+
+into this:
+
+    class example : Cancellable {
+        private var isCancelled = false
+        override fun setCancelled(cancel: Boolean) {
+            isCancelled = cancel
+        }
+        override fun isCancelled(): Boolean = isCancelled
+    }
+
+or do I just have to live with doing the second one?
+## [4][Introduction/Beginner Question](https://www.reddit.com/r/Kotlin/comments/i19mek/introductionbeginner_question/)
+- url: https://www.reddit.com/r/Kotlin/comments/i19mek/introductionbeginner_question/
+---
+Hey what's up everyone! I'm new to this Reddit community, Kotlin, and programming in general. After looking through alot of the posts and seeing how everyone helps each other out I'm happy to have found this group and be apart of it. Just started with Kotlin and learning the basics from a uDemy course which has been great so far. I am definitely motivated and know I have a long way to go to reach my goals. 
+
+My goal is to create Android apps and just learn the Kotlin language to the point where I can think of an idea and just have a good idea about how I'd make it happen. My question for the community is what other knowledge should I be seeking besides just Kotlin and Android Studio knowledge. The course I'm taking right now with Udemy has me working in IntelliJ which has been actually really nice to work in as an IDE. I have read that Data Structures and Algorithms and Linear Algebra are also go knowledge to have. What do you guys think about the other areas? Should I be learning these things in conjunction with learning the basics of Kotlin.
+
+I've been really motivated and have been trying to work 2-4 hours a day learning. I started an excel spreadsheet (lol I love spreadsheets) to track my time studying. Ive  been equally motivated to learn Kotlin as I am just to add time to my spreadsheet. I know I have to put in the work, so far it's been a week and I've got 20 hours in so far, which I don't think is too bad working a full time job. But any other advice you guys have is appreciated. Thanks for reading.
+## [5][Why can’t I use val inside Plugins {}?](https://www.reddit.com/r/Kotlin/comments/i15dfs/why_cant_i_use_val_inside_plugins/)
 - url: https://www.reddit.com/r/Kotlin/comments/i15dfs/why_cant_i_use_val_inside_plugins/
 ---
     val kotlinVersion = "1.3.72"
@@ -9,7 +58,7 @@
     }
 
  I use Kotlin’s standard library as a dependency too and I only want to have to specify the version in one place but when I try something like I did above in my build.gradle.kts I get that error you see in the comment. How do I resolve this?
-## [2][How Do I Resolve This Type Mismatch?](https://www.reddit.com/r/Kotlin/comments/i10xri/how_do_i_resolve_this_type_mismatch/)
+## [6][How Do I Resolve This Type Mismatch?](https://www.reddit.com/r/Kotlin/comments/i10xri/how_do_i_resolve_this_type_mismatch/)
 - url: https://www.reddit.com/r/Kotlin/comments/i10xri/how_do_i_resolve_this_type_mismatch/
 ---
 So I was working on converting my build.gradle (Which uses Groovy) to a build.gradle.kts (Which uses Kotlin) and this is what I got so far:
@@ -76,11 +125,11 @@ Kotlin Conversion:
     }
 
  I commented the error I'm getting with the Kotlin rewrite, why does it work with the original Groovy one and not with this one? How do I fix this error?
-## [3][Androibites | Destructuring Params with safety | Overcoming limitation of Positional Destructuring](https://www.reddit.com/r/Kotlin/comments/i11b5x/androibites_destructuring_params_with_safety/)
+## [7][Androibites | Destructuring Params with safety | Overcoming limitation of Positional Destructuring](https://www.reddit.com/r/Kotlin/comments/i11b5x/androibites_destructuring_params_with_safety/)
 - url: https://chetangupta.net/destructuring-safely/
 ---
 
-## [4][Why am I getting org.json.JSONException: Not a primitive array?](https://www.reddit.com/r/Kotlin/comments/i103nz/why_am_i_getting_orgjsonjsonexception_not_a/)
+## [8][Why am I getting org.json.JSONException: Not a primitive array?](https://www.reddit.com/r/Kotlin/comments/i103nz/why_am_i_getting_orgjsonjsonexception_not_a/)
 - url: https://www.reddit.com/r/Kotlin/comments/i103nz/why_am_i_getting_orgjsonjsonexception_not_a/
 ---
 I have this function:
@@ -181,11 +230,11 @@ This is what the feed object from the get request will look like, just so you ha
     }
 
 What could possibly be going wrong here. I am using Fuel for the request, but I don't think that is the problem
-## [5][VKUG - Apollo-Android: a Journey to Kotlin Multiplatform](https://www.reddit.com/r/Kotlin/comments/i0psls/vkug_apolloandroid_a_journey_to_kotlin/)
+## [9][VKUG - Apollo-Android: a Journey to Kotlin Multiplatform](https://www.reddit.com/r/Kotlin/comments/i0psls/vkug_apolloandroid_a_journey_to_kotlin/)
 - url: https://www.youtube.com/watch?v=u_CtCWFH8jA
 ---
 
-## [6][I made a puzzle game and an automatic solver](https://www.reddit.com/r/Kotlin/comments/i0cgta/i_made_a_puzzle_game_and_an_automatic_solver/)
+## [10][I made a puzzle game and an automatic solver](https://www.reddit.com/r/Kotlin/comments/i0cgta/i_made_a_puzzle_game_and_an_automatic_solver/)
 - url: https://www.reddit.com/r/Kotlin/comments/i0cgta/i_made_a_puzzle_game_and_an_automatic_solver/
 ---
 Hi there! I spent the last couple days working on this project, and I wanted to share it.
@@ -201,19 +250,3 @@ I don't have much experience with Gradle other than just adding dependencies in 
 Also, does anyone have suggestions for another algorithms project I could pick up next?
 
 Thanks for reading!
-## [7][Kotlin 1.4.0-RC: Debugging coroutines – Kotlin Blog](https://www.reddit.com/r/Kotlin/comments/i01l6p/kotlin_140rc_debugging_coroutines_kotlin_blog/)
-- url: https://blog.jetbrains.com/kotlin/2020/07/kotlin-1-4-rc-debugging-coroutines/
----
-
-## [8][AndroidBites | 6 things that you need to know before destructuring Parameters](https://www.reddit.com/r/Kotlin/comments/i0fcjz/androidbites_6_things_that_you_need_to_know/)
-- url: https://chetangupta.net/destructuring-limitations/
----
-
-## [9][Computer Science Needs the Equivalent of Zero](https://www.reddit.com/r/Kotlin/comments/i0rzam/computer_science_needs_the_equivalent_of_zero/)
-- url: https://www.reddit.com/r/Kotlin/comments/i0rzam/computer_science_needs_the_equivalent_of_zero/
----
-[We Haven't Invented Zero Yet](https://www.bruceeckel.com/2020/07/30/we-havent-invented-zero-yet/)
-## [10][Bootiful GraphQL with Kotlin](https://www.reddit.com/r/Kotlin/comments/hzzleu/bootiful_graphql_with_kotlin/)
-- url: https://youtu.be/1siPT1pTXFU?list=PLEx5khR4g7PL-JwckuOkkc5cR6X5hn6ug
----
-

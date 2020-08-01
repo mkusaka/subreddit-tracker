@@ -23,59 +23,69 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/07/28/this-week-in-rust-349/
 ---
 
-## [3][First serious release of Polars DataFrames](https://www.reddit.com/r/rust/comments/i14ab0/first_serious_release_of_polars_dataframes/)
-- url: https://www.reddit.com/r/rust/comments/i14ab0/first_serious_release_of_polars_dataframes/
----
-I've been working on a DataFrame implementation based on Apache Arrow for the past months. The goal of the project is to be a fast in-memory DataFrame library in Rust.  
-
-Now Apache Arrow 1.0 is out, I could release the first serious version. It has got basic selections, groupbys, joins, arithmetic, sorting, filters/masks, Rust iterators and more. 
-
-Python bindings are being worked on. The goal with regard to Python is to have interaction between Apache arrow and numpy with minimal overhead.
-
-[https://github.com/ritchie46/polars](https://github.com/ritchie46/polars)
-## [4][Rust 1.45.1 is released](https://www.reddit.com/r/rust/comments/i0rfzs/rust_1451_is_released/)
-- url: https://blog.rust-lang.org/2020/07/30/Rust-1.45.1.html
+## [3][Alacritty Terminal Emulator Version 0.5.0 now with vi mode and search](https://www.reddit.com/r/rust/comments/i1j5lk/alacritty_terminal_emulator_version_050_now_with/)
+- url: https://blog.christianduerr.com/alacritty_0_5_0_announcement.html
 ---
 
-## [5][event-listener: a synchronization primitive to turn non-blocking data structures into async or blocking data structures](https://www.reddit.com/r/rust/comments/i16oly/eventlistener_a_synchronization_primitive_to_turn/)
+## [4][Rewritten in Rust: Modern Alternatives of Command-Line Tools](https://www.reddit.com/r/rust/comments/i1abpg/rewritten_in_rust_modern_alternatives_of/)
+- url: https://zaiste.net/posts/shell-commands-rust/
+---
+
+## [5][Smooth Voxel Mapping: a Technical Deep Dive on Real-time Surface Nets and Texturing](https://www.reddit.com/r/rust/comments/i1obro/smooth_voxel_mapping_a_technical_deep_dive_on/)
+- url: https://medium.com/@bonsairobo/smooth-voxel-mapping-a-technical-deep-dive-on-real-time-surface-nets-and-texturing-ef06d0f8ca14
+---
+
+## [6][Headcrab, a modern Rust debugger library: July 2020 progress report](https://www.reddit.com/r/rust/comments/i1bc5a/headcrab_a_modern_rust_debugger_library_july_2020/)
+- url: https://headcrab-rs.github.io/2020/07/31/july-update.html
+---
+
+## [7][How does new error handling work?](https://www.reddit.com/r/rust/comments/i1lyy5/how_does_new_error_handling_work/)
+- url: https://www.reddit.com/r/rust/comments/i1lyy5/how_does_new_error_handling_work/
+---
+I read [RFC 2504 `fix_error`](https://github.com/rust-lang/rfcs/blob/master/text/2504-fix-error.md), but it doesn't seem to say anything about how *using* the new API works.
+
+My impression of the status after reading issues [53487](https://github.com/rust-lang/rust/issues/53487) and [58520](https://github.com/rust-lang/rust/issues/58520) is that the RFC is pretty much implemented in nightly (which I'm using). I've also read several articles about the changes and all the third-party error crates that are being deprecated now. But I'm still not finding any explanation of how to *attach* context to errors.
+
+Here's a concrete example. How would I use the new error features to have the error returned from `do_stuff` include information about which step resulted in an error?
+
+```rust
+type MyErr = Box&lt;dyn std::error::Error&gt;;
+
+fn main() -&gt; Result&lt;(), MyErr&gt; {
+	let args: Vec&lt;String&gt; = std::env::args().collect();
+	do_stuff(&amp;args[1], &amp;args[2], &amp;args[3])
+}
+
+fn do_stuff(file1: &amp;str, file2: &amp;str, file3: &amp;str) -&gt; Result&lt;(), MyErr&gt; {
+	let text = std::fs::read_to_string(file1)?;
+	std::fs::write(file2, text)?;
+	std::fs::remove_file(file3)?;
+	Ok(())
+}
+```
+## [8][Announcing Rust.app: A new macOS App for Rustaceans](https://www.reddit.com/r/rust/comments/i1fvka/announcing_rustapp_a_new_macos_app_for_rustaceans/)
+- url: https://github.com/XAMPPRocky/Rust.app/releases/tag/v0.1.0
+---
+
+## [9][The State of Rust with Steve Klabnik](https://www.reddit.com/r/rust/comments/i1ab0i/the_state_of_rust_with_steve_klabnik/)
+- url: https://www.reddit.com/r/rust/comments/i1ab0i/the_state_of_rust_with_steve_klabnik/
+---
+Hey, folks. Just wanted to let everyone know that I just dropped the latest episode of my podcast, The Virtual World. In this episode I was able to sit down with Steve Klabnik, a member of the Rust core team. I asked him a ton of questions about himself and the Rust programming language and ecosystem. Some of the info may surprise you!
+
+[https://anchor.fm/the-virtual-world/episodes/Ep-6--The-State-of-Rust-with-Steve-Klabnik-ehf8mk](https://anchor.fm/the-virtual-world/episodes/Ep-6--The-State-of-Rust-with-Steve-Klabnik-ehf8mk)
+
+&amp;#x200B;
+
+P.S. I'll be interviewing Alex Chrichton from the core team later today as well!
+## [10][event-listener: a synchronization primitive to turn non-blocking data structures into async or blocking data structures](https://www.reddit.com/r/rust/comments/i16oly/eventlistener_a_synchronization_primitive_to_turn/)
 - url: https://docs.rs/event-listener
 ---
 
-## [6][geos 7.0 release: More type safety, update dependencies and use std TryFrom](https://www.reddit.com/r/rust/comments/i14vla/geos_70_release_more_type_safety_update/)
-- url: https://blog.guillaume-gomez.fr/articles/2020-07-31+geos+7.0+release%3A+More+type+safety%2C+update+dependencies+and+use+std+TryFrom
+## [11][async-io: Async I/O and timers (alternative to mio with a focus on simplicity)](https://www.reddit.com/r/rust/comments/i198og/asyncio_async_io_and_timers_alternative_to_mio/)
+- url: https://docs.rs/async-io
 ---
 
-## [7][Edition 2021 and beyond](https://www.reddit.com/r/rust/comments/i0n78c/edition_2021_and_beyond/)
-- url: https://github.com/rust-lang/rfcs/pull/2966
+## [12][📮 teloxide v0.3.0 released: An elegant Telegram bots framework for Rust](https://www.reddit.com/r/rust/comments/i1a7sr/teloxide_v030_released_an_elegant_telegram_bots/)
+- url: https://github.com/teloxide/teloxide
 ---
 
-## [8][tihle, a new emulator targeting TI graphing calculators implemented in C and Rust](https://www.reddit.com/r/rust/comments/i0wi89/tihle_a_new_emulator_targeting_ti_graphing/)
-- url: https://www.taricorp.net/2020/introducing-tihle/
----
-
-## [9][Reverse engineering a USB device with Rust](https://www.reddit.com/r/rust/comments/i0moov/reverse_engineering_a_usb_device_with_rust/)
-- url: https://gill.net.in/posts/reverse-engineering-a-usb-device-with-rust/
----
-
-## [10][Using the Rust compiler as your integration testing framework](https://www.reddit.com/r/rust/comments/i0tyjs/using_the_rust_compiler_as_your_integration/)
-- url: https://blog.logrocket.com/using-the-rust-compiler-as-your-integration-testing-framework/
----
-
-## [11][Firefox 79 now supports WebAssembly threads and reference types!](https://www.reddit.com/r/rust/comments/i0g8r7/firefox_79_now_supports_webassembly_threads_and/)
-- url: https://www.reddit.com/r/rust/comments/i0g8r7/firefox_79_now_supports_webassembly_threads_and/
----
-Firefox 79 includes new WebAssembly functionality:
-
-* First off, seven new built-in operations are provided for [bulk memory operations](https://developer.mozilla.org/docs/WebAssembly/Understanding_the_text_format#Bulk_memory_operations). For example, copying and initializing allow WebAssembly to model native functions such as `memcpy` and `memmove` in a more efficient, performant way.
-* The [reference-types proposal](https://github.com/WebAssembly/reference-types) is now supported. It provides a [new type, externref](https://rustwasm.github.io/docs/wasm-bindgen/reference/reference-types.html), which can hold any JavaScript value, for example strings, DOM references, or objects. The [wasm-bindgen](https://rustwasm.github.io/docs/wasm-bindgen/) documentation includes guidance for taking advantage of `externref` from Rust.
-* With the return of `SharedArrayBuffer` objects, we’re now also able to support [WebAssembly threads](https://developer.mozilla.org/docs/WebAssembly/Understanding_the_text_format#WebAssembly_threads). Thus, it is now possible for WebAssembly Memory objects to be shared across multiple WebAssembly instances running in separate Web Workers. The outcome? Very fast communication between Workers, as well as significant performance gains in web applications.
-
-(from [https://hacks.mozilla.org/2020/07/firefox-79/](https://hacks.mozilla.org/2020/07/firefox-79/))
-## [12][Installation using Chocolately](https://www.reddit.com/r/rust/comments/i14zz8/installation_using_chocolately/)
-- url: https://www.reddit.com/r/rust/comments/i14zz8/installation_using_chocolately/
----
-I noticed that you can install Rust using Choco on Windows. Any advantages or disadvantages compared with rustup?
-
-There are two variations, just "rust" and "rust-ms". I am using Microsoft tools, does that mean "rust-ms" is the preferred one?
-
-I especially care about the ability to debug and integrate with Visual Studio Code.

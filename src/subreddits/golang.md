@@ -17,96 +17,119 @@ See also the related [Q&amp;A for the //go:embed draft design](https://golang.or
 - url: https://go.googlesource.com/proposal/+/refs/heads/master/design/40307-fuzzing.md
 ---
 
-## [3][Bill Kennedy on value vs pointer semantics](https://www.reddit.com/r/golang/comments/i1dot5/bill_kennedy_on_value_vs_pointer_semantics/)
-- url: https://youtu.be/i5nyPaAwM3s
+## [3][Check out my Go app that lets you split files into horcruxes](https://www.reddit.com/r/golang/comments/i26l3g/check_out_my_go_app_that_lets_you_split_files/)
+- url: https://www.reddit.com/r/golang/comments/i26l3g/check_out_my_go_app_that_lets_you_split_files/
+---
+Not too long ago I made a program in Go called Horcrux which allows you to split a file into multiple 'horcruxes' (aka fragments) which can then be recombined to obtain the original file (as opposed to encrypting a single file with a password).  
+
+
+Somebody urged me to create a GUI for it so I've done just that! I've used [https://fyne.io/](https://fyne.io/) and it's a pretty lightweight frontend. I'd prefer to use a native file select dialog but fyne currently doesn't support that. Let me know your thoughts :)  
+
+
+[https://github.com/jesseduffield/horcrux-ui](https://github.com/jesseduffield/horcrux-ui)
+## [4][grule-rule-engine version 1.5. 0 released. Grule is a Rule Engine library for the Golang programming language. Inspired by the acclaimed JBOSS Drools, done in a much simple manner.](https://www.reddit.com/r/golang/comments/i2634a/gruleruleengine_version_15_0_released_grule_is_a/)
+- url: https://github.com/hyperjumptech/grule-rule-engine/blob/master/CHANGELOG.md#150---2020-08-02
 ---
 
-## [4][Go: How to Reduce Lock Contention with the Atomic Package](https://www.reddit.com/r/golang/comments/i1ryn9/go_how_to_reduce_lock_contention_with_the_atomic/)
+## [5][todocheck v0.2.0 is live](https://www.reddit.com/r/golang/comments/i1wcgb/todocheck_v020_is_live/)
+- url: https://github.com/preslavmihaylov/todocheck/releases/tag/v0.2.0
+---
+
+## [6][Using GitHub Actions to compile, sign, and notarize your MacOS Golang Binaries](https://www.reddit.com/r/golang/comments/i2a2fx/using_github_actions_to_compile_sign_and_notarize/)
+- url: https://www.kencochrane.com/2020/08/01/build-and-sign-golang-binaries-for-macos-with-github-actions/
+---
+
+## [7][DDD vs. DB transactions. How to reconcile?](https://www.reddit.com/r/golang/comments/i1vy4s/ddd_vs_db_transactions_how_to_reconcile/)
+- url: https://www.reddit.com/r/golang/comments/i1vy4s/ddd_vs_db_transactions_how_to_reconcile/
+---
+TL;DR
+
+How can DDD (Domain Driven Design) architecture work with the need to use database transactions, or are they just simply incompatible?
+
+---
+
+I've been working on this small web app as a project to practice go web app dev with. I recently came across this [gophercon talk](https://www.youtube.com/watch?v=oL6JBUk6tj0) with Kat Zien where she describes Domain Driven Design, among other attempts at organizing a project. I thought why not try to apply the DDD principles to my practice project because it looks like a nice clean way to keep layers separated and flexible.
+
+As a result I had my DB connection contained within "repositories", isolated away from the rest of the code base. The domain and infrastructure (specifically http) layers had no knowledge of which database (or simply persistence layer) was in use, only that it did it's job. Great. Separation of concerns.
+
+Then, I ran into the need to use transactions which seems to turn DDD on its head due to the fact that accommodating a transaction (at the request level) forces it to be a cross cutting concern.
+
+Basically what I did was kept the concept of the services and repositories in place but the repositories no longer have ownership of a database connection/implementation because the connection now gets passed to any repository operations that need it.
+
+For instance, an http handler will kick off a transaction like so:
+
+    storage.Transact(c.DB, func(ext storage.Ext) (err error) {
+        // ...
+        err = widgetService.UpdateWidget(ext, widgetID, widget)
+        if err != nil {
+            // ... oops, bad thing happened, rollback
+            return err
+        }
+    })
+
+The rollback and commit code is abstracted behind the `storage.Transact` function. The `storage.Ext` is an interface that will allow for use of an `*sqlx.DB` struct or `*sqlx.Tx`. That way I can run any service or repo function with either type of db struct, connection or transaction.
+
+The `storage.Ext` interface is thus:
+
+    type Ext interface {
+        sqlx.Execer
+        sqlx.Queryer
+        Preparex(string) (*sqlx.Stmt, error)
+    }
+
+So now the persistence layer implementation is out in the open, not tucked away where the rest of the application can hum along with no knowledge of persistence implementation. I've lost the benefit of isolating it away from the rest of the app.
+
+It occurred to me that I could move the transaction to be much closer to the repo layer and have each repository operation have it's own self contained transaction but that would lead to a lot of duplication of code. Many operations would not be reusable suddenly as they would need to be re-implemented any time they need to take place as part of a transaction if they were once self contained atomic operations of their own. I suppose one approach would be to have internal repo ops all take `storage.Ext` as first arg and the repo public interface would hide all this away.
+
+Now I'm just thinking out loud stream of consciousness style... help me straighten my rudder out here. How would a gopher sort this out?
+## [8][Go: How to Reduce Lock Contention with the Atomic Package](https://www.reddit.com/r/golang/comments/i1ryn9/go_how_to_reduce_lock_contention_with_the_atomic/)
 - url: https://medium.com/a-journey-with-go/go-how-to-reduce-lock-contention-with-the-atomic-package-ba3b2664b549
 ---
 
-## [5][GLab: A Gitlab CLI tool](https://www.reddit.com/r/golang/comments/i1lnqo/glab_a_gitlab_cli_tool/)
+## [9][pgx and migrations](https://www.reddit.com/r/golang/comments/i1zz5i/pgx_and_migrations/)
+- url: https://www.reddit.com/r/golang/comments/i1zz5i/pgx_and_migrations/
+---
+Hey all,
+
+Looking to switch over to using PGX natively.. e.g. no sql.db and such. Read several bits on it now and it seems like its a better option as I am only using PostgresQL (at least between various services that share the DB (but have separate DB instances for their services)). 
+
+I have been using the golang-migrate/migrate for migration and as I am new to all this.. and nothing in production or even beta yet, really don't have a lot to migrate.. just a couple of table inserts to be able to get some code working like a root user to log in with, role types, etc. Eventually I assume I may have some breaking DB changes that migrate will hopefully help with and be of more value than it is currently for me. 
+
+That said, is there a good solution, used by someone in production, tested, etc that works with PGX directly? 
+
+Let me ask this.. given that migration is really just a series of files, in sequential order, of SQL commands.. is there anything wrong with just writing a bit of go code specifically for migration use, that I can run directly..without needing to depend on golang-migrate? It seems like especially for my own use which wont be a very complex or a huge amount of tables, easy enough to just write (and document) the SQL myself. From what I can tell.. the migrate .sql scripts are basically executed in sequential order. So just thinking if I wrote some code using pgx that executes scripts in one way, or the other (up or down), what is the major thing I am getting with something like golang-migrate that I would have to be concerned about doing myself?
+## [10][Use Go to access QuickBooks desktop file?](https://www.reddit.com/r/golang/comments/i238ec/use_go_to_access_quickbooks_desktop_file/)
+- url: https://www.reddit.com/r/golang/comments/i238ec/use_go_to_access_quickbooks_desktop_file/
+---
+I need to use Go to extract some employee/payroll info from a desktop Quickbooks file (on Windows of course)? Any suggestions on how to accomplish this?
+
+&amp;#x200B;
+
+PS: Would someone please inform the spam bot that this is not spam. Thanks.
+## [11][Is there any existing queue management system in golang?](https://www.reddit.com/r/golang/comments/i229ae/is_there_any_existing_queue_management_system_in/)
+- url: https://www.reddit.com/r/golang/comments/i229ae/is_there_any_existing_queue_management_system_in/
+---
+Is there any existing queue management system in golang from where I can see the
+
+* stats of each queue,
+* status of each tasks in the queue
+* managing queue, workers and tasks
+* migrating tasks from one queue to another queue
+
+My use-case scenario:
+
+I'm trying to implement SMS sending platform for multiple users where each users could have their own set of priority queues + flexible workers. The queue is transparent to user for each sms stats.
+
+Users could view the tasks on queue and be able to Pause/Resume/Kill/Migrate them
+## [12][GLab: A Gitlab CLI tool](https://www.reddit.com/r/golang/comments/i1lnqo/glab_a_gitlab_cli_tool/)
 - url: https://www.reddit.com/r/golang/comments/i1lnqo/glab_a_gitlab_cli_tool/
 ---
 Glab is a simple and elegant GitLab CLI tool written in Go (golang) for creating and managing issues, merge requests, and a lot more... Do [give it a try](https://github.com/profclems/glab). Your feedback is much appreciated.
 
- [https://github.com/profclems/glab](https://github.com/profclems/glab) 
+[https://github.com/profclems/glab](https://github.com/profclems/glab)
+
+https://gitlab.com/profclems/glab
 
 &amp;#x200B;
 
 https://preview.redd.it/cfcjpttwabe51.png?width=1024&amp;format=png&amp;auto=webp&amp;s=99d159203ce82dbddae57f732becea64b64c00d2
-## [6][Kyubin: a simple queue based bin in pure go + storm db](https://www.reddit.com/r/golang/comments/i1q4lv/kyubin_a_simple_queue_based_bin_in_pure_go_storm/)
-- url: https://stackb.in
----
-
-## [7][hashicorp nomad](https://www.reddit.com/r/golang/comments/i16vm2/hashicorp_nomad/)
-- url: https://www.reddit.com/r/golang/comments/i16vm2/hashicorp_nomad/
----
-Does anyone here use Nomad? I like the fact its written in Go and very easy to deploy. I use it for Legacy Applications (C++ and Java). I don't need anything fancy like kubernetes. So far I am impressed with it.. Any other good alternatives (hopefully written in Go)?
-## [8][GoFlow is a Golang based high performance, scalable and distributed workflow framework](https://www.reddit.com/r/golang/comments/i1a2y0/goflow_is_a_golang_based_high_performance/)
-- url: https://www.reddit.com/r/golang/comments/i1a2y0/goflow_is_a_golang_based_high_performance/
----
-It allows to programmatically author distributed workflows as Directed Acyclic Graphs (DAGs) of tasks (nodes). Goflow executes your tasks on an array of goflow workers by uniformly distributing the load
-
-LINK: [https://github.com/faasflow/goflow](https://github.com/faasflow/goflow)
-
-[give it a look](https://preview.redd.it/xqt3f3cut7e51.jpg?width=1007&amp;format=pjpg&amp;auto=webp&amp;s=4f5a9b68363caf2c037fdb46d660a1113b26f479)
-## [9][Comparing Crystal’s Concurrency with that of Go’s (Part I)](https://www.reddit.com/r/golang/comments/i1j287/comparing_crystals_concurrency_with_that_of_gos/)
-- url: https://link.medium.com/782maOnbA8
----
-
-## [10][I just landed a massive refactor of my open source project Super Graph over 3K lines changed. Ask me anything.](https://www.reddit.com/r/golang/comments/i1mql8/i_just_landed_a_massive_refactor_of_my_open/)
-- url: https://www.reddit.com/r/golang/comments/i1mql8/i_just_landed_a_massive_refactor_of_my_open/
----
-Super Graph is a GraphQL to SQL compiler in Go that I've been working on for a while now. Overtime it got a lot of useful features and as the single core contributor some parts of the codebase got away from me. A couple weeks ago I came across a bug in the part of code dealing with nested inserts and updated where we generate SQL to update or insert multiple related tables with a single SQL query.  The fix for this was simple enough but somehow I couldn't get myself to make it since it felt like I'm forcing code where it didn't belong. When you work on the same codebase for a long while you naturally develop a fine tuned sense about it and code smell is very evident to you and I felt this was not just a smell it stunk. 
-
-I didn't make the fix instead I shut my laptop and went on a long walk as it helps me think. Two packages `psql` and `qcode` made up the core of the compiler, `qcode` took the GraphQL and parsed it into an AST called `QCode` which was then passed to `psql` to generate SQL from. The issue I found was that `QCode` was a not rich enough, it didn't carry with it information about database tables and relationships. This meant that `psql` had to do a lot more work and instead of just focusing on generating SQL it had to do the additional work of pulling in database schema information and this made the code more complicated.
-
-The one thing I knew from experience was that generating the SQL was hard enough why make it do more. I decided it was time for a refactor and this required a design rethink. The new design I felt needed to focus on improving readability and simplify complex functions. The best way to simplify code in Go is to extract out concerns into new packages and add more information to structs that are passed around so you don't have to pull in this information all over the place. 
-
-In the new design the core GraphQL parser was extracted out from `qcode` into it's own package. Next up the database schema and relationship discovery code was extracted out from `psql` into it's own package and finally the `QCode` AST was made richer. The final result was a codebase much nicer and easier to work with and tons of bugs fixing themselves. Major new features going ahead like support for MySQL seems much easier to reason about.
-
-Refactoring Go code is a breeze the fast compiler makes running tests while making changes almost realtime. I'm just happy with how quickly I could do this and the higher quality codebase that it resulted in. Ask me anything.
-
-https://github.com/dosco/super-graph
-
-The Commit:
-https://github.com/dosco/super-graph/commit/992c78ee947e6497a0e7b03059067e18fa9a22e2
-## [11][On choosing a buffer size](https://www.reddit.com/r/golang/comments/i1cro6/on_choosing_a_buffer_size/)
-- url: https://www.reddit.com/r/golang/comments/i1cro6/on_choosing_a_buffer_size/
----
-This has me stumped.
-
-As a learning experience, I wrote an implementation of the cat command and tested it by using another program I wrote to write random bytes to stdout.  In developing both programs though, I noticed that a buffer size of 4096 offered less performance than 65536, which on my machine seems like a sweet spot since anything above that further degrades throughput.  My question is, what factors might be influencing this?  I thought 4096 was a common buffer size for file and pipe I/O, even 8192 at times (though that was even worse in my tests).  I don't know if it's related, but the page size on my system is 4096.
-
-
-The random byte generator is called 'fon', and the testing command chain is as follows:
-
-fon -s 65536 | cat | pv -a &gt; /dev/null
-
-
-So 'fon' is writing 64GiB of nonsense (no, that's not a typo) into cat, where 'pv -a' gets the average throughput from cat to /dev/null.  Testing against FreeBSD's cat, I got 425MiB/s, whereas my cat would get identical speed with a buffer of 4096, but switching to 65536 brings it up to 572MiB/s.  Likewise, 'fon' performs best at that buffer size with about 600MiB/s average output speed, but a bigger or smaller buffer reduces the speed.  
-
-Just for fun, I even wrote a version of 'yes' and compared it to FreeBSD's version.  Mine peaked at 6.7GiB/s average whereas FreeBSD peaked at about 4.1GiB/s.  Guess what buffer size I used?
-
-
-So to sum it up, does anyone have an explanation for why 64KiB buffers are outperforming 4KiB, 8KiB, even 128KiB or 1MiB buffers?  I know very little about the inner workings of this sort of thing, and I don't want to fall into a trap of assuming all machines will behave the same way (hence determining buffer size at runtime).  If it helps, I'm running FreeBSD 12.1 Release-p6 on a Thinkpad T430 with 8GB RAM and an Intel i5-2520M, Go version 1.14.6.
-
-
-UPDATE
-
-Having posted the CPU I'm using, it got me thinking that maybe the CPU cache sizes had something to do with this.  Maybe it's just the universe laughing at me, but the L1 cache size is 64KiB instruction and 64KiB data.  Seeing how fon is writing 64KiB at a time using read(buff) from math/rand, I can't help but wonder if this is meaningless or if I'm onto something.
-## [12][[PROJECT] Larder CLI - Bookmarking for Developers](https://www.reddit.com/r/golang/comments/i1bfap/project_larder_cli_bookmarking_for_developers/)
-- url: https://www.reddit.com/r/golang/comments/i1bfap/project_larder_cli_bookmarking_for_developers/
----
-TLDR; Larder is an extension for bookmarking things on the web you'll need again. I've written a [Larder command line interface](https://github.com/theycallmemac/larder) in Go for all us people who don't like browser extensions :D
-
-I worked on this as relief from my final year project in college (consulted this  subreddit a lot during that time!) I decided to make a robust, easy to use command line interface for Larder. I did this mainly because I have a 2012 Macbook Pro with 4GB of RAM that really cannot handle any more browser extensions. I also did this because I know there’s a lot of folk who live in their terminals and detest browser extensions.
-
-[Larder.io](https://larder.io) is a bookmarking tool for developers, making  the process of organizing bookmarks by categorizing and tagging them. Categorizing is done by placing bookmarks in an organized set of folders, allow you to annotate each bookmark with specific search terms. Later on when you need it, you can search your bookmarks by tags you’ve used, it’s title, or it’s original URL.
-
-This tool also supports synchronizing your GitHub stars too. So, you can track updates from projects that you starred on GitHub. If you want to bookmark something automatically, Larder extension is available for browsers, Android, and there’s also an API.
-
-What really makes this new Larder CLI stand out is the ability to refresh your access token. Tokens expire in a month and can be refreshed for a new access token at any time, invalidating the original access and refresh tokens. This built in functionality does not exist in alternatives to this Larder CLI. This process is automated so the user can continuously use the Larder CLI without having to manually remove and add new access tokens. Who doesn’t love a little bit of automation :D
-
-You can check out Larder [on Github](https://github.com/theycallmemac/larder).

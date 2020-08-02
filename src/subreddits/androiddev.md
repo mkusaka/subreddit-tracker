@@ -22,144 +22,112 @@ To cut down on spam, accounts who are too young or do not have enough karma to p
 As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
 
 \- Da Mods
-## [2][We’re on the engineering team for Android Studio. Ask us Anything! (starts July 30)](https://www.reddit.com/r/androiddev/comments/hwiffd/were_on_the_engineering_team_for_android_studio/)
-- url: https://www.reddit.com/r/androiddev/comments/hwiffd/were_on_the_engineering_team_for_android_studio/
----
-We’re on the engineering team for Android Studio, and we are excited to participate in another AMA on r/androiddev on **Thursday, July 30**!
-
-For our [launch](https://android-developers.googleblog.com/2020/06/unwrapping-android-11-beta-plus-more.html) of the [Android 11 Beta](http://d.android.com/android11), we introduced [\#11WeeksOfAndroid](https://developer.android.com/11weeksofandroid), and next week is Week 7, in which we’ll focus on Android Developer Tools.
-
-Also as part of the Android 11 Beta launch, we announced Android Studio 4.1 Beta and 4.2 Canary, and released an [overview video and demo](https://youtu.be/NMFGuy6TRqk) of the latest features in action. The preview versions of Android Studio have a host of [new features](https://developer.android.com/studio/preview/features) and include behind the scenes polish and stability work.
-
-For this AMA, we want to answer your *technical* questions about Android Studio.  Please note that we want to keep the conversation focused strictly on the engineering and usage of Android developer tools.
-
-We'll start answering questions on **Thursday, July 30 at 12:00 PM PDT / 3:00 PM EDT (UTC 1900)** and will continue until 1:20 PM PDT / 4:20 PM EDT.
-
-**Feel free to submit your questions ahead of time.** This thread will be used for both questions and answers. Please adhere to our [community guidelines](https://developer.android.com/community-guidelines) when participating in this conversation.
-
-**Here are some topics we’re looking forward to talking about, but feel free to ask anything!**
-
-* Android Studio
-* Android Gradle Plugin &amp; Toolchain
-* R8/D8
-* Apply Changes
-* Android Emulator
-* App Performance Tools
-* UI Design Tools
-* Constraint Layout &amp; Motion Layout
-* Kotlin Tools
-* C++ Tools
-* Jetpack Compose Tools
-
-**Participants from the Android team:**
-
-* **Adarsh Fernando** (u/adarshf) - Android Studio Product Manager
-* **Arif Sukoco**‎  (u/roboarif) - Android Studio C++ Tech Lead
-* **Chris Sinco** (u/csinco) - Android Studio UX Lead
-* **David Herman** (u/adt_dherman) - Data Binding Tech Lead
-* **David Winer** \- (u/davidwiner) Kotlin Product Manager
-* **Diego Perez** (u/nosuid) - Layout Editor Tech Lead
-* **Esteban de la Canal** (u/estebandlc) - Apply Changes Tech Lead
-* **Frank Yang** (u/lfy_google) - Android Emulator Tech Lead
-* **Jamal Eason** (u/easonj) - Android Studio Product Manager
-* **Jeffrey Van Gogh** (u/jvg_googler) - Android Studio Tech Lead, &amp; Kotlin
-* **Jerome Dochez** (u/jdochez) - Gradle Plugin Tech Lead
-* **Jon Tsao**‎ (u/twilligy) - Android Studio Product Manager
-* **Karen Ng** (u/nkaren) - Android Studio Product Director
-* **Mads Ager** (u/madsager) - Android Studio Compiler Tech Lead
-* **Nicolas Roard** (u/nicolasroard) - Design Tools &amp; ConstraintLayout Tech Lead
-* **Raluca Sauciuc**‎ (u/raluca_sauciuc) - Android Studio Tech Lead
-* **Renaud Paquay‎** (u/adt\_renaud) - Android Studio Tech Lead
-* **Scott Swarthout** (u/scottswarthout) - Android Studio Product Manager - Motion Tools
-* **Shukang Zhou** (u/shukang) - Android Studio Profiler Tech Lead
-* **Tor Norbye** (u/tnorbye) - Engineering Director for Android Studio
-* **Wojtek Kaliciński** (u/wkalicinski) - Android Developer Relations
-* **Xavier Ducrohet** (u/droidxav) - Tech lead for Android SDK
-## [3][AppBoost is finally here - An open source ad-network for android developers](https://www.reddit.com/r/androiddev/comments/i1o172/appboost_is_finally_here_an_open_source_adnetwork/)
-- url: https://www.reddit.com/r/androiddev/comments/i1o172/appboost_is_finally_here_an_open_source_adnetwork/
----
-Hi guys am happy to share with you this excitement. I have finally completed the MVP.
-
-AppBoost [https://appboost.org](https://appboost.org) is an adnetwork i have been developing to help android developers promote their apps for free.
-
-It works through cross-promotion, each developer that integrates the ad-network in their app gets other developers apps promoted in his/her app and vice versa. The sdk is currently only available for native apps developed with Java. I will soon release another version for Kotlin as soon as i get validation for it.
-
-The app stores are getting more and more saturated and competitive with thousands of apps being published everyday, Developers and Businesses with little to no budgets are finding it difficult to sustain their app businesses.
-
-**AppBoost** Aims to solve this problem by helping developers and businesses drive traffic to their apps and thereby increase their revenues. 
-
-We aim to create a community of developers helping each other succeed in these tough times.
-
-Contributions especially to the website are welcome!
-
-I would be happy to hear your thoughts
-
-Thanks for reading this🙏
-
-Below is a screenshot of how the ads look like. Simple, high converting and non-intrusive ads.
-
-[Simple non-intrusive ads](https://preview.redd.it/w6qs4aduace51.png?width=768&amp;format=png&amp;auto=webp&amp;s=cd506dc514b2638e906c7358004f6cccf51c17ad)
-## [4][Chet Haase - Modern Android Development](https://www.reddit.com/r/androiddev/comments/i1mkkm/chet_haase_modern_android_development/)
-- url: https://www.youtube.com/watch?v=2b41bzFwLdA
+## [2][How android OS Boots up - An in-depth look](https://www.reddit.com/r/androiddev/comments/i27q6d/how_android_os_boots_up_an_indepth_look/)
+- url: https://ayusch.com/android-internals-the-android-os-boot-process/
 ---
 
-## [5][Professional deformation of developers](https://www.reddit.com/r/androiddev/comments/i1r3lg/professional_deformation_of_developers/)
-- url: https://www.reddit.com/r/androiddev/comments/i1r3lg/professional_deformation_of_developers/
----
-Hi guys! 
-
-I’m doing a research regarding personality traits of some professionals. Developers are usually required to have a very logical and analytical mindset.   
-Do you think the same applies when it comes to personal life, leading to very logical and meaningful conversations, instead of more emotional or small-talk based ones?
-
-Curious to hear your experiences! Thanks!
-## [6][Android Context in Dire Straits?](https://www.reddit.com/r/androiddev/comments/i1nf7z/android_context_in_dire_straits/)
-- url: https://www.reddit.com/r/androiddev/comments/i1nf7z/android_context_in_dire_straits/
----
-I authored this article where we DeepDive into Android Context and why it is such a mess. Part 1. Please check it out at - [https://medium.com/@roy.abhriya/android-context-in-dire-straits-part-1-99883cc98cea](https://medium.com/@roy.abhriya/android-context-in-dire-straits-part-1-99883cc98cea)  
-Any feedback or suggestion is welcome.
-## [7][Multiple google play developer !!!](https://www.reddit.com/r/androiddev/comments/i1s6yw/multiple_google_play_developer/)
-- url: https://www.reddit.com/r/androiddev/comments/i1s6yw/multiple_google_play_developer/
----
-Any tips to avoid closing acc ?
-## [8][Now in Android: 22 - Android 11 Beta 2, AndroidX, articles, videos, training, and more!](https://www.reddit.com/r/androiddev/comments/i1doyn/now_in_android_22_android_11_beta_2_androidx/)
-- url: https://www.reddit.com/r/androiddev/comments/i1doyn/now_in_android_22_android_11_beta_2_androidx/
----
-[https://www.youtube.com/watch?v=2nDURZFvIzI](https://www.youtube.com/watch?v=2nDURZFvIzI)
-## [9][Managing databases in android](https://www.reddit.com/r/androiddev/comments/i1m3m8/managing_databases_in_android/)
-- url: https://github.com/android-promise/database
+## [3][AndroidBites | Snippets | Three Most useful but least known List functions | Union, Intersection, Subtraction in Kotlin](https://www.reddit.com/r/androiddev/comments/i265tr/androidbites_snippets_three_most_useful_but_least/)
+- url: https://chetangupta.net/union-intersect-subs
 ---
 
-## [10][A basic game(?) completely drawn on canvas using Custom Views](https://www.reddit.com/r/androiddev/comments/i1061o/a_basic_game_completely_drawn_on_canvas_using/)
-- url: https://v.redd.it/7gamrvkk14e51
+## [4][Android 10: “tile memory limits exceeded, some content may not draw” Multiple WebViews inside my app](https://www.reddit.com/r/androiddev/comments/i29nsp/android_10_tile_memory_limits_exceeded_some/)
+- url: https://www.reddit.com/r/androiddev/comments/i29nsp/android_10_tile_memory_limits_exceeded_some/
+---
+Since one or two weeks some ads inside my app wont show up and would just flicker! Its random when this happens, and it flickers continuously
+
+I have banner ads and video ads in my app and thats the way i call them:
+
+    holder.wv.setInitialScale(1); holder.wv.setLayerType(View.LAYER_TYPE_SOFTWARE, null); //i call that on banner ads, stackoverflow fix 
+    holder.wv.getSettings().setJavaScriptEnabled(true); 
+    holder.wv.setBackgroundColor(Color.argb(1, 0, 0, 0)); //stackoverflow fix 
+    holder.wv.getSettings().setUseWideViewPort(true); 
+    holder.wv.getSettings().setLoadWithOverviewMode(true); 
+    holder.wv.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY); 
+    holder.wv.setScrollbarFadingEnabled(false); //loadurl etc
+    
+
+I already googled a lot and found out that the hardware acceleration might be problem so I am turning it off for the banner ads but for my video ads i cant because otherwise they wouldnt work
+
+My ads are integrated in a Recyclerview that loads a CardView with the Webview inside. I have 4-5 on each site but there were no problems with the amount of ads, never. There must be kind of issue with the Webview or the Chrome Driver itself? Thats what came up when I searched for my problem
+
+Does anyone encountered this problem?
+
+E/chromium: \[ERROR:tile\_manager.cc(793)\] WARNING: tile memory limits exceeded, some content may not draw
+## [5][SpotiFlyer Update v1.2](https://www.reddit.com/r/androiddev/comments/i2b6zd/spotiflyer_update_v12/)
+- url: https://www.reddit.com/r/androiddev/comments/i2b6zd/spotiflyer_update_v12/
+---
+Provide Suggestions on how to improve my app code base and my Developer Skills.
+
+I am just a Beginner trying to improve by making.
+
+SpotiFlyer is an Android App(Written in Kotlin), which aims to work as:
+
+Downloader For Spotify:Albums, Tracks and Playlists and Even Direct Youtube Videos.
+
+Extension To mute whenever a Spotify Ad Plays.(TODO)
+
+Save your Data ,by not listening your Fav Songs Online again &amp; again(Just Download Them!)
+
+No ADS!
+
+Works straight out of the box and does not require you to generate or mess with your API keys (already included).
+
+
+Release Apk: https://github.com/Shabinder/SpotiFlyer/releases/download/v1.2/SpotiFlyer-v1.2.apk
+
+Github Repo Link: https://github.com/Shabinder/SpotiFlyer/
+
+Contributions are Welcome!
+
+🤩No Limited Quota from this Update 
+🎧
+## [6][Any issues with Android Studio/native NDK development workflows if one updates to MacOS Catalina (which only allows 64-bit code to run)](https://www.reddit.com/r/androiddev/comments/i28t4b/any_issues_with_android_studionative_ndk/)
+- url: https://www.reddit.com/r/androiddev/comments/i28t4b/any_issues_with_android_studionative_ndk/
+---
+MacOS Catalina is the first mac os version that is going to stop supporting 32-bit code - only 64-bit programs/libraries
+will run.
+
+My question is whether any of the android developer (Android Studio/NDK compilation) workflows are going to be affected by this ?
+
+Are there any components there that are still 32-bit and may fail on MacOS Catalina?
+## [7][Jetpack compose for desktop](https://www.reddit.com/r/androiddev/comments/i1t0i8/jetpack_compose_for_desktop/)
+- url: https://zeromod.in/posts/jetpack-compose-desktop/
 ---
 
-## [11][How to solve Google log in problem in my app?](https://www.reddit.com/r/androiddev/comments/i1pq44/how_to_solve_google_log_in_problem_in_my_app/)
-- url: https://www.reddit.com/r/androiddev/comments/i1pq44/how_to_solve_google_log_in_problem_in_my_app/
+## [8][Don't use email magic link for auth...](https://www.reddit.com/r/androiddev/comments/i283p9/dont_use_email_magic_link_for_auth/)
+- url: https://www.reddit.com/r/androiddev/comments/i283p9/dont_use_email_magic_link_for_auth/
 ---
-Hey there!
+When we considered user auth methods, we first looked at using only using "Sign in with Google/Facebook". However, App Store guidelines now require that any "app that use a social login service ... must also offer Sign in With Apple as an equivalent option" -- which means you won't be given the true email of most users (given [Hide My Email](https://support.apple.com/en-us/HT210425)) ... **so if you're developing X-Platform, simply using Google &amp; Facebook is no longer viable.**
 
-Please give me perfect sub-reddit if this is not suitable my question below!
+Given we wanted to allow users to find other users on the app, we needed a unique user identifier per user, giving us 4 options:
 
-I implemented Google authentication in my android app. I use Firebase as server and function. The problem is when I run app from Android Studio, Google authentication works well. But when I upload it to play store , Google authentication fail. It shows 'Authentication failed'.
+1. **Email + Password** ... requires forgot password and users to prove email ownership
+2. **Support all third-party (Apple, Google, Facebook)** ... and add a new unique identifier to allow friends to find each other, given email will not be sufficient
+3. **Phone number magic link** ... we were relying on Expo (previously did not support phone-number auth), and we also felt emails would be a good/cheap tool for communication
+4. **Email magic link**
 
-Stuck here. Can anyone help me?
-## [12][My app gets a lot of 1 star reviews from non-English users because they don't understand what it is. Any suggestions on how to avoid this?](https://www.reddit.com/r/androiddev/comments/i15zjt/my_app_gets_a_lot_of_1_star_reviews_from/)
-- url: https://www.reddit.com/r/androiddev/comments/i15zjt/my_app_gets_a_lot_of_1_star_reviews_from/
+Email magic link felt... perfect, but it was pretty much a disaster, and you should be pretty wary of doing it without implementing safeguards. I imagine email + login code is a better option.
+
+Here are the various safeguards we tried with metrics and graphs: [https://snaphabit.app/blog/password-less-login/](https://snaphabit.app/blog/password-less-login/). Happy to answer any additional questions!
+## [9][Rise widgets?](https://www.reddit.com/r/androiddev/comments/i2avio/rise_widgets/)
+- url: https://www.reddit.com/r/androiddev/comments/i2avio/rise_widgets/
 ---
-I've been maintaining a moderately successful app over the past few years that most users love. 99% of my English users rate it at 5 stars and say they love it.
+I love my widgets but man they can take up a lot of screen space.. I try to resize the widget by long pressing and scale down but it just goes back to normal size.. is there any way of doing this?
+## [10][ViewSwapper: a new library for single activity architecture fans](https://www.reddit.com/r/androiddev/comments/i26z7v/viewswapper_a_new_library_for_single_activity/)
+- url: https://www.reddit.com/r/androiddev/comments/i26z7v/viewswapper_a_new_library_for_single_activity/
+---
+Self plugging here for a recent library I made:
 
-But then I have a lot of non-English (mostly Brazilian) users that download the app not fully understanding what it is. So they end up leaving a 1 star review with comments like "worthless" or "garbage." Over time this has gradually lowered my overall rating.
+ViewSwapper is a simple view container (think like FrameLayout) that supports transitions (API level 19+) and can be used to swap out screens without having to bother with fragments: [https://github.com/grant-park/ViewSwapper](https://github.com/grant-park/ViewSwapper)
 
-I don't want to limit what countries I make the app available to as I have a lot of non-English users that do understand the app and love it. Plus non-America sales are about 33% of my income.
+it's meant to be a convenient basis for UI in any MVU/MVI apps, but also great for anyone who needs some flexible and lightweight view replacement
 
-I'm also hesitant to add a disclaimer in Spanish to my store page because of the impact it may on on SEO.
+would love to start some discussion and answer any questions regarding this or single activity
+## [11][As senior Android dev, how hard/time consuming is it to learn Spring/Hibernate for BE development?](https://www.reddit.com/r/androiddev/comments/i1w45i/as_senior_android_dev_how_hardtime_consuming_is/)
+- url: https://www.reddit.com/r/androiddev/comments/i1w45i/as_senior_android_dev_how_hardtime_consuming_is/
+---
+Just something that's been on my mind for some time. I'm sure I'm not the first one.
 
-Can anybody suggest how I might avoid this problem? Thanks for any ideas!
+I've been doing Android development for nearly 5 years now, currently working as platform lead. I actually still like the platform (although it's not perfect) and write code regularly but was thinking about broadening my skill set.
 
-&amp;#x200B;
-
-edit:
-
-Thanks for all the suggestions everybody. I used Google Translate to create a couple localized versions of my store page which includes a giant "YOU CANNOT PLAY GAMES WITH THIS APP". heh
-
-Hopefully that will help people realize what the app is before downloading it!
+Anybody here who's gone through this? And if you switched to a BE job, do you prefer it now?

@@ -5,43 +5,43 @@
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [2][How I made my CV, based on Age of Empires game with Javascript](https://www.reddit.com/r/javascript/comments/i1dugk/how_i_made_my_cv_based_on_age_of_empires_game/)
-- url: https://dev.to/vivirenremoto/how-i-made-my-cv-based-on-age-of-empires-game-1ade
+## [2][Simplify your JavaScript – Use .map(), .reduce(), and .filter()](https://www.reddit.com/r/javascript/comments/i268js/simplify_your_javascript_use_map_reduce_and_filter/)
+- url: https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d
 ---
 
-## [3][Bringing modern JavaScript to libraries](https://www.reddit.com/r/javascript/comments/i1merp/bringing_modern_javascript_to_libraries/)
-- url: https://dev.to/garylchew/bringing-modern-javascript-to-libraries-432c
+## [3][Practical Functional Programming in JavaScript - Error Handling](https://www.reddit.com/r/javascript/comments/i1wzo7/practical_functional_programming_in_javascript/)
+- url: https://dev.to/richytong/practical-functional-programming-in-javascript-error-handling-8g5
 ---
 
-## [4][3 most common mistakes when using Promises in JavaScript](https://www.reddit.com/r/javascript/comments/i1p2a7/3_most_common_mistakes_when_using_promises_in/)
+## [4][Gamedev Patterns and Algorithms with TypeScript. Game Loop 2/2](https://www.reddit.com/r/javascript/comments/i1vt9l/gamedev_patterns_and_algorithms_with_typescript/)
+- url: https://medium.com/@gregsolo/gamedev-patterns-and-algorithms-in-action-with-typescript-game-loop-2-2-c0d57a8e5ec2?sk=f224d51720f8bd520e2c169cee6a8793
+---
+
+## [5][Next.js Server-Side Route Authentication Using Cookies](https://www.reddit.com/r/javascript/comments/i1zwek/nextjs_serverside_route_authentication_using/)
+- url: https://isaacscarrott.co.uk/blog/nextjs-route-auth
+---
+
+## [6][Learn How to Build a Live Real-Time International Space Station Tracker using Javascript](https://www.reddit.com/r/javascript/comments/i29nzs/learn_how_to_build_a_live_realtime_international/)
+- url: https://thecodingpie.com/post/build-a-real-time-iss-tracker-using-javascript/
+---
+
+## [7][Learn to think like a programmer](https://www.reddit.com/r/javascript/comments/i2az2i/learn_to_think_like_a_programmer/)
+- url: https://mucotresor.com/blog/learn-to-think-like-a-programmer
+---
+
+## [8][3 most common mistakes when using Promises in JavaScript](https://www.reddit.com/r/javascript/comments/i1p2a7/3_most_common_mistakes_when_using_promises_in/)
 - url: https://dev.to/mpodlasin/3-most-common-mistakes-when-using-promises-in-javascript-oab
 ---
 
-## [5][I've created a React hook to grab a color palette from images. It also renders a skeleton color while your original image still loading. Feedback appreciated](https://www.reddit.com/r/javascript/comments/i1cr0p/ive_created_a_react_hook_to_grab_a_color_palette/)
-- url: https://github.com/jeffersonlicet/use-image-color?ref=javascript
+## [9][Different versions of your site can be running at the same time](https://www.reddit.com/r/javascript/comments/i2bzim/different_versions_of_your_site_can_be_running_at/)
+- url: https://jakearchibald.com/2020/multiple-versions-same-time/
 ---
 
-## [6][Records &amp; Tuples for React](https://www.reddit.com/r/javascript/comments/i1pkt9/records_tuples_for_react/)
-- url: https://sebastienlorber.com/records-and-tuples-for-react
+## [10][JavaScript Date](https://www.reddit.com/r/javascript/comments/i2btn2/javascript_date/)
+- url: https://www.natano.net/blog/2020-08-01-javascript-date/
 ---
 
-## [7][How to Build and Deploy Serverless Functions to Netlify](https://www.reddit.com/r/javascript/comments/i173wj/how_to_build_and_deploy_serverless_functions_to/)
-- url: https://hellotunmbi.hashnode.dev/how-to-build-and-deploy-serverless-functions-to-netlify-ckda8hxvz00qqnns13n1h0t0f
----
-
-## [8][[AskJS] Am I the only who still like JavaScript?](https://www.reddit.com/r/javascript/comments/i1rqlg/askjs_am_i_the_only_who_still_like_javascript/)
-- url: https://www.reddit.com/r/javascript/comments/i1rqlg/askjs_am_i_the_only_who_still_like_javascript/
----
-It seems lots of devs prefer TS over JavaScript. But I still like JavaScript as it is, it is not perfect but nice. If I need types I would go with Flow or Hegel.  I will stay with JavaScript until Wasm takes over, so I could write front-ends using Rust ([Yew](https://github.com/yewstack/yew), [Seed](https://github.com/seed-rs/seed)).
-## [9][My first Frontity theme–easily combine a WordPress back end with a React front end](https://www.reddit.com/r/javascript/comments/i1rigc/my_first_frontity_themeeasily_combine_a_wordpress/)
-- url: /r/reactjs/comments/i1rguv/my_first_frontity_themea_restaurants_website_with/
----
-
-## [10][BigInt to Uint8Array](https://www.reddit.com/r/javascript/comments/i1qpq7/bigint_to_uint8array/)
-- url: https://jackieli.dev/posts/bigint-to-uint8array/
----
-
-## [11][bigint to bytes in javascript, Java &amp; Go](https://www.reddit.com/r/javascript/comments/i1qpco/bigint_to_bytes_in_javascript_java_go/)
-- url: https://jackieli.dev/posts/bigint-tobytes/
+## [11][Question about Reddit API](https://www.reddit.com/r/javascript/comments/i2atoe/question_about_reddit_api/)
+- url: /r/redditdev/comments/i29vj8/post_http_api_text_to_community/
 ---
 

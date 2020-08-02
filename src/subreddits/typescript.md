@@ -22,11 +22,78 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][a tsconfig guide that actually makes sense](https://www.reddit.com/r/typescript/comments/i1m8lg/a_tsconfig_guide_that_actually_makes_sense/)
-- url: https://www.stackchief.com/blog/tsconfig%20%7C%20the%20missing%20docs
+## [2][Is there a smarter way to filter out duplicates?](https://www.reddit.com/r/typescript/comments/i29ou1/is_there_a_smarter_way_to_filter_out_duplicates/)
+- url: https://www.reddit.com/r/typescript/comments/i29ou1/is_there_a_smarter_way_to_filter_out_duplicates/
+---
+I want to remove objects from an array if the `playerId` is already contained in that array.
+
+Is there a smarter way to do this in TypeScript than my current implementation?
+
+    private filterDuplicateLeaderBoardLines(result: Result): Result {
+      const leaderBoardLines: LeaderBoardLineResult[] = [];
+      const playerIds = new Set&lt;string&gt;();
+    
+      result.sessionResult.leaderBoardLines.forEach((leaderBoardLine: LeaderBoardLineResult) =&gt; {
+        const playerId = leaderBoardLine.currentDriver.playerId;
+        playerIds.add(playerId);
+      });
+    
+      playerIds.forEach((playerId) =&gt; {
+        leaderBoardLines.push(
+          result.sessionResult.leaderBoardLines.find(
+            (leaderBoardLine) =&gt; leaderBoardLine.currentDriver.playerId === playerId
+          )
+        );
+      });
+    
+      result.sessionResult.leaderBoardLines = leaderBoardLines;
+    
+      return result;
+    }
+## [3][Gamedev Patterns and Algorithms in Action with TypeScript. Game Loop 2/2](https://www.reddit.com/r/typescript/comments/i20o2k/gamedev_patterns_and_algorithms_in_action_with/)
+- url: https://medium.com/@gregsolo/gamedev-patterns-and-algorithms-in-action-with-typescript-game-loop-2-2-c0d57a8e5ec2
 ---
 
-## [3][How do you generate, organize and maintain your seeds/fixtures data for integration or e2e testing](https://www.reddit.com/r/typescript/comments/i1nmsk/how_do_you_generate_organize_and_maintain_your/)
+## [4][How to infer type of Array.prototype.map.call()?](https://www.reddit.com/r/typescript/comments/i24akt/how_to_infer_type_of_arrayprototypemapcall/)
+- url: https://www.reddit.com/r/typescript/comments/i24akt/how_to_infer_type_of_arrayprototypemapcall/
+---
+It appears that TypeScript does not infer the return type of `Array.prototype.map.call()` -- it believes that it returns `unknown[]`.
+
+```
+let input: string[] = ["1", "2", "3"];
+// OK
+let result1: number[] = input.map(str =&gt; Number(str));
+// error TS2322: Type 'unknown[]' is not assignable to type 'number[]'
+let result2: number[] = Array.prototype.map.call(input, str =&gt; Number(str));
+```
+
+What can I do to make TypeScript correctly infer the type of `result2`? I'd rather not use type assertions to explicitly override the return type of `Array.prototype.map.call`.
+
+(Running TypeScript 3.9.7, btw.)
+## [5][Why intellisense is not working here ?](https://www.reddit.com/r/typescript/comments/i1tq7w/why_intellisense_is_not_working_here/)
+- url: https://www.reddit.com/r/typescript/comments/i1tq7w/why_intellisense_is_not_working_here/
+---
+    const oldValue = [
+    	{ a: 1 },
+    	{
+    		b: {
+    			c: 2,
+    			d: [3, 4],
+    		},
+    		f: 5,
+    	},
+    	6,
+    	[7, 8, 9],
+    ];
+    
+    oldValue[0]. //no intellisense
+## [6][Git ignore js build files?](https://www.reddit.com/r/typescript/comments/i1yhu4/git_ignore_js_build_files/)
+- url: https://www.reddit.com/r/typescript/comments/i1yhu4/git_ignore_js_build_files/
+---
+Pretty new to this all just wondering if it's a good idea to gitignore the build folder all the JS gets rendered into?
+
+Looked around on stack overflow and not a lot of guidance there. Thanks!
+## [7][How do you generate, organize and maintain your seeds/fixtures data for integration or e2e testing](https://www.reddit.com/r/typescript/comments/i1nmsk/how_do_you_generate_organize_and_maintain_your/)
 - url: https://www.reddit.com/r/typescript/comments/i1nmsk/how_do_you_generate_organize_and_maintain_your/
 ---
 Hello all,
@@ -42,7 +109,7 @@ I just want to know if there are better alternatives than manually writing your 
 Is reusing other parts of your own API to generate data in other tests a bad thing? Like imagine testing the case "As a user I can only see my own books", do you insert a user and books in the database directly before running the test or do you use your own API operations like "user register", "user add books" to populate the database?
 
 Do you always start from an empty database or do you have a consistent set of data that you reset between tests? (The consistent set seems easier from a test preparation perspective but is also less explicit as you can't see the whole picture in the test case).
-## [4][Problem exporting typings from a package: module is imported from 'package-name/build'](https://www.reddit.com/r/typescript/comments/i1ozwt/problem_exporting_typings_from_a_package_module/)
+## [8][Problem exporting typings from a package: module is imported from 'package-name/build'](https://www.reddit.com/r/typescript/comments/i1ozwt/problem_exporting_typings_from_a_package_module/)
 - url: https://www.reddit.com/r/typescript/comments/i1ozwt/problem_exporting_typings_from_a_package_module/
 ---
 Hi, I'm having trouble configuring the package.json and tsconfig.json for a package with the following structure:
@@ -120,7 +187,7 @@ package.json:
 
 
 Edit: added link to the test repo
-## [5][What's the difference?](https://www.reddit.com/r/typescript/comments/i1djdm/whats_the_difference/)
+## [9][What's the difference?](https://www.reddit.com/r/typescript/comments/i1djdm/whats_the_difference/)
 - url: https://www.reddit.com/r/typescript/comments/i1djdm/whats_the_difference/
 ---
 Hey guys, javascript dev here. I've been looking through the Typescript documentation trying to understand why is everybody in love with this programming language.
@@ -130,7 +197,11 @@ Apart from the types in javascript and the abstract classes, what are the differ
 &amp;#x200B;
 
 Thank you
-## [6][How do I reference an object property by string?](https://www.reddit.com/r/typescript/comments/i17xcj/how_do_i_reference_an_object_property_by_string/)
+## [10][I didn't get "decorators" until reading THIS...](https://www.reddit.com/r/typescript/comments/i1uiq0/i_didnt_get_decorators_until_reading_this/)
+- url: https://www.stackchief.com/blog/TypeScript%20Decorators%20%7C%20Examples%20%7C%20Use%20Cases%20
+---
+
+## [11][How do I reference an object property by string?](https://www.reddit.com/r/typescript/comments/i17xcj/how_do_i_reference_an_object_property_by_string/)
 - url: https://www.reddit.com/r/typescript/comments/i17xcj/how_do_i_reference_an_object_property_by_string/
 ---
 I've been stuck on this for some time trying to simplify my code.
@@ -176,48 +247,3 @@ No index signature with a parameter of type 'string' was found on type...
 
 I really don't understand what I'm doing wrong, in both examples the value and value2 constants are strings but the former just errors out.
 Sorry for the formatting, reddit has horrible code formatting.
-## [7][How to resolve imports in Typescript Mocha Testing?](https://www.reddit.com/r/typescript/comments/i17kgp/how_to_resolve_imports_in_typescript_mocha_testing/)
-- url: https://www.reddit.com/r/typescript/comments/i17kgp/how_to_resolve_imports_in_typescript_mocha_testing/
----
-I'm having an issue importing various classes for mocha testing, for my Typescript project. I have included the following stackoverflow post for reference:
-
-[https://stackoverflow.com/questions/63192719/how-to-resolve-class-is-not-a-constructor-error-in-typescript-mocha-testing](https://stackoverflow.com/questions/63192719/how-to-resolve-class-is-not-a-constructor-error-in-typescript-mocha-testing)
-
-npm start works just fine but npm test is throwing an error where \[Class\] is not a constructor for most classes in my project.
-## [8][Bueno - Modern, composable validation schemas tailored for TypeScript.](https://www.reddit.com/r/typescript/comments/i0oqw9/bueno_modern_composable_validation_schemas/)
-- url: https://github.com/philipnilsson/bueno#quickstart
----
-
-## [9][Building Angular Projects in Visual Studio!?](https://www.reddit.com/r/typescript/comments/i0ptcs/building_angular_projects_in_visual_studio/)
-- url: https://www.reddit.com/r/typescript/comments/i0ptcs/building_angular_projects_in_visual_studio/
----
-Hi! Im Gabby a Program Manager at Microsoft and I'm here to present my teams latest work:
-
-The Angular Language Service. Now available in Visual Studio!
-
-Read more here: [https://www.nowayshecodes.com/blog-tech/angular-language-service-for-visual-studio](https://www.nowayshecodes.com/blog-tech/angular-language-service-for-visual-studio) !!!
-
-Reply if you have any questions :)
-
-&amp;#x200B;
-## [10][Dependency Injection: inversifyJS vs tsyringe](https://www.reddit.com/r/typescript/comments/i0jdmn/dependency_injection_inversifyjs_vs_tsyringe/)
-- url: https://www.reddit.com/r/typescript/comments/i0jdmn/dependency_injection_inversifyjs_vs_tsyringe/
----
- I am new to DI.
-
-I could not find a good comparison of the two frameworks. On the first look tsyringe looks more elegant to me. It seems to auto register classes. In inversifyJS you seem to have to bind every class to the container first before it couls be injected? On the other hanf inversifyJS is much more popular (but is also older). Why is this?
-
-Any PROs &amp; CONs?
-
-Thank you!
-## [11][Running ts-node vs compiled JS files](https://www.reddit.com/r/typescript/comments/i07561/running_tsnode_vs_compiled_js_files/)
-- url: https://www.reddit.com/r/typescript/comments/i07561/running_tsnode_vs_compiled_js_files/
----
-New TS user here and while setting up a dev workflow, I am confused between the two for local development:  
-
-1. Use `ts-node` to watch for changes and run `*.ts` files without transpiling to JS.
-2. Transpile to JS first and then run the `*.js` files.
-
-Option 1 looks more natural to me but I wouldn't know for sure if my transpiled JS files work as expected. Option 2 would make sure my transpiled JS files work as expected but that would require transpiling on EVERY file change. This question was asked [last year](https://www.reddit.com/r/typescript/comments/9o1zzp/tsnode_vs_compiling_for_development/) as well but I couldn't find a satisfactory answer.
-
-Thanks!

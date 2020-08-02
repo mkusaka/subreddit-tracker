@@ -27,7 +27,80 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Rails API mode with native app: How to handle social provider JWT authentication.](https://www.reddit.com/r/rails/comments/i1ofh8/rails_api_mode_with_native_app_how_to_handle/)
+## [3][[Help]Rounding problems when trying to calculate taxes on order](https://www.reddit.com/r/rails/comments/i1uhyu/helprounding_problems_when_trying_to_calculate/)
+- url: https://www.reddit.com/r/rails/comments/i1uhyu/helprounding_problems_when_trying_to_calculate/
+---
+Hi, I'm trying to calculate the total cost for a given set of fixed orders inclusive of tax(which should be rounded up to the nearest 0.05. Despite trying both .round and .ceil, I'm still slightly off the target values for each of them. I was wondering if anyone could identify what I am missing in my orders controller?
+
+    module Api
+      class V1::OrdersController &lt; ActionController::API	
+        def calculate
+    			calculated = {}
+    			calculated["sales_tax"] = 0
+    			params["item"].values.each do |item|
+    				calculated["#{item["quantity"]} #{item["name"]}"] = item["quantity"].to_f * item["price"].to_f
+    		
+    				unless ["book", "chocolate bar", "imported box of chocolates", "packet of headache pills"].include? item["name"].strip
+    					calculated["#{item["quantity"]} #{item["name"]}"] = ('%.2f' %(calculated["#{item["quantity"]} #{item["name"]}"]*1.10)).to_f
+    					calculated["sales_tax"] += item["quantity"].to_f * item["price"].to_f * 0.10
+    				end
+    
+    				if item["name"].split(" ").include? "imported"
+    					calculated["#{item["quantity"]} #{item["name"]}"] = ('%.2f' % (calculated["#{item["quantity"]} #{item["name"]}"]*1.05)).to_f
+    					calculated["sales_tax"] += item["quantity"].to_f * item["price"].to_f * 0.05
+    				end
+    			end
+    			
+    			calculated["total"] =('%.2f' % (calculated.values.sum - calculated["sales_tax"])).to_f
+    			calculated["sales_tax"] = ('%.2f' % calculated["sales_tax"]).to_f
+    			render json: calculated, status: 200
+    		end
+    	end
+    end
+## [4][How do I access "current_user" in my RegistrationsController?](https://www.reddit.com/r/rails/comments/i1x41i/how_do_i_access_current_user_in_my/)
+- url: https://www.reddit.com/r/rails/comments/i1x41i/how_do_i_access_current_user_in_my/
+---
+Hey,  
+
+
+I'm trying to access current\_user" in my RegistrationsController, but it's returning nil.  
+
+
+The only answer I could find online was [this one](https://stackoverflow.com/questions/11369941/rails-devise-current-user-is-nil-when-overriding-registrationscontroller) suggesting to add the line:  
+
+
+    include Devise::Controllers::Helpers
+
+But this didn't work for me.  
+
+
+Any ideas?  
+
+
+Thanks.
+## [5][Can't verify CSRF token authenticity Error](https://www.reddit.com/r/rails/comments/i1sd6c/cant_verify_csrf_token_authenticity_error/)
+- url: https://www.reddit.com/r/rails/comments/i1sd6c/cant_verify_csrf_token_authenticity_error/
+---
+Hello,  
+
+
+I'm building a rails API and I'm having the problem of getting the following error message:  
+
+
+    Can't verify CSRF token authenticity.
+
+  
+This is happening on my UsersController when I try to UPDATE a user. Even though I have the following lines in the controller (I've also tried them in ApplicationController).  
+
+
+    skip_before_action :verify_authenticity_token
+    protect_from_forgery with: :null_session
+
+Having these lines has resolved the issue in my other controllers, but not in the users controller. Can anyone help me with this?  
+
+
+Thanks.
+## [6][Rails API mode with native app: How to handle social provider JWT authentication.](https://www.reddit.com/r/rails/comments/i1ofh8/rails_api_mode_with_native_app_how_to_handle/)
 - url: https://www.reddit.com/r/rails/comments/i1ofh8/rails_api_mode_with_native_app_how_to_handle/
 ---
 Hi guys
@@ -42,15 +115,15 @@ But do let me know what you think and where my ideas may be wrong!
 
 
 Regards
-## [4][Auto generated migrations like in Django?](https://www.reddit.com/r/rails/comments/i1m8yy/auto_generated_migrations_like_in_django/)
+## [7][Auto generated migrations like in Django?](https://www.reddit.com/r/rails/comments/i1m8yy/auto_generated_migrations_like_in_django/)
 - url: https://www.reddit.com/r/rails/comments/i1m8yy/auto_generated_migrations_like_in_django/
 ---
 With Django, I just modify models.py and then maybe rename a field and then the migration is generated. I’m wondering if there is a way to do this with Rails migrations. I’ve heard of Squasher but it seems unmaintained.
-## [5][Most popular database for Rails?](https://www.reddit.com/r/rails/comments/i1dx5k/most_popular_database_for_rails/)
+## [8][Most popular database for Rails?](https://www.reddit.com/r/rails/comments/i1dx5k/most_popular_database_for_rails/)
 - url: https://www.reddit.com/r/rails/comments/i1dx5k/most_popular_database_for_rails/
 ---
 I would assume PostgreSQL because I know many Rails developers like to use Heroku which seems to favor PostgreSQL in terms of pricing.
-## [6][From Internal to External CSS](https://www.reddit.com/r/rails/comments/i1nt6b/from_internal_to_external_css/)
+## [9][From Internal to External CSS](https://www.reddit.com/r/rails/comments/i1nt6b/from_internal_to_external_css/)
 - url: https://www.reddit.com/r/rails/comments/i1nt6b/from_internal_to_external_css/
 ---
 On my website I have all the css files in the folder \\app\\assets\\stylesheets (in .scss, obviously).
@@ -67,7 +140,7 @@ And in the head I have this:
 In this way, watching the source of my online website, I see that the CSS is showed as "internal".
 
 How to turn it as external? I know that this is the best practice.
-## [7][Creating a new route to a separate index](https://www.reddit.com/r/rails/comments/i1949h/creating_a_new_route_to_a_separate_index/)
+## [10][Creating a new route to a separate index](https://www.reddit.com/r/rails/comments/i1949h/creating_a_new_route_to_a_separate_index/)
 - url: https://www.reddit.com/r/rails/comments/i1949h/creating_a_new_route_to_a_separate_index/
 ---
 i've read and re-read the guides and I don't see how to distinguish between the different get requests.
@@ -89,7 +162,7 @@ I need it to route as an index style get.
 &amp;#x200B;
 
 I'm sorry, i realize this might not be clear, but i don't know how else to explain it.
-## [8][ActiveStorage and local directory with dockerized app](https://www.reddit.com/r/rails/comments/i14po4/activestorage_and_local_directory_with_dockerized/)
+## [11][ActiveStorage and local directory with dockerized app](https://www.reddit.com/r/rails/comments/i14po4/activestorage_and_local_directory_with_dockerized/)
 - url: https://www.reddit.com/r/rails/comments/i14po4/activestorage_and_local_directory_with_dockerized/
 ---
 I have a `docker-compose.yml` with a Rails/Postgres app which uses **ActiveStorage** and local storage setup. 
@@ -99,7 +172,7 @@ I have a `docker-compose.yml` with a Rails/Postgres app which uses **ActiveStora
  root: &lt;%= Rails.root.join("storage") %&gt;
 
 I want all file uploads to be kept safely in the host's disk. What is the safest way of keeping those files intact while pulling/rebuilding the docker images ?
-## [9]["All-to-all" association](https://www.reddit.com/r/rails/comments/i133s9/alltoall_association/)
+## [12]["All-to-all" association](https://www.reddit.com/r/rails/comments/i133s9/alltoall_association/)
 - url: https://www.reddit.com/r/rails/comments/i133s9/alltoall_association/
 ---
 Obviously this isn't the name for what I want to do, but I can't think of any other way to describe it.  I want to make an "all to all" association between two models.
@@ -141,21 +214,3 @@ Because the Customer now has a WarehouseCost record explicitly created for each 
 So, even though this works, it feels like I'm going about it the wrong way.  For starters, it doesn't work on new records.  Also, it feels kludgy to add the associated records before drawing the edit form, as surely I could somehow generate the correct form for the associated records without them already being there?
 
 Any suggestions?
-## [10][Rails caching in production](https://www.reddit.com/r/rails/comments/i0tv17/rails_caching_in_production/)
-- url: https://www.reddit.com/r/rails/comments/i0tv17/rails_caching_in_production/
----
-Could someone explain me how should I configure a rails app in production if I'm fragment caching some views, how I can configure the memcache server In \`Heroku\`, is there a step by step documentation that can help me setting it up?
-## [11][Working with APIs and data in rails.](https://www.reddit.com/r/rails/comments/i0vv42/working_with_apis_and_data_in_rails/)
-- url: https://www.reddit.com/r/rails/comments/i0vv42/working_with_apis_and_data_in_rails/
----
-So, I'm trying to set up an app that has a feature for making payments with credit (or debit) cards. I have been looking for general themed tutorials that are type agnostic. Many tutorials use Stripe or Paypal as examples but none really teaches the basics - they assume a lot of knowledge. Most also concentrate on building an API app in rails. My needs are different - I want to consume an API
-
-I found a book by Noel Rappin "Take My Money" but it is extremely and needlessly complex (note to Rails authors : if you write a book or tutorial, don't use slim or haml in the views and write so even inexperienced newcomers can follow along ...)
-
-Can anyone direct me to a good tutorial on working with apis, data and payments in rails ?
-## [12][Shopify on Rails is doing well](https://www.reddit.com/r/rails/comments/i0f8dx/shopify_on_rails_is_doing_well/)
-- url: https://www.reddit.com/r/rails/comments/i0f8dx/shopify_on_rails_is_doing_well/
----
-I think this is the story that we want Rails to be mentioned in, but unfortunately no one cares much about the stack. Nonetheless, it’s a Rails win to me. They’re doing well as a business, and they’re using Rails.
-
-https://www.wsj.com/articles/shopifys-revenue-nearly-doubles-as-covid-19-pushes-shopping-online-11596057094

@@ -23,124 +23,57 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/07/28/this-week-in-rust-349/
 ---
 
-## [3][Programming language popularity: Python overtakes Java – as Rust reaches top 20 | ZDNet](https://www.reddit.com/r/rust/comments/i241sd/programming_language_popularity_python_overtakes/)
-- url: https://www.zdnet.com/article/programming-language-popularity-python-overtakes-java-as-rust-reaches-top-20/
+## [3][The State of Rust 2 with Alex Crichton](https://www.reddit.com/r/rust/comments/i2qij2/the_state_of_rust_2_with_alex_crichton/)
+- url: https://www.reddit.com/r/rust/comments/i2qij2/the_state_of_rust_2_with_alex_crichton/
+---
+Hey, folks. I just dropped the newest episode of my Software Engineering podcast, The Virtual World. Some of you may have caught the most recent episode where I interviewed Steve Klabnik. This episode is a similar format featuring Alex Crichton from Mozilla. He's been working directly on Rust and the Web Assembly tooling for almost 6 years.
+
+Interview with Alex:
+
+[https://anchor.fm/the-virtual-world/episodes/Ep-7--The-State-of-Rust-2-with-Alex-Crichton-ehjpsq](https://anchor.fm/the-virtual-world/episodes/Ep-7--The-State-of-Rust-2-with-Alex-Crichton-ehjpsq)
+
+Interview with Steve:
+
+[https://anchor.fm/the-virtual-world/episodes/Ep-6--The-State-of-Rust-with-Steve-Klabnik-ehf8mk](https://anchor.fm/the-virtual-world/episodes/Ep-6--The-State-of-Rust-with-Steve-Klabnik-ehf8mk)
+
+I'm actively looking for new guests for the podcast. You don't have to be a domain expert to be a good conversationalist! I'll be releasing the first episode in a new series called The Watercooler sometime this week. If you are charismatic and interested in chatting with me, please don't hesitate to reach out.
+
+Edit: I just realized there's a bit of a mixing error towards the beginning. My monitoring was turned off for automation so I totally missed it. I'm fixing this and should be able to replace the audio without any issues. Wish me luck.
+## [4][rust-analyzer changelog #36](https://www.reddit.com/r/rust/comments/i2wic3/rustanalyzer_changelog_36/)
+- url: https://rust-analyzer.github.io/thisweek/2020/08/03/changelog-36.html
 ---
 
-## [4][Blue Team Rust: What is "Memory Safety", really?](https://www.reddit.com/r/rust/comments/i268wh/blue_team_rust_what_is_memory_safety_really/)
-- url: https://tiemoko.com/blog/blue-team-rust/
+## [5][Learning Rust: Mindsets and Expectations](https://www.reddit.com/r/rust/comments/i2wnd9/learning_rust_mindsets_and_expectations/)
+- url: https://ferrous-systems.com/blog/mindsets-and-expectations/
 ---
 
-## [5][gurk: Signal Messenger client for terminal](https://www.reddit.com/r/rust/comments/i2avtq/gurk_signal_messenger_client_for_terminal/)
-- url: https://github.com/boxdot/gurk-rs
----
-
-## [6][An efficient bit pattern matcher parsed at compiletime](https://www.reddit.com/r/rust/comments/i1z6nt/an_efficient_bit_pattern_matcher_parsed_at/)
-- url: https://play.rust-lang.org/?version=beta&amp;mode=release&amp;edition=2018&amp;gist=2ff849086024a0a01b958060c3434570
----
-
-## [7][A team for Rustacean Live Coders on Twitch - Join us if you stream coding in Rust.](https://www.reddit.com/r/rust/comments/i245g4/a_team_for_rustacean_live_coders_on_twitch_join/)
-- url: https://twitch.tv/team/rustaceans
----
-
-## [8][Beginner's guide to Error Handling in Rust](https://www.reddit.com/r/rust/comments/i2bv2m/beginners_guide_to_error_handling_in_rust/)
+## [6][Beginner's guide to Error Handling in Rust](https://www.reddit.com/r/rust/comments/i2bv2m/beginners_guide_to_error_handling_in_rust/)
 - url: http://www.sheshbabu.com/posts/rust-error-handling/
 ---
 
-## [9][Weighty - A simple library and utility for reading from USB HID scales (for the two people out there who have those).](https://www.reddit.com/r/rust/comments/i23nxu/weighty_a_simple_library_and_utility_for_reading/)
-- url: https://crates.io/crates/weighty
+## [7][gurk: Signal Messenger client for terminal](https://www.reddit.com/r/rust/comments/i2avtq/gurk_signal_messenger_client_for_terminal/)
+- url: https://github.com/boxdot/gurk-rs
 ---
 
-## [10][How to build a PinePhone game using Rust, Gtk, &amp; Cairo](https://www.reddit.com/r/rust/comments/i23m16/how_to_build_a_pinephone_game_using_rust_gtk_cairo/)
-- url: https://github.com/richardanaya/pinephone-cairo-game-starter
+## [8][Writing and publishing a Python module in Rust](https://www.reddit.com/r/rust/comments/i2ctke/writing_and_publishing_a_python_module_in_rust/)
+- url: https://blog.yossarian.net/2020/08/02/Writing-and-publishing-a-python-module-in-rust
 ---
 
-## [11][Webference Rusty Days 2020: all recorded talks](https://www.reddit.com/r/rust/comments/i1satq/webference_rusty_days_2020_all_recorded_talks/)
-- url: https://www.youtube.com/playlist?list=PLf3u8NhoEikhTC5radGrmmqdkOK-xMDoZ
+## [9][swc v1.2.11: Almost all typescript-related bugs are fixed](https://www.reddit.com/r/rust/comments/i2d8bv/swc_v1211_almost_all_typescriptrelated_bugs_are/)
+- url: https://www.reddit.com/r/rust/comments/i2d8bv/swc_v1211_almost_all_typescriptrelated_bugs_are/
+---
+https://swc-project.github.io/blog/2020/08/02/swc-1.2.11
+
+I decided to use typescript files from the official typesciprt repository for testing, and I found many bugs.
+## [10][cargo proc-macro - Kickstart a proc-macro project with a straight-forward template](https://www.reddit.com/r/rust/comments/i2k2d9/cargo_procmacro_kickstart_a_procmacro_project/)
+- url: https://github.com/bbqsrc/cargo-proc-macro
 ---
 
-## [12][Did I ran into the "First class type" issue?](https://www.reddit.com/r/rust/comments/i2bu77/did_i_ran_into_the_first_class_type_issue/)
-- url: https://www.reddit.com/r/rust/comments/i2bu77/did_i_ran_into_the_first_class_type_issue/
+## [11][Anachro-PC - The Anachronistic Personal Computer](https://www.reddit.com/r/rust/comments/i2tx6l/anachropc_the_anachronistic_personal_computer/)
+- url: https://jamesmunns.com/blog/anachro-pc-001/
 ---
-Hello,
 
-I am noobing around again. Can someone explain why the compiler cringes in the example below? Does it relate to the infamous first class type/higher order type/functional wizardry thing?
+## [12][This Month in Rust OSDev (July 2020)](https://www.reddit.com/r/rust/comments/i2g0g8/this_month_in_rust_osdev_july_2020/)
+- url: https://rust-osdev.com/this-month/2020-07/
+---
 
-[Playground](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=e387a8a57e7108ec1e74f44f887d7af0) [Gist](https://gist.github.com/e387a8a57e7108ec1e74f44f887d7af0) 
-
-    // This example demonstrates the fact you can (somewhat) use
-    // generics of generics in function signature
-    // but it is weird when you want to call it.
-    
-    // Here is an enum with 2 variants
-    // Note that it bridges into some API
-    // in which a third None variant makes no sense
-    #[derive(Debug)]
-    enum Dual {
-        True,
-        False,
-    }
-    
-    // So it is natural to want to convert bools into this enum
-    // for API friendliness purposes
-    impl From&lt;bool&gt; for Dual {
-        fn from(b: bool) -&gt; Self {
-            match b {
-                true =&gt; Self::True,
-                false =&gt; Self::False,
-            }
-        }
-    }
-    
-    // For my API, it is Option&lt;Dual&gt; that makes sense:
-    
-    // This does not compile
-    // error[E0666]: nested `impl Trait` is not allowed
-    // fn api0(x: impl Into&lt;Option&lt;impl Into&lt;Dual&gt;&gt;&gt;) {}
-    
-    // Let's try that
-    // Spoiler: does not work
-    fn api1&lt;I&gt;(x: impl Into&lt;Option&lt;I&gt;&gt;)
-    where
-        I: Into&lt;Dual&gt;
-    {
-        let x = x.into().map(|x| x.into());
-        println!("api1 {:#?}", x);
-    }
-    
-    // Ok last chance
-    fn api2&lt;I, J&gt;(x: I)
-    where
-        I: Into&lt;Option&lt;J&gt;&gt;,
-        J: Into&lt;Dual&gt;,
-    {
-        let x = x.into().map(|x| x.into());
-        println!("api2 {:#?}", x);
-    }
-    
-    pub fn main() {
-        api1(true);
-        api1(Dual::True);
-        // api1(Some(true)); // cannot infer type for type parameter `I`
-        // api1(Some(Dual::True)); // cannot infer type for type parameter `I`
-        // api1(None); // cannot infer type for type parameter `I`
-        // hum...
-        // api1::&lt;bool&gt;(Some(true)); // explicit generic argument not allowed
-        // api1::&lt;Dual&gt;(Some(Dual::True)); // explicit generic argument not allowed
-        // api1::&lt;Dual&gt;(None); // explicit generic argument not allowed
-        
-        api2(true);
-        api2(Dual::True);
-        // api2(Some(true)); cannot infer type for type parameter `J`
-        // api2(Some(Dual::True)); // cannot infer type for type parameter `J`
-        // api2(None); // cannot infer type for type parameter `J`
-        // api2::&lt;Option&lt;Dual&gt;, Dual&gt;(Some(true)); // expected enum `Dual`, found `bool`
-        api2::&lt;Option&lt;bool&gt;, bool&gt;(Some(true));
-        api2::&lt;Option&lt;Dual&gt;, Dual&gt;(None);
-        api2::&lt;Option&lt;bool&gt;, bool&gt;(None);
-        
-        // So we can use api2, but the whole point of Into&lt;Option&lt;Into&lt;Dual&gt;&gt;&gt;
-        // was to provide a nice API...
-        
-        // Thoughts?
-    }

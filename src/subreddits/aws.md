@@ -1,116 +1,145 @@
 # aws
-## [1][Should I use serverless or Amplify + CloudFront to host a SPA + REST backend?](https://www.reddit.com/r/aws/comments/i28r3o/should_i_use_serverless_or_amplify_cloudfront_to/)
-- url: https://www.reddit.com/r/aws/comments/i28r3o/should_i_use_serverless_or_amplify_cloudfront_to/
----
-I'm new to AWS so it's a bit overwhelming with all the options and info.
-
-The website I want to build is relatively basic and standard. The website being a SPA and including a contact form might just be the most advanced features.
-
-If I want to build a REST backend with Django Rest Framework (or perhaps I'll learn to use FastAPI instead), and a frontend with Vue; is it better to use serverless or Amplify for the frontend, and CloudFront for the REST backend?
-
-Can you explain the pros and cons? What about price?
-## [2][Using AWS Code* to build and deploy is neat but so much manual work](https://www.reddit.com/r/aws/comments/i1xl4l/using_aws_code_to_build_and_deploy_is_neat_but_so/)
-- url: https://www.reddit.com/r/aws/comments/i1xl4l/using_aws_code_to_build_and_deploy_is_neat_but_so/
----
-I went to several services like CodeBuild, Pipeline, Beanstalk in AWS console to generate a project name, a build, to pipeline, etc. There were so many manual steps I had to do to deploy a basic web app. How can I automate this so that it can be part of IaC? I used CodeCommit and I'd like the pipeline to be converted into IaC and commit that as part of my web project in CodeCommit.
-## [3][Lambda/Api Gateway](https://www.reddit.com/r/aws/comments/i2bbyk/lambdaapi_gateway/)
-- url: https://www.reddit.com/r/aws/comments/i2bbyk/lambdaapi_gateway/
----
-Right now I have a test lambda handler which I'm integrating with an Api Gateway proxy endpoint:
-
-    
-    
-    export async function func1(event: any) {
-      console.log('next line is the full request event object, 2 depth');
-      console.log(JSON.stringify(event, undefined, 2));
-    
-      return {
-        statusCode: 200,
-        headers: { "content-type" : "text/plain" },
-        body: `From the return body. This route is: ${event.path}`
-      };
-    }
-
-I'm looking at the docs but don't see how to access query or route parameters: [https://docs.aws.amazon.com/cdk/api/latest/docs/aws-lambda-readme.html](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-lambda-readme.html)
-
-I assume those are somewhere on the `event` object. Does anyone know where?
-## [4][Does Elastic Beanstalk support tensorflow with python 3.8 ?](https://www.reddit.com/r/aws/comments/i27dwp/does_elastic_beanstalk_support_tensorflow_with/)
-- url: https://www.reddit.com/r/aws/comments/i27dwp/does_elastic_beanstalk_support_tensorflow_with/
----
-Hi everyone!
-
-I have never used aws before and I have a django project I want to deploy. I am using Tensorflow (version 2.3) and python 3.8.2. I am also using tensorflow hub and not using any databases. I was wondering if AWS elastic beanstalk is compatible with tensorflow 2.3 and python 3.8?
-
-Any insight would be greatly appreciated
-## [5][Deploying serverless Django applications to AWS with CDK on a tiny budget using Lambda, API Gateway, awsgi and the Lambda proxy pattern](https://www.reddit.com/r/aws/comments/i1u5hv/deploying_serverless_django_applications_to_aws/)
-- url: https://briancaffey.github.io/2020/08/01/django-and-lambda-with-cdk-and-api-gateway.html
+## [1][Awesome AWS workshops](https://www.reddit.com/r/aws/comments/i2wcl2/awesome_aws_workshops/)
+- url: https://awesome-aws-workshops.com/
 ---
 
-## [6][AWS-SQS-how delayed retry works?](https://www.reddit.com/r/aws/comments/i26qg2/awssqshow_delayed_retry_works/)
-- url: https://www.reddit.com/r/aws/comments/i26qg2/awssqshow_delayed_retry_works/
+## [2][If I disable mutli-az on a running MySQL rds, is there downtime?](https://www.reddit.com/r/aws/comments/i2t647/if_i_disable_mutliaz_on_a_running_mysql_rds_is/)
+- url: https://www.reddit.com/r/aws/comments/i2t647/if_i_disable_mutliaz_on_a_running_mysql_rds_is/
 ---
-Hi guys,
+Willl currently running transactions be affected?
+## [3][How to recover a suspended account?](https://www.reddit.com/r/aws/comments/i2ujwk/how_to_recover_a_suspended_account/)
+- url: https://www.reddit.com/r/aws/comments/i2ujwk/how_to_recover_a_suspended_account/
+---
+I am in a very strange situation with my account apparently having been suspended.   
+I created an aws personal account over a year ago and have always been within the free tier limits.
 
-I want the retry of message to be delayed like one minute so that everytime the error occurs, it will not trigger the same message immediately.
+I use it seldomly as I mostly utilise it for proof of concept apps. After some time away from it, I logged in today only to be greeted with the message: \`Authentication failed because your account has been suspended.\`
+
+I have nothing running and I did not exceed any limits. I use my real contact information and have no outstanding balance to be paid. I was able to reach the account details area and saw that the debit card which I used had expired. 
+
+So I updated it to my new one. I received a charge of 1$ but my account remains suspended.
+
+Looking into the support section, I see that the sole suggestion for cases of a suspended account is to pay any outstanding balance which is not my case.  
+In addition to that, in order to receive technical support , I need to Sign in &amp; Submit AWS Support Request, which is not possible for me as I get the \`account suspended\` message.  
+
+
+I don't even know why my account was suspended in the first place, nor how I can find out this information, and even if I knew, I have no idea who to contact or what the next steps are to resolve this issue.  
+Has anyone else experienced anything similar?
+## [4][ACM additional verification in a huge organization](https://www.reddit.com/r/aws/comments/i2szqi/acm_additional_verification_in_a_huge_organization/)
+- url: https://www.reddit.com/r/aws/comments/i2szqi/acm_additional_verification_in_a_huge_organization/
+---
+Hey,
+
+we've got a pretty huge organization (200+ accounts and still in early migration, will increase much more). Two of our main domains are listed in the Alexa top 500, so we need additional verification for each account to be able to generate ACM certificates. So far this is a super annoying manual process, where you first have to register for the forum with that account, wait a few hours, then make a public post, and then wait again for some unpredictable amount of time when someone unlocks that account. Rinse and repeat hundreds of times.
+
+Has anyone managed to tie this authorization to the organizational root? I've asked our rep about this, but they're currently on vacation with an auto-responder.
+## [5][How to run scheduled job (e.g. midnight) that scales depending on needs?](https://www.reddit.com/r/aws/comments/i2j905/how_to_run_scheduled_job_eg_midnight_that_scales/)
+- url: https://www.reddit.com/r/aws/comments/i2j905/how_to_run_scheduled_job_eg_midnight_that_scales/
+---
+I want to run scheduled job (e.g. once a day, or once a month) that will perform some operation (e.g. deactivate those users who are not paying, or generate reminder email to those who are due payment more than few days).
+
+The amount of work each time can vary (it can be few users to process or few hundred thousands). Depending on the amount of data to process, I want to benefit from lambda auto scalability.
+
+Because sometimes there can be huge amount of data, I can't process it in the single scheduled lambda. The only architecture that comes to my mind is to have a single "main" lambda (aka the scheduler) and SQS, and multiple worker lambdas.
+
+The scheduler reads the DB, and finds all users that needs to be processed (e.g. 100k users). Then the scheduler puts 100k messages to SQS (separate message for each user) and worker lambdas are being triggered to process it.
+
+I see following drawbacks here:
+
+- the scheduler is obvious bottleneck and single point of failure
+- the infrastructure contains of 3 elements (scheduler, sqs, workers)
+
+Is this approach correct? Is there any other simpler way that I'm not aware of?
+## [6][Aurora Question](https://www.reddit.com/r/aws/comments/i2u4au/aurora_question/)
+- url: https://www.reddit.com/r/aws/comments/i2u4au/aurora_question/
+---
+I am relatively experienced with many AWS services - but I do have a large gap around Aurora/RDS
 
 &amp;#x200B;
 
-In order to do this, can I just set the visibilityTimeout to be 1 min? And what is the mechanism under the hood? 
+I'm trying to create a multi-region multi-master (write replicas) setup
+
+The purpose is to give low latency to users (if each read and write replica is in the user's region) and to give resilience (if there is a region outage, the users can have their requests routed to another region (the latency will be higher, but reduced service is better than no service))
 
 &amp;#x200B;
 
-Because for retrying the message is still in the queue, so how we polling the message depends on two things (1) message exist. 2) visibityTimeout is reached) ? And everytime the same message gets polled, the visibilityTimeout wii be reset?
+I'm trying to learn about AWS Aurora and I've created a toy cluster to learn.  It seems I can create a cluster that is served out of multiple regions (and Aurora replicates data between regions automatically).  I've also read that it is possible to have a multi-master setup (in my toy cluster, it only had one write partition, I couldn't work out how to create another write partition in another region, which made me question if it's possible?)
 
 &amp;#x200B;
 
-Is that understanding correct?
+Here is a diagram of what I'm thinking:
+
+ https://imgur.com/DzoSpHL 
 
 &amp;#x200B;
 
-Thanks!
-## [7][Is a shared EKS control plane possible in a multi-account AWS environment?](https://www.reddit.com/r/aws/comments/i1yq1f/is_a_shared_eks_control_plane_possible_in_a/)
-- url: https://www.reddit.com/r/aws/comments/i1yq1f/is_a_shared_eks_control_plane_possible_in_a/
+Thank you in advance!
+
+&amp;#x200B;
+
+tl;dr:
+
+multi-master over multi-region Aurora - possible?
+## [7][Looking for CloudFormation and RDS Aurora serverless best practices](https://www.reddit.com/r/aws/comments/i2w6su/looking_for_cloudformation_and_rds_aurora/)
+- url: https://www.reddit.com/r/aws/comments/i2w6su/looking_for_cloudformation_and_rds_aurora/
 ---
-In an AWS environment where there are shared VPC's for Dev,Test,Prod,Shared and each project team has accounts broken out by resources such as subnets, do you see issues running an EKS control plane either in each VPC or in the Shared VPC?
+Hi everyone,
 
-The goal being that each team has its own compute nodes for isolation and billing, while trying to simplify the EKS management.
-## [8][CodePipeline: when to use stages vs actions?](https://www.reddit.com/r/aws/comments/i2586d/codepipeline_when_to_use_stages_vs_actions/)
-- url: https://www.reddit.com/r/aws/comments/i2586d/codepipeline_when_to_use_stages_vs_actions/
+Updating an RDS resource in a CloudFormation template *(e.g EngineVersion property)* may result in the replacement of the current DB instance by a fresh one, thus loosing data. To avoid this, using **snapshots** seems to be the only solution *(by passing a* ***SnapshotId*** *to the CF template)*.
+
+However, I have a lot of other resources accessing the RDS instance through its **ARN** which is exported in the CloudFormation template **Outputs**. So having a new RDS instance would break my other resources.
+
+\- Is the initialization from **snapshots** the way to go ?
+
+\- Would storing the **ARN** in the **Parameter Store** be a correct solution ?
+
+\- Is there something I'm missing regarding the automation of this kind of db maintenance ?
+
+Thanks in advance !
+## [8][[ECS] Running multiple services from same ECR](https://www.reddit.com/r/aws/comments/i2vssy/ecs_running_multiple_services_from_same_ecr/)
+- url: https://www.reddit.com/r/aws/comments/i2vssy/ecs_running_multiple_services_from_same_ecr/
 ---
-A pipeline contains stages, stages contain actions, actions act upon artifacts.
+Hello,
 
-The [AWS CodePipeline concepts docs](https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html) say:
+my usecase is that I have a single code base which is built by Jenkins into single ECR image. From that, I want to have multiple Services, that will run from the same ECR but have different environment variables. Each of the Services needs to be independently scalable.
 
-&gt;A **stage** might be a build stage, where the source code is built and tests are run. It can also be a deployment stage, where code is deployed to runtime environments
+Example: I have ECR MY\_CONTAINER and based on it I want to have the following
 
-An example of this is in the [Terraform CodePipeline example](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/codepipeline#example-usage), which has a "Source", "Build", and "Deploy" stage. The [AWS four stage pipeline tutorial](https://docs.aws.amazon.com/codepipeline/latest/userguide/tutorials-four-stage-pipeline.html#tutorials-four-stage-pipeline-pipeline-create) does something similar.
+MY\_CONTAINER -e PRESET=A, (min, max) = (0, 10)  
+MY\_CONTAINER -e PRESET=B, (min, max) = (5, 100)
 
-The AWS CodePipeline concepts docs also say:
+I would have Lambda that would, based on the external event, spawn new tasks with either preset = A or preset=B. 
 
-&gt;\[An **action**\] can include things like a source action from a code change, an action for deploying the application to instances, and so on... Valid CodePipeline action types are source, build, test, deploy, approval, and invoke
+&amp;#x200B;
 
-The overlap between the two levels confuses me. Why structure stages in such a manner if actions do those things? In doing so, a "Source" stage could hypothetically have a "build", "test", and "deploy" actions, which doesn't make sense to me. Wouldn't it stand to reason that each stage should correspond to an environment (dev, QA, staging, prod, etc), where each action takes care of a step toward releasing to the environment?
-## [9][Help downloading large files from an SFTP server to an EC2 instance](https://www.reddit.com/r/aws/comments/i1zzf3/help_downloading_large_files_from_an_sftp_server/)
-- url: https://www.reddit.com/r/aws/comments/i1zzf3/help_downloading_large_files_from_an_sftp_server/
+I'm wondering for the cleanest way to do this. My preset is far more complex than a single variable, and I'd prefer to have these somewhat "documentable" (in an IaaC fashion maybe).  
+
+&amp;#x200B;
+
+One idea that comes to mind is to keep `my-container-task-def-preset-A.json` and `my-container-task-def-preset-B.json` in the repository, and then Jenkins could update everything at build phase, but this solution looks somewhat clunky to me.
+
+Due to my lack of knowledge, I'm not sure if the following is possible.
+
+I have two ECS services, i.e. `my-container-service-A` and `my-container-service-B` which are spawned from the same task def and have empty env. These services have separate scaling rules. Then, on the Lambda side, I add ENV on the Lambda side and send the task to the appropriate service. This way I could keep all preset mappings in one JSON, that can be used as python mapping and sort of documentation. 
+
+&amp;#x200B;
+
+On the same note, if I submit a task to ECS, how long it can stay in PENDING state until its execution is cancelled? Is there a way to increase this quota to inf?
+## [9][Can RDS read replicas function as a backup?](https://www.reddit.com/r/aws/comments/i2uwh7/can_rds_read_replicas_function_as_a_backup/)
+- url: https://www.reddit.com/r/aws/comments/i2uwh7/can_rds_read_replicas_function_as_a_backup/
 ---
-Hi all-
-
-Tl:dr at the bottom! 
-
-I’m a newbie to all of this (AWS and computing in general) and would really appreciate some advice. 
-
-My task is to download a set of files from an SFTP server and then upload them to an S3 bucket. Conceptually, this isn’t difficult; for smaller files, I wrote a Lambda function (w/Python 3.8 runtime) that works just fine.
-
-However, I’ve been having trouble doing this with the larger files on the SFTP server (ranging from 1-150 GB). For these files, I set up an EC2 instance with sufficient memory to store the largest file and then ran a Python script (similar to the handler function that I use to download/upload smaller files via the Lambda function) that uses the Paramiko module to download the large files and then the boto3 module to subsequently upload them to S3. This fails each time; paramiko throws an EOFError that seems to be a known issue with the module, but which nobody quite knows how to fix. I’ve tried various pseudo-fixes and monkey patches, but nothing has worked. In short, paramiko doesn’t seem to be all that great for handling large files. 
-
-My question, then, is this: can any of you recommend a Python module, AWS service, or scripting language that will allow me to reliably download large files from an SFTP server? It’s important to note that I do not control this server, and I can only access it via username/password (I don’t have SSH keys). Thank you!
-
-TL;DR I’m having trouble downloading large files from an SFTP server, and would greatly appreciate any recommendations on Python modules, AWS services, or other scripting languages that I can use to reliably download large files. Thank you!
-## [10][EC2 Auto Scale using a variable predefined schedule](https://www.reddit.com/r/aws/comments/i1rg0y/ec2_auto_scale_using_a_variable_predefined/)
-- url: https://www.reddit.com/r/aws/comments/i1rg0y/ec2_auto_scale_using_a_variable_predefined/
+I'm creating an RDS database and I am wondering if a read replica can function as a backup DB. I have read the AWS page regarding read replicas and they mention that the replica can be promoted to be a standalone database. Does this mean that the replica can be a backup?
+## [10][Lambda zip file format](https://www.reddit.com/r/aws/comments/i2ugym/lambda_zip_file_format/)
+- url: https://www.reddit.com/r/aws/comments/i2ugym/lambda_zip_file_format/
 ---
-I want to conduct online examinations on EC2 instances.   
-I know how many students there will be at each time instant as the tests are pre-scheduled.  
-So I want to scale using the schedule I have, it is variable not fixed or weekly, Can anyone help me where to look for this.
+I found I have to use the zip upload method if using npm libraries with my lambda handler. Right now my directory structure is like this:
 
-Thank you
+    node_modules // the library folder
+    lambda
+      handler.js  
+
+I'm guessing this is not the right structure. Can someone advise on how to set it up for upload?
+
+I'm curious about both the proper file/folder structure, and also if `node_modules` should be included at all.
+
+Usually the library folder is not included, but I sense it may need to be included here (if AWS doesn't handle the install step itself).

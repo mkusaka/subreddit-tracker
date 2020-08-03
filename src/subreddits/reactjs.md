@@ -85,7 +85,61 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
-## [3][Svg Icons as React Components](https://www.reddit.com/r/reactjs/comments/i29kg1/svg_icons_as_react_components/)
+## [3][Pull to refresh, velocity-based morphing SVGs with react-spring](https://www.reddit.com/r/reactjs/comments/i2t2ww/pull_to_refresh_velocitybased_morphing_svgs_with/)
+- url: https://v.redd.it/bhjy5gd3vqe51
+---
+
+## [4][Learning to Think in React by Building a Shopping Cart using Vanilla JS and then React](https://www.reddit.com/r/reactjs/comments/i2g4mt/learning_to_think_in_react_by_building_a_shopping/)
+- url: https://www.youtube.com/watch?v=LDKnz5gwdz4
+---
+
+## [5][Even your favourite framework creators don't know everything. Don't beat yourself up.](https://www.reddit.com/r/reactjs/comments/i2tywx/even_your_favourite_framework_creators_dont_know/)
+- url: https://overreacted.io/things-i-dont-know-as-of-2018/?ck_subscriber_id=934260383
+---
+
+## [6][Laid Off Developer Since Beginning Of Pandemic Asking For Suggestions To Get A Job](https://www.reddit.com/r/reactjs/comments/i2rptq/laid_off_developer_since_beginning_of_pandemic/)
+- url: https://www.reddit.com/r/reactjs/comments/i2rptq/laid_off_developer_since_beginning_of_pandemic/
+---
+ Hello, my developer comrades, so basically I was laid off in March, 2 weeks before my co-op term ends.
+
+And I graduated from college during the pandemic in April. Since then I'm trying to find a job :(
+
+It's a really tough journey when you don't have experience that much, but as you seen I didn't give up yet :)
+
+I'm asking you guys for suggestions? I don't know what I'm missing rather than experience.
+
+Here you are my portfolio website,
+
+[www.ozanmuldur.com](https://www.ozanmuldur.com/)
+
+I'll appreciate any suggestions, do not hesitate to dm me. Cheers!
+## [7][I created a sitemap and robots.txt generator for nextjs. Supports default and pre-rendered pages.](https://www.reddit.com/r/reactjs/comments/i2vtyl/i_created_a_sitemap_and_robotstxt_generator_for/)
+- url: https://github.com/iamvishnusankar/next-sitemap
+---
+
+## [8][Experiences of ejecting from CRA in prod?](https://www.reddit.com/r/reactjs/comments/i2u06c/experiences_of_ejecting_from_cra_in_prod/)
+- url: https://www.reddit.com/r/reactjs/comments/i2u06c/experiences_of_ejecting_from_cra_in_prod/
+---
+I'm looking to eject from CRA between two releases of production software. This adds ~1600 lines of configuration scripts. I'm not sure if I want to gradually remove things I don't need and hope that it will untangle itself, or just start over from a new alternative webpack config. Either way, does it make sense to just get the eject over with and then hope to eventually clean up the mess?
+
+It certainly seems non-trivial. There's lots of fixes for and interactions between yarn pnp, webpack, typescript, eslint, jest, dev server, proxy, and HMR (which has actually been broken in CRA recently). And it could be hard to verify things like the chunking strategy and typescript/babel runtime helpers and polyfills.
+
+Any insightful words from those who have gone down the same path?
+
+As for the motivation, it's mainly to learn what's going on. It's a massive black box in the project, it's bloated, and has required special treatment to get things working in the past. It's making me uneasy.
+## [9][TypeScript Support in Kea (The Long Road)](https://www.reddit.com/r/reactjs/comments/i2wm1w/typescript_support_in_kea_the_long_road/)
+- url: https://kea.js.org/blog/typescript
+---
+
+## [10][Is it safe to send the auth password just as JSON stringify without any encryption?](https://www.reddit.com/r/reactjs/comments/i2whgt/is_it_safe_to_send_the_auth_password_just_as_json/)
+- url: https://www.reddit.com/r/reactjs/comments/i2whgt/is_it_safe_to_send_the_auth_password_just_as_json/
+---
+I was reading about XSS or all kind of stuff and wondering sending the password in the  JSON stringify is alright to do or is there a better way to do this?
+## [11][ConanJs vs Redux. Comparing a simple TODO App](https://www.reddit.com/r/reactjs/comments/i2wexv/conanjs_vs_redux_comparing_a_simple_todo_app/)
+- url: https://medium.com/conanjs/conanjs-vs-redux-comparing-a-simple-todo-app-222b87363865?source=friends_link&amp;sk=80e501985b27f9694ac74c9bae1fbb61
+---
+
+## [12][Svg Icons as React Components](https://www.reddit.com/r/reactjs/comments/i29kg1/svg_icons_as_react_components/)
 - url: https://www.reddit.com/r/reactjs/comments/i29kg1/svg_icons_as_react_components/
 ---
 Hi,
@@ -93,75 +147,3 @@ Hi,
 I used svgo/svgr to transform popular svg icons sets so it can be  copy/pasted as React components. Hope you find this useful. 
 
 [https://reactsvgicons.com](https://reactsvgicons.com)
-## [4][Data-fetching library SWR now has pagination and infinite loading](https://www.reddit.com/r/reactjs/comments/i1vxgo/datafetching_library_swr_now_has_pagination_and/)
-- url: https://swr.vercel.app/docs/pagination
----
-
-## [5][Why doesn't the simplest use of react's useState() work](https://www.reddit.com/r/reactjs/comments/i2a0bp/why_doesnt_the_simplest_use_of_reacts_usestate/)
-- url: https://www.reddit.com/r/reactjs/comments/i2a0bp/why_doesnt_the_simplest_use_of_reacts_usestate/
----
-The code https://imgur.com/gallery/egrmRf2
-I don't understand why the variable "text" becomes only one character at a time like
-text =
-''
-'s'
-'o'
-'m'
-'e'
-' '
-'t'
-'e'
-'x'
-'t'
-And I want it to join all of the letters together and it's basically the exact example that has been shown on React's page about useState but in string instead of numbers
-## [6][When starting a project in React what are the essential things that I should follow?](https://www.reddit.com/r/reactjs/comments/i24mvr/when_starting_a_project_in_react_what_are_the/)
-- url: https://www.reddit.com/r/reactjs/comments/i24mvr/when_starting_a_project_in_react_what_are_the/
----
-I have difficulties with figuring out how the file structure should be in a project. I mean the components.
-Currently I'm going to do a project which has 4 panels for 4 user roles.
-
-If anyone can tell me a way to manage the file structure that would be much appreciated.
-Thank you 😊
-## [7][I'm asked to create a react app for quiz in which there should be a slider. need your suggestions on what should I do to add it successfully?](https://www.reddit.com/r/reactjs/comments/i2avlp/im_asked_to_create_a_react_app_for_quiz_in_which/)
-- url: https://www.reddit.com/r/reactjs/comments/i2avlp/im_asked_to_create_a_react_app_for_quiz_in_which/
----
-\- The states of the range sliders used for answering the questions should be maintained throughout the life of the code (unless submitted)
-
-&amp;#x200B;
-
-\- A progess bar is to be shown which is divided by 3 Pages where on first page it should be on 33% with colour Red , 66% with colour Blue , 100% with colour Green (Done with this thing)
-## [8][Creating a User Registration form with react-hook-form](https://www.reddit.com/r/reactjs/comments/i1thml/creating_a_user_registration_form_with/)
-- url: https://youtu.be/mrTPrbSoAx0
----
-
-## [9][Writing dumb React code](https://www.reddit.com/r/reactjs/comments/i1paqm/writing_dumb_react_code/)
-- url: https://www.reddit.com/r/reactjs/comments/i1paqm/writing_dumb_react_code/
----
-I'm currently developing a personal project that has grown quite a bit over the past months, using React + Django REST. Now, here's how I write React: if a component needs state, I make it a class, if it's a simple widget, I make it a function, and that's it. I'm feeling kinda guilty for not using any of the "advanced" features. No HOCs, no hooks, no context or Redux or whatever, and so far everything works great, even though the complexity has increased quite a bit. Anyone else experiencing the same feeling?
-## [10][Hooks substitute to `componentWillUnmount`](https://www.reddit.com/r/reactjs/comments/i29mq4/hooks_substitute_to_componentwillunmount/)
-- url: https://www.reddit.com/r/reactjs/comments/i29mq4/hooks_substitute_to_componentwillunmount/
----
-Hi community!
-
-I try to figure out how to run logic on component unmount that depends on \`useState\` variable. This unsubscribe function won't have latest \`input\` value at the time of the run, please advise on how to achieve it...
-
-    const [input, setInput] = useState('');
-    useEffect(() =&gt; {
-      return function unsubscribe() {
-        doSomething(input);
-      }
-    }, []);
-## [11][Current "Industry Standard" approach to styling react apps](https://www.reddit.com/r/reactjs/comments/i29jpk/current_industry_standard_approach_to_styling/)
-- url: https://www.reddit.com/r/reactjs/comments/i29jpk/current_industry_standard_approach_to_styling/
----
-I've played with react and built some solo apps, but haven't used it in a team / commercial setting yet, and am wondering the following:
-
-What is the most common way of styling react apps at the moment, in a normal work setting? Styled components, CSS modules, standard CSS / SASS, ... ?
-
-I'm not asking which one you prefer, or for pros and cons, but which one would you expect to find if you joined a random team working with react? Or, to put it another way, if a random dev joined your team, which one would you expect them to master, as a priority?
-
-Thanks in advance!
-## [12][Beginner's Guide To React Router](https://www.reddit.com/r/reactjs/comments/i24bg6/beginners_guide_to_react_router/)
-- url: https://dev.to/fahadimran/beginners-guide-to-react-router-1n2n
----
-

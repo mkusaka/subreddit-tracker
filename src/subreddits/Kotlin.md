@@ -1,5 +1,74 @@
 # Kotlin
-## [1][Newbie question about Kotlin Native and sharing code between Android and iOS](https://www.reddit.com/r/Kotlin/comments/i2bf32/newbie_question_about_kotlin_native_and_sharing/)
+## [1][Can I use a lambda for null checking?](https://www.reddit.com/r/Kotlin/comments/i2qozw/can_i_use_a_lambda_for_null_checking/)
+- url: https://www.reddit.com/r/Kotlin/comments/i2qozw/can_i_use_a_lambda_for_null_checking/
+---
+    fun exampleFunction() : Int? = null
+    val example = exampleFunction() ?: {
+        
+    }
+
+I want to use a lambda like so to run more code in case where the value is null like so but I get an error saying:
+
+    Type mismatch.
+    Required: Int
+    Found: () → Unit
+
+How do I do what I'm trying to do?
+## [2][Small, but interesting RxJava2 Puzzlers](https://www.reddit.com/r/Kotlin/comments/i2vxuy/small_but_interesting_rxjava2_puzzlers/)
+- url: https://www.reddit.com/r/Kotlin/comments/i2vxuy/small_but_interesting_rxjava2_puzzlers/
+---
+Really cool [RxJava2 Puzzlers](https://mailchi.mp/631bd69d4410/smallengineer-rxjava2puzzlers-free)! Check it out
+## [3][Need Help Learning Kotlin?, Check out our community, https://devguildweb.xyz](https://www.reddit.com/r/Kotlin/comments/i2omyz/need_help_learning_kotlin_check_out_our_community/)
+- url: https://www.reddit.com/r/Kotlin/comments/i2omyz/need_help_learning_kotlin_check_out_our_community/
+---
+&amp;#x200B;
+
+[https://devguildweb.xyz](https://devguildweb.xyz/)
+
+Hello!,  We are The Developers Guild, a friendly discord community offering free  help and chat about java and many other programming languages.
+
+We  want more Kotlin programmers to join our ranks, so we together can teach and learn from each other
+
+[https://discord.gg/xqUN8KY](https://discord.gg/xqUN8KY)
+
+&gt;Discord Community: Script Review, Paired Programming, Collab, and Live Instruction for API Engineers!  
+A  community of student and professional developers. Join us for free  instruction, paired programming, code/project review, collaboration, and  more. Looking for exposure to new concepts? Engage in peer review on  your projects? Want to shout to the world that your API is online and  ready for use? Looking for help getting through your latest assignment  or project? If you can ask a good question you're like to find a good  answer here!  If you're more on the expert side and you're so inclined  you can engage in the Feinberg method of learning, where you reinforce  what you do know and spot weaknesses in your own studies, by teaching a  few code-along courses or just share your latest project.  Regardless of  your skill level though we are eager to have individuals from the  software development sphere to collaborate and converse with. To teach  and be taught. In short: We'd love to have you. Come on in!  
+[https://discord.gg/xqUN8KY](https://discord.gg/xqUN8KY)
+## [4][Any other solution to this issue with type checking?](https://www.reddit.com/r/Kotlin/comments/i2u69v/any_other_solution_to_this_issue_with_type/)
+- url: https://www.reddit.com/r/Kotlin/comments/i2u69v/any_other_solution_to_this_issue_with_type/
+---
+Hey! I would like to know if there's a non-"workaround" solution to a type checking issue I'm facing:
+
+Imagine the following example function:
+```kt
+/** Calls [fn] with `num + 1`. */
+fun &lt;T&gt; withPlus1(num: Int, fn: (num: Int) -&gt; T): T = fn(num + 1)
+```
+What I would like to do is to provide a default `fn` argument to `withPlus1`.
+
+Something like:
+```kt
+/** Calls [fn] with `num + 1`. [fn] defaults to stringifying its input. */
+fun &lt;T&gt; withPlus1(
+    num: Int,
+    fn: (num: Int) -&gt; T = { num: Int -&gt; num.toString() }
+): T = fn(num + 1)
+```
+The above doesn't compile because `num.toString()` is of type `String` rather than `T`.
+
+Casting `num.toString()` to `T` makes it so that I can't call `withPlus1(5)` because there isn't enough type information to infer that `T` is `String` (i.e. I would have to call `withPlus1&lt;String&gt;(5)`), which is a no-go.
+
+The obvious "workaround" solution here is to create a second function that calls the first function with the my default `fn`, i.e.:
+
+```kt
+fun withPlus1(num: Int): String = withPlus1(num) { num: Int -&gt; num.toString() }
+```
+However, is there any way to make this work without relying on a second function? I.e., by providing a default argument to the first version of the function? I played around with the `@BuilderInference` experimental directive but couldn't get it to work. Am I missing something?
+## [5][Composing in the wild](https://www.reddit.com/r/Kotlin/comments/i2el3z/composing_in_the_wild/)
+- url: https://medium.com/@shikasd/composing-in-the-wild-145761ad62c3
+---
+
+## [6][Newbie question about Kotlin Native and sharing code between Android and iOS](https://www.reddit.com/r/Kotlin/comments/i2bf32/newbie_question_about_kotlin_native_and_sharing/)
 - url: https://www.reddit.com/r/Kotlin/comments/i2bf32/newbie_question_about_kotlin_native_and_sharing/
 ---
 Dear Friends,
@@ -24,11 +93,11 @@ If you know some examples or post in the internet where this is explained, I wou
 &amp;#x200B;
 
 Tanks in advance.
-## [2][AndroidBites | Snippet | three most useful but least known kotlin list functions](https://www.reddit.com/r/Kotlin/comments/i263xd/androidbites_snippet_three_most_useful_but_least/)
+## [7][AndroidBites | Snippet | three most useful but least known kotlin list functions](https://www.reddit.com/r/Kotlin/comments/i263xd/androidbites_snippet_three_most_useful_but_least/)
 - url: https://chetangupta.net/union-intersect-subs/
 ---
 
-## [3][How Do I Change The Naming Format Gradle Produces?](https://www.reddit.com/r/Kotlin/comments/i241sf/how_do_i_change_the_naming_format_gradle_produces/)
+## [8][How Do I Change The Naming Format Gradle Produces?](https://www.reddit.com/r/Kotlin/comments/i241sf/how_do_i_change_the_naming_format_gradle_produces/)
 - url: https://www.reddit.com/r/Kotlin/comments/i241sf/how_do_i_change_the_naming_format_gradle_produces/
 ---
 Whenever I build my binary the name that's outputted is "ColoredEverything-\[1.0.0\]" but I want the name to be "\[1.0.0\] ColoredEverything" how would I do that?
@@ -80,11 +149,11 @@ My gradle.properties is:
 
     kotlin.code.style=official
     systemProp.kotlinVersion=1.3.72
-## [4][What would you say is the best way for a beginner to learn about GUIs and such in Kotlin?](https://www.reddit.com/r/Kotlin/comments/i1bmvk/what_would_you_say_is_the_best_way_for_a_beginner/)
+## [9][What would you say is the best way for a beginner to learn about GUIs and such in Kotlin?](https://www.reddit.com/r/Kotlin/comments/i1bmvk/what_would_you_say_is_the_best_way_for_a_beginner/)
 - url: https://www.reddit.com/r/Kotlin/comments/i1bmvk/what_would_you_say_is_the_best_way_for_a_beginner/
 ---
 I'm currently learning Kotlin, and after learning Java, one of the things I always wanted to do is to learn how to create GUIs. Are there any good courses or material on the subject? What about the best frameworks for the job?
-## [5][Can an API throw a compile-time error instead of a runtime one?](https://www.reddit.com/r/Kotlin/comments/i1htcd/can_an_api_throw_a_compiletime_error_instead_of_a/)
+## [10][Can an API throw a compile-time error instead of a runtime one?](https://www.reddit.com/r/Kotlin/comments/i1htcd/can_an_api_throw_a_compiletime_error_instead_of_a/)
 - url: https://www.reddit.com/r/Kotlin/comments/i1htcd/can_an_api_throw_a_compiletime_error_instead_of_a/
 ---
 Take this code for example:
@@ -101,112 +170,3 @@ Take this code for example:
     }
 
 It's obviously going to crash at runtime but Kotlin gives no compile-time warning or error regarding it. Is there a way to throw an error at compile-time and if not is it a planned feature?
-## [6][Is There An Annotation To Do What I'm Trying To Achieve?](https://www.reddit.com/r/Kotlin/comments/i1ny9c/is_there_an_annotation_to_do_what_im_trying_to/)
-- url: https://www.reddit.com/r/Kotlin/comments/i1ny9c/is_there_an_annotation_to_do_what_im_trying_to/
----
-Is there an annotation to turn this:
-
-    class example : Cancellable {
-        var isCancelled = false
-    }
-
-into this:
-
-    class example : Cancellable {
-        private var isCancelled = false
-        override fun setCancelled(cancel: Boolean) {
-            isCancelled = cancel
-        }
-        override fun isCancelled(): Boolean = isCancelled
-    }
-
-or do I just have to live with doing the second one?
-## [7][Introduction/Beginner Question](https://www.reddit.com/r/Kotlin/comments/i19mek/introductionbeginner_question/)
-- url: https://www.reddit.com/r/Kotlin/comments/i19mek/introductionbeginner_question/
----
-Hey what's up everyone! I'm new to this Reddit community, Kotlin, and programming in general. After looking through alot of the posts and seeing how everyone helps each other out I'm happy to have found this group and be apart of it. Just started with Kotlin and learning the basics from a uDemy course which has been great so far. I am definitely motivated and know I have a long way to go to reach my goals. 
-
-My goal is to create Android apps and just learn the Kotlin language to the point where I can think of an idea and just have a good idea about how I'd make it happen. My question for the community is what other knowledge should I be seeking besides just Kotlin and Android Studio knowledge. The course I'm taking right now with Udemy has me working in IntelliJ which has been actually really nice to work in as an IDE. I have read that Data Structures and Algorithms and Linear Algebra are also go knowledge to have. What do you guys think about the other areas? Should I be learning these things in conjunction with learning the basics of Kotlin.
-
-I've been really motivated and have been trying to work 2-4 hours a day learning. I started an excel spreadsheet (lol I love spreadsheets) to track my time studying. Ive  been equally motivated to learn Kotlin as I am just to add time to my spreadsheet. I know I have to put in the work, so far it's been a week and I've got 20 hours in so far, which I don't think is too bad working a full time job. But any other advice you guys have is appreciated. Thanks for reading.
-## [8][Why can’t I use val inside Plugins {}?](https://www.reddit.com/r/Kotlin/comments/i15dfs/why_cant_i_use_val_inside_plugins/)
-- url: https://www.reddit.com/r/Kotlin/comments/i15dfs/why_cant_i_use_val_inside_plugins/
----
-    val kotlinVersion = "1.3.72"
-    plugins {
-        // Error: 'val kotlinVersion: String' can't be called in this context by implicit receiver. Use the explicit one if necessary
-        kotlin("jvm").version(kotlinVersion)]
-    }
-
- I use Kotlin’s standard library as a dependency too and I only want to have to specify the version in one place but when I try something like I did above in my build.gradle.kts I get that error you see in the comment. How do I resolve this?
-## [9][How Do I Resolve This Type Mismatch?](https://www.reddit.com/r/Kotlin/comments/i10xri/how_do_i_resolve_this_type_mismatch/)
-- url: https://www.reddit.com/r/Kotlin/comments/i10xri/how_do_i_resolve_this_type_mismatch/
----
-So I was working on converting my build.gradle (Which uses Groovy) to a build.gradle.kts (Which uses Kotlin) and this is what I got so far:
-
-Groovy Original:
-
-    plugins {
-        id 'java'
-        id 'org.jetbrains.kotlin.jvm' version '1.3.72'
-        id 'com.github.johnrengelman.shadow' version '5.2.0'
-    }
-    group 'com.smushytaco'
-    version '1.0-SNAPSHOT'
-    repositories {
-        mavenCentral()
-        maven {
-            url 'https://papermc.io/repo/repository/maven-public/'
-        }
-    }
-    dependencies {
-        implementation group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib', version: '1.3.72'
-        //https://papermc.io/javadocs/paper/1.16/overview-summary.html
-        compileOnly group: 'com.destroystokyo.paper', name: 'paper-api', version: '1.16.1-R0.1-SNAPSHOT'
-    }
-    shadowJar {
-        getArchiveClassifier().set('')
-        project.configurations.implementation.canBeResolved = true
-        configurations = [project.configurations.implementation]
-        relocate 'kotlin', 'com.smushytaco.src.main.kotlin.com.smushytaco.plugin'
-    }
-    build.dependsOn shadowJar
-
-Kotlin Conversion:
-
-    plugins {
-        java
-        kotlin("jvm") version("1.3.72")
-        id("com.github.johnrengelman.shadow") version("5.2.0")
-    }
-    group = "com.smushytaco"
-    version = "1.0-SNAPSHOT"
-    repositories {
-        mavenCentral()
-        maven("https://papermc.io/repo/repository/maven-public/")
-    }
-    dependencies {
-        implementation("org.jetbrains.kotlin", "kotlin-stdlib", "1.3.72")
-        //https://papermc.io/javadocs/paper/1.16/overview-summary.html
-        compileOnly("com.destroystokyo.paper", "paper-api", "1.16.1-R0.1-SNAPSHOT")
-    }
-    tasks {
-        shadowJar {
-            archiveClassifier.set("")
-            project.configurations.implementation.get().isCanBeResolved = true
-            // Type Mismatch:
-            // Required: (Mutable)List&lt;Configuration!&gt;!
-            //Found: Array&lt;NamedDomainObjectProvider&lt;Configuration&gt;&gt;
-            configurations = [project.configurations.implementation]
-            relocate("kotlin", "com.smushytaco.src.main.kotlin.com.smushytaco.plugin")
-        }
-        build {
-            dependsOn(shadowJar)
-        }
-    }
-
- I commented the error I'm getting with the Kotlin rewrite, why does it work with the original Groovy one and not with this one? How do I fix this error?
-## [10][Androibites | Destructuring Params with safety | Overcoming limitation of Positional Destructuring](https://www.reddit.com/r/Kotlin/comments/i11b5x/androibites_destructuring_params_with_safety/)
-- url: https://chetangupta.net/destructuring-safely/
----
-

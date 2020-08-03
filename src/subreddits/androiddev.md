@@ -1,133 +1,108 @@
 # androiddev
-## [1][App Feedback Thread - August 01, 2020](https://www.reddit.com/r/androiddev/comments/i1rfl3/app_feedback_thread_august_01_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/i1rfl3/app_feedback_thread_august_01_2020/
+## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/i2wdrd/weekly_whos_hiring_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/i2wdrd/weekly_whos_hiring_thread/
 ---
-This thread is for getting feedback on your own apps.
+Looking for Android developers? Heard about a cool job posting? Let people know!
 
-####Developers:
+Here is a suggested posting template:
 
-- must **provide feedback** for others
-- must include **Play Store**, **GitHub**, or **BitBucket** link
-- must make top level comment
-- must make effort to respond to questions and feedback from commenters
-- may be open or closed source
+&gt; Company: &lt;Best Company Ever&gt;  
+&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
+&gt; Location: &lt;City, State, Country&gt;  
+&gt; Allows remote: &lt;Yes/No&gt;  
+&gt; Visa: &lt;Yes/No&gt;  
 
-####Commenters:
-
-- must give **constructive feedback** in replies to top level comments
-- must not include links to other apps
-
-To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
-
-As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
-
-\- Da Mods
-## [2][How android OS Boots up - An in-depth look](https://www.reddit.com/r/androiddev/comments/i27q6d/how_android_os_boots_up_an_indepth_look/)
-- url: https://ayusch.com/android-internals-the-android-os-boot-process/
+Feel free to include any other information about the job.
+## [2][Weekly Questions Thread - August 03, 2020](https://www.reddit.com/r/androiddev/comments/i2uyzu/weekly_questions_thread_august_03_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/i2uyzu/weekly_questions_thread_august_03_2020/
 ---
+This thread is for simple questions that don't warrant their own thread (although we suggest checking the sidebar, [the wiki](http://www.reddit.com/r/androiddev/wiki/), [our Discord](https://discord.gg/D2cNrqX), or [Stack Overflow](http://stackoverflow.com) before posting). Examples of questions:
 
-## [3][AndroidBites | Snippets | Three Most useful but least known List functions | Union, Intersection, Subtraction in Kotlin](https://www.reddit.com/r/androiddev/comments/i265tr/androidbites_snippets_three_most_useful_but_least/)
-- url: https://chetangupta.net/union-intersect-subs
+* How do I pass data between my Activities?
+* Does anyone have a link to the source for the AOSP messaging app?
+* Is it possible to programmatically change the color of the status bar without targeting API 21?
+
+**Important: Downvotes are strongly discouraged in this thread. Sorting by new is strongly encouraged.**
+
+Large code snippets don't read well on reddit and take up a lot of space, so please don't paste them in your comments. Consider linking [Gists](https://gist.github.com) instead.
+
+Have a question about the subreddit or otherwise for /r/androiddev mods? [We welcome your mod mail!](http://www.reddit.com/message/compose?to=%2Fr%2Fandroiddev)
+
+Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
+
+Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
+## [3][My First Open Source Android Kotlin Library - Picker](https://www.reddit.com/r/androiddev/comments/i2qrqy/my_first_open_source_android_kotlin_library_picker/)
+- url: https://www.reddit.com/r/androiddev/comments/i2qrqy/my_first_open_source_android_kotlin_library_picker/
 ---
+Hello, fellow Android Developers,
 
-## [4][Android 10: “tile memory limits exceeded, some content may not draw” Multiple WebViews inside my app](https://www.reddit.com/r/androiddev/comments/i29nsp/android_10_tile_memory_limits_exceeded_some/)
-- url: https://www.reddit.com/r/androiddev/comments/i29nsp/android_10_tile_memory_limits_exceeded_some/
+This past weekend I published my first ever Android Kotlin Library, The **Picker**. Picker is a CameraX based WhatsApp Style Image-Video Picker. It is almost the same as WhatsApp's Picker but with Latest CameraX APIs. Also, I've used the scoped storage, so it will work smoothly on Android 10 and above as well. It's very light weighted and extremely easy to implement. Do give it try and please give me feedback, suggestions anything you can share.
+
+  
+[Picker](https://github.com/Parag2385/Picker) \-  A CameraX based WhatsApp Style Image-Video Picker   
+
+
+&amp;#x200B;
+
+[Picker](https://i.redd.it/0w4e52wvupe51.gif)
+## [4][App accepted conditionally into Designed for Families Program when I didn't ask](https://www.reddit.com/r/androiddev/comments/i2u150/app_accepted_conditionally_into_designed_for/)
+- url: https://www.reddit.com/r/androiddev/comments/i2u150/app_accepted_conditionally_into_designed_for/
 ---
-Since one or two weeks some ads inside my app wont show up and would just flicker! Its random when this happens, and it flickers continuously
+My app (a metal weight/price calculator) update was rejected recently, because the ads were rated Teen, and part of the target audience age group was below 13. To get pass the rejection, I changed the AdMob Ad rating content to G, resubmitted the update, redid the Content rating, redid the Target audience and content. It got accepted. 
 
-I have banner ads and video ads in my app and thats the way i call them:
+Today, I received a new email saying that it was actually conditionally accepted into the Designed for Families Program, but I never said on Google Play Console that I wanted to enroll into the program. Also, my app is released into production and the Beta/Alpha version of my app are no longer supported and I don't provide anymore update, which confuses me on why Google wants to test them. 
 
-    holder.wv.setInitialScale(1); holder.wv.setLayerType(View.LAYER_TYPE_SOFTWARE, null); //i call that on banner ads, stackoverflow fix 
-    holder.wv.getSettings().setJavaScriptEnabled(true); 
-    holder.wv.setBackgroundColor(Color.argb(1, 0, 0, 0)); //stackoverflow fix 
-    holder.wv.getSettings().setUseWideViewPort(true); 
-    holder.wv.getSettings().setLoadWithOverviewMode(true); 
-    holder.wv.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY); 
-    holder.wv.setScrollbarFadingEnabled(false); //loadurl etc
-    
-
-I already googled a lot and found out that the hardware acceleration might be problem so I am turning it off for the banner ads but for my video ads i cant because otherwise they wouldnt work
-
-My ads are integrated in a Recyclerview that loads a CardView with the Webview inside. I have 4-5 on each site but there were no problems with the amount of ads, never. There must be kind of issue with the Webview or the Chrome Driver itself? Thats what came up when I searched for my problem
-
-Does anyone encountered this problem?
-
-E/chromium: \[ERROR:tile\_manager.cc(793)\] WARNING: tile memory limits exceeded, some content may not draw
-## [5][SpotiFlyer Update v1.2](https://www.reddit.com/r/androiddev/comments/i2b6zd/spotiflyer_update_v12/)
-- url: https://www.reddit.com/r/androiddev/comments/i2b6zd/spotiflyer_update_v12/
+Full email: "Your app is accepted conditionally into the Designed for Families Program on Google Play. Since the app is only available to a closed testing group, we weren’t able to test the Alpha/Beta version of this app.   
+Within 7 days, please add \*censored\*@gmail.com to your testing group and submit your app for another review."
+## [5][Play store reviews. What do you think?](https://www.reddit.com/r/androiddev/comments/i2vzih/play_store_reviews_what_do_you_think/)
+- url: https://www.reddit.com/r/androiddev/comments/i2vzih/play_store_reviews_what_do_you_think/
 ---
-Provide Suggestions on how to improve my app code base and my Developer Skills.
-
-I am just a Beginner trying to improve by making.
-
-SpotiFlyer is an Android App(Written in Kotlin), which aims to work as:
-
-Downloader For Spotify:Albums, Tracks and Playlists and Even Direct Youtube Videos.
-
-Extension To mute whenever a Spotify Ad Plays.(TODO)
-
-Save your Data ,by not listening your Fav Songs Online again &amp; again(Just Download Them!)
-
-No ADS!
-
-Works straight out of the box and does not require you to generate or mess with your API keys (already included).
-
-
-Release Apk: https://github.com/Shabinder/SpotiFlyer/releases/download/v1.2/SpotiFlyer-v1.2.apk
-
-Github Repo Link: https://github.com/Shabinder/SpotiFlyer/
-
-Contributions are Welcome!
-
-🤩No Limited Quota from this Update 
-🎧
-## [6][Any issues with Android Studio/native NDK development workflows if one updates to MacOS Catalina (which only allows 64-bit code to run)](https://www.reddit.com/r/androiddev/comments/i28t4b/any_issues_with_android_studionative_ndk/)
-- url: https://www.reddit.com/r/androiddev/comments/i28t4b/any_issues_with_android_studionative_ndk/
+I think every developer with an app that has at least 1000+ users knows this: something has to change with the Play store reviews system. The whole system is outdated and does not really serve its one and only purpose - providing accurate and truthful information about the app for potential users. People use this system to vent their anger, because some apps may have too many ads, others use it to chat with the dev, instead of doing it via support channels, some people just abuse it for no reason and so on.
+I've seen it all, after getting yet another 1-star review with text: "How can I use this?" on a rather complex app that is used generally among students (and has good reviews from them), I wonder, will this ever change? What can we do to change this situation as a developers community?
+I get that there are bad apps with horrible UI, fraudulent claims and they deserve bad ratings, but on the other hand, there are tons of bad ratings given by people who didn't want to even spend 5 seconds on a "how to use it" welcoming tour to actually nice and legit apps.
+And don't say that like "oh you know if the app is good then the good ratings will outweight the bad ones" - this is a workaround to a bad design of this system which allows such things in the first place. Let's call the things what they are.
+It is extremely hard to get unrelated reviews removed too. I actually had one such request fulfilled only because the review itself was "your app is great, but the rating is too perfect" - whatever was going through the head of that guy, right? While requests to remove 1-star reviews that say, for example: "it's a nice app, but in different language" for an English-only app that is made specifically for English language related processing are rejected.
+So what do you guys think about all this?
+## [6][Substitutes for the Google Maps SDK on Huawei?](https://www.reddit.com/r/androiddev/comments/i2vqxq/substitutes_for_the_google_maps_sdk_on_huawei/)
+- url: https://www.reddit.com/r/androiddev/comments/i2vqxq/substitutes_for_the_google_maps_sdk_on_huawei/
 ---
-MacOS Catalina is the first mac os version that is going to stop supporting 32-bit code - only 64-bit programs/libraries
-will run.
+Our app has a little Google Map that slides up in a bottom sheet and shows a bunch of colored pins. Because of a U.S. trade ban on Huawei, this no longer works on those phones (I think) and we need to find a substitute. What has your experience been in working with this new state of affairs?
 
-My question is whether any of the android developer (Android Studio/NDK compilation) workflows are going to be affected by this ?
-
-Are there any components there that are still 32-bit and may fail on MacOS Catalina?
-## [7][Jetpack compose for desktop](https://www.reddit.com/r/androiddev/comments/i1t0i8/jetpack_compose_for_desktop/)
-- url: https://zeromod.in/posts/jetpack-compose-desktop/
+Mainly wondering what the best approach is for maintaining and switching between two separate map systems in the same app. Huawei has a [conversion guide](https://developer.huawei.com/consumer/en/doc/hmssdk_map_conversion_guide) but I don't want to totally replace Google Maps for everyone, just to accommodate Huawei users. So I guess we're looking at a separate MapFragment and HuaweiMapFragment...?? What have your map experiences been like since the ban?
+## [7][Can I drop Jetifier? (gradle plugin)](https://www.reddit.com/r/androiddev/comments/i2gv90/can_i_drop_jetifier_gradle_plugin/)
+- url: https://github.com/plnice/can-i-drop-jetifier
 ---
 
-## [8][Don't use email magic link for auth...](https://www.reddit.com/r/androiddev/comments/i283p9/dont_use_email_magic_link_for_auth/)
-- url: https://www.reddit.com/r/androiddev/comments/i283p9/dont_use_email_magic_link_for_auth/
+## [8][Remote work](https://www.reddit.com/r/androiddev/comments/i2x2tq/remote_work/)
+- url: https://www.reddit.com/r/androiddev/comments/i2x2tq/remote_work/
 ---
-When we considered user auth methods, we first looked at using only using "Sign in with Google/Facebook". However, App Store guidelines now require that any "app that use a social login service ... must also offer Sign in With Apple as an equivalent option" -- which means you won't be given the true email of most users (given [Hide My Email](https://support.apple.com/en-us/HT210425)) ... **so if you're developing X-Platform, simply using Google &amp; Facebook is no longer viable.**
-
-Given we wanted to allow users to find other users on the app, we needed a unique user identifier per user, giving us 4 options:
-
-1. **Email + Password** ... requires forgot password and users to prove email ownership
-2. **Support all third-party (Apple, Google, Facebook)** ... and add a new unique identifier to allow friends to find each other, given email will not be sufficient
-3. **Phone number magic link** ... we were relying on Expo (previously did not support phone-number auth), and we also felt emails would be a good/cheap tool for communication
-4. **Email magic link**
-
-Email magic link felt... perfect, but it was pretty much a disaster, and you should be pretty wary of doing it without implementing safeguards. I imagine email + login code is a better option.
-
-Here are the various safeguards we tried with metrics and graphs: [https://snaphabit.app/blog/password-less-login/](https://snaphabit.app/blog/password-less-login/). Happy to answer any additional questions!
-## [9][Rise widgets?](https://www.reddit.com/r/androiddev/comments/i2avio/rise_widgets/)
-- url: https://www.reddit.com/r/androiddev/comments/i2avio/rise_widgets/
+hello, what is the best website to find good opportunities for remote work as an Android developer?
+## [9][Should I use a different email for registration?](https://www.reddit.com/r/androiddev/comments/i2pnka/should_i_use_a_different_email_for_registration/)
+- url: https://www.reddit.com/r/androiddev/comments/i2pnka/should_i_use_a_different_email_for_registration/
 ---
-I love my widgets but man they can take up a lot of screen space.. I try to resize the widget by long pressing and scale down but it just goes back to normal size.. is there any way of doing this?
-## [10][ViewSwapper: a new library for single activity architecture fans](https://www.reddit.com/r/androiddev/comments/i26z7v/viewswapper_a_new_library_for_single_activity/)
-- url: https://www.reddit.com/r/androiddev/comments/i26z7v/viewswapper_a_new_library_for_single_activity/
+I'm pretty familiar with Android apps generally and I've participated in developing some. I'd like to create my own personal account for basically just screwing around. I can't really think of a reason not to use the gmail account that I use for everything since it's not really listed anywhere publicly, but somehow it seems like I'll get spammed into oblivion if I do, so I think I'm just gonna go ahead and put in a separate email. Is that basically correct do ya think?
+## [10][Access app statistics via API](https://www.reddit.com/r/androiddev/comments/i2wlto/access_app_statistics_via_api/)
+- url: https://www.reddit.com/r/androiddev/comments/i2wlto/access_app_statistics_via_api/
 ---
-Self plugging here for a recent library I made:
+Hi,
 
-ViewSwapper is a simple view container (think like FrameLayout) that supports transitions (API level 19+) and can be used to swap out screens without having to bother with fragments: [https://github.com/grant-park/ViewSwapper](https://github.com/grant-park/ViewSwapper)
+I am no android developer but I need to access app statistics via API. For now I do it manually by exporting the values. I checked the website but it all seems to be focused on maintaining the app, deplying new versions etc. I just need simple data like installs, uninstalls, reviews, active users etc. 
 
-it's meant to be a convenient basis for UI in any MVU/MVI apps, but also great for anyone who needs some flexible and lightweight view replacement
+ [https://support.google.com/googleplay/android-developer/answer/139628?co=GENIE.Platform%3DDesktop&amp;hl=en](https://support.google.com/googleplay/android-developer/answer/139628?co=GENIE.Platform%3DDesktop&amp;hl=en) 
 
-would love to start some discussion and answer any questions regarding this or single activity
-## [11][As senior Android dev, how hard/time consuming is it to learn Spring/Hibernate for BE development?](https://www.reddit.com/r/androiddev/comments/i1w45i/as_senior_android_dev_how_hardtime_consuming_is/)
-- url: https://www.reddit.com/r/androiddev/comments/i1w45i/as_senior_android_dev_how_hardtime_consuming_is/
+Then it wants me to install gsuite tool "To access your reports programmatically download the gsutil tool."
+
+Isn't there really a way to just use REST API which returns the analytics?
+
+Thanks.
+
+K.
+## [11][Fastest Short-time Fourier transform -library for Android? (maybe using parallel-processing?)](https://www.reddit.com/r/androiddev/comments/i2whzz/fastest_shorttime_fourier_transform_library_for/)
+- url: https://www.reddit.com/r/androiddev/comments/i2whzz/fastest_shorttime_fourier_transform_library_for/
 ---
-Just something that's been on my mind for some time. I'm sure I'm not the first one.
+The STFT-solution that I'm using right now takes about 150-200ms to calculate the STFT of a 2.5 second audioclip at 8kHz. I need to get it under 100ms (Galaxy A5 2017 as a min.Requirement smartphone).  
+What is the fastest STFT-library for Android/Java? Parallel processing should be possible during the Matrix-vector-multiplications, right? Is there a STFT library that makes use of parallelism?
+## [12][Top 12 Mobile Programming Languages Include Java, C](https://www.reddit.com/r/androiddev/comments/i2waig/top_12_mobile_programming_languages_include_java_c/)
+- url: https://insights.dice.com/2020/08/03/top-12-mobile-programming-languages-include-java-c/
+---
 
-I've been doing Android development for nearly 5 years now, currently working as platform lead. I actually still like the platform (although it's not perfect) and write code regularly but was thinking about broadening my skill set.
-
-Anybody here who's gone through this? And if you switched to a BE job, do you prefer it now?

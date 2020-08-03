@@ -1,13 +1,5 @@
 # rails
-## [1][Gimme Gems Thursdays - Found an awesome new gem? Post it here!](https://www.reddit.com/r/rails/comments/hwehh6/gimme_gems_thursdays_found_an_awesome_new_gem/)
-- url: https://www.reddit.com/r/rails/comments/hwehh6/gimme_gems_thursdays_found_an_awesome_new_gem/
----
-Please use this thread to discuss **cool** but relatively **unknown** gems you've found.
-
-You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
-
-Please include a **description** and a **link** to the gem's homepage in your comment.
-## [2][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/i00rha/personal_projects_show_off_your_own_project_andor/)
+## [1][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/i00rha/personal_projects_show_off_your_own_project_andor/)
 - url: https://www.reddit.com/r/rails/comments/i00rha/personal_projects_show_off_your_own_project_andor/
 ---
 In this thread you can showcase your personal pet project to other redditors.
@@ -27,190 +19,133 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][[Help]Rounding problems when trying to calculate taxes on order](https://www.reddit.com/r/rails/comments/i1uhyu/helprounding_problems_when_trying_to_calculate/)
-- url: https://www.reddit.com/r/rails/comments/i1uhyu/helprounding_problems_when_trying_to_calculate/
+## [2][Moving to Rails in 2020](https://www.reddit.com/r/rails/comments/i2tg0x/moving_to_rails_in_2020/)
+- url: https://www.reddit.com/r/rails/comments/i2tg0x/moving_to_rails_in_2020/
 ---
-Hi, I'm trying to calculate the total cost for a given set of fixed orders inclusive of tax(which should be rounded up to the nearest 0.05. Despite trying both .round and .ceil, I'm still slightly off the target values for each of them. I was wondering if anyone could identify what I am missing in my orders controller?
+Hey people. I'm a backend developer working primarily with PHP7.x and TypeScript, with some experience with Go, but in all honesty, I always had a thing for Ruby.   
 
-    module Api
-      class V1::OrdersController &lt; ActionController::API	
-        def calculate
-    			calculated = {}
-    			calculated["sales_tax"] = 0
-    			params["item"].values.each do |item|
-    				calculated["#{item["quantity"]} #{item["name"]}"] = item["quantity"].to_f * item["price"].to_f
-    		
-    				unless ["book", "chocolate bar", "imported box of chocolates", "packet of headache pills"].include? item["name"].strip
-    					calculated["#{item["quantity"]} #{item["name"]}"] = ('%.2f' %(calculated["#{item["quantity"]} #{item["name"]}"]*1.10)).to_f
-    					calculated["sales_tax"] += item["quantity"].to_f * item["price"].to_f * 0.10
-    				end
-    
-    				if item["name"].split(" ").include? "imported"
-    					calculated["#{item["quantity"]} #{item["name"]}"] = ('%.2f' % (calculated["#{item["quantity"]} #{item["name"]}"]*1.05)).to_f
-    					calculated["sales_tax"] += item["quantity"].to_f * item["price"].to_f * 0.05
-    				end
-    			end
-    			
-    			calculated["total"] =('%.2f' % (calculated.values.sum - calculated["sales_tax"])).to_f
-    			calculated["sales_tax"] = ('%.2f' % calculated["sales_tax"]).to_f
-    			render json: calculated, status: 200
-    		end
-    	end
+
+I've been thinking about learning Ruby and then Rails properly and trying to land a job that would allow me to use them. The only thing that pulls me back is a question of whether or not new stuff is actually created with Ruby/Rails or its mostly legacy code at this point. I'm honestly tired of PHP (mostly community, the language is just fine) and TypeScript doesn't bring to much joy to work with (although it is a great language).   
+
+
+To sum up my question, are there new Rails apps coming out and, with 5-6 years of experience would I have to look for a junior position, given that I've got experience with other languages and know a fair bit of system design, best practices and design patterns?
+## [3][Same association twice for one single model](https://www.reddit.com/r/rails/comments/i2v2z0/same_association_twice_for_one_single_model/)
+- url: https://www.reddit.com/r/rails/comments/i2v2z0/same_association_twice_for_one_single_model/
+---
+Hello, I have a table with synonyms linked to a word and another word ("word\_linked") (which is the synonym of the first one).
+
+Table 1 : Word
+
+Table 2 : Synonym (word\_id, word\_linked)  
+
+
+How can I create an association with both words?
+
+&amp;#x200B;
+
+For now I have in my Synonym model :
+
+`belongs_to :word`
+
+But I would also need something like this:
+
+`has_one :word, :through =&gt; :word_linked`
+
+&amp;#x200B;
+
+The goal is to be able to load the word association when I do Synonym.find(1).word\_linked  
+
+
+Is it possible to do that? Thanks.
+## [4][Backing up and Restoring ActiveStorage files](https://www.reddit.com/r/rails/comments/i2ucgd/backing_up_and_restoring_activestorage_files/)
+- url: https://www.reddit.com/r/rails/comments/i2ucgd/backing_up_and_restoring_activestorage_files/
+---
+I am building an app where a user simply uploads some files to a Rails app and I want add some kind of backup functionality built into the app.
+
+The app should be able to auto-backup the database and the files, compress them into a `zip` file and then upload them to a custom or third party service.
+
+I am thinking that I will serialize the user's database records e.g. the `User` instance and his `posts` (where the files are being referenced to and uploaded) but I don't know what can I do with `ActiveStorage` files.
+
+Should I serialize the `active_storage_*` tables and backup the `/storage` directory as is ? Could restoring them into a new Rails installation and referencing the *same* user work?
+## [5][Credentials failure from NGINX](https://www.reddit.com/r/rails/comments/i2u8bb/credentials_failure_from_nginx/)
+- url: https://www.reddit.com/r/rails/comments/i2u8bb/credentials_failure_from_nginx/
+---
+Hosting my app on DO vps. Have rails native credentials stored. (Rails.application.credentials)
+
+They working fine from `rails c` console but NGINX doesn't see them at all, logging `undefined method [] for NilClass` for them. Can you help me out guys?
+## [6][Hooks in ActionView::TestCase](https://www.reddit.com/r/rails/comments/i2wgd8/hooks_in_actionviewtestcase/)
+- url: https://www.reddit.com/r/rails/comments/i2wgd8/hooks_in_actionviewtestcase/
+---
+I am modifying test cases in a test file that looks like this. 
+
+    class TestClass &lt; ActionView
+      def setup # called before each test
+      end
+      def teardown # called after each test
+      end
+      def test_this
+     end
     end
-## [4][How do I access "current_user" in my RegistrationsController?](https://www.reddit.com/r/rails/comments/i1x41i/how_do_i_access_current_user_in_my/)
-- url: https://www.reddit.com/r/rails/comments/i1x41i/how_do_i_access_current_user_in_my/
+
+I'm looking for a hook that will run after all the tests complete running. 
+
+I am not sure where to check the documentation for the hooks available in this class. Any help would be great. It's kinda old code and I couldn't find anything on googling. 
+
+Please do not suggest gems to achieve this.
+## [7][nonce for style-src added to script-src by gem - how to circumvent?](https://www.reddit.com/r/rails/comments/i2oehp/nonce_for_stylesrc_added_to_scriptsrc_by_gem_how/)
+- url: https://www.reddit.com/r/rails/comments/i2oehp/nonce_for_stylesrc_added_to_scriptsrc_by_gem_how/
 ---
-Hey,  
+I have a single inline style tag in a Rails app, and I'm trying to whitelist it with a nonce.
 
+The error: `Content Security Policy: The page’s settings observed the loading of a resource at inline (“style-src”). A CSP report is being sent.`
 
-I'm trying to access current\_user" in my RegistrationsController, but it's returning nil.  
+The style gets injected by a helper when using the [invisible\_captcha](https://github.com/markets/invisible_captcha) gem:
 
+`&lt;%= invisible_captcha nonce: true %&gt;`
 
-The only answer I could find online was [this one](https://stackoverflow.com/questions/11369941/rails-devise-current-user-is-nil-when-overriding-registrationscontroller) suggesting to add the line:  
+Comparing the view and the header shows that the nonce \*is\* being added to both, but it's being added to `script-src` instead of `style-src`.
 
+View: `&lt;style media="screen" nonce="5Cq/QyoJ5Co+LdarO1uvrg=="&gt;`
 
-    include Devise::Controllers::Helpers
+Header: `Content-Security-Policy-Report-Only script-src 'self' https: 'nonce-5Cq/QyoJ5Co+LdarO1uvrg=='; style-src 'self' https:;`
 
-But this didn't work for me.  
+This is my **content\_security\_policy.rb**:
 
+    Rails.application.config.content_security_policy do |config|
+     config.script_src  :self, :https    
+    end
+    
+    Rails.application.config.content_security_policy_nonce_generator = -&gt; request { SecureRandom.base64(16) }
+    Rails.application.config.content_security_policy_nonce_directives = %w(style-src script-src)
 
-Any ideas?  
-
-
-Thanks.
-## [5][Can't verify CSRF token authenticity Error](https://www.reddit.com/r/rails/comments/i1sd6c/cant_verify_csrf_token_authenticity_error/)
-- url: https://www.reddit.com/r/rails/comments/i1sd6c/cant_verify_csrf_token_authenticity_error/
+Why is it going to the wrong directive, and how can I make it go to `style-src`? The helper adds a random class name, so hashing the injected code is out of the question.
+## [8][Creating Barcode Inventory Labels](https://www.reddit.com/r/rails/comments/i2epfu/creating_barcode_inventory_labels/)
+- url: https://www.reddit.com/r/rails/comments/i2epfu/creating_barcode_inventory_labels/
 ---
-Hello,  
-
-
-I'm building a rails API and I'm having the problem of getting the following error message:  
-
-
-    Can't verify CSRF token authenticity.
-
-  
-This is happening on my UsersController when I try to UPDATE a user. Even though I have the following lines in the controller (I've also tried them in ApplicationController).  
-
-
-    skip_before_action :verify_authenticity_token
-    protect_from_forgery with: :null_session
-
-Having these lines has resolved the issue in my other controllers, but not in the users controller. Can anyone help me with this?  
-
-
-Thanks.
-## [6][Rails API mode with native app: How to handle social provider JWT authentication.](https://www.reddit.com/r/rails/comments/i1ofh8/rails_api_mode_with_native_app_how_to_handle/)
-- url: https://www.reddit.com/r/rails/comments/i1ofh8/rails_api_mode_with_native_app_how_to_handle/
+I would love to know if anyone has done this before and any specifics if you did. I was able create some Avery labels with the help of Prawn Label gem. But I would really like to print the labels by rotating the font 90% but could never get the alignment correct. Next I think I will try a raw zpl file to print to a zebra printer.
+## [9][Need help with bundle](https://www.reddit.com/r/rails/comments/i2iiyd/need_help_with_bundle/)
+- url: https://www.reddit.com/r/rails/comments/i2iiyd/need_help_with_bundle/
 ---
-Hi guys
+Earlier i was trying to $bundle update, when it gave an error message saying "An error occured while trying to install puma (version) and Bundler cant continue. Make sure gem install puma -v (version) --source https//:rubygems.org succeeds before bundling" And when i try to do also that, it gives another error.
 
-I've been searching for the best way to handle authentication (without breaking the bank) in my latest project, being a native app with a Rails backend.  
-
-
-I looked at Auth0, Firebase, Okta, FusionAuth but after reading an extensive amount of threads on here regarding the different solutions, I was wondering if just using ruby-jwt would actually be enough. This is a production app so I am looking for something robust but I'm a bit lost on why I would need an external provider or a specific gem if I am just using social providers and returning JWT's.   
-
-
-But do let me know what you think and where my ideas may be wrong!  
-
-
-Regards
-## [7][Auto generated migrations like in Django?](https://www.reddit.com/r/rails/comments/i1m8yy/auto_generated_migrations_like_in_django/)
-- url: https://www.reddit.com/r/rails/comments/i1m8yy/auto_generated_migrations_like_in_django/
+Does anyone know how to fix this?
+## [10][Are you gonna stick to Mac after Apple Silicon?](https://www.reddit.com/r/rails/comments/i2qo7k/are_you_gonna_stick_to_mac_after_apple_silicon/)
+- url: https://www.reddit.com/r/rails/comments/i2qo7k/are_you_gonna_stick_to_mac_after_apple_silicon/
 ---
-With Django, I just modify models.py and then maybe rename a field and then the migration is generated. I’m wondering if there is a way to do this with Rails migrations. I’ve heard of Squasher but it seems unmaintained.
-## [8][Most popular database for Rails?](https://www.reddit.com/r/rails/comments/i1dx5k/most_popular_database_for_rails/)
-- url: https://www.reddit.com/r/rails/comments/i1dx5k/most_popular_database_for_rails/
----
-I would assume PostgreSQL because I know many Rails developers like to use Heroku which seems to favor PostgreSQL in terms of pricing.
-## [9][From Internal to External CSS](https://www.reddit.com/r/rails/comments/i1nt6b/from_internal_to_external_css/)
-- url: https://www.reddit.com/r/rails/comments/i1nt6b/from_internal_to_external_css/
----
-On my website I have all the css files in the folder \\app\\assets\\stylesheets (in .scss, obviously).
 
-And in the head I have this:
+
+[View Poll](https://www.reddit.com/poll/i2qo7k)
+## [11][Rails.env.production?](https://www.reddit.com/r/rails/comments/i2faqf/railsenvproduction/)
+- url: https://www.reddit.com/r/rails/comments/i2faqf/railsenvproduction/
+---
+Hi guys! I am a front-end. New on rails.
+
+I'm noticing that the previous back end developer added this in the head
 
     &lt;% if Rails.env.production? %&gt;
     	&lt;style type="text/css" media="all"&gt;&lt;%= inline_asset('application.css') %&gt;&lt;/style&gt;
     &lt;% else %&gt;
     	&lt;%= stylesheet_link_tag 'application', media: 'all' %&gt;
     &lt;% end %&gt;
-    &lt;%= csrf_meta_tags %&gt;
 
-In this way, watching the source of my online website, I see that the CSS is showed as "internal".
-
-How to turn it as external? I know that this is the best practice.
-## [10][Creating a new route to a separate index](https://www.reddit.com/r/rails/comments/i1949h/creating_a_new_route_to_a_separate_index/)
-- url: https://www.reddit.com/r/rails/comments/i1949h/creating_a_new_route_to_a_separate_index/
----
-i've read and re-read the guides and I don't see how to distinguish between the different get requests.
-
-If I have the following:
-
-resources :widgets
-
-   get     :separate\_index
-
-end
-
-&amp;#x200B;
-
-The get becomes equivalent to a show b/c it routes with an id.
-
-I need it to route as an index style get.
-
-&amp;#x200B;
-
-I'm sorry, i realize this might not be clear, but i don't know how else to explain it.
-## [11][ActiveStorage and local directory with dockerized app](https://www.reddit.com/r/rails/comments/i14po4/activestorage_and_local_directory_with_dockerized/)
-- url: https://www.reddit.com/r/rails/comments/i14po4/activestorage_and_local_directory_with_dockerized/
----
-I have a `docker-compose.yml` with a Rails/Postgres app which uses **ActiveStorage** and local storage setup. 
-
-    local:
- service: Disk
- root: &lt;%= Rails.root.join("storage") %&gt;
-
-I want all file uploads to be kept safely in the host's disk. What is the safest way of keeping those files intact while pulling/rebuilding the docker images ?
-## [12]["All-to-all" association](https://www.reddit.com/r/rails/comments/i133s9/alltoall_association/)
-- url: https://www.reddit.com/r/rails/comments/i133s9/alltoall_association/
----
-Obviously this isn't the name for what I want to do, but I can't think of any other way to describe it.  I want to make an "all to all" association between two models.
-
-Imagine I have two models:  A "Customer" model which is what it says on the tin, and probably has hundreds or thousands of records, and some get added every day.  And a "Warehouse" model which probably has a handful of records, and don't change much but still once in a while.
-
-I'd like to store, in every Customer record, the cost of traveling to that customer from each warehouse.
-
-So, as a first crack, you have something like this:
-
-    class WarehouseCost &lt; ApplicationRecord
-      belongs_to :warehouse
-      belongs_to :customer
-     
-      # assume this model has an attribute :travel_cost
-    end
-
-    class Customer &lt; ApplicationRecord
-      has_many :warehouse_costs
-      accepts_nested_attributes_for :warehouse_costs
-    end
-
-Now, this can store the data, and with the right validations you can prevent it from having more than 1 record for each combination of warehouse and customer, but where I'm actually running into trouble is how to make the forms work.  This isn't a job for cocoon, which lets you arbitrarily add records.  I'd like a single input displayed for each Warehouse, regardless of whether any data is already saved in the record or not.
-
-What I've done so far is to put a very kludgy hack in the edit action of the controller:
-
-    Warehouse.all.each do |w|
-      wc = @customer.warehouse_costs.find_by(:warehouse =&gt; w)
-      @customer.warehouse_costs.create(:warehouse =&gt; w) unless wc
-    end
-
-Because the Customer now has a WarehouseCost record explicitly created for each Warehouse, the form "fields_for" works correctly and can draw an input for each one:
-
-    &lt;%= f.fields_for :warehouse_costs do |wc| %&gt;
-      &lt;b&gt;&lt;%= "Cost from " + wc.object.warehouse.name+" warehouse:" %&gt;&lt;/b&gt;
-      &lt;%= wc.text_field :travel_cost, :class =&gt; 'form-control' %&gt;
-    &lt;% end %&gt;
-
-So, even though this works, it feels like I'm going about it the wrong way.  For starters, it doesn't work on new records.  Also, it feels kludgy to add the associated records before drawing the edit form, as surely I could somehow generate the correct form for the associated records without them already being there?
-
-Any suggestions?
+Why if `Rails.env.production?`? What is it?

@@ -85,65 +85,100 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
-## [3][Pull to refresh, velocity-based morphing SVGs with react-spring](https://www.reddit.com/r/reactjs/comments/i2t2ww/pull_to_refresh_velocitybased_morphing_svgs_with/)
+## [3][React 17 will remove event pooling](https://www.reddit.com/r/reactjs/comments/i3amt3/react_17_will_remove_event_pooling/)
+- url: https://twitter.com/dan_abramov/status/1290302867425828864?s=20
+---
+
+## [4][Introducing Bumbag – A React UI Kit](https://www.reddit.com/r/reactjs/comments/i3ikot/introducing_bumbag_a_react_ui_kit/)
+- url: https://www.reddit.com/r/reactjs/comments/i3ikot/introducing_bumbag_a_react_ui_kit/
+---
+After about a year of development, I'm finally releasing Bumbag v1. Bumbag is an accessible &amp; themeable React UI Kit that allows you to rapidly build React applications whether it be an MVP or a large-scale application.
+
+Check it out!  
+👉[https://bumbag.style](https://bumbag.style)  
+👉[https://github.com/bumbag/bumbag-ui](https://github.com/bumbag/bumbag-ui)
+
+Bumbag was previously known as [Fannypack](https://fannypack.style) (initially released in 2018), however I chose to rebrand to Bumbag for the next major release.
+
+Powered by [Reakit](https://reakit.io/) under the hood, all components come with accessible HTML attributes &amp; keyboard interactions out of the box and follow the WAI-ARIA standards.
+
+It features:
+
+\- 🧱70+ accessible components  
+\- 🎨Global &amp; component-level styling/theming  
+\- 📦Flexible component composition  
+\- 🦪Page shells  
+\- 🤓Intuitive APIs  
+\- 🌓Color modes  
+\- 🛍Variants  
+\- 📐Layout primitives  
+\- 🛠Utility components &amp; hooks
+
+Some sites built with Bumbag:  
+\- [Pory](https://pory.io)  
+\- [Medipass](https://medipass.com.au/)  
+\- [Can I Leave Melbourne?](https://canileave.melbourne/)
+## [5][Pull to refresh, velocity-based morphing SVGs with react-spring](https://www.reddit.com/r/reactjs/comments/i2t2ww/pull_to_refresh_velocitybased_morphing_svgs_with/)
 - url: https://v.redd.it/bhjy5gd3vqe51
 ---
 
-## [4][Learning to Think in React by Building a Shopping Cart using Vanilla JS and then React](https://www.reddit.com/r/reactjs/comments/i2g4mt/learning_to_think_in_react_by_building_a_shopping/)
-- url: https://www.youtube.com/watch?v=LDKnz5gwdz4
+## [6][New UI Library with 70+ accessible components](https://www.reddit.com/r/reactjs/comments/i3f9lz/new_ui_library_with_70_accessible_components/)
+- url: https://www.reddit.com/r/reactjs/comments/i3f9lz/new_ui_library_with_70_accessible_components/
+---
+Hey everyone!
+
+My friend just shipped a UI library called Bumbag onto Product Hunt today and I wanted to share it with everyone because it's by far the best UI kit I've used for all my side projects. It features:
+
+* 70+ accessible components
+* Global &amp; component-level theming
+* Flexible component composition
+* Page shells
+* Intuitive APIs
+* Color modes
+* Variants
+* Layout primitives
+* Utility components &amp; hooks
+
+Check it out for your next project and help upvote it [**here**](https://www.producthunt.com/posts/bumbag-a-react-ui-kit) **🙏**
+## [7][What cross-browser testing tools should we use?](https://www.reddit.com/r/reactjs/comments/i3fyw6/what_crossbrowser_testing_tools_should_we_use/)
+- url: https://storage.googleapis.com/open-source-developer-resources/cross-browser-testing-tools.htm
 ---
 
-## [5][Even your favourite framework creators don't know everything. Don't beat yourself up.](https://www.reddit.com/r/reactjs/comments/i2tywx/even_your_favourite_framework_creators_dont_know/)
-- url: https://overreacted.io/things-i-dont-know-as-of-2018/?ck_subscriber_id=934260383
+## [8][How to Implement Undo in a React + Redux Application](https://www.reddit.com/r/reactjs/comments/i39vr7/how_to_implement_undo_in_a_react_redux_application/)
+- url: https://www.kapwing.com/blog/how-to-implement-undo-in-a-react-redux-application/
 ---
 
-## [6][Laid Off Developer Since Beginning Of Pandemic Asking For Suggestions To Get A Job](https://www.reddit.com/r/reactjs/comments/i2rptq/laid_off_developer_since_beginning_of_pandemic/)
-- url: https://www.reddit.com/r/reactjs/comments/i2rptq/laid_off_developer_since_beginning_of_pandemic/
+## [9][I learned React, got a job, and then got fired!](https://www.reddit.com/r/reactjs/comments/i3jhja/i_learned_react_got_a_job_and_then_got_fired/)
+- url: https://www.reddit.com/r/reactjs/comments/i3jhja/i_learned_react_got_a_job_and_then_got_fired/
 ---
- Hello, my developer comrades, so basically I was laid off in March, 2 weeks before my co-op term ends.
-
-And I graduated from college during the pandemic in April. Since then I'm trying to find a job :(
-
-It's a really tough journey when you don't have experience that much, but as you seen I didn't give up yet :)
-
-I'm asking you guys for suggestions? I don't know what I'm missing rather than experience.
-
-Here you are my portfolio website,
-
-[www.ozanmuldur.com](https://www.ozanmuldur.com/)
-
-I'll appreciate any suggestions, do not hesitate to dm me. Cheers!
-## [7][I created a sitemap and robots.txt generator for nextjs. Supports default and pre-rendered pages.](https://www.reddit.com/r/reactjs/comments/i2vtyl/i_created_a_sitemap_and_robotstxt_generator_for/)
-- url: https://github.com/iamvishnusankar/next-sitemap
+Last year I started learning React and javascript and after months of practice, I got a job. But I was fired because I was unable to perform some simple array manipulations. Now I am thinking what should I do? I was a PHP developer but I have forgotten all that and my sole focus was javascript. Now I don't know where to go from here. I am heartbroken, afraid I will never be a developer or a good one to get a living. I honestly don't know where to go from here.
+## [10][Notify.is - my first React project built with Next.js](https://www.reddit.com/r/reactjs/comments/i3jby6/notifyis_my_first_react_project_built_with_nextjs/)
+- url: https://www.reddit.com/r/reactjs/comments/i3jby6/notifyis_my_first_react_project_built_with_nextjs/
 ---
+Hi there,
 
-## [8][Experiences of ejecting from CRA in prod?](https://www.reddit.com/r/reactjs/comments/i2u06c/experiences_of_ejecting_from_cra_in_prod/)
-- url: https://www.reddit.com/r/reactjs/comments/i2u06c/experiences_of_ejecting_from_cra_in_prod/
+For the past month or so I've been working on my first React project using the framework Next.js to build the front end to a small service called [Notify.is](https://notify.is) which notifies you when your favourite username on Instagram, Twitter or GitHub becomes available.
+
+The backend uses Go to deal with RESTful API routes for signing up and deleting data. I've had a lot of fun building it and would love any feedback on the design, code or anything else. Also, trying out the service would be helpful for me finding any bugs I have not yet found.
+
+The frontend and backend are deployed using Vercel and the GitHub repository can be found here:
+
+[https://github.com/oliverproud/notify.is](https://github.com/oliverproud/notify.is)
+
+The Go code that checks with the respective services is deployed in a Docker container on Google Cloud Run and you can find the GitHub repository for that here:
+
+[https://github.com/oliverproud/notify.is-gcloud](https://github.com/oliverproud/notify.is-gcloud)
+
+The website:
+
+[https://notify.is](https://notify.is)
+
+Let me know what you think!
+## [11][how to implement a total time visited for a react app](https://www.reddit.com/r/reactjs/comments/i3j5lz/how_to_implement_a_total_time_visited_for_a_react/)
+- url: https://www.reddit.com/r/reactjs/comments/i3j5lz/how_to_implement_a_total_time_visited_for_a_react/
 ---
-I'm looking to eject from CRA between two releases of production software. This adds ~1600 lines of configuration scripts. I'm not sure if I want to gradually remove things I don't need and hope that it will untangle itself, or just start over from a new alternative webpack config. Either way, does it make sense to just get the eject over with and then hope to eventually clean up the mess?
-
-It certainly seems non-trivial. There's lots of fixes for and interactions between yarn pnp, webpack, typescript, eslint, jest, dev server, proxy, and HMR (which has actually been broken in CRA recently). And it could be hard to verify things like the chunking strategy and typescript/babel runtime helpers and polyfills.
-
-Any insightful words from those who have gone down the same path?
-
-As for the motivation, it's mainly to learn what's going on. It's a massive black box in the project, it's bloated, and has required special treatment to get things working in the past. It's making me uneasy.
-## [9][TypeScript Support in Kea (The Long Road)](https://www.reddit.com/r/reactjs/comments/i2wm1w/typescript_support_in_kea_the_long_road/)
-- url: https://kea.js.org/blog/typescript
----
-
-## [10][Is it safe to send the auth password just as JSON stringify without any encryption?](https://www.reddit.com/r/reactjs/comments/i2whgt/is_it_safe_to_send_the_auth_password_just_as_json/)
-- url: https://www.reddit.com/r/reactjs/comments/i2whgt/is_it_safe_to_send_the_auth_password_just_as_json/
----
-I was reading about XSS or all kind of stuff and wondering sending the password in the  JSON stringify is alright to do or is there a better way to do this?
-## [11][ConanJs vs Redux. Comparing a simple TODO App](https://www.reddit.com/r/reactjs/comments/i2wexv/conanjs_vs_redux_comparing_a_simple_todo_app/)
-- url: https://medium.com/conanjs/conanjs-vs-redux-comparing-a-simple-todo-app-222b87363865?source=friends_link&amp;sk=80e501985b27f9694ac74c9bae1fbb61
+i am building a web app with MERN stack.i want to know the total time that i spent on  the website.how do i implement such system.
+## [12][React Native + Firebase Auth 2020 Version With React Navigation 5](https://www.reddit.com/r/reactjs/comments/i3j1m5/react_native_firebase_auth_2020_version_with/)
+- url: https://youtu.be/eD7g6oyVeEI
 ---
 
-## [12][Svg Icons as React Components](https://www.reddit.com/r/reactjs/comments/i29kg1/svg_icons_as_react_components/)
-- url: https://www.reddit.com/r/reactjs/comments/i29kg1/svg_icons_as_react_components/
----
-Hi,
-
-I used svgo/svgr to transform popular svg icons sets so it can be  copy/pasted as React components. Hope you find this useful. 
-
-[https://reactsvgicons.com](https://reactsvgicons.com)

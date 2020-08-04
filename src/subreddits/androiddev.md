@@ -31,78 +31,62 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][My First Open Source Android Kotlin Library - Picker](https://www.reddit.com/r/androiddev/comments/i2qrqy/my_first_open_source_android_kotlin_library_picker/)
-- url: https://www.reddit.com/r/androiddev/comments/i2qrqy/my_first_open_source_android_kotlin_library_picker/
----
-Hello, fellow Android Developers,
-
-This past weekend I published my first ever Android Kotlin Library, The **Picker**. Picker is a CameraX based WhatsApp Style Image-Video Picker. It is almost the same as WhatsApp's Picker but with Latest CameraX APIs. Also, I've used the scoped storage, so it will work smoothly on Android 10 and above as well. It's very light weighted and extremely easy to implement. Do give it try and please give me feedback, suggestions anything you can share.
-
-  
-[Picker](https://github.com/Parag2385/Picker) \-  A CameraX based WhatsApp Style Image-Video Picker   
-
-
-&amp;#x200B;
-
-[Picker](https://i.redd.it/0w4e52wvupe51.gif)
-## [4][App accepted conditionally into Designed for Families Program when I didn't ask](https://www.reddit.com/r/androiddev/comments/i2u150/app_accepted_conditionally_into_designed_for/)
-- url: https://www.reddit.com/r/androiddev/comments/i2u150/app_accepted_conditionally_into_designed_for/
----
-My app (a metal weight/price calculator) update was rejected recently, because the ads were rated Teen, and part of the target audience age group was below 13. To get pass the rejection, I changed the AdMob Ad rating content to G, resubmitted the update, redid the Content rating, redid the Target audience and content. It got accepted. 
-
-Today, I received a new email saying that it was actually conditionally accepted into the Designed for Families Program, but I never said on Google Play Console that I wanted to enroll into the program. Also, my app is released into production and the Beta/Alpha version of my app are no longer supported and I don't provide anymore update, which confuses me on why Google wants to test them. 
-
-Full email: "Your app is accepted conditionally into the Designed for Families Program on Google Play. Since the app is only available to a closed testing group, we weren’t able to test the Alpha/Beta version of this app.   
-Within 7 days, please add \*censored\*@gmail.com to your testing group and submit your app for another review."
-## [5][Play store reviews. What do you think?](https://www.reddit.com/r/androiddev/comments/i2vzih/play_store_reviews_what_do_you_think/)
-- url: https://www.reddit.com/r/androiddev/comments/i2vzih/play_store_reviews_what_do_you_think/
----
-I think every developer with an app that has at least 1000+ users knows this: something has to change with the Play store reviews system. The whole system is outdated and does not really serve its one and only purpose - providing accurate and truthful information about the app for potential users. People use this system to vent their anger, because some apps may have too many ads, others use it to chat with the dev, instead of doing it via support channels, some people just abuse it for no reason and so on.
-I've seen it all, after getting yet another 1-star review with text: "How can I use this?" on a rather complex app that is used generally among students (and has good reviews from them), I wonder, will this ever change? What can we do to change this situation as a developers community?
-I get that there are bad apps with horrible UI, fraudulent claims and they deserve bad ratings, but on the other hand, there are tons of bad ratings given by people who didn't want to even spend 5 seconds on a "how to use it" welcoming tour to actually nice and legit apps.
-And don't say that like "oh you know if the app is good then the good ratings will outweight the bad ones" - this is a workaround to a bad design of this system which allows such things in the first place. Let's call the things what they are.
-It is extremely hard to get unrelated reviews removed too. I actually had one such request fulfilled only because the review itself was "your app is great, but the rating is too perfect" - whatever was going through the head of that guy, right? While requests to remove 1-star reviews that say, for example: "it's a nice app, but in different language" for an English-only app that is made specifically for English language related processing are rejected.
-So what do you guys think about all this?
-## [6][Substitutes for the Google Maps SDK on Huawei?](https://www.reddit.com/r/androiddev/comments/i2vqxq/substitutes_for_the_google_maps_sdk_on_huawei/)
-- url: https://www.reddit.com/r/androiddev/comments/i2vqxq/substitutes_for_the_google_maps_sdk_on_huawei/
----
-Our app has a little Google Map that slides up in a bottom sheet and shows a bunch of colored pins. Because of a U.S. trade ban on Huawei, this no longer works on those phones (I think) and we need to find a substitute. What has your experience been in working with this new state of affairs?
-
-Mainly wondering what the best approach is for maintaining and switching between two separate map systems in the same app. Huawei has a [conversion guide](https://developer.huawei.com/consumer/en/doc/hmssdk_map_conversion_guide) but I don't want to totally replace Google Maps for everyone, just to accommodate Huawei users. So I guess we're looking at a separate MapFragment and HuaweiMapFragment...?? What have your map experiences been like since the ban?
-## [7][Can I drop Jetifier? (gradle plugin)](https://www.reddit.com/r/androiddev/comments/i2gv90/can_i_drop_jetifier_gradle_plugin/)
-- url: https://github.com/plnice/can-i-drop-jetifier
+## [3][Reverse engineering an Android Application](https://www.reddit.com/r/androiddev/comments/i3dt4n/reverse_engineering_an_android_application/)
+- url: https://epic.blog/reverse-engineering/2020/07/27/reverse-engineering-android-app.html
 ---
 
-## [8][Remote work](https://www.reddit.com/r/androiddev/comments/i2x2tq/remote_work/)
-- url: https://www.reddit.com/r/androiddev/comments/i2x2tq/remote_work/
----
-hello, what is the best website to find good opportunities for remote work as an Android developer?
-## [9][Should I use a different email for registration?](https://www.reddit.com/r/androiddev/comments/i2pnka/should_i_use_a_different_email_for_registration/)
-- url: https://www.reddit.com/r/androiddev/comments/i2pnka/should_i_use_a_different_email_for_registration/
----
-I'm pretty familiar with Android apps generally and I've participated in developing some. I'd like to create my own personal account for basically just screwing around. I can't really think of a reason not to use the gmail account that I use for everything since it's not really listed anywhere publicly, but somehow it seems like I'll get spammed into oblivion if I do, so I think I'm just gonna go ahead and put in a separate email. Is that basically correct do ya think?
-## [10][Access app statistics via API](https://www.reddit.com/r/androiddev/comments/i2wlto/access_app_statistics_via_api/)
-- url: https://www.reddit.com/r/androiddev/comments/i2wlto/access_app_statistics_via_api/
----
-Hi,
-
-I am no android developer but I need to access app statistics via API. For now I do it manually by exporting the values. I checked the website but it all seems to be focused on maintaining the app, deplying new versions etc. I just need simple data like installs, uninstalls, reviews, active users etc. 
-
- [https://support.google.com/googleplay/android-developer/answer/139628?co=GENIE.Platform%3DDesktop&amp;hl=en](https://support.google.com/googleplay/android-developer/answer/139628?co=GENIE.Platform%3DDesktop&amp;hl=en) 
-
-Then it wants me to install gsuite tool "To access your reports programmatically download the gsutil tool."
-
-Isn't there really a way to just use REST API which returns the analytics?
-
-Thanks.
-
-K.
-## [11][Fastest Short-time Fourier transform -library for Android? (maybe using parallel-processing?)](https://www.reddit.com/r/androiddev/comments/i2whzz/fastest_shorttime_fourier_transform_library_for/)
-- url: https://www.reddit.com/r/androiddev/comments/i2whzz/fastest_shorttime_fourier_transform_library_for/
----
-The STFT-solution that I'm using right now takes about 150-200ms to calculate the STFT of a 2.5 second audioclip at 8kHz. I need to get it under 100ms (Galaxy A5 2017 as a min.Requirement smartphone).  
-What is the fastest STFT-library for Android/Java? Parallel processing should be possible during the Matrix-vector-multiplications, right? Is there a STFT library that makes use of parallelism?
-## [12][Top 12 Mobile Programming Languages Include Java, C](https://www.reddit.com/r/androiddev/comments/i2waig/top_12_mobile_programming_languages_include_java_c/)
-- url: https://insights.dice.com/2020/08/03/top-12-mobile-programming-languages-include-java-c/
+## [4][My 2 Cents about cross-platform](https://www.reddit.com/r/androiddev/comments/i3hf6k/my_2_cents_about_crossplatform/)
+- url: https://www.marcogomiero.com/posts/2020/my-2cents-cross-platform/
 ---
 
+## [5][Turbine: A small testing library for kotlinx.coroutines Flow](https://www.reddit.com/r/androiddev/comments/i33syn/turbine_a_small_testing_library_for/)
+- url: https://github.com/cashapp/turbine
+---
+
+## [6][Where do you like to refresh your OAuth2 tokens?](https://www.reddit.com/r/androiddev/comments/i3gwx7/where_do_you_like_to_refresh_your_oauth2_tokens/)
+- url: https://www.reddit.com/r/androiddev/comments/i3gwx7/where_do_you_like_to_refresh_your_oauth2_tokens/
+---
+Have seen various advice out there. I've been experimenting for a while with examples of OKHttp interceptors that reauthenticate unauthorized 401 requests. But I kept running into threading issues and had more luck with authenticate-in-advance. Wonder what your experiences have been like.
+
+[View Poll](https://www.reddit.com/poll/i3gwx7)
+## [7][How many people uninstall your app/game the same day they download it?](https://www.reddit.com/r/androiddev/comments/i3haxu/how_many_people_uninstall_your_appgame_the_same/)
+- url: https://www.reddit.com/r/androiddev/comments/i3haxu/how_many_people_uninstall_your_appgame_the_same/
+---
+My third game for android has been getting a steady increase in active installations for over a month, but I noticed that around 2/3 of new installations end in an uninstallation in the same day. I believe that that number is pretty high, how many people install and then uninstall (in the same day) your app ?
+## [8][Much Needed Feature by Google Play Console](https://www.reddit.com/r/androiddev/comments/i3jc7y/much_needed_feature_by_google_play_console/)
+- url: https://www.reddit.com/r/androiddev/comments/i3jc7y/much_needed_feature_by_google_play_console/
+---
+[https://play.google.com/console/about/managedpublishing/](https://play.google.com/console/about/managedpublishing/)
+## [9][Learning JAVA to use android studio](https://www.reddit.com/r/androiddev/comments/i3j9b8/learning_java_to_use_android_studio/)
+- url: https://www.reddit.com/r/androiddev/comments/i3j9b8/learning_java_to_use_android_studio/
+---
+Learning Java for mobile dev android studio
+
+I am working on my first mobile dev project. I want it to be well structured and organized. I was wondering how I could achieve that. Knowing JAVA is an OOP, should I be making a new file for every new class I need and a separate file to do all the procedural programming ? Any help is appreciated! Thank you in advance !
+## [10][Am I supposed to mark my beer menu reader app as "promoting alcohol"?](https://www.reddit.com/r/androiddev/comments/i3gba1/am_i_supposed_to_mark_my_beer_menu_reader_app_as/)
+- url: https://www.reddit.com/r/androiddev/comments/i3gba1/am_i_supposed_to_mark_my_beer_menu_reader_app_as/
+---
+1. Am I supposed to mark my beer menu reader app as "promoting alcohol" and thereby getting the "mature" rating? It doesn't really promote alcohol but at the same time it does refer to alcohol because the whole point is to take a picture of a beer menu and see the user ratings. 
+2. How would such a rating affect AdMob ad revenue? I tested one ad in real life and it looked very abnormal; a very uncharacteristically plain gray background with no images leading to something that seemed like a dating site (I didn't click on it). It might even be interpreted as part of the UI of my app. I thought ads are supposed to be colorful and more, well, ad-like. Is this because of my "mature" content rating?
+## [11][Android Emulator performance issue (Ryzen 16 threads, 32GB RAM)](https://www.reddit.com/r/androiddev/comments/i3is0z/android_emulator_performance_issue_ryzen_16/)
+- url: https://www.reddit.com/r/androiddev/comments/i3is0z/android_emulator_performance_issue_ryzen_16/
+---
+Anyone know how can I improve performance of Android Studio Emulator? It is really laggy and slow, no matter if I manually edit config.ini values and increase ram or cpu cores it can use, it is still slow on onPress events and keeps stuttering while scrolling. I think it is not properly utilizing GPU hw acceleration..
+
+I have Ryzen 3800X, 32GB 3200MHz RAM and Nvidia GTX 1070 8GB. Windows is clean and freshly installed. Android emulator is up to date also.
+## [12][How to do Material Transitions between Fragments in seperate Activities](https://www.reddit.com/r/androiddev/comments/i3bgi8/how_to_do_material_transitions_between_fragments/)
+- url: https://www.reddit.com/r/androiddev/comments/i3bgi8/how_to_do_material_transitions_between_fragments/
+---
+Hello.
+
+I have been doing a lot of reading / experimenting with shared transitions. 
+
+Specifically for activities using ActivityOptions.makeSceneTransitionAnimation() and for fragments using addSharedElement() on a transaction
+
+This seems to work fine for Activity -&gt; Activity or within the same Activity (Fragment -&gt; Fragment).
+
+However the case I cannot get to work is as follows.  Activity A has a Fragment B which contains a recycler view.  I want to transition when a view in Fragment B recycler view is clicked to new started Activity C which contains Fragment D where Fragment D has the actual content.
+
+So essentially a Fragment transition between an existing Activity and a new one starting up
+
+Had anyone had experience with this type of transition and can possibly share a code example?  I have read a few posts which have claimed the above is impossible but wanted to check here

@@ -56,57 +56,43 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][C++ on Sea 2020 video - "How to answer 'why will yours succeed, when X, Y, and Z have failed?'" (keynote) - Herb Sutter](https://www.reddit.com/r/cpp/comments/i2t2g4/c_on_sea_2020_video_how_to_answer_why_will_yours/)
-- url: https://www.youtube.com/watch?v=BF3qw1ObUyo
+## [2][The SIMDe header-only library provides fast, portable implementations of SIMD intrinsics on hardware which doesn't natively support them, such as calling SSE functions on ARM](https://www.reddit.com/r/cpp/comments/i3gijx/the_simde_headeronly_library_provides_fast/)
+- url: https://github.com/simd-everywhere/simde
 ---
 
-## [3][psched: Priority-based Task Scheduler for Modern C++](https://www.reddit.com/r/cpp/comments/i2vtj0/psched_prioritybased_task_scheduler_for_modern_c/)
-- url: https://github.com/p-ranav/psched
+## [3][C++20 Concepts: Testing constrained functions](https://www.reddit.com/r/cpp/comments/i3fka6/c20_concepts_testing_constrained_functions/)
+- url: https://andreasfertig.blog/2020/08/cpp20-concepts-testing-constrained-functions/
 ---
 
-## [4][Reading/writing a file that doesn't fit into memory](https://www.reddit.com/r/cpp/comments/i2uhdd/readingwriting_a_file_that_doesnt_fit_into_memory/)
-- url: https://www.reddit.com/r/cpp/comments/i2uhdd/readingwriting_a_file_that_doesnt_fit_into_memory/
+## [4][Reclaiming modern C++ as the tool of data analysis](https://www.reddit.com/r/cpp/comments/i3i19j/reclaiming_modern_c_as_the_tool_of_data_analysis/)
+- url: https://www.reddit.com/r/cpp/comments/i3i19j/reclaiming_modern_c_as_the_tool_of_data_analysis/
 ---
-I'm kinda new to C++. Hope this is the right sub to ask this..
+I hope this https://github.com/hosseinmoein/DataFrame adds to the C++ ecosystem and dispels the notion that C++ is no good for data analysis
+## [5][Meeting C++ 2020 programme &amp; online tickets available!](https://www.reddit.com/r/cpp/comments/i3hscb/meeting_c_2020_programme_online_tickets_available/)
+- url: https://meetingcpp.com/meetingcpp/news/items/Meeting-Cpp-2020-programme---online-tickets-available-.html
+---
 
-Suppose you have 100GB file (one database record per line) and 16GB RAM. And you need to read/update/delete records depending on the query. Is constructing ifstream and read line by line good way to do this? From my understanding, in this case every read/write is a disk IO, right? Is there better way to do this in terms of performance?
-## [5][70x faster file embeds using string literals](https://www.reddit.com/r/cpp/comments/i2x3go/70x_faster_file_embeds_using_string_literals/)
+## [6][70x faster file embeds using string literals](https://www.reddit.com/r/cpp/comments/i2x3go/70x_faster_file_embeds_using_string_literals/)
 - url: https://mort.coffee/home/fast-cpp-embeds/
 ---
 
-## [6][Any cpp user managmenet lib like passport.js?](https://www.reddit.com/r/cpp/comments/i2wkh4/any_cpp_user_managmenet_lib_like_passportjs/)
-- url: https://www.reddit.com/r/cpp/comments/i2wkh4/any_cpp_user_managmenet_lib_like_passportjs/
----
-I am creating a web service on top of asio and beast. I was wondering if there where any good user management libraries I can use instead of rolling it on my own? 
-
-I found this : 
-https://www.webtoolkit.eu/wt/doc/tutorial/auth.html
-
-Any advice on whether this is a dumb idea? I could split up the user management into a different service using a different language stack like nodejs which has a lot of good libraries for doing things like this. 
-
-But then I would have to maintain two language stacks, care about their deployment etc. 
-Plus I would be able to handle more users on single box using cpp compared to nodejs. ( With a high probability ) If anyone else has done something like this, any numbers? 
-
-I need the cpp server for the core functionality due to problem I am tackling! 
-
-Thanks!
-## [7][Uses of immediately invoked function expressions (IIFE) in C++](https://www.reddit.com/r/cpp/comments/i290wo/uses_of_immediately_invoked_function_expressions/)
-- url: https://rigtorp.se/iife/
+## [7][Implementing UFCS in Clang](https://www.reddit.com/r/cpp/comments/i339zk/implementing_ufcs_in_clang/)
+- url: https://dancrn.com/2020/08/02/ufcs-in-clang.html
 ---
 
-## [8][C++ on Sea video - "Objection! A language lawyer story" (lightning talk) - Sy Brand](https://www.reddit.com/r/cpp/comments/i2gkxr/c_on_sea_video_objection_a_language_lawyer_story/)
-- url: https://www.youtube.com/watch?v=pGO65OHo0EM
+## [8][Conway's 'Game of Life' in the Terminal](https://www.reddit.com/r/cpp/comments/i3jj92/conways_game_of_life_in_the_terminal/)
+- url: https://github.com/p-ranav/cgol
 ---
 
-## [9][C++ on Sea 2020 video - "Concurrent Details Matter - Why and How we fixed std::thread by std::jthread" (keynote) - Nicolai Josuttis](https://www.reddit.com/r/cpp/comments/i2dc30/c_on_sea_2020_video_concurrent_details_matter_why/)
-- url: https://www.youtube.com/watch?v=elFil2VhlH8
+## [9][Wt 4.4.0 released! (widget-based C++ server side web framework)](https://www.reddit.com/r/cpp/comments/i2y0x2/wt_440_released_widgetbased_c_server_side_web/)
+- url: https://www.webtoolkit.eu/wt/news/2020/08/03/wt_3_7_0___4_4_0_released
 ---
 
-## [10][Clarification question on structured bindings](https://www.reddit.com/r/cpp/comments/i2g1tl/clarification_question_on_structured_bindings/)
-- url: https://www.youtube.com/watch?v=i9TWNlj0I6A&amp;t=1227
+## [10][C++ Weekly - Ep 231 - Multiple Destructors in C++20?! How and Why](https://www.reddit.com/r/cpp/comments/i2ygjw/c_weekly_ep_231_multiple_destructors_in_c20_how/)
+- url: https://youtu.be/A3_xrqr5Kdw
 ---
 
-## [11][C++ on Sea 2020 video - "Comma Chameleon" (lightning talk) - Luna Kirkby](https://www.reddit.com/r/cpp/comments/i2aube/c_on_sea_2020_video_comma_chameleon_lightning/)
-- url: https://www.youtube.com/watch?v=waG6kdar9hE
+## [11][psched: Priority-based Task Scheduler for Modern C++](https://www.reddit.com/r/cpp/comments/i2vtj0/psched_prioritybased_task_scheduler_for_modern_c/)
+- url: https://github.com/p-ranav/psched
 ---
 

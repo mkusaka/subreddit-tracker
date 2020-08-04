@@ -1,145 +1,89 @@
 # aws
-## [1][Awesome AWS workshops](https://www.reddit.com/r/aws/comments/i2wcl2/awesome_aws_workshops/)
+## [1][Week of Aug 3rd - What are you building this week on AWS?](https://www.reddit.com/r/aws/comments/i2ydcv/week_of_aug_3rd_what_are_you_building_this_week/)
+- url: https://www.reddit.com/r/aws/comments/i2ydcv/week_of_aug_3rd_what_are_you_building_this_week/
+---
+Discuss your challenges and successes
+## [2][Why You Should Never, Ever print() in a Lambda Function](https://www.reddit.com/r/aws/comments/i3h6rn/why_you_should_never_ever_print_in_a_lambda/)
+- url: https://medium.com/@psingman/why-you-should-never-ever-print-in-a-lambda-function-f997d684a705
+---
+
+## [3][Free Workshop to build enterprise search service using Amazon Kendra](https://www.reddit.com/r/aws/comments/i3fo4e/free_workshop_to_build_enterprise_search_service/)
+- url: http://aws-dojo.com/workshoplists/workshoplist5
+---
+
+## [4][Aws AppFlow: Unlock your SaaS data](https://www.reddit.com/r/aws/comments/i3itox/aws_appflow_unlock_your_saas_data/)
+- url: https://medium.com/@yvescallaert/aws-appflow-unlock-your-saas-data-d3308cc99c7f?source=friends_link&amp;sk=00adfe5d606c6c4107885c1441dbafd9
+---
+
+## [5][List of resource types on AWS that can be made public](https://www.reddit.com/r/aws/comments/i39opb/list_of_resource_types_on_aws_that_can_be_made/)
+- url: https://github.com/SummitRoute/aws_exposable_resources
+---
+
+## [6][Awesome AWS workshops](https://www.reddit.com/r/aws/comments/i2wcl2/awesome_aws_workshops/)
 - url: https://awesome-aws-workshops.com/
 ---
 
-## [2][If I disable mutli-az on a running MySQL rds, is there downtime?](https://www.reddit.com/r/aws/comments/i2t647/if_i_disable_mutliaz_on_a_running_mysql_rds_is/)
-- url: https://www.reddit.com/r/aws/comments/i2t647/if_i_disable_mutliaz_on_a_running_mysql_rds_is/
+## [7][EBS and long running request](https://www.reddit.com/r/aws/comments/i3glkf/ebs_and_long_running_request/)
+- url: https://www.reddit.com/r/aws/comments/i3glkf/ebs_and_long_running_request/
 ---
-Willl currently running transactions be affected?
-## [3][How to recover a suspended account?](https://www.reddit.com/r/aws/comments/i2ujwk/how_to_recover_a_suspended_account/)
-- url: https://www.reddit.com/r/aws/comments/i2ujwk/how_to_recover_a_suspended_account/
+Hi, I have a dot net app which can sometimes take 2-3 hours to process a request, not all requests, just an occasional large file import. This process sends status updates to the client using SignalR and redis so everyone knows whats happening. Can someone tell me what the best way is to to keep the EC2 instance running while this process is running. The EBS is setup to auto scale with a classic load balancer.
+## [8][I made this with an AWS SageMaker Notebook... :)](https://www.reddit.com/r/aws/comments/i3aow6/i_made_this_with_an_aws_sagemaker_notebook/)
+- url: https://www.reddit.com/r/aws/comments/i3aow6/i_made_this_with_an_aws_sagemaker_notebook/
 ---
-I am in a very strange situation with my account apparently having been suspended.   
-I created an aws personal account over a year ago and have always been within the free tier limits.
+https://reddit.com/link/i3aow6/video/phezog3q8we51/player
 
-I use it seldomly as I mostly utilise it for proof of concept apps. After some time away from it, I logged in today only to be greeted with the message: \`Authentication failed because your account has been suspended.\`
+I'm having fun with Machine Learning!
 
-I have nothing running and I did not exceed any limits. I use my real contact information and have no outstanding balance to be paid. I was able to reach the account details area and saw that the debit card which I used had expired. 
+The colors of the nodes show the bias and the width of the lines show the weights of the model while it trains.
 
-So I updated it to my new one. I received a charge of 1$ but my account remains suspended.
-
-Looking into the support section, I see that the sole suggestion for cases of a suspended account is to pay any outstanding balance which is not my case.  
-In addition to that, in order to receive technical support , I need to Sign in &amp; Submit AWS Support Request, which is not possible for me as I get the \`account suspended\` message.  
-
-
-I don't even know why my account was suspended in the first place, nor how I can find out this information, and even if I knew, I have no idea who to contact or what the next steps are to resolve this issue.  
-Has anyone else experienced anything similar?
-## [4][ACM additional verification in a huge organization](https://www.reddit.com/r/aws/comments/i2szqi/acm_additional_verification_in_a_huge_organization/)
-- url: https://www.reddit.com/r/aws/comments/i2szqi/acm_additional_verification_in_a_huge_organization/
+It's running on an AWS SageMaker Notebook with a lot of hideously hacky code.  But I like the end result :)
+## [9][Security Documentation for 165+ AWS Services](https://www.reddit.com/r/aws/comments/i33t61/security_documentation_for_165_aws_services/)
+- url: https://docs.aws.amazon.com/security/
 ---
-Hey,
 
-we've got a pretty huge organization (200+ accounts and still in early migration, will increase much more). Two of our main domains are listed in the Alexa top 500, so we need additional verification for each account to be able to generate ACM certificates. So far this is a super annoying manual process, where you first have to register for the forum with that account, wait a few hours, then make a public post, and then wait again for some unpredictable amount of time when someone unlocks that account. Rinse and repeat hundreds of times.
-
-Has anyone managed to tie this authorization to the organizational root? I've asked our rep about this, but they're currently on vacation with an auto-responder.
-## [5][How to run scheduled job (e.g. midnight) that scales depending on needs?](https://www.reddit.com/r/aws/comments/i2j905/how_to_run_scheduled_job_eg_midnight_that_scales/)
-- url: https://www.reddit.com/r/aws/comments/i2j905/how_to_run_scheduled_job_eg_midnight_that_scales/
+## [10][Make shared S3 bucket read-only for most of our team?](https://www.reddit.com/r/aws/comments/i3goel/make_shared_s3_bucket_readonly_for_most_of_our/)
+- url: https://www.reddit.com/r/aws/comments/i3goel/make_shared_s3_bucket_readonly_for_most_of_our/
 ---
-I want to run scheduled job (e.g. once a day, or once a month) that will perform some operation (e.g. deactivate those users who are not paying, or generate reminder email to those who are due payment more than few days).
+Hello all.   
 
-The amount of work each time can vary (it can be few users to process or few hundred thousands). Depending on the amount of data to process, I want to benefit from lambda auto scalability.
 
-Because sometimes there can be huge amount of data, I can't process it in the single scheduled lambda. The only architecture that comes to my mind is to have a single "main" lambda (aka the scheduler) and SQS, and multiple worker lambdas.
+Apologies for the newbie question. My team shares an AWS account. We use federated (SSO) login that is managed by our IT department to access the console. We have then each set up for ourselves one or more IAM user(s) with access keys for CLI or SDK use. 
 
-The scheduler reads the DB, and finds all users that needs to be processed (e.g. 100k users). Then the scheduler puts 100k messages to SQS (separate message for each user) and worker lambdas are being triggered to process it.
+Currently, we're working with data that we would like to remain read-only to our team (and blocked to the world) to comply with best practices in our industry. The only people with write access should be me and our line manager (CLI-only is fine). I have put this data into a bucket and I've modified the bucket policy to be as follows:
 
-I see following drawbacks here:
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Effect": "Deny",
+                "Sid": "MakeReadOnly",
+                "Action": [
+                    "s3:GetBucketPolicy",
+                    "s3:PutBucketPolicy",
+                    "s3:putObject"
+                ],
+                "NotPrincipal": {
+                    "AWS": [
+                        "arn:aws:iam::123456789012:user/line_manager_iam_user",
+                        "arn:aws:iam::123456789012:user/my_iam_user"
+                    ]
+                },
+                "Resource": [
+                    "arn:aws:s3:::read-only-bucket",
+                    "arn:aws:s3:::read-only-bucket/*"
+                ]
+            }
+        ]
+    }
 
-- the scheduler is obvious bottleneck and single point of failure
-- the infrastructure contains of 3 elements (scheduler, sqs, workers)
+This works fine, but since everyone in the team has access to the IAM console, it's easy enough for any of them to just generate a new set of access keys for my IAM user, and then use those keys to modify or delete the data.
 
-Is this approach correct? Is there any other simpler way that I'm not aware of?
-## [6][Aurora Question](https://www.reddit.com/r/aws/comments/i2u4au/aurora_question/)
-- url: https://www.reddit.com/r/aws/comments/i2u4au/aurora_question/
+What is the best way to do this? Do I have to request that the IT team limit our ability to generate new access keys for IAM users? That would be less than ideal because we make and delete access keys often.
+## [11][What the difference between Lambda and EC2 in VPC?](https://www.reddit.com/r/aws/comments/i3jicc/what_the_difference_between_lambda_and_ec2_in_vpc/)
+- url: https://www.reddit.com/r/aws/comments/i3jicc/what_the_difference_between_lambda_and_ec2_in_vpc/
 ---
-I am relatively experienced with many AWS services - but I do have a large gap around Aurora/RDS
+I have VPC with one subnet that connected to Internet Gateway. That subnet contains few Lambda functions and ElastiCache server. I see that these Lambda functions does not have access to Internet because there is no NAT. But if I put EC2 in the same subnet then this server does have access to Internet. Why? What the difference between Lambda and EC2 in this VPC?
 
-&amp;#x200B;
+I ask because I don't want to pay for NAT (it's expensive) but I would like to give internet access to my Lambda functions and have access to ElastiCache on the same time. Looks like it's impossible to implement.
 
-I'm trying to create a multi-region multi-master (write replicas) setup
-
-The purpose is to give low latency to users (if each read and write replica is in the user's region) and to give resilience (if there is a region outage, the users can have their requests routed to another region (the latency will be higher, but reduced service is better than no service))
-
-&amp;#x200B;
-
-I'm trying to learn about AWS Aurora and I've created a toy cluster to learn.  It seems I can create a cluster that is served out of multiple regions (and Aurora replicates data between regions automatically).  I've also read that it is possible to have a multi-master setup (in my toy cluster, it only had one write partition, I couldn't work out how to create another write partition in another region, which made me question if it's possible?)
-
-&amp;#x200B;
-
-Here is a diagram of what I'm thinking:
-
- https://imgur.com/DzoSpHL 
-
-&amp;#x200B;
-
-Thank you in advance!
-
-&amp;#x200B;
-
-tl;dr:
-
-multi-master over multi-region Aurora - possible?
-## [7][Looking for CloudFormation and RDS Aurora serverless best practices](https://www.reddit.com/r/aws/comments/i2w6su/looking_for_cloudformation_and_rds_aurora/)
-- url: https://www.reddit.com/r/aws/comments/i2w6su/looking_for_cloudformation_and_rds_aurora/
----
-Hi everyone,
-
-Updating an RDS resource in a CloudFormation template *(e.g EngineVersion property)* may result in the replacement of the current DB instance by a fresh one, thus loosing data. To avoid this, using **snapshots** seems to be the only solution *(by passing a* ***SnapshotId*** *to the CF template)*.
-
-However, I have a lot of other resources accessing the RDS instance through its **ARN** which is exported in the CloudFormation template **Outputs**. So having a new RDS instance would break my other resources.
-
-\- Is the initialization from **snapshots** the way to go ?
-
-\- Would storing the **ARN** in the **Parameter Store** be a correct solution ?
-
-\- Is there something I'm missing regarding the automation of this kind of db maintenance ?
-
-Thanks in advance !
-## [8][[ECS] Running multiple services from same ECR](https://www.reddit.com/r/aws/comments/i2vssy/ecs_running_multiple_services_from_same_ecr/)
-- url: https://www.reddit.com/r/aws/comments/i2vssy/ecs_running_multiple_services_from_same_ecr/
----
-Hello,
-
-my usecase is that I have a single code base which is built by Jenkins into single ECR image. From that, I want to have multiple Services, that will run from the same ECR but have different environment variables. Each of the Services needs to be independently scalable.
-
-Example: I have ECR MY\_CONTAINER and based on it I want to have the following
-
-MY\_CONTAINER -e PRESET=A, (min, max) = (0, 10)  
-MY\_CONTAINER -e PRESET=B, (min, max) = (5, 100)
-
-I would have Lambda that would, based on the external event, spawn new tasks with either preset = A or preset=B. 
-
-&amp;#x200B;
-
-I'm wondering for the cleanest way to do this. My preset is far more complex than a single variable, and I'd prefer to have these somewhat "documentable" (in an IaaC fashion maybe).  
-
-&amp;#x200B;
-
-One idea that comes to mind is to keep `my-container-task-def-preset-A.json` and `my-container-task-def-preset-B.json` in the repository, and then Jenkins could update everything at build phase, but this solution looks somewhat clunky to me.
-
-Due to my lack of knowledge, I'm not sure if the following is possible.
-
-I have two ECS services, i.e. `my-container-service-A` and `my-container-service-B` which are spawned from the same task def and have empty env. These services have separate scaling rules. Then, on the Lambda side, I add ENV on the Lambda side and send the task to the appropriate service. This way I could keep all preset mappings in one JSON, that can be used as python mapping and sort of documentation. 
-
-&amp;#x200B;
-
-On the same note, if I submit a task to ECS, how long it can stay in PENDING state until its execution is cancelled? Is there a way to increase this quota to inf?
-## [9][Can RDS read replicas function as a backup?](https://www.reddit.com/r/aws/comments/i2uwh7/can_rds_read_replicas_function_as_a_backup/)
-- url: https://www.reddit.com/r/aws/comments/i2uwh7/can_rds_read_replicas_function_as_a_backup/
----
-I'm creating an RDS database and I am wondering if a read replica can function as a backup DB. I have read the AWS page regarding read replicas and they mention that the replica can be promoted to be a standalone database. Does this mean that the replica can be a backup?
-## [10][Lambda zip file format](https://www.reddit.com/r/aws/comments/i2ugym/lambda_zip_file_format/)
-- url: https://www.reddit.com/r/aws/comments/i2ugym/lambda_zip_file_format/
----
-I found I have to use the zip upload method if using npm libraries with my lambda handler. Right now my directory structure is like this:
-
-    node_modules // the library folder
-    lambda
-      handler.js  
-
-I'm guessing this is not the right structure. Can someone advise on how to set it up for upload?
-
-I'm curious about both the proper file/folder structure, and also if `node_modules` should be included at all.
-
-Usually the library folder is not included, but I sense it may need to be included here (if AWS doesn't handle the install step itself).
+If I use ECS and put all services and functions into containers it will be cheaper?

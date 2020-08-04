@@ -19,7 +19,70 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Moving to Rails in 2020](https://www.reddit.com/r/rails/comments/i2tg0x/moving_to_rails_in_2020/)
+## [2][Running tests in containers with docker-compose](https://www.reddit.com/r/rails/comments/i3fzbz/running_tests_in_containers_with_dockercompose/)
+- url: https://www.reddit.com/r/rails/comments/i3fzbz/running_tests_in_containers_with_dockercompose/
+---
+The main advantages of this way are to have an independent environment for the tests running and to reduce the complexity of the test environment setup.
+
+What we want to achieve:
+
+* Running the tests should be easy.
+* Test runs should be isolated and repeatable.
+* Test environment should be as close to the production environment as possible.
+
+How to setup and use docker-compose for Ruby on Rails tests you can find in the article: [https://jtway.co/running-tests-in-containers-with-docker-compose-97480726c1e3](https://jtway.co/running-tests-in-containers-with-docker-compose-97480726c1e3)
+## [3][Sending Thousands of Request at the Same Time?](https://www.reddit.com/r/rails/comments/i3iyu5/sending_thousands_of_request_at_the_same_time/)
+- url: https://www.reddit.com/r/rails/comments/i3iyu5/sending_thousands_of_request_at_the_same_time/
+---
+I need to develop an endpoint that will send (possibly) hundreds/thousands of request, process it then return/render the json to user/client.
+
+I've tried using thread pool with the size of 5, but it took forever, but when I tried increasing the size to the number of request, it threw \`ThreadError: can't create Thread: Resource temporarily unavailable\` exception.
+
+I don't think I can use background job/worker for this because I should return the result.
+
+So what should I do?
+
+I was thinking that I should wrap the process in 20sec timeout so it doesn't reach rails 30sec limit, and if it's still not finished in 20sec, it will return the unfinished result. It goes like this [https://i.imgur.com/FolcJV6.png](https://i.imgur.com/FolcJV6.png)
+
+But it's still not working, the process still keep going even after it timeout.
+## [4][Run slow RSpec files on Github Actions with parallel jobs using an auto split of the spec file by test examples](https://www.reddit.com/r/rails/comments/i36nrc/run_slow_rspec_files_on_github_actions_with/)
+- url: https://www.reddit.com/r/rails/comments/i36nrc/run_slow_rspec_files_on_github_actions_with/
+---
+The article [shows](https://itnext.io/run-slow-rspec-files-on-github-actions-with-parallel-jobs-using-an-auto-split-of-the-spec-file-by-6bee53e31fb4?source=friends_link&amp;sk=76cf49c59df928f1fa76ded5cc9b1be0) how to address the problem of slow test files negatively impacting the whole build times.
+## [5][Heroku high memory tips needed](https://www.reddit.com/r/rails/comments/i39mxf/heroku_high_memory_tips_needed/)
+- url: https://www.reddit.com/r/rails/comments/i39mxf/heroku_high_memory_tips_needed/
+---
+I've recently run into a problem where I'm constantly getting R14 errors and then entering swapped memory. I'm running a single Hobby dyno with Puma at 2 workers,1 thread each (was trying a bunch of configurations).
+
+https://preview.redd.it/wu2puh19vve51.png?width=1209&amp;format=png&amp;auto=webp&amp;s=0dd3db0c3de3f48644c98a980f75ade0ba4f6742
+
+It's hard to tell when this started but I know it's been within the past month and not too much longer before that. As you can see here my number of requests hasn't really gone up to show for an increase in memory usage.  
+
+
+https://preview.redd.it/yrcz0sw9wve51.png?width=578&amp;format=png&amp;auto=webp&amp;s=7d48a0ac502645f1538c6f1b47117a5129e8b115
+
+I've felt like I've tried a million things by now but cannot find the source of this issue. If anyone has any advice on where I could look it'd be very helpful!
+## [6][Tips for creating a multiselect form?](https://www.reddit.com/r/rails/comments/i34z8i/tips_for_creating_a_multiselect_form/)
+- url: https://www.reddit.com/r/rails/comments/i34z8i/tips_for_creating_a_multiselect_form/
+---
+I'm trying to create a form with a similar multiselect as the image below. (Different concept, just using this screenshot to give a visual format of what I'm trying to do.)
+
+For the life of me, I can't seem for figure out the "Rails way" of creating the form using Bootstrap's grid and button groups while preserving the multiselect option.
+
+For context, I've got a model that takes a String attribute that can only be "xxx" or "yyy." The user should be able to select one or both of the options presented to them on that form before hitting the Submit button. The result of that submission should be an Array of the string(s) selected.
+
+Any pointers or examples of how you've tackled this?
+
+&amp;#x200B;
+
+https://preview.redd.it/8up3te2qkue51.png?width=1168&amp;format=png&amp;auto=webp&amp;s=b9a6a1d0dac1ceac995a6494ad798715ee6be036
+## [7][Tools for website organization](https://www.reddit.com/r/rails/comments/i3492z/tools_for_website_organization/)
+- url: https://www.reddit.com/r/rails/comments/i3492z/tools_for_website_organization/
+---
+When you're planning a site or are working on one and and find it difficult to hold it all in your head, what is the tool you turn to?
+
+I used draw.io for an entity relationship diagram recently and really liked it.  It feels a little awkward trying to do a site map with it though.
+## [8][Moving to Rails in 2020](https://www.reddit.com/r/rails/comments/i2tg0x/moving_to_rails_in_2020/)
 - url: https://www.reddit.com/r/rails/comments/i2tg0x/moving_to_rails_in_2020/
 ---
 Hey people. I'm a backend developer working primarily with PHP7.x and TypeScript, with some experience with Go, but in all honesty, I always had a thing for Ruby.   
@@ -29,51 +92,19 @@ I've been thinking about learning Ruby and then Rails properly and trying to lan
 
 
 To sum up my question, are there new Rails apps coming out and, with 5-6 years of experience would I have to look for a junior position, given that I've got experience with other languages and know a fair bit of system design, best practices and design patterns?
-## [3][Same association twice for one single model](https://www.reddit.com/r/rails/comments/i2v2z0/same_association_twice_for_one_single_model/)
-- url: https://www.reddit.com/r/rails/comments/i2v2z0/same_association_twice_for_one_single_model/
+## [9][belongs_to associatio name and column name same](https://www.reddit.com/r/rails/comments/i305cy/belongs_to_associatio_name_and_column_name_same/)
+- url: https://www.reddit.com/r/rails/comments/i305cy/belongs_to_associatio_name_and_column_name_same/
 ---
-Hello, I have a table with synonyms linked to a word and another word ("word\_linked") (which is the synonym of the first one).
-
-Table 1 : Word
-
-Table 2 : Synonym (word\_id, word\_linked)  
-
-
-How can I create an association with both words?
+Hi,
 
 &amp;#x200B;
 
-For now I have in my Synonym model :
+I am upgrading a rails application from [5.1.6.2](https://5.1.6.2) to [5.2.4.3](https://5.2.4.3) and the following that worked previously now throwing errors like 'Segmentation Fault' while running rspec.
 
-`belongs_to :word`
+belongs\_to :created\_by,  class\_name: 'User', foreign\_key:  :created\_by
 
-But I would also need something like this:
-
-`has_one :word, :through =&gt; :word_linked`
-
-&amp;#x200B;
-
-The goal is to be able to load the word association when I do Synonym.find(1).word\_linked  
-
-
-Is it possible to do that? Thanks.
-## [4][Backing up and Restoring ActiveStorage files](https://www.reddit.com/r/rails/comments/i2ucgd/backing_up_and_restoring_activestorage_files/)
-- url: https://www.reddit.com/r/rails/comments/i2ucgd/backing_up_and_restoring_activestorage_files/
----
-I am building an app where a user simply uploads some files to a Rails app and I want add some kind of backup functionality built into the app.
-
-The app should be able to auto-backup the database and the files, compress them into a `zip` file and then upload them to a custom or third party service.
-
-I am thinking that I will serialize the user's database records e.g. the `User` instance and his `posts` (where the files are being referenced to and uploaded) but I don't know what can I do with `ActiveStorage` files.
-
-Should I serialize the `active_storage_*` tables and backup the `/storage` directory as is ? Could restoring them into a new Rails installation and referencing the *same* user work?
-## [5][Credentials failure from NGINX](https://www.reddit.com/r/rails/comments/i2u8bb/credentials_failure_from_nginx/)
-- url: https://www.reddit.com/r/rails/comments/i2u8bb/credentials_failure_from_nginx/
----
-Hosting my app on DO vps. Have rails native credentials stored. (Rails.application.credentials)
-
-They working fine from `rails c` console but NGINX doesn't see them at all, logging `undefined method [] for NilClass` for them. Can you help me out guys?
-## [6][Hooks in ActionView::TestCase](https://www.reddit.com/r/rails/comments/i2wgd8/hooks_in_actionviewtestcase/)
+If using the column name as association name is discouraged but used to work before, how can I address this by patching or by updating the associations. Any help is appreicated.
+## [10][Hooks in ActionView::TestCase](https://www.reddit.com/r/rails/comments/i2wgd8/hooks_in_actionviewtestcase/)
 - url: https://www.reddit.com/r/rails/comments/i2wgd8/hooks_in_actionviewtestcase/
 ---
 I am modifying test cases in a test file that looks like this. 
@@ -92,60 +123,9 @@ I'm looking for a hook that will run after all the tests complete running.
 I am not sure where to check the documentation for the hooks available in this class. Any help would be great. It's kinda old code and I couldn't find anything on googling. 
 
 Please do not suggest gems to achieve this.
-## [7][nonce for style-src added to script-src by gem - how to circumvent?](https://www.reddit.com/r/rails/comments/i2oehp/nonce_for_stylesrc_added_to_scriptsrc_by_gem_how/)
-- url: https://www.reddit.com/r/rails/comments/i2oehp/nonce_for_stylesrc_added_to_scriptsrc_by_gem_how/
+## [11][Credentials failure from NGINX](https://www.reddit.com/r/rails/comments/i2u8bb/credentials_failure_from_nginx/)
+- url: https://www.reddit.com/r/rails/comments/i2u8bb/credentials_failure_from_nginx/
 ---
-I have a single inline style tag in a Rails app, and I'm trying to whitelist it with a nonce.
+Hosting my app on DO vps. Have rails native credentials stored. (Rails.application.credentials)
 
-The error: `Content Security Policy: The page’s settings observed the loading of a resource at inline (“style-src”). A CSP report is being sent.`
-
-The style gets injected by a helper when using the [invisible\_captcha](https://github.com/markets/invisible_captcha) gem:
-
-`&lt;%= invisible_captcha nonce: true %&gt;`
-
-Comparing the view and the header shows that the nonce \*is\* being added to both, but it's being added to `script-src` instead of `style-src`.
-
-View: `&lt;style media="screen" nonce="5Cq/QyoJ5Co+LdarO1uvrg=="&gt;`
-
-Header: `Content-Security-Policy-Report-Only script-src 'self' https: 'nonce-5Cq/QyoJ5Co+LdarO1uvrg=='; style-src 'self' https:;`
-
-This is my **content\_security\_policy.rb**:
-
-    Rails.application.config.content_security_policy do |config|
-     config.script_src  :self, :https    
-    end
-    
-    Rails.application.config.content_security_policy_nonce_generator = -&gt; request { SecureRandom.base64(16) }
-    Rails.application.config.content_security_policy_nonce_directives = %w(style-src script-src)
-
-Why is it going to the wrong directive, and how can I make it go to `style-src`? The helper adds a random class name, so hashing the injected code is out of the question.
-## [8][Creating Barcode Inventory Labels](https://www.reddit.com/r/rails/comments/i2epfu/creating_barcode_inventory_labels/)
-- url: https://www.reddit.com/r/rails/comments/i2epfu/creating_barcode_inventory_labels/
----
-I would love to know if anyone has done this before and any specifics if you did. I was able create some Avery labels with the help of Prawn Label gem. But I would really like to print the labels by rotating the font 90% but could never get the alignment correct. Next I think I will try a raw zpl file to print to a zebra printer.
-## [9][Need help with bundle](https://www.reddit.com/r/rails/comments/i2iiyd/need_help_with_bundle/)
-- url: https://www.reddit.com/r/rails/comments/i2iiyd/need_help_with_bundle/
----
-Earlier i was trying to $bundle update, when it gave an error message saying "An error occured while trying to install puma (version) and Bundler cant continue. Make sure gem install puma -v (version) --source https//:rubygems.org succeeds before bundling" And when i try to do also that, it gives another error.
-
-Does anyone know how to fix this?
-## [10][Are you gonna stick to Mac after Apple Silicon?](https://www.reddit.com/r/rails/comments/i2qo7k/are_you_gonna_stick_to_mac_after_apple_silicon/)
-- url: https://www.reddit.com/r/rails/comments/i2qo7k/are_you_gonna_stick_to_mac_after_apple_silicon/
----
-
-
-[View Poll](https://www.reddit.com/poll/i2qo7k)
-## [11][Rails.env.production?](https://www.reddit.com/r/rails/comments/i2faqf/railsenvproduction/)
-- url: https://www.reddit.com/r/rails/comments/i2faqf/railsenvproduction/
----
-Hi guys! I am a front-end. New on rails.
-
-I'm noticing that the previous back end developer added this in the head
-
-    &lt;% if Rails.env.production? %&gt;
-    	&lt;style type="text/css" media="all"&gt;&lt;%= inline_asset('application.css') %&gt;&lt;/style&gt;
-    &lt;% else %&gt;
-    	&lt;%= stylesheet_link_tag 'application', media: 'all' %&gt;
-    &lt;% end %&gt;
-
-Why if `Rails.env.production?`? What is it?
+They working fine from `rails c` console but NGINX doesn't see them at all, logging `undefined method [] for NilClass` for them. Can you help me out guys?

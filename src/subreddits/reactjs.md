@@ -85,11 +85,21 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
-## [3][React 17 will remove event pooling](https://www.reddit.com/r/reactjs/comments/i3amt3/react_17_will_remove_event_pooling/)
-- url: https://twitter.com/dan_abramov/status/1290302867425828864?s=20
+## [3][React JS Tutorial: Building Firebase Chat App (React Hooks)](https://www.reddit.com/r/reactjs/comments/i3xln3/react_js_tutorial_building_firebase_chat_app/)
+- url: https://www.djamware.com/post/5f2a1d9d9c794f177fd7b527/react-js-tutorial-building-firebase-chat-app-react-hooks#.Xyoht_6g7c8.reddit
 ---
 
-## [4][Introducing Bumbag – A React UI Kit](https://www.reddit.com/r/reactjs/comments/i3ikot/introducing_bumbag_a_react_ui_kit/)
+## [4][Client side authentication](https://www.reddit.com/r/reactjs/comments/i442h2/client_side_authentication/)
+- url: https://www.reddit.com/r/reactjs/comments/i442h2/client_side_authentication/
+---
+guys i am creating on project for that am using nodejs and react with hooks. so i confuse how can i handle auth on client. backend is ready but for the client side i don't understand how can i do that.
+
+can someone please tell me the workflow. where can i store token and auth on client.
+## [5][React + GraphQL boilerplate that scales easily](https://www.reddit.com/r/reactjs/comments/i44zx8/react_graphql_boilerplate_that_scales_easily/)
+- url: https://blog.graphqleditor.com/graphql-first-fullstack-boilerplate/
+---
+
+## [6][Introducing Bumbag – A React UI Kit](https://www.reddit.com/r/reactjs/comments/i3ikot/introducing_bumbag_a_react_ui_kit/)
 - url: https://www.reddit.com/r/reactjs/comments/i3ikot/introducing_bumbag_a_react_ui_kit/
 ---
 After about a year of development, I'm finally releasing Bumbag v1. Bumbag is an accessible &amp; themeable React UI Kit that allows you to rapidly build React applications whether it be an MVP or a large-scale application.
@@ -118,67 +128,32 @@ Some sites built with Bumbag:
 \- [Pory](https://pory.io)  
 \- [Medipass](https://medipass.com.au/)  
 \- [Can I Leave Melbourne?](https://canileave.melbourne/)
-## [5][Pull to refresh, velocity-based morphing SVGs with react-spring](https://www.reddit.com/r/reactjs/comments/i2t2ww/pull_to_refresh_velocitybased_morphing_svgs_with/)
-- url: https://v.redd.it/bhjy5gd3vqe51
+## [7][Building custom React Hooks to fetch data from Firebase Firestore](https://www.reddit.com/r/reactjs/comments/i43g3x/building_custom_react_hooks_to_fetch_data_from/)
+- url: https://www.williamkurniawan.com/blog/building-custom-react-hooks-to-fetch-data-from-firebase-firestore
 ---
 
-## [6][New UI Library with 70+ accessible components](https://www.reddit.com/r/reactjs/comments/i3f9lz/new_ui_library_with_70_accessible_components/)
-- url: https://www.reddit.com/r/reactjs/comments/i3f9lz/new_ui_library_with_70_accessible_components/
----
-Hey everyone!
-
-My friend just shipped a UI library called Bumbag onto Product Hunt today and I wanted to share it with everyone because it's by far the best UI kit I've used for all my side projects. It features:
-
-* 70+ accessible components
-* Global &amp; component-level theming
-* Flexible component composition
-* Page shells
-* Intuitive APIs
-* Color modes
-* Variants
-* Layout primitives
-* Utility components &amp; hooks
-
-Check it out for your next project and help upvote it [**here**](https://www.producthunt.com/posts/bumbag-a-react-ui-kit) **🙏**
-## [7][What cross-browser testing tools should we use?](https://www.reddit.com/r/reactjs/comments/i3fyw6/what_crossbrowser_testing_tools_should_we_use/)
-- url: https://storage.googleapis.com/open-source-developer-resources/cross-browser-testing-tools.htm
+## [8][Learn FP Design from Redux [Article by Yanze Dai]](https://www.reddit.com/r/reactjs/comments/i3v3n4/learn_fp_design_from_redux_article_by_yanze_dai/)
+- url: https://pitayan.com/posts/redux-fp-design/
 ---
 
-## [8][How to Implement Undo in a React + Redux Application](https://www.reddit.com/r/reactjs/comments/i39vr7/how_to_implement_undo_in_a_react_redux_application/)
-- url: https://www.kapwing.com/blog/how-to-implement-undo-in-a-react-redux-application/
+## [9][We have to talk about your love for React Hooks (share this with that junior developer)](https://www.reddit.com/r/reactjs/comments/i41qqa/we_have_to_talk_about_your_love_for_react_hooks/)
+- url: https://medium.com/@pimmhogeling/we-have-to-talk-about-your-love-for-react-hooks-4eb23a07268b?source=friends_link&amp;sk=9bb5f7ec7fc9884511ca3b91795c4834
 ---
 
-## [9][I learned React, got a job, and then got fired!](https://www.reddit.com/r/reactjs/comments/i3jhja/i_learned_react_got_a_job_and_then_got_fired/)
-- url: https://www.reddit.com/r/reactjs/comments/i3jhja/i_learned_react_got_a_job_and_then_got_fired/
----
-Last year I started learning React and javascript and after months of practice, I got a job. But I was fired because I was unable to perform some simple array manipulations. Now I am thinking what should I do? I was a PHP developer but I have forgotten all that and my sole focus was javascript. Now I don't know where to go from here. I am heartbroken, afraid I will never be a developer or a good one to get a living. I honestly don't know where to go from here.
-## [10][Notify.is - my first React project built with Next.js](https://www.reddit.com/r/reactjs/comments/i3jby6/notifyis_my_first_react_project_built_with_nextjs/)
-- url: https://www.reddit.com/r/reactjs/comments/i3jby6/notifyis_my_first_react_project_built_with_nextjs/
----
-Hi there,
-
-For the past month or so I've been working on my first React project using the framework Next.js to build the front end to a small service called [Notify.is](https://notify.is) which notifies you when your favourite username on Instagram, Twitter or GitHub becomes available.
-
-The backend uses Go to deal with RESTful API routes for signing up and deleting data. I've had a lot of fun building it and would love any feedback on the design, code or anything else. Also, trying out the service would be helpful for me finding any bugs I have not yet found.
-
-The frontend and backend are deployed using Vercel and the GitHub repository can be found here:
-
-[https://github.com/oliverproud/notify.is](https://github.com/oliverproud/notify.is)
-
-The Go code that checks with the respective services is deployed in a Docker container on Google Cloud Run and you can find the GitHub repository for that here:
-
-[https://github.com/oliverproud/notify.is-gcloud](https://github.com/oliverproud/notify.is-gcloud)
-
-The website:
-
-[https://notify.is](https://notify.is)
-
-Let me know what you think!
-## [11][how to implement a total time visited for a react app](https://www.reddit.com/r/reactjs/comments/i3j5lz/how_to_implement_a_total_time_visited_for_a_react/)
-- url: https://www.reddit.com/r/reactjs/comments/i3j5lz/how_to_implement_a_total_time_visited_for_a_react/
----
-i am building a web app with MERN stack.i want to know the total time that i spent on  the website.how do i implement such system.
-## [12][React Native + Firebase Auth 2020 Version With React Navigation 5](https://www.reddit.com/r/reactjs/comments/i3j1m5/react_native_firebase_auth_2020_version_with/)
-- url: https://youtu.be/eD7g6oyVeEI
+## [10][How to wrap 2 or more menu items to use them in one condition, using React and ant design?](https://www.reddit.com/r/reactjs/comments/i43rzl/how_to_wrap_2_or_more_menu_items_to_use_them_in/)
+- url: https://stackoverflow.com/questions/63247388/how-to-wrap-2-or-more-menu-items-to-use-them-in-one-condition-using-react-and-a
 ---
 
+## [11][Redux-form is causing the whole form to rerender](https://www.reddit.com/r/reactjs/comments/i43gj2/reduxform_is_causing_the_whole_form_to_rerender/)
+- url: https://www.reddit.com/r/reactjs/comments/i43gj2/reduxform_is_causing_the_whole_form_to_rerender/
+---
+Hello there, I have a really bad problem with redux form atm.  
+I have a normal form with checkboxes and selects and then inside the same form, I have a react-table 6 with 2 - 3 levels of subcomponents including redux form fields. Each field is created with Field component.
+
+The problem is, updating some of the form fields several times causes re-mounting of the whole form, then, eventually, it begins to act normal.
+
+Has anybody ever encountered such a problem ?
+## [12][props.history.push("/")](https://www.reddit.com/r/reactjs/comments/i43dqm/propshistorypush/)
+- url: https://www.reddit.com/r/reactjs/comments/i43dqm/propshistorypush/
+---
+I am new to react. I know props but I dont know what this history and push does? I searched everywhere but couldnt find it in the search as well. I am looking for simple/layman explaination.

@@ -17,108 +17,169 @@ See also the related [Q&amp;A for the //go:embed draft design](https://golang.or
 - url: https://go.googlesource.com/proposal/+/refs/heads/master/design/40307-fuzzing.md
 ---
 
-## [3][Go vs Rust: Writing a CLI tool](https://www.reddit.com/r/golang/comments/i3dui7/go_vs_rust_writing_a_cli_tool/)
-- url: https://cuchi.me/posts/go-vs-rust
+## [3][Stream and share your terminal without installing anything, server written in Go](https://www.reddit.com/r/golang/comments/i3tuxe/stream_and_share_your_terminal_without_installing/)
+- url: https://github.com/miguelmota/streamhut
 ---
 
-## [4][Olric v0.3.0-beta.1 is out: Distributed cache and in-memory key/value data store. It can be used both as an embedded Go library and as a language-independent service.](https://www.reddit.com/r/golang/comments/i3i6gi/olric_v030beta1_is_out_distributed_cache_and/)
+## [4][Does a module's name have to resolve to its location if it is shared?](https://www.reddit.com/r/golang/comments/i44fxy/does_a_modules_name_have_to_resolve_to_its/)
+- url: https://www.reddit.com/r/golang/comments/i44fxy/does_a_modules_name_have_to_resolve_to_its/
+---
+If you name your module `github.com/myusername/mymodule` and publish it on GitHub in that location, if/when other people do `go mod download` after referencing the module in their package I'm assuming it uses that URL to fetch the module.
+
+But if you name your module `example.com/mymodule`, and that doesn't actually resolve to the git repository of `mymodule`, does that break things if somebody was to `go mod download` (or build or test)?
+
+In other words, is the module name used as the url for others to retrieve it from?
+## [5][Seaworthy - A CLI to verify Kubernetes resource health](https://www.reddit.com/r/golang/comments/i3zzeo/seaworthy_a_cli_to_verify_kubernetes_resource/)
+- url: https://www.reddit.com/r/golang/comments/i3zzeo/seaworthy_a_cli_to_verify_kubernetes_resource/
+---
+[https://github.com/cakehappens/seaworthy](https://github.com/cakehappens/seaworthy?ts=4)  
+
+
+I started working on this CLI because I wanted to encapsulate the feature that I've found in [ArgoCD](https://argoproj.github.io/argo-cd/) as well as [Spinnaker](https://spinnaker.io/) that enables those tools to deploy resources to k8s and verify the health of the resources they deploy.  
+
+
+The goal here is to democratize and enable simple workflows such as  
+
+
+`kubectl apply -f ./manifests` 
+
+`seaworthy verify -f ./manifests --timeout 5m`  
+
+
+This would enable folks, such as myself, to make better use of other workflow tools, such as GitHub actions.  
+
+
+This is just a simple example, but I plan on full support for a variety of ways to pass in resource information:  
+
+
+`seaworthy verify deployments`
+
+`seaworthy verify deployment web`
+
+`jsonnet ./main.jsonnet | seaworthy verify --input-format json -f -`
+
+`tanka show . | seaworth verify -f -`
+
+No official release yet, I just made the asciinema video this evening, but I figured I'd post here and get some feedback.
+## [6][Olric v0.3.0-beta.1 is out: Distributed cache and in-memory key/value data store. It can be used both as an embedded Go library and as a language-independent service.](https://www.reddit.com/r/golang/comments/i3i6gi/olric_v030beta1_is_out_distributed_cache_and/)
 - url: https://github.com/buraksezer/olric/releases/tag/v0.3.0-beta.1
 ---
 
-## [5][Different ways to send an email with Golang](https://www.reddit.com/r/golang/comments/i3ez3y/different_ways_to_send_an_email_with_golang/)
-- url: https://www.loginradius.com/engineering/blog/sending-emails-with-golang/
+## [7][Notify.is - my first Go project](https://www.reddit.com/r/golang/comments/i3jsyv/notifyis_my_first_go_project/)
+- url: https://www.reddit.com/r/golang/comments/i3jsyv/notifyis_my_first_go_project/
+---
+Hi there,
+
+For the past month or so I've been working on my first Go project, a service called [Notify.is](https://notify.is) which notifies you when your favourite username on Instagram, Twitter or GitHub becomes available.
+
+The frontend uses the React framework Next.js and the backend uses Go to deal with RESTful API routes for signing up and deleting data.
+
+The Go code that checks with the mentioned services is deployed in a Docker container on Google Cloud Run.
+
+I've had a lot of fun building it and would love any feedback on the design, code or anything else. Also, trying out the service would be helpful for me finding any bugs I have not yet found.
+
+The frontend and backend are deployed using Vercel and the GitHub repository can be found here:
+
+[https://github.com/oliverproud/notify.is](https://github.com/oliverproud/notify.is)
+
+The Go code that is deployed in a Docker container on Google Cloud Run, you can find the GitHub repository for that here:
+
+[https://github.com/oliverproud/notify.is-gcloud](https://github.com/oliverproud/notify.is-gcloud)
+
+The website:
+
+[https://notify.is](https://notify.is)
+
+Let me know what you think!
+## [8][Automatic deploy of debian on ESXi host](https://www.reddit.com/r/golang/comments/i412v9/automatic_deploy_of_debian_on_esxi_host/)
+- url: https://www.reddit.com/r/golang/comments/i412v9/automatic_deploy_of_debian_on_esxi_host/
+---
+hi guys, here's bootp/ansible/golang tool that via command line allows you to deploy a VM
+
+feel free to contribute
+
+[https://github.com/lucabodd/ESXi-vm-deploy](https://github.com/lucabodd/ESXi-vm-deploy)
+## [9][Golang Developers Can Make the Shift to Brighter Business Future (Build Nex-gen Enterprise solution like these Big Companies)](https://www.reddit.com/r/golang/comments/i440fx/golang_developers_can_make_the_shift_to_brighter/)
+- url: https://www.bacancytechnology.com/blog/golang-for-brighter-business-future
 ---
 
-## [6][gopls v0.4.4](https://www.reddit.com/r/golang/comments/i2yez9/gopls_v044/)
-- url: https://github.com/golang/tools/releases/tag/gopls/v0.4.4
+## [10][Database Resolver - advanced read/write supports for GORM V2](https://www.reddit.com/r/golang/comments/i3kons/database_resolver_advanced_readwrite_supports_for/)
+- url: http://v2.gorm.io/docs/dbresolver.html
 ---
 
-## [7][E2E testing Tinkerbell Setup tutorial in Go](https://www.reddit.com/r/golang/comments/i3fdiz/e2e_testing_tinkerbell_setup_tutorial_in_go/)
-- url: https://gianarb.it/blog/e2e-test-tinkerbell-vagrant-setup-with-go
+## [11][What is the best design of database connection?](https://www.reddit.com/r/golang/comments/i3mj2w/what_is_the_best_design_of_database_connection/)
+- url: https://www.reddit.com/r/golang/comments/i3mj2w/what_is_the_best_design_of_database_connection/
 ---
+Hi everyone.There are two ways in my current usage.
 
-## [8][How to Test Elasticsearch Database methods](https://www.reddit.com/r/golang/comments/i3jaxz/how_to_test_elasticsearch_database_methods/)
-- url: https://www.reddit.com/r/golang/comments/i3jaxz/how_to_test_elasticsearch_database_methods/
----
-I am new to testing in general and cannot figure out, what would be a good way to add testing to my snippets of code without having to read/write to the Database.
+1. I used the gin and gorm ,set into a context with a middlewares like
 
-Just for an example, one of the components of my application is a messaging feature.
-This is the `createMessage` handler:
+```go
+
+// middleware
+
+db :=NewDB(datasourcename..)
+
+c.set("db",db)
+
+// Usage
+
+db := c.Value("db").(*gorm.DB)
+
+userRepo := repository.NewUserRepository(db)
+
+userServ := service.NewUserService(userRepo)
+
+userHandler := handles.NewUserHandler(userServ)
+
+r.Post("/user/create/",userHandler.Create)
+
 ```
-	m, err := doa.AddTextMessage(ctx, client, index, chatID, senderID, text)
-	if err != nil {
-		fmt.Println("Could not add Text Message to db")
-		return nil, err
-	}
-	fmt.Println("Insertion Successful")
-	return m, nil
+
+2.  use a private variable in db package then use a struct variable call Get function
+
+```go
+
+// db.go
+
+var conn *gorm.DB
+
+type DB struct()
+
+func (d *DB) Get() *gorm.DB
+
+// usage
+
+db := &amp;db.DB{}
+
+userRepo := repository.NewUserRepository(db.Get())
+
+userServ := service.NewUserService(userRepo)
+
+userHandler := handles.NewUserHandler(userServ)
+
+r.Post("/user/create/",userHandler.Create)
+
 ```
 
-`doa` represents the Data Access Object. It is basically acting as an abstraction, so that if ever I need to use another database, I won't have to change this code, just the underlying implementation.
+I tired to set the db into the request context. but it seems like the first way.And I need to combine the context.Context with gin.Context,then send ctx in ervery router function NewRepostiory function..
 
-&amp;#x200B;
+```go
 
-My `DOA` method: `AddTextMessage` is as follows:
-```
-func AddTextMessage(ctx context.Context, client \*elastic.Client, index string, chatID string, senderID string, text string) (*model.Message, error) {
-	m := &amp;model.Message{
-		ChatID:    chatID,
-		SenderID:  senderID,
-		Text:      &amp;text,
-		Timestamp: time.Now(),
-	}
-	s, err := utils.ParseToString(m)
-	if err != nil {
-		return nil, err
-	}
-	_, err = client.Index().
-		Index(index).
-		BodyString(s).
-		Do(ctx)
-	if err != nil {
-		fmt.Println("Error Storing the Text Message")
-		return nil, err
-	}
-	return m, nil
-}
+ctx :=context.WithContext(context.Background(),"db",db)
+
+c.Request = c.Request.WithContext(ctx)
+
 ```
 
-Now, how can I mock this or even test this?
-
-I have seen a lot of examples but I am not sure of a good approach.
-## [9][Get started with GoLang- For beginners](https://www.reddit.com/r/golang/comments/i3j6gx/get_started_with_golang_for_beginners/)
-- url: https://github.com/kudoabhijeet/LetsGO
+How do you design the database connection? ? I don't have too much develop experience. Thanks for share !
+## [12][Switching to pgx.. when to use connection pool, and do i pass context from my http handler?](https://www.reddit.com/r/golang/comments/i3vb9z/switching_to_pgx_when_to_use_connection_pool_and/)
+- url: https://www.reddit.com/r/golang/comments/i3vb9z/switching_to_pgx_when_to_use_connection_pool_and/
 ---
+So I was using the db.sql and pg driver for accessing database. I was using the var route with a global db, and I am not clear if that is a good way to go in terms of handling database connections concurrently from different http endpoint handlers that are running in their own threads (go funcs).
 
-## [10][Can I start using Go without fully understanding structs and interfaces?](https://www.reddit.com/r/golang/comments/i3iaui/can_i_start_using_go_without_fully_understanding/)
-- url: https://www.reddit.com/r/golang/comments/i3iaui/can_i_start_using_go_without_fully_understanding/
----
-I have been trying to learn Go off&amp;on for many weeks now, using the official tutorial (https://tour.golang.org/methods/25), but every time it has an exercise that asks to build an object class and its methods and interfaces, I struggle severely because I simply cannot understand what the syntax is trying to say or how the scope of anything works. For example, the Rot13 reader (https://tour.golang.org/methods/23) exercise took me days to figure out because for a line like this;
+Started digging in a bit more and it seems the better way to go is using pgx. pgx however unlike the pg driver, seems to indicate the connection you get is not thread safe, and to use the connection pool for that. So looking into it, I am attempting to create a struct with methods that contains a pointer to the created pool, and make that accessible to then grab a connection to make a db request. Is that the right approach.. and will it scale to say, 100s of requests a second (or more?). 
 
-    func (r rot13Reader) Read(b []byte) (int, error) {
-    	n, err := r.r.Read(b)
+Also, the example code I found indicates it requires a context. I can use context.Background(), but as each http handler has a context associated with it, does it make sense to pass that one in and use that, since in my service starter code I am also using a context to handle a graceful shutdown though I am not sure that that context is in any way related to the one each request has associated with it. Or.. would it make sense to pass the context in my service starter that handles graceful shutdown, to each connection so that if somehow the db cancels.. it ends up using the context created with the service starter to trigger a graceful shutdown?
 
-I had no clue where this `b []byte` object is coming from, how I am supposed to use it, let alone that I was supposed to pass it to `r.r.Read(b)` (no clue where that was coming from either). I am coming from a Python background, where at least the object scoping is mostly simple and intuitive, I have figured out Rust in the past and made some tiny projects with it, but this class stuff in Go is proving to be really difficult to understand and use.
-
-But now, I have some situations where I really *really* could benefit from using Goroutines to solve some real-world problems that I cannot handle nearly as well in Python. I have a relatively basic Python library that reads some data from a pair of files, and runs some math calculations on them (takes about 5 seconds), but I need to run it in a combinatorial fashion for hundreds of thousands of pairs of files. Python `multiprocessing` is not ideal for this because of the way it needs to load everything into memory before it runs. Typically I would use Celery but then I need to have a big complicated persistent server process running with RabbitMQ, which is not feasible in this situation. 
-
-So I was thinking, maybe I know enough Go so far that I could hack together a re-implementation of the math parts in Go and just run it all through Goroutines. But taking on something like this would be a lot of risk and much more time investment, and a hard sell to the bosses. I am not sure if its worth the effort of trying to use the parts of Go I have figured out to make an attempt, or if I need to keep grinding on these tutorials before I should try. We have meetings this week to decide what direction to take things in and so I am trying to get a more clear idea of if this might be feasible at my current level. I need to decide if I should invest my remaining time in trying more Python implementations that would be terribly optimized &amp; awkward, or if I should just try it in Go.
-## [11][Circuit Breaker Example Implementation in Go](https://www.reddit.com/r/golang/comments/i3g6u4/circuit_breaker_example_implementation_in_go/)
-- url: https://www.reddit.com/r/golang/comments/i3g6u4/circuit_breaker_example_implementation_in_go/
----
-Hello,   
-https://youtu.be/hyasWpxP32c   
-Here is a video that explains what is a Circuit Breaker in Programming and how to implement it in Go (Golang).    
-This includes:  
-
-\- What is Circuit Breaker   
-\- Logic of Circuit Breaker  
-\- Implementation in Go   
-
-Feel free to let me know in the comments if you have any comments or criticisms.  Cheers :)
-
-\#Go #Golang
-## [12][When do you begin to split code from main.go?](https://www.reddit.com/r/golang/comments/i3fmvs/when_do_you_begin_to_split_code_from_maingo/)
-- url: https://www.reddit.com/r/golang/comments/i3fmvs/when_do_you_begin_to_split_code_from_maingo/
----
-I have seen in many different project that people tend to have a lot of code in the `main.go` file or even have their whole server written there. Coming from other OOP languages one would normally make classes for anything that could be a class of its own.
+Sorry..little confused on how all these contexts are used in this manner.

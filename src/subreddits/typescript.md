@@ -22,154 +22,80 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Typesafe alternatives for redux-saga?](https://www.reddit.com/r/typescript/comments/i3gvul/typesafe_alternatives_for_reduxsaga/)
-- url: https://www.reddit.com/r/typescript/comments/i3gvul/typesafe_alternatives_for_reduxsaga/
+## [2][Is it possible to define a type for a variable that does not allow undefined value ?](https://www.reddit.com/r/typescript/comments/i4565u/is_it_possible_to_define_a_type_for_a_variable/)
+- url: https://www.reddit.com/r/typescript/comments/i4565u/is_it_possible_to_define_a_type_for_a_variable/
 ---
-I have been using redux-saga in couple TypeScript projects but big problem with redux-saga is generators which lose type safety when you \`yield\` any value.  
-
-
-I am looking for other library to handle side-effects without losing type safety. Please suggest libraries that you have used to handle side effects with TypeScript and tell what did you use. It would be also nice if the library works with Redux :)
-## [3][The missing TS+Vue Auth0 tutorial](https://www.reddit.com/r/typescript/comments/i3jj3q/the_missing_tsvue_auth0_tutorial/)
-- url: https://www.reddit.com/r/typescript/comments/i3jj3q/the_missing_tsvue_auth0_tutorial/
+The question in the title .
+## [3][Reducing TypeScript boilerplate in Next.js pages](https://www.reddit.com/r/typescript/comments/i3vw7j/reducing_typescript_boilerplate_in_nextjs_pages/)
+- url: https://github.com/vriad/nxtk
 ---
-I love Vue, and I find it nice how it works with TS, but the lack of tutorials with Vue+TS is frustrating. So if I already had to recreate the code of one of the Auth0 docs in TS, I thought I might as well publish it. So here it is, if you are setting up a project with Vue+TS using Auth0, you might wanna take a look at this.  
 
-
-[https://blog.risingstack.com/auth0-vue-typescript-quickstart-docs/](https://blog.risingstack.com/auth0-vue-typescript-quickstart-docs/)  
-
-
-Feedback is always welcome.
-## [4][React HOC](https://www.reddit.com/r/typescript/comments/i3irl4/react_hoc/)
-- url: https://www.reddit.com/r/typescript/comments/i3irl4/react_hoc/
+## [4][is keyword, versus as](https://www.reddit.com/r/typescript/comments/i3slde/is_keyword_versus_as/)
+- url: https://www.reddit.com/r/typescript/comments/i3slde/is_keyword_versus_as/
 ---
-Hey Guys!
+Normally I use the `as` keyword to assert a type to help the compiler read the code correctly. Sometimes I also use `as` as a type annotation (for others who read my code including myself).
 
-&amp;#x200B;
+There is also an `is` keyword. It appears to be another assertion. I have trouble telling what the difference is exactly; can someone clarify the distinction? I don't remember the last time I've used `is`.
+## [5][Parenthesis Balancing using Monoids in TypeScript](https://www.reddit.com/r/typescript/comments/i3puyh/parenthesis_balancing_using_monoids_in_typescript/)
+- url: https://medium.com//parenthesis-balancing-using-monoids-in-typescript-56e5c994e497?source=friends_link&amp;sk=3bc26cc47a80f3bf40c2da0f6221a1c6
+---
 
-I tried to search for this but didn't really find what I was looking for, hopefully you can help me!
+## [6][Do popular API have public TypeScript interfaces for their data?](https://www.reddit.com/r/typescript/comments/i3mzur/do_popular_api_have_public_typescript_interfaces/)
+- url: https://www.reddit.com/r/typescript/comments/i3mzur/do_popular_api_have_public_typescript_interfaces/
+---
+I'm making an app with the PokeApi, and I realize that if I want intellisense and type checking for my API responses, i'd have to create a whole massive interface. Do the makers of API's typically have a TS interface for their API, or is there anywhere else that might already? Thanks.
+## [7][Aquarium - A minimalistic blockchain implementation](https://www.reddit.com/r/typescript/comments/i3k75l/aquarium_a_minimalistic_blockchain_implementation/)
+- url: https://github.com/micheleriva/Aquarium
+---
 
-&amp;#x200B;
+## [8][Express middleware - What is the best way to do undefined checking?](https://www.reddit.com/r/typescript/comments/i3m94q/express_middleware_what_is_the_best_way_to_do/)
+- url: https://www.reddit.com/r/typescript/comments/i3m94q/express_middleware_what_is_the_best_way_to_do/
+---
+Might be a dumb question, but I have an express middleware that checks for the existence of various headers and sends an error response if they don't exist. Then in my route function I try to access some of those headers, but I am met with various typing problems where I would need to check for the existence of the headers again to make sure I'm not passing an undefined variable to a function.
 
-I am looking for a HOC example that injects a Prop(s) and forces the Wrapped Component Props to extends the Injected Props.
+So I guess my question is am I going to need to duplicate my header checks again, or is there any way to make typescript have scope of the middleware used and see that the checks have already been done? Or is having a middleware do this a silly thing to do in the first place?
+## [9][Optional Generic Type of Class for Constructor Arguments](https://www.reddit.com/r/typescript/comments/i3pgw5/optional_generic_type_of_class_for_constructor/)
+- url: https://www.reddit.com/r/typescript/comments/i3pgw5/optional_generic_type_of_class_for_constructor/
+---
+I'm trying to create the following base class:
 
-&amp;#x200B;
+```typescript
+export class Event&lt;T = any&gt; {
+  public data: T;
 
-I saw HOC that did this here [https://github.com/realm/react-realm-context](https://github.com/realm/react-realm-context)  (the withRealm HOC)
-
-&amp;#x200B;
-
-What I have so far ...
-
-    interface WrappedProps {}
-    
-    const Title: React.FC&lt;WrappedProps&gt; = () =&gt; {
-      return &lt;Text&gt;Title&lt;/Text&gt;;
-    };
-    
-    interface InjectedProps {
-      title: string;
+  constructor(data: T) {
+    if (data) {
+      this.data = data;
     }
-    
-    function withCoolTitle&lt;P&gt;(Component: React.ComponentType&lt;P &amp; NewProps&gt;) {
-      return (props: P) =&gt; &lt;Component {...(props as P)} title="Cool title" /&gt;;
-    }
-    
-    export default withCoolTitle(Title);
+  }
+}
+```
 
-A very basic example which doesn't really make sense but I didn't want a bloated example with a User example ...
+The problem is I may have events that when constructed I need an argument:
+`new PostAddedEvent({ postId: string });`
 
-&amp;#x200B;
+Or events where I don't need them:
+`new KernelShutdown()`
 
-So I want that WrappedProps needs to extends InjectedProps AND when I use the Title Comp that I don't need to include InjectedProps because it is injected by the HOC.
+If I'm putting my constructor(data?: T), then for events that extend event like:
+```typescript
+class PostAddedEvent extends Event&lt;{ postId: string}&gt; {}
+```
 
-In this example WrappedProps does not need to extends InjectedProps nor do I need to inject title when I use &lt;Title /&gt; ...
+I can instantiate it without arguments (new PostAddedEvent()), which is something I don't want.
 
-&amp;#x200B;
-
-Your help would be greatly appreciated!
-## [5][What's the best bundler to deal with TypeScripts broken .mjs output?](https://www.reddit.com/r/typescript/comments/i2y54h/whats_the_best_bundler_to_deal_with_typescripts/)
-- url: https://www.reddit.com/r/typescript/comments/i2y54h/whats_the_best_bundler_to_deal_with_typescripts/
----
-So TypeScript cannot output `.mjs` files and [this creates a massive headache for many years](https://github.com/microsoft/TypeScript/issues/18442#issuecomment-666190219). What's the best bundler which can deal with this mess and is close to a `tsc` experience re building and hot reloading?
-
-*Edit: to the downvoters, this is no rant, I just look for help. So rather reply and tell me what to do instead of mindless downvoting, thx.*
-## [6][Error with generics when assigning function](https://www.reddit.com/r/typescript/comments/i3e416/error_with_generics_when_assigning_function/)
-- url: https://www.reddit.com/r/typescript/comments/i3e416/error_with_generics_when_assigning_function/
----
-I'm getting an error and I don't know why
-Sample code:
-
-    const fn: &lt; T &gt; () =&gt; Promise &lt;T&gt; = () =&gt; new Promise (resolve =&gt; resolve (2));
-
-I get error 2345, type 5 cannot be assigned to type T or promiseLike&lt;T&gt; or undefined
-Does anyone know how to fix this
-My actual use case involves passing the function as a callback but this is the minimum amount of code to produce the error
-Removing the generic from the declaration gives an error that Promise needs a type argument
-## [7][NGX-Translate and Server-Side Rendering - Angular Universal](https://www.reddit.com/r/typescript/comments/i3320a/ngxtranslate_and_serverside_rendering_angular/)
-- url: https://andremonteiro.pt/ngx-translate-angular-universal-ssr/
+Is there an elegant way to have best of both worlds? Like a sort-of advanced type that makes the argument of the constructor optional?
+## [10][Announcing the new TypeScript Website](https://www.reddit.com/r/typescript/comments/i3ojd3/announcing_the_new_typescript_website/)
+- url: https://devblogs.microsoft.com/typescript/announcing-the-new-typescript-website/
 ---
 
-## [8][Reflecting business logic rules into the domain models using typescript by Mohsen Sareminia](https://www.reddit.com/r/typescript/comments/i2j9tg/reflecting_business_logic_rules_into_the_domain/)
-- url: https://www.reddit.com/r/typescript/comments/i2j9tg/reflecting_business_logic_rules_into_the_domain/
+## [11][Want to Interview Someone about Typescript for my Podcast](https://www.reddit.com/r/typescript/comments/i3qyif/want_to_interview_someone_about_typescript_for_my/)
+- url: https://www.reddit.com/r/typescript/comments/i3qyif/want_to_interview_someone_about_typescript_for_my/
 ---
-Typescript is a great and powerful tool for type checking but it could bother you if you don’t define your type according to business logic rules. If your models don’t reflect business logic rules, after some time it will create a gap between what business logic says and how your code behaves. A three part series explores this topic.
+If you are an experienced Typescript programmer, I would love to have you appear on my podcast, Contentful { Creators } to chat about Typescript.  It would be sort of an introduction to Typescript.  Please have a look at my podcast and if you are interested, please reach out to me at [marcelo@themarcelolewin.com](mailto:marcelo@themarcelolewin.com)
 
-* [Part 1](https://medium.com/@mohsen.sareminia/reflecting-business-logic-rules-into-the-domain-models-using-typescript-part-1-e696773ae4ae?source=friends_link&amp;sk=76085024d8b1a731ed47cabb761d0e3a) Describes how to create self-documented types and models.
+[https://anchor.com/contentful-creators/](https://anchor.com/contentful-creators/)
 
-* [Part 2](https://medium.com/@mohsen.sareminia/reflecting-business-logic-rules-into-the-domain-models-using-typescript-part-2-61a19fba069d?source=friends_link&amp;sk=d596490ba47c075a0648a31294b5fa33) Explains how to write some code that creates and validates those types.
+Thanks!
 
-* [Part 3](https://medium.com/@mohsen.sareminia/reflecting-business-logic-rules-into-the-domain-models-using-typescript-part-3-aa8998bc6d29?source=friends_link&amp;sk=bdec956a522701f196bd8a83a5a50838) Uses io-ts library to automate these boring tasks.
-## [9][Is there a smarter way to filter out duplicates?](https://www.reddit.com/r/typescript/comments/i29ou1/is_there_a_smarter_way_to_filter_out_duplicates/)
-- url: https://www.reddit.com/r/typescript/comments/i29ou1/is_there_a_smarter_way_to_filter_out_duplicates/
----
-I want to remove objects from an array if the `playerId` is already contained in that array.
-
-Is there a smarter way to do this in TypeScript than my current implementation?
-
-    private filterDuplicateLeaderBoardLines(result: Result): Result {
-      const leaderBoardLines: LeaderBoardLineResult[] = [];
-      const playerIds = new Set&lt;string&gt;();
-    
-      result.sessionResult.leaderBoardLines.forEach((leaderBoardLine: LeaderBoardLineResult) =&gt; {
-        const playerId = leaderBoardLine.currentDriver.playerId;
-        playerIds.add(playerId);
-      });
-    
-      playerIds.forEach((playerId) =&gt; {
-        leaderBoardLines.push(
-          result.sessionResult.leaderBoardLines.find(
-            (leaderBoardLine) =&gt; leaderBoardLine.currentDriver.playerId === playerId
-          )
-        );
-      });
-    
-      result.sessionResult.leaderBoardLines = leaderBoardLines;
-    
-      return result;
-    }
-## [10][[Question] ReactJS + TypeScript = larger bundle size](https://www.reddit.com/r/typescript/comments/i2ck8c/question_reactjs_typescript_larger_bundle_size/)
-- url: https://www.reddit.com/r/typescript/comments/i2ck8c/question_reactjs_typescript_larger_bundle_size/
----
-I am looking forward to using TypeScript + ReactJS in my next project. I know TS adds a lot of good stuff into the app but I wonder about the bundled size of the project.
-
-How much bigger in a comparison between a normal ReactJS and ReactJS + TypeScript?
-
-Thank you.
-## [11][Help with getting IDE support working for a .d.ts for a JS project, in another JS project?](https://www.reddit.com/r/typescript/comments/i2fqvw/help_with_getting_ide_support_working_for_a_dts/)
-- url: https://www.reddit.com/r/typescript/comments/i2fqvw/help_with_getting_ide_support_working_for_a_dts/
----
-Situation:
-
-I have a node module, pure node javascript, no bundler, packager, build step etc.  I've written a .d.ts file for it.
-
-I want to use it from another node javascript project, but I want IDE support to work correctly.
-
-Difficulty:  When I do const x=require('lib'); ... vs code tells me that "x" only has one property: default .  If I do 'x.default.' then I get proper intellisense, however, x.default is not how the library is exported, so that code doesn't actually work.
-
-If I change it to "import x from 'lib';" then intellisense works properly, but of course, that's not valid usage from a CJS node package, so that also doesn't work.
-
-Any help how to configure tsconfig / jsconfig / VSC into such a way that this will act how I expect it to?  
-
-Someone has suggested that I add a line
-    /** @type {typeof import("lib").default} */
-to each place where it's imported, which apparently forces TS to understand it properly... but that's not exactly sustainable across a large project..
+\- Marcelo

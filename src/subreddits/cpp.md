@@ -56,43 +56,43 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][The SIMDe header-only library provides fast, portable implementations of SIMD intrinsics on hardware which doesn't natively support them, such as calling SSE functions on ARM](https://www.reddit.com/r/cpp/comments/i3gijx/the_simde_headeronly_library_provides_fast/)
+## [2][C++ Lambda Week: Capturing Things](https://www.reddit.com/r/cpp/comments/i408n6/c_lambda_week_capturing_things/)
+- url: https://www.bfilipek.com/2020/08/lambda-capturing.html
+---
+
+## [3][Hsm – Feature rich and fast C++ state machine library based on boost hana](https://www.reddit.com/r/cpp/comments/i3nyhm/hsm_feature_rich_and_fast_c_state_machine_library/)
+- url: https://github.com/erikzenker/hsm
+---
+
+## [4][The SIMDe header-only library provides fast, portable implementations of SIMD intrinsics on hardware which doesn't natively support them, such as calling SSE functions on ARM](https://www.reddit.com/r/cpp/comments/i3gijx/the_simde_headeronly_library_provides_fast/)
 - url: https://github.com/simd-everywhere/simde
 ---
 
-## [3][C++20 Concepts: Testing constrained functions](https://www.reddit.com/r/cpp/comments/i3fka6/c20_concepts_testing_constrained_functions/)
-- url: https://andreasfertig.blog/2020/08/cpp20-concepts-testing-constrained-functions/
----
-
-## [4][Reclaiming modern C++ as the tool of data analysis](https://www.reddit.com/r/cpp/comments/i3i19j/reclaiming_modern_c_as_the_tool_of_data_analysis/)
+## [5][Reclaiming modern C++ as the tool of data analysis](https://www.reddit.com/r/cpp/comments/i3i19j/reclaiming_modern_c_as_the_tool_of_data_analysis/)
 - url: https://www.reddit.com/r/cpp/comments/i3i19j/reclaiming_modern_c_as_the_tool_of_data_analysis/
 ---
 I hope this https://github.com/hosseinmoein/DataFrame adds to the C++ ecosystem and dispels the notion that C++ is no good for data analysis
-## [5][Meeting C++ 2020 programme &amp; online tickets available!](https://www.reddit.com/r/cpp/comments/i3hscb/meeting_c_2020_programme_online_tickets_available/)
-- url: https://meetingcpp.com/meetingcpp/news/items/Meeting-Cpp-2020-programme---online-tickets-available-.html
+## [6][Is there any point in registering for CppCon 2020 if the videos will be uploaded later?](https://www.reddit.com/r/cpp/comments/i3ptpf/is_there_any_point_in_registering_for_cppcon_2020/)
+- url: https://www.reddit.com/r/cpp/comments/i3ptpf/is_there_any_point_in_registering_for_cppcon_2020/
 ---
-
-## [6][70x faster file embeds using string literals](https://www.reddit.com/r/cpp/comments/i2x3go/70x_faster_file_embeds_using_string_literals/)
-- url: https://mort.coffee/home/fast-cpp-embeds/
----
-
-## [7][Implementing UFCS in Clang](https://www.reddit.com/r/cpp/comments/i339zk/implementing_ufcs_in_clang/)
-- url: https://dancrn.com/2020/08/02/ufcs-in-clang.html
+I don't expect to ask many questions. I'll probably register for a workshop or two, though.
+## [7][C++20 Concepts: Testing constrained functions](https://www.reddit.com/r/cpp/comments/i3fka6/c20_concepts_testing_constrained_functions/)
+- url: https://andreasfertig.blog/2020/08/cpp20-concepts-testing-constrained-functions/
 ---
 
 ## [8][Conway's 'Game of Life' in the Terminal](https://www.reddit.com/r/cpp/comments/i3jj92/conways_game_of_life_in_the_terminal/)
 - url: https://github.com/p-ranav/cgol
 ---
 
-## [9][Wt 4.4.0 released! (widget-based C++ server side web framework)](https://www.reddit.com/r/cpp/comments/i2y0x2/wt_440_released_widgetbased_c_server_side_web/)
-- url: https://www.webtoolkit.eu/wt/news/2020/08/03/wt_3_7_0___4_4_0_released
+## [9][Meeting C++ 2020 programme &amp; online tickets available!](https://www.reddit.com/r/cpp/comments/i3hscb/meeting_c_2020_programme_online_tickets_available/)
+- url: https://meetingcpp.com/meetingcpp/news/items/Meeting-Cpp-2020-programme---online-tickets-available-.html
 ---
 
-## [10][C++ Weekly - Ep 231 - Multiple Destructors in C++20?! How and Why](https://www.reddit.com/r/cpp/comments/i2ygjw/c_weekly_ep_231_multiple_destructors_in_c20_how/)
-- url: https://youtu.be/A3_xrqr5Kdw
+## [10][70x faster file embeds using string literals](https://www.reddit.com/r/cpp/comments/i2x3go/70x_faster_file_embeds_using_string_literals/)
+- url: https://mort.coffee/home/fast-cpp-embeds/
 ---
 
-## [11][psched: Priority-based Task Scheduler for Modern C++](https://www.reddit.com/r/cpp/comments/i2vtj0/psched_prioritybased_task_scheduler_for_modern_c/)
-- url: https://github.com/p-ranav/psched
+## [11][Implementing UFCS in Clang](https://www.reddit.com/r/cpp/comments/i339zk/implementing_ufcs_in_clang/)
+- url: https://dancrn.com/2020/08/02/ufcs-in-clang.html
 ---
 

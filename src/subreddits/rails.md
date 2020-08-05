@@ -19,19 +19,212 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Running tests in containers with docker-compose](https://www.reddit.com/r/rails/comments/i3fzbz/running_tests_in_containers_with_dockercompose/)
-- url: https://www.reddit.com/r/rails/comments/i3fzbz/running_tests_in_containers_with_dockercompose/
+## [2][Adding Snippets for easier rails coding](https://www.reddit.com/r/rails/comments/i42vyt/adding_snippets_for_easier_rails_coding/)
+- url: https://www.reddit.com/r/rails/comments/i42vyt/adding_snippets_for_easier_rails_coding/
 ---
-The main advantages of this way are to have an independent environment for the tests running and to reduce the complexity of the test environment setup.
+Hi just a quick question can someone tell me how i create shortcuts for  the below rails tags in VS code i was able to get emmet working its just the below tags wont work. Any guide how to set this up in rails to save time? 
 
-What we want to achieve:
+    &lt;%= %&gt;
 
-* Running the tests should be easy.
-* Test runs should be isolated and repeatable.
-* Test environment should be as close to the production environment as possible.
+or 
 
-How to setup and use docker-compose for Ruby on Rails tests you can find in the article: [https://jtway.co/running-tests-in-containers-with-docker-compose-97480726c1e3](https://jtway.co/running-tests-in-containers-with-docker-compose-97480726c1e3)
-## [3][Sending Thousands of Request at the Same Time?](https://www.reddit.com/r/rails/comments/i3iyu5/sending_thousands_of_request_at_the_same_time/)
+    &lt;% %&gt;
+## [3][Does serverless rails work well and is it worth it?](https://www.reddit.com/r/rails/comments/i3v2lr/does_serverless_rails_work_well_and_is_it_worth_it/)
+- url: https://www.reddit.com/r/rails/comments/i3v2lr/does_serverless_rails_work_well_and_is_it_worth_it/
+---
+What are the pros and cons for doing so with Rails?
+## [4][How to log exceptions using Lograge as default logger](https://www.reddit.com/r/rails/comments/i43zyh/how_to_log_exceptions_using_lograge_as_default/)
+- url: https://www.reddit.com/r/rails/comments/i43zyh/how_to_log_exceptions_using_lograge_as_default/
+---
+How to log exceptions using Lograge as default logger.
+
+Basically, I am using Lograge as the default Rails logger that reduces the bulk of rails logs to formatted structure. But exceptions are not included by default. In the lograge configuration I included the following,
+
+`opts[:exception] = event.payload[:exception] if event.payload[:exception]`  
+`opts[:exceptionObject] = event.payload[:exception_object] if event.payload[:exception_object]`
+
+This seem to pring the first like in code exceptions. It also does STDOUT and so i have the exceotions being logged normally with stacktrace. This does not include routing exceptions.
+
+Is there a way I can get the exceptions logged as part of lograge output, with appropriate status, backtrace and not duplicate the exception once again?
+## [5][Working on a React project and hit a snag.](https://www.reddit.com/r/rails/comments/i3wsv4/working_on_a_react_project_and_hit_a_snag/)
+- url: https://www.reddit.com/r/rails/comments/i3wsv4/working_on_a_react_project_and_hit_a_snag/
+---
+ActionController::UnknownFormat (WelcomeController#index is missing a template for this request format and variant.
+
+I tried just doing respond\_to :html in the Controller#Index, but it's being weird. Specifically, I'm trying to load a react component and it's not happening. I believe I have all my routes set correctly, so I'm not sure what this error message means exactly. Can anyone clarify?
+## [6][Rails 5.2 Credentials API](https://www.reddit.com/r/rails/comments/i3sz7n/rails_52_credentials_api/)
+- url: https://www.reddit.com/r/rails/comments/i3sz7n/rails_52_credentials_api/
+---
+Does anyone know if it's possible to only use the encrypted configs for production/staging/uat?
+
+i'd like to use plain text config yamls for dev and test environments but it appears to be an all or nothing thing w/ the new credentials api.
+## [7][How do you prevent users editing &amp; deleting what isn't theirs?](https://www.reddit.com/r/rails/comments/i3xk7o/how_do_you_prevent_users_editing_deleting_what/)
+- url: https://www.reddit.com/r/rails/comments/i3xk7o/how_do_you_prevent_users_editing_deleting_what/
+---
+I heard of Pundit, but I'm new to Rails and don't get all the docs. And not sure its applicable. I want it that sellers cannot edit or delete other sellers' items.
+## [8][Pros and cons of Rails with Docker?](https://www.reddit.com/r/rails/comments/i3xxjf/pros_and_cons_of_rails_with_docker/)
+- url: https://www.reddit.com/r/rails/comments/i3xxjf/pros_and_cons_of_rails_with_docker/
+---
+I mainly develop by myself and am wondering if Docker would add too much complexity for me.
+## [9][Mina Deploy issue](https://www.reddit.com/r/rails/comments/i3mzmu/mina_deploy_issue/)
+- url: https://www.reddit.com/r/rails/comments/i3mzmu/mina_deploy_issue/
+---
+I have been fighting Capistrano for weeks trying to get deployment to work, so I decide to try switching to Mina. I am running into the following issue but I am not sure where the issue is. Any help would be greatly appreciated. 
+
+Mina Output:
+
+`Bundle complete! 22 Gemfile dependencies, 70 gems now installed.`
+
+`Gems in the groups development and test were not installed.`
+
+`Bundled gems are installed into \`./vendor/bundle\``
+
+`Files /var/www/site/current/db/migrate/20200518185620_create_table1.rb and ./db/migrate/20200518185620_create_table1.rb differ`
+
+`Files /var/www/site/current/db/migrate/20200518185712_create_table2.rb and ./db/migrate/20200518185712_create_table2.rb differ`
+
+`Files /var/www/site/current/db/migrate/20200710220508_create_table3.rb and ./db/migrate/20200710220508_create_table3.rb differ`
+
+`Files /var/www/site/current/db/migrate/20200710220643_create_table4.rb and ./db/migrate/20200710220643_create_table4.rb differ`
+
+`Files /var/www/site/current/db/migrate/20200714180204_add_forgotten_to_table1.rb and ./db/migrate/20200714180204_add_forgotten_to_table1.rb differ`
+
+`Files /var/www/site/current/db/migrate/20200714184239_add_image_to_table4.rb and ./db/migrate/20200714184239_add_image_to_table4.rb differ`
+
+`Files /var/www/site/current/db/migrate/20200715171629_change_field_on_table1.rb and ./db/migrate/20200715171629_change_field_on_table1.rb differ`
+
+`Files /var/www/site/current/db/migrate/20200721190108_devise_create_users.rb and ./db/migrate/20200721190108_devise_create_users.rb differ`
+
+`-----&gt; Migrating database`
+
+`Traceback (most recent call last):`
+
+`3: from /var/www/site/tmp/build-159655897320394/vendor/bundle/ruby/2.6.0/bin/ruby_executable_hooks:24:in \`&lt;main&gt;'`
+
+`2: from /var/www/site/tmp/build-159655897320394/vendor/bundle/ruby/2.6.0/bin/ruby_executable_hooks:24:in \`eval'`
+
+`1: from /usr/local/rvm/gems/ruby-2.6.3/bin/rake:23:in \`&lt;main&gt;'`
+
+`/usr/local/rvm/gems/ruby-2.6.3/bin/rake:23:in \`load': cannot load such file -- /usr/local/rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/specifications/default/exe/rake (LoadError)`
+
+ `!     ERROR: Deploy failed.`
+
+`-----&gt; Cleaning up build`
+
+`Unlinking current`
+
+`OK`
+
+`Connection to server closed.`
+
+ `!     Run Error`
+
+&amp;#x200B;
+
+My Mina deploy.rb 
+
+`require 'mina/bundler'`
+
+`require 'mina/rails'`
+
+`require 'mina/git'`
+
+`require 'mina/rvm'`
+
+&amp;#x200B;
+
+`set :application_name, 'site'`
+
+`set :domain, 'server'`
+
+`set :user, 'deployer'`
+
+`set :deploy_to, "/var/www/site"`
+
+`set :repository,` [`"git@github.com`](mailto:"git@github.com)`:git.git"`
+
+`set :branch, 'master'`
+
+`set :rvm_use_path, '/etc/profile.d/rvm.sh'`
+
+&amp;#x200B;
+
+`set :shared_files, fetch(:shared_files, []).push('config/database.yml', 'config/secrets.yml')`
+
+&amp;#x200B;
+
+`task :remote_environment do`
+
+  `ruby_version =` [`File.read`](https://File.read)`('.ruby-version').strip`
+
+  `raise "Couldn't determine Ruby version: Do you have a file .ruby-version in your project root?" if ruby_version.empty?`
+
+&amp;#x200B;
+
+  `invoke :'rvm:use', 'ruby-2.6.3'`
+
+`end`
+
+&amp;#x200B;
+
+`desc "Deploys the current version to the server."`
+
+`task :deploy do`
+
+  
+
+  `deploy do`
+
+
+
+`invoke :'git:clone'`
+
+`invoke :'deploy:link_shared_paths'`
+
+`invoke :'bundle:install'`
+
+`invoke :'rails:db_migrate'`
+
+`invoke :'rails:assets_precompile'`
+
+`invoke :'deploy:cleanup'`
+
+&amp;#x200B;
+
+`on :launch do`
+
+`end`
+
+  `end`
+
+&amp;#x200B;
+
+`end`
+
+&amp;#x200B;
+
+`namespace :passenger do`
+
+  `desc "Restart Passenger"`
+
+  `task :restart do`
+
+`queue %{`
+
+`echo "-----&gt; Restarting passenger"`
+
+`cd #{deploy_to}/current`
+
+`#{echo_cmd %[mkdir -p tmp]}`
+
+`#{echo_cmd %[touch tmp/restart.txt]}`
+
+`}`
+
+  `end`
+
+`end`
+## [10][Sending Thousands of Request at the Same Time?](https://www.reddit.com/r/rails/comments/i3iyu5/sending_thousands_of_request_at_the_same_time/)
 - url: https://www.reddit.com/r/rails/comments/i3iyu5/sending_thousands_of_request_at_the_same_time/
 ---
 I need to develop an endpoint that will send (possibly) hundreds/thousands of request, process it then return/render the json to user/client.
@@ -45,87 +238,15 @@ So what should I do?
 I was thinking that I should wrap the process in 20sec timeout so it doesn't reach rails 30sec limit, and if it's still not finished in 20sec, it will return the unfinished result. It goes like this [https://i.imgur.com/FolcJV6.png](https://i.imgur.com/FolcJV6.png)
 
 But it's still not working, the process still keep going even after it timeout.
-## [4][Run slow RSpec files on Github Actions with parallel jobs using an auto split of the spec file by test examples](https://www.reddit.com/r/rails/comments/i36nrc/run_slow_rspec_files_on_github_actions_with/)
-- url: https://www.reddit.com/r/rails/comments/i36nrc/run_slow_rspec_files_on_github_actions_with/
+## [11][Running tests in containers with docker-compose](https://www.reddit.com/r/rails/comments/i3fzbz/running_tests_in_containers_with_dockercompose/)
+- url: https://www.reddit.com/r/rails/comments/i3fzbz/running_tests_in_containers_with_dockercompose/
 ---
-The article [shows](https://itnext.io/run-slow-rspec-files-on-github-actions-with-parallel-jobs-using-an-auto-split-of-the-spec-file-by-6bee53e31fb4?source=friends_link&amp;sk=76cf49c59df928f1fa76ded5cc9b1be0) how to address the problem of slow test files negatively impacting the whole build times.
-## [5][Heroku high memory tips needed](https://www.reddit.com/r/rails/comments/i39mxf/heroku_high_memory_tips_needed/)
-- url: https://www.reddit.com/r/rails/comments/i39mxf/heroku_high_memory_tips_needed/
----
-I've recently run into a problem where I'm constantly getting R14 errors and then entering swapped memory. I'm running a single Hobby dyno with Puma at 2 workers,1 thread each (was trying a bunch of configurations).
+The main advantages of this way are to have an independent environment for the tests running and to reduce the complexity of the test environment setup.
 
-https://preview.redd.it/wu2puh19vve51.png?width=1209&amp;format=png&amp;auto=webp&amp;s=0dd3db0c3de3f48644c98a980f75ade0ba4f6742
+What we want to achieve:
 
-It's hard to tell when this started but I know it's been within the past month and not too much longer before that. As you can see here my number of requests hasn't really gone up to show for an increase in memory usage.  
+* Running the tests should be easy.
+* Test runs should be isolated and repeatable.
+* Test environment should be as close to the production environment as possible.
 
-
-https://preview.redd.it/yrcz0sw9wve51.png?width=578&amp;format=png&amp;auto=webp&amp;s=7d48a0ac502645f1538c6f1b47117a5129e8b115
-
-I've felt like I've tried a million things by now but cannot find the source of this issue. If anyone has any advice on where I could look it'd be very helpful!
-## [6][Tips for creating a multiselect form?](https://www.reddit.com/r/rails/comments/i34z8i/tips_for_creating_a_multiselect_form/)
-- url: https://www.reddit.com/r/rails/comments/i34z8i/tips_for_creating_a_multiselect_form/
----
-I'm trying to create a form with a similar multiselect as the image below. (Different concept, just using this screenshot to give a visual format of what I'm trying to do.)
-
-For the life of me, I can't seem for figure out the "Rails way" of creating the form using Bootstrap's grid and button groups while preserving the multiselect option.
-
-For context, I've got a model that takes a String attribute that can only be "xxx" or "yyy." The user should be able to select one or both of the options presented to them on that form before hitting the Submit button. The result of that submission should be an Array of the string(s) selected.
-
-Any pointers or examples of how you've tackled this?
-
-&amp;#x200B;
-
-https://preview.redd.it/8up3te2qkue51.png?width=1168&amp;format=png&amp;auto=webp&amp;s=b9a6a1d0dac1ceac995a6494ad798715ee6be036
-## [7][Tools for website organization](https://www.reddit.com/r/rails/comments/i3492z/tools_for_website_organization/)
-- url: https://www.reddit.com/r/rails/comments/i3492z/tools_for_website_organization/
----
-When you're planning a site or are working on one and and find it difficult to hold it all in your head, what is the tool you turn to?
-
-I used draw.io for an entity relationship diagram recently and really liked it.  It feels a little awkward trying to do a site map with it though.
-## [8][Moving to Rails in 2020](https://www.reddit.com/r/rails/comments/i2tg0x/moving_to_rails_in_2020/)
-- url: https://www.reddit.com/r/rails/comments/i2tg0x/moving_to_rails_in_2020/
----
-Hey people. I'm a backend developer working primarily with PHP7.x and TypeScript, with some experience with Go, but in all honesty, I always had a thing for Ruby.   
-
-
-I've been thinking about learning Ruby and then Rails properly and trying to land a job that would allow me to use them. The only thing that pulls me back is a question of whether or not new stuff is actually created with Ruby/Rails or its mostly legacy code at this point. I'm honestly tired of PHP (mostly community, the language is just fine) and TypeScript doesn't bring to much joy to work with (although it is a great language).   
-
-
-To sum up my question, are there new Rails apps coming out and, with 5-6 years of experience would I have to look for a junior position, given that I've got experience with other languages and know a fair bit of system design, best practices and design patterns?
-## [9][belongs_to associatio name and column name same](https://www.reddit.com/r/rails/comments/i305cy/belongs_to_associatio_name_and_column_name_same/)
-- url: https://www.reddit.com/r/rails/comments/i305cy/belongs_to_associatio_name_and_column_name_same/
----
-Hi,
-
-&amp;#x200B;
-
-I am upgrading a rails application from [5.1.6.2](https://5.1.6.2) to [5.2.4.3](https://5.2.4.3) and the following that worked previously now throwing errors like 'Segmentation Fault' while running rspec.
-
-belongs\_to :created\_by,  class\_name: 'User', foreign\_key:  :created\_by
-
-If using the column name as association name is discouraged but used to work before, how can I address this by patching or by updating the associations. Any help is appreicated.
-## [10][Hooks in ActionView::TestCase](https://www.reddit.com/r/rails/comments/i2wgd8/hooks_in_actionviewtestcase/)
-- url: https://www.reddit.com/r/rails/comments/i2wgd8/hooks_in_actionviewtestcase/
----
-I am modifying test cases in a test file that looks like this. 
-
-    class TestClass &lt; ActionView
-      def setup # called before each test
-      end
-      def teardown # called after each test
-      end
-      def test_this
-     end
-    end
-
-I'm looking for a hook that will run after all the tests complete running. 
-
-I am not sure where to check the documentation for the hooks available in this class. Any help would be great. It's kinda old code and I couldn't find anything on googling. 
-
-Please do not suggest gems to achieve this.
-## [11][Credentials failure from NGINX](https://www.reddit.com/r/rails/comments/i2u8bb/credentials_failure_from_nginx/)
-- url: https://www.reddit.com/r/rails/comments/i2u8bb/credentials_failure_from_nginx/
----
-Hosting my app on DO vps. Have rails native credentials stored. (Rails.application.credentials)
-
-They working fine from `rails c` console but NGINX doesn't see them at all, logging `undefined method [] for NilClass` for them. Can you help me out guys?
+How to setup and use docker-compose for Ruby on Rails tests you can find in the article: [https://jtway.co/running-tests-in-containers-with-docker-compose-97480726c1e3](https://jtway.co/running-tests-in-containers-with-docker-compose-97480726c1e3)

@@ -31,62 +31,62 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Reverse engineering an Android Application](https://www.reddit.com/r/androiddev/comments/i3dt4n/reverse_engineering_an_android_application/)
+## [3][Material Components Release 1.2.0](https://www.reddit.com/r/androiddev/comments/i3zgys/material_components_release_120/)
+- url: https://github.com/material-components/material-components-android/releases/tag/1.2.0
+---
+
+## [4][So i just found a really weird string in the files in /data/data/ from gBoard, anyone know what they do? You can still type them 🤔](https://www.reddit.com/r/androiddev/comments/i3koyj/so_i_just_found_a_really_weird_string_in_the/)
+- url: https://i.redd.it/zjh21vnd10f51.jpg
+---
+
+## [5][Leverage the In-App Review API for your Google Play reviews](https://www.reddit.com/r/androiddev/comments/i450fh/leverage_the_inapp_review_api_for_your_google/)
+- url: https://android-developers.googleblog.com/2020/08/in-app-review-api.html
+---
+
+## [6][What's your FAVORITE Android Studio bug?](https://www.reddit.com/r/androiddev/comments/i3xxt9/whats_your_favorite_android_studio_bug/)
+- url: https://www.reddit.com/r/androiddev/comments/i3xxt9/whats_your_favorite_android_studio_bug/
+---
+&amp;#x200B;
+
+[Here's mine!](https://reddit.com/link/i3xxt9/video/qi3ncob9s3f51/player)
+## [7][Whats your strategy to stay motivated to do programming?](https://www.reddit.com/r/androiddev/comments/i45bq5/whats_your_strategy_to_stay_motivated_to_do/)
+- url: https://www.reddit.com/r/androiddev/comments/i45bq5/whats_your_strategy_to_stay_motivated_to_do/
+---
+What do you guys normally do to make yourselves motivated?  Anyone wants to share their strategy to stay active all the time.
+
+My strategy:
+- Make a list to do with a deadline
+- Watch motivation video
+- Participating in event (Inactive because of pademic)
+## [8][What are the most used access modifiers in JAVA for mobile development](https://www.reddit.com/r/androiddev/comments/i43g00/what_are_the_most_used_access_modifiers_in_java/)
+- url: https://www.reddit.com/r/androiddev/comments/i43g00/what_are_the_most_used_access_modifiers_in_java/
+---
+I am new to learning JAVA and there are just so many access modifiers. Are all of them necessary ? Which one are the most important and most use when developing an app ?
+## [9][Developing an android application in MVP pattern.](https://www.reddit.com/r/androiddev/comments/i433w7/developing_an_android_application_in_mvp_pattern/)
+- url: https://www.reddit.com/r/androiddev/comments/i433w7/developing_an_android_application_in_mvp_pattern/
+---
+Hello, I have two questions about the application that I am developing
+
+&amp;#x200B;
+
+Question 1:
+
+I have been trying to follow the MVP pattern to develop an android application. My application would have a lot of interaction with the SQL server for fetch and update operations, my question is where should I perform all the database related operations in? Do I perform it in Presenter or Model? Also I have been using AsyncTask to perform these operations.
+
+Question2:
+
+How many is the acceptable amount of frames to be skipped. I was getting 1 frames skipped  but when I added an image to the activity I am getting 27 frames skipped, should I perform further optimizations or I can do without them?
+
+Thank you.
+## [10][Damn Insecure and Vulnerable Application – Walk-through (understanding common flaws in android)](https://www.reddit.com/r/androiddev/comments/i40frb/damn_insecure_and_vulnerable_application/)
+- url: https://fireh7nter.com/2020/08/05/damn-insecure-and-vulnerable-application-walk-through/
+---
+
+## [11][Hey everyone! So excited to share with you my FREE music pack, it contains 13 high quality orchestral tracks which you can use in your commercial and non-commercial projects. Hope it helps. Cheers!](https://www.reddit.com/r/androiddev/comments/i3qrd3/hey_everyone_so_excited_to_share_with_you_my_free/)
+- url: https://invadableharmony.itch.io/free-game-music-pack
+---
+
+## [12][Reverse engineering an Android Application](https://www.reddit.com/r/androiddev/comments/i3dt4n/reverse_engineering_an_android_application/)
 - url: https://epic.blog/reverse-engineering/2020/07/27/reverse-engineering-android-app.html
 ---
 
-## [4][My 2 Cents about cross-platform](https://www.reddit.com/r/androiddev/comments/i3hf6k/my_2_cents_about_crossplatform/)
-- url: https://www.marcogomiero.com/posts/2020/my-2cents-cross-platform/
----
-
-## [5][Turbine: A small testing library for kotlinx.coroutines Flow](https://www.reddit.com/r/androiddev/comments/i33syn/turbine_a_small_testing_library_for/)
-- url: https://github.com/cashapp/turbine
----
-
-## [6][Where do you like to refresh your OAuth2 tokens?](https://www.reddit.com/r/androiddev/comments/i3gwx7/where_do_you_like_to_refresh_your_oauth2_tokens/)
-- url: https://www.reddit.com/r/androiddev/comments/i3gwx7/where_do_you_like_to_refresh_your_oauth2_tokens/
----
-Have seen various advice out there. I've been experimenting for a while with examples of OKHttp interceptors that reauthenticate unauthorized 401 requests. But I kept running into threading issues and had more luck with authenticate-in-advance. Wonder what your experiences have been like.
-
-[View Poll](https://www.reddit.com/poll/i3gwx7)
-## [7][How many people uninstall your app/game the same day they download it?](https://www.reddit.com/r/androiddev/comments/i3haxu/how_many_people_uninstall_your_appgame_the_same/)
-- url: https://www.reddit.com/r/androiddev/comments/i3haxu/how_many_people_uninstall_your_appgame_the_same/
----
-My third game for android has been getting a steady increase in active installations for over a month, but I noticed that around 2/3 of new installations end in an uninstallation in the same day. I believe that that number is pretty high, how many people install and then uninstall (in the same day) your app ?
-## [8][Much Needed Feature by Google Play Console](https://www.reddit.com/r/androiddev/comments/i3jc7y/much_needed_feature_by_google_play_console/)
-- url: https://www.reddit.com/r/androiddev/comments/i3jc7y/much_needed_feature_by_google_play_console/
----
-[https://play.google.com/console/about/managedpublishing/](https://play.google.com/console/about/managedpublishing/)
-## [9][Learning JAVA to use android studio](https://www.reddit.com/r/androiddev/comments/i3j9b8/learning_java_to_use_android_studio/)
-- url: https://www.reddit.com/r/androiddev/comments/i3j9b8/learning_java_to_use_android_studio/
----
-Learning Java for mobile dev android studio
-
-I am working on my first mobile dev project. I want it to be well structured and organized. I was wondering how I could achieve that. Knowing JAVA is an OOP, should I be making a new file for every new class I need and a separate file to do all the procedural programming ? Any help is appreciated! Thank you in advance !
-## [10][Am I supposed to mark my beer menu reader app as "promoting alcohol"?](https://www.reddit.com/r/androiddev/comments/i3gba1/am_i_supposed_to_mark_my_beer_menu_reader_app_as/)
-- url: https://www.reddit.com/r/androiddev/comments/i3gba1/am_i_supposed_to_mark_my_beer_menu_reader_app_as/
----
-1. Am I supposed to mark my beer menu reader app as "promoting alcohol" and thereby getting the "mature" rating? It doesn't really promote alcohol but at the same time it does refer to alcohol because the whole point is to take a picture of a beer menu and see the user ratings. 
-2. How would such a rating affect AdMob ad revenue? I tested one ad in real life and it looked very abnormal; a very uncharacteristically plain gray background with no images leading to something that seemed like a dating site (I didn't click on it). It might even be interpreted as part of the UI of my app. I thought ads are supposed to be colorful and more, well, ad-like. Is this because of my "mature" content rating?
-## [11][Android Emulator performance issue (Ryzen 16 threads, 32GB RAM)](https://www.reddit.com/r/androiddev/comments/i3is0z/android_emulator_performance_issue_ryzen_16/)
-- url: https://www.reddit.com/r/androiddev/comments/i3is0z/android_emulator_performance_issue_ryzen_16/
----
-Anyone know how can I improve performance of Android Studio Emulator? It is really laggy and slow, no matter if I manually edit config.ini values and increase ram or cpu cores it can use, it is still slow on onPress events and keeps stuttering while scrolling. I think it is not properly utilizing GPU hw acceleration..
-
-I have Ryzen 3800X, 32GB 3200MHz RAM and Nvidia GTX 1070 8GB. Windows is clean and freshly installed. Android emulator is up to date also.
-## [12][How to do Material Transitions between Fragments in seperate Activities](https://www.reddit.com/r/androiddev/comments/i3bgi8/how_to_do_material_transitions_between_fragments/)
-- url: https://www.reddit.com/r/androiddev/comments/i3bgi8/how_to_do_material_transitions_between_fragments/
----
-Hello.
-
-I have been doing a lot of reading / experimenting with shared transitions. 
-
-Specifically for activities using ActivityOptions.makeSceneTransitionAnimation() and for fragments using addSharedElement() on a transaction
-
-This seems to work fine for Activity -&gt; Activity or within the same Activity (Fragment -&gt; Fragment).
-
-However the case I cannot get to work is as follows.  Activity A has a Fragment B which contains a recycler view.  I want to transition when a view in Fragment B recycler view is clicked to new started Activity C which contains Fragment D where Fragment D has the actual content.
-
-So essentially a Fragment transition between an existing Activity and a new one starting up
-
-Had anyone had experience with this type of transition and can possibly share a code example?  I have read a few posts which have claimed the above is impossible but wanted to check here

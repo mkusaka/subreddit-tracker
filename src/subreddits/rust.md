@@ -19,61 +19,157 @@ The unofficial Rust community Discord: [https://bit.ly/rust-community](https://b
 Also check out [last week's thread](https://reddit.com/r/rust/comments/hurj77/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][This Week in Rust 349](https://www.reddit.com/r/rust/comments/i094wo/this_week_in_rust_349/)
-- url: https://this-week-in-rust.org/blog/2020/07/28/this-week-in-rust-349/
+## [2][This Week in Rust 350](https://www.reddit.com/r/rust/comments/i4a3e0/this_week_in_rust_350/)
+- url: https://this-week-in-rust.org/blog/2020/08/04/this-week-in-rust-350/
 ---
 
-## [3][How to speed up the Rust compiler some more in 2020](https://www.reddit.com/r/rust/comments/i3xbwj/how_to_speed_up_the_rust_compiler_some_more_in/)
-- url: https://blog.mozilla.org/nnethercote/2020/08/05/how-to-speed-up-the-rust-compiler-some-more-in-2020/
+## [3][rustc 1.44.1 is reproducible in Debian](https://www.reddit.com/r/rust/comments/i4ij47/rustc_1441_is_reproducible_in_debian/)
+- url: http://reproducible.debian.net/redirect?SrcPkg=rustc
 ---
 
-## [4][Google engineers just submitted a new LLVM optimizer for consideration which gains an average of 2.33% perf.](https://www.reddit.com/r/rust/comments/i44ahg/google_engineers_just_submitted_a_new_llvm/)
+## [4][Rust on iOS with SDL2](https://www.reddit.com/r/rust/comments/i4o9ie/rust_on_ios_with_sdl2/)
+- url: https://blog.aclysma.com/rust-on-ios-with-sdl2/
+---
+
+## [5][Crust of Rust: Channels [video]](https://www.reddit.com/r/rust/comments/i4iyku/crust_of_rust_channels_video/)
+- url: https://www.youtube.com/watch?v=b4mS5UPHh20
+---
+
+## [6][Google engineers just submitted a new LLVM optimizer for consideration which gains an average of 2.33% perf.](https://www.reddit.com/r/rust/comments/i44ahg/google_engineers_just_submitted_a_new_llvm/)
 - url: https://lists.llvm.org/pipermail/llvm-dev/2020-August/144012.html
 ---
 
-## [5][1Password announces Linux client preview, built with Rust + Electron](https://www.reddit.com/r/rust/comments/i3njt3/1password_announces_linux_client_preview_built/)
-- url: https://discussions.agilebits.com/discussion/114964/1password-for-linux-development-preview
+## [7][Easy Variadic functions for Monoids](https://www.reddit.com/r/rust/comments/i4lcv2/easy_variadic_functions_for_monoids/)
+- url: https://www.reddit.com/r/rust/comments/i4lcv2/easy_variadic_functions_for_monoids/
+---
+[I made a gist](https://gist.github.com/richardlett/9f49d2f4301868b50ea7509cbdab6581) that allows for easy creation of variadic functions from monoids.
+
+(Besides being small, I made it as gist instead of a library so you can easily use builtin types.)
+
+I.e. Your use case is the function being the repeated application of a binary operation, like summation,  multiplication, or function composition.
+
+It should be no overhead (besides the identity operation), but requires nightly and the TupleList Crate.
+
+You can create multiple variadic functions on the same type too (say you wanted to do addition and multiplication), each one is denoted by a constant generic usize. All you have to do is implement `Monoid&lt;usize label&gt;` for your type, which entails giving an identity element a binary operator. Then just name your function. Here's summation:
+
+    #![feature(fn_traits, unboxed_closures)]
+    #![feature(const_fn)]
+    #![feature(const_generics)]
+    
+    mod veriadics;
+    use veriadics::*;
+    
+    impl Monoid&lt;1&gt; for i32 {
+        fn operator(first: Self, second: Self) -&gt; Self { first + second }
+        fn identity() -&gt; Self { 0 }
+    }
+    
+    const sum: VariFunc&lt;i32, 1&gt; = gen_function::&lt;i32, 1&gt;();
+    
+    fn main() {
+        println!("{}", sum(1, 2, 3, 4, 5, 6, 7, 8));
+    }
+## [8][v0.13 - MeiliSearch, open source alternative to Algolia](https://www.reddit.com/r/rust/comments/i4qd69/v013_meilisearch_open_source_alternative_to/)
+- url: https://blog.meilisearch.com/whats-new-in-0-13-0/
 ---
 
-## [6][French Government Institution ANSSI released a set of rules for the development of secure applications with Rust](https://www.reddit.com/r/rust/comments/i426q3/french_government_institution_anssi_released_a/)
-- url: https://www.ssi.gouv.fr/uploads/2020/06/anssi-guide-programming_rules_to_develop_secure_applications_with_rust-v1.0.pdf
+## [9][how to upload a file using reqwest but streaming the body](https://www.reddit.com/r/rust/comments/i4n9mp/how_to_upload_a_file_using_reqwest_but_streaming/)
+- url: https://www.reddit.com/r/rust/comments/i4n9mp/how_to_upload_a_file_using_reqwest_but_streaming/
+---
+I have a big file that I would like to upload in  parts (10M each), this is the code I am using to split the file it works for writing the chunk in another file but I would like to instead stream the `buffer` and prevent having to writing to disk first:
+
+    use std::env;
+    use std::fs::File;
+    use std::io::prelude::*;
+    use std::io::{BufReader, Write};
+    use std::process;
+    
+    fn main() {
+        let args: Vec&lt;String&gt; = env::args().collect();
+        if args.len() &lt; 2 {
+            eprintln!("missing arguments: file");
+            process::exit(1);
+        }
+        let file_path = &amp;args[1];
+        let mut file = File::open(&amp;file_path).unwrap();
+    
+        let mut count = 1;
+        loop {
+            let seek = file.seek(SeekFrom::Current(0)).unwrap();
+            println!("seek: {}", seek); // in case need to resume 
+            let mut reader = BufReader::new(&amp;file);
+            if reader.fill_buf().unwrap().is_empty() {
+                break;
+            }
+            let mut reader = reader.take(10_485_760);
+            let mut f = File::create(&amp;format!("/tmp/chunk_{}", count)).unwrap();
+            loop {
+                let consummed = {
+                    let buffer = reader.fill_buf().unwrap();
+                    if buffer.is_empty() {
+                        break;
+                    }
+                    // how to stream the buffer
+                    // client.put(url).headers(headers).body(Body::from(&amp;buffer)) ???
+                    f.write_all(&amp;buffer).expect("Unable to write data");
+                    buffer.len()
+                };
+                reader.consume(consummed);
+            }
+            count += 1;
+        }
+    }
+
+Here is where I read in chunks for testing I am writing it to a file but how could I do the same for streaming the file.
+
+    loop {
+        let consummed = {
+            let buffer = reader.fill_buf().unwrap();
+            if buffer.is_empty() {
+               break;
+            }
+            // how to stream the buffer ?
+            // client.put(url).headers(headers).body(Body::from(&amp;buffer)) ?
+            f.write_all(&amp;buffer).expect("Unable to write data");
+            buffer.len()
+        };
+        reader.consume(consummed);
+    }
+
+For uploading the file in one shot I am using `FramedRead`
+
+    let file = File::open(file_path).await?;
+    let stream = FramedRead::new(file, BytesCodec::new());
+    let body = Body::wrap_stream(stream);
+    client.request(method, url).headers(headers).body(body)
+
+But haven't found a way to split the file and then use `FrameRead` or how to pass only the chunk so that it can be streamed.
+
+Any ideas?
+## [10][Sirula - a simple app launcher for wayland written in rust](https://www.reddit.com/r/rust/comments/i46d1w/sirula_a_simple_app_launcher_for_wayland_written/)
+- url: https://v.redd.it/l6qga4pb27f51
 ---
 
-## [7][Optick Profiler now works with Rust: https://crates.io/crates/optick](https://www.reddit.com/r/rust/comments/i3vesx/optick_profiler_now_works_with_rust/)
-- url: https://i.redd.it/up6chs7hx2f51.png
+## [11][How to read non UTF-8 files in Windows?](https://www.reddit.com/r/rust/comments/i4oso4/how_to_read_non_utf8_files_in_windows/)
+- url: https://www.reddit.com/r/rust/comments/i4oso4/how_to_read_non_utf8_files_in_windows/
 ---
+Is there a mean to tell  `std::io::BufRead::lines()` to use a different "code page" than UTF-8 on Windows?
 
-## [8][async-oneshot - a fast and small async-aware oneshot channel](https://www.reddit.com/r/rust/comments/i44uf7/asynconeshot_a_fast_and_small_asyncaware_oneshot/)
-- url: https://crates.io/crates/async-oneshot
----
+I've written a small utility to interact with command line tools and their output can contain non standard ASCII characters.  The default code page on my Windows 10 box is 850.  As such, I get errors while trying to read the output.  Change the default code page system wide to UTF-8 works but as it is beta and it interfere negatively with other programs, I cannot have it as a default.
 
-## [9][Web scraping with rust](https://www.reddit.com/r/rust/comments/i43c8s/web_scraping_with_rust/)
-- url: https://www.reddit.com/r/rust/comments/i43c8s/web_scraping_with_rust/
----
-Hello everyone,
-I am completely new to this sub and I recently got interested in Rust. I am curious if there are resources for web scraping with Rust . I write in python with bs4, requests and selenium . Is it viable to transition to Rust ? Do you have any recommendation I can check out ?
-## [10][Compiling to rust](https://www.reddit.com/r/rust/comments/i41u0t/compiling_to_rust/)
-- url: https://www.reddit.com/r/rust/comments/i41u0t/compiling_to_rust/
----
-Are there any languages/projects out there which compile a language to Rust? I as thinking of experimenting with writing a compiled programming language,  and want  to output Rust code. My very rough idea is to create a Rust like language, and produce code which has Gc proc maco attributes on all structs which contain references.
-## [11][RustLab 2020](https://www.reddit.com/r/rust/comments/i41su4/rustlab_2020/)
-- url: https://www.reddit.com/r/rust/comments/i41su4/rustlab_2020/
----
-Hello rustaceans!  
-I'm in charge of organise the **2020 RustLab**  edition and I know how much important is the community contribution for  events (i've been into the python community since 2012 orgasining the  PyConIT event), that's why I am posting here. RustLab is a young Rust event at its second year (last  year we gathered \~170 people from all the world) that will take place  between **october 12th and 18th**. This year, due to ovbious safety issues, we chose to run a **full remote online event**.
+All I can do now is to generate an error message and do a lossy conversion.
 
- [https://www.rustlab.it/](https://www.rustlab.it/)  
-
-
-Our **CFP is open** and we are always looking for talented speakers to build our quality schedule: [https://www.rustlab.it/page/1495142/call-for-proposal](https://www.rustlab.it/page/1495142/call-for-proposal)  
-
-
-We are open to partnership proposals and to give space to **openprojects** with sessions and workshops. Obviously we follow the Rust Code of Conduct and strongly believe in **inclusion** and in the richness of **diversity**  (e.g.: this year we are trying to give a better web accessibility for  disabled people). If you want to contact us please feel free to write at   info@rustlab.it
-
-I really hope that this could be of interest for the Rust community :)
-
-bye!
-## [12][Broccoli: Syncing faster by syncing less](https://www.reddit.com/r/rust/comments/i3no65/broccoli_syncing_faster_by_syncing_less/)
-- url: https://dropbox.tech/infrastructure/-broccoli--syncing-faster-by-syncing-less
+    let output = process::Command::new(SVN_CMD)
+            .args(&amp;[SVN_PG, SVN_EXTERNALS, dir.to_str().unwrap()])
+            .output()
+            .expect(&amp;("Failed to execute ..."));
+    if output.status.success() {
+        let output = output.stdout;
+        let lines = match String::from_utf8(output.clone()) {
+            Ok(lines) =&gt; lines,
+            Err(_) =&gt; String::from_utf8_lossy(&amp;output).to_string(),
+        };
+## [12][Why QEMU should move from C to Rust](https://www.reddit.com/r/rust/comments/i4rpyc/why_qemu_should_move_from_c_to_rust/)
+- url: http://blog.vmsplice.net/2020/08/why-qemu-should-move-from-c-to-rust.html
 ---
 

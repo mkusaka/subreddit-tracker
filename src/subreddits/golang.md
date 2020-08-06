@@ -1,185 +1,118 @@
 # golang
-## [1][[Q&amp;A] io/fs draft design](https://www.reddit.com/r/golang/comments/hv976o/qa_iofs_draft_design/)
-- url: https://www.reddit.com/r/golang/comments/hv976o/qa_iofs_draft_design/
----
-I posted a draft design today for new file system interfaces for Go.
-
-Video: https://golang.org/s/draft-iofs-video
-
-Design: https://golang.org/s/draft-iofs-design
-
-Let's do the Q&amp;A about the design here in Reddit. My hope is that the threading support will help keep questions and answers matched.
-
-Please start a new top-level comment for each new question.
-
-See also the related [Q&amp;A for the //go:embed draft design](https://golang.org/s/draft-embed-reddit).
-## [2][Design Draft: First Class Fuzzing](https://www.reddit.com/r/golang/comments/hvpr96/design_draft_first_class_fuzzing/)
-- url: https://go.googlesource.com/proposal/+/refs/heads/master/design/40307-fuzzing.md
+## [1][V1.5 of sqlc released: Compile SQL to type-safe Go](https://www.reddit.com/r/golang/comments/i4iv8o/v15_of_sqlc_released_compile_sql_to_typesafe_go/)
+- url: https://sqlc.dev/posts/2020/08/05/sqlc-one-point-five-released.html
 ---
 
-## [3][Stream and share your terminal without installing anything, server written in Go](https://www.reddit.com/r/golang/comments/i3tuxe/stream_and_share_your_terminal_without_installing/)
-- url: https://github.com/miguelmota/streamhut
+## [2][Interface Definition in implementing package](https://www.reddit.com/r/golang/comments/i4p1xi/interface_definition_in_implementing_package/)
+- url: https://www.reddit.com/r/golang/comments/i4p1xi/interface_definition_in_implementing_package/
+---
+In [CodeReviewComments: Interfaces](https://github.com/golang/go/wiki/CodeReviewComments#interfaces), it is stated that an interface definition should not be done in the package that implements that interface, but in the package that uses implementations of that interface instead:
+
+&amp;#x200B;
+
+&gt;Go interfaces generally belong in the package that uses values of the interface type, not the package that implements those values. The implementing package should return concrete (usually pointer or struct) types
+
+&amp;#x200B;
+
+There's even an example that shows how *not* to do it:
+
+&amp;#x200B;
+
+&gt;// DO NOT DO IT!!!  
+&gt;  
+&gt;package producer  
+&gt;  
+&gt;type Thinger interface { Thing() bool }  
+&gt;  
+&gt;type defaultThinger struct{ … }  
+&gt;  
+&gt;func (t defaultThinger) Thing() bool { … }  
+&gt;  
+&gt;func NewThinger() Thinger { return defaultThinger{ … } }
+
+&amp;#x200B;
+
+However, I'm asking myself: Why? I see this being done many, many times, especially in libraries. And I actually like the idea that a package provides an interface as a clean public API and provides an invisible implementation itself.
+
+Is it really that bad? Can anyone explain what's wrong with the example?
+## [3][Google Photos API client](https://www.reddit.com/r/golang/comments/i4oj4q/google_photos_api_client/)
+- url: https://www.reddit.com/r/golang/comments/i4oj4q/google_photos_api_client/
+---
+If anyone is interested here's my take on Google Photos API client. 
+
+[https://github.com/duffpl/google-photos-api-client](https://github.com/duffpl/google-photos-api-client)
+
+Google removed some time ago Photos from list of auto generated clients. I've been using ones already existing (based on mirrored copy of the generated client) but I didn't like them very much so I've decided to give it a shot and write one from scratch. Library API shouldn't change much in future.
+
+What's implemented:
+
+\- Most of endpoints/methods  
+\- Basic uploading functionality (no "fancy" stuff like resumable uploads)  
+\- Additional wrapper methods that deal with paging automatically (async with channels and sync versions spewing out slices)  
+\- Basic error handling
+
+Todo:  
+\- Tests (units and functional to keep checking if API is still responding as expected)  
+\- Implement sharedAlbums endpoints  
+\- Better error handling
+
+Constructive criticism always welcomed :)  
+Enjoy
+## [4][An aesthetically pleasing video on SEARCHING ALGORITHMS.](https://www.reddit.com/r/golang/comments/i4c9kg/an_aesthetically_pleasing_video_on_searching/)
+- url: https://youtu.be/FBJKwjTwNTo
 ---
 
-## [4][Does a module's name have to resolve to its location if it is shared?](https://www.reddit.com/r/golang/comments/i44fxy/does_a_modules_name_have_to_resolve_to_its/)
-- url: https://www.reddit.com/r/golang/comments/i44fxy/does_a_modules_name_have_to_resolve_to_its/
----
-If you name your module `github.com/myusername/mymodule` and publish it on GitHub in that location, if/when other people do `go mod download` after referencing the module in their package I'm assuming it uses that URL to fetch the module.
-
-But if you name your module `example.com/mymodule`, and that doesn't actually resolve to the git repository of `mymodule`, does that break things if somebody was to `go mod download` (or build or test)?
-
-In other words, is the module name used as the url for others to retrieve it from?
-## [5][Seaworthy - A CLI to verify Kubernetes resource health](https://www.reddit.com/r/golang/comments/i3zzeo/seaworthy_a_cli_to_verify_kubernetes_resource/)
-- url: https://www.reddit.com/r/golang/comments/i3zzeo/seaworthy_a_cli_to_verify_kubernetes_resource/
----
-[https://github.com/cakehappens/seaworthy](https://github.com/cakehappens/seaworthy?ts=4)  
-
-
-I started working on this CLI because I wanted to encapsulate the feature that I've found in [ArgoCD](https://argoproj.github.io/argo-cd/) as well as [Spinnaker](https://spinnaker.io/) that enables those tools to deploy resources to k8s and verify the health of the resources they deploy.  
-
-
-The goal here is to democratize and enable simple workflows such as  
-
-
-`kubectl apply -f ./manifests` 
-
-`seaworthy verify -f ./manifests --timeout 5m`  
-
-
-This would enable folks, such as myself, to make better use of other workflow tools, such as GitHub actions.  
-
-
-This is just a simple example, but I plan on full support for a variety of ways to pass in resource information:  
-
-
-`seaworthy verify deployments`
-
-`seaworthy verify deployment web`
-
-`jsonnet ./main.jsonnet | seaworthy verify --input-format json -f -`
-
-`tanka show . | seaworth verify -f -`
-
-No official release yet, I just made the asciinema video this evening, but I figured I'd post here and get some feedback.
-## [6][Olric v0.3.0-beta.1 is out: Distributed cache and in-memory key/value data store. It can be used both as an embedded Go library and as a language-independent service.](https://www.reddit.com/r/golang/comments/i3i6gi/olric_v030beta1_is_out_distributed_cache_and/)
-- url: https://github.com/buraksezer/olric/releases/tag/v0.3.0-beta.1
+## [5][Blank-Xu/sqlx-adapter: Sqlx Adapter for Casbin V2](https://www.reddit.com/r/golang/comments/i4oqrk/blankxusqlxadapter_sqlx_adapter_for_casbin_v2/)
+- url: https://github.com/Blank-Xu/sqlx-adapter
 ---
 
-## [7][Notify.is - my first Go project](https://www.reddit.com/r/golang/comments/i3jsyv/notifyis_my_first_go_project/)
-- url: https://www.reddit.com/r/golang/comments/i3jsyv/notifyis_my_first_go_project/
+## [6][How do you deal with Go-Java or Go-Python environments](https://www.reddit.com/r/golang/comments/i45rpr/how_do_you_deal_with_gojava_or_gopython/)
+- url: https://www.reddit.com/r/golang/comments/i45rpr/how_do_you_deal_with_gojava_or_gopython/
 ---
-Hi there,
+  I'm not sure if this is the right place to ask this.  But I've been coding in Go for the past 4 years.   Some of my earlier Go projects consisted of working with some former Googlers.  So they beat into me the Go way of doing things.   Go was a match made in heaven for me.  Its all about simple and explicit above all else.
 
-For the past month or so I've been working on my first Go project, a service called [Notify.is](https://notify.is) which notifies you when your favourite username on Instagram, Twitter or GitHub becomes available.
+  I love working with Go, and it's really the only language I love working with these days.  With that said I've had a few projects where I'm seeing Go written in some very odd and non-idiomatic ways.   I recently joined a position where I constantly see Java devs trying to make Go into Java.  There is a lot of magic and confusing abstractions all over the place.   
 
-The frontend uses the React framework Next.js and the backend uses Go to deal with RESTful API routes for signing up and deleting data.
+  What is worse is that there are many devs here who still actively develop in Java since we still have a lot of code in Java.   And some of our code bases are several years old written in a Java style.
 
-The Go code that checks with the mentioned services is deployed in a Docker container on Google Cloud Run.
+   Have you seen this?  How have you been able to promote Go in your workplace and make sure people are keeping things simple and idiomatic.  How do you make sure people don't carry over mindsets taught in other languages?
 
-I've had a lot of fun building it and would love any feedback on the design, code or anything else. Also, trying out the service would be helpful for me finding any bugs I have not yet found.
-
-The frontend and backend are deployed using Vercel and the GitHub repository can be found here:
-
-[https://github.com/oliverproud/notify.is](https://github.com/oliverproud/notify.is)
-
-The Go code that is deployed in a Docker container on Google Cloud Run, you can find the GitHub repository for that here:
-
-[https://github.com/oliverproud/notify.is-gcloud](https://github.com/oliverproud/notify.is-gcloud)
-
-The website:
-
-[https://notify.is](https://notify.is)
-
-Let me know what you think!
-## [8][Automatic deploy of debian on ESXi host](https://www.reddit.com/r/golang/comments/i412v9/automatic_deploy_of_debian_on_esxi_host/)
-- url: https://www.reddit.com/r/golang/comments/i412v9/automatic_deploy_of_debian_on_esxi_host/
+  Again if this is the wrong forum to discuss this, I do apologize.  I do see myself encountering even more Go-Java code bases in the future.  Currently in my workplace peoole hate Go.  Mostly because its harder for their confusing abstractions that they write in their Java code.  I'd argue many of these abstractions are unnecessary, but who am really?   Again, any advice?
+## [7][Question about Golang performance](https://www.reddit.com/r/golang/comments/i4kz5r/question_about_golang_performance/)
+- url: https://www.reddit.com/r/golang/comments/i4kz5r/question_about_golang_performance/
 ---
-hi guys, here's bootp/ansible/golang tool that via command line allows you to deploy a VM
+First of all i would like to clarify that i love the go. I love the go-ways to do things in contrast to any language out there, i love the standard library and i love the simplicity. This is not a bashing post, it's just that the performance is a really big seller for me.
 
-feel free to contribute
+As i understand it, go is really fast. This lead me to think that, for example, it would way more performant than say 'C#' in anything. However, just today i decided to google some performance comparisons and got surprised to find a lot of resources that indicate go under performs next to C#. These benchmarks/comparisons are not from long ago,
 
-[https://github.com/lucabodd/ESXi-vm-deploy](https://github.com/lucabodd/ESXi-vm-deploy)
-## [9][Golang Developers Can Make the Shift to Brighter Business Future (Build Nex-gen Enterprise solution like these Big Companies)](https://www.reddit.com/r/golang/comments/i440fx/golang_developers_can_make_the_shift_to_brighter/)
-- url: https://www.bacancytechnology.com/blog/golang-for-brighter-business-future
+[Resource 1](https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/go-csharpcore.html)
+
+[Resource 2](https://www.reddit.com/r/golang/comments/a88vww/why_is_go_without_generics_is_slower_than_c_with/ec926b7?utm_source=share&amp;utm_medium=web2x)
+
+[Resource 3](https://news.ycombinator.com/item?id=20947286)
+
+[Resource 4](https://www.reddit.com/r/rust/comments/akluxx/rust_now_on_average_outperforms_c_in_the/ef63zdi?utm_source=share&amp;utm_medium=web2x)
+
+[Resource 5](https://www.reddit.com/r/rust/comments/akluxx/rust_now_on_average_outperforms_c_in_the/ef5vuyp?utm_source=share&amp;utm_medium=web2x)
+
+[Resource 6](https://medium.com/@alexyakunin/go-vs-c-part-1-goroutines-vs-async-await-ac909c651c11)
+
+[Resource 7](https://www.reddit.com/r/rust/comments/akluxx/rust_now_on_average_outperforms_c_in_the/)
+
+[Resource 8](https://www.reddit.com/r/rust/comments/akluxx/rust_now_on_average_outperforms_c_in_the/ef5y2ub/?utm_source=share&amp;utm_medium=web2x)
+
+I know that at the end of the day, they are just that: benchmarks. They don't really say 'anything'  outside the context of that particular benchmark. It's just that i was a religious believer on Golang performance and thought it was WAY faster than C#/Java in pretty much anything.  I also want to clarify that i'm extremely naive to these low level things and what these benchmarks really mean.  
+
+So, my intention with this post is to find out if Golang is still what i think it is, and if these benchmarks mean nothing at all and i should take it with a grain of salt. I look forward to any piece wisdom/clarification or even criticism you could have. Thanks
+## [8][Learn Go Programming Online with these 12 Best Golang Tutorials &amp; Courses](https://www.reddit.com/r/golang/comments/i4p47f/learn_go_programming_online_with_these_12_best/)
+- url: https://www.reddit.com/r/golang/comments/i4p47f/learn_go_programming_online_with_these_12_best/
+---
+Learn or improve your [Golang](https://blog.coursesity.com/best-golang-tutorials?utm_source=reddit&amp;utm_medium=social&amp;utm_campaign=redditPost&amp;utm_term=best-go) skills online with these curated online tutorials and courses for beginners
+## [9][Cloud Automation and DevOps Consulting Services](https://www.reddit.com/r/golang/comments/i4pyo1/cloud_automation_and_devops_consulting_services/)
+- url: http://selleo-devops.icu
 ---
 
-## [10][Database Resolver - advanced read/write supports for GORM V2](https://www.reddit.com/r/golang/comments/i3kons/database_resolver_advanced_readwrite_supports_for/)
-- url: http://v2.gorm.io/docs/dbresolver.html
+## [10][read image from/write to clipboard(supported windows,mac,linux)](https://www.reddit.com/r/golang/comments/i4mb94/read_image_fromwrite_to_clipboardsupported/)
+- url: https://www.reddit.com/r/golang/comments/i4mb94/read_image_fromwrite_to_clipboardsupported/
 ---
-
-## [11][What is the best design of database connection?](https://www.reddit.com/r/golang/comments/i3mj2w/what_is_the_best_design_of_database_connection/)
-- url: https://www.reddit.com/r/golang/comments/i3mj2w/what_is_the_best_design_of_database_connection/
----
-Hi everyone.There are two ways in my current usage.
-
-1. I used the gin and gorm ,set into a context with a middlewares like
-
-```go
-
-// middleware
-
-db :=NewDB(datasourcename..)
-
-c.set("db",db)
-
-// Usage
-
-db := c.Value("db").(*gorm.DB)
-
-userRepo := repository.NewUserRepository(db)
-
-userServ := service.NewUserService(userRepo)
-
-userHandler := handles.NewUserHandler(userServ)
-
-r.Post("/user/create/",userHandler.Create)
-
-```
-
-2.  use a private variable in db package then use a struct variable call Get function
-
-```go
-
-// db.go
-
-var conn *gorm.DB
-
-type DB struct()
-
-func (d *DB) Get() *gorm.DB
-
-// usage
-
-db := &amp;db.DB{}
-
-userRepo := repository.NewUserRepository(db.Get())
-
-userServ := service.NewUserService(userRepo)
-
-userHandler := handles.NewUserHandler(userServ)
-
-r.Post("/user/create/",userHandler.Create)
-
-```
-
-I tired to set the db into the request context. but it seems like the first way.And I need to combine the context.Context with gin.Context,then send ctx in ervery router function NewRepostiory function..
-
-```go
-
-ctx :=context.WithContext(context.Background(),"db",db)
-
-c.Request = c.Request.WithContext(ctx)
-
-```
-
-How do you design the database connection? ? I don't have too much develop experience. Thanks for share !
-## [12][Switching to pgx.. when to use connection pool, and do i pass context from my http handler?](https://www.reddit.com/r/golang/comments/i3vb9z/switching_to_pgx_when_to_use_connection_pool_and/)
-- url: https://www.reddit.com/r/golang/comments/i3vb9z/switching_to_pgx_when_to_use_connection_pool_and/
----
-So I was using the db.sql and pg driver for accessing database. I was using the var route with a global db, and I am not clear if that is a good way to go in terms of handling database connections concurrently from different http endpoint handlers that are running in their own threads (go funcs).
-
-Started digging in a bit more and it seems the better way to go is using pgx. pgx however unlike the pg driver, seems to indicate the connection you get is not thread safe, and to use the connection pool for that. So looking into it, I am attempting to create a struct with methods that contains a pointer to the created pool, and make that accessible to then grab a connection to make a db request. Is that the right approach.. and will it scale to say, 100s of requests a second (or more?). 
-
-Also, the example code I found indicates it requires a context. I can use context.Background(), but as each http handler has a context associated with it, does it make sense to pass that one in and use that, since in my service starter code I am also using a context to handle a graceful shutdown though I am not sure that that context is in any way related to the one each request has associated with it. Or.. would it make sense to pass the context in my service starter that handles graceful shutdown, to each connection so that if somehow the db cancels.. it ends up using the context created with the service starter to trigger a graceful shutdown?
-
-Sorry..little confused on how all these contexts are used in this manner.
+[https://github.com/skanehira/clipboard-image](https://github.com/skanehira/clipboard-image)

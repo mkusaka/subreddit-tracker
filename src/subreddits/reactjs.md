@@ -85,75 +85,150 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
-## [3][React JS Tutorial: Building Firebase Chat App (React Hooks)](https://www.reddit.com/r/reactjs/comments/i3xln3/react_js_tutorial_building_firebase_chat_app/)
-- url: https://www.djamware.com/post/5f2a1d9d9c794f177fd7b527/react-js-tutorial-building-firebase-chat-app-react-hooks#.Xyoht_6g7c8.reddit
+## [3][React.FC vs JSX.Element](https://www.reddit.com/r/reactjs/comments/i4jx85/reactfc_vs_jsxelement/)
+- url: https://www.reddit.com/r/reactjs/comments/i4jx85/reactfc_vs_jsxelement/
+---
+So another dev and I have both been assigned to a team that has recently lost all of it's devs and we're to clean up the leftover react code.
+
+We've both agreed to get rid of unnecessary class components and move more towards a functional approach, but i've always used 
+
+React.fc and he's always used JSX.element. Example below:
+
+    const HelloWorld: React.FC&lt;Iprops&gt; = ({name}) =&gt; &lt;div&gt;`hi ${name}`&lt;/div&gt;
+
+vs
+
+    function HelloWorld({name}: Iprops): JSX.Element {
+         return (&lt;div&gt;`hi ${name}`&lt;/div&gt;)
+    }
+
+
+I get it that React.FC is returning a ReactElement, but isn't JSX.Element also just a ReactElement without types? There would be no functional or performance difference between the two approaches correct? are there any pitfalls of using one over the other?
+## [4][Building an offline-first app with React + RxDB + Hasura GraphQL](https://www.reddit.com/r/reactjs/comments/i4q4tw/building_an_offlinefirst_app_with_react_rxdb/)
+- url: https://hasura.io/learn/graphql/react-rxdb-offline-first/introduction/
 ---
 
-## [4][Client side authentication](https://www.reddit.com/r/reactjs/comments/i442h2/client_side_authentication/)
-- url: https://www.reddit.com/r/reactjs/comments/i442h2/client_side_authentication/
----
-guys i am creating on project for that am using nodejs and react with hooks. so i confuse how can i handle auth on client. backend is ready but for the client side i don't understand how can i do that.
-
-can someone please tell me the workflow. where can i store token and auth on client.
 ## [5][React + GraphQL boilerplate that scales easily](https://www.reddit.com/r/reactjs/comments/i44zx8/react_graphql_boilerplate_that_scales_easily/)
 - url: https://blog.graphqleditor.com/graphql-first-fullstack-boilerplate/
 ---
 
-## [6][Introducing Bumbag – A React UI Kit](https://www.reddit.com/r/reactjs/comments/i3ikot/introducing_bumbag_a_react_ui_kit/)
-- url: https://www.reddit.com/r/reactjs/comments/i3ikot/introducing_bumbag_a_react_ui_kit/
----
-After about a year of development, I'm finally releasing Bumbag v1. Bumbag is an accessible &amp; themeable React UI Kit that allows you to rapidly build React applications whether it be an MVP or a large-scale application.
-
-Check it out!  
-👉[https://bumbag.style](https://bumbag.style)  
-👉[https://github.com/bumbag/bumbag-ui](https://github.com/bumbag/bumbag-ui)
-
-Bumbag was previously known as [Fannypack](https://fannypack.style) (initially released in 2018), however I chose to rebrand to Bumbag for the next major release.
-
-Powered by [Reakit](https://reakit.io/) under the hood, all components come with accessible HTML attributes &amp; keyboard interactions out of the box and follow the WAI-ARIA standards.
-
-It features:
-
-\- 🧱70+ accessible components  
-\- 🎨Global &amp; component-level styling/theming  
-\- 📦Flexible component composition  
-\- 🦪Page shells  
-\- 🤓Intuitive APIs  
-\- 🌓Color modes  
-\- 🛍Variants  
-\- 📐Layout primitives  
-\- 🛠Utility components &amp; hooks
-
-Some sites built with Bumbag:  
-\- [Pory](https://pory.io)  
-\- [Medipass](https://medipass.com.au/)  
-\- [Can I Leave Melbourne?](https://canileave.melbourne/)
-## [7][Building custom React Hooks to fetch data from Firebase Firestore](https://www.reddit.com/r/reactjs/comments/i43g3x/building_custom_react_hooks_to_fetch_data_from/)
-- url: https://www.williamkurniawan.com/blog/building-custom-react-hooks-to-fetch-data-from-firebase-firestore
+## [6][Create simple POS with React.js, Node.js, and MongoDB #11: CRUD with Relation](https://www.reddit.com/r/reactjs/comments/i4qto1/create_simple_pos_with_reactjs_nodejs_and_mongodb/)
+- url: https://blog.soshace.com/create-simple-pos-with-react-js-node-js-and-mongodb-11-crud-with-relation/
 ---
 
-## [8][Learn FP Design from Redux [Article by Yanze Dai]](https://www.reddit.com/r/reactjs/comments/i3v3n4/learn_fp_design_from_redux_article_by_yanze_dai/)
-- url: https://pitayan.com/posts/redux-fp-design/
+## [7][A thread of "advanced" React interview questions](https://www.reddit.com/r/reactjs/comments/i4a45q/a_thread_of_advanced_react_interview_questions/)
+- url: https://twitter.com/_paulshen/status/1291065955594862593
 ---
 
-## [9][We have to talk about your love for React Hooks (share this with that junior developer)](https://www.reddit.com/r/reactjs/comments/i41qqa/we_have_to_talk_about_your_love_for_react_hooks/)
-- url: https://medium.com/@pimmhogeling/we-have-to-talk-about-your-love-for-react-hooks-4eb23a07268b?source=friends_link&amp;sk=9bb5f7ec7fc9884511ca3b91795c4834
+## [8][Can I use React.forwardRef for mulitple refs in one component](https://www.reddit.com/r/reactjs/comments/i4rtbq/can_i_use_reactforwardref_for_mulitple_refs_in/)
+- url: https://www.reddit.com/r/reactjs/comments/i4rtbq/can_i_use_reactforwardref_for_mulitple_refs_in/
+---
+I'll explain what I need to do because I may not need to do this by creating multiple refs.
+
+My component has multiple things which I need to animate, think of it as a menu hamburger with 3 lines and I need to animate each one separately.
+
+I need to get access to them from my parent component which is just my app.js component because I need to animate them within a timeline which involves other components.
+
+Do I need to create a forwardRef to each element (line) in my menu hamburger that I am wanting to animate?
+
+Or can I just create a forwardRef to the outter HTML element of the hamburger and then access the elements within this (somehow) when I do my animation.
+
+I'm using functional React for this.
+## [9][React SSR using react-snap](https://www.reddit.com/r/reactjs/comments/i4rrjw/react_ssr_using_reactsnap/)
+- url: https://www.reddit.com/r/reactjs/comments/i4rrjw/react_ssr_using_reactsnap/
+---
+So, I'm working on a project using ReactJS (CRA) as my front end framework and it has a blog wherein we're using [ghost.io](https://ghost.io), the idea is we're using its API for us to fetch the articles and post / show it in our website, it is working but since blog needs to have unique meta tags, SEO friendly, etc. I'm kinda having a problem with it. React snap only works when you're trying to build and deploy but if I add another one or a new blog it doesn't crawl the new one's SEO and meta tags and if you try to use FB Debugger, meta tags cannot be shown or can't be seen since the website is on production already. My option is re-build and re-deploy every time that there's a new blog for me to actually get the new meta tags or set the meta tags, this one is not really a good solution.
+
+Anyone here can help me or suggest any good dynamic SSR? Wherein I don't have to worry every time that there's a new blog. Using another framework like Next or Razzle is not an option. Thank you!
+## [10][need someone help review code on populate react-select](https://www.reddit.com/r/reactjs/comments/i4jx6x/need_someone_help_review_code_on_populate/)
+- url: https://www.reddit.com/r/reactjs/comments/i4jx6x/need_someone_help_review_code_on_populate/
+---
+Hi Guy 
+
+on my update data page use react-select for handle dropdown, and so  require to populate dropdown and make selected options. so I 've tried by using two request 
+
+the first request, populate a full list of dropdown 
+
+the second request, populate other form and make selected
+
+problem here
+
+1. redux state will overwrite when we make first request and continue with second request because I  using same state name try solve by creating new reducer case for receive only option data
+```javascript
+   switch (type) {
+        case BRANCH_FETCHING:
+            return { ...state, isFetching: true, isError: false, result: null };
+        case BRANCH_FAILED:
+            return { ...state, isFetching: false, isError: true, result: null };
+        case BRANCH_SUCCESS:
+            return { ...state, isFetching: false, isError: false, result: payload };
+        case BRANCH_CLEAR:
+            return { ...state, result: null, isFetching: false, isError: false };
+        case FETCHOPTION_SUCCESS:
+            return { ...state, isFetching: false, isError: false, options: payload };
+        default:
+            return state;
+    }
+```
+2. react select doesn't provide method to set defaultValue after we populate dropdown solve by hold-on until data from reducer ready 
+```javascript
+ if (branchReducer.result) {
+                return (
+                    &lt;div class="form-group "&gt;
+                        &lt;Select
+                            name="pos_machines"
+                            defaultValue={branchReducer.result
+                                ? branchReducer.result.pos_machines.map(val =&gt; {
+                                    return {
+                                        'value': val._id,
+                                        'label': val.alias
+                                    }
+                                }) : null}
+                            onChange={setMultiselect}
+
+                            isMulti
+                            closeMenuOnSelect={false}
+                            options={branchReducer.options
+                                ? branchReducer.options : null}
+                        /&gt;
+                    &lt;/div&gt;
+
+                )
+            } else {
+                return null; 
+            }
+````
+anything that improves code quality 
+thank you for your advice
+## [11][Issue with hooks](https://www.reddit.com/r/reactjs/comments/i4qx7h/issue_with_hooks/)
+- url: https://www.reddit.com/r/reactjs/comments/i4qx7h/issue_with_hooks/
+---
+I am working on a project right now and trying to learn and use hooks more. In my component I am making a call to my api using axios and trying to store the queried json data in a useState hook like so
+
+Hook:
+
+const \[games, setGames\] = useState(\[\]);
+
+...
+
+[axios.post](https://axios.post)(url, payload)
+
+.then((res) =&gt; {
+
+setGames(res.data);
+
+}
+
+&amp;#x200B;
+
+I know that that is not how I am supposed to use the setGames part of useState but I have tried several other methods and nothing works. I know that the post request is returning the data that I want, but when I try and put it into my components state it comes back as an empty array
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+EDIT: Problem solved. Added a useEffect hook to console.log my games state once it had been updated. Forgot about useState's asynchronous properties. Thanks to everybody for offering guidance
+## [12][Shared State with React Hooks and Context API 👾](https://www.reddit.com/r/reactjs/comments/i4mhxk/shared_state_with_react_hooks_and_context_api/)
+- url: https://blog.sabinthedev.com/shared-state-with-react-hooks-and-context-api-ckdhvq3eq002rlts1b9m90twt
 ---
 
-## [10][How to wrap 2 or more menu items to use them in one condition, using React and ant design?](https://www.reddit.com/r/reactjs/comments/i43rzl/how_to_wrap_2_or_more_menu_items_to_use_them_in/)
-- url: https://stackoverflow.com/questions/63247388/how-to-wrap-2-or-more-menu-items-to-use-them-in-one-condition-using-react-and-a
----
-
-## [11][Redux-form is causing the whole form to rerender](https://www.reddit.com/r/reactjs/comments/i43gj2/reduxform_is_causing_the_whole_form_to_rerender/)
-- url: https://www.reddit.com/r/reactjs/comments/i43gj2/reduxform_is_causing_the_whole_form_to_rerender/
----
-Hello there, I have a really bad problem with redux form atm.  
-I have a normal form with checkboxes and selects and then inside the same form, I have a react-table 6 with 2 - 3 levels of subcomponents including redux form fields. Each field is created with Field component.
-
-The problem is, updating some of the form fields several times causes re-mounting of the whole form, then, eventually, it begins to act normal.
-
-Has anybody ever encountered such a problem ?
-## [12][props.history.push("/")](https://www.reddit.com/r/reactjs/comments/i43dqm/propshistorypush/)
-- url: https://www.reddit.com/r/reactjs/comments/i43dqm/propshistorypush/
----
-I am new to react. I know props but I dont know what this history and push does? I searched everywhere but couldnt find it in the search as well. I am looking for simple/layman explaination.

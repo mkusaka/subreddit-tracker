@@ -56,43 +56,72 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][C++ Lambda Week: Capturing Things](https://www.reddit.com/r/cpp/comments/i408n6/c_lambda_week_capturing_things/)
-- url: https://www.bfilipek.com/2020/08/lambda-capturing.html
+## [2][ASCII Earth rotating in C++. I made this animation using projections and a bit of linear algebra.](https://www.reddit.com/r/cpp/comments/i4qtol/ascii_earth_rotating_in_c_i_made_this_animation/)
+- url: https://youtu.be/wgdB9Dgb0Ro
 ---
 
-## [3][Hsm – Feature rich and fast C++ state machine library based on boost hana](https://www.reddit.com/r/cpp/comments/i3nyhm/hsm_feature_rich_and_fast_c_state_machine_library/)
-- url: https://github.com/erikzenker/hsm
+## [3][What happened to polymorphic_value?](https://www.reddit.com/r/cpp/comments/i4nxyx/what_happened_to_polymorphic_value/)
+- url: https://www.reddit.com/r/cpp/comments/i4nxyx/what_happened_to_polymorphic_value/
+---
+I don't see this in the c++20 standard library. What happened to this proposal?
+## [4][JSON for Modern C++ 3.9.1 (bug fix release)](https://www.reddit.com/r/cpp/comments/i4r7jr/json_for_modern_c_391_bug_fix_release/)
+- url: https://github.com/nlohmann/json/releases/tag/v3.9.1
 ---
 
-## [4][The SIMDe header-only library provides fast, portable implementations of SIMD intrinsics on hardware which doesn't natively support them, such as calling SSE functions on ARM](https://www.reddit.com/r/cpp/comments/i3gijx/the_simde_headeronly_library_provides_fast/)
-- url: https://github.com/simd-everywhere/simde
+## [5][Writing files 5 to 9 times faster than fprintf](https://www.reddit.com/r/cpp/comments/i48j9k/writing_files_5_to_9_times_faster_than_fprintf/)
+- url: http://www.zverovich.net/2020/08/04/optimal-file-buffer-size.html
 ---
 
-## [5][Reclaiming modern C++ as the tool of data analysis](https://www.reddit.com/r/cpp/comments/i3i19j/reclaiming_modern_c_as_the_tool_of_data_analysis/)
-- url: https://www.reddit.com/r/cpp/comments/i3i19j/reclaiming_modern_c_as_the_tool_of_data_analysis/
----
-I hope this https://github.com/hosseinmoein/DataFrame adds to the C++ ecosystem and dispels the notion that C++ is no good for data analysis
-## [6][Is there any point in registering for CppCon 2020 if the videos will be uploaded later?](https://www.reddit.com/r/cpp/comments/i3ptpf/is_there_any_point_in_registering_for_cppcon_2020/)
-- url: https://www.reddit.com/r/cpp/comments/i3ptpf/is_there_any_point_in_registering_for_cppcon_2020/
----
-I don't expect to ask many questions. I'll probably register for a workshop or two, though.
-## [7][C++20 Concepts: Testing constrained functions](https://www.reddit.com/r/cpp/comments/i3fka6/c20_concepts_testing_constrained_functions/)
-- url: https://andreasfertig.blog/2020/08/cpp20-concepts-testing-constrained-functions/
+## [6][C++ Lambda Week: Going Generic](https://www.reddit.com/r/cpp/comments/i4na1c/c_lambda_week_going_generic/)
+- url: https://www.bfilipek.com/2020/08/lambda-generic.html
 ---
 
-## [8][Conway's 'Game of Life' in the Terminal](https://www.reddit.com/r/cpp/comments/i3jj92/conways_game_of_life_in_the_terminal/)
-- url: https://github.com/p-ranav/cgol
+## [7][Volunteer Mac Developers needed for BOINC](https://www.reddit.com/r/cpp/comments/i4qvic/volunteer_mac_developers_needed_for_boinc/)
+- url: https://boinc.berkeley.edu/trac/wiki/MacDeveloper
 ---
 
-## [9][Meeting C++ 2020 programme &amp; online tickets available!](https://www.reddit.com/r/cpp/comments/i3hscb/meeting_c_2020_programme_online_tickets_available/)
-- url: https://meetingcpp.com/meetingcpp/news/items/Meeting-Cpp-2020-programme---online-tickets-available-.html
+## [8][Categories for the Working C++ Programmer](https://www.reddit.com/r/cpp/comments/i4af6m/categories_for_the_working_c_programmer/)
+- url: https://bartoszmilewski.com/2020/08/05/categories-for-the-working-c-programmer/
 ---
 
-## [10][70x faster file embeds using string literals](https://www.reddit.com/r/cpp/comments/i2x3go/70x_faster_file_embeds_using_string_literals/)
-- url: https://mort.coffee/home/fast-cpp-embeds/
+## [9][nonstd::narrow() - safely convert between arithmetic types](https://www.reddit.com/r/cpp/comments/i4q6xd/nonstdnarrow_safely_convert_between_arithmetic/)
+- url: https://www.reddit.com/r/cpp/comments/i4q6xd/nonstdnarrow_safely_convert_between_arithmetic/
 ---
+[`narrow&lt;To&gt;(x)`](https://github.com/denniskb/narrow) allows you to convert the value `x` to the type `To`. If `x` can be precisely represented as a `To`, `static_cast&lt;To&gt;(x)` is returned, otherwise an exception is thrown.
 
-## [11][Implementing UFCS in Clang](https://www.reddit.com/r/cpp/comments/i339zk/implementing_ufcs_in_clang/)
-- url: https://dancrn.com/2020/08/02/ufcs-in-clang.html
+This came up at work. Sharing as it might be useful for others.
+## [10][Python's blinker like library in C++](https://www.reddit.com/r/cpp/comments/i4mjj8/pythons_blinker_like_library_in_c/)
+- url: https://www.reddit.com/r/cpp/comments/i4mjj8/pythons_blinker_like_library_in_c/
 ---
+Hello gents,
 
+I use blinker [https://pythonhosted.org/blinker/](https://pythonhosted.org/blinker/) in python to connect objects/function to other objects/functions. When the object containing these signals completes certain actions, they fire off signals, and the connected functions/objects can take actions. Simple stuff like
+
+1. Assume an object has 4 signals people can connect to.
+2. Run object.method
+3. When method completes x1, fire off a signal. Someone subscribed to it can potentially start doing something.
+4. When method completes x2, fire off a signal. Someone subscribed to it can start doing something.
+5. and so on
+
+I use the signals to send out data from an object to anyone subscribed so that they can save it or log it or use it themselves. I also use it to start other threads so it's a pretty big part of my async programming. Of course, since this is Python, the signals can send out all kind of crazy stuff, which may not be possible in C++.
+
+&amp;#x200B;
+
+So my question is, is there something like blinker for C++? If not, is there a different design paradigm that is preferred in C++?
+## [11][[Tooling] Memcheck-cover: A valgrind's memcheck tool wrapper and HTML report generator -- v1.1](https://www.reddit.com/r/cpp/comments/i4bjrq/tooling_memcheckcover_a_valgrinds_memcheck_tool/)
+- url: https://www.reddit.com/r/cpp/comments/i4bjrq/tooling_memcheckcover_a_valgrinds_memcheck_tool/
+---
+Hello,   
+
+
+It's been 3 months since the initial release of my "Memcheck-Cover" project.
+
+I've been improving it a bit lately and I'm proud to present you the 2nd release today : https://github.com/Farigh/memcheck-cover/releases/tag/release-1.1
+
+This new version fixes some bugs and adds dark themes and display settings persistence.
+
+Here is a demo : https://david-garcin.github.io/demos/memcheck-cover/index.html
+
+Don't hesitate to try it, share it, suggest improvements to it and open issues :)
+
+Thanks,

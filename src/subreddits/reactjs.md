@@ -85,150 +85,57 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
-## [3][React.FC vs JSX.Element](https://www.reddit.com/r/reactjs/comments/i4jx85/reactfc_vs_jsxelement/)
-- url: https://www.reddit.com/r/reactjs/comments/i4jx85/reactfc_vs_jsxelement/
----
-So another dev and I have both been assigned to a team that has recently lost all of it's devs and we're to clean up the leftover react code.
-
-We've both agreed to get rid of unnecessary class components and move more towards a functional approach, but i've always used 
-
-React.fc and he's always used JSX.element. Example below:
-
-    const HelloWorld: React.FC&lt;Iprops&gt; = ({name}) =&gt; &lt;div&gt;`hi ${name}`&lt;/div&gt;
-
-vs
-
-    function HelloWorld({name}: Iprops): JSX.Element {
-         return (&lt;div&gt;`hi ${name}`&lt;/div&gt;)
-    }
-
-
-I get it that React.FC is returning a ReactElement, but isn't JSX.Element also just a ReactElement without types? There would be no functional or performance difference between the two approaches correct? are there any pitfalls of using one over the other?
-## [4][Building an offline-first app with React + RxDB + Hasura GraphQL](https://www.reddit.com/r/reactjs/comments/i4q4tw/building_an_offlinefirst_app_with_react_rxdb/)
-- url: https://hasura.io/learn/graphql/react-rxdb-offline-first/introduction/
+## [3][How windowing saved our data table](https://www.reddit.com/r/reactjs/comments/i59bdm/how_windowing_saved_our_data_table/)
+- url: https://www.rookout.com/blog/a-window-of-opportunity-how-windowing-saved-our-data-table/#
 ---
 
-## [5][React + GraphQL boilerplate that scales easily](https://www.reddit.com/r/reactjs/comments/i44zx8/react_graphql_boilerplate_that_scales_easily/)
-- url: https://blog.graphqleditor.com/graphql-first-fullstack-boilerplate/
+## [4][TypeScript + React: Why I don't use React.FC [Article by Stefan Baumgartner]](https://www.reddit.com/r/reactjs/comments/i5bbza/typescript_react_why_i_dont_use_reactfc_article/)
+- url: https://fettblog.eu/typescript-react-why-i-dont-use-react-fc/
 ---
 
-## [6][Create simple POS with React.js, Node.js, and MongoDB #11: CRUD with Relation](https://www.reddit.com/r/reactjs/comments/i4qto1/create_simple_pos_with_reactjs_nodejs_and_mongodb/)
-- url: https://blog.soshace.com/create-simple-pos-with-react-js-node-js-and-mongodb-11-crud-with-relation/
+## [5][I know this is most likely a dumb question.. how do I change my React site from http to https?](https://www.reddit.com/r/reactjs/comments/i4uws3/i_know_this_is_most_likely_a_dumb_question_how_do/)
+- url: https://www.reddit.com/r/reactjs/comments/i4uws3/i_know_this_is_most_likely_a_dumb_question_how_do/
+---
+It says it’s not a secure site and it’s hard for some people to get to it I guess due to their computer blocking it or something? Is this because it’s http?
+## [6][A Journey through React Hooks](https://www.reddit.com/r/reactjs/comments/i5c3cs/a_journey_through_react_hooks/)
+- url: https://www.loginradius.com/engineering/blog/a-journey-through-react-hooks/
 ---
 
-## [7][A thread of "advanced" React interview questions](https://www.reddit.com/r/reactjs/comments/i4a45q/a_thread_of_advanced_react_interview_questions/)
-- url: https://twitter.com/_paulshen/status/1291065955594862593
+## [7][How is UI usually 'designed' in React?](https://www.reddit.com/r/reactjs/comments/i5b5x6/how_is_ui_usually_designed_in_react/)
+- url: https://www.reddit.com/r/reactjs/comments/i5b5x6/how_is_ui_usually_designed_in_react/
+---
+*TL;DR: what do you think / know is used often to design the UI in professional apps?*
+
+For the past couple of months I've been working with, among others, React.  
+I've been using mainly Material- and Semantic UI for designing my apps.
+
+However, these are what they call CSS-in-JS solutions and there are obviously many more.  
+Because of that, it leads me to believe that there is also not one common way to design apps in professional apps.
+
+On the other hand I'm doubting whether React developers are generally considered to do the design of the UI or whether its common to have other people taking care of making things look polished.
+
+However, from your experience: **what do you think / know is used often to design the UI in professional apps?**
+## [8][Performance Optimizations for React Native Applications](https://www.reddit.com/r/reactjs/comments/i5btxt/performance_optimizations_for_react_native/)
+- url: https://blog.soshace.com/performance-optimizations-for-react-native-applications/
 ---
 
-## [8][Can I use React.forwardRef for mulitple refs in one component](https://www.reddit.com/r/reactjs/comments/i4rtbq/can_i_use_reactforwardref_for_mulitple_refs_in/)
-- url: https://www.reddit.com/r/reactjs/comments/i4rtbq/can_i_use_reactforwardref_for_mulitple_refs_in/
+## [9][Basikit over Ant design](https://www.reddit.com/r/reactjs/comments/i5b8gt/basikit_over_ant_design/)
+- url: https://www.reddit.com/r/reactjs/comments/i5b8gt/basikit_over_ant_design/
 ---
-I'll explain what I need to do because I may not need to do this by creating multiple refs.
-
-My component has multiple things which I need to animate, think of it as a menu hamburger with 3 lines and I need to animate each one separately.
-
-I need to get access to them from my parent component which is just my app.js component because I need to animate them within a timeline which involves other components.
-
-Do I need to create a forwardRef to each element (line) in my menu hamburger that I am wanting to animate?
-
-Or can I just create a forwardRef to the outter HTML element of the hamburger and then access the elements within this (somehow) when I do my animation.
-
-I'm using functional React for this.
-## [9][React SSR using react-snap](https://www.reddit.com/r/reactjs/comments/i4rrjw/react_ssr_using_reactsnap/)
-- url: https://www.reddit.com/r/reactjs/comments/i4rrjw/react_ssr_using_reactsnap/
+If you want to use something like Ant design, but feel unsure since it’s Alibaba building it, you should probably take a look at [Basikit](www.basikit.com).
+## [10][Yeoman Generator for new React Templates](https://www.reddit.com/r/reactjs/comments/i5dvy1/yeoman_generator_for_new_react_templates/)
+- url: https://www.reddit.com/r/reactjs/comments/i5dvy1/yeoman_generator_for_new_react_templates/
 ---
-So, I'm working on a project using ReactJS (CRA) as my front end framework and it has a blog wherein we're using [ghost.io](https://ghost.io), the idea is we're using its API for us to fetch the articles and post / show it in our website, it is working but since blog needs to have unique meta tags, SEO friendly, etc. I'm kinda having a problem with it. React snap only works when you're trying to build and deploy but if I add another one or a new blog it doesn't crawl the new one's SEO and meta tags and if you try to use FB Debugger, meta tags cannot be shown or can't be seen since the website is on production already. My option is re-build and re-deploy every time that there's a new blog for me to actually get the new meta tags or set the meta tags, this one is not really a good solution.
+I built and open sourced a Yeoman Generator for new React + JavaScript / TypeScript templates here: [https://www.npmjs.com/package/generator-react-scaffolder](https://www.npmjs.com/package/generator-react-scaffolder)
 
-Anyone here can help me or suggest any good dynamic SSR? Wherein I don't have to worry every time that there's a new blog. Using another framework like Next or Razzle is not an option. Thank you!
-## [10][need someone help review code on populate react-select](https://www.reddit.com/r/reactjs/comments/i4jx6x/need_someone_help_review_code_on_populate/)
-- url: https://www.reddit.com/r/reactjs/comments/i4jx6x/need_someone_help_review_code_on_populate/
+Check it out and feel free to ask any questions.  Any and all feedback welcome!
+
+(note: generated templates were built with Node 14.x in mind, but you *should* have success dropping that down to 12.x)
+## [11][My first completed side project! It ranks the most listened to artists on Spotify](https://www.reddit.com/r/reactjs/comments/i57j9u/my_first_completed_side_project_it_ranks_the_most/)
+- url: https://spotifyartist.netlify.app/
 ---
-Hi Guy 
 
-on my update data page use react-select for handle dropdown, and so  require to populate dropdown and make selected options. so I 've tried by using two request 
-
-the first request, populate a full list of dropdown 
-
-the second request, populate other form and make selected
-
-problem here
-
-1. redux state will overwrite when we make first request and continue with second request because I  using same state name try solve by creating new reducer case for receive only option data
-```javascript
-   switch (type) {
-        case BRANCH_FETCHING:
-            return { ...state, isFetching: true, isError: false, result: null };
-        case BRANCH_FAILED:
-            return { ...state, isFetching: false, isError: true, result: null };
-        case BRANCH_SUCCESS:
-            return { ...state, isFetching: false, isError: false, result: payload };
-        case BRANCH_CLEAR:
-            return { ...state, result: null, isFetching: false, isError: false };
-        case FETCHOPTION_SUCCESS:
-            return { ...state, isFetching: false, isError: false, options: payload };
-        default:
-            return state;
-    }
-```
-2. react select doesn't provide method to set defaultValue after we populate dropdown solve by hold-on until data from reducer ready 
-```javascript
- if (branchReducer.result) {
-                return (
-                    &lt;div class="form-group "&gt;
-                        &lt;Select
-                            name="pos_machines"
-                            defaultValue={branchReducer.result
-                                ? branchReducer.result.pos_machines.map(val =&gt; {
-                                    return {
-                                        'value': val._id,
-                                        'label': val.alias
-                                    }
-                                }) : null}
-                            onChange={setMultiselect}
-
-                            isMulti
-                            closeMenuOnSelect={false}
-                            options={branchReducer.options
-                                ? branchReducer.options : null}
-                        /&gt;
-                    &lt;/div&gt;
-
-                )
-            } else {
-                return null; 
-            }
-````
-anything that improves code quality 
-thank you for your advice
-## [11][Issue with hooks](https://www.reddit.com/r/reactjs/comments/i4qx7h/issue_with_hooks/)
-- url: https://www.reddit.com/r/reactjs/comments/i4qx7h/issue_with_hooks/
----
-I am working on a project right now and trying to learn and use hooks more. In my component I am making a call to my api using axios and trying to store the queried json data in a useState hook like so
-
-Hook:
-
-const \[games, setGames\] = useState(\[\]);
-
-...
-
-[axios.post](https://axios.post)(url, payload)
-
-.then((res) =&gt; {
-
-setGames(res.data);
-
-}
-
-&amp;#x200B;
-
-I know that that is not how I am supposed to use the setGames part of useState but I have tried several other methods and nothing works. I know that the post request is returning the data that I want, but when I try and put it into my components state it comes back as an empty array
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-EDIT: Problem solved. Added a useEffect hook to console.log my games state once it had been updated. Forgot about useState's asynchronous properties. Thanks to everybody for offering guidance
-## [12][Shared State with React Hooks and Context API 👾](https://www.reddit.com/r/reactjs/comments/i4mhxk/shared_state_with_react_hooks_and_context_api/)
-- url: https://blog.sabinthedev.com/shared-state-with-react-hooks-and-context-api-ckdhvq3eq002rlts1b9m90twt
+## [12][[Tutorial] Alarm Widget with Electron + React #1](https://www.reddit.com/r/reactjs/comments/i5dg25/tutorial_alarm_widget_with_electron_react_1/)
+- url: https://dev.to/franamorim/tutorial-reminder-widget-with-electron-react-1hj9
 ---
 

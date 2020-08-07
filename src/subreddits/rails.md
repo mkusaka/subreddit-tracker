@@ -19,11 +19,81 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Has the tech for hey.com been officially released yet?](https://www.reddit.com/r/rails/comments/i4mi5t/has_the_tech_for_heycom_been_officially_released/)
+## [2][Is fast_jsonapi dead?](https://www.reddit.com/r/rails/comments/i53vm0/is_fast_jsonapi_dead/)
+- url: https://www.reddit.com/r/rails/comments/i53vm0/is_fast_jsonapi_dead/
+---
+It looks like this gem hasn't had any commits for over a year now. Did Netflix stop maintaining this project? Would you guys recommend using another API builder?
+## [3][Is it possible to put Sidekiq retries into a different queue?](https://www.reddit.com/r/rails/comments/i54wdy/is_it_possible_to_put_sidekiq_retries_into_a/)
+- url: https://www.reddit.com/r/rails/comments/i54wdy/is_it_possible_to_put_sidekiq_retries_into_a/
+---
+I would like to put Sidekiq retries into a lower priority queue. Is this possible?
+## [4][Checklist before putting moving codebase to a public repo?](https://www.reddit.com/r/rails/comments/i55cqa/checklist_before_putting_moving_codebase_to_a/)
+- url: https://www.reddit.com/r/rails/comments/i55cqa/checklist_before_putting_moving_codebase_to_a/
+---
+I have a webapp that I made in rails a while ago and I want to share a copy of the code on a public repo (for potential use in a portfolio if I finally get the courage to try and move from hobbyist to professional).  
+
+  
+
+I had it on a private repo on bitbucket the whole time I developed and deployed it, and want to make sure when I make it public I'm not exposing anything. My site is verry lightly trafficed but I still wouldn't want something to happen to it and I do have a few hundred user emails in there to respect. 
+
+&amp;#x200B;
+
+Thing's I've checked:
+
+\-Everything in config/production.rb is using environment variables
+
+\-secrets.yml is using an environment variable for the production secret key
+
+\-I changed the credentials for the admin account in the db/seeds.rb (in retrospect I should have had this set with an environment variable as well)
+
+&amp;#x200B;
+
+Anything else I may have overlooked or should consider?
+## [5][I’m taking over an app which has zero test. I installed minitest and guard but running tests is extremely slow.](https://www.reddit.com/r/rails/comments/i5574g/im_taking_over_an_app_which_has_zero_test_i/)
+- url: https://www.reddit.com/r/rails/comments/i5574g/im_taking_over_an_app_which_has_zero_test_i/
+---
+Every time I run the test suite or that guard detects a change, the tests take something like 45 seconds to more then one minute to start. That’s very unpractical especially since this app is quite big and has zero test written... Where should I look to try to understand and fix that first issue?
+## [6][Working with data from an SQLEXPRESS server](https://www.reddit.com/r/rails/comments/i4xrp4/working_with_data_from_an_sqlexpress_server/)
+- url: https://www.reddit.com/r/rails/comments/i4xrp4/working_with_data_from_an_sqlexpress_server/
+---
+We have an existing SQLEXPRESS database that has some valuable information in it. How do I build a tunnel between rails in that server. Our primary db server is postgresql. Is it possible to establish an API based connection with that server? We simply need to read the data, and build reports with it.
+## [7][Looking to track user activity through (GUI events)](https://www.reddit.com/r/rails/comments/i4w504/looking_to_track_user_activity_through_gui_events/)
+- url: https://www.reddit.com/r/rails/comments/i4w504/looking_to_track_user_activity_through_gui_events/
+---
+Hello! I'm wondering if there is a clean way of keeping track of user clicks/GUI events? I am trying to flag whenever a user is active on the site. Not really concerned with what page they are on, etc. I only need to know if a user has clicked or interacted with the GUI.
+
+Not sure how feasible this is, maybe it's possible to have a script that listens for any and all GUI events/clicks? 
+
+I'm new to Rails and would love to hear people's thoughts on this. Open to gem suggestions.
+## [8][Quieres aprender Ruby &amp; Ruby on Rails?](https://www.reddit.com/r/rails/comments/i4yev9/quieres_aprender_ruby_ruby_on_rails/)
+- url: https://www.reddit.com/r/rails/comments/i4yev9/quieres_aprender_ruby_ruby_on_rails/
+---
+Querida comunidad queria comentarles que hemos creado un server en Discord el cual tiene como propósito enseñar sobre programación.
+
+Creo que la mejor forma de aprender es enseñar, por supuesto no somos formadores, quizá sabemos un poco de tecnología pero exactamente ese es el propósito de este server "Aprender" y en específico del ecosistema "Ruby y Ruby On Rails".
+
+En el canal de voz \[Grupo de lectura\] tendremos un proyecto que trataremos de implementar por 1 hora diaria de lunes a viernes (8.00pm Colombia), donde crearemos un ERP, queremos que aprendas temas como planeación, metodologías ágiles, buenas prácticas, test, desarrollo, deploy, documentation, trabajo en remoto, cómo trabajar en equipo \[roles, responsabilidades, tiempos de entrega, etc\], la idea principal es aprender haciendo/enseñando, así que cualquier tipo de aporte que nos lleve a lograr ese objetivo es bienvenido. 
+
+Intentaremos seguir un libro del profesor Javier Vazquez ([https://rclibros.es/producto/ruby-on-rails-aprende-a-crear-aplicaciones-web-desde-cero/](https://rclibros.es/producto/ruby-on-rails-aprende-a-crear-aplicaciones-web-desde-cero/)) que aborda el desarrollo de un software de este tipo y el cual encontrarás en el canal \[#libro\], es solo una guia como para estar en la misma página y que todos hablemos el mismo idioma, no es obligación que lo tengas para que puedas compartir en esta comunidad pero a mi te percepción será de mucha ayuda.
+
+Desde ya te invitamos a que nos compartas que piensas de esta metodología y si es posible nos recomiendes material para ahondar mejor esa perspectiva de aprender haciendo/enseñando, siéntete libre de hacerlo en el canal \[#general\]!
+
+&amp;#x200B;
+
+Puedes unirte o invitar a tus amigos desde el siguiente link [https://discord.gg/P4wZGsQ](https://discord.gg/P4wZGsQ)
+## [9][Has the tech for hey.com been officially released yet?](https://www.reddit.com/r/rails/comments/i4mi5t/has_the_tech_for_heycom_been_officially_released/)
 - url: https://www.reddit.com/r/rails/comments/i4mi5t/has_the_tech_for_heycom_been_officially_released/
 ---
 If so, what is it? If not, when will it be?
-## [3][Docker Rails app error with webpacker's config? "Webpacker::Manifest::MissingEntryError](https://www.reddit.com/r/rails/comments/i4koht/docker_rails_app_error_with_webpackers_config/)
+## [10][Summernote on Rails 6](https://www.reddit.com/r/rails/comments/i4ovvm/summernote_on_rails_6/)
+- url: https://www.reddit.com/r/rails/comments/i4ovvm/summernote_on_rails_6/
+---
+The original gem is for rails 3, I can't really figure out how to make it work on Rails 6. Can somebody help?
+
+The guide I am trying to follow:
+
+[https://github.com/summernote/summernote-rails](https://github.com/summernote/summernote-rails)
+## [11][Docker Rails app error with webpacker's config? "Webpacker::Manifest::MissingEntryError](https://www.reddit.com/r/rails/comments/i4koht/docker_rails_app_error_with_webpackers_config/)
 - url: https://www.reddit.com/r/rails/comments/i4koht/docker_rails_app_error_with_webpackers_config/
 ---
 Hi there. Trying to display hello world on my homepage to make sure my app is going to run properly. I was able to get to the Rails welcome page, but as soon as I created the first controller for the homepage I'm getting this error output:
@@ -70,264 +140,3 @@ Hi there. Trying to display hello world on my homepage to make sure my app is go
 My eyes go to those "Possible causes" it lists, but I'm not sure if that's it because I also see the Webpacker compilation failed above that. Also the error Command "webpack" not found. It's like it has multiple reasons for this error and I'm just not sure how to fix this. Any help is greatly appreciated. I made a github repo  [here](https://github.com/Kyle-Williamson-Dev/CanaBnb)
 
 &amp;#x200B;
-## [4][Summernote on Rails 6](https://www.reddit.com/r/rails/comments/i4ovvm/summernote_on_rails_6/)
-- url: https://www.reddit.com/r/rails/comments/i4ovvm/summernote_on_rails_6/
----
-The original gem is for rails 3, I can't really figure out how to make it work on Rails 6. Can somebody help?
-
-The guide I am trying to follow:
-
-[https://github.com/summernote/summernote-rails](https://github.com/summernote/summernote-rails)
-## [5][Safe Way to Save HTML data to Database](https://www.reddit.com/r/rails/comments/i49iii/safe_way_to_save_html_data_to_database/)
-- url: https://www.reddit.com/r/rails/comments/i49iii/safe_way_to_save_html_data_to_database/
----
-I want users to be able to save HTML editor's data to the database. Which would be the best approach to do it?
-## [6][Trying to use Docker for Rails - not loading web correctly](https://www.reddit.com/r/rails/comments/i4e9du/trying_to_use_docker_for_rails_not_loading_web/)
-- url: https://www.reddit.com/r/rails/comments/i4e9du/trying_to_use_docker_for_rails_not_loading_web/
----
-Hi there. I've been having issues just getting things going with Rails and Docker. I'm getting the following output after following basically everything in the Docker-compose quickstart guide [here](https://docs.docker.com/compose/rails/).
-
-Looks like the first thing I see is the web\_1 line that says exec: rails: not found. Tried Googling and can't find a solution that works. I've had this working before on my portfolio, but then I merged some changes someone was trying to help with and that got all messed up. So I'm just trying to create one of my projects FOR my portfolio just to start fresh with a Rails app to try again. I'll post the outcome below as well as my dockerfile and docker-compose.yml.
-
-    Kyle_@LAPTOP-KSPCT1K1 MINGW64 /c/users/kyle_/desktop/canabnb (master)
-    $ docker-compose up
-    Creating canabnb_db_1  ... done
-    Creating canabnb_web_1 ... done
-    Attaching to canabnb_db_1, canabnb_web_1
-    web_1  | /usr/bin/entrypoint.sh: line 8: exec: rails: not found
-    db_1   | The files belonging to this database system will be owned by user "postgres".
-    db_1   | This user must also own the server process.
-    db_1   |
-    db_1   | The database cluster will be initialized with locale "en_US.utf8".
-    db_1   | The default database encoding has accordingly been set to "UTF8".
-    db_1   | The default text search configuration will be set to "english".
-    db_1   |
-    db_1   | Data page checksums are disabled.
-    db_1   |
-    db_1   | fixing permissions on existing directory /var/lib/postgresql/data ... ok
-    db_1   | creating subdirectories ... ok
-    db_1   | selecting dynamic shared memory implementation ... posix
-    db_1   | selecting default max_connections ... 100
-    db_1   | selecting default shared_buffers ... 128MB
-    db_1   | selecting default time zone ... Etc/UTC
-    db_1   | creating configuration files ... ok
-    canabnb_web_1 exited with code 127
-    db_1   | running bootstrap script ... ok
-    db_1   | performing post-bootstrap initialization ... ok
-    db_1   | syncing data to disk ... ok
-    db_1   |
-    db_1   |
-    db_1   | Success. You can now start the database server using:
-    db_1   |
-    db_1   |     pg_ctl -D /var/lib/postgresql/data -l logfile start
-    db_1   |
-    db_1   | initdb: warning: enabling "trust" authentication for local connections
-    db_1   | You can change this by editing pg_hba.conf or using the option -A, or
-    db_1   | --auth-local and --auth-host, the next time you run initdb.
-    db_1   | waiting for server to start....2020-08-05 21:20:26.416 UTC [46] LOG:  starting PostgreSQL 12.3 (Debian 12.3-1.pgdg100+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 8.3.0-6) 8.3.0, 64-bit
-    db_1   | 2020-08-05 21:20:26.420 UTC [46] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
-    db_1   | 2020-08-05 21:20:26.451 UTC [47] LOG:  database system was shut down at 2020-08-05 21:20:26 UTC
-    db_1   | 2020-08-05 21:20:26.459 UTC [46] LOG:  database system is ready to accept connections
-    db_1   |  done
-    db_1   | server started
-    db_1   | CREATE DATABASE
-    db_1   |
-    db_1   |
-    db_1   | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
-    db_1   |
-    db_1   | waiting for server to shut down...2020-08-05 21:20:26.764 UTC [46] LOG:  received fast shutdown request
-    db_1   | .2020-08-05 21:20:26.766 UTC [46] LOG:  aborting any active transactions
-    db_1   | 2020-08-05 21:20:26.767 UTC [46] LOG:  background worker "logical replication launcher" (PID 53) exited with exit code 1
-    db_1   | 2020-08-05 21:20:26.768 UTC [48] LOG:  shutting down
-    db_1   | 2020-08-05 21:20:26.786 UTC [46] LOG:  database system is shut down
-    db_1   |  done
-    db_1   | server stopped
-    db_1   |
-    db_1   | PostgreSQL init process complete; ready for start up.
-    db_1   |
-    db_1   | 2020-08-05 21:20:26.879 UTC [1] LOG:  starting PostgreSQL 12.3 (Debian 12.3-1.pgdg100+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 8.3.0-6) 8.3.0, 64-bit
-    db_1   | 2020-08-05 21:20:26.880 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
-    db_1   | 2020-08-05 21:20:26.880 UTC [1] LOG:  listening on IPv6 address "::", port 5432
-    db_1   | 2020-08-05 21:20:26.885 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
-    db_1   | 2020-08-05 21:20:26.903 UTC [64] LOG:  database system was shut down at 2020-08-05 21:20:26 UTC
-    db_1   | 2020-08-05 21:20:26.909 UTC [1] LOG:  database system is ready to accept connections
-
-Dockerfile:
-
-    FROM ruby:2.7.1
-    RUN apt-get update -qq &amp;&amp; apt-get install -y nodejs postgresql-client WORKDIR /CanaBnb COPY Gemfile /CanaBnb/Gemfile COPY Gemfile.lock /CanaBnb/Gemfile.lock RUN gem install bundler COPY . /CanaBnb
-     Add a script to be executed every time the container starts.
-    COPY entrypoint.sh /usr/bin/ RUN chmod +x /usr/bin/entrypoint.sh ENTRYPOINT ["entrypoint.sh"] EXPOSE 3000
-     Start the main process.
-    CMD ["rails", "server", "-b", "0.0.0.0"]
-
-docker-compose.yml:
-
-    version: '3'
-    services: 
-    db: 
-    image: postgres 
-    environment: 
-    POSTGRES_USER: postgres 
-    POSTGRES_PASSWORD: password 
-    POSTGRES_DB: CanaBnb_development 
-    web: build: . 
-    volumes:       - .:/CanaBnb 
-    ports:       - "3000:3000"
-
-If you need more than this to help, just let me know. I've been stuck on docker issues for a long time now just trying to get going after graduating bootcamp in February. Thing is I got my portfolio app working before and just decided to try a change (can't recall for the life of me what that change was) that messed everything up. I'm still so new to this and especially new to Docker. Thank you in advance.
-## [7][Mina Deploy Precompile Issue](https://www.reddit.com/r/rails/comments/i49wo8/mina_deploy_precompile_issue/)
-- url: https://www.reddit.com/r/rails/comments/i49wo8/mina_deploy_precompile_issue/
----
- 
-
-I am running a Debian 10 (Buster) Server for my Rails 6.0.3, Ruby  2.6.3, Mina 1.2.3 app. When I run Mina deploy it errors out but does not  give me enough to help me understand what I need to do to resolve the  issue. And thanks to u/[d4be4st](https://www.reddit.com/user/d4be4st/) for getting me this far!!
-
-Mina Deploy output
-
-    Precompiling asset files        
-    $ RAILS_ENV="production" bundle exec rake assets:precompile        
-    Traceback (most recent call last):         
-    3: from /var/www/site/tmp/build-15965768145748/vendor/bundle/ruby/2.6.0/bin/ruby_executable_hooks:24:in `&lt;main&gt;'         
-    2: from /var/www/site/tmp/build-15965768145748/vendor/bundle/ruby/2.6.0/bin/ruby_executable_hooks:24:in `eval'         
-    1: from /usr/local/rvm/gems/ruby-2.6.3/bin/rake:23:in `&lt;main&gt;'        
-    /usr/local/rvm/gems/ruby-2.6.3/bin/rake:23:in `load': cannot load such file -- /usr/local/rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/specifications/default/exe/rake (LoadError)  
-    !     ERROR: Deploy failed. 
-
-Deploy.rb
-
-    require 'mina/bundler' 
-    require 'mina/rails' 
-    require 'mina/git' 
-    require 'mina/rvm'  
-    
-    set :application_name, 'site' 
-    set :domain, 'server' 
-    set :user, 'deployer' 
-    set :deploy_to, "/var/www/site" 
-    set :repository, "git@github.com:git.git" 
-    set :branch, 'master' 
-    set :rvm_use_path, '/etc/profile.d/rvm.sh'  
-    set :rails_env, 'production'
-    
-    set :shared_files, fetch(:shared_files, []).push('config/database.yml', 'config/secrets.yml')  
-    
-    task :remote_environment do 
-       ruby_version = File.read('.ruby-version').strip
-        raise "Couldn't determine Ruby version: Do you have a file .ruby-version in your project root?" if ruby_version.empty?
-    
-         invoke :'rvm:use', 'ruby-2.6.3' 
-    end  
-    
-    desc "Deploys the current version to the server." 
-    task :deploy do    
-    deploy do
-          invoke :'git:clone'
-          invoke :'deploy:link_shared_paths'
-          invoke :'bundle:install'
-          invoke :'rails:db_migrate'
-          invoke :'rails:assets_precompile'
-          invoke :'deploy:cleanup'
-    
-          on :launch do 
-          end
-        end
-     end  
-    
-    namespace :passenger do 
-    desc "Restart Passenger"
-        task :restart do
-          queue %{
-            echo "-----&gt; Restarting passenger"
-            cd #{deploy_to}/current
-            #{echo_cmd %[mkdir -p tmp]}
-            #{echo_cmd %[touch tmp/restart.txt]}
-          }
-        end
-     end 
-
-I have made sure that yarn is installed and working on my Production  machine. When I run the precompile on the Production machine, it runs  through successfully. But still errors out in the Mina Deploy with no  change in the error text. I have looked into [this article](https://github.com/mina-deploy/mina/blob/master/docs/faq.md#--my_program-not-found-but-is-already-installed)   In doing so I have commented out the suggested code snippet just to  test, but that did not change anything. In looking at my bashrc, I do  not see any snippets with EXPORT or SOURCE at the beginning of them.
-
-    RAILS_ENV="production" bundle exec rake assets:precompile
-     yarn install v1.22.4 
-    [1/4] Resolving packages... 
-    [2/4] Fetching packages... 
-    info fsevents@1.2.13: The platform "linux" is incompatible with this module. 
-    info "fsevents@1.2.13" is an optional dependency and failed compatibility check. Excluding it from installation. 
-    info fsevents@2.1.3: The platform "linux" is incompatible with this module. 
-    info "fsevents@2.1.3" is an optional dependency and failed compatibility check. Excluding it from installation. 
-    [3/4] Linking dependencies... 
-    [4/4] Building fresh packages... 
-    Done in 2.95s. 
-    yarn install v1.22.4 
-    [1/4] Resolving packages... 
-    [2/4] Fetching packages... 
-    info fsevents@1.2.13: The platform "linux" is incompatible with this module. 
-    info "fsevents@1.2.13" is an optional dependency and failed compatibility check. Excluding it from installation. 
-    info fsevents@2.1.3: The platform "linux" is incompatible with this module. 
-    info "fsevents@2.1.3" is an optional dependency and failed compatibility check. Excluding it from installation. 
-    [3/4] Linking dependencies... 
-    [4/4] Building fresh packages... 
-    Done in 2.85s. 
-    Everything's up-to-date. Nothing to do
-## [8][3 level nested resources](https://www.reddit.com/r/rails/comments/i4hit5/3_level_nested_resources/)
-- url: https://www.reddit.com/r/rails/comments/i4hit5/3_level_nested_resources/
----
-Briefly , I stumble on a stackoverflow comment which he says to have always at most 2 resources nested levels. He didn't explain much and I'm trying to figure out how would be the difference doing
-
-`resources :x do`
-
-`resources :y` 
-
-`end`
-
-`resources :y do`
-
-   `resources :z`
-
-`end`
-
- instead 
-
-`resources :x do`
-
-`resources :y do`
-
-`resources :z`
-
-`end`
-
-`end`
-
-&amp;#x200B;
-
-I have a ToDo App which has a TodoItem resources nested in TodoList resources. Today I naively tried to nested these resources into my User resources. I spent a few hours solving the routing paths in my views and at end I stumble on a issue with forms. The paths were long and confusing.
-
-I would like to understand technically the difference between the first and the second way of dealing with nested resources.
-## [9][Is the cache information stored in the browser?](https://www.reddit.com/r/rails/comments/i4d05b/is_the_cache_information_stored_in_the_browser/)
-- url: https://www.reddit.com/r/rails/comments/i4d05b/is_the_cache_information_stored_in_the_browser/
----
-Hello sorry if this question is silly (I'm a newbie in rails), I'm trying to fragment cache some views and I don't know if the info that is cached is saved on the browser or in the rails server
-## [10][Adding Snippets for easier rails coding](https://www.reddit.com/r/rails/comments/i42vyt/adding_snippets_for_easier_rails_coding/)
-- url: https://www.reddit.com/r/rails/comments/i42vyt/adding_snippets_for_easier_rails_coding/
----
-Hi just a quick question can someone tell me how i create shortcuts for  the below rails tags in VS code i was able to get emmet working its just the below tags wont work. Any guide how to set this up in rails to save time? 
-
-    &lt;%= %&gt;
-
-or 
-
-    &lt;% %&gt;
-## [11][How to log exceptions using Lograge as default logger](https://www.reddit.com/r/rails/comments/i43zyh/how_to_log_exceptions_using_lograge_as_default/)
-- url: https://www.reddit.com/r/rails/comments/i43zyh/how_to_log_exceptions_using_lograge_as_default/
----
-How to log exceptions using Lograge as default logger.
-
-Basically, I am using Lograge as the default Rails logger that reduces the bulk of rails logs to formatted structure. But exceptions are not included by default. In the lograge configuration I included the following,
-
-`opts[:exception] = event.payload[:exception] if event.payload[:exception]`  
-`opts[:exceptionObject] = event.payload[:exception_object] if event.payload[:exception_object]`
-
-This seem to pring the first like in code exceptions. It also does STDOUT and so i have the exceotions being logged normally with stacktrace. This does not include routing exceptions.
-
-Is there a way I can get the exceptions logged as part of lograge output, with appropriate status, backtrace and not duplicate the exception once again?

@@ -1,18 +1,12 @@
 # androiddev
-## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/i2wdrd/weekly_whos_hiring_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/i2wdrd/weekly_whos_hiring_thread/
+## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/i5d2yl/weekly_anything_goes_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/i5d2yl/weekly_anything_goes_thread/
 ---
-Looking for Android developers? Heard about a cool job posting? Let people know!
+Here's your chance to talk about whatever!
 
-Here is a suggested posting template:
+Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
 
-&gt; Company: &lt;Best Company Ever&gt;  
-&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
-&gt; Location: &lt;City, State, Country&gt;  
-&gt; Allows remote: &lt;Yes/No&gt;  
-&gt; Visa: &lt;Yes/No&gt;  
-
-Feel free to include any other information about the job.
+Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
 ## [2][Weekly Questions Thread - August 03, 2020](https://www.reddit.com/r/androiddev/comments/i2uyzu/weekly_questions_thread_august_03_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/i2uyzu/weekly_questions_thread_august_03_2020/
 ---
@@ -31,88 +25,105 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][I started my channel a week ago. I convert dribbble shots to android apps. I just posted another video. I love to explore and come up with creative ways to make learning and coding fun and simple. Do watch it and provide suggestions. Github repo is in description feel free to use it. Thanks ✌🏻](https://www.reddit.com/r/androiddev/comments/i4nurf/i_started_my_channel_a_week_ago_i_convert/)
-- url: https://youtu.be/Apqeg-OUheo
+## [3][How do I improve my Android skills and learn "Good practices"?](https://www.reddit.com/r/androiddev/comments/i577pd/how_do_i_improve_my_android_skills_and_learn_good/)
+- url: https://www.reddit.com/r/androiddev/comments/i577pd/how_do_i_improve_my_android_skills_and_learn_good/
+---
+I've a good idea of app development and have made 3 apps yet. But whenever I get stuck I always use YouTube videos. I don't know if they are good enough.
+
+I need to learn and make my code upto the accepted standards. Like how to write good code, what all things to use , how to improve security and all this. How are codes written by professionals at Google and Amazon. I don't have any idea how close random Indian YouTube videos are to their standards.
+
+Can someone guide me on how I can improve my coding skills. Thank you
+## [4][Using `ContentProvider` to receive context in your library.](https://www.reddit.com/r/androiddev/comments/i5a2cf/using_contentprovider_to_receive_context_in_your/)
+- url: https://www.reddit.com/r/androiddev/comments/i5a2cf/using_contentprovider_to_receive_context_in_your/
+---
+Was curious about how `Picasso.get()` works so I took a look at the main classes it has. (in Github). I noticed that the `Context` is received using a `ContentProvider`. For a library, this is very cool so that you don't have to ask for the context on the clients app side. However, I want to know, is there any risk, problem, something you should care about with this approach? 
+If it's safe, why are still a lot of libraries asking for a context?
+## [5][Are there APIs that allow devs to replicate Google Translate's "brush over the words to translate" feature?](https://www.reddit.com/r/androiddev/comments/i5akyc/are_there_apis_that_allow_devs_to_replicate/)
+- url: https://www.reddit.com/r/androiddev/comments/i5akyc/are_there_apis_that_allow_devs_to_replicate/
+---
+To those who aren't familiar with Google Translate: there's a feature where you take a picture of text (e.g. a road sign or a book), and you use your finger to "paint over" the words you want to translate.
+
+Are there ways to replicate this in an app? Are there APIs for this?
+## [6][[UPDATE] I am a self-taught developer who just finished working on an app for controlling Philips Hue via Samsung Galaxy Edge panel.](https://www.reddit.com/r/androiddev/comments/i5d93x/update_i_am_a_selftaught_developer_who_just/)
+- url: https://www.reddit.com/r/androiddev/comments/i5d93x/update_i_am_a_selftaught_developer_who_just/
+---
+# OP: [https://www.reddit.com/r/androiddev/comments/hzjuu9/i\_am\_a\_selftaught\_developer\_who\_just\_finished/](https://www.reddit.com/r/androiddev/comments/hzjuu9/i_am_a_selftaught_developer_who_just_finished/)
+
+# Galaxy Store: [http://apps.samsung.com/appquery/appDetail.as?appId=com.nilstrubkin.hueedge](http://apps.samsung.com/appquery/appDetail.as?appId=com.nilstrubkin.hueedge)
+
+&amp;#x200B;
+
+[Screenshots of the app](https://preview.redd.it/0582acvvukf51.png?width=1703&amp;format=png&amp;auto=webp&amp;s=3767a1bfeabe9534fab928fad9f404b20b8f8f44)
+
+I would like to thank every person that has participated in the beta testing of my newly created app. The beta app has reached over 150 downloads just over a couple of days. I have received an impressive amount of feedback from the users. After some issues with the approval, I am now releasing it out of beta, as the Samsung Galaxy store has just approved my submission.
+
+**Feedback**
+
+I have received many positive and insightful comments and suggestions all of which I have read and noted down. I have tried to refine the problematic areas and eliminate the bugs. I’ve rewritten large chunks of code in order to implement the latest and greatest libraries (Moshi + OkHttp) and make it easier for anyone to understand my code.
+
+**Bugs**
+
+The most common problem was the text size being too big or too small on the buttons, some users also reported the text or symbols being uncentered and unaligned. Both issues were addressed.
+
+Some users reported issues with the scroll list of the edit activity. Both the scroll and the associated Drag&amp;drop action were refined. It now has haptic feedback (with the ability to turn it off).
+
+Some users reported issues with buttons not registering when pressed. I have improved the communication with the bridge which should fix that. I have also added haptic feedback (with the ability to turn it off).
+
+**Features**
+
+I have improved the sorting of the buttons in edit activity. They now are not just alphabetically sorted, but first and foremost by type of resource. All your lights, groups, and scenes are now easier to find.
+
+Ability to switch symbols indicating on and off states to words “On” and “Off”
+
+As you might have noticed when long-holding on a button, you enter the adjustment menu. The color and brightness options reflect the current color of the light selected. The rooms and zones now do the same (with some reservations for API limitations).
+
+The adjustment menu as well as the refresh function are now described in the setup's final screen.
+
+**Open-Source**
+
+Even though the app is published to the Galaxy Store for the price of 2$ I decide to keep it Open-Source. If you want to create a similar app to control some other type of equipment, just do it. I will also gladly take any feedback on my code.
+
+Source: [https://github.com/nils-trubkin/Hue-Edge](https://github.com/nils-trubkin/Hue-Edge)
+
+**Conclusion**
+
+This app turned out great and I feel confident enough to release it. I will still take any feedback and suggestions to further improve the app.
+## [7][Android 10 EACCES (Permission denied) issue](https://www.reddit.com/r/androiddev/comments/i5d3zz/android_10_eacces_permission_denied_issue/)
+- url: https://www.reddit.com/r/androiddev/comments/i5d3zz/android_10_eacces_permission_denied_issue/
+---
+I have updated my app to API level 29 so it broke my image picking mechanism. Eariler everything was working fine. Now when I searched over forums/stackoverflow I came to know that I have to migrate to scoped storage framework in order to make it work. I found 2 things so far 
+1. opt out of scoped storage 
+2. Read the stream and write into cache directory so that my app can access it.
+
+My question is that is it mandatory to copy the file for using it. If yes I'm afriad to use this approach as it will consume lot of time because my app uses large videos which we upload to server.
+
+Is it possible to use this framework to just read the URI of image/video without copying to cache directory ? Did anyone worked on it ?
+
+for reference I followed these articles
+https://developer.android.com/guide/topics/providers/document-provider
+https://medium.com/@sriramaripirala/android-10-open-failed-eacces-permission-denied-da8b630a89df
+https://issuetracker.google.com/issues/130494105
+## [8][AndroidBites | Understand Accumulator Pattern Before You Regret.](https://www.reddit.com/r/androiddev/comments/i568al/androidbites_understand_accumulator_pattern/)
+- url: https://chetangupta.net/reduce-fold
 ---
 
-## [4][Android Vitals - Is this a cold start?](https://www.reddit.com/r/androiddev/comments/i4kluc/android_vitals_is_this_a_cold_start/)
-- url: https://dev.to/pyricau/android-vitals-is-this-a-cold-start-3m44
+## [9][How would one demo an android app on a portfolio? Are there better options than screenshots?](https://www.reddit.com/r/androiddev/comments/i5bwrn/how_would_one_demo_an_android_app_on_a_portfolio/)
+- url: https://www.reddit.com/r/androiddev/comments/i5bwrn/how_would_one_demo_an_android_app_on_a_portfolio/
+---
+Hi all, I'm curious how most people share their work.
+
+Having static screenshots seems like it isn't very interactable (compared to deploying a front-end site and having a link in your portfolio to xyz.com), and asking people to download an app just to see what it does seems like too much to ask.
+
+ Is there an online emulator that can be used to demo mobile apps?
+## [10][Is there any free API that can fetch me all the series available on online steam platform such as Netflix, Amazon Prime?](https://www.reddit.com/r/androiddev/comments/i5dfwj/is_there_any_free_api_that_can_fetch_me_all_the/)
+- url: https://www.reddit.com/r/androiddev/comments/i5dfwj/is_there_any_free_api_that_can_fetch_me_all_the/
 ---
 
-## [5][Why are people trying to build Android apps with Python?](https://www.reddit.com/r/androiddev/comments/i4myou/why_are_people_trying_to_build_android_apps_with/)
-- url: https://www.reddit.com/r/androiddev/comments/i4myou/why_are_people_trying_to_build_android_apps_with/
----
-On my blog, I previously made a post about the Chaquopy plugin which lets you run Python scripts in an Android app.
-
-This has been one of my most popular posts since it was posted, but I'm just befuddled, why?
-
-I don't see the benefits of using Python over Java / Kotlin (or C++ if you're into that), especially considering the fact that you'll run with compatibility problems when you try to import other Python scripts and libraries.
-
-I'm aware of other Python for Android libraries like PyPi and Kivy, and I don't know how well these can do to make solid Android apps.
-
-Is this a case of Python Developers trying to make use of their existing skills to make Android apps? Or is there something I'm missing?
-## [6][AltBeacon - need help with ranging beacons when app in foreground, and also monitoring them when it goes to background.](https://www.reddit.com/r/androiddev/comments/i4qlil/altbeacon_need_help_with_ranging_beacons_when_app/)
-- url: https://www.reddit.com/r/androiddev/comments/i4qlil/altbeacon_need_help_with_ranging_beacons_when_app/
----
-Hi, I'm asking here hoping that someone has had a similar use case as me and implemented it using [AltBeacon](https://altbeacon.github.io/android-beacon-library/).
-
-Firstly, let me explain what exactly I want to achieve.
-
-**When app is opened** on main view, I want to run beacon detection in the foreground, so user can actively see which beacons are detected. I want to **range beacons** here, so I know the proximity as well.
-
-**When app is closed** or in background, I want to run beacon detection again, but I only want to monitor beacons here, so I don't care how far away the user is, just if user enters or exits the beacon range.
-
-**Now here's the problem:**
-
-AltBeacon clearly states that in order to detect beacons in the background, you need to create an instance of \`RegionBootstrap\` that lives through the entire App lifecycle. Sample code is found [here](https://altbeacon.github.io/android-beacon-library/samples.html) in "Background" section. 
-
-If \`RegionBootstrap\` is implemented correctly, the app should relaunch the detection service after it's been killed, so it works in the background as well.
-
-My main issue currently is that \`RegionBootstrap\` seems to "override" the beacon detection that's implemented inside the view, using \`BeaconManager.startRangingBeaconsInRegion(region)\`. So the beacon detection works either in the foreground or background, but not both at the same time.
-
-Has anyone implemented something similar yet and how did you solve it? How can I implement beacon ranging when app is opened using \`BeaconManager\`, but also implement background monitoring with \`RegionBootstrap\`?
-## [7][Master switch preference](https://www.reddit.com/r/androiddev/comments/i4f3d4/master_switch_preference/)
-- url: https://www.reddit.com/r/androiddev/comments/i4f3d4/master_switch_preference/
----
-There didn't seem to be any implementations of the master on/off and individual on/off preference switches as recommended by the Material Design guidelines and making them was pretty time consuming, so I'm releasing it as an open source library.
-
-[https://github.com/svenoaks/MasterSwitchPreference](https://github.com/svenoaks/MasterSwitchPreference)
-## [8][Leverage the In-App Review API for your Google Play reviews](https://www.reddit.com/r/androiddev/comments/i450fh/leverage_the_inapp_review_api_for_your_google/)
-- url: https://android-developers.googleblog.com/2020/08/in-app-review-api.html
+## [11][How can we use existing styles in styles.xml in Jetpack Compose? Or even is that possible?](https://www.reddit.com/r/androiddev/comments/i57xmo/how_can_we_use_existing_styles_in_stylesxml_in/)
+- url: https://www.reddit.com/r/androiddev/comments/i57xmo/how_can_we_use_existing_styles_in_stylesxml_in/
 ---
 
-## [9][Organizing resource layout files in Android Studio .](https://www.reddit.com/r/androiddev/comments/i4rg9t/organizing_resource_layout_files_in_android_studio/)
-- url: https://www.reddit.com/r/androiddev/comments/i4rg9t/organizing_resource_layout_files_in_android_studio/
----
-we can organize the Java or Kaitlin files creating separate folder packages but how to manage layout resource files , us there any way to create a folder to separate some files for better readability and organizing .
-Thank you for reading any for t highly appreciable .
-## [10][Material Components Release 1.2.0](https://www.reddit.com/r/androiddev/comments/i3zgys/material_components_release_120/)
-- url: https://github.com/material-components/material-components-android/releases/tag/1.2.0
+## [12][Flutter vs React Native: Best for Cross-Platform Development](https://www.reddit.com/r/androiddev/comments/i5d5zy/flutter_vs_react_native_best_for_crossplatform/)
+- url: https://tekkiwebsolutions.com/blog/flutter-vs-react-native/
 ---
 
-## [11][How is Android 11 going to impact your mobile application?](https://www.reddit.com/r/androiddev/comments/i4muz9/how_is_android_11_going_to_impact_your_mobile/)
-- url: https://www.metizsoft.com/blog/android-11-features
----
-
-## [12][ExpandableFab: a customizable, orientation aware Android widget with animations](https://www.reddit.com/r/androiddev/comments/i4a0gk/expandablefab_a_customizable_orientation_aware/)
-- url: https://www.reddit.com/r/androiddev/comments/i4a0gk/expandablefab_a_customizable_orientation_aware/
----
-Just an easy to use library that allows you to beautifully show users the available actions they can take on the current screen.
-
-Orientation Aware meaning you can show different options between portrait and landscape, easily.
-
-Nearly everything is customizable (colors, text, size, placement, margins, animations and more)  and optional (don't need an Overlay, or FabOptions, or Labels, or icons, etc). Every property can be accessed or set through XML layouts or programmatically - whatever you prefer.
-
-Written 100% in Kotlin but comes with full JavaDoc and KDoc (published API is well documented). Also comes with an example app so you can see different use cases with 0 coding.
-
-Let me know what you think.
-
-Github:  [https://github.com/nambicompany/expandable-fab](https://github.com/nambicompany/expandable-fab)
-
-Library website (w/ links to full documentation):  [https://nambicompany.github.io/expandable-fab/](https://nambicompany.github.io/expandable-fab/)
-
-(the smoothness and color of the gifs are a little off. See repo's README for more gifs of better quality, or better yet, just run the example app)
-
-https://i.redd.it/fdj3agif7cf51.gif
-
-https://i.redd.it/5lrz6lkf8cf51.gif

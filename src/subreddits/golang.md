@@ -1,118 +1,81 @@
 # golang
-## [1][V1.5 of sqlc released: Compile SQL to type-safe Go](https://www.reddit.com/r/golang/comments/i4iv8o/v15_of_sqlc_released_compile_sql_to_typesafe_go/)
-- url: https://sqlc.dev/posts/2020/08/05/sqlc-one-point-five-released.html
+## [1][Nine-year-old bug in the Go standard library enables DoS](https://www.reddit.com/r/golang/comments/i59jmo/nineyearold_bug_in_the_go_standard_library/)
+- url: https://github.com/ethereum/public-attacknets/issues/12
 ---
 
-## [2][Interface Definition in implementing package](https://www.reddit.com/r/golang/comments/i4p1xi/interface_definition_in_implementing_package/)
-- url: https://www.reddit.com/r/golang/comments/i4p1xi/interface_definition_in_implementing_package/
----
-In [CodeReviewComments: Interfaces](https://github.com/golang/go/wiki/CodeReviewComments#interfaces), it is stated that an interface definition should not be done in the package that implements that interface, but in the package that uses implementations of that interface instead:
-
-&amp;#x200B;
-
-&gt;Go interfaces generally belong in the package that uses values of the interface type, not the package that implements those values. The implementing package should return concrete (usually pointer or struct) types
-
-&amp;#x200B;
-
-There's even an example that shows how *not* to do it:
-
-&amp;#x200B;
-
-&gt;// DO NOT DO IT!!!  
-&gt;  
-&gt;package producer  
-&gt;  
-&gt;type Thinger interface { Thing() bool }  
-&gt;  
-&gt;type defaultThinger struct{ … }  
-&gt;  
-&gt;func (t defaultThinger) Thing() bool { … }  
-&gt;  
-&gt;func NewThinger() Thinger { return defaultThinger{ … } }
-
-&amp;#x200B;
-
-However, I'm asking myself: Why? I see this being done many, many times, especially in libraries. And I actually like the idea that a package provides an interface as a clean public API and provides an invisible implementation itself.
-
-Is it really that bad? Can anyone explain what's wrong with the example?
-## [3][Google Photos API client](https://www.reddit.com/r/golang/comments/i4oj4q/google_photos_api_client/)
-- url: https://www.reddit.com/r/golang/comments/i4oj4q/google_photos_api_client/
----
-If anyone is interested here's my take on Google Photos API client. 
-
-[https://github.com/duffpl/google-photos-api-client](https://github.com/duffpl/google-photos-api-client)
-
-Google removed some time ago Photos from list of auto generated clients. I've been using ones already existing (based on mirrored copy of the generated client) but I didn't like them very much so I've decided to give it a shot and write one from scratch. Library API shouldn't change much in future.
-
-What's implemented:
-
-\- Most of endpoints/methods  
-\- Basic uploading functionality (no "fancy" stuff like resumable uploads)  
-\- Additional wrapper methods that deal with paging automatically (async with channels and sync versions spewing out slices)  
-\- Basic error handling
-
-Todo:  
-\- Tests (units and functional to keep checking if API is still responding as expected)  
-\- Implement sharedAlbums endpoints  
-\- Better error handling
-
-Constructive criticism always welcomed :)  
-Enjoy
-## [4][An aesthetically pleasing video on SEARCHING ALGORITHMS.](https://www.reddit.com/r/golang/comments/i4c9kg/an_aesthetically_pleasing_video_on_searching/)
-- url: https://youtu.be/FBJKwjTwNTo
+## [2][CLI tool for viewing/writing to and from Kafka, RabbitMQ and more](https://www.reddit.com/r/golang/comments/i54dnl/cli_tool_for_viewingwriting_to_and_from_kafka/)
+- url: https://github.com/batchcorp/plumber
 ---
 
-## [5][Blank-Xu/sqlx-adapter: Sqlx Adapter for Casbin V2](https://www.reddit.com/r/golang/comments/i4oqrk/blankxusqlxadapter_sqlx_adapter_for_casbin_v2/)
-- url: https://github.com/Blank-Xu/sqlx-adapter
+## [3][ReadUvarint unlimited input (CVE-2020-16845) - Go 1.14.7 and Go 1.13.15 security update](https://www.reddit.com/r/golang/comments/i4wyfk/readuvarint_unlimited_input_cve202016845_go_1147/)
+- url: https://groups.google.com/u/1/g/golang-announce/c/NyPIaucMgXo/m/GdsyQP6QAAAJ?pli=1
 ---
 
-## [6][How do you deal with Go-Java or Go-Python environments](https://www.reddit.com/r/golang/comments/i45rpr/how_do_you_deal_with_gojava_or_gopython/)
-- url: https://www.reddit.com/r/golang/comments/i45rpr/how_do_you_deal_with_gojava_or_gopython/
+## [4][Create a dummy REST API from a json file with zero coding in seconds](https://www.reddit.com/r/golang/comments/i4t3rd/create_a_dummy_rest_api_from_a_json_file_with/)
+- url: https://www.reddit.com/r/golang/comments/i4t3rd/create_a_dummy_rest_api_from_a_json_file_with/
 ---
-  I'm not sure if this is the right place to ask this.  But I've been coding in Go for the past 4 years.   Some of my earlier Go projects consisted of working with some former Googlers.  So they beat into me the Go way of doing things.   Go was a match made in heaven for me.  Its all about simple and explicit above all else.
+Hello guys, long time lurker on this sub but never posted before. 
 
-  I love working with Go, and it's really the only language I love working with these days.  With that said I've had a few projects where I'm seeing Go written in some very odd and non-idiomatic ways.   I recently joined a position where I constantly see Java devs trying to make Go into Java.  There is a lot of magic and confusing abstractions all over the place.   
+I created **json-server**, a CLI tool to create a dummy REST API from a provided json file with zero coding in seconds. For each provided resource 6 full functional endpoints are created (GET x2, POST, PUT, PATCH, DELETE), that you can use right away. 
 
-  What is worse is that there are many devs here who still actively develop in Java since we still have a lot of code in Java.   And some of our code bases are several years old written in a Java style.
+Inspired by the javascript package [json-server](https://github.com/typicode/json-server) that's where the name comes from. 
 
-   Have you seen this?  How have you been able to promote Go in your workplace and make sure people are keeping things simple and idiomatic.  How do you make sure people don't carry over mindsets taught in other languages?
+The next step is to create the first release, which will include binary files for Windows, Linux and macOS. Any comments/suggestions are really welcomed. You can find more info at README file.
 
-  Again if this is the wrong forum to discuss this, I do apologize.  I do see myself encountering even more Go-Java code bases in the future.  Currently in my workplace peoole hate Go.  Mostly because its harder for their confusing abstractions that they write in their Java code.  I'd argue many of these abstractions are unnecessary, but who am really?   Again, any advice?
-## [7][Question about Golang performance](https://www.reddit.com/r/golang/comments/i4kz5r/question_about_golang_performance/)
-- url: https://www.reddit.com/r/golang/comments/i4kz5r/question_about_golang_performance/
----
-First of all i would like to clarify that i love the go. I love the go-ways to do things in contrast to any language out there, i love the standard library and i love the simplicity. This is not a bashing post, it's just that the performance is a really big seller for me.
-
-As i understand it, go is really fast. This lead me to think that, for example, it would way more performant than say 'C#' in anything. However, just today i decided to google some performance comparisons and got surprised to find a lot of resources that indicate go under performs next to C#. These benchmarks/comparisons are not from long ago,
-
-[Resource 1](https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/go-csharpcore.html)
-
-[Resource 2](https://www.reddit.com/r/golang/comments/a88vww/why_is_go_without_generics_is_slower_than_c_with/ec926b7?utm_source=share&amp;utm_medium=web2x)
-
-[Resource 3](https://news.ycombinator.com/item?id=20947286)
-
-[Resource 4](https://www.reddit.com/r/rust/comments/akluxx/rust_now_on_average_outperforms_c_in_the/ef63zdi?utm_source=share&amp;utm_medium=web2x)
-
-[Resource 5](https://www.reddit.com/r/rust/comments/akluxx/rust_now_on_average_outperforms_c_in_the/ef5vuyp?utm_source=share&amp;utm_medium=web2x)
-
-[Resource 6](https://medium.com/@alexyakunin/go-vs-c-part-1-goroutines-vs-async-await-ac909c651c11)
-
-[Resource 7](https://www.reddit.com/r/rust/comments/akluxx/rust_now_on_average_outperforms_c_in_the/)
-
-[Resource 8](https://www.reddit.com/r/rust/comments/akluxx/rust_now_on_average_outperforms_c_in_the/ef5y2ub/?utm_source=share&amp;utm_medium=web2x)
-
-I know that at the end of the day, they are just that: benchmarks. They don't really say 'anything'  outside the context of that particular benchmark. It's just that i was a religious believer on Golang performance and thought it was WAY faster than C#/Java in pretty much anything.  I also want to clarify that i'm extremely naive to these low level things and what these benchmarks really mean.  
-
-So, my intention with this post is to find out if Golang is still what i think it is, and if these benchmarks mean nothing at all and i should take it with a grain of salt. I look forward to any piece wisdom/clarification or even criticism you could have. Thanks
-## [8][Learn Go Programming Online with these 12 Best Golang Tutorials &amp; Courses](https://www.reddit.com/r/golang/comments/i4p47f/learn_go_programming_online_with_these_12_best/)
-- url: https://www.reddit.com/r/golang/comments/i4p47f/learn_go_programming_online_with_these_12_best/
----
-Learn or improve your [Golang](https://blog.coursesity.com/best-golang-tutorials?utm_source=reddit&amp;utm_medium=social&amp;utm_campaign=redditPost&amp;utm_term=best-go) skills online with these curated online tutorials and courses for beginners
-## [9][Cloud Automation and DevOps Consulting Services](https://www.reddit.com/r/golang/comments/i4pyo1/cloud_automation_and_devops_consulting_services/)
-- url: http://selleo-devops.icu
+[https://github.com/chanioxaris/json-server](https://github.com/chanioxaris/json-server)
+## [5][gocv recognise ellipse](https://www.reddit.com/r/golang/comments/i5bmts/gocv_recognise_ellipse/)
+- url: https://i.redd.it/lipmzj5m8kf51.jpg
 ---
 
-## [10][read image from/write to clipboard(supported windows,mac,linux)](https://www.reddit.com/r/golang/comments/i4mb94/read_image_fromwrite_to_clipboardsupported/)
-- url: https://www.reddit.com/r/golang/comments/i4mb94/read_image_fromwrite_to_clipboardsupported/
+## [6][How to programmatically get the size of a struct, incl its data?](https://www.reddit.com/r/golang/comments/i5bjie/how_to_programmatically_get_the_size_of_a_struct/)
+- url: https://www.reddit.com/r/golang/comments/i5bjie/how_to_programmatically_get_the_size_of_a_struct/
 ---
-[https://github.com/skanehira/clipboard-image](https://github.com/skanehira/clipboard-image)
+I have been playing around with `unsafe.Sizeof` and `binary.Size` but neither are working for this use case. I have a struct as follows, and I am looking to find out the memory impact of it as the program continues. The issue is that structX can vary in size so `binary.Size` doesnt like it.
+
+    type struct sample {
+        data [] structX
+    }
+
+I have tried using pprof but the memory usage used varies too much, weird I know. Running a benchmark once gives 1GB usage, running it again gives 500MB, its too inconsistent. I tried using memStats but there are so many go routines running that I cant pin down the memory used by this one struct. The struct is allocated on the heap and has a lifespan of most of the running of the program. Any recommendations?
+## [7][How to proxy the keystrokes from one keyboard to another?](https://www.reddit.com/r/golang/comments/i5ck1a/how_to_proxy_the_keystrokes_from_one_keyboard_to/)
+- url: https://www.reddit.com/r/golang/comments/i5ck1a/how_to_proxy_the_keystrokes_from_one_keyboard_to/
+---
+I want to proxy the keystrokes from one keyboard to another keyboard, how can I do this with Linux? Any suggestion?
+## [8][AWS Lambda in GoLang Guide](https://www.reddit.com/r/golang/comments/i59mlm/aws_lambda_in_golang_guide/)
+- url: https://www.softkraft.co/aws-lambda-in-golang/
+---
+
+## [9][Go: Introduction to the Escape Analysis](https://www.reddit.com/r/golang/comments/i4w3zd/go_introduction_to_the_escape_analysis/)
+- url: https://medium.com/a-journey-with-go/go-introduction-to-the-escape-analysis-f7610174e890
+---
+
+## [10][What is the best error handle in web applicaiton.](https://www.reddit.com/r/golang/comments/i57ubx/what_is_the_best_error_handle_in_web_applicaiton/)
+- url: https://www.reddit.com/r/golang/comments/i57ubx/what_is_the_best_error_handle_in_web_applicaiton/
+---
+Hi everyone. How do you handle the error in web application?. In my case. I often have to pass errors from the `repository` layer to the `handler` layer. This error is an error about operate database. It should not display to users. So I must return a 500 in handler if error not equal nil.
+```go
+/repositories/user_repository.go. send error to the service layer.
+tx := r.conn.Begin()
+if err := tx.Error; err != nil {
+	return userCreated, err
+}
+if err := tx.Create(&amp;user).Scan(&amp;userCreated).Error; err != nil {
+	tx.Rollback()
+	return userCreated, err
+}
+tx.Commit()
+return userCreated, nil
+
+/services/user_service.go receive the error 
+_, err := u.userRepository.CreateUser(user)
+if err != nil {
+	return err
+}
+return nil
+
+/handles/user_handler.go
+if err != nil {
+	ginresp.InternalError(c, "Create failed", nil, err)
+}
+```
+If I panic it in service layer. then the recovery middlewares will handle it. Does this way is best?

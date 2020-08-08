@@ -1,81 +1,47 @@
 # golang
-## [1][Nine-year-old bug in the Go standard library enables DoS](https://www.reddit.com/r/golang/comments/i59jmo/nineyearold_bug_in_the_go_standard_library/)
+## [1][Go package and CLI to download files 4x faster than cURL and Wget](https://www.reddit.com/r/golang/comments/i5yokn/go_package_and_cli_to_download_files_4x_faster/)
+- url: https://github.com/melbahja/got
+---
+
+## [2][Let's Fork built with Go and React Native](https://www.reddit.com/r/golang/comments/i5e0t9/lets_fork_built_with_go_and_react_native/)
+- url: https://v.redd.it/85paupeg3lf51
+---
+
+## [3][go-simple-mail package](https://www.reddit.com/r/golang/comments/i5t5f1/gosimplemail_package/)
+- url: https://www.reddit.com/r/golang/comments/i5t5f1/gosimplemail_package/
+---
+The package [go-simple-mail](https://github.com/xhit/go-simple-mail) was developed to send with efficiency.
+
+Currently is in production sending a rate of 1000 by seconds in a Ubuntu Server with 3GB RAM and 2 cores.
+
+The service using the package opens 500 SMTP connections concurrently and do a lot of jobs that include html generator and database queries.
+## [4][Go 1.15 Release Candidate 2 is released](https://www.reddit.com/r/golang/comments/i5hshk/go_115_release_candidate_2_is_released/)
+- url: https://groups.google.com/d/msg/golang-announce/G3atWQdoyvw/03XzzSXgAAAJ
+---
+
+## [5][Rob and Jason are joined by Ian Lance Taylor from Google. They first discuss an announcement from Conan and a blog post about embedding files into C++ applications using string literals. Then they talk to Ian Lance Taylor about the Go programming language.](https://www.reddit.com/r/golang/comments/i5o0z4/rob_and_jason_are_joined_by_ian_lance_taylor_from/)
+- url: https://cppcast.com/ian-taylor-go/
+---
+
+## [6][Nine-year-old bug in the Go standard library enables DoS](https://www.reddit.com/r/golang/comments/i59jmo/nineyearold_bug_in_the_go_standard_library/)
 - url: https://github.com/ethereum/public-attacknets/issues/12
 ---
 
-## [2][CLI tool for viewing/writing to and from Kafka, RabbitMQ and more](https://www.reddit.com/r/golang/comments/i54dnl/cli_tool_for_viewingwriting_to_and_from_kafka/)
+## [7][grpc server, client for onboarding](https://www.reddit.com/r/golang/comments/i5uot1/grpc_server_client_for_onboarding/)
+- url: https://github.com/Code-Hex/testing-grpc
+---
+
+## [8][CLI tool for viewing/writing to and from Kafka, RabbitMQ and more](https://www.reddit.com/r/golang/comments/i54dnl/cli_tool_for_viewingwriting_to_and_from_kafka/)
 - url: https://github.com/batchcorp/plumber
 ---
 
-## [3][ReadUvarint unlimited input (CVE-2020-16845) - Go 1.14.7 and Go 1.13.15 security update](https://www.reddit.com/r/golang/comments/i4wyfk/readuvarint_unlimited_input_cve202016845_go_1147/)
-- url: https://groups.google.com/u/1/g/golang-announce/c/NyPIaucMgXo/m/GdsyQP6QAAAJ?pli=1
+## [9][Anyone tired of writing database code or building CRUD APIs in Go ?](https://www.reddit.com/r/golang/comments/i5ot8a/anyone_tired_of_writing_database_code_or_building/)
+- url: https://www.reddit.com/r/golang/comments/i5ot8a/anyone_tired_of_writing_database_code_or_building/
 ---
+I've never enjoyed. building CRUD APIs in Go in fact I dislike it so much that I ended up creating up Creating Super Graph a Go library and standalone service that takes GraphQL and compiles it down to SQL. I'm currently helping a few startups adopt it and save hundreds of man hours that they can put towards more valuable parts of their app. It just occurred to be to leverage this community and extend this offer to more folks. Let me know if you think Super Graph is interesting and could help you with your app, startup, whatever I'm happy to provide some 1-on-1 time on Zoom, etc to make it work fo you. Disclaimer: Super Graph is not a startup or a funded project just a labour of love that I'm really excited about. Message me or reply on here if you want to take up on this offer.
 
-## [4][Create a dummy REST API from a json file with zero coding in seconds](https://www.reddit.com/r/golang/comments/i4t3rd/create_a_dummy_rest_api_from_a_json_file_with/)
-- url: https://www.reddit.com/r/golang/comments/i4t3rd/create_a_dummy_rest_api_from_a_json_file_with/
+[https://github.com/dosco/super-graph](https://github.com/dosco/super-graph)
+## [10][Golang for Frontend developer](https://www.reddit.com/r/golang/comments/i5k4hh/golang_for_frontend_developer/)
+- url: https://www.reddit.com/r/golang/comments/i5k4hh/golang_for_frontend_developer/
 ---
-Hello guys, long time lurker on this sub but never posted before. 
-
-I created **json-server**, a CLI tool to create a dummy REST API from a provided json file with zero coding in seconds. For each provided resource 6 full functional endpoints are created (GET x2, POST, PUT, PATCH, DELETE), that you can use right away. 
-
-Inspired by the javascript package [json-server](https://github.com/typicode/json-server) that's where the name comes from. 
-
-The next step is to create the first release, which will include binary files for Windows, Linux and macOS. Any comments/suggestions are really welcomed. You can find more info at README file.
-
-[https://github.com/chanioxaris/json-server](https://github.com/chanioxaris/json-server)
-## [5][gocv recognise ellipse](https://www.reddit.com/r/golang/comments/i5bmts/gocv_recognise_ellipse/)
-- url: https://i.redd.it/lipmzj5m8kf51.jpg
----
-
-## [6][How to programmatically get the size of a struct, incl its data?](https://www.reddit.com/r/golang/comments/i5bjie/how_to_programmatically_get_the_size_of_a_struct/)
-- url: https://www.reddit.com/r/golang/comments/i5bjie/how_to_programmatically_get_the_size_of_a_struct/
----
-I have been playing around with `unsafe.Sizeof` and `binary.Size` but neither are working for this use case. I have a struct as follows, and I am looking to find out the memory impact of it as the program continues. The issue is that structX can vary in size so `binary.Size` doesnt like it.
-
-    type struct sample {
-        data [] structX
-    }
-
-I have tried using pprof but the memory usage used varies too much, weird I know. Running a benchmark once gives 1GB usage, running it again gives 500MB, its too inconsistent. I tried using memStats but there are so many go routines running that I cant pin down the memory used by this one struct. The struct is allocated on the heap and has a lifespan of most of the running of the program. Any recommendations?
-## [7][How to proxy the keystrokes from one keyboard to another?](https://www.reddit.com/r/golang/comments/i5ck1a/how_to_proxy_the_keystrokes_from_one_keyboard_to/)
-- url: https://www.reddit.com/r/golang/comments/i5ck1a/how_to_proxy_the_keystrokes_from_one_keyboard_to/
----
-I want to proxy the keystrokes from one keyboard to another keyboard, how can I do this with Linux? Any suggestion?
-## [8][AWS Lambda in GoLang Guide](https://www.reddit.com/r/golang/comments/i59mlm/aws_lambda_in_golang_guide/)
-- url: https://www.softkraft.co/aws-lambda-in-golang/
----
-
-## [9][Go: Introduction to the Escape Analysis](https://www.reddit.com/r/golang/comments/i4w3zd/go_introduction_to_the_escape_analysis/)
-- url: https://medium.com/a-journey-with-go/go-introduction-to-the-escape-analysis-f7610174e890
----
-
-## [10][What is the best error handle in web applicaiton.](https://www.reddit.com/r/golang/comments/i57ubx/what_is_the_best_error_handle_in_web_applicaiton/)
-- url: https://www.reddit.com/r/golang/comments/i57ubx/what_is_the_best_error_handle_in_web_applicaiton/
----
-Hi everyone. How do you handle the error in web application?. In my case. I often have to pass errors from the `repository` layer to the `handler` layer. This error is an error about operate database. It should not display to users. So I must return a 500 in handler if error not equal nil.
-```go
-/repositories/user_repository.go. send error to the service layer.
-tx := r.conn.Begin()
-if err := tx.Error; err != nil {
-	return userCreated, err
-}
-if err := tx.Create(&amp;user).Scan(&amp;userCreated).Error; err != nil {
-	tx.Rollback()
-	return userCreated, err
-}
-tx.Commit()
-return userCreated, nil
-
-/services/user_service.go receive the error 
-_, err := u.userRepository.CreateUser(user)
-if err != nil {
-	return err
-}
-return nil
-
-/handles/user_handler.go
-if err != nil {
-	ginresp.InternalError(c, "Create failed", nil, err)
-}
-```
-If I panic it in service layer. then the recovery middlewares will handle it. Does this way is best?
+Hi guys. I like to think I'm a fullstack dev, but I'm currently working on the Frontend in my workplace. I have done a few things with golang, but mostly crud stuff and validation. What other things can I do with golang to get really good at it on my own? . It's unlikely that my company will use Go, but I might be moving to a company that does in future. In short, what can I do on my personal time to improve my Golang and backend knowledge.

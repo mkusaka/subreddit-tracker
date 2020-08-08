@@ -19,15 +19,90 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Is fast_jsonapi dead?](https://www.reddit.com/r/rails/comments/i53vm0/is_fast_jsonapi_dead/)
+## [2][Design Patterns and Anti-Patterns in Rails?](https://www.reddit.com/r/rails/comments/i5vg9b/design_patterns_and_antipatterns_in_rails/)
+- url: https://www.reddit.com/r/rails/comments/i5vg9b/design_patterns_and_antipatterns_in_rails/
+---
+OK, it's more like a *software engineering* topic than a rails related one. But I asked one of my friends about deleting a table manually and re-do the migration (the project is written in Django and not rails) and he told me "This is an Anti-Pattern in Django". 
+
+I knew possible dangers of the idea and I suggested it with the knowledge, but I jokingly answered him "You call everything you don't understand an anti-pattern". 
+
+Now, I'm curious, is there a set of patterns and anti-patterns SPECIFICALLY for rails?
+## [3][Deploying Rails 6 app into a subdirectory](https://www.reddit.com/r/rails/comments/i5yinq/deploying_rails_6_app_into_a_subdirectory/)
+- url: https://www.reddit.com/r/rails/comments/i5yinq/deploying_rails_6_app_into_a_subdirectory/
+---
+I'm deploying a Rails 6 application into a subfolder (/dictionnaire-app). I set config.relative\_url\_root = "/dictionnaire-app"  
+ in application.rb and also added the ENV variable according to [the documentation](https://edgeguides.rubyonrails.org/configuring.html#deploy-to-a-subdirectory-relative-url-root).
+
+However, if assets are properly rendered, links generated with the link\_to  
+ method are not updated accordingly.
+
+I read many questions related to this problem and tried to create a scope in my routes.rb file, following [these instructions](https://gist.github.com/shad1w/75e7ebbbdc5382719cd06f56bbe6acd0).
+
+            root to: "home#index"
+    
+    	scope 'dictionnaire-app' do
+    		resources :words, path: "definition", param: :slug
+    
+    		post '/search', to: 'words#search'
+    		get '/recherche', to: 'words#search_page'
+    		get '/:letter', to: 'words#alphabet_page', param: :letter, as: "alphabetic_page"
+    	end
+
+Unfortunately the app throws an error saying the page doesn't exist for this URL : [https://www.lalanguefrancaise.com/dictionnaire-app/definition/rameal](https://www.lalanguefrancaise.com/dictionnaire-app/definition/rameal)
+
+However, this URL works: [https://www.lalanguefrancaise.com/dictionnaire-app/dictionnaire-app/definition/rameal](https://www.lalanguefrancaise.com/dictionnaire-app/dictionnaire-app/definition/rameal)
+
+If I remove the scope, the pages are displayed for the right URLs, but the links generated from link\_to are not including "dictionnaire-app"...
+
+This issue seems to be from Rails ([see here](https://github.com/rails/rails/issues/24393)). Any way to find a work around?  
+Thanks !
+## [4][Is anyone using AnyCable on Heroku?](https://www.reddit.com/r/rails/comments/i5lf38/is_anyone_using_anycable_on_heroku/)
+- url: https://www.reddit.com/r/rails/comments/i5lf38/is_anyone_using_anycable_on_heroku/
+---
+Any gotchas with the deployment or did the AnyCable guide work out for you?
+## [5][Is it possible to access Rails database and model methods using an external script?](https://www.reddit.com/r/rails/comments/i5k2iv/is_it_possible_to_access_rails_database_and_model/)
+- url: https://www.reddit.com/r/rails/comments/i5k2iv/is_it_possible_to_access_rails_database_and_model/
+---
+I have a Kafka consumer which keeps polling for new messages. Once a message comes in, I want to be able to update the database in my rails application using ActiveRecord. 
+
+
+Model:
+
+
+    class XYZ &lt; ApplicationRecord
+         # ...
+         def self.update_entity_record(en_id, status)
+               # ...
+         end
+    end
+
+
+Kafka consumer:
+
+
+    # Setup Kafka connection
+    # ...
+
+    kafka.each_message(topic: my_topic) do |msg|
+           msg = msg.value
+           XYZ.update_entity_record(msg.fetch('en_id'), msg.fetch('status')
+    end
+
+
+Is it possible?
+## [6][Is fast_jsonapi dead?](https://www.reddit.com/r/rails/comments/i53vm0/is_fast_jsonapi_dead/)
 - url: https://www.reddit.com/r/rails/comments/i53vm0/is_fast_jsonapi_dead/
 ---
 It looks like this gem hasn't had any commits for over a year now. Did Netflix stop maintaining this project? Would you guys recommend using another API builder?
-## [3][Is it possible to put Sidekiq retries into a different queue?](https://www.reddit.com/r/rails/comments/i54wdy/is_it_possible_to_put_sidekiq_retries_into_a/)
+## [7][Is it possible to put Sidekiq retries into a different queue?](https://www.reddit.com/r/rails/comments/i54wdy/is_it_possible_to_put_sidekiq_retries_into_a/)
 - url: https://www.reddit.com/r/rails/comments/i54wdy/is_it_possible_to_put_sidekiq_retries_into_a/
 ---
 I would like to put Sidekiq retries into a lower priority queue. Is this possible?
-## [4][Checklist before putting moving codebase to a public repo?](https://www.reddit.com/r/rails/comments/i55cqa/checklist_before_putting_moving_codebase_to_a/)
+## [8][I’m taking over an app which has zero test. I installed minitest and guard but running tests is extremely slow.](https://www.reddit.com/r/rails/comments/i5574g/im_taking_over_an_app_which_has_zero_test_i/)
+- url: https://www.reddit.com/r/rails/comments/i5574g/im_taking_over_an_app_which_has_zero_test_i/
+---
+Every time I run the test suite or that guard detects a change, the tests take something like 45 seconds to more then one minute to start. That’s very unpractical especially since this app is quite big and has zero test written... Where should I look to try to understand and fix that first issue?
+## [9][Checklist before putting moving codebase to a public repo?](https://www.reddit.com/r/rails/comments/i55cqa/checklist_before_putting_moving_codebase_to_a/)
 - url: https://www.reddit.com/r/rails/comments/i55cqa/checklist_before_putting_moving_codebase_to_a/
 ---
 I have a webapp that I made in rails a while ago and I want to share a copy of the code on a public repo (for potential use in a portfolio if I finally get the courage to try and move from hobbyist to professional).  
@@ -49,94 +124,12 @@ Thing's I've checked:
 &amp;#x200B;
 
 Anything else I may have overlooked or should consider?
-## [5][I’m taking over an app which has zero test. I installed minitest and guard but running tests is extremely slow.](https://www.reddit.com/r/rails/comments/i5574g/im_taking_over_an_app_which_has_zero_test_i/)
-- url: https://www.reddit.com/r/rails/comments/i5574g/im_taking_over_an_app_which_has_zero_test_i/
+## [10][Am I allowed to invite everybody to Ruby on Rails Discord server?](https://www.reddit.com/r/rails/comments/i5eq79/am_i_allowed_to_invite_everybody_to_ruby_on_rails/)
+- url: https://www.reddit.com/r/rails/comments/i5eq79/am_i_allowed_to_invite_everybody_to_ruby_on_rails/
 ---
-Every time I run the test suite or that guard detects a change, the tests take something like 45 seconds to more then one minute to start. That’s very unpractical especially since this app is quite big and has zero test written... Where should I look to try to understand and fix that first issue?
-## [6][Working with data from an SQLEXPRESS server](https://www.reddit.com/r/rails/comments/i4xrp4/working_with_data_from_an_sqlexpress_server/)
+I'm hoping to gather all Ruby on Rails lovers to learn and communicate.
+https://discord.gg/yUpUNAZ
+## [11][Working with data from an SQLEXPRESS server](https://www.reddit.com/r/rails/comments/i4xrp4/working_with_data_from_an_sqlexpress_server/)
 - url: https://www.reddit.com/r/rails/comments/i4xrp4/working_with_data_from_an_sqlexpress_server/
 ---
 We have an existing SQLEXPRESS database that has some valuable information in it. How do I build a tunnel between rails in that server. Our primary db server is postgresql. Is it possible to establish an API based connection with that server? We simply need to read the data, and build reports with it.
-## [7][Looking to track user activity through (GUI events)](https://www.reddit.com/r/rails/comments/i4w504/looking_to_track_user_activity_through_gui_events/)
-- url: https://www.reddit.com/r/rails/comments/i4w504/looking_to_track_user_activity_through_gui_events/
----
-Hello! I'm wondering if there is a clean way of keeping track of user clicks/GUI events? I am trying to flag whenever a user is active on the site. Not really concerned with what page they are on, etc. I only need to know if a user has clicked or interacted with the GUI.
-
-Not sure how feasible this is, maybe it's possible to have a script that listens for any and all GUI events/clicks? 
-
-I'm new to Rails and would love to hear people's thoughts on this. Open to gem suggestions.
-## [8][Quieres aprender Ruby &amp; Ruby on Rails?](https://www.reddit.com/r/rails/comments/i4yev9/quieres_aprender_ruby_ruby_on_rails/)
-- url: https://www.reddit.com/r/rails/comments/i4yev9/quieres_aprender_ruby_ruby_on_rails/
----
-Querida comunidad queria comentarles que hemos creado un server en Discord el cual tiene como propósito enseñar sobre programación.
-
-Creo que la mejor forma de aprender es enseñar, por supuesto no somos formadores, quizá sabemos un poco de tecnología pero exactamente ese es el propósito de este server "Aprender" y en específico del ecosistema "Ruby y Ruby On Rails".
-
-En el canal de voz \[Grupo de lectura\] tendremos un proyecto que trataremos de implementar por 1 hora diaria de lunes a viernes (8.00pm Colombia), donde crearemos un ERP, queremos que aprendas temas como planeación, metodologías ágiles, buenas prácticas, test, desarrollo, deploy, documentation, trabajo en remoto, cómo trabajar en equipo \[roles, responsabilidades, tiempos de entrega, etc\], la idea principal es aprender haciendo/enseñando, así que cualquier tipo de aporte que nos lleve a lograr ese objetivo es bienvenido. 
-
-Intentaremos seguir un libro del profesor Javier Vazquez ([https://rclibros.es/producto/ruby-on-rails-aprende-a-crear-aplicaciones-web-desde-cero/](https://rclibros.es/producto/ruby-on-rails-aprende-a-crear-aplicaciones-web-desde-cero/)) que aborda el desarrollo de un software de este tipo y el cual encontrarás en el canal \[#libro\], es solo una guia como para estar en la misma página y que todos hablemos el mismo idioma, no es obligación que lo tengas para que puedas compartir en esta comunidad pero a mi te percepción será de mucha ayuda.
-
-Desde ya te invitamos a que nos compartas que piensas de esta metodología y si es posible nos recomiendes material para ahondar mejor esa perspectiva de aprender haciendo/enseñando, siéntete libre de hacerlo en el canal \[#general\]!
-
-&amp;#x200B;
-
-Puedes unirte o invitar a tus amigos desde el siguiente link [https://discord.gg/P4wZGsQ](https://discord.gg/P4wZGsQ)
-## [9][Has the tech for hey.com been officially released yet?](https://www.reddit.com/r/rails/comments/i4mi5t/has_the_tech_for_heycom_been_officially_released/)
-- url: https://www.reddit.com/r/rails/comments/i4mi5t/has_the_tech_for_heycom_been_officially_released/
----
-If so, what is it? If not, when will it be?
-## [10][Summernote on Rails 6](https://www.reddit.com/r/rails/comments/i4ovvm/summernote_on_rails_6/)
-- url: https://www.reddit.com/r/rails/comments/i4ovvm/summernote_on_rails_6/
----
-The original gem is for rails 3, I can't really figure out how to make it work on Rails 6. Can somebody help?
-
-The guide I am trying to follow:
-
-[https://github.com/summernote/summernote-rails](https://github.com/summernote/summernote-rails)
-## [11][Docker Rails app error with webpacker's config? "Webpacker::Manifest::MissingEntryError](https://www.reddit.com/r/rails/comments/i4koht/docker_rails_app_error_with_webpackers_config/)
-- url: https://www.reddit.com/r/rails/comments/i4koht/docker_rails_app_error_with_webpackers_config/
----
-Hi there. Trying to display hello world on my homepage to make sure my app is going to run properly. I was able to get to the Rails welcome page, but as soon as I created the first controller for the homepage I'm getting this error output:
-
-     Started GET "/" for 172.20.0.1 at 2020-08-06 03:46:18 +0000
-    web_1  | Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
-    web_1  | Processing by HomeController#index as HTML
-    web_1  |   Rendering home/index.html.erb within layouts/application
-    web_1  |   Rendered home/index.html.erb within layouts/application (Duration: 36.4ms | Allocations: 297)
-    web_1  | /usr/local/bundle/gems/sprockets-rails-3.2.1/lib/sprockets/rails/helper.rb:355: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
-    web_1  | /usr/local/bundle/gems/sprockets-4.0.2/lib/sprockets/base.rb:118: warning: The called method `[]' is defined here
-    web_1  | [Webpacker] Compiling...
-    web_1  | [Webpacker] Compilation failed:
-    web_1  | yarn run v1.22.4
-    web_1  | info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
-    web_1  |
-    web_1  |
-    web_1  | error Command "webpack" not found.
-    web_1  |
-    web_1  | Completed 500 Internal Server Error in 3013ms (ActiveRecord: 0.0ms | Allocations: 10122)
-    web_1  |
-    web_1  |
-    web_1  |
-    web_1  | ActionView::Template::Error (Webpacker can't find application.js in /CanaBnb/public/packs/manifest.json. Possible causes:
-    web_1  | 1. You want to set webpacker.yml value of compile to true for your environment
-    web_1  |    unless you are using the `webpack -w` or the webpack-dev-server.
-    web_1  | 2. webpack has not yet re-run to reflect updates.
-    web_1  | 3. You have misconfigured Webpacker's config/webpacker.yml file.
-    web_1  | 4. Your webpack configuration is not creating a manifest.
-    web_1  | Your manifest contains:
-    web_1  | {
-    web_1  | }
-    web_1  | ):
-    web_1  |      6:     &lt;%= csp_meta_tag %&gt;
-    web_1  |      7:
-    web_1  |      8:     &lt;%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %&gt;
-    web_1  |      9:     &lt;%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %&gt;
-    web_1  |     10:   &lt;/head&gt;
-    web_1  |     11:
-    web_1  |     12:   &lt;body&gt;
-    web_1  |
-    web_1  | app/views/layouts/application.html.erb:9
-
-My eyes go to those "Possible causes" it lists, but I'm not sure if that's it because I also see the Webpacker compilation failed above that. Also the error Command "webpack" not found. It's like it has multiple reasons for this error and I'm just not sure how to fix this. Any help is greatly appreciated. I made a github repo  [here](https://github.com/Kyle-Williamson-Dev/CanaBnb)
-
-&amp;#x200B;

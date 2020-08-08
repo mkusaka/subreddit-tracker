@@ -1,12 +1,27 @@
 # androiddev
-## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/i5d2yl/weekly_anything_goes_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/i5d2yl/weekly_anything_goes_thread/
+## [1][App Feedback Thread - August 08, 2020](https://www.reddit.com/r/androiddev/comments/i5yb1v/app_feedback_thread_august_08_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/i5yb1v/app_feedback_thread_august_08_2020/
 ---
-Here's your chance to talk about whatever!
+This thread is for getting feedback on your own apps.
 
-Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
+####Developers:
 
-Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
+- must **provide feedback** for others
+- must include **Play Store**, **GitHub**, or **BitBucket** link
+- must make top level comment
+- must make effort to respond to questions and feedback from commenters
+- may be open or closed source
+
+####Commenters:
+
+- must give **constructive feedback** in replies to top level comments
+- must not include links to other apps
+
+To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
+
+As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
+
+\- Da Mods
 ## [2][Weekly Questions Thread - August 03, 2020](https://www.reddit.com/r/androiddev/comments/i2uyzu/weekly_questions_thread_august_03_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/i2uyzu/weekly_questions_thread_august_03_2020/
 ---
@@ -25,31 +40,18 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][How do I improve my Android skills and learn "Good practices"?](https://www.reddit.com/r/androiddev/comments/i577pd/how_do_i_improve_my_android_skills_and_learn_good/)
-- url: https://www.reddit.com/r/androiddev/comments/i577pd/how_do_i_improve_my_android_skills_and_learn_good/
+## [3][Is it possible to make a reminder app that acts like an alarm app?](https://www.reddit.com/r/androiddev/comments/i5udj4/is_it_possible_to_make_a_reminder_app_that_acts/)
+- url: https://www.reddit.com/r/androiddev/comments/i5udj4/is_it_possible_to_make_a_reminder_app_that_acts/
 ---
-I've a good idea of app development and have made 3 apps yet. But whenever I get stuck I always use YouTube videos. I don't know if they are good enough.
+I was just watching this podcast where the hosts were complaining about not getting reminder notifications. Apparently they just blend in with all their other unimportant notifications and sometimes their phone does this battery saver thing where it just won't receive notifications until they unlock. They mentioned they'd resorted to setting alarms but this was impractical because you can't set an alarm more than 24 hours in advance.
 
-I need to learn and make my code upto the accepted standards. Like how to write good code, what all things to use , how to improve security and all this. How are codes written by professionals at Google and Amazon. I don't have any idea how close random Indian YouTube videos are to their standards.
-
-Can someone guide me on how I can improve my coding skills. Thank you
-## [4][Using `ContentProvider` to receive context in your library.](https://www.reddit.com/r/androiddev/comments/i5a2cf/using_contentprovider_to_receive_context_in_your/)
-- url: https://www.reddit.com/r/androiddev/comments/i5a2cf/using_contentprovider_to_receive_context_in_your/
----
-Was curious about how `Picasso.get()` works so I took a look at the main classes it has. (in Github). I noticed that the `Context` is received using a `ContentProvider`. For a library, this is very cool so that you don't have to ask for the context on the clients app side. However, I want to know, is there any risk, problem, something you should care about with this approach? 
-If it's safe, why are still a lot of libraries asking for a context?
-## [5][Are there APIs that allow devs to replicate Google Translate's "brush over the words to translate" feature?](https://www.reddit.com/r/androiddev/comments/i5akyc/are_there_apis_that_allow_devs_to_replicate/)
-- url: https://www.reddit.com/r/androiddev/comments/i5akyc/are_there_apis_that_allow_devs_to_replicate/
----
-To those who aren't familiar with Google Translate: there's a feature where you take a picture of text (e.g. a road sign or a book), and you use your finger to "paint over" the words you want to translate.
-
-Are there ways to replicate this in an app? Are there APIs for this?
-## [6][[UPDATE] I am a self-taught developer who just finished working on an app for controlling Philips Hue via Samsung Galaxy Edge panel.](https://www.reddit.com/r/androiddev/comments/i5d93x/update_i_am_a_selftaught_developer_who_just/)
+I have third party alarm apps and they have a completely custom ui when they go off but they are 100% reliable in my experience. So I'm guessing android somehow knows that they're alarms and somehow wakes the phone when it's time. So my question is what api are they using and will it allow me to set an "alarm" for 30 days from now at 2:15pm?
+## [4][[UPDATE] I am a self-taught developer who just finished working on an app for controlling Philips Hue via Samsung Galaxy Edge panel.](https://www.reddit.com/r/androiddev/comments/i5d93x/update_i_am_a_selftaught_developer_who_just/)
 - url: https://www.reddit.com/r/androiddev/comments/i5d93x/update_i_am_a_selftaught_developer_who_just/
 ---
 # OP: [https://www.reddit.com/r/androiddev/comments/hzjuu9/i\_am\_a\_selftaught\_developer\_who\_just\_finished/](https://www.reddit.com/r/androiddev/comments/hzjuu9/i_am_a_selftaught_developer_who_just_finished/)
 
-# Galaxy Store: [http://apps.samsung.com/appquery/appDetail.as?appId=com.nilstrubkin.hueedge](http://apps.samsung.com/appquery/appDetail.as?appId=com.nilstrubkin.hueedge)
+# Galaxy Store (if you get an error, search for "Hue" on Galaxy Store app): [http://apps.samsung.com/appquery/appDetail.as?appId=com.nilstrubkin.hueedge](http://apps.samsung.com/appquery/appDetail.as?appId=com.nilstrubkin.hueedge)
 
 &amp;#x200B;
 
@@ -88,42 +90,61 @@ Source: [https://github.com/nils-trubkin/Hue-Edge](https://github.com/nils-trubk
 **Conclusion**
 
 This app turned out great and I feel confident enough to release it. I will still take any feedback and suggestions to further improve the app.
-## [7][Android 10 EACCES (Permission denied) issue](https://www.reddit.com/r/androiddev/comments/i5d3zz/android_10_eacces_permission_denied_issue/)
-- url: https://www.reddit.com/r/androiddev/comments/i5d3zz/android_10_eacces_permission_denied_issue/
+## [5][Can I use a prepaid Visa/MasterCard card to register for the Dev Console?](https://www.reddit.com/r/androiddev/comments/i5xh23/can_i_use_a_prepaid_visamastercard_card_to/)
+- url: https://www.reddit.com/r/androiddev/comments/i5xh23/can_i_use_a_prepaid_visamastercard_card_to/
 ---
-I have updated my app to API level 29 so it broke my image picking mechanism. Eariler everything was working fine. Now when I searched over forums/stackoverflow I came to know that I have to migrate to scoped storage framework in order to make it work. I found 2 things so far 
-1. opt out of scoped storage 
-2. Read the stream and write into cache directory so that my app can access it.
-
-My question is that is it mandatory to copy the file for using it. If yes I'm afriad to use this approach as it will consume lot of time because my app uses large videos which we upload to server.
-
-Is it possible to use this framework to just read the URI of image/video without copying to cache directory ? Did anyone worked on it ?
-
-for reference I followed these articles
-https://developer.android.com/guide/topics/providers/document-provider
-https://medium.com/@sriramaripirala/android-10-open-failed-eacces-permission-denied-da8b630a89df
-https://issuetracker.google.com/issues/130494105
-## [8][AndroidBites | Understand Accumulator Pattern Before You Regret.](https://www.reddit.com/r/androiddev/comments/i568al/androidbites_understand_accumulator_pattern/)
-- url: https://chetangupta.net/reduce-fold
+I have a client who needs me to make an app and list it on the Google Play Store. I have a fresh Google account to register with, but I'll have to give this account to the customer after the work is done, so can I use a prepaid debit card to ensure my privacy?
+## [6][Playing Netflix content in your own app](https://www.reddit.com/r/androiddev/comments/i5x8c0/playing_netflix_content_in_your_own_app/)
+- url: https://www.reddit.com/r/androiddev/comments/i5x8c0/playing_netflix_content_in_your_own_app/
 ---
+I've looked into the Rave Android app [https://play.google.com/store/apps/details?id=com.wemesh.android&amp;hl=en](https://play.google.com/store/apps/details?id=com.wemesh.android&amp;hl=en) which plays Netflix content in its app and does sync across multiple users. I was curious as to how they by-pass the DRM protection of the content.
 
-## [9][How would one demo an android app on a portfolio? Are there better options than screenshots?](https://www.reddit.com/r/androiddev/comments/i5bwrn/how_would_one_demo_an_android_app_on_a_portfolio/)
-- url: https://www.reddit.com/r/androiddev/comments/i5bwrn/how_would_one_demo_an_android_app_on_a_portfolio/
----
-Hi all, I'm curious how most people share their work.
+However, this is already done for Kodi  [https://github.com/CastagnaIT/plugin.video.netflix](https://github.com/CastagnaIT/plugin.video.netflix)  
+Rave does it for Android.
 
-Having static screenshots seems like it isn't very interactable (compared to deploying a front-end site and having a link in your portfolio to xyz.com), and asking people to download an app just to see what it does seems like too much to ask.
+I've had some luck to decompile the Rave APK and constructed a sample app that fetches the Manifest file responsible for playback. [https://github.com/Veeresh8/InputStream-Netflix](https://github.com/Veeresh8/InputStream-Netflix) (sample app)
 
- Is there an online emulator that can be used to demo mobile apps?
-## [10][Is there any free API that can fetch me all the series available on online steam platform such as Netflix, Amazon Prime?](https://www.reddit.com/r/androiddev/comments/i5dfwj/is_there_any_free_api_that_can_fetch_me_all_the/)
-- url: https://www.reddit.com/r/androiddev/comments/i5dfwj/is_there_any_free_api_that_can_fetch_me_all_the/
+Has anyone done something like this before? I'm having problems playing the content getting an EOF exception but can't seem to figure out why.
+
+[https://youtu.be/3Y3R\_snaDDc?t=1115](https://youtu.be/3Y3R_snaDDc?t=1115) this will give a complete picture of what I'm talking about.
+
+Any help is appreciated, thanks!
+## [7][square/anvil - A Kotlin compiler plugin to make dependency injection with Dagger 2 easier](https://www.reddit.com/r/androiddev/comments/i5i552/squareanvil_a_kotlin_compiler_plugin_to_make/)
+- url: https://github.com/square/anvil
 ---
 
-## [11][How can we use existing styles in styles.xml in Jetpack Compose? Or even is that possible?](https://www.reddit.com/r/androiddev/comments/i57xmo/how_can_we_use_existing_styles_in_stylesxml_in/)
-- url: https://www.reddit.com/r/androiddev/comments/i57xmo/how_can_we_use_existing_styles_in_stylesxml_in/
+## [8][Custom Rating With kotlin](https://www.reddit.com/r/androiddev/comments/i5v1h8/custom_rating_with_kotlin/)
+- url: https://www.reddit.com/r/androiddev/comments/i5v1h8/custom_rating_with_kotlin/
 ---
+Source code link inside article
 
-## [12][Flutter vs React Native: Best for Cross-Platform Development](https://www.reddit.com/r/androiddev/comments/i5d5zy/flutter_vs_react_native_best_for_crossplatform/)
-- url: https://tekkiwebsolutions.com/blog/flutter-vs-react-native/
+https://medium.com/@rithvik2994/custom-rating-system-android-3185b4f94596
+## [9][How do I improve my Android skills and learn "Good practices"?](https://www.reddit.com/r/androiddev/comments/i577pd/how_do_i_improve_my_android_skills_and_learn_good/)
+- url: https://www.reddit.com/r/androiddev/comments/i577pd/how_do_i_improve_my_android_skills_and_learn_good/
+---
+I've a good idea of app development and have made 3 apps yet. But whenever I get stuck I always use YouTube videos. I don't know if they are good enough.
+
+I need to learn and make my code upto the accepted standards. Like how to write good code, what all things to use , how to improve security and all this. How are codes written by professionals at Google and Amazon. I don't have any idea how close random Indian YouTube videos are to their standards.
+
+Can someone guide me on how I can improve my coding skills. Thank you
+## [10][How to become a proficient Android Mobile Developer](https://www.reddit.com/r/androiddev/comments/i5jx3x/how_to_become_a_proficient_android_mobile/)
+- url: https://www.reddit.com/r/androiddev/comments/i5jx3x/how_to_become_a_proficient_android_mobile/
+---
+I have recently started learning JAVA and Android studio, I do have so much more to learn, however I started getting curious on whether "learning by watching tutorials" was the best way to learn.  I personally feel like I do have a relative grasp of basic concepts, however, I do not feel like I remember any of the syntax. Would it be better to stop "learning" and just start making personal projects and later google questions I have relating some issues ? or should I follow what I am currently doing ? 
+
+&amp;#x200B;
+
+The reason why I am sticking to "tutorial hell" is that I feel like I could miss on some major concept, (like interfaces or threading) and not know that i missed out on it, making me not know that the possibility even exists. I don't know if that makes sense... If it doesnt please let me know i will edit and try to rephrase my last sentence. 
+
+&amp;#x200B;
+
+Anyways, thanks in advance for the help !
+## [11][Using `ContentProvider` to receive context in your library.](https://www.reddit.com/r/androiddev/comments/i5a2cf/using_contentprovider_to_receive_context_in_your/)
+- url: https://www.reddit.com/r/androiddev/comments/i5a2cf/using_contentprovider_to_receive_context_in_your/
+---
+Was curious about how `Picasso.get()` works so I took a look at the main classes it has. (in Github). I noticed that the `Context` is received using a `ContentProvider`. For a library, this is very cool so that you don't have to ask for the context on the clients app side. However, I want to know, is there any risk, problem, something you should care about with this approach? 
+If it's safe, why are still a lot of libraries asking for a context?
+## [12][Return Early Pattern](https://www.reddit.com/r/androiddev/comments/i5f1a1/return_early_pattern/)
+- url: https://medium.com/@leonelmenaia/return-early-pattern-3d18a41bba8
 ---
 

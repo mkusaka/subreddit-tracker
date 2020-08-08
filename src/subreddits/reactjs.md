@@ -85,57 +85,93 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
-## [3][How windowing saved our data table](https://www.reddit.com/r/reactjs/comments/i59bdm/how_windowing_saved_our_data_table/)
-- url: https://www.rookout.com/blog/a-window-of-opportunity-how-windowing-saved-our-data-table/#
+## [3][So I made Reddit with Instagram's UI](https://www.reddit.com/r/reactjs/comments/i5t04c/so_i_made_reddit_with_instagrams_ui/)
+- url: https://www.reddit.com/r/reactjs/comments/i5t04c/so_i_made_reddit_with_instagrams_ui/
+---
+Hey guys, I'm new to reactjs. I thought the best way to learn it to try to make my own project, so chose Reddit's API and tried to build a web app with Instagram's UI.
+
+Please have a look at it...
+
+DEMO:  https://redditfornormies.herokuapp.com/ 
+
+source code:  https://github.com/jaesharma/redditfornormies 
+
+I'm still trying to improve this ... , implemented all major features I could think of... please check out and give your reviews and suggestions on how can I make It even better. Thanks.
+
+log in with your Reddit id to have a better experience.
+## [4][State of Frontend 2020 Survey - 74% use React, 34% think Redux will be dead in 3 years, Next.js/Gatsby are basically tied for SSG](https://www.reddit.com/r/reactjs/comments/i5h7ou/state_of_frontend_2020_survey_74_use_react_34/)
+- url: https://tsh.io/state-of-frontend/
 ---
 
-## [4][TypeScript + React: Why I don't use React.FC [Article by Stefan Baumgartner]](https://www.reddit.com/r/reactjs/comments/i5bbza/typescript_react_why_i_dont_use_reactfc_article/)
-- url: https://fettblog.eu/typescript-react-why-i-dont-use-react-fc/
+## [5][How can I update the site after deploying the app?](https://www.reddit.com/r/reactjs/comments/i5xide/how_can_i_update_the_site_after_deploying_the_app/)
+- url: https://www.reddit.com/r/reactjs/comments/i5xide/how_can_i_update_the_site_after_deploying_the_app/
+---
+I have created the built react app and deployed it with the nginx. I want to update the deployed react app, can I just rebuilt it?
+## [6][When do you decide to split your code? (React.lazy)](https://www.reddit.com/r/reactjs/comments/i5yisg/when_do_you_decide_to_split_your_code_reactlazy/)
+- url: https://www.reddit.com/r/reactjs/comments/i5yisg/when_do_you_decide_to_split_your_code_reactlazy/
+---
+I can imagine there's a  great variety of ideas about this, but I'd like to hear yours!
+## [7][Let's Fork built with Go and React Native](https://www.reddit.com/r/reactjs/comments/i5wobc/lets_fork_built_with_go_and_react_native/)
+- url: https://v.redd.it/85paupeg3lf51
 ---
 
-## [5][I know this is most likely a dumb question.. how do I change my React site from http to https?](https://www.reddit.com/r/reactjs/comments/i4uws3/i_know_this_is_most_likely_a_dumb_question_how_do/)
-- url: https://www.reddit.com/r/reactjs/comments/i4uws3/i_know_this_is_most_likely_a_dumb_question_how_do/
----
-It says it’s not a secure site and it’s hard for some people to get to it I guess due to their computer blocking it or something? Is this because it’s http?
-## [6][A Journey through React Hooks](https://www.reddit.com/r/reactjs/comments/i5c3cs/a_journey_through_react_hooks/)
-- url: https://www.loginradius.com/engineering/blog/a-journey-through-react-hooks/
+## [8][A free dashboard built with React + Tailwind CSS](https://www.reddit.com/r/reactjs/comments/i5ituq/a_free_dashboard_built_with_react_tailwind_css/)
+- url: https://github.com/estevanmaito/windmill-dashboard-react
 ---
 
-## [7][How is UI usually 'designed' in React?](https://www.reddit.com/r/reactjs/comments/i5b5x6/how_is_ui_usually_designed_in_react/)
-- url: https://www.reddit.com/r/reactjs/comments/i5b5x6/how_is_ui_usually_designed_in_react/
+## [9][Redux or ContextAPI?](https://www.reddit.com/r/reactjs/comments/i5yeo4/redux_or_contextapi/)
+- url: https://www.reddit.com/r/reactjs/comments/i5yeo4/redux_or_contextapi/
 ---
-*TL;DR: what do you think / know is used often to design the UI in professional apps?*
-
-For the past couple of months I've been working with, among others, React.  
-I've been using mainly Material- and Semantic UI for designing my apps.
-
-However, these are what they call CSS-in-JS solutions and there are obviously many more.  
-Because of that, it leads me to believe that there is also not one common way to design apps in professional apps.
-
-On the other hand I'm doubting whether React developers are generally considered to do the design of the UI or whether its common to have other people taking care of making things look polished.
-
-However, from your experience: **what do you think / know is used often to design the UI in professional apps?**
-## [8][Performance Optimizations for React Native Applications](https://www.reddit.com/r/reactjs/comments/i5btxt/performance_optimizations_for_react_native/)
-- url: https://blog.soshace.com/performance-optimizations-for-react-native-applications/
+I started learning React few weeks ago and now that my project is getting a little bit bigger, having a way to manage the state became crucial. The only issue is that I tried to learn Redux and it's so complicated... I heard about the contextAPI provided by React and I wanted to know your thoughts about it and if it's as reliable as Redux?
+## [10][Test Driven Development (TDD) with React Testing Library &amp; Mock Service Worker](https://www.reddit.com/r/reactjs/comments/i5xxyx/test_driven_development_tdd_with_react_testing/)
+- url: https://medium.com/@siriloof/test-driven-development-tdd-with-react-testing-library-mock-service-worker-b23c9fedf6fa?source=friends_link&amp;sk=66a82be05cfcc2b0babb54f8d9205fc3
 ---
 
-## [9][Basikit over Ant design](https://www.reddit.com/r/reactjs/comments/i5b8gt/basikit_over_ant_design/)
-- url: https://www.reddit.com/r/reactjs/comments/i5b8gt/basikit_over_ant_design/
----
-If you want to use something like Ant design, but feel unsure since it’s Alibaba building it, you should probably take a look at [Basikit](www.basikit.com).
-## [10][Yeoman Generator for new React Templates](https://www.reddit.com/r/reactjs/comments/i5dvy1/yeoman_generator_for_new_react_templates/)
-- url: https://www.reddit.com/r/reactjs/comments/i5dvy1/yeoman_generator_for_new_react_templates/
----
-I built and open sourced a Yeoman Generator for new React + JavaScript / TypeScript templates here: [https://www.npmjs.com/package/generator-react-scaffolder](https://www.npmjs.com/package/generator-react-scaffolder)
-
-Check it out and feel free to ask any questions.  Any and all feedback welcome!
-
-(note: generated templates were built with Node 14.x in mind, but you *should* have success dropping that down to 12.x)
-## [11][My first completed side project! It ranks the most listened to artists on Spotify](https://www.reddit.com/r/reactjs/comments/i57j9u/my_first_completed_side_project_it_ranks_the_most/)
-- url: https://spotifyartist.netlify.app/
+## [11][Setting up Electron + React with Typescript](https://www.reddit.com/r/reactjs/comments/i5x4l1/setting_up_electron_react_with_typescript/)
+- url: https://dev.to/franamorim/series/8182
 ---
 
-## [12][[Tutorial] Alarm Widget with Electron + React #1](https://www.reddit.com/r/reactjs/comments/i5dg25/tutorial_alarm_widget_with_electron_react_1/)
-- url: https://dev.to/franamorim/tutorial-reminder-widget-with-electron-react-1hj9
+## [12][State values don't update in event listener](https://www.reddit.com/r/reactjs/comments/i5wy98/state_values_dont_update_in_event_listener/)
+- url: https://www.reddit.com/r/reactjs/comments/i5wy98/state_values_dont_update_in_event_listener/
 ---
+Hello, tried asking this on stackoverflow, but didn't get any responses. I am using this piece of code to determine what to do when the state of the youtube player changes, and always want to return if the user is not host:
 
+    const [host, setHost] = useState()
+    const [yourID, setYourID] = useState();
+    
+    useEffect(() =&gt; {
+            socketRef.current = io.connect('/');
+    
+            socketRef.current.on("host", id =&gt; {
+                setHost(id);
+            })
+    
+            socketRef.current.on("your id", id =&gt; {
+                setYourID(id);
+            })
+    
+        }, []);
+    
+    function onPlayerStateChange(e) {
+            console.log(host)
+            console.log(yourID)
+            if (host !== yourID) return
+    
+            switch (e.data) {
+                // the logic to determine what to do...
+            }
+        }
+
+Hovewer, both `host` and `yourID` are always returning `undefined`. On the other hand, when using a function like this on some button click, it returns the correct values:
+
+    function test() {
+        console.log(host)         
+        console.log(yourID) 
+    }
+    &lt;button onClick={test}&gt;test&lt;/button&gt;
+
+ My questions are as follows:
+
+1. Why won't the values ever update in `onPlayerStateChange`, but update in other functions?
+2. How should I rewrite the code? Using `useRef` worked for me, but I also use `yourID` and `host`  
+ to conditionally render some elements on the page, so that wouldn't work.

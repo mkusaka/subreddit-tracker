@@ -1,211 +1,111 @@
 # aws
-## [1][AWS Lambda now supports EFS. Practice hands-on with this exercise.](https://www.reddit.com/r/aws/comments/i5a20j/aws_lambda_now_supports_efs_practice_handson_with/)
-- url: http://aws-dojo.com/excercises/excercise7
+## [1][DynamoDB atomic counter](https://www.reddit.com/r/aws/comments/i5wgz5/dynamodb_atomic_counter/)
+- url: https://www.reddit.com/r/aws/comments/i5wgz5/dynamodb_atomic_counter/
 ---
+Hi,
 
-## [2][Hands-on beginner tutorial: Implementing a highly available, scalable and cost-efficient video resizing service using serverless architecture with AWS Lambda, SNS and SQS](https://www.reddit.com/r/aws/comments/i4wd66/handson_beginner_tutorial_implementing_a_highly/)
-- url: http://blog.nghdang.com/2020/08/03/implementing-a-highly-available-scalable-and-cost-efficient-video-processing-service-using-serverless-architecture-with-aws-lambda-sns-and-sqs/
----
+DynamoDB UpdateItem documentation has an example of how to make an atomic counter.
 
-## [3][Help with Slackbot Chatbot](https://www.reddit.com/r/aws/comments/i5aolq/help_with_slackbot_chatbot/)
-- url: https://www.reddit.com/r/aws/comments/i5aolq/help_with_slackbot_chatbot/
----
-Hi Everyone,
-
-I’m trying to develop a slack bot that’s is hosted on AWS. 
-
-Originally I thought about using Lex, Lambda, cloud watch and maybe cognito. 
-
-Or could use elastic beanstalk with ec2 and s3? 
-
-I am wanting to implement a CI/CD pipeline as well from my GitHub Repo.
-
-I also need to use API requests on a server not hosted on AWS to gather information for the slack bot.
-
-Any thoughts on how I could achieve this ? Never done anything like this before so looking for some ideas. TIA
-## [4][How to get Pipeline name from an SNS message in AWS Lambda?](https://www.reddit.com/r/aws/comments/i5d2sk/how_to_get_pipeline_name_from_an_sns_message_in/)
-- url: https://www.reddit.com/r/aws/comments/i5d2sk/how_to_get_pipeline_name_from_an_sns_message_in/
----
-Hi all,
-
-I am having big trouble with getting the sourcePipelineName value out of the SNS message triggering one of my functions.
-
-What I have as an example is this:
-
-    def get_ami_id_from_ib_notification(ib_notification):
-        for resource in ib_notification['outputResources']['amis']:
-            if resource['region'] == os.environ['AWS_REGION']:
-                return(resource['image'])
-            else:
-                return(None)
-
-... and it works perfectly for getting the AMI-ID back. I tried to get sourcePipelineName the same way, but no luck (though I don't need to check for anything additional):
-
-    def get_asg_name_from_ib_notification(ib_notification):
-    	for resource in ib_notification:
-    		return(resource['sourcePipelineName'])
-
-But it results in:
-
-    [ERROR] TypeError: string indices must be integers
-    Traceback (most recent call last):
-      File "/var/task/lambda_function.py", line 99, in lambda_handler
-        asg_name = get_asg_name_from_ib_notification(ib_notification)
-      File "/var/task/lambda_function.py", line 25, in get_asg_name_from_ib_notification
-        return(resource['sourcePipelineName'])
-
-According to [https://docs.aws.amazon.com/cli/latest/reference/imagebuilder/get-image.html](https://docs.aws.amazon.com/cli/latest/reference/imagebuilder/get-image.html) there should be a key called sourcePipelineName available.
-
-What am I doing wrong?
-## [5][Is there a way to obtain the list of users of a user pool from another account?](https://www.reddit.com/r/aws/comments/i5a7dr/is_there_a_way_to_obtain_the_list_of_users_of_a/)
-- url: https://www.reddit.com/r/aws/comments/i5a7dr/is_there_a_way_to_obtain_the_list_of_users_of_a/
----
-Basically I'm building a user management portal for my company, and we have users spread across different accounts. 
-
-When I try to get the users from a difference account, I'm getting the error "ResourceNotFoundException: User pool #### does not exist."
-
-I figured that this means that the user pool does not exist in this account. Whenever I switch my AWS account on my IDE, it'll get the users from that account.
-
-    const AWS = require('aws-sdk');
-    var docClient = new AWS.DynamoDB.DocumentClient();
-
-    exports.main = (event, context, callback) =&gt; {
-
-    let id = event.pathParameters.id;
-    let account = event.pathParameters.account;
-    let accessKeyId, secretAccessKey;
-    function getAccount() {
-      var table = "accounts";
-      var params = {
-        TableName: table,
-        Key: {
-          "account_name": account
-        }
-      };
-    docClient.get(params, function (err, data) {
-      if (err) {
-        callback(err, null);
-      } else {
-        console.log(data.Item);
-        try {
-          accessKeyId = data.Item.accessKeyId;
-          secretAccessKey = data.Item.secretAccessKey;
-          getUsers(accessKeyId, secretAccessKey);
-        }
-        catch (e) {
-          callback(e, null);
-        }
-
-      }
-    });
-    };
-
-     getAccount();
-
-     function getUsers({ accessKeyId, secretAccessKey }) {
-
-    AWS.config.update(
-      {
-        accessKeyId: accessKeyId,
-        secretAccessKey: secretAccessKey,
-        region: 'eu-west-1'
-      });
-
-    const cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider();
-    var params = {
-      UserPoolId: id,
-      AttributesToGet: [
-        'email',
-      ],
-    };
-    cognitoidentityserviceprovider.listUsers(params, (err, data) =&gt; {
-      if (err) {
-        console.log(err);
-        callback(err, null);
-      }
-      else {
-        console.log("data", data);
-        callback(null, {
-          statusCode: 200,
-          body: JSON.stringify(data),
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "GET, OPTIONS",
-            'Access-Control-Allow-Credentials': true,
-            "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
-          }
-        });
-
-      }
-    });
-  }
-};
-## [6][AWS custom metric resets to '--' without a regular flow of log events](https://www.reddit.com/r/aws/comments/i5c0bo/aws_custom_metric_resets_to_without_a_regular/)
-- url: https://www.reddit.com/r/aws/comments/i5c0bo/aws_custom_metric_resets_to_without_a_regular/
----
-I'm a pretty new dev, so I decided to do something fun to help get exposure to other services. I created an ec2 instance to run a minecraft server. I'm using cloudwatch agent to send the minecraft logs to cloudwatch, where I have custom filters that trigger whenever a player leaves or joins to increment a custom metric called playerCount.
-
-The problem that occurs is if there is a gap of time between triggering events, the metric goes back to '--' which I believe is the equivalent of "no data." Is there a way I can set the custom metric so that it holds onto its value over time?
-## [7][Redirect 302 with just API gateway](https://www.reddit.com/r/aws/comments/i59hdd/redirect_302_with_just_api_gateway/)
-- url: https://www.reddit.com/r/aws/comments/i59hdd/redirect_302_with_just_api_gateway/
----
-Hello guys.
-
-Me and our teammates would like to create a redirect **302** using just API gateway or, in general, with less components possible.
-
-AFAIK the API gateway is able to do just 301. [The solution with less moving parts seems to be having a lambda that make this redirect hooked to the API record.](https://kennbrodhagen.net/2016/04/02/how-to-return-302-using-api-gateway-lambda/)
+[https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API\_UpdateItem.html#API\_UpdateItem\_Examples](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateItem.html#API_UpdateItem_Examples)
 
 &amp;#x200B;
 
-Do you have other ideas? Are you able to explain us why they didn't provide this ability? Is there any negative/hidden outcomes in REDIRECT 302 instead 301?
-## [8][is it possible to run an exe in beanstalk?or do i have to use a different service?](https://www.reddit.com/r/aws/comments/i59d7v/is_it_possible_to_run_an_exe_in_beanstalkor_do_i/)
-- url: https://www.reddit.com/r/aws/comments/i59d7v/is_it_possible_to_run_an_exe_in_beanstalkor_do_i/
+https://preview.redd.it/r6n96jzd0rf51.png?width=591&amp;format=png&amp;auto=webp&amp;s=e1f3d23566b51a2597eb5d370bc94c206d4f1b80
+
+My question is it a "concurrency"  safe operation? Because without transaction support and locking access to the document looks like there is a race condition.
+## [2][Why does AWS does not have a region in Switzerland?](https://www.reddit.com/r/aws/comments/i5xwm3/why_does_aws_does_not_have_a_region_in_switzerland/)
+- url: https://www.reddit.com/r/aws/comments/i5xwm3/why_does_aws_does_not_have_a_region_in_switzerland/
 ---
-* i want to use it to host my game it consist of exe,mono dlls,and folders, 
-* ill be using as a game server, its written in .net made with unity
+Both GCP, Azure have regions in Switzerland, but there is not a AWS region for Switzerland.
+
+Yes Switzerland is expensive, so does the Australia. AWS have a region in Australia though.
+## [3][Singular and Plural problems](https://www.reddit.com/r/aws/comments/i5sdd5/singular_and_plural_problems/)
+- url: https://www.reddit.com/r/aws/comments/i5sdd5/singular_and_plural_problems/
+---
+[https://docs.aws.amazon.com/lambda/latest/dg/services-cloudwatchevents-expressions.html](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudwatchevents-expressions.html)
+
+&gt;For a singular value the unit must be singular (for example, rate(1 day)), otherwise plural (for example, rate(5 days)).
+
+Actually I am working on a Terraform script like below. It doesn't work when the `scanning_minutes` is 1. I switch to use `cron` instead of `rate` now. 🤷🏻‍♂️
+
+    locals {
+      scanning_minutes = 1
+    }
+    
+    resource "aws_cloudwatch_event_rule" "scanner_lambda" {
+      schedule_expression = "rate(${local.scanning_minutes} minutes)"
+      is_enabled = true
+    }
+## [4][Automating Account Creation &amp; CI/CD with CDK/CodeStar?](https://www.reddit.com/r/aws/comments/i5o4xv/automating_account_creation_cicd_with_cdkcodestar/)
+- url: https://www.reddit.com/r/aws/comments/i5o4xv/automating_account_creation_cicd_with_cdkcodestar/
+---
+Hey all!
+
+I work with a consulting company trying to build out a dashboard of sorts for our developers to handle CI/CD and account creation. Generally, I do not handle development related tasks, so my understanding of CI/CD and coding pipelines is limited, so please bear with my noob-like approach to this question. 
+
+In short, we heavily utilize the CDK in projects we complete for clients, and are trying to build a serverless (if possible), in-house, all-in-one interface for devs to complete work assigned to them, and handle development and coding from inside the solution we are building. 
+
+We recently came across CodeStar, which appears to do a lot of what we are trying to do with respect to managing different projects, automating account creation for different clients, etc. 
+
+However, I have not been able to find any documentation or resources demonstrating how or even if the CDK would work with CodeStar.
+
+With the release of CDK Pipelines, we were alternatively planning on utilizing CodePipeline for CD component of this interface; however, the CI portion of this interface starts to become unclear, as I am unsure if the CDK would play nice with CodeBuild?
+
+In short, is CodeStar a good solution for being able to automate account creation/IAM roles for new clients/projects that come in, as well as full CI/CD, testing, etc, specifically utilizing the CDK? Or is there an alternative set of services that would be recommended to accomplish this? Would Control Tower be appropriate for a situation like this, or is that more intended for enterprise-level organizations that need multiple AWS accounts within their company?
+
+TIA for any direction you all may be able to provide!
+## [5][Cloudfront SSL](https://www.reddit.com/r/aws/comments/i5s73d/cloudfront_ssl/)
+- url: https://www.reddit.com/r/aws/comments/i5s73d/cloudfront_ssl/
+---
+Wanted to host a basic static website from an s3 bucket and serve it with cloudfront (HTTPS). Does the custom ssl really cost $600 a month if I get it throuch ACM? If so how do I choose the SNI option that is supposedly free?
 
 &amp;#x200B;
 
-i apologize if my question is odd i'm not sure where to put my game server in aws.
+If none of these work, does disabling the cloudfront distribution stop the costs or do i need to delete?
 
-thank you.
-## [9][What's the correct way to connect Lambdas to an API?](https://www.reddit.com/r/aws/comments/i58ps8/whats_the_correct_way_to_connect_lambdas_to_an_api/)
-- url: https://www.reddit.com/r/aws/comments/i58ps8/whats_the_correct_way_to_connect_lambdas_to_an_api/
+&amp;#x200B;
+
+Thanks
+## [6][Lightsail VS Firebase for my project?](https://www.reddit.com/r/aws/comments/i5vkhg/lightsail_vs_firebase_for_my_project/)
+- url: https://www.reddit.com/r/aws/comments/i5vkhg/lightsail_vs_firebase_for_my_project/
 ---
-Hello, all. I'm a complete beginner when it comes to AWS. I'm doing a medium scale project that is using an instance of Connect to handle customer service interactions. We have a REST API that handles the requests of whatever information is needed by Connect. Let's say the API exposes 20 end-points, is it necessary to create 20 Lambda instances to handle all possible request or is there any better way?
+Hey, I basically hardly know anything about these two services but these two were recommended to me and I'm not knowledgeable enough to make a decision. 
 
-Thanks in advance.
-## [10][SaaS logging solutions](https://www.reddit.com/r/aws/comments/i54i8w/saas_logging_solutions/)
-- url: https://www.reddit.com/r/aws/comments/i54i8w/saas_logging_solutions/
+My website will include a database of two different account types. A geographical search function. A review system. And host some media (only profile pictures to begin, hopefully adding media to reviews later depending on price and success.) It's a national website, but I cant really predict how many users it will have. Lets say a few hundred to a few thousand a month. Not crazy, but not like 50 a month.
+
+Id say those are the main things to note of the website. This will either take off and be successful in its industry or being a nice project on my resume, so that's where I'm coming from. I only have experience with projects in vanilla JS/HTML/CSS currently and I'd like to have this up as fast as possible, so no, I'm not looking to build out my own entire backend for example. 
+
+Any input on which to use, that could potentially be useful later as well but still quick, easy, and cheap to setup that will fit my websites goals? Also like I said, I'm not that experienced so excuse me if my question sounds stupid.
+## [7][AWS EKS + Terraform = EC2 instances?](https://www.reddit.com/r/aws/comments/i5xkxj/aws_eks_terraform_ec2_instances/)
+- url: https://www.reddit.com/r/aws/comments/i5xkxj/aws_eks_terraform_ec2_instances/
 ---
-I'm building a SaaS web app for small businesses, target at 10s or 100s of thousands of customers.
+Hey guys.  
+I'm designing the CI/CD architecture and wondering whether it's possible to use AWS EKS to run CI/CD Servers to run Terraform that will create and destroy EC2 Instances.
 
-It is a basic accounting app, similar to Quickbooks, but aiming to simplify money management for a more math-anxious, number-averse audience.
+&amp;#x200B;
 
-As customers use the application, I want to have a **real-time picture of how they're hitting our services** (`/user/create`, `/transactions/list`, `/image/upload`, etc.):
+Thanks in advance!
+## [8][What service am I looking for? Proxy internal applications behind SSO.](https://www.reddit.com/r/aws/comments/i5ojfs/what_service_am_i_looking_for_proxy_internal/)
+- url: https://www.reddit.com/r/aws/comments/i5ojfs/what_service_am_i_looking_for_proxy_internal/
+---
+If you're familiar with Cloudflare Argo tunnels, it basically is a service where you can setup SSO in front of a server and Cloudflare will authenticate, and then after you're authenticated, it will proxy the connection to the server you were trying to connect to.
 
-* how many requests (aggregations per hour, day, month and year)
-* who the customer is (aggregations per user id and tenant id)
-* where the customer is located (aggregations per city, province and country)
-* latencies they're getting
-* errors they're getting
+We have used it to have SSH open to the internet by forcing people to auth against Okta, and we have also used it to protect a remote desktop server. I am also interested in protecting some internal web applications that aren't secure when public to the internet, like LibreNMS.
 
-I'm handling requests with **API Gateway**, and for log emission I will simply activate my API to send **Access Logs** to the **CloudWatch Logs** services. So the log emission and sending to CloudWatch Logs I've already figured out.
+I see WorkLink got close with having a secure browser and proxy, but it appears to only be available for mobile devices. GCP has Identity-Aware Proxy, but I could not find something similar on AWS. Am I missing something?
+## [9][How large does data need to be before you use S3?](https://www.reddit.com/r/aws/comments/i5o4gu/how_large_does_data_need_to_be_before_you_use_s3/)
+- url: https://www.reddit.com/r/aws/comments/i5o4gu/how_large_does_data_need_to_be_before_you_use_s3/
+---
+I know the simple rule that “large files should use s3 and small data should use a DB” but what general rule do you follow before you switch to S3? I am going to let users write descriptions and reviews. How long would a description need to be before you’d push them into s3?
+## [10][AWS Organizations and prevent IAM user creation in member accounts](https://www.reddit.com/r/aws/comments/i5pe65/aws_organizations_and_prevent_iam_user_creation/)
+- url: https://www.reddit.com/r/aws/comments/i5pe65/aws_organizations_and_prevent_iam_user_creation/
+---
+Hello,
 
-But now I need to process these logs and make the aggregations I listed above.
+I'm doing some googling/reading but I don't see any obvious way to prevent or lock down the member accounts of an AWS Organization from having IAM users created within them. 
 
-I've contemplated these options:
+To state it differently, there is a desire to control all IAM account creation such that it can only be done by the root user in the master account of the AWS Organization (I understand the best practices around AWS root account usage; this is still the desired outcome of this exercise.)
 
-* Streaming the logs to **Kinesis Firehose**, then processing them and sending to **Amazon Elasticsearch Service** to make the aggregations and visualize with **Kibana**
-* Streaming the logs to **Kinesis Firehose**, then processing them and making the aggregations with **Kinesis Data Analytics**, then saving the results to a **DynamoDB** table
+Is there some means of achieving this?
 
-I would like a solution that will be:
-
-* **cost-efficient**, both today (with few customers and very sparse logging) and in the possible future as I get thousands of customers hitting the API all day from various locations
-* **highly scalable and self-managed** at every level of scale
-
-I know very little about these services. At this point, the **Elasticsearch** path sounds expensive to me, it sounds compute-heavy and storage-heavy. While the **Kinesis Data Analytics** seems more neat and cheap. Or, maybe both solutions are overkill for my case? I could also try **CloudWatch Insights**, but it doesn't seem to handle the particular aggregations I need.
-
-I'd like to note that I don't need very advanced ad-hoc analytics, I already know upfront the aggregations I need (as listed above).
-
-Thoughts?
+Thanks!

@@ -56,43 +56,71 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][The “array size constant” antipattern](https://www.reddit.com/r/cpp/comments/i5bl28/the_array_size_constant_antipattern/)
+## [2][Create a fully functioning command line interface with 1.5 lines of code (wo. include statement)](https://www.reddit.com/r/cpp/comments/i5yo1g/create_a_fully_functioning_command_line_interface/)
+- url: https://github.com/kongaskristjan/fire-hpp
+---
+
+## [3][a + b: how hard can it be?](https://www.reddit.com/r/cpp/comments/i5nmf7/a_b_how_hard_can_it_be/)
+- url: https://www.reddit.com/r/cpp/comments/i5nmf7/a_b_how_hard_can_it_be/
+---
+Given...
+
+    int a = 0, b = 0;
+    std::cin &gt;&gt; a &gt;&gt; b;
+
+What’s your preferred method of a safe, no UB addition of...
+
+    a + b
+
+Please show your workings.
+## [4][What Is The Minimal Set Of Optimizations Needed For Zero-Cost Abstraction?](https://www.reddit.com/r/cpp/comments/i5il0j/what_is_the_minimal_set_of_optimizations_needed/)
+- url: https://robert.ocallahan.org/2020/08/what-is-minimal-set-of-optimizations.html
+---
+
+## [5][The “array size constant” antipattern](https://www.reddit.com/r/cpp/comments/i5bl28/the_array_size_constant_antipattern/)
 - url: https://quuxplusone.github.io/blog/2020/08/06/array-size/
 ---
 
-## [3][Range-v3 0.11.0 released: backports from C++20 and compile-time improvements](https://www.reddit.com/r/cpp/comments/i54w0o/rangev3_0110_released_backports_from_c20_and/)
+## [6][Does virtual constexpr function make sense?](https://www.reddit.com/r/cpp/comments/i5xr9v/does_virtual_constexpr_function_make_sense/)
+- url: https://www.reddit.com/r/cpp/comments/i5xr9v/does_virtual_constexpr_function_make_sense/
+---
+I was just thinking whether it makes sense to have virtual constexpr functions?
+
+I understand, that `virtual` is a "runtime keyword" and the `constexpr` is a "compile-time keyword", but in some context, I think it would make the compiler to generate more optimized code?
+
+For example, let's say I have an `Object` class, it provides a method `type`, and all the types of objects are listed in an enum
+
+```
+enum OBJ_TYPE
+{
+   String, Integer, Real
+};
+
+class Object
+{
+public:
+   virtual OBJ_TYPE type() const = 0;
+}
+```
+
+In this example, at compile-time, I definitely know what is the body and return values of the derived classes for this particular function. So, what do you think about this?
+## [7][C++ Lambda Week: Some Tricks](https://www.reddit.com/r/cpp/comments/i5epa4/c_lambda_week_some_tricks/)
+- url: https://www.bfilipek.com/2020/08/c-lambda-week-some-tricks.html
+---
+
+## [8][Range-v3 0.11.0 released: backports from C++20 and compile-time improvements](https://www.reddit.com/r/cpp/comments/i54w0o/rangev3_0110_released_backports_from_c20_and/)
 - url: https://github.com/ericniebler/range-v3/releases/tag/0.11.0
 ---
 
-## [4][ASCII Earth rotating in C++. I made this animation using projections and a bit of linear algebra.](https://www.reddit.com/r/cpp/comments/i4qtol/ascii_earth_rotating_in_c_i_made_this_animation/)
+## [9][ASCII Earth rotating in C++. I made this animation using projections and a bit of linear algebra.](https://www.reddit.com/r/cpp/comments/i4qtol/ascii_earth_rotating_in_c_i_made_this_animation/)
 - url: https://youtu.be/wgdB9Dgb0Ro
 ---
 
-## [5][CppCast: Go](https://www.reddit.com/r/cpp/comments/i54jmn/cppcast_go/)
-- url: https://cppcast.com/ian-taylor-go/
----
-
-## [6][Overload Journal #158 - August 2020](https://www.reddit.com/r/cpp/comments/i5ar4c/overload_journal_158_august_2020/)
+## [10][Overload Journal #158 - August 2020](https://www.reddit.com/r/cpp/comments/i5ar4c/overload_journal_158_august_2020/)
 - url: https://accu.org/index.php/journals/c413/
 ---
 
-## [7][Refureku 1.2.0 is out!](https://www.reddit.com/r/cpp/comments/i4uczi/refureku_120_is_out/)
-- url: https://github.com/jsoysouvanh/Refureku
----
-
-## [8][What happened to polymorphic_value?](https://www.reddit.com/r/cpp/comments/i4nxyx/what_happened_to_polymorphic_value/)
-- url: https://www.reddit.com/r/cpp/comments/i4nxyx/what_happened_to_polymorphic_value/
----
-I don't see this in the c++20 standard library. What happened to this proposal?
-## [9][Volunteer Mac Developers needed for BOINC](https://www.reddit.com/r/cpp/comments/i4qvic/volunteer_mac_developers_needed_for_boinc/)
-- url: https://boinc.berkeley.edu/trac/wiki/MacDeveloper
----
-
-## [10][Writing files 5 to 9 times faster than fprintf](https://www.reddit.com/r/cpp/comments/i48j9k/writing_files_5_to_9_times_faster_than_fprintf/)
-- url: http://www.zverovich.net/2020/08/04/optimal-file-buffer-size.html
----
-
-## [11][C++ Lambda Week: Going Generic](https://www.reddit.com/r/cpp/comments/i4na1c/c_lambda_week_going_generic/)
-- url: https://www.bfilipek.com/2020/08/lambda-generic.html
+## [11][CppCast: Go](https://www.reddit.com/r/cpp/comments/i54jmn/cppcast_go/)
+- url: https://cppcast.com/ian-taylor-go/
 ---
 

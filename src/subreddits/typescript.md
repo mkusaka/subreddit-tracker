@@ -22,11 +22,86 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Did you use typescript first and then JavaScript?](https://www.reddit.com/r/typescript/comments/i5pp1l/did_you_use_typescript_first_and_then_javascript/)
-- url: https://www.reddit.com/r/typescript/comments/i5pp1l/did_you_use_typescript_first_and_then_javascript/
+## [2][Help: Redux reducer object pattern / better options?](https://www.reddit.com/r/typescript/comments/i6d7na/help_redux_reducer_object_pattern_better_options/)
+- url: https://www.reddit.com/r/typescript/comments/i6d7na/help_redux_reducer_object_pattern_better_options/
 ---
-Curiously I had to do this for a university homework in Angular Ionic, without any JS experience it was quite difficult at the time, but since we were learning Java I liked the "types" aspect, now I'm learning more JS when I have time and I want to dedicate more time to TS again later.
-## [3][Other languages with mapped/conditional types?](https://www.reddit.com/r/typescript/comments/i5vmni/other_languages_with_mappedconditional_types/)
+I've been playing around with using an object, hashed by action types, that maps to a state reducer. I've done this with JS in the past and the TypeScript(ing) is a bit complicated for my liking.
+
+Here's my sample code - 
+
+    const INCREMENT = 'increment'
+    type IncrementAction = { type: typeof INCREMENT; amount: number }
+    export const increment = (amount: number): IncrementAction =&gt; ({ type: INCREMENT, amount })
+    
+    const DECREMENT = 'decrement'
+    type DecrementAction = { type: typeof DECREMENT; amount: number }
+    export const decrement = (amount: number): DecrementAction =&gt; ({ type: DECREMENT, amount })
+    
+    type StoreState = { readonly amount: number }
+    type StoreActions = IncrementAction | DecrementAction
+    
+    type StoreReducer&lt;S, A extends StoreActions&gt; = {
+      [key in A['type']]?: (state: S, action: A extends StoreActions ? (A['type'] extends key ? A : never) : never) =&gt; S
+    }
+    
+    const reducers: StoreReducer&lt;StoreState, StoreActions&gt; = {
+      [INCREMENT]: (state, action) =&gt; ({ amount: state.amount + action.amount }),
+      [DECREMENT]: (state, action) =&gt; ({ amount: state.amount - action.amount }),
+    }
+    
+    const initialState: StoreState = { amount: 0 }
+    
+    export default (state: StoreState = initialState, action: StoreActions) =&gt; {
+      const reducer = reducers[action.type]
+      if (reducer) return reducer(state, action as never) // sad panda
+      return state
+    }
+
+So this will "work" - within each reducer function, \`(state, action)\` both parameters get inferred properly based on the key - which is really cool!  
+
+My problems with it are 
+
+* The StoreReducer type makes my brain bleed.  This seems overly complicated and I swear I'm going to look at that later and think "wtf is this thing?"
+* in the actual reducer function, typescript seems to get "confused" and the type of the action parameter from the returned function always comes back as \`never\`, so I need to cast the action to never, which.... seems a bit wrong, and is making me a sad panda.
+
+ I'm wondering if anyone else has done this in the past and what your approach was.
+## [3][Retrieving the type of the keys for an object with dynamic keys](https://www.reddit.com/r/typescript/comments/i6dx8u/retrieving_the_type_of_the_keys_for_an_object/)
+- url: https://www.reddit.com/r/typescript/comments/i6dx8u/retrieving_the_type_of_the_keys_for_an_object/
+---
+Is it possible to retrieve the type set for the keys in a dynamic object like so:   
+
+
+    type Treatments = {
+      [treatment: string]: 'on' | 'off' | string;
+    };
+    
+    const addTreatment = (prev: Treatments, treatment: ***Treatments Key Type***): Treatments =&gt; {
+        return {
+          ...prev,
+          [treatment]: value,
+        }
+     };
+## [4][Is there any such think as type assertion via is , but via a more than one parameter asserting function ?](https://www.reddit.com/r/typescript/comments/i68ngl/is_there_any_such_think_as_type_assertion_via_is/)
+- url: https://www.reddit.com/r/typescript/comments/i68ngl/is_there_any_such_think_as_type_assertion_via_is/
+---
+Or at least do they plan to add that feature in the future in typescript ?
+
+Here is an example of what I am talking about :
+
+```
+type shallowSerializableReference = unknown[] | {[x:string] : unknown};
+function shouldDiff(oldVal: unknown, newVal: unknown): oldVal is shallowSerializableReference , newVal is shallowSerializableReference {
+	return (
+		(isOfInternalClass(oldVal, "Object") &amp;&amp; isOfInternalClass(newVal, "Object")) ||
+		(isOfInternalClass(oldVal, "Array") &amp;&amp; isOfInternalClass(newVal, "Array"))
+	);
+}
+```
+## [5][Array type of unknown length with first element type1 and the rest of the elements type2 .](https://www.reddit.com/r/typescript/comments/i5wgu2/array_type_of_unknown_length_with_first_element/)
+- url: https://www.reddit.com/r/typescript/comments/i5wgu2/array_type_of_unknown_length_with_first_element/
+---
+How to define that type ?
+## [6][Other languages with mapped/conditional types?](https://www.reddit.com/r/typescript/comments/i5vmni/other_languages_with_mappedconditional_types/)
 - url: https://www.reddit.com/r/typescript/comments/i5vmni/other_languages_with_mappedconditional_types/
 ---
 I’ve been using TS for a while now after only writing JS in the past. I’m currently working polymorphic data clients that have conditionally typed response types that would not be possible without conditional/mapped types.
@@ -36,11 +111,11 @@ This made me wonder, are there any other languages that use (structural) condito
 (I’ve glanced at C#, Swift, and Rust, and searched the web so perhaps I’ve glossed over some things)
 
 Edit: I’ve added a more detailed example in the comments to explain what I’m after. Perhaps polymorphic is the wrong term here.
-## [4][Array type of unknown length with first element type1 and the rest of the elements type2 .](https://www.reddit.com/r/typescript/comments/i5wgu2/array_type_of_unknown_length_with_first_element/)
-- url: https://www.reddit.com/r/typescript/comments/i5wgu2/array_type_of_unknown_length_with_first_element/
+## [7][Did you use typescript first and then JavaScript?](https://www.reddit.com/r/typescript/comments/i5pp1l/did_you_use_typescript_first_and_then_javascript/)
+- url: https://www.reddit.com/r/typescript/comments/i5pp1l/did_you_use_typescript_first_and_then_javascript/
 ---
-How to define that type ?
-## [5][Type parameter within a function call?](https://www.reddit.com/r/typescript/comments/i5vvwq/type_parameter_within_a_function_call/)
+Curiously I had to do this for a university homework in Angular Ionic, without any JS experience it was quite difficult at the time, but since we were learning Java I liked the "types" aspect, now I'm learning more JS when I have time and I want to dedicate more time to TS again later.
+## [8][Type parameter within a function call?](https://www.reddit.com/r/typescript/comments/i5vvwq/type_parameter_within_a_function_call/)
 - url: https://www.reddit.com/r/typescript/comments/i5vvwq/type_parameter_within_a_function_call/
 ---
     import { useForm } from "react-hook-form";
@@ -58,7 +133,7 @@ I'm uncomfortable with this syntax. From the object destructure I can tell `useF
 Any clarification is appreciated, thanks.
 
 PS: Also, I vaguely recall reading that standard data typings (other than maybe `Function`)  should not be capitalized. Is the capitalized `String` above probably a minor mistake? [https://react-hook-form.com/get-started#Registerfields](https://react-hook-form.com/get-started#Registerfields)
-## [6][Is it possible to access static methods on generic types?](https://www.reddit.com/r/typescript/comments/i5ytvz/is_it_possible_to_access_static_methods_on/)
+## [9][Is it possible to access static methods on generic types?](https://www.reddit.com/r/typescript/comments/i5ytvz/is_it_possible_to_access_static_methods_on/)
 - url: https://www.reddit.com/r/typescript/comments/i5ytvz/is_it_possible_to_access_static_methods_on/
 ---
 I need to know if something like this is possible:
@@ -71,7 +146,7 @@ I need to know if something like this is possible:
 `function create&lt;T extends Database&gt;(): T {`  
  `return T.newInstance();`  
 `}`
-## [7][typecasting clutter](https://www.reddit.com/r/typescript/comments/i5x5s7/typecasting_clutter/)
+## [10][typecasting clutter](https://www.reddit.com/r/typescript/comments/i5x5s7/typecasting_clutter/)
 - url: https://www.reddit.com/r/typescript/comments/i5x5s7/typecasting_clutter/
 ---
     foo = &lt;string&gt;foo
@@ -83,47 +158,9 @@ compiles to:
     bar = bar;
 
 isn't the compiler supposed to discard these? am I missing something?
-## [8][Managing Types across multiple front-ends and services](https://www.reddit.com/r/typescript/comments/i5rutg/managing_types_across_multiple_frontends_and/)
+## [11][Managing Types across multiple front-ends and services](https://www.reddit.com/r/typescript/comments/i5rutg/managing_types_across_multiple_frontends_and/)
 - url: https://www.reddit.com/r/typescript/comments/i5rutg/managing_types_across_multiple_frontends_and/
 ---
 Hey all,
 
 I’m curious if anyone has any good suggestions on ways to manage types across multiple frontends and services that have overlapping uses of types or use similar types. I’m trying to slowly move our org to typescript and would like a good way to manage types that won’t get super unruly.
-## [9][Announcing TypeScript 4.0 RC](https://www.reddit.com/r/typescript/comments/i51era/announcing_typescript_40_rc/)
-- url: https://devblogs.microsoft.com/typescript/announcing-typescript-4-0-rc/
----
-
-## [10][Extracting interface with type parameters from classFactory that also has type parameters .](https://www.reddit.com/r/typescript/comments/i5eirf/extracting_interface_with_type_parameters_from/)
-- url: https://www.reddit.com/r/typescript/comments/i5eirf/extracting_interface_with_type_parameters_from/
----
-Suppose you have this :
-```
-function classFactory&lt;T1,T2,T3&gt;() {
-	return class treeNode {
-		prop1 : T1;
-		prop2 : T2;
-		prop3 : T3;
-		/*some other prop that are not type functions*/
-	};
-}
-```
-How can I extract from that function this :
-```
-interface treeNode&lt;T1,T2,T3&gt; {
-	prop1 : T1;
-	prop2 : T2;
-	prop3 : T3;
-}
-```
-## [11][Using the new variadic tuple types to convert callback functions to promises](https://www.reddit.com/r/typescript/comments/i58b83/using_the_new_variadic_tuple_types_to_convert/)
-- url: https://www.reddit.com/r/typescript/comments/i58b83/using_the_new_variadic_tuple_types_to_convert/
----
-I've been messing around with the new variadic tuples in typescript 4.0 and was able to write a higher order function that converts the popular (err, result) "callback" format fn's into a type-safe promise.
-
-Thought this was a really cool use-case of what's now possible, so wanted to share:
-
-[Typescript Playground Link](https://www.typescriptlang.org/play?ts=4.0.0-beta#code/FAFwngDgpgBAwgQwDZIEYIMYGsCiAnPGAXhnzwHtCAfGAZxDwEsA7AcxhuYFcUBuUSLEQp02ADwAlAHzEYACigEAXPGRpMuAgBoYeKLR4gVEgJTEZCZmGADoMAGJdmGEI3LMA6oxAALYevEAFRgoAA8QKGYAE1oYSzAAbQBdHWlZOQA6LIQ8VloVBKyMwJ1VEQ1JKSSzIgsrfmAMd3oYCAoAW0ZaRgAzMH9RLFkxAEkQ8MiYuKtk1Kk5HqcMFUdnV3cvXwGKkbmamUzs3PyYEZMVAAUOrqhK8xgAb2AYXSgQLjxmGGYoAHcYK7kTq0KByOR6WjkJAANygOj0ACsoC59o9ni8YItnIcMjk8joFMoygFNHh4fpDMZUU8MRi9O9PiECDAAPyvJEuQl4MxKCFQ2HgilIEAmfi0gC+JnRkv44pswCxLjcXx8UBQ5E2fjUgzk6OYCHaUBU9CYbC06IQrCN3y47VQinNLwwqBUXJUZEoHBtKHJBmFxoYLFYqOh5EYUWAZhpMGdcm4PpgAAMRgBydowAAkD31hvFOktsCzBfFidFwDlwCQbxgqvVAEFaIDgbASG0gV1ev1tRo5LWkBrvFrytgy8A5AhaGBnPJqeiqyAYKw9G8g7IEL8EN4a2r+w2mzc5AAiPvkQ86ADMAEYyy9kIoQHIl1AV2wy5K5GWgA)
-
-Also release it as an NPM package if anyone wants to help improve it (or fix my mistakes)!
-
-[https://github.com/ChuckJonas/ts-promisify-callback](https://github.com/ChuckJonas/ts-promisify-callback)

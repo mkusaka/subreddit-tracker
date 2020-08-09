@@ -1,15 +1,58 @@
 # ruby
-## [1][How can I get user input with a ruby http server?](https://www.reddit.com/r/ruby/comments/i5tgog/how_can_i_get_user_input_with_a_ruby_http_server/)
+## [1][Most accurate way to handle trig functions like PI, sin, cos, tan, et al?](https://www.reddit.com/r/ruby/comments/i62enq/most_accurate_way_to_handle_trig_functions_like/)
+- url: https://www.reddit.com/r/ruby/comments/i62enq/most_accurate_way_to_handle_trig_functions_like/
+---
+UPDATE: Just wanted to clarify something... I probably shouldn't have used the wording "most accurate" in my title because I don't really need a lot of precision. If, say, eight decimal places is sufficient, is there a recommended way to handle the numbers? 
+
+-----
+
+I just started incorporating various trig functions into an app and after noticing some inconsistencies here and there, it seems I've stumbled headlong into inaccuracies of how numbers are represented in programming languages.
+
+My question is, is there any recommended way in handling these?
+
+In my research this morning, I've come across 
+
+* Math the Ruby class
+* BigDecimal the Ruby class
+* BigMath, related to the above
+* BigDecimal the Ruby gem (still not sure how this compares to the built-in Ruby class...)
+
+Up to this point, I was relying on the "basic" Math class, which works with floats. I know now this is NOT preferable.
+
+As a concrete example, working with Trig functions using BigMath: 
+
+
+    rad1 = 45 * BigMath::PI(8) / 180
+    rad2 = 135 * BigMath::PI(8) / 180
+    cos1 = BigMath::cos(rad1, 8)
+    cos2 = BigMath::cos(rad2, 8)
+
+Technically, `cos1` + `cos2` should equal zero, but what is returned is some almost zero number...
+
+So where do I go from here?
+
+Is it recommended to round each number to, say, the 8th decimal place? And if so, do you round for the 
+"intermediates" like 
+
+    rad1 = (45 * BigMath::PI(8) / 180).round(8)
+
+ or wait and round the "final answer" like 
+
+    answer = cos1 + cos2 
+    answer.round(8)`
+
+Any thoughts or ideas? Or articles/books that could help guide me through this?
+## [2][How can I get user input with a ruby http server?](https://www.reddit.com/r/ruby/comments/i5tgog/how_can_i_get_user_input_with_a_ruby_http_server/)
 - url: https://www.reddit.com/r/ruby/comments/i5tgog/how_can_i_get_user_input_with_a_ruby_http_server/
 ---
 FYI: I'm new to Ruby. I'm running a Ruby http server on localhost. How can I get user input with a ruby http server?
 
 [My code](https://pastebin.com/65h40hWc)
-## [2][Open Source Status Update - July 2020 (dry-validation, dry-rails and hanami 2.0)](https://www.reddit.com/r/ruby/comments/i5bbj2/open_source_status_update_july_2020_dryvalidation/)
+## [3][Open Source Status Update - July 2020 (dry-validation, dry-rails and hanami 2.0)](https://www.reddit.com/r/ruby/comments/i5bbj2/open_source_status_update_july_2020_dryvalidation/)
 - url: https://solnic.codes/2020/08/06/open-source-status-update-july-2020/
 ---
 
-## [3][Required Module Data Instantiation](https://www.reddit.com/r/ruby/comments/i5bl7n/required_module_data_instantiation/)
+## [4][Required Module Data Instantiation](https://www.reddit.com/r/ruby/comments/i5bl7n/required_module_data_instantiation/)
 - url: https://www.reddit.com/r/ruby/comments/i5bl7n/required_module_data_instantiation/
 ---
 Hey everyone,  
@@ -37,7 +80,7 @@ Am I missing something? It "feels" like having them call `initialize_modulename(
 
 
 Thanks in advance! Also, any feedback about the code is appreciated. I've been coding in Ruby for about 5 years now, and I wanted the challenge of writing something more meta than my usual web dev stuff.
-## [4][Quieres aprender Ruby &amp; Ruby on Rails?](https://www.reddit.com/r/ruby/comments/i4ye6k/quieres_aprender_ruby_ruby_on_rails/)
+## [5][Quieres aprender Ruby &amp; Ruby on Rails?](https://www.reddit.com/r/ruby/comments/i4ye6k/quieres_aprender_ruby_ruby_on_rails/)
 - url: https://www.reddit.com/r/ruby/comments/i4ye6k/quieres_aprender_ruby_ruby_on_rails/
 ---
 Querida comunidad queria comentarles que hemos creado un server en Discord el cual tiene como propósito enseñar sobre programación.
@@ -53,15 +96,15 @@ Desde ya te invitamos a que nos compartas que piensas de esta metodología y si 
 &amp;#x200B;
 
 Puedes unirte o invitar a tus amigos desde el siguiente link [https://discord.gg/P4wZGsQ](https://discord.gg/P4wZGsQ)
-## [5][Lisamander and Robb clean up a Ruby on Rails codebase with Sorbet - LawIsCode on Twitch](https://www.reddit.com/r/ruby/comments/i4wk1g/lisamander_and_robb_clean_up_a_ruby_on_rails/)
+## [6][Lisamander and Robb clean up a Ruby on Rails codebase with Sorbet - LawIsCode on Twitch](https://www.reddit.com/r/ruby/comments/i4wk1g/lisamander_and_robb_clean_up_a_ruby_on_rails/)
 - url: https://www.twitch.tv/videos/701837904
 ---
 
-## [6][The Definitive Lemur Talk List](https://www.reddit.com/r/ruby/comments/i51r46/the_definitive_lemur_talk_list/)
+## [7][The Definitive Lemur Talk List](https://www.reddit.com/r/ruby/comments/i51r46/the_definitive_lemur_talk_list/)
 - url: https://twitter.com/keystonelemur/status/1291488545450926086
 ---
 
-## [7][What are some cool things you can do with Ruby parser.](https://www.reddit.com/r/ruby/comments/i4u9by/what_are_some_cool_things_you_can_do_with_ruby/)
+## [8][What are some cool things you can do with Ruby parser.](https://www.reddit.com/r/ruby/comments/i4u9by/what_are_some_cool_things_you_can_do_with_ruby/)
 - url: https://www.reddit.com/r/ruby/comments/i4u9by/what_are_some_cool_things_you_can_do_with_ruby/
 ---
 I just learnt about what what parsers in ruby are and how they can rewrite source code. 
@@ -69,7 +112,7 @@ For someone who is trying to learn it's API's and AST do you can any cool sugges
 Like I was thinking if trimming whitespaces from the end of the sentence could be one of them. 
 Or enforcing only 1 space between = and the next character.
 Any cool places ruby parsers are being used?
-## [8][Creating and distributing a GUI app](https://www.reddit.com/r/ruby/comments/i4s771/creating_and_distributing_a_gui_app/)
+## [9][Creating and distributing a GUI app](https://www.reddit.com/r/ruby/comments/i4s771/creating_and_distributing_a_gui_app/)
 - url: https://www.reddit.com/r/ruby/comments/i4s771/creating_and_distributing_a_gui_app/
 ---
 Hello there, I have been searching the whole web for an answer but I was not able to. I am using Fedora as my operating system. I want to create a GUI app and distribute it as an executable file. Not as a gem or .rb files. I want to create cross platform executables. It would be perfect if you directed me to right places. I am looking for a way to develop GUI and distribute it.
@@ -77,11 +120,7 @@ Hello there, I have been searching the whole web for an answer but I was not abl
 &amp;#x200B;
 
 \-Thanks
-## [9][Could you please help me with this JRuby question?](https://www.reddit.com/r/ruby/comments/i4qj12/could_you_please_help_me_with_this_jruby_question/)
+## [10][Could you please help me with this JRuby question?](https://www.reddit.com/r/ruby/comments/i4qj12/could_you_please_help_me_with_this_jruby_question/)
 - url: https://stackoverflow.com/q/63251312
----
-
-## [10][Record a Call in Ruby with Vonage Voice API WebSockets](https://www.reddit.com/r/ruby/comments/i4nt0z/record_a_call_in_ruby_with_vonage_voice_api/)
-- url: https://www.nexmo.com/blog/2020/08/04/record-a-call-in-ruby-with-vonage-voice-api-websockets
 ---
 

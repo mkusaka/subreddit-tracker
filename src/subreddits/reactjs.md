@@ -85,7 +85,99 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
-## [3][So I made Reddit with Instagram's UI](https://www.reddit.com/r/reactjs/comments/i5t04c/so_i_made_reddit_with_instagrams_ui/)
+## [3][Introducing Rome: A linter for JavaScript and TypeScript.](https://www.reddit.com/r/reactjs/comments/i65sgd/introducing_rome_a_linter_for_javascript_and/)
+- url: https://romefrontend.dev/blog/2020/08/08/introducing-rome.html
+---
+
+## [4][Anybody here interested in how React code talks to native code in a React Native app? If so, I made this short video explaining how it works.](https://www.reddit.com/r/reactjs/comments/i6i64v/anybody_here_interested_in_how_react_code_talks/)
+- url: https://youtu.be/TU_kTuz2i9Y
+---
+
+## [5][A web app which recommends books according to your preferences](https://www.reddit.com/r/reactjs/comments/i6hk7t/a_web_app_which_recommends_books_according_to/)
+- url: https://www.reddit.com/r/reactjs/comments/i6hk7t/a_web_app_which_recommends_books_according_to/
+---
+Hey guys, over the past few months my friends and I built, Arkvl, a web-app that gives you personalized recommendations based on books that you like.
+
+We would love it if you used the app and gave us feedback on what can be improved, new feature requests and criticism is certainly welcome!
+
+Link : [arkvl.space](https://arkvl.space)
+
+Images : [https://imgur.com/a/VYmU2xQ](https://imgur.com/a/VYmU2xQ)
+## [6][React Project Tutorials](https://www.reddit.com/r/reactjs/comments/i6f8t9/react_project_tutorials/)
+- url: https://www.reddit.com/r/reactjs/comments/i6f8t9/react_project_tutorials/
+---
+Hello Guys,
+
+I have finished the HTML, CSS, Js and react-redux course and have practised the fundamentals and advanced topics by making basic apps.
+
+But there is still a need for improvement, are there any tutorials or source where I can find few react/redux projects to practice?
+## [7][Help with React and AntD Table. Onclick handler in dropdown menu!](https://www.reddit.com/r/reactjs/comments/i6fw93/help_with_react_and_antd_table_onclick_handler_in/)
+- url: https://www.reddit.com/r/reactjs/comments/i6fw93/help_with_react_and_antd_table_onclick_handler_in/
+---
+Hi there folks.
+
+I am wondering if some more experienced react developers in the community can help me with a 2nd onClick handler and getting access to the data I need in that handler.  I have come up with a solution myself but it feels a little hacky because I am using data attributes to attach data to a html element and am wondering if there is a better way.
+
+**My problem**
+
+I am using the  [antd table component](https://ant.design/components/table/) for displaying data.  The last column of my table is called "action" and this is where I plan to have the "..." elipsis button (like in microsoft teams).  
+
+When you click this button it pops up a menu which the user can then select from differentmenu option.  But when the user clicks the menu item that is 2 onClick handlers. 1 click event for the row in the table, and then the 2nd for the menu selection.
+
+So, in that 2nd onClick handler you need to know 2 things:
+
+* 1 - the original row the user clicked on 
+* 2 - the menu option they selected
+
+The problem is that in the 2nd menu onClick handler you only know what menu item the user chose. 
+
+**My solution**
+
+What I decided to do was use [data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) to store the table row information in the html.  I converted the table row to json and associated with each menu item.  Like this:
+
+    function TablePopupMenu(data) {
+      var json = JSON.stringify(data);
+      return (
+        &lt;Menu data-id={json} onClick={onClickPopupMenu}&gt;
+          &lt;Menu.Item data-id={json} key="1"&gt;
+            1st menu item
+          &lt;/Menu.Item&gt;
+          &lt;Menu.Item data-id={json} key="2"&gt;
+            2nd memu item
+          &lt;/Menu.Item&gt;
+          &lt;Menu.Item data-id={json} key="3"&gt;
+            3rd menu item
+          &lt;/Menu.Item&gt;
+        &lt;/Menu&gt;
+      );
+    }
+
+..and then in the 2nd menu onClick handler I have this code to get the table data from the data-id attribute:
+
+    const onClickPopupMenu = (key) =&gt; {
+      var json = key.domEvent.target.getAttribute("data-id");
+      var tableRowData = JSON.parse(json);
+      console.log(`User Clicked on menu ${key.key} - table row: ${tableRowData.name}`);
+    };
+
+My question is, I feel like this is anti react and wondering if there is a simpler, better way?
+
+**Code Example**
+
+I have setup a code sandbox with my exampe code here: [https://codesandbox.io/s/focused-glitter-eedby](https://codesandbox.io/s/focused-glitter-eedby)
+
+Any advice, help, steering would be greatly appreciated.
+## [8][Get request for a compressed image?](https://www.reddit.com/r/reactjs/comments/i6eggu/get_request_for_a_compressed_image/)
+- url: https://www.reddit.com/r/reactjs/comments/i6eggu/get_request_for_a_compressed_image/
+---
+There is a site I found that hosts multiple images of pokemon however performing a get request downloads an image where the size can hundreds of kb or over a mb. Is there anyway to do a get request for a compressed version of the image? I am displaying over 800 of these images on the same page so it can take a long time to download all of these images for a client visiting my site.  
+
+
+the website for those curious:  [https://pokeres.bastionbot.org/images/pokemon/250.png](https://pokeres.bastionbot.org/images/pokemon/250.png)   
+
+
+changing the id gets you a different image.
+## [9][So I made Reddit with Instagram's UI](https://www.reddit.com/r/reactjs/comments/i5t04c/so_i_made_reddit_with_instagrams_ui/)
 - url: https://www.reddit.com/r/reactjs/comments/i5t04c/so_i_made_reddit_with_instagrams_ui/
 ---
 Hey guys, I'm new to reactjs. I thought the best way to learn it to try to make my own project, so chose Reddit's API and tried to build a web app with Instagram's UI.
@@ -99,79 +191,32 @@ source code:  https://github.com/jaesharma/redditfornormies
 I'm still trying to improve this ... , implemented all major features I could think of... please check out and give your reviews and suggestions on how can I make It even better. Thanks.
 
 log in with your Reddit id to have a better experience.
-## [4][State of Frontend 2020 Survey - 74% use React, 34% think Redux will be dead in 3 years, Next.js/Gatsby are basically tied for SSG](https://www.reddit.com/r/reactjs/comments/i5h7ou/state_of_frontend_2020_survey_74_use_react_34/)
-- url: https://tsh.io/state-of-frontend/
+## [10][clicking on navigation changes url but not the view](https://www.reddit.com/r/reactjs/comments/i6hwlm/clicking_on_navigation_changes_url_but_not_the/)
+- url: https://www.reddit.com/r/reactjs/comments/i6hwlm/clicking_on_navigation_changes_url_but_not_the/
 ---
+can someone help me with a navlink im building
 
-## [5][How can I update the site after deploying the app?](https://www.reddit.com/r/reactjs/comments/i5xide/how_can_i_update_the_site_after_deploying_the_app/)
-- url: https://www.reddit.com/r/reactjs/comments/i5xide/how_can_i_update_the_site_after_deploying_the_app/
+im using a prebuilt component from material design bootstrap to do the navigation links
+
+the problem is that when i press the navigation link the page url changes but the view does not change 
+
+I searched up the problem for hours and have tried many different things but could not get it to work. 
+
+here is all the code that i am using. any help will be appreciated!
+
+ [https://github.com/nh916/safuja-butterfly](https://github.com/nh916/safuja-butterfly)
+## [11][Fetching images from express endpoint and displaying them](https://www.reddit.com/r/reactjs/comments/i6hfqh/fetching_images_from_express_endpoint_and/)
+- url: https://www.reddit.com/r/reactjs/comments/i6hfqh/fetching_images_from_express_endpoint_and/
 ---
-I have created the built react app and deployed it with the nginx. I want to update the deployed react app, can I just rebuilt it?
-## [6][When do you decide to split your code? (React.lazy)](https://www.reddit.com/r/reactjs/comments/i5yisg/when_do_you_decide_to_split_your_code_reactlazy/)
-- url: https://www.reddit.com/r/reactjs/comments/i5yisg/when_do_you_decide_to_split_your_code_reactlazy/
+I am planning on creating a form that will send uploaded files to my express backend where I will use multer to save the buffer in mongodb. However, I am confused on how I can retrieve the images. Im thinking of creating an api endpoint that will return the file, but I dont want to display my backend end url in the image src for security, how can I hide it or is there a better way to present the images?
+## [12][React Component that can display the uploaded CSV files into a table component.](https://www.reddit.com/r/reactjs/comments/i6hbw6/react_component_that_can_display_the_uploaded_csv/)
+- url: https://www.reddit.com/r/reactjs/comments/i6hbw6/react_component_that_can_display_the_uploaded_csv/
 ---
-I can imagine there's a  great variety of ideas about this, but I'd like to hear yours!
-## [7][Let's Fork built with Go and React Native](https://www.reddit.com/r/reactjs/comments/i5wobc/lets_fork_built_with_go_and_react_native/)
-- url: https://v.redd.it/85paupeg3lf51
----
+I'm new to react and searching is a bit confusing right now. I hope you could drive me to a solution.   
+What I'm looking for is, I have a file uploaded button that uploads a single CSV file. I need to
 
-## [8][A free dashboard built with React + Tailwind CSS](https://www.reddit.com/r/reactjs/comments/i5ituq/a_free_dashboard_built_with_react_tailwind_css/)
-- url: https://github.com/estevanmaito/windmill-dashboard-react
----
+1. On load of this file parse this file locally and display it in the browser as a table component.
+2. I need the ability to add two more columns in addition to the existing columns for displaying any validation error and the result of API call of this line. 
+3. The table component must be editable after being loaded. 
 
-## [9][Redux or ContextAPI?](https://www.reddit.com/r/reactjs/comments/i5yeo4/redux_or_contextapi/)
-- url: https://www.reddit.com/r/reactjs/comments/i5yeo4/redux_or_contextapi/
----
-I started learning React few weeks ago and now that my project is getting a little bit bigger, having a way to manage the state became crucial. The only issue is that I tried to learn Redux and it's so complicated... I heard about the contextAPI provided by React and I wanted to know your thoughts about it and if it's as reliable as Redux?
-## [10][Test Driven Development (TDD) with React Testing Library &amp; Mock Service Worker](https://www.reddit.com/r/reactjs/comments/i5xxyx/test_driven_development_tdd_with_react_testing/)
-- url: https://medium.com/@siriloof/test-driven-development-tdd-with-react-testing-library-mock-service-worker-b23c9fedf6fa?source=friends_link&amp;sk=66a82be05cfcc2b0babb54f8d9205fc3
----
-
-## [11][Setting up Electron + React with Typescript](https://www.reddit.com/r/reactjs/comments/i5x4l1/setting_up_electron_react_with_typescript/)
-- url: https://dev.to/franamorim/series/8182
----
-
-## [12][State values don't update in event listener](https://www.reddit.com/r/reactjs/comments/i5wy98/state_values_dont_update_in_event_listener/)
-- url: https://www.reddit.com/r/reactjs/comments/i5wy98/state_values_dont_update_in_event_listener/
----
-Hello, tried asking this on stackoverflow, but didn't get any responses. I am using this piece of code to determine what to do when the state of the youtube player changes, and always want to return if the user is not host:
-
-    const [host, setHost] = useState()
-    const [yourID, setYourID] = useState();
-    
-    useEffect(() =&gt; {
-            socketRef.current = io.connect('/');
-    
-            socketRef.current.on("host", id =&gt; {
-                setHost(id);
-            })
-    
-            socketRef.current.on("your id", id =&gt; {
-                setYourID(id);
-            })
-    
-        }, []);
-    
-    function onPlayerStateChange(e) {
-            console.log(host)
-            console.log(yourID)
-            if (host !== yourID) return
-    
-            switch (e.data) {
-                // the logic to determine what to do...
-            }
-        }
-
-Hovewer, both `host` and `yourID` are always returning `undefined`. On the other hand, when using a function like this on some button click, it returns the correct values:
-
-    function test() {
-        console.log(host)         
-        console.log(yourID) 
-    }
-    &lt;button onClick={test}&gt;test&lt;/button&gt;
-
- My questions are as follows:
-
-1. Why won't the values ever update in `onPlayerStateChange`, but update in other functions?
-2. How should I rewrite the code? Using `useRef` worked for me, but I also use `yourID` and `host`  
- to conditionally render some elements on the page, so that wouldn't work.
+Any help with which react libraries I'll be able to achieve this would be great.

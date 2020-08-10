@@ -19,13 +19,164 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Rails 6 and the Secret Keys](https://www.reddit.com/r/rails/comments/i68uij/rails_6_and_the_secret_keys/)
+## [2][Does anyone know what's going on with apidock?](https://www.reddit.com/r/rails/comments/i6tngy/does_anyone_know_whats_going_on_with_apidock/)
+- url: https://www.reddit.com/r/rails/comments/i6tngy/does_anyone_know_whats_going_on_with_apidock/
+---
+Whenever I try to visit apidock.com, it takes forever to load and then i just get a server error.
+
+Is anyone else experiencing this?
+## [3][Plyr video player and Rails 6](https://www.reddit.com/r/rails/comments/i74o1y/plyr_video_player_and_rails_6/)
+- url: https://www.reddit.com/r/rails/comments/i74o1y/plyr_video_player_and_rails_6/
+---
+[https://plyr.io/](https://plyr.io/) is a javascript library to play videos with support for YouTube and Vimeo. I'm trying to implement it within a Rails 6 site. What are the steps to make this happen?
+
+Alternatively, what is your choice of video player in Rails 6 that supports MP4, Vimeo, and YouTube?
+## [4][The best Ruby/Rails profiler?](https://www.reddit.com/r/rails/comments/i74jms/the_best_rubyrails_profiler/)
+- url: https://www.reddit.com/r/rails/comments/i74jms/the_best_rubyrails_profiler/
+---
+What is the best profiling tool for Ruby on Rails? I'm looking for a tool which could return executed functions stack with function names, number of calls and time elapsed on each function. The goal is to find slow methods which are causing performance issues.
+## [5][Turbolinks doesn't update the page to display model validation errors](https://www.reddit.com/r/rails/comments/i6k4qy/turbolinks_doesnt_update_the_page_to_display/)
+- url: https://www.reddit.com/r/rails/comments/i6k4qy/turbolinks_doesnt_update_the_page_to_display/
+---
+Hi!
+
+just a quick question, really stuck here:
+I'm new to Rails and I want to display form validation errors to my users.
+I have the following in my posts controller:
+
+```ruby
+class Blog::PostsController &lt; ApplicationController
+  def new
+    @post = Post.new
+  end
+
+  def create
+    @post = Post.new post_params
+    if @post.save
+      flash[:notice] = 'Post was created successfully!'
+      redirect_to :controller =&gt; 'posts', :action =&gt; 'new'
+    else
+      render 'new'
+    end
+  end
+
+  private def post_params
+    params.require(:post).permit(:name, :slug, :tags, :content)
+  end
+end
+```
+
+Then, I have a view like this:
+
+```erb
+&lt;h1&gt;Create a Blog Post&lt;/h1&gt;
+
+&lt;% @post.errors.full_messages.each do |msg|%&gt;
+  &lt;li&gt;&lt;%= msg %&gt;&lt;/li&gt;
+&lt;% end %&gt;
+
+&lt;%= form_with model: @post, url: blog_post_path do |f| %&gt;
+  &lt;%= f.label :name %&gt;
+  &lt;%= f.text_field :name %&gt;&lt;br&gt;
+
+  &lt;%= f.label :slug %&gt;
+  &lt;%= f.text_field :slug %&gt;&lt;br&gt;
+
+  &lt;%= f.label :tags %&gt;
+  &lt;%= f.text_field :tags %&gt;&lt;br&gt;
+
+  &lt;%= f.label :content %&gt;
+  &lt;%= f.text_area :content %&gt;&lt;br&gt;
+
+  &lt;%= f.submit %&gt;
+&lt;% end %&gt;
+```
+
+As you can see right at the top, I try to show the validation errors. But for some reason, it never shows them on the page (Turbolinks doesn't add them!). If I take a look into the JS console, I can see the response the server sent back, including the validation errors. Still, Turbolinks doesn't want to show them. How do I fix this?
+## [6][Text field: cannot set default value](https://www.reddit.com/r/rails/comments/i6mqzh/text_field_cannot_set_default_value/)
+- url: https://www.reddit.com/r/rails/comments/i6mqzh/text_field_cannot_set_default_value/
+---
+Hi. I'm trying to set a text field's default value (I'm creating a form to edit existing records).
+
+This is my view:
+
+```erb
+&lt;%= form_with model: @post, url: blog_post_path, local: true do |f| %&gt;
+  &lt;%= f.label :name %&gt;
+  &lt;%= f.text_field :name, value: @post_current['name'] %&gt;&lt;br&gt;
+
+  &lt;%= f.label :slug %&gt;
+  &lt;%= f.text_field :slug, value: @post_current['slug'] %&gt;&lt;br&gt;
+
+  &lt;%= f.label :tags %&gt;
+  &lt;%= f.text_field :tags, value: @post_current['tags'] %&gt;&lt;br&gt;
+
+  &lt;%= f.label :content %&gt;
+  &lt;%= f.text_area :content, value: @post_current['content'] %&gt;&lt;br&gt;
+
+  &lt;%= f.submit %&gt;
+&lt;% end %&gt;
+```
+
+This is my controller action:
+
+```ruby
+  def edit
+    if Post.where(slug: params[:slug]).exists?
+      @post = Post.new
+      @post_current = Post.where slug: params[:slug]
+    else
+      raise ActiveRecord::RecordNotFound
+    end
+  end
+```
+
+When I try to load the page, it just gives me an error page saying "no implicit conversion of String into Integer" on the first line where I try to set a value (`&lt;%= f.text_field :name, value: @post_current['name'] %&gt;&lt;br&gt;`). Why does it do that and how can I set a value?
+
+Still new to Rails, thank you.
+## [7][How to return extra association attributes on a collection](https://www.reddit.com/r/rails/comments/i6xfhn/how_to_return_extra_association_attributes_on_a/)
+- url: https://www.reddit.com/r/rails/comments/i6xfhn/how_to_return_extra_association_attributes_on_a/
+---
+So here is my setup. 
+
+2 models:
+* events
+* showings
+
+events have many showings and a showing belongs to an event.
+
+users can rsvp to showings, so when I write `current_user.showings`, it will return all the showings that any user has rsvped to.
+
+Now, when I run `@showings = current_user.showings` and **when I loop through `@showings`** I get all the attributes that are in the showings table of the database. This is perfect and expected. Any `showing` record has attributes like this:
+
+`{ start_time, end_time, name, etc... }`
+
+Okay, but **in each showing that I loop through, I also want to have access to the `event.name`**. I.e, I want to see this:
+
+`{ start_time, end_time, name, event_name, etc... }` 
+
+or something like this. As long as it's included in the hash. I know you might be thinking I can just use `showing.event.name` but I can't because that's ruby code. I'm turning the collection of showings (i.e., `@showings`) into json and sending it to javascript for front end processing. 
+
+This means that the event name for each showing has to be included in each showing "hash" so that when I convert it to json, all the data is there.
+
+I know i can just loop through them in the controller, and basically build an array of hashes that are duplicates of the showings, and then include any other relevant info about the event in the hashes, but i'm just wondering if there is any built in rails method for doing this instead of doing it manually.
+
+### this is my manual (seemingly not very elegant) solution
+
+```ruby
+showings = Array.new
+current_user.showings.each do |showing|
+  showings &lt;&lt; {id: showing.id, name: showing.name, start_time: showing.start_time, event_name: showing.event.name}
+end
+@showings_json = showings.to_json
+```
+## [8][Rails 6 and the Secret Keys](https://www.reddit.com/r/rails/comments/i68uij/rails_6_and_the_secret_keys/)
 - url: https://www.reddit.com/r/rails/comments/i68uij/rails_6_and_the_secret_keys/
 ---
 I am in the process of attempting my first deployment of a new app in Rails 6 and when it goes to do the first db migration I get `ArgumentError: Missing \`secret_key_base\` for 'production' environment, set this string with \`rails credentials:edit\``
 
 I am all for setting this up, but I at this point I am confused as to if this is all something I set up production space or development space. Is there a good walk-through of how and where to set this up? I tend to learn best for seeing something set up in front of me. Any help will be great!
-## [3][Deploying a Rails app on Apache2](https://www.reddit.com/r/rails/comments/i689yt/deploying_a_rails_app_on_apache2/)
+## [9][Deploying a Rails app on Apache2](https://www.reddit.com/r/rails/comments/i689yt/deploying_a_rails_app_on_apache2/)
 - url: https://www.reddit.com/r/rails/comments/i689yt/deploying_a_rails_app_on_apache2/
 ---
 Hi 👋
@@ -38,7 +189,7 @@ After reading through resources on this topic, I wanted to ask you whether it's 
 2.	Reverse proxy that through Apache2
 
 I also read a lot about this Passenger thing, but it seems kinda weird to deploy. Any thoughts?
-## [4][Design Patterns and Anti-Patterns in Rails?](https://www.reddit.com/r/rails/comments/i5vg9b/design_patterns_and_antipatterns_in_rails/)
+## [10][Design Patterns and Anti-Patterns in Rails?](https://www.reddit.com/r/rails/comments/i5vg9b/design_patterns_and_antipatterns_in_rails/)
 - url: https://www.reddit.com/r/rails/comments/i5vg9b/design_patterns_and_antipatterns_in_rails/
 ---
 OK, it's more like a *software engineering* topic than a rails related one. But I asked one of my friends about deleting a table manually and re-do the migration (the project is written in Django and not rails) and he told me "This is an Anti-Pattern in Django". 
@@ -46,7 +197,7 @@ OK, it's more like a *software engineering* topic than a rails related one. But 
 I knew possible dangers of the idea and I suggested it with the knowledge, but I jokingly answered him "You call everything you don't understand an anti-pattern". 
 
 Now, I'm curious, is there a set of patterns and anti-patterns SPECIFICALLY for rails?
-## [5][New Video: Devise Profile by User Role](https://www.reddit.com/r/rails/comments/i60iis/new_video_devise_profile_by_user_role/)
+## [11][New Video: Devise Profile by User Role](https://www.reddit.com/r/rails/comments/i60iis/new_video_devise_profile_by_user_role/)
 - url: https://www.reddit.com/r/rails/comments/i60iis/new_video_devise_profile_by_user_role/
 ---
 In this tutorial video I walk through how to create dynamic profile pages by user role.  We will use a technique I learned from my favorite Ruby on Rails tutorial creators, GoRails, to dynamically display the correct partial by current user role.
@@ -56,53 +207,3 @@ I received permission before posting from Chris at GoRails to demonstrate this t
 I have only created 25 or so videos, so still very new to the process, all feedback is welcome as I just want to improve.  
 
 [https://youtu.be/wbRDqZCchs0](https://youtu.be/wbRDqZCchs0)
-## [6][How do I fix this error NameError: uninitialized constant AWS](https://www.reddit.com/r/rails/comments/i60c6i/how_do_i_fix_this_error_nameerror_uninitialized/)
-- url: https://www.reddit.com/r/rails/comments/i60c6i/how_do_i_fix_this_error_nameerror_uninitialized/
----
-Please help me deploy! I'm having this issue:  [https://stackoverflow.com/questions/63307710/a-do-i-fix-this-error-nameerror-uninitialized-constant-aws](https://stackoverflow.com/questions/63307710/a-do-i-fix-this-error-nameerror-uninitialized-constant-aws)  with AWS s3 deploying to Heroku. I'm also using Active Storage.
-## [7][Is anyone using AnyCable on Heroku?](https://www.reddit.com/r/rails/comments/i5lf38/is_anyone_using_anycable_on_heroku/)
-- url: https://www.reddit.com/r/rails/comments/i5lf38/is_anyone_using_anycable_on_heroku/
----
-Any gotchas with the deployment or did the AnyCable guide work out for you?
-## [8][Is it possible to access Rails database and model methods using an external script?](https://www.reddit.com/r/rails/comments/i5k2iv/is_it_possible_to_access_rails_database_and_model/)
-- url: https://www.reddit.com/r/rails/comments/i5k2iv/is_it_possible_to_access_rails_database_and_model/
----
-I have a Kafka consumer which keeps polling for new messages. Once a message comes in, I want to be able to update the database in my rails application using ActiveRecord. 
-
-
-Model:
-
-
-    class XYZ &lt; ApplicationRecord
-         # ...
-         def self.update_entity_record(en_id, status)
-               # ...
-         end
-    end
-
-
-Kafka consumer:
-
-
-    # Setup Kafka connection
-    # ...
-
-    kafka.each_message(topic: my_topic) do |msg|
-           msg = msg.value
-           XYZ.update_entity_record(msg.fetch('en_id'), msg.fetch('status')
-    end
-
-
-Is it possible?
-## [9][Is fast_jsonapi dead?](https://www.reddit.com/r/rails/comments/i53vm0/is_fast_jsonapi_dead/)
-- url: https://www.reddit.com/r/rails/comments/i53vm0/is_fast_jsonapi_dead/
----
-It looks like this gem hasn't had any commits for over a year now. Did Netflix stop maintaining this project? Would you guys recommend using another API builder?
-## [10][Is it possible to put Sidekiq retries into a different queue?](https://www.reddit.com/r/rails/comments/i54wdy/is_it_possible_to_put_sidekiq_retries_into_a/)
-- url: https://www.reddit.com/r/rails/comments/i54wdy/is_it_possible_to_put_sidekiq_retries_into_a/
----
-I would like to put Sidekiq retries into a lower priority queue. Is this possible?
-## [11][I’m taking over an app which has zero test. I installed minitest and guard but running tests is extremely slow.](https://www.reddit.com/r/rails/comments/i5574g/im_taking_over_an_app_which_has_zero_test_i/)
-- url: https://www.reddit.com/r/rails/comments/i5574g/im_taking_over_an_app_which_has_zero_test_i/
----
-Every time I run the test suite or that guard detects a change, the tests take something like 45 seconds to more then one minute to start. That’s very unpractical especially since this app is quite big and has zero test written... Where should I look to try to understand and fix that first issue?

@@ -1,5 +1,49 @@
 # ruby
-## [1][Most accurate way to handle trig functions like PI, sin, cos, tan, et al?](https://www.reddit.com/r/ruby/comments/i62enq/most_accurate_way_to_handle_trig_functions_like/)
+## [1][Free Ruby Programming Language Tutorial for Beginners | OdinSchool](https://www.reddit.com/r/ruby/comments/i70y41/free_ruby_programming_language_tutorial_for/)
+- url: https://www.youtube.com/watch?v=LXnPU10aHec
+---
+
+## [2][Let's create a serverless Telegram bot in Ruby that will translate anything to German with the help of Lambda, Amazon Translate and API Gateway](https://www.reddit.com/r/ruby/comments/i706k6/lets_create_a_serverless_telegram_bot_in_ruby/)
+- url: https://youtu.be/_aLMx7OFt5M
+---
+
+## [3][How to Dockerize a Rails application](https://www.reddit.com/r/ruby/comments/i6k5d6/how_to_dockerize_a_rails_application/)
+- url: https://www.codewithjason.com/dockerize-rails-application/
+---
+
+## [4][If Statement Help](https://www.reddit.com/r/ruby/comments/i6x1qt/if_statement_help/)
+- url: https://www.reddit.com/r/ruby/comments/i6x1qt/if_statement_help/
+---
+Hi everyone, this is my first day learning ruby and I have a question about a leap year program I'm writing. In java I'm able to write 
+
+`if((year % 4) == 0){}`
+
+and it would work just fine, and if I'm understanding ruby correctly, which I'm not because I wouldn't otherwise be here, it would be written
+
+`if year % 4 == 0`
+
+`end`
+
+&amp;#x200B;
+
+Can someone help me to understand what I'm doing wrong?
+
+&amp;#x200B;
+
+Thanks in advance.
+## [5][How to make a world population counter in Ruby?](https://www.reddit.com/r/ruby/comments/i6vud4/how_to_make_a_world_population_counter_in_ruby/)
+- url: https://www.reddit.com/r/ruby/comments/i6vud4/how_to_make_a_world_population_counter_in_ruby/
+---
+I want to make a world population counter in Ruby. I don't need the counter to be exact I just want a number to be added every second. Lastly, I don't want the counter to go to the next line whenever it increases in CLI. I want the counter to be in the same position the whole time even when it increases in value. FYI: I might want to add other counters below the population counter in the future.
+## [6][Create and publish rails gems elegantly!](https://www.reddit.com/r/ruby/comments/i6x7l7/create_and_publish_rails_gems_elegantly/)
+- url: https://sandipmane.dev/create-and-publish-rails-gems-elegantly
+---
+
+## [7][Integrate Swagger UI – API only ruby on rails course (chapter 8)](https://www.reddit.com/r/ruby/comments/i6jjd4/integrate_swagger_ui_api_only_ruby_on_rails/)
+- url: https://duetcode.io/rails-api-only-course/integrate-swagger-ui
+---
+
+## [8][Most accurate way to handle trig functions like PI, sin, cos, tan, et al?](https://www.reddit.com/r/ruby/comments/i62enq/most_accurate_way_to_handle_trig_functions_like/)
 - url: https://www.reddit.com/r/ruby/comments/i62enq/most_accurate_way_to_handle_trig_functions_like/
 ---
 UPDATE: Just wanted to clarify something... I probably shouldn't have used the wording "most accurate" in my title because I don't really need a lot of precision. If, say, eight decimal places is sufficient, is there a recommended way to handle the numbers? 
@@ -42,85 +86,13 @@ Is it recommended to round each number to, say, the 8th decimal place? And if so
     answer.round(8)`
 
 Any thoughts or ideas? Or articles/books that could help guide me through this?
-## [2][How can I get user input with a ruby http server?](https://www.reddit.com/r/ruby/comments/i5tgog/how_can_i_get_user_input_with_a_ruby_http_server/)
+## [9][How can I get user input with a ruby http server?](https://www.reddit.com/r/ruby/comments/i5tgog/how_can_i_get_user_input_with_a_ruby_http_server/)
 - url: https://www.reddit.com/r/ruby/comments/i5tgog/how_can_i_get_user_input_with_a_ruby_http_server/
 ---
 FYI: I'm new to Ruby. I'm running a Ruby http server on localhost. How can I get user input with a ruby http server?
 
 [My code](https://pastebin.com/65h40hWc)
-## [3][Open Source Status Update - July 2020 (dry-validation, dry-rails and hanami 2.0)](https://www.reddit.com/r/ruby/comments/i5bbj2/open_source_status_update_july_2020_dryvalidation/)
+## [10][Open Source Status Update - July 2020 (dry-validation, dry-rails and hanami 2.0)](https://www.reddit.com/r/ruby/comments/i5bbj2/open_source_status_update_july_2020_dryvalidation/)
 - url: https://solnic.codes/2020/08/06/open-source-status-update-july-2020/
----
-
-## [4][Required Module Data Instantiation](https://www.reddit.com/r/ruby/comments/i5bl7n/required_module_data_instantiation/)
-- url: https://www.reddit.com/r/ruby/comments/i5bl7n/required_module_data_instantiation/
----
-Hey everyone,  
-
-
-I have been working on a gem that will help ease the creation of RPG-like games using Ruby. I was looking for some feedback on how I should be initializing required data for the modules to work appropriately.  
-
-
-The repo is here if you are interested in perusing the code: [https://github.com/Rhoxio/adjective-rpg-engine](https://github.com/Rhoxio/adjective-rpg-engine) (Ignore the Readme - it's out of date right now.) The rdoc is here and is pretty much up to date: [https://rhoxio.github.io/adjective-rpg-engine/Adjective.html](https://rhoxio.github.io/adjective-rpg-engine/Adjective.html)  
-
-
-An applicable case can be found here in a surrogate testing class: [https://github.com/Rhoxio/adjective-rpg-engine/blob/master/spec/surrogate\_classes/surrogate\_actor.rb](https://github.com/Rhoxio/adjective-rpg-engine/blob/master/spec/surrogate_classes/surrogate_actor.rb)  
-
-
-Which uses a module like `Adjective::Temporable` found here: [https://github.com/Rhoxio/adjective-rpg-engine/blob/master/lib/adjective/concerns/temporable.rb](https://github.com/Rhoxio/adjective-rpg-engine/blob/master/lib/adjective/concerns/temporable.rb)  
-
-
-As of right now, I have methods in the modules (`initialize_modulename(opts)`) that when called, sets instance variables and attr\_reader/accessor as I have seen fit. I assume they will change reader/writer/accessors from the default if they see the need arise - but I need to test it effectively and very sparingly use `attr_accessor` as it is due to the nature of the code and need the provided default setter/getters for the given attributes anyway.  
-
-
-After doing some research on the topic, I have found patterns that use `define_method` and similar tricks, but when it comes down to it the default functionality *can* be overridden by simply defining a method of the same name. I am assuming (with great, and probably misplaced hope) that if they use the library, they will use the provided method names and and specifically included block and proc functionality if they wish to have it do something "different" than the default functionality provides.   
-
-
-Am I missing something? It "feels" like having them call `initialize_modulename(opts)` in `initialize` from the parent class is an "extra step" or "poor implementation". I have looked into patterns, but many of them seem to ask that I marry together specific classes by name or role, and in this situation, seems to be completely out of context for the problem I am trying to solve. I still need them to be able to pass data down the chain easily and cleanly, essentially, with as little development overhead as possible.   
-
-
-Thanks in advance! Also, any feedback about the code is appreciated. I've been coding in Ruby for about 5 years now, and I wanted the challenge of writing something more meta than my usual web dev stuff.
-## [5][Quieres aprender Ruby &amp; Ruby on Rails?](https://www.reddit.com/r/ruby/comments/i4ye6k/quieres_aprender_ruby_ruby_on_rails/)
-- url: https://www.reddit.com/r/ruby/comments/i4ye6k/quieres_aprender_ruby_ruby_on_rails/
----
-Querida comunidad queria comentarles que hemos creado un server en Discord el cual tiene como propósito enseñar sobre programación.
-
-Creo que la mejor forma de aprender es enseñar, por supuesto no somos formadores, quizá sabemos un poco de tecnología pero exactamente ese es el propósito de este server "Aprender" y en específico del ecosistema "Ruby y Ruby On Rails".
-
-En el canal de voz \[Grupo de lectura\] tendremos un proyecto que trataremos de implementar por 1 hora diaria de lunes a viernes (8.00pm Colombia), donde crearemos un ERP, queremos que aprendas temas como planeación, metodologías ágiles, buenas prácticas, test, desarrollo, deploy, documentation, trabajo en remoto, cómo trabajar en equipo \[roles, responsabilidades, tiempos de entrega, etc\], la idea principal es aprender haciendo/enseñando, así que cualquier tipo de aporte que nos lleve a lograr ese objetivo es bienvenido. 
-
-Intentaremos seguir un libro del profesor Javier Vazquez ([https://rclibros.es/producto/ruby-on-rails-aprende-a-crear-aplicaciones-web-desde-cero/](https://rclibros.es/producto/ruby-on-rails-aprende-a-crear-aplicaciones-web-desde-cero/)) que aborda el desarrollo de un software de este tipo y el cual encontrarás en el canal \[#libro\], es solo una guia como para estar en la misma página y que todos hablemos el mismo idioma, no es obligación que lo tengas para que puedas compartir en esta comunidad pero a mi te percepción será de mucha ayuda.
-
-Desde ya te invitamos a que nos compartas que piensas de esta metodología y si es posible nos recomiendes material para ahondar mejor esa perspectiva de aprender haciendo/enseñando, siéntete libre de hacerlo en el canal \[#general\]!
-
-&amp;#x200B;
-
-Puedes unirte o invitar a tus amigos desde el siguiente link [https://discord.gg/P4wZGsQ](https://discord.gg/P4wZGsQ)
-## [6][Lisamander and Robb clean up a Ruby on Rails codebase with Sorbet - LawIsCode on Twitch](https://www.reddit.com/r/ruby/comments/i4wk1g/lisamander_and_robb_clean_up_a_ruby_on_rails/)
-- url: https://www.twitch.tv/videos/701837904
----
-
-## [7][The Definitive Lemur Talk List](https://www.reddit.com/r/ruby/comments/i51r46/the_definitive_lemur_talk_list/)
-- url: https://twitter.com/keystonelemur/status/1291488545450926086
----
-
-## [8][What are some cool things you can do with Ruby parser.](https://www.reddit.com/r/ruby/comments/i4u9by/what_are_some_cool_things_you_can_do_with_ruby/)
-- url: https://www.reddit.com/r/ruby/comments/i4u9by/what_are_some_cool_things_you_can_do_with_ruby/
----
-I just learnt about what what parsers in ruby are and how they can rewrite source code. 
-For someone who is trying to learn it's API's and AST do you can any cool suggestions that can be done with it.
-Like I was thinking if trimming whitespaces from the end of the sentence could be one of them. 
-Or enforcing only 1 space between = and the next character.
-Any cool places ruby parsers are being used?
-## [9][Creating and distributing a GUI app](https://www.reddit.com/r/ruby/comments/i4s771/creating_and_distributing_a_gui_app/)
-- url: https://www.reddit.com/r/ruby/comments/i4s771/creating_and_distributing_a_gui_app/
----
-Hello there, I have been searching the whole web for an answer but I was not able to. I am using Fedora as my operating system. I want to create a GUI app and distribute it as an executable file. Not as a gem or .rb files. I want to create cross platform executables. It would be perfect if you directed me to right places. I am looking for a way to develop GUI and distribute it.
-
-&amp;#x200B;
-
-\-Thanks
-## [10][Could you please help me with this JRuby question?](https://www.reddit.com/r/ruby/comments/i4qj12/could_you_please_help_me_with_this_jruby_question/)
-- url: https://stackoverflow.com/q/63251312
 ---
 

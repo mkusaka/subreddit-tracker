@@ -1,6 +1,6 @@
 # rust
-## [1][Hey Rustaceans! Got an easy question? Ask here (31/2020)!](https://www.reddit.com/r/rust/comments/hynlfl/hey_rustaceans_got_an_easy_question_ask_here/)
-- url: https://www.reddit.com/r/rust/comments/hynlfl/hey_rustaceans_got_an_easy_question_ask_here/
+## [1][Hey Rustaceans! Got an easy question? Ask here (33/2020)!](https://www.reddit.com/r/rust/comments/i6yqng/hey_rustaceans_got_an_easy_question_ask_here/)
+- url: https://www.reddit.com/r/rust/comments/i6yqng/hey_rustaceans_got_an_easy_question_ask_here/
 ---
 Mystified about strings? Borrow checker have you in a headlock? Seek help here! There are no stupid questions, only docs that haven't been written yet.
 
@@ -16,141 +16,79 @@ The official Rust Programming Language Discord: [https://discord.gg/rust-lang](h
 
 The unofficial Rust community Discord: [https://bit.ly/rust-community](https://bit.ly/rust-community)
 
-Also check out [last week's thread](https://reddit.com/r/rust/comments/hurj77/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
+Also check out [last week's thread](https://reddit.com/r/rust/comments/hynlfl/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][Official /r/rust "Who's Hiring" thread for job-seekers and job-offerers [Rust 1.45]](https://www.reddit.com/r/rust/comments/htnv19/official_rrust_whos_hiring_thread_for_jobseekers/)
-- url: https://www.reddit.com/r/rust/comments/htnv19/official_rrust_whos_hiring_thread_for_jobseekers/
+## [2][What's everyone working on this week (33/2020)?](https://www.reddit.com/r/rust/comments/i6yras/whats_everyone_working_on_this_week_332020/)
+- url: https://www.reddit.com/r/rust/comments/i6yras/whats_everyone_working_on_this_week_332020/
 ---
-Welcome once again to the official /r/rust Who's Hiring thread!
-
-Before we begin, job-seekers should also remember to peruse [the prior thread](https://old.reddit.com/r/rust/comments/gz8ut5/official_rrust_whos_hiring_thread_for_jobseekers/).
-
-This thread will be periodically stickied to the top of /r/rust for improved visibility. The thread will be refreshed and posted anew when the next version of Rust releases in six weeks.
-
-Please adhere to the following rules when posting (adapted from /r/cpp's jobs thread).
-# Rules for individuals:
-
- * Don't create top-level comments; those are for employers.
- * Feel free to reply to top-level comments with on-topic questions.
- * I will create a stickied top-level comment for individuals looking for work.
- * I will create an additional top-level comment for meta discussion.
-
-# Rules for employers:
-
- * To find individuals seeking work, see the replies to the stickied top-level comment; you will need to click the "more comments" link at the bottom of the top-level comment in order to make these replies visible.
- * To make a top-level comment you must be hiring directly; no third-party recruiters.
- * One top-level comment per employer. If you have multiple job openings, please consolidate their descriptions or mention them in replies to your own top-level comment.
- * Proofread your comment after posting it and edit it if necessary to correct mistakes.
- * Please base your comment on the following template:
-
-COMPANY: *[Company name; please link to your company's website or careers page.]*
-
-TYPE: *[Full time, part time, internship, contract, etc.]*
-
-DESCRIPTION: *[What does your company do, and what are you using Rust for? How much experience are you seeking and what seniority levels are you hiring for? The more details the better.]*
-
-LOCATION: *[Where are your office or offices located? If your workplace language isn't English, please specify it.]*
-
-REMOTE: *[Do you offer the option of working remotely? If so, do you require employees to live in certain areas or time zones?]*
-
-VISA: *[Does your company sponsor visas?]*
-
-CONTACT: *[How can someone get in touch with you?]*
-## [3][Announcing Pyo3 Log](https://www.reddit.com/r/rust/comments/i6ef2x/announcing_pyo3_log/)
-- url: https://vorner.github.io/2020/08/08/pyo3-log.html
+New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-33-2020/47095?u=llogiq)!
+## [3][Meili raises 1.5M€ for open source search in Rust](https://www.reddit.com/r/rust/comments/i71w2z/meili_raises_15m_for_open_source_search_in_rust/)
+- url: https://blog.meilisearch.com/meili-fundraise/
 ---
 
-## [4][Recommend Rust-friendly microcontroller for home automation](https://www.reddit.com/r/rust/comments/i6645g/recommend_rustfriendly_microcontroller_for_home/)
-- url: https://www.reddit.com/r/rust/comments/i6645g/recommend_rustfriendly_microcontroller_for_home/
+## [4][Shiika is a statically-typed scripting language](https://www.reddit.com/r/rust/comments/i70f3s/shiika_is_a_staticallytyped_scripting_language/)
+- url: https://github.com/yhara/shiika
 ---
-Hi everybody,
 
-I’m looking for recommendations of Rust-friendly microcontroller that potentially can be used with a network stack (ZigBee or BLE). I guess the question is not about microcontroller itself, but more about for which ones there’s the best tooling in Rust.
-I’ve decided to get some experience with Rust by getting back to some of my hobby home automation project.
-Since I have to go wireless, I’ll need network stack.
-
-Thanks!
-## [5][nth_element implementation by Floyd and Rivest.](https://www.reddit.com/r/rust/comments/i6gaso/nth_element_implementation_by_floyd_and_rivest/)
-- url: https://www.reddit.com/r/rust/comments/i6gaso/nth_element_implementation_by_floyd_and_rivest/
+## [5][Surviving Rust async interfaces - fasterthanli.me](https://www.reddit.com/r/rust/comments/i6p35d/surviving_rust_async_interfaces_fasterthanlime/)
+- url: https://fasterthanli.me/articles/surviving-rust-async-interfaces
 ---
-`nth_element` [implementation](https://crates.io/crates/floydrivest) using the Floyd-Rivest algorithm. This is my first crate, I found myself in need of the c++'s  counterpart while porting a bigger project. Here it is... critiques very welcome.  
 
-
-I'm pretty new to Rust and willing to expand the crate to better suit rustaceans needs.
-## [6][How to add a class variable to watch in Visual Studio code when using cppvsdbg?](https://www.reddit.com/r/rust/comments/i6f68o/how_to_add_a_class_variable_to_watch_in_visual/)
-- url: https://www.reddit.com/r/rust/comments/i6f68o/how_to_add_a_class_variable_to_watch_in_visual/
+## [6][Announcing `polling-async-trait`! We can't have "real" async trait methods yet, so this is the next best thing](https://www.reddit.com/r/rust/comments/i6yuam/announcing_pollingasynctrait_we_cant_have_real/)
+- url: https://www.reddit.com/r/rust/comments/i6yuam/announcing_pollingasynctrait_we_cant_have_real/
 ---
-Hi All,
+Inspired by the excellent `async-trait`, I wanted to see if I could create an abstraction for `async` methods in traits that was "truely" 0-cost (that is, that returns a concrete `Future` type, rather than something boxed and type-erased.) While it's currently impossible to do with an `async fn` on a trait without GATs, it turns out we can do the next best thing: asyncify `poll` methods on your trait. Thus [`polling-async-trait`](https://docs.rs/polling-async-trait/) was born.
 
-I am using Visual Studio Code to develop my app and one thing I am missing is a good debugger since my code is huge. Often times I would like to add some variables to watch.
+The basic interface is very similar to `async-trait`; tag a trait with an attribute that you want to asyncify, as well as the specific polling methods:
 
-I am able to visualize a local variables in the watch window and in the debug console. However, If i do with struct fields using Arc, I get "Class Struct has no member Field". Any suggestion?
+    // This trait will have the async methods `flush`
+    // and `close` generated for it.
+    #[async_poll_trait]
+    trait SimpleIO {
+        #[async_method]
+        fn poll_flush(&amp;mut self, cx: &amp;mut Context&lt;'_&gt;) -&gt; Poll&lt;io::Result&lt;()&gt;&gt;;
 
-    pub struct mine {
-       pub param: f32,
+        // `owned` means that the future returned by `close`
+        // will take irrevocable ownership of this object
+        #[async_method(owned)]
+        fn poll_close(&amp;mut self, cx: &amp;mut Context&lt;'_&gt;) -&gt; Poll&lt;io::Result&lt;()&gt;&gt;;
     }
-    
-    impl mine {
-      // pub new() {}
-      pub add_one(&amp;self) -&gt; f32 {self.param + 1}
+
+This allows you to write:
+
+    async fn flush_and_close(data: impl SimpleIO) -&gt; io::Result&lt;()&gt; {
+        data.flush().await?;
+        data.close().await?;
+        Ok(());
     }
-    
-    let s1 = Arc::new(RwLock::new(mine::new());
-    let s = s1.read();
-    // s added to watch or typed in the debug console works
-    // s.param added to watch or typed in the debug console
-    // says class mine has no member param
-    // storing the s.param to some local variable and adding that to watch or typed in debug console works
 
-Likewise,
-
-I am not sure how to call s.add\_one(). Can someone help?
-
-Update: Found out I can get the fields by using C++ syntax.
-
-    s.rwlock-&gt;data.value.param
-
-Now, stuck with calling functions
-## [7][Rayon for simple mapping](https://www.reddit.com/r/rust/comments/i6btd7/rayon_for_simple_mapping/)
-- url: https://www.reddit.com/r/rust/comments/i6btd7/rayon_for_simple_mapping/
----
-Very simple question. 
-
-Should I use rayon for simple task such as restructuring the output of a db query? Or is there a cost to doing that to a simple task. 
-
-Wondering if you guys just literally replace map with rayon’s.
-## [8][Using Rust Library in Wasm](https://www.reddit.com/r/rust/comments/i6fddw/using_rust_library_in_wasm/)
-- url: https://www.reddit.com/r/rust/comments/i6fddw/using_rust_library_in_wasm/
----
-I was going through "Rust and WebAssembly" [book](http://rustwasm.github.io/docs/book/game-of-life/implementing.html), one of the end-chapter exercise requires generation of random numbers. Generating random number using js-sys  works fine but if I use Rust rand library the page does not render. Is there a limitation on Rust library that can be used to generate Wasm?
-## [9][Is concurrency actually simultaneous?](https://www.reddit.com/r/rust/comments/i67yl0/is_concurrency_actually_simultaneous/)
-- url: https://www.reddit.com/r/rust/comments/i67yl0/is_concurrency_actually_simultaneous/
----
-I'm  currently writing a piece of code designed to find out some data for  every number within a range. The problem is for some numbers this is  incredibly intensive, and takes a long time, so I've been trawling the  concurrency documentation to try and see how I could re-implement my  code to use it.
-
-The problem is  that it looks like the documentation is saying that they don't run at  the same time, but rather hand off a single operating system process. As  it says in the docs
-
-&gt;The calls to  
-&gt;  
-&gt;thread::sleep   
-&gt;  
-&gt;force a thread to  stop its execution for a short duration, allowing a different thread to  run. The threads will probably take turns, but that isn’t guaranteed: it  depends on how your operating system schedules the threads.
-
-This  seems to imply to me that it won't run the threads simultaneously on  different cores on my machine. Is this actually the case? If so, how can  one run separate blocks of code on different cores?
-## [10][SPIR-Q 0.4.2 is now released!](https://www.reddit.com/r/rust/comments/i6hyop/spirq_042_is_now_released/)
-- url: /r/rust_gamedev/comments/i6hxh6/spirq_042_is_now_released/
+Try it out and let me know what you think! As always I'm open to feedback and critiques. In particular for this library I definitely want to know if anyone can produce unsoundness with the things it does with `Pin`; I'm 98% sure I covered all the bases but I'd love to have a second set of eyes on it. My hope is to move it to 1.0 ASAP once I'm confident in its soundness.
+## [7][The promise of Rust async-await for embedded](https://www.reddit.com/r/rust/comments/i719p1/the_promise_of_rust_asyncawait_for_embedded/)
+- url: https://tweedegolf.nl/blog/41/the-promise-of-rust-async-await-for-embedded
 ---
 
-## [11][Ergonomic postgres joins?](https://www.reddit.com/r/rust/comments/i68lap/ergonomic_postgres_joins/)
-- url: https://www.reddit.com/r/rust/comments/i68lap/ergonomic_postgres_joins/
+## [8][Cilk: (Toy) Compiler Infrastructure influenced by LLVM written in Rust](https://www.reddit.com/r/rust/comments/i70ftm/cilk_toy_compiler_infrastructure_influenced_by/)
+- url: https://github.com/maekawatoshiki/cilk
 ---
-Can anyone point to any examples of ergonomic joins with Diesel or SQLx? As far as I can tell with Diesel joins always produce a tuple of structs corresponding to the tables, so if you had Posts and User  for instance and wanted to do a join this would result in (Post, User) and would need to be converted into a new type to nest user within post and to serialize. Is there a way to make Diesel or SQLx work without needing to map the output type manually?
-## [12][Tools for Debugging Memory/Space Leaks?](https://www.reddit.com/r/rust/comments/i6b26z/tools_for_debugging_memoryspace_leaks/)
-- url: https://www.reddit.com/r/rust/comments/i6b26z/tools_for_debugging_memoryspace_leaks/
+
+## [9][ugrep: new ultrafast C++ grep claims to be faster than ripgrep](https://www.reddit.com/r/rust/comments/i6pfb2/ugrep_new_ultrafast_c_grep_claims_to_be_faster/)
+- url: https://github.com/Genivia/ugrep
 ---
-Hi all.
 
-I have a small but complex program (heavy usage of futures/streams + pulls in many crates). The program seems to have a memory (or space) leak as it gets OOM after about 24 hours. I'm guessing some of my objects aren't getting dropped at the time I intend.
+## [10][Let’s implement a Bloom Filter](https://www.reddit.com/r/rust/comments/i6qk6x/lets_implement_a_bloom_filter/)
+- url: https://onatm.dev/2020/08/10/let-s-implement-a-bloom-filter/
+---
 
-What are your recommendations for tools to solve this problem? A possible tool would be something that allows me to wrap some of the types I use into newtypes that log when the object dropped. And then the logs can be graphed.
+## [11][Comparison of XML and HTML parsing libraries](https://www.reddit.com/r/rust/comments/i700dz/comparison_of_xml_and_html_parsing_libraries/)
+- url: https://www.reddit.com/r/rust/comments/i700dz/comparison_of_xml_and_html_parsing_libraries/
+---
+[https://github.com/alexkreidler/rust-html-xml-comparison](https://github.com/alexkreidler/rust-html-xml-comparison)
+
+So far I've copied in the examples from each library and written basic exemplary tests for the lower-level XML libs. It's not fully done, but provides a good overview of the landscape.
+
+Next steps are to automatically test their capabilities on in-the-wild HTML and XML.
+## [12][How To Bootstrap A Rust Web API From Scratch - Zero To Production #3](https://www.reddit.com/r/rust/comments/i6o1q4/how_to_bootstrap_a_rust_web_api_from_scratch_zero/)
+- url: https://www.lpalmieri.com/posts/2020-08-09-zero-to-production-3-how-to-bootstrap-a-new-rust-web-api-from-scratch/
+---
+

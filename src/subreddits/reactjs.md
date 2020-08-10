@@ -85,138 +85,51 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
-## [3][Introducing Rome: A linter for JavaScript and TypeScript.](https://www.reddit.com/r/reactjs/comments/i65sgd/introducing_rome_a_linter_for_javascript_and/)
-- url: https://romefrontend.dev/blog/2020/08/08/introducing-rome.html
+## [3][Build a Landing Page with Chakra UI - Part 1](https://www.reddit.com/r/reactjs/comments/i6zqpn/build_a_landing_page_with_chakra_ui_part_1/)
+- url: https://raptis.wtf/blog/build-a-landing-page-with-chakra-ui-part-1/
 ---
 
 ## [4][Anybody here interested in how React code talks to native code in a React Native app? If so, I made this short video explaining how it works.](https://www.reddit.com/r/reactjs/comments/i6i64v/anybody_here_interested_in_how_react_code_talks/)
 - url: https://youtu.be/TU_kTuz2i9Y
 ---
 
-## [5][A web app which recommends books according to your preferences](https://www.reddit.com/r/reactjs/comments/i6hk7t/a_web_app_which_recommends_books_according_to/)
-- url: https://www.reddit.com/r/reactjs/comments/i6hk7t/a_web_app_which_recommends_books_according_to/
+## [5][Review request on my first MERN web app](https://www.reddit.com/r/reactjs/comments/i6wqcu/review_request_on_my_first_mern_web_app/)
+- url: https://www.reddit.com/r/reactjs/comments/i6wqcu/review_request_on_my_first_mern_web_app/
 ---
-Hey guys, over the past few months my friends and I built, Arkvl, a web-app that gives you personalized recommendations based on books that you like.
+Hello, 
 
-We would love it if you used the app and gave us feedback on what can be improved, new feature requests and criticism is certainly welcome!
+so I have been slowly working on this small web app for the past 1.5 weeks and just wanted to get some advice/feedback on my work.
 
-Link : [arkvl.space](https://arkvl.space)
+Demo: [Markdown Notes](http://markdown-notes.herokuapp.com)
 
-Images : [https://imgur.com/a/VYmU2xQ](https://imgur.com/a/VYmU2xQ)
-## [6][React Project Tutorials](https://www.reddit.com/r/reactjs/comments/i6f8t9/react_project_tutorials/)
-- url: https://www.reddit.com/r/reactjs/comments/i6f8t9/react_project_tutorials/
+Source code: [Source](https://github.com/CShatto99/MERN_Projects/tree/master/MarkdownNotes)
+
+I have been learning MERN for a little more than a month and would really appreciate it if anyone could give some helpful feedback to improve.
+## [6][React Router protect routes with a specific way](https://www.reddit.com/r/reactjs/comments/i74t69/react_router_protect_routes_with_a_specific_way/)
+- url: https://www.reddit.com/r/reactjs/comments/i74t69/react_router_protect_routes_with_a_specific_way/
 ---
-Hello Guys,
-
-I have finished the HTML, CSS, Js and react-redux course and have practised the fundamentals and advanced topics by making basic apps.
-
-But there is still a need for improvement, are there any tutorials or source where I can find few react/redux projects to practice?
-## [7][Help with React and AntD Table. Onclick handler in dropdown menu!](https://www.reddit.com/r/reactjs/comments/i6fw93/help_with_react_and_antd_table_onclick_handler_in/)
-- url: https://www.reddit.com/r/reactjs/comments/i6fw93/help_with_react_and_antd_table_onclick_handler_in/
+Hello. I am building a web app and I need to have protected routes. I want to do it in a specific way though. First, a jwt is stored in client's cookies. Then, every time a route matches, I want first to make a call to my server, to validate the jwt, and then, if successfully verified, I want the screen to load, otherwise i want the login screen to pop. I am currently facing problems doing this, mainly because the login screen renders before the api request is made, and then the screen does not get updated. Any help?
+## [7][I was taking react specialization course on coursera but it uses version 1.5](https://www.reddit.com/r/reactjs/comments/i73yt2/i_was_taking_react_specialization_course_on/)
+- url: https://www.reddit.com/r/reactjs/comments/i73yt2/i_was_taking_react_specialization_course_on/
 ---
-Hi there folks.
-
-I am wondering if some more experienced react developers in the community can help me with a 2nd onClick handler and getting access to the data I need in that handler.  I have come up with a solution myself but it feels a little hacky because I am using data attributes to attach data to a html element and am wondering if there is a better way.
-
-**My problem**
-
-I am using the  [antd table component](https://ant.design/components/table/) for displaying data.  The last column of my table is called "action" and this is where I plan to have the "..." elipsis button (like in microsoft teams).  
-
-When you click this button it pops up a menu which the user can then select from differentmenu option.  But when the user clicks the menu item that is 2 onClick handlers. 1 click event for the row in the table, and then the 2nd for the menu selection.
-
-So, in that 2nd onClick handler you need to know 2 things:
-
-* 1 - the original row the user clicked on 
-* 2 - the menu option they selected
-
-The problem is that in the 2nd menu onClick handler you only know what menu item the user chose. 
-
-**My solution**
-
-What I decided to do was use [data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) to store the table row information in the html.  I converted the table row to json and associated with each menu item.  Like this:
-
-    function TablePopupMenu(data) {
-      var json = JSON.stringify(data);
-      return (
-        &lt;Menu data-id={json} onClick={onClickPopupMenu}&gt;
-          &lt;Menu.Item data-id={json} key="1"&gt;
-            1st menu item
-          &lt;/Menu.Item&gt;
-          &lt;Menu.Item data-id={json} key="2"&gt;
-            2nd memu item
-          &lt;/Menu.Item&gt;
-          &lt;Menu.Item data-id={json} key="3"&gt;
-            3rd menu item
-          &lt;/Menu.Item&gt;
-        &lt;/Menu&gt;
-      );
-    }
-
-..and then in the 2nd menu onClick handler I have this code to get the table data from the data-id attribute:
-
-    const onClickPopupMenu = (key) =&gt; {
-      var json = key.domEvent.target.getAttribute("data-id");
-      var tableRowData = JSON.parse(json);
-      console.log(`User Clicked on menu ${key.key} - table row: ${tableRowData.name}`);
-    };
-
-My question is, I feel like this is anti react and wondering if there is a simpler, better way?
-
-**Code Example**
-
-I have setup a code sandbox with my exampe code here: [https://codesandbox.io/s/focused-glitter-eedby](https://codesandbox.io/s/focused-glitter-eedby)
-
-Any advice, help, steering would be greatly appreciated.
-## [8][Get request for a compressed image?](https://www.reddit.com/r/reactjs/comments/i6eggu/get_request_for_a_compressed_image/)
-- url: https://www.reddit.com/r/reactjs/comments/i6eggu/get_request_for_a_compressed_image/
+Course is really good and I finished one week. But then I saw a guy commenting about this and then checked. I found latest version is 16 so version 1 will be really outdated. Should I still do it or find another course? If it will be easy for me to transition from learning everything in version 1 to 16 then I might do it but I newbie in this and I don't know shit about it. Pls help
+## [8][How to disconnect a user from peer.js?](https://www.reddit.com/r/reactjs/comments/i73v3l/how_to_disconnect_a_user_from_peerjs/)
+- url: https://www.reddit.com/r/reactjs/comments/i73v3l/how_to_disconnect_a_user_from_peerjs/
 ---
-There is a site I found that hosts multiple images of pokemon however performing a get request downloads an image where the size can hundreds of kb or over a mb. Is there anyway to do a get request for a compressed version of the image? I am displaying over 800 of these images on the same page so it can take a long time to download all of these images for a client visiting my site.  
-
-
-the website for those curious:  [https://pokeres.bastionbot.org/images/pokemon/250.png](https://pokeres.bastionbot.org/images/pokemon/250.png)   
-
-
-changing the id gets you a different image.
-## [9][So I made Reddit with Instagram's UI](https://www.reddit.com/r/reactjs/comments/i5t04c/so_i_made_reddit_with_instagrams_ui/)
-- url: https://www.reddit.com/r/reactjs/comments/i5t04c/so_i_made_reddit_with_instagrams_ui/
+Do anyone knows how to disconnect the user from peer.js?
+## [9][I just started with React and Spring boot last week, created a server to control the computer functionalities like volume, locking system, or putting the system to sleep using the phone. I made a video, need some suggestions as I am planning to upload my other personal projects. :)](https://www.reddit.com/r/reactjs/comments/i7157d/i_just_started_with_react_and_spring_boot_last/)
+- url: https://www.youtube.com/watch?v=wQIgFHn1wRg
 ---
-Hey guys, I'm new to reactjs. I thought the best way to learn it to try to make my own project, so chose Reddit's API and tried to build a web app with Instagram's UI.
 
-Please have a look at it...
-
-DEMO:  https://redditfornormies.herokuapp.com/ 
-
-source code:  https://github.com/jaesharma/redditfornormies 
-
-I'm still trying to improve this ... , implemented all major features I could think of... please check out and give your reviews and suggestions on how can I make It even better. Thanks.
-
-log in with your Reddit id to have a better experience.
-## [10][clicking on navigation changes url but not the view](https://www.reddit.com/r/reactjs/comments/i6hwlm/clicking_on_navigation_changes_url_but_not_the/)
-- url: https://www.reddit.com/r/reactjs/comments/i6hwlm/clicking_on_navigation_changes_url_but_not_the/
+## [10][Background Slider/Carousel](https://www.reddit.com/r/reactjs/comments/i73nwo/background_slidercarousel/)
+- url: https://www.reddit.com/r/reactjs/comments/i73nwo/background_slidercarousel/
 ---
-can someone help me with a navlink im building
-
-im using a prebuilt component from material design bootstrap to do the navigation links
-
-the problem is that when i press the navigation link the page url changes but the view does not change 
-
-I searched up the problem for hours and have tried many different things but could not get it to work. 
-
-here is all the code that i am using. any help will be appreciated!
-
- [https://github.com/nh916/safuja-butterfly](https://github.com/nh916/safuja-butterfly)
-## [11][Fetching images from express endpoint and displaying them](https://www.reddit.com/r/reactjs/comments/i6hfqh/fetching_images_from_express_endpoint_and/)
-- url: https://www.reddit.com/r/reactjs/comments/i6hfqh/fetching_images_from_express_endpoint_and/
+Are there any react libraries with background carousel for landing page? I found some but I need it with buttons/  to change the images.
+## [11][Where do you store JWT Tokens??](https://www.reddit.com/r/reactjs/comments/i6muep/where_do_you_store_jwt_tokens/)
+- url: https://www.reddit.com/r/reactjs/comments/i6muep/where_do_you_store_jwt_tokens/
 ---
-I am planning on creating a form that will send uploaded files to my express backend where I will use multer to save the buffer in mongodb. However, I am confused on how I can retrieve the images. Im thinking of creating an api endpoint that will return the file, but I dont want to display my backend end url in the image src for security, how can I hide it or is there a better way to present the images?
-## [12][React Component that can display the uploaded CSV files into a table component.](https://www.reddit.com/r/reactjs/comments/i6hbw6/react_component_that_can_display_the_uploaded_csv/)
-- url: https://www.reddit.com/r/reactjs/comments/i6hbw6/react_component_that_can_display_the_uploaded_csv/
+Some sources say localstorage but then people say it's prone to XSS attacks so then they say HTTP ONLY Cookie but say not to do that either. What is the safest way to store these tokens? Would it be a good idea to get a new token after each request and store it in memory within the component file?
+## [12][Deploying a react app using pm2 and serve on the production server](https://www.reddit.com/r/reactjs/comments/i73074/deploying_a_react_app_using_pm2_and_serve_on_the/)
+- url: https://www.loginradius.com/engineering/blog/react-app-deployment/
 ---
-I'm new to react and searching is a bit confusing right now. I hope you could drive me to a solution.   
-What I'm looking for is, I have a file uploaded button that uploads a single CSV file. I need to
 
-1. On load of this file parse this file locally and display it in the browser as a table component.
-2. I need the ability to add two more columns in addition to the existing columns for displaying any validation error and the result of API call of this line. 
-3. The table component must be editable after being loaded. 
-
-Any help with which react libraries I'll be able to achieve this would be great.

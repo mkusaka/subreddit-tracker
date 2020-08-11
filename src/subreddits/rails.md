@@ -19,191 +19,127 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Does anyone know what's going on with apidock?](https://www.reddit.com/r/rails/comments/i6tngy/does_anyone_know_whats_going_on_with_apidock/)
-- url: https://www.reddit.com/r/rails/comments/i6tngy/does_anyone_know_whats_going_on_with_apidock/
+## [2][I curated all the remote job openings from Hacker News who is hiring thread - August](https://www.reddit.com/r/rails/comments/i7pl8b/i_curated_all_the_remote_job_openings_from_hacker/)
+- url: https://www.reddit.com/r/rails/comments/i7pl8b/i_curated_all_the_remote_job_openings_from_hacker/
 ---
-Whenever I try to visit apidock.com, it takes forever to load and then i just get a server error.
+This list contains 398 remote jobs and you can filter them by location or skills.
 
-Is anyone else experiencing this?
-## [3][Plyr video player and Rails 6](https://www.reddit.com/r/rails/comments/i74o1y/plyr_video_player_and_rails_6/)
-- url: https://www.reddit.com/r/rails/comments/i74o1y/plyr_video_player_and_rails_6/
+Here I would like to share the entire remote jobs list from the big list of opportunities. All these are 100% remote jobs not just allowed to work from home during this crisis. These are 100% remote jobs and will continue to follow that after the crisis.
+
+https://remoteleaf.com/whoishiring.   
+
+Note: Select "ruby" in the skills filter to see ruby/rails dev jobs.
+
+- 100% remote full-time jobs
+- Spent more than 14 hours to curate this information
+## [3][What kind of knowledge should a 1year experience Rails developer have?](https://www.reddit.com/r/rails/comments/i7flbp/what_kind_of_knowledge_should_a_1year_experience/)
+- url: https://www.reddit.com/r/rails/comments/i7flbp/what_kind_of_knowledge_should_a_1year_experience/
 ---
-[https://plyr.io/](https://plyr.io/) is a javascript library to play videos with support for YouTube and Vimeo. I'm trying to implement it within a Rails 6 site. What are the steps to make this happen?
+I have been working for a year at a company with not much mentoring. I was wondering exactly how much knowledge should I have as someone with one year of experience. I can write API's and generally when I am give a task I can figure my way out. On the other hand, I was tongue tied when I was asked something that a senior developer considered to be basic knowledge.
+## [4][Could someone ELI5 how to use docker and automated testing for my rails app?](https://www.reddit.com/r/rails/comments/i7eq5b/could_someone_eli5_how_to_use_docker_and/)
+- url: https://www.reddit.com/r/rails/comments/i7eq5b/could_someone_eli5_how_to_use_docker_and/
+---
+Hello all, I am working on a rails app that is in prod (deployed to DO) and in use by mostly me but still a production app nonetheless.  
 
-Alternatively, what is your choice of video player in Rails 6 that supports MP4, Vimeo, and YouTube?
-## [4][The best Ruby/Rails profiler?](https://www.reddit.com/r/rails/comments/i74jms/the_best_rubyrails_profiler/)
+I typically do development/deploy by building features, running rspec locally, merging to master, and pushing master to my prod server (which is running on dokku).  
+
+I've read a little about CI/CD and docker and understand them conceptually but not sure how to convert my rails app to use them.  Ideally i would like a test VM that mirrors my production server, that I can push my develop branch to periodically and automatically run tests with each push.
+
+I would also like to run it in a docker container for ease of distribution (it could be a handy thing to self-host for others that are interested).  I know the terminology but not the how-to of building this stuff, and not sure what other products/software is necessary.
+
+I've read about Jenkins, CircleCI, TravisCI, Github Actions, etc - are all these basically the same thing?
+
+Sorry for the rambling and unorganized questions, it's just an area I would like to learn more about with my rails app. Thanks!
+## [5][Sooo, any gems out there that help end users create custom queries?](https://www.reddit.com/r/rails/comments/i7fwnv/sooo_any_gems_out_there_that_help_end_users/)
+- url: https://www.reddit.com/r/rails/comments/i7fwnv/sooo_any_gems_out_there_that_help_end_users/
+---
+Thanks in advance for suggestions!
+
+
+Ok, so the use case is that our users need to be able to pick columns from multiple different tables, select a predicate per column , then select a value. They want a csv that has the columns and values for just the columns they picked... basically just like the results you’d get running a query from the dB. Users don’t know sql and need a GUI. 
+
+
+Here’s an example. 
+The user has a Program (which is associated with things like teams and more). The program can have many years. Per year, there are different kinds of projects. Per project, there are different dollar amounts from varying sources of funding. 
+
+
+The users want to be able to choose their own attrs and values to end up with queries like “find all programs between year X and year Y where a fund was approved and then unapproved” and get a result with these columns: program’s name, year’s name, team’s name, project’s name, fund amount, fundsource’s name. This is just one example, and they want to be able to make their own queries any time. 
+
+
+I have some front end ideas, so I’m mostly looking for back-end focused gems that can help generate safe sql queries based on Params from form(s).
+
+
+We are already using Ransack for some searches, but I can’t seem to figure out how to get what I need from Ransack. My understanding of Ransack is that it’s just returning a collection of instances of one Model —like Program.ransack(q).result will just give me Programs that match the form params, not the details for the related resources. 
+
+
+I tried out Metabase to see if it would be better to just give the users an actual GUI for the dB, but the users don’t understand joins tables or foreign keys, or the fact that some names are stored in their own tables and the id is saved to the table instead of a string (e.g. team.name_id)
+
+
+I didn’t want to reinvent the wheel if it’s been done by more talented folks than I!!! Thanks again!
+## [6][[FRONT-END] loading="lazy" in the images](https://www.reddit.com/r/rails/comments/i7btsp/frontend_loadinglazy_in_the_images/)
+- url: https://www.reddit.com/r/rails/comments/i7btsp/frontend_loadinglazy_in_the_images/
+---
+Hi guys,
+
+recently an user suggested me to add  loading="lazy" in all my img tag. 
+
+Is it a good idea? Is there a "right way" to do it on rails?
+
+Should I just add loading="lazy" and ... nothing else?
+
+Thanks for your help!
+## [7][how to add parse_markdown and truncate at the same time?](https://www.reddit.com/r/rails/comments/i7bwjr/how_to_add_parse_markdown_and_truncate_at_the/)
+- url: https://www.reddit.com/r/rails/comments/i7bwjr/how_to_add_parse_markdown_and_truncate_at_the/
+---
+Usually to "render" the markdown I use this system
+
+    &lt;%= parse_markdown(@item.description).html_safe %&gt;
+
+and to add the truncate I use this system
+
+    &lt;%= truncate(@item.last_update.text, length: 280, separator: ' ') %&gt;
+
+**How to add the markdown in the last example?**
+
+  
+I tried with  
+
+    &lt;%= truncate(parse_markdown(@item.last_update.text).html_safe, length: 280, separator: ' ') %&gt;
+
+ but it doesn't work correctly. If the message is short (less than 280), it works. But if it is longer, the markdown doesn't work
+## [8][Where do you validate user input/url params?](https://www.reddit.com/r/rails/comments/i7fdld/where_do_you_validate_user_inputurl_params/)
+- url: https://www.reddit.com/r/rails/comments/i7fdld/where_do_you_validate_user_inputurl_params/
+---
+Where do you put the validations that check the user input(via url in mycase) that's used to fetch data from a model?
+
+lets says I have a has of countries &amp; currencies { us: 'USD', cn: 'CNY', in: 'INR' ..}
+
+Since its a url param are you doing it in controller or within a controller-concern or model or model-concern or seperate class in model which has all these validation rules? I'm kind of puzzled with this..
+
+Thanks!
+## [9][Rails 6 Devise and the Locked Namespace](https://www.reddit.com/r/rails/comments/i79b78/rails_6_devise_and_the_locked_namespace/)
+- url: https://www.reddit.com/r/rails/comments/i79b78/rails_6_devise_and_the_locked_namespace/
+---
+In my first attempt to use my company's AD for my website authentication, I have hit a quandary.  I only want the AD access for a specific namespace of the site as the rest of the site is open to the public. I have googled for a good run down of how to set this properly but I have yet to find one. 
+
+I have been following [this article](https://medium.com/@takatoyo/step-by-step-implement-active-directory-auth-with-devise-33590bd3e3f1) in my initial setup.
+
+So I am hoping that someone might tell me if this is how I am supposed to go about doing this.
+
+I have a feeling that it will involve:  
+namespace\_controller.rb  
+users/sessions\_controller.rb (as setup by devise)  
+namespace/thing1\_controller.rb  
+namespace/thing2\_controller.rb
+## [10][Using a Custom Image as Toggle for Form Input?](https://www.reddit.com/r/rails/comments/i7gkib/using_a_custom_image_as_toggle_for_form_input/)
+- url: https://www.reddit.com/r/rails/comments/i7gkib/using_a_custom_image_as_toggle_for_form_input/
+---
+Hi All,
+
+I am new to Rails and had a question about form inputs. I have an image that will be green for switched on and gray for switched off. What kind of form input should I research? The closest thing I see is a radio button, but I need it to be the gray/green image instead of the default one. 
+
+Thanks in advance!
+## [11][The best Ruby/Rails profiler?](https://www.reddit.com/r/rails/comments/i74jms/the_best_rubyrails_profiler/)
 - url: https://www.reddit.com/r/rails/comments/i74jms/the_best_rubyrails_profiler/
 ---
 What is the best profiling tool for Ruby on Rails? I'm looking for a tool which could return executed functions stack with function names, number of calls and time elapsed on each function. The goal is to find slow methods which are causing performance issues.
-## [5][Turbolinks doesn't update the page to display model validation errors](https://www.reddit.com/r/rails/comments/i6k4qy/turbolinks_doesnt_update_the_page_to_display/)
-- url: https://www.reddit.com/r/rails/comments/i6k4qy/turbolinks_doesnt_update_the_page_to_display/
----
-Hi!
-
-just a quick question, really stuck here:
-I'm new to Rails and I want to display form validation errors to my users.
-I have the following in my posts controller:
-
-```ruby
-class Blog::PostsController &lt; ApplicationController
-  def new
-    @post = Post.new
-  end
-
-  def create
-    @post = Post.new post_params
-    if @post.save
-      flash[:notice] = 'Post was created successfully!'
-      redirect_to :controller =&gt; 'posts', :action =&gt; 'new'
-    else
-      render 'new'
-    end
-  end
-
-  private def post_params
-    params.require(:post).permit(:name, :slug, :tags, :content)
-  end
-end
-```
-
-Then, I have a view like this:
-
-```erb
-&lt;h1&gt;Create a Blog Post&lt;/h1&gt;
-
-&lt;% @post.errors.full_messages.each do |msg|%&gt;
-  &lt;li&gt;&lt;%= msg %&gt;&lt;/li&gt;
-&lt;% end %&gt;
-
-&lt;%= form_with model: @post, url: blog_post_path do |f| %&gt;
-  &lt;%= f.label :name %&gt;
-  &lt;%= f.text_field :name %&gt;&lt;br&gt;
-
-  &lt;%= f.label :slug %&gt;
-  &lt;%= f.text_field :slug %&gt;&lt;br&gt;
-
-  &lt;%= f.label :tags %&gt;
-  &lt;%= f.text_field :tags %&gt;&lt;br&gt;
-
-  &lt;%= f.label :content %&gt;
-  &lt;%= f.text_area :content %&gt;&lt;br&gt;
-
-  &lt;%= f.submit %&gt;
-&lt;% end %&gt;
-```
-
-As you can see right at the top, I try to show the validation errors. But for some reason, it never shows them on the page (Turbolinks doesn't add them!). If I take a look into the JS console, I can see the response the server sent back, including the validation errors. Still, Turbolinks doesn't want to show them. How do I fix this?
-## [6][Text field: cannot set default value](https://www.reddit.com/r/rails/comments/i6mqzh/text_field_cannot_set_default_value/)
-- url: https://www.reddit.com/r/rails/comments/i6mqzh/text_field_cannot_set_default_value/
----
-Hi. I'm trying to set a text field's default value (I'm creating a form to edit existing records).
-
-This is my view:
-
-```erb
-&lt;%= form_with model: @post, url: blog_post_path, local: true do |f| %&gt;
-  &lt;%= f.label :name %&gt;
-  &lt;%= f.text_field :name, value: @post_current['name'] %&gt;&lt;br&gt;
-
-  &lt;%= f.label :slug %&gt;
-  &lt;%= f.text_field :slug, value: @post_current['slug'] %&gt;&lt;br&gt;
-
-  &lt;%= f.label :tags %&gt;
-  &lt;%= f.text_field :tags, value: @post_current['tags'] %&gt;&lt;br&gt;
-
-  &lt;%= f.label :content %&gt;
-  &lt;%= f.text_area :content, value: @post_current['content'] %&gt;&lt;br&gt;
-
-  &lt;%= f.submit %&gt;
-&lt;% end %&gt;
-```
-
-This is my controller action:
-
-```ruby
-  def edit
-    if Post.where(slug: params[:slug]).exists?
-      @post = Post.new
-      @post_current = Post.where slug: params[:slug]
-    else
-      raise ActiveRecord::RecordNotFound
-    end
-  end
-```
-
-When I try to load the page, it just gives me an error page saying "no implicit conversion of String into Integer" on the first line where I try to set a value (`&lt;%= f.text_field :name, value: @post_current['name'] %&gt;&lt;br&gt;`). Why does it do that and how can I set a value?
-
-Still new to Rails, thank you.
-## [7][How to return extra association attributes on a collection](https://www.reddit.com/r/rails/comments/i6xfhn/how_to_return_extra_association_attributes_on_a/)
-- url: https://www.reddit.com/r/rails/comments/i6xfhn/how_to_return_extra_association_attributes_on_a/
----
-So here is my setup. 
-
-2 models:
-* events
-* showings
-
-events have many showings and a showing belongs to an event.
-
-users can rsvp to showings, so when I write `current_user.showings`, it will return all the showings that any user has rsvped to.
-
-Now, when I run `@showings = current_user.showings` and **when I loop through `@showings`** I get all the attributes that are in the showings table of the database. This is perfect and expected. Any `showing` record has attributes like this:
-
-`{ start_time, end_time, name, etc... }`
-
-Okay, but **in each showing that I loop through, I also want to have access to the `event.name`**. I.e, I want to see this:
-
-`{ start_time, end_time, name, event_name, etc... }` 
-
-or something like this. As long as it's included in the hash. I know you might be thinking I can just use `showing.event.name` but I can't because that's ruby code. I'm turning the collection of showings (i.e., `@showings`) into json and sending it to javascript for front end processing. 
-
-This means that the event name for each showing has to be included in each showing "hash" so that when I convert it to json, all the data is there.
-
-I know i can just loop through them in the controller, and basically build an array of hashes that are duplicates of the showings, and then include any other relevant info about the event in the hashes, but i'm just wondering if there is any built in rails method for doing this instead of doing it manually.
-
-### this is my manual (seemingly not very elegant) solution
-
-```ruby
-showings = Array.new
-current_user.showings.each do |showing|
-  showings &lt;&lt; {id: showing.id, name: showing.name, start_time: showing.start_time, event_name: showing.event.name}
-end
-@showings_json = showings.to_json
-```
-## [8][Rails 6 and the Secret Keys](https://www.reddit.com/r/rails/comments/i68uij/rails_6_and_the_secret_keys/)
-- url: https://www.reddit.com/r/rails/comments/i68uij/rails_6_and_the_secret_keys/
----
-I am in the process of attempting my first deployment of a new app in Rails 6 and when it goes to do the first db migration I get `ArgumentError: Missing \`secret_key_base\` for 'production' environment, set this string with \`rails credentials:edit\``
-
-I am all for setting this up, but I at this point I am confused as to if this is all something I set up production space or development space. Is there a good walk-through of how and where to set this up? I tend to learn best for seeing something set up in front of me. Any help will be great!
-## [9][Deploying a Rails app on Apache2](https://www.reddit.com/r/rails/comments/i689yt/deploying_a_rails_app_on_apache2/)
-- url: https://www.reddit.com/r/rails/comments/i689yt/deploying_a_rails_app_on_apache2/
----
-Hi 👋
-
-I want to deploy a Rails app on my Apache2 web server. Coming from a PHP background, I'm used to the CGI-like approach of mod_php.
-
-After reading through resources on this topic, I wanted to ask you whether it's a good or at least okay idea to do the following:
-
-1.	Use Puma on the Rails app to start a local server
-2.	Reverse proxy that through Apache2
-
-I also read a lot about this Passenger thing, but it seems kinda weird to deploy. Any thoughts?
-## [10][Design Patterns and Anti-Patterns in Rails?](https://www.reddit.com/r/rails/comments/i5vg9b/design_patterns_and_antipatterns_in_rails/)
-- url: https://www.reddit.com/r/rails/comments/i5vg9b/design_patterns_and_antipatterns_in_rails/
----
-OK, it's more like a *software engineering* topic than a rails related one. But I asked one of my friends about deleting a table manually and re-do the migration (the project is written in Django and not rails) and he told me "This is an Anti-Pattern in Django". 
-
-I knew possible dangers of the idea and I suggested it with the knowledge, but I jokingly answered him "You call everything you don't understand an anti-pattern". 
-
-Now, I'm curious, is there a set of patterns and anti-patterns SPECIFICALLY for rails?
-## [11][New Video: Devise Profile by User Role](https://www.reddit.com/r/rails/comments/i60iis/new_video_devise_profile_by_user_role/)
-- url: https://www.reddit.com/r/rails/comments/i60iis/new_video_devise_profile_by_user_role/
----
-In this tutorial video I walk through how to create dynamic profile pages by user role.  We will use a technique I learned from my favorite Ruby on Rails tutorial creators, GoRails, to dynamically display the correct partial by current user role.
-
-I received permission before posting from Chris at GoRails to demonstrate this technique which I have seen a few times, but never in this way.  I thought it may be an interesting application of the technique and also answered a subscriber request.  
-
-I have only created 25 or so videos, so still very new to the process, all feedback is welcome as I just want to improve.  
-
-[https://youtu.be/wbRDqZCchs0](https://youtu.be/wbRDqZCchs0)

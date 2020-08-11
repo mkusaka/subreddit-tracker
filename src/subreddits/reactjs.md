@@ -85,51 +85,78 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
-## [3][Build a Landing Page with Chakra UI - Part 1](https://www.reddit.com/r/reactjs/comments/i6zqpn/build_a_landing_page_with_chakra_ui_part_1/)
-- url: https://raptis.wtf/blog/build-a-landing-page-with-chakra-ui-part-1/
+## [3][React v17.0 Release Candidate: No New Features](https://www.reddit.com/r/reactjs/comments/i7cygu/react_v170_release_candidate_no_new_features/)
+- url: https://reactjs.org/blog/2020/08/10/react-v17-rc.html
 ---
 
-## [4][Anybody here interested in how React code talks to native code in a React Native app? If so, I made this short video explaining how it works.](https://www.reddit.com/r/reactjs/comments/i6i64v/anybody_here_interested_in_how_react_code_talks/)
-- url: https://youtu.be/TU_kTuz2i9Y
+## [4][Universal React Query Library (URQL GraphQL client)](https://www.reddit.com/r/reactjs/comments/i7pf4n/universal_react_query_library_urql_graphql_client/)
+- url: https://blog.graphqleditor.com/urql-graphql-client/
 ---
 
-## [5][Review request on my first MERN web app](https://www.reddit.com/r/reactjs/comments/i6wqcu/review_request_on_my_first_mern_web_app/)
-- url: https://www.reddit.com/r/reactjs/comments/i6wqcu/review_request_on_my_first_mern_web_app/
+## [5][Join us - Kiki from Microsoft on their React Native for MacOS and Windows project](https://www.reddit.com/r/reactjs/comments/i795pa/join_us_kiki_from_microsoft_on_their_react_native/)
+- url: https://www.reddit.com/r/reactjs/comments/i795pa/join_us_kiki_from_microsoft_on_their_react_native/
 ---
-Hello, 
+This Wednesday, August 12th at 1 PM ET we talk with Kiki - Program Manager at Microsoft for their React Native for MacOS and Windows platforms. Microsoft is supporting the React Native ecosystem by adding MacOS and Windows platform support. React Native for Windows released the latest stable 0.62.2 with Fast Refresh, RTL support, RedBox and thread-safe property storage APIs.
 
-so I have been slowly working on this small web app for the past 1.5 weeks and just wanted to get some advice/feedback on my work.
+&amp;#x200B;
 
-Demo: [Markdown Notes](http://markdown-notes.herokuapp.com)
+We'll do demos, discuss how it works, and discuss how you can get started. Ask questions during the broadcast, if you like.
 
-Source code: [Source](https://github.com/CShatto99/MERN_Projects/tree/master/MarkdownNotes)
+&amp;#x200B;
 
-I have been learning MERN for a little more than a month and would really appreciate it if anyone could give some helpful feedback to improve.
-## [6][React Router protect routes with a specific way](https://www.reddit.com/r/reactjs/comments/i74t69/react_router_protect_routes_with_a_specific_way/)
-- url: https://www.reddit.com/r/reactjs/comments/i74t69/react_router_protect_routes_with_a_specific_way/
----
-Hello. I am building a web app and I need to have protected routes. I want to do it in a specific way though. First, a jwt is stored in client's cookies. Then, every time a route matches, I want first to make a call to my server, to validate the jwt, and then, if successfully verified, I want the screen to load, otherwise i want the login screen to pop. I am currently facing problems doing this, mainly because the login screen renders before the api request is made, and then the screen does not get updated. Any help?
-## [7][I was taking react specialization course on coursera but it uses version 1.5](https://www.reddit.com/r/reactjs/comments/i73yt2/i_was_taking_react_specialization_course_on/)
-- url: https://www.reddit.com/r/reactjs/comments/i73yt2/i_was_taking_react_specialization_course_on/
----
-Course is really good and I finished one week. But then I saw a guy commenting about this and then checked. I found latest version is 16 so version 1 will be really outdated. Should I still do it or find another course? If it will be easy for me to transition from learning everything in version 1 to 16 then I might do it but I newbie in this and I don't know shit about it. Pls help
-## [8][How to disconnect a user from peer.js?](https://www.reddit.com/r/reactjs/comments/i73v3l/how_to_disconnect_a_user_from_peerjs/)
-- url: https://www.reddit.com/r/reactjs/comments/i73v3l/how_to_disconnect_a_user_from_peerjs/
----
-Do anyone knows how to disconnect the user from peer.js?
-## [9][I just started with React and Spring boot last week, created a server to control the computer functionalities like volume, locking system, or putting the system to sleep using the phone. I made a video, need some suggestions as I am planning to upload my other personal projects. :)](https://www.reddit.com/r/reactjs/comments/i7157d/i_just_started_with_react_and_spring_boot_last/)
-- url: https://www.youtube.com/watch?v=wQIgFHn1wRg
+Download an invite for your calendar:  [https://www.telerik.com/react-wednesdays](https://www.telerik.com/react-wednesdays)
+## [6][Just released Flume, a node editor and runtime engine for React + more.](https://www.reddit.com/r/reactjs/comments/i7chqp/just_released_flume_a_node_editor_and_runtime/)
+- url: https://flume.dev/
 ---
 
-## [10][Background Slider/Carousel](https://www.reddit.com/r/reactjs/comments/i73nwo/background_slidercarousel/)
-- url: https://www.reddit.com/r/reactjs/comments/i73nwo/background_slidercarousel/
----
-Are there any react libraries with background carousel for landing page? I found some but I need it with buttons/  to change the images.
-## [11][Where do you store JWT Tokens??](https://www.reddit.com/r/reactjs/comments/i6muep/where_do_you_store_jwt_tokens/)
-- url: https://www.reddit.com/r/reactjs/comments/i6muep/where_do_you_store_jwt_tokens/
----
-Some sources say localstorage but then people say it's prone to XSS attacks so then they say HTTP ONLY Cookie but say not to do that either. What is the safest way to store these tokens? Would it be a good idea to get a new token after each request and store it in memory within the component file?
-## [12][Deploying a react app using pm2 and serve on the production server](https://www.reddit.com/r/reactjs/comments/i73074/deploying_a_react_app_using_pm2_and_serve_on_the/)
-- url: https://www.loginradius.com/engineering/blog/react-app-deployment/
+## [7][How to build a Sketch plugin with React and Typescript ?](https://www.reddit.com/r/reactjs/comments/i7ogpg/how_to_build_a_sketch_plugin_with_react_and/)
+- url: https://medium.com/overlay-blog/how-to-build-a-sketch-plugin-with-typescript-react-part-1-ac3bbc2e5443
 ---
 
+## [8][Need help reducing duplication (React Router)](https://www.reddit.com/r/reactjs/comments/i7pflp/need_help_reducing_duplication_react_router/)
+- url: https://www.reddit.com/r/reactjs/comments/i7pflp/need_help_reducing_duplication_react_router/
+---
+I'm building a movie browser website. Users can click React Router links to display either "Popular / Upcoming / Now playing" movies, all coming from an API.
+
+I know that having just one stateful parent component is best here, but what I have done is this:
+https://i.gyazo.com/599eced0014d7d4a9f2b5debfeb60276.png
+
+I have created three separate stateful components, each one using a different API call and then adding the JSON data to the state. I know this is not efficient, but I have no idea what I need to do to make it originate from one parent component.
+
+I feel like I need some sort of "filter" but I don't know where to start. Does anyone have ideas?
+
+Thanks
+## [9][I built a tool for creating UIs live in VS Code, would appreciate some feedback!](https://www.reddit.com/r/reactjs/comments/i7bcpo/i_built_a_tool_for_creating_uis_live_in_vs_code/)
+- url: https://paperclip.dev/
+---
+
+## [10][Any experiences going from Apollo to urql?](https://www.reddit.com/r/reactjs/comments/i7n9ea/any_experiences_going_from_apollo_to_urql/)
+- url: https://www.reddit.com/r/reactjs/comments/i7n9ea/any_experiences_going_from_apollo_to_urql/
+---
+Hi all, just wondering if anyone has the experience of going from Apollo Client to urql for client side GraphQL?
+
+I'm considering making the switch as I find the Apollo documentation hard to follow as it is not up-to-date (e.g. updateQuery is referenced as the way to update local cache after a mutation in several places, but in the actual code they have deprecated this in favor of typePolicies - which are woefully underdocumented). 
+
+Relay seemed even more complex, but curious about urql. 5k stars on GitHub which is a third of what Apollo-client has, but still a lot...they have no issues submitted though compared to Apollo which has 600 opened issues plus their spectrum.chat posts
+## [11][Quick auth and db option for an mvp](https://www.reddit.com/r/reactjs/comments/i7qmwl/quick_auth_and_db_option_for_an_mvp/)
+- url: https://www.reddit.com/r/reactjs/comments/i7qmwl/quick_auth_and_db_option_for_an_mvp/
+---
+Hi, I'm doing my a mvp to prove a business idea. 
+
+Been thinking of using firebase for some simple auth and db option, but is there any other simpler option you can recommend? 
+
+Db will not store large amounts of data for each user.
+
+Ty
+## [12][I curated all the remote job openings from Hacker News who is hiring thread - August](https://www.reddit.com/r/reactjs/comments/i7au5v/i_curated_all_the_remote_job_openings_from_hacker/)
+- url: https://www.reddit.com/r/reactjs/comments/i7au5v/i_curated_all_the_remote_job_openings_from_hacker/
+---
+Here comes the list of 398 remote jobs and you can filter them by location or skills.
+
+Here I would like to share the entire remote jobs list from the big list of opportunities. All these are 100% remote jobs not just allowed to work from home during this crisis. These are 100% remote jobs and will continue to follow that after the crisis.
+
+https://remoteleaf.com/whoishiring.   
+Note: Select "javascript" in the skills filter to see javascript dev jobs.
+
+✅ 100% remote full-time jobs.   
+✅ Spent more than 14 hours to curate this information

@@ -1,98 +1,58 @@
 # ruby
-## [1][Free Ruby Programming Language Tutorial for Beginners | OdinSchool](https://www.reddit.com/r/ruby/comments/i70y41/free_ruby_programming_language_tutorial_for/)
-- url: https://www.youtube.com/watch?v=LXnPU10aHec
+## [1][How Sidekiq really works](https://www.reddit.com/r/ruby/comments/i7qj7b/how_sidekiq_really_works/)
+- url: https://pdabrowski.com/articles/how-sidekiq-really-works
 ---
 
-## [2][Let's create a serverless Telegram bot in Ruby that will translate anything to German with the help of Lambda, Amazon Translate and API Gateway](https://www.reddit.com/r/ruby/comments/i706k6/lets_create_a_serverless_telegram_bot_in_ruby/)
-- url: https://youtu.be/_aLMx7OFt5M
+## [2][Creating unlogged PostgreSQL tables in Rails](https://www.reddit.com/r/ruby/comments/i7p96x/creating_unlogged_postgresql_tables_in_rails/)
+- url: https://prathamesh.tech/2020/08/10/creating-unlogged-tables-in-rails/
 ---
 
-## [3][How to Dockerize a Rails application](https://www.reddit.com/r/ruby/comments/i6k5d6/how_to_dockerize_a_rails_application/)
-- url: https://www.codewithjason.com/dockerize-rails-application/
+## [3][43 ways to escape the null byte (0x00) in a string literal](https://www.reddit.com/r/ruby/comments/i7jp73/43_ways_to_escape_the_null_byte_0x00_in_a_string/)
+- url: https://idiosyncratic-ruby.com/70-nothing-to-escape.html
 ---
 
-## [4][If Statement Help](https://www.reddit.com/r/ruby/comments/i6x1qt/if_statement_help/)
-- url: https://www.reddit.com/r/ruby/comments/i6x1qt/if_statement_help/
+## [4][When objects become super objects](https://www.reddit.com/r/ruby/comments/i7lfsd/when_objects_become_super_objects/)
+- url: https://www.reddit.com/r/ruby/comments/i7lfsd/when_objects_become_super_objects/
 ---
-Hi everyone, this is my first day learning ruby and I have a question about a leap year program I'm writing. In java I'm able to write 
-
-`if((year % 4) == 0){}`
-
-and it would work just fine, and if I'm understanding ruby correctly, which I'm not because I wouldn't otherwise be here, it would be written
-
-`if year % 4 == 0`
-
-`end`
-
-&amp;#x200B;
-
-Can someone help me to understand what I'm doing wrong?
-
-&amp;#x200B;
-
-Thanks in advance.
-## [5][How to make a world population counter in Ruby?](https://www.reddit.com/r/ruby/comments/i6vud4/how_to_make_a_world_population_counter_in_ruby/)
-- url: https://www.reddit.com/r/ruby/comments/i6vud4/how_to_make_a_world_population_counter_in_ruby/
----
-I want to make a world population counter in Ruby. I don't need the counter to be exact I just want a number to be added every second. Lastly, I don't want the counter to go to the next line whenever it increases in CLI. I want the counter to be in the same position the whole time even when it increases in value. FYI: I might want to add other counters below the population counter in the future.
-## [6][Create and publish rails gems elegantly!](https://www.reddit.com/r/ruby/comments/i6x7l7/create_and_publish_rails_gems_elegantly/)
-- url: https://sandipmane.dev/create-and-publish-rails-gems-elegantly
+I recently gave some thought into how I've _broken_ the single responsibiltiy principle throughout my career as a software engineer and came up with an interesting analogy using a pencil. [https://ramallo.pw/ruby/2020/08/11/when-objects-become-super-objects](https://ramallo.pw/ruby/2020/08/11/when-objects-become-super-objects)
+## [5][Rails views to ReactJS](https://www.reddit.com/r/ruby/comments/i7ratr/rails_views_to_reactjs/)
+- url: https://blog.joshsoftware.com/2018/01/11/rails-views-to-reactjs/
 ---
 
-## [7][Integrate Swagger UI – API only ruby on rails course (chapter 8)](https://www.reddit.com/r/ruby/comments/i6jjd4/integrate_swagger_ui_api_only_ruby_on_rails/)
-- url: https://duetcode.io/rails-api-only-course/integrate-swagger-ui
+## [6][what happened to Apidock?](https://www.reddit.com/r/ruby/comments/i79vri/what_happened_to_apidock/)
+- url: https://www.reddit.com/r/ruby/comments/i79vri/what_happened_to_apidock/
+---
+Can't access the site for a long time. 
+
+[http://apidock.com/](http://apidock.com/)
+## [7][Creating dynamic getters and setters on a Ruby Object](https://www.reddit.com/r/ruby/comments/i7k2i9/creating_dynamic_getters_and_setters_on_a_ruby/)
+- url: https://blog.konnor.site/ruby/dynamic_getters_and_setters/
 ---
 
-## [8][Most accurate way to handle trig functions like PI, sin, cos, tan, et al?](https://www.reddit.com/r/ruby/comments/i62enq/most_accurate_way_to_handle_trig_functions_like/)
-- url: https://www.reddit.com/r/ruby/comments/i62enq/most_accurate_way_to_handle_trig_functions_like/
+## [8][How many Ruby developers here work in outsourcing?](https://www.reddit.com/r/ruby/comments/i7auln/how_many_ruby_developers_here_work_in_outsourcing/)
+- url: https://www.reddit.com/r/ruby/comments/i7auln/how_many_ruby_developers_here_work_in_outsourcing/
 ---
-UPDATE: Just wanted to clarify something... I probably shouldn't have used the wording "most accurate" in my title because I don't really need a lot of precision. If, say, eight decimal places is sufficient, is there a recommended way to handle the numbers? 
-
------
-
-I just started incorporating various trig functions into an app and after noticing some inconsistencies here and there, it seems I've stumbled headlong into inaccuracies of how numbers are represented in programming languages.
-
-My question is, is there any recommended way in handling these?
-
-In my research this morning, I've come across 
-
-* Math the Ruby class
-* BigDecimal the Ruby class
-* BigMath, related to the above
-* BigDecimal the Ruby gem (still not sure how this compares to the built-in Ruby class...)
-
-Up to this point, I was relying on the "basic" Math class, which works with floats. I know now this is NOT preferable.
-
-As a concrete example, working with Trig functions using BigMath: 
-
-
-    rad1 = 45 * BigMath::PI(8) / 180
-    rad2 = 135 * BigMath::PI(8) / 180
-    cos1 = BigMath::cos(rad1, 8)
-    cos2 = BigMath::cos(rad2, 8)
-
-Technically, `cos1` + `cos2` should equal zero, but what is returned is some almost zero number...
-
-So where do I go from here?
-
-Is it recommended to round each number to, say, the 8th decimal place? And if so, do you round for the 
-"intermediates" like 
-
-    rad1 = (45 * BigMath::PI(8) / 180).round(8)
-
- or wait and round the "final answer" like 
-
-    answer = cos1 + cos2 
-    answer.round(8)`
-
-Any thoughts or ideas? Or articles/books that could help guide me through this?
-## [9][How can I get user input with a ruby http server?](https://www.reddit.com/r/ruby/comments/i5tgog/how_can_i_get_user_input_with_a_ruby_http_server/)
-- url: https://www.reddit.com/r/ruby/comments/i5tgog/how_can_i_get_user_input_with_a_ruby_http_server/
+This thread has been a great help in passion and commercial projects. I was curious, how many Ruby developers work in outsourcing companies? I wrote an article about ( [https://syndicode.com/blog/all-you-need-to-know-about-software-outsourcing-risks/](https://syndicode.com/blog/all-you-need-to-know-about-software-outsourcing-risks/) ) outsourcing risks that basically describe everything that could go wrong. I'd like to enrich it with insights of other Ruby developers, Could you share what were your experiences?
+## [9][Looking for help in a Crystal project](https://www.reddit.com/r/ruby/comments/i7aq2r/looking_for_help_in_a_crystal_project/)
+- url: https://www.reddit.com/r/ruby/comments/i7aq2r/looking_for_help_in_a_crystal_project/
 ---
-FYI: I'm new to Ruby. I'm running a Ruby http server on localhost. How can I get user input with a ruby http server?
+I am building a Ruby implementation with an ahead-of-time compiler, built atop LLVM with Crystal.  
 
-[My code](https://pastebin.com/65h40hWc)
-## [10][Open Source Status Update - July 2020 (dry-validation, dry-rails and hanami 2.0)](https://www.reddit.com/r/ruby/comments/i5bbj2/open_source_status_update_july_2020_dryvalidation/)
-- url: https://solnic.codes/2020/08/06/open-source-status-update-july-2020/
+
+I tried to avoid LLVM, by using GCC (as compiler back-end), but I think that is more painful than LLVM.  
+
+
+So, I switched from GCC and C to LLVM and Crystal, since Crystal has LLVM bindings.  
+
+
+Clearly, I don't have the "manpower" to do that my self and I need help.  
+
+
+I am already writing the asbtract-syntax-tree parser, (and that is probably is one of the hardest things to do, given the complexity of Ruby's syntax) if anyone is interested, pm me.  
+
+
+PS: Obviously, some features like monkey-patching there will not be there, my aim is an implementation like Crystal.
+## [10][What would be a good way to obtain route-specific CSRF tokens for an API?](https://www.reddit.com/r/ruby/comments/i7c4zz/what_would_be_a_good_way_to_obtain_routespecific/)
+- url: https://softwareengineering.stackexchange.com/q/414664
 ---
 

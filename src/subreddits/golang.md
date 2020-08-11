@@ -1,17 +1,38 @@
 # golang
-## [1][What Is the Extension Interface Pattern in Go?](https://www.reddit.com/r/golang/comments/i6yehu/what_is_the_extension_interface_pattern_in_go/)
-- url: https://medium.com/swlh/what-is-the-extension-interface-pattern-in-golang-ce852dcecaec
+## [1][Do you think golang is good for beginners?](https://www.reddit.com/r/golang/comments/i7p1pg/do_you_think_golang_is_good_for_beginners/)
+- url: https://www.reddit.com/r/golang/comments/i7p1pg/do_you_think_golang_is_good_for_beginners/
+---
+Hi, after inspecting many languages, i found golang a language that i want to learn first, seriously, you have simple + performance in one language! But is golang simple engough for beginners? I mean i have so programing concept in my head like types, function, a little of object programing etc...
+## [2][Why Go modules are faster than GOPATH](https://www.reddit.com/r/golang/comments/i78171/why_go_modules_are_faster_than_gopath/)
+- url: https://dev.to/tbpalsulich/why-go-modules-are-faster-than-gopath-blj
 ---
 
-## [2][If you were to start learning Go again, what would be your advice?](https://www.reddit.com/r/golang/comments/i6syzx/if_you_were_to_start_learning_go_again_what_would/)
-- url: https://www.reddit.com/r/golang/comments/i6syzx/if_you_were_to_start_learning_go_again_what_would/
+## [3][Collaborative Code Editor for Golang](https://www.reddit.com/r/golang/comments/i7qypa/collaborative_code_editor_for_golang/)
+- url: https://www.reddit.com/r/golang/comments/i7qypa/collaborative_code_editor_for_golang/
 ---
-Hi all, 
+Hey all,
 
-I'm just beginning my journey into Go. The main language I use now is python. I am committed to switch primarily to Go. I want to learn as effectively as possible and avoid any common pitfalls, hence my question 👍
+I've been learning Golang recently and Go Playground has been instrumental in learning it. I decided to try and make a collaborative version of it while learning Go and gRPC at the same time. Although the bulk of the project isn't really in Go (algorithm was mostly in typescript), I thought it would be more apt here since the site only runs Go code. 
 
-Any help greatly appreciated
-## [3][Take part in the Go development research from JetBrains](https://www.reddit.com/r/golang/comments/i747w4/take_part_in_the_go_development_research_from/)
+
+Code can be found here:  [https://github.com/tankangliang/gollab](https://github.com/tankangliang/gollab) 
+
+After completing the project, I realise a lot of the tools I've used aren't really suited for it and I guess future work will be to do a complete revamp with perhaps the following:
+
+1) Websockets over gRPC
+
+2) Algorithm in Go (for learning) before compiling to WASM
+
+3) Pure Javascript for handling the frontend instead of React (issues with state)
+
+However, school is starting soon and I probably won't have time to totally revamp it so I thought I'd share its current state here incase anyone wants to build off of it. 
+
+Also, if you would like to read my experience on building it: [link](https://mrlobby.com/posts/building-a-collaborative-code-editor-with-react-golang-grpc/)
+## [4][Create a Serverless Application in Golang With AWS](https://www.reddit.com/r/golang/comments/i7qeui/create_a_serverless_application_in_golang_with_aws/)
+- url: https://schadokar.dev/posts/create-a-serverless-application-in-golang-with-aws/
+---
+
+## [5][Take part in the Go development research from JetBrains](https://www.reddit.com/r/golang/comments/i747w4/take_part_in_the_go_development_research_from/)
 - url: https://www.reddit.com/r/golang/comments/i747w4/take_part_in_the_go_development_research_from/
 ---
 Hi Gophers!
@@ -28,105 +49,37 @@ Here is a link to sign up to the interview: https://surveys.jetbrains.com/s3/Go-
 
 Note that the interview will be held in English.
 We look forward to meeting you!
-## [4][GO ORM for reach models](https://www.reddit.com/r/golang/comments/i71go4/go_orm_for_reach_models/)
-- url: https://www.reddit.com/r/golang/comments/i71go4/go_orm_for_reach_models/
----
-After a year of work i finally build my ORM, you may interest in it if you looking for tools for creating DDD applications. The project was inspired by such ORMs as Doctrine and Hibernate. Please check the [readme](https://github.com/godzie44/d3), project [wiki](https://github.com/godzie44/d3/wiki) or [demo app](https://github.com/godzie44/last-wish) for more information.  
-
-If you are interested in the development of the project or have any suggestions let me know by creating an issue or putting a star on the repository.
-
- [https://github.com/godzie44/d3](https://github.com/godzie44/d3)
-## [5][Excelize 2.3.0 is Released – Go lib for reading and writing spreadsheet (Excel) files](https://www.reddit.com/r/golang/comments/i6m2t8/excelize_230_is_released_go_lib_for_reading_and/)
-- url: https://www.reddit.com/r/golang/comments/i6m2t8/excelize_230_is_released_go_lib_for_reading_and/
----
-Excelize is a library written in pure Go providing a set of functions that allow you to write to and read from XLSX / XLSM / XLTM files. Supports reading and writing spreadsheet documents generated by Microsoft Excel™ 2007 and later. Supports complex components by high compatibility, and provided streaming API for generating or reading data from a worksheet with huge amounts of data.
-
-GitHub: [github.com/xuri/excelize](https://github.com/xuri/excelize)
-
-A summary of changes is available in the [Release Notes](https://github.com/360EntSecGroup-Skylar/excelize/releases/tag/v2.3.0). A full list of changes is available in the [changelog](https://github.com/360EntSecGroup-Skylar/excelize/compare/v2.2.0...v2.3.0).
-
-Release Notes
-------------
-The most notable changes in this release are:
-
-#### Notable Features
-
-* Support to set cell values concurrent, relate issue #670
-* New API: [`SetSheetFormatPr`](https://pkg.go.dev/github.com/360EntSecGroup-Skylar/excelize/v2?tab=doc#File.SetSheetFormatPr) and [`GetSheetFormatPr`](https://pkg.go.dev/github.com/360EntSecGroup-Skylar/excelize/v2?tab=doc#File.GetSheetFormatPr), support to set and get worksheet formatting properties, relate issue #635
-* New API: [`GetCols`](https://pkg.go.dev/github.com/360EntSecGroup-Skylar/excelize/v2?tab=doc#File.GetCols) and [`Cols`](https://pkg.go.dev/github.com/360EntSecGroup-Skylar/excelize/v2?tab=doc#Cols), support columns iterator
-* [`AddChart`](https://pkg.go.dev/github.com/360EntSecGroup-Skylar/excelize/v2?tab=doc#File.AddChart) support specified logarithmic scale on Y-axis, relate issue #661
-* [`AddPicture`](https://pkg.go.dev/github.com/360EntSecGroup-Skylar/excelize/v2?tab=doc#File.AddPicture) support insert image autofit cell
-* Add limits for total columns, row and filename length
-* Formula calculation engine support defined name, relate issue #665
-* API [`CalcCellValue`](https://pkg.go.dev/github.com/360EntSecGroup-Skylar/excelize/v2?tab=doc#File.CalcCellValue) update, formula calculation engine working in progress: 12 new functions has been added, `COUNTA`, `ISBLANK`, `ISERR`, `ISERROR`, `ISEVEN`, `ISNA`, `ISNONTEXT`, `ISODD`, `ISNUMBER`, `MEDIAN`, `NA`, `SUMIF`
-
-#### Improve the Compatibility
-
-* Compatible to case-sensitive doc parts path
-* Storage string to SST (shared string table), relate issue #622
-* Support the `row` element without `r` attribute in the worksheet
-* Support XML multi namespace, make compatible with Kingsoft WPS&amp;trade; Office, relate issue #651
-* Improve the compatibility of the auto filter with Office 2007 - 2010, resolve #637
-
-#### Bug Fixes
-
-* Avoid duplicate filter database in workbook defined name
-* Avoid creating duplicate style, resolve #643
-* Escape characters for set rich-text
-* Fix the issue, comment shapes are changed after reopening spreadsheet created by Excelize, resolve #672
-* Fix panic when enabling compiler inline flags, resolve #677 and #679
-* Fix the accuracy issue of getting cell value of percentage cell
-
-
-#### Miscellaneous
-
-* Improved error handling and fix crash when open invalid spreadsheet file
-* Add missing checking error in unit tests
-* [Documentation website](https://xuri.me/excelize) with multilingual: English, French, Russian, Chinese, Japanese, and Korean, which has been updated
-* Welcome join [the Slack channel](https://join.slack.com/t/xuri/shared_invite/zt-eriqdkeo-wV04zcCdBiiZveFgY86Wzw) to meet other members of our community
-## [6][How to think interfaces in a CRUD app ?](https://www.reddit.com/r/golang/comments/i74ma5/how_to_think_interfaces_in_a_crud_app/)
-- url: https://www.reddit.com/r/golang/comments/i74ma5/how_to_think_interfaces_in_a_crud_app/
----
-Hello,
-
-I have a designing question regarding interfaces and CRUD design. I usually end up with some sort of repo interfaces as such :
-
-`type UserRepo {`
-
-`Create(name, email string) (int, error)`
-
-`Read(id int) (User, error)`
-
-`Update(name, email string) error`
-
-`Delete(id int) error`
-
-`}`
-
-Is it the right way to "think" interfaces ? I keep hearing about small interfaces and their efficiencies but I have a hard time figuring out how it looks in a real world CRUD app.
-
-Also my interfaces tends to grow too big because of that when methods adds up.
-## [7][Introducing Wrapcheck: Linter for catching errors without additional context](https://www.reddit.com/r/golang/comments/i7187p/introducing_wrapcheck_linter_for_catching_errors/)
-- url: https://blog.tomarrell.com/post/introducing_wrapcheck_linter_for_go
+## [6][Golang Testing — Mocking Redis](https://www.reddit.com/r/golang/comments/i7qf44/golang_testing_mocking_redis/)
+- url: https://medium.com//golang-testing-mocking-redis-b48d09386c70?source=friends_link&amp;sk=3f845817d52e32e72e7bdebacb41507e
 ---
 
-## [8][How to use the goroutine to operator mysql transaction?](https://www.reddit.com/r/golang/comments/i73udr/how_to_use_the_goroutine_to_operator_mysql/)
-- url: https://www.reddit.com/r/golang/comments/i73udr/how_to_use_the_goroutine_to_operator_mysql/
+## [7][How to get the IP-address of a response that a (Tor) socks5 proxy received](https://www.reddit.com/r/golang/comments/i7pvpo/how_to_get_the_ipaddress_of_a_response_that_a_tor/)
+- url: https://www.reddit.com/r/golang/comments/i7pvpo/how_to_get_the_ipaddress_of_a_response_that_a_tor/
 ---
-Hi,In my current program, I just use goroutine to open httpserver. How to use goroutine to operate transactions to improve the efficiency of the program? Can you share some simple examples or useful articles?
-## [9][Does anyone have experience with QOR (github.com/qor/qor) CMS library on Go?](https://www.reddit.com/r/golang/comments/i711zo/does_anyone_have_experience_with_qor/)
-- url: https://www.reddit.com/r/golang/comments/i711zo/does_anyone_have_experience_with_qor/
+Hello, I can route network traffic over the Tor network by using a socks5 proxy. Now I want proof that the network traffic did route over the Tor network, which I can hopefully do by matching the IP-address of the response that proxy received with the IP-address of a Tor entry node. However, when I try to get the IP-address of the response, I get the proxy's IP-address instead.
+
+You can find the code that I have tested here [https://play.golang.org/p/Wny\_hLMA3PV](https://play.golang.org/p/Wny_hLMA3PV). However, this code does not run in the playground since it uses the libraries "github.com/cretz/bine/tor" and "github.com/ipsn/go-libtor".
+
+I hope someone can help me to get the IP-address of a response the socks5 proxy received.
+## [8][What learning curve should I expect?](https://www.reddit.com/r/golang/comments/i7psrl/what_learning_curve_should_i_expect/)
+- url: https://www.reddit.com/r/golang/comments/i7psrl/what_learning_curve_should_i_expect/
 ---
-I am now choosing a CMS on Go to build a front-end for our REST API. I have found QOR [https://github.com/qor/qor](https://github.com/qor/qor) library. I am in hesitation on whether to use it or not because there is not much documentation and there are several issues still open from 2016. Therefore I have several questions:
+I have an app idea in mind recently, I have experience in building APIs previously using DRF(Django Rest Framework). 
+Currently learning Java in my College.
 
-Does anyone have experience with QOR CMS?
+I'm looking to learn Go, more specifically learning it to build a backend to do CRUD and connect it to a Flutter/React App through APIs.
 
-If yes, would you recommend using QOR CMS worth using it?
-
-Do you have any other suggestion for CMS on Go?
-
-P.S.: By CMS on Go I mean not only written on Go, but also is used on Go.
-## [10][[Tutorial] How to setup your first Kibana dashboard for your Go application](https://www.reddit.com/r/golang/comments/i6fd9m/tutorial_how_to_setup_your_first_kibana_dashboard/)
-- url: https://pmihaylov.com/kibana-dashboard-tutorial/
+After a little bit research, I've found that there are plenty frameworks in Go that can do this, which would be the most beginner friendly and easy to pick up?
+## [9][go-memdev - Memory devices information](https://www.reddit.com/r/golang/comments/i7gis1/gomemdev_memory_devices_information/)
+- url: https://www.reddit.com/r/golang/comments/i7gis1/gomemdev_memory_devices_information/
 ---
+&amp;#x200B;
 
+[go-memdev](https://preview.redd.it/0w9aan8ig9g51.png?width=244&amp;format=png&amp;auto=webp&amp;s=df070a246c65b1398d167a146f5150bbe3d52cd4)
+
+A Go package that access to Memory Devices information.   
+[https://github.com/bitcav/go-memdev](https://github.com/bitcav/go-memdev)
+## [10][FastAPI equivalent in Go?](https://www.reddit.com/r/golang/comments/i7nlzy/fastapi_equivalent_in_go/)
+- url: https://www.reddit.com/r/golang/comments/i7nlzy/fastapi_equivalent_in_go/
+---
+Is there any equivalent for Python FastApi in Go? A minimalist web framework that automatically generates docs for the APIs that we create.

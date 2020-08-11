@@ -83,43 +83,49 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][Flocking: Creative Audio Synthesis for the Web!](https://www.reddit.com/r/javascript/comments/i701o0/flocking_creative_audio_synthesis_for_the_web/)
-- url: https://flockingjs.org/
+## [3][How I became a senior javascript developer with personal projects](https://www.reddit.com/r/javascript/comments/i7di7w/how_i_became_a_senior_javascript_developer_with/)
+- url: https://dev.to/afonsopacifer/how-i-became-a-senior-javascript-developer-with-personal-projects-1lpo
 ---
 
-## [4][Angular security best practices: blog and cheatsheet PDF to download](https://www.reddit.com/r/javascript/comments/i70d4y/angular_security_best_practices_blog_and/)
-- url: https://snyk.io/blog/angular-security-best-practices/
+## [4][React v17.0 Release Candidate: No New Features](https://www.reddit.com/r/javascript/comments/i7f35e/react_v170_release_candidate_no_new_features/)
+- url: https://reactjs.org/blog/2020/08/10/react-v17-rc.html
 ---
 
-## [5][Demo: Bot hiding from player in 3D space](https://www.reddit.com/r/javascript/comments/i6jnbc/demo_bot_hiding_from_player_in_3d_space/)
-- url: https://oguzeroglu.github.io/kompute-demos-with-roygbiv/hideBehavior/application.html
+## [5][Minify HTML template literals using Rollup](https://www.reddit.com/r/javascript/comments/i7of7y/minify_html_template_literals_using_rollup/)
+- url: https://github.com/jleeson/rollup-plugin-html-literals
 ---
 
-## [6][Free Course: Build a Coding Blog From Scratch With a Custom CMS Using Node.js &amp; React.js](https://www.reddit.com/r/javascript/comments/i740j7/free_course_build_a_coding_blog_from_scratch_with/)
-- url: https://coderrocketfuel.com/courses/build-a-coding-blog
+## [6][50+ Resources for Frontend Developers](https://www.reddit.com/r/javascript/comments/i7lzta/50_resources_for_frontend_developers/)
+- url: https://jatinrao.dev/resources-for-frontend-developers-ckdn64rhh00b23bs16lvl3m69
 ---
 
-## [7][CyberCode Online - I made a game designed to be played discreetly in office (proof of concept stage, what do you guys think?)](https://www.reddit.com/r/javascript/comments/i73oqw/cybercode_online_i_made_a_game_designed_to_be/)
+## [7][Build a “Serverless” Slack Bot in 7 Minutes with Node.js and Autocode (x-post r/node)](https://www.reddit.com/r/javascript/comments/i7mq1t/build_a_serverless_slack_bot_in_7_minutes_with/)
+- url: https://medium.com/slack-developer-blog/build-a-serverless-slack-bot-in-9-minutes-with-node-js-and-stdlib-b993cfa15358
+---
+
+## [8][CyberCode Online - I made a game designed to be played discreetly in office (proof of concept stage, what do you guys think?)](https://www.reddit.com/r/javascript/comments/i73oqw/cybercode_online_i_made_a_game_designed_to_be/)
 - url: https://cybercodeonline.com/
 ---
 
-## [8][My Interactive ASCII Torus Project](https://www.reddit.com/r/javascript/comments/i72w0z/my_interactive_ascii_torus_project/)
-- url: http://project-torus.web.app
+## [9][[AskJS] Why aren’t there more Web Workers?](https://www.reddit.com/r/javascript/comments/i7ib4l/askjs_why_arent_there_more_web_workers/)
+- url: https://www.reddit.com/r/javascript/comments/i7ib4l/askjs_why_arent_there_more_web_workers/
+---
+I know that one of the limitations of JavaScript is that it’s single-threaded (partially remediated by being event-driven), but why isn’t the option for multi-threading more accessible in modern frameworks like Angular and React? Angular goes about it a pretty roundabout way, but I think we’d benefit so much by having the option to stash away any computationally intensive work like sorting/filtering into a web worker until it’s ready. What are some downsides to web workers that I’m missing?
+## [10][How to build a Sketch plugin with React and Typescript ?](https://www.reddit.com/r/javascript/comments/i7ogq5/how_to_build_a_sketch_plugin_with_react_and/)
+- url: https://medium.com/overlay-blog/how-to-build-a-sketch-plugin-with-typescript-react-part-1-ac3bbc2e5443
 ---
 
-## [9][Should you parallelize or serialize disk access in node.js?](https://www.reddit.com/r/javascript/comments/i6oq03/should_you_parallelize_or_serialize_disk_access/)
-- url: https://pantas.net/parallelize-or-serialize-disk-access/
+## [11][[AskJS] Is learning JS the quickest way to land a junior/trainee UK Dev job?.](https://www.reddit.com/r/javascript/comments/i7p107/askjs_is_learning_js_the_quickest_way_to_land_a/)
+- url: https://www.reddit.com/r/javascript/comments/i7p107/askjs_is_learning_js_the_quickest_way_to_land_a/
 ---
+Hi everyone, i'm on the hunt for a 'starter' job here in the UK in the dev scene.
 
-## [10][Create your first Serverless application](https://www.reddit.com/r/javascript/comments/i71w38/create_your_first_serverless_application/)
-- url: https://schadokar.dev/posts/create-your-first-serverless-application/
----
+I'm just looking for a paid, low end dev job that is willing to take people who didn't go to uni, do you think learning JS/Node etc will give me the best chance at landing something like this?.
 
-## [11][Curious case of Content Security Policy (CSP)](https://www.reddit.com/r/javascript/comments/i6ig0s/curious_case_of_content_security_policy_csp/)
-- url: https://www.vinaybhinde.in/2020/08/a-curious-case-of-content-security-policy-csp/
----
+I have been learning HTML/CSS and CyberSec/basic JS stuff on and off for a while now and i'm not gonna have the chance to go to university, people keep telling me JS/FrontEnd jobs are the most popular in the UK and they are screaming out for people willing learn and start in the lower paid positions.
 
-## [12][Styled Components: A Quick Start Guide](https://www.reddit.com/r/javascript/comments/i6m0h5/styled_components_a_quick_start_guide/)
-- url: https://scalablecss.com/styled-components-quickstart-guide/
+Any advice would be greatly appreciated, thanks.
+## [12][Single Page Applications using Rust](https://www.reddit.com/r/javascript/comments/i7rrrm/single_page_applications_using_rust/)
+- url: http://www.sheshbabu.com/posts/rust-wasm-yew-single-page-application/
 ---
 

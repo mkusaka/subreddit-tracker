@@ -31,58 +31,75 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Material Reside Menu ( 3D Perspective Drawer ) Made purely using Kotlin &amp; Motion Layout 😍 Visit - github.com/chintanrparmar/MaterialResideMenu](https://www.reddit.com/r/androiddev/comments/i72par/material_reside_menu_3d_perspective_drawer_made/)
+## [3][Here's what I was able to make with motion layout. Actually made it 5-6 months ago, but never really got to share](https://www.reddit.com/r/androiddev/comments/i7dqhv/heres_what_i_was_able_to_make_with_motion_layout/)
+- url: https://v.redd.it/addybzt9q8g51
+---
+
+## [4][How do I take over an existing project?](https://www.reddit.com/r/androiddev/comments/i7p32a/how_do_i_take_over_an_existing_project/)
+- url: https://www.reddit.com/r/androiddev/comments/i7p32a/how_do_i_take_over_an_existing_project/
+---
+Hello everyone,
+
+So I am currently tasked with taking over an android project (moving from external to internal). I will be the sole developer for a while. I am tasked with handling the handover. They told me to take a look at the project but this is a pretty vague statement for me. Also because I am still a fairly new developer I've mostly worked on project where I started the project. My question is what should I "look at". Or how do I go about learning how the project works ?
+
+Unfortunately the project is quite big and badly structured. (The MainActivity is 1500 lines long with no documentation.) So it feels like a herculean task to "take a look at". There's also a huge load of classes. In my opinion, too many for the scope of the project. 
+
+I was wondering if you guys had any experience and advice for this type of situation?
+## [5][Hilt and Dagger annotations cheat sheet](https://www.reddit.com/r/androiddev/comments/i7okcy/hilt_and_dagger_annotations_cheat_sheet/)
+- url: https://medium.com/androiddevelopers/hilt-and-dagger-annotations-cheat-sheet-9adea070e495
+---
+
+## [6][Material Reside Menu ( 3D Perspective Drawer ) Made purely using Kotlin &amp; Motion Layout 😍 Visit - github.com/chintanrparmar/MaterialResideMenu](https://www.reddit.com/r/androiddev/comments/i72par/material_reside_menu_3d_perspective_drawer_made/)
 - url: https://v.redd.it/2474a0e4p5g51
 ---
 
-## [4][I decided to turn a crappy android headunit into a full custom car infotainment system - Which can interact with each car's ECU over canbus!](https://www.reddit.com/r/androiddev/comments/i6p90l/i_decided_to_turn_a_crappy_android_headunit_into/)
-- url: https://youtu.be/4CgKVs9Fzt8
+## [7][Toolbar.setTitle() is interesting 🔬](https://www.reddit.com/r/androiddev/comments/i7hpdl/toolbarsettitle_is_interesting/)
+- url: https://link.medium.com/EDQe696MQ8
 ---
 
-## [5][Integrate autofill with keyboards](https://www.reddit.com/r/androiddev/comments/i72v0p/integrate_autofill_with_keyboards/)
-- url: https://developer.android.com/preview/features/ime-autofill
+## [8][25 Best Android Libraries &amp; Projects of 2020 — Summer Edition](https://www.reddit.com/r/androiddev/comments/i7qwpt/25_best_android_libraries_projects_of_2020_summer/)
+- url: https://medium.com/@mmbialas/25-best-android-libraries-projects-of-2020-summer-edition-dfb030a7fb0a
 ---
 
-## [6][Emulator 30.0.25 Canary](https://www.reddit.com/r/androiddev/comments/i6zf2i/emulator_30025_canary/)
-- url: https://androidstudio.googleblog.com/2020/08/emulator-30025-canary.html
+## [9][Modern Notes and Tasks app (Hopefully alternative to Google keep and Google Tasks)](https://www.reddit.com/r/androiddev/comments/i7m2me/modern_notes_and_tasks_app_hopefully_alternative/)
+- url: https://www.reddit.com/r/androiddev/comments/i7m2me/modern_notes_and_tasks_app_hopefully_alternative/
+---
+Couple of weeks ago i posted my [MarkdownEditText](https://github.com/YahiaAngelo/MarkdownEditText) library, and here's a use case for it.
+
+Noted is a Notes and Tasks app built with Kotlin, Koin dependency injection, MVVM structure, Coroutines, Material design components And Realm database.
+
+You can:
+
+\- Write Notes with text styles
+
+\- Add and filter with categories
+
+\- Make Tasks with reminders
+
+Backups will be in the next update.
+
+Github: [https://github.com/YahiaAngelo/Noted-Android](https://github.com/YahiaAngelo/Noted-Android)
+
+Contributions and suggestions are welcome.
+## [10][Android Studio 4.1 RC 1 available](https://www.reddit.com/r/androiddev/comments/i79zgt/android_studio_41_rc_1_available/)
+- url: https://androidstudio.googleblog.com/2020/08/android-studio-41-rc-1-available.html
 ---
 
-## [7][Vector drawables broken](https://www.reddit.com/r/androiddev/comments/i74qd2/vector_drawables_broken/)
-- url: https://www.reddit.com/r/androiddev/comments/i74qd2/vector_drawables_broken/
+## [11][Pro Tip: If you don't use Google Assistant that often (or even if you do), you can configure Assistant gesture/button to launch any app (like Camera/Reddit/Instagram etc) with this open source app.](https://www.reddit.com/r/androiddev/comments/i7n6ma/pro_tip_if_you_dont_use_google_assistant_that/)
+- url: https://www.reddit.com/r/androiddev/comments/i7n6ma/pro_tip_if_you_dont_use_google_assistant_that/
 ---
-[Vector drawable](https://i.imgur.com/UUUWEvz.png) was taken from developer.android directly, all my imported vector images are also broken. Does anybody encountered something like this? It's probably my local problem because there is no cry on the Internet about this. I also tried to use beta studio, but issue remains
-## [8][Why is Android Programming so verbose?](https://www.reddit.com/r/androiddev/comments/i740rk/why_is_android_programming_so_verbose/)
-- url: https://www.reddit.com/r/androiddev/comments/i740rk/why_is_android_programming_so_verbose/
+Disclaimer - I made this. No intent for profit (its free + no ads + open source). I just think the app itself or the source code may interest someone here.
+
+**Download -** [Play Store Link](https://play.google.com/store/apps/details?id=com.vwap.app_launcher_assistant&amp;referrer=utm_source%3DReddit%26utm_campaign%3Dandroiddev)
+
+Instead of the default assistant app, you can launch any app on your phone by performing the Assistant gesture (bottom-edge-swipe-up/long press 'home' button) or via the assistant button on some phones (like Samsung)
+
+A good use case for this app- quickly open the CAMERA app with the assistant gesture/button.- you don't have to stop what you are doing, minimise the current app, go to home screen, and then finally open the CAMERA app from the home screen shortcut (or worse from the app drawer).
+
+Also, the app is open source. You can check out its [source code here](https://github.com/vinaywadhwa/App-Launcher-Assistant).
+
+AMA.
+## [12][Have not touched android for 2 years](https://www.reddit.com/r/androiddev/comments/i7g5t7/have_not_touched_android_for_2_years/)
+- url: https://www.reddit.com/r/androiddev/comments/i7g5t7/have_not_touched_android_for_2_years/
 ---
-I come from html and angular background and I have made many hybrid apps using cordova. I have been learning native android programming using Kotlin so that I can extend or create some plugins for cordova android. I also am trying to learn native app development so that I can add that to my resume.
-
-My question is: why is android programming so verbose? Why do I have to type 10 lines of code and use adapters etc. when they could have just added a list by assigning a variable? Mind you I am writing this from my past experience.
-
-It looks so cumbersome to even do small things like alerts, api requests for which I have to build the damn thing. And oh the crashes on different phones. My coworker is inundated with crashes and he spends so much time fixing them because of null pointer exception or redmi phones decided to not render an xml layout properly (he inherited the code from old developer). 
-
-Is there any good reason why did google or original creators made it so verbose? Are there any google engineers here who can shed a light on this?
-## [9][SecTheTech/AMDH An Android Mobile Device Hardening written with python3](https://www.reddit.com/r/androiddev/comments/i73u8v/secthetechamdh_an_android_mobile_device_hardening/)
-- url: https://github.com/SecTheTech/AMDH
----
-
-## [10][Is there any way to "debug" my phone to get a log of everything I'm doing?](https://www.reddit.com/r/androiddev/comments/i6znq7/is_there_any_way_to_debug_my_phone_to_get_a_log/)
-- url: https://www.reddit.com/r/androiddev/comments/i6znq7/is_there_any_way_to_debug_my_phone_to_get_a_log/
----
-Basically I have an app on my phone, and I want to make a script that will open that app and press a certain button, only problem is that it seems to be impossible to unlock the phone programatically without jailbreaking my phone. So I thought that if I can debug the existing app to see the name of the button I can have it be clicked using the name without unlocking the phone. Is there any way to debug an existing app to find the names of buttons and other UI elements?
-## [11][I tried to create a basic launcher. At this point in time, it implements the most basic features required in a typical launcher. Mostly open source launcher projects are based on Google launcher3 &amp; are quite complex to start with. If you're looking for something simple, you might find it useful.](https://www.reddit.com/r/androiddev/comments/i73rwq/i_tried_to_create_a_basic_launcher_at_this_point/)
-- url: https://www.reddit.com/r/androiddev/comments/i73rwq/i_tried_to_create_a_basic_launcher_at_this_point/
----
-Link to Github - [https://github.com/AshuTyagi16/Launcher-OnePlus](https://github.com/AshuTyagi16/Launcher-OnePlus)  
-
-
-&amp;#x200B;
-
-https://preview.redd.it/llngcu2h46g51.jpg?width=540&amp;format=pjpg&amp;auto=webp&amp;s=f33d6a3458ce800858974b535d4016fdacccbd21
-
-&amp;#x200B;
-
-https://preview.redd.it/gzfp86rj46g51.jpg?width=540&amp;format=pjpg&amp;auto=webp&amp;s=5472702e4cb306f5f090016e2d4b03b64c556868
-## [12][Kotlin/Native Memory Management Roadmap – Kotlin Blog](https://www.reddit.com/r/androiddev/comments/i70dva/kotlinnative_memory_management_roadmap_kotlin_blog/)
-- url: https://blog.jetbrains.com/kotlin/2020/07/kotlin-native-memory-management-roadmap/
----
-
+I've been out of android dev for 2-2.5 yrs , what have i missed? how can i adapt easily, or just link me discussion if anyone already asked same kind of question.

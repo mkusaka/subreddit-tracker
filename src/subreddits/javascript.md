@@ -1,11 +1,5 @@
 # javascript
-## [1][Showoff Saturday (August 08, 2020)](https://www.reddit.com/r/javascript/comments/i5xtd7/showoff_saturday_august_08_2020/)
-- url: https://www.reddit.com/r/javascript/comments/i5xtd7/showoff_saturday_august_08_2020/
----
-Did you find or create something cool this week in javascript? 
-
-Show us here!
-## [2][Your /r/javascript recap for the week of August 03 - August 09](https://www.reddit.com/r/javascript/comments/i71dfu/your_rjavascript_recap_for_the_week_of_august_03/)
+## [1][Your /r/javascript recap for the week of August 03 - August 09](https://www.reddit.com/r/javascript/comments/i71dfu/your_rjavascript_recap_for_the_week_of_august_03/)
 - url: https://www.reddit.com/r/javascript/comments/i71dfu/your_rjavascript_recap_for_the_week_of_august_03/
 ---
 **Monday, August 03 - Sunday, August 09**
@@ -83,49 +77,51 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][How I became a senior javascript developer with personal projects](https://www.reddit.com/r/javascript/comments/i7di7w/how_i_became_a_senior_javascript_developer_with/)
-- url: https://dev.to/afonsopacifer/how-i-became-a-senior-javascript-developer-with-personal-projects-1lpo
+## [2][Using a weather API to assess daily road risk based on the current weather conditions on your route](https://www.reddit.com/r/javascript/comments/i8bipq/using_a_weather_api_to_assess_daily_road_risk/)
+- url: https://developer.climacell.co/blog/using-a-weather-api-to-assess-daily-road-risk
 ---
 
-## [4][React v17.0 Release Candidate: No New Features](https://www.reddit.com/r/javascript/comments/i7f35e/react_v170_release_candidate_no_new_features/)
-- url: https://reactjs.org/blog/2020/08/10/react-v17-rc.html
+## [3][If you looking for jobs related to Javascript I created a list of a few job openings for developers that auto-updates every day!](https://www.reddit.com/r/javascript/comments/i8blom/if_you_looking_for_jobs_related_to_javascript_i/)
+- url: https://docs.google.com/spreadsheets/d/e/2PACX-1vSRIxb9eljHp3r4rYZ5-vmGnxNdg0auT48eZAYwbhjyKOb0yu2ny1O1WlgzLM8CakgqCiayNHGxTjvA/pubhtml
 ---
 
-## [5][Minify HTML template literals using Rollup](https://www.reddit.com/r/javascript/comments/i7of7y/minify_html_template_literals_using_rollup/)
-- url: https://github.com/jleeson/rollup-plugin-html-literals
+## [4][I’m learning to code. I made a job seeking scraper app for UK base job boards! Any thoughts appreciated. (Please excuse heroku idling)](https://www.reddit.com/r/javascript/comments/i8cbq9/im_learning_to_code_i_made_a_job_seeking_scraper/)
+- url: http://jobseekerapplication.herokuapp.com
 ---
 
-## [6][50+ Resources for Frontend Developers](https://www.reddit.com/r/javascript/comments/i7lzta/50_resources_for_frontend_developers/)
-- url: https://jatinrao.dev/resources-for-frontend-developers-ckdn64rhh00b23bs16lvl3m69
+## [5][So I created Spotify Clone in React(kinda)](https://www.reddit.com/r/javascript/comments/i8cvwo/so_i_created_spotify_clone_in_reactkinda/)
+- url: https://dev.to/fvukojevic/so-i-created-spotify-clone-in-react-kinda-3mli
 ---
 
-## [7][Build a “Serverless” Slack Bot in 7 Minutes with Node.js and Autocode (x-post r/node)](https://www.reddit.com/r/javascript/comments/i7mq1t/build_a_serverless_slack_bot_in_7_minutes_with/)
-- url: https://medium.com/slack-developer-blog/build-a-serverless-slack-bot-in-9-minutes-with-node-js-and-stdlib-b993cfa15358
+## [6][Teki - The unreasonably efficient route parser](https://www.reddit.com/r/javascript/comments/i8c1zv/teki_the_unreasonably_efficient_route_parser/)
+- url: https://github.com/philipnilsson/teki#teki
 ---
 
-## [8][CyberCode Online - I made a game designed to be played discreetly in office (proof of concept stage, what do you guys think?)](https://www.reddit.com/r/javascript/comments/i73oqw/cybercode_online_i_made_a_game_designed_to_be/)
-- url: https://cybercodeonline.com/
+## [7][Using ESLint to improve your app’s performance](https://www.reddit.com/r/javascript/comments/i7tccq/using_eslint_to_improve_your_apps_performance/)
+- url: https://allegro.tech/2020/08/using-eslint.html
 ---
 
-## [9][[AskJS] Why aren’t there more Web Workers?](https://www.reddit.com/r/javascript/comments/i7ib4l/askjs_why_arent_there_more_web_workers/)
-- url: https://www.reddit.com/r/javascript/comments/i7ib4l/askjs_why_arent_there_more_web_workers/
----
-I know that one of the limitations of JavaScript is that it’s single-threaded (partially remediated by being event-driven), but why isn’t the option for multi-threading more accessible in modern frameworks like Angular and React? Angular goes about it a pretty roundabout way, but I think we’d benefit so much by having the option to stash away any computationally intensive work like sorting/filtering into a web worker until it’s ready. What are some downsides to web workers that I’m missing?
-## [10][How to build a Sketch plugin with React and Typescript ?](https://www.reddit.com/r/javascript/comments/i7ogq5/how_to_build_a_sketch_plugin_with_react_and/)
-- url: https://medium.com/overlay-blog/how-to-build-a-sketch-plugin-with-typescript-react-part-1-ac3bbc2e5443
+## [8][Build badge in React without SVG and no dependencies](https://www.reddit.com/r/javascript/comments/i8ap0j/build_badge_in_react_without_svg_and_no/)
+- url: https://medium.com/serpapi/build-badge-in-react-without-svg-76f967706fb4
 ---
 
-## [11][[AskJS] Is learning JS the quickest way to land a junior/trainee UK Dev job?.](https://www.reddit.com/r/javascript/comments/i7p107/askjs_is_learning_js_the_quickest_way_to_land_a/)
-- url: https://www.reddit.com/r/javascript/comments/i7p107/askjs_is_learning_js_the_quickest_way_to_land_a/
+## [9][[AskJS] Redux vs React Hooks - A point I haven't seen brought up](https://www.reddit.com/r/javascript/comments/i85sm8/askjs_redux_vs_react_hooks_a_point_i_havent_seen/)
+- url: https://www.reddit.com/r/javascript/comments/i85sm8/askjs_redux_vs_react_hooks_a_point_i_havent_seen/
 ---
-Hi everyone, i'm on the hunt for a 'starter' job here in the UK in the dev scene.
+So I've been debating whether I should be implementing hooks more since their inception, and recently at my place of employment, I realized that I lean heavily towards using Redux vs Hooks + Context for a couple major reasons. One is the age of Redux and things like the dev tools which make it super simple to debug (I've had to spin up my own logger and diff checker for my reducer hooks), but the other large reason I haven't seen anyone mention is that hooks tie you into React and React alone.
 
-I'm just looking for a paid, low end dev job that is willing to take people who didn't go to uni, do you think learning JS/Node etc will give me the best chance at landing something like this?.
+If eventually you need to move your code base over to another framework/library, you can't transfer the application state with you as easily. Because Redux is framework agnostic, you can always just hook into it from your new framework/library of choice.
 
-I have been learning HTML/CSS and CyberSec/basic JS stuff on and off for a while now and i'm not gonna have the chance to go to university, people keep telling me JS/FrontEnd jobs are the most popular in the UK and they are screaming out for people willing learn and start in the lower paid positions.
+I've recently had to deal with this at my company with migrating from Angular 1 to React, with all of the state logic being in Angular 1. We're now putting the logic into Redux so that in the future, if we ever have to migrate again, our state logic stays solid and makes the migration that much easier.
 
-Any advice would be greatly appreciated, thanks.
-## [12][Single Page Applications using Rust](https://www.reddit.com/r/javascript/comments/i7rrrm/single_page_applications_using_rust/)
-- url: http://www.sheshbabu.com/posts/rust-wasm-yew-single-page-application/
+With all this being said, I'm starting at a new company in a month where they are much more hooks heavy, so I'm excited to see how they do things and learn their approaches :)
+
+Thoughts?
+## [10][Elder.js: A Svelte Framework and Static Site Generator](https://www.reddit.com/r/javascript/comments/i7xqct/elderjs_a_svelte_framework_and_static_site/)
+- url: https://elderguide.com/tech/elderjs/
+---
+
+## [11][Great JavaScript particle animation library for you](https://www.reddit.com/r/javascript/comments/i8awe9/great_javascript_particle_animation_library_for/)
+- url: https://github.com/lindelof/particles-bg
 ---
 

@@ -56,73 +56,69 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][AddressSanitizer for Windows: x64 and Debug Build Support | C++ Team Blog](https://www.reddit.com/r/cpp/comments/i7iydj/addresssanitizer_for_windows_x64_and_debug_build/)
+## [2][No more plain old data](https://www.reddit.com/r/cpp/comments/i8a5xv/no_more_plain_old_data/)
+- url: https://mariusbancila.ro/blog/2020/08/10/no-more-plain-old-data/
+---
+
+## [3][std::atomic_ref is awesome](https://www.reddit.com/r/cpp/comments/i8ckxr/stdatomic_ref_is_awesome/)
+- url: https://www.reddit.com/r/cpp/comments/i8ckxr/stdatomic_ref_is_awesome/
+---
+I only recently discovered that gcc 10 supports std::atomic_ref and I’ve been playing around with it. I have to say, it might be in my top 5 favorite C++20 features. But it begs the question: before std::atomic_ref, was there a way to atomically modify a variable of non-atomic type in-place? I don’t really do lock-free programming in my every-day life, so I haven’t really ever had to think about it, but I’m curious. Also Jason Turner if you’re reading this please consider std::atomic_ref for a C++ Weekly episode, maybe there are other people who also slept on this one.
+## [4][toml++ v2.1.0 released](https://www.reddit.com/r/cpp/comments/i7za0j/toml_v210_released/)
+- url: https://marzer.github.io/tomlplusplus/
+---
+
+## [5][Why std::unique_lock still isn't [[nodiscard]]?](https://www.reddit.com/r/cpp/comments/i7v7yl/why_stdunique_lock_still_isnt_nodiscard/)
+- url: https://www.reddit.com/r/cpp/comments/i7v7yl/why_stdunique_lock_still_isnt_nodiscard/
+---
+The following code: [https://godbolt.org/z/4ovWhv](https://godbolt.org/z/4ovWhv)
+
+Is most likely a bug, if you find it somewhere in the code base.
+
+Now, [p1771r1](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1771r1.pdf) introduced a  `[[nodiscard]]` for constructors. The change was  applied retroactively to previously published C++ standards. 
+
+Shouldn't both unique\_lock and lock\_guard, as well as other RAII wrappers, be marked `[[nodiscard]]`?  
+
+Is there an ongoing proposal to do that, and is there a chance for it to be retroactively applied? It seems like a bug that's way too easy to make, I did it myself a few years ago and later seen it in code reviews of other people. I believe it needs attention.
+## [6][Time complexity of set in this case?](https://www.reddit.com/r/cpp/comments/i8a8rj/time_complexity_of_set_in_this_case/)
+- url: https://www.reddit.com/r/cpp/comments/i8a8rj/time_complexity_of_set_in_this_case/
+---
+Consider this fragment of code:
+
+    int main()
+    { 
+        string s1;
+        getline(cin,s1);
+        set&lt;char&gt; mySet;
+        for(int i=0;i&lt;s1.length();i++)
+            mySet.insert(s2[i]);
+    }
+
+What will be the time complexity of this code? I'm aware that the cost of insertion in a set in average case is O(log N). However when placed inside this for loop running through N characters, will the time complexity balloon up to O(N log N) or O(N) or will it be O(log N)?
+## [7][AddressSanitizer for Windows: x64 and Debug Build Support | C++ Team Blog](https://www.reddit.com/r/cpp/comments/i7iydj/addresssanitizer_for_windows_x64_and_debug_build/)
 - url: https://devblogs.microsoft.com/cppblog/asan-for-windows-x64-and-debug-build-support/
 ---
 
-## [3][Concepts can’t do quantifiers](https://www.reddit.com/r/cpp/comments/i7mzga/concepts_cant_do_quantifiers/)
-- url: https://quuxplusone.github.io/blog/2020/08/10/concepts-cant-do-quantifiers/
----
-
-## [4][ModernCppStarter v0.13 released: m.css documentation and CMake formatting!](https://www.reddit.com/r/cpp/comments/i7oroj/moderncppstarter_v013_released_mcss_documentation/)
+## [8][ModernCppStarter v0.13 released: m.css documentation and CMake formatting!](https://www.reddit.com/r/cpp/comments/i7oroj/moderncppstarter_v013_released_mcss_documentation/)
 - url: https://github.com/TheLartians/ModernCppStarter
 ---
 
-## [5][Build system, what’s your favorite?](https://www.reddit.com/r/cpp/comments/i7825h/build_system_whats_your_favorite/)
+## [9][Any good C++ tutorials coming from C# and Python?](https://www.reddit.com/r/cpp/comments/i7walr/any_good_c_tutorials_coming_from_c_and_python/)
+- url: https://www.reddit.com/r/cpp/comments/i7walr/any_good_c_tutorials_coming_from_c_and_python/
+---
+I am stepping up my learning after deciding what I want to do for a job. I make games in Unity and am at the point where coding doesn't stop me making things any more. I rarely need to look up documentation on the things I know, and I am confident that I could program most gameplay things.
+
+I also use Python to automate things, and I can do stuff with that too, but not as well as C#. The problem with most tutorials on any language is that they tend to go over variables and functions, and then stop. I can already guess how to do those in most languages, so I don't want anything like that. Can anyone recommend some good tutorials that are for people who program already, but not in C++?  
+
+
+I'm running G++, Windows 10 and my code editor of choice is Visual Studio Code.
+## [10][Concepts can’t do quantifiers](https://www.reddit.com/r/cpp/comments/i7mzga/concepts_cant_do_quantifiers/)
+- url: https://quuxplusone.github.io/blog/2020/08/10/concepts-cant-do-quantifiers/
+---
+
+## [11][Build system, what’s your favorite?](https://www.reddit.com/r/cpp/comments/i7825h/build_system_whats_your_favorite/)
 - url: https://www.reddit.com/r/cpp/comments/i7825h/build_system_whats_your_favorite/
 ---
 Hey guys, I don’t know who saw the https://blog.jetbrains.com/clion/2020/06/dev-eco-cpp-2020/  where CMake is used by 53% of respondents. But would  like to see the opinions of this sub Reddit.
 
 [View Poll](https://www.reddit.com/poll/i7825h)
-## [6][TransCoder from Facebook Reserchers translates code from a C++ to another language! Check some examples at 3:10 in the video, or in the paper itself linked in the video description!](https://www.reddit.com/r/cpp/comments/i7q54w/transcoder_from_facebook_reserchers_translates/)
-- url: https://www.youtube.com/watch?v=u6kM2lkrGQk
----
-
-## [7][envy: Deserialize environment variables into type-safe structs](https://www.reddit.com/r/cpp/comments/i73c2a/envy_deserialize_environment_variables_into/)
-- url: https://github.com/p-ranav/envy
----
-
-## [8][Official C++ Logo is now under public domain](https://www.reddit.com/r/cpp/comments/i6u3xq/official_c_logo_is_now_under_public_domain/)
-- url: https://www.reddit.com/r/cpp/comments/i6u3xq/official_c_logo_is_now_under_public_domain/
----
-As you can know, Official C++ Logo ([isocpp/logos](https://github.com/isocpp/logos)) is not free since 18.04.2017 (※ [`a036ea6`](https://github.com/isocpp/logos/commit/a036ea65afa8b5f5ba7733f90d9aed8266eca6c1)).
-
-Fortunatelly, I was recently cleaning up my hard drive space and found old C++ logo downloaded while C++ logo was under public domain, so in order to allow community use it freely, I am distributing it under public domain: [Benio101/cpp-logo](https://github.com/Benio101/cpp-logo) so…
-
-**Everyone can use, modify and redistribute C++ Logo without any restrictions**.
-
-⚠️ Note that in order to use unrestricted version of C++ Logo, you have to download it from my repository, not from isocpp once due to licensing.
-
-Have a nice day.
-## [9][Overwriting new and delete - sized delete never called](https://www.reddit.com/r/cpp/comments/i75qol/overwriting_new_and_delete_sized_delete_never/)
-- url: https://www.reddit.com/r/cpp/comments/i75qol/overwriting_new_and_delete_sized_delete_never/
----
-Hello Cpp!
-
-&amp;#x200B;
-
-My question is the following, i'm overwriting `operator new(size_t size)` and `operator delete(void *ptr, size_t sz)` to track my allocated memory.
-
-The problem is, that the sized version of `operator delete` is never called, not matter the type of object i create previously. When i provice my own `operator delete(void *ptr)`, the version gets correctly called everytime. I tried with gcc and clang on ubuntu, maybe it was something the compiler did, but it seems the sized version of the operator do not work as intended. The documentation says they will be called when provided, but it seems just not true. Is there a way to force call these?
-
-&amp;#x200B;
-
-Is the only way around this to use the non-size version and do something like this for allocating, and read the size in the reverse way when deleting?
-
-    void* operator new(size_t size) {
-     size_t * ret = (size_t*) malloc(sizeof(size_t) + s);
-     *ret = s;
-     return (void*) &amp;ret[1];
-    }
-## [10][Alternatives to Visual Assist for C++ in Visual Studio](https://www.reddit.com/r/cpp/comments/i734hh/alternatives_to_visual_assist_for_c_in_visual/)
-- url: https://www.reddit.com/r/cpp/comments/i734hh/alternatives_to_visual_assist_for_c_in_visual/
----
-I'm looking for Visual Studio add-ons that improve intellisense and the refactoring tools like Visual Assist does. 
-
-I search for something else than VA as VA has become a major annoyance lately. You cannot simply buy a key and download the software anymore but you need to register with some third party site and (at least I) had to go through a lengthy email conversation because I wanted to buy a private licence and my last name changed from years ago due to marriage.
-
-I surely don't want to go through this again so I'm looking for a alternative to VA. What are you guys using?
-## [11][How to Check String or String View Prefixes and Suffixes in C++20](https://www.reddit.com/r/cpp/comments/i71it6/how_to_check_string_or_string_view_prefixes_and/)
-- url: https://www.bfilipek.com/2020/08/string-prefix-cpp20.html?m=1
----
-

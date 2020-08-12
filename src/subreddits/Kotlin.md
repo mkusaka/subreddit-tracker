@@ -1,5 +1,33 @@
 # Kotlin
-## [1][Katlib - extensions functions library](https://www.reddit.com/r/Kotlin/comments/i7oa3d/katlib_extensions_functions_library/)
+## [1][Single Responsibility with Kotlin](https://www.reddit.com/r/Kotlin/comments/i88r1p/single_responsibility_with_kotlin/)
+- url: https://medium.com/@fanisveizis/kode-quality-single-responsibility-9fb9599fd4e2
+---
+
+## [2][Current best frontend for a kotlin backend?](https://www.reddit.com/r/Kotlin/comments/i89q9p/current_best_frontend_for_a_kotlin_backend/)
+- url: https://www.reddit.com/r/Kotlin/comments/i89q9p/current_best_frontend_for_a_kotlin_backend/
+---
+Title. I've been working on a project with a ktor backend, but I'm having trouble finding a decent frontend. Is the best frontend for my project even within the Kotlin realm?
+## [3][Turning a Camera Feed into a Solved Sudoku](https://www.reddit.com/r/Kotlin/comments/i8dl9w/turning_a_camera_feed_into_a_solved_sudoku/)
+- url: https://www.kotlindevelopment.com/turning-a-camera-feed-into-a-solved-sudoku/
+---
+
+## [4][Kotlin - coroutines and channels](https://www.reddit.com/r/Kotlin/comments/i8dgtn/kotlin_coroutines_and_channels/)
+- url: https://www.reddit.com/r/Kotlin/comments/i8dgtn/kotlin_coroutines_and_channels/
+---
+I have an app where one of the features is bulk import. I want to do it so that the user can upload 10k records, another one can make a similar request at the same time, and I want to do it all in the background. the flow should go like this, user1 imports 10k records which I will validate/produce and send it to the Channel -&gt; from another function I should receive data and save it to my DB -&gt; while data is being saved to the DB, another user makes a request for 5k records, again data goes through validate/produce and after all is good I send it to the same Channel -&gt; when consumer is done with the saving of user1 data, he should start with save of the next data from Channel. I guess my question is how can I make this flow that consumer always listens when Channel got some data so he can save i to the DB, and I would like to do it in the background so user can still use app, and another users can also import bulks.
+
+Here is the code I currently have, I know its not good, and for some reason it works. My due date is very close, so I would appreciate any help. Thanks
+
+[CODE](https://pl.kotl.in/_7VHabQ6y)
+## [5][Type Aliases vs. Inline Classes](https://www.reddit.com/r/Kotlin/comments/i8aawg/type_aliases_vs_inline_classes/)
+- url: https://medium.com/@forketyfork/kotlin-type-aliases-and-inline-classes-dd1b42e24bfb
+---
+
+## [6][Native Binary for Kotlin+TonrnadoFX app using GraalVM](https://www.reddit.com/r/Kotlin/comments/i8cthy/native_binary_for_kotlintonrnadofx_app_using/)
+- url: https://www.reddit.com/r/Kotlin/comments/i8cthy/native_binary_for_kotlintonrnadofx_app_using/
+---
+Has anyone generated native binaries  (MacOS) for a Kotlin +TornadoFX App using GraalVM native image capabilities? I am trying with JDK 11 but am open to switch to any JDK from 8-14 if the binary can be created. The other suboptimal option is using \`jlink \` to create a lighter distribution of the application, which also didn't work for me :'(
+## [7][Katlib - extensions functions library](https://www.reddit.com/r/Kotlin/comments/i7oa3d/katlib_extensions_functions_library/)
 - url: https://www.reddit.com/r/Kotlin/comments/i7oa3d/katlib_extensions_functions_library/
 ---
 [https://github.com/LukasForst/katlib](https://github.com/LukasForst/katlib)
@@ -9,101 +37,15 @@
 Allow me to introduce you to **Katlib** \- collection of extension functions I and my colleges wrote for last three years of server side Kotlin development. It contains around 70 extensions or functions that we're missing in the Kotlin standard library.
 
 Fully opensourced, with test coverage between 60-70% and with minimum (1) of dependencies.
-## [2][Parameterized tests with Kotest](https://www.reddit.com/r/Kotlin/comments/i7mxpj/parameterized_tests_with_kotest/)
-- url: https://kotlintesting.com/kotest-parameterized/
+## [8][I wrote an article about higher-order functions and how to compose them. Hope it's useful.](https://www.reddit.com/r/Kotlin/comments/i7tdo3/i_wrote_an_article_about_higherorder_functions/)
+- url: https://farhanpatel.dev/index.php/2020/08/10/composing-higher-order-functions-in-kotlin/
 ---
 
-## [3][Midifunk - a library for processing MIDI events easily](https://www.reddit.com/r/Kotlin/comments/i7ctex/midifunk_a_library_for_processing_midi_events/)
-- url: https://github.com/stashymane/midifunk
----
-
-## [4][Quick intro into http4k — a Kotlin library for writing HTTP servers and clients](https://www.reddit.com/r/Kotlin/comments/i7ojmg/quick_intro_into_http4k_a_kotlin_library_for/)
+## [9][Quick intro into http4k — a Kotlin library for writing HTTP servers and clients](https://www.reddit.com/r/Kotlin/comments/i7ojmg/quick_intro_into_http4k_a_kotlin_library_for/)
 - url: https://dmitrykandalov.com/hello-http4k
 ---
 
-## [5][How to architect Android Analytics layer? || Kotlin|| Android - Finally I got back to speed, jumping back to youtube. Comments are appreciated. I have also added github repo. Feel free to check it out.](https://www.reddit.com/r/Kotlin/comments/i7hc4v/how_to_architect_android_analytics_layer_kotlin/)
-- url: https://youtu.be/aYeY7svVUA4
+## [10][Midifunk - a library for processing MIDI events easily](https://www.reddit.com/r/Kotlin/comments/i7ctex/midifunk_a_library_for_processing_midi_events/)
+- url: https://github.com/stashymane/midifunk
 ---
 
-## [6][Ktor Roadmap for 2020-2021 – Ktor Blog](https://www.reddit.com/r/Kotlin/comments/i70zbu/ktor_roadmap_for_20202021_ktor_blog/)
-- url: https://blog.jetbrains.com/ktor/2020/08/10/ktor-roadmap-for-2020-2021/
----
-
-## [7][Introducing Satchel: a fast, secure and modular key-value storage with batteries-included for Android and JVM](https://www.reddit.com/r/Kotlin/comments/i75ode/introducing_satchel_a_fast_secure_and_modular/)
-- url: https://github.com/adrielcafe/satchel
----
-
-## [8][Are inline classes considered an "over-engineering" thing if used a lot?](https://www.reddit.com/r/Kotlin/comments/i732j2/are_inline_classes_considered_an_overengineering/)
-- url: https://www.reddit.com/r/Kotlin/comments/i732j2/are_inline_classes_considered_an_overengineering/
----
-For example, let's say we have a customer entity and its using inline classes:
-
-&amp;#x200B;
-
-`data class Customer(`
-
-   `val customerId: CustomerID,`
-
-   `val customerName: CustomerName,`
-
-   `val  customerEmail: CustomerEmail,`
-
-   `val customerPassword: CustomerPassword`
-
-`)`
-
-&amp;#x200B;
-
-Is it okay to be implemented this way or is it considered over-engineering? 
-
-Just curious.
-## [9][Converting byte array to string](https://www.reddit.com/r/Kotlin/comments/i7b9tp/converting_byte_array_to_string/)
-- url: https://www.reddit.com/r/Kotlin/comments/i7b9tp/converting_byte_array_to_string/
----
-I need to generate a Hmac SHA256 digest of a string so I can authorize requests to my backend, and I nearly have a working function for it. The only problem I'm having is converting the resulting byte array into the usable string that I can send over http
-
-&amp;#x200B;
-
-    fun generateAuth(payload : String) : String {
-        val hmac = Mac.getInstance("HmacSHA256")
-        hmac.init(SecretKeySpec(keyByteArray, "HmacSHA256"))
-    
-        val authByteArray = hmac.doFinal(payload.toByteArray())
-    
-        return authByteArray.toString() //Not what I'm expecting
-    }
-
-This function is very close to working, but it excludes zeros from the final string?
-
-    fun generateAuth(payload : String) : String {
-        val hmac = Mac.getInstance(algorithm)
-        hmac.init(SecretKeySpec(keyByteArray, algorithm))
-    
-        val authString = StringBuilder()
-    
-        hmac.doFinal(payload.toByteArray()).iterator().forEach{byte -&gt;
-            authString.append(Integer.toHexString(0xff and byte.toInt()))
-        }
-    
-        return authString.toString()
-    }
-
-Result from above function:
-
-b761e5d1b2b942ae343b7bcd6518ea8442f656449e934534a1da29ed9fbadd
-
-Actual valid key:
-
-b761e5d1b2b942ae0343b7bcd6518ea8442f656449e9340534a1da29ed9fbadd
-
-&amp;#x200B;
-
-So what's the correct method for converting the byte array to a string?
-## [10][Collection of Kotlin online courses and tutorials for rookies](https://www.reddit.com/r/Kotlin/comments/i74irs/collection_of_kotlin_online_courses_and_tutorials/)
-- url: https://www.reddit.com/r/Kotlin/comments/i74irs/collection_of_kotlin_online_courses_and_tutorials/
----
-Created an curated amazing list of all the top-rated [Kotlin courses](https://blog.coursesity.com/best-kotlin-tutorials?utm_source=reddit&amp;utm_medium=social&amp;utm_campaign=redditPost&amp;utm_term=best-kotlin-js) of all time.
-
-Many of these courses are very helpful to Kotlin for the beginners.  
-
-Highly recommend.

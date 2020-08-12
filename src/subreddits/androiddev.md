@@ -31,75 +31,111 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Here's what I was able to make with motion layout. Actually made it 5-6 months ago, but never really got to share](https://www.reddit.com/r/androiddev/comments/i7dqhv/heres_what_i_was_able_to_make_with_motion_layout/)
-- url: https://v.redd.it/addybzt9q8g51
+## [3][(Self-Taught) Android Devs of Reddit: Show your portfolio](https://www.reddit.com/r/androiddev/comments/i83su4/selftaught_android_devs_of_reddit_show_your/)
+- url: https://www.reddit.com/r/androiddev/comments/i83su4/selftaught_android_devs_of_reddit_show_your/
+---
+Hello there! (*General Kenobi!)*
+
+As a self-taught, future super awesome Android developer :D I am really curious about your portfolios and especially those of self-taught and more especially that got you the job :)
+
+&amp;#x200B;
+
+Show off what you got and feel free to add some comments :)
+## [4][Gallerit, a sample Reddit gallery](https://www.reddit.com/r/androiddev/comments/i8amd7/gallerit_a_sample_reddit_gallery/)
+- url: https://www.reddit.com/r/androiddev/comments/i8amd7/gallerit_a_sample_reddit_gallery/
+---
+&amp;#x200B;
+
+https://preview.redd.it/zmtij01whjg51.png?width=2560&amp;format=png&amp;auto=webp&amp;s=8083011caaf4c3822ccbab2e3be568caea18b240
+
+Hi guys , I created a small Android application to search images on Reddit. Just search for a subreddit and the top images will be shown (they can also be saved). The goal of the project is to demonstrate best practices using modern Android development tools.
+
+Project characteristics:
+
+* 100% Kotlin
+* MVVM
+* Repository Pattern
+* A single activity architecture (Navigation component)
+* Android Jetpack
+* Coroutines &amp; Flow
+* Reactive UI
+* Testing
+* Dependency Injection (Koin)
+* Gradle Kotlin DSL
+* Material Design
+
+Hope it can be of help or inspiration for someone!
+
+Gallerit: [https://github.com/auron567/Gallerit](https://github.com/auron567/Gallerit)
+## [5][FCM and other Firebase services on Huawei phones: What's the latest situation?](https://www.reddit.com/r/androiddev/comments/i8as4l/fcm_and_other_firebase_services_on_huawei_phones/)
+- url: https://www.reddit.com/r/androiddev/comments/i8as4l/fcm_and_other_firebase_services_on_huawei_phones/
+---
+In the rapidly evolving situation with Huawai's divorce from Google Play Services, has anyone had any luck converting an app that relies on Firebase Cloud Messaging to receive messages on newer Huawei phones that don't have Play Services on them? 
+
+If so, what were your experiences? Did you end up changing your backend to emit Huawei Push Kit messages or is there some hack that lets you continue to register for Firebase? Looking around on the Web there are a number of discussions from this summer suggesting that the trouble starts when you notice one day that your app is no longer obtaining Firebase IDs...
+## [6][Records and Pattern Matching for Instanceof Finalized in JDK 16](https://www.reddit.com/r/androiddev/comments/i8b3mu/records_and_pattern_matching_for_instanceof/)
+- url: https://www.infoq.com/news/2020/08/java16-records-instanceof/
 ---
 
-## [4][How do I take over an existing project?](https://www.reddit.com/r/androiddev/comments/i7p32a/how_do_i_take_over_an_existing_project/)
-- url: https://www.reddit.com/r/androiddev/comments/i7p32a/how_do_i_take_over_an_existing_project/
+## [7][How do you deal with Multiple Themes?](https://www.reddit.com/r/androiddev/comments/i8c159/how_do_you_deal_with_multiple_themes/)
+- url: https://www.reddit.com/r/androiddev/comments/i8c159/how_do_you_deal_with_multiple_themes/
 ---
-Hello everyone,
+Hi, 
 
-So I am currently tasked with taking over an android project (moving from external to internal). I will be the sole developer for a while. I am tasked with handling the handover. They told me to take a look at the project but this is a pretty vague statement for me. Also because I am still a fairly new developer I've mostly worked on project where I started the project. My question is what should I "look at". Or how do I go about learning how the project works ?
+I was wondering how other developers deal with having multiple themes in their apps, now that   
+Material Components and DayNight are widely used?
 
-Unfortunately the project is quite big and badly structured. (The MainActivity is 1500 lines long with no documentation.) So it feels like a herculean task to "take a look at". There's also a huge load of classes. In my opinion, too many for the scope of the project. 
+It's easy when you have a light and a dark version, since you can handle everything with minimal code through AppCompatDelegate. But let's say you want light, dark and AMOLED. Or a couple of variations for each. What is the best approach?
 
-I was wondering if you guys had any experience and advice for this type of situation?
-## [5][Hilt and Dagger annotations cheat sheet](https://www.reddit.com/r/androiddev/comments/i7okcy/hilt_and_dagger_annotations_cheat_sheet/)
-- url: https://medium.com/androiddevelopers/hilt-and-dagger-annotations-cheat-sheet-9adea070e495
+This is how I did:
+
+\- I have my main theme: MyStyle, inheriting from DayNight, representing light and dark.
+
+\- I have another one: MyStyle\_amoled, inheriting from MyStyle, with attributes override only in the dark version to make it AMOLED.
+
+This way it follows the system toggle when changing from light to dark, and in the settings, the user can choose the type of dark mode to get, Default or AMOLED.
+
+This is ugly IMO, since you still have to make a base activity class overriding OnCreate() and OnResume() and use setTheme() accordingly. And your user clicking the back button will see the theme changing for a split second as it recreate().
+
+Is there a better way?
+
+It would be nice to manage themes through qualifiers having: -light, -night, -amoled, -version3... folders in your res/ and then just bind the qualifier you choose to the system setting.
+## [8][Hello guys! I have a Question related to AlarmManager and Notifications.](https://www.reddit.com/r/androiddev/comments/i8aifq/hello_guys_i_have_a_question_related_to/)
+- url: https://www.reddit.com/r/androiddev/comments/i8aifq/hello_guys_i_have_a_question_related_to/
+---
+I am working on an app that will send notifications to the user at a specific point in time defined by the user. So it will remind a user with 15 minutes before an event is happening. I've tried using AlarmManager and a BroadcastReceiver to send the notification, but it doesn't work when the app is closed. Do you have any idea or recommendation on what I should check?
+## [9][What CPC and eCPM does Admob have for USA?](https://www.reddit.com/r/androiddev/comments/i89eyi/what_cpc_and_ecpm_does_admob_have_for_usa/)
+- url: https://www.reddit.com/r/androiddev/comments/i89eyi/what_cpc_and_ecpm_does_admob_have_for_usa/
+---
+I removed Admob an year ago because they suddenly started giving me very bad CPC ($0.05-0.1) for USA.
+
+I use FAN and here's what I get for USA users (Android only):
+
+* Interstitials
+
+CPC = $0.54
+
+eCPM = $9.12
+
+
+* Banner
+
+CPC = $0.27
+
+eCPM = $0.49
+
+I was wondering what Admob provides to see if FAN is paying good?
+## [10][Assets or Resource Raw folder of Android?](https://www.reddit.com/r/androiddev/comments/i8brko/assets_or_resource_raw_folder_of_android/)
+- url: https://medium.com/mobile-app-development-publication/assets-or-resource-raw-folder-of-android-5bdc042570e0?source=friends_link&amp;sk=708031a2e38cc7b9d681553ba7a6dd66
 ---
 
-## [6][Material Reside Menu ( 3D Perspective Drawer ) Made purely using Kotlin &amp; Motion Layout 😍 Visit - github.com/chintanrparmar/MaterialResideMenu](https://www.reddit.com/r/androiddev/comments/i72par/material_reside_menu_3d_perspective_drawer_made/)
-- url: https://v.redd.it/2474a0e4p5g51
+## [11][Why you should embrace Dependency Injection](https://www.reddit.com/r/androiddev/comments/i7w1bi/why_you_should_embrace_dependency_injection/)
+- url: https://codingtroops.com/android/why-do-we-need-dependency-injection-in-our-lives/
 ---
 
-## [7][Toolbar.setTitle() is interesting 🔬](https://www.reddit.com/r/androiddev/comments/i7hpdl/toolbarsettitle_is_interesting/)
-- url: https://link.medium.com/EDQe696MQ8
+## [12][I challenge to recreate this.](https://www.reddit.com/r/androiddev/comments/i8dlmi/i_challenge_to_recreate_this/)
+- url: https://www.reddit.com/r/androiddev/comments/i8dlmi/i_challenge_to_recreate_this/
 ---
+😌
 
-## [8][25 Best Android Libraries &amp; Projects of 2020 — Summer Edition](https://www.reddit.com/r/androiddev/comments/i7qwpt/25_best_android_libraries_projects_of_2020_summer/)
-- url: https://medium.com/@mmbialas/25-best-android-libraries-projects-of-2020-summer-edition-dfb030a7fb0a
----
-
-## [9][Modern Notes and Tasks app (Hopefully alternative to Google keep and Google Tasks)](https://www.reddit.com/r/androiddev/comments/i7m2me/modern_notes_and_tasks_app_hopefully_alternative/)
-- url: https://www.reddit.com/r/androiddev/comments/i7m2me/modern_notes_and_tasks_app_hopefully_alternative/
----
-Couple of weeks ago i posted my [MarkdownEditText](https://github.com/YahiaAngelo/MarkdownEditText) library, and here's a use case for it.
-
-Noted is a Notes and Tasks app built with Kotlin, Koin dependency injection, MVVM structure, Coroutines, Material design components And Realm database.
-
-You can:
-
-\- Write Notes with text styles
-
-\- Add and filter with categories
-
-\- Make Tasks with reminders
-
-Backups will be in the next update.
-
-Github: [https://github.com/YahiaAngelo/Noted-Android](https://github.com/YahiaAngelo/Noted-Android)
-
-Contributions and suggestions are welcome.
-## [10][Android Studio 4.1 RC 1 available](https://www.reddit.com/r/androiddev/comments/i79zgt/android_studio_41_rc_1_available/)
-- url: https://androidstudio.googleblog.com/2020/08/android-studio-41-rc-1-available.html
----
-
-## [11][Pro Tip: If you don't use Google Assistant that often (or even if you do), you can configure Assistant gesture/button to launch any app (like Camera/Reddit/Instagram etc) with this open source app.](https://www.reddit.com/r/androiddev/comments/i7n6ma/pro_tip_if_you_dont_use_google_assistant_that/)
-- url: https://www.reddit.com/r/androiddev/comments/i7n6ma/pro_tip_if_you_dont_use_google_assistant_that/
----
-Disclaimer - I made this. No intent for profit (its free + no ads + open source). I just think the app itself or the source code may interest someone here.
-
-**Download -** [Play Store Link](https://play.google.com/store/apps/details?id=com.vwap.app_launcher_assistant&amp;referrer=utm_source%3DReddit%26utm_campaign%3Dandroiddev)
-
-Instead of the default assistant app, you can launch any app on your phone by performing the Assistant gesture (bottom-edge-swipe-up/long press 'home' button) or via the assistant button on some phones (like Samsung)
-
-A good use case for this app- quickly open the CAMERA app with the assistant gesture/button.- you don't have to stop what you are doing, minimise the current app, go to home screen, and then finally open the CAMERA app from the home screen shortcut (or worse from the app drawer).
-
-Also, the app is open source. You can check out its [source code here](https://github.com/vinaywadhwa/App-Launcher-Assistant).
-
-AMA.
-## [12][Have not touched android for 2 years](https://www.reddit.com/r/androiddev/comments/i7g5t7/have_not_touched_android_for_2_years/)
-- url: https://www.reddit.com/r/androiddev/comments/i7g5t7/have_not_touched_android_for_2_years/
----
-I've been out of android dev for 2-2.5 yrs , what have i missed? how can i adapt easily, or just link me discussion if anyone already asked same kind of question.
+https://reddit.com/link/i8dlmi/video/f5tcv319okg51/player

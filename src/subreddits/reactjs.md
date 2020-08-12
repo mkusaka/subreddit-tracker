@@ -85,78 +85,109 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
-## [3][React v17.0 Release Candidate: No New Features](https://www.reddit.com/r/reactjs/comments/i7cygu/react_v170_release_candidate_no_new_features/)
-- url: https://reactjs.org/blog/2020/08/10/react-v17-rc.html
+## [3][Vite + React + Tailwind CSS starter](https://www.reddit.com/r/reactjs/comments/i8auys/vite_react_tailwind_css_starter/)
+- url: https://vite-react-tailwind.vercel.app/
 ---
 
-## [4][Universal React Query Library (URQL GraphQL client)](https://www.reddit.com/r/reactjs/comments/i7pf4n/universal_react_query_library_urql_graphql_client/)
-- url: https://blog.graphqleditor.com/urql-graphql-client/
+## [4]["We'd like to release [React 18] in a year"](https://www.reddit.com/r/reactjs/comments/i8bcf6/wed_like_to_release_react_18_in_a_year/)
+- url: https://twitter.com/dan_abramov/status/1293251763450126336?s=20
 ---
 
-## [5][Join us - Kiki from Microsoft on their React Native for MacOS and Windows project](https://www.reddit.com/r/reactjs/comments/i795pa/join_us_kiki_from_microsoft_on_their_react_native/)
-- url: https://www.reddit.com/r/reactjs/comments/i795pa/join_us_kiki_from_microsoft_on_their_react_native/
+## [5][I made a site that allows you to browse the Spotify catalog and curate a "Tindify" playlist by swiping song cards](https://www.reddit.com/r/reactjs/comments/i7s9wh/i_made_a_site_that_allows_you_to_browse_the/)
+- url: https://www.reddit.com/r/reactjs/comments/i7s9wh/i_made_a_site_that_allows_you_to_browse_the/
 ---
-This Wednesday, August 12th at 1 PM ET we talk with Kiki - Program Manager at Microsoft for their React Native for MacOS and Windows platforms. Microsoft is supporting the React Native ecosystem by adding MacOS and Windows platform support. React Native for Windows released the latest stable 0.62.2 with Fast Refresh, RTL support, RedBox and thread-safe property storage APIs.
+&amp;#x200B;
+
+https://reddit.com/link/i7s9wh/video/gjuvagkbrdg51/player
+
+Hi, guys! My newest app uses the Spotify API to let you browse their genres and playlists to create your own playlist in the style of Tinder, the dating app. Songs that are swiped right, or "liked", are added to your Tindify playlist. This doesn't really have any practical uses, but I have seen some other people on this sub using the React Spring library and I wanted to incorporate it into a project. You need to have a Spotify account to use the app, but I've included a video for those that don't have one.
+
+Live demo:  [https://tindify.netlify.app](https://tindify.netlify.app/login)
+
+Github repos:  [https://github.com/ndeom/Tindify](https://github.com/ndeom/Tindify)  (main app)
+
+[https://github.com/ndeom/Tindify-Auth](https://github.com/ndeom/Tindify-Auth) (authentication api for jwt's)
+
+A few caveats: I am still relatively new to coding (\~8-9 months of self-teaching), so any/all constructive criticism with respect to architecture, good coding practices, style, implementation, features, etc. would be greatly appreciated, because my goal is to learn. This is also my first time using React hooks in a project, so the implementation might be a little messy in some places. There are likely areas of the app that could be refactored, and I'm in the process of adding tests with Jest and the React testing library.
+
+That being said, I hope you'll take a look!
+## [6][Animating list reordering with React Hooks](https://www.reddit.com/r/reactjs/comments/i8bsk5/animating_list_reordering_with_react_hooks/)
+- url: https://medium.com/@tara.ojo/animating-list-reordering-with-react-hooks-aca5e7eeafba?source=friends_link&amp;sk=08a6322dfc12c62a417cb13940dac377
+---
+
+## [7][React95 v3.0 (Anniversary Edition) is out 🔥](https://www.reddit.com/r/reactjs/comments/i7tsgq/react95_v30_anniversary_edition_is_out/)
+- url: https://www.reddit.com/r/reactjs/comments/i7tsgq/react95_v30_anniversary_edition_is_out/
+---
+Windows95 celebrates its 25th anniversary this September, so we (the [react95.io](https://react95.io) team) decided to finally release React95 v3.0 "Anniversary Edition". 🎉🥳
+
+  
+You can find it on [Github](https://github.com/arturbien/React95), and see it in action in this [demo app](https://coins95.web.app/).
 
 &amp;#x200B;
 
-We'll do demos, discuss how it works, and discuss how you can get started. Ask questions during the broadcast, if you like.
+New release comes with lot's of improvements:
 
-&amp;#x200B;
+ 🎚  **new components**: Slider, Bar, Progress, ColorInput and more!
 
-Download an invite for your calendar:  [https://www.telerik.com/react-wednesdays](https://www.telerik.com/react-wednesdays)
-## [6][Just released Flume, a node editor and runtime engine for React + more.](https://www.reddit.com/r/reactjs/comments/i7chqp/just_released_flume_a_node_editor_and_runtime/)
-- url: https://flume.dev/
+🌈  **25+ color themes**: Rainy Day, Olive, Brick, Pamela Anderson, Matrix, Ninja Turtles...
+
+👨‍💻  **accessibility**: improved keyboard controls
+
+💾  **new font**: original MS\_Sans\_Serif font
+
+🐛  **bugs**: ...were finally fixed  
+
+
+If you want to contribute or have any questions about the project or just want to hang out- join our [Slack channel](https://join.slack.com/t/react95/shared_invite/enQtOTA1NzEyNjAyNTc4LWYxZjU3NWRiMWJlMGJiMjhkNzE2MDA3ZmZjZDc1YmY0ODdlZjMwZDA1NWJiYWExYmY1NTJmNmE4OWVjNWFhMTE) !
+## [8][useFirestoreQuery hook 🔥](https://www.reddit.com/r/reactjs/comments/i80jyv/usefirestorequery_hook/)
+- url: https://usehooks.com/useFirestoreQuery/
 ---
 
-## [7][How to build a Sketch plugin with React and Typescript ?](https://www.reddit.com/r/reactjs/comments/i7ogpg/how_to_build_a_sketch_plugin_with_react_and/)
-- url: https://medium.com/overlay-blog/how-to-build-a-sketch-plugin-with-typescript-react-part-1-ac3bbc2e5443
+## [9][Advanced Table components for Ant Design](https://www.reddit.com/r/reactjs/comments/i8aiaa/advanced_table_components_for_ant_design/)
+- url: https://www.reddit.com/r/reactjs/comments/i8aiaa/advanced_table_components_for_ant_design/
+---
+Hello All,
+
+I created a package called \`ant-table-extensions\` which adds extra utilities to ant design's Table component.
+
+\[GitHub Link\]:  [https://github.com/saisandeepvaddi/ant-table-extensions](https://github.com/saisandeepvaddi/ant-table-extensions)
+
+\[Docs &amp; Demos\]:  [https://ant-table-extensions.vercel.app/?path=/docs/get-started--page](https://ant-table-extensions.vercel.app/?path=/docs/get-started--page)
+
+:)
+## [10][Built a p2p collaborative file sharing app using IPFS. Share files directly for free!](https://www.reddit.com/r/reactjs/comments/i8dsnd/built_a_p2p_collaborative_file_sharing_app_using/)
+- url: https://alpha.sailplane.io
 ---
 
-## [8][Need help reducing duplication (React Router)](https://www.reddit.com/r/reactjs/comments/i7pflp/need_help_reducing_duplication_react_router/)
-- url: https://www.reddit.com/r/reactjs/comments/i7pflp/need_help_reducing_duplication_react_router/
+## [11][TailwindCSS or Material UI ?](https://www.reddit.com/r/reactjs/comments/i8d7nb/tailwindcss_or_material_ui/)
+- url: https://www.reddit.com/r/reactjs/comments/i8d7nb/tailwindcss_or_material_ui/
 ---
-I'm building a movie browser website. Users can click React Router links to display either "Popular / Upcoming / Now playing" movies, all coming from an API.
-
-I know that having just one stateful parent component is best here, but what I have done is this:
-https://i.gyazo.com/599eced0014d7d4a9f2b5debfeb60276.png
-
-I have created three separate stateful components, each one using a different API call and then adding the JSON data to the state. I know this is not efficient, but I have no idea what I need to do to make it originate from one parent component.
-
-I feel like I need some sort of "filter" but I don't know where to start. Does anyone have ideas?
-
-Thanks
-## [9][I built a tool for creating UIs live in VS Code, would appreciate some feedback!](https://www.reddit.com/r/reactjs/comments/i7bcpo/i_built_a_tool_for_creating_uis_live_in_vs_code/)
-- url: https://paperclip.dev/
+My college propose to use Material UI and I don't like the Material UI 'cause its performance issues. He insists about that and I'm proposing to use TailwindCSS ease of use and seems like less disadvantages from Material UI. What you guys thinking about React + TailwindCSS or Material UI ?
+## [12][How much left to learn after learning the main concepts of ReactJS](https://www.reddit.com/r/reactjs/comments/i8d312/how_much_left_to_learn_after_learning_the_main/)
+- url: https://www.reddit.com/r/reactjs/comments/i8d312/how_much_left_to_learn_after_learning_the_main/
 ---
+How much of ReactJS would you say a person has completed after learning:
 
-## [10][Any experiences going from Apollo to urql?](https://www.reddit.com/r/reactjs/comments/i7n9ea/any_experiences_going_from_apollo_to_urql/)
-- url: https://www.reddit.com/r/reactjs/comments/i7n9ea/any_experiences_going_from_apollo_to_urql/
----
-Hi all, just wondering if anyone has the experience of going from Apollo Client to urql for client side GraphQL?
++ JSX
 
-I'm considering making the switch as I find the Apollo documentation hard to follow as it is not up-to-date (e.g. updateQuery is referenced as the way to update local cache after a mutation in several places, but in the actual code they have deprecated this in favor of typePolicies - which are woefully underdocumented). 
++ Rendering Elements
 
-Relay seemed even more complex, but curious about urql. 5k stars on GitHub which is a third of what Apollo-client has, but still a lot...they have no issues submitted though compared to Apollo which has 600 opened issues plus their spectrum.chat posts
-## [11][Quick auth and db option for an mvp](https://www.reddit.com/r/reactjs/comments/i7qmwl/quick_auth_and_db_option_for_an_mvp/)
-- url: https://www.reddit.com/r/reactjs/comments/i7qmwl/quick_auth_and_db_option_for_an_mvp/
----
-Hi, I'm doing my a mvp to prove a business idea. 
++ Components and Props
 
-Been thinking of using firebase for some simple auth and db option, but is there any other simpler option you can recommend? 
++ States and lifecycle 
 
-Db will not store large amounts of data for each user.
++ Handling events
 
-Ty
-## [12][I curated all the remote job openings from Hacker News who is hiring thread - August](https://www.reddit.com/r/reactjs/comments/i7au5v/i_curated_all_the_remote_job_openings_from_hacker/)
-- url: https://www.reddit.com/r/reactjs/comments/i7au5v/i_curated_all_the_remote_job_openings_from_hacker/
----
-Here comes the list of 398 remote jobs and you can filter them by location or skills.
++ Conditional rendering 
 
-Here I would like to share the entire remote jobs list from the big list of opportunities. All these are 100% remote jobs not just allowed to work from home during this crisis. These are 100% remote jobs and will continue to follow that after the crisis.
++ Lists and keys
 
-https://remoteleaf.com/whoishiring.   
-Note: Select "javascript" in the skills filter to see javascript dev jobs.
++ Forms
 
-✅ 100% remote full-time jobs.   
-✅ Spent more than 14 hours to curate this information
++ Composition vs inheritance 
+
++ Lifting State up
+
++ Hooks
+
+After learning all of that can a person start to build react apps? Or are the additional things required or nice to have that can be learnt on the job?

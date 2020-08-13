@@ -85,109 +85,156 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
-## [3][Vite + React + Tailwind CSS starter](https://www.reddit.com/r/reactjs/comments/i8auys/vite_react_tailwind_css_starter/)
-- url: https://vite-react-tailwind.vercel.app/
+## [3][A dashboard in React and CSS Grid](https://www.reddit.com/r/reactjs/comments/i8v9mg/a_dashboard_in_react_and_css_grid/)
+- url: https://www.reddit.com/r/reactjs/comments/i8v9mg/a_dashboard_in_react_and_css_grid/
+---
+I created a Dashboard in React and CSS Grid for practice.
+
+It is not yet responsive. But, I learnt a lot about CSS grid through this.
+
+Used a design from u/dribbble
+
+Deployed on [https://dashboard-in-react.vercel.app/](https://dashboard-in-react.vercel.app/) / github repo - [https://github.com/malhotra-parul/dashboard](https://github.com/malhotra-parul/dashboard)
+
+Any suggestions are welcome. :)
+
+[Dashboard in React](https://reddit.com/link/i8v9mg/video/tf2wb080zpg51/player)
+## [4][Storybook 6.0 is here! New workflows and 100s of improvements](https://www.reddit.com/r/reactjs/comments/i8f79v/storybook_60_is_here_new_workflows_and_100s_of/)
+- url: https://medium.com/storybookjs/storybook-6-0-1e14a2071000
 ---
 
-## [4]["We'd like to release [React 18] in a year"](https://www.reddit.com/r/reactjs/comments/i8bcf6/wed_like_to_release_react_18_in_a_year/)
-- url: https://twitter.com/dan_abramov/status/1293251763450126336?s=20
+## [5][Nat Alison thread on Gatsby Inc](https://www.reddit.com/r/reactjs/comments/i8x56j/nat_alison_thread_on_gatsby_inc/)
+- url: https://threadreaderapp.com/thread/1293649007739191296.html
 ---
 
-## [5][I made a site that allows you to browse the Spotify catalog and curate a "Tindify" playlist by swiping song cards](https://www.reddit.com/r/reactjs/comments/i7s9wh/i_made_a_site_that_allows_you_to_browse_the/)
-- url: https://www.reddit.com/r/reactjs/comments/i7s9wh/i_made_a_site_that_allows_you_to_browse_the/
+## [6][Stopwatch component and UI problems, Help!](https://www.reddit.com/r/reactjs/comments/i8xvyw/stopwatch_component_and_ui_problems_help/)
+- url: https://www.reddit.com/r/reactjs/comments/i8xvyw/stopwatch_component_and_ui_problems_help/
 ---
+Hi all :)
+
+I'm trying to build a simple puzzle game and would like to create a Stopwatch that counts from the moment the level starts.
+
+So.. I managed to got to the point where the clock start, runs,  stop and reset as desired.
+
+BUT every time i do something else on the UI the clock waits the load time of that operation.
+
+How can i isolate the clock component completely from the other parts of the UI but still control 
+
+its start, stop and reset function ? 
+
 &amp;#x200B;
 
-https://reddit.com/link/i7s9wh/video/gjuvagkbrdg51/player
+Im not a pro on React and maybe my thinking on the structure is not optimal,
 
-Hi, guys! My newest app uses the Spotify API to let you browse their genres and playlists to create your own playlist in the style of Tinder, the dating app. Songs that are swiped right, or "liked", are added to your Tindify playlist. This doesn't really have any practical uses, but I have seen some other people on this sub using the React Spring library and I wanted to incorporate it into a project. You need to have a Spotify account to use the app, but I've included a video for those that don't have one.
+any advice is welcome.
 
-Live demo:  [https://tindify.netlify.app](https://tindify.netlify.app/login)
+Thank you in advance for anyone that reads and/or answers :) 
 
-Github repos:  [https://github.com/ndeom/Tindify](https://github.com/ndeom/Tindify)  (main app)
+&amp;#x200B;
 
-[https://github.com/ndeom/Tindify-Auth](https://github.com/ndeom/Tindify-Auth) (authentication api for jwt's)
+here is the Stopwatch component (and its data):
 
-A few caveats: I am still relatively new to coding (\~8-9 months of self-teaching), so any/all constructive criticism with respect to architecture, good coding practices, style, implementation, features, etc. would be greatly appreciated, because my goal is to learn. This is also my first time using React hooks in a project, so the implementation might be a little messy in some places. There are likely areas of the app that could be refactored, and I'm in the process of adding tests with Jest and the React testing library.
+There is a stats in the parent component:
 
-That being said, I hope you'll take a look!
-## [6][Animating list reordering with React Hooks](https://www.reddit.com/r/reactjs/comments/i8bsk5/animating_list_reordering_with_react_hooks/)
-- url: https://medium.com/@tara.ojo/animating-list-reordering-with-react-hooks-aca5e7eeafba?source=friends_link&amp;sk=08a6322dfc12c62a417cb13940dac377
+const \[clockData,  setClockData\] = useState( { isOn: false, reset: false } );
+
+* isOn - for start and stop
+* reset - should the clock reset
+
+&amp;#x200B;
+
+    import React, { useState, useEffect } from 'react';
+    
+    const StopWatch = ({ clockData, setClockData }) =&gt; {
+      const [time, setTime] = useState({ sec: 0, min: 0 });
+      
+      const tick = () =&gt; { 
+        if(time.sec &gt; 59) {
+          setTime({sec: 0, min: time.min + 1});
+        }
+        else {
+          setTime({sec: time.sec + 1, min: time.min});
+        }
+      }
+    
+      useEffect(() =&gt; {
+        if(clockData.reset) {
+          setTime({ sec: 0, min: 0 });
+          setClockData({ isOn: true, reset: false });
+        } 
+        if(clockData.isOn) {
+          let interval = setInterval(() =&gt; { tick() }, 1000);
+          return () =&gt; {
+            clearInterval(interval);
+          }
+        }
+      });
+      
+      const showClock = () =&gt; {
+          if(time.min &lt; 10) {
+            return (
+              &lt;p&gt;0{time.min}:{time.sec &lt; 10 ? &lt;span&gt;0{time.sec}&lt;/span&gt; : &lt;span&gt;{time.sec}&lt;/span&gt;}&lt;/p&gt;
+            )
+          }
+          else {
+            return (
+              &lt;p&gt;{time.min}:{time.sec &lt; 10 ? &lt;span&gt;0{time.sec}&lt;/span&gt; : &lt;span&gt;{time.sec}&lt;/span&gt;}&lt;/p&gt; 
+            )
+          }
+      }
+    
+      return (
+        &lt;div className="StopWatch"&gt;
+          &lt;div&gt;{showClock()}&lt;/div&gt;
+        &lt;/div&gt;
+      );
+    }
+    export default StopWatch;
+## [7][Embla Carousel - The most fluid carousel library with unmatched swipe precision](https://www.reddit.com/r/reactjs/comments/i8kept/embla_carousel_the_most_fluid_carousel_library/)
+- url: https://www.reddit.com/r/reactjs/comments/i8kept/embla_carousel_the_most_fluid_carousel_library/
 ---
+Hello all,
 
-## [7][React95 v3.0 (Anniversary Edition) is out 🔥](https://www.reddit.com/r/reactjs/comments/i7tsgq/react95_v30_anniversary_edition_is_out/)
-- url: https://www.reddit.com/r/reactjs/comments/i7tsgq/react95_v30_anniversary_edition_is_out/
----
-Windows95 celebrates its 25th anniversary this September, so we (the [react95.io](https://react95.io) team) decided to finally release React95 v3.0 "Anniversary Edition". 🎉🥳
+I've been working really hard on [Embla Carousel v.3](https://davidcetinkaya.github.io/embla-carousel/) and it's finally here. Here's how it turned out:
+
+* 👉 Even better swipe accuracy
+* ⬆️ Support for vertical carousels
+* 🚀 Exposing its core for maximum extensibility
+* 💻 CodeSandboxes for every example
+* 📦 Reduced bundle size
+* 📋 Brand new [documentation &amp; examples page](https://davidcetinkaya.github.io/embla-carousel)
+
+&amp;#x200B;
+
+[It's possible to extend Embla Carousel to build 3D carousels](https://reddit.com/link/i8kept/video/wj3fr6lk0qg51/player)
 
   
-You can find it on [Github](https://github.com/arturbien/React95), and see it in action in this [demo app](https://coins95.web.app/).
+**For those of you** **not familiar with** [Embla Carousel](https://davidcetinkaya.github.io/embla-carousel), it's a carousel I created because I was frustrated about the large bundle sizes and quality that the existing javascript carousels had to offer. Stuff like poor touch/swipe accuracy and slow loop effects pushed me to try solve this challenges.
 
-&amp;#x200B;
+Feedback is much appreciated!
 
-New release comes with lot's of improvements:
-
- 🎚  **new components**: Slider, Bar, Progress, ColorInput and more!
-
-🌈  **25+ color themes**: Rainy Day, Olive, Brick, Pamela Anderson, Matrix, Ninja Turtles...
-
-👨‍💻  **accessibility**: improved keyboard controls
-
-💾  **new font**: original MS\_Sans\_Serif font
-
-🐛  **bugs**: ...were finally fixed  
-
-
-If you want to contribute or have any questions about the project or just want to hang out- join our [Slack channel](https://join.slack.com/t/react95/shared_invite/enQtOTA1NzEyNjAyNTc4LWYxZjU3NWRiMWJlMGJiMjhkNzE2MDA3ZmZjZDc1YmY0ODdlZjMwZDA1NWJiYWExYmY1NTJmNmE4OWVjNWFhMTE) !
-## [8][useFirestoreQuery hook 🔥](https://www.reddit.com/r/reactjs/comments/i80jyv/usefirestorequery_hook/)
-- url: https://usehooks.com/useFirestoreQuery/
+David
+## [8][Test-Driven Development 101 with jest](https://www.reddit.com/r/reactjs/comments/i8x402/testdriven_development_101_with_jest/)
+- url: https://medium.com//test-driven-development-101-with-jest-a6e666d090a5?source=friends_link&amp;sk=f994d7ba527eca1d7b84aaf7999d12d3
 ---
 
-## [9][Advanced Table components for Ant Design](https://www.reddit.com/r/reactjs/comments/i8aiaa/advanced_table_components_for_ant_design/)
-- url: https://www.reddit.com/r/reactjs/comments/i8aiaa/advanced_table_components_for_ant_design/
+## [9][Didn't get a React Native job. Employer feedback was that I overcomplicated Redux test. What did I do wrong here?](https://www.reddit.com/r/reactjs/comments/i8zw43/didnt_get_a_react_native_job_employer_feedback/)
+- url: https://www.reddit.com/r/reactjs/comments/i8zw43/didnt_get_a_react_native_job_employer_feedback/
 ---
-Hello All,
+[https://codesandbox.io/s/quirky-kare-wty2w?file=/src/redux/TestRedux.js](https://codesandbox.io/s/quirky-kare-wty2w?file=/src/redux/TestRedux.js)
 
-I created a package called \`ant-table-extensions\` which adds extra utilities to ant design's Table component.
+I'd appreciate any feedback.
 
-\[GitHub Link\]:  [https://github.com/saisandeepvaddi/ant-table-extensions](https://github.com/saisandeepvaddi/ant-table-extensions)
-
-\[Docs &amp; Demos\]:  [https://ant-table-extensions.vercel.app/?path=/docs/get-started--page](https://ant-table-extensions.vercel.app/?path=/docs/get-started--page)
-
-:)
-## [10][Built a p2p collaborative file sharing app using IPFS. Share files directly for free!](https://www.reddit.com/r/reactjs/comments/i8dsnd/built_a_p2p_collaborative_file_sharing_app_using/)
-- url: https://alpha.sailplane.io
+Cheers!
+## [10][1 Simple Trick to Boost Performance Using Reduce](https://www.reddit.com/r/reactjs/comments/i8y3al/1_simple_trick_to_boost_performance_using_reduce/)
+- url: https://jrdev.hashnode.dev/1-simple-trick-to-boost-performance-using-reduce-ckdqxxtat03xbkbs1blvc3hje#map-filter-reduce
 ---
 
-## [11][TailwindCSS or Material UI ?](https://www.reddit.com/r/reactjs/comments/i8d7nb/tailwindcss_or_material_ui/)
-- url: https://www.reddit.com/r/reactjs/comments/i8d7nb/tailwindcss_or_material_ui/
+## [11][reactjs video editing library](https://www.reddit.com/r/reactjs/comments/i8xc9v/reactjs_video_editing_library/)
+- url: https://www.reddit.com/r/reactjs/comments/i8xc9v/reactjs_video_editing_library/
 ---
-My college propose to use Material UI and I don't like the Material UI 'cause its performance issues. He insists about that and I'm proposing to use TailwindCSS ease of use and seems like less disadvantages from Material UI. What you guys thinking about React + TailwindCSS or Material UI ?
-## [12][How much left to learn after learning the main concepts of ReactJS](https://www.reddit.com/r/reactjs/comments/i8d312/how_much_left_to_learn_after_learning_the_main/)
-- url: https://www.reddit.com/r/reactjs/comments/i8d312/how_much_left_to_learn_after_learning_the_main/
+I am looking for some library or example on how to create a reactjs app to load and edit a video. What I'm looking for is to simply load the video and cut it, where I specify the start and end time. Any tips would be greatly appreciated.
+## [12][How to know if component is fully rendered? (no more useEffects in queue etc.)](https://www.reddit.com/r/reactjs/comments/i8xaew/how_to_know_if_component_is_fully_rendered_no/)
+- url: https://www.reddit.com/r/reactjs/comments/i8xaew/how_to_know_if_component_is_fully_rendered_no/
 ---
-How much of ReactJS would you say a person has completed after learning:
-
-+ JSX
-
-+ Rendering Elements
-
-+ Components and Props
-
-+ States and lifecycle 
-
-+ Handling events
-
-+ Conditional rendering 
-
-+ Lists and keys
-
-+ Forms
-
-+ Composition vs inheritance 
-
-+ Lifting State up
-
-+ Hooks
-
-After learning all of that can a person start to build react apps? Or are the additional things required or nice to have that can be learnt on the job?
+I have a component that rerenders some of its parts because of async data fetch, but I want to have some sort of flag when all of it finished loading.

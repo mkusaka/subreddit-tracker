@@ -1,82 +1,51 @@
 # golang
-## [1][Golang 1.15 released!](https://www.reddit.com/r/golang/comments/i80s89/golang_115_released/)
-- url: https://golang.org/doc/go1.15
+## [1][Proposal: Register-based Go calling convention](https://www.reddit.com/r/golang/comments/i8x4xe/proposal_registerbased_go_calling_convention/)
+- url: https://go.googlesource.com/proposal/+/refs/changes/78/248178/1/design/40724-register-calling.md
 ---
 
-## [2][Is there a tool that warns about variable shadowing?](https://www.reddit.com/r/golang/comments/i8ch3t/is_there_a_tool_that_warns_about_variable/)
-- url: https://www.reddit.com/r/golang/comments/i8ch3t/is_there_a_tool_that_warns_about_variable/
----
-Just spent some time trying to figure out some very unexpected behavior. A simplified version is available on playground [https://play.golang.org/p/SxK\_XO-NvM1](https://play.golang.org/p/SxK_XO-NvM1)
-
-    package main
-    
-    import (
-    	"fmt"
-    	"strconv"
-    )
-    
-    func add(w int) int {
-    	return w + 1
-    }
-    
-    func doStuff(w int) {
-    	fmt.Println(strconv.Itoa(w))
-    }
-    
-    func main() {
-    	i := 5
-    	if i == 3 {
-    		doStuff(i)
-    	}
-    
-    	for z := 0; z &lt; 4; z++ {
-    		i := add(i)
-    		doStuff(i)
-    	}
-    
-    	doStuff(i)
-    }
-
-The error is an extra `:` present inside the forloop which creates a variable with the same name.
-
-&amp;#x200B;
-
-Is there any tool that warns about this?
-
-&amp;#x200B;
-
-We currently use golang.org/x/lint/golint, honnef.co/go/tools/cmd/staticcheck and go vet but none of them complains. Or at least none of them complained about the more complex case.
-## [3][How Go 1.15 improved converting small integer values to interfaces](https://www.reddit.com/r/golang/comments/i8bqyj/how_go_115_improved_converting_small_integer/)
-- url: https://utcc.utoronto.ca/~cks/space/blog/programming/Go115InterfaceSmallInts
+## [2][Static type checking for the empty interface{}](https://www.reddit.com/r/golang/comments/i8w8c2/static_type_checking_for_the_empty_interface/)
+- url: https://github.com/siadat/interface-type-check
 ---
 
-## [4][ote updates a packages' go.mod file with a comment next to all dependencies that are test dependencies; identifying them as such.](https://www.reddit.com/r/golang/comments/i8c042/ote_updates_a_packages_gomod_file_with_a_comment/)
-- url: https://github.com/komuw/ote
+## [3][A weechat IRC client encryption system attempt](https://www.reddit.com/r/golang/comments/i8wp6y/a_weechat_irc_client_encryption_system_attempt/)
+- url: https://git.sr.ht/~eau/wic
 ---
 
-## [5][oscar: Next generation building tool for nothing 🐶 .](https://www.reddit.com/r/golang/comments/i81vx3/oscar_next_generation_building_tool_for_nothing/)
-- url: https://github.com/chenjiandongx/oscar
+## [4][Recently started learning Go, and can't help wonder any good mature Packages or Frameworks for GUI development using Go, particularly for Windows? How about Linux?](https://www.reddit.com/r/golang/comments/i8gjol/recently_started_learning_go_and_cant_help_wonder/)
+- url: https://www.reddit.com/r/golang/comments/i8gjol/recently_started_learning_go_and_cant_help_wonder/
+---
+Thank you for taking the time.
+## [5][Given a multipart upload of an array of video clips, how can I merge them into one video?](https://www.reddit.com/r/golang/comments/i8wnck/given_a_multipart_upload_of_an_array_of_video/)
+- url: https://www.reddit.com/r/golang/comments/i8wnck/given_a_multipart_upload_of_an_array_of_video/
 ---
 
-## [6][Wrapping up our series on value semantics vs pointer semantics!](https://www.reddit.com/r/golang/comments/i8drnb/wrapping_up_our_series_on_value_semantics_vs/)
-- url: https://www.youtube.com/watch?v=579aeQSJFBs&amp;t=12s
+## [6][Introduce a tool to do code coverage collecting for the API or e2e tests more easily](https://www.reddit.com/r/golang/comments/i8v5ad/introduce_a_tool_to_do_code_coverage_collecting/)
+- url: https://www.reddit.com/r/golang/comments/i8v5ad/introduce_a_tool_to_do_code_coverage_collecting/
+---
+Open Source: [https://github.com/qiniu/goc](https://github.com/qiniu/goc)
+
+`Goc` uses `go tool cover` to add statements counters into the source code, and what's more, it also injects HTTP APIs to aggregate all the counters, which makes it easily to pull coverage data from the applications under test at runtime. 
+
+Enjoy and feel free to leave comments if you have any questions.
+## [7][Should I use net/http when deploying?](https://www.reddit.com/r/golang/comments/i8x1qc/should_i_use_nethttp_when_deploying/)
+- url: https://www.reddit.com/r/golang/comments/i8x1qc/should_i_use_nethttp_when_deploying/
+---
+Newbie question here. So far I did majority of my "web" development using django. I'm used to things like WSGI. I'm wondering whether I should rely on application servers like gunicorn or uwsgi and point my webserver (nginx instance) to them as well when writing apps with golang? Alternatively, can I just use net/http directly and use nginx as a reverse proxy and a load balancer instead? Is the latter a production ready solution and something that is commonly used?
+## [8][Go and JSON encoding/decoding - Tit Petric](https://www.reddit.com/r/golang/comments/i8z0sy/go_and_json_encodingdecoding_tit_petric/)
+- url: https://scene-si.org/2020/08/13/go-and-json-encoding-decoding/
 ---
 
-## [7][I want to learn go and grpc by making microservices but i am getting clueless whenever i have to start. I want communication between two microservices but i don't know how to make can anyone give me some help or suggestions so that i can get started with it ?](https://www.reddit.com/r/golang/comments/i8cq19/i_want_to_learn_go_and_grpc_by_making/)
-- url: https://www.reddit.com/r/golang/comments/i8cq19/i_want_to_learn_go_and_grpc_by_making/
+## [9][How to run a command on a remote container and get STDOUT?](https://www.reddit.com/r/golang/comments/i8yim7/how_to_run_a_command_on_a_remote_container_and/)
+- url: https://www.reddit.com/r/golang/comments/i8yim7/how_to_run_a_command_on_a_remote_container_and/
 ---
+Hello. I'm trying to run a command on a remote  container and get the output stream on my local machine, in a secure way.
 
-## [8][Production ready Golang microservice?](https://www.reddit.com/r/golang/comments/i8cmfx/production_ready_golang_microservice/)
-- url: https://www.reddit.com/r/golang/comments/i8cmfx/production_ready_golang_microservice/
----
-Where can i find an example of production ready Golang microservice?
+My first thought was to simply run ssh + the command. That would be secure, but I'm not sure how I would authorize the user who's running the remote command such that they can only execute this command and not do anything else on the running container.
 
-With proper auth, comunication protocols, good code structure, good practices etc
-## [9][Email Disrupt](https://www.reddit.com/r/golang/comments/i8benr/email_disrupt/)
-- url: https://github.com/monopolly/mail
----
+So my next thought was, could I set up an RPC server and somehow stream the Stdout back to the client for the duration of the running program that was called? Of course the server would authorise the client through OAuth or something similar. 
 
-## [10][Centrifuge – a real-time messaging core of Centrifugo server as standalone library for Go](https://www.reddit.com/r/golang/comments/i7xec5/centrifuge_a_realtime_messaging_core_of/)
-- url: https://github.com/centrifugal/centrifuge
+I'm newer to Golang and mostly dealing with web applications day to day, so any help here would be appreciated. Thank you!
+## [10][Clean API example with model injection and access policies](https://www.reddit.com/r/golang/comments/i8vpvl/clean_api_example_with_model_injection_and_access/)
+- url: https://gist.github.com/philippta/a9fac29dccecd88fbfca643b5e5b7b68
 ---
 

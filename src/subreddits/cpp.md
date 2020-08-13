@@ -56,19 +56,63 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][No more plain old data](https://www.reddit.com/r/cpp/comments/i8a5xv/no_more_plain_old_data/)
-- url: https://mariusbancila.ro/blog/2020/08/10/no-more-plain-old-data/
+## [2][Updates in Grisu-Exact](https://www.reddit.com/r/cpp/comments/i8pgzc/updates_in_grisuexact/)
+- url: https://www.reddit.com/r/cpp/comments/i8pgzc/updates_in_grisuexact/
 ---
+Grisu-Exact is a float-to-string conversion algorithm with
 
+1. The round-trip guarantee,
+2. The shortest representation guarantee, and
+3. The correct rounding guarantee.
+
+It is a variant of Grisu2 a classic float-to-string conversion algorithm developed by Florian Loitsch, and is largely inspired by Ryu, another float-to-string conversion algorithm developed by Ulf Adams. The main strength of Grisu-Exact over Ryu is that it performs better for short numbers.
+
+Here are some updates:
+
+(1) After having some code simplifications, dead branch eliminations, compression of redundant works, and other optimizations, now it got to outperform Ryu (in my benchmark) for both binary32 (\`float\`) and binary64 (\`double\`) in terms of uniformly randomly generated data.
+
+(2) I developed a string-to-float conversion algorithm using a similar (but simpler) idea, and had a joint-test of it with Grisu-Exact for every possible \`float\`'s. It turned out that for every input data, feeding the data into Grisu-Exact and then into the reverse algorithm correctly generated the input data itself.  Hence, I'm pretty confident about the correctness of Grisu-Exact.
+
+(3) The paper ([https://github.com/jk-jeon/Grisu-Exact/blob/master/other\_files/Grisu-Exact.pdf](https://github.com/jk-jeon/Grisu-Exact/blob/master/other_files/Grisu-Exact.pdf)) explaining the algorithm now includes the explanation on the improved min-max Euclid algorithm. Compared to the original min-max  Euclid algorithm developed by Adams, this improved algorithm produces the exact minimum and maximum not like the original one, has less preconditions, and at the same time runs much faster.
+
+Please have a look at the repository [https://github.com/jk-jeon/Grisu-Exact](https://github.com/jk-jeon/Grisu-Exact) if you are interested!
 ## [3][std::atomic_ref is awesome](https://www.reddit.com/r/cpp/comments/i8ckxr/stdatomic_ref_is_awesome/)
 - url: https://www.reddit.com/r/cpp/comments/i8ckxr/stdatomic_ref_is_awesome/
 ---
 I only recently discovered that gcc 10 supports std::atomic_ref and I’ve been playing around with it. I have to say, it might be in my top 5 favorite C++20 features. But it begs the question: before std::atomic_ref, was there a way to atomically modify a variable of non-atomic type in-place? I don’t really do lock-free programming in my every-day life, so I haven’t really ever had to think about it, but I’m curious. Also Jason Turner if you’re reading this please consider std::atomic_ref for a C++ Weekly episode, maybe there are other people who also slept on this one.
-## [4][toml++ v2.1.0 released](https://www.reddit.com/r/cpp/comments/i7za0j/toml_v210_released/)
+## [4][What does "public class LSFR" in Java translates to cpp?](https://www.reddit.com/r/cpp/comments/i8zs1p/what_does_public_class_lsfr_in_java_translates_to/)
+- url: https://www.reddit.com/r/cpp/comments/i8zs1p/what_does_public_class_lsfr_in_java_translates_to/
+---
+
+## [5][No more plain old data](https://www.reddit.com/r/cpp/comments/i8a5xv/no_more_plain_old_data/)
+- url: https://mariusbancila.ro/blog/2020/08/10/no-more-plain-old-data/
+---
+
+## [6][Closer to the Edge: Testing Compilers More Thoroughly by Being Less Conservative About Undefined Behaviour](https://www.reddit.com/r/cpp/comments/i8hl4x/closer_to_the_edge_testing_compilers_more/)
+- url: https://srg.doc.ic.ac.uk/files/papers/csmithedge-ase-nier-20.pdf
+---
+
+## [7][Feasibility of non-ABI breaking, but syntax breaking proposals](https://www.reddit.com/r/cpp/comments/i8hypo/feasibility_of_nonabi_breaking_but_syntax/)
+- url: https://www.reddit.com/r/cpp/comments/i8hypo/feasibility_of_nonabi_breaking_but_syntax/
+---
+Have there ever been any proposals that suggest breaking syntactical compatibility, but have no effect on the ABI? If not, would it possible for something like the following rule to pass in some future standard (note: I do realize `final` does not imply override)?
+
+&gt;All overriding virtual methods must have a `final` or `override` specifier.
+
+Basically this would mean that all currently working projects would not only have to modify their own code, but also all external dependency header files as part of some pre-build step. However, if all virtual methods just had the `override` specifier slapped on to them, it would be still compatible ABI-wise (I believe), even though the textual representation of the code would change. It would not impact the already compiled objects/libraries, nor would it necessarily force the 3rd party to release a new version of the artifacts (a frequent argument againts ABI breaks). This would mean some work would have to be done when upgrading, but it would be a one time thing on each upgraded project (i.e. creation of a pre-build script for header file patching).
+
+I realize that there is already some work in progress regarding epochs, but that's a much more ambitious idea. I'm suggesting a blanket removal of some language features (in the above example, making override optional) without any file/module/TU-based discriminator mechanism.
+
+Another thing this could be applicable to is the possibility of disallowing non-function-pointer and non-pointer-to-array variable declarations with parentheses, which was the source of plenty of discussion twice in the past month ([This comment thread](https://www.reddit.com/r/cpp/comments/ht93d5/a_lib_for_adding_a_stacktrace_to_every_c/fyg2cfb?utm_source=share&amp;utm_medium=web2x) and [This post](https://www.reddit.com/r/cpp/comments/i7v7yl/why_stdunique_lock_still_isnt_nodiscard/)) and just creates a gateway for nasty bugs only because of (basically) forced backwards compatibility.
+## [8][recpp, a neither user-friendly nor rocket science tool to generate c++ pseudo code annotated with c++ guideline references](https://www.reddit.com/r/cpp/comments/i8n2c9/recpp_a_neither_userfriendly_nor_rocket_science/)
+- url: https://github.com/kenavolic/recpp
+---
+
+## [9][toml++ v2.1.0 released](https://www.reddit.com/r/cpp/comments/i7za0j/toml_v210_released/)
 - url: https://marzer.github.io/tomlplusplus/
 ---
 
-## [5][Why std::unique_lock still isn't [[nodiscard]]?](https://www.reddit.com/r/cpp/comments/i7v7yl/why_stdunique_lock_still_isnt_nodiscard/)
+## [10][Why std::unique_lock still isn't [[nodiscard]]?](https://www.reddit.com/r/cpp/comments/i7v7yl/why_stdunique_lock_still_isnt_nodiscard/)
 - url: https://www.reddit.com/r/cpp/comments/i7v7yl/why_stdunique_lock_still_isnt_nodiscard/
 ---
 The following code: [https://godbolt.org/z/4ovWhv](https://godbolt.org/z/4ovWhv)
@@ -80,45 +124,7 @@ Now, [p1771r1](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1771r1.p
 Shouldn't both unique\_lock and lock\_guard, as well as other RAII wrappers, be marked `[[nodiscard]]`?  
 
 Is there an ongoing proposal to do that, and is there a chance for it to be retroactively applied? It seems like a bug that's way too easy to make, I did it myself a few years ago and later seen it in code reviews of other people. I believe it needs attention.
-## [6][Time complexity of set in this case?](https://www.reddit.com/r/cpp/comments/i8a8rj/time_complexity_of_set_in_this_case/)
-- url: https://www.reddit.com/r/cpp/comments/i8a8rj/time_complexity_of_set_in_this_case/
----
-Consider this fragment of code:
-
-    int main()
-    { 
-        string s1;
-        getline(cin,s1);
-        set&lt;char&gt; mySet;
-        for(int i=0;i&lt;s1.length();i++)
-            mySet.insert(s2[i]);
-    }
-
-What will be the time complexity of this code? I'm aware that the cost of insertion in a set in average case is O(log N). However when placed inside this for loop running through N characters, will the time complexity balloon up to O(N log N) or O(N) or will it be O(log N)?
-## [7][AddressSanitizer for Windows: x64 and Debug Build Support | C++ Team Blog](https://www.reddit.com/r/cpp/comments/i7iydj/addresssanitizer_for_windows_x64_and_debug_build/)
+## [11][AddressSanitizer for Windows: x64 and Debug Build Support | C++ Team Blog](https://www.reddit.com/r/cpp/comments/i7iydj/addresssanitizer_for_windows_x64_and_debug_build/)
 - url: https://devblogs.microsoft.com/cppblog/asan-for-windows-x64-and-debug-build-support/
 ---
 
-## [8][ModernCppStarter v0.13 released: m.css documentation and CMake formatting!](https://www.reddit.com/r/cpp/comments/i7oroj/moderncppstarter_v013_released_mcss_documentation/)
-- url: https://github.com/TheLartians/ModernCppStarter
----
-
-## [9][Any good C++ tutorials coming from C# and Python?](https://www.reddit.com/r/cpp/comments/i7walr/any_good_c_tutorials_coming_from_c_and_python/)
-- url: https://www.reddit.com/r/cpp/comments/i7walr/any_good_c_tutorials_coming_from_c_and_python/
----
-I am stepping up my learning after deciding what I want to do for a job. I make games in Unity and am at the point where coding doesn't stop me making things any more. I rarely need to look up documentation on the things I know, and I am confident that I could program most gameplay things.
-
-I also use Python to automate things, and I can do stuff with that too, but not as well as C#. The problem with most tutorials on any language is that they tend to go over variables and functions, and then stop. I can already guess how to do those in most languages, so I don't want anything like that. Can anyone recommend some good tutorials that are for people who program already, but not in C++?  
-
-
-I'm running G++, Windows 10 and my code editor of choice is Visual Studio Code.
-## [10][Concepts can’t do quantifiers](https://www.reddit.com/r/cpp/comments/i7mzga/concepts_cant_do_quantifiers/)
-- url: https://quuxplusone.github.io/blog/2020/08/10/concepts-cant-do-quantifiers/
----
-
-## [11][Build system, what’s your favorite?](https://www.reddit.com/r/cpp/comments/i7825h/build_system_whats_your_favorite/)
-- url: https://www.reddit.com/r/cpp/comments/i7825h/build_system_whats_your_favorite/
----
-Hey guys, I don’t know who saw the https://blog.jetbrains.com/clion/2020/06/dev-eco-cpp-2020/  where CMake is used by 53% of respondents. But would  like to see the opinions of this sub Reddit.
-
-[View Poll](https://www.reddit.com/poll/i7825h)

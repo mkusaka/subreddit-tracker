@@ -77,51 +77,92 @@
 
 
 &amp;nbsp;
-## [2][Using a weather API to assess daily road risk based on the current weather conditions on your route](https://www.reddit.com/r/javascript/comments/i8bipq/using_a_weather_api_to_assess_daily_road_risk/)
+## [2][WTF Wednesday (August 12, 2020)](https://www.reddit.com/r/javascript/comments/i8gf7s/wtf_wednesday_august_12_2020/)
+- url: https://www.reddit.com/r/javascript/comments/i8gf7s/wtf_wednesday_august_12_2020/
+---
+Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
+Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
+this is the place.
+
+[Named after this comic](https://davidwalsh.name/demo/code-review.png)
+## [3][V2.0 of my fully online procedural terrain generator, Terrain Builder is out! Built in Javascript and React, it now features Real Time terrain generation on the GPU and a bunch of new features! Check it out if you liked my first post about the 1.0 release. Thanks :)](https://www.reddit.com/r/javascript/comments/i8el06/v20_of_my_fully_online_procedural_terrain/)
+- url: https://github.com/FarazzShaikh/Terrain-Builder/tree/2.0.0
+---
+
+## [4][Best Resources To Learn JavaScript As A Beginner 🌟](https://www.reddit.com/r/javascript/comments/i8yc10/best_resources_to_learn_javascript_as_a_beginner/)
+- url: https://catalins.tech/best-resources-to-learn-javascript-as-a-beginner-ckdr7cmma04ehl9s1dq85cr4i
+---
+
+## [5][GraphQL playground with TypeScript, TypeORM, codegen and many other goodies](https://www.reddit.com/r/javascript/comments/i8z6yt/graphql_playground_with_typescript_typeorm/)
+- url: https://github.com/lucassus/bookshelf
+---
+
+## [6][Storybook 6.0: New workflows + 100s of improvements](https://www.reddit.com/r/javascript/comments/i8faqy/storybook_60_new_workflows_100s_of_improvements/)
+- url: https://medium.com/storybookjs/storybook-6-0-1e14a2071000
+---
+
+## [7][Wrote an article on closure, with an easy to understand example.](https://www.reddit.com/r/javascript/comments/i8w927/wrote_an_article_on_closure_with_an_easy_to/)
+- url: https://dev.to/reubengt/a-simple-example-i-use-to-remember-what-a-closure-is-1ap2
+---
+
+## [8][Re-implementing document.execCommand()](https://www.reddit.com/r/javascript/comments/i8zuu7/reimplementing_documentexeccommand/)
+- url: https://medium.com/@david.dalbusco/reimplementing-document-execcommand-6ffc33a80f02
+---
+
+## [9][[AskJS] Can somebody explain *another* extremely weird and unintuitive behavior of js (regex related)](https://www.reddit.com/r/javascript/comments/i8z4mq/askjs_can_somebody_explain_another_extremely/)
+- url: https://www.reddit.com/r/javascript/comments/i8z4mq/askjs_can_somebody_explain_another_extremely/
+---
+Hello fellow devs!
+
+So yesterday I spent some time wondering if I am loosing my mind.  
+  
+Depending on if I evaluated a regex even or odd times, the result flipped,   
+leading to me weirding out about js once more.  
+
+
+Here is my code example I used in the chrome console to reproduce the behavior. 
+  
+ 
+    CHROME CONSOLE
+    var re = /^jsWTF$/g // or var re = new RegExp( /^jsWTF$/g), same result
+    re.test("jsWTF")       
+    &gt; true
+    re.test("jsWTF")
+    &gt; false
+    re.test("jsWTF")
+    &gt; true
+    re.test("jsWTF")
+    &gt; false
+
+You'll see the result flips between ```true``` and ```false``` with every evaluation.  
+In the Firefox console, the expression gets conveniently evaluated immediately after writing the ```re.test("jsWTF")``` and is shown as preview, so after pressing enter, the wrong result is returned everytime.
+
+ 
+    FIREFOX CONSOLE 
+    var re = /^jsWTF$/g // or var re = new RegExp( /^jsWTF$/g), same result
+    re.test("jsWTF")       
+    &gt; false
+    re.test("jsWTF")
+    &gt; false
+    re.test("jsWTF")
+    &gt; false
+    re.test("jsWTF")
+    &gt; false
+ 
+
+I am sure there is some kind of ***js-logical*** explanation for this, and I am extremely curious about it!  
+Can somebody point me in the right direction?  
+
+Thanks in advance!!
+## [10][Using a weather API to assess daily road risk based on the current weather conditions on your route](https://www.reddit.com/r/javascript/comments/i8bipq/using_a_weather_api_to_assess_daily_road_risk/)
 - url: https://developer.climacell.co/blog/using-a-weather-api-to-assess-daily-road-risk
 ---
 
-## [3][If you looking for jobs related to Javascript I created a list of a few job openings for developers that auto-updates every day!](https://www.reddit.com/r/javascript/comments/i8blom/if_you_looking_for_jobs_related_to_javascript_i/)
-- url: https://docs.google.com/spreadsheets/d/e/2PACX-1vSRIxb9eljHp3r4rYZ5-vmGnxNdg0auT48eZAYwbhjyKOb0yu2ny1O1WlgzLM8CakgqCiayNHGxTjvA/pubhtml
+## [11][Storybook Facelift for StorybookJS 6.0](https://www.reddit.com/r/javascript/comments/i8wncu/storybook_facelift_for_storybookjs_60/)
+- url: https://www.npmjs.com/package/storybook-facelift
 ---
 
-## [4][I’m learning to code. I made a job seeking scraper app for UK base job boards! Any thoughts appreciated. (Please excuse heroku idling)](https://www.reddit.com/r/javascript/comments/i8cbq9/im_learning_to_code_i_made_a_job_seeking_scraper/)
-- url: http://jobseekerapplication.herokuapp.com
----
-
-## [5][So I created Spotify Clone in React(kinda)](https://www.reddit.com/r/javascript/comments/i8cvwo/so_i_created_spotify_clone_in_reactkinda/)
-- url: https://dev.to/fvukojevic/so-i-created-spotify-clone-in-react-kinda-3mli
----
-
-## [6][Teki - The unreasonably efficient route parser](https://www.reddit.com/r/javascript/comments/i8c1zv/teki_the_unreasonably_efficient_route_parser/)
-- url: https://github.com/philipnilsson/teki#teki
----
-
-## [7][Using ESLint to improve your app’s performance](https://www.reddit.com/r/javascript/comments/i7tccq/using_eslint_to_improve_your_apps_performance/)
-- url: https://allegro.tech/2020/08/using-eslint.html
----
-
-## [8][Build badge in React without SVG and no dependencies](https://www.reddit.com/r/javascript/comments/i8ap0j/build_badge_in_react_without_svg_and_no/)
-- url: https://medium.com/serpapi/build-badge-in-react-without-svg-76f967706fb4
----
-
-## [9][[AskJS] Redux vs React Hooks - A point I haven't seen brought up](https://www.reddit.com/r/javascript/comments/i85sm8/askjs_redux_vs_react_hooks_a_point_i_havent_seen/)
-- url: https://www.reddit.com/r/javascript/comments/i85sm8/askjs_redux_vs_react_hooks_a_point_i_havent_seen/
----
-So I've been debating whether I should be implementing hooks more since their inception, and recently at my place of employment, I realized that I lean heavily towards using Redux vs Hooks + Context for a couple major reasons. One is the age of Redux and things like the dev tools which make it super simple to debug (I've had to spin up my own logger and diff checker for my reducer hooks), but the other large reason I haven't seen anyone mention is that hooks tie you into React and React alone.
-
-If eventually you need to move your code base over to another framework/library, you can't transfer the application state with you as easily. Because Redux is framework agnostic, you can always just hook into it from your new framework/library of choice.
-
-I've recently had to deal with this at my company with migrating from Angular 1 to React, with all of the state logic being in Angular 1. We're now putting the logic into Redux so that in the future, if we ever have to migrate again, our state logic stays solid and makes the migration that much easier.
-
-With all this being said, I'm starting at a new company in a month where they are much more hooks heavy, so I'm excited to see how they do things and learn their approaches :)
-
-Thoughts?
-## [10][Elder.js: A Svelte Framework and Static Site Generator](https://www.reddit.com/r/javascript/comments/i7xqct/elderjs_a_svelte_framework_and_static_site/)
-- url: https://elderguide.com/tech/elderjs/
----
-
-## [11][Great JavaScript particle animation library for you](https://www.reddit.com/r/javascript/comments/i8awe9/great_javascript_particle_animation_library_for/)
-- url: https://github.com/lindelof/particles-bg
+## [12][Angular ag-grid quickFilter](https://www.reddit.com/r/javascript/comments/i8vus9/angular_aggrid_quickfilter/)
+- url: /r/angularjs/comments/i8vj9i/angular_aggrid_quickfilter/
 ---
 

@@ -85,7 +85,78 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
-## [3][A dashboard in React and CSS Grid](https://www.reddit.com/r/reactjs/comments/i8v9mg/a_dashboard_in_react_and_css_grid/)
+## [3][A Guide to Commonly Used React Component Libraries](https://www.reddit.com/r/reactjs/comments/i9iu7b/a_guide_to_commonly_used_react_component_libraries/)
+- url: https://maxrozen.com/guide-to-component-ui-libraries-react/
+---
+
+## [4]["The Opinionated Guide to React" book by Sara Vieira on Twitter](https://www.reddit.com/r/reactjs/comments/i95r6r/the_opinionated_guide_to_react_book_by_sara/)
+- url: https://twitter.com/NikkitaFTW/status/1293576977924927488
+---
+
+## [5][A full PERN stack + typescript boilerplate v1.0](https://www.reddit.com/r/reactjs/comments/i9jcg9/a_full_pern_stack_typescript_boilerplate_v10/)
+- url: https://github.com/nadavpodjarski/pern-typescript-boilerplate
+---
+
+## [6][How to easily migrate to react v16.8 or above?](https://www.reddit.com/r/reactjs/comments/i9lz6z/how_to_easily_migrate_to_react_v168_or_above/)
+- url: https://medium.com/@rananitesh99/how-to-easily-migrate-to-react-v16-8-or-above-6f1d9781387b
+---
+
+## [7][React SSR Error handling](https://www.reddit.com/r/reactjs/comments/i9kprv/react_ssr_error_handling/)
+- url: https://www.reddit.com/r/reactjs/comments/i9kprv/react_ssr_error_handling/
+---
+How is everyone tackling this?
+
+I've been trying to find some articles to see how everyone is approaching this, but it keeps flagging up some reworded versions of ErrorBoundary notes on where ErrorBoundary doesn't apply.
+
+I am looking for something similar, where it can be handled on a per-component basis.
+
+I am thinking through some approaches but they all have trade-offs that feels like just passing the problem around.
+## [8][How a developer can create an extra income?](https://www.reddit.com/r/reactjs/comments/i9km0y/how_a_developer_can_create_an_extra_income/)
+- url: https://www.reddit.com/r/reactjs/comments/i9km0y/how_a_developer_can_create_an_extra_income/
+---
+Hello, 
+i have worked for several firms and what I can see is that one of their most valuable assets are in fact developers.
+How do you guys make extra passive income as developer? Suggestions? Ideas? Please just don’t start saying “open a YouTube channel”
+Looking forward to hear from you!
+## [9][The history of web development: frontend and backend (book on Amazon)](https://www.reddit.com/r/reactjs/comments/i9k5c0/the_history_of_web_development_frontend_and/)
+- url: https://www.reddit.com/r/reactjs/comments/i9k5c0/the_history_of_web_development_frontend_and/
+---
+I wrote a junior-friendly short book about the history of web development. It covers the front end and the backend.
+
+[https://www.amazon.com/dp/B08FTH81ZR](https://www.amazon.com/dp/B08FTH81ZR)
+
+**At some point in the book, it tells the story of React:**
+
+For a long time, the Facebook website had a bug in its chat section. Users got an indication that there were unread messages, but when they opened the chat, they couldn't find any new messages. Developers at Facebook tried to fix this bug, but it appears again after they thought they fixed it. The event handler of sending a message was a huge function with a lot of imperative code that updates and manipulates a lot of DOM elements. And when two-way data binding was used, it was difficult to track how the data flows, and it caused an infinite loop. Because at the time, there were several chat views on the same webpage. To overcome these issues, facebook invented the **Flux application architecture** and the **React** library. It features a one-way data flow. The state is a single source of truth. In event handlers, React developers update the state, and then React detects that the state is changed, and in response, efficiently re-renders the relevant components.
+
+Components in React can be reused to construct complex user interfaces. React applications are written in JSX (JavaScript XML), a language developed by Facebook that is an extension of JavaScript. Components receive data from parent components through props. Developers can pass props from a root component to their grand-grand-children components using the "context" feature of React. It is possible to wrap a component using a "Higher-Order Component (HOC)" feature of React. Components can be written as classes or as functions. In October 2015, Andrew Clark developed a library that makes it possible to using class components features (like lifecycle methods) in functional components. He called his library **recompose**. Then facebook hired him, and then Facebook introduced a similar feature in React that was called **React hooks**.
+
+**The book starts with:**
+
+The term hypertext was first coined by Ted Nelson in 1969 in his research project at Brown University. Hypertext is a text that is displayed on a computer monitor and has links to other texts. By clicking on a link, the user can navigate from one text to another. Ted Nelson developed a working prototype of an application that he called Hypertext Editing System on an IBM computer.
+
+Tim Berners-Lee, an English engineer in The European Organisation of Nuclear Research (CERN) in Geneva, Switzerland, had an idea of the web in 1989. The idea was to make it easier for everyone in the world to create and share hypertext documents through the internet.
+
+To implement his idea, Berners-Lee invented a collection of technologies: a web browser, a web server, a protocol for communication between the browser and the server (HTTP), a language that annotates text to render the hypertext in the browser (HTML). A unique identifier for the hypertext document (URL).
+
+When the user types the URL in the browser, the browser sends an HTTP request to the server that hosts the website. The browser receives the HTML file as an HTTP response and renders the HTML in the browser.
+
+HTML is an acronym of Hypertext Markup Language. The syntax of HTML is similar to XML. For example, the following code makes a paragraph: &lt;p&gt;Here is a paragraph&lt;/p&gt;. The HTML code can be written in any text editor. And when opened in the browser, the browser renders it.
+
+HTTP is an acronym of the Hypertext Transfer Protocol. HTTP defines a client (can be a browser) and a server and the communication between them. The client is sending a request message and the server returning an response message. The request message consists of the request line (the first line in the HTTP request message), request headers and an optional HTTP body. The response message consist of the status line (the first line in the HTTP response message), response headers, and an optional response body. The response body can be, for example, the content of an HTML file.
+
+The first line in the HTTP request message consists of a request method, a path, and an HTTP version. For example: “GET /homepage.html HTTP/1.1”. In this example, "GET" is the request method. It indicates that the request is for information retrieval. In the example, "/homepage.html" is the path, and "HTTP/1.1" indicates that version 1.1 of the HTTP protocol is used.
+
+The first line in the HTTP response message consists of HTTP version, status code, and the reason code. For example “HTTP/1.1 404 NOT FOUND”. In this example, “HTTP/1.1” indicates the version, 404 indicated the status, and “NOT FOUND” indicates the reason code.
+## [10][Good Resources For Learning Some Things On React/Redux](https://www.reddit.com/r/reactjs/comments/i9ebgl/good_resources_for_learning_some_things_on/)
+- url: https://www.reddit.com/r/reactjs/comments/i9ebgl/good_resources_for_learning_some_things_on/
+---
+ [https://daveceddia.com/redux-tutorial/](https://daveceddia.com/redux-tutorial/) 
+
+ [https://daveceddia.com/react-getting-started-tutorial/](https://daveceddia.com/react-getting-started-tutorial/) 
+
+Obviously these don't go a lot into depth, but they're great starting places and helped me a lot!
+## [11][A dashboard in React and CSS Grid](https://www.reddit.com/r/reactjs/comments/i8v9mg/a_dashboard_in_react_and_css_grid/)
 - url: https://www.reddit.com/r/reactjs/comments/i8v9mg/a_dashboard_in_react_and_css_grid/
 ---
 I created a Dashboard in React and CSS Grid for practice.
@@ -99,142 +170,8 @@ Deployed on [https://dashboard-in-react.vercel.app/](https://dashboard-in-react.
 Any suggestions are welcome. :)
 
 [Dashboard in React](https://reddit.com/link/i8v9mg/video/tf2wb080zpg51/player)
-## [4][Storybook 6.0 is here! New workflows and 100s of improvements](https://www.reddit.com/r/reactjs/comments/i8f79v/storybook_60_is_here_new_workflows_and_100s_of/)
-- url: https://medium.com/storybookjs/storybook-6-0-1e14a2071000
+## [12][Good review for React.js for a front-end role](https://www.reddit.com/r/reactjs/comments/i92ayv/good_review_for_reactjs_for_a_frontend_role/)
+- url: https://www.reddit.com/r/reactjs/comments/i92ayv/good_review_for_reactjs_for_a_frontend_role/
 ---
-
-## [5][Nat Alison thread on Gatsby Inc](https://www.reddit.com/r/reactjs/comments/i8x56j/nat_alison_thread_on_gatsby_inc/)
-- url: https://threadreaderapp.com/thread/1293649007739191296.html
----
-
-## [6][Stopwatch component and UI problems, Help!](https://www.reddit.com/r/reactjs/comments/i8xvyw/stopwatch_component_and_ui_problems_help/)
-- url: https://www.reddit.com/r/reactjs/comments/i8xvyw/stopwatch_component_and_ui_problems_help/
----
-Hi all :)
-
-I'm trying to build a simple puzzle game and would like to create a Stopwatch that counts from the moment the level starts.
-
-So.. I managed to got to the point where the clock start, runs,  stop and reset as desired.
-
-BUT every time i do something else on the UI the clock waits the load time of that operation.
-
-How can i isolate the clock component completely from the other parts of the UI but still control 
-
-its start, stop and reset function ? 
-
-&amp;#x200B;
-
-Im not a pro on React and maybe my thinking on the structure is not optimal,
-
-any advice is welcome.
-
-Thank you in advance for anyone that reads and/or answers :) 
-
-&amp;#x200B;
-
-here is the Stopwatch component (and its data):
-
-There is a stats in the parent component:
-
-const \[clockData,  setClockData\] = useState( { isOn: false, reset: false } );
-
-* isOn - for start and stop
-* reset - should the clock reset
-
-&amp;#x200B;
-
-    import React, { useState, useEffect } from 'react';
-    
-    const StopWatch = ({ clockData, setClockData }) =&gt; {
-      const [time, setTime] = useState({ sec: 0, min: 0 });
-      
-      const tick = () =&gt; { 
-        if(time.sec &gt; 59) {
-          setTime({sec: 0, min: time.min + 1});
-        }
-        else {
-          setTime({sec: time.sec + 1, min: time.min});
-        }
-      }
-    
-      useEffect(() =&gt; {
-        if(clockData.reset) {
-          setTime({ sec: 0, min: 0 });
-          setClockData({ isOn: true, reset: false });
-        } 
-        if(clockData.isOn) {
-          let interval = setInterval(() =&gt; { tick() }, 1000);
-          return () =&gt; {
-            clearInterval(interval);
-          }
-        }
-      });
-      
-      const showClock = () =&gt; {
-          if(time.min &lt; 10) {
-            return (
-              &lt;p&gt;0{time.min}:{time.sec &lt; 10 ? &lt;span&gt;0{time.sec}&lt;/span&gt; : &lt;span&gt;{time.sec}&lt;/span&gt;}&lt;/p&gt;
-            )
-          }
-          else {
-            return (
-              &lt;p&gt;{time.min}:{time.sec &lt; 10 ? &lt;span&gt;0{time.sec}&lt;/span&gt; : &lt;span&gt;{time.sec}&lt;/span&gt;}&lt;/p&gt; 
-            )
-          }
-      }
-    
-      return (
-        &lt;div className="StopWatch"&gt;
-          &lt;div&gt;{showClock()}&lt;/div&gt;
-        &lt;/div&gt;
-      );
-    }
-    export default StopWatch;
-## [7][Embla Carousel - The most fluid carousel library with unmatched swipe precision](https://www.reddit.com/r/reactjs/comments/i8kept/embla_carousel_the_most_fluid_carousel_library/)
-- url: https://www.reddit.com/r/reactjs/comments/i8kept/embla_carousel_the_most_fluid_carousel_library/
----
-Hello all,
-
-I've been working really hard on [Embla Carousel v.3](https://davidcetinkaya.github.io/embla-carousel/) and it's finally here. Here's how it turned out:
-
-* 👉 Even better swipe accuracy
-* ⬆️ Support for vertical carousels
-* 🚀 Exposing its core for maximum extensibility
-* 💻 CodeSandboxes for every example
-* 📦 Reduced bundle size
-* 📋 Brand new [documentation &amp; examples page](https://davidcetinkaya.github.io/embla-carousel)
-
-&amp;#x200B;
-
-[It's possible to extend Embla Carousel to build 3D carousels](https://reddit.com/link/i8kept/video/wj3fr6lk0qg51/player)
-
-  
-**For those of you** **not familiar with** [Embla Carousel](https://davidcetinkaya.github.io/embla-carousel), it's a carousel I created because I was frustrated about the large bundle sizes and quality that the existing javascript carousels had to offer. Stuff like poor touch/swipe accuracy and slow loop effects pushed me to try solve this challenges.
-
-Feedback is much appreciated!
-
-David
-## [8][Test-Driven Development 101 with jest](https://www.reddit.com/r/reactjs/comments/i8x402/testdriven_development_101_with_jest/)
-- url: https://medium.com//test-driven-development-101-with-jest-a6e666d090a5?source=friends_link&amp;sk=f994d7ba527eca1d7b84aaf7999d12d3
----
-
-## [9][Didn't get a React Native job. Employer feedback was that I overcomplicated Redux test. What did I do wrong here?](https://www.reddit.com/r/reactjs/comments/i8zw43/didnt_get_a_react_native_job_employer_feedback/)
-- url: https://www.reddit.com/r/reactjs/comments/i8zw43/didnt_get_a_react_native_job_employer_feedback/
----
-[https://codesandbox.io/s/quirky-kare-wty2w?file=/src/redux/TestRedux.js](https://codesandbox.io/s/quirky-kare-wty2w?file=/src/redux/TestRedux.js)
-
-I'd appreciate any feedback.
-
-Cheers!
-## [10][1 Simple Trick to Boost Performance Using Reduce](https://www.reddit.com/r/reactjs/comments/i8y3al/1_simple_trick_to_boost_performance_using_reduce/)
-- url: https://jrdev.hashnode.dev/1-simple-trick-to-boost-performance-using-reduce-ckdqxxtat03xbkbs1blvc3hje#map-filter-reduce
----
-
-## [11][reactjs video editing library](https://www.reddit.com/r/reactjs/comments/i8xc9v/reactjs_video_editing_library/)
-- url: https://www.reddit.com/r/reactjs/comments/i8xc9v/reactjs_video_editing_library/
----
-I am looking for some library or example on how to create a reactjs app to load and edit a video. What I'm looking for is to simply load the video and cut it, where I specify the start and end time. Any tips would be greatly appreciated.
-## [12][How to know if component is fully rendered? (no more useEffects in queue etc.)](https://www.reddit.com/r/reactjs/comments/i8xaew/how_to_know_if_component_is_fully_rendered_no/)
-- url: https://www.reddit.com/r/reactjs/comments/i8xaew/how_to_know_if_component_is_fully_rendered_no/
----
-I have a component that rerenders some of its parts because of async data fetch, but I want to have some sort of flag when all of it finished loading.
+Hello,
+I have a in-person interview for a front-end role. I was wondering what are the main topics I should focus on reviewing I was thinking of doing a mix of class and hook component reviews. What would you recommend would be common knowledge to review for a front-end role?

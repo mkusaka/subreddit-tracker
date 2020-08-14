@@ -22,7 +22,23 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Is there an 'Exact&lt;T&gt;' advanced type? Something that gurantees you can only put in the exact attributes required and no more?](https://www.reddit.com/r/typescript/comments/i8vxz2/is_there_an_exactt_advanced_type_something_that/)
+## [2][I created a video to share 3 typing basics to improve your TypeScript code](https://www.reddit.com/r/typescript/comments/i98t3e/i_created_a_video_to_share_3_typing_basics_to/)
+- url: https://www.youtube.com/watch?v=UuBJrAZsp4Y
+---
+
+## [3][Working on TS focused React form lib - feedback needed](https://www.reddit.com/r/typescript/comments/i9a5s2/working_on_ts_focused_react_form_lib_feedback/)
+- url: https://www.reddit.com/r/typescript/comments/i9a5s2/working_on_ts_focused_react_form_lib_feedback/
+---
+Proof of concept and API proposal for Typescript-focused, schema-based React form library:
+
+[https://codesandbox.io/s/formts-poc-3ryqv?file=/examples/example\_1.tsx](https://codesandbox.io/s/formts-poc-3ryqv?file=/examples/example_1.tsx)
+
+The sandbox contains README with more info and 5 examples of usage. The API is just a prototype but everything should be feasible to implement at this point.
+
+I'd like to know if there is any interest in such lib being implemented?
+
+EDIT: please see README in the sandbox for explanation why I though another form lib might be needed :)
+## [4][Is there an 'Exact&lt;T&gt;' advanced type? Something that gurantees you can only put in the exact attributes required and no more?](https://www.reddit.com/r/typescript/comments/i8vxz2/is_there_an_exactt_advanced_type_something_that/)
 - url: https://www.reddit.com/r/typescript/comments/i8vxz2/is_there_an_exactt_advanced_type_something_that/
 ---
 Eg. I have the following object:
@@ -44,7 +60,74 @@ So I have a User, a UserProfile, and an insert function that inserts Users into 
 Now my problem is that the insert function connects to a NoSQL DB. So I can technically pass in a UserProfile, and it will end up inserting the extra attributes into my NoSQL DB. Over time my NoSQL DB might end up with a lot of extra unnecessary attributes.
 
 I was wondering if there was an Exact&lt;T&gt; type that ensures you only have User.id, email &amp; password added in and nothing more.
-## [3][Validating object's type at runtime?](https://www.reddit.com/r/typescript/comments/i8yk6i/validating_objects_type_at_runtime/)
+## [5][Error on creating module using monorepo react structure](https://www.reddit.com/r/typescript/comments/i9bkdz/error_on_creating_module_using_monorepo_react/)
+- url: https://www.reddit.com/r/typescript/comments/i9bkdz/error_on_creating_module_using_monorepo_react/
+---
+Hey guys, i'm working on a project that will be a monorepo using yarn workspace, with micro-front-end using react-typescript.  To create the frontend structure i used  Create-React-App and everything was working fine.  Then i decided to create a priveta-route module using just  a basic index.tsx and package.json when i use this module i get this error:
+
+    C:/Users/johnvidal/Documents/quero-docura/quero-docuras/packages/web-private-route/src/index.tsx 10:0
+    Module parse failed: The keyword 'interface' is reserved (10:0)
+    You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders
+    | 
+    | //@ts-ignore
+    &gt; interface PrivateRouteProps extends RouteProps {
+    |   component: React.ComponentType&lt;RouteComponentProps&lt;any&gt;&gt;
+    | } 
+
+How do i fix this?
+## [6][Problem with request handlers in node.](https://www.reddit.com/r/typescript/comments/i96454/problem_with_request_handlers_in_node/)
+- url: https://www.reddit.com/r/typescript/comments/i96454/problem_with_request_handlers_in_node/
+---
+I have this piece of code: 
+
+    router.route('/signup').post(validateRegister);
+
+But I get an error message saying that `validateRegister` is not assignable to type `RequestHandler&lt;ParamsDictionary, any, any, ParsedQs&gt;` The code for validate register is this: 
+
+    import { findUserByUsername } from '../helpers';
+    import { NextFunction } from 'express';
+    import { UserRegisterRequest } from '../interfaces';
+    import { Response } from 'express';
+    
+    export default async function validateRegister(
+      req: UserRegisterRequest,
+      res: Response,
+      next: NextFunction
+    ): Promise&lt;void&gt; {
+      const { fullname, username, email, password, password2 } = req.body;
+      // bunch of if statments ....
+    }
+
+
+Any help with this issue would be appreciated.
+## [7][Type annotation erroneously overrides generic](https://www.reddit.com/r/typescript/comments/i8zupk/type_annotation_erroneously_overrides_generic/)
+- url: https://www.reddit.com/r/typescript/comments/i8zupk/type_annotation_erroneously_overrides_generic/
+---
+I'm currently trying to refactor a function's signature to remove the need for loads of overloads. I've done this by creating a conditional generic type to handle the same cases that the overloads did.
+
+The function works fine but for some reason adding annotations to constrain the return type from `unknown` to something else is giving me errors that didn't exist, as if the function is incorrectly inferring `T` from the annotation and I just can't figure out why. There are some times in my project where I need to declare a variable before assigning it and it just breaks.
+
+This is the function's signature:
+
+    const createMatrix = &lt;D extends number, T&gt;(
+        dimensions: D,
+        initialValues: T = null
+    ): Matrix&lt;D, T&gt;
+    
+    type Matrix&lt;D extends number, T&gt; = D extends 1
+        ? T[]
+        : D extends 2
+        ? T[][]
+        // ...
+
+And a TS playground link with the full code, tests and old version [is here](https://www.staging-typescript.org/play?#code/PTAEBUE8AcFNQIYDskHsAuD0EtVNAO4BOeA5gDaSioBusRR2AJrAM6imxL3YDGh2dAAtQ9EkVYAoSSFABRAB5xe6WE1AAjWEIQ1cRAFwywAQSZNsSUqHQx4yNJhx526VKBoJGCDeTahWIVQAV3J1LVBeVABbaCxsX3gCQRFheAAzYKQVXCR2Ilh0YKIkYwDsUiQsYtgAGkiEYNZLazQbO1EGVAlpWRMVYIRyTW1dfSM+1mbKlsR8BwwsNQ8vbB8-G3c00AKikpXyYPhUdJshDKycvAam-2RO8QA6MvBzji4efnBQbHZiMkoPyQ6TEyzcIzmVBOoAA5F4iAgqARzgVQCxoMJQAAeUAAERhhBR8EEASCoSYZQilhBDDB7jwgO2GgQrHgtjg1FO224rFU6nhiMeoAASrBorRZtsFk5cgFUOQ6FJZNtoCREtFNMF0DsxbR-Oz4KwECDbISuCtvIlEFMKkholxtTpoHA8oh0qoiJECvE8M9egAqf2SUD+kWFYquhCgaJYRgKUAACmioRwAFoLPa8rkhogGIiAJQCTGQEKeljNArqDNcZouObqTyHNjPEPB0MAATiCI11azddToAABrjBwYIG9y9hK2jsJna67odsY+g423QJ2vAgNZZBGtyAA1IZHdgD17wRtHM5YUQIXgiaCoSzayxneDLuNA3dDX761BC3GwOkjTkOgrjuIOSChOQg4th2uwRuwJjRrG2DxtCw6DjOc65Kw9TJJisC3vej5IM+SBfuQP7qOC2yDjuOBDIeTasJhXZboU9CwcAkhRHk2q8N6qgALIofGAC82K4qICiqEgTDsJB0RaEQ9TgAAfAmwagNpvbzqwY64rUWnafRe5MceY7fAAPqAkHkMMEl2eQkj5mOIkrqhWKGRAamgGJvkAN7GZELj8cUBSkbis41rkAAyXCkJiEm6ThADcwW8byOoxjuVhRdhdbJdFfaugOACM6XadpmXatwaisKKvDFPOfnZQguWkPlMV1r5AAM6UZaFkThQ67kfhJJh5pACZNbSkXFfO8VWMI+aPOk2D2QmpmMUebD5gNVUhXxoDrVU5BjahrV1fJjXNbkwWHQA-MNc3oBdCiPDG0AJgmhb+Q9h2AwJhHCaJCYFDl5F5QtOH1NtB67aw+YA4dyOA1VY6zRFb2iQdVXwfsp1DO91qgO9XmqWp6UAL4DbIZ6gKqqDqgEsBimBELCNeCbIua0pLEwhbbAaPzsNSoLUe4ETbFksonGUhF3u0HKqrAvBqJKby8RYzhnVe2oE66K5HM8Ivk1JsAyVw8m2cESn0JTrUW1bcnsGVwXPeAADaAC6wUGdJsk2wATB7EC+77-t4oH1vsAAzGH3s+xHfuHQHltB+wAAsicpynUfIJAefJyXA01TYbDoGVY6KcpvutcDSzvQmZX7aAshYgOBDdAA1ie7zcIwXyi6z2rghBdvKYOPFDaovLBzXk-0CnDeCbAzfB23HcDkwqBsEgMLat3RA96AA6cIPfAQCPrJj+Btf0KANkP0QvuYQOgQhGEEKDlkPdoAQJAg56hpHwDVBElg6S23tkQGex057oDjovGBxdV4g3XmDOOW8wCdzRHvVgB8j69zPgPT419fij02EOF+T9oF1x9rQl+Kd36ki-uEeAv8kD-1QIA4Br4wGhQgdwSWdD6DSHLggrOaCm5g03qlduOCBwFFIKELwQIaRcHVoQXu-cL5kO+BQzh3DeH1ENsrYk7A-4AKQPnCRlcACsyD6H1wko3UGHkFAJmDvUXq2DsRdx0WafAdFyIMQRsxTCFDb4kL0UPch7AJ4wL4WYkWFCmElzgVlBBAA2McVieE2JLtI9xcYvF+NwcfPuJ1IH1BZOY+JoB8mAL9L0MAAAhWA5AeEj22PKJgeFe4tHqJkbIushQAEkYQahXJASU7gIZ6moHQIgXSEA23SN0RAIx0AejxAADXqOcbIbI3jcAICdS4utEw+D1MjSQIyrhgLXu9AA8mELE6kEwpRcGOMqcNQlmURo9Syrlw4+wGg8q5biMEeLeUwD5GlgrfLyGObxwV4bmTYMCiALlLIpwhZc2U0LXnvM+UimGPzQBxyModDFQLLK4rBfi6QkKiXPNEnChFmlDrIv0qALONKqp0uYti8AjKk7FwJaMtl6CSXwrJTyilKLREqXRQCnaIqGWgrlQiqVjyvSyo5aSxFiqCrKpfoKky6rwkWWvs-KCV0oKMp1epUAQVDrlyxg6LqJUlqJREEVM1rBKpVXLhDdqUNOpKvYIG7qpVQAVUGsda6DU1Z3WuBJcNHUfV6VAH1PG1UhpetIiTCaU0ZojXmmav1K01obXIFta1mKkYFqOllIm51RJXTZjdNNEh7ro20s9YtOMPGfQQN9X6fk1Io0HcSo1TBwZigjS0HNsNPxhObWjQd2lt3o0xpW0dcZW1mI7e9Gm0gzYLoRa1CVJcV42RdWpX2A1Mlj0rnC6uKqXEGpkbCsILc-GVPYKdWAb6K68jhQvb9RTXHsv-YuuRCjtEnxA5A8DCC4VIJgyvODhqEMJiwfI2QwHqncHEbPD9YQpF4b-XGOFZTiNgFI6BjDVGmCOJwww2jJTUIMe8aAXxTGUNVNY3YyDYRcmNK4dY3Dv7eMKH40BwJoGgA).
+
+Does anyone have any ideas for what the problem might be?
+## [8][VSCode Snippets](https://www.reddit.com/r/typescript/comments/i9160u/vscode_snippets/)
+- url: https://www.reddit.com/r/typescript/comments/i9160u/vscode_snippets/
+---
+Hello, I was looking for a snippet extension to vscode to help me speed my writing but all I found was this [one](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets) but it doesn't include Typescript. Any suggestions?
+## [9][Validating object's type at runtime?](https://www.reddit.com/r/typescript/comments/i8yk6i/validating_objects_type_at_runtime/)
 - url: https://www.reddit.com/r/typescript/comments/i8yk6i/validating_objects_type_at_runtime/
 ---
 For a project I am currently working on, an SDK for consuming a backend API (written in Go), I would like to implement runtime type checking. As I've worked intensively with Typescript over the last couple of years, I know type safety is not guaranteed at runtime, as all type annotations will get lost during the compilation stage.
@@ -87,110 +170,61 @@ const exampleCall = async (config: Config): Promise&lt;interface&gt; =&gt; {
 
 export default exampleCall;
 ```
-## [4][Type-safe GraphQL APIs](https://www.reddit.com/r/typescript/comments/i8wz3u/typesafe_graphql_apis/)
-- url: https://www.reddit.com/r/typescript/comments/i8wz3u/typesafe_graphql_apis/
+## [10][Trying to get rid of the any; need help](https://www.reddit.com/r/typescript/comments/i93a9s/trying_to_get_rid_of_the_any_need_help/)
+- url: https://www.reddit.com/r/typescript/comments/i93a9s/trying_to_get_rid_of_the_any_need_help/
 ---
-Representing GraphQL, a dynamic protocol, in a statically typed language is inherently difficult. [GraphQL code generator](https://graphql-code-generator.com/) can help with this a bit, but isn't ideal.
+I am trying to define types for my little pub/sub service. The service has a  `subscribe` function that is giving me troubles.
 
-I have devised a solution to this problem that allows all GraphQL APIs to be represented in Typescript. It is based around this interface:
+This function subscribes callbacks to messages. Each message has the following shape:
 
-    interface GraphQLObject&lt;Name extends string, T&gt; {
-        // The GraphQL name of the type.
-        name: Name;
-        // The query string to get the type, without surrounding braces.
-        query: string;
-        // The conversion function from the GraphQL JSON response to the Typescript type.
-        convert: (data: any) =&gt; T;
-    }
+```
+{
+  action: string;
+  payload: one_of_the_predefined_payloads
+}
+```
 
-It represents a subset of fields on the GraphQL type `Name`. An example usage would be:
+So what the subscribe function does is it takes two arguments — action and callback — and puts the callback in the set of callbacks that respond to this action. When it the pub/sub service receives a message with a given `action`, it will call the callbacks interested in this action passing to them the payload from the message.
 
-    interface Image {
-        url: string;
-        width: number;
-        height: number;
-    }
-    
-    const image: GraphQLObject&lt;"Image", Image&gt; = {
-        name: "Image",
-        query: "url width height",
-        convert: data =&gt; ({
-            url: data.url,
-            width: parseInt(data.width),
-            height: parseInt(data.height),
-        }),
-    };
+The type of the callback function is currently defined as `type Callback =  (...args: any[]) =&gt; void`; but I am trying to find a way to properly define its argument, because, goddamit, I know the full list of actions and I know which payloads are expected for those actions:
 
-Fields that contain other objects can be represented via generics, and fields that take arguments can be represented in parameters.
+```
+type FooPayload = {
+    foo: number;
+}
 
-    interface Query&lt;Image&gt; {
-        imageByName: Image;
-    }
+type BarPayload = {
+    bar: string;
+}
 
-    function query&lt;Image&gt;(image: GraphQLObject&lt;"Image", Image&gt;, id: string): GraphQLObject&lt;"Query", Query&lt;Image&gt;&gt; {
-        return {
-            name: "Query",
-            query: `imageByName(id:${id}){${image.query}}`,
-            convert: data =&gt; ({ imageByName: image.convert(data.imageByName) }),
-        };
-    }
+interface ActionToPayloadMap {
+    foo: FooPayload;
+    bar: BarPayload
+}
 
-This way you can request any set of image fields through the query function, and the id parameter can be a literal or variable.
+type Callback = &lt;A extends Action&gt;(payload: ActionToPayloadMap[A]) =&gt; void;
+```
 
-This can be complemented with some useful helper functions:
+But somewhere along the way my reasoning falls apart as can be seen in [this typescript playground](https://www.typescriptlang.org/play?#code/C4TwDgpgBAYg9nACgQxAGzsgJlAvFAbwCgpSoAzBALigDsBXAWwCMIAnAbiIF8ijRIUAELI2KdJhz5iZKM1E0AzsDYBLWgHMuvfuGjw4AWQiLFyDdGkkyyAMbBVcWjQDklOC66ywqDNhoG4n5YPFy6giJsxqbmloTWpHYOTq7ybJ4JUD4S-sKiQZKhfOrA7OR20ACC9o60ACpIvpKGyGDxsu4BCAXYXmRpNJE9IToCVTVOeFAA1hAgcORQ1cn1jTlYLWBhY1DDU4FN2FAAPnlih1jbelAAyvTMirZqrGyKUwBKELZwbFgAPMtagAaW4QYB-ADCyDQaHktmmAD4EXwdlCYXDplMAVAIAAPUq0LBvQFOBEACmywRoJNWw02AG1KgBdACUeARUAAbnBVJcUdc7g8nqpWFjKjj8RBCcSJrRyUlatSQbZobC7NMaGi1fCAQi2bgOdzeVdBIh7mhVIoABZiiUEolLWXy2VKrIXamyhp01qM1nsrk8vlEb60ZRQRT3R7PdhvaTcKDIN6CqMimNhENhiNC6M0ZPC0X4MkKpzK1UY-UcmRkDPAcNgqZZlMvRT04u0JknU60CAAd1B4K1GPJLL6pEUYIAdNgsGSVej1SPMo38zHW7KO-hx8BtHwa1lzZarTQzcwLdapkXZSDKZIK+1q04w3PtdNY+HIyvXmuVkzR1BnxiigTpQbAAKJ2Fas7MP6tjMBSFwsiyRTBo+tbuHUJi1oWN65Ac6x3hmcBoBAE4YBo8HrMBCCLkQy7Rn8bgIC45KMR4ILoZhI5AA), where I've captured my attempt at defining these relationships. Could anyone help me out?
 
-    // Query no data.
-    function no_data&lt;Name extends string&gt;(name: Name): GraphQLObject&lt;Name, void&gt; {
-        return {
-            name,
-            query: `__typename`,
-            convert: () =&gt; undefined
-        };
-    }
 
-    // Combine multiple field subsets together that query the same GraphQL object.
-    function combine&lt;Name extends string, A, B&gt;(
-        ...objects: [GraphQLObject&lt;Name, A&gt;, GraphQLObject&lt;Name, B&gt;]
-    ): GraphQLObject&lt;Name, A &amp; B&gt;;
-    // And so on...
-    
-    function combine&lt;Name extends string&gt;(
-        ...objects: GraphQLObject&lt;Name, unknown&gt;[]
-    ): GraphQLObject&lt;Name, any&gt; {
-        return {
-            name: objects[0].name,
-            query: objects.map(o =&gt; o.query).join(" "),
-            convert: data =&gt; Object.assign({}, ...objects.map(o =&gt; o.convert(data)))
-        };
-    }
+**P.S.:** Also, I really don't like the `ActionToPayloadMap` interface from the snippet above. What I would much prefer would be to define the actual message types:
 
-Using this I would love to make a library that automatically generates GraphQL objects for each field of each type from a GraphQL schema (similar to GraphQL code generator, but using this method). The individual fields can then be combined by the user to form more complex queries, while remaining fully typesafe. For ergonomics the library could also provide `Full*` type aliases which represent _all_ the fields of a type (e.g. `type FullImage = ImageURL &amp; ImageWidth &amp; ImageHeight`).
+```
+type FooMessage = {
+    action: 'foo';
+    payload: FooPayload
+};
 
-However, I lack the time and expertise to do it myself, so if anyone is willing to give it a shot I would be very grateful.
-## [5][Type annotation erroneously overrides generic](https://www.reddit.com/r/typescript/comments/i8zupk/type_annotation_erroneously_overrides_generic/)
-- url: https://www.reddit.com/r/typescript/comments/i8zupk/type_annotation_erroneously_overrides_generic/
----
-I'm currently trying to refactor a function's signature to remove the need for loads of overloads. I've done this by creating a conditional generic type to handle the same cases that the overloads did.
+type BarMessage = {
+    action: 'bar';
+    payload: BarPayload
+};
 
-The function works fine but for some reason adding annotations to constrain the return type from `unknown` to something else is giving me errors that didn't exist, as if the function is incorrectly inferring `T` from the annotation and I just can't figure out why. There are some times in my project where I need to declare a variable before assigning it and it just breaks.
-
-This is the function's signature:
-
-    const createMatrix = &lt;D extends number, T&gt;(
-        dimensions: D,
-        initialValues: T = null
-    ): Matrix&lt;D, T&gt;
-    
-    type Matrix&lt;D extends number, T&gt; = D extends 1
-        ? T[]
-        : D extends 2
-        ? T[][]
-        // ...
-
-And a TS playground link with the full code and old version [is here](https://www.staging-typescript.org/play?#code/PTAEBUE8AcFNQIYDskHsAuD0EtVNAO4BOeA5gDaSioBusRR2AJrAM6imxL3YDGh2dAAtQ9EkVYAoSSFABRAB5xe6WE1AAjWEIQ1cRAFwywAQSZNsSUqHQx4yNJhx526VKBoJGCDeTahWIVQAV3J1LVBeVABbaCxsX3gCQRFheAAzYKQVXCR2Ilh0YKIkYwDsUiQsYtgAGkiEYNZLazQbO1EGVAlpWRMVYIRyTW1dfSM+1mbKlsR8BwwsNQ8vbB8-G3c00AKikpXyYPhUdJshDKycvAam-2RO8QA6MvBzji4efnBQbHZiMkoPyQ6TEyzcIzmVBOoAA5F4iAgqARzgVQCxoMJQAAeUAAERhhBR8EEASCoSYZQilhBDDB7jwgO2GgQrHgtjg1FO224rFU6nhiMeoAASrBorRZtsFk5cgFUOQ6FJZNtoCREtFNMF0DsxbR-Oz4KwECDbISuCtvIlEFMKkholxtTpoHA8oh0qoiJECvE8M8ZAAqf2SUD+kWFYquhCgaJYRgKUAACmioRwAFoLPa8rkhogGIiAJQCTGQEKeljNArqDNcZouObqTyHNjPEPB0MAATiCI11azddToAABrjBwYIG9y9hK2jsJna67odsY+g423QJ2vAgNZZBGtyAA1IZHdgD17wRtHM5YUQIXgiaCoSzayxneDLuNA3dDX761BC3GwOkjTkOgrjuIOSChOQg4th2uwRuwJjRrG2DxtCw6DjOc65Kw9TJJisC3vej5IM+SBfuQP7qOC2yDjuOBDIeTasJhXZboU9CwcAkhRHk2q8N6qgALIofGAC82K4qICiqEgTDsJB0RaEQ9TgAAfAmwagNpvbzqwY64rUWnafRe5MceY7fAAPqAkHkMMEl2eQkj5mOIkrqhWKGRAamgGJvkAN7GZELj8cUBSkbis41rkAAyXCkJiEm6ThADcwW8byOoxjuVhRdhdbJdFfaugOACM6XadpmXatwaisKKvDFPOfnZQguWkPlMV1r5AAM6UZaFkThQ67kfhJJh5pACZNbSkXFfO8VWMI+aPOk2D2QmpmMUebD5gNVUhXxoDrVU5BjahrV1fJjXNbkwWHQA-MNc3oBdCiPDG0AJgmhb+Q9h2AwJhHCaJCYFDl5F5QtOH1NtB67aw+YA4dyOA1VY6zRFb2iQdVXwfsp1DO91qgO9XmqWp6UAL4DQaZOiV50myfJtnBEp9CU61UmwDJXCs2VwXPeAADaAC6wUGcz-PsAATELEDi+Lkt4tLcnsAAzAroti0rEuHVLvMs+wAAs2t63rKvIJAFu63bA01TYbDoGVY6Kcp4utcDSzvQmZX7aAshYgOBDdAA1ie7zcIwXw-OwrLauCEHs8pg48UNqi8rLbsp-Qete4JsC+7LAdBwOTCoGwSAwtqodEGHoADpw0d8BAccBIUmxDu79CgDZPdEOLmEDoEIRhBCg5ZGHaAEEgg71Gk+A1Qilh0mzHNEOnx2Z+gGs5xvtsFyDRdgxrpdgMHaKV6w1e1+HjdR58be-B3ifgQPffrx7YufwPevD6SMe4R4CTyQNPVAs956viXqFFe3BqLuAHtIR2O8TZHx9mDEuqVA4XwHAUUgoQvBAhpFwXgSRw6R2bk-b4L9QHgMgfUAm+B6YvynjPJAlsUHOwAKz72-p7CS3tQYeQUAmWW9Rern2xCHChZp8B0XIgxBGzFMIvwTg-KhMdn7sGThvKBTD2gchfn-O2W8so7wAGxjjYRAjhdt0HCLjGIqRl864RxOqveoLJDHwBoewGxs8-S9DAAAIVgOQCB7dtjyiYHhcOLR6iZGyM4JAQoACSMINQrkgJKdwEM9TUDoEQCJCBWbpG6IgEY6APR4gABr1HONkNkbxuAEBOpcFJiYfB6mRpIJJVwl6F3egAeTCFidSCYUouDHGVOGiizKI0epZVyisxYDX6Z0oRJ8RGjKYOMjSwUpl5DHOI4K8NzJsCWRAFylk9brI6bKLZIyxkTMOTDaZoANZGUOucxZlkbmrLudIDZjyhmiV2fszSh0jn6VACbb5VVfnMSueAAFOtbb3OSaC4+zy9mvOhe845X9OZnPmTtZF-yVm4v2ZigZXocXgpeQcglBUiUDwRSZMlyiLJt37lBK6UEAXUvUqAIKh1HZYwdF1EqS1EoiCKqy1glUqqOwhu1KGnVCXsAVd1UqoAKqDWOtdBqsBZotQkmqjq0q9KgD6njaqQ1JWkRJhNKaM0RrzVZbKlaa0NrkC2lyi5SN7VHSykTc6okrqwHqrdCQ910baWek6nGIjPoIG+r9PyakUYJqeYypg4MxTqpaNa2Gn4lFBrRgm7SVb0aYw9SmuMIaDHhvejTaQ9NhW+Qkuiu2+cbJdvFgNMxidna7NdsSweP9BFgp2WEP2Ui3HsFOrAEdTteS7OzpO-OM6GVzoLVgnBhBZErrXTvXZe9t19unfSjB+6Exn2wbIJdHjuDIIzmOsIaDd13rjLs5xT6wAvtPVwjdYReFXoEbexxqF-3iNAJIwDx767LtXmez9TArGgACXYqDeb72HufSe1eQA).
-
-Does anyone have any ideas for what the problem might be?
-## [6][Is it possible to make one function argument optional depending on another argument's value?](https://www.reddit.com/r/typescript/comments/i8wona/is_it_possible_to_make_one_function_argument/)
+type Message = FooMessage | BarMessage
+```
+and then to somehow tell typescript to lookup the payload type based on the received action. Is typescript capable of this?
+## [11][Is it possible to make one function argument optional depending on another argument's value?](https://www.reddit.com/r/typescript/comments/i8wona/is_it_possible_to_make_one_function_argument/)
 - url: https://www.reddit.com/r/typescript/comments/i8wona/is_it_possible_to_make_one_function_argument/
 ---
 Hi there! Just starting with typescript and I was guessing if this is possible to achieve. Any help or alternative solutions will be appreciated, thanks in advance!
@@ -232,129 +266,3 @@ Is there any way to set this conditionally optional parameter? Or is there a bet
 &amp;#x200B;
 
 Thanks!
-## [7][Teki - An unreasonably efficient route parser in TypeScript](https://www.reddit.com/r/typescript/comments/i8doxo/teki_an_unreasonably_efficient_route_parser_in/)
-- url: https://github.com/philipnilsson/teki#teki
----
-
-## [8][Typescript node starter, with testing, dev mode, environment variable loading and github actions](https://www.reddit.com/r/typescript/comments/i84px0/typescript_node_starter_with_testing_dev_mode/)
-- url: https://www.reddit.com/r/typescript/comments/i84px0/typescript_node_starter_with_testing_dev_mode/
----
-[https://github.com/IhsanMujdeci/node-ts](https://github.com/IhsanMujdeci/node-ts)
-
-&amp;#x200B;
-
-Get started with \`npm start\`
-
-&amp;#x200B;
-
-* Dev mode transpiling ts with nodemon like re-running.
-* Testing built in with jest.
-* Github actions on push and pr to master that build and test the application
-* Environment variable loading from file built in.
-* Aliases your project under \`@/myApp\`, you can change it in the tsconfig.json
-## [9][Type error on call but not on definition](https://www.reddit.com/r/typescript/comments/i7si1q/type_error_on_call_but_not_on_definition/)
-- url: https://www.reddit.com/r/typescript/comments/i7si1q/type_error_on_call_but_not_on_definition/
----
-I have an interface.
-
-    export interface ViolationDetails {
-      // …snip…
-      getMessage: (extra: Record&lt;string, any&gt;) =&gt; string;
-    }
-
-Then I implement it.
-
-    const myViolation: ViolationDetails = {
-      // …snip…
-      getMessage: (): string =&gt; 'Missing field';
-    }
-
-No errors to be seen. But when I try to call it, I get a compiler error.
-
-    myViolation.getMessage();
-    // Expected 1 argument, but got 0.
-
-What gives? Why is there no type error on the implementation, but only on the call?
-## [10][How to make cache layer redis with mongoose ?](https://www.reddit.com/r/typescript/comments/i7qxaj/how_to_make_cache_layer_redis_with_mongoose/)
-- url: https://www.reddit.com/r/typescript/comments/i7qxaj/how_to_make_cache_layer_redis_with_mongoose/
----
-i have cache completed with nodejs but with typescript this not overwrite. somebody suggest me 
-
-cache.ts
-
-
-        import * as mongoose from 'mongoose';
-        import * as redis from 'redis';
-        import * as util from 'util';
-        import { RedisClient } from 'redis';
-
-      let redisClient: RedisClient;
-
-      export function startRedisConnection() {
-        redisClient = redis.createClient({
-          host: 'redis',
-          port: 6379,
-          retry_strategy: () =&gt; 1000
-        });
-
-        redisClient.hgetAsync = util.promisify(redisClient.hget);
-        redisClient.hsetAsync = util.promisify(redisClient.hset);
-
-        // Monkey patch mongoose exec method
-        const exec = mongoose.Query.prototype.exec;
-
-        mongoose.Query.prototype.cache = function(options: any = {}) {
-          this.useCache = true;
-          this.time = options.time || 60;
-          // Dynamic top-level hashKey
-          this.hashKey = JSON.stringify(options.hashKey || '');
-          console.log(this.hashKey);
-          return this;
-        };
-
-        mongoose.Query.prototype.exec = async function() {
-          // No cache
-          if (!this.useCache) {
-            return exec.apply(this, arguments);
-          }
-
-          // {...query, collection: name }
-          const key = JSON.stringify({ ...this.getQuery(), collection: this.mongooseCollection.name });
-          // Get cache
-          const cacheValue = await redisClient.hgetAsync(this.hashKey, key);
-          if (cacheValue) {
-            const value = JSON.parse(cacheValue);
-            // Mongoose exec expects us to return mongoose documents
-            console.log('response from redis');
-            return Array.isArray(value) ? value.map(item =&gt; new this.model(item)) : new this.model(value);
-          }
-
-          const result = await exec.apply(this, arguments);
-          // Set cache
-          // key: ...hashkey
-          // value:  { nestedKey: ...key, nestedValue: ...result }
-          if (result) {
-            redisClient.hsetAsync(this.hashKey, key, JSON.stringify(result));
-          }
-          console.log('Helo');
-          return result;
-        };
-      }
-
-      export function stopRedisConnection() {
-        redisClient.quit();
-      }
-
-      export function removeHashKeyFromCache(hashKey: any) {
-        redisClient.del(JSON.stringify(hashKey));
-      }
-## [11][Type error - Missing 200+ properties](https://www.reddit.com/r/typescript/comments/i7evqe/type_error_missing_200_properties/)
-- url: https://www.reddit.com/r/typescript/comments/i7evqe/type_error_missing_200_properties/
----
-    Type error: Type '{ children: Element; className: string; closeButton: true; }' is missing the following properties from type 'Pick&lt;ModalHeaderProps, "style" | "title" | "slot" | "children" | "bsPrefix" | "className" | "color" | "id" | "lang" | "role" | "tabIndex" | "dangerouslySetInnerHTML" |
-
-     ... 246 more ... | "closeButton"&gt;': translate, onAuxClick, onAuxClickCapture  TS2739
-
-https://imgur.com/a/XpLvrpo
-
-Do I need to actually pass in 246+ properties to this Modal.Header component (using bootstrap)? I am pretty bad so please treat me like a huge noob! What should I do here?

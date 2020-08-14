@@ -1,51 +1,220 @@
 # golang
-## [1][Proposal: Register-based Go calling convention](https://www.reddit.com/r/golang/comments/i8x4xe/proposal_registerbased_go_calling_convention/)
+## [1][I also push directly to prod!](https://www.reddit.com/r/golang/comments/i91ynq/i_also_push_directly_to_prod/)
+- url: https://i.redd.it/ql3zpki3gsg51.png
+---
+
+## [2][From Python to Go: migrating our entire API](https://www.reddit.com/r/golang/comments/i9fo8f/from_python_to_go_migrating_our_entire_api/)
+- url: https://www.repustate.com/blog/migrating-entire-api-go-python/
+---
+
+## [3][We can stop adding debug log lines! we can now inject Golang tracepoints via eBPF](https://www.reddit.com/r/golang/comments/i9cs68/we_can_stop_adding_debug_log_lines_we_can_now/)
+- url: https://www.reddit.com/r/golang/comments/i9cs68/we_can_stop_adding_debug_log_lines_we_can_now/
+---
+We've been hacking ways to get live  debug data using eBPF and have finally cracked it.
+
+Here's a quick guide on how to inject tracepoints and dynamically log running Golang code: [https://docs.pixielabs.ai/tutorials/simple-go-tracing/](https://docs.pixielabs.ai/tutorials/simple-go-tracing/).
+
+Would be great to get feedback from fellow gophers :)
+
+&amp;#x200B;
+
+https://preview.redd.it/a9jdmjy4fvg51.png?width=1710&amp;format=png&amp;auto=webp&amp;s=4893e3ec525e6a3e385d7c8aa7c823d372d28050
+
+Here's a 2 min video walking through the simple tutorial: [https://www.youtube.com/watch?v=aH7PHSsiIPM&amp;feature=youtu.be](https://www.youtube.com/watch?v=aH7PHSsiIPM&amp;feature=youtu.be)
+## [4][go report PDF file (mutilate language)](https://www.reddit.com/r/golang/comments/i9gr6t/go_report_pdf_file_mutilate_language/)
+- url: https://www.reddit.com/r/golang/comments/i9gr6t/go_report_pdf_file_mutilate_language/
+---
+# gopdf Introduction
+
+[gopdf](https://www.github.com/tiechui1994/gopdf) is a relatively complete **PDF** export library, which integrates third-party libraries, making it more convenient for users to develop and use. It has the following features:
+
+* Support Unicode characters (including Chinese, Japanese, Korean, etc.)
+* Automatic pagination of PDF documents
+* Automatic wrapping of PDF documents
+* Automatic global positioning of PDF documents, no need for users to manually locate
+* PDF default configuration options are simple, and several commonly used methods have been built-in
+* PDF documents adopt the attribute settings similar to html pages, which are easy to understand
+* PDF supports image insertion, the format can be PNG or JPEG, the image will be properly compressed
+* PDF supports document compression
+* PDF conversion unit built-in processing
+* Executor can be nested
+
+github link: [https://github.com/tiechui1994/gopdf](https://github.com/tiechui1994/gopdf)
+
+## Example:
+
+    const (
+        TABLE_IG = "IPAexG"
+        TABLE_MD = "MPBOLD"
+        TABLE_MY = "微软雅黑"
+    )
+    
+    func ManyTableReportWithData() {
+        r := core.CreateReport()
+        font1 := core.FontMap{
+        	FontName: TABLE_IG,
+        	FileName: "example//ttf/ipaexg.ttf",
+        }
+        font2 := core.FontMap{
+        	FontName: TABLE_MD,
+        	FileName: "example//ttf/mplus-1p-bold.ttf",
+        }
+        font3 := core.FontMap{
+        	FontName: TABLE_MY,
+        	FileName: "example//ttf/microsoft.ttf",
+        }
+        r.SetFonts([]*core.FontMap{&amp;font1, &amp;font2, &amp;font3})
+        r.SetPage("A4", "mm", "P")
+        
+        r.RegisterExecutor(core.Executor(ManyTableReportWithDataExecutor), core.Detail)
+        
+        r.Execute("many_table_data.pdf")
+        r.SaveAtomicCellText("many_table_data.txt")
+        }
+        
+        func ManyTableReportWithDataExecutor(report *core.Report) {
+        unit := report.GetUnit()
+        
+        lineSpace := 0.01 * unit
+        lineHeight := 2 * unit
+        
+        rows, cols := 800, 5
+        table := NewTable(cols, rows, 80*unit, lineHeight, report)
+        table.SetMargin(core.Scope{0, 0, 0, 0})
+        
+        for i := 0; i &lt; rows; i += 5 {
+        	key := rand.Intn(3)
+        	//key := (i+1)%2 + 1
+        	f1 := core.Font{Family: TABLE_MY, Size: 10}
+        	border := core.NewScope(0.5*unit, 0.5*unit, 0, 0)
+        
+        	switch key {
+        	case 0:
+        	   for row := 0; row &lt; 5; row++ {
+                  for col := 0; col &lt; cols; col++ {
+            	  conent := fmt.Sprintf("%v-(%v,%v)", 0, i+row, col)
+            	  cell := table.NewCell()
+            	  txt := NewTextCell(table.GetColWidth(i+row, col), lineHeight, lineSpace, report)
+            	  txt.SetFont(f1).SetBorder(border).SetContent(conent + GetRandStr(1))
+            	  cell.SetElement(txt)    
+            	}
+        	}
+        
+        	case 1:
+    	  c00 := table.NewCellByRange(1, 5) 
+    	  c01 := table.NewCellByRange(2, 2) 
+    	  c03 := table.NewCellByRange(2, 3)
+    	  c21 := table.NewCellByRange(2, 1)
+    	  c31 := table.NewCellByRange(4, 1)
+    	  c41 := table.NewCellByRange(4, 1)
+        
+        	  t00 := NewTextCell(table.GetColWidth(i+0, 0), lineHeight, lineSpace, report)
+        	  t01 := NewTextCell(table.GetColWidth(i+0, 1), lineHeight, lineSpace, report)
+        	  t03 := NewTextCell(table.GetColWidth(i+0, 3), lineHeight, lineSpace, report)
+        	  t21 := NewTextCell(table.GetColWidth(i+2, 1), lineHeight, lineSpace, report)
+        	  t31 := NewTextCell(table.GetColWidth(i+3, 1), lineHeight, lineSpace, report)
+        	  t41 := NewTextCell(table.GetColWidth(i+4, 1), lineHeight, lineSpace, report)
+        
+        	  t00.SetFont(f1).SetBorder(border).SetContent(fmt.Sprintf("%v-(%v,%v)", 1, i+0, 0) + GetRandStr(5))
+        	  t01.SetFont(f1).SetBorder(border).SetContent(fmt.Sprintf("%v-(%v,%v)", 1, i+0, 1) + GetRandStr(4))
+        	  t03.SetFont(f1).SetBorder(border).SetContent(fmt.Sprintf("%v-(%v,%v)", 1, i+0, 3) + GetRandStr(6))
+        	  t21.SetFont(f1).SetBorder(border).SetContent(fmt.Sprintf("%v-(%v,%v)", 1, i+2, 1) + GetRandStr(2))
+        	  t31.SetFont(f1).SetBorder(border).SetContent(fmt.Sprintf("%v-(%v,%v)", 1, i+3, 1) + GetRandStr(4))
+        	  t41.SetFont(f1).SetBorder(border).SetContent(fmt.Sprintf("%v-(%v,%v)", 1, i+4, 1) + GetRandStr(4))
+        
+        	  c00.SetElement(t00)
+        	  c01.SetElement(t01)
+        	  c03.SetElement(t03)
+        	  c21.SetElement(t21)
+        	  c31.SetElement(t31)
+        	  c41.SetElement(t41)
+        
+        	case 2:
+        	  c00 := table.NewCellByRange(3, 2)
+    	  c03 := table.NewCellByRange(2, 3)
+    	  c20 := table.NewCellByRange(1, 2)
+    	  c21 := table.NewCellByRange(2, 3)
+    	  c33 := table.NewCellByRange(2, 2)
+    	  c40 := table.NewCellByRange(1, 1)
+        
+    	  t00 := NewTextCell(table.GetColWidth(i+0, 0), lineHeight, lineSpace, report)
+    	  t03 := NewTextCell(table.GetColWidth(i+0, 3), lineHeight, lineSpace, report)
+    	  t20 := NewTextCell(table.GetColWidth(i+2, 0), lineHeight, lineSpace, report)
+    	  t21 := NewTextCell(table.GetColWidth(i+2, 1), lineHeight, lineSpace, report)
+    	  t33 := NewTextCell(table.GetColWidth(i+3, 3), lineHeight, lineSpace, report)
+    	  t40 := NewTextCell(table.GetColWidth(i+4, 0), lineHeight, lineSpace, report)
+        
+    	  t00.SetFont(f1).SetBorder(border).SetContent(fmt.Sprintf("%v-(%v,%v)", 2, i+0, 0) + GetRandStr(6))
+    	  t03.SetFont(f1).SetBorder(border).SetContent(fmt.Sprintf("%v-(%v,%v)", 2, i+0, 3) + GetRandStr(6))
+    	  t20.SetFont(f1).SetBorder(border).SetContent(fmt.Sprintf("%v-(%v,%v)", 2, i+2, 0) + GetRandStr(2))
+    	  t21.SetFont(f1).SetBorder(border).SetContent(fmt.Sprintf("%v-(%v,%v)", 2, i+2, 1) + GetRandStr(6))
+    	  t33.SetFont(f1).SetBorder(border).SetContent(fmt.Sprintf("%v-(%v,%v)", 2, i+3, 3) + GetRandStr(4))
+    	  t40.SetFont(f1).SetBorder(border).SetContent(fmt.Sprintf("%v-(%v,%v)", 2, i+4, 0) + GetRandStr(1))
+        
+    	  c00.SetElement(t00)
+    	  c03.SetElement(t03)
+    	  c20.SetElement(t20)
+    	  c21.SetElement(t21)
+    	  c33.SetElement(t33)
+    	  c40.SetElement(t40)
+        	}    
+        }
+        
+        table.GenerateAtomicCell()
+    }
+    
+    
+    func GetRandStr(l ...int) string {
+        seed := rand.New(rand.NewSource(time.Now().UnixNano()))
+        str := "0123456789ABCDEFGHIGKLMNOPQRSTUVWXYZ"
+        l = append(l, 8)
+        r := seed.Intn(l[0]*11) + 8
+        data := strings.Repeat(str, r/36+1)
+        return data[:r] + "---"
+    }
+    
+    func TestTable(t *testing.T) {
+        ManyTableReportWithData()
+    }
+
+The above case shows a complex and irregular case, the rendering is as follows:
+
+https://preview.redd.it/jem73ljozwg51.png?width=1157&amp;format=png&amp;auto=webp&amp;s=bc531d44594e59176bed41f8a7108afd479896fb
+
+## Future plan
+
+1. Planning to develop the part of `Markdown` to PDF
+2. Optimize components
+
+To update the detailed usage, please refer to the open source library [https://github.com/tiechui1994/gopdf](https://github.com/tiechui1994/gopdf), everyone is welcome to contribute your own strength.
+## [5][Go 1.15's interface optimization for small integers is invisible to Go programs](https://www.reddit.com/r/golang/comments/i9ll67/go_115s_interface_optimization_for_small_integers/)
+- url: https://utcc.utoronto.ca/~cks/space/blog/programming/Go115InterfaceSmallIntsII
+---
+
+## [6][Proposal: Register-based Go calling convention](https://www.reddit.com/r/golang/comments/i8x4xe/proposal_registerbased_go_calling_convention/)
 - url: https://go.googlesource.com/proposal/+/refs/changes/78/248178/1/design/40724-register-calling.md
 ---
 
-## [2][Static type checking for the empty interface{}](https://www.reddit.com/r/golang/comments/i8w8c2/static_type_checking_for_the_empty_interface/)
-- url: https://github.com/siadat/interface-type-check
+## [7][Implementing Language Server Protocol in go - for other languages. Advice please](https://www.reddit.com/r/golang/comments/i9ixbr/implementing_language_server_protocol_in_go_for/)
+- url: https://www.reddit.com/r/golang/comments/i9ixbr/implementing_language_server_protocol_in_go_for/
+---
+I have looked at the source graph and gopls code and and am looking for a solution to implement LSP for “language-x” without doing the JSON rpc and request response mapping from scratch.
+Can anyone who has worked in this space suggest how to approach this, or what parts of existing projects are general purpose enough to reuse?
+## [8][When an Interface Depends on Another Interface in Go](https://www.reddit.com/r/golang/comments/i9iqw7/when_an_interface_depends_on_another_interface_in/)
+- url: https://medium.com/@orenrosenblum/when-an-interface-depends-on-another-interface-in-go-a32d988cd21e?sk=6755fe1ad1a55e47237dcc2867935800
 ---
 
-## [3][A weechat IRC client encryption system attempt](https://www.reddit.com/r/golang/comments/i8wp6y/a_weechat_irc_client_encryption_system_attempt/)
-- url: https://git.sr.ht/~eau/wic
+## [9][GraphQL and Authorization](https://www.reddit.com/r/golang/comments/i9drqp/graphql_and_authorization/)
+- url: https://www.reddit.com/r/golang/comments/i9drqp/graphql_and_authorization/
 ---
-
-## [4][Recently started learning Go, and can't help wonder any good mature Packages or Frameworks for GUI development using Go, particularly for Windows? How about Linux?](https://www.reddit.com/r/golang/comments/i8gjol/recently_started_learning_go_and_cant_help_wonder/)
-- url: https://www.reddit.com/r/golang/comments/i8gjol/recently_started_learning_go_and_cant_help_wonder/
+I am using gqlgen and I was wondering if any of you guys have experience implementing authorization (not authentication) with gqlgen or any other Go based graphql library? If so, which layer did you put that logic in? I was thinking of using Casbin to help with the authorization process, but I don't know if I should put my logic in a middleware, context, or elsewhere. Any examples would be greatly appreciated.
+## [10][Can anyone help with golang.org/x/crypto/ssh?](https://www.reddit.com/r/golang/comments/i9i5i5/can_anyone_help_with_golangorgxcryptossh/)
+- url: https://www.reddit.com/r/golang/comments/i9i5i5/can_anyone_help_with_golangorgxcryptossh/
 ---
-Thank you for taking the time.
-## [5][Given a multipart upload of an array of video clips, how can I merge them into one video?](https://www.reddit.com/r/golang/comments/i8wnck/given_a_multipart_upload_of_an_array_of_video/)
-- url: https://www.reddit.com/r/golang/comments/i8wnck/given_a_multipart_upload_of_an_array_of_video/
----
+Hey guys, it's not often that I ask questions here, but this time, I'm lost.
 
-## [6][Introduce a tool to do code coverage collecting for the API or e2e tests more easily](https://www.reddit.com/r/golang/comments/i8v5ad/introduce_a_tool_to_do_code_coverage_collecting/)
-- url: https://www.reddit.com/r/golang/comments/i8v5ad/introduce_a_tool_to_do_code_coverage_collecting/
----
-Open Source: [https://github.com/qiniu/goc](https://github.com/qiniu/goc)
+So, I have to make an app that (in the background) connects to an SSH session, starts a shell, runs some commands, gets the whole output back and somehow deals with it.
 
-`Goc` uses `go tool cover` to add statements counters into the source code, and what's more, it also injects HTTP APIs to aggregate all the counters, which makes it easily to pull coverage data from the applications under test at runtime. 
+The problem is, the server to which I am connecting can be rather slow in responding and simply cuts off the output if I'm going ahead and entering new commands without waiting for the output of the previous ones.
 
-Enjoy and feel free to leave comments if you have any questions.
-## [7][Should I use net/http when deploying?](https://www.reddit.com/r/golang/comments/i8x1qc/should_i_use_nethttp_when_deploying/)
-- url: https://www.reddit.com/r/golang/comments/i8x1qc/should_i_use_nethttp_when_deploying/
----
-Newbie question here. So far I did majority of my "web" development using django. I'm used to things like WSGI. I'm wondering whether I should rely on application servers like gunicorn or uwsgi and point my webserver (nginx instance) to them as well when writing apps with golang? Alternatively, can I just use net/http directly and use nginx as a reverse proxy and a load balancer instead? Is the latter a production ready solution and something that is commonly used?
-## [8][Go and JSON encoding/decoding - Tit Petric](https://www.reddit.com/r/golang/comments/i8z0sy/go_and_json_encodingdecoding_tit_petric/)
-- url: https://scene-si.org/2020/08/13/go-and-json-encoding-decoding/
----
-
-## [9][How to run a command on a remote container and get STDOUT?](https://www.reddit.com/r/golang/comments/i8yim7/how_to_run_a_command_on_a_remote_container_and/)
-- url: https://www.reddit.com/r/golang/comments/i8yim7/how_to_run_a_command_on_a_remote_container_and/
----
-Hello. I'm trying to run a command on a remote  container and get the output stream on my local machine, in a secure way.
-
-My first thought was to simply run ssh + the command. That would be secure, but I'm not sure how I would authorize the user who's running the remote command such that they can only execute this command and not do anything else on the running container.
-
-So my next thought was, could I set up an RPC server and somehow stream the Stdout back to the client for the duration of the running program that was called? Of course the server would authorise the client through OAuth or something similar. 
-
-I'm newer to Golang and mostly dealing with web applications day to day, so any help here would be appreciated. Thank you!
-## [10][Clean API example with model injection and access policies](https://www.reddit.com/r/golang/comments/i8vpvl/clean_api_example_with_model_injection_and_access/)
-- url: https://gist.github.com/philippta/a9fac29dccecd88fbfca643b5e5b7b68
----
-
+Is there some way to wait until the server sends me the full response for a command in shell and only then continuing with another command? Any insights on this would be very appreaciated!

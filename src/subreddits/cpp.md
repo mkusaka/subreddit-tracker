@@ -56,7 +56,121 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][Updates in Grisu-Exact](https://www.reddit.com/r/cpp/comments/i8pgzc/updates_in_grisuexact/)
+## [2][CppCast: Modern C++ for Absolute Beginners](https://www.reddit.com/r/cpp/comments/i9dilw/cppcast_modern_c_for_absolute_beginners/)
+- url: https://cppcast.com/modern-cpp-absolute-beginners/
+---
+
+## [3][Boost 1.74 is out](https://www.reddit.com/r/cpp/comments/i9i4vi/boost_174_is_out/)
+- url: https://www.boost.org/users/history/version_1_74_0.html
+---
+
+## [4][What are the best resources for learning cpp](https://www.reddit.com/r/cpp/comments/i9l4ko/what_are_the_best_resources_for_learning_cpp/)
+- url: https://www.reddit.com/r/cpp/comments/i9l4ko/what_are_the_best_resources_for_learning_cpp/
+---
+I'm trying to learn cpp but don't know how to also I've already learned python so will that help
+## [5][Order of functions in a translation unit and compiler optimization](https://www.reddit.com/r/cpp/comments/i9ivfs/order_of_functions_in_a_translation_unit_and/)
+- url: https://www.reddit.com/r/cpp/comments/i9ivfs/order_of_functions_in_a_translation_unit_and/
+---
+Consider this:
+
+1)
+
+    void foo() { some short code }
+    (...)
+    void bar() { foo(); }
+
+Typically, a modern C++ compiler will inline foo() inside bar()
+
+But if we have this:
+
+2)
+
+    void foo();
+    void bar() { foo(); }
+    (...)
+    void foo() { some short code }
+
+will the same happen? (in ancient times, this did not happen).
+## [6][[CppCon] 2020 Back to Basics Track announced](https://www.reddit.com/r/cpp/comments/i90svg/cppcon_2020_back_to_basics_track_announced/)
+- url: https://cppcon.org/b2b2020/
+---
+
+## [7][Editable Flow Chart for choosing Containers / Data Structures](https://www.reddit.com/r/cpp/comments/i9lzdw/editable_flow_chart_for_choosing_containers_data/)
+- url: https://www.reddit.com/r/cpp/comments/i9lzdw/editable_flow_chart_for_choosing_containers_data/
+---
+## Summary
+
+After stumbling upon this C++ Container Flow Chart on stackoverflow [here](https://stackoverflow.com/questions/471432/in-which-scenario-do-i-use-a-particular-stl-container/22671607#22671607), I created an editable version of the Flow Chart after realizing no editable version currently exist.
+
+## Download
+
+Download the Editable Container Flow Chart [here](https://github.com/parkershamblin/container-flow-chart#Download).
+
+## Request for Help
+
+I'm reaching out to the Python/C++ community because I need help with creating a Python version of the flow chart. I’m new to C++ and I could use some help from community members who are experienced in Python and C++.
+
+I know there is no perfect mapping between C++ and Python, but I’m confident we could complete 70-75% of the mappings successfully and build something valuable for the Python community.
+
+## Contributions
+
+Please submit your improvements/modifications using this [GitHub Repository](https://github.com/parkershamblin/container-flow-chart). I will be actively reviewing the Repository for any new pull request and updating the Repository frequently. If you need any help with downloading or modifying the Flow Chart please message me anytime. Thanks guys.
+## [8][Reflection library for C/C++ (no RTTI)](https://www.reddit.com/r/cpp/comments/i9fi7i/reflection_library_for_cc_no_rtti/)
+- url: https://www.reddit.com/r/cpp/comments/i9fi7i/reflection_library_for_cc_no_rtti/
+---
+Link to the project: [https://github.com/flecs-hub/flecs-meta](https://github.com/flecs-hub/flecs-meta)
+
+flecs.meta is a reflection library that lets you import type definitions without code generation or manually describing field names. A simple example:
+
+    /* ECS_STRUCT macro captures type information */
+    ECS_STRUCT(Position, {
+        float x;
+        float y;
+    });
+    
+    int main(int argc, char *argv[]) {
+        // Initialize
+        flecs::world world;
+        flecs::import&lt;flecs::components::meta&gt;(world);
+    
+        // Register reflection data for Position
+        flecs::meta&lt;Position&gt;(world);
+    
+        // Use it!
+        Position p{10, 20};
+        std::cout &lt;&lt; flecs::pretty_print(world, p) &lt;&lt; std::endl;
+    }
+
+Output:
+
+    {x = 10, y = 20} 
+
+The library has Flecs as a dependency, but does not require applications to be written in Flecs. A JSON serializer written for the library also exists: [https://github.com/flecs-hub/flecs-json](https://github.com/flecs-hub/flecs-json)
+
+Because of how the library works, it can only be used for trivial C++ types(!)
+## [9][Any Free courses for begginers ?](https://www.reddit.com/r/cpp/comments/i9jh2r/any_free_courses_for_begginers/)
+- url: https://www.reddit.com/r/cpp/comments/i9jh2r/any_free_courses_for_begginers/
+---
+
+## [10][container library for type and non-type template parameter packs](https://www.reddit.com/r/cpp/comments/i92fht/container_library_for_type_and_nontype_template/)
+- url: https://www.reddit.com/r/cpp/comments/i92fht/container_library_for_type_and_nontype_template/
+---
+I have been working on a library that adds container functionality to template parameter packs. A couple examples below but it has a lot more functionality than these two.
+
+```
+
+using example = std::tuple&lt;int, short, float, long, float, bool, int, short, float, long, float, bool&gt;;
+
+using example_as_pointers = ext::type_transform_t&lt;ext::type_begin&lt;example&gt;, ext::type_end&lt;example&gt;, std::add_pointer&gt;;
+
+using tuple_binder = ext::type_bind&lt;std::tuple, int, ext::type_placeholder&lt;1&gt;, float, ext::type_placeholder&lt;3&gt;, short, ext::type_placeholder&lt;2&gt;&gt;;
+
+using bound_tuple = tuple_binder::template type&lt;long, char, unsigned long&gt;; // output std::tuple&lt;int, long, float, unsigned long, short, char&gt;
+
+```
+
+It essentially implements the iterator, algorithm, and functional libraries for compile time template parameter packs. It's undocumented  but I am using it in projects at my employer. My question is would it be worth documenting and adding robust testing for sharing with the community. I don't want to waste my time if this is something that nobody will use.
+## [11][Updates in Grisu-Exact](https://www.reddit.com/r/cpp/comments/i8pgzc/updates_in_grisuexact/)
 - url: https://www.reddit.com/r/cpp/comments/i8pgzc/updates_in_grisuexact/
 ---
 Grisu-Exact is a float-to-string conversion algorithm with
@@ -73,58 +187,6 @@ Here are some updates:
 
 (2) I developed a string-to-float conversion algorithm using a similar (but simpler) idea, and had a joint-test of it with Grisu-Exact for every possible \`float\`'s. It turned out that for every input data, feeding the data into Grisu-Exact and then into the reverse algorithm correctly generated the input data itself.  Hence, I'm pretty confident about the correctness of Grisu-Exact.
 
-(3) The paper ([https://github.com/jk-jeon/Grisu-Exact/blob/master/other\_files/Grisu-Exact.pdf](https://github.com/jk-jeon/Grisu-Exact/blob/master/other_files/Grisu-Exact.pdf)) explaining the algorithm now includes the explanation on the improved min-max Euclid algorithm. Compared to the original min-max  Euclid algorithm developed by Adams, this improved algorithm produces the exact minimum and maximum not like the original one, has less preconditions, and at the same time runs much faster.
+(3) The paper ([https://github.com/jk-jeon/Grisu-Exact/blob/master/other\_files/Grisu-Exact.pdf](https://github.com/jk-jeon/Grisu-Exact/blob/master/other_files/Grisu-Exact.pdf)) explaining the algorithm now includes the explanation on the improved min-max Euclid algorithm. Compared to the original min-max  Euclid algorithm developed by Adams, this improved algorithm produces the exact minimum and maximum not like the original one, has fewer preconditions, and at the same time runs much faster.
 
 Please have a look at the repository [https://github.com/jk-jeon/Grisu-Exact](https://github.com/jk-jeon/Grisu-Exact) if you are interested!
-## [3][std::atomic_ref is awesome](https://www.reddit.com/r/cpp/comments/i8ckxr/stdatomic_ref_is_awesome/)
-- url: https://www.reddit.com/r/cpp/comments/i8ckxr/stdatomic_ref_is_awesome/
----
-I only recently discovered that gcc 10 supports std::atomic_ref and I’ve been playing around with it. I have to say, it might be in my top 5 favorite C++20 features. But it begs the question: before std::atomic_ref, was there a way to atomically modify a variable of non-atomic type in-place? I don’t really do lock-free programming in my every-day life, so I haven’t really ever had to think about it, but I’m curious. Also Jason Turner if you’re reading this please consider std::atomic_ref for a C++ Weekly episode, maybe there are other people who also slept on this one.
-## [4][What does "public class LSFR" in Java translates to cpp?](https://www.reddit.com/r/cpp/comments/i8zs1p/what_does_public_class_lsfr_in_java_translates_to/)
-- url: https://www.reddit.com/r/cpp/comments/i8zs1p/what_does_public_class_lsfr_in_java_translates_to/
----
-
-## [5][No more plain old data](https://www.reddit.com/r/cpp/comments/i8a5xv/no_more_plain_old_data/)
-- url: https://mariusbancila.ro/blog/2020/08/10/no-more-plain-old-data/
----
-
-## [6][Closer to the Edge: Testing Compilers More Thoroughly by Being Less Conservative About Undefined Behaviour](https://www.reddit.com/r/cpp/comments/i8hl4x/closer_to_the_edge_testing_compilers_more/)
-- url: https://srg.doc.ic.ac.uk/files/papers/csmithedge-ase-nier-20.pdf
----
-
-## [7][Feasibility of non-ABI breaking, but syntax breaking proposals](https://www.reddit.com/r/cpp/comments/i8hypo/feasibility_of_nonabi_breaking_but_syntax/)
-- url: https://www.reddit.com/r/cpp/comments/i8hypo/feasibility_of_nonabi_breaking_but_syntax/
----
-Have there ever been any proposals that suggest breaking syntactical compatibility, but have no effect on the ABI? If not, would it possible for something like the following rule to pass in some future standard (note: I do realize `final` does not imply override)?
-
-&gt;All overriding virtual methods must have a `final` or `override` specifier.
-
-Basically this would mean that all currently working projects would not only have to modify their own code, but also all external dependency header files as part of some pre-build step. However, if all virtual methods just had the `override` specifier slapped on to them, it would be still compatible ABI-wise (I believe), even though the textual representation of the code would change. It would not impact the already compiled objects/libraries, nor would it necessarily force the 3rd party to release a new version of the artifacts (a frequent argument againts ABI breaks). This would mean some work would have to be done when upgrading, but it would be a one time thing on each upgraded project (i.e. creation of a pre-build script for header file patching).
-
-I realize that there is already some work in progress regarding epochs, but that's a much more ambitious idea. I'm suggesting a blanket removal of some language features (in the above example, making override optional) without any file/module/TU-based discriminator mechanism.
-
-Another thing this could be applicable to is the possibility of disallowing non-function-pointer and non-pointer-to-array variable declarations with parentheses, which was the source of plenty of discussion twice in the past month ([This comment thread](https://www.reddit.com/r/cpp/comments/ht93d5/a_lib_for_adding_a_stacktrace_to_every_c/fyg2cfb?utm_source=share&amp;utm_medium=web2x) and [This post](https://www.reddit.com/r/cpp/comments/i7v7yl/why_stdunique_lock_still_isnt_nodiscard/)) and just creates a gateway for nasty bugs only because of (basically) forced backwards compatibility.
-## [8][recpp, a neither user-friendly nor rocket science tool to generate c++ pseudo code annotated with c++ guideline references](https://www.reddit.com/r/cpp/comments/i8n2c9/recpp_a_neither_userfriendly_nor_rocket_science/)
-- url: https://github.com/kenavolic/recpp
----
-
-## [9][toml++ v2.1.0 released](https://www.reddit.com/r/cpp/comments/i7za0j/toml_v210_released/)
-- url: https://marzer.github.io/tomlplusplus/
----
-
-## [10][Why std::unique_lock still isn't [[nodiscard]]?](https://www.reddit.com/r/cpp/comments/i7v7yl/why_stdunique_lock_still_isnt_nodiscard/)
-- url: https://www.reddit.com/r/cpp/comments/i7v7yl/why_stdunique_lock_still_isnt_nodiscard/
----
-The following code: [https://godbolt.org/z/4ovWhv](https://godbolt.org/z/4ovWhv)
-
-Is most likely a bug, if you find it somewhere in the code base.
-
-Now, [p1771r1](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1771r1.pdf) introduced a  `[[nodiscard]]` for constructors. The change was  applied retroactively to previously published C++ standards. 
-
-Shouldn't both unique\_lock and lock\_guard, as well as other RAII wrappers, be marked `[[nodiscard]]`?  
-
-Is there an ongoing proposal to do that, and is there a chance for it to be retroactively applied? It seems like a bug that's way too easy to make, I did it myself a few years ago and later seen it in code reviews of other people. I believe it needs attention.
-## [11][AddressSanitizer for Windows: x64 and Debug Build Support | C++ Team Blog](https://www.reddit.com/r/cpp/comments/i7iydj/addresssanitizer_for_windows_x64_and_debug_build/)
-- url: https://devblogs.microsoft.com/cppblog/asan-for-windows-x64-and-debug-build-support/
----
-

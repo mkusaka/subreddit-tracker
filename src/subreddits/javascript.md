@@ -85,84 +85,43 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][V2.0 of my fully online procedural terrain generator, Terrain Builder is out! Built in Javascript and React, it now features Real Time terrain generation on the GPU and a bunch of new features! Check it out if you liked my first post about the 1.0 release. Thanks :)](https://www.reddit.com/r/javascript/comments/i8el06/v20_of_my_fully_online_procedural_terrain/)
-- url: https://github.com/FarazzShaikh/Terrain-Builder/tree/2.0.0
+## [3][MSW: Award-winning API mocking library that intercepts requests using Service Worker API](https://www.reddit.com/r/javascript/comments/i9j303/msw_awardwinning_api_mocking_library_that/)
+- url: https://mswjs.io/
 ---
 
-## [4][Best Resources To Learn JavaScript As A Beginner 🌟](https://www.reddit.com/r/javascript/comments/i8yc10/best_resources_to_learn_javascript_as_a_beginner/)
-- url: https://catalins.tech/best-resources-to-learn-javascript-as-a-beginner-ckdr7cmma04ehl9s1dq85cr4i
+## [4][A full PERN stack + typescript boilerplate v1.0](https://www.reddit.com/r/javascript/comments/i9jjpf/a_full_pern_stack_typescript_boilerplate_v10/)
+- url: https://github.com/nadavpodjarski/pern-typescript-boilerplate
 ---
 
-## [5][GraphQL playground with TypeScript, TypeORM, codegen and many other goodies](https://www.reddit.com/r/javascript/comments/i8z6yt/graphql_playground_with_typescript_typeorm/)
+## [5][9 Javascript Books to learn JS in under 3 weeks](https://www.reddit.com/r/javascript/comments/i9j1i1/9_javascript_books_to_learn_js_in_under_3_weeks/)
+- url: https://dev.to/courseprobe/9-javascript-books-to-learn-js-in-under-3-weeks-5fjg
+---
+
+## [6][TypeScript Exercises: Now interactive and solutions are included!](https://www.reddit.com/r/javascript/comments/i92aq1/typescript_exercises_now_interactive_and/)
+- url: https://typescript-exercises.github.io/
+---
+
+## [7][Exploring Unit and Integration Testing in Redux Saga](https://www.reddit.com/r/javascript/comments/i9jor9/exploring_unit_and_integration_testing_in_redux/)
+- url: https://medium.com/swlh/exploring-unit-and-integration-testing-in-redux-saga-41af34d82033
+---
+
+## [8][Node.js Promise reject use case survey](https://www.reddit.com/r/javascript/comments/i9lqdr/nodejs_promise_reject_use_case_survey/)
+- url: https://medium.com/@nodejs/node-js-promise-reject-use-case-survey-98e3328340c9
+---
+
+## [9][GraphQL playground with TypeScript, TypeORM, codegen and many other goodies](https://www.reddit.com/r/javascript/comments/i8z6yt/graphql_playground_with_typescript_typeorm/)
 - url: https://github.com/lucassus/bookshelf
 ---
 
-## [6][Storybook 6.0: New workflows + 100s of improvements](https://www.reddit.com/r/javascript/comments/i8faqy/storybook_60_new_workflows_100s_of_improvements/)
-- url: https://medium.com/storybookjs/storybook-6-0-1e14a2071000
+## [10][Visual Studio Code July 2020](https://www.reddit.com/r/javascript/comments/i9534o/visual_studio_code_july_2020/)
+- url: https://code.visualstudio.com/updates/v1_48
 ---
 
-## [7][Wrote an article on closure, with an easy to understand example.](https://www.reddit.com/r/javascript/comments/i8w927/wrote_an_article_on_closure_with_an_easy_to/)
-- url: https://dev.to/reubengt/a-simple-example-i-use-to-remember-what-a-closure-is-1ap2
+## [11][MongoDB Simplified Part 1: What, Why, and How?](https://www.reddit.com/r/javascript/comments/i9gkqp/mongodb_simplified_part_1_what_why_and_how/)
+- url: https://iamshadmirza.com/mongodb-simplified-part-1-what-why-and-how-ckdk9gmqv031cz2s12bqz8r1c
 ---
 
-## [8][Re-implementing document.execCommand()](https://www.reddit.com/r/javascript/comments/i8zuu7/reimplementing_documentexeccommand/)
-- url: https://medium.com/@david.dalbusco/reimplementing-document-execcommand-6ffc33a80f02
----
-
-## [9][[AskJS] Can somebody explain *another* extremely weird and unintuitive behavior of js (regex related)](https://www.reddit.com/r/javascript/comments/i8z4mq/askjs_can_somebody_explain_another_extremely/)
-- url: https://www.reddit.com/r/javascript/comments/i8z4mq/askjs_can_somebody_explain_another_extremely/
----
-Hello fellow devs!
-
-So yesterday I spent some time wondering if I am loosing my mind.  
-  
-Depending on if I evaluated a regex even or odd times, the result flipped,   
-leading to me weirding out about js once more.  
-
-
-Here is my code example I used in the chrome console to reproduce the behavior. 
-  
- 
-    CHROME CONSOLE
-    var re = /^jsWTF$/g // or var re = new RegExp( /^jsWTF$/g), same result
-    re.test("jsWTF")       
-    &gt; true
-    re.test("jsWTF")
-    &gt; false
-    re.test("jsWTF")
-    &gt; true
-    re.test("jsWTF")
-    &gt; false
-
-You'll see the result flips between ```true``` and ```false``` with every evaluation.  
-In the Firefox console, the expression gets conveniently evaluated immediately after writing the ```re.test("jsWTF")``` and is shown as preview, so after pressing enter, the wrong result is returned everytime.
-
- 
-    FIREFOX CONSOLE 
-    var re = /^jsWTF$/g // or var re = new RegExp( /^jsWTF$/g), same result
-    re.test("jsWTF")       
-    &gt; false
-    re.test("jsWTF")
-    &gt; false
-    re.test("jsWTF")
-    &gt; false
-    re.test("jsWTF")
-    &gt; false
- 
-
-I am sure there is some kind of ***js-logical*** explanation for this, and I am extremely curious about it!  
-Can somebody point me in the right direction?  
-
-Thanks in advance!!
-## [10][Using a weather API to assess daily road risk based on the current weather conditions on your route](https://www.reddit.com/r/javascript/comments/i8bipq/using_a_weather_api_to_assess_daily_road_risk/)
-- url: https://developer.climacell.co/blog/using-a-weather-api-to-assess-daily-road-risk
----
-
-## [11][Storybook Facelift for StorybookJS 6.0](https://www.reddit.com/r/javascript/comments/i8wncu/storybook_facelift_for_storybookjs_60/)
-- url: https://www.npmjs.com/package/storybook-facelift
----
-
-## [12][Angular ag-grid quickFilter](https://www.reddit.com/r/javascript/comments/i8vus9/angular_aggrid_quickfilter/)
-- url: /r/angularjs/comments/i8vj9i/angular_aggrid_quickfilter/
+## [12][Was introduced to ink last week and LOVE it, so I wrote a command router for it!](https://www.reddit.com/r/javascript/comments/i98q3w/was_introduced_to_ink_last_week_and_love_it_so_i/)
+- url: https://github.com/LeeCheneler/ink-command-router
 ---
 

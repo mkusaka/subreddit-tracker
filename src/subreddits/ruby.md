@@ -1,9 +1,39 @@
 # ruby
-## [1][How environment check works in Ruby on Rails?](https://www.reddit.com/r/ruby/comments/i8uipt/how_environment_check_works_in_ruby_on_rails/)
+## [1][12 ways to call a method in Ruby](https://www.reddit.com/r/ruby/comments/i9hvjj/12_ways_to_call_a_method_in_ruby/)
+- url: https://www.notonlycode.org/12-ways-to-call-a-method-in-ruby/
+---
+
+## [2][Is this perfectly legal to do in Ruby? (Recently switched from PHP to Ruby/Sinatra)](https://www.reddit.com/r/ruby/comments/i98y7u/is_this_perfectly_legal_to_do_in_ruby_recently/)
+- url: https://www.reddit.com/r/ruby/comments/i98y7u/is_this_perfectly_legal_to_do_in_ruby_recently/
+---
+Is this perfectly legal to do in Ruby? (Recently switched from PHP to Ruby/Sinatra)
+
+Then call `ClientHelper.get_instance` whenever I need a client anywhere. So that I won't be establishing duplicate new connections to an API all the time. and just use one.
+
+    class ClientHelper
+      
+      def initialize
+        if @client == nil
+          @client = establish_new_connection(ENV['TOKEN'])
+        end
+      end
+    
+      def get_instance
+        @client
+      end
+    
+    end
+## [3][Updated to Ubuntu 20.04, can't install gems without root access](https://www.reddit.com/r/ruby/comments/i98wok/updated_to_ubuntu_2004_cant_install_gems_without/)
+- url: https://www.reddit.com/r/ruby/comments/i98wok/updated_to_ubuntu_2004_cant_install_gems_without/
+---
+So idk what happened. I updated to Ubuntu 20.04 and then I wanted to learn mechanize. Tried installing it and it said I don't have the write permissions for /var/lib/gems/2.7.0 directory. 
+
+Now to install gems I have to prefix sudo, what fixes are there for this?
+## [4][How environment check works in Ruby on Rails?](https://www.reddit.com/r/ruby/comments/i8uipt/how_environment_check_works_in_ruby_on_rails/)
 - url: https://medium.com/rubycademy/how-environment-check-works-in-ruby-on-rails-4cfbd0434605
 ---
 
-## [2][Error in Ruby Shoes When Trying to Run App](https://www.reddit.com/r/ruby/comments/i8ub0h/error_in_ruby_shoes_when_trying_to_run_app/)
+## [5][Error in Ruby Shoes When Trying to Run App](https://www.reddit.com/r/ruby/comments/i8ub0h/error_in_ruby_shoes_when_trying_to_run_app/)
 - url: https://www.reddit.com/r/ruby/comments/i8ub0h/error_in_ruby_shoes_when_trying_to_run_app/
 ---
 I'm getting the following error when I'm trying to run my Ruby Shoes app:
@@ -27,20 +57,20 @@ I'm getting the following error when I'm trying to run my Ruby Shoes app:
 **/Applications/Shoes.app/Contents/MacOS/lib/shoes.rb:139:in \`show\_selector'**
 
 **/Applications/Shoes.app/Contents/MacOS/lib/shoes.rb:169:in \`block (4 levels) in splash'**
-## [3][HexaPDF 0.12.0 released - With support for interactive forms and a CLI command for filling forms](https://www.reddit.com/r/ruby/comments/i8fmri/hexapdf_0120_released_with_support_for/)
-- url: https://hexapdf.gettalong.org/news/2020/hexapdf-0-12-0-acroform.html
----
-
-## [4][How to build a one-time passcode protected conference line with Twilio Verify and Ruby](https://www.reddit.com/r/ruby/comments/i8owzn/how_to_build_a_onetime_passcode_protected/)
+## [6][How to build a one-time passcode protected conference line with Twilio Verify and Ruby](https://www.reddit.com/r/ruby/comments/i8owzn/how_to_build_a_onetime_passcode_protected/)
 - url: https://www.reddit.com/r/ruby/comments/i8owzn/how_to_build_a_onetime_passcode_protected/
 ---
 Protecting a conference line is one thing, but in writing this tutorial I actually discovered how little work it is to verify a user's phone number (and with a little bit of setup, email) with Twilio Verify. [Check out the post here](https://www.twilio.com/blog/one-time-passcode-protected-conference-line-twilio-verify-ruby) and let me know what you think.
-## [5][First project](https://www.reddit.com/r/ruby/comments/i8ihi8/first_project/)
+## [7][HexaPDF 0.12.0 released - With support for interactive forms and a CLI command for filling forms](https://www.reddit.com/r/ruby/comments/i8fmri/hexapdf_0120_released_with_support_for/)
+- url: https://hexapdf.gettalong.org/news/2020/hexapdf-0-12-0-acroform.html
+---
+
+## [8][First project](https://www.reddit.com/r/ruby/comments/i8ihi8/first_project/)
 - url: https://www.reddit.com/r/ruby/comments/i8ihi8/first_project/
 ---
 So I keep being told that the best way to teach myself the language is to pic projects and learn by doing. The idea that I've had for my first project is just a simple ticker to help keep track of my workout habits.  
 I want it to be two simple buttons, one that +1 to the running total of like days in a row, and one that I can click to clear the total. I punched a few questions into google to try and find some videos or explanations on how to do it, but I can't seem to get anything that describes what I'm looking for. Can anyone help with maybe proper search terms? I don't want to make anyone hold my hand through it, I just want to dig in.
-## [6][Say hello to RuboCop::Packaging! 👋](https://www.reddit.com/r/ruby/comments/i87l2l/say_hello_to_rubocoppackaging/)
+## [9][Say hello to RuboCop::Packaging! 👋](https://www.reddit.com/r/ruby/comments/i87l2l/say_hello_to_rubocoppackaging/)
 - url: https://www.reddit.com/r/ruby/comments/i87l2l/say_hello_to_rubocoppackaging/
 ---
 Hello all,
@@ -54,7 +84,7 @@ And this is how RuboCop::Packaging (https://github.com/utkarsh2102/rubocop-packa
 Please give it a look, let me know what you think about it?  
 In case you find it good, please give it a ⭐, so the Downstream maintainers know that it was worth it!    
 Suggestions and opinions are heartily welcomed! 🤗
-## [7][Learn Ruby Regexp with hundreds of examples and exercises](https://www.reddit.com/r/ruby/comments/i85hm1/learn_ruby_regexp_with_hundreds_of_examples_and/)
+## [10][Learn Ruby Regexp with hundreds of examples and exercises](https://www.reddit.com/r/ruby/comments/i85hm1/learn_ruby_regexp_with_hundreds_of_examples_and/)
 - url: https://www.reddit.com/r/ruby/comments/i85hm1/learn_ruby_regexp_with_hundreds_of_examples_and/
 ---
 Hello!
@@ -76,15 +106,3 @@ I made **all my books free** at the end of March when the pandemic hit my countr
 I’d highly appreciate your feedback. That’s been a major motivating factor to keep writing as well as for improving the content.
 
 Happy learning :)
-## [8][TestBench now enables projects to support MRuby and Ruby at the same time seamlessly](https://www.reddit.com/r/ruby/comments/i7yktf/testbench_now_enables_projects_to_support_mruby/)
-- url: https://twitter.com/realntl/status/1293271193634713601
----
-
-## [9][JRuby 9.2.13.0 Released](https://www.reddit.com/r/ruby/comments/i82f55/jruby_92130_released/)
-- url: https://www.jruby.org/2020/08/03/jruby-9-2-13-0.html
----
-
-## [10][How Sidekiq really works](https://www.reddit.com/r/ruby/comments/i7qj7b/how_sidekiq_really_works/)
-- url: https://pdabrowski.com/articles/how-sidekiq-really-works
----
-

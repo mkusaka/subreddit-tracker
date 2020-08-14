@@ -39,21 +39,185 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][SSO server in rails, is there any gems?](https://www.reddit.com/r/rails/comments/i8vq7h/sso_server_in_rails_is_there_any_gems/)
-- url: https://www.reddit.com/r/rails/comments/i8vq7h/sso_server_in_rails_is_there_any_gems/
+## [3][bjt(bundle jump to), a quick navigation tool for bundle packages like njt](https://www.reddit.com/r/rails/comments/i9hyhx/bjtbundle_jump_to_a_quick_navigation_tool_for/)
+- url: https://www.reddit.com/r/rails/comments/i9hyhx/bjtbundle_jump_to_a_quick_navigation_tool_for/
 ---
-Actually, I'm looking for a way to make my app the SSO server and users will be able to login to other services I made with a single account.
-## [4][Looking for Rails tutor/mentor](https://www.reddit.com/r/rails/comments/i8lzk7/looking_for_rails_tutormentor/)
-- url: https://www.reddit.com/r/rails/comments/i8lzk7/looking_for_rails_tutormentor/
+hi i write rubygem: [bjt](https://github.com/superiorlu/bjt), is a quick navigation for rubygems, if you like it,  star it. :smile:
+## [4][Rendering HTML in text fields](https://www.reddit.com/r/rails/comments/i9i52q/rendering_html_in_text_fields/)
+- url: https://www.reddit.com/r/rails/comments/i9i52q/rendering_html_in_text_fields/
 ---
-I'm currently building an app for a friend, which I'd like to eventually turn into a multi-tenant SaaS app. I'm self-taught through online tutorials, so I've been able to make decent progress. However, I'm starting to hit a wall with certain features.
+Although I think it's not that much of a rails related question, but I ask it here anyway :P
 
-I plan to tackle these features over the next few weeks: multi-tenancy, setting up robust 3rd party API integrations (Stripe, Mailgun), background jobs, and deployment beyond Heroku.
+I have created a very simple model :
 
-I'm looking for someone that is able to meet once a week via Zoom and do short PR reviews async during the week.
+    rails g scaffold Blog title:string text:text
 
-Happy to pay a reasonable weekly or monthly fee.
-## [5][Question about text encryption in Rails](https://www.reddit.com/r/rails/comments/i8zp1u/question_about_text_encryption_in_rails/)
+In `views` it includes a form, and of course it has two inputs. When I type something like:
+
+    &lt;p&gt; Hello! &lt;/p&gt;
+    &lt;p&gt; This is my today's post &lt;/p&gt;
+
+it doesn't render it to a proper HTML file and no surprise. I'm just curious, is there any ways to force the HTML rendering to textareas in ERB?
+## [5][Breaking Down Test-Driven Development (TDD) Free Lunch and Learn Webinar](https://www.reddit.com/r/rails/comments/i991hs/breaking_down_testdriven_development_tdd_free/)
+- url: https://www.reddit.com/r/rails/comments/i991hs/breaking_down_testdriven_development_tdd_free/
+---
+Hi Rubyists! 
+
+Def Method is hosting a free lunch and learn webinar on TDD! Test driving software leads to cleaner code, better design, and fewer bugs. But when your stakeholders push for faster optimization, why is it so important to continue forward with TDD? In our opinion, testing is paramount for the success of a product. 
+
+In this panel discussion featuring Def Method Engineers, panelists will discuss topics including: the proper amount of test coverage, how to know if your unit tests are producing value, the importance of TDD when building a proof of concept, working on legacy software with TDD, and useful practices while test-driving. 
+
+Featuring panelists: Senior Software Engineers Keith Hickman-Perfetti, Jeff Jia, Ben Gross, Mark Simpson. Moderated by: Yisselda Rhoc
+
+RSVP here: [https://www.eventbrite.com/e/breaking-down-test-driven-development-tdd-panel-discussion-tickets-116644287203?aff=Reddit](https://www.eventbrite.com/e/breaking-down-test-driven-development-tdd-panel-discussion-tickets-116644287203?aff=Reddit)
+## [6][50K users](https://www.reddit.com/r/rails/comments/i92ace/50k_users/)
+- url: https://www.reddit.com/r/rails/comments/i92ace/50k_users/
+---
+Hi guys, quick question. For a rails project that is expecting 50k active users (all at the same time), what are your recommendations for a server infrastructure that can widthstand this kind of load? I have already investigated SOA infrastructure. Currently the app is monolithic.
+
+EDIT: Basically it's for a Virtual Fair that a client of ours is asking for. It would have many requests to the database, mainly fetching information for stands like videos, jobs listings, webchat, CV/resume upload, downloading brochures. We had a similar virtual fair early this year and our server started crashing at around 700 active users. We tried vertical scaling but it didn't help.
+## [7][How to create lots of web projects that are copies of each other (90%) but also have some unique elements (10%) in each? And that also support updates](https://www.reddit.com/r/rails/comments/i9fs43/how_to_create_lots_of_web_projects_that_are/)
+- url: https://www.reddit.com/r/rails/comments/i9fs43/how_to_create_lots_of_web_projects_that_are/
+---
+I have a web project in Rails of which I plan to be creating copies and running them all. Let's say, it's a blog. Each blog will be deployed on its own domain and they basically, 90%, will be identical. And around 10% will be unique, custom on each blog.
+
+&amp;#x200B;
+
+Whenever I update the code of 'Blog1' locally, I'll push an update, then I'll log in to the servers of other blogs and do "git pull" to retrieve an update, and rebuild them. Yet, an update won't overwrite the 10% of custom stuff that each blog have.
+
+&amp;#x200B;
+
+Custom stuff will include: js, css, images files, some parts of the pages, names, texts, etc...
+
+&amp;#x200B;
+
+**(1)** How will I organise all that? The amount of js, css, images, etc can very on each blog, therefore I can't simply add "custom\_style.css" to .gitignore
+
+&amp;#x200B;
+
+Saving css, js, image in a database isn't an option, because retrieving them on each request will cost too much.
+
+&amp;#x200B;
+
+Or perhaps, do it somehow statically and \*only once\* at booting a blog, when they'll be retrieved from Sqlite3.
+
+&amp;#x200B;
+
+**(2)** And how would I go about rendering unique parts of html pages? Such as footers, top nav bars. They may or may not, or may be partially different.
+
+&amp;#x200B;
+
+**(3)** All the code itself will identical, at this point, probably. Otherwise, how would I go about code as well? Namely, some blogs would have peaces or whole files of code unique to them. Something similar to plug-in system, I figure.
+
+&amp;#x200B;
+
+P.S. I'm aware of tenant architecture, that's not completely it.
+## [8][Is there a better way for nested relationships?](https://www.reddit.com/r/rails/comments/i93oqh/is_there_a_better_way_for_nested_relationships/)
+- url: https://www.reddit.com/r/rails/comments/i93oqh/is_there_a_better_way_for_nested_relationships/
+---
+Hi, I've done a few tutorials on rails but wanted to jump in as fast as possible just wondering if the following is the rails way or if it can be improved upon?
+
+Pokemon.rb
+
+      belongs_to :generation
+      has_many :pokemon_pokedex_numbers, inverse_of: :pokemon
+      has_many :pokedexes, through: :pokemon_pokedex_numbers
+      has_many :version_groups, through: :pokedexes
+      has_many :versions, through: :version_groups
+    
+      accepts_nested_attributes_for :pokemon_pokedex_numbers, reject_if: :all_blank, allow_destroy: true
+
+Pokedex.rb
+
+      has_many :pokedex_version_groups
+      has_many :version_groups, through: :pokedex_version_groups
+      has_many :pokemon_pokedex_numbers
+      has_many :pokemon, through: :pokemon_pokedex_numbers
+
+PokemonPokedexNumber
+
+      belongs_to :pokemon
+      belongs_to :pokedex
+
+PokedexVersionGroup
+
+      belongs_to :pokedex
+      belongs_to :version_group
+
+VersionGroup.rb
+
+      belongs_to :generation
+      has_one :pokedex_version_group
+      has_one :pokedex, through: :pokedex_version_group
+      has_many :versions
+
+Version.rb
+
+    belongs_to :version_group
+
+Before using the has\_many through another has\_many through in Pokemon I had to loop through pokedexes-&gt;version\_groups-&gt;versions to print each version but I found with the current way the following controller:
+
+      # GET /pokemon
+      def index
+        @pokemon = Pokemon.includes(:versions).all
+      end
+
+eager loads all the tables (6 queries) and I can just loop versions directly on the pokemon.
+
+    pokemon.versions.each
+## [9][new rails migration automatically has status of "up"](https://www.reddit.com/r/rails/comments/i94ahr/new_rails_migration_automatically_has_status_of_up/)
+- url: https://www.reddit.com/r/rails/comments/i94ahr/new_rails_migration_automatically_has_status_of_up/
+---
+Not sure what's happening, but when I create a new rails migration, the status is automatically "up" but when I check the schema, it didn't make the changes.
+
+Have the following versions:
+
+    $ rails -v
+    Rails 5.2.4.3
+    $ ruby -v
+    ruby 2.6.0p0 (2018-12-25 revision 66547) [x86_64-darwin18]
+
+When checking the migration files, previous migrations started with v5.1:
+
+\`class MyMigration &lt; ActiveRecord::Migration\[5.1\]\`
+
+But my new migration has v5.2:
+
+\`class MyOtherMigration &lt; ActiveRecord::Migration\[5.2\]\`
+
+&amp;#x200B;
+
+Edit:
+
+After removing the migration and creating a new migration, I'm getting the following error whenever I try to check status of migrations:
+
+    ERROR:  column "name" of relation "books" already exists (PG::DuplicateColumn)
+
+When I check `schema_migrations`, the new migration timestamp is not listed
+
+When I go into `$ rails c`, and check the Book object, the "name" field is there. My `schema.rb` file does not have the "name" field though. I'm guessing, my previous migration somehow migrated without updating the `schema.rb` file and after removing the migration without performing the "down" action on it made my state like this. I did try running the "down" command before removing the migration, but it didn't work.
+
+&amp;#x200B;
+
+Edit2:
+
+I updated my migration file to both have an "up" and "down" that removes the new field:
+
+    remove_column :books, :name, :string
+
+After saving the file, it somehow migrating it right away. I can now perform things like "`$ rails db:migrate:status`" without getting an error. Checking "`$ rails c`", the new field is removed. I did not explicitly run an "up" or "down" migrate command after saving the migration file. It somehow ran it automatically..
+
+&amp;#x200B;
+
+Edit3: 
+
+Not sure what was happening, but decided just to reset (Warning: this drops the data in db)
+
+    $ rake db:reset
+    $ rails db:migrate
+
+Now I'm back to the state of "up" migrations happening right away and "down" migrations do not work. \*sigh\*
+## [10][Question about text encryption in Rails](https://www.reddit.com/r/rails/comments/i8zp1u/question_about_text_encryption_in_rails/)
 - url: https://www.reddit.com/r/rails/comments/i8zp1u/question_about_text_encryption_in_rails/
 ---
 I want to encrypt the content of a column in a model in Rails. Here's the scenario:
@@ -70,138 +234,17 @@ One silly idea is to redirect the user to an Unlock this Post page where there c
 I don't want to use a gem for this (lockbox or attr\_encrypted). The text can be encrypted with a before\_save callback in the Post model. 
 
 Have you ever ran into a similar issue and If yes, what did you do ?
-## [6][Can anyone help me find the feature I'm thinking of?](https://www.reddit.com/r/rails/comments/i8lspn/can_anyone_help_me_find_the_feature_im_thinking_of/)
-- url: https://www.reddit.com/r/rails/comments/i8lspn/can_anyone_help_me_find_the_feature_im_thinking_of/
+## [11][SSO server in rails, is there any gems?](https://www.reddit.com/r/rails/comments/i8vq7h/sso_server_in_rails_is_there_any_gems/)
+- url: https://www.reddit.com/r/rails/comments/i8vq7h/sso_server_in_rails_is_there_any_gems/
 ---
-Hello! A few months back I swear saw a new Rails feature about auto-expiring keys, However, I can't for the life of me find any reference to it anymore.
-
-It seemed to be intended for things like password resets, were you might want to set a value that only lasts in the database for 15 minutes.
-
-The code looked something like this:
-
-```ruby
-user = User.first
-user.update(password_reset_token: "abcdefg", expiry: 15.minutes) 
-```
-
-Does anyone know of the feature I'm thinking of, and what it's actually called?
-
-Edit: It's called `signed_ids`. https://blog.saeloun.com/2020/05/20/rails-6-1-adds-support-for-signed-ids-to-active-record.html
-## [7][Is it possible to configure an ActiveRecord model to read and write from different database tables?](https://www.reddit.com/r/rails/comments/i8mv31/is_it_possible_to_configure_an_activerecord_model/)
-- url: https://www.reddit.com/r/rails/comments/i8mv31/is_it_possible_to_configure_an_activerecord_model/
+Actually, I'm looking for a way to make my app the SSO server and users will be able to login to other services I made with a single account.
+## [12][Looking for Rails tutor/mentor](https://www.reddit.com/r/rails/comments/i8lzk7/looking_for_rails_tutormentor/)
+- url: https://www.reddit.com/r/rails/comments/i8lzk7/looking_for_rails_tutormentor/
 ---
-I don't mean splitting reads/writes on different databases (e.g. master/replica) and this isn't an STI situation. I'm wondering if there's a way to configure an ActiveRecord model to write to table `A` but read from table `B`. Specifically, table `B` is a readonly postgresql view with a schema that is a superset of table `A`.
+I'm currently building an app for a friend, which I'd like to eventually turn into a multi-tenant SaaS app. I'm self-taught through online tutorials, so I've been able to make decent progress. However, I'm starting to hit a wall with certain features.
 
-I have a model that has certain attributes that are written to the DB, but it also has calculated attributes implemented as instance methods of the Ruby model. Instead of calculating these attributes in Ruby, I want to push these calculations down and implement them in a postgres SQL view instead, primarily so these values can be accessed by other SQL queries/reports.
+I plan to tackle these features over the next few weeks: multi-tenancy, setting up robust 3rd party API integrations (Stripe, Mailgun), background jobs, and deployment beyond Heroku.
 
-Simple example:
+I'm looking for someone that is able to meet once a week via Zoom and do short PR reviews async during the week.
 
-I have a `products` table with two columns, `price` and `weight`.
-
-    create_table "products" do |t|
-      t.decimal "price"
-      t.decimal "weight"
-    end
-
-In the Ruby model, I have a calculated property `price_per_lb`.
-
-    class Product &lt; ApplicationRecord
-      def price_per_lb
-        price / weight
-      end
-    end
-
-I want to move `price_per_lb` to be calculated in SQL instead of Ruby. Using the Scenic gem I would create a view called something like `product_info` that would look like this:
-
-    /* product_info view definition */
-    SELECT *,
-           price / weight AS price_per_lb
-      FROM products;
-
-Then I would remove the `price_per_lb` method from the `Product` model.
-
-For this to work, it seems there needs to be a way to configure the `Product` model to write to the `products` table but read from the `product_info` view so that the `price_per_lb` property is available to the Ruby model.
-
-    class Product &lt; ApplicationRecord
-      read_table :product_info
-      write_table :products
-    end
-
-Is something like this possible? Is there an alternative way of implementing something similar?
-
-Thanks!
-
-Edit: typo
-## [8][Creating multiple objects through one form](https://www.reddit.com/r/rails/comments/i8dl92/creating_multiple_objects_through_one_form/)
-- url: https://www.reddit.com/r/rails/comments/i8dl92/creating_multiple_objects_through_one_form/
----
-I am a beginner rails developer and I am stuck with what seems to be a very specific problem.
-
-I have three tables: User, UserApp, and App.
-
-When a user logs in I want them to have input for 20 apps that they use (netflix, amazon, chase etc.) and each record to be saved in UserApp as you can imagine. I know the simpler way is to just use MongoDB but the client I am working for insisted on using a relational database. 
-
-How do I create such a form where the user can input multiple apps (if the app doesn't already exist on the database then a new app should be created)? Are there any articles or prior posts that I can refer to? Thank you for your help
-## [9]["Most purposeful code I've ever written" - Recruiting Volunteer Developers for Mental Health Project](https://www.reddit.com/r/rails/comments/i8f3ku/most_purposeful_code_ive_ever_written_recruiting/)
-- url: https://www.reddit.com/r/rails/comments/i8f3ku/most_purposeful_code_ive_ever_written_recruiting/
----
-Hello,
-
-I'm a product owner for HeartSupport, a mental health non profit.
-
-* We are recruiting volunteer developers
-* 6-week cycle from 9/1 through 10/15 
-* Help scale mental health support to every platform on the internet
-
-Code base is in Rails, we have an MVP and a team of 3 Rails devs.
-
-[Please visit this page to apply!](https://heartsupport.com/devteam)
-
-\-Nate
-## [10][I curated all the remote job openings from Hacker News who is hiring thread - August](https://www.reddit.com/r/rails/comments/i7pl8b/i_curated_all_the_remote_job_openings_from_hacker/)
-- url: https://www.reddit.com/r/rails/comments/i7pl8b/i_curated_all_the_remote_job_openings_from_hacker/
----
-This list contains 398 remote jobs and you can filter them by location or skills.
-
-Here I would like to share the entire remote jobs list from the big list of opportunities. All these are 100% remote jobs not just allowed to work from home during this crisis. These are 100% remote jobs and will continue to follow that after the crisis.
-
-https://remoteleaf.com/whoishiring.   
-
-Note: Select "ruby" in the skills filter to see ruby/rails dev jobs.
-
-- 100% remote full-time jobs
-- Spent more than 14 hours to curate this information
-## [11][Deploying Rails 6, React, Ruby-2.7.1 via Elastic Beanstalk. Unable to install a later version of nodejs via ebextensions to enable assets:precompile](https://www.reddit.com/r/rails/comments/i7t0js/deploying_rails_6_react_ruby271_via_elastic/)
-- url: https://www.reddit.com/r/rails/comments/i7t0js/deploying_rails_6_react_ruby271_via_elastic/
----
-Webpacker seems to want a nodejs greater then version 8 so I've tried installing it via ebextensions. 
-
-In the application's configuration:
-
-    RAILS_SKIP_ASSET_COMPILATION true
-
-I've stripped down the ebextension's file to jus tonstall nodejs...
-
-    commands:
-      01_node_get:
-        cwd: /tmp
-        command: 'sudo curl --silent --location https://rpm.nodesource.com/setup_13.x | sudo bash -'
-
-      02_node_install:
-        cwd: /tmp
-        command: 'sudo yum -y install nodejs'
-
-I have even tried the commands on the AWS instance but it still insists on installing nodejs 6.17
-
-    % sudo yum remove nodejs
-    % sudo yum clean all
-    % sudo rm /var/cache/yum
-    % cd /tmp
-    % sudo curl --silent --location https://rpm.nodesource.com/setup_13.x | sudo bash -
-    % sudo yum install nodejs
-
-What am I doing wrong. How can I get round this? Any pointers greatly appreciated.
-## [12][Limiting Users from AD with Devise](https://www.reddit.com/r/rails/comments/i7sptq/limiting_users_from_ad_with_devise/)
-- url: https://www.reddit.com/r/rails/comments/i7sptq/limiting_users_from_ad_with_devise/
----
-I have been looking to install Devise into my app to a limited access namespace, but as I look at Devise, I am not seeing if there is a way to limit the users that able to log in. I work for a larger company with a more than substantial AD. I really only want 4-6 people to be able to log in out of the entire AD. Am I approaching this the best way? Is there a better option? Is there an easy way to accomplish this within Devise?
+Happy to pay a reasonable weekly or monthly fee.

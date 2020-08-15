@@ -39,11 +39,38 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][bjt(bundle jump to), a quick navigation tool for bundle packages like njt](https://www.reddit.com/r/rails/comments/i9hyhx/bjtbundle_jump_to_a_quick_navigation_tool_for/)
+## [3][How can I pass a list of allowed value with custom each validator?](https://www.reddit.com/r/rails/comments/ia3rxu/how_can_i_pass_a_list_of_allowed_value_with/)
+- url: https://www.reddit.com/r/rails/comments/ia3rxu/how_can_i_pass_a_list_of_allowed_value_with/
+---
+I have been reading the example from [ActiveModel::EachValidator](https://api.rubyonrails.org/classes/ActiveModel/Validator.html) .
+
+    class TitleValidator &lt; ActiveModel::EachValidator
+      def validate_each(record, attribute, value)
+        record.errors.add attribute, 'must be Mr., Mrs., or Dr.' unless %w(Mr. Mrs. Dr.).include?(value)
+      end
+    end
+    
+    class Person
+      include ActiveModel::Validations
+      attr_accessor :title
+    
+      validates :title, presence: true, title: true
+    end
+
+I understood this example. But how to write the code when I want to pass the list `%w(Mr. Mrs. Dr.)` from client code like: 
+
+    validates :title, title: { in: %w(Mr. Mrs. Dr.) }
+## [4][Autosave simple_form with AJAX timer create.js.erb update.js.erb](https://www.reddit.com/r/rails/comments/ia5kbh/autosave_simple_form_with_ajax_timer_createjserb/)
+- url: https://www.reddit.com/r/rails/comments/ia5kbh/autosave_simple_form_with_ajax_timer_createjserb/
+---
+Greetings, I would like to make it so that my form automatically commits without ruining the experience for the user. I was told that the form should save every 15 seconds or so. Is this possible in a safe manner?
+
+I'm not saving drafts btw. Just the default form itself.
+## [5][bjt(bundle jump to), a quick navigation tool for bundle packages like njt](https://www.reddit.com/r/rails/comments/i9hyhx/bjtbundle_jump_to_a_quick_navigation_tool_for/)
 - url: https://www.reddit.com/r/rails/comments/i9hyhx/bjtbundle_jump_to_a_quick_navigation_tool_for/
 ---
 hi i write rubygem: [bjt](https://github.com/superiorlu/bjt), is a quick navigation for rubygems, if you like it,  star it. :smile:
-## [4][Rendering HTML in text fields](https://www.reddit.com/r/rails/comments/i9i52q/rendering_html_in_text_fields/)
+## [6][Rendering HTML in text fields](https://www.reddit.com/r/rails/comments/i9i52q/rendering_html_in_text_fields/)
 - url: https://www.reddit.com/r/rails/comments/i9i52q/rendering_html_in_text_fields/
 ---
 Although I think it's not that much of a rails related question, but I ask it here anyway :P
@@ -58,7 +85,7 @@ In `views` it includes a form, and of course it has two inputs. When I type some
     &lt;p&gt; This is my today's post &lt;/p&gt;
 
 it doesn't render it to a proper HTML file and no surprise. I'm just curious, is there any ways to force the HTML rendering to textareas in ERB?
-## [5][Breaking Down Test-Driven Development (TDD) Free Lunch and Learn Webinar](https://www.reddit.com/r/rails/comments/i991hs/breaking_down_testdriven_development_tdd_free/)
+## [7][Breaking Down Test-Driven Development (TDD) Free Lunch and Learn Webinar](https://www.reddit.com/r/rails/comments/i991hs/breaking_down_testdriven_development_tdd_free/)
 - url: https://www.reddit.com/r/rails/comments/i991hs/breaking_down_testdriven_development_tdd_free/
 ---
 Hi Rubyists! 
@@ -70,49 +97,13 @@ In this panel discussion featuring Def Method Engineers, panelists will discuss 
 Featuring panelists: Senior Software Engineers Keith Hickman-Perfetti, Jeff Jia, Ben Gross, Mark Simpson. Moderated by: Yisselda Rhoc
 
 RSVP here: [https://www.eventbrite.com/e/breaking-down-test-driven-development-tdd-panel-discussion-tickets-116644287203?aff=Reddit](https://www.eventbrite.com/e/breaking-down-test-driven-development-tdd-panel-discussion-tickets-116644287203?aff=Reddit)
-## [6][50K users](https://www.reddit.com/r/rails/comments/i92ace/50k_users/)
+## [8][50K users](https://www.reddit.com/r/rails/comments/i92ace/50k_users/)
 - url: https://www.reddit.com/r/rails/comments/i92ace/50k_users/
 ---
 Hi guys, quick question. For a rails project that is expecting 50k active users (all at the same time), what are your recommendations for a server infrastructure that can widthstand this kind of load? I have already investigated SOA infrastructure. Currently the app is monolithic.
 
 EDIT: Basically it's for a Virtual Fair that a client of ours is asking for. It would have many requests to the database, mainly fetching information for stands like videos, jobs listings, webchat, CV/resume upload, downloading brochures. We had a similar virtual fair early this year and our server started crashing at around 700 active users. We tried vertical scaling but it didn't help.
-## [7][How to create lots of web projects that are copies of each other (90%) but also have some unique elements (10%) in each? And that also support updates](https://www.reddit.com/r/rails/comments/i9fs43/how_to_create_lots_of_web_projects_that_are/)
-- url: https://www.reddit.com/r/rails/comments/i9fs43/how_to_create_lots_of_web_projects_that_are/
----
-I have a web project in Rails of which I plan to be creating copies and running them all. Let's say, it's a blog. Each blog will be deployed on its own domain and they basically, 90%, will be identical. And around 10% will be unique, custom on each blog.
-
-&amp;#x200B;
-
-Whenever I update the code of 'Blog1' locally, I'll push an update, then I'll log in to the servers of other blogs and do "git pull" to retrieve an update, and rebuild them. Yet, an update won't overwrite the 10% of custom stuff that each blog have.
-
-&amp;#x200B;
-
-Custom stuff will include: js, css, images files, some parts of the pages, names, texts, etc...
-
-&amp;#x200B;
-
-**(1)** How will I organise all that? The amount of js, css, images, etc can very on each blog, therefore I can't simply add "custom\_style.css" to .gitignore
-
-&amp;#x200B;
-
-Saving css, js, image in a database isn't an option, because retrieving them on each request will cost too much.
-
-&amp;#x200B;
-
-Or perhaps, do it somehow statically and \*only once\* at booting a blog, when they'll be retrieved from Sqlite3.
-
-&amp;#x200B;
-
-**(2)** And how would I go about rendering unique parts of html pages? Such as footers, top nav bars. They may or may not, or may be partially different.
-
-&amp;#x200B;
-
-**(3)** All the code itself will identical, at this point, probably. Otherwise, how would I go about code as well? Namely, some blogs would have peaces or whole files of code unique to them. Something similar to plug-in system, I figure.
-
-&amp;#x200B;
-
-P.S. I'm aware of tenant architecture, that's not completely it.
-## [8][Is there a better way for nested relationships?](https://www.reddit.com/r/rails/comments/i93oqh/is_there_a_better_way_for_nested_relationships/)
+## [9][Is there a better way for nested relationships?](https://www.reddit.com/r/rails/comments/i93oqh/is_there_a_better_way_for_nested_relationships/)
 - url: https://www.reddit.com/r/rails/comments/i93oqh/is_there_a_better_way_for_nested_relationships/
 ---
 Hi, I've done a few tutorials on rails but wanted to jump in as fast as possible just wondering if the following is the rails way or if it can be improved upon?
@@ -165,7 +156,7 @@ Before using the has\_many through another has\_many through in Pokemon I had to
 eager loads all the tables (6 queries) and I can just loop versions directly on the pokemon.
 
     pokemon.versions.each
-## [9][new rails migration automatically has status of "up"](https://www.reddit.com/r/rails/comments/i94ahr/new_rails_migration_automatically_has_status_of_up/)
+## [10][new rails migration automatically has status of "up"](https://www.reddit.com/r/rails/comments/i94ahr/new_rails_migration_automatically_has_status_of_up/)
 - url: https://www.reddit.com/r/rails/comments/i94ahr/new_rails_migration_automatically_has_status_of_up/
 ---
 Not sure what's happening, but when I create a new rails migration, the status is automatically "up" but when I check the schema, it didn't make the changes.
@@ -217,7 +208,7 @@ Not sure what was happening, but decided just to reset (Warning: this drops the 
     $ rails db:migrate
 
 Now I'm back to the state of "up" migrations happening right away and "down" migrations do not work. \*sigh\*
-## [10][Question about text encryption in Rails](https://www.reddit.com/r/rails/comments/i8zp1u/question_about_text_encryption_in_rails/)
+## [11][Question about text encryption in Rails](https://www.reddit.com/r/rails/comments/i8zp1u/question_about_text_encryption_in_rails/)
 - url: https://www.reddit.com/r/rails/comments/i8zp1u/question_about_text_encryption_in_rails/
 ---
 I want to encrypt the content of a column in a model in Rails. Here's the scenario:
@@ -234,17 +225,39 @@ One silly idea is to redirect the user to an Unlock this Post page where there c
 I don't want to use a gem for this (lockbox or attr\_encrypted). The text can be encrypted with a before\_save callback in the Post model. 
 
 Have you ever ran into a similar issue and If yes, what did you do ?
-## [11][SSO server in rails, is there any gems?](https://www.reddit.com/r/rails/comments/i8vq7h/sso_server_in_rails_is_there_any_gems/)
-- url: https://www.reddit.com/r/rails/comments/i8vq7h/sso_server_in_rails_is_there_any_gems/
+## [12][How to create lots of web projects that are copies of each other (90%) but also have some unique elements (10%) in each? And that also support updates](https://www.reddit.com/r/rails/comments/i9fs43/how_to_create_lots_of_web_projects_that_are/)
+- url: https://www.reddit.com/r/rails/comments/i9fs43/how_to_create_lots_of_web_projects_that_are/
 ---
-Actually, I'm looking for a way to make my app the SSO server and users will be able to login to other services I made with a single account.
-## [12][Looking for Rails tutor/mentor](https://www.reddit.com/r/rails/comments/i8lzk7/looking_for_rails_tutormentor/)
-- url: https://www.reddit.com/r/rails/comments/i8lzk7/looking_for_rails_tutormentor/
----
-I'm currently building an app for a friend, which I'd like to eventually turn into a multi-tenant SaaS app. I'm self-taught through online tutorials, so I've been able to make decent progress. However, I'm starting to hit a wall with certain features.
+I have a web project in Rails of which I plan to be creating copies and running them all. Let's say, it's a blog. Each blog will be deployed on its own domain and they basically, 90%, will be identical. And around 10% will be unique, custom on each blog.
 
-I plan to tackle these features over the next few weeks: multi-tenancy, setting up robust 3rd party API integrations (Stripe, Mailgun), background jobs, and deployment beyond Heroku.
+&amp;#x200B;
 
-I'm looking for someone that is able to meet once a week via Zoom and do short PR reviews async during the week.
+Whenever I update the code of 'Blog1' locally, I'll push an update, then I'll log in to the servers of other blogs and do "git pull" to retrieve an update, and rebuild them. Yet, an update won't overwrite the 10% of custom stuff that each blog have.
 
-Happy to pay a reasonable weekly or monthly fee.
+&amp;#x200B;
+
+Custom stuff will include: js, css, images files, some parts of the pages, names, texts, etc...
+
+&amp;#x200B;
+
+**(1)** How will I organise all that? The amount of js, css, images, etc can very on each blog, therefore I can't simply add "custom\_style.css" to .gitignore
+
+&amp;#x200B;
+
+Saving css, js, image in a database isn't an option, because retrieving them on each request will cost too much.
+
+&amp;#x200B;
+
+Or perhaps, do it somehow statically and \*only once\* at booting a blog, when they'll be retrieved from Sqlite3.
+
+&amp;#x200B;
+
+**(2)** And how would I go about rendering unique parts of html pages? Such as footers, top nav bars. They may or may not, or may be partially different.
+
+&amp;#x200B;
+
+**(3)** All the code itself will identical, at this point, probably. Otherwise, how would I go about code as well? Namely, some blogs would have peaces or whole files of code unique to them. Something similar to plug-in system, I figure.
+
+&amp;#x200B;
+
+P.S. I'm aware of tenant architecture, that's not completely it.

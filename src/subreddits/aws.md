@@ -1,56 +1,82 @@
 # aws
-## [1][c5ad instances inbound!](https://www.reddit.com/r/aws/comments/i9l3n1/c5ad_instances_inbound/)
-- url: https://www.reddit.com/r/aws/comments/i9l3n1/c5ad_instances_inbound/
+## [1][The scaling latency of Lambda with the cost of EC2?](https://www.reddit.com/r/aws/comments/ia1op0/the_scaling_latency_of_lambda_with_the_cost_of_ec2/)
+- url: https://www.reddit.com/r/aws/comments/ia1op0/the_scaling_latency_of_lambda_with_the_cost_of_ec2/
 ---
-The c5ad instances are in the [price list](https://aws.amazon.com/ec2/pricing/on-demand/), and I was able to "change instance type" to one in the Oregon region. However, when I tried to start the instance, it got stuck in the Pending state. (I got tired of waiting and stopped it.)
+The problem: create a system that can handle thousands of http requests per second. Traffic cycles up and down daily but is always at a high level, and there are unpredictable, massive spikes. Each request is fairly quick and easy to fulfill (basically just forward to Kinesis).
 
-I expect they will fix this, then (if they follow their usual m.o.) there will be an announcement... stay tuned!
+My initial solution used Lambda + API Gateway. It worked great, but the cost of running it ended up being just too much.
 
-**Edit:** I'm running one now!
-## [2][Amazon Braket – Go Hands-On with Quantum Computing](https://www.reddit.com/r/aws/comments/i97yi4/amazon_braket_go_handson_with_quantum_computing/)
-- url: https://aws.amazon.com/blogs/aws/amazon-braket-go-hands-on-with-quantum-computing/
+My current solution uses an App ELB + AutoScaling Group of EC2 (reserved/spot) instances. It works pretty well for the daily sinusoidal cycle, but when the massive traffic spikes occur it doesn't respond nearly fast enough, and requests instantly start failing as the instances become overburdened. The Cloudwatch alarm goes off eventually, then the new instance has to boot up, get registered in the ELB, etc. By the time the new instance is running, the spike has usually mostly calmed down, and the new instance is taken down shortly thereafter.
+
+Is there a way to have my cake and eat it too here? The AG solution is more cost-effective and works 90% of the time, but I feel bad about failing those requests and having to rely on clients retrying them.
+
+Additionally, the AG setup I have is very manual at the moment. Deployment consists of manually launching a new instance with the AMI, deploying to it, saving that as a new AMI, updating the AG to use that going forward, and deploying to live instances. The process is scriptable and that's TODO but still annoying. Are there some better tools to do this with? (I've tried my hand at CloudFormation and I want to stay far away from that oh god)
+## [2][I want to learn cloudformation, docker, kubernetes etc.](https://www.reddit.com/r/aws/comments/ia5x1k/i_want_to_learn_cloudformation_docker_kubernetes/)
+- url: https://www.reddit.com/r/aws/comments/ia5x1k/i_want_to_learn_cloudformation_docker_kubernetes/
 ---
-
-## [3][AWS Step Functions adds updates to ‘choice’ state, global access to context object, dynamic timeouts, result selection, and intrinsic functions to Amazon States Languages](https://www.reddit.com/r/aws/comments/i96png/aws_step_functions_adds_updates_to_choice_state/)
-- url: https://aws.amazon.com/blogs/aws/aws-step-functions-adds-updates-to-choice-state-global-access-to-context-object-dynamic-timeouts-result-selection-and-intrinsic-functions-to-amazon-states-languages/
----
-
-## [4][Hack to support front-line developers - 3rd Annual AWS Hackathon for Good](https://www.reddit.com/r/aws/comments/i9loxh/hack_to_support_frontline_developers_3rd_annual/)
-- url: https://awshackforgood.devpost.com
----
-
-## [5][[S3] Cross-Region replication times increased](https://www.reddit.com/r/aws/comments/i9itjk/s3_crossregion_replication_times_increased/)
-- url: https://www.reddit.com/r/aws/comments/i9itjk/s3_crossregion_replication_times_increased/
----
-Hey! I noticed some time ago that the cross-region replication (Ireland - SP) increased greatly comparatively to last year.  I had an experiment running that uses S3 and I noticed that last year, replication time was around 1 second, then it the beginning of this summer it changed to a bimodal distribution (some around 1 second, some around 25 seconds) and currently it takes over 20 seconds.  
-Has anyone else noticed this effect?  
-Thanks in advance!
-## [6][Hands-on exercise to use Lambda Function with Systems Manager](https://www.reddit.com/r/aws/comments/i9k04z/handson_exercise_to_use_lambda_function_with/)
-- url: http://aws-dojo.com/excercises/excercise13
+I am really confused where and how can I start. I am in last year of my college, companies are coming from placements, really need to gain some real world skills. Guide me out a little here please. I just know how to launch EC2 instances.
+## [3][Amazon S3 Path Deprecation Plan (Deprecate date: Sep 30, 2020)](https://www.reddit.com/r/aws/comments/ia5wy7/amazon_s3_path_deprecation_plan_deprecate_date/)
+- url: https://aws.amazon.com/blogs/aws/amazon-s3-path-deprecation-plan-the-rest-of-the-story/
 ---
 
-## [7][Lock down access to AWS web gui](https://www.reddit.com/r/aws/comments/i9i3xo/lock_down_access_to_aws_web_gui/)
-- url: https://www.reddit.com/r/aws/comments/i9i3xo/lock_down_access_to_aws_web_gui/
+## [4][aw cognito how to see the country of login?](https://www.reddit.com/r/aws/comments/ia66er/aw_cognito_how_to_see_the_country_of_login/)
+- url: https://www.reddit.com/r/aws/comments/ia66er/aw_cognito_how_to_see_the_country_of_login/
 ---
-I'm on a restricted network where only certain websites or ip addresses can be whitelisted. However, I need to use web interface for AWS. But it needs access to randomname.cloudfront.com (and others) domains to work and I think these change regularly. 
+I am fairly new to cognito and I am just wondering how can I check where did the user logged in?
+## [5][Hide my API Endpoints (Serverless)](https://www.reddit.com/r/aws/comments/i9szse/hide_my_api_endpoints_serverless/)
+- url: https://www.reddit.com/r/aws/comments/i9szse/hide_my_api_endpoints_serverless/
+---
+Hey guys,
 
-Whitelisting all of cloudfront is a big security issue.
-Any ideas to lock this down? Is there maybe some website which lists all the IP addresses/domains from amazon which are required for working with the web interface ?
-## [8][A piece on how to use AWS Landing Zone to its best abilities](https://www.reddit.com/r/aws/comments/i9lynv/a_piece_on_how_to_use_aws_landing_zone_to_its/)
-- url: https://caylent.com/optimize-aws-landing-zone
+I'm trying to build a platform using a Serverless Architecture using S3, Lambda and API Gateway.
+
+Now, while this worked great for a hobby project, for an actual production grade project, I cannot have my API Endpoints exposed for obvious reasons. It wouldn't take any half decent programmer more than  5 minutes to build an API Abuse script using Python where they just keep calling it.
+
+API Keys won't do it. Reason: Let's say a new user visits my website and to signup, they need to enter their mobile and recieve an OTP. Now this can be easily exploited causing me to rack up bills for millions of SMS. And I cannot assign an API Key for every unknown user (Again, theoretically, I could but it's pointless)
+
+Any and all suggestions are welcome, thanks !
+## [6][Redshift + Kinesis connectivity issues](https://www.reddit.com/r/aws/comments/ia6jxg/redshift_kinesis_connectivity_issues/)
+- url: https://www.reddit.com/r/aws/comments/ia6jxg/redshift_kinesis_connectivity_issues/
+---
+I set up a kinesis data firehose delivery stream that has a kinesis data stream source and the destination is redshift. The redshift cluster is not publicly accessible and is in a private subnet group. Because of this, the firehose connection to the redshift cluster is failing. I whitelisted the kinesis firehose public IP address in my security group which is also included in the redshift cluster's security group but the connection is still failing. What else should I look at?
+## [7][App sync unique field](https://www.reddit.com/r/aws/comments/ia3uxh/app_sync_unique_field/)
+- url: https://www.reddit.com/r/aws/comments/ia3uxh/app_sync_unique_field/
+---
+Does anyone know how to make a dynamo db field have a unique “constraint” on it?  Haven’t seen anything in the docks. 
+
+Say I have an email field, and I want that field to have only unique values in the table, how would I achieve that?
+## [8][AWS Online Tech Talks for August 2020](https://www.reddit.com/r/aws/comments/i9tufw/aws_online_tech_talks_for_august_2020/)
+- url: https://aws.amazon.com/blogs/aws/aws-online-tech-talks-for-august-2020/
 ---
 
-## [9][[LONG-FORM VIDEO]: Complete AWS DeepRacer -&gt; Evo hardware upgrade.](https://www.reddit.com/r/aws/comments/i9is5d/longform_video_complete_aws_deepracer_evo/)
-- url: https://www.reddit.com/r/aws/comments/i9is5d/longform_video_complete_aws_deepracer_evo/
+## [9][Best Practice - Updating dns record for multiple subdomains when migrating to new ELB](https://www.reddit.com/r/aws/comments/ia38ej/best_practice_updating_dns_record_for_multiple/)
+- url: https://www.reddit.com/r/aws/comments/ia38ej/best_practice_updating_dns_record_for_multiple/
 ---
+Suppose if I have 100s of subdomains like [client1.example.com](https://client1.example.com) [client2.example.com](https://client2.example.com)...etc
+
+All these subdomains are mapped to an ELB's dns name using an alias record, Now in case I want to migrate all my subdomains to new ELB I have to update the alias record for all subdomains using a bash script. So instead of doing this now I am planning to create a new subdomain [my-prod-elb.example.com](https://my-prod-elb.example.com) which is mapped to new elb using alias record and rest of my subdomains will be using this domain as cname record. With this setup i don't have to update all other subdomains when i have to migrate to new subdomain i just only have to change alias record for [my-prod-elb.example.com](https://my-prod-elb.example.com).
+
 &amp;#x200B;
 
-https://reddit.com/link/i9is5d/video/4crpn2j0rxg51/player
-## [10][AWS VPN Client from CLI](https://www.reddit.com/r/aws/comments/i9imtq/aws_vpn_client_from_cli/)
-- url: https://www.reddit.com/r/aws/comments/i9imtq/aws_vpn_client_from_cli/
+* Current setup: [client1.example.com](https://client1.example.com) \&gt; alias record -&gt; elb dns name
+* Planned setup  :    [client1.example.com](https://client1.example.com) \&gt; cname record -&gt; [my-prod-elb.example.com](https://my-prod-elb.example.com) \- &gt; alias record -&gt; elb dns name
+
+Is this a bad practice ? Will it cause dns issues ?
+
+According to aws route53 docs quires to alias records are free but quires to cname records are billable, is this correct ?
+## [10][Unable to import Pandas in AWS Lambda layer](https://www.reddit.com/r/aws/comments/i9wn3i/unable_to_import_pandas_in_aws_lambda_layer/)
+- url: https://www.reddit.com/r/aws/comments/i9wn3i/unable_to_import_pandas_in_aws_lambda_layer/
 ---
-Hi guys, I was wondering if there’s a way to launch the AWS VPN client from CLI and have it automatically connect to the VPC without having to launch the exe and enter user name and password and then click Connect. 
+I uploaded python pandas to Lambda and when I run the Lambda, I see the following error:
 
-I could save the login details in a key store and reference them in the command so it’s secure, just not sure if it would work though. 
+        "errorMessage": "Unable to import module 'lambda_function': C extension: No module named 'pandas._libs.interval' not built. If you want to import pandas from the source directory, you may need to run 'python setup.py build_ext --inplace --force' to build the C extensions first."
 
-Or the only thing I can think of is a macro...just trying to get everything done in a 1-liner rather than a few stepped macro.
+I am really not sure what is supposed to be going on here. But for more context, I created a directory called "python" and then I run the following line on my terminal
+
+        python3.8 -m pip install pandas -t .
+
+I then zip the "python" directory and then create a new layer and upload the zip file.
+
+&amp;#x200B;
+
+Struggling to see where I am following short.

@@ -23,110 +23,67 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/08/11/this-week-in-rust-351/
 ---
 
-## [3][Clap: Faster development with tiny bounties](https://www.reddit.com/r/rust/comments/i9ihh0/clap_faster_development_with_tiny_bounties/)
-- url: https://opencollective.com/clap/updates/faster-development-with-tiny-bounties
+## [3][Nightly stdlib docs now document all keywords!](https://www.reddit.com/r/rust/comments/ia1vlc/nightly_stdlib_docs_now_document_all_keywords/)
+- url: https://www.reddit.com/r/rust/comments/ia1vlc/nightly_stdlib_docs_now_document_all_keywords/
+---
+If you haven't yet noticed, the standard library documentation includes documentation for every [keyword](https://doc.rust-lang.org/stable/std/#keywords).
+
+As of today, the initial documentation for every keyword has been fleshed out, finishing with [unsafe](https://github.com/rust-lang/rust/pull/73943) and closing out the [tracking issue](https://github.com/rust-lang/rust/issues/34601).
+
+I just want to give a congratulations and a huge thanks to everybody who helped write these docs.
+## [4][Frustrated? It's not you, it's Rust.](https://www.reddit.com/r/rust/comments/i9sor7/frustrated_its_not_you_its_rust/)
+- url: https://fasterthanli.me/articles/frustrated-its-not-you-its-rust
 ---
 
-## [4][Core team statement so far; we are sad for our colleagues, Rust will be okay. We'll be posting more in the near future.](https://www.reddit.com/r/rust/comments/i994km/core_team_statement_so_far_we_are_sad_for_our/)
-- url: https://twitter.com/rustlang/status/1294024734804508679
+## [5][Why We’re Bringing Astropad Cross-Platform with Rust](https://www.reddit.com/r/rust/comments/ia3x9q/why_were_bringing_astropad_crossplatform_with_rust/)
+- url: https://astropad.com/why-rust/
 ---
 
-## [5][This Week in Conduit (Matrix Homeserver)](https://www.reddit.com/r/rust/comments/i9kp35/this_week_in_conduit_matrix_homeserver/)
-- url: https://www.reddit.com/r/rust/comments/i9kp35/this_week_in_conduit_matrix_homeserver/
----
-&gt; Conduit is a new implementation of a Matrix homeserver: https://conduit.rs
-
-&gt; Matrix is a secure, private, decentralized, open source messaging platform. Check out https://matrix.org and https://element.io
-
-This week I worked a bit on federation! Last week we were able to query room directories over federation; This week I looked into what's needed to join one of those rooms:
-
-- Resolve room aliases over federation
-- Send make_join request when a user tries to join an unknown room
-- Use make_join response to create send_join request (insert origin, origin_server_ts and add hashes and signatures)
-
-After implementing all those things, I could actually see Conduit's join
-event on Synapse!
-
-Of course a lot more work is needed to make this really work,
-like creating the room on the Conduit side and sending and receiving federation
-transactions, but this is a start.
-
-Other news:
-
-- Docker support (thanks to Weasy, Valkum and Paul)
-- Room upgrade support (almost done, thanks to Faelar)
-
-Thanks to everyone who supports me on [Liberapay](https://liberapay.com/timokoesters) or Bitcoin!
-## [6][Why Rust is a great fit for embedded software](https://www.reddit.com/r/rust/comments/i9hpbh/why_rust_is_a_great_fit_for_embedded_software/)
-- url: https://tweedegolf.nl/blog/39/why-rust-is-a-great-fit-for-embedded-software
+## [6][Checkpoint/restore applications at 15GB/s with criu-image-streamer, written in Rust](https://www.reddit.com/r/rust/comments/i9ynps/checkpointrestore_applications_at_15gbs_with/)
+- url: https://github.com/checkpoint-restore/criu-image-streamer
 ---
 
-## [7]["Much" of the Rust/Wasmtime team hit by layoffs at Mozilla](https://www.reddit.com/r/rust/comments/i8yfwj/much_of_the_rustwasmtime_team_hit_by_layoffs_at/)
-- url: https://twitter.com/tschneidereit/status/1293868141953667074
+## [7][What is the recommended way to serve Rocket applications?](https://www.reddit.com/r/rust/comments/ia5cg9/what_is_the_recommended_way_to_serve_rocket/)
+- url: https://www.reddit.com/r/rust/comments/ia5cg9/what_is_the_recommended_way_to_serve_rocket/
+---
+So there is a built-in web server in Rocket, however, according to the documentation, its TLS support isn't production ready. This makes me wonder, is the built-in web server meant for development purposes only (the same way as PHP has a built-in web server too), or this is meant for production, it's just still under development and not ready for production use?
+
+And if the built-in web server is made for development purposes only, then what is the correct way to serve Rocket web applications? For example, can nginx handle it? Or is there any better solution?
+## [8][Get rustc to emit llvm-bc](https://www.reddit.com/r/rust/comments/ia47lv/get_rustc_to_emit_llvmbc/)
+- url: https://www.reddit.com/r/rust/comments/ia47lv/get_rustc_to_emit_llvmbc/
+---
+I need the llvm bitcode, but the only thing I can get rustc to produce with the --emit=llvm-bc option are object files, which are one step too far in the compilation chain.  The problem occurs when trying to use rustc with cargo to link all crates used in the project.
+
+Any help would be appreceated.
+## [9][A full-fledged Shazam client for Linux, written in Rust](https://www.reddit.com/r/rust/comments/i9rcwa/a_fullfledged_shazam_client_for_linux_written_in/)
+- url: https://github.com/marin-m/SongRec
 ---
 
-## [8][Renom: Unreal Engine 4 Project Renamer](https://www.reddit.com/r/rust/comments/i9jv7s/renom_unreal_engine_4_project_renamer/)
-- url: https://imgur.com/efEzpaX
+## [10][[ANN] Sauron 0.30.0 - introduces node! macro which enables you to write html syntax in the Component's view.](https://www.reddit.com/r/rust/comments/ia3tx9/ann_sauron_0300_introduces_node_macro_which/)
+- url: https://www.reddit.com/r/rust/comments/ia3tx9/ann_sauron_0300_introduces_node_macro_which/
+---
+[Project repo](https://github.com/ivanceras/sauron)
+
+Checkout the example
+[Todomvc with node macro syntax](https://github.com/ivanceras/sauron/blob/master/examples/todomvc-macro-syntax/src/app.rs)
+for the complete usage of `node!` macro.
+
+Alongside with this release is the integration of [markdown syntax](https://github.com/ivanceras/sauron/blob/master/crates/sauron-markdown/src/markdown.rs) which you allows you to parse markdown safely and integrate the parsed Node tree into the Component's `view`.
+
+[Complete Changelog](https://github.com/ivanceras/sauron/blob/master/Changelog.md)
+
+Special thanks to /u/udoprog for the `node!` macro in this release.
+
+
+Contributions are welcome.
+- Documentations: This project needs someone who can rephrase and use a more concise terms for the documentations.
+## [11][Against Glob Imports](https://www.reddit.com/r/rust/comments/i9uvek/against_glob_imports/)
+- url: https://drs.is/post/against-globs/
 ---
 
-## [9][error[E0207]: : the type parameter `...` is not constrained by the impl trait, self type, or predicates](https://www.reddit.com/r/rust/comments/i9jc85/errore0207_the_type_parameter_is_not_constrained/)
-- url: https://www.reddit.com/r/rust/comments/i9jc85/errore0207_the_type_parameter_is_not_constrained/
+## [12][Put some system programming project ideas??](https://www.reddit.com/r/rust/comments/ia6vao/put_some_system_programming_project_ideas/)
+- url: https://www.reddit.com/r/rust/comments/ia6vao/put_some_system_programming_project_ideas/
 ---
-[Playground](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=dccab07178f20db9574655175073f854)
+System programming Project ideas or the concepts that use for developing the system programming application with Rust.
 
-How can I survive that? (without associated types)
-
-    trait GenericTrait&lt;A&gt; {}
-    trait OtherTrait {}
-    
-    // error[E0207]: the type parameter `A` is not constrained
-    // by the impl trait, self type, or predicates
-    impl&lt;T, A&gt; OtherTrait for T
-    where
-        T: GenericTrait&lt;A&gt;
-    {}
-## [10][Oh great power of reddit and its people, please help me find this crate by the description!](https://www.reddit.com/r/rust/comments/i9l302/oh_great_power_of_reddit_and_its_people_please/)
-- url: https://www.reddit.com/r/rust/comments/i9l302/oh_great_power_of_reddit_and_its_people_please/
----
-Hi, lovely people!
-
-I once used _in now deleted project_ a crate that was able to get the file specified by 
-the path and if built in release mode encode the content of that file into the binary, 
-so the end user could have like web assets or configs already in the memory. If it's a
-debug mode, however, it would just read stuff from the actual file instead.
-
-If someone knows or seen it lately, please help! I've been trying to find it for about 3 
-hours, but failed, I give up at this point! 
-
-Rough API description: ~~short, blond hair, green eyes~~ you would define a struct
-and and specify a path in the `#[]`.
-
-Thanks
-
-UPD: found it, it's called `rust-embed`
-## [11][zookeeper-async - first release](https://www.reddit.com/r/rust/comments/i9iu08/zookeeperasync_first_release/)
-- url: https://www.reddit.com/r/rust/comments/i9iu08/zookeeperasync_first_release/
----
-Hi,
-
-I would like to present my first published crate - [zookeeper-async](https://crates.io/crates/zookeeper-async). It's an async port of the original zookeeper crate, also updated to Rust 2018. Any feedback is welcome😊
-## [12][Hardware recommendations for interfacing with a camera module](https://www.reddit.com/r/rust/comments/i9k8zg/hardware_recommendations_for_interfacing_with_a/)
-- url: https://www.reddit.com/r/rust/comments/i9k8zg/hardware_recommendations_for_interfacing_with_a/
----
-I tried posting this [in the easy questions post](https://www.reddit.com/r/rust/comments/i6yqng/hey_rustaceans_got_an_easy_question_ask_here/g19ph9m/), but to no avail.
-
-I'm looking to try my hand at embedded programming and came up with the following toy project: a 2020 version of the [Trojan Room coffee pot](https://en.wikipedia.org/wiki/Trojan_Room_coffee_pot) monitoring system.
-
-Essentially, what I want to do is something along these lines:
-
-* Control a camera module using a microcontroller (ie. make it take pictures every X seconds)
-* Read the image off of the camera
-* Send the image to a server via wifi/bluetooth for processing
-
-Eventually I want to convert the image of the coffee machine into a reading of the amount of coffee left and use the data for a wildly over-engineered Grafana/Icinga monitoring setup, but for starters I'd be happy just to be able to interface with the camera module!
-
-The STM32F3 or similar Cortex-M MCU boards seem like a good bet considering the amount of learning materials available. Would this be a decent choice for interfacing with simple camera modules? What communication protocol is most suitable? Are there any recommended board + camera combinations?
-
-I tried searching for answers and only found someone [struggling to get the STM32F3 to talk to an OV7670 via I2C](https://users.rust-lang.org/t/stm32f3-discovery-ov7670/27484), though that may be due to me knowing very, very little about embedded programming and not knowing what search terms to use.
-
-Any other pointers including (but not limited to) "this is a bad idea, here's why:" would be very welcome!
+Please give some ideas?

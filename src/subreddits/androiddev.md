@@ -40,11 +40,54 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Disabling Jetifier](https://www.reddit.com/r/androiddev/comments/ia3qqr/disabling_jetifier/)
-- url: https://adambennett.dev/2020/08/disabling-jetifier/
+## [3][My personal helper library for easy Android development](https://www.reddit.com/r/androiddev/comments/iaqarr/my_personal_helper_library_for_easy_android/)
+- url: https://www.reddit.com/r/androiddev/comments/iaqarr/my_personal_helper_library_for_easy_android/
+---
+Hey folks, I'm sharing my personal library that I use in every project of mine, it has things found working from StackOverflow to things I've written personally to take shortcuts, copied some from Github and modified them to work as intended just to make the Android development easier.
+
+[GitHub link](https://github.com/CraZyLegenD/Set-Of-Useful-Kotlin-Extensions-and-Helpers)
+
+It lacks documentation at some places, but the methods are quite self explanatory, feel free to contribute or to use it in your projects, pull requests are welcomed as well as if something doesn't work feel free to open an issue or if you find your code add headers/credits that's yours and make a pull request.
+## [4][When an interviewer ignores your 4+ years of experience in Android and asks you to code a random dynamic programming algorithm](https://www.reddit.com/r/androiddev/comments/iaa2s1/when_an_interviewer_ignores_your_4_years_of/)
+- url: https://i.redd.it/4sxrk2znx6h51.jpg
 ---
 
-## [4][I've composed 202 songs and sound effects and released them under the CC BY 4.0 license which you can use in any personal and commercial project and they're all free!](https://www.reddit.com/r/androiddev/comments/ia5hpn/ive_composed_202_songs_and_sound_effects_and/)
+## [5][Unauthorized Use of Copyrighted Content policy - Google Play Store](https://www.reddit.com/r/androiddev/comments/ianz5h/unauthorized_use_of_copyrighted_content_policy/)
+- url: https://www.reddit.com/r/androiddev/comments/ianz5h/unauthorized_use_of_copyrighted_content_policy/
+---
+Earlier this week I submitted an app on the Google Play Store for review. The app is about movies and you can search the database for movie titles, trailers, ratings, reviews, etc. 
+
+I have given fair attributions to any open-source material that I have used in the app. However, the app was rejected based on non-compliance with the copyright content policy. 
+
+The only thing that comes to mind is that I have used the IMDb icon for showing the IMDb ratings. It isn't event the official logo, just an icon made with sort of the same design. I have seen the IMDb icon used in several apps before without attribution.  
+
+I have contacted the customer support but they haven't replied yet. Can anyone please help?
+## [6][Publishing a cheat app for a game on google play](https://www.reddit.com/r/androiddev/comments/iarj1c/publishing_a_cheat_app_for_a_game_on_google_play/)
+- url: https://www.reddit.com/r/androiddev/comments/iarj1c/publishing_a_cheat_app_for_a_game_on_google_play/
+---
+It says [here](https://support.google.com/googleplay/android-developer/answer/9888379) that it's not allowed to publish a **"Game cheating apps that affect the gameplay of other apps."**
+
+&amp;#x200B;
+
+So... is publishing an app that provides a **PUBLIC** information about your opponent in a specific game allowed?
+
+&amp;#x200B;
+
+* The app won't guarantee you a win, it’s just gives a valuable information
+* The information I provide is public and anyone can search for it
+## [7][Rewarded Video RPM crashed](https://www.reddit.com/r/androiddev/comments/iaozd3/rewarded_video_rpm_crashed/)
+- url: https://www.reddit.com/r/androiddev/comments/iaozd3/rewarded_video_rpm_crashed/
+---
+I have a rewarded video ad in my game, as off the past few days, the impressions have gone way up but RPM has dropped off a cliff, so although I'm getting more impressions, I'm making less than I was before. Is anyone else having the same thing happen?
+## [8][Fullstack Spring/angular developer wanting to switch to android, I need tips](https://www.reddit.com/r/androiddev/comments/iaow3r/fullstack_springangular_developer_wanting_to/)
+- url: https://www.reddit.com/r/androiddev/comments/iaow3r/fullstack_springangular_developer_wanting_to/
+---
+Hello, so I'm nit new to android, I've used it back in college and I gitta say it's the most fun I had, I love java and everything related to it, I haven't started learning kotlin but I'm aure I'll get the hang of it easily.
+
+At my current job I'm a full stack web developer and my current company only used react native and flutter for ther mobile projects and I'm afraid that most companies do as well, I really hate JavaScript/typescript so going the reactnative route is not for me, I want native android development, I know the difference between the two approaches from a quality and financial standpoint for companies, I really want to do this, because whenever I'm vored or I think of an idea it's always on android and i just take note of it and think if there's a way to do ot on the web and I ended up forgetting about it.
+
+Have anyone here switched from web to mobile and how lng did you wait to find a job and do you work just with java/kotlin or do you use js frameworks?
+## [9][I've composed 202 songs and sound effects and released them under the CC BY 4.0 license which you can use in any personal and commercial project and they're all free!](https://www.reddit.com/r/androiddev/comments/ia5hpn/ive_composed_202_songs_and_sound_effects_and/)
 - url: https://www.reddit.com/r/androiddev/comments/ia5hpn/ive_composed_202_songs_and_sound_effects_and/
 ---
 **How to download the songs?**
@@ -100,66 +143,153 @@ A few years ago I was creating my own scenes in a game engine and Blender 3D. So
 I do and I offer very reasonable prices. You can contact me on Twitter if you have an idea and would like to discuss it with me.
 
 Feel free to ask if you guys have any questions.
-## [5][Kotlin 1.4.0 stable](https://www.reddit.com/r/androiddev/comments/i9ogu0/kotlin_140_stable/)
-- url: https://github.com/JetBrains/kotlin/releases/tag/v1.4.0
+## [10][A backstory, history and interesting details on Google Play Services for Android](https://www.reddit.com/r/androiddev/comments/iaafny/a_backstory_history_and_interesting_details_on/)
+- url: https://www.reddit.com/r/androiddev/comments/iaafny/a_backstory_history_and_interesting_details_on/
 ---
-
-## [6][What is usually the reason for your amount of daily installs on Google Play suddenly crashing a lot after being so consistent? Can changing the app category do this?](https://www.reddit.com/r/androiddev/comments/ia5579/what_is_usually_the_reason_for_your_amount_of/)
-- url: https://www.reddit.com/r/androiddev/comments/ia5579/what_is_usually_the_reason_for_your_amount_of/
----
-I noticed this with my app recently, the only reason I can think is that I changed the category for my app, could that be it?
-
-Interested to generally hear what the usual reasons are for big sudden drops in installs.
-
-Thanks
-## [7][Internal Testing Sans 7 day wait for approval.](https://www.reddit.com/r/androiddev/comments/ia73y5/internal_testing_sans_7_day_wait_for_approval/)
-- url: https://www.reddit.com/r/androiddev/comments/ia73y5/internal_testing_sans_7_day_wait_for_approval/
----
-I am working on my first cross-platform app with RN and I've been uploading test builds for iOS users in my team for over a week but I'm still stuck trying to get a test build release out for Android users (only one Android user on the team too).
-
-Is there an internal release track that doesn't require an app review by Google?
-
-If the answer to that is 'no', why? Is this a security thing? And how is an internal release a possible threat to Google Play users? (apart from your colleagues whom you obviously despise 😈)
+Introduced in 2012, Google play services is an API framework provided by Google on top of Android.
 
 &amp;#x200B;
 
-[Is there a 'publish' button somewhere else?](https://preview.redd.it/sa4ux3buz5h51.jpg?width=986&amp;format=pjpg&amp;auto=webp&amp;s=19f6bc456edbb18d0bf8987630932aa35e4ccb97)
+https://preview.redd.it/1q8k8vlbhbh51.png?width=465&amp;format=png&amp;auto=webp&amp;s=7287b10b5ebe28cd9a16f4b339315a4fda5a9920
 
-[I also couldn't use internal app sharing even after I'd been assigned full user privileges.](https://preview.redd.it/gqsjuz10z5h51.jpg?width=988&amp;format=pjpg&amp;auto=webp&amp;s=5a57e9f004e79216f123ea68a4f15de95e20453f)
+Internally called GMS Core, Play Services is primarily backed up by Google servers.
 
-[After filling out all the forms and uploading the app bundle, the release status became \\"Full roll-out\\" but the testers on the email list didn't get invited and there is no link to share.](https://preview.redd.it/zndx7220z5h51.jpg?width=556&amp;format=pjpg&amp;auto=webp&amp;s=7e09a0a8ff9e6a2cd99f02fb039c2c123008b5ba)
+Providing access to Google Drive, Google Cloud Messaging, Google Pay, Google Play Game Services as well as APKs for core background services such as GoogleOneTimeInitializer, SetupWizard, GooglePackageInstaller and many more of them, **it is a way for Android Developers to get Native Android Development experience to talk to Google Backend servers and stuff that’s run by Google.**
 
-[I also don't know what this means since we are not doing an actual release. I just need the APK on internal android devices.](https://preview.redd.it/qa2td520z5h51.jpg?width=838&amp;format=pjpg&amp;auto=webp&amp;s=fd209b4f2708d6cfc7bd90f9fc4ea728cc636dfb)
-## [8][Do you know about multi queue block?](https://www.reddit.com/r/androiddev/comments/ia6wz3/do_you_know_about_multi_queue_block/)
-- url: https://www.reddit.com/r/androiddev/comments/ia6wz3/do_you_know_about_multi_queue_block/
+**Prior to Play Services’ existence**, you would go directly to Google Servers and communicate with REST APIs and do JSON parsing yourself. A lot of effort and a lot of low-level mechanisms Android Developers would struggle with.
+
+One of the few things that Play Services made available is that you don’t have to do JSON parsing yourself, you get a nice JAVA data structure to deal with.
+
+Another cool thing is adding Offline writes, so if you want to write something to the cloud you call API in play services and it stores in local device database for you and gets to cloud as soon as the network constraints are satisfied. If you are offline or have a bad network, play services will handle retries.
+
+**Play Services is delivered through Google Play Store**, so updates to plugins or libraries can happen on regular basis and the Android Team can update the implementation details of the code on devices that do not get System Image Updates. The OS itself is not updated but only the Play Services on the fly.
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+https://preview.redd.it/9jyokpwchbh51.jpg?width=1080&amp;format=pjpg&amp;auto=webp&amp;s=ffd96aab3d4bda667154e52bd3e0a05d4413c8c9
+
+    What makes it to Google Play Services?
+
+&amp;#x200B;
+
+https://preview.redd.it/3cqsi0xehbh51.jpg?width=1080&amp;format=pjpg&amp;auto=webp&amp;s=3f7302731287e74db416df0e945bd2e336661fe1
+
+The primary goal is to put things backed by Google Services. So something like Volley, RecyclerView libraries won’t be added to Play Services as they are not specific to Google services.
+
+    How does the communication work between an Android App and Play Services?
+
+&amp;#x200B;
+
+https://preview.redd.it/o22kiynghbh51.png?width=1920&amp;format=png&amp;auto=webp&amp;s=c453be7c3eddc43b1850fb87097c5c6d4526ab65
+
+The Android app and services run in separate processes for security, stability, and memory management reasons, but they need to communicate and share data. This is where the Binder mechanism is used.
+
+*The Play Services library primarily sets up the IPC link between your application running in your process and the play services application running in a separate process and then API calls are made that go through Binder across to the implementation running in Play Services process.*
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+https://preview.redd.it/6idl3kfjhbh51.png?width=816&amp;format=png&amp;auto=webp&amp;s=50fe2e0f0ef628bdc955049e44e2827fd0c6dc5a
+
+**Google Play Services APIs primarily are set up to be asynchronous.**
+
+    What is the MIN SDK Version for Play Services?
+
+&amp;#x200B;
+
+https://preview.redd.it/vxf0i5yhhbh51.png?width=3000&amp;format=png&amp;auto=webp&amp;s=f368e8d9c071f3838a980f3758e0a11fbab2ff19
+
+In 2014, the Play Services had support up to Ginger Bread, Version 9. In 2020, the support seems to be up to Jelly Bean. Older Versions of Android are locked to the last Play Services version that they support.
+
+    Exploring the case of Closed-source, OEMs, and silent updates.
+
+Getting LG, Samsung, Xiaomi, and the other OEMs to update their devices to the latest version of Android is difficult. By the time the OEMs get the new version, port their skins over, ship a build to carriers, and the carriers finally push out the over-the-air update, users are restrained from experiencing the latest versions.
+
+If the device isn’t popular enough, this process doesn’t happen at all. Updating a phone is a massive project involving several companies.
+
+**Since it’s really hard to push out an Android update, Google’s solution is to sidestep the process completely with Play Services.**
+
+*Play Services has lots of permissions.* It’s kind of a system-level process. Play Services constantly runs in the background.
+
+&amp;#x200B;
+
+https://preview.redd.it/v10jd3gkhbh51.jpg?width=1080&amp;format=pjpg&amp;auto=webp&amp;s=156c09bd7e53afec0571853cfdf76922faf3bf6f
+
+Play Services has its’ own update mechanism that the user cannot control. The whole point of the Play Service update is to not let the end-user know about its’ updates.
+
+**Original equipment manufacturers are not allowed to modify the Play Services. It’s not open source as it is part of the Google package.**
+
+When you can update services without having to update a System Image, it is a win-win for end-user and Google and the OEMs.
+
+&amp;#x200B;
+
+https://preview.redd.it/b27xrkglhbh51.png?width=1080&amp;format=png&amp;auto=webp&amp;s=b052f7087ceed21390d1e52a8fb4bc962985882b
+
+Play Services is only available to smartphone OEMs through a license with Google, which OEMs need to apply for once they pass the Android Compatibility Test Suite and Google Test Suite on a per-device basis.
+
+*Since the inclusion of GMS and GMS Core is behind a license, and practically all major apps have grown to be reliant on Play Services and its APIs for many of their core functions, Google retains complete control of the Android ecosystem despite Android being open-sourced as an OS.*
+
+It is likely that, as an Android user, not in China, **you cannot practically use Android without Google**, given that you would lose out on Google Sign-in, Admob, Google Maps, nearly all Google Apps.
+
+**One of the popular alternatives though not complete replacement to Play Services is the Micro G project.** It is the re-implementation of Google’s proprietary Android user space apps and libraries.
+
+&amp;#x200B;
+
+https://preview.redd.it/8q33m3kmhbh51.png?width=1080&amp;format=png&amp;auto=webp&amp;s=0b207718b499087660076c3dfb2a4ed3c3b16e35
+
+On an ending note, Google Mobile Services is a collection of Google applications and APIs that help support functionality across devices.
+
+These apps work together seamlessly to ensure your device provides a great user experience right out of the box and this also means Google has full control over each and every Android Phone despite the open-source.
+
+    by androiddevnotes
+
+at [Twitter](https://twitter.com/androiddevnotes)
+
+    Open-source:
+
+at [GitHub](https://github.com/androiddevnotes)
+
+    YouTube Video by androiddevnotes: 
+
+[https://www.youtube.com/watch?v=C2jeQVVZmAU](https://www.youtube.com/watch?v=C2jeQVVZmAU)
+
+    Article for Medium Users by androiddevnotes: 
+
+[https://medium.com/androiddevnotes/google-play-services-under-the-hood-android-3b781d325309](https://medium.com/androiddevnotes/google-play-services-under-the-hood-android-3b781d325309)
+
+    References:
+
+Android Developer:[https://developers.google.com/android/guides/overview](https://developers.google.com/android/guides/overview)
+
+Arstechnica: [https://arstechnica.com/gadgets/2013/09/balky-carriers-and-slow-oems-step-aside-google-is-defragging-android/](https://arstechnica.com/gadgets/2013/09/balky-carriers-and-slow-oems-step-aside-google-is-defragging-android/)
+
+Wikipedia: [https://en.wikipedia.org/wiki/Google\_Play\_Services](https://en.wikipedia.org/wiki/Google_Play_Services#)
+
+Binder: [https://www.youtube.com/watch?v=Jgampt1DOak](https://www.youtube.com/watch?v=Jgampt1DOak)
+
+XDA: [https://www.xda-developers.com/huawei-hms-core-android-alternative-google-play-services-gms/](https://www.xda-developers.com/huawei-hms-core-android-alternative-google-play-services-gms/)
+
+Android backstage podcast: [http://androidbackstage.blogspot.com/2014/02/tor-norbye-and-chet-haase-are-joined-by.html](http://androidbackstage.blogspot.com/2014/02/tor-norbye-and-chet-haase-are-joined-by.html)
+
+Thank you for Reading : )
+## [11][9 - 15 August Android Newsletter](https://www.reddit.com/r/androiddev/comments/iaqb6p/9_15_august_android_newsletter/)
+- url: https://www.reddit.com/r/androiddev/comments/iaqb6p/9_15_august_android_newsletter/
 ---
+Stay up to date with Android development, in this week's edition:  
+🤓 AndroidX and Jetifier  
+💅 Best 25 resources of this summer  
+💡 Github actions tips and tricks  
+🚿 Kotlin Flow as a replacement for RxJava  
+and much more! 
 
+🌟 Featuring [@iateyourmic](https://twitter.com/iateyourmic) [@mmbialas](https://twitter.com/mmbialas) [@elye\_project](https://twitter.com/elye_project) [@su\_\_\_\_ji](https://twitter.com/su____ji) [@cortinico](https://twitter.com/cortinico) [@Piwai](https://twitter.com/Piwai) [@eskat0s](https://twitter.com/eskat0s)
 
-[View Poll](https://www.reddit.com/poll/ia6wz3)
-## [9][Help me please. What is this? I get this notification and i never had something like this. I have no new app and i dont know why this show up.](https://www.reddit.com/r/androiddev/comments/ia6rra/help_me_please_what_is_this_i_get_this/)
-- url: https://i.redd.it/9p9cgeyix5h51.jpg
+💚 Enjoy and subscribe  
+[https://vladsonkin.com/android-newsletter-7/](https://vladsonkin.com/android-newsletter-7/)
+## [12][How do I reset a value in Firebase Realtime Database at a specific time?](https://www.reddit.com/r/androiddev/comments/ialj75/how_do_i_reset_a_value_in_firebase_realtime/)
+- url: https://www.reddit.com/r/androiddev/comments/ialj75/how_do_i_reset_a_value_in_firebase_realtime/
 ---
-
-## [10][Hey android developers!](https://www.reddit.com/r/androiddev/comments/ia43b9/hey_android_developers/)
-- url: https://www.reddit.com/r/androiddev/comments/ia43b9/hey_android_developers/
----
-I just started my app development journey ! And my question to fellow developers out there is ..
-
-What all should I need to know ? Like programming languages ? (I am learning kotlin by the way) 
-
-Other languages that are essential? Libraries that I need to know ? 
-
-Resources where I can keep updating myself with latest news in the field? 
-
-ANY HELP IS APPRECIATED! 
-
-THANKS :)
-## [11][How to make A File Sharing App ?](https://www.reddit.com/r/androiddev/comments/ia404g/how_to_make_a_file_sharing_app/)
-- url: https://www.reddit.com/r/androiddev/comments/ia404g/how_to_make_a_file_sharing_app/
----
-
-How to make an File sharing app like shareit or xender.What are the requirement.I would like to create app in android studio.
-## [12][We may get compose alpha sooner than we thought](https://www.reddit.com/r/androiddev/comments/i9hppq/we_may_get_compose_alpha_sooner_than_we_thought/)
-- url: https://i.redd.it/joy0doji9xg51.png
----
-
+Let's say I have key/variable in my database where I want to reset its value to 0 everyday at 12:00 AM. How do I do this? I need to do this for my Android application.

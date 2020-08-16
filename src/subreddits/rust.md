@@ -23,67 +23,91 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/08/11/this-week-in-rust-351/
 ---
 
-## [3][Nightly stdlib docs now document all keywords!](https://www.reddit.com/r/rust/comments/ia1vlc/nightly_stdlib_docs_now_document_all_keywords/)
-- url: https://www.reddit.com/r/rust/comments/ia1vlc/nightly_stdlib_docs_now_document_all_keywords/
----
-If you haven't yet noticed, the standard library documentation includes documentation for every [keyword](https://doc.rust-lang.org/stable/std/#keywords).
-
-As of today, the initial documentation for every keyword has been fleshed out, finishing with [unsafe](https://github.com/rust-lang/rust/pull/73943) and closing out the [tracking issue](https://github.com/rust-lang/rust/issues/34601).
-
-I just want to give a congratulations and a huge thanks to everybody who helped write these docs.
-## [4][Frustrated? It's not you, it's Rust.](https://www.reddit.com/r/rust/comments/i9sor7/frustrated_its_not_you_its_rust/)
-- url: https://fasterthanli.me/articles/frustrated-its-not-you-its-rust
+## [3][Blog Post: Code Smell: Concrete Abstraction](https://www.reddit.com/r/rust/comments/iaic5w/blog_post_code_smell_concrete_abstraction/)
+- url: https://matklad.github.io/2020/08/15/concrete-abstraction.html
 ---
 
-## [5][Why We’re Bringing Astropad Cross-Platform with Rust](https://www.reddit.com/r/rust/comments/ia3x9q/why_were_bringing_astropad_crossplatform_with_rust/)
-- url: https://astropad.com/why-rust/
+## [4][Kosmonaut: Web browser from scratch in Rust](https://www.reddit.com/r/rust/comments/iab2sm/kosmonaut_web_browser_from_scratch_in_rust/)
+- url: https://github.com/twilco/kosmonaut
 ---
 
-## [6][Checkpoint/restore applications at 15GB/s with criu-image-streamer, written in Rust](https://www.reddit.com/r/rust/comments/i9ynps/checkpointrestore_applications_at_15gbs_with/)
-- url: https://github.com/checkpoint-restore/criu-image-streamer
+## [5][Show /r/rust: A GUI Backup tool, written in Rust using wgpu](https://www.reddit.com/r/rust/comments/iaqpxs/show_rrust_a_gui_backup_tool_written_in_rust/)
+- url: https://github.com/KongouDesu/BackupGUI
 ---
 
-## [7][What is the recommended way to serve Rocket applications?](https://www.reddit.com/r/rust/comments/ia5cg9/what_is_the_recommended_way_to_serve_rocket/)
-- url: https://www.reddit.com/r/rust/comments/ia5cg9/what_is_the_recommended_way_to_serve_rocket/
----
-So there is a built-in web server in Rocket, however, according to the documentation, its TLS support isn't production ready. This makes me wonder, is the built-in web server meant for development purposes only (the same way as PHP has a built-in web server too), or this is meant for production, it's just still under development and not ready for production use?
-
-And if the built-in web server is made for development purposes only, then what is the correct way to serve Rocket web applications? For example, can nginx handle it? Or is there any better solution?
-## [8][Get rustc to emit llvm-bc](https://www.reddit.com/r/rust/comments/ia47lv/get_rustc_to_emit_llvmbc/)
-- url: https://www.reddit.com/r/rust/comments/ia47lv/get_rustc_to_emit_llvmbc/
----
-I need the llvm bitcode, but the only thing I can get rustc to produce with the --emit=llvm-bc option are object files, which are one step too far in the compilation chain.  The problem occurs when trying to use rustc with cargo to link all crates used in the project.
-
-Any help would be appreceated.
-## [9][A full-fledged Shazam client for Linux, written in Rust](https://www.reddit.com/r/rust/comments/i9rcwa/a_fullfledged_shazam_client_for_linux_written_in/)
-- url: https://github.com/marin-m/SongRec
+## [6][Why Rust's Unsafe Works](https://www.reddit.com/r/rust/comments/iab5y6/why_rusts_unsafe_works/)
+- url: https://jam1.re/blog/why-rusts-unsafe-works
 ---
 
-## [10][[ANN] Sauron 0.30.0 - introduces node! macro which enables you to write html syntax in the Component's view.](https://www.reddit.com/r/rust/comments/ia3tx9/ann_sauron_0300_introduces_node_macro_which/)
-- url: https://www.reddit.com/r/rust/comments/ia3tx9/ann_sauron_0300_introduces_node_macro_which/
+## [7][Saving Servo](https://www.reddit.com/r/rust/comments/iaeiov/saving_servo/)
+- url: https://www.reddit.com/r/rust/comments/iaeiov/saving_servo/
 ---
-[Project repo](https://github.com/ivanceras/sauron)
+Reflecting on the latest Mozilla layoffs, I'm sure Rust will bounce back, but I'm curious about the future of Servo. From what I understand the whole Servo team was laid off, which is a real shame. Whilst the project is open source and contributions are still ongoing, the reality is that developers need to pay their bills and it would appear likely that we'll see a slowdown in activity. What I'm wondering about is whether there is an opportunity to build a funding model to support it, either through donations (Patreon, etc...) or through commercialisation.
 
-Checkout the example
-[Todomvc with node macro syntax](https://github.com/ivanceras/sauron/blob/master/examples/todomvc-macro-syntax/src/app.rs)
-for the complete usage of `node!` macro.
+Regarding commercialisation, one idea that springs to mind is to use it in an embedded mobile browser product similar to Adobe PhoneGap ([https://phonegap.com/](https://phonegap.com/)), but with a stronger focus on WebAssembly performance. WebAssembly seems like an ideal base for cross-platform mobile development, and although Servo isn't quite ready for primetime as a general purpose web browser engine it seems that it could work well if support was targetted at best-in-class WebAssembly performance for mobile apps, which is also something I think mobile app developers would be willing to pay for.
 
-Alongside with this release is the integration of [markdown syntax](https://github.com/ivanceras/sauron/blob/master/crates/sauron-markdown/src/markdown.rs) which you allows you to parse markdown safely and integrate the parsed Node tree into the Component's `view`.
+Aside from the suggestion above, does anyone have any thoughts on how to help Servo to continue to develop?
+## [8][Are the memory representations of T&lt;A&gt; and T&lt;B&gt; identical if A has the transparent representation of B?](https://www.reddit.com/r/rust/comments/iaqow5/are_the_memory_representations_of_ta_and_tb/)
+- url: https://www.reddit.com/r/rust/comments/iaqow5/are_the_memory_representations_of_ta_and_tb/
+---
+Suppose that we have
 
-[Complete Changelog](https://github.com/ivanceras/sauron/blob/master/Changelog.md)
+    #[repr(transparent)]
+    struct A(B);
 
-Special thanks to /u/udoprog for the `node!` macro in this release.
+Are the ABIs of T&lt;A&gt; and T&lt;B&gt; identical no matter how we define T, so that transmuting between T&lt;A&gt; and T&lt;B&gt; always has a guaranteed behavior?
 
+I mean, transmuting might not be safe, however, it does result in a valid value. Am I right?
+## [9][How does `impl` work when returning a trait-bound type?](https://www.reddit.com/r/rust/comments/iao53b/how_does_impl_work_when_returning_a_traitbound/)
+- url: https://www.reddit.com/r/rust/comments/iao53b/how_does_impl_work_when_returning_a_traitbound/
+---
+Hello everyone,
+Yesterday I tried to implement a simple `composition` function that takes a couple of other functions and returns their mathematical composition as a closure.
 
-Contributions are welcome.
-- Documentations: This project needs someone who can rephrase and use a more concise terms for the documentations.
-## [11][Against Glob Imports](https://www.reddit.com/r/rust/comments/i9uvek/against_glob_imports/)
-- url: https://drs.is/post/against-globs/
+This was my first attempt:
+```rust
+fn composition&lt;A, B, C, F : Fn(B) -&gt; C, G : Fn(A) -&gt; B&gt;(f : F, g : G) -&gt; Fn(A) -&gt; C {
+    move |a| f(g(a))
+}
+```
+
+It doesn't work because the size of the return type (`Fn(A) -&gt; C`) is not known at compile time (`Error[E0746]: return type cannot have an unboxed trait object`). I was ready to try something involving `Box` when I stumbled upon the `impl` keyword applied to return types as a convenient way to apply trait bounds. The following iteration works like a charm:
+
+```rust
+fn composition&lt;A, B, C, F : Fn(B) -&gt; C, G : Fn(A) -&gt; B&gt;(f : F, g : G) -&gt; impl Fn(A) -&gt; C {
+    move |a| f(g(a))
+}
+```
+
+I would like to ask a little clarification on what is going on under the hood. I can see why my first try didn't work: `Fn(A) -&gt; C` by itself is not enough to know how much memory must be allocated on the stack, and Rust works mainly with stack memory (unless otherwise specified, with types like `Box` and `Vec`). How does adding `impl` fix this? Is it treated like as a generic/template/type constructor and the compiler infers the actual return type for each usage of the function? Or does it hide some kind of heap allocation?
+
+My primary usage for rust is focused on embedded development where dynamic memory is not a given, so I'm particularly interested in this topic.
+## [10][Temporarily opt-in to shared mutation](https://www.reddit.com/r/rust/comments/iaajiu/temporarily_optin_to_shared_mutation/)
+- url: https://ryhl.io/blog/temporary-shared-mutation/
 ---
 
-## [12][Put some system programming project ideas??](https://www.reddit.com/r/rust/comments/ia6vao/put_some_system_programming_project_ideas/)
-- url: https://www.reddit.com/r/rust/comments/ia6vao/put_some_system_programming_project_ideas/
+## [11][How can I change syntax highlighting of rust analyzer in VS Code?](https://www.reddit.com/r/rust/comments/iak2hk/how_can_i_change_syntax_highlighting_of_rust/)
+- url: https://www.reddit.com/r/rust/comments/iak2hk/how_can_i_change_syntax_highlighting_of_rust/
 ---
-System programming Project ideas or the concepts that use for developing the system programming application with Rust.
+Rust analyzer currently underlines mutable variables in vs code, but I'd rather make them bold. If this is possible, how do I do it?
 
-Please give some ideas?
+[This](https://imgur.com/a/l4snYD1) is how it looks like at the moment. I don't like the underlines (they also hide error squiggles).
+## [12][[Ask] Explicit ways to express argument mutability](https://www.reddit.com/r/rust/comments/ianmbk/ask_explicit_ways_to_express_argument_mutability/)
+- url: https://www.reddit.com/r/rust/comments/ianmbk/ask_explicit_ways_to_express_argument_mutability/
+---
+Hi guys,
+
+I would like to ask something. There is an annoying thing in Rust I could not solve yet nicely, namely call site mutability notation.
+
+    pub fn func(vars: Vec&lt;Variable&gt;) {
+        immut_call(&amp;vars);      // accepts &amp;Vec&lt;Variable&gt;
+        mut_call(&amp;mut vars);    // accepts &amp;mut Vec&lt;Variable&gt;
+    }
+
+In this example it is obvious for the reader, which function modifies `vars`. Now let's change the input param type to a &amp;mut ptr.
+
+    pub fn func(vars: &amp;mut Vec&lt;Variable&gt;) {
+        immut_call(vars); 
+        mut_call(vars);   
+    }
+My question is, is there a nice way to somehow make it explicit which call (immut_call and mut_call) will modify its input parameter? I can solve it by introducing a new scope around `immut_call` and shadowing the original `vars` variable with an immutable one, or by casting it to the right mutability in the argument list, but they are quite ugly solutions.

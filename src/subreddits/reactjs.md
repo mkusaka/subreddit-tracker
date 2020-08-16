@@ -63,109 +63,388 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [2][Who's Hiring? [August 2020]](https://www.reddit.com/r/reactjs/comments/i1u8a4/whos_hiring_august_2020/)
-- url: https://www.reddit.com/r/reactjs/comments/i1u8a4/whos_hiring_august_2020/
+## [2][Who's Available? [August 2020]](https://www.reddit.com/r/reactjs/comments/iaggwf/whos_available_august_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/iaggwf/whos_available_august_2020/
 ---
-We alternate between **Who's Hiring** (on the 1st of the month, [most recent one here][hiring:most recent]) and **Who's Available** (on the 15th, [most recent one here][available:most recent])
+We alternate between hirers (on the 1st of the month) and agencies/freelancers/jobseekers (on the 15th).  
+If you are looking to post or reply to React job postings, please check [this month's Who's Hiring post here.][hiring:this month]
 
-Welcome to **the biggest React job board in the world!** This is like Hacker News' **Who's Hiring** but just for React. Top Level comments must be **Job Opportunities.**
-
-⚠️ NEW: WE ARE REQUESTING EVERYBODY FOLLOW [THE HN Who's Hiring FORMAT][format:hiring:hn]
-
-**Company inc. | Job Title | City/State Location | Full-time/Part-Time | On-site/Remote | (Optional) Salary range | Website jobs page, other hard requirements etc.**
-
-examples:
-
-- **Thorn | San Francisco or Remote (US based) | Full-time Contract | $100k - $150k | Software Engineer | https://www.wearethorn.org/**
-- **PolicyStat | Full-Stack Python+Django Software Engineer | Indianapolis, Vancouver, or REMOTE | Full Time | +\$80k**
-
-Please include as much information as possible. **If you are remote-friendly, or open to sponsoring work visas to your country, say so! These are the top 2 questions!**
-
-If you are looking for jobs, send a PM to the poster or post in our [Who's Available thread!][available:most recent]
-
-[hiring:most recent]: https://www.reddit.com/r/reactjs/comments/hjbk8m/whos_hiring_july_2020/
-[available:most recent]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
-## [3][React + Typescirpt + DJANGO boilerplate](https://www.reddit.com/r/reactjs/comments/ia1kzv/react_typescirpt_django_boilerplate/)
-- url: https://www.reddit.com/r/reactjs/comments/ia1kzv/react_typescirpt_django_boilerplate/
----
-What's up, everyone? For those who love React, Typescript AND Django, guess what? I just released a fully featured boilerplate built with high performance, great development experience and ease of deployment in mind, and it's available on Github: [https://github.com/marcelovicentegc/django-react-typescript](https://github.com/marcelovicentegc/django-react-typescript)
-
-Please, let me know if you have any suggestions!
-## [4][A Guide to Commonly Used React Component Libraries](https://www.reddit.com/r/reactjs/comments/i9iu7b/a_guide_to_commonly_used_react_component_libraries/)
-- url: https://maxrozen.com/guide-to-component-ui-libraries-react/
 ---
 
-## [5][Get single word under cursor](https://www.reddit.com/r/reactjs/comments/ia6tll/get_single_word_under_cursor/)
-- url: https://www.reddit.com/r/reactjs/comments/ia6tll/get_single_word_under_cursor/
+If your post or comment is removed wrongly, please [send a message][message:mods] to mods  
+because Automods bot is not perfect :)
+
 ---
-Hi, I'm really beginner in React. I'm developing chrome extension right now. I successfully injected App.js as content script. Now I need to implement this feature and I don't know where to start. 
+
+Top Level comments must be Agencies and React Devs available for contract/permanent work.
+
+Please include Location or any other Requirements in your comment. You can choose to use this format if it helps:
+
+## (Fulltime | Contract | USA | Remote)
+
+or
+
+## (Agency | Europe | Remote)
+
+Then we recommend adding a 2-3 sentence bio as well.
+
+Not required, but may help:
+
+- Link to Github/Portfolio
+- Notable [r/reactjs][r/reactjs] submissions
+- Preferred stack
+- Former companies or clients
+- Design or backend dev experience
+- anything else you consider relevant. Put on your best show!
+- Listing years of experience NOT required, it's a poor metric
+
+If you are looking to hire, you can send a PM, or reply so that others might see your job opening.  
+**Note**: Due to the sensitive nature of availability while currently in a job, users may be using alternate accounts.
+
+For more ideas on what to include, look at the [last Who's Available posts][available:last month].
+
+If you just want some portfolio feedback, check the stickied post below.
+
+Good luck! #WriteOnceApplyEverywhere
+
+[r/reactjs]: https://www.reddit.com/r/reactjs/
+[available:last month]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
+[hiring:this month]: https://www.reddit.com/r/reactjs/comments/i1u8a4/whos_hiring_august_2020/
+[message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
+## [3][I just made very first react.js website named as yugilife to make High-Quality yugioh cards with it!](https://www.reddit.com/r/reactjs/comments/ialx8v/i_just_made_very_first_reactjs_website_named_as/)
+- url: https://alixsep.github.io/yugilife
+---
+
+## [4][I've made a website that matches your Spotify profile with music festivals](https://www.reddit.com/r/reactjs/comments/iah2q6/ive_made_a_website_that_matches_your_spotify/)
+- url: https://spotifest.app
+---
+
+## [5][Any other typescript users constantly confused between JSX.Element, React.ReactNode, React.ReactElement, React.ComponentType when using memo, context, HOCs, etc?](https://www.reddit.com/r/reactjs/comments/ia8sdi/any_other_typescript_users_constantly_confused/)
+- url: https://www.reddit.com/r/reactjs/comments/ia8sdi/any_other_typescript_users_constantly_confused/
+---
+The React component tree doesn't seem to make any logical sense.
+
+I can't figure out which of the above I'm supposed to be using when trying to work with React.memo, context, etc.
+
+Maybe it's just me but is there a cheatsheet or something anywhere?
+## [6][React app doesn't compile when run in a docker container](https://www.reddit.com/r/reactjs/comments/ias2k5/react_app_doesnt_compile_when_run_in_a_docker/)
+- url: https://www.reddit.com/r/reactjs/comments/ias2k5/react_app_doesnt_compile_when_run_in_a_docker/
+---
+Hi all,
+
+I'm currently trying to run my react app in a docker container but for some reason it can't resolve the dependencies when I run it.
+
+To create the docker container I have this Dockerfile:
+
+`FROM node:alpine`  
+`WORKDIR /app`  
+`COPY package*.json ./`  
+`RUN npm install`  
+`COPY . .`  
+`CMD ["npm", "start"]`
+
+and I ignore node\_modules in my .dockerignore
+
+I then run it using this docker-compose.yml:
+
+`version: '3.8'`
+
+`services:`        
+
+`react-app:`
+
+`image: react-app:0.0.1-SNAPSHOT`
+
+`stdin_open: true`
+
+`volumes:`
+
+`- /app/node_modules`
+
+`ports:`
+
+`- "3000:3000/tcp"`
+
+These are the docker logs which show the compile error:
+
+`webpack output is served from`
+
+`Content not from webpack is served from /app/public`
+
+`404s will fallback to /`
+
+`Starting the development server...`
 
 &amp;#x200B;
 
-It's possible do exactly this in React, when I don't have access to the React Components ? 
+`Failed to compile.`
 
-[https://stackoverflow.com/questions/2444430/how-to-get-a-word-under-cursor-using-javascript](https://stackoverflow.com/questions/2444430/how-to-get-a-word-under-cursor-using-javascript)
-## [6][[ENCORE] FREE React Fundamentals course on udemy (FREE for 3 days only)](https://www.reddit.com/r/reactjs/comments/ia64fd/encore_free_react_fundamentals_course_on_udemy/)
-- url: https://www.reddit.com/r/reactjs/comments/ia64fd/encore_free_react_fundamentals_course_on_udemy/
+&amp;#x200B;
+
+`./src/App.tsx`
+
+`Module not found: Can't resolve 'react-router-dom' in '/app/src'`
+
+`Compiling...`
+
+`Failed to compile.`
+
+&amp;#x200B;
+
+`./src/App.tsx`
+
+&amp;#x200B;
+
+I have this dependency in the "dependencies" section of my package.json:
+
+`"@types/react-router-dom": "^5.1.5"`
+
+and the app compiles when I run it outside of the docker container.
+
+If I exec into the docker container I can see that /app/node\_modules/@types/react-router-dom does exist so it looks like npm install isn't the issue. Am I missing something in my compose file? Or am I importing it incorrectly in the code? My import statement is:
+
+`import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'`
+
+Thanks for any help.
+## [7][Pagination in React js](https://www.reddit.com/r/reactjs/comments/iakz7u/pagination_in_react_js/)
+- url: https://www.reddit.com/r/reactjs/comments/iakz7u/pagination_in_react_js/
 ---
-[https://www.udemy.com/course/first-met-react/?couponCode=A038AA399BBB8E40FBC0](https://www.udemy.com/course/first-met-react/?couponCode=A038AA399BBB8E40FBC0)
+I have to fetch 30,000 users from an api and display them in some format.  
 
-Hello, developers!
-
-I launched a React lecture for real beginners.
-
-The lecture only covers the basic fundamentals of React,
-
-excluding Hooks, Context API, and other difficult content.
-
-So, this lecture is the best way to start learning React.
-
-The lecture is charged,
-
-but I attached **FREE** coupon link above(valid only 3 days).
-
-(Expires 08/18/2020 04:08 AM PDT (GMT -7))
-
-So, if anyone who wants to learn React,
-
-apply before the coupon expires.
-
-Thank you 😀
-## [7][Published a video on my YouTube channel! 🚀 I document my progress building an open-source project called tailwind-snippets 🤩. It's using TypeScript, Gatsby &amp;Tailwind](https://www.reddit.com/r/reactjs/comments/ia5kal/published_a_video_on_my_youtube_channel_i/)
-- url: https://www.youtube.com/watch?v=S_4PZW1v0dQ
+What is the best and most performant approach to manage pagination in this scenario.  Have to handle on the frontend side only.
+## [8][While writing component, which one is bad, and why?](https://www.reddit.com/r/reactjs/comments/iaqb36/while_writing_component_which_one_is_bad_and_why/)
+- url: https://www.reddit.com/r/reactjs/comments/iaqb36/while_writing_component_which_one_is_bad_and_why/
 ---
+File 1:
+```
+function ComponentsPage() {
+  function buttonsUi() {
+    return (
+      &lt;div&gt;&lt;/div&gt;
+    );
+  }
 
-## [8][Does CRA app include SVGs in the bundle by default?](https://www.reddit.com/r/reactjs/comments/ia5g7h/does_cra_app_include_svgs_in_the_bundle_by_default/)
-- url: https://www.reddit.com/r/reactjs/comments/ia5g7h/does_cra_app_include_svgs_in_the_bundle_by_default/
+  function cardUi() {
+    return (
+      &lt;div&gt;&lt;/div&gt;
+    );
+  }
+  
+  return (
+    &lt;div&gt;
+    {
+       buttonsUi();
+       cardUi();
+    }
+    &lt;/div&gt;
+  );
+}
+```
+
+File 2: 
+```
+function ButtonsUi() {
+  return (
+    &lt;div&gt;&lt;/div&gt;
+  );
+}
+
+function CardUi() {
+  return (
+    &lt;div&gt;&lt;/div&gt;
+  );
+}
+  
+function ComponentsPage() {
+  return (
+    &lt;div&gt;
+        &lt;ButtonsUi/&gt;;
+        &lt;CardUi /&gt;
+    &lt;/div&gt;
+  );
+}
+```
+
+According to you which structure is right in @reactjs (in terms of performance, readability, design pattern, and philosophy) and why?
+## [9][Is there any benefit importing react and it's other functions like this?](https://www.reddit.com/r/reactjs/comments/iarmmw/is_there_any_benefit_importing_react_and_its/)
+- url: https://www.reddit.com/r/reactjs/comments/iarmmw/is_there_any_benefit_importing_react_and_its/
 ---
-Does react app with CRA include SVG images in bundling?  
-Can we avoid those extra browser calls to get those SVGs?  
-Read it in my blog:
+I recently saw in some source a developer doing this:
 
-[https://medium.com/@singhshweta/does-cra-app-include-svgs-in-the-bundle-by-default-e03f626562f5](https://medium.com/@singhshweta/does-cra-app-include-svgs-in-the-bundle-by-default-e03f626562f5)
-## [9][Theming with ReactJS and Redux.](https://www.reddit.com/r/reactjs/comments/i9zzte/theming_with_reactjs_and_redux/)
-- url: https://www.reddit.com/r/reactjs/comments/i9zzte/theming_with_reactjs_and_redux/
+`import React, { Component } from 'react';`. 
+
+I am new to React, from a reading point of view I personally like it. However is this good practice and are there any draw backs?
+## [10][Update doesn't work](https://www.reddit.com/r/reactjs/comments/iarjsb/update_doesnt_work/)
+- url: https://www.reddit.com/r/reactjs/comments/iarjsb/update_doesnt_work/
 ---
-Hey guys, I am not sure if anyone knows the best practice for doing a theming app using react and redux. The idea is basically like every user logs into the website should have a selected theme. So based on a user's profile setup the website should be structured (using a limited selection of templates) in a way to show the components of the website. Colors,  structure (show and hide some components , show on left or right, top or bottom), any other components from the react app. The user basically selects the desired theme upfront. 
+Hello,
 
-Thanks
-## [10][Wes Bos or Stephen Grider for learning React](https://www.reddit.com/r/reactjs/comments/i9w33o/wes_bos_or_stephen_grider_for_learning_react/)
-- url: https://www.reddit.com/r/reactjs/comments/i9w33o/wes_bos_or_stephen_grider_for_learning_react/
+I use "http method put" but it's doesn't work, I can't update my article.
+
+I get my articles and I create "input type=text" , "textarea" and "put button" under my article for receive and update.
+
+Normally, when I change the words and click in put button, my article must update.
+
+    state={		
+    		titleArticle: "",
+    		contentArticle: "",
+    		articles: []
+    	}
+    
+    componentDidMount(){
+    		this.articleGet()
+    	}
+    
+    
+    handleClickPut = e =&gt;  {
+    		
+    		const {titleArticle, contentArticle, categorie} = this.state;
+    		this.articlePut(titleArticle, contentArticle, categorie);
+    		
+    	}
+    
+    handleChange(e) {
+    		e.preventDefault();
+    		this.setState({ [e.target.name]: e.target.value })
+    
+    	}
+    
+    
+    articlePut(id, titleArticle, contentArticle, categorie) {
+    		
+    
+    		fetch("http://localhost:3200/api/society/school-systeme/" + id, {
+    
+    			method: "PUT",			
+    			
+    			body: JSON.stringify({
+    				
+    				
+    				titleArticle,
+    				contenuArticle,
+    				categorie
+    			}),  
+    
+    			headers: {
+    				"Content-Type": "application/json",
+    				"Content-Type": "application/x-www-form-urlencoded"
+    			}
+    
+    		
+    		})
+    
+    
+    		.then(res =&gt; {
+    			if (res.status === 200) {
+    				res.json().then(res =&gt; {					
+    					
+    				})			
+    			
+    
+    			}
+    
+    			else {
+    
+    				console.log("Update doesn't work")
+    			
+    			}
+    		})
+    
+    		.catch(errors =&gt;{
+    			console.log(errors);
+    		}) 
+    
+    			
+    
+    				
+    	} 
+    
+            const map = article.map((article) =&gt; (
+    
+    	&lt;div className="contentSchoolSysteme" key={article._id}&gt;
+    			&lt;h1&gt;{article.titleArticle}&lt;/h1&gt;
+    
+    			&lt;p&gt;{article.contentArticle}&lt;/p&gt;
+    
+    &lt;form className="PutForm" onSubmit = {this.handleClickPut}&gt;	 
+    	&lt;input type="text" name="titleArticle" defaultValue={article.titleArticle}
+    	 onChange={this.handleChange.bind(this)} /&gt;
+    
+    
+    	 &lt;textarea rows="30" name="contentArticle" defaultValue=article.contentArticle} onChange={this.handleChange.bind(this)} /&gt;
+    
+    	 &lt;input type="text" name="categorie" placeholder="categorie"
+    	 onChange={this.handleChange.bind(this)} className="categorie"/&gt;
+    
+    	 &lt;button  onClick={this.articlePut.bind(this, article._id)} &gt;PUT&lt;/button&gt;
+    
+    
+    &lt;/form&gt;		 
+
+For exemple, when I try to change my title article in "Fun lesson", I receive :
+
+CastError: Cast to ObjectId failed for value "Fun lesson" at path "\_id" for model "Article"
+
+reason: Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters
+## [11][In useState setter function, when to pass a function vs a value?](https://www.reddit.com/r/reactjs/comments/iarjb5/in_usestate_setter_function_when_to_pass_a/)
+- url: https://www.reddit.com/r/reactjs/comments/iarjb5/in_usestate_setter_function_when_to_pass_a/
 ---
-Hi
-
-I'm looking for resources to learn React, and Stephens Grider name gets thrown around a lot. He has a lot of courses on Udemy. I usually learn using Wes Bos, but his 2 React courses are apparently out of date.
-
-Who would you recommend to go with?
-## [11][useState not updating states on click](https://www.reddit.com/r/reactjs/comments/ia1qyt/usestate_not_updating_states_on_click/)
-- url: https://www.reddit.com/r/reactjs/comments/ia1qyt/usestate_not_updating_states_on_click/
+Let say I have this state:  
+  
+    const [counter, setCounter] = useState(0);  
+  
+Now, when to use this:  
+  
+    setCounter(prevCounter =&gt; prevCounter + 1);  
+  
+vs  
+  
+    setCounter(counter + 1);  
+  
+I couldn't find any proper explanation of when to use one over another. Is there a situation in which one would give different output than the other?
+## [12][using google maps api with react](https://www.reddit.com/r/reactjs/comments/ialvfq/using_google_maps_api_with_react/)
+- url: https://www.reddit.com/r/reactjs/comments/ialvfq/using_google_maps_api_with_react/
 ---
-I am trying out some simple react-course where one task wast to display a random string from an array and be able to assign votes to each of the array entries.
+    import React, { useState } from "react";
+    import GoogleMapReact from "google-map-react";
+    import Marker from "./Marker";
+    import {Map, InfoWindow, GoogleApiWrapper} from 'google-maps-react';
+    
+    
+    
+    // Texas, New Mexico, Washington, Oaklahoma, Arizona, Idaho, Colorado, California
+    const SimpleMap = (props: any) =&gt; {
+      const [center, setCenter] = useState({ lat: 11.0168, lng: 76.9558 });
+      const [zoom, setZoom] = useState(11);
+      return (
+        &lt;div style={{ height: "100vh", width: "100%" }}&gt;
+          &lt;GoogleMapReact
+            bootstrapURLKeys={{ key: "AIzaSyAntY_MMkHE82gDr-VfdpuEpMypD8J7WrA" }}
+            center={{ lat: 29.749907, lng: -95.358421 }}
+            defaultZoom={zoom}
+          &gt; 
+            &lt;Marker lat={29.780670} lng={-95.274530} placeName="535 Portwall Street, Houston Food Bank" color="Red"/&gt;   
+            &lt;Marker lat={29.417040} lng={-98.591660} title="5200 Enrique M Barrera Pkwy, San Antonio Food Bank" color="Red" /&gt;
+            &lt;Marker lat={33.003270} lng={-96.760090} title="3677 Mapleshade Lane, Dallas Food Bank" color="Red" /&gt;
+            &lt;Marker lat={30.203180} lng={-97.709580} title="6500 Metropolis Drive, Austin Food Bank" color="Red" /&gt;
+            &lt;Marker lat={31.670122} lng={ -106.323195} title="9541 Plaza Circle, El Paso Food Bank" color="Red" /&gt;
+            &lt;Marker lat={45.580421} lng={122.63169} title="7900 NE 33rd Drive,Oregon Food Bank" color="Red" /&gt;
+            &lt;Marker lat={47.170363} lng={-122.444266} title="815 South 96th Street, Seattle Food Bank" color="Red" /&gt;
+            &lt;Marker lat={47.659582} lng={ -117.394239} title="1234 E. Front Avenue, Spokane Food Bank" color="Red" /&gt;
+            &lt;Marker lat={46.870398} lng={-113.989454} title="5625 Expressway, Montana Food Bank " color="Red" /&gt;
+            &lt;Marker lat={43.570399} lng={-116.192014} title="3562 South TK Avenue Idaho Food Bank" color="Red" /&gt;
+            &lt;Marker lat={35.144119} lng={-106.601083} title="5840 Office Blvd NE,New Mexico Food Bank" color="Red" /&gt;
+            &lt;Marker lat={35.430328} lng={ -97.613708} title="3355 S. Purdue, Oakloahoma Food Bank" color="Red" /&gt;
+            &lt;Marker lat={36.170611} lng={-115.098157} title="4190 N. Pecos Rd., Las Vegas Food Bank" color="Red" /&gt;
+            &lt;Marker lat={32.903914} lng={ -117.181628} title="9455 Waples Street, Suite 135, San Diego Food Bank" color="Red" /&gt;
+            &lt;Marker lat={44.928723} lng={  -93.249358} title="1734 E. 41st Street, Los Angeles Food Bank" color="Red" /&gt;
+            &lt;Marker lat={33.409533} lng={  -111.850749} title="245 South Nina Drive, Phoenix Food Bank" color="Red" /&gt;
+          &lt;/GoogleMapReact&gt;
+        &lt;/div&gt;
+      );
+    };
+    
+    export default SimpleMap;
+    
 
-My code kind of works but each vote is delayed as the states seams to update on next render, not directly. What am I doing wrong ? I thought that when using useStates directly It should autorender the page on update.
-
-[codesandbox](https://codesandbox.io/s/gracious-ritchie-wn6s8?file=/src/index.js)
-## [12][Config Lint on a bare react project](https://www.reddit.com/r/reactjs/comments/ia0tgb/config_lint_on_a_bare_react_project/)
-- url: https://www.reddit.com/r/reactjs/comments/ia0tgb/config_lint_on_a_bare_react_project/
----
-Hey guys, how do i configurate some linting tool to display warnings (just like the CRA warnings on console ) on a bare react project?  I don't want to use Create-React-App.
+I cant seem to get the name of the markers to show up, any help?

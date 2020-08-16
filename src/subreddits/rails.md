@@ -1,25 +1,5 @@
 # rails
-## [1][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/i00rha/personal_projects_show_off_your_own_project_andor/)
-- url: https://www.reddit.com/r/rails/comments/i00rha/personal_projects_show_off_your_own_project_andor/
----
-In this thread you can showcase your personal pet project to other redditors.
-
-Need help with a specific problem or just wanna have some extra eyeballs on your code? Ask away!
-
-A suggested format to get you started:
-
-1. **Name of your project**
-2. **A short description**
-3. **Application stack**
-4. **Link to Live app**
-5. **Link to GitHub**
-6. **You experience level**
-7. **Other information or areas that you would like advice on**
-
- 
-
-^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/i8dsvv/personal_projects_show_off_your_own_project_andor/)
+## [1][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/i8dsvv/personal_projects_show_off_your_own_project_andor/)
 - url: https://www.reddit.com/r/rails/comments/i8dsvv/personal_projects_show_off_your_own_project_andor/
 ---
 In this thread you can showcase your personal pet project to other redditors.
@@ -39,7 +19,102 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][How can I pass a list of allowed value with custom each validator?](https://www.reddit.com/r/rails/comments/ia3rxu/how_can_i_pass_a_list_of_allowed_value_with/)
+## [2][Updating An Existing App?](https://www.reddit.com/r/rails/comments/iapuzt/updating_an_existing_app/)
+- url: https://www.reddit.com/r/rails/comments/iapuzt/updating_an_existing_app/
+---
+Hey guys, just a quick question. I uploaded my initial version of my app, and to be honest it was to mainly see how deployment works.
+
+How do I go about updating the app when I have a major change I want to upload to the server?
+
+For Heroku, I used the CLI to do this, but for servers like Digital Ocean and AWS are different.
+
+Any tips or workflow you guys use will be very helpful!
+
+Thanks.
+## [3][Managing usage for a commercial gem](https://www.reddit.com/r/rails/comments/iam6tf/managing_usage_for_a_commercial_gem/)
+- url: https://www.reddit.com/r/rails/comments/iam6tf/managing_usage_for_a_commercial_gem/
+---
+How could I manage usage of a gem or engine as a product?
+
+Paid Sidekiq for example is tied to threads, but I don't know how this is managed. 
+
+It's loaded in the Gemfile so is referenced when bundled, yet Ruby is of course an interpreted and open language so even if it is reading other configs, that can all be manipulated in different ways at runtime, right? Is it more the honor system? (There is always trust involved somewhere, though this is handled to different degrees depending on the product.)
+
+This is not meant to be the 'hack Sidekiq' thread, I am more curious how this could be done with a commercial product, not even with threads but with number of users for instance to prevent abuse.
+
+[I tried Google but didn't find much, it returns whatever it feels like now.]
+## [4][How do I configure my models in this situation?](https://www.reddit.com/r/rails/comments/iaov9r/how_do_i_configure_my_models_in_this_situation/)
+- url: https://www.reddit.com/r/rails/comments/iaov9r/how_do_i_configure_my_models_in_this_situation/
+---
+I'm writing an email web app. The app uses email templates to create dynamic emails depending on who they are sent to.
+
+An email template has variables. For example an email template would look like the following:
+
+    EmailTemplate
+    
+    name: string
+    subject: string
+    body: string
+    variables: [string]
+
+and an instance would look like this:
+
+    email_template
+    
+    name: "Cool email"
+    subject: "Hi, FIRST_NAME,"
+    body: "I see you are a POSITION at COMPANY...."
+    variables: ["NAME", "POSITION", "COMPANY"]
+
+Then a recipient model to the email would look something like this:
+
+    Recipient
+    name: "Some guy"
+    email: "guy@email.com"
+    variables: ??????
+    
+The *variables* attribute in EmailTemplate are dynamic so how do I set up the variables on the recipient model?
+## [5][Efficient to run SQL command instead of ruby?](https://www.reddit.com/r/rails/comments/iaex30/efficient_to_run_sql_command_instead_of_ruby/)
+- url: https://www.reddit.com/r/rails/comments/iaex30/efficient_to_run_sql_command_instead_of_ruby/
+---
+I've having trouble recreating the trigam `similarity` function in ruby (due to Asian characters in my text). Is the following a good idea in my rails code?
+
+`sql = "SELECT similarity('#{src}', '#{targ}');"`
+
+`tm_ratio = ActiveRecord::Base.connection.execute(sql).getvalue(0,0)`
+## [6][TDD Course or tutorial](https://www.reddit.com/r/rails/comments/iaejjw/tdd_course_or_tutorial/)
+- url: https://www.reddit.com/r/rails/comments/iaejjw/tdd_course_or_tutorial/
+---
+Hey y'all, I feel that I have a pretty decent grasp of ruby and rails and I want to learn TDD what are some good resources for learning TDD?
+
+Thanks in advance
+## [7][Elasticsearch keyword search orientation.](https://www.reddit.com/r/rails/comments/iaftov/elasticsearch_keyword_search_orientation/)
+- url: https://www.reddit.com/r/rails/comments/iaftov/elasticsearch_keyword_search_orientation/
+---
+Hello, I've landed my first job and I have to do a text search built in elasticsearch (but I can't run anything on db since our db is kind of big (about \~300k lines) the db is kind of slow, the project is run by my boss and me a complete newbie developer, what are some things that I can do, please be kind with me that I'm a mere starter developer.
+## [8][What is the difference about a controller test and a integration test?](https://www.reddit.com/r/rails/comments/iab5w3/what_is_the_difference_about_a_controller_test/)
+- url: https://www.reddit.com/r/rails/comments/iab5w3/what_is_the_difference_about_a_controller_test/
+---
+I had looking about a principal difference but I feel it is the same
+## [9][New Tutorial Video: Pagination with the Kaminari Gem](https://www.reddit.com/r/rails/comments/iabx3c/new_tutorial_video_pagination_with_the_kaminari/)
+- url: https://www.reddit.com/r/rails/comments/iabx3c/new_tutorial_video_pagination_with_the_kaminari/
+---
+In this tutorial I walk through how to add pagination to your Rails 6 application using the Kaminari gem.  We will install the gem, generate the views, get those views styled via Bootstrap 4.  Finally will paginate our users and videos pages.  
+
+As always please let me know if you see opportunities for me to improve my tutorial videos, thanks! 
+
+[https://youtu.be/c0hrNQJhKww](https://youtu.be/c0hrNQJhKww)
+## [10][Is there a way where I can do an specific query with PGCLIENTENCODING="ISO88591"?](https://www.reddit.com/r/rails/comments/iabymz/is_there_a_way_where_i_can_do_an_specific_query/)
+- url: https://www.reddit.com/r/rails/comments/iabymz/is_there_a_way_where_i_can_do_an_specific_query/
+---
+**TL:DR;** My database is in UTF8, but I need to produce a file to be consumed by a COBOL program where 1 character should be 1 bytesize.
+
+**Longer description**: My boss told me to setup a cronjob to periodically make some queries and produce files which should be consumed by a COBOL program, this program accepts file where each is line/record is 200 characters and bytes long (in other words if `line` is a variable which represents any line in the file, then `line.length` should be equal to `line.bytesize` and both should be equal to `200`).
+
+I would say in the database 99.9% of characters are normal ones, no weird ones like Ü or á (or at least I haven't seen them), but to prepare myself in case there are weird characters I would like to query with `PGCLIENTENCODING="ISO88591"`, is this possible?
+
+By the way I'm latino, and I don't care calling `á` a weird character, don't be so annoyed like [these guys](https://www.reddit.com/r/ruby/comments/i9vlu5/replace_weird_characters_such_as_%C3%A1_a_or_%C3%BC_u/).
+## [11][How can I pass a list of allowed value with custom each validator?](https://www.reddit.com/r/rails/comments/ia3rxu/how_can_i_pass_a_list_of_allowed_value_with/)
 - url: https://www.reddit.com/r/rails/comments/ia3rxu/how_can_i_pass_a_list_of_allowed_value_with/
 ---
 I have been reading the example from [ActiveModel::EachValidator](https://api.rubyonrails.org/classes/ActiveModel/Validator.html) .
@@ -60,204 +135,3 @@ I have been reading the example from [ActiveModel::EachValidator](https://api.ru
 I understood this example. But how to write the code when I want to pass the list `%w(Mr. Mrs. Dr.)` from client code like: 
 
     validates :title, title: { in: %w(Mr. Mrs. Dr.) }
-## [4][Autosave simple_form with AJAX timer create.js.erb update.js.erb](https://www.reddit.com/r/rails/comments/ia5kbh/autosave_simple_form_with_ajax_timer_createjserb/)
-- url: https://www.reddit.com/r/rails/comments/ia5kbh/autosave_simple_form_with_ajax_timer_createjserb/
----
-Greetings, I would like to make it so that my form automatically commits without ruining the experience for the user. I was told that the form should save every 15 seconds or so. Is this possible in a safe manner?
-
-I'm not saving drafts btw. Just the default form itself.
-## [5][bjt(bundle jump to), a quick navigation tool for bundle packages like njt](https://www.reddit.com/r/rails/comments/i9hyhx/bjtbundle_jump_to_a_quick_navigation_tool_for/)
-- url: https://www.reddit.com/r/rails/comments/i9hyhx/bjtbundle_jump_to_a_quick_navigation_tool_for/
----
-hi i write rubygem: [bjt](https://github.com/superiorlu/bjt), is a quick navigation for rubygems, if you like it,  star it. :smile:
-## [6][Rendering HTML in text fields](https://www.reddit.com/r/rails/comments/i9i52q/rendering_html_in_text_fields/)
-- url: https://www.reddit.com/r/rails/comments/i9i52q/rendering_html_in_text_fields/
----
-Although I think it's not that much of a rails related question, but I ask it here anyway :P
-
-I have created a very simple model :
-
-    rails g scaffold Blog title:string text:text
-
-In `views` it includes a form, and of course it has two inputs. When I type something like:
-
-    &lt;p&gt; Hello! &lt;/p&gt;
-    &lt;p&gt; This is my today's post &lt;/p&gt;
-
-it doesn't render it to a proper HTML file and no surprise. I'm just curious, is there any ways to force the HTML rendering to textareas in ERB?
-## [7][Breaking Down Test-Driven Development (TDD) Free Lunch and Learn Webinar](https://www.reddit.com/r/rails/comments/i991hs/breaking_down_testdriven_development_tdd_free/)
-- url: https://www.reddit.com/r/rails/comments/i991hs/breaking_down_testdriven_development_tdd_free/
----
-Hi Rubyists! 
-
-Def Method is hosting a free lunch and learn webinar on TDD! Test driving software leads to cleaner code, better design, and fewer bugs. But when your stakeholders push for faster optimization, why is it so important to continue forward with TDD? In our opinion, testing is paramount for the success of a product. 
-
-In this panel discussion featuring Def Method Engineers, panelists will discuss topics including: the proper amount of test coverage, how to know if your unit tests are producing value, the importance of TDD when building a proof of concept, working on legacy software with TDD, and useful practices while test-driving. 
-
-Featuring panelists: Senior Software Engineers Keith Hickman-Perfetti, Jeff Jia, Ben Gross, Mark Simpson. Moderated by: Yisselda Rhoc
-
-RSVP here: [https://www.eventbrite.com/e/breaking-down-test-driven-development-tdd-panel-discussion-tickets-116644287203?aff=Reddit](https://www.eventbrite.com/e/breaking-down-test-driven-development-tdd-panel-discussion-tickets-116644287203?aff=Reddit)
-## [8][50K users](https://www.reddit.com/r/rails/comments/i92ace/50k_users/)
-- url: https://www.reddit.com/r/rails/comments/i92ace/50k_users/
----
-Hi guys, quick question. For a rails project that is expecting 50k active users (all at the same time), what are your recommendations for a server infrastructure that can widthstand this kind of load? I have already investigated SOA infrastructure. Currently the app is monolithic.
-
-EDIT: Basically it's for a Virtual Fair that a client of ours is asking for. It would have many requests to the database, mainly fetching information for stands like videos, jobs listings, webchat, CV/resume upload, downloading brochures. We had a similar virtual fair early this year and our server started crashing at around 700 active users. We tried vertical scaling but it didn't help.
-## [9][Is there a better way for nested relationships?](https://www.reddit.com/r/rails/comments/i93oqh/is_there_a_better_way_for_nested_relationships/)
-- url: https://www.reddit.com/r/rails/comments/i93oqh/is_there_a_better_way_for_nested_relationships/
----
-Hi, I've done a few tutorials on rails but wanted to jump in as fast as possible just wondering if the following is the rails way or if it can be improved upon?
-
-Pokemon.rb
-
-      belongs_to :generation
-      has_many :pokemon_pokedex_numbers, inverse_of: :pokemon
-      has_many :pokedexes, through: :pokemon_pokedex_numbers
-      has_many :version_groups, through: :pokedexes
-      has_many :versions, through: :version_groups
-    
-      accepts_nested_attributes_for :pokemon_pokedex_numbers, reject_if: :all_blank, allow_destroy: true
-
-Pokedex.rb
-
-      has_many :pokedex_version_groups
-      has_many :version_groups, through: :pokedex_version_groups
-      has_many :pokemon_pokedex_numbers
-      has_many :pokemon, through: :pokemon_pokedex_numbers
-
-PokemonPokedexNumber
-
-      belongs_to :pokemon
-      belongs_to :pokedex
-
-PokedexVersionGroup
-
-      belongs_to :pokedex
-      belongs_to :version_group
-
-VersionGroup.rb
-
-      belongs_to :generation
-      has_one :pokedex_version_group
-      has_one :pokedex, through: :pokedex_version_group
-      has_many :versions
-
-Version.rb
-
-    belongs_to :version_group
-
-Before using the has\_many through another has\_many through in Pokemon I had to loop through pokedexes-&gt;version\_groups-&gt;versions to print each version but I found with the current way the following controller:
-
-      # GET /pokemon
-      def index
-        @pokemon = Pokemon.includes(:versions).all
-      end
-
-eager loads all the tables (6 queries) and I can just loop versions directly on the pokemon.
-
-    pokemon.versions.each
-## [10][new rails migration automatically has status of "up"](https://www.reddit.com/r/rails/comments/i94ahr/new_rails_migration_automatically_has_status_of_up/)
-- url: https://www.reddit.com/r/rails/comments/i94ahr/new_rails_migration_automatically_has_status_of_up/
----
-Not sure what's happening, but when I create a new rails migration, the status is automatically "up" but when I check the schema, it didn't make the changes.
-
-Have the following versions:
-
-    $ rails -v
-    Rails 5.2.4.3
-    $ ruby -v
-    ruby 2.6.0p0 (2018-12-25 revision 66547) [x86_64-darwin18]
-
-When checking the migration files, previous migrations started with v5.1:
-
-\`class MyMigration &lt; ActiveRecord::Migration\[5.1\]\`
-
-But my new migration has v5.2:
-
-\`class MyOtherMigration &lt; ActiveRecord::Migration\[5.2\]\`
-
-&amp;#x200B;
-
-Edit:
-
-After removing the migration and creating a new migration, I'm getting the following error whenever I try to check status of migrations:
-
-    ERROR:  column "name" of relation "books" already exists (PG::DuplicateColumn)
-
-When I check `schema_migrations`, the new migration timestamp is not listed
-
-When I go into `$ rails c`, and check the Book object, the "name" field is there. My `schema.rb` file does not have the "name" field though. I'm guessing, my previous migration somehow migrated without updating the `schema.rb` file and after removing the migration without performing the "down" action on it made my state like this. I did try running the "down" command before removing the migration, but it didn't work.
-
-&amp;#x200B;
-
-Edit2:
-
-I updated my migration file to both have an "up" and "down" that removes the new field:
-
-    remove_column :books, :name, :string
-
-After saving the file, it somehow migrating it right away. I can now perform things like "`$ rails db:migrate:status`" without getting an error. Checking "`$ rails c`", the new field is removed. I did not explicitly run an "up" or "down" migrate command after saving the migration file. It somehow ran it automatically..
-
-&amp;#x200B;
-
-Edit3: 
-
-Not sure what was happening, but decided just to reset (Warning: this drops the data in db)
-
-    $ rake db:reset
-    $ rails db:migrate
-
-Now I'm back to the state of "up" migrations happening right away and "down" migrations do not work. \*sigh\*
-## [11][Question about text encryption in Rails](https://www.reddit.com/r/rails/comments/i8zp1u/question_about_text_encryption_in_rails/)
-- url: https://www.reddit.com/r/rails/comments/i8zp1u/question_about_text_encryption_in_rails/
----
-I want to encrypt the content of a column in a model in Rails. Here's the scenario:
-
-* There are Users (devise) and Posts. Each User can have many Posts
-* Each Post has a title and a content column 
-* When someone logs in to the application, then he has access to all posts/content 
-* The content is of course a column of type text.
-
-I want to limit access to certain Post content, leaving the title intact for search purposes. I want the app to prompt the user for a password (when he enables somehow this feature) and If he enters the right one, show the text. 
-
-One silly idea is to redirect the user to an Unlock this Post page where there could be a single text\_field form that posts to a controller action. The verification of the right passcode is done and If legit, he will be redirected to the show decrypted Post page. 
-
-I don't want to use a gem for this (lockbox or attr\_encrypted). The text can be encrypted with a before\_save callback in the Post model. 
-
-Have you ever ran into a similar issue and If yes, what did you do ?
-## [12][How to create lots of web projects that are copies of each other (90%) but also have some unique elements (10%) in each? And that also support updates](https://www.reddit.com/r/rails/comments/i9fs43/how_to_create_lots_of_web_projects_that_are/)
-- url: https://www.reddit.com/r/rails/comments/i9fs43/how_to_create_lots_of_web_projects_that_are/
----
-I have a web project in Rails of which I plan to be creating copies and running them all. Let's say, it's a blog. Each blog will be deployed on its own domain and they basically, 90%, will be identical. And around 10% will be unique, custom on each blog.
-
-&amp;#x200B;
-
-Whenever I update the code of 'Blog1' locally, I'll push an update, then I'll log in to the servers of other blogs and do "git pull" to retrieve an update, and rebuild them. Yet, an update won't overwrite the 10% of custom stuff that each blog have.
-
-&amp;#x200B;
-
-Custom stuff will include: js, css, images files, some parts of the pages, names, texts, etc...
-
-&amp;#x200B;
-
-**(1)** How will I organise all that? The amount of js, css, images, etc can very on each blog, therefore I can't simply add "custom\_style.css" to .gitignore
-
-&amp;#x200B;
-
-Saving css, js, image in a database isn't an option, because retrieving them on each request will cost too much.
-
-&amp;#x200B;
-
-Or perhaps, do it somehow statically and \*only once\* at booting a blog, when they'll be retrieved from Sqlite3.
-
-&amp;#x200B;
-
-**(2)** And how would I go about rendering unique parts of html pages? Such as footers, top nav bars. They may or may not, or may be partially different.
-
-&amp;#x200B;
-
-**(3)** All the code itself will identical, at this point, probably. Otherwise, how would I go about code as well? Namely, some blogs would have peaces or whole files of code unique to them. Something similar to plug-in system, I figure.
-
-&amp;#x200B;
-
-P.S. I'm aware of tenant architecture, that's not completely it.

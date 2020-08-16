@@ -60,19 +60,43 @@ Previous Post
 - url: https://www.reddit.com/user/bstroustrup
 ---
 
-## [3][What are some of the best Cheat Sheets that you use?](https://www.reddit.com/r/cpp/comments/i9q480/what_are_some_of_the_best_cheat_sheets_that_you/)
+## [3][Throwing Out the Kitchen Sink - Output Ranges](https://www.reddit.com/r/cpp/comments/iaesk7/throwing_out_the_kitchen_sink_output_ranges/)
+- url: https://thephd.github.io/output-ranges
+---
+
+## [4][Asio vs Boost.Asio](https://www.reddit.com/r/cpp/comments/iai9ae/asio_vs_boostasio/)
+- url: https://www.reddit.com/r/cpp/comments/iai9ae/asio_vs_boostasio/
+---
+Are there any reasons to use Boost.Asio over Asio?
+
+I prefer to use only headers in my project but are there any disadvantages to this specifically if I'm writing a game server?
+
+Thank you
+## [5][A compiler/os detecting library for modern C++](https://www.reddit.com/r/cpp/comments/iadas4/a_compileros_detecting_library_for_modern_c/)
+- url: https://www.reddit.com/r/cpp/comments/iadas4/a_compileros_detecting_library_for_modern_c/
+---
+I wrote a small single-header and header-only C++ library for detecting the host compiler/os using `if` and/or `if constexpr` (no need for `#if`/`#endif`). An example is included on `README.md`. The library supports some of the most used operating systems nowadays. Help/suggestions are appreciated.
+## [6][Are small memory allocations in C++ STL containers still a concern?](https://www.reddit.com/r/cpp/comments/iaervc/are_small_memory_allocations_in_c_stl_containers/)
+- url: https://blog.kaetemi.be/2020/08/15/are-small-memory-allocations-in-cpp-stl-containers-still-a-concern/
+---
+
+## [7][What are some of the best Cheat Sheets that you use?](https://www.reddit.com/r/cpp/comments/i9q480/what_are_some_of_the_best_cheat_sheets_that_you/)
 - url: https://www.reddit.com/r/cpp/comments/i9q480/what_are_some_of_the_best_cheat_sheets_that_you/
 ---
 In my experience having quick references is extremely helpful. What are some of the best cheat sheets that you have used or currently use?
-## [4][Bizarre SSE/AVX codegen with MSVC Preview](https://www.reddit.com/r/cpp/comments/i9wa79/bizarre_sseavx_codegen_with_msvc_preview/)
+## [8][Easy dependency management for C++ with CMake's FetchContent](https://www.reddit.com/r/cpp/comments/ia43ir/easy_dependency_management_for_c_with_cmakes/)
+- url: https://bewagner.github.io/programming/2020/05/02/cmake-fetchcontent/
+---
+
+## [9][Bizarre SSE/AVX codegen with MSVC Preview](https://www.reddit.com/r/cpp/comments/i9wa79/bizarre_sseavx_codegen_with_msvc_preview/)
 - url: https://www.reddit.com/r/cpp/comments/i9wa79/bizarre_sseavx_codegen_with_msvc_preview/
 ---
 I switched to the latest preview recently because I wanted access to more C++20 features to clean some things up, but looking at the assembly all of my aligned SIMD loads and stores through intrinsics have become unaligned, and no matter what hints I give the compiler it will never generate an aligned load or store. I'm not sure if this is a bug, or if there's a genuine reason to prefer unaligned loads and store instructions now on x86-64, but I'm just putting this out there because I know some of the MSVC guys lurk around here.
-## [5][Boost 1.74 is out](https://www.reddit.com/r/cpp/comments/i9i4vi/boost_174_is_out/)
+## [10][Boost 1.74 is out](https://www.reddit.com/r/cpp/comments/i9i4vi/boost_174_is_out/)
 - url: https://www.boost.org/users/history/version_1_74_0.html
 ---
 
-## [6][TIL: on x86-64 compilers will use addressing mode to replace simple multiplications](https://www.reddit.com/r/cpp/comments/i9mgvf/til_on_x8664_compilers_will_use_addressing_mode/)
+## [11][TIL: on x86-64 compilers will use addressing mode to replace simple multiplications](https://www.reddit.com/r/cpp/comments/i9mgvf/til_on_x8664_compilers_will_use_addressing_mode/)
 - url: https://www.reddit.com/r/cpp/comments/i9mgvf/til_on_x8664_compilers_will_use_addressing_mode/
 ---
 obligatory godbolt: [https://gcc.godbolt.org/z/csEnh4](https://gcc.godbolt.org/z/csEnh4)
@@ -94,83 +118,3 @@ here's a little table
 | var*=10 | tmp = var+var*4; var = tmp+tmp |
 
 and here's a nice explanation: [https://paul.bone.id.au/blog/2018/09/05/x86-addressing/](https://paul.bone.id.au/blog/2018/09/05/x86-addressing/)
-## [7][CppCast: Modern C++ for Absolute Beginners](https://www.reddit.com/r/cpp/comments/i9dilw/cppcast_modern_c_for_absolute_beginners/)
-- url: https://cppcast.com/modern-cpp-absolute-beginners/
----
-
-## [8][Editable Flow Chart for choosing Containers / Data Structures](https://www.reddit.com/r/cpp/comments/i9lzdw/editable_flow_chart_for_choosing_containers_data/)
-- url: https://www.reddit.com/r/cpp/comments/i9lzdw/editable_flow_chart_for_choosing_containers_data/
----
-## Summary
-
-After stumbling upon this C++ Container Flow Chart on stackoverflow [here](https://stackoverflow.com/questions/471432/in-which-scenario-do-i-use-a-particular-stl-container/22671607#22671607), I created an editable version of the Flow Chart after realizing no editable version currently exist.
-
-## Download
-
-Download the Editable Container Flow Chart [here](https://github.com/parkershamblin/container-flow-chart#Download).
-
-## Contributions
-
-Looking for community members who are experienced in C++ &amp; Python to help create a Python version of the Flow Chart.
-
-Please submit your improvements/modifications using this [GitHub Repository](https://github.com/parkershamblin/container-flow-chart). I will be actively reviewing the Repository for any new pull request and updating the Repository frequently. If you need any help with downloading or modifying the Flow Chart please message me anytime. Thanks guys.
-## [9][[CppCon] 2020 Back to Basics Track announced](https://www.reddit.com/r/cpp/comments/i90svg/cppcon_2020_back_to_basics_track_announced/)
-- url: https://cppcon.org/b2b2020/
----
-
-## [10][Reflection library for C/C++ (no RTTI)](https://www.reddit.com/r/cpp/comments/i9fi7i/reflection_library_for_cc_no_rtti/)
-- url: https://www.reddit.com/r/cpp/comments/i9fi7i/reflection_library_for_cc_no_rtti/
----
-Link to the project: [https://github.com/flecs-hub/flecs-meta](https://github.com/flecs-hub/flecs-meta)
-
-flecs.meta is a reflection library that lets you import type definitions without code generation or manually describing field names. A simple example:
-
-    /* ECS_STRUCT macro captures type information */
-    ECS_STRUCT(Position, {
-        float x;
-        float y;
-    });
-    
-    int main(int argc, char *argv[]) {
-        // Initialize
-        flecs::world world;
-        flecs::import&lt;flecs::components::meta&gt;(world);
-    
-        // Register reflection data for Position
-        flecs::meta&lt;Position&gt;(world);
-    
-        // Use it!
-        Position p{10, 20};
-        std::cout &lt;&lt; flecs::pretty_print(world, p) &lt;&lt; std::endl;
-    }
-
-Output:
-
-    {x = 10, y = 20} 
-
-The library has Flecs as a dependency, but does not require applications to be written in Flecs. A JSON serializer written for the library also exists: [https://github.com/flecs-hub/flecs-json](https://github.com/flecs-hub/flecs-json)
-
-Because of how the library works, it can only be used for trivial C++ types(!)
-## [11][Order of functions in a translation unit and compiler optimization](https://www.reddit.com/r/cpp/comments/i9ivfs/order_of_functions_in_a_translation_unit_and/)
-- url: https://www.reddit.com/r/cpp/comments/i9ivfs/order_of_functions_in_a_translation_unit_and/
----
-Consider this:
-
-1)
-
-    void foo() { some short code }
-    (...)
-    void bar() { foo(); }
-
-Typically, a modern C++ compiler will inline foo() inside bar()
-
-But if we have this:
-
-2)
-
-    void foo();
-    void bar() { foo(); }
-    (...)
-    void foo() { some short code }
-
-will the same happen? (in ancient times, this did not happen).

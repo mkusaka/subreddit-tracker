@@ -1,13 +1,90 @@
 # golang
-## [1][Create versatile Microservices in Golang - part 1 of 10 part series](https://www.reddit.com/r/golang/comments/iap0gv/create_versatile_microservices_in_golang_part_1/)
+## [1][Just released v1.9.0 of glab (a GitLab Cli tool written in golang) with new cool features including WATCHING A RUNNING PIPELINE AND VIEWING A JOB'S TRACE/LOG DIRECTLY FROM YOUR CLI.](https://www.reddit.com/r/golang/comments/ib3rhe/just_released_v190_of_glab_a_gitlab_cli_tool/)
+- url: https://github.com/profclems/glab
+---
+
+## [2][Task v3.0.0 is released! 🎉🎉🎉](https://www.reddit.com/r/golang/comments/ib4px3/task_v300_is_released/)
+- url: https://github.com/go-task/task/releases/tag/v3.0.0
+---
+
+## [3][airscan: Go package to scan paper documents 📄 from a scanner 🖨️ via the network 🕸️ using the Apple AirScan (eSCL) protocol](https://www.reddit.com/r/golang/comments/iascmx/airscan_go_package_to_scan_paper_documents_from_a/)
+- url: https://github.com/stapelberg/airscan
+---
+
+## [4][[Fun project] Released hselect - a cli mirror selector in Go](https://www.reddit.com/r/golang/comments/ibe5il/fun_project_released_hselect_a_cli_mirror/)
+- url: https://www.reddit.com/r/golang/comments/ibe5il/fun_project_released_hselect_a_cli_mirror/
+---
+Worked on a mirror selection cli utility **hselect** that can select a reliable mirror (or any endpoint) from a group of mirror sites. It is based on my earlier work on **harmonic** dispatch algorithm. For trial, I am using it for selecting a reliable go module mirror site. Comments/suggestions are welcome.
+
+[https://github.com/gptankit/hselect](https://github.com/gptankit/hselect)
+## [5][Rocketc : CSV Manipulation and 2D Matrix library](https://www.reddit.com/r/golang/comments/ibe3qr/rocketc_csv_manipulation_and_2d_matrix_library/)
+- url: https://www.reddit.com/r/golang/comments/ibe3qr/rocketc_csv_manipulation_and_2d_matrix_library/
+---
+Finally, I am happy to  announce that I have completed the development of RocketC, a simple  library written in Go for computations involving 2D Matrices with proper  documentation and testing.  
+RocketC  
+
+
+Github Link : [https://github.com/aryanmaurya1/rocketc](https://github.com/aryanmaurya1/rocketc)  
+
+
+Fast, Simple and Lightweight library for CSV data manipulation and mathematical computation involving 2D Matrices.  
+This  library can be used in developing simple Machine Learning models like  Linear Regression, Logistic Regression, etc from scratch.
+## [6][Help: Encrypting and Decrypting with golang.org/x/crypto/openpgp](https://www.reddit.com/r/golang/comments/ibdtac/help_encrypting_and_decrypting_with/)
+- url: https://www.reddit.com/r/golang/comments/ibdtac/help_encrypting_and_decrypting_with/
+---
+Hi, 
+
+i have been trying to decrypt and encrypt ASCII armor PGP Messages that i receive and send to a API. 
+
+I Wrote a function for decrypting messages and another one for encrypting messages. The Decrypting function Works and i can decrypt the API's messages. But My encrypt function Seems to be broken as Neither the API or my decrypt function can decrypt the Messages encrypted by my encrypt function. Decrypting the encrypted messages from my encrypt function always result in the following error: "Error reading message: openpgp: unsupported feature: unknown SymmetricallyEncrypted version"
+
+i have uploaded a example to the Go Play Ground :  [https://play.golang.org/p/JhhZ4xWWYvn](https://play.golang.org/p/JhhZ4xWWYvn)
+
+Any help is Appreciated.
+## [7][How do you handle errors in background job?](https://www.reddit.com/r/golang/comments/ibd5pv/how_do_you_handle_errors_in_background_job/)
+- url: https://www.reddit.com/r/golang/comments/ibd5pv/how_do_you_handle_errors_in_background_job/
+---
+Hey gophers,
+
+I'm looking for the best practices and advice on how to handle errors in background jobs.
+
+For example, I have a HTTP server and a background job running in a separate goroutine. The job is writing the current time in some file every second.
+
+    func writeTimeToFile(ctx context.Context, filename string) {
+        var timer = time.NewTimer(time.Second)
+        for {
+            select {
+            case &lt;-timer.C:
+                // 1. Open or create the file filename.
+                // 2. Write the current time.
+                // 3. Close the file.
+                timer.Reset(time.Second)
+            case &lt;-ctx.Done():
+                return
+            }
+        }
+    }
+
+Errors here could happen when
+
+1. the file is being opened or created.
+2. the current time is being written into the file.
+3. the file is closing.
+
+*What do you suggest is the best solution to handle errors here? Should the errors be processed in place, or should errors be propagated elsewhere on upper levels? Which is the best place for taking decision on what to do with the error?*
+
+I'm asking because errors have different meaning.
+
+* Some error can be ignored without harm.
+* Some errors are recoverable but requires some additional actions to be done prior to continue.
+* Some errors requires job restart.
+* Some errors requires to halt the whole program with diagnostics.
+* etc etc.
+## [8][Create versatile Microservices in Golang - part 1 of 10 part series](https://www.reddit.com/r/golang/comments/iap0gv/create_versatile_microservices_in_golang_part_1/)
 - url: https://ewanvalentine.io/microservices-in-golang-part-1/
 ---
 
-## [2][Tool by Go team to get go doc badge for your repository](https://www.reddit.com/r/golang/comments/ial219/tool_by_go_team_to_get_go_doc_badge_for_your/)
-- url: https://pkg.go.dev/badge/
----
-
-## [3][Transitioning from DevOps to Go developer?](https://www.reddit.com/r/golang/comments/iardul/transitioning_from_devops_to_go_developer/)
+## [9][Transitioning from DevOps to Go developer?](https://www.reddit.com/r/golang/comments/iardul/transitioning_from_devops_to_go_developer/)
 - url: https://www.reddit.com/r/golang/comments/iardul/transitioning_from_devops_to_go_developer/
 ---
 Hi,
@@ -15,53 +92,20 @@ Hi,
 This might be one of the stranger posts, as many seem to wish to enter my field (DevOps). But truly, I enjoy development a lot more, specifically Go development. I don't feel the same level of excitement writing Jenkins pipelines, managing Kubernetes clusters or maintaining Terraform modules. Any time I get to develop a solution in Go/Python I feel genuine excitement. Sadly I can't opensource alot of my tooling either. It feels like I'm a glue, like the Star Wars midichlorians, but I wish to be the force user. 
 
 Has anyone made this transition before? Any advice? Go roles are quite scarce around London as it is.
-## [4][2D gopher game using Gio](https://www.reddit.com/r/golang/comments/iaj3ir/2d_gopher_game_using_gio/)
-- url: https://www.reddit.com/r/golang/comments/iaj3ir/2d_gopher_game_using_gio/
+## [10][CodeRover - A low code platform for developing cross language and framework applications fast.](https://www.reddit.com/r/golang/comments/iba3z4/coderover_a_low_code_platform_for_developing/)
+- url: https://www.reddit.com/r/golang/comments/iba3z4/coderover_a_low_code_platform_for_developing/
 ---
-I was looking around for some Go GUI libraries and I came across Gio, an immediate mode GUI written in Go with great multi-platform support. I decided I was going to make a project with Gio, and as a result, I ended up making a fun gopher-inspired game where you play as a gopher navigating a garden. This is my first time using Gio and I am almost certain I did a lot of things in different ways from how they should be done with Gio, but at least I got the game running and I think it is pretty neat. I strongly recommend using Gio and for more information on it, visit [gioui.org](https://gioui.org/). Also, if you are interested in the project I made with Gio, the source code is viewable at [github.com/enzo-sa/gopher-garden](https://github.com/enzo-sa/gopher-garden). I'm not trying to push anything down anyone's throats, but I just had such a great experience with Gio and I think that it deserves more recognition.
-## [5][What are some of the tools/plugins are you using to optimize your development workflow?](https://www.reddit.com/r/golang/comments/iaqgy1/what_are_some_of_the_toolsplugins_are_you_using/)
-- url: https://www.reddit.com/r/golang/comments/iaqgy1/what_are_some_of_the_toolsplugins_are_you_using/
----
-Sorry if this question was already posted.
+CodeRover is an open source low code platform with the following goals :
 
-What are some of the plugins (like VSCode plugins) and other tools you're using to speed up and optimize your development workflow?
+1. One platform for developing microservices with any language and related frameworks
+2. Easy to use CLI and UI to facilitate rapid development of microservices.
 
-Mine so far are:
+[https://github.com/coderover-dev/coderover](https://github.com/coderover-dev/coderover)
 
-Main IDE: VSCode
+&amp;#x200B;
 
-Plugins: 
-- [Docker](https://github.com/microsoft/vscode-docker)
-- [Dotenv](https://github.com/mikestead/vscode-dotenv)
-- [EditorConfig](https://github.com/editorconfig/editorconfig-vscode)
-- [Go](https://github.com/golang/vscode-go) (doh!)
-- [Pgsql](https://github.com/doublefint/vscode-pgsql)
-- [Todo+](https://github.com/fabiospampinato/vscode-todo-plus)
+The initial development is currently targeted with Golang/Gin stack for the MVP.
 
-CLI: iTerm2 with zsh + oh-my-zsh
+The project is at an early stage right now, looking forward to collaborate and open for contributors to take this project forward.
 
-Database Client: Navicat for PostgreSQL, but I'd like to switch this one out, too much trouble and bugs lately.
-
-I keep all my Go projects in separate Docker containers, where I can control the package versions, etc.
-
-I use Ansible to set up a new server and for deploying applications, if there's need to be some custom stuff set up on the server, otherwise I use Github Actions for deployment.
-## [6][Quake 2 Map Renderer](https://www.reddit.com/r/golang/comments/iab4me/quake_2_map_renderer/)
-- url: https://github.com/samuelyuan/go-quake2
----
-
-## [7][A flamegraph generator for Postgres EXPLAIN ANALYZE output.](https://www.reddit.com/r/golang/comments/iama5d/a_flamegraph_generator_for_postgres_explain/)
-- url: https://github.com/alitrack/pg_flame
----
-
-## [8][airscan: Go package to scan paper documents 📄 from a scanner 🖨️ via the network 🕸️ using the Apple AirScan (eSCL) protocol](https://www.reddit.com/r/golang/comments/iascmx/airscan_go_package_to_scan_paper_documents_from_a/)
-- url: https://github.com/stapelberg/airscan
----
-
-## [9][alitrack/pdf2image,convert a multi page PDF document to a long image. depends on go-fitz](https://www.reddit.com/r/golang/comments/iamt5g/alitrackpdf2imageconvert_a_multi_page_pdf/)
-- url: https://github.com/alitrack/pdf2image
----
-
-## [10][A scheme converter for Git URLs, written in Go](https://www.reddit.com/r/golang/comments/iargps/a_scheme_converter_for_git_urls_written_in_go/)
-- url: https://github.com/nakabonne/giturl
----
-
+Please feel free to ask questions, provide suggestions.

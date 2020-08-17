@@ -56,65 +56,95 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][Why has reddit suspended Bjarne Stroustrup's account? Accounts are only suspended manually so somebody at reddit looked at u/bstroustrup's account and decided to suspend it.](https://www.reddit.com/r/cpp/comments/ia6u5t/why_has_reddit_suspended_bjarne_stroustrups/)
+## [2][I made this ASCII Ray Tracing program in C++, any feedback and suggestions are welcome](https://www.reddit.com/r/cpp/comments/ibcvks/i_made_this_ascii_ray_tracing_program_in_c_any/)
+- url: https://youtu.be/QkETiyYWh2o
+---
+
+## [3][Eliminating the static overhead of C++ ranges (2019)](https://www.reddit.com/r/cpp/comments/ib7tt9/eliminating_the_static_overhead_of_c_ranges_2019/)
+- url: https://vector-of-bool.github.io/2019/10/21/rngs-static-ovr.html
+---
+
+## [4][structopt: Parse command line arguments by defining a struct](https://www.reddit.com/r/cpp/comments/ibdp1p/structopt_parse_command_line_arguments_by/)
+- url: https://github.com/p-ranav/structopt
+---
+
+## [5][TIL: T{} is not the same as T()](https://www.reddit.com/r/cpp/comments/iatj87/til_t_is_not_the_same_as_t/)
+- url: https://www.reddit.com/r/cpp/comments/iatj87/til_t_is_not_the_same_as_t/
+---
+C++ is a language of surprises. Consider this code:
+
+    struct A
+    {
+        A() {}
+        int v;
+    };
+    
+    struct B
+    {
+        A a;
+    };
+    
+    int main()
+    {
+        B b1 = B();
+        B b2 = B{};
+    }
+
+b1.a.v is 0 while b2.a.v is uninitialized!
+
+See here [https://godbolt.org/z/svhGzP](https://godbolt.org/z/svhGzP)
+
+b1 is value initialized while b2 is aggregate initialized.
+
+If I create a vector of B objects and resize it, it will be initialized by STL using `B()` so v will be zero.
+
+However in many codebases people seem to use {} to initialize existing objects `x = {};`
+
+simply because `x = ();` does not compile. So if you want to initialize a variable to its default
+
+without repeating its type it seems a helper function is needed like:
+
+    template &lt;typename T&gt;
+    void init(T&amp; x) { x = T(); }
+
+So now I can write `init(x);` to ensure default/value initialization.
+
+What do you think?
+## [6][Blog: New features in SYCL 2020](https://www.reddit.com/r/cpp/comments/ibbdjc/blog_new_features_in_sycl_2020/)
+- url: https://www.reddit.com/r/cpp/comments/ibbdjc/blog_new_features_in_sycl_2020/
+---
+SYCL (pronounced ‘sickle’) is a royalty-free, cross-platform abstraction  layer that enables code for heterogeneous processors to be written in a  “single-source” style using completely standard C++. SYCL enables  single source development where C++ template functions can contain both  host and device code to construct complex algorithms that use the  acceleration provided by processors such as GPUs, and then re-use them  throughout their source code on different types of data. 
+
+A new version, SYCL 2020, is now out for community feedback and this [blog post](https://www.codeplay.com/portal/blogs/2020/08/13/sycl-2020.html) outlines the major new features and enhancements.
+## [7][Expansion statements in C++20](https://www.reddit.com/r/cpp/comments/ibc6xv/expansion_statements_in_c20/)
+- url: https://www.reddit.com/r/cpp/comments/ibc6xv/expansion_statements_in_c20/
+---
+Hi,
+
+I do not understand what is the status of the expansion statements feature ( [http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1306r1.pdf](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1306r1.pdf)). 
+
+This report says it was added to C++20:  [https://www.reddit.com/r/cpp/comments/au0c4x/201902\_kona\_iso\_c\_committee\_trip\_report\_c20/](https://www.reddit.com/r/cpp/comments/au0c4x/201902_kona_iso_c_committee_trip_report_c20/) 
+
+This thread basically says it is not:  [https://www.reddit.com/r/cpp/comments/dr1at2/the\_state\_of\_expansion\_statements/](https://www.reddit.com/r/cpp/comments/dr1at2/the_state_of_expansion_statements/) 
+
+Here,  [https://github.com/cplusplus/papers/issues/156](https://github.com/cplusplus/papers/issues/156), the feature is labeled as needs-revision.
+
+Can anybody clarify this?
+
+Thank you.
+## [8][Allowing CMake functions to return(value)](https://www.reddit.com/r/cpp/comments/ibbyro/allowing_cmake_functions_to_returnvalue/)
+- url: https://oleksandrkvl.github.io/2020/08/09/allowing-cmake-functions-to-return-value.html
+---
+
+## [9][Looking for a in object-Oriented analysis and design using C++ for beginners.](https://www.reddit.com/r/cpp/comments/ibcc0c/looking_for_a_in_objectoriented_analysis_and/)
+- url: https://www.reddit.com/r/cpp/comments/ibcc0c/looking_for_a_in_objectoriented_analysis_and/
+---
+Any help will be appreciated very much.
+## [10][Why has reddit suspended Bjarne Stroustrup's account? Accounts are only suspended manually so somebody at reddit looked at u/bstroustrup's account and decided to suspend it.](https://www.reddit.com/r/cpp/comments/ia6u5t/why_has_reddit_suspended_bjarne_stroustrups/)
 - url: https://www.reddit.com/user/bstroustrup
 ---
 
-## [3][Throwing Out the Kitchen Sink - Output Ranges](https://www.reddit.com/r/cpp/comments/iaesk7/throwing_out_the_kitchen_sink_output_ranges/)
+## [11][Throwing Out the Kitchen Sink - Output Ranges](https://www.reddit.com/r/cpp/comments/iaesk7/throwing_out_the_kitchen_sink_output_ranges/)
 - url: https://thephd.github.io/output-ranges
 ---
 
-## [4][Asio vs Boost.Asio](https://www.reddit.com/r/cpp/comments/iai9ae/asio_vs_boostasio/)
-- url: https://www.reddit.com/r/cpp/comments/iai9ae/asio_vs_boostasio/
----
-Are there any reasons to use Boost.Asio over Asio?
-
-I prefer to use only headers in my project but are there any disadvantages to this specifically if I'm writing a game server?
-
-Thank you
-## [5][A compiler/os detecting library for modern C++](https://www.reddit.com/r/cpp/comments/iadas4/a_compileros_detecting_library_for_modern_c/)
-- url: https://www.reddit.com/r/cpp/comments/iadas4/a_compileros_detecting_library_for_modern_c/
----
-I wrote a small single-header and header-only C++ library for detecting the host compiler/os using `if` and/or `if constexpr` (no need for `#if`/`#endif`). An example is included on `README.md`. The library supports some of the most used operating systems nowadays. Help/suggestions are appreciated.
-## [6][Are small memory allocations in C++ STL containers still a concern?](https://www.reddit.com/r/cpp/comments/iaervc/are_small_memory_allocations_in_c_stl_containers/)
-- url: https://blog.kaetemi.be/2020/08/15/are-small-memory-allocations-in-cpp-stl-containers-still-a-concern/
----
-
-## [7][What are some of the best Cheat Sheets that you use?](https://www.reddit.com/r/cpp/comments/i9q480/what_are_some_of_the_best_cheat_sheets_that_you/)
-- url: https://www.reddit.com/r/cpp/comments/i9q480/what_are_some_of_the_best_cheat_sheets_that_you/
----
-In my experience having quick references is extremely helpful. What are some of the best cheat sheets that you have used or currently use?
-## [8][Easy dependency management for C++ with CMake's FetchContent](https://www.reddit.com/r/cpp/comments/ia43ir/easy_dependency_management_for_c_with_cmakes/)
-- url: https://bewagner.github.io/programming/2020/05/02/cmake-fetchcontent/
----
-
-## [9][Bizarre SSE/AVX codegen with MSVC Preview](https://www.reddit.com/r/cpp/comments/i9wa79/bizarre_sseavx_codegen_with_msvc_preview/)
-- url: https://www.reddit.com/r/cpp/comments/i9wa79/bizarre_sseavx_codegen_with_msvc_preview/
----
-I switched to the latest preview recently because I wanted access to more C++20 features to clean some things up, but looking at the assembly all of my aligned SIMD loads and stores through intrinsics have become unaligned, and no matter what hints I give the compiler it will never generate an aligned load or store. I'm not sure if this is a bug, or if there's a genuine reason to prefer unaligned loads and store instructions now on x86-64, but I'm just putting this out there because I know some of the MSVC guys lurk around here.
-## [10][Boost 1.74 is out](https://www.reddit.com/r/cpp/comments/i9i4vi/boost_174_is_out/)
-- url: https://www.boost.org/users/history/version_1_74_0.html
----
-
-## [11][TIL: on x86-64 compilers will use addressing mode to replace simple multiplications](https://www.reddit.com/r/cpp/comments/i9mgvf/til_on_x8664_compilers_will_use_addressing_mode/)
-- url: https://www.reddit.com/r/cpp/comments/i9mgvf/til_on_x8664_compilers_will_use_addressing_mode/
----
-obligatory godbolt: [https://gcc.godbolt.org/z/csEnh4](https://gcc.godbolt.org/z/csEnh4)
-
-i was testing a snippet, and i was delighted to see how the compiler optimizes simple multiplications using the x86-64 addressing mode
-
-here's a little table
-
-| op | ~ trasformation |
-| --- | ---|
-| var*=2 |  var &lt;&lt;= 1 |
-| var*=3 | var = var+var*2 |
-| var*=4 | var &lt;&lt;= 2 |
-| var*=5 | var = var+var*4 |
-| var*=6 | tmp = var*3; var = tmp+tmp |
-| var*=7 | var = var*8-var |
-| var*=8 | var &lt;&lt;= 3 |
-| var*=9 | var = var*8+var |
-| var*=10 | tmp = var+var*4; var = tmp+tmp |
-
-and here's a nice explanation: [https://paul.bone.id.au/blog/2018/09/05/x86-addressing/](https://paul.bone.id.au/blog/2018/09/05/x86-addressing/)

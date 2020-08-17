@@ -1,9 +1,43 @@
 # ruby
-## [1][Airbnb Clone Ruby Sinatra Microservice Plus Angular 9](https://www.reddit.com/r/ruby/comments/iaedzb/airbnb_clone_ruby_sinatra_microservice_plus/)
-- url: https://www.youtube.com/watch?v=FENVw7LjDbY&amp;feature=share
+## [1][dry-validation - why? | The motivation behind the creation of the library](https://www.reddit.com/r/ruby/comments/ibafnz/dryvalidation_why_the_motivation_behind_the/)
+- url: https://www.youtube.com/watch?v=nOUPIa7tWpA
 ---
 
-## [2][Need help figuring out how to isolate integers from strings in a nested array.](https://www.reddit.com/r/ruby/comments/iam54q/need_help_figuring_out_how_to_isolate_integers/)
+## [2][Ruby introduces find pattern in pattern matching](https://www.reddit.com/r/ruby/comments/ib75va/ruby_introduces_find_pattern_in_pattern_matching/)
+- url: https://blog.saeloun.com/2020/08/17/find-pattern-in-pattern-matching
+---
+
+## [3][When Should You NOT Use Rails?](https://www.reddit.com/r/ruby/comments/ibbscr/when_should_you_not_use_rails/)
+- url: https://codefol.io/posts/when-should-you-not-use-rails/
+---
+
+## [4][_ _ Overview of things in Ruby which have an underscore-wrapped name _ _](https://www.reddit.com/r/ruby/comments/ibdype/overview_of_things_in_ruby_which_have_an/)
+- url: https://idiosyncratic-ruby.com/74-super-snakes.html
+---
+
+## [5][Metaprogramming in Ruby - Jonan Scheffler, Director of Developer Relations at New Relic](https://www.reddit.com/r/ruby/comments/ibdig5/metaprogramming_in_ruby_jonan_scheffler_director/)
+- url: https://www.youtube.com/watch?v=jIct98eVUrA
+---
+
+## [6][OpenStruct in Ruby](https://www.reddit.com/r/ruby/comments/ib7ksl/openstruct_in_ruby/)
+- url: https://www.sandipmane.dev/openstruct-in-ruby
+---
+
+## [7][Adjust CORS settings – API only ruby on rails course (chapter 9)](https://www.reddit.com/r/ruby/comments/iasqt4/adjust_cors_settings_api_only_ruby_on_rails/)
+- url: https://duetcode.io/rails-api-only-course/adjust-cors-settings
+---
+
+## [8][Youtube-dl add-on for Pluralsight](https://www.reddit.com/r/ruby/comments/iatt44/youtubedl_addon_for_pluralsight/)
+- url: https://www.reddit.com/r/ruby/comments/iatt44/youtubedl_addon_for_pluralsight/
+---
+Youtube-dl is used to download videos from youtube and several other sites. I was trying to download a few videos for my Pluralsight account the other day but found there were a ton of issues, at least on Ubuntu 20.04. I  made a small plug-in for youtube-dl specific to Pluralsight to save people time if you need to download some videos for offline use. Thought I'd share it here.
+
+ [https://github.com/Taikon/pluralscript](https://github.com/Taikon/pluralscript)
+## [9][5 Ruby Tips You Probably Don’t Know](https://www.reddit.com/r/ruby/comments/iav28d/5_ruby_tips_you_probably_dont_know/)
+- url: https://medium.com/rubycademy/5-ruby-tips-you-probably-dont-know-76fee34cfd0c
+---
+
+## [10][Need help figuring out how to isolate integers from strings in a nested array.](https://www.reddit.com/r/ruby/comments/iam54q/need_help_figuring_out_how_to_isolate_integers/)
 - url: https://www.reddit.com/r/ruby/comments/iam54q/need_help_figuring_out_how_to_isolate_integers/
 ---
 Hi friends, first post! I'm learning Ruby and currently going through a bootcamp prework, but I am currently stuck on one of the labs. I need to write a method isolating strings from integers in a given nested array but don't have the vernacular to figure out just how to do that. 
@@ -75,80 +109,3 @@ I am almost 100% confident my issue lies in the lack of code directly underneath
 &amp;#x200B;
 
 Any and all help is appreciated!
-## [3][Completing 100% Ruby Koans in 1 Stream](https://www.reddit.com/r/ruby/comments/ia949z/completing_100_ruby_koans_in_1_stream/)
-- url: https://twitch.tv/robedcoder
----
-
-## [4][Replace weird characters such as á → a, or Ü → U](https://www.reddit.com/r/ruby/comments/i9vlu5/replace_weird_characters_such_as_á_a_or_ü_u/)
-- url: https://www.reddit.com/r/ruby/comments/i9vlu5/replace_weird_characters_such_as_á_a_or_ü_u/
----
-Basically I have a requirement where part of the job I have to do is:
-
-1. Receive a string of 200 characters long (which can be in UTF8)
-2. Write this string in a text file replacing every weird character, producing 200 characters again, but using only 200 bytes (i.e. one byte per character so can't be UTF8)
-
-Ideally I should only allow ASCII characters in the final file, replacing characters like this: á → a, or Ü → U, but replacing stuff like ¶ or ʧ for a white-space.
-
-Is there a relatively well known way to do this?
-## [5][12 ways to call a method in Ruby](https://www.reddit.com/r/ruby/comments/i9hvjj/12_ways_to_call_a_method_in_ruby/)
-- url: https://www.notonlycode.org/12-ways-to-call-a-method-in-ruby/
----
-
-## [6][Uploading files to root-owned directories with Capistrano](https://www.reddit.com/r/ruby/comments/i9miq1/uploading_files_to_rootowned_directories_with/)
-- url: https://tryhexadecimal.com/journal/capistrano-upload-root-directory
----
-
-## [7][Is this perfectly legal to do in Ruby? (Recently switched from PHP to Ruby/Sinatra)](https://www.reddit.com/r/ruby/comments/i98y7u/is_this_perfectly_legal_to_do_in_ruby_recently/)
-- url: https://www.reddit.com/r/ruby/comments/i98y7u/is_this_perfectly_legal_to_do_in_ruby_recently/
----
-Is this perfectly legal to do in Ruby? (Recently switched from PHP to Ruby/Sinatra)
-
-Then call `ClientHelper.get_instance` whenever I need a client anywhere. So that I won't be establishing duplicate new connections to an API all the time. and just use one.
-
-    class ClientHelper
-      
-      def initialize
-        if @client == nil
-          @client = establish_new_connection(ENV['TOKEN'])
-        end
-      end
-    
-      def get_instance
-        @client
-      end
-    
-    end
-## [8][Updated to Ubuntu 20.04, can't install gems without root access](https://www.reddit.com/r/ruby/comments/i98wok/updated_to_ubuntu_2004_cant_install_gems_without/)
-- url: https://www.reddit.com/r/ruby/comments/i98wok/updated_to_ubuntu_2004_cant_install_gems_without/
----
-So idk what happened. I updated to Ubuntu 20.04 and then I wanted to learn mechanize. Tried installing it and it said I don't have the write permissions for /var/lib/gems/2.7.0 directory. 
-
-Now to install gems I have to prefix sudo, what fixes are there for this?
-## [9][How environment check works in Ruby on Rails?](https://www.reddit.com/r/ruby/comments/i8uipt/how_environment_check_works_in_ruby_on_rails/)
-- url: https://medium.com/rubycademy/how-environment-check-works-in-ruby-on-rails-4cfbd0434605
----
-
-## [10][Error in Ruby Shoes When Trying to Run App](https://www.reddit.com/r/ruby/comments/i8ub0h/error_in_ruby_shoes_when_trying_to_run_app/)
-- url: https://www.reddit.com/r/ruby/comments/i8ub0h/error_in_ruby_shoes_when_trying_to_run_app/
----
-I'm getting the following error when I'm trying to run my Ruby Shoes app:
-
-&amp;#x200B;
-
-**Error in &lt;unknown&gt; line 0 | 2020-08-13 15:38:53 +1000**
-
-**cannot load such file -- ocr\_space**
-
-**/Applications/Shoes.app/Contents/MacOS/lib/ruby/2.3.0/rubygems/core\_ext/kernel\_require.rb:55:in \`require'**
-
-**/Applications/Shoes.app/Contents/MacOS/lib/ruby/2.3.0/rubygems/core\_ext/kernel\_require.rb:55:in \`require'**
-
-**shoes.rb:1:in \`&lt;main&gt;'**
-
-**/Applications/Shoes.app/Contents/MacOS/lib/shoes.rb:353:in \`eval'**
-
-**/Applications/Shoes.app/Contents/MacOS/lib/shoes.rb:353:in \`visit'**
-
-**/Applications/Shoes.app/Contents/MacOS/lib/shoes.rb:139:in \`show\_selector'**
-
-**/Applications/Shoes.app/Contents/MacOS/lib/shoes.rb:169:in \`block (4 levels) in splash'**

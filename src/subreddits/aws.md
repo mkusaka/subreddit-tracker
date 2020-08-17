@@ -1,107 +1,94 @@
 # aws
-## [1][Hands-on exercise with Amazon AppFlow to transfer data from S3 to S3](https://www.reddit.com/r/aws/comments/ianuhe/handson_exercise_with_amazon_appflow_to_transfer/)
-- url: http://aws-dojo.com/excercises/excercise4
+## [1][Week of Aug 17th - What are your favorite AWS Tips?](https://www.reddit.com/r/aws/comments/ibdue5/week_of_aug_17th_what_are_your_favorite_aws_tips/)
+- url: https://www.reddit.com/r/aws/comments/ibdue5/week_of_aug_17th_what_are_your_favorite_aws_tips/
+---
+Share your best AWS tips with the community!
+## [2][Amazon MSK (Kafka) vs EventBridge](https://www.reddit.com/r/aws/comments/ibateh/amazon_msk_kafka_vs_eventbridge/)
+- url: https://www.reddit.com/r/aws/comments/ibateh/amazon_msk_kafka_vs_eventbridge/
+---
+I need to create a message broker in my app (pub/sub model).
+
+I haven't found any comparison between MSK and EventBridge - description of both claims it's a good choice.
+
+Nevertheless, as I know life, there are some major differences. Can someone say which of this system is better? Or what are the major flaw of each of them? I have no experience in either of them.
+## [3][Creating a new Dev env in the cloud](https://www.reddit.com/r/aws/comments/ibaplk/creating_a_new_dev_env_in_the_cloud/)
+- url: https://www.reddit.com/r/aws/comments/ibaplk/creating_a_new_dev_env_in_the_cloud/
+---
+I just need a single server dev environment, but I am unsure about cloud security. This might end up needing two servers networked together. 
+
+If I spin up an EC2 server and control who has access, it that considered secure enough? Should I create a proper VPC with a private subnet?
+
+The code isn’t super sensitive, but I am not sure what open people do.
+
+Edit: I haven’t used AWS before as our company is on-premise.
+## [4][Did anyone get their credits from attending the EMEA Summit online??](https://www.reddit.com/r/aws/comments/ibafn5/did_anyone_get_their_credits_from_attending_the/)
+- url: https://www.reddit.com/r/aws/comments/ibafn5/did_anyone_get_their_credits_from_attending_the/
+---
+I just remembered I should have had some free credits from AWS for attending the online Summit. Did anyone else get theirs yet??
+
+[https://aws.amazon.com/events/summits/online/emea/faqs/](https://aws.amazon.com/events/summits/online/emea/faqs/)
+
+Says 31st July. 
+
+I have my certificate of attendance, which I feel I should frame and hang on the wall.... /s
+## [5][Quick hands-on exercise to understand Amazon Lambda Destinations](https://www.reddit.com/r/aws/comments/iba91t/quick_handson_exercise_to_understand_amazon/)
+- url: http://aws-dojo.com/excercises/excercise9
 ---
 
-## [2][Dark Mode Please!! My eyes are hurting :(](https://www.reddit.com/r/aws/comments/iaq34a/dark_mode_please_my_eyes_are_hurting/)
+## [6][Controlling the storage volume of a bucket in S3](https://www.reddit.com/r/aws/comments/ibcutw/controlling_the_storage_volume_of_a_bucket_in_s3/)
+- url: https://www.reddit.com/r/aws/comments/ibcutw/controlling_the_storage_volume_of_a_bucket_in_s3/
+---
+Hi r/aws,
+
+I'm looking around for options on controlling the storage volume of a given S3 bucket.Take for example we are contracted to provide no more than 100GB of storage to a specific client.
+
+I would like to control the capacity of the bucket.I'm finding CloudWatch metrics to be a little unreliable (not that I've really spent more than 10 minutes with it tonight).
+
+Does anyone have any guidance on how I might enforce a storage quota?
+
+Ideally - twice a day I'd like to get the current storage volume and if the size exceeds the value defined I would restrict the user or apply a new policy/acl on the bucket to restrict upload until the volume is reduced.
+## [7][Is there a way to leverage IAM authentication in non-AWS services?](https://www.reddit.com/r/aws/comments/ib7p4h/is_there_a_way_to_leverage_iam_authentication_in/)
+- url: https://www.reddit.com/r/aws/comments/ib7p4h/is_there_a_way_to_leverage_iam_authentication_in/
+---
+Here is the use-case. Let's say I am building a new backend API, I would like my clients to obtain an auth token for their IAM roles. Then the API will validate the token from request header and extrat iam role ARN from it for authentication purpose.
+
+Is this a pattern that can be implemented using AWS SDKs?
+## [8][API Gateway to mirror traffic](https://www.reddit.com/r/aws/comments/ib8xbt/api_gateway_to_mirror_traffic/)
+- url: https://www.reddit.com/r/aws/comments/ib8xbt/api_gateway_to_mirror_traffic/
+---
+I have an OLTP system using lambdas and the databases. It's accessed through the API Gateway. I'd like to mirror the traffic that goes to the OLTP to an OLAP system. Is this possible with the API Gateway?  
+
+
+I'm quite limited in the number of different services I can use on AWS due to restrictions by the sys admins, hence my question. The alternative is to have each lambda in the OLTP system shoot off a POST to the OLAP system at the start of each service, but I'm trying to avoid that.
+## [9][Is there a way to create a CloudWatch Event trigger to fire an event exactly at the first and second weekdays of a month?](https://www.reddit.com/r/aws/comments/ibczdh/is_there_a_way_to_create_a_cloudwatch_event/)
+- url: https://www.reddit.com/r/aws/comments/ibczdh/is_there_a_way_to_create_a_cloudwatch_event/
+---
+I have two events that I want to execute sequentially with an interval of one weekday between them (so one could be in Friday and the other in Monday).
+
+I've come up with those cron expressions: "0 15 1W \* ? \*" and "0 15 2W \* ? \*". The problem is that in the second one, with "2W", it gets executed at 1st January 2021 (Friday), the same day as the one that has "1W", because per the definition the W wildcard is the 'closest day'. That’s straight just an horrible idea, I can't think of a single scenario that this is any useful. One could argue, "oh no, it can be useful because if you put 31W, then in February it's gonna execute on the closest weekday, 26th, 27th or 28th if it's a leap year"—wrong, "0 15 31W \* ? \*" is called on 29th January 2021 and next time on 31th March 2021.
+
+"3W" and "4W" also gives 4th January 2021 for both schedules... this idea of "closest" in this scenario is just completely no sense.
+## [10][Dark Mode Please!! My eyes are hurting :(](https://www.reddit.com/r/aws/comments/iaq34a/dark_mode_please_my_eyes_are_hurting/)
 - url: https://www.reddit.com/r/aws/comments/iaq34a/dark_mode_please_my_eyes_are_hurting/
 ---
 Hey AWS Team, My Dark Reader extension for some reason can't transform the aws console page into dark mode. I understand that might be due to some security reasons.   
 But I request you people to please add a dark theme on AWS. My eyes really hurt a lot.
 
 If there is an existing solution to turn the console into dark theme, I would like to know it.
-## [3][Amazon S3 Path Deprecation Plan (Deprecate date: Sep 30, 2020)](https://www.reddit.com/r/aws/comments/ia5wy7/amazon_s3_path_deprecation_plan_deprecate_date/)
-- url: https://aws.amazon.com/blogs/aws/amazon-s3-path-deprecation-plan-the-rest-of-the-story/
+## [11][Should I use DynamoDB for this use-case?](https://www.reddit.com/r/aws/comments/ib95mx/should_i_use_dynamodb_for_this_usecase/)
+- url: https://www.reddit.com/r/aws/comments/ib95mx/should_i_use_dynamodb_for_this_usecase/
 ---
+a list of events with attributes:
 
-## [4][Can a Network Load Balancer be used to balance RTMP connections?](https://www.reddit.com/r/aws/comments/iamf3j/can_a_network_load_balancer_be_used_to_balance/)
-- url: https://www.reddit.com/r/aws/comments/iamf3j/can_a_network_load_balancer_be_used_to_balance/
----
-I've got one set up, and I can't seem to connect to it. When I check the end of the route for traffic, I'm getting a constant stream of about 2 connect/disconnects per second and I've been unable to get any further information.  Am I misunderstanding how RTMP works?  I thought since it was standard tcp I could pass it through a NLB.  
+* twitterLink
+* city
+* state
+* date
+* time
+* description
 
-The NLB is on a VPC with an ECS cluster and I've confirmed the security groups allow traffic from NLB to ECS instances, but I can't seem to get an RTMP stream through.  
+I want to be able to filter on any of those - most importantly the city and state.
 
-&amp;#x200B;
+Some events won't have any of those attributes filled in yet. They'll be added by real people looking at the twitterLink and extracting meaningful information.
 
-If I can't do it, does anyone have any ideas?  And if it *should* work, does anyone have any theories as to what I'm doing wrong?
-## [5][How to have RDS replicate data to EMR Hive / EMR Hive react to RDS changes?](https://www.reddit.com/r/aws/comments/iaqevu/how_to_have_rds_replicate_data_to_emr_hive_emr/)
-- url: https://www.reddit.com/r/aws/comments/iaqevu/how_to_have_rds_replicate_data_to_emr_hive_emr/
----
-Hi all. I am fairly new to the AWS universe, and we have started using some of its services at work approximately a year ago. Now we find ourselves in a situation where we need EMR Hadoop's HDFS and Hive's ability to query properly structured tables via SQL. We plan to install R, RHIPE and RHIVE to define UDFs to feed to Hive in order to produce statistical data. We are looking for a way to have RDS and EMR (directly Hive, if possible) sync data for (near) real-time calculations. I have read AWS own documentation for both services but have not found answers. We also checked out some APN software, but we were looking to use only AWS services, even an intermediary service for replication / syncing if needed. Any suggestion is appreciated. Thanks!
-## [6][Help with running a very basic web application](https://www.reddit.com/r/aws/comments/iamc32/help_with_running_a_very_basic_web_application/)
-- url: https://www.reddit.com/r/aws/comments/iamc32/help_with_running_a_very_basic_web_application/
----
-For a uni assignment, I have to create a web application with a group. The assignment is more about the project management, so we're just creating a really basic web application. We're using AWS, but I'm really confused by the services and what they offer even after doing a bunch of research. I've never really used AWS before. 
-
-We honestly need very little functionality, just basically retrieving data from our database, displaying that to the user on the front end, and then manipulating the database based on certain user actions.
-
-Right now we hjave S3, lambda, cognito, and dynamoDB setup with a basic landing page that lets the user register/login but I don't think this can do what we want for the actual application? I understand S3 is for static webpages and we essentially want a dynamic webpage, but doesn't lambda essentially act as the serverside code?
-
-Would we just be better off using Elastic Beanstalk?
-## [7][Accessing S3 buckets objects with Google Authentication (or any other OAuth provider)](https://www.reddit.com/r/aws/comments/iapt7p/accessing_s3_buckets_objects_with_google/)
-- url: https://www.reddit.com/r/aws/comments/iapt7p/accessing_s3_buckets_objects_with_google/
----
-#### Requirement
-Employees need access (read-only) to specific S3 buckets, using an OAuth provider, such as Google.
-
-#### Flow
-1. A static website served through S3 bucket (publicly available) - https://s3.company.com
-1. Employees (end-users) must go through a login process (Google Sign-In) to view the static website
-1. The end-user sees a list of buckets that he can view, the end-user clicks on a bucket and sees the list of objects in that bucket
-1. The end-user clicks on an object to download it (same experience as in AWS Console &gt; S3)
-
-#### Pros
-1. Avoid setting up ap SSO with AWS, no need to create a user per employee
-1. Avoid using VPN, using OAuth provider instead
-1. Providing a quick access to S3 objects, with great user experience - sign-in and download, no need to go through the AWS Console
-
-#### Cons (discussion)
-This is where you come in - I need your help to understand if there's something fundamentally wrong with this process
-
-
-Refs- 
-1. A great example of how the frontend should like - https://github.com/awslabs/aws-js-s3-explorer
-1. https://aws.amazon.com/blogs/security/how-to-set-up-federated-single-sign-on-to-aws-using-google-apps/
-## [8][WordPress on Elastic Beanstalk + RDS](https://www.reddit.com/r/aws/comments/iajx49/wordpress_on_elastic_beanstalk_rds/)
-- url: https://www.reddit.com/r/aws/comments/iajx49/wordpress_on_elastic_beanstalk_rds/
----
-Hi All,
-
-I'm looking for some advice on the best way to migrate a WordPress site off of a managed provider (some random vendor my company uses) onto AWS using Elastic Beanstalk + RDS.
-
-I understand the fundamentals of doing this, connecting S3 for storage, using RDS as the database, and having Elastic Beanstalk be completely stateless. But I'm curious as to the nuances of keeping WordPress and all of the plugins up to date across the environment. My current thought is to do all of the updates locally and push them with GitHub + CodeDeploy but I've never done this exact thing before so I thought I'd ask.
-
-Any feedback would be helpful and appreciated.
-## [9][Global Accelerator vs CloudFront for public ALB](https://www.reddit.com/r/aws/comments/iahog4/global_accelerator_vs_cloudfront_for_public_alb/)
-- url: https://www.reddit.com/r/aws/comments/iahog4/global_accelerator_vs_cloudfront_for_public_alb/
----
-Hi all
-
-Been wondering which service if any, would be useful, here is the relevant parts of my tech stack:
-
-*  JavaScript SPA in a S3 bucket with CloudFront for all the wonders a CDN does for static content.
-* A ECS cluster exposed by a public ALB, inside the cluster lives the business logic in the form of microservices, currently only in one region us-east1.
-
-The front-end makes HTTP requests to the alb, typical stuff, all the data gets send as JSON.
-
-The situation I'm facing is that even if using CloudFront helps for delivering the static content (especially when the user is far from the US) I still don't get much use of the aws backbone for networking, because the api calls are still going form the browser through the public internet to my alb (right?).
-
-This is were I think Global Accelerator or putting CloudFront in front of my alb would help, if I'm getting it correctly the flow would go something like this:
-
-* User enters example.com
-* The requests gets routed to the nearest PoP and the content gets delivered from there
-* User authenticates with Cognito, not much I can do here since the Cognito user pool and all the routing is taking care by aws
-* User starts using example.com, and when needed the browser makes requests to api.example.com 
-* Here ideally by using CloudFront or Global Accelerator the request would get routed to the nearest PoP and once there the request would go through the aws backbone all the way to my alb and back
-
-That last point is what is important and where I'm having trouble with, what difference would make to use either service? Would CloudFront actually cache any content from the alb? If yes then I would have to have a TTL=0 as the content varies by user. 
-
-What about the TLS handshake that occurs on each request to api.example.com are there any mechanisms to reuse the handshakes needed if i would use any of theses services?
-
-I'm a gaining anything by this? Or just wasting money? Would like to hear what everyone has to say.
-## [10][Does API Gateway / Lambda support Server-Sent Events? Or just WebSockets?](https://www.reddit.com/r/aws/comments/iaj5ea/does_api_gateway_lambda_support_serversent_events/)
-- url: https://www.reddit.com/r/aws/comments/iaj5ea/does_api_gateway_lambda_support_serversent_events/
----
-Does API Gateway / Lambda support Server-Sent Events? Or just WebSockets?
-
-I’ve found one resource that said the lambdas would have to be kept alive for the duration of the connection which kind of defeats the purpose.
+I was planning on using Lambda to serve events to the frontend.

@@ -19,95 +19,108 @@ The unofficial Rust community Discord: [https://bit.ly/rust-community](https://b
 Also check out [last week's thread](https://reddit.com/r/rust/comments/hynlfl/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][This Week in Rust 351](https://www.reddit.com/r/rust/comments/i8iqb9/this_week_in_rust_351/)
-- url: https://this-week-in-rust.org/blog/2020/08/11/this-week-in-rust-351/
+## [2][Official /r/rust "Who's Hiring" thread for job-seekers and job-offerers [Rust 1.45]](https://www.reddit.com/r/rust/comments/htnv19/official_rrust_whos_hiring_thread_for_jobseekers/)
+- url: https://www.reddit.com/r/rust/comments/htnv19/official_rrust_whos_hiring_thread_for_jobseekers/
+---
+Welcome once again to the official /r/rust Who's Hiring thread!
+
+Before we begin, job-seekers should also remember to peruse [the prior thread](https://old.reddit.com/r/rust/comments/gz8ut5/official_rrust_whos_hiring_thread_for_jobseekers/).
+
+This thread will be periodically stickied to the top of /r/rust for improved visibility. The thread will be refreshed and posted anew when the next version of Rust releases in six weeks.
+
+Please adhere to the following rules when posting (adapted from /r/cpp's jobs thread).
+# Rules for individuals:
+
+ * Don't create top-level comments; those are for employers.
+ * Feel free to reply to top-level comments with on-topic questions.
+ * I will create a stickied top-level comment for individuals looking for work.
+ * I will create an additional top-level comment for meta discussion.
+
+# Rules for employers:
+
+ * To find individuals seeking work, see the replies to the stickied top-level comment; you will need to click the "more comments" link at the bottom of the top-level comment in order to make these replies visible.
+ * To make a top-level comment you must be hiring directly; no third-party recruiters.
+ * One top-level comment per employer. If you have multiple job openings, please consolidate their descriptions or mention them in replies to your own top-level comment.
+ * Proofread your comment after posting it and edit it if necessary to correct mistakes.
+ * Please base your comment on the following template:
+
+COMPANY: *[Company name; please link to your company's website or careers page.]*
+
+TYPE: *[Full time, part time, internship, contract, etc.]*
+
+DESCRIPTION: *[What does your company do, and what are you using Rust for? How much experience are you seeking and what seniority levels are you hiring for? The more details the better.]*
+
+LOCATION: *[Where are your office or offices located? If your workplace language isn't English, please specify it.]*
+
+REMOTE: *[Do you offer the option of working remotely? If so, do you require employees to live in certain areas or time zones?]*
+
+VISA: *[Does your company sponsor visas?]*
+
+CONTACT: *[How can someone get in touch with you?]*
+## [3][Veloren, an open-source multiplayer voxel RPG written in Rust, just had its 0.7 release with a tonne of new features!](https://www.reddit.com/r/rust/comments/ib83bl/veloren_an_opensource_multiplayer_voxel_rpg/)
+- url: https://veloren.net/
 ---
 
-## [3][Blog Post: Code Smell: Concrete Abstraction](https://www.reddit.com/r/rust/comments/iaic5w/blog_post_code_smell_concrete_abstraction/)
-- url: https://matklad.github.io/2020/08/15/concrete-abstraction.html
+## [4][🎉 The Embedded Working Group Newsletter - 24](https://www.reddit.com/r/rust/comments/ibcvnz/the_embedded_working_group_newsletter_24/)
+- url: https://rust-embedded.github.io/blog/newsletter-24/
 ---
 
-## [4][Kosmonaut: Web browser from scratch in Rust](https://www.reddit.com/r/rust/comments/iab2sm/kosmonaut_web_browser_from_scratch_in_rust/)
-- url: https://github.com/twilco/kosmonaut
+## [5][Stackage for Rust?](https://www.reddit.com/r/rust/comments/ib9orc/stackage_for_rust/)
+- url: https://www.snoyman.com/blog/2020/08/stackage-for-rust
 ---
 
-## [5][Show /r/rust: A GUI Backup tool, written in Rust using wgpu](https://www.reddit.com/r/rust/comments/iaqpxs/show_rrust_a_gui_backup_tool_written_in_rust/)
-- url: https://github.com/KongouDesu/BackupGUI
+## [6][Cranelift can now compile rustc- giving nearly 7x faster compilations than LLVM!](https://www.reddit.com/r/rust/comments/iat25g/cranelift_can_now_compile_rustc_giving_nearly_7x/)
+- url: https://github.com/bjorn3/rustc_codegen_cranelift/issues/743#issuecomment-674526510
 ---
 
-## [6][Why Rust's Unsafe Works](https://www.reddit.com/r/rust/comments/iab5y6/why_rusts_unsafe_works/)
-- url: https://jam1.re/blog/why-rusts-unsafe-works
+## [7][Short Post: Using Long Paths in Windows and Rust](https://www.reddit.com/r/rust/comments/ibbv4t/short_post_using_long_paths_in_windows_and_rust/)
+- url: https://gal.hagever.com/posts/windows-long-paths-in-rust/
 ---
 
-## [7][Saving Servo](https://www.reddit.com/r/rust/comments/iaeiov/saving_servo/)
-- url: https://www.reddit.com/r/rust/comments/iaeiov/saving_servo/
----
-Reflecting on the latest Mozilla layoffs, I'm sure Rust will bounce back, but I'm curious about the future of Servo. From what I understand the whole Servo team was laid off, which is a real shame. Whilst the project is open source and contributions are still ongoing, the reality is that developers need to pay their bills and it would appear likely that we'll see a slowdown in activity. What I'm wondering about is whether there is an opportunity to build a funding model to support it, either through donations (Patreon, etc...) or through commercialisation.
-
-Regarding commercialisation, one idea that springs to mind is to use it in an embedded mobile browser product similar to Adobe PhoneGap ([https://phonegap.com/](https://phonegap.com/)), but with a stronger focus on WebAssembly performance. WebAssembly seems like an ideal base for cross-platform mobile development, and although Servo isn't quite ready for primetime as a general purpose web browser engine it seems that it could work well if support was targetted at best-in-class WebAssembly performance for mobile apps, which is also something I think mobile app developers would be willing to pay for.
-
-Aside from the suggestion above, does anyone have any thoughts on how to help Servo to continue to develop?
-## [8][Are the memory representations of T&lt;A&gt; and T&lt;B&gt; identical if A has the transparent representation of B?](https://www.reddit.com/r/rust/comments/iaqow5/are_the_memory_representations_of_ta_and_tb/)
-- url: https://www.reddit.com/r/rust/comments/iaqow5/are_the_memory_representations_of_ta_and_tb/
----
-Suppose that we have
-
-    #[repr(transparent)]
-    struct A(B);
-
-Are the ABIs of T&lt;A&gt; and T&lt;B&gt; identical no matter how we define T, so that transmuting between T&lt;A&gt; and T&lt;B&gt; always has a guaranteed behavior?
-
-I mean, transmuting might not be safe, however, it does result in a valid value. Am I right?
-## [9][How does `impl` work when returning a trait-bound type?](https://www.reddit.com/r/rust/comments/iao53b/how_does_impl_work_when_returning_a_traitbound/)
-- url: https://www.reddit.com/r/rust/comments/iao53b/how_does_impl_work_when_returning_a_traitbound/
----
-Hello everyone,
-Yesterday I tried to implement a simple `composition` function that takes a couple of other functions and returns their mathematical composition as a closure.
-
-This was my first attempt:
-```rust
-fn composition&lt;A, B, C, F : Fn(B) -&gt; C, G : Fn(A) -&gt; B&gt;(f : F, g : G) -&gt; Fn(A) -&gt; C {
-    move |a| f(g(a))
-}
-```
-
-It doesn't work because the size of the return type (`Fn(A) -&gt; C`) is not known at compile time (`Error[E0746]: return type cannot have an unboxed trait object`). I was ready to try something involving `Box` when I stumbled upon the `impl` keyword applied to return types as a convenient way to apply trait bounds. The following iteration works like a charm:
-
-```rust
-fn composition&lt;A, B, C, F : Fn(B) -&gt; C, G : Fn(A) -&gt; B&gt;(f : F, g : G) -&gt; impl Fn(A) -&gt; C {
-    move |a| f(g(a))
-}
-```
-
-I would like to ask a little clarification on what is going on under the hood. I can see why my first try didn't work: `Fn(A) -&gt; C` by itself is not enough to know how much memory must be allocated on the stack, and Rust works mainly with stack memory (unless otherwise specified, with types like `Box` and `Vec`). How does adding `impl` fix this? Is it treated like as a generic/template/type constructor and the compiler infers the actual return type for each usage of the function? Or does it hide some kind of heap allocation?
-
-My primary usage for rust is focused on embedded development where dynamic memory is not a given, so I'm particularly interested in this topic.
-## [10][Temporarily opt-in to shared mutation](https://www.reddit.com/r/rust/comments/iaajiu/temporarily_optin_to_shared_mutation/)
-- url: https://ryhl.io/blog/temporary-shared-mutation/
+## [8][Tunshell - A drop-in remote shell client and server written in Rust for easy shell access to deployment pipelines or other ephemeral environments, working behind NAT or firewall](https://www.reddit.com/r/rust/comments/ibcvpe/tunshell_a_dropin_remote_shell_client_and_server/)
+- url: https://github.com/TimeToogo/tunshell
 ---
 
-## [11][How can I change syntax highlighting of rust analyzer in VS Code?](https://www.reddit.com/r/rust/comments/iak2hk/how_can_i_change_syntax_highlighting_of_rust/)
-- url: https://www.reddit.com/r/rust/comments/iak2hk/how_can_i_change_syntax_highlighting_of_rust/
+## [9][[announce] wide-0.5.0: now with more types!](https://www.reddit.com/r/rust/comments/ib5vok/announce_wide050_now_with_more_types/)
+- url: https://www.reddit.com/r/rust/comments/ib5vok/announce_wide050_now_with_more_types/
 ---
-Rust analyzer currently underlines mutable variables in vs code, but I'd rather make them bold. If this is possible, how do I do it?
+The [wide](https://docs.rs/wide) crate has a new 0.5 version out! It's a crate to help make SIMD-friendly programming easier on you, the programmer.
 
-[This](https://imgur.com/a/l4snYD1) is how it looks like at the moment. I don't like the underlines (they also hide error squiggles).
-## [12][[Ask] Explicit ways to express argument mutability](https://www.reddit.com/r/rust/comments/ianmbk/ask_explicit_ways_to_express_argument_mutability/)
-- url: https://www.reddit.com/r/rust/comments/ianmbk/ask_explicit_ways_to_express_argument_mutability/
+Major features include:
+* Supports all the common 128-bit SIMD types: f32x4, f64x2, i8x16, u8x16, i16x8, u16x8, i32x4, u32x4, i64x2, u64x2
+* Supports many of the things you'd want to do with those types. What you can currently do is largely driven by the availability of hardware support on x86 / x86_64 machines.
+* Software fallbacks for when there isn't hardware support are sometimes understood by LLVM and optimized appropriately, and sometimes LLVM doesn't get it and performance is just worse. This will improve some day in the far future when the ARM/Aarch64 intrinsics become Stable.
+* `no_std`
+* All cpu feature selection is done at compile time only via `#[cfg()]` and RUSTFLAGS and so forth, there's no runtime feature detection mechanism.
+* Essentially no docs at the moment, but method names are the same as normal math function names, so it's fairly clear on its own.
+
+If you want to contribute, I'm open to PRs as long as the crate continues to build on Stable by default.
+## [10][Webassembly Without The Browser (Part 1)](https://www.reddit.com/r/rust/comments/iayqyv/webassembly_without_the_browser_part_1/)
+- url: https://alexene.dev/2020/08/17/webassembly-without-the-browser-part-1.html
 ---
-Hi guys,
 
-I would like to ask something. There is an annoying thing in Rust I could not solve yet nicely, namely call site mutability notation.
+## [11][Using the quote crate, how to use the quote macro on &amp;str?](https://www.reddit.com/r/rust/comments/ibbw4v/using_the_quote_crate_how_to_use_the_quote_macro/)
+- url: https://www.reddit.com/r/rust/comments/ibbw4v/using_the_quote_crate_how_to_use_the_quote_macro/
+---
+I am using the quote crate to write some Rust code. I have variables of type &amp;str which I want include in the quote macro (quote!).
 
-    pub fn func(vars: Vec&lt;Variable&gt;) {
-        immut_call(&amp;vars);      // accepts &amp;Vec&lt;Variable&gt;
-        mut_call(&amp;mut vars);    // accepts &amp;mut Vec&lt;Variable&gt;
-    }
+Now the problem is that the &amp;str remains &amp;str. I want the quotes to be removed. So let's say I have this code:
 
-In this example it is obvious for the reader, which function modifies `vars`. Now let's change the input param type to a &amp;mut ptr.
+    let some_import = "use crate::SomeStruct;";
+    let generated = quote::quote! { #some_import };
 
-    pub fn func(vars: &amp;mut Vec&lt;Variable&gt;) {
-        immut_call(vars); 
-        mut_call(vars);   
-    }
-My question is, is there a nice way to somehow make it explicit which call (immut_call and mut_call) will modify its input parameter? I can solve it by introducing a new scope around `immut_call` and shadowing the original `vars` variable with an immutable one, or by casting it to the right mutability in the argument list, but they are quite ugly solutions.
+The result is that it is interpretated literally with the quotes, so my import literally looks like this:
+
+    "use crate::SomeStruct;"
+
+But I want this:
+
+    use crate::SomeStruct;
+
+Normally I use format\_ident for &amp;str/String to remove the quotes, but it crashes saying ' use crate::SomeStruct;' is not a valid identifier.
+
+How do I use the quote::quote macro to remove quotes from a &amp;str/String?
+## [12][A steganographic tool for hiding messages in x86 binaries, written in Rust](https://www.reddit.com/r/rust/comments/iatp22/a_steganographic_tool_for_hiding_messages_in_x86/)
+- url: https://github.com/woodruffw/steg86
+---
+

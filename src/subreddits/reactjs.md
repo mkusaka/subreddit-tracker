@@ -111,340 +111,67 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/i1u8a4/whos_hiring_august_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][I just made very first react.js website named as yugilife to make High-Quality yugioh cards with it!](https://www.reddit.com/r/reactjs/comments/ialx8v/i_just_made_very_first_reactjs_website_named_as/)
-- url: https://alixsep.github.io/yugilife
+## [3][I made a React app with an interactive map that features all the bike lanes, bike parking spots, services and etc. for my city.](https://www.reddit.com/r/reactjs/comments/ibd3gu/i_made_a_react_app_with_an_interactive_map_that/)
+- url: https://github.com/dani2221/mktocak
 ---
 
-## [4][I've made a website that matches your Spotify profile with music festivals](https://www.reddit.com/r/reactjs/comments/iah2q6/ive_made_a_website_that_matches_your_spotify/)
-- url: https://spotifest.app
+## [4][Few ways to boost your react applications performance](https://www.reddit.com/r/reactjs/comments/ib0d5v/few_ways_to_boost_your_react_applications/)
+- url: https://www.reddit.com/r/reactjs/comments/ib0d5v/few_ways_to_boost_your_react_applications/
 ---
+I have tried to write down few methods i used to achieve improved performance to my react application.
 
-## [5][Any other typescript users constantly confused between JSX.Element, React.ReactNode, React.ReactElement, React.ComponentType when using memo, context, HOCs, etc?](https://www.reddit.com/r/reactjs/comments/ia8sdi/any_other_typescript_users_constantly_confused/)
-- url: https://www.reddit.com/r/reactjs/comments/ia8sdi/any_other_typescript_users_constantly_confused/
+[https://medium.com/@singhshweta/performance-boosters-for-react-applications-418896b5f24](https://medium.com/@singhshweta/performance-boosters-for-react-applications-418896b5f24)
+## [5][Top component API call vs child component API call?](https://www.reddit.com/r/reactjs/comments/ibate2/top_component_api_call_vs_child_component_api_call/)
+- url: https://www.reddit.com/r/reactjs/comments/ibate2/top_component_api_call_vs_child_component_api_call/
 ---
-The React component tree doesn't seem to make any logical sense.
+Hello, I've been wondering for the past days what would be the pros and cons of top vs child component API call.
 
-I can't figure out which of the above I'm supposed to be using when trying to work with React.memo, context, etc.
+What I mean by that is, would it be better to have a gigantic call on a page component that gets all the data which will be feed to the child components, or have more fragmented call within the childs that only get the required data for said child?
 
-Maybe it's just me but is there a cheatsheet or something anywhere?
-## [6][React app doesn't compile when run in a docker container](https://www.reddit.com/r/reactjs/comments/ias2k5/react_app_doesnt_compile_when_run_in_a_docker/)
-- url: https://www.reddit.com/r/reactjs/comments/ias2k5/react_app_doesnt_compile_when_run_in_a_docker/
+The first one seems to me more performant as it makes way less call to the API, but if an error occurs it's on the whole page, whereas fragmented API call might be less performant but this make the child more independent and if error occurs it can be on a localized child only and the others would still work.
+
+What are your thoughts on this?
+## [6][Minuit VSCode theme](https://www.reddit.com/r/reactjs/comments/iau85q/minuit_vscode_theme/)
+- url: https://www.reddit.com/r/reactjs/comments/iau85q/minuit_vscode_theme/
 ---
-Hi all,
+Officially just published my VSCode theme which is strongly inspired by [Dan Abramov's Overreacted blog](https://overreacted.io/) color scheme, itself based on [Sarah Drasner's Night Owl](https://github.com/sdras/night-owl-vscode-theme/) syntax theme.
 
-I'm currently trying to run my react app in a docker container but for some reason it can't resolve the dependencies when I run it.
+It should be completely compatible with React, TypeScript and all Node.js frameworks. I worked pretty hard on it and I'll keep updating it so I would love to have your feedbacks!
 
-To create the docker container I have this Dockerfile:
+You can try it here: [https://marketplace.visualstudio.com/items?itemName=mubartok.minuit](https://marketplace.visualstudio.com/items?itemName=mubartok.minuit)
 
-`FROM node:alpine`  
-`WORKDIR /app`  
-`COPY package*.json ./`  
-`RUN npm install`  
-`COPY . .`  
-`CMD ["npm", "start"]`
-
-and I ignore node\_modules in my .dockerignore
-
-I then run it using this docker-compose.yml:
-
-`version: '3.8'`
-
-`services:`        
-
-`react-app:`
-
-`image: react-app:0.0.1-SNAPSHOT`
-
-`stdin_open: true`
-
-`volumes:`
-
-`- /app/node_modules`
-
-`ports:`
-
-`- "3000:3000/tcp"`
-
-These are the docker logs which show the compile error:
-
-`webpack output is served from`
-
-`Content not from webpack is served from /app/public`
-
-`404s will fallback to /`
-
-`Starting the development server...`
+If you want to show your ❤️️ you can star the project on [GitHub](https://github.com/mubartok/minuit-vscode-theme)
 
 &amp;#x200B;
 
-`Failed to compile.`
-
-&amp;#x200B;
-
-`./src/App.tsx`
-
-`Module not found: Can't resolve 'react-router-dom' in '/app/src'`
-
-`Compiling...`
-
-`Failed to compile.`
-
-&amp;#x200B;
-
-`./src/App.tsx`
-
-&amp;#x200B;
-
-I have this dependency in the "dependencies" section of my package.json:
-
-`"@types/react-router-dom": "^5.1.5"`
-
-and the app compiles when I run it outside of the docker container.
-
-If I exec into the docker container I can see that /app/node\_modules/@types/react-router-dom does exist so it looks like npm install isn't the issue. Am I missing something in my compose file? Or am I importing it incorrectly in the code? My import statement is:
-
-`import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'`
-
-Thanks for any help.
-## [7][Pagination in React js](https://www.reddit.com/r/reactjs/comments/iakz7u/pagination_in_react_js/)
-- url: https://www.reddit.com/r/reactjs/comments/iakz7u/pagination_in_react_js/
+https://reddit.com/link/iau85q/video/fe8cgsojudh51/player
+## [7][What was your first React job and how did you get it?](https://www.reddit.com/r/reactjs/comments/ib15h2/what_was_your_first_react_job_and_how_did_you_get/)
+- url: https://www.reddit.com/r/reactjs/comments/ib15h2/what_was_your_first_react_job_and_how_did_you_get/
 ---
-I have to fetch 30,000 users from an api and display them in some format.  
+Just curious as to what people's journey was first getting into React, and how you then convinced people to pay you to do it.
 
-What is the best and most performant approach to manage pagination in this scenario.  Have to handle on the frontend side only.
-## [8][While writing component, which one is bad, and why?](https://www.reddit.com/r/reactjs/comments/iaqb36/while_writing_component_which_one_is_bad_and_why/)
-- url: https://www.reddit.com/r/reactjs/comments/iaqb36/while_writing_component_which_one_is_bad_and_why/
+FYI not looking for advice (though feel free to share any), I'm fortunate enough to be employed. Just want to hear how other people did it; maybe others can benefit from hearing it!
+## [8][How would you guys implement something like this? Component hierarchy and state-wise, etc.](https://www.reddit.com/r/reactjs/comments/ibdwvz/how_would_you_guys_implement_something_like_this/)
+- url: https://v.redd.it/3ncpixvpbkh51
 ---
-File 1:
-```
-function ComponentsPage() {
-  function buttonsUi() {
-    return (
-      &lt;div&gt;&lt;/div&gt;
-    );
-  }
 
-  function cardUi() {
-    return (
-      &lt;div&gt;&lt;/div&gt;
-    );
-  }
-  
-  return (
-    &lt;div&gt;
-    {
-       buttonsUi();
-       cardUi();
-    }
-    &lt;/div&gt;
-  );
-}
-```
-
-File 2: 
-```
-function ButtonsUi() {
-  return (
-    &lt;div&gt;&lt;/div&gt;
-  );
-}
-
-function CardUi() {
-  return (
-    &lt;div&gt;&lt;/div&gt;
-  );
-}
-  
-function ComponentsPage() {
-  return (
-    &lt;div&gt;
-        &lt;ButtonsUi/&gt;;
-        &lt;CardUi /&gt;
-    &lt;/div&gt;
-  );
-}
-```
-
-According to you which structure is right in @reactjs (in terms of performance, readability, design pattern, and philosophy) and why?
-## [9][Is there any benefit importing react and it's other functions like this?](https://www.reddit.com/r/reactjs/comments/iarmmw/is_there_any_benefit_importing_react_and_its/)
-- url: https://www.reddit.com/r/reactjs/comments/iarmmw/is_there_any_benefit_importing_react_and_its/
+## [9][Workflowy editor clone in reactjs (draft-js)](https://www.reddit.com/r/reactjs/comments/ibdhv9/workflowy_editor_clone_in_reactjs_draftjs/)
+- url: https://www.reddit.com/r/reactjs/comments/ibdhv9/workflowy_editor_clone_in_reactjs_draftjs/
 ---
-I recently saw in some source a developer doing this:
+Hi all. I wrote a clone of the [https://workflowy.com/](https://workflowy.com/) editor in draft-js. Check it out - [https://github.com/mukeshsoni/deepnotes-editor](https://github.com/mukeshsoni/deepnotes-editor)
 
-`import React, { Component } from 'react';`. 
-
-I am new to React, from a reading point of view I personally like it. However is this good practice and are there any draw backs?
-## [10][Update doesn't work](https://www.reddit.com/r/reactjs/comments/iarjsb/update_doesnt_work/)
-- url: https://www.reddit.com/r/reactjs/comments/iarjsb/update_doesnt_work/
+It's an alpha release, so would appreciate feedback on the API as well as features/bugs.
+## [10][Deploy React Apps on Github Pages 🔥](https://www.reddit.com/r/reactjs/comments/ibctjk/deploy_react_apps_on_github_pages/)
+- url: https://blog.ranaemad.com/deploy-react-apps-on-github-pages-ckdu1buy601a0rls1gp693jxz
 ---
-Hello,
 
-I use "http method put" but it's doesn't work, I can't update my article.
-
-I get my articles and I create "input type=text" , "textarea" and "put button" under my article for receive and update.
-
-Normally, when I change the words and click in put button, my article must update.
-
-    state={		
-    		titleArticle: "",
-    		contentArticle: "",
-    		articles: []
-    	}
-    
-    componentDidMount(){
-    		this.articleGet()
-    	}
-    
-    
-    handleClickPut = e =&gt;  {
-    		
-    		const {titleArticle, contentArticle, categorie} = this.state;
-    		this.articlePut(titleArticle, contentArticle, categorie);
-    		
-    	}
-    
-    handleChange(e) {
-    		e.preventDefault();
-    		this.setState({ [e.target.name]: e.target.value })
-    
-    	}
-    
-    
-    articlePut(id, titleArticle, contentArticle, categorie) {
-    		
-    
-    		fetch("http://localhost:3200/api/society/school-systeme/" + id, {
-    
-    			method: "PUT",			
-    			
-    			body: JSON.stringify({
-    				
-    				
-    				titleArticle,
-    				contenuArticle,
-    				categorie
-    			}),  
-    
-    			headers: {
-    				"Content-Type": "application/json",
-    				"Content-Type": "application/x-www-form-urlencoded"
-    			}
-    
-    		
-    		})
-    
-    
-    		.then(res =&gt; {
-    			if (res.status === 200) {
-    				res.json().then(res =&gt; {					
-    					
-    				})			
-    			
-    
-    			}
-    
-    			else {
-    
-    				console.log("Update doesn't work")
-    			
-    			}
-    		})
-    
-    		.catch(errors =&gt;{
-    			console.log(errors);
-    		}) 
-    
-    			
-    
-    				
-    	} 
-    
-            const map = article.map((article) =&gt; (
-    
-    	&lt;div className="contentSchoolSysteme" key={article._id}&gt;
-    			&lt;h1&gt;{article.titleArticle}&lt;/h1&gt;
-    
-    			&lt;p&gt;{article.contentArticle}&lt;/p&gt;
-    
-    &lt;form className="PutForm" onSubmit = {this.handleClickPut}&gt;	 
-    	&lt;input type="text" name="titleArticle" defaultValue={article.titleArticle}
-    	 onChange={this.handleChange.bind(this)} /&gt;
-    
-    
-    	 &lt;textarea rows="30" name="contentArticle" defaultValue=article.contentArticle} onChange={this.handleChange.bind(this)} /&gt;
-    
-    	 &lt;input type="text" name="categorie" placeholder="categorie"
-    	 onChange={this.handleChange.bind(this)} className="categorie"/&gt;
-    
-    	 &lt;button  onClick={this.articlePut.bind(this, article._id)} &gt;PUT&lt;/button&gt;
-    
-    
-    &lt;/form&gt;		 
-
-For exemple, when I try to change my title article in "Fun lesson", I receive :
-
-CastError: Cast to ObjectId failed for value "Fun lesson" at path "\_id" for model "Article"
-
-reason: Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters
-## [11][In useState setter function, when to pass a function vs a value?](https://www.reddit.com/r/reactjs/comments/iarjb5/in_usestate_setter_function_when_to_pass_a/)
-- url: https://www.reddit.com/r/reactjs/comments/iarjb5/in_usestate_setter_function_when_to_pass_a/
+## [11][How to do React Migration? React Migration Best Practices](https://www.reddit.com/r/reactjs/comments/ibcc1s/how_to_do_react_migration_react_migration_best/)
+- url: https://www.tekkiwebsolutions.com/blog/react-migration-best-practices/
 ---
-Let say I have this state:  
-  
-    const [counter, setCounter] = useState(0);  
-  
-Now, when to use this:  
-  
-    setCounter(prevCounter =&gt; prevCounter + 1);  
-  
-vs  
-  
-    setCounter(counter + 1);  
-  
-I couldn't find any proper explanation of when to use one over another. Is there a situation in which one would give different output than the other?
-## [12][using google maps api with react](https://www.reddit.com/r/reactjs/comments/ialvfq/using_google_maps_api_with_react/)
-- url: https://www.reddit.com/r/reactjs/comments/ialvfq/using_google_maps_api_with_react/
----
-    import React, { useState } from "react";
-    import GoogleMapReact from "google-map-react";
-    import Marker from "./Marker";
-    import {Map, InfoWindow, GoogleApiWrapper} from 'google-maps-react';
-    
-    
-    
-    // Texas, New Mexico, Washington, Oaklahoma, Arizona, Idaho, Colorado, California
-    const SimpleMap = (props: any) =&gt; {
-      const [center, setCenter] = useState({ lat: 11.0168, lng: 76.9558 });
-      const [zoom, setZoom] = useState(11);
-      return (
-        &lt;div style={{ height: "100vh", width: "100%" }}&gt;
-          &lt;GoogleMapReact
-            bootstrapURLKeys={{ key: "AIzaSyAntY_MMkHE82gDr-VfdpuEpMypD8J7WrA" }}
-            center={{ lat: 29.749907, lng: -95.358421 }}
-            defaultZoom={zoom}
-          &gt; 
-            &lt;Marker lat={29.780670} lng={-95.274530} placeName="535 Portwall Street, Houston Food Bank" color="Red"/&gt;   
-            &lt;Marker lat={29.417040} lng={-98.591660} title="5200 Enrique M Barrera Pkwy, San Antonio Food Bank" color="Red" /&gt;
-            &lt;Marker lat={33.003270} lng={-96.760090} title="3677 Mapleshade Lane, Dallas Food Bank" color="Red" /&gt;
-            &lt;Marker lat={30.203180} lng={-97.709580} title="6500 Metropolis Drive, Austin Food Bank" color="Red" /&gt;
-            &lt;Marker lat={31.670122} lng={ -106.323195} title="9541 Plaza Circle, El Paso Food Bank" color="Red" /&gt;
-            &lt;Marker lat={45.580421} lng={122.63169} title="7900 NE 33rd Drive,Oregon Food Bank" color="Red" /&gt;
-            &lt;Marker lat={47.170363} lng={-122.444266} title="815 South 96th Street, Seattle Food Bank" color="Red" /&gt;
-            &lt;Marker lat={47.659582} lng={ -117.394239} title="1234 E. Front Avenue, Spokane Food Bank" color="Red" /&gt;
-            &lt;Marker lat={46.870398} lng={-113.989454} title="5625 Expressway, Montana Food Bank " color="Red" /&gt;
-            &lt;Marker lat={43.570399} lng={-116.192014} title="3562 South TK Avenue Idaho Food Bank" color="Red" /&gt;
-            &lt;Marker lat={35.144119} lng={-106.601083} title="5840 Office Blvd NE,New Mexico Food Bank" color="Red" /&gt;
-            &lt;Marker lat={35.430328} lng={ -97.613708} title="3355 S. Purdue, Oakloahoma Food Bank" color="Red" /&gt;
-            &lt;Marker lat={36.170611} lng={-115.098157} title="4190 N. Pecos Rd., Las Vegas Food Bank" color="Red" /&gt;
-            &lt;Marker lat={32.903914} lng={ -117.181628} title="9455 Waples Street, Suite 135, San Diego Food Bank" color="Red" /&gt;
-            &lt;Marker lat={44.928723} lng={  -93.249358} title="1734 E. 41st Street, Los Angeles Food Bank" color="Red" /&gt;
-            &lt;Marker lat={33.409533} lng={  -111.850749} title="245 South Nina Drive, Phoenix Food Bank" color="Red" /&gt;
-          &lt;/GoogleMapReact&gt;
-        &lt;/div&gt;
-      );
-    };
-    
-    export default SimpleMap;
-    
 
-I cant seem to get the name of the markers to show up, any help?
+## [12][Handeling async calls with redux-toolkit &amp;thunk](https://www.reddit.com/r/reactjs/comments/ibc7kw/handeling_async_calls_with_reduxtoolkit_thunk/)
+- url: https://www.reddit.com/r/reactjs/comments/ibc7kw/handeling_async_calls_with_reduxtoolkit_thunk/
+---
+Check out my latest blog on to handle async calls inside redux with thunk middleware 
+
+[redux-toolkit with thunk](https://www.coderreview.io/blog/thunk-with-redux-toolkit)

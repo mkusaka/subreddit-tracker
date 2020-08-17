@@ -22,7 +22,27 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][How do I publish a library with multiple index.d.ts?](https://www.reddit.com/r/typescript/comments/iarrr4/how_do_i_publish_a_library_with_multiple_indexdts/)
+## [2][Dictionary object does not give undefined as possible type (even with strict null checks).](https://www.reddit.com/r/typescript/comments/ibbl0b/dictionary_object_does_not_give_undefined_as/)
+- url: https://www.reddit.com/r/typescript/comments/ibbl0b/dictionary_object_does_not_give_undefined_as/
+---
+[Playground link](https://www.typescriptlang.org/play?#code/MYewdgzgLgBAJgS2FB4CGAnAnjAXDAbwG0APXaDBMAcwF08YwBXAWwCMBTDAXxgF5C3ANwAoEaEiwS-eEhTpsAOhJCA9KoAWIAG5cYOvdIA0MBFAgwIWgO4WoWAA4cGzdnrRg4jELFecMMAA+MEyeHABmVBxwQA) . Is this the expected behavior ?
+## [3][TypeScript-first middleware for AWS Lambda functions](https://www.reddit.com/r/typescript/comments/ib1ju9/typescriptfirst_middleware_for_aws_lambda/)
+- url: https://dbartholomae.github.io/lambda-middleware/
+---
+
+## [4][TypeScript Exercises: Now interactive and solutions are included!](https://www.reddit.com/r/typescript/comments/ib2g23/typescript_exercises_now_interactive_and/)
+- url: https://www.reddit.com/r/typescript/comments/ib2g23/typescript_exercises_now_interactive_and/
+---
+I've re-created the TypeScript exercises and now they are interactive and fully accessible through a web-browser. Check out and have fun: [https://typescript-exercises.github.io/](https://typescript-exercises.github.io/)
+## [5][Building a game with TypeScript. Drawing Grid 1/5](https://www.reddit.com/r/typescript/comments/iaxv3w/building_a_game_with_typescript_drawing_grid_15/)
+- url: https://medium.com/@gregsolo/building-a-game-with-typescript-drawing-grid-1-5-aaf68797a0bb?sk=9663603b5086a6bbd30147fd26a4f457
+---
+
+## [6][Pwa](https://www.reddit.com/r/typescript/comments/ibahbh/pwa/)
+- url: https://www.reddit.com/r/typescript/comments/ibahbh/pwa/
+---
+Hi is it possible to create Progressive web app (react - typescript) that you could block on computer, I just want it to work on mobile devices.
+## [7][How do I publish a library with multiple index.d.ts?](https://www.reddit.com/r/typescript/comments/iarrr4/how_do_i_publish_a_library_with_multiple_indexdts/)
 - url: https://www.reddit.com/r/typescript/comments/iarrr4/how_do_i_publish_a_library_with_multiple_indexdts/
 ---
 So I want to publish a components library where the consumer can use components from the main index or a sub-folder where legacy components are stored.
@@ -44,98 +64,108 @@ My question is I could only define one entry point in the \`types\` field in pac
 
 
 Thanks!
-## [3][Types as axioms, or: playing god with static types](https://www.reddit.com/r/typescript/comments/ia6d8s/types_as_axioms_or_playing_god_with_static_types/)
-- url: https://lexi-lambda.github.io/blog/2020/08/13/types-as-axioms-or-playing-god-with-static-types/
+## [8][Need help getting a libraries typescript working](https://www.reddit.com/r/typescript/comments/ib19o6/need_help_getting_a_libraries_typescript_working/)
+- url: https://www.reddit.com/r/typescript/comments/ib19o6/need_help_getting_a_libraries_typescript_working/
 ---
+Trying to use a library called forerunnerDB. Pretty neat library, but its typescript declarations are lacking a bit. While I've gotten some familiarity with typescript itself, I'm having trouble getting their declaration working.  
 
-## [4][How do you write shared libraries?](https://www.reddit.com/r/typescript/comments/iapnkw/how_do_you_write_shared_libraries/)
+
+[package.json](https://github.com/webtorrent/webtorrent/blob/master/package.json), it's missing the types declaration in there which is needed because they put their type declaration file in another folder.
+
+[Core.js](https://github.com/Irrelon/ForerunnerDB/blob/master/js/lib/Core.js), the start point of the library. This is what is called when you do new forerunnerdb  
+
+
+[types.d.ts](https://github.com/Irrelon/ForerunnerDB/blob/master/typescript/types.d.ts), their types file.  
+
+
+Now I'm pretty confused as to how to get the types.d.ts declaration to relate Core in the types declaration to the core in Core.js. I'm further confused since the types in the file provided here are classes rather than interfaces.  
+
+
+So, would anyone mind giving me some insights and hints as to what I can do to at least get this file to work as it's supposed to and maybe some hints as to how I can help them get it put together?
+## [9][How to use ReturnType on a 2 level deep returned object?](https://www.reddit.com/r/typescript/comments/iasxn7/how_to_use_returntype_on_a_2_level_deep_returned/)
+- url: https://www.reddit.com/r/typescript/comments/iasxn7/how_to_use_returntype_on_a_2_level_deep_returned/
+---
+The `pg-promise` library is kind of odd in that you first invoke it with an options object, and then invoke it again with a config object. The first and second invokation contain different properties  (and there are also static methods on the uninvoked import)
+
+This is what I have now:
+
+      private pgPromiseOptions: ReturnType&lt;typeof PGPromise&gt;;
+    
+      constructor(pgPromiseConfigured: any) {
+        this.pgPromiseOptions = PGPromise({
+          capSQL: true,
+        });
+    
+        this.pgPromiseConfigured = pgPromiseConfigured;
+      }
+
+All of the following type annotations have failed. What is the correct way to do it?
+
+    private pgPromiseConfigured: ReturnType&lt;typeof pgPromiseOptions&gt;;
+    constructor(private pgPromiseConfigured: ReturnType&lt;typeof pgPromiseOptions&gt;
+    
+    private pgPromiseConfigured: ReturnType&lt;typeof PGPromise()&gt;;
+    constructor(private pgPromiseConfigured: ReturnType&lt;typeof PGPromise()&gt;
+## [10][How I rewrite these Go functions with TypeScript?](https://www.reddit.com/r/typescript/comments/iat063/how_i_rewrite_these_go_functions_with_typescript/)
+- url: https://www.reddit.com/r/typescript/comments/iat063/how_i_rewrite_these_go_functions_with_typescript/
+---
+I'm trying to do this [tutorial](https://flaviocopes.com/go-git-contributions/) but I want to write with TypeScript! I like Go, however I'm studying more about Node. However, I'm having difficult with Date operations, could anyone help me?
+
+&amp;#x200B;
+
+    // getBeginningOfDay given a time.Time calculates the start time of that day 
+    
+    func getBeginningOfDay(t time.Time) time.Time { 
+    
+    	year, month, day := [t.Date](https://t.Date)() 
+    
+    	startOfDay := [time.Date](https://time.Date)(year, month, day, 0, 0, 0, 0, t.Location()) 
+    
+    	return startOfDay 
+    
+    } 
+    
+    // countDaysSinceDate counts how many days passed since the passed date 
+    func countDaysSinceDate(date time.Time) int { 
+    	days := 0 
+    	now := getBeginningOfDay(time.Now()) 
+    
+    	for date.Before(now) { 
+    		date = date.Add(time.Hour * 24) 
+    		days++ 
+    
+    		if days &gt; daysInLastSixMonths { 
+    			return outOfRange 
+    		} 
+    	} 
+    	return days 
+    }
+    
+    // printMonths prints the month names in the first line, determining when the month 
+    // changed between switching weeks 
+    func printMonths() { 
+    	week := getBeginningOfDay(time.Now()).Add(-(daysInLastSixMonths * time.Hour * 24)) 
+    	month := week.Month() fmt.Printf(" ") 
+    	for { 
+    		if week.Month() != month { 
+    			fmt.Printf("%s ", week.Month().String()[:3]) 
+    			month = week.Month() 
+    		} else { 
+    			fmt.Printf(" ") 
+    		} 
+    		week = week.Add(7 * time.Hour * 24) 
+    		if week.After(time.Now()) { 
+    			break 
+    		} 
+    	} 
+    	fmt.Printf("\n") 
+    }
+
+&amp;#x200B;
+## [11][How do you write shared libraries?](https://www.reddit.com/r/typescript/comments/iapnkw/how_do_you_write_shared_libraries/)
 - url: https://www.reddit.com/r/typescript/comments/iapnkw/how_do_you_write_shared_libraries/
 ---
 When I write a library for use in a browser I use `"lib": ["DOM"]` in my tsconfig, and for node I install `@types/node`, but what's the best practice for libraries that run on both?
 
 I need to use types that exist in both of these, but not in the non-DOM lib files.
 Is there a project that allows me to get the intersection of these types or do I just have to compile twice to check I'm not using a platform-specific API?
-## [5][How do you sync one-off ts node scripts between your server and remote?](https://www.reddit.com/r/typescript/comments/iajbyp/how_do_you_sync_oneoff_ts_node_scripts_between/)
-- url: https://www.reddit.com/r/typescript/comments/iajbyp/how_do_you_sync_oneoff_ts_node_scripts_between/
----
-Long story short, I want to use TS on client and server for everything when it comes to personal work. I don't want to context switch, even though some node command APIs are finicky. I'm writing wrappers around strange node apis to simplify it, such as a promise spawner for processes, and i'm keeping this in git. I made a template TS project that gets generated from a bash script so I don't have to worry about configuration anymore either (and it includes my util node helpers by default)..
-
-Specifically, I have a dist/ and src/ folder where dist has my js generated code. I have another helper to symlink a generated run script that points to the dist/index.js to my \~/bin folder! The thing is, how do I keep all this organized and syncornized with my droplet server? I generally have a git \`bin\` folder for zsh scripts that I backup with git and sync to my local \~/bin/ folder and remote \~/bin folder (I'll just run a [sync.sh](https://sync.sh/) script each time I pull on either server). But because typescript has file dependencies, it's a multi-file process. I was thinking I could rsync each ts-helper-script-folder to the remote server, and run the same helper mentioned earlier to link the run script (pointing to dist/index.js) to the remote servers \~/bin folder, but then if I make changes remotely, I don't see how I'd synchronize it back to my local machine.
-
-😅thanks for hearing out all my thoughts on this :). Basically I have .sh scripts already "easily" synced in \~/bin on both servers because I also keep the scripts together in the same git repo, but TS is a bit tricker because of the file dependencies and I'm not sure about also keeping them in my .hidden git repo given size.
-
-What do you think?
-
-&amp;#x200B;
-
-Update this is some progress? [https://www.reddit.com/r/typescript/comments/iajbyp/how\_do\_you\_sync\_oneoff\_ts\_node\_scripts\_between/g1qa0vx?utm\_source=share&amp;utm\_medium=web2x](https://www.reddit.com/r/typescript/comments/iajbyp/how_do_you_sync_oneoff_ts_node_scripts_between/g1qa0vx?utm_source=share&amp;utm_medium=web2x)
-## [6][How to launch a Typescript transformer plugin?](https://www.reddit.com/r/typescript/comments/iablmc/how_to_launch_a_typescript_transformer_plugin/)
-- url: https://www.reddit.com/r/typescript/comments/iablmc/how_to_launch_a_typescript_transformer_plugin/
----
-Hi folks! I have a really cool idea for a Typescript transformer for JSX syntax. Do you have any advice on how to open source it to the community so that others use it and give feedback?  
-
-
-Thanks in advance!
-## [7][For people who think changing types constitutes a breaking change, do you consider upgrading the Typescript version you compile your library with a breaking change?](https://www.reddit.com/r/typescript/comments/ia6zvy/for_people_who_think_changing_types_constitutes_a/)
-- url: https://www.reddit.com/r/typescript/comments/ia6zvy/for_people_who_think_changing_types_constitutes_a/
----
-This is branching of another post, but it seemed a lot of people thought a change to the types that may cause typings to fail consortia a breaking change. To follow up, I'm curious to know what people's thoughts is on the actually Typescript library.
-
-I can see an argument being made that if I upgrade Typescript library then the way my types are generated can include types that only exist in a later version of typescript. Therefore, a consumer of the library who is on an older version of typescript would have an error and would need to upgrade Typescript.
-
-On the other hand, it's usually not the case as per how npm works that you release a breaking change if an internal dev dependency library upgrades.
-
-I personally don't think it should be considered a breaking change, but I would still love to hear more sides to this.
-## [8][Typescript sometimes seems like more of a hassle than it's worth](https://www.reddit.com/r/typescript/comments/iae2zl/typescript_sometimes_seems_like_more_of_a_hassle/)
-- url: https://www.reddit.com/r/typescript/comments/iae2zl/typescript_sometimes_seems_like_more_of_a_hassle/
----
-I like typescript a lot, but only when I know I'm not going to need many libraries. Anything on the back end I handle with typescript. 
-
-But typescript seems like a hassle for things like react. What happens when you want a package that has no types?
-## [9][For libraries distributed with TypeScript types, is changing or removing a Type meant to be a breaking change for the library?](https://www.reddit.com/r/typescript/comments/i9rhrw/for_libraries_distributed_with_typescript_types/)
-- url: https://www.reddit.com/r/typescript/comments/i9rhrw/for_libraries_distributed_with_typescript_types/
----
-Wouldn't have any impact on js consumers, but could potentially break TypeScript apps?
-## [10][Overload function can't find input properties](https://www.reddit.com/r/typescript/comments/i9nmdy/overload_function_cant_find_input_properties/)
-- url: https://www.reddit.com/r/typescript/comments/i9nmdy/overload_function_cant_find_input_properties/
----
-This is my first attempt at a function overload so the error may be basic. The intent is that this will normally be called via cron job (overload 1). But on an initial account creation, I want this to work as a route handler callback as well (overload 2):
-
-    interface VoipMsProperties {
-      userName: string,
-      apiPassword: string
-    }
-    
-    async function fetchCallData(voipMsData: VoipMsProperties, res: Response): Promise&lt;void&gt;;
-    async function fetchCallData(req: Request, res: Response): Promise&lt;void&gt;;
-    
-    async function fetchCallData(input: VoipMsProperties | Request, res: Response) {
-      let userName;
-      let apiPassword;
-    
-      if (input instanceof Request) {
-        userName = input.body.userName;
-        apiPassword = input.body.apiPassword;
-      } else {
-        userName = input.userName; // error 1 below
-        apiPassword = input.apiPassword; // error 2 below
-      }
-      &lt;continues ...&gt;
-    
-    /*
-    any
-    Property 'userName' does not exist on type 'VoipMsProperties | Request&lt;ParamsDictionary, any, any, ParsedQs&gt;'.
-      Property 'userName' does not exist on type 'Request&lt;ParamsDictionary, any, any, ParsedQs&gt;'.ts(2339)
-    
-    any
-    Property 'apiPassword' does not exist on type 'VoipMsProperties | Request&lt;ParamsDictionary, any, any, ParsedQs&gt;'.
-      Property 'apiPassword' does not exist on type 'Request&lt;ParamsDictionary, any, any, ParsedQs&gt;'.ts(2339)
-    */
-
-I can see the interface right above the overloads have both `userName` and `apiPassword` so why is it not being found on the interface type `VoipMsProperties` ?
-
-Side question: Does each overload signature have to be exported? Or just the final one with the function definition?
-## [11][I created a video to share 3 typing basics to improve your TypeScript code](https://www.reddit.com/r/typescript/comments/i98t3e/i_created_a_video_to_share_3_typing_basics_to/)
-- url: https://www.youtube.com/watch?v=UuBJrAZsp4Y
----
-

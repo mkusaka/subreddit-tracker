@@ -85,43 +85,43 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][Embla Carousel – The most fluid carousel library with unmatched swipe precision](https://www.reddit.com/r/javascript/comments/ib9pw3/embla_carousel_the_most_fluid_carousel_library/)
+## [3][I got frustrated with recipe websites, so I made one to practice React and extract recipes / ingredients.](https://www.reddit.com/r/javascript/comments/ibpfhf/i_got_frustrated_with_recipe_websites_so_i_made/)
+- url: https://github.com/cbrintnall/shorter.recipes
+---
+
+## [4][Let's Write a JavaScript Library in ES6 using Webpack and Babel](https://www.reddit.com/r/javascript/comments/ic0iqu/lets_write_a_javascript_library_in_es6_using/)
+- url: https://9sh.re/dHgv80rDp
+---
+
+## [5][I made this app in React Native to help people learn and practice SQL in phone, uses sqlite. Simple and clean UI](https://www.reddit.com/r/javascript/comments/ibjl9j/i_made_this_app_in_react_native_to_help_people/)
+- url: https://github.com/ShivamJoker/SQL-Playground
+---
+
+## [6][A mostly complete guide to error handling in JavaScript.](https://www.reddit.com/r/javascript/comments/ibxaac/a_mostly_complete_guide_to_error_handling_in/)
+- url: https://www.valentinog.com/blog/error/
+---
+
+## [7][Embla Carousel – The most fluid carousel library with unmatched swipe precision](https://www.reddit.com/r/javascript/comments/ib9pw3/embla_carousel_the_most_fluid_carousel_library/)
 - url: https://davidcetinkaya.github.io/embla-carousel
 ---
 
-## [4][I couldn't find many examples for proximity based WebRTC voice chat so I made a very simple one](https://www.reddit.com/r/javascript/comments/ib23cg/i_couldnt_find_many_examples_for_proximity_based/)
-- url: https://github.com/Meshiest/demo-proximity-voice
+## [8][How you can stay motivated to work on personal projects](https://www.reddit.com/r/javascript/comments/ibs9vz/how_you_can_stay_motivated_to_work_on_personal/)
+- url: https://dev.to/afonsopacifer/how-you-can-stay-motivated-to-work-on-personal-projects-565a
 ---
 
-## [5][Install multiple major versions of a node module with npm](https://www.reddit.com/r/javascript/comments/ibbikj/install_multiple_major_versions_of_a_node_module/)
-- url: https://mariosfakiolas.com/blog/install-multiple-major-versions-of-a-node-module-with-npm
----
-
-## [6][How I made a Markdown Editor with ability to embed YouTube Videos, CodePens, Code SandBoxes etc](https://www.reddit.com/r/javascript/comments/ibcvw3/how_i_made_a_markdown_editor_with_ability_to/)
-- url: https://blog.bhanuteja.dev/how-i-made-a-markdown-editor-with-ability-to-embed-youtube-videos-codepens-code-sandboxes-etc-part-one-ckdv95fw300kljas1gtwndl16
----
-
-## [7][Welcome To OS13k – A Tiny Web Based OS and Game Engine](https://www.reddit.com/r/javascript/comments/iavekj/welcome_to_os13k_a_tiny_web_based_os_and_game/)
-- url: https://github.com/KilledByAPixel/OS13k
----
-
-## [8][ProtoBuf: Why Google moved from JSON to Protocol Buffers?](https://www.reddit.com/r/javascript/comments/ibcspk/protobuf_why_google_moved_from_json_to_protocol/)
-- url: https://anuragthakur.hashnode.dev/protobuf-why-google-moved-from-json-to-protocol-buffers-ckdxb8sgi03kdjas17ril3fbi?v=1
----
-
-## [9][Ct.js — Visual game editor for Pixi.js](https://www.reddit.com/r/javascript/comments/iaq572/ctjs_visual_game_editor_for_pixijs/)
-- url: https://ctjs.rocks/
----
-
-## [10][I made a React app with an interactive map that features all the bike lanes, bike parking spots, services and etc. for my city.](https://www.reddit.com/r/javascript/comments/ibd60r/i_made_a_react_app_with_an_interactive_map_that/)
+## [9][I made a React app with an interactive map that features all the bike lanes, bike parking spots, services and etc. for my city.](https://www.reddit.com/r/javascript/comments/ibd60r/i_made_a_react_app_with_an_interactive_map_that/)
 - url: https://github.com/dani2221/mktocak/
 ---
 
-## [11][[Open source] Swipe - One Page Bootstrap 5 Templates (MIT License &amp; Vanilla JS)](https://www.reddit.com/r/javascript/comments/iasi8a/open_source_swipe_one_page_bootstrap_5_templates/)
-- url: https://github.com/themesberg/swipe-one-page-bootstrap-5
+## [10][A VSCode Extension for Playing Coding Tutorials](https://www.reddit.com/r/javascript/comments/ibq4h1/a_vscode_extension_for_playing_coding_tutorials/)
+- url: https://github.com/coderoad/coderoad-vscode
 ---
 
-## [12][To-do list with labels built with pure JS and no CSS](https://www.reddit.com/r/javascript/comments/ib7s03/todo_list_with_labels_built_with_pure_js_and_no/)
-- url: https://github.com/tpkahlon/to-do-list-with-labels/
+## [11][The In-Depth Guide to Creation Patterns in JavaScript](https://www.reddit.com/r/javascript/comments/ibxi2f/the_indepth_guide_to_creation_patterns_in/)
+- url: https://medium.com/madhash/creational-pattern-full-guide-af02393d89ff
+---
+
+## [12][Relax your coding self with soothing rain audio/visual .js simulation](https://www.reddit.com/r/javascript/comments/ic0a8n/relax_your_coding_self_with_soothing_rain/)
+- url: https://itsrainingday.netlify.app/
 ---
 

@@ -111,67 +111,68 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/i1u8a4/whos_hiring_august_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][I made a React app with an interactive map that features all the bike lanes, bike parking spots, services and etc. for my city.](https://www.reddit.com/r/reactjs/comments/ibd3gu/i_made_a_react_app_with_an_interactive_map_that/)
+## [3][I created an open-source alternative to Google Analytics using React, Redux and Next.js](https://www.reddit.com/r/reactjs/comments/ibrd14/i_created_an_opensource_alternative_to_google/)
+- url: https://v.redd.it/kzq3h49vwnh51
+---
+
+## [4][Understanding React's useRef Hook](https://www.reddit.com/r/reactjs/comments/ibj8ls/understanding_reacts_useref_hook/)
+- url: https://ui.dev/useref/
+---
+
+## [5][I made a React app with an interactive map that features all the bike lanes, bike parking spots, services and etc. for my city.](https://www.reddit.com/r/reactjs/comments/ibd3gu/i_made_a_react_app_with_an_interactive_map_that/)
 - url: https://github.com/dani2221/mktocak
 ---
 
-## [4][Few ways to boost your react applications performance](https://www.reddit.com/r/reactjs/comments/ib0d5v/few_ways_to_boost_your_react_applications/)
-- url: https://www.reddit.com/r/reactjs/comments/ib0d5v/few_ways_to_boost_your_react_applications/
----
-I have tried to write down few methods i used to achieve improved performance to my react application.
-
-[https://medium.com/@singhshweta/performance-boosters-for-react-applications-418896b5f24](https://medium.com/@singhshweta/performance-boosters-for-react-applications-418896b5f24)
-## [5][Top component API call vs child component API call?](https://www.reddit.com/r/reactjs/comments/ibate2/top_component_api_call_vs_child_component_api_call/)
-- url: https://www.reddit.com/r/reactjs/comments/ibate2/top_component_api_call_vs_child_component_api_call/
----
-Hello, I've been wondering for the past days what would be the pros and cons of top vs child component API call.
-
-What I mean by that is, would it be better to have a gigantic call on a page component that gets all the data which will be feed to the child components, or have more fragmented call within the childs that only get the required data for said child?
-
-The first one seems to me more performant as it makes way less call to the API, but if an error occurs it's on the whole page, whereas fragmented API call might be less performant but this make the child more independent and if error occurs it can be on a localized child only and the others would still work.
-
-What are your thoughts on this?
-## [6][Minuit VSCode theme](https://www.reddit.com/r/reactjs/comments/iau85q/minuit_vscode_theme/)
-- url: https://www.reddit.com/r/reactjs/comments/iau85q/minuit_vscode_theme/
----
-Officially just published my VSCode theme which is strongly inspired by [Dan Abramov's Overreacted blog](https://overreacted.io/) color scheme, itself based on [Sarah Drasner's Night Owl](https://github.com/sdras/night-owl-vscode-theme/) syntax theme.
-
-It should be completely compatible with React, TypeScript and all Node.js frameworks. I worked pretty hard on it and I'll keep updating it so I would love to have your feedbacks!
-
-You can try it here: [https://marketplace.visualstudio.com/items?itemName=mubartok.minuit](https://marketplace.visualstudio.com/items?itemName=mubartok.minuit)
-
-If you want to show your ❤️️ you can star the project on [GitHub](https://github.com/mubartok/minuit-vscode-theme)
-
-&amp;#x200B;
-
-https://reddit.com/link/iau85q/video/fe8cgsojudh51/player
-## [7][What was your first React job and how did you get it?](https://www.reddit.com/r/reactjs/comments/ib15h2/what_was_your_first_react_job_and_how_did_you_get/)
-- url: https://www.reddit.com/r/reactjs/comments/ib15h2/what_was_your_first_react_job_and_how_did_you_get/
----
-Just curious as to what people's journey was first getting into React, and how you then convinced people to pay you to do it.
-
-FYI not looking for advice (though feel free to share any), I'm fortunate enough to be employed. Just want to hear how other people did it; maybe others can benefit from hearing it!
-## [8][How would you guys implement something like this? Component hierarchy and state-wise, etc.](https://www.reddit.com/r/reactjs/comments/ibdwvz/how_would_you_guys_implement_something_like_this/)
-- url: https://v.redd.it/3ncpixvpbkh51
+## [6][Rocon: Router Library with Ultimate Type Safety](https://www.reddit.com/r/reactjs/comments/ibyz7r/rocon_router_library_with_ultimate_type_safety/)
+- url: https://rocon.uhyohyo.net/
 ---
 
-## [9][Workflowy editor clone in reactjs (draft-js)](https://www.reddit.com/r/reactjs/comments/ibdhv9/workflowy_editor_clone_in_reactjs_draftjs/)
-- url: https://www.reddit.com/r/reactjs/comments/ibdhv9/workflowy_editor_clone_in_reactjs_draftjs/
----
-Hi all. I wrote a clone of the [https://workflowy.com/](https://workflowy.com/) editor in draft-js. Check it out - [https://github.com/mukeshsoni/deepnotes-editor](https://github.com/mukeshsoni/deepnotes-editor)
-
-It's an alpha release, so would appreciate feedback on the API as well as features/bugs.
-## [10][Deploy React Apps on Github Pages 🔥](https://www.reddit.com/r/reactjs/comments/ibctjk/deploy_react_apps_on_github_pages/)
-- url: https://blog.ranaemad.com/deploy-react-apps-on-github-pages-ckdu1buy601a0rls1gp693jxz
+## [7][zustand 3 is out, you can put context vs redux to rest](https://www.reddit.com/r/reactjs/comments/ibm7nk/zustand_3_is_out_you_can_put_context_vs_redux_to/)
+- url: https://twitter.com/0xca0a/status/1295455346014781440
 ---
 
-## [11][How to do React Migration? React Migration Best Practices](https://www.reddit.com/r/reactjs/comments/ibcc1s/how_to_do_react_migration_react_migration_best/)
-- url: https://www.tekkiwebsolutions.com/blog/react-migration-best-practices/
+## [8][When people ay you should use Redux for managing state, how granular should it be?](https://www.reddit.com/r/reactjs/comments/ic0utl/when_people_ay_you_should_use_redux_for_managing/)
+- url: https://www.reddit.com/r/reactjs/comments/ic0utl/when_people_ay_you_should_use_redux_for_managing/
+---
+I hear people saying that Redux is used to manage your state and it makes it easier to manager vast quantities of data between components, but when they say it should manage state to what level do they mean.  
+
+
+Do they mean EVERYTHING that has state is stored in redux? So if I have a modal with a state variable called "isVisible". Should this also be stored in Redux rather than the parent component? Or do they mean you should store things like user details, API response objects, and form data in redux?
+## [9][HOC vs Hook vs Render Props for data fetching ?](https://www.reddit.com/r/reactjs/comments/ibyvfh/hoc_vs_hook_vs_render_props_for_data_fetching/)
+- url: https://www.reddit.com/r/reactjs/comments/ibyvfh/hoc_vs_hook_vs_render_props_for_data_fetching/
+---
+There's many patterns for data fetching in React. I don't use class components anymore, so i dropped one of them.  
+
+
+My App.js file is a functional component, but it has a lot of logic (many handler functions, passes many props) and it also fetches data for its children in useEffect.  
+
+
+Now is it convenient to replace data fetching in useEffect by a Hoc or a render prop ?   
+if so, which one to choose ?
+## [10][I created another one calendar widget app. It tries to look like a calendar in chromium's date input (nearly). Btw it has 100% test coverage. What do you think?](https://www.reddit.com/r/reactjs/comments/ibyq9m/i_created_another_one_calendar_widget_app_it/)
+- url: https://github.com/obergodmar/react-calendar
 ---
 
-## [12][Handeling async calls with redux-toolkit &amp;thunk](https://www.reddit.com/r/reactjs/comments/ibc7kw/handeling_async_calls_with_reduxtoolkit_thunk/)
-- url: https://www.reddit.com/r/reactjs/comments/ibc7kw/handeling_async_calls_with_reduxtoolkit_thunk/
+## [11][How to change my handleSubmit to direct it to another page](https://www.reddit.com/r/reactjs/comments/ibxrat/how_to_change_my_handlesubmit_to_direct_it_to/)
+- url: https://www.reddit.com/r/reactjs/comments/ibxrat/how_to_change_my_handlesubmit_to_direct_it_to/
 ---
-Check out my latest blog on to handle async calls inside redux with thunk middleware 
+As the title says I would like my handleSubmit function to direct to another page like an anchor tag while running other things i added to it. could someone plz help
 
-[redux-toolkit with thunk](https://www.coderreview.io/blog/thunk-with-redux-toolkit)
+Im writing a grammaly like program, and the handleSubmit is used on a button when the user is finished adding text. I would like when the button is clicked the grammar checking function is runned and then is directed to another page with all the details.
+
+code:
+
+    const handleSubmit = (event) =&gt; {
+        event.preventDefault();
+    
+        setSavedInput(inputField);
+        setInputField("");
+        
+        if (charsLeft &lt;= 49975) {
+          checkMyGrammar();
+        }
+      };
+## [12][Update lifecycle of a class-based React component](https://www.reddit.com/r/reactjs/comments/ibxp6k/update_lifecycle_of_a_classbased_react_component/)
+- url: https://medium.com//update-lifecycle-of-a-class-based-react-component-f0cb800a8aca?source=friends_link&amp;sk=2affcf5c704ed30ee3998f338010c3e3
+---
+

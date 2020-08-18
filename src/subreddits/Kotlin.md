@@ -1,73 +1,53 @@
 # Kotlin
-## [1][An Ergonomics Review of Using Kotlin from Swift](https://www.reddit.com/r/Kotlin/comments/ib73br/an_ergonomics_review_of_using_kotlin_from_swift/)
-- url: https://benasher.co/kotlin-ios-ergonomics/
+## [1][Kudos to the Kotlin team,](https://www.reddit.com/r/Kotlin/comments/ibyzpx/kudos_to_the_kotlin_team/)
+- url: https://i.imgur.com/tTaQlnD.jpg
 ---
 
-## [2][kotlinx.serialization Release 1.0.0-RC](https://www.reddit.com/r/Kotlin/comments/ibdz0r/kotlinxserialization_release_100rc/)
+## [2][Kotlin 1.4 Released with a Focus on Quality and Performance](https://www.reddit.com/r/Kotlin/comments/ibill6/kotlin_14_released_with_a_focus_on_quality_and/)
+- url: https://blog.jetbrains.com/kotlin/2020/08/kotlin-1-4-released-with-a-focus-on-quality-and-performance/
+---
+
+## [3][Kotlin 1.4 doesn't compile and crashes intellij](https://www.reddit.com/r/Kotlin/comments/iby6ly/kotlin_14_doesnt_compile_and_crashes_intellij/)
+- url: https://www.reddit.com/r/Kotlin/comments/iby6ly/kotlin_14_doesnt_compile_and_crashes_intellij/
+---
+Hey guys I just wanna tell you to be careful when upgrading to 1.4. I have a really small project (about 800 loc) and it worked perfectly fine with 1.3.72 but when I compile it using 1.4.0 then it failes because of a Java out of memory Exception. But it also tells me in which file the problem is. This file is only 30 lines long, but it does use a lot of type interference. When I open this file in intellij while the project is configured to 1.4 intellij starts loading the highlighting and then it just crashes. I tried it with 1.3.72 and activated the experimental type interference algorithm which is now enabled in 1.4 but I'm not really sure if I activated the experimental features correctly because that worked. Did anyone of you run into similar problems with the new version?
+## [4][New language features and more in Kotlin 1.4](https://www.reddit.com/r/Kotlin/comments/ibxm4a/new_language_features_and_more_in_kotlin_14/)
+- url: https://android-developers.googleblog.com/2020/08/new-language-features-and-more-in.html
+---
+
+## [5][KotlinJS - a few questions about it for a beginner](https://www.reddit.com/r/Kotlin/comments/ibxakc/kotlinjs_a_few_questions_about_it_for_a_beginner/)
+- url: https://www.reddit.com/r/Kotlin/comments/ibxakc/kotlinjs_a_few_questions_about_it_for_a_beginner/
+---
+Hi Reddit, I'm software developer for a long time now but I never touch the frontend to this day - I want to change this using KotlinJS, if u guys have a moment to answer a few of my questions and give me some tips on start that would be great ;)
+
+As a context - I want to do a real production app using it - not just a demo. Backend is just spring rest with sso oauth2.
+
+&amp;#x200B;
+
+My questions:
+
+1. Is KotlinJS production ready? When I started with kotlin+spring it had a lot of stability issues 2 years ago but it was fixed over time - I don't want to start it when its not ready.
+2. What libraries is good to add (and use) on the start of the project?
+3. Is there some good example apps and material to learn?
+4. Is anyone of u using this and recommend?
+5. Maybe some general tips? :)
+## [6][Kotlin 1.4: 'One for All' Online Event](https://www.reddit.com/r/Kotlin/comments/ibkf18/kotlin_14_one_for_all_online_event/)
+- url: https://kotlinlang.org/lp/event-14/
+---
+
+## [7][kotlinx.serialization Release 1.0.0-RC](https://www.reddit.com/r/Kotlin/comments/ibdz0r/kotlinxserialization_release_100rc/)
 - url: https://github.com/Kotlin/kotlinx.serialization/releases/tag/1.0.0-RC
 ---
 
-## [3][Best beginner book to build android apps using Kotlin?](https://www.reddit.com/r/Kotlin/comments/ib3gam/best_beginner_book_to_build_android_apps_using/)
+## [8][Coroutines: an ELI5 glossary](https://www.reddit.com/r/Kotlin/comments/ibfwq7/coroutines_an_eli5_glossary/)
+- url: https://medium.com/@alexstibbons/coroutines-an-eli5-glossary-715c5317283d?source=friends_link&amp;sk=a5c82c93b47f6f31b357f06f084a23ab
+---
+
+## [9][An Ergonomics Review of Using Kotlin from Swift](https://www.reddit.com/r/Kotlin/comments/ib73br/an_ergonomics_review_of_using_kotlin_from_swift/)
+- url: https://benasher.co/kotlin-ios-ergonomics/
+---
+
+## [10][Best beginner book to build android apps using Kotlin?](https://www.reddit.com/r/Kotlin/comments/ib3gam/best_beginner_book_to_build_android_apps_using/)
 - url: https://www.reddit.com/r/Kotlin/comments/ib3gam/best_beginner_book_to_build_android_apps_using/
 ---
 Hi, I would like to purchase a book from Amazon that teaches me Kotlin and building android apps for beginners. There's alot of options on Amazon, but not sure which one to buy.
-## [4][Why do we have emptyCollection() but no emptyMutableCollection()?](https://www.reddit.com/r/Kotlin/comments/iaw6h2/why_do_we_have_emptycollection_but_no/)
-- url: https://www.reddit.com/r/Kotlin/comments/iaw6h2/why_do_we_have_emptycollection_but_no/
----
-Kotlin provides  `emptyList()` but not `emptyMutableList()` . Is there a reason behind this?
-
-
-
-`val myList: MutableList&lt;String&gt; = mutableListOf()`
-
-vs.
-
-`val myList: List&lt;String&gt; = emptyList()`
-## [5][Running Kotlin Microservice on Google Kubernetes Engine](https://www.reddit.com/r/Kotlin/comments/iavp21/running_kotlin_microservice_on_google_kubernetes/)
-- url: https://piotrminkowski.com/2020/04/03/running-kotlin-microservice-on-google-kubernetes-engine/
----
-
-## [6][Creating a custom serializer that encodes an object as a ByteArray](https://www.reddit.com/r/Kotlin/comments/iauhhn/creating_a_custom_serializer_that_encodes_an/)
-- url: https://www.reddit.com/r/Kotlin/comments/iauhhn/creating_a_custom_serializer_that_encodes_an/
----
-I have a class called `ByteArraySegment`, which is a simple immutable wrapper around a `ByteArray`.  I want to make it `@Serializable` and for its serialized form to be a plain `ByteArray`.
-
-I've been trying to follow [the docs](https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/custom_serializers.md#representing-classes-as-a-single-value) to do this, and here is my attempt so far:
-
-    @Serializer(forClass = ByteArraySegment::class)
-    companion object : KSerializer&lt;ByteArraySegment&gt; {
-        override val descriptor: SerialDescriptor
-            get() = ByteArraySerializer().descriptor
-
-        override fun serialize(encoder: Encoder, value: ByteArraySegment) {
-            encoder.encode(ByteArraySerializer(), value.asArray)
-        }
-
-        override fun deserialize(decoder: Decoder): ByteArraySegment {
-            return ByteArraySegment(decoder.decode(ByteArraySerializer()))
-        }
-    }
-
-Unfortunately I get the following error when I try to serialize a `ByteArraySegment`:
-
-    java.lang.ClassCastException: class locutus.tools.ByteArraySegment cannot be cast to 
-    class [B (locutus.tools.ByteArraySegment is in unnamed module of loader 'app'; [B is in 
-    module java.base of loader 'bootstrap')`
-
-Would appreciate it if anyone has any ideas on what I'm doing wrong, as I've been blocked on this problem for a while.
-## [7][AndroidBites | Init Blocks will never haunt you again |](https://www.reddit.com/r/Kotlin/comments/ib648x/androidbites_init_blocks_will_never_haunt_you/)
-- url: https://chetangupta.net/init-blocks
----
-
-## [8][Kotlin Multiplatform project with multi on demand modules](https://www.reddit.com/r/Kotlin/comments/iahz5r/kotlin_multiplatform_project_with_multi_on_demand/)
-- url: https://www.reddit.com/r/Kotlin/comments/iahz5r/kotlin_multiplatform_project_with_multi_on_demand/
----
-[https://stackoverflow.com/questions/63429543/kotlin-multiplatform-project-with-multi-on-demand-modules](https://stackoverflow.com/questions/63429543/kotlin-multiplatform-project-with-multi-on-demand-modules)
-## [9][Waiting for Kotlin 1.4.0 Official Announcement be like](https://www.reddit.com/r/Kotlin/comments/i9wygq/waiting_for_kotlin_140_official_announcement_be/)
-- url: https://i.imgur.com/MjWpJ6M.gif
----
-
-## [10][LifecycleService as a Foreground service || Kotlin || LiveData || UI state management through service](https://www.reddit.com/r/Kotlin/comments/iacyhf/lifecycleservice_as_a_foreground_service_kotlin/)
-- url: https://youtu.be/1euA5LeyLIg
----
-

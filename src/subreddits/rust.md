@@ -57,70 +57,181 @@ REMOTE: *[Do you offer the option of working remotely? If so, do you require emp
 VISA: *[Does your company sponsor visas?]*
 
 CONTACT: *[How can someone get in touch with you?]*
-## [3][Veloren, an open-source multiplayer voxel RPG written in Rust, just had its 0.7 release with a tonne of new features!](https://www.reddit.com/r/rust/comments/ib83bl/veloren_an_opensource_multiplayer_voxel_rpg/)
-- url: https://veloren.net/
+## [3][Amethyst Engine v0.15.1 — last specs release](https://www.reddit.com/r/rust/comments/ibvheq/amethyst_engine_v0151_last_specs_release/)
+- url: https://amethyst.rs/posts/release-0.15.1
 ---
 
-## [4][🎉 The Embedded Working Group Newsletter - 24](https://www.reddit.com/r/rust/comments/ibcvnz/the_embedded_working_group_newsletter_24/)
-- url: https://rust-embedded.github.io/blog/newsletter-24/
+## [4][My first crate: MozWire: A MozillaVPN configurator, finally giving Linux, macOS and BSD users (among others) access to MozillaVPN](https://www.reddit.com/r/rust/comments/iblon7/my_first_crate_mozwire_a_mozillavpn_configurator/)
+- url: https://github.com/NilsIrl/MozWire
 ---
 
-## [5][Stackage for Rust?](https://www.reddit.com/r/rust/comments/ib9orc/stackage_for_rust/)
-- url: https://www.snoyman.com/blog/2020/08/stackage-for-rust
+## [5][Announcing async-raft v0.5.0: Rebased onto Tokio &amp; Renamed to `async-raft`](https://www.reddit.com/r/rust/comments/ibsxxd/announcing_asyncraft_v050_rebased_onto_tokio/)
+- url: https://www.reddit.com/r/rust/comments/ibsxxd/announcing_asyncraft_v050_rebased_onto_tokio/
+---
+I am pleased to announce the release of `async-raft` `v0.5.0`.
+
+The TLDR:
+* Everything Is Now Based on Tokio
+* Singular &amp; Well Defined API (thanks to async/await, async_trait &amp; tokio)
+* Automatic Log Compaction
+* Joint Consensus Overhaul
+* Project Renamed to `async-raft` (edit: was actix-raft previously)
+
+For more info, here are the release notes https://github.com/async-raft/async-raft/releases/tag/v0.5.0
+## [6][Does Rust have anything similar to Erlang supervision trees?](https://www.reddit.com/r/rust/comments/ibxv67/does_rust_have_anything_similar_to_erlang/)
+- url: https://www.reddit.com/r/rust/comments/ibxv67/does_rust_have_anything_similar_to_erlang/
+---
+And if it does, how does it integrate with the rest of the ecosystem. I'm working in a new project and the current implementation is one with Go built but I'm working in a proof of concept with Elixir and Rust to see if I can get a better result.
+
+It's a application running on a device at the client so it must be really safe and the supervision tree comes in handy at this moment.
+## [7][Control Flow Guard for Clang/LLVM and Rust - Microsoft Security Response Center](https://www.reddit.com/r/rust/comments/ibiy42/control_flow_guard_for_clangllvm_and_rust/)
+- url: https://msrc-blog.microsoft.com/2020/08/17/control-flow-guard-for-clang-llvm-and-rust/
 ---
 
-## [6][Cranelift can now compile rustc- giving nearly 7x faster compilations than LLVM!](https://www.reddit.com/r/rust/comments/iat25g/cranelift_can_now_compile_rustc_giving_nearly_7x/)
-- url: https://github.com/bjorn3/rustc_codegen_cranelift/issues/743#issuecomment-674526510
+## [8][Why does MIRI complain about undefined behaviour regarding stacked borrows in this example program?](https://www.reddit.com/r/rust/comments/ibzqe5/why_does_miri_complain_about_undefined_behaviour/)
+- url: https://www.reddit.com/r/rust/comments/ibzqe5/why_does_miri_complain_about_undefined_behaviour/
+---
+I have some unsafe code that I am testing with MIRI, but I don't know what the problem is exactly.
+
+I have narrowed it down to the following example program with a self-referential struct (without moving it):
+
+[https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=5b294efbcb19aab9ddc51dd0d0f67ffd](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=5b294efbcb19aab9ddc51dd0d0f67ffd)
+
+The error I get when running with `cargo +nightly miri run` is:
+
+&amp;#x200B;
+
+```
+
+error: Undefined Behavior: trying to reborrow for SharedReadWrite, but parent tag &lt;3963&gt; does not have an appropriate item in the borrow stack
+
+\--&gt; /Users/rolftimmermans/.rustup/toolchains/nightly-x86\_64-apple-darwin/lib/rustlib/src/rust/library/core/src/ptr/unique.rs:120:18
+
+|
+
+120 |  unsafe { &amp;\*self.as\_ptr() }
+
+|   \^\^\^\^\^\^\^\^\^\^\^\^\^\^\^ trying to reborrow for SharedReadWrite, but parent tag &lt;3963&gt; does not have an appropriate item in the borrow stack
+
+|
+
+= help: this indicates a potential bug in the program: it performed an invalid operation, but the rules it violated are still experimental
+
+= help: see [https://github.com/rust-lang/unsafe-code-guidelines/blob/master/wip/stacked-borrows.md](https://github.com/rust-lang/unsafe-code-guidelines/blob/master/wip/stacked-borrows.md) for further information
+
+= note: inside \`std::ptr::Unique::&lt;A&gt;::as\_ref\` at /Users/rolftimmermans/.rustup/toolchains/nightly-x86\_64-apple-darwin/lib/rustlib/src/rust/library/core/src/ptr/unique.rs:120:18
+
+= note: inside \`alloc::alloc::box\_free::&lt;A&gt;\` at /Users/rolftimmermans/.rustup/toolchains/nightly-x86\_64-apple-darwin/lib/rustlib/src/rust/library/alloc/src/alloc.rs:321:32
+
+= note: inside \`std::intrinsics::drop\_in\_place::&lt;std::boxed::Box&lt;A&gt;&gt; - shim(Some(std::boxed::Box&lt;A&gt;))\` at /Users/rolftimmermans/.rustup/toolchains/nightly-x86\_64-apple-darwin/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:184:1
+
+note: inside \`main\` at src/main.rs:31:1
+
+\--&gt; src/main.rs:31:1
+
+|
+
+31 | }
+
+| \^
+
+= note: inside \`&lt;fn() as std::ops::FnOnce&lt;()&gt;&gt;::call\_once - shim(fn())\` at /Users/rolftimmermans/.rustup/toolchains/nightly-x86\_64-apple-darwin/lib/rustlib/src/rust/library/core/src/ops/function.rs:233:5
+
+= note: inside \`std::sys\_common::backtrace::\_\_rust\_begin\_short\_backtrace::&lt;fn(), ()&gt;\` at /Users/rolftimmermans/.rustup/toolchains/nightly-x86\_64-apple-darwin/lib/rustlib/src/rust/library/std/src/sys\_common/backtrace.rs:137:18
+
+= note: inside closure at /Users/rolftimmermans/.rustup/toolchains/nightly-x86\_64-apple-darwin/lib/rustlib/src/rust/library/std/src/rt.rs:66:18
+
+= note: inside \`std::ops::function::impls::&lt;impl std::ops::FnOnce&lt;()&gt; for &amp;dyn std::ops::Fn() -&gt; i32 + std::marker::Sync + std::panic::RefUnwindSafe&gt;::call\_once\` at /Users/rolftimmermans/.rustup/toolchains/nightly-x86\_64-apple-darwin/lib/rustlib/src/rust/library/core/src/ops/function.rs:265:13
+
+= note: inside \`std::panicking::r#try::do\_call::&lt;&amp;dyn std::ops::Fn() -&gt; i32 + std::marker::Sync + std::panic::RefUnwindSafe, i32&gt;\` at /Users/rolftimmermans/.rustup/toolchains/nightly-x86\_64-apple-darwin/lib/rustlib/src/rust/library/std/src/panicking.rs:373:40
+
+= note: inside \`std::panicking::r#try::&lt;i32, &amp;dyn std::ops::Fn() -&gt; i32 + std::marker::Sync + std::panic::RefUnwindSafe&gt;\` at /Users/rolftimmermans/.rustup/toolchains/nightly-x86\_64-apple-darwin/lib/rustlib/src/rust/library/std/src/panicking.rs:337:19
+
+= note: inside \`std::panic::catch\_unwind::&lt;&amp;dyn std::ops::Fn() -&gt; i32 + std::marker::Sync + std::panic::RefUnwindSafe, i32&gt;\` at /Users/rolftimmermans/.rustup/toolchains/nightly-x86\_64-apple-darwin/lib/rustlib/src/rust/library/std/src/panic.rs:394:14
+
+= note: inside \`std::rt::lang\_start\_internal\` at /Users/rolftimmermans/.rustup/toolchains/nightly-x86\_64-apple-darwin/lib/rustlib/src/rust/library/std/src/rt.rs:51:25
+
+= note: inside \`std::rt::lang\_start::&lt;()&gt;\` at /Users/rolftimmermans/.rustup/toolchains/nightly-x86\_64-apple-darwin/lib/rustlib/src/rust/library/std/src/rt.rs:65:5
+
+```
+
+Why does MIRI complain about this *specific* example? It is directly related to the reborrow of `A`, because if I remove that part (line 24-28) then MIRI is happy.
+
+I know that the pointer `ptr` to the array would be invalid if the struct `A` would be moved. But in this case it isn't moved... Am I missing something?
+
+(Some context: I am experimenting with unsafe code to integrate garbage collection into a virtual machine for a toy dynamic language. I'm doing some terribly unsafe things, in part just to better understand what is allowed and what isn't.)
+## [9][Actix TaskQueue: A generic task queue for Actix](https://www.reddit.com/r/rust/comments/ibuzk8/actix_taskqueue_a_generic_task_queue_for_actix/)
+- url: https://github.com/huytd/actix-taskqueue
 ---
 
-## [7][Short Post: Using Long Paths in Windows and Rust](https://www.reddit.com/r/rust/comments/ibbv4t/short_post_using_long_paths_in_windows_and_rust/)
-- url: https://gal.hagever.com/posts/windows-long-paths-in-rust/
+## [10][Announcing SIMple Physics, a set of educational physics simulators for algebra based physics](https://www.reddit.com/r/rust/comments/ibk2rf/announcing_simple_physics_a_set_of_educational/)
+- url: https://www.reddit.com/r/rust/comments/ibk2rf/announcing_simple_physics_a_set_of_educational/
 ---
+SIMple Physics is a set of educational physics simulators meant to help learn/teach algebra based physics. It is written in Rust using `ggez`, `specs`, `imgui-rs`, `nphysics`, and `rlua`.
 
-## [8][Tunshell - A drop-in remote shell client and server written in Rust for easy shell access to deployment pipelines or other ephemeral environments, working behind NAT or firewall](https://www.reddit.com/r/rust/comments/ibcvpe/tunshell_a_dropin_remote_shell_client_and_server/)
-- url: https://github.com/TimeToogo/tunshell
+The goal is to make a simulator for each general section of high school physics:
+
+- [Basic Mechanics](https://github.com/mkhan45/SIMple-Mechanics)
+
+- [Universal Gravitation](https://github.com/mkhan45/SIMple-Gravity)
+
+- Electronics and Magnetism
+
+- Waves/Optics
+
+So far, the [basic mechanics](https://github.com/mkhan45/SIMple-Mechanics) and [universal gravitation](https://github.com/mkhan45/SIMple-Gravity) components are complete.
+
+Find out more at [https://mkhan45.github.io/SIMple-Physics!](https://mkhan45.github.io/SIMple-Physics/tabs/about/)
+
+Here are a few cool GIFs:
+
+[Wave](https://mkhan45.github.io/SIMple-Physics/assets/gifs/misc/mechanics/demo4.gif)
+
+[Spinny](https://mkhan45.github.io/SIMple-Physics/assets/gifs/misc/mechanics/demo1.gif)
+
+[Trippy trails](https://mkhan45.github.io/SIMple-Physics/assets/gifs/misc/gravity/relative_trail.gif)
+
+[Cool gravitational systems](https://mkhan45.github.io/SIMple-Physics/assets/gifs/misc/gravity/saveload.gif)
+
+I chose Rust for this project for its performance, cross platform compilation, and ideally to compile to WASM.
+
+I started the project as my high school senior research project but didn't finish in time due to COVID. However, once it became clear that the next semester of school will be largely online, I decided to finish it this summer. Due to college starting, I won't have much time to work on this for the forseeable future, and, honestly, I want to move on as this has been my primary side project for more than a year. Because of that, contributions would be welcome!
+## [11][What's everyone working on this week (34/2020)?](https://www.reddit.com/r/rust/comments/ibtzp9/whats_everyone_working_on_this_week_342020/)
+- url: https://www.reddit.com/r/rust/comments/ibtzp9/whats_everyone_working_on_this_week_342020/
 ---
+New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-33-2020/47095?u=llogiq)!
 
-## [9][[announce] wide-0.5.0: now with more types!](https://www.reddit.com/r/rust/comments/ib5vok/announce_wide050_now_with_more_types/)
-- url: https://www.reddit.com/r/rust/comments/ib5vok/announce_wide050_now_with_more_types/
+(created this post since I didn't find the usual one by u/llogiq)
+## [12][lifetime mismatch problem](https://www.reddit.com/r/rust/comments/ibys3a/lifetime_mismatch_problem/)
+- url: https://www.reddit.com/r/rust/comments/ibys3a/lifetime_mismatch_problem/
 ---
-The [wide](https://docs.rs/wide) crate has a new 0.5 version out! It's a crate to help make SIMD-friendly programming easier on you, the programmer.
+    fn foo(s: &amp;mut &amp;mut [u8]) {
+        let (_, rest) = s.split_at_mut(1);
+        *s = rest;
+    }
 
-Major features include:
-* Supports all the common 128-bit SIMD types: f32x4, f64x2, i8x16, u8x16, i16x8, u16x8, i32x4, u32x4, i64x2, u64x2
-* Supports many of the things you'd want to do with those types. What you can currently do is largely driven by the availability of hardware support on x86 / x86_64 machines.
-* Software fallbacks for when there isn't hardware support are sometimes understood by LLVM and optimized appropriately, and sometimes LLVM doesn't get it and performance is just worse. This will improve some day in the far future when the ARM/Aarch64 intrinsics become Stable.
-* `no_std`
-* All cpu feature selection is done at compile time only via `#[cfg()]` and RUSTFLAGS and so forth, there's no runtime feature detection mechanism.
-* Essentially no docs at the moment, but method names are the same as normal math function names, so it's fairly clear on its own.
+hi,
 
-If you want to contribute, I'm open to PRs as long as the crate continues to build on Stable by default.
-## [10][Webassembly Without The Browser (Part 1)](https://www.reddit.com/r/rust/comments/iayqyv/webassembly_without_the_browser_part_1/)
-- url: https://alexene.dev/2020/08/17/webassembly-without-the-browser-part-1.html
----
+I find that the above code fails to compile with the following error:
 
-## [11][Using the quote crate, how to use the quote macro on &amp;str?](https://www.reddit.com/r/rust/comments/ibbw4v/using_the_quote_crate_how_to_use_the_quote_macro/)
-- url: https://www.reddit.com/r/rust/comments/ibbw4v/using_the_quote_crate_how_to_use_the_quote_macro/
----
-I am using the quote crate to write some Rust code. I have variables of type &amp;str which I want include in the quote macro (quote!).
+     error[E0623]: lifetime mismatch
+     --&gt; src/lib.rs:3:10
+      |
+    1 | fn foo(s: &amp;mut &amp;mut [u8]) {
+      |           --------------
+      |           |
+      |           these two types are declared with different lifetimes...
+    2 |     let (_, rest) = s.split_at_mut(1);
+    3 |     *s = rest;
+      |          ^^^^ ...but data from `s` flows into `s` here
 
-Now the problem is that the &amp;str remains &amp;str. I want the quotes to be removed. So let's say I have this code:
+I dont understand what is going on here. How to fix it?
 
-    let some_import = "use crate::SomeStruct;";
-    let generated = quote::quote! { #some_import };
+Further, the following compiles:
 
-The result is that it is interpretated literally with the quotes, so my import literally looks like this:
+    fn foo(s: &amp;mut &amp;[u8]) {
+        let (_, rest) = s.split_at(1);
+        *s = rest;
+    }
 
-    "use crate::SomeStruct;"
-
-But I want this:
-
-    use crate::SomeStruct;
-
-Normally I use format\_ident for &amp;str/String to remove the quotes, but it crashes saying ' use crate::SomeStruct;' is not a valid identifier.
-
-How do I use the quote::quote macro to remove quotes from a &amp;str/String?
-## [12][A steganographic tool for hiding messages in x86 binaries, written in Rust](https://www.reddit.com/r/rust/comments/iatp22/a_steganographic_tool_for_hiding_messages_in_x86/)
-- url: https://github.com/woodruffw/steg86
----
-
+I wonder why, as the mutablity should not affect lifetimes.

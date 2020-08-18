@@ -19,7 +19,298 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Sudde Errno::EEXIST in Main#index error](https://www.reddit.com/r/rails/comments/ib7jvh/sudde_errnoeexist_in_mainindex_error/)
+## [2][Help me decide on a search solution (between algolia, searchkick and pg_search)](https://www.reddit.com/r/rails/comments/ibx0pz/help_me_decide_on_a_search_solution_between/)
+- url: https://www.reddit.com/r/rails/comments/ibx0pz/help_me_decide_on_a_search_solution_between/
+---
+Hi guys
+
+&amp;#x200B;
+
+I'm looking for a good search solution for my application.
+
+The project has rails as a graphql api and a react-native app as client.
+
+What I am specifically looking for is a way to search for users but also users in specific contexts, like search a list of friends or make sure that blocked users are not showing up. Preferrably, while also providing some other data from the db, such as the amount of posts or other data, as part of the returned results.
+
+Currently I was looking at the following solutions:
+
+\- **Algolia:** Easy to implement to some extent but it seems a bit finicky having to add a list of friends/blocked users etc. as part of the saved indices in Algolia itself. Plus it seems more difficult to include other data from the db when needed. Plus (and this is the biggest downside) it's not free and cost quite a lot when an application scales. 
+
+\- **Searchkick/Elasticsearch**: 2 months ago I asked a similar yet more vague question regarding search in Rails and some people pointed out to me how easy it is to use elasticsearch with searchkick. At the same time there were people who thought it was overkill and warned me of the complexities of Elastic Search. So I'm not sure what to believe but I feel this is not necessarily more complex than setting something similar up on Algolia?
+
+\- **pg\_search**: This is a gem I just discovered today and although I'm not sure, it might be good enough for my purposes? It uses postgres full text search but also allows search scopes/facetting, which would be the answer when searching through someone's friends or blocked users.
+
+I would love to know what your experience is. I'm not sure if it matters too much but this a production app and not a simple learning project, so having a scalable solution is needed.   
+
+
+Thank you!
+## [3][whenever cron tasks do not append to existing log file, but create .gz files instead](https://www.reddit.com/r/rails/comments/ibq7i8/whenever_cron_tasks_do_not_append_to_existing_log/)
+- url: https://www.reddit.com/r/rails/comments/ibq7i8/whenever_cron_tasks_do_not_append_to_existing_log/
+---
+I am using the "whenever" gem to schedule cron tasks. They seem to work, but they do not append to my "cron\_log.log" file but instead go on to create "cron\_log.1.gz", "cron\_log.2.gz" etc.
+
+Does anyone here who uses the whenever gem know why this is happening and how to fix it?
+
+I followed these instructions for logging:  [https://github.com/javan/whenever/wiki/Output-redirection-aka-logging-your-cron-jobs](https://github.com/javan/whenever/wiki/Output-redirection-aka-logging-your-cron-jobs) 
+
+     set :output, {:error =&gt; 'path/to/app/cron_error_log.log', :standard =&gt; 'path/to/app/cron_log.log'}
+## [4][Rails 6 Bcrypt vs Passenger error on Production](https://www.reddit.com/r/rails/comments/iblyvt/rails_6_bcrypt_vs_passenger_error_on_production/)
+- url: https://www.reddit.com/r/rails/comments/iblyvt/rails_6_bcrypt_vs_passenger_error_on_production/
+---
+After changing my ssl settings and restarting my Nginx, I started to receive the following error in the Passenger startup:
+
+    Before process_action callback :ensure_user_signed_in has not been defined (ArgumentError) 
+
+I am running Rails 6, Nginx/Passenger. The protected area is a single namespace only.
+
+sessions\_controller
+
+    class SessionsController &lt; NamespaceController
+         skip_before_action :ensure_user_signed_in, only: [:new, :create]      
+    
+    # Present login form     
+        def new 
+        end      
+    
+    # Create Session     
+        def create         
+            user = User.where(email: params[:email]).first 
+    
+             if user &amp;&amp; user.authenticate(params[:password]) 
+                 session[:user_id] = user.id             
+                 redirect_to '/namespace/adminhub'
+             else
+                 redirect_to new_sessions_path, alert: 'Unable to authenticate'
+             end
+         end 
+    
+         # Logout
+         def destroy
+             reset_session
+             redirect_to root_path
+         end
+      end 
+
+Namespace\_controller
+
+    class NamespaceController &lt; ApplicationController
+         before_action :ensure_user_signed_in
+    
+          private
+             def ensure_user_signed_in
+                 unless current_user.present?
+                 redirect_to new_sessions_path, alert: 'Must be signed in.'
+             end
+         end
+    
+          def current_user
+             if session.has_key? :user_id
+                 @current_user ||=User.find(session[:user_id])
+             end
+         end
+         helper_method :current_user
+       end 
+
+I have attempted to undo my ssl changes in nginx and also to  restart passenger, neither seem to be the cause of this issue.  Interestingly, when I first pushed out the changes with the Bcrpyt, the  page loaded without issue and ran properly, as it does in my development  area. It was not until I had to restart the nginx process that this  error has come to light.
+## [5][Downloading in JS after using send_file](https://www.reddit.com/r/rails/comments/ibttqr/downloading_in_js_after_using_send_file/)
+- url: https://www.reddit.com/r/rails/comments/ibttqr/downloading_in_js_after_using_send_file/
+---
+I am a noob when it comes to web dev, pls no attack
+
+So I am working on trying to download a file via JS + ruby and send\_file specifically. JS because I am only able to tell from browser which files to download. I have a method that works and now I'm just trying to figure out how stuff works with send\_file
+
+Previously, my controller was basically:
+
+    def download 
+        obj = Obj[params[:id].to_i]
+        if obj 
+            render :json =&gt; {filename: obj.file_name, contents: obj.contents}
+    end 
+
+Now, I'm trying to do it with send\_file. What I have in my controller is basically:
+
+    def download 
+        send_file filename_of_curr_obj
+    end 
+
+I have in my routes:
+
+    ...
+    collection do 
+        post :download
+    end
+    ...
+
+Changed post to get for when I tried to switch to send\_file.
+
+This is what I can tell I'm supposed to do from searching online. But I don't understand how it's supposed to link up in HTML/JS. Everything I've seen online usually stops at around here, as if the steps after this are obvious(?).
+
+So far I have a download button:
+
+    a :id =&gt; :download_link. :download =&gt; 'filename' do
+        button :id =&gt; download_button do 
+            text 'Download'
+        end
+    end 
+
+(My company has action.html.rb files instead of html.erb which is everywhere online. I have never seen html.rb files online in the wild thus far.)
+
+In the JS, I was able to do something like this that worked previously:
+
+    $('#download_button').click(function() {
+        $.post('...obj/download', {id: id}, function(data) {
+            ...
+            $('#download_link').attr('download', data.filename);
+            ...
+            //created url from Blob and data.contents
+            $('#download_link').attr('href', url');
+            ...
+        });
+    });
+
+So basically it worked like this: on browser, some actions affect ID of obj's file, so on click, send the ID via POST request to download and then download file with the controller passing the filename and file contents.
+
+Trying to redo it now with send\_file, I am confused about two main things:
+
+1. How to get the filename for the download attr of the a tag?
+2. How to get the URL for the href attr of the a tag? I thought the URL would be of the form 
+
+&amp;#8203;
+
+    .../obj/download/1
+
+or 
+
+    .../obj/1/download
+
+But I am getting errors when I try doing a $.post request with either form saying the URL doesn't exist. I saw online that to have a custom action have the first url form, in the routes, I should have:
+
+    ...
+    member do 
+        get :download
+    end 
+    collection do 
+        get :download
+    end
+    ...
+
+But this doesn't work.
+## [6][RSpec model, request and system specs?](https://www.reddit.com/r/rails/comments/ibof0z/rspec_model_request_and_system_specs/)
+- url: https://www.reddit.com/r/rails/comments/ibof0z/rspec_model_request_and_system_specs/
+---
+I've seen people recommend these three specs in Rails due to controller specs and feature specs being surpassed by request and system specs.
+
+So are request specs doing the same as controller specs and test the methods of a controller individually? e.g. my request spec should test #index, #show, #new etc?
+
+If so system specs should test the application from a users perspective right? E.g. the whole registration flow or creating a new post flow?
+
+If this is the case for the above where do integration specs fall? Wouldn't request, integration and system specs all overlap and create duplicate tests?
+
+I've tried to search but the books I've read or articles mainly point to controller and feature specs.
+## [7][Is Cucumber and Capybara still being used?](https://www.reddit.com/r/rails/comments/ibenlh/is_cucumber_and_capybara_still_being_used/)
+- url: https://www.reddit.com/r/rails/comments/ibenlh/is_cucumber_and_capybara_still_being_used/
+---
+Hi! I'm on a Rails course at EDX, but the course is not new. They talk about BDD and TDD, using Cucumber, Capybara and RSpec. Are these tools still in use? Is it something worth learning today?
+## [8][model.save transaction committed but DB still empty (Devise)](https://www.reddit.com/r/rails/comments/ibozkp/modelsave_transaction_committed_but_db_still/)
+- url: https://www.reddit.com/r/rails/comments/ibozkp/modelsave_transaction_committed_but_db_still/
+---
+I am trying to create a user from console but getting the following:
+
+Console output:
+
+    2.5.0 :021 &gt; User.create!(:name =&gt; "admin", :email =&gt; "admin@test.com", :password =&gt; "password", :password_confirmation =&gt; "password")
+       (0.1ms)  begin transaction
+      User Exists? (0.3ms)  SELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" IS NOT NULL LIMIT ?  [["email", "admin@test.com"], ["LIMIT", 1]]
+      User Update (0.2ms)  UPDATE "users" SET "name" = ?, "email" = ?, "encrypted_password" = ?, "updated_at" = ? WHERE "users"."id" IS NULL  [["name", "admin"], ["email", "admin@test.com"], ["encrypted_password", "$2a$12$X0aDvaz6P7ZM7L66Tyans.jmcGvDDXm8hk/ddS2Fms2tx9o9AMf5S"], ["updated_at", "2020-08-17 22:43:25.388300"]]
+       (0.1ms)  commit transaction
+     =&gt; #&lt;User id: nil, name: "admin", email: "admin@test.com", customer_id: 0, created_at: nil, updated_at: "2020-08-17 22:43:25"&gt; 
+    2.5.0 :022 &gt; User.all
+      User Load (0.2ms)  SELECT "users".* FROM "users" LIMIT ?  [["LIMIT", 11]]
+     =&gt; #&lt;ActiveRecord::Relation []&gt; 
+    
+
+DeviseCreateUsers Migration
+
+    class DeviseCreateUsers &lt; ActiveRecord::Migration[6.0]
+      def change
+        create_table :users do |t|
+          ## Database authenticatable
+          t.string :name,               null: false, default: ""
+          t.string :email,              null: false, default: ""
+          t.string :encrypted_password, null: false, default: ""
+    
+          t.integer :customer_id, default: 0
+    
+          ## Recoverable
+          t.string   :reset_password_token
+          t.datetime :reset_password_sent_at
+    
+          ## Rememberable
+          t.datetime :remember_created_at
+    
+          ## Trackable
+          t.integer  :sign_in_count, default: 0, null: false
+          t.datetime :current_sign_in_at
+          t.datetime :last_sign_in_at
+          t.string   :current_sign_in_ip
+          t.string   :last_sign_in_ip
+    
+          ## Lockable
+          t.integer  :failed_attempts, default: 0 #, null: false # Only if lock strategy is :failed_attempts
+          t.string   :unlock_token # Only if unlock strategy is :email or :both
+          t.datetime :locked_at
+    
+    
+          t.timestamps null: false
+        end
+    
+        add_index :users, :email,                unique: true
+        add_index :users, :reset_password_token, unique: true
+      end
+    end
+
+&amp;#x200B;
+
+app/models/user.rb
+
+    class User &lt; ApplicationRecord
+      devise :database_authenticatable,
+             :timeoutable, :lockable, :rememberable, :trackable, :validatable
+      validates :name, format: { with: /\A[a-zA-Z0-9]+\Z/ }
+    end
+
+Any ideas?  
+Thank you
+## [9][Greetings and respect to the pro here, please i need help with my rails app.](https://www.reddit.com/r/rails/comments/ibl77n/greetings_and_respect_to_the_pro_here_please_i/)
+- url: https://www.reddit.com/r/rails/comments/ibl77n/greetings_and_respect_to_the_pro_here_please_i/
+---
+Firstly, am a newbie to rails. I love working with template since am not into ui/ux but more of back end Dev.
+
+I've been able to add bootstrap, jquery and popper.js successfully but have a hell of issues linking the CSS/JAVASCRIPT of the html template am using.
+
+I will be grateful if can get a step by step procedure or a link to any resource that can help me resolve this issue, thanks.
+## [10][Which web server is best to run Kubernetes for Ruby on Rails?](https://www.reddit.com/r/rails/comments/ibhhij/which_web_server_is_best_to_run_kubernetes_for/)
+- url: https://www.reddit.com/r/rails/comments/ibhhij/which_web_server_is_best_to_run_kubernetes_for/
+---
+Hi all
+
+One of my favoured setups for deploying Rails on a static server is by using the combination of Phusion Passenger and Nginx.
+
+However now I'm embarking on a quest into cloud computing, and have a question around which web server I might want to serve Rails with from within a Kubernetes pod.
+
+From my understanding, the options are:
+
+* Unicorn
+* Puma
+* Thin
+* Passenger
+
+The big questions for me is concurrency. If I go with a Puma web server, can it handle more than one request at a time? If ten users are on the site at once, do I need to auto-scale to ten containers?
+
+I have done some research and digging so far, but haven't found many people talking about what web server technology they need inside their production container.
+
+So, which web server is best to run inside Kubernetes for Ruby on Rails?
+## [11][Sudde Errno::EEXIST in Main#index error](https://www.reddit.com/r/rails/comments/ib7jvh/sudde_errnoeexist_in_mainindex_error/)
 - url: https://www.reddit.com/r/rails/comments/ib7jvh/sudde_errnoeexist_in_mainindex_error/
 ---
 Hello. I'm creating my web dev portfolio in Rails using Docker. I got my app created and I was able to start adding content to the index.html.erb file. I restarted my server because my changes weren't popping up and I've had to do that once before when I changed my test of "Hello World!" to make sure the controller was connected properly to the view. I'm not sure I changed anything else. I tried googling and looked like maybe it had to do with the sprockets gem. I added it to my gemfile cause I didn't see it there. But it's still having this issue. Below is my output once my Rails server starts and tries to load the only view index.html.erb: 
@@ -40,114 +331,3 @@ I see the first warning where it says last argument as keyword parameters is dep
 Not sure where I'd find that to either delete that file or how I'd stop it from trying to recreate that file, if that's even what it's doing. 
 
 Any help is greatly appreciated.
-## [3][another content security policy question](https://www.reddit.com/r/rails/comments/ib6shh/another_content_security_policy_question/)
-- url: https://www.reddit.com/r/rails/comments/ib6shh/another_content_security_policy_question/
----
-Given the extensive use of dynamically set inline styling in most front end frameworks, exactly how does one go about making their front end comply with a safe content security policy?
-
-Semantic UI's [modules](https://semantic-ui.com/modules/modal.html) are one example. Their modal changes the `body` height with an inline style when the modal appears. A pull request from two years ago aimed to fix the issue by changing some instances of `attr()` to `css()`, but this has had no impact on the framework's dependence on inline styling.
-
-I don't want to use `unsafe_inline` for `style_src`!!!
-## [4][What's the best way to implement filters? Gem recommendations? (Ransack?)](https://www.reddit.com/r/rails/comments/iauk5c/whats_the_best_way_to_implement_filters_gem/)
-- url: https://www.reddit.com/r/rails/comments/iauk5c/whats_the_best_way_to_implement_filters_gem/
----
-I've started programming in Rails 5 a few months ago. I'm developing an app that has a couple models like Technology, Skill Level, Role, etc. (where a Role requires a certain Technology and Skill Level to be covered by a User).
-
-Basically what I need is to apply filters to the Roles index, so I can filter those Roles for which I have the required technology and skill level to apply to it, so to speak. So for example, I should be able to filter Roles that require Ruby on Rails, HTML and CSS technologies, and a skill level of Junior.
-
-What would be the best way to implement something like this? I've been looking at a gem called Ransack but I'm not sure if it's what I need.
-
-Any help would be appreciated.
-## [5][Updating An Existing App?](https://www.reddit.com/r/rails/comments/iapuzt/updating_an_existing_app/)
-- url: https://www.reddit.com/r/rails/comments/iapuzt/updating_an_existing_app/
----
-Hey guys, just a quick question. I uploaded my initial version of my app, and to be honest it was to mainly see how deployment works.
-
-How do I go about updating the app when I have a major change I want to upload to the server?
-
-For Heroku, I used the CLI to do this, but for servers like Digital Ocean and AWS are different.
-
-Any tips or workflow you guys use will be very helpful!
-
-Thanks.
-## [6][To Fork or To Clone?](https://www.reddit.com/r/rails/comments/iauid0/to_fork_or_to_clone/)
-- url: https://www.reddit.com/r/rails/comments/iauid0/to_fork_or_to_clone/
----
-Good morning guys, my desktop is being super slow so I want to transition to my laptop. My JS with Rails API project is saved on my desktop, so on my laptop, would I fork or clone the repository from github? Thanks in advance!
-## [7][rails aborted! NoMethodError: undefined method `split' for nil:NilClass](https://www.reddit.com/r/rails/comments/iasufk/rails_aborted_nomethoderror_undefined_method/)
-- url: https://www.reddit.com/r/rails/comments/iasufk/rails_aborted_nomethoderror_undefined_method/
----
-Hey, I've been running into this weird issue while trying to seed my database.
-
-Data in the format that I want. It's an array and I'm trying to iterate through it and create bunch of objects with it. It throws this weird error. I've checked all the similar previous questions but all of them are related to some config or gem issues.
-
-[My code](https://i.stack.imgur.com/Fvbrg.png)
-
-[The error](https://i.stack.imgur.com/HpAcI.png)
-
-[Byebug before split method](https://i.stack.imgur.com/wLwgY.png)
-
-[Byebug after split method](https://i.stack.imgur.com/fPXc1.png)
-
-&amp;#x200B;
-
-Any help would be greatly appreciated.
-
-Thanks.
-## [8][Managing usage for a commercial gem](https://www.reddit.com/r/rails/comments/iam6tf/managing_usage_for_a_commercial_gem/)
-- url: https://www.reddit.com/r/rails/comments/iam6tf/managing_usage_for_a_commercial_gem/
----
-How could I manage usage of a gem or engine as a product?
-
-Paid Sidekiq for example is tied to threads, but I don't know how this is managed. 
-
-It's loaded in the Gemfile so is referenced when bundled, yet Ruby is of course an interpreted and open language so even if it is reading other configs, that can all be manipulated in different ways at runtime, right? Is it more the honor system? (There is always trust involved somewhere, though this is handled to different degrees depending on the product.)
-
-This is not meant to be the 'hack Sidekiq' thread, I am more curious how this could be done with a commercial product, not even with threads but with number of users for instance to prevent abuse.
-
-[I tried Google but didn't find much, it returns whatever it feels like now.]
-## [9][How do I configure my models in this situation?](https://www.reddit.com/r/rails/comments/iaov9r/how_do_i_configure_my_models_in_this_situation/)
-- url: https://www.reddit.com/r/rails/comments/iaov9r/how_do_i_configure_my_models_in_this_situation/
----
-I'm writing an email web app. The app uses email templates to create dynamic emails depending on who they are sent to.
-
-An email template has variables. For example an email template would look like the following:
-
-    EmailTemplate
-    
-    name: string
-    subject: string
-    body: string
-    variables: [string]
-
-and an instance would look like this:
-
-    email_template
-    
-    name: "Cool email"
-    subject: "Hi, FIRST_NAME,"
-    body: "I see you are a POSITION at COMPANY...."
-    variables: ["NAME", "POSITION", "COMPANY"]
-
-Then a recipient model to the email would look something like this:
-
-    Recipient
-    name: "Some guy"
-    email: "guy@email.com"
-    variables: ??????
-    
-The *variables* attribute in EmailTemplate are dynamic so how do I set up the variables on the recipient model?
-## [10][Efficient to run SQL command instead of ruby?](https://www.reddit.com/r/rails/comments/iaex30/efficient_to_run_sql_command_instead_of_ruby/)
-- url: https://www.reddit.com/r/rails/comments/iaex30/efficient_to_run_sql_command_instead_of_ruby/
----
-I've having trouble recreating the trigam `similarity` function in ruby (due to Asian characters in my text). Is the following a good idea in my rails code?
-
-`sql = "SELECT similarity('#{src}', '#{targ}');"`
-
-`tm_ratio = ActiveRecord::Base.connection.execute(sql).getvalue(0,0)`
-## [11][TDD Course or tutorial](https://www.reddit.com/r/rails/comments/iaejjw/tdd_course_or_tutorial/)
-- url: https://www.reddit.com/r/rails/comments/iaejjw/tdd_course_or_tutorial/
----
-Hey y'all, I feel that I have a pretty decent grasp of ruby and rails and I want to learn TDD what are some good resources for learning TDD?
-
-Thanks in advance

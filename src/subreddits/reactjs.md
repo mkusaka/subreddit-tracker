@@ -111,68 +111,73 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/i1u8a4/whos_hiring_august_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][I created an open-source alternative to Google Analytics using React, Redux and Next.js](https://www.reddit.com/r/reactjs/comments/ibrd14/i_created_an_opensource_alternative_to_google/)
+## [3][airbnb/ts-migrate - a tool for helping migrate code to TypeScript](https://www.reddit.com/r/reactjs/comments/ickjos/airbnbtsmigrate_a_tool_for_helping_migrate_code/)
+- url: https://github.com/airbnb/ts-migrate
+---
+
+## [4][Microsoft will bid farewell to Internet Explorer and legacy Edge in 2021](https://www.reddit.com/r/reactjs/comments/ic4x29/microsoft_will_bid_farewell_to_internet_explorer/)
+- url: https://www.theverge.com/2020/8/17/21372487/microsoft-internet-explorer-11-support-end-365-legacy-edge
+---
+
+## [5][Build a React component that pulls data from Google Sheets](https://www.reddit.com/r/reactjs/comments/icjaff/build_a_react_component_that_pulls_data_from/)
+- url: https://www.michaelburrows.xyz/react-google-sheets/
+---
+
+## [6][If you shouldn't interact directly with the DOM in React, how do you add custom functionality when your library of choice falls short?](https://www.reddit.com/r/reactjs/comments/icldpz/if_you_shouldnt_interact_directly_with_the_dom_in/)
+- url: https://www.reddit.com/r/reactjs/comments/icldpz/if_you_shouldnt_interact_directly_with_the_dom_in/
+---
+I am using [react-data-table-component](https://github.com/jbetancur/react-data-table-component) to generate a fairly simple data table with sorting and filtering. The library has built in functionality for making rows selectable with a checkbox. This is all fine.
+
+However, the event that is triggered when you click a rows gives you a data object containing *all* the rows that have been selected so far. I want access only to the row that was just clicked.
+
+
+    &lt;DataTable
+       data={data}
+       selectableRows
+       onSelectedRowsChange={doWork}
+    /&gt;
+
+
+...and the doWork function:
+
+
+    const doWork = state =&gt; {
+       // state.selectedRows contains ALL selected rows
+       // There is no way to get just the clicked row that triggered the event
+    }
+
+
+In vanilla JS I would add an event listener and an ID to the checkbox. When checked, I'd get the ID (probably stored as a `data-id=123` attribute) and do my work with it - easy. But since you're not meant to do this with React, what's the alternative? Am I supposed to fork the library and add my own event handler? Make a feature request and wait 6 months? 
+
+Am I completely boxed in by the funtionality provided by the library?
+
+-----
+
+
+**EDIT:** People are suggesting the workaround of storing the previous set of selected rows and then finding the difference to check what row was recently selected/de-selected. I am aware of this workaround but I will copy this reply that I sent to another user who suggested the same:
+
+&gt; This seems to be a recurring issue as I work more with React, especially when you use third party libraries. Maybe I shouldn't have been adding click events like this when I worked with vanilla JS, but I could do it when I had to and, provided you wrote maintainable code, it worked. Everything seems very walled off with React; do it the right way (i.e. fork the library) or don't do it at all. Still hoping others can chime in and tell me I'm wrong as I'm still pretty new to this.
+## [7][I created an open-source alternative to Google Analytics using React, Redux and Next.js](https://www.reddit.com/r/reactjs/comments/ibrd14/i_created_an_opensource_alternative_to_google/)
 - url: https://v.redd.it/kzq3h49vwnh51
 ---
 
-## [4][Understanding React's useRef Hook](https://www.reddit.com/r/reactjs/comments/ibj8ls/understanding_reacts_useref_hook/)
-- url: https://ui.dev/useref/
+## [8][Records &amp; Tuples for React, way more than immutability](https://www.reddit.com/r/reactjs/comments/iciyfw/records_tuples_for_react_way_more_than/)
+- url: https://sebastienlorber.hashnode.dev/records-and-tuples-for-react-way-more-than-immutability-ckdzpqu3801283xs1639f72cv
 ---
 
-## [5][I made a React app with an interactive map that features all the bike lanes, bike parking spots, services and etc. for my city.](https://www.reddit.com/r/reactjs/comments/ibd3gu/i_made_a_react_app_with_an_interactive_map_that/)
-- url: https://github.com/dani2221/mktocak
+## [9][Authentication Patterns for Next.js](https://www.reddit.com/r/reactjs/comments/ic3bfb/authentication_patterns_for_nextjs/)
+- url: https://leerob.io/blog/nextjs-authentication
 ---
 
-## [6][Rocon: Router Library with Ultimate Type Safety](https://www.reddit.com/r/reactjs/comments/ibyz7r/rocon_router_library_with_ultimate_type_safety/)
-- url: https://rocon.uhyohyo.net/
+## [10][Next.js - Incremental Static Regeneration (ISR) and Static Site Generation (SSG)](https://www.reddit.com/r/reactjs/comments/icnl4t/nextjs_incremental_static_regeneration_isr_and/)
+- url: https://www.youtube.com/watch?v=yGuN_9rng6o&amp;feature=share
 ---
 
-## [7][zustand 3 is out, you can put context vs redux to rest](https://www.reddit.com/r/reactjs/comments/ibm7nk/zustand_3_is_out_you_can_put_context_vs_redux_to/)
-- url: https://twitter.com/0xca0a/status/1295455346014781440
+## [11][React Samsung Smart Tv Template (Tizen)](https://www.reddit.com/r/reactjs/comments/icngaf/react_samsung_smart_tv_template_tizen/)
+- url: https://github.com/IssamElNass/React-Samsung-Smart-Tv-Template
 ---
 
-## [8][When people ay you should use Redux for managing state, how granular should it be?](https://www.reddit.com/r/reactjs/comments/ic0utl/when_people_ay_you_should_use_redux_for_managing/)
-- url: https://www.reddit.com/r/reactjs/comments/ic0utl/when_people_ay_you_should_use_redux_for_managing/
----
-I hear people saying that Redux is used to manage your state and it makes it easier to manager vast quantities of data between components, but when they say it should manage state to what level do they mean.  
-
-
-Do they mean EVERYTHING that has state is stored in redux? So if I have a modal with a state variable called "isVisible". Should this also be stored in Redux rather than the parent component? Or do they mean you should store things like user details, API response objects, and form data in redux?
-## [9][HOC vs Hook vs Render Props for data fetching ?](https://www.reddit.com/r/reactjs/comments/ibyvfh/hoc_vs_hook_vs_render_props_for_data_fetching/)
-- url: https://www.reddit.com/r/reactjs/comments/ibyvfh/hoc_vs_hook_vs_render_props_for_data_fetching/
----
-There's many patterns for data fetching in React. I don't use class components anymore, so i dropped one of them.  
-
-
-My App.js file is a functional component, but it has a lot of logic (many handler functions, passes many props) and it also fetches data for its children in useEffect.  
-
-
-Now is it convenient to replace data fetching in useEffect by a Hoc or a render prop ?   
-if so, which one to choose ?
-## [10][I created another one calendar widget app. It tries to look like a calendar in chromium's date input (nearly). Btw it has 100% test coverage. What do you think?](https://www.reddit.com/r/reactjs/comments/ibyq9m/i_created_another_one_calendar_widget_app_it/)
-- url: https://github.com/obergodmar/react-calendar
----
-
-## [11][How to change my handleSubmit to direct it to another page](https://www.reddit.com/r/reactjs/comments/ibxrat/how_to_change_my_handlesubmit_to_direct_it_to/)
-- url: https://www.reddit.com/r/reactjs/comments/ibxrat/how_to_change_my_handlesubmit_to_direct_it_to/
----
-As the title says I would like my handleSubmit function to direct to another page like an anchor tag while running other things i added to it. could someone plz help
-
-Im writing a grammaly like program, and the handleSubmit is used on a button when the user is finished adding text. I would like when the button is clicked the grammar checking function is runned and then is directed to another page with all the details.
-
-code:
-
-    const handleSubmit = (event) =&gt; {
-        event.preventDefault();
-    
-        setSavedInput(inputField);
-        setInputField("");
-        
-        if (charsLeft &lt;= 49975) {
-          checkMyGrammar();
-        }
-      };
-## [12][Update lifecycle of a class-based React component](https://www.reddit.com/r/reactjs/comments/ibxp6k/update_lifecycle_of_a_classbased_react_component/)
-- url: https://medium.com//update-lifecycle-of-a-class-based-react-component-f0cb800a8aca?source=friends_link&amp;sk=2affcf5c704ed30ee3998f338010c3e3
+## [12][Deploy to Your Server Using Git](https://www.reddit.com/r/reactjs/comments/ic80t4/deploy_to_your_server_using_git/)
+- url: https://youtu.be/H6UU7TsyrGs
 ---
 

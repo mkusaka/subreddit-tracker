@@ -85,43 +85,50 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][I got frustrated with recipe websites, so I made one to practice React and extract recipes / ingredients.](https://www.reddit.com/r/javascript/comments/ibpfhf/i_got_frustrated_with_recipe_websites_so_i_made/)
-- url: https://github.com/cbrintnall/shorter.recipes
+## [3][JS13K competition - create a game in 30 days with less than 13kB of JS, CSS, HTML, ETC](https://www.reddit.com/r/javascript/comments/ich4c1/js13k_competition_create_a_game_in_30_days_with/)
+- url: https://js13kgames.com/
 ---
 
-## [4][Let's Write a JavaScript Library in ES6 using Webpack and Babel](https://www.reddit.com/r/javascript/comments/ic0iqu/lets_write_a_javascript_library_in_es6_using/)
-- url: https://9sh.re/dHgv80rDp
+## [4][Article: this in JavaScript and TypeScript](https://www.reddit.com/r/javascript/comments/icld0x/article_this_in_javascript_and_typescript/)
+- url: https://fettblog.eu/this-in-javascript-and-typescript/
 ---
 
-## [5][I made this app in React Native to help people learn and practice SQL in phone, uses sqlite. Simple and clean UI](https://www.reddit.com/r/javascript/comments/ibjl9j/i_made_this_app_in_react_native_to_help_people/)
-- url: https://github.com/ShivamJoker/SQL-Playground
+## [5][theheadless.dev - a free &amp; open source knowledge base for Puppeteer and Playwright](https://www.reddit.com/r/javascript/comments/icjfzf/theheadlessdev_a_free_open_source_knowledge_base/)
+- url: https://theheadless.dev
 ---
 
-## [6][A mostly complete guide to error handling in JavaScript.](https://www.reddit.com/r/javascript/comments/ibxaac/a_mostly_complete_guide_to_error_handling_in/)
-- url: https://www.valentinog.com/blog/error/
+## [6][DoppioJVM - a Java Virtual Machine written in 100% JavaScript](https://www.reddit.com/r/javascript/comments/ic1g9w/doppiojvm_a_java_virtual_machine_written_in_100/)
+- url: https://plasma-umass.org/doppio-demo/
 ---
 
-## [7][Embla Carousel – The most fluid carousel library with unmatched swipe precision](https://www.reddit.com/r/javascript/comments/ib9pw3/embla_carousel_the_most_fluid_carousel_library/)
-- url: https://davidcetinkaya.github.io/embla-carousel
+## [7]['Knowing what you're looking at' - JS tips for new React developers](https://www.reddit.com/r/javascript/comments/icmr7g/knowing_what_youre_looking_at_js_tips_for_new/)
+- url: https://www.a11ywithlindsey.com/blog/javascript-tricks-tips
 ---
 
-## [8][How you can stay motivated to work on personal projects](https://www.reddit.com/r/javascript/comments/ibs9vz/how_you_can_stay_motivated_to_work_on_personal/)
-- url: https://dev.to/afonsopacifer/how-you-can-stay-motivated-to-work-on-personal-projects-565a
+## [8][[AskJS] Animated URL Bar Trick](https://www.reddit.com/r/javascript/comments/icn3ak/askjs_animated_url_bar_trick/)
+- url: https://www.reddit.com/r/javascript/comments/icn3ak/askjs_animated_url_bar_trick/
+---
+Hi there! I just learned how to animate the URL bar with JavaScript!
+
+Here is the code:
+
+    function animateUrl() {
+        window.location.hash = Math.random();
+    }
+    setInterval(100, animateUrl);
+## [9][Time-traveling Debugger for Node/Browsers JS/TS - VSCode plugin](https://www.reddit.com/r/javascript/comments/icl7ag/timetraveling_debugger_for_nodebrowsers_jsts/)
+- url: https://marketplace.visualstudio.com/items?itemName=effectful.debugger
 ---
 
-## [9][I made a React app with an interactive map that features all the bike lanes, bike parking spots, services and etc. for my city.](https://www.reddit.com/r/javascript/comments/ibd60r/i_made_a_react_app_with_an_interactive_map_that/)
-- url: https://github.com/dani2221/mktocak/
+## [10][ts-migrate: A Tool for Migrating to TypeScript at Scale](https://www.reddit.com/r/javascript/comments/ic7nln/tsmigrate_a_tool_for_migrating_to_typescript_at/)
+- url: https://medium.com/airbnb-engineering/ts-migrate-a-tool-for-migrating-to-typescript-at-scale-cd23bfeb5cc
 ---
 
-## [10][A VSCode Extension for Playing Coding Tutorials](https://www.reddit.com/r/javascript/comments/ibq4h1/a_vscode_extension_for_playing_coding_tutorials/)
-- url: https://github.com/coderoad/coderoad-vscode
+## [11][I made a React Native Samsung Smart TV Template (Tizen)](https://www.reddit.com/r/javascript/comments/ic245i/i_made_a_react_native_samsung_smart_tv_template/)
+- url: https://github.com/IssamElNass/React-Native-Samsung-Smart-TV-Template
 ---
 
-## [11][The In-Depth Guide to Creation Patterns in JavaScript](https://www.reddit.com/r/javascript/comments/ibxi2f/the_indepth_guide_to_creation_patterns_in/)
-- url: https://medium.com/madhash/creational-pattern-full-guide-af02393d89ff
----
-
-## [12][Relax your coding self with soothing rain audio/visual .js simulation](https://www.reddit.com/r/javascript/comments/ic0a8n/relax_your_coding_self_with_soothing_rain/)
-- url: https://itsrainingday.netlify.app/
+## [12][Attemping to create a CSS framework](https://www.reddit.com/r/javascript/comments/ickkzj/attemping_to_create_a_css_framework/)
+- url: https://pitayan.com/posts/css-framework-attempt/?ref=reddit
 ---
 

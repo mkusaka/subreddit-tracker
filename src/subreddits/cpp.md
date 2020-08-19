@@ -56,7 +56,36 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][libstdc++ &lt;algorithm&gt; header transitively including &lt;range&gt;](https://www.reddit.com/r/cpp/comments/ibz0m2/libstdc_algorithm_header_transitively_including/)
+## [2][awesome-hpp: A curated list of awesome header-only C++ libraries](https://www.reddit.com/r/cpp/comments/icm8g1/awesomehpp_a_curated_list_of_awesome_headeronly_c/)
+- url: https://github.com/p-ranav/awesome-hpp
+---
+
+## [3][Writing ideal class definition in C++](https://www.reddit.com/r/cpp/comments/icijxj/writing_ideal_class_definition_in_c/)
+- url: https://www.reddit.com/r/cpp/comments/icijxj/writing_ideal_class_definition_in_c/
+---
+ [https://medium.com/a-devs-life/designing-an-ideal-class-in-c-d205516c03ab](https://medium.com/a-devs-life/designing-an-ideal-class-in-c-d205516c03ab) 
+
+Guys, please provide your valuable comments.
+## [4][A Rust-style guide for C++](https://www.reddit.com/r/cpp/comments/ickurq/a_ruststyle_guide_for_c/)
+- url: https://www.reddit.com/r/cpp/comments/ickurq/a_ruststyle_guide_for_c/
+---
+Hello,
+
+I have recently been perusing the Rust language book and found it really well-organized and presenting all the important topics concisely and ready-to-go.
+
+Is there something similar for C++ language? I know there are some WG movements to create the ONE book for learning C++ as many other modern languages do. However, I feel that for now apart from some well-written books from gurus like Scott Meyers, there is a RTFM approach to learning this language. Or am I wrong?  
+
+
+I would be happy to discuss this topic in detail, because I believe that without such book C++ is quite unapproachable for newcomers.
+## [5][VS 2019 16.7.2 is now available](https://www.reddit.com/r/cpp/comments/icabt5/vs_2019_1672_is_now_available/)
+- url: https://github.com/microsoft/STL/wiki/Changelog#vs-2019-167
+---
+
+## [6][sol 3: modern lua and C++ integration](https://www.reddit.com/r/cpp/comments/ic8ru0/sol_3_modern_lua_and_c_integration/)
+- url: https://sol2.readthedocs.io/en/latest/
+---
+
+## [7][libstdc++ &lt;algorithm&gt; header transitively including &lt;range&gt;](https://www.reddit.com/r/cpp/comments/ibz0m2/libstdc_algorithm_header_transitively_including/)
 - url: https://www.reddit.com/r/cpp/comments/ibz0m2/libstdc_algorithm_header_transitively_including/
 ---
 I noticed some time ago that in c++20 mode the &lt;algorithm&gt; header in libstdc++ is substantially bigger than in c++11 mode :
@@ -72,90 +101,37 @@ evaluates to 45219 loc. Clicking through the header apparently in c++20 we have 
 &lt;algorithm&gt; -&gt; &lt;bits/ranges\_algo.h&gt; -&gt; &lt;bits/ranges\_algobase.h&gt; -&gt; &lt;range&gt;.
 
 How could that happen? Measuring the compile time of file only including the &lt;algorithm&gt; header I get with the c++11 switch 120 ms and with the c++20 switch **600 ms** (empty file is 100 ms). I a bit baffled that while standardizing the &lt;range&gt; header this either slipped through the cracks or it was actively decided that this is ok. The &lt;algorithm&gt; header is virtually anywhere and with c++20 flag enabled every file including the &lt;algorithm&gt; header will compile half a second slower...
-## [3][I made this ASCII Ray Tracing program in C++, any feedback and suggestions are welcome](https://www.reddit.com/r/cpp/comments/ibcvks/i_made_this_ascii_ray_tracing_program_in_c_any/)
-- url: https://youtu.be/QkETiyYWh2o
+
+&amp;#x200B;
+
+**Edit:**
+
+Apparently the &lt;vector&gt; header also increased by a huge amount from 9530 loc to 19818 loc for libstdc++ due to now including &lt;bits/stl\_algo.h&gt; (this seems to be a known [issue](https://gcc.gnu.org/bugzilla/show_bug.cgi?id=92546) though). Compiling an empty header file only including &lt;vector&gt; is now up to 230 ms from 130 ms. 
+## [8][C++20 SQLite wrapper](https://www.reddit.com/r/cpp/comments/ic629n/c20_sqlite_wrapper/)
+- url: https://www.reddit.com/r/cpp/comments/ic629n/c20_sqlite_wrapper/
+---
+I am writing a C++20 SQLite wrapper with expressive code in mind. The code must run fast.
+
+    sql::open("dev.db")
+    | sql::query("select name, salary from person")
+    | sql::for_each([](std::string_view name, float salary)
+      { std::cout &lt;&lt; name &lt;&lt; "," &lt;&lt; salary &lt;&lt; std::endl; })
+    | sql::onerror([](auto e){ std::cout &lt;&lt; e &lt;&lt; std::endl; });
+
+I have some benchmarks to compare with solutions using the SQLite library. The usage of pipe operators to chain operations is optional and there is an API that throws C++ exceptions instead of using `result&lt;T&gt;` to report errors. 
+
+[github.com/ricardocosme/msqlite](https://github.com/ricardocosme/msqlite)
+
+What do you think? Any comments or feedbacks are welcome!
+## [9][Why does c++ give a bare segmentation fault error instead of a more detailed one?](https://www.reddit.com/r/cpp/comments/ic4ol4/why_does_c_give_a_bare_segmentation_fault_error/)
+- url: https://www.reddit.com/r/cpp/comments/ic4ol4/why_does_c_give_a_bare_segmentation_fault_error/
+---
+I started programming in python, then got into java and dart. Then I got into c++ and I'm always frustrated when I first run my code and get a segmentation fault error. Every other language I have learnt give a detaild, nice for debugging error message. Why c++ does not? Is it related to the fact that it's compiled?
+## [10][Combining Modern C++ and Lua - James Pascoe](https://www.reddit.com/r/cpp/comments/ic8raa/combining_modern_c_and_lua_james_pascoe/)
+- url: https://www.youtube.com/watch?v=QwfL72yHZEY
 ---
 
-## [4][unique_ptr, shared_ptr, weak_ptr, or reference_wrapper for class relationships](https://www.reddit.com/r/cpp/comments/ibzqvj/unique_ptr_shared_ptr_weak_ptr_or_reference/)
+## [11][unique_ptr, shared_ptr, weak_ptr, or reference_wrapper for class relationships](https://www.reddit.com/r/cpp/comments/ibzqvj/unique_ptr_shared_ptr_weak_ptr_or_reference/)
 - url: https://www.nextptr.com/tutorial/ta1450413058/unique_ptr-shared_ptr-weak_ptr-or-reference_wrapper-for-class-relationships
----
-
-## [5][zip iterator implementation feedback](https://www.reddit.com/r/cpp/comments/ibxxs3/zip_iterator_implementation_feedback/)
-- url: https://www.reddit.com/r/cpp/comments/ibxxs3/zip_iterator_implementation_feedback/
----
-I wrote a zip iterator as a challenge of my template metaprogramming knowledge and to make working with the standard parallel algorithms easier for numerical simulations: [https://github.com/mfdeakin/zip](https://github.com/mfdeakin/zip)
-
-Goals of this project are ease of use (ideally as easy as python's zip), high (runtime) performance (though recommendations for improving compile times would be appreciated), and interoperability with the standard library algorithms. I think I've largely achieved these goals, though GPU performance is still unknown and something that concerns me due to my use of functors.
-
-One somewhat hidden issue I'd like feedback/recommendations on is that I had to implement std::swap(tuple&lt;\_Elements...&gt; &amp;&amp;, tuple&lt;\_Elements...&gt; &amp;&amp;) to support working with std::sort and potentially other algorithms; ideally I'd be able to specialize iter\_swap instead, but std::sort in gcc's implementation makes the mistake (IMO) of using the qualified std::iter\_swap rather than just iter\_swap. (also, why doesn't swap doesn't use universal references? or support rvalues in general?)
-
-I avoided exceptions with this code; this is largely for supporting GPUs.
-## [6][vcpkg.info](https://www.reddit.com/r/cpp/comments/ibjgqq/vcpkginfo/)
-- url: https://www.reddit.com/r/cpp/comments/ibjgqq/vcpkginfo/
----
-[https://vcpkg.info](https://vcpkg.info) is a simple page where you can browse all libraries from vcpkg repository.
-
-You can search for library using full text search on names or descriptions, or you can select libs using tags.
-
-Library information page contains a list of all versions of particular library with appropriate commit hash, which you need to checkout to specific revision, if you want to use that version.
-
-Until we get [promised proper versioning](https://devblogs.microsoft.com/cppblog/vcpkg-2020-04-update-and-product-roadmap/) in vcpkg, this is the easies way to find out about all available versions.
-
-Please bear in mind, that this is still very early version, and may contain some errors here and there.
-
-Happy browsing!
-## [7][structopt: Parse command line arguments by defining a struct](https://www.reddit.com/r/cpp/comments/ibdp1p/structopt_parse_command_line_arguments_by/)
-- url: https://github.com/p-ranav/structopt
----
-
-## [8][How expensive is a shared_lock?](https://www.reddit.com/r/cpp/comments/ibsc8f/how_expensive_is_a_shared_lock/)
-- url: https://www.reddit.com/r/cpp/comments/ibsc8f/how_expensive_is_a_shared_lock/
----
-If I have an unordered_set (or a pointer to an unordered_set), and gate the writes with a unique lock on a shared mutex:
-
-    std::unique_lock&lt;std::shared_mutex&gt; ul(mutex);
-    std::swap(set_, newSet);
-
-and the reads with a shared_lock
-
-    std::shared_lock&lt;std::shared_mutex&gt; sl(mutex);
-    set_.find(_) != set_.end();
-
-If I'm doing thousands of membership checks (on a single thread) on the underlying set, is it beneficial to group these together under a single shared_lock or can I use these more freely per check? What's the overhead here?
-
-Edit: A lot of people are giving me more general mutex and lock advice which I appreciate but it's stuff I already know. I'm more curious about the underlying cost in a shared_lock implementation if anyone is familiar with that. More particularly how expensive acquiring a shared_lock is because technically there is no contention with other shared_lock's. (Assume very infrequent writes)
-
-And yes, I will profile both options. Was looking for some deeper insights into shared_lock implementation details.
-## [9][c++ svg library](https://www.reddit.com/r/cpp/comments/ibf3zh/c_svg_library/)
-- url: https://www.reddit.com/r/cpp/comments/ibf3zh/c_svg_library/
----
-I wrote a standalone c++ library to create, animate, manipulate and render SVG files.
-
-[https://github.com/sammycage/lunasvg](https://github.com/sammycage/lunasvg)
-
-    #include &lt;lunasvg/svgdocument.h&gt;
-    
-    using namespace lunasvg;
-    
-    int main()
-    {
-        SVGDocument document;
-        document.loadFromFile("tiger.svg");
-        
-        Bitmap bitmap = document.renderToBitmap();
-        
-        // do something useful with the bitmap.
-        
-        return 0;
-    }
-    
-
-Any contributions and questions are welcome.
-## [10][Eliminating the static overhead of C++ ranges (2019)](https://www.reddit.com/r/cpp/comments/ib7tt9/eliminating_the_static_overhead_of_c_ranges_2019/)
-- url: https://vector-of-bool.github.io/2019/10/21/rngs-static-ovr.html
----
-
-## [11][Mastering C++: Books | Courses | Tools | Tutorials | Blogs | Communities](https://www.reddit.com/r/cpp/comments/ibenc3/mastering_c_books_courses_tools_tutorials_blogs/)
-- url: http://www.vishalchovatiya.com/mastering-c-books-courses-tools-tutorials-blogs-communities/
 ---
 

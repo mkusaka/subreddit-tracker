@@ -3,82 +3,139 @@
 - url: https://www.reddit.com/r/aws/comments/ibdue5/week_of_aug_17th_what_are_your_favorite_aws_tips/
 ---
 Share your best AWS tips with the community!
-## [2][Application and Classic Load Balancers are adding defense in depth with the introduction of Desync Mitigation Mode (and open sourcing HTTP Desync Guardian)](https://www.reddit.com/r/aws/comments/ibk57y/application_and_classic_load_balancers_are_adding/)
-- url: https://www.reddit.com/r/aws/comments/ibk57y/application_and_classic_load_balancers_are_adding/
+## [2][End to End Machine Learning Tutorial — From Data Collection to Deployment on AWS 🚀](https://www.reddit.com/r/aws/comments/ickq5y/end_to_end_machine_learning_tutorial_from_data/)
+- url: https://www.reddit.com/r/aws/comments/ickq5y/end_to_end_machine_learning_tutorial_from_data/
 ---
-Elastic Load Balancing has released a new layer-7 security feature called “Desync Mitigation Mode” on both the Application and Classic Load Balancer. This feature offers protection from HTTP vulnerabilities arising from Desync, while maintaining the availability and performance of your application. More details here – https://aws.amazon.com/about-aws/whats-new/2020/08/application-and-classic-load-balancers-adding-defense-in-depth-with-introduction-of-desync-mitigation-mode/
- 
-PS: As always, we love hearing from you and take your feedback seriously! Thank you!
+\[Updated Post: End To End machine learning and beyond notebooks 🚀\]
 
-The underlying library has also been open-sourced, available on Github here https://github.com/aws/http-desync-guardian
-## [3][We are the AWS EC2 Team - Ask the Experts - Aug 21st @ 9AM PT / 12PM ET / 4PM GMT!](https://www.reddit.com/r/aws/comments/iboiel/we_are_the_aws_ec2_team_ask_the_experts_aug_21st/)
-- url: https://www.reddit.com/r/aws/comments/iboiel/we_are_the_aws_ec2_team_ask_the_experts_aug_21st/
+Hello everyone!
+
+With the great collaboration of a friend of mine, we built and deployed a machine learning application to AWS using Python.
+
+To tell you more about this fun journey, we wrote a post where we'll walk you through the steps to:
+
+* Collect and scrape data with Scrapy / Selenium
+* Train a deep character CNN for (English) sentiment analysis using PyTorch
+* Build an interactive web app with Dash to serve the model in real-time
+* Put everything in Docker Compose
+* Deploy to AWS on a custom domain name
+
+Here the link: [https://medium.com/datadriveninvestor/end-to-end-machine-learning-from-data-collection-to-deployment-ce74f51ca203](https://medium.com/datadriveninvestor/end-to-end-machine-learning-from-data-collection-to-deployment-ce74f51ca203)
+
+All the code is available in Github, the blocks are independent and reusable in other projects [https://github.com/MarwanDebbiche/post-tuto-deployment](https://github.com/MarwanDebbiche/post-tuto-deployment)
+
+Feel free to reach out to me if you have any question,
+## [3][AWS SSO with GSuite as IDp - Login fails from GSuite Dashboard, OK from AWS SSO Start](https://www.reddit.com/r/aws/comments/icga2m/aws_sso_with_gsuite_as_idp_login_fails_from/)
+- url: https://www.reddit.com/r/aws/comments/icga2m/aws_sso_with_gsuite_as_idp_login_fails_from/
 ---
-Hey [r/aws](https://www.reddit.com/r/aws)! [u/AmazonWebServices](https://www.reddit.com/u/AmazonWebServices/) here.
+EDIT:  Found the fix. 
 
-The AWS EC2 team will be hosting an Ask the Experts session here **in this thread** to answer any questions you may have about running your workloads on the latest generation Amazon EC2 [M6g](https://aws.amazon.com/ec2/instance-types/m6/), [C6g](https://aws.amazon.com/ec2/instance-types/c6/), and [R6g](https://aws.amazon.com/ec2/instance-types/r6/) instances powered by the new [AWS Graviton2 processors](https://aws.amazon.com/ec2/graviton/). These instances enable up to 40% better price performance over comparable x86-based instances for a wide variety of workloads, including application servers, micro-services, high-performance computing, CPU-based machine learning inference, electronic design automation, gaming, open-source databases, and in-memory caches.
+Found [this post](https://old.reddit.com/r/aws/comments/eadzp8/a_little_help_needed_with_aws_sso_with_gsuite/fckckpx/) after looking on the [AWS Support forum thread](https://forums.aws.amazon.com/thread.jspa?threadID=323869&amp;tstart=0)
 
-Already have questions? Post them below and we'll answer them starting at 9AM PT on Aug 21, 2020!
-## [4][New – AWS Fargate for Amazon EKS now supports Amazon EFS](https://www.reddit.com/r/aws/comments/ibhlsz/new_aws_fargate_for_amazon_eks_now_supports/)
-- url: https://aws.amazon.com/blogs/aws/new-aws-fargate-for-amazon-eks-now-supports-amazon-efs/
+A) Setting the Start URL in GSuite to blank, and 
+B) Setting Name ID Format = EMAIL 
+
+then *waiting a few minutes* updates the button in Gsuite Dashboard. Now it works! 
+
+
+
+---- 
+
+Original Post: 
+
+There's a [post a few months ago here](https://www.reddit.com/r/aws/comments/gmn67i/how_to_setup_aws_organizations_with_aws_sso_using/) which goes into detail on how to set up AWS SSO using GSuite as the IDp. 
+
+This is almost identical to the [post on Amazon's Security Blog from a month ago on the same process](https://aws.amazon.com/blogs/security/how-to-use-g-suite-as-external-identity-provider-aws-sso/) - the only differences are /u/bartheletf's post has leaving Signed Response in the GSuite Dashboard unchecked, whereas Amazon have it checked, and Amazon goes on to mention using their [ssosync](https://github.com/awslabs/ssosync) project to provision users on a schedule. 
+
+Both guides work great in terms of getting logins via the AWS SSO Start page working. 
+
+However, and as mentioned by others in the other reddit post - trying to log into AWS SSO by launching it from the GSuite Dashboard doesn't work, and just gives you a SAML Error over on Amazon's side. [Screenshot here](https://i.imgur.com/Sd1e3jI.png).  Clicking the Sign In button (only appears if you're not already signed in) makes it work same as if you'd gone to the AWS SSO Start page and signed in yourself. 
+
+I've tried with the Signed Response checkbox both enabled or not, but it doesn't change anything. 
+
+I'm no SAML expert, but it seems like GSuite isn't doing it's own SAML call correct
+
+HTTP Calls when using the AWS SSO Start page:   
+
+- `POST https://accounts.google.com/o/saml2/idp?idpid=&lt;idpid&gt;` returns HTTP 200  -- contains a SAML AuthnRequest payload on the request   
+- `POST https://us-east-1.signin.aws.amazon.com/platform/saml/acs/&lt;acsid&gt;`  returns HTTP 200 -- contains a SAML Response payload on the request
+
+HTTP Calls when using GSuite Dashboard: 
+
+- `GET https://accounts.google.com/o/saml2/initsso?idpid=&lt;idpid&gt;&amp;spid=&lt;spid&gt;&amp;forceauthn=false` returns HTTP 200
+- `POST https://us-east-1.signin.aws.amazon.com/platform/saml/acs/&lt;acsid&gt;` returns HTTP 400 -- contains a SAML Response payload on the request
+
+When comparing the content of the SAML being posted to the Amazon ACS URLs, the first difference I noticed was that the NameID format beign sent when launched from GSuite is "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified", but when from the AWS SSO it was "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress" 
+Changing the SSO Application in GSuite from UNSPECIFIED to EMAIL fixed that so that both were using the "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress" format. 
+
+Another difference is the Response when launched from AWS SSO has InResponseTo attribute in two elements, referencing the ID send in the AuthRequest payload. 
+
+Other than that, the rest of it is differences in Timestamps (both look to be correct time), as well as various session ID and signatures/digests. 
+
+Has anyone else had any luck getting this to work?
+## [4][Cognito User Pool Backup &amp; Restore?](https://www.reddit.com/r/aws/comments/iclxfo/cognito_user_pool_backup_restore/)
+- url: https://www.reddit.com/r/aws/comments/iclxfo/cognito_user_pool_backup_restore/
+---
+Is this still not a thing? How are people doing DR across regions with Cognito? I don't see a way to export user pool users with their password hashes. In case of a DR event where I need to fail over to another region, I don't see any way around having to send every user a password reset.
+## [5][AWS announces WorldForge in AWS RoboMaker](https://www.reddit.com/r/aws/comments/ic27tx/aws_announces_worldforge_in_aws_robomaker/)
+- url: https://aws.amazon.com/blogs/aws/aws-announces-worldforge-in-aws-robomaker/
 ---
 
-## [5][S3/Athena or S3/Glue/Athena for CSV data processing?](https://www.reddit.com/r/aws/comments/ibzkvd/s3athena_or_s3glueathena_for_csv_data_processing/)
-- url: https://www.reddit.com/r/aws/comments/ibzkvd/s3athena_or_s3glueathena_for_csv_data_processing/
----
-So my requirements are to perform audit logging in our application. Considering the large volume of data to be expected, we have decided to store the audit logs in a CSV file and store them to a bucket in S3 every hour or so. Then, later when a user requests an audit report, we need to filter these CSV data in the S3 bucket based on a given time frame and return the results for download.
-
-Now, I have observed a couple of ways to do this but two have stuck out:
-
-1. Use Athena to run `select *` queries on the CSV bucket directly.
-2. Use Glue to crawl the data in the bucket from time to time and then use Athena to query the Glue data store.
-
-While option 1 is simple, I wonder whether there is any advantage to using option 2. Considering the costs involved, I feel running a crawler frequently might be a bit more costly in addition to Athena's per query billing compared to running Athena solely.
-
-The audit report generation activity is not expected to run very frequently, perhaps once every six months or so. 
-
-So, what would be the best option in this case? The volume is expected to be very large. So, running a query in Athena might take a long time with the costs that come with it. So, will the cost of running a Glue crawler be justified if there are performance improvements running an Athena query?
-## [6][Simplify AWS Lambda functions with middleware](https://www.reddit.com/r/aws/comments/ic0weu/simplify_aws_lambda_functions_with_middleware/)
-- url: https://startup-cto.net/simplify-aws-lambda-functions-with-middleware/
+## [6][How I Write Meaningful Tests for AWS Lambda Functions](https://www.reddit.com/r/aws/comments/icmjue/how_i_write_meaningful_tests_for_aws_lambda/)
+- url: https://medium.com/@psingman/how-i-write-meaningful-tests-for-aws-lambda-functions-f009f0a9c587
 ---
 
-## [7][I'm getting charged although i'm on the AWS free tier](https://www.reddit.com/r/aws/comments/ic0nqt/im_getting_charged_although_im_on_the_aws_free/)
-- url: https://www.reddit.com/r/aws/comments/ic0nqt/im_getting_charged_although_im_on_the_aws_free/
+## [7][Get ENI IP address after creating VPC Endpoint](https://www.reddit.com/r/aws/comments/icmgxd/get_eni_ip_address_after_creating_vpc_endpoint/)
+- url: https://www.reddit.com/r/aws/comments/icmgxd/get_eni_ip_address_after_creating_vpc_endpoint/
 ---
-Hello everyone,
+Hello,  
 
-I'm new to AWS and decided to use it for a side project. I'm on the t2.micro EC2 instance with a 10GB EBS volume. 
 
-I just noticed i was charged $4 for last month, and i've already run up a $18 charge for the end of this month. I checked around and landed in billing and found out the charge comes from this `$0.065 per IOPS-month provisioned`. I'm finding this very confusing, please is there a way to resolve this issue and not be charged else is there a way to avoid this in the future.
+I need some help figuring this out. Using Cloudformation I am creating a VPC endpoint and would like to get the IP addresses of the created ENIs.  
 
-NOTE: i don't know if this is important but i pulled a docker image in the instance.
 
-Thanks
-## [8][For our Cloud IoT users a useful comparison](https://www.reddit.com/r/aws/comments/ibxo7x/for_our_cloud_iot_users_a_useful_comparison/)
-- url: https://www.reddit.com/r/aws/comments/ibxo7x/for_our_cloud_iot_users_a_useful_comparison/
+I have read through the docs and there is no direct way to do this.   
+
+
+Any suggestions?
+## [8][Using Current_date in Redshuft materialised view](https://www.reddit.com/r/aws/comments/icig9n/using_current_date_in_redshuft_materialised_view/)
+- url: https://www.reddit.com/r/aws/comments/icig9n/using_current_date_in_redshuft_materialised_view/
 ---
-This article compares AWS IoT Core to Google Cloud IoT Core
+Hi All,
 
- [https://www.netburner.com/learn/iot-cloud-aws-iot-core-vs-google-cloud-iot-core/](https://www.netburner.com/learn/iot-cloud-aws-iot-core-vs-google-cloud-iot-core/)
-## [9][How is working at AWS in COVID times?](https://www.reddit.com/r/aws/comments/ibm2ym/how_is_working_at_aws_in_covid_times/)
-- url: https://www.reddit.com/r/aws/comments/ibm2ym/how_is_working_at_aws_in_covid_times/
+I found in documentation that current\_date function can't be used in materialised views, is there an alternative to this? I need current date in a filter condition.
+
+Thnx,
+
+mc
+## [9][Does SageMaker GroundTruth support cases in which the input S3 bucket for the dataset has new data added to it once a labeling jobs starts?](https://www.reddit.com/r/aws/comments/ickis1/does_sagemaker_groundtruth_support_cases_in_which/)
+- url: https://www.reddit.com/r/aws/comments/ickis1/does_sagemaker_groundtruth_support_cases_in_which/
 ---
-I've read Glassdoor reviews about the pace being fast-moving, challenging, and rewarding. I saw reviews saying benefits are not as snazzy as other IT companies. I've read [this post](https://www.reddit.com/r/aws/comments/ash4en/working_for_aws/) commenting on a few of these aspects. 
+I have a service where my team can submit their own images to the s3 bucket to be included in the labeling process, and would like to incorporate that new data in the current and future labeling jobs. 
 
-Can anyone share how their experience has been working at AWS through COVID? Has leadership managed the change well? Any updates to salary or benefits?
+From what I can tell, GroundTruth relies on the manifest file (which can be autogenerated) to know which images/resources need labeling. However when creating a job, it only takes into account the current state of the input S3 bucket. 
 
-Thanks in advance!
-## [10][How to understand DynamoDB](https://www.reddit.com/r/aws/comments/ic038i/how_to_understand_dynamodb/)
-- url: https://www.reddit.com/r/aws/comments/ic038i/how_to_understand_dynamodb/
+I don't think having a lambda trigger on S3 upload to manually update the manifest file is a good idea or event something that works. 
+
+Anyone encounter a similar situation? How did you solve it? 
+Cannot seem to find a reference online in the documentation/youtube videos about handling that.
+## [10][Advice needed: Setting up CI/CD for serverless?](https://www.reddit.com/r/aws/comments/ici0eb/advice_needed_setting_up_cicd_for_serverless/)
+- url: https://www.reddit.com/r/aws/comments/ici0eb/advice_needed_setting_up_cicd_for_serverless/
 ---
-DynamoDB is gaining popularity based on the amount of questions that people ask here and clients that I talk to. I always try to help by providing feedback and answers questions. While doing so, I decided to write down an article that answer the most common questions regarding DynamoDB. 
+I've recently taken over a large codebase using serverless framework. The application is broken into several 'services' and uses a single `serverless.yml` file in the root of the repository. Each 'service' contains several functions with API Gateway as the event source. The `serverless.yml` file is highly dynamic, taking advantages of variables in several places. Services are deployed by running `serverless deploy --stage dev --service profile` where `profile` is the name of the Profile service. The command bundles and deploys a single service thus each service is it's own CloudFormation stack.
 
-The goal is to help understand what should be the mindset  need to work with DynamoDB so you can have a performant application, that is easy to work with and extend.
+I'm the 3rd dev to take over this project. It seems like the original dev who setup the project planned on following a microservices pattern however the 2nd dev, who preceded me, has made a bit of a mess of it by importing code across the service boundaries and having code in one service importing code from another service. I'm in the process of fixing this mess by decoupling the services by using messaging (via custom EventBridge events). Despite the 2nd dev making a mess I think the intent of the original dev is pretty good.
 
-Since lots of people paint themself In to a corner, which makes it impossible to extend the solution.
+I'd like to setup CI/CD for this project using the AWS Code\* suite of tools but given how this repository is structured I can't think of the best approach. For example if a change is commited to one service is doesn't make sense to build and deploy **all** of the other services since they haven't changed.
 
-https://consulting.0x4447.com/articles/how_to/how-to-understand-dynamodb.html
-## [11][AWS EKS and Kubernetes Notebook](https://www.reddit.com/r/aws/comments/ibz1o0/aws_eks_and_kubernetes_notebook/)
-- url: https://www.linkedin.com/posts/adnanrashid1_kubernetes-cloud-publiccloud-activity-6701444471592153088-SnQS
+What's the best approach for this kind of setup? Would it be better to move each 'service' into it's own repository and give each service it's own CI/CD pipeline? Any tips would be appreciated.
+## [11][Connect QuickSight to Aurora Serverless MySQL compatibility](https://www.reddit.com/r/aws/comments/ichdd4/connect_quicksight_to_aurora_serverless_mysql/)
+- url: https://www.reddit.com/r/aws/comments/ichdd4/connect_quicksight_to_aurora_serverless_mysql/
 ---
+I trying to connect AWS QuickSight to my aurora serverless database but always get timeout error
 
+&gt;Connecting to your data source took too long. Retrying this request may help. Contact technical support for further assistance.
+
+I have created a VPC connection and open all ports in the security group but still cannot connect.
+
+I am missing anything?

@@ -22,19 +22,199 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Parse, don’t validate](https://www.reddit.com/r/typescript/comments/ibqabo/parse_dont_validate/)
+## [2][Which ORM should I use?](https://www.reddit.com/r/typescript/comments/icbey2/which_orm_should_i_use/)
+- url: https://www.reddit.com/r/typescript/comments/icbey2/which_orm_should_i_use/
+---
+Which ORM should I use to handle a SQL database in a TypeScript project?
+## [3][Dynamic type systems are not inherently more open](https://www.reddit.com/r/typescript/comments/icd0sn/dynamic_type_systems_are_not_inherently_more_open/)
+- url: https://lexi-lambda.github.io/blog/2020/01/19/no-dynamic-type-systems-are-not-inherently-more-open/
+---
+
+## [4][How to enforce nested objects have matching keys?](https://www.reddit.com/r/typescript/comments/iccp8r/how_to_enforce_nested_objects_have_matching_keys/)
+- url: https://www.reddit.com/r/typescript/comments/iccp8r/how_to_enforce_nested_objects_have_matching_keys/
+---
+I am trying to create a localization object for my React Native app. This is the structure:
+
+    const strings = {
+      ...
+    
+      en: {
+        string_1: "foo",
+        string_2: "bar",
+        ...
+      },
+    
+      fr: { ... },
+    
+      ...
+    }
+
+I want to enforce through TypeScript that each locale matches the other in terms of keys. For example, if `"en"` has key `"string_1"`, then every other locale should also have key `"string_1"`. Or if `"fr"` has key `"string_3"`, then every other locale should also have key `"string_3"`.
+
+My reasoning is that I don't want to add support for a language that does not have all the keys used in the app, so it would be nice to know if/what is missing.
+
+Is this possible to do? And is it possible to do for an arbitrary amount of languages and keys without having to manually create/update an interface?
+## [5][How common are decorators in the wild?](https://www.reddit.com/r/typescript/comments/ic921d/how_common_are_decorators_in_the_wild/)
+- url: https://www.reddit.com/r/typescript/comments/ic921d/how_common_are_decorators_in_the_wild/
+---
+I'm curious. I've been doing a deep dive on them lately, and find them an interesting concept. However I know they are "experimental' so I'd like to know outside of Angular, are they used all that often?
+## [6][My TypeScript Exercise Repository.](https://www.reddit.com/r/typescript/comments/icejbf/my_typescript_exercise_repository/)
+- url: https://github.com/JaganGanesh/typescript
+---
+
+## [7][Trying to use Typescript/Mocha/NYC together but am confused about how coverage is detected](https://www.reddit.com/r/typescript/comments/ic5aa3/trying_to_use_typescriptmochanyc_together_but_am/)
+- url: https://www.reddit.com/r/typescript/comments/ic5aa3/trying_to_use_typescriptmochanyc_together_but_am/
+---
+I've recently attached NYC to my Typescript project but am confused about how it determines when code is covered. Below is an example of NYC claiming that lines 5-6 are not covered in my `src/Indexer/InvalidIndexError.ts`.
+
+I have the following setup:
+
+`.nycrc`
+
+    {
+      "extends": "@istanbuljs/nyc-config-typescript",
+      "include": [
+        "src/**/*.js",
+        "src/**/*.ts",
+        "src/**/*.tsx"
+      ],
+      "require": [
+        "ts-node/register"
+      ],
+      "reporter": [
+        "text",
+        "html"
+      ],
+      "all": true,
+      "check-coverage": true,
+      "sourceMap": true,
+      "instrument": true
+    }
+
+`src/Indexer/InvalidIndexError.ts`
+
+    export default class InvalidIndexError extends Error {
+        public static ErrorName = 'InvalidIndexError'
+        constructor(message) {
+            super(message);
+            this.name = InvalidIndexError.ErrorName;
+        }
+    }
+
+`test/InvalidIndexError.ts`
+
+    import InvalidIndexError from "../src/Indexer/InvalidIndexError";
+    
+    const chai = require('chai');
+    const chaiAsPromised = require("chai-as-promised");
+    const {expect} = chai;
+    
+    chai.use(chaiAsPromised)
+    
+    describe('InvalidIndexError', () =&gt; {
+        it('should have static error name',  () =&gt; {
+            return expect(InvalidIndexError).to.have.property('ErrorName')
+        })
+    
+        it('should have a name matching static name',  () =&gt; {
+            const error = new InvalidIndexError('');
+    
+            return expect(error.name).to.equal(InvalidIndexError.name)
+        })
+    
+        it('should be instance of Error', () =&gt; {
+            return expect((new InvalidIndexError('')) instanceof Error).to.be.true
+        })
+    });
+
+After executing  `nyc mocha -r ts-node/register/transpile-only -r source-map-support/register --full-trace --ui bdd tests/**/*.ts` I end up with:
+
+    -----------------------|---------|----------|---------|---------|-------------------
+    File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+    -----------------------|---------|----------|---------|---------|-------------------
+    All files              |   38.02 |    39.29 |      35 |   40.27 |                   
+     src                   |   30.95 |       40 |   36.36 |   33.33 |  
+     ...                   | Excluding other files for Reddit brevity                            
+     src/Indexer           |   92.86 |    52.94 |    87.5 |   95.52 |                  
+      InvalidIndexError.ts |   80.95 |    46.15 |      75 |   89.47 | 5-6
+## [8][Getting [tsl] errors for files inside the node_modules folder.](https://www.reddit.com/r/typescript/comments/ic9xvp/getting_tsl_errors_for_files_inside_the_node/)
+- url: https://www.reddit.com/r/typescript/comments/ic9xvp/getting_tsl_errors_for_files_inside_the_node/
+---
+# Error:
+
+    ERROR in C:\Users\ME\Desktop\TSLbrokenrepo\node_modules\jest-worker\build\index.js
+    [tsl] ERROR in C:\Users\ME\Desktop\TSLbrokenrepo\node_modules\jest-worker\build\ind
+          TS2578: Unused '@ts-expect-error' directive.
+    
+    ERROR in C:\Users\ME\Desktop\TSLbrokenrepo\node_modules\jest-worker\build\index.js
+    [tsl] ERROR in C:\Users\ME\Desktop\TSLbrokenrepo\node_modules\jest-worker\build\ind
+          TS2578: Unused '@ts-expect-error' directive.
+    
+    ERROR in C:\Users\ME\Desktop\TSLbrokenrepo\node_modules\jest-worker\build\index.js
+    [tsl] ERROR in C:\Users\ME\Desktop\TSLbrokenrepo\node_modules\jest-worker\build\ind
+          TS2578: Unused '@ts-expect-error' directive.
+
+## webpack.config.js
+
+    const path = require('path');
+    const TerserPlugin = require('terser-webpack-plugin');
+    
+    module.exports = (env, argv) =&gt; {
+    
+      const isDev = argv.mode === "development";
+    
+      if (!isDev) {
+        console.log("production mode");
+      }
+    
+      return {
+        entry: './src/index.ts',
+        module: {
+          rules: [
+            {
+              test: /\.tsx?$/,
+              use: 'ts-loader',
+              exclude: /node_modules/,
+            }
+          ]
+        },
+        resolve: {
+          extensions: [ '.tsx', '.ts', '.js' ],
+        },
+        output: {
+          filename: 'bundle.js',
+          path: path.resolve(__dirname, 'dist'),
+        }
+      }
+    };
+
+## tsconfig.json
+
+    {
+      "compilerOptions": {
+        "outDir": "./dist/",  
+        "noImplicitAny": true,
+        "module": "es6",
+        "target": "es6",
+        "allowJs": true
+      }
+    }
+
+## index.ts
+
+    console.log("Hello World");
+
+## CLI 
+
+    webpack --mode production --display verbose --display-modules
+
+
+I dont understand this at all. What is [tsl] even? linter? loader? I have tried everything to disable this. The problem goes away entirely if I comment out `require('terser-webpack-plugin');` but I need this plugin.
+## [9][Parse, don’t validate](https://www.reddit.com/r/typescript/comments/ibqabo/parse_dont_validate/)
 - url: https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/
 ---
 
-## [3][Let's Write a JavaScript Library in ES6 using Webpack and Babel](https://www.reddit.com/r/typescript/comments/ic0imb/lets_write_a_javascript_library_in_es6_using/)
-- url: https://9sh.re/dHgv80rDp
----
-
-## [4][Getting Started With Handling TypeScript ASTs](https://www.reddit.com/r/typescript/comments/ibzoh3/getting_started_with_handling_typescript_asts/)
-- url: https://www.jameslmilner.com/post/ts-ast-and-ts-morph-intro/
----
-
-## [5][Need help with type error](https://www.reddit.com/r/typescript/comments/ibqhic/need_help_with_type_error/)
+## [10][Need help with type error](https://www.reddit.com/r/typescript/comments/ibqhic/need_help_with_type_error/)
 - url: https://www.reddit.com/r/typescript/comments/ibqhic/need_help_with_type_error/
 ---
 Im receiving this error
@@ -50,37 +230,7 @@ Maybe the easy solution is to just replace `Partial&lt;T&gt;` with `IFooBar` or 
 BTW I have every strict option enabled
 
 https://preview.redd.it/hagbvyh9knh51.png?width=731&amp;format=png&amp;auto=webp&amp;s=a6a0a6c614845952beb10b7decf8eee430488025
-## [6][Dictionary object does not give undefined as possible type (even with strict null checks).](https://www.reddit.com/r/typescript/comments/ibbl0b/dictionary_object_does_not_give_undefined_as/)
-- url: https://www.reddit.com/r/typescript/comments/ibbl0b/dictionary_object_does_not_give_undefined_as/
----
-[Playground link](https://www.typescriptlang.org/play?#code/MYewdgzgLgBAJgS2FB4CGAnAnjAXDAbwG0APXaDBMAcwF08YwBXAWwCMBTDAXxgF5C3ANwAoEaEiwS-eEhTpsAOhJCA9KoAWIAG5cYOvdIA0MBFAgwIWgO4WoWAA4cGzdnrRg4jELFecMMAA+MEyeHABmVBxwQA) . Is this the expected behavior ?
-
-Edit : [Here](https://www.reddit.com/r/typescript/comments/ibbl0b/dictionary_object_does_not_give_undefined_as/g1ves7y?utm_source=share&amp;utm_medium=web2x) is the answer .
-## [7][Including types for virtual module in a library](https://www.reddit.com/r/typescript/comments/ibohzx/including_types_for_virtual_module_in_a_library/)
-- url: https://www.reddit.com/r/typescript/comments/ibohzx/including_types_for_virtual_module_in_a_library/
----
-I'm developing a library that generates a virtual module (essentially a string containing js code) at runtime, which users can import via e.g. \`import generated from 'my-virtual-module';\`. I want to include type definitions for this virtual module in my library.
-
-If I hand-write a \`.d.ts\` file for my virtual module and include this in my package, how can I make sure that a consumer of my library is able to see/use these type definitions?
-
-It may also be important to note that:
-
-\- The name and types of the virtual module are always the same
-
-\- The name of the virtual module is different to the name of the package that consumers install
-## [8][TypeScript-first middleware for AWS Lambda functions](https://www.reddit.com/r/typescript/comments/ib1ju9/typescriptfirst_middleware_for_aws_lambda/)
-- url: https://dbartholomae.github.io/lambda-middleware/
+## [11][Let's Write a JavaScript Library in ES6 using Webpack and Babel](https://www.reddit.com/r/typescript/comments/ic0imb/lets_write_a_javascript_library_in_es6_using/)
+- url: https://9sh.re/dHgv80rDp
 ---
 
-## [9][TypeScript Exercises: Now interactive and solutions are included!](https://www.reddit.com/r/typescript/comments/ib2g23/typescript_exercises_now_interactive_and/)
-- url: https://www.reddit.com/r/typescript/comments/ib2g23/typescript_exercises_now_interactive_and/
----
-I've re-created the TypeScript exercises and now they are interactive and fully accessible through a web-browser. Check out and have fun: [https://typescript-exercises.github.io/](https://typescript-exercises.github.io/)
-## [10][Building a game with TypeScript. Drawing Grid 1/5](https://www.reddit.com/r/typescript/comments/iaxv3w/building_a_game_with_typescript_drawing_grid_15/)
-- url: https://medium.com/@gregsolo/building-a-game-with-typescript-drawing-grid-1-5-aaf68797a0bb?sk=9663603b5086a6bbd30147fd26a4f457
----
-
-## [11][Pwa](https://www.reddit.com/r/typescript/comments/ibahbh/pwa/)
-- url: https://www.reddit.com/r/typescript/comments/ibahbh/pwa/
----
-Hi is it possible to create Progressive web app (react - typescript) that you could block on computer, I just want it to work on mobile devices.

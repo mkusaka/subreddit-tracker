@@ -57,181 +57,113 @@ REMOTE: *[Do you offer the option of working remotely? If so, do you require emp
 VISA: *[Does your company sponsor visas?]*
 
 CONTACT: *[How can someone get in touch with you?]*
-## [3][Amethyst Engine v0.15.1 — last specs release](https://www.reddit.com/r/rust/comments/ibvheq/amethyst_engine_v0151_last_specs_release/)
-- url: https://amethyst.rs/posts/release-0.15.1
+## [3][I've built a World of Warcraft addon manager in Rust](https://www.reddit.com/r/rust/comments/iclr6m/ive_built_a_world_of_warcraft_addon_manager_in/)
+- url: https://www.reddit.com/r/rust/comments/iclr6m/ive_built_a_world_of_warcraft_addon_manager_in/
+---
+I am in the process of building a World of Warcraft addon manager in Rust called [Ajour](https://github.com/casperstorm/ajour/). It is currently supported by macOS and Windows. The main reason I started this project was to take my Rust skills to the next level, and avoid using the bloated Twitch application.
+
+Ajour is nowhere near perfect, but I am doing the best I can. So, if you want to join me on this journey, you are more than welcome. There's features, bugs and properly a lot of places where I do things wrong or suboptimal and I would LOVE to improve.
+
+It's my first proper Rust project, and the journey has been amazing. The Rust community is incredible and I am super grateful to be a part of it. Thanks all.
+
+[Ajour - A World of Warcraft addon manager written in Rust](https://github.com/casperstorm/ajour).
+## [4][Laying the foundation for Rust's future](https://www.reddit.com/r/rust/comments/ic2ky7/laying_the_foundation_for_rusts_future/)
+- url: https://blog.rust-lang.org/2020/08/18/laying-the-foundation-for-rusts-future.html
 ---
 
-## [4][My first crate: MozWire: A MozillaVPN configurator, finally giving Linux, macOS and BSD users (among others) access to MozillaVPN](https://www.reddit.com/r/rust/comments/iblon7/my_first_crate_mozwire_a_mozillavpn_configurator/)
-- url: https://github.com/NilsIrl/MozWire
+## [5][Release announcement for gfx-hal-0.6 and wgpu-0.6](https://www.reddit.com/r/rust/comments/ic9e62/release_announcement_for_gfxhal06_and_wgpu06/)
+- url: https://gfx-rs.github.io/2020/08/18/release-0.6.html
 ---
 
-## [5][Announcing async-raft v0.5.0: Rebased onto Tokio &amp; Renamed to `async-raft`](https://www.reddit.com/r/rust/comments/ibsxxd/announcing_asyncraft_v050_rebased_onto_tokio/)
-- url: https://www.reddit.com/r/rust/comments/ibsxxd/announcing_asyncraft_v050_rebased_onto_tokio/
+## [6][Rust vs C++: A JS/TS Developer's Perspective](https://www.reddit.com/r/rust/comments/icdape/rust_vs_c_a_jsts_developers_perspective/)
+- url: https://www.reddit.com/r/rust/comments/icdape/rust_vs_c_a_jsts_developers_perspective/
 ---
-I am pleased to announce the release of `async-raft` `v0.5.0`.
+I've read just about everything I can find comparing these two languages as they seem to be going after a very similar use case, however I feel like there is some missing nuance that experienced developers seem to miss.  To summarize my position, Rust has accomplished something incredible that many engineers who write about it don't seem to understand.
 
-The TLDR:
-* Everything Is Now Based on Tokio
-* Singular &amp; Well Defined API (thanks to async/await, async_trait &amp; tokio)
-* Automatic Log Compaction
-* Joint Consensus Overhaul
-* Project Renamed to `async-raft` (edit: was actix-raft previously)
+First off, I've been doing Javascript &amp; PHP development mostly in my career (the past 6 years or so) with a little bit of other stuff mixed in (Python, Java, Ruby, etc).  I recently spent about 3 months learning Rust (even [released a library](https://crates.io/crates/no_proto)) and I feel like I've passed from newbie into "kinda knows what's going on most of the time". So everything is coming from that perspective.
 
-For more info, here are the release notes https://github.com/async-raft/async-raft/releases/tag/v0.5.0
-## [6][Does Rust have anything similar to Erlang supervision trees?](https://www.reddit.com/r/rust/comments/ibxv67/does_rust_have_anything_similar_to_erlang/)
-- url: https://www.reddit.com/r/rust/comments/ibxv67/does_rust_have_anything_similar_to_erlang/
----
-And if it does, how does it integrate with the rest of the ecosystem. I'm working in a new project and the current implementation is one with Go built but I'm working in a proof of concept with Elixir and Rust to see if I can get a better result.
+On at least 3 occasions in the past several years I've taken a good faith stab at learning C++, a new skill to add to my toolbox, and I've yet to reach a point where I can read a reasonably large C++ codebase and actually understand everything that's going on.  Much less contribute to it.  Admittedly, maybe my brain just doesn't map onto C++ very well and my experience isn't the common one.
 
-It's a application running on a device at the client so it must be really safe and the supervision tree comes in handy at this moment.
-## [7][Control Flow Guard for Clang/LLVM and Rust - Microsoft Security Response Center](https://www.reddit.com/r/rust/comments/ibiy42/control_flow_guard_for_clangllvm_and_rust/)
-- url: https://msrc-blog.microsoft.com/2020/08/17/control-flow-guard-for-clang-llvm-and-rust/
----
+From my perspective, there seems to be two variants of C++: one that is defended adamantly as a simple, beautiful language and taught as such in books, then the version that engineers actually use to build software.  The gap between what you're taught as a beginner C++ dev and what you actually need to know before you can start being productive appears to be about 5 years of trial and error or just a few years of being mentored by someone who went through the 5 years.
 
-## [8][Why does MIRI complain about undefined behaviour regarding stacked borrows in this example program?](https://www.reddit.com/r/rust/comments/ibzqe5/why_does_miri_complain_about_undefined_behaviour/)
-- url: https://www.reddit.com/r/rust/comments/ibzqe5/why_does_miri_complain_about_undefined_behaviour/
----
-I have some unsafe code that I am testing with MIRI, but I don't know what the problem is exactly.
+How is no one talking about this?
 
-I have narrowed it down to the following example program with a self-referential struct (without moving it):
+The fact that I, essentially a web developer, can write memory safe native software (that competes with C++ on runtime performance) after a few months of fighting the borrow checker is a game changer.
 
-[https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=5b294efbcb19aab9ddc51dd0d0f67ffd](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=5b294efbcb19aab9ddc51dd0d0f67ffd)
+When C++ engineers come back and say "well you can write memory safe C++ if you do X or do Y" the ONLY thing I'm thinking is "great, find me ONE large C++ project that hasn't experienced numerous memory bugs".  If it's so damn easy, why aren't they doing it?  This tells me that even if I invested the 5 years of hell to learn C++ and get good at it, I'm just going to be another guy writing memory bugs acting like I don't.  The worlds best C++ programmers with resources of monster companies like Microsoft still can't write memory safe software with C++.
 
-The error I get when running with `cargo +nightly miri run` is:
+This kept me from ever diving into C++ fully (before Rust was a thing), because I figured even if javascript/electron apps were slower and more bloated, at least they wouldn't be a security liability for my clients and I.  Rust has opened up a whole new world to developers like me.
 
-&amp;#x200B;
+Don't get me wrong, I wouldn't call C++ a bad language or climb on the "rewrite everything in Rust" bandwagon.  It just seems like when engineers talk about C++ they forget what it took to make them competent at that language and further take for granted what Rust has accomplished in opening up this level of software development to developers who don't have years to learn about all the ways you can do memory management wrong.
 
-```
-
-error: Undefined Behavior: trying to reborrow for SharedReadWrite, but parent tag &lt;3963&gt; does not have an appropriate item in the borrow stack
-
-\--&gt; /Users/rolftimmermans/.rustup/toolchains/nightly-x86\_64-apple-darwin/lib/rustlib/src/rust/library/core/src/ptr/unique.rs:120:18
-
-|
-
-120 |  unsafe { &amp;\*self.as\_ptr() }
-
-|   \^\^\^\^\^\^\^\^\^\^\^\^\^\^\^ trying to reborrow for SharedReadWrite, but parent tag &lt;3963&gt; does not have an appropriate item in the borrow stack
-
-|
-
-= help: this indicates a potential bug in the program: it performed an invalid operation, but the rules it violated are still experimental
-
-= help: see [https://github.com/rust-lang/unsafe-code-guidelines/blob/master/wip/stacked-borrows.md](https://github.com/rust-lang/unsafe-code-guidelines/blob/master/wip/stacked-borrows.md) for further information
-
-= note: inside \`std::ptr::Unique::&lt;A&gt;::as\_ref\` at /Users/rolftimmermans/.rustup/toolchains/nightly-x86\_64-apple-darwin/lib/rustlib/src/rust/library/core/src/ptr/unique.rs:120:18
-
-= note: inside \`alloc::alloc::box\_free::&lt;A&gt;\` at /Users/rolftimmermans/.rustup/toolchains/nightly-x86\_64-apple-darwin/lib/rustlib/src/rust/library/alloc/src/alloc.rs:321:32
-
-= note: inside \`std::intrinsics::drop\_in\_place::&lt;std::boxed::Box&lt;A&gt;&gt; - shim(Some(std::boxed::Box&lt;A&gt;))\` at /Users/rolftimmermans/.rustup/toolchains/nightly-x86\_64-apple-darwin/lib/rustlib/src/rust/library/core/src/ptr/mod.rs:184:1
-
-note: inside \`main\` at src/main.rs:31:1
-
-\--&gt; src/main.rs:31:1
-
-|
-
-31 | }
-
-| \^
-
-= note: inside \`&lt;fn() as std::ops::FnOnce&lt;()&gt;&gt;::call\_once - shim(fn())\` at /Users/rolftimmermans/.rustup/toolchains/nightly-x86\_64-apple-darwin/lib/rustlib/src/rust/library/core/src/ops/function.rs:233:5
-
-= note: inside \`std::sys\_common::backtrace::\_\_rust\_begin\_short\_backtrace::&lt;fn(), ()&gt;\` at /Users/rolftimmermans/.rustup/toolchains/nightly-x86\_64-apple-darwin/lib/rustlib/src/rust/library/std/src/sys\_common/backtrace.rs:137:18
-
-= note: inside closure at /Users/rolftimmermans/.rustup/toolchains/nightly-x86\_64-apple-darwin/lib/rustlib/src/rust/library/std/src/rt.rs:66:18
-
-= note: inside \`std::ops::function::impls::&lt;impl std::ops::FnOnce&lt;()&gt; for &amp;dyn std::ops::Fn() -&gt; i32 + std::marker::Sync + std::panic::RefUnwindSafe&gt;::call\_once\` at /Users/rolftimmermans/.rustup/toolchains/nightly-x86\_64-apple-darwin/lib/rustlib/src/rust/library/core/src/ops/function.rs:265:13
-
-= note: inside \`std::panicking::r#try::do\_call::&lt;&amp;dyn std::ops::Fn() -&gt; i32 + std::marker::Sync + std::panic::RefUnwindSafe, i32&gt;\` at /Users/rolftimmermans/.rustup/toolchains/nightly-x86\_64-apple-darwin/lib/rustlib/src/rust/library/std/src/panicking.rs:373:40
-
-= note: inside \`std::panicking::r#try::&lt;i32, &amp;dyn std::ops::Fn() -&gt; i32 + std::marker::Sync + std::panic::RefUnwindSafe&gt;\` at /Users/rolftimmermans/.rustup/toolchains/nightly-x86\_64-apple-darwin/lib/rustlib/src/rust/library/std/src/panicking.rs:337:19
-
-= note: inside \`std::panic::catch\_unwind::&lt;&amp;dyn std::ops::Fn() -&gt; i32 + std::marker::Sync + std::panic::RefUnwindSafe, i32&gt;\` at /Users/rolftimmermans/.rustup/toolchains/nightly-x86\_64-apple-darwin/lib/rustlib/src/rust/library/std/src/panic.rs:394:14
-
-= note: inside \`std::rt::lang\_start\_internal\` at /Users/rolftimmermans/.rustup/toolchains/nightly-x86\_64-apple-darwin/lib/rustlib/src/rust/library/std/src/rt.rs:51:25
-
-= note: inside \`std::rt::lang\_start::&lt;()&gt;\` at /Users/rolftimmermans/.rustup/toolchains/nightly-x86\_64-apple-darwin/lib/rustlib/src/rust/library/std/src/rt.rs:65:5
-
-```
-
-Why does MIRI complain about this *specific* example? It is directly related to the reborrow of `A`, because if I remove that part (line 24-28) then MIRI is happy.
-
-I know that the pointer `ptr` to the array would be invalid if the struct `A` would be moved. But in this case it isn't moved... Am I missing something?
-
-(Some context: I am experimenting with unsafe code to integrate garbage collection into a virtual machine for a toy dynamic language. I'm doing some terribly unsafe things, in part just to better understand what is allowed and what isn't.)
-## [9][Actix TaskQueue: A generic task queue for Actix](https://www.reddit.com/r/rust/comments/ibuzk8/actix_taskqueue_a_generic_task_queue_for_actix/)
-- url: https://github.com/huytd/actix-taskqueue
+It's something I'm very grateful for and I think it's worth pointing out.
+## [7][[knurling] Run Rust on your embedded device from VSCode in one click](https://www.reddit.com/r/rust/comments/icn4j4/knurling_run_rust_on_your_embedded_device_from/)
+- url: https://ferrous-systems.com/blog/run-rust-on-your-embedded-device-from-vscode/
 ---
 
-## [10][Announcing SIMple Physics, a set of educational physics simulators for algebra based physics](https://www.reddit.com/r/rust/comments/ibk2rf/announcing_simple_physics_a_set_of_educational/)
-- url: https://www.reddit.com/r/rust/comments/ibk2rf/announcing_simple_physics_a_set_of_educational/
+## [8]["We tested the limited number of utilities in Rust and found them to be of no better reliability."](https://www.reddit.com/r/rust/comments/icaf19/we_tested_the_limited_number_of_utilities_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/icaf19/we_tested_the_limited_number_of_utilities_in_rust/
 ---
-SIMple Physics is a set of educational physics simulators meant to help learn/teach algebra based physics. It is written in Rust using `ggez`, `specs`, `imgui-rs`, `nphysics`, and `rlua`.
+In a paper about fuzz testing (ftp://ftp.cs.wisc.edu/paradyn/technical_papers/fuzz2020.pdf), the authors contend that command line utilities have gotten worse over time, rather than better.  More importantly, in the Rust project to replace Unix coreutils, the three programs from the C suite failed in the same way in the Rust versions.
 
-The goal is to make a simulator for each general section of high school physics:
+The essential quote is:
+&gt; We have updated the basic fuzz tools and testing scripts and applied
+&gt; them to a large collection of Unix utilities on Linux, FreeBSD, and
+&gt; MacOS. ... We present examples of these failures to illustrate the
+&gt; programming practices that allowed them to happen.
+&gt;
+&gt; As a side note, we tested the limited number of utilities available in
+&gt; a modern programming language (Rust) and found them to be of no better
+&gt; reliability than the standard ones.
 
-- [Basic Mechanics](https://github.com/mkhan45/SIMple-Mechanics)
 
-- [Universal Gravitation](https://github.com/mkhan45/SIMple-Gravity)
-
-- Electronics and Magnetism
-
-- Waves/Optics
-
-So far, the [basic mechanics](https://github.com/mkhan45/SIMple-Mechanics) and [universal gravitation](https://github.com/mkhan45/SIMple-Gravity) components are complete.
-
-Find out more at [https://mkhan45.github.io/SIMple-Physics!](https://mkhan45.github.io/SIMple-Physics/tabs/about/)
-
-Here are a few cool GIFs:
-
-[Wave](https://mkhan45.github.io/SIMple-Physics/assets/gifs/misc/mechanics/demo4.gif)
-
-[Spinny](https://mkhan45.github.io/SIMple-Physics/assets/gifs/misc/mechanics/demo1.gif)
-
-[Trippy trails](https://mkhan45.github.io/SIMple-Physics/assets/gifs/misc/gravity/relative_trail.gif)
-
-[Cool gravitational systems](https://mkhan45.github.io/SIMple-Physics/assets/gifs/misc/gravity/saveload.gif)
-
-I chose Rust for this project for its performance, cross platform compilation, and ideally to compile to WASM.
-
-I started the project as my high school senior research project but didn't finish in time due to COVID. However, once it became clear that the next semester of school will be largely online, I decided to finish it this summer. Due to college starting, I won't have much time to work on this for the forseeable future, and, honestly, I want to move on as this has been my primary side project for more than a year. Because of that, contributions would be welcome!
-## [11][What's everyone working on this week (34/2020)?](https://www.reddit.com/r/rust/comments/ibtzp9/whats_everyone_working_on_this_week_342020/)
-- url: https://www.reddit.com/r/rust/comments/ibtzp9/whats_everyone_working_on_this_week_342020/
+The takeaway from these results are that the "re-write it in Rust" crowd, to which I whole-heartedly belong, has to look closely at what we're re-writing. The C code, whatever its faults, has often been around for decades and battle-hardened against a lot of edge cases that re-writers may not be familiar with.
+## [9][Stack or Heap](https://www.reddit.com/r/rust/comments/icjvl3/stack_or_heap/)
+- url: https://www.reddit.com/r/rust/comments/icjvl3/stack_or_heap/
 ---
-New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-33-2020/47095?u=llogiq)!
+Hi all,
 
-(created this post since I didn't find the usual one by u/llogiq)
-## [12][lifetime mismatch problem](https://www.reddit.com/r/rust/comments/ibys3a/lifetime_mismatch_problem/)
-- url: https://www.reddit.com/r/rust/comments/ibys3a/lifetime_mismatch_problem/
+What is difference in term of performance, stack allocated and heap allocated objects?
+
+As far as I understand, stack is also sitting in heap memory, so how it is expected to be faster then?
+
+More understandable will be to use registers since they are directly in cpu memory, what I am missing?
+
+(Sorry for stupid question)
+
+Thanks for answers
+## [10][ecs_bench_suite - A more comprehensive and challening ECS benchmark](https://www.reddit.com/r/rust/comments/icczxh/ecs_bench_suite_a_more_comprehensive_and/)
+- url: https://github.com/TomGillen/ecs_bench_suite
 ---
-    fn foo(s: &amp;mut &amp;mut [u8]) {
-        let (_, rest) = s.split_at_mut(1);
-        *s = rest;
-    }
 
-hi,
+## [11][Random crate episode 1: psswd](https://www.reddit.com/r/rust/comments/icnhor/random_crate_episode_1_psswd/)
+- url: https://www.reddit.com/r/rust/comments/icnhor/random_crate_episode_1_psswd/
+---
+Hello everyone, i recently took an initiative to make 2 blog posts per week in which i talk about lesser known but awesome rust crates on [crates.io](https://crates.io), i pick the crates randomly and select those that the most interesting, i then write a little review on my blog.
 
-I find that the above code fails to compile with the following error:
+First episode: psswd,  A simple Rust command line utility to manage your passwords. It uses [age (Actually Good Encryption)](https://github.com/FiloSottile/age) to encrypt your passwords, and supports decryption using a passphrase.
 
-     error[E0623]: lifetime mismatch
-     --&gt; src/lib.rs:3:10
-      |
-    1 | fn foo(s: &amp;mut &amp;mut [u8]) {
-      |           --------------
-      |           |
-      |           these two types are declared with different lifetimes...
-    2 |     let (_, rest) = s.split_at_mut(1);
-    3 |     *s = rest;
-      |          ^^^^ ...but data from `s` flows into `s` here
+Link: [https://blog.snow-blade.vercel.app/post/random-crate-ep-1](https://blog.snow-blade.vercel.app/post/random-crate-ep-1)
+## [12][Beginner question](https://www.reddit.com/r/rust/comments/icm3ay/beginner_question/)
+- url: https://www.reddit.com/r/rust/comments/icm3ay/beginner_question/
+---
+Hi rust community. I'm somewhat of a beginner  and I have a question which I believe may not pertain to rust itself, and maybe this isn't even the best place to ask it, but I figured since I'm writing this code in Rust I might have a chance to get the best answer here. Any help is appreciated and sorry again if this is a very newbie question!  
 
-I dont understand what is going on here. How to fix it?
 
-Further, the following compiles:
+So, I have a function which encapsulates the whole process of getting inputs from the user and processing them depending on the parameters, returning an object that holds the processed data as such:  
 
-    fn foo(s: &amp;mut &amp;[u8]) {
-        let (_, rest) = s.split_at(1);
-        *s = rest;
-    }
 
-I wonder why, as the mutablity should not affect lifetimes.
+pub fn get\_processed\_data(type: &amp;str) -&gt; Result&lt;Data, CmdErr&gt;  
+
+
+And then I have to call it multiple times for different types, possibly dozens of times:  
+
+
+let result1 : get\_processed\_data("type1");  
+let result2 : get\_processed\_data("type2");  
+let result3 : get\_processed\_data("type3");  
+let result4 : get\_processed\_data("type3");  
+...  
+
+
+"type1...n" is just a placeholder here, the actual names are different types relevant to my application and they may not follow any pattern that would make this code esily fit into a loop. Plus, if any of the calls fail, I need to skip all the other calls to get\_processed\_data(). What would be the best control flow for this situation? I'd really like to avoid loops here if possible. Any help is much apreciated!

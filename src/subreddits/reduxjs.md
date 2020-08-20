@@ -1,8 +1,12 @@
 # reduxjs
-## [1][Made a small paint application to learn Redux ~250 LOC](https://www.reddit.com/r/reduxjs/comments/iclpxo/made_a_small_paint_application_to_learn_redux_250/)
-- url: https://github.com/jamesmoriarty/redux-paint
+## [1][What is the difference between React-Redux and Redux Toolkit?](https://www.reddit.com/r/reduxjs/comments/icxp0b/what_is_the_difference_between_reactredux_and/)
+- url: https://www.reddit.com/r/reduxjs/comments/icxp0b/what_is_the_difference_between_reactredux_and/
 ---
+Hi, so I was learning Redux from this youtube [playlist](https://www.youtube.com/playlist?list=PLC3y8-rFHvwheJHvseC3I0HuYI2f46oAK), which is about a year old. In the aforementioned series, the instructor uses [React Redux](https://react-redux.js.org/) to create the store and use Redux in a React app. 
 
+I was then going through the official [tutorial](https://redux.js.org/tutorials/essentials/part-1-overview-concepts) and I found out about [Redux Toolkit](https://redux-toolkit.js.org/), which they say is "is our recommended approach for writing Redux logic". 
+
+So I am a bit confused now about the difference between them and which library should I use now in 2020.
 ## [2][Understanding Redux Epics and Rxjs](https://www.reddit.com/r/reduxjs/comments/ic9xyg/understanding_redux_epics_and_rxjs/)
 - url: https://www.reddit.com/r/reduxjs/comments/ic9xyg/understanding_redux_epics_and_rxjs/
 ---

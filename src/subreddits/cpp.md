@@ -56,17 +56,78 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][awesome-hpp: A curated list of awesome header-only C++ libraries](https://www.reddit.com/r/cpp/comments/icm8g1/awesomehpp_a_curated_list_of_awesome_headeronly_c/)
+## [2][bsc::parser - C++20 command line arguments parser](https://www.reddit.com/r/cpp/comments/id8mq0/bscparser_c20_command_line_arguments_parser/)
+- url: https://www.reddit.com/r/cpp/comments/id8mq0/bscparser_c20_command_line_arguments_parser/
+---
+I'd like to present a small library from my bsc project. It can be used to parse command line arguments by defining a simple struct. It's a wrapper aroung GNU argp, but I didn't like how you have to manually define callbacks there. I also didn't like how boost::program\_options or other libraries where defining things, so I wrote my own thing.
+
+[https://github.com/stilgarpl/bsc/tree/master/src/parser](https://github.com/stilgarpl/bsc/tree/master/src/parser)
+
+Fields in the struct hold the information if the field was set and how many times it was set (for things like -vvvvv) and of course the value. operator() returns std::optional&lt;T&gt; for Parameter&lt;T&gt; and const T&amp; for DefaultParameter&lt;T&gt; (which always have value)
+
+A sample of how it works:
+
+    struct HelloWorldParameters : CommandLineParameters {
+        Flag flag                    = {{.shortKey = 'f', .longKey = "flag", .doc = "Flag"}};
+        DefaultParameter&lt;int&gt; number = {{.shortKey = 'i', .longKey = "number", .argumentName = "INT", .doc = "An integer number", .defaultValue = 5}};
+        Parameter&lt;float&gt; realNumber = {{.shortKey = 'F', .longKey = "float", .argumentName="FLOAT", .doc = "A floating point number"}};
+        Group g                     = {"Path group:"};
+        DefaultParameter&lt;std::map&lt;short, std::filesystem::path&gt;&gt; numbersToPathsMap = {{.longKey = "map", .argumentName="MAP", .doc = "Numbers to path map"}};
+        Argument&lt;std::string&gt; stringArgument;
+        Argument&lt;int&gt; intArgument;
+    };
+    
+    int main(int argc, char* argv[]) {
+        const auto&amp; params = CommandLineParser::defaultParse&lt;HelloWorldParameters&gt;(argc, argv);
+        
+            if (params.flag()) {
+                std::cout &lt;&lt; "Flag is set" &lt;&lt; std::endl;
+            }
+        
+            std::cout &lt;&lt; "Number is " &lt;&lt; std::to_string(params.number()) &lt;&lt; std::endl;
+            if (params.realNumber()) {
+                std::cout &lt;&lt; "Real number was set and it is: " &lt;&lt; std::to_string(*params.realNumber()) &lt;&lt; std::endl;
+            } else {
+                std::cout &lt;&lt; "Real number was not set" &lt;&lt; std::endl;
+            }
+        
+            std::cout &lt;&lt; "Path map:  "&lt;&lt; std::endl;
+            for (const auto&amp; [key, value] : params.numbersToPathsMap()) {
+                std::cout &lt;&lt; std::to_string(key) &lt;&lt; "=[" &lt;&lt; value.string() &lt;&lt; "]"&lt;&lt; std::endl;
+            }
+        
+            std::cout &lt;&lt; "Required argument 1 (string): " &lt;&lt; params.stringArgument() &lt;&lt; std::endl
+                      &lt;&lt; "Required argument 2 (int): " &lt;&lt; params.intArgument() &lt;&lt; std::endl;
+        return 0;
+    }
+
+Of course, this project isn't finished yet, so things may still evolve, may maybe someone will find it useful.
+## [3][awesome-hpp: A curated list of awesome header-only C++ libraries](https://www.reddit.com/r/cpp/comments/icm8g1/awesomehpp_a_curated_list_of_awesome_headeronly_c/)
 - url: https://github.com/p-ranav/awesome-hpp
 ---
 
-## [3][Writing ideal class definition in C++](https://www.reddit.com/r/cpp/comments/icijxj/writing_ideal_class_definition_in_c/)
-- url: https://www.reddit.com/r/cpp/comments/icijxj/writing_ideal_class_definition_in_c/
+## [4][Regression in gcc's memory allocation elision optimization?](https://www.reddit.com/r/cpp/comments/ics6dj/regression_in_gccs_memory_allocation_elision/)
+- url: https://www.reddit.com/r/cpp/comments/ics6dj/regression_in_gccs_memory_allocation_elision/
 ---
- [https://medium.com/a-devs-life/designing-an-ideal-class-in-c-d205516c03ab](https://medium.com/a-devs-life/designing-an-ideal-class-in-c-d205516c03ab) 
+I recently re-watched Jason Turner's *C++ Code Smells* talk, and in it he has an example of declaring a string which, when cleaned up, essentially boils down to
 
-Guys, please provide your valuable comments.
-## [4][A Rust-style guide for C++](https://www.reddit.com/r/cpp/comments/ickurq/a_ruststyle_guide_for_c/)
+    #include &lt;string&gt;
+
+    int main() {
+        std::string const greet1 = "Hello";
+        std::string const greet2 = ", world!";
+    }
+
+At that time, he was using gcc-9 in godbolt, and the codegen was just two instructions: all of the memory allocation business in `std::string` was elided. I was very excited as clang has had this for some time. I tried it again in [godbolt](https://godbolt.org/z/vb9oKq) with gcc-10.X, and the elisions were no longer working!
+
+I tried searching the gcc Bugzilla, but I couldn't find anything that quite matched (admittedly, my Bugzilla-search-foo may well be insufficient). Is this a known regression?
+
+Particularly confounding is that it *does* work in gcc-10.X when you have only one string object, and it *doesn't* work in any gcc when you have three or more string objects. clang handles all of these cases. This suggests it may be a QoI issue.
+## [5][The implication of const or reference member variables in C++](https://www.reddit.com/r/cpp/comments/icw0gk/the_implication_of_const_or_reference_member/)
+- url: https://lesleylai.info/en/const-and-reference-member-variables/
+---
+
+## [6][A Rust-style guide for C++](https://www.reddit.com/r/cpp/comments/ickurq/a_ruststyle_guide_for_c/)
 - url: https://www.reddit.com/r/cpp/comments/ickurq/a_ruststyle_guide_for_c/
 ---
 Hello,
@@ -77,15 +138,21 @@ Is there something similar for C++ language? I know there are some WG movements 
 
 
 I would be happy to discuss this topic in detail, because I believe that without such book C++ is quite unapproachable for newcomers.
-## [5][VS 2019 16.7.2 is now available](https://www.reddit.com/r/cpp/comments/icabt5/vs_2019_1672_is_now_available/)
+## [7][Writing ideal class definition in C++](https://www.reddit.com/r/cpp/comments/icijxj/writing_ideal_class_definition_in_c/)
+- url: https://www.reddit.com/r/cpp/comments/icijxj/writing_ideal_class_definition_in_c/
+---
+ [https://medium.com/a-devs-life/designing-an-ideal-class-in-c-d205516c03ab](https://medium.com/a-devs-life/designing-an-ideal-class-in-c-d205516c03ab) 
+
+Guys, please provide your valuable comments.
+## [8][VS 2019 16.7.2 is now available](https://www.reddit.com/r/cpp/comments/icabt5/vs_2019_1672_is_now_available/)
 - url: https://github.com/microsoft/STL/wiki/Changelog#vs-2019-167
 ---
 
-## [6][sol 3: modern lua and C++ integration](https://www.reddit.com/r/cpp/comments/ic8ru0/sol_3_modern_lua_and_c_integration/)
+## [9][sol 3: modern lua and C++ integration](https://www.reddit.com/r/cpp/comments/ic8ru0/sol_3_modern_lua_and_c_integration/)
 - url: https://sol2.readthedocs.io/en/latest/
 ---
 
-## [7][libstdc++ &lt;algorithm&gt; header transitively including &lt;range&gt;](https://www.reddit.com/r/cpp/comments/ibz0m2/libstdc_algorithm_header_transitively_including/)
+## [10][libstdc++ &lt;algorithm&gt; header transitively including &lt;range&gt;](https://www.reddit.com/r/cpp/comments/ibz0m2/libstdc_algorithm_header_transitively_including/)
 - url: https://www.reddit.com/r/cpp/comments/ibz0m2/libstdc_algorithm_header_transitively_including/
 ---
 I noticed some time ago that in c++20 mode the &lt;algorithm&gt; header in libstdc++ is substantially bigger than in c++11 mode :
@@ -107,7 +174,7 @@ How could that happen? Measuring the compile time of file only including the &lt
 **Edit:**
 
 Apparently the &lt;vector&gt; header also increased by a huge amount from 9530 loc to 19818 loc for libstdc++ due to now including &lt;bits/stl\_algo.h&gt; (this seems to be a known [issue](https://gcc.gnu.org/bugzilla/show_bug.cgi?id=92546) though). Compiling an empty header file only including &lt;vector&gt; is now up to 230 ms from 130 ms. 
-## [8][C++20 SQLite wrapper](https://www.reddit.com/r/cpp/comments/ic629n/c20_sqlite_wrapper/)
+## [11][C++20 SQLite wrapper](https://www.reddit.com/r/cpp/comments/ic629n/c20_sqlite_wrapper/)
 - url: https://www.reddit.com/r/cpp/comments/ic629n/c20_sqlite_wrapper/
 ---
 I am writing a C++20 SQLite wrapper with expressive code in mind. The code must run fast.
@@ -123,15 +190,3 @@ I have some benchmarks to compare with solutions using the SQLite library. The u
 [github.com/ricardocosme/msqlite](https://github.com/ricardocosme/msqlite)
 
 What do you think? Any comments or feedbacks are welcome!
-## [9][Why does c++ give a bare segmentation fault error instead of a more detailed one?](https://www.reddit.com/r/cpp/comments/ic4ol4/why_does_c_give_a_bare_segmentation_fault_error/)
-- url: https://www.reddit.com/r/cpp/comments/ic4ol4/why_does_c_give_a_bare_segmentation_fault_error/
----
-I started programming in python, then got into java and dart. Then I got into c++ and I'm always frustrated when I first run my code and get a segmentation fault error. Every other language I have learnt give a detaild, nice for debugging error message. Why c++ does not? Is it related to the fact that it's compiled?
-## [10][Combining Modern C++ and Lua - James Pascoe](https://www.reddit.com/r/cpp/comments/ic8raa/combining_modern_c_and_lua_james_pascoe/)
-- url: https://www.youtube.com/watch?v=QwfL72yHZEY
----
-
-## [11][unique_ptr, shared_ptr, weak_ptr, or reference_wrapper for class relationships](https://www.reddit.com/r/cpp/comments/ibzqvj/unique_ptr_shared_ptr_weak_ptr_or_reference/)
-- url: https://www.nextptr.com/tutorial/ta1450413058/unique_ptr-shared_ptr-weak_ptr-or-reference_wrapper-for-class-relationships
----
-

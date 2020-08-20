@@ -31,129 +31,72 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Android 11 is taking away the camera picker, forcing people to only use the built-in camera](https://www.reddit.com/r/androiddev/comments/ici93p/android_11_is_taking_away_the_camera_picker/)
-- url: https://www.reddit.com/r/androiddev/comments/ici93p/android_11_is_taking_away_the_camera_picker/
+## [3][OUTAGE? Can't release new app release on Google Play Dev Console](https://www.reddit.com/r/androiddev/comments/id6s7g/outage_cant_release_new_app_release_on_google/)
+- url: https://www.reddit.com/r/androiddev/comments/id6s7g/outage_cant_release_new_app_release_on_google/
 ---
-Articles:
+As of now, I'm getting an error when I try to release a new production release for an app:
 
-- https://www.androidpolice.com/2020/08/18/android-11-camera-apps-chooser/
+*"An unexpected error occurred. Please try again later (7100000)"*
 
-- https://www.androidauthority.com/android-11-camera-restrictions-1149232/
+Anyone else getting this? 
 
-- https://9to5google.com/2020/08/18/android-11-default-camera-app-changes/
-
-CommonsWare article:
-
-- https://commonsware.com/blog/2020/08/16/action-image-capture-android-r.html
-
-Saw this recently on reddit too:
-
-- https://www.reddit.com/r/Android/comments/icbcgj/android_11_is_taking_away_the_camera_picker/g22nh2d/?context=3
-
-- https://www.reddit.com/r/android_devs/comments/iba7p7/action_image_capture_and_android_r/
-
-
-Related issues on the issue tracker (consider starring if you want to revert this change ) :
-
-- https://issuetracker.google.com/issues/164794531
-- https://issuetracker.google.com/issues/165337020
-- https://issuetracker.google.com/issues/165313053
-- https://issuetracker.google.com/issues/165313060
-## [4][Handling strings (placeholders) - Phrase (square lib) still recommended?](https://www.reddit.com/r/androiddev/comments/ick0js/handling_strings_placeholders_phrase_square_lib/)
-- url: https://www.reddit.com/r/androiddev/comments/ick0js/handling_strings_placeholders_phrase_square_lib/
----
-Hi everyone,
-
-we stumbled across a problem with string placeholders and translations.we wanted to have a string like "15min 30sec"so we'd define `&lt;string name="duration"&gt;%1$smin %2$ssec&lt;/string&gt;`
-
-our translation tool is not capable of properly identifying placeholders if the do not have a trailing whitespace and are followed by an alphabetical character. so i found [https://developer.android.com/guide/topics/resources/localization#mark-message-parts](https://developer.android.com/guide/topics/resources/localization#mark-message-parts)  
-maybe it's interesting to some of you which are dealing with a similar problem.  
-
-
-next to that documentation i found that there's a more convenient way of handling placeholders with the lib by square: [https://github.com/square/phrase](https://github.com/square/phrase)  
-you can define strings like: `&lt;string name="duration"&gt;{minutes}min {seconds}sec&lt;/string&gt;`  
-and the bind the named params in code. also i placeholders are much easier to digest for external people (translators)
-
-as it's not heavily maintained I wanted to ask if sbdy is (still) using it.
-## [5][Activities are not what you think](https://www.reddit.com/r/androiddev/comments/icdle7/activities_are_not_what_you_think/)
-- url: https://gabrielfv.com/android/architecture/en-us/2020/08/18/activities-are-not-what-you-think-pt-1.html
+EDIT: Can you guys access the chat option? I can't but if anyone else maybe they can do us all a favour and contact Support about this in real time?
+## [4][WindowInsetsCompat](https://www.reddit.com/r/androiddev/comments/id30z3/windowinsetscompat/)
+- url: https://twitter.com/chrisbanes/status/1296164894199382025
 ---
 
-## [6][Is RealmRecyclerViewAdapter considered usable in terms of clean code/ separation of concerns?](https://www.reddit.com/r/androiddev/comments/iclw15/is_realmrecyclerviewadapter_considered_usable_in/)
-- url: https://www.reddit.com/r/androiddev/comments/iclw15/is_realmrecyclerviewadapter_considered_usable_in/
----
-Hi, 
-
-I'm creating app in which I use Realm as my (currently) only data source. I was wondering if using RealmRVAdapter is good practice for displaying list of objects. I'm concerned about it preventing me from closing realm instance after performing query because of RealmChangeListeners used in RealmRV. 
-
-So here few questions:
-
-Does anyone use RealmRV in apps with MVVM and Repository pattern? If so how do you manage your Realm instance? Is keeping Realm open is considered good/passable option? Or should I ditch RealmRV and handle updates in RecyclerView on my own?
-## [7][Game Translation Fails — How to Avoid Them ?](https://www.reddit.com/r/androiddev/comments/icnl63/game_translation_fails_how_to_avoid_them/)
-- url: https://www.leveluptranslation.com/single-post/game-translation-fails-causes-and-how-to-avoid-them
+## [5][Linux users, are you experiencing VectorDrawable render issues after updating to Android Studio 4.x?](https://www.reddit.com/r/androiddev/comments/id6mop/linux_users_are_you_experiencing_vectordrawable/)
+- url: https://i.redd.it/sc3pjuumd4i51.png
 ---
 
-## [8][`pagingDataAdapterOf` builder function for `PagingDataAdapter` in Kiel 1.2.0](https://www.reddit.com/r/androiddev/comments/icktiq/pagingdataadapterof_builder_function_for/)
-- url: https://www.reddit.com/r/androiddev/comments/icktiq/pagingdataadapterof_builder_function_for/
+## [6][Cannot create / edit release on any app today, is it just me?!](https://www.reddit.com/r/androiddev/comments/id6gl8/cannot_create_edit_release_on_any_app_today_is_it/)
+- url: https://www.reddit.com/r/androiddev/comments/id6gl8/cannot_create_edit_release_on_any_app_today_is_it/
 ---
-Hi Android Fellas,
+At first I thought I was having connection issues but my connection is fine. When I click on EDIT RELEASE or CREATE RELEASE on any of my apps the loading bar just keeps showing and after like 10 seconds it shows "An unexpected error occurred. Please try again later. (7100000)".  
 
-`pagingDataAdapterOf` builder function for `PagingDataAdapter`,which is alpha now, has been introduced in the version 1.2.0 of kiel.
 
-github: https://github.com/ibrahimyilmaz/kiel
+I tried both Firefox and Chrome. 
 
-Example usage: 
-```kt
-    private val adapter = pagingDataAdapterOf&lt;EntityListItem&gt; {
-         diff(
-             areItemsTheSame = { old, new -&gt; old.entityData.id == new.entityData.id },
-             areContentsTheSame = { old, new -&gt; old == new }
-         )
-         register(
-             layoutResource = R.layout.item_entity,
-             viewHolder = ::EntityListItemViewHolder,
-             onBindBindViewHolder = { viewHolder, _, item -&gt;
-                 viewHolder.itemView.setOnClickListener { viewModel.select(item) }
-                 viewHolder.binding.entityTitleTextView.text = item.title
+&amp;#x200B;
 
-                 viewHolder.binding.entityRemoveRelationAction.isVisible = item.isRemoveAvailable
-                 if (item.isRemoveAvailable) {
-                     viewHolder.binding.entityRemoveRelationAction.setOnClickListener {
-                         viewModel.removeRelation(item)
-                     }
-                 }
-             }
-         )
-     }
-```
-
-Any feedback, idea or PR is always welcome
-
-Sincerely
-Ibra
-## [9][New language features and more in Kotlin 1.4](https://www.reddit.com/r/androiddev/comments/ibxm5o/new_language_features_and_more_in_kotlin_14/)
-- url: https://android-developers.googleblog.com/2020/08/new-language-features-and-more-in.html
+It was working fine for me yesterday...
+## [7][Fragments: Rebuilding the Internals by Ian Lake](https://www.reddit.com/r/androiddev/comments/ics216/fragments_rebuilding_the_internals_by_ian_lake/)
+- url: https://link.medium.com/MDBHIgnd58
 ---
 
-## [10][Android Activity Life Cycle - Some important scenarios!](https://www.reddit.com/r/androiddev/comments/ichv1q/android_activity_life_cycle_some_important/)
-- url: https://ayusch.com/android-activity-life-cycle-the-complete-guide/
+## [8][001: Dependency Injection: The things they never told you about.](https://www.reddit.com/r/androiddev/comments/id6wg6/001_dependency_injection_the_things_they_never/)
+- url: https://tamrefrank.hashnode.dev/001-dependency-injection-the-things-they-never-told-you-about-cke19un84005ewis18qswarvs
 ---
 
-## [11][What Role Does Mobile App Development Company Play in Boosting The Start-Ups?](https://www.reddit.com/r/androiddev/comments/icjxxh/what_role_does_mobile_app_development_company/)
-- url: https://www.metizsoft.com/blog/role-of-mobile-app-development-company
+## [9][Will two delivery apps for different restaurants get taken down?](https://www.reddit.com/r/androiddev/comments/id7p6w/will_two_delivery_apps_for_different_restaurants/)
+- url: https://www.reddit.com/r/androiddev/comments/id7p6w/will_two_delivery_apps_for_different_restaurants/
 ---
+I've an app for food delivery for a local restaurant.
 
-## [12][Firebase - could you please help me which modules to use for my use cases?](https://www.reddit.com/r/androiddev/comments/icjpmq/firebase_could_you_please_help_me_which_modules/)
-- url: https://www.reddit.com/r/androiddev/comments/icjpmq/firebase_could_you_please_help_me_which_modules/
+A couple of others want the same thing for themselves. Will Play Store screw me up for similar apps?
+## [10][Google Play Console: can't create new publish release](https://www.reddit.com/r/androiddev/comments/id6ir3/google_play_console_cant_create_new_publish/)
+- url: https://www.reddit.com/r/androiddev/comments/id6ir3/google_play_console_cant_create_new_publish/
 ---
-I am starting to explore firebase, but it seems very robust, complex system with many modules and I dont even know where to start.
+Getting error code :  472630EC
+## [11][Any libraries to sync local database with the server?](https://www.reddit.com/r/androiddev/comments/id7k8u/any_libraries_to_sync_local_database_with_the/)
+- url: https://www.reddit.com/r/androiddev/comments/id7k8u/any_libraries_to_sync_local_database_with_the/
+---
+This is common scenario where one need to sync local database with the server. For managing things on client side one may use SQLDelight, Room. For server there can be a PostgreSQL with REST API.  
 
-Could you please point me in the right direction? **What firebase modules do I need for these use cases:**
+How to correctly sync changes in local database with the server? Is there any libraries written to help with this? since developing good algorithm is not an easy task. (ex: sync with DB migrations, tracking changes and syncing them)
 
-* once in few weeks I need to send an important message to user's devices (for example about a launched discount, or about some critical update) *I want to have a full control over message style (sometimes I want to show just a Toast, for more importane messages simple dialog and in very urgent cases status bar notification)* - **should I use firebase in-app messaging, or...?**
+If you got Firebase client library it is handled for us. But how to do this without Firebase?
 
-*  my app has highly customizable look, so i would like to periodically sync user settings, so app always look same on all devices - **should I use firebase remote config?**
+Does Room, SQLDelight have APIs to help with database sync? ex: tracking deltas
+## [12][Admob account being assessed - Ad serving has been limited](https://www.reddit.com/r/androiddev/comments/id7r36/admob_account_being_assessed_ad_serving_has_been/)
+- url: https://www.reddit.com/r/androiddev/comments/id7r36/admob_account_being_assessed_ad_serving_has_been/
+---
+Ad serving has been limited today. It shows no reason no violation. What should I do now? I have released many apps recently and grow my business recently. Then this event happened :( I didn't understand why there is something like that :( Anybody experienced the same issue?
 
-* I would like to make some simple polls with A/B/C options once in a while (ask users what features should I add, or other feedback) - **no idea about this...what module to use?**
+&amp;#x200B;
 
-Then of course I wanna use analytics and crashlytics, but thats easy to figure out.
+Ad serving on your account is being temporarily limited while you’re starting to build and grow your audience. This limit gives us a chance to assess your traffic quality while protecting our advertisers and users. [Learn more about ad serving limits](https://support.google.com/admob/answer/9493252?hl=en_US).
+
+### What you can do
+
+Continue to develop your apps and build your audience while we assess your app traffic. Also make sure you’re complying with the [AdMob and AdSense Program policies](https://support.google.com/admob/answer/6128543?hl=en_US). While this ad serving limit typically impacts publishers for less than 30 days, it may take longer in some cases.

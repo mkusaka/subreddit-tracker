@@ -22,15 +22,95 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Which ORM should I use?](https://www.reddit.com/r/typescript/comments/icbey2/which_orm_should_i_use/)
+## [2][Learning typescript](https://www.reddit.com/r/typescript/comments/id8ju3/learning_typescript/)
+- url: https://www.reddit.com/r/typescript/comments/id8ju3/learning_typescript/
+---
+Hi,
+
+I want to learn typescript, not for a server-side or a client-side application but for writing standalone applications. I am not very familiar with javascript, I mainly write in Python. What topics should I learn before typescript? From my understanding, I need at least to learn the basics of node.js and javascript. Is there a good tutorial or course that covers all these topics? 
+
+Thanks!
+## [3][How to correct relative paths to other file types in same directory when compiling TS?](https://www.reddit.com/r/typescript/comments/icz5ig/how_to_correct_relative_paths_to_other_file_types/)
+- url: https://www.reddit.com/r/typescript/comments/icz5ig/how_to_correct_relative_paths_to_other_file_types/
+---
+So let's say we have ts and css file in the "src" directory. In ts file we have import './style.css'. After compiling TS to "lib" directory, that path is no longer valid for compiled file, because css file is not compiled. How would you make it change to '../src/style.css'?
+## [4][For a function that gets as an argument a single object with optional properties that have initial values , how to type the argument ?](https://www.reddit.com/r/typescript/comments/idacac/for_a_function_that_gets_as_an_argument_a_single/)
+- url: https://www.reddit.com/r/typescript/comments/idacac/for_a_function_that_gets_as_an_argument_a_single/
+---
+For example :
+
+    function foo({a = 1 , b} = {}) {
+        console.log(a,b);
+    }
+    foo({});//1 undefined
+    foo();//1 undefined
+    foo({a : 2});//2 undefined
+    foo({b : 2});//1 2
+    foo({a : 3 ,b : 2});//3 2
+
+How do I type the argument of that function in typescript ?
+## [5][TypeScript dialect with Extension Methods?](https://www.reddit.com/r/typescript/comments/id67j7/typescript_dialect_with_extension_methods/)
+- url: https://www.reddit.com/r/typescript/comments/id67j7/typescript_dialect_with_extension_methods/
+---
+The philosophy of TypeScript is to not do anything that's not JavaScript Standard, so the official compiler probably never support it.
+
+TypeScript became quite a powerful language and pretty much the only thing I miss is the Extension Methods.
+
+I wonder if there are any modification of TypeScript compiler or dialect that would do that?
+
+P.S.
+
+Just realised that I'm missing one more thing - proper function overloading.
+## [6][Specify generic type must have at least one property](https://www.reddit.com/r/typescript/comments/icr0cr/specify_generic_type_must_have_at_least_one/)
+- url: https://www.reddit.com/r/typescript/comments/icr0cr/specify_generic_type_must_have_at_least_one/
+---
+I have a type like:
+
+export type Response&lt;T&gt; = { valid: boolean } &amp; T;I am trying to say that the resulting inferred type must at least have \`valid: boolean\` as a property. I believe this is wrong though because when I am trying to infer promise based Response types, then I am getting an error that my return type does not include \`then\`, \`catch\`, \`finally\` (like a promise).
+
+I want typescript to know that valid will always be there, but whatever the type the dev passes in as T, then my response will also have all of those properties.
+
+is there a better way to do what I am trying to do? Thank you
+## [7][Union and Intersection Types are confusing because they describe the result, not the operation it self](https://www.reddit.com/r/typescript/comments/iculfz/union_and_intersection_types_are_confusing/)
+- url: https://www.reddit.com/r/typescript/comments/iculfz/union_and_intersection_types_are_confusing/
+---
+I think it's counter-intuitive to use Set Theory or Venn Diagrams to understand/explain Union and Intersection operation in TS, because Union and Intersection in TS actually describe the result of the operation, not the operation itself.
+
+* **Union** `|` **in TS === XOR**  
+Union Operator `|`  in TS is actually doing *XOR / Either Or* **on types**, but the *result* is equivalent to doing *Set Intersection* **on type properties**
+* **Intersection** `&amp;` **in TS === Combining**  
+Intersection Operator `&amp;` in TS actually doing *Combining* **on types**, but the *result* is equivalent to doing *Set Union* **on type properties**
+
+### Example:
+Let `item` a value of arbitrary type.\
+Let `Type_A = {foo: number, bar: int}`, `Type_B = {bar: int, baz: string}`
+
+* **the Intersection Type `Type_A &amp; Type_B`:** \
+Defining `item` of `Type_A &amp; Type_B` means `item` is the **combination of** `Type_A` and `Type_B`, which is actually `{foo: number, bar: int, baz: string}`. Then it is safe to allow `item.foo`, `item.bar`, and `item.baz`.\
+Hence, we have
+`Type_A &amp; Type_B = {foo: number, bar: int, baz: string}`
+
+* **the Union Type `Type_A | Type_B`:**\
+Defining `item` of `Type_A | Type_B` means `item` is **either** `Type_A` **or** `Type_B`. Then it is unsafe to allow `item.foo`, because that's an error if the actual `item` is of `Type_B`. Similarly, accessing `item.baz` is also unsafe. \
+Hence, we have
+`Type_A | Type_B = {bar: int}`
+
+I have also put this answer in SO: [https://stackoverflow.com/a/63485446/11554998](https://stackoverflow.com/a/63485446/11554998)
+
+But I'm not sure if it really makes sense to other people. Feel free to share your thoughts. I hope I understand the problem correctly and my post can be helpful. :D
+## [8][Which ORM should I use?](https://www.reddit.com/r/typescript/comments/icbey2/which_orm_should_i_use/)
 - url: https://www.reddit.com/r/typescript/comments/icbey2/which_orm_should_i_use/
 ---
 Which ORM should I use to handle a SQL database in a TypeScript project?
-## [3][Dynamic type systems are not inherently more open](https://www.reddit.com/r/typescript/comments/icd0sn/dynamic_type_systems_are_not_inherently_more_open/)
+## [9][Dynamic type systems are not inherently more open](https://www.reddit.com/r/typescript/comments/icd0sn/dynamic_type_systems_are_not_inherently_more_open/)
 - url: https://lexi-lambda.github.io/blog/2020/01/19/no-dynamic-type-systems-are-not-inherently-more-open/
 ---
 
-## [4][How to enforce nested objects have matching keys?](https://www.reddit.com/r/typescript/comments/iccp8r/how_to_enforce_nested_objects_have_matching_keys/)
+## [10][Pascal interpreter written 100% in Typescript](https://www.reddit.com/r/typescript/comments/icoobk/pascal_interpreter_written_100_in_typescript/)
+- url: https://github.com/komninoschat/psi
+---
+
+## [11][How to enforce nested objects have matching keys?](https://www.reddit.com/r/typescript/comments/iccp8r/how_to_enforce_nested_objects_have_matching_keys/)
 - url: https://www.reddit.com/r/typescript/comments/iccp8r/how_to_enforce_nested_objects_have_matching_keys/
 ---
 I am trying to create a localization object for my React Native app. This is the structure:
@@ -54,183 +134,3 @@ I want to enforce through TypeScript that each locale matches the other in terms
 My reasoning is that I don't want to add support for a language that does not have all the keys used in the app, so it would be nice to know if/what is missing.
 
 Is this possible to do? And is it possible to do for an arbitrary amount of languages and keys without having to manually create/update an interface?
-## [5][How common are decorators in the wild?](https://www.reddit.com/r/typescript/comments/ic921d/how_common_are_decorators_in_the_wild/)
-- url: https://www.reddit.com/r/typescript/comments/ic921d/how_common_are_decorators_in_the_wild/
----
-I'm curious. I've been doing a deep dive on them lately, and find them an interesting concept. However I know they are "experimental' so I'd like to know outside of Angular, are they used all that often?
-## [6][My TypeScript Exercise Repository.](https://www.reddit.com/r/typescript/comments/icejbf/my_typescript_exercise_repository/)
-- url: https://github.com/JaganGanesh/typescript
----
-
-## [7][Trying to use Typescript/Mocha/NYC together but am confused about how coverage is detected](https://www.reddit.com/r/typescript/comments/ic5aa3/trying_to_use_typescriptmochanyc_together_but_am/)
-- url: https://www.reddit.com/r/typescript/comments/ic5aa3/trying_to_use_typescriptmochanyc_together_but_am/
----
-I've recently attached NYC to my Typescript project but am confused about how it determines when code is covered. Below is an example of NYC claiming that lines 5-6 are not covered in my `src/Indexer/InvalidIndexError.ts`.
-
-I have the following setup:
-
-`.nycrc`
-
-    {
-      "extends": "@istanbuljs/nyc-config-typescript",
-      "include": [
-        "src/**/*.js",
-        "src/**/*.ts",
-        "src/**/*.tsx"
-      ],
-      "require": [
-        "ts-node/register"
-      ],
-      "reporter": [
-        "text",
-        "html"
-      ],
-      "all": true,
-      "check-coverage": true,
-      "sourceMap": true,
-      "instrument": true
-    }
-
-`src/Indexer/InvalidIndexError.ts`
-
-    export default class InvalidIndexError extends Error {
-        public static ErrorName = 'InvalidIndexError'
-        constructor(message) {
-            super(message);
-            this.name = InvalidIndexError.ErrorName;
-        }
-    }
-
-`test/InvalidIndexError.ts`
-
-    import InvalidIndexError from "../src/Indexer/InvalidIndexError";
-    
-    const chai = require('chai');
-    const chaiAsPromised = require("chai-as-promised");
-    const {expect} = chai;
-    
-    chai.use(chaiAsPromised)
-    
-    describe('InvalidIndexError', () =&gt; {
-        it('should have static error name',  () =&gt; {
-            return expect(InvalidIndexError).to.have.property('ErrorName')
-        })
-    
-        it('should have a name matching static name',  () =&gt; {
-            const error = new InvalidIndexError('');
-    
-            return expect(error.name).to.equal(InvalidIndexError.name)
-        })
-    
-        it('should be instance of Error', () =&gt; {
-            return expect((new InvalidIndexError('')) instanceof Error).to.be.true
-        })
-    });
-
-After executing  `nyc mocha -r ts-node/register/transpile-only -r source-map-support/register --full-trace --ui bdd tests/**/*.ts` I end up with:
-
-    -----------------------|---------|----------|---------|---------|-------------------
-    File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
-    -----------------------|---------|----------|---------|---------|-------------------
-    All files              |   38.02 |    39.29 |      35 |   40.27 |                   
-     src                   |   30.95 |       40 |   36.36 |   33.33 |  
-     ...                   | Excluding other files for Reddit brevity                            
-     src/Indexer           |   92.86 |    52.94 |    87.5 |   95.52 |                  
-      InvalidIndexError.ts |   80.95 |    46.15 |      75 |   89.47 | 5-6
-## [8][Getting [tsl] errors for files inside the node_modules folder.](https://www.reddit.com/r/typescript/comments/ic9xvp/getting_tsl_errors_for_files_inside_the_node/)
-- url: https://www.reddit.com/r/typescript/comments/ic9xvp/getting_tsl_errors_for_files_inside_the_node/
----
-# Error:
-
-    ERROR in C:\Users\ME\Desktop\TSLbrokenrepo\node_modules\jest-worker\build\index.js
-    [tsl] ERROR in C:\Users\ME\Desktop\TSLbrokenrepo\node_modules\jest-worker\build\ind
-          TS2578: Unused '@ts-expect-error' directive.
-    
-    ERROR in C:\Users\ME\Desktop\TSLbrokenrepo\node_modules\jest-worker\build\index.js
-    [tsl] ERROR in C:\Users\ME\Desktop\TSLbrokenrepo\node_modules\jest-worker\build\ind
-          TS2578: Unused '@ts-expect-error' directive.
-    
-    ERROR in C:\Users\ME\Desktop\TSLbrokenrepo\node_modules\jest-worker\build\index.js
-    [tsl] ERROR in C:\Users\ME\Desktop\TSLbrokenrepo\node_modules\jest-worker\build\ind
-          TS2578: Unused '@ts-expect-error' directive.
-
-## webpack.config.js
-
-    const path = require('path');
-    const TerserPlugin = require('terser-webpack-plugin');
-    
-    module.exports = (env, argv) =&gt; {
-    
-      const isDev = argv.mode === "development";
-    
-      if (!isDev) {
-        console.log("production mode");
-      }
-    
-      return {
-        entry: './src/index.ts',
-        module: {
-          rules: [
-            {
-              test: /\.tsx?$/,
-              use: 'ts-loader',
-              exclude: /node_modules/,
-            }
-          ]
-        },
-        resolve: {
-          extensions: [ '.tsx', '.ts', '.js' ],
-        },
-        output: {
-          filename: 'bundle.js',
-          path: path.resolve(__dirname, 'dist'),
-        }
-      }
-    };
-
-## tsconfig.json
-
-    {
-      "compilerOptions": {
-        "outDir": "./dist/",  
-        "noImplicitAny": true,
-        "module": "es6",
-        "target": "es6",
-        "allowJs": true
-      }
-    }
-
-## index.ts
-
-    console.log("Hello World");
-
-## CLI 
-
-    webpack --mode production --display verbose --display-modules
-
-
-I dont understand this at all. What is [tsl] even? linter? loader? I have tried everything to disable this. The problem goes away entirely if I comment out `require('terser-webpack-plugin');` but I need this plugin.
-## [9][Parse, don’t validate](https://www.reddit.com/r/typescript/comments/ibqabo/parse_dont_validate/)
-- url: https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/
----
-
-## [10][Need help with type error](https://www.reddit.com/r/typescript/comments/ibqhic/need_help_with_type_error/)
-- url: https://www.reddit.com/r/typescript/comments/ibqhic/need_help_with_type_error/
----
-Im receiving this error
-
-&gt;Type '{ foo: "bar"; }' is not assignable to type 'Partial&lt;T&gt;' 
-
-If every property in `T` is optional and `T` should contain at least `foo: string` then why is the return value invalid?
-
-Maybe the easy solution is to just replace `Partial&lt;T&gt;` with `IFooBar` or `Partial&lt;IFooBar&gt;`, but what if I want this interface to be an abstract method for somebody else to implement?
-
-&amp;#x200B;
-
-BTW I have every strict option enabled
-
-https://preview.redd.it/hagbvyh9knh51.png?width=731&amp;format=png&amp;auto=webp&amp;s=a6a0a6c614845952beb10b7decf8eee430488025
-## [11][Let's Write a JavaScript Library in ES6 using Webpack and Babel](https://www.reddit.com/r/typescript/comments/ic0imb/lets_write_a_javascript_library_in_es6_using/)
-- url: https://9sh.re/dHgv80rDp
----
-

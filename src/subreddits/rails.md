@@ -19,7 +19,15 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Rails on Heroku: Guide to how many dynos and which size](https://www.reddit.com/r/rails/comments/icnl4q/rails_on_heroku_guide_to_how_many_dynos_and_which/)
+## [2][Gimme Gems Thursdays - Found an awesome new gem? Post it here!](https://www.reddit.com/r/rails/comments/id911w/gimme_gems_thursdays_found_an_awesome_new_gem/)
+- url: https://www.reddit.com/r/rails/comments/id911w/gimme_gems_thursdays_found_an_awesome_new_gem/
+---
+Please use this thread to discuss **cool** but relatively **unknown** gems you've found.
+
+You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
+
+Please include a **description** and a **link** to the gem's homepage in your comment.
+## [3][Rails on Heroku: Guide to how many dynos and which size](https://www.reddit.com/r/rails/comments/icnl4q/rails_on_heroku_guide_to_how_many_dynos_and_which/)
 - url: https://www.reddit.com/r/rails/comments/icnl4q/rails_on_heroku_guide_to_how_many_dynos_and_which/
 ---
 I just published an [exhaustive and opinionated guide](https://railsautoscale.com/how-many-dynos/) to dynos on Heroku. It answers the questions I've been hearing over and over for years:
@@ -28,7 +36,90 @@ I just published an [exhaustive and opinionated guide](https://railsautoscale.co
 * Which dyno type is right for your app?
 
 I hope you find it helpful!
-## [3][Rails API 401 Unauthorized](https://www.reddit.com/r/rails/comments/icmvdf/rails_api_401_unauthorized/)
+## [4][How to implement a Quiz functionality in Rails ?](https://www.reddit.com/r/rails/comments/iczwgn/how_to_implement_a_quiz_functionality_in_rails/)
+- url: https://www.reddit.com/r/rails/comments/iczwgn/how_to_implement_a_quiz_functionality_in_rails/
+---
+I was thinking in how could I make something similar of [EngVid](https://www.engvid.com/) platform in Rails.
+
+Each video has a "quiz" attached to train and test what you have learned in the video.
+
+It's quite hard for me to grasp on how this quiz could be make in Rails.
+
+I could have a Video model which could contain a title, description and has\_one\_attached :clip (which would be the uploaded video) and each Video has\_one Quiz. But I'm not sure how to implement the Quiz model.
+
+Could I apply the same logic as I did in my ToDo list ? Each Quiz model would have a nested Question model. But again I'm not sure how to implement the options and correct answer for each Question.
+
+Any ideas or tips ?
+## [5][Using scopes on unsaved relations?](https://www.reddit.com/r/rails/comments/id2k1u/using_scopes_on_unsaved_relations/)
+- url: https://www.reddit.com/r/rails/comments/id2k1u/using_scopes_on_unsaved_relations/
+---
+Hey all,
+
+I have a question that I don't know how to formulate a Google search for.
+
+Consider we have an Invoice model which `has_many :receivables`.
+There is a `sub_total` field on the invoice which is supposed to stay in sync with summing most of the receivables, so I added logic like:
+
+
+    before_validation do  
+      self.sub_total = receivables.not_freight.sum(&amp;:line_price)  
+    end
+
+And this works great for existing records. However, when creating a new invoice, `receivables.not_freight` always returns an empty collection (even when `receivables` has many entries which would satisfy the scope). Interestingly, `receivables.not_freight.to_sql` returns an empty string.
+
+I've rewritten the logic to be:
+
+    self.sub_total = receivables.reject(&amp;:freight?).sum(&amp;:line_price)
+
+and this works fine, as expected.  
+
+  
+
+What is this behaviour called, and where could I learn more about it? That code snippet looks innocuous but leads to weird data consistency bugs for new records.
+## [6][Rails and Devise current_user method](https://www.reddit.com/r/rails/comments/icxg4c/rails_and_devise_current_user_method/)
+- url: https://www.reddit.com/r/rails/comments/icxg4c/rails_and_devise_current_user_method/
+---
+Super noob with Ruby and Rails here, so I apologize in advance if this is a basic question. So, I am using the "devise" gem for authentication.
+
+In my controller, I have this:
+    
+      def new_current_user
+        puts "*" * 50
+        puts current_user
+        puts "*" * 50
+        if current_user == "admin"    &lt;------ this is not correct
+            @my_user = "admin"
+            @my_role = ["admin"]
+        else
+            @my_user = "dev"
+            @my_role = ["dev"]
+        end
+    
+        puts @my_user
+        puts @my_role
+    
+        @current_user = {
+          :username =&gt; @my_user,
+          :capabilities =&gt; @my_role,
+        }
+      end
+In the database, I have these rows.
+
+    mysql&gt; select id, email from users;
+    +----+----------------+
+    | id | email          |
+    +----+----------------+
+    |  3 | admin@test.com |
+    |  2 | dev@test.com   |
+    +----+----------------+
+    2 rows in set (0.00 sec)
+    
+Basically, I don't know how to write if the current_user is "admin@test.com", then let the my_user equal to admin?
+## [7][Nginx Mina Deployment strangeness.](https://www.reddit.com/r/rails/comments/icv5si/nginx_mina_deployment_strangeness/)
+- url: https://www.reddit.com/r/rails/comments/icv5si/nginx_mina_deployment_strangeness/
+---
+I have a rails 6 app with is deployed via Mina. Until this week I deployed without an issue. Now when I deploy, it sticks on the old deployment version until I restart Nginx. Is there something that I am missing? Has anyone seen this before?
+## [8][Rails API 401 Unauthorized](https://www.reddit.com/r/rails/comments/icmvdf/rails_api_401_unauthorized/)
 - url: https://www.reddit.com/r/rails/comments/icmvdf/rails_api_401_unauthorized/
 ---
 Hey, I have a Rails API that works wonderfully on localhost.
@@ -76,17 +167,17 @@ Backend =&gt; [https://github.com/gitwithuli/white-curtain-backend](https://gith
 Any help would be greatly appreciated.
 
 Thanks.
-## [4][How to include a concern inside of my controller_spec file?](https://www.reddit.com/r/rails/comments/ic9sof/how_to_include_a_concern_inside_of_my_controller/)
+## [9][How to include a concern inside of my controller_spec file?](https://www.reddit.com/r/rails/comments/ic9sof/how_to_include_a_concern_inside_of_my_controller/)
 - url: https://www.reddit.com/r/rails/comments/ic9sof/how_to_include_a_concern_inside_of_my_controller/
 ---
 RSpec newbie here. I have a before action method 'get\_user'  that I moved into it's own concern from the user\_controller file. Now my user\_controller\_spec file is broken. How do I include the concern, and thus my 'get\_user' method, in the spec file?
-## [5][Parsing Input for Employee Data](https://www.reddit.com/r/rails/comments/ic3uuk/parsing_input_for_employee_data/)
+## [10][Parsing Input for Employee Data](https://www.reddit.com/r/rails/comments/ic3uuk/parsing_input_for_employee_data/)
 - url: https://www.reddit.com/r/rails/comments/ic3uuk/parsing_input_for_employee_data/
 ---
 I’m working on an app that helps with employee scheduling and want to find an easy way for users to load employee data into the application (I currently have a form that adds them one at a time).  The data would include name, start date, role, ect, and be in an unpredictable format.  I was thinking of having a textarea and finding a way for the application to parse relevant data and create resources from it.  
 
 Is such a feature a pipe dream?  This is my first web-dev personal project.  Any advice would be appreciated.
-## [6][how can I mix slim and erb in same file?](https://www.reddit.com/r/rails/comments/ick27c/how_can_i_mix_slim_and_erb_in_same_file/)
+## [11][how can I mix slim and erb in same file?](https://www.reddit.com/r/rails/comments/ick27c/how_can_i_mix_slim_and_erb_in_same_file/)
 - url: https://www.reddit.com/r/rails/comments/ick27c/how_can_i_mix_slim_and_erb_in_same_file/
 ---
     
@@ -113,7 +204,7 @@ Is such a feature a pipe dream?  This is my first web-dev personal project.  Any
     p DatePicker
     
     p TimePicker
-## [7][Help me decide on a search solution (between algolia, searchkick and pg_search)](https://www.reddit.com/r/rails/comments/ibx0pz/help_me_decide_on_a_search_solution_between/)
+## [12][Help me decide on a search solution (between algolia, searchkick and pg_search)](https://www.reddit.com/r/rails/comments/ibx0pz/help_me_decide_on_a_search_solution_between/)
 - url: https://www.reddit.com/r/rails/comments/ibx0pz/help_me_decide_on_a_search_solution_between/
 ---
 Hi guys
@@ -138,170 +229,3 @@ I would love to know what your experience is. I'm not sure if it matters too muc
 
 
 Thank you!
-## [8][whenever cron tasks do not append to existing log file, but create .gz files instead](https://www.reddit.com/r/rails/comments/ibq7i8/whenever_cron_tasks_do_not_append_to_existing_log/)
-- url: https://www.reddit.com/r/rails/comments/ibq7i8/whenever_cron_tasks_do_not_append_to_existing_log/
----
-I am using the "whenever" gem to schedule cron tasks. They seem to work, but they do not append to my "cron\_log.log" file but instead go on to create "cron\_log.1.gz", "cron\_log.2.gz" etc.
-
-Does anyone here who uses the whenever gem know why this is happening and how to fix it?
-
-I followed these instructions for logging:  [https://github.com/javan/whenever/wiki/Output-redirection-aka-logging-your-cron-jobs](https://github.com/javan/whenever/wiki/Output-redirection-aka-logging-your-cron-jobs) 
-
-     set :output, {:error =&gt; 'path/to/app/cron_error_log.log', :standard =&gt; 'path/to/app/cron_log.log'}
-## [9][Downloading in JS after using send_file](https://www.reddit.com/r/rails/comments/ibttqr/downloading_in_js_after_using_send_file/)
-- url: https://www.reddit.com/r/rails/comments/ibttqr/downloading_in_js_after_using_send_file/
----
-I am a noob when it comes to web dev, pls no attack
-
-So I am working on trying to download a file via JS + ruby and send\_file specifically. JS because I am only able to tell from browser which files to download. I have a method that works and now I'm just trying to figure out how stuff works with send\_file
-
-Previously, my controller was basically:
-
-    def download 
-        obj = Obj[params[:id].to_i]
-        if obj 
-            render :json =&gt; {filename: obj.file_name, contents: obj.contents}
-    end 
-
-Now, I'm trying to do it with send\_file. What I have in my controller is basically:
-
-    def download 
-        send_file filename_of_curr_obj
-    end 
-
-I have in my routes:
-
-    ...
-    collection do 
-        post :download
-    end
-    ...
-
-Changed post to get for when I tried to switch to send\_file.
-
-This is what I can tell I'm supposed to do from searching online. But I don't understand how it's supposed to link up in HTML/JS. Everything I've seen online usually stops at around here, as if the steps after this are obvious(?).
-
-So far I have a download button:
-
-    a :id =&gt; :download_link. :download =&gt; 'filename' do
-        button :id =&gt; download_button do 
-            text 'Download'
-        end
-    end 
-
-(My company has action.html.rb files instead of html.erb which is everywhere online. I have never seen html.rb files online in the wild thus far.)
-
-In the JS, I was able to do something like this that worked previously:
-
-    $('#download_button').click(function() {
-        $.post('...obj/download', {id: id}, function(data) {
-            ...
-            $('#download_link').attr('download', data.filename);
-            ...
-            //created url from Blob and data.contents
-            $('#download_link').attr('href', url');
-            ...
-        });
-    });
-
-So basically it worked like this: on browser, some actions affect ID of obj's file, so on click, send the ID via POST request to download and then download file with the controller passing the filename and file contents.
-
-Trying to redo it now with send\_file, I am confused about two main things:
-
-1. How to get the filename for the download attr of the a tag?
-2. How to get the URL for the href attr of the a tag? I thought the URL would be of the form 
-
-&amp;#8203;
-
-    .../obj/download/1
-
-or 
-
-    .../obj/1/download
-
-But I am getting errors when I try doing a $.post request with either form saying the URL doesn't exist. I saw online that to have a custom action have the first url form, in the routes, I should have:
-
-    ...
-    member do 
-        get :download
-    end 
-    collection do 
-        get :download
-    end
-    ...
-
-But this doesn't work.
-## [10][Rails 6 Bcrypt vs Passenger error on Production](https://www.reddit.com/r/rails/comments/iblyvt/rails_6_bcrypt_vs_passenger_error_on_production/)
-- url: https://www.reddit.com/r/rails/comments/iblyvt/rails_6_bcrypt_vs_passenger_error_on_production/
----
-After changing my ssl settings and restarting my Nginx, I started to receive the following error in the Passenger startup:
-
-    Before process_action callback :ensure_user_signed_in has not been defined (ArgumentError) 
-
-I am running Rails 6, Nginx/Passenger. The protected area is a single namespace only.
-
-sessions\_controller
-
-    class SessionsController &lt; NamespaceController
-         skip_before_action :ensure_user_signed_in, only: [:new, :create]      
-    
-    # Present login form     
-        def new 
-        end      
-    
-    # Create Session     
-        def create         
-            user = User.where(email: params[:email]).first 
-    
-             if user &amp;&amp; user.authenticate(params[:password]) 
-                 session[:user_id] = user.id             
-                 redirect_to '/namespace/adminhub'
-             else
-                 redirect_to new_sessions_path, alert: 'Unable to authenticate'
-             end
-         end 
-    
-         # Logout
-         def destroy
-             reset_session
-             redirect_to root_path
-         end
-      end 
-
-Namespace\_controller
-
-    class NamespaceController &lt; ApplicationController
-         before_action :ensure_user_signed_in
-    
-          private
-             def ensure_user_signed_in
-                 unless current_user.present?
-                 redirect_to new_sessions_path, alert: 'Must be signed in.'
-             end
-         end
-    
-          def current_user
-             if session.has_key? :user_id
-                 @current_user ||=User.find(session[:user_id])
-             end
-         end
-         helper_method :current_user
-       end 
-
-I have attempted to undo my ssl changes in nginx and also to  restart passenger, neither seem to be the cause of this issue.  Interestingly, when I first pushed out the changes with the Bcrpyt, the  page loaded without issue and ran properly, as it does in my development  area. It was not until I had to restart the nginx process that this  error has come to light.
-
-&amp;#x200B;
-
-EDIT: I removed private from the controller, but nothing changed on the production side. What I find strange is the with private in place, this works for both my developmental side and my Rails 4 production server running passenger. 
-## [11][RSpec model, request and system specs?](https://www.reddit.com/r/rails/comments/ibof0z/rspec_model_request_and_system_specs/)
-- url: https://www.reddit.com/r/rails/comments/ibof0z/rspec_model_request_and_system_specs/
----
-I've seen people recommend these three specs in Rails due to controller specs and feature specs being surpassed by request and system specs.
-
-So are request specs doing the same as controller specs and test the methods of a controller individually? e.g. my request spec should test #index, #show, #new etc?
-
-If so system specs should test the application from a users perspective right? E.g. the whole registration flow or creating a new post flow?
-
-If this is the case for the above where do integration specs fall? Wouldn't request, integration and system specs all overlap and create duplicate tests?
-
-I've tried to search but the books I've read or articles mainly point to controller and feature specs.

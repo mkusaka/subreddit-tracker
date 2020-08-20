@@ -111,73 +111,284 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/i1u8a4/whos_hiring_august_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][airbnb/ts-migrate - a tool for helping migrate code to TypeScript](https://www.reddit.com/r/reactjs/comments/ickjos/airbnbtsmigrate_a_tool_for_helping_migrate_code/)
+## [3][Client-side architecture basics from Khalil Stemmler](https://www.reddit.com/r/reactjs/comments/id0xw9/clientside_architecture_basics_from_khalil/)
+- url: https://khalilstemmler.com/articles/client-side-architecture/introduction/
+---
+
+## [4][airbnb/ts-migrate - a tool for helping migrate code to TypeScript](https://www.reddit.com/r/reactjs/comments/ickjos/airbnbtsmigrate_a_tool_for_helping_migrate_code/)
 - url: https://github.com/airbnb/ts-migrate
 ---
 
-## [4][Microsoft will bid farewell to Internet Explorer and legacy Edge in 2021](https://www.reddit.com/r/reactjs/comments/ic4x29/microsoft_will_bid_farewell_to_internet_explorer/)
-- url: https://www.theverge.com/2020/8/17/21372487/microsoft-internet-explorer-11-support-end-365-legacy-edge
+## [5][How to implement a Higher-Order Component in React with TypeScript](https://www.reddit.com/r/reactjs/comments/id6xx0/how_to_implement_a_higherorder_component_in_react/)
+- url: https://maxrozen.com/2020/04/10/implement-higher-order-component-react-typescript/
 ---
 
-## [5][Build a React component that pulls data from Google Sheets](https://www.reddit.com/r/reactjs/comments/icjaff/build_a_react_component_that_pulls_data_from/)
-- url: https://www.michaelburrows.xyz/react-google-sheets/
+## [6][How to develop a changing background (from image to some color) while scrolling between &lt;div&gt; in reactjs?](https://www.reddit.com/r/reactjs/comments/id8cfm/how_to_develop_a_changing_background_from_image/)
+- url: https://www.reddit.com/r/reactjs/comments/id8cfm/how_to_develop_a_changing_background_from_image/
 ---
+I am trying to develop a changing background effect between these divisions with className: background1, paragraphs, and background-container. But some websites told me that I have to use jquery for that, which I came to know isn't necessary to include in the react app. So, how can I do that without jquery? If jquery is necessary then how to include that in my code?
 
-## [6][If you shouldn't interact directly with the DOM in React, how do you add custom functionality when your library of choice falls short?](https://www.reddit.com/r/reactjs/comments/icldpz/if_you_shouldnt_interact_directly_with_the_dom_in/)
-- url: https://www.reddit.com/r/reactjs/comments/icldpz/if_you_shouldnt_interact_directly_with_the_dom_in/
+`&lt;div className="site-background1"&gt;`  
+`&lt;Header/&gt;`  
+`&lt;/div&gt;`  
+`&lt;div className="container paragraphs col-12"&gt;`  
+`&lt;Button className = "btn-lg my-4" color="danger"`   
+`onClick = {this.toggleModal}&gt;`  
+`Contact Us`  
+`&lt;/Button&gt;`  
+`&lt;p className = "text-dark"&gt;And be the first to know&lt;/p&gt;`  
+`&lt;/div&gt;`  
+`&lt;div className="background-container"&gt;`  
+`&lt;div className="site-background2"&gt;`  
+`&lt;/div&gt;`  
+`&lt;/div&gt;`
+## [7][Question on how I can access my class-based instances for a React game](https://www.reddit.com/r/reactjs/comments/id3iob/question_on_how_i_can_access_my_classbased/)
+- url: https://www.reddit.com/r/reactjs/comments/id3iob/question_on_how_i_can_access_my_classbased/
 ---
-I am using [react-data-table-component](https://github.com/jbetancur/react-data-table-component) to generate a fairly simple data table with sorting and filtering. The library has built in functionality for making rows selectable with a checkbox. This is all fine.
+Hey all, React rookie here. I am converting my battleship from class-based JS to React-Typescript. 
 
-However, the event that is triggered when you click a rows gives you a data object containing *all* the rows that have been selected so far. I want access only to the row that was just clicked.
+Right now all the logic is in one js file with jQuery. I have the Board class which contains all information about a users board and where their ships are located. It works nice because I have methods for attacking the other users board, generating a random board, counting how many hits each ship has etc. 
 
+I figured I would initiate a class instance in the root with useEffect and either pass down as a prop or store in Redux. But i've learned that passing classes and storing functions/methods in React is not doable. The board class is the 'single source of truth' but i'm not sure how to store the game logic in the app. 
 
-    &lt;DataTable
-       data={data}
-       selectableRows
-       onSelectedRowsChange={doWork}
-    /&gt;
+Should I be breaking down the methods as functions into the appropriate React components? And have the attributes stored in state directly? Or is it possible to somehow access the class instances from within React and all the attributes/methods without having to re-code the game logic?
 
+Thanks in advance
 
-...and the doWork function:
+Edit: I should mention I am referring to a plain ES6 js class and not a react class component
+## [8][Functional vs Class Components and dependencies](https://www.reddit.com/r/reactjs/comments/ida6ff/functional_vs_class_components_and_dependencies/)
+- url: https://www.reddit.com/r/reactjs/comments/ida6ff/functional_vs_class_components_and_dependencies/
+---
+Hey all,
 
+I'm pretty new to the React scene, and I'm trying to adjust from Angular to React. I'm very much used to a clear-cut way of organising things with Angular, as everything had it's own purpose. It feels like I've come over to React and I can architect something that works, but I always question how far it can scale before it starts to feel spaghetti.
 
-    const doWork = state =&gt; {
-       // state.selectedRows contains ALL selected rows
-       // There is no way to get just the clicked row that triggered the event
+I'm very used to OOP, and so writing classes has always been my go-to, but with React hooks so strongly encouraged, I can't help but feel the need to ask: when should I *actually* use a class, and should I default to writing functional components? React hooks seem to scale spectacularly well since they're so atomic, and they don't seem to come with the heavy-lifting of Redux. 
+
+Originally I was using functional components for small components, and then when they reached a certain size with more than just a single variable in state, I'd make it into a class. Is this a bad way to use React?
+
+The other thing I was wondering as well is how do people manage their dependencies? For example, I'm very used to separating my view from data (such is the Angular way with a component and a service) and so I find myself making a separate service class for making HTTP calls. Am I trying to bring concepts from Angular and force them into React? How do people avoid '[prop drilling](https://kentcdodds.com/blog/prop-drilling)' other than relying on state management?
+
+I realise some of these questions are probably begging for an opinionated response, but I'd like to hear how people use the tools they're given.
+
+Thanks!
+
+TL;DR:
+
+* Functional vs class components?
+* How do you manage state?
+* What do you do about dependency injection / dependencies?
+## [9][Minified React error #13](https://www.reddit.com/r/reactjs/comments/ida523/minified_react_error_13/)
+- url: https://www.reddit.com/r/reactjs/comments/ida523/minified_react_error_13/
+---
+This is strange, my app works perfect in the dev mode, but I got this error in the production mode:
+
+`react-dom.production.min.js:209 Error: Minified React error #130; visit` [`https://reactjs.org/docs/error-decoder.html?invariant=130&amp;args[]=undefined&amp;args[]=`](https://reactjs.org/docs/error-decoder.html?invariant=130&amp;args[]=undefined&amp;args[]=) `for the full message or use the non-minified dev environment for full errors and additional helpful warnings.`
+
+`at Cl (react-dom.production.min.js:275)`
+
+`at s (react-dom.production.min.js:141)`
+
+`at h (react-dom.production.min.js:144)`
+
+`at v (react-dom.production.min.js:145)`
+
+`at react-dom.production.min.js:149`
+
+`at Aa (react-dom.production.min.js:173)`
+
+`at Da (react-dom.production.min.js:175)`
+
+`at mu (react-dom.production.min.js:263)`
+
+`at sl (react-dom.production.min.js:246)`
+
+`at ul (react-dom.production.min.js:246)`
+
+`eu @ react-dom.production.min.js:209`
+
+I removed node\_modules and installed it again and nothing happened.
+## [10][Why setFilter doesn't update my filter array?](https://www.reddit.com/r/reactjs/comments/ida0rw/why_setfilter_doesnt_update_my_filter_array/)
+- url: https://www.reddit.com/r/reactjs/comments/ida0rw/why_setfilter_doesnt_update_my_filter_array/
+---
+I'm using CSVReader to parse a csv upload, and this is my component:
+
+    &lt;CSVReader
+      onDrop={handleParseFilter}
+      addRemoveButton
+      removeButtonColor="#659cef"
+      onRemoveFile={() =&gt; setFilter([])}
+      style={{ width: '30vw' }}
+     &gt;
+      &lt;span&gt;Drop CSV file here or click to upload.&lt;/span&gt;
+    &lt;/CSVReader&gt;
+
+ANd this is my handleParseFilter function:
+
+    const [filter, setFilter] = useState&lt;string[]&gt;([]);
+    
+      function handleParseFilter(data: Data): void {
+        console.log(data);
+        for (const column of data) {
+          const word = column['data'][0];
+          if (word) {
+            setFilter([...filter, word]);
+          }
+          console.log(filter)
+        }
+      }
+
+However my filter array is not being updated, is always empty. What I'm doing wrong?
+## [11][Question about createAsyncThunk in Redux Toolkit](https://www.reddit.com/r/reactjs/comments/id4pl5/question_about_createasyncthunk_in_redux_toolkit/)
+- url: https://www.reddit.com/r/reactjs/comments/id4pl5/question_about_createasyncthunk_in_redux_toolkit/
+---
+I am new to redux and redux toolkit. I am reading this tutorial from redux toolkit official document. https://redux-toolkit.js.org/api/createAsyncThunk. This is an example it provides
+
+```js
+import { createAsyncThunk, createSlice, unwrapResult } from '@reduxjs/toolkit'
+import { userAPI } from './userAPI'
+
+const fetchUserById = createAsyncThunk(
+  'users/fetchByIdStatus',
+  async (userId, { getState, requestId }) =&gt; {
+    const { currentRequestId, loading } = getState().users
+    if (loading !== 'pending' || requestId !== currentRequestId) {
+      return
     }
+    const response = await userAPI.fetchById(userId)
+    return response.data
+  }
+)
 
+const usersSlice = createSlice({
+  name: 'users',
+  initialState: {
+    entities: [],
+    loading: 'idle',
+    currentRequestId: undefined,
+    error: null
+  },
+  reducers: {},
+  extraReducers: {
+    [fetchUserById.pending]: (state, action) =&gt; {
+      if (state.loading === 'idle') {
+        state.loading = 'pending'
+        state.currentRequestId = action.meta.requestId
+      }
+    },
+    [fetchUserById.fulfilled]: (state, action) =&gt; {
+      const { requestId } = action.meta
+      if (state.loading === 'pending' &amp;&amp; state.currentRequestId === requestId) {
+        state.loading = 'idle'
+        state.entities.push(action.payload)
+        state.currentRequestId = undefined
+      }
+    },
+    [fetchUserById.rejected]: (state, action) =&gt; {
+      const { requestId } = action.meta
+      if (state.loading === 'pending' &amp;&amp; state.currentRequestId === requestId) {
+        state.loading = 'idle'
+        state.error = action.error
+        state.currentRequestId = undefined
+      }
+    }
+  }
+})
 
-In vanilla JS I would add an event listener and an ID to the checkbox. When checked, I'd get the ID (probably stored as a `data-id=123` attribute) and do my work with it - easy. But since you're not meant to do this with React, what's the alternative? Am I supposed to fork the library and add my own event handler? Make a feature request and wait 6 months? 
+const UsersComponent = () =&gt; {
+  const { users, loading, error } = useSelector(state =&gt; state.users)
+  const dispatch = useDispatch()
 
-Am I completely boxed in by the funtionality provided by the library?
+  const fetchOneUser = async userId =&gt; {
+    try {
+      const resultAction = await dispatch(fetchUserById(userId))
+      const user = unwrapResult(resultAction)
+      showToast('success', `Fetched ${user.name}`)
+    } catch (err) {
+      showToast('error', `Fetch failed: ${err.message}`)
+    }
+  }
 
------
+  // render UI here
+}
+```
 
+my question is, since we have handled the case where the promise rejects in the lifecycle action creator i.e. 
+```js
+[fetchUserById.rejected]: (state, action) =&gt; {
+      const { requestId } = action.meta
+      if (state.loading === 'pending' &amp;&amp; state.currentRequestId === requestId) {
+        state.loading = 'idle'
+        state.error = action.error
+        state.currentRequestId = undefined
+      }
+    }
+```
 
-**EDIT:** People are suggesting the workaround of storing the previous set of selected rows and then finding the difference to check what row was recently selected/de-selected. I am aware of this workaround but I will copy this reply that I sent to another user who suggested the same:
+Then why is that, in `UsersComponent`, we still need to try and catch the error thrown by the dispatch.Can't we tell if the request failed or not from the `error` state? To be clearer, what about I write the  `UsersComponent` this following way:
 
-&gt; This seems to be a recurring issue as I work more with React, especially when you use third party libraries. Maybe I shouldn't have been adding click events like this when I worked with vanilla JS, but I could do it when I had to and, provided you wrote maintainable code, it worked. Everything seems very walled off with React; do it the right way (i.e. fork the library) or don't do it at all. Still hoping others can chime in and tell me I'm wrong as I'm still pretty new to this.
-## [7][I created an open-source alternative to Google Analytics using React, Redux and Next.js](https://www.reddit.com/r/reactjs/comments/ibrd14/i_created_an_opensource_alternative_to_google/)
-- url: https://v.redd.it/kzq3h49vwnh51
+```js
+
+const UsersComponent = () =&gt; {
+  const { users, loading, error } = useSelector(state =&gt; state.users)
+  const dispatch = useDispatch()
+
+  useEffect(() =&gt; {
+    dispatch(fetchUserById(userId))
+  },[dispatch])
+
+  if(error) {
+    showToast('error', `Fetch failed: ${error.message}`)
+  } else if(loading) {
+    showToast('loading')
+  } else {
+    showToast('success', `Fetched ${user.name}`)
+  }
+
+  // render UI here
+}
+
+```
+
+Additionally, I wonder when the `fetchUserById.rejected` would be dispatched? According to the doc, `createAsyncThunk` will always return a resolved promise. If we hit this condition in the callback of `createAsyncThunk`
+```js
+if (loading !== 'pending' || requestId !== currentRequestId) {
+      return
+    }
+```
+then the lifecycle action gets dispatched would be `fulfilled` right? What does it take for the `rejected` lifecyle action gets dispatched? Only when an exception is thrown inside of the callback? 
+
+My last question is, if I'd like to check if the data I got back is of the right shape, for example, I want to make sure if has a property called `data` on it. How can I achieve that? If I rewrite the callback in `createAsyncThunk` to be
+
+```js
+
+const fetchUserById = createAsyncThunk(
+  'users/fetchByIdStatus',
+  async (userId, { getState, requestId }) =&gt; {
+    const { currentRequestId, loading } = getState().users
+    if (loading !== 'pending' || requestId !== currentRequestId) {
+      return
+    }
+    const response = await userAPI.fetchById(userId)
+    if(!response.data) throw new Error('No data')
+    return response.data
+  }
+)
+``` 
+will the `rejected` lifecycle action gets dispatched when there is actually no `data` property on the `response`?
+## [12][React app to create Messenger Memes - Just trying to write some readable codes](https://www.reddit.com/r/reactjs/comments/id8ofo/react_app_to_create_messenger_memes_just_trying/)
+- url: https://www.reddit.com/r/reactjs/comments/id8ofo/react_app_to_create_messenger_memes_just_trying/
 ---
+ I just created an react.js application to create **messenger memes**. It brings up nostalgia, in my sense. You can you it to create your own application, package is coming soon, I guess. Or you can even create some humerus memes.   If you are interested in development, just carried away in GitHub. You got any suggestions, create issue or at least comment, it's that simple.  **React.js + TypeScript**. Btw, CSS is partially collected. 
 
-## [8][Records &amp; Tuples for React, way more than immutability](https://www.reddit.com/r/reactjs/comments/iciyfw/records_tuples_for_react_way_more_than/)
-- url: https://sebastienlorber.hashnode.dev/records-and-tuples-for-react-way-more-than-immutability-ckdzpqu3801283xs1639f72cv
----
+&amp;#x200B;
 
-## [9][Authentication Patterns for Next.js](https://www.reddit.com/r/reactjs/comments/ic3bfb/authentication_patterns_for_nextjs/)
-- url: https://leerob.io/blog/nextjs-authentication
----
+And I'm sharing this now because, if any senior developer could review my code and give me suggestions, that would be really awesome.
 
-## [10][Next.js - Incremental Static Regeneration (ISR) and Static Site Generation (SSG)](https://www.reddit.com/r/reactjs/comments/icnl4t/nextjs_incremental_static_regeneration_isr_and/)
-- url: https://www.youtube.com/watch?v=yGuN_9rng6o&amp;feature=share
----
+&amp;#x200B;
 
-## [11][React Samsung Smart Tv Template (Tizen)](https://www.reddit.com/r/reactjs/comments/icngaf/react_samsung_smart_tv_template_tizen/)
-- url: https://github.com/IssamElNass/React-Samsung-Smart-Tv-Template
----
+**Live** :  [https://maifeeulasad.github.io/Messenger-meme/](https://maifeeulasad.github.io/Messenger-meme/) 
 
-## [12][Deploy to Your Server Using Git](https://www.reddit.com/r/reactjs/comments/ic80t4/deploy_to_your_server_using_git/)
-- url: https://youtu.be/H6UU7TsyrGs
----
+**Source** :  [https://github.com/maifeeulasad/Messenger-meme](https://github.com/maifeeulasad/Messenger-meme) 
 
+Usage :  [https://www.youtube.com/watch?v=iEcTVLX\_SSU&amp;feature=youtu.be](https://www.youtube.com/watch?v=iEcTVLX_SSU&amp;feature=youtu.be)

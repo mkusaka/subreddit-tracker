@@ -111,284 +111,80 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/i1u8a4/whos_hiring_august_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Client-side architecture basics from Khalil Stemmler](https://www.reddit.com/r/reactjs/comments/id0xw9/clientside_architecture_basics_from_khalil/)
-- url: https://khalilstemmler.com/articles/client-side-architecture/introduction/
+## [3][In-depth 14 hour Fullstack React/GraphQL/TypeScript Tutorial](https://www.reddit.com/r/reactjs/comments/idb8lr/indepth_14_hour_fullstack_reactgraphqltypescript/)
+- url: https://www.youtube.com/watch?v=I6ypD7qv3Z8
 ---
 
-## [4][airbnb/ts-migrate - a tool for helping migrate code to TypeScript](https://www.reddit.com/r/reactjs/comments/ickjos/airbnbtsmigrate_a_tool_for_helping_migrate_code/)
-- url: https://github.com/airbnb/ts-migrate
+## [4][React Colorful v2.0.3 – a lightweight color picker component. Modular, customizable, well-tested, supports a variety of color inputs.](https://www.reddit.com/r/reactjs/comments/idt9w2/react_colorful_v203_a_lightweight_color_picker/)
+- url: https://github.com/omgovich/react-colorful
 ---
 
-## [5][How to implement a Higher-Order Component in React with TypeScript](https://www.reddit.com/r/reactjs/comments/id6xx0/how_to_implement_a_higherorder_component_in_react/)
-- url: https://maxrozen.com/2020/04/10/implement-higher-order-component-react-typescript/
+## [5][I created page transitions for react-router-dom with a little loader animation when the requests take too long](https://www.reddit.com/r/reactjs/comments/idvesr/i_created_page_transitions_for_reactrouterdom/)
+- url: https://www.youtube.com/watch?v=DYYtxYEAxJY
 ---
 
-## [6][How to develop a changing background (from image to some color) while scrolling between &lt;div&gt; in reactjs?](https://www.reddit.com/r/reactjs/comments/id8cfm/how_to_develop_a_changing_background_from_image/)
-- url: https://www.reddit.com/r/reactjs/comments/id8cfm/how_to_develop_a_changing_background_from_image/
+## [6][How to stay relevant in such an evolving industry?](https://www.reddit.com/r/reactjs/comments/idw8pd/how_to_stay_relevant_in_such_an_evolving_industry/)
+- url: https://www.reddit.com/r/reactjs/comments/idw8pd/how_to_stay_relevant_in_such_an_evolving_industry/
 ---
-I am trying to develop a changing background effect between these divisions with className: background1, paragraphs, and background-container. But some websites told me that I have to use jquery for that, which I came to know isn't necessary to include in the react app. So, how can I do that without jquery? If jquery is necessary then how to include that in my code?
+Angular was the framework to go. Now, it's React. Redux was the go-to state management library. Now, there are some saying Context + Hooks is all you need while others say mobx is the way to go. 
 
-`&lt;div className="site-background1"&gt;`  
-`&lt;Header/&gt;`  
-`&lt;/div&gt;`  
-`&lt;div className="container paragraphs col-12"&gt;`  
-`&lt;Button className = "btn-lg my-4" color="danger"`   
-`onClick = {this.toggleModal}&gt;`  
-`Contact Us`  
-`&lt;/Button&gt;`  
-`&lt;p className = "text-dark"&gt;And be the first to know&lt;/p&gt;`  
-`&lt;/div&gt;`  
-`&lt;div className="background-container"&gt;`  
-`&lt;div className="site-background2"&gt;`  
-`&lt;/div&gt;`  
-`&lt;/div&gt;`
-## [7][Question on how I can access my class-based instances for a React game](https://www.reddit.com/r/reactjs/comments/id3iob/question_on_how_i_can_access_my_classbased/)
-- url: https://www.reddit.com/r/reactjs/comments/id3iob/question_on_how_i_can_access_my_classbased/
+Things evolve so fast in frontend development. How do you guys stay sane? Don't you feel FOMO (fear of missing out) whenever something new pops up? I feel frontend has become more complicated than backend in terms of the number of things that we need to learn in order to be valuable in the market. I literally feel like I'm running a marathon trying to learn everything and the goalpost keeps moving further and further.
+## [7][The Complete Guide to React User Authentication with Auth0](https://www.reddit.com/r/reactjs/comments/idw80w/the_complete_guide_to_react_user_authentication/)
+- url: https://auth0.com/blog/complete-guide-to-react-user-authentication/?utm_source=reddit&amp;utm_medium=sc&amp;utm_campaign=react_auth
 ---
-Hey all, React rookie here. I am converting my battleship from class-based JS to React-Typescript. 
 
-Right now all the logic is in one js file with jQuery. I have the Board class which contains all information about a users board and where their ships are located. It works nice because I have methods for attacking the other users board, generating a random board, counting how many hits each ship has etc. 
-
-I figured I would initiate a class instance in the root with useEffect and either pass down as a prop or store in Redux. But i've learned that passing classes and storing functions/methods in React is not doable. The board class is the 'single source of truth' but i'm not sure how to store the game logic in the app. 
-
-Should I be breaking down the methods as functions into the appropriate React components? And have the attributes stored in state directly? Or is it possible to somehow access the class instances from within React and all the attributes/methods without having to re-code the game logic?
-
-Thanks in advance
-
-Edit: I should mention I am referring to a plain ES6 js class and not a react class component
-## [8][Functional vs Class Components and dependencies](https://www.reddit.com/r/reactjs/comments/ida6ff/functional_vs_class_components_and_dependencies/)
-- url: https://www.reddit.com/r/reactjs/comments/ida6ff/functional_vs_class_components_and_dependencies/
+## [8][Help with using styled components with TypeScript and Material UI](https://www.reddit.com/r/reactjs/comments/idvyup/help_with_using_styled_components_with_typescript/)
+- url: https://www.reddit.com/r/reactjs/comments/idvyup/help_with_using_styled_components_with_typescript/
 ---
-Hey all,
+Hi,
 
-I'm pretty new to the React scene, and I'm trying to adjust from Angular to React. I'm very much used to a clear-cut way of organising things with Angular, as everything had it's own purpose. It feels like I've come over to React and I can architect something that works, but I always question how far it can scale before it starts to feel spaghetti.
+I recently started a new project with create react app, and I'm trying to use SC, TS and MaterialUI. I have worked with these before, but I'm facing some difficulties trying to get them set up.
 
-I'm very used to OOP, and so writing classes has always been my go-to, but with React hooks so strongly encouraged, I can't help but feel the need to ask: when should I *actually* use a class, and should I default to writing functional components? React hooks seem to scale spectacularly well since they're so atomic, and they don't seem to come with the heavy-lifting of Redux. 
+I'm trying to create a custom button with the following:
 
-Originally I was using functional components for small components, and then when they reached a certain size with more than just a single variable in state, I'd make it into a class. Is this a bad way to use React?
-
-The other thing I was wondering as well is how do people manage their dependencies? For example, I'm very used to separating my view from data (such is the Angular way with a component and a service) and so I find myself making a separate service class for making HTTP calls. Am I trying to bring concepts from Angular and force them into React? How do people avoid '[prop drilling](https://kentcdodds.com/blog/prop-drilling)' other than relying on state management?
-
-I realise some of these questions are probably begging for an opinionated response, but I'd like to hear how people use the tools they're given.
-
-Thanks!
-
-TL;DR:
-
-* Functional vs class components?
-* How do you manage state?
-* What do you do about dependency injection / dependencies?
-## [9][Minified React error #13](https://www.reddit.com/r/reactjs/comments/ida523/minified_react_error_13/)
-- url: https://www.reddit.com/r/reactjs/comments/ida523/minified_react_error_13/
----
-This is strange, my app works perfect in the dev mode, but I got this error in the production mode:
-
-`react-dom.production.min.js:209 Error: Minified React error #130; visit` [`https://reactjs.org/docs/error-decoder.html?invariant=130&amp;args[]=undefined&amp;args[]=`](https://reactjs.org/docs/error-decoder.html?invariant=130&amp;args[]=undefined&amp;args[]=) `for the full message or use the non-minified dev environment for full errors and additional helpful warnings.`
-
-`at Cl (react-dom.production.min.js:275)`
-
-`at s (react-dom.production.min.js:141)`
-
-`at h (react-dom.production.min.js:144)`
-
-`at v (react-dom.production.min.js:145)`
-
-`at react-dom.production.min.js:149`
-
-`at Aa (react-dom.production.min.js:173)`
-
-`at Da (react-dom.production.min.js:175)`
-
-`at mu (react-dom.production.min.js:263)`
-
-`at sl (react-dom.production.min.js:246)`
-
-`at ul (react-dom.production.min.js:246)`
-
-`eu @ react-dom.production.min.js:209`
-
-I removed node\_modules and installed it again and nothing happened.
-## [10][Why setFilter doesn't update my filter array?](https://www.reddit.com/r/reactjs/comments/ida0rw/why_setfilter_doesnt_update_my_filter_array/)
-- url: https://www.reddit.com/r/reactjs/comments/ida0rw/why_setfilter_doesnt_update_my_filter_array/
----
-I'm using CSVReader to parse a csv upload, and this is my component:
-
-    &lt;CSVReader
-      onDrop={handleParseFilter}
-      addRemoveButton
-      removeButtonColor="#659cef"
-      onRemoveFile={() =&gt; setFilter([])}
-      style={{ width: '30vw' }}
-     &gt;
-      &lt;span&gt;Drop CSV file here or click to upload.&lt;/span&gt;
-    &lt;/CSVReader&gt;
-
-ANd this is my handleParseFilter function:
-
-    const [filter, setFilter] = useState&lt;string[]&gt;([]);
+    import styled from 'styled-components';
+    import React, { Component } from 'react';
+    import Button from '@material-ui/core'
     
-      function handleParseFilter(data: Data): void {
-        console.log(data);
-        for (const column of data) {
-          const word = column['data'][0];
-          if (word) {
-            setFilter([...filter, word]);
-          }
-          console.log(filter)
+    const ButtonStyle = styled.button`
+    `;
+    
+    interface Props {
+      buttonText: String
+    }
+    
+    class CustomButton extends Component&lt;Props&gt; {
+        render() {
+          return (
+          &lt;ButtonStyle
+          &gt;&lt;/ButtonStyle&gt;
+          )
         }
+        
       }
+      export default CustomButton;
 
-However my filter array is not being updated, is always empty. What I'm doing wrong?
-## [11][Question about createAsyncThunk in Redux Toolkit](https://www.reddit.com/r/reactjs/comments/id4pl5/question_about_createasyncthunk_in_redux_toolkit/)
-- url: https://www.reddit.com/r/reactjs/comments/id4pl5/question_about_createasyncthunk_in_redux_toolkit/
+While trying to pass in props to ButtonStyle, I attempt to do so:
+
+    &lt;ButtonStyle
+     buttonText="Hi!"&gt;&lt;/ButtonStyle&gt;
+
+But I get a "no overload matches this call" error. 
+
+I also attempt to use const ButtonStyle as styled.Button, but it says that it not exist on type 'ThemedStyledInterface&lt;DefaultTheme&gt;'.
+## [9][How to Create Product Tours in React Apps?](https://www.reddit.com/r/reactjs/comments/idvhfa/how_to_create_product_tours_in_react_apps/)
+- url: https://www.tekkiwebsolutions.com/blog/product-tours-in-react-apps/
 ---
-I am new to redux and redux toolkit. I am reading this tutorial from redux toolkit official document. https://redux-toolkit.js.org/api/createAsyncThunk. This is an example it provides
 
-```js
-import { createAsyncThunk, createSlice, unwrapResult } from '@reduxjs/toolkit'
-import { userAPI } from './userAPI'
-
-const fetchUserById = createAsyncThunk(
-  'users/fetchByIdStatus',
-  async (userId, { getState, requestId }) =&gt; {
-    const { currentRequestId, loading } = getState().users
-    if (loading !== 'pending' || requestId !== currentRequestId) {
-      return
-    }
-    const response = await userAPI.fetchById(userId)
-    return response.data
-  }
-)
-
-const usersSlice = createSlice({
-  name: 'users',
-  initialState: {
-    entities: [],
-    loading: 'idle',
-    currentRequestId: undefined,
-    error: null
-  },
-  reducers: {},
-  extraReducers: {
-    [fetchUserById.pending]: (state, action) =&gt; {
-      if (state.loading === 'idle') {
-        state.loading = 'pending'
-        state.currentRequestId = action.meta.requestId
-      }
-    },
-    [fetchUserById.fulfilled]: (state, action) =&gt; {
-      const { requestId } = action.meta
-      if (state.loading === 'pending' &amp;&amp; state.currentRequestId === requestId) {
-        state.loading = 'idle'
-        state.entities.push(action.payload)
-        state.currentRequestId = undefined
-      }
-    },
-    [fetchUserById.rejected]: (state, action) =&gt; {
-      const { requestId } = action.meta
-      if (state.loading === 'pending' &amp;&amp; state.currentRequestId === requestId) {
-        state.loading = 'idle'
-        state.error = action.error
-        state.currentRequestId = undefined
-      }
-    }
-  }
-})
-
-const UsersComponent = () =&gt; {
-  const { users, loading, error } = useSelector(state =&gt; state.users)
-  const dispatch = useDispatch()
-
-  const fetchOneUser = async userId =&gt; {
-    try {
-      const resultAction = await dispatch(fetchUserById(userId))
-      const user = unwrapResult(resultAction)
-      showToast('success', `Fetched ${user.name}`)
-    } catch (err) {
-      showToast('error', `Fetch failed: ${err.message}`)
-    }
-  }
-
-  // render UI here
-}
-```
-
-my question is, since we have handled the case where the promise rejects in the lifecycle action creator i.e. 
-```js
-[fetchUserById.rejected]: (state, action) =&gt; {
-      const { requestId } = action.meta
-      if (state.loading === 'pending' &amp;&amp; state.currentRequestId === requestId) {
-        state.loading = 'idle'
-        state.error = action.error
-        state.currentRequestId = undefined
-      }
-    }
-```
-
-Then why is that, in `UsersComponent`, we still need to try and catch the error thrown by the dispatch.Can't we tell if the request failed or not from the `error` state? To be clearer, what about I write the  `UsersComponent` this following way:
-
-```js
-
-const UsersComponent = () =&gt; {
-  const { users, loading, error } = useSelector(state =&gt; state.users)
-  const dispatch = useDispatch()
-
-  useEffect(() =&gt; {
-    dispatch(fetchUserById(userId))
-  },[dispatch])
-
-  if(error) {
-    showToast('error', `Fetch failed: ${error.message}`)
-  } else if(loading) {
-    showToast('loading')
-  } else {
-    showToast('success', `Fetched ${user.name}`)
-  }
-
-  // render UI here
-}
-
-```
-
-Additionally, I wonder when the `fetchUserById.rejected` would be dispatched? According to the doc, `createAsyncThunk` will always return a resolved promise. If we hit this condition in the callback of `createAsyncThunk`
-```js
-if (loading !== 'pending' || requestId !== currentRequestId) {
-      return
-    }
-```
-then the lifecycle action gets dispatched would be `fulfilled` right? What does it take for the `rejected` lifecyle action gets dispatched? Only when an exception is thrown inside of the callback? 
-
-My last question is, if I'd like to check if the data I got back is of the right shape, for example, I want to make sure if has a property called `data` on it. How can I achieve that? If I rewrite the callback in `createAsyncThunk` to be
-
-```js
-
-const fetchUserById = createAsyncThunk(
-  'users/fetchByIdStatus',
-  async (userId, { getState, requestId }) =&gt; {
-    const { currentRequestId, loading } = getState().users
-    if (loading !== 'pending' || requestId !== currentRequestId) {
-      return
-    }
-    const response = await userAPI.fetchById(userId)
-    if(!response.data) throw new Error('No data')
-    return response.data
-  }
-)
-``` 
-will the `rejected` lifecycle action gets dispatched when there is actually no `data` property on the `response`?
-## [12][React app to create Messenger Memes - Just trying to write some readable codes](https://www.reddit.com/r/reactjs/comments/id8ofo/react_app_to_create_messenger_memes_just_trying/)
-- url: https://www.reddit.com/r/reactjs/comments/id8ofo/react_app_to_create_messenger_memes_just_trying/
+## [10][Using Next.js as a Static Site Generator](https://www.reddit.com/r/reactjs/comments/idv7sx/using_nextjs_as_a_static_site_generator/)
+- url: https://pagepro.co/blog/how-to-use-next-js-static-site-generator/
 ---
- I just created an react.js application to create **messenger memes**. It brings up nostalgia, in my sense. You can you it to create your own application, package is coming soon, I guess. Or you can even create some humerus memes.   If you are interested in development, just carried away in GitHub. You got any suggestions, create issue or at least comment, it's that simple.  **React.js + TypeScript**. Btw, CSS is partially collected. 
 
-&amp;#x200B;
+## [11][React Dashboard template Suggestions?](https://www.reddit.com/r/reactjs/comments/idupzp/react_dashboard_template_suggestions/)
+- url: https://www.reddit.com/r/reactjs/comments/idupzp/react_dashboard_template_suggestions/
+---
+So far I like Architect UI. Any other suggestions, both free and paid?
+## [12][Blitz.js v0.18 - now with auth/jest/react-testing-library by default](https://www.reddit.com/r/reactjs/comments/idm8di/blitzjs_v018_now_with_authjestreacttestinglibrary/)
+- url: https://github.com/blitz-js/blitz/releases
+---
 
-And I'm sharing this now because, if any senior developer could review my code and give me suggestions, that would be really awesome.
-
-&amp;#x200B;
-
-**Live** :  [https://maifeeulasad.github.io/Messenger-meme/](https://maifeeulasad.github.io/Messenger-meme/) 
-
-**Source** :  [https://github.com/maifeeulasad/Messenger-meme](https://github.com/maifeeulasad/Messenger-meme) 
-
-Usage :  [https://www.youtube.com/watch?v=iEcTVLX\_SSU&amp;feature=youtu.be](https://www.youtube.com/watch?v=iEcTVLX_SSU&amp;feature=youtu.be)

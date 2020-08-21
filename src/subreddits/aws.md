@@ -1,81 +1,94 @@
 # aws
-## [1][AMA - I miss working in AWS after switching to GCP](https://www.reddit.com/r/aws/comments/id3suu/ama_i_miss_working_in_aws_after_switching_to_gcp/)
-- url: https://www.reddit.com/r/aws/comments/id3suu/ama_i_miss_working_in_aws_after_switching_to_gcp/
+## [1][How about cost alert latency?](https://www.reddit.com/r/aws/comments/idv9gc/how_about_cost_alert_latency/)
+- url: https://www.reddit.com/r/aws/comments/idv9gc/how_about_cost_alert_latency/
 ---
-Me: Software Engineer who designs systems &amp; supporting infrastructure, 5 years exp using AWS, joined new company which is all in on GCP (1 year). The company I work for is enterprise-sized &amp; petabyte scaled.
+Hello!
 
------------------
+I'm wondering how reliable are cost alerts with regard to latency?
 
-Basically, I miss working with AWS' extensive services which are mature, feature rich and have really good documentation. AWS is just miles ahead of GCP, imo.
+As in what point in time does the underlying cost calculation represent? -1 hour, -10 hours, -1 day?
 
-Ask Me Anything!
-## [2][Introducing the AWS Controllers for Kubernetes (ACK)](https://www.reddit.com/r/aws/comments/ictvt3/introducing_the_aws_controllers_for_kubernetes_ack/)
-- url: https://aws.amazon.com/blogs/containers/aws-controllers-for-kubernetes-ack/
+Does somebody have some experience with this?
+
+Let's say I program a kill switch to go off at $1000 of costs accumulated since the beginning of the month. Then it would we be inconvenient if those $1000 represent the cost from several hours ago and due to an unexpected extreme spike the actual cost are already like $2000 f.x.
+## [2][How to choose a Database on AWS](https://www.reddit.com/r/aws/comments/idpggn/how_to_choose_a_database_on_aws/)
+- url: https://www.reddit.com/r/aws/comments/idpggn/how_to_choose_a_database_on_aws/
+---
+Hi all,
+
+I recently put together a video resource highlighting a methodology to choose the most appropriate database for your use-case on AWS. I wanted to share for folks here who may be interested.
+
+Video is available here: https://youtu.be/eK_umMYxZfM
+
+Cheers
+## [3][Just took over as sysadmin, it director, Helpdesk etc. Noticed they were using AWS. Everyone is logging in under the root account, no MFA. How do I proceed?](https://www.reddit.com/r/aws/comments/idegep/just_took_over_as_sysadmin_it_director_helpdesk/)
+- url: https://www.reddit.com/r/aws/comments/idegep/just_took_over_as_sysadmin_it_director_helpdesk/
+---
+Only their marketing department uses AWS. I was thinking of creating a marketing group, assigning users to that group. Giving that group access to S3 and whatever else they are using. It seems they built everything under root and store their data there. Will this be a problem? I am studying for me SAA so I know some of this but not everything.
+
+edit: so I told them about it and they said thank you and want me to fix it. I am studying for my SAA and have enough knowledge to get things working and all. The only problem is I was hired to be a sys admin at a sys admin pay. They have me doing things way outside the scope of my responsibilities that was discussed during the interview. Bait and switch... I have to do IT consulting, help desk, syadmin, it director stuff, now AWS? My first day on the job they wanted me to document their entire network, and create a proposal. Should I renegotiate my hourly rate?
+## [4][Speed up data sync from S3 to ec2](https://www.reddit.com/r/aws/comments/idwio0/speed_up_data_sync_from_s3_to_ec2/)
+- url: https://www.reddit.com/r/aws/comments/idwio0/speed_up_data_sync_from_s3_to_ec2/
+---
+Im looking for advice, I have a compute job that runs on an EC2 once a month.  I've optimized the job so that it runs within an hour, however the biggest bottleneck to date is syncing thousands of csv files to the machine before the job starts.  
+
+If it helps the files are collected every minute from hundreds of weather stations, what are the options?
+## [5][S3-hosted website - cross-region failover](https://www.reddit.com/r/aws/comments/idw0nk/s3hosted_website_crossregion_failover/)
+- url: https://www.reddit.com/r/aws/comments/idw0nk/s3hosted_website_crossregion_failover/
+---
+Hi, I'm designing a cross-region disaster recovery plan, migrating my system to another AWS region. I'm having trouble with migrating my S3-hosted frontend website. 
+
+I'll use [subdomain.domain.com](https://subdomain.domain.com) as my example URL. I've currently got a bucket called [subdomain.domain.com](https://subdomain.domain.com), and a CNAME in domain.com's DNS config, with \`name: subdomain.domain.com\`, \`value: [s3-website.eu-west-2.amazonaws.com](https://s3-website.eu-west-2.amazonaws.com)\`. 
+
+For my cross-region DR, I want to point incoming [subdomain.domain.com](https://subdomain.domain.com) traffic at a different S3 bucket, hosted in a different region. This other bucket is called [disaster-recovery.domain.com](https://disaster-recovery.domain.com) and has a CNAME with \`name: disaster-recovery.domain.com\`, and \`value: s3-website.eu-west-1.amazonaws.com\`. 
+
+For DR testing purposes, I am trying to direct incoming [subdomain.domain.com](https://subdomain.domain.com) traffic to the [disaster-recovery.domain.com](https://disaster-recovery.domain.com) S3 bucket. I would expect this to work if I change my [subdomain.domain.com](https://subdomain.domain.com) CNAME's value from [s3-website.eu-west-2.amazonaws.com](https://s3-website.eu-west-2.amazonaws.com) to [disaster-recovery.domain.com](https://disaster-recovery.domain.com). However, accessing [subdomain.domain.com](https://subdomain.domain.com) on a cache-cleared browser serves me content from the original [subdomain.domain.com](https://subdomain.domain.com) bucket, not from the [disaster-recovery.domain.com](https://disaster-recovery.domain.com) bucket.
+
+Could someone please give me some insights on how I can get this to work?
+
+&amp;#x200B;
+
+Notes:
+
+* I know that CloudFront offers automated regional failover, but I would prefer to not have to add CloudFront to my stack
+* I use CloudFlare to manage my domain, and it's CDN service caches my frontend content. I ran custom purges before every refresh
+## [6][API Gateway HTTP APIs adds integration with five AWS services](https://www.reddit.com/r/aws/comments/idl6kf/api_gateway_http_apis_adds_integration_with_five/)
+- url: https://aws.amazon.com/about-aws/whats-new/2020/08/api-gateway-http-apis-adds-integration-with-five-aws-services/
 ---
 
-## [3][HowTo: Setup up a virtual call centre in under 30 mins using AWS Connect](https://www.reddit.com/r/aws/comments/id3gnn/howto_setup_up_a_virtual_call_centre_in_under_30/)
-- url: https://medium.com/@joel.lutman/set-up-a-virtual-call-centre-in-30-minutes-with-amazon-connect-2771bbc52ee
+## [7][How To Make Your Custom Software HIPAA Compliant](https://www.reddit.com/r/aws/comments/idtg44/how_to_make_your_custom_software_hipaa_compliant/)
+- url: http://hipaa-compliant.icu
 ---
 
-## [4][RDS Mysql admin account privileges](https://www.reddit.com/r/aws/comments/ida71c/rds_mysql_admin_account_privileges/)
-- url: https://www.reddit.com/r/aws/comments/ida71c/rds_mysql_admin_account_privileges/
+## [8][Is possible to use Lightsail without buying a Database?](https://www.reddit.com/r/aws/comments/idwqg4/is_possible_to_use_lightsail_without_buying_a/)
+- url: https://www.reddit.com/r/aws/comments/idwqg4/is_possible_to_use_lightsail_without_buying_a/
 ---
-Hi, I have created a Mysql RDS instance with the master user account named 'admin'.  Shouldn't this account have DBA access?  I am trying to run an infile script and am running into privileges errors.  When I look at my users my admin account does not have dba privileges however the rdsadmin account does.  I don't know the password for 'rdsadmin' because it was set as admin.  I'm very confused at how I can access a dba role on an RDS if it doesn't give you this as the master account?  Hoping someone can help my understand.
-## [5][EFS for Shared Web Code (PHP)](https://www.reddit.com/r/aws/comments/id9l2b/efs_for_shared_web_code_php/)
-- url: https://www.reddit.com/r/aws/comments/id9l2b/efs_for_shared_web_code_php/
----
-I'm currently running my own NFS server for all my shared web PHP code between different autoscaling groups of Web servers, but I'd like to move this to EFS.
+Lightsail comes by default with WordPress installed which means that the server already has MySQL DB.
 
-Previous "attempts" to do this always resulted in poor performance metrics and I've abandoned the idea more than once.  But this was a while back, and I know that EFS has made great strides in performance configuration options to support such a scenario.  
-
-Anyone doing this?  If so, what EFS configuration are you using to accomplish this?  The previous process to increase EFS performance was to create huge "dummy files" to provision additional storage throughput.
-
-Would love to hear who's doing this and how they've configured EFS for this type of workload.
-## [6][SQL to DynamoDB Transformation Trainer](https://www.reddit.com/r/aws/comments/id9k20/sql_to_dynamodb_transformation_trainer/)
-- url: https://bukov-ka.github.io/dynamodb/
+Can I continue using WordPress without buying a database plan?
+## [9][Announcing the newest AWS Heroes – August 2020](https://www.reddit.com/r/aws/comments/idg34l/announcing_the_newest_aws_heroes_august_2020/)
+- url: https://aws.amazon.com/blogs/aws/announcing-the-newest-aws-heroes-august-2020/
 ---
 
-## [7][VPN access to internal load-balancer blocked by security group ingress rule](https://www.reddit.com/r/aws/comments/id8whz/vpn_access_to_internal_loadbalancer_blocked_by/)
-- url: https://www.reddit.com/r/aws/comments/id8whz/vpn_access_to_internal_loadbalancer_blocked_by/
+## [10][[Question] How to deploy lambdas and RDS with bitbucket pipelines for CI/CD?](https://www.reddit.com/r/aws/comments/idut7m/question_how_to_deploy_lambdas_and_rds_with/)
+- url: https://www.reddit.com/r/aws/comments/idut7m/question_how_to_deploy_lambdas_and_rds_with/
 ---
-Heya!
+Hey everyone,
 
-I'm experiencing a somewhat unexpected issue when only allowing VPC traffic to reach port 443 on our internal load balancer. Our set-up is the following:
+Hope everyone is well.
 
-We have a VPN connection into the VPC via a transit-gateway. The traffic is routed into 3 private subnets (one in each AZ). We have an internal load-balancer in those private subnets, which does not have a public IP and whose public dns name definitely (checked a million times) resolves to a private IP address that corresponds to the cidr range of the private subnets. One can only connect to the load-balancer via the vpn tunnel (or from within the VPC) where those private ip addresses are routed through. So everything works as expected here.
+I am looking for some advice, and to learn from the way you deploy at your current workplace.
 
-If, however, we configure the load-balancer's security group to only allow the VPC's cidr range to reach port 443, requests through the vpn tunnel start to time-out - that seems quite counter-intuitive to me, since in my understanding both the private subnets as well as the fact that the load-balancer is of type internal already ensure that only traffic from within the VPC can reach it. Am I missing something here? 
+We started doing serverless at my company, and automated deploys to 3 different envs (dev, staging, prod) with bitbucket pipelines. These pipelines run a linter, unit testing, and type checking (mypy as we're using python). At the end of it all, it uses AWS SAM to deploy.
 
-Many thanks in advance!
-## [8][End to End Machine Learning Tutorial — From Data Collection to Deployment on AWS 🚀](https://www.reddit.com/r/aws/comments/ickq5y/end_to_end_machine_learning_tutorial_from_data/)
-- url: https://www.reddit.com/r/aws/comments/ickq5y/end_to_end_machine_learning_tutorial_from_data/
----
-\[Updated Post: End To End machine learning and beyond notebooks 🚀\]
+Now we are getting to the stage were we want to deploy a "test" version before we replace a currently working version - a canary. 
 
-Hello everyone!
+I did that by hacking the template with \`{{$TEST\_SUFFIX}}\` and doing a \`sed\` command to create one test template. It creates all the new infrastructure (api gateway + lambda) then runs requests with pytest against it, and if it all passes, it tears it down and deploys to the actual environment. This seems unwieldy, and not the right way to do it... How do you do it at your workplace?
 
-With the great collaboration of a friend of mine, we built and deployed a machine learning application to AWS using Python.
+Furthermore, I now would like to spin up an RDS instance so that my tests can run against the lambda, and I can check the database to see if the item created is what I expect. This now raises questions around doing migrations, seeding data, etc. It keeps growing and getting more confusing.
 
-To tell you more about this fun journey, we wrote a post where we'll walk you through the steps to:
+So how do you guys keep all of this well managed, and clear? I hope what I wrote down makes sense, if you guys need any further explanation, let me know.
 
-* Collect and scrape data with Scrapy / Selenium
-* Train a deep character CNN for (English) sentiment analysis using PyTorch
-* Build an interactive web app with Dash to serve the model in real-time
-* Put everything in Docker Compose
-* Deploy to AWS on a custom domain name
+Appreciate your help - hope I can write a blog post when this ends to help clear the confusion others might also have :)
 
-Here the link: [https://medium.com/datadriveninvestor/end-to-end-machine-learning-from-data-collection-to-deployment-ce74f51ca203](https://medium.com/datadriveninvestor/end-to-end-machine-learning-from-data-collection-to-deployment-ce74f51ca203)
-
-All the code is available in Github, the blocks are independent and reusable in other projects [https://github.com/MarwanDebbiche/post-tuto-deployment](https://github.com/MarwanDebbiche/post-tuto-deployment)
-
-Feel free to reach out to me if you have any question,
-## [9][Who knows how to work with AWS China?](https://www.reddit.com/r/aws/comments/icy6hu/who_knows_how_to_work_with_aws_china/)
-- url: https://www.reddit.com/r/aws/comments/icy6hu/who_knows_how_to_work_with_aws_china/
----
-I've worked very hard to get our AWS Organizations and control tower squared away for central account management.  We have great cost optimization and security practices being enforced and life was good... until I realized my company had a big AWS account in China.  I figured I would just get that added to our current master payer, start getting the spend credit applied to our EDP, and implement all of our same policies centrally managed.  Boy was I wrong!  It turns out that with AWS China accounts you do not even get the root account as they are retained by the reseller.  This means I can't just link them in like a regular account.
-
-I'm not exactly sure how this all works but does someone have experience managing accounts in China?  It looks like I might have to ask the vendor to create a separate master payer account where I have to mirror everything that I have setup globally.  Separate control tower, SSO, security hub, etc.  I want to go to the vendor and make sure I ask for the right thing but I am not quite sure what that is.  Has anyone played this game before?
-## [10][Foreign data wrapper for PostgreSQL](https://www.reddit.com/r/aws/comments/icxoqh/foreign_data_wrapper_for_postgresql/)
-- url: https://www.reddit.com/r/aws/comments/icxoqh/foreign_data_wrapper_for_postgresql/
----
-Is there a FDW for S3 in PostgreSQL (RDS)? I'd like to be able to create an indexed MTQ using the S3 FDW without loading the data into a table. I read that this capability is on the roadmap but haven't heard if it has been implemented yet.
+Best, ze

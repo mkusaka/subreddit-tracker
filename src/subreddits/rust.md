@@ -23,112 +23,71 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/08/18/this-week-in-rust-352/
 ---
 
-## [3][Scaling Bevy](https://www.reddit.com/r/rust/comments/id0qzk/scaling_bevy/)
-- url: https://bevyengine.org/news/scaling-bevy/
+## [3][PinePhone + Rust + Low Level Graphics/Input (no X11 required)](https://www.reddit.com/r/rust/comments/idg7ko/pinephone_rust_low_level_graphicsinput_no_x11/)
+- url: https://v.redd.it/rlipzvyid7i51
 ---
 
-## [4][I wrote about running Rust on the Arduino Uno](https://www.reddit.com/r/rust/comments/id83as/i_wrote_about_running_rust_on_the_arduino_uno/)
+## [4][Linux Terminal Tetris with Rust](https://www.reddit.com/r/rust/comments/idu3pb/linux_terminal_tetris_with_rust/)
+- url: https://www.reddit.com/r/rust/comments/idu3pb/linux_terminal_tetris_with_rust/
+---
+https://preview.redd.it/9h1rssf2zbi51.png?width=973&amp;format=png&amp;auto=webp&amp;s=55a3711b36aa6c69236cd9ceaf701cb8e1aef43b
+
+Actually I'm about to learn some Rust and i wanted to discover how to build a terminal based GUI. First I just used plain Rust without any special crates. It worked good enough to code some list displays, a kind of directory view. Then i tried out Termion which is really easy to use and I ended up making a Tetris game. It took me two programming sessions to complete this actual state, like 4 hours or a bit more in addition. This Tetris is playable with all basic features but that's it. I don't want to add more features like a Score or "next Tetromino Display" or something like that, because it was just a little side project to discover some  Terminal GUI programming with Rust. But feel free to check out my Code on [Github](https://github.com/DrTosh/tetris) and add your desired feature if you want. And don't forget to leave me your thoughts I would appreciate that ;D
+## [5][Tge - A lightweight 2D game framework - 0.0.3 released](https://www.reddit.com/r/rust/comments/idsjo4/tge_a_lightweight_2d_game_framework_003_released/)
+- url: /r/rust_gamedev/comments/idsh6u/tge_a_lightweight_2d_game_framework_003_released/
+---
+
+## [6][Pixels 0.2.0 released](https://www.reddit.com/r/rust/comments/idnq6r/pixels_020_released/)
+- url: https://www.reddit.com/r/rust/comments/idnq6r/pixels_020_released/
+---
+Pixels 0.2.0 just landed. 🎉 This release focuses on further improvements to the custom shader API, and upgrades `wgpu` to 0.6.0.
+
+[https://github.com/parasyte/pixels](https://github.com/parasyte/pixels)
+
+This is the crate to use for emulators and old-school pixel-pushing. Especially if you want the full power of your GPU hardware for scaling and adding special effects to your raw pixel buffer.
+
+## Featured game
+
+[**Sandbox**](https://github.com/JMS55/sandbox) is a sand simulation game using `pixels`. It has a custom shader to add a glow effect. Check it out!
+
+[Sandbox screen shot](https://preview.redd.it/gu2zjkleh9i51.png?width=1920&amp;format=png&amp;auto=webp&amp;s=fa5ba4239fe213fbe2968602b4dc8bd4b5627bde)
+## [7][RustConf is online! Official website: https://rustconf.com/](https://www.reddit.com/r/rust/comments/idecaz/rustconf_is_online_official_website/)
+- url: https://www.youtube.com/watch?v=ESXMg9OzWrQ&amp;feature=emb_title
+---
+
+## [8][[knurling] defmt, a highly efficient Rust logging framework for embedded devices](https://www.reddit.com/r/rust/comments/idwb9c/knurling_defmt_a_highly_efficient_rust_logging/)
+- url: https://ferrous-systems.com/blog/defmt/
+---
+
+## [9][I wrote about running Rust on the Arduino Uno](https://www.reddit.com/r/rust/comments/id83as/i_wrote_about_running_rust_on_the_arduino_uno/)
 - url: https://creativcoder.dev/rust-on-arduino-uno
 ---
 
-## [5][Comparison of Async Ecosystems](https://www.reddit.com/r/rust/comments/id6fs6/comparison_of_async_ecosystems/)
-- url: https://runrust.miraheze.org/wiki/Async_crate_comparison#Comparison_of_Async_Ecosystems
+## [10][Problems with compilation](https://www.reddit.com/r/rust/comments/idvpb1/problems_with_compilation/)
+- url: https://www.reddit.com/r/rust/comments/idvpb1/problems_with_compilation/
 ---
+SOLVED!
 
-## [6][Rustsim becomes Dimforge (the organization developing nalgebra, nphysics, ncollide, simba)](https://www.reddit.com/r/rust/comments/ictbha/rustsim_becomes_dimforge_the_organization/)
-- url: https://www.dimforge.com/blog/2020/08/08/rustsim-becomes-dimforge/
----
-
-## [7][Rust and C++ interoperability - The Chromium Projects](https://www.reddit.com/r/rust/comments/icpdfm/rust_and_c_interoperability_the_chromium_projects/)
-- url: https://www.chromium.org/Home/chromium-security/memory-safety/rust-and-c-interoperability
----
-
-## [8][Tantivy v0.13 released](https://www.reddit.com/r/rust/comments/id1cz3/tantivy_v013_released/)
-- url: https://www.reddit.com/r/rust/comments/id1cz3/tantivy_v013_released/
----
-This release happens quite late after tantivy 0.12, as I was stretched thin between my daughter and work during COVID. Things are better now.
-
-The main change is the addition of BlockWAND but that should only 
-affect you if you use disjunction queries &amp; BM25. Tbh I suspect this feature is not really useful for most people and will just improve the performance on the tantivy search benchmark.
-
-
-Here is the changelog
-----
-
-&amp;#x200B;
-Tantivy 0.13 introduce a change in the index format that will require
-you to reindex your index (BlockWAND information are added in the skiplist). 
-The index size increase is minor as this information is only added for
-full blocks.
-If you have a massive index for which reindexing is not an option, please contact me
-so that we can discuss possible solutions.
-
-- Bugfix in `FuzzyTermQuery` not matching terms by prefix when it should (@Peachball)
-- Relaxed constraints on the custom/tweak score functions. At the segment level, they can be mut, and they are not required to be Sync + Send.
-- `MMapDirectory::open` does not return a `Result` anymore.
-- Change in the DocSet and Scorer API. (@fulmicoton). 
-A freshly created DocSet point directly to their first doc. A sentinel value called TERMINATED marks the end of a DocSet.
-`.advance()` returns the new DocId. `Scorer::skip(target)` has been replaced by `Scorer::seek(target)` and returns the resulting DocId.
-As a result, iterating through DocSet now looks as follows
-```rust
-let mut doc = docset.doc();
-while doc != TERMINATED {
-   // ...
-   doc = docset.advance();
-}
-```
-The change made it possible to greatly simplify a lot of the docset's code.
-- Misc internal optimization and introduction of the `Scorer::for_each_pruning` function. (@fulmicoton)
-- Added an offset option to the Top(.*)Collectors. (@robyoung)
-- Added Block WAND. Performance on TOP-K on term-unions should be greatly increased. (@fulmicoton, and special thanks 
-to the PISA team for answering all my questions!)
-## [9][Everything Old is New Again: Binary Security of WebAssembly](https://www.reddit.com/r/rust/comments/icwme7/everything_old_is_new_again_binary_security_of/)
-- url: https://www.reddit.com/r/rust/comments/icwme7/everything_old_is_new_again_binary_security_of/
----
-[https://www.usenix.org/system/files/sec20-lehmann.pdf](https://www.usenix.org/system/files/sec20-lehmann.pdf)
-
-A very interesting paper that I believe is relevant to Rust for a number of reasons.
-
-1. It brings up issues of memory safety, which are often of interest to this community.
-2. The paper directly discusses the inability for webassembly to protect against source level issues common in languages like C/C++.
-3. The authors use C, C++, and Rust, and actually developed their analysis tool in Rust
-
-\&gt; Still, vulnerabilities in memory-unsafe source languages can translate to vulnerabilities in WebAssembly binaries. \[..\] We find that many classic vulnerabilities which, due to common mitigations, are no longer exploitable in native binaries, are completely exposed in WebAssembly. Moreover, WebAssembly enables unique attacks, such as overwriting supposedly constant data or manipulating the heap using a stack overflow
-## [10][[NES emulator] Plastic v0.1.0 is out](https://www.reddit.com/r/rust/comments/id5bei/nes_emulator_plastic_v010_is_out/)
-- url: https://www.reddit.com/r/rust/comments/id5bei/nes_emulator_plastic_v010_is_out/
----
-The first release of [plastic](https://github.com/Amjad50/plastic) is out.
-
-This is my second project in Rust, this project is for learning about emulators and about Rust at the same time. 
-
-Not sure if this design is good, but one pattern I use a lot is `Rc&lt;RefCell&lt;&gt;&gt;`, I can see that the performance of this emulator is not as I expected. Please let me know what do you think about this codebase.
+A crate called \`passwors\` broke the compilation process.
 
 &amp;#x200B;
 
-PRs and suggestions are always welcome.
+I'm getting this weird error message
 
-Note: there are pre-compiled binaries for windows and linux.
-## [11][async-rwlock: An async reader-writer lock with a fair locking strategy](https://www.reddit.com/r/rust/comments/icvkar/asyncrwlock_an_async_readerwriter_lock_with_a/)
-- url: https://github.com/stjepang/async-rwlock
+    error[E0463]: can't find crate for `syntax`
+      --&gt; /home/lifeordeath/.cargo/registry/src/github.com-1ecc6299db9ec823/aster-0.27.0/src/lib.rs:10:1
+       |
+    10 | extern crate syntax;
+       | ^^^^^^^^^^^^^^^^^^^^ can't find crate
+    
+    error: aborting due to previous error
+
+when trying to compile a program that uses [rocket.rs](https://rocket.rs) and [diesel.rs](https://diesel.rs), but I can't for the life of me figure out what the syntax crate is.
+## [11][Discount on the Rust book](https://www.reddit.com/r/rust/comments/idvoix/discount_on_the_rust_book/)
+- url: https://twitter.com/nostarch/status/1296575248486273032?s=09
 ---
 
-## [12][PSA: libz-sys, flate2, and git2 now support the high-performance zlib-ng](https://www.reddit.com/r/rust/comments/icwh2o/psa_libzsys_flate2_and_git2_now_support_the/)
-- url: https://www.reddit.com/r/rust/comments/icwh2o/psa_libzsys_flate2_and_git2_now_support_the/
+## [12][First thoughts on Rust vs OCaml](https://www.reddit.com/r/rust/comments/idh5be/first_thoughts_on_rust_vs_ocaml/)
+- url: https://blog.darklang.com/first-thoughts-on-rust-vs-ocaml/
 ---
-[`libz-sys`](https://github.com/rust-lang/libz-sys/) provides Rust bindings to the zlib compression library, for handling DEFLATE/gzip compression. I've just released `libz-sys` 1.1.0, which provides opt-in support for the high-performance `zlib-ng` library in zlib-compat mode.
 
-zlib-ng provides 2-3x performance improvements for compression, and ~20% improvements for decompression.
-
-Most people use `libz-sys` via the higher-level `flate2` crate; you can opt into zlib-ng for `flate2` with:
-
-`flate2 = { version = "1.0.17", features = ["zlib-ng-compat"], default-features = false }`
-
-The git repository format also uses DEFLATE compression extensively, and the `git2` Rust crate now supports zlib-ng as well:
-
-`git2 = { version = "0.13.9", features = ["zlib-ng-compat"] }`
-
-Note that this will build and link a vendored version of `zlib-ng`, rather than using the system shared version of zlib.
-
-If you build a crate that wraps a C library,  and you use `libz-sys` to provide a version of zlib, please *don't* opt into `zlib-ng` by default; instead, use `libz-sys = { version = "1.1.0", default-features = false, features = ["libc"] }`, which allows zlib-ng but doesn't require it. Optionally, you can provide a `zlib-ng-compat` feature by adding `zlib-ng-compat = ["libz-sys/zlib-ng"]` to your features section; alternatively, people who depend on your crate can also depend on libz-sys themselves and enable the zlib-ng feature.
-
-Please give this a try, and comment if it improves the performance of your own crates! If you encounter any issues, please report them via github on the appropriate crates.

@@ -1,13 +1,5 @@
 # javascript
-## [1][WTF Wednesday (August 19, 2020)](https://www.reddit.com/r/javascript/comments/icqh8h/wtf_wednesday_august_19_2020/)
-- url: https://www.reddit.com/r/javascript/comments/icqh8h/wtf_wednesday_august_19_2020/
----
-Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
-Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
-this is the place.
-
-[Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [2][The JetBrains WebStorm team is here to answer your questions](https://www.reddit.com/r/javascript/comments/idc09e/the_jetbrains_webstorm_team_is_here_to_answer/)
+## [1][The JetBrains WebStorm team is here to answer your questions](https://www.reddit.com/r/javascript/comments/idc09e/the_jetbrains_webstorm_team_is_here_to_answer/)
 - url: https://www.reddit.com/r/javascript/comments/idc09e/the_jetbrains_webstorm_team_is_here_to_answer/
 ---
 Hi [r/javascript](https://www.reddit.com/r/javascript/)! We, the WebStorm team, are excited to announce our first AMA. We’ve never done anything like this before, but we feel the time has come to try something new.
@@ -25,67 +17,49 @@ Your questions will be answered by:
 * Ekaterina Ryabukha (WebStorm Product Marketing Manager), [u/ryababukha](https://www.reddit.com/user/ryababukha),
 * Piotr Tomiak (WebStorm Software Developer), [u/piotrtomiak](https://www.reddit.com/user/piotrtomiak), and
 * Konstantin Ulitin (WebStorm Software Developer), [u/konstantin\_ulitin](https://www.reddit.com/user/konstantin_ulitin)
-## [3][How To Make Your Custom Software HIPAA Compliant](https://www.reddit.com/r/javascript/comments/idthij/how_to_make_your_custom_software_hipaa_compliant/)
-- url: http://hipaa-compliant.icu
+## [2][Showoff Saturday (August 22, 2020)](https://www.reddit.com/r/javascript/comments/ieh338/showoff_saturday_august_22_2020/)
+- url: https://www.reddit.com/r/javascript/comments/ieh338/showoff_saturday_august_22_2020/
+---
+Did you find or create something cool this week in javascript? 
+
+Show us here!
+## [3][I made a small 2d raycasting simulation. Any feedback would be great.](https://www.reddit.com/r/javascript/comments/iecc7k/i_made_a_small_2d_raycasting_simulation_any/)
+- url: https://aydencook03.github.io/simulations/raycasting.html
 ---
 
-## [4][Announcing TypeScript 4.0](https://www.reddit.com/r/javascript/comments/idd0tn/announcing_typescript_40/)
-- url: https://devblogs.microsoft.com/typescript/announcing-typescript-4-0/
+## [4][A web framework that uses React Hooks for declarative data persistence and reactivity](https://www.reddit.com/r/javascript/comments/ieh0bf/a_web_framework_that_uses_react_hooks_for/)
+- url: https://github.com/redia-server/redia
 ---
 
-## [5][Advanced NestJS techniques — Custom decorators](https://www.reddit.com/r/javascript/comments/idt5g8/advanced_nestjs_techniques_custom_decorators/)
-- url: https://medium.com//advanced-nestjs-techniques-part-1-custom-decorators-aa6d7f85c5b6?source=friends_link&amp;sk=a4c2c77399b1a418722a75023ae54835
+## [5][15+ Docker best practices for Node.js](https://www.reddit.com/r/javascript/comments/idxw4f/15_docker_best_practices_for_nodejs/)
+- url: https://dev.to/nodepractices/docker-best-practices-with-node-js-4ln4
 ---
 
-## [6][[AskJS] We moved from react to svelte (opinion).](https://www.reddit.com/r/javascript/comments/id8oq9/askjs_we_moved_from_react_to_svelte_opinion/)
-- url: https://medium.com/better-programming/why-we-moved-from-react-to-svelte-f20afb1dc5d5
+## [6][An Update on MDN Web Docs](https://www.reddit.com/r/javascript/comments/ie1x9x/an_update_on_mdn_web_docs/)
+- url: https://hacks.mozilla.org/2020/08/an-update-on-mdn-web-docs/
 ---
 
-## [7][Pokemon Quiz game!](https://www.reddit.com/r/javascript/comments/ids35n/pokemon_quiz_game/)
-- url: https://www.russell-carey.com/pokemongame
+## [7][Alias HQ – manage a single set of project folder aliases and convert as-needed to other formats](https://www.reddit.com/r/javascript/comments/iei47q/alias_hq_manage_a_single_set_of_project_folder/)
+- url: https://github.com/davestewart/alias-hq
 ---
 
-## [8][Jolt - Fast Web Component Based Framework.](https://www.reddit.com/r/javascript/comments/idrkew/jolt_fast_web_component_based_framework/)
-- url: https://github.com/OutwalkStudios/jolt
+## [8][My Front End Journey from a small startup to Microsoft in 3 Yrs | How I ended up cracking 7 consecutive interviews | How I learnt all Frameworks | I 7Xed my TC in 2 years](https://www.reddit.com/r/javascript/comments/iei0n8/my_front_end_journey_from_a_small_startup_to/)
+- url: https://medium.com/@meetnikhilraj/my-javascript-journey-from-a-small-startup-to-microsoft-in-3-yrs-6b0d78854722?sk=b0cb97b37e47ba57fc74834655f31945
 ---
 
-## [9][Modern ways of end-to-end testing with Cypress JS](https://www.reddit.com/r/javascript/comments/idg2od/modern_ways_of_endtoend_testing_with_cypress_js/)
-- url: https://mattermost.com/blog/modern-ways-of-end-to-end-testing-with-cypress-js/
+## [9][Amazing Animation Techniques with GSAP - Frontend Horse](https://www.reddit.com/r/javascript/comments/ie1nhq/amazing_animation_techniques_with_gsap_frontend/)
+- url: https://frontend.horse/articles/amazing-animation-techniques-with-gsap/
 ---
 
-## [10][Using console.log a lot? I made a small npm module to filter messages based on tags, as an easy alternative to more extensive logging frameworks.](https://www.reddit.com/r/javascript/comments/id7izq/using_consolelog_a_lot_i_made_a_small_npm_module/)
-- url: https://www.npmjs.com/package/@pwntheon/ez-pz-log
+## [10][Why use of ‘var’ is to be avoided in JavaScript, and use let and const instead.](https://www.reddit.com/r/javascript/comments/ieh93f/why_use_of_var_is_to_be_avoided_in_javascript_and/)
+- url: https://www.aswinrajeev.in/2020/08/javascript-var-let-and-const-which-one.html?m=1
 ---
 
-## [11][[AskJS] What coding nightmares have woken you up at night?](https://www.reddit.com/r/javascript/comments/icul6f/askjs_what_coding_nightmares_have_woken_you_up_at/)
-- url: https://www.reddit.com/r/javascript/comments/icul6f/askjs_what_coding_nightmares_have_woken_you_up_at/
+## [11][[AskJS] Book/Course recommendations for Java programmers looking to strengthen their JavaScript](https://www.reddit.com/r/javascript/comments/ieehua/askjs_bookcourse_recommendations_for_java/)
+- url: https://www.reddit.com/r/javascript/comments/ieehua/askjs_bookcourse_recommendations_for_java/
 ---
-Last night I dreamed that I had been working on an open-sourced JavaScript representation of the US Government, a couple rogue admins on the project began merging PRs from a number of devs that wanted to undermine the system, and the entire thing began to degrade in quality and spaghettify to the point where it was nearly impossible to refactor.
-
-The rogue admins even began overwriting the repo's commit history. I woke up in a cold sweat, then felt relieved that it was just a dream.
-
-It was a nightmare, but I'd honestly be interested in working on a project like that (sans the rogue actors).
-
-Anyway thanks for listening. What coding nightmare has woken you up at night?
-
-EDIT: You all need therapy.
-## [12][[AskJS] What do you think about copying objects using optional parameters instead of inside the function body?](https://www.reddit.com/r/javascript/comments/idmil2/askjs_what_do_you_think_about_copying_objects/)
-- url: https://www.reddit.com/r/javascript/comments/idmil2/askjs_what_do_you_think_about_copying_objects/
+I use TypeScript with Angular so I can afford to avoid vanilla JS most of the time, but still I would like to have a solid JS. I would prefer resources that teach you javascript as someone that already knows how to program.
+## [12][Deep JavaScript : Exploring Promises by implementing them](https://www.reddit.com/r/javascript/comments/idy746/deep_javascript_exploring_promises_by/)
+- url: https://exploringjs.com/deep-js/ch_implementing-promises.html
 ---
-Compare these 2 functions.  Would you discourage the second technique?  
 
-
-    function rotateA(array) {
-      const copy = array.slice();
-      copy.push(copy.shift());
-      return copy;
-    }
-
-    function rotateB(array, copy = array.slice()) {
-      copy.push(copy.shift());
-      return copy;
-    }
-
-    const array = ['f', 'o', 'o'];
-    console.log(rotateA(array), rotateB(array));
-    // =&gt; [ "o", "o", "f" ] [ "o", "o", "f" ]

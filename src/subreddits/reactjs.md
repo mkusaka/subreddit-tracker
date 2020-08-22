@@ -111,80 +111,182 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/i1u8a4/whos_hiring_august_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][In-depth 14 hour Fullstack React/GraphQL/TypeScript Tutorial](https://www.reddit.com/r/reactjs/comments/idb8lr/indepth_14_hour_fullstack_reactgraphqltypescript/)
-- url: https://www.youtube.com/watch?v=I6ypD7qv3Z8
+## [3][OkCupid Presents: Why we decided against GraphQL for local state management](https://www.reddit.com/r/reactjs/comments/idwx8o/okcupid_presents_why_we_decided_against_graphql/)
+- url: https://tech.okcupid.com/why-we-decided-against-graphql-for-local-state-management/
 ---
 
-## [4][React Colorful v2.0.3 – a lightweight color picker component. Modular, customizable, well-tested, supports a variety of color inputs.](https://www.reddit.com/r/reactjs/comments/idt9w2/react_colorful_v203_a_lightweight_color_picker/)
+## [4][A web framework that uses React Hooks for declarative data persistence and reactivity](https://www.reddit.com/r/reactjs/comments/ieh2wk/a_web_framework_that_uses_react_hooks_for/)
+- url: https://www.reddit.com/r/reactjs/comments/ieh2wk/a_web_framework_that_uses_react_hooks_for/
+---
+Redia is a web framework that uses React Hooks for declarative request/response handling. It exposes common hooks like `useState`, `useRef`, `useMemo`, `useCallback`, etc, and additionally has support for built-in server-related custom hooks like `useRouter` and `useStatic`.
+
+### Rationale
+
+The lot of web frameworks out in the wild have either poor ([Express](https://expressjs.com/)) or over-engineered ([NestJS](https://nestjs.com/)) architectures. Redia exhibits a low-level server API with high-level abstractions.
+
+[Here's the link](https://github.com/redia-server/redia). It is still experimental, so enjoy! :)
+## [5][Using Window.matchMedia() to do media queries in reactjs](https://www.reddit.com/r/reactjs/comments/ieibw8/using_windowmatchmedia_to_do_media_queries_in/)
+- url: https://youtu.be/S7whj93SGsA
+---
+
+## [6][I want to track how much time a student spend on each question, what would be the ideal way of handling it?](https://www.reddit.com/r/reactjs/comments/iegdqz/i_want_to_track_how_much_time_a_student_spend_on/)
+- url: https://www.reddit.com/r/reactjs/comments/iegdqz/i_want_to_track_how_much_time_a_student_spend_on/
+---
+I recently got my first internship, thanks to this subreddit but in the first project I am working on.I need a system to count how much time student spend on each question in an exam in a hard to exploit manner.
+
+&amp;#x200B;
+
+Pinging to back-end is not an option and I have to handle it on the front-end.
+
+  
+PS:Also wanna check when user closes browser or minimize it or changes tab.
+
+&amp;#x200B;
+
+Thank you :)
+
+&amp;#x200B;
+
+&amp;#x200B;
+## [7][React Navbar Navigation | Implement Navigation in Navbar](https://www.reddit.com/r/reactjs/comments/iegnls/react_navbar_navigation_implement_navigation_in/)
+- url: https://youtu.be/XOxwwtnZS5U
+---
+
+## [8][Correct code split into components](https://www.reddit.com/r/reactjs/comments/iee2pc/correct_code_split_into_components/)
+- url: https://www.reddit.com/r/reactjs/comments/iee2pc/correct_code_split_into_components/
+---
+im starting with react and im curious whether this is correct code split into components, or maybe i overdid it a little? example of couple chained components:
+
+    const Navigation = ({ children }) =&gt; {
+    
+        const [sideMenuOn, toggleSideMenu] = useState(false);
+    
+        const handleSideMenuToggle = () =&gt; toggleSideMenu(!sideMenuOn);
+    
+        return(
+            &lt;&gt;
+                &lt;NavBar 
+                    toggleSideMenu={ handleSideMenuToggle }
+                    children={ children }
+                /&gt;
+                &lt;SideMenu
+                    toggleSideMenu={ handleSideMenuToggle }
+                    sideMenuOn={ sideMenuOn }
+                /&gt;
+            &lt;/&gt;
+        )
+    }
+    
+    
+    const SideMenu = ({ sideMenuOn, toggleSideMenu }) =&gt; {
+    
+        const width = sideMenuOn ? '25%' : '0%';
+        const backgroundStyle = sideMenuOn 
+            ? ({
+                opacity: '1',
+                zIndex: '10'
+            }) : ({
+                opacity: '0',
+                zIndex: '-1'
+            })
+    
+        return(
+            &lt;&gt;
+                &lt;div className="side-menu" style={{ width }}&gt;
+                    &lt;SideMenuContent toggleSideMenu={ toggleSideMenu }/&gt;
+                &lt;/div&gt;
+                &lt;div className="side-background" style={ backgroundStyle } onClick={ toggleSideMenu }&gt;&lt;/div&gt;
+            &lt;/&gt;
+        )
+    }
+    
+    
+    const SideMenuContent = ({ toggleSideMenu }) =&gt; {
+    
+        const [loggedIn, toggleLoggedIn] = useState(false);
+    
+        const handleLoggedInToggle = () =&gt; {
+            toggleLoggedIn(!loggedIn);
+        }
+    
+        const content = loggedIn 
+            ? &lt;UserContent 
+                toggleSideMenu={ toggleSideMenu } 
+                toggleLoggedIn={ handleLoggedInToggle } /&gt; 
+            : &lt;GuestContent 
+                toggleSideMenu={ toggleSideMenu } 
+                toggleLoggedIn={ handleLoggedInToggle } 
+            /&gt;;
+    
+        return content;
+    }
+
+and then there are 3 parts of the side menu showing different content for logged in user / guest user logging in / signing up which all have the same template but rendering different content like 'welcome back' vs 'log in in header title' etc:
+
+    const UserContent  = ({ toggleSideMenu, toggleLoggedIn }) =&gt; {
+        return (
+            &lt;&gt;
+                &lt;header&gt;
+                    &lt;div className="title"&gt;
+                        &lt;h2&gt;
+                            Welcome back
+                        &lt;/h2&gt;
+                        &lt;i className="fas fa-times" onClick={toggleSideMenu}&gt;&lt;/i&gt;
+                    &lt;/div&gt;  
+                    &lt;div className="user"&gt;
+                        &lt;img src="https://www.jamf.com/jamf-nation/img/default-avatars/generic-user-purple.png" alt=""/&gt;
+                        &lt;div className="text-holder"&gt;
+                            &lt;p&gt;logedinusern@gmail.com&lt;/p&gt;
+                            &lt;p&gt;free verzia&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt; 
+                &lt;/header&gt;
+                &lt;main&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;home&lt;/li&gt;
+                        &lt;li&gt;add city&lt;/li&gt;
+                        &lt;li onClick={ toggleLoggedIn }&gt;log out&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/main&gt;
+                &lt;footer&gt;
+                        &lt;p&gt;Copyright © 2020 Bmby&lt;/p&gt;
+                &lt;/footer&gt;
+            &lt;/&gt;
+        )
+    }
+
+which could be mybe split into another couple components like header/body/footer to avoid jsx repetition?
+## [9][Deploy and Secure a React — Flask App with Docker and Nginx](https://www.reddit.com/r/reactjs/comments/ieggis/deploy_and_secure_a_react_flask_app_with_docker/)
+- url: https://medium.com/swlh/deploy-and-secure-a-react-flask-app-with-docker-and-nginx-768ca582863b
+---
+
+## [10][React Colorful v2.0.3 – a lightweight color picker component. Modular, customizable, well-tested, supports a variety of color inputs.](https://www.reddit.com/r/reactjs/comments/idt9w2/react_colorful_v203_a_lightweight_color_picker/)
 - url: https://github.com/omgovich/react-colorful
 ---
 
-## [5][I created page transitions for react-router-dom with a little loader animation when the requests take too long](https://www.reddit.com/r/reactjs/comments/idvesr/i_created_page_transitions_for_reactrouterdom/)
-- url: https://www.youtube.com/watch?v=DYYtxYEAxJY
+## [11][Anyone here use restful URLS instead of storing values in redux (for deep linking, and not using redux for small things)?](https://www.reddit.com/r/reactjs/comments/iecfe3/anyone_here_use_restful_urls_instead_of_storing/)
+- url: https://www.reddit.com/r/reactjs/comments/iecfe3/anyone_here_use_restful_urls_instead_of_storing/
 ---
+I am curious if the pattern of using restful urls is something react devs are using. I am weighing the pro'/cons.... what is your experience.  
 
-## [6][How to stay relevant in such an evolving industry?](https://www.reddit.com/r/reactjs/comments/idw8pd/how_to_stay_relevant_in_such_an_evolving_industry/)
-- url: https://www.reddit.com/r/reactjs/comments/idw8pd/how_to_stay_relevant_in_such_an_evolving_industry/
----
-Angular was the framework to go. Now, it's React. Redux was the go-to state management library. Now, there are some saying Context + Hooks is all you need while others say mobx is the way to go. 
 
-Things evolve so fast in frontend development. How do you guys stay sane? Don't you feel FOMO (fear of missing out) whenever something new pops up? I feel frontend has become more complicated than backend in terms of the number of things that we need to learn in order to be valuable in the market. I literally feel like I'm running a marathon trying to learn everything and the goalpost keeps moving further and further.
-## [7][The Complete Guide to React User Authentication with Auth0](https://www.reddit.com/r/reactjs/comments/idw80w/the_complete_guide_to_react_user_authentication/)
-- url: https://auth0.com/blog/complete-guide-to-react-user-authentication/?utm_source=reddit&amp;utm_medium=sc&amp;utm_campaign=react_auth
----
+For example. In a normal single page app, we can "edit a product".  
 
-## [8][Help with using styled components with TypeScript and Material UI](https://www.reddit.com/r/reactjs/comments/idvyup/help_with_using_styled_components_with_typescript/)
-- url: https://www.reddit.com/r/reactjs/comments/idvyup/help_with_using_styled_components_with_typescript/
----
-Hi,
 
-I recently started a new project with create react app, and I'm trying to use SC, TS and MaterialUI. I have worked with these before, but I'm facing some difficulties trying to get them set up.
+    url: mywebsite/products
+==&gt; Store in redux the current selected product, its id.
+==&gt; Editing? Set "edit" mode in redux or react-router
+    or
 
-I'm trying to create a custom button with the following:
+    url: mywebsite/products/444
+url: mywebsite.com/products/444/edit
 
-    import styled from 'styled-components';
-    import React, { Component } from 'react';
-    import Button from '@material-ui/core'
-    
-    const ButtonStyle = styled.button`
-    `;
-    
-    interface Props {
-      buttonText: String
-    }
-    
-    class CustomButton extends Component&lt;Props&gt; {
-        render() {
-          return (
-          &lt;ButtonStyle
-          &gt;&lt;/ButtonStyle&gt;
-          )
-        }
-        
-      }
-      export default CustomButton;
+The pros of "restful urls" is that I can deeplink, if I refresh, I can resaturate based on the id &amp; mode in url. The cons, I feel is that I am passing around these values "444" "edit" in my link components and such...and then I have get them, pass them..  
 
-While trying to pass in props to ButtonStyle, I attempt to do so:
 
-    &lt;ButtonStyle
-     buttonText="Hi!"&gt;&lt;/ButtonStyle&gt;
-
-But I get a "no overload matches this call" error. 
-
-I also attempt to use const ButtonStyle as styled.Button, but it says that it not exist on type 'ThemedStyledInterface&lt;DefaultTheme&gt;'.
-## [9][How to Create Product Tours in React Apps?](https://www.reddit.com/r/reactjs/comments/idvhfa/how_to_create_product_tours_in_react_apps/)
-- url: https://www.tekkiwebsolutions.com/blog/product-tours-in-react-apps/
----
-
-## [10][Using Next.js as a Static Site Generator](https://www.reddit.com/r/reactjs/comments/idv7sx/using_nextjs_as_a_static_site_generator/)
-- url: https://pagepro.co/blog/how-to-use-next-js-static-site-generator/
----
-
-## [11][React Dashboard template Suggestions?](https://www.reddit.com/r/reactjs/comments/idupzp/react_dashboard_template_suggestions/)
-- url: https://www.reddit.com/r/reactjs/comments/idupzp/react_dashboard_template_suggestions/
----
-So far I like Architect UI. Any other suggestions, both free and paid?
-## [12][Blitz.js v0.18 - now with auth/jest/react-testing-library by default](https://www.reddit.com/r/reactjs/comments/idm8di/blitzjs_v018_now_with_authjestreacttestinglibrary/)
-- url: https://github.com/blitz-js/blitz/releases
+So, I am not sure if I am getting readability at the expense of over complicating the code.  
+What is your experience? What have you used and any shortcuts, librariees that help this out?
+## [12][In-depth 14 hour Fullstack React/GraphQL/TypeScript Tutorial](https://www.reddit.com/r/reactjs/comments/idb8lr/indepth_14_hour_fullstack_reactgraphqltypescript/)
+- url: https://www.youtube.com/watch?v=I6ypD7qv3Z8
 ---
 

@@ -27,7 +27,69 @@ Please use this thread to discuss **cool** but relatively **unknown** gems you'v
 You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
 Please include a **description** and a **link** to the gem's homepage in your comment.
-## [3][Best stack for a new SaaS side project?](https://www.reddit.com/r/rails/comments/ido300/best_stack_for_a_new_saas_side_project/)
+## [3][How to make the comment’s content unique based on its parent post?](https://www.reddit.com/r/rails/comments/ie8zri/how_to_make_the_comments_content_unique_based_on/)
+- url: https://www.reddit.com/r/rails/comments/ie8zri/how_to_make_the_comments_content_unique_based_on/
+---
+I don’t want to make it globally unique in the model file. I just want the content of the comment to be unique if the post already has a comment with same content.
+## [4][Alternatives for Bootstrap framework?](https://www.reddit.com/r/rails/comments/iebb66/alternatives_for_bootstrap_framework/)
+- url: https://www.reddit.com/r/rails/comments/iebb66/alternatives_for_bootstrap_framework/
+---
+I have a rails + stimulus app and using Bootstrap for styling. The thing is: Bootstrap depends on jquery, and  this last one is a heavy file after compilation. Because I don't use too much of Bootstrap components and neither Jquery, I would like something more lightweight after compilation. 
+ 
+One more think, I'm not a expertise on css e.g I would need to search how to implement a system grid or how animate dropdown/cascading, for references. 
+
+So my question is: There are others alternatives frameworks that are stable and lightweight? Also, do you guys usually wrote you on components (not talking about JS components e.g react), wrote your own system grid, etc...?
+
+About the Jquery size, I don't remember right now about how much, but I use, sometime ago, a lib that shows by size the files compiled by webpack, and as result the Jquery was the biggest.
+## [5][Is it possible to output custom text to the console/server log on startup?](https://www.reddit.com/r/rails/comments/idyetp/is_it_possible_to_output_custom_text_to_the/)
+- url: https://www.reddit.com/r/rails/comments/idyetp/is_it_possible_to_output_custom_text_to_the/
+---
+Bit of a silly request but I want to add some ASCII art to my applications startup so I can see the app logo every time it runs.  
+
+I’m sure it’s possible but where would I need to add my puts statement for this to work?
+## [6][Wits-end aws elb ssl eks ingress rails not recognizing https scheme in auth0](https://www.reddit.com/r/rails/comments/ie0kum/witsend_aws_elb_ssl_eks_ingress_rails_not/)
+- url: https://www.reddit.com/r/rails/comments/ie0kum/witsend_aws_elb_ssl_eks_ingress_rails_not/
+---
+First apologies for breaking any rules, we're in panic mode and I didn't have a chance to review rules.
+We have in fact searched for a solution frequently and have attempted many fixes suggested on stack overflow / medium etc to know success. 
+
+Long story short
+Terminating ssl in aws l7 elb. 
+Ingress controller routing host to service-&gt;deployment-&gt;pod-&gt;container of a rails app attempting to use auth0 as the IDP.
+
+Initial site loads properly on https.
+However it appears as if generated links (e.g. Redirect and call back urls) are missing awareness of the https scheme.
+
+We've attempted modification of the ingress annotations but seems to be coming up short.
+
+X forward for and proto and scheme and host headers have been tested but we lack visibility into whether or not they are actually getting passed to the rails app.
+
+Working on adding verbosity to that effect now but curious if anyone has experience with this pattern.
+
+Also forgive mobile formatting. 
+
+Thank you!
+
+
+Just a quick update:
+We resolved the issue initially by moving ssl termination into the ingress controller and changing from L7 load balancer to L4 load balancer. This isn't ideal and will continue to investigate the L7 config.  I'll be sure to post an update when we resolve.
+## [7][Newbie dev here, got some questions about Rails as a backend](https://www.reddit.com/r/rails/comments/idxys7/newbie_dev_here_got_some_questions_about_rails_as/)
+- url: https://www.reddit.com/r/rails/comments/idxys7/newbie_dev_here_got_some_questions_about_rails_as/
+---
+\- Can you use Rails as a back end for a react native app? 
+
+And if you can, could anyone link me to resources that explain how to do it
+## [8][JSON API specification for rails api](https://www.reddit.com/r/rails/comments/idppfn/json_api_specification_for_rails_api/)
+- url: https://www.reddit.com/r/rails/comments/idppfn/json_api_specification_for_rails_api/
+---
+Which one do you guys use or prefer using for rails api response in json api specification.
+
+1. [fast_jsonapi](https://github.com/Netflix/fast_jsonapi)    now forked and mainted as      [jsonapi-serializer](https://github.com/jsonapi-serializer/jsonapi-serializer) 
+
+2. [jsonapi-rb](https://github.com/jsonapi-rb/jsonapi-rb) (latest activity 3 years ago)
+
+3. Others( would be great if you specify :) )
+## [9][Best stack for a new SaaS side project?](https://www.reddit.com/r/rails/comments/ido300/best_stack_for_a_new_saas_side_project/)
 - url: https://www.reddit.com/r/rails/comments/ido300/best_stack_for_a_new_saas_side_project/
 ---
 I'm currently planning out a SaaS side project and I'm trying to figure out the best stack for a modern Rails app. I've done small projects with both a monolith and Rails APIs, so I'm really fine with either approach. One goal here is to up my frontend game. The options I'm considering are as follows:
@@ -49,88 +111,13 @@ I'd like to take my Rails skills further and try something new, so I'm really le
 TL;DR: If you were starting a brand new SaaS side project in Rails and weren't tied down stack-wise, which direction would you go for a modern Rails app?
 
 Edit: some formatting/fixing a sentence or two
-## [4][JSON API specification for rails api](https://www.reddit.com/r/rails/comments/idppfn/json_api_specification_for_rails_api/)
-- url: https://www.reddit.com/r/rails/comments/idppfn/json_api_specification_for_rails_api/
----
-Which one do you guys use or prefer using for rails api response in json api specification.
-
-1. [fast_jsonapi](https://github.com/Netflix/fast_jsonapi)    now forked and mainted as      [jsonapi-serializer](https://github.com/jsonapi-serializer/jsonapi-serializer) 
-
-2. [jsonapi-rb](https://github.com/jsonapi-rb/jsonapi-rb) (latest activity 3 years ago)
-
-3. Others( would be great if you specify :) )
-## [5][Follower/Following system using devise](https://www.reddit.com/r/rails/comments/idremq/followerfollowing_system_using_devise/)
+## [10][Follower/Following system using devise](https://www.reddit.com/r/rails/comments/idremq/followerfollowing_system_using_devise/)
 - url: https://www.reddit.com/r/rails/comments/idremq/followerfollowing_system_using_devise/
 ---
 I searched on the internet, I probably found 10 or more articles, saying the same thing and most of them are incomplete. 
 
 Follower/Following system is important in most cases nowadays, a lot of employers think their website might look much fancier with this ability. Anyway, I'm not here to discuss how employers annoy me, I'm just curious, isn't there any easy and understandable way to implement follower/following system in a rails app?
-## [6][Javascript Library loading twice in Rails using Turbolinks](https://www.reddit.com/r/rails/comments/idfohv/javascript_library_loading_twice_in_rails_using/)
-- url: https://www.reddit.com/r/rails/comments/idfohv/javascript_library_loading_twice_in_rails_using/
----
-My javascript library is loading twice. I have consulted..
-
- [https://stackoverflow.com/questions/34388869/javascript-library-loads-twice-in-rails](https://stackoverflow.com/questions/34388869/javascript-library-loads-twice-in-rails) (taking include\_tag out of application.html.erb)
-
- [https://github.com/turbolinks/turbolinks/issues/403](https://github.com/turbolinks/turbolinks/issues/403) (changing  &lt;%= javascript\_include\_tag 'application', 'data-turbolinks-track': 'reload' %&gt; in my application.html.erb file to  &lt;%= javascript\_include\_tag 'application', 'data-turbolinks-track': 'false' %&gt; )
-
-&amp;#x200B;
-
-Has anyone come along this issue, and have a solution?
-## [7][Redirect after sign in using devise?](https://www.reddit.com/r/rails/comments/idcr94/redirect_after_sign_in_using_devise/)
-- url: https://www.reddit.com/r/rails/comments/idcr94/redirect_after_sign_in_using_devise/
----
-Hi Folks,
-Building an ecommerce application and when someone attempts to add something to their cart I want to force them to sign in/sign up. Using devise for this, but currently they get routed back to the main home page. Would prefer that they get routed back to the item they were looking at before (I'm storing the URL in session variable). Any thoughts on how I should modify the basic devise controllers to accomplish this?
-## [8][Active Storage is not saving attached files - why?](https://www.reddit.com/r/rails/comments/idgp2a/active_storage_is_not_saving_attached_files_why/)
-- url: https://www.reddit.com/r/rails/comments/idgp2a/active_storage_is_not_saving_attached_files_why/
----
-Hi!
-
-Encountered a problem where Active Storage won't for the sake of it save uploaded files.
-
-Controller:
-
-```ruby
-  def create
-    @post = Post.new(permit_post())
-
-    if @post.save
-      flash[:success] = 'Post was uploaded!'
-      redirect_to post_path(@post)
-    else
-      flash[:error] = @post.errors.full_messages
-      redirect_to new_post_path
-    end
-  end
-
-  private def permit_post
-    params.permit(:post).permit :image, :description
-  end
-```
-
-Model:
-
-```ruby
-class Post &lt; ApplicationRecord
-  has_one_attached :image
-end
-```
-
-View:
-
-```erb
-&lt;%= form_for @post, html: { multipart: true } do |f| %&gt;
-&lt;%= f.text_area :description, placeholder: 'Some informational description' %&gt;&lt;br&gt;
-&lt;%= f.file_field :image %&gt;&lt;br&gt;
-&lt;%= f.submit %&gt;
-&lt;% end %&gt;
-```
-
-Maybe I missed something? It does create the individual posts, but doesn't upload the files to my storage directory (all default) and doesn't show any attached files in the database.
-
-Ran `rails activestorage:install` and migrated already. Thank you very, very much in advance!
-## [9][Handling Multiple Points of Relation](https://www.reddit.com/r/rails/comments/idn1zs/handling_multiple_points_of_relation/)
+## [11][Handling Multiple Points of Relation](https://www.reddit.com/r/rails/comments/idn1zs/handling_multiple_points_of_relation/)
 - url: https://www.reddit.com/r/rails/comments/idn1zs/handling_multiple_points_of_relation/
 ---
 Hey everyone!
@@ -166,38 +153,15 @@ This means that I have two possible points of relation b/w records &amp; storage
 Thoughts?
 
 Any articles or best practices would be super helpful! Thanks :-D
-## [10][Rails pagination with in_groups_of using Activerecord query](https://www.reddit.com/r/rails/comments/idmovf/rails_pagination_with_in_groups_of_using/)
-- url: https://www.reddit.com/r/rails/comments/idmovf/rails_pagination_with_in_groups_of_using/
+## [12][Javascript Library loading twice in Rails using Turbolinks](https://www.reddit.com/r/rails/comments/idfohv/javascript_library_loading_twice_in_rails_using/)
+- url: https://www.reddit.com/r/rails/comments/idfohv/javascript_library_loading_twice_in_rails_using/
 ---
-I'm hoping to use [in\_groups\_of](https://apidock.com/rails/v5.2.3/Array/in_groups_of) for my ActiveRecord query, but this doesn't seem to work well with Kaminari pagination.
+My javascript library is loading twice. I have consulted..
 
-I want to do something like the below where I split all the records equally (e.g 3), and view only one part of the records (e.g first third) along with pagination:
+[https://stackoverflow.com/questions/34388869/javascript-library-loads-twice-in-rails](https://stackoverflow.com/questions/34388869/javascript-library-loads-twice-in-rails) (taking include\_tag out of application.html.erb)
 
-    @document_texts = Text.where(active: true).in_groups_of(3)[0].page(params[:page])
-
-EDIT:
-
-It looks like in\_groups\_by isn't what I need. What I want to do is split 300 records say by 3 (or 4 or 5) and be able to access the first 100, second 100, or third 100 with pagination.
-## [11][Javascript library loading twice](https://www.reddit.com/r/rails/comments/idfbm9/javascript_library_loading_twice/)
-- url: https://www.reddit.com/r/rails/comments/idfbm9/javascript_library_loading_twice/
----
-I am using Turbolinks and my javascript library is loading twice. I have consulted..
-
- [https://stackoverflow.com/questions/34388869/javascript-library-loads-twice-in-rails](https://stackoverflow.com/questions/34388869/javascript-library-loads-twice-in-rails) 
+[https://github.com/turbolinks/turbolinks/issues/403](https://github.com/turbolinks/turbolinks/issues/403) (changing  &lt;%= javascript\_include\_tag 'application', 'data-turbolinks-track': 'reload' %&gt; in my application.html.erb file to  &lt;%= javascript\_include\_tag 'application', 'data-turbolinks-track': 'false' %&gt; )
 
 &amp;#x200B;
 
-I have also tried changing  'data-turbolinks-track': 'false' as suggested here.  [https://github.com/turbolinks/turbolinks/issues/403](https://github.com/turbolinks/turbolinks/issues/403) 
-
-&amp;#x200B;
-
-Has anyone run into this and have a solution?
-## [12][Rails on Heroku: Guide to how many dynos and which size](https://www.reddit.com/r/rails/comments/icnl4q/rails_on_heroku_guide_to_how_many_dynos_and_which/)
-- url: https://www.reddit.com/r/rails/comments/icnl4q/rails_on_heroku_guide_to_how_many_dynos_and_which/
----
-I just published an [exhaustive and opinionated guide](https://railsautoscale.com/how-many-dynos/) to dynos on Heroku. It answers the questions I've been hearing over and over for years:
-
-* How many dynos should you be running?
-* Which dyno type is right for your app?
-
-I hope you find it helpful!
+Has anyone come along this issue, and have a solution?

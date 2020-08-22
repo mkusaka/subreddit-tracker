@@ -1,94 +1,153 @@
 # aws
-## [1][How about cost alert latency?](https://www.reddit.com/r/aws/comments/idv9gc/how_about_cost_alert_latency/)
-- url: https://www.reddit.com/r/aws/comments/idv9gc/how_about_cost_alert_latency/
+## [1][How to organize infrastructure responsibilities if we build Micro-services with AWS CDK](https://www.reddit.com/r/aws/comments/ieece7/how_to_organize_infrastructure_responsibilities/)
+- url: https://www.reddit.com/r/aws/comments/ieece7/how_to_organize_infrastructure_responsibilities/
 ---
-Hello!
+I really like AWS CDK very much because it allows us to organize/align our team purely into a developer first way, i.e., each repo (say \`billing-service\`, or \`checking-out-service\`) directly corresponds to a vertical function team -- the repo contains the node.js service code and also contains the infrastructure setup code (i.e, how to setup Beanstalk cluster).
 
-I'm wondering how reliable are cost alerts with regard to latency?
+&amp;#x200B;
 
-As in what point in time does the underlying cost calculation represent? -1 hour, -10 hours, -1 day?
+However, it seems that we still need a horizontal repo (and team) to take care the shared things across the vertical function repos (and teams) -- for example, if \`billing-service\` and  \`checking-out-service\` shares the same VPC, or even share the same ECS cluster, then the repo that is in charge of the shared VPC and ECS cluster seemingly have to be an independent repo, say 'vpc-and-ecs'
 
-Does somebody have some experience with this?
+&amp;#x200B;
 
-Let's say I program a kill switch to go off at $1000 of costs accumulated since the beginning of the month. Then it would we be inconvenient if those $1000 represent the cost from several hours ago and due to an unexpected extreme spike the actual cost are already like $2000 f.x.
-## [2][How to choose a Database on AWS](https://www.reddit.com/r/aws/comments/idpggn/how_to_choose_a_database_on_aws/)
-- url: https://www.reddit.com/r/aws/comments/idpggn/how_to_choose_a_database_on_aws/
+My question here are the following two:
+
+1. In the above example, if we have to have the third repo of \`vpc-and-ecs\`, how can the  \`billing-service\` and  \`checking-out-service\` repo knows the output of \`vpc-and-ecs\`, such as CIDR block or ECS cluster ID and etc.? (I guess hard coding is ok at the very beginning, but I feel it's very hard to maintain across the team)
+2. If we need to update the shared infrastructure code (vpc-and-ecs), say we want to change the VPC CIDR or change the subnets, it probably will have inevitable effect towards the  \`billing-service\` and  \`checking-out-service\` repo, how can we manage the repos change dependency and cross team communication?
+
+Anyone thought of how to work with CDK in a large cross team?
+## [2][Is there any eBook / website with sample aws architecture diagrams? Something similar to the aws this is my architectur series?](https://www.reddit.com/r/aws/comments/iehi9b/is_there_any_ebook_website_with_sample_aws/)
+- url: https://www.reddit.com/r/aws/comments/iehi9b/is_there_any_ebook_website_with_sample_aws/
 ---
-Hi all,
 
-I recently put together a video resource highlighting a methodology to choose the most appropriate database for your use-case on AWS. I wanted to share for folks here who may be interested.
-
-Video is available here: https://youtu.be/eK_umMYxZfM
-
-Cheers
-## [3][Just took over as sysadmin, it director, Helpdesk etc. Noticed they were using AWS. Everyone is logging in under the root account, no MFA. How do I proceed?](https://www.reddit.com/r/aws/comments/idegep/just_took_over_as_sysadmin_it_director_helpdesk/)
-- url: https://www.reddit.com/r/aws/comments/idegep/just_took_over_as_sysadmin_it_director_helpdesk/
+## [3][Good blog about SNS-SQS Fanout using message filtering + CloudFormation](https://www.reddit.com/r/aws/comments/ie65d5/good_blog_about_snssqs_fanout_using_message/)
+- url: https://www.reddit.com/r/aws/comments/ie65d5/good_blog_about_snssqs_fanout_using_message/
 ---
-Only their marketing department uses AWS. I was thinking of creating a marketing group, assigning users to that group. Giving that group access to S3 and whatever else they are using. It seems they built everything under root and store their data there. Will this be a problem? I am studying for me SAA so I know some of this but not everything.
+Just saw this recently published blog about SNS-SQS filtering and using message attributes to filter. Especially the CloudFormation part was very useful for me.  
 
-edit: so I told them about it and they said thank you and want me to fix it. I am studying for my SAA and have enough knowledge to get things working and all. The only problem is I was hired to be a sys admin at a sys admin pay. They have me doing things way outside the scope of my responsibilities that was discussed during the interview. Bait and switch... I have to do IT consulting, help desk, syadmin, it director stuff, now AWS? My first day on the job they wanted me to document their entire network, and create a proposal. Should I renegotiate my hourly rate?
-## [4][Speed up data sync from S3 to ec2](https://www.reddit.com/r/aws/comments/idwio0/speed_up_data_sync_from_s3_to_ec2/)
+
+[https://medium.com/better-programming/how-to-fan-out-to-different-sqs-queues-using-sns-message-filtering-84cd23ed9d07](https://medium.com/better-programming/how-to-fan-out-to-different-sqs-queues-using-sns-message-filtering-84cd23ed9d07)
+## [4][Auto provision IAM roles and permissions with AWS Control Tower](https://www.reddit.com/r/aws/comments/ie7ahp/auto_provision_iam_roles_and_permissions_with_aws/)
+- url: https://www.reddit.com/r/aws/comments/ie7ahp/auto_provision_iam_roles_and_permissions_with_aws/
+---
+We've been using AWS Control Tower for about 6 months now to help us quickly provision accounts for various business units and its worked well for the most part. However, I have yet to find any straightforward approaches for adding customizations to the accounts during the creation process - specifically when trying to automate the addition of custom IAM roles upon account creation.
+
+This is frustrating because we manage our AWS environments with Terraform, which is a great tool, but in order to start using Terraform with an AWS account we have to manually go into each account and create the IAM role Terraform will assume when it's interacting with the account.
+
+Looking for a recommended process for automating account customizations with AWS Control Tower - specifically the ability to have a custom IAM role added to the account upon creation.
+
+Any advice or links to documentation is appreciated.
+
+Thanks,
+## [5][Any ETA on Aurora PostgreSQL 12?](https://www.reddit.com/r/aws/comments/ie67ho/any_eta_on_aurora_postgresql_12/)
+- url: https://www.reddit.com/r/aws/comments/ie67ho/any_eta_on_aurora_postgresql_12/
+---
+Just like for 11, the wait is excruciating...
+## [6][Autoscalling IIS webser (AWS)](https://www.reddit.com/r/aws/comments/ieg1pf/autoscalling_iis_webser_aws/)
+- url: https://www.reddit.com/r/aws/comments/ieg1pf/autoscalling_iis_webser_aws/
+---
+hello,
+
+I create a basic webpage in IIS webserver and link it with private IP, after that created an AMI and link it with Autoscaling.
+
+&amp;#x200B;
+
+https://preview.redd.it/rfdwr2ml4ji51.png?width=527&amp;format=png&amp;auto=webp&amp;s=2a723350a91a46531cd31eacf396fa2cd2805438
+
+Autoscaling creating specified instance but with different private IPs, so how would I access my IIS webpage with different IP, to access my webpages i have to access those machines and change their IP address. 
+
+if I need 100 system, I can't log in and changed their assigned IP address for 100, is there any easy way to do it?
+## [7][Secure API Gateway for React in Amplify](https://www.reddit.com/r/aws/comments/iedgkx/secure_api_gateway_for_react_in_amplify/)
+- url: https://www.reddit.com/r/aws/comments/iedgkx/secure_api_gateway_for_react_in_amplify/
+---
+I'm creating a react application in Amplify. The react will query API Gateway. Eventually, this react application will be hosted in S3 + CloudFront for the public to use. 
+
+I was wondering if it's secure if I create an API key for API Gateway and I use this API key to authenticate my application when calling the API. My concern is that react is essentially a front-end and my API key will be exposed. 
+
+Is this an appropriate way to authenticate or is it insecure if so, what better way can I use to authenticate the react to the API?  
+
+PS: Cognito is unable to do the job as my website can be used by anyone without any form of authentication.
+## [8][Speed up data sync from S3 to ec2](https://www.reddit.com/r/aws/comments/idwio0/speed_up_data_sync_from_s3_to_ec2/)
 - url: https://www.reddit.com/r/aws/comments/idwio0/speed_up_data_sync_from_s3_to_ec2/
 ---
 Im looking for advice, I have a compute job that runs on an EC2 once a month.  I've optimized the job so that it runs within an hour, however the biggest bottleneck to date is syncing thousands of csv files to the machine before the job starts.  
 
 If it helps the files are collected every minute from hundreds of weather stations, what are the options?
-## [5][S3-hosted website - cross-region failover](https://www.reddit.com/r/aws/comments/idw0nk/s3hosted_website_crossregion_failover/)
-- url: https://www.reddit.com/r/aws/comments/idw0nk/s3hosted_website_crossregion_failover/
+## [9][Upcoming AWS Livestream on Twitch: AWS Resource Tagging. Monday, August 24 – 11:00 am PST – https://www.twitch.tv/aws](https://www.reddit.com/r/aws/comments/ie3gdi/upcoming_aws_livestream_on_twitch_aws_resource/)
+- url: https://i.redd.it/rsh4vj50qei51.jpg
 ---
-Hi, I'm designing a cross-region disaster recovery plan, migrating my system to another AWS region. I'm having trouble with migrating my S3-hosted frontend website. 
 
-I'll use [subdomain.domain.com](https://subdomain.domain.com) as my example URL. I've currently got a bucket called [subdomain.domain.com](https://subdomain.domain.com), and a CNAME in domain.com's DNS config, with \`name: subdomain.domain.com\`, \`value: [s3-website.eu-west-2.amazonaws.com](https://s3-website.eu-west-2.amazonaws.com)\`. 
+## [10][AWS Amplify + Redux Saga: Proper way to create an Auth Listener? Event Channel + Hub?](https://www.reddit.com/r/aws/comments/ieatuj/aws_amplify_redux_saga_proper_way_to_create_an/)
+- url: https://www.reddit.com/r/aws/comments/ieatuj/aws_amplify_redux_saga_proper_way_to_create_an/
+---
+**What I'm Implementing:**
 
-For my cross-region DR, I want to point incoming [subdomain.domain.com](https://subdomain.domain.com) traffic at a different S3 bucket, hosted in a different region. This other bucket is called [disaster-recovery.domain.com](https://disaster-recovery.domain.com) and has a CNAME with \`name: disaster-recovery.domain.com\`, and \`value: s3-website.eu-west-1.amazonaws.com\`. 
-
-For DR testing purposes, I am trying to direct incoming [subdomain.domain.com](https://subdomain.domain.com) traffic to the [disaster-recovery.domain.com](https://disaster-recovery.domain.com) S3 bucket. I would expect this to work if I change my [subdomain.domain.com](https://subdomain.domain.com) CNAME's value from [s3-website.eu-west-2.amazonaws.com](https://s3-website.eu-west-2.amazonaws.com) to [disaster-recovery.domain.com](https://disaster-recovery.domain.com). However, accessing [subdomain.domain.com](https://subdomain.domain.com) on a cache-cleared browser serves me content from the original [subdomain.domain.com](https://subdomain.domain.com) bucket, not from the [disaster-recovery.domain.com](https://disaster-recovery.domain.com) bucket.
-
-Could someone please give me some insights on how I can get this to work?
+I'm trying to implement an auth listener for my Redux Saga + AWS Amplify application. I'm using a [Redux Saga Event Channel](https://redux-saga.js.org/docs/advanced/Channels.html) and [AWS Amplify Hub (Auth listener)](https://docs.amplify.aws/lib/utilities/hub/q/platform/js)
 
 &amp;#x200B;
 
-Notes:
+**My Issues:**
 
-* I know that CloudFront offers automated regional failover, but I would prefer to not have to add CloudFront to my stack
-* I use CloudFlare to manage my domain, and it's CDN service caches my frontend content. I ran custom purges before every refresh
-## [6][API Gateway HTTP APIs adds integration with five AWS services](https://www.reddit.com/r/aws/comments/idl6kf/api_gateway_http_apis_adds_integration_with_five/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/08/api-gateway-http-apis-adds-integration-with-five-aws-services/
----
+1.  I'm having an issue where an event is being emitted on \`configured\` and \`signOut\`, but it won't emit an event for \`signIn\`.
+2.  My second issue is with when I refresh the page. I'm using Redux Persist to persist the state (Cognito User object) when refreshed, but how can I verify that the user is currently logged in. Is there an event for that?
 
-## [7][How To Make Your Custom Software HIPAA Compliant](https://www.reddit.com/r/aws/comments/idtg44/how_to_make_your_custom_software_hipaa_compliant/)
-- url: http://hipaa-compliant.icu
----
+&amp;#x200B;
 
-## [8][Is possible to use Lightsail without buying a Database?](https://www.reddit.com/r/aws/comments/idwqg4/is_possible_to_use_lightsail_without_buying_a/)
-- url: https://www.reddit.com/r/aws/comments/idwqg4/is_possible_to_use_lightsail_without_buying_a/
----
-Lightsail comes by default with WordPress installed which means that the server already has MySQL DB.
+**Root Saga:**
 
-Can I continue using WordPress without buying a database plan?
-## [9][Announcing the newest AWS Heroes – August 2020](https://www.reddit.com/r/aws/comments/idg34l/announcing_the_newest_aws_heroes_august_2020/)
-- url: https://aws.amazon.com/blogs/aws/announcing-the-newest-aws-heroes-august-2020/
----
+    // Root Saga
+    export default function* rootSaga() {
+      // AWS Auth Channel
+      yield fork(awsAuthChannelSaga);
+    
+      yield all([
+        // Sagas: Auth
+        fork(watchLoginSaga),
+        fork(watchLogoutSaga),
+        fork(watchResetPasswordSaga),
+        fork(watchSendVerificationCodeSaga),
+      ]);
+    };
 
-## [10][[Question] How to deploy lambdas and RDS with bitbucket pipelines for CI/CD?](https://www.reddit.com/r/aws/comments/idut7m/question_how_to_deploy_lambdas_and_rds_with/)
-- url: https://www.reddit.com/r/aws/comments/idut7m/question_how_to_deploy_lambdas_and_rds_with/
----
-Hey everyone,
+&amp;#x200B;
 
-Hope everyone is well.
+**Saga:**
 
-I am looking for some advice, and to learn from the way you deploy at your current workplace.
-
-We started doing serverless at my company, and automated deploys to 3 different envs (dev, staging, prod) with bitbucket pipelines. These pipelines run a linter, unit testing, and type checking (mypy as we're using python). At the end of it all, it uses AWS SAM to deploy.
-
-Now we are getting to the stage were we want to deploy a "test" version before we replace a currently working version - a canary. 
-
-I did that by hacking the template with \`{{$TEST\_SUFFIX}}\` and doing a \`sed\` command to create one test template. It creates all the new infrastructure (api gateway + lambda) then runs requests with pytest against it, and if it all passes, it tears it down and deploys to the actual environment. This seems unwieldy, and not the right way to do it... How do you do it at your workplace?
-
-Furthermore, I now would like to spin up an RDS instance so that my tests can run against the lambda, and I can check the database to see if the item created is what I expect. This now raises questions around doing migrations, seeding data, etc. It keeps growing and getting more confusing.
-
-So how do you guys keep all of this well managed, and clear? I hope what I wrote down makes sense, if you guys need any further explanation, let me know.
-
-Appreciate your help - hope I can write a blog post when this ends to help clear the confusion others might also have :)
-
-Best, ze
+    // Redux Saga: AWS Auth Channel
+    export function* awsAuthChannelSaga() {
+      try {
+        // Channel
+        const channel = eventChannel((emit: any) =&gt; {
+          // Emitter
+          const emitter = (event: any) =&gt; emit(event);
+    
+          // AWS: Auth Listener
+          Hub.listen('auth', emitter);
+    
+          // AWS: Remove Auth Listener
+          return () =&gt; Hub.remove('auth', emitter);
+        });
+    
+    
+        yield takeEvery(channel, function*(event: any) {
+    
+          // Event: Configured
+          if (event.payload.event === 'configured') {
+            console.log('AWS: Auth configured');
+          }
+          // Event: Sign In (NOT WORKING)
+          else if (event.payload.event === 'signIn') {
+            // Redux: Login Success
+            yield put(loginSuccess());
+          }
+          // Event: Sign Out
+          else if (event.payload.event === 'signOut') {
+            // Redux: Logout Success
+            yield put(logoutSuccess());
+          }
+        });
+      }
+      catch (error) {
+        console.log(error);
+      }
+    };

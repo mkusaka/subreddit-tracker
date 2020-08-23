@@ -57,67 +57,130 @@ REMOTE: *[Do you offer the option of working remotely? If so, do you require emp
 VISA: *[Does your company sponsor visas?]*
 
 CONTACT: *[How can someone get in touch with you?]*
-## [3][google/autocxx - calling C++ from Rust in a heavily automated, but safe, fashion](https://www.reddit.com/r/rust/comments/iefeum/googleautocxx_calling_c_from_rust_in_a_heavily/)
-- url: https://github.com/google/autocxx
+## [3][generic-std: streaming iterators and other HKT-powered traits in stable Rust](https://www.reddit.com/r/rust/comments/if0a3u/genericstd_streaming_iterators_and_other/)
+- url: https://www.reddit.com/r/rust/comments/if0a3u/genericstd_streaming_iterators_and_other/
 ---
+tl;dr [https://crates.io/crates/generic-std](https://crates.io/crates/generic-std)
 
-## [4][Rust Memory Container Cheat-sheet, publish on GitHub](https://www.reddit.com/r/rust/comments/idwlqu/rust_memory_container_cheatsheet_publish_on_github/)
-- url: https://i.redd.it/220xo2f6wci51.png
----
+Not rarely I find myself trying to generalize my code, hitting some issues, searching for answers online, and then realizing the type system is not powerful enough to express what I need. And these blockers are always centered around the fact that Rust doesn't support higher-kinded types.
 
-## [5][[@rylev, @fasterthanlime ] Before Main: How Executables Work on Linux](https://www.reddit.com/r/rust/comments/iegw13/rylev_fasterthanlime_before_main_how_executables/)
-- url: https://youtu.be/jR2hUhjcAXI
----
+For those that don't know, higher-kinded types (HKTs) are *type constructors*. Rust has a limited implementation of HKTs in the form of generics. For example, `Vec` is a type constructor that takes a single (type) argument, while `Vec&lt;T&gt;` is a type resulting from the application of `T` to the `Vec` type constructor. The crucial bit that is missing is the ability to pass type constructors around like you can do with normal types.
 
-## [6][Colors - simple terminal colors fetch](https://www.reddit.com/r/rust/comments/ieftwu/colors_simple_terminal_colors_fetch/)
-- url: https://i.redd.it/xs1uegrm0ji51.png
----
+One example where this would be useful is in a data structure that needs a reference-counted box. You may want to give the user a choice between `Rc`, `Arc`, or maybe even a non-std implementation. You could define, say, an [`Rcb&lt;T&gt;`](https://docs.rs/generic-std/0.1.0/generic_std/trait.Rcb.html) trait and let the user choose which implementations to use. This is fine for simple cases, but it can get unwieldy when you need reference counting for values of multiple types:
 
-## [7][Learning Empathy From Pokemon Blue - RustConf 2020 Closing Keynote](https://www.reddit.com/r/rust/comments/ie8q85/learning_empathy_from_pokemon_blue_rustconf_2020/)
-- url: https://youtu.be/RNsEsZbXE-4
----
+    struct Example&lt;RcString, RcStructA, RcStructB&gt;
+    where
+      RcString: Rcb&lt;String&gt;,
+      RcStructA: Rcb&lt;StructA&gt;,
+      RcStructB: Rcb&lt;StructB&gt;, {...}
+    
+    let example = Example::&lt;Arc&lt;String&gt;, Arc&lt;StructA&gt;, Arc&lt;StructB&gt;&gt;::new();
 
-## [8][Oxigraph, a WIP graph database in Rust implementing RDF/SPARQL](https://www.reddit.com/r/rust/comments/ie3yzi/oxigraph_a_wip_graph_database_in_rust/)
-- url: https://github.com/oxigraph/oxigraph
----
+In an ideal world where Rust has native support for HKT this case might instead be expressible like this:
 
-## [9][[knurling] defmt, a highly efficient Rust logging framework for embedded devices](https://www.reddit.com/r/rust/comments/idwb9c/knurling_defmt_a_highly_efficient_rust_logging/)
-- url: https://ferrous-systems.com/blog/defmt/
----
+    struct Example&lt;Rc&gt;
+    where
+      for&lt;T in [String, StructA, StructB]&gt; Rc&lt;T&gt;: Rcb&lt;T&gt;, {...}
+    
+    let example = Example::&lt;Arc&gt;::new();
 
-## [10][How to use buffering with a file that is both write/read?](https://www.reddit.com/r/rust/comments/ie8z2n/how_to_use_buffering_with_a_file_that_is_both/)
-- url: https://www.reddit.com/r/rust/comments/ie8z2n/how_to_use_buffering_with_a_file_that_is_both/
----
-So, I can create a file:
+Here `Arc` is usable even if we don't specify its type argument. (spoiler: [`H1Arc`](https://docs.rs/generic-std/0.1.0/generic_std/sync/struct.H1Arc.html))
 
-    let file = OpenOptions::new()
-                .read(true)
-                .write(true)
-                .create(true)
-                .open("foo.txt");
+While in this example HKTs would be a nice to have, there are some cases that are (supposedly) inexpressible in stable Rust. The most famous example is probably the streaming iterator:
 
-Here I can do all, but not use buffering.
-
-But how I can support buffering for write/read? I don't see how to wrap both BufReader/BufWriter
-
-P.D: This is for an interpreter runtime, and [similar to python where this is possible](https://docs.python.org/3/library/functions.html#open):
-
-    open("foo.txt", "+") 
-
-I have thought of wrap in an Rc:
-
-    pub struct File {
-        _in: BufReader&lt;Rc&lt;fs::File&gt;&gt;,
-        _out: BufWriter&lt;Rc&lt;fs::File&gt;&gt;,
-        path: PathBuf,
+    trait StreamingIterator {
+      type Item&lt;'a&gt;;
+      fn next&lt;'a&gt;(&amp;'a mut self) -&gt; Option&lt;Self::Item&lt;'a&gt;&gt;;
     }
 
-but not know if this is the best way (or safe!).
-## [11][Planning to learn rust, learning resources much appreciated](https://www.reddit.com/r/rust/comments/ieag78/planning_to_learn_rust_learning_resources_much/)
-- url: https://www.reddit.com/r/rust/comments/ieag78/planning_to_learn_rust_learning_resources_much/
+This is a trait for iterators that may return references to parts of itself. This trait as it is relies on a proposed feature called [associated type constructors](https://github.com/rust-lang/rfcs/blob/master/text/1598-generic_associated_types.md) (ATCs). In fact, the ATC RFC itself states that this is impossible to express with the current Rust language (spoiler: [`StreamingIterator`](https://docs.rs/generic-std/0.1.0/generic_std/trait.StreamingIterator.html)).
+
+Lucky for us, Rust's type system is powerful enough to be turing-complete, which means we can do any computation with types, including emulating type constructors. This is a bit awkward because each value in a type function is a separate type that needs to be declared, and type functions are declared using traits and associated types, but it works.
+
+I've published the [generic-std](https://crates.io/crates/generic-std) crate as a proof of concept. I've also included three [unit tests](https://github.com/Ereski/generic-std/blob/master/src/tests.rs) that show how the streaming iterator and reference counting examples can be handled. The current [docs](https://docs.rs/generic-std/0.1.0/generic_std/) should be enough to give a basic idea of how things are set up, and the way HKT is emulated is surprisingly simple.
+## [4][More CPP](https://www.reddit.com/r/rust/comments/iewg37/more_cpp/)
+- url: https://www.reddit.com/r/rust/comments/iewg37/more_cpp/
 ---
-Hello folks, I have been planning to learn rust and hoping to implement the plan this winter. I learn best through courses as a foundation and build on top of it as I go. If there are no such courses, I will learn Go instead. My Interest is Distributed Systems and primary language is JS. Idea is to have a working understanding of Web Assembly and to be able to wield rust.
-## [12][Kernel printing with Rust.](https://www.reddit.com/r/rust/comments/ie5fsl/kernel_printing_with_rust/)
-- url: https://not-matthias.github.io/kernel-printing-with-rust/
+After having read the recent discussions about cxx and autocxx crates, I thought I'd bring to your attention another one,  which I consider to be a forgotten gem of the Rust-C++ ecosystem - the [cpp](https://crates.io/crates/cpp) crate.
+
+What distinguishes `cpp` from other similar crates, is that it does not attempt to automatically generate Rust bindings;  instead, it allows one to inline c++ right into your Rust code.   Here's what the usage of `cpp` looks like  (borrowed from cpp's documentation):
+
+    use cpp::cpp;
+
+    cpp!{{
+        #include &lt;iostream&gt;
+    }}
+
+    fn main() {
+        let name = std::ffi::CString::new("World").unwrap();
+        let name_ptr = name.as_ptr();
+        let r = cpp!(unsafe [name_ptr as "const char *"] -&gt; u32 as "int32_t" {
+            std::cout &lt;&lt; "Hello, " &lt;&lt; name_ptr &lt;&lt; std::endl;
+            return 42;
+        });
+        assert_eq!(r, 42)
+    }
+
+`cpp` can invoke arbitrary c++ functions and methods, even templated ones.  Solutions like `bindgen` cannot use c++ functions defined in headers - that code simply hasn't been generated yet, so there's nothing to invoke in the library.  It uses an actual c++ compiler to generate glue code, so no problems with symbol mangling or matching the c++ ABI.
+
+As we've just learnt in adjacent discussions, it is not possible to automatically generate sound Rust bindings for arbitrary c++ code, so you are going to have to create safe wrappers anyway.   And this is where the ability granted by `cpp` to call arbitrary c++ code with minimal fuss comes in extremely handy.
+
+No good thing is without some downsides, of course:   
+
+* `cpp` does not have built-in conversions even for primitive types, you'll have to annotate all parameter and return types manually,
+* because it relies on `syn` crate to parse Rust source and extract C++ closures, the `cpp!` macro cannot be wrapped other macros, which is too bad, because in many cases macros would have helped to cut down on boilerplate needed due to #1.
+
+Still, this doesn't compare too badly to `cxx`, where you also need to write out the types of all function parameters at least once.
+(Actually, [the very first version of cpp](https://github.com/mystor/rust-cpp/tree/legacy_rustc_plugin) did not require users to provide types.  Unfortunately this functionality relied on a compiler plugin and would have never been able to work on stable, so this approach was abandoned.  I also wonder if we could get this convenience back eventually - when const generics become advanced enough, there has got to be a way to apply them to compile-time code generation.   Well, maybe with a bit of help from the compiler :-).
+## [5][Why You Should Use Rust in 2020](https://www.reddit.com/r/rust/comments/iewznw/why_you_should_use_rust_in_2020/)
+- url: https://serokell.io/blog/rust-guide
+---
+
+## [6][As above, so below: Using Rust generics to develop two bare-metal flash drivers](https://www.reddit.com/r/rust/comments/if21da/as_above_so_below_using_rust_generics_to_develop/)
+- url: https://www.ecorax.net/as-above-so-below-1/
+---
+
+## [7][jlrs 0.6: Support for Julia 1.5, many new builtin types, massively extended support for accessing data from Rust, automatically generate valid Rust structs from Julia structs.](https://www.reddit.com/r/rust/comments/if1oe7/jlrs_06_support_for_julia_15_many_new_builtin/)
+- url: https://www.reddit.com/r/rust/comments/if1oe7/jlrs_06_support_for_julia_15_many_new_builtin/
+---
+A few weeks ago Julia 1.5 was released. In this version the layout of structs was changed, before any struct with pointer fields couldn't be stored inline but had to be hidden behind a pointer (a `Value` in jlrs). Now, immutable structs with pointer fields will be inlined. One of the results of this change is that arrays that contain immutable structs with pointer fields (eg a stacktrace) is no longer stored as an array of `Value`s but as an inline array, in order to access its contents purely from Rust you have to provide a struct with the correct layout.
+
+In order to make this possible the derive macros have received a massive overhaul in jlrs 0.6. First of all, `JuliaTuple` is gone and has been replaced with many generic tuple types. Second, `JuliaStruct` supports much more than bits types without type parameters and can now handle pointer fields, type parameters, and bits unions. Finally, you don't even need to figure out the proper layout yourself, the [JlrsReflect.jl](https://github.com/Taaitaaiger/JlrsReflect.jl) package can be used to generate valid bindings automatically. This package should be available through `Pkg` soon.
+
+Other changes include the availability of all datatypes defined in the Julia C API like `TypeName` and `Expr`, a raw string `JuliaString`, and the ability to set module globals and constants from Rust.
+
+jlrs 0.6 is only compatible with Julia 1.5, earlier versions will not work.
+
+[Github](https://github.com/Taaitaaiger/jlrs)
+
+[Docs.rs](https://docs.rs/jlrs/0.6.0/jlrs/index.html)
+
+[Crates.io](https://crates.io/crates/jlrs)
+## [8][[Rust Analyzer] cross platform check](https://www.reddit.com/r/rust/comments/iezpz3/rust_analyzer_cross_platform_check/)
+- url: https://www.reddit.com/r/rust/comments/iezpz3/rust_analyzer_cross_platform_check/
+---
+I'm trying to develop a windows application from Linux, found the crate `native-windows-gui` which is good and can be compiled from linux.
+
+But since I'm in Linux Rust Analyzer is using `cargo check` in the background to get the errors and other stuff. When running `cargo check` without changing the target it would spit a lot of error which is understandable as it only works for windows.
+
+Is there any way to mark a specific module or package to use a specific target?
+## [9][The CXX Debate](https://www.reddit.com/r/rust/comments/ielvxu/the_cxx_debate/)
+- url: https://steveklabnik.com/blog/the-cxx-debate
+---
+
+## [10][The problem of safe FFI bindings in Rust](https://www.reddit.com/r/rust/comments/iev7za/the_problem_of_safe_ffi_bindings_in_rust/)
+- url: https://www.abubalay.com/blog/2020/08/22/safe-bindings-in-rust
+---
+
+## [11][standback 0.2.10 has been released — use new stdlib APIs in old compilers](https://www.reddit.com/r/rust/comments/ieycn0/standback_0210_has_been_released_use_new_stdlib/)
+- url: https://www.reddit.com/r/rust/comments/ieycn0/standback_0210_has_been_released_use_new_stdlib/
+---
+Some of you may remember [back in March](https://users.rust-lang.org/t/introducing-standback-portions-of-the-standard-library-backported-to-support-older-compilers/39136) (oh, how long ago that feels!) when I announced standback. The TL;DR of the whole thing is that a significant portion of, though not all, APIs stabilized in the standard library are fully capable of being implemented in userland. So…why not‽
+
+I have just released standback 0.2.10, which includes support for Rust 1.45 and 1.46, the latter of which is due to be released this coming Thursday. I typically aim to have support for each release as they come out, but I was preoccupied with my capstone this summer.
+
+I have been using standback as a direct dependency of time 0.2 since its release without issue (and over 600,000 downloads). If you are the author of a library and desire to maintain _both_ your MSRV and using new APIs, this crate is for you. If the end user is using a newer compiler, they pay extremely little compilation cost (near zero), as everything is gated behind automatic version detection.
+## [12][google/autocxx - calling C++ from Rust in a heavily automated, but safe, fashion](https://www.reddit.com/r/rust/comments/iefeum/googleautocxx_calling_c_from_rust_in_a_heavily/)
+- url: https://github.com/google/autocxx
 ---
 

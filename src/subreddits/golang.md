@@ -1,156 +1,148 @@
 # golang
-## [1][A parallel SSH tool in Go](https://www.reddit.com/r/golang/comments/iecmjo/a_parallel_ssh_tool_in_go/)
-- url: https://www.reddit.com/r/golang/comments/iecmjo/a_parallel_ssh_tool_in_go/
+## [1][Best Server Code Generator for OpenAPI specifications in GoLang?](https://www.reddit.com/r/golang/comments/ieyjum/best_server_code_generator_for_openapi/)
+- url: https://www.reddit.com/r/golang/comments/ieyjum/best_server_code_generator_for_openapi/
 ---
-Hey folks! I have just started on Go, and I tried to make an implementation of PSSH tool.
+What is the best code generator out there for Golang REST APIs
 
-[https://github.com/korde96/gossh](https://github.com/korde96/gossh)
-
-It might not be the best, or the most optimised solution, so I would appreciate it if folks here would teach me the ways of Go and tell me how to make it better. Cheers!
-## [2][Moving forward with the generics design draft](https://www.reddit.com/r/golang/comments/idwylv/moving_forward_with_the_generics_design_draft/)
-- url: https://groups.google.com/forum/#!topic/golang-nuts/iAD0NBz3DYw
+I used the oapi-codegen utility but it often has trouble parsing schemas that go-swagger usually accepts. I am looking for a more stable solution. What does the community prefer?
+## [2][Hacktoberfest is coming](https://www.reddit.com/r/golang/comments/iekqx8/hacktoberfest_is_coming/)
+- url: https://www.reddit.com/r/golang/comments/iekqx8/hacktoberfest_is_coming/
 ---
+I like hacktoberfest. I want to focus on Go projects this year, though - kind of my new year's resolution: "more Go. less Node/Python/Bash". 
 
-## [3][Postgresql PGX vs Database/SQL](https://www.reddit.com/r/golang/comments/iedksn/postgresql_pgx_vs_databasesql/)
-- url: https://www.reddit.com/r/golang/comments/iedksn/postgresql_pgx_vs_databasesql/
+I have _some_ projects in mind, but I'm siloed, of course (I only know the ones I know). Does anyone want to chime in with young, interesting Go projects that could use some help?
+## [3][Use single struct for both API payload and DB?](https://www.reddit.com/r/golang/comments/ietxlo/use_single_struct_for_both_api_payload_and_db/)
+- url: https://www.reddit.com/r/golang/comments/ietxlo/use_single_struct_for_both_api_payload_and_db/
 ---
-I am using PGX driver to connect my go web app with Postgresql database. As I read on the package documentation, there are two options to write code - directly with PGX interface or through Database/SQL. I would like to know the pros and cons of both to decide what to use. One advantage of using Database/SQL I can see is to change the driver in future if there is any better driver or PGX driver is not maintained.
-## [4][Look for feedback on a Go standard library for building microservices](https://www.reddit.com/r/golang/comments/ieiizy/look_for_feedback_on_a_go_standard_library_for/)
-- url: https://www.reddit.com/r/golang/comments/ieiizy/look_for_feedback_on_a_go_standard_library_for/
+Hey all,
+
+So I am building my API payload struct (to match my json schema which I use for OpenAPI definition). So think of a typical User:
+
+    type User struct {
+    	Id             *uuid.UUID `json:"id"`
+    	Name           string     `json:"name"`
+    	Username       string     `json:"username"`
+    	Password       string     `json:"password"`
+    	Email          string     `json:"email"`
+    	Role           string     `json:"role"`
+    	LastSignedInAt *time.Time `json:"lastLogin"`
+    	CreatedAt      *time.Time `json:"createdAt"`
+    	UpdatedAt      *time.Time `json:"lastUpdated"`
+    	Active         bool       `json:"active"`
+    }
+
+This basically matches the columns in my DB. However, upon login, I only return the name, email and role as part of the login response payload. I include the Id in the JWT token claims, but otherwise some of the data is really for internal only use.
+
+Now, I know I can use the omit option or - option for not returning keys without values, etc.. that's fine. What I am hoping though, is that I can use the same structure to store (or retrieve) data from the DB as well. I am using Postgresql, pgx, and for retrieving data, the pgxscan library to scan in to the structure.
+
+What I want to avoid is the old school Java DAO and DTO process.. where by we had to essentially copy the same data from one object to another... I want to "pass thru" the struct instance that is un-marshaled from say a request that includes JSON to the DB code so that it can write the struct to the DB.. or vice versa.. on a GET or GET ALL, it scans into a struct like above, and can then just "null out" some of the properties that shouldn't go back as part of the response.
+
+I think this is doable.. but more so.. is it "good Go code" to do this.. or is it frowned upon. Still a noob with Go, so I want to avoid building this, then have some expert Go dev come in one day and be like WTF is this crap.. bad bad code. 
+
+Thanks Go pros.
+## [4][Float prints 0.0000](https://www.reddit.com/r/golang/comments/ieywov/float_prints_00000/)
+- url: https://www.reddit.com/r/golang/comments/ieywov/float_prints_00000/
 ---
-I'm currently building a standard library for building microservices application. It's currently built around gRPC, expose both gRPC and REST API over 1 single port. This project is both for learning and using for my projects, hence I'm really appreciate if you guys can give your feedback so that I know what needs to be improved.
-
-[https://github.com/pthethanh/micro](https://github.com/pthethanh/micro)
-
-BTW, I've tried to ask some people I know but they didn't give much feedback, hence I think it's good to look for feedback here....
-
-Thank you very much...and sorry if this annoy you.
-## [5][gRPC or REST for a simple service](https://www.reddit.com/r/golang/comments/ieh8f0/grpc_or_rest_for_a_simple_service/)
-- url: https://www.reddit.com/r/golang/comments/ieh8f0/grpc_or_rest_for_a_simple_service/
----
-I am writing a service which will generate tokens. My personal requirement is no special tools are needed to access the service -- curl and wget will suffice. The server will be built using go, obviously. 
-
-I can build a simple REST API using go-chi. Or, I can create a gRPC service and have a REST gateway. The later seems more tedious and complex. But it provides backward compatibility, schema, etc...Maybe in the future,  the service will become popular and people ask for more features. 
-
-I like the REST gateway because I can have users access Swagger pages.
-## [6][Looking for a Golang Buddy](https://www.reddit.com/r/golang/comments/ie562u/looking_for_a_golang_buddy/)
-- url: https://www.reddit.com/r/golang/comments/ie562u/looking_for_a_golang_buddy/
----
-I have been using Go for the past 4 months. 
-
-  
-Looking for someone with a similar level of experience (the more the better) and looking to dive into more complicated things by working on some side projects.  
-
-
-If it matters, I have some experience in other languages as well, and just recently moved to go.
-## [7][Need Urgent Help in defining an api endpoint using GIN](https://www.reddit.com/r/golang/comments/ieezr1/need_urgent_help_in_defining_an_api_endpoint/)
-- url: https://www.reddit.com/r/golang/comments/ieezr1/need_urgent_help_in_defining_an_api_endpoint/
----
-so want to make an endpoint like GET extract/&lt;url&gt; which gives a json response lile  
-{text:"url"}, i.e whatever parameter , i.e the url of another website is passed in the endpoint  
-it should return that paramter as a string  
-
-
-I've done this so far
-
-    r.GET("extract/:target",func(c *gin.Context){
+    package main
     
-    		url:=c.Param("target")
-    		c.JSON(200, gin.H{
-    			"text":url,
-    		})
-    	})
+    import (
+    	"fmt"
+    )
+    
+    func main() {
+    	var framerate float32 = 1/24
+    
+    	temp := fmt.Sprintf("%.6f", framerate)
+    
+    	fmt.Println(temp)
+    }
 
-the problem is it works for trivial strings like "hello"  
-but whenever there is special charecters such as "." or "/" it gives an error  
-for example  
-
-
-    extract/"facebook.com/profile"
-
-gives an error  
-PLease help anyone?
-## [8][Learning to build restAPI in GOlang](https://www.reddit.com/r/golang/comments/iecy9v/learning_to_build_restapi_in_golang/)
-- url: https://www.reddit.com/r/golang/comments/iecy9v/learning_to_build_restapi_in_golang/
+Why does this code print `0.000000`?
+## [5][how many clients are connected to the websocket server ?](https://www.reddit.com/r/golang/comments/if2ko5/how_many_clients_are_connected_to_the_websocket/)
+- url: https://www.reddit.com/r/golang/comments/if2ko5/how_many_clients_are_connected_to_the_websocket/
 ---
-I want to build a GET api endpoint which takes in url of another website and returns the html code of that url in a json object.
+so i have a web socket server
 
-So far i've done this
+every one in the front end should see a dot in his mouse position &amp; other "players " dots
 
-    func main(){
- r:= gin.Default()
-    r.GET("extract/:target",func(c *gin.Context){
+the problem is how to know which is which
 
-     url:=c.Param("target")
+and how to send data to all players to update position ..
 
-     c.JSON(200, gin.H{
-     "parsedText":url,
-      })
-    })
-    r.Run()
-}
+i am using the [golang.org/x/net/websocket](https://golang.org/x/net/websocket)  
+edit : also how do i know when someone new connects to the websocket   
 
-when I pass extract/hello-world  
-it returns hello-world and works fine  
-but when I enter a website like extract/facebook.com or extract/faceboom.com/profile  
-it doesnt take the whole url as a parameter because of "/" or ".com" how do I do this without breaking the query param , any help??
-## [9][Newbie question: Why should I use templates instead of API?](https://www.reddit.com/r/golang/comments/idz3t4/newbie_question_why_should_i_use_templates/)
-- url: https://www.reddit.com/r/golang/comments/idz3t4/newbie_question_why_should_i_use_templates/
+## [6][Minimalistic package to scan CSV rows into struct types](https://www.reddit.com/r/golang/comments/if1ghy/minimalistic_package_to_scan_csv_rows_into_struct/)
+- url: https://pkg.go.dev/github.com/artyom/csvstruct
 ---
-Hey, I'm quite new to backend programming and I don't understand the next thing:
 
-Why should I use template rendering if there is a frontender and it is much easier for him to just model his page and just fetch data from API? Can he use template I create?
-
-If there is no frontend, then it is obviously good way to send page to client.
-
-I may be completely wrong so please correct me
-## [10][Gate: The extensible Minecraft proxy written in Go!](https://www.reddit.com/r/golang/comments/ideg2v/gate_the_extensible_minecraft_proxy_written_in_go/)
-- url: https://www.reddit.com/r/golang/comments/ideg2v/gate_the_extensible_minecraft_proxy_written_in_go/
+## [7][Client with Logger or without?](https://www.reddit.com/r/golang/comments/if0alh/client_with_logger_or_without/)
+- url: https://www.reddit.com/r/golang/comments/if0alh/client_with_logger_or_without/
 ---
-# Today, I want to present "Gate", the extensible Minecraft proxy, to the Gophers part of the Minecraft community!
+Hey Gophers,
 
-# [https://github.com/minekube/gate](https://github.com/minekube/gate)
+I have a question which is a bit more theoretical:
 
-[Every single 🌟 supports the project!](https://preview.redd.it/31xi5b36sci51.png?width=3500&amp;format=png&amp;auto=webp&amp;s=e71105ad91f79a2390a4e782c1b765052b03342f)
+At work we have a fine piece of Software which does a lot with data (no surprise so far). Lately I got a Client Library for another piece of Software to which we want to send data via the client. And here comes my question:
 
-# Target audiences
+&amp;#x200B;
 
-* advanced **Minecraft networks that already (or want to) have a Go code base** for their Minecraft related workloads
+The client would like to have a Logger in its Constructor (sure as an Interface with two methods). Should a client library use a logger and if so, how should it do?
 
-Before you may ask: "*Why not use an existing proxy written in Java?*"
+A:  Should it receive the logger from the using service (this means the already existing logger should support the interface which is not in our case) ?
 
-Because the less Java we need to maintain, the happier we are at [Minekube](https://discord.gg/6vMDqWE), since we need and work in a very fast paced and cloud-centric ecosystem with a lot of Kubernetes &amp; controllers, Protobuf &amp; GRPC, CockroachDB, Agones, Istio, Nats &amp; Stan and so forth, there is no space and time for Java. The ONLY Java code we must write is for paper/spigot plugins!
+B: Should we totally skip logging in the client library and just return errors ?
 
-# What Gate does
+C: Should the client define its own logger and only be configured with LogLevel and Output ?
 
-*(for those who have never heard of a Minecraft proxy)*
+&amp;#x200B;
 
-**TL;DR**
+Thanks in advance for all your answers
 
-* keep the player's session without disconnect to...
-* move players between servers
-* cross server functionalities (events such as chat/commands, send messages, ...builtin/custom session- &amp; packet handlers)
+cheers Jan
+## [8][CGO problem: C call go function, and passing c function pointer as the parameter](https://www.reddit.com/r/golang/comments/if0a10/cgo_problem_c_call_go_function_and_passing_c/)
+- url: https://www.reddit.com/r/golang/comments/if0a10/cgo_problem_c_call_go_function_and_passing_c/
+---
+I am trying to build golang as a static library for my C project using CGO. Everthing is fine so far, But I am having a problem passing C function to golang function as a parameter. I am not sure whether am I doing it correctly, or it is prohibited to do so?
 
-Gate presents itself as a normal Minecraft server in the player's server list, but once the player connects Gate forwards the connection to one of the actual game servers (e.g. Minecraft vanilla, paper, spigot, sponge, etc.) to play the game.
+in golang file
 
-The player can be moved around the network of Minecraft servers **without** fully disconnecting, since we want the player to stay (and not want them to re-login via the server-list every time).
+    //export go_example_callback
+    func go_example_callback(pfoo unsafe.Pointer, p1 C.int) {
+        foo := (*func(C.int))(pfoo)
+    
+        // call the c function pointer
+        (*foo)(5)
+    
+        // would also love to store pfoo as global variables to use it in anywhere
+    }
 
-Therefore, Gate reads all packets sent between players (Minecraft client) and upstream servers, logs session state changes, emits different events like [Login, Disconnect, ServerConnect, Chat, Kick etc.](https://github.com/minekube/gate/blob/master/pkg/proxy/events.go) that custom plugins/code can react to.
+and then build as a static library using this command below:
 
-The **advantages** for using a proxy should be clear now.
+    go build -o awesome.dylib -buildmode=c-shared awesome.go
 
-[Every single 🌟 supports the project!](https://preview.redd.it/rgnrvmi7sci51.png?width=1229&amp;format=png&amp;auto=webp&amp;s=d6723949d962b731ced7de9e4074cfa783dbab22)
+link the static library in my C project, and then trying to use go\_example\_callback
 
-# Features
+in my C project 
 
-* Fast
-* Excellent server version support
-   * 1.7 up to newest &amp; forge support
-* Quick installation
-   * Download the binary from the [releases](https://github.com/minekube/gate/releases)
-   * `docker run -it --rm -p 25565:25565` `registry.gitlab.com/minekube/gate:latest`
-* Simple API to [extend Gate](https://github.com/minekube/gate#extending-gate-with-custom-code)
-* Built-in IP based rate limiter
-* A detailed config with sane defaults
+    void pfoo(int x) {
+        printf(x);
+    }
+    int main(void) {
+        go_example_callback(&amp;pfoo, 5);
+        // expect printing 5 in the console, but I am getting error instead
+    }
 
-# ...please see more on the [GitHub repository](https://github.com/minekube/gate) to get started and feel free to support Gate with a 🌟 and contributions!
+It will be nice if I am able to call C function in golang through this way.  Is it possible to do so? If yes, how shld I do it correctly? Many thanks for the help!
+## [9][How do you organize the instrumentation code?](https://www.reddit.com/r/golang/comments/iek9wx/how_do_you_organize_the_instrumentation_code/)
+- url: https://www.reddit.com/r/golang/comments/iek9wx/how_do_you_organize_the_instrumentation_code/
+---
+Hi, I've recently started working with opentelemetry to instrument go application, which makes the functions really big as there is a lot of logic related to instrumentation(adding events/attributes/starting/finishing spans/traces). I wonder if there is a good design pattern/template for instrumenting code outside of the method's logic or somehow the size of the functions small?
+## [10][Sharef](https://www.reddit.com/r/golang/comments/iep395/sharef/)
+- url: https://www.reddit.com/r/golang/comments/iep395/sharef/
+---
+Hi All,
+
+Just want to present this tool called [sharef](https://github.com/emiraganov/sharef), maybe someone find it useful also\*\*.\*\* It is command line tool that allows sharing p2p files over [WebRTC.](https://WebRTC.It) It is totally written in GO. Although there are some similar approaches, I just wanted to make tool more feature rich and easier to use. For me, it helps to move things around easier specially in some complex cloud setups. It is in some early stage. I have some more ideas around it, but we will see.
+
+Any feedback is welcome.

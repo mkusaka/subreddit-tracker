@@ -1,13 +1,5 @@
 # reduxjs
-## [1][Writing integration tests by exporting data from redux dev tool?](https://www.reddit.com/r/reduxjs/comments/ie4brv/writing_integration_tests_by_exporting_data_from/)
-- url: https://www.reddit.com/r/reduxjs/comments/ie4brv/writing_integration_tests_by_exporting_data_from/
----
-I'm looking to write integration tests for a project by dispatching a series of actions that are connected in some way and verifying end state is correct.  Ideal scenario would be to use the redux dev tool and export actions and initial state from there, transform that data to remove excess with a small script and into correct format, then manually add asserting logic. That would be a single integration test. In my head, this seems super quick to write tests and with as close to production data payloads for actions as possible.
-
-To accomplish this, I'm thinking each test would be a json file containing an array of actions, along with an object or serialized function if possible to verify state.
-
-Is there a project out there that already does this or something similar before I re-invent the wheel? If not, does anyone know why something like hasn't been implemented yet and what may be some challenges that might become blockers?
-## [2][AWS Amplify + Redux: How can I use currentAuthenticatedUser() with Redux Saga?](https://www.reddit.com/r/reduxjs/comments/ie3grt/aws_amplify_redux_how_can_i_use/)
+## [1][AWS Amplify + Redux: How can I use currentAuthenticatedUser() with Redux Saga?](https://www.reddit.com/r/reduxjs/comments/ie3grt/aws_amplify_redux_how_can_i_use/)
 - url: https://www.reddit.com/r/reduxjs/comments/ie3grt/aws_amplify_redux_how_can_i_use/
 ---
 How can I use \`currentAuthenticatedUser()\` with Redux Saga? I want to use to keep track if a user is logged in or not.
@@ -23,6 +15,14 @@ Ideally, I want it running as a channel so I know immediately log a user out whe
 [currentAuthenticatedUser](https://aws-amplify.github.io/amplify-js/api/classes/authclass.html#currentauthenticateduser)
 
 [Redux Saga Event Channel](https://redux-saga.js.org/docs/advanced/Channels.html)
+## [2][Writing integration tests by exporting data from redux dev tool?](https://www.reddit.com/r/reduxjs/comments/ie4brv/writing_integration_tests_by_exporting_data_from/)
+- url: https://www.reddit.com/r/reduxjs/comments/ie4brv/writing_integration_tests_by_exporting_data_from/
+---
+I'm looking to write integration tests for a project by dispatching a series of actions that are connected in some way and verifying end state is correct.  Ideal scenario would be to use the redux dev tool and export actions and initial state from there, transform that data to remove excess with a small script and into correct format, then manually add asserting logic. That would be a single integration test. In my head, this seems super quick to write tests and with as close to production data payloads for actions as possible.
+
+To accomplish this, I'm thinking each test would be a json file containing an array of actions, along with an object or serialized function if possible to verify state.
+
+Is there a project out there that already does this or something similar before I re-invent the wheel? If not, does anyone know why something like hasn't been implemented yet and what may be some challenges that might become blockers?
 ## [3][Creating fake store with initial state using RTK](https://www.reddit.com/r/reduxjs/comments/idxj5t/creating_fake_store_with_initial_state_using_rtk/)
 - url: https://www.reddit.com/r/reduxjs/comments/idxj5t/creating_fake_store_with_initial_state_using_rtk/
 ---

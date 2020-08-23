@@ -22,7 +22,59 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][How do I define `types` in `declaration.d.ts` when I am referring to 2 paths (`next-mdx-remote/render-to-string` &amp; `next-mdx-remote/hydrate`) of 1 module ,i.e, `next-mdx-remote`?](https://www.reddit.com/r/typescript/comments/ieelgi/how_do_i_define_types_in_declarationdts_when_i_am/)
+## [2][W3C Compatible Keycodes for Typescript](https://www.reddit.com/r/typescript/comments/iexbyq/w3c_compatible_keycodes_for_typescript/)
+- url: https://github.com/ashubham/w3c-keys
+---
+
+## [3][How to best document your TS React project?](https://www.reddit.com/r/typescript/comments/ieqouv/how_to_best_document_your_ts_react_project/)
+- url: https://www.reddit.com/r/typescript/comments/ieqouv/how_to_best_document_your_ts_react_project/
+---
+One thing that doesn't seem to be consistent in my code writing is the way I document my code.
+
+Of course, I know about TSDoc (one extreme) and I know of the principle that good code should be self-explanatory (other extreme).
+
+I'd love to know how you document your TS (React) code and if you know of any good open-source code that inspires your coding style.
+## [4][Why does TypeScript still think this number could be undefined?](https://www.reddit.com/r/typescript/comments/if2zc6/why_does_typescript_still_think_this_number_could/)
+- url: https://www.reddit.com/r/typescript/comments/if2zc6/why_does_typescript_still_think_this_number_could/
+---
+I've just spent 20+ minutes playing around with a function like this and I'm lost. Is TypeScript's type inference not able to figure this out, or am I missing something obvious? 
+
+(I'm running pretty low on sleep so it's very possibly the latter)
+
+```typescript
+function myFunc(a?: number, b?: number): number {
+  if (!a &amp;&amp; !b) throw new Error('No value provided');
+
+  const num = a ?? b;
+
+  return num; // Type 'number | undefined' is not assignable to type 'number'
+}
+```
+## [5][I'm thinking of learning Typescript as my first experience with JS, so I've got a few questions.](https://www.reddit.com/r/typescript/comments/iewlun/im_thinking_of_learning_typescript_as_my_first/)
+- url: https://www.reddit.com/r/typescript/comments/iewlun/im_thinking_of_learning_typescript_as_my_first/
+---
+Do Typescript compilers translate whatever you write into JS that can run anywhere else, or is it a different process?
+
+How different would my experience be if I try to learn JS first before TS? 
+
+I've got a good amount of experience (albeit amateur college-project stuff) with Python and I did Java in high school, how much of that helps in learning TS?
+## [6][How to separate internal and external types from TypeScript's compiler?](https://www.reddit.com/r/typescript/comments/iet52c/how_to_separate_internal_and_external_types_from/)
+- url: https://www.reddit.com/r/typescript/comments/iet52c/how_to_separate_internal_and_external_types_from/
+---
+As the title states, how do I go about separating out internal and external types?
+
+For example, let's say I'm writing a simple React component library. This library should export my single component and the prop types it takes. Nothing more.
+
+Now this component is rather big, so it's built up of multiple smaller components. This is no problem, and my bundler will roll them all into a single `index.js` (well, a `index.js`, `index.module.js`, `index.umd.js`, etc.). Problem is, the types for the helper components are still built and exported. 
+
+I'll get a `.d.ts` file defining the prop types of `helperComponent.tsx` when it doesn't even exist anymore as it's been entirely in-lined in `index.js`. And as it's just an internal component its types don't matter one bit to the end user anyways. It's written in TypeScript simply because it increases my development speed, but I don't want to be punished for using TS. Its types have no use being in the bundle. The thing they define no longer exists.
+
+How would I go about ensuring these utterly useless `.d.ts` files aren't being added to my build outputs? Some `.ts`/`.tsx` files are entirely internal and I do not need or want definitions being built for them. Do I just need to manually prune them every time?
+## [7][[Robot] Generate Google Slides from Wikipedia content](https://www.reddit.com/r/typescript/comments/ievf4r/robot_generate_google_slides_from_wikipedia/)
+- url: https://github.com/vilmacio22/gslides-maker
+---
+
+## [8][How do I define `types` in `declaration.d.ts` when I am referring to 2 paths (`next-mdx-remote/render-to-string` &amp; `next-mdx-remote/hydrate`) of 1 module ,i.e, `next-mdx-remote`?](https://www.reddit.com/r/typescript/comments/ieelgi/how_do_i_define_types_in_declarationdts_when_i_am/)
 - url: https://www.reddit.com/r/typescript/comments/ieelgi/how_do_i_define_types_in_declarationdts_when_i_am/
 ---
 I have the following imports:
@@ -48,7 +100,7 @@ declare module 'next-mdx-remote/hydrate'
 ```
 
 Is this correct?
-## [3][I hate mocking Typescript classes with Jest](https://www.reddit.com/r/typescript/comments/idvumf/i_hate_mocking_typescript_classes_with_jest/)
+## [9][I hate mocking Typescript classes with Jest](https://www.reddit.com/r/typescript/comments/idvumf/i_hate_mocking_typescript_classes_with_jest/)
 - url: https://www.reddit.com/r/typescript/comments/idvumf/i_hate_mocking_typescript_classes_with_jest/
 ---
 I find mocking typescript classes with Jest, so painful, does anyone else find this?
@@ -56,69 +108,20 @@ I find mocking typescript classes with Jest, so painful, does anyone else find t
 I'm trying to mock a single class, and it just turns into so much code.
 
 Are there are good resources / libraries for mocking classes with typescript?
-## [4][How to create a project with express+react+typescript?](https://www.reddit.com/r/typescript/comments/ied04j/how_to_create_a_project_with/)
+## [10][Rosebox: Be part of the journey](https://www.reddit.com/r/typescript/comments/iejjn0/rosebox_be_part_of_the_journey/)
+- url: https://www.reddit.com/r/typescript/comments/iejjn0/rosebox_be_part_of_the_journey/
+---
+Hey everyone 👋 ! Hope your weekends are going well
+
+I want to announce that Rosebox now has a roadmap project and milestones to reflect the status of releases. You can also submit a request to add type-support for a particular property by creating an issue with the label \`PropType\`. You can even suggest an improvement or report a bug :)
+
+Roadmap: [https://github.com/hugonteifeh/rosebox/projects/12](https://github.com/hugonteifeh/rosebox/projects/12)
+
+Milestones: [https://github.com/hugonteifeh/rosebox/milestones](https://github.com/hugonteifeh/rosebox/milestones)
+## [11][How to create a project with express+react+typescript?](https://www.reddit.com/r/typescript/comments/ied04j/how_to_create_a_project_with/)
 - url: https://www.reddit.com/r/typescript/comments/ied04j/how_to_create_a_project_with/
 ---
 Hi  
    How to create a project with express+react+typescript? Any official way?  
 thanks  
 Peter
-## [5][Announcing TypeScript 4.0](https://www.reddit.com/r/typescript/comments/ideto6/announcing_typescript_40/)
-- url: https://devblogs.microsoft.com/typescript/announcing-typescript-4-0/
----
-
-## [6][How do you guys handle complex input arguments in tests?](https://www.reddit.com/r/typescript/comments/ie17q2/how_do_you_guys_handle_complex_input_arguments_in/)
-- url: https://www.reddit.com/r/typescript/comments/ie17q2/how_do_you_guys_handle_complex_input_arguments_in/
----
-I’ve been running typescript for a while now and I like the experience about 99% of the time. The last thing is handling complex input arguments in tests. Mocking classes are easy (with ts-mockito), but types are a different story.
-
-Say that I have a helper function that gets called from a dependency, in my case Apollo server. This receives an argument of type A. A includes a lot of mandatory fields, some of which are other complex types. Since A isn’t a class I can’t just instantiate a new one, which (as I understand it) forces me to type it out as an object of type A.
-
-Is there a better way or some shortcut?
-## [7][Getting Started with TypeScript : Set up and Intro](https://www.reddit.com/r/typescript/comments/idupum/getting_started_with_typescript_set_up_and_intro/)
-- url: https://blogs.rajankalwar.com.np/getting-started-with-typescript-set-up-and-intro-cke2ca7db00f7b8s1doa6817v
----
-
-## [8][Command line tool to organize your Typescript imports](https://www.reddit.com/r/typescript/comments/idqc9r/command_line_tool_to_organize_your_typescript/)
-- url: https://www.npmjs.com/package/import-conductor
----
-
-## [9][Deriving sub interface using utility type Omit and Pick . Some issues with refactoring and linting .](https://www.reddit.com/r/typescript/comments/idu0k5/deriving_sub_interface_using_utility_type_omit/)
-- url: https://www.reddit.com/r/typescript/comments/idu0k5/deriving_sub_interface_using_utility_type_omit/
----
-Here is one example :
-
-    interface mega {
-    	a : string,
-    	bb : number,
-    	c : boolean
-    }
-    
-    type mini1 = Pick&lt;mega,"a"|"bb"/*does give intellisense*/&gt;;
-    type mini2 = Omit&lt;mega,"a"/*does not give intellisense*/,"d"/*does not even exist and does not lint error*/&gt;;
-
-1)You get intellisense for the properties for Pick but not for Omit . Why ? 
-
-2)You refactor a to aa and it does not work in both Pick and Omit . Why ?
-
-3)Omit does not lint error if you omit properties that do not exist . Why ?
-## [10][Learning typescript](https://www.reddit.com/r/typescript/comments/id8ju3/learning_typescript/)
-- url: https://www.reddit.com/r/typescript/comments/id8ju3/learning_typescript/
----
-Hi,
-
-I want to learn typescript, not for a server-side or a client-side application but for writing standalone applications. I am not very familiar with javascript, I mainly write in Python. What topics should I learn before typescript? From my understanding, I need at least to learn the basics of node.js and javascript. Is there a good tutorial or course that covers all these topics? 
-
-Thanks!
-## [11][Does interface segregation principle has anything to do with preventing collisions of interfaces that are merged?](https://www.reddit.com/r/typescript/comments/ideebf/does_interface_segregation_principle_has_anything/)
-- url: https://www.reddit.com/r/typescript/comments/ideebf/does_interface_segregation_principle_has_anything/
----
-The question in the title .
-
-Sometimes I find my self having to create bigger interfaces by composing the smaller ones . The issue here is that the smaller ones get edited once in a while and nothing guarantees that they do not collide when they are merged .
-
-As far as I understand ISP has nothing to do with preventing collisions .
-
-Then how does someone prevents the collisions ? Unit testing ? 
-
-I did [a post](https://www.reddit.com/r/typescript/comments/hjif2w/checking_for_interface_collisions/) some time ago , similar to this one and got no real help .

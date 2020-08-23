@@ -111,182 +111,177 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/i1u8a4/whos_hiring_august_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][OkCupid Presents: Why we decided against GraphQL for local state management](https://www.reddit.com/r/reactjs/comments/idwx8o/okcupid_presents_why_we_decided_against_graphql/)
-- url: https://tech.okcupid.com/why-we-decided-against-graphql-for-local-state-management/
+## [3][A CLI tool that scans your project and splits the one big global CSS file into component level css files.](https://www.reddit.com/r/reactjs/comments/ievaw5/a_cli_tool_that_scans_your_project_and_splits_the/)
+- url: https://v.redd.it/o0eb1vgsvni51
 ---
 
-## [4][A web framework that uses React Hooks for declarative data persistence and reactivity](https://www.reddit.com/r/reactjs/comments/ieh2wk/a_web_framework_that_uses_react_hooks_for/)
-- url: https://www.reddit.com/r/reactjs/comments/ieh2wk/a_web_framework_that_uses_react_hooks_for/
----
-Redia is a web framework that uses React Hooks for declarative request/response handling. It exposes common hooks like `useState`, `useRef`, `useMemo`, `useCallback`, etc, and additionally has support for built-in server-related custom hooks like `useRouter` and `useStatic`.
-
-### Rationale
-
-The lot of web frameworks out in the wild have either poor ([Express](https://expressjs.com/)) or over-engineered ([NestJS](https://nestjs.com/)) architectures. Redia exhibits a low-level server API with high-level abstractions.
-
-[Here's the link](https://github.com/redia-server/redia). It is still experimental, so enjoy! :)
-## [5][Using Window.matchMedia() to do media queries in reactjs](https://www.reddit.com/r/reactjs/comments/ieibw8/using_windowmatchmedia_to_do_media_queries_in/)
+## [4][Using Window.matchMedia() to do media queries in reactjs](https://www.reddit.com/r/reactjs/comments/ieibw8/using_windowmatchmedia_to_do_media_queries_in/)
 - url: https://youtu.be/S7whj93SGsA
 ---
 
-## [6][I want to track how much time a student spend on each question, what would be the ideal way of handling it?](https://www.reddit.com/r/reactjs/comments/iegdqz/i_want_to_track_how_much_time_a_student_spend_on/)
-- url: https://www.reddit.com/r/reactjs/comments/iegdqz/i_want_to_track_how_much_time_a_student_spend_on/
+## [5][How do I server side render my already build react app](https://www.reddit.com/r/reactjs/comments/if2zy0/how_do_i_server_side_render_my_already_build/)
+- url: https://www.reddit.com/r/reactjs/comments/if2zy0/how_do_i_server_side_render_my_already_build/
 ---
-I recently got my first internship, thanks to this subreddit but in the first project I am working on.I need a system to count how much time student spend on each question in an exam in a hard to exploit manner.
+Please, I have an already built react app but I want to use server side rendering with it. How do I do it, I've seen a lot of tutorials online but none has satisfied my curiosity. Please, someone that can show me how to go about it and how to move my already running react app (created with create-react-app) to server side rendering
+## [6][Why does the component rerender?](https://www.reddit.com/r/reactjs/comments/if2z9o/why_does_the_component_rerender/)
+- url: https://www.reddit.com/r/reactjs/comments/if2z9o/why_does_the_component_rerender/
+---
+I was looking at this example: [https://codesandbox.io/s/batched-update-snippet1-4wuk8?file=/src/index.js](https://codesandbox.io/s/batched-update-snippet1-4wuk8?file=/src/index.js)
+
+When you click twice on 'Initial Item 1 - Initial Item 2 (without promise)', in the console you can see that the component rerendered twice. If you click any more times, it does not rerender. Why such behaviour? Why doesn't react rerender it as many times as you click?
+## [7][Just published my personal website developed with Next.JS and tailwindcss](https://www.reddit.com/r/reactjs/comments/ieo8a0/just_published_my_personal_website_developed_with/)
+- url: https://www.reddit.com/r/reactjs/comments/ieo8a0/just_published_my_personal_website_developed_with/
+---
+Hello everyone. Just published my personal website: [jose-donato.me](https://jose-donato.me)  
+
+
+It was developed with Next.js, tailwindcss and MDX. Deployed in Vercel.   
+
+
+Any suggestions/improvements? The biggest challenge was trying to make it appealing since my background is not web design.  
+
+
+Thanks and greetings.
+## [8][I made a new playground for people to experiment with the API blueprint spec using Next.js](https://www.reddit.com/r/reactjs/comments/if2svr/i_made_a_new_playground_for_people_to_experiment/)
+- url: https://www.reddit.com/r/reactjs/comments/if2svr/i_made_a_new_playground_for_people_to_experiment/
+---
+Hi All,
+
+I created [blueprintstack.io](https://blueprintstack.io) a couple of days ago for new people to experiment with the API blueprint spec ([https://apiblueprint.org/](https://apiblueprint.org/)).
+
+Features:
+
+1. No account required
+2. Multiple blueprint files
+3. Automatic preview updates (while typing)
+4. Blueprints saved locally
 
 &amp;#x200B;
 
-Pinging to back-end is not an option and I have to handle it on the front-end.
+The site was created using Next.js and the source is available here: [https://github.com/alexalikiotis/blueprintstack](https://github.com/alexalikiotis/blueprintstack)
 
-  
-PS:Also wanna check when user closes browser or minimize it or changes tab.
+Let me know if you've any feedback or questions, have a nice day!
+## [9][Use Polaris to rapidly build a ReactJs application](https://www.reddit.com/r/reactjs/comments/ieypsp/use_polaris_to_rapidly_build_a_reactjs_application/)
+- url: https://www.reddit.com/r/reactjs/comments/ieypsp/use_polaris_to_rapidly_build_a_reactjs_application/
+---
+There are a wide range of reactjs tutorials available online but not many of them are optimised for a bootstrapper wanting to hack together a product as soon as possible while not compromising too much on quality. This was the exact problem we faced while building our product.
+
+As many web developers will tell you, the core business logic is never the bottleneck. What consumes the most amount of time is styling the UI and polishing it to adhere to the UI/UX expectations of 2020 while also being responsive on devices of all shapes and sizes.
+
+So what if there was a library that takes care of all of these things and allows you to focus solely on your business logic? This is exactly what [Polaris](https://polaris.shopify.com/) does.  It is a library of react components built by Shopify and they use it for their own UI as well. 
+
+Using Polaris is as simple of piecing a bunch of lego blocks together to build something. Each of these lego blocks are react components which can be customised by simply changing the properties provided to that component. To use Polaris you would need to know the basic concepts of [reactjs](https://reactjs.org/).
+
+Once this is done, the app is automatically responsive on devices of all shapes and sizes. So what lego blocks do we need to build a web application? Lets go over all the lego blocks that worked really well for us.
 
 &amp;#x200B;
 
-Thank you :)
+## Building blocks of an application
+
+**Top bar**
+
+A great place to display your product logo on the left and account information on the right. You can customise this further with your own brand colour like we did instead of the default Polaris colour. 
+
+[How it works](https://polaris.shopify.com/components/structure/top-bar)
 
 &amp;#x200B;
 
+**Side navigation bar**
+
+Use this to display all your features/pages which the user can use to navigate your product. The component gives you a way to add your own icon to each of the navigation items. You can also choose from a whole range of existing icons that polaris already offers using the [Polaris icon explorer.](https://polaris-icons.shopify.com/)
+
+[How it works](https://polaris.shopify.com/components/navigation/navigation)
+
 &amp;#x200B;
-## [7][React Navbar Navigation | Implement Navigation in Navbar](https://www.reddit.com/r/reactjs/comments/iegnls/react_navbar_navigation_implement_navigation_in/)
-- url: https://youtu.be/XOxwwtnZS5U
+
+**Contextual save bar**
+
+Ever find yourself with a UX problem where you have a bunch of settings in a page that the user can configure, but there needs to be a way for the user to save their progress in between? 
+
+The dilemma here is that if you have a save button at the bottom, one would have to scroll till the bottom to discover the button and save and if the button is at the top one would have to scroll back up to save if they are at the bottom of the page.
+
+Contextual save bar solves this problem by turning the top bar into an interface where you can either save your progress or discard it. This is super neat because the top bar will always be visible no matter where you scroll.
+
+[How it works](https://polaris.shopify.com/components/forms/contextual-save-bar)
+
+&amp;#x200B;
+
+**Annotated section**
+
+Oftentimes when you use forms to collect information from a user, it is a challenge to educate them about what that form is for. You would either have to give this description before displaying the form or after.
+
+Annotated section solves this problem by giving you a super simple and elegant way to put the description on the left while displaying the form on the right.
+
+[How it works](https://polaris.shopify.com/components/structure/layout)
+
+&amp;#x200B;
+
+**Banner**
+
+Displaying banners are a great way to communicate to users about stuff like new features, outages, nudging them to subscribe to paid plans, etc. Polaris provides a wide range of banners which can be customised simply by changing certain properties of the component. 
+
+[How it works](https://polaris.shopify.com/components/feedback-indicators/banner)
+
+&amp;#x200B;
+
+**Card**
+
+Every interface needs a way to display a certain unit of information. This can be achieved using a card. You can also easily add headers and actionable buttons to the card with just a few tweaks in the properties. 
+
+[How it works](https://polaris.shopify.com/components/structure/card)
+
+&amp;#x200B;
+
+**Pages**
+
+The Page component serves as a container to hold all the other components, all the while providing a title, subtitle and some actionable items that can be taken on that page. 
+
+[How it works](https://polaris.shopify.com/components/structure/page)
+
+## 
+
+## Conclusion
+
+All the above components are the basic building blocks of an application, however Polaris offers a whole range of other components that are super handy in creating all kinds of flows. You can find all of them [here](https://polaris.shopify.com/components/get-started). 
+
+They also have a bunch of design guidelines around the usage of these components. One does not have to adhere to these guidelines but they definitely help because they are something that Shopify uses and it works great for them.
+
+## 
+
+## What is the catch?
+
+Polaris was primarily designed for solving various UI/UX problems that occur in the Shopify systems. This does not mean that they are not useful for things that are built outside of Shopify, it just means that there needs to be an overlap between the product you are trying to build and every use case that Shopify encounters.
+
+It is a great way to bootstrap a product at lightning speed, but the catch is that the components are not very customisable. They are meant to be picked up and used as is with tweaks made only to the properties passed as arguments to the component.
+
+You might find yourself in a tricky position if you have to implement a component with custom CSS alongside polaris components. But for the most part polaris has default components to cover most cases and there are workarounds for achieving custom CSS.
+
+An example of the work around is that we wanted to change the default colour of a Polaris primary button to our own brand colour and we did this by overriding that particular css property globally and changing the colour with a  **!important** at the end.
+
+## 
+
+## Closing note
+
+For someone that is just getting started with reactjs, using a library like this is a great way to focus on core business logic while at the same time learning the concepts of react without spending time on styling your components. 
+
+[Link to original blog post](https://www.sankalpjonna.com/posts/use-polaris-to-rapidly-build-a-reactjs-application)
+## [10][React learning guidance](https://www.reddit.com/r/reactjs/comments/if01s6/react_learning_guidance/)
+- url: https://www.reddit.com/r/reactjs/comments/if01s6/react_learning_guidance/
 ---
+I've been learning react from the past 3-4 months, did a course from Udemy understood many aspects but don't feel confident about it yet.
 
-## [8][Correct code split into components](https://www.reddit.com/r/reactjs/comments/iee2pc/correct_code_split_into_components/)
-- url: https://www.reddit.com/r/reactjs/comments/iee2pc/correct_code_split_into_components/
+I don't know what to do next, should i read a book or do another course or do a project , even if i want to do a project , how should i approach it ? Help me out.
+## [11][All my React apps don't show up on Google](https://www.reddit.com/r/reactjs/comments/if2cja/all_my_react_apps_dont_show_up_on_google/)
+- url: https://www.reddit.com/r/reactjs/comments/if2cja/all_my_react_apps_dont_show_up_on_google/
 ---
-im starting with react and im curious whether this is correct code split into components, or maybe i overdid it a little? example of couple chained components:
+Hi, I'm a newbie front-end dev &amp; I've made some couples of React apps but they don't show up on google just like my HTML &amp; CSS websites.
 
-    const Navigation = ({ children }) =&gt; {
-    
-        const [sideMenuOn, toggleSideMenu] = useState(false);
-    
-        const handleSideMenuToggle = () =&gt; toggleSideMenu(!sideMenuOn);
-    
-        return(
-            &lt;&gt;
-                &lt;NavBar 
-                    toggleSideMenu={ handleSideMenuToggle }
-                    children={ children }
-                /&gt;
-                &lt;SideMenu
-                    toggleSideMenu={ handleSideMenuToggle }
-                    sideMenuOn={ sideMenuOn }
-                /&gt;
-            &lt;/&gt;
-        )
-    }
-    
-    
-    const SideMenu = ({ sideMenuOn, toggleSideMenu }) =&gt; {
-    
-        const width = sideMenuOn ? '25%' : '0%';
-        const backgroundStyle = sideMenuOn 
-            ? ({
-                opacity: '1',
-                zIndex: '10'
-            }) : ({
-                opacity: '0',
-                zIndex: '-1'
-            })
-    
-        return(
-            &lt;&gt;
-                &lt;div className="side-menu" style={{ width }}&gt;
-                    &lt;SideMenuContent toggleSideMenu={ toggleSideMenu }/&gt;
-                &lt;/div&gt;
-                &lt;div className="side-background" style={ backgroundStyle } onClick={ toggleSideMenu }&gt;&lt;/div&gt;
-            &lt;/&gt;
-        )
-    }
-    
-    
-    const SideMenuContent = ({ toggleSideMenu }) =&gt; {
-    
-        const [loggedIn, toggleLoggedIn] = useState(false);
-    
-        const handleLoggedInToggle = () =&gt; {
-            toggleLoggedIn(!loggedIn);
-        }
-    
-        const content = loggedIn 
-            ? &lt;UserContent 
-                toggleSideMenu={ toggleSideMenu } 
-                toggleLoggedIn={ handleLoggedInToggle } /&gt; 
-            : &lt;GuestContent 
-                toggleSideMenu={ toggleSideMenu } 
-                toggleLoggedIn={ handleLoggedInToggle } 
-            /&gt;;
-    
-        return content;
-    }
-
-and then there are 3 parts of the side menu showing different content for logged in user / guest user logging in / signing up which all have the same template but rendering different content like 'welcome back' vs 'log in in header title' etc:
-
-    const UserContent  = ({ toggleSideMenu, toggleLoggedIn }) =&gt; {
-        return (
-            &lt;&gt;
-                &lt;header&gt;
-                    &lt;div className="title"&gt;
-                        &lt;h2&gt;
-                            Welcome back
-                        &lt;/h2&gt;
-                        &lt;i className="fas fa-times" onClick={toggleSideMenu}&gt;&lt;/i&gt;
-                    &lt;/div&gt;  
-                    &lt;div className="user"&gt;
-                        &lt;img src="https://www.jamf.com/jamf-nation/img/default-avatars/generic-user-purple.png" alt=""/&gt;
-                        &lt;div className="text-holder"&gt;
-                            &lt;p&gt;logedinusern@gmail.com&lt;/p&gt;
-                            &lt;p&gt;free verzia&lt;/p&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt; 
-                &lt;/header&gt;
-                &lt;main&gt;
-                    &lt;ul&gt;
-                        &lt;li&gt;home&lt;/li&gt;
-                        &lt;li&gt;add city&lt;/li&gt;
-                        &lt;li onClick={ toggleLoggedIn }&gt;log out&lt;/li&gt;
-                    &lt;/ul&gt;
-                &lt;/main&gt;
-                &lt;footer&gt;
-                        &lt;p&gt;Copyright © 2020 Bmby&lt;/p&gt;
-                &lt;/footer&gt;
-            &lt;/&gt;
-        )
-    }
-
-which could be mybe split into another couple components like header/body/footer to avoid jsx repetition?
-## [9][Deploy and Secure a React — Flask App with Docker and Nginx](https://www.reddit.com/r/reactjs/comments/ieggis/deploy_and_secure_a_react_flask_app_with_docker/)
-- url: https://medium.com/swlh/deploy-and-secure-a-react-flask-app-with-docker-and-nginx-768ca582863b
+Please what are some guides | tips to make my apps show up on google?
+## [12][Need Guidance for a React JS Developer Role Interview](https://www.reddit.com/r/reactjs/comments/ieyeqh/need_guidance_for_a_react_js_developer_role/)
+- url: https://www.reddit.com/r/reactjs/comments/ieyeqh/need_guidance_for_a_react_js_developer_role/
 ---
+Hi all,
 
-## [10][React Colorful v2.0.3 – a lightweight color picker component. Modular, customizable, well-tested, supports a variety of color inputs.](https://www.reddit.com/r/reactjs/comments/idt9w2/react_colorful_v203_a_lightweight_color_picker/)
-- url: https://github.com/omgovich/react-colorful
----
+I have my first ever React JS developer role(Entry Level) interview incoming so I needed guidance on what topics should I focus on and what all questions I may face in the interview. Kindly advise.
 
-## [11][Anyone here use restful URLS instead of storing values in redux (for deep linking, and not using redux for small things)?](https://www.reddit.com/r/reactjs/comments/iecfe3/anyone_here_use_restful_urls_instead_of_storing/)
-- url: https://www.reddit.com/r/reactjs/comments/iecfe3/anyone_here_use_restful_urls_instead_of_storing/
----
-I am curious if the pattern of using restful urls is something react devs are using. I am weighing the pro'/cons.... what is your experience.  
-
-
-For example. In a normal single page app, we can "edit a product".  
-
-
-    url: mywebsite/products
-==&gt; Store in redux the current selected product, its id.
-==&gt; Editing? Set "edit" mode in redux or react-router
-    or
-
-    url: mywebsite/products/444
-url: mywebsite.com/products/444/edit
-
-The pros of "restful urls" is that I can deeplink, if I refresh, I can resaturate based on the id &amp; mode in url. The cons, I feel is that I am passing around these values "444" "edit" in my link components and such...and then I have get them, pass them..  
-
-
-So, I am not sure if I am getting readability at the expense of over complicating the code.  
-What is your experience? What have you used and any shortcuts, librariees that help this out?
-## [12][In-depth 14 hour Fullstack React/GraphQL/TypeScript Tutorial](https://www.reddit.com/r/reactjs/comments/idb8lr/indepth_14_hour_fullstack_reactgraphqltypescript/)
-- url: https://www.youtube.com/watch?v=I6ypD7qv3Z8
----
-
+Thanks and Take care.

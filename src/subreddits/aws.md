@@ -1,5 +1,134 @@
 # aws
-## [1][How to organize infrastructure responsibilities if we build Micro-services with AWS CDK](https://www.reddit.com/r/aws/comments/ieece7/how_to_organize_infrastructure_responsibilities/)
+## [1][CS graduate - concerned about unexpected charges](https://www.reddit.com/r/aws/comments/iezimy/cs_graduate_concerned_about_unexpected_charges/)
+- url: https://www.reddit.com/r/aws/comments/iezimy/cs_graduate_concerned_about_unexpected_charges/
+---
+I want to start using AWS for my projects as a lot of employers in my area are looking for AWS experience.
+
+My concern is that it appears I would be liable for any server costs if someone were to do something like point a botnet at one of my sites. Even if I set up the usage alert, couldn't they rack up tens of thousands of dollars in debt before I could even get to a computer to shutdown my service?
+
+Is everyone just okay with that level of exposure or is there something I'm missing?
+## [2][Is it dangerous to publicly display the names of S3 buckets?](https://www.reddit.com/r/aws/comments/ieyxi8/is_it_dangerous_to_publicly_display_the_names_of/)
+- url: https://www.reddit.com/r/aws/comments/ieyxi8/is_it_dangerous_to_publicly_display_the_names_of/
+---
+If I do a screen recording or post in youtube a video that shows my S3 bucket list, is it dangerous in anyway? Do I need to blur or cover the names of my buckets? I have buckets which work as html sites that say "objects can be public".
+## [3][Building an AWS flowchart.. what do you use?](https://www.reddit.com/r/aws/comments/if1xdr/building_an_aws_flowchart_what_do_you_use/)
+- url: https://www.reddit.com/r/aws/comments/if1xdr/building_an_aws_flowchart_what_do_you_use/
+---
+So I'm just starting my journey into the cloud realm and I'm wondering what software or website do you experienced folks use to generate the service flowcharts using the actual AWS symbology?
+## [4][Tiny CLI to save AWS costs in development environments when you're sleep](https://www.reddit.com/r/aws/comments/iell1j/tiny_cli_to_save_aws_costs_in_development/)
+- url: https://news.ycombinator.com/item?id=24245166
+---
+
+## [5][Aws Amplify Github Continous Deployment Issues - React App - Looking for Advice](https://www.reddit.com/r/aws/comments/iewpdq/aws_amplify_github_continous_deployment_issues/)
+- url: https://www.reddit.com/r/aws/comments/iewpdq/aws_amplify_github_continous_deployment_issues/
+---
+I'm having issues with deploying my SPA through AWS Amplify. I have tried deploying through Github hooks? &amp; S3 and Cloudfront.
+
+My issue stems from
+1. code not being updated on a push to my Github master
+2. code not being updated when using S3 &amp; Cloudfront w/ ```amplify publish```
+
+I understand that I'm just looking to use an S3 bucket with a Cloudfront distribution so I'm looking for advice on how your continuous deployment pipeline is setup with a react app / SPA.
+
+Any tips and or pointers on a flawless setup would be great. I can't have these issues on a production site.
+
+#### side note
+- I have 0 of these issues when using the elastic beanstalk CLI with my node/express back-end, deployment is flawless.
+## [6][Better way to use AWS CLI with multiple accounts](https://www.reddit.com/r/aws/comments/ies847/better_way_to_use_aws_cli_with_multiple_accounts/)
+- url: https://www.reddit.com/r/aws/comments/ies847/better_way_to_use_aws_cli_with_multiple_accounts/
+---
+I'm not sure if the way I'm handling profiles and credentials for AWS CLI tool set makes sense.
+
+I have to occasionally run AWS CLI across one hundred accounts.
+
+I have all one hundred  accounts under profile in ./aws/credentials like so (the account names really are $org1, $org2, and so on to 100).
+
+`[default]`
+
+`aws_access_key_id = redacted`
+
+`aws_secret_access_key = redacted`
+
+`[org1]`
+
+`role_arn = arn:aws:iam::account1:role/redacted`
+
+`source_profile = default`
+
+`[org2]`
+
+`role_arn = arn:aws:iam::account2:role/redacted`
+
+`source_profile = default`
+
+&amp;#x200B;
+
+Use case: 'need a list of all bucket names for all accounts'. In pseudo shell
+
+`$ aws s3 ls --profile $name`
+
+Where $name is incremented from 1 to 100 in a scipt.  This works.
+
+But i have to think there is a better way than maintaining a 303-line credentials file.
+
+Your thoughts?
+## [7][Using multiple authorization types with AWS AppSync GraphQL APIs](https://www.reddit.com/r/aws/comments/iey2an/using_multiple_authorization_types_with_aws/)
+- url: https://www.reddit.com/r/aws/comments/iey2an/using_multiple_authorization_types_with_aws/
+---
+**What AWS Services am I utilizing?**
+
+- Cognito
+- Appsync GraphQL api
+- Amplify CLI (4.27.3)
+
+
+[This blog post][1] shows how to set multiple authorisation types to models and fields in graphql transform.
+
+Lets say I have an `@model Blog`
+
+```
+    type Blog @model {
+       id: ID!
+       adminUserId: String
+       name: String!
+       posts: [Post] @connection(keyName: "byBlog", fields: ["id"])
+    }
+```
+
+Using this shcema will autogenerate the following mutations/queries;
+`createBlog`
+`updateBlog`
+`deleteBlog`
+`getBlog`
+`listBlogs`
+
+
+I want `createBlog`, `updateBlog` and `deleteBlog` to have authorisation type `@aws_iam`.
+I want `getBlog` and `listBlogs` to have my default authorisation type `@aws_cognito_user_pools`
+
+
+How can I define this in my `schema.graphql`?
+I can not set the authorisation type directly on the mutations/queries as they are not defined in my `schema.graphql` file.
+
+I am able to set the auth types directly in the complete schema that is generated in the cloud (`AWS AppSync &gt; API Name &gt; Schema` ) because here all the queries/mutations are all defined. But this schema will be re-written every time I run `amplify push`.
+
+There must be a better way?
+
+  [1]: https://aws.amazon.com/blogs/mobile/using-multiple-authorization-types-with-aws-appsync-graphql-apis/
+## [8][Elastic Beanstalk + SSL woes](https://www.reddit.com/r/aws/comments/ieroxf/elastic_beanstalk_ssl_woes/)
+- url: https://www.reddit.com/r/aws/comments/ieroxf/elastic_beanstalk_ssl_woes/
+---
+I am trying to get my node project up and running with SSL(from lets encrypt) on a single instance EB, but I can't seem to configure this properly.
+
+I have tried [Amazon's way](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/https-singleinstance-nodejs.html) by dumping the contents of the certs and keys into a file in .ebextensions. This way doesn't throw any errors when deploying. But refuses to connect when accessing on HTTPS.  
+Googling told me this was a issue with DNS-- Needing to configure my domain with a CNAME record rather an A record . Which is how I had this setup from the beginning, But that advice was for EB with a load balancer, So I figured perhaps with a single instance the its configured the other way around, So I've switched it an  A record, still refuses to connect(haven't changed back to a CNAME though).  
+I have port 443 open.  
+
+
+I have tried the other [widely recommended way](https://www.tutcodex.com/ssl-on-single-instance-elastic-beanstalk-tutorial/)(link for example, I've looked at &amp; tried dozens of variations on it), which leads to errors after errors while deploying. 
+
+This is the second full(12+ hours) day I have wasted trying to get this to work. I know enough sysadmin stuff to get by, but my wheelhouse is development, and I'd really like to get back to that. If someone can offer some advice on how to fix the "connection refused" problem I would very much appreciate it. Alternatively if you have a tutorial going about this another way, and you're sure it will work, I'll be happy to have that too.
+## [9][How to organize infrastructure responsibilities if we build Micro-services with AWS CDK](https://www.reddit.com/r/aws/comments/ieece7/how_to_organize_infrastructure_responsibilities/)
 - url: https://www.reddit.com/r/aws/comments/ieece7/how_to_organize_infrastructure_responsibilities/
 ---
 I really like AWS CDK very much because it allows us to organize/align our team purely into a developer first way, i.e., each repo (say \`billing-service\`, or \`checking-out-service\`) directly corresponds to a vertical function team -- the repo contains the node.js service code and also contains the infrastructure setup code (i.e, how to setup Beanstalk cluster).
@@ -16,138 +145,7 @@ My question here are the following two:
 2. If we need to update the shared infrastructure code (vpc-and-ecs), say we want to change the VPC CIDR or change the subnets, it probably will have inevitable effect towards the  \`billing-service\` and  \`checking-out-service\` repo, how can we manage the repos change dependency and cross team communication?
 
 Anyone thought of how to work with CDK in a large cross team?
-## [2][Is there any eBook / website with sample aws architecture diagrams? Something similar to the aws this is my architectur series?](https://www.reddit.com/r/aws/comments/iehi9b/is_there_any_ebook_website_with_sample_aws/)
+## [10][Is there any eBook / website with sample aws architecture diagrams? Something similar to the aws this is my architectur series?](https://www.reddit.com/r/aws/comments/iehi9b/is_there_any_ebook_website_with_sample_aws/)
 - url: https://www.reddit.com/r/aws/comments/iehi9b/is_there_any_ebook_website_with_sample_aws/
 ---
 
-## [3][Good blog about SNS-SQS Fanout using message filtering + CloudFormation](https://www.reddit.com/r/aws/comments/ie65d5/good_blog_about_snssqs_fanout_using_message/)
-- url: https://www.reddit.com/r/aws/comments/ie65d5/good_blog_about_snssqs_fanout_using_message/
----
-Just saw this recently published blog about SNS-SQS filtering and using message attributes to filter. Especially the CloudFormation part was very useful for me.  
-
-
-[https://medium.com/better-programming/how-to-fan-out-to-different-sqs-queues-using-sns-message-filtering-84cd23ed9d07](https://medium.com/better-programming/how-to-fan-out-to-different-sqs-queues-using-sns-message-filtering-84cd23ed9d07)
-## [4][Auto provision IAM roles and permissions with AWS Control Tower](https://www.reddit.com/r/aws/comments/ie7ahp/auto_provision_iam_roles_and_permissions_with_aws/)
-- url: https://www.reddit.com/r/aws/comments/ie7ahp/auto_provision_iam_roles_and_permissions_with_aws/
----
-We've been using AWS Control Tower for about 6 months now to help us quickly provision accounts for various business units and its worked well for the most part. However, I have yet to find any straightforward approaches for adding customizations to the accounts during the creation process - specifically when trying to automate the addition of custom IAM roles upon account creation.
-
-This is frustrating because we manage our AWS environments with Terraform, which is a great tool, but in order to start using Terraform with an AWS account we have to manually go into each account and create the IAM role Terraform will assume when it's interacting with the account.
-
-Looking for a recommended process for automating account customizations with AWS Control Tower - specifically the ability to have a custom IAM role added to the account upon creation.
-
-Any advice or links to documentation is appreciated.
-
-Thanks,
-## [5][Any ETA on Aurora PostgreSQL 12?](https://www.reddit.com/r/aws/comments/ie67ho/any_eta_on_aurora_postgresql_12/)
-- url: https://www.reddit.com/r/aws/comments/ie67ho/any_eta_on_aurora_postgresql_12/
----
-Just like for 11, the wait is excruciating...
-## [6][Autoscalling IIS webser (AWS)](https://www.reddit.com/r/aws/comments/ieg1pf/autoscalling_iis_webser_aws/)
-- url: https://www.reddit.com/r/aws/comments/ieg1pf/autoscalling_iis_webser_aws/
----
-hello,
-
-I create a basic webpage in IIS webserver and link it with private IP, after that created an AMI and link it with Autoscaling.
-
-&amp;#x200B;
-
-https://preview.redd.it/rfdwr2ml4ji51.png?width=527&amp;format=png&amp;auto=webp&amp;s=2a723350a91a46531cd31eacf396fa2cd2805438
-
-Autoscaling creating specified instance but with different private IPs, so how would I access my IIS webpage with different IP, to access my webpages i have to access those machines and change their IP address. 
-
-if I need 100 system, I can't log in and changed their assigned IP address for 100, is there any easy way to do it?
-## [7][Secure API Gateway for React in Amplify](https://www.reddit.com/r/aws/comments/iedgkx/secure_api_gateway_for_react_in_amplify/)
-- url: https://www.reddit.com/r/aws/comments/iedgkx/secure_api_gateway_for_react_in_amplify/
----
-I'm creating a react application in Amplify. The react will query API Gateway. Eventually, this react application will be hosted in S3 + CloudFront for the public to use. 
-
-I was wondering if it's secure if I create an API key for API Gateway and I use this API key to authenticate my application when calling the API. My concern is that react is essentially a front-end and my API key will be exposed. 
-
-Is this an appropriate way to authenticate or is it insecure if so, what better way can I use to authenticate the react to the API?  
-
-PS: Cognito is unable to do the job as my website can be used by anyone without any form of authentication.
-## [8][Speed up data sync from S3 to ec2](https://www.reddit.com/r/aws/comments/idwio0/speed_up_data_sync_from_s3_to_ec2/)
-- url: https://www.reddit.com/r/aws/comments/idwio0/speed_up_data_sync_from_s3_to_ec2/
----
-Im looking for advice, I have a compute job that runs on an EC2 once a month.  I've optimized the job so that it runs within an hour, however the biggest bottleneck to date is syncing thousands of csv files to the machine before the job starts.  
-
-If it helps the files are collected every minute from hundreds of weather stations, what are the options?
-## [9][Upcoming AWS Livestream on Twitch: AWS Resource Tagging. Monday, August 24 – 11:00 am PST – https://www.twitch.tv/aws](https://www.reddit.com/r/aws/comments/ie3gdi/upcoming_aws_livestream_on_twitch_aws_resource/)
-- url: https://i.redd.it/rsh4vj50qei51.jpg
----
-
-## [10][AWS Amplify + Redux Saga: Proper way to create an Auth Listener? Event Channel + Hub?](https://www.reddit.com/r/aws/comments/ieatuj/aws_amplify_redux_saga_proper_way_to_create_an/)
-- url: https://www.reddit.com/r/aws/comments/ieatuj/aws_amplify_redux_saga_proper_way_to_create_an/
----
-**What I'm Implementing:**
-
-I'm trying to implement an auth listener for my Redux Saga + AWS Amplify application. I'm using a [Redux Saga Event Channel](https://redux-saga.js.org/docs/advanced/Channels.html) and [AWS Amplify Hub (Auth listener)](https://docs.amplify.aws/lib/utilities/hub/q/platform/js)
-
-&amp;#x200B;
-
-**My Issues:**
-
-1.  I'm having an issue where an event is being emitted on \`configured\` and \`signOut\`, but it won't emit an event for \`signIn\`.
-2.  My second issue is with when I refresh the page. I'm using Redux Persist to persist the state (Cognito User object) when refreshed, but how can I verify that the user is currently logged in. Is there an event for that?
-
-&amp;#x200B;
-
-**Root Saga:**
-
-    // Root Saga
-    export default function* rootSaga() {
-      // AWS Auth Channel
-      yield fork(awsAuthChannelSaga);
-    
-      yield all([
-        // Sagas: Auth
-        fork(watchLoginSaga),
-        fork(watchLogoutSaga),
-        fork(watchResetPasswordSaga),
-        fork(watchSendVerificationCodeSaga),
-      ]);
-    };
-
-&amp;#x200B;
-
-**Saga:**
-
-    // Redux Saga: AWS Auth Channel
-    export function* awsAuthChannelSaga() {
-      try {
-        // Channel
-        const channel = eventChannel((emit: any) =&gt; {
-          // Emitter
-          const emitter = (event: any) =&gt; emit(event);
-    
-          // AWS: Auth Listener
-          Hub.listen('auth', emitter);
-    
-          // AWS: Remove Auth Listener
-          return () =&gt; Hub.remove('auth', emitter);
-        });
-    
-    
-        yield takeEvery(channel, function*(event: any) {
-    
-          // Event: Configured
-          if (event.payload.event === 'configured') {
-            console.log('AWS: Auth configured');
-          }
-          // Event: Sign In (NOT WORKING)
-          else if (event.payload.event === 'signIn') {
-            // Redux: Login Success
-            yield put(loginSuccess());
-          }
-          // Event: Sign Out
-          else if (event.payload.event === 'signOut') {
-            // Redux: Logout Success
-            yield put(logoutSuccess());
-          }
-        });
-      }
-      catch (error) {
-        console.log(error);
-      }
-    };

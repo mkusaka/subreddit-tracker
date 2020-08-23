@@ -56,7 +56,23 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][HackerRank's 30 days of code is utter trash](https://www.reddit.com/r/cpp/comments/ieeoe5/hackerranks_30_days_of_code_is_utter_trash/)
+## [2][Treat 'informational' warnings separately](https://www.reddit.com/r/cpp/comments/if2kf9/treat_informational_warnings_separately/)
+- url: https://www.reddit.com/r/cpp/comments/if2kf9/treat_informational_warnings_separately/
+---
+Currently in the business of enabling all possible compiler warnings.
+
+Observation: The following *information* now pops up as 'warnings' (MSVC with /Wall)
+
+* Inlining of functions
+* Removal of unused functions
+* implicit delete of copy/move constructor
+
+**The obvious best practice would be to treat and show these 'informational' warnings somehow separated** from the 'real' warnings. In Visual Studio there could just be a third 'tab' called 'Information' next to 'Errors' and 'Warnings'. IMHO any build environment should feature these three categories.
+
+What's a recommended way of treating this?
+
+Are there other ways to show/extract that kind of information without having to treat it as warnings? I'm sure there is more info available about what the compiler does, e.g. with respect to optimization, constexpr, etc.
+## [3][HackerRank's 30 days of code is utter trash](https://www.reddit.com/r/cpp/comments/ieeoe5/hackerranks_30_days_of_code_is_utter_trash/)
 - url: https://www.reddit.com/r/cpp/comments/ieeoe5/hackerranks_30_days_of_code_is_utter_trash/
 ---
 I don't know if I'm the only one who thinks of hackerrank like this but.....
@@ -64,7 +80,9 @@ I don't know if I'm the only one who thinks of hackerrank like this but.....
 1. They always try to implement C syntax and not C++
 2. The problems aren't explained properly
 3. Hackerrank's 30 days of code is aimed at beginners with no programming experience, some the problems aren't beginner friendly at all.
-## [3][Is growing a buffer of non-POD types using realloc legal?](https://www.reddit.com/r/cpp/comments/ie4en4/is_growing_a_buffer_of_nonpod_types_using_realloc/)
+
+Edit: Had a great time reading through your comments! I recently joined my school's competitive programming club. Any resources you can suggest will be highly appreciated! :"&gt;
+## [4][Is growing a buffer of non-POD types using realloc legal?](https://www.reddit.com/r/cpp/comments/ie4en4/is_growing_a_buffer_of_nonpod_types_using_realloc/)
 - url: https://www.reddit.com/r/cpp/comments/ie4en4/is_growing_a_buffer_of_nonpod_types_using_realloc/
 ---
 Hi,
@@ -74,18 +92,22 @@ As you may know, using `realloc` to grow a buffer is significantly faster than t
 I know the usual issues (and the motivation behind trivially_relocatable); types may keep a reference to themselves or otherwise break if their `this` pointer changes without warning. However, while that's a concern for things like `std::vector`, I could just make sure my own types don't get confused if they're suddenly relocated.
 
 Therefore, I'm mostly asking from a language's perspective; if I know my type doesn't depend on its address in any way, is using `realloc` legal? Why or why not?
-## [4][Incremental Type Migration Using Type Algebra](https://www.reddit.com/r/cpp/comments/ie7bg3/incremental_type_migration_using_type_algebra/)
+## [5][Incremental Type Migration Using Type Algebra](https://www.reddit.com/r/cpp/comments/ie7bg3/incremental_type_migration_using_type_algebra/)
 - url: https://research.google/pubs/pub49386/
 ---
 
-## [5][Here I Stand, Free - Allocators and an Inclusive STL](https://www.reddit.com/r/cpp/comments/idtnn7/here_i_stand_free_allocators_and_an_inclusive_stl/)
+## [6][Here I Stand, Free - Allocators and an Inclusive STL](https://www.reddit.com/r/cpp/comments/idtnn7/here_i_stand_free_allocators_and_an_inclusive_stl/)
 - url: https://thephd.github.io/freestanding-noexcept-allocators-vector-memory-hole
 ---
 
-## [6][C++ tree library with only functions and lambdas!](https://www.reddit.com/r/cpp/comments/ie2oca/c_tree_library_with_only_functions_and_lambdas/)
+## [7][C++ tree library with only functions and lambdas!](https://www.reddit.com/r/cpp/comments/ie2oca/c_tree_library_with_only_functions_and_lambdas/)
 - url: https://www.reddit.com/r/cpp/comments/ie2oca/c_tree_library_with_only_functions_and_lambdas/
 ---
 Don't ask me why
+
+EDIT: Some people wanted more than two children so now I have a list closure as well as a tree closure to support multiple children, look at the SECOND IMPLEMENTATION
+
+INITIAL IMPLEMENTATION (BINARY TREE)
 
     #include &lt;iostream&gt;
     #include &lt;string&gt;
@@ -172,33 +194,191 @@ Don't ask me why
         deallocate&lt;int&gt;(t);
         return 0;
     }
+
+SECOND IMPLEMENTATION (LIST CLOSURE + TREE WITH MULTIPLE CHILDREN)
+
+List closure:
+
+    /*    LIST CLOSURE START */
+    template&lt;typename T&gt;
+    using list_t=function&lt;void*(function&lt;void*(T*,void*, int*)&gt;)&gt;;
+    template&lt;typename T&gt;
+    using List=list_t&lt;T&gt;*;
     
+    template&lt;typename T&gt;
+    int ListLen(List&lt;T&gt; list);
     
-## [7][Cautionary Advice For Process-Thread Affinity Users-Developers](https://www.reddit.com/r/cpp/comments/ie2jbi/cautionary_advice_for_processthread_affinity/)
-- url: https://www.reddit.com/r/cpp/comments/ie2jbi/cautionary_advice_for_processthread_affinity/
----
-*{ TLDR;*   
-After thorough tests with numerous libraries and self-written extensions I can confirm that Microsoft Windows Home and Pro (can’t comment on workstation) deliberately limit your ability to select cores and thread affinity. Home being a shocking offender at limiting to 64 units regardless of your programmed requirements or cpu capabilities, pro with some process juggling can get to 128.   
-This is a big issue with newer processors, in my opinion. 
+    template&lt;typename T&gt;
+    list_t&lt;T&gt; make_list(T head, List&lt;T&gt; tail) {
+        T* v = new T(std::move(head));
+        int* len = new int(ListLen&lt;T&gt;(tail) + 1);
+        return [=](function&lt;void*(T*,void*, int*)&gt; f) {
+            return f(v, (void*)tail, len);
+        };
+    }
+    
+    template&lt;typename T&gt;
+    List&lt;T&gt; MakeList(T head, List&lt;T&gt; tail) {
+        return new auto(make_list&lt;T&gt;(head, tail));
+    }
+    
+    template&lt;typename T&gt;
+    List&lt;T&gt; MakeEmptyList() {
+        return (List&lt;T&gt;)nullptr;
+    }
+    
+    template&lt;typename T&gt;
+    List&lt;T&gt; MakeList(T head) {
+        return new auto(make_list&lt;T&gt;(head, nullptr));
+    }
+    
+    template&lt;typename T&gt;
+    int ListLen(List&lt;T&gt; list) {
+        if (nullptr == list) return 0;
+        return *(int*)(*list)([=](T* head, void* tail, int* len) { return (void*)len; });
+    }
+    
+    template&lt;typename T&gt;
+    int* ListLenPointer(List&lt;T&gt; list) {
+        if (nullptr == list) return 0;
+        return (int*)(*list)([=](T* head, void* tail, int* len) { return (void*)len; });
+    }
+    
+    template&lt;typename T&gt;
+    T ListHead(List&lt;T&gt; list) {
+        return *(T*)(*list)([](T* head, void* tail, int* len){ return (void*)head; });
+    }
+    
+    template&lt;typename T&gt;
+    T* ListHeadPointer(List&lt;T&gt; list) {
+        return (T*)(*list)([](T* head, void* tail, int* len){ return (void*)head; });
+    }
+    
+    template&lt;typename T&gt;
+    List&lt;T&gt; ListTail(List&lt;T&gt; list) {
+        return (List&lt;T&gt;)(*list)([](T* head, void* tail, int* len){ return tail; });
+    }
+    
+    template&lt;typename T&gt;
+    bool empty(List&lt;T&gt; list) {
+        return (list == nullptr);
+    }
+    
+    template&lt;typename T&gt;
+    List&lt;T&gt; concat(List&lt;T&gt; list1, List&lt;T&gt; list2) {
+        if (empty(list1)) return list2;
+        return MakeList(ListHead(list1), concat(ListTail(list1), list2));
+    }
+    
+    template&lt;typename T&gt;
+    void deallocate(List&lt;T&gt; list) {
+        if (nullptr == list) return;
+        deallocate(ListTail(list));
+        delete ListHeadPointer(list);
+        delete ListLenPointer(list);
+        delete list;
+    }
+    /*    LIST CLOSURE END */
 
-Needs to be brought into common knowledge, if it isn’t already, as I was not aware of such practices. *TLDR; }* 
+And now, the tree with no bound on the number of children:
 
-As all common multi-threaded base libraries have limited, to no, control of affinity on windows I decided to extend a few to bring my code in line with the linux and bsd versions I have.
+    /*    TREE CLOSURE START */
+    template&lt;typename T&gt;
+    using tree_t=function&lt;void*(function&lt;void*(T*,List&lt;void*&gt;)&gt;)&gt;;
+    template&lt;typename T&gt;
+    using Tree=tree_t&lt;T&gt;*;
+    
+    template&lt;typename T&gt;
+    tree_t&lt;T&gt; make_tree(T val, List&lt;Tree&lt;T&gt;&gt; tail) {
+        T* v = new T(std::move(val));
+        return [=](function&lt;void*(T*,List&lt;void*&gt;)&gt; f) {
+            return f(v, (List&lt;void*&gt;)tail);
+        };
+    }
+    
+    template&lt;typename T&gt;
+    Tree&lt;T&gt; MakeTree(T val, List&lt;Tree&lt;T&gt;&gt; children) {
+        return new auto(make_tree(val, children));
+    }
+    
+    template&lt;typename T&gt;
+    Tree&lt;T&gt; Leaf(T val) {
+        return MakeTree&lt;T&gt;(val, nullptr);
+    }
+    
+    template&lt;typename T&gt;
+    T TreeVal(Tree&lt;T&gt; tree) {
+        return *(T*)((*tree)([](T* val, List&lt;void*&gt; children) { return val; }));
+    }
+    
+    template&lt;typename T&gt;
+    T* TreeValPointer(Tree&lt;T&gt; tree) {
+        return (T*)((*tree)([](T* val, List&lt;void*&gt; children) { return val; }));
+    }
+    
+    template&lt;typename T&gt;
+    List&lt;Tree&lt;T&gt;&gt; TreeChildren(Tree&lt;T&gt; tree) {
+        return (List&lt;Tree&lt;T&gt;&gt;)((*tree)([](T* val, List&lt;void*&gt; children) { return children; }));
+    }
+    
+    template&lt;typename T&gt;
+    void deallocate(Tree&lt;T&gt; tree);
+    
+    template&lt;typename T&gt;
+    void deallocate_children(List&lt;Tree&lt;T&gt;&gt; children) {
+        if (nullptr == children) return;
+        deallocate(ListHead(children));
+        deallocate_children(ListTail(children));
+    }
+    
+    template&lt;typename T&gt;
+    void deallocate(Tree&lt;T&gt; tree) {
+        if (nullptr == tree) return;
+        deallocate_children(TreeChildren(tree));
+        deallocate(TreeChildren(tree));
+        delete TreeValPointer(tree);
+        delete tree;
+    }
+    
+    // BFS basically
+    template&lt;typename T&gt;
+    void print_levels(List&lt;Tree&lt;T&gt;&gt; this_level, List&lt;Tree&lt;T&gt;&gt; next_level) {
+        if (ListLen(this_level) == 0) {
+            cout &lt;&lt; endl;
+            if (ListLen(next_level) == 0) return;
+            return print_levels(next_level, MakeEmptyList&lt;Tree&lt;T&gt;&gt;());
+        }
+        cout &lt;&lt; TreeVal(ListHead(this_level)) &lt;&lt; " ";
+        return print_levels(ListTail(this_level), concat(next_level, TreeChildren(ListHead(this_level))));
+    }
+    
+    template&lt;typename T&gt;
+    void print_levels(Tree&lt;T&gt; tree) {
+        print_levels(MakeList(tree), MakeEmptyList&lt;Tree&lt;T&gt;&gt;());
+    }
+    /*    TREE CLOSURE END */
+    
+    int main()
+    {
+        auto l = MakeList(5, MakeList(4, MakeList(3, MakeList(6))));
+        cout &lt;&lt; ListLen(l) &lt;&lt; endl; // prints 4
+        print_list(l); // prints 5 4 3 6 
+        auto t = MakeTree(8,
+                 MakeList(Leaf(4), MakeList(Leaf(5), MakeList(MakeTree(3,
+                                                              MakeList(Leaf(9), MakeList(Leaf(10))))))));
+        print_levels(t);
+        /*
+        Prints: 
+        8                                                                                                                                                
+        4 5 3                                                                                                                                            
+        9 10
+        */
+        deallocate(t);
+        return 0;
+    }
 
-QT5+, SDL2, OpenMP using mingW32/64 have all been extended by myself to give access to process and thread affinity for Windows, Linux and BSD (not mac don’t have one to test), if they did not already. I used multiple extended back-ends to test this from pthread, numa, additionally openmp mods, and direct platform header use in some cases too. As it was not obvious what the problem was. 
-
-As these are derivative works I’m not sure I can freely share the code for use, but will supply the changes if you wish to test yourself. 
-
-All work flawlessly up to the mentioned bug/feature above; if and only if they obey thread-blocks in single process block affinities. Using multiple processes if you wish more thread blocks. 
-
-When reaching the limits of 64 on Windows(home) affinity is in the trashcan I’m afraid…random behaviour.  On Windows(pro) you are “allowed” to create an additional process to access just 64 more, but NO MORE.
-
-Are people aware of this? More importantly, is there a work around or a known end to such practices? Is this the base reason affinity is currently lacking in so many core libraries?
-## [8][Calling Functions: A Tutorial - Munich C++ User Group 2020 - Klaus Iglberger](https://www.reddit.com/r/cpp/comments/idt9dw/calling_functions_a_tutorial_munich_c_user_group/)
-- url: https://www.youtube.com/watch?v=B9RT5sVunmk
----
-
-## [9][B-Tree implementation in C++20 : any feedback will be welcomed!](https://www.reddit.com/r/cpp/comments/idxwb4/btree_implementation_in_c20_any_feedback_will_be/)
+&amp;#x200B;
+## [8][B-Tree implementation in C++20 : any feedback will be welcomed!](https://www.reddit.com/r/cpp/comments/idxwb4/btree_implementation_in_c20_any_feedback_will_be/)
 - url: https://www.reddit.com/r/cpp/comments/idxwb4/btree_implementation_in_c20_any_feedback_will_be/
 ---
 https://codereview.stackexchange.com/questions/248231/c-b-tree-in-c20
@@ -206,11 +386,36 @@ https://codereview.stackexchange.com/questions/248231/c-b-tree-in-c20
 To-do list:
 - Custom comparators. (Seems to be easy)
 - Iterators.
-## [10][CppCast: STX](https://www.reddit.com/r/cpp/comments/ido5v4/cppcast_stx/)
-- url: https://cppcast.com/stx-basit-ayantunde/
+## [9][Calling Functions: A Tutorial - Munich C++ User Group 2020 - Klaus Iglberger](https://www.reddit.com/r/cpp/comments/idt9dw/calling_functions_a_tutorial_munich_c_user_group/)
+- url: https://www.youtube.com/watch?v=B9RT5sVunmk
 ---
 
-## [11][[Article]But I was helping the compiler!](https://www.reddit.com/r/cpp/comments/idg1vd/articlebut_i_was_helping_the_compiler/)
-- url: https://pankajraghav.com/2020/08/16/RVO.html
+## [10][Cautionary Advice For Process-Thread Affinity Users-Developers](https://www.reddit.com/r/cpp/comments/ie2jbi/cautionary_advice_for_processthread_affinity/)
+- url: https://www.reddit.com/r/cpp/comments/ie2jbi/cautionary_advice_for_processthread_affinity/
+---
+EDIT \*\*Confirmed Facts:  
+Win64 Home : you are only allowed to set affinity upto 64 thread to a single block(cpu core etc).  
+Win64 Pro : follows the same rule, but further allows a 2nd block if m/b supports 2nd socket. (this can be abused so you can set the affinity of 128 on upto 2 blocks(cpu))  
+Win64 Educ / Server: has no limits. Affinity both thread and cpu works as is documented.  
+\*\*END EDIT: Clarity for future references:  
+
+
+\*{ TLDR;\*After thorough tests with numerous libraries and self-written extensions I can confirm that Microsoft Windows Home and Pro (can’t comment on workstation) deliberately limit your ability to select cores and thread affinity. Home being a shocking offender at limiting to 64 units regardless of your programmed requirements or cpu capabilities, pro with some process juggling can get to 128.This is a big issue with newer processors, in my opinion.
+
+Needs to be brought into common knowledge, if it isn’t already, as I was not aware of such practices. *TLDR; }*
+
+As all common multi-threaded base libraries have limited, to no, control of affinity on windows I decided to extend a few to bring my code in line with the linux and bsd versions I have.
+
+QT5+, SDL2, OpenMP using mingW32/64 have all been extended by myself to give access to process and thread affinity for Windows, Linux and BSD (not mac don’t have one to test), if they did not already. I used multiple extended back-ends to test this from pthread, numa, additionally openmp mods, and direct platform header use in some cases too. As it was not obvious what the problem was.
+
+As these are derivative works I’m not sure I can freely share the code for use, but will supply the changes if you wish to test yourself.
+
+All work flawlessly up to the mentioned bug/feature above; if and only if they obey thread-blocks in single process block affinities. Using multiple processes if you wish more thread blocks.
+
+When reaching the limits of 64 on Windows(home) affinity is in the trashcan I’m afraid…random behaviour.  On Windows(pro) you are “allowed” to create an additional process to access just 64 more, but NO MORE.
+
+Are people aware of this? More importantly, is there a work around or a known end to such practices? Is this the base reason affinity is currently lacking in so many core libraries?
+## [11][CppCast: STX](https://www.reddit.com/r/cpp/comments/ido5v4/cppcast_stx/)
+- url: https://cppcast.com/stx-basit-ayantunde/
 ---
 

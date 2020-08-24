@@ -1,148 +1,114 @@
 # golang
-## [1][Best Server Code Generator for OpenAPI specifications in GoLang?](https://www.reddit.com/r/golang/comments/ieyjum/best_server_code_generator_for_openapi/)
-- url: https://www.reddit.com/r/golang/comments/ieyjum/best_server_code_generator_for_openapi/
+## [1][Echelon - hierarchical progress in terminals](https://www.reddit.com/r/golang/comments/ifo15p/echelon_hierarchical_progress_in_terminals/)
+- url: https://www.reddit.com/r/golang/comments/ifo15p/echelon_hierarchical_progress_in_terminals/
 ---
-What is the best code generator out there for Golang REST APIs
+Hey everyone! For a recent project we wanted to show progress of a CI build execution in a terminal in a pretty way. There are several libraries for showing progress bars interactively in terminals but I didn't find one which has UI similar to what build systems like Bazel, Buck and Gradle has. So I wrote [one  from scratch called Echelon](https://github.com/cirruslabs/echelon). Here is how it looks:
 
-I used the oapi-codegen utility but it often has trouble parsing schemas that go-swagger usually accepts. I am looking for a more stable solution. What does the community prefer?
-## [2][Hacktoberfest is coming](https://www.reddit.com/r/golang/comments/iekqx8/hacktoberfest_is_coming/)
-- url: https://www.reddit.com/r/golang/comments/iekqx8/hacktoberfest_is_coming/
+[Example on macOS](https://i.redd.it/cygiuzanyxi51.gif)
+
+The library is customizable and can work with any VT100-compatible terminal (I don't know any terminal that doesn't support ASCII escape symbols 😅). Echelon also has a simplified renderer for dump terminals in case you pipe the output or run it as part of CI that doesn't have an interactive terminal. 
+
+With  VT100-compatible terminals Echelon does incremental redraws: figures out which lines have changed from the last "frame" and redraws them with minimal amount of ASCII escape symbols. This makes Echelon very smooth.
+
+And it also works on Windows! But doesn't look as pretty since Windows doesn't support emojis by default.
+
+[Example on Windows](https://i.redd.it/36olmbtf0yi51.gif)
+
+I hope Echelon will be useful for someone else. It's [open sourced](https://github.com/cirruslabs/echelon) under MIT license so please give it a try. 🙌
+## [2][GoLF Game Engine](https://www.reddit.com/r/golang/comments/ifcya3/golf_game_engine/)
+- url: https://www.reddit.com/r/golang/comments/ifcya3/golf_game_engine/
 ---
-I like hacktoberfest. I want to focus on Go projects this year, though - kind of my new year's resolution: "more Go. less Node/Python/Bash". 
-
-I have _some_ projects in mind, but I'm siloed, of course (I only know the ones I know). Does anyone want to chime in with young, interesting Go projects that could use some help?
-## [3][Use single struct for both API payload and DB?](https://www.reddit.com/r/golang/comments/ietxlo/use_single_struct_for_both_api_payload_and_db/)
-- url: https://www.reddit.com/r/golang/comments/ietxlo/use_single_struct_for_both_api_payload_and_db/
----
-Hey all,
-
-So I am building my API payload struct (to match my json schema which I use for OpenAPI definition). So think of a typical User:
-
-    type User struct {
-    	Id             *uuid.UUID `json:"id"`
-    	Name           string     `json:"name"`
-    	Username       string     `json:"username"`
-    	Password       string     `json:"password"`
-    	Email          string     `json:"email"`
-    	Role           string     `json:"role"`
-    	LastSignedInAt *time.Time `json:"lastLogin"`
-    	CreatedAt      *time.Time `json:"createdAt"`
-    	UpdatedAt      *time.Time `json:"lastUpdated"`
-    	Active         bool       `json:"active"`
-    }
-
-This basically matches the columns in my DB. However, upon login, I only return the name, email and role as part of the login response payload. I include the Id in the JWT token claims, but otherwise some of the data is really for internal only use.
-
-Now, I know I can use the omit option or - option for not returning keys without values, etc.. that's fine. What I am hoping though, is that I can use the same structure to store (or retrieve) data from the DB as well. I am using Postgresql, pgx, and for retrieving data, the pgxscan library to scan in to the structure.
-
-What I want to avoid is the old school Java DAO and DTO process.. where by we had to essentially copy the same data from one object to another... I want to "pass thru" the struct instance that is un-marshaled from say a request that includes JSON to the DB code so that it can write the struct to the DB.. or vice versa.. on a GET or GET ALL, it scans into a struct like above, and can then just "null out" some of the properties that shouldn't go back as part of the response.
-
-I think this is doable.. but more so.. is it "good Go code" to do this.. or is it frowned upon. Still a noob with Go, so I want to avoid building this, then have some expert Go dev come in one day and be like WTF is this crap.. bad bad code. 
-
-Thanks Go pros.
-## [4][Float prints 0.0000](https://www.reddit.com/r/golang/comments/ieywov/float_prints_00000/)
-- url: https://www.reddit.com/r/golang/comments/ieywov/float_prints_00000/
----
-    package main
-    
-    import (
-    	"fmt"
-    )
-    
-    func main() {
-    	var framerate float32 = 1/24
-    
-    	temp := fmt.Sprintf("%.6f", framerate)
-    
-    	fmt.Println(temp)
-    }
-
-Why does this code print `0.000000`?
-## [5][how many clients are connected to the websocket server ?](https://www.reddit.com/r/golang/comments/if2ko5/how_many_clients_are_connected_to_the_websocket/)
-- url: https://www.reddit.com/r/golang/comments/if2ko5/how_many_clients_are_connected_to_the_websocket/
----
-so i have a web socket server
-
-every one in the front end should see a dot in his mouse position &amp; other "players " dots
-
-the problem is how to know which is which
-
-and how to send data to all players to update position ..
-
-i am using the [golang.org/x/net/websocket](https://golang.org/x/net/websocket)  
-edit : also how do i know when someone new connects to the websocket   
-
-## [6][Minimalistic package to scan CSV rows into struct types](https://www.reddit.com/r/golang/comments/if1ghy/minimalistic_package_to_scan_csv_rows_into_struct/)
-- url: https://pkg.go.dev/github.com/artyom/csvstruct
----
-
-## [7][Client with Logger or without?](https://www.reddit.com/r/golang/comments/if0alh/client_with_logger_or_without/)
-- url: https://www.reddit.com/r/golang/comments/if0alh/client_with_logger_or_without/
----
-Hey Gophers,
-
-I have a question which is a bit more theoretical:
-
-At work we have a fine piece of Software which does a lot with data (no surprise so far). Lately I got a Client Library for another piece of Software to which we want to send data via the client. And here comes my question:
-
 &amp;#x200B;
 
-The client would like to have a Logger in its Constructor (sure as an Interface with two methods). Should a client library use a logger and if so, how should it do?
+https://preview.redd.it/h6cnfqnexti51.png?width=1024&amp;format=png&amp;auto=webp&amp;s=05cf3d3e30f8da40f888ffc07fcf4dba9aab82d0
 
-A:  Should it receive the logger from the using service (this means the already existing logger should support the interface which is not in our case) ?
+My summer project this year has been creating this small game engine. It's heavily inspired by [pico-8](https://www.lexaloffle.com/pico-8.php) and other fantasy consoles so the API is pretty minimal by design. It also complies to WASM, which made it much easier to make it cross-platform. I programed several demos for it as well. You can find a link to those in the GitHub README. There's a lot more I'd like to add to the project, but I need to give it a break for a while. Anyway, hopefully you guys enjoy it!
 
-B: Should we totally skip logging in the client library and just return errors ?
-
-C: Should the client define its own logger and only be configured with LogLevel and Output ?
-
-&amp;#x200B;
-
-Thanks in advance for all your answers
-
-cheers Jan
-## [8][CGO problem: C call go function, and passing c function pointer as the parameter](https://www.reddit.com/r/golang/comments/if0a10/cgo_problem_c_call_go_function_and_passing_c/)
-- url: https://www.reddit.com/r/golang/comments/if0a10/cgo_problem_c_call_go_function_and_passing_c/
+[https://github.com/bjatkin/golf-engine](https://github.com/bjatkin/golf-engine)
+## [3][Should you learn Go if you don’t plan on using it for server stuff?](https://www.reddit.com/r/golang/comments/if3exl/should_you_learn_go_if_you_dont_plan_on_using_it/)
+- url: https://www.reddit.com/r/golang/comments/if3exl/should_you_learn_go_if_you_dont_plan_on_using_it/
 ---
-I am trying to build golang as a static library for my C project using CGO. Everthing is fine so far, But I am having a problem passing C function to golang function as a parameter. I am not sure whether am I doing it correctly, or it is prohibited to do so?
+I‘m coming from Python and I think about learning Go. I really like the philosophy and style of Go. But I don’t plan to write any server software in the near future. I’m more into CLI tools and some desktop (and maybe mobile) GUIs. I also want to learn a lower level, compiled language. That’s by Go looks like a great combination between Python, Java and C. So is it a good idea to learn Golang for me?
+## [4][Clean Architecture sample in Golang](https://www.reddit.com/r/golang/comments/ifo40d/clean_architecture_sample_in_golang/)
+- url: https://github.com/L04DB4L4NC3R/clean-architecture-sample
+---
 
-in golang file
+## [5][I'm looking for a IMDB. In Memory DataBase. What's your choice ?](https://www.reddit.com/r/golang/comments/ifn2zp/im_looking_for_a_imdb_in_memory_database_whats/)
+- url: https://www.reddit.com/r/golang/comments/ifn2zp/im_looking_for_a_imdb_in_memory_database_whats/
+---
+Hi , I'm going to use a IMDB to store few temp data in golang.  Please help me choos one.
+## [6][Critique my first Go app: TicTacToe](https://www.reddit.com/r/golang/comments/iflko5/critique_my_first_go_app_tictactoe/)
+- url: https://old.reddit.com/r/learngolang/comments/ifat5w/critique_my_tictactoe/
+---
 
-    //export go_example_callback
-    func go_example_callback(pfoo unsafe.Pointer, p1 C.int) {
-        foo := (*func(C.int))(pfoo)
+## [7][Take screenshots quickly for screen recorder](https://www.reddit.com/r/golang/comments/ifleue/take_screenshots_quickly_for_screen_recorder/)
+- url: https://www.reddit.com/r/golang/comments/ifleue/take_screenshots_quickly_for_screen_recorder/
+---
+I'm attempting to make a screen recorder in Go. My current method is to take screenshots at set intervals then combine together with ffmpeg, however, each screenshot takes about 0.1-0.2 seconds or even higher to take and save, thus limiting the final fps to about 5.
+
+I tried using ffmpeg to record the screen, but this resulted in a 25% cpu usage whenever it was recording. 
+
+Is there a way I can take screenshots and save them really quickly or is there another approach I should take to this project?
+
+Code: [https://pastebin.com/cn8vxFWg](https://pastebin.com/cn8vxFWg)
+## [8][unmarshaling nested map into struct](https://www.reddit.com/r/golang/comments/ifl5mk/unmarshaling_nested_map_into_struct/)
+- url: https://www.reddit.com/r/golang/comments/ifl5mk/unmarshaling_nested_map_into_struct/
+---
+hi all,
+
+i have a nested map, of the following structure.
+
+my goal is to unmarshal the key:value pairs under 'key2 =&gt; key' into a struct:
+
+    type NiceKeys struct {
+        NiceKey1    string    `json:"nicekey1"`
+        NiceKey2    string    `json:"nicekey2"`
+        NiceKey3    string    `json:"nicekey3"`
+    }
     
-        // call the c function pointer
-        (*foo)(5)
-    
-        // would also love to store pfoo as global variables to use it in anywhere
+    {
+      "key1": {
+        "key": {
+          "somekey1": "value1",
+          "somekey2": "value2",
+          "somekey3": "value3"
+        }
+      },
+      "key2": {
+        "key": {
+          "nicekey1": "value1",
+          "nicekey2": "value2",
+          "nicekey3": "value3"
+        }
+      }
     }
 
-and then build as a static library using this command below:
+If I use the following in a struct, I can access the 'key2' map, but from there, not sure how to "chain" the structs, etc - first time doing this. any help/explanation is appreciated.
 
-    go build -o awesome.dylib -buildmode=c-shared awesome.go
+    map[string]interface{} `json:"key2"`
 
-link the static library in my C project, and then trying to use go\_example\_callback
+Edit:
 
-in my C project 
+I followed [this example](https://www.golangprograms.com/how-to-unmarshal-nested-json-structure.html) and now I am able to access the keys via:
 
-    void pfoo(int x) {
-        printf(x);
-    }
-    int main(void) {
-        go_example_callback(&amp;pfoo, 5);
-        // expect printing 5 in the console, but I am getting error instead
-    }
-
-It will be nice if I am able to call C function in golang through this way.  Is it possible to do so? If yes, how shld I do it correctly? Many thanks for the help!
-## [9][How do you organize the instrumentation code?](https://www.reddit.com/r/golang/comments/iek9wx/how_do_you_organize_the_instrumentation_code/)
-- url: https://www.reddit.com/r/golang/comments/iek9wx/how_do_you_organize_the_instrumentation_code/
+nicekeys.Key.Key.field notation, is that the right way to do it?
+## [9][go-woxy - Golang Reverso proxy &amp; server application handler](https://www.reddit.com/r/golang/comments/ifkjzn/gowoxy_golang_reverso_proxy_server_application/)
+- url: https://www.reddit.com/r/golang/comments/ifkjzn/gowoxy_golang_reverso_proxy_server_application/
 ---
-Hi, I've recently started working with opentelemetry to instrument go application, which makes the functions really big as there is a lot of logic related to instrumentation(adding events/attributes/starting/finishing spans/traces). I wonder if there is a good design pattern/template for instrumenting code outside of the method's logic or somehow the size of the functions small?
-## [10][Sharef](https://www.reddit.com/r/golang/comments/iep395/sharef/)
-- url: https://www.reddit.com/r/golang/comments/iep395/sharef/
+Hi it's the first time for me i post something right here.
+
+Since few weeks i'm working on this project ( i don't really know why ), but i was a really cool challenge to learn golang and try to work with it. Maybe some of you may be interested in my shitty code.
+
+[https://github.com/Wariie/go-woxy](https://github.com/Wariie/go-woxy)
+
+I want to continue this project, but i really want some feedbacks about how you apprehend my code and my conception.
+
+Thanks for reading ;)
+## [10][LokalDB - a wrapper around bbolt key-value database](https://www.reddit.com/r/golang/comments/ifhfbt/lokaldb_a_wrapper_around_bbolt_keyvalue_database/)
+- url: https://www.reddit.com/r/golang/comments/ifhfbt/lokaldb_a_wrapper_around_bbolt_keyvalue_database/
 ---
-Hi All,
+LokalDB is a wrapper around bbolt key-value database to manage messaging data in a local database
 
-Just want to present this tool called [sharef](https://github.com/emiraganov/sharef), maybe someone find it useful also\*\*.\*\* It is command line tool that allows sharing p2p files over [WebRTC.](https://WebRTC.It) It is totally written in GO. Although there are some similar approaches, I just wanted to make tool more feature rich and easier to use. For me, it helps to move things around easier specially in some complex cloud setups. It is in some early stage. I have some more ideas around it, but we will see.
+[https://github.com/eaglebush/lokaldb](https://github.com/eaglebush/lokaldb)
 
-Any feedback is welcome.
+Its primary purpose is to persist messages if sending messages to queues like NATS fails.

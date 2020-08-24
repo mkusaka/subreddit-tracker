@@ -1,5 +1,23 @@
 # ruby
-## [1][ActionMailer email preview tool (HTML + plaintext + HTML source)](https://www.reddit.com/r/ruby/comments/ieka94/actionmailer_email_preview_tool_html_plaintext/)
+## [1][sports gem - sport data structures for matches, scores, leagues, seasons, rounds, groups, teams, clubs and more](https://www.reddit.com/r/ruby/comments/ifkkb2/sports_gem_sport_data_structures_for_matches/)
+- url: https://github.com/sportdb/sport.db/tree/master/sports
+---
+
+## [2][Super Bombinhas v0.6.0 released!](https://www.reddit.com/r/ruby/comments/if43sh/super_bombinhas_v060_released/)
+- url: https://www.reddit.com/r/ruby/comments/if43sh/super_bombinhas_v060_released/
+---
+Hi!
+
+Version 0.6.0 of my open source platformer game (written in Ruby) is released! It now has 4 complete worlds with a total of 20 stages.
+
+Downloads for Debian-based Linux and Windows are available here: [https://victords.itch.io/super-bombinhas](https://victords.itch.io/super-bombinhas)
+
+All feedback is appreciated. Thanks!
+## [3][Exploring Ruby's Enumerable Module](https://www.reddit.com/r/ruby/comments/ifiybu/exploring_rubys_enumerable_module/)
+- url: https://www.sandipmane.dev/exploring-rubys-enumerable-module
+---
+
+## [4][ActionMailer email preview tool (HTML + plaintext + HTML source)](https://www.reddit.com/r/ruby/comments/ieka94/actionmailer_email_preview_tool_html_plaintext/)
 - url: https://www.reddit.com/r/ruby/comments/ieka94/actionmailer_email_preview_tool_html_plaintext/
 ---
 Hi, Rubyists. I have made a tool for previewing emails called *Postmortem*. It provides seamless integration (zero config) with ActionMailer and Pony and hopes to make email development a little less painful.
@@ -13,19 +31,27 @@ Every time your application sends an email, *Postmortem* writes a colorful log e
 There is also a live demo linked in the README. I tried to include that link here before but the post got eaten by Reddit's spam bots.
 
 All feedback is welcome. Have a nice weeekend and I hope some of you find this useful.
-## [2][Does anyone know why this huge difference in performance appears here? (talking about implementation details)](https://www.reddit.com/r/ruby/comments/iehdhx/does_anyone_know_why_this_huge_difference_in/)
+## [5][People who program in Ruby might also want to spend with a Metal Ruby Crypto Card?](https://www.reddit.com/r/ruby/comments/ifb9lk/people_who_program_in_ruby_might_also_want_to/)
+- url: https://www.reddit.com/r/ruby/comments/ifb9lk/people_who_program_in_ruby_might_also_want_to/
+---
+Here’s a reddit link to what crypto.com’s metal ruby Visa debit card looks like. Spend with bitcoin and get 2% cash back, as well as free Spotify Premium.
+
+https://www.reddit.com/r/Crypto_com/comments/icbn8n/finally_my_card_arrived/
+
+Use my referral link https://platinum.crypto.com/r/8vmf9tsu5x to sign up for Crypto.com and we both get $50 USD :)
+## [6][Does anyone know why this huge difference in performance appears here? (talking about implementation details)](https://www.reddit.com/r/ruby/comments/iehdhx/does_anyone_know_why_this_huge_difference_in/)
 - url: https://i.redd.it/vk5gvi2bpji51.jpg
 ---
 
-## [3][Ruby Bitwise Operators](https://www.reddit.com/r/ruby/comments/iehonr/ruby_bitwise_operators/)
+## [7][Ruby Bitwise Operators](https://www.reddit.com/r/ruby/comments/iehonr/ruby_bitwise_operators/)
 - url: https://medium.com/rubycademy/ruby-bitwise-operators-da57763fa368
 ---
 
-## [4][Why is parentheses preferred around function/method calls with arguments?](https://www.reddit.com/r/ruby/comments/iea59u/why_is_parentheses_preferred_around/)
+## [8][Why is parentheses preferred around function/method calls with arguments?](https://www.reddit.com/r/ruby/comments/iea59u/why_is_parentheses_preferred_around/)
 - url: https://www.reddit.com/r/ruby/comments/iea59u/why_is_parentheses_preferred_around/
 ---
 To me, a dsl and a function call look very similar so why the pushback when one leaves parentheses out on a function call? I think it looks more readable but the style guide does not recommend it.
-## [5][Micro::Attributes - Create "immutable" objects. No setters, just getters!](https://www.reddit.com/r/ruby/comments/ie69i7/microattributes_create_immutable_objects_no/)
+## [9][Micro::Attributes - Create "immutable" objects. No setters, just getters!](https://www.reddit.com/r/ruby/comments/ie69i7/microattributes_create_immutable_objects_no/)
 - url: https://www.reddit.com/r/ruby/comments/ie69i7/microattributes_create_immutable_objects_no/
 ---
 Hello everybody, I would like to share one of my projects with you!
@@ -35,49 +61,10 @@ This gem allows you to define "immutable" objects, and your objects will have on
 Check out it [https://github.com/serradura/u-attributes](https://github.com/serradura/u-attributes).
 
 https://preview.redd.it/0s3xlf8pgfi51.jpg?width=1242&amp;format=pjpg&amp;auto=webp&amp;s=39e2e6636be76fd6467733cb7ccac7e6286328d7
-## [6][NoRuKo virtual mini-conference](https://www.reddit.com/r/ruby/comments/idt0w3/noruko_virtual_miniconference/)
+## [10][NoRuKo virtual mini-conference](https://www.reddit.com/r/ruby/comments/idt0w3/noruko_virtual_miniconference/)
 - url: https://www.reddit.com/r/ruby/comments/idt0w3/noruko_virtual_miniconference/
 ---
 "NoRuKo is a virtual mini-conference filling a bit of the void all the cancelled and postponed events created."
 
 There is a great lineup of speakers and livestreams start friday 21st of August 2020, 15:00 CEST  
 [https://noruko.org/](https://noruko.org/)
-## [7][New Gem capistrano-precompile-chooser Released!](https://www.reddit.com/r/ruby/comments/idq29i/new_gem_capistranoprecompilechooser_released/)
-- url: https://www.reddit.com/r/ruby/comments/idq29i/new_gem_capistranoprecompilechooser_released/
----
-I have just released a new gem called `capistrano-precompile-chooser`. It is a Capistrano plugin to precompile your Rails assets locally, remotely, or not at all provided with a very convenient default terminal prompt. [https://github.com/westonganger/capistrano-precompile-chooser](https://github.com/westonganger/capistrano-precompile-chooser)
-## [8][Best way to place words in a text file into an array?](https://www.reddit.com/r/ruby/comments/ie06my/best_way_to_place_words_in_a_text_file_into_an/)
-- url: https://www.reddit.com/r/ruby/comments/ie06my/best_way_to_place_words_in_a_text_file_into_an/
----
-I am writing a program and I need to figure out the most efficient way to place words from a text file into an array that contains all the words from that text file.
-
-I have this so far and it works, however it's not an array of words.
-
-    def format_text(txt)
-        text = File.read(txt)   
-        form = text.downcase.gsub(/[a-z0-9\s]/i, '').strip.split(/.|?|!/) 
-        puts form 
-    end
-    
-    def generate_text(txt)     
-        structure = format_text(txt)
-        puts structure
-    end
-    
-    print(generate_text('thefile.txt'))
-
-&amp;#x200B;
-## [9][Google Cloud Functions On Ruby - Early Access Program survey](https://www.reddit.com/r/ruby/comments/idhs4l/google_cloud_functions_on_ruby_early_access/)
-- url: https://docs.google.com/forms/d/e/1FAIpQLSfEgsbch9pCO52W1fLFdmIibCLhB_eU7MTzZWX4E2PfOvwa2w/viewform
----
-
-## [10][Ruby, Clojure and Simple vs. Easy](https://www.reddit.com/r/ruby/comments/idayfd/ruby_clojure_and_simple_vs_easy/)
-- url: https://www.reddit.com/r/ruby/comments/idayfd/ruby_clojure_and_simple_vs_easy/
----
-Hello,
-
-I recently wrote an article about an blog post (linked in the article) from a programmer who had moved from Ruby to Clojure and then back to Ruby, and why I thought some of the statements he had made about Clojure were wrong.
-
-I posted it to the Clojure community, and they reasonably pointed out that I was unlikely to much valuable insight from preaching to the choir, and suggested I put it in front of some Ruby programmers. 
-
-So here is [simple vs. easy](https://redpenguin101.github.io/posts/2020_08_18_simplevseasy.html). I'd appreciate any feedback you have.

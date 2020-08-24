@@ -111,177 +111,95 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/i1u8a4/whos_hiring_august_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][A CLI tool that scans your project and splits the one big global CSS file into component level css files.](https://www.reddit.com/r/reactjs/comments/ievaw5/a_cli_tool_that_scans_your_project_and_splits_the/)
+## [3][JS/TS Debugger with Time-Traveling, Hot-swapping, API and Persistent State, zero-config for create-react-app projects (VSCode plugin)](https://www.reddit.com/r/reactjs/comments/ifnj3m/jsts_debugger_with_timetraveling_hotswapping_api/)
+- url: https://v.redd.it/ovm2zvvvvxi51
+---
+
+## [4][Svelte vs React benchmark](https://www.reddit.com/r/reactjs/comments/ifeo0i/svelte_vs_react_benchmark/)
+- url: https://github.com/halfnelson/svelte-it-will-scale
+---
+
+## [5][I launched a video course building a SaaS app with React, Next.js, Firebase, Stripe, and Vercel](https://www.reddit.com/r/reactjs/comments/ifo2gs/i_launched_a_video_course_building_a_saas_app/)
+- url: https://react2025.com/
+---
+
+## [6][What makes you a Senior developer?](https://www.reddit.com/r/reactjs/comments/if80vq/what_makes_you_a_senior_developer/)
+- url: https://www.reddit.com/r/reactjs/comments/if80vq/what_makes_you_a_senior_developer/
+---
+I was looking for a new job as a Full Stack Developer (MERN+GRAPHQL Stack) and all the companies make interviews with Javascript Algorithms for this role.
+
+it's been a while from I stopped to exercise with Algorithms =&gt; problems are different when you work on a Web/Desktop/Mobile Application but it would appear that you need to review some Algo. exercises just to prepare for a 40minuts interview and never approach again these types of problems.
+
+Are these exercises make you a SENIOR? What makes you a senior developer?
+
+What do you think about it guys? For me, a senior developer is who have a lot of experience in the field and know how to approach problems. It doesn't mean that it can't make research about syntax or particular features.
+## [7][How do you feel about accepting/passing ES6 Sets and Maps as props?](https://www.reddit.com/r/reactjs/comments/ifi16z/how_do_you_feel_about_acceptingpassing_es6_sets/)
+- url: https://www.reddit.com/r/reactjs/comments/ifi16z/how_do_you_feel_about_acceptingpassing_es6_sets/
+---
+Some components may need to accept as props a list of unique items, or a mapping of arbitrary string keys to values (not an object with well-defined interfaces, mind you--for those I'll use plain objects 100%). In these cases, you could either use Sets vs arrays / Maps vs objects. So which do you prefer when writing a component?
+
+My take on the pros and cons for each:
+
+* Argument for arrays/objects:
+    * Other devs are generally more familiar with arrays and objects
+    * Existing APIs rarely use Sets and Maps
+    * Existing code rarely expects to receive Sets and Maps
+    * No transpiling needed
+    * Sets and Maps require an extra constructor call
+    * Sets and Maps need to be converted to arrays for functional iteration or random access by index
+* Argument for Sets/Maps:
+    * Sets guarantee uniqueness so you can avoid subtle logical bugs by design
+    * Maps avoid prototype pollution and many other issues with objects
+    * Maps guarantee insertion order-iteration, even for string keys that are integers
+## [8][How to load a div when click on a side bar?](https://www.reddit.com/r/reactjs/comments/ifox6q/how_to_load_a_div_when_click_on_a_side_bar/)
+- url: https://www.reddit.com/r/reactjs/comments/ifox6q/how_to_load_a_div_when_click_on_a_side_bar/
+---
+I have troubles with load the certain page when click on the certain side bara nav. I'm using hooks
+## [9][Simplify development workflow](https://www.reddit.com/r/reactjs/comments/ifotn8/simplify_development_workflow/)
+- url: https://www.reddit.com/r/reactjs/comments/ifotn8/simplify_development_workflow/
+---
+This is a bit older post - [https://medium.com/@RogerMitchell/using-requestly-in-visualforce-development-workflow-dd64e5f5998f](https://medium.com/@RogerMitchell/using-requestly-in-visualforce-development-workflow-dd64e5f5998f) in which Roger Mitchell from SalesForce shows how he simplified the development workflow in VisualForce. This is such an amazing technique and can be applied in many development setups.
+
+Looking for ideas on what hacks/tricks you use to simplify your development setup.
+## [10][Serverless, full-stack React app on AWS with CI/CD via Terraform](https://www.reddit.com/r/reactjs/comments/if9ugw/serverless_fullstack_react_app_on_aws_with_cicd/)
+- url: https://www.reddit.com/r/reactjs/comments/if9ugw/serverless_fullstack_react_app_on_aws_with_cicd/
+---
+Hi community!
+
+I have created reference project to deploy a serverless, full-stack React app onto AWS with Terraform. This is a to-do list app with these features:
+
+* Users can create, and read to-do's from AWS DynamoDB database
+* Serverless i.e. app is hosted on an AWS S3 bucket; AWS API Gateway proxies requests to Lambda functions which query DynamoDB
+* CI/CD pipeline by AWS CodePipeline
+* All AWS infra are created by Terraform
+
+Please take a look!
+
+Github project here: [https://github.com/MatthewCYLau/react-serverless-aws-terraform](https://github.com/MatthewCYLau/react-serverless-aws-terraform)
+
+&amp;#x200B;
+## [11][Optimizing rendering for large JSON data (1000&lt;)](https://www.reddit.com/r/reactjs/comments/ifod3s/optimizing_rendering_for_large_json_data_1000/)
+- url: https://www.reddit.com/r/reactjs/comments/ifod3s/optimizing_rendering_for_large_json_data_1000/
+---
+So I'm implementing a JSON tree view for a technical test.
+
+  
+I'm using Redux as a state management, and recursive rendering to display the JSON children.
+
+  
+My redux state has the JSON in it but I was wondering about optimizing the rendering.
+
+  
+But I'm thinking of using redux-select as a way to optimize the rendering but I don't know how exactly
+
+  
+I'm also thinking about rendering the first 20 children of the JSON with a load more button   
+
+
+What are your thoughts? 
+
+It's more a question on how would you approach optimizing rendering for large data and I'd appreciate the ideas
+## [12][A CLI tool that scans your project and splits the one big global CSS file into component level css files.](https://www.reddit.com/r/reactjs/comments/ievaw5/a_cli_tool_that_scans_your_project_and_splits_the/)
 - url: https://v.redd.it/o0eb1vgsvni51
 ---
 
-## [4][Using Window.matchMedia() to do media queries in reactjs](https://www.reddit.com/r/reactjs/comments/ieibw8/using_windowmatchmedia_to_do_media_queries_in/)
-- url: https://youtu.be/S7whj93SGsA
----
-
-## [5][How do I server side render my already build react app](https://www.reddit.com/r/reactjs/comments/if2zy0/how_do_i_server_side_render_my_already_build/)
-- url: https://www.reddit.com/r/reactjs/comments/if2zy0/how_do_i_server_side_render_my_already_build/
----
-Please, I have an already built react app but I want to use server side rendering with it. How do I do it, I've seen a lot of tutorials online but none has satisfied my curiosity. Please, someone that can show me how to go about it and how to move my already running react app (created with create-react-app) to server side rendering
-## [6][Why does the component rerender?](https://www.reddit.com/r/reactjs/comments/if2z9o/why_does_the_component_rerender/)
-- url: https://www.reddit.com/r/reactjs/comments/if2z9o/why_does_the_component_rerender/
----
-I was looking at this example: [https://codesandbox.io/s/batched-update-snippet1-4wuk8?file=/src/index.js](https://codesandbox.io/s/batched-update-snippet1-4wuk8?file=/src/index.js)
-
-When you click twice on 'Initial Item 1 - Initial Item 2 (without promise)', in the console you can see that the component rerendered twice. If you click any more times, it does not rerender. Why such behaviour? Why doesn't react rerender it as many times as you click?
-## [7][Just published my personal website developed with Next.JS and tailwindcss](https://www.reddit.com/r/reactjs/comments/ieo8a0/just_published_my_personal_website_developed_with/)
-- url: https://www.reddit.com/r/reactjs/comments/ieo8a0/just_published_my_personal_website_developed_with/
----
-Hello everyone. Just published my personal website: [jose-donato.me](https://jose-donato.me)  
-
-
-It was developed with Next.js, tailwindcss and MDX. Deployed in Vercel.   
-
-
-Any suggestions/improvements? The biggest challenge was trying to make it appealing since my background is not web design.  
-
-
-Thanks and greetings.
-## [8][I made a new playground for people to experiment with the API blueprint spec using Next.js](https://www.reddit.com/r/reactjs/comments/if2svr/i_made_a_new_playground_for_people_to_experiment/)
-- url: https://www.reddit.com/r/reactjs/comments/if2svr/i_made_a_new_playground_for_people_to_experiment/
----
-Hi All,
-
-I created [blueprintstack.io](https://blueprintstack.io) a couple of days ago for new people to experiment with the API blueprint spec ([https://apiblueprint.org/](https://apiblueprint.org/)).
-
-Features:
-
-1. No account required
-2. Multiple blueprint files
-3. Automatic preview updates (while typing)
-4. Blueprints saved locally
-
-&amp;#x200B;
-
-The site was created using Next.js and the source is available here: [https://github.com/alexalikiotis/blueprintstack](https://github.com/alexalikiotis/blueprintstack)
-
-Let me know if you've any feedback or questions, have a nice day!
-## [9][Use Polaris to rapidly build a ReactJs application](https://www.reddit.com/r/reactjs/comments/ieypsp/use_polaris_to_rapidly_build_a_reactjs_application/)
-- url: https://www.reddit.com/r/reactjs/comments/ieypsp/use_polaris_to_rapidly_build_a_reactjs_application/
----
-There are a wide range of reactjs tutorials available online but not many of them are optimised for a bootstrapper wanting to hack together a product as soon as possible while not compromising too much on quality. This was the exact problem we faced while building our product.
-
-As many web developers will tell you, the core business logic is never the bottleneck. What consumes the most amount of time is styling the UI and polishing it to adhere to the UI/UX expectations of 2020 while also being responsive on devices of all shapes and sizes.
-
-So what if there was a library that takes care of all of these things and allows you to focus solely on your business logic? This is exactly what [Polaris](https://polaris.shopify.com/) does.  It is a library of react components built by Shopify and they use it for their own UI as well. 
-
-Using Polaris is as simple of piecing a bunch of lego blocks together to build something. Each of these lego blocks are react components which can be customised by simply changing the properties provided to that component. To use Polaris you would need to know the basic concepts of [reactjs](https://reactjs.org/).
-
-Once this is done, the app is automatically responsive on devices of all shapes and sizes. So what lego blocks do we need to build a web application? Lets go over all the lego blocks that worked really well for us.
-
-&amp;#x200B;
-
-## Building blocks of an application
-
-**Top bar**
-
-A great place to display your product logo on the left and account information on the right. You can customise this further with your own brand colour like we did instead of the default Polaris colour. 
-
-[How it works](https://polaris.shopify.com/components/structure/top-bar)
-
-&amp;#x200B;
-
-**Side navigation bar**
-
-Use this to display all your features/pages which the user can use to navigate your product. The component gives you a way to add your own icon to each of the navigation items. You can also choose from a whole range of existing icons that polaris already offers using the [Polaris icon explorer.](https://polaris-icons.shopify.com/)
-
-[How it works](https://polaris.shopify.com/components/navigation/navigation)
-
-&amp;#x200B;
-
-**Contextual save bar**
-
-Ever find yourself with a UX problem where you have a bunch of settings in a page that the user can configure, but there needs to be a way for the user to save their progress in between? 
-
-The dilemma here is that if you have a save button at the bottom, one would have to scroll till the bottom to discover the button and save and if the button is at the top one would have to scroll back up to save if they are at the bottom of the page.
-
-Contextual save bar solves this problem by turning the top bar into an interface where you can either save your progress or discard it. This is super neat because the top bar will always be visible no matter where you scroll.
-
-[How it works](https://polaris.shopify.com/components/forms/contextual-save-bar)
-
-&amp;#x200B;
-
-**Annotated section**
-
-Oftentimes when you use forms to collect information from a user, it is a challenge to educate them about what that form is for. You would either have to give this description before displaying the form or after.
-
-Annotated section solves this problem by giving you a super simple and elegant way to put the description on the left while displaying the form on the right.
-
-[How it works](https://polaris.shopify.com/components/structure/layout)
-
-&amp;#x200B;
-
-**Banner**
-
-Displaying banners are a great way to communicate to users about stuff like new features, outages, nudging them to subscribe to paid plans, etc. Polaris provides a wide range of banners which can be customised simply by changing certain properties of the component. 
-
-[How it works](https://polaris.shopify.com/components/feedback-indicators/banner)
-
-&amp;#x200B;
-
-**Card**
-
-Every interface needs a way to display a certain unit of information. This can be achieved using a card. You can also easily add headers and actionable buttons to the card with just a few tweaks in the properties. 
-
-[How it works](https://polaris.shopify.com/components/structure/card)
-
-&amp;#x200B;
-
-**Pages**
-
-The Page component serves as a container to hold all the other components, all the while providing a title, subtitle and some actionable items that can be taken on that page. 
-
-[How it works](https://polaris.shopify.com/components/structure/page)
-
-## 
-
-## Conclusion
-
-All the above components are the basic building blocks of an application, however Polaris offers a whole range of other components that are super handy in creating all kinds of flows. You can find all of them [here](https://polaris.shopify.com/components/get-started). 
-
-They also have a bunch of design guidelines around the usage of these components. One does not have to adhere to these guidelines but they definitely help because they are something that Shopify uses and it works great for them.
-
-## 
-
-## What is the catch?
-
-Polaris was primarily designed for solving various UI/UX problems that occur in the Shopify systems. This does not mean that they are not useful for things that are built outside of Shopify, it just means that there needs to be an overlap between the product you are trying to build and every use case that Shopify encounters.
-
-It is a great way to bootstrap a product at lightning speed, but the catch is that the components are not very customisable. They are meant to be picked up and used as is with tweaks made only to the properties passed as arguments to the component.
-
-You might find yourself in a tricky position if you have to implement a component with custom CSS alongside polaris components. But for the most part polaris has default components to cover most cases and there are workarounds for achieving custom CSS.
-
-An example of the work around is that we wanted to change the default colour of a Polaris primary button to our own brand colour and we did this by overriding that particular css property globally and changing the colour with a  **!important** at the end.
-
-## 
-
-## Closing note
-
-For someone that is just getting started with reactjs, using a library like this is a great way to focus on core business logic while at the same time learning the concepts of react without spending time on styling your components. 
-
-[Link to original blog post](https://www.sankalpjonna.com/posts/use-polaris-to-rapidly-build-a-reactjs-application)
-## [10][React learning guidance](https://www.reddit.com/r/reactjs/comments/if01s6/react_learning_guidance/)
-- url: https://www.reddit.com/r/reactjs/comments/if01s6/react_learning_guidance/
----
-I've been learning react from the past 3-4 months, did a course from Udemy understood many aspects but don't feel confident about it yet.
-
-I don't know what to do next, should i read a book or do another course or do a project , even if i want to do a project , how should i approach it ? Help me out.
-## [11][All my React apps don't show up on Google](https://www.reddit.com/r/reactjs/comments/if2cja/all_my_react_apps_dont_show_up_on_google/)
-- url: https://www.reddit.com/r/reactjs/comments/if2cja/all_my_react_apps_dont_show_up_on_google/
----
-Hi, I'm a newbie front-end dev &amp; I've made some couples of React apps but they don't show up on google just like my HTML &amp; CSS websites.
-
-Please what are some guides | tips to make my apps show up on google?
-## [12][Need Guidance for a React JS Developer Role Interview](https://www.reddit.com/r/reactjs/comments/ieyeqh/need_guidance_for_a_react_js_developer_role/)
-- url: https://www.reddit.com/r/reactjs/comments/ieyeqh/need_guidance_for_a_react_js_developer_role/
----
-Hi all,
-
-I have my first ever React JS developer role(Entry Level) interview incoming so I needed guidance on what topics should I focus on and what all questions I may face in the interview. Kindly advise.
-
-Thanks and Take care.

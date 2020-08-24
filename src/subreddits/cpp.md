@@ -56,366 +56,87 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][Treat 'informational' warnings separately](https://www.reddit.com/r/cpp/comments/if2kf9/treat_informational_warnings_separately/)
-- url: https://www.reddit.com/r/cpp/comments/if2kf9/treat_informational_warnings_separately/
----
-Currently in the business of enabling all possible compiler warnings.
-
-Observation: The following *information* now pops up as 'warnings' (MSVC with /Wall)
-
-* Inlining of functions
-* Removal of unused functions
-* implicit delete of copy/move constructor
-
-**The obvious best practice would be to treat and show these 'informational' warnings somehow separated** from the 'real' warnings. In Visual Studio there could just be a third 'tab' called 'Information' next to 'Errors' and 'Warnings'. IMHO any build environment should feature these three categories.
-
-What's a recommended way of treating this?
-
-Are there other ways to show/extract that kind of information without having to treat it as warnings? I'm sure there is more info available about what the compiler does, e.g. with respect to optimization, constexpr, etc.
-## [3][HackerRank's 30 days of code is utter trash](https://www.reddit.com/r/cpp/comments/ieeoe5/hackerranks_30_days_of_code_is_utter_trash/)
-- url: https://www.reddit.com/r/cpp/comments/ieeoe5/hackerranks_30_days_of_code_is_utter_trash/
----
-I don't know if I'm the only one who thinks of hackerrank like this but.....
-
-1. They always try to implement C syntax and not C++
-2. The problems aren't explained properly
-3. Hackerrank's 30 days of code is aimed at beginners with no programming experience, some the problems aren't beginner friendly at all.
-
-Edit: Had a great time reading through your comments! I recently joined my school's competitive programming club. Any resources you can suggest will be highly appreciated! :"&gt;
-## [4][Is growing a buffer of non-POD types using realloc legal?](https://www.reddit.com/r/cpp/comments/ie4en4/is_growing_a_buffer_of_nonpod_types_using_realloc/)
-- url: https://www.reddit.com/r/cpp/comments/ie4en4/is_growing_a_buffer_of_nonpod_types_using_realloc/
----
-Hi,
-
-As you may know, using `realloc` to grow a buffer is significantly faster than the alloc + copy construct + free cycle we're used to from std::vector and the likes. Therefore, I'm wondering if it's legal to use `realloc` in ones own code for buffers containing ones own non-POD types.
-
-I know the usual issues (and the motivation behind trivially_relocatable); types may keep a reference to themselves or otherwise break if their `this` pointer changes without warning. However, while that's a concern for things like `std::vector`, I could just make sure my own types don't get confused if they're suddenly relocated.
-
-Therefore, I'm mostly asking from a language's perspective; if I know my type doesn't depend on its address in any way, is using `realloc` legal? Why or why not?
-## [5][Incremental Type Migration Using Type Algebra](https://www.reddit.com/r/cpp/comments/ie7bg3/incremental_type_migration_using_type_algebra/)
-- url: https://research.google/pubs/pub49386/
+## [2][ReSharper C++ 2020.2 is out with updates to Unreal Engine integration, improved C++/CLI support, and more](https://www.reddit.com/r/cpp/comments/iflc9j/resharper_c_20202_is_out_with_updates_to_unreal/)
+- url: https://blog.jetbrains.com/rscpp/2020/08/13/resharper-cpp-2020-2/
 ---
 
-## [6][Here I Stand, Free - Allocators and an Inclusive STL](https://www.reddit.com/r/cpp/comments/idtnn7/here_i_stand_free_allocators_and_an_inclusive_stl/)
-- url: https://thephd.github.io/freestanding-noexcept-allocators-vector-memory-hole
+## [3][CppCon 2020](https://www.reddit.com/r/cpp/comments/iffap0/cppcon_2020/)
+- url: https://www.reddit.com/r/cpp/comments/iffap0/cppcon_2020/
 ---
-
-## [7][C++ tree library with only functions and lambdas!](https://www.reddit.com/r/cpp/comments/ie2oca/c_tree_library_with_only_functions_and_lambdas/)
-- url: https://www.reddit.com/r/cpp/comments/ie2oca/c_tree_library_with_only_functions_and_lambdas/
+Please join us this year online for Cppcon starting September 13th.
+## [4][Any papers submitted for even less creation of temporaries in C++23/26?](https://www.reddit.com/r/cpp/comments/ifd1pv/any_papers_submitted_for_even_less_creation_of/)
+- url: https://www.reddit.com/r/cpp/comments/ifd1pv/any_papers_submitted_for_even_less_creation_of/
 ---
-Don't ask me why
+We've come a long way with [http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0135r1.html](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0135r1.html) \- prvalues can pretty much stay in what we could call "ghost form"  until a variety of conditions forces materialization (the standard's term) into an actual temporary variable. Once you have a temporary though, you start paying for construction and destruction, and copies or moves.
 
-EDIT: Some people wanted more than two children so now I have a list closure as well as a tree closure to support multiple children, look at the SECOND IMPLEMENTATION
+One would hope that work continues to eliminate creation of temporaries when they are just passed along to initialize objects somewhere down the line.
 
-INITIAL IMPLEMENTATION (BINARY TREE)
+The following scenarios would benefit the most from being optimized but I can't even find a discussion about those, much less a paper:
 
-    #include &lt;iostream&gt;
-    #include &lt;string&gt;
-    #include &lt;functional&gt;
+    struct Bar {}
+    struct Foo {
+        Foo(Bar&amp;&amp; bar) : m_bar(std::move(bar)) {}
+        Bar m_bar;
+    };
     
-    using namespace std;
+    void move3(Bar&amp;&amp; bar) { Bar myBar = std::move(bar); }
+    void move2(Bar&amp;&amp; bar) { move3(std::move(bar)); }
+    void move1(Bar&amp;&amp; bar) { move2(std::move(bar)); }
     
-    template&lt;typename T&gt;
-    using tree_t=function&lt;const void*(function&lt;const void*(const void*,const T*,const void*)&gt;)&gt;;
+    void copy3(Bar bar) { Bar myBar = bar; }
+    void copy2(Bar bar) { copy3(bar); }
+    void copy1(Bar bar) { copy2(bar); }
     
-    template&lt;typename T&gt;
-    tree_t&lt;T&gt; make_tree(const void* left, const T val, const void* right) {
-        const T* v = new T(std::move(val));
-        return [=](function&lt;const void*(const void*,const T*,const void*)&gt; f) {
-            return f(left, v, right);
-        };
-    }
-    
-    template&lt;typename T&gt;
-    const tree_t&lt;T&gt;* Tree(const void* left, const T val, const void* right) {
-        return new auto(make_tree(left, val, right));
-    }
-    
-    template&lt;typename T&gt;
-    const tree_t&lt;T&gt;* Leaf(const T val) {
-        return Tree(nullptr, val, nullptr);
-    }
-    
-    template&lt;typename T&gt;
-    T TreeVal(const tree_t&lt;T&gt;* tree) {
-        return *(const T*)((*tree)([](const void* left, const T* val, const void* right) {
-            return val;
-        }));
-    }
-    
-    template&lt;typename T&gt;
-    const T* TreeValPointer(const tree_t&lt;T&gt;* tree) {
-        return (const T*)((*tree)([](const void* left, const T* val, const void* right) {
-            return val;
-        }));
-    }
-    
-    template&lt;typename T&gt;
-    const tree_t&lt;T&gt;* TreeLeft(const tree_t&lt;T&gt;* tree) {
-        return (const tree_t&lt;T&gt;*)((*tree)([](const void* left, const T* val, const void* right) {
-            return left;
-        }));
-    }
-    
-    template&lt;typename T&gt;
-    const tree_t&lt;T&gt;* TreeRight(const tree_t&lt;T&gt;* tree) {
-        return (const tree_t&lt;T&gt;*)((*tree)([](const void* left, const T* val, const void* right) {
-            return right;
-        }));
-    }
-    
-    template &lt;typename T&gt;
-    string traversal(const tree_t&lt;T&gt;* tree) {
-        if (TreeLeft&lt;T&gt;(tree) == nullptr &amp;&amp; TreeRight&lt;T&gt;(tree) == nullptr) {
-            return to_string(TreeVal&lt;T&gt;(tree));
-        }
-        if (TreeLeft&lt;T&gt;(tree) == nullptr) {
-            return to_string(TreeVal&lt;T&gt;(tree)) + string(" ") + traversal&lt;T&gt;(TreeRight(tree));
-        }
-        if (TreeRight&lt;T&gt;(tree) == nullptr) {
-            return traversal&lt;T&gt;(TreeLeft&lt;T&gt;(tree)) + string(" ") + to_string(TreeVal&lt;T&gt;(tree));
-        }
-        return traversal&lt;T&gt;(TreeLeft&lt;T&gt;(tree)) + string(" ") + to_string(TreeVal&lt;T&gt;(tree)) + string(" ") + traversal&lt;T&gt;(TreeRight&lt;T&gt;(tree));
-    }
-    
-    template&lt;typename T&gt;
-    void deallocate(const tree_t&lt;T&gt;* tree) {
-        if (nullptr == tree) return;
-        deallocate&lt;T&gt;(TreeLeft&lt;T&gt;(tree));
-        deallocate&lt;T&gt;(TreeRight&lt;T&gt;(tree));
-        delete TreeValPointer&lt;T&gt;(tree);
-        delete tree;
-    }
-    
-    int main()
+    void Test()
     {
-        const auto t = Tree&lt;int&gt;(Leaf&lt;int&gt;(6), 8, Tree&lt;int&gt;(Leaf&lt;int&gt;(4), 7, Leaf&lt;int&gt;(5)));
-        cout &lt;&lt; traversal&lt;int&gt;(t) &lt;&lt; endl; // prints 6 8 4 7 5!!!!!
-        deallocate&lt;int&gt;(t);
-        return 0;
+        //Counter-example: prvalue used to initialize b directly, no copy or move. We want more of this!
+        Bar b = Bar{Bar{Bar{}}};
+        
+        //Ex 1: uses move constructor, instead of using "Bar{}" prvalue to initialize m_bar:
+        Foo{Bar{}};
+        
+        //Ex 2: uses move constructor, instead of using "Bar{}" prvalue to initialize myBar:
+        //At least it does only one move and elides the the extra ones
+        move1(Bar{});
+        
+        //Ex 3: does 3 copies instead of eliding copies and using "Bar{}" prvalue to initialize myBar
+        copy1(Bar{});
     }
 
-SECOND IMPLEMENTATION (LIST CLOSURE + TREE WITH MULTIPLE CHILDREN)
+*Equivalent code which logs constructor accesses, tested with gcc and clang on GodBolt:* [*https://godbolt.org/z/GfEYdd*](https://godbolt.org/z/GfEYdd)
 
-List closure:
-
-    /*    LIST CLOSURE START */
-    template&lt;typename T&gt;
-    using list_t=function&lt;void*(function&lt;void*(T*,void*, int*)&gt;)&gt;;
-    template&lt;typename T&gt;
-    using List=list_t&lt;T&gt;*;
-    
-    template&lt;typename T&gt;
-    int ListLen(List&lt;T&gt; list);
-    
-    template&lt;typename T&gt;
-    list_t&lt;T&gt; make_list(T head, List&lt;T&gt; tail) {
-        T* v = new T(std::move(head));
-        int* len = new int(ListLen&lt;T&gt;(tail) + 1);
-        return [=](function&lt;void*(T*,void*, int*)&gt; f) {
-            return f(v, (void*)tail, len);
-        };
-    }
-    
-    template&lt;typename T&gt;
-    List&lt;T&gt; MakeList(T head, List&lt;T&gt; tail) {
-        return new auto(make_list&lt;T&gt;(head, tail));
-    }
-    
-    template&lt;typename T&gt;
-    List&lt;T&gt; MakeEmptyList() {
-        return (List&lt;T&gt;)nullptr;
-    }
-    
-    template&lt;typename T&gt;
-    List&lt;T&gt; MakeList(T head) {
-        return new auto(make_list&lt;T&gt;(head, nullptr));
-    }
-    
-    template&lt;typename T&gt;
-    int ListLen(List&lt;T&gt; list) {
-        if (nullptr == list) return 0;
-        return *(int*)(*list)([=](T* head, void* tail, int* len) { return (void*)len; });
-    }
-    
-    template&lt;typename T&gt;
-    int* ListLenPointer(List&lt;T&gt; list) {
-        if (nullptr == list) return 0;
-        return (int*)(*list)([=](T* head, void* tail, int* len) { return (void*)len; });
-    }
-    
-    template&lt;typename T&gt;
-    T ListHead(List&lt;T&gt; list) {
-        return *(T*)(*list)([](T* head, void* tail, int* len){ return (void*)head; });
-    }
-    
-    template&lt;typename T&gt;
-    T* ListHeadPointer(List&lt;T&gt; list) {
-        return (T*)(*list)([](T* head, void* tail, int* len){ return (void*)head; });
-    }
-    
-    template&lt;typename T&gt;
-    List&lt;T&gt; ListTail(List&lt;T&gt; list) {
-        return (List&lt;T&gt;)(*list)([](T* head, void* tail, int* len){ return tail; });
-    }
-    
-    template&lt;typename T&gt;
-    bool empty(List&lt;T&gt; list) {
-        return (list == nullptr);
-    }
-    
-    template&lt;typename T&gt;
-    List&lt;T&gt; concat(List&lt;T&gt; list1, List&lt;T&gt; list2) {
-        if (empty(list1)) return list2;
-        return MakeList(ListHead(list1), concat(ListTail(list1), list2));
-    }
-    
-    template&lt;typename T&gt;
-    void deallocate(List&lt;T&gt; list) {
-        if (nullptr == list) return;
-        deallocate(ListTail(list));
-        delete ListHeadPointer(list);
-        delete ListLenPointer(list);
-        delete list;
-    }
-    /*    LIST CLOSURE END */
-
-And now, the tree with no bound on the number of children:
-
-    /*    TREE CLOSURE START */
-    template&lt;typename T&gt;
-    using tree_t=function&lt;void*(function&lt;void*(T*,List&lt;void*&gt;)&gt;)&gt;;
-    template&lt;typename T&gt;
-    using Tree=tree_t&lt;T&gt;*;
-    
-    template&lt;typename T&gt;
-    tree_t&lt;T&gt; make_tree(T val, List&lt;Tree&lt;T&gt;&gt; tail) {
-        T* v = new T(std::move(val));
-        return [=](function&lt;void*(T*,List&lt;void*&gt;)&gt; f) {
-            return f(v, (List&lt;void*&gt;)tail);
-        };
-    }
-    
-    template&lt;typename T&gt;
-    Tree&lt;T&gt; MakeTree(T val, List&lt;Tree&lt;T&gt;&gt; children) {
-        return new auto(make_tree(val, children));
-    }
-    
-    template&lt;typename T&gt;
-    Tree&lt;T&gt; Leaf(T val) {
-        return MakeTree&lt;T&gt;(val, nullptr);
-    }
-    
-    template&lt;typename T&gt;
-    T TreeVal(Tree&lt;T&gt; tree) {
-        return *(T*)((*tree)([](T* val, List&lt;void*&gt; children) { return val; }));
-    }
-    
-    template&lt;typename T&gt;
-    T* TreeValPointer(Tree&lt;T&gt; tree) {
-        return (T*)((*tree)([](T* val, List&lt;void*&gt; children) { return val; }));
-    }
-    
-    template&lt;typename T&gt;
-    List&lt;Tree&lt;T&gt;&gt; TreeChildren(Tree&lt;T&gt; tree) {
-        return (List&lt;Tree&lt;T&gt;&gt;)((*tree)([](T* val, List&lt;void*&gt; children) { return children; }));
-    }
-    
-    template&lt;typename T&gt;
-    void deallocate(Tree&lt;T&gt; tree);
-    
-    template&lt;typename T&gt;
-    void deallocate_children(List&lt;Tree&lt;T&gt;&gt; children) {
-        if (nullptr == children) return;
-        deallocate(ListHead(children));
-        deallocate_children(ListTail(children));
-    }
-    
-    template&lt;typename T&gt;
-    void deallocate(Tree&lt;T&gt; tree) {
-        if (nullptr == tree) return;
-        deallocate_children(TreeChildren(tree));
-        deallocate(TreeChildren(tree));
-        delete TreeValPointer(tree);
-        delete tree;
-    }
-    
-    // BFS basically
-    template&lt;typename T&gt;
-    void print_levels(List&lt;Tree&lt;T&gt;&gt; this_level, List&lt;Tree&lt;T&gt;&gt; next_level) {
-        if (ListLen(this_level) == 0) {
-            cout &lt;&lt; endl;
-            if (ListLen(next_level) == 0) return;
-            return print_levels(next_level, MakeEmptyList&lt;Tree&lt;T&gt;&gt;());
-        }
-        cout &lt;&lt; TreeVal(ListHead(this_level)) &lt;&lt; " ";
-        return print_levels(ListTail(this_level), concat(next_level, TreeChildren(ListHead(this_level))));
-    }
-    
-    template&lt;typename T&gt;
-    void print_levels(Tree&lt;T&gt; tree) {
-        print_levels(MakeList(tree), MakeEmptyList&lt;Tree&lt;T&gt;&gt;());
-    }
-    /*    TREE CLOSURE END */
-    
-    int main()
-    {
-        auto l = MakeList(5, MakeList(4, MakeList(3, MakeList(6))));
-        cout &lt;&lt; ListLen(l) &lt;&lt; endl; // prints 4
-        print_list(l); // prints 5 4 3 6 
-        auto t = MakeTree(8,
-                 MakeList(Leaf(4), MakeList(Leaf(5), MakeList(MakeTree(3,
-                                                              MakeList(Leaf(9), MakeList(Leaf(10))))))));
-        print_levels(t);
-        /*
-        Prints: 
-        8                                                                                                                                                
-        4 5 3                                                                                                                                            
-        9 10
-        */
-        deallocate(t);
-        return 0;
-    }
-
-&amp;#x200B;
-## [8][B-Tree implementation in C++20 : any feedback will be welcomed!](https://www.reddit.com/r/cpp/comments/idxwb4/btree_implementation_in_c20_any_feedback_will_be/)
-- url: https://www.reddit.com/r/cpp/comments/idxwb4/btree_implementation_in_c20_any_feedback_will_be/
----
-https://codereview.stackexchange.com/questions/248231/c-b-tree-in-c20
-
-To-do list:
-- Custom comparators. (Seems to be easy)
-- Iterators.
-## [9][Calling Functions: A Tutorial - Munich C++ User Group 2020 - Klaus Iglberger](https://www.reddit.com/r/cpp/comments/idt9dw/calling_functions_a_tutorial_munich_c_user_group/)
-- url: https://www.youtube.com/watch?v=B9RT5sVunmk
+ Are you guys aware of any work in progress to optimize those scenarios (paper links appreciated)? Are there specific obstacles?
+## [5][Standard library development made easy with C++20](https://www.reddit.com/r/cpp/comments/ifotxd/standard_library_development_made_easy_with_c20/)
+- url: https://cor3ntin.github.io/posts/tuple/
 ---
 
-## [10][Cautionary Advice For Process-Thread Affinity Users-Developers](https://www.reddit.com/r/cpp/comments/ie2jbi/cautionary_advice_for_processthread_affinity/)
-- url: https://www.reddit.com/r/cpp/comments/ie2jbi/cautionary_advice_for_processthread_affinity/
+## [6][vector&lt;const T&gt; in C++20](https://www.reddit.com/r/cpp/comments/ifkasg/vectorconst_t_in_c20/)
+- url: https://www.reddit.com/r/cpp/comments/ifkasg/vectorconst_t_in_c20/
 ---
-EDIT \*\*Confirmed Facts:  
-Win64 Home : you are only allowed to set affinity upto 64 thread to a single block(cpu core etc).  
-Win64 Pro : follows the same rule, but further allows a 2nd block if m/b supports 2nd socket. (this can be abused so you can set the affinity of 128 on upto 2 blocks(cpu))  
-Win64 Educ / Server: has no limits. Affinity both thread and cpu works as is documented.  
-\*\*END EDIT: Clarity for future references:  
+/u/HowardHinnant notes in [this StackOverflow answer](https://stackoverflow.com/a/39652132) that the reason `vector&lt;const T&gt;` is illegal is due to the deprecated address overload on allocator. These overloads are now removed in C++20. Does this mean `vector&lt;const T&gt;` is now legal? Or does the allocator requirements still forbid this?
+## [7][Can anyone recommend a good audio library for a game engine?](https://www.reddit.com/r/cpp/comments/ifowbe/can_anyone_recommend_a_good_audio_library_for_a/)
+- url: https://www.reddit.com/r/cpp/comments/ifowbe/can_anyone_recommend_a_good_audio_library_for_a/
+---
+I've built my game so far just using SDL2 for rendering and audio - but moved rendering over to Vulkan and now want to upgrade the engine's audio library as well. Can anyone recommend a good audio library?
 
+SDL2 audio is not great for many simultaneous sounds or sounds moving in 2D/3D coordinates - so that is the main feature I am looking to improve. I have read people recommend OpenAL though that library seems like it hasn't been used for many recent games according to their website. I also hear that irrklang is meant to be OK as well. I was also looking into [YSE](http://www.attr-x.net/yse/) but not sure how good it is.
 
-\*{ TLDR;\*After thorough tests with numerous libraries and self-written extensions I can confirm that Microsoft Windows Home and Pro (can’t comment on workstation) deliberately limit your ability to select cores and thread affinity. Home being a shocking offender at limiting to 64 units regardless of your programmed requirements or cpu capabilities, pro with some process juggling can get to 128.This is a big issue with newer processors, in my opinion.
-
-Needs to be brought into common knowledge, if it isn’t already, as I was not aware of such practices. *TLDR; }*
-
-As all common multi-threaded base libraries have limited, to no, control of affinity on windows I decided to extend a few to bring my code in line with the linux and bsd versions I have.
-
-QT5+, SDL2, OpenMP using mingW32/64 have all been extended by myself to give access to process and thread affinity for Windows, Linux and BSD (not mac don’t have one to test), if they did not already. I used multiple extended back-ends to test this from pthread, numa, additionally openmp mods, and direct platform header use in some cases too. As it was not obvious what the problem was.
-
-As these are derivative works I’m not sure I can freely share the code for use, but will supply the changes if you wish to test yourself.
-
-All work flawlessly up to the mentioned bug/feature above; if and only if they obey thread-blocks in single process block affinities. Using multiple processes if you wish more thread blocks.
-
-When reaching the limits of 64 on Windows(home) affinity is in the trashcan I’m afraid…random behaviour.  On Windows(pro) you are “allowed” to create an additional process to access just 64 more, but NO MORE.
-
-Are people aware of this? More importantly, is there a work around or a known end to such practices? Is this the base reason affinity is currently lacking in so many core libraries?
-## [11][CppCast: STX](https://www.reddit.com/r/cpp/comments/ido5v4/cppcast_stx/)
-- url: https://cppcast.com/stx-basit-ayantunde/
+Any help would be appreciated, thank you.
+## [8][Glob for C++17: Unix-style pathname pattern expansion](https://www.reddit.com/r/cpp/comments/ife5w7/glob_for_c17_unixstyle_pathname_pattern_expansion/)
+- url: https://github.com/p-ranav/glob
 ---
 
+## [9][Purely online conferences](https://www.reddit.com/r/cpp/comments/ifkhge/purely_online_conferences/)
+- url: https://www.reddit.com/r/cpp/comments/ifkhge/purely_online_conferences/
+---
+Upcoming conferences such as Meeting C++ and CppCon are held mostly or entirely online due to travel restrictions caused by the Corona virus. 
+
+Aren't all of the talks uploaded on YouTube after the conference for free anyway? If so, what is the point of attending the online CppCon for $200? Genuinely wondering if I am missing something.
+## [10][Compilation overhead of invoke](https://www.reddit.com/r/cpp/comments/ifnvo4/compilation_overhead_of_invoke/)
+- url: https://eggs-cpp.github.io/invoke/benchmark.html
+---
+
+## [11][Should I buy the C++ Primer (5th edition) ?](https://www.reddit.com/r/cpp/comments/if5tzh/should_i_buy_the_c_primer_5th_edition/)
+- url: https://www.reddit.com/r/cpp/comments/if5tzh/should_i_buy_the_c_primer_5th_edition/
+---
+Hello ! I'm new to coding and I want to learn C++. I searched on the net about some books and found out that C++ Primer (from lippman) is a great book. My only problem is that it's 2020 and I don't know if the book is still " up to date " or if it's a bit outdated ( I don't know when c++ get updated ). I hope people can help me ! Oh and if you have other suggestions please say it. Thanks !

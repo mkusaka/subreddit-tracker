@@ -1,19 +1,5 @@
 # androiddev
-## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/ifo98o/weekly_whos_hiring_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/ifo98o/weekly_whos_hiring_thread/
----
-Looking for Android developers? Heard about a cool job posting? Let people know!
-
-Here is a suggested posting template:
-
-&gt; Company: &lt;Best Company Ever&gt;  
-&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
-&gt; Location: &lt;City, State, Country&gt;  
-&gt; Allows remote: &lt;Yes/No&gt;  
-&gt; Visa: &lt;Yes/No&gt;  
-
-Feel free to include any other information about the job.
-## [2][Weekly Questions Thread - August 24, 2020](https://www.reddit.com/r/androiddev/comments/ifmsyv/weekly_questions_thread_august_24_2020/)
+## [1][Weekly Questions Thread - August 24, 2020](https://www.reddit.com/r/androiddev/comments/ifmsyv/weekly_questions_thread_august_24_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/ifmsyv/weekly_questions_thread_august_24_2020/
 ---
 This thread is for simple questions that don't warrant their own thread (although we suggest checking the sidebar, [the wiki](http://www.reddit.com/r/androiddev/wiki/), [our Discord](https://discord.gg/D2cNrqX), or [Stack Overflow](http://stackoverflow.com) before posting). Examples of questions:
@@ -31,119 +17,164 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][loggy.sh - Minimalist Live Log Tail for Android, WIP](https://www.reddit.com/r/androiddev/comments/ifcfw6/loggysh_minimalist_live_log_tail_for_android_wip/)
-- url: https://v.redd.it/g001rzifsti51
+## [2][We’re on the engineering team for Android Jetpack &amp; Jetpack Compose. Ask us Anything! (starts August 27)](https://www.reddit.com/r/androiddev/comments/idefss/were_on_the_engineering_team_for_android_jetpack/)
+- url: https://www.reddit.com/r/androiddev/comments/idefss/were_on_the_engineering_team_for_android_jetpack/
+---
+We’re on the engineering team for Android Jetpack &amp; Jetpack Compose, and we are excited to participate in another AMA on r/androiddev on **Thursday, August 27**!
+
+For our [launch](https://android-developers.googleblog.com/2020/06/unwrapping-android-11-beta-plus-more.html) of the [Android 11 Beta](http://d.android.com/android11), we introduced [\#11WeeksOfAndroid](https://developer.android.com/11weeksofandroid), focusing on a new topic every week. We’re excited to close out our [\#11WeeksOfAndroid](https://developer.android.com/11weeksofandroid) with a focus on UI, and on Thursday we’ll be hosting an AMA on the Android Jetpack and Jetpack Compose!
+
+[Android Jetpack](https://developer.android.com/jetpack) is our suite of libraries to help developers follow best practices, reduce boilerplate code, and write code that works consistently across Android versions and devices. We launched several new libraries like Hilt for Dependency Injection, App Startup, and updates to Paging, Navigation, CameraX, and more.  Check out the Jetpack updates we made during #11WeeksOfAndroid [here](https://android-developers.googleblog.com/2020/07/11-weeks-of-android-jetpack.html).
+
+[Jetpack Compose](https://developer.android.com/jetpack/compose) is Android’s modern toolkit for building native UI - declarative, composable, and more! We’re currently in developer preview and excited to show you more next week, when we will focus the week on UI! Check out our overview [video](https://www.youtube.com/watch?v=U5BwfqBpiWU) and try the [tutorial](https://developer.android.com/jetpack/compose/tutorial) to learn more.
+
+For this AMA, we want to answer your *technical* questions about Android Jetpack and Compose.  No roadmaps :)
+
+We'll start answering questions on **Thursday, August 27 at 12:00 PM PDT / 3:00 PM EDT (UTC 1900)** and will continue until 1:20 PM PDT / 4:20 PM EDT.
+
+**Feel free to submit your questions ahead of time.** This thread will be used for both questions and answers. Please adhere to our [community guidelines](https://developer.android.com/community-guidelines) when participating in this conversation.
+
+**Here are some topics we’re looking forward to talking about, but feel free to ask anything!**
+
+* Jetpack Compose
+* Hilt
+* Navigation
+* WorkManager
+* Paging
+* Permissions
+* App Startup
+* AppCompat
+* CameraX
+* ...[and more](https://developer.android.com/jetpack/androidx/explorer)!
+
+&amp;#x200B;
+
+**Participants from the Android team:**
+
+* **Adam Powell** \- Tech Lead on Jetpack Compose
+* **Alan Viverette** (/u/alanviverette) - Tech Lead on Android Jetpack
+* **Alex Elias** (/u/alex_elias) - Tech Lead on Jetpack Compose
+* **Amanda Alexander** \- Product Manager on Jetpack and Jetpack Compose
+* **Anna-Chiara Bellini** \- Product Manager on Jetpack Compose
+* **Chris Banes** (/u/chrisbanes) - Android Developer Relations
+* **Chris Craik** \- Tech Lead on Paging, Benchmark
+* **Clara Bayarri** (/u/clarabayarri) - Tech Lead on Jetpack Compose
+* **Dany Santiago** (/u/danyaguacate) - Tech Lead on Hilt &amp; Room
+* **Diana Wong** (/u/androiddiana) - Product Manager on Android Jetpack &amp; App Compatibility
+* **Doris Liu** \- (/u/doris4lt) Engineer on Jetpack Compose Animation
+* **George Mount** \- Tech Lead on Jetpack Compose core
+* **Ian Lake** \- Tech Lead on Navigation, Fragments, Lifecycle
+* **Jamal Eason** \- Senior Product Manager, Android Studio
+* **Jim Sproch** \- Engineer on Jetpack Compose
+* **Karen Ng** (/u/nkaren) - Director of Product, Jetpack and Compose
+* **Leland Richardson** (/u/lrichardson) - Jetpack Compose Compiler &amp; Runtime
+* **Nick Butcher** (/u/nickbutcher) - Android Developer Relations
+* **Nick Rout** (/u/ricknout) - Material Design Developer Relations
+* **Romain Guy** (/u/romainguy) - Manager of the Android Toolkit/Jetpack team
+* **Scott Swarthout** \- Product Manager on Jetpack Compose Motion Tools
+* **Sergey Vasilinetc** \- Tech Lead on Arch Components
+* **Siyamed Sinir** (/u/siyamed) - Tech Lead on Android Toolkit &amp; Compose
+* **Stephan Linzer** \- Test
+* **Sumir Kataria** (/u/SumirKodes) - Tech Lead on Android Jetpack
+* **Trevor McGuire** (/u/teamcguire) - Engineer on CameraX
+* **Vinit Modi** \- Product Manager on CameraX &amp; Camera
+* **Yigit Boyar** (/u/yboyar) - Tech Lead on Android Jetpack
+## [3][[UPDATE 2] Thank you, Reddit! I am a self-taught developer who ended up in #1 Top Chart! I have recently created an app “Hue Edge” for controlling Philips Hue via the Samsung Galaxy Edge panel.](https://www.reddit.com/r/androiddev/comments/igaoft/update_2_thank_you_reddit_i_am_a_selftaught/)
+- url: https://www.reddit.com/r/androiddev/comments/igaoft/update_2_thank_you_reddit_i_am_a_selftaught/
+---
+&amp;#x200B;
+
+[Hue Edge](https://i.redd.it/wq071z7415j51.gif)
+
+# Galaxy Store (if you get an error, open Galaxy Store app and search “Hue” or “Hue Edge”): [https://galaxy.store/HueEdge](https://galaxy.store/HueEdge)
+
+OP: [https://www.reddit.com/r/androiddev/comments/hzjuu9/i\_am\_a\_selftaught\_developer\_who\_just\_finished/](https://www.reddit.com/r/androiddev/comments/hzjuu9/i_am_a_selftaught_developer_who_just_finished/)
+
+UPDATE #1: [https://www.reddit.com/r/androiddev/comments/i5d93x/update\_i\_am\_a\_selftaught\_developer\_who\_just/](https://www.reddit.com/r/androiddev/comments/i5d93x/update_i_am_a_selftaught_developer_who_just/)
+
+**Thank you, Reddit**
+
+Thank you for making this possible! After my previous post here, it only took two days until my app “Hue Edge” has ended up as #1 at the Top Chart (same category) of the Samsung Galaxy App Store!
+
+To this day it has reached over 200 downloads! The app was met with very positive feedback and many interesting feature suggestions from you, the users. I could have not done this without your support and encouragement! I must admit that I have had my moments of despair and wanted to give up in the middle of developing the app as I have encountered problems above my skill-level. I am glad that I have kept learning and kept trying until I could solve those problems.
+
+I have worked countless hours, remade, refined, and polished every aspect of it until I was satisfied with the quality. My goal for my app is for it to be quick, clean, responsive, and bring joy to users when they interface with it. Today I am releasing an update to version 1.1, which brings a ton of improvements across the board.
+
+**Update**
+
+I have tried to pack in as many features, fixes, and optimizations as I could into this update. While perfection is very abstract, I think this update brings my app closer to it. I will keep listening to user feedback and try to find ways of making the user experience better.
+
+List of changes:
+
+• Reworked setup process with animated transitions  
+ • Many under-the-hood improvements in performance and stability  
+ • Improvements to handling quick successions of multiple buttons presses  
+ • New settings that let you adjust the number of levels for brightness, color and saturation  
+ • Pop-up tips for first-time users  
+ • Ability to long-tap the scenes to activate them and proceed to adjustment of the associated group  
+ • Error messages for cases when Wi-Fi is turned off or the Hue Bridge cannot be reached  
+ • Adjustments to the transparency of the ring animations on buttons making them more subtle  
+ • Adjustments to font and size of the text on the buttons  
+ • Fix the animation of pull-to-refresh to be visible until the refresh is complete  
+ • Capitalization of "Edge" in name, as it could be considered an accidental misspelling by some users
+
+**Open-Source**
+
+Since day one, I have decided to keep the app open source. If you want to create a similar app to control some other type of equipment, you are more than welcome. I will also gladly take any feedback on my code.
+
+Source: [https://github.com/nils-trubkin/Hue-Edge](https://github.com/nils-trubkin/Hue-Edge)
+
+**Conclusion**
+
+I am very thankful to the community for giving a new developer like me a chance. The amount of positive feedback and response made me very happy! I feel good knowing that my app brings value and joy to the people using it. As for other new developers out there, remember that anyone, if persistent enough, can create apps and reach their goals. Put in your time into work and do not give up when you encounter problems. If you fail, you can always try again and try a different approach!
+## [4][Animating your Keyboard - New WindowInsets APIs for checking the keyboard (IME) visibility and size (Chris Banes)](https://www.reddit.com/r/androiddev/comments/ig7701/animating_your_keyboard_new_windowinsets_apis_for/)
+- url: https://medium.com/androiddevelopers/animating-your-keyboard-fb776a8fb66d
 ---
 
-## [4][Starting as an Android Developer.](https://www.reddit.com/r/androiddev/comments/ifmj1h/starting_as_an_android_developer/)
-- url: https://www.reddit.com/r/androiddev/comments/ifmj1h/starting_as_an_android_developer/
----
-Where should I start? What would you recommend to someone who has never dealt with making android apps before? Are android apps still written in Java or are they being written in Kotlin now? Where do I begin?
-## [5][Best practices for a Production/Test Environment with Android/Firebase/Firestore](https://www.reddit.com/r/androiddev/comments/ifnhea/best_practices_for_a_productiontest_environment/)
-- url: https://www.reddit.com/r/androiddev/comments/ifnhea/best_practices_for_a_productiontest_environment/
----
-Hello,
-
-first of all, I'm a newb self taught programmer. Into this journey about a year (overall learning) and have been working on a project (for about 6-7 months) for my father's mid sized construction company. (specialty contractor where there are no good-fit solutions in existence). Thank you for reading and any input/feedback is much appreciated.
-
-The app is built in android/java and uses Firebase including Firestore, Authentication, Cloud Functions (NodeJS) and Storage.
-
-I'm nearing the point where (what I call) my "Sales Module" is ready for some (live) testing to collect some user feedback. The app features a login system (Authentication) and it's database tracks users, employees, sales items,  customers, sales leads, appointments and ultimately estimates and proposals. (and more) Now before I jump into the next phase of development (creating projects, work orders, inventory/material management, time clock/sheets, etc.)
-
-I need to get this module tested and collect some feedback on it. And of course make sure everything works as intended so far, as there are probably a good amount of untested case scenarios, that are overlooked. We have singled out a couple users that will test drive what we have so far.
-
-&amp;#x200B;
-
-So far I've only been working on this all by myself, so far so good, but....
-
-a) I need to create a live running version  (production) in which I can also fix errors and bugs.
-
-b) I would also like to continue developing on future features without interfering with the "production environment"
-
-&amp;#x200B;
-
-I assume I need to create an additional Google Cloud Project (a la "Production Version/Dev Version')? In theory that's no problem, but I am worried about code inconsistencies (when starting to troubleshoot in the production environment).  Keep in mind I have my Android App Code, but also my Firebase stuff including Firestore DB, Cloud Functions, Storage, etc.
-
-The code in my "Dev Version" should not be released until those features are ready. Or should I just keep one single development code and make newer features inaccessible but still compiling/building them? Please pardon my lack of knowledge and use of proper terms when it comes to this, as I have no experience whatsoever in this particular department. Any help/ideas/suggestions are greatly appreciated, especially articles/lecture/tutorials, etc.
-
-Thank you!
-
-&amp;#x200B;
-
-TL;DR:
-
-&amp;#x200B;
-
-How do I (or do I even need to?) separate my production and development environment when creating an android app (Java) with a fairly complex Google Cloud Firebase project (Firestore, Cloud Functions, Authentication, Storage, etc.) ?
-## [6][Google Play ratings are not average based and lack transparency](https://www.reddit.com/r/androiddev/comments/if5l7h/google_play_ratings_are_not_average_based_and/)
-- url: https://www.reddit.com/r/androiddev/comments/if5l7h/google_play_ratings_are_not_average_based_and/
----
-It's beeen a while since I've been monitoring the Google Play rating on one of my apps (the rating that is displayed to users on Google Play).
-
-&amp;#x200B;
-
-My Google Play rating according to the Google Play Dev Console is **4.448** which rounds to **4.4** on Google Play.
-
-&amp;#x200B;
-
-As defined by Google, "the Google Play rating is calculated based on your most recent ratings".
-
-&amp;#x200B;
-
-Here are the average ratings of my app for all the selectable periods on Google Play dev console:
-
-**Lifetime: 4.609**
-
-**Last 365 days: 4.469**
-
-**Last 180 days: 4.561**
-
-**Last 30 days: 4.485**
-
-**Last 7 days: 4.580**
-
-**Today: 4.556**
-
-&amp;#x200B;
-
-As you can see, for Any selected period, the average of all the ratings on that period is higher than the Google Play rating.
-
-&amp;#x200B;
-
-It's also very strange that the app's Google Play rating (4.448) has not changed more than 0.001 up or down in the last couple of months even if it receives a decent amount of daily ratings (around 10 per day) and "the most recent ratings" definitely have varied.
-
-&amp;#x200B;
-
-The only logical explanation I can think of (other than that the whole rating system is bugged) is that Google is weighting the ratings so that more "helpful"/upvoted ratings have more weight on the average. But even if that was the case, how can the number be so stable?
-
-&amp;#x200B;
-
-I think the lack of transparency/clarity on how Google Play ratings are calculated is an issue and contributes to raising concerns on potential manipulation.
-## [7][5 Awesome Open-source Android Kotlin Apps with MVVM, Dagger, Coroutines, Retrofit, and Room!](https://www.reddit.com/r/androiddev/comments/ifdikf/5_awesome_opensource_android_kotlin_apps_with/)
-- url: https://medium.com/@androiddevnotes/5-awesome-open-source-android-kotlin-apps-with-mvvm-dagger-coroutines-retrofit-and-room-98b65296b199
+## [5][Understanding the internals of Android Stack Architecture and how it relates to Linux](https://www.reddit.com/r/androiddev/comments/ifwwbe/understanding_the_internals_of_android_stack/)
+- url: https://www.youtube.com/watch?v=E2_SgFnFmxc
 ---
 
-## [8][Example based learning similar to Hacking with Swift?](https://www.reddit.com/r/androiddev/comments/iffq24/example_based_learning_similar_to_hacking_with/)
-- url: https://www.reddit.com/r/androiddev/comments/iffq24/example_based_learning_similar_to_hacking_with/
+## [6][How much RAM do you really need for AS?](https://www.reddit.com/r/androiddev/comments/iga4c4/how_much_ram_do_you_really_need_for_as/)
+- url: https://www.reddit.com/r/androiddev/comments/iga4c4/how_much_ram_do_you_really_need_for_as/
 ---
-I'm starting a new position as an Android developer and I was wondering if there were any similar resources to [Hacking with Swift](https://www.hackingwithswift.com/100/swiftui). They basically just handhold you through a bunch of projects, and you get a brief overview of what iOS is capable of. I actually got pretty far down the Android dev rabbit hole ~5 years ago, but that was back when it was still using Java and I'm sure many things have changed. Are there any resources similar to that (text preferred)? 
+I got a 32GB Ram Dell XPS which is more than enough for developing on Android and using Android Studio, a friend of mine has a MacBook with 8GB of RAM and struggles a lot with Android Studio, it freezes the computer, takes a lot of time to do builds etc.
 
-Thanks!
-## [9][What are the different foregroundServiceTypes?](https://www.reddit.com/r/androiddev/comments/ifo5e7/what_are_the_different_foregroundservicetypes/)
-- url: https://www.reddit.com/r/androiddev/comments/ifo5e7/what_are_the_different_foregroundservicetypes/
+So I wondered how much would really need Android Studio to run well and do builds without blocking your computer. A simple answer I think it would be 16GB (a middle answer) but do you think there is a real "minimum" or a "ideal" configuration?
+## [7][How is google-services.json working? Isnt it unsafe to compile these informations into an apk?](https://www.reddit.com/r/androiddev/comments/ig776o/how_is_googleservicesjson_working_isnt_it_unsafe/)
+- url: https://www.reddit.com/r/androiddev/comments/ig776o/how_is_googleservicesjson_working_isnt_it_unsafe/
 ---
-Most tutorials tells me to set it to "location", but I also see "dataSync", "connectedDevice" and others. What are the implications for applying these types to my service, and what are implications of NOT applying these types?
+Hey,  
+firebase provides the google-services.json file in order to use some services of firebase. I just wonder how this works? Are this sensitiv information?
+## [8][Inspecting Android HTTP with a fake VPN](https://www.reddit.com/r/androiddev/comments/igbe2p/inspecting_android_http_with_a_fake_vpn/)
+- url: https://httptoolkit.tech/blog/inspecting-android-http/
+---
 
-Will I fx not be able to make phone calls if I don't use the "phoneCall" service type?
-## [10][Request Android permissions using annotations only](https://www.reddit.com/r/androiddev/comments/if0tka/request_android_permissions_using_annotations_only/)
-- url: https://www.reddit.com/r/androiddev/comments/if0tka/request_android_permissions_using_annotations_only/
+## [9][dependency-tree-diff: an intelligent diff tool for the output of Gradle's dependencies task](https://www.reddit.com/r/androiddev/comments/ifry56/dependencytreediff_an_intelligent_diff_tool_for/)
+- url: https://github.com/JakeWharton/dependency-tree-diff
 ---
-[https://github.com/LikeTheSalad/aaper](https://github.com/LikeTheSalad/aaper)
-## [11][What costs come along a world chat for a game?](https://www.reddit.com/r/androiddev/comments/ifn83o/what_costs_come_along_a_world_chat_for_a_game/)
-- url: https://www.reddit.com/r/androiddev/comments/ifn83o/what_costs_come_along_a_world_chat_for_a_game/
+
+## [10][Does this Matter if We're publishing an in-house developed App as an Organization? Do We need a business G Suite Account in this case?](https://www.reddit.com/r/androiddev/comments/igbxxo/does_this_matter_if_were_publishing_an_inhouse/)
+- url: https://i.redd.it/xj0xxhuee5j51.png
 ---
-Talking about having a world chat players can write in, what continuous costs come along this? Does it cost e.g. server payment to have it running?
-## [12][Instant apps](https://www.reddit.com/r/androiddev/comments/ifkj6j/instant_apps/)
-- url: https://www.reddit.com/r/androiddev/comments/ifkj6j/instant_apps/
+
+## [11][Native library users, raísing minSdk affecting binary size?](https://www.reddit.com/r/androiddev/comments/igayiy/native_library_users_raísing_minsdk_affecting/)
+- url: https://www.reddit.com/r/androiddev/comments/igayiy/native_library_users_raísing_minsdk_affecting/
 ---
-I need to make an instant app but I cannot find any good information. When instant app launches firstly, lots of people wrote articles about how to write instant app. But all of them are deprecated.  I asked a working example in stack overflow but no body replied. Why? Is instant apps dead? Why no body mention about it?
+Hi,
+
+my app depends on openCv and bunch of other unrelated native C libraries.
+
+I recently happily raised minSdk of the project from 21 to 23.
+
+&amp;#x200B;
+
+*And apk size* ***increased*** *by 20MB with that change alone*
+
+&amp;#x200B;
+
+Does this make sense to anyone?
+## [12][Anyone has a hint on how to stream video and audio from android camera/mic to php server and then to another Android device?](https://www.reddit.com/r/androiddev/comments/ig9vxw/anyone_has_a_hint_on_how_to_stream_video_and/)
+- url: https://www.reddit.com/r/androiddev/comments/ig9vxw/anyone_has_a_hint_on_how_to_stream_video_and/
+---
+

@@ -1,70 +1,84 @@
 # ruby
-## [1][sports gem - sport data structures for matches, scores, leagues, seasons, rounds, groups, teams, clubs and more](https://www.reddit.com/r/ruby/comments/ifkkb2/sports_gem_sport_data_structures_for_matches/)
+## [1][Curious how the Ruby garbage collector works? I've written an article all about it](https://www.reddit.com/r/ruby/comments/ify6nu/curious_how_the_ruby_garbage_collector_works_ive/)
+- url: https://blog.peterzhu.ca/notes-on-ruby-gc/
+---
+
+## [2][Can't figure out why my app doesn't scale as I add instances](https://www.reddit.com/r/ruby/comments/igby63/cant_figure_out_why_my_app_doesnt_scale_as_i_add/)
+- url: https://www.reddit.com/r/ruby/comments/igby63/cant_figure_out_why_my_app_doesnt_scale_as_i_add/
+---
+Hi all. I am having a weird problem and hope that someone can give me some advice. I have a Kubernetes cluster for my Rails app, a CMS that lets users create their own sites. So there is the admin app itself, and then user sites are made of templates with Liquid which are stored in the database (Postgres); pages for user sites are cached in Memcached by Rails using the full page caching gem; then there is a small middleware at the top of the chain that checks if the requested page is in cache, if it is, it returns that response quickly and halts the chain so the rest of the Rails stack is not used and the request is a lot faster. When I add more instances, I can see from benchmarks that throughput for user sites scales more or less as I would expect, kinda of linearly up to a point. However if I benchmark the admin pages adding more instances doesn't make much difference to the req/sec figures, which is super weird. These pages aren't fully cached like user pages because content is dynamic and requires authentication and personalised content for each user, so in this case I am just doing fragment caching where possible. The other significant difference is that the admin pages use the database of course for each page with a varying number of queries per page. I have been testing things with the database setup and the storage in use to see if there are bottlenecks there, but I can't figure out the problem. The database cluster is one master and two read replicas (I am using Rails 6' automatic connection switching to split reads and writes between replicas and master), and has enough memory for a few 100s of connections; the block storage gives 7500 IOPS both read and write, and the dataset is tiny since I haven't launched yet, so it should be all in memory meaning that the storage wouldn't affect the performance much at the moment. 
+Taking these things into account, I wouldn't think that the database is the bottleneck but I have done an experiment which may suggest otherwise: I have added a simple query to the aforementioned middleware and disabled the memcached part. So what the middleware does now is perform a simple database query with ActiveRecord and return a dummy response so the rest of the Rails app is not in use. To my surprise, even with that stupid simple query on a tiny table, I get 2 to 4 times more requests per second when I remove that query from the middleware, compared to the middleware with the database query. WTH? How can a so small query on a small table make such a difference? 
+What can I try next to see if I can figure out the problem? How do I investigate if the database setup is the bottleneck? The other weird thing is that I have tried benchmarking Postgres against the master only, and I get between 500 and 800+ transactions per second. Not a huge number, but still shows that my app should handle more than 70-80 req/sec with 9 instances, also considering that the app can use the replicas too for the reads. The app is using Puma with two workers and 5 threads per instance. Any advice on how to investigate and find the problem would be MUCH appreciated. Thanks in advance!
+## [3][The great Rubykon Benchmark 2020: CRuby vs JRuby vs TruffleRuby](https://www.reddit.com/r/ruby/comments/ifsjwd/the_great_rubykon_benchmark_2020_cruby_vs_jruby/)
+- url: https://pragtob.wordpress.com/2020/08/24/the-great-rubykon-benchmark-2020-cruby-vs-jruby-vs-truffleruby/
+---
+
+## [4][Ruby TRICKS of 2018](https://www.reddit.com/r/ruby/comments/ifs5p2/ruby_tricks_of_2018/)
+- url: https://idiosyncratic-ruby.com/75-ruby-tricks-of-2018.html
+---
+
+## [5][[Gem] active_record-events: Timestamp management made easy](https://www.reddit.com/r/ruby/comments/ifr6r4/gem_active_recordevents_timestamp_management_made/)
+- url: https://www.reddit.com/r/ruby/comments/ifr6r4/gem_active_recordevents_timestamp_management_made/
+---
+Hello everyone! 👋
+
+If you tend to use a lot of timestamp fields in your Rails applications, you might be interested in a gem I recently released called [active\_record-events](https://github.com/pienkowb/active_record-events).
+
+By adding convenience methods on top of a `datetime` field, the gem allows you to manage custom timestamps in a similar way to how ActiveRecord handles the `created_at` and `updated_at` fields.
+
+Here's an example. Assuming we have a `Task` model with a `completed_at` field, let's add a `has_event` macro inside the model class:
+
+    class Task &lt; ActiveRecord::Base
+      has_event :complete
+    end
+
+As a result, we get a bunch of useful methods without the need to define them explicitly.
+
+    task = Task.create!
+    
+    task.completed? # =&gt; false
+    
+    task.complete
+    
+    task.completed? # =&gt; true
+    task.completed_at # =&gt; Sat, 22 Aug 2020 20:45:39 UTC +00:00
+
+This and plenty of other features are described in detail on the gem's GitHub page.
+
+You can check it out here: [https://github.com/pienkowb/active\_record-events](https://github.com/pienkowb/active_record-events)
+## [6][Understanding Ruby blocks](https://www.reddit.com/r/ruby/comments/ifqr28/understanding_ruby_blocks/)
+- url: https://www.reddit.com/r/ruby/comments/ifqr28/understanding_ruby_blocks/
+---
+I know plenty has already been written about Ruby blocks but I decided to take a swing at writing an even better explanation of blocks than the other stuff that's out there right now.
+
+This post is adapted from an exercise from a class I taught last year. It takes you through the process writing your own Ruby block, a block that will output any text you give it inside an ASCII "box".
+
+Hope you like it. Here's the post: [Understanding Ruby blocks](https://www.codewithjason.com/understanding-ruby-blocks/)
+## [7][New Gem simple_assets Released!](https://www.reddit.com/r/ruby/comments/ifwvkz/new_gem_simple_assets_released/)
+- url: https://www.reddit.com/r/ruby/comments/ifwvkz/new_gem_simple_assets_released/
+---
+I have just released a new gem called simple_assets. It is a Dead simple HTML-based assets helper for Ruby. The main idea here is to promote re-usability for projects. I would appreciate any feedback on this design. https://github.com/westonganger/simple_assets
+## [8][[JOB] [REMOTE] Drizly is Hiring Remote Software Engineers](https://www.reddit.com/r/ruby/comments/ifyb37/job_remote_drizly_is_hiring_remote_software/)
+- url: https://www.reddit.com/r/ruby/comments/ifyb37/job_remote_drizly_is_hiring_remote_software/
+---
+Hello everyone!  
+
+
+Cant seem to find the community rules page, so definitely attack me if I am wrong, i probably deserve it.  
+
+
+So referencing my title, we here at Drizly is looking for Remote Fullstack (can favor front end or backend!) Software Engineers to help build out our eCommerce platform solution for retailers, consumers and alcohol brands across the nation. We are utilizing Ruby on the backend but we are quite language agnostic and happy to teach! We are open to non traditional backgrounds in both experience and education.    
+
+
+Unfortunately at this time we are unable to sponsor at this time and candidates need to be based in the US.    
+
+
+Feel free to apply here, email me [kenneth.han@drizly.com](mailto:kenneth.han@drizly.com) or DM me! [https://jobs.lever.co/drizly/25edf13d-923d-48de-b99c-10106873ac27?lever-origin=applied&amp;lever-source%5B%5D=reddit](https://jobs.lever.co/drizly/25edf13d-923d-48de-b99c-10106873ac27?lever-origin=applied&amp;lever-source%5B%5D=reddit)
+## [9][sports gem - sport data structures for matches, scores, leagues, seasons, rounds, groups, teams, clubs and more](https://www.reddit.com/r/ruby/comments/ifkkb2/sports_gem_sport_data_structures_for_matches/)
 - url: https://github.com/sportdb/sport.db/tree/master/sports
 ---
 
-## [2][Super Bombinhas v0.6.0 released!](https://www.reddit.com/r/ruby/comments/if43sh/super_bombinhas_v060_released/)
-- url: https://www.reddit.com/r/ruby/comments/if43sh/super_bombinhas_v060_released/
----
-Hi!
-
-Version 0.6.0 of my open source platformer game (written in Ruby) is released! It now has 4 complete worlds with a total of 20 stages.
-
-Downloads for Debian-based Linux and Windows are available here: [https://victords.itch.io/super-bombinhas](https://victords.itch.io/super-bombinhas)
-
-All feedback is appreciated. Thanks!
-## [3][Exploring Ruby's Enumerable Module](https://www.reddit.com/r/ruby/comments/ifiybu/exploring_rubys_enumerable_module/)
+## [10][Exploring Ruby's Enumerable Module](https://www.reddit.com/r/ruby/comments/ifiybu/exploring_rubys_enumerable_module/)
 - url: https://www.sandipmane.dev/exploring-rubys-enumerable-module
 ---
 
-## [4][ActionMailer email preview tool (HTML + plaintext + HTML source)](https://www.reddit.com/r/ruby/comments/ieka94/actionmailer_email_preview_tool_html_plaintext/)
-- url: https://www.reddit.com/r/ruby/comments/ieka94/actionmailer_email_preview_tool_html_plaintext/
----
-Hi, Rubyists. I have made a tool for previewing emails called *Postmortem*. It provides seamless integration (zero config) with ActionMailer and Pony and hopes to make email development a little less painful.
-
-You can see the source and usage instructions on GitHub here:
-
-[https://github.com/bobf/postmortem](https://github.com/bobf/postmortem)
-
-Every time your application sends an email, *Postmortem* writes a colorful log entry with a path to an HTML file. You can open this file in your browser to see a preview of your email. The provided interface has a few tools for viewing HTML, plaintext, and syntax-highlighted HTML source as well as the usual header information (recipients, subject, etc.).
-
-There is also a live demo linked in the README. I tried to include that link here before but the post got eaten by Reddit's spam bots.
-
-All feedback is welcome. Have a nice weeekend and I hope some of you find this useful.
-## [5][People who program in Ruby might also want to spend with a Metal Ruby Crypto Card?](https://www.reddit.com/r/ruby/comments/ifb9lk/people_who_program_in_ruby_might_also_want_to/)
-- url: https://www.reddit.com/r/ruby/comments/ifb9lk/people_who_program_in_ruby_might_also_want_to/
----
-Here’s a reddit link to what crypto.com’s metal ruby Visa debit card looks like. Spend with bitcoin and get 2% cash back, as well as free Spotify Premium.
-
-https://www.reddit.com/r/Crypto_com/comments/icbn8n/finally_my_card_arrived/
-
-Use my referral link https://platinum.crypto.com/r/8vmf9tsu5x to sign up for Crypto.com and we both get $50 USD :)
-## [6][Does anyone know why this huge difference in performance appears here? (talking about implementation details)](https://www.reddit.com/r/ruby/comments/iehdhx/does_anyone_know_why_this_huge_difference_in/)
-- url: https://i.redd.it/vk5gvi2bpji51.jpg
----
-
-## [7][Ruby Bitwise Operators](https://www.reddit.com/r/ruby/comments/iehonr/ruby_bitwise_operators/)
-- url: https://medium.com/rubycademy/ruby-bitwise-operators-da57763fa368
----
-
-## [8][Why is parentheses preferred around function/method calls with arguments?](https://www.reddit.com/r/ruby/comments/iea59u/why_is_parentheses_preferred_around/)
-- url: https://www.reddit.com/r/ruby/comments/iea59u/why_is_parentheses_preferred_around/
----
-To me, a dsl and a function call look very similar so why the pushback when one leaves parentheses out on a function call? I think it looks more readable but the style guide does not recommend it.
-## [9][Micro::Attributes - Create "immutable" objects. No setters, just getters!](https://www.reddit.com/r/ruby/comments/ie69i7/microattributes_create_immutable_objects_no/)
-- url: https://www.reddit.com/r/ruby/comments/ie69i7/microattributes_create_immutable_objects_no/
----
-Hello everybody, I would like to share one of my projects with you!
-
-This gem allows you to define "immutable" objects, and your objects will have only getters and no setters. So, if you change \[[1](https://github.com/serradura/u-attributes#with_attribute)\] \[[2](https://github.com/serradura/u-attributes#with_attributes)\] some object attribute, you will have a new object instance. That is, you transform the object instead of modifying it. 
-
-Check out it [https://github.com/serradura/u-attributes](https://github.com/serradura/u-attributes).
-
-https://preview.redd.it/0s3xlf8pgfi51.jpg?width=1242&amp;format=pjpg&amp;auto=webp&amp;s=39e2e6636be76fd6467733cb7ccac7e6286328d7
-## [10][NoRuKo virtual mini-conference](https://www.reddit.com/r/ruby/comments/idt0w3/noruko_virtual_miniconference/)
-- url: https://www.reddit.com/r/ruby/comments/idt0w3/noruko_virtual_miniconference/
----
-"NoRuKo is a virtual mini-conference filling a bit of the void all the cancelled and postponed events created."
-
-There is a great lineup of speakers and livestreams start friday 21st of August 2020, 15:00 CEST  
-[https://noruko.org/](https://noruko.org/)

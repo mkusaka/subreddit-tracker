@@ -27,7 +27,141 @@ Please use this thread to discuss **cool** but relatively **unknown** gems you'v
 You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
 Please include a **description** and a **link** to the gem's homepage in your comment.
-## [3][Testing connection to db through irb, NameError Uninitialized constant "classname"](https://www.reddit.com/r/rails/comments/ifirdy/testing_connection_to_db_through_irb_nameerror/)
+## [3][after_commit callback not triggered from Concern](https://www.reddit.com/r/rails/comments/ig9fp6/after_commit_callback_not_triggered_from_concern/)
+- url: https://www.reddit.com/r/rails/comments/ig9fp6/after_commit_callback_not_triggered_from_concern/
+---
+I have a model class like this
+
+    class Task &lt; ActiveRecord::Base
+      include Concerns::Tasks 
+      self.table_name = "tasks" 
+    end
+
+and the concern is like in the app/models/concerns directory
+
+    module Concerns::Tasks 
+      extend ActiveSupport::Concern
+      included do 
+        after_commit :do_something
+      end
+      def do_something
+        byebug
+      end
+    end
+
+But my after\_commit callback isn't being hit at all. I'm on rails 4.2.1. Any ideas why?
+
+EDIT: Other concern files are working fine. But only the newly added file isn't working fine. Do I have to register is somewhere?  
+
+
+FINAL\_EDIT: The issue was in the filename. Should have known how rails picks up these files . Got it from here [https://stackoverflow.com/a/12306720/3575018](https://stackoverflow.com/a/12306720/3575018)
+## [4][How to maintain CRUD when accepting nested attributes?](https://www.reddit.com/r/rails/comments/ifttz6/how_to_maintain_crud_when_accepting_nested/)
+- url: https://www.reddit.com/r/rails/comments/ifttz6/how_to_maintain_crud_when_accepting_nested/
+---
+Let’s say these are my models:
+
+Shift
+
+\-- has\_many :employees
+
+\-- has\_many :holiday\_shedules
+
+\-- accepts\_nested\_attributes\_for :employees
+
+\-- accepts\_nested\_attributes\_for :holiday\_schedules
+
+Employees
+
+\-- belongs\_to :shift
+
+HolidaySchedule
+
+\-- belongs\_to :shift
+
+\-- has\_many :holidays
+
+\-- accepts\_nested\_attributes\_for :holidays
+
+Holiday
+
+\-- belongs\_to HolidaySchedule
+
+User steps:
+
+1. Creates the shift
+
+2. Adds staffing to the shift (multiple at a time)
+
+3. Adds two, linked holiday\_schedules to the shift at a time, each with three holidays
+
+Everything I’ve read says that custom controller actions are bad, but how do I maintain CRUD when accepts\_nested\_attributes\_for wants me to use a single controller update action for so many things?  That doesn’t even count updating the shift itself.
+
+These are the options I’m seeing:
+
+1.  Create or update multiple Nurses or HolidaySchedules through their respective controllers by namespacing and picking apart the parameters
+
+2.  Send them all to Shift’s Update action and figure out what to do with them using conditionals
+
+3.  Send them to custom actions in the shifts\_controller, i.e. def update\_nurses, def update\_holiday\_shifts
+
+This is my first Rails project.  Are there options I’m not seeing?  What would be the most conventional, or Railsy, path?
+## [5][Javascript not firing with Turbolinks](https://www.reddit.com/r/rails/comments/ifsu1z/javascript_not_firing_with_turbolinks/)
+- url: https://www.reddit.com/r/rails/comments/ifsu1z/javascript_not_firing_with_turbolinks/
+---
+Hi Folks,
+Using rails 5.2 with turbolinks and it's driving me crazy. Attempting to hide some items on a page when a button is clicked, but the js doesn't seem to fire. Even just trying to debug by using console.log and alert() methods doesn't seem help as neither fires when the button is clicked. Code works fine if I run it in the console, but clearly some issue with turbolinks here. Any ideas? Using an event listener on turbolinks:load (see below)
+
+    document.addEventListener("turbolinks:load", function() {
+        var btnWhiskey = document.getElementById('btn-Whiskey');
+        btnWhiskey.addEventListener('click', function(){
+             alert("testttt");
+             console.log("TEST!");
+        });
+    });
+## [6][Calling Database fails in secondary page.](https://www.reddit.com/r/rails/comments/ifzx3c/calling_database_fails_in_secondary_page/)
+- url: https://www.reddit.com/r/rails/comments/ifzx3c/calling_database_fails_in_secondary_page/
+---
+I have a people database, that functions fine within it's own controller group (index, show, etc)
+
+I want to use calls to this database in another controller, but it does not seem to be getting any data. I am sure I am missing something small, but I am hoping someone can help me.
+
+outside\_controller:
+
+    def pagename
+        @people = Person.all
+      end
+
+pagename.html.erb
+
+    &lt;% @people.each do |person| %&gt;
+        &lt;li class="clearfix"&gt;
+    	&lt;% if person.groffice == 'office' %&gt;
+    		&lt;div class="image"&gt;
+    		    &lt;%= image_tag("profiles/#{person.uname}S.jpg") %&gt;
+    		&lt;/div&gt;
+    		&lt;div class="body"&gt;
+    			&lt;h5&gt;&lt;%= person.fname %&gt; &lt;%= person.lname %&gt;&lt;/h5&gt;
+    		&lt;/div&gt;
+    	&lt;% end %&gt;
+        &lt;/li&gt;
+    &lt;% end %&gt;
+
+Person.rb
+
+    class Person &lt; ApplicationRecord
+    	has_many :pubs
+    	default_scope { order('lname') }
+    	belongs_to :boss, class_name: 'Person'
+    	has_many :subordinates, class_name: 'Person', foreign_key: 'boss_id'
+    
+    	
+    
+        validates_presence_of :uname, :position, :fname, :lname # Needed for friendly URLs
+    end
+    
+
+When I add the `person.groffice` call to my People Index, it pulls the data from that field and displays it without issue. I have a feeling I am missing something stupid. If I run `Person.where(:groffice =&gt; 'office')` in the console it will return the proper record.
+## [7][Testing connection to db through irb, NameError Uninitialized constant "classname"](https://www.reddit.com/r/rails/comments/ifirdy/testing_connection_to_db_through_irb_nameerror/)
 - url: https://www.reddit.com/r/rails/comments/ifirdy/testing_connection_to_db_through_irb_nameerror/
 ---
 Hi all. I’m running into an issue where I want to test out the  connection to the db. I’m trying to access my Articles table. I have a  file in models “article.rb” and inside it has:class Article &lt; ApplicationRecordendWhen I go to my CMD and type the command “rails console” then follow up in IRB with “Article.all” I am receiving this error
@@ -51,7 +185,7 @@ https://preview.redd.it/0ir6u8w37wi51.png?width=1916&amp;format=png&amp;auto=web
 https://preview.redd.it/j29yuxbauvi51.png?width=1920&amp;format=png&amp;auto=webp&amp;s=5a6256dfdd9bbb2580491795159e0a1f0853b016
 
 https://preview.redd.it/r2yyyubauvi51.png?width=1112&amp;format=png&amp;auto=webp&amp;s=bf43995799cbd02eee12ec47a2965a4e7a2ecb33
-## [4][New Tutorial: How to Add Fields to a Devise User Signup in Rails 6](https://www.reddit.com/r/rails/comments/if3gcu/new_tutorial_how_to_add_fields_to_a_devise_user/)
+## [8][New Tutorial: How to Add Fields to a Devise User Signup in Rails 6](https://www.reddit.com/r/rails/comments/if3gcu/new_tutorial_how_to_add_fields_to_a_devise_user/)
 - url: https://www.reddit.com/r/rails/comments/if3gcu/new_tutorial_how_to_add_fields_to_a_devise_user/
 ---
 Do you want to add fields to your devise user signup in a rails 6 app?  In this tutorial we are going to add fields to our devise user sign up specifically: first\_name and last\_name.  We will also add a few validations to ensure some required fields are present.
@@ -61,7 +195,7 @@ Finally, we will add the confirmable module to ensure users sign up with a valid
 Please check it out and let me know what you think.
 
 [https://youtu.be/0widKtkJONA](https://youtu.be/0widKtkJONA)
-## [5][better use all data response in same API or use different API .](https://www.reddit.com/r/rails/comments/ifa4ef/better_use_all_data_response_in_same_api_or_use/)
+## [9][better use all data response in same API or use different API .](https://www.reddit.com/r/rails/comments/ifa4ef/better_use_all_data_response_in_same_api_or_use/)
 - url: https://www.reddit.com/r/rails/comments/ifa4ef/better_use_all_data_response_in_same_api_or_use/
 ---
 I have 7 models and i filter using 7 model from user to get data . data is big for example every key 50 keys (increase) i have 8 keys . it's good use one API to decrease go to db .
@@ -109,7 +243,7 @@ API have
 &amp;#x200B;
 
 &amp;#x200B;
-## [6][node module not getting loaded in production (rails 6)](https://www.reddit.com/r/rails/comments/if5okd/node_module_not_getting_loaded_in_production/)
+## [10][node module not getting loaded in production (rails 6)](https://www.reddit.com/r/rails/comments/if5okd/node_module_not_getting_loaded_in_production/)
 - url: https://www.reddit.com/r/rails/comments/if5okd/node_module_not_getting_loaded_in_production/
 ---
 Hey,
@@ -256,7 +390,7 @@ production:
   # Cache manifest.json for performance
   cache_manifest: true
 ```
-## [7][Input Mask for Rails 6 and Webpacker](https://www.reddit.com/r/rails/comments/ieikj8/input_mask_for_rails_6_and_webpacker/)
+## [11][Input Mask for Rails 6 and Webpacker](https://www.reddit.com/r/rails/comments/ieikj8/input_mask_for_rails_6_and_webpacker/)
 - url: https://www.reddit.com/r/rails/comments/ieikj8/input_mask_for_rails_6_and_webpacker/
 ---
 I can’t imagine that there isn’t a decent JS or StimulusJS solution for input mask (for example as simple as comma separation for numbers) 
@@ -264,7 +398,7 @@ I can’t imagine that there isn’t a decent JS or StimulusJS solution for inpu
 There are few libraries that I tried but I just can’t make it work with webpaker, turbolink. I do no want to put the jQuery in the environment.rb instead use CDN (I would rather not use CDN, my challenge is adding jQuery in the application level adds to the front-end of the site which I don’t want because the front-end uses a different version of jQuery and I would like to keep them separate).  Unless there is a way to add jQuery to packs config (I have two separate packs front-end and back-end)
 
 Does anyone have a good example?  Something that you have actually used and can share the codes with?
-## [8][Alternatives for Bootstrap framework?](https://www.reddit.com/r/rails/comments/iebb66/alternatives_for_bootstrap_framework/)
+## [12][Alternatives for Bootstrap framework?](https://www.reddit.com/r/rails/comments/iebb66/alternatives_for_bootstrap_framework/)
 - url: https://www.reddit.com/r/rails/comments/iebb66/alternatives_for_bootstrap_framework/
 ---
 I have a rails + stimulus app and using Bootstrap for styling. The thing is: Bootstrap depends on jquery, and  this last one is a heavy file after compilation. Because I don't use too much of Bootstrap components and neither Jquery, I would like something more lightweight after compilation. 
@@ -274,45 +408,3 @@ One more think, I'm not a expertise on css e.g I would need to search how to imp
 So my question is: There are others alternatives frameworks that are stable and lightweight? Also, do you guys usually wrote you on components (not talking about JS components e.g react), wrote your own system grid, etc...?
 
 About the Jquery size, I don't remember right now about how much, but I use, sometime ago, a lib that shows by size the files compiled by webpack, and as result the Jquery was the biggest.
-## [9][How to make the comment’s content unique based on its parent post?](https://www.reddit.com/r/rails/comments/ie8zri/how_to_make_the_comments_content_unique_based_on/)
-- url: https://www.reddit.com/r/rails/comments/ie8zri/how_to_make_the_comments_content_unique_based_on/
----
-I don’t want to make it globally unique in the model file. I just want the content of the comment to be unique if the post already has a comment with same content.
-## [10][Is it possible to output custom text to the console/server log on startup?](https://www.reddit.com/r/rails/comments/idyetp/is_it_possible_to_output_custom_text_to_the/)
-- url: https://www.reddit.com/r/rails/comments/idyetp/is_it_possible_to_output_custom_text_to_the/
----
-Bit of a silly request but I want to add some ASCII art to my applications startup so I can see the app logo every time it runs.  
-
-I’m sure it’s possible but where would I need to add my puts statement for this to work?
-## [11][Wits-end aws elb ssl eks ingress rails not recognizing https scheme in auth0](https://www.reddit.com/r/rails/comments/ie0kum/witsend_aws_elb_ssl_eks_ingress_rails_not/)
-- url: https://www.reddit.com/r/rails/comments/ie0kum/witsend_aws_elb_ssl_eks_ingress_rails_not/
----
-First apologies for breaking any rules, we're in panic mode and I didn't have a chance to review rules.
-We have in fact searched for a solution frequently and have attempted many fixes suggested on stack overflow / medium etc to know success. 
-
-Long story short
-Terminating ssl in aws l7 elb. 
-Ingress controller routing host to service-&gt;deployment-&gt;pod-&gt;container of a rails app attempting to use auth0 as the IDP.
-
-Initial site loads properly on https.
-However it appears as if generated links (e.g. Redirect and call back urls) are missing awareness of the https scheme.
-
-We've attempted modification of the ingress annotations but seems to be coming up short.
-
-X forward for and proto and scheme and host headers have been tested but we lack visibility into whether or not they are actually getting passed to the rails app.
-
-Working on adding verbosity to that effect now but curious if anyone has experience with this pattern.
-
-Also forgive mobile formatting. 
-
-Thank you!
-
-
-Just a quick update:
-We resolved the issue initially by moving ssl termination into the ingress controller and changing from L7 load balancer to L4 load balancer. This isn't ideal and will continue to investigate the L7 config.  I'll be sure to post an update when we resolve.
-## [12][Newbie dev here, got some questions about Rails as a backend](https://www.reddit.com/r/rails/comments/idxys7/newbie_dev_here_got_some_questions_about_rails_as/)
-- url: https://www.reddit.com/r/rails/comments/idxys7/newbie_dev_here_got_some_questions_about_rails_as/
----
-\- Can you use Rails as a back end for a react native app? 
-
-And if you can, could anyone link me to resources that explain how to do it

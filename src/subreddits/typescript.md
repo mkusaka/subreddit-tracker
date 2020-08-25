@@ -26,7 +26,71 @@ Posting top level comments that aren't job postings, [that's a paddlin](https://
 - url: https://medium.com/bytecodeagency/runtime-json-type-checks-with-typescript-interfaces-379e8ea81258?sk=489009cb893e8a700956d9e51ff855d7
 ---
 
-## [3][tsc vs ts-loader in the context of project references](https://www.reddit.com/r/typescript/comments/iflwtl/tsc_vs_tsloader_in_the_context_of_project/)
+## [3][Index signature issue when trying to use strings as object keys](https://www.reddit.com/r/typescript/comments/ifzm4u/index_signature_issue_when_trying_to_use_strings/)
+- url: https://www.reddit.com/r/typescript/comments/ifzm4u/index_signature_issue_when_trying_to_use_strings/
+---
+I'm trying to use React Router 5 path matches to set state. Trouble is something about the index signature is giving problems
+
+    const backgrounds = {
+      '/': nightPlanetBoat,
+      '/portfolio': spaceGasClouds,
+      '/about': spaceGasClouds
+    }
+    
+    function App(props: any) {
+      const [backgroundImage, setBackgroundImage] = useState(nightPlanetBoat);
+    
+      useEffect(() =&gt; {
+        console.log('props.location :&gt;&gt; ', props.location);
+    
+        setBackgroundImage(backgrounds[props.location.pathName as keyof typeof backgrounds]);
+      }, [props.location.pathName]);
+    
+    /*
+    /home/owner/cp/project/src/App.tsx
+    TypeScript error in /home/owner/cp/project/src/App.tsx(46,24):
+    Element implicitly has an 'any' type because expression of type 'string | number | symbol' can't be used to index type '{ '/': string; '/portfolio': string; '/about': string; }'.
+      No index signature with a parameter of type 'string' was found on type '{ '/': string; '/portfolio': string; '/about': string; }'.  TS7053
+    
+        44 |     console.log('props.location :&gt;&gt; ', props.location);
+        45 |     console.log('props.history', props.history)
+      &gt; 46 |     setBackgroundImage(backgrounds[props.location.pathName as keyof typeof backgrounds]);
+           |                        ^
+        47 |   }, [props.location.pathName]);
+        48 | 
+        49 |   return (
+    */
+
+**Also tried**
+
+* No type assertion. `as string`. `as const`. None of these fixed the index signature problem
+## [4][Does passing an interface type argument at the call site extend the shape of the returned object's type?](https://www.reddit.com/r/typescript/comments/ifw8o5/does_passing_an_interface_type_argument_at_the/)
+- url: https://www.reddit.com/r/typescript/comments/ifw8o5/does_passing_an_interface_type_argument_at_the/
+---
+Before writing the interface below for a React functiom component, the top function had no matching overload on `OuterContainer` for property `backgroundImage`. The bottom function, returned from the styled method, also had no reference to `props.backgroundImage` either.
+
+So it really looks like the interface `ExtraContainerProps`, being passed as a type argument to `styled` as it is being invoked, extends the returned object's type definition. Is that what's happening?
+
+    const ContainerStateInjector = (props: any) =&gt; {
+      const [backgroundImage, setBackgroundImage] = useState(nightPlanetBoat);
+    
+      return (
+        &lt;OuterContainer backgroundImage={backgroundImage}&gt;
+          { props.children }
+        &lt;/OuterContainer&gt;
+      )
+    }
+    
+    interface ExtraContainerProps {
+      backgroundImage: string;
+    }
+    
+    const OuterContainer = styled.div&lt;ExtraContainerProps&gt;`
+      background-image: url(${props =&gt; props.backgroundImage});
+      background-position: center;
+
+I haven't used interfaces much in this pattern, I usually use them as annotations or type arguments on function declarations, so this broadens my understanding of their use cases.
+## [5][tsc vs ts-loader in the context of project references](https://www.reddit.com/r/typescript/comments/iflwtl/tsc_vs_tsloader_in_the_context_of_project/)
 - url: https://www.reddit.com/r/typescript/comments/iflwtl/tsc_vs_tsloader_in_the_context_of_project/
 ---
 Wondering what is better in terms of performance and project reference support:
@@ -36,7 +100,7 @@ Wondering what is better in terms of performance and project reference support:
 2. `webpack` + `ts-loader` for frontend code
 
 You find more background in this [Github issue](https://github.com/TypeStrong/ts-loader/issues/1157#issuecomment-679012708)
-## [4][TypeScript ignores type annotation for string literals?](https://www.reddit.com/r/typescript/comments/iffdlr/typescript_ignores_type_annotation_for_string/)
+## [6][TypeScript ignores type annotation for string literals?](https://www.reddit.com/r/typescript/comments/iffdlr/typescript_ignores_type_annotation_for_string/)
 - url: https://www.reddit.com/r/typescript/comments/iffdlr/typescript_ignores_type_annotation_for_string/
 ---
     const foo: string | undefined = "";
@@ -48,7 +112,7 @@ You find more background in this [Github issue](https://github.com/TypeStrong/ts
     bar.toUpperCase();
 
 Is this new or has this always been the case? Is this documented anywhere? Is it a bug?
-## [5][Looking for best practices, style guidelines and naming conventions](https://www.reddit.com/r/typescript/comments/ifjxam/looking_for_best_practices_style_guidelines_and/)
+## [7][Looking for best practices, style guidelines and naming conventions](https://www.reddit.com/r/typescript/comments/ifjxam/looking_for_best_practices_style_guidelines_and/)
 - url: https://www.reddit.com/r/typescript/comments/ifjxam/looking_for_best_practices_style_guidelines_and/
 ---
 Are there any style guidelines, projects to look at, or best practices available on how to use typescript?  
@@ -57,20 +121,7 @@ Currently I am bit of a loss on how I should structure the project I am working 
 Do all the type declarations belong at the beginning of the file? Do I put the into a separate declaration file? Do I spread them out across the source file? How about naming convention?
 
 Tutorials usually cover how to use the language but I haven't found a style which feels organized. e.g. the types packages all look vastly different and some of them are just incomprehensible at first glance.
-## [6][rxjs filter pipe doesn't narrow type?](https://www.reddit.com/r/typescript/comments/ifklp4/rxjs_filter_pipe_doesnt_narrow_type/)
-- url: https://www.reddit.com/r/typescript/comments/ifklp4/rxjs_filter_pipe_doesnt_narrow_type/
----
-Consider this example:
-
-`const source$ = of(5, 'abc');`  
-`source$.pipe(filter(val =&gt; typeof val === 'string')).subscribe(val =&gt; {`  
- `// val: string | number;`  
-`});`
-
-Why doesn't the filter pipe here narrow down the type to only string? Is there a rxjs operator that could do the filtering?
-
-Thanks
-## [7][Narrowing strings to keys of own type?](https://www.reddit.com/r/typescript/comments/ifmrob/narrowing_strings_to_keys_of_own_type/)
+## [8][Narrowing strings to keys of own type?](https://www.reddit.com/r/typescript/comments/ifmrob/narrowing_strings_to_keys_of_own_type/)
 - url: https://www.reddit.com/r/typescript/comments/ifmrob/narrowing_strings_to_keys_of_own_type/
 ---
 I am designing a library with an API like this:
@@ -101,11 +152,24 @@ However, this doesn't work. I assume that TypeScript reads the `identifier` firs
 To clarify, I want the type to be inferred completely, without requiring the user to provide the type themselves.
 
 Thanks!
-## [8][[NEED HELP] I need to build APIs which in turn call 3rd party APIs using NodeJS and TypeScript. Any preferred path or template?](https://www.reddit.com/r/typescript/comments/ifm18a/need_help_i_need_to_build_apis_which_in_turn_call/)
+## [9][rxjs filter pipe doesn't narrow type?](https://www.reddit.com/r/typescript/comments/ifklp4/rxjs_filter_pipe_doesnt_narrow_type/)
+- url: https://www.reddit.com/r/typescript/comments/ifklp4/rxjs_filter_pipe_doesnt_narrow_type/
+---
+Consider this example:
+
+`const source$ = of(5, 'abc');`  
+`source$.pipe(filter(val =&gt; typeof val === 'string')).subscribe(val =&gt; {`  
+ `// val: string | number;`  
+`});`
+
+Why doesn't the filter pipe here narrow down the type to only string? Is there a rxjs operator that could do the filtering?
+
+Thanks
+## [10][[NEED HELP] I need to build APIs which in turn call 3rd party APIs using NodeJS and TypeScript. Any preferred path or template?](https://www.reddit.com/r/typescript/comments/ifm18a/need_help_i_need_to_build_apis_which_in_turn_call/)
 - url: https://www.reddit.com/r/typescript/comments/ifm18a/need_help_i_need_to_build_apis_which_in_turn_call/
 ---
 Title.
-## [9][How can I extend an interface with increased specificity for a type?](https://www.reddit.com/r/typescript/comments/if7ytw/how_can_i_extend_an_interface_with_increased/)
+## [11][How can I extend an interface with increased specificity for a type?](https://www.reddit.com/r/typescript/comments/if7ytw/how_can_i_extend_an_interface_with_increased/)
 - url: https://www.reddit.com/r/typescript/comments/if7ytw/how_can_i_extend_an_interface_with_increased/
 ---
 Say I have the following "generic" interface that defines props for a component:
@@ -144,29 +208,3 @@ interface Props extends BaseProps {
 Having this be rejected would be quite convenient. 
 
 I'd like to declare at a high level all possible options and gain specificity as I go deeper down, if that makes sense.
-## [10][How do I contribute to the TS community](https://www.reddit.com/r/typescript/comments/if7iu0/how_do_i_contribute_to_the_ts_community/)
-- url: https://www.reddit.com/r/typescript/comments/if7iu0/how_do_i_contribute_to_the_ts_community/
----
-I have been coding in JavaScript since last 6 years. Recently I completed a project in TypeScript. I am in love with this language.
-
-I really want to contribute to TS community. I'm hoping that this will also help me get a good grip on the language.
-
-I'll appreciate any suggestions. Feel free to ask any questions.
-## [11][Why does TypeScript still think this number could be undefined?](https://www.reddit.com/r/typescript/comments/if2zc6/why_does_typescript_still_think_this_number_could/)
-- url: https://www.reddit.com/r/typescript/comments/if2zc6/why_does_typescript_still_think_this_number_could/
----
-I've just spent 20+ minutes playing around with a function like this and I'm lost. Is TypeScript's type inference not able to figure this out, or am I missing something obvious? 
-
-(I'm running pretty low on sleep so it's very possibly the latter)
-
-edit: The main point is by the time we get to `const num = a ?? b;`, we already know that at least one of those values is guaranteed to be a number, but the compiler still treats num as potentially undefined.
-
-```typescript
-function myFunc(a?: number, b?: number): number {
-  if (!a &amp;&amp; !b) throw new Error('No value provided');
-
-  const num = a ?? b;
-
-  return num; // Type 'number | undefined' is not assignable to type 'number'
-}
-```

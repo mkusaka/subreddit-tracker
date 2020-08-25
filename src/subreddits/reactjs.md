@@ -111,95 +111,77 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/i1u8a4/whos_hiring_august_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][JS/TS Debugger with Time-Traveling, Hot-swapping, API and Persistent State, zero-config for create-react-app projects (VSCode plugin)](https://www.reddit.com/r/reactjs/comments/ifnj3m/jsts_debugger_with_timetraveling_hotswapping_api/)
+## [3][My very first Portfolio site after learning react.js.](https://www.reddit.com/r/reactjs/comments/ig9829/my_very_first_portfolio_site_after_learning/)
+- url: https://mirozdevkota.com.np/
+---
+
+## [4][Code review please? 💩](https://www.reddit.com/r/reactjs/comments/ig6m5s/code_review_please/)
+- url: https://www.reddit.com/r/reactjs/comments/ig6m5s/code_review_please/
+---
+Hi everyone! I'm working on a React project that uses Context for state management instead of Redux. Can anyone review my project with their thoughts?
+
+Project: [github.com/junnac/pomoplan](https://github.com/junnac/pomoplan)
+
+Feel free to use [@vinylemulator](https://www.reddit.com/user/vinylemulator/)'s [codecomments.dev](https://codecomments.dev/) to provide comments for the files!
+
+I've been trying to research best practices for implementing Context with hooks to refactor my project. The React docs demonstrate a basic implementation to explain the API, but there are no notes about best/common practices. I've seen the following approaches:
+
+* Creating custom hooks for accessing a context value
+* Directly interfacing with the Context from within a consuming component by accessing the context value with `useContext`
+* Managing the Context value with `useState` in the context provider component
+* Managing the Context value with `useReducer`
+* Creating container components (similar to Redux container components created via the [connect()](https://react-redux.js.org/api/connect) function)
+
+Any and all feedback is super appreciated! Thank you!!
+## [5][JS/TS Debugger with Time-Traveling, Hot-swapping, API and Persistent State, zero-config for create-react-app projects (VSCode plugin)](https://www.reddit.com/r/reactjs/comments/ifnj3m/jsts_debugger_with_timetraveling_hotswapping_api/)
 - url: https://v.redd.it/ovm2zvvvvxi51
 ---
 
-## [4][Svelte vs React benchmark](https://www.reddit.com/r/reactjs/comments/ifeo0i/svelte_vs_react_benchmark/)
-- url: https://github.com/halfnelson/svelte-it-will-scale
+## [6][Remember (notetaking application)](https://www.reddit.com/r/reactjs/comments/igaytj/remember_notetaking_application/)
+- url: https://v.redd.it/9fvgqz7u35j51
 ---
 
-## [5][I launched a video course building a SaaS app with React, Next.js, Firebase, Stripe, and Vercel](https://www.reddit.com/r/reactjs/comments/ifo2gs/i_launched_a_video_course_building_a_saas_app/)
-- url: https://react2025.com/
+## [7][Tippy JS Tutorial | How to build tooltips in ReactJs](https://www.reddit.com/r/reactjs/comments/ig5zon/tippy_js_tutorial_how_to_build_tooltips_in_reactjs/)
+- url: https://www.youtube.com/watch?v=36WZjFR7UMc&amp;feature=share
 ---
 
-## [6][What makes you a Senior developer?](https://www.reddit.com/r/reactjs/comments/if80vq/what_makes_you_a_senior_developer/)
-- url: https://www.reddit.com/r/reactjs/comments/if80vq/what_makes_you_a_senior_developer/
+## [8][useEffect: 4 Tips Every Developer Should Know](https://www.reddit.com/r/reactjs/comments/ig9ajr/useeffect_4_tips_every_developer_should_know/)
+- url: https://medium.com/swlh/useeffect-4-tips-every-developer-should-know-54b188b14d9c
 ---
-I was looking for a new job as a Full Stack Developer (MERN+GRAPHQL Stack) and all the companies make interviews with Javascript Algorithms for this role.
 
-it's been a while from I stopped to exercise with Algorithms =&gt; problems are different when you work on a Web/Desktop/Mobile Application but it would appear that you need to review some Algo. exercises just to prepare for a 40minuts interview and never approach again these types of problems.
-
-Are these exercises make you a SENIOR? What makes you a senior developer?
-
-What do you think about it guys? For me, a senior developer is who have a lot of experience in the field and know how to approach problems. It doesn't mean that it can't make research about syntax or particular features.
-## [7][How do you feel about accepting/passing ES6 Sets and Maps as props?](https://www.reddit.com/r/reactjs/comments/ifi16z/how_do_you_feel_about_acceptingpassing_es6_sets/)
-- url: https://www.reddit.com/r/reactjs/comments/ifi16z/how_do_you_feel_about_acceptingpassing_es6_sets/
+## [9][Navbar background different for landing and other pages.](https://www.reddit.com/r/reactjs/comments/ig8wqs/navbar_background_different_for_landing_and_other/)
+- url: https://www.reddit.com/r/reactjs/comments/ig8wqs/navbar_background_different_for_landing_and_other/
 ---
-Some components may need to accept as props a list of unique items, or a mapping of arbitrary string keys to values (not an object with well-defined interfaces, mind you--for those I'll use plain objects 100%). In these cases, you could either use Sets vs arrays / Maps vs objects. So which do you prefer when writing a component?
+I want to create a navbar which should have the background of header on landing page and different color on other pages  
+for example  
+landing page :  [http://glavet.de/](http://glavet.de/) , [https://demos.creative-tim.com/argon-design-system-react/#/landing-page](https://demos.creative-tim.com/argon-design-system-react/#/landing-page)   
 
-My take on the pros and cons for each:
 
-* Argument for arrays/objects:
-    * Other devs are generally more familiar with arrays and objects
-    * Existing APIs rarely use Sets and Maps
-    * Existing code rarely expects to receive Sets and Maps
-    * No transpiling needed
-    * Sets and Maps require an extra constructor call
-    * Sets and Maps need to be converted to arrays for functional iteration or random access by index
-* Argument for Sets/Maps:
-    * Sets guarantee uniqueness so you can avoid subtle logical bugs by design
-    * Maps avoid prototype pollution and many other issues with objects
-    * Maps guarantee insertion order-iteration, even for string keys that are integers
-## [8][How to load a div when click on a side bar?](https://www.reddit.com/r/reactjs/comments/ifox6q/how_to_load_a_div_when_click_on_a_side_bar/)
-- url: https://www.reddit.com/r/reactjs/comments/ifox6q/how_to_load_a_div_when_click_on_a_side_bar/
+other pages:  [https://demos.creative-tim.com/argon-design-system-react/#/documentation/app-navigation](https://demos.creative-tim.com/argon-design-system-react/#/documentation/app-navigation) ,  [http://glavet.de/faq/](http://glavet.de/faq/)   
+what approach should I use to achieve.  
+
+Thanks.
+## [10][Uber Homepage Clone](https://www.reddit.com/r/reactjs/comments/igbwiv/uber_homepage_clone/)
+- url: https://www.reddit.com/r/reactjs/comments/igbwiv/uber_homepage_clone/
 ---
-I have troubles with load the certain page when click on the certain side bara nav. I'm using hooks
-## [9][Simplify development workflow](https://www.reddit.com/r/reactjs/comments/ifotn8/simplify_development_workflow/)
-- url: https://www.reddit.com/r/reactjs/comments/ifotn8/simplify_development_workflow/
----
-This is a bit older post - [https://medium.com/@RogerMitchell/using-requestly-in-visualforce-development-workflow-dd64e5f5998f](https://medium.com/@RogerMitchell/using-requestly-in-visualforce-development-workflow-dd64e5f5998f) in which Roger Mitchell from SalesForce shows how he simplified the development workflow in VisualForce. This is such an amazing technique and can be applied in many development setups.
-
-Looking for ideas on what hacks/tricks you use to simplify your development setup.
-## [10][Serverless, full-stack React app on AWS with CI/CD via Terraform](https://www.reddit.com/r/reactjs/comments/if9ugw/serverless_fullstack_react_app_on_aws_with_cicd/)
-- url: https://www.reddit.com/r/reactjs/comments/if9ugw/serverless_fullstack_react_app_on_aws_with_cicd/
----
-Hi community!
-
-I have created reference project to deploy a serverless, full-stack React app onto AWS with Terraform. This is a to-do list app with these features:
-
-* Users can create, and read to-do's from AWS DynamoDB database
-* Serverless i.e. app is hosted on an AWS S3 bucket; AWS API Gateway proxies requests to Lambda functions which query DynamoDB
-* CI/CD pipeline by AWS CodePipeline
-* All AWS infra are created by Terraform
-
-Please take a look!
-
-Github project here: [https://github.com/MatthewCYLau/react-serverless-aws-terraform](https://github.com/MatthewCYLau/react-serverless-aws-terraform)
-
 &amp;#x200B;
-## [11][Optimizing rendering for large JSON data (1000&lt;)](https://www.reddit.com/r/reactjs/comments/ifod3s/optimizing_rendering_for_large_json_data_1000/)
-- url: https://www.reddit.com/r/reactjs/comments/ifod3s/optimizing_rendering_for_large_json_data_1000/
----
-So I'm implementing a JSON tree view for a technical test.
 
-  
-I'm using Redux as a state management, and recursive rendering to display the JSON children.
-
-  
-My redux state has the JSON in it but I was wondering about optimizing the rendering.
-
-  
-But I'm thinking of using redux-select as a way to optimize the rendering but I don't know how exactly
-
-  
-I'm also thinking about rendering the first 20 children of the JSON with a load more button   
-
-
-What are your thoughts? 
-
-It's more a question on how would you approach optimizing rendering for large data and I'd appreciate the ideas
-## [12][A CLI tool that scans your project and splits the one big global CSS file into component level css files.](https://www.reddit.com/r/reactjs/comments/ievaw5/a_cli_tool_that_scans_your_project_and_splits_the/)
-- url: https://v.redd.it/o0eb1vgsvni51
+ [https://uberclone.netlify.app/](https://uberclone.netlify.app/)
+## [11][Webpack - The Easiest Way](https://www.reddit.com/r/reactjs/comments/igbq9c/webpack_the_easiest_way/)
+- url: https://medium.com/@bhavesh12/webpack-the-easiest-way-a14dcb270cb9?source=friends_link&amp;sk=4a46bcdddf07a1a340427118c0c99b63
 ---
 
+## [12][Personal/Portfolio website after 3 months of bootcamp.](https://www.reddit.com/r/reactjs/comments/igbmsv/personalportfolio_website_after_3_months_of/)
+- url: https://www.reddit.com/r/reactjs/comments/igbmsv/personalportfolio_website_after_3_months_of/
+---
+Hey all, 
+
+I completed a coding bootcamp last week and made this site as small portfolio for potential employers.
+
+[Pawel Jaskolski ](http://www.paweljaskolski.com)
+
+Its built with React, TypeScript, JavaScript, Node, Express and MySql...also some Bootstrap and styled-components for the good looks.
+
+Please take a look, gimme some love if you feel like it or some constructive criticism.
+
+Thank you all!

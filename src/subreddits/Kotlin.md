@@ -1,101 +1,101 @@
 # Kotlin
-## [1][gRPC with Kotlin Coroutines](https://www.reddit.com/r/Kotlin/comments/ig51fl/grpc_with_kotlin_coroutines/)
+## [1][Shrinking a Kotlin binary by 99.2%](https://www.reddit.com/r/Kotlin/comments/igrt6a/shrinking_a_kotlin_binary_by_992/)
+- url: https://jakewharton.com/shrinking-a-kotlin-binary/
+---
+
+## [2][Writing J2ME app in Kotlin](https://www.reddit.com/r/Kotlin/comments/igyt7k/writing_j2me_app_in_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/igyt7k/writing_j2me_app_in_kotlin/
+---
+I'm interested in developing a Java ME app using LWUIT. I've developed Java server-side and client-side for Android, but never used ME. Recently, I started working with Kotlin and found it saves a great deal of effort, is less verbose, and the resulting code is easier to read. 
+
+Are there guides or examples of a J2ME app developed using Kotlin or Kotlin and Java? Alternatively, are there reasons why this might not be a great idea? I'm aware that Kotlin JAR files will be larger, and not all features (i.e. Reflection) are available.
+## [3][Coroutines in Kotlin by Venkat Subramaniam](https://www.reddit.com/r/Kotlin/comments/igy18p/coroutines_in_kotlin_by_venkat_subramaniam/)
+- url: https://www.youtube.com/watch?v=jT2gHPQ4Z1Q
+---
+
+## [4][[Article] Snippets | List to String with Examples | Join operations and advance use cases](https://www.reddit.com/r/Kotlin/comments/igxzfd/article_snippets_list_to_string_with_examples/)
+- url: https://chetangupta.net/list-to-string
+---
+
+## [5]["Wrap" an abstract method](https://www.reddit.com/r/Kotlin/comments/igway6/wrap_an_abstract_method/)
+- url: https://www.reddit.com/r/Kotlin/comments/igway6/wrap_an_abstract_method/
+---
+I'm sure there is probably a design pattern or standard way of doing this but I don't know what it is, so rather than invent my own, I thought I'd ask!
+
+I have a 3rd party library which has an abstract class like this
+
+`abstract class Job{ abstract fun run() }`
+
+Now, I want to automatically log the start and the end of all jobs into a file / table / whatever, so what I want to do is have the person writing the job not need to worry about it - they just implement the run method and the logging gets added automatically.
+
+I could do this by having a class "LoggedJob", which implements run and has a differently named abstract method
+
+    abstract class LoggedJob{
+      override fun run(){
+        log.start()
+        myRun()
+        log.end()
+      }
+      abstract fun myRun()
+    }
+
+but is there no way for me to keep the method name "run" and add logging automatically - basically wrap the abstract method with some extra functionality (open a transaction, write to a log, whatever).
+
+I realise AOP could probably do this but it seems overkill for such a simple requirement - is there an idiomatic way of doing this?
+## [6][Anyone using Kotlin 1.4 with Springboot in Production?!](https://www.reddit.com/r/Kotlin/comments/igdg24/anyone_using_kotlin_14_with_springboot_in/)
+- url: https://www.reddit.com/r/Kotlin/comments/igdg24/anyone_using_kotlin_14_with_springboot_in/
+---
+Just wanted to check before I start working on a project. 
+Is anyone using Kotlin 1.4 with springboot  with micro-services in *production*?
+How is it and what are your new findings? 
+Also do you want to give me suggestions if any?
+
+I am already using older version of Kotlin in production, thinking to use a latest one.
+## [7][gRPC with Kotlin Coroutines](https://www.reddit.com/r/Kotlin/comments/ig51fl/grpc_with_kotlin_coroutines/)
 - url: https://codingwithmohit.com/grpc/grpc-kotlin-coroutines/
 ---
 
-## [2][I made a thing, I'm sure all Kotlin lovers will appreciate!](https://www.reddit.com/r/Kotlin/comments/iflmgn/i_made_a_thing_im_sure_all_kotlin_lovers_will/)
+## [8][refactor method (apply DRY) using generic method or design pattern](https://www.reddit.com/r/Kotlin/comments/igg7a5/refactor_method_apply_dry_using_generic_method_or/)
+- url: https://www.reddit.com/r/Kotlin/comments/igg7a5/refactor_method_apply_dry_using_generic_method_or/
+---
+ Can anyone help me? I need guidance on how to solve this problem.  
+ just guide me to use a design pattern to get rid of the repeated code.  
+[https://codereview.stackexchange.com/questions/248415/refactor-method-using-generic-method-or-design-pattern](https://slack-redir.net/link?url=https%3A%2F%2Fcodereview.stackexchange.com%2Fquestions%2F248415%2Frefactor-method-using-generic-method-or-design-pattern)
+## [9][App developer - Co-founder/CTO](https://www.reddit.com/r/Kotlin/comments/igsrre/app_developer_cofoundercto/)
+- url: https://www.reddit.com/r/Kotlin/comments/igsrre/app_developer_cofoundercto/
+---
+I am building a team to launch a tech Start-up. 
+
+Product - App, category- Social Media
+
+We are looking for a professional code/app developer, who can create and manage the app.
+
+Remote, {until it gets big}
+
+Role Responsibilities:- CTO
+
+1. At the early stage - you need to create and manage the app on your own. Afterwards, you need to manage the team of developers and direct the tech department of the Start-up.
+
+2. You can improvise the design, creativity and showcase your skills.
+
+Perks:
+
+1. You will be working closely with the CEO.
+2. You will be a part of decision making board members.
+3. You will get a co-founder position in the start-up.
+4. You will get stakes &amp; shares in the start-up.
+5. You will be your own Boss.
+
+Role Requirements:
+
+1. Commitment and time management. 
+2. You will be working in an entrepreneurial environment.
+3. You need to think big.
+
+We are looking for a long term trustworthy relationship. 
+
+All interested individuals can DM me or send Your Resume at - saurabh914921@gmail.com
+## [10][I made a thing, I'm sure all Kotlin lovers will appreciate!](https://www.reddit.com/r/Kotlin/comments/iflmgn/i_made_a_thing_im_sure_all_kotlin_lovers_will/)
 - url: https://i.redd.it/l5np0cey2xi51.jpg
 ---
 
-## [3][Does anyone know an extensive and detailed guide to use scope functions? I haven't been able to find anything good online. Thanks a lot :]](https://www.reddit.com/r/Kotlin/comments/igaoqc/does_anyone_know_an_extensive_and_detailed_guide/)
-- url: https://www.reddit.com/r/Kotlin/comments/igaoqc/does_anyone_know_an_extensive_and_detailed_guide/
----
-
-## [4][A Kotlin Library for the Twitch API](https://www.reddit.com/r/Kotlin/comments/ifp51g/a_kotlin_library_for_the_twitch_api/)
-- url: https://www.reddit.com/r/Kotlin/comments/ifp51g/a_kotlin_library_for_the_twitch_api/
----
-Hello guys,
-
-I recently implemented a [Kotlin Twitch Helix API wrapper](https://github.com/frozencure/twitch-client) for some of the other projects I’m working on and I decided to open-source it. I’m hoping some of you will use it and would also love to have some feedback on it.
-
-It might be an interesting example to people that want to use the \`1.4.0-rc\` version of the Dokka documentation. You can find the documentation \[here\]([https://frozencure.github.io/twitch-client/twitch-client/](https://frozencure.github.io/twitch-client/twitch-client/))
-
-Here are is some information about the library:
-
-## About
-
-[Twitch-Client](https://github.com/frozencure/twitch-client) is a modern Kotlin library that permits an easy and quick interaction with the Twitch services. Currently, the library can be used in *Java* or *Kotlin/JVM* projects and will be extended to other platforms in the future with the help of *Kotlin-Multiplatform*. The library is built on top of the [Ktor Client](https://ktor.io/clients/index.html) which is one of the best performing HTTP clients for Kotlin.
-
-## Features
-
-* All [Twitch Helix](https://dev.twitch.tv/docs/api) endpoints are implemented and tested
-* Works with Kotlin/JVM and Java projects
-* Works with Android Studio projects
-* Authentication service included for an easy OAuth flow implementation
-* Nullable types are used for all Twitch API response objects
-* 100% unit test coverage
-* All public methods and members are documented
-* Documentation includes code samples for all endpoints
-* Easy handling of multi-page Twitch collection responses
-## [5][I'm trying to enable Kotlin Result monad in a multi-platform project (more specifically in the :shared module) so i tried doing it like in the image, but none of them has worked, anyone know how?](https://www.reddit.com/r/Kotlin/comments/ifw542/im_trying_to_enable_kotlin_result_monad_in_a/)
-- url: https://i.redd.it/4b3h2tgw60j51.png
----
-
-## [6][I decided to move from nodejs to kotlin, I need some help in choosing backend libs](https://www.reddit.com/r/Kotlin/comments/iffb3f/i_decided_to_move_from_nodejs_to_kotlin_i_need/)
-- url: https://www.reddit.com/r/Kotlin/comments/iffb3f/i_decided_to_move_from_nodejs_to_kotlin_i_need/
----
-I have very small exp with java/kotlin, all I tried in the past was a classic spring boot with its own jpa and so on  
-
-Given that, I'm currently trying to choose the libraries to use for an asynchronous graphql server with a code first approach,  I'm looking for some tips
-
-Is expedia/graphql-kotlin good or are there alternatives?  
-Which web framework should I use? Spring or spark/other?  
-I don't really understand how asynchronous database access works (I'm used to node where everything is async u know). It is not enabled by default while using hibernate/any jdbc right, what am I supposed to use?
-
-Secondary: logging and validation libs suggestions
-
-Thanks for the help
-
-EDIT NON RELATED QUESTION: Is it fine using Apache Spark in kotlin or does it have any downside compared to java?
-## [7][Problems with Hyperskill courses](https://www.reddit.com/r/Kotlin/comments/iflwru/problems_with_hyperskill_courses/)
-- url: https://www.reddit.com/r/Kotlin/comments/iflwru/problems_with_hyperskill_courses/
----
-Hi everyone!
-
-I'm trying to do one of the hyperskill's kotlin courses, but it seems like there's some issues with their config and/or my jdk version.
-
-I've selected one of the projects from the edutools and idea set it up and installed everything. When I press "check", though, I always get build errors.
-
-I've tried different jdk settings with no luck (changing the gradle jvm seems to make no difference at all):
-
-\- JDK 1.8 =&gt; Could not target platform: 'Java SE 11' using tool chain: 'JDK 8 (1.8)'
-
-\- 14 =&gt; java.lang.noClassDefFoundError: Could not initialize class org.codehaus.groovy.vmplugin.VMPluginFactory
-
-\- openjdk-14 =&gt; Could not initialize class org.codehaus.groovy.runtime.InvokerHelper
-
-\- kotlin-sdk 1.4 =&gt; JAVA\_HOME is set to an invalid directory
-
-&amp;#x200B;
-
-If I create a kotlin project from scratch everything works fine (and it selects the openjdk-14 automatically).
-## [8][Error deploying Ktor app to Heroku](https://www.reddit.com/r/Kotlin/comments/ifkvee/error_deploying_ktor_app_to_heroku/)
-- url: https://www.reddit.com/r/Kotlin/comments/ifkvee/error_deploying_ktor_app_to_heroku/
----
-Hello, i am struggling deploying ktor app to Heroku, i followed the documentation but no success. The problem is when i run 'git push heroku master' and i keep getting the same error(the error below). I have tried every solution i found on net but no success. Any suggestions? Btw. I have added a global variable ANDROID_SDK_ROOT and also the sdk.dir shows the right path of my sdk.
-
-SDK location not found. Define location with an ANDROID_SDK_ROOT enviroment variabkr or by setting the sdk.dir in your project's local.properties file at 'tmp/build_b06419f6/local.properties'
-## [9][Need help with timer](https://www.reddit.com/r/Kotlin/comments/if6fis/need_help_with_timer/)
-- url: https://www.reddit.com/r/Kotlin/comments/if6fis/need_help_with_timer/
----
-Hi, I’m completely new to kotlin. I want to make a for loop that wait's a second between every iteration, but I can’t figure out how to delay it. Any suggestions?
-## [10][My solution for mandatory parameters in Kotlin DSL](https://www.reddit.com/r/Kotlin/comments/if2hgj/my_solution_for_mandatory_parameters_in_kotlin_dsl/)
-- url: https://www.reddit.com/r/Kotlin/comments/if2hgj/my_solution_for_mandatory_parameters_in_kotlin_dsl/
----
-Hey all,
-
-I've been looking for a clean solution to mandatory parameters in Kotlin DSL.
-
-Ended up writing a linter for it, tell me what you guys think
-
-[https://blog.kotlin-academy.com/kotlin-dsl-know-your-limits-2deaef1bab66](https://blog.kotlin-academy.com/kotlin-dsl-know-your-limits-2deaef1bab66)

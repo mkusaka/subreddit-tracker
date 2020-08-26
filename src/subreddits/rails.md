@@ -19,15 +19,227 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Gimme Gems Thursdays - Found an awesome new gem? Post it here!](https://www.reddit.com/r/rails/comments/id911w/gimme_gems_thursdays_found_an_awesome_new_gem/)
-- url: https://www.reddit.com/r/rails/comments/id911w/gimme_gems_thursdays_found_an_awesome_new_gem/
+## [2][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/igyvm1/personal_projects_show_off_your_own_project_andor/)
+- url: https://www.reddit.com/r/rails/comments/igyvm1/personal_projects_show_off_your_own_project_andor/
 ---
-Please use this thread to discuss **cool** but relatively **unknown** gems you've found.
+In this thread you can showcase your personal pet project to other redditors.
 
-You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
+Need help with a specific problem or just wanna have some extra eyeballs on your code? Ask away!
 
-Please include a **description** and a **link** to the gem's homepage in your comment.
-## [3][after_commit callback not triggered from Concern](https://www.reddit.com/r/rails/comments/ig9fp6/after_commit_callback_not_triggered_from_concern/)
+A suggested format to get you started:
+
+1. **Name of your project**
+2. **A short description**
+3. **Application stack**
+4. **Link to Live app**
+5. **Link to GitHub**
+6. **You experience level**
+7. **Other information or areas that you would like advice on**
+
+ 
+
+^(Many thanks to Kritnc for getting the ball rolling.)
+## [3][Setting up a blog on AWS Cloud9](https://www.reddit.com/r/rails/comments/igw3bw/setting_up_a_blog_on_aws_cloud9/)
+- url: https://www.reddit.com/r/rails/comments/igw3bw/setting_up_a_blog_on_aws_cloud9/
+---
+Hi everyone,
+
+I'm new to programming, and i've been following the upskill course for about 2 weeks now. Everything was going great untill yesterday. I started the Deep Dive: Build a Blog section that uses Cloud9 and Ruby to build a blog. I have tried many times to follow the exact same path as the instructor but i keep on having the same problem.
+
+The commands that I input in the terminal are the following (I do this on a new environment with the default settings).
+
+    $ rails new blog
+
+Then the instructor ask us to change the 'sqlite3' line in the file called "gemfile" into gem 'sqlite3', '1.3.13'. To use the same version as him.
+
+I then inpunt :
+
+    cd
+    
+    cd environment
+    
+    cd blog
+    
+    bundle install
+    
+    bundle update
+    
+    rails generate scaffold Post title:string body:text
+    
+    rake db:migrate
+    
+    rails server
+
+It is at this point that the problem occurs. The instructor terminal's response 3 more lines that i don't have (I don't think I can put screenshots so there is basically 3 lines after the line control c to shut down the server and their start with the date and the hour followed by some text)
+
+Plus after that the instructor click preview running application and is sent to the "ruby welcome page". He then get rid of a part of the URL to go to the blog. In my case the URL is completely different from his, it looks like that ([https://c187d78accd944209c8f91023e991d71.vfs.cloud9.us-east-2.amazonaws.com/](https://c187d78accd944209c8f91023e991d71.vfs.cloud9.us-east-2.amazonaws.com/)).
+
+Whereas his mostly made of words ( I think with the name of his environment) at the beggining and then numbers (which he erases to get to the blog).
+
+Do you guys know what I've been doing wrong.
+
+Thank you for reading all of these it's my first time posting so i hope it's kind of understandable.
+
+Have a great day
+## [4][Small script to reduce the image size of Ruby and Ruby on Rails Docker images](https://www.reddit.com/r/rails/comments/igxju5/small_script_to_reduce_the_image_size_of_ruby_and/)
+- url: https://www.reddit.com/r/rails/comments/igxju5/small_script_to_reduce_the_image_size_of_ruby_and/
+---
+In the recent months I was migrating one of my Rails applications I was maintaining in the past years from capistrano to Docker. I did know that the gems are leaving files behind and therefore the Docker images became quite large but I was shocked when I realized how big the difference is.
+
+So I sat down and I wrote a small gem called [cleanup\_vendor](https://github.com/raszi/cleanup_vendor) which cleans up the leftover files and reduces the Docker image size significantly.
+
+Comments and suggestions are welcome.
+## [5][ActiveStorage custom key for blobs](https://www.reddit.com/r/rails/comments/igvbx7/activestorage_custom_key_for_blobs/)
+- url: https://www.reddit.com/r/rails/comments/igvbx7/activestorage_custom_key_for_blobs/
+---
+Is there a way to specify custom keys for blobs in ActiveStorage?
+
+[I can modify the key on my model's before\_save callback but i'm getting \`duplicate key value violates unique constraint \\"index\_active\_storage\_blobs\_on\_key\\" \` error on logo updates \(it's obvious indeed\). ](https://preview.redd.it/816hacqr7bj51.png?width=702&amp;format=png&amp;auto=webp&amp;s=c0cdd7e7d218e3ba8d88be4089579d987ad85f51)
+
+&amp;#x200B;
+
+[I basically want to store my logos in s3 like this](https://preview.redd.it/gn5jlyr78bj51.png?width=414&amp;format=png&amp;auto=webp&amp;s=3563ffeecc2b3152018f22338cbf4454a8d17af6)
+
+&amp;#x200B;
+
+[Not like this.](https://preview.redd.it/vopx9p4h8bj51.png?width=594&amp;format=png&amp;auto=webp&amp;s=ef91199af5c6cbf7e9adbe7d411fc10bd481b0ef)
+
+&amp;#x200B;
+
+Is there a way to configure naming convention with active\_storage?
+## [6][Rails 6 Index view loaded with limitations?](https://www.reddit.com/r/rails/comments/igih4h/rails_6_index_view_loaded_with_limitations/)
+- url: https://www.reddit.com/r/rails/comments/igih4h/rails_6_index_view_loaded_with_limitations/
+---
+I have a `people` index that I want to load with just a specific set of records shown filtered by a specific field `(position)`. I currently have it that way as I am filtering out the position entries I do not want shown, but this is limiting me to not being able to show the other positions at all. I know my approach to this is probably very bad, as I have cobbled it together with very little knowledge.
+
+What it boils down to is I have an index of people, with filtering buttons along the top of the page, to only show the people in the desired position. I have a group(s) of people that do not need to be listed expect when their filter button is specifically selected.
+
+index.html.erb
+
+    &lt;% provide(:title, "Directory") %&gt;
+    
+    &lt;h1&gt;Directory&lt;/h1&gt;
+    
+    &lt;div class="filter_div"&gt;
+    	&lt;div class="filter btn btn-default btn-directory active"&gt;&lt;%= link_to "Full Listing", people_path %&gt;&lt;/div&gt;
+    	&lt;div class="filter btn btn-default btn-directory active"&gt;&lt;%= link_to "Position1", people_path(:filter_by =&gt; :position1), {:method =&gt; :get} %&gt;&lt;/div&gt;
+    	&lt;div class="filter btn btn-default btn-directory active"&gt;&lt;%= link_to "Position2", people_path(:filter_by =&gt; :position2), {:method =&gt; :get} %&gt;&lt;/div&gt;
+    	&lt;div class="filter btn btn-default btn-directory active"&gt;&lt;%= link_to "Position3", people_path(:filter_by =&gt; :'position3'), {:method =&gt; :get} %&gt;&lt;/div&gt;
+    	&lt;div class="filter btn btn-default btn-directory active"&gt;&lt;%= link_to "Position4", people_path(:filter_by =&gt; :position4), {:method =&gt; :get} %&gt;&lt;/div&gt;
+    	&lt;div class="filter btn btn-default btn-directory active"&gt;&lt;%= link_to "Position5", people_path(:filter_by =&gt; :position5), {:method =&gt; :get} %&gt;&lt;/div&gt; 	
+    	&lt;div class="filter btn btn-default btn-directory active"&gt;&lt;%= link_to "Position6", people_path(:filter_by =&gt; :position6), {:method =&gt; :get} %&gt;&lt;/div&gt;
+    	&lt;div class="filter btn btn-default btn-directory active"&gt;&lt;%= link_to "Position7", people_path(:filter_by =&gt; :position7), {:method =&gt; :get} %&gt;&lt;/div&gt; 
+    
+    &lt;/div&gt;
+    
+    &lt;table class="people table-striped"&gt;
+    	
+    	&lt;tbody&gt;
+    	    &lt;% @people.each do |person| %&gt;
+    		&lt;% if person.position == 'position1' %&gt; 
+    		    &lt;%= render 'row', person: person %&gt;            
+    	        &lt;% elsif person.position == 'position2' %&gt;
+                	    &lt;%= render 'row', person: person %&gt;
+                    &lt;% elsif person.position == 'position3' %&gt;
+                	    &lt;%= render 'row', person: person %&gt;
+                    &lt;% elsif person.position == 'position4' %&gt;
+                	    &lt;%= render 'row', person: person %&gt;
+                    &lt;% elsif person.position == 'position5' %&gt;
+                	    &lt;%= render 'row', person: person %&gt;
+                    &lt;% elsif person.position == 'position6' %&gt;
+                	    &lt;%= render 'row', person: person %&gt;
+                    &lt;% end %&gt;  	
+    	    &lt;% end %&gt;
+    	&lt;/tbody&gt;
+    &lt;/table&gt;
+    
+
+people\_controller
+
+    class PeopleController &lt; ApplicationController
+    	def index
+    	  if params[:filter_by].present?
+    	    case params[:filter_by]
+    	    when 'ra_cs'
+    	      @people = Person.where(ra_cs: true)
+    	    when 'ra_hn'
+    	      @people = Person.where(ra_hn: true)
+    	    when 'ra_mg'
+    	      @people = Person.where(ra_mg: true)
+    	    when 'ra_nb'
+    	      @people = Person.where(ra_nb: true)
+    	    when 'ra_ne'
+    	      @people = Person.where(ra_ne: true)
+    	    when 'search'
+    	      @people = Person.where(search: true)
+    	    else
+    	      @people = Person.where(position: params[:filter_by])
+    	    end
+    	  else
+    	    @people = Person.all
+    	  end
+    	end 
+    
+    	def show
+    		if params[:id]
+    	    	@person = Person.find(params[:id])
+    	    else
+    	    	@person = Person.find_by(position: params[:position], uname: params[:uname])
+    	    end
+    	end
+    
+    	
+    
+    	private
+    	def person_params
+    		params.require(:person).permit(
+    			:uname, :prefix, :fname, :lname, :title, :position, 
+    			... all fields) 
+    	end
+    end
+
+&amp;#x200B;
+## [7][White Screen after create-react-app S3 Static Site Deploy](https://www.reddit.com/r/rails/comments/igj3sy/white_screen_after_createreactapp_s3_static_site/)
+- url: https://www.reddit.com/r/rails/comments/igj3sy/white_screen_after_createreactapp_s3_static_site/
+---
+My company has a create-react-app hosted in an S3 bucket as a static site with cloudfront.
+
+However, when we do a deploy, a lot of users experience a blank white screen. This can be remedied with "disable cache" or using another browser.
+
+What can we do to make sure this doesn't happen for our users?
+
+Stack is Rails/React
+## [8][Help with self in refactoring observers to concerns](https://www.reddit.com/r/rails/comments/igd4an/help_with_self_in_refactoring_observers_to/)
+- url: https://www.reddit.com/r/rails/comments/igd4an/help_with_self_in_refactoring_observers_to/
+---
+I'm moving existing callbacks in observers to model concern in rails 4.2.1 application  
+Existing Observer
+
+    class TaskObserver &lt; ActiveRecord::Observer
+      observer Task
+      def after_commit(model)
+        //do something with the model
+      end
+    end 
+
+Which I'll be moving to concern like this
+
+    module TaskConcern
+      extend ActiveSupport::Concern
+      included do
+        after_commit :do_something
+      end
+      def do_something
+      // here self would be equivalent to model?
+      end
+    end
+
+I'll be adding this concern in a few model's and I wanted to be sure about the usage of self in the concern here.
+
+Since the included will be executed in the context of class it is being included in self would always be the item that is being created/updated/deleted right. i.e. the model variable in Observer and the self in concern would be the same, isn't it?
+
+EDIT: What is the difference between ActiveRecord::Observer and ActiveSupport::Concern, because in the former self returns an instance of the Observer class but in the later self returns an instance of the model in which the concern in included.
+## [9][after_commit callback not triggered from Concern](https://www.reddit.com/r/rails/comments/ig9fp6/after_commit_callback_not_triggered_from_concern/)
 - url: https://www.reddit.com/r/rails/comments/ig9fp6/after_commit_callback_not_triggered_from_concern/
 ---
 I have a model class like this
@@ -55,7 +267,7 @@ EDIT: Other concern files are working fine. But only the newly added file isn't 
 
 
 FINAL\_EDIT: The issue was in the filename. Should have known how rails picks up these files . Got it from here [https://stackoverflow.com/a/12306720/3575018](https://stackoverflow.com/a/12306720/3575018)
-## [4][How to maintain CRUD when accepting nested attributes?](https://www.reddit.com/r/rails/comments/ifttz6/how_to_maintain_crud_when_accepting_nested/)
+## [10][How to maintain CRUD when accepting nested attributes?](https://www.reddit.com/r/rails/comments/ifttz6/how_to_maintain_crud_when_accepting_nested/)
 - url: https://www.reddit.com/r/rails/comments/ifttz6/how_to_maintain_crud_when_accepting_nested/
 ---
 Let’s say these are my models:
@@ -105,7 +317,7 @@ These are the options I’m seeing:
 3.  Send them to custom actions in the shifts\_controller, i.e. def update\_nurses, def update\_holiday\_shifts
 
 This is my first Rails project.  Are there options I’m not seeing?  What would be the most conventional, or Railsy, path?
-## [5][Javascript not firing with Turbolinks](https://www.reddit.com/r/rails/comments/ifsu1z/javascript_not_firing_with_turbolinks/)
+## [11][Javascript not firing with Turbolinks](https://www.reddit.com/r/rails/comments/ifsu1z/javascript_not_firing_with_turbolinks/)
 - url: https://www.reddit.com/r/rails/comments/ifsu1z/javascript_not_firing_with_turbolinks/
 ---
 Hi Folks,
@@ -118,7 +330,7 @@ Using rails 5.2 with turbolinks and it's driving me crazy. Attempting to hide so
              console.log("TEST!");
         });
     });
-## [6][Calling Database fails in secondary page.](https://www.reddit.com/r/rails/comments/ifzx3c/calling_database_fails_in_secondary_page/)
+## [12][Calling Database fails in secondary page.](https://www.reddit.com/r/rails/comments/ifzx3c/calling_database_fails_in_secondary_page/)
 - url: https://www.reddit.com/r/rails/comments/ifzx3c/calling_database_fails_in_secondary_page/
 ---
 I have a people database, that functions fine within it's own controller group (index, show, etc)
@@ -158,253 +370,66 @@ Person.rb
     
         validates_presence_of :uname, :position, :fname, :lname # Needed for friendly URLs
     end
-    
 
 When I add the `person.groffice` call to my People Index, it pulls the data from that field and displays it without issue. I have a feeling I am missing something stupid. If I run `Person.where(:groffice =&gt; 'office')` in the console it will return the proper record.
-## [7][Testing connection to db through irb, NameError Uninitialized constant "classname"](https://www.reddit.com/r/rails/comments/ifirdy/testing_connection_to_db_through_irb_nameerror/)
-- url: https://www.reddit.com/r/rails/comments/ifirdy/testing_connection_to_db_through_irb_nameerror/
----
-Hi all. I’m running into an issue where I want to test out the  connection to the db. I’m trying to access my Articles table. I have a  file in models “article.rb” and inside it has:class Article &lt; ApplicationRecordendWhen I go to my CMD and type the command “rails console” then follow up in IRB with “Article.all” I am receiving this error
-
-    2.7.1 :001 &gt; Article.all Traceback (most recent call last):         1: from (irb):1 NameError (uninitialized constant Article) 
-
-Here is a few pictures to show I have article.rb properly in modesl file and the code inside article.rb
-
-edit: added database.yaml, migrate file, and schema pics in case it helps.
 
 &amp;#x200B;
 
-https://preview.redd.it/ko1lwyv37wi51.png?width=1920&amp;format=png&amp;auto=webp&amp;s=6a14daf5a0439fb03c0461b14ee18e8cc791df2b
+Error.log has this when I attempt to render the page:
 
-https://preview.redd.it/eh51x8w37wi51.png?width=1913&amp;format=png&amp;auto=webp&amp;s=56c796b49cd034cb264be8868a7b83003b2e0c43
+      [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+    Processing by OutsideController#pagename as HTML
+      Rendering outside/pagename.html.erb within layouts/application
+      [1m[36mPerson Load (1.6ms)[0m  [1m[34mSELECT `people`.* FROM `people` ORDER BY lname[0m
+      ↳ app/views/outside/pagename.html.erb:17
+      Rendered outside/pagename.html.erb within layouts/application (Duration: 29.8ms | Allocations: 18000)
+    [Webpacker] Everything's up-to-date. Nothing to do
+      Rendered layouts/_header.html.erb (Duration: 0.0ms | Allocations: 6)
+      Rendered layouts/_footer.html.erb (Duration: 2.6ms | Allocations: 1433)
+    Completed 200 OK in 62ms (Views: 59.8ms | ActiveRecord: 1.6ms | Allocations: 36658)
 
-https://preview.redd.it/0ir6u8w37wi51.png?width=1916&amp;format=png&amp;auto=webp&amp;s=447a25b15fcc87014bb6cb5e4f18e67e5fe9977b
+people\_controller
+
+    class PeopleController &lt; ApplicationController
+        def index
+          if params[:filter_by].present?
+            case params[:filter_by]
+            when 'ra_cs'
+              @people = Person.where(ra_cs: true)
+            when 'ra_hn'
+              @people = Person.where(ra_hn: true)
+            when 'ra_mg'
+              @people = Person.where(ra_mg: true)
+            when 'ra_nb'
+              @people = Person.where(ra_nb: true)
+            when 'ra_ne'
+              @people = Person.where(ra_ne: true)
+            when 'search'
+              @people = Person.where(search: true)
+            else
+              @people = Person.where(position: params[:filter_by])
+            end
+          else
+            @people = Person.all
+          end
+        end 
+    
+        def show
+            if params[:id]
+                @person = Person.find(params[:id])
+            else
+                @person = Person.find_by(position: params[:position], uname: params[:uname])
+            end
+        end
+    
+        
+    
+        private
+        def person_params
+            params.require(:person).permit(
+                :uname, :prefix, :fname, :lname, :title, :position, 
+                ... {every field in people} ... :groffice) 
+        end
+    end
 
 &amp;#x200B;
-
-https://preview.redd.it/j29yuxbauvi51.png?width=1920&amp;format=png&amp;auto=webp&amp;s=5a6256dfdd9bbb2580491795159e0a1f0853b016
-
-https://preview.redd.it/r2yyyubauvi51.png?width=1112&amp;format=png&amp;auto=webp&amp;s=bf43995799cbd02eee12ec47a2965a4e7a2ecb33
-## [8][New Tutorial: How to Add Fields to a Devise User Signup in Rails 6](https://www.reddit.com/r/rails/comments/if3gcu/new_tutorial_how_to_add_fields_to_a_devise_user/)
-- url: https://www.reddit.com/r/rails/comments/if3gcu/new_tutorial_how_to_add_fields_to_a_devise_user/
----
-Do you want to add fields to your devise user signup in a rails 6 app?  In this tutorial we are going to add fields to our devise user sign up specifically: first\_name and last\_name.  We will also add a few validations to ensure some required fields are present.
-
-Finally, we will add the confirmable module to ensure users sign up with a valid functioning email.  Confirmable is a Devise module that send the user an email to the address supplied to confirm accuracy — the user must click a link sent to the email to activate and use their account.  I have not seen content on how to add devise modules after a devise installation has already been complete, so I thought this could be useful for beginners.   
-
-Please check it out and let me know what you think.
-
-[https://youtu.be/0widKtkJONA](https://youtu.be/0widKtkJONA)
-## [9][better use all data response in same API or use different API .](https://www.reddit.com/r/rails/comments/ifa4ef/better_use_all_data_response_in_same_api_or_use/)
-- url: https://www.reddit.com/r/rails/comments/ifa4ef/better_use_all_data_response_in_same_api_or_use/
----
-I have 7 models and i filter using 7 model from user to get data . data is big for example every key 50 keys (increase) i have 8 keys . it's good use one API to decrease go to db .
-
-i ask better use one API or every key use API but every API go to db (make load in db )
-
-more details
-
- models
-
-    chat.rb 
-    
-    has_one :chat_statistic
-    has_one :chat_message
-    has_one :chat_rating
-    has_one :chat_waiting_time
-    has_many :messages_types
-    has_one :chat_language
-    has_one :chat_gender
-    has_one :chat_subjects
-    has_one :chat_type
-
-i can filter using column for every other models .   
-
-
-API have   
-
-
-    1- overview {total_chats, number_chat_rating, largest_value_of_chat_type, total_waiting_time  }
-    
-    2- total_chats for every days ---&gt; have many keys for { day: number_total_chat_for this day }
-    
-    3- chat_type for every days  have many keys for { day: number_types_for this day }
-    
-    4- chat_analysis total value for every chat type --&gt; {x: 10, y:  20, z: 30}
-    
-    5- chat_subjects every days  have many keys for { day: number_subjects_for this day }
-    
-    6- chat_subjects_analysis  total value for every chat subjects --&gt; {x: 10, y:  20, z: 30}
-    
-    and another three keys 
-
-**all values must include filter** 
-
-&amp;#x200B;
-
-&amp;#x200B;
-## [10][node module not getting loaded in production (rails 6)](https://www.reddit.com/r/rails/comments/if5okd/node_module_not_getting_loaded_in_production/)
-- url: https://www.reddit.com/r/rails/comments/if5okd/node_module_not_getting_loaded_in_production/
----
-Hey,
-
-I'm using the npm package [devicon](https://www.npmjs.com/package/devicon) which I added via `yarn add` to my project. In my `application.js` I have the following code:
-
-```
-// This file is automatically compiled by Webpack, along with any other files
-// present in this directory. You're encouraged to place your actual application logic in
-// a relevant structure within app/javascript and only use these pack files to reference
-// that code so it'll be compiled.
-
-require("@rails/ujs").start()
-require("turbolinks").start()
-require("@rails/activestorage").start()
-require("channels")
-
-
-// Uncomment to copy all static images under ../images to the output folder and reference
-// them with the image_pack_tag helper in views (e.g &lt;%= image_pack_tag 'rails.png' %&gt;)
-// or the `imagePath` JavaScript helper below.
-//
-// const images = require.context('../images', true)
-// const imagePath = (name) =&gt; images(name, true)
-
-require('jquery')
-require('devicon')
-
-// Sidebar
-import { sidebarOn, sidebarOff } from './toggle_sidebar';
-window.sidebarOn = sidebarOn;
-window.sidebarOff = sidebarOff;
-
-// Stimulus
-import { Application } from "stimulus"
-import { definitionsFromContext } from "stimulus/webpack-helpers"
-
-const application = Application.start();
-const context = require.context('../controllers', true, /\.js$/);
-application.load(definitionsFromContext(context));
-```  
-In development everything works (devicon.css gets loaded and devicon font is available), but in production (on heroku) it's not getting loaded. What am I missing?  
-  
-  
-  
-**edit**  
-`webpacker.yml`  
- 
-```
-# Note: You must restart bin/webpack-dev-server for changes to take effect
-
-default: &amp;default
-  source_path: app/javascript
-  source_entry_path: packs
-  public_root_path: public
-  public_output_path: packs
-  cache_path: tmp/cache/webpacker
-  check_yarn_integrity: false
-  webpack_compile_output: true
-
-  # Additional paths webpack should lookup modules
-  # ['app/assets', 'engine/foo/app/assets']
-  resolved_paths: []
-
-  # Reload manifest.json on all requests so we reload latest compiled packs
-  cache_manifest: false
-
-  # Extract and emit a css file
-  extract_css: false
-
-  static_assets_extensions:
-    - .jpg
-    - .jpeg
-    - .png
-    - .gif
-    - .tiff
-    - .ico
-    - .svg
-    - .eot
-    - .otf
-    - .ttf
-    - .woff
-    - .woff2
-
-  extensions:
-    - .mjs
-    - .js
-    - .sass
-    - .scss
-    - .css
-    - .module.sass
-    - .module.scss
-    - .module.css
-    - .png
-    - .svg
-    - .gif
-    - .jpeg
-    - .jpg
-
-development:
-  &lt;&lt;: *default
-  compile: true
-
-  # Verifies that correct packages and versions are installed by inspecting package.json, yarn.lock, and node_modules
-  check_yarn_integrity: true
-
-  # Reference: https://webpack.js.org/configuration/dev-server/
-  dev_server:
-    https: false
-    host: localhost
-    port: 3035
-    public: localhost:3035
-    hmr: false
-    # Inline should be set to true if using HMR
-    inline: true
-    overlay: true
-    compress: true
-    disable_host_check: true
-    use_local_ip: false
-    quiet: false
-    pretty: false
-    headers:
-      'Access-Control-Allow-Origin': '*'
-    watch_options:
-      ignored: '**/node_modules/**'
-
-
-test:
-  &lt;&lt;: *default
-  compile: true
-
-  # Compile test packs to a separate directory
-  public_output_path: packs-test
-
-production:
-  &lt;&lt;: *default
-
-  # Production depends on precompilation of packs prior to booting for performance.
-  compile: false
-
-  # Extract and emit a css file
-  extract_css: true
-
-  # Cache manifest.json for performance
-  cache_manifest: true
-```
-## [11][Input Mask for Rails 6 and Webpacker](https://www.reddit.com/r/rails/comments/ieikj8/input_mask_for_rails_6_and_webpacker/)
-- url: https://www.reddit.com/r/rails/comments/ieikj8/input_mask_for_rails_6_and_webpacker/
----
-I can’t imagine that there isn’t a decent JS or StimulusJS solution for input mask (for example as simple as comma separation for numbers) 
-
-There are few libraries that I tried but I just can’t make it work with webpaker, turbolink. I do no want to put the jQuery in the environment.rb instead use CDN (I would rather not use CDN, my challenge is adding jQuery in the application level adds to the front-end of the site which I don’t want because the front-end uses a different version of jQuery and I would like to keep them separate).  Unless there is a way to add jQuery to packs config (I have two separate packs front-end and back-end)
-
-Does anyone have a good example?  Something that you have actually used and can share the codes with?
-## [12][Alternatives for Bootstrap framework?](https://www.reddit.com/r/rails/comments/iebb66/alternatives_for_bootstrap_framework/)
-- url: https://www.reddit.com/r/rails/comments/iebb66/alternatives_for_bootstrap_framework/
----
-I have a rails + stimulus app and using Bootstrap for styling. The thing is: Bootstrap depends on jquery, and  this last one is a heavy file after compilation. Because I don't use too much of Bootstrap components and neither Jquery, I would like something more lightweight after compilation. 
- 
-One more think, I'm not a expertise on css e.g I would need to search how to implement a system grid or how animate dropdown/cascading, for references. 
-
-So my question is: There are others alternatives frameworks that are stable and lightweight? Also, do you guys usually wrote you on components (not talking about JS components e.g react), wrote your own system grid, etc...?
-
-About the Jquery size, I don't remember right now about how much, but I use, sometime ago, a lib that shows by size the files compiled by webpack, and as result the Jquery was the biggest.

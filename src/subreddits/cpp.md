@@ -56,51 +56,61 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][2020-08 mailing available : Standard C++](https://www.reddit.com/r/cpp/comments/ig8rdk/202008_mailing_available_standard_c/)
+## [2][Is cpp-httplib the simplest/highest-performance way to get started writing a small REST API in C++?](https://www.reddit.com/r/cpp/comments/igfn33/is_cpphttplib_the_simplesthighestperformance_way/)
+- url: https://github.com/yhirose/cpp-httplib
+---
+
+## [3][Stream error functions instead of exceptions?](https://www.reddit.com/r/cpp/comments/igp033/stream_error_functions_instead_of_exceptions/)
+- url: https://www.reddit.com/r/cpp/comments/igp033/stream_error_functions_instead_of_exceptions/
+---
+I'm just curious... why does C++ use utility functions for stream error conditions that return booleans, such as cin.bad(), [cin.fail](https://cin.fail)(), and cin.eof() instead of  just throwing related exceptions to the caller?  
+
+If i is an int, and (cin &gt;&gt; i) fails, why not throw a related exception like a type casting exception, or an end of file exception, and allow the caller to catch it, or not?
+
+Yet on the other hand, dynamic\_cast&lt;&gt; will throw bad\_cast exceptions?  Respectfully, it seems like it's requiring an admixture of programming styles in what can easily be the the same top level code.
+
+P.S. I am only asking because I am trying to learn modern C++ after some professional experience over a decade ago in C++98.  I am really energized to learn the new concurrency support in C++17, but in dusting off my memory to prepare, I am coming across things like this... and going... hey.... wait...
+## [4][2020-08 mailing available : Standard C++](https://www.reddit.com/r/cpp/comments/ig8rdk/202008_mailing_available_standard_c/)
 - url: https://isocpp.org/blog/2020/08/2020-08-mailing-available
 ---
 
-## [3][cpppinclude - tool for analyzing includes in C++](https://www.reddit.com/r/cpp/comments/ifus77/cpppinclude_tool_for_analyzing_includes_in_c/)
-- url: https://www.reddit.com/r/cpp/comments/ifus77/cpppinclude_tool_for_analyzing_includes_in_c/
+## [5][Virtual Table](https://www.reddit.com/r/cpp/comments/igy0ux/virtual_table/)
+- url: https://www.reddit.com/r/cpp/comments/igy0ux/virtual_table/
 ---
-[https://github.com/cppinclude/cppinclude](https://github.com/cppinclude/cppinclude)
+Hello!
 
-We use this tool to find where it’s needed to add forward declaration. It often happens when you changed header file of big project than wait compiling for long time because someone include this file instead using forward declaration. Also the tools helps to reduce include hierarchy
-## [4][Standard library development made easy with C++20](https://www.reddit.com/r/cpp/comments/ifotxd/standard_library_development_made_easy_with_c20/)
-- url: https://cor3ntin.github.io/posts/tuple/
+I am wondering if anyone has any great intuition behind the virtual table, and specifically how it results in different casting behavior between C++ and Java.
+
+Thanks!
+## [6][Pointers and Classes](https://www.reddit.com/r/cpp/comments/igxljc/pointers_and_classes/)
+- url: https://www.reddit.com/r/cpp/comments/igxljc/pointers_and_classes/
+---
+I'm new to c++ and trying to learn the language right now. 
+
+It seems tricky to understand Pointers in classes or as an argument.
+
+Does anyone have a clarify explanation about class and pointer?
+## [7][Is there bigdata stack using cpp?](https://www.reddit.com/r/cpp/comments/igs4h2/is_there_bigdata_stack_using_cpp/)
+- url: https://www.reddit.com/r/cpp/comments/igs4h2/is_there_bigdata_stack_using_cpp/
+---
+As far as I know, clickhouse is OLAP system, and qfs vs hdfs. Any other data processing system using c++? There is a thrill on github but rarely update.
+## [8][A Tutorial on Atomic Variables and Memory Models in C++](https://www.reddit.com/r/cpp/comments/igfeuj/a_tutorial_on_atomic_variables_and_memory_models/)
+- url: https://www.youtube.com/watch?v=IE6EpkT7cJ4&amp;feature=youtu.be
 ---
 
-## [5][Schedule for Meeting C++ 2020 is online!](https://www.reddit.com/r/cpp/comments/ig8t55/schedule_for_meeting_c_2020_is_online/)
+## [9][match/wcmatch needs an at()](https://www.reddit.com/r/cpp/comments/igfe1f/matchwcmatch_needs_an_at/)
+- url: https://www.reddit.com/r/cpp/comments/igfe1f/matchwcmatch_needs_an_at/
+---
+It would ever so nice if the regex match result had an alternative at() to use instead of the index operator. Some linting/analysis tools assume that this is an unchecked array operation and complain about it. This requires either lots of suppressions, or a lot of bogus warnings that hide real indexing operations that might be an issue.
+
+It would be trivial to provide an at() that just turned around called the operator. Those who have this concern could avoid it and there would approximately zero cost to the implementors.
+## [10][Schedule for Meeting C++ 2020 is online!](https://www.reddit.com/r/cpp/comments/ig8t55/schedule_for_meeting_c_2020_is_online/)
 - url: https://meetingcpp.com/2020/Schedule.html
 ---
 
-## [6][UMASH: a fast and universal enough hash](https://www.reddit.com/r/cpp/comments/ift55b/umash_a_fast_and_universal_enough_hash/)
-- url: https://engineering.backtrace.io/2020-08-24-umash-fast-enough-almost-universal-fingerprinting/
+## [11][Why would I use std lib?](https://www.reddit.com/r/cpp/comments/igv1sp/why_would_i_use_std_lib/)
+- url: https://www.reddit.com/r/cpp/comments/igv1sp/why_would_i_use_std_lib/
 ---
+Not that anybody minds, but I would like to use standard C++. I am labouring under a strict single requirement to produce the smallest and fastest server-side executable possible. 
 
-## [7][Libusb wrapper library for Asio (C++20)](https://www.reddit.com/r/cpp/comments/ifrna4/libusb_wrapper_library_for_asio_c20/)
-- url: https://github.com/MiSo1289/usb-asio
----
-
-## [8][ReSharper C++ 2020.2 is out with updates to Unreal Engine integration, improved C++/CLI support, and more](https://www.reddit.com/r/cpp/comments/iflc9j/resharper_c_20202_is_out_with_updates_to_unreal/)
-- url: https://blog.jetbrains.com/rscpp/2020/08/13/resharper-cpp-2020-2/
----
-
-## [9][C++17: Polymorphic Allocators, Debug Resources and Custom Types](https://www.reddit.com/r/cpp/comments/ifx426/c17_polymorphic_allocators_debug_resources_and/)
-- url: https://www.bfilipek.com/2020/08/pmr-dbg.html
----
-
-## [10][How to start using c++ for projects?](https://www.reddit.com/r/cpp/comments/ig5bir/how_to_start_using_c_for_projects/)
-- url: https://www.reddit.com/r/cpp/comments/ig5bir/how_to_start_using_c_for_projects/
----
-I've taken 3 college courses that's taught C++. But all of what we did was in the IDE and command terminal to do stuff with data. I never did anything to create a GUI for example. What do I need to do now to start doing stuff like that?
-## [11][Can anyone recommend a good audio library for a game engine?](https://www.reddit.com/r/cpp/comments/ifowbe/can_anyone_recommend_a_good_audio_library_for_a/)
-- url: https://www.reddit.com/r/cpp/comments/ifowbe/can_anyone_recommend_a_good_audio_library_for_a/
----
-I've built my game so far just using SDL2 for rendering and audio - but moved rendering over to Vulkan and now want to upgrade the engine's audio library as well. Can anyone recommend a good audio library?
-
-SDL2 audio is not great for many simultaneous sounds or sounds moving in 2D/3D coordinates - so that is the main feature I am looking to improve. I have read people recommend OpenAL though that library seems like it hasn't been used for many recent games according to their website. I also hear that irrklang is meant to be OK as well. I was also looking into [YSE](http://www.attr-x.net/yse/) but not sure how good it is.
-
-Any help would be appreciated, thank you.
-
-Edit: I'm going to try out FMOD since the licencing seems fairly generous for indie developers and I don't plan on releasing multiple games in the same year. Otherwise I probably would go with SoLoud as it has good features and is totally free. Thank you for the help guys!
+Why would I use std lib?

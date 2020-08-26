@@ -23,47 +23,110 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/ifif3r/whats_everyone_working_on_this_week_352020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-35-2020/47702?u=llogiq)!
-## [3][Almost feels like I am getting code review :) I love rust error messages](https://www.reddit.com/r/rust/comments/ig44dj/almost_feels_like_i_am_getting_code_review_i_love/)
-- url: https://i.redd.it/fvhbya68f2j51.png
+## [3][Announcing Rapier: 2D and 3D physics engines focused on performances!](https://www.reddit.com/r/rust/comments/igkul2/announcing_rapier_2d_and_3d_physics_engines/)
+- url: https://www.dimforge.com/blog/2020/08/25/announcing-the-rapier-physics-engine/
 ---
 
-## [4][My first vulkan triangle on android using only cargo and android-sdk!](https://www.reddit.com/r/rust/comments/ifv9tq/my_first_vulkan_triangle_on_android_using_only/)
-- url: https://i.redd.it/bqc9v1nzyzi51.png
+## [4][Announcing REVC — Rewrite MPEG-5 EVC (ETM) in Rust](https://www.reddit.com/r/rust/comments/igu8be/announcing_revc_rewrite_mpeg5_evc_etm_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/igu8be/announcing_revc_rewrite_mpeg5_evc_etm_in_rust/
+---
+[https://github.com/revcx/revc](https://github.com/revcx/revc)
+
+# Overview
+
+MPEG-5 Essential Video Coding (EVC) baseline profile is royalty-free. It includes only technologies that are more than 20 years old or that were submitted with a royalty-free declaration. Compared to H.264/AVC (JM19.0), MPEG-5 EVC (ETM baseline) provides about 30% BD-rate reduction with comparable computation complexity.
+
+REVC is a Rust-based EVC (baseline) video codec implementation.
+
+## Roadmap
+
+* ~~0.1 Translation:~~
+   * ~~Translate ETM baseline decoder from C to Rust~~
+   * ~~Translate ETM baseline encoder from C to Rust~~
+* 0.2 Optimization:
+   * profiling and benchmarking
+   * rust safe code optimization
+   * assembly optimization
+      * armeabi-v7a
+      * arm64-v8a
+      * x86
+      * x86\_64
+   * multi-threading optimization
+* 0.3 Modernization
+   * rate control
+   * practical usecases: RTC, Live Streaming, VOD, etc
+
+## Contributing
+
+Contributors or Pull Requests are Welcome!!!
+## [5][tokio-fix: Unlock yourself from the tokio walled garden](https://www.reddit.com/r/rust/comments/igxxoi/tokiofix_unlock_yourself_from_the_tokio_walled/)
+- url: https://docs.rs/tokio-fix
 ---
 
-## [5][Rust-style futures in C](https://www.reddit.com/r/rust/comments/ig8m1d/ruststyle_futures_in_c/)
-- url: https://axelf4.github.io/2020/08/24/rust-style-futures-in-c.html
+## [6][Announcing Trunk — Build, bundle &amp; ship your Rust WASM application to the web.](https://www.reddit.com/r/rust/comments/igrq90/announcing_trunk_build_bundle_ship_your_rust_wasm/)
+- url: https://www.reddit.com/r/rust/comments/igrq90/announcing_trunk_build_bundle_ship_your_rust_wasm/
+---
+I am happy to announce the very first release of Trunk. Trunk is a CLI tool, written in Rust, which provides a simple, zero-config pattern for building Rust WebAssembly applications, bundling application assets (sass, css, images &amp;amp;c) and shipping it all to the web.
+
+Trunk is designed for creating progressive, single-page web applications, written in Rust, compiled to WebAssembly, without any JS (though today JS is still needed for loading WASM modules). Trunk follows a simple paradigm: declare an `index.html` file describing the single page of your application, then Trunk will parallelize bundling assets declared in your HTML, will build your WASM app, hash resources for cache control ... all without any extra config files.
+
+- [release notes](https://github.com/thedodd/trunk/releases/tag/v0.1.0).
+- [github repo](https://github.com/thedodd/trunk).
+
+If you are interested in getting involved (which I hope you are), I would love for you to help out. There are lots of great features planned, and many still in the design phase. I hope you will stop by, give the issues a read, share any thoughts if you feel so inclined, and if you want to write some code, please do!
+
+”Pack your things, we’re going on an adventure!” ~ Ferris
+## [7][CraftQL - A CLI tool to manipulate GraphQL schemas and to output a graph data structure as a graphviz .dot format](https://www.reddit.com/r/rust/comments/igwg6u/craftql_a_cli_tool_to_manipulate_graphql_schemas/)
+- url: https://www.reddit.com/r/rust/comments/igwg6u/craftql_a_cli_tool_to_manipulate_graphql_schemas/
+---
+Hello!
+
+I made a small CLI tool (again :P) to output a graph data structure as a graphviz .dot format. It can also help you get one or multiple nodes and to find orphans. This is already usable though quite a work in progress as I have other ideas to implement...
+
+You can play with it here  [https://github.com/yamafaktory/craftql](https://github.com/yamafaktory/craftql)
+
+N.B.: you can use [https://edotor.net/](https://edotor.net/) to render the graph
+## [8][Wordpress/Drupal like CMS-plugin-system. Which web-framework?](https://www.reddit.com/r/rust/comments/igwsy6/wordpressdrupal_like_cmspluginsystem_which/)
+- url: https://www.reddit.com/r/rust/comments/igwsy6/wordpressdrupal_like_cmspluginsystem_which/
+---
+Hello!
+
+First off: I am well aware that an interpreted language may be better suited to the whole "plug&amp;play"-type plugin-system I have in mind. I am interested in learning Rust though.
+
+My vision in a nutshell: A small, extendable CMS where plugins can be registered, enabled and disabled at runtime (like e.g. in Wordpress, Drupal, ...) based on e.g. wasm plugins or even libloading, where all the different plugin-modules would need to adhere to some trait.
+
+I've had a look at warp (love the Akka vibe!) and Rocket (very nice API) so far. (Also a sneak-peek at tide, which is btw. not mentioned on [the top list]: arewewebyet.org and a long time ago I experimented with actix[-web])
+
+So far - just a couple of hours of research and tinkering with rusty Rust-skills - I've not managed to create a plugin system in either warp, nor rocket.
+
+In Warp I had the problem that I couldn't combine the filters in a loop (e.g: for plugin in plugins { routes.or(plugin.route())} ) 
+
+while in Rocket (master branch) I got a bit further but couldn't make it so that the plugins/routes can be registered when the rocket is already launched (love the jargon/humor ;))
+
+Any advice (other than "Use an interpreted language") would be appreciated
+
+PS: I am _not_ a total Rust noobie, I am far from being an expert though ;)
+## [9][[Pre-RFC] Safe(r) Transmutation](https://www.reddit.com/r/rust/comments/igi6p0/prerfc_safer_transmutation/)
+- url: https://internals.rust-lang.org/t/pre-rfc-safer-transmutation/12926
 ---
 
-## [6][Different levels of async in Rust](https://www.reddit.com/r/rust/comments/ig5p1g/different_levels_of_async_in_rust/)
-- url: https://www.fpcomplete.com/blog/different-levels-async-rust/
+## [10][ANN: mles-webproxy 0.8](https://www.reddit.com/r/rust/comments/igx44n/ann_mleswebproxy_08/)
+- url: https://www.reddit.com/r/rust/comments/igx44n/ann_mleswebproxy_08/
 ---
+Ever wondered why there can't be a simple static WWW-server in Rust that would fetch TLS certificates from *Let's encrypt* out-of-the-box, renew them in timely manner, and in addition allow to use distributed messaging over WebSocket? And do this by opening just ports 80 and 443, nothing extra?
 
-## [7][Announcing remove_dir_ all v0.6: Now with a new parallel based implementation for Windows.](https://www.reddit.com/r/rust/comments/ig9eaq/announcing_remove_dir_all_v06_now_with_a_new/)
-- url: https://github.com/XAMPPRocky/remove_dir_all/releases/tag/v0.6.0
+At least now there is: [https://crates.io/crates/mles-webproxy](https://crates.io/crates/mles-webproxy) (yet another, if there already is one..)
+
+This is based on Warp 0.1. WebSocket connection is upgraded from TLS session. It has application level keepalive, so the sessions won't stay hanging there. Feedback is welcome!
+## [11][Random crate episode 2: Aion](https://www.reddit.com/r/rust/comments/igye17/random_crate_episode_2_aion/)
+- url: https://www.reddit.com/r/rust/comments/igye17/random_crate_episode_2_aion/
 ---
+Hello everyone, i recently took an  initiative to make a blog post per week in which i talk about lesser  known but awesome rust crates on [crates.io](https://crates.io/), i pick the crates randomly and select those that the most interesting, i then write a little review on my blog.
 
-## [8][I'm creating a video game where you can reprogram your weapons so they are more efficient and I needed for that some kind of assembler and virtual machine. Very pround of the result, rust made it very easy to do.](https://www.reddit.com/r/rust/comments/igbtww/im_creating_a_video_game_where_you_can_reprogram/)
-- url: https://i.redd.it/q3cgo6bkd5j51.png
----
+Second episode: aion, it's a utility crate, inspired by rails, that allows you to write Duration and DateTime in a friendly way 
 
-## [9][I printed "Rewrite it in Rust" swag for students](https://www.reddit.com/r/rust/comments/ifkrvg/i_printed_rewrite_it_in_rust_swag_for_students/)
-- url: https://i.redd.it/wedjvxv3nwi51.jpg
----
-
-## [10][Can I learn this instead of C++ and still be worth my salt or do I need to learn C++?](https://www.reddit.com/r/rust/comments/ig6g1c/can_i_learn_this_instead_of_c_and_still_be_worth/)
-- url: https://www.reddit.com/r/rust/comments/ig6g1c/can_i_learn_this_instead_of_c_and_still_be_worth/
----
-So I know C++ at its core, but the languages huge list of features is insane and hard to learn. Can I learn rust and be worth as much as a C++ developer in the commercial market or will Rust always be that one language that business just doesn't use? That's a hard question to answer I totally realize that. I know Rust doesn't support popular C++ libs like Qt etc but I recognize that it's still early.
-
-Also, how does Rust differ from C++ in terms of OOP? Glossing over Rust reveals a more functional-ish language given the terms structs, procedures and module buzzwords being thrown about in the docs.
-
-PS: I'm fluent in Swift and a little Kotlin mainly. If this post violates the rules, feel free to remove.. I guess I'm just looking for perspectives.
-## [11][NES emulator in Rust (on ImGui)](https://www.reddit.com/r/rust/comments/ifuuc4/nes_emulator_in_rust_on_imgui/)
-- url: https://github.com/novoselov-ab/nes-rust
----
-
-## [12][IntelliJ Rust Changelog #129](https://www.reddit.com/r/rust/comments/ifr42g/intellij_rust_changelog_129/)
-- url: https://intellij-rust.github.io/2020/08/24/changelog-129.html
+link: [https://blog.snow-blade.vercel.app/post/random-crate-ep-2](https://blog.snow-blade.vercel.app/post/random-crate-ep-2)
+## [12][Uutils coreutils - GNU coreutils rewritten in safe Rust](https://www.reddit.com/r/rust/comments/igcs2o/uutils_coreutils_gnu_coreutils_rewritten_in_safe/)
+- url: https://github.com/uutils/coreutils
 ---
 

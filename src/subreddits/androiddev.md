@@ -79,7 +79,27 @@ We'll start answering questions on **Thursday, August 27 at 12:00 PM PDT / 3:00 
 * **Trevor McGuire** (/u/teamcguire) - Engineer on CameraX
 * **Vinit Modi** \- Product Manager on CameraX &amp; Camera
 * **Yigit Boyar** (/u/yboyar) - Tech Lead on Android Jetpack
-## [3][[UPDATE 2] Thank you, Reddit! I am a self-taught developer who ended up in #1 Top Chart! I have recently created an app “Hue Edge” for controlling Philips Hue via the Samsung Galaxy Edge panel.](https://www.reddit.com/r/androiddev/comments/igaoft/update_2_thank_you_reddit_i_am_a_selftaught/)
+## [3][Shrinking a Kotlin binary by 99.2%](https://www.reddit.com/r/androiddev/comments/igrss7/shrinking_a_kotlin_binary_by_992/)
+- url: https://jakewharton.com/shrinking-a-kotlin-binary/
+---
+
+## [4][[DEV] I created a small library that eliminates recyclerView adapter boilerplate code](https://www.reddit.com/r/androiddev/comments/igvg9l/dev_i_created_a_small_library_that_eliminates/)
+- url: https://www.reddit.com/r/androiddev/comments/igvg9l/dev_i_created_a_small_library_that_eliminates/
+---
+From past week I was learning about `Annotations` and `Processor` through which we can generate any code at the compile-time.
+
+This got me interested so I made a quick library that will automatically generate `RecyclerView.Adapter` code by using annotations (check github link below).
+
+Although, I know the idea is not unique but I just want to practice and see how annotation processing works and ways to use it in our project.
+
+The library is still in alpha (most implementation will likely to be change) because I'll be implementing/fixing things as I got to know more about this topic.
+
+Github: https://github.com/KaustubhPatange/AutoBindings
+## [5][ConstraintLayout 2.0.1](https://www.reddit.com/r/androiddev/comments/igp6ee/constraintlayout_201/)
+- url: https://androidstudio.googleblog.com/2020/08/constraintlayout-201.html
+---
+
+## [6][[UPDATE 2] Thank you, Reddit! I am a self-taught developer who ended up in #1 Top Chart! I have recently created an app “Hue Edge” for controlling Philips Hue via the Samsung Galaxy Edge panel.](https://www.reddit.com/r/androiddev/comments/igaoft/update_2_thank_you_reddit_i_am_a_selftaught/)
 - url: https://www.reddit.com/r/androiddev/comments/igaoft/update_2_thank_you_reddit_i_am_a_selftaught/
 ---
 &amp;#x200B;
@@ -127,54 +147,70 @@ Source: [https://github.com/nils-trubkin/Hue-Edge](https://github.com/nils-trubk
 **Conclusion**
 
 I am very thankful to the community for giving a new developer like me a chance. The amount of positive feedback and response made me very happy! I feel good knowing that my app brings value and joy to the people using it. As for other new developers out there, remember that anyone, if persistent enough, can create apps and reach their goals. Put in your time into work and do not give up when you encounter problems. If you fail, you can always try again and try a different approach!
-## [4][Animating your Keyboard - New WindowInsets APIs for checking the keyboard (IME) visibility and size (Chris Banes)](https://www.reddit.com/r/androiddev/comments/ig7701/animating_your_keyboard_new_windowinsets_apis_for/)
-- url: https://medium.com/androiddevelopers/animating-your-keyboard-fb776a8fb66d
+## [7][Attacking Build Times With Sample Apps](https://www.reddit.com/r/androiddev/comments/igmv98/attacking_build_times_with_sample_apps/)
+- url: https://cashapp.github.io/2020-08-25/attacking-build-times-with-sample-apps
 ---
 
-## [5][Understanding the internals of Android Stack Architecture and how it relates to Linux](https://www.reddit.com/r/androiddev/comments/ifwwbe/understanding_the_internals_of_android_stack/)
-- url: https://www.youtube.com/watch?v=E2_SgFnFmxc
+## [8][Am I the only one still using RelativeLayout, LinearLayout... ?](https://www.reddit.com/r/androiddev/comments/igvuet/am_i_the_only_one_still_using_relativelayout/)
+- url: https://www.reddit.com/r/androiddev/comments/igvuet/am_i_the_only_one_still_using_relativelayout/
 ---
-
-## [6][How much RAM do you really need for AS?](https://www.reddit.com/r/androiddev/comments/iga4c4/how_much_ram_do_you_really_need_for_as/)
-- url: https://www.reddit.com/r/androiddev/comments/iga4c4/how_much_ram_do_you_really_need_for_as/
+Are you still using these like me or have you changed all to **ConstraintLayout** or **CoordinatorLayout**  ?
+## [9][[FreshAdapter] RecyclerView adapter generator library](https://www.reddit.com/r/androiddev/comments/igyg90/freshadapter_recyclerview_adapter_generator/)
+- url: https://www.reddit.com/r/androiddev/comments/igyg90/freshadapter_recyclerview_adapter_generator/
 ---
-I got a 32GB Ram Dell XPS which is more than enough for developing on Android and using Android Studio, a friend of mine has a MacBook with 8GB of RAM and struggles a lot with Android Studio, it freezes the computer, takes a lot of time to do builds etc.
+I got tired of writing recyclerview adapters all the time and decided to make a library about this issue.
 
-So I wondered how much would really need Android Studio to run well and do builds without blocking your computer. A simple answer I think it would be 16GB (a middle answer) but do you think there is a real "minimum" or a "ideal" configuration?
-## [7][How is google-services.json working? Isnt it unsafe to compile these informations into an apk?](https://www.reddit.com/r/androiddev/comments/ig776o/how_is_googleservicesjson_working_isnt_it_unsafe/)
-- url: https://www.reddit.com/r/androiddev/comments/ig776o/how_is_googleservicesjson_working_isnt_it_unsafe/
+FreshAdapter was my solution to all the repetitive writings of recycler view adapters.
+
+[GitHub link](https://github.com/CraZyLegenD/FreshAdapter)
+
+It supports incremental processing, diff util generations, custom view clicks/long clicks and many more. 
+
+Using view binding for the view handling and ListAdapter as the adapter of choice for your recycler view.
+
+Check it out and read the [wiki](https://github.com/CraZyLegenD/FreshAdapter/wiki) for more details, if you have any suggestions let me know.
+
+Any feedback is appreciated.
+## [10][Maintain multiple projects or create a master project with flavors.](https://www.reddit.com/r/androiddev/comments/igybg7/maintain_multiple_projects_or_create_a_master/)
+- url: https://www.reddit.com/r/androiddev/comments/igybg7/maintain_multiple_projects_or_create_a_master/
 ---
-Hey,  
-firebase provides the google-services.json file in order to use some services of firebase. I just wonder how this works? Are this sensitiv information?
-## [8][Inspecting Android HTTP with a fake VPN](https://www.reddit.com/r/androiddev/comments/igbe2p/inspecting_android_http_with_a_fake_vpn/)
-- url: https://httptoolkit.tech/blog/inspecting-android-http/
+I have been tasked with re-writing a 4 mobile apps for my company. 4 on Android (Java to Kotlin) and the same 4 on iOS (Objective-C to Swift). 
+
+On Android, the apps all do pretty much the exact same thing. They all use the same API, business logic etc.. They only difference is the "dashboard" and some screens. While they may all do similar things, they are targeted at different users with different jobs.  For example. One app may edit inventory in the office. The other app is for people out in the field to add to the inventory. While the two apps ARE different, the underlying business logic and API is the exact same.
+
+Is it best to just create 4 different projects? The down side would be bug fixes across all the apps.
+
+Should I create one base project, then each "flavor" could be the different app showing the different dashboard. This makes the most sense, but I have zero experience in this type of project. If this is recommended, does anyone have a tutorial, YouTube videos, or some example to help me get started?
+
+Has anyone done anything similar?
+
+**What path would you take on maintaining 4 "different" apps?**
+## [11][Advanced Android course](https://www.reddit.com/r/androiddev/comments/igy99x/advanced_android_course/)
+- url: https://www.reddit.com/r/androiddev/comments/igy99x/advanced_android_course/
 ---
+I'm an Android developer for the last 5 years. My current company want to invest in my skills and offered me to take an online course. Areas of interest are software architecture and design, multithreading, etc. I did found some, but many of them are offering some basic stuff like Kotlin for Java dev, Android from scratch, etc.
 
-## [9][dependency-tree-diff: an intelligent diff tool for the output of Gradle's dependencies task](https://www.reddit.com/r/androiddev/comments/ifry56/dependencytreediff_an_intelligent_diff_tool_for/)
-- url: https://github.com/JakeWharton/dependency-tree-diff
----
+[https://www.pluralsight.com](https://www.pluralsight.com/pricing/skills)
 
-## [10][Does this Matter if We're publishing an in-house developed App as an Organization? Do We need a business G Suite Account in this case?](https://www.reddit.com/r/androiddev/comments/igbxxo/does_this_matter_if_were_publishing_an_inhouse/)
-- url: https://i.redd.it/xj0xxhuee5j51.png
----
+[https://www.raywenderlich.com](https://www.raywenderlich.com/android)
 
-## [11][Native library users, raísing minSdk affecting binary size?](https://www.reddit.com/r/androiddev/comments/igayiy/native_library_users_raísing_minsdk_affecting/)
-- url: https://www.reddit.com/r/androiddev/comments/igayiy/native_library_users_raísing_minsdk_affecting/
----
-Hi,
+[https://caster.io/courses](https://caster.io/courses)
 
-my app depends on openCv and bunch of other unrelated native C libraries.
-
-I recently happily raised minSdk of the project from 21 to 23.
+[https://teamtreehouse.com/library](https://teamtreehouse.com/library)
 
 &amp;#x200B;
 
-*And apk size* ***increased*** *by 20MB with that change alone*
-
-&amp;#x200B;
-
-Does this make sense to anyone?
-## [12][Anyone has a hint on how to stream video and audio from android camera/mic to php server and then to another Android device?](https://www.reddit.com/r/androiddev/comments/ig9vxw/anyone_has_a_hint_on_how_to_stream_video_and/)
-- url: https://www.reddit.com/r/androiddev/comments/ig9vxw/anyone_has_a_hint_on_how_to_stream_video_and/
+What do you suggest to take?
+## [12][Mod protection or tamper protection](https://www.reddit.com/r/androiddev/comments/igwoq6/mod_protection_or_tamper_protection/)
+- url: https://www.reddit.com/r/androiddev/comments/igwoq6/mod_protection_or_tamper_protection/
 ---
+I was noticing that there are mods to some games and android apps that change the way that the game work.
 
+like inifinite life etc. So I was wondering if there is any good way to protect yourself against it.
+
+I have been searching a bit and it seems like logical if's to check package name etc is easy to avoid.  
+
+
+The main issue I have is when I have some online features enabled like google play services achivements and leaderboards, analytics data and ads that I probably want to disable to protect myself and the integrity from cheats.
+
+Thanks

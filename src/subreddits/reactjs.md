@@ -111,97 +111,61 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/i1u8a4/whos_hiring_august_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Are there any large open source repos out there that demonstrate well written React code at the production/business level?](https://www.reddit.com/r/reactjs/comments/igrpdr/are_there_any_large_open_source_repos_out_there/)
+## [3][How do I write meaningful tests using React Testing Library?](https://www.reddit.com/r/reactjs/comments/ih6rl8/how_do_i_write_meaningful_tests_using_react/)
+- url: https://www.reddit.com/r/reactjs/comments/ih6rl8/how_do_i_write_meaningful_tests_using_react/
+---
+I've been starting to write tests using React Testing Library for my application. But I don't know if my tests make sense. I know React Testing Library says to write tests for your application from the users perspective. For example, if a user clicks a button then the button should trigger some type of action which you should be writing a test for.
+
+But what about user authentication, user sign out, forms, making api calls etc.. It seems like if I were test every piece of functionality in my app, I would be writing endless tests.
+
+**If you were to write tests for instagram, what tests would you write using React Testing Library that would actually make sense.**
+
+Thanks
+## [4][React website to practice interview questions in Python](https://www.reddit.com/r/reactjs/comments/ih9fj5/react_website_to_practice_interview_questions_in/)
+- url: https://www.reddit.com/r/reactjs/comments/ih9fj5/react_website_to_practice_interview_questions_in/
+---
+Hi everyone! I made a free React website to practice interview questions in Python. It includes written solutions. It would help me a lot to hear what you think! :) Also, I'm planning to make the whole project open source (frontend and backend), so let me know if you want to contribute!
+
+&amp;#x200B;
+
+[https://algorocket.io/](https://algorocket.io/)
+
+https://reddit.com/link/ih9fj5/video/lc888986ffj51/player
+## [5][Minimal React: getting started with the frontend library](https://www.reddit.com/r/reactjs/comments/ihiifu/minimal_react_getting_started_with_the_frontend/)
+- url: https://2ality.com/2020/08/minimal-react.html
+---
+
+## [6][A 2048 clone I made in ReactJS](https://www.reddit.com/r/reactjs/comments/ih25dr/a_2048_clone_i_made_in_reactjs/)
+- url: https://2048-three.vercel.app/
+---
+
+## [7][react-microanimations colors: how to change it?](https://www.reddit.com/r/reactjs/comments/ihktgf/reactmicroanimations_colors_how_to_change_it/)
+- url: https://www.reddit.com/r/reactjs/comments/ihktgf/reactmicroanimations_colors_how_to_change_it/
+---
+There is this library of animated icons called [useAnimations](https://useanimations.com/) which is easily implemented by [react-microanimations](https://github.com/useAnimations/react-useanimations) package. The thing is, the SVG comes with the fill colors and stroke set and it seems I can't override it with CSS.
+
+Does anyone here ever used it and got it custom colored or know how to do so? Thanks!
+## [8][Are there any large open source repos out there that demonstrate well written React code at the production/business level?](https://www.reddit.com/r/reactjs/comments/igrpdr/are_there_any_large_open_source_repos_out_there/)
 - url: https://www.reddit.com/r/reactjs/comments/igrpdr/are_there_any_large_open_source_repos_out_there/
 ---
 I’ve been working with react for a few months now and would like to better understand professional level react architecture. Does anyone know of any resources or open source repos to study?
-## [4][Remember (notetaking application)](https://www.reddit.com/r/reactjs/comments/igaytj/remember_notetaking_application/)
-- url: https://v.redd.it/9fvgqz7u35j51
+## [9][React Chrome Extension](https://www.reddit.com/r/reactjs/comments/ihjzny/react_chrome_extension/)
+- url: https://www.reddit.com/r/reactjs/comments/ihjzny/react_chrome_extension/
+---
+I am trying to create a chrome extension with react.
+
+ I want to inject my react app into the page dom. However i am not able to understand how the content scripts and background scripts work.
+
+ I was able to put my react app as a popup but the state was not maintained everytime I click the extension icon the state resets.
+## [10][Color Picker React JS Tutorial Using TippyJS and React-Color package](https://www.reddit.com/r/reactjs/comments/ihf8wo/color_picker_react_js_tutorial_using_tippyjs_and/)
+- url: https://www.youtube.com/watch?v=senxk5FbsJM&amp;feature=share
 ---
 
-## [5][An API blueprint web editor using Next.js](https://www.reddit.com/r/reactjs/comments/igvppp/an_api_blueprint_web_editor_using_nextjs/)
-- url: https://www.reddit.com/r/reactjs/comments/igvppp/an_api_blueprint_web_editor_using_nextjs/
+## [11][Today we start a new LIVE build: Twitter clone in React Native](https://www.reddit.com/r/reactjs/comments/ihi0c5/today_we_start_a_new_live_build_twitter_clone_in/)
+- url: https://youtu.be/4Qrr0rW3OZg
 ---
-Hi All,
 
-I created [blueprintstack.io](https://blueprintstack.io) a couple of days ago for new people to experiment with the API blueprint spec ([https://apiblueprint.org/](https://apiblueprint.org/)).
-
-Features:
-
-1. No account required
-2. Multiple blueprint files
-3. Automatic preview updates (while typing)
-4. Blueprints saved locally (indexedDB)
-
-The site was created using Next.js and the source is available here: [https://github.com/alexalikiotis/blueprintstack](https://github.com/alexalikiotis/blueprintstack)
-
-Let me know if you've any feedback or questions, have a nice day!
-## [6][Has anyone used a Figma/React Design System in any projects?](https://www.reddit.com/r/reactjs/comments/igplfj/has_anyone_used_a_figmareact_design_system_in_any/)
-- url: https://www.reddit.com/r/reactjs/comments/igplfj/has_anyone_used_a_figmareact_design_system_in_any/
+## [12][Super cool React library documentation site](https://www.reddit.com/r/reactjs/comments/ih46zd/super_cool_react_library_documentation_site/)
+- url: https://www.youtube.com/watch?v=wTRI-oQLVAM
 ---
-I’m looking for a Figma Design System Component Library that is supported directly by a library of React Components. [Ant for Figma](https://antforfigma.com) and [Set Product](https://setproduct.com/desktop/react) appear to possibly fit that description. Has anyone used these tools, or anything else that might provide a solution? Thanks!
-## [7][Text area / content editable divchanges (large content changes - React )](https://www.reddit.com/r/reactjs/comments/igyjh6/text_area_content_editable_divchanges_large/)
-- url: https://www.reddit.com/r/reactjs/comments/igyjh6/text_area_content_editable_divchanges_large/
----
-I was wondering how React behaves or is efficient for applications with large content, eg in content editable div or textarea.
-If the data is maintained with immutability, would the huge data copy be replaced for every character added to the content?
-How would one approach design of some application with huge content in react ?
-## [8][Papyr CMS now supports Postgres and other relational DBs](https://www.reddit.com/r/reactjs/comments/igyjfh/papyr_cms_now_supports_postgres_and_other/)
-- url: https://www.reddit.com/r/reactjs/comments/igyjfh/papyr_cms_now_supports_postgres_and_other/
----
-*"I really like it but can I use postgres instead of mongoDB?"*
 
-Last time I shared Papyr, this was one of the first and highest rated responses I got. At the time, the answer was that only Mongo DB was supported, but then I got to work! Leveraging the [Sequelize](https://sequelize.org/) and [Mongoose](https://mongoosejs.com/) ORMs, Papyr now supports any databases that these ORMs support (including Postgres).
-
-Maybe you weren't here last time I introduced Papyr. Papyr CMS is something of a CMS/Framework hybrid. Using the NextJS React framework, Papyr is designed to be extremely customizable (the CMS part) and extendable (the Framework part). Using a combination of "Content Posts" and "Page Posts", which leverage a series of pre-built Sections, custom landing pages fly together (check out [how it works](https://papyrcms.com/posts/content-and-page-building)). Because, however, Papyr is built on NextJS, developers can customize their install to their heart's content. Additional Sections can be added to the "components/sections" directory of a project to be included in the list of sections used to build pages, or, using NextJS's "pages" routing, one can simply build their own React component in the "pages" directory that can be as custom and advanced as it needs to be.
-
-Besides being a customizable CMS and extendable Framework, Papyr comes with all sorts of functionality that most websites need already baked in. These features include blog, events, ecommerce, quick website initialization, user authentication, Gmail integration, Google Analytics, and more! On top of that, Papyr is designed to be used for free! Every service (hosting, database, image storage, etc) is a "freemium" service, so everything can be used for free, but is very easy to scale for a few dollars once you need to.
-
-Check out the home website at [https://papyrcms.com](https://papyrcms.com/) or the code at [https://github.com/drkgrntt/papyr-cms](https://github.com/drkgrntt/papyr-cms). You can also see a demo site showcasing many of the front-end features using fake content at [https://drkgrntt.herokuapp.com](https://drkgrntt.herokuapp.com/).
-
-Do you have any questions or comments? Feature requests? Bug reports? Would you like to contribute? Please feel free to reach out in any way you know now, or via the [contact form](https://papyrcms.com/contact), and I will get back with you as soon as I can.
-
-Thanks for reading!
-## [9][Frontend React js and backend spring boot multiple page application.](https://www.reddit.com/r/reactjs/comments/igu5y0/frontend_react_js_and_backend_spring_boot/)
-- url: https://www.reddit.com/r/reactjs/comments/igu5y0/frontend_react_js_and_backend_spring_boot/
----
-Need help,
-
-I have multiple page front end application on React js and backend on spring boot. I'm able to communicate between them when I run them separately but when I include react application inside spring boot, I am able to access only main page, on navigation to other pages I land on "White lable error page" provided by spring boot with no message found.
-
-For creating I used reference as below post: https://medium.com/@mukundmadhav/build-and-deploy-react-app-with-spring-boot-and-mysql-6f888eb0c600
-## [10][npm start opens up another vscode window intead of browser's window](https://www.reddit.com/r/reactjs/comments/igyc0f/npm_start_opens_up_another_vscode_window_intead/)
-- url: https://www.reddit.com/r/reactjs/comments/igyc0f/npm_start_opens_up_another_vscode_window_intead/
----
-Everytime i run `npm start` my react project opens up another vscode window unless I've already opened chrome (or any browser). I'm running on UBUNTU 20.04 LTS.
-
-Can anyone help me if this issue?
-## [11][Want to contribute to Open Source](https://www.reddit.com/r/reactjs/comments/igy9t2/want_to_contribute_to_open_source/)
-- url: https://www.reddit.com/r/reactjs/comments/igy9t2/want_to_contribute_to_open_source/
----
-Hello folks,
-
-I have learned almost everything I know about React and its ecosystem of tools from documentation, courses etc even though I have a master's degree. Now I feel like I want to give back to the community so wanted to know what steps should I take to contribute towards open source software? I have written a few blog posts on topics like Redux ([https://codeburst.io/redux-a-crud-example-abb834d763c9](https://codeburst.io/redux-a-crud-example-abb834d763c9))and Redux Thunk ([https://codeburst.io/understanding-redux-thunk-6dbae0241817](https://codeburst.io/understanding-redux-thunk-6dbae0241817)). Not sure if that counts but yes I would like to contribute more towards open source projects. Just that whenever I open a project that I feel like I want to contribute I kinda get overwhelmed initially not sure if that happens to everyone maybe its just me. So I am mainly looking for a good starting point that is not too complicated enough but atleast a start
-
-Thanks
-## [12][How to test functions within components?](https://www.reddit.com/r/reactjs/comments/igy3em/how_to_test_functions_within_components/)
-- url: https://www.reddit.com/r/reactjs/comments/igy3em/how_to_test_functions_within_components/
----
-I'm using react testing library, How can I test a function inside a component? something like that, I want test ***showName*** and ***showAge***
-
-    const App = () =&gt; {
-    
-    const showName(name) {
-        return name
-    }
-    
-    const showAge(age) {
-        return age
-    }
-    
-     return (
-          &lt;div&gt;
-                &lt;h1&gt; I'm a component&lt;/h1&gt;
-          &lt;/div&gt;
-        )
-    }

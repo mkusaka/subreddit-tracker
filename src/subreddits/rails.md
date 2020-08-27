@@ -39,7 +39,452 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Setting up a blog on AWS Cloud9](https://www.reddit.com/r/rails/comments/igw3bw/setting_up_a_blog_on_aws_cloud9/)
+## [3]["Dual-purpose APIs" -- Does this make sense?](https://www.reddit.com/r/rails/comments/ihcfz4/dualpurpose_apis_does_this_make_sense/)
+- url: https://www.reddit.com/r/rails/comments/ihcfz4/dualpurpose_apis_does_this_make_sense/
+---
+I have looked around and I haven't really found any blog posts or "received knowledge" about dual-purpose APIs.
+
+By "dual-purpose", I mean this:  I have a management application that has a normal web interface, but it also has a smartphone companion app for doing a certain subset of procedures that benefit greatly from being able to scan barcodes using the phone's camera.  So, there's an API for the smartphone app to connect, log on, perform the operations once the barcodes have been scanned, etc.
+
+But there is also a need for an API for modern front-end web interfaces.  I'm thinking specifically of things like type-ahead controls on forms, "query the server for a list of cities to populate a dropdown after the user has chosen a country", that sort of thing.
+
+In the past, I have used Grape to design my APIs, and done some "hacks" to be able to use either the current rack session (which would exist if there is a user interacting with the web app, and needs to query that data) or use non-session-based token authentication for when the smartphone app is making requests.  I like that Grape makes it easy to add swagger documentation for the API.
+
+I'm not really **unhappy**, per se, with my solution, but as I'm starting a new app, I thought I'd check and see if there's some other different thing that would make more sense, before getting too far into it.  I'd be interested in hearing how others have approached a similar problem.
+
+Thanks!
+## [4][Small script to reduce the image size of Ruby and Ruby on Rails Docker images](https://www.reddit.com/r/rails/comments/igxju5/small_script_to_reduce_the_image_size_of_ruby_and/)
+- url: https://www.reddit.com/r/rails/comments/igxju5/small_script_to_reduce_the_image_size_of_ruby_and/
+---
+In the recent months I was migrating one of my Rails applications I was maintaining in the past years from capistrano to Docker. I did know that the gems are leaving files behind and therefore the Docker images became quite large but I was shocked when I realized how big the difference is.
+
+So I sat down and I wrote a small gem called [cleanup\_vendor](https://github.com/raszi/cleanup_vendor) which cleans up the leftover files and reduces the Docker image size significantly.
+
+Comments and suggestions are welcome.
+## [5][Interview Questions &amp; Algorithm Mastery (or lack thereof)](https://www.reddit.com/r/rails/comments/ih0ikx/interview_questions_algorithm_mastery_or_lack/)
+- url: https://www.reddit.com/r/rails/comments/ih0ikx/interview_questions_algorithm_mastery_or_lack/
+---
+Hey guys, so I just had a very disappointing experience yesterday with my first major Ruby on Rails interview.
+
+It was actually my 2nd interview and I felt I did a great job in the first interview, and I had a github and some live sites with examples of my work in Rails 6 (along with earlier versions) and React and other JS frameworks/libraries.
+
+In the first round, I was able to answer most of the basic development and experience questions confidently and honestly and it went great.
+
+However, round 2 went downhill pretty fast.
+
+There were some other developers brought in and I was asked to do live coding for some mathematical algorithm solutions.  The person leading the interview told me there would be a series of these and that this first one was really easy but tests a lot of different computer science concepts.
+
+It had something to do with a missing data set and calculating a rolling average over a given time period.  I was able to "think outloud" as I considered that I would need some sort of loop and a couple of variables to keep track of which time period I was currently on - outside the loop - and then increment that within the loop, and remove the previous dataset from the array since it was rolling.
+
+But... I'm a very nervous person by nature and don't do well with coding in front of people.  So I totally blew it and couldn't come up with the solution within the minute or so I was given.
+
+The coding aspect of the interview stopped there and I wasn't given anymore questions about actual code and we talked about processes and development strategies - which I think I did well on.
+
+I was very upfront in the first interview about how I wasn't an algorithm master and would need time to think about things and look up possible solutions online.
+
+In the past I've done things like Project Euler and CodeWars where I learn algorithms and I've coded solutions for finding duplicates in arrays, finding the largest number - both looping and recursive, using binary search, bubble sort, etc.
+
+But not being able to come up with a solution on the spot cost me my first Rails job.  They spoke to the recruiter and passed on me.
+
+I'm not a "natural born" programmer and mathematical algorithms do not come natural to me.  Am I just in the wrong business, or can you be a Rails developer without necessarily needing to be able to do stuff like this on the spot?
+## [6][Rails heroku: Is it possible to select worker dyno type instead of the default?](https://www.reddit.com/r/rails/comments/ih9445/rails_heroku_is_it_possible_to_select_worker_dyno/)
+- url: https://www.reddit.com/r/rails/comments/ih9445/rails_heroku_is_it_possible_to_select_worker_dyno/
+---
+My web application processes documents uploaded by users using sidekiq on heroku. Less than 5% of documents are too large and my heroku workers die without warning due to out of memory issues.
+
+Is it possible to boot different worker dynos in sidekiq based on the upload size?
+
+For example, one can specify one-off dyno types by using --size
+
+    heroku run rails c --size=standard-2x rake heavy:job 
+    heroku run rails c --size=performance-l rake heavy:job
+
+Another possible solution is maybe loading fewer gems in my workers? (doesn't seem possible)
+## [7][What is this rails server log error? (attached)](https://www.reddit.com/r/rails/comments/ihb00l/what_is_this_rails_server_log_error_attached/)
+- url: https://www.reddit.com/r/rails/comments/ihb00l/what_is_this_rails_server_log_error_attached/
+---
+As of 5 days ago, my rails server started spewing errors in my log to the point where I am getting Heroku L10 issues non-stop. I have no idea how to fix it since I don't understand the error message (the app still seems to run fine.)
+
+Anybody with suggestions?
+
+&amp;#x200B;
+
+`WARNING: V8 isolate was forked, it can not be disposed and memory will not be reclaimed till the Ruby process exits.`
+
+`/app/vendor/bundle/ruby/2.7.0/gems/parallel-1.19.2/lib/parallel.rb:445: [BUG] Segmentation fault at 0x00007f8521f109d0`
+
+`ruby 2.7.1p83 (2020-03-31 revision a0c7c23c9c) [x86_64-linux]`
+
+&amp;#x200B;
+
+`-- Machine register context ------------------------------------------------`
+
+ `RIP: 0x00007f8581f73bd8 RBP: 0x00007f8569eb02d0 RSP: 0x00007f8569eb0250`
+
+ `RAX: 0x0000000000000000 RBX: 0x00007f8521f10700 RCX: 0x0000000000000001`
+
+ `RDX: 0x0000000000000000 RDI: 0x00007f8521f10700 RSI: 0x0000000000000000`
+
+  `R8: 0x00000000000000ca  R9: 0x00007f8522f119d0 R10: 0x000000000000000d`
+
+ `R11: 0x00007f85238693c0 R12: 0x00005640dd835740 R13: 0x00005640dd095a28`
+
+ `R14: 0x00005640dd835750 R15: 0x00005640dd0959f0 EFL: 0x0000000000010206`
+
+&amp;#x200B;
+
+`-- C level backtrace information -------------------------------------------`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_vm_bugreport+0x7ce) [0x7f8582a4402e] vm_dump.c:755`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_bug_for_fatal_signal+0xe7) [0x7f8582863207] error.c:658`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(sigsegv+0x4b) [0x7f85829a807b] signal.c:946`
+
+`/lib/x86_64-linux-gnu/libc.so.6(0x7f85823e5fd0) [0x7f85823e5fd0]`
+
+`/lib/x86_64-linux-gnu/libpthread.so.0(__GI___pthread_timedjoin_ex+0x28) [0x7f8581f73bd8]`
+
+`/app/vendor/bundle/ruby/2.7.0/gems/sq_mini_racer-0.2.5.0.1.beta3/lib/sq_mini_racer_extension.so(_ZN2v88platform12WorkerThreadD0Ev+0x1c) [0x7f85232b945c]`
+
+`/app/vendor/bundle/ruby/2.7.0/gems/sq_mini_racer-0.2.5.0.1.beta3/lib/sq_mini_racer_extension.so(0x7f85232b777e) [0x7f85232b777e]`
+
+`/app/vendor/bundle/ruby/2.7.0/gems/sq_mini_racer-0.2.5.0.1.beta3/lib/sq_mini_racer_extension.so(0x7f85232b666a) [0x7f85232b666a]`
+
+`/app/vendor/bundle/ruby/2.7.0/gems/sq_mini_racer-0.2.5.0.1.beta3/lib/sq_mini_racer_extension.so(0x7f85232b683e) [0x7f85232b683e]`
+
+`/lib/x86_64-linux-gnu/libc.so.6(0x7f85823ea0f1) [0x7f85823ea0f1]`
+
+`/lib/x86_64-linux-gnu/libc.so.6(0x431ea) [0x7f85823ea1ea]`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(ruby_stop+0x10) [0x7f8582870cc0] eval.c:290`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(ruby_run_node) (null):0`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_f_fork+0x74) [0x7f85829576e4] process.c:4130`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_call_cfunc_with_frame+0xc9) [0x7f8582a206ba] vm_insnhelper.c:2514`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_call_cfunc) vm_insnhelper.c:2539`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_sendish+0x58) [0x7f8582a2bded] vm_insnhelper.c:4023`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_exec_core) insns.def:782`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_vm_exec+0xab) [0x7f8582a3211b] vm.c:1920`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(invoke_iseq_block_from_c+0x15b) [0x7f8582a3527e] vm.c:1116`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(invoke_block_from_c_bh) vm.c:1134`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_yield) vm.c:1179`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_yield_0) vm_eval.c:1227`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_yield_values2) vm_eval.c:1273`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(each_with_index_i+0x7d) [0x7f8582852b2d] enum.c:2365`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_yield_with_cfunc+0x115) [0x7f8582a28025] vm_insnhelper.c:3220`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(invoke_block_from_c_bh+0x2c) [0x7f8582a32f34] vm.c:1139`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_yield) vm.c:1179`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_yield_0) vm_eval.c:1227`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_yield_1) vm_eval.c:1233`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_yield) vm_eval.c:1243`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_array_len+0x0) [0x7f85827ce8ac] array.c:2135`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_ary_each) array.c:2134`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_call0_cfunc_with_frame+0x10c) [0x7f8582a3656c] vm_eval.c:91`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_call0_cfunc) vm_eval.c:105`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_call0_body) vm_eval.c:140`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_vm_call0+0xbf) [0x7f8582a36c1f] vm_eval.c:52`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_vm_call_kw+0x6d) [0x7f8582a36ebd] vm_eval.c:268`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(iterate_method+0x39) [0x7f8582a37949] vm_eval.c:718`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_iterate0+0xd1) [0x7f8582a25211] vm_eval.c:1415`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_block_call+0x54) [0x7f8582a253c4] vm_eval.c:1480`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(enum_each_with_index+0x44) [0x7f858284bd04] enum.c:2395`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_call_cfunc_with_frame+0xc9) [0x7f8582a206ba] vm_insnhelper.c:2514`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_call_cfunc) vm_insnhelper.c:2539`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_sendish+0x58) [0x7f8582a2bded] vm_insnhelper.c:4023`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_exec_core) insns.def:782`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_vm_exec+0xab) [0x7f8582a3211b] vm.c:1920`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(invoke_iseq_block_from_c+0x98) [0x7f8582a32e0e] vm.c:1116`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(invoke_block_from_c_bh) vm.c:1134`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_yield) vm.c:1179`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_yield_0) vm_eval.c:1227`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_yield_1) vm_eval.c:1233`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_yield) vm_eval.c:1243`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(each_slice_i+0x6f) [0x7f8582852a0f] enum.c:2517`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_yield_with_cfunc+0x115) [0x7f8582a28025] vm_insnhelper.c:3220`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(invoke_block_from_c_bh+0x2c) [0x7f8582a32f34] vm.c:1139`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_yield) vm.c:1179`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_yield_0) vm_eval.c:1227`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_yield_1) vm_eval.c:1233`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_yield) vm_eval.c:1243`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_array_len+0x0) [0x7f85827ce8ac] array.c:2135`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_ary_each) array.c:2134`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_call0_cfunc_with_frame+0x10c) [0x7f8582a3656c] vm_eval.c:91`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_call0_cfunc) vm_eval.c:105`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_call0_body) vm_eval.c:140`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_vm_call0+0xbf) [0x7f8582a36c1f] vm_eval.c:52`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_vm_call_kw+0x6d) [0x7f8582a36ebd] vm_eval.c:268`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(iterate_method+0x39) [0x7f8582a37949] vm_eval.c:718`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_iterate0+0xd1) [0x7f8582a25211] vm_eval.c:1415`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_block_call+0x54) [0x7f8582a253c4] vm_eval.c:1480`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(enum_each_slice+0x9d) [0x7f858284b91d] enum.c:2579`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_call_cfunc_with_frame+0xc9) [0x7f8582a206ba] vm_insnhelper.c:2514`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_call_cfunc) vm_insnhelper.c:2539`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_sendish+0x58) [0x7f8582a2bded] vm_insnhelper.c:4023`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_exec_core) insns.def:782`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_vm_exec+0xab) [0x7f8582a3211b] vm.c:1920`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(invoke_iseq_block_from_c+0x98) [0x7f8582a32e0e] vm.c:1116`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(invoke_block_from_c_bh) vm.c:1134`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_yield) vm.c:1179`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_yield_0) vm_eval.c:1227`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_yield_1) vm_eval.c:1233`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_yield) vm_eval.c:1243`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_array_len+0x0) [0x7f85827ce8ac] array.c:2135`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_ary_each) array.c:2134`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_call_cfunc_with_frame+0xc9) [0x7f8582a206ba] vm_insnhelper.c:2514`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_call_cfunc) vm_insnhelper.c:2539`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_sendish+0x58) [0x7f8582a2bded] vm_insnhelper.c:4023`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_exec_core) insns.def:782`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_vm_exec+0xab) [0x7f8582a3211b] vm.c:1920`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(invoke_iseq_block_from_c+0xa7) [0x7f8582a34c28] vm.c:1116`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(invoke_block_from_c_bh) vm.c:1134`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_yield) vm.c:1179`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_yield_0) vm_eval.c:1227`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(catch_i) vm_eval.c:2228`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_catch_protect+0xae) [0x7f8582a2567e] vm_eval.c:2310`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_catch_obj+0x2c) [0x7f8582a2577c] vm_eval.c:2336`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_call_cfunc_with_frame+0xc9) [0x7f8582a206ba] vm_insnhelper.c:2514`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_call_cfunc) vm_insnhelper.c:2539`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_sendish+0x58) [0x7f8582a2bded] vm_insnhelper.c:4023`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_exec_core) insns.def:782`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_vm_exec+0xab) [0x7f8582a3211b] vm.c:1920`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_ec_vm_ptr+0x0) [0x7f8582a35b3d] vm.c:1074`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_vm_global_hooks) vm_core.h:1932`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(invoke_bmethod) vm.c:1076`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(invoke_iseq_block_from_c) vm.c:1119`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(invoke_block_from_c_proc) vm.c:1216`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_vm_invoke_bmethod) vm.c:1245`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_call_bmethod+0xac) [0x7f8582a3c42c] vm_insnhelper.c:2570`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_sendish+0xa2) [0x7f8582a2bd36] vm_insnhelper.c:4023`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_exec_core) insns.def:801`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_vm_exec+0xab) [0x7f8582a3211b] vm.c:1920`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_ec_vm_ptr+0x0) [0x7f8582a35b3d] vm.c:1074`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_vm_global_hooks) vm_core.h:1932`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(invoke_bmethod) vm.c:1076`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(invoke_iseq_block_from_c) vm.c:1119`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(invoke_block_from_c_proc) vm.c:1216`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_vm_invoke_bmethod) vm.c:1245`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_call_bmethod+0xac) [0x7f8582a3c42c] vm_insnhelper.c:2570`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_sendish+0xa2) [0x7f8582a2bd36] vm_insnhelper.c:4023`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_exec_core) insns.def:801`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_vm_exec+0xab) [0x7f8582a3211b] vm.c:1920`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_ec_vm_ptr+0x0) [0x7f8582a35b3d] vm.c:1074`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_vm_global_hooks) vm_core.h:1932`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(invoke_bmethod) vm.c:1076`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(invoke_iseq_block_from_c) vm.c:1119`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(invoke_block_from_c_proc) vm.c:1216`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_vm_invoke_bmethod) vm.c:1245`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_call_bmethod+0xac) [0x7f8582a3c42c] vm_insnhelper.c:2570`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_sendish+0xa2) [0x7f8582a2bd36] vm_insnhelper.c:4023`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_exec_core) insns.def:801`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_vm_exec+0x74f) [0x7f8582a327bf] vm.c:1929`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_ec_vm_ptr+0x0) [0x7f8582a35b3d] vm.c:1074`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_vm_global_hooks) vm_core.h:1932`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(invoke_bmethod) vm.c:1076`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(invoke_iseq_block_from_c) vm.c:1119`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(invoke_block_from_c_proc) vm.c:1216`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_vm_invoke_bmethod) vm.c:1245`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_call_bmethod+0xac) [0x7f8582a3c42c] vm_insnhelper.c:2570`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_sendish+0xa2) [0x7f8582a2bd36] vm_insnhelper.c:4023`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_exec_core) insns.def:801`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_vm_exec+0x74f) [0x7f8582a327bf] vm.c:1929`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(invoke_iseq_block_from_c+0x183) [0x7f8582a360e3] vm.c:1116`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(invoke_block_from_c_proc) vm.c:1216`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(vm_invoke_proc) vm.c:1238`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_vm_invoke_proc) vm.c:1259`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(thread_do_start+0x289) [0x7f85829ebd99] thread.c:697`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(thread_start_func_2+0x257) [0x7f85829ee117] thread.c:745`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(rb_native_cond_initialize+0x0) [0x7f85829ee74b] thread_pthread.c:969`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(register_cached_thread_and_wait) thread_pthread.c:1021`
+
+`/app/vendor/ruby-2.7.1/bin/../lib/libruby.so.2.7(thread_start_func_1) thread_pthread.c:976`
+
+`/lib/x86_64-linux-gnu/libpthread.so.0(0x76db) [0x7f8581f726db]`
+
+`/lib/x86_64-linux-gnu/libc.so.6(clone+0x3f) [0x7f85824c8a3f]`
+
+&amp;#x200B;
+
+`-- Other runtime information -----------------------------------------------`
+
+&amp;#x200B;
+
+`* Process memory map:`
+
+&amp;#x200B;
+
+`150d77480000-150d77500000 rw-p 00000000 00:00 0` 
+
+`17f601700000-17f601780000 rw-p 00000000 00:00 0` 
+
+`1926f3080000-1926f3100000 rw-p 00000000 00:00 0` 
+
+`259cb9880000-259cb9881000 rw-p 00000000 00:00 0` 
+
+`278c9d400000-278c9d480000 rw-p 00000000 00:00 0` 
+
+`3164e3400000-3164e3480000 rw-p 00000000 00:00 0` 
+
+`3752d3c00000-3752d3c80000 rw-p 00000000 00:00 0` 
+
+`38cde2c80000-38cde2c9d000 rw-p 00000000 00:00 0` 
+
+`38fb691da000-38fb69200000 ---p 00000000 00:00 0` 
+
+`38fb69200000-38fb69201000 rw-p 00000000 00:00 0` 
+
+`38fb69201000-38fb69202000 ---p 00000000 00:00 0` 
+
+&amp;#x200B;
+## [8][How to display the post creation date on basic scaffold app ?](https://www.reddit.com/r/rails/comments/ih0lop/how_to_display_the_post_creation_date_on_basic/)
+- url: https://www.reddit.com/r/rails/comments/ih0lop/how_to_display_the_post_creation_date_on_basic/
+---
+
+## [9][Finding objects only where all of their has_many collections have a value for a specific column](https://www.reddit.com/r/rails/comments/igzeu4/finding_objects_only_where_all_of_their_has_many/)
+- url: https://www.reddit.com/r/rails/comments/igzeu4/finding_objects_only_where_all_of_their_has_many/
+---
+I have an `Album` object that has many `Tracks`. Tracks have a `youtube_uid` column. I'd like to query albums where all of their tracks' `youtube_uids` are present. I know the technique to find albums with tracks where there's at least one track with a `youtube_uid`:
+
+    Album.left_outer_joins(:tracks).where.not(tracks: { youtube_uid: nil })
+
+What would be the ideal query to find an album where every one of its' tracks has a `youtube_uid`?
+## [10][Setting up a blog on AWS Cloud9](https://www.reddit.com/r/rails/comments/igw3bw/setting_up_a_blog_on_aws_cloud9/)
 - url: https://www.reddit.com/r/rails/comments/igw3bw/setting_up_a_blog_on_aws_cloud9/
 ---
 Hi everyone,
@@ -81,15 +526,13 @@ Do you guys know what I've been doing wrong.
 Thank you for reading all of these it's my first time posting so i hope it's kind of understandable.
 
 Have a great day
-## [4][Small script to reduce the image size of Ruby and Ruby on Rails Docker images](https://www.reddit.com/r/rails/comments/igxju5/small_script_to_reduce_the_image_size_of_ruby_and/)
-- url: https://www.reddit.com/r/rails/comments/igxju5/small_script_to_reduce_the_image_size_of_ruby_and/
+## [11][What does included do in ActiveSupport::Concern for models](https://www.reddit.com/r/rails/comments/igz4r5/what_does_included_do_in_activesupportconcern_for/)
+- url: https://www.reddit.com/r/rails/comments/igz4r5/what_does_included_do_in_activesupportconcern_for/
 ---
-In the recent months I was migrating one of my Rails applications I was maintaining in the past years from capistrano to Docker. I did know that the gems are leaving files behind and therefore the Docker images became quite large but I was shocked when I realized how big the difference is.
+I read the documentation here for concerns for models [https://api.rubyonrails.org/classes/ActiveSupport/Concern.html#method-i-included](https://api.rubyonrails.org/classes/ActiveSupport/Concern.html#method-i-included). From what I read I can write class\_macros in the `included` block. I'm not sure what that means. I know something like `attr_accessor` is a class macro. But I'm not sure how putting that in the `included` block and outside the `included` block differs. 
 
-So I sat down and I wrote a small gem called [cleanup\_vendor](https://github.com/raszi/cleanup_vendor) which cleans up the leftover files and reduces the Docker image size significantly.
-
-Comments and suggestions are welcome.
-## [5][ActiveStorage custom key for blobs](https://www.reddit.com/r/rails/comments/igvbx7/activestorage_custom_key_for_blobs/)
+I think also model callbacks can be written in the `included` block. Can someone please help me with this.
+## [12][ActiveStorage custom key for blobs](https://www.reddit.com/r/rails/comments/igvbx7/activestorage_custom_key_for_blobs/)
 - url: https://www.reddit.com/r/rails/comments/igvbx7/activestorage_custom_key_for_blobs/
 ---
 Is there a way to specify custom keys for blobs in ActiveStorage?
@@ -107,329 +550,3 @@ Is there a way to specify custom keys for blobs in ActiveStorage?
 &amp;#x200B;
 
 Is there a way to configure naming convention with active\_storage?
-## [6][Rails 6 Index view loaded with limitations?](https://www.reddit.com/r/rails/comments/igih4h/rails_6_index_view_loaded_with_limitations/)
-- url: https://www.reddit.com/r/rails/comments/igih4h/rails_6_index_view_loaded_with_limitations/
----
-I have a `people` index that I want to load with just a specific set of records shown filtered by a specific field `(position)`. I currently have it that way as I am filtering out the position entries I do not want shown, but this is limiting me to not being able to show the other positions at all. I know my approach to this is probably very bad, as I have cobbled it together with very little knowledge.
-
-What it boils down to is I have an index of people, with filtering buttons along the top of the page, to only show the people in the desired position. I have a group(s) of people that do not need to be listed expect when their filter button is specifically selected.
-
-index.html.erb
-
-    &lt;% provide(:title, "Directory") %&gt;
-    
-    &lt;h1&gt;Directory&lt;/h1&gt;
-    
-    &lt;div class="filter_div"&gt;
-    	&lt;div class="filter btn btn-default btn-directory active"&gt;&lt;%= link_to "Full Listing", people_path %&gt;&lt;/div&gt;
-    	&lt;div class="filter btn btn-default btn-directory active"&gt;&lt;%= link_to "Position1", people_path(:filter_by =&gt; :position1), {:method =&gt; :get} %&gt;&lt;/div&gt;
-    	&lt;div class="filter btn btn-default btn-directory active"&gt;&lt;%= link_to "Position2", people_path(:filter_by =&gt; :position2), {:method =&gt; :get} %&gt;&lt;/div&gt;
-    	&lt;div class="filter btn btn-default btn-directory active"&gt;&lt;%= link_to "Position3", people_path(:filter_by =&gt; :'position3'), {:method =&gt; :get} %&gt;&lt;/div&gt;
-    	&lt;div class="filter btn btn-default btn-directory active"&gt;&lt;%= link_to "Position4", people_path(:filter_by =&gt; :position4), {:method =&gt; :get} %&gt;&lt;/div&gt;
-    	&lt;div class="filter btn btn-default btn-directory active"&gt;&lt;%= link_to "Position5", people_path(:filter_by =&gt; :position5), {:method =&gt; :get} %&gt;&lt;/div&gt; 	
-    	&lt;div class="filter btn btn-default btn-directory active"&gt;&lt;%= link_to "Position6", people_path(:filter_by =&gt; :position6), {:method =&gt; :get} %&gt;&lt;/div&gt;
-    	&lt;div class="filter btn btn-default btn-directory active"&gt;&lt;%= link_to "Position7", people_path(:filter_by =&gt; :position7), {:method =&gt; :get} %&gt;&lt;/div&gt; 
-    
-    &lt;/div&gt;
-    
-    &lt;table class="people table-striped"&gt;
-    	
-    	&lt;tbody&gt;
-    	    &lt;% @people.each do |person| %&gt;
-    		&lt;% if person.position == 'position1' %&gt; 
-    		    &lt;%= render 'row', person: person %&gt;            
-    	        &lt;% elsif person.position == 'position2' %&gt;
-                	    &lt;%= render 'row', person: person %&gt;
-                    &lt;% elsif person.position == 'position3' %&gt;
-                	    &lt;%= render 'row', person: person %&gt;
-                    &lt;% elsif person.position == 'position4' %&gt;
-                	    &lt;%= render 'row', person: person %&gt;
-                    &lt;% elsif person.position == 'position5' %&gt;
-                	    &lt;%= render 'row', person: person %&gt;
-                    &lt;% elsif person.position == 'position6' %&gt;
-                	    &lt;%= render 'row', person: person %&gt;
-                    &lt;% end %&gt;  	
-    	    &lt;% end %&gt;
-    	&lt;/tbody&gt;
-    &lt;/table&gt;
-    
-
-people\_controller
-
-    class PeopleController &lt; ApplicationController
-    	def index
-    	  if params[:filter_by].present?
-    	    case params[:filter_by]
-    	    when 'ra_cs'
-    	      @people = Person.where(ra_cs: true)
-    	    when 'ra_hn'
-    	      @people = Person.where(ra_hn: true)
-    	    when 'ra_mg'
-    	      @people = Person.where(ra_mg: true)
-    	    when 'ra_nb'
-    	      @people = Person.where(ra_nb: true)
-    	    when 'ra_ne'
-    	      @people = Person.where(ra_ne: true)
-    	    when 'search'
-    	      @people = Person.where(search: true)
-    	    else
-    	      @people = Person.where(position: params[:filter_by])
-    	    end
-    	  else
-    	    @people = Person.all
-    	  end
-    	end 
-    
-    	def show
-    		if params[:id]
-    	    	@person = Person.find(params[:id])
-    	    else
-    	    	@person = Person.find_by(position: params[:position], uname: params[:uname])
-    	    end
-    	end
-    
-    	
-    
-    	private
-    	def person_params
-    		params.require(:person).permit(
-    			:uname, :prefix, :fname, :lname, :title, :position, 
-    			... all fields) 
-    	end
-    end
-
-&amp;#x200B;
-## [7][White Screen after create-react-app S3 Static Site Deploy](https://www.reddit.com/r/rails/comments/igj3sy/white_screen_after_createreactapp_s3_static_site/)
-- url: https://www.reddit.com/r/rails/comments/igj3sy/white_screen_after_createreactapp_s3_static_site/
----
-My company has a create-react-app hosted in an S3 bucket as a static site with cloudfront.
-
-However, when we do a deploy, a lot of users experience a blank white screen. This can be remedied with "disable cache" or using another browser.
-
-What can we do to make sure this doesn't happen for our users?
-
-Stack is Rails/React
-## [8][Help with self in refactoring observers to concerns](https://www.reddit.com/r/rails/comments/igd4an/help_with_self_in_refactoring_observers_to/)
-- url: https://www.reddit.com/r/rails/comments/igd4an/help_with_self_in_refactoring_observers_to/
----
-I'm moving existing callbacks in observers to model concern in rails 4.2.1 application  
-Existing Observer
-
-    class TaskObserver &lt; ActiveRecord::Observer
-      observer Task
-      def after_commit(model)
-        //do something with the model
-      end
-    end 
-
-Which I'll be moving to concern like this
-
-    module TaskConcern
-      extend ActiveSupport::Concern
-      included do
-        after_commit :do_something
-      end
-      def do_something
-      // here self would be equivalent to model?
-      end
-    end
-
-I'll be adding this concern in a few model's and I wanted to be sure about the usage of self in the concern here.
-
-Since the included will be executed in the context of class it is being included in self would always be the item that is being created/updated/deleted right. i.e. the model variable in Observer and the self in concern would be the same, isn't it?
-
-EDIT: What is the difference between ActiveRecord::Observer and ActiveSupport::Concern, because in the former self returns an instance of the Observer class but in the later self returns an instance of the model in which the concern in included.
-## [9][after_commit callback not triggered from Concern](https://www.reddit.com/r/rails/comments/ig9fp6/after_commit_callback_not_triggered_from_concern/)
-- url: https://www.reddit.com/r/rails/comments/ig9fp6/after_commit_callback_not_triggered_from_concern/
----
-I have a model class like this
-
-    class Task &lt; ActiveRecord::Base
-      include Concerns::Tasks 
-      self.table_name = "tasks" 
-    end
-
-and the concern is like in the app/models/concerns directory
-
-    module Concerns::Tasks 
-      extend ActiveSupport::Concern
-      included do 
-        after_commit :do_something
-      end
-      def do_something
-        byebug
-      end
-    end
-
-But my after\_commit callback isn't being hit at all. I'm on rails 4.2.1. Any ideas why?
-
-EDIT: Other concern files are working fine. But only the newly added file isn't working fine. Do I have to register is somewhere?  
-
-
-FINAL\_EDIT: The issue was in the filename. Should have known how rails picks up these files . Got it from here [https://stackoverflow.com/a/12306720/3575018](https://stackoverflow.com/a/12306720/3575018)
-## [10][How to maintain CRUD when accepting nested attributes?](https://www.reddit.com/r/rails/comments/ifttz6/how_to_maintain_crud_when_accepting_nested/)
-- url: https://www.reddit.com/r/rails/comments/ifttz6/how_to_maintain_crud_when_accepting_nested/
----
-Let’s say these are my models:
-
-Shift
-
-\-- has\_many :employees
-
-\-- has\_many :holiday\_shedules
-
-\-- accepts\_nested\_attributes\_for :employees
-
-\-- accepts\_nested\_attributes\_for :holiday\_schedules
-
-Employees
-
-\-- belongs\_to :shift
-
-HolidaySchedule
-
-\-- belongs\_to :shift
-
-\-- has\_many :holidays
-
-\-- accepts\_nested\_attributes\_for :holidays
-
-Holiday
-
-\-- belongs\_to HolidaySchedule
-
-User steps:
-
-1. Creates the shift
-
-2. Adds staffing to the shift (multiple at a time)
-
-3. Adds two, linked holiday\_schedules to the shift at a time, each with three holidays
-
-Everything I’ve read says that custom controller actions are bad, but how do I maintain CRUD when accepts\_nested\_attributes\_for wants me to use a single controller update action for so many things?  That doesn’t even count updating the shift itself.
-
-These are the options I’m seeing:
-
-1.  Create or update multiple Nurses or HolidaySchedules through their respective controllers by namespacing and picking apart the parameters
-
-2.  Send them all to Shift’s Update action and figure out what to do with them using conditionals
-
-3.  Send them to custom actions in the shifts\_controller, i.e. def update\_nurses, def update\_holiday\_shifts
-
-This is my first Rails project.  Are there options I’m not seeing?  What would be the most conventional, or Railsy, path?
-## [11][Javascript not firing with Turbolinks](https://www.reddit.com/r/rails/comments/ifsu1z/javascript_not_firing_with_turbolinks/)
-- url: https://www.reddit.com/r/rails/comments/ifsu1z/javascript_not_firing_with_turbolinks/
----
-Hi Folks,
-Using rails 5.2 with turbolinks and it's driving me crazy. Attempting to hide some items on a page when a button is clicked, but the js doesn't seem to fire. Even just trying to debug by using console.log and alert() methods doesn't seem help as neither fires when the button is clicked. Code works fine if I run it in the console, but clearly some issue with turbolinks here. Any ideas? Using an event listener on turbolinks:load (see below)
-
-    document.addEventListener("turbolinks:load", function() {
-        var btnWhiskey = document.getElementById('btn-Whiskey');
-        btnWhiskey.addEventListener('click', function(){
-             alert("testttt");
-             console.log("TEST!");
-        });
-    });
-## [12][Calling Database fails in secondary page.](https://www.reddit.com/r/rails/comments/ifzx3c/calling_database_fails_in_secondary_page/)
-- url: https://www.reddit.com/r/rails/comments/ifzx3c/calling_database_fails_in_secondary_page/
----
-I have a people database, that functions fine within it's own controller group (index, show, etc)
-
-I want to use calls to this database in another controller, but it does not seem to be getting any data. I am sure I am missing something small, but I am hoping someone can help me.
-
-outside\_controller:
-
-    def pagename
-        @people = Person.all
-      end
-
-pagename.html.erb
-
-    &lt;% @people.each do |person| %&gt;
-        &lt;li class="clearfix"&gt;
-    	&lt;% if person.groffice == 'office' %&gt;
-    		&lt;div class="image"&gt;
-    		    &lt;%= image_tag("profiles/#{person.uname}S.jpg") %&gt;
-    		&lt;/div&gt;
-    		&lt;div class="body"&gt;
-    			&lt;h5&gt;&lt;%= person.fname %&gt; &lt;%= person.lname %&gt;&lt;/h5&gt;
-    		&lt;/div&gt;
-    	&lt;% end %&gt;
-        &lt;/li&gt;
-    &lt;% end %&gt;
-
-Person.rb
-
-    class Person &lt; ApplicationRecord
-    	has_many :pubs
-    	default_scope { order('lname') }
-    	belongs_to :boss, class_name: 'Person'
-    	has_many :subordinates, class_name: 'Person', foreign_key: 'boss_id'
-    
-    	
-    
-        validates_presence_of :uname, :position, :fname, :lname # Needed for friendly URLs
-    end
-
-When I add the `person.groffice` call to my People Index, it pulls the data from that field and displays it without issue. I have a feeling I am missing something stupid. If I run `Person.where(:groffice =&gt; 'office')` in the console it will return the proper record.
-
-&amp;#x200B;
-
-Error.log has this when I attempt to render the page:
-
-      [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
-    Processing by OutsideController#pagename as HTML
-      Rendering outside/pagename.html.erb within layouts/application
-      [1m[36mPerson Load (1.6ms)[0m  [1m[34mSELECT `people`.* FROM `people` ORDER BY lname[0m
-      ↳ app/views/outside/pagename.html.erb:17
-      Rendered outside/pagename.html.erb within layouts/application (Duration: 29.8ms | Allocations: 18000)
-    [Webpacker] Everything's up-to-date. Nothing to do
-      Rendered layouts/_header.html.erb (Duration: 0.0ms | Allocations: 6)
-      Rendered layouts/_footer.html.erb (Duration: 2.6ms | Allocations: 1433)
-    Completed 200 OK in 62ms (Views: 59.8ms | ActiveRecord: 1.6ms | Allocations: 36658)
-
-people\_controller
-
-    class PeopleController &lt; ApplicationController
-        def index
-          if params[:filter_by].present?
-            case params[:filter_by]
-            when 'ra_cs'
-              @people = Person.where(ra_cs: true)
-            when 'ra_hn'
-              @people = Person.where(ra_hn: true)
-            when 'ra_mg'
-              @people = Person.where(ra_mg: true)
-            when 'ra_nb'
-              @people = Person.where(ra_nb: true)
-            when 'ra_ne'
-              @people = Person.where(ra_ne: true)
-            when 'search'
-              @people = Person.where(search: true)
-            else
-              @people = Person.where(position: params[:filter_by])
-            end
-          else
-            @people = Person.all
-          end
-        end 
-    
-        def show
-            if params[:id]
-                @person = Person.find(params[:id])
-            else
-                @person = Person.find_by(position: params[:position], uname: params[:uname])
-            end
-        end
-    
-        
-    
-        private
-        def person_params
-            params.require(:person).permit(
-                :uname, :prefix, :fname, :lname, :title, :position, 
-                ... {every field in people} ... :groffice) 
-        end
-    end
-
-&amp;#x200B;

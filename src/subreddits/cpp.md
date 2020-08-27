@@ -56,11 +56,35 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][Is cpp-httplib the simplest/highest-performance way to get started writing a small REST API in C++?](https://www.reddit.com/r/cpp/comments/igfn33/is_cpphttplib_the_simplesthighestperformance_way/)
+## [2][Slightly elongated business card sized animated ray tracer in 1511 bytes](https://www.reddit.com/r/cpp/comments/ih8hk0/slightly_elongated_business_card_sized_animated/)
+- url: https://v.redd.it/jinqmlei5fj51
+---
+
+## [3][When is stable GCC c++20 support expected?](https://www.reddit.com/r/cpp/comments/iher9w/when_is_stable_gcc_c20_support_expected/)
+- url: https://www.reddit.com/r/cpp/comments/iher9w/when_is_stable_gcc_c20_support_expected/
+---
+My group is thinking about moving compiler versions and it would be useful to know if we should wait for c++20. When do we think GCC will have non-experimental support for it?
+## [4][What is the point of this talk? Just making fun of cmake language? - CppCon 2019: Jussi Pakkanen “Let's cmakeify the C++ standard library”](https://www.reddit.com/r/cpp/comments/ihi37f/what_is_the_point_of_this_talk_just_making_fun_of/)
+- url: https://youtu.be/YxortD9IxSc
+---
+
+## [5][PcapPlusPlus v20.08 released - a multi-platform C++ library for capturing, parsing and crafting of network packets](https://www.reddit.com/r/cpp/comments/ih1vd5/pcapplusplus_v2008_released_a_multiplatform_c/)
+- url: https://github.com/seladb/PcapPlusPlus/releases/tag/v20.08
+---
+
+## [6][What it is the research on encoding lifetimes in the type system that Andrei Alexandrescu refers to during this panel?](https://www.reddit.com/r/cpp/comments/ih7y5w/what_it_is_the_research_on_encoding_lifetimes_in/)
+- url: https://www.reddit.com/r/cpp/comments/ih7y5w/what_it_is_the_research_on_encoding_lifetimes_in/
+---
+In this video https://channel9.msdn.com/Events/GoingNative/GoingNative-2012/Interactive-Panel-Ask-Us-Anything- at around 15:25 Andrei Alexandrescu says that encoding lifetimes in the type system is a solved problem with a large body of research. Could anyone point out any specific references to such research?
+## [7][Taskflow v2.6 Released with A New Webpage!](https://www.reddit.com/r/cpp/comments/ih739b/taskflow_v26_released_with_a_new_webpage/)
+- url: https://taskflow.github.io/
+---
+
+## [8][Is cpp-httplib the simplest/highest-performance way to get started writing a small REST API in C++?](https://www.reddit.com/r/cpp/comments/igfn33/is_cpphttplib_the_simplesthighestperformance_way/)
 - url: https://github.com/yhirose/cpp-httplib
 ---
 
-## [3][Stream error functions instead of exceptions?](https://www.reddit.com/r/cpp/comments/igp033/stream_error_functions_instead_of_exceptions/)
+## [9][Stream error functions instead of exceptions?](https://www.reddit.com/r/cpp/comments/igp033/stream_error_functions_instead_of_exceptions/)
 - url: https://www.reddit.com/r/cpp/comments/igp033/stream_error_functions_instead_of_exceptions/
 ---
 I'm just curious... why does C++ use utility functions for stream error conditions that return booleans, such as cin.bad(), [cin.fail](https://cin.fail)(), and cin.eof() instead of  just throwing related exceptions to the caller?  
@@ -70,47 +94,11 @@ If i is an int, and (cin &gt;&gt; i) fails, why not throw a related exception li
 Yet on the other hand, dynamic\_cast&lt;&gt; will throw bad\_cast exceptions?  Respectfully, it seems like it's requiring an admixture of programming styles in what can easily be the the same top level code.
 
 P.S. I am only asking because I am trying to learn modern C++ after some professional experience over a decade ago in C++98.  I am really energized to learn the new concurrency support in C++17, but in dusting off my memory to prepare, I am coming across things like this... and going... hey.... wait...
-## [4][2020-08 mailing available : Standard C++](https://www.reddit.com/r/cpp/comments/ig8rdk/202008_mailing_available_standard_c/)
+## [10][2020-08 mailing available : Standard C++](https://www.reddit.com/r/cpp/comments/ig8rdk/202008_mailing_available_standard_c/)
 - url: https://isocpp.org/blog/2020/08/2020-08-mailing-available
 ---
 
-## [5][Virtual Table](https://www.reddit.com/r/cpp/comments/igy0ux/virtual_table/)
-- url: https://www.reddit.com/r/cpp/comments/igy0ux/virtual_table/
----
-Hello!
-
-I am wondering if anyone has any great intuition behind the virtual table, and specifically how it results in different casting behavior between C++ and Java.
-
-Thanks!
-## [6][Pointers and Classes](https://www.reddit.com/r/cpp/comments/igxljc/pointers_and_classes/)
-- url: https://www.reddit.com/r/cpp/comments/igxljc/pointers_and_classes/
----
-I'm new to c++ and trying to learn the language right now. 
-
-It seems tricky to understand Pointers in classes or as an argument.
-
-Does anyone have a clarify explanation about class and pointer?
-## [7][Is there bigdata stack using cpp?](https://www.reddit.com/r/cpp/comments/igs4h2/is_there_bigdata_stack_using_cpp/)
-- url: https://www.reddit.com/r/cpp/comments/igs4h2/is_there_bigdata_stack_using_cpp/
----
-As far as I know, clickhouse is OLAP system, and qfs vs hdfs. Any other data processing system using c++? There is a thrill on github but rarely update.
-## [8][A Tutorial on Atomic Variables and Memory Models in C++](https://www.reddit.com/r/cpp/comments/igfeuj/a_tutorial_on_atomic_variables_and_memory_models/)
+## [11][A Tutorial on Atomic Variables and Memory Models in C++](https://www.reddit.com/r/cpp/comments/igfeuj/a_tutorial_on_atomic_variables_and_memory_models/)
 - url: https://www.youtube.com/watch?v=IE6EpkT7cJ4&amp;feature=youtu.be
 ---
 
-## [9][match/wcmatch needs an at()](https://www.reddit.com/r/cpp/comments/igfe1f/matchwcmatch_needs_an_at/)
-- url: https://www.reddit.com/r/cpp/comments/igfe1f/matchwcmatch_needs_an_at/
----
-It would ever so nice if the regex match result had an alternative at() to use instead of the index operator. Some linting/analysis tools assume that this is an unchecked array operation and complain about it. This requires either lots of suppressions, or a lot of bogus warnings that hide real indexing operations that might be an issue.
-
-It would be trivial to provide an at() that just turned around called the operator. Those who have this concern could avoid it and there would approximately zero cost to the implementors.
-## [10][Schedule for Meeting C++ 2020 is online!](https://www.reddit.com/r/cpp/comments/ig8t55/schedule_for_meeting_c_2020_is_online/)
-- url: https://meetingcpp.com/2020/Schedule.html
----
-
-## [11][Why would I use std lib?](https://www.reddit.com/r/cpp/comments/igv1sp/why_would_i_use_std_lib/)
-- url: https://www.reddit.com/r/cpp/comments/igv1sp/why_would_i_use_std_lib/
----
-Not that anybody minds, but I would like to use standard C++. I am labouring under a strict single requirement to produce the smallest and fastest server-side executable possible. 
-
-Why would I use std lib?

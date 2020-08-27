@@ -26,7 +26,7 @@ For our [launch](https://android-developers.googleblog.com/2020/06/unwrapping-an
 
 [Android Jetpack](https://developer.android.com/jetpack) is our suite of libraries to help developers follow best practices, reduce boilerplate code, and write code that works consistently across Android versions and devices. We launched several new libraries like Hilt for Dependency Injection, App Startup, and updates to Paging, Navigation, CameraX, and more.  Check out the Jetpack updates we made during #11WeeksOfAndroid [here](https://android-developers.googleblog.com/2020/07/11-weeks-of-android-jetpack.html).
 
-[Jetpack Compose](https://developer.android.com/jetpack/compose) is Android’s modern toolkit for building native UI - declarative, composable, and more! We’re currently in developer preview and excited to show you more next week, when we will focus the week on UI! Check out our overview [video](https://www.youtube.com/watch?v=U5BwfqBpiWU) and try the [tutorial](https://developer.android.com/jetpack/compose/tutorial) to learn more.
+[Jetpack Compose](https://developer.android.com/jetpack/compose) is Android’s modern toolkit for building native UI - declarative, composable, and more! We just [launched](https://android-developers.googleblog.com/2020/08/announcing-jetpack-compose-alpha.html) alpha, together with a bunch of new  training materials! Check out our new videos, or dive into our curated [pathway](https://developer.android.com/courses/pathways/compose). We are excited to hear your feedback as you try it!
 
 For this AMA, we want to answer your *technical* questions about Android Jetpack and Compose.  No roadmaps :)
 
@@ -55,7 +55,7 @@ We'll start answering questions on **Thursday, August 27 at 12:00 PM PDT / 3:00 
 * **Alan Viverette** (/u/alanviverette) - Tech Lead on Android Jetpack
 * **Alex Elias** (/u/alex_elias) - Tech Lead on Jetpack Compose
 * **Amanda Alexander** \- Product Manager on Jetpack and Jetpack Compose
-* **Anna-Chiara Bellini** \- Product Manager on Jetpack Compose
+* **Anna-Chiara Bellini** (/u/acbellini) - Product Manager on Jetpack Compose
 * **Chris Banes** (/u/chrisbanes) - Android Developer Relations
 * **Chris Craik** \- Tech Lead on Paging, Benchmark
 * **Clara Bayarri** (/u/clarabayarri) - Tech Lead on Jetpack Compose
@@ -79,138 +79,63 @@ We'll start answering questions on **Thursday, August 27 at 12:00 PM PDT / 3:00 
 * **Trevor McGuire** (/u/teamcguire) - Engineer on CameraX
 * **Vinit Modi** \- Product Manager on CameraX &amp; Camera
 * **Yigit Boyar** (/u/yboyar) - Tech Lead on Android Jetpack
-## [3][Shrinking a Kotlin binary by 99.2%](https://www.reddit.com/r/androiddev/comments/igrss7/shrinking_a_kotlin_binary_by_992/)
-- url: https://jakewharton.com/shrinking-a-kotlin-binary/
+## [3][Someone is testing push notifications for the Microsoft teams app in production.](https://www.reddit.com/r/androiddev/comments/ihh3sd/someone_is_testing_push_notifications_for_the/)
+- url: https://i.imgur.com/qleS4BI.jpg
 ---
 
-## [4][[DEV] I created a small library that eliminates recyclerView adapter boilerplate code](https://www.reddit.com/r/androiddev/comments/igvg9l/dev_i_created_a_small_library_that_eliminates/)
-- url: https://www.reddit.com/r/androiddev/comments/igvg9l/dev_i_created_a_small_library_that_eliminates/
----
-From past week I was learning about `Annotations` and `Processor` through which we can generate any code at the compile-time.
-
-This got me interested so I made a quick library that will automatically generate `RecyclerView.Adapter` code by using annotations (check github link below).
-
-Although, I know the idea is not unique but I just want to practice and see how annotation processing works and ways to use it in our project.
-
-The library is still in alpha (most implementation will likely to be change) because I'll be implementing/fixing things as I got to know more about this topic.
-
-Github: https://github.com/KaustubhPatange/AutoBindings
-## [5][ConstraintLayout 2.0.1](https://www.reddit.com/r/androiddev/comments/igp6ee/constraintlayout_201/)
-- url: https://androidstudio.googleblog.com/2020/08/constraintlayout-201.html
+## [4][Announcing Jetpack Compose Alpha!](https://www.reddit.com/r/androiddev/comments/ih2t0u/announcing_jetpack_compose_alpha/)
+- url: https://android-developers.googleblog.com/2020/08/announcing-jetpack-compose-alpha.html
 ---
 
-## [6][[UPDATE 2] Thank you, Reddit! I am a self-taught developer who ended up in #1 Top Chart! I have recently created an app “Hue Edge” for controlling Philips Hue via the Samsung Galaxy Edge panel.](https://www.reddit.com/r/androiddev/comments/igaoft/update_2_thank_you_reddit_i_am_a_selftaught/)
-- url: https://www.reddit.com/r/androiddev/comments/igaoft/update_2_thank_you_reddit_i_am_a_selftaught/
----
-&amp;#x200B;
-
-[Hue Edge](https://i.redd.it/wq071z7415j51.gif)
-
-# Galaxy Store (if you get an error, open Galaxy Store app and search “Hue” or “Hue Edge”): [https://galaxy.store/HueEdge](https://galaxy.store/HueEdge)
-
-OP: [https://www.reddit.com/r/androiddev/comments/hzjuu9/i\_am\_a\_selftaught\_developer\_who\_just\_finished/](https://www.reddit.com/r/androiddev/comments/hzjuu9/i_am_a_selftaught_developer_who_just_finished/)
-
-UPDATE #1: [https://www.reddit.com/r/androiddev/comments/i5d93x/update\_i\_am\_a\_selftaught\_developer\_who\_just/](https://www.reddit.com/r/androiddev/comments/i5d93x/update_i_am_a_selftaught_developer_who_just/)
-
-**Thank you, Reddit**
-
-Thank you for making this possible! After my previous post here, it only took two days until my app “Hue Edge” has ended up as #1 at the Top Chart (same category) of the Samsung Galaxy App Store!
-
-To this day it has reached over 200 downloads! The app was met with very positive feedback and many interesting feature suggestions from you, the users. I could have not done this without your support and encouragement! I must admit that I have had my moments of despair and wanted to give up in the middle of developing the app as I have encountered problems above my skill-level. I am glad that I have kept learning and kept trying until I could solve those problems.
-
-I have worked countless hours, remade, refined, and polished every aspect of it until I was satisfied with the quality. My goal for my app is for it to be quick, clean, responsive, and bring joy to users when they interface with it. Today I am releasing an update to version 1.1, which brings a ton of improvements across the board.
-
-**Update**
-
-I have tried to pack in as many features, fixes, and optimizations as I could into this update. While perfection is very abstract, I think this update brings my app closer to it. I will keep listening to user feedback and try to find ways of making the user experience better.
-
-List of changes:
-
-• Reworked setup process with animated transitions  
- • Many under-the-hood improvements in performance and stability  
- • Improvements to handling quick successions of multiple buttons presses  
- • New settings that let you adjust the number of levels for brightness, color and saturation  
- • Pop-up tips for first-time users  
- • Ability to long-tap the scenes to activate them and proceed to adjustment of the associated group  
- • Error messages for cases when Wi-Fi is turned off or the Hue Bridge cannot be reached  
- • Adjustments to the transparency of the ring animations on buttons making them more subtle  
- • Adjustments to font and size of the text on the buttons  
- • Fix the animation of pull-to-refresh to be visible until the refresh is complete  
- • Capitalization of "Edge" in name, as it could be considered an accidental misspelling by some users
-
-**Open-Source**
-
-Since day one, I have decided to keep the app open source. If you want to create a similar app to control some other type of equipment, you are more than welcome. I will also gladly take any feedback on my code.
-
-Source: [https://github.com/nils-trubkin/Hue-Edge](https://github.com/nils-trubkin/Hue-Edge)
-
-**Conclusion**
-
-I am very thankful to the community for giving a new developer like me a chance. The amount of positive feedback and response made me very happy! I feel good knowing that my app brings value and joy to the people using it. As for other new developers out there, remember that anyone, if persistent enough, can create apps and reach their goals. Put in your time into work and do not give up when you encounter problems. If you fail, you can always try again and try a different approach!
-## [7][Attacking Build Times With Sample Apps](https://www.reddit.com/r/androiddev/comments/igmv98/attacking_build_times_with_sample_apps/)
-- url: https://cashapp.github.io/2020-08-25/attacking-build-times-with-sample-apps
+## [5][(This might sounds cringy) But I must say, I've never been happier and excited to develop on Android until this moment after watching these videos. Really loving Compose. Thanks for everyone who worked on it 🥳🥰.](https://www.reddit.com/r/androiddev/comments/ih4x7b/this_might_sounds_cringy_but_i_must_say_ive_never/)
+- url: https://i.imgur.com/QzBaBPX.jpg
 ---
 
-## [8][Am I the only one still using RelativeLayout, LinearLayout... ?](https://www.reddit.com/r/androiddev/comments/igvuet/am_i_the_only_one_still_using_relativelayout/)
-- url: https://www.reddit.com/r/androiddev/comments/igvuet/am_i_the_only_one_still_using_relativelayout/
+## [6][Create Android Apps without Android Studio only using command-line and a text editor](https://www.reddit.com/r/androiddev/comments/ihfqia/create_android_apps_without_android_studio_only/)
+- url: https://www.hsscjobs.com/2020/07/create-android-apps-without-android.html
 ---
-Are you still using these like me or have you changed all to **ConstraintLayout** or **CoordinatorLayout**  ?
-## [9][[FreshAdapter] RecyclerView adapter generator library](https://www.reddit.com/r/androiddev/comments/igyg90/freshadapter_recyclerview_adapter_generator/)
-- url: https://www.reddit.com/r/androiddev/comments/igyg90/freshadapter_recyclerview_adapter_generator/
+
+## [7][Gaining traction on Play Store](https://www.reddit.com/r/androiddev/comments/ihikz9/gaining_traction_on_play_store/)
+- url: https://www.reddit.com/r/androiddev/comments/ihikz9/gaining_traction_on_play_store/
 ---
-I got tired of writing recyclerview adapters all the time and decided to make a library about this issue.
+I've recently released an app on the play store, after about 8 years our of app development - I used to have a few iOS apps.
 
-FreshAdapter was my solution to all the repetitive writings of recycler view adapters.
+I don't remember any app gaining absolutely no momentum on the iOS app store, and I also had a play store app which had around 3500 reviews.
 
-[GitHub link](https://github.com/CraZyLegenD/FreshAdapter)
-
-It supports incremental processing, diff util generations, custom view clicks/long clicks and many more. 
-
-Using view binding for the view handling and ListAdapter as the adapter of choice for your recycler view.
-
-Check it out and read the [wiki](https://github.com/CraZyLegenD/FreshAdapter/wiki) for more details, if you have any suggestions let me know.
-
-Any feedback is appreciated.
-## [10][Maintain multiple projects or create a master project with flavors.](https://www.reddit.com/r/androiddev/comments/igybg7/maintain_multiple_projects_or_create_a_master/)
-- url: https://www.reddit.com/r/androiddev/comments/igybg7/maintain_multiple_projects_or_create_a_master/
+My most recent app, and the old play store app have gained absolutely no momentum whatsoever. 0 downloads. Has the marketplace become so huge in the last 8 years that there just no chance of someone downloading an app on a whim these days? Do I need to pay for advertising, or am I doing something else wrong?
+## [8][Exposed FCM keys leaves billions of users open to mass spam and phishing notifications](https://www.reddit.com/r/androiddev/comments/ihl36q/exposed_fcm_keys_leaves_billions_of_users_open_to/)
+- url: https://cybernews.com/security/exposed-google-keys-leaves-billions-of-users-open-to-mass-spam-and-phishing-notifications/
 ---
-I have been tasked with re-writing a 4 mobile apps for my company. 4 on Android (Java to Kotlin) and the same 4 on iOS (Objective-C to Swift). 
 
-On Android, the apps all do pretty much the exact same thing. They all use the same API, business logic etc.. They only difference is the "dashboard" and some screens. While they may all do similar things, they are targeted at different users with different jobs.  For example. One app may edit inventory in the office. The other app is for people out in the field to add to the inventory. While the two apps ARE different, the underlying business logic and API is the exact same.
-
-Is it best to just create 4 different projects? The down side would be bug fixes across all the apps.
-
-Should I create one base project, then each "flavor" could be the different app showing the different dashboard. This makes the most sense, but I have zero experience in this type of project. If this is recommended, does anyone have a tutorial, YouTube videos, or some example to help me get started?
-
-Has anyone done anything similar?
-
-**What path would you take on maintaining 4 "different" apps?**
-## [11][Advanced Android course](https://www.reddit.com/r/androiddev/comments/igy99x/advanced_android_course/)
-- url: https://www.reddit.com/r/androiddev/comments/igy99x/advanced_android_course/
+## [9][Options to monetize a wallpaper app?](https://www.reddit.com/r/androiddev/comments/ihikr5/options_to_monetize_a_wallpaper_app/)
+- url: https://www.reddit.com/r/androiddev/comments/ihikr5/options_to_monetize_a_wallpaper_app/
 ---
-I'm an Android developer for the last 5 years. My current company want to invest in my skills and offered me to take an online course. Areas of interest are software architecture and design, multithreading, etc. I did found some, but many of them are offering some basic stuff like Kotlin for Java dev, Android from scratch, etc.
-
-[https://www.pluralsight.com](https://www.pluralsight.com/pricing/skills)
-
-[https://www.raywenderlich.com](https://www.raywenderlich.com/android)
-
-[https://caster.io/courses](https://caster.io/courses)
-
-[https://teamtreehouse.com/library](https://teamtreehouse.com/library)
-
-&amp;#x200B;
-
-What do you suggest to take?
-## [12][Mod protection or tamper protection](https://www.reddit.com/r/androiddev/comments/igwoq6/mod_protection_or_tamper_protection/)
-- url: https://www.reddit.com/r/androiddev/comments/igwoq6/mod_protection_or_tamper_protection/
+I have a wallpaper app which recently reached 100K downloads on play store. I haven't made any significant amount of money from it so far. The only money i have made is from in app purchases for PRO, only &lt;1% people are buying PRO meaning i am not really making any money from 99% users. I have interstitial ads on the app with eCPM floor of $1 which only makes me only ~$1 a day. I have about 7000 DAU. Most of my users are from South Asia (about 70%). I added Facebook native ads with eCPM floor of 0.25$ but the fill rate is only 7% so i am planning to remove them. Please suggest me better ways to make money from the app or is banner/native ads the only option i have?
+## [10][Enjoying the evolution of Google Play to the waterfall model - A RANT with useful tips](https://www.reddit.com/r/androiddev/comments/ihidja/enjoying_the_evolution_of_google_play_to_the/)
+- url: https://www.reddit.com/r/androiddev/comments/ihidja/enjoying_the_evolution_of_google_play_to_the/
 ---
-I was noticing that there are mods to some games and android apps that change the way that the game work.
+So, the dreaded moment has come when we've needed to release a critical fix for our app urgently.
 
-like inifinite life etc. So I was wondering if there is any good way to protect yourself against it.
+We got the fix out within 2 hours of getting alerted to the issue, only to see it languish in the Google Play Store review process for 24 hours and counting.
 
-I have been searching a bit and it seems like logical if's to check package name etc is easy to avoid.  
+Previous couple of updates went through within a couple of hours, but of course it's completely unpredictable when this one will go through. Rolling the Russian roulette whether it's gonna be a few more hours, or a full week, or more...
 
+Also, just so you know - options like making the app unavailable temporarily in all countries, or rolling back to the previous APK or anything like that, will only restart the review process. So, if you're ever in a situation like this, don't touch anything on the Play Console.
 
-The main issue I have is when I have some online features enabled like google play services achivements and leaderboards, analytics data and ads that I probably want to disable to protect myself and the integrity from cheats.
+My brain can't comprehend why the 2 reps I spoke to, instead of pasting cookie-cutter responses, could not take those 2 minutes to actually look at the release, accommodate an urgent situation and expedite the review. 
 
-Thanks
+I know as devs we're used to taking a lot of crap and rolling with the punches, but when someone makes me feel like I'm writing/releasing software for some 1960s waterfall model with a PHB on top, what's the workaround?
+
+This shit used to be holding up together, and with all the outages and the basic concept of "break-and-fix-as-needed-it's-fucking-software" BROKEN, are we going back in time?
+## [11][Where's the flaw in my thinking? If I can spend $100 on advertising my app and get $120 back, what's stopping me on spending $1.000.000 on it to get $1.200.000 back? I'm selling to the same audience](https://www.reddit.com/r/androiddev/comments/ihhzv4/wheres_the_flaw_in_my_thinking_if_i_can_spend_100/)
+- url: https://www.reddit.com/r/androiddev/comments/ihhzv4/wheres_the_flaw_in_my_thinking_if_i_can_spend_100/
+---
+
+## [12][How to design a good looking UI?](https://www.reddit.com/r/androiddev/comments/ihek53/how_to_design_a_good_looking_ui/)
+- url: https://www.reddit.com/r/androiddev/comments/ihek53/how_to_design_a_good_looking_ui/
+---
+I am beginner in android development, i have learned (a little) to code the backend but when it comes down to UI i completely suck at it.
+
+ I can't decide what color scheme/ background should i use, how to arrange text views/edit texts so UI will look good.
+
+Do all these things come with the experience? Or there is a way to learn "how to make better UI" (except material design)

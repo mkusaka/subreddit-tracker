@@ -111,61 +111,85 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/i1u8a4/whos_hiring_august_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][How do I write meaningful tests using React Testing Library?](https://www.reddit.com/r/reactjs/comments/ih6rl8/how_do_i_write_meaningful_tests_using_react/)
-- url: https://www.reddit.com/r/reactjs/comments/ih6rl8/how_do_i_write_meaningful_tests_using_react/
+## [3][Portfolio Review](https://www.reddit.com/r/reactjs/comments/ii0kq9/portfolio_review/)
+- url: https://www.reddit.com/r/reactjs/comments/ii0kq9/portfolio_review/
 ---
-I've been starting to write tests using React Testing Library for my application. But I don't know if my tests make sense. I know React Testing Library says to write tests for your application from the users perspective. For example, if a user clicks a button then the button should trigger some type of action which you should be writing a test for.
+Hey guys, so i finish building my portfolio and i started applying for A LOT of jobs but i don't get any replies at all so i guess there's something wrong with my portfolio and it's not good enough i really don't know, so could guys review my portfolio i really appreciate any feedback 
 
-But what about user authentication, user sign out, forms, making api calls etc.. It seems like if I were test every piece of functionality in my app, I would be writing endless tests.
-
-**If you were to write tests for instagram, what tests would you write using React Testing Library that would actually make sense.**
-
-Thanks
-## [4][React website to practice interview questions in Python](https://www.reddit.com/r/reactjs/comments/ih9fj5/react_website_to_practice_interview_questions_in/)
-- url: https://www.reddit.com/r/reactjs/comments/ih9fj5/react_website_to_practice_interview_questions_in/
+Link:  [https://ahmedeid.netlify.app/](https://ahmedeid.netlify.app/)
+## [4][Any coders with love for mountains or sports around here?](https://www.reddit.com/r/reactjs/comments/ii4r4l/any_coders_with_love_for_mountains_or_sports/)
+- url: https://www.reddit.com/r/reactjs/comments/ii4r4l/any_coders_with_love_for_mountains_or_sports/
 ---
-Hi everyone! I made a free React website to practice interview questions in Python. It includes written solutions. It would help me a lot to hear what you think! :) Also, I'm planning to make the whole project open source (frontend and backend), so let me know if you want to contribute!
+My team in Innsbruck (the heart of the Austrian Alps and the action capital of Europe - yes it is :P) is looking for a mate helping us migrate to a modern framework, implement new features for our two products and plan the development of non-native mobile applications. Here are the details: [https://www.smaply.com/careers](https://www.smaply.com/careers)
+
+I know this might be a critical content here but I hope some of you guys and girls appreciate this. If you do, send me a message. :)
+## [5][Intro to Storybook 2020](https://www.reddit.com/r/reactjs/comments/ihm8t8/intro_to_storybook_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/ihm8t8/intro_to_storybook_2020/
+---
+We just launched a new edition of **Intro to Storybook** that walks through the new features and teaches everything from building components, wiring in data, constructing screens and testing UI. If you're on the fence about trying Storybook or need help onboarding your team, this guide is for you.
+
+👉🏽 [**Read the new guide here**](https://www.learnstorybook.com/intro-to-storybook/) 👈🏽
+
+p.s., New 🇯🇵Japanese translation as well! 🇰🇷Korean and 🇫🇷French on the way.
+## [6][React 17 RC1: Request for Bug Reports](https://www.reddit.com/r/reactjs/comments/ii62fx/react_17_rc1_request_for_bug_reports/)
+- url: https://twitter.com/dan_abramov/status/1299316400109113345?s=20
+---
+
+## [7][Spreadsheet components](https://www.reddit.com/r/reactjs/comments/ii4obk/spreadsheet_components/)
+- url: https://www.reddit.com/r/reactjs/comments/ii4obk/spreadsheet_components/
+---
+I’m in the process of moving away from the  BlueprintJS table component. The product in question is a financial modelling tool and the table has many spreadsheet like features (focused cell, formulas, formatting etc). Max grid size is ~500 rows/~100 columns.
+
+Folks needing similar functionality, how have you handled it? Use something fully batteries included like Handsontable? Implement from scratch? Or something else?
+## [8][D3.js versus Chart.js](https://www.reddit.com/r/reactjs/comments/ii1j00/d3js_versus_chartjs/)
+- url: https://www.reddit.com/r/reactjs/comments/ii1j00/d3js_versus_chartjs/
+---
+Basically the title. I have never used D3. Have always used Chart.js for charts and shit. Why would one choose D3 over Chart.js? What features does D3 have that Chart doesn't? I have noticed D3 has a lot more code to it, and probably needs a thorough course on its own. While it took me a few hours to figure out Chart.js. Am I missing something?
+## [9][Jira Express: Open-source browser extension to quickly access recent Jira tickets](https://www.reddit.com/r/reactjs/comments/ii3sdx/jira_express_opensource_browser_extension_to/)
+- url: https://github.com/mmazzarolo/jira-express
+---
+
+## [10][Using animations in React](https://www.reddit.com/r/reactjs/comments/ii5zyb/using_animations_in_react/)
+- url: https://www.reddit.com/r/reactjs/comments/ii5zyb/using_animations_in_react/
+---
+Hi all,
+
+I am using Bulma to create a modal for my app. And I need to add some sort of animation when modal opens/closes. I managed to do it for opening by simply adding animation and keyframe to CSS and apply that class to the modal, but I can't make it work for the closing. 
+
+The flow would look something like this:  `Click on button -&gt; Modal opens (with animation) -&gt; Click on close button inside the modal -&gt; modal closes (with animation).`
 
 &amp;#x200B;
 
-[https://algorocket.io/](https://algorocket.io/)
+What I have tried to do:
 
-https://reddit.com/link/ih9fj5/video/lc888986ffj51/player
-## [5][Minimal React: getting started with the frontend library](https://www.reddit.com/r/reactjs/comments/ihiifu/minimal_react_getting_started_with_the_frontend/)
-- url: https://2ality.com/2020/08/minimal-react.html
+* created two classes in CSS - one for `fadeIn`, one for `fadeOut`
+* created state object called `animate`, which is by default set to ' '
+* on click, modal is activated by adding '`is-active`' class and `fadeIn` class
+* click on the close button inside the modal triggers a small function that changes the state of `animate` to `fadeOut` and removes `'is-active'` class from modal, so modal closes.   
+
+
+Everything works fine, except that there is no animation when the modal closes. What am I missing? Does anyone know a better way to do this?
+
+Most of the examples I saw include jQuery, but I would like to avoid it if possible. Also, examples are usually focused just on fadeIn or just fadeOut, never both.
+
+Edit: formatting
+## [11][Any open source libraries for React JS similar to Robinhood Ticker?](https://www.reddit.com/r/reactjs/comments/ii3bag/any_open_source_libraries_for_react_js_similar_to/)
+- url: https://www.reddit.com/r/reactjs/comments/ii3bag/any_open_source_libraries_for_react_js_similar_to/
 ---
+Hi React community,
 
-## [6][A 2048 clone I made in ReactJS](https://www.reddit.com/r/reactjs/comments/ih25dr/a_2048_clone_i_made_in_reactjs/)
-- url: https://2048-three.vercel.app/
+I'm wondering if there's any open source library for React JS similar to the Android one that Robinhood has: https://github.com/robinhood/ticker
+## [12][Are there a cool swipe library for React?](https://www.reddit.com/r/reactjs/comments/ii310w/are_there_a_cool_swipe_library_for_react/)
+- url: https://www.reddit.com/r/reactjs/comments/ii310w/are_there_a_cool_swipe_library_for_react/
 ---
+I'm searching a swipe library to my project (or a tutorial, because I dont know a lot about animations), but I cant find nothing, also, I'm not pretty sure what is the name of this effect on English (I search "react swipe component". 
 
-## [7][react-microanimations colors: how to change it?](https://www.reddit.com/r/reactjs/comments/ihktgf/reactmicroanimations_colors_how_to_change_it/)
-- url: https://www.reddit.com/r/reactjs/comments/ihktgf/reactmicroanimations_colors_how_to_change_it/
----
-There is this library of animated icons called [useAnimations](https://useanimations.com/) which is easily implemented by [react-microanimations](https://github.com/useAnimations/react-useanimations) package. The thing is, the SVG comes with the fill colors and stroke set and it seems I can't override it with CSS.
+&amp;#x200B;
 
-Does anyone here ever used it and got it custom colored or know how to do so? Thanks!
-## [8][Are there any large open source repos out there that demonstrate well written React code at the production/business level?](https://www.reddit.com/r/reactjs/comments/igrpdr/are_there_any_large_open_source_repos_out_there/)
-- url: https://www.reddit.com/r/reactjs/comments/igrpdr/are_there_any_large_open_source_repos_out_there/
----
-I’ve been working with react for a few months now and would like to better understand professional level react architecture. Does anyone know of any resources or open source repos to study?
-## [9][React Chrome Extension](https://www.reddit.com/r/reactjs/comments/ihjzny/react_chrome_extension/)
-- url: https://www.reddit.com/r/reactjs/comments/ihjzny/react_chrome_extension/
----
-I am trying to create a chrome extension with react.
+This is the effect I'm searching for: 
 
- I want to inject my react app into the page dom. However i am not able to understand how the content scripts and background scripts work.
+[https://i.pinimg.com/originals/06/2b/c0/062bc0cdf744f0d9959c4e265f01991a.gif](https://i.pinimg.com/originals/06/2b/c0/062bc0cdf744f0d9959c4e265f01991a.gif)
 
- I was able to put my react app as a popup but the state was not maintained everytime I click the extension icon the state resets.
-## [10][Color Picker React JS Tutorial Using TippyJS and React-Color package](https://www.reddit.com/r/reactjs/comments/ihf8wo/color_picker_react_js_tutorial_using_tippyjs_and/)
-- url: https://www.youtube.com/watch?v=senxk5FbsJM&amp;feature=share
----
+&amp;#x200B;
 
-## [11][Today we start a new LIVE build: Twitter clone in React Native](https://www.reddit.com/r/reactjs/comments/ihi0c5/today_we_start_a_new_live_build_twitter_clone_in/)
-- url: https://youtu.be/4Qrr0rW3OZg
----
-
-## [12][Super cool React library documentation site](https://www.reddit.com/r/reactjs/comments/ih46zd/super_cool_react_library_documentation_site/)
-- url: https://www.youtube.com/watch?v=wTRI-oQLVAM
----
-
+Any help?

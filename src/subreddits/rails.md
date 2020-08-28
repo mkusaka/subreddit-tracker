@@ -39,7 +39,179 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3]["Dual-purpose APIs" -- Does this make sense?](https://www.reddit.com/r/rails/comments/ihcfz4/dualpurpose_apis_does_this_make_sense/)
+## [3][Why is my update controller action changing ID of model record belongs_to?](https://www.reddit.com/r/rails/comments/ii0upw/why_is_my_update_controller_action_changing_id_of/)
+- url: https://www.reddit.com/r/rails/comments/ii0upw/why_is_my_update_controller_action_changing_id_of/
+---
+Odd one here. I have some nested resources, and nested forms. On new, everything saves just fine. However, on update, even with no changes, one of my IDs updates and I can't figure out why. I'll try to include everything relevant.
+
+Model ClientSite
+
+    class ClientSite &lt; ApplicationRecord
+      include Hashid::Rails
+      has_many :sale_vehicle_specials, dependent: :destroy
+      accepts_nested_attributes_for :sale_vehicle_specials, allow_destroy: true
+    end
+
+Model SaleVehicleSpecial
+
+    class SaleVehicleSpecial &lt; ApplicationRecord
+      include Hashid::Rails
+      belongs_to :client_site
+      has_one :sale_special_detail, dependent: :destroy, inverse_of: :sale_vehicle_special
+      
+      validates :client_site, presence: true
+      
+      accepts_nested_attributes_for :sale_special_detail
+    end
+
+Controller SaleVehicleSpecial
+
+    class SaleVehicleSpecialsController &lt; ApplicationController
+      before_action :set_special_site
+      before_action :set_sale_vehicle_special
+    
+      def edit
+      end
+    
+      def update
+        respond_to do |format|
+          if @sale_vehicle_special.update_attributes(sale_vehicle_special_params)
+            format.html { redirect_to client_site_sale_vehicle_specials_path(@site), notice: 'Special was successfully updated.' }
+            format.json { render :show, status: :ok, location: client_site_sale_vehicle_specials_path(@site) }
+          else
+            format.html { render :edit }
+            format.json { render json: @sale_vehicle_special.errors, status: :unprocessable_entity }
+          end
+        end
+      end
+    
+      private
+        def set_special_site
+          @site = ClientSite.find_by_hashid(params[:client_site_id])
+        end
+        
+        def set_sale_vehicle_special
+          @sale_vehicle_special = @site.sale_vehicle_specials.find_by_hashid(params[:id])
+        end
+    
+        def sale_vehicle_special_params
+          params.require(:sale_vehicle_special).permit(:client_site_id, 
+                        sale_special_detail_attributes: [ :id, :sale_vehicle_special_id,  :_destroy] )
+        end
+    end
+    
+
+Form \_form\_edit.html.erb
+
+    &lt;%= form_with(model: [@site, @sale_vehicle_special], local: true) do |form| %&gt;
+    
+      &lt;div class="form-group"&gt;
+        &lt;%= form.label :client_site_id, 'Dealership Name:' %&gt;
+        
+        &lt;% assigned_names = Assignment.where("user_id = " + current_user.id.to_s).map { |site| [ClientSite.find_by(id: site.client_site_id).client_site_name, ClientSite.find_by(id: site.client_site_id).hashid] } %&gt;
+        &lt;%= form.select(:client_site_id, options_for_select(assigned_names, selected: @site.hashid), {prompt: "Select Client"}, {class: "client-site form-control"}) %&gt;
+      &lt;/div&gt;
+    
+      &lt;h2&gt;Vehicle Details&lt;/h2&gt;
+      &lt;%= form.fields_for :sale_special_detail do |ff| %&gt;
+        ...
+      &lt;% end %&gt;
+    
+      &lt;div class="actions"&gt;
+        &lt;%= form.submit "Save Special", class: 'btn btn-large btn-primary' %&gt;
+        &lt;%= link_to 'Cancel', client_site_sale_vehicle_specials_path(@site), {class: 'btn btn-small btn-outline-secondary ml-1'} %&gt;
+      &lt;/div&gt;
+    &lt;% end %&gt;
+    
+
+Yes, I know some of this code shouldn't be in the controller, but I'm wondering if somehow that select is causing my problem...it just seems unlikely.
+
+I have noticed that on form submission for new, if there is an error with validating any of the fields I get an error `Client site is invalid` which goes away  when I fix the other errors.
+
+However, here's the problem. When I update, whether or not I've changed anything, my client\_site\_id updates.
+
+New submission
+
+    Started POST "/client_sites/7YpTPB/sale_vehicle_specials" for ::1 at 2020-08-28 00:35:14 -0400
+       (0.7ms)  SELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC
+    Processing by SaleVehicleSpecialsController#create as HTML
+      Parameters: {"authenticity_token"=&gt;"q08yPsYCjHaa9ty/uSxbXSnftiQBU4wtSAkTuOdCeDvoXyKG4FjcoRj0Iyync4GXxPv7d+zknYPXc1KJgPCGpw==", "sale_vehicle_special"=&gt;{"client_site_id"=&gt;"7YpTPB", "campaign_end_date(1i)"=&gt;"2020", "campaign_end_date(2i)"=&gt;"8", "campaign_end_date(3i)"=&gt;"1", "sale_special_detail_attributes"=&gt;{"stock_no"=&gt;"F10067", "vin"=&gt;"H78JJ3HDY789EOKH4"}}}, "commit"=&gt;"Save Special", "client_site_id"=&gt;"7YpTPB"}
+      ClientSite Load (0.2ms)  SELECT "client_sites".* FROM "client_sites" WHERE "client_sites"."id" = $1 LIMIT $2  [["id", 28], ["LIMIT", 1]]
+      ↳ app/controllers/sale_vehicle_specials_controller.rb:119:in `set_special_site'
+      SaleVehicleSpecial Load (0.5ms)  SELECT "sale_vehicle_specials".* FROM "sale_vehicle_specials" WHERE "sale_vehicle_specials"."client_site_id" = $1 AND "sale_vehicle_specials"."id" IS NULL LIMIT $2  [["client_site_id", 28], ["LIMIT", 1]]
+      ↳ app/controllers/sale_vehicle_specials_controller.rb:123:in `set_sale_vehicle_special'
+      ClientSite Load (0.4ms)  SELECT "client_sites".* FROM "client_sites" WHERE "client_sites"."id" = $1 LIMIT $2  [["id", 28], ["LIMIT", 1]]
+      ↳ app/controllers/sale_vehicle_specials_controller.rb:127:in `set_brand_id'
+      SaleVehicleSpecial Create (2.4ms)  INSERT INTO "sale_vehicle_specials" ("created_at", "updated_at", "client_site_id", "campaign_end_date") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2020-08-28 04:35:15.171281"], ["updated_at", "2020-08-28 04:35:15.171281"], ["client_site_id", 28], ["campaign_end_date", "2020-08-01"]]
+      ↳ app/controllers/sale_vehicle_specials_controller.rb:82:in `block in create'
+      SaleVehicleSpecial Update (0.5ms)  UPDATE "sale_vehicle_specials" SET "updated_at" = $1 WHERE "sale_vehicle_specials"."id" = $2  [["updated_at", "2020-08-28 04:35:15.202998"], ["id", 5]]
+      ↳ app/controllers/sale_vehicle_specials_controller.rb:82:in `block in create'
+       (0.8ms)  COMMIT
+      ↳ app/controllers/sale_vehicle_specials_controller.rb:82:in `block in create'
+    Redirected to http://localhost:3000/client_sites/7YpTPB/sale_vehicle_specials
+    Completed 302 Found in 273ms (ActiveRecord: 57.2ms | Allocations: 110534)
+
+And update
+
+    Started PATCH "/client_sites/7YpTPB/sale_vehicle_specials/jmzSWB" for ::1 at 2020-08-28 00:41:11 -0400
+    Processing by SaleVehicleSpecialsController#update as HTML
+      Parameters: {"authenticity_token"=&gt;"m/NdQvRiACbI81HEI6eGdKgtCYuA6VYrnv4RbPbIjR84Yxx7cIiHE9N00s8iLEY4YjXAeH7beQDp7h/B+Sf7qg==", "sale_vehicle_special"=&gt;{"client_site_id"=&gt;"7YpTPB", "campaign_end_date(1i)"=&gt;"2020", "campaign_end_date(2i)"=&gt;"8", "campaign_end_date(3i)"=&gt;"1", "sale_special_detail_attributes"=&gt;{"stock_no"=&gt;"F10067", "vin"=&gt;"H78JJ3HDY789EOKH4", "id"=&gt;"5"}}}, "commit"=&gt;"Save Special", "client_site_id"=&gt;"7YpTPB", "id"=&gt;"jmzSWB"}
+      ClientSite Load (0.5ms)  SELECT "client_sites".* FROM "client_sites" WHERE "client_sites"."id" = $1 LIMIT $2  [["id", 28], ["LIMIT", 1]]
+      ↳ app/controllers/sale_vehicle_specials_controller.rb:119:in `set_special_site'
+      SaleVehicleSpecial Load (0.4ms)  SELECT "sale_vehicle_specials".* FROM "sale_vehicle_specials" WHERE "sale_vehicle_specials"."client_site_id" = $1 AND "sale_vehicle_specials"."id" = $2 LIMIT $3  [["client_site_id", 28], ["id", 5], ["LIMIT", 1]]
+      ↳ app/controllers/sale_vehicle_specials_controller.rb:123:in `set_sale_vehicle_special'
+    DEPRECATION WARNING: update_attributes is deprecated and will be removed from Rails 6.1 (please, use update instead) (called from block in update at /app/controllers/sale_vehicle_specials_controller.rb:96)
+       (0.2ms)  BEGIN
+      ↳ app/controllers/sale_vehicle_specials_controller.rb:96:in `block in update'
+      SaleSpecialDetail Load (0.3ms)  SELECT "sale_special_details".* FROM "sale_special_details" WHERE "sale_special_details"."sale_vehicle_special_id" = $1 LIMIT $2  [["sale_vehicle_special_id", 5], ["LIMIT", 1]]
+      ↳ app/controllers/sale_vehicle_specials_controller.rb:96:in `block in update'
+
+Here's the problem line
+
+      SaleVehicleSpecial Update (4.6ms)  UPDATE "sale_vehicle_specials" SET "client_site_id" = $1, "updated_at" = $2 WHERE "sale_vehicle_specials"."id" = $3  [["client_site_id", 7], ["updated_at", "2020-08-28 04:41:11.356725"], ["id", 5]]
+      ↳ app/controllers/sale_vehicle_specials_controller.rb:96:in `block in update'
+
+Rest of the update logs
+
+       (1.4ms)  COMMIT
+      ↳ app/controllers/sale_vehicle_specials_controller.rb:96:in `block in update'
+    Redirected to http://localhost:3000/client_sites/7YpTPB/sale_vehicle_specials
+    Completed 302 Found in 156ms (ActiveRecord: 15.1ms | Allocations: 18699)
+
+(Obviously) I stripped out everything that I don't think is relevent. But, no matter what, everytime I update one of these SaleVehicleSpecials the client\_site\_id updates to 7. Doesn't matter what it is to start, always updates to 7. I can't find any hardcoded values anywhere.
+
+I've been scratching my head over this for hours and I'm at a loss.
+## [4][Do you still use SJR responses in your app?](https://www.reddit.com/r/rails/comments/ihubfa/do_you_still_use_sjr_responses_in_your_app/)
+- url: https://www.reddit.com/r/rails/comments/ihubfa/do_you_still_use_sjr_responses_in_your_app/
+---
+I’m wondering if this pattern is still popular amongst new Rails applications. I’ve avoided using it up to now since I always thought it was quite messy. I just used a stimulus’s controller and handled the ajax:success, error etc myself.
+## [5][Rails server as a websocket client](https://www.reddit.com/r/rails/comments/ihrx23/rails_server_as_a_websocket_client/)
+- url: https://www.reddit.com/r/rails/comments/ihrx23/rails_server_as_a_websocket_client/
+---
+I want to build a slack bot server and want to connect to the real time API using a websocket connection. this means rails would be connecting to slack websocket server. actioncable deosnt apply here. 
+
+I know there are repos for ruby slack bots and ruby slack bot server but those use faye and grape, and i want to use rails. i know using rails as a websocket client isn’t convention but i would rather manage the connection myself and have all the benefits of rails than use grape/faye/eventmachine.
+
+I don’t want to use thin either because (1) couldn’t find docs about hooking into the EM reactor and (2) i don’t want the websocket logic to impact incoming http requests. 
+
+could i create some sort of singleton class that makes a connection on boot? is that a footgun?
+## [6][Job Opportunity | Fully Remote | Sr Ruby Dev with Shopify Experience](https://www.reddit.com/r/rails/comments/ihldu0/job_opportunity_fully_remote_sr_ruby_dev_with/)
+- url: https://www.reddit.com/r/rails/comments/ihldu0/job_opportunity_fully_remote_sr_ruby_dev_with/
+---
+I am a Ruby developer and I am looking for a Sr Ruby on Rails developer who has experience working with Shopify and integrating with other third party API's. 
+
+&amp;#x200B;
+
+This is a fully remote and temporary position   ( 3+ months ). 
+
+&amp;#x200B;
+
+I need someone who is comfortable working in a rather large scale private app, is able to make local changes without breaking things, and of course has GitHub experience.
+
+&amp;#x200B;
+
+Please DM me if you are interested and I'd be happy to share more details. Cheers!
+## [7]["Dual-purpose APIs" -- Does this make sense?](https://www.reddit.com/r/rails/comments/ihcfz4/dualpurpose_apis_does_this_make_sense/)
 - url: https://www.reddit.com/r/rails/comments/ihcfz4/dualpurpose_apis_does_this_make_sense/
 ---
 I have looked around and I haven't really found any blog posts or "received knowledge" about dual-purpose APIs.
@@ -53,7 +225,7 @@ In the past, I have used Grape to design my APIs, and done some "hacks" to be ab
 I'm not really **unhappy**, per se, with my solution, but as I'm starting a new app, I thought I'd check and see if there's some other different thing that would make more sense, before getting too far into it.  I'd be interested in hearing how others have approached a similar problem.
 
 Thanks!
-## [4][Small script to reduce the image size of Ruby and Ruby on Rails Docker images](https://www.reddit.com/r/rails/comments/igxju5/small_script_to_reduce_the_image_size_of_ruby_and/)
+## [8][Small script to reduce the image size of Ruby and Ruby on Rails Docker images](https://www.reddit.com/r/rails/comments/igxju5/small_script_to_reduce_the_image_size_of_ruby_and/)
 - url: https://www.reddit.com/r/rails/comments/igxju5/small_script_to_reduce_the_image_size_of_ruby_and/
 ---
 In the recent months I was migrating one of my Rails applications I was maintaining in the past years from capistrano to Docker. I did know that the gems are leaving files behind and therefore the Docker images became quite large but I was shocked when I realized how big the difference is.
@@ -61,7 +233,7 @@ In the recent months I was migrating one of my Rails applications I was maintain
 So I sat down and I wrote a small gem called [cleanup\_vendor](https://github.com/raszi/cleanup_vendor) which cleans up the leftover files and reduces the Docker image size significantly.
 
 Comments and suggestions are welcome.
-## [5][Interview Questions &amp; Algorithm Mastery (or lack thereof)](https://www.reddit.com/r/rails/comments/ih0ikx/interview_questions_algorithm_mastery_or_lack/)
+## [9][Interview Questions &amp; Algorithm Mastery (or lack thereof)](https://www.reddit.com/r/rails/comments/ih0ikx/interview_questions_algorithm_mastery_or_lack/)
 - url: https://www.reddit.com/r/rails/comments/ih0ikx/interview_questions_algorithm_mastery_or_lack/
 ---
 Hey guys, so I just had a very disappointing experience yesterday with my first major Ruby on Rails interview.
@@ -87,7 +259,7 @@ In the past I've done things like Project Euler and CodeWars where I learn algor
 But not being able to come up with a solution on the spot cost me my first Rails job.  They spoke to the recruiter and passed on me.
 
 I'm not a "natural born" programmer and mathematical algorithms do not come natural to me.  Am I just in the wrong business, or can you be a Rails developer without necessarily needing to be able to do stuff like this on the spot?
-## [6][Rails heroku: Is it possible to select worker dyno type instead of the default?](https://www.reddit.com/r/rails/comments/ih9445/rails_heroku_is_it_possible_to_select_worker_dyno/)
+## [10][Rails heroku: Is it possible to select worker dyno type instead of the default?](https://www.reddit.com/r/rails/comments/ih9445/rails_heroku_is_it_possible_to_select_worker_dyno/)
 - url: https://www.reddit.com/r/rails/comments/ih9445/rails_heroku_is_it_possible_to_select_worker_dyno/
 ---
 My web application processes documents uploaded by users using sidekiq on heroku. Less than 5% of documents are too large and my heroku workers die without warning due to out of memory issues.
@@ -100,7 +272,7 @@ For example, one can specify one-off dyno types by using --size
     heroku run rails c --size=performance-l rake heavy:job
 
 Another possible solution is maybe loading fewer gems in my workers? (doesn't seem possible)
-## [7][What is this rails server log error? (attached)](https://www.reddit.com/r/rails/comments/ihb00l/what_is_this_rails_server_log_error_attached/)
+## [11][What is this rails server log error? (attached)](https://www.reddit.com/r/rails/comments/ihb00l/what_is_this_rails_server_log_error_attached/)
 - url: https://www.reddit.com/r/rails/comments/ihb00l/what_is_this_rails_server_log_error_attached/
 ---
 As of 5 days ago, my rails server started spewing errors in my log to the point where I am getting Heroku L10 issues non-stop. I have no idea how to fix it since I don't understand the error message (the app still seems to run fine.)
@@ -472,19 +644,7 @@ Anybody with suggestions?
 `38fb69201000-38fb69202000 ---p 00000000 00:00 0` 
 
 &amp;#x200B;
-## [8][How to display the post creation date on basic scaffold app ?](https://www.reddit.com/r/rails/comments/ih0lop/how_to_display_the_post_creation_date_on_basic/)
-- url: https://www.reddit.com/r/rails/comments/ih0lop/how_to_display_the_post_creation_date_on_basic/
----
-
-## [9][Finding objects only where all of their has_many collections have a value for a specific column](https://www.reddit.com/r/rails/comments/igzeu4/finding_objects_only_where_all_of_their_has_many/)
-- url: https://www.reddit.com/r/rails/comments/igzeu4/finding_objects_only_where_all_of_their_has_many/
----
-I have an `Album` object that has many `Tracks`. Tracks have a `youtube_uid` column. I'd like to query albums where all of their tracks' `youtube_uids` are present. I know the technique to find albums with tracks where there's at least one track with a `youtube_uid`:
-
-    Album.left_outer_joins(:tracks).where.not(tracks: { youtube_uid: nil })
-
-What would be the ideal query to find an album where every one of its' tracks has a `youtube_uid`?
-## [10][Setting up a blog on AWS Cloud9](https://www.reddit.com/r/rails/comments/igw3bw/setting_up_a_blog_on_aws_cloud9/)
+## [12][Setting up a blog on AWS Cloud9](https://www.reddit.com/r/rails/comments/igw3bw/setting_up_a_blog_on_aws_cloud9/)
 - url: https://www.reddit.com/r/rails/comments/igw3bw/setting_up_a_blog_on_aws_cloud9/
 ---
 Hi everyone,
@@ -515,38 +675,14 @@ I then inpunt :
     
     rails server
 
-It is at this point that the problem occurs. The instructor terminal's response 3 more lines that i don't have (I don't think I can put screenshots so there is basically 3 lines after the line control c to shut down the server and their start with the date and the hour followed by some text)
+It is at this point that the problem occurs. The instructor terminal's response 3 more lines that i don't have [https://imgur.com/a/rAx4gCZ](https://imgur.com/a/rAx4gCZ). In my case the output stops at Ctrl c to shut down.
 
-Plus after that the instructor click preview running application and is sent to the "ruby welcome page". He then get rid of a part of the URL to go to the blog. In my case the URL is completely different from his, it looks like that ([https://c187d78accd944209c8f91023e991d71.vfs.cloud9.us-east-2.amazonaws.com/](https://c187d78accd944209c8f91023e991d71.vfs.cloud9.us-east-2.amazonaws.com/)).
+Plus after that the instructor click preview running application and is sent to the "ruby welcome page". He then get rid of a part of the URL to go to the blog. In my case the URL is completely different from his, it looks like that [https://c187d78accd944209c8f91023e991d71.vfs.cloud9.us-east-2.amazonaws.com/](https://c187d78accd944209c8f91023e991d71.vfs.cloud9.us-east-2.amazonaws.com/) (actual URL). and his like that [https://imgur.com/a/ghdq9wd](https://imgur.com/a/ghdq9wd)
 
-Whereas his mostly made of words ( I think with the name of his environment) at the beggining and then numbers (which he erases to get to the blog).
+He then get rid of the gray part of the URl and add "/posts" to be redirected to the blog.
 
-Do you guys know what I've been doing wrong.
+Do you guys know what I've been doing wrong ?
 
 Thank you for reading all of these it's my first time posting so i hope it's kind of understandable.
 
 Have a great day
-## [11][What does included do in ActiveSupport::Concern for models](https://www.reddit.com/r/rails/comments/igz4r5/what_does_included_do_in_activesupportconcern_for/)
-- url: https://www.reddit.com/r/rails/comments/igz4r5/what_does_included_do_in_activesupportconcern_for/
----
-I read the documentation here for concerns for models [https://api.rubyonrails.org/classes/ActiveSupport/Concern.html#method-i-included](https://api.rubyonrails.org/classes/ActiveSupport/Concern.html#method-i-included). From what I read I can write class\_macros in the `included` block. I'm not sure what that means. I know something like `attr_accessor` is a class macro. But I'm not sure how putting that in the `included` block and outside the `included` block differs. 
-
-I think also model callbacks can be written in the `included` block. Can someone please help me with this.
-## [12][ActiveStorage custom key for blobs](https://www.reddit.com/r/rails/comments/igvbx7/activestorage_custom_key_for_blobs/)
-- url: https://www.reddit.com/r/rails/comments/igvbx7/activestorage_custom_key_for_blobs/
----
-Is there a way to specify custom keys for blobs in ActiveStorage?
-
-[I can modify the key on my model's before\_save callback but i'm getting \`duplicate key value violates unique constraint \\"index\_active\_storage\_blobs\_on\_key\\" \` error on logo updates \(it's obvious indeed\). ](https://preview.redd.it/816hacqr7bj51.png?width=702&amp;format=png&amp;auto=webp&amp;s=c0cdd7e7d218e3ba8d88be4089579d987ad85f51)
-
-&amp;#x200B;
-
-[I basically want to store my logos in s3 like this](https://preview.redd.it/gn5jlyr78bj51.png?width=414&amp;format=png&amp;auto=webp&amp;s=3563ffeecc2b3152018f22338cbf4454a8d17af6)
-
-&amp;#x200B;
-
-[Not like this.](https://preview.redd.it/vopx9p4h8bj51.png?width=594&amp;format=png&amp;auto=webp&amp;s=ef91199af5c6cbf7e9adbe7d411fc10bd481b0ef)
-
-&amp;#x200B;
-
-Is there a way to configure naming convention with active\_storage?

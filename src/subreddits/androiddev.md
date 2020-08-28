@@ -1,22 +1,12 @@
 # androiddev
-## [1][Weekly Questions Thread - August 24, 2020](https://www.reddit.com/r/androiddev/comments/ifmsyv/weekly_questions_thread_august_24_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/ifmsyv/weekly_questions_thread_august_24_2020/
+## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/ii6aut/weekly_anything_goes_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/ii6aut/weekly_anything_goes_thread/
 ---
-This thread is for simple questions that don't warrant their own thread (although we suggest checking the sidebar, [the wiki](http://www.reddit.com/r/androiddev/wiki/), [our Discord](https://discord.gg/D2cNrqX), or [Stack Overflow](http://stackoverflow.com) before posting). Examples of questions:
+Here's your chance to talk about whatever!
 
-* How do I pass data between my Activities?
-* Does anyone have a link to the source for the AOSP messaging app?
-* Is it possible to programmatically change the color of the status bar without targeting API 21?
+Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
 
-**Important: Downvotes are strongly discouraged in this thread. Sorting by new is strongly encouraged.**
-
-Large code snippets don't read well on reddit and take up a lot of space, so please don't paste them in your comments. Consider linking [Gists](https://gist.github.com) instead.
-
-Have a question about the subreddit or otherwise for /r/androiddev mods? [We welcome your mod mail!](http://www.reddit.com/message/compose?to=%2Fr%2Fandroiddev)
-
-Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
-
-Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
+Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
 ## [2][We’re on the engineering team for Android Jetpack &amp; Jetpack Compose. Ask us Anything! (starts August 27)](https://www.reddit.com/r/androiddev/comments/idefss/were_on_the_engineering_team_for_android_jetpack/)
 - url: https://www.reddit.com/r/androiddev/comments/idefss/were_on_the_engineering_team_for_android_jetpack/
 ---
@@ -79,63 +69,68 @@ We'll start answering questions on **Thursday, August 27 at 12:00 PM PDT / 3:00 
 * **Trevor McGuire** (/u/teamcguire) - Engineer on CameraX
 * **Vinit Modi** \- Product Manager on CameraX &amp; Camera
 * **Yigit Boyar** (/u/yboyar) - Tech Lead on Android Jetpack
-## [3][Someone is testing push notifications for the Microsoft teams app in production.](https://www.reddit.com/r/androiddev/comments/ihh3sd/someone_is_testing_push_notifications_for_the/)
+## [3][Why exception handling with Kotlin Coroutines is so hard and how to successfully master it!](https://www.reddit.com/r/androiddev/comments/ii3kay/why_exception_handling_with_kotlin_coroutines_is/)
+- url: https://www.lukaslechner.com/why-exception-handling-with-kotlin-coroutines-is-so-hard-and-how-to-successfully-master-it/
+---
+
+## [4][Understanding Jetpack Compose — Part 1 of 2](https://www.reddit.com/r/androiddev/comments/ii0fya/understanding_jetpack_compose_part_1_of_2/)
+- url: https://medium.com/androiddevelopers/understanding-jetpack-compose-part-1-of-2-ca316fe39050
+---
+
+## [5][Someone is testing push notifications for the Microsoft teams app in production.](https://www.reddit.com/r/androiddev/comments/ihh3sd/someone_is_testing_push_notifications_for_the/)
 - url: https://i.imgur.com/qleS4BI.jpg
 ---
 
-## [4][Announcing Jetpack Compose Alpha!](https://www.reddit.com/r/androiddev/comments/ih2t0u/announcing_jetpack_compose_alpha/)
-- url: https://android-developers.googleblog.com/2020/08/announcing-jetpack-compose-alpha.html
+## [6][Styled Texts for Android (Replaceable and Localizable)](https://www.reddit.com/r/androiddev/comments/ii5f9a/styled_texts_for_android_replaceable_and/)
+- url: https://medium.com/@tesleax/styled-texts-for-android-replaceable-and-localizable-dc0b25d01fe9
 ---
 
-## [5][(This might sounds cringy) But I must say, I've never been happier and excited to develop on Android until this moment after watching these videos. Really loving Compose. Thanks for everyone who worked on it 🥳🥰.](https://www.reddit.com/r/androiddev/comments/ih4x7b/this_might_sounds_cringy_but_i_must_say_ive_never/)
-- url: https://i.imgur.com/QzBaBPX.jpg
+## [7][[Infographic] The Periodic Table of UX Elements](https://www.reddit.com/r/androiddev/comments/ihqkrf/infographic_the_periodic_table_of_ux_elements/)
+- url: https://i.redd.it/z59wt2oj9lj51.png
 ---
 
-## [6][Create Android Apps without Android Studio only using command-line and a text editor](https://www.reddit.com/r/androiddev/comments/ihfqia/create_android_apps_without_android_studio_only/)
-- url: https://www.hsscjobs.com/2020/07/create-android-apps-without-android.html
+## [8][What's the deal with the alpha versions of androidx libraries](https://www.reddit.com/r/androiddev/comments/ihssgu/whats_the_deal_with_the_alpha_versions_of/)
+- url: https://www.reddit.com/r/androiddev/comments/ihssgu/whats_the_deal_with_the_alpha_versions_of/
+---
+It seems Google loves to give us alpha and beta versions of various androidx libraries. At first I figured they were for bleeding edge development and not meant for use in production apps, but I've come to realize that's not the case.
+
+Take ConstraintLayout for example. The newly release stable 2.0.0 include fixes related to RecyclerView and the documentation for 2.0.0 RC01 specially states: "RecyclerView fixes (we recommend to update to recyclerview 1.2.0 alpha 5 or later)". Hence they recommend you use an alpha version of RecyclerView with the latest stable version of ConstraintLayout. 
+
+Maybe I'm just old fashined, but I'm generally hesitant to use an alpha version of anything in a production environment. Yet I'm currently using recyclerview:1.2.0-alpha05 and material:1.3.0-alpha01 in one of my apps on Google Play.
+
+Am I missing something here or is this just how Google wants to play it?
+## [9][Naming convention for XML View ID's?](https://www.reddit.com/r/androiddev/comments/ii563p/naming_convention_for_xml_view_ids/)
+- url: https://www.reddit.com/r/androiddev/comments/ii563p/naming_convention_for_xml_view_ids/
+---
+This is like a weird question, but I recently started with Kotlin and Android extensions. Before this, all my projects had a naming convention that I used to make findViewById calls easier.
+
+Before, I'd make it like this: If it was Signup MaterialButton in ActivityMain.xml, I'd give it ID as `am_mb_signup` (Initials of ActivityMain\_MaterialButton\_Signup). So it was easier making findViewByID calls for me that way.
+
+Now that I can directly reference ID's without those calls, I wanted to know what naming conventions others use (if any) for ID's?
+## [10][What do you think of my new enemy (Confusing shadow) for "This is not a sorcerer's job", my new game? It doesn't kill you, but it's kind of annoying https://youtu.be/0cfLzHzLVTk .](https://www.reddit.com/r/androiddev/comments/ii52z3/what_do_you_think_of_my_new_enemy_confusing/)
+- url: https://www.reddit.com/r/androiddev/comments/ii52z3/what_do_you_think_of_my_new_enemy_confusing/
 ---
 
-## [7][Gaining traction on Play Store](https://www.reddit.com/r/androiddev/comments/ihikz9/gaining_traction_on_play_store/)
-- url: https://www.reddit.com/r/androiddev/comments/ihikz9/gaining_traction_on_play_store/
+## [11][Trying to understand the relationship between Fragments and Activities](https://www.reddit.com/r/androiddev/comments/ii0ujd/trying_to_understand_the_relationship_between/)
+- url: https://www.reddit.com/r/androiddev/comments/ii0ujd/trying_to_understand_the_relationship_between/
 ---
-I've recently released an app on the play store, after about 8 years our of app development - I used to have a few iOS apps.
+I'm a React developer diving into Android. It seems to me like Activities are basically React Container components and Fragments are React Presentional components (SmartComponents pattern).
 
-I don't remember any app gaining absolutely no momentum on the iOS app store, and I also had a play store app which had around 3500 reviews.
+I'm working on an app that has multiple "minigames" we'll call them. There is always a minigame on screen, and the games have many options that exist in a slide up tray. The tray's contents changes depending on the current minigame and also includes the main menu.
 
-My most recent app, and the old play store app have gained absolutely no momentum whatsoever. 0 downloads. Has the marketplace become so huge in the last 8 years that there just no chance of someone downloading an app on a whim these days? Do I need to pay for advertising, or am I doing something else wrong?
-## [8][Exposed FCM keys leaves billions of users open to mass spam and phishing notifications](https://www.reddit.com/r/androiddev/comments/ihl36q/exposed_fcm_keys_leaves_billions_of_users_open_to/)
-- url: https://cybernews.com/security/exposed-google-keys-leaves-billions-of-users-open-to-mass-spam-and-phishing-notifications/
+What I want here is a single Activity that shows two Fragments - the game, and the content part of the slidey tray, that both contextually change, right?
+
+Each minigame seems like it should logically have it's own Activity though since they're unrelated to each other. Can I make them Activities but dynamically load them without moving to a new screen visually?
+## [12][Jetpack Compose Basics - Lesson 2 - Add a picture](https://www.reddit.com/r/androiddev/comments/ii1sc8/jetpack_compose_basics_lesson_2_add_a_picture/)
+- url: https://www.reddit.com/r/androiddev/comments/ii1sc8/jetpack_compose_basics_lesson_2_add_a_picture/
 ---
+Trying to follow the original tutorial but I am stuck at [**Lesson 2**](https://developer.android.com/jetpack/compose/tutorial) **- add a picture** step.
 
-## [9][Options to monetize a wallpaper app?](https://www.reddit.com/r/androiddev/comments/ihikr5/options_to_monetize_a_wallpaper_app/)
-- url: https://www.reddit.com/r/androiddev/comments/ihikr5/options_to_monetize_a_wallpaper_app/
----
-I have a wallpaper app which recently reached 100K downloads on play store. I haven't made any significant amount of money from it so far. The only money i have made is from in app purchases for PRO, only &lt;1% people are buying PRO meaning i am not really making any money from 99% users. I have interstitial ads on the app with eCPM floor of $1 which only makes me only ~$1 a day. I have about 7000 DAU. Most of my users are from South Asia (about 70%). I added Facebook native ads with eCPM floor of 0.25$ but the fill rate is only 7% so i am planning to remove them. Please suggest me better ways to make money from the app or is banner/native ads the only option i have?
-## [10][Enjoying the evolution of Google Play to the waterfall model - A RANT with useful tips](https://www.reddit.com/r/androiddev/comments/ihidja/enjoying_the_evolution_of_google_play_to_the/)
-- url: https://www.reddit.com/r/androiddev/comments/ihidja/enjoying_the_evolution_of_google_play_to_the/
----
-So, the dreaded moment has come when we've needed to release a critical fix for our app urgently.
+I pasted the NewsStory composable code to my project, but as soon as I try to apply `preferredHeightIn(maxHeight = 180.dp)`  modifier to the Image the application crashes on startup with the following exception:  
+**java.lang.IllegalArgumentException: maxHeight(656) must be &gt;= minHeight(747)**
 
-We got the fix out within 2 hours of getting alerted to the issue, only to see it languish in the Google Play Store review process for 24 hours and counting.
+I do not specify max and min height explicitly (just following the tutorial), and if I increase the value to like 500.dp it works.
 
-Previous couple of updates went through within a couple of hours, but of course it's completely unpredictable when this one will go through. Rolling the Russian roulette whether it's gonna be a few more hours, or a full week, or more...
+Getting the same exception with different calculated pixel values on different device sizes.
 
-Also, just so you know - options like making the app unavailable temporarily in all countries, or rolling back to the previous APK or anything like that, will only restart the review process. So, if you're ever in a situation like this, don't touch anything on the Play Console.
-
-My brain can't comprehend why the 2 reps I spoke to, instead of pasting cookie-cutter responses, could not take those 2 minutes to actually look at the release, accommodate an urgent situation and expedite the review. 
-
-I know as devs we're used to taking a lot of crap and rolling with the punches, but when someone makes me feel like I'm writing/releasing software for some 1960s waterfall model with a PHB on top, what's the workaround?
-
-This shit used to be holding up together, and with all the outages and the basic concept of "break-and-fix-as-needed-it's-fucking-software" BROKEN, are we going back in time?
-## [11][Where's the flaw in my thinking? If I can spend $100 on advertising my app and get $120 back, what's stopping me on spending $1.000.000 on it to get $1.200.000 back? I'm selling to the same audience](https://www.reddit.com/r/androiddev/comments/ihhzv4/wheres_the_flaw_in_my_thinking_if_i_can_spend_100/)
-- url: https://www.reddit.com/r/androiddev/comments/ihhzv4/wheres_the_flaw_in_my_thinking_if_i_can_spend_100/
----
-
-## [12][How to design a good looking UI?](https://www.reddit.com/r/androiddev/comments/ihek53/how_to_design_a_good_looking_ui/)
-- url: https://www.reddit.com/r/androiddev/comments/ihek53/how_to_design_a_good_looking_ui/
----
-I am beginner in android development, i have learned (a little) to code the backend but when it comes down to UI i completely suck at it.
-
- I can't decide what color scheme/ background should i use, how to arrange text views/edit texts so UI will look good.
-
-Do all these things come with the experience? Or there is a way to learn "how to make better UI" (except material design)
+Does anyone experience the same issue?

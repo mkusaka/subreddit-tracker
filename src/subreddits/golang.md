@@ -1,161 +1,68 @@
 # golang
-## [1][CGo-free sqlite database/sql driver 1.4.0 for linux/amd64 released](https://www.reddit.com/r/golang/comments/ih89a9/cgofree_sqlite_databasesql_driver_140_for/)
-- url: https://www.reddit.com/r/golang/comments/ih89a9/cgofree_sqlite_databasesql_driver_140_for/
----
-From the [change log](https://godoc.org/modernc.org/sqlite#hdr-Changelog)
-
-2020-08-26 v1.4.0:
-
-First stable release for linux/amd64.  The database/sql driver and its tests
-are CGo free.  Tests of the translated sqlite3.c library still require CGo.
-
-    $ make full
-    
-    ...
-    
-    SQLite 2020-08-14 13:23:32 fca8dc8b578f215a969cd899336378966156154710873e68b3d9ac5881b0ff3f
-    0 errors out of 928271 tests on 3900x Linux 64-bit little-endian
-    WARNING: Multi-threaded tests skipped: Linked against a non-threadsafe Tcl build
-    All memory allocations freed - no leaks
-    Maximum memory usage: 9156360 bytes
-    Current memory usage: 0 bytes
-    Number of malloc()  : -1 calls
-    --- PASS: TestTclTest (1785.04s)
-    PASS
-    ok  	modernc.org/sqlite	1785.041s
-    $
-## [2][Just released go-reddit v1.0.0, a Go library for accessing the Reddit API](https://www.reddit.com/r/golang/comments/igwj4l/just_released_goreddit_v100_a_go_library_for/)
-- url: https://github.com/vartanbeno/go-reddit
+## [1][New Case Studies About Google’s Use of Go](https://www.reddit.com/r/golang/comments/ii300l/new_case_studies_about_googles_use_of_go/)
+- url: https://opensource.googleblog.com/2020/08/new-case-studies-about-googles-use-of-go.html
 ---
 
-## [3][What are differences between a reference receiver function and a receiver function on a struct?](https://www.reddit.com/r/golang/comments/ihhtsc/what_are_differences_between_a_reference_receiver/)
-- url: https://www.reddit.com/r/golang/comments/ihhtsc/what_are_differences_between_a_reference_receiver/
+## [2][Elf binary parser written in Go](https://www.reddit.com/r/golang/comments/ii1r9f/elf_binary_parser_written_in_go/)
+- url: https://github.com/sad0p/go-readelf
 ---
-Hi guys.
 
-I'm really confused.
-
-What are differences between these two functions:
-
-    type person struct{
-        name string
-        age int
-    }
-    
-    func (p *person) sayHello() {
-        //DOING SOMETHING HERE
-    }
-    
-    func (p person) sayHello() {
-        //DOING SOMETHING HERE
-    }
-## [4][Developing an internal CLI](https://www.reddit.com/r/golang/comments/ihl0lx/developing_an_internal_cli/)
-- url: https://www.reddit.com/r/golang/comments/ihl0lx/developing_an_internal_cli/
+## [3][Using Go at Google](https://www.reddit.com/r/golang/comments/ihppee/using_go_at_google/)
+- url: https://go.dev/solutions/google/
 ---
-Hi folks,
 
-I'm making an internal CLI tool to finally codify some of our workflows. I'm wondering if there is something that could become a problem down the line.
-
-Is there a problem that you haven't anticipated when making CLI tools?  
-What was your experience with distribution, updating, maintenance, or discoverability?  
-What are your reasons why I should choose golang instead of python, or nodejs?
-
-Maybe a CLI is not the best way to have the workflows accessible and the changes trackable. I'm not sure what's the better option though.
-
-Thank you for your advice
-## [5][Debugging race condition in golang](https://www.reddit.com/r/golang/comments/ihktb7/debugging_race_condition_in_golang/)
-- url: https://www.reddit.com/r/golang/comments/ihktb7/debugging_race_condition_in_golang/
+## [4][GLab is an open source Gitlab Cli tool written in Go to help work seamlessly with Gitlab from the command line](https://www.reddit.com/r/golang/comments/ii4yzm/glab_is_an_open_source_gitlab_cli_tool_written_in/)
+- url: https://github.com/profclems/glab
 ---
-Case study – [debugging race condition in golang](https://blog.3mdeb.com/2020/2020-08-19-race-condition-debugging/)
 
-As simple as that.
-## [6][Troubles with go mod local import](https://www.reddit.com/r/golang/comments/ihkpb3/troubles_with_go_mod_local_import/)
-- url: https://www.reddit.com/r/golang/comments/ihkpb3/troubles_with_go_mod_local_import/
+## [5][Commandline tool that makes building tilesets and rendering static square tilemaps super easy!](https://www.reddit.com/r/golang/comments/ihlo2s/commandline_tool_that_makes_building_tilesets_and/)
+- url: https://i.redd.it/gl77fociyjj51.png
 ---
-Hi guys, I'm currently doing a course on gRPC and the course suggests coding in my gopath but I would prefer to do it outside within my documents folder and use go mods instead.
 
-My tree structure is basically a parent folder called greet which contains two folders, one called greet_server which includes server.go and another called greetpb which includes the proto and .pb.go file.
+## [6][Writing byte streams in a type-safe and extensible way](https://www.reddit.com/r/golang/comments/ii5ir9/writing_byte_streams_in_a_typesafe_and_extensible/)
+- url: https://github.com/maxim2266/stout
+---
 
-The go mod is inside the parent folder greet. 
+## [7][How/why is concurrent code faster than sequential code?](https://www.reddit.com/r/golang/comments/ii64br/howwhy_is_concurrent_code_faster_than_sequential/)
+- url: https://www.reddit.com/r/golang/comments/ii64br/howwhy_is_concurrent_code_faster_than_sequential/
+---
+Hello, I’m a beginner at Go (kind of a beginner at programming in general) and I’m following a udemy course to learn Go and I’ve reached a section on concurrency. I didn’t feel like I fully understood what concurrency is or how it’s different from parallelism so I did more research and here’s what I understood so far: 
 
-This is the code for server.go
+Concurrency is a way of writing a program to have independent units of code that can be run in an arbitrary order, now these units can either be run on one processor by just switching between the different units until they are all done or they can be run on multiple processors (each unit on one processor). Running these units on multiple processors is what parallelism is.
 
-package main
+My question is, when there is only one processor how/why does concurrent code run faster than sequential code? since in both cases only one thing is running at a time. 
 
-    import (
-    	"fmt"
-    	"greetMod/greetpb"
-    	"log"
-    	"net"
-    
-    	"google.golang.org/grpc"
-    )
-    
-    type server struct{}
-    
-    func main() {
-    	fmt.Println("Hello world")
-    
-    	lis, err := net.Listen("tcp", "0.0.0.0:50051")
-    	if err != nil {
-    		log.Fatalf("Failed to listen: %v", err)
-    	}
-    
-    	s := grpc.NewServer()
-    	greetpb.RegisterGreetServiceServer(s, &amp;server{})
-    
-    	//checks if server is serving
-    	if err := s.Serve(lis); err != nil {
-    		log.Fatalf("Failed to serve: %v", err)
-    	}
+In everything I read or watched everyone would say that concurrency is faster but never explain how/why... I’m guessing because the reason is supposed to be intuitive once you understand concurrency but I still don’t get it :/
+
+Thank you in advance for any answers.
+## [8][Passing arguments as values vs pointers](https://www.reddit.com/r/golang/comments/ihyi63/passing_arguments_as_values_vs_pointers/)
+- url: https://www.reddit.com/r/golang/comments/ihyi63/passing_arguments_as_values_vs_pointers/
+---
+Couldn’t find much information on this. If I have a function that takes an argument and doesn’t mutate it, is there any reason to not use a value?
+
+In this case, in the wrapping scope, the variable is a pointer, and I dereference it to pass it to the function as a value. 
+
+Ex
+
+    Func foo() {
+        bar := getBar() // returns pointer to a decent sized struct
+        DoSomething(*bar)
     }
 
-Within the code it properly imports the pb.go file and shows no errors but when I run it I receive this error 
+My reasoning is that passing the value is very explicit in that the caller knows it will not be mutated. A co worker suggested to use a pointer in a code review. 
 
-    [Running] go run "/home/nocnoc/Documents/Courses/gRPC Master Class - Stephane Maarek/greet/greet_server/server.go"
-    greet/greet_server/server.go:5:2: cannot find package "greetMod/greetpb" in any of:
-    	/usr/lib/go-1.13/src/greetMod/greetpb (from $GOROOT)
-    	/home/nocnoc/go/src/greetMod/greetpb (from $GOPATH)
+Genuinely interested in if this is a good practice. 
 
-This is my go.mod contents
-    
-    module greetMod
-    
-    go 1.13
-    
-    require (
-    	github.com/golang/protobuf v1.4.2
-    	google.golang.org/grpc v1.31.1
-    )
-    
-Some help would be greatly appreciated!
+Is there a cost to dereferencing? 
 
-Thanks
-## [7][Go-edlib: Edit distance and string comparison library fully compatible with Unicode (Levenshtein, LCS, Hamming, Damerau-Levenshtein etc...). Feedback and contributions are welcome!](https://www.reddit.com/r/golang/comments/ih8gud/goedlib_edit_distance_and_string_comparison/)
-- url: https://github.com/hbollon/go-edlib
+The other argument I could find was that passing a large struct by value is more expensive than a pointer to that struct. 
+
+Is explicitly passing values to functions that don’t mutate a best practice?
+## [9][Fast AVX2/SSE2 positional popcount routines for Go](https://www.reddit.com/r/golang/comments/ihqmxr/fast_avx2sse2_positional_popcount_routines_for_go/)
+- url: https://github.com/fuzxxl/pospop
 ---
 
-## [8][Improved JS minifier, very fast with high compression ratios (tdewolff/minify)](https://www.reddit.com/r/golang/comments/ih1wk9/improved_js_minifier_very_fast_with_high/)
-- url: https://github.com/tdewolff/minify/releases/tag/v2.9.0
+## [10][monsoon - a fast and flexible HTTP enumerator written in Go](https://www.reddit.com/r/golang/comments/ihnmri/monsoon_a_fast_and_flexible_http_enumerator/)
+- url: https://github.com/RedTeamPentesting/monsoon
 ---
 
-## [9][tegola v0.12.0 released - Mapbox Vector Tile server now with PostGIS 3.0+ ST_AsMVT Support](https://www.reddit.com/r/golang/comments/ih9ko3/tegola_v0120_released_mapbox_vector_tile_server/)
-- url: https://github.com/go-spatial/tegola/releases/tag/v0.12.0
----
-
-## [10][Idle Armada: Written in Go/Ebiten](https://www.reddit.com/r/golang/comments/ih288v/idle_armada_written_in_goebiten/)
-- url: https://www.reddit.com/r/golang/comments/ih288v/idle_armada_written_in_goebiten/
----
-The last year or so I decided to learn golang, and I'm really enjoying the language, it's become perhaps my favorite language of all time. To really learn it, I created a game, written in go with Ebiten library.
-
-Idle Armada is an idle game with NO ads, NO in-app-purchases.
-
-Although it is \~99% go code, I did have to delve into cgo some on Android for the save import/export functionality (interacts with clipboard) and the way to open browser. And the code to open browser only works on some phones, which I intend to fix.
-
-Try out the free demo!
-
-[Web Browser Demo](https://corfe83.github.io/IdleArmada/) (WASM, not for phones)
-
-[Android Demo](https://play.google.com/store/apps/details?id=com.musicalbox.idle.armada.demo)
-
-[Android Paid App](https://play.google.com/store/apps/details?id=com.musicalbox.idle.armada)

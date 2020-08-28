@@ -56,49 +56,124 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][Slightly elongated business card sized animated ray tracer in 1511 bytes](https://www.reddit.com/r/cpp/comments/ih8hk0/slightly_elongated_business_card_sized_animated/)
-- url: https://v.redd.it/jinqmlei5fj51
+## [2][A line by line explanation on how to use a non-CMake library in your CMake project](https://www.reddit.com/r/cpp/comments/ii1o0y/a_line_by_line_explanation_on_how_to_use_a/)
+- url: https://dominikberner.ch/cmake-find-library/
 ---
 
-## [3][When is stable GCC c++20 support expected?](https://www.reddit.com/r/cpp/comments/iher9w/when_is_stable_gcc_c20_support_expected/)
-- url: https://www.reddit.com/r/cpp/comments/iher9w/when_is_stable_gcc_c20_support_expected/
+## [3][std::array indexed by any numeric-like type](https://www.reddit.com/r/cpp/comments/ii2xwt/stdarray_indexed_by_any_numericlike_type/)
+- url: https://www.reddit.com/r/cpp/comments/ii2xwt/stdarray_indexed_by_any_numericlike_type/
 ---
-My group is thinking about moving compiler versions and it would be useful to know if we should wait for c++20. When do we think GCC will have non-experimental support for it?
-## [4][What is the point of this talk? Just making fun of cmake language? - CppCon 2019: Jussi Pakkanen “Let's cmakeify the C++ standard library”](https://www.reddit.com/r/cpp/comments/ihi37f/what_is_the_point_of_this_talk_just_making_fun_of/)
-- url: https://youtu.be/YxortD9IxSc
+Hi folks!
+
+Is that popular use case to index `std::array` with enum values?
+
+    enum Animal
+    {
+        Pig, Dog, Cat,
+        SIZE
+    };
+    
+    std::array&lt;Farm, Animal::SIZE&gt; farms;
+
+For me it seems to be, but it would be great to leverage type-safety of `enum class`. So I come up with an idea:
+
+    template&lt;typename T, auto Size&gt;
+    class array
+    {
+    public:
+        using Index = decltype(Size);
+    
+        T&amp; operator[](const Index i)
+        {
+            return _data[static_cast&lt;std::size_t&gt;(i)];
+        }
+    
+    private:
+        std::array&lt;T, static_cast&lt;std::size_t&gt;(Size)&gt; _data;
+    };
+
+[Godbolt link to play.](https://godbolt.org/z/3n6ndM)
+
+It actually can work with anything convertible to `size_t` and it is just natural extension of `std::array`, so I would expect this to implemented already somewhere.
+
+&amp;#x200B;
+
+1. Would do you think about this?
+2. Is there prod-ready implementation of this?
+3. Looks like `std::array` could support this out of the box, just replacing `size_t` with `auto` and adding `static_cast` everywhere. May this be pushed to std lib?
+## [4][Webinar: Write cleaner, safer, modern C++ with SonarQube](https://www.reddit.com/r/cpp/comments/ii5vgw/webinar_write_cleaner_safer_modern_c_with/)
+- url: https://www.reddit.com/r/cpp/comments/ii5vgw/webinar_write_cleaner_safer_modern_c_with/
+---
+[https://sonarsource.zoom.us/webinar/register/1815977846611/WN\_6iMr512HQHa2CTvcdfv1vw](https://sonarsource.zoom.us/webinar/register/1815977846611/WN_6iMr512HQHa2CTvcdfv1vw)
+
+&gt;As a C++ Developer, you know that writing clean, secure, modern C++ code is important for you and your users. At SonarSource, we know that only developers can truly impact Code Quality and Security, so we put the power in your hands.  
+&gt;  
+&gt;SonarQube makes C++ development easier with static code analysis that's powerful, fast, and accurate - right out of the box. Analysis is easy to integrate into your workflow and works with most common compilers, including many for embedded systems. Come see for yourself how you can make your C++ projects more reliable and secure.  
+&gt;  
+&gt;Join us on September 2nd at 10 am CDT / 3 pm GMT for a 30-minute webinar to learn more about:  
+\- Code Quality &amp; Security for the individual: in-IDE and in PRs  
+\- Code Quality &amp; Security for the team: in SonarQube  
+\- What types of issues you can find on your C++ code: Bugs, Vulnerabilities, Security Hotspots, and Code Smells.  
+\- How easy it is to get started - including a demo of SonarQube!
+
+Even if you can't make it at that time, sign up and you'll get a link to the recording afterward.
+## [5][Introducing vcperf /timetrace for C++ build time analysis](https://www.reddit.com/r/cpp/comments/ihnr1k/introducing_vcperf_timetrace_for_c_build_time/)
+- url: https://devblogs.microsoft.com/cppblog/introducing-vcperf-timetrace-for-cpp-build-time-analysis/
 ---
 
-## [5][PcapPlusPlus v20.08 released - a multi-platform C++ library for capturing, parsing and crafting of network packets](https://www.reddit.com/r/cpp/comments/ih1vd5/pcapplusplus_v2008_released_a_multiplatform_c/)
-- url: https://github.com/seladb/PcapPlusPlus/releases/tag/v20.08
+## [6][concurrencpp v.0.0.4 - modern concurrency for C++](https://www.reddit.com/r/cpp/comments/ii3zef/concurrencpp_v004_modern_concurrency_for_c/)
+- url: https://www.reddit.com/r/cpp/comments/ii3zef/concurrencpp_v004_modern_concurrency_for_c/
+---
+Hello reddit!
+
+I just released version 0.0.4 of [concurrencpp](https://github.com/David-Haim/concurrencpp), a library for executors and coroutines.
+
+The library is still very fresh and gradually matures more and more. 
+
+There are still tons of features and optimizations that are scheduled for the future, so this library is far from being complete.
+
+Suggestions, questions, reviews, and most importantly - stars, are greatly appreciated.
+
+Let's make the way we deal with concurrency in C++ the best among all languages!
+## [7][Can I start implementing modules in my code?](https://www.reddit.com/r/cpp/comments/ii7346/can_i_start_implementing_modules_in_my_code/)
+- url: https://www.reddit.com/r/cpp/comments/ii7346/can_i_start_implementing_modules_in_my_code/
+---
+MSVC has partial support for them. I know the question is vague, but is anybody already using modules in their code, or everybody is waiting for full compilers support?
+## [8][CppCast: Cross Platform Mobile Telephony](https://www.reddit.com/r/cpp/comments/ihxt9e/cppcast_cross_platform_mobile_telephony/)
+- url: https://cppcast.com/telephony-dave-hagedorn/
 ---
 
-## [6][What it is the research on encoding lifetimes in the type system that Andrei Alexandrescu refers to during this panel?](https://www.reddit.com/r/cpp/comments/ih7y5w/what_it_is_the_research_on_encoding_lifetimes_in/)
-- url: https://www.reddit.com/r/cpp/comments/ih7y5w/what_it_is_the_research_on_encoding_lifetimes_in/
+## [9][Lyra 1.5 -- Create a full CLI parser in one statement, without globals or macros](https://www.reddit.com/r/cpp/comments/ihlaq0/lyra_15_create_a_full_cli_parser_in_one_statement/)
+- url: https://www.reddit.com/r/cpp/comments/ihlaq0/lyra_15_create_a_full_cli_parser_in_one_statement/
 ---
-In this video https://channel9.msdn.com/Events/GoingNative/GoingNative-2012/Interactive-Panel-Ask-Us-Anything- at around 15:25 Andrei Alexandrescu says that encoding lifetimes in the type system is a solved problem with a large body of research. Could anyone point out any specific references to such research?
-## [7][Taskflow v2.6 Released with A New Webpage!](https://www.reddit.com/r/cpp/comments/ih739b/taskflow_v26_released_with_a_new_webpage/)
-- url: https://taskflow.github.io/
+Lyra ([https://bfgroup.github.io/Lyra/](https://bfgroup.github.io/Lyra/)) is a simple to use, composing, header only, command line arguments parser for C++ 11 and beyond. [Version 1.5](https://bfgroup.github.io/Lyra/lyra.html#_1_5) includes the time saving feature of a "[main](https://bfgroup.github.io/Lyra/lyra.html#_main)" utility to make creating simple CLIs with help quick and easy. For example:
+
+    #include &lt;iostream&gt;
+    #include &lt;lyra/lyra.hpp&gt;
+    int main(int argc, const char ** argv)
+    {
+      return lyra::main()("-x", 0)("-y", 0)(argc, argv, [](lyra::main &amp; m)
+      {
+        std::cout &lt;&lt; int(m["-x"]) + int(m["-y"]) &lt;&lt; "\n";
+        return 0;
+      });
+    }
+
+Other notable new features for this release include:
+
+* Direct support for [sub-commands](https://bfgroup.github.io/Lyra/lyra.html#_sub_commands).
+* [Value](https://bfgroup.github.io/Lyra/lyra.html#lyra_val) holders.
+* Argument [groups](https://bfgroup.github.io/Lyra/lyra.html#_argument_groups) to support alternate parsing, like sub-commands.
+* The help output is, once again, nicely formatted following clang style help output.
+* And there's even Cmake install support now.
+## [10][Can we get MAC address using boost library?? if yes then how ??](https://www.reddit.com/r/cpp/comments/ii6bbs/can_we_get_mac_address_using_boost_library_if_yes/)
+- url: https://www.reddit.com/r/cpp/comments/ii6bbs/can_we_get_mac_address_using_boost_library_if_yes/
 ---
-
-## [8][Is cpp-httplib the simplest/highest-performance way to get started writing a small REST API in C++?](https://www.reddit.com/r/cpp/comments/igfn33/is_cpphttplib_the_simplesthighestperformance_way/)
-- url: https://github.com/yhirose/cpp-httplib
+ Can we get MAC address using boost library?? if yes then how ??
+## [11][What's the status of P1729R0 Text Parsing?](https://www.reddit.com/r/cpp/comments/ihpc5u/whats_the_status_of_p1729r0_text_parsing/)
+- url: https://www.reddit.com/r/cpp/comments/ihpc5u/whats_the_status_of_p1729r0_text_parsing/
 ---
+ [http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1729r0.html](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1729r0.html)   
 
-## [9][Stream error functions instead of exceptions?](https://www.reddit.com/r/cpp/comments/igp033/stream_error_functions_instead_of_exceptions/)
-- url: https://www.reddit.com/r/cpp/comments/igp033/stream_error_functions_instead_of_exceptions/
----
-I'm just curious... why does C++ use utility functions for stream error conditions that return booleans, such as cin.bad(), [cin.fail](https://cin.fail)(), and cin.eof() instead of  just throwing related exceptions to the caller?  
 
-If i is an int, and (cin &gt;&gt; i) fails, why not throw a related exception like a type casting exception, or an end of file exception, and allow the caller to catch it, or not?
-
-Yet on the other hand, dynamic\_cast&lt;&gt; will throw bad\_cast exceptions?  Respectfully, it seems like it's requiring an admixture of programming styles in what can easily be the the same top level code.
-
-P.S. I am only asking because I am trying to learn modern C++ after some professional experience over a decade ago in C++98.  I am really energized to learn the new concurrency support in C++17, but in dusting off my memory to prepare, I am coming across things like this... and going... hey.... wait...
-## [10][2020-08 mailing available : Standard C++](https://www.reddit.com/r/cpp/comments/ig8rdk/202008_mailing_available_standard_c/)
-- url: https://isocpp.org/blog/2020/08/2020-08-mailing-available
----
-
-## [11][A Tutorial on Atomic Variables and Memory Models in C++](https://www.reddit.com/r/cpp/comments/igfeuj/a_tutorial_on_atomic_variables_and_memory_models/)
-- url: https://www.youtube.com/watch?v=IE6EpkT7cJ4&amp;feature=youtu.be
----
-
+I would love to see a sscanf alternative in C++. Anyone knows the status of that proposal?

@@ -22,287 +22,219 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Getting started with LitElement and TypeScript](https://www.reddit.com/r/typescript/comments/ihi6cc/getting_started_with_litelement_and_typescript/)
+## [2][Disable duck typing for literal types](https://www.reddit.com/r/typescript/comments/ii4vsf/disable_duck_typing_for_literal_types/)
+- url: https://www.reddit.com/r/typescript/comments/ii4vsf/disable_duck_typing_for_literal_types/
+---
+Is there a way to get TypeScript to warn me about the following code?
+
+```typescript
+type Name = string
+function f (_: Name): void {}
+
+const s: string = 'test'
+// This should ideally give me an error:
+// Argument of type 'string' is not assignable to parameter of type 'Name'
+f(s)
+```
+
+I know that in most cases you would not want to get an error, but in this case it would allow me to combine it with a type guard like:
+
+```typescript
+function isName (name: string): name is Name {
+  return name.length &lt; 30
+}
+```
+
+I think there was a discussion on this topic in the TypeScript repo, but I cannot find it anymore.
+## [3][file changes not updating when running TSC](https://www.reddit.com/r/typescript/comments/ii6p7m/file_changes_not_updating_when_running_tsc/)
+- url: https://www.reddit.com/r/typescript/comments/ii6p7m/file_changes_not_updating_when_running_tsc/
+---
+I recently opened a repo I set aside for a few weeks and notice my changes to .ts file inside the `src` folder, are not making it to the .js files that in the `compiled` folder.
+
+I added this to the script file server.js and after restarting the server, even this is not printing to terminal:
+
+    console.log(`updated on ${new Date()}`);
+
+There are no warnings, or any other feedback when running `tsc` in terminal within the project root.
+
+Here is my tsconfig.json file, is there a mistake somewhere?
+
+    {
+      "compilerOptions": {
+        "target": "es5",
+        "lib": [
+          "dom",
+          "dom.iterable",
+          "esnext"
+        ],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "module": "CommonJS",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "outDir": "compiled"
+      },
+      "include": [
+        "src", "__mocks__"
+      ],
+      "exclude": ["node_modules", "**/*.test.ts"]
+    }
+## [4][Opinion on explicit return types?](https://www.reddit.com/r/typescript/comments/ihpnme/opinion_on_explicit_return_types/)
+- url: https://www.reddit.com/r/typescript/comments/ihpnme/opinion_on_explicit_return_types/
+---
+Hi All,
+
+What is your opinion on always mentioning return types on each of your method? I mean for simple methods like `checkSomething(),`it's obvious to me it should not be returning and it most likely a void. Or something like `getURL`, also seems something which will return a string. Do you guys have any strong opinions on why adding types should be absolutely necessary?
+## [5][Faven: a web tool to generate favicons with alpinejs](https://www.reddit.com/r/typescript/comments/ihpw9k/faven_a_web_tool_to_generate_favicons_with/)
+- url: https://faven.netlify.app/
+---
+
+## [6][Need help mapping through an array that corresponds to an objects keys](https://www.reddit.com/r/typescript/comments/ihun4q/need_help_mapping_through_an_array_that/)
+- url: https://www.reddit.com/r/typescript/comments/ihun4q/need_help_mapping_through_an_array_that/
+---
+\*\*\*SOLVED!\*\*\*
+
+I have an object which contains a list of objects. Each object is a game with parameters like game name and the game options.
+
+    interface LobbyItem {
+        name: string
+        boardSize: number;
+        host: Player;
+        hostReady: boolean;
+        hostTurn: null | boolean;
+        opponent: null | Player;
+        opponentReady: boolean;
+    }
+
+where player is another Object with more parameters. In order to display these games in my React component, i am creating an array with the objects keys and tying to map through like so:
+
+    const gameList = Object.keys(lobbyState.gameList).map((game, index) =&gt; {
+        return (
+        &lt;span className="info-banner info-box settings-button" onClick={joinGame}&gt;
+           lobbyState.gameList[game].name
+        &lt;/span&gt;
+        )
+      }) 
+
+&amp;#x200B;
+
+But i'm getting a TypeScript error when I try to index lobbyState.gameList\[game\]:
+
+    Element implicitly has an 'any' type because expression of type 'string' can't be used to index type 'LobbyItem'.
+      No index signature with a parameter of type 'string' was found on type 'LobbyItem'.  TS7053
+
+New to typescript, would someone be able to help me out?  isn't the index signature 'name' a string? I should mention that I'm using nested objects instead of an array so that I can delete the games when they are done.
+
+Thanks in advance!
+## [7][Getting started with LitElement and TypeScript](https://www.reddit.com/r/typescript/comments/ihi6cc/getting_started_with_litelement_and_typescript/)
 - url: https://labs.thisdot.co/blog/getting-started-with-litelement-and-typescript
 ---
 
-## [3][Created VSCode launch config for debugging Mocha tests that written in TypeScript](https://www.reddit.com/r/typescript/comments/ihjn57/created_vscode_launch_config_for_debugging_mocha/)
+## [8][Possible to infer keys of a nested object for argument type?](https://www.reddit.com/r/typescript/comments/ihrlq1/possible_to_infer_keys_of_a_nested_object_for/)
+- url: https://www.reddit.com/r/typescript/comments/ihrlq1/possible_to_infer_keys_of_a_nested_object_for/
+---
+Hey all, looking to type out a function and can't work out one arg.
+
+I have multiple objects storing the array of roles allowed, which are then namespaced under one object by their route/screen for the helper function. That function will take the key for the screen, and then which key under that specific permissions object to check:  Currently my union of 
+
+    keyof typeof getAuthPermissions | keyof typeof getUserPermissions
+
+returns ALL keys obviously when using the function like 
+
+    checkUserPermission('user', '&lt;all-keys&gt;') // where IDE populates all possible keys here
+
+where I want to infer just the keys from the merged object from whichever screen is passed in to the function:  
+
+
+All relevant code:
+
+    const userGroups = ['Manager', 'Reporting', 'Payments', 'Support'] as const;
+    type UserGroup = typeof userGroups[number];
+    
+    const getUserPermissions = {
+        userControls: ['Manager', 'Support', 'Payments'],
+        wallet: ['Manager', 'Support']
+    };
+    const getAuthPermissions = {
+        logoutUser: ['Manager'],
+        extendUserBonus: ['Manager', 'Support']
+    }
+    // ... a fair few more.
+    const allPermissions = {
+        user: getUserPermissions,
+        auth: getAuthPermissions
+        // ...
+    }
+    type Screens = keyof typeof allPermissions;
+    
+    function checkUserPermission(
+        screen: Screens,
+        userRoles: UserGroup[],
+        // this should be the keys for whichever screen was passed in, something like keyof typeof allPermissions[screen]?
+        permissionToCheck: keyof typeof getAuthPermissions | keyof typeof getUserPermissions // returns ALL keys. want to infer just from screen passed in
+    ): boolean {
+        for (const role of userRoles) {
+            if (allPermissions[screen][permissionToCheck].includes(role)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+Is this possible? I know getting nested keys can be quite tricky, but I'm hoping that with inferring from the argument passed in that this should be possible?
+
+Thanks!
+## [9][Help: Generics for nested array, nested n times](https://www.reddit.com/r/typescript/comments/ihpcj0/help_generics_for_nested_array_nested_n_times/)
+- url: https://www.reddit.com/r/typescript/comments/ihpcj0/help_generics_for_nested_array_nested_n_times/
+---
+I am writing a little piece of TypeScript code, to reverse a chessboard (i.e. so I can view it from either black or white's perspective). The code (thanks stackoverflow), is fairly generic in that it will take an array as an argument, and recursively reverse down to the bottom. Obviously I'm dealing with a 2d array to represent the chess board.
+
+Instead of just typing it as accepting `any[]` and returning `any[]` I'd like to try use generics so the output retains the type that was passed in... if this is possible.
+
+This is my attempt, but it gives the commented error
+
+    export function reverseNestedArrays&lt;T&gt;(arr: T[]): T[] {
+      return arr
+        .map(function reverse(item) {
+          return Array.isArray(item) &amp;&amp; Array.isArray(item[0])
+            ? item.map(reverse)
+            : item.reverse();   // Property 'reverse' does not exist on type 'T'.ts(2339)
+        })
+        .reverse();
+    }
+    
+
+Ideally I'd like to be able to use generics in such a way so that it retains it's "reverse to any depth" capability. But if making it only work for a 2d array would make using generics possible, then I'd be happy with that.
+
+Any help much appreciated. I have a very tenuous grasp of generics in general :)
+## [10][How to deal with dynamic model values in static typing](https://www.reddit.com/r/typescript/comments/iho80j/how_to_deal_with_dynamic_model_values_in_static/)
+- url: https://www.reddit.com/r/typescript/comments/iho80j/how_to_deal_with_dynamic_model_values_in_static/
+---
+Maybe it's because my background is in dynamic typing but there is one concept that I'm really struggling with and that is "dynamic model values". Let me explain:
+
+Lets assume I have a simple Book model:
+
+`class Book`
+
+`name`
+
+`author (Foreignkey)`
+
+Depending on the use case I now want to return the author as an ID or a full instance from the API. I also may decide to add a field to the model that is not in the database but generated for a specific view.
+
+Of course, I could add a union type to e. g. the author field type `author = number | IAuthor` with this approach I have to a lot of additional checks to tell the compiler that this particular component uses an author with the full instance attached to it. This approach has added a lot of clutter to my components and I don't like it.
+
+So far I defined two different interfaces for both use cases e. g. `IBook` and `IBookWithAuthor.`
+
+Are there any better ways of solving this?
+## [11][Created VSCode launch config for debugging Mocha tests that written in TypeScript](https://www.reddit.com/r/typescript/comments/ihjn57/created_vscode_launch_config_for_debugging_mocha/)
 - url: https://www.reddit.com/r/typescript/comments/ihjn57/created_vscode_launch_config_for_debugging_mocha/
 ---
 It works fine with ES6 modules. Tested only in Windows 10 machine.
 
 [https://gist.github.com/artem-mangilev/2f45ea18e4f5a38339212f551fa6a85c](https://gist.github.com/artem-mangilev/2f45ea18e4f5a38339212f551fa6a85c)
-## [4][ts-migrate: A Tool for Migrating to TypeScript at Scale](https://www.reddit.com/r/typescript/comments/ih1133/tsmigrate_a_tool_for_migrating_to_typescript_at/)
-- url: https://medium.com/airbnb-engineering/ts-migrate-a-tool-for-migrating-to-typescript-at-scale-cd23bfeb5cc
----
-
-## [5][styled-components usage with TypeScript (advice/help needed)](https://www.reddit.com/r/typescript/comments/ihkm15/styledcomponents_usage_with_typescript_advicehelp/)
-- url: https://www.reddit.com/r/typescript/comments/ihkm15/styledcomponents_usage_with_typescript_advicehelp/
----
-Hey (again), I'd posted yesterday regarding some general advice when creating TypeScript components with React (advice was super helpful thanks!). I normally work with styled-components when styling components and was wondering what the standard/best approach was to handle this, say you have some props on a component and only a singular one (or a selected few) will have an affect on the styling how would you go about that efficiently? I was going to create a second type to handle this, but saw the idea of **&lt;Pick&gt;**, thanks Calvin:
-
-**ListItem.tsx (example component with some props):**
-
-    import React from 'react'
-    import { Item } from './ListItem.styles'
-    
-    export interface ListItemProps {
-      name: string
-      background: string
-    }
-    
-    export const ListItem = ({ name, background }: ListItemProps) =&gt; (
-      &lt;Item background={background}&gt;{name}&lt;/Item&gt;
-    )
-
-**ListItem.styles.tsx (file containing styles, not sure about the extension):**
-
-    import styled from 'styled-components'
-    import { ListItemProps } from './ListItem.component'
-    
-    export const Item = styled.li&lt;Pick&lt;ListItemProps, 'background'&gt;&gt;`
-      background-color: ${props =&gt; props.background};
-    `
-
-(trivial example, with lack of keys etc)
-## [6][Typing issue with async function](https://www.reddit.com/r/typescript/comments/ihk0mb/typing_issue_with_async_function/)
-- url: https://www.reddit.com/r/typescript/comments/ihk0mb/typing_issue_with_async_function/
----
-When I added the db query I had to turn the function async, and suddenly I had a type issue that I have been unable to resolve (after about 5 hours now). can any spot what the issue is?
-
-    export default async function formatCallRecordsForPGPromise(
-      rawCalldata: CallRecord[],
-    ): Promise&lt;SaveableCallRecord[]&gt; {
-      const dataSortedbyPhoneNumber: PhoneNumberKeyedCallData = lodash.groupBy(rawCalldata,
-        (record: CallRecord) =&gt; record.destination);
-    
-      const phoneNumberAndGroupedData: [string, CallRecord[]][] = Object
-        .entries(dataSortedbyPhoneNumber);
-    
-      const allData: Promise&lt;SaveableCallRecord[]&gt;[] = phoneNumberAndGroupedData
-        .map(async (numberAndCallData: [string, CallRecord[]]) =&gt; {
-          const phoneNumber = numberAndCallData[0];
-    
-          const selectCampaignId = 'SELECT id FROM campaign WHERE phoneNumber = $1';
-    
-          let campaign_id: number;
-          try {
-            campaign_id = await pgp.configured.one(
-              selectCampaignId, phoneNumber, (queryResult: { id: number }) =&gt; queryResult.id,
-            );
-          } catch (error) {
-            throw new Error(error);
-          }
-    
-          const formattedDataSet: SaveableCallRecord[] = numberAndCallData[1]
-            .map((record: CallRecord) =&gt; {
-              const {
-                date, callerid, destination, description, account, disposition, seconds, uniqueid,
-              } = record;
-    
-              const formattedData: SaveableCallRecord = {
-                unique_id: uniqueid,
-                caller_id: callerid,
-                date: PGPromise.as.date(new Date(date)),
-                description,
-                account,
-                disposition,
-                seconds: PGPromise.as.number(Number(seconds)),
-                campaign_id: PGPromise.as.number(Number(campaign_id)),
-              };
-    
-              return formattedData;
-            });
-    
-          return formattedDataSet;
-        });
-    
-      await Promise.all(allData);
-    
-      const allDataFlattened = allData.flat();
-    
-      return allDataFlattened;
-    /*
-    const allDataFlattened: Promise&lt;SaveableCallRecord[]&gt;[]
-    Type 'Promise&lt;SaveableCallRecord[]&gt;[]' is not assignable to type 'SaveableCallRecord[]'.
-      Type 'Promise&lt;SaveableCallRecord[]&gt;' is missing the following properties from type 'SaveableCallRecord': unique_id, caller_id, date, description, and 4 more.ts(2322)
-    */
-    }
-## [7]["Sharing" declaration files between multiple projects](https://www.reddit.com/r/typescript/comments/ihhh59/sharing_declaration_files_between_multiple/)
-- url: https://www.reddit.com/r/typescript/comments/ihhh59/sharing_declaration_files_between_multiple/
----
-Hey, I've been running into an issue trying to share several d.ts files between my projects. I'm pretty new to TS, so bear with me.
-
-One of my projects, Container, includes an npm package (the 'Core' project). Since we are using a few packages, including Vue, which don't include the correct declaration files, we have to add some "boilerplate" .d.ts files to each project.
-
-For those of you who are familiar with Vue: these are the shims-tsx.d.ts and shims-vue.d.ts files, among others.
-
-Anyway, I'm not really a fan of the idea that we have to copy these files to each new project. Which is why I've been trying to add them to the Core project, and somehow export so that they can be included in each other project "automatically" or through a main import, or something.
-
-I've been trying to understand declaration files, and how I could achieve what I'm trying to do, but I feel like I'm hitting a wall - either because it's impossible, or because I don't understand well enough what I'm doing.
-
-TL;DR: all of my projects need several identical d.ts files because included packages don't have typings, how can I share them or include them automatically?
-## [8][Does TS breed dependence on explicit type definitions?](https://www.reddit.com/r/typescript/comments/ih6qmc/does_ts_breed_dependence_on_explicit_type/)
-- url: https://www.reddit.com/r/typescript/comments/ih6qmc/does_ts_breed_dependence_on_explicit_type/
----
-And if so, is that a bad thing?
-
-Example below. I think i am dependent on annotating my way through it to get what happens. Otherwise I don't think I would be able to do it.
-
-Honestly this is what made me fall in love with the language. But if I get a standard JS job I don't know if I could handle not having a traceable path for how everything is getting changed. 80% of my day would be spent debugging the stuff I was writing just to see if it was returning what I hope it was.
-
-Is it possible to become "type dependent"? And if so how would you guys advise a junior to fix that issue? I guess spend time in regular JS trying to code without explicit typings?
-
-    interface PhoneNumberKeyedCallData {
-      [phoneNumber: string]: CallRecord[]
-    }
-    
-    function formatCallRecordsForPGPromise(
-      rawCalldata: CallRecord[],
-    ): SaveableCallRecordFields[] {
-      const dataSortedbyPhoneNumber: PhoneNumberKeyedCallData = lodash.groupBy(rawCalldata,
-        (record: CallRecord) =&gt; record.destination);
-    
-      const phoneNumberAndGroupedData: [string, CallRecord[]][] = Object
-        .entries(dataSortedbyPhoneNumber);
-    
-      const allDataFlattened: SaveableCallRecordFields[] = phoneNumberAndGroupedData
-        .map((numberAndCallData: [string, CallRecord[]]) =&gt; {
-          const phoneNumber = numberAndCallData[0];
-    
-          const formattedDataSet: SaveableCallRecordFields[] = numberAndCallData[1]
-            .map((record: CallRecord) =&gt; {
-              const {
-                date, callerid, destination, description, account, disposition, seconds, uniqueid,
-              } = record;
-    
-              const formattedData: SaveableCallRecordFields = {
-                unique_id: uniqueid,
-                &lt;removed more properties ...&gt;
-              };
-    
-              return formattedData;
-            });
-    
-          return formattedDataSet;
-        })
-        .flat();
-    
-      return allDataFlattened}
-## [9][[updated benchmark] fork-ts-checker more than 2x slower with project references](https://www.reddit.com/r/typescript/comments/ih72pe/updated_benchmark_forktschecker_more_than_2x/)
-- url: https://www.reddit.com/r/typescript/comments/ih72pe/updated_benchmark_forktschecker_more_than_2x/
----
-after I fixed some issues and updated the benchmark (hopefully) the last the time, I learned this:
-
-`fork-ts-checker` struggles with reference files (those which get imported) the most in a project reference structure. pure `tsc -b` is more than 2x faster[1] followed by pure `ts-loader`.
-
-So, if you work a lot in reference files you will face significant slow-downs; however in non-reference files, so those which import reference files fork-ts-checker is the fastest setup with type checking.
-
-What to choose? Hard to say but a well structured, DRY monorepo uses a lot references and you work a lot in those. Just think of fe components which are used by different front-end apps as one example, there are much more. fork-ts-checker seems to be really a deal-breaker here. Pure tsc shines with reference compile times but lacks on the main file compiles times. And you can't turn on `transpileOnly: true`. 
-
-So my current gut feeling is to go with the middleground—pure ts-loader with `transpileOnly: true` and let your editor do the type checks. IDK if this will work in the long run and you would't miss type errors, any experience with this?
-
-the new benchmark: [https://github.com/TypeStrong/ts-loader/issues/1157#issuecomment-681080972](https://github.com/TypeStrong/ts-loader/issues/1157#issuecomment-681080972)
-
-[1] depending on the benchmark
-
-Edit: this problem seems to be also with tsloader, i introduced a new babel variant which is by far the best (also in that benchmark)
-## [10][Learning TypeScript with React Components (advice/help needed)](https://www.reddit.com/r/typescript/comments/ih013n/learning_typescript_with_react_components/)
-- url: https://www.reddit.com/r/typescript/comments/ih013n/learning_typescript_with_react_components/
----
-Hey, I just starting learning TypeScript (after watching a few videos this morning) and I'm curious if I'm doing this correctly (there's no bugs, but it feels weird that I'm exporting types and declaring them multiple times). Below is a very trivial React example that contains two components and some dummy data to render (in App):  
-
-
-**ListItem:**
-
-    import React from 'react'
-    
-    export type ListItemProps = {
-      name: string
-    }
-    
-    const ListItem = ({ name }: ListItemProps) =&gt; &lt;li&gt;{name}&lt;/li&gt;
-    
-    export default ListItem
-
-**List:**
-
-    import React from 'react'
-    import ListItem, { ListItemProps } from '../ListItem/ListItem.component'
-    
-    type ListProps = { list: ListItemProps[] }
-    
-    const List = ({ list }: ListProps) =&gt; {
-      return (
-        &lt;ul&gt;
-          {list.map(item =&gt; (
-            &lt;ListItem name={item.name} /&gt;
-          ))}
-        &lt;/ul&gt;
-      )
-    }
-    
-    export default List
-
-**App (contains mock data and the actual render):**  
-
-
-    import React from 'react'
-    import List from '../List/List.component'
-    import { ListItemProps } from '../ListItem/ListItem.component'
-    
-    const mockData: ListItemProps[] = [
-      { name: 'Item 1' },
-      {
-        name: 'Item 2'
-      }
-    ]
-    
-    const App = () =&gt; (
-      &lt;div&gt;
-        &lt;List list={mockData} /&gt;
-      &lt;/div&gt;
-    )
-    
-    export default App
-
-I would appreciate any and all feedback, I was thinking that creating a separate file such as 'types.ts' would help tackle this (this might not even be a problem, it just feels weird at the moment!). Thanks, Calvin
-## [11][Inferring mutually dependent function types?](https://www.reddit.com/r/typescript/comments/igux0f/inferring_mutually_dependent_function_types/)
-- url: https://www.reddit.com/r/typescript/comments/igux0f/inferring_mutually_dependent_function_types/
----
-In my project there are "converter" types, which convert between two specific other types (`A` and `B`):
-
-    type Converter&lt;A, B&gt; = {
-      convertAtoB(value: A): B;
-      convertBtoA(value: B): A;
-    }
-
-They are easy to type when A and B are specified manually, like `Converter&lt;string, number&gt;`. However, I want them to be inferred. My working attempt looks like this:
-
-    function converter&lt;A, B&gt;(data: Converter&lt;A, B&gt;) {
-      return data;
-    }
-    
-    var test = converter({
-      convertAtoB: (x: string) =&gt; x, // this one returns a string...
-      convertBtoA: (x: number) =&gt; x.toString() // and this accepts a number
-    })
-
-The error is correctly shown in the above example (type "string" is not assignable to "number"). So far it's working.
-
-But now I want to define an object containing multiple such converters, and still make it impossible to write incorrect implementations, like this:
-
-    var myConverters = converters({
-      stringAndNumber: {
-        convertAtoB: (x: string) =&gt; x, 
-        convertBtoA: (x: number) =&gt; x.toString() // should error as above
-      },
-      booleanAndString: {
-        convertAtoB: (x: boolean) =&gt; x.toString(),
-        convertBtoA: (x: string) =&gt; x === 'true' ? true : false
-      }
-    })
-
-How do I write that `converters` function, so that TypeScript reports errors just like with the singular `converter` function? I don't think I can accept A and B generic arguments in it, because every "child" converter has its own A and B.
-
-Thanks!

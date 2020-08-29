@@ -56,124 +56,94 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][A line by line explanation on how to use a non-CMake library in your CMake project](https://www.reddit.com/r/cpp/comments/ii1o0y/a_line_by_line_explanation_on_how_to_use_a/)
-- url: https://dominikberner.ch/cmake-find-library/
+## [2][Matplot++: A C++ Graphics Library for Data Visualization](https://www.reddit.com/r/cpp/comments/iikdwq/matplot_a_c_graphics_library_for_data/)
+- url: https://www.reddit.com/r/cpp/comments/iikdwq/matplot_a_c_graphics_library_for_data/
 ---
-
-## [3][std::array indexed by any numeric-like type](https://www.reddit.com/r/cpp/comments/ii2xwt/stdarray_indexed_by_any_numericlike_type/)
-- url: https://www.reddit.com/r/cpp/comments/ii2xwt/stdarray_indexed_by_any_numericlike_type/
----
-Hi folks!
-
-Is that popular use case to index `std::array` with enum values?
-
-    enum Animal
-    {
-        Pig, Dog, Cat,
-        SIZE
-    };
-    
-    std::array&lt;Farm, Animal::SIZE&gt; farms;
-
-For me it seems to be, but it would be great to leverage type-safety of `enum class`. So I come up with an idea:
-
-    template&lt;typename T, auto Size&gt;
-    class array
-    {
-    public:
-        using Index = decltype(Size);
-    
-        T&amp; operator[](const Index i)
-        {
-            return _data[static_cast&lt;std::size_t&gt;(i)];
-        }
-    
-    private:
-        std::array&lt;T, static_cast&lt;std::size_t&gt;(Size)&gt; _data;
-    };
-
-[Godbolt link to play.](https://godbolt.org/z/3n6ndM)
-
-It actually can work with anything convertible to `size_t` and it is just natural extension of `std::array`, so I would expect this to implemented already somewhere.
+Data visualization can help programmers and scientists identify trends in their data and efficiently communicate these results with their peers. Modern C++ is being used for a variety of scientific applications, and this environment can benefit considerably from graphics libraries that attend the typical design goals toward scientific data visualization. Besides the option of exporting results to other environments, the customary alternatives in C++ are either non-dedicated libraries that depend on existing user interfaces or bindings to other languages. Matplot++ is a graphics library for data visualization that provides interactive plotting, means for exporting plots in high-quality formats for scientific publications, a compact syntax consistent with similar libraries, dozens of plot categories with specialized algorithms, multiple coding styles, and supports generic backends.
 
 &amp;#x200B;
 
-1. Would do you think about this?
-2. Is there prod-ready implementation of this?
-3. Looks like `std::array` could support this out of the box, just replacing `size_t` with `auto` and adding `static_cast` everywhere. May this be pushed to std lib?
-## [4][Webinar: Write cleaner, safer, modern C++ with SonarQube](https://www.reddit.com/r/cpp/comments/ii5vgw/webinar_write_cleaner_safer_modern_c_with/)
-- url: https://www.reddit.com/r/cpp/comments/ii5vgw/webinar_write_cleaner_safer_modern_c_with/
+[https://github.com/alandefreitas/matplotplusplus](https://github.com/alandefreitas/matplotplusplus)
+## [3][Why do all guides use #using namespace std if it's supposedly really bad practice?](https://www.reddit.com/r/cpp/comments/iihj9s/why_do_all_guides_use_using_namespace_std_if_its/)
+- url: https://www.reddit.com/r/cpp/comments/iihj9s/why_do_all_guides_use_using_namespace_std_if_its/
 ---
-[https://sonarsource.zoom.us/webinar/register/1815977846611/WN\_6iMr512HQHa2CTvcdfv1vw](https://sonarsource.zoom.us/webinar/register/1815977846611/WN_6iMr512HQHa2CTvcdfv1vw)
+I'm learning my first programming language and every guide I've seen uses #using namespace std.
 
-&gt;As a C++ Developer, you know that writing clean, secure, modern C++ code is important for you and your users. At SonarSource, we know that only developers can truly impact Code Quality and Security, so we put the power in your hands.  
-&gt;  
-&gt;SonarQube makes C++ development easier with static code analysis that's powerful, fast, and accurate - right out of the box. Analysis is easy to integrate into your workflow and works with most common compilers, including many for embedded systems. Come see for yourself how you can make your C++ projects more reliable and secure.  
-&gt;  
-&gt;Join us on September 2nd at 10 am CDT / 3 pm GMT for a 30-minute webinar to learn more about:  
-\- Code Quality &amp; Security for the individual: in-IDE and in PRs  
-\- Code Quality &amp; Security for the team: in SonarQube  
-\- What types of issues you can find on your C++ code: Bugs, Vulnerabilities, Security Hotspots, and Code Smells.  
-\- How easy it is to get started - including a demo of SonarQube!
+But when I look on the internet, everyone calls it a bad habit that one should break as early as possible.
 
-Even if you can't make it at that time, sign up and you'll get a link to the recording afterward.
-## [5][Introducing vcperf /timetrace for C++ build time analysis](https://www.reddit.com/r/cpp/comments/ihnr1k/introducing_vcperf_timetrace_for_c_build_time/)
-- url: https://devblogs.microsoft.com/cppblog/introducing-vcperf-timetrace-for-cpp-build-time-analysis/
+I haven't been able to find a YouTube guide that doesn't use this, but all the guides I've seen have been pretty bad either way. Anyone have any recommendations or advice?
+## [4][LEAF is accepted in Boost (Lightweight Error Augmentation Framework)](https://www.reddit.com/r/cpp/comments/iijpam/leaf_is_accepted_in_boost_lightweight_error/)
+- url: https://www.reddit.com/r/cpp/comments/iijpam/leaf_is_accepted_in_boost_lightweight_error/
 ---
+LEAF is a lightweight error handling library for C++11. Features:
 
-## [6][concurrencpp v.0.0.4 - modern concurrency for C++](https://www.reddit.com/r/cpp/comments/ii3zef/concurrencpp_v004_modern_concurrency_for_c/)
-- url: https://www.reddit.com/r/cpp/comments/ii3zef/concurrencpp_v004_modern_concurrency_for_c/
----
-Hello reddit!
+* Small single-header format, **no dependencies**.
+* Designed for maximum efficiency ("happy" path and "sad" path).
+* No dynamic memory allocations, even with heavy payloads.
+* O(1) transport of arbitrary error types (independent of call stack depth).
+* Can be used with or without exception handling.
+* Support for multi-thread programming.
 
-I just released version 0.0.4 of [concurrencpp](https://github.com/David-Haim/concurrencpp), a library for executors and coroutines.
-
-The library is still very fresh and gradually matures more and more. 
-
-There are still tons of features and optimizations that are scheduled for the future, so this library is far from being complete.
-
-Suggestions, questions, reviews, and most importantly - stars, are greatly appreciated.
-
-Let's make the way we deal with concurrency in C++ the best among all languages!
-## [7][Can I start implementing modules in my code?](https://www.reddit.com/r/cpp/comments/ii7346/can_i_start_implementing_modules_in_my_code/)
-- url: https://www.reddit.com/r/cpp/comments/ii7346/can_i_start_implementing_modules_in_my_code/
----
-MSVC has partial support for them. I know the question is vague, but is anybody already using modules in their code, or everybody is waiting for full compilers support?
-## [8][CppCast: Cross Platform Mobile Telephony](https://www.reddit.com/r/cpp/comments/ihxt9e/cppcast_cross_platform_mobile_telephony/)
-- url: https://cppcast.com/telephony-dave-hagedorn/
+Documentation: [https://zajo.github.io/leaf/](https://zajo.github.io/leaf/)
+## [5][Friendly reminder to mark your move constructors noexcept](https://www.reddit.com/r/cpp/comments/iikrx9/friendly_reminder_to_mark_your_move_constructors/)
+- url: https://gieseanw.wordpress.com/2020/08/28/friendly-reminder-to-mark-your-move-constructors-noexcept/
 ---
 
-## [9][Lyra 1.5 -- Create a full CLI parser in one statement, without globals or macros](https://www.reddit.com/r/cpp/comments/ihlaq0/lyra_15_create_a_full_cli_parser_in_one_statement/)
-- url: https://www.reddit.com/r/cpp/comments/ihlaq0/lyra_15_create_a_full_cli_parser_in_one_statement/
+## [6][Lithium is now the fastest web framework (techempower.com)](https://www.reddit.com/r/cpp/comments/iiqnz5/lithium_is_now_the_fastest_web_framework/)
+- url: https://www.reddit.com/r/cpp/comments/iiqnz5/lithium_is_now_the_fastest_web_framework/
 ---
-Lyra ([https://bfgroup.github.io/Lyra/](https://bfgroup.github.io/Lyra/)) is a simple to use, composing, header only, command line arguments parser for C++ 11 and beyond. [Version 1.5](https://bfgroup.github.io/Lyra/lyra.html#_1_5) includes the time saving feature of a "[main](https://bfgroup.github.io/Lyra/lyra.html#_main)" utility to make creating simple CLIs with help quick and easy. For example:
+Link to the benchmark: [https://www.techempower.com/benchmarks/#section=test&amp;runid=57b25c85-082a-4013-b572-b0939006eaff&amp;hw=ph&amp;test=composite&amp;a=2](https://www.techempower.com/benchmarks/#section=test&amp;runid=57b25c85-082a-4013-b572-b0939006eaff&amp;hw=ph&amp;test=composite&amp;a=2) 
 
-    #include &lt;iostream&gt;
-    #include &lt;lyra/lyra.hpp&gt;
-    int main(int argc, const char ** argv)
-    {
-      return lyra::main()("-x", 0)("-y", 0)(argc, argv, [](lyra::main &amp; m)
-      {
-        std::cout &lt;&lt; int(m["-x"]) + int(m["-y"]) &lt;&lt; "\n";
-        return 0;
-      });
-    }
-
-Other notable new features for this release include:
-
-* Direct support for [sub-commands](https://bfgroup.github.io/Lyra/lyra.html#_sub_commands).
-* [Value](https://bfgroup.github.io/Lyra/lyra.html#lyra_val) holders.
-* Argument [groups](https://bfgroup.github.io/Lyra/lyra.html#_argument_groups) to support alternate parsing, like sub-commands.
-* The help output is, once again, nicely formatted following clang style help output.
-* And there's even Cmake install support now.
-## [10][Can we get MAC address using boost library?? if yes then how ??](https://www.reddit.com/r/cpp/comments/ii6bbs/can_we_get_mac_address_using_boost_library_if_yes/)
-- url: https://www.reddit.com/r/cpp/comments/ii6bbs/can_we_get_mac_address_using_boost_library_if_yes/
+Link to lithium: [https://github.com/matt-42/lithium/](https://github.com/matt-42/lithium/)
+## [7][Meeting C++ online conference program](https://www.reddit.com/r/cpp/comments/iiqrdd/meeting_c_online_conference_program/)
+- url: https://meetingcpp.com/mcpp/online/conference.php
 ---
- Can we get MAC address using boost library?? if yes then how ??
-## [11][What's the status of P1729R0 Text Parsing?](https://www.reddit.com/r/cpp/comments/ihpc5u/whats_the_status_of_p1729r0_text_parsing/)
-- url: https://www.reddit.com/r/cpp/comments/ihpc5u/whats_the_status_of_p1729r0_text_parsing/
+
+## [8][Range-Vector a header only lib, mimic the python operator [::] on it list, for c++ container.](https://www.reddit.com/r/cpp/comments/iiaqdr/rangevector_a_header_only_lib_mimic_the_python/)
+- url: https://www.reddit.com/r/cpp/comments/iiaqdr/rangevector_a_header_only_lib_mimic_the_python/
 ---
- [http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1729r0.html](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1729r0.html)   
+Hi, I would like to present [Range-Vector](https://github.com/Ail-nare/Range-Vector) a header only lib that I made.
 
+This lib introduce a new class `range` .
 
-I would love to see a sscanf alternative in C++. Anyone knows the status of that proposal?
+The class `range` has for objective to mimic the way python work with the operator `[start:end:step]` on it list. `range` will accept any container that has random access iterator ex: `std::vector`, `const char[N]` etc... .
+
+Ex:
+
+    std::vector src = {1, 2, 3, 4, 5, 6, 7};
+    
+    for (int i : range(src)(1, {}, 2))
+        std::cout &lt;&lt; i &lt;&lt; ':';
+        
+    output -&gt; "2:4:6:"
+
+The lib also works with constexpr data such as `constexpr const char[N]` which allow operation on C-style string at compile time.
+
+The lib was primarily developed for C++17, but compile in C++14. In C++17 the templates are deducted, which give a smoother typing.
+
+You can find a more detail presentation of the lib on the [repo](https://github.com/Ail-nare/Range-Vector).
+
+So, the reason of this post is to share this lib to how ever wish to use it. And to have feedback. Especially about error or warring on compilation on other platforms.
+
+Sorry for my english.
+## [9][A line by line explanation on how to use a non-CMake library in your CMake project](https://www.reddit.com/r/cpp/comments/ii1o0y/a_line_by_line_explanation_on_how_to_use_a/)
+- url: https://dominikberner.ch/cmake-find-library/
+---
+
+## [10][CMake tutorial and API documentation](https://www.reddit.com/r/cpp/comments/iim8c0/cmake_tutorial_and_api_documentation/)
+- url: https://www.reddit.com/r/cpp/comments/iim8c0/cmake_tutorial_and_api_documentation/
+---
+Link to tutorial here: [CMake tutorial](http://goorep.se:1001/changelog/report/rSelect/PAGE_result.htm?alias=guest&amp;set=api&amp;query=Book+pages&amp;$$TArticleBook1.ArticleBookK=7107&amp;link=%5B%5B%229F1E006D78894848838A0970E2FF0BE9zoom%22,%22Object1%22,7107%5D,%5B%2271C91DEE3C5A4FDC8EC1114C7C18033Bzoom%22,%22TArticleBook1%22,7107%5D%5D&amp;rows=25)
+
+This documentation differs some from other types of documentation. Docs are stored in a database called changelog. Parts in this  database is structured to manage software documentation. The websystem that runs this database is called Selection. It has many commands and techniques to connect, view and search for information.
+I also did a video to  explain some how this application work  
+[Getting started with changelog and selection](https://www.youtube.com/watch?v=Dmaue86qseo).
+
+Have been working with this as a side project and it is in the final stage to be released. If you have any ideas or input about the system that runs the database feel free to tell me.  
+It is quite advanced because the system is primarily made for internal use (on premise)
+
+The CMake tutorial and API documentation are expanded with more examples and text over time.
+## [11][Zero-Cost compile time str/value map mapping keys to struct member names and values to member values.](https://www.reddit.com/r/cpp/comments/iies6f/zerocost_compile_time_strvalue_map_mapping_keys/)
+- url: https://github.com/matt-42/lithium/tree/master/libraries/metamap
+---
+

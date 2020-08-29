@@ -22,7 +22,95 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Disable duck typing for literal types](https://www.reddit.com/r/typescript/comments/ii4vsf/disable_duck_typing_for_literal_types/)
+## [2][Why is any nonsense assignable to InstanceType&lt;...&gt;[] here?](https://www.reddit.com/r/typescript/comments/iiqcv9/why_is_any_nonsense_assignable_to_instancetype/)
+- url: https://www.reddit.com/r/typescript/comments/iiqcv9/why_is_any_nonsense_assignable_to_instancetype/
+---
+I want to create a function which accepts a class and a callback, which also accepts this class and returns its instances. It's not very practical, but it is a simplified example of my problem.
+
+My code looks like this ([playground link](https://www.typescriptlang.org/play?ts=4.0.2#code/C4TwDgpgBAwg9gOwM7AE4FcDGw6qgXigQgHcAKAOioENUBzJALimoRAG0BdASgID4WbANwAoEQDN0CbAEtEUYBBQAeACpQIAD0UIAJkliIUGbLj5ladZqoA0USQmYX613vgEBJZMFaYIq8Ag1Pi5eAG8RKCioVAhgdFQEeylnOm5RAF8xTAAbaiQDAFkQGDyCqDCskQB6aqhVAAtoGQQdXQhdKHQkajpmgzgAayoKEUUUMmLS-KQ7AH1cmf4odmISKAWypDJuOzWNxYKdnlEauqoAI3RgKA8oTFYWbHRqHJyQGLiEpNpUahABuJBB8EEYIMhoOJUHAALbJBAAQjO9Sa9jgbzgJBadCgSAacHQOU6eMxgg0qGhqDsVxuMhuujgSgQAHJgEjxsBJiUtvNDgZ3CsAIwAJgAzHZmeI4HALrRmScgA)):
+
+    type Constructor = new(...args: any[]) =&gt; any;
+
+    function test&lt;T extends Constructor&gt;(arg: T, fun: (arg: T) =&gt; InstanceType&lt;T&gt;[]) 
+    {
+        return fun(arg);
+    }
+
+    class MyClass {}
+
+    // The intended usage is ok...
+    test(MyClass, _class =&gt; [new _class(), new _class()]);
+
+    // ..but I can actually return arrays of any nonsense from fun!
+    // The following should show an error, but it doesn't!
+    test(MyClass, _class =&gt; [123, 'foobar']);
+
+The second call to `test` allows me to return anything from the callback, despite its type clearly inferred as `(arg: typeof MyClass) =&gt; MyClass[]`. It seems wrong to me that a `(string | number)[]` return type is assignable to `MyClass[]`.
+
+Is there a way to fix this and make it report the correct error?
+
+Thanks!
+## [3][Maybe&lt;string&gt; vs string | null](https://www.reddit.com/r/typescript/comments/ii88m3/maybestring_vs_string_null/)
+- url: https://www.reddit.com/r/typescript/comments/ii88m3/maybestring_vs_string_null/
+---
+Hi there! Quick question to the functional buffs out there:
+
+What's the advantage of using a `Maybe&lt;string&gt;` type over using `string | null`? With strict null checking you still need to handle the null case, but you avoid using external libraries and having to introduce new concepts to the other developers on the team.
+
+Same for `Either&lt;Error, string&gt;` and `string | Error`.
+## [4][Writing testable code that is easy to reason with . A function that executes a sequence of injected functions (17 functions injected in total, that none has a dependency injected). Should I make it a class with no dependency injection , and expose the functions as methods (so they are testable)?](https://www.reddit.com/r/typescript/comments/iie9f4/writing_testable_code_that_is_easy_to_reason_with/)
+- url: https://www.reddit.com/r/typescript/comments/iie9f4/writing_testable_code_that_is_easy_to_reason_with/
+---
+So I have a function (lets call it parent) which has the single responsibility to accept a big list of  arguments and then provide the appropriate parameters to a sequence of functions that are executed (17 functions in total,lets call them children) . There is also some minor logic inside parent that involves some returned values from child functions ,some type checking and argument initialization, but it is nothing special or complex .
+
+I think injecting 17 functions as parameters is an anti pattern in general . Also these child functions do not depend on injected dependencies and have a clear and simple single responsibility .
+
+What I thought would be an easy to reason with , but also testable solution ,is to gather all those functions in a big class as methods . The class instances will expose those methods so they will be testable . But the class will expose also the parent function which executes all the child functions .
+
+So I can go write a test file that can test each child function in isolation but also in combination (in fact whatever combination I like) with the other child functions .
+
+What would you do in this case ? Does the big class sound good ? I am unable to reason with dependency injection here . I find that it does more harm than good. The child functions are really specific for the parent function and I believe they will never be reused anywhere else .
+## [5][ts-expect-error . Is it justified to use it when in tests ?](https://www.reddit.com/r/typescript/comments/iic8jx/tsexpecterror_is_it_justified_to_use_it_when_in/)
+- url: https://www.reddit.com/r/typescript/comments/iic8jx/tsexpecterror_is_it_justified_to_use_it_when_in/
+---
+More specifically I happen to test a function and I give to it some parameters of wrong type .
+## [6][what else besides "sourceMap": true is needed to setup source mapping?](https://www.reddit.com/r/typescript/comments/iidy9b/what_else_besides_sourcemap_true_is_needed_to/)
+- url: https://www.reddit.com/r/typescript/comments/iidy9b/what_else_besides_sourcemap_true_is_needed_to/
+---
+I'm trying to setup source mapping so that VsCode can attach a debugger session to my TS source files but I can tell from the stack traces that the node process is still pointing to the JS files inside `/compiled`
+
+What else needs to be done before a debugger can map to TS source files? The process I'm running is at `./compiled/server.js`
+
+My tsconfig.json:
+
+    {
+      "compilerOptions": {
+        "target": "es5",
+        "lib": [
+          "dom",
+          "dom.iterable",
+          "esnext"
+        ],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "module": "CommonJS",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "sourceMap": true,
+        "rootDir": "src",
+        "outDir": "compiled"
+      },
+      "include": [
+        "src", "src/__mocks__"
+      ],
+      "exclude": ["node_modules", "**/*.test.ts", "compiled"]
+    }
+## [7][Disable duck typing for literal types](https://www.reddit.com/r/typescript/comments/ii4vsf/disable_duck_typing_for_literal_types/)
 - url: https://www.reddit.com/r/typescript/comments/ii4vsf/disable_duck_typing_for_literal_types/
 ---
 Is there a way to get TypeScript to warn me about the following code?
@@ -46,55 +134,17 @@ function isName (name: string): name is Name {
 ```
 
 I think there was a discussion on this topic in the TypeScript repo, but I cannot find it anymore.
-## [3][file changes not updating when running TSC](https://www.reddit.com/r/typescript/comments/ii6p7m/file_changes_not_updating_when_running_tsc/)
-- url: https://www.reddit.com/r/typescript/comments/ii6p7m/file_changes_not_updating_when_running_tsc/
----
-I recently opened a repo I set aside for a few weeks and notice my changes to .ts file inside the `src` folder, are not making it to the .js files that in the `compiled` folder.
-
-I added this to the script file server.js and after restarting the server, even this is not printing to terminal:
-
-    console.log(`updated on ${new Date()}`);
-
-There are no warnings, or any other feedback when running `tsc` in terminal within the project root.
-
-Here is my tsconfig.json file, is there a mistake somewhere?
-
-    {
-      "compilerOptions": {
-        "target": "es5",
-        "lib": [
-          "dom",
-          "dom.iterable",
-          "esnext"
-        ],
-        "allowJs": true,
-        "skipLibCheck": true,
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
-        "strict": true,
-        "forceConsistentCasingInFileNames": true,
-        "module": "CommonJS",
-        "moduleResolution": "node",
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "outDir": "compiled"
-      },
-      "include": [
-        "src", "__mocks__"
-      ],
-      "exclude": ["node_modules", "**/*.test.ts"]
-    }
-## [4][Opinion on explicit return types?](https://www.reddit.com/r/typescript/comments/ihpnme/opinion_on_explicit_return_types/)
+## [8][Opinion on explicit return types?](https://www.reddit.com/r/typescript/comments/ihpnme/opinion_on_explicit_return_types/)
 - url: https://www.reddit.com/r/typescript/comments/ihpnme/opinion_on_explicit_return_types/
 ---
 Hi All,
 
 What is your opinion on always mentioning return types on each of your method? I mean for simple methods like `checkSomething(),`it's obvious to me it should not be returning and it most likely a void. Or something like `getURL`, also seems something which will return a string. Do you guys have any strong opinions on why adding types should be absolutely necessary?
-## [5][Faven: a web tool to generate favicons with alpinejs](https://www.reddit.com/r/typescript/comments/ihpw9k/faven_a_web_tool_to_generate_favicons_with/)
+## [9][Faven: a web tool to generate favicons with alpinejs](https://www.reddit.com/r/typescript/comments/ihpw9k/faven_a_web_tool_to_generate_favicons_with/)
 - url: https://faven.netlify.app/
 ---
 
-## [6][Need help mapping through an array that corresponds to an objects keys](https://www.reddit.com/r/typescript/comments/ihun4q/need_help_mapping_through_an_array_that/)
+## [10][Need help mapping through an array that corresponds to an objects keys](https://www.reddit.com/r/typescript/comments/ihun4q/need_help_mapping_through_an_array_that/)
 - url: https://www.reddit.com/r/typescript/comments/ihun4q/need_help_mapping_through_an_array_that/
 ---
 \*\*\*SOLVED!\*\*\*
@@ -131,110 +181,7 @@ But i'm getting a TypeScript error when I try to index lobbyState.gameList\[game
 New to typescript, would someone be able to help me out?  isn't the index signature 'name' a string? I should mention that I'm using nested objects instead of an array so that I can delete the games when they are done.
 
 Thanks in advance!
-## [7][Getting started with LitElement and TypeScript](https://www.reddit.com/r/typescript/comments/ihi6cc/getting_started_with_litelement_and_typescript/)
+## [11][Getting started with LitElement and TypeScript](https://www.reddit.com/r/typescript/comments/ihi6cc/getting_started_with_litelement_and_typescript/)
 - url: https://labs.thisdot.co/blog/getting-started-with-litelement-and-typescript
 ---
 
-## [8][Possible to infer keys of a nested object for argument type?](https://www.reddit.com/r/typescript/comments/ihrlq1/possible_to_infer_keys_of_a_nested_object_for/)
-- url: https://www.reddit.com/r/typescript/comments/ihrlq1/possible_to_infer_keys_of_a_nested_object_for/
----
-Hey all, looking to type out a function and can't work out one arg.
-
-I have multiple objects storing the array of roles allowed, which are then namespaced under one object by their route/screen for the helper function. That function will take the key for the screen, and then which key under that specific permissions object to check:  Currently my union of 
-
-    keyof typeof getAuthPermissions | keyof typeof getUserPermissions
-
-returns ALL keys obviously when using the function like 
-
-    checkUserPermission('user', '&lt;all-keys&gt;') // where IDE populates all possible keys here
-
-where I want to infer just the keys from the merged object from whichever screen is passed in to the function:  
-
-
-All relevant code:
-
-    const userGroups = ['Manager', 'Reporting', 'Payments', 'Support'] as const;
-    type UserGroup = typeof userGroups[number];
-    
-    const getUserPermissions = {
-        userControls: ['Manager', 'Support', 'Payments'],
-        wallet: ['Manager', 'Support']
-    };
-    const getAuthPermissions = {
-        logoutUser: ['Manager'],
-        extendUserBonus: ['Manager', 'Support']
-    }
-    // ... a fair few more.
-    const allPermissions = {
-        user: getUserPermissions,
-        auth: getAuthPermissions
-        // ...
-    }
-    type Screens = keyof typeof allPermissions;
-    
-    function checkUserPermission(
-        screen: Screens,
-        userRoles: UserGroup[],
-        // this should be the keys for whichever screen was passed in, something like keyof typeof allPermissions[screen]?
-        permissionToCheck: keyof typeof getAuthPermissions | keyof typeof getUserPermissions // returns ALL keys. want to infer just from screen passed in
-    ): boolean {
-        for (const role of userRoles) {
-            if (allPermissions[screen][permissionToCheck].includes(role)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-Is this possible? I know getting nested keys can be quite tricky, but I'm hoping that with inferring from the argument passed in that this should be possible?
-
-Thanks!
-## [9][Help: Generics for nested array, nested n times](https://www.reddit.com/r/typescript/comments/ihpcj0/help_generics_for_nested_array_nested_n_times/)
-- url: https://www.reddit.com/r/typescript/comments/ihpcj0/help_generics_for_nested_array_nested_n_times/
----
-I am writing a little piece of TypeScript code, to reverse a chessboard (i.e. so I can view it from either black or white's perspective). The code (thanks stackoverflow), is fairly generic in that it will take an array as an argument, and recursively reverse down to the bottom. Obviously I'm dealing with a 2d array to represent the chess board.
-
-Instead of just typing it as accepting `any[]` and returning `any[]` I'd like to try use generics so the output retains the type that was passed in... if this is possible.
-
-This is my attempt, but it gives the commented error
-
-    export function reverseNestedArrays&lt;T&gt;(arr: T[]): T[] {
-      return arr
-        .map(function reverse(item) {
-          return Array.isArray(item) &amp;&amp; Array.isArray(item[0])
-            ? item.map(reverse)
-            : item.reverse();   // Property 'reverse' does not exist on type 'T'.ts(2339)
-        })
-        .reverse();
-    }
-    
-
-Ideally I'd like to be able to use generics in such a way so that it retains it's "reverse to any depth" capability. But if making it only work for a 2d array would make using generics possible, then I'd be happy with that.
-
-Any help much appreciated. I have a very tenuous grasp of generics in general :)
-## [10][How to deal with dynamic model values in static typing](https://www.reddit.com/r/typescript/comments/iho80j/how_to_deal_with_dynamic_model_values_in_static/)
-- url: https://www.reddit.com/r/typescript/comments/iho80j/how_to_deal_with_dynamic_model_values_in_static/
----
-Maybe it's because my background is in dynamic typing but there is one concept that I'm really struggling with and that is "dynamic model values". Let me explain:
-
-Lets assume I have a simple Book model:
-
-`class Book`
-
-`name`
-
-`author (Foreignkey)`
-
-Depending on the use case I now want to return the author as an ID or a full instance from the API. I also may decide to add a field to the model that is not in the database but generated for a specific view.
-
-Of course, I could add a union type to e. g. the author field type `author = number | IAuthor` with this approach I have to a lot of additional checks to tell the compiler that this particular component uses an author with the full instance attached to it. This approach has added a lot of clutter to my components and I don't like it.
-
-So far I defined two different interfaces for both use cases e. g. `IBook` and `IBookWithAuthor.`
-
-Are there any better ways of solving this?
-## [11][Created VSCode launch config for debugging Mocha tests that written in TypeScript](https://www.reddit.com/r/typescript/comments/ihjn57/created_vscode_launch_config_for_debugging_mocha/)
-- url: https://www.reddit.com/r/typescript/comments/ihjn57/created_vscode_launch_config_for_debugging_mocha/
----
-It works fine with ES6 modules. Tested only in Windows 10 machine.
-
-[https://gist.github.com/artem-mangilev/2f45ea18e4f5a38339212f551fa6a85c](https://gist.github.com/artem-mangilev/2f45ea18e4f5a38339212f551fa6a85c)

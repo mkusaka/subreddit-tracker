@@ -111,85 +111,101 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/i1u8a4/whos_hiring_august_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Portfolio Review](https://www.reddit.com/r/reactjs/comments/ii0kq9/portfolio_review/)
-- url: https://www.reddit.com/r/reactjs/comments/ii0kq9/portfolio_review/
+## [3][Read about creating SVG morphing effects with react-spring in my latest article on CSS-tricks](https://www.reddit.com/r/reactjs/comments/iibdrh/read_about_creating_svg_morphing_effects_with/)
+- url: https://v.redd.it/yxnbzmgv2sj51
 ---
-Hey guys, so i finish building my portfolio and i started applying for A LOT of jobs but i don't get any replies at all so i guess there's something wrong with my portfolio and it's not good enough i really don't know, so could guys review my portfolio i really appreciate any feedback 
 
-Link:  [https://ahmedeid.netlify.app/](https://ahmedeid.netlify.app/)
-## [4][Any coders with love for mountains or sports around here?](https://www.reddit.com/r/reactjs/comments/ii4r4l/any_coders_with_love_for_mountains_or_sports/)
+## [4][My first portfolio website](https://www.reddit.com/r/reactjs/comments/iiru9n/my_first_portfolio_website/)
+- url: https://www.reddit.com/r/reactjs/comments/iiru9n/my_first_portfolio_website/
+---
+Hello everyone.
+
+&amp;#x200B;
+
+Link -  [https://ivan-ivanov-beta-portfolio.netlify.app/](https://ivan-ivanov-beta-portfolio.netlify.app/) 
+
+&amp;#x200B;
+
+I made my first portfolio website. I am a uni student (accounting) but my recent internship inspired me to go into programming. 
+
+The website does not contain any complicated functionality. I am looking for any feedback that you have. (even if you want to criticise the way I have written stuff). 
+
+Thanks,
+
+Ivan
+## [5][Hi everyone,](https://www.reddit.com/r/reactjs/comments/iiowjj/hi_everyone/)
+- url: https://www.reddit.com/r/reactjs/comments/iiowjj/hi_everyone/
+---
+I have been learning JS, HTML, CSS and React for about a year now. I have a degree in computer science and mathematics (2:1 in 2001!).
+
+I have spent 20 years working as an actuary and left last year in September. Because I have a computer science degree I didn’t feel like getting another was needed so I set about learning for myself. I have also learned Python and brushed up my sql. I love react though. It’s fun for me.
+
+I would like to start applying for some jobs (I am based in London). 
+
+So my question is please:
+How would I write my CV and what would you like to see on there as a recruiter/hiring manager to get me into a job?
+
+Am I missing anything?
+
+TL;DR; mid-life crisis career changer with computer science degree from 2001 and a year of self learning would love advice for getting a job in react in London.
+## [6][Vercel now supports monorepos](https://www.reddit.com/r/reactjs/comments/iifi4k/vercel_now_supports_monorepos/)
+- url: https://vercel.com/blog/monorepos
+---
+
+## [7][How to implement a test stack in React?](https://www.reddit.com/r/reactjs/comments/iioddh/how_to_implement_a_test_stack_in_react/)
+- url: https://www.reddit.com/r/reactjs/comments/iioddh/how_to_implement_a_test_stack_in_react/
+---
+I have found a lot of testing solutions, like Jest, TestRail, Cypress etc. Are they supposed to be used in combo, or you should just use one of them? What is the "standard" way of implementing your test stack.
+
+I am completely new to software testing, so thanks in advance for your patience.
+## [8][What’s the simplest UI framework to just layer on top of an existing app?](https://www.reddit.com/r/reactjs/comments/iiiuze/whats_the_simplest_ui_framework_to_just_layer_on/)
+- url: https://www.reddit.com/r/reactjs/comments/iiiuze/whats_the_simplest_ui_framework_to_just_layer_on/
+---
+I have a SaaS application that I’ve been working on, mainly building out the backend but it has a complete front end. However as I’m about to go live it looks pretty unpolished and not very mobile friendly. The major UI frameworks like Bootstrap and Material are very heavy and opinionated that would involve a lot of rework. I’m hoping to find a framework that I can just layer on top of what I have. Swap out my buttons for their buttons, use their responsive nav, etc. with minimal rework on my side. Do any good frameworks fit that bill?
+## [9][Rendering large amount of data through React but keep performance up?](https://www.reddit.com/r/reactjs/comments/iipd37/rendering_large_amount_of_data_through_react_but/)
+- url: https://www.reddit.com/r/reactjs/comments/iipd37/rendering_large_amount_of_data_through_react_but/
+---
+Hi there
+
+I am rendering a large amount of data for a visualization where it is interactive with scroll (imagine tens to hundreds of thousands of points). Currently it's plain canvas but I thought ReactART would be a cool option. The ability for it to render to SVG or canvas is really nice because we need SVG export for our app anyways, and we basically have two renderers for many different parts of the app, one canvas, one SVG
+
+&amp;#x200B;
+
+I setup ReactART but unfortunately its a fair bit slower than native canvas
+
+Here is a small speedtest sandbox that shows performance goes pretty slow after 1000-10000 elements even with canvas mode of react-art
+
+React ART [https://codesandbox.io/s/happy-smoke-we7bl?file=/src/App.js](https://codesandbox.io/s/happy-smoke-we7bl?file=/src/App.js)
+
+canvas [https://codesandbox.io/s/nice-bose-xwd9j?file=/src/App.js](https://codesandbox.io/s/nice-bose-xwd9j?file=/src/App.js)
+
+&amp;#x200B;
+
+Now I know I was kinda dreaming big to think this would be performant. Are there any tricks I should look into. What next steps would you consider...abandon react-art and go back to maintaining two renderers? Different library? 
+
+&amp;#x200B;
+
+I haven't invested a lot in react-art here, I just thought it was cool, so anything is on the table. I am wondering if even something like react-three-fiber would run into these isssues because it seems to really come down to having this much component data rather than the canvas for example in this react art case, and I do want the app to try to keep things going even with really large datasets
+## [10][Prevent component to re-render when switching between react tabs](https://www.reddit.com/r/reactjs/comments/iir8rk/prevent_component_to_rerender_when_switching/)
+- url: https://www.reddit.com/r/reactjs/comments/iir8rk/prevent_component_to_rerender_when_switching/
+---
+Hi, I'm using react functional component and react-tabtab. All react tabs (any library) re-render it's panel when switching between tabs. How to prevent this? 
+
+For eg. I have 2tabs - Tab0, Tab1 (Tab0 active as default)
+User fills in a form in Tab0 but does not submit/save and switch to Tab1 and then return back to Tab0 (I need to preserve these user inputs - component states)
+## [11][Portfolio website review request](https://www.reddit.com/r/reactjs/comments/iir79h/portfolio_website_review_request/)
+- url: https://www.reddit.com/r/reactjs/comments/iir79h/portfolio_website_review_request/
+---
+Hey all, I finally made a personal profile website and looking for feedback from the user perspective. Wondering how I could make it better, particularly from a recruiter's perspective since I made this for my resume. Let me know what you think!
+
+Website: [http://devonpowell.net](http://devonpowell.net)
+
+Source code is hidden in the website, try to find it ;)
+
+Thanks in advance!
+## [12][Any coders with love for mountains or sports around here?](https://www.reddit.com/r/reactjs/comments/ii4r4l/any_coders_with_love_for_mountains_or_sports/)
 - url: https://www.reddit.com/r/reactjs/comments/ii4r4l/any_coders_with_love_for_mountains_or_sports/
 ---
 My team in Innsbruck (the heart of the Austrian Alps and the action capital of Europe - yes it is :P) is looking for a mate helping us migrate to a modern framework, implement new features for our two products and plan the development of non-native mobile applications. Here are the details: [https://www.smaply.com/careers](https://www.smaply.com/careers)
 
 I know this might be a critical content here but I hope some of you guys and girls appreciate this. If you do, send me a message. :)
-## [5][Intro to Storybook 2020](https://www.reddit.com/r/reactjs/comments/ihm8t8/intro_to_storybook_2020/)
-- url: https://www.reddit.com/r/reactjs/comments/ihm8t8/intro_to_storybook_2020/
----
-We just launched a new edition of **Intro to Storybook** that walks through the new features and teaches everything from building components, wiring in data, constructing screens and testing UI. If you're on the fence about trying Storybook or need help onboarding your team, this guide is for you.
-
-👉🏽 [**Read the new guide here**](https://www.learnstorybook.com/intro-to-storybook/) 👈🏽
-
-p.s., New 🇯🇵Japanese translation as well! 🇰🇷Korean and 🇫🇷French on the way.
-## [6][React 17 RC1: Request for Bug Reports](https://www.reddit.com/r/reactjs/comments/ii62fx/react_17_rc1_request_for_bug_reports/)
-- url: https://twitter.com/dan_abramov/status/1299316400109113345?s=20
----
-
-## [7][Spreadsheet components](https://www.reddit.com/r/reactjs/comments/ii4obk/spreadsheet_components/)
-- url: https://www.reddit.com/r/reactjs/comments/ii4obk/spreadsheet_components/
----
-I’m in the process of moving away from the  BlueprintJS table component. The product in question is a financial modelling tool and the table has many spreadsheet like features (focused cell, formulas, formatting etc). Max grid size is ~500 rows/~100 columns.
-
-Folks needing similar functionality, how have you handled it? Use something fully batteries included like Handsontable? Implement from scratch? Or something else?
-## [8][D3.js versus Chart.js](https://www.reddit.com/r/reactjs/comments/ii1j00/d3js_versus_chartjs/)
-- url: https://www.reddit.com/r/reactjs/comments/ii1j00/d3js_versus_chartjs/
----
-Basically the title. I have never used D3. Have always used Chart.js for charts and shit. Why would one choose D3 over Chart.js? What features does D3 have that Chart doesn't? I have noticed D3 has a lot more code to it, and probably needs a thorough course on its own. While it took me a few hours to figure out Chart.js. Am I missing something?
-## [9][Jira Express: Open-source browser extension to quickly access recent Jira tickets](https://www.reddit.com/r/reactjs/comments/ii3sdx/jira_express_opensource_browser_extension_to/)
-- url: https://github.com/mmazzarolo/jira-express
----
-
-## [10][Using animations in React](https://www.reddit.com/r/reactjs/comments/ii5zyb/using_animations_in_react/)
-- url: https://www.reddit.com/r/reactjs/comments/ii5zyb/using_animations_in_react/
----
-Hi all,
-
-I am using Bulma to create a modal for my app. And I need to add some sort of animation when modal opens/closes. I managed to do it for opening by simply adding animation and keyframe to CSS and apply that class to the modal, but I can't make it work for the closing. 
-
-The flow would look something like this:  `Click on button -&gt; Modal opens (with animation) -&gt; Click on close button inside the modal -&gt; modal closes (with animation).`
-
-&amp;#x200B;
-
-What I have tried to do:
-
-* created two classes in CSS - one for `fadeIn`, one for `fadeOut`
-* created state object called `animate`, which is by default set to ' '
-* on click, modal is activated by adding '`is-active`' class and `fadeIn` class
-* click on the close button inside the modal triggers a small function that changes the state of `animate` to `fadeOut` and removes `'is-active'` class from modal, so modal closes.   
-
-
-Everything works fine, except that there is no animation when the modal closes. What am I missing? Does anyone know a better way to do this?
-
-Most of the examples I saw include jQuery, but I would like to avoid it if possible. Also, examples are usually focused just on fadeIn or just fadeOut, never both.
-
-Edit: formatting
-## [11][Any open source libraries for React JS similar to Robinhood Ticker?](https://www.reddit.com/r/reactjs/comments/ii3bag/any_open_source_libraries_for_react_js_similar_to/)
-- url: https://www.reddit.com/r/reactjs/comments/ii3bag/any_open_source_libraries_for_react_js_similar_to/
----
-Hi React community,
-
-I'm wondering if there's any open source library for React JS similar to the Android one that Robinhood has: https://github.com/robinhood/ticker
-## [12][Are there a cool swipe library for React?](https://www.reddit.com/r/reactjs/comments/ii310w/are_there_a_cool_swipe_library_for_react/)
-- url: https://www.reddit.com/r/reactjs/comments/ii310w/are_there_a_cool_swipe_library_for_react/
----
-I'm searching a swipe library to my project (or a tutorial, because I dont know a lot about animations), but I cant find nothing, also, I'm not pretty sure what is the name of this effect on English (I search "react swipe component". 
-
-&amp;#x200B;
-
-This is the effect I'm searching for: 
-
-[https://i.pinimg.com/originals/06/2b/c0/062bc0cdf744f0d9959c4e265f01991a.gif](https://i.pinimg.com/originals/06/2b/c0/062bc0cdf744f0d9959c4e265f01991a.gif)
-
-&amp;#x200B;
-
-Any help?

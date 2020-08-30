@@ -56,7 +56,153 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][Matplot++: A C++ Graphics Library for Data Visualization](https://www.reddit.com/r/cpp/comments/iikdwq/matplot_a_c_graphics_library_for_data/)
+## [2][A Buffers Library for C++20: Part 1](https://www.reddit.com/r/cpp/comments/ijatqb/a_buffers_library_for_c20_part_1/)
+- url: https://vector-of-bool.github.io/2020/08/29/buffers-1.html
+---
+
+## [3][Why I like C++ attributes](https://www.reddit.com/r/cpp/comments/ijas18/why_i_like_c_attributes/)
+- url: https://mariusbancila.ro/blog/2020/08/30/why-i-like-cpp-attributes/
+---
+
+## [4][Question regarding optional virtual destructor in C++20](https://www.reddit.com/r/cpp/comments/ijbaf5/question_regarding_optional_virtual_destructor_in/)
+- url: https://www.reddit.com/r/cpp/comments/ijbaf5/question_regarding_optional_virtual_destructor_in/
+---
+Given
+
+    template&lt;typename T, bool needVirtual&gt;
+    struct C
+    {
+        virtual ~C() requires(needVirtual)
+        {}
+    
+        ~C() = default;
+    };
+    
+    int main()
+    {
+        C&lt;int, false&gt; c1;
+        C&lt;int, true&gt; c2;
+    
+        return 0;
+    }
+
+([https://godbolt.org/z/oa4vjc](https://godbolt.org/z/oa4vjc))
+
+I would expect `c1` to not have virtual destructor and, well, to not be a virtual class.
+
+Currently however **gcc** does create a virtual class:
+
+    vtable for C&lt;int, false&gt;:
+            .quad   0
+            .quad   0
+
+And **clang** seems to fail to compile:
+
+    error: virtual function cannot have a requires clause
+
+What is the correct behavior according to the standard?    
+Thank you!    
+P.S. I know one can have the desired behavior with conditional base classes.
+## [5][Uberswitch: a header-only, unobtrusive, almighty alternative to the C++ switch statement that looks just like the original but can do so much more.](https://www.reddit.com/r/cpp/comments/iithnh/uberswitch_a_headeronly_unobtrusive_almighty/)
+- url: https://www.reddit.com/r/cpp/comments/iithnh/uberswitch_a_headeronly_unobtrusive_almighty/
+---
+TL;DR: here's the code: [https://github.com/falemagn/uberswitch](https://github.com/falemagn/uberswitch)
+
+It was one boring day of a few years ago at work in which I found myself copying and pasting lots of if-then-else's and wished I'd have the ability to "switch over any type I wanted".
+
+I knew other people had given a go at it, but all the solutions I could find were not of my liking (ugly syntax, lacking functionalities, too many compromises, etc.), so I thought  I might have some fun trying to invent my own.
+
+It turns out the "holy grail" of the switches, the string switch, was totally achievable.
+
+    int string2num(std::string s) {
+        uberswitch (s) {
+            case ("one"):
+                return 1;
+    
+            case ("two"):
+                return 2;
+    
+            case ("three"):
+                return 3;
+    
+            // fallthrough works too
+            case ("four"):
+            case ("f0ur"):
+                return 4
+    
+            default: return -1;
+        }
+    }
+
+And just like one can use it to switch over a string, it can also be used to switch over an object of any other type, or a sequence of objects of any other type,  for which the `operator==()` is properly implemented (see the [README.md](https://github.com/falemagn/uberswitch/blob/master/README.md) for more examples).
+
+So, I've had this thing sitting on github for about 2 years and in production for more than 3 years, and given the talks that there are about making [pattern matching](https://github.com/mpark/patterns) part of the language, I thought I might polish the code, get rid of some parts that were overkill/badly designed and integrate [fameta::counter](https://github.com/falemagn/fameta-counter) into it, to achieve the ability to nest `uberswitch` statemements within one another.
+
+And here it is: [https://github.com/falemagn/uberswitch](https://github.com/falemagn/uberswitch)
+
+The tool uses the preprocessor in a way that shouldn't give anybody goose bumps and gcc is able to optimize the code down to something which seems to be at least on par with equivalent code that doesn't make use of `uberswitch`. Clang comes close second in the optimization race. See [on godbolt](https://godbolt.org/z/WE3E1q)
+
+PS: originally the code had a version of \`uberswitch\` that allowed to build a static map of to-be-matched-with items, but that part was to be rethought. Perhaps with your help?
+## [6][pclmulqdq Tricks](https://www.reddit.com/r/cpp/comments/ijcgw3/pclmulqdq_tricks/)
+- url: https://wunkolo.github.io/post/2020/05/pclmulqdq-tricks/
+---
+
+## [7][inheritance in C++](https://www.reddit.com/r/cpp/comments/ijc7le/inheritance_in_c/)
+- url: https://www.reddit.com/r/cpp/comments/ijc7le/inheritance_in_c/
+---
+Is it possible to call a virtual function in child class?? for more clearance of the question ,find the below code.
+
+class Person{
+
+private:
+
+int age;
+
+string name;
+
+public:
+
+virtual void getdata()
+
+{
+
+cin&gt;&gt;name&gt;&gt;age;   }
+
+virtual void putdata()
+
+{
+
+   cout&lt;&lt;name&lt;&lt;" "&lt;&lt;age;   }        };
+
+class student: public Person
+
+{
+
+int cur\_id;
+
+public:
+
+void getdata()
+
+{
+
+getdata(); 
+
+cin&gt;&gt;cur\_id;    }
+
+void putdata()  {
+
+putdata();
+
+cout&lt;&lt;cur\_id;    }      };
+
+int main()  {...}  
+ 
+
+&amp;#x200B;
+
+in the main function i make a ptr of base class, is it correct to call a virtual function in the child class like this???
+## [8][Matplot++: A C++ Graphics Library for Data Visualization](https://www.reddit.com/r/cpp/comments/iikdwq/matplot_a_c_graphics_library_for_data/)
 - url: https://www.reddit.com/r/cpp/comments/iikdwq/matplot_a_c_graphics_library_for_data/
 ---
 Data visualization can help programmers and scientists identify trends in their data and efficiently communicate these results with their peers. Modern C++ is being used for a variety of scientific applications, and this environment can benefit considerably from graphics libraries that attend the typical design goals toward scientific data visualization. Besides the option of exporting results to other environments, the customary alternatives in C++ are either non-dedicated libraries that depend on existing user interfaces or bindings to other languages. Matplot++ is a graphics library for data visualization that provides interactive plotting, means for exporting plots in high-quality formats for scientific publications, a compact syntax consistent with similar libraries, dozens of plot categories with specialized algorithms, multiple coding styles, and supports generic backends.
@@ -64,86 +210,39 @@ Data visualization can help programmers and scientists identify trends in their 
 &amp;#x200B;
 
 [https://github.com/alandefreitas/matplotplusplus](https://github.com/alandefreitas/matplotplusplus)
-## [3][Why do all guides use #using namespace std if it's supposedly really bad practice?](https://www.reddit.com/r/cpp/comments/iihj9s/why_do_all_guides_use_using_namespace_std_if_its/)
-- url: https://www.reddit.com/r/cpp/comments/iihj9s/why_do_all_guides_use_using_namespace_std_if_its/
+## [9][Custom 'diagnostics' for concepts](https://www.reddit.com/r/cpp/comments/iixi6x/custom_diagnostics_for_concepts/)
+- url: https://www.reddit.com/r/cpp/comments/iixi6x/custom_diagnostics_for_concepts/
 ---
-I'm learning my first programming language and every guide I've seen uses #using namespace std.
+I'd like to 'propose' the following simple attribute for concepts:
 
-But when I look on the internet, everyone calls it a bad habit that one should break as early as possible.
+        template &lt;typename T&gt; [[requirement_failed("reason")]]
+        concept MyConcept = /*some expression*/;
+        
+        template&lt;typename T&gt;
+        concept MyConcept2 = requires(T t) {    
+            /*some expression*/;
+        } [[requirement_failed("reason")]];
 
-I haven't been able to find a YouTube guide that doesn't use this, but all the guides I've seen have been pretty bad either way. Anyone have any recommendations or advice?
-## [4][LEAF is accepted in Boost (Lightweight Error Augmentation Framework)](https://www.reddit.com/r/cpp/comments/iijpam/leaf_is_accepted_in_boost_lightweight_error/)
-- url: https://www.reddit.com/r/cpp/comments/iijpam/leaf_is_accepted_in_boost_lightweight_error/
----
-LEAF is a lightweight error handling library for C++11. Features:
+The purpose should be quite obvious: "reason" is issued as a compiler note, when the requirements are not met.
 
-* Small single-header format, **no dependencies**.
-* Designed for maximum efficiency ("happy" path and "sad" path).
-* No dynamic memory allocations, even with heavy payloads.
-* O(1) transport of arbitrary error types (independent of call stack depth).
-* Can be used with or without exception handling.
-* Support for multi-thread programming.
+Notes: 
 
-Documentation: [https://zajo.github.io/leaf/](https://zajo.github.io/leaf/)
-## [5][Friendly reminder to mark your move constructors noexcept](https://www.reddit.com/r/cpp/comments/iikrx9/friendly_reminder_to_mark_your_move_constructors/)
-- url: https://gieseanw.wordpress.com/2020/08/28/friendly-reminder-to-mark-your-move-constructors-noexcept/
----
+There is [P1267R0](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p1267r0.pdf), but I think it's just not put or presented it in a simple enough way. Allowing the attribute on any definition that 'requires' will likely result in a mess.
 
-## [6][Lithium is now the fastest web framework (techempower.com)](https://www.reddit.com/r/cpp/comments/iiqnz5/lithium_is_now_the_fastest_web_framework/)
+Allowing it *on concept definitions only* will keep things clean. It avoids duplication for various functions making use of the same concept. It avoids over-use of the feature, as there should not be an excessive amount of concepts.
+
+In my view, concepts that are part of an interface should offer 'diagnostic' messages as a best practice.
+
+I don't think I have the guts, insight or time to make this into an official proposal, even if it is a very simple thing. So I thought, I'd just mention it here. It's also hard to imagine that something similar has not been considered yet, by some concepts committee.
+
+Anyway, I wanted to draw some attention to it.
+## [10][Lithium is now the fastest web framework (techempower.com)](https://www.reddit.com/r/cpp/comments/iiqnz5/lithium_is_now_the_fastest_web_framework/)
 - url: https://www.reddit.com/r/cpp/comments/iiqnz5/lithium_is_now_the_fastest_web_framework/
 ---
 Link to the benchmark: [https://www.techempower.com/benchmarks/#section=test&amp;runid=57b25c85-082a-4013-b572-b0939006eaff&amp;hw=ph&amp;test=composite&amp;a=2](https://www.techempower.com/benchmarks/#section=test&amp;runid=57b25c85-082a-4013-b572-b0939006eaff&amp;hw=ph&amp;test=composite&amp;a=2) 
 
 Link to lithium: [https://github.com/matt-42/lithium/](https://github.com/matt-42/lithium/)
-## [7][Meeting C++ online conference program](https://www.reddit.com/r/cpp/comments/iiqrdd/meeting_c_online_conference_program/)
-- url: https://meetingcpp.com/mcpp/online/conference.php
+## [11][Phil Nash interview about Accelerated Test Driven Design For More Productive C++ prior CppCon Academy](https://www.reddit.com/r/cpp/comments/ij7hat/phil_nash_interview_about_accelerated_test_driven/)
+- url: https://www.reddit.com/r/cpp/comments/ij7hat/phil_nash_interview_about_accelerated_test_driven/
 ---
-
-## [8][Range-Vector a header only lib, mimic the python operator [::] on it list, for c++ container.](https://www.reddit.com/r/cpp/comments/iiaqdr/rangevector_a_header_only_lib_mimic_the_python/)
-- url: https://www.reddit.com/r/cpp/comments/iiaqdr/rangevector_a_header_only_lib_mimic_the_python/
----
-Hi, I would like to present [Range-Vector](https://github.com/Ail-nare/Range-Vector) a header only lib that I made.
-
-This lib introduce a new class `range` .
-
-The class `range` has for objective to mimic the way python work with the operator `[start:end:step]` on it list. `range` will accept any container that has random access iterator ex: `std::vector`, `const char[N]` etc... .
-
-Ex:
-
-    std::vector src = {1, 2, 3, 4, 5, 6, 7};
-    
-    for (int i : range(src)(1, {}, 2))
-        std::cout &lt;&lt; i &lt;&lt; ':';
-        
-    output -&gt; "2:4:6:"
-
-The lib also works with constexpr data such as `constexpr const char[N]` which allow operation on C-style string at compile time.
-
-The lib was primarily developed for C++17, but compile in C++14. In C++17 the templates are deducted, which give a smoother typing.
-
-You can find a more detail presentation of the lib on the [repo](https://github.com/Ail-nare/Range-Vector).
-
-So, the reason of this post is to share this lib to how ever wish to use it. And to have feedback. Especially about error or warring on compilation on other platforms.
-
-Sorry for my english.
-## [9][A line by line explanation on how to use a non-CMake library in your CMake project](https://www.reddit.com/r/cpp/comments/ii1o0y/a_line_by_line_explanation_on_how_to_use_a/)
-- url: https://dominikberner.ch/cmake-find-library/
----
-
-## [10][CMake tutorial and API documentation](https://www.reddit.com/r/cpp/comments/iim8c0/cmake_tutorial_and_api_documentation/)
-- url: https://www.reddit.com/r/cpp/comments/iim8c0/cmake_tutorial_and_api_documentation/
----
-Link to tutorial here: [CMake tutorial](http://goorep.se:1001/changelog/report/rSelect/PAGE_result.htm?alias=guest&amp;set=api&amp;query=Book+pages&amp;$$TArticleBook1.ArticleBookK=7107&amp;link=%5B%5B%229F1E006D78894848838A0970E2FF0BE9zoom%22,%22Object1%22,7107%5D,%5B%2271C91DEE3C5A4FDC8EC1114C7C18033Bzoom%22,%22TArticleBook1%22,7107%5D%5D&amp;rows=25)
-
-This documentation differs some from other types of documentation. Docs are stored in a database called changelog. Parts in this  database is structured to manage software documentation. The websystem that runs this database is called Selection. It has many commands and techniques to connect, view and search for information.
-I also did a video to  explain some how this application work  
-[Getting started with changelog and selection](https://www.youtube.com/watch?v=Dmaue86qseo).
-
-Have been working with this as a side project and it is in the final stage to be released. If you have any ideas or input about the system that runs the database feel free to tell me.  
-It is quite advanced because the system is primarily made for internal use (on premise)
-
-The CMake tutorial and API documentation are expanded with more examples and text over time.
-## [11][Zero-Cost compile time str/value map mapping keys to struct member names and values to member values.](https://www.reddit.com/r/cpp/comments/iies6f/zerocost_compile_time_strvalue_map_mapping_keys/)
-- url: https://github.com/matt-42/lithium/tree/master/libraries/metamap
----
-
+[https://cppcon.org/instructor-interview-phil-nash-accelerated-test-driven-design/](https://cppcon.org/instructor-interview-phil-nash-accelerated-test-driven-design/)

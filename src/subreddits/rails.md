@@ -1,25 +1,5 @@
 # rails
-## [1][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/i8dsvv/personal_projects_show_off_your_own_project_andor/)
-- url: https://www.reddit.com/r/rails/comments/i8dsvv/personal_projects_show_off_your_own_project_andor/
----
-In this thread you can showcase your personal pet project to other redditors.
-
-Need help with a specific problem or just wanna have some extra eyeballs on your code? Ask away!
-
-A suggested format to get you started:
-
-1. **Name of your project**
-2. **A short description**
-3. **Application stack**
-4. **Link to Live app**
-5. **Link to GitHub**
-6. **You experience level**
-7. **Other information or areas that you would like advice on**
-
- 
-
-^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/igyvm1/personal_projects_show_off_your_own_project_andor/)
+## [1][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/igyvm1/personal_projects_show_off_your_own_project_andor/)
 - url: https://www.reddit.com/r/rails/comments/igyvm1/personal_projects_show_off_your_own_project_andor/
 ---
 In this thread you can showcase your personal pet project to other redditors.
@@ -39,7 +19,138 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][I applied for a RoR job!](https://www.reddit.com/r/rails/comments/iiddg4/i_applied_for_a_ror_job/)
+## [2][Rails 5.2.4, Active Storage, and S3: is it possible to implement an effective IAM/ACL policy when the app's default opinion dumps everything into the root of a single bucket?](https://www.reddit.com/r/rails/comments/ij5e6v/rails_524_active_storage_and_s3_is_it_possible_to/)
+- url: https://www.reddit.com/r/rails/comments/ij5e6v/rails_524_active_storage_and_s3_is_it_possible_to/
+---
+I have switched from Paperclip to Active Storage. While Active Storage is great, it presents a new set of problems. Paperclip let me set a bucket directory (or even a new bucket), whereas Active Storage dumps everything into the root of a single bucket. I fear that this could create security issues. Improperly set IAM policies are an easy to make no-no, and my app had been using two buckets to avoid the problem: one for public content, and one for private admin accessible content.
+
+In making that two bucket setup work with Active Storage, I tried to use the `service` option for `has_one_attached`. However, I get an ArgumentError: `unknown keyword: service`. The [edge guide](https://edgeguides.rubyonrails.org/active_storage_overview.html#setup) implies that this option works in Rails 5.2, but the [guide for 5.2.4](https://guides.rubyonrails.org/v5.2.4/active_storage_overview.html#has-one-attached) doesn't mention the `service` option at *all*.
+
+How do you lock down access to certain S3 files while being less restrictive with everything else? Is this even possible? Do I have to move to Shrine?
+## [3][Beginner ActiveStorage Help](https://www.reddit.com/r/rails/comments/ij4hh0/beginner_activestorage_help/)
+- url: https://www.reddit.com/r/rails/comments/ij4hh0/beginner_activestorage_help/
+---
+# Routes
+
+    
+    # routes.rb
+      resources :properties,          only: [:new, :create, :edit, :update, :index, :show] do
+        resources :expense_items
+      end
+    
+
+# Model
+
+    # model
+    class ExpenseItem &lt; ApplicationRecord
+      has_many_attached :attachments
+    end
+
+    # Works fine in rails console:
+    @expense_item.attachments.map { |f| f.filename } 
+    # =&gt;[#&lt;ActiveStorage::Filename:0x000056033874b940 @filename="test1.png"&gt;, 
+      #&lt;ActiveStorage::Filename:0x0000560338748d08 @filename="test2.mov"&gt;, 
+      #&lt;ActiveStorage::Filename:0x000056033893e540 @filename="test3.pdf"&gt;] 
+
+
+# Error
+But when I try to use it in my edit view, I get an error saying:
+    
+    undefined method `service_name' for #&lt;ActiveStorage::Blob:0x00007fdd4844eaa8&gt;
+    Did you mean?  service
+
+    
+# View
+
+    # edit view
+      &lt;div class="col-sm-6"&gt;
+        &lt;%= render 'shared/error_messages', object: @expense_item %&gt;
+          &lt;ul&gt;
+            &lt;% @expense_item.attachments.each do |file| %&gt;
+              &lt;li&gt;
+                &lt;% if file.previewable? %&gt;
+                  &lt;p&gt;file.filename&lt;/p&gt;
+                  &lt;%#= image_tag file.preview(resize_to_limit: [100,100]) %&gt;
+                &lt;% end %&gt;
+              &lt;/li&gt;
+            &lt;% end %&gt;
+          &lt;/ul&gt;      &lt;%= f.submit 'Update Expense', class: 'btn btn-primary mt-sm-3' %&gt;
+        &lt;% end %&gt;
+
+The exception gets thrown at the if file.previewable? line.
+
+# Controller
+
+    # expense items controller
+      def show
+        @expense_item = property.expense_items.find(params[:id])
+      end  
+
+      def edit
+        @expense_item = property.expense_items.find(params[:id])
+      end
+  
+      def update
+        @expense_item = property.expense_items.find(params[:id])
+        if @expense_item&amp;.update_attributes(expense_item_params)
+          flash[:success] = "Updated Expense Item: #{@expense_item.name}"
+          redirect_to @expense_item.property
+        else
+          render 'edit'
+        end
+      end
+    
+      def expense_item_params
+        params.require(:expense_item).permit(:name, :cost, :expense_date, :property_id, attachments: [])
+      end
+## [4][Javascript + Rails](https://www.reddit.com/r/rails/comments/ij4gvx/javascript_rails/)
+- url: https://www.reddit.com/r/rails/comments/ij4gvx/javascript_rails/
+---
+I need help guys, i have to do a form where i select a commune (a big list of this) and, when i have to selectthe condominium  it only shows me those of the selected commune. I try with onChange(Javascript), but i dont know how get this value and use in the condominium place.
+
+&amp;#x200B;
+
+I really hope you can understand to me, is difficult to me explain this in english
+## [5][Anyone taking Ruby on Rails courses?](https://www.reddit.com/r/rails/comments/iisg11/anyone_taking_ruby_on_rails_courses/)
+- url: https://www.reddit.com/r/rails/comments/iisg11/anyone_taking_ruby_on_rails_courses/
+---
+Hey guys, anyone taking [*Ruby on Rails Courses*](https://www.google.com/amp/s/onlinecoursesgalore.com/ruby-rails-udemy/amp/) on Udemy?
+## [6][Advice for multideployed app](https://www.reddit.com/r/rails/comments/iiynxg/advice_for_multideployed_app/)
+- url: https://www.reddit.com/r/rails/comments/iiynxg/advice_for_multideployed_app/
+---
+Hi guys!
+
+I have developed an application targeted to municipalities. Each municipality has its own server so in the end,  I will have one code base, and I will have sereval deployments to different servers. So far I have just one client and its working fine. I Believe in the future I will get more clients and I need to plan everything the best I can.
+
+Using Capistrano, I have set a second environment, "staging" to test before production.wn server so in the end,  I will have one code base, and I will have sereval deployments to different servers. So far I have just one client and its working fine. I Believe in the future I will get more clients and I need to plan everything the best I can.
+
+I won't lie: I feel I won't have enough control and knowledge before this step, but I need to grow the business.
+
+Any advice or tips to manage all theses servers and configurations without getting crazy?  
+
+
+Any pf you having a similar business model?
+## [7][Seed upload local files from within Heroku](https://www.reddit.com/r/rails/comments/iiutoa/seed_upload_local_files_from_within_heroku/)
+- url: https://www.reddit.com/r/rails/comments/iiutoa/seed_upload_local_files_from_within_heroku/
+---
+I have images that I need to be seeded on to my heroku database. here's how I achieve this on development server
+
+&amp;#x200B;
+
+    #seed.rb
+    ...
+    path = Dir.glob("path/to/images/logos/#{row['url']}/*.*").first
+    if path file_io = File.open(path) 
+    file_name = File.basename(path) 
+    file_ext = file_name.split('.')[1] 
+    t.logo.attach(io: file_io, filename: file_name, content_type: "image/{file_ext}") 
+    end 
+    ...
+
+Would there be a way to do it on heroku production server?
+
+UPDATE: Forgot to mention that i use GCS for file storage
+## [8][I applied for a RoR job!](https://www.reddit.com/r/rails/comments/iiddg4/i_applied_for_a_ror_job/)
 - url: https://www.reddit.com/r/rails/comments/iiddg4/i_applied_for_a_ror_job/
 ---
 After leeching for almost 2 years, while learning and building own projects I applied for a REAL RoR job. I felt confident enough to do so. This is one of those rare companies who had a decent job description without requiring 5+ years experience with none existing language 
@@ -47,11 +158,7 @@ After leeching for almost 2 years, while learning and building own projects I ap
 Thanks u/rails community for your alwasy friendly help
 
 Wish me luck!
-## [4][Anyone taking Ruby on Rails courses?](https://www.reddit.com/r/rails/comments/iisg11/anyone_taking_ruby_on_rails_courses/)
-- url: https://www.reddit.com/r/rails/comments/iisg11/anyone_taking_ruby_on_rails_courses/
----
-Hey guys, anyone taking [*Ruby on Rails Courses*](https://www.google.com/amp/s/onlinecoursesgalore.com/ruby-rails-udemy/amp/) on Udemy?
-## [5][Issue with GCS Private Key using dotenv](https://www.reddit.com/r/rails/comments/iiqtkg/issue_with_gcs_private_key_using_dotenv/)
+## [9][Issue with GCS Private Key using dotenv](https://www.reddit.com/r/rails/comments/iiqtkg/issue_with_gcs_private_key_using_dotenv/)
 - url: https://www.reddit.com/r/rails/comments/iiqtkg/issue_with_gcs_private_key_using_dotenv/
 ---
 I am trying to use active storage with GCS.  It all worked when I used keyfile.json, but when I wanted to make it work using dotenv-rails I am getting error with private key entry.
@@ -90,16 +197,7 @@ error I get
     YAML syntax error occurred while parsing /Users/admin/Desktop/ruby/rails/launchzilla/config/storage.yml. Please note that YAML must be consistently indented using spaces. Tabs are not allowed. Error: (&lt;unknown&gt;): could not find expected ':' while scanning a simple key at line 29 column 1
 
 I am pretty sure its the Private key part, because I have tested all the scenarios, and when I remove private key part the yml seem to parse corectly, but of course I get error when trying to upload, since GCS setting are incorrect then. Any ideas?
-## [6][Why Rails and Not...](https://www.reddit.com/r/rails/comments/iia406/why_rails_and_not/)
-- url: https://www.reddit.com/r/rails/comments/iia406/why_rails_and_not/
----
-Hey all, I work for a company that's considering a major redo of their e-commerce platform. We're considering a bunch of frameworks for this: Rails, Laravel, Django, and Node. So I thought I'd ask the community here what would be some good reasons for Rails over these others? Thanks so much in advance. :)
-## [7][What’s the best formula to calculate unicorn workers?](https://www.reddit.com/r/rails/comments/iijesu/whats_the_best_formula_to_calculate_unicorn/)
-- url: https://www.reddit.com/r/rails/comments/iijesu/whats_the_best_formula_to_calculate_unicorn/
----
-I am struggling to achieve the best number of unicorn for my Rails projects.
-My apps are sub-utilizing CPU and RAM.
-## [8][Newb trying to fix a CORS issue in WEBrick](https://www.reddit.com/r/rails/comments/iin972/newb_trying_to_fix_a_cors_issue_in_webrick/)
+## [10][Newb trying to fix a CORS issue in WEBrick](https://www.reddit.com/r/rails/comments/iin972/newb_trying_to_fix_a_cors_issue_in_webrick/)
 - url: https://www.reddit.com/r/rails/comments/iin972/newb_trying_to_fix_a_cors_issue_in_webrick/
 ---
 I am getting a cors issue with DELETE, so I am trying to fix it, and can't understand how to do it with WEBrick. It looks like there is an application.rb file with environment development.rb. I am dealing with a legacy system I don't know about...
@@ -175,86 +273,7 @@ Where the heck do I add DELETE/PUT header info????
        config.action_controller.asset_host = "http://localhost"
     
      end
-## [9][[HELP] What is the "rails way" of eager loading multiple joins with 'includes'](https://www.reddit.com/r/rails/comments/iighai/help_what_is_the_rails_way_of_eager_loading/)
-- url: https://www.reddit.com/r/rails/comments/iighai/help_what_is_the_rails_way_of_eager_loading/
+## [11][Why Rails and Not...](https://www.reddit.com/r/rails/comments/iia406/why_rails_and_not/)
+- url: https://www.reddit.com/r/rails/comments/iia406/why_rails_and_not/
 ---
-I'm working on a simple small 6 project to manage a competition. 
-
-I have a **team**, **user** and **trip** models where the team has_many users and user has_many trips. Trip has a mileage field. 
-
-I need the controller to get all the teams and their status. The status for now is the number of trips and total mileage per team.
-
-my view iterates the @teams and displays them in a table:
-
-    &lt;% @teams.each do |team|%&gt;
-      &lt;%= content_tag :tr, id: dom_id(team) do %&gt;
-          ... add td tags ...
-      &lt;% end %&gt;
-    &lt;% end %&gt;
-
-I had what I need doing something like the following but as you know it writes a separate query for each team. 
-
-    @team.users.joins(:trips).sum(:distance_miles)
-
-After some research it seemed like I needed eager loading with "includes". I have the following in my teams_controller:
-    
-    def index
-        # @teams = Team.includes(users: :trips).group(:id).sum(:distance_miles)
-        @teams = Team.left_joins(users: :trips).select('teams.name, SUM(trips.distance_miles) as num_miles, COUNT(trips.id) as num_trips').group(:id)
-    end
-
-So the statement that uses include doesn't get the team name so I came up with the left_join. I want to add pagination, filtering, and sorting soon and so I don't want to over complicate the initial query.
-
-That gets me what I'm looking for but is that the rails way to do something like this?
-## [10][How can I restore a PG dump from Heroku to AWS RDS instance?](https://www.reddit.com/r/rails/comments/iifcet/how_can_i_restore_a_pg_dump_from_heroku_to_aws/)
-- url: https://www.reddit.com/r/rails/comments/iifcet/how_can_i_restore_a_pg_dump_from_heroku_to_aws/
----
-Hey, I'm migrating my rails app from Heroku to AWS (after suffering at Heroku for so long smh). The app is deployed and is working on an empty database. However, I'm finding it hard to migrate the database snapshot to the RDS instance that's created with the Beanstalk Enviornment. How do I do that using the console?
-Thanks in advance :)
-## [11][Can you share some stats of your app?](https://www.reddit.com/r/rails/comments/iifa2x/can_you_share_some_stats_of_your_app/)
-- url: https://www.reddit.com/r/rails/comments/iifa2x/can_you_share_some_stats_of_your_app/
----
-I'm curious. What kind of app is it? How many req/sec does it handle? How many app instances, servers etc? Can you say something about the infrastructure required? Thanks!
-## [12][Navbar background color change on scroll in Rails portfolio?](https://www.reddit.com/r/rails/comments/iiiy26/navbar_background_color_change_on_scroll_in_rails/)
-- url: https://www.reddit.com/r/rails/comments/iiiy26/navbar_background_color_change_on_scroll_in_rails/
----
-Hi guys! I'm creating a simple web dev portfolio in Rails. I've added a banner that has half of it being a black background with white text including the links in the navbar with a transparent background so my image doesn't get cut off by it. But once you start scrolling I'd like the navbar to have a black background at least for now due to the fact that sections below the banner will have lighter backgrounds. Like my "About me" section is a very light grey. I also won't want the white links to go over any text in other sections obviously.
-
-I have done some Googling of course and found similar JavasScript code blocks that seem very simple. I have very little JS knowledge, but looking at one example on codepen, I just copied and pasted and replaced the selector names and colors with my own from my own CSS file. I'll put the CSS I have for the navbar, which is originally "header" for me. And then it looks like you just create a new selector with the same css except for the color so that the JS code can make the page switch to that CSS on scroll. I have put the JS code just in my "application.js" file and it's not working, so I'm not sure if I have the code in the right place, or if the code is even correct at all. Any help will be greatly appreciated! Also, don't worry. Once I have this completed, I'm definitely going to be learning JS ASAP as there's an optional section from my bootcamp to teach me :). If you need to see my repository for all the code [here it is.](https://github.com/Kyle-Williamson-Dev/My-Portfolio)
-
-CSS and Javascript for color changing on scroll: 
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 15px 100px;
-      z-index: 1000;
-      display: flex;
-      background: transparent;
-    }
-    
-    .nav-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 15px 100px;
-      z-index: 1000;
-      display: flex;
-      background: black;
-    }
-     
-    $(document).ready(function(){
-      $(window).scroll(function(){
-      	var scroll = $(window).scrollTop();
-    	  if (scroll &gt; 100) {
-    	    $(".nav-bg").css("background" , "black");
-    	  }
-    
-    	  else{
-                $("header").css("background" , "transparent");  	
-    	  }
-      })
-    })
+Hey all, I work for a company that's considering a major redo of their e-commerce platform. We're considering a bunch of frameworks for this: Rails, Laravel, Django, and Node. So I thought I'd ask the community here what would be some good reasons for Rails over these others? Thanks so much in advance. :)

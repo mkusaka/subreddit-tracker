@@ -1,21 +1,25 @@
 # ruby
-## [1][I've always struggled with rails schema migrations, so I made my own TUI for it!](https://www.reddit.com/r/ruby/comments/iiipbx/ive_always_struggled_with_rails_schema_migrations/)
-- url: https://github.com/jesseduffield/lazy_migrate
+## [1][A new version of Ruby Firebird Extension Library using Rust instead of C](https://www.reddit.com/r/ruby/comments/ijcfgc/a_new_version_of_ruby_firebird_extension_library/)
+- url: https://github.com/fernandobatels/rbfbclient
 ---
 
 ## [2][How environment check works in Ruby on Rails?](https://www.reddit.com/r/ruby/comments/iirt1i/how_environment_check_works_in_ruby_on_rails/)
 - url: https://medium.com/rubycademy/how-environment-check-works-in-ruby-on-rails-4cfbd0434605
 ---
 
-## [3][Linting Ruby](https://www.reddit.com/r/ruby/comments/iifp3k/linting_ruby/)
+## [3][I've always struggled with rails schema migrations, so I made my own TUI for it!](https://www.reddit.com/r/ruby/comments/iiipbx/ive_always_struggled_with_rails_schema_migrations/)
+- url: https://github.com/jesseduffield/lazy_migrate
+---
+
+## [4][Linting Ruby](https://www.reddit.com/r/ruby/comments/iifp3k/linting_ruby/)
 - url: https://kevindeisz.com/2020/08/28/linting-ruby.html
 ---
 
-## [4][How to Build Your Own Gem in Ruby](https://www.reddit.com/r/ruby/comments/ii8g4i/how_to_build_your_own_gem_in_ruby/)
+## [5][How to Build Your Own Gem in Ruby](https://www.reddit.com/r/ruby/comments/ii8g4i/how_to_build_your_own_gem_in_ruby/)
 - url: https://blog.engineyard.com/how-to-build-your-own-gem-in-ruby
 ---
 
-## [5][Newbie - Looking for private messaging and in-app notifications addons. Please help.](https://www.reddit.com/r/ruby/comments/iidz2z/newbie_looking_for_private_messaging_and_inapp/)
+## [6][Newbie - Looking for private messaging and in-app notifications addons. Please help.](https://www.reddit.com/r/ruby/comments/iidz2z/newbie_looking_for_private_messaging_and_inapp/)
 - url: https://www.reddit.com/r/ruby/comments/iidz2z/newbie_looking_for_private_messaging_and_inapp/
 ---
 I have a foreign team building me an online community using ruby and react.  I need to add two features that I hope are available as an addon or plugin.
@@ -24,7 +28,7 @@ I have a foreign team building me an online community using ruby and react.  I n
 2. In-app notifications for when users reply to your posts in our custom forum.  So, if someone replies to your post, you'd get an in-app notification badge like the facebook badges.
 
 Does anyone know of any addons or plugins that could help satisfy these requirements?
-## [6][Super Bombinhas - gameplay videos](https://www.reddit.com/r/ruby/comments/ii5m7h/super_bombinhas_gameplay_videos/)
+## [7][Super Bombinhas - gameplay videos](https://www.reddit.com/r/ruby/comments/ii5m7h/super_bombinhas_gameplay_videos/)
 - url: https://www.reddit.com/r/ruby/comments/ii5m7h/super_bombinhas_gameplay_videos/
 ---
 Hi!
@@ -34,11 +38,11 @@ I posted some gameplay videos of my [open source platformer game](https://victor
 The videos started with "NEW" are from the current version of the project. There's also a video from a past version from many years ago.
 
 Thanks!
-## [7][Dependency Graphs in Ruby - Rewind Backups](https://www.reddit.com/r/ruby/comments/ii83l5/dependency_graphs_in_ruby_rewind_backups/)
+## [8][Dependency Graphs in Ruby - Rewind Backups](https://www.reddit.com/r/ruby/comments/ii83l5/dependency_graphs_in_ruby_rewind_backups/)
 - url: https://rewind.io/blog/dependency-graphs-in-ruby/
 ---
 
-## [8][[help a novice] Refacotring my netbox wrapper](https://www.reddit.com/r/ruby/comments/ii9m89/help_a_novice_refacotring_my_netbox_wrapper/)
+## [9][[help a novice] Refacotring my netbox wrapper](https://www.reddit.com/r/ruby/comments/ii9m89/help_a_novice_refacotring_my_netbox_wrapper/)
 - url: https://www.reddit.com/r/ruby/comments/ii9m89/help_a_novice_refacotring_my_netbox_wrapper/
 ---
 So, I try to get my feet wet again with a script that helps me automating the creation of a dhcp config.
@@ -147,11 +151,7 @@ Thanks in advance and mybe you beings have some sweet tips.
 
 
 Codesnipet for readability: [https://gitlab.com/-/snippets/2009689](https://gitlab.com/-/snippets/2009689)
-## [9][The super keyword in Ruby](https://www.reddit.com/r/ruby/comments/ihs9k0/the_super_keyword_in_ruby/)
+## [10][The super keyword in Ruby](https://www.reddit.com/r/ruby/comments/ihs9k0/the_super_keyword_in_ruby/)
 - url: https://medium.com/rubycademy/the-super-keyword-a75b67f46f05
----
-
-## [10][Multipart file upload to Active Storage using GraphQL-ruby and Apollo](https://www.reddit.com/r/ruby/comments/ihqqrg/multipart_file_upload_to_active_storage_using/)
-- url: https://www.abhaynikam.me/posts/active-storage-multipart-file-upload-graphql-ruby/
 ---
 

@@ -1,55 +1,47 @@
 # javascript
-## [1][WTF Wednesday (August 26, 2020)](https://www.reddit.com/r/javascript/comments/ih1lqy/wtf_wednesday_august_26_2020/)
-- url: https://www.reddit.com/r/javascript/comments/ih1lqy/wtf_wednesday_august_26_2020/
----
-Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
-Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
-this is the place.
-
-[Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [2][Showoff Saturday (August 29, 2020)](https://www.reddit.com/r/javascript/comments/iir35f/showoff_saturday_august_29_2020/)
+## [1][Showoff Saturday (August 29, 2020)](https://www.reddit.com/r/javascript/comments/iir35f/showoff_saturday_august_29_2020/)
 - url: https://www.reddit.com/r/javascript/comments/iir35f/showoff_saturday_august_29_2020/
 ---
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][React Internals (Part 2) - Reconciliation algorithm until React 15](https://www.reddit.com/r/javascript/comments/iio4zt/react_internals_part_2_reconciliation_algorithm/)
+## [2][TIL, "JavaScript" is a trademark of Oracle Corporation in the United States](https://www.reddit.com/r/javascript/comments/ij9gxd/til_javascript_is_a_trademark_of_oracle/)
+- url: https://tsdr.uspto.gov/#caseNumber=75026640&amp;caseType=SERIAL_NO&amp;searchType=statusSearch
+---
+
+## [3][Probably more than what you want to know about node shebang (medium, not paywalled)](https://www.reddit.com/r/javascript/comments/ij031z/probably_more_than_what_you_want_to_know_about/)
+- url: https://medium.com/@alexewerlof/node-shebang-e1d4b02f731d
+---
+
+## [4][Tiny Procedural Sprite Sheet Generator](https://www.reddit.com/r/javascript/comments/ij807j/tiny_procedural_sprite_sheet_generator/)
+- url: https://codepen.io/KilledByAPixel/pen/ZEWyRwO
+---
+
+## [5][[Showoff Saturday] tsParticles - Easily add particles animations to your website (supporting also Angular, ReactJS, Vue.js, Svelte, and others) - You can also use particles.js configurations](https://www.reddit.com/r/javascript/comments/iiujfi/showoff_saturday_tsparticles_easily_add_particles/)
+- url: https://github.com/matteobruni/tsparticles
+---
+
+## [6][Javascript port of the Deepmind pysc2 - StarCraft II Learning Environment](https://www.reddit.com/r/javascript/comments/ij3e6q/javascript_port_of_the_deepmind_pysc2_starcraft/)
+- url: https://www.reddit.com/r/starcraft2/comments/ij2psi/javascript_port_of_the_deepmind_pysc2_starcraft/
+---
+
+## [7][Sharing templates with Scaffolder!](https://www.reddit.com/r/javascript/comments/ijcar8/sharing_templates_with_scaffolder/)
+- url: https://dev.to/galelmalah/sharing-templates-with-scaffolder-17a
+---
+
+## [8][React Internals (Part 2) - Reconciliation algorithm until React 15](https://www.reddit.com/r/javascript/comments/iio4zt/react_internals_part_2_reconciliation_algorithm/)
 - url: https://dev.to/burhanuday/react-internals-part-2-reconciliation-algorithm-until-react-15-8aa
 ---
 
-## [4][I created a plugin for ESLint that sorts imports in a beautiful way](https://www.reddit.com/r/javascript/comments/ii7my0/i_created_a_plugin_for_eslint_that_sorts_imports/)
-- url: https://github.com/sergeyshpadyrev/eslint-plugin-beautiful-imports
+## [9][ReadSpecWith.us -&gt; Array#map](https://www.reddit.com/r/javascript/comments/iiz0b4/readspecwithus_arraymap/)
+- url: https://readspecwith.us/#/readme?id=arrayprototypemap
 ---
 
-## [5][How to handle ES6 modules in NodeJS](https://www.reddit.com/r/javascript/comments/iimud5/how_to_handle_es6_modules_in_nodejs/)
-- url: https://www.pixelstech.net/article/1598667590-How-to-handle-ES6-modules-in-NodeJS
+## [10][handwritten.js: Convert typed text to realistic handwriting!](https://www.reddit.com/r/javascript/comments/ij2u4v/handwrittenjs_convert_typed_text_to_realistic/)
+- url: https://www.reddit.com/r/github/comments/ij2soc/handwrittenjs_convert_typed_text_to_realistic/?utm_medium=android_app&amp;utm_source=share
 ---
 
-## [6][How do you feel about source code you are working on?](https://www.reddit.com/r/javascript/comments/iiojaz/how_do_you_feel_about_source_code_you_are_working/)
-- url: /r/SoftwareEngineering/comments/iiog4k/how_do_you_feel_about_source_code_you_are_working/
----
-
-## [7][handwritten.js: Convert typed text to realistic handwriting!](https://www.reddit.com/r/javascript/comments/iisfez/handwrittenjs_convert_typed_text_to_realistic/)
-- url: https://GitHub.com/alias-rahil/handwritten.js.git/
----
-
-## [8][I recreated the C Spinning Donut in JS and made it into a HTML/JS hybrid (both a javascript file &amp; webpage).](https://www.reddit.com/r/javascript/comments/ii9onc/i_recreated_the_c_spinning_donut_in_js_and_made/)
-- url: https://spinningdonut.tk
----
-
-## [9][Yarn 2.2 - Dedupe command, faster installs, lighter binary, ...](https://www.reddit.com/r/javascript/comments/ii60en/yarn_22_dedupe_command_faster_installs_lighter/)
-- url: https://dev.to/arcanis/yarn-2-2-dedupe-faster-lighter-ha5
----
-
-## [10][I've checked reddit, what is the best JS course](https://www.reddit.com/r/javascript/comments/iiojws/ive_checked_reddit_what_is_the_best_js_course/)
-- url: https://lukaszadam.com/blog/best-javascript-course
----
-
-## [11][BrahmosJS - React without VDOM](https://www.reddit.com/r/javascript/comments/iiarqy/brahmosjs_react_without_vdom/)
-- url: https://github.com/brahmosjs/brahmos
----
-
-## [12][Setting up a Micro Frontend architecture with Vue and single-spa](https://www.reddit.com/r/javascript/comments/ii4kal/setting_up_a_micro_frontend_architecture_with_vue/)
-- url: https://medium.com/@mstrlaw/setup-a-micro-frontend-architecture-with-vue-and-single-spa-2c89528bf72f
+## [11][Ben 10 Omnitrix: Omnitrix app for your Samsung Galaxy Watch that can make your childhood dreams of becoming Ben 10 come true!](https://www.reddit.com/r/javascript/comments/iissj5/ben_10_omnitrix_omnitrix_app_for_your_samsung/)
+- url: https://github.com/andrejvujic/omnitrix/
 ---
 

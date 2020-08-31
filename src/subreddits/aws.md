@@ -1,86 +1,89 @@
 # aws
-## [1][Can I run amazon-ssm-agent on Flatcar Container Linux?](https://www.reddit.com/r/aws/comments/ijauww/can_i_run_amazonssmagent_on_flatcar_container/)
-- url: https://www.reddit.com/r/aws/comments/ijauww/can_i_run_amazonssmagent_on_flatcar_container/
+## [1][AWS workspace choppy mouse over text](https://www.reddit.com/r/aws/comments/ijwtbo/aws_workspace_choppy_mouse_over_text/)
+- url: https://www.reddit.com/r/aws/comments/ijwtbo/aws_workspace_choppy_mouse_over_text/
 ---
-Flatcar does not have package managers like yum or apt, so I can't simply install official rpm or deb.
+So I've check this on a couple different workspaces on a couple different performance levels.  Full screen or windows.  Whenever I have something open that allows typing..   notepad, notepad++, the url bar in a browser, etc..   anything I can "type" in.   The mouse movement over that text area is very choppy.  The rest of the virtual machine is very smooth.
 
-I extracted official rpm, and found that it doesn't contain lots of files. Looks like only files I need for running ssm-agent are:
+Seems to be anytime the mouse pointing turns to the "I" text cursor.
 
-* binaries in /usr/bin: ssm-document-worker, ssm-session-logger, ssm-session-worker, amazon-ssm-agent, ssm-cli
-* /etc/amazon-ssm-agent.service
-
-So If I extract those files from archive, will it work even on Container Linux?
-
-I've also tried running daemonset provided by [https://github.com/mumoshu/kube-ssm-agent](https://github.com/mumoshu/kube-ssm-agent) on one of my kubernetes cluster. While I could access to journald logs or process list with this, since it runs ssm-agent inside container, I could not access to host file system. I couldn't scroll console with up/down cursor key when reading journald logs. PgUp/PgDn didn't work either. Not sure if this is the issue with the docker image.
-
-The docker image does not contain those files which existed in rpm, I'm not sure these files are really needed.
-
-* /etc/amazon/ssm/seelog.xml.template
-* /etc/amazon/ssm/amazon-ssm-agent.json.template
-## [2][Moving to AWS - How can I get in touch with an Startup Account Manager ?](https://www.reddit.com/r/aws/comments/ij2gto/moving_to_aws_how_can_i_get_in_touch_with_an/)
-- url: https://www.reddit.com/r/aws/comments/ij2gto/moving_to_aws_how_can_i_get_in_touch_with_an/
+EDIT:  this is a windows desktop.  Using amazon workspace client.
+## [2][Log Management solutions](https://www.reddit.com/r/aws/comments/ijlx0k/log_management_solutions/)
+- url: https://www.reddit.com/r/aws/comments/ijlx0k/log_management_solutions/
 ---
-We are a steadily growing dev company we want to move to AWS and need some hand holding. We manage web apps for clients and have couple of our own digital products.
-## [3][Deploying a flask microservice EBS or ECS](https://www.reddit.com/r/aws/comments/ijch7i/deploying_a_flask_microservice_ebs_or_ecs/)
-- url: https://www.reddit.com/r/aws/comments/ijch7i/deploying_a_flask_microservice_ebs_or_ecs/
+I’m creating an application in AWS that uses Kubernetes and some bare EC2. I’m trying to find a good log management solution but all hosted offerings seem so expensive. I’m starting my own company and paying for hosting myself so cost is a big deal. I’m considering running my own log management server but not sure on which one to choose. I’ve also considered just uploading logs to CloudWatch even though their UI isn’t very good. What has others done to manage logs that doesn’t break the bank?
+## [3][My first technical blog post: A Deep Dive into Serverless Tracing with AWS X Ray &amp; Lambda](https://www.reddit.com/r/aws/comments/ijolqf/my_first_technical_blog_post_a_deep_dive_into/)
+- url: https://www.reddit.com/r/aws/comments/ijolqf/my_first_technical_blog_post_a_deep_dive_into/
 ---
-I have created a flask application, which has a connectivity to DynamoDB (so no internal databases). 
+Hey all,
 
-I have tried to deploy it to EBS, but i had a lot of issues with configuration, and i found it pretty hard to check the serverlogs, because most of the logs very server (NGINX and WSGI) specific, and it always gave a 502 bad gateway. (I'm new to AWS and trying to learn it, but i think it was hard to setup). 
+This post is a long time coming. After spending quite a few hours emailing back and forth with support and digging deep into documentation, git issues, and stack overflow (as well as good old fashion experimentation) I decided to document my research as a resource. It's quite long even after taking out a lot of irrelevant details, but I hope it gets you as far as you need to go in adding X Ray to your lambdas. 
 
-In the context i wanted to try out ECS, the idea would be, that Docker Images, would be a "safer" solution, because you can almost guarantee, that if it works on your machine, it will work on all machines. 
+If you're interested, check it out below:
 
-Furthermore, i think the ECS cluster solution looks very promising, since you can manage multiple docker containers simultaneously, and it makes scalability easier.
+[https://medium.com/@5t33/a-deep-dive-into-serverless-tracing-with-aws-x-ray-lambda-5ff1821c3c70](https://medium.com/@5t33/a-deep-dive-into-serverless-tracing-with-aws-x-ray-lambda-5ff1821c3c70)  
 
-We plan to deploy multiple microservices, which needs scalability, would you recommend ECS, or would it be more cost-efficient to deploy to EBS or an EC2 instance.
-## [4][AWS Lambda function is being run by an internal system(?)](https://www.reddit.com/r/aws/comments/iiu7d4/aws_lambda_function_is_being_run_by_an_internal/)
-- url: https://www.reddit.com/r/aws/comments/iiu7d4/aws_lambda_function_is_being_run_by_an_internal/
+
+I'd also appreciate any feedback.
+## [4][Cloudfront Compress Objects Automatically not working](https://www.reddit.com/r/aws/comments/ijwhcb/cloudfront_compress_objects_automatically_not/)
+- url: https://www.reddit.com/r/aws/comments/ijwhcb/cloudfront_compress_objects_automatically_not/
 ---
-Hi guys! I've a Cloudwatch event which runs an AWS Lambda every minute. Usually it runs on the 50th second of every minute.
+ I have setup S3 as a host for my website with cloudfront as cdn. In gtmetrix I got feedback to compress the static files to improve the performance. I have enabled Content length in CORS configuration for S3 and could see content length in response field of S3 and also have switched on Compress Objects Automatically in cloudfront but still the delivered filed is not in gzip format. Below are the s3 and cloudfront url links.
 
-From the Cloudwatch group log I noticed that sometimes the lambda is invoked on unusual time, but my code is not executed. It seems it loads the modules contained in the layer and execute some code which is not mine.
-I can see a lot of these string logged:
-`[DEBUG] 2020-08-28T19:25:34.220Z Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane`
+S3 link :- [https://s3.ap-south-1.amazonaws.com/www.peervadoo.com/assets/img/ill/ill1.jpg](https://s3.ap-south-1.amazonaws.com/www.peervadoo.com/assets/img/ill/ill1.jpg)
 
-The following minute Cloudwatch runs my code as usual, but it crashes due to time not synced in a library which is probably loaded 2 times because of this behaviour.
-## [5][EB environment refuses to terminate](https://www.reddit.com/r/aws/comments/ij7rko/eb_environment_refuses_to_terminate/)
-- url: https://www.reddit.com/r/aws/comments/ij7rko/eb_environment_refuses_to_terminate/
+Cloudfront link :- [https://www.peervadoo.com/assets/img/ill/ill1.jpg](https://www.peervadoo.com/assets/img/ill/ill1.jpg)
+## [5][How do I auto-start my Python Flask web app every time my AWS EC2 instance boots up?](https://www.reddit.com/r/aws/comments/ijuoog/how_do_i_autostart_my_python_flask_web_app_every/)
+- url: https://www.reddit.com/r/aws/comments/ijuoog/how_do_i_autostart_my_python_flask_web_app_every/
 ---
-I have an environment that I will press terminate, it’ll run for 30m, but then stop and do nothing. No EC2 instances tied to it.
+Currently what i do is &gt; Boot up instance &gt; then manually execute the following .sh file:
 
-More info:
+    sudo systemctl daemon-reload
+    sudo service nginx restart
+    sudo service gunicorn3 restart
 
-https://forums.aws.amazon.com/thread.jspa?threadID=327056
+Accordingly, i put the following in the "View/Change User Data" field, as i believe that's where startup commands are to be inputted:
 
-Would really appreciate the help.
-## [6][Can you add extra information such as a user’s name with their email in SES?](https://www.reddit.com/r/aws/comments/ij2va3/can_you_add_extra_information_such_as_a_users/)
-- url: https://www.reddit.com/r/aws/comments/ij2va3/can_you_add_extra_information_such_as_a_users/
+    #!/bin/bash
+    
+    sudo systemctl daemon-reload
+    sudo service nginx restart 
+    sudo service gunicorn3 restart
+
+However, the Python Flask web app still doesn't automatically start. Any idea what i'm doing wrong? Thanks for reading.
+## [6][Isn't AmazonSSMManagedInstanceCore still too permissive?](https://www.reddit.com/r/aws/comments/ijsrj7/isnt_amazonssmmanagedinstancecore_still_too/)
+- url: https://www.reddit.com/r/aws/comments/ijsrj7/isnt_amazonssmmanagedinstancecore_still_too/
 ---
-Hello everyone,
+The policy allows `ssm:GetParameter(s)` for everything, why is this required? This looks insecure default, it allows reading configuration for other apps.
+It probably can't read encrypted value without kms permission though.
 
-I’m looking at switching from Mailjet to AWS SES. Only thing is that I need a way to place extra information to my email list such as a user’s name. This is something that can be easily done in mailjet. Also, if this feature is possible, can you change/add a particular user’s name via some kind of api?
-
-Thanks!
-## [7][Multi-cdn with Route53 ?](https://www.reddit.com/r/aws/comments/ij0g28/multicdn_with_route53/)
-- url: https://www.reddit.com/r/aws/comments/ij0g28/multicdn_with_route53/
+I don't know if I can change statement Resource to something other than '*'. Do some permissions runs action for ec2? Most instances in my account runs on ASG, so I can't just pass instance id. Or, could I restrict actions to EC2 running on certain ASG?
+## [7][AWS CloudFront - We're logging TLS 1.3 traffic?](https://www.reddit.com/r/aws/comments/ijsjpx/aws_cloudfront_were_logging_tls_13_traffic/)
+- url: https://www.reddit.com/r/aws/comments/ijsjpx/aws_cloudfront_were_logging_tls_13_traffic/
 ---
-Can I use Route53 to setup a multi-cdn with say Cloudfront, Google CDN, Azure CDN together. I guess using a weighted policy while creating a record works but how do I point a weighted record created in aws to a resource outside say Google CDN ? Any help would be appreciated.
+TLS 1.3 for CloudFront has been on the roadmap for S2N for a while now -&gt; [https://github.com/awslabs/s2n/projects](https://github.com/awslabs/s2n/projects)
 
-Thanks in advance.
-## [8][The new route 53 UI is terrible](https://www.reddit.com/r/aws/comments/ii8ts4/the_new_route_53_ui_is_terrible/)
-- url: https://www.reddit.com/r/aws/comments/ii8ts4/the_new_route_53_ui_is_terrible/
+I've noticed in the last few months though, we're seeing TLS 1.3 traffic on our CloudFront distribution logs. Are we seeing TLS 1.3 sneakily snuck in for testing?
+
+This is pretty awesome. Wondering if anyone can shed any light on this? I haven't seen any comms recently.
+## [8][Can someone help me figure out aws api gateway?](https://www.reddit.com/r/aws/comments/ijvg8m/can_someone_help_me_figure_out_aws_api_gateway/)
+- url: https://www.reddit.com/r/aws/comments/ijvg8m/can_someone_help_me_figure_out_aws_api_gateway/
 ---
-Didn't I already post this? Oh wait no, I'm sorry. That was the new calculator UI.
+We have 2 concurrent ruby applications running which handle our systems. We're planning on phasing out the old one, but some of our clients still use the old system to make some api calls. Now we cannot ask the clients to change their process, so someone suggested that we use api gateway and emulate the old system and push data to new system though it. Would this be feasible? Can someone share a case study around this? 
 
-AWS...please stop with all the wizard nonsense. Again. I don't need a wizard to hold my hand through creating a TXT record. I need something simple, or as you now call it, the "old console". I get the desire to create an experience, but please do it where it is warranted. Who in the community is asking for you to complicate the process of creating DNS records? I would rather you take us back to the days of editing BIND files with VIM than have to work in your new console. And I am not alone! A colleague of mine today just shared his feelings to me about your new console. He said, " real DNS ballers edit BIND files with vim". If you need a wizard to create DNS records, you should not be creating DNS records.
-## [9][Over 54,000 scanned NSW (Australia) driver's licences found in open cloud storage - Security - iTnews](https://www.reddit.com/r/aws/comments/iikq97/over_54000_scanned_nsw_australia_drivers_licences/)
-- url: https://www.itnews.com.au/news/over-54000-scanned-nsw-drivers-licenses-found-in-open-cloud-storage-552544
+Any help would be appreciated. 
+Thanks.
+## [9][Prevent AWS from reading your step functions data](https://www.reddit.com/r/aws/comments/ijxv47/prevent_aws_from_reading_your_step_functions_data/)
+- url: https://blog.theodo.com/2020/08/secure-aws-step-functions-sensitive-data/
 ---
 
-## [10][AWS Web App Static File Storage](https://www.reddit.com/r/aws/comments/iixw9v/aws_web_app_static_file_storage/)
-- url: https://www.reddit.com/r/aws/comments/iixw9v/aws_web_app_static_file_storage/
+## [10][AWS Step functions alternative](https://www.reddit.com/r/aws/comments/ijxqk5/aws_step_functions_alternative/)
+- url: https://www.reddit.com/r/aws/comments/ijxqk5/aws_step_functions_alternative/
 ---
-I have a generic question.  We are moving a a dynamic web application from onsite to AWS EC2.  We plan on using multi-AZ RDS and a load balancer.    The web application has A LOT of static files.   My questions is what are the pros and cons of using S3 vs EBS vs EFS?  I know that S3 is WAY cheaper than EBS or EFS.  EBS you have to pay for the storage capacity upfront.   But if you expand EBS, do you have to take the application down to do the expansion?   EFS can dynamically grow.   Does S3 have the capacity (latency, throughput, etc)  to handle a large web application that will be used regionally.   Most of our users will be in one geographic location.   I don't see any reason to use Cloudfront for caching of static file.  Any other recommendation about this setup would be great!  
+Hello everyone
 
+I'm working on a startup that is creating a product/service that can be an alternative to AWS Step functions. 
+In essence we're creating a software orchestration platform that allows you to configure a workflow of various steps that trigger, for example, a Lamba function or another piece of code. 
 
-Clarification:  My wording for "EBS you have to pay for the storage capacity upfront" may be mis-interpreted.  I meant that if you have 5TB of data, but I provisioned the system with 10TB (for growth), you will be paying for the provisioned capacity. 
+While working on a PoC/MVP I wanted to ask some feedback on how you are currently using AWS Step functions, what are the good things and the not so good things in your opinion. 
+
+Thanks for any feedback you can give me!

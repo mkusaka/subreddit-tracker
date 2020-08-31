@@ -22,7 +22,37 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][stack traces not pointing back to source (ts) files](https://www.reddit.com/r/typescript/comments/ijc1g3/stack_traces_not_pointing_back_to_source_ts_files/)
+## [2][How do I create a data access layer correctly?](https://www.reddit.com/r/typescript/comments/ijtgcv/how_do_i_create_a_data_access_layer_correctly/)
+- url: https://www.reddit.com/r/typescript/comments/ijtgcv/how_do_i_create_a_data_access_layer_correctly/
+---
+I use TypeORM to work with the database, but I think it would be better to write my own abstraction (correct me if I'm wrong). In DAL, do I need to describe competitive methods for getting data, such as getUser (id), or develop generic methods for any data models, such as findOne&lt;User&gt;(args)?  
+
+Can you recommend resources on this topic?
+## [3][Does using await mean all the catches will just go to the try -catch block?](https://www.reddit.com/r/typescript/comments/ijl6il/does_using_await_mean_all_the_catches_will_just/)
+- url: https://www.reddit.com/r/typescript/comments/ijl6il/does_using_await_mean_all_the_catches_will_just/
+---
+I’m using like 3 awaits. I use them because I need the data of the 3 awaits before doing anything else. I put them all in a try catch block. If any of them fail it’ll go to the catch block right? How do I know which one failed?
+## [4][fp-ts equivalent of Scala Option.foreach](https://www.reddit.com/r/typescript/comments/ijlruv/fpts_equivalent_of_scala_optionforeach/)
+- url: https://www.reddit.com/r/typescript/comments/ijlruv/fpts_equivalent_of_scala_optionforeach/
+---
+So Scala has been my big introduction to functional programming and I love it. Now in my TS projects I'm embracing the fp-ts library, which clearly adheres to a different style of functional structures than Scala does.
+
+One big thing I've been looking for is foreach. In Scala if you want to execute code against the contents of an Option (if there's a value present), foreach is how you do it. I don't see any similarly named function in fp-ts tho. I've been going over the docs but I'm a bit unclear on what to use.
+
+Guidance would be appreciated. Thanks.
+## [5][Smart way to debug data - Online Editor and Chart Generator for JSON, XML, CSV, YAML documents https://jxcy.dev https://www.youtube.com/watch?v=N1ff9Sdq4w0](https://www.reddit.com/r/typescript/comments/ijh69d/smart_way_to_debug_data_online_editor_and_chart/)
+- url: https://i.redd.it/udbudxkji6k51.png
+---
+
+## [6][TSDoc annotation or describing objects in code help?](https://www.reddit.com/r/typescript/comments/ijnerg/tsdoc_annotation_or_describing_objects_in_code/)
+- url: https://www.reddit.com/r/typescript/comments/ijnerg/tsdoc_annotation_or_describing_objects_in_code/
+---
+I inherited a project, and they they didn't use types anywhere, even in obvious places. Is it possible in TSDoc (or an alternative) specify the types of variables and the structure of objects like you can in JS/PHPDoc?
+
+The docs make me think that they removed that in favor of using the built-in strict typing. Am I mistaken?
+
+If the above won't work, is there a compromise between comments and the built-in typing? I don't want to add types to code unless I'm actually working on it, where as I don't mind taking a minute and adding comments to an entire class.
+## [7][stack traces not pointing back to source (ts) files](https://www.reddit.com/r/typescript/comments/ijc1g3/stack_traces_not_pointing_back_to_source_ts_files/)
 - url: https://www.reddit.com/r/typescript/comments/ijc1g3/stack_traces_not_pointing_back_to_source_ts_files/
 ---
 Other than `sourceMap: true`, do any other settings need to be configured to get stack traces to point to typescript files? My stack traces are hard to follow because they point to the compiled js files.
@@ -56,7 +86,25 @@ current settings in tsconfig.json:
       ],
       "exclude": ["node_modules", "**/*.test.ts", "compiled"]
     }
-## [3][Ways to ensure the properties of an interface are of certain types?](https://www.reddit.com/r/typescript/comments/iixvio/ways_to_ensure_the_properties_of_an_interface_are/)
+## [8][TypeScript First Test Framework](https://www.reddit.com/r/typescript/comments/ijie1y/typescript_first_test_framework/)
+- url: https://www.reddit.com/r/typescript/comments/ijie1y/typescript_first_test_framework/
+---
+Hi. I am starting to work on a TypeScript first test framework.
+
+All major JavaScript frameworks are JavaScript first and require transpilation before files can be tested. This includes Jest, Mocha and Ava, with different degrees of support.
+
+The new test framework I am proposing would need to implement the following features:
+
+1. Support TypeScript source files and TypeScript test files out of the box.
+2. Still be BDD based, with \`describe\` and \`it\` keywords.
+3. Support arrow functions for test definitions, passing the test context to the callbacks.
+4. Support async and parallel testing.
+5. MIT License.
+
+I was wondering if anyone would be interested to be day-1 collaborators on this project?
+
+Thanks!
+## [9][Ways to ensure the properties of an interface are of certain types?](https://www.reddit.com/r/typescript/comments/iixvio/ways_to_ensure_the_properties_of_an_interface_are/)
 - url: https://www.reddit.com/r/typescript/comments/iixvio/ways_to_ensure_the_properties_of_an_interface_are/
 ---
 Currently, when extending a type that has index signatures, like this:
@@ -88,7 +136,11 @@ Currently I'm using a utility type to help me:
       password: 'admin',
     }; // error: ...'password' does not exist in type...
 I wonder if there are other ways to do it?
-## [4][Why is any nonsense assignable to InstanceType&lt;...&gt;[] here?](https://www.reddit.com/r/typescript/comments/iiqcv9/why_is_any_nonsense_assignable_to_instancetype/)
+## [10][Spotify shuffler](https://www.reddit.com/r/typescript/comments/ijebkz/spotify_shuffler/)
+- url: https://www.reddit.com/r/typescript/comments/ijebkz/spotify_shuffler/
+---
+I know absolutely nothing about coding, (went to a very basic course in html, wordpress and css and that's it) but I was wondering if there is a way you could reorganise your songs in your spotify playlist? Shuffle them around
+## [11][Why is any nonsense assignable to InstanceType&lt;...&gt;[] here?](https://www.reddit.com/r/typescript/comments/iiqcv9/why_is_any_nonsense_assignable_to_instancetype/)
 - url: https://www.reddit.com/r/typescript/comments/iiqcv9/why_is_any_nonsense_assignable_to_instancetype/
 ---
 I want to create a function which accepts a class and a callback, which also accepts this class and returns its instances. It's not very practical, but it is a simplified example of my problem.
@@ -116,97 +168,3 @@ The second call to `test` allows me to return anything from the callback, despit
 Is there a way to fix this and make it report the correct error?
 
 Thanks!
-## [5][Maybe&lt;string&gt; vs string | null](https://www.reddit.com/r/typescript/comments/ii88m3/maybestring_vs_string_null/)
-- url: https://www.reddit.com/r/typescript/comments/ii88m3/maybestring_vs_string_null/
----
-Hi there! Quick question to the functional buffs out there:
-
-What's the advantage of using a `Maybe&lt;string&gt;` type over using `string | null`? With strict null checking you still need to handle the null case, but you avoid using external libraries and having to introduce new concepts to the other developers on the team.
-
-Same for `Either&lt;Error, string&gt;` and `string | Error`.
-## [6][Writing testable code that is easy to reason with . A function that executes a sequence of injected functions (17 functions injected in total, that none has a dependency injected). Should I make it a class with no dependency injection , and expose the functions as methods (so they are testable)?](https://www.reddit.com/r/typescript/comments/iie9f4/writing_testable_code_that_is_easy_to_reason_with/)
-- url: https://www.reddit.com/r/typescript/comments/iie9f4/writing_testable_code_that_is_easy_to_reason_with/
----
-So I have a function (lets call it parent) which has the single responsibility to accept a big list of  arguments and then provide the appropriate parameters to a sequence of functions that are executed (17 functions in total,lets call them children) . There is also some minor logic inside parent that involves some returned values from child functions ,some type checking and argument initialization, but it is nothing special or complex .
-
-I think injecting 17 functions as parameters is an anti pattern in general . Also these child functions do not depend on injected dependencies and have a clear and simple single responsibility .
-
-What I thought would be an easy to reason with , but also testable solution ,is to gather all those functions in a big class as methods . The class instances will expose those methods so they will be testable . But the class will expose also the parent function which executes all the child functions .
-
-So I can go write a test file that can test each child function in isolation but also in combination (in fact whatever combination I like) with the other child functions .
-
-What would you do in this case ? Does the big class sound good ? I am unable to reason with dependency injection here . I find that it does more harm than good. The child functions are really specific for the parent function and I believe they will never be reused anywhere else .
-## [7][ts-expect-error . Is it justified to use it when in tests ?](https://www.reddit.com/r/typescript/comments/iic8jx/tsexpecterror_is_it_justified_to_use_it_when_in/)
-- url: https://www.reddit.com/r/typescript/comments/iic8jx/tsexpecterror_is_it_justified_to_use_it_when_in/
----
-More specifically I happen to test a function and I give to it some parameters of wrong type .
-## [8][what else besides "sourceMap": true is needed to setup source mapping?](https://www.reddit.com/r/typescript/comments/iidy9b/what_else_besides_sourcemap_true_is_needed_to/)
-- url: https://www.reddit.com/r/typescript/comments/iidy9b/what_else_besides_sourcemap_true_is_needed_to/
----
-I'm trying to setup source mapping so that VsCode can attach a debugger session to my TS source files but I can tell from the stack traces that the node process is still pointing to the JS files inside `/compiled`
-
-What else needs to be done before a debugger can map to TS source files? The process I'm running is at `./compiled/server.js`
-
-My tsconfig.json:
-
-    {
-      "compilerOptions": {
-        "target": "es5",
-        "lib": [
-          "dom",
-          "dom.iterable",
-          "esnext"
-        ],
-        "allowJs": true,
-        "skipLibCheck": true,
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
-        "strict": true,
-        "forceConsistentCasingInFileNames": true,
-        "module": "CommonJS",
-        "moduleResolution": "node",
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "sourceMap": true,
-        "rootDir": "src",
-        "outDir": "compiled"
-      },
-      "include": [
-        "src", "src/__mocks__"
-      ],
-      "exclude": ["node_modules", "**/*.test.ts", "compiled"]
-    }
-## [9][Disable duck typing for literal types](https://www.reddit.com/r/typescript/comments/ii4vsf/disable_duck_typing_for_literal_types/)
-- url: https://www.reddit.com/r/typescript/comments/ii4vsf/disable_duck_typing_for_literal_types/
----
-Is there a way to get TypeScript to warn me about the following code?
-
-```typescript
-type Name = string
-function f (_: Name): void {}
-
-const s: string = 'test'
-// This should ideally give me an error:
-// Argument of type 'string' is not assignable to parameter of type 'Name'
-f(s)
-```
-
-I know that in most cases you would not want to get an error, but in this case it would allow me to combine it with a type guard like:
-
-```typescript
-function isName (name: string): name is Name {
-  return name.length &lt; 30
-}
-```
-
-I think there was a discussion on this topic in the TypeScript repo, but I cannot find it anymore.
-## [10][Opinion on explicit return types?](https://www.reddit.com/r/typescript/comments/ihpnme/opinion_on_explicit_return_types/)
-- url: https://www.reddit.com/r/typescript/comments/ihpnme/opinion_on_explicit_return_types/
----
-Hi All,
-
-What is your opinion on always mentioning return types on each of your method? I mean for simple methods like `checkSomething(),`it's obvious to me it should not be returning and it most likely a void. Or something like `getURL`, also seems something which will return a string. Do you guys have any strong opinions on why adding types should be absolutely necessary?
-## [11][Faven: a web tool to generate favicons with alpinejs](https://www.reddit.com/r/typescript/comments/ihpw9k/faven_a_web_tool_to_generate_favicons_with/)
-- url: https://faven.netlify.app/
----
-

@@ -111,74 +111,65 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/i1u8a4/whos_hiring_august_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][I updated my RPG game made with React.js and wanted to share](https://www.reddit.com/r/reactjs/comments/ij2j27/i_updated_my_rpg_game_made_with_reactjs_and/)
-- url: https://v.redd.it/0m1gtthuy0k51
+## [3][I need germans to evaluate my website for my master thesis! Also for every participant 2 Euro will be donated to a non-profit organization!](https://www.reddit.com/r/reactjs/comments/ijwug5/i_need_germans_to_evaluate_my_website_for_my/)
+- url: https://www.reddit.com/r/reactjs/comments/ijwug5/i_need_germans_to_evaluate_my_website_for_my/
+---
+It is a website with information given only in german so it makes sense I guess. The topic is about web accessibility and I would appreciate it if a lot of diverse people would test the page (of course this can't be forced lol).
+
+Btw. The website is created with React and the Material UI library was being used.
+
+This the procedure of your testing:
+
+[https://docs.google.com/document/d/1HQSktM-2NCPXksuHAX12zIS9iCrHtEdRfx8hgvHI4UA/edit?usp=sharing](https://docs.google.com/document/d/1HQSktM-2NCPXksuHAX12zIS9iCrHtEdRfx8hgvHI4UA/edit?usp=sharing)
+
+And this is the survey:
+
+[https://forms.gle/3U4ptLWaviRqUDmFA](https://forms.gle/3U4ptLWaviRqUDmFA)
+
+Pls read the procedure first.
+
+If you have any suggestion where I can post my request, too, to gain as many people as possible regarding the topic accessibility on the web, would be really helpful!
+## [4][How to test React.js application with Jest and Enzyme — testing tutorial for beginners](https://www.reddit.com/r/reactjs/comments/ijx0u4/how_to_test_reactjs_application_with_jest_and/)
+- url: https://medium.com/fabisiakradoslaw/how-to-test-react-js-application-with-jest-and-enzyme-testing-tutorial-for-beginners-7f3a200f29d7?source=friends_link&amp;sk=5cae2e6724c6551957796b94c5631751
 ---
 
-## [4][Egghead.io is building the next version of Egghead.io on Next.js and it is open source](https://www.reddit.com/r/reactjs/comments/iix6w3/eggheadio_is_building_the_next_version_of/)
-- url: https://github.com/eggheadio/egghead-next
----
-
-## [5][Is it fine to have two react projects in one server ?](https://www.reddit.com/r/reactjs/comments/ijbogc/is_it_fine_to_have_two_react_projects_in_one/)
-- url: https://www.reddit.com/r/reactjs/comments/ijbogc/is_it_fine_to_have_two_react_projects_in_one/
----
-So I'm making a project for a company of an relative, and I can't wrap my head around this problem.
-
-The project will consist of a static single page with a contact form that registers clients on the backend and a dashboard to view and manage thoose clients.
-
-My question is **Is it fine to have two different React apps on the same express server ?** At the moment I'm using React Router but I feel like having the main website has a static website (also to have meta tags to be easier to appear on google search) and a seperate react app for a dashboard is way cleaner and easier to work with.
-
-I would think this wouldn't take much unnecessary space if I use something like Monorepo since it would also help making a React Native app down the line.
-
-What are your thoughts and any ideas on making the Dashboard and authentication for it.
-## [6][React Animated Number Tutorial - How to build an animated counter](https://www.reddit.com/r/reactjs/comments/iit05g/react_animated_number_tutorial_how_to_build_an/)
-- url: https://www.youtube.com/watch?v=vt78M8llvZc&amp;feature=share
----
-
-## [7][I made a clone of Orkut in React](https://www.reddit.com/r/reactjs/comments/iiwwtw/i_made_a_clone_of_orkut_in_react/)
-- url: https://www.reddit.com/r/reactjs/comments/iiwwtw/i_made_a_clone_of_orkut_in_react/
----
- [https://orkutnostalgia.netlify.app/](https://orkutnostalgia.netlify.app/) 
-
-&amp;#x200B;
-
-I made a full-stack clone of orkut, which was a very popular social media in the late 2000's and early 2010's in Brazil and India. The goal was to have projects for my portfolio since I'm a beginner web dev.
-
-  
-I added a few of the features that existed back then, like photo uploading, community creation, very basic feed, friend suggestions, scraps, testimonials etc. And sorry it's not in English. Maybe I'll add internationalization in the future.  
-
-
-Some technologies I used:
-
-ReactJS, Styled Components, GraphQL,  Apollo, NodeJS, PostgreSQL, Sequelize ORM
-## [8][Need Help With OAuth and Popup window](https://www.reddit.com/r/reactjs/comments/ijcma8/need_help_with_oauth_and_popup_window/)
-- url: https://www.reddit.com/r/reactjs/comments/ijcma8/need_help_with_oauth_and_popup_window/
----
-Hey!
-
-I'm making an app where you can login with Spotify. Currently when you click Sign In, it takes you to '/login' page and I send a request to my Node server and I do all of the OAuth process from backend. 
-
-That works alright, but what I want to do is open a popup, sign in and then close it but on the main window, the page won't change but It'll just refresh. 
-
-How do I check if it succeeded on the main window of my app? 
-
-&amp;#x200B;
-
-I know this is not really clear but I hope someone gets what I mean...
-## [9][Why Next.js Is the Future of React](https://www.reddit.com/r/reactjs/comments/ijchrc/why_nextjs_is_the_future_of_react/)
+## [5][Why Next.js Is the Future of React](https://www.reddit.com/r/reactjs/comments/ijchrc/why_nextjs_is_the_future_of_react/)
 - url: https://www.youtube.com/watch?v=rtgbaKBhdkk
 ---
 
-## [10][Advice for launching a React-based visual editing CMS](https://www.reddit.com/r/reactjs/comments/ija0to/advice_for_launching_a_reactbased_visual_editing/)
-- url: https://www.reddit.com/r/reactjs/comments/ija0to/advice_for_launching_a_reactbased_visual_editing/
----
-I am creating ReactBricks.com, a block-based CMS with visual editing. I'm not active on Reddit (I am on Twitter as @matfrana). What's the best way to launch on the React subreddit? Thank you, Matteo
-## [11][Using React Hook Form to Handle Field Array in a Modal Form and More..](https://www.reddit.com/r/reactjs/comments/ij2wt5/using_react_hook_form_to_handle_field_array_in_a/)
-- url: https://www.youtube.com/watch?v=61AlrA5BXzg
+## [6][Build a TikTok Clone with React and Firebase - CodeSource.io](https://www.reddit.com/r/reactjs/comments/ijxgwj/build_a_tiktok_clone_with_react_and_firebase/)
+- url: https://codesource.io/build-a-tik-tok-clone-with-react-and-firebase/
 ---
 
-## [12][Convert react app into a single embedable script tag](https://www.reddit.com/r/reactjs/comments/ij9h2n/convert_react_app_into_a_single_embedable_script/)
-- url: https://www.reddit.com/r/reactjs/comments/ij9h2n/convert_react_app_into_a_single_embedable_script/
+## [7][Reactjs Crash Course in 45 minutes for beginners](https://www.reddit.com/r/reactjs/comments/ijwe96/reactjs_crash_course_in_45_minutes_for_beginners/)
+- url: https://www.youtube.com/watch?v=Tp7FYUE1aHA&amp;feature=youtu.be
 ---
-I've created a chat widget using create react app and would like to embed it on websites.
-However, I haven't been able to make it embedable. Any simple solutions which output one JS file and embedding it should work? I tried googling but the solution I got didn't work anymore.
+
+## [8][For Picture in Picture early adapters: react-use-pip React Hook](https://www.reddit.com/r/reactjs/comments/ijxnki/for_picture_in_picture_early_adapters_reactusepip/)
+- url: https://github.com/DawChihLiou/react-use-pip
+---
+
+## [9][Help...](https://www.reddit.com/r/reactjs/comments/ijx8lm/help/)
+- url: https://www.reddit.com/r/reactjs/comments/ijx8lm/help/
+---
+Can somebody help me to resolve the error ... 
+I have made a component under src in a folder I want to include that inside my app. Js file and I have written it as  import '. /ProgressBar.js' . 
+It gives me error that ProgressBar is not defined, so what should I write in the path while importing it?
+## [10][How to display datepicker from ref?](https://www.reddit.com/r/reactjs/comments/ijwvl4/how_to_display_datepicker_from_ref/)
+- url: https://www.reddit.com/r/reactjs/comments/ijwvl4/how_to_display_datepicker_from_ref/
+---
+Hello, I'm wrapping the html input with date type in a custom component to make my own datepicker.
+
+Currently I'm trying to open the input's date picker through a ref to said input but I cannot find any method to do that. Anyone knows how the picker is displayed when clicking on the default picker icon?
+## [11][React Hooks Tutorial — Learn by Building](https://www.reddit.com/r/reactjs/comments/ijwem4/react_hooks_tutorial_learn_by_building/)
+- url: https://medium.com/@dtkatz/react-hooks-tutorial-learn-by-building-b90ec4db2b8e
+---
+
+## [12][Material UI - is there a way to fade out/fade in (animate) components](https://www.reddit.com/r/reactjs/comments/ijwdxn/material_ui_is_there_a_way_to_fade_outfade_in/)
+- url: https://www.reddit.com/r/reactjs/comments/ijwdxn/material_ui_is_there_a_way_to_fade_outfade_in/
+---
+Hello, 
+
+I’m trying to do a fade in and fade out  my component, I have tried the &lt;Fade&gt; material ui api, but unable to achieve the desired opacity
+
+Thanks.

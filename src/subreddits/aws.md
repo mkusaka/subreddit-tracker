@@ -1,89 +1,99 @@
 # aws
-## [1][AWS workspace choppy mouse over text](https://www.reddit.com/r/aws/comments/ijwtbo/aws_workspace_choppy_mouse_over_text/)
-- url: https://www.reddit.com/r/aws/comments/ijwtbo/aws_workspace_choppy_mouse_over_text/
+## [1][Week of Aug 31st - What AWS tips do you have?](https://www.reddit.com/r/aws/comments/ik3van/week_of_aug_31st_what_aws_tips_do_you_have/)
+- url: https://www.reddit.com/r/aws/comments/ik3van/week_of_aug_31st_what_aws_tips_do_you_have/
 ---
-So I've check this on a couple different workspaces on a couple different performance levels.  Full screen or windows.  Whenever I have something open that allows typing..   notepad, notepad++, the url bar in a browser, etc..   anything I can "type" in.   The mouse movement over that text area is very choppy.  The rest of the virtual machine is very smooth.
-
-Seems to be anytime the mouse pointing turns to the "I" text cursor.
-
-EDIT:  this is a windows desktop.  Using amazon workspace client.
-## [2][Log Management solutions](https://www.reddit.com/r/aws/comments/ijlx0k/log_management_solutions/)
-- url: https://www.reddit.com/r/aws/comments/ijlx0k/log_management_solutions/
+Share your tips with the community.
+## [2][Any ideas on why my Amazon workspace account gets progressively more laggy from logging on](https://www.reddit.com/r/aws/comments/ikiq0t/any_ideas_on_why_my_amazon_workspace_account_gets/)
+- url: https://www.reddit.com/r/aws/comments/ikiq0t/any_ideas_on_why_my_amazon_workspace_account_gets/
 ---
-I’m creating an application in AWS that uses Kubernetes and some bare EC2. I’m trying to find a good log management solution but all hosted offerings seem so expensive. I’m starting my own company and paying for hosting myself so cost is a big deal. I’m considering running my own log management server but not sure on which one to choose. I’ve also considered just uploading logs to CloudWatch even though their UI isn’t very good. What has others done to manage logs that doesn’t break the bank?
-## [3][My first technical blog post: A Deep Dive into Serverless Tracing with AWS X Ray &amp; Lambda](https://www.reddit.com/r/aws/comments/ijolqf/my_first_technical_blog_post_a_deep_dive_into/)
-- url: https://www.reddit.com/r/aws/comments/ijolqf/my_first_technical_blog_post_a_deep_dive_into/
+(Apologies if this is not the place to ask this) I am currently working from home using Amazon Workspace to log into my work desktop. I did this for a couple months between March and May this year with no issue, was put on to furlough and have returned to working from home since early July.
+
+Since then I have had continuous lag both on the internet and over the phone (via the ring central app to call using my browser). However this is not my connection (150 download 15 upload) nor my hardware. Also it seemingly gets progressively worse over the work day, both my phone and my general work has no issues then begins to get worse.
+
+I have asked my IT department to have a look at it but they are pretty useless and have ‘found no issues’ with my account although around 2 weeks ago they reset my account to a previous state and one of the IT guys advised there was a major fault of some description with my account although he could not specify what nor did he fix it.
+
+Apologies for the boring, long explanation but If anyone has any suggestions or ideas as to what the issue could be I would be very grateful as I have been told that I will have to return to the office if this can’t be fixed and I would rather not have to travel in 2 hours+ each day (plus the costs of trains) but I have no IT knowhow so have no idea how to fix this...
+## [3][Bottlerocket OS 1.0 release](https://www.reddit.com/r/aws/comments/ik3smc/bottlerocket_os_10_release/)
+- url: https://github.com/bottlerocket-os/bottlerocket/releases/tag/v1.0.0
 ---
-Hey all,
 
-This post is a long time coming. After spending quite a few hours emailing back and forth with support and digging deep into documentation, git issues, and stack overflow (as well as good old fashion experimentation) I decided to document my research as a resource. It's quite long even after taking out a lot of irrelevant details, but I hope it gets you as far as you need to go in adding X Ray to your lambdas. 
-
-If you're interested, check it out below:
-
-[https://medium.com/@5t33/a-deep-dive-into-serverless-tracing-with-aws-x-ray-lambda-5ff1821c3c70](https://medium.com/@5t33/a-deep-dive-into-serverless-tracing-with-aws-x-ray-lambda-5ff1821c3c70)  
-
-
-I'd also appreciate any feedback.
-## [4][Cloudfront Compress Objects Automatically not working](https://www.reddit.com/r/aws/comments/ijwhcb/cloudfront_compress_objects_automatically_not/)
-- url: https://www.reddit.com/r/aws/comments/ijwhcb/cloudfront_compress_objects_automatically_not/
+## [4][JWT auth using React + Node (Cognito+S3+EC2)](https://www.reddit.com/r/aws/comments/ikjnw0/jwt_auth_using_react_node_cognitos3ec2/)
+- url: https://www.reddit.com/r/aws/comments/ikjnw0/jwt_auth_using_react_node_cognitos3ec2/
 ---
- I have setup S3 as a host for my website with cloudfront as cdn. In gtmetrix I got feedback to compress the static files to improve the performance. I have enabled Content length in CORS configuration for S3 and could see content length in response field of S3 and also have switched on Compress Objects Automatically in cloudfront but still the delivered filed is not in gzip format. Below are the s3 and cloudfront url links.
+Hello folks,
 
-S3 link :- [https://s3.ap-south-1.amazonaws.com/www.peervadoo.com/assets/img/ill/ill1.jpg](https://s3.ap-south-1.amazonaws.com/www.peervadoo.com/assets/img/ill/ill1.jpg)
+So I have configured my node application to fetch the jwks.json with the pair of keys and verify the token received in the headers (Autorization: Bearer \[token\]) in order to allow access to the API routes.
 
-Cloudfront link :- [https://www.peervadoo.com/assets/img/ill/ill1.jpg](https://www.peervadoo.com/assets/img/ill/ill1.jpg)
-## [5][How do I auto-start my Python Flask web app every time my AWS EC2 instance boots up?](https://www.reddit.com/r/aws/comments/ijuoog/how_do_i_autostart_my_python_flask_web_app_every/)
-- url: https://www.reddit.com/r/aws/comments/ijuoog/how_do_i_autostart_my_python_flask_web_app_every/
+The problem is within React app. So I send the token in the request headers, however I put the token string by hand. How I make to extract it (by code) from the cookie and send it along the request?
+
+Also, is there a more simple approach out there?
+## [5][Anyone ever successfully exported an EC2 instance and run it in virtualbox?](https://www.reddit.com/r/aws/comments/ike3ex/anyone_ever_successfully_exported_an_ec2_instance/)
+- url: https://www.reddit.com/r/aws/comments/ike3ex/anyone_ever_successfully_exported_an_ec2_instance/
 ---
-Currently what i do is &gt; Boot up instance &gt; then manually execute the following .sh file:
+I launched and successfully ran t-mobile's [tpotce](https://github.com/telekom-security/tpotce) in my AWS account to capture honeypot data. Once I was done, I wanted to shut off and export the instance to keep for review purposes. I exported the instance following the documentation [here](https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html). The syntax for the CLI command I used was 
 
-    sudo systemctl daemon-reload
-    sudo service nginx restart
-    sudo service gunicorn3 restart
+    aws ec2 create-instance-export-task --description "debian honeypot" --instance-id i-xxxxxxxxxxxxxxx --target-environment vmware --export-to-s3-task DiskImageFormat=vmdk,ContainerFormat=ova,S3Bucket=bucket_name
 
-Accordingly, i put the following in the "View/Change User Data" field, as i believe that's where startup commands are to be inputted:
+The AMI I used was debian-10-amd64-20200610-293 (ami-0c24eddbea3a65909). Anytime i try to boot the VM in virtualbox, the image stops booting [here](https://raw.githubusercontent.com/remotephone/remotephone.github.io/master/images/stuck_ec2_boot.png).
 
-    #!/bin/bash
-    
-    sudo systemctl daemon-reload
-    sudo service nginx restart 
-    sudo service gunicorn3 restart
+I can boot the VM successfully in VMWare player, but networking is completely jacked and I am much more comfortable troubleshooting that in virtualbox. It can't see my interfaces that VMWare player is providing and I've tried a bunch of different things, including using VMWare's network manager tool to add, modify, remove, replace, and whatever else I could do to the network interfaces to get them to come up and no dice. 
 
-However, the Python Flask web app still doesn't automatically start. Any idea what i'm doing wrong? Thanks for reading.
-## [6][Isn't AmazonSSMManagedInstanceCore still too permissive?](https://www.reddit.com/r/aws/comments/ijsrj7/isnt_amazonssmmanagedinstancecore_still_too/)
-- url: https://www.reddit.com/r/aws/comments/ijsrj7/isnt_amazonssmmanagedinstancecore_still_too/
+In virtualbox, I've tried a whole host of other things, but the main ones is reimporting the OVA an unchecking the import as VDI option (so running it both as a VMDK and a VDI). I've also taken the disk I successfully booted in VMWare and used it as the boot disk in virtualbox with the same problem. Finally, I can mount the disk if I add it as a secondary disk, I  just can't boot from it. 
+
+Thanks!
+## [6][ECS Task vs AWS Batch](https://www.reddit.com/r/aws/comments/ikhe17/ecs_task_vs_aws_batch/)
+- url: https://www.reddit.com/r/aws/comments/ikhe17/ecs_task_vs_aws_batch/
 ---
-The policy allows `ssm:GetParameter(s)` for everything, why is this required? This looks insecure default, it allows reading configuration for other apps.
-It probably can't read encrypted value without kms permission though.
+I always use ECS tasks when I have long running processes that needs to be scheduled or needs to run when a specific S3 event occours. So I was wondering: what's the benefit or use case for AWS Batch compared to an ECS task?
 
-I don't know if I can change statement Resource to something other than '*'. Do some permissions runs action for ec2? Most instances in my account runs on ASG, so I can't just pass instance id. Or, could I restrict actions to EC2 running on certain ASG?
-## [7][AWS CloudFront - We're logging TLS 1.3 traffic?](https://www.reddit.com/r/aws/comments/ijsjpx/aws_cloudfront_were_logging_tls_13_traffic/)
-- url: https://www.reddit.com/r/aws/comments/ijsjpx/aws_cloudfront_were_logging_tls_13_traffic/
+&amp;#x200B;
+
+Thanks!
+## [7][Finding and deleting orphaned snapshots using AWS CLI in command prompt](https://www.reddit.com/r/aws/comments/ikk2x8/finding_and_deleting_orphaned_snapshots_using_aws/)
+- url: https://www.reddit.com/r/aws/comments/ikk2x8/finding_and_deleting_orphaned_snapshots_using_aws/
 ---
-TLS 1.3 for CloudFront has been on the roadmap for S2N for a while now -&gt; [https://github.com/awslabs/s2n/projects](https://github.com/awslabs/s2n/projects)
+Hi there guys, hope you're well.
 
-I've noticed in the last few months though, we're seeing TLS 1.3 traffic on our CloudFront distribution logs. Are we seeing TLS 1.3 sneakily snuck in for testing?
+I have a pretty straightforward problem. I have a bunch of orphaned EBS snapshots that need to be deleted. When upgrading our software we create these snapshots should anything go wrong. However, as some of you may be aware, even if EC2s are terminated, the snapshots remain and thus need to be deleted manually. There are quite a few articles on this issue online, however I noticed most of them have solutions which requires usage of bash. 
 
-This is pretty awesome. Wondering if anyone can shed any light on this? I haven't seen any comms recently.
-## [8][Can someone help me figure out aws api gateway?](https://www.reddit.com/r/aws/comments/ijvg8m/can_someone_help_me_figure_out_aws_api_gateway/)
-- url: https://www.reddit.com/r/aws/comments/ijvg8m/can_someone_help_me_figure_out_aws_api_gateway/
+I've also found others such as:
+
+    comm -23 &lt;(aws ec2 describe-snapshots --owner-ids AWS-ACCOUNT-ID --query 'Snapshots[*].SnapshotId' --output text | tr '\t' '\n' | sort) &lt;(aws ec2 describe-volumes --query 'Volumes[*].SnapshotId' --output text | tr '\t' '\n' | sort | uniq)
+
+Any ideas on a workable solution that could be used in CMD??? Thanks.
+## [8][[NEED SOME INPUT] What’re some tips for someone starting with Big Data on AWS?](https://www.reddit.com/r/aws/comments/ik78vd/need_some_input_whatre_some_tips_for_someone/)
+- url: https://www.reddit.com/r/aws/comments/ik78vd/need_some_input_whatre_some_tips_for_someone/
 ---
-We have 2 concurrent ruby applications running which handle our systems. We're planning on phasing out the old one, but some of our clients still use the old system to make some api calls. Now we cannot ask the clients to change their process, so someone suggested that we use api gateway and emulate the old system and push data to new system though it. Would this be feasible? Can someone share a case study around this? 
+Hello,
 
-Any help would be appreciated. 
+I am just starting my journey of big data on AWS. I am still in the researching phase and am looking to indulge in as much information as I can about the subject before making any decisions. 
+
+Do you guys have any tips or tricks with using big data services on AWS? Provide all of the input you can. Hoping to help the next guy who is looking for help as well. (: 
+
+Thanks!
+## [9][Performance penalty of multi-az postgres with synchronous_commit=on?](https://www.reddit.com/r/aws/comments/ikhuyn/performance_penalty_of_multiaz_postgres_with/)
+- url: https://www.reddit.com/r/aws/comments/ikhuyn/performance_penalty_of_multiaz_postgres_with/
+---
+I’m currently running a single AZ rds instance with one replica in production. We’re looking to potentially enable multi az for more fault tolerance.
+
+I’m seeing that replication between master and replica in the same AZ is asynchronous. But I was wondering if anyone had experience about the performance penalty of synchronous replication between master/failover nodes in a Multi AZ setup.
+
 Thanks.
-## [9][Prevent AWS from reading your step functions data](https://www.reddit.com/r/aws/comments/ijxv47/prevent_aws_from_reading_your_step_functions_data/)
-- url: https://blog.theodo.com/2020/08/secure-aws-step-functions-sensitive-data/
+## [10][AWS Toolkit keeps creating default security groups for ELB and VPC when I've supplied it with my own](https://www.reddit.com/r/aws/comments/ikdjet/aws_toolkit_keeps_creating_default_security/)
+- url: https://www.reddit.com/r/aws/comments/ikdjet/aws_toolkit_keeps_creating_default_security/
 ---
+Hi, 
 
-## [10][AWS Step functions alternative](https://www.reddit.com/r/aws/comments/ijxqk5/aws_step_functions_alternative/)
-- url: https://www.reddit.com/r/aws/comments/ijxqk5/aws_step_functions_alternative/
+I currently have this VPC setup:
+
+2 public subnets - for ELB
+
+2 private subnets - for application
+
+2 private subnets - for RDS (db subnet group)
+
+I'm trying to deploy a load balanced elastic beanstalk application and I supply it with my own security groups, but it seems to want to create 2 default ones, one for a VPC and one for the load balancer, is there anyway around this?
+## [11][Dynamically play a menu to the user Amazon Connect](https://www.reddit.com/r/aws/comments/ikapvq/dynamically_play_a_menu_to_the_user_amazon_connect/)
+- url: https://www.reddit.com/r/aws/comments/ikapvq/dynamically_play_a_menu_to_the_user_amazon_connect/
 ---
-Hello everyone
-
-I'm working on a startup that is creating a product/service that can be an alternative to AWS Step functions. 
-In essence we're creating a software orchestration platform that allows you to configure a workflow of various steps that trigger, for example, a Lamba function or another piece of code. 
-
-While working on a PoC/MVP I wanted to ask some feedback on how you are currently using AWS Step functions, what are the good things and the not so good things in your opinion. 
-
-Thanks for any feedback you can give me!
+Hello, everyone. I'm working on an AWS Connect project that will allow the user to know her balance on a set of accounts. The user can have a maximum of 9 accounts, or as little as one. So for example if  the user calls an audio like "To check your savings balance, press 1, to know your cheque account balance press 2." And so on depending on the user's accounts. Is this possible or some workaround?

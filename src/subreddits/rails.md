@@ -19,7 +19,75 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][How to create a form that saves 2 records for the same model?](https://www.reddit.com/r/rails/comments/ijva9y/how_to_create_a_form_that_saves_2_records_for_the/)
+## [2][API architecture design for fast reads with 150 million records](https://www.reddit.com/r/rails/comments/ik0sbe/api_architecture_design_for_fast_reads_with_150/)
+- url: https://www.reddit.com/r/rails/comments/ik0sbe/api_architecture_design_for_fast_reads_with_150/
+---
+I have a text file with 150 million unique records.
+
+Each record has two columns: (1) a string and (2) an integer. The string has a unique label, and the integer is that label's value.
+
+There's only a single query available: return the integer value for any given label.
+
+This text file is regenerated every 72 hours. ~90% of the data remains the same across regeneration, but this regeneration is controlled by a 3rd party. I simply get a new text file every 72 hours.
+
+I'm exploring multiple architectures for exposing this text file as an API. I want to use Ruby/Rails.
+
+Ideally, a query shouldn't take more than 100 - 500ms (per read).
+
+## Architecture 1
+
+* Store the text file on disk. Query the text file. Cache queries in memory.
+* Pros: Simple implementation. Easy to update data.
+* Cons: Uncached read queries are slow.
+
+## Architecture 2
+
+* Parse the text file into a traditional/NoSQL database, with each line treated as a database record/document. Run queries against the database.
+* Pros: Seems like the common architecture.
+* Cons: Updating 150m database records is slow and seems wasteful, especially since ~90% of records remain the same.
+
+## Architecture 3
+
+* Use Redis or in-memory database to store the 5GB text file. Run queries against the in-memory database.
+* Pros: Fast queries. Easy to update data.
+* Cons: Expensive.
+
+## Architecture 4
+
+* Use ElasticSearch to query records.
+* Pros: ElasticSearch is designed for search.
+* Cons: ElasticSearch may be overkill for such simple queries.
+
+Questions:
+
+* Can you suggest any other approaches (if any)?
+
+* Are there additional pros/cons I overlooked?
+
+* What is the most "common" architecture for balancing cost/performance when trying to produce fast reads against a data store (of 150m) records that change?
+## [3][Starting a new app... public and admin best approach for today?](https://www.reddit.com/r/rails/comments/ik0ikq/starting_a_new_app_public_and_admin_best_approach/)
+- url: https://www.reddit.com/r/rails/comments/ik0ikq/starting_a_new_app_public_and_admin_best_approach/
+---
+Some quick context. Long time, small, Rails development team. We've done the same thing the same way for many years. Usually admin based monolith with public facing API. Most of our work is pure business management.
+
+Now we have a project that would have several hundred "public" uses but really the main crux of the project is still the backend business side for the "staff" users. Sort of a CRM+CMS + Event management. (Nothing we haven't done before in parts.) Public would access their personal history and sign-up for events. But the admin side has lots of additional business functions that would not be exposed to other users.
+
+My team is small and our views seem narrow on this, so I'm reaching out for ideas.
+
+I see a couple of options:
+
+**All-In**: There is no real admin side, just expose more options for logged in users who have permissions.
+
+**Admin First**: Since this project is mostly about the business domain start here and add client access (public side) on top of it. Scoping /admin
+
+**The Core**: Build the core functionality into a gem that is shared by a Public Engine, and an Admin Engine. (sort of the Spree concept)
+
+We've done each of these with success, granted the Engine route has the most friction for our team. We are used to a "dashboard" concept for admin, so the All-In approach is uncomfortable but also exciting to explore. Our fallback has always been Admin First.
+
+&amp;#x200B;
+
+What other approaches am I missing?
+## [4][How to create a form that saves 2 records for the same model?](https://www.reddit.com/r/rails/comments/ijva9y/how_to_create_a_form_that_saves_2_records_for_the/)
 - url: https://www.reddit.com/r/rails/comments/ijva9y/how_to_create_a_form_that_saves_2_records_for_the/
 ---
 Hello,
@@ -47,7 +115,7 @@ a. specify the form_for code and fields
 b. populate a dropdown with all current accounts (to use in the "transfer_to_account" field
 
 Thanks!
-## [3][How does Devise authentication works?](https://www.reddit.com/r/rails/comments/ijke0i/how_does_devise_authentication_works/)
+## [5][How does Devise authentication works?](https://www.reddit.com/r/rails/comments/ijke0i/how_does_devise_authentication_works/)
 - url: https://www.reddit.com/r/rails/comments/ijke0i/how_does_devise_authentication_works/
 ---
 Hi, guys. I have some question about how  Devise authentication works. The question are in the sequence:
@@ -55,11 +123,7 @@ Hi, guys. I have some question about how  Devise authentication works. The quest
 - I have notice that the session cookie changes for every new request. From what I have read, Devise doesn't hold session on server, only on client. If so, why the session cookie is changing constantly? If no value is saved on server, Devise has no way to invalidate a session key - only changing the password would invalidate the session key. Or there a session saved on server for every login user? 
 
 - Based on the question above, and if there are no session saved on server, how is it considerate different than the main approach (using only a access token passed on header bearer token) of OAuth protocol? Or it isn't?
-## [4][How do you share the master.key with GitHub collaborators](https://www.reddit.com/r/rails/comments/ijd66h/how_do_you_share_the_masterkey_with_github/)
-- url: https://www.reddit.com/r/rails/comments/ijd66h/how_do_you_share_the_masterkey_with_github/
----
-Hello. So I created a new Rails project and I am working with another developer on it. I pushed the project to GitHub but, of course, the `master.key` isn't sent to GitHub. How do both of us safely handle this so there are no conflicts? Do I just send the other dev the `master.key`? We need it for credentials.
-## [5][Heroku - Deploy Broken](https://www.reddit.com/r/rails/comments/ijjqgk/heroku_deploy_broken/)
+## [6][Heroku - Deploy Broken](https://www.reddit.com/r/rails/comments/ijjqgk/heroku_deploy_broken/)
 - url: https://www.reddit.com/r/rails/comments/ijjqgk/heroku_deploy_broken/
 ---
 I just merged a PR that changed a few things:
@@ -125,7 +189,11 @@ When I load up a rails console, I see the ActiveStorage migration that was a par
 
     [3] pry(main)&gt; ActiveStorage::Blob
     =&gt; ActiveStorage::Blob(id: integer, key: string, filename: string, content_type: string, metadata: text, byte_size: integer, checksum: string, created_at: datetime, service_name: string)
-## [6][Submitting a get request via ajax does not trigger csv download](https://www.reddit.com/r/rails/comments/ijfotf/submitting_a_get_request_via_ajax_does_not/)
+## [7][How do you share the master.key with GitHub collaborators](https://www.reddit.com/r/rails/comments/ijd66h/how_do_you_share_the_masterkey_with_github/)
+- url: https://www.reddit.com/r/rails/comments/ijd66h/how_do_you_share_the_masterkey_with_github/
+---
+Hello. So I created a new Rails project and I am working with another developer on it. I pushed the project to GitHub but, of course, the `master.key` isn't sent to GitHub. How do both of us safely handle this so there are no conflicts? Do I just send the other dev the `master.key`? We need it for credentials.
+## [8][Submitting a get request via ajax does not trigger csv download](https://www.reddit.com/r/rails/comments/ijfotf/submitting_a_get_request_via_ajax_does_not/)
 - url: https://www.reddit.com/r/rails/comments/ijfotf/submitting_a_get_request_via_ajax_does_not/
 ---
 Basically I have a get(verb) form, where has remote true and on submission, I am rendering a partial via .js.erb.  
@@ -184,7 +252,7 @@ Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 222)
 ```
 
 My question is if there a way to get the filters in the link_to itself other than storing in session? or what needs to be done to get the ajax request trigger download
-## [7][Rails 5.2.4, Active Storage, and S3: is it possible to implement an effective IAM/ACL policy when the app's default opinion dumps everything into the root of a single bucket?](https://www.reddit.com/r/rails/comments/ij5e6v/rails_524_active_storage_and_s3_is_it_possible_to/)
+## [9][Rails 5.2.4, Active Storage, and S3: is it possible to implement an effective IAM/ACL policy when the app's default opinion dumps everything into the root of a single bucket?](https://www.reddit.com/r/rails/comments/ij5e6v/rails_524_active_storage_and_s3_is_it_possible_to/)
 - url: https://www.reddit.com/r/rails/comments/ij5e6v/rails_524_active_storage_and_s3_is_it_possible_to/
 ---
 I have switched from Paperclip to Active Storage. While Active Storage is great, it presents a new set of problems. Paperclip let me set a bucket directory (or even a new bucket), whereas Active Storage dumps everything into the root of a single bucket. I fear that this could create security issues. Improperly set IAM policies are an easy to make no-no, and my app had been using two buckets to avoid the problem: one for public content, and one for private admin accessible content.
@@ -192,7 +260,7 @@ I have switched from Paperclip to Active Storage. While Active Storage is great,
 In making that two bucket setup work with Active Storage, I tried to use the `service` option for `has_one_attached`. However, I get an ArgumentError: `unknown keyword: service`. The [edge guide](https://edgeguides.rubyonrails.org/active_storage_overview.html#setup) implies that this option works in Rails 5.2, but the [guide for 5.2.4](https://guides.rubyonrails.org/v5.2.4/active_storage_overview.html#has-one-attached) doesn't mention the `service` option at *all*.
 
 How do you lock down access to certain S3 files while being less restrictive with everything else? Is this even possible? Do I have to move to Shrine?
-## [8][Beginner ActiveStorage Help](https://www.reddit.com/r/rails/comments/ij4hh0/beginner_activestorage_help/)
+## [10][Beginner ActiveStorage Help](https://www.reddit.com/r/rails/comments/ij4hh0/beginner_activestorage_help/)
 - url: https://www.reddit.com/r/rails/comments/ij4hh0/beginner_activestorage_help/
 ---
 # SOLUTION:
@@ -272,7 +340,7 @@ The exception gets thrown at the if file.previewable? line.
       def expense_item_params
         params.require(:expense_item).permit(:name, :cost, :expense_date, :property_id, attachments: [])
       end
-## [9][Javascript + Rails](https://www.reddit.com/r/rails/comments/ij4gvx/javascript_rails/)
+## [11][Javascript + Rails](https://www.reddit.com/r/rails/comments/ij4gvx/javascript_rails/)
 - url: https://www.reddit.com/r/rails/comments/ij4gvx/javascript_rails/
 ---
 I need help guys, i have to do a form where i select a commune (a big list of this) and, when i have to selectthe condominium  it only shows me those of the selected commune. I try with onChange(Javascript), but i dont know how get this value and use in the condominium place.
@@ -280,22 +348,3 @@ I need help guys, i have to do a form where i select a commune (a big list of th
 &amp;#x200B;
 
 I really hope you can understand to me, is difficult to me explain this in english
-## [10][Anyone taking Ruby on Rails courses?](https://www.reddit.com/r/rails/comments/iisg11/anyone_taking_ruby_on_rails_courses/)
-- url: https://www.reddit.com/r/rails/comments/iisg11/anyone_taking_ruby_on_rails_courses/
----
-Hey guys, anyone taking [*Ruby on Rails Courses*](https://www.google.com/amp/s/onlinecoursesgalore.com/ruby-rails-udemy/amp/) on Udemy?
-## [11][Advice for multideployed app](https://www.reddit.com/r/rails/comments/iiynxg/advice_for_multideployed_app/)
-- url: https://www.reddit.com/r/rails/comments/iiynxg/advice_for_multideployed_app/
----
-Hi guys!
-
-I have developed an application targeted to municipalities. Each municipality has its own server so in the end,  I will have one code base, and I will have sereval deployments to different servers. So far I have just one client and its working fine. I Believe in the future I will get more clients and I need to plan everything the best I can.
-
-Using Capistrano, I have set a second environment, "staging" to test before production.wn server so in the end,  I will have one code base, and I will have sereval deployments to different servers. So far I have just one client and its working fine. I Believe in the future I will get more clients and I need to plan everything the best I can.
-
-I won't lie: I feel I won't have enough control and knowledge before this step, but I need to grow the business.
-
-Any advice or tips to manage all theses servers and configurations without getting crazy?  
-
-
-Any pf you having a similar business model?

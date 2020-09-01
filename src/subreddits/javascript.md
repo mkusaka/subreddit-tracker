@@ -85,43 +85,59 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][ObjectModel Strong Dynamically Typed Object Modeling for JavaScript](https://www.reddit.com/r/javascript/comments/ijvbek/objectmodel_strong_dynamically_typed_object/)
+## [3][Mastering Hard Parts of JavaScript](https://www.reddit.com/r/javascript/comments/ik9xwq/mastering_hard_parts_of_javascript/)
+- url: https://dev.to/ryanameri/mastering-hard-parts-of-javascript-callbacks-i-3aj0
+---
+
+## [4][Logical assignment operators in JavaScript](https://www.reddit.com/r/javascript/comments/ik2qou/logical_assignment_operators_in_javascript/)
+- url: https://dev.to/hemanth/logical-assignment-operators-in-javascript-inh
+---
+
+## [5][The how and why of dependency injection in frontend JavaScript](https://www.reddit.com/r/javascript/comments/ik1ngo/the_how_and_why_of_dependency_injection_in/)
+- url: https://nullvoxpopuli.com/2020-08-08-how-does-di-work
+---
+
+## [6][TypeScript Jesus Anders Hejlsberg has been working on some fun new features: Template string types and mapped type `as` clauses](https://www.reddit.com/r/javascript/comments/ikjcpr/typescript_jesus_anders_hejlsberg_has_been/)
+- url: https://github.com/microsoft/TypeScript/pull/40336
+---
+
+## [7][ObjectModel Strong Dynamically Typed Object Modeling for JavaScript](https://www.reddit.com/r/javascript/comments/ijvbek/objectmodel_strong_dynamically_typed_object/)
 - url: https://objectmodel.js.org/
 ---
 
-## [4][Don't get stuck](https://www.reddit.com/r/javascript/comments/ijv2yn/dont_get_stuck/)
+## [8][Don't get stuck](https://www.reddit.com/r/javascript/comments/ijv2yn/dont_get_stuck/)
 - url: https://stitcher.io/blog/dont-get-stuck
 ---
 
-## [5][TIL, "JavaScript" is a trademark of Oracle Corporation in the United States](https://www.reddit.com/r/javascript/comments/ij9gxd/til_javascript_is_a_trademark_of_oracle/)
-- url: https://tsdr.uspto.gov/#caseNumber=75026640&amp;caseType=SERIAL_NO&amp;searchType=statusSearch
+## [9][How to optimize and lazyload images on eleventy (11ty)](https://www.reddit.com/r/javascript/comments/ikc275/how_to_optimize_and_lazyload_images_on_eleventy/)
+- url: https://dev.to/22mahmoud/how-to-optimize-and-lazyload-images-on-eleventy-11ty-206h
 ---
 
-## [6][Conway's Game of Life ( in javascript )](https://www.reddit.com/r/javascript/comments/ijx7z5/conways_game_of_life_in_javascript/)
-- url: https://js.project-zeta.org/GameOfLife/
+## [10][[AskJS] gnv, a tool for shipping minified, backwards-compatible, standalone ES6 Node modules using Rollup and Closure Compiler](https://www.reddit.com/r/javascript/comments/ikc1ym/askjs_gnv_a_tool_for_shipping_minified/)
+- url: https://www.reddit.com/r/javascript/comments/ikc1ym/askjs_gnv_a_tool_for_shipping_minified/
+---
+*In advance: This tool is still **very much unfinished**. I am looking for notes, and to gauge whether or not there is wider need for a tool like this.*
+
+I wanted to be able to write Node libraries in ES6, inject all the dependencies, and run the output through Closure Compiler, but found that this was harder than it sounds. After a month or so of on-and-off tinkering and some help from the Closure Compiler / Rollup teams, I believe I have something that is roughly functional.
+
+# [View README on GitHub](https://github.com/TeleworkInc/gnv)
+
+I set out making this tool with a few goals:
+
+1. It should take ES6 input so that developers can use the latest language features.
+2. It must use Closure Compiler for minification and dead code elimination, since nothing beats GCC at compiling JS ASTs. (Shout out to Bradford on the Closure Compiler team, who has been a great help to me as I learn the backend of the Compiler.)
+3. It must use Rollup for ES6 module bundling, as Rollup has the best performance, coverage, and support when it comes to bundling ES6. (Shout out to Lukas and Mateusz on the Rollup team, who have also been a huge help as I learn the ins and outs of Rollup.)
+4. It must compile nontrivial source code (i.e., with real-world third-party NPM dependency trees) all the way to the output stage without throwing an error. This was more complicated than it sounds in practice, and while naively running source through a Rollup -&gt; CC pipeline will work for trivial scripts, once you start including real-world dependencies things get a little rocky as the risk of errors [compounds exponentially](https://github.com/TeleworkInc/rollup-node-testing).
+5. The outputs must be backwards-compatible, i.e., generate CommonJS outputs in a predictable way so that older versions of Node can still interact with the Node exports.
+
+I was able to achieve these with a few relatively hacky approaches -- exporting all named modules as `default` if no `default` export specified for CJS compatibility, an `import.meta.url` hack to recreate `__filename`, the entire `package.js` interface, etc. The tool compiles itself, with final outputs in `dist/` being the only thing uploaded to NPM (aside from package.json and so on).
+
+All of the details are laid out in the README, and any feedback is greatly appreciated. My goal was just to be able to boil my real-world Node scripts down to cold, minified GCC output, and I have mostly accomplished that goal, although there's still quite a bit of work to do (i.e., resolving dependencies recursively so the only needed peerDep for gnv projects is the gnv package itself).
+## [11][Tool to manage package.json files in monorepos](https://www.reddit.com/r/javascript/comments/ik5mj4/tool_to_manage_packagejson_files_in_monorepos/)
+- url: https://github.com/JamieMason/syncpack
 ---
 
-## [7][Perfrunner - npm package to track performance improvements of the site on a different network conditions](https://www.reddit.com/r/javascript/comments/ijjdih/perfrunner_npm_package_to_track_performance/)
-- url: https://www.npmjs.com/package/perfrunner
----
-
-## [8][Asynchronous JavaScript - what is it? (Promises, callbacks, async/await)](https://www.reddit.com/r/javascript/comments/ijwfre/asynchronous_javascript_what_is_it_promises/)
-- url: https://tinloof.com/blog/asynchronous-javascript-what-is-it/
----
-
-## [9][Probably more than what you want to know about node shebang (medium, not paywalled)](https://www.reddit.com/r/javascript/comments/ij031z/probably_more_than_what_you_want_to_know_about/)
-- url: https://medium.com/@alexewerlof/node-shebang-e1d4b02f731d
----
-
-## [10][2D Box Collider Game using Javascript and Canvas](https://www.reddit.com/r/javascript/comments/ijs06p/2d_box_collider_game_using_javascript_and_canvas/)
-- url: https://chiragxarora.github.io/2D-BOX-COLLIDER/
----
-
-## [11][Tiny Procedural Sprite Sheet Generator](https://www.reddit.com/r/javascript/comments/ij807j/tiny_procedural_sprite_sheet_generator/)
-- url: https://codepen.io/KilledByAPixel/pen/ZEWyRwO
----
-
-## [12][Switch cameras using Javascript getUserMedia() — WebRTC](https://www.reddit.com/r/javascript/comments/ijctr1/switch_cameras_using_javascript_getusermedia/)
-- url: https://gosink.in/webrtc-switch-cameras-using-javascript-getusermedia/?utm_source=reddit&amp;utm_medium=javascript
+## [12][Fire Effect - Create and share a message written in fire. I made this using javascript and canvas, implementing an algorithm I found online (link in the git repository)](https://www.reddit.com/r/javascript/comments/ik7drd/fire_effect_create_and_share_a_message_written_in/)
+- url: https://github.com/victorqribeiro/fireEffect
 ---
 

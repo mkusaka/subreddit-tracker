@@ -111,65 +111,82 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/i1u8a4/whos_hiring_august_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][I need germans to evaluate my website for my master thesis! Also for every participant 2 Euro will be donated to a non-profit organization!](https://www.reddit.com/r/reactjs/comments/ijwug5/i_need_germans_to_evaluate_my_website_for_my/)
-- url: https://www.reddit.com/r/reactjs/comments/ijwug5/i_need_germans_to_evaluate_my_website_for_my/
----
-It is a website with information given only in german so it makes sense I guess. The topic is about web accessibility and I would appreciate it if a lot of diverse people would test the page (of course this can't be forced lol).
-
-Btw. The website is created with React and the Material UI library was being used.
-
-This the procedure of your testing:
-
-[https://docs.google.com/document/d/1HQSktM-2NCPXksuHAX12zIS9iCrHtEdRfx8hgvHI4UA/edit?usp=sharing](https://docs.google.com/document/d/1HQSktM-2NCPXksuHAX12zIS9iCrHtEdRfx8hgvHI4UA/edit?usp=sharing)
-
-And this is the survey:
-
-[https://forms.gle/3U4ptLWaviRqUDmFA](https://forms.gle/3U4ptLWaviRqUDmFA)
-
-Pls read the procedure first.
-
-If you have any suggestion where I can post my request, too, to gain as many people as possible regarding the topic accessibility on the web, would be really helpful!
-## [4][How to test React.js application with Jest and Enzyme — testing tutorial for beginners](https://www.reddit.com/r/reactjs/comments/ijx0u4/how_to_test_reactjs_application_with_jest_and/)
-- url: https://medium.com/fabisiakradoslaw/how-to-test-react-js-application-with-jest-and-enzyme-testing-tutorial-for-beginners-7f3a200f29d7?source=friends_link&amp;sk=5cae2e6724c6551957796b94c5631751
+## [3][I created a Spotify clone](https://www.reddit.com/r/reactjs/comments/ik40e2/i_created_a_spotify_clone/)
+- url: https://v.redd.it/lj5myb4jwdk51
 ---
 
-## [5][Why Next.js Is the Future of React](https://www.reddit.com/r/reactjs/comments/ijchrc/why_nextjs_is_the_future_of_react/)
-- url: https://www.youtube.com/watch?v=rtgbaKBhdkk
+## [4][Examples of large production-grade, open-source React apps](https://www.reddit.com/r/reactjs/comments/ikiyka/examples_of_large_productiongrade_opensource/)
+- url: https://maxrozen.com/examples-of-large-production-grade-open-source-react-apps/
+---
+
+## [5][Making an online store with Gatsby &amp; Shopify: Part 1 - Building the Layout](https://www.reddit.com/r/reactjs/comments/ikflbi/making_an_online_store_with_gatsby_shopify_part_1/)
+- url: https://www.prwhite.io/blog/gatsby-shopify-part-1
 ---
 
 ## [6][Build a TikTok Clone with React and Firebase - CodeSource.io](https://www.reddit.com/r/reactjs/comments/ijxgwj/build_a_tiktok_clone_with_react_and_firebase/)
 - url: https://codesource.io/build-a-tik-tok-clone-with-react-and-firebase/
 ---
 
-## [7][Reactjs Crash Course in 45 minutes for beginners](https://www.reddit.com/r/reactjs/comments/ijwe96/reactjs_crash_course_in_45_minutes_for_beginners/)
-- url: https://www.youtube.com/watch?v=Tp7FYUE1aHA&amp;feature=youtu.be
+## [7][Data Federation in GraphQL using Hasura and Gatsby Source Plugins](https://www.reddit.com/r/reactjs/comments/ikip6j/data_federation_in_graphql_using_hasura_and/)
+- url: https://hasura.io/blog/data-federation-in-graphql-using-hasura-remote-joins-and-gatsby/
 ---
 
-## [8][For Picture in Picture early adapters: react-use-pip React Hook](https://www.reddit.com/r/reactjs/comments/ijxnki/for_picture_in_picture_early_adapters_reactusepip/)
-- url: https://github.com/DawChihLiou/react-use-pip
+## [8][Styled-Components; define styles in React component itself or a separate file?](https://www.reddit.com/r/reactjs/comments/ikk87s/styledcomponents_define_styles_in_react_component/)
+- url: https://www.reddit.com/r/reactjs/comments/ikk87s/styledcomponents_define_styles_in_react_component/
 ---
 
-## [9][Help...](https://www.reddit.com/r/reactjs/comments/ijx8lm/help/)
-- url: https://www.reddit.com/r/reactjs/comments/ijx8lm/help/
----
-Can somebody help me to resolve the error ... 
-I have made a component under src in a folder I want to include that inside my app. Js file and I have written it as  import '. /ProgressBar.js' . 
-It gives me error that ProgressBar is not defined, so what should I write in the path while importing it?
-## [10][How to display datepicker from ref?](https://www.reddit.com/r/reactjs/comments/ijwvl4/how_to_display_datepicker_from_ref/)
-- url: https://www.reddit.com/r/reactjs/comments/ijwvl4/how_to_display_datepicker_from_ref/
----
-Hello, I'm wrapping the html input with date type in a custom component to make my own datepicker.
 
-Currently I'm trying to open the input's date picker through a ref to said input but I cannot find any method to do that. Anyone knows how the picker is displayed when clicking on the default picker icon?
-## [11][React Hooks Tutorial — Learn by Building](https://www.reddit.com/r/reactjs/comments/ijwem4/react_hooks_tutorial_learn_by_building/)
-- url: https://medium.com/@dtkatz/react-hooks-tutorial-learn-by-building-b90ec4db2b8e
+[View Poll](https://www.reddit.com/poll/ikk87s)
+## [9][react native com google sheets](https://www.reddit.com/r/reactjs/comments/ikjy4n/react_native_com_google_sheets/)
+- url: https://www.reddit.com/r/reactjs/comments/ikjy4n/react_native_com_google_sheets/
 ---
+Preciso colocar o retorno em uma variável para exibir em outro componente, só estou conseguindo visualizar o retorno no console.log  
 
-## [12][Material UI - is there a way to fade out/fade in (animate) components](https://www.reddit.com/r/reactjs/comments/ijwdxn/material_ui_is_there_a_way_to_fade_outfade_in/)
-- url: https://www.reddit.com/r/reactjs/comments/ijwdxn/material_ui_is_there_a_way_to_fade_outfade_in/
+
+ 
+
+    const GoogleSpreadsheet = require ('google-spreadsheet') const credentials = require('./src/credentials.json') const { promisify } = require('util')  const docId = '1RPWKohhPnHwoH78wrU0VtSaW_zj91kW_oKrAdWktLjY'  const accessSheet = async() =&gt; {   const doc = new GoogleSpreadsheet(docId)   await promisify(doc.useServiceAccountAuth)(credentials)   const info = await promisify(doc.getInfo)()   const worksheet = info.worksheets[0]  // select row   const rows = await promisify(worksheet.getRows)({     query: 'imei = 121545465456'   }) rows.forEach(row =&gt; {   console.log(row.status) }) } accessSheet()
+## [10][Passing api data to child component then looping through the IDs](https://www.reddit.com/r/reactjs/comments/ikjrbm/passing_api_data_to_child_component_then_looping/)
+- url: https://www.reddit.com/r/reactjs/comments/ikjrbm/passing_api_data_to_child_component_then_looping/
 ---
-Hello, 
+Hi everyone,
 
-I’m trying to do a fade in and fade out  my component, I have tried the &lt;Fade&gt; material ui api, but unable to achieve the desired opacity
+I’m trying to pass data from an api from a parent players.playerIDs to a child component and then looping through the players in the child component to print them incrementally as the progress bar progresses.
 
-Thanks.
+How to pass this sort of thing to child component?
+
+any help appreciated, Thank you.
+## [11][UI Library Recommendations for React.js](https://www.reddit.com/r/reactjs/comments/ikiwyk/ui_library_recommendations_for_reactjs/)
+- url: https://www.reddit.com/r/reactjs/comments/ikiwyk/ui_library_recommendations_for_reactjs/
+---
+Hey, anyone can recommend good UI library recommendations for React.js?
+## [12][How to access service in components](https://www.reddit.com/r/reactjs/comments/ikiwyb/how_to_access_service_in_components/)
+- url: https://www.reddit.com/r/reactjs/comments/ikiwyb/how_to_access_service_in_components/
+---
+service1.js
+
+export async function service() {
+
+return new Promise((resolve: any) =&gt; {
+
+get(`url`).then(response =&gt; {
+
+.....
+}).catch(err =&gt; {
+
+ showpopup();
+});
+});
+}
+
+app.js
+
+
+useEffect(() =&gt; {
+
+service();
+
+}, []);
+
+
+Here i want to access the .catch method showpopup() in app.js Is there any way pls let me know your suggestions.

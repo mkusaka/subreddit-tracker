@@ -1,6 +1,6 @@
 # typescript
-## [1][Who's hiring Typescript developers - August](https://www.reddit.com/r/typescript/comments/i1ikj5/whos_hiring_typescript_developers_august/)
-- url: https://www.reddit.com/r/typescript/comments/i1ikj5/whos_hiring_typescript_developers_august/
+## [1][Who's hiring Typescript developers - September](https://www.reddit.com/r/typescript/comments/ik9rft/whos_hiring_typescript_developers_september/)
+- url: https://www.reddit.com/r/typescript/comments/ik9rft/whos_hiring_typescript_developers_september/
 ---
 The monthly thread for people to post openings at their companies.
 
@@ -22,17 +22,101 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][How do I create a data access layer correctly?](https://www.reddit.com/r/typescript/comments/ijtgcv/how_do_i_create_a_data_access_layer_correctly/)
+## [2][TypeScript Jesus Anders Hejlsberg has been working on some fun new features: Template string types and mapped type `as` clauses](https://www.reddit.com/r/typescript/comments/ikc3h4/typescript_jesus_anders_hejlsberg_has_been/)
+- url: https://github.com/microsoft/TypeScript/pull/40336
+---
+
+## [3][CyberCode Online: A mmorpg webgame that looks like (disguised as) VS Code](https://www.reddit.com/r/typescript/comments/ik0fxh/cybercode_online_a_mmorpg_webgame_that_looks_like/)
+- url: https://i.redd.it/3znwfrhlzck51.png
+---
+
+## [4][Auto-generate enum from object keys?](https://www.reddit.com/r/typescript/comments/ikgvq1/autogenerate_enum_from_object_keys/)
+- url: https://www.reddit.com/r/typescript/comments/ikgvq1/autogenerate_enum_from_object_keys/
+---
+I'm using framer motion and the typical little string typos are reminding me that maybe the time spent defining string enums is worth it.
+
+Is there a way to use something like Object.keys to automatically generate a string enum with an object's keys? That would speed and clean things up quite a bit.
+## [5][How to model a self referencing tuple array](https://www.reddit.com/r/typescript/comments/ik6jd6/how_to_model_a_self_referencing_tuple_array/)
+- url: https://www.reddit.com/r/typescript/comments/ik6jd6/how_to_model_a_self_referencing_tuple_array/
+---
+I have a data structure that looks like this:
+
+    [
+        ["value1", ["value1"]],
+        ["value2", ["value1", "value2", "value3"]],
+        ["value3", ["value1", "value2", "value3"]],
+        ["value4", ["value1", "value2", "value3", "value4"]],
+    ]
+
+On the surface it could be described as [string, string[]][], but there is a relationship between those values, the array in the second element of the tuple ([string, string[]]) must only include string values that match the first element of the tuple within the whole structure. 
+
+For example,
+
+This would be valid because "value1" and "value2" are defined as the first elements and the second element only references strings in the first element.
+
+    [
+        ["value1", ["value1"]],
+        ["value2", ["value1", "value2"]]
+    ]
+
+However this would *not* be valid, because of the reference to "value3" which does not occur in any of the first elements:
+
+    [
+        ["value1", ["value1"]],
+        ["value2", ["value1", "value2", "value3"]]
+    ]
+
+Thought I'd see if any of you gurus had an idea on how you'd model that in typescript or if the application will just need to enforce it at runtime. 
+
+P.S. I know there are different ways to go about structuring this data, though in this case the assumption has to be that we cannot change from that structure.
+## [6][What are the most crazy anti-TypeScript arguments you’ve heard?](https://www.reddit.com/r/typescript/comments/ik5w7l/what_are_the_most_crazy_antitypescript_arguments/)
+- url: https://www.reddit.com/r/typescript/comments/ik5w7l/what_are_the_most_crazy_antitypescript_arguments/
+---
+“The syntax is ugly”  
+“It only pretends to check types”  
+“Whats the point if you just use “any””  
+“I don’t like Angular for Angular specific things, therefore TypeScript is bad”  
+“It‘s too much work to setup to be worth it”  
+“Just don’t be a bad programmer and you won’t need TypeScript”  
+  
+I’ll admit there are some good reasons not to use it in extreme situations, but some people’s reluctance to it is completely absurd.
+## [7][Literature](https://www.reddit.com/r/typescript/comments/ik4235/literature/)
+- url: https://www.reddit.com/r/typescript/comments/ik4235/literature/
+---
+Hello guys,  
+I signed up for a typescript beginners course before lockdown, unfortunately it hasn't happened yet and will be moved to late October. I'd like to get a little knowledge out front. Any books and/or youtubers you can recommend, learing typescript from scratch?
+
+THANKS! :)
+## [8][How do I create a data access layer correctly?](https://www.reddit.com/r/typescript/comments/ijtgcv/how_do_i_create_a_data_access_layer_correctly/)
 - url: https://www.reddit.com/r/typescript/comments/ijtgcv/how_do_i_create_a_data_access_layer_correctly/
 ---
 I use TypeORM to work with the database, but I think it would be better to write my own abstraction (correct me if I'm wrong). In DAL, do I need to describe competitive methods for getting data, such as getUser (id), or develop generic methods for any data models, such as findOne&lt;User&gt;(args)?  
 
 Can you recommend resources on this topic?
-## [3][Does using await mean all the catches will just go to the try -catch block?](https://www.reddit.com/r/typescript/comments/ijl6il/does_using_await_mean_all_the_catches_will_just/)
+## [9][Extending HTMLCollectionOf](https://www.reddit.com/r/typescript/comments/ijzofs/extending_htmlcollectionof/)
+- url: https://www.reddit.com/r/typescript/comments/ijzofs/extending_htmlcollectionof/
+---
+So I want to add a method to the `HTMLCollectionOf` class (it's called `toArray`, in case you're curious).
+
+I have augmented the scope as such (everthing is fine so far);
+
+    declare interface HTMLCollectionOf&lt;T extends Element&gt; {
+        toArray(): Array&lt;HTMLElement&gt;
+        // NOTE: we can discuss the type checking / filtering of Elements vs HTMLElements later :)
+    }
+
+Now I want to add an implementation of the method to the class... usually something like `class.methodName = function() {}` or `class.prototype.methodName = function() {}` would work, depending on requirements... but it doesn't for `HTMLCollectionOf`.
+
+&gt;'HTMLCollectionOf' only refers to a type, but is being used as a value here.
+
+That error sorta makes sense but i'm not sure what I should be referencing to add my method.
+
+Thanks in advance as always guys.
+## [10][Does using await mean all the catches will just go to the try -catch block?](https://www.reddit.com/r/typescript/comments/ijl6il/does_using_await_mean_all_the_catches_will_just/)
 - url: https://www.reddit.com/r/typescript/comments/ijl6il/does_using_await_mean_all_the_catches_will_just/
 ---
 I’m using like 3 awaits. I use them because I need the data of the 3 awaits before doing anything else. I put them all in a try catch block. If any of them fail it’ll go to the catch block right? How do I know which one failed?
-## [4][fp-ts equivalent of Scala Option.foreach](https://www.reddit.com/r/typescript/comments/ijlruv/fpts_equivalent_of_scala_optionforeach/)
+## [11][fp-ts equivalent of Scala Option.foreach](https://www.reddit.com/r/typescript/comments/ijlruv/fpts_equivalent_of_scala_optionforeach/)
 - url: https://www.reddit.com/r/typescript/comments/ijlruv/fpts_equivalent_of_scala_optionforeach/
 ---
 So Scala has been my big introduction to functional programming and I love it. Now in my TS projects I'm embracing the fp-ts library, which clearly adheres to a different style of functional structures than Scala does.
@@ -40,131 +124,3 @@ So Scala has been my big introduction to functional programming and I love it. N
 One big thing I've been looking for is foreach. In Scala if you want to execute code against the contents of an Option (if there's a value present), foreach is how you do it. I don't see any similarly named function in fp-ts tho. I've been going over the docs but I'm a bit unclear on what to use.
 
 Guidance would be appreciated. Thanks.
-## [5][Smart way to debug data - Online Editor and Chart Generator for JSON, XML, CSV, YAML documents https://jxcy.dev https://www.youtube.com/watch?v=N1ff9Sdq4w0](https://www.reddit.com/r/typescript/comments/ijh69d/smart_way_to_debug_data_online_editor_and_chart/)
-- url: https://i.redd.it/udbudxkji6k51.png
----
-
-## [6][TSDoc annotation or describing objects in code help?](https://www.reddit.com/r/typescript/comments/ijnerg/tsdoc_annotation_or_describing_objects_in_code/)
-- url: https://www.reddit.com/r/typescript/comments/ijnerg/tsdoc_annotation_or_describing_objects_in_code/
----
-I inherited a project, and they they didn't use types anywhere, even in obvious places. Is it possible in TSDoc (or an alternative) specify the types of variables and the structure of objects like you can in JS/PHPDoc?
-
-The docs make me think that they removed that in favor of using the built-in strict typing. Am I mistaken?
-
-If the above won't work, is there a compromise between comments and the built-in typing? I don't want to add types to code unless I'm actually working on it, where as I don't mind taking a minute and adding comments to an entire class.
-## [7][stack traces not pointing back to source (ts) files](https://www.reddit.com/r/typescript/comments/ijc1g3/stack_traces_not_pointing_back_to_source_ts_files/)
-- url: https://www.reddit.com/r/typescript/comments/ijc1g3/stack_traces_not_pointing_back_to_source_ts_files/
----
-Other than `sourceMap: true`, do any other settings need to be configured to get stack traces to point to typescript files? My stack traces are hard to follow because they point to the compiled js files.
-
-current settings in tsconfig.json:
-
-    {
-      "compilerOptions": {
-        "target": "es5",
-        "lib": [
-          "dom",
-          "dom.iterable",
-          "esnext"
-        ],
-        "allowJs": true,
-        "skipLibCheck": true,
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
-        "strict": true,
-        "forceConsistentCasingInFileNames": true,
-        "module": "CommonJS",
-        "moduleResolution": "node",
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "sourceMap": true,
-        "rootDir": "src",
-        "outDir": "compiled"
-      },
-      "include": [
-        "src", "src/__mocks__"
-      ],
-      "exclude": ["node_modules", "**/*.test.ts", "compiled"]
-    }
-## [8][TypeScript First Test Framework](https://www.reddit.com/r/typescript/comments/ijie1y/typescript_first_test_framework/)
-- url: https://www.reddit.com/r/typescript/comments/ijie1y/typescript_first_test_framework/
----
-Hi. I am starting to work on a TypeScript first test framework.
-
-All major JavaScript frameworks are JavaScript first and require transpilation before files can be tested. This includes Jest, Mocha and Ava, with different degrees of support.
-
-The new test framework I am proposing would need to implement the following features:
-
-1. Support TypeScript source files and TypeScript test files out of the box.
-2. Still be BDD based, with \`describe\` and \`it\` keywords.
-3. Support arrow functions for test definitions, passing the test context to the callbacks.
-4. Support async and parallel testing.
-5. MIT License.
-
-I was wondering if anyone would be interested to be day-1 collaborators on this project?
-
-Thanks!
-## [9][Ways to ensure the properties of an interface are of certain types?](https://www.reddit.com/r/typescript/comments/iixvio/ways_to_ensure_the_properties_of_an_interface_are/)
-- url: https://www.reddit.com/r/typescript/comments/iixvio/ways_to_ensure_the_properties_of_an_interface_are/
----
-Currently, when extending a type that has index signatures, like this:
-    
-    type DataRecord = { [key in string]: string | number };
-    interface LoginRecord extends DataRecord {
-      account: string,
-      time: number,
-    }
-No compilation error will occur when assigning a object with more properties to it,
-
-    const record: LoginRecord = {
-      account: 'Admin',
-      time: 0,
-      password: 'admin',
-    }; // no error
-
-Currently I'm using a utility type to help me:
-
-    type ExtendProperty&lt;B, T extends Record&lt;keyof T, B&gt;&gt; = T;
-    type RecordProperty = string | number;
-    type LoginRecord = ExtendProperty&lt;RecordProperty, {
-      account: string,
-      time: number,
-    }&gt;;
-    const record: LoginRecord = {
-      account: 'Admin',
-      time: 0,
-      password: 'admin',
-    }; // error: ...'password' does not exist in type...
-I wonder if there are other ways to do it?
-## [10][Spotify shuffler](https://www.reddit.com/r/typescript/comments/ijebkz/spotify_shuffler/)
-- url: https://www.reddit.com/r/typescript/comments/ijebkz/spotify_shuffler/
----
-I know absolutely nothing about coding, (went to a very basic course in html, wordpress and css and that's it) but I was wondering if there is a way you could reorganise your songs in your spotify playlist? Shuffle them around
-## [11][Why is any nonsense assignable to InstanceType&lt;...&gt;[] here?](https://www.reddit.com/r/typescript/comments/iiqcv9/why_is_any_nonsense_assignable_to_instancetype/)
-- url: https://www.reddit.com/r/typescript/comments/iiqcv9/why_is_any_nonsense_assignable_to_instancetype/
----
-I want to create a function which accepts a class and a callback, which also accepts this class and returns its instances. It's not very practical, but it is a simplified example of my problem.
-
-My code looks like this ([playground link](https://www.typescriptlang.org/play?ts=4.0.2#code/C4TwDgpgBAwg9gOwM7AE4FcDGw6qgXigQgHcAKAOioENUBzJALimoRAG0BdASgID4WbANwAoEQDN0CbAEtEUYBBQAeACpQIAD0UIAJkliIUGbLj5ladZqoA0USQmYX613vgEBJZMFaYIq8Ag1Pi5eAG8RKCioVAhgdFQEeylnOm5RAF8xTAAbaiQDAFkQGDyCqDCskQB6aqhVAAtoGQQdXQhdKHQkajpmgzgAayoKEUUUMmLS-KQ7AH1cmf4odmISKAWypDJuOzWNxYKdnlEauqoAI3RgKA8oTFYWbHRqHJyQGLiEpNpUahABuJBB8EEYIMhoOJUHAALbJBAAQjO9Sa9jgbzgJBadCgSAacHQOU6eMxgg0qGhqDsVxuMhuujgSgQAHJgEjxsBJiUtvNDgZ3CsAIwAJgAzHZmeI4HALrRmScgA)):
-
-    type Constructor = new(...args: any[]) =&gt; any;
-
-    function test&lt;T extends Constructor&gt;(arg: T, fun: (arg: T) =&gt; InstanceType&lt;T&gt;[]) 
-    {
-        return fun(arg);
-    }
-
-    class MyClass {}
-
-    // The intended usage is ok...
-    test(MyClass, _class =&gt; [new _class(), new _class()]);
-
-    // ..but I can actually return arrays of any nonsense from fun!
-    // The following should show an error, but it doesn't!
-    test(MyClass, _class =&gt; [123, 'foobar']);
-
-The second call to `test` allows me to return anything from the callback, despite its type clearly inferred as `(arg: typeof MyClass) =&gt; MyClass[]`. It seems wrong to me that a `(string | number)[]` return type is assignable to `MyClass[]`.
-
-Is there a way to fix this and make it report the correct error?
-
-Thanks!

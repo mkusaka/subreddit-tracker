@@ -23,138 +23,110 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/ijvxwz/whats_everyone_working_on_this_week_362020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-36-2020/48100?u=llogiq)!
-## [3][const_fn makes it too easy to do mandelbrots](https://www.reddit.com/r/rust/comments/ijpxz2/const_fn_makes_it_too_easy_to_do_mandelbrots/)
-- url: https://www.reddit.com/r/rust/comments/ijpxz2/const_fn_makes_it_too_easy_to_do_mandelbrots/
----
-It's about 2-3 years since I did my compile time mandelbrot using associated types the hard way ( https://old.reddit.com/r/rust/comments/6zgz3k/rust_compiletime_mandelbrot/ ) - I just rewrote it using const fn; and it's *boring*:
-
-    // (c) Dave Gilbert dave@treblig.org 2020
-    const LSIZE: usize = 32;
-    const SSIZE: usize = LSIZE*(LSIZE+1);
- 
-    const fn manpoint(x: i64, y: i64) -&gt; u8 {
-        let mut ti : i64 = 0;
-        let mut tr : i64 = 0;
-        let mut zi : i64 = 0;
-        let mut zr : i64 = 0;
-        let mut iter : u8 = 128;
- 
-        while iter &gt; 0  &amp;&amp; (ti + tr &lt; (4 &lt;&lt; 16)) {
-            zi = (((((2&lt;&lt;16)*zr) &gt;&gt; 16) * zi)&gt;&gt;16) + y;
-            zr = tr-ti+x;
-            tr = (zr*zr) &gt;&gt; 16;
-            ti = (zi*zi) &gt;&gt; 16;
-            iter-=1;
-        }
-        (iter % 20) + 64
-    }
- 
-    const fn manline() -&gt; [u8;SSIZE] {
-        let mut y : i64 = -2 &lt;&lt; 16;
-        let xstep : i64 = (4 &lt;&lt; 16) / (LSIZE as i64);
-        let ystep : i64 = (4 &lt;&lt; 16) / (LSIZE as i64);
-        let mut yi = 0;
-        let mut res : [u8;SSIZE] = [32;SSIZE];
- 
-        while yi &lt; LSIZE {
-            let mut x : i64 = -2 &lt;&lt; 16;
-            let mut xi = 0;
-            while xi &lt; LSIZE {
-                res[yi*(LSIZE+1)+xi] = manpoint(x, y);
-                x+=xstep;
-                xi+=1;
-            }
-            res[yi*(LSIZE+1)+LSIZE]=10;
-            y+=ystep;
-            yi+=1;
-        }
- 
-        res
-    }
- 
-    const BROT: [u8;SSIZE] = manline();
-    fn main() {
-        println!("Const val={}", std::str::from_utf8(&amp;BROT).unwrap());
-    }
- 
-rustc -O const.rs --emit asm; grep -i ascii const.s|tr '\\' '\012'
-	.ascii	"GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
-    nGGGGGGGGGGGFFFFFFFFFFFGGGGGGGGGG
-    nGGGGGGGGGFFFFFFFFFFFFFFFGGGGGGGG
-    nGGGGGGGFFFFFFFFFFFFFFFFFFFGGGGGG
-    nGGGGGGFFFFFFFFFFFFFFFFFFFFFGGGGG
-    nGGGGGFFFFFFFFFFFFFFFFFFFFFFFGGGG
-    nGGGGFFFFFEEEEEEEFFFFFFFFFFFFFGGG
-    nGGGFFFEEEEEEEDCCDEEFFFFFFFFFFFGG
-    nGGGFFEEEEEEDDCBO@DDEFFFFFFFFFFGG
-    nGGFEEEEEEEDDDCO@SCDDEEFFFFFFFFFG
-    nGGFEEEEEEDDCBAF@NACDEEFFFFFFFFFG
-    nGFEEEEEDDCCSHH@@@@KQDEEFFFFFFFFF
-    nGEEEEEDCCCBP@@@@@@@SCEEEFFFFFFFF
-    nGEEDDCNA@A@@@@@@@@@KCDEEFFFFFFFF
-    nGDDDCBS@@DO@@@@@@@@@CDEEFFFFFFFF
-    nGDDBAQI@@@B@@@@@@@@KCDEEFFFFFFFF
-    nG@@@@@@@@@@@@@@@@@@ACDEEFFFFFFFF
-    nGDDBAQI@@@B@@@@@@@@KCDEEFFFFFFFF
-    nGDDDCBS@@DO@@@@@@@@@CDEEFFFFFFFF
-    nGEEDDCNA@A@@@@@@@@@KCDEEFFFFFFFF
-    nGEEEEEDCCCBP@@@@@@@SCEEEFFFFFFFF
-    nGFEEEEEDDCCSH@@@@@JQDEEFFFFFFFFF
-    nGGFEEEEEEDDCBAF@NACDEEFFFFFFFFFG
-    nGGFEEEEEEEDDDCO@SCDDEEFFFFFFFFFG
-    nGGGFFEEEEEEDDCBO@DDEFFFFFFFFFFGG
-    nGGGFFFEEEEEEEDCCDEEFFFFFFFFFFFGG
-    nGGGGFFFFFEEEEEEEFFFFFFFFFFFFFGGG
-    nGGGGGFFFFFFFFFFFFFFFFFFFFFFFGGGG
-    nGGGGGGFFFFFFFFFFFFFFFFFFFFFGGGGG
-    nGGGGGGGFFFFFFFFFFFFFFFFFFFGGGGGG
-    nGGGGGGGGGFFFFFFFFFFFFFFFGGGGGGGG
-    nGGGGGGGGGGGFFFFFFFFFFFGGGGGGGGGG
-    n"
-## [4][rust-analyzer changelog #40](https://www.reddit.com/r/rust/comments/ijwdcc/rustanalyzer_changelog_40/)
-- url: https://rust-analyzer.github.io/thisweek/2020/08/31/changelog-40.html
+## [3][Supporting Linux kernel development in Rust](https://www.reddit.com/r/rust/comments/ik42b4/supporting_linux_kernel_development_in_rust/)
+- url: https://lwn.net/SubscriberLink/829858/281103f9c6fd0dc2/
 ---
 
-## [5][Headcrab: August 2020 progress report](https://www.reddit.com/r/rust/comments/ijsa4c/headcrab_august_2020_progress_report/)
-- url: https://headcrab.rs/2020/08/31/august-update.html
----
-
-## [6][Rust in Action achieves #1 New Release in "Parallel Computer Programming" on Amazon](https://www.reddit.com/r/rust/comments/ijjofj/rust_in_action_achieves_1_new_release_in_parallel/)
-- url: https://i.redd.it/ijp1at2a77k51.png
----
-
-## [7][Rust explained using easy English so second language speakers can learn it too (now completed)](https://www.reddit.com/r/rust/comments/ijd1gs/rust_explained_using_easy_english_so_second/)
-- url: https://github.com/Dhghomon/easy_rust/blob/master/README.md
----
-
-## [8][As above, so below, part 2. Bare metal Rust generics.](https://www.reddit.com/r/rust/comments/ijwrxd/as_above_so_below_part_2_bare_metal_rust_generics/)
-- url: https://www.ecorax.net/as-above-so-below-2/
----
-
-## [9][Starframe devlog: Architecture (ECS, Graph)](https://www.reddit.com/r/rust/comments/iju3xq/starframe_devlog_architecture_ecs_graph/)
-- url: https://moletrooper.github.io/blog/2020/08/starframe-1-architecture/
----
-
-## [10][best way of performance measuring in rust](https://www.reddit.com/r/rust/comments/ijvpez/best_way_of_performance_measuring_in_rust/)
-- url: https://www.reddit.com/r/rust/comments/ijvpez/best_way_of_performance_measuring_in_rust/
+## [4][Are you interested in a tutorial series on making your own language using Rust?](https://www.reddit.com/r/rust/comments/ikiag7/are_you_interested_in_a_tutorial_series_on_making/)
+- url: https://www.reddit.com/r/rust/comments/ikiag7/are_you_interested_in_a_tutorial_series_on_making/
 ---
 Hi,
 
-I'm quite new to rust and high performance computing in general. For learn- and practice reasons, I am looking for the best way to measure the performance of an algorithm/code snippet, rework it and visualize the improvement (e.g. on a grafana board). 
+Would anyone be interested in a tutorial series on creating an interpreted language using Rust? My plan is to start the tutorials as simple and easy to follow as possible, and gradually work upwards from there to improve the language. I’ve only created one language (still WIP at the moment), so I’m not very experienced in this area, but I have a strong grasp on the fundamentals as a result of rewriting my pet language from scratch many times. Creating the series will hopefully also be a learning experience for me :)
 
-And how do I make sure, that the performance measuring is not affecting the runtime of the whole program? Is there a way to leave the measuring-code in the later production code, or do i have to remove it?
+At first I thought that the tutorials should be in text form, but then I remembered how much more engaged and interested I am when watching tutorial content in video form. I believe that this may also be easier to make for me, as I find things easier to explain with speech rather than writing. However, I’ve heard quite a few people say they dislike video content, as it doesn’t allow them to skim and slows them down. Another reason that text might be better is because I’m 16, so it would probably be strange watching a tutorial where the person teaching isn’t an adult (I know I would find it strange).
 
-Thanks for your help!
-## [11][Zero To Production #3.5: HTML forms (actix-web/serde), Databases (sqlx), Integration tests](https://www.reddit.com/r/rust/comments/ijosc8/zero_to_production_35_html_forms_actixwebserde/)
-- url: https://www.lpalmieri.com/posts/2020-08-31-zero-to-production-3-5-html-forms-databases-integration-tests/
+So, would you be interested?
+
+[View Poll](https://www.reddit.com/poll/ikiag7)
+## [5][Why can't we declare fields of type Box&lt;impl Trait&gt;?](https://www.reddit.com/r/rust/comments/ikjgl6/why_cant_we_declare_fields_of_type_boximpl_trait/)
+- url: https://www.reddit.com/r/rust/comments/ikjgl6/why_cant_we_declare_fields_of_type_boximpl_trait/
+---
+Why am I forced to use dynamic dispatch when boxing a trait?
+
+Consider this code:
+
+`struct S { a: Box&lt;impl Trait&gt; }`
+
+It doesn't compile, I have to write it like:
+
+`struct S&lt;T:Trait&gt; { a: Box&lt;T&gt; }`
+
+Imo it should not require specifying a generic parameter each time I use this struct.
+
+Same for assigning variables - why `Box::new(something)` should be assigned to a `Box&lt;dyn Trait&gt;` if it could easily be stored as `Box&lt;impl Trait&gt;`?
+
+&amp;#x200B;
+
+Another example:
+
+    fn test() -&gt; Box&lt;impl Trait&gt; {
+        Box::new(1)
+    }
+    
+    trait Trait{
+        
+    }
+    
+    impl Trait for i32{}
+    
+    fn main() {
+        let z: Box&lt;impl Trait&gt; = Box::new(1); // compiler error,should be dyn
+        let z/*:Box&lt;impl Trait&gt;*/ = test(); // implicit static dispatch
+    }
+
+&amp;#x200B;
+## [6][Avoid Build Cache Bloat By Sweeping Away Artifacts](https://www.reddit.com/r/rust/comments/iki036/avoid_build_cache_bloat_by_sweeping_away_artifacts/)
+- url: https://www.justanotherdot.com/posts/avoid-build-cache-bloat-by-sweeping-away-artifacts.html
 ---
 
-## [12][What’s the deal with LTO?](https://www.reddit.com/r/rust/comments/ijwya5/whats_the_deal_with_lto/)
-- url: https://www.reddit.com/r/rust/comments/ijwya5/whats_the_deal_with_lto/
+## [7][.take() is my favorite method.](https://www.reddit.com/r/rust/comments/ik3npj/take_is_my_favorite_method/)
+- url: https://www.reddit.com/r/rust/comments/ik3npj/take_is_my_favorite_method/
 ---
-Below I’ll make a few assertions; please tell me if they’re wrong or inaccurate. Thanks for the help!
+I discovered today that .take() allows me to take ownership of objects inside options and this changed everything for me. It's just one of those things where rust found the perfect balance between convenience and safety.
+## [8][Should library crate also implement CLI?](https://www.reddit.com/r/rust/comments/ike2qx/should_library_crate_also_implement_cli/)
+- url: https://www.reddit.com/r/rust/comments/ike2qx/should_library_crate_also_implement_cli/
+---
+I'm building a library which provides some functionality to users. I also want to build a CLI for that library, so those users, who don't care about writing their own programs, can use that functionality just by running CLI tool through command line and Bash.
 
-- LTO allows optimisations across crates
-- There are three settings: `off`, `fat`, `thin` (the default)
-- `fat` takes much longer to compile than `thin`, and usually (?) gives better speeds
-- With `fat` LTO everything is essentially marked `#[inline]`, and so there is no need to use it any more
+What is idiomatic way of implementing this kind of library? Should CLI be part of the library crate? Or should CLI be a separate create that takes dependency on the library?
+
+Can you please recommend some good real-world example of this kind of crate?
+## [9][Thought I'd share this demo of a retro-futuristic UI in rust.](https://www.reddit.com/r/rust/comments/ik04zr/thought_id_share_this_demo_of_a_retrofuturistic/)
+- url: https://ivanceras.github.io/futuristic-ui/
+---
+
+## [10][Why don't the methods into() and try_into support the turbofish?](https://www.reddit.com/r/rust/comments/ikahj4/why_dont_the_methods_into_and_try_into_support/)
+- url: https://www.reddit.com/r/rust/comments/ikahj4/why_dont_the_methods_into_and_try_into_support/
+---
+Methods like `collect()` and `parse()` allow you to specify the type you're converting to and sometimes require you to specify the type you're converting to using the [turbofish](https://turbo.fish/).
+
+`into()` and `try_into()` are both very similar. Sometimes they know the type you want to convert to, but often they don't. However they do not allow usage of the turbofish.
+
+For a variable assignment it doesn't make much of a difference, you can just do:
+
+    let foo: u8 = 0;
+    let upcasted: usize = u8.into();
+
+But for more complex expressions, you aren't given the option:
+
+    let foo: u8 = 0;
+    let items: [u32; 4] = [4, 5, 6, 7];
+    let item = items[foo.into()];  // throws compile error, requires usize, not u8
+    let item = items[foo.into::&lt;usize&gt;()];  // not valid, throws compile error
+
+And the only option here is to use as:
+
+    let item = items[foo as usize];
+
+Which works, but feels less ergonomic. I suppose a lot of my complaints would go away if I could index into arrays and pals using number types other than usize, but that aside, I feel like into could really benefit from the turbofish.
+
+Is there a reason `into()` and `try_into()` don't have it?
+## [11][rust-analyzer changelog #40](https://www.reddit.com/r/rust/comments/ijwdcc/rustanalyzer_changelog_40/)
+- url: https://rust-analyzer.github.io/thisweek/2020/08/31/changelog-40.html
+---
+
+## [12][Building a modular Ruby with traits and crates](https://www.reddit.com/r/rust/comments/ikk86o/building_a_modular_ruby_with_traits_and_crates/)
+- url: https://twitter.com/artichokeruby/status/1300786903768203266
+---
+

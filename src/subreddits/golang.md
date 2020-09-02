@@ -1,90 +1,75 @@
 # golang
-## [1][I wrote a music video in Go](https://www.reddit.com/r/golang/comments/ikibl5/i_wrote_a_music_video_in_go/)
+## [1][Comparing c# to Go. Question about quality and easy of maintenance codebase.](https://www.reddit.com/r/golang/comments/il4dg8/comparing_c_to_go_question_about_quality_and_easy/)
+- url: https://www.reddit.com/r/golang/comments/il4dg8/comparing_c_to_go_question_about_quality_and_easy/
+---
+Question for go programmers that know some c#.  
+[google-cloud-go](https://github.com/googleapis/google-cloud-go) **483.8k LOC**  
+vs  
+[google-cloud-dotnet](https://github.com/googleapis/google-cloud-dotnet) **1.5m LOC**  
+
+
+What is your subjective opinion about these repositories? Whose code is easier to maintain?
+## [2][Go 1.15.1 has been released](https://www.reddit.com/r/golang/comments/iko9do/go_1151_has_been_released/)
+- url: https://golang.org/dl/go1.15.1
+---
+
+## [3][Looking for a book on Go Kit](https://www.reddit.com/r/golang/comments/il5brr/looking_for_a_book_on_go_kit/)
+- url: https://www.reddit.com/r/golang/comments/il5brr/looking_for_a_book_on_go_kit/
+---
+Is there a book, recent or old, on [Go Kit](https://gokit.io/) ? I have been looking for one for a while now. It is the last check I have to do before giving a try to [Go](https://golang.org/).
+## [4][Contrasting NATS with Apache Kafka](https://www.reddit.com/r/golang/comments/il52rx/contrasting_nats_with_apache_kafka/)
+- url: https://itnext.io/contrasting-nats-with-apache-kafka-1d3bdb9aa767
+---
+
+## [5][Any experience with Golang ORM Fs02/rel?](https://www.reddit.com/r/golang/comments/il4laz/any_experience_with_golang_orm_fs02rel/)
+- url: https://www.reddit.com/r/golang/comments/il4laz/any_experience_with_golang_orm_fs02rel/
+---
+Good day to all,
+
+I am trying to find a lib to facilitate my work with my next (mostly-curd) project in Golang.
+
+I went for `gorm`, It is good, but I faced some issues with it and went through searching for other alternatives.
+
+I used `sql` and `sqlx` in previous projects, but I feel I want a higher abstraction cause the project as I mentioned is full of CRUD operations.
+
+I found another (looks relatively new) library called `rel` here [https://github.com/Fs02/rel](https://github.com/Fs02/rel)
+
+I looked at the documentation here [https://fs02.github.io/rel/#/basics?id=full-example](https://fs02.github.io/rel/#/basics?id=full-example) and find it look really good, as I feel like this one has a good thing that is not in gorm which is being **non-invasive**.
+
+However, I feel like I am going to bet on it since there are no many stars on GitHub (currently around 200). 
+
+This is why I cam and ask here, Does anybody have experience with it?
+## [6][Looking for Golang comprehensive learning article, document, course (between Tour to Go and effective go)](https://www.reddit.com/r/golang/comments/il66i8/looking_for_golang_comprehensive_learning_article/)
+- url: https://www.reddit.com/r/golang/comments/il66i8/looking_for_golang_comprehensive_learning_article/
+---
+I'm learning in Golang. I've finished A Tour of Go and effective go.I think effective go is not enough information after graduate A Tour of Go. (It's felt like difficult for me)Do you know nice learning article that level is between A Tour of Go and effective go?I hope to learn comprehensive things.(I'm a web developer. I hope to use Golang for this area)Thanks in advance.
+## [7][I wrote a music video in Go](https://www.reddit.com/r/golang/comments/ikibl5/i_wrote_a_music_video_in_go/)
 - url: https://www.youtube.com/watch?v=-_-2EpUqb9g
 ---
 
-## [2][Go playground provides options like Multiple files and writing test cases 💡️](https://www.reddit.com/r/golang/comments/ik0m92/go_playground_provides_options_like_multiple/)
-- url: https://i.redd.it/as61kin11dk51.png
+## [8][looking for CLI parsing](https://www.reddit.com/r/golang/comments/il5h9g/looking_for_cli_parsing/)
+- url: https://www.reddit.com/r/golang/comments/il5h9g/looking_for_cli_parsing/
+---
+hi
+
+I'm looking for a CLI parsing package to parse arguments with the following specific feature:
+
+* allow multiple arguments and then multiple options on each argument:
+   * `myapp foo` - process foo
+   * `myapp -n 5 foo` - process foo 5 times
+   * `myapp -p 3 foo` - process foo with 3 cores max
+   * `myapp foo bar` - process foo and bar
+   * `myapp -n 5 foo -n 4 bar` - process foo 5 times and bar 4 times
+   * `myapp -n 5 foo -n 4 -p 2 bar` - process foo 5 times and bar 4 times using 2 cores max so basically: `myapp [arg] ... [arg] with arg = [-n int] [-p int] string` with -n defaulting to 1 and -p to -1 (or whatever value I set).
+
+I've quickly looked at cobra ([https://github.com/spf13/cobra](https://github.com/spf13/cobra)) and ffcli ( [https://pkg.go.dev/github.com/peterbourgon/ff/v3@v3.0.0?tab=doc](https://pkg.go.dev/github.com/peterbourgon/ff/v3@v3.0.0?tab=doc) ) not sure they can do that. But before investing more times into them to see if they can I'd rather ask here if someone knows (or knows of another package that can do it).
+
+Thx
+## [9][First Steps from Scipy to Gonum/Optimize | Retro Refractions](https://www.reddit.com/r/golang/comments/ikt3un/first_steps_from_scipy_to_gonumoptimize_retro/)
+- url: https://www.retrorefractions.com/blog/first-steps-gonum-optimize/
 ---
 
-## [3][Println debugging and tracing tool capable of visualising function invocation paths](https://www.reddit.com/r/golang/comments/ikiy1w/println_debugging_and_tracing_tool_capable_of/)
-- url: https://www.reddit.com/r/golang/comments/ikiy1w/println_debugging_and_tracing_tool_capable_of/
----
-Hello Gophers,
-
-I am happy to share with you an idea i had for some time now and i finally managed to find time to make happen!
-
-In short like many of us i have found myself struggling when onboarding on a new projects which has already a decent codebase. 
-
-I realised that i am constantly adding some prints to see what’s going on in the flow and then the idea was born.
-
-What if i can add all the prints i need in a matter of a second and when i am comfortable with the flow that i am interested in i can revert all of the prints in an automated fashion.
-
-Even more what if i can see it in a visual representation from the function i am interested in down the rabbit hole. It would be great. And here it is  [prinTracer](https://github.com/DimitarPetrov/printracer).
-
-&amp;#x200B;
-
-[prinTracer](https://github.com/DimitarPetrov/printracer) is a go tool that instruments your codebase with fmt.Println(…) statements for every function execution and then visualize all function invocations in a sequence diagram. 
-
-You can check the README.md for better visual explanation.
-
-&amp;#x200B;
-
-It will be great if it helps you and saves you some hard times!
-
-Please don’t hesitate to give some feedback it is always appreciated.
-## [4][Add drop shadow effect to images](https://www.reddit.com/r/golang/comments/ikif80/add_drop_shadow_effect_to_images/)
-- url: https://www.reddit.com/r/golang/comments/ikif80/add_drop_shadow_effect_to_images/
----
-A utility to add "drop-shadow" effect to images using Go.
-
-I created this one for the documentation team for the images that they add into the documentation. And to avoid dependency on Photoshop or similar softwares.
-
-[https://github.com/jerrymannel/imageDropShadow](https://github.com/jerrymannel/imageDropShadow)
-
-[Original Image](https://preview.redd.it/h0z53wt6sik51.png?width=948&amp;format=png&amp;auto=webp&amp;s=cfbc93a181090a4c5cec23a74dfec322b3579e15)
-
-[With a stroke and shadow](https://preview.redd.it/vnr4vwt6sik51.png?width=1023&amp;format=png&amp;auto=webp&amp;s=b5f41d7d08a35bb91be484dc18195f7b63980d9d)
-
-Image courtesy of [u/Brandinious](https://www.reddit.com/user/Brandinious/) \- [Calvin and Hobbes \[1920x1200\]](https://www.reddit.com/r/wallpapers/comments/ie81pv/calvin_and_hobbes_1920x1200/)
-## [5][Tuning GO Runtime for Large Heaps](https://www.reddit.com/r/golang/comments/ik7wjp/tuning_go_runtime_for_large_heaps/)
-- url: https://www.reddit.com/r/golang/comments/ik7wjp/tuning_go_runtime_for_large_heaps/
----
-I am currently working on a service that calls a number of other services, processes and aggregates the data into something meaningful. Because of the sheer amount of data and processing, by nature, it tends to use quite a bit of heap under load. The payloads from the upstream systems can be quite large. The issue I am currently facing is the CPU is running very high on this service, and by profiling with PPROF it looks like 40% of the CPU time is being spent doing garbage collection activities, although the heap usage is not surpassing 1 GB, and the container max memory is 4GB. The GO runtime appears to be aggressively trying to keep the memory consumption down at the cost of CPU. I'm curious if there is a guide for tuning the GO runtime for higher memory workloads. I've seen in the documentation there is an environment variable GOGC which can tune how aggressively the garbage collector runs. Is this the recommended route for tunning the runtime? I'm looking for sacrifice higher heap usage for the sake of lower CPU consumption by the GC.
-## [6][Dedicated golang plugin for Geany IDE?](https://www.reddit.com/r/golang/comments/ikfp4b/dedicated_golang_plugin_for_geany_ide/)
-- url: https://www.reddit.com/r/golang/comments/ikfp4b/dedicated_golang_plugin_for_geany_ide/
----
-I am a user of Geany IDE and I personally think its the most under rated IDE despite it being open source, lite and fast. I mostly use it for python  programming.
-
-I recently started to program in go and use geany editor. Its still fun to code with geany but I really  wish it had a dedicated golang plugin.
-
-Features I wish,
-
-Autocompletion: geany has auto completion but its not devoted for golang
-
-Code completion: Able to fill multiplie lines of repetitive code, for example,  err codes.
-
-Jumping to source code: when checking  a method name it should auto jump to the line of source file. If I check for fmt.Print from my current file then the file implementating fmt.Print should open in another tab of geany.
-
-Other features native to golang.
-## [7][obscure-go: Implement In-memory data type security for your projects (Anti-CheatEngine)](https://www.reddit.com/r/golang/comments/ik2uj9/obscurego_implement_inmemory_data_type_security/)
-- url: https://github.com/Dentrax/obscure-go
----
-
-## [8][A reflection based cli toolkit](https://www.reddit.com/r/golang/comments/ikbnbb/a_reflection_based_cli_toolkit/)
-- url: https://www.reddit.com/r/golang/comments/ikbnbb/a_reflection_based_cli_toolkit/
----
-I've been building a reflection based cli framework called [quack](https://github.com/eliothedeman/quack) (think rust's structopt + python's click).  
-I haven't found anything like this for go before, so I'm interested to see if anyone knows of any prior art. Also interested to hear people's thoughts on the API
-## [9][Ultimate Go video course for FREE through your public library](https://www.reddit.com/r/golang/comments/ik63w6/ultimate_go_video_course_for_free_through_your/)
-- url: https://www.reddit.com/r/golang/comments/ik63w6/ultimate_go_video_course_for_free_through_your/
----
-I just found out about this course a couple days ago due the post by the guy who repurposed his notes into a book. (don't necessarily agree w/ how he went about it but, it did lead me to the course).
-
-Anyways,  I started googling the course to find out more and saw it was fairly expensive.  Then, I remember my library offers free access to Lynda and Udemy.  So, I thought, maybe they do the same for Oreilly materials.  Sure enough, answer is yup.
-
-So if you don't have the $280 for the course or don't want to pay the monthly subscription for O'reilly Learning, check out your public library's page and see if they offer O'reilly material for free.
-## [10][GORM V2 officially released!](https://www.reddit.com/r/golang/comments/ijlhiw/gorm_v2_officially_released/)
-- url: https://gorm.io/docs/v2_release_note.html
+## [10][el10savio/gcounter-crdt: A GCounter CRDT Cluster implemented in Go &amp; Docker](https://www.reddit.com/r/golang/comments/ikzb4p/el10saviogcountercrdt_a_gcounter_crdt_cluster/)
+- url: https://github.com/el10savio/gcounter-crdt
 ---
 

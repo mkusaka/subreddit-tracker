@@ -3,97 +3,139 @@
 - url: https://www.reddit.com/r/aws/comments/ik3van/week_of_aug_31st_what_aws_tips_do_you_have/
 ---
 Share your tips with the community.
-## [2][Any ideas on why my Amazon workspace account gets progressively more laggy from logging on](https://www.reddit.com/r/aws/comments/ikiq0t/any_ideas_on_why_my_amazon_workspace_account_gets/)
-- url: https://www.reddit.com/r/aws/comments/ikiq0t/any_ideas_on_why_my_amazon_workspace_account_gets/
----
-(Apologies if this is not the place to ask this) I am currently working from home using Amazon Workspace to log into my work desktop. I did this for a couple months between March and May this year with no issue, was put on to furlough and have returned to working from home since early July.
-
-Since then I have had continuous lag both on the internet and over the phone (via the ring central app to call using my browser). However this is not my connection (150 download 15 upload) nor my hardware. Also it seemingly gets progressively worse over the work day, both my phone and my general work has no issues then begins to get worse.
-
-I have asked my IT department to have a look at it but they are pretty useless and have ‘found no issues’ with my account although around 2 weeks ago they reset my account to a previous state and one of the IT guys advised there was a major fault of some description with my account although he could not specify what nor did he fix it.
-
-Apologies for the boring, long explanation but If anyone has any suggestions or ideas as to what the issue could be I would be very grateful as I have been told that I will have to return to the office if this can’t be fixed and I would rather not have to travel in 2 hours+ each day (plus the costs of trains) but I have no IT knowhow so have no idea how to fix this...
-## [3][Bottlerocket OS 1.0 release](https://www.reddit.com/r/aws/comments/ik3smc/bottlerocket_os_10_release/)
-- url: https://github.com/bottlerocket-os/bottlerocket/releases/tag/v1.0.0
+## [2][Amazon Relational Database Service - The Basics Of AWS RDS](https://www.reddit.com/r/aws/comments/il3mpc/amazon_relational_database_service_the_basics_of/)
+- url: https://catalins.tech/amazon-relational-database-service-the-basics-of-aws-rds
 ---
 
-## [4][JWT auth using React + Node (Cognito+S3+EC2)](https://www.reddit.com/r/aws/comments/ikjnw0/jwt_auth_using_react_node_cognitos3ec2/)
-- url: https://www.reddit.com/r/aws/comments/ikjnw0/jwt_auth_using_react_node_cognitos3ec2/
+## [3][Best way to put an externally manage ALB in front of an EKS cluster?](https://www.reddit.com/r/aws/comments/il032s/best_way_to_put_an_externally_manage_alb_in_front/)
+- url: https://www.reddit.com/r/aws/comments/il032s/best_way_to_put_an_externally_manage_alb_in_front/
 ---
-Hello folks,
+I use Terraform to manage all of my cloud resources. I've been using https://www.getambassador.io/docs/latest/topics/running/ambassador-with-aws/ for a while with a default classic load balancer.
 
-So I have configured my node application to fetch the jwks.json with the pair of keys and verify the token received in the headers (Autorization: Bearer \[token\]) in order to allow access to the API routes.
+In general (and I wouldn't dare post this in r/kubernetes), I am not a big fan of granting access to my K8s nodes to manage resources outside of the cluster e.g. load balancers. I would rather set up an ALB in front of my cluster in Terraform, point it at an ingress controller in the cluster and call it a day.
 
-The problem is within React app. So I send the token in the request headers, however I put the token string by hand. How I make to extract it (by code) from the cookie and send it along the request?
+This can be done with Amabassador but it requires the use of NodePort and statically choose ports for each cluster node. I _think_ that will work but I'd love to hear about any downsides. I plan to use an ALB with ACM, terminating SSL at the ALB.
 
-Also, is there a more simple approach out there?
-## [5][Anyone ever successfully exported an EC2 instance and run it in virtualbox?](https://www.reddit.com/r/aws/comments/ike3ex/anyone_ever_successfully_exported_an_ec2_instance/)
-- url: https://www.reddit.com/r/aws/comments/ike3ex/anyone_ever_successfully_exported_an_ec2_instance/
+All that being said, does anyone else do this? I can't be the only one who wants to manage as much of my infra as possible from Terraform (or CloudFormation). The "normal" way people do this feels like a clash of concerns e.g. letting K8s manage resources outside of a cluster.
+## [4][Best way to move 2 large quantities of data to AWS?](https://www.reddit.com/r/aws/comments/iksw7h/best_way_to_move_2_large_quantities_of_data_to_aws/)
+- url: https://www.reddit.com/r/aws/comments/iksw7h/best_way_to_move_2_large_quantities_of_data_to_aws/
 ---
-I launched and successfully ran t-mobile's [tpotce](https://github.com/telekom-security/tpotce) in my AWS account to capture honeypot data. Once I was done, I wanted to shut off and export the instance to keep for review purposes. I exported the instance following the documentation [here](https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html). The syntax for the CLI command I used was 
+What is the best way to move 2x 150gb PHI (protected health information) files into S3? Can this be done over standard internet connection or is SnowBall necessary?
 
-    aws ec2 create-instance-export-task --description "debian honeypot" --instance-id i-xxxxxxxxxxxxxxx --target-environment vmware --export-to-s3-task DiskImageFormat=vmdk,ContainerFormat=ova,S3Bucket=bucket_name
-
-The AMI I used was debian-10-amd64-20200610-293 (ami-0c24eddbea3a65909). Anytime i try to boot the VM in virtualbox, the image stops booting [here](https://raw.githubusercontent.com/remotephone/remotephone.github.io/master/images/stuck_ec2_boot.png).
-
-I can boot the VM successfully in VMWare player, but networking is completely jacked and I am much more comfortable troubleshooting that in virtualbox. It can't see my interfaces that VMWare player is providing and I've tried a bunch of different things, including using VMWare's network manager tool to add, modify, remove, replace, and whatever else I could do to the network interfaces to get them to come up and no dice. 
-
-In virtualbox, I've tried a whole host of other things, but the main ones is reimporting the OVA an unchecking the import as VDI option (so running it both as a VMDK and a VDI). I've also taken the disk I successfully booted in VMWare and used it as the boot disk in virtualbox with the same problem. Finally, I can mount the disk if I add it as a secondary disk, I  just can't boot from it. 
-
-Thanks!
-## [6][ECS Task vs AWS Batch](https://www.reddit.com/r/aws/comments/ikhe17/ecs_task_vs_aws_batch/)
-- url: https://www.reddit.com/r/aws/comments/ikhe17/ecs_task_vs_aws_batch/
----
-I always use ECS tasks when I have long running processes that needs to be scheduled or needs to run when a specific S3 event occours. So I was wondering: what's the benefit or use case for AWS Batch compared to an ECS task?
+Also, same question for upcoming larger scenarios: moving 5 2TB PHI files into S3.
 
 &amp;#x200B;
 
-Thanks!
-## [7][Finding and deleting orphaned snapshots using AWS CLI in command prompt](https://www.reddit.com/r/aws/comments/ikk2x8/finding_and_deleting_orphaned_snapshots_using_aws/)
-- url: https://www.reddit.com/r/aws/comments/ikk2x8/finding_and_deleting_orphaned_snapshots_using_aws/
+EDIT: Is it possible to make transfer via flash drive HIPAA compliant? Our office has a much faster connection than the client site.
+## [5][AWS Site-to-Site VPN now supports Internet Key Exchange (IKE) initiation (It's about freaking time!)](https://www.reddit.com/r/aws/comments/il5q9p/aws_sitetosite_vpn_now_supports_internet_key/)
+- url: https://aws.amazon.com/about-aws/whats-new/2020/08/aws-site-to-site-vpn-now-supports-internet-key-exchange-initiation/
 ---
-Hi there guys, hope you're well.
 
-I have a pretty straightforward problem. I have a bunch of orphaned EBS snapshots that need to be deleted. When upgrading our software we create these snapshots should anything go wrong. However, as some of you may be aware, even if EC2s are terminated, the snapshots remain and thus need to be deleted manually. There are quite a few articles on this issue online, however I noticed most of them have solutions which requires usage of bash. 
-
-I've also found others such as:
-
-    comm -23 &lt;(aws ec2 describe-snapshots --owner-ids AWS-ACCOUNT-ID --query 'Snapshots[*].SnapshotId' --output text | tr '\t' '\n' | sort) &lt;(aws ec2 describe-volumes --query 'Volumes[*].SnapshotId' --output text | tr '\t' '\n' | sort | uniq)
-
-Any ideas on a workable solution that could be used in CMD??? Thanks.
-## [8][[NEED SOME INPUT] What’re some tips for someone starting with Big Data on AWS?](https://www.reddit.com/r/aws/comments/ik78vd/need_some_input_whatre_some_tips_for_someone/)
-- url: https://www.reddit.com/r/aws/comments/ik78vd/need_some_input_whatre_some_tips_for_someone/
+## [6][Books/resources with focus on aws CLI?](https://www.reddit.com/r/aws/comments/il59iu/booksresources_with_focus_on_aws_cli/)
+- url: https://www.reddit.com/r/aws/comments/il59iu/booksresources_with_focus_on_aws_cli/
 ---
-Hello,
-
-I am just starting my journey of big data on AWS. I am still in the researching phase and am looking to indulge in as much information as I can about the subject before making any decisions. 
-
-Do you guys have any tips or tricks with using big data services on AWS? Provide all of the input you can. Hoping to help the next guy who is looking for help as well. (: 
-
-Thanks!
-## [9][Performance penalty of multi-az postgres with synchronous_commit=on?](https://www.reddit.com/r/aws/comments/ikhuyn/performance_penalty_of_multiaz_postgres_with/)
-- url: https://www.reddit.com/r/aws/comments/ikhuyn/performance_penalty_of_multiaz_postgres_with/
+I wasn't able to find any. Anyone here can recommend me something?
+## [7][Best way to visualize resources](https://www.reddit.com/r/aws/comments/ikvwg4/best_way_to_visualize_resources/)
+- url: https://www.reddit.com/r/aws/comments/ikvwg4/best_way_to_visualize_resources/
 ---
-I’m currently running a single AZ rds instance with one replica in production. We’re looking to potentially enable multi az for more fault tolerance.
+What’s the best way to visualize the resources in your account?
 
-I’m seeing that replication between master and replica in the same AZ is asynchronous. But I was wondering if anyone had experience about the performance penalty of synchronous replication between master/failover nodes in a Multi AZ setup.
-
-Thanks.
-## [10][AWS Toolkit keeps creating default security groups for ELB and VPC when I've supplied it with my own](https://www.reddit.com/r/aws/comments/ikdjet/aws_toolkit_keeps_creating_default_security/)
-- url: https://www.reddit.com/r/aws/comments/ikdjet/aws_toolkit_keeps_creating_default_security/
+Follow up-If you join an account how do you go about finding what’s in use/ how it’s architected?
+## [8][Switching to Self-Hosted MongoDB.](https://www.reddit.com/r/aws/comments/il4hxb/switching_to_selfhosted_mongodb/)
+- url: https://www.loginradius.com/engineering/blog/self-hosted-mongo/
 ---
-Hi, 
 
-I currently have this VPC setup:
-
-2 public subnets - for ELB
-
-2 private subnets - for application
-
-2 private subnets - for RDS (db subnet group)
-
-I'm trying to deploy a load balanced elastic beanstalk application and I supply it with my own security groups, but it seems to want to create 2 default ones, one for a VPC and one for the load balancer, is there anyway around this?
-## [11][Dynamically play a menu to the user Amazon Connect](https://www.reddit.com/r/aws/comments/ikapvq/dynamically_play_a_menu_to_the_user_amazon_connect/)
-- url: https://www.reddit.com/r/aws/comments/ikapvq/dynamically_play_a_menu_to_the_user_amazon_connect/
+## [9][How to get an realistic vision of my monthly S3 Costs?](https://www.reddit.com/r/aws/comments/il4cdb/how_to_get_an_realistic_vision_of_my_monthly_s3/)
+- url: https://www.reddit.com/r/aws/comments/il4cdb/how_to_get_an_realistic_vision_of_my_monthly_s3/
 ---
-Hello, everyone. I'm working on an AWS Connect project that will allow the user to know her balance on a set of accounts. The user can have a maximum of 9 accounts, or as little as one. So for example if  the user calls an audio like "To check your savings balance, press 1, to know your cheque account balance press 2." And so on depending on the user's accounts. Is this possible or some workaround?
+Hi,
+
+Currently I have a self-hosted Minio server with images on it for my website. I stumbled upon a couple Issues I cannot resolve right now so I decided to look for the actual S3. Only I have no clue what all the settings are about.  
+
+
+I'm working with about 50GB of high resolution images and 22GB of low resolution images so roughly 75GB together. These are all in my S3 storage (now Minio). I want to move all this data over to the S3.  
+
+
+The low res images or used in a live search and the first 9 results will allows be loaded and the other 18 if scroll down. These changes based on your search query. The images that are loaded are maximum 1.2MB (that should be minified even more).   
+
+
+How can I configure something realistic to have a proper cost estimate, preferred higher then it will be. Can someone help me create this estimation?
+
+https://preview.redd.it/fghenegsopk51.png?width=1328&amp;format=png&amp;auto=webp&amp;s=ec06e9b7f83828f8e5cec84d612d74c314a378a9
+## [10][CodeBuild OnStateChange firing out of order](https://www.reddit.com/r/aws/comments/il3eyw/codebuild_onstatechange_firing_out_of_order/)
+- url: https://www.reddit.com/r/aws/comments/il3eyw/codebuild_onstatechange_firing_out_of_order/
+---
+I am seeing some weird behaviour with CodeBuild OnStateChange event processing which I don't understand.
+
+For some background, CodeBuild does not natively support integrating with private git repositories.  [Bitbucket.org](https://Bitbucket.org) and [Github.com](https://Github.com) are supported, but private / self-hosted Bitbucket is not.  To accomodate this, a solution is to sync the private repo into CodeCommit, and trigger CodeBuild off that.  To complete the puzzle we must send the build status updates back to the self-hosted Bitbucket server.
+
+What we have in place is a lambda function that triggers of CodeBuild `onStateChange` defined via CDK like so:
+
+         codeBuildProject.onStateChange('StateChange', {
+             target: new targets.LambdaFunction(statusUpdateFn)
+         })
+
+The function then reads the state of the event object `event.detail['build-status']` and relays that to the Bitbucket server.  Trivial, right?.
+
+&amp;#x200B;
+
+Now to the problem, on short build jobs (less than 20 second), the `onStateChange` event triggers the lambda function 3 times.. in this order:
+
+Lambda start time: 12:06:33.    
+`event.time:"12:06:29"`  
+`event.detail["build-status"] : "IN_PROGRESS"`
+
+Lambda start time: 12:07:22  
+`event.time: "12:07:18"`  
+`event.detail["build-status"]: "SUCCEEDED"`
+
+Lambda start time: 12:07:26  
+`event.time: "12:06:29"`  
+`event.detail["build-status"]: "IN_PROGRESS"`
+
+&amp;#x200B;
+
+The problem is that last run, which has the same \`event.time\` as the first run, but it overwrites/reverses the `"SUCCEEDED"` state back to `"IN_PROGRESS"`.
+
+Can anyone reason as to why that third event (or the second `"IN_PROGRESS"` event) triggers at all?
+
+Is it a bug, or a mis-configuration on our end?
+
+I also tried an alternate version of the CDK code with separate triggers for `onBuildStart` and `onBuildSucceeded`, but we still see 3 events, not 2.
+
+ 
+
+&amp;#x200B;
+
+For reference, on a longer build, the `onStateChange` event also triggers the lambda 3 times, but in a more agreeable order:
+
+Lambda start time: 11:02:23  
+`event.time:"11:02:16"`  
+`event.detail["build-status"] : "IN_PROGRESS"\``
+
+Lambda start time: 11:03:20  
+`event.time: "11:02:16"`  
+`event.detail["build-status"]: "IN_PROGRESS"`
+
+Lambda start time: 11:03:33  
+`event.time: "11:03:27"`  
+`event.detail["build-status"]: "SUCCEEDED"`
+## [11][Best option for Temporary persisted storage](https://www.reddit.com/r/aws/comments/il2xst/best_option_for_temporary_persisted_storage/)
+- url: https://www.reddit.com/r/aws/comments/il2xst/best_option_for_temporary_persisted_storage/
+---
+Hi.
+
+I have a system and i need to store some data for processing, any ideas on the options i have for places to store it?
+
+1. I have a system that captures some info.
+2. I then use that to send to a 3rd party (service1) which returns me a uuid.
+3. A user then performs an action
+4. Service 1 then calls a webhook and sends me the uuid and the name of the event the user performed 
+5. When the event happens (up to 5 days later) i need to send some info captured on step 1 to another 3rd party (service2)
+
+After i send the info to service2 i don't need it anymore, service2 is the source of truth and it would be confusing to store it in my app.
+
+I am thinking dynomodb with they key as the uuid i get from service1 and the value the info i send later. Once sent i delete the record.
+
+ 
+Are there any other aws services that might suit?

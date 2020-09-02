@@ -22,105 +22,126 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][TypeScript Jesus Anders Hejlsberg has been working on some fun new features: Template string types and mapped type `as` clauses](https://www.reddit.com/r/typescript/comments/ikc3h4/typescript_jesus_anders_hejlsberg_has_been/)
+## [2][Building a game with TypeScript. Drawing Grid 4/5](https://www.reddit.com/r/typescript/comments/il512l/building_a_game_with_typescript_drawing_grid_45/)
+- url: https://medium.com/@gregsolo/building-a-game-with-typescript-iii-drawing-grid-4-5-398af1dd638d?sk=49c92b3604c33e633bf6dc4a1e2846ed
+---
+
+## [3][What to expect from Typescript 4.0 and more](https://www.reddit.com/r/typescript/comments/il2uaw/what_to_expect_from_typescript_40_and_more/)
+- url: https://medium.com/@metodieff.stefan/what-is-new-in-typescript-4-0-and-more-6c5fa72fa1db?source=friends_link&amp;sk=649d4059694facf4f13223b3831da308
+---
+
+## [4][Declaration of types in a separate file](https://www.reddit.com/r/typescript/comments/ikruk6/declaration_of_types_in_a_separate_file/)
+- url: https://www.reddit.com/r/typescript/comments/ikruk6/declaration_of_types_in_a_separate_file/
+---
+Hi everyone!
+
+I have a module which export a class with some methods. Methods returns a complex data.
+
+For example `SomeClass.ts`:
+
+`// some imports`
+
+`export type ComplexType1 = … // generated from json. Contains a lot of subtypes, enums etc.`
+
+`export type ComplexType2= …`
+
+`// and so on`
+
+`class SomeClass {`
+
+`method1 = (): ComplexType1 =&gt; {…}`
+
+`method2 = (): ComplexType1 =&gt; {…}`
+
+`// etc`
+
+`}`
+
+This structure is repeated in several files.
+
+My problem is that type declarations takes several screens. I trying just copy-paste types into SomeClass.d.ts but types became unavailable inside SomeClass.ts
+
+How I can move types in separate file?
+## [5][How to define a prop type for an object that is generic](https://www.reddit.com/r/typescript/comments/ikvnvh/how_to_define_a_prop_type_for_an_object_that_is/)
+- url: https://www.reddit.com/r/typescript/comments/ikvnvh/how_to_define_a_prop_type_for_an_object_that_is/
+---
+So I have a React component with maybe some excessive generics. I've got a component that takes in an array of rules, and a separate prop that is an object of arguments to pass to each rule. It's a pattern that I've adopted because it avoids creating a closure over the arguments so the rules can be re-evaluated on each render (since the props being passed get updated).
+
+Anyway, my main problem is my PropTypes. I want to still use PropTypes because this code is for a library that will also be used in JavaScript projects, not just TypeScript ones. I just can't get these to work together, the moment I do it breaks compilation.
+
+I know it has something to do with the fact that I'm typing "ruleProps" as an object, whereas it's generic in the TypeScript interface. I'll also point out that it's the "rules" prop which breaks, because the arguments expected by the function no longer match the type.
+
+Hoping for guidance on how to do this. Thanks.
+
+    export interface Rule&lt;RuleProps extends object&gt; {
+        allow: (ruleProps?: RuleProps) =&gt; boolean;
+        redirect: string;
+    }
+    
+    interface Props&lt;CompProps extends object, RuleProps extends object&gt; {
+        rules?: Array&lt;Rule&lt;RuleProps&gt;&gt;;
+        ruleProps?: RuleProps;
+    }
+    
+    ProtectedRoute.propTypes = {
+        rules: PropTypes.arrayOf(PropTypes.shape({
+            allow: PropTypes.func.isRequired,
+            redirect: PropTypes.string.isRequired
+        })),
+        ruleProps: PropTypes.object
+    };
+
+Edit: The error I'm getting is:
+
+    TS2322: Type 'Rule&lt;RuleProps&gt;[] | undefined' is not assignable to type 'Rule&lt;object&gt;[] | undefined'.   Type 'Rule&lt;RuleProps&gt;[]' is not assignable to type 'Rule&lt;object&gt;[]'.     Type 'Rule&lt;RuleProps&gt;' is not assignable to type 'Rule&lt;object&gt;'.       Property 'allow' is missing in type '{}' but required in type 'RuleProps'.
+
+This error occurs in a unit test when I try to actually use the component and pass values to these props. If I remove the PropTypes, everything works just fine.
+## [6][If you are using TypeDoc, I created a theme with particles background. Hope you like it.](https://www.reddit.com/r/typescript/comments/ikofcd/if_you_are_using_typedoc_i_created_a_theme_with/)
+- url: https://github.com/tsparticles/typedoc-particles-theme
+---
+
+## [7][TypeScript Jesus Anders Hejlsberg has been working on some fun new features: Template string types and mapped type `as` clauses](https://www.reddit.com/r/typescript/comments/ikc3h4/typescript_jesus_anders_hejlsberg_has_been/)
 - url: https://github.com/microsoft/TypeScript/pull/40336
 ---
 
-## [3][CyberCode Online: A mmorpg webgame that looks like (disguised as) VS Code](https://www.reddit.com/r/typescript/comments/ik0fxh/cybercode_online_a_mmorpg_webgame_that_looks_like/)
-- url: https://i.redd.it/3znwfrhlzck51.png
+## [8][learning typescript](https://www.reddit.com/r/typescript/comments/il0ysf/learning_typescript/)
+- url: https://www.reddit.com/r/typescript/comments/il0ysf/learning_typescript/
+---
+so, i really wanna learn typescript, for discord.js and maybe a little bit of game dev and website dev, but i honestly have zero clue on how to get started, i learn by doing, and not just watching videos because then i can't remember things, any tips? i would really appreciate the help
+## [9][TypeScript tips and tricks for beginners: Part1 - Declarations](https://www.reddit.com/r/typescript/comments/ikqd8n/typescript_tips_and_tricks_for_beginners_part1/)
+- url: https://drag13.io/posts/typescript-tips-tricks-declarations/index.html
 ---
 
-## [4][Auto-generate enum from object keys?](https://www.reddit.com/r/typescript/comments/ikgvq1/autogenerate_enum_from_object_keys/)
-- url: https://www.reddit.com/r/typescript/comments/ikgvq1/autogenerate_enum_from_object_keys/
+## [10][Type representing valid integer indexes of a const array?](https://www.reddit.com/r/typescript/comments/ikom9c/type_representing_valid_integer_indexes_of_a/)
+- url: https://www.reddit.com/r/typescript/comments/ikom9c/type_representing_valid_integer_indexes_of_a/
 ---
-I'm using framer motion and the typical little string typos are reminding me that maybe the time spent defining string enums is worth it.
+Say I have a readonly array declared as:
 
-Is there a way to use something like Object.keys to automatically generate a string enum with an object's keys? That would speed and clean things up quite a bit.
-## [5][How to model a self referencing tuple array](https://www.reddit.com/r/typescript/comments/ik6jd6/how_to_model_a_self_referencing_tuple_array/)
-- url: https://www.reddit.com/r/typescript/comments/ik6jd6/how_to_model_a_self_referencing_tuple_array/
+    const arr = [‘this’, ‘is’, ‘a’, ‘test’] as const;
+
+
+I now want to declare a type representing all valid index integers for this readonly array. So, I want:
+
+    type indexes = 0|1|2|3;
+
+But I want the above type computed. Assume there are dozens of indexes. Is there any way to represent this without manually typing out the union of integers?
+## [11][Why does undefined "disappear" from my optional props?](https://www.reddit.com/r/typescript/comments/ikl0pb/why_does_undefined_disappear_from_my_optional/)
+- url: https://www.reddit.com/r/typescript/comments/ikl0pb/why_does_undefined_disappear_from_my_optional/
 ---
-I have a data structure that looks like this:
+If I put the following into the [Typescript Playground](https://www.typescriptlang.org/play?#code/JYOwLgpgTgZghgYwgAgApQPYAcDOyDeAUMssACYD8AXMiAK4C2ARtANzG1wMTXI5hRQAc3YBfQoQgAPLBihhkZCPDoAbBTDogEYYBhDIAKtLAAKfKTIAaTt2Sia6bDgCUNfoJBCCHKBDB0UAYABgAk+OQOyOEgXBCiwWKEQA), and hover over `id` or `name` I get the correct type followed by ` | undefined`. However, if I do that in my project in VS Code, `undefined` is no longer there. Why does `undefined` disappear in my project?
 
-    [
-        ["value1", ["value1"]],
-        ["value2", ["value1", "value2", "value3"]],
-        ["value3", ["value1", "value2", "value3"]],
-        ["value4", ["value1", "value2", "value3", "value4"]],
-    ]
+It's problematic because type checking "further down" becomes incorrect which also affects ESLint rules. It for example wants to remove the `?` in `id?.toString()` because of "Unnecessary optional chain on a non-nullish value.". But in the interface, it clearly _is_ optional.
 
-On the surface it could be described as [string, string[]][], but there is a relationship between those values, the array in the second element of the tuple ([string, string[]]) must only include string values that match the first element of the tuple within the whole structure. 
+What am I missing here?
 
-For example,
+```
+interface Props {
+  id?: number;
+  name?: string;
+}
 
-This would be valid because "value1" and "value2" are defined as the first elements and the second element only references strings in the first element.
+export default function Text({ id, name }: Props): string {
+  return `${id}: ${name}`;
+}
 
-    [
-        ["value1", ["value1"]],
-        ["value2", ["value1", "value2"]]
-    ]
-
-However this would *not* be valid, because of the reference to "value3" which does not occur in any of the first elements:
-
-    [
-        ["value1", ["value1"]],
-        ["value2", ["value1", "value2", "value3"]]
-    ]
-
-Thought I'd see if any of you gurus had an idea on how you'd model that in typescript or if the application will just need to enforce it at runtime. 
-
-P.S. I know there are different ways to go about structuring this data, though in this case the assumption has to be that we cannot change from that structure.
-## [6][What are the most crazy anti-TypeScript arguments you’ve heard?](https://www.reddit.com/r/typescript/comments/ik5w7l/what_are_the_most_crazy_antitypescript_arguments/)
-- url: https://www.reddit.com/r/typescript/comments/ik5w7l/what_are_the_most_crazy_antitypescript_arguments/
----
-“The syntax is ugly”  
-“It only pretends to check types”  
-“Whats the point if you just use “any””  
-“I don’t like Angular for Angular specific things, therefore TypeScript is bad”  
-“It‘s too much work to setup to be worth it”  
-“Just don’t be a bad programmer and you won’t need TypeScript”  
-  
-I’ll admit there are some good reasons not to use it in extreme situations, but some people’s reluctance to it is completely absurd.
-## [7][Literature](https://www.reddit.com/r/typescript/comments/ik4235/literature/)
-- url: https://www.reddit.com/r/typescript/comments/ik4235/literature/
----
-Hello guys,  
-I signed up for a typescript beginners course before lockdown, unfortunately it hasn't happened yet and will be moved to late October. I'd like to get a little knowledge out front. Any books and/or youtubers you can recommend, learing typescript from scratch?
-
-THANKS! :)
-## [8][How do I create a data access layer correctly?](https://www.reddit.com/r/typescript/comments/ijtgcv/how_do_i_create_a_data_access_layer_correctly/)
-- url: https://www.reddit.com/r/typescript/comments/ijtgcv/how_do_i_create_a_data_access_layer_correctly/
----
-I use TypeORM to work with the database, but I think it would be better to write my own abstraction (correct me if I'm wrong). In DAL, do I need to describe competitive methods for getting data, such as getUser (id), or develop generic methods for any data models, such as findOne&lt;User&gt;(args)?  
-
-Can you recommend resources on this topic?
-## [9][Extending HTMLCollectionOf](https://www.reddit.com/r/typescript/comments/ijzofs/extending_htmlcollectionof/)
-- url: https://www.reddit.com/r/typescript/comments/ijzofs/extending_htmlcollectionof/
----
-So I want to add a method to the `HTMLCollectionOf` class (it's called `toArray`, in case you're curious).
-
-I have augmented the scope as such (everthing is fine so far);
-
-    declare interface HTMLCollectionOf&lt;T extends Element&gt; {
-        toArray(): Array&lt;HTMLElement&gt;
-        // NOTE: we can discuss the type checking / filtering of Elements vs HTMLElements later :)
-    }
-
-Now I want to add an implementation of the method to the class... usually something like `class.methodName = function() {}` or `class.prototype.methodName = function() {}` would work, depending on requirements... but it doesn't for `HTMLCollectionOf`.
-
-&gt;'HTMLCollectionOf' only refers to a type, but is being used as a value here.
-
-That error sorta makes sense but i'm not sure what I should be referencing to add my method.
-
-Thanks in advance as always guys.
-## [10][Does using await mean all the catches will just go to the try -catch block?](https://www.reddit.com/r/typescript/comments/ijl6il/does_using_await_mean_all_the_catches_will_just/)
-- url: https://www.reddit.com/r/typescript/comments/ijl6il/does_using_await_mean_all_the_catches_will_just/
----
-I’m using like 3 awaits. I use them because I need the data of the 3 awaits before doing anything else. I put them all in a try catch block. If any of them fail it’ll go to the catch block right? How do I know which one failed?
-## [11][fp-ts equivalent of Scala Option.foreach](https://www.reddit.com/r/typescript/comments/ijlruv/fpts_equivalent_of_scala_optionforeach/)
-- url: https://www.reddit.com/r/typescript/comments/ijlruv/fpts_equivalent_of_scala_optionforeach/
----
-So Scala has been my big introduction to functional programming and I love it. Now in my TS projects I'm embracing the fp-ts library, which clearly adheres to a different style of functional structures than Scala does.
-
-One big thing I've been looking for is foreach. In Scala if you want to execute code against the contents of an Option (if there's a value present), foreach is how you do it. I don't see any similarly named function in fp-ts tho. I've been going over the docs but I'm a bit unclear on what to use.
-
-Guidance would be appreciated. Thanks.
+```

@@ -63,130 +63,183 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [2][Who's Available? [August 2020]](https://www.reddit.com/r/reactjs/comments/iaggwf/whos_available_august_2020/)
-- url: https://www.reddit.com/r/reactjs/comments/iaggwf/whos_available_august_2020/
+## [2][Who's Hiring? [September 2020]](https://www.reddit.com/r/reactjs/comments/ikn3vo/whos_hiring_september_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/ikn3vo/whos_hiring_september_2020/
 ---
-We alternate between hirers (on the 1st of the month) and agencies/freelancers/jobseekers (on the 15th).  
-If you are looking to post or reply to React job postings, please check [this month's Who's Hiring post here.][hiring:this month]
+We alternate between **Who's Hiring** (on the 1st of the month, [most recent one here][hiring:most recent]) and **Who's Available** (on the 15th, [most recent one here][available:most recent])
 
----
+Welcome to **the biggest React job board in the world!** This is like Hacker News' **Who's Hiring** but just for React. Top Level comments must be **Job Opportunities.**
 
-If your post or comment is removed wrongly, please [send a message][message:mods] to mods  
-because Automods bot is not perfect :)
+⚠️ NEW: WE ARE REQUESTING EVERYBODY FOLLOW [THE HN Who's Hiring FORMAT][format:hiring:hn]
 
----
+**Company inc. | Job Title | City/State Location | Full-time/Part-Time | On-site/Remote | (Optional) Salary range | Website jobs page, other hard requirements etc.**
 
-Top Level comments must be Agencies and React Devs available for contract/permanent work.
+examples:
 
-Please include Location or any other Requirements in your comment. You can choose to use this format if it helps:
+- **Thorn | San Francisco or Remote (US based) | Full-time Contract | $100k - $150k | Software Engineer | https://www.wearethorn.org/**
+- **PolicyStat | Full-Stack Python+Django Software Engineer | Indianapolis, Vancouver, or REMOTE | Full Time | +\$80k**
 
-## (Fulltime | Contract | USA | Remote)
+Please include as much information as possible. **If you are remote-friendly, or open to sponsoring work visas to your country, say so! These are the top 2 questions!**
 
-or
+If you are looking for jobs, send a PM to the poster or post in our [Who's Available thread!][available:most recent]
 
-## (Agency | Europe | Remote)
-
-Then we recommend adding a 2-3 sentence bio as well.
-
-Not required, but may help:
-
-- Link to Github/Portfolio
-- Notable [r/reactjs][r/reactjs] submissions
-- Preferred stack
-- Former companies or clients
-- Design or backend dev experience
-- anything else you consider relevant. Put on your best show!
-- Listing years of experience NOT required, it's a poor metric
-
-If you are looking to hire, you can send a PM, or reply so that others might see your job opening.  
-**Note**: Due to the sensitive nature of availability while currently in a job, users may be using alternate accounts.
-
-For more ideas on what to include, look at the [last Who's Available posts][available:last month].
-
-If you just want some portfolio feedback, check the stickied post below.
-
-Good luck! #WriteOnceApplyEverywhere
-
-[r/reactjs]: https://www.reddit.com/r/reactjs/
-[available:last month]: https://www.reddit.com/r/reactjs/comments/hseduu/whos_available_july_2020/
-[hiring:this month]: https://www.reddit.com/r/reactjs/comments/i1u8a4/whos_hiring_august_2020/
-[message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][I created a Spotify clone](https://www.reddit.com/r/reactjs/comments/ik40e2/i_created_a_spotify_clone/)
-- url: https://v.redd.it/lj5myb4jwdk51
+[hiring:most recent]: https://www.reddit.com/r/reactjs/comments/i1u8a4/whos_hiring_august_2020/
+[available:most recent]: https://www.reddit.com/r/reactjs/comments/iaggwf/whos_available_august_2020/
+## [3][Self taught, just finished my 2nd React App. A League of Legends champion page. Feedback appreciated](https://www.reddit.com/r/reactjs/comments/ikvfw6/self_taught_just_finished_my_2nd_react_app_a/)
+- url: https://leagueuniverse.netlify.app
 ---
 
 ## [4][Examples of large production-grade, open-source React apps](https://www.reddit.com/r/reactjs/comments/ikiyka/examples_of_large_productiongrade_opensource/)
 - url: https://maxrozen.com/examples-of-large-production-grade-open-source-react-apps/
 ---
 
-## [5][Making an online store with Gatsby &amp; Shopify: Part 1 - Building the Layout](https://www.reddit.com/r/reactjs/comments/ikflbi/making_an_online_store_with_gatsby_shopify_part_1/)
-- url: https://www.prwhite.io/blog/gatsby-shopify-part-1
+## [5][I went through 30+ eslint-plugins so you don't have to.](https://www.reddit.com/r/reactjs/comments/ikvoxy/i_went_through_30_eslintplugins_so_you_dont_have/)
+- url: https://www.reddit.com/r/reactjs/comments/ikvoxy/i_went_through_30_eslintplugins_so_you_dont_have/
+---
+After a month of too many hours deep down in this rabbit hole, I finally released
+v1 of my eslint config.
+
+**TLDR: Why is this a big deal and imo worth this post?**
+
+It's different from other configs. You can customize it entirely, it imo doesn't ship
+with lots of debatable opinions and I made sure, interactions between e.g. prettier
+and eslint or typescript-specific rules and other rules are taken care of.
+
+[github](https://github.com/ljosberinn/eslint-config-galex)
+
+try it:
+
+    yarn add -D eslint-config-galex
+    
+    npm install --save-dev eslint-config-galex
+
+
+Disclaimer: the following is an excerpt from the readme.
+
+**Setting up ESLint can be easy.**
+
+Plug in someone's config or one of the many "industry standards" and be done
+with it. Eventually you learn that some of those practices maybe aren't the best
+idea. Too restrictive, treading into Prettier territory, conflicting with other
+rules, too opinionated or even outdated, you name it. What to do?
+
+You begin adding `// eslint-disable-next-line rulename-here`. It works, but
+litters the code.
+
+You begin disabling rules altogether. Maybe because you don't know better, or
+because the rule is actually bad for your situation. You begin to wonder.
+
+You check npm and see there are 2.8k+ (August 2020) `eslint-plugin-*` packages
+out there. And even worse - 10k+ `eslint-config-*` packages. Which to choose?
+You sort by popularity and see some familiar faces. Time to install!
+
+A few hours into stitching all those popular linting rules together you notice
+some rules collide, some rules are outdated, some expect others to be disabled,
+but only circumstantially. Enough!
+
+*"Now is the time to finally read through all rulesets and decide which I want!"*
+you scream out loud, *"it can't be that many!"* - but find yourself finishing the
+first repo after 6 hours.
+
+Setting up ESLint _properly_ wasn't that easy after all.
+
+Couldn't this be easier?
+
+**What makes this different than all the other configs out there?**
+
+All internals, literally everything, is re-exported. Don't like some
+  decisions? Rules too weak? Want to add custom rules? Everything is covered!
+
+  This hopefully prevents the need of having to migrate between configs every
+  once in a while which builds up frustration due to misconfiguration and the
+  entire overhead related to that. Dependency injection, just for an eslint
+  config!
+
+**What's included?**
+
+Everything is dynamically included based on your `package.json`.
+Rules are selectively applied based on file name patterns.
+
+All rules are commented and link to their docs.
+
+- [x] React
+- [x] Next.js
+- [x] TypeScript
+- [x] Node.js
+- [x] jest
+- [x] jest-dom
+- [x] @testing-library
+- [x] prettier
+## [6][I created a React app that uses Spotify's API to analyse your top tracks](https://www.reddit.com/r/reactjs/comments/il55oa/i_created_a_react_app_that_uses_spotifys_api_to/)
+- url: https://statify.kyleshepherd.co.uk
 ---
 
-## [6][Build a TikTok Clone with React and Firebase - CodeSource.io](https://www.reddit.com/r/reactjs/comments/ijxgwj/build_a_tiktok_clone_with_react_and_firebase/)
-- url: https://codesource.io/build-a-tik-tok-clone-with-react-and-firebase/
+## [7][For all Unity-developers in here who may be interested in creating interactive web experiences or building interfaces using web technologies. I've updated my open source React-Unity-WebGL module to support the Unity 2020! Which brings a lot of speed and stability improvements.](https://www.reddit.com/r/reactjs/comments/il41qg/for_all_unitydevelopers_in_here_who_may_be/)
+- url: https://github.com/elraccoone/react-unity-webgl
 ---
 
-## [7][Data Federation in GraphQL using Hasura and Gatsby Source Plugins](https://www.reddit.com/r/reactjs/comments/ikip6j/data_federation_in_graphql_using_hasura_and/)
-- url: https://hasura.io/blog/data-federation-in-graphql-using-hasura-remote-joins-and-gatsby/
+## [8][New maintainer sought for react-hotkeys! It seems like the BEST key binding solution for react but the maintainer can't work on it anymore and the community needs an alternative.](https://www.reddit.com/r/reactjs/comments/ikro6w/new_maintainer_sought_for_reacthotkeys_it_seems/)
+- url: https://www.reddit.com/r/reactjs/comments/ikro6w/new_maintainer_sought_for_reacthotkeys_it_seems/
+---
+We're using react-hotkeys in production and it's by far the best library that we could find.
+
+https://github.com/greena13/react-hotkeys
+
+Unfortunately, the developer can't maintain it anymore.  There doesn't seem to be an alternative out there and there are about 9 pull requests.
+
+Unfortunately, he did a 2.0.0 release (which are usually a bit buggy) when he had to stop being a maintainer.
+
+I'm busy with a big release but I can probably devote a bit of time.  What I was thinking is maybe like a half dozen of us can step in and be sort of a group of maintainers.
+
+I'm also that maybe we can ask for donations to help fund someone at least part time to merge PRs and try to fix bugs until this thing is more stable.
+
+Also, if any companies out there is open to fund this with donations I'm sure that would be REALLY appreciated. I think if we can just get it stable first and merge a bunch of PRs we can at least have something where we don't need a full-time maintainer.
+## [9][Stitches: new CSS-in-JS library focusing on performance. From the Modulz team](https://www.reddit.com/r/reactjs/comments/ikneu4/stitches_new_cssinjs_library_focusing_on/)
+- url: https://stitches.dev/docs/installation
 ---
 
-## [8][Styled-Components; define styles in React component itself or a separate file?](https://www.reddit.com/r/reactjs/comments/ikk87s/styledcomponents_define_styles_in_react_component/)
-- url: https://www.reddit.com/r/reactjs/comments/ikk87s/styledcomponents_define_styles_in_react_component/
+## [10][Fiat Currency to Cryptocurrency Calculator App . Real-time rates from multiple exchanges.](https://www.reddit.com/r/reactjs/comments/il3400/fiat_currency_to_cryptocurrency_calculator_app/)
+- url: https://www.reddit.com/r/reactjs/comments/il3400/fiat_currency_to_cryptocurrency_calculator_app/
+---
+Hey,
+
+Developed my first react project that helps you calculate the equivalent amount from fiat money to cryptocurrencies and vice-versa.
+
+Website - [**Pingrates**](https://pingrates.herokuapp.com/) **(** [**https://pingrates.herokuapp.com/**](https://pingrates.herokuapp.com/) **)**
+
+Currently, it supports five cryptocurrencies. Looking to add more later on.
+
+* Bitcoin ( BTC )
+* Ethereum (ETH )
+* Ripple ( XRP )
+* Litecoin ( LTC )
+* Bitcoin Cash ( BCH )
+
+Primarily it supports three fiat currencies and many more by using appropriate exchange rates. For all other currencies rates are calculated using USD Rates and Coinbase Forex rates.
+
+* US Dollar ( USD )
+* British Pound ( GBP )
+* Euro ( EUR )
+
+Currently, it provides live rates from three Exchanges. Working on adding more soon!
+
+* Coinbase
+* Bitstamp
+* Kraken
+
+**Notification Alerts**
+
+&gt;**For Desktop user's Notification Alerts are provided which will be delivered using Web Notifications. Just Allow Notifications in Browser and you will receive small popups whenever the conditions are met.**
+
+If you have any issues, queries, or find any bugs please comment down or contact me on the E-mail ID provided on the website.
+## [11][I created a Spotify clone](https://www.reddit.com/r/reactjs/comments/ik40e2/i_created_a_spotify_clone/)
+- url: https://v.redd.it/lj5myb4jwdk51
 ---
 
-
-[View Poll](https://www.reddit.com/poll/ikk87s)
-## [9][react native com google sheets](https://www.reddit.com/r/reactjs/comments/ikjy4n/react_native_com_google_sheets/)
-- url: https://www.reddit.com/r/reactjs/comments/ikjy4n/react_native_com_google_sheets/
+## [12][how to fix opacity at hovering in "React DND"?](https://www.reddit.com/r/reactjs/comments/il044n/how_to_fix_opacity_at_hovering_in_react_dnd/)
+- url: https://www.reddit.com/r/reactjs/comments/il044n/how_to_fix_opacity_at_hovering_in_react_dnd/
 ---
-Preciso colocar o retorno em uma variável para exibir em outro componente, só estou conseguindo visualizar o retorno no console.log  
+don't working from use isDragging. I found just opacity  
 
 
- 
-
-    const GoogleSpreadsheet = require ('google-spreadsheet') const credentials = require('./src/credentials.json') const { promisify } = require('util')  const docId = '1RPWKohhPnHwoH78wrU0VtSaW_zj91kW_oKrAdWktLjY'  const accessSheet = async() =&gt; {   const doc = new GoogleSpreadsheet(docId)   await promisify(doc.useServiceAccountAuth)(credentials)   const info = await promisify(doc.getInfo)()   const worksheet = info.worksheets[0]  // select row   const rows = await promisify(worksheet.getRows)({     query: 'imei = 121545465456'   }) rows.forEach(row =&gt; {   console.log(row.status) }) } accessSheet()
-## [10][Passing api data to child component then looping through the IDs](https://www.reddit.com/r/reactjs/comments/ikjrbm/passing_api_data_to_child_component_then_looping/)
-- url: https://www.reddit.com/r/reactjs/comments/ikjrbm/passing_api_data_to_child_component_then_looping/
----
-Hi everyone,
-
-I’m trying to pass data from an api from a parent players.playerIDs to a child component and then looping through the players in the child component to print them incrementally as the progress bar progresses.
-
-How to pass this sort of thing to child component?
-
-any help appreciated, Thank you.
-## [11][UI Library Recommendations for React.js](https://www.reddit.com/r/reactjs/comments/ikiwyk/ui_library_recommendations_for_reactjs/)
-- url: https://www.reddit.com/r/reactjs/comments/ikiwyk/ui_library_recommendations_for_reactjs/
----
-Hey, anyone can recommend good UI library recommendations for React.js?
-## [12][How to access service in components](https://www.reddit.com/r/reactjs/comments/ikiwyb/how_to_access_service_in_components/)
-- url: https://www.reddit.com/r/reactjs/comments/ikiwyb/how_to_access_service_in_components/
----
-service1.js
-
-export async function service() {
-
-return new Promise((resolve: any) =&gt; {
-
-get(`url`).then(response =&gt; {
-
-.....
-}).catch(err =&gt; {
-
- showpopup();
-});
-});
-}
-
-app.js
-
-
-useEffect(() =&gt; {
-
-service();
-
-}, []);
-
-
-Here i want to access the .catch method showpopup() in app.js Is there any way pls let me know your suggestions.
+how to disable transparency block, that mouseover mousemove, but need on draggable

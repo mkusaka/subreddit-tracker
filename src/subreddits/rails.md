@@ -19,7 +19,91 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][API architecture design for fast reads with 150 million records](https://www.reddit.com/r/rails/comments/ik0sbe/api_architecture_design_for_fast_reads_with_150/)
+## [2][Is it a good idea learning Rails by the book of 2017 year?](https://www.reddit.com/r/rails/comments/ikph1s/is_it_a_good_idea_learning_rails_by_the_book_of/)
+- url: https://www.reddit.com/r/rails/comments/ikph1s/is_it_a_good_idea_learning_rails_by_the_book_of/
+---
+I am reading Ruby on Rails Tutorial book by Michael Hartl (2017) now. I am feeling some troubles with Ruby version and Gems version. 
+
+So, is it a good idea or I need to find some newer resource? What resource you can recommend?
+
+P.S. I went from Python &amp; Django. I got new project and part of it wrote on Ruby. Stack: Django, Rails, React - looks like Frankenstein. :)
+## [3][Email from contact form in Rails 6](https://www.reddit.com/r/rails/comments/iky3nn/email_from_contact_form_in_rails_6/)
+- url: https://www.reddit.com/r/rails/comments/iky3nn/email_from_contact_form_in_rails_6/
+---
+Hello. I'm adding a contact form in my web development portfolio. I would like people to be able to send me a message to my email directly from this form. I'm trying to find a way to do this with Rails 6 and I'm not finding anything new. While Googlilng, I notice that the JS has changed slightly in Rails. It's moved from assets to it's own folder because of webpacker. I'm such a newbie so I don't know much about why that's important. I'm pretty sure I have to add the "mail\_form", "simple\_form", "jquery-rails", and I guess "bootstrap\_sass" gems. Now I'm just wondering what to do next.
+
+Older ways I see are basically adding a controller for the contact form. However, I my form will just be at the bottom of my homepage. Most of my portfolio will just be on this page, so when people are done looking at it, I want them to be able to just scroll to the bottom and see the form there, then message me if that's how they want to contact me quickly.  If someone could point me in the right direction of doing this for Rails 6, I'd appreciate it!
+## [4][building REST APIs with Rails and MongoDB](https://www.reddit.com/r/rails/comments/ikw6q5/building_rest_apis_with_rails_and_mongodb/)
+- url: https://www.reddit.com/r/rails/comments/ikw6q5/building_rest_apis_with_rails_and_mongodb/
+---
+Hello everybody
+
+Any good resources for building APIs with Rails and MongoDB? 
+
+PS: I have tried a course on Coursera but it was outdated.
+## [5][transaction_include_any_action or use :create or :update in model concern](https://www.reddit.com/r/rails/comments/ikmq5u/transaction_include_any_action_or_use_create_or/)
+- url: https://www.reddit.com/r/rails/comments/ikmq5u/transaction_include_any_action_or_use_create_or/
+---
+For Concern does this make more sense in rails 4.2.1
+
+    included do
+      after_commit :update_actions, on: :update
+      after_commit :create_action, on: :create
+    end
+    
+    def update_actions
+    end
+    
+    def create_action
+    end
+
+Or does this make more sense?
+
+    included do
+      after_commit :after_commit_actions, on: [:create, :update]
+    end
+    
+    def after_commit_actions
+     if(send(:transaction_include_any_action?, [:create]))
+       //do create thigs
+     elsif (send(:transaction_include_any_action?, [:update])
+       do update things
+     end
+
+I'm more favored towards the first approach because
+
+1. it doesn't look like we are checking the same thing two times.
+2. \`transaction\_include\_any\_action\` protected and in rails 5.1.7 it is being converted to a private method. I don't feel good about calling protected and private methods like this.
+
+What do you think about both approaches? Which is better and why?
+## [6][will_paginate returns nil](https://www.reddit.com/r/rails/comments/iklzzl/will_paginate_returns_nil/)
+- url: https://www.reddit.com/r/rails/comments/iklzzl/will_paginate_returns_nil/
+---
+Hi! Just came across this weird problem:
+
+`will_paginate` will always return `nil`, no matter what.
+
+My controller action looks like this:
+
+```ruby
+        page = params[:page].to_i
+        if page &lt; 1
+            page = 1
+        end
+
+        @posts = Post.paginate page: page, per_page: 10
+```
+
+And the corresponding view like this:
+
+```erb
+&lt;%= will_paginate @posts %&gt;
+```
+
+However, the pagination is not rendered. Trying to inspect it through the CLI gives me `"nil"`. Why is that? How can I fix it? Thank you!
+
+Edit: I know, will paginate is not part of Rails, but it's commonly used with it, so I thought I might give it a try here. Sorry if it doesn't really fit
+## [7][API architecture design for fast reads with 150 million records](https://www.reddit.com/r/rails/comments/ik0sbe/api_architecture_design_for_fast_reads_with_150/)
 - url: https://www.reddit.com/r/rails/comments/ik0sbe/api_architecture_design_for_fast_reads_with_150/
 ---
 I have a text file with 150 million unique records.
@@ -65,7 +149,7 @@ Questions:
 * Are there additional pros/cons I overlooked?
 
 * What is the most "common" architecture for balancing cost/performance when trying to produce fast reads against a data store (of 150m) records that change?
-## [3][Starting a new app... public and admin best approach for today?](https://www.reddit.com/r/rails/comments/ik0ikq/starting_a_new_app_public_and_admin_best_approach/)
+## [8][Starting a new app... public and admin best approach for today?](https://www.reddit.com/r/rails/comments/ik0ikq/starting_a_new_app_public_and_admin_best_approach/)
 - url: https://www.reddit.com/r/rails/comments/ik0ikq/starting_a_new_app_public_and_admin_best_approach/
 ---
 Some quick context. Long time, small, Rails development team. We've done the same thing the same way for many years. Usually admin based monolith with public facing API. Most of our work is pure business management.
@@ -87,7 +171,7 @@ We've done each of these with success, granted the Engine route has the most fri
 &amp;#x200B;
 
 What other approaches am I missing?
-## [4][How to create a form that saves 2 records for the same model?](https://www.reddit.com/r/rails/comments/ijva9y/how_to_create_a_form_that_saves_2_records_for_the/)
+## [9][How to create a form that saves 2 records for the same model?](https://www.reddit.com/r/rails/comments/ijva9y/how_to_create_a_form_that_saves_2_records_for_the/)
 - url: https://www.reddit.com/r/rails/comments/ijva9y/how_to_create_a_form_that_saves_2_records_for_the/
 ---
 Hello,
@@ -115,7 +199,7 @@ a. specify the form_for code and fields
 b. populate a dropdown with all current accounts (to use in the "transfer_to_account" field
 
 Thanks!
-## [5][How does Devise authentication works?](https://www.reddit.com/r/rails/comments/ijke0i/how_does_devise_authentication_works/)
+## [10][How does Devise authentication works?](https://www.reddit.com/r/rails/comments/ijke0i/how_does_devise_authentication_works/)
 - url: https://www.reddit.com/r/rails/comments/ijke0i/how_does_devise_authentication_works/
 ---
 Hi, guys. I have some question about how  Devise authentication works. The question are in the sequence:
@@ -123,7 +207,7 @@ Hi, guys. I have some question about how  Devise authentication works. The quest
 - I have notice that the session cookie changes for every new request. From what I have read, Devise doesn't hold session on server, only on client. If so, why the session cookie is changing constantly? If no value is saved on server, Devise has no way to invalidate a session key - only changing the password would invalidate the session key. Or there a session saved on server for every login user? 
 
 - Based on the question above, and if there are no session saved on server, how is it considerate different than the main approach (using only a access token passed on header bearer token) of OAuth protocol? Or it isn't?
-## [6][Heroku - Deploy Broken](https://www.reddit.com/r/rails/comments/ijjqgk/heroku_deploy_broken/)
+## [11][Heroku - Deploy Broken](https://www.reddit.com/r/rails/comments/ijjqgk/heroku_deploy_broken/)
 - url: https://www.reddit.com/r/rails/comments/ijjqgk/heroku_deploy_broken/
 ---
 I just merged a PR that changed a few things:
@@ -189,162 +273,3 @@ When I load up a rails console, I see the ActiveStorage migration that was a par
 
     [3] pry(main)&gt; ActiveStorage::Blob
     =&gt; ActiveStorage::Blob(id: integer, key: string, filename: string, content_type: string, metadata: text, byte_size: integer, checksum: string, created_at: datetime, service_name: string)
-## [7][How do you share the master.key with GitHub collaborators](https://www.reddit.com/r/rails/comments/ijd66h/how_do_you_share_the_masterkey_with_github/)
-- url: https://www.reddit.com/r/rails/comments/ijd66h/how_do_you_share_the_masterkey_with_github/
----
-Hello. So I created a new Rails project and I am working with another developer on it. I pushed the project to GitHub but, of course, the `master.key` isn't sent to GitHub. How do both of us safely handle this so there are no conflicts? Do I just send the other dev the `master.key`? We need it for credentials.
-## [8][Submitting a get request via ajax does not trigger csv download](https://www.reddit.com/r/rails/comments/ijfotf/submitting_a_get_request_via_ajax_does_not/)
-- url: https://www.reddit.com/r/rails/comments/ijfotf/submitting_a_get_request_via_ajax_does_not/
----
-Basically I have a get(verb) form, where has remote true and on submission, I am rendering a partial via .js.erb.  
-
-
-Now I would like to add export as csv button, with the filters selected in the above form.   
-
-
-My options are   
-`&lt;%= link_to "CSV", filters_reports_path(format: "csv") %&gt;`  
-
-
-But this does not give the filters selected previously.  
-
-
-So I have added a button, and on click I am getting the form data and sending the request like this  
-
-```
-&lt;button id="download_csv"&gt; Download &lt;/button&gt; 
-
-  $('#download_csv').on("click", function (e) {
-    e.preventDefault()
-    $.ajax({type: "GET",
-      url: "/reports/filters.csv",
-      data: $('#reports_filter').serialize(),
-      success:function(result) {
-        console.log('ok');
-      },
-      error:function(result) {
-        alert('error');
-      }
-    });
-  })
-```
-
-```
---&gt; log for link_to
-Started GET "/reports/filters.csv" for ::1 at 2020-08-30 21:54:28 +0530
-  User Load (0.9ms)  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2  [["id", "4c0f729f-ee51-4e38-9c65-86042e709f78"], ["LIMIT", 1]]
-Processing by ReportsController#filters as CSV
-Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 220)
-
-
-  TimeEntry Load (1.2ms)  SELECT "time_entries".* FROM "time_entries" ORDER BY "time_entries"."id" ASC LIMIT $1  [["LIMIT", 1000]]
-  ↳ app/controllers/reports_controller.rb:43:in `block (3 levels) in filters'
-
-
-
------------
--&gt; log for ajax request
-Started GET "/reports/filters.csv?project_id=&amp;daterange=23%2FAug%2F2020%20-%2030%2FAug%2F2020" for ::1 at 2020-08-30 21:54:45 +0530
-  User Load (1.4ms)  SELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2  [["id", "4c0f729f-ee51-4e38-9c65-86042e709f78"], ["LIMIT", 1]]
-Processing by ReportsController#filters as CSV
-  Parameters: {"project_id"=&gt;"", "daterange"=&gt;"23/Aug/2020 - 30/Aug/2020"}
-Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 222)
-```
-
-My question is if there a way to get the filters in the link_to itself other than storing in session? or what needs to be done to get the ajax request trigger download
-## [9][Rails 5.2.4, Active Storage, and S3: is it possible to implement an effective IAM/ACL policy when the app's default opinion dumps everything into the root of a single bucket?](https://www.reddit.com/r/rails/comments/ij5e6v/rails_524_active_storage_and_s3_is_it_possible_to/)
-- url: https://www.reddit.com/r/rails/comments/ij5e6v/rails_524_active_storage_and_s3_is_it_possible_to/
----
-I have switched from Paperclip to Active Storage. While Active Storage is great, it presents a new set of problems. Paperclip let me set a bucket directory (or even a new bucket), whereas Active Storage dumps everything into the root of a single bucket. I fear that this could create security issues. Improperly set IAM policies are an easy to make no-no, and my app had been using two buckets to avoid the problem: one for public content, and one for private admin accessible content.
-
-In making that two bucket setup work with Active Storage, I tried to use the `service` option for `has_one_attached`. However, I get an ArgumentError: `unknown keyword: service`. The [edge guide](https://edgeguides.rubyonrails.org/active_storage_overview.html#setup) implies that this option works in Rails 5.2, but the [guide for 5.2.4](https://guides.rubyonrails.org/v5.2.4/active_storage_overview.html#has-one-attached) doesn't mention the `service` option at *all*.
-
-How do you lock down access to certain S3 files while being less restrictive with everything else? Is this even possible? Do I have to move to Shrine?
-## [10][Beginner ActiveStorage Help](https://www.reddit.com/r/rails/comments/ij4hh0/beginner_activestorage_help/)
-- url: https://www.reddit.com/r/rails/comments/ij4hh0/beginner_activestorage_help/
----
-# SOLUTION:
-See this SO post: https://stackoverflow.com/questions/58373159/unknown-attribute-service-name-for-activestorageblob
-
-
-# Routes
-
-    
-    # routes.rb
-      resources :properties,          only: [:new, :create, :edit, :update, :index, :show] do
-        resources :expense_items
-      end
-    
-
-# Model
-
-    # model
-    class ExpenseItem &lt; ApplicationRecord
-      has_many_attached :attachments
-    end
-
-    # Works fine in rails console:
-    @expense_item.attachments.map { |f| f.filename } 
-    # =&gt;[#&lt;ActiveStorage::Filename:0x000056033874b940 @filename="test1.png"&gt;, 
-      #&lt;ActiveStorage::Filename:0x0000560338748d08 @filename="test2.mov"&gt;, 
-      #&lt;ActiveStorage::Filename:0x000056033893e540 @filename="test3.pdf"&gt;] 
-
-
-# Error
-But when I try to use it in my edit view, I get an error saying:
-    
-    undefined method `service_name' for #&lt;ActiveStorage::Blob:0x00007fdd4844eaa8&gt;
-    Did you mean?  service
-
-    
-# View
-
-    # edit view
-      &lt;div class="col-sm-6"&gt;
-        &lt;%= render 'shared/error_messages', object: @expense_item %&gt;
-          &lt;ul&gt;
-            &lt;% @expense_item.attachments.each do |file| %&gt;
-              &lt;li&gt;
-                &lt;% if file.previewable? %&gt;
-                  &lt;p&gt;file.filename&lt;/p&gt;
-                  &lt;%#= image_tag file.preview(resize_to_limit: [100,100]) %&gt;
-                &lt;% end %&gt;
-              &lt;/li&gt;
-            &lt;% end %&gt;
-          &lt;/ul&gt;      &lt;%= f.submit 'Update Expense', class: 'btn btn-primary mt-sm-3' %&gt;
-        &lt;% end %&gt;
-
-The exception gets thrown at the if file.previewable? line.
-
-# Controller
-
-    # expense items controller
-      def show
-        @expense_item = property.expense_items.find(params[:id])
-      end  
-
-      def edit
-        @expense_item = property.expense_items.find(params[:id])
-      end
-  
-      def update
-        @expense_item = property.expense_items.find(params[:id])
-        if @expense_item&amp;.update_attributes(expense_item_params)
-          flash[:success] = "Updated Expense Item: #{@expense_item.name}"
-          redirect_to @expense_item.property
-        else
-          render 'edit'
-        end
-      end
-    
-      def expense_item_params
-        params.require(:expense_item).permit(:name, :cost, :expense_date, :property_id, attachments: [])
-      end
-## [11][Javascript + Rails](https://www.reddit.com/r/rails/comments/ij4gvx/javascript_rails/)
-- url: https://www.reddit.com/r/rails/comments/ij4gvx/javascript_rails/
----
-I need help guys, i have to do a form where i select a commune (a big list of this) and, when i have to selectthe condominium  it only shows me those of the selected commune. I try with onChange(Javascript), but i dont know how get this value and use in the condominium place.
-
-&amp;#x200B;
-
-I really hope you can understand to me, is difficult to me explain this in english

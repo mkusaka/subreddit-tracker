@@ -1,11 +1,5 @@
 # javascript
-## [1][Showoff Saturday (August 29, 2020)](https://www.reddit.com/r/javascript/comments/iir35f/showoff_saturday_august_29_2020/)
-- url: https://www.reddit.com/r/javascript/comments/iir35f/showoff_saturday_august_29_2020/
----
-Did you find or create something cool this week in javascript? 
-
-Show us here!
-## [2][Your /r/javascript recap for the week of August 24 - August 30](https://www.reddit.com/r/javascript/comments/ijumv4/your_rjavascript_recap_for_the_week_of_august_24/)
+## [1][Your /r/javascript recap for the week of August 24 - August 30](https://www.reddit.com/r/javascript/comments/ijumv4/your_rjavascript_recap_for_the_week_of_august_24/)
 - url: https://www.reddit.com/r/javascript/comments/ijumv4/your_rjavascript_recap_for_the_week_of_august_24/
 ---
 **Monday, August 24 - Sunday, August 30**
@@ -85,59 +79,59 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][Mastering Hard Parts of JavaScript](https://www.reddit.com/r/javascript/comments/ik9xwq/mastering_hard_parts_of_javascript/)
-- url: https://dev.to/ryanameri/mastering-hard-parts-of-javascript-callbacks-i-3aj0
+## [2][My thoughts on endless battle of React state management libraries (setState/useState vs Redux vs Mobx)](https://www.reddit.com/r/javascript/comments/il2ndq/my_thoughts_on_endless_battle_of_react_state/)
+- url: https://dev.to/mpodlasin/my-thoughts-on-endless-battle-of-react-state-management-libraries-setstate-usestate-vs-redux-vs-mobx-2kal
 ---
 
-## [4][Logical assignment operators in JavaScript](https://www.reddit.com/r/javascript/comments/ik2qou/logical_assignment_operators_in_javascript/)
-- url: https://dev.to/hemanth/logical-assignment-operators-in-javascript-inh
+## [3][[AskJS] Where can i contribute and get code review?](https://www.reddit.com/r/javascript/comments/il2ifr/askjs_where_can_i_contribute_and_get_code_review/)
+- url: https://www.reddit.com/r/javascript/comments/il2ifr/askjs_where_can_i_contribute_and_get_code_review/
+---
+Hi. I have been coding for 7 years making premium plugins for WordPress. All that years i did not have a mentor and that slows down things a lot. Last few years i am focusing on JS and high quality development using a modern workflow and proper debugging. I wish to practice somewhere in an open source project with tests. My goal is to become a better developer to get a job offer or make enough money to emigrate from my country.
+
+Do you know a good designed project that i could join to practice and get my code reviewed? I have never contributed anywhere so i am completely a newbie in it.
+## [4][GraphQL the Simple Way, or: Don't Use Apollo](https://www.reddit.com/r/javascript/comments/il5nkg/graphql_the_simple_way_or_dont_use_apollo/)
+- url: https://httptoolkit.tech/blog/simple-graphql-server-without-apollo
 ---
 
-## [5][The how and why of dependency injection in frontend JavaScript](https://www.reddit.com/r/javascript/comments/ik1ngo/the_how_and_why_of_dependency_injection_in/)
-- url: https://nullvoxpopuli.com/2020-08-08-how-does-di-work
+## [5][Browsers may throttle requestAnimationFrame](https://www.reddit.com/r/javascript/comments/ikkrgm/browsers_may_throttle_requestanimationframe/)
+- url: https://mattperry.is/writing-code/browsers-may-throttle-requestanimationframe-to-30fps
 ---
 
-## [6][TypeScript Jesus Anders Hejlsberg has been working on some fun new features: Template string types and mapped type `as` clauses](https://www.reddit.com/r/javascript/comments/ikjcpr/typescript_jesus_anders_hejlsberg_has_been/)
-- url: https://github.com/microsoft/TypeScript/pull/40336
+## [6][[AskJS] long number adding randomly at the end](https://www.reddit.com/r/javascript/comments/il4tiw/askjs_long_number_adding_randomly_at_the_end/)
+- url: https://www.reddit.com/r/javascript/comments/il4tiw/askjs_long_number_adding_randomly_at_the_end/
 ---
 
-## [7][ObjectModel Strong Dynamically Typed Object Modeling for JavaScript](https://www.reddit.com/r/javascript/comments/ijvbek/objectmodel_strong_dynamically_typed_object/)
-- url: https://objectmodel.js.org/
+[AskJS]
+Hey people!
+
+I am testing our web app and i notice to long numbers in JavaScript, those values are being change almost the same number but adding zeroes at the end without not reason.
+
+There is some explantion?
+
+Example:
+
+Console.info(" look here this -&gt; ", 1234567891234567891)
+
+Output look here this -&gt; 1234567891234568000
+
+Why this is happening? There is a known issue in Js?
+## [7][Pasukon — the easy JavaScript parser generator](https://www.reddit.com/r/javascript/comments/il6fb0/pasukon_the_easy_javascript_parser_generator/)
+- url: https://pasukon.rocks/
 ---
 
-## [8][Don't get stuck](https://www.reddit.com/r/javascript/comments/ijv2yn/dont_get_stuck/)
-- url: https://stitcher.io/blog/dont-get-stuck
+## [8][How to create widget for your web app](https://www.reddit.com/r/javascript/comments/il6n9v/how_to_create_widget_for_your_web_app/)
+- url: https://mgibowski.dev/blog/how-to-create-widget-for-web-app/
 ---
 
-## [9][How to optimize and lazyload images on eleventy (11ty)](https://www.reddit.com/r/javascript/comments/ikc275/how_to_optimize_and_lazyload_images_on_eleventy/)
-- url: https://dev.to/22mahmoud/how-to-optimize-and-lazyload-images-on-eleventy-11ty-206h
+## [9][How to display a gazillion of metrics and keep your sanity](https://www.reddit.com/r/javascript/comments/il632y/how_to_display_a_gazillion_of_metrics_and_keep/)
+- url: https://hazelcast.com/blog/how-to-display-metrics-and-keep-your-sanity/
 ---
 
-## [10][[AskJS] gnv, a tool for shipping minified, backwards-compatible, standalone ES6 Node modules using Rollup and Closure Compiler](https://www.reddit.com/r/javascript/comments/ikc1ym/askjs_gnv_a_tool_for_shipping_minified/)
-- url: https://www.reddit.com/r/javascript/comments/ikc1ym/askjs_gnv_a_tool_for_shipping_minified/
----
-*In advance: This tool is still **very much unfinished**. I am looking for notes, and to gauge whether or not there is wider need for a tool like this.*
-
-I wanted to be able to write Node libraries in ES6, inject all the dependencies, and run the output through Closure Compiler, but found that this was harder than it sounds. After a month or so of on-and-off tinkering and some help from the Closure Compiler / Rollup teams, I believe I have something that is roughly functional.
-
-# [View README on GitHub](https://github.com/TeleworkInc/gnv)
-
-I set out making this tool with a few goals:
-
-1. It should take ES6 input so that developers can use the latest language features.
-2. It must use Closure Compiler for minification and dead code elimination, since nothing beats GCC at compiling JS ASTs. (Shout out to Bradford on the Closure Compiler team, who has been a great help to me as I learn the backend of the Compiler.)
-3. It must use Rollup for ES6 module bundling, as Rollup has the best performance, coverage, and support when it comes to bundling ES6. (Shout out to Lukas and Mateusz on the Rollup team, who have also been a huge help as I learn the ins and outs of Rollup.)
-4. It must compile nontrivial source code (i.e., with real-world third-party NPM dependency trees) all the way to the output stage without throwing an error. This was more complicated than it sounds in practice, and while naively running source through a Rollup -&gt; CC pipeline will work for trivial scripts, once you start including real-world dependencies things get a little rocky as the risk of errors [compounds exponentially](https://github.com/TeleworkInc/rollup-node-testing).
-5. The outputs must be backwards-compatible, i.e., generate CommonJS outputs in a predictable way so that older versions of Node can still interact with the Node exports.
-
-I was able to achieve these with a few relatively hacky approaches -- exporting all named modules as `default` if no `default` export specified for CJS compatibility, an `import.meta.url` hack to recreate `__filename`, the entire `package.js` interface, etc. The tool compiles itself, with final outputs in `dist/` being the only thing uploaded to NPM (aside from package.json and so on).
-
-All of the details are laid out in the README, and any feedback is greatly appreciated. My goal was just to be able to boil my real-world Node scripts down to cold, minified GCC output, and I have mostly accomplished that goal, although there's still quite a bit of work to do (i.e., resolving dependencies recursively so the only needed peerDep for gnv projects is the gnv package itself).
-## [11][Tool to manage package.json files in monorepos](https://www.reddit.com/r/javascript/comments/ik5mj4/tool_to_manage_packagejson_files_in_monorepos/)
-- url: https://github.com/JamieMason/syncpack
+## [10][Getting Started With Web Vitals in Next.js](https://www.reddit.com/r/javascript/comments/il5p5l/getting_started_with_web_vitals_in_nextjs/)
+- url: https://blog.appsignal.com/2020/09/02/getting-started-wit-web-vitals-in-nextjs.html
 ---
 
-## [12][Fire Effect - Create and share a message written in fire. I made this using javascript and canvas, implementing an algorithm I found online (link in the git repository)](https://www.reddit.com/r/javascript/comments/ik7drd/fire_effect_create_and_share_a_message_written_in/)
-- url: https://github.com/victorqribeiro/fireEffect
+## [11][Just how much faster is vanilla JS than frameworks?](https://www.reddit.com/r/javascript/comments/il4vsw/just_how_much_faster_is_vanilla_js_than_frameworks/)
+- url: https://gomakethings.com/just-how-much-faster-is-vanilla-js-than-frameworks/
 ---
 

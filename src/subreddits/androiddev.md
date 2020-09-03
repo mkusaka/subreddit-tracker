@@ -31,273 +31,177 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][I created this simple app that will notify you of any new releases to the current Android Jetpack libraries. You can also browse and bookmark specific libraries you're interested in for easier tracking. It's on GitHub and Play Store. [link in comments]](https://www.reddit.com/r/androiddev/comments/ikrbbs/i_created_this_simple_app_that_will_notify_you_of/)
-- url: https://i.redd.it/a1r2hachalk51.png
+## [3][Easiest ways to find any Android work at all?](https://www.reddit.com/r/androiddev/comments/ill121/easiest_ways_to_find_any_android_work_at_all/)
+- url: https://www.reddit.com/r/androiddev/comments/ill121/easiest_ways_to_find_any_android_work_at_all/
 ---
-
-## [4][Getting feedback on code](https://www.reddit.com/r/androiddev/comments/il59vb/getting_feedback_on_code/)
-- url: https://www.reddit.com/r/androiddev/comments/il59vb/getting_feedback_on_code/
----
-Hey, I was wondering if there is a platform where you can provide your code and somebody (probably an expert) reviews it and tells you how to improve and what you made wrong. Of course I would pay for such an service.
-
-I am asking because throughout the last year I was reworking a lot of code again and again because I was unsatisfied with my solutions, and I was getting crazy because I wanted to know how an expert would have solved the problem.
-## [5][The internals of Android Stack Architecture - Article](https://www.reddit.com/r/androiddev/comments/ikl56a/the_internals_of_android_stack_architecture/)
-- url: https://www.reddit.com/r/androiddev/comments/ikl56a/the_internals_of_android_stack_architecture/
----
-## Table of Contents
-
-* Early Days of Android
-* Android Stack
-* Linux Kernel
-* Secure Element
-* Hardware abstraction layer
-* Native Libraries
-* Runtime
-* Framework
-* Apps
-* References
-
-**Understanding the internals of Android Stack Architecture and how it relates to Linux** blog post aims to be the starting point for developers to get familiar and have an overview of core components in the Android Stack Architecture.
-
-## Early Days of Android
-
-Founded in 2003, Android Inc, in the early days began as an operating system for *Digital Cameras.* Due to the low market for Digital Cameras, the Android Inc teams' intentions slowly diverted to Mobile Devices. **Becoming the rivals of then Symbian and Windows Mobile.**
-
-Acquired by Google in 2005, the development team worked on an Operating System based on Linux Kernel in shadows until the unveil of **Open Handset Alliance in 2007.**
-
-https://preview.redd.it/wjoa0sysojk51.png?width=1280&amp;format=png&amp;auto=webp&amp;s=fd78d0546420b115f5f32acad6c093bfc4688f81
-
-## Android Stack
-
-By Google, Android is described officially as an open-source,**Linux-based software stack** created for a wide array of devices and form factors.
-
-The graphical user interface environment, middlewares, libraries, APIs... sitting on top of Linux Kernel and shell binaries are Software Stack Layers that make the bulk of Android and which makes it **much more than a variation of the Linux system.**
-
-https://preview.redd.it/jcmf41nuojk51.png?width=1280&amp;format=png&amp;auto=webp&amp;s=3cf4d97d8a32277f6ec8faf1634a3ec6e9e87b98
-
-## Linux Kernel
-
-Android's Kernel is based on the Long Term Support (LTS) branches of the Linux Kernel.
-
-The kernel provides drivers for filesystem access, process management, hardware, networking.
-
-The Android Kernel differs from vanilla Linux Kernel due to the differences called as **Androidisms**
-
-**Some of the notable Androidisms added to Kernel are** IPC Binder, Wavelocks, Low-Memory Killer, Dalvik, and Android Runtime, Anonymous Shared Memory (ashmem), Alarm, paranoid network, RAM console, Physical memory (pmem), Sync driver, Timed Output, and GPIO, memory and logging enhancements.
-
-**Android utilizes many unused/less-popular features in desktop distributions of Linux** such as control groups, Low Memory Killer Daemon, Security-Enhanced Linux (SELinux), and open source projects like a racoon for VPN, mdns for network service discovery, and many more.
-
-https://preview.redd.it/j2cq9uhxojk51.png?width=1280&amp;format=png&amp;auto=webp&amp;s=ec4bc88f683efe190610532db27e9b3e83f781e3
-
-## Secure Element
-
-To provide better security, some devices have an embedded Secure Element (SE), which is dedicated, separate tamper-resistant hardware to store cryptographic data.
-
-## Hardware abstraction layer
-
-Android runs on TV, Mobile, Refrigerator and almost everywhere that the underlying hardware may greatly differ in its' scope and support.
-
-**To solve this the Android stack typically relies on shared libraries provided by manufacturers to interact with hardware.**
-
-Android relies on what can be considered a Hardware Abstraction Layer (HAL), although the interface, behavior, and function of abstracted hardware components differ greatly from type to type.
-
-The idea of GPS, sensor, TV, camera, audio, input media components and other components behavior is defined by HAL and how it should behave in Android.
-
-**The vendors are still not allowed to make unnecessary modifications so as to not fail the Compatibility Test Suite, Vendor Test Suite.**
-
-https://preview.redd.it/3xx6e0z0pjk51.png?width=1280&amp;format=png&amp;auto=webp&amp;s=a190299b4aba07053e67fd2df69e66222582b4ea
-
-## Native Libraries
-
-**The native libraries layer is responsible for providing support for the core features.**
-
-The WebKit Web rendering engine, Audio Manager, LIBC, Secure Sockets Layer (SSL), FreeType for rendering fonts, Media, OpenGL ES graphics API, SQLite database, Surface Manager.
-
-https://preview.redd.it/hmiokov4pjk51.png?width=1280&amp;format=png&amp;auto=webp&amp;s=e40d6a952df4d26ed3e9e2951dd3ed98d4c9c652
-
-## Runtime
-
-Before Android 4.4, each Android app would run on its own virtual machine, which is called "Dalvik" which got superseded by the Android RunTime (ART).**In Android 4.4, along with Dalvik, Google experimentally introduced a new Android Runtime called "ART" which still today remains the standard.**
-
-ART introduces ahead-of-time (AOT) compilation, which can improve app performance.
-
-**App runs and launches faster on ART than Dalvik** because DEX bytecode gets translated into machine code during installation which means no compilation during runtime and thus seemingly faster!
-
-Because Dalvik requires extra memory for Just-in-time code cache, an app occupies a smaller memory footprint when it runs on ART."
-
-https://preview.redd.it/x8b29li6pjk51.png?width=1280&amp;format=png&amp;auto=webp&amp;s=028cf01c7fa5b66d7b926a1434a697530941457b
-
-## Framework
-
-**The Android application creation process is provided by Application frameworks/libraries** which allows developers to use the higher-level Kotlin or Java language, rather than low-level C/C++.
-
-**The framework includes the basic blocks for building Android applications** such as Content Provider, Activity Manager, Location Manager, View System, Package Manager, Notification Manager, Resource Manager, Telephony Manager, Window Manager.
-
-**Android frameworks are divided into separate namespaces using the Java package naming and according to their functionality.**
-
-Packages in the android.\* namespace is available for use by developers.
-
-Packages in com.android.\* are internal.
-
-Android also supports most of the standard Java runtime packages in the java.\* namespace.
-
-https://preview.redd.it/9vhtlhu8pjk51.png?width=1280&amp;format=png&amp;auto=webp&amp;s=feab2c94bfda06af4c0ae0ac051cd1d1772feccc
-
-## Apps
-
-The topmost layer in the Android Stack is the Applications layer which can be categorized into System apps and user-installed apps.
-
-System apps cannot be uninstalled or changed by users and are read-only in production devices. **System apps are included in the OS image, mounted as /system**
-
-User-installed apps can be uninstalled at will. Each application lives in a dedicated security sandbox and cannot affect other applications or access their data.
-
-**User-installed apps are installed on a dedicated read-write partition, mounted as /data that host user data.**
-
-https://preview.redd.it/09tg4sv9pjk51.png?width=1280&amp;format=png&amp;auto=webp&amp;s=8a75bf2267c51eba9d18628a7dc7a4b1727f7db3
-
-## References
-
-[https://developer.android.com/guide/platform](https://developer.android.com/guide/platform)
-
-[https://source.android.com](https://source.android.com)
-
-[https://en.wikipedia.org/wiki/Android\_(operating\_system)](https://en.wikipedia.org/wiki/Android_(operating_system))
-
-[https://software.intel.com/content/www/us/en/develop/blogs/art-vs-dalvik-introducing-the-new-android-x86-runtime.html](https://software.intel.com/content/www/us/en/develop/blogs/art-vs-dalvik-introducing-the-new-android-x86-runtime.html)
-
-Android Internals::A Confectioner's Cookbook
-
-Android Security Internals: An In-Depth Guide to Android's Security Architecture
-
-Embedded Android: Porting, Extending, and Customizing
-
-by [androiddevnotes on GitHub](https://github.com/androiddevnotes)
-
-🐣
-## [6][Top 20 Android App Development Tools](https://www.reddit.com/r/androiddev/comments/il6bew/top_20_android_app_development_tools/)
-- url: https://blog.svapinfotech.com/android-app-development-tools/
----
-
-## [7][ADB over WiFi Batch Script (development on Windows)](https://www.reddit.com/r/androiddev/comments/il5jrv/adb_over_wifi_batch_script_development_on_windows/)
-- url: https://www.reddit.com/r/androiddev/comments/il5jrv/adb_over_wifi_batch_script_development_on_windows/
----
-I've created a simple batch script to manage some of the workflow needed to debug your Android app over WiFi.
-
-My knowledge on batch scripting is very limited; I'm open for feedback.
-
-I've created it, because my device's USB connection is faulty. Maybe it can help you as well.
-
-[File and description (GitHub Gist)](https://gist.github.com/jpmcosta/aced6a1ac03e61a7b0fa29082d0b51ce)
-## [8][How to make a backup low level only within shell /data/data/com.app](https://www.reddit.com/r/androiddev/comments/il3a0m/how_to_make_a_backup_low_level_only_within_shell/)
-- url: https://www.reddit.com/r/androiddev/comments/il3a0m/how_to_make_a_backup_low_level_only_within_shell/
----
-Is it possible to make a backup of an app inside /data/data/com.app ? Need to know of low-level method if possible, I know of higher level methods.
+I have 8 years of experience. I know all major architectures and libraries. But I've been searching for a job for 9 months and I will honestly work for minimum wage at this point.
 
 &amp;#x200B;
 
-Was testing this today and wasn't successfull as root:
-
-1. \# cp -r /data/data/com.app /sdcard/
-2. \# pm uninstall com.app
-3. \# cp -r /sdcard/com.app /data/data/
-4. \# pm install /sdcard/com.app
-
-&amp;#x200B;
-
-I ran app but got a bunch of following errors:
-
-`E SharedPreferencesImpl: Couldn't rename file /data/user/0/com.app/shared_prefs/com.google.android.gms.measurement.prefs.xml to backup file /data/user/0/com.app/shared_prefs/com.google.android.gms.measurement.prefs.xml.bak`
-
-&amp;#x200B;
-
-So my question is. Is there a low level approach where I can manually backup apps preferences, logins etc?
-
-&amp;#x200B;
-
-**EDIT: Found solution for myself**: [https://android.stackexchange.com/questions/136895/backup-an-apps-complete-data-when-phone-is-stuck-in-bootloop/137043#137043](https://android.stackexchange.com/questions/136895/backup-an-apps-complete-data-when-phone-is-stuck-in-bootloop/137043#137043)
-
-Backup:
-
-`busybox tar -C / -cvzhf /sdcard/PACKAGE_NAME.tgz data/app/PACKAGE_NAME* data/data/PACKAGE_NAME # replace PACKAGE_NAME with package name of the app`
-
-Restore: (I restored before first running an app)
-
-`busybox tar -C / -xvzhf BACKUP_PATH # replace BACKUP_PATH with the file path of your backup, such as /sdcard/PACKAGE_NAME.tgz`
-## [9][DocumentFileX - java.io.File interoperable SAF implementation](https://www.reddit.com/r/androiddev/comments/ikykfr/documentfilex_javaiofile_interoperable_saf/)
-- url: https://www.reddit.com/r/androiddev/comments/ikykfr/documentfilex_javaiofile_interoperable_saf/
+My mind has been going to some pretty bad places and I just want purpose at this point, I'm lowkey starting to get scared...
+## [4][What architectural pattern do you use in your apps and why?](https://www.reddit.com/r/androiddev/comments/ilp95y/what_architectural_pattern_do_you_use_in_your/)
+- url: https://www.reddit.com/r/androiddev/comments/ilp95y/what_architectural_pattern_do_you_use_in_your/
 ---
-SAF is a framework that brings everyone who wants to access filesystem pain and agony. Slow performance and a messy official library make using SAF literally a pain in the butt.
+With the ViewModel component Google has implicitly suggested the MVVM pattern for developing Android apps. Yet I see many developers using different approaches, not all of them fit perfectly in the Android architecture components.
 
-I can't do much about performance, but I can write a better library so that's what I did.
+So which pattern do you use and why?
+## [5][Prefer Storing Data with Jetpack DataStore](https://www.reddit.com/r/androiddev/comments/ilbf0t/prefer_storing_data_with_jetpack_datastore/)
+- url: https://android-developers.googleblog.com/2020/09/prefer-storing-data-with-jetpack.html?linkId=98693079
+---
 
-keep in mind that this library is in its early alpha stage, things might break down or change drastically in the future.
+## [6][Google Play Console replaces earning reports with billing reports. How can I track earnings now?](https://www.reddit.com/r/androiddev/comments/ilr7wt/google_play_console_replaces_earning_reports_with/)
+- url: https://www.reddit.com/r/androiddev/comments/ilr7wt/google_play_console_replaces_earning_reports_with/
+---
+I wanted to create a monthly tax report this morning, as I noticed that for August there is no earning report anymore in the Play Console. It got replaced by a billing report which only contained one entry of Taiwanese tax for me.
 
-The feature of the library is as follows:
+There is still the sales report but it contains only the local currency and also misses the google cut. Account activities report in the merchant profile does not give information about  the actual purchases.
 
-* Interoperable with java.io.File with some exceptions
-* File.getName() without overhead
-* Faster Directory IO
-* Get child FileX without overhead
-* *Slightly* improved listFiles() //√evil
-* Automatic URI type detection
-* File metadata caching
-* Useful URI extensions
-* (WIP) kotlin-stdlib File extension compatible extension methods
+I really don't understand why they removed the earnings report. Does anyone know an alternative to the earnings report?
+## [7][App to motivate you to not unlock your phone](https://www.reddit.com/r/androiddev/comments/ilqcze/app_to_motivate_you_to_not_unlock_your_phone/)
+- url: https://www.reddit.com/r/androiddev/comments/ilqcze/app_to_motivate_you_to_not_unlock_your_phone/
+---
+Hi,
 
-and here's some sample code
+&amp;#x200B;
 
-## File I/O
+**Background**
 
-    val file = FileX(context, uri)
+When I started developing I was looking for good ideas of things to develop. These ideas, unfortunately would not come up when I had time to develop.
+
+I got an idea that I think I would use but now I do not have the time to develop, in case anyone wants to try and do it.
+
+&amp;#x200B;
+
+**Idea**
+
+I would love to have an app that incentivizes or gamifies the act of not unlocking your phone.
+
+I had thought of something simple. For example, starting from the app "Screen Stopwatch" (source code available), from "Google Creative Lab", it counts the time you have been using your phone and shows it in your lock screen and background.
+
+I end up not really looking at the time, but if the time went down while I am not using it I might wait until it goes to zero to start using my phone again.
+
+Additionally, I would add 1 (configurable) minute for every unlock to discourage from unlocking your phone very often.
+
+&amp;#x200B;
+
+**That would be a nice start of an app that I would definitely try.**
+
+&amp;#x200B;
+
+There are other potential improvements but this post would get too long.
+
+&amp;#x200B;
+
+Thanks!
+## [8][Ribbonize your Android application laucher icon (again)](https://www.reddit.com/r/androiddev/comments/il9vwm/ribbonize_your_android_application_laucher_icon/)
+- url: https://medium.com/@cycki/ribbonize-your-android-application-laucher-icon-again-c52e08d58172
+---
+
+## [9][Where is a good place to share your app once it's published for the first time?](https://www.reddit.com/r/androiddev/comments/iloqj2/where_is_a_good_place_to_share_your_app_once_its/)
+- url: https://www.reddit.com/r/androiddev/comments/iloqj2/where_is_a_good_place_to_share_your_app_once_its/
+---
+I've published a simple app to automize something I used to do while going to the gym (Counting calories and macros). I'm not planning on making a business out of it but I just want to play around on how I would go about promoting an app once it's released if I ever wanted to. My app is called "Snackr" is on the playstore if anyone is curious. Anyway I don't have much extra money sitting around since I'm a broke college student lol. I published the app around 10 days ago and have around 15 downloads so far without promoting it. I want to start promoting it on Instagram once I add one important feature which would "complete" the app, I'm really unexperienced when it comes to this I have some ideas which I'd love to implement in the upcoming days but I'd love to hear your ideas/opinions as well.
+## [10][How to Create a Video Conferencing App like Zoom?](https://www.reddit.com/r/androiddev/comments/ilsywc/how_to_create_a_video_conferencing_app_like_zoom/)
+- url: https://blog.svapinfotech.com/video-conferencing-app-like-zoom/
+---
+
+## [11][[FIXED] Admob Ad Limit Solution On github, Need contributors](https://www.reddit.com/r/androiddev/comments/ilslgi/fixed_admob_ad_limit_solution_on_github_need/)
+- url: https://github.com/grezzled/AntiAdLimit
+---
+
+## [12][Creating my first List View](https://www.reddit.com/r/androiddev/comments/ilkwf5/creating_my_first_list_view/)
+- url: https://www.reddit.com/r/androiddev/comments/ilkwf5/creating_my_first_list_view/
+---
+I'm trying to create a list view within a fragment. I tried using my own custom adapter but it kept crashing whenever I try to access a list item's textview inside the adapter. Most resources online use the old-school way with findViewById. I'm trying to only use data binding. Any suggestions?
+
+&amp;#x200B;
+
+NitnemFragment.kt
+
+    class NitnemFragment : Fragment() {
+        private lateinit var binding: NitnemFragmentBinding
     
-    file.writeText("Hello, SAF! You're dumb.")
-    val text = file.readText() // "Hello, SAF! You're dumb."
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+        }
     
-    val data = listOf(0x82, 0x72, 0x82, 0x60, 0x82, 0x65, 0x82, 0xA4, 0x82, 0xF1, 0x82, 0xBF).map { 
-        it.toByte()
-    }.toByteArray()
-    
-    file.writeBytes(data)
-    val text = file.readText(data, Charset.forName(&lt;small quiz for you&gt;))
-
-## Directory I/O
-
-Directory I/O is only supported by `tree://com.android.externalstorage.documents/...` URI
-
-    val folder = FileX(context, uri, "akita") // No overhead
-    val child = folder.getChild("daisen") // No overhead
-    val neighbor = FileX(context, folder.parent, "yamagata") // No overhead
-    val neice = FileX(context, folder.parent, "iwate/morioka/nakano.txt") // No overhead
-    
-    if (neice.parent.mkdirs()) {
-        neice.createNewFile()
-        neice.renameTo(FileX(context, neice.parent, "kurokawa.json"))
-    }
-    
-    folder.listFiles().forEach { sichouson -&gt; // Returns FileX
-        sichouson.list().forEach { // Returns Uri string
-            ....
+        override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+            binding = DataBindingUtil.inflate(inflater, R.layout.nitnem_fragment, container, false)
+            val listItems = arrayListOf("1", "2", "3")
+            binding.nitnemListView.adapter = NitnemAdapter(binding.root.context, listItems)
+            return binding.root
         }
     }
 
-head over to [https://github.com/tom5079/DocumentFileX](https://github.com/tom5079/DocumentFileX) to learn more!
-## [10][Understanding the Android APK build process, the execution environment, and code compilation.](https://www.reddit.com/r/androiddev/comments/ikr28m/understanding_the_android_apk_build_process_the/)
-- url: https://www.youtube.com/watch?v=Qp-5stxpTz4
----
+**NitnemAdapter.kt**
 
-## [11][How to generate PR directly from Android Studio?](https://www.reddit.com/r/androiddev/comments/il2slq/how_to_generate_pr_directly_from_android_studio/)
-- url: https://www.reddit.com/r/androiddev/comments/il2slq/how_to_generate_pr_directly_from_android_studio/
----
-Every time I complete my work, my boss asks me to raise the **pull request** for the work done. To raise the **PR** I navigate to **Bitbucket** dashboard and then generate the **PR** against the desired branch manually. Although it's a minimal task, I would like to accomplish it without leaving the Android Studio.  
+    class NitnemAdapter(val context: Context, val dataSource: ArrayList&lt;String&gt;): BaseAdapter() {
+        private val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+    
+        override fun getCount(): Int {
+            return dataSource.size
+        }
+    
+        override fun getItem(position: Int): Any {
+            return dataSource[position]
+        }
+    
+        override fun getItemId(position: Int): Long {
+            return position.toLong()
+        }
+    
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+            val binding = NitnemFragmentBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            val rowView = binding.nitnemListView
+            rowView.setBackgroundColor(Color.BLACK)
+            val titleTextView = binding.nitnemListView.nitnemTitle
+            titleTextView.text = "Testing" // CRASH NULL EXCEPTION
+            return rowView
+        }
+    
+    }
 
+**nitnem\_list\_item.xml**
 
-I am aware that the VCS option in Android Studio provides many options for commit, pull and push but I'm still missing  **Create Pull Reques**t option.  
+    &lt;?xml version="1.0" encoding="utf-8"?&gt;
+    &lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"&gt;
+    
+        &lt;TextView
+            android:id="@+id/nitnemTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/nitnem_morning"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" /&gt;
+    &lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;
 
+nitnem\_fragment.xml
 
-https://preview.redd.it/x5nxjfz30pk51.png?width=1444&amp;format=png&amp;auto=webp&amp;s=bf51bbb325b50d87305747839f423725ade9b83a
-
-Are there any plugins or options through which I can raise the PR  directly from the Android Studio itself?
-## [12][Smaller APKs with resource optimization - Jake Wharton](https://www.reddit.com/r/androiddev/comments/ikkaec/smaller_apks_with_resource_optimization_jake/)
-- url: https://jakewharton.com/smaller-apks-with-resource-optimization/
----
-
+    &lt;?xml version="1.0" encoding="utf-8"?&gt;
+    &lt;layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"&gt;
+        &lt;androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".NitnemFragment"&gt;
+    
+            &lt;ListView
+                android:id="@+id/nitnem_list_view"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" /&gt;
+    
+        &lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;
+    &lt;/layout&gt;

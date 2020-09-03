@@ -1,6 +1,28 @@
 # reactjs
-## [1][Beginner's Thread / Easy Questions (August 2020)](https://www.reddit.com/r/reactjs/comments/i1u5g1/beginners_thread_easy_questions_august_2020/)
-- url: https://www.reddit.com/r/reactjs/comments/i1u5g1/beginners_thread_easy_questions_august_2020/
+## [1][Who's Hiring? [September 2020]](https://www.reddit.com/r/reactjs/comments/ikn3vo/whos_hiring_september_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/ikn3vo/whos_hiring_september_2020/
+---
+We alternate between **Who's Hiring** (on the 1st of the month, [most recent one here][hiring:most recent]) and **Who's Available** (on the 15th, [most recent one here][available:most recent])
+
+Welcome to **the biggest React job board in the world!** This is like Hacker News' **Who's Hiring** but just for React. Top Level comments must be **Job Opportunities.**
+
+⚠️ NEW: WE ARE REQUESTING EVERYBODY FOLLOW [THE HN Who's Hiring FORMAT][format:hiring:hn]
+
+**Company inc. | Job Title | City/State Location | Full-time/Part-Time | On-site/Remote | (Optional) Salary range | Website jobs page, other hard requirements etc.**
+
+examples:
+
+- **Thorn | San Francisco or Remote (US based) | Full-time Contract | $100k - $150k | Software Engineer | https://www.wearethorn.org/**
+- **PolicyStat | Full-Stack Python+Django Software Engineer | Indianapolis, Vancouver, or REMOTE | Full Time | +\$80k**
+
+Please include as much information as possible. **If you are remote-friendly, or open to sponsoring work visas to your country, say so! These are the top 2 questions!**
+
+If you are looking for jobs, send a PM to the poster or post in our [Who's Available thread!][available:most recent]
+
+[hiring:most recent]: https://www.reddit.com/r/reactjs/comments/i1u8a4/whos_hiring_august_2020/
+[available:most recent]: https://www.reddit.com/r/reactjs/comments/iaggwf/whos_available_august_2020/
+## [2][Beginner's Thread / Easy Questions (September 2020)](https://www.reddit.com/r/reactjs/comments/illwv0/beginners_thread_easy_questions_september_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/illwv0/beginners_thread_easy_questions_september_2020/
 ---
 &gt; Previous Beginner's Threads can be found in the [wiki][wiki previous threads].
 
@@ -63,183 +85,110 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [2][Who's Hiring? [September 2020]](https://www.reddit.com/r/reactjs/comments/ikn3vo/whos_hiring_september_2020/)
-- url: https://www.reddit.com/r/reactjs/comments/ikn3vo/whos_hiring_september_2020/
----
-We alternate between **Who's Hiring** (on the 1st of the month, [most recent one here][hiring:most recent]) and **Who's Available** (on the 15th, [most recent one here][available:most recent])
-
-Welcome to **the biggest React job board in the world!** This is like Hacker News' **Who's Hiring** but just for React. Top Level comments must be **Job Opportunities.**
-
-⚠️ NEW: WE ARE REQUESTING EVERYBODY FOLLOW [THE HN Who's Hiring FORMAT][format:hiring:hn]
-
-**Company inc. | Job Title | City/State Location | Full-time/Part-Time | On-site/Remote | (Optional) Salary range | Website jobs page, other hard requirements etc.**
-
-examples:
-
-- **Thorn | San Francisco or Remote (US based) | Full-time Contract | $100k - $150k | Software Engineer | https://www.wearethorn.org/**
-- **PolicyStat | Full-Stack Python+Django Software Engineer | Indianapolis, Vancouver, or REMOTE | Full Time | +\$80k**
-
-Please include as much information as possible. **If you are remote-friendly, or open to sponsoring work visas to your country, say so! These are the top 2 questions!**
-
-If you are looking for jobs, send a PM to the poster or post in our [Who's Available thread!][available:most recent]
-
-[hiring:most recent]: https://www.reddit.com/r/reactjs/comments/i1u8a4/whos_hiring_august_2020/
-[available:most recent]: https://www.reddit.com/r/reactjs/comments/iaggwf/whos_available_august_2020/
-## [3][Self taught, just finished my 2nd React App. A League of Legends champion page. Feedback appreciated](https://www.reddit.com/r/reactjs/comments/ikvfw6/self_taught_just_finished_my_2nd_react_app_a/)
-- url: https://leagueuniverse.netlify.app
+## [3][Made with love for React (accidentally deleted my first post)](https://www.reddit.com/r/reactjs/comments/ilqmuv/made_with_love_for_react_accidentally_deleted_my/)
+- url: https://v.redd.it/0u8xtgewnwk51
 ---
 
-## [4][Examples of large production-grade, open-source React apps](https://www.reddit.com/r/reactjs/comments/ikiyka/examples_of_large_productiongrade_opensource/)
-- url: https://maxrozen.com/examples-of-large-production-grade-open-source-react-apps/
+## [4][Hey all -- I converted ReactJS.org documentation to use hooks! Useful? Any feedback?](https://www.reddit.com/r/reactjs/comments/ild03a/hey_all_i_converted_reactjsorg_documentation_to/)
+- url: https://kickstartcoding.online/learn/articles/i-converted-reactjs-org-to-use-hooks/
 ---
 
-## [5][I went through 30+ eslint-plugins so you don't have to.](https://www.reddit.com/r/reactjs/comments/ikvoxy/i_went_through_30_eslintplugins_so_you_dont_have/)
-- url: https://www.reddit.com/r/reactjs/comments/ikvoxy/i_went_through_30_eslintplugins_so_you_dont_have/
+## [5][Modal in React with react-router](https://www.reddit.com/r/reactjs/comments/ilss8b/modal_in_react_with_reactrouter/)
+- url: https://www.reddit.com/r/reactjs/comments/ilss8b/modal_in_react_with_reactrouter/
 ---
-After a month of too many hours deep down in this rabbit hole, I finally released
-v1 of my eslint config.
+&amp;#x200B;
 
-**TLDR: Why is this a big deal and imo worth this post?**
-
-It's different from other configs. You can customize it entirely, it imo doesn't ship
-with lots of debatable opinions and I made sure, interactions between e.g. prettier
-and eslint or typescript-specific rules and other rules are taken care of.
-
-[github](https://github.com/ljosberinn/eslint-config-galex)
-
-try it:
-
-    yarn add -D eslint-config-galex
-    
-    npm install --save-dev eslint-config-galex
-
-
-Disclaimer: the following is an excerpt from the readme.
-
-**Setting up ESLint can be easy.**
-
-Plug in someone's config or one of the many "industry standards" and be done
-with it. Eventually you learn that some of those practices maybe aren't the best
-idea. Too restrictive, treading into Prettier territory, conflicting with other
-rules, too opinionated or even outdated, you name it. What to do?
-
-You begin adding `// eslint-disable-next-line rulename-here`. It works, but
-litters the code.
-
-You begin disabling rules altogether. Maybe because you don't know better, or
-because the rule is actually bad for your situation. You begin to wonder.
-
-You check npm and see there are 2.8k+ (August 2020) `eslint-plugin-*` packages
-out there. And even worse - 10k+ `eslint-config-*` packages. Which to choose?
-You sort by popularity and see some familiar faces. Time to install!
-
-A few hours into stitching all those popular linting rules together you notice
-some rules collide, some rules are outdated, some expect others to be disabled,
-but only circumstantially. Enough!
-
-*"Now is the time to finally read through all rulesets and decide which I want!"*
-you scream out loud, *"it can't be that many!"* - but find yourself finishing the
-first repo after 6 hours.
-
-Setting up ESLint _properly_ wasn't that easy after all.
-
-Couldn't this be easier?
-
-**What makes this different than all the other configs out there?**
-
-All internals, literally everything, is re-exported. Don't like some
-  decisions? Rules too weak? Want to add custom rules? Everything is covered!
-
-  This hopefully prevents the need of having to migrate between configs every
-  once in a while which builds up frustration due to misconfiguration and the
-  entire overhead related to that. Dependency injection, just for an eslint
-  config!
-
-**What's included?**
-
-Everything is dynamically included based on your `package.json`.
-Rules are selectively applied based on file name patterns.
-
-All rules are commented and link to their docs.
-
-- [x] React
-- [x] Next.js
-- [x] TypeScript
-- [x] Node.js
-- [x] jest
-- [x] jest-dom
-- [x] @testing-library
-- [x] prettier
-## [6][I created a React app that uses Spotify's API to analyse your top tracks](https://www.reddit.com/r/reactjs/comments/il55oa/i_created_a_react_app_that_uses_spotifys_api_to/)
-- url: https://statify.kyleshepherd.co.uk
+[I want to build something like this: although the route changes but the modal appear on the top of the existing page,  can you explain how, please.](https://reddit.com/link/ilss8b/video/yezohs81ixk51/player)
+## [6][React Fundamentals 🎒](https://www.reddit.com/r/reactjs/comments/ilpdh0/react_fundamentals/)
+- url: https://blog.bhanuteja.dev/react-fundamentals
 ---
 
-## [7][For all Unity-developers in here who may be interested in creating interactive web experiences or building interfaces using web technologies. I've updated my open source React-Unity-WebGL module to support the Unity 2020! Which brings a lot of speed and stability improvements.](https://www.reddit.com/r/reactjs/comments/il41qg/for_all_unitydevelopers_in_here_who_may_be/)
-- url: https://github.com/elraccoone/react-unity-webgl
+## [7][Just had the lightbulb moment with Redux. Ask me anything and hopefully i'll know the answer. If not, i'll learn something new!](https://www.reddit.com/r/reactjs/comments/ilqaff/just_had_the_lightbulb_moment_with_redux_ask_me/)
+- url: https://www.reddit.com/r/reactjs/comments/ilqaff/just_had_the_lightbulb_moment_with_redux_ask_me/
+---
+Ask away!
+## [8][What does JSON.stringify's second argument actually do?!?!](https://www.reddit.com/r/reactjs/comments/ilsyv1/what_does_jsonstringifys_second_argument_actually/)
+- url: https://youtu.be/psieh-0-roQ
 ---
 
-## [8][New maintainer sought for react-hotkeys! It seems like the BEST key binding solution for react but the maintainer can't work on it anymore and the community needs an alternative.](https://www.reddit.com/r/reactjs/comments/ikro6w/new_maintainer_sought_for_reacthotkeys_it_seems/)
-- url: https://www.reddit.com/r/reactjs/comments/ikro6w/new_maintainer_sought_for_reacthotkeys_it_seems/
+## [9][zustand-store-addons State management](https://www.reddit.com/r/reactjs/comments/ilsx7w/zustandstoreaddons_state_management/)
+- url: https://www.reddit.com/r/reactjs/comments/ilsx7w/zustandstoreaddons_state_management/
 ---
-We're using react-hotkeys in production and it's by far the best library that we could find.
+I'm really happy to release zustand-store-addons for React to add super powers to your zustand stores. 🚀
 
-https://github.com/greena13/react-hotkeys
+- Computed properties.
+- Watchers.
+- Simplified fetch syntax.
+- Middleware chaining.
+- Automatic logs for operations.
 
-Unfortunately, the developer can't maintain it anymore.  There doesn't seem to be an alternative out there and there are about 9 pull requests.
-
-Unfortunately, he did a 2.0.0 release (which are usually a bit buggy) when he had to stop being a maintainer.
-
-I'm busy with a big release but I can probably devote a bit of time.  What I was thinking is maybe like a half dozen of us can step in and be sort of a group of maintainers.
-
-I'm also that maybe we can ask for donations to help fund someone at least part time to merge PRs and try to fix bugs until this thing is more stable.
-
-Also, if any companies out there is open to fund this with donations I'm sure that would be REALLY appreciated. I think if we can just get it stable first and merge a bunch of PRs we can at least have something where we don't need a full-time maintainer.
-## [9][Stitches: new CSS-in-JS library focusing on performance. From the Modulz team](https://www.reddit.com/r/reactjs/comments/ikneu4/stitches_new_cssinjs_library_focusing_on/)
-- url: https://stitches.dev/docs/installation
+[https://www.npmjs.com/package/zustand-store-addons](https://www.npmjs.com/package/zustand-store-addons)
+## [10][I (still) need germans to evaluate my website for my master thesis! Also for every participant 2 Euro will be donated to a non-profit organization!](https://www.reddit.com/r/reactjs/comments/ilqqll/i_still_need_germans_to_evaluate_my_website_for/)
+- url: https://www.reddit.com/r/reactjs/comments/ilqqll/i_still_need_germans_to_evaluate_my_website_for/
 ---
+*Sorry for reposting, buit my first attempt has been deleted after two days... Here we go again:*
 
-## [10][Fiat Currency to Cryptocurrency Calculator App . Real-time rates from multiple exchanges.](https://www.reddit.com/r/reactjs/comments/il3400/fiat_currency_to_cryptocurrency_calculator_app/)
-- url: https://www.reddit.com/r/reactjs/comments/il3400/fiat_currency_to_cryptocurrency_calculator_app/
+It is a website with information given only in german so it makes sense I guess. The topic is about web accessibility and I would appreciate it if a lot of diverse people would test the page (of course this can't be forced lol).
+
+Btw. The website is created with React and the Material UI library was being used.
+
+This the procedure of your testing:
+
+[https://docs.google.com/document/d/1HQSktM-2NCPXksuHAX12zIS9iCrHtEdRfx8hgvHI4UA/edit?usp=sharing](https://docs.google.com/document/d/1HQSktM-2NCPXksuHAX12zIS9iCrHtEdRfx8hgvHI4UA/edit?usp=sharing)
+
+Link to website:
+
+[https://campuskunst.uni-bremen.de/](https://campuskunst.uni-bremen.de/)
+
+And this is the survey:
+
+[https://forms.gle/3U4ptLWaviRqUDmFA](https://forms.gle/3U4ptLWaviRqUDmFA)
+
+&amp;#x200B;
+
+**Pls read the procedure first.**
+
+If you have any suggestion where I can post my request, too, to gain as many people as possible regarding the topic accessibility on the web, would be really helpful!
+## [11][Introducing ComponentDriven.org](https://www.reddit.com/r/reactjs/comments/il7bw0/introducing_componentdrivenorg/)
+- url: https://www.reddit.com/r/reactjs/comments/il7bw0/introducing_componentdrivenorg/
 ---
-Hey,
+In [2017](https://varun.ca/convergence) I noticed that most major frameworks adopted the component construct. Tom Coleman in his post “[Component-Driven Development](https://blog.hichroma.com/component-driven-development-ce1109d56c8e)”, described this modular UI trend. That said, I’m still amazed how fast components have take over UIs. Especially on the web.
 
-Developed my first react project that helps you calculate the equivalent amount from fiat money to cryptocurrencies and vice-versa.
+It makes sense why. Building UIs is hard. Users expect compelling and personalized experiences, which require a lot of UI logic. But managing that complexity is tricky without simplifying it in a modular way. That’s where components come in.
 
-Website - [**Pingrates**](https://pingrates.herokuapp.com/) **(** [**https://pingrates.herokuapp.com/**](https://pingrates.herokuapp.com/) **)**
+With this shift, countless frontend, design, documentation, and testing tools adopted a component-driven model. Breaking down complex UIs into simple components makes it easier to build UIs.
 
-Currently, it supports five cryptocurrencies. Looking to add more later on.
+To capture this shift, I started collecting a list of tools and the latest thinking on component driven UIs. I gathered all of these resources in one place, to give you an overview:
 
-* Bitcoin ( BTC )
-* Ethereum (ETH )
-* Ripple ( XRP )
-* Litecoin ( LTC )
-* Bitcoin Cash ( BCH )
+* 📚 Glossary &amp; guides
+* 🛠 Frontend tools
+* 🎨 Design tools
+* 📦 Component Story Format (common standard for interoperability)
 
-Primarily it supports three fiat currencies and many more by using appropriate exchange rates. For all other currencies rates are calculated using USD Rates and Coinbase Forex rates.
-
-* US Dollar ( USD )
-* British Pound ( GBP )
-* Euro ( EUR )
-
-Currently, it provides live rates from three Exchanges. Working on adding more soon!
-
-* Coinbase
-* Bitstamp
-* Kraken
-
-**Notification Alerts**
-
-&gt;**For Desktop user's Notification Alerts are provided which will be delivered using Web Notifications. Just Allow Notifications in Browser and you will receive small popups whenever the conditions are met.**
-
-If you have any issues, queries, or find any bugs please comment down or contact me on the E-mail ID provided on the website.
-## [11][I created a Spotify clone](https://www.reddit.com/r/reactjs/comments/ik40e2/i_created_a_spotify_clone/)
-- url: https://v.redd.it/lj5myb4jwdk51
+Check it out at  [componentdriven.org](http://componentdriven.org/)
+## [12][Best approach and recommended libraries for an offline capable application](https://www.reddit.com/r/reactjs/comments/ilr9df/best_approach_and_recommended_libraries_for_an/)
+- url: https://www.reddit.com/r/reactjs/comments/ilr9df/best_approach_and_recommended_libraries_for_an/
 ---
+Hi guys, let me start saying that this is a React Native question.
 
-## [12][how to fix opacity at hovering in "React DND"?](https://www.reddit.com/r/reactjs/comments/il044n/how_to_fix_opacity_at_hovering_in_react_dnd/)
-- url: https://www.reddit.com/r/reactjs/comments/il044n/how_to_fix_opacity_at_hovering_in_react_dnd/
----
-don't working from use isDragging. I found just opacity  
+So, I will be freelancing for a old company I worked for, improving/refactoring an old app I made for them when I worked there.
 
+The app is related to farmers jobs, so its important that has offline capabilities, as there can be situations where the user will not have access to internet, but he still has to be able to introduce new data.
 
-how to disable transparency block, that mouseover mousemove, but need on draggable
+In Spain, where I'm based, farmers usually don't own a big chunk of land, but small separated chunks, so there is a lot of data related to coordinates.
+
+\- Store all critic data (Plot lands, Workers, Chemical Products, Machinery) used to create job tasks, analitics etc...  in the device when the user logs in for first time. AsyncStorage?
+
+\- Use this data all around the app, Redux? React Context? Once the app starts hydrate this provider with all the data stored in async storage, and also refresh it in both places if it fetches new data when it needs it in other screens. 
+
+\- How to deal with errors because no internet connection, if an user add a new job task, and there is no internet, where do you hold this data, how do you present it, and also, instead of adding, what if they update some that already exists and it fails. This is where I doubt more, how to approach this, so its not a big mess, and its escalable and efficient. 
+
+This is some of the libraries that I will be using when it comes to architecture design:
+
+\- Redux with redux-thunk so I can trigger async petitions? Or its over engineering and I just go for React Context.
+
+\- useSWR for data fetching and catching, I think this is a must. 
+
+\- AsyncStorage to store the data.
+
+Do you recommend some library to work with big arrays of objects and mutate them easily with something like, mutate(idOfObjectInArray) or something like this?

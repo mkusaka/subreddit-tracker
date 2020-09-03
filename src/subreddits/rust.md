@@ -23,259 +23,77 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/ijvxwz/whats_everyone_working_on_this_week_362020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-36-2020/48100?u=llogiq)!
-## [3][Flume 0.8, a fast &amp; lightweight MPMC, released: Performance improvements, async support, select API, eventual fairness, Send + Sync + Clone, multiple receivers, no unsafe, timeout/deadline support](https://www.reddit.com/r/rust/comments/il4nq5/flume_08_a_fast_lightweight_mpmc_released/)
+## [3][Fontdue: The fastest font renderer in the world, written in pure Rust](https://www.reddit.com/r/rust/comments/ilnd41/fontdue_the_fastest_font_renderer_in_the_world/)
+- url: https://github.com/mooman219/fontdue/
+---
+
+## [4][Just made my own little Ferris :)](https://www.reddit.com/r/rust/comments/ildkmw/just_made_my_own_little_ferris/)
+- url: https://i.redd.it/p8vpfjrfcsk51.jpg
+---
+
+## [5][Deserializing JSON really fast](https://www.reddit.com/r/rust/comments/ilgfgu/deserializing_json_really_fast/)
+- url: https://blog.datalust.co/deserializing-json-really-fast/
+---
+
+## [6][100 binaries: /u/wezm's highlights of awesome open source rusty applications](https://www.reddit.com/r/rust/comments/ilnur3/100_binaries_uwezms_highlights_of_awesome_open/)
+- url: https://mobile.twitter.com/search?q=from%3A%40wezm%20%23100binaries&amp;f=live
+---
+
+## [7][Why are std traits only implemented on arrays of lengths 0..=32?](https://www.reddit.com/r/rust/comments/ilqfrn/why_are_std_traits_only_implemented_on_arrays_of/)
+- url: https://www.reddit.com/r/rust/comments/ilqfrn/why_are_std_traits_only_implemented_on_arrays_of/
+---
+While playing around with a project I am working on to learn Rust, I came across what I thought was a bug, but turned out to be a feature.
+
+In the standard library traits like `IntoIterator` are only implemented on the primitive type `array` for lengths `0..=32`. [See the `LengthAtMost32` trait here.](https://doc.rust-lang.org/src/core/array/mod.rs.html#390)
+
+Why is the `array` type restricted in this way? Is there a technical reason behind it? 
+
+It says [here](https://doc.rust-lang.org/src/core/array/mod.rs.html#395) that this is a temporary step until const generics are stable; what do const generics provide in this particular scenario that means the `array` length limit can be dropped?
+
+Thanks!
+
+
+Disclaimer: I'm a self taught hobbyist programmer, please forgive my ignorance if the explanation of this is some fairly trivial CompSci 101 thing.
+## [8][Flume 0.8, a fast &amp; lightweight MPMC, released: Performance improvements, async support, select API, eventual fairness, Send + Sync + Clone, multiple receivers, no unsafe, timeout/deadline support](https://www.reddit.com/r/rust/comments/il4nq5/flume_08_a_fast_lightweight_mpmc_released/)
 - url: https://github.com/zesterer/flume
 ---
 
-## [4][PSA: What is `const fn`?](https://www.reddit.com/r/rust/comments/iksmgk/psa_what_is_const_fn/)
-- url: https://www.reddit.com/r/rust/comments/iksmgk/psa_what_is_const_fn/
----
-Recently there's been a lot of discussion about what `const fn` actually is. For example, see the [recent comments on the Rust 1.46 announcement](https://old.reddit.com/r/rust/comments/ihnnnz/announcing_rust_1460_rust_blog/). This post is my personal answer to the question but it's by no means authoritative so please provide corrections!
-
-So why is `const fn` useful? One thing you cannot ordinarily do with a function is call it in a constant position. Let's see what I mean:
-
-```
-
-    // a normal function
-    fn foo(n: usize) -&gt; usize {
-        n + 1
-    }
-
-    fn main() {
-        const BAR: usize = foo(5);
-        let array = [0_u8; foo(7)];
-    }
-
-```
-
-Both of the lines in `main` will cause an error that may look something like this:
-
-    error[E0015]: calls in constants are limited to constant functions, tuple structs and tuple variants
-     --&gt; src/main.rs:7:28
-      |
-    7 |         const BAR: usize = foo(5);
-      |                            ^^^^^^
-
-As the error says, this problem can be solved by using a "constant function" aka `const fn`. In this case all we need to do is change the definition of `foo` to:
-
-```
-
-    // a constant function
-    const fn foo(n: usize) -&gt; usize {
-        n + 1
-    }
-
-```
-
-And now `main` will work! But there's a catch. `const fn` is currently much more limited than a normal function. This simple example works and you can also now use `loop` and `if` in constant functions but there's a lot that won't work. Perhaps most notably, iterators won't work at all. Which amongst other things means no `for` loop. Work is continuing to allow more features in `const fn` but there will always be some functions that cannot be `const fn` (e.g. ones that rely on platform APIs).
-
-In summary, that's all `const fn` means. You can use it in more places than an ordinary function. It can be used as a `static` variable, a `const` variable, as a length for an array, etc.
-
-So should you mark every function as `const fn` so long as it compiles? No! `const fn` is a contract between you and the people that call your function. You are declaring that you will never change the function in ways that are invalid for `const fn`. This contract may prevent some future optimizations so think carefully before using it.
-
------
-
-At this point you might be wondering why I haven't mentioned the phrase "compile time". That's because it's not what `const fn` is really about. Just about all functions can be run either partially or fully at compile time (the optimizer permitting) and a `const fn` may be run at runtime. Of course sometimes you do want to make 100% sure a function is run at compile time which is a useful side-effect of doing `const BAR: usize = foo();`. Note though that if you just do `let bar = foo();` (where `foo` is a `const fn`) it's pretty much the same as using an ordinary function which may or may not be run at compile time.
-
-In the future there might be [inline `const`](https://github.com/ecstatic-morse/rfcs/blob/inline-const/text/0000-inline-const.md) that explicitly declares that you want to run part of your program at compile time. For example:
-
-```
-
-    let bar = const {
-        // The compiler will run this whole block at compile time
-        // or else it will produce an error
-    };
-
-``` 
-
-But this is very far from being stabilized (it's not even implemented yet).
-## [5][VSCode, multiple project roots, rust-analyzer, clippy, and rustfmt](https://www.reddit.com/r/rust/comments/ikzbdj/vscode_multiple_project_roots_rustanalyzer_clippy/)
-- url: https://www.reddit.com/r/rust/comments/ikzbdj/vscode_multiple_project_roots_rustanalyzer_clippy/
----
-I'm sure it's intuitive to most, but to spare anyone in the future from spending an hour trying to get VSCode to work with multiple project roots in your workspace and rust-analyzer with clippy and rustfmt on save, here are the little pieces from 10 different websites that I pieced together to make it work.
-
-# Multiple project roots in workspace:
-
-If you're like me and want a `rust` folder as the root of your VSCode workspace to contain multiple crates for testing or generally messing around with code examples, you want to set up a **cargo workspace**.
-
-[Here's the documentation on how](https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html).
-
-It boils down to manually creating a `Cargo.toml` file in the root of your VSCode workspace. It only needs one section, `[workspace]` containing a list of each crate you created with `cargo run &lt;crate name&gt;` and then running `cargo build` in the root directory. Here's an example:
-
-
-    [workspace]
-    
-    members = [
-        "fun-project",
-        "other-project",
-    ]
-
-# rust-analyzer:
-
-[Here's](https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer) the Visual Studio Marketplace page with the latest (as of the time of this post) rust-analyzer plugin for VSCode. 
-
-You can hit `Ctrl + P` in VSCode and paste in `ext install matklad.rust-analyzer` to install it. After installation, you will be prompted to install the language server in VSCode. Install it by clicking `Download now`.
-
-# Clippy
-
-To install clippy, run `rustup component add clippy`
-
-# Rustfmt
-
-To install rustfmt, run `rustup component add rustfmt`
-
-# Putting it all together
-
-Add these lines to your VSCode `settings.json` file and save it. You may be prompted to restart rust-analyzer after save:
-
-    "rust-analyzer.checkOnSave.command": "clippy", // Replaces the default `cargo check` command with `cargo clippy` on Rust file save
-    "editor.formatOnSave": true,                   // General VSCode setting to allow a formatter, in this case rustfmt, to format text on save
-    "rust-analyzer.cargo.allFeatures": true,       // For fun. Activates all features of rust-analyzer. You don't need this one.
-    "rust-analyzer.updates.channel": "nightly",    // For fun. Enables the nightly updates channel for rust-analyzer since they ask nicely in their documentation. You don't need this one. You will be prompted to download the nightly install after save.
-
-&amp;nbsp;
-
-This should be everything you need to get coding!
-## [6][Show r/rust: a `no_std` NonEmpty types inspired by Haskell](https://www.reddit.com/r/rust/comments/il3pdy/show_rrust_a_no_std_nonempty_types_inspired_by/)
-- url: https://crates.io/crates/oom
+## [9][You can now use clap in shell scripts](https://www.reddit.com/r/rust/comments/ilt8cc/you_can_now_use_clap_in_shell_scripts/)
+- url: https://github.com/agnipau/shlap
 ---
 
-## [7][Bottlerocket is a free and open-source Linux-based operating system meant for hosting containers](https://www.reddit.com/r/rust/comments/ikqqm8/bottlerocket_is_a_free_and_opensource_linuxbased/)
-- url: https://github.com/bottlerocket-os/bottlerocket
+## [10][TIL that Rust allows to modify a vector inside a loop that is iterating on it, if the modification immediately precedes the break](https://www.reddit.com/r/rust/comments/il9g5g/til_that_rust_allows_to_modify_a_vector_inside_a/)
+- url: https://www.reddit.com/r/rust/comments/il9g5g/til_that_rust_allows_to_modify_a_vector_inside_a/
 ---
+I put the following code in the playground as an experiment:
 
-## [8][Refactoring Rust Transpiled from C](https://www.reddit.com/r/rust/comments/ikqzni/refactoring_rust_transpiled_from_c/)
-- url: https://immunant.com/blog/2020/09/transpiled_c_safety/
----
-
-## [9][Crepe: fast, compiled Datalog in Rust](https://www.reddit.com/r/rust/comments/ikszdg/crepe_fast_compiled_datalog_in_rust/)
-- url: https://www.reddit.com/r/rust/comments/ikszdg/crepe_fast_compiled_datalog_in_rust/
----
-I'm excited to share a recent project on implementing compiled Datalog in Rust, for areas like static analysis and database systems. [Crepe](https://github.com/ekzhang/crepe/) is a procedural macro that lets you easily write declarative Datalog-like code, and it interoperates fully with larger programs. As a simple example, you can compute reachability in a directed graph like so:
-
-    use crepe::crepe;
-    
-    crepe! {
-        @input
-        struct Edge(i32, i32);
-    
-        @output
-        struct Reachable(i32, i32);
-    
-        Reachable(x, y) &lt;- Edge(x, y);
-        Reachable(x, z) &lt;- Edge(x, y), Reachable(y, z);
-    }
-    
-    fn main() {
-        let mut runtime = Crepe::new();
-        runtime.extend(&amp;[Edge(1, 2), Edge(2, 3), Edge(3, 4), Edge(2, 5)]);
-    
-        let (reachable,) = runtime.run();
-        for Reachable(x, y) in reachable {
-            println!("node {} can reach node {}", x, y);
+    fn replace_with&lt;T: Eq&gt;(list: &amp;mut Vec&lt;T&gt;, old: T, new: T) {
+        for (i, value) in list.iter().enumerate() {
+            if value == &amp;old {
+                list[i] = new;
+                break;
+            }
         }
     }
 
-The advantage of this approach over something like [Souffle](https://souffle-lang.github.io/) is that you get seamless integration and portability with pure Rust code (no need for C++ environment setup), and unlike the low-level [Datafrog](https://github.com/rust-lang/datafrog) engine, you can write ergonomic, high-level specifications.
+To my surprise it compiled.
 
-We also support semi-naive evaluation and stratified negation (see [Chapter 3 of this book](http://blogs.evergreen.edu/sosw/files/2014/04/Green-Vol5-DBS-017.pdf) for more info). What I think is really fun is the ability to extend Datalog rules with **arbitrary Rust syntax**, by allowing any Rust expression to be inlined into the bodies and conditions of rules. For example, we can use arithmetic to compute all paths in a graph with length less than 20:
-
-    use crepe::crepe;
-    
-    const MAX_PATH_LEN: u32 = 20;
-    
-    crepe! {
-        @input
-        struct Edge(i32, i32, u32);
-    
-        @output
-        struct Walk(i32, i32, u32);
-    
-        @output
-        struct NoWalk(i32, i32);
-    
-        struct Node(i32);
-    
-        Node(x) &lt;- Edge(x, _, _);
-        Node(x) &lt;- Edge(_, x, _);
-    
-        Walk(x, x, 0) &lt;- Node(x);
-        Walk(x, z, len1 + len2) &lt;-
-            Edge(x, y, len1),
-            Walk(y, z, len2),
-            (len1 + len2 &lt;= MAX_PATH_LEN);
-    
-        NoWalk(x, y) &lt;- Node(x), Node(y), !Walk(x, y, _);
-    }
-
-In particular, any part of a rule can have inline Rust expressions, so you could even add a clause like `PrimeWalk(x, y) &lt;- Walk(x, y, len), (primes::is_prime(len as u64));` to compute **all paths of prime length** in a weighted graph! (here relying on the [primes](https://docs.rs/primes/0.3.0/primes/) crate)
-
-As mentioned before, this is not the first time Datalog and its extensions have been compiled for static analysis purposes (see [Souffle](https://souffle-lang.github.io/), [Formulog](https://github.com/HarvardPL/formulog)). However, I think implementing it as a procedural macro makes for a really ergonomic, intuitive way to play with Datalog code and integrate it into larger applications.
-
-This is my first published crate, happy to receive any advice you have! Code: [https://github.com/ekzhang/crepe/](https://github.com/ekzhang/crepe/)
-## [10][Are you interested in a tutorial series on making your own language using Rust?](https://www.reddit.com/r/rust/comments/ikiag7/are_you_interested_in_a_tutorial_series_on_making/)
-- url: https://www.reddit.com/r/rust/comments/ikiag7/are_you_interested_in_a_tutorial_series_on_making/
+Is this behavior explained somewhere in the documentation?
+## [11][Google's XLS: Build custom hardware using Rust-like syntax](https://www.reddit.com/r/rust/comments/il9mfd/googles_xls_build_custom_hardware_using_rustlike/)
+- url: https://google.github.io/xls/
 ---
-Hi,
 
-Would anyone be interested in a tutorial series on creating an interpreted language using Rust? My plan is to start the tutorials as simple and easy to follow as possible, and gradually work upwards from there to improve the language. I’ve only created one language (still WIP at the moment), so I’m not very experienced in this area, but I have a strong grasp on the fundamentals as a result of rewriting my pet language from scratch many times. Creating the series will hopefully also be a learning experience for me :)
-
-At first I thought that the tutorials should be in text form, but then I remembered how much more engaged and interested I am when watching tutorial content in video form. I believe that this may also be easier to make for me, as I find things easier to explain with speech rather than writing. However, I’ve heard quite a few people say they dislike video content, as it doesn’t allow them to skim and slows them down. Another reason that text might be better is because I’m 16, so it would probably be strange watching a tutorial where the person teaching isn’t an adult (I know I would find it strange).
-
-So, would you be interested?
-
-[View Poll](https://www.reddit.com/poll/ikiag7)
-## [11][Introducing Curio - A blazing fast HTTP client.](https://www.reddit.com/r/rust/comments/ikr16f/introducing_curio_a_blazing_fast_http_client/)
-- url: https://www.reddit.com/r/rust/comments/ikr16f/introducing_curio_a_blazing_fast_http_client/
+## [12][Crate level docs not documented in Rustdoc Book](https://www.reddit.com/r/rust/comments/ilnbq8/crate_level_docs_not_documented_in_rustdoc_book/)
+- url: https://www.reddit.com/r/rust/comments/ilnbq8/crate_level_docs_not_documented_in_rustdoc_book/
 ---
-Hey there folks, i would like to present to you my current project [Curio](https://github.com/fatalcenturion/curio), a blazing fast HTTP Client, written entirely in Rust.
+So as usual I was checking out the books in the Rust website's catalogue and I was reading the Rustdoc book. An interesting thing I noticed there was that there was no information about how to write documentation at the crate level. It did not say anything about when you want to write a crate level docs, you should use this syntax
 
-&amp;#x200B;
+///! 
 
-Some of the things it currently supports:
+Pretty unfortunate since they have one of the best documentations out there
 
-* HTTPS automatic redirect
-* GET, POST, OPTIONS, DELETE, HEAD methods
+I thought to write an issue or pull request but I couldn't find any information where to file it
 
-&amp;#x200B;
+If anyone can write this information in the book, that would be amazing otherwise someone please help me where to file a pull request on it. Maybe I will write it for them
 
-You can view benchmarks against other popular HTTP clients [here](https://github.com/fatalcenturion/curio#benchmarks). Independant benchmarkers to help verify these would be appreciated.
-
-You can begin using Curio by checking out some of the examples on the repository [here](https://github.com/fatalcenturion/curio) or by reading the documentation on [docs.rs](https://docs.rs/curio/0.0.3/curio/).
-
-Overall, i would appreciate if you kind folks could check it out and provide me with some feedback. Please let me know what you think of my project, and how i could improve it!
-
-Edit: Benchmark utility can be found [here](https://github.com/fatalcenturion/curio-benchmarks)
-## [12][Is it possible to generate a type from within a pattern-matching macro?](https://www.reddit.com/r/rust/comments/il4d6n/is_it_possible_to_generate_a_type_from_within_a/)
-- url: https://www.reddit.com/r/rust/comments/il4d6n/is_it_possible_to_generate_a_type_from_within_a/
----
-I'm attempting to implement a DSL using macros which would include a short-hand for struct definitions.  So for instance, I want to be able to have a block like this:
-
-    my_macro! {
-        Point2D -&gt; i32, i32
-        Point3D -&gt; i32, i32, i32
-    }
-
-Which would create these types:
-
-    struct Point2D {
-        v0: i32,
-        v1: i32
-    }
-
-    struct Point3D {
-        v0: i32,
-        v1: i32,
-        v2: i32
-    }
-
-
-Is this possible using match rules?
-
-I was trying something like this:
-
-    macro_rules! context_free_grammar {
-        ($new_type:ident -&gt; $other_type:ty) =&gt; { ... }
-    }
-
-But it seems like it wants the new_type identity to exist outside of the macro block.
+EDIT:  There was a typo, you need to write //! instead of ///! which I wrote above. Thanks to u/Zenithsiz for pointing it out

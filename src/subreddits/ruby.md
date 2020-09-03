@@ -1,56 +1,67 @@
 # ruby
-## [1][Rails 6 adds support to persist timezones of Active Job | The Official BigBinary Blog | BigBinary](https://www.reddit.com/r/ruby/comments/il2gy4/rails_6_adds_support_to_persist_timezones_of/)
-- url: https://blog.bigbinary.com/2020/09/01/rails-6-add-timezone-support-in-active-job.html
+## [1][Anti-IF framework - if/else based on type](https://www.reddit.com/r/ruby/comments/ilt25m/antiif_framework_ifelse_based_on_type/)
+- url: https://blog.arkency.com/anti-if-framework---if-slash-else-based-on-type/
 ---
 
-## [2][Introduction to DSL by implementing Rake](https://www.reddit.com/r/ruby/comments/il40do/introduction_to_dsl_by_implementing_rake/)
+## [2][[Ruby, Rails, Sorbet] Cleo and Robb clean up a Ruby on Rails codebase with Sorbet](https://www.reddit.com/r/ruby/comments/ilk9f4/ruby_rails_sorbet_cleo_and_robb_clean_up_a_ruby/)
+- url: https://www.reddit.com/r/ruby/comments/ilk9f4/ruby_rails_sorbet_cleo_and_robb_clean_up_a_ruby/
+---
+[https://www.twitch.tv/lawiscode](https://www.twitch.tv/lawiscode)
+## [3][Using methods with super when there is no parent class other than active record](https://www.reddit.com/r/ruby/comments/ilocdh/using_methods_with_super_when_there_is_no_parent/)
+- url: https://www.reddit.com/r/ruby/comments/ilocdh/using_methods_with_super_when_there_is_no_parent/
+---
+Hi. I came across this piece of code:
+
+`class XYZ &lt; ActiveRecord::Base`
+
+  `def method1`
+
+`print("hello world")`
+
+`super`
+
+  `end`
+
+My question is this. Since there is no defined parent class other than active record, what does this super do ? is it a bug in the system or does it actually do something. This code is a few years old.
+
+Edit: the answer is that there was a module included in the model which had 'method1' defined.
+## [4][when you paste the name of a variable and press enter in irb, which method is utilized by irb? .to_s, .inspect or .display](https://www.reddit.com/r/ruby/comments/ill8pw/when_you_paste_the_name_of_a_variable_and_press/)
+- url: https://www.reddit.com/r/ruby/comments/ill8pw/when_you_paste_the_name_of_a_variable_and_press/
+---
+when you paste the name of a variable and press enter in irb, which one is called? to\_s, .inspect or .display
+## [5][Debugging a bug when using rand](https://www.reddit.com/r/ruby/comments/ilp0sl/debugging_a_bug_when_using_rand/)
+- url: https://www.reddit.com/r/ruby/comments/ilp0sl/debugging_a_bug_when_using_rand/
+---
+The ruby faker library used this below method to generate random characters in one of their much older releases
+
+     def self.characters(char_count = 255)
+       rand(36**char_count).to_s(36)
+     end
+
+However, they changed it to something like this in the next release
+
+     def characters(char_count = 255)
+       rand(36**char_count).to_s(36).rjust(char_count, '0').chars.to_a.shuffle.join
+     end 
+
+Now, when I use the first release sometimes get a lesser number of characters that specified. it's probably a bug that got fixed later on. But could here help me identify why the first code would fail sometimes randomly when called say a thousand times. Thanks.
+## [6][What are the Code Coverage Metrics for Ruby on Rails?](https://www.reddit.com/r/ruby/comments/il7r5h/what_are_the_code_coverage_metrics_for_ruby_on/)
+- url: https://www.fastruby.io/blog/rails/what-is-code-coverage-ruby-on-rails.html
+---
+
+## [7][Introduction to DSL by implementing Rake](https://www.reddit.com/r/ruby/comments/il40do/introduction_to_dsl_by_implementing_rake/)
 - url: https://medium.com/rubycademy/introduction-to-dsl-by-implementing-rake-99439bdc3513
 ---
 
-## [3][Moving from EventMachine to Async](https://www.reddit.com/r/ruby/comments/ikjcux/moving_from_eventmachine_to_async/)
+## [8][Rails 6 adds support to persist timezones of Active Job | The Official BigBinary Blog | BigBinary](https://www.reddit.com/r/ruby/comments/il2gy4/rails_6_adds_support_to_persist_timezones_of/)
+- url: https://blog.bigbinary.com/2020/09/01/rails-6-add-timezone-support-in-active-job.html
+---
+
+## [9][Moving from EventMachine to Async](https://www.reddit.com/r/ruby/comments/ikjcux/moving_from_eventmachine_to_async/)
 - url: https://blog.joshsoftware.com/2020/06/19/moving-from-eventmachine-to-async/
 ---
 
-## [4][My experience re-creating Xonix32 using Ruby with Gosu, Ruby Packer, Platypus.](https://www.reddit.com/r/ruby/comments/ikhvga/my_experience_recreating_xonix32_using_ruby_with/)
+## [10][My experience re-creating Xonix32 using Ruby with Gosu, Ruby Packer, Platypus.](https://www.reddit.com/r/ruby/comments/ikhvga/my_experience_recreating_xonix32_using_ruby_with/)
 - url: https://youtu.be/VqO5XDNauws
----
-
-## [5][monos - monorepo / mono source tree tools and (startup) scripts](https://www.reddit.com/r/ruby/comments/ikkueg/monos_monorepo_mono_source_tree_tools_and_startup/)
-- url: https://github.com/sportdb/sport.db/tree/master/monos
----
-
-## [6][Frontman - New Static Site Generator for Ruby](https://www.reddit.com/r/ruby/comments/ik9h59/frontman_new_static_site_generator_for_ruby/)
-- url: https://www.reddit.com/r/ruby/comments/ik9h59/frontman_new_static_site_generator_for_ruby/
----
-I just found out about this new static site generator. Thought I would share it with the community. https://github.com/algolia/frontman
-## [7][Version number bumped to 3.0.0 from 2.8.0 (tentative). · ruby/ruby@21c62fb · GitHub](https://www.reddit.com/r/ruby/comments/ijwbei/version_number_bumped_to_300_from_280_tentative/)
-- url: https://github.com/ruby/ruby/commit/21c62fb670b1646c5051a46d29081523cd782f11
----
-
-## [8][System of a test II: Robust Rails browser testing with SitePrism](https://www.reddit.com/r/ruby/comments/ik1rbj/system_of_a_test_ii_robust_rails_browser_testing/)
-- url: https://evilmartians.com/chronicles/system-of-a-test-2-robust-rails-browser-testing-with-siteprism
----
-
-## [9][Buff exception backtrace with local variables, arguments and instance variables!](https://www.reddit.com/r/ruby/comments/ijwoco/buff_exception_backtrace_with_local_variables/)
-- url: https://www.reddit.com/r/ruby/comments/ijwoco/buff_exception_backtrace_with_local_variables/
----
-A while ago, I wrote a debugging tool called [tapping\_device](https://github.com/st0012/tapping_device) and received some pretty good responses here. So today I want to introduce another new tool I'm working on recently: [power\_trace](https://github.com/st0012/power_trace). 
-
-It adds all the information we desperately need to exception backtraces:
-
-1. Local variables
-2. Method call arguments
-3. Instance variables defined in the frame
-
-And it now supports integration with `rails`, `minitest` and `rspec`
-
-Here's an example output of the `rspec` integration  
-
-
-https://preview.redd.it/laipf1mmvbk51.png?width=1792&amp;format=png&amp;auto=webp&amp;s=5778de0990eda73d3fbcedcd059df641b2f9fb11
-
-Please give it a try let me know what you think about it 😄
-## [10][Ensuring code consistency with git hooks](https://www.reddit.com/r/ruby/comments/ik3hjm/ensuring_code_consistency_with_git_hooks/)
-- url: https://alexc.link/blog/ensuring-code-consistency-with-git-hooks
 ---
 

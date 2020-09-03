@@ -1,52 +1,101 @@
 # Kotlin
-## [1][What's the best JSON to Kotlin objects converter to use?](https://www.reddit.com/r/Kotlin/comments/ikwecd/whats_the_best_json_to_kotlin_objects_converter/)
+## [1][Could anyone explain where the 'object' keyword is intended to be used? I found some articles online, but they aren't very intuitive.](https://www.reddit.com/r/Kotlin/comments/ilrm6g/could_anyone_explain_where_the_object_keyword_is/)
+- url: https://www.reddit.com/r/Kotlin/comments/ilrm6g/could_anyone_explain_where_the_object_keyword_is/
+---
+
+## [2][Kotlin: Reasons Why It Is The Most Preferred Language for Android App](https://www.reddit.com/r/Kotlin/comments/ilr3f6/kotlin_reasons_why_it_is_the_most_preferred/)
+- url: https://www.reddit.com/r/Kotlin/comments/ilr3f6/kotlin_reasons_why_it_is_the_most_preferred/
+---
+Kotlin is one of the best coding languages that developers use to build Android apps. Initially, we had Java, as the only programming language used by Android app development companies**.** After the launch of Kotlin, Java’s monopoly has come to an end. However, due to various advantages, this coding language gained a lot of popularity in no time. 
+
+Let’s dig deeper to know why Kotlin is getting the most attention from the Android developers. 
+
+**The most exciting features of Kotlin** 
+
+Kotlin is a programming language, which has been created to make code writing for Android apps much simpler and productive. It comes with a wide range of striking features that also support Java, which significantly improves the efficiency of Android developers. 
+
+Another attractive ability of this feature-rich coding language is its usage with Java. Below we have listed some of the most impressive features of Kotlin.   
+
+
+* **Compatibility with Java codes** 
+
+Since it has a feature that can convert Java codes to Kotlin, developers working on existing Android apps find it extremely useful.   
+
+
+* **Works in unison with Java** 
+
+As mentioned already, Kotlin is created to improve the expertise and productivity of Android app developers. Thus, its feature interoperability of codes allows developers to write modules that will work in unison with Java codes.   
+
+
+* **Concise code structure** 
+
+Kotlin comes with a concise and refined code structure, which helps developers to skip lengthy codes and improve coding efficiency. 
+
+Apart from this, other features of Kotlin include:
+
+* In-built safety measures to prevent any errors.
+* Using Kotlin, developers can synchronize with multiple threads, while making modifications in the data. 
+
+Given the numerous benefits and increasing adoption of Kotlin among Android app developers, the future of this coding language seems promising. However, depending on your project’s needs and your budget, you can either choose Kotlin or Java for your next project. 
+
+If you’re looking for a company that offers top-notch [Android app development services](https://www.softprodigy.com/hire-android-mobile-developer/), then get in touch with experts at SoftProdigy.
+## [3][How will Kotlin use Project Loom? Will coroutines be ditched?](https://www.reddit.com/r/Kotlin/comments/il9u7o/how_will_kotlin_use_project_loom_will_coroutines/)
+- url: https://www.reddit.com/r/Kotlin/comments/il9u7o/how_will_kotlin_use_project_loom_will_coroutines/
+---
+I've been looking into the threading model of Java's upcoming Project Loom and looks really simple and nice to use. I'm just coming into Kotlin but do think that this will be the future of threading (funnily enough we've came full circle with green threads). 
+
+See [this](https://www.youtube.com/watch?v=23HjZBOIshY) amazing talk by /u/pron98
+## [4][Could you show me the cutest UI you know made with kotlin?](https://www.reddit.com/r/Kotlin/comments/ilghgo/could_you_show_me_the_cutest_ui_you_know_made/)
+- url: https://www.reddit.com/r/Kotlin/comments/ilghgo/could_you_show_me_the_cutest_ui_you_know_made/
+---
+I'm going to develop a desktop app with Kotlin, and I want to see how well the UI can look to get an idea when designing.
+## [5][Just a quick question on kotlin, Just started this class this year](https://www.reddit.com/r/Kotlin/comments/ilhsar/just_a_quick_question_on_kotlin_just_started_this/)
+- url: https://www.reddit.com/r/Kotlin/comments/ilhsar/just_a_quick_question_on_kotlin_just_started_this/
+---
+So long story short i ran into a slight problem and I'm currently stuck .
+
+Create a function using fun that receives two positive integers and an anonymous function. The function received as a parameter receives one integer and returns an integer. The function created using fun uses the two integers received as a the high and low of a range of integers. The function received as a parameter is then called once for each integer in the range, i. e. each integer in the range is used as the actual parameter. The sum of all the returns from the function passed as a parameter is then returned from the function created using fun. Make two calls to the function created using fun. One call passing the function from (d) and one call passing the function from (e).
+
+Below Ill post my other two sets of code For "d" &amp; "e".
+
+D:
+
+val pow: (Double) -&gt; Double = **{it**.*pow*(**it**)**}**
+
+E:
+
+val  Prime: (Int) -&gt; Int = **{**// Store the result in a mutable variablevar result = **it**for (i in 2..**it**/2) {if (**it** % i == 0) {result = 0break}}result**}**
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+Any help would be greatly appreciated even if it's just hints or maybe ways i can go about do this . Me and my buddy have been stuck on this for a while 
+## [6][Kuvasz, an open-source uptime and SSL monitoring service, implemented in Kotlin + Micronaut](https://www.reddit.com/r/Kotlin/comments/il9atw/kuvasz_an_opensource_uptime_and_ssl_monitoring/)
+- url: https://github.com/kuvasz-uptime/kuvasz
+---
+
+## [7][Kotlin multiplatform: a new cross-platform contender to ReactNative and Flutter](https://www.reddit.com/r/Kotlin/comments/ilfssj/kotlin_multiplatform_a_new_crossplatform/)
+- url: https://sebastienlorber.hashnode.dev/kotlin-multiplatform-a-new-cross-platform-contender-to-reactnative-and-flutter-ckejr2ix700g270s136ow3347
+---
+
+## [8][Kotlin coroutines flow](https://www.reddit.com/r/Kotlin/comments/ilbq8q/kotlin_coroutines_flow/)
+- url: https://www.reddit.com/r/Kotlin/comments/ilbq8q/kotlin_coroutines_flow/
+---
+I have an app where I need to transfer data from a controller to my flow function, but I haven't seen any flow functions with parameters.
+
+So I want to receive data in the controller, send data to my producer function (flow function), and then consume it from my consumer function.
+
+Something like this - [https://pl.kotl.in/KAc-WTwAk](https://pl.kotl.in/KAc-WTwAk)
+
+&amp;#x200B;
+
+I am probably using flows wrong but, maybe someone knows how to get the solution with flow instead of channel
+## [9][What's the best JSON to Kotlin objects converter to use?](https://www.reddit.com/r/Kotlin/comments/ikwecd/whats_the_best_json_to_kotlin_objects_converter/)
 - url: https://www.reddit.com/r/Kotlin/comments/ikwecd/whats_the_best_json_to_kotlin_objects_converter/
 ---
 I have used [jsonschema2pojo](http://www.jsonschema2pojo.org/) for generating Java objects from JSON. Unfortunately, the converter doesn't offer to generate Kotlin objects. Does anyone know a good converter that creates Kotlin objects from JSON?
-## [2][Ktor and Kotlin/Native](https://www.reddit.com/r/Kotlin/comments/ikrvxa/ktor_and_kotlinnative/)
-- url: https://medium.com/@kpgalligan/ktor-and-kotlin-native-fb5c06cb920a
+## [10][A look at Halcyon - Kotlin Multiplatform XMPP Library](https://www.reddit.com/r/Kotlin/comments/ila8ep/a_look_at_halcyon_kotlin_multiplatform_xmpp/)
+- url: https://tigase.net/halcyon-a-look-at-halcyon/
 ---
 
-## [3][Trying to test a companion object android unit test](https://www.reddit.com/r/Kotlin/comments/il02h5/trying_to_test_a_companion_object_android_unit/)
-- url: https://www.reddit.com/r/Kotlin/comments/il02h5/trying_to_test_a_companion_object_android_unit/
----
-I want to unit test a class In my android app. The exact method I want to test is in a companion object. Most of the materials online are way to complex for Me to follow. I would appreciate if someone could help me
-## [4][Introducing OkSSE — Kotlin Multiplatform SSE library](https://www.reddit.com/r/Kotlin/comments/ikjajz/introducing_oksse_kotlin_multiplatform_sse_library/)
-- url: https://medium.com/bleeding-edge/introducing-oksse-kotlin-multiplatform-sse-library-7e6e804c885b
----
-
-## [5][Can we use something like turbolinks with ktor and kotlin?](https://www.reddit.com/r/Kotlin/comments/ikowc6/can_we_use_something_like_turbolinks_with_ktor/)
-- url: https://www.reddit.com/r/Kotlin/comments/ikowc6/can_we_use_something_like_turbolinks_with_ktor/
----
-I'm developing a ktor+kotlin web application and I wanted to know is there a way to implement [turbolinks](https://github.com/turbolinks/turbolinkshttps://github.com/turbolinks/turbolinks) into it. I've looked everywhere but couldn't find an answer.
-## [6][Most Frequently Asked Questions about Kotlin](https://www.reddit.com/r/Kotlin/comments/ikqufg/most_frequently_asked_questions_about_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/ikqufg/most_frequently_asked_questions_about_kotlin/
----
-I have made an edited compilation of 48 questions and their respective answer about the Kotlin Language, from StackOverflow. They can be found in the following link:
-
-[https://github.com/Pertence/faq\_about\_x/blob/master/kotlin.md](https://github.com/Pertence/faq_about_x/blob/master/kotlin.md)
-## [7][Kotlin Multiplatform Mobile goes Alpha – Kotlin Blog](https://www.reddit.com/r/Kotlin/comments/ik1x3g/kotlin_multiplatform_mobile_goes_alpha_kotlin_blog/)
-- url: https://blog.jetbrains.com/kotlin/2020/08/kotlin-multiplatform-mobile-goes-alpha/
----
-
-## [8][Everything you need to know about kotlin coroutines](https://www.reddit.com/r/Kotlin/comments/ijxa1f/everything_you_need_to_know_about_kotlin/)
-- url: https://medium.com/swlh/everything-you-need-to-know-about-kotlin-coroutines-b3d94f2bc982
----
-
-## [9][Kotlin DSL, Gradle, Docker, Javalin example?](https://www.reddit.com/r/Kotlin/comments/ika83z/kotlin_dsl_gradle_docker_javalin_example/)
-- url: https://www.reddit.com/r/Kotlin/comments/ika83z/kotlin_dsl_gradle_docker_javalin_example/
----
-Anyone happen to have an example repo using 
-- Gradle + Kotlin DSL (specifically `gradle.build.kts`)
-- Javalin
-- Docker
-
-... that produces a runnable docker image?
-
-I'm new to the JVM ecosystem (coming from Node/Rust), and this has been surprisingly difficult to get working on my own.
-
-Thanks!
-## [10][Kotlin than Spring Boot](https://www.reddit.com/r/Kotlin/comments/ijj6at/kotlin_than_spring_boot/)
-- url: https://www.reddit.com/r/Kotlin/comments/ijj6at/kotlin_than_spring_boot/
----
-After a number of years of on again and off again study I am finally finishing a Java course.  I read an article that said once you've worked through Java it was best to jump to Kotlin before picking up any bad habits.  I need to make a couple websites so my plan was to start learning Spring Boot.  But then I wondered if it was best to start off with Kotlin and then jump into Spring Boot?

@@ -85,110 +85,59 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][Made with love for React (accidentally deleted my first post)](https://www.reddit.com/r/reactjs/comments/ilqmuv/made_with_love_for_react_accidentally_deleted_my/)
+## [3][I built a drag-and-drop online quiz builder with Next.js and GraphQL during quarantine](https://www.reddit.com/r/reactjs/comments/ilwo37/i_built_a_draganddrop_online_quiz_builder_with/)
+- url: https://v.redd.it/4z3tulnrkyk51
+---
+
+## [4][I made a library to make React Truly Reactive!](https://www.reddit.com/r/reactjs/comments/imc21y/i_made_a_library_to_make_react_truly_reactive/)
+- url: https://github.com/MananTank/radioactive-state
+---
+
+## [5][Made with love for React (accidentally deleted my first post)](https://www.reddit.com/r/reactjs/comments/ilqmuv/made_with_love_for_react_accidentally_deleted_my/)
 - url: https://v.redd.it/0u8xtgewnwk51
 ---
 
-## [4][Hey all -- I converted ReactJS.org documentation to use hooks! Useful? Any feedback?](https://www.reddit.com/r/reactjs/comments/ild03a/hey_all_i_converted_reactjsorg_documentation_to/)
-- url: https://kickstartcoding.online/learn/articles/i-converted-reactjs-org-to-use-hooks/
+## [6][Gatsby vs. Next.js](https://www.reddit.com/r/reactjs/comments/imbyqx/gatsby_vs_nextjs/)
+- url: https://jaredpalmer.com/gatsby-vs-nextjs
 ---
 
-## [5][Modal in React with react-router](https://www.reddit.com/r/reactjs/comments/ilss8b/modal_in_react_with_reactrouter/)
-- url: https://www.reddit.com/r/reactjs/comments/ilss8b/modal_in_react_with_reactrouter/
+## [7][published my first react app!](https://www.reddit.com/r/reactjs/comments/im6tqq/published_my_first_react_app/)
+- url: https://www.reddit.com/r/reactjs/comments/im6tqq/published_my_first_react_app/
 ---
-&amp;#x200B;
-
-[I want to build something like this: although the route changes but the modal appear on the top of the existing page,  can you explain how, please.](https://reddit.com/link/ilss8b/video/yezohs81ixk51/player)
-## [6][React Fundamentals 🎒](https://www.reddit.com/r/reactjs/comments/ilpdh0/react_fundamentals/)
-- url: https://blog.bhanuteja.dev/react-fundamentals
+i published my first react project today - it's just a simple website, and i'm hosting it on firebase with a custom domain. i was wondering how other people host react websites. i know there's no right or wrong way to do it, but i wonder what the other ways to do it are.
+## [8][Redwood vs Blitz](https://www.reddit.com/r/reactjs/comments/ime7pf/redwood_vs_blitz/)
+- url: https://www.indiehackers.com/post/redwoodjs-vs-blitz-1c66190774
 ---
 
-## [7][Just had the lightbulb moment with Redux. Ask me anything and hopefully i'll know the answer. If not, i'll learn something new!](https://www.reddit.com/r/reactjs/comments/ilqaff/just_had_the_lightbulb_moment_with_redux_ask_me/)
-- url: https://www.reddit.com/r/reactjs/comments/ilqaff/just_had_the_lightbulb_moment_with_redux_ask_me/
+## [9][Dynamically load user-supplied code and React components at runtime](https://www.reddit.com/r/reactjs/comments/ime4ax/dynamically_load_usersupplied_code_and_react/)
+- url: https://www.reddit.com/r/reactjs/comments/ime4ax/dynamically_load_usersupplied_code_and_react/
 ---
-Ask away!
-## [8][What does JSON.stringify's second argument actually do?!?!](https://www.reddit.com/r/reactjs/comments/ilsyv1/what_does_jsonstringifys_second_argument_actually/)
-- url: https://youtu.be/psieh-0-roQ
+Dear fellow react enthousiasts! I'm looking for advice for a specific problem I'm facing. I'm building an app that acts as a **container for user-supplied scientific experiments**. The platform takes care of most of the features (identifying people, configuration, etc.) and is under my control. But a part of the application should be flexible enough to make it possible for users to **"inject" their problem-specific bundle of code in the application** (think: screen layouts, specific code to handle each result, etc.).  
+
+
+I have resorted to simple solutions such as creating a Function object with the injected code as a constructor argument (the lesser evil eval). But that only takes me so far. I want users to be able to describe screen layouts (in jsx?), and **bind their implementations to dependencies that are already loaded and available** in the application (think: React, lodash, etc.). Ideally the user would be able to load their "application bundle" into the framework **at runtime**, and the container merges the supplied code (according to a well documented structure and api) into the running container application.  
+
+
+I'm perfectly ok with users describing their screens as **React components**. But I would like to avoid that users have to supply their own environment (and potentially breaking the application when two instances of the same library are loaded) and build a complete separate application.
+
+Which combination of technologies would help me out here? Anybody any experience with this kind of requirement? Bonus points for a solution that works in a React Native and React Web environment.
+## [10][How can I get the IP address of the server using React?](https://www.reddit.com/r/reactjs/comments/imdv45/how_can_i_get_the_ip_address_of_the_server_using/)
+- url: https://www.reddit.com/r/reactjs/comments/imdv45/how_can_i_get_the_ip_address_of_the_server_using/
+---
+I have a server with a React app on it. I simply want to be able to set the server's local IP address (the same one as would be in the browser bar) in my React app and display it.
+
+Everything I have tried just gives me the IP address of the client that is displaying the React app (localhost).
+
+How do I get the server's address?
+## [11][We are open source developers working on Reactime 5.0 Ask Us Anything!](https://www.reddit.com/r/reactjs/comments/ily7u8/we_are_open_source_developers_working_on_reactime/)
+- url: https://www.reddit.com/r/reactjs/comments/ily7u8/we_are_open_source_developers_working_on_reactime/
+---
+Hi ReactJS we are open source developers working on the latest iteration of Reactime - A time-travel debugging tool for React, Hooks, and now with support for Recoil.js! We are extremely excited to launch this product and we hope that it would help you as React Developers to develop awesome apps. Here is the our [Github](https://github.com/open-source-labs/ReacTime) &amp; Chrome Store [https://chrome.google.com/webstore/detail/reactime/cgibknllccemdnfhfpmjhffpjfeidjga?hl=en-US](https://chrome.google.com/webstore/detail/reactime/cgibknllccemdnfhfpmjhffpjfeidjga?hl=en-US)
+
+ Note: that you don't need to download any packages as this is a Chrome Dev Tool and we extract state data from React Fiber tree.
+
+Ask us anything about React, Recoil, developing a debugging tool, or working in Open Source.
+## [12][Form validation in React JS using Formsy](https://www.reddit.com/r/reactjs/comments/imaoe3/form_validation_in_react_js_using_formsy/)
+- url: https://www.youtube.com/watch?v=GViVMovaDyI&amp;feature=share
 ---
 
-## [9][zustand-store-addons State management](https://www.reddit.com/r/reactjs/comments/ilsx7w/zustandstoreaddons_state_management/)
-- url: https://www.reddit.com/r/reactjs/comments/ilsx7w/zustandstoreaddons_state_management/
----
-I'm really happy to release zustand-store-addons for React to add super powers to your zustand stores. 🚀
-
-- Computed properties.
-- Watchers.
-- Simplified fetch syntax.
-- Middleware chaining.
-- Automatic logs for operations.
-
-[https://www.npmjs.com/package/zustand-store-addons](https://www.npmjs.com/package/zustand-store-addons)
-## [10][I (still) need germans to evaluate my website for my master thesis! Also for every participant 2 Euro will be donated to a non-profit organization!](https://www.reddit.com/r/reactjs/comments/ilqqll/i_still_need_germans_to_evaluate_my_website_for/)
-- url: https://www.reddit.com/r/reactjs/comments/ilqqll/i_still_need_germans_to_evaluate_my_website_for/
----
-*Sorry for reposting, buit my first attempt has been deleted after two days... Here we go again:*
-
-It is a website with information given only in german so it makes sense I guess. The topic is about web accessibility and I would appreciate it if a lot of diverse people would test the page (of course this can't be forced lol).
-
-Btw. The website is created with React and the Material UI library was being used.
-
-This the procedure of your testing:
-
-[https://docs.google.com/document/d/1HQSktM-2NCPXksuHAX12zIS9iCrHtEdRfx8hgvHI4UA/edit?usp=sharing](https://docs.google.com/document/d/1HQSktM-2NCPXksuHAX12zIS9iCrHtEdRfx8hgvHI4UA/edit?usp=sharing)
-
-Link to website:
-
-[https://campuskunst.uni-bremen.de/](https://campuskunst.uni-bremen.de/)
-
-And this is the survey:
-
-[https://forms.gle/3U4ptLWaviRqUDmFA](https://forms.gle/3U4ptLWaviRqUDmFA)
-
-&amp;#x200B;
-
-**Pls read the procedure first.**
-
-If you have any suggestion where I can post my request, too, to gain as many people as possible regarding the topic accessibility on the web, would be really helpful!
-## [11][Introducing ComponentDriven.org](https://www.reddit.com/r/reactjs/comments/il7bw0/introducing_componentdrivenorg/)
-- url: https://www.reddit.com/r/reactjs/comments/il7bw0/introducing_componentdrivenorg/
----
-In [2017](https://varun.ca/convergence) I noticed that most major frameworks adopted the component construct. Tom Coleman in his post “[Component-Driven Development](https://blog.hichroma.com/component-driven-development-ce1109d56c8e)”, described this modular UI trend. That said, I’m still amazed how fast components have take over UIs. Especially on the web.
-
-It makes sense why. Building UIs is hard. Users expect compelling and personalized experiences, which require a lot of UI logic. But managing that complexity is tricky without simplifying it in a modular way. That’s where components come in.
-
-With this shift, countless frontend, design, documentation, and testing tools adopted a component-driven model. Breaking down complex UIs into simple components makes it easier to build UIs.
-
-To capture this shift, I started collecting a list of tools and the latest thinking on component driven UIs. I gathered all of these resources in one place, to give you an overview:
-
-* 📚 Glossary &amp; guides
-* 🛠 Frontend tools
-* 🎨 Design tools
-* 📦 Component Story Format (common standard for interoperability)
-
-Check it out at  [componentdriven.org](http://componentdriven.org/)
-## [12][Best approach and recommended libraries for an offline capable application](https://www.reddit.com/r/reactjs/comments/ilr9df/best_approach_and_recommended_libraries_for_an/)
-- url: https://www.reddit.com/r/reactjs/comments/ilr9df/best_approach_and_recommended_libraries_for_an/
----
-Hi guys, let me start saying that this is a React Native question.
-
-So, I will be freelancing for a old company I worked for, improving/refactoring an old app I made for them when I worked there.
-
-The app is related to farmers jobs, so its important that has offline capabilities, as there can be situations where the user will not have access to internet, but he still has to be able to introduce new data.
-
-In Spain, where I'm based, farmers usually don't own a big chunk of land, but small separated chunks, so there is a lot of data related to coordinates.
-
-\- Store all critic data (Plot lands, Workers, Chemical Products, Machinery) used to create job tasks, analitics etc...  in the device when the user logs in for first time. AsyncStorage?
-
-\- Use this data all around the app, Redux? React Context? Once the app starts hydrate this provider with all the data stored in async storage, and also refresh it in both places if it fetches new data when it needs it in other screens. 
-
-\- How to deal with errors because no internet connection, if an user add a new job task, and there is no internet, where do you hold this data, how do you present it, and also, instead of adding, what if they update some that already exists and it fails. This is where I doubt more, how to approach this, so its not a big mess, and its escalable and efficient. 
-
-This is some of the libraries that I will be using when it comes to architecture design:
-
-\- Redux with redux-thunk so I can trigger async petitions? Or its over engineering and I just go for React Context.
-
-\- useSWR for data fetching and catching, I think this is a must. 
-
-\- AsyncStorage to store the data.
-
-Do you recommend some library to work with big arrays of objects and mutate them easily with something like, mutate(idOfObjectInArray) or something like this?

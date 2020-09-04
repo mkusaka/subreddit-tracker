@@ -1,101 +1,147 @@
 # Kotlin
-## [1][Could anyone explain where the 'object' keyword is intended to be used? I found some articles online, but they aren't very intuitive.](https://www.reddit.com/r/Kotlin/comments/ilrm6g/could_anyone_explain_where_the_object_keyword_is/)
+## [1][Are there any good GitHub projects that have implemented the Spring Framework/ Spring Boot using Kotlin? I'm trying to build some small test projects with Spring and Kotlin](https://www.reddit.com/r/Kotlin/comments/imcj2y/are_there_any_good_github_projects_that_have/)
+- url: https://www.reddit.com/r/Kotlin/comments/imcj2y/are_there_any_good_github_projects_that_have/
+---
+
+## [2][Calculator library (pure Kotlin module)](https://www.reddit.com/r/Kotlin/comments/imegl1/calculator_library_pure_kotlin_module/)
+- url: https://www.reddit.com/r/Kotlin/comments/imegl1/calculator_library_pure_kotlin_module/
+---
+Many apps have number inputs, and in many cases, having a calculator function to provide the number inputs is desirable. This is my first time to publish a library, and hope you will find this helpful. Any feedback is much appreciated. To import:
+
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+    
+    dependencies {
+        implementation 'com.github.jairrab:KotlinCalculator:1.0.0'
+    }
+
+To get an instance of the `Calculator` library, call `Calculator.getInstance()` and pass a listener to receive calculator updates.
+
+    class MainActivity : AppCompatActivity(), Calculator.Listener {
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_main)
+    
+            val calculator = Calculator.getInstance(this)
+        }
+    
+        override fun onCalculatorUpdate(key: String?, entries: List&lt;String&gt;, result: Double) {
+            Log.v("CALC", "key: $key | entries: $entries | result: $result")
+        }
+    }
+
+`Calculator.getInstance()` returns a `Calculator` interface that provides the following functions:
+
+    calculator.clear()
+    calculator.pressOne()
+    calculator.pressTwo()
+    calculator.pressThree()
+    calculator.pressFour()
+    calculator.pressFive()
+    calculator.pressSix()
+    calculator.pressSeven()
+    calculator.pressEight()
+    calculator.pressNine()
+    calculator.pressZero()
+    calculator.pressDecimal()
+    calculator.pressPlus()
+    calculator.pressMinus()
+    calculator.pressMultiply()
+    calculator.pressDivide()
+    calculator.backSpace()
+    calculator.pressEquals()
+
+The `Calculator.Listener` receives updates when a calculator function is called. Here's an example of a sequence of calculator operations and it's resulting logs:
+
+    I/CalculatorLog: Key: initializing | Entries: [] | Result: 0.0
+    I/CalculatorLog: Key: 1 | Entries: [1] | Result: 1.0
+    I/CalculatorLog: Key: 2 | Entries: [12] | Result: 12.0
+    I/CalculatorLog: Key: 3 | Entries: [123] | Result: 123.0
+    I/CalculatorLog: Key: backspace | Entries: [12] | Result: 12.0
+    I/CalculatorLog: Key: + | Entries: [12, +] | Result: 12.0
+    I/CalculatorLog: Key: 1 | Entries: [12, +, 1] | Result: 13.0
+    I/CalculatorLog: Key: 3 | Entries: [12, +, 13] | Result: 25.0
+    I/CalculatorLog: Key: * | Entries: [12, +, 13, *] | Result: 25.0
+    I/CalculatorLog: Key: 2 | Entries: [12, +, 13, *, 2] | Result: 38.0
+
+The calculator is a pure Kotlin module library and does not have any Android dependency, thus you will need to provide a UI to call the and display the calculator functions.  This makes the library lightweight and very flexible to suit your needs. See the link below for a sample UI.
+
+Note: The calculator library currently only supports MDAS operation. That is, it prioritizes multiplication and division over addition and subtraction as shown on the image above.
+
+Link: [https://github.com/jairrab/KotlinCalculator/](https://github.com/jairrab/KotlinCalculator/)
+## [3][Looking for advice to build a RESTful server written in kotlin on my raspberry pi](https://www.reddit.com/r/Kotlin/comments/imerkm/looking_for_advice_to_build_a_restful_server/)
+- url: https://www.reddit.com/r/Kotlin/comments/imerkm/looking_for_advice_to_build_a_restful_server/
+---
+I have a lot of kotlin experience through Android dev and I absolutely love the language. I have a raspberry pi sitting around and I thought it would be neat as a fun side project to build a local server and app to communicate with each other.
+
+I've been trying to decide on a framework to use but I haven't found any solid documentation and every project seems a bit different. I don't have much knowledge when it comes to web frameworks like spring or ktor so I'm not sure what I need.
+
+Any advice is appreciated, thanks for reading!
+## [4][How to use frontend js library with kotlin and ktor](https://www.reddit.com/r/Kotlin/comments/imbeet/how_to_use_frontend_js_library_with_kotlin_and/)
+- url: https://www.reddit.com/r/Kotlin/comments/imbeet/how_to_use_frontend_js_library_with_kotlin_and/
+---
+I can't find it anywhere. I'm trying to build a server side rendered ktor kotlin project and wanted to use a frontend js lib but I can't figure out how to do it.
+## [5][Gradle modules: Running unit tests only in affected modules](https://www.reddit.com/r/Kotlin/comments/imdgos/gradle_modules_running_unit_tests_only_in/)
+- url: https://medium.com/@lehen01/gradle-modules-running-unit-tests-only-in-affected-modules-fff89562339e?source=friends_link&amp;sk=1fe7e4375da04d3626c4f4d6b2b1b34d
+---
+
+## [6][Kotlin Vs Flutter: Select the Right Platform for App Development in 2020](https://www.reddit.com/r/Kotlin/comments/ime3a0/kotlin_vs_flutter_select_the_right_platform_for/)
+- url: https://medium.com/@sharmaamayankk/kotlin-vs-flutter-select-the-right-platform-for-app-development-in-2020-e149b79faeec
+---
+
+## [7][Could anyone explain where the 'object' keyword is intended to be used? I found some articles online, but they aren't very intuitive.](https://www.reddit.com/r/Kotlin/comments/ilrm6g/could_anyone_explain_where_the_object_keyword_is/)
 - url: https://www.reddit.com/r/Kotlin/comments/ilrm6g/could_anyone_explain_where_the_object_keyword_is/
 ---
 
-## [2][Kotlin: Reasons Why It Is The Most Preferred Language for Android App](https://www.reddit.com/r/Kotlin/comments/ilr3f6/kotlin_reasons_why_it_is_the_most_preferred/)
-- url: https://www.reddit.com/r/Kotlin/comments/ilr3f6/kotlin_reasons_why_it_is_the_most_preferred/
+## [8][Kotlin IntelliJ Mac users running code issues](https://www.reddit.com/r/Kotlin/comments/ilwwxu/kotlin_intellij_mac_users_running_code_issues/)
+- url: https://www.reddit.com/r/Kotlin/comments/ilwwxu/kotlin_intellij_mac_users_running_code_issues/
 ---
-Kotlin is one of the best coding languages that developers use to build Android apps. Initially, we had Java, as the only programming language used by Android app development companies**.** After the launch of Kotlin, Java’s monopoly has come to an end. However, due to various advantages, this coding language gained a lot of popularity in no time. 
+Does anyone know what can be the problem in my IntelliJ(free version) for Mac
 
-Let’s dig deeper to know why Kotlin is getting the most attention from the Android developers. 
+I can run the the code only via the Kotlin REPL but it wouldn't run on the main coding window.
 
-**The most exciting features of Kotlin** 
+I have try to reinstall and install also Java SDK file but nothing seems to help.
 
-Kotlin is a programming language, which has been created to make code writing for Android apps much simpler and productive. It comes with a wide range of striking features that also support Java, which significantly improves the efficiency of Android developers. 
-
-Another attractive ability of this feature-rich coding language is its usage with Java. Below we have listed some of the most impressive features of Kotlin.   
-
-
-* **Compatibility with Java codes** 
-
-Since it has a feature that can convert Java codes to Kotlin, developers working on existing Android apps find it extremely useful.   
-
-
-* **Works in unison with Java** 
-
-As mentioned already, Kotlin is created to improve the expertise and productivity of Android app developers. Thus, its feature interoperability of codes allows developers to write modules that will work in unison with Java codes.   
-
-
-* **Concise code structure** 
-
-Kotlin comes with a concise and refined code structure, which helps developers to skip lengthy codes and improve coding efficiency. 
-
-Apart from this, other features of Kotlin include:
-
-* In-built safety measures to prevent any errors.
-* Using Kotlin, developers can synchronize with multiple threads, while making modifications in the data. 
-
-Given the numerous benefits and increasing adoption of Kotlin among Android app developers, the future of this coding language seems promising. However, depending on your project’s needs and your budget, you can either choose Kotlin or Java for your next project. 
-
-If you’re looking for a company that offers top-notch [Android app development services](https://www.softprodigy.com/hire-android-mobile-developer/), then get in touch with experts at SoftProdigy.
-## [3][How will Kotlin use Project Loom? Will coroutines be ditched?](https://www.reddit.com/r/Kotlin/comments/il9u7o/how_will_kotlin_use_project_loom_will_coroutines/)
-- url: https://www.reddit.com/r/Kotlin/comments/il9u7o/how_will_kotlin_use_project_loom_will_coroutines/
+Any advice?
+## [9][Can you implement the data class copy() function in kotlin itself, using reflection?](https://www.reddit.com/r/Kotlin/comments/im20w6/can_you_implement_the_data_class_copy_function_in/)
+- url: https://www.reddit.com/r/Kotlin/comments/im20w6/can_you_implement_the_data_class_copy_function_in/
 ---
-I've been looking into the threading model of Java's upcoming Project Loom and looks really simple and nice to use. I'm just coming into Kotlin but do think that this will be the future of threading (funnily enough we've came full circle with green threads). 
+Is it possible to use kotlin reflection, perhaps in combination with invocation handlers, to implement a generic version of copy(), as it works on data classes? 
 
-See [this](https://www.youtube.com/watch?v=23HjZBOIshY) amazing talk by /u/pron98
-## [4][Could you show me the cutest UI you know made with kotlin?](https://www.reddit.com/r/Kotlin/comments/ilghgo/could_you_show_me_the_cutest_ui_you_know_made/)
-- url: https://www.reddit.com/r/Kotlin/comments/ilghgo/could_you_show_me_the_cutest_ui_you_know_made/
----
-I'm going to develop a desktop app with Kotlin, and I want to see how well the UI can look to get an idea when designing.
-## [5][Just a quick question on kotlin, Just started this class this year](https://www.reddit.com/r/Kotlin/comments/ilhsar/just_a_quick_question_on_kotlin_just_started_this/)
-- url: https://www.reddit.com/r/Kotlin/comments/ilhsar/just_a_quick_question_on_kotlin_just_started_this/
----
-So long story short i ran into a slight problem and I'm currently stuck .
+Let's say we have a factory, something like:
 
-Create a function using fun that receives two positive integers and an anonymous function. The function received as a parameter receives one integer and returns an integer. The function created using fun uses the two integers received as a the high and low of a range of integers. The function received as a parameter is then called once for each integer in the range, i. e. each integer in the range is used as the actual parameter. The sum of all the returns from the function passed as a parameter is then returned from the function created using fun. Make two calls to the function created using fun. One call passing the function from (d) and one call passing the function from (e).
+    object Model {
 
-Below Ill post my other two sets of code For "d" &amp; "e".
+        inline fun &lt;reified T&gt; init(): T {
+            ...
+        }
+    }
 
-D:
+...which given an interface as the type parameter, could give you back a decorated/proxied object that implemented the interface, and provided the copy() function.
 
-val pow: (Double) -&gt; Double = **{it**.*pow*(**it**)**}**
+We could say that allowable interfaces have to implement some other interface that has a generic definition of the copy function on it, perhaps:
 
-E:
+    interface DecoratedInterface {
+         fun copy(vararg params: Any) 
+    }
 
-val  Prime: (Int) -&gt; Int = **{**// Store the result in a mutable variablevar result = **it**for (i in 2..**it**/2) {if (**it** % i == 0) {result = 0break}}result**}**
+However, we don't want to rely on positional parameters, and we don't want to use strings to identify the parameters (i.e. a Map&lt;String, Any&gt; is no bueno).
 
-&amp;#x200B;
+So, putting it together, what we'd want is to be able to do something like:
 
-&amp;#x200B;
+    interface Foo: DecoratedInterface {
+         val marg: String
+         val peanut: Int
+         val marmite: Boolean
+    } 
 
-Any help would be greatly appreciated even if it's just hints or maybe ways i can go about do this . Me and my buddy have been stuck on this for a while 
-## [6][Kuvasz, an open-source uptime and SSL monitoring service, implemented in Kotlin + Micronaut](https://www.reddit.com/r/Kotlin/comments/il9atw/kuvasz_an_opensource_uptime_and_ssl_monitoring/)
-- url: https://github.com/kuvasz-uptime/kuvasz
----
+    val foo = Model.init&lt;Foo&gt;()  
+    // somehow set values on it
+    val bah = foo.copy(peanut=8)
 
-## [7][Kotlin multiplatform: a new cross-platform contender to ReactNative and Flutter](https://www.reddit.com/r/Kotlin/comments/ilfssj/kotlin_multiplatform_a_new_crossplatform/)
-- url: https://sebastienlorber.hashnode.dev/kotlin-multiplatform-a-new-cross-platform-contender-to-reactnative-and-flutter-ckejr2ix700g270s136ow3347
----
-
-## [8][Kotlin coroutines flow](https://www.reddit.com/r/Kotlin/comments/ilbq8q/kotlin_coroutines_flow/)
-- url: https://www.reddit.com/r/Kotlin/comments/ilbq8q/kotlin_coroutines_flow/
----
-I have an app where I need to transfer data from a controller to my flow function, but I haven't seen any flow functions with parameters.
-
-So I want to receive data in the controller, send data to my producer function (flow function), and then consume it from my consumer function.
-
-Something like this - [https://pl.kotl.in/KAc-WTwAk](https://pl.kotl.in/KAc-WTwAk)
-
-&amp;#x200B;
-
-I am probably using flows wrong but, maybe someone knows how to get the solution with flow instead of channel
-## [9][What's the best JSON to Kotlin objects converter to use?](https://www.reddit.com/r/Kotlin/comments/ikwecd/whats_the_best_json_to_kotlin_objects_converter/)
-- url: https://www.reddit.com/r/Kotlin/comments/ikwecd/whats_the_best_json_to_kotlin_objects_converter/
----
-I have used [jsonschema2pojo](http://www.jsonschema2pojo.org/) for generating Java objects from JSON. Unfortunately, the converter doesn't offer to generate Kotlin objects. Does anyone know a good converter that creates Kotlin objects from JSON?
-## [10][A look at Halcyon - Kotlin Multiplatform XMPP Library](https://www.reddit.com/r/Kotlin/comments/ila8ep/a_look_at_halcyon_kotlin_multiplatform_xmpp/)
-- url: https://tigase.net/halcyon-a-look-at-halcyon/
+Are there language features that let us get at this without rewriting bytecode? Or heck, with rewriting bytecode?
+## [10][On the beauty of programming languages](https://www.reddit.com/r/Kotlin/comments/im14xo/on_the_beauty_of_programming_languages/)
+- url: https://blog.cfelde.com/2020/09/on-the-beauty-of-programming-languages/
 ---
 

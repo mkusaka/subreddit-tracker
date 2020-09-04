@@ -22,7 +22,99 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Is it wrong to use namespaces? ES5 imports feel inferior to me compared to namespaces](https://www.reddit.com/r/typescript/comments/illv8o/is_it_wrong_to_use_namespaces_es5_imports_feel/)
+## [2][First impressions of Prisma](https://www.reddit.com/r/typescript/comments/imapom/first_impressions_of_prisma/)
+- url: https://www.reddit.com/r/typescript/comments/imapom/first_impressions_of_prisma/
+---
+I've been messing around in Prisma for some hours now. The syntax for defining your  schema is compact, all of the tables are defined in a single schema file.  This schema file can either be used to create the tables in the DB, or you can introspect an existing DB to generate the models for the schema.
+
+The syntax for queries is easy to remember and autocompletion makes fields in the queries discoverable.
+
+I guess I would just encourage you to try it out and see how you feel. You can add it to an existing project and start running queries in like 10 minutes (by introspecting your DB).
+
+Most of my experience is TypeORM in NestJS. I was sort of discouraged from doing much on the back end because of the complexity of TypeORM. Now I feel like I can build an application that I am willing to maintain.
+
+I remember being frustrated waiting for Prisma 2 to come out and frustrated that Prisma 1 wasn't something that I could use moving forward after going through a lengthy tutorial on Prisma 1. Regardless, I am glad the creators had ambitions for a better product.
+
+I hope this project is well maintained moving forward because I want to keep using it. Which is why I am sort of evangelizing on here. I want to keep using it because of the syntax and autocompletion.
+## [3][TypeScript ORM with no query builder, supporting full SQL queries](https://www.reddit.com/r/typescript/comments/iltfzj/typescript_orm_with_no_query_builder_supporting/)
+- url: https://github.com/Seb-C/kiss-orm#kiss-orm
+---
+
+## [4][How do I extend a class prototype with TypeScript type checking?](https://www.reddit.com/r/typescript/comments/imdds1/how_do_i_extend_a_class_prototype_with_typescript/)
+- url: https://stackoverflow.com/questions/63739143/how-do-i-extend-a-class-prototype-with-typescript-type-checking
+---
+
+## [5][TypeORM: affected, generatedMaps and raw property of UpdateResult is undefinde](https://www.reddit.com/r/typescript/comments/imchtw/typeorm_affected_generatedmaps_and_raw_property/)
+- url: https://www.reddit.com/r/typescript/comments/imchtw/typeorm_affected_generatedmaps_and_raw_property/
+---
+I use TypeORM with PostgreSQL and when I make an update request I can't find out if the operation was successful, but the data is updated. What could be the reason?
+## [6][How can I inherit a type from the value of a parameter from an object?](https://www.reddit.com/r/typescript/comments/im87di/how_can_i_inherit_a_type_from_the_value_of_a/)
+- url: https://www.reddit.com/r/typescript/comments/im87di/how_can_i_inherit_a_type_from_the_value_of_a/
+---
+My sample function:
+
+    const myFunc = (options: {
+      args?: { [s: string]: any },
+      callback: (args: { [s: string]: any }) =&gt; void,
+    }): void =&gt; {
+      const args = options.hasOwnProperty(‘args’) ? options.args : {};
+      options.callback(args);
+    };
+
+Calling my sample function (See the comment below):
+
+    myFunc({
+      args: {
+        test: 1,
+      },
+      callback: (args): void =&gt; {
+        // I want `args` to inherit the same type as the `args` parameter above: `{test: number}`
+      },
+    });
+
+Edit: Had a small type in my code
+## [7][Greenfield Typescript project, what are current best practices?](https://www.reddit.com/r/typescript/comments/ilugvz/greenfield_typescript_project_what_are_current/)
+- url: https://www.reddit.com/r/typescript/comments/ilugvz/greenfield_typescript_project_what_are_current/
+---
+I'm starting a Typescript project from scratch. The project will definitely become complex, so I'd like to architect it well upfront. I want to make sure I'm using the full capabilities of the language and libraries/frameworks if needed.
+
+I'm looking at things like dependency injection, composition over inheritance, functional patterns etc. Testability is a huge must. I like dependency injection patterns because they make unit testing with mocks very easy.
+
+Can anyone recommend good libraries for this or good open-source projects to look at which are a good example of e2e? This project will be an isomorphic library so there's no built-in server or overarching framework.
+## [8][error TS2749: 'IRequestWithUser' refers to a value, but is being used as a type here](https://www.reddit.com/r/typescript/comments/ilxkki/error_ts2749_irequestwithuser_refers_to_a_value/)
+- url: https://www.reddit.com/r/typescript/comments/ilxkki/error_ts2749_irequestwithuser_refers_to_a_value/
+---
+I am extending \`Request\` in \`express\` library to contain a user property:
+
+    import { Request } from 'express';
+    
+    export default interface RequestWithUser extends Request {
+      user: {
+        user_name: string;
+        password: string;
+      }
+    }
+
+The title error appears in the first parameter annotation:
+
+    import IRequestWithUser from '../shared/interfaces/isRequestWithUser';
+    
+    const router: Router = Router();
+    
+    router.post('/myRoute', async (req: IRequestWithUser, res: Response) =&gt; {
+    
+    /*
+    error TS2749: 'IRequestWithUser' refers to a value, 
+    but is being used as a type here. Did you mean 
+    'typeof IRequestWithUser'?
+    */
+
+I don't believe interfaces are values. They should purely be types. So what is causing this error?
+
+**Also tried**
+
+`typeof IRequestWithUser` This results in \`No overload matches this call\`
+## [9][Is it wrong to use namespaces? ES5 imports feel inferior to me compared to namespaces](https://www.reddit.com/r/typescript/comments/illv8o/is_it_wrong_to_use_namespaces_es5_imports_feel/)
 - url: https://www.reddit.com/r/typescript/comments/illv8o/is_it_wrong_to_use_namespaces_es5_imports_feel/
 ---
 I have the following code that works perfectly.
@@ -74,19 +166,13 @@ I've reverted to using namespaces for the time being, because in my opinion they
 **EDIT: Too many people are answering by telling me the pros of ES imports. That is not the question. The question is:**
 
 - **What is wrong with using namespaces?**
-## [3][TypeScript ORM with no query builder, supporting full SQL queries](https://www.reddit.com/r/typescript/comments/iltfzj/typescript_orm_with_no_query_builder_supporting/)
-- url: https://github.com/Seb-C/kiss-orm#kiss-orm
----
 
-## [4][Make third party package as global visible to all other files](https://www.reddit.com/r/typescript/comments/ilowzn/make_third_party_package_as_global_visible_to_all/)
-- url: https://www.reddit.com/r/typescript/comments/ilowzn/make_third_party_package_as_global_visible_to_all/
----
-Hello,
+_____
 
-I installed momentjs and want to the project automatically access to the function everywhere without explicitly importing. Is this possible in typescript?
+EDIT 2: After 65 comments, someone has finally provided the right answer. **My first statement is wrong and namespaces are not being deprecated. Therefore there is nothing wrong with using namespaces.**
 
-Thanks
-## [5][Need help to understand how assignments in arrays/objects are done](https://www.reddit.com/r/typescript/comments/ilkrk4/need_help_to_understand_how_assignments_in/)
+https://www.reddit.com/r/typescript/comments/illv8o/is_it_wrong_to_use_namespaces_es5_imports_feel/g3u6fu1/
+## [10][Need help to understand how assignments in arrays/objects are done](https://www.reddit.com/r/typescript/comments/ilkrk4/need_help_to_understand_how_assignments_in/)
 - url: https://www.reddit.com/r/typescript/comments/ilkrk4/need_help_to_understand_how_assignments_in/
 ---
 Hello,
@@ -107,85 +193,11 @@ What I am doing is that I am looping through the geometries to toggle the isHigh
     }
 
 I don't understand why isHightlighted is not changed in the second console.log(geometry). Also, if I write geometry.isHighlighted = true, it works. the second console.log(geometry) will have isHighlighted = true. I don't understand that either...
-## [6][Building a game with TypeScript. Drawing Grid 4/5](https://www.reddit.com/r/typescript/comments/il512l/building_a_game_with_typescript_drawing_grid_45/)
-- url: https://medium.com/@gregsolo/building-a-game-with-typescript-iii-drawing-grid-4-5-398af1dd638d?sk=49c92b3604c33e633bf6dc4a1e2846ed
+## [11][Make third party package as global visible to all other files](https://www.reddit.com/r/typescript/comments/ilowzn/make_third_party_package_as_global_visible_to_all/)
+- url: https://www.reddit.com/r/typescript/comments/ilowzn/make_third_party_package_as_global_visible_to_all/
 ---
+Hello,
 
-## [7][What to expect from Typescript 4.0 and more](https://www.reddit.com/r/typescript/comments/il2uaw/what_to_expect_from_typescript_40_and_more/)
-- url: https://medium.com/@metodieff.stefan/what-is-new-in-typescript-4-0-and-more-6c5fa72fa1db?source=friends_link&amp;sk=649d4059694facf4f13223b3831da308
----
+I installed momentjs and want to the project automatically access to the function everywhere without explicitly importing. Is this possible in typescript?
 
-## [8][learning typescript](https://www.reddit.com/r/typescript/comments/il0ysf/learning_typescript/)
-- url: https://www.reddit.com/r/typescript/comments/il0ysf/learning_typescript/
----
-so, i really wanna learn typescript, for discord.js and maybe a little bit of game dev and website dev, but i honestly have zero clue on how to get started, i learn by doing, and not just watching videos because then i can't remember things, any tips? i would really appreciate the help
-## [9][Declaration of types in a separate file](https://www.reddit.com/r/typescript/comments/ikruk6/declaration_of_types_in_a_separate_file/)
-- url: https://www.reddit.com/r/typescript/comments/ikruk6/declaration_of_types_in_a_separate_file/
----
-Hi everyone!
-
-I have a module which export a class with some methods. Methods returns a complex data.
-
-For example `SomeClass.ts`:
-
-`// some imports`
-
-`export type ComplexType1 = … // generated from json. Contains a lot of subtypes, enums etc.`
-
-`export type ComplexType2= …`
-
-`// and so on`
-
-`class SomeClass {`
-
-`method1 = (): ComplexType1 =&gt; {…}`
-
-`method2 = (): ComplexType1 =&gt; {…}`
-
-`// etc`
-
-`}`
-
-This structure is repeated in several files.
-
-My problem is that type declarations takes several screens. I trying just copy-paste types into SomeClass.d.ts but types became unavailable inside SomeClass.ts
-
-How I can move types in separate file?
-## [10][How to define a prop type for an object that is generic](https://www.reddit.com/r/typescript/comments/ikvnvh/how_to_define_a_prop_type_for_an_object_that_is/)
-- url: https://www.reddit.com/r/typescript/comments/ikvnvh/how_to_define_a_prop_type_for_an_object_that_is/
----
-So I have a React component with maybe some excessive generics. I've got a component that takes in an array of rules, and a separate prop that is an object of arguments to pass to each rule. It's a pattern that I've adopted because it avoids creating a closure over the arguments so the rules can be re-evaluated on each render (since the props being passed get updated).
-
-Anyway, my main problem is my PropTypes. I want to still use PropTypes because this code is for a library that will also be used in JavaScript projects, not just TypeScript ones. I just can't get these to work together, the moment I do it breaks compilation.
-
-I know it has something to do with the fact that I'm typing "ruleProps" as an object, whereas it's generic in the TypeScript interface. I'll also point out that it's the "rules" prop which breaks, because the arguments expected by the function no longer match the type.
-
-Hoping for guidance on how to do this. Thanks.
-
-    export interface Rule&lt;RuleProps extends object&gt; {
-        allow: (ruleProps?: RuleProps) =&gt; boolean;
-        redirect: string;
-    }
-    
-    interface Props&lt;CompProps extends object, RuleProps extends object&gt; {
-        rules?: Array&lt;Rule&lt;RuleProps&gt;&gt;;
-        ruleProps?: RuleProps;
-    }
-    
-    ProtectedRoute.propTypes = {
-        rules: PropTypes.arrayOf(PropTypes.shape({
-            allow: PropTypes.func.isRequired,
-            redirect: PropTypes.string.isRequired
-        })),
-        ruleProps: PropTypes.object
-    };
-
-Edit: The error I'm getting is:
-
-    TS2322: Type 'Rule&lt;RuleProps&gt;[] | undefined' is not assignable to type 'Rule&lt;object&gt;[] | undefined'.   Type 'Rule&lt;RuleProps&gt;[]' is not assignable to type 'Rule&lt;object&gt;[]'.     Type 'Rule&lt;RuleProps&gt;' is not assignable to type 'Rule&lt;object&gt;'.       Property 'allow' is missing in type '{}' but required in type 'RuleProps'.
-
-This error occurs in a unit test when I try to actually use the component and pass values to these props. If I remove the PropTypes, everything works just fine.
-## [11][If you are using TypeDoc, I created a theme with particles background. Hope you like it.](https://www.reddit.com/r/typescript/comments/ikofcd/if_you_are_using_typedoc_i_created_a_theme_with/)
-- url: https://github.com/tsparticles/typedoc-particles-theme
----
-
+Thanks

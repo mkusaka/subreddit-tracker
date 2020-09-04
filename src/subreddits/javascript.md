@@ -7,43 +7,43 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [2][Tower game in ~100 lines of JavaScript](https://www.reddit.com/r/javascript/comments/ileytc/tower_game_in_100_lines_of_javascript/)
-- url: https://slicker.me/javascript/tower.htm
+## [2][A continuously-evolving compendium of javascript tips based on common areas of confusion or misunderstanding](https://www.reddit.com/r/javascript/comments/im7269/a_continuouslyevolving_compendium_of_javascript/)
+- url: https://github.com/nas5w/javascript-tips-and-tidbits
 ---
 
-## [3][Join 10k+ developers at the largest Vue.js developer conference in the world - Register for FREE!](https://www.reddit.com/r/javascript/comments/illwce/join_10k_developers_at_the_largest_vuejs/)
-- url: https://vuetoronto.com/?ref=reddit
+## [3][Top-5 HTTP Security Headers in 2020 - Explanations and Examples](https://www.reddit.com/r/javascript/comments/imapk9/top5_http_security_headers_in_2020_explanations/)
+- url: https://drag13.io/posts/security-headers/index.html
 ---
 
-## [4][GraphQL the Simple Way, or: Don't Use Apollo](https://www.reddit.com/r/javascript/comments/il5nkg/graphql_the_simple_way_or_dont_use_apollo/)
-- url: https://httptoolkit.tech/blog/simple-graphql-server-without-apollo
+## [4][Serious bug in decimal.js causing addition not to be correct when using certain inputs](https://www.reddit.com/r/javascript/comments/iluccs/serious_bug_in_decimaljs_causing_addition_not_to/)
+- url: https://github.com/MikeMcl/decimal.js/issues/157
 ---
 
-## [5][Made a course: Learn Vue.js development while building a minesweeper game. Free this week. What do you think?](https://www.reddit.com/r/javascript/comments/iltfjd/made_a_course_learn_vuejs_development_while/)
-- url: https://www.skillshare.com/classes/Minesweeper-A-playful-intro-to-Vue/2048913723?lessonsTab=on&amp;discount=G6LWG&amp;teacherRef=3932130&amp;via=free-enrollment&amp;utm_campaign=teacher-discount-2048913723&amp;utm_source=ShortUrl&amp;utm_medium=teacher-discount
+## [5][React frameworks: Redwood vs Blitz](https://www.reddit.com/r/javascript/comments/imepl9/react_frameworks_redwood_vs_blitz/)
+- url: https://www.indiehackers.com/post/react-frameworks-redwood-vs-blitz-1c66190774
 ---
 
-## [6][SpeakeasyJS - JavaScript meetup for mad science, hacking, &amp; experiments](https://www.reddit.com/r/javascript/comments/ildaz4/speakeasyjs_javascript_meetup_for_mad_science/)
-- url: https://speakeasyjs.com/
+## [6][We made a Jest unit-test generator for Recoil apps!](https://www.reddit.com/r/javascript/comments/im176z/we_made_a_jest_unittest_generator_for_recoil_apps/)
+- url: /r/reactjs/comments/im1518/we_made_a_jest_unittest_generator_for_recoil_apps/
 ---
 
-## [7][5 ideas for personal projects using vanilla javascript](https://www.reddit.com/r/javascript/comments/ilg4tm/5_ideas_for_personal_projects_using_vanilla/)
-- url: https://dev.to/afonsopacifer/5-ideas-for-personal-projects-using-vanilla-javascript-1p2m
+## [7][The Modern JavaScript Bootcamp by Andrew Mead](https://www.reddit.com/r/javascript/comments/im7ir0/the_modern_javascript_bootcamp_by_andrew_mead/)
+- url: https://topbootcamps.com/modern-javascript-bootcamp.html
 ---
 
-## [8][Lottie animation in vuejs](https://www.reddit.com/r/javascript/comments/ilol0z/lottie_animation_in_vuejs/)
-- url: https://glammingspace.blogspot.com/2020/09/lottie-animations-in-vuejs.html
+## [8][How To Meet GDPR Requirements In Mobile And Web Applications](https://www.reddit.com/r/javascript/comments/imd5fs/how_to_meet_gdpr_requirements_in_mobile_and_web/)
+- url: http://formonono.fun/
 ---
 
-## [9][How components are taking over the world](https://www.reddit.com/r/javascript/comments/il7hfs/how_components_are_taking_over_the_world/)
-- url: http://componentdriven.org
+## [9][Underscore went modular: version 1.11 released](https://www.reddit.com/r/javascript/comments/ilz603/underscore_went_modular_version_111_released/)
+- url: https://underscorejs.org/#1.11.0
 ---
 
-## [10][My thoughts on endless battle of React state management libraries (setState/useState vs Redux vs Mobx)](https://www.reddit.com/r/javascript/comments/il2ndq/my_thoughts_on_endless_battle_of_react_state/)
-- url: https://dev.to/mpodlasin/my-thoughts-on-endless-battle-of-react-state-management-libraries-setstate-usestate-vs-redux-vs-mobx-2kal
+## [10][Spearmint helps developers easily create functional React/Redux/Endpoint/Paint Timing tests without writing any code. It dynamically converts user inputs into executable Jest test code by using DOM query selectors provided by @testing-library](https://www.reddit.com/r/javascript/comments/im1p6n/spearmint_helps_developers_easily_create/)
+- url: https://github.com/open-source-labs/spearmint
 ---
 
-## [11][Debugging Node Applications](https://www.reddit.com/r/javascript/comments/ildce4/debugging_node_applications/)
-- url: https://dev.to/____marcell/debugging-node-applications-4e07
+## [11][How to use free GPU/TPU with Pipcook on Google Colab](https://www.reddit.com/r/javascript/comments/im4wg0/how_to_use_free_gputpu_with_pipcook_on_google/)
+- url: /r/node/comments/im4spa/how_to_use_free_gputpu_with_pipcook_on_google/
 ---
 

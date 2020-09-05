@@ -85,59 +85,89 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][I built a drag-and-drop online quiz builder with Next.js and GraphQL during quarantine](https://www.reddit.com/r/reactjs/comments/ilwo37/i_built_a_draganddrop_online_quiz_builder_with/)
-- url: https://v.redd.it/4z3tulnrkyk51
+## [3][I made clone of stackoverflow with React/Next, please check out!](https://www.reddit.com/r/reactjs/comments/imx0jy/i_made_clone_of_stackoverflow_with_reactnext/)
+- url: https://v.redd.it/dyn5uequ6al51
 ---
 
-## [4][I made a library to make React Truly Reactive!](https://www.reddit.com/r/reactjs/comments/imc21y/i_made_a_library_to_make_react_truly_reactive/)
-- url: https://github.com/MananTank/radioactive-state
+## [4][We made an open-source ReactJS spreadsheet like interface for Firestore DB](https://www.reddit.com/r/reactjs/comments/imxsl8/we_made_an_opensource_reactjs_spreadsheet_like/)
+- url: https://v.redd.it/rxq4yylsgal51
 ---
 
-## [5][Made with love for React (accidentally deleted my first post)](https://www.reddit.com/r/reactjs/comments/ilqmuv/made_with_love_for_react_accidentally_deleted_my/)
-- url: https://v.redd.it/0u8xtgewnwk51
+## [5][Create a React app with Typescript, Redux and OAuth 2.0 user authorization](https://www.reddit.com/r/reactjs/comments/imjupb/create_a_react_app_with_typescript_redux_and/)
+- url: https://www.reddit.com/r/reactjs/comments/imjupb/create_a_react_app_with_typescript_redux_and/
+---
+Hey all! Check out my tutorial for creating a React app with Typescript, Redux and OAuth 2.0 user authorization. User login example with Spotify.
+
+Tutorial [here](https://medium.com/@oskarasplin/create-a-react-app-with-typescript-redux-and-oauth-2-0-7f62d57890df)
+
+Template on GitHub [here](https://github.com/OskarAsplin/react-ts-redux-oauth2-template)
+
+If you find the tutorial useful, please give the article a like and the GitHub repo a star :)
+
+Feedback is much appreciated!
+## [6][Stackoverflow CLONE (MySQL + EXPRESS + REACT + NODE)](https://www.reddit.com/r/reactjs/comments/imyidh/stackoverflow_clone_mysql_express_react_node/)
+- url: https://v.redd.it/4bfdamkwwal51
 ---
 
-## [6][Gatsby vs. Next.js](https://www.reddit.com/r/reactjs/comments/imbyqx/gatsby_vs_nextjs/)
-- url: https://jaredpalmer.com/gatsby-vs-nextjs
+## [7][Mobx is Awesome!](https://www.reddit.com/r/reactjs/comments/imz12p/mobx_is_awesome/)
+- url: https://www.reddit.com/r/reactjs/comments/imz12p/mobx_is_awesome/
+---
+YO Reacters!
+
+My friend just released the BEST Mobx deep dive Course, after working with it in the production for 3 years, we tried to cover every aspect of this amazing state management tool.
+
+  
+feel free to enroll and share with your friends, free for the next 3 days.  
+
+
+[https://www.udemy.com/course/mobx-in-depth-with-react/?couponCode=68D474E01D1CECEA3507](https://www.udemy.com/course/mobx-in-depth-with-react/?couponCode=68D474E01D1CECEA3507)
+## [8][MobX In Depth With React(Hooks+TypeScript)](https://www.reddit.com/r/reactjs/comments/imyvv6/mobx_in_depth_with_reacthookstypescript/)
+- url: https://www.reddit.com/r/reactjs/comments/imyvv6/mobx_in_depth_with_reacthookstypescript/
+---
+ 
+
+# Hey Guys!
+
+Happy to release my full extensive course about MobX where you will learn everything there is about MobX and how to use in React Applications! :)
+
+[https://www.udemy.com/course/mobx-in-depth-with-react/?referralCode=B7FD24C7EB1A51684160](https://www.udemy.com/course/mobx-in-depth-with-react/?referralCode=B7FD24C7EB1A51684160)
+
+Free Coupon:
+
+68D474E01D1CECEA3507
+## [9][What are some good react website codebases on github?](https://www.reddit.com/r/reactjs/comments/imvoja/what_are_some_good_react_website_codebases_on/)
+- url: https://www.reddit.com/r/reactjs/comments/imvoja/what_are_some_good_react_website_codebases_on/
+---
+I am searching for real world  react projects on github so i can review the code and learn from it, the complete react websites is very rare on github, i would be thankful if someone recommended me some or at least one.
+## [10][Is there a client side web resize/compress that does not reduce quality?](https://www.reddit.com/r/reactjs/comments/imyg1k/is_there_a_client_side_web_resizecompress_that/)
+- url: https://www.reddit.com/r/reactjs/comments/imyg1k/is_there_a_client_side_web_resizecompress_that/
+---
+Hi All,
+
+I have been messing with it for a LONG while (few weeks now). I'm trying to compress/resize an image before uploading. Generally would want 150x150 or 300x300 images.
+
+I tried using [https://www.npmjs.com/package/browser-image-compression](https://www.npmjs.com/package/browser-image-compression) which has 26k downloads per week. But using the demo (and trying in my app) it appears if you reduce image to lets say 150x150 pixels the quality is getting pixelated badly compare for example if you do it with MS Paint or something.
+
+Is it possible to do it on the client side or do I need to opt and do it on the server side? Any help would be appreciated. 
+
+Thanks
+## [11][People who review challenges/tasks for hiring at their companies. What are you looking for in the code?](https://www.reddit.com/r/reactjs/comments/in0mta/people_who_review_challengestasks_for_hiring_at/)
+- url: /r/webdev/comments/in0g9x/people_who_review_challengestasks_for_hiring_at/
 ---
 
-## [7][published my first react app!](https://www.reddit.com/r/reactjs/comments/im6tqq/published_my_first_react_app/)
-- url: https://www.reddit.com/r/reactjs/comments/im6tqq/published_my_first_react_app/
+## [12][What are the equivalents of AppBar parameters (material-ui version 0.20 ) in version 3.9.3 of mui?](https://www.reddit.com/r/reactjs/comments/in0l3t/what_are_the_equivalents_of_appbar_parameters/)
+- url: https://www.reddit.com/r/reactjs/comments/in0l3t/what_are_the_equivalents_of_appbar_parameters/
 ---
-i published my first react project today - it's just a simple website, and i'm hosting it on firebase with a custom domain. i was wondering how other people host react websites. i know there's no right or wrong way to do it, but i wonder what the other ways to do it are.
-## [8][Redwood vs Blitz](https://www.reddit.com/r/reactjs/comments/ime7pf/redwood_vs_blitz/)
-- url: https://www.indiehackers.com/post/redwoodjs-vs-blitz-1c66190774
----
+  
 
-## [9][Dynamically load user-supplied code and React components at runtime](https://www.reddit.com/r/reactjs/comments/ime4ax/dynamically_load_usersupplied_code_and_react/)
-- url: https://www.reddit.com/r/reactjs/comments/ime4ax/dynamically_load_usersupplied_code_and_react/
----
-Dear fellow react enthousiasts! I'm looking for advice for a specific problem I'm facing. I'm building an app that acts as a **container for user-supplied scientific experiments**. The platform takes care of most of the features (identifying people, configuration, etc.) and is under my control. But a part of the application should be flexible enough to make it possible for users to **"inject" their problem-specific bundle of code in the application** (think: screen layouts, specific code to handle each result, etc.).  
+I have a website based on mui 0.20 &amp; i want to upgrade it. For  example, I want to migrate the AppBar of version 0.20 to version 3.9.3,  the properties are:
 
+&amp;#x200B;
 
-I have resorted to simple solutions such as creating a Function object with the injected code as a constructor argument (the lesser evil eval). But that only takes me so far. I want users to be able to describe screen layouts (in jsx?), and **bind their implementations to dependencies that are already loaded and available** in the application (think: React, lodash, etc.). Ideally the user would be able to load their "application bundle" into the framework **at runtime**, and the container merges the supplied code (according to a well documented structure and api) into the running container application.  
+* iconElementLeft
+* iconElementRight
+* onLeftIconButtonClick
+* showMenuIconButton
+* zDepth ....
 
-
-I'm perfectly ok with users describing their screens as **React components**. But I would like to avoid that users have to supply their own environment (and potentially breaking the application when two instances of the same library are loaded) and build a complete separate application.
-
-Which combination of technologies would help me out here? Anybody any experience with this kind of requirement? Bonus points for a solution that works in a React Native and React Web environment.
-## [10][How can I get the IP address of the server using React?](https://www.reddit.com/r/reactjs/comments/imdv45/how_can_i_get_the_ip_address_of_the_server_using/)
-- url: https://www.reddit.com/r/reactjs/comments/imdv45/how_can_i_get_the_ip_address_of_the_server_using/
----
-I have a server with a React app on it. I simply want to be able to set the server's local IP address (the same one as would be in the browser bar) in my React app and display it.
-
-Everything I have tried just gives me the IP address of the client that is displaying the React app (localhost).
-
-How do I get the server's address?
-## [11][We are open source developers working on Reactime 5.0 Ask Us Anything!](https://www.reddit.com/r/reactjs/comments/ily7u8/we_are_open_source_developers_working_on_reactime/)
-- url: https://www.reddit.com/r/reactjs/comments/ily7u8/we_are_open_source_developers_working_on_reactime/
----
-Hi ReactJS we are open source developers working on the latest iteration of Reactime - A time-travel debugging tool for React, Hooks, and now with support for Recoil.js! We are extremely excited to launch this product and we hope that it would help you as React Developers to develop awesome apps. Here is the our [Github](https://github.com/open-source-labs/ReacTime) &amp; Chrome Store [https://chrome.google.com/webstore/detail/reactime/cgibknllccemdnfhfpmjhffpjfeidjga?hl=en-US](https://chrome.google.com/webstore/detail/reactime/cgibknllccemdnfhfpmjhffpjfeidjga?hl=en-US)
-
- Note: that you don't need to download any packages as this is a Chrome Dev Tool and we extract state data from React Fiber tree.
-
-Ask us anything about React, Recoil, developing a debugging tool, or working in Open Source.
-## [12][Form validation in React JS using Formsy](https://www.reddit.com/r/reactjs/comments/imaoe3/form_validation_in_react_js_using_formsy/)
-- url: https://www.youtube.com/watch?v=GViVMovaDyI&amp;feature=share
----
-
+I can't find the equivalents for these parameters in version 3.9.3, i  face the same situation for the other components, is there a way to  migrate ?

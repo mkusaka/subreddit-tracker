@@ -1,9 +1,31 @@
 # Kotlin
-## [1][Are there any good GitHub projects that have implemented the Spring Framework/ Spring Boot using Kotlin? I'm trying to build some small test projects with Spring and Kotlin](https://www.reddit.com/r/Kotlin/comments/imcj2y/are_there_any_good_github_projects_that_have/)
+## [1][How we built Localazy CLI with Kotlin MPP and Github Actions](https://www.reddit.com/r/Kotlin/comments/in0c1c/how_we_built_localazy_cli_with_kotlin_mpp_and/)
+- url: https://www.reddit.com/r/Kotlin/comments/in0c1c/how_we_built_localazy_cli_with_kotlin_mpp_and/
+---
+Hi, I shared our experience with building a CLI app using Kotlin MPP and automating the entire release with Github Actions.
+
+[https://localazy.com/blog/localazy-cli-sofware-localization-tool-kotlin-github](https://localazy.com/blog/localazy-cli-sofware-localization-tool-kotlin-github)
+
+HTTP communication with Kotlin Native on Windows can be a bit tricky, don't forget to check also how to use WinINet API with Kotlin:
+
+[https://localazy.com/blog/kotlin-mpp-and-http-with-wininet-api-on-windows](https://localazy.com/blog/kotlin-mpp-and-http-with-wininet-api-on-windows)
+## [2][Are there any good GitHub projects that have implemented the Spring Framework/ Spring Boot using Kotlin? I'm trying to build some small test projects with Spring and Kotlin](https://www.reddit.com/r/Kotlin/comments/imcj2y/are_there_any_good_github_projects_that_have/)
 - url: https://www.reddit.com/r/Kotlin/comments/imcj2y/are_there_any_good_github_projects_that_have/
 ---
 
-## [2][Calculator library (pure Kotlin module)](https://www.reddit.com/r/Kotlin/comments/imegl1/calculator_library_pure_kotlin_module/)
+## [3][Random numbers](https://www.reddit.com/r/Kotlin/comments/imr1e4/random_numbers/)
+- url: https://www.reddit.com/r/Kotlin/comments/imr1e4/random_numbers/
+---
+I cannot get any sort of random number function to work in Kotlin, for the life of me. It's quite frustrating. Can someone show me an easy way?
+## [4][Looking for advice to build a RESTful server written in kotlin on my raspberry pi](https://www.reddit.com/r/Kotlin/comments/imerkm/looking_for_advice_to_build_a_restful_server/)
+- url: https://www.reddit.com/r/Kotlin/comments/imerkm/looking_for_advice_to_build_a_restful_server/
+---
+I have a lot of kotlin experience through Android dev and I absolutely love the language. I have a raspberry pi sitting around and I thought it would be neat as a fun side project to build a local server and app to communicate with each other.
+
+I've been trying to decide on a framework to use but I haven't found any solid documentation and every project seems a bit different. I don't have much knowledge when it comes to web frameworks like spring or ktor so I'm not sure what I need.
+
+Any advice is appreciated, thanks for reading!
+## [5][Calculator library (pure Kotlin module)](https://www.reddit.com/r/Kotlin/comments/imegl1/calculator_library_pure_kotlin_module/)
 - url: https://www.reddit.com/r/Kotlin/comments/imegl1/calculator_library_pure_kotlin_module/
 ---
 Many apps have number inputs, and in many cases, having a calculator function to provide the number inputs is desirable. This is my first time to publish a library, and hope you will find this helpful. Any feedback is much appreciated. To import:
@@ -70,41 +92,23 @@ The calculator is a pure Kotlin module library and does not have any Android dep
 Note: The calculator library currently only supports MDAS operation. That is, it prioritizes multiplication and division over addition and subtraction as shown on the image above.
 
 Link: [https://github.com/jairrab/KotlinCalculator/](https://github.com/jairrab/KotlinCalculator/)
-## [3][Looking for advice to build a RESTful server written in kotlin on my raspberry pi](https://www.reddit.com/r/Kotlin/comments/imerkm/looking_for_advice_to_build_a_restful_server/)
-- url: https://www.reddit.com/r/Kotlin/comments/imerkm/looking_for_advice_to_build_a_restful_server/
----
-I have a lot of kotlin experience through Android dev and I absolutely love the language. I have a raspberry pi sitting around and I thought it would be neat as a fun side project to build a local server and app to communicate with each other.
-
-I've been trying to decide on a framework to use but I haven't found any solid documentation and every project seems a bit different. I don't have much knowledge when it comes to web frameworks like spring or ktor so I'm not sure what I need.
-
-Any advice is appreciated, thanks for reading!
-## [4][How to use frontend js library with kotlin and ktor](https://www.reddit.com/r/Kotlin/comments/imbeet/how_to_use_frontend_js_library_with_kotlin_and/)
-- url: https://www.reddit.com/r/Kotlin/comments/imbeet/how_to_use_frontend_js_library_with_kotlin_and/
----
-I can't find it anywhere. I'm trying to build a server side rendered ktor kotlin project and wanted to use a frontend js lib but I can't figure out how to do it.
-## [5][Gradle modules: Running unit tests only in affected modules](https://www.reddit.com/r/Kotlin/comments/imdgos/gradle_modules_running_unit_tests_only_in/)
+## [6][Gradle modules: Running unit tests only in affected modules](https://www.reddit.com/r/Kotlin/comments/imdgos/gradle_modules_running_unit_tests_only_in/)
 - url: https://medium.com/@lehen01/gradle-modules-running-unit-tests-only-in-affected-modules-fff89562339e?source=friends_link&amp;sk=1fe7e4375da04d3626c4f4d6b2b1b34d
 ---
 
-## [6][Kotlin Vs Flutter: Select the Right Platform for App Development in 2020](https://www.reddit.com/r/Kotlin/comments/ime3a0/kotlin_vs_flutter_select_the_right_platform_for/)
-- url: https://medium.com/@sharmaamayankk/kotlin-vs-flutter-select-the-right-platform-for-app-development-in-2020-e149b79faeec
+## [7][Hello DataStore, bye SharedPreferences](https://www.reddit.com/r/Kotlin/comments/imi5zn/hello_datastore_bye_sharedpreferences/)
+- url: https://medium.com/scalereal/hello-datastore-bye-sharedpreferences-android-f46c610b81d5
 ---
 
-## [7][Could anyone explain where the 'object' keyword is intended to be used? I found some articles online, but they aren't very intuitive.](https://www.reddit.com/r/Kotlin/comments/ilrm6g/could_anyone_explain_where_the_object_keyword_is/)
+## [8][How to use frontend js library with kotlin and ktor](https://www.reddit.com/r/Kotlin/comments/imbeet/how_to_use_frontend_js_library_with_kotlin_and/)
+- url: https://www.reddit.com/r/Kotlin/comments/imbeet/how_to_use_frontend_js_library_with_kotlin_and/
+---
+I can't find it anywhere. I'm trying to build a server side rendered ktor kotlin project and wanted to use a frontend js lib but I can't figure out how to do it.
+## [9][Could anyone explain where the 'object' keyword is intended to be used? I found some articles online, but they aren't very intuitive.](https://www.reddit.com/r/Kotlin/comments/ilrm6g/could_anyone_explain_where_the_object_keyword_is/)
 - url: https://www.reddit.com/r/Kotlin/comments/ilrm6g/could_anyone_explain_where_the_object_keyword_is/
 ---
 
-## [8][Kotlin IntelliJ Mac users running code issues](https://www.reddit.com/r/Kotlin/comments/ilwwxu/kotlin_intellij_mac_users_running_code_issues/)
-- url: https://www.reddit.com/r/Kotlin/comments/ilwwxu/kotlin_intellij_mac_users_running_code_issues/
----
-Does anyone know what can be the problem in my IntelliJ(free version) for Mac
-
-I can run the the code only via the Kotlin REPL but it wouldn't run on the main coding window.
-
-I have try to reinstall and install also Java SDK file but nothing seems to help.
-
-Any advice?
-## [9][Can you implement the data class copy() function in kotlin itself, using reflection?](https://www.reddit.com/r/Kotlin/comments/im20w6/can_you_implement_the_data_class_copy_function_in/)
+## [10][Can you implement the data class copy() function in kotlin itself, using reflection?](https://www.reddit.com/r/Kotlin/comments/im20w6/can_you_implement_the_data_class_copy_function_in/)
 - url: https://www.reddit.com/r/Kotlin/comments/im20w6/can_you_implement_the_data_class_copy_function_in/
 ---
 Is it possible to use kotlin reflection, perhaps in combination with invocation handlers, to implement a generic version of copy(), as it works on data classes? 
@@ -141,7 +145,3 @@ So, putting it together, what we'd want is to be able to do something like:
     val bah = foo.copy(peanut=8)
 
 Are there language features that let us get at this without rewriting bytecode? Or heck, with rewriting bytecode?
-## [10][On the beauty of programming languages](https://www.reddit.com/r/Kotlin/comments/im14xo/on_the_beauty_of_programming_languages/)
-- url: https://blog.cfelde.com/2020/09/on-the-beauty-of-programming-languages/
----
-

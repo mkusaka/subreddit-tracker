@@ -1,67 +1,85 @@
 # aws
-## [1][Amazon CloudFront announces support for TLSv1.3 for viewer connections](https://www.reddit.com/r/aws/comments/imazwl/amazon_cloudfront_announces_support_for_tlsv13/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/09/cloudfront-tlsv1-3-support/
+## [1][PROTIP: Watch out for stranded multipart uploads - I was billed for 220GB of "invisible" objects for months](https://www.reddit.com/r/aws/comments/immer3/protip_watch_out_for_stranded_multipart_uploads_i/)
+- url: https://www.reddit.com/r/aws/comments/immer3/protip_watch_out_for_stranded_multipart_uploads_i/
+---
+I used rclone to sync gdrive to a new S3 AWS bucket. Due to network connectivity issues, the rclone had to be retried multiple times (it was a big gdrive)
+
+Once the data was cleaned up and confirmed ready for deep archive, I transitioned the storage class to S3 DEEPARCHIVE for all visible objects.
+
+I recently looked at the bucket and noticed 220GB of Standard storage class objects - but, here is the kicker, there were none visible ! 
+
+Googled the issue and found this "advisory". Basically, I think I paid peanuts for the TB+ of data I stored in DEEPARCHIVE but paid like 30X more for the "invisible" multipart uploads. I didn't know they needed to be cleaned up, and AWS would have happily billed me for years more.
+
+[https://aws.amazon.com/premiumsupport/knowledge-center/s3-reduce-costs/](https://aws.amazon.com/premiumsupport/knowledge-center/s3-reduce-costs/)
+## [2][Pentagon says it will stick with Microsoft for $10 billion JEDI cloud contract](https://www.reddit.com/r/aws/comments/imo110/pentagon_says_it_will_stick_with_microsoft_for_10/)
+- url: https://www.cnbc.com/2020/09/04/pentagon-says-it-will-stick-with-microsoft-for-jedi-cloud-contract.html
 ---
 
-## [2][How does EBS expand volumes?](https://www.reddit.com/r/aws/comments/im8ob4/how_does_ebs_expand_volumes/)
-- url: https://kichik.com/2020/09/03/how-does-aws-ebs-expand-volumes/
+## [3][Aurora with autoscaling vs. Aurora Serverless](https://www.reddit.com/r/aws/comments/imwyk5/aurora_with_autoscaling_vs_aurora_serverless/)
+- url: https://www.reddit.com/r/aws/comments/imwyk5/aurora_with_autoscaling_vs_aurora_serverless/
+---
+Could anyone explain the main differences between a Postgres database on Aurora with autoscaling switched on vs. Aurora Serverless? I've read through a lot of docs and the difference is not clear to me. Thanks!
+## [4][AWS Named as a Cloud Leader for the 10th Consecutive Year in Gartner’s Infrastructure &amp; Platform Services Magic Quadrant](https://www.reddit.com/r/aws/comments/imlnux/aws_named_as_a_cloud_leader_for_the_10th/)
+- url: https://aws.amazon.com/blogs/aws/aws-named-as-a-cloud-leader-for-the-10th-consecutive-year-in-gartners-infrastructure-platform-services-magic-quadrant/
 ---
 
-## [3][AWS Step Functions increases the maximum payload to 256kb](https://www.reddit.com/r/aws/comments/im3tec/aws_step_functions_increases_the_maximum_payload/)
-- url: https://www.reddit.com/r/aws/comments/im3tec/aws_step_functions_increases_the_maximum_payload/
+## [5][Migrating a Windows VM to EC2 using Server Migration Service](https://www.reddit.com/r/aws/comments/in14r9/migrating_a_windows_vm_to_ec2_using_server/)
+- url: https://www.reddit.com/r/aws/comments/in14r9/migrating_a_windows_vm_to_ec2_using_server/
 ---
-[https://aws.amazon.com/about-aws/whats-new/2020/09/aws-step-functions-increases-payload-size-to-256kb/](https://aws.amazon.com/about-aws/whats-new/2020/09/aws-step-functions-increases-payload-size-to-256kb/)
-## [4][IAM offline](https://www.reddit.com/r/aws/comments/im2hhu/iam_offline/)
-- url: https://www.reddit.com/r/aws/comments/im2hhu/iam_offline/
+I've been migrating linux and windows vms using Server Migration Service. How or where can I get more detailed error information as to why a replication job fails with the error below?
+
+**"Job status message**FirstBootFailure: This import request failed because the instance failed to boot and establish network connectivity."
+
+I've already turned off the antivirus running on the source. However, the error is not helpful. This is my 5th attempt. It worked on other Windows vms I've moved.
+## [6][What is the difference between elastic beanstalk and fargate?](https://www.reddit.com/r/aws/comments/in0f5o/what_is_the_difference_between_elastic_beanstalk/)
+- url: https://www.reddit.com/r/aws/comments/in0f5o/what_is_the_difference_between_elastic_beanstalk/
 ---
-Can't pull up anything in the IAM console or cli right now.
-
-Hopefully it's minor? I wonder if this could affect policy on active resources?
-
-Edit: was down about 15 minutes, 17:10-17:25 EDT or thereabouts.
-## [5][Root MFA physical device Storage](https://www.reddit.com/r/aws/comments/imeaqt/root_mfa_physical_device_storage/)
-- url: https://www.reddit.com/r/aws/comments/imeaqt/root_mfa_physical_device_storage/
+What is the difference between elastic beanstalk and fargate? We can deploy docker on both services and we don't need to provison anything in both of these services as everything is managed by them (PaaS).
+## [7][Add security policy to allow ELB/ALB operations - HELP](https://www.reddit.com/r/aws/comments/imzxvt/add_security_policy_to_allow_elbalb_operations/)
+- url: https://www.reddit.com/r/aws/comments/imzxvt/add_security_policy_to_allow_elbalb_operations/
 ---
-AWS best practice is to avoid using the root user to access AWS services and to secure that user with a hardware MFA token.
+Hey guys,
 
-The company I work at has many AWS accounts and has historically stored the MFA devices in a locked safe in the office. Due to COVID-19 the office is closed and the devices have been sitting with a named individual who can be contacted to get the code. However this is not sustainable when anyone might need root access due to an emergency at any time of day. So we are currently evaluating alternative solutions.
+I primarily work as a Cloud Engineer in a staging environment at my job and I've now been tasked to update our security policy in our production environment to allow elbv2 automation. Now, our current IAM role through our cloud suite portal has all permissions needed, but I have to go in and update our IAM role template. 
 
-I was wondering if anyone else has run into similar problems and how you have dealt with them?
-## [6][GraphQL subscriptions and API gateway](https://www.reddit.com/r/aws/comments/imfngf/graphql_subscriptions_and_api_gateway/)
-- url: https://www.reddit.com/r/aws/comments/imfngf/graphql_subscriptions_and_api_gateway/
+I have to make these changes  to the security policy to reflect these updates:  
+
+*Internal Microservices ELB/ALB*  
+*ConfigureHealthCheck*
+
+*Web server ALBs*  
+*RegisterTargets*  
+*DeregisterTargets*  
+*DescribeTargetHealth*
+
+I have a copy of  production iam-template that I believe has what I need, but I have no idea what I need to do to make these changes on my iam-template and deploy it. Done some research online and through aws documentation, just stumped on what I'm trying to accomplish. 
+
+Any assistance?
+## [8][upload custom logs in s3 to cloudwatch for metrics monitoring](https://www.reddit.com/r/aws/comments/imxdcq/upload_custom_logs_in_s3_to_cloudwatch_for/)
+- url: https://www.reddit.com/r/aws/comments/imxdcq/upload_custom_logs_in_s3_to_cloudwatch_for/
 ---
-Hey,
+Hi, 
 
-Has anyone here been able to hook up graphql subscriptions with API gateway before?
+I created a custom app that automatically uploads logs to s3.
 
-My team is running a node graphql server in elastic bean stalk. We’re not using appsync or amplify with it. Everything is currently working fine with queries and mutations, but we’re having trouble with subscriptions. It’s an authorization issue.
+Is there a way to push those logs to cloudwatch from s3 for analysis and alerting?
 
-Our current solution for the issue is emitting messages through redis, and picking up the messages on the client with an open socket.
+I'm aware that I can use a cloudwatch agent to push directly to cloudwatch from the app but there are complications involved in that option.
 
-I read some blog post where someone is using a lambda to handle the subscriptions. I feel like that can’t be the only way to do this.
-## [7][Changes for AWS customers in Brazil](https://www.reddit.com/r/aws/comments/imfifi/changes_for_aws_customers_in_brazil/)
+Thank you!
+## [9][[QUESTION] About CloudFront and livestreaming a video for 20000+](https://www.reddit.com/r/aws/comments/imw426/question_about_cloudfront_and_livestreaming_a/)
+- url: https://www.reddit.com/r/aws/comments/imw426/question_about_cloudfront_and_livestreaming_a/
+---
+I'm doing some research for an upcoming event, and one part is installing Mozilla Hubs-Cloud on AWS, and another streaming video inside Hubs-Cloud. I was thinking on using CloudFront to stream a video for the visitors.
+
+I'm still trying to understand how the costs are going to look like for the streaming (I already figured out the costs for Moz. Hubs-Cloud), since CloudFront says it's free to go up to 50 gb, and if the stream is going to be requested from inside Mozilla Hubs-Cloud to the visitors.  
+
+
+Anyone has insight on how the calculations for each viewer is made?  
+
+
+Thanks in advance.
+## [10][Changes for AWS customers in Brazil](https://www.reddit.com/r/aws/comments/imfifi/changes_for_aws_customers_in_brazil/)
 - url: https://i.redd.it/jmtles60q4l51.png
 ---
 
-## [8][Is there a way to query the AWS RDS Oracle DB Identifier from SQL?](https://www.reddit.com/r/aws/comments/imfdph/is_there_a_way_to_query_the_aws_rds_oracle_db/)
-- url: https://www.reddit.com/r/aws/comments/imfdph/is_there_a_way_to_query_the_aws_rds_oracle_db/
----
-When you create a DB in RDS you give it a name (specifically "DB Identifier"). Is there a way to query in SQL from a given instance and get that DB Identifier?
-
-It is not select sys\_context('USERENV', 'DB\_NAME') from dual;
-
-DB\_NAME returns the SID, which is NOT what I want. Unfortunately I have tried all of the SYSCONTEXTs and AWS doesn't set them to anything useful to me. All of the IP related calls return the non-routable addresses on the 192 or 10 network. I want to get to the DNS CNAME or the AWS DB Identifier.
-## [9][Is it really worth it to go through a partner for your AWS account to save costs?](https://www.reddit.com/r/aws/comments/im93zn/is_it_really_worth_it_to_go_through_a_partner_for/)
-- url: https://www.reddit.com/r/aws/comments/im93zn/is_it_really_worth_it_to_go_through_a_partner_for/
----
-What are the pros and cons?  
-Is it safe?  
-What if you just get a partner for the discounts?   
-Since partners cam give discounts right?  
-They can lower your AWS billing?
-## [10][Why use Amazon Quicksight with other AWS tooling over BusinessObjects/Web Intelligence for reporting?](https://www.reddit.com/r/aws/comments/imf6gw/why_use_amazon_quicksight_with_other_aws_tooling/)
-- url: https://www.reddit.com/r/aws/comments/imf6gw/why_use_amazon_quicksight_with_other_aws_tooling/
----
-I have my own opinion, but I'd love to hear some answers from the community. We are currently piloting Quicksight, BusinessObjects/WEBI (our current environment), and a bunch of other tools. Quicksight is fun to work with in some regards, but why use it over other tools? 
-
-I understand the pricing model can make the cost of these reports cheaper, but are there other glaring advantages?

@@ -19,11 +19,87 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][iCallendar issue](https://www.reddit.com/r/rails/comments/imdmnc/icallendar_issue/)
+## [2][how do you deal with user timezones?](https://www.reddit.com/r/rails/comments/imym4y/how_do_you_deal_with_user_timezones/)
+- url: https://www.reddit.com/r/rails/comments/imym4y/how_do_you_deal_with_user_timezones/
+---
+in a previous project i was saving the user timezone when signing up with an hidden field filled up with javascript to get the user's timezone and then used that timezone in views and mailers
+
+but in my current project users can sign up with facebook so i can't add an hidden field
+
+do i need to store the user timezone?
+
+how would you localize datetimes in mailers without the user timezone stored?
+
+and more generally how do you deal with user timezones?
+## [3][What is your solution for page-specific javascript in rails?](https://www.reddit.com/r/rails/comments/imrqlk/what_is_your_solution_for_pagespecific_javascript/)
+- url: https://www.reddit.com/r/rails/comments/imrqlk/what_is_your_solution_for_pagespecific_javascript/
+---
+I've been researching this throughout the day.  The most straight forward solution I've found is to put it in a content\_for in the view, and pull it into the layout right before the body tag, but that doesn't seem very 'unobtrusive.'
+
+Is there is Rails standard, or community preferred method for this?
+## [4][Assets result in a 404](https://www.reddit.com/r/rails/comments/in0bqy/assets_result_in_a_404/)
+- url: https://www.reddit.com/r/rails/comments/in0bqy/assets_result_in_a_404/
+---
+Hi. Tested whether my app would run on production (still on my local computer). However, all requests to them result in 404s.
+
+What I did:
+
+```sh
+$ export RAILS_ENV=production
+$ rails assets:precompile
+$ rails s
+```
+
+At this point, neither my stylesheets nor my JavaScripts are loaded. I'm using the default configuration for `config/environments/production.rb`, meaning that the only assets settings is `compile`, which is set to `false`, which threw me off at first.
+
+Tried turning it on, now the stylesheets loaded, but still no JavaScript. What is going on, I really can't figure it out?
+## [5][Podcasting platforms or tools built with Ruby on Rails?](https://www.reddit.com/r/rails/comments/imib6f/podcasting_platforms_or_tools_built_with_ruby_on/)
+- url: https://www.reddit.com/r/rails/comments/imib6f/podcasting_platforms_or_tools_built_with_ruby_on/
+---
+Hey guys,
+
+There are tons of Podcast platforms out there, but can any of you tell me if some of them are built with Rails?  
+
+I'd be surprised if there were none.  Also, doesn't have to be the full platform, but maybe support tools like RSS feed builders or episode/video deployment tools.
+## [6][Is there a stylistic reason NOT to with_indifferent_access every hash?](https://www.reddit.com/r/rails/comments/imhxf7/is_there_a_stylistic_reason_not_to_with/)
+- url: https://www.reddit.com/r/rails/comments/imhxf7/is_there_a_stylistic_reason_not_to_with/
+---
+Hi,
+
+Curious what the community thinks on this point. In many Rails codebases I've worked with `with_indifferent_access` is used _defensively_ to avoid the pain of `nil` returns.
+
+```
+# my_hash = { string_key: 'whoever did this must be a troll..' }
+
+my_hash['string_key'] 
+# =&gt; nil 
+# argh!!!
+```
+
+Wondering if there are any stylistic reasons or situations that one would NOT convert all hashes `with_indifferent_access` and use a string key over a symbol (or mix of both) to semantically imply something about a hash value -- or perhaps this is just a quirk of Ruby?
+## [7][API question](https://www.reddit.com/r/rails/comments/imgph5/api_question/)
+- url: https://www.reddit.com/r/rails/comments/imgph5/api_question/
+---
+I have a decently successful iOS application that I am adding team/subscriptions to. Basically issuing licenses by the number of seats they want. 
+
+To do so, I built a simple rails application that does three main functions: it allows a company to be created, to add employees (or seats) to the company roster, and to allow them the pay a monthly fee. 
+
+Now I need to create an API that can speak with my iOS application to: 
+1) verify that an account has paid (which my rails app w/ stripe integrated handles)
+2) see what users (email addresses) are part of the account 
+
+I am wondering what services you might use for this? Doorkeeper or something like this. Or JWT? I’m not that experienced with API’s and I’d love to simply allow api access for my iOS app server to then ingest the data from my rails app (in a secure way)
+## [8][iCallendar issue](https://www.reddit.com/r/rails/comments/imdmnc/icallendar_issue/)
 - url: https://www.reddit.com/r/rails/comments/imdmnc/icallendar_issue/
 ---
 I am having some issues with icalendar gem,  it is adding events   in UTC+00 and I wanted it to be readjusted to match users  timezone, how can I do it?
-## [3][missing /tmp/passenger.xxxxx directory with standalone passenger run by logrotate](https://www.reddit.com/r/rails/comments/imcai3/missing_tmppassengerxxxxx_directory_with/)
+## [9][[HELP] Preset data in dynamic forms.](https://www.reddit.com/r/rails/comments/imcpmz/help_preset_data_in_dynamic_forms/)
+- url: https://www.reddit.com/r/rails/comments/imcpmz/help_preset_data_in_dynamic_forms/
+---
+I have added dynamic form feature inside the rails application.The end-user can create form fields by selecting input fields from a bunch of available input options i.e text field, radio buttons, file field etc .    It works perfectly fine. After the form is created, end-users can submit this form without any issue. Now,I have a use case in which I would like to pre-set data in some of the input fields. For instance, an admin-user created a form with the following input fields: `First Name(String), Last Name(String),Father's First Name(String), Father's Last Name(String)`, etc.
+
+Now, a member logs in to fill in this form. I would like to preset  data in `First Name, Last Name` fields with the first\_name, last\_name of the logged in user  by fetching this information from the user's profile page. From a usability point of view, it would be a burden for the user to type this information once again. Since the form fields are created dynamically and the  name attribute of each of the input fields is a generated at run time so its hard to figure out that which input field corresponds to what user information. What could be the reasonable solution to preset data in dynamic form input fields? Any help will be highly appreciated.  Thanks.
+## [10][missing /tmp/passenger.xxxxx directory with standalone passenger run by logrotate](https://www.reddit.com/r/rails/comments/imcai3/missing_tmppassengerxxxxx_directory_with/)
 - url: https://www.reddit.com/r/rails/comments/imcai3/missing_tmppassengerxxxxx_directory_with/
 ---
 Hi everyone.
@@ -83,13 +159,7 @@ Phusion Passenger v6.0.6 with nginx 1.18.0 (I guess its the default for passenge
 &amp;#x200B;
 
 Thanks for your time and for the help :-)
-## [4][[HELP] Preset data in dynamic forms.](https://www.reddit.com/r/rails/comments/imcpmz/help_preset_data_in_dynamic_forms/)
-- url: https://www.reddit.com/r/rails/comments/imcpmz/help_preset_data_in_dynamic_forms/
----
-I have added dynamic form feature inside the rails application.The end-user can create form fields by selecting input fields from a bunch of available input options i.e text field, radio buttons, file field etc .    It works perfectly fine. After the form is created, end-users can submit this form without any issue. Now,I have a use case in which I would like to pre-set data in some of the input fields. For instance, an admin-user created a form with the following input fields: `First Name(String), Last Name(String),Father's First Name(String), Father's Last Name(String)`, etc.
-
-Now, a member logs in to fill in this form. I would like to preset  data in `First Name, Last Name` fields with the first\_name, last\_name of the logged in user  by fetching this information from the user's profile page. From a usability point of view, it would be a burden for the user to type this information once again. Since the form fields are created dynamically and the  name attribute of each of the input fields is a generated at run time so its hard to figure out that which input field corresponds to what user information. What could be the reasonable solution to preset data in dynamic form input fields? Any help will be highly appreciated.  Thanks.
-## [5][Can't read "public/tmp/" in development &amp; production environment](https://www.reddit.com/r/rails/comments/im9wx6/cant_read_publictmp_in_development_production/)
+## [11][Can't read "public/tmp/" in development &amp; production environment](https://www.reddit.com/r/rails/comments/im9wx6/cant_read_publictmp_in_development_production/)
 - url: https://www.reddit.com/r/rails/comments/im9wx6/cant_read_publictmp_in_development_production/
 ---
 It works well in localhost, but when I deployed it to development &amp; production, it returns **No such file or directory @ rb\_sysopen - /usr/src/app/public/tmp/file\_name.csv** error when I try to read the file.
@@ -116,197 +186,3 @@ And this is how the file is read in controller.
                     :type =&gt; 'text/csv; charset=iso-8859-1; header=present',
                               :disposition =&gt; "attachment; filename=#{filename}"
         end
-## [6][Multiple accounts with the same email address](https://www.reddit.com/r/rails/comments/im2mny/multiple_accounts_with_the_same_email_address/)
-- url: https://www.reddit.com/r/rails/comments/im2mny/multiple_accounts_with_the_same_email_address/
----
-I have devise set up for Users. I have a model for Companies, and Users have a field called company_relationship with an integer of the company.id saved to their account when they sign up. How can I check if the email and company ID are correct when a user logs in from a Company’s page.
-
-Also if a user is signed in to another company’s page, how do I destroy the old session when they log in to the page of another company?
-
-Really appreciate the help!
-## [7][Is this the simplest way to create a Facebook-style friendship functionality?](https://www.reddit.com/r/rails/comments/im32av/is_this_the_simplest_way_to_create_a/)
-- url: https://www.reddit.com/r/rails/comments/im32av/is_this_the_simplest_way_to_create_a/
----
-A *symmetrical bi-directional self-referential association* is a bit of a mouthful, but I'd like to understand what the simplest way of designing something like a Facebook-style friendship would be. Using the principle of Occam's Razor, could I design this in a simpler way? To me this currently seems like a lot of work for the functionality it provides.
-
-In the way I've made this, every time a friendship is created it sets the status to "requested", and creates a "reverse friendship" that is set to "pending" using callbacks. When the friend accepts, it updates both friendships to “accepted” and sets an “accepted at” datetime value.
-
-When a friendship is destroyed it destroys both friendships.
-
-The friendships and users controllers are essentially basic RESTful scaffold controllers.
-
-User Model: 
-
-    class User &lt; ApplicationRecord
-      has_many :friendships, dependent: :destroy
-      has_many :friends, -&gt; { where "status = 'accepted'" }, through: :friendships
-      has_many :requested_friends, -&gt; { where "status = 'requested'" }, through: :friendships, source: :friend
-      has_many :pending_friends, -&gt; { where "status = 'pending'" }, through: :friendships, source: :friend
-    end
-Friendship Model:
-    
-    class Friendship &lt; ApplicationRecord
-      belongs_to :user
-      belongs_to :friend, class_name: 'User', foreign_key: 'friend_id'
-      scope :friends, -&gt; { where("status = 'accepted'", true) }
-      scope :not_friends, -&gt; { where("status = 'accepted'", false) }
-   
-      attribute :status, :string, default: 'requested'
-      after_create :create_inverse
-        # - VALIDATIONS
-      validates_presence_of :user_id, :friend_id, :status
-      validate :user_is_not_equal_friend
-      validates_uniqueness_of :user_id, scope: :friend_id
-      after_destroy :destroy_inverse
-
-      private
-    
-      def self.accept(user, friend)
-        transaction do
-          accepted_at = Time.now
-          accept_one_side(user, friend, accepted_at)
-          accept_one_side(friend, user, accepted_at)
-        end
-      end
-    
-      def self.accept_one_side(current_user, friend, accepted_at)
-        request = find_by_user_id_and_friend_id(current_user, friend)
-        request.status = 'accepted'
-        request.accepted_at = accepted_at
-        request.save!
-      end
-    
-     
-    
-      def create_inverse
-        self.class.create(user_id: self.friend.id, friend_id: self.user.id, status: 'pending')
-      end
-    
-      def destroy_inverse
-        self.class.delete_by(user_id: self.friend.id, friend_id: self.user.id)
-      end
-    
-      def user_is_not_equal_friend
-        errors.add(:friend, "can't be the same as the user") if user == friend
-      end 
-    end
-
-Schema:
-
-      create_table "friendships", id: :serial, force: :cascade do |t|
-        t.integer "friend_id"
-        t.datetime "created_at"
-        t.datetime "updated_at"
-        t.bigint "user_id"
-        t.string "status"
-        t.datetime "accepted_at"
-        t.index ["user_id"], name: "index_friendships_on_user_id"
-      end
-    
-      create_table "users", force: :cascade do |t|
-        t.string "email", default: "", null: false
-        t.string "encrypted_password", default: "", null: false
-        t.string "reset_password_token"
-        t.datetime "reset_password_sent_at"
-        t.datetime "remember_created_at"
-        t.datetime "created_at", precision: 6, null: false
-        t.datetime "updated_at", precision: 6, null: false
-        t.string "first_name"
-        t.string "last_name"
-        t.string "provider"
-        t.string "uid"
-        t.index ["email"], name: "index_users_on_email", unique: true
-        t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-      end
-
-Views:
-
-    &lt;%= link_to 'Add Friend', friendships_path(friendship: {friend_id: @user.id, user_id: current_user.id}), method: :post%&gt;
-    
-    &lt;% if friendship.status == "pending" %&gt; &lt;!-- If receiving friendship request ---&gt;
-      &lt;%= link_to 'Accept', friendship, friendship:{status: "accepted", accepted_at:"#{Time.now}"}, remote: true, method: :patch" %&gt;&lt;%= link_to 'Delete', friendship, friendship:{user_id: friendship.friend, friend_id: current_user }, remote: true, method: :delete, data: { confirm: 'Are you sure?' }" %&gt;
-       &lt;% elsif friendship.status == "accepted" &amp;&amp; friendship.friend == current_user %&gt; &lt;!-- If accepted friendship request and friend ---&gt;
-       &lt;%= link_to 'Delete', friendship, friendship:{user_id: friendship.friend, friend_id: current_user }, remote: true, method: :delete, data: { confirm: 'Are you sure?' }" %&gt;
-       &lt;% elsif friendship.status == "accepted" &amp;&amp; friendship.user == current_user %&gt; &lt;!-- If accepted friendship request and user ---&gt;
-       &lt;%= link_to 'Delete', friendship, friendship:{user_id: current_user, friend_id: friendship.friend }, remote: true, method: :delete, data: { confirm: 'Are you sure?' }" %&gt;
-       &lt;% else %&gt; &lt;!-- if sending friendship request --&gt;
-       &lt;%= link_to 'Delete', friendship, friendship:{user_id: current_user, friend_id: friendship.friend}, remote: true, method: :delete, data: { confirm: 'Are you sure?' }" %&gt;
-     &lt;% end %&gt;
-## [8][Calculate leaves of Employee of year](https://www.reddit.com/r/rails/comments/im9hyz/calculate_leaves_of_employee_of_year/)
-- url: https://www.reddit.com/r/rails/comments/im9hyz/calculate_leaves_of_employee_of_year/
----
-I want To calculate leave of Employee from joining Date on yearly basis
-
-    class Leave &lt; ApplicationRecord
-     after_update :calculate_availed_leave 
-     def calculate_availed_leave
-        date = self.employee.joining_date.to_i + 365
-        apply_date = self.leave_date.to_i
-        if apply_date &lt; date
-          taken_leaves = self.employee.leaves.where(status: "Approved").count
-          availed_leaves = self.employee.allowed_leaves - taken_leaves
-          self.employee.update(availed_leaves: availed_leaves)
-        elsif apply_date &lt; new_date
-          allowed_leaves = self.employee.allowed_leaves
-          self.employee.update(availed_leaves: allowed_leaves)
-        end
-     end 
-    end
-## [9][Page client rendering too slow](https://www.reddit.com/r/rails/comments/im32bl/page_client_rendering_too_slow/)
-- url: https://www.reddit.com/r/rails/comments/im32bl/page_client_rendering_too_slow/
----
-We have a Rails Monolith in Heroku. We serve assets in the same server since we don't have many users and all the workload is managed by Sidekiq.
-We use Sprockets and Webpacker for our frontend. We use react-webpacker to "prerender" the props of some root components that are later rendered in the client.
-
-We have a listing view that's fairly slow: we render some filters and two lists. The list items are "prerendered" react-webpacker components. The filters are rendered by the old pipeline by using chosenjs.
-
-The thing is that in Heroku, when accessing this page, all we can see for the first **40 seconds** are the filters as raw html select elements. Then, it seems that the JS executes, chosenjs and react components render.
-
-The problem is that I have no clue why it hangs. All that I did was run a benchmark in Chrome's Performance Tab and I get that 37 seconds are spent in Layout recalculations.  So at first I thought that maybe prerendering too many react components would have something to do with this and therefore I changed that to a single prerendered component that would be in charge of building everything else. That didn't affect performance at all.
-
-Then I took a closer look and found that the HTML page is **10mb** and that Time To First Byte is around 10 seconds. I guess this last metric has something to do with Request Queue Time, but I have no clue where to retrieve this in Heroku. I checked New Relic and it says that the worst requests to this page take 4 seconds max.
-
-I am kind of lost what it could be, I ran into a Nate Berkopec blog post saying that Heroku buffer is of 1024 bytes and that on big requests that might affect the queue time. However, I am using Puma so I guess it shouldn't really affect it?
-
-I am clueless on where to look. We are thinking about removing the logic from the html rendering and just add API endpoints that are fetched as soon as React components mount, but that's a huge change and I want to discard everything else before moving into that.
-## [10][Is Spring meant to work when I run my full rspec tests suite?](https://www.reddit.com/r/rails/comments/iluo64/is_spring_meant_to_work_when_i_run_my_full_rspec/)
-- url: https://www.reddit.com/r/rails/comments/iluo64/is_spring_meant_to_work_when_i_run_my_full_rspec/
----
-I'm new to using the spring gem and have been impressed at how it has made my tests run quicker. I've followed the documentation:
-
-1. Included the spring and spring-command-rspec gems in the development and test groups
-2. ran $ bundle install
-3. ran $ bundle exec spring binstub --all
-
-I have direnv, so can type rspec and it runs it with spring. So when I do
-
-&amp;#x200B;
-
-$ rspec ./spec/path/to/file\_spec.rb 
-
-It runs it much quicker! Should I be expecting the same behaviour when I run:
-
-$ rspec ./spec/ 
-
-Because currently, it runs at the same speed as when I run it without spring.
-
-Any pointers and advice would be appreciated, thanks.
-## [11][How to add hours to datetime?](https://www.reddit.com/r/rails/comments/ilsvo3/how_to_add_hours_to_datetime/)
-- url: https://www.reddit.com/r/rails/comments/ilsvo3/how_to_add_hours_to_datetime/
----
-I want to add (or subtract) hours like these  '+0330' to datetime. Let's say if I have '2020-09-03 15:30:20'
-
-for '+0330' I want it to become '2020-09-03 19:00:20'. 
-
-for '-0330' I want it to become '2020-09-03 12:00:20'. 
-
-I came up with this simple method, but it seems to be prone to errors, any suggestions? :)
-
-    def timezoneize(timedate, timezone_digits)
-    digits = timezone_digits.gsub('0', '')
-     if digits[0] = '+'
-       timedate + digits.to_i.hours
-     else
-       timedate - digits.to_i.hours
-     end
- end

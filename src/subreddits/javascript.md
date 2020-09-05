@@ -7,43 +7,49 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [2][A continuously-evolving compendium of javascript tips based on common areas of confusion or misunderstanding](https://www.reddit.com/r/javascript/comments/im7269/a_continuouslyevolving_compendium_of_javascript/)
+## [2][Showoff Saturday (September 05, 2020)](https://www.reddit.com/r/javascript/comments/imzsna/showoff_saturday_september_05_2020/)
+- url: https://www.reddit.com/r/javascript/comments/imzsna/showoff_saturday_september_05_2020/
+---
+Did you find or create something cool this week in javascript? 
+
+Show us here!
+## [3][Dasher - in JavaScript. Write using continuous mouse or touch gesture.](https://www.reddit.com/r/javascript/comments/imvrv9/dasher_in_javascript_write_using_continuous_mouse/)
+- url: https://dasher-project.github.io/redash/browser/
+---
+
+## [4][Firebase Cloud Functions: Verify Users Tokens](https://www.reddit.com/r/javascript/comments/imix71/firebase_cloud_functions_verify_users_tokens/)
+- url: https://medium.com/@david.dalbusco/firebase-cloud-functions-verify-users-tokens-d4e60e314d1a
+---
+
+## [5][Fundamentals of Reactive Programming](https://www.reddit.com/r/javascript/comments/imkdkc/fundamentals_of_reactive_programming/)
+- url: https://goodguydaniel.com/blog/reactive-programming-fundamentals/
+---
+
+## [6][A continuously-evolving compendium of javascript tips based on common areas of confusion or misunderstanding](https://www.reddit.com/r/javascript/comments/im7269/a_continuouslyevolving_compendium_of_javascript/)
 - url: https://github.com/nas5w/javascript-tips-and-tidbits
 ---
 
-## [3][Top-5 HTTP Security Headers in 2020 - Explanations and Examples](https://www.reddit.com/r/javascript/comments/imapk9/top5_http_security_headers_in_2020_explanations/)
+## [7][Serverless OAuth Proxy for AWS, Azure, Google Cloud, Vercel](https://www.reddit.com/r/javascript/comments/imwb1w/serverless_oauth_proxy_for_aws_azure_google_cloud/)
+- url: https://dev.to/simov/serverless-oauth-proxy-1h84
+---
+
+## [8][Deploy Friday: E21 JavaScript News - Typescript 4.0 and more](https://www.reddit.com/r/javascript/comments/imgblo/deploy_friday_e21_javascript_news_typescript_40/)
+- url: https://youtu.be/A2jNLyzl794
+---
+
+## [9][Top-5 HTTP Security Headers in 2020 - Explanations and Examples](https://www.reddit.com/r/javascript/comments/imapk9/top5_http_security_headers_in_2020_explanations/)
 - url: https://drag13.io/posts/security-headers/index.html
 ---
 
-## [4][Serious bug in decimal.js causing addition not to be correct when using certain inputs](https://www.reddit.com/r/javascript/comments/iluccs/serious_bug_in_decimaljs_causing_addition_not_to/)
-- url: https://github.com/MikeMcl/decimal.js/issues/157
+## [10][Remove an Element From an Array Using Filter in Nodejs](https://www.reddit.com/r/javascript/comments/imwtaf/remove_an_element_from_an_array_using_filter_in/)
+- url: https://schadokar.dev/to-the-point/remove-an-element-from-an-array-using-filter-in-nodejs/
 ---
 
-## [5][React frameworks: Redwood vs Blitz](https://www.reddit.com/r/javascript/comments/imepl9/react_frameworks_redwood_vs_blitz/)
+## [11][Metaphysics and JavaScript](https://www.reddit.com/r/javascript/comments/imnmfg/metaphysics_and_javascript/)
+- url: https://docs.google.com/presentation/d/1PUvpXMBEDS45rd0wHu6tF3j_8wmGC6cOLtOw2hzU-mw/edit#slide=id.p
+---
+
+## [12][React frameworks: Redwood vs Blitz](https://www.reddit.com/r/javascript/comments/imepl9/react_frameworks_redwood_vs_blitz/)
 - url: https://www.indiehackers.com/post/react-frameworks-redwood-vs-blitz-1c66190774
----
-
-## [6][We made a Jest unit-test generator for Recoil apps!](https://www.reddit.com/r/javascript/comments/im176z/we_made_a_jest_unittest_generator_for_recoil_apps/)
-- url: /r/reactjs/comments/im1518/we_made_a_jest_unittest_generator_for_recoil_apps/
----
-
-## [7][The Modern JavaScript Bootcamp by Andrew Mead](https://www.reddit.com/r/javascript/comments/im7ir0/the_modern_javascript_bootcamp_by_andrew_mead/)
-- url: https://topbootcamps.com/modern-javascript-bootcamp.html
----
-
-## [8][How To Meet GDPR Requirements In Mobile And Web Applications](https://www.reddit.com/r/javascript/comments/imd5fs/how_to_meet_gdpr_requirements_in_mobile_and_web/)
-- url: http://formonono.fun/
----
-
-## [9][Underscore went modular: version 1.11 released](https://www.reddit.com/r/javascript/comments/ilz603/underscore_went_modular_version_111_released/)
-- url: https://underscorejs.org/#1.11.0
----
-
-## [10][Spearmint helps developers easily create functional React/Redux/Endpoint/Paint Timing tests without writing any code. It dynamically converts user inputs into executable Jest test code by using DOM query selectors provided by @testing-library](https://www.reddit.com/r/javascript/comments/im1p6n/spearmint_helps_developers_easily_create/)
-- url: https://github.com/open-source-labs/spearmint
----
-
-## [11][How to use free GPU/TPU with Pipcook on Google Colab](https://www.reddit.com/r/javascript/comments/im4wg0/how_to_use_free_gputpu_with_pipcook_on_google/)
-- url: /r/node/comments/im4spa/how_to_use_free_gputpu_with_pipcook_on_google/
 ---
 

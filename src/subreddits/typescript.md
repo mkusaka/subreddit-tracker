@@ -22,7 +22,52 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][First impressions of Prisma](https://www.reddit.com/r/typescript/comments/imapom/first_impressions_of_prisma/)
+## [2][What `{type: T}` does here?](https://www.reddit.com/r/typescript/comments/imwrt7/what_type_t_does_here/)
+- url: https://www.reddit.com/r/typescript/comments/imwrt7/what_type_t_does_here/
+---
+\`\`\`  
+type LookUp&lt;U, T extends string&gt; = { \[K in T\]: U extends { type: T } ? U : never }\[T\]  
+\`\`\`  
+
+
+I don't understand this helper type at all, because I don't know what {type: T} does here, also, this is not in the docs. So could you please explain this to me, thank you!
+## [3][Help with Typescript Compiler internals](https://www.reddit.com/r/typescript/comments/impxj1/help_with_typescript_compiler_internals/)
+- url: https://www.reddit.com/r/typescript/comments/impxj1/help_with_typescript_compiler_internals/
+---
+EDIT: 
+
+Perhaps mentioning the database side was a distraction. I was just trying to provide some context on the usage, but my real project is to add a new type to the language, similar to the `any` type, but which is consistent and allows outputting the final inferred type at compile time. What I'm envisioning is a fetch like function that returns `Promise&lt;inferred&gt;`. The user interacts with this variable of the `inferred` type as normal, and at compile time the type checker goes through and decides what the user expects the value to be. For example:
+
+    declare const add(x: number, y: number): number
+    declare const x: inferred
+    let y: number = x.bar
+    add(5, y)
+    x.foo.substr(5,2)
+
+At the end of this, the compiler should infer `x` to have type `{ bar: number, foo: string }`. Notice that in no place did the user have to use a type annotation (other than the variable declaration)
+
+ORIGINAL:
+
+I am a computer science senior, working on an independent study project with a professor at my university. This professor is currently working on a paper on database querying which allows specifying the shape of the returned data. Since I had an interest in programming language theory, we decided to try and integrate this with the TypeScript language.  
+
+The idea is for a type to represent the result of a database query, and then usage of a variable with that type can be tracked by TypeScript's type checker to determine what shape the user expects the data to be in at runtime. The compilation process would then output this type (probably as a TypeScript interface or JSON schema), and send it along with the query to the database, which would then transform data to the correct shape, or send an error if transformation isn't possible. Of course, the type system should ensure usage of a variable is consistent, i.e. the user shouldn't treat the variable as a string at one point and then later in the program use it as a number. The type system should also ensure that all usage of the type is compatible with deserialized JSON, as that is all that can be provided by the query function.
+
+I have already started work on a [fork of TypeScript](https://github.com/WhiteAbeLincoln/TypeScript), but I have recently gotten stalled since the language is so large and there doesn't seem to be any publicly available documentation on the internal workings of the checker.ts file. My professor is unable to help since he doesn't have much experience with typescript or PLT.
+
+Rather than struggling on by myself, I figured I could reach out and ask for help. I've already tried emailing members of the TS team, but failed to get any response. 
+
+Does this community have any experience with the typescript compiler, or advice on implementing this, or know who I can contact who could guide me in the right direction? Anything would help, but some documentation on the checker.ts file would be especially useful, or some kind of guide on adding new types to the checker, as was done previously with the unknown type.
+## [4][Fullstack types + runtime validation?](https://www.reddit.com/r/typescript/comments/imz9ng/fullstack_types_runtime_validation/)
+- url: https://www.reddit.com/r/typescript/comments/imz9ng/fullstack_types_runtime_validation/
+---
+I want to find a nice library that supports runtime validation and typescript types as well. I would love for it to be serializable so we can consume it from a client and have the same types and validations there.
+
+I know that graphql has some libs that generates types and allows the client to generate types from a gql schema, but I want this to work with vanilla typescript without graphql. Any advices on where to start?
+## [5][design patterns recommendation](https://www.reddit.com/r/typescript/comments/imlmr9/design_patterns_recommendation/)
+- url: https://www.reddit.com/r/typescript/comments/imlmr9/design_patterns_recommendation/
+---
+can you recommend me resources for design patterns? thank you.
+## [6][First impressions of Prisma](https://www.reddit.com/r/typescript/comments/imapom/first_impressions_of_prisma/)
 - url: https://www.reddit.com/r/typescript/comments/imapom/first_impressions_of_prisma/
 ---
 I've been messing around in Prisma for some hours now. The syntax for defining your  schema is compact, all of the tables are defined in a single schema file.  This schema file can either be used to create the tables in the DB, or you can introspect an existing DB to generate the models for the schema.
@@ -36,168 +81,28 @@ Most of my experience is TypeORM in NestJS. I was sort of discouraged from doing
 I remember being frustrated waiting for Prisma 2 to come out and frustrated that Prisma 1 wasn't something that I could use moving forward after going through a lengthy tutorial on Prisma 1. Regardless, I am glad the creators had ambitions for a better product.
 
 I hope this project is well maintained moving forward because I want to keep using it. Which is why I am sort of evangelizing on here. I want to keep using it because of the syntax and autocompletion.
-## [3][TypeScript ORM with no query builder, supporting full SQL queries](https://www.reddit.com/r/typescript/comments/iltfzj/typescript_orm_with_no_query_builder_supporting/)
-- url: https://github.com/Seb-C/kiss-orm#kiss-orm
+## [7][Are there any plans on adding CTFE or Const Expressions?](https://www.reddit.com/r/typescript/comments/imttia/are_there_any_plans_on_adding_ctfe_or_const/)
+- url: https://www.reddit.com/r/typescript/comments/imttia/are_there_any_plans_on_adding_ctfe_or_const/
 ---
+I did some searching around and I couldn't find any conversations related to this within TypeScript, but I feel I must just not be knowing where to look.  
+*CTFE = Compile time function execution*  
+[https://tour.dlang.org/tour/en/gems/compile-time-function-evaluation-ctfe](https://tour.dlang.org/tour/en/gems/compile-time-function-evaluation-ctfe)
 
-## [4][How do I extend a class prototype with TypeScript type checking?](https://www.reddit.com/r/typescript/comments/imdds1/how_do_i_extend_a_class_prototype_with_typescript/)
+Rust Const Eval: (I got the title wrong, should be Const Evalutions):  
+[https://doc.rust-lang.org/reference/const\_eval.html](https://doc.rust-lang.org/reference/const_eval.html)
+## [8][How do I get started?](https://www.reddit.com/r/typescript/comments/imsvg3/how_do_i_get_started/)
+- url: https://www.reddit.com/r/typescript/comments/imsvg3/how_do_i_get_started/
+---
+I'm looking for advice and resources to start learning typescript. Also any suggestion would be more than welcome
+## [9][How do I extend a class prototype with TypeScript type checking?](https://www.reddit.com/r/typescript/comments/imdds1/how_do_i_extend_a_class_prototype_with_typescript/)
 - url: https://stackoverflow.com/questions/63739143/how-do-i-extend-a-class-prototype-with-typescript-type-checking
 ---
 
-## [5][TypeORM: affected, generatedMaps and raw property of UpdateResult is undefinde](https://www.reddit.com/r/typescript/comments/imchtw/typeorm_affected_generatedmaps_and_raw_property/)
-- url: https://www.reddit.com/r/typescript/comments/imchtw/typeorm_affected_generatedmaps_and_raw_property/
+## [10][Deploy Friday: E21 JavaScript News - Typescript 4.0 and more](https://www.reddit.com/r/typescript/comments/imgfr0/deploy_friday_e21_javascript_news_typescript_40/)
+- url: https://www.youtube.com/watch?v=A2jNLyzl794&amp;feature=youtu.be
 ---
-I use TypeORM with PostgreSQL and when I make an update request I can't find out if the operation was successful, but the data is updated. What could be the reason?
-## [6][How can I inherit a type from the value of a parameter from an object?](https://www.reddit.com/r/typescript/comments/im87di/how_can_i_inherit_a_type_from_the_value_of_a/)
-- url: https://www.reddit.com/r/typescript/comments/im87di/how_can_i_inherit_a_type_from_the_value_of_a/
+
+## [11][TypeScript ORM with no query builder, supporting full SQL queries](https://www.reddit.com/r/typescript/comments/iltfzj/typescript_orm_with_no_query_builder_supporting/)
+- url: https://github.com/Seb-C/kiss-orm#kiss-orm
 ---
-My sample function:
 
-    const myFunc = (options: {
-      args?: { [s: string]: any },
-      callback: (args: { [s: string]: any }) =&gt; void,
-    }): void =&gt; {
-      const args = options.hasOwnProperty(‘args’) ? options.args : {};
-      options.callback(args);
-    };
-
-Calling my sample function (See the comment below):
-
-    myFunc({
-      args: {
-        test: 1,
-      },
-      callback: (args): void =&gt; {
-        // I want `args` to inherit the same type as the `args` parameter above: `{test: number}`
-      },
-    });
-
-Edit: Had a small type in my code
-## [7][Greenfield Typescript project, what are current best practices?](https://www.reddit.com/r/typescript/comments/ilugvz/greenfield_typescript_project_what_are_current/)
-- url: https://www.reddit.com/r/typescript/comments/ilugvz/greenfield_typescript_project_what_are_current/
----
-I'm starting a Typescript project from scratch. The project will definitely become complex, so I'd like to architect it well upfront. I want to make sure I'm using the full capabilities of the language and libraries/frameworks if needed.
-
-I'm looking at things like dependency injection, composition over inheritance, functional patterns etc. Testability is a huge must. I like dependency injection patterns because they make unit testing with mocks very easy.
-
-Can anyone recommend good libraries for this or good open-source projects to look at which are a good example of e2e? This project will be an isomorphic library so there's no built-in server or overarching framework.
-## [8][error TS2749: 'IRequestWithUser' refers to a value, but is being used as a type here](https://www.reddit.com/r/typescript/comments/ilxkki/error_ts2749_irequestwithuser_refers_to_a_value/)
-- url: https://www.reddit.com/r/typescript/comments/ilxkki/error_ts2749_irequestwithuser_refers_to_a_value/
----
-I am extending \`Request\` in \`express\` library to contain a user property:
-
-    import { Request } from 'express';
-    
-    export default interface RequestWithUser extends Request {
-      user: {
-        user_name: string;
-        password: string;
-      }
-    }
-
-The title error appears in the first parameter annotation:
-
-    import IRequestWithUser from '../shared/interfaces/isRequestWithUser';
-    
-    const router: Router = Router();
-    
-    router.post('/myRoute', async (req: IRequestWithUser, res: Response) =&gt; {
-    
-    /*
-    error TS2749: 'IRequestWithUser' refers to a value, 
-    but is being used as a type here. Did you mean 
-    'typeof IRequestWithUser'?
-    */
-
-I don't believe interfaces are values. They should purely be types. So what is causing this error?
-
-**Also tried**
-
-`typeof IRequestWithUser` This results in \`No overload matches this call\`
-## [9][Is it wrong to use namespaces? ES5 imports feel inferior to me compared to namespaces](https://www.reddit.com/r/typescript/comments/illv8o/is_it_wrong_to_use_namespaces_es5_imports_feel/)
-- url: https://www.reddit.com/r/typescript/comments/illv8o/is_it_wrong_to_use_namespaces_es5_imports_feel/
----
-I have the following code that works perfectly.
-
-    export namespace Vid {
-      export const SPLASH = require('./Splash.mp4')
-      export const SEQUENCE_1 = require('./Sequence01.mp4')
-      export const SEQUENCE_2 = require('./Sequence02.mp4')
-      export const SEQUENCE_3 = require('./Sequence03.mp4')
-    }
-
-So if I want to import a Video in my file, I type `Vid.`, and I get autocomplete for all my available videos. This is great for me.
-
-_____
-
-Unfortunately namespaces are deprecated for some reason and I'm supposed to export the const directly.
-
-      export const SPLASH = require('./Splash.mp4')
-      export const SEQUENCE_1 = require('./Sequence01.mp4')
-      export const SEQUENCE_2 = require('./Sequence02.mp4')
-      export const SEQUENCE_3 = require('./Sequence03.mp4')
-
-This is NOT ideal. Because now when I'm importing files, I need to remember the file name itself instead of just typing `Vid.` and being able to loop through my files. There will also be higher namespace collisions with other exported consts.
-
-_____
-
-I've seen someone suggest to do the following to replicate namespaces.
-
-    const SPLASH = require('./Splash.mp4')
-    const SEQUENCE_1 = require('./Sequence01.mp4')
-    const SEQUENCE_2 = require('./Sequence02.mp4')
-    const SEQUENCE_3 = require('./Sequence03.mp4')
-
-    export const Vid = { SPLASH, SEQUENCE_1, SEQUENCE_2, SEQUENCE_3 }
-
-However after using it for awhile, I still find it inferior.
-
-1) `Go to Declaration` no longer works properly. When I try to lookup the declaration, it points me to `export const Vid`, then I have to look up the declaration a second time to jump to my code. This is really annoying.
-
-2) It no longer prompts me which consts are unused. With namespaces, I'm informed which ones are used and unused. With consts, it doesn't seem to know anymore.
-
-- [Namespaces](https://i.imgur.com/ChJwD9K.png)
-- [ES5](https://i.imgur.com/4f1qyMP.png)
-
-_____
-
-I've reverted to using namespaces for the time being, because in my opinion they are superior. Can someone tell me what potential problems I could have by continuing to use namespaces? Does anyone know how long more they will be supported for?
-
-**EDIT: Too many people are answering by telling me the pros of ES imports. That is not the question. The question is:**
-
-- **What is wrong with using namespaces?**
-
-_____
-
-EDIT 2: After 65 comments, someone has finally provided the right answer. **My first statement is wrong and namespaces are not being deprecated. Therefore there is nothing wrong with using namespaces.**
-
-https://www.reddit.com/r/typescript/comments/illv8o/is_it_wrong_to_use_namespaces_es5_imports_feel/g3u6fu1/
-## [10][Need help to understand how assignments in arrays/objects are done](https://www.reddit.com/r/typescript/comments/ilkrk4/need_help_to_understand_how_assignments_in/)
-- url: https://www.reddit.com/r/typescript/comments/ilkrk4/need_help_to_understand_how_assignments_in/
----
-Hello,
-
-I have a problem that I think is pretty simple, but I can't get my head around the actual mechanics and why it does not work. Here is my issue:
-
-I have an object (pModel) that is passed (by reference, I assume) in a function. That object contains an array of objects (geometries) and those objects have a member variable called isHighlighted (boolean). So basically, pModel.geometries\[i\].isHighlighted = true or false.
-
-What I am doing is that I am looping through the geometries to toggle the isHighlighted variable. I am currently doing it this way:
-
-    for (let geometry of pModel.geometries)
-    {
-        console.log(geometry.isHighlighted); // returns false
-        console.log(geometry);  // isHighlight inside object is false
-        geometry.isHighlighted = !geometry.isHighlighted;
-        console.log(geometry.isHighlighted); // returns true
-        console.log(geometry);  // isHighlighted inside object is still false
-    }
-
-I don't understand why isHightlighted is not changed in the second console.log(geometry). Also, if I write geometry.isHighlighted = true, it works. the second console.log(geometry) will have isHighlighted = true. I don't understand that either...
-## [11][Make third party package as global visible to all other files](https://www.reddit.com/r/typescript/comments/ilowzn/make_third_party_package_as_global_visible_to_all/)
-- url: https://www.reddit.com/r/typescript/comments/ilowzn/make_third_party_package_as_global_visible_to_all/
----
-Hello,
-
-I installed momentjs and want to the project automatically access to the function everywhere without explicitly importing. Is this possible in typescript?
-
-Thanks

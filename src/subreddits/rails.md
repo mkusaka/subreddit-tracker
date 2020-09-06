@@ -19,7 +19,64 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][how do you deal with user timezones?](https://www.reddit.com/r/rails/comments/imym4y/how_do_you_deal_with_user_timezones/)
+## [2][Help with asset pipeline](https://www.reddit.com/r/rails/comments/ingy5q/help_with_asset_pipeline/)
+- url: https://www.reddit.com/r/rails/comments/ingy5q/help_with_asset_pipeline/
+---
+Hey guys! I’m trying to figure out how to properly configure my asset pipeline. I’m having some trouble with this. In my production.rb file, I have config.assets.compile set to false and additionally, in my assets/config/manifest.js file, I have the following
+
+//= link_tree ../images
+//= link_directory ../stylesheets .css
+
+However once I deploy the site, I get an error saying: “the asset &lt;image.jpg&gt; is not present in the asset pipeline” 
+
+I’m accessing the images using: &lt;%= image_tag “image.jpg” %&gt;
+
+It all works when I have config.assets.compile set to true but I know this is inefficient.
+
+I would appreciate any help!
+## [3][Ruby on Rails digest: 26 most popular repositories in July and August 2020](https://www.reddit.com/r/rails/comments/inkoxw/ruby_on_rails_digest_26_most_popular_repositories/)
+- url: https://www.reddit.com/r/rails/comments/inkoxw/ruby_on_rails_digest_26_most_popular_repositories/
+---
+This is the second edition of Ruby/Rails digest. [This post](https://medium.com/@Iren.Korkishko/ruby-on-rails-digest-26-most-popular-repositories-in-july-and-august-2020-70ae593a5fe1?source=friends_link&amp;sk=477b6f0fb300b07f7fe068d12831c756) welcomes the most popular, most interesting, and useful Ruby on Rails repositories on GitHub in July and August!
+## [4][multiple scopes and one def in controller](https://www.reddit.com/r/rails/comments/in3fbu/multiple_scopes_and_one_def_in_controller/)
+- url: https://www.reddit.com/r/rails/comments/in3fbu/multiple_scopes_and_one_def_in_controller/
+---
+Hi guys, one question
+
+if in home (view) I have this:
+
+    
+    &lt;div&gt;Today Offers&lt;/div&gt;
+    &lt;%= render 'books/books', books: @query_of_the_day, skip_pages: true %&gt;
+
+&amp;#x200B;
+
+and in home\_controller.rb I have this
+
+      def query_of_the_day
+        day_of_the_week = Time.now.wday
+        @query_of_the_day = if day_of_the_week == 0
+                  Book.downloaded_today.includes(:screen, :online_links).limit(6).decorate
+                ifelse day_of_the_week == 1
+                  Book.rated_yesterday.includes(:screen, :online_links).limit(6).decorate
+                ifelse day_of_the_week == 2
+                  Book.over_50_readers.includes(:screen, :online_links).limit(6).decorate
+                ifelse day_of_the_week == 3
+                  Book.uploaded_yesterday.includes(:screen, :online_links).limit(6).decorate
+                ifelse day_of_the_week == 4
+                  Book.over_100_votes.includes(:screen, :online_links).limit(6).decorate
+                else
+                  Book.random.includes(:screen, :online_links).limit(6).decorate
+                end
+
+Where `downloaded_today`, `rated_yesterday`, `over_50_readers`, etc., are linked with a respective scope in scopes area of model/book.rb
+
+&amp;#x200B;
+
+My question is: Will it load ALL the `day_of_the_week` CASES (or all the  UNUSED scopes) when an user will visit the homepage?
+
+...Because, in that case, my homepage will be very slow.
+## [5][how do you deal with user timezones?](https://www.reddit.com/r/rails/comments/imym4y/how_do_you_deal_with_user_timezones/)
 - url: https://www.reddit.com/r/rails/comments/imym4y/how_do_you_deal_with_user_timezones/
 ---
 in a previous project i was saving the user timezone when signing up with an hidden field filled up with javascript to get the user's timezone and then used that timezone in views and mailers
@@ -31,13 +88,7 @@ do i need to store the user timezone?
 how would you localize datetimes in mailers without the user timezone stored?
 
 and more generally how do you deal with user timezones?
-## [3][What is your solution for page-specific javascript in rails?](https://www.reddit.com/r/rails/comments/imrqlk/what_is_your_solution_for_pagespecific_javascript/)
-- url: https://www.reddit.com/r/rails/comments/imrqlk/what_is_your_solution_for_pagespecific_javascript/
----
-I've been researching this throughout the day.  The most straight forward solution I've found is to put it in a content\_for in the view, and pull it into the layout right before the body tag, but that doesn't seem very 'unobtrusive.'
-
-Is there is Rails standard, or community preferred method for this?
-## [4][Assets result in a 404](https://www.reddit.com/r/rails/comments/in0bqy/assets_result_in_a_404/)
+## [6][Assets result in a 404](https://www.reddit.com/r/rails/comments/in0bqy/assets_result_in_a_404/)
 - url: https://www.reddit.com/r/rails/comments/in0bqy/assets_result_in_a_404/
 ---
 Hi. Tested whether my app would run on production (still on my local computer). However, all requests to them result in 404s.
@@ -53,7 +104,13 @@ $ rails s
 At this point, neither my stylesheets nor my JavaScripts are loaded. I'm using the default configuration for `config/environments/production.rb`, meaning that the only assets settings is `compile`, which is set to `false`, which threw me off at first.
 
 Tried turning it on, now the stylesheets loaded, but still no JavaScript. What is going on, I really can't figure it out?
-## [5][Podcasting platforms or tools built with Ruby on Rails?](https://www.reddit.com/r/rails/comments/imib6f/podcasting_platforms_or_tools_built_with_ruby_on/)
+## [7][What is your solution for page-specific javascript in rails?](https://www.reddit.com/r/rails/comments/imrqlk/what_is_your_solution_for_pagespecific_javascript/)
+- url: https://www.reddit.com/r/rails/comments/imrqlk/what_is_your_solution_for_pagespecific_javascript/
+---
+I've been researching this throughout the day.  The most straight forward solution I've found is to put it in a content\_for in the view, and pull it into the layout right before the body tag, but that doesn't seem very 'unobtrusive.'
+
+Is there is Rails standard, or community preferred method for this?
+## [8][Podcasting platforms or tools built with Ruby on Rails?](https://www.reddit.com/r/rails/comments/imib6f/podcasting_platforms_or_tools_built_with_ruby_on/)
 - url: https://www.reddit.com/r/rails/comments/imib6f/podcasting_platforms_or_tools_built_with_ruby_on/
 ---
 Hey guys,
@@ -61,7 +118,7 @@ Hey guys,
 There are tons of Podcast platforms out there, but can any of you tell me if some of them are built with Rails?  
 
 I'd be surprised if there were none.  Also, doesn't have to be the full platform, but maybe support tools like RSS feed builders or episode/video deployment tools.
-## [6][Is there a stylistic reason NOT to with_indifferent_access every hash?](https://www.reddit.com/r/rails/comments/imhxf7/is_there_a_stylistic_reason_not_to_with/)
+## [9][Is there a stylistic reason NOT to with_indifferent_access every hash?](https://www.reddit.com/r/rails/comments/imhxf7/is_there_a_stylistic_reason_not_to_with/)
 - url: https://www.reddit.com/r/rails/comments/imhxf7/is_there_a_stylistic_reason_not_to_with/
 ---
 Hi,
@@ -77,7 +134,7 @@ my_hash['string_key']
 ```
 
 Wondering if there are any stylistic reasons or situations that one would NOT convert all hashes `with_indifferent_access` and use a string key over a symbol (or mix of both) to semantically imply something about a hash value -- or perhaps this is just a quirk of Ruby?
-## [7][API question](https://www.reddit.com/r/rails/comments/imgph5/api_question/)
+## [10][API question](https://www.reddit.com/r/rails/comments/imgph5/api_question/)
 - url: https://www.reddit.com/r/rails/comments/imgph5/api_question/
 ---
 I have a decently successful iOS application that I am adding team/subscriptions to. Basically issuing licenses by the number of seats they want. 
@@ -89,100 +146,7 @@ Now I need to create an API that can speak with my iOS application to:
 2) see what users (email addresses) are part of the account 
 
 I am wondering what services you might use for this? Doorkeeper or something like this. Or JWT? I’m not that experienced with API’s and I’d love to simply allow api access for my iOS app server to then ingest the data from my rails app (in a secure way)
-## [8][iCallendar issue](https://www.reddit.com/r/rails/comments/imdmnc/icallendar_issue/)
+## [11][iCallendar issue](https://www.reddit.com/r/rails/comments/imdmnc/icallendar_issue/)
 - url: https://www.reddit.com/r/rails/comments/imdmnc/icallendar_issue/
 ---
 I am having some issues with icalendar gem,  it is adding events   in UTC+00 and I wanted it to be readjusted to match users  timezone, how can I do it?
-## [9][[HELP] Preset data in dynamic forms.](https://www.reddit.com/r/rails/comments/imcpmz/help_preset_data_in_dynamic_forms/)
-- url: https://www.reddit.com/r/rails/comments/imcpmz/help_preset_data_in_dynamic_forms/
----
-I have added dynamic form feature inside the rails application.The end-user can create form fields by selecting input fields from a bunch of available input options i.e text field, radio buttons, file field etc .    It works perfectly fine. After the form is created, end-users can submit this form without any issue. Now,I have a use case in which I would like to pre-set data in some of the input fields. For instance, an admin-user created a form with the following input fields: `First Name(String), Last Name(String),Father's First Name(String), Father's Last Name(String)`, etc.
-
-Now, a member logs in to fill in this form. I would like to preset  data in `First Name, Last Name` fields with the first\_name, last\_name of the logged in user  by fetching this information from the user's profile page. From a usability point of view, it would be a burden for the user to type this information once again. Since the form fields are created dynamically and the  name attribute of each of the input fields is a generated at run time so its hard to figure out that which input field corresponds to what user information. What could be the reasonable solution to preset data in dynamic form input fields? Any help will be highly appreciated.  Thanks.
-## [10][missing /tmp/passenger.xxxxx directory with standalone passenger run by logrotate](https://www.reddit.com/r/rails/comments/imcai3/missing_tmppassengerxxxxx_directory_with/)
-- url: https://www.reddit.com/r/rails/comments/imcai3/missing_tmppassengerxxxxx_directory_with/
----
-Hi everyone.
-
-I'm running a phusion passenger standalone instance and everything works fine except the automatic restart after the log rotation which occurs every night. When I wake up, the "built-in" nginx reports a 502 bad gateway.
-
-I'm using a script to stop/start passenger and when I restart in an interactive ssh session, everything works fine. However, when logrotate executes the same script, passenger restarts but there's a missing directory in /tmp so the built-in nginx can't speak with passenger.
-
-I'm at a loss. I don't know what's wrong and what to check next.
-
-My script is just doing this :
-
-    #!/bin/bash
-    su -l myuser /home/myuser/scripts/passenger_stop.sh
-    su -l myuser /home/myuser/scripts/passenger_start.sh
-
-passenger\_start.sh :
-
-    #!/bin/bash
-    export RBENV_ROOT="/opt/rbenv"
-    export PATH="/opt/rbenv/plugins/ruby-build/bin:/opt/rbenv/bin:$PATH"
-    eval "$(rbenv init -)"
-    alias node=nodejs
-    SOCKET="/home/myuser/passenger-nginx.socket"
-    PID_FILE="/home/myuser/project/shared/pids/passenger.pid"
-    cd /home/myuser/project/current
-    bundle exec passenger start -e production --socket=${SOCKET} -d --pid-file ${PID_FILE}
-
-The passenger.log file :
-
-    [ N 2020-09-04 00:05:31.7264 20421/T1 age/Cor/CoreMain.cpp:1340 ]: Starting Passenger core...
-    [ N 2020-09-04 00:05:31.7265 20421/T1 age/Cor/CoreMain.cpp:256 ]: Passenger core running in multi-application mode.
-    [ N 2020-09-04 00:05:31.7350 20421/T1 age/Cor/CoreMain.cpp:1015 ]: Passenger core online, PID 20421
-    [ N 2020-09-04 00:05:33.8468 20421/T5 age/Cor/SecurityUpdateChecker.h:519 ]: Security update check: no update found (next check in 24 hours)
-    /opt/rbenv/versions/2.6.6/lib/ruby/2.6.0/bundler/shared_helpers.rb:71:in `getwd': No such file or directory - getcwd (Errno::ENOENT)
-            from /opt/rbenv/versions/2.6.6/lib/ruby/2.6.0/bundler/shared_helpers.rb:71:in `pwd'
-            from /opt/rbenv/versions/2.6.6/lib/ruby/2.6.0/bundler/shared_helpers.rb:71:in `block in pwd'
-            from /opt/rbenv/versions/2.6.6/lib/ruby/2.6.0/monitor.rb:235:in `mon_synchronize'
-            from /opt/rbenv/versions/2.6.6/lib/ruby/2.6.0/bundler/shared_helpers.rb:70:in `pwd'
-            from /opt/rbenv/versions/2.6.6/lib/ruby/2.6.0/bundler/shared_helpers.rb:272:in `search_up'
-            from /opt/rbenv/versions/2.6.6/lib/ruby/2.6.0/bundler/shared_helpers.rb:155:in `print_major_deprecations!'
-            from /opt/rbenv/versions/2.6.6/lib/ruby/2.6.0/bundler.rb:103:in `setup'
-            from /opt/rbenv/versions/2.6.6/lib/ruby/2.6.0/bundler/setup.rb:20:in `&lt;top (required)&gt;'
-            from /opt/rbenv/versions/2.6.6/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
-            from /opt/rbenv/versions/2.6.6/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
-    2020/09/04 00:05:51 [crit] 20441#0: *3 connect() to unix:/passenger_core failed (2: No such file or directory) while connecting to upstream, client: unix:, server: _, request: "GET / HTTP/1.0", upstream: "passenger:unix:/passenger_core:", host: "myhost"
-    2020/09/04 00:05:52 [crit] 20441#0: *5 connect() to unix:/tmp/passenger.Bh5wxh4/agents.s/core failed (2: No such file or directory) while connecting to upstream, client: unix:, server: _, request: "GET / HTTP/1.0", upstream: "passenger:unix:/tmp/passenger.Bh5wxh4/agents.s/core:", host: "myhost"
-
-The last line repeats for every request.
-
-The process command lines (for nginx and PassengerAgent) are referencing this "/tmp/passenger.something" directory but it doesn't exist.
-
-I just have to execute the restart script again (in ssh interactive, not in my logrotate script) and both the command lines and the tmp directory are ok. The command lines are then exactly the same except for the random tmp path and the referenced pids.
-
-Phusion Passenger v6.0.6 with nginx 1.18.0 (I guess its the default for passenger 6.0.6) running on ubuntu server 20.04 up-to-date.
-
-&amp;#x200B;
-
-Thanks for your time and for the help :-)
-## [11][Can't read "public/tmp/" in development &amp; production environment](https://www.reddit.com/r/rails/comments/im9wx6/cant_read_publictmp_in_development_production/)
-- url: https://www.reddit.com/r/rails/comments/im9wx6/cant_read_publictmp_in_development_production/
----
-It works well in localhost, but when I deployed it to development &amp; production, it returns **No such file or directory @ rb\_sysopen - /usr/src/app/public/tmp/file\_name.csv** error when I try to read the file.
-
-The file is created with sidekiq job, and the sidekiq jobs are processed (success) so I assume the file is created since I don't have access to the server directory. This is how the file is created inside sidekiq job.
-
-        dir_name = "#{Rails.root}/public/tmp"
-        FileUtils.mkdir_p dir_name
-        file = "#{dir_name}/file_name.csv"
-        header = ["test"]  
-    
-        CSV.open( file, 'w' ) do |writer|
-            writer &lt;&lt; header
-            body.each do |b|
-                writer &lt;&lt; [b["test"]]
-            end
-        end
-
-And this is how the file is read in controller.
-
-        file_path = "#{Rails.root}/public/tmp/#{filename}"
-        File.open(file_path, 'r') do |f|
-            send_data f.read,
-                    :type =&gt; 'text/csv; charset=iso-8859-1; header=present',
-                              :disposition =&gt; "attachment; filename=#{filename}"
-        end

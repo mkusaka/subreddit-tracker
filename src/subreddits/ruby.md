@@ -3,7 +3,17 @@
 - url: https://www.twitch.tv/drzel1
 ---
 
-## [2][Learning Ruby as my first language?](https://www.reddit.com/r/ruby/comments/imndzr/learning_ruby_as_my_first_language/)
+## [2][Using git with ruby -- gitti gem - (yet) another (lite) git command line wrapper / library](https://www.reddit.com/r/ruby/comments/imx3i8/using_git_with_ruby_gitti_gem_yet_another_lite/)
+- url: https://github.com/rubycoco/gitti/tree/master/gitti
+---
+
+## [3][Live-coding Rails bug fixing and model refactoring](https://www.reddit.com/r/ruby/comments/imvkfk/livecoding_rails_bug_fixing_and_model_refactoring/)
+- url: https://www.reddit.com/r/ruby/comments/imvkfk/livecoding_rails_bug_fixing_and_model_refactoring/
+---
+Starting up in a few minutes. I really need to slim down some models.
+
+[https://www.twitch.tv/lawiscode](https://www.twitch.tv/lawiscode)
+## [4][Learning Ruby as my first language?](https://www.reddit.com/r/ruby/comments/imndzr/learning_ruby_as_my_first_language/)
 - url: https://www.reddit.com/r/ruby/comments/imndzr/learning_ruby_as_my_first_language/
 ---
 Hey everyone,
@@ -17,16 +27,6 @@ I was leaning towards the JS track just because I know that JS gets used a lot, 
 &amp;#x200B;
 
 Thank you all in advance for any advice.
-## [3][Using git with ruby -- gitti gem - (yet) another (lite) git command line wrapper / library](https://www.reddit.com/r/ruby/comments/imx3i8/using_git_with_ruby_gitti_gem_yet_another_lite/)
-- url: https://github.com/rubycoco/gitti/tree/master/gitti
----
-
-## [4][Live-coding Rails bug fixing and model refactoring](https://www.reddit.com/r/ruby/comments/imvkfk/livecoding_rails_bug_fixing_and_model_refactoring/)
-- url: https://www.reddit.com/r/ruby/comments/imvkfk/livecoding_rails_bug_fixing_and_model_refactoring/
----
-Starting up in a few minutes. I really need to slim down some models.
-
-[https://www.twitch.tv/lawiscode](https://www.twitch.tv/lawiscode)
 ## [5][Ractor landed in Ruby master. That's it. That's the news \o/](https://www.reddit.com/r/ruby/comments/imbm3t/ractor_landed_in_ruby_master_thats_it_thats_the/)
 - url: https://github.com/ruby/ruby/commit/79df14c04b452411b9d17e26a398e491bca1a811
 ---

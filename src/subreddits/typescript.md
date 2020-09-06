@@ -22,7 +22,106 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][What `{type: T}` does here?](https://www.reddit.com/r/typescript/comments/imwrt7/what_type_t_does_here/)
+## [2][Running your unit tests written in TypeScript faster with zero overhead!](https://www.reddit.com/r/typescript/comments/ingrc2/running_your_unit_tests_written_in_typescript/)
+- url: https://www.reddit.com/r/typescript/comments/ingrc2/running_your_unit_tests_written_in_typescript/
+---
+[swc-node](https://github.com/Brooooooklyn/swc-node) is a TypeScript/JavaScript compiler which is a NodeJS native addon for [swc](https://github.com/swc-project/swc).
+
+Swc compiler is 7\~40x faster than babel, swc-node implement [@swc-node/jest](https://github.com/Brooooooklyn/swc-node/tree/master/packages/jest) and [@swc-node/register](https://github.com/Brooooooklyn/swc-node/tree/master/packages/register) top on it.
+
+swc-node is also built on top of [napi-rs](https://github.com/napi-rs/napi-rs) , which has some killer features rather than the other packages which built from native code:
+
+* Minimal third part dependencies, no need for `node-gyp rust/C++ toolchains.` You can just install it in your Docker environment and use it.
+* No additional binary files need to download in **postinstall** scripts. Everything is available on `npm`.
+* Compatible to all NodeJS versions after `v8.9.0,` No need to reinstall after NodeJS upgraded.
+
+And thanks to deno ecosystem(swc is heavily used by deno ecosystem), swc is stable and support latest TypeScript/JavaScript feature now:
+
+* TypeScript `experimentalDecorators`
+* TypeScript  `emitDecoratorMetadata`
+* `jsx pargma`
+* ES5 \~ ES2020 language features
+
+More over the swc featues, I implement `jest-hoist-transformer` in  [@swc-node/jest](https://github.com/Brooooooklyn/swc-node/tree/master/packages/jest), which would help you migrate from ts-jest smoothly.
+
+Many projects in [Bytedance](https://bytedance.com/en/) has running with [@swc-node/jest](https://github.com/Brooooooklyn/swc-node/tree/master/packages/jest) (jest tests) and  [@swc-node/register](https://github.com/Brooooooklyn/swc-node/tree/master/packages/register) (ava tests).
+
+&amp;#x200B;
+
+https://preview.redd.it/ggdv42g1ugl51.png?width=1778&amp;format=png&amp;auto=webp&amp;s=630ccb99bdd6cb575f2327a9275e3ef97f2a83ca
+
+So try it and enjoy the zero overhead performance improvement!
+## [3][How do I assign a value to an object in a for loop?](https://www.reddit.com/r/typescript/comments/inhw12/how_do_i_assign_a_value_to_an_object_in_a_for_loop/)
+- url: https://www.reddit.com/r/typescript/comments/inhw12/how_do_i_assign_a_value_to_an_object_in_a_for_loop/
+---
+Sorry if this is a really basic question. I am relatively new to javascript (and after this typescript).
+
+I am making an angular app, which has 2 arrays of objects. The first is fetched from a REST service, and the second is a locally stored  JSON.
+
+I made a model as follows
+
+    export interface MenuAction {
+    menuId: string;
+    actionId: string;
+    actionType: string;
+    updIndic: string; 
+    description: string; 
+    longDesc?:string;
+    image?: string; }
+
+My local Json looks like this.
+
+&amp;#x200B;
+
+    [{
+    "actionId" : "0010", "image" : "policy.jpg", "text" : "Actions related to policy system configuration. For example, configuration of affinity agreements"
+    },
+    { "actionId" : "0020",
+    "image" : "account.jpg",
+    "text" : "Account system configuration" 
+    }]
+
+&amp;#x200B;
+
+Then in my component.ts, I have done the following.
+
+    ------------
+    import menuDetails from '../../../data/menu_details.json'; 
+     ------
+    menuActions : MenuAction[]; 
+
+So basically, I want to loop through the "details" object, and when I find a matching actionId, I want to "enrich" the "menuActions" object with the additional information (so I can use it all in a card on the html)
+
+I tried this in ngInit, but I am missing something.
+
+&amp;#x200B;
+
+    ngOnInit(): void {
+    
+    this._menuaction.getMenuActions('0002').subscribe (data =&gt; { this.data = data;  this.menuActions = this.data.content.userMenu.nbaUserMenuViewArray; 
+    
+    console.log (menuDetails);  // Loop all of the menuactions
+    
+    let index; for (let action of this.menuActions) {
+    // Find the right details object  
+    index = menuDetails.findIndex(x =&gt; x.actionId === action.actionId); 
+    console.log ('Found at '+ index); 
+    this.menuActions[action].longDesc = menuDetails[index].text;  // This line fails
+    }          
+    });
+
+Can anyone point me in the right direction?
+## [4][Strict null checks (and function hoisting?) causing issues .](https://www.reddit.com/r/typescript/comments/in31qc/strict_null_checks_and_function_hoisting_causing/)
+- url: https://www.reddit.com/r/typescript/comments/in31qc/strict_null_checks_and_function_hoisting_causing/
+---
+[Here](https://www.typescriptlang.org/play?#code/GYVwdgxgLglg9mABMOcAUEAWBDATgfgC5EBvRAEwFMAHKTIxMEAWwCNLdEB6AKmblyVEcWvDDYANomp5szKBwDOiHlwC+ASlIAoAJAxgiDDk4Bec4nBVgMMJXJaseRKdJqA3HomUopCjTpENRdEJ1xPfUM0KlpMFwsrShs7B39YkIAGT0Qc7i5+QWFRBElpWWYfJURbGFhJGAAve2rDOkoAT0Q8IUTk+z0DIyh26ko4QxjAgEILACImNg5ZrTpcOAB3RABRXDXcNFnl7NyufIEhEVgSqRlcOUrcZW7QzEoIAGtmlE42mB+R5qDNqdZ7UNYANxgVHIiFYnTalkUHD0EAQil8wCQrjQWlMAD4dLpdJM4gBqRAARiyp3WmE6tWqynRMAkNzgikUMFY3k47EsYGstma+G0uTFeQKF2K4ikzxASPIeg82jUQA) is the playground link .
+
+Why `depth` is still possibly undefined inside `fn` ? and how do I make it not be without adding an unnecessary `if` clause ?
+## [5][How much OOP paradigm is supported by TypeScript, compare to Java and C#?](https://www.reddit.com/r/typescript/comments/in31g0/how_much_oop_paradigm_is_supported_by_typescript/)
+- url: https://www.reddit.com/r/typescript/comments/in31g0/how_much_oop_paradigm_is_supported_by_typescript/
+---
+I'm JavaScript React developer who is migrating to TypeScript. I would like to know that how much OOP paradigm supported by TypeScript compare to Java and C#? Anyone who came from Java or C# background? Can you explain this please?
+## [6][What `{type: T}` does here?](https://www.reddit.com/r/typescript/comments/imwrt7/what_type_t_does_here/)
 - url: https://www.reddit.com/r/typescript/comments/imwrt7/what_type_t_does_here/
 ---
 \`\`\`  
@@ -31,7 +130,110 @@ type LookUp&lt;U, T extends string&gt; = { \[K in T\]: U extends { type: T } ? U
 
 
 I don't understand this helper type at all, because I don't know what {type: T} does here, also, this is not in the docs. So could you please explain this to me, thank you!
-## [3][Help with Typescript Compiler internals](https://www.reddit.com/r/typescript/comments/impxj1/help_with_typescript_compiler_internals/)
+## [7][Why my lexer is reading '=' twice?](https://www.reddit.com/r/typescript/comments/in6cee/why_my_lexer_is_reading_twice/)
+- url: https://www.reddit.com/r/typescript/comments/in6cee/why_my_lexer_is_reading_twice/
+---
+Github repo: [https://github.com/Mdsp9070/monkeylanguage](https://github.com/Mdsp9070/monkeylanguage)
+
+&amp;#x200B;
+
+I'm building an interpreter with Typescript all covered by tests. Recently I added some extra methods, like isLetter, isDigit, skipWhitespace and so on!
+
+&amp;#x200B;
+
+My last commit: [https://github.com/Mdsp9070/monkeylanguage/commit/687f56cf921fff9cfcc0862c6df773f6035945b8](https://github.com/Mdsp9070/monkeylanguage/commit/687f56cf921fff9cfcc0862c6df773f6035945b8)
+
+&amp;#x200B;
+
+However my test is failing but I don't know why.
+
+That's my input:
+
+      const input = `let five = 5;
+    let ten = 10;
+    let add = fn(x, y) {
+    x + y;
+    };
+    let result = add(five, ten);
+    `;
+
+And that's my test result:
+
+    yarn run v1.22.4
+    $ jest
+     FAIL  interpreter/src/lexer/lexer.test.ts
+      test lexer
+        ✕ should return the right token type and literal (71 ms)
+    
+      ● test lexer › should return the right token type and literal
+    
+        expect(received).toEqual(expected) // deep equality
+    
+        Expected: "INT"
+        Received: "ASSIGN"
+    
+          57 | 
+          58 |       console.log(token)
+        &gt; 59 |       expect(token.type).toEqual(test.type);
+             |                          ^
+          60 |       expect(token.literal).toEqual(test.literal);
+          61 |     }
+          62 |   });
+    
+          at Object.&lt;anonymous&gt; (interpreter/src/lexer/lexer.test.ts:59:26)
+    
+      console.log
+        l
+    
+          at Lexer.nextToken (interpreter/src/lexer/lexer.ts:71:13)
+    
+      console.log
+        { literal: 'let', type: 'LET' }
+    
+          at Object.&lt;anonymous&gt; (interpreter/src/lexer/lexer.test.ts:58:15)
+    
+      console.log
+        f
+    
+          at Lexer.nextToken (interpreter/src/lexer/lexer.ts:71:13)
+    
+      console.log
+        { literal: 'five', type: 'IDENT' }
+    
+          at Object.&lt;anonymous&gt; (interpreter/src/lexer/lexer.test.ts:58:15)
+    
+      console.log
+        =
+    
+          at Lexer.nextToken (interpreter/src/lexer/lexer.ts:71:13)
+    
+      console.log
+        { type: 'ASSIGN', literal: '=' }
+    
+          at Object.&lt;anonymous&gt; (interpreter/src/lexer/lexer.test.ts:58:15)
+    
+      console.log
+        =
+    
+          at Lexer.nextToken (interpreter/src/lexer/lexer.ts:71:13)
+    
+      console.log
+        { type: 'ASSIGN', literal: '=' }
+    
+          at Object.&lt;anonymous&gt; (interpreter/src/lexer/lexer.test.ts:58:15)
+
+Why is '=' being reading twice?
+## [8][Does TypeScript check types at runtime?](https://www.reddit.com/r/typescript/comments/in51pa/does_typescript_check_types_at_runtime/)
+- url: https://www.reddit.com/r/typescript/comments/in51pa/does_typescript_check_types_at_runtime/
+---
+Hey guys, I have recently implemented TypeScript in my React app. I was wondering if TypeScript checks types at runtime or not, since I have not re-tested all my features, and I'm afraid that my app will break when a user is using it and TypeScript finds a type error
+## [9][Fullstack types + runtime validation?](https://www.reddit.com/r/typescript/comments/imz9ng/fullstack_types_runtime_validation/)
+- url: https://www.reddit.com/r/typescript/comments/imz9ng/fullstack_types_runtime_validation/
+---
+I want to find a nice library that supports runtime validation and typescript types as well. I would love for it to be serializable so we can consume it from a client and have the same types and validations there.
+
+I know that graphql has some libs that generates types and allows the client to generate types from a gql schema, but I want this to work with vanilla typescript without graphql. Any advices on where to start?
+## [10][Help with Typescript Compiler internals](https://www.reddit.com/r/typescript/comments/impxj1/help_with_typescript_compiler_internals/)
 - url: https://www.reddit.com/r/typescript/comments/impxj1/help_with_typescript_compiler_internals/
 ---
 EDIT: 
@@ -57,52 +259,7 @@ I have already started work on a [fork of TypeScript](https://github.com/WhiteAb
 Rather than struggling on by myself, I figured I could reach out and ask for help. I've already tried emailing members of the TS team, but failed to get any response. 
 
 Does this community have any experience with the typescript compiler, or advice on implementing this, or know who I can contact who could guide me in the right direction? Anything would help, but some documentation on the checker.ts file would be especially useful, or some kind of guide on adding new types to the checker, as was done previously with the unknown type.
-## [4][Fullstack types + runtime validation?](https://www.reddit.com/r/typescript/comments/imz9ng/fullstack_types_runtime_validation/)
-- url: https://www.reddit.com/r/typescript/comments/imz9ng/fullstack_types_runtime_validation/
----
-I want to find a nice library that supports runtime validation and typescript types as well. I would love for it to be serializable so we can consume it from a client and have the same types and validations there.
-
-I know that graphql has some libs that generates types and allows the client to generate types from a gql schema, but I want this to work with vanilla typescript without graphql. Any advices on where to start?
-## [5][design patterns recommendation](https://www.reddit.com/r/typescript/comments/imlmr9/design_patterns_recommendation/)
+## [11][design patterns recommendation](https://www.reddit.com/r/typescript/comments/imlmr9/design_patterns_recommendation/)
 - url: https://www.reddit.com/r/typescript/comments/imlmr9/design_patterns_recommendation/
 ---
 can you recommend me resources for design patterns? thank you.
-## [6][First impressions of Prisma](https://www.reddit.com/r/typescript/comments/imapom/first_impressions_of_prisma/)
-- url: https://www.reddit.com/r/typescript/comments/imapom/first_impressions_of_prisma/
----
-I've been messing around in Prisma for some hours now. The syntax for defining your  schema is compact, all of the tables are defined in a single schema file.  This schema file can either be used to create the tables in the DB, or you can introspect an existing DB to generate the models for the schema.
-
-The syntax for queries is easy to remember and autocompletion makes fields in the queries discoverable.
-
-I guess I would just encourage you to try it out and see how you feel. You can add it to an existing project and start running queries in like 10 minutes (by introspecting your DB).
-
-Most of my experience is TypeORM in NestJS. I was sort of discouraged from doing much on the back end because of the complexity of TypeORM. Now I feel like I can build an application that I am willing to maintain.
-
-I remember being frustrated waiting for Prisma 2 to come out and frustrated that Prisma 1 wasn't something that I could use moving forward after going through a lengthy tutorial on Prisma 1. Regardless, I am glad the creators had ambitions for a better product.
-
-I hope this project is well maintained moving forward because I want to keep using it. Which is why I am sort of evangelizing on here. I want to keep using it because of the syntax and autocompletion.
-## [7][Are there any plans on adding CTFE or Const Expressions?](https://www.reddit.com/r/typescript/comments/imttia/are_there_any_plans_on_adding_ctfe_or_const/)
-- url: https://www.reddit.com/r/typescript/comments/imttia/are_there_any_plans_on_adding_ctfe_or_const/
----
-I did some searching around and I couldn't find any conversations related to this within TypeScript, but I feel I must just not be knowing where to look.  
-*CTFE = Compile time function execution*  
-[https://tour.dlang.org/tour/en/gems/compile-time-function-evaluation-ctfe](https://tour.dlang.org/tour/en/gems/compile-time-function-evaluation-ctfe)
-
-Rust Const Eval: (I got the title wrong, should be Const Evalutions):  
-[https://doc.rust-lang.org/reference/const\_eval.html](https://doc.rust-lang.org/reference/const_eval.html)
-## [8][How do I get started?](https://www.reddit.com/r/typescript/comments/imsvg3/how_do_i_get_started/)
-- url: https://www.reddit.com/r/typescript/comments/imsvg3/how_do_i_get_started/
----
-I'm looking for advice and resources to start learning typescript. Also any suggestion would be more than welcome
-## [9][How do I extend a class prototype with TypeScript type checking?](https://www.reddit.com/r/typescript/comments/imdds1/how_do_i_extend_a_class_prototype_with_typescript/)
-- url: https://stackoverflow.com/questions/63739143/how-do-i-extend-a-class-prototype-with-typescript-type-checking
----
-
-## [10][Deploy Friday: E21 JavaScript News - Typescript 4.0 and more](https://www.reddit.com/r/typescript/comments/imgfr0/deploy_friday_e21_javascript_news_typescript_40/)
-- url: https://www.youtube.com/watch?v=A2jNLyzl794&amp;feature=youtu.be
----
-
-## [11][TypeScript ORM with no query builder, supporting full SQL queries](https://www.reddit.com/r/typescript/comments/iltfzj/typescript_orm_with_no_query_builder_supporting/)
-- url: https://github.com/Seb-C/kiss-orm#kiss-orm
----
-

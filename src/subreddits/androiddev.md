@@ -40,81 +40,120 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Retrosheet: Turn Google Spreadsheet to JSON endpoint (for Android and JVM)](https://www.reddit.com/r/androiddev/comments/imv4u6/retrosheet_turn_google_spreadsheet_to_json/)
+## [3][How suitable is Android development for a woman with disabilities?](https://www.reddit.com/r/androiddev/comments/ine828/how_suitable_is_android_development_for_a_woman/)
+- url: https://www.reddit.com/r/androiddev/comments/ine828/how_suitable_is_android_development_for_a_woman/
+---
+This will probably get buried, but I don't have anything to lose. :)
+
+My friend has disabilities that require a lot of time and effort to manage. She hasn't been able to work for many years and lives a meagre existence.
+
+Recently, she has expressed an interest in developing apps for Android (she has a basic smartphone). She's very underconfident and has no past experience in computers but can work hard and is quite clever.
+
+When I mentioned giving it a try she looked sad and said that no one would ever give a job to someone like her with her health issues. I'm not an expert in this area by any means, so I decided to put my feelers out here.  Is there any encouragement I can offer her? Would she never get hired? Even part time? She's 47 if that matters.
+
+I appreciate the time if you read this.
+## [4][Social Network for Mars Rovers](https://www.reddit.com/r/androiddev/comments/inle62/social_network_for_mars_rovers/)
+- url: https://www.reddit.com/r/androiddev/comments/inle62/social_network_for_mars_rovers/
+---
+Hi, I develop a sample app created with Nasa API that shows photos taken on Mars by the rovers: Curiosity, Opportunity and Spirit, [here is the result](https://github.com/r-apostol-9618/Mars_Rover_SocialNetwork)  
+
+
+I used coroutines with retrofit2 to make the calls, I'm kinda new to kotlin and git.  
+
+
+Any feedback is appreciate!
+## [5][Duofolio: An open-source ebook reader that helps you learn new languages](https://www.reddit.com/r/androiddev/comments/inl6xs/duofolio_an_opensource_ebook_reader_that_helps/)
+- url: https://i.redd.it/o8pbutrptil51.png
+---
+
+## [6][Does the model in MVC/MVP/MVVM depend on the presentation component? The short answer is No.](https://www.reddit.com/r/androiddev/comments/in7oam/does_the_model_in_mvcmvpmvvm_depend_on_the/)
+- url: https://medium.com/@johnleeroy/clean-architecture-approach-to-looking-at-the-model-2020de376130?source=friends_link&amp;sk=e96e70db60aa497cf08543313677f4ac
+---
+
+## [7][Sample with Dynamic Feature Module fragments as base of BottomNavigationView and ViewPager2 with Dagger Hilt, offline first/last with custom Flow and LiveData TestObservers](https://www.reddit.com/r/androiddev/comments/inlqbv/sample_with_dynamic_feature_module_fragments_as/)
+- url: https://www.reddit.com/r/androiddev/comments/inlqbv/sample_with_dynamic_feature_module_fragments_as/
+---
+Working on this sample app, looking for a job and to show as a showcase app as a tech demo, which includes Dynamic Feature Module fragments as base of ViewPager2, BottomNavigation with Dagger Hilt using both  RxJava3 and Flow with both offline-first and last approach, Room one to one and migrations , and unit tests with TDD approach.
+
+Also created custom FlowTestObserver and LiveDataTestObserver to test with RxJava style observers
+
+such as
+
+                    // WHEN
+                    val testObserver = useCase.getPostFlowOfflineLast().test(this)
+    
+                    // THEN
+                    testObserver
+                        .assertComplete()
+                        .assertNoErrors()
+                        .assertValueAt(0, postList)
+                        .assertValues {
+                            it.first().containsAll(postList)
+                        }
+                        .dispose()
+
+for a function like
+
+        fun getPostFlowOfflineLast(): Flow&lt;List&lt;Post&gt;&gt; {
+            return flow { emit(repository.fetchEntitiesFromRemote()) }
+                .map {
+                    if (it.isNullOrEmpty()) {
+                        throw EmptyDataException("No Data is available in Remote source!")
+                    } else {
+                        repository.run {
+                            deletePostEntities()
+                            savePostEntities(it)
+                            getPostEntitiesFromLocal()
+                        }
+                    }
+                }
+                .flowOn(dispatcherProvider.ioDispatcher)
+                // This is where remote exception or least likely db exceptions are caught
+                .catch { throwable -&gt;
+                    emitAll(flowOf(repository.getPostEntitiesFromLocal()))
+                }
+                .map {
+                    toPostListOrError(it)
+                }
+
+&amp;#x200B;
+
+[https://github.com/SmartToolFactory/Posts-MVVM-DaggerHilt-Dynamic-Feature-RxJava3-Flow-Sample](https://github.com/SmartToolFactory/Posts-MVVM-DaggerHilt-Dynamic-Feature-RxJava3-Flow-Sample)
+
+It's not done yet, planning to add dashboard charts, login navigation, and search with a merge adapter to display multiple different layout with RecyclerVie. Any suggestions or feedback is more than welcome.
+## [8][Full Administrative Privileges](https://www.reddit.com/r/androiddev/comments/inll8p/full_administrative_privileges/)
+- url: https://www.reddit.com/r/androiddev/comments/inll8p/full_administrative_privileges/
+---
+Say hypothetically you gave an app from the play store full Admin privileges to your phone, what is the biggest risk, and what could be potentially compromised.
+## [9][30 August - 5 September Android Newsletter](https://www.reddit.com/r/androiddev/comments/injhpy/30_august_5_september_android_newsletter/)
+- url: https://www.reddit.com/r/androiddev/comments/injhpy/30_august_5_september_android_newsletter/
+---
+Stay up to date with Android development, in this week's edition:   
+🌟 Get more feedback with in-app reviews   
+💾 Jetpack DataStore   
+🔻 Reduce your APK size easily   
+😮 20 handy Android tools   
+and much more!  
+
+🔥Featuring [@fmuntenescu](https://twitter.com/FMuntenescu) [@JakeWharton](https://twitter.com/JakeWharton) [@prafullmishra09](https://twitter.com/prafullmishra09) [@moforemmanuel](https://twitter.com/moforemmanuel) [@mmbialas](https://twitter.com/mmbialas)
+
+💚Enjoy [https://vladsonkin.com/android-newsletter-10/](https://vladsonkin.com/android-newsletter-10/)
+## [10][Retrosheet: Turn Google Spreadsheet to JSON endpoint (for Android and JVM)](https://www.reddit.com/r/androiddev/comments/imv4u6/retrosheet_turn_google_spreadsheet_to_json/)
 - url: https://github.com/theapache64/retrosheet
 ---
 
-## [4][Introducing Radiography – Text-ray goggles for your Android views](https://www.reddit.com/r/androiddev/comments/imlacr/introducing_radiography_textray_goggles_for_your/)
-- url: https://developer.squareup.com/blog/introducing-radiography
+## [11][Xiaomi HCE not launching app](https://www.reddit.com/r/androiddev/comments/inhh7o/xiaomi_hce_not_launching_app/)
+- url: https://www.reddit.com/r/androiddev/comments/inhh7o/xiaomi_hce_not_launching_app/
+---
+Hello, I'm a developer and I made an HCE app which works perfectly in other phones in all modes (started app, background or closed). But I have a problem with the Xiaomi 9T miui 12, it cannot launch the app through NFC. I tried different settings to make it work, but no one.
+
+- Allow it in background mode battery.
+- Display over other apps.
+- Auto launch
+- Change NFC to HCE mode.
+
+But still not working when the app is closed, does anybody know what could be the problem?
+## [12][Try out my new Game 🔥❤️ Save the CUBE from the angry Eagles 🦅 Shoot, Jump, Hide and Fight 😎](https://www.reddit.com/r/androiddev/comments/inj8sd/try_out_my_new_game_save_the_cube_from_the_angry/)
+- url: https://v.redd.it/u36zgk8vyhl51
 ---
 
-## [5][Dagger.Hilt TLDR](https://www.reddit.com/r/androiddev/comments/imzzvf/daggerhilt_tldr/)
-- url: https://medium.com/@vyletel/dagger-hilt-tldr-aa4fa361bf84
----
-
-## [6][Any good command line test runner &amp; result presenter, other than Spoon?](https://www.reddit.com/r/androiddev/comments/imzavb/any_good_command_line_test_runner_result/)
-- url: https://www.reddit.com/r/androiddev/comments/imzavb/any_good_command_line_test_runner_result/
----
-Alternatives to [Square's Spoon](https://square.github.io/spoon/) - anyone know of any good? Requirements:
-
-- Command-line based, not requiring the Android SDK to be installed but instead run against the already built pair of APKs.
-- UI presenting test results with..:
-	- Presenting Espresso screenshots taken during test run
-	- Stack trace on errors
-	- Logcat output on errors
-- (Preferrably) Parallell device execution. (I suppose this can be worked around by launching mulitple shells)
-- (Would be awesome) Live update of test results during execution
-
-Why not Spoon?
-- The UI is good but not great. I'm not a big fan of a segmented bar representing test results
-- It doesn't allow individual input to individual devices ([ref](https://stackoverflow.com/questions/15188756/how-to-pass-an-argument-to-an-androidtestcase))
-- It's not maintained
-## [7][SuperheroesAndroid - Sample app using the Marvel API following a functional/reactive architecture](https://www.reddit.com/r/androiddev/comments/imz2n5/superheroesandroid_sample_app_using_the_marvel/)
-- url: https://www.reddit.com/r/androiddev/comments/imz2n5/superheroesandroid_sample_app_using_the_marvel/
----
-I wrote a sample app trying out some ideas around a more functional architecture for Android and the [result is here](https://github.com/LordRaydenMK/SuperheroesAndroid).  Any feedback is welcomed.
-## [8][My app got rejected, i submitted an update but it still shows "App rejected" as status in the all apps category, shouldn't the status change to pending publication?](https://www.reddit.com/r/androiddev/comments/in0nmx/my_app_got_rejected_i_submitted_an_update_but_it/)
-- url: https://www.reddit.com/r/androiddev/comments/in0nmx/my_app_got_rejected_i_submitted_an_update_but_it/
----
-To clarify im talking about google play store. Or shouldn't i create a new release but instead upload the whole app as a new app?
-
-thanks in advance
-## [9][Android widgets – Update using Kotlin Flow, Room and Hilt](https://www.reddit.com/r/androiddev/comments/in0b3o/android_widgets_update_using_kotlin_flow_room_and/)
-- url: https://www.reddit.com/r/androiddev/comments/in0b3o/android_widgets_update_using_kotlin_flow_room_and/
----
-Hi,
-
-&amp;#x200B;
-
-I just made a tutorial about updating widget using Kotlin Flow, Room and Hilt.
-
-[Android widgets – Update using Kotlin Flow, Room and Hilt](https://inspirecoding.app/android-widgets-update-using-kotlin-flow-room-and-hilt/)
-
-&amp;#x200B;
-
-What do you think about this approach?
-
-&amp;#x200B;
-
-Thanks.
-## [10][Authentication With Flutter And AWS Cognito!☁️](https://www.reddit.com/r/androiddev/comments/imyvl7/authentication_with_flutter_and_aws_cognito/)
-- url: https://youtu.be/sVSFooC_Gyc
----
-
-## [11][After A10 upgrade my stock launcher overrides all widgets swipe gesture. So swiping down in scrollable widgets triggers system swipe down gesture...How to fix it?](https://www.reddit.com/r/androiddev/comments/imxemj/after_a10_upgrade_my_stock_launcher_overrides_all/)
-- url: https://www.reddit.com/r/androiddev/comments/imxemj/after_a10_upgrade_my_stock_launcher_overrides_all/
----
-Title says it all. It is very annoying and it happens for all widgets. 
-
-*I need to scroll very carefully inside widgets to not trigger system scroll gestures...*
-
-Is there a way to fix it, besides changing launcher? 
-
-Seems to be related to A10 in general, because I also noticed the same behavior on my friend's Xiaomi after update, he complained about it too.
-
-Do manufacturers not test their upgrades? It is annoying af :(
-## [12][Kotlin vs flutter for android](https://www.reddit.com/r/androiddev/comments/imzjgs/kotlin_vs_flutter_for_android/)
-- url: https://www.reddit.com/r/androiddev/comments/imzjgs/kotlin_vs_flutter_for_android/
----
-For person new in programming any start learn kotlin
-Or dart with flutter and why

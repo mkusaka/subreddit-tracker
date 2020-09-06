@@ -1,85 +1,101 @@
 # aws
-## [1][PROTIP: Watch out for stranded multipart uploads - I was billed for 220GB of "invisible" objects for months](https://www.reddit.com/r/aws/comments/immer3/protip_watch_out_for_stranded_multipart_uploads_i/)
-- url: https://www.reddit.com/r/aws/comments/immer3/protip_watch_out_for_stranded_multipart_uploads_i/
+## [1][Switching career from on-prem to cloud with aws. Who's done it and do you regret it?](https://www.reddit.com/r/aws/comments/inbk91/switching_career_from_onprem_to_cloud_with_aws/)
+- url: https://www.reddit.com/r/aws/comments/inbk91/switching_career_from_onprem_to_cloud_with_aws/
 ---
-I used rclone to sync gdrive to a new S3 AWS bucket. Due to network connectivity issues, the rclone had to be retried multiple times (it was a big gdrive)
+I'm currently a site reliability engineer where I manage around 50 servers and have tried to bring an infrastructure as code approach.  The thing is I like building out systems and desiging solutions that help our business more than I like dealing with hardware which I have to do a lot of on a small team.
 
-Once the data was cleaned up and confirmed ready for deep archive, I transitioned the storage class to S3 DEEPARCHIVE for all visible objects.
-
-I recently looked at the bucket and noticed 220GB of Standard storage class objects - but, here is the kicker, there were none visible ! 
-
-Googled the issue and found this "advisory". Basically, I think I paid peanuts for the TB+ of data I stored in DEEPARCHIVE but paid like 30X more for the "invisible" multipart uploads. I didn't know they needed to be cleaned up, and AWS would have happily billed me for years more.
-
-[https://aws.amazon.com/premiumsupport/knowledge-center/s3-reduce-costs/](https://aws.amazon.com/premiumsupport/knowledge-center/s3-reduce-costs/)
-## [2][Pentagon says it will stick with Microsoft for $10 billion JEDI cloud contract](https://www.reddit.com/r/aws/comments/imo110/pentagon_says_it_will_stick_with_microsoft_for_10/)
-- url: https://www.cnbc.com/2020/09/04/pentagon-says-it-will-stick-with-microsoft-for-jedi-cloud-contract.html
+How many of you have made a career switch from on-prem to cloud engineer or cloud architect?  What are your thoughts and do you regret it?
+## [2][Do you host any of your wordpress websites on AWS?](https://www.reddit.com/r/aws/comments/inkv4e/do_you_host_any_of_your_wordpress_websites_on_aws/)
+- url: https://www.reddit.com/r/aws/comments/inkv4e/do_you_host_any_of_your_wordpress_websites_on_aws/
 ---
+Hello, I was wondering if any of you are hosting their WordPress + WooCommerce website on AWS, I was just wondering what services are you using for it? Just simple advice and guidance 
 
-## [3][Aurora with autoscaling vs. Aurora Serverless](https://www.reddit.com/r/aws/comments/imwyk5/aurora_with_autoscaling_vs_aurora_serverless/)
-- url: https://www.reddit.com/r/aws/comments/imwyk5/aurora_with_autoscaling_vs_aurora_serverless/
+Thanks in advance
+## [3][Have you guys found Guard Duty, Macie &amp; Security Hub to be cost effective and worth enabling?](https://www.reddit.com/r/aws/comments/inlguo/have_you_guys_found_guard_duty_macie_security_hub/)
+- url: https://www.reddit.com/r/aws/comments/inlguo/have_you_guys_found_guard_duty_macie_security_hub/
 ---
-Could anyone explain the main differences between a Postgres database on Aurora with autoscaling switched on vs. Aurora Serverless? I've read through a lot of docs and the difference is not clear to me. Thanks!
-## [4][AWS Named as a Cloud Leader for the 10th Consecutive Year in Gartner’s Infrastructure &amp; Platform Services Magic Quadrant](https://www.reddit.com/r/aws/comments/imlnux/aws_named_as_a_cloud_leader_for_the_10th/)
-- url: https://aws.amazon.com/blogs/aws/aws-named-as-a-cloud-leader-for-the-10th-consecutive-year-in-gartners-infrastructure-platform-services-magic-quadrant/
+Am considering these services where you just enable them, I am curious as to people's opinion on if they are worth it for smaller accounts and just generally peoples opinions on the services
+## [4][[Trivia] Why is the AWS Systems Manager abbreviated as "SSM"](https://www.reddit.com/r/aws/comments/inctog/trivia_why_is_the_aws_systems_manager_abbreviated/)
+- url: https://www.reddit.com/r/aws/comments/inctog/trivia_why_is_the_aws_systems_manager_abbreviated/
 ---
+Want to take a guess?
 
-## [5][Migrating a Windows VM to EC2 using Server Migration Service](https://www.reddit.com/r/aws/comments/in14r9/migrating_a_windows_vm_to_ec2_using_server/)
-- url: https://www.reddit.com/r/aws/comments/in14r9/migrating_a_windows_vm_to_ec2_using_server/
+&amp;#x200B;
+
+&gt;&gt;! AWS Systems Manager (Systems Manager) was formerly known as "Amazon Simple Systems Manager (SSM)" and "Amazon EC2 Systems Manager (SSM)". The original abbreviated name of the service, "SSM", is still reflected in various AWS resources, including a few other service consoles.  !&lt;
+
+Link: [https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html#service-naming-history](https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html#service-naming-history)
+## [5][CloudFormation template not updating after CDK deployment](https://www.reddit.com/r/aws/comments/inixr6/cloudformation_template_not_updating_after_cdk/)
+- url: https://www.reddit.com/r/aws/comments/inixr6/cloudformation_template_not_updating_after_cdk/
 ---
-I've been migrating linux and windows vms using Server Migration Service. How or where can I get more detailed error information as to why a replication job fails with the error below?
+I have a generated Swagger json file. I have a CDK app that reads in this file and then I do
 
-**"Job status message**FirstBootFailure: This import request failed because the instance failed to boot and establish network connectivity."
+    const cfnRestApi = this.api.node.defaultChild as apigateway.CfnRestApi;
+    cfnRestApi.body = 
+    JSON.parse(JSON.stringify(swaggerDefinition));
 
-I've already turned off the antivirus running on the source. However, the error is not helpful. This is my 5th attempt. It worked on other Windows vms I've moved.
-## [6][What is the difference between elastic beanstalk and fargate?](https://www.reddit.com/r/aws/comments/in0f5o/what_is_the_difference_between_elastic_beanstalk/)
-- url: https://www.reddit.com/r/aws/comments/in0f5o/what_is_the_difference_between_elastic_beanstalk/
+
+After doing cdk deploy when I look at the Cloud Formation template it contains my Swagger info. However when I make changes to the Swagger json file, the template in CloudFormation is not updating even after cdk deploy runs successfully. How can I resolve this?
+## [6][Multi value routing policy](https://www.reddit.com/r/aws/comments/ink5ho/multi_value_routing_policy/)
+- url: https://www.reddit.com/r/aws/comments/ink5ho/multi_value_routing_policy/
 ---
-What is the difference between elastic beanstalk and fargate? We can deploy docker on both services and we don't need to provison anything in both of these services as everything is managed by them (PaaS).
-## [7][Add security policy to allow ELB/ALB operations - HELP](https://www.reddit.com/r/aws/comments/imzxvt/add_security_policy_to_allow_elbalb_operations/)
-- url: https://www.reddit.com/r/aws/comments/imzxvt/add_security_policy_to_allow_elbalb_operations/
+Can multi value routing policy in route 53 serve as a substitute for ELB? What's the difference between the two? Both of them seems to do similar work.
+## [7][Building and testing Lambda + Step Function projects locally?](https://www.reddit.com/r/aws/comments/inb0vp/building_and_testing_lambda_step_function/)
+- url: https://www.reddit.com/r/aws/comments/inb0vp/building_and_testing_lambda_step_function/
 ---
-Hey guys,
+EDIT: Appreciate the responses. Was looking at AWS SAM already, so I'm going to give that a whirl at least. Not sure why the Linux binaries are connected to brew, but that's a solvable problem.
 
-I primarily work as a Cloud Engineer in a staging environment at my job and I've now been tasked to update our security policy in our production environment to allow elbv2 automation. Now, our current IAM role through our cloud suite portal has all permissions needed, but I have to go in and update our IAM role template. 
+&amp;nbsp;
 
-I have to make these changes  to the security policy to reflect these updates:  
+Haven't been able to figure this one out.
 
-*Internal Microservices ELB/ALB*  
-*ConfigureHealthCheck*
+My company recently pivoted from tomcat applications hosted on containers to "serverless" applications with ALBs if needed.
 
-*Web server ALBs*  
-*RegisterTargets*  
-*DeregisterTargets*  
-*DescribeTargetHealth*
+I'm no expert in this arena, as it's outside where I've built solutions in the past, but it seems straightforward enough. I can't figure out a way to actually prove out a solution without running a CFT deployment to the test account though, which means
 
-I have a copy of  production iam-template that I believe has what I need, but I have no idea what I need to do to make these changes on my iam-template and deploy it. Done some research online and through aws documentation, just stumped on what I'm trying to accomplish. 
+ * 1: I can only try things out on my work laptop, within the rails set up by the company. This is slow and sometimes painful, with multiple levels of review before anything can actually run.
 
-Any assistance?
-## [8][upload custom logs in s3 to cloudwatch for metrics monitoring](https://www.reddit.com/r/aws/comments/imxdcq/upload_custom_logs_in_s3_to_cloudwatch_for/)
-- url: https://www.reddit.com/r/aws/comments/imxdcq/upload_custom_logs_in_s3_to_cloudwatch_for/
+ * 2: Screwups (think infinite loop, erroneously starting process, unbounded output sizes) have a monetary cost to company, and a very real potential life (think "Ability to put food in mouth") risk to myself.
+
+With normal containerized applications (or non-containerized, because lets face it, Process abstraction versus Machine abstraction doesn't change how this works), whether it was running inside of a Tomcat servlet, a Node.js process, or just a basic site running in httpd, I can always start a server on one of my scratch boxes, try stuff out, and if it doesn't work the worst-case scenario is that I delete the VM / wipe the disk on the machine / reboot my dev laptop, and I'm fine.
+
+How do I protect myself in this kind of a model?
+
+The closest I've found is to mock out any boto3 / AWS API calls, keep all I/O to stdio/stdout, and code in ALB-style support using one of the httpd-in-a-box libraries that programming languages have picked up recently.
+
+Is that the best I can do?
+## [8][How to apply for cdn/cache server as ISP ?](https://www.reddit.com/r/aws/comments/injdxx/how_to_apply_for_cdncache_server_as_isp/)
+- url: https://www.reddit.com/r/aws/comments/injdxx/how_to_apply_for_cdncache_server_as_isp/
 ---
-Hi, 
-
-I created a custom app that automatically uploads logs to s3.
-
-Is there a way to push those logs to cloudwatch from s3 for analysis and alerting?
-
-I'm aware that I can use a cloudwatch agent to push directly to cloudwatch from the app but there are complications involved in that option.
-
-Thank you!
-## [9][[QUESTION] About CloudFront and livestreaming a video for 20000+](https://www.reddit.com/r/aws/comments/imw426/question_about_cloudfront_and_livestreaming_a/)
-- url: https://www.reddit.com/r/aws/comments/imw426/question_about_cloudfront_and_livestreaming_a/
+Hi we are ISP in Pakistan and we would like to have amazon cache servers, how to apply ? we do not have any aws server yet.
+## [9][Is there any way to run 32-bit Windows inside EC2 [2020]?](https://www.reddit.com/r/aws/comments/in7ytt/is_there_any_way_to_run_32bit_windows_inside_ec2/)
+- url: https://www.reddit.com/r/aws/comments/in7ytt/is_there_any_way_to_run_32bit_windows_inside_ec2/
 ---
-I'm doing some research for an upcoming event, and one part is installing Mozilla Hubs-Cloud on AWS, and another streaming video inside Hubs-Cloud. I was thinking on using CloudFront to stream a video for the visitors.
+I am trying to help my mom move the software she uses to run her business which is now at the office on a Windows XP machine (really old software). Because of COVID she can't go to the office and the machine running it keeps crashing. 
 
-I'm still trying to understand how the costs are going to look like for the streaming (I already figured out the costs for Moz. Hubs-Cloud), since CloudFront says it's free to go up to 50 gb, and if the stream is going to be requested from inside Mozilla Hubs-Cloud to the visitors.  
+I thought of moving it to an EC2 instance, but the software needs 32 bits, and I can find any 32 bits instance in EC2.
 
+I tried running the software in compatibility mode and many other alternative ways with no luck.
 
-Anyone has insight on how the calculations for each viewer is made?  
+After that I made an attempt to install VirtualBox inside the EC2 instance in order to run a 32bit version of windows, but quickly found out that virtualization inside virtualization doesn't seem to work.
 
+Any suggestion will be appreciated!  
+Thanks!
+## [10][AWS infrastructure visibility and drift detection.](https://www.reddit.com/r/aws/comments/in1s6s/aws_infrastructure_visibility_and_drift_detection/)
+- url: https://www.reddit.com/r/aws/comments/in1s6s/aws_infrastructure_visibility_and_drift_detection/
+---
+Hello,
+
+I am working in a backup company which backups into the AWS cloud. Until recently our cloud infrastructure was quite simple - had clusters of EC2s, ASGs and RDS. Recently we started moving to serverless and microservices . Lot of services are now either ECS and lambda based, along with existing EC2 based ones. Due to this, our infra is becoming complex, and we kinda have feeling of losing control. Now we are bit concerned about our infrastructure. 
+
+We need to have a **clear visibility** into our cloud infrastructure and setting up baselines, and **drift detection**. If possible we would also like to be able to run some complex queries against our AWS infrastructure, e.g. What was the longest running lambdas, in region 'us-east-1' on the cloud push date. 
+
+We want to be able to compare specific set of resources based on date/time, region etc as well - this is more for issue RCA.
+
+Currently we have started with AWS Config, and also experimenting with a mix of open source tools as well as vendors (Lucidchart, cloud custodian etc).
+
+Did anyone of you had similar experience/expections? How did you solve the issue cost effectively. If possible we would not want to host any such tool on our own but rather go for a SaaS offering.
+
+Any suggestion in this would be of great help.
 
 Thanks in advance.
-## [10][Changes for AWS customers in Brazil](https://www.reddit.com/r/aws/comments/imfifi/changes_for_aws_customers_in_brazil/)
-- url: https://i.redd.it/jmtles60q4l51.png
----
-

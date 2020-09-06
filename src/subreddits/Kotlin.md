@@ -1,5 +1,37 @@
 # Kotlin
-## [1][How we built Localazy CLI with Kotlin MPP and Github Actions](https://www.reddit.com/r/Kotlin/comments/in0c1c/how_we_built_localazy_cli_with_kotlin_mpp_and/)
+## [1][Is Kotlin good for games?](https://www.reddit.com/r/Kotlin/comments/injh8b/is_kotlin_good_for_games/)
+- url: https://www.reddit.com/r/Kotlin/comments/injh8b/is_kotlin_good_for_games/
+---
+Hi
+
+I've had a casual interest in game making my whole life and I want to try building mobile games. I don't have much experience in programming, just a little bit of python from 2 years back and some basic BATCH from a few years back.
+
+Is Kotlin powerful enough to build small arcady games with?
+## [2][Learning kotlin server side](https://www.reddit.com/r/Kotlin/comments/inh1eh/learning_kotlin_server_side/)
+- url: https://www.reddit.com/r/Kotlin/comments/inh1eh/learning_kotlin_server_side/
+---
+Hi everyone,
+
+I've had an ambition to learn to make apps. However with covid and everything the android dev market here in the Netherlands is saturated. So I thought I'd learn to code server side in kotlin since I've spent 100 hours in android kotlin tutorials. When the Android market grows again I'll at least have some experience with the language.
+
+I don't know where to start though. Anyone have any ideas for a beginning developer?
+## [3][I should have known better](https://www.reddit.com/r/Kotlin/comments/ingqgc/i_should_have_known_better/)
+- url: https://www.reddit.com/r/Kotlin/comments/ingqgc/i_should_have_known_better/
+---
+What am I missing that would make my life easier?
+
+So, I write C++ and occasionally some Java (a desktop Swing application) for a living. Been thinking about trying out Kotlin for a while, finally found a reason: Compile &amp; patch [https://github.com/manuelsc/HDDFs-MPG-Dumper](https://github.com/manuelsc/HDDFs-MPG-Dumper)
+
+I got to say, Kotlin kicked my ass today. It wasn't even the language that did it for me. It's Maven and the build tools. The IDEs did not help.
+
+So I tried Eclipse, loaded in the Kotlin plugin, made a Kotlin project, set it as a Maven thingy and BAM, Kotlin dependencies disappeared. WTF. Mind you I've never used Maven (I'm quite happy with Ant, and I loath Make, MsBuild is pretty bad). Googled for help, found a terrible tutorial. Eclipse will crap out Ant scripts on demand, it should be able to do the same for Maven. I decided that maybe Eclipse's shitty Kotlin-Maven support was a sign I should try something else. 
+
+So I looked at the .gitignore file, it mentioned IDEA project files, so I'm like "welp it's about time I tried out Intellij again" I've used Eclipse for all of my Java development (it's the only thing Eclipse is good at). The nice thing about Eclipse is you can mostly ignore dependency problem, just put the jars in a folder and pull them into the project dependencies. What you see is what you get. Unless I completely missed it Intellij, completely lacks anything remotely useful to help new users out with Maven. I've been thrown into the deep end of Maven. Finally dropped the dependencies in and... The Maven Central site Intellij tried to pulled the dependencies from didn't have it. I couldn't even figure out what to google for that one.
+
+So I went back to Eclipse, made a new project, not a Maven Project, and downloaded the jars from Maven Central, added them as dependencies to the Java project, Eclipse was happy. No errors, no unhappy squiggles. And then I tried to launch it. org.jetbrains.kotlin.ui.console is like "ERROR: Unresolved reference: java (3, 8)" along with pages more of errors like it can't find jack shit. Regular console is like "Error: Could not find or load main class MainKt"
+
+Anyway, suggestions?
+## [4][How we built Localazy CLI with Kotlin MPP and Github Actions](https://www.reddit.com/r/Kotlin/comments/in0c1c/how_we_built_localazy_cli_with_kotlin_mpp_and/)
 - url: https://www.reddit.com/r/Kotlin/comments/in0c1c/how_we_built_localazy_cli_with_kotlin_mpp_and/
 ---
 Hi, I shared our experience with building a CLI app using Kotlin MPP and automating the entire release with Github Actions.
@@ -9,15 +41,28 @@ Hi, I shared our experience with building a CLI app using Kotlin MPP and automat
 HTTP communication with Kotlin Native on Windows can be a bit tricky, don't forget to check also how to use WinINet API with Kotlin:
 
 [https://localazy.com/blog/kotlin-mpp-and-http-with-wininet-api-on-windows](https://localazy.com/blog/kotlin-mpp-and-http-with-wininet-api-on-windows)
-## [2][Are there any good GitHub projects that have implemented the Spring Framework/ Spring Boot using Kotlin? I'm trying to build some small test projects with Spring and Kotlin](https://www.reddit.com/r/Kotlin/comments/imcj2y/are_there_any_good_github_projects_that_have/)
+## [5][Learn Kotlin with JetBrains](https://www.reddit.com/r/Kotlin/comments/infuuw/learn_kotlin_with_jetbrains/)
+- url: https://www.reddit.com/r/Kotlin/comments/infuuw/learn_kotlin_with_jetbrains/
+---
+Maybe someone need:
+
+I have free trial 3 months for learning Java, if you wish you can join too. You can choose the one of three languages: Java, Kotlin or Python.
+Use my link:  https://hyperskill.org/onboarding?track=1
+Good luck!
+## [6][Need Help with Android Studio Issue](https://www.reddit.com/r/Kotlin/comments/in1pzo/need_help_with_android_studio_issue/)
+- url: https://www.reddit.com/r/Kotlin/comments/in1pzo/need_help_with_android_studio_issue/
+---
+ Hello, so i'm quite new to kotlin and i'm building a really simple app for a little project of mine.  
+So the issue is: **I really need to find a way to either exchange a variable between uiThread and main thread or execute an ArrayAdapter on the uiThread**, which it doesn't let me to ( as i'm pulling my array from JSON objects on the internet) If someone is able to help me I'd be really grateful
+## [7][Are there any good GitHub projects that have implemented the Spring Framework/ Spring Boot using Kotlin? I'm trying to build some small test projects with Spring and Kotlin](https://www.reddit.com/r/Kotlin/comments/imcj2y/are_there_any_good_github_projects_that_have/)
 - url: https://www.reddit.com/r/Kotlin/comments/imcj2y/are_there_any_good_github_projects_that_have/
 ---
 
-## [3][Random numbers](https://www.reddit.com/r/Kotlin/comments/imr1e4/random_numbers/)
+## [8][Random numbers](https://www.reddit.com/r/Kotlin/comments/imr1e4/random_numbers/)
 - url: https://www.reddit.com/r/Kotlin/comments/imr1e4/random_numbers/
 ---
 I cannot get any sort of random number function to work in Kotlin, for the life of me. It's quite frustrating. Can someone show me an easy way?
-## [4][Looking for advice to build a RESTful server written in kotlin on my raspberry pi](https://www.reddit.com/r/Kotlin/comments/imerkm/looking_for_advice_to_build_a_restful_server/)
+## [9][Looking for advice to build a RESTful server written in kotlin on my raspberry pi](https://www.reddit.com/r/Kotlin/comments/imerkm/looking_for_advice_to_build_a_restful_server/)
 - url: https://www.reddit.com/r/Kotlin/comments/imerkm/looking_for_advice_to_build_a_restful_server/
 ---
 I have a lot of kotlin experience through Android dev and I absolutely love the language. I have a raspberry pi sitting around and I thought it would be neat as a fun side project to build a local server and app to communicate with each other.
@@ -25,7 +70,7 @@ I have a lot of kotlin experience through Android dev and I absolutely love the 
 I've been trying to decide on a framework to use but I haven't found any solid documentation and every project seems a bit different. I don't have much knowledge when it comes to web frameworks like spring or ktor so I'm not sure what I need.
 
 Any advice is appreciated, thanks for reading!
-## [5][Calculator library (pure Kotlin module)](https://www.reddit.com/r/Kotlin/comments/imegl1/calculator_library_pure_kotlin_module/)
+## [10][Calculator library (pure Kotlin module)](https://www.reddit.com/r/Kotlin/comments/imegl1/calculator_library_pure_kotlin_module/)
 - url: https://www.reddit.com/r/Kotlin/comments/imegl1/calculator_library_pure_kotlin_module/
 ---
 Many apps have number inputs, and in many cases, having a calculator function to provide the number inputs is desirable. This is my first time to publish a library, and hope you will find this helpful. Any feedback is much appreciated. To import:
@@ -92,56 +137,3 @@ The calculator is a pure Kotlin module library and does not have any Android dep
 Note: The calculator library currently only supports MDAS operation. That is, it prioritizes multiplication and division over addition and subtraction as shown on the image above.
 
 Link: [https://github.com/jairrab/KotlinCalculator/](https://github.com/jairrab/KotlinCalculator/)
-## [6][Gradle modules: Running unit tests only in affected modules](https://www.reddit.com/r/Kotlin/comments/imdgos/gradle_modules_running_unit_tests_only_in/)
-- url: https://medium.com/@lehen01/gradle-modules-running-unit-tests-only-in-affected-modules-fff89562339e?source=friends_link&amp;sk=1fe7e4375da04d3626c4f4d6b2b1b34d
----
-
-## [7][Hello DataStore, bye SharedPreferences](https://www.reddit.com/r/Kotlin/comments/imi5zn/hello_datastore_bye_sharedpreferences/)
-- url: https://medium.com/scalereal/hello-datastore-bye-sharedpreferences-android-f46c610b81d5
----
-
-## [8][How to use frontend js library with kotlin and ktor](https://www.reddit.com/r/Kotlin/comments/imbeet/how_to_use_frontend_js_library_with_kotlin_and/)
-- url: https://www.reddit.com/r/Kotlin/comments/imbeet/how_to_use_frontend_js_library_with_kotlin_and/
----
-I can't find it anywhere. I'm trying to build a server side rendered ktor kotlin project and wanted to use a frontend js lib but I can't figure out how to do it.
-## [9][Could anyone explain where the 'object' keyword is intended to be used? I found some articles online, but they aren't very intuitive.](https://www.reddit.com/r/Kotlin/comments/ilrm6g/could_anyone_explain_where_the_object_keyword_is/)
-- url: https://www.reddit.com/r/Kotlin/comments/ilrm6g/could_anyone_explain_where_the_object_keyword_is/
----
-
-## [10][Can you implement the data class copy() function in kotlin itself, using reflection?](https://www.reddit.com/r/Kotlin/comments/im20w6/can_you_implement_the_data_class_copy_function_in/)
-- url: https://www.reddit.com/r/Kotlin/comments/im20w6/can_you_implement_the_data_class_copy_function_in/
----
-Is it possible to use kotlin reflection, perhaps in combination with invocation handlers, to implement a generic version of copy(), as it works on data classes? 
-
-Let's say we have a factory, something like:
-
-    object Model {
-
-        inline fun &lt;reified T&gt; init(): T {
-            ...
-        }
-    }
-
-...which given an interface as the type parameter, could give you back a decorated/proxied object that implemented the interface, and provided the copy() function.
-
-We could say that allowable interfaces have to implement some other interface that has a generic definition of the copy function on it, perhaps:
-
-    interface DecoratedInterface {
-         fun copy(vararg params: Any) 
-    }
-
-However, we don't want to rely on positional parameters, and we don't want to use strings to identify the parameters (i.e. a Map&lt;String, Any&gt; is no bueno).
-
-So, putting it together, what we'd want is to be able to do something like:
-
-    interface Foo: DecoratedInterface {
-         val marg: String
-         val peanut: Int
-         val marmite: Boolean
-    } 
-
-    val foo = Model.init&lt;Foo&gt;()  
-    // somehow set values on it
-    val bah = foo.copy(peanut=8)
-
-Are there language features that let us get at this without rewriting bytecode? Or heck, with rewriting bytecode?

@@ -57,11 +57,56 @@ REMOTE: *[Do you offer the option of working remotely? If so, do you require emp
 VISA: *[Does your company sponsor visas?]*
 
 CONTACT: *[How can someone get in touch with you?]*
-## [3][Introducing Rune, a new stack-based dynamic programming language for Rust with async support.](https://www.reddit.com/r/rust/comments/in67d3/introducing_rune_a_new_stackbased_dynamic/)
-- url: https://rune-rs.github.io/rune/
+## [3][Rust in 2021: Discoverability](https://www.reddit.com/r/rust/comments/inxwka/rust_in_2021_discoverability/)
+- url: https://jyn514.github.io/2020/09/05/Rust-in-2021.html
 ---
 
-## [4][Syntax proposal: Refutable patterns in `for`?](https://www.reddit.com/r/rust/comments/inl1q8/syntax_proposal_refutable_patterns_in_for/)
+## [4][legion v0.3 released and now part of the Amethyst organization](https://www.reddit.com/r/rust/comments/io6evk/legion_v03_released_and_now_part_of_the_amethyst/)
+- url: https://amethyst.rs/posts/legion-ecs-v0.3
+---
+
+## [5][Something that blew my mind about scoped variables](https://www.reddit.com/r/rust/comments/inoipw/something_that_blew_my_mind_about_scoped_variables/)
+- url: https://www.reddit.com/r/rust/comments/inoipw/something_that_blew_my_mind_about_scoped_variables/
+---
+To access child rcs/arcs without locking the parent, I used to do this:
+
+    let position;
+    {
+        let player = player.read().unwrap();
+        position = player.position.clone()
+    }
+
+But today I learned you can assign variables directly to the scope!
+
+    let position = {
+        let player = player.read().unwrap();
+        player.position.clone()
+    };
+## [6][Rust on Haiku: the Case of the Disappearing Deceased Threads](https://www.reddit.com/r/rust/comments/intufd/rust_on_haiku_the_case_of_the_disappearing/)
+- url: https://www.haiku-os.org/blog/nielx/2020-09-06_rust_on_haiku_the_case_of_the_disappearing_deceased_threads/
+---
+
+## [7][Essay found in 2030: What Killed Haskell Could Kill Rust](https://www.reddit.com/r/rust/comments/io45i3/essay_found_in_2030_what_killed_haskell_could/)
+- url: https://gist.github.com/graninas/22ab535d2913311e47a742c70f1d2f2b
+---
+
+## [8][Upgrading to a Threadripper for Rust Development](https://www.reddit.com/r/rust/comments/inn005/upgrading_to_a_threadripper_for_rust_development/)
+- url: https://bobweb.co/article/threadripper-meets-rustc
+---
+
+## [9][Any robust linear optimisation crates that work with Rust?](https://www.reddit.com/r/rust/comments/io5s17/any_robust_linear_optimisation_crates_that_work/)
+- url: https://www.reddit.com/r/rust/comments/io5s17/any_robust_linear_optimisation_crates_that_work/
+---
+The most obvious choice [LpSolve](https://crates.io/crates/lpsolve) is a 404 link.
+
+I've see a couple of research projects [MiniLP](https://crates.io/crates/minilp) and [Rulp](https://crates.io/crates/rulp) but they even state, not for production use.
+
+Anyone know of anything better?
+## [10][Translating "Processing" to Rust, adding some OpenGL and OpenCV functionality](https://www.reddit.com/r/rust/comments/inv8sl/translating_processing_to_rust_adding_some_opengl/)
+- url: https://www.reddit.com/r/rust/comments/inv8sl/translating_processing_to_rust_adding_some_opengl/
+---
+I love Processing. It's such a simple language. My exx wanted to learn programming so I gave it to ger and she, a graphic designer, learned everything about programming from Processing in matter of days. I want to translate, note, translate, not bind, Processing to Rust, and add some additional OpenGL and OpenCV functionalities. I've found [this guide](https://craftinginterpreters.com/the-lox-language.html) that helps you design and develop an interpreted language. But is there anything extra I should know? Any books that would help me? Thanks.
+## [11][Syntax proposal: Refutable patterns in `for`?](https://www.reddit.com/r/rust/comments/inl1q8/syntax_proposal_refutable_patterns_in_for/)
 - url: https://www.reddit.com/r/rust/comments/inl1q8/syntax_proposal_refutable_patterns_in_for/
 ---
 I was hoping to be able to do something like
@@ -79,49 +124,7 @@ I expect this to be equivalent to:
     }
 
 I was surprised that this is not allowed. Has such syntax ever been proposed? I couldn't find any relevant RFC.
-## [5][parser for Clickhouse SQL dialect.](https://www.reddit.com/r/rust/comments/iniezi/parser_for_clickhouse_sql_dialect/)
-- url: https://github.com/superjobru/clickhouse-sql-parser
+## [12][Is there anything missing in the Embedded world of Rust? Libraries, tool chains, support for MCUs?](https://www.reddit.com/r/rust/comments/inuhj2/is_there_anything_missing_in_the_embedded_world/)
+- url: https://www.reddit.com/r/rust/comments/inuhj2/is_there_anything_missing_in_the_embedded_world/
 ---
-
-## [6][Announcing rasn: A safe #[no_std] ASN.1 codec framework](https://www.reddit.com/r/rust/comments/ina4ep/announcing_rasn_a_safe_no_std_asn1_codec_framework/)
-- url: https://github.com/XAMPPRocky/rasn/releases/tag/v0.2.0
----
-
-## [7][My first month with Rust](https://www.reddit.com/r/rust/comments/ine4fl/my_first_month_with_rust/)
-- url: https://www.reddit.com/r/rust/comments/ine4fl/my_first_month_with_rust/
----
-Working with Rust gives a feeling of 'we are in it together'. 
-
-It seems that there were two different worlds for general purpose languages. One for systems programming and the other for the programmer. C/C++ dominating the first and was as popular in that era and is even now. Working with them felt as if, the most important user of my program is the computer and compiler itself. I better understand that for it to work. 
-
-And then we lived in an era where programming language evolved to be expressive. An era where the focus was on making the languages as a mechanism to achieve results faster, easier. The programmer took its revenge and said, I am your user, and you better be easy for me, that's when you would be successful. Languages bowed their heads and followed. Whatever you write, they show quick result. Right or wrong, that's a story for another day. The biggest downside though was performance and memory. Doesn't matter how much RAM you put in, doesn't matter how much CPU horsepower you invest in, the computer still hangs. Uninstalling rogue software and apps is a skill that now everyone specializes in.
-
-Rust feels like a partner. When I work with Rust and use the tools around it; Rust seems to say, I know the Computer, you know the User. Let's do it together to solve the problem for which we have met. It seems to say, I would help you understand me better, so you can make the most out of the resources you have to build the solution you know best.
-
-This feels a very different approach from what I have seen so far.
-## [8][A four video series I made on using Actix-web and Sqlite with Diesel.](https://www.reddit.com/r/rust/comments/infl59/a_four_video_series_i_made_on_using_actixweb_and/)
-- url: https://www.youtube.com/watch?v=HO-KMVXvXdA&amp;list=PLBok0UdvO6519tl0LzER8w_J-0pcro7q9
----
-
-## [9][Microsoft has implemented some safety rules of Rust in their C++ static analysis tool.](https://www.reddit.com/r/rust/comments/imy9lg/microsoft_has_implemented_some_safety_rules_of/)
-- url: https://devblogs.microsoft.com/cppblog/new-safety-rules-in-c-core-check/
----
-
-## [10][Announcing serde-query](https://www.reddit.com/r/rust/comments/in0qiu/announcing_serdequery/)
-- url: https://crates.io/crates/serde-query
----
-
-## [11][Undefined Behavior: What Happened to My Code?](https://www.reddit.com/r/rust/comments/in9n2c/undefined_behavior_what_happened_to_my_code/)
-- url: https://www.reddit.com/r/rust/comments/in9n2c/undefined_behavior_what_happened_to_my_code/
----
-The issue of undefined behavior comes up frequently when discussing Rust and comparison of Rust to C or C++, and a lot of people seem to be confused about it or don't fully understand what it means.
-
-While I was reading parts of u/ralphj's PhD thesis (just introduction and conclusion), I came across this excellent article about UB:
-
-Undefined Behavior: What Happened to My Code? [https://people.csail.mit.edu/nickolai/papers/wang-undef-2012-08-21.pdf](https://people.csail.mit.edu/nickolai/papers/wang-undef-2012-08-21.pdf)
-
-It shows several instances of C code triggering UB in real life code (Linux kernel, FreeBSD, PostgreSQL), how C compilers use UB to do optimizations, and written in an easy to understand language. It makes me appreciate Rust more.
-## [12][How to directly modify the matrix in OpenCV Rust?](https://www.reddit.com/r/rust/comments/inglxu/how_to_directly_modify_the_matrix_in_opencv_rust/)
-- url: https://www.reddit.com/r/rust/comments/inglxu/how_to_directly_modify_the_matrix_in_opencv_rust/
----
-I'm getting tired of this. The docs say that [matrix.at](https://matrix.at)::&lt;T&gt;(i, j) = value work, however, the compiler says I'm mixing up lefthand and right hand values. Can someone help me with this? Thanks.
+I’ve got a bit of free time and want to contribute to Rust, particularly in the embedded area. Are there any libraries that don’t exist yet for embedded devices, that you wish you had? Support for any popular tools, missing MCUs, etc.?

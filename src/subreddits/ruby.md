@@ -1,57 +1,79 @@
 # ruby
-## [1][Building a Discord bot in Ruby and vim - live stream starting soon](https://www.reddit.com/r/ruby/comments/imwwso/building_a_discord_bot_in_ruby_and_vim_live/)
+## [1][GitHub Actions](https://www.reddit.com/r/ruby/comments/io6g0t/github_actions/)
+- url: https://www.driftingruby.com/episodes/github-actions?utm_medium=social&amp;utm_campaign=weekly_episode&amp;utm_source=reddit
+---
+
+## [2][retest: a gem to help you refactor your ruby projects faster](https://www.reddit.com/r/ruby/comments/io0uae/retest_a_gem_to_help_you_refactor_your_ruby/)
+- url: https://github.com/AlexB52/retest
+---
+
+## [3][Survey finds only 3% of Ruby on Rails developers use Windows](https://www.reddit.com/r/ruby/comments/inpgox/survey_finds_only_3_of_ruby_on_rails_developers/)
+- url: https://developers.slashdot.org/story/20/09/06/0028214/survey-finds-only-3-of-ruby-on-rails-developers-use-windows
+---
+
+## [4][Advice on editing a YAML file with Ruby](https://www.reddit.com/r/ruby/comments/invxlx/advice_on_editing_a_yaml_file_with_ruby/)
+- url: https://www.reddit.com/r/ruby/comments/invxlx/advice_on_editing_a_yaml_file_with_ruby/
+---
+Hello,
+
+I'm currently having some difficulty working with yaml files.
+
+What I'd like to be able to do is load one YAML file, and then load another YAML file which contains some changes or additions, update the original yaml hash based on those changes and then write the file back to yaml. Something like this: https://pastebin.com/waCwzcWL
+
+The data hash appears to be updated correctly. However, when the hash is written to the file as YAML, the file experiences some unexpected changes. There are four top level keys in the original file. Any child keys of the FIRST key in the file where their value is a Hash or an Array have &amp;1, &amp;2, &amp;3 (etc., incrementing for each key in order) appended to the end of the line, and the key is also duplicated into the other top level keys, with *1, *2, *3 etc., appended to the end of the key's name. However the value is not duplicated.
+
+Does anyone have any experience with this sort of thing and can offer some advice on what is happening here?
+
+Many thanks in advance.
+## [5][HashWithIndifferentAccess in Rails](https://www.reddit.com/r/ruby/comments/io1trg/hashwithindifferentaccess_in_rails/)
+- url: https://www.sandipmane.dev/hash-with-indifferent-access-in-rails
+---
+
+## [6][Command-line Arguments in Ruby: Part I](https://www.reddit.com/r/ruby/comments/inmgds/commandline_arguments_in_ruby_part_i/)
+- url: https://medium.com/rubycademy/command-line-arguments-in-ruby-part-i-8a89479cb70f
+---
+
+## [7][Integrate Doorkeeper gem – API only ruby on rails course (chapter 10)](https://www.reddit.com/r/ruby/comments/inne5q/integrate_doorkeeper_gem_api_only_ruby_on_rails/)
+- url: https://duetcode.io/rails-api-only-course/integrate-doorkeeper-gem
+---
+
+## [8][converting a hash into date object, help!!](https://www.reddit.com/r/ruby/comments/inpti8/converting_a_hash_into_date_object_help/)
+- url: https://www.reddit.com/r/ruby/comments/inpti8/converting_a_hash_into_date_object_help/
+---
+I'm new to programming and I can't quite understand how to convert a hash string into date object.
+
+I created a hash out of file that contains date as a string in different formats (like *September 1988*, the other line would be  *July 11th 1960*, and sometimes *year* only)
+
+    require 'date'
+    
+    def create_book_hash(book_array)
+      {
+        link: book_array[0],
+        title: book_array[1],
+        author: book_array[2],
+        pages: book_array[3].to_i,
+        date: book_array[4],
+        rating: book_array[5].to_f,
+        genre: book_array[6]
+      }
+    end
+    
+    def books_sorted_by_date (books_array)
+        books_array.sort_by { |key| Date.strptime(key[:date], '%Y, %m') }
+      end
+    
+    book_file= File.read("books.txt")
+        .split("\n")
+        .map { |line| line.split("|")}
+        .map { |book_array| create_book_hash(book_array)}
+    puts books_sorted_by_date(book_file)
+
+I'm trying to sort books by date, so it would be in ascending order by year and since I have different string types,  i put a hash key as the first argument in `strptime` to access all the values in **:date .** And that gives me  `\`strptime': invalid date (Date::Error).` I don't understand why and what can I do to convert these strings into date objects?
+## [9][Building a Discord bot in Ruby and vim - live stream starting soon](https://www.reddit.com/r/ruby/comments/imwwso/building_a_discord_bot_in_ruby_and_vim_live/)
 - url: https://www.twitch.tv/drzel1
 ---
 
-## [2][Using git with ruby -- gitti gem - (yet) another (lite) git command line wrapper / library](https://www.reddit.com/r/ruby/comments/imx3i8/using_git_with_ruby_gitti_gem_yet_another_lite/)
+## [10][Using git with ruby -- gitti gem - (yet) another (lite) git command line wrapper / library](https://www.reddit.com/r/ruby/comments/imx3i8/using_git_with_ruby_gitti_gem_yet_another_lite/)
 - url: https://github.com/rubycoco/gitti/tree/master/gitti
----
-
-## [3][Live-coding Rails bug fixing and model refactoring](https://www.reddit.com/r/ruby/comments/imvkfk/livecoding_rails_bug_fixing_and_model_refactoring/)
-- url: https://www.reddit.com/r/ruby/comments/imvkfk/livecoding_rails_bug_fixing_and_model_refactoring/
----
-Starting up in a few minutes. I really need to slim down some models.
-
-[https://www.twitch.tv/lawiscode](https://www.twitch.tv/lawiscode)
-## [4][Learning Ruby as my first language?](https://www.reddit.com/r/ruby/comments/imndzr/learning_ruby_as_my_first_language/)
-- url: https://www.reddit.com/r/ruby/comments/imndzr/learning_ruby_as_my_first_language/
----
-Hey everyone,
-
-So I'm currently looking to teach myself programming with the goal of breaking into the industry. I've found a program I want to use, Launch School, that offers two tracks. One is Ruby and the other is Javascript. 
-
-&amp;#x200B;
-
-I was leaning towards the JS track just because I know that JS gets used a lot, but the Ruby track will teach back-end with Ruby and front-end JS so I'd eventually end up learning both and I've heard Ruby is a good language to start with.  My only concern about Ruby is I seem to run across a lot of "Ruby is dead/dying" posts and articles so I thought I'd ask here for some feedback on if you all think Ruby is a good starting point for someone who wants to make a career in CS. 
-
-&amp;#x200B;
-
-Thank you all in advance for any advice.
-## [5][Ractor landed in Ruby master. That's it. That's the news \o/](https://www.reddit.com/r/ruby/comments/imbm3t/ractor_landed_in_ruby_master_thats_it_thats_the/)
-- url: https://github.com/ruby/ruby/commit/79df14c04b452411b9d17e26a398e491bca1a811
----
-
-## [6][Any good books to keep track in ruby](https://www.reddit.com/r/ruby/comments/immblo/any_good_books_to_keep_track_in_ruby/)
-- url: https://www.reddit.com/r/ruby/comments/immblo/any_good_books_to_keep_track_in_ruby/
----
-Hello folks, I started learning ruby last year but now working all time with rails and some js and sometimes I feel like I’m still bad in ruby any books recommendations? Please
-## [7][RubyKaigi Takeout 2020 - ractor presentation by koichi sasada](https://www.reddit.com/r/ruby/comments/imcro1/rubykaigi_takeout_2020_ractor_presentation_by/)
-- url: https://youtu.be/2ZcdiVSERuY?t=473
----
-
-## [8][Facets Gem is it abandoned?](https://www.reddit.com/r/ruby/comments/imkfz2/facets_gem_is_it_abandoned/)
-- url: https://www.reddit.com/r/ruby/comments/imkfz2/facets_gem_is_it_abandoned/
----
-So, I was updating some dependencies in some repos I have and noticed Facets has not been updated since 2016.
-
-&amp;#x200B;
-
-Anyone got any idea why?
-## [9][Proportional dispatching using Ruby](https://www.reddit.com/r/ruby/comments/imd2w3/proportional_dispatching_using_ruby/)
-- url: https://medium.com/rubycademy/proportional-dispatching-using-ruby-378afbdeb32d
----
-
-## [10][Results: 2020 Ruby on Rails Community Survey](https://www.reddit.com/r/ruby/comments/im3cvo/results_2020_ruby_on_rails_community_survey/)
-- url: https://rails-hosting.com/2020/
 ---
 

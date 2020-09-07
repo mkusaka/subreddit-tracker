@@ -56,75 +56,84 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][C++20 has been approved](https://www.reddit.com/r/cpp/comments/imzkl4/c20_has_been_approved/)
+## [2][C++20 approved, C++23 meetings and schedule update](https://www.reddit.com/r/cpp/comments/inw0ez/c20_approved_c23_meetings_and_schedule_update/)
+- url: https://herbsutter.com/2020/09/06/c20-approved-c23-meetings-and-schedule-update/
+---
+
+## [3][Replacing unique_ptr with C++17's std::variant a Practical Experiment](https://www.reddit.com/r/cpp/comments/io36xt/replacing_unique_ptr_with_c17s_stdvariant_a/)
+- url: https://www.bfilipek.com/2020/09/replacing-into-variant.html?m=1
+---
+
+## [4][Qt 6.0 Feature Freeze Milestone Reached](https://www.reddit.com/r/cpp/comments/int1rp/qt_60_feature_freeze_milestone_reached/)
+- url: https://www.qt.io/blog/qt-6.0-feature-freeze-milestone-reached
+---
+
+## [5][Named Parameters in C++20 · Peter Dimov](https://www.reddit.com/r/cpp/comments/iny133/named_parameters_in_c20_peter_dimov/)
+- url: https://pdimov.github.io/blog/2020/09/07/named-parameters-in-c20/
+---
+
+## [6][CppCon 2018: Walter E. Brown “C++ Function Templates: How Do They Really Work?”](https://www.reddit.com/r/cpp/comments/io6mp1/cppcon_2018_walter_e_brown_c_function_templates/)
+- url: https://www.youtube.com/watch?v=NIDEjY5ywqU
+---
+
+## [7][Why You Should Use the Boost Software License · Peter Dimov](https://www.reddit.com/r/cpp/comments/inot7e/why_you_should_use_the_boost_software_license/)
+- url: https://pdimov.github.io/blog/2020/09/06/why-use-the-boost-license/
+---
+
+## [8][Best way to start learning C++(20)](https://www.reddit.com/r/cpp/comments/io57yz/best_way_to_start_learning_c20/)
+- url: https://www.reddit.com/r/cpp/comments/io57yz/best_way_to_start_learning_c20/
+---
+Hey,
+
+  
+I want to learn C++, because I want to work for Tesla when their new Gigafactory and developer place in Germany is ready and I read that they need C/ C++ programmers mostly.  
+I am studying at the moment and already have some experience with Python in Machine Learning, some Java from university and I worked with Javascript/ React in the Web Development area for a company. 
+
+My plan is to learn the foundation of C++ in some good tutorials and then improve my knowledge by helping in Open Source projects.
+
+What sites/ tutorials would you recommend a beginner to learn C++? I am worried that many tutorials will be somewhat outdated now that C++20 is approved and I read that it will change how people write C++.  
+Would you recommend to visit certain university courses?  
+
+
+Thank you in advance :)
+## [9][Visual Studio Code + Cpp](https://www.reddit.com/r/cpp/comments/inqkz6/visual_studio_code_cpp/)
+- url: https://www.reddit.com/r/cpp/comments/inqkz6/visual_studio_code_cpp/
+---
+Hi all, 
+
+i love working with VS Code and i'm also a passionate C++ developer. So i started a small project to gather nice and valuable extensions and configuration examples how to enhance developing C++ with VS Code. 
+
+It can be found on github: [https://github.com/fbaeuerlein/cpp-vscode-guide](https://github.com/fbaeuerlein/cpp-vscode-guide)
+
+Feel free to contribute and help to convince people that VSC is a really good IDE also for C++.
+## [10][C++20 has been approved](https://www.reddit.com/r/cpp/comments/imzkl4/c20_has_been_approved/)
 - url: https://twitter.com/patriceroy1/status/1302055575140945921?s=21
 ---
 
-## [3][From SIMD to AST Extraction · Peter Dimov](https://www.reddit.com/r/cpp/comments/inczyj/from_simd_to_ast_extraction_peter_dimov/)
-- url: https://pdimov.github.io/blog/2020/09/05/from-simd-to-ast-extraction/
+## [11][inline namespace bug in msvc](https://www.reddit.com/r/cpp/comments/inmo3a/inline_namespace_bug_in_msvc/)
+- url: https://www.reddit.com/r/cpp/comments/inmo3a/inline_namespace_bug_in_msvc/
 ---
+I went to report this using the IDE and it asked me to "log in" which I tried but Microsoft's browser widget broke my password manager so I said to login with GitHub and when I pressed that button another browser window popped up asking me to log in to GitHub but at the top it said "GitHub does not support this browser (lol)" so I gave up and I am posting this code snippet here:
 
-## [4][Porting ScreenPlay from QMake to CMake: A story on why CMake is actually pretty nice in 2020.](https://www.reddit.com/r/cpp/comments/in29xo/porting_screenplay_from_qmake_to_cmake_a_story_on/)
-- url: https://screen-play.app/blog/qmake_to_cmake/
----
+This fails to compile in latest msvc:
 
-## [5][New safety rules in C++ Core Check | C++ Team Blog](https://www.reddit.com/r/cpp/comments/imvucd/new_safety_rules_in_c_core_check_c_team_blog/)
-- url: https://devblogs.microsoft.com/cppblog/new-safety-rules-in-c-core-check/
----
+    namespace boost {
+    namespace json {
+    
+    inline namespace standalone {
+    namespace detail {
+    struct V{};
+    } // detail
+    } // standalone
+    
+    namespace detail {
+    struct T{};
+    } // detail
+    struct U : detail::T{};
+    
+    } // json
+    } // boost
 
-## [6][juCi++ v1.6.1 just out: the lightweight, open source C++ IDE written in C++](https://www.reddit.com/r/cpp/comments/imya0g/juci_v161_just_out_the_lightweight_open_source_c/)
-- url: https://gitlab.com/cppit/jucipp/-/releases/v1.6.1
----
+See:   [https://godbolt.org/z/qbPesG](https://godbolt.org/z/qbPesG) 
 
-## [7][C++20 Modules Might Be Dead-on-Arrival (January 2019)](https://www.reddit.com/r/cpp/comments/inkin3/c20_modules_might_be_deadonarrival_january_2019/)
-- url: https://vector-of-bool.github.io/2019/01/27/modules-doa.html
----
-
-## [8][SQL for C++](https://www.reddit.com/r/cpp/comments/inhl1d/sql_for_c/)
-- url: https://www.reddit.com/r/cpp/comments/inhl1d/sql_for_c/
----
- Hello ,
-
-I am currently taking a course in DBMS and our instructor said he will be teaching us in SQL. But my colleagues said that we shouldn't be taking this course since we took programming in C++ and not JAVA. Just for contest our class is kinda mixed since half the students took programming in Java and the other half took it in C++. **So I have a question, are they correct ? since we can still tell the university to cancel the course for us.**
-## [9][what's GUI](https://www.reddit.com/r/cpp/comments/inkz6f/whats_gui/)
-- url: https://www.reddit.com/r/cpp/comments/inkz6f/whats_gui/
----
-hey everyone,
-
-can someone explain what's GUI in c++ ( i know that it helps you to make applications with a graphical interface but I heard  about things like: qt and many other things).
-
-and if you recommend any course, please leave the link in the comment.
-## [10][I made this Boids simulation of fish and birds in C++](https://www.reddit.com/r/cpp/comments/imodpi/i_made_this_boids_simulation_of_fish_and_birds_in/)
-- url: https://youtu.be/mev2cgRN9Zo
----
-
-## [11][New JSON Library Needs Your Review!](https://www.reddit.com/r/cpp/comments/imtpn9/new_json_library_needs_your_review/)
-- url: https://www.reddit.com/r/cpp/comments/imtpn9/new_json_library_needs_your_review/
----
-The formal review for Boost.JSON is scheduled for September 14th-September 24th.
-Help us help the community by participating in the formal review of Boost.JSON!
-
-* Requires only C++11.
-* Great support for allocators via pmr::memory_resource
-* High parsing and serialization performance
-* Strict parser and serializer which work incrementally.
-* Security-aware treatment of untrusted inputs.
-* Fast compilation performance.
-* Works without Boost! Define `BOOST_JSON_STANDALONE`
-
-Participate in the Boost formal review of Boost.JSON by joining
-the Boost Developers mailing list:
-
-https://lists.boost.org/mailman/listinfo.cgi/boost
-
-https://www.boost.org/community/reviews.html
-
-Repository
-  
-https://github.com/CPPAlliance/json
-
-Documentation
-  
-http://master.json.cpp.al  
-
-Authors: Vinnie Falco (yes that Vinnie), Krystian Stasiowski
+It compiles everywhere else

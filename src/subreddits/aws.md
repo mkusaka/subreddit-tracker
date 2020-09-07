@@ -1,101 +1,97 @@
 # aws
-## [1][Switching career from on-prem to cloud with aws. Who's done it and do you regret it?](https://www.reddit.com/r/aws/comments/inbk91/switching_career_from_onprem_to_cloud_with_aws/)
-- url: https://www.reddit.com/r/aws/comments/inbk91/switching_career_from_onprem_to_cloud_with_aws/
+## [1][Can I replace NLB with ECS Service Discovery?](https://www.reddit.com/r/aws/comments/inwung/can_i_replace_nlb_with_ecs_service_discovery/)
+- url: https://www.reddit.com/r/aws/comments/inwung/can_i_replace_nlb_with_ecs_service_discovery/
 ---
-I'm currently a site reliability engineer where I manage around 50 servers and have tried to bring an infrastructure as code approach.  The thing is I like building out systems and desiging solutions that help our business more than I like dealing with hardware which I have to do a lot of on a small team.
-
-How many of you have made a career switch from on-prem to cloud engineer or cloud architect?  What are your thoughts and do you regret it?
-## [2][Do you host any of your wordpress websites on AWS?](https://www.reddit.com/r/aws/comments/inkv4e/do_you_host_any_of_your_wordpress_websites_on_aws/)
-- url: https://www.reddit.com/r/aws/comments/inkv4e/do_you_host_any_of_your_wordpress_websites_on_aws/
----
-Hello, I was wondering if any of you are hosting their WordPress + WooCommerce website on AWS, I was just wondering what services are you using for it? Just simple advice and guidance 
-
-Thanks in advance
-## [3][Have you guys found Guard Duty, Macie &amp; Security Hub to be cost effective and worth enabling?](https://www.reddit.com/r/aws/comments/inlguo/have_you_guys_found_guard_duty_macie_security_hub/)
-- url: https://www.reddit.com/r/aws/comments/inlguo/have_you_guys_found_guard_duty_macie_security_hub/
----
-Am considering these services where you just enable them, I am curious as to people's opinion on if they are worth it for smaller accounts and just generally peoples opinions on the services
-## [4][[Trivia] Why is the AWS Systems Manager abbreviated as "SSM"](https://www.reddit.com/r/aws/comments/inctog/trivia_why_is_the_aws_systems_manager_abbreviated/)
-- url: https://www.reddit.com/r/aws/comments/inctog/trivia_why_is_the_aws_systems_manager_abbreviated/
----
-Want to take a guess?
+I currently have ECS Service running with an endpoint serve through a Network Load Balancer. The Network Load Balancer is transparent and directs all traffic to ECS. 
 
 &amp;#x200B;
 
-&gt;&gt;! AWS Systems Manager (Systems Manager) was formerly known as "Amazon Simple Systems Manager (SSM)" and "Amazon EC2 Systems Manager (SSM)". The original abbreviated name of the service, "SSM", is still reflected in various AWS resources, including a few other service consoles.  !&lt;
+From my understanding, if I remove NLB and direct traffic to ECS Service, I could potentially have downtime if the task is removed and over-loaded. However, I have recently learned that NLB can be removed and ECS Service Discovery will take care of serving the healthy tasks. 
 
-Link: [https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html#service-naming-history](https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html#service-naming-history)
-## [5][CloudFormation template not updating after CDK deployment](https://www.reddit.com/r/aws/comments/inixr6/cloudformation_template_not_updating_after_cdk/)
-- url: https://www.reddit.com/r/aws/comments/inixr6/cloudformation_template_not_updating_after_cdk/
+&amp;#x200B;
+
+I am learning about Service Discovery right now and having difficulty understanding how it can replace NLB?
+## [2][When and why use AWS Elastic Beanstalk?](https://www.reddit.com/r/aws/comments/inxcd4/when_and_why_use_aws_elastic_beanstalk/)
+- url: https://www.reddit.com/r/aws/comments/inxcd4/when_and_why_use_aws_elastic_beanstalk/
 ---
-I have a generated Swagger json file. I have a CDK app that reads in this file and then I do
-
-    const cfnRestApi = this.api.node.defaultChild as apigateway.CfnRestApi;
-    cfnRestApi.body = 
-    JSON.parse(JSON.stringify(swaggerDefinition));
+Hi guys.  
 
 
-After doing cdk deploy when I look at the Cloud Formation template it contains my Swagger info. However when I make changes to the Swagger json file, the template in CloudFormation is not updating even after cdk deploy runs successfully. How can I resolve this?
-## [6][Multi value routing policy](https://www.reddit.com/r/aws/comments/ink5ho/multi_value_routing_policy/)
-- url: https://www.reddit.com/r/aws/comments/ink5ho/multi_value_routing_policy/
+The company I work for has several different applications running on EC2 instances - they are all Java-based applications - and I was wondering if I could migrate them from EC2 to Beanstalk? and if I should?
+
+What are the benefits of Beanstalk? We have Rest APIs that use Jetty. Would Beanstalk handle that?
+
+Is there any reason why I shouldn't move to Beanstalk?
+## [3][How to allow more instance types in Cloudformation?](https://www.reddit.com/r/aws/comments/io6img/how_to_allow_more_instance_types_in_cloudformation/)
+- url: https://www.reddit.com/r/aws/comments/io6img/how_to_allow_more_instance_types_in_cloudformation/
 ---
-Can multi value routing policy in route 53 serve as a substitute for ELB? What's the difference between the two? Both of them seems to do similar work.
-## [7][Building and testing Lambda + Step Function projects locally?](https://www.reddit.com/r/aws/comments/inb0vp/building_and_testing_lambda_step_function/)
-- url: https://www.reddit.com/r/aws/comments/inb0vp/building_and_testing_lambda_step_function/
+Hi,
+
+I'm using Elastic Beanstalk to launch EC2 instances. I'm trying to upgrade from t2.micro to t3a.micro, but I keep getting the following error when I try to change instancetype in Beanstalk: 
+
+    Service:AmazonCloudFormation, Message:Parameter InstanceType failed to satisfy constraint: must be a valid EC2 instance type.
+
+I saw that Cloudformation template didn't allow t3a.micro instances as it was rather old template so I updated "InstanceType"-field and its AllowedValues array to include t3a.micro, but I still get the error above.
+
+Is there something that I'm missing or why Elastic Beanstalk is not letting me upgrade to t3?
+## [4][Why no interface endpoint for AWS Inspector?](https://www.reddit.com/r/aws/comments/io6bxu/why_no_interface_endpoint_for_aws_inspector/)
+- url: https://www.reddit.com/r/aws/comments/io6bxu/why_no_interface_endpoint_for_aws_inspector/
 ---
-EDIT: Appreciate the responses. Was looking at AWS SAM already, so I'm going to give that a whirl at least. Not sure why the Linux binaries are connected to brew, but that's a solvable problem.
+We have been using interface endpoints to keep AWS command traffic within our environment as much as possible.
 
-&amp;nbsp;
+Looking at our firewall now, the majority of the AWS bound traffic that leaves our environment is for arsenal..amazonaws.com which is telemetry data from the AWS Inspector agent.
 
-Haven't been able to figure this one out.
-
-My company recently pivoted from tomcat applications hosted on containers to "serverless" applications with ALBs if needed.
-
-I'm no expert in this arena, as it's outside where I've built solutions in the past, but it seems straightforward enough. I can't figure out a way to actually prove out a solution without running a CFT deployment to the test account though, which means
-
- * 1: I can only try things out on my work laptop, within the rails set up by the company. This is slow and sometimes painful, with multiple levels of review before anything can actually run.
-
- * 2: Screwups (think infinite loop, erroneously starting process, unbounded output sizes) have a monetary cost to company, and a very real potential life (think "Ability to put food in mouth") risk to myself.
-
-With normal containerized applications (or non-containerized, because lets face it, Process abstraction versus Machine abstraction doesn't change how this works), whether it was running inside of a Tomcat servlet, a Node.js process, or just a basic site running in httpd, I can always start a server on one of my scratch boxes, try stuff out, and if it doesn't work the worst-case scenario is that I delete the VM / wipe the disk on the machine / reboot my dev laptop, and I'm fine.
-
-How do I protect myself in this kind of a model?
-
-The closest I've found is to mock out any boto3 / AWS API calls, keep all I/O to stdio/stdout, and code in ALB-style support using one of the httpd-in-a-box libraries that programming languages have picked up recently.
-
-Is that the best I can do?
-## [8][How to apply for cdn/cache server as ISP ?](https://www.reddit.com/r/aws/comments/injdxx/how_to_apply_for_cdncache_server_as_isp/)
-- url: https://www.reddit.com/r/aws/comments/injdxx/how_to_apply_for_cdncache_server_as_isp/
+Is there a reason why this traffic isn't supported via a VPC interface endpoint?
+## [5][Lambda with nodejs and middleware](https://www.reddit.com/r/aws/comments/inub4l/lambda_with_nodejs_and_middleware/)
+- url: https://www.reddit.com/r/aws/comments/inub4l/lambda_with_nodejs_and_middleware/
 ---
-Hi we are ISP in Pakistan and we would like to have amazon cache servers, how to apply ? we do not have any aws server yet.
-## [9][Is there any way to run 32-bit Windows inside EC2 [2020]?](https://www.reddit.com/r/aws/comments/in7ytt/is_there_any_way_to_run_32bit_windows_inside_ec2/)
-- url: https://www.reddit.com/r/aws/comments/in7ytt/is_there_any_way_to_run_32bit_windows_inside_ec2/
+The app I'm building has a descent number of entities, about 50. Assuming each entity will have at the minimum one set of crud functions, if I build them as skinny, one lambda per endpoint, I'm up to 200 lambdas without event starting to build the app. 
+I'm afraid of negative impact in maintenance and cost around this quantity. Deploying is already starting to take some time and all these lambdas needing to be up for every tenant. 
+Option would be to have a number of lambdas serving multiple entities grouped by domain, or service. 
+If this is a better option, what kind of middleware do you recommend (trying to avoid express here and pick something aws lambda specific). Thanks.
+## [6][Port Forward in EC2 instance](https://www.reddit.com/r/aws/comments/io5dhi/port_forward_in_ec2_instance/)
+- url: https://www.reddit.com/r/aws/comments/io5dhi/port_forward_in_ec2_instance/
 ---
-I am trying to help my mom move the software she uses to run her business which is now at the office on a Windows XP machine (really old software). Because of COVID she can't go to the office and the machine running it keeps crashing. 
+Hello, I'm new in AWS and recently created a web server and wanted to access it remotely. Then I saw that you can port forward by setting up an E2C instance. I did it successfully but my question now is if I have multiple web servers, should you create one instance for every web server or maybe there is a way to access your web servers through one EC2 instance?  
 
-I thought of moving it to an EC2 instance, but the software needs 32 bits, and I can find any 32 bits instance in EC2.
+I created two web servers and I accessed them through two different ports 8080 and 8081
 
-I tried running the software in compatibility mode and many other alternative ways with no luck.
+I used this command to forward these ports: 
 
-After that I made an attempt to install VirtualBox inside the EC2 instance in order to run a 32bit version of windows, but quickly found out that virtualization inside virtualization doesn't seem to work.
+**ssh -R :8081:192.168.0.106:8081 -i C:\\Users\\PC\\Desktop\\PForw.pem .......**
 
-Any suggestion will be appreciated!  
-Thanks!
-## [10][AWS infrastructure visibility and drift detection.](https://www.reddit.com/r/aws/comments/in1s6s/aws_infrastructure_visibility_and_drift_detection/)
-- url: https://www.reddit.com/r/aws/comments/in1s6s/aws_infrastructure_visibility_and_drift_detection/
+Sorry if I'm not clear... just a beginner in AWS.
+## [7][How to setup aws VPN with on-prem Windows 10](https://www.reddit.com/r/aws/comments/inwxkt/how_to_setup_aws_vpn_with_onprem_windows_10/)
+- url: https://www.reddit.com/r/aws/comments/inwxkt/how_to_setup_aws_vpn_with_onprem_windows_10/
 ---
-Hello,
+I am studying for the CSAP exam and I’m running into a ton of on-prem topics that I’m not that familiar with. 
 
-I am working in a backup company which backups into the AWS cloud. Until recently our cloud infrastructure was quite simple - had clusters of EC2s, ASGs and RDS. Recently we started moving to serverless and microservices . Lot of services are now either ECS and lambda based, along with existing EC2 based ones. Due to this, our infra is becoming complex, and we kinda have feeling of losing control. Now we are bit concerned about our infrastructure. 
+Does anyone know of any free VPN server software that is 1) compatible with Win 10, and 2) compatible with aws site-to-site VPN?
 
-We need to have a **clear visibility** into our cloud infrastructure and setting up baselines, and **drift detection**. If possible we would also like to be able to run some complex queries against our AWS infrastructure, e.g. What was the longest running lambdas, in region 'us-east-1' on the cloud push date. 
+I got pretty far with OpenVPN, but from what I can tell it uses SSL only and does not seem to support IPSec which appears to be required by aws.
+## [8][Can someone explain what AWS Lambda is in a way you would explain it to a person with basic cloud knowledge](https://www.reddit.com/r/aws/comments/io536s/can_someone_explain_what_aws_lambda_is_in_a_way/)
+- url: https://www.reddit.com/r/aws/comments/io536s/can_someone_explain_what_aws_lambda_is_in_a_way/
+---
 
-We want to be able to compare specific set of resources based on date/time, region etc as well - this is more for issue RCA.
+## [9][EC2 Access to EFS volumes](https://www.reddit.com/r/aws/comments/inwzp2/ec2_access_to_efs_volumes/)
+- url: https://www.reddit.com/r/aws/comments/inwzp2/ec2_access_to_efs_volumes/
+---
+I am studying for the Solutions Architect cert and got to the EFS section had this situation and question:
 
-Currently we have started with AWS Config, and also experimenting with a mix of open source tools as well as vendors (Lucidchart, cloud custodian etc).
+I created an EC2 instance and then mounted the EFS volume that I previously created. The instance was not associated with an IAM role.
 
-Did anyone of you had similar experience/expections? How did you solve the issue cost effectively. If possible we would not want to host any such tool on our own but rather go for a SaaS offering.
+What permission/policy/priv, etc., allows this EC2 instance to access the EFS volume?
 
-Any suggestion in this would be of great help.
+My understanding was that EVERYTHING needs some kind of explicit permission.
 
-Thanks in advance.
+I couldn't find anything specific about the instance that would suggest that it can mount/access and EFS volume ... except that the instance was created by a User with the "AdministratorAccess" policy.
+## [10][How to find cost of untagged resources in AWS using Cost explorer API](https://www.reddit.com/r/aws/comments/io1cw3/how_to_find_cost_of_untagged_resources_in_aws/)
+- url: https://www.reddit.com/r/aws/comments/io1cw3/how_to_find_cost_of_untagged_resources_in_aws/
+---
+We have 2 mandatory tags for every resource in AWS, we want to find the cost of the untagged resources, how is it possible to get the cost for the untagged resources ? 
+
+I checked through the Cost explorer API docs but didnt get much for untagged cost findings, any suggestions ?
+
+&amp;#x200B;
+
+Thank you !

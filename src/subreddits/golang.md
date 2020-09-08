@@ -1,67 +1,108 @@
 # golang
-## [1][lsoc-overlay: an overlay of recording webcams and its processes on Linux](https://www.reddit.com/r/golang/comments/io2wo2/lsocoverlay_an_overlay_of_recording_webcams_and/)
-- url: https://www.reddit.com/r/golang/comments/io2wo2/lsocoverlay_an_overlay_of_recording_webcams_and/
+## [1][We are the Go Time podcast. Ask us anything. (AMA)](https://www.reddit.com/r/golang/comments/io94yi/we_are_the_go_time_podcast_ask_us_anything_ama/)
+- url: https://www.reddit.com/r/golang/comments/io94yi/we_are_the_go_time_podcast_ask_us_anything_ama/
 ---
-As summer has ended, many people are rushing back to their usual lives of online meetings and Zoom calls. This overlay was written to give some people the transparency of when their webcams are being used and by what applications.
+Hi everyone! I'm Jon Calhoun, one of the panelists on the Go Time podcast. For those of you unfamiliar - it is a Go podcast that we record live every Tuesday at 3pm ET. We usually have a guest or two on each episode, and discuss a specific topic (defer, testing, databases, infra, etc). You can check it out here: &lt;https://changelog.com/gotime&gt;
 
-I came up with this idea when I was fiddling with FFmpeg to create a dummy webcam from an existing one, but this caused the webcam's activity light to be constantly on. Since I can no longer rely on that indicator, I decided to write one myself.
+This coming episode we want to try something a little different - we want to make a Q&amp;A episode. There are two reasons for doing this:
 
-The application uses Gtk to draw an overlay, and it is hard-coded to use Video4Linux2 (v4l2). As such, the application will only work on Linux. There is also a small one-shot CLI at `./cmd/lsof`.
+1. We are hoping this inspires topics for future episodes.
+2. We want a venue to discuss questions that don't really fit into an entire episode on their own.
 
-GitHub link: [https://github.com/diamondburned/lsoc-overlay](https://github.com/diamondburned/lsoc-overlay)
-## [2][TIL: make+copy to clone a slice is optimized in Go 1.15, which is not mentioned in 1.15 release notes.](https://www.reddit.com/r/golang/comments/inorfa/til_makecopy_to_clone_a_slice_is_optimized_in_go/)
-- url: https://www.reddit.com/r/golang/comments/inorfa/til_makecopy_to_clone_a_slice_is_optimized_in_go/
+To make this happen we would like everyone here to post any Go-related questions that you would like us to discuss on air, and we will try to get to as many as possible. I'll also try to type up answers here while we discuss them on the episode.
+
+We will be answering questions live tomorrow, Tuesday, Sep 8. We will repeat questions on air, and since we record live you can join in on the Gophers Slack to ask follow-up questions or to elaborate on questions.
+## [2][What is ':' and '...'?](https://www.reddit.com/r/golang/comments/iop8rg/what_is_and/)
+- url: https://www.reddit.com/r/golang/comments/iop8rg/what_is_and/
 ---
-Reads:
+I was recently working on a project and I came across this:
 
-* https://go-review.googlesource.com/c/go/+/146719/ (by @martisch)
+    package main
+    
+    import "fmt"
+    
+    func min(nums ...float64) (min float64) {
+    	for _, n := range nums {
+    		if min&gt;n {
+    			min = n
+    		}
+    	}
+    	return
+    }
+    
+    func main() {
+    	s:=[]float64{43.009, 33.112, -3.2, 0.0}
+    	fmt.Println(min(s[:]...))
+    }
 
-* https://github.com/golang/go/commit/6ed4661807b219781d1aa452b7f210e21ad1974b
-
-* https://github.com/golang/go/issues/26252
-
-* https://github.com/go101/go-benchmarks/tree/master/append-vs-make
-
-* https://github.com/go101/go101/wiki/How-to-efficiently-clone-a-slice%3F
-## [3][Is Go still relevant for high-performance infrastructure applications?](https://www.reddit.com/r/golang/comments/inxo4v/is_go_still_relevant_for_highperformance/)
-- url: https://www.reddit.com/r/golang/comments/inxo4v/is_go_still_relevant_for_highperformance/
+I am **unable to understand the meaning of** `s[:]...` what does that even mean?
+## [3][OOP objects v Go Structs](https://www.reddit.com/r/golang/comments/ioqpgk/oop_objects_v_go_structs/)
+- url: https://www.reddit.com/r/golang/comments/ioqpgk/oop_objects_v_go_structs/
 ---
-With the rise of Rust and the improvement of C++ is Go still relevant at the development of high-performance infrastructure applications?
+I’m a Go noob but an experienced developer.
 
-For example, I tried to write an API gateway in Go and even optimizing it as much as I could I was reaching 1/3 of Nginx or HAProxy performance. Rust on the other side is able to archive the same level of performance or even more.
+In an OOP language I can create an object by passing arguments to its constructor. I can validate these arguments and reason that if my object “Car” exists, it’s make property will always be valid (eg “Ford” or “Ferrari”).
 
-I'm still using Go for my services, but they're at the business logic side. For things like high-performance proxies? Hmm, I don't know if it's the best choice anymore. Does anyone share the same feeling?
-## [4][Sloc Cloc and Code a fast code counter written in Go. Released v2.13.0 with many new features, bug fixes and 10% performance improvement thanks to Go 1.15](https://www.reddit.com/r/golang/comments/inz4id/sloc_cloc_and_code_a_fast_code_counter_written_in/)
-- url: https://github.com/boyter/scc
+Or, I can create a DB object and inject it into my Repository, and know that when I call repo.db.select(...) the select method will execute against a db connection.
+
+How do you approach this sort of thing idiomatically in Go? If I have a Car struct anyone can create one with arbitrary properties.
+
+Is it simply that I have to get my head around living with structs that could always have invalid values? Do you end up doing nil checks because you can’t guarantee your sub-structs exists/are valid?
+
+Any recommendations for articles/resources targeted at getting out of OOP mindset and into idiomatic Go?
+
+Thanks.
+## [4][Beware of upgrading gorilla/handlers to 1.5.0](https://www.reddit.com/r/golang/comments/ios44w/beware_of_upgrading_gorillahandlers_to_150/)
+- url: https://www.reddit.com/r/golang/comments/ios44w/beware_of_upgrading_gorillahandlers_to_150/
 ---
-
-## [5][Graviton Database: ZFS for Key-Value Stores](https://www.reddit.com/r/golang/comments/inoipt/graviton_database_zfs_for_keyvalue_stores/)
-- url: https://github.com/deroproject/graviton
+Currently gzip compression is broken, see [https://github.com/gorilla/handlers/issues/194](https://github.com/gorilla/handlers/issues/194). Keep 1.4.2 or use commit hash [d453eff](https://github.com/gorilla/handlers/commit/d453effd20e6817a8acfd9d278dadd21371da0ba).
+## [5][What other languages have something akin to Go's interfaces?](https://www.reddit.com/r/golang/comments/iorveh/what_other_languages_have_something_akin_to_gos/)
+- url: https://www.reddit.com/r/golang/comments/iorveh/what_other_languages_have_something_akin_to_gos/
 ---
+Well except duck-typed OOP language which do have somewhat similar possibilities but only incidentally.
 
-## [6][xs: remote shell and copy written from scratch in Go](https://www.reddit.com/r/golang/comments/io136e/xs_remote_shell_and_copy_written_from_scratch_in/)
-- url: https://github.com/Russtopia/xs
----
-
-## [7][Iterating through arrays](https://www.reddit.com/r/golang/comments/inqqm2/iterating_through_arrays/)
-- url: https://youtu.be/t65Vu91jO5A
----
-
-## [8][Building a game engine with golang!](https://www.reddit.com/r/golang/comments/inlvqi/building_a_game_engine_with_golang/)
-- url: https://link.medium.com/bzx0GDeOy9
----
-
-## [9][internet speedmeter written in golang](https://www.reddit.com/r/golang/comments/io2ute/internet_speedmeter_written_in_golang/)
-- url: https://www.reddit.com/r/golang/comments/io2ute/internet_speedmeter_written_in_golang/
----
-Meter to check the current bandwidth use(\*\*not a speed tester\*\*)
-
-github: [https://github.com/amalshaji/speedmeter](https://github.com/amalshaji/speedmeter)
-
-screenshot:
-
-https://preview.redd.it/u5b9usx7dol51.png?width=439&amp;format=png&amp;auto=webp&amp;s=0c3a28f3a9056d6fadb6694995c59ba2e8898061
-## [10][I wrote a web &amp; rpc framework, that makes developing microservices much easier!](https://www.reddit.com/r/golang/comments/io43x0/i_wrote_a_web_rpc_framework_that_makes_developing/)
-- url: https://github.com/tal-tech/go-zero
+I've looked at this multiple times in the past, but I can't find another language that has the feature of implicitly satisfying interfaces. Rusts `impl &lt;trait&gt; for &lt;type&gt;` seems to allow similar flexibility but with explicit notation.
+## [6][What is New in the go 1.15](https://www.reddit.com/r/golang/comments/iomyzw/what_is_new_in_the_go_115/)
+- url: https://www.loginradius.com/engineering/blog/what-is-the-new-go-1.15/
 ---
 
+## [7][When to use buffered channels in go](https://www.reddit.com/r/golang/comments/iorcmp/when_to_use_buffered_channels_in_go/)
+- url: https://medium.com/@ss7loginov/when-to-use-buffered-channels-in-go-317d3593d28f
+---
+
+## [8][http.Get returns empty response but curl (on same machine) gets data](https://www.reddit.com/r/golang/comments/iorwxj/httpget_returns_empty_response_but_curl_on_same/)
+- url: https://www.reddit.com/r/golang/comments/iorwxj/httpget_returns_empty_response_but_curl_on_same/
+---
+This issue is in two parts. I'm trying to simply request data from an endpoint (it's a CDN). Originally I was doing my request against `https://endpoint`. It was working with both my Go application as well as curl.
+
+Then that stopped working, for *both* my application *and* curl. Because it is a CDN I figured it was some caching issue. So then I generated a random number and appended it as a query param. The new url would be similar to `https://endpoint/?nocache=1234`.
+
+This worked for both my application as well as curl!!
+
+... and then it stopped working for my application. But it continued to work for curl. This is all on a single host.
+
+I would have my Go application print out the used url (e.g. `https://endpoint/?nocache=9876`) as well as the response.ContentLength (now it is always 0, but used to be -1 when it was actually getting data), and the status (*always* `200 OK`).
+
+Zero data from my Go application. But then I would take the same exact url and curl it: `curl "https://endpoint/9876`. And I receive data.
+
+Has anybody else seen this before? I'm wondering if the edge servers for this CDN have somehow recognized a header or something from my Go application that it is "filtering" of sorts.
+
+Outside of getting out a network tracing tool to see the packets, I'm not sure how to proceed from here. I'd hate to shell out to curl from my application, but this is a pretty hard stop here.
+
+Hoping that maybe I'm not the first to deal with this problem. Thanks in advance!
+## [9][Generate RESTful service and swagger documentation with gRPC gateway. This enables us to write code just once but serving both gRPC and HTTP JSON requests at the same time.](https://www.reddit.com/r/golang/comments/ioswkv/generate_restful_service_and_swagger/)
+- url: https://youtu.be/Zf9G2KzYs7w
+---
+
+## [10][go-pg Postgres ORM v10 with support for map[string]interface{}](https://www.reddit.com/r/golang/comments/ioopad/gopg_postgres_orm_v10_with_support_for/)
+- url: https://github.com/go-pg/pg/blob/v10/CHANGELOG.md#changelog
+---
+
+## [11][Introducing TA, a technical analysis Go library](https://www.reddit.com/r/golang/comments/iohi6o/introducing_ta_a_technical_analysis_go_library/)
+- url: https://www.reddit.com/r/golang/comments/iohi6o/introducing_ta_a_technical_analysis_go_library/
+---
+I'd like to introduce my newest toy project, [ta](https://github.com/OneOfOne/ta), a technical analysis library with strategy / backtest helpers and csv loader.
+
+Right now it's pre-alpha, the API is unstable, however the functions were tested for accuracy against the python version of [talib](https://github.com/mrjbq7/ta-lib).
+
+All feedback and pull requests are welcome.

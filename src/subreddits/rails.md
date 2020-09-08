@@ -19,17 +19,84 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Using Google places in Rails Api](https://www.reddit.com/r/rails/comments/io452h/using_google_places_in_rails_api/)
+## [2][Image tag if logic?](https://www.reddit.com/r/rails/comments/ios0qj/image_tag_if_logic/)
+- url: https://www.reddit.com/r/rails/comments/ios0qj/image_tag_if_logic/
+---
+Would it be possible to check if the image is square and set a particular resize option and if not square set it to other option. Something like this:
+
+    image_tag(logo_path, if width==height ? size: 167 : width: 167)
+## [3][Is there a way to use trailblazer reform with vuejs forms](https://www.reddit.com/r/rails/comments/ionf5y/is_there_a_way_to_use_trailblazer_reform_with/)
+- url: https://www.reddit.com/r/rails/comments/ionf5y/is_there_a_way_to_use_trailblazer_reform_with/
+---
+Hey, we are transforming some of our views with a lot of unmaintainable coffeescript to vuejs components. For form validation we are using dry/reform including the trailblazer stack. Is there a handy way to migrate these forms without to doublicate our validations to the front end with proper user error messaging?
+## [4][A few questions about Rails.ajax](https://www.reddit.com/r/rails/comments/ioajn2/a_few_questions_about_railsajax/)
+- url: https://www.reddit.com/r/rails/comments/ioajn2/a_few_questions_about_railsajax/
+---
+A few days back I asked how to weave a form through a table:  [Post](https://www.reddit.com/r/rails/comments/ilglc6/how_can_you_distribute_input_elements_outside_a/)
+
+I'v mostly gotten overmotion’s suggestion of submitting formless inputs using AJAX to function, but I’m a little fuzzy on how Rails.ajax actually works.  I couldn’t find anything about it in the rails docs and all the tutorials either use coffeescript, assume you're familiar with the jquery method it’s derived from, or both.
+
+Here’s my solution:
+
+    Rails.ajax({
+        type: "PATCH",
+        url: "nurses/&lt;%= @nurse.id %&gt;",
+        data: `first=${first}&amp;last=${last}&amp;start_date=${startDate}&amp;can_charge=${can_charge}`,
+        success: function(data) {
+        }
+      });
+
+&amp;#x200B;
+
+and my questions:
+
+\-- Is my entire update.js.erb file being wrapped in a callback function and executed upon a successful ajax request?  Is it being passed through the ‘data’ parameter in the above success method?  And if so, why doesn’t it need to be called in the body?
+
+\-- Is there a failed-validations version of update.js.erb I can use to send feedback to the user?  Where would that be stored and what would its name be?
+
+If you guys have any good resources on this, I’d be happy to read them.  Thanks!
+
+This is the full edit.js.erb file for anyone curious:
+
+    function ajaxSubmit() {
+      const first = document.querySelector("#first").value;
+      const last = document.querySelector("#last").value;
+      const startDate = document.querySelector("#start_date").value;
+      const canCharge = document.querySelector("#can_charge").value;
+    
+      Rails.ajax({
+        type: "PATCH",
+        url: "nurses/&lt;%= @nurse.id %&gt;",
+        data: `first=${first}&amp;last=${last}&amp;start_date=${startDate}&amp;can_charge=${can_charge}`,
+        success: function(data) {
+        }
+      });
+    };
+    
+    function switchRow() {
+      let clickedTR = document.querySelector(".nurse&lt;%= @nurse.id %&gt;");
+      clickedTR.innerHTML = "&lt;%= escape_javascript(render partial: 'nurses/inline_form', locals: { nurse: @nurse } ) %&gt;";
+      let update_button = document.querySelector("#update-nurse");
+    
+      update_button.addEventListener("click", ajaxSubmit, true);
+    };
+    
+    switchRow(); 
+## [5][When to make external API connection](https://www.reddit.com/r/rails/comments/iobg0s/when_to_make_external_api_connection/)
+- url: https://www.reddit.com/r/rails/comments/iobg0s/when_to_make_external_api_connection/
+---
+I want to make a site that uses the k8s-client gem to interact with kubernetes clusters. This is my first time writing something that interacts with an external API. I have written a job to make the connection, but I'm wondering where I should call it. Should I spawn a new connection each time I run a job that makes an API call? What's the best practice for doing this?
+## [6][Using Google places in Rails Api](https://www.reddit.com/r/rails/comments/io452h/using_google_places_in_rails_api/)
 - url: https://www.reddit.com/r/rails/comments/io452h/using_google_places_in_rails_api/
 ---
 hi guys!
 
 I am making Rails API which will take user location in params and return restaurants around the radius of 500 meters in form of an array, actually, I don't know the steps that how can I return those restaurants by using google places. Any help will be highly appreciated.
-## [3][Ruby on Rails digest: 26 most popular repositories in July and August 2020](https://www.reddit.com/r/rails/comments/inkoxw/ruby_on_rails_digest_26_most_popular_repositories/)
+## [7][Ruby on Rails digest: 26 most popular repositories in July and August 2020](https://www.reddit.com/r/rails/comments/inkoxw/ruby_on_rails_digest_26_most_popular_repositories/)
 - url: https://www.reddit.com/r/rails/comments/inkoxw/ruby_on_rails_digest_26_most_popular_repositories/
 ---
 This is the second edition of Ruby/Rails digest. [This post](https://medium.com/@Iren.Korkishko/ruby-on-rails-digest-26-most-popular-repositories-in-july-and-august-2020-70ae593a5fe1?source=friends_link&amp;sk=477b6f0fb300b07f7fe068d12831c756) welcomes the most popular, most interesting, and useful Ruby on Rails repositories on GitHub in July and August!
-## [4][Help with asset pipeline](https://www.reddit.com/r/rails/comments/ingy5q/help_with_asset_pipeline/)
+## [8][Help with asset pipeline](https://www.reddit.com/r/rails/comments/ingy5q/help_with_asset_pipeline/)
 - url: https://www.reddit.com/r/rails/comments/ingy5q/help_with_asset_pipeline/
 ---
 Hey guys! I’m trying to figure out how to properly configure my asset pipeline. I’m having some trouble with this. In my production.rb file, I have config.assets.compile set to false and additionally, in my assets/config/manifest.js file, I have the following
@@ -44,11 +111,11 @@ I’m accessing the images using: &lt;%= image_tag “image.jpg” %&gt;
 It all works when I have config.assets.compile set to true but I know this is inefficient.
 
 I would appreciate any help!
-## [5][I need an experienced rails developer](https://www.reddit.com/r/rails/comments/inqvjj/i_need_an_experienced_rails_developer/)
+## [9][I need an experienced rails developer](https://www.reddit.com/r/rails/comments/inqvjj/i_need_an_experienced_rails_developer/)
 - url: https://www.reddit.com/r/rails/comments/inqvjj/i_need_an_experienced_rails_developer/
 ---
 Hello everyone! I am working on a start up for restaurant reservations web app and really need a rails developer who is able to work and coordinate with a react developer, who is actually working for this project. There are only some tasks that need to be done since most of the work is already done! PM if any of you is interested. :)
-## [6][multiple scopes and one def in controller](https://www.reddit.com/r/rails/comments/in3fbu/multiple_scopes_and_one_def_in_controller/)
+## [10][multiple scopes and one def in controller](https://www.reddit.com/r/rails/comments/in3fbu/multiple_scopes_and_one_def_in_controller/)
 - url: https://www.reddit.com/r/rails/comments/in3fbu/multiple_scopes_and_one_def_in_controller/
 ---
 Hi guys, one question
@@ -86,7 +153,7 @@ Where `downloaded_today`, `rated_yesterday`, `over_50_readers`, etc., are linked
 My question is: Will it load ALL the `day_of_the_week` CASES (or all the  UNUSED scopes) when an user will visit the homepage?
 
 ...Because, in that case, my homepage will be very slow.
-## [7][how do you deal with user timezones?](https://www.reddit.com/r/rails/comments/imym4y/how_do_you_deal_with_user_timezones/)
+## [11][how do you deal with user timezones?](https://www.reddit.com/r/rails/comments/imym4y/how_do_you_deal_with_user_timezones/)
 - url: https://www.reddit.com/r/rails/comments/imym4y/how_do_you_deal_with_user_timezones/
 ---
 in a previous project i was saving the user timezone when signing up with an hidden field filled up with javascript to get the user's timezone and then used that timezone in views and mailers
@@ -98,49 +165,3 @@ do i need to store the user timezone?
 how would you localize datetimes in mailers without the user timezone stored?
 
 and more generally how do you deal with user timezones?
-## [8][Assets result in a 404](https://www.reddit.com/r/rails/comments/in0bqy/assets_result_in_a_404/)
-- url: https://www.reddit.com/r/rails/comments/in0bqy/assets_result_in_a_404/
----
-Hi. Tested whether my app would run on production (still on my local computer). However, all requests to them result in 404s.
-
-What I did:
-
-```sh
-$ export RAILS_ENV=production
-$ rails assets:precompile
-$ rails s
-```
-
-At this point, neither my stylesheets nor my JavaScripts are loaded. I'm using the default configuration for `config/environments/production.rb`, meaning that the only assets settings is `compile`, which is set to `false`, which threw me off at first.
-
-Tried turning it on, now the stylesheets loaded, but still no JavaScript. What is going on, I really can't figure it out?
-## [9][What is your solution for page-specific javascript in rails?](https://www.reddit.com/r/rails/comments/imrqlk/what_is_your_solution_for_pagespecific_javascript/)
-- url: https://www.reddit.com/r/rails/comments/imrqlk/what_is_your_solution_for_pagespecific_javascript/
----
-I've been researching this throughout the day.  The most straight forward solution I've found is to put it in a content\_for in the view, and pull it into the layout right before the body tag, but that doesn't seem very 'unobtrusive.'
-
-Is there is Rails standard, or community preferred method for this?
-## [10][Podcasting platforms or tools built with Ruby on Rails?](https://www.reddit.com/r/rails/comments/imib6f/podcasting_platforms_or_tools_built_with_ruby_on/)
-- url: https://www.reddit.com/r/rails/comments/imib6f/podcasting_platforms_or_tools_built_with_ruby_on/
----
-Hey guys,
-
-There are tons of Podcast platforms out there, but can any of you tell me if some of them are built with Rails?  
-
-I'd be surprised if there were none.  Also, doesn't have to be the full platform, but maybe support tools like RSS feed builders or episode/video deployment tools.
-## [11][Is there a stylistic reason NOT to with_indifferent_access every hash?](https://www.reddit.com/r/rails/comments/imhxf7/is_there_a_stylistic_reason_not_to_with/)
-- url: https://www.reddit.com/r/rails/comments/imhxf7/is_there_a_stylistic_reason_not_to_with/
----
-Hi,
-
-Curious what the community thinks on this point. In many Rails codebases I've worked with `with_indifferent_access` is used _defensively_ to avoid the pain of `nil` returns.
-
-```
-# my_hash = { string_key: 'whoever did this must be a troll..' }
-
-my_hash['string_key'] 
-# =&gt; nil 
-# argh!!!
-```
-
-Wondering if there are any stylistic reasons or situations that one would NOT convert all hashes `with_indifferent_access` and use a string key over a symbol (or mix of both) to semantically imply something about a hash value -- or perhaps this is just a quirk of Ruby?

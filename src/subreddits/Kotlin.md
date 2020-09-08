@@ -1,9 +1,196 @@
 # Kotlin
-## [1][AndroidBites | 5 Easy Steps to LRU Cache in Repository.](https://www.reddit.com/r/Kotlin/comments/io0ygt/androidbites_5_easy_steps_to_lru_cache_in/)
-- url: https://chetangupta.net/cache-repository/
+## [1][A Cake for Kotlin: Exploring framework-less dependency injection for Kotlin](https://www.reddit.com/r/Kotlin/comments/iot8oo/a_cake_for_kotlin_exploring_frameworkless/)
+- url: https://knowitlabs.no/a-cake-for-kotlin-exploring-framework-less-dependency-injection-for-kotlin-3f93b076aa8c
 ---
 
-## [2][I get empty Aggregated Heart Rate Data from Google Fitness Api.](https://www.reddit.com/r/Kotlin/comments/io7fw2/i_get_empty_aggregated_heart_rate_data_from/)
+## [2][http4k blog: A retrospective on http4k v3](https://www.reddit.com/r/Kotlin/comments/iobqsq/http4k_blog_a_retrospective_on_http4k_v3/)
+- url: https://www.http4k.org/blog/retrospective_v3/
+---
+
+## [3][How to create a List of Strings out of a List&lt;CharArray&gt;?](https://www.reddit.com/r/Kotlin/comments/iogw7i/how_to_create_a_list_of_strings_out_of_a/)
+- url: https://www.reddit.com/r/Kotlin/comments/iogw7i/how_to_create_a_list_of_strings_out_of_a/
+---
+Is it possible to create a list of strings given a list of CharArray, in which each string is formed  by the elements that occupy the index i in each CharArray in the list? Like this:
+List&lt;CharArray&gt; = {[A,B,C],[D,E,F]} then the resulting List&lt;String&gt; = {“AD”, “BE”, “CF”}. If it is possible to do this using as many collections functions as possible. I wish to understand them as much as I can, here is where Kotlin shines (besides its concise and pretty syntax)
+## [4][Is there an unsigned byte literal?](https://www.reddit.com/r/Kotlin/comments/iodvoe/is_there_an_unsigned_byte_literal/)
+- url: https://www.reddit.com/r/Kotlin/comments/iodvoe/is_there_an_unsigned_byte_literal/
+---
+I have a function that returns a `UByte`. I cannot use an equality operator because I do not know how to create a `UByte` literal:
+
+```kotlin
+fun foo(): UByte = 0u
+
+fun bar(): Boolean = foo() == 0u
+```
+(This reports that the `==` operator cannot compare a `UByte` and a `UInt`)
+
+My best workaround is
+
+```kotlin
+fun foo(): UByte = 0u
+
+fun bar(): Boolean = foo() == run {
+    val x: UByte = 0u
+    x
+}
+```
+
+but this looks odd.
+
+With `(0u as UByte)` IDEA reports that the cast will never succeed.
+
+If there isn't a UByte literal, is there a cleaner way to do this?
+## [5][Hibernate cascading with no cascade types set (hibernate+kotlin)](https://www.reddit.com/r/Kotlin/comments/io9sxn/hibernate_cascading_with_no_cascade_types_set/)
+- url: https://www.reddit.com/r/Kotlin/comments/io9sxn/hibernate_cascading_with_no_cascade_types_set/
+---
+Hey guys, I'm having an issue where hibernate is cascading the `merge` operation to child entities when I don't want it to. I have my entities pasted at the bottom of this post. 
+
+I'm trying to merge the `Munch` entity without merging any `Swipes` since they're handled in a different part of the application. My understanding is that hibernate by default should `cascade` none of the DB operations for a `@OneToMany` collection or a `@ManyToOne` object unless `CascadeTypes` are explicitly specified. 
+
+
+Given the entities at the bottom of the post, when I add a `Swipe` to `munch.swipes` and run the following code, the munch is updated if any of its fields have changed and the added swipe is merged into the db:
+```
+    fun mergeMunch(
+        munch: Munch
+    ) = databaseExecutor.executeAndRollbackOnFailure { entityManager -&gt;
+        entityManager.merge(munch)
+        entityManager.transaction.commit()
+    }
+```
+
+If anyone could shed some light on either what I'm misunderstanding or misconfiguring it would be much appreciated. 
+
+
+The `executeAndRollbackOnFailure()` function just in case its useful:
+```
+    fun &lt;T&gt; executeAndRollbackOnFailure(
+        task: (EntityManager) -&gt; T
+    ): T {
+        val em = emf.createEntityManager()
+        return try {
+            em.transaction.begin()
+            task.invoke(em)
+        } catch (e: Exception) {
+            em.transaction.rollback()
+            throw e
+        } finally {
+            em.close()
+        }
+    }
+```
+
+Here are my entities:
+
+`Munch`
+```
+
+@Entity
+data class Munch(
+    @Column
+    val name: String,
+    @OneToMany(
+        fetch = FetchType.LAZY,
+        mappedBy = "munch",
+    )
+    val swipes: MutableList&lt;Swipe&gt; = mutableListOf(),
+) {
+    @Id
+    @GenericGenerator(name = "generator", strategy = "uuid")
+    @GeneratedValue(generator = "generator")
+    lateinit var munchId: String
+
+    fun addSwipe(swipe: Swipe) {
+        swipes.add(swipe)
+        swipe.munch = this
+    }
+}
+```
+
+`Swipe`
+
+```
+@Entity
+data class Swipe(
+    @EmbeddedId
+    val swipeIdKey: SwipeIdKey,
+    @Column(nullable = true)
+    val liked: Boolean,
+) : Serializable {
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "munchId")
+    @MapsId("munchId")
+    lateinit var munch: Munch
+
+    @Transient
+    var updated = false
+```
+
+`SwipeIdKey`
+
+```
+@Embeddable
+class SwipeIdKey : Serializable {
+
+    @Column(nullable = false)
+    lateinit var restaurantId: String
+
+    @Column(nullable = true)
+    lateinit var userId: String
+
+    @Column(nullable = true)
+    var munchId: String? = null
+}
+```
+## [6][Best Programming Languages for Web Development](https://www.reddit.com/r/Kotlin/comments/ioppbr/best_programming_languages_for_web_development/)
+- url: https://tekkiwebsolutions.com/blog/best-programming-languages-for-web-development/
+---
+
+## [7][Where to publish packages?](https://www.reddit.com/r/Kotlin/comments/ioiccq/where_to_publish_packages/)
+- url: https://www.reddit.com/r/Kotlin/comments/ioiccq/where_to_publish_packages/
+---
+Jcenter? Maven central? Someplace else?
+
+With Python/.NET - there's one obvious place to publish. What's the recommendation for JVM land?
+## [8][Setting and getting an explanation](https://www.reddit.com/r/Kotlin/comments/iohzmx/setting_and_getting_an_explanation/)
+- url: https://www.reddit.com/r/Kotlin/comments/iohzmx/setting_and_getting_an_explanation/
+---
+Hey guys,
+
+I recently started to learn Kotlin, and I'm having some troubles understanding the usage and the meaning of get and set methods in classes creation. I do not have any Java background (this is killing me, tbh) and I recently found them while starting to learn OOP and classes management. 
+
+The online class I'm following is trying to explain me the importance of get and set, especially while checking for correct parameter inputs in classes but I can't seem to get the point.
+
+Why using set and get methods if I can check for a parameter value directly inside the init method? Is there something I'm missing? 
+
+I also looked on the documentation about them, but it shows how they works, not for what or when they are used.
+
+Can someone better explain to me the meaning and the usage of these two methods? A brief explanations would be great if it is a huge thematic to talk about.
+
+Thank you a lot! :D
+## [9][Which "createOrAdd" style would you prefer? Do you know a better one?](https://www.reddit.com/r/Kotlin/comments/ioffd3/which_createoradd_style_would_you_prefer_do_you/)
+- url: https://www.reddit.com/r/Kotlin/comments/ioffd3/which_createoradd_style_would_you_prefer_do_you/
+---
+Hey fellow Kotliners!
+
+I'd like to hear out your opinions. I'm basically implementing a good ol' add peer to room logic. If the room doesn't exist create it on the fly, otherwise just add it to the room.
+
+Which ones seems more readable to you? Which is the "more kotlin" way? Is there a better one? I'm using Spring Data JPA btw. Thanks in advance!
+
+&amp;#x200B;
+
+    roomRepository.findByIdOrNull(roomId)?.apply {
+        addPeerToExistingRoom(this, peerId)
+    } ?: addPeerToNewRoom(roomId, peerId)
+
+&amp;#x200B;
+
+    val room: Room? = roomRepository.findByIdOrNull(roomId)
+    val responseType = if (room == null) {
+        addPeerToNewRoom(roomId, peerId)
+    } else {
+        addPeerToExistingRoom(room, peerId)
+    }
+## [10][I get empty Aggregated Heart Rate Data from Google Fitness Api.](https://www.reddit.com/r/Kotlin/comments/io7fw2/i_get_empty_aggregated_heart_rate_data_from/)
 - url: https://www.reddit.com/r/Kotlin/comments/io7fw2/i_get_empty_aggregated_heart_rate_data_from/
 ---
 Hey guys, I am writing my thesis and I have this task to get aggregated Heart Rate data from my Google Fit Account and print them. My code works if I want to print heart rate data from an hour during the day. But I cannot for the love of god print the values of the aggregated heart rate for each day of the week. I am a novice as far as the Google Fit Api is concerned so bare with me. I will post my builder and data dumper. If you need any more code lmk.
@@ -64,57 +251,3 @@ Hey guys, I am writing my thesis and I have this task to get aggregated Heart Ra
     // [END parse_dataset]
 
 In the interesting part section, I can log the Min, Max, Average sections but I fail to get the values from those fields. Any help would be greatly appreciated.
-## [3][Because there is no Multiplatform Dependency Injection library, i've written a dependency injection library that can be used in Kotlin Native/JS/JVM](https://www.reddit.com/r/Kotlin/comments/inon8t/because_there_is_no_multiplatform_dependency/)
-- url: https://www.reddit.com/r/Kotlin/comments/inon8t/because_there_is_no_multiplatform_dependency/
----
-[https://github.com/corbella83/PopKorn](https://github.com/corbella83/PopKorn)
-## [4][Is Kotlin good for games?](https://www.reddit.com/r/Kotlin/comments/injh8b/is_kotlin_good_for_games/)
-- url: https://www.reddit.com/r/Kotlin/comments/injh8b/is_kotlin_good_for_games/
----
-Hi
-
-I've had a casual interest in game making my whole life and I want to try building mobile games. I don't have much experience in programming, just a little bit of python from 2 years back and some basic BATCH from a few years back.
-
-Is Kotlin powerful enough to build small arcady games with?
-## [5][What Are the Differences Between Kotlin &amp; Flutter?](https://www.reddit.com/r/Kotlin/comments/io49l4/what_are_the_differences_between_kotlin_flutter/)
-- url: https://technostacks.com/blog/kotlin-vs-flutter
----
-
-## [6][Kotlin vs Java: For Android Apps and Beyond in 2021...Any Views Guys?](https://www.reddit.com/r/Kotlin/comments/insuoq/kotlin_vs_java_for_android_apps_and_beyond_in/)
-- url: https://eduwyre.com/article/kotlin-vs-java-selecting-the-better-one
----
-
-## [7][What this syntax named in kotlin?](https://www.reddit.com/r/Kotlin/comments/inmwg1/what_this_syntax_named_in_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/inmwg1/what_this_syntax_named_in_kotlin/
----
-foo { .... }
-## [8][Learning kotlin server side](https://www.reddit.com/r/Kotlin/comments/inh1eh/learning_kotlin_server_side/)
-- url: https://www.reddit.com/r/Kotlin/comments/inh1eh/learning_kotlin_server_side/
----
-Hi everyone,
-
-I've had an ambition to learn to make apps. However with covid and everything the android dev market here in the Netherlands is saturated. So I thought I'd learn to code server side in kotlin since I've spent 100 hours in android kotlin tutorials. When the Android market grows again I'll at least have some experience with the language.
-
-I don't know where to start though. Anyone have any ideas for a beginning developer?
-
-Edit: wow, didn't expect this many comments. Thanks everyone!
-## [9][I should have known better](https://www.reddit.com/r/Kotlin/comments/ingqgc/i_should_have_known_better/)
-- url: https://www.reddit.com/r/Kotlin/comments/ingqgc/i_should_have_known_better/
----
-What am I missing that would make my life easier?
-
-So, I write C++ and occasionally some Java (a desktop Swing application) for a living. Been thinking about trying out Kotlin for a while, finally found a reason: Compile &amp; patch [https://github.com/manuelsc/HDDFs-MPG-Dumper](https://github.com/manuelsc/HDDFs-MPG-Dumper)
-
-I got to say, Kotlin kicked my ass today. It wasn't even the language that did it for me. It's Maven and the build tools. The IDEs did not help.
-
-So I tried Eclipse, loaded in the Kotlin plugin, made a Kotlin project, set it as a Maven thingy and BAM, Kotlin dependencies disappeared. WTF. Mind you I've never used Maven (I'm quite happy with Ant, and I loath Make, MsBuild is pretty bad). Googled for help, found a terrible tutorial. Eclipse will crap out Ant scripts on demand, it should be able to do the same for Maven. I decided that maybe Eclipse's shitty Kotlin-Maven support was a sign I should try something else. 
-
-So I looked at the .gitignore file, it mentioned IDEA project files, so I'm like "welp it's about time I tried out Intellij again" I've used Eclipse for all of my Java development (it's the only thing Eclipse is good at). The nice thing about Eclipse is you can mostly ignore dependency problem, just put the jars in a folder and pull them into the project dependencies. What you see is what you get. Unless I completely missed it Intellij, completely lacks anything remotely useful to help new users out with Maven. I've been thrown into the deep end of Maven. Finally dropped the dependencies in and... The Maven Central site Intellij tried to pulled the dependencies from didn't have it. I couldn't even figure out what to google for that one.
-
-So I went back to Eclipse, made a new project, not a Maven Project, and downloaded the jars from Maven Central, added them as dependencies to the Java project, Eclipse was happy. No errors, no unhappy squiggles. And then I tried to launch it. org.jetbrains.kotlin.ui.console is like "ERROR: Unresolved reference: java (3, 8)" along with pages more of errors like it can't find jack shit. Regular console is like "Error: Could not find or load main class MainKt"
-
-Anyway, suggestions?
-## [10][Where to ACTUALLY learn kotlin?](https://www.reddit.com/r/Kotlin/comments/innjib/where_to_actually_learn_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/innjib/where_to_actually_learn_kotlin/
----
-Hey i wanna learn kotlin i tried udemy but non of the courses are good enough like they don’t actually teach you why they use this or that plus i want a good course that the lecturer’s first language is English! Any help ?

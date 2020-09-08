@@ -85,61 +85,94 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][reactjs-popup v2 is Here 🎉🎉: Modals, Tooltips and Menus - All in one (3kb)](https://www.reddit.com/r/reactjs/comments/io4995/reactjspopup_v2_is_here_modals_tooltips_and_menus/)
+## [3][Learn React Native with me 😀](https://www.reddit.com/r/reactjs/comments/ioogkh/learn_react_native_with_me/)
+- url: https://www.reddit.com/r/reactjs/comments/ioogkh/learn_react_native_with_me/
+---
+Hello there 👋🏾
+
+I've been writing react for a little over a year, but have also kept my eyes on mobile development. I recently decided to explore cross-platform mobile development with react native.
+
+As a RN beginner, I'm trying to get into the react-native community and make a few friends. I'm on twitter as [@vick\_onrails](https://twitter.com/vick_OnRails). I'll be majorly twitting about my [30 days of react-native](https://github.com/vickOnRails/react-native-30/) exercise
+
+If you have experience with RN, I'd love to follow and get to know you on Twitter.
+
+Thanks 😊
+## [4][Making Draggable Components in React ✋](https://www.reddit.com/r/reactjs/comments/iop6zv/making_draggable_components_in_react/)
+- url: https://lo-victoria.com/making-draggable-components-in-react
+---
+
+## [5][reactjs-popup v2 is Here 🎉🎉: Modals, Tooltips and Menus - All in one (3kb)](https://www.reddit.com/r/reactjs/comments/io4995/reactjspopup_v2_is_here_modals_tooltips_and_menus/)
 - url: https://v.redd.it/7qzgkre0zol51
 ---
 
-## [4][I coded a Multiplayer Chess Game using React](https://www.reddit.com/r/reactjs/comments/inou6r/i_coded_a_multiplayer_chess_game_using_react/)
-- url: https://www.youtube.com/watch?v=QwUZxCBtfLw
+## [6]["Flatten The Curve" Pandemic simulator...built entirely in React!](https://www.reddit.com/r/reactjs/comments/iokz9m/flatten_the_curve_pandemic_simulatorbuilt/)
+- url: https://www.reddit.com/r/reactjs/comments/iokz9m/flatten_the_curve_pandemic_simulatorbuilt/
+---
+Here's an early version of my simulator: [https://flattenthecurve.zaklaughton.dev](https://flattenthecurve.zaklaughton.dev)
+
+I wanted to get a better idea of how pandemic measures such as mask usage and social distancing can help the effects of a pandemic. This is an early version of a simulator I built in React to help visualize it!
+
+People who are **socially distanced** have a moderately lower chance of movement, transmission, and infection.
+
+People who are **wearing masks** have a slightly lower chance of getting infected, and a significantly lower chance of transmitting infections to others.
+
+Visit the site, hit the **PLAY** button, adjust the numbers, and let me know what you think!
+## [7][Correctly Use Javascript’s Imports To Improve Bundle Size](https://www.reddit.com/r/reactjs/comments/iop3zw/correctly_use_javascripts_imports_to_improve/)
+- url: https://www.reddit.com/r/reactjs/comments/iop3zw/correctly_use_javascripts_imports_to_improve/
+---
+Hi!  😄   
+I wrote an article about how you should **Correctly import your packages into your project to improve bundle size.**  
+[https://iryl.info/2020/07/28/correctly-use-javascripts-imports-to-improve-bundle-size/](https://iryl.info/2020/07/28/correctly-use-javascripts-imports-to-improve-bundle-size/)  
+I'd appreciate any feedback, and how can the article be improved further.
+## [8][Kea 2.2 with TypeScript support (React State Management)](https://www.reddit.com/r/reactjs/comments/iot7yw/kea_22_with_typescript_support_react_state/)
+- url: https://www.reddit.com/r/reactjs/comments/iot7yw/kea_22_with_typescript_support_react_state/
+---
+They said it couldn't be done, but the newly released version 2.2 of Kea now comes with native support for TypeScript!
+
+Because logic in Kea is written in a very funky way, I had to build a clever workaround to get this support. Read on for more details!
+
+Blog: [https://kea.js.org/blog/kea-2.2](https://kea.js.org/blog/kea-2.2)
+
+Guide: [https://kea.js.org/docs/guide/typescript](https://kea.js.org/docs/guide/typescript)
+## [9][Heroku alternatives for a node (express) and react site?](https://www.reddit.com/r/reactjs/comments/ioswvh/heroku_alternatives_for_a_node_express_and_react/)
+- url: https://www.reddit.com/r/reactjs/comments/ioswvh/heroku_alternatives_for_a_node_express_and_react/
+---
+I already prefer to host my Postgres db on AWS, but I'm really trying to save a bit on the hosting of the site itself. Heroku was okay, but I always had issues, had to restart the server, etc. which I just can't have for this site.
+
+I'd love to find something else that's $10-20/mo to host both my node server and my React app. Unless you guys think they should be on separate services...I thought I always read it was faster to keep them together.
+
+I have a little experience with Digital Ocean with a Django site I did a while back, but I'm not super savvy when it comes to that stuff. If you guys say it's the best way to go though, I'll figure it out.
+
+Any advice would be great. Just looking for something reliable, and bonus points if it's pretty easy to deploy/update.
+
+Thanks
+## [10][Is React REALLY more difficult to learn than Vue?](https://www.reddit.com/r/reactjs/comments/iosns1/is_react_really_more_difficult_to_learn_than_vue/)
+- url: https://www.reddit.com/r/reactjs/comments/iosns1/is_react_really_more_difficult_to_learn_than_vue/
+---
+Long story short, I’ve been dabbling with both Vue and React to see what resonates with me. When I started I thought Vue would be the answer, as I always hear how it is easier to learn than React. 
+
+I haven’t found that to be the case though. With React, I already know Javascript, and that’s all I’m writing. Only different is dealing with state. With Vue, I need to learn all the little Vue specific templating. All the v-for, v-bind, etc is just something else that I need to learn on top of everything else. 
+
+Anyone else had the same experience? For me, I’m finding React simpler to wrap my head around than Vue.
+## [11][CRUD Operations in React, Axios, and Firebase | React Tutorial for Beginners](https://www.reddit.com/r/reactjs/comments/iosfij/crud_operations_in_react_axios_and_firebase_react/)
+- url: https://youtu.be/qOsrF_ap0JU
 ---
 
-## [5][A Simple Timeline component for React](https://www.reddit.com/r/reactjs/comments/io58vm/a_simple_timeline_component_for_react/)
-- url: https://www.reddit.com/r/reactjs/comments/io58vm/a_simple_timeline_component_for_react/
+## [12][I built a Netflix Clone! (clones clones everywhere)](https://www.reddit.com/r/reactjs/comments/io9ehm/i_built_a_netflix_clone_clones_clones_everywhere/)
+- url: https://www.reddit.com/r/reactjs/comments/io9ehm/i_built_a_netflix_clone_clones_clones_everywhere/
 ---
-I made a simple timeline component in react.
+Hello devs of  r/reactjs!
 
-feedbacks are welcome, will help me to make it better.
+I built a frontend Netflix clone using React and Redux to learn hooks in a practical manner. As this has been my first real project using React, I would really love it if you could take a look at the website, and, more importantly, the code. Any feedback at all would be a godsend. 
 
-[https://github.com/prabhuignoto/react-chrono](https://github.com/prabhuignoto/react-chrono)
-
-demo --&gt;  [https://react-chrono.vercel.app/](https://react-chrono.vercel.app/)
-
-* **Modes** \- Layout the timeline either Vertically or Horizontally
-* **Tree** \- In Tree mode the timeline cards are alternated between left and right.
-* **Slideshow** \- Play the timeline automatically.
-* **Keyboard Support** \- The timeline can be navigated using keyboard.
-* **Custom theme** \- Customize the colors.
-## [6][I made an old-school RPG combat engine inspired off of and based on "For the King"](https://www.reddit.com/r/reactjs/comments/io1o7h/i_made_an_oldschool_rpg_combat_engine_inspired/)
-- url: https://mpm1900.github.io/JSFTK_combat/
----
-
-## [7][The React Cheatsheet for 2020 📄 (+ real-world examples). Well done and succinct.](https://www.reddit.com/r/reactjs/comments/intexa/the_react_cheatsheet_for_2020_realworld_examples/)
-- url: https://www.freecodecamp.org/news/the-react-cheatsheet-for-2020/
----
-
-## [8][Let's Build A React Progressive Web App (ft. T-API)](https://www.reddit.com/r/reactjs/comments/io2fic/lets_build_a_react_progressive_web_app_ft_tapi/)
-- url: https://lo-victoria.com/lets-build-a-react-progressive-web-app
----
-
-## [9][react-use-zoom - Scaling images in a web browser, with rich functionality](https://www.reddit.com/r/reactjs/comments/io633j/reactusezoom_scaling_images_in_a_web_browser_with/)
-- url: https://www.reddit.com/r/reactjs/comments/io633j/reactusezoom_scaling_images_in_a_web_browser_with/
----
 &amp;#x200B;
 
-https://reddit.com/link/io633j/video/745eychsrpl51/player
-## [10][How to create a default admin user in Next Js?](https://www.reddit.com/r/reactjs/comments/io5rn3/how_to_create_a_default_admin_user_in_next_js/)
-- url: https://www.reddit.com/r/reactjs/comments/io5rn3/how_to_create_a_default_admin_user_in_next_js/
----
-I'm creating a website with a static page and a dashboard for a relative's work, using NextJs. For the dashboard I obviously need authentication but I'm having a small problem.
+[Demo Video](https://reddit.com/link/io9ehm/video/scgtxz6lsql51/player)
 
-How do I create a default user, I can manually create the user on the database but I do need to encrypt the password. I could just run a script once to add it but I did some search and I saw someone saving default users on a JSON file and then use that to populate the database. The part I don't understand is where to run that file, in an express app I could just require the file in this case I don't know. I'm thinking maybe I could find a way to do a postbuild hook or something (using Vercel for deployment).
+&amp;#x200B;
 
-What do you guys think it's the best way to handle this ?
-## [11][Typing React Context to avoid an undefined default value](https://www.reddit.com/r/reactjs/comments/io51kn/typing_react_context_to_avoid_an_undefined/)
-- url: https://medium.com/@rivoltafilippo/typing-react-context-to-avoid-an-undefined-default-value-2c7c5a7d5947
----
+Thank you for your time, and happy coding! 
 
-## [12][comparison bw React and ejs](https://www.reddit.com/r/reactjs/comments/io4hf6/comparison_bw_react_and_ejs/)
-- url: https://www.reddit.com/r/reactjs/comments/io4hf6/comparison_bw_react_and_ejs/
----
-Need a brief comparison bw both of these ,i'm a beginner and self tough programmer so i'm totally confused what i have to use sometime i feel that why i can't do  all those thing with ejs that can be done using react
+Code: [https://github.com/Azazel5/NetflixClone](https://github.com/Azazel5/NetflixClone) 
+
+LiveDemo: [https://azazel5.github.io/NetflixClone/](https://azazel5.github.io/NetflixClone/)

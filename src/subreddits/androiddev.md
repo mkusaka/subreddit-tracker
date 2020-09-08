@@ -31,291 +31,87 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Duofolio: An open-source ebook reader that helps you learn new languages](https://www.reddit.com/r/androiddev/comments/inl6xs/duofolio_an_opensource_ebook_reader_that_helps/)
-- url: https://i.redd.it/o8pbutrptil51.png
+## [3][This is how we turn a 5 minutes build down to 15 seconds](https://www.reddit.com/r/androiddev/comments/iolnah/this_is_how_we_turn_a_5_minutes_build_down_to_15/)
+- url: https://proandroiddev.com/android-build-and-the-journey-to-the-end-game-55c9766325c5
 ---
 
-## [4][Collaboration in a NASA based stars &amp; planets research project](https://www.reddit.com/r/androiddev/comments/io63xl/collaboration_in_a_nasa_based_stars_planets/)
-- url: https://www.reddit.com/r/androiddev/comments/io63xl/collaboration_in_a_nasa_based_stars_planets/
----
-Hello friends 👋
-
-Recently my friend and I started an open source project: it's a simple app which provides all sort Information about stars and planets. 
-
-Functionality &amp; features?
-- Its simple, the app fetch data from NASA api to get information and load it onto the UI
--  Searchable through keywords and special filters (stars, planets, exoplanets, colours, etc)
--  Graphic view to present comparable actual sizes.
-- Maybe more...
-
-Progress? 
-- The app's successfully been able to use data from the api and having a functional UI. But there are still bugs and problems to solve, features to add.
-
-Requirements for the project?
-- Know how to use flutter and github (mainly flutter, you can learn more about github and git commands as we go)
-- Have basic knowledge about Flutter &amp; state management
-- Active and sociable and friendly 😉 (**The most important**)
-
-Here's the source code for the project, have fun!
-You can PM me if you want, we are trying to establish a group.
-
-[Source Code](https://www.github.com/gumbarros/kepler)
-## [5][calling USSD with text attached on android](https://www.reddit.com/r/androiddev/comments/io56xk/calling_ussd_with_text_attached_on_android/)
-- url: https://www.reddit.com/r/androiddev/comments/io56xk/calling_ussd_with_text_attached_on_android/
----
-I have asked a question in StackOverflow about a month ago but got no answer. I am showing it here if anyone here experienced something similar and found a way around it.
-
-[https://stackoverflow.com/questions/63162166/calling-ussd-with-text-attached-on-android](https://stackoverflow.com/questions/63162166/calling-ussd-with-text-attached-on-android)
-## [6][Getting on the same page with Paging 3](https://www.reddit.com/r/androiddev/comments/io42mt/getting_on_the_same_page_with_paging_3/)
-- url: https://android-developers.googleblog.com/2020/07/getting-on-same-page-with-paging-3.html
+## [4][DataStore - Jetpack alternative for SharedPreference](https://www.reddit.com/r/androiddev/comments/ioq7ox/datastore_jetpack_alternative_for_sharedpreference/)
+- url: https://howtodoandroid.com/datastore-android-jetpack/
 ---
 
-## [7][I have been working on this mobile app user onboarding guide...will be happy if you can share your views and maybe some of fav user onboarding examples.](https://www.reddit.com/r/androiddev/comments/io4xzx/i_have_been_working_on_this_mobile_app_user/)
-- url: https://appedus.com/guide-to-app-onboarding-mobile-app-onboarding/
+## [5][Designing complex UI using Android ConstraintLayout](https://www.reddit.com/r/androiddev/comments/iosv86/designing_complex_ui_using_android/)
+- url: https://blog.codemagic.io/designing-complex-ui-using-android-constraintlayout/
 ---
 
-## [8][OTT App Development: Cost, Features, Technology and More](https://www.reddit.com/r/androiddev/comments/io79dp/ott_app_development_cost_features_technology_and/)
-- url: https://blog.svapinfotech.com/ott-app-development/
+## [6][Basic Dependency Injection with Hilt](https://www.reddit.com/r/androiddev/comments/io8rop/basic_dependency_injection_with_hilt/)
+- url: https://codingtroops.com/android/basic-dependency-injection-with-hilt/
 ---
 
-## [9][Where can I find gigs as an independent developer, I have not graduated yet but I feel confident I can build quality apps](https://www.reddit.com/r/androiddev/comments/inuryb/where_can_i_find_gigs_as_an_independent_developer/)
-- url: https://www.reddit.com/r/androiddev/comments/inuryb/where_can_i_find_gigs_as_an_independent_developer/
+## [7][How to save:state of an updateable listview in Android:Studio?](https://www.reddit.com/r/androiddev/comments/iot6g9/how_to_savestate_of_an_updateable_listview_in/)
+- url: https://www.reddit.com/r/androiddev/comments/iot6g9/how_to_savestate_of_an_updateable_listview_in/
 ---
-I work at a restaurant right now and hours have been cut significantly I want to instead try to find a way to profit from my coding skills, where is a good way to find gigs or people looking for développers?
-## [10][Discussing Best Practices/Design Patterns](https://www.reddit.com/r/androiddev/comments/inytcv/discussing_best_practicesdesign_patterns/)
-- url: https://www.reddit.com/r/androiddev/comments/inytcv/discussing_best_practicesdesign_patterns/
+In android-studio, I used an edit-text to add an item to a listview after a button is clicked.
+
+Is there a way to save the state of the listview-items even after the app is closed?
+
+I want the listview-items not to be erased, and stay as it is even after the app has restarted.
+## [8][Licenses Library - Provides license texts of common licenses for easy use in your project](https://www.reddit.com/r/androiddev/comments/iodhou/licenses_library_provides_license_texts_of_common/)
+- url: https://www.reddit.com/r/androiddev/comments/iodhou/licenses_library_provides_license_texts_of_common/
 ---
- 
+Hi,
 
-In programming, the ways to achieve a certain result can be done by following many different ways. Doing it by using the best practices will be the most efficient though.
+I finished my second open source Android library (furthermore I'm still a student with not that much time, so please be considerate):
 
-I am a Kotlin/Java developer who likes to have a conversation when it comes to thinking about design patterns for specific problems. If you would like to have a conversation with me regarding these topics you can message me your discord nick.
-## [11][Don't Reinvent the Wheel, Delegate It!](https://www.reddit.com/r/androiddev/comments/io4wz1/dont_reinvent_the_wheel_delegate_it/)
-- url: https://proandroiddev.com/dont-reinvent-the-wheel-delegate-it-eac132f2aa64?source=friends_link&amp;sk=9b51a98f1db36f3954353727fa5f7c31
----
+[https://github.com/cyb3rko/android-licenses-library](https://github.com/cyb3rko/android-licenses-library)
 
-## [12][Can't get ListView to show up](https://www.reddit.com/r/androiddev/comments/io42cm/cant_get_listview_to_show_up/)
-- url: https://www.reddit.com/r/androiddev/comments/io42cm/cant_get_listview_to_show_up/
----
- The following project was copied verbatim from an online lesson. It is supposed to display a ListView but nothing shows up. I am brand new to Android Studio and this is only my second project in it. There are 5 files and I will display the contents of each of them below. I just need another pair of eyes or two to find the problem, because I'm "bug blind". Any help will be greatly appreciated. 
+You can easily get the most common licenses in formatted and plain text form as Spanned objects.
 
-Activity\_main.xml
-
-&lt;?xml version="1.0" encoding="utf-8"?&gt;  
-&lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"  
- xmlns:app="http://schemas.android.com/apk/res-auto"  
- xmlns:tools="http://schemas.android.com/tools"  
- android:layout\_width="match\_parent"  
- android:layout\_height="match\_parent"  
- tools:context=".MainActivity"&gt;  
-&lt;ListView  
- android:id="@+id/listView"  
- android:layout\_width="0dp"  
- android:layout\_height="0dp"  
- android:layout\_marginStart="16dp"  
- android:layout\_marginTop="16dp"  
- android:layout\_marginEnd="16dp"  
- android:layout\_marginBottom="16dp"  
- android:visibility="visible"  
- app:layout\_constraintBottom\_toBottomOf="parent"  
- app:layout\_constraintEnd\_toEndOf="parent"  
- app:layout\_constraintStart\_toStartOf="parent"  
- app:layout\_constraintTop\_toTopOf="parent" /&gt;  
-&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;
+You can get a license text by just calling  `AndroidLicenses.get(AndroidLicenses.CC_BY_SA_4_0`. For more on the usage you can findd in my repo README.
 
 &amp;#x200B;
 
-Main [Activity.java](https://Activity.java)
+I hope my library works as intended and it helps somebody in making their apps.
 
-package com.example.tadhg.uiuxadapterpractical;  
-import androidx.appcompat.app.AppCompatActivity;  
-import android.content.Context;  
-import android.content.res.TypedArray;  
-import android.os.Bundle;  
-import android.widget.ListView;  
-public class MainActivity extends AppCompatActivity {  
+I would really appreciate feedback!
 
+Some example photos ( Only the shown text belongs to the library, the ui and the app belongs to the sample app):
 
-   ListView lv;  
- Context context;  
- TypedArray images;  
- String \[\] titleList;  
- String \[\] descList;  
- u/Override  
- protected void onCreate(Bundle savedInstanceState) {  
- super.onCreate(savedInstanceState);  
- setContentView(R.layout.*activity\_main*);  
- context = this;  
- titleList = getResources().getStringArray(R.array.*Languages*);  
- descList = getResources().getStringArray(R.array.*LanguageDesc*);  
- images = getResources().obtainTypedArray(R.array.*LanguageImg*);  
- lv = (ListView) findViewById(R.id.*listView*);  
- }  
-}
+[Formatted Spanned](https://preview.redd.it/hay944suurl51.png?width=320&amp;format=png&amp;auto=webp&amp;s=257caaf79112a794515c992544a29e78716baedb)
 
-[OurAdapter.java](https://OurAdapter.java)
+[Plain Spanned](https://preview.redd.it/va39jngvurl51.png?width=320&amp;format=png&amp;auto=webp&amp;s=7055c505347987441f2cedfee608a05203b9c03e)
 
-package com.example.tadhg.uiuxadapterpractical;  
-import android.content.Context;  
-import android.content.res.TypedArray;  
-import android.view.LayoutInflater;  
-import android.view.View;  
-import android.view.ViewGroup;  
-import android.widget.BaseAdapter;  
-import android.widget.ImageView;  
-import android.widget.TextView;  
-public class OurAdapter extends BaseAdapter {  
+Thanks a lot!
+## [9][What to expect when applying for an exception for SMS permissions on play store?](https://www.reddit.com/r/androiddev/comments/iogcvg/what_to_expect_when_applying_for_an_exception_for/)
+- url: https://www.reddit.com/r/androiddev/comments/iogcvg/what_to_expect_when_applying_for_an_exception_for/
+---
+I am building a finance management app, and want to include automated tracking via SMS. The app is already published on play store, and I'm planning to add the new SMS permissions in the next release and had a couple of questions.
 
+1. How long does the review for permissions take?
 
-private String \[\] titles;  
-private String \[\] desc;  
-private TypedArray imageID;  
-private Context context;  
-private static LayoutInflater *layoutInflater*;  
- //constructor  
- OurAdapter(Context adapterContext, String\[\] titleList, String\[\] descList, TypedArray images){  
- titles = titleList;  
- desc = descList;  
- imageID = images;  
- context = adapterContext;  
- *layoutInflater* = (LayoutInflater) context.getSystemService(Context.*LAYOUT\_INFLATER\_SERVICE*);  
- }  
+2. What should I expect from the review?
 
+3. Do I absolutely need to include a video for the feature? The issue is I'd compromising my PII while demoing the feature on a video.
 
-u/Override  
- public int getCount() {  
- return titles.length;  
- }  
+4. Any other things to keep in mind for the same? 
 
+Will really appreciate your help! Thanks in advance!
+## [10][How did Instagram do this?](https://www.reddit.com/r/androiddev/comments/iooiz0/how_did_instagram_do_this/)
+- url: https://www.reddit.com/r/androiddev/comments/iooiz0/how_did_instagram_do_this/
+---
+I have Rooted phone with Xposed installed. I have xPrivacyLua which controls what fake information will be fed to apps. I have Facebook installed few days back. Today, I installed Instagram. In my xPrivacyLua setting, I only gave access to 'clipboard' for Insta. However, as soon as I opened the instagram, it gave me option to login using my Facebook and also showed names of few of my friends using Instagram.
 
-u/Override  
- public Object getItem(int i) {  
- return i;  
- }  
+I know Instagram will obviously have access to my Facebook data. However, how did Instagram know that I have Facebook with my login on my mobile? xPrivacyLua works flawlessly for most of other apps. When I block access to apps, it will block it. Then how did this bypassed it?
 
+Technically, only other way I can think of is to have some special `Intent` which Facebook app can catch and then respond to it. Anyone know what is going on?
+## [11][I recieve this weird notification everyday, i m worried a bit. Can someone help me what is this and why it appers.](https://www.reddit.com/r/androiddev/comments/iorhuf/i_recieve_this_weird_notification_everyday_i_m/)
+- url: https://i.imgur.com/eT3ZvFG.jpg
+---
 
-u/Override  
- public long getItemId(int i) {  
- return i;  
- }  
+## [12][Learned today Android's ListAdapter is not your friend](https://www.reddit.com/r/androiddev/comments/iomwob/learned_today_androids_listadapter_is_not_your/)
+- url: https://www.reddit.com/r/androiddev/comments/iomwob/learned_today_androids_listadapter_is_not_your/
+---
+&gt;When submitList is called the first time, the adapter  renders all the items, but when submitList is called again with updated  object properties it does not re-render the view which has changed.
 
+Seems it will only respect the change when you add or remove a new element from the array. Check out the Stackoverflow post for more info. Hopefully you won't bang your head against the wall like I did
 
-private class ViewHolder {  
-TextView tv1, tv2;  
- ImageView img;  
- }  
-
-
-u/Override  
- public View getView(int position, View view, ViewGroup viewGroup) {  
-ViewHolder viewHolder = new ViewHolder();  
-if (view == null) {  
-view = *layoutInflater*.inflate(R.layout.*list\_layout*, viewGroup, false);  
- viewHolder.tv1 = (TextView)view.findViewById(R.id.*textView7*);  
- viewHolder.tv2 = (TextView)view.findViewById(R.id.*textView8*);  
- viewHolder.img = (ImageView) view.findViewById(R.id.*imageView2*);  
- view.setTag(viewHolder);  
- } else {  
-viewHolder = (ViewHolder) view.getTag();  
- }  
-
-
-viewHolder.tv1.setText(titles\[position\]);  
- viewHolder.tv2.setText(desc\[position\]);  
- viewHolder.img.setImageResource(imageID.getResourceId(position, 0));  
-return view;  
- }  
-}  
-
-
-list\_layout.xml
-
-&lt;?xml version="1.0" encoding="utf-8"?&gt;  
-&lt;androidx.constraintlayout.widget.ConstraintLayout  
- xmlns:android="http://schemas.android.com/apk/res/android"  
- xmlns:app="http://schemas.android.com/apk/res-auto"  
- xmlns:tools="http://schemas.android.com/tools"  
- android:layout\_width="match\_parent"  
- android:layout\_height="match\_parent"&gt;  
-&lt;ImageView  
- android:id="@+id/imageView2"  
- android:layout\_width="wrap\_content"  
- android:layout\_height="wrap\_content"  
- android:layout\_marginStart="16dp"  
- android:layout\_marginTop="8dp"  
- app:layout\_constraintStart\_toStartOf="parent"  
- app:layout\_constraintTop\_toTopOf="parent"  
- app:srcCompat="@drawable/cplus" /&gt;  
-&lt;TextView  
- android:id="@+id/textView7"  
- android:layout\_width="0dp"  
- android:layout\_height="32dp"  
- android:layout\_marginStart="16dp"  
- android:layout\_marginTop="8dp"  
- android:layout\_marginEnd="8dp"  
- android:text="TextView"  
- android:textSize="24sp"  
- app:layout\_constraintEnd\_toEndOf="parent"  
- app:layout\_constraintStart\_toEndOf="@+id/imageView2"  
- app:layout\_constraintTop\_toTopOf="parent" /&gt;  
-&lt;TextView  
- android:id="@+id/textView8"  
- android:layout\_width="0dp"  
- android:layout\_height="24dp"  
- android:layout\_marginStart="16dp"  
- android:layout\_marginTop="8dp"  
- android:layout\_marginEnd="8dp"  
- android:text="TextView"  
- android:textSize="18sp"  
- app:layout\_constraintEnd\_toEndOf="parent"  
- app:layout\_constraintStart\_toEndOf="@+id/imageView2"  
- app:layout\_constraintTop\_toBottomOf="@+id/textView7"  
- tools:text="TextView" /&gt;  
-&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;
-
-&amp;#x200B;
-
-strings.xml
-
-&lt;?xml version="1.0" encoding="utf-8"?&gt;  
-&lt;androidx.constraintlayout.widget.ConstraintLayout  
- xmlns:android="http://schemas.android.com/apk/res/android"  
- xmlns:app="http://schemas.android.com/apk/res-auto"  
- xmlns:tools="http://schemas.android.com/tools"  
- android:layout\_width="match\_parent"  
- android:layout\_height="match\_parent"&gt;  
-&lt;ImageView  
- android:id="@+id/imageView2"  
- android:layout\_width="wrap\_content"  
- android:layout\_height="wrap\_content"  
- android:layout\_marginStart="16dp"  
- android:layout\_marginTop="8dp"  
- app:layout\_constraintStart\_toStartOf="parent"  
- app:layout\_constraintTop\_toTopOf="parent"  
- app:srcCompat="@drawable/cplus" /&gt;  
-&lt;TextView  
- android:id="@+id/textView7"  
- android:layout\_width="0dp"  
- android:layout\_height="32dp"  
- android:layout\_marginStart="16dp"  
- android:layout\_marginTop="8dp"  
- android:layout\_marginEnd="8dp"  
- android:text="TextView"  
- android:textSize="24sp"  
- app:layout\_constraintEnd\_toEndOf="parent"  
- app:layout\_constraintStart\_toEndOf="@+id/imageView2"  
- app:layout\_constraintTop\_toTopOf="parent" /&gt;  
-&lt;TextView  
- android:id="@+id/textView8"  
- android:layout\_width="0dp"  
- android:layout\_height="24dp"  
- android:layout\_marginStart="16dp"  
- android:layout\_marginTop="8dp"  
- android:layout\_marginEnd="8dp"  
- android:text="TextView"  
- android:textSize="18sp"  
- app:layout\_constraintEnd\_toEndOf="parent"  
- app:layout\_constraintStart\_toEndOf="@+id/imageView2"  
- app:layout\_constraintTop\_toBottomOf="@+id/textView7"  
- tools:text="TextView" /&gt;  
-&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;
+[https://stackoverflow.com/a/50031492/3316842](https://stackoverflow.com/a/50031492/3316842)

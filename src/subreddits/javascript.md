@@ -85,44 +85,43 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][Typing React Context to avoid an undefined default value](https://www.reddit.com/r/javascript/comments/io52nj/typing_react_context_to_avoid_an_undefined/)
-- url: https://medium.com/@rivoltafilippo/typing-react-context-to-avoid-an-undefined-default-value-2c7c5a7d5947
+## [3][Dynamic task scheduling with NodeJS and MongoDB](https://www.reddit.com/r/javascript/comments/ioopfe/dynamic_task_scheduling_with_nodejs_and_mongodb/)
+- url: https://medium.com/yudiz-solutions/dynamic-task-scheduling-with-nodejs-and-mongodb-43052fdd811f?source=friends_link&amp;sk=cbdd11e0afdac9bfea79bbe9eb41adee
 ---
 
-## [4][The worst captcha ever, Squat captcha!](https://www.reddit.com/r/javascript/comments/invg56/the_worst_captcha_ever_squat_captcha/)
-- url: https://dev.to/vivirenremoto/the-hatest-captcha-ever-squat-captcha-4bei
+## [4][SweetAlert2 - a beautiful, responsive, highly customizable and accessible (WAI-ARIA) replacement for JavaScript's popup boxes (alert, prompt, dialog, toast, side panel, drawer, etc.)](https://www.reddit.com/r/javascript/comments/iorbus/sweetalert2_a_beautiful_responsive_highly/)
+- url: https://sweetalert2.github.io/
 ---
 
-## [5][[AskJS] what are good ways to get commercial experience?](https://www.reddit.com/r/javascript/comments/io4re3/askjs_what_are_good_ways_to_get_commercial/)
-- url: https://www.reddit.com/r/javascript/comments/io4re3/askjs_what_are_good_ways_to_get_commercial/
----
-[AskJS] Hey guys, I'm gonna try to keep this short.
-I have 1 year of experience with HTML CSS and JS and I also know Sass and a little bit of ReactJS(enough to make a full website out of it). Anyway i live in england and i live in a city where there isn't much JS jobs. I want some kind of real life experience, I'm looking for jobs but nobody wants me since i have a light experience, im down to work for the minimum required im down for internships or basically anything that will give me some experience  I guess I'm looking for an advice what should be my next move? How can I get experience when nobody wants someone who is unexperienced? Any websited that couls help me? Thanks in advance. :)
-## [6][A Tiny Newsletter about JavaScript](https://www.reddit.com/r/javascript/comments/io5tu8/a_tiny_newsletter_about_javascript/)
-- url: https://tinyjs.email
+## [5][Ember documentation site scores 100 in lighthouse](https://www.reddit.com/r/javascript/comments/ioqyqo/ember_documentation_site_scores_100_in_lighthouse/)
+- url: https://docfy.dev
 ---
 
-## [7][A short intro into vanilla javascript and jQuery while building a game of CHESS in 10 days](https://www.reddit.com/r/javascript/comments/io3wcr/a_short_intro_into_vanilla_javascript_and_jquery/)
-- url: https://medium.com/@scorbaciufermecat/start-learning-javascript-and-jquery-while-building-a-game-of-chess-9c366bcddf8b
+## [6][Get better at TDD in 20 minutes. A real-world walkthrough of a Node.JS TDD project](https://www.reddit.com/r/javascript/comments/ios5sh/get_better_at_tdd_in_20_minutes_a_realworld/)
+- url: https://medium.com/spotlight-on-javascript/real-world-node-js-tdd-example-4f877a46e1f1
 ---
 
-## [8][The “Container” Pattern for Better State Management in React.](https://www.reddit.com/r/javascript/comments/io1f9r/the_container_pattern_for_better_state_management/)
-- url: https://medium.com/@spencerpauly/the-container-pattern-for-better-state-management-in-react-9351fe4381d1
+## [7][Flexbox spec for Three.js and React, for aligned, responsive WebGL content](https://www.reddit.com/r/javascript/comments/ioax2m/flexbox_spec_for_threejs_and_react_for_aligned/)
+- url: https://github.com/react-spring/react-three-flex
 ---
 
-## [9][Learn the basics of Vanilla JS by building a Snake Game](https://www.reddit.com/r/javascript/comments/iniuit/learn_the_basics_of_vanilla_js_by_building_a/)
-- url: https://dev.to/nitdgplug/learn-javascript-through-a-game-1beh
+## [8][Tests that help you find defects faster](https://www.reddit.com/r/javascript/comments/ioqtcu/tests_that_help_you_find_defects_faster/)
+- url: https://philgiese.com/post/tests-that-help-you-find-defects-faster
 ---
 
-## [10][Prepare for Client Hints, freezing User Agent](https://www.reddit.com/r/javascript/comments/io31f0/prepare_for_client_hints_freezing_user_agent/)
-- url: https://medium.com/naver-fe-platform/prepare-for-client-hints-freezing-user-agent-9c0ea1ddd02c
+## [9][Changelog: swc v1.2.23](https://www.reddit.com/r/javascript/comments/iok5nm/changelog_swc_v1223/)
+- url: https://swc-project.github.io/blog/2020/09/08/swc-1.2.23
 ---
 
-## [11][A simple numeric expression evaluator for javascript](https://www.reddit.com/r/javascript/comments/io6z4j/a_simple_numeric_expression_evaluator_for/)
-- url: https://github.com/ppaska/arithmetic-calculator
+## [10][Typescript generic rest parameters and tuple types in practice](https://www.reddit.com/r/javascript/comments/ioqpay/typescript_generic_rest_parameters_and_tuple/)
+- url: https://medium.com/@coppieters.tim/typescript-generic-rest-parameters-and-tuple-types-in-practice-edc2bb0bdcb9
 ---
 
-## [12][I started a site to learn JavaScript from scratch with tweet-sized lessons. What do you think?](https://www.reddit.com/r/javascript/comments/io3sva/i_started_a_site_to_learn_javascript_from_scratch/)
-- url: http://www.tiljavascript.com
+## [11][Working with JavaScript Media Queries](https://www.reddit.com/r/javascript/comments/iot14y/working_with_javascript_media_queries/)
+- url: https://css-tricks.com/working-with-javascript-media-queries/
+---
+
+## [12][[AskJS] To those who swear against OO programming, give me an example of dependency injection or a pattern that achieves the same goals](https://www.reddit.com/r/javascript/comments/ior3ca/askjs_to_those_who_swear_against_oo_programming/)
+- url: /r/learnjavascript/comments/inah6q/to_those_who_swear_against_oo_programming_give_me/
 ---
 

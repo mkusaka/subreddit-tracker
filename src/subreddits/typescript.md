@@ -22,11 +22,50 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][expressive: a lightweight library for creating express routers using decorators](https://www.reddit.com/r/typescript/comments/inujj0/expressive_a_lightweight_library_for_creating/)
+## [2][Optional types if selection in enum is chosen](https://www.reddit.com/r/typescript/comments/iol6lc/optional_types_if_selection_in_enum_is_chosen/)
+- url: https://www.reddit.com/r/typescript/comments/iol6lc/optional_types_if_selection_in_enum_is_chosen/
+---
+I'm working on an auth service and im quite new to TS. Looking to write a type that will say "if the provider a user chooses to sign in with is 'email' than the 'email' and 'password' params are no longer optional"
+
+An example of what i mean:
+
+`type SocialSignInParams = {provider: 'apple' | 'facebook' | 'google';email?: string;password?: string;};type EmailSignInParams = {provider: 'email';email: string;password: string;};`
+
+`const signIn = async ({ provider, email, password }: SignInParams) =&gt; {if (provider === 'email') {return await signInWithEmail({ email, password });}};`
+
+Thanks!  
+
+
+Edit: Appreciate all the responses.
+## [3][expressive: a lightweight library for creating express routers using decorators](https://www.reddit.com/r/typescript/comments/inujj0/expressive_a_lightweight_library_for_creating/)
 - url: https://github.com/BitMountain/expressive
 ---
 
-## [3][Running your unit tests written in TypeScript faster with zero overhead!](https://www.reddit.com/r/typescript/comments/ingrc2/running_your_unit_tests_written_in_typescript/)
+## [4][How to return proper method's type based on a class constructor argument type](https://www.reddit.com/r/typescript/comments/io38en/how_to_return_proper_methods_type_based_on_a/)
+- url: https://www.reddit.com/r/typescript/comments/io38en/how_to_return_proper_methods_type_based_on_a/
+---
+Hello, i have this class (minimum reproducible case):
+
+    class MyClass {
+      constructor(public bar: string | string[]) {}
+    
+      foo(): string | string[] {
+        if (Array.isArray(this.bar)) {
+          return "example";
+        }
+    
+        return ["more", "example"];
+      }
+    }
+    
+    new MyClass("example").foo(); // `string | string[]` can't we infer the right type based on `bar`?
+
+When called it is of type union. Could it be otherwise? Still learning TS :(
+
+For more info on what it is i'm trying to do: I would like an class that can query a distant api and if the arg `bar` is an array, it will query the api using multiple account and thus returning an array on responses. if `bar` is a string, it returns a single response, not in an array.
+
+Thx people of the internet!
+## [5][Running your unit tests written in TypeScript faster with zero overhead!](https://www.reddit.com/r/typescript/comments/ingrc2/running_your_unit_tests_written_in_typescript/)
 - url: https://www.reddit.com/r/typescript/comments/ingrc2/running_your_unit_tests_written_in_typescript/
 ---
 [swc-node](https://github.com/Brooooooklyn/swc-node) is a TypeScript/JavaScript compiler which is a NodeJS native addon for [swc](https://github.com/swc-project/swc).
@@ -55,7 +94,7 @@ Many projects in [Bytedance](https://bytedance.com/en/) has running with [@swc-n
 https://preview.redd.it/ggdv42g1ugl51.png?width=1778&amp;format=png&amp;auto=webp&amp;s=630ccb99bdd6cb575f2327a9275e3ef97f2a83ca
 
 So try it and enjoy the zero overhead performance improvement!
-## [4][How do I assign a value to an object in a for loop?](https://www.reddit.com/r/typescript/comments/inhw12/how_do_i_assign_a_value_to_an_object_in_a_for_loop/)
+## [6][How do I assign a value to an object in a for loop?](https://www.reddit.com/r/typescript/comments/inhw12/how_do_i_assign_a_value_to_an_object_in_a_for_loop/)
 - url: https://www.reddit.com/r/typescript/comments/inhw12/how_do_i_assign_a_value_to_an_object_in_a_for_loop/
 ---
 Sorry if this is a really basic question. I am relatively new to javascript (and after this typescript).
@@ -115,17 +154,17 @@ I tried this in ngInit, but I am missing something.
     });
 
 Can anyone point me in the right direction?
-## [5][Strict null checks (and function hoisting?) causing issues .](https://www.reddit.com/r/typescript/comments/in31qc/strict_null_checks_and_function_hoisting_causing/)
+## [7][Strict null checks (and function hoisting?) causing issues .](https://www.reddit.com/r/typescript/comments/in31qc/strict_null_checks_and_function_hoisting_causing/)
 - url: https://www.reddit.com/r/typescript/comments/in31qc/strict_null_checks_and_function_hoisting_causing/
 ---
 [Here](https://www.typescriptlang.org/play?#code/GYVwdgxgLglg9mABMOcAUEAWBDATgfgC5EBvRAEwFMAHKTIxMEAWwCNLdEB6AKmblyVEcWvDDYANomp5szKBwDOiHlwC+ASlIAoAJAxgiDDk4Bec4nBVgMMJXJaseRKdJqA3HomUopCjTpENRdEJ1xPfUM0KlpMFwsrShs7B39YkIAGT0Qc7i5+QWFRBElpWWYfJURbGFhJGAAve2rDOkoAT0Q8IUTk+z0DIyh26ko4QxjAgEILACImNg5ZrTpcOAB3RABRXDXcNFnl7NyufIEhEVgSqRlcOUrcZW7QzEoIAGtmlE42mB+R5qDNqdZ7UNYANxgVHIiFYnTalkUHD0EAQil8wCQrjQWlMAD4dLpdJM4gBqRAARiyp3WmE6tWqynRMAkNzgikUMFY3k47EsYGstma+G0uTFeQKF2K4ikzxASPIeg82jUQA) is the playground link .
 
 Why `depth` is still possibly undefined inside `fn` ? and how do I make it not be without adding an unnecessary `if` clause ?
-## [6][How much OOP paradigm is supported by TypeScript, compare to Java and C#?](https://www.reddit.com/r/typescript/comments/in31g0/how_much_oop_paradigm_is_supported_by_typescript/)
+## [8][How much OOP paradigm is supported by TypeScript, compare to Java and C#?](https://www.reddit.com/r/typescript/comments/in31g0/how_much_oop_paradigm_is_supported_by_typescript/)
 - url: https://www.reddit.com/r/typescript/comments/in31g0/how_much_oop_paradigm_is_supported_by_typescript/
 ---
 I'm JavaScript React developer who is migrating to TypeScript. I would like to know that how much OOP paradigm supported by TypeScript compare to Java and C#? Anyone who came from Java or C# background? Can you explain this please?
-## [7][What `{type: T}` does here?](https://www.reddit.com/r/typescript/comments/imwrt7/what_type_t_does_here/)
+## [9][What `{type: T}` does here?](https://www.reddit.com/r/typescript/comments/imwrt7/what_type_t_does_here/)
 - url: https://www.reddit.com/r/typescript/comments/imwrt7/what_type_t_does_here/
 ---
 \`\`\`  
@@ -134,7 +173,7 @@ type LookUp&lt;U, T extends string&gt; = { \[K in T\]: U extends { type: T } ? U
 
 
 I don't understand this helper type at all, because I don't know what {type: T} does here, also, this is not in the docs. So could you please explain this to me, thank you!
-## [8][Why my lexer is reading '=' twice?](https://www.reddit.com/r/typescript/comments/in6cee/why_my_lexer_is_reading_twice/)
+## [10][Why my lexer is reading '=' twice?](https://www.reddit.com/r/typescript/comments/in6cee/why_my_lexer_is_reading_twice/)
 - url: https://www.reddit.com/r/typescript/comments/in6cee/why_my_lexer_is_reading_twice/
 ---
 Github repo: [https://github.com/Mdsp9070/monkeylanguage](https://github.com/Mdsp9070/monkeylanguage)
@@ -227,39 +266,7 @@ And that's my test result:
           at Object.&lt;anonymous&gt; (interpreter/src/lexer/lexer.test.ts:58:15)
 
 Why is '=' being reading twice?
-## [9][Does TypeScript check types at runtime?](https://www.reddit.com/r/typescript/comments/in51pa/does_typescript_check_types_at_runtime/)
+## [11][Does TypeScript check types at runtime?](https://www.reddit.com/r/typescript/comments/in51pa/does_typescript_check_types_at_runtime/)
 - url: https://www.reddit.com/r/typescript/comments/in51pa/does_typescript_check_types_at_runtime/
 ---
 Hey guys, I have recently implemented TypeScript in my React app. I was wondering if TypeScript checks types at runtime or not, since I have not re-tested all my features, and I'm afraid that my app will break when a user is using it and TypeScript finds a type error
-## [10][Fullstack types + runtime validation?](https://www.reddit.com/r/typescript/comments/imz9ng/fullstack_types_runtime_validation/)
-- url: https://www.reddit.com/r/typescript/comments/imz9ng/fullstack_types_runtime_validation/
----
-I want to find a nice library that supports runtime validation and typescript types as well. I would love for it to be serializable so we can consume it from a client and have the same types and validations there.
-
-I know that graphql has some libs that generates types and allows the client to generate types from a gql schema, but I want this to work with vanilla typescript without graphql. Any advices on where to start?
-## [11][Help with Typescript Compiler internals](https://www.reddit.com/r/typescript/comments/impxj1/help_with_typescript_compiler_internals/)
-- url: https://www.reddit.com/r/typescript/comments/impxj1/help_with_typescript_compiler_internals/
----
-EDIT: 
-
-Perhaps mentioning the database side was a distraction. I was just trying to provide some context on the usage, but my real project is to add a new type to the language, similar to the `any` type, but which is consistent and allows outputting the final inferred type at compile time. What I'm envisioning is a fetch like function that returns `Promise&lt;inferred&gt;`. The user interacts with this variable of the `inferred` type as normal, and at compile time the type checker goes through and decides what the user expects the value to be. For example:
-
-    declare const add(x: number, y: number): number
-    declare const x: inferred
-    let y: number = x.bar
-    add(5, y)
-    x.foo.substr(5,2)
-
-At the end of this, the compiler should infer `x` to have type `{ bar: number, foo: string }`. Notice that in no place did the user have to use a type annotation (other than the variable declaration)
-
-ORIGINAL:
-
-I am a computer science senior, working on an independent study project with a professor at my university. This professor is currently working on a paper on database querying which allows specifying the shape of the returned data. Since I had an interest in programming language theory, we decided to try and integrate this with the TypeScript language.  
-
-The idea is for a type to represent the result of a database query, and then usage of a variable with that type can be tracked by TypeScript's type checker to determine what shape the user expects the data to be in at runtime. The compilation process would then output this type (probably as a TypeScript interface or JSON schema), and send it along with the query to the database, which would then transform data to the correct shape, or send an error if transformation isn't possible. Of course, the type system should ensure usage of a variable is consistent, i.e. the user shouldn't treat the variable as a string at one point and then later in the program use it as a number. The type system should also ensure that all usage of the type is compatible with deserialized JSON, as that is all that can be provided by the query function.
-
-I have already started work on a [fork of TypeScript](https://github.com/WhiteAbeLincoln/TypeScript), but I have recently gotten stalled since the language is so large and there doesn't seem to be any publicly available documentation on the internal workings of the checker.ts file. My professor is unable to help since he doesn't have much experience with typescript or PLT.
-
-Rather than struggling on by myself, I figured I could reach out and ask for help. I've already tried emailing members of the TS team, but failed to get any response. 
-
-Does this community have any experience with the typescript compiler, or advice on implementing this, or know who I can contact who could guide me in the right direction? Anything would help, but some documentation on the checker.ts file would be especially useful, or some kind of guide on adding new types to the checker, as was done previously with the unknown type.

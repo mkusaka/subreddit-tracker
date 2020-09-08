@@ -56,84 +56,66 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][C++20 approved, C++23 meetings and schedule update](https://www.reddit.com/r/cpp/comments/inw0ez/c20_approved_c23_meetings_and_schedule_update/)
+## [2][Best C++ book](https://www.reddit.com/r/cpp/comments/iordgd/best_c_book/)
+- url: https://www.reddit.com/r/cpp/comments/iordgd/best_c_book/
+---
+Now I have decided to start C++. I am complete beginner. I can learn fast. My mathematical background is very good. I prefer learning from books as they are more detailed and contain a smooth learning curve. What do you feel is the best book: C++ Primer ,  Programming: Principles and Practice Using C++, 2nd Edition, by Bjarne Stroustrup , The programming language C++ , C++ for dummies , C++ how to program , C++ crash course :a fast paced introduction, Absolute c++.
+
+[View Poll](https://www.reddit.com/poll/iordgd)
+## [3][Why are gcc and clang behaving differently here for brace-initialization?](https://www.reddit.com/r/cpp/comments/iotebm/why_are_gcc_and_clang_behaving_differently_here/)
+- url: https://godbolt.org/z/b74MP6
+---
+
+## [4][Library for 2D skeletal animation?](https://www.reddit.com/r/cpp/comments/iodnn5/library_for_2d_skeletal_animation/)
+- url: https://www.reddit.com/r/cpp/comments/iodnn5/library_for_2d_skeletal_animation/
+---
+Hello everyone,
+
+The title speaks for itself really. I'd like to do skeletal animation with sprites, but I don't want to have to create my own rigging system if any are already available. Does anyone know of such a library, that allows you to create bones, link them to each other and to sprites, use IK chains, and so on? If it talks nicely to SFML that would be even better. Thank you for any suggestions!
+
+\[EDIT\] Just to clarify: I'm not looking to create animations using an animation creator and then implement them in my project. I want to create them \*within\* my project. I'm imagining something vaguely along these lines:
+
+    bone bone1;
+    bone bone2;
+    
+    bone2.attach(bone1);
+    
+    bone1.set_sprite(sprite1);
+    bone2.set_sprite(sprite2);
+    
+    for (int i=0; i&lt;360; i++)
+        bone2.rotate(1);
+
+Obviously that's absurdly over-simple but hopefully it gives a sense of the sort of thing I'm trying to do. Within my project, I want to create a wide variety of objects with different skeletons and skins, so just importing assets won't work.
+## [5][Best c++ books 2020](https://www.reddit.com/r/cpp/comments/iotarp/best_c_books_2020/)
+- url: https://www.reddit.com/r/cpp/comments/iotarp/best_c_books_2020/
+---
+I created a similar post a few hours back but realised that I hadnt mentioned a few good books.I removed the less recommended books too. Please vote again.
+
+This poll gives more options . Please vote again.**BUT REMEMBER TO VOTE FROM A BEGINNER'S POINT OF VIEW.**
+
+[View Poll](https://www.reddit.com/poll/iotarp)
+## [6][ABI versioning](https://www.reddit.com/r/cpp/comments/iorwq2/abi_versioning/)
+- url: https://www.reddit.com/r/cpp/comments/iorwq2/abi_versioning/
+---
+Going by recent discussions on ABI stability/breakage, I believe ABI versioning is the way forward. What are the reasons why the community is not working with vendors to put in place mechanisms to support versioning the C++ ABI on each platform? This is the direction Herb Sutter proposed in N4028 if I’m correct.
+## [7][C++20 approved, C++23 meetings and schedule update](https://www.reddit.com/r/cpp/comments/inw0ez/c20_approved_c23_meetings_and_schedule_update/)
 - url: https://herbsutter.com/2020/09/06/c20-approved-c23-meetings-and-schedule-update/
 ---
 
-## [3][Replacing unique_ptr with C++17's std::variant a Practical Experiment](https://www.reddit.com/r/cpp/comments/io36xt/replacing_unique_ptr_with_c17s_stdvariant_a/)
+## [8][Replacing unique_ptr with C++17's std::variant a Practical Experiment](https://www.reddit.com/r/cpp/comments/io36xt/replacing_unique_ptr_with_c17s_stdvariant_a/)
 - url: https://www.bfilipek.com/2020/09/replacing-into-variant.html?m=1
 ---
 
-## [4][Qt 6.0 Feature Freeze Milestone Reached](https://www.reddit.com/r/cpp/comments/int1rp/qt_60_feature_freeze_milestone_reached/)
-- url: https://www.qt.io/blog/qt-6.0-feature-freeze-milestone-reached
----
-
-## [5][Named Parameters in C++20 · Peter Dimov](https://www.reddit.com/r/cpp/comments/iny133/named_parameters_in_c20_peter_dimov/)
-- url: https://pdimov.github.io/blog/2020/09/07/named-parameters-in-c20/
----
-
-## [6][CppCon 2018: Walter E. Brown “C++ Function Templates: How Do They Really Work?”](https://www.reddit.com/r/cpp/comments/io6mp1/cppcon_2018_walter_e_brown_c_function_templates/)
+## [9][CppCon 2018: Walter E. Brown “C++ Function Templates: How Do They Really Work?”](https://www.reddit.com/r/cpp/comments/io6mp1/cppcon_2018_walter_e_brown_c_function_templates/)
 - url: https://www.youtube.com/watch?v=NIDEjY5ywqU
 ---
 
-## [7][Why You Should Use the Boost Software License · Peter Dimov](https://www.reddit.com/r/cpp/comments/inot7e/why_you_should_use_the_boost_software_license/)
-- url: https://pdimov.github.io/blog/2020/09/06/why-use-the-boost-license/
+## [10][Named Parameters in C++20 · Peter Dimov](https://www.reddit.com/r/cpp/comments/iny133/named_parameters_in_c20_peter_dimov/)
+- url: https://pdimov.github.io/blog/2020/09/07/named-parameters-in-c20/
 ---
 
-## [8][Best way to start learning C++(20)](https://www.reddit.com/r/cpp/comments/io57yz/best_way_to_start_learning_c20/)
-- url: https://www.reddit.com/r/cpp/comments/io57yz/best_way_to_start_learning_c20/
----
-Hey,
-
-  
-I want to learn C++, because I want to work for Tesla when their new Gigafactory and developer place in Germany is ready and I read that they need C/ C++ programmers mostly.  
-I am studying at the moment and already have some experience with Python in Machine Learning, some Java from university and I worked with Javascript/ React in the Web Development area for a company. 
-
-My plan is to learn the foundation of C++ in some good tutorials and then improve my knowledge by helping in Open Source projects.
-
-What sites/ tutorials would you recommend a beginner to learn C++? I am worried that many tutorials will be somewhat outdated now that C++20 is approved and I read that it will change how people write C++.  
-Would you recommend to visit certain university courses?  
-
-
-Thank you in advance :)
-## [9][Visual Studio Code + Cpp](https://www.reddit.com/r/cpp/comments/inqkz6/visual_studio_code_cpp/)
-- url: https://www.reddit.com/r/cpp/comments/inqkz6/visual_studio_code_cpp/
----
-Hi all, 
-
-i love working with VS Code and i'm also a passionate C++ developer. So i started a small project to gather nice and valuable extensions and configuration examples how to enhance developing C++ with VS Code. 
-
-It can be found on github: [https://github.com/fbaeuerlein/cpp-vscode-guide](https://github.com/fbaeuerlein/cpp-vscode-guide)
-
-Feel free to contribute and help to convince people that VSC is a really good IDE also for C++.
-## [10][C++20 has been approved](https://www.reddit.com/r/cpp/comments/imzkl4/c20_has_been_approved/)
-- url: https://twitter.com/patriceroy1/status/1302055575140945921?s=21
+## [11][Qt 6.0 Feature Freeze Milestone Reached](https://www.reddit.com/r/cpp/comments/int1rp/qt_60_feature_freeze_milestone_reached/)
+- url: https://www.qt.io/blog/qt-6.0-feature-freeze-milestone-reached
 ---
 
-## [11][inline namespace bug in msvc](https://www.reddit.com/r/cpp/comments/inmo3a/inline_namespace_bug_in_msvc/)
-- url: https://www.reddit.com/r/cpp/comments/inmo3a/inline_namespace_bug_in_msvc/
----
-I went to report this using the IDE and it asked me to "log in" which I tried but Microsoft's browser widget broke my password manager so I said to login with GitHub and when I pressed that button another browser window popped up asking me to log in to GitHub but at the top it said "GitHub does not support this browser (lol)" so I gave up and I am posting this code snippet here:
-
-This fails to compile in latest msvc:
-
-    namespace boost {
-    namespace json {
-    
-    inline namespace standalone {
-    namespace detail {
-    struct V{};
-    } // detail
-    } // standalone
-    
-    namespace detail {
-    struct T{};
-    } // detail
-    struct U : detail::T{};
-    
-    } // json
-    } // boost
-
-See:   [https://godbolt.org/z/qbPesG](https://godbolt.org/z/qbPesG) 
-
-It compiles everywhere else

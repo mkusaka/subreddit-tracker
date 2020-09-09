@@ -1,18 +1,55 @@
 # Kotlin
-## [1][A Cake for Kotlin: Exploring framework-less dependency injection for Kotlin](https://www.reddit.com/r/Kotlin/comments/iot8oo/a_cake_for_kotlin_exploring_frameworkless/)
+## [1][Played around with WebGL and a bug gave me this.](https://www.reddit.com/r/Kotlin/comments/ipedbe/played_around_with_webgl_and_a_bug_gave_me_this/)
+- url: https://i.redd.it/pfe9csik14m51.png
+---
+
+## [2][Simple &amp; effective G1 GC tuning tips](https://www.reddit.com/r/Kotlin/comments/ipawvp/simple_effective_g1_gc_tuning_tips/)
+- url: https://blog.gceasy.io/2020/06/02/simple-effective-g1-gc-tuning-tips/
+---
+
+## [3][How we built Localazy CLI: Kotlin MPP and Github Actions](https://www.reddit.com/r/Kotlin/comments/ipce9o/how_we_built_localazy_cli_kotlin_mpp_and_github/)
+- url: https://www.reddit.com/r/Kotlin/comments/ipce9o/how_we_built_localazy_cli_kotlin_mpp_and_github/
+---
+**How we built Localazy CLI, command-line friendly software localization tool for smart&amp;lazy developers.** 
+
+We thought about the right solution that would enable other developers to use Localazy on all platforms. We wanted to keep the developer-friendly / developer-centric approach and CLI, aka the command line interface, was the logical answer. 
+
+We wanted **Localazy CLI** to be supported on all major platforms. Ideally, we wanted no dependency on Java or Node as those usually mean a huge binary or giant virtual machine. Small and fast binary for a given operating system looked like a perfect solution.
+
+Kotlin is already heavily used at Localazy, and it powers the whole backend. And so [*Kotlin MPP*](https://kotlinlang.org/docs/reference/mpp-intro.html) was a logical choice to look at for this task. It allowed us to write a single codebase for native Linux, macOS, Windows and Java in a programming language we know well.  
+
+
+Almost all the code is shared between platforms and written in pure Kotlin. There were only two platform-dependent features - filesystem access and HTTP communication.
+
+The filesystem access is quite simple, and we just create an actual implementation for Java (using java.io.File and streams), Linux/macOS (using POSIX) and Windows (slightly modified POSIX as there are small differences on Windows).
+
+For HTTP communication, good old *HTTPUrlConnection* is used for Java and *ktor client* for Linux, macOS and Windows. The prototype of CLI was ready in a couple of days, and with a bit of fine-tuning, we were able to compile it to Java’s JAR and native binary for Linux, macOS and Windows.
+
+&amp;#x200B;
+
+&gt;Thanks to JetBrains for Kotlin, it was fun to write the CLI, and it works smoothly on all platforms.
+
+**Everything seemed to be great, except it wasn’t…read more at the link below.**
+
+[https://localazy.com/blog/localazy-cli-sofware-localization-tool-kotlin-github](https://localazy.com/blog/localazy-cli-sofware-localization-tool-kotlin-github)
+## [4][A Cake for Kotlin: Exploring framework-less dependency injection for Kotlin](https://www.reddit.com/r/Kotlin/comments/iot8oo/a_cake_for_kotlin_exploring_frameworkless/)
 - url: https://knowitlabs.no/a-cake-for-kotlin-exploring-framework-less-dependency-injection-for-kotlin-3f93b076aa8c
 ---
 
-## [2][http4k blog: A retrospective on http4k v3](https://www.reddit.com/r/Kotlin/comments/iobqsq/http4k_blog_a_retrospective_on_http4k_v3/)
+## [5][http4k blog: A retrospective on http4k v3](https://www.reddit.com/r/Kotlin/comments/iobqsq/http4k_blog_a_retrospective_on_http4k_v3/)
 - url: https://www.http4k.org/blog/retrospective_v3/
 ---
 
-## [3][How to create a List of Strings out of a List&lt;CharArray&gt;?](https://www.reddit.com/r/Kotlin/comments/iogw7i/how_to_create_a_list_of_strings_out_of_a/)
+## [6][select image from gallery for button and display guys please help](https://www.reddit.com/r/Kotlin/comments/iowdnw/select_image_from_gallery_for_button_and_display/)
+- url: https://stackoverflow.com/questions/63778471/select-image-from-gallery-for-button-and-display-kotlin-android-studio
+---
+
+## [7][How to create a List of Strings out of a List&lt;CharArray&gt;?](https://www.reddit.com/r/Kotlin/comments/iogw7i/how_to_create_a_list_of_strings_out_of_a/)
 - url: https://www.reddit.com/r/Kotlin/comments/iogw7i/how_to_create_a_list_of_strings_out_of_a/
 ---
 Is it possible to create a list of strings given a list of CharArray, in which each string is formed  by the elements that occupy the index i in each CharArray in the list? Like this:
 List&lt;CharArray&gt; = {[A,B,C],[D,E,F]} then the resulting List&lt;String&gt; = {“AD”, “BE”, “CF”}. If it is possible to do this using as many collections functions as possible. I wish to understand them as much as I can, here is where Kotlin shines (besides its concise and pretty syntax)
-## [4][Is there an unsigned byte literal?](https://www.reddit.com/r/Kotlin/comments/iodvoe/is_there_an_unsigned_byte_literal/)
+## [8][Is there an unsigned byte literal?](https://www.reddit.com/r/Kotlin/comments/iodvoe/is_there_an_unsigned_byte_literal/)
 - url: https://www.reddit.com/r/Kotlin/comments/iodvoe/is_there_an_unsigned_byte_literal/
 ---
 I have a function that returns a `UByte`. I cannot use an equality operator because I do not know how to create a `UByte` literal:
@@ -40,7 +77,7 @@ but this looks odd.
 With `(0u as UByte)` IDEA reports that the cast will never succeed.
 
 If there isn't a UByte literal, is there a cleaner way to do this?
-## [5][Hibernate cascading with no cascade types set (hibernate+kotlin)](https://www.reddit.com/r/Kotlin/comments/io9sxn/hibernate_cascading_with_no_cascade_types_set/)
+## [9][Hibernate cascading with no cascade types set (hibernate+kotlin)](https://www.reddit.com/r/Kotlin/comments/io9sxn/hibernate_cascading_with_no_cascade_types_set/)
 - url: https://www.reddit.com/r/Kotlin/comments/io9sxn/hibernate_cascading_with_no_cascade_types_set/
 ---
 Hey guys, I'm having an issue where hibernate is cascading the `merge` operation to child entities when I don't want it to. I have my entities pasted at the bottom of this post. 
@@ -141,17 +178,7 @@ class SwipeIdKey : Serializable {
     var munchId: String? = null
 }
 ```
-## [6][Best Programming Languages for Web Development](https://www.reddit.com/r/Kotlin/comments/ioppbr/best_programming_languages_for_web_development/)
-- url: https://tekkiwebsolutions.com/blog/best-programming-languages-for-web-development/
----
-
-## [7][Where to publish packages?](https://www.reddit.com/r/Kotlin/comments/ioiccq/where_to_publish_packages/)
-- url: https://www.reddit.com/r/Kotlin/comments/ioiccq/where_to_publish_packages/
----
-Jcenter? Maven central? Someplace else?
-
-With Python/.NET - there's one obvious place to publish. What's the recommendation for JVM land?
-## [8][Setting and getting an explanation](https://www.reddit.com/r/Kotlin/comments/iohzmx/setting_and_getting_an_explanation/)
+## [10][Setting and getting an explanation](https://www.reddit.com/r/Kotlin/comments/iohzmx/setting_and_getting_an_explanation/)
 - url: https://www.reddit.com/r/Kotlin/comments/iohzmx/setting_and_getting_an_explanation/
 ---
 Hey guys,
@@ -167,87 +194,3 @@ I also looked on the documentation about them, but it shows how they works, not 
 Can someone better explain to me the meaning and the usage of these two methods? A brief explanations would be great if it is a huge thematic to talk about.
 
 Thank you a lot! :D
-## [9][Which "createOrAdd" style would you prefer? Do you know a better one?](https://www.reddit.com/r/Kotlin/comments/ioffd3/which_createoradd_style_would_you_prefer_do_you/)
-- url: https://www.reddit.com/r/Kotlin/comments/ioffd3/which_createoradd_style_would_you_prefer_do_you/
----
-Hey fellow Kotliners!
-
-I'd like to hear out your opinions. I'm basically implementing a good ol' add peer to room logic. If the room doesn't exist create it on the fly, otherwise just add it to the room.
-
-Which ones seems more readable to you? Which is the "more kotlin" way? Is there a better one? I'm using Spring Data JPA btw. Thanks in advance!
-
-&amp;#x200B;
-
-    roomRepository.findByIdOrNull(roomId)?.apply {
-        addPeerToExistingRoom(this, peerId)
-    } ?: addPeerToNewRoom(roomId, peerId)
-
-&amp;#x200B;
-
-    val room: Room? = roomRepository.findByIdOrNull(roomId)
-    val responseType = if (room == null) {
-        addPeerToNewRoom(roomId, peerId)
-    } else {
-        addPeerToExistingRoom(room, peerId)
-    }
-## [10][I get empty Aggregated Heart Rate Data from Google Fitness Api.](https://www.reddit.com/r/Kotlin/comments/io7fw2/i_get_empty_aggregated_heart_rate_data_from/)
-- url: https://www.reddit.com/r/Kotlin/comments/io7fw2/i_get_empty_aggregated_heart_rate_data_from/
----
-Hey guys, I am writing my thesis and I have this task to get aggregated Heart Rate data from my Google Fit Account and print them. My code works if I want to print heart rate data from an hour during the day. But I cannot for the love of god print the values of the aggregated heart rate for each day of the week. I am a novice as far as the Google Fit Api is concerned so bare with me. I will post my builder and data dumper. If you need any more code lmk.
-
-**Builder Function:**
-
-    private fun queryFitnessData2(): DataReadRequest { 
-    val calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC")) 
-    val now = Date()
-    calendar.time = now 
-    val endTime = calendar.timeInMillis calendar.add(Calendar.WEEK_OF_YEAR, -1) 
-    val startTime = calendar.timeInMillis
-    Log.i(TAG, "Range Start: ${dateFormat.format(startTime)}") 
-    Log.i(TAG, "Range End: ${dateFormat.format(endTime)}")
-    
-    return DataReadRequest.Builder()
-    
-                    .enableServerQueries()
-                    .bucketByTime(1, TimeUnit.DAYS)
-                    .setTimeRange(startTime, endTime, TimeUnit.MILLISECONDS)
-                    .aggregate(DataType.TYPE_HEART_RATE_BPM, 
-                    DataType.AGGREGATE_HEART_RATE_SUMMARY)
-                    .build();
-    }
-
-**Data Printer:**
-
-    private fun printData(dataReadResult: DataReadResponse) {
-            // [START parse_read_data_result]
-            // If the DataReadRequest object specified aggregated data, dataReadResult will be returned
-            // as buckets containing DataSets, instead of just DataSets.
-            if (dataReadResult.buckets.isNotEmpty()) {
-                Log.i(TAG, "Number of returned buckets of DataSets is: " + dataReadResult.buckets.size)
-                for (bucket in dataReadResult.buckets) {
-                    val dataSets = bucket.dataSets
-                    bucket.dataSets.forEach { dumpDataSet(it) }
-                }
-            } else if (dataReadResult.dataSets.isNotEmpty()) {
-                Log.i(TAG, "Number of returned DataSets is: " + dataReadResult.dataSets.size)
-                dataReadResult.dataSets.forEach { dumpDataSet(it) }
-            }
-            // [END parse_read_data_result]
-        }
-
-**Dataset Parser Function:**
-
-&amp;#x200B;
-
-    // [START parse_dataset]
-    private fun dumpDataSet(dataSet: DataSet) { 
-        Log.i(TAG, "Data returned for Data type: ${dataSet.dataType.name}") 
-        val dateFormat: DateFormat = getTimeInstance()
-        //INTERESTING PART 
-        dataSet.dataType.fields.forEach { 
-           Log.i(TAG, "\tField: ${it.name} Value:${dataSet.dataPoints.getValue(it)}") 
-        } 
-    }
-    // [END parse_dataset]
-
-In the interesting part section, I can log the Min, Max, Average sections but I fail to get the values from those fields. Any help would be greatly appreciated.

@@ -12,97 +12,48 @@ This coming episode we want to try something a little different - we want to mak
 To make this happen we would like everyone here to post any Go-related questions that you would like us to discuss on air, and we will try to get to as many as possible. I'll also try to type up answers here while we discuss them on the episode.
 
 We will be answering questions live tomorrow, Tuesday, Sep 8. We will repeat questions on air, and since we record live you can join in on the Gophers Slack to ask follow-up questions or to elaborate on questions.
-## [2][What is ':' and '...'?](https://www.reddit.com/r/golang/comments/iop8rg/what_is_and/)
-- url: https://www.reddit.com/r/golang/comments/iop8rg/what_is_and/
+## [2][Generate, Monitor, and Throttle CPU Load in Go 👨‍💻](https://www.reddit.com/r/golang/comments/ipbq1k/generate_monitor_and_throttle_cpu_load_in_go/)
+- url: https://blog.fekr.tech/generate-monitor-and-throttle-cpu-load-in-go-cke9wmddd000t65s15l7q2pd6
 ---
-I was recently working on a project and I came across this:
 
-    package main
-    
-    import "fmt"
-    
-    func min(nums ...float64) (min float64) {
-    	for _, n := range nums {
-    		if min&gt;n {
-    			min = n
-    		}
-    	}
-    	return
-    }
-    
-    func main() {
-    	s:=[]float64{43.009, 33.112, -3.2, 0.0}
-    	fmt.Println(min(s[:]...))
-    }
-
-I am **unable to understand the meaning of** `s[:]...` what does that even mean?
-## [3][OOP objects v Go Structs](https://www.reddit.com/r/golang/comments/ioqpgk/oop_objects_v_go_structs/)
-- url: https://www.reddit.com/r/golang/comments/ioqpgk/oop_objects_v_go_structs/
+## [3][[Looking for feedback] Hostman- A simple cloud hosting platform where you can deploy your web apps with just a few clicks](https://www.reddit.com/r/golang/comments/ipe4jg/looking_for_feedback_hostman_a_simple_cloud/)
+- url: https://www.reddit.com/r/golang/comments/ipe4jg/looking_for_feedback_hostman_a_simple_cloud/
 ---
-I’m a Go noob but an experienced developer.
+We are trying to get user feedback and are providing a **$50 bonus (no credit card required)** on signup for you to test it out and let us know what you think about the platform. We support frameworks like Gin, Beego, and many more!
 
-In an OOP language I can create an object by passing arguments to its constructor. I can validate these arguments and reason that if my object “Car” exists, it’s make property will always be valid (eg “Ford” or “Ferrari”).
+Here's the link: [https://hostman.com/?coupon=reddit50](https://hostman.com/?coupon=reddit50)
+## [4][I wrote Conway's Game of Life in Go](https://www.reddit.com/r/golang/comments/iperd1/i_wrote_conways_game_of_life_in_go/)
+- url: https://www.reddit.com/r/golang/comments/iperd1/i_wrote_conways_game_of_life_in_go/
+---
+[https://github.com/foxyblue/game-of-life](https://github.com/foxyblue/game-of-life)  
+My code isn't as great as I would like it to be, but I wrote this to tryout \`[github.com/faiface/pixel\`](https://github.com/faiface/pixel`) which was a little bit of fun.
+## [5][GraphQL: Centralize existing REST API endpoints for easier development](https://www.reddit.com/r/golang/comments/ipeip8/graphql_centralize_existing_rest_api_endpoints/)
+- url: https://www.reddit.com/r/golang/comments/ipeip8/graphql_centralize_existing_rest_api_endpoints/
+---
+One of the GraphQL’s goals is Abstracting many different services into a single place and allowing the developers very fine-grained control over the data they require is. [This post](https://medium.com/@roelofjanelsinga/graphql-centralize-existing-rest-api-endpoints-for-easier-development-abd7b007d7c4?source=friends_link&amp;sk=ab9ebb693fb471a0e669777524c52c17) look over a GraphQL implementation by considering this goal.
+## [6][Turn asterisk-indented text lines into mind maps.](https://www.reddit.com/r/golang/comments/iow83p/turn_asteriskindented_text_lines_into_mind_maps/)
+- url: https://github.com/lucasepe/crumbs
+---
 
-Or, I can create a DB object and inject it into my Repository, and know that when I call repo.db.select(...) the select method will execute against a db connection.
+## [7][Applying seccomp filters in Go - a 2 parts blog post (would love some feedback)](https://www.reddit.com/r/golang/comments/ipfawu/applying_seccomp_filters_in_go_a_2_parts_blog/)
+- url: https://dev.bitolog.com/go-seccomp-filters-part-1/
+---
 
-How do you approach this sort of thing idiomatically in Go? If I have a Car struct anyone can create one with arbitrary properties.
+## [8][Use Twitter over satellite, send Emails over telephone, watch YouTube on Windows 98 - what more can a geek desire? Check out laitos v4.1!](https://www.reddit.com/r/golang/comments/iou5w0/use_twitter_over_satellite_send_emails_over/)
+- url: https://github.com/HouzuoGuo/laitos
+---
 
-Is it simply that I have to get my head around living with structs that could always have invalid values? Do you end up doing nil checks because you can’t guarantee your sub-structs exists/are valid?
+## [9][Dependency requires different version of a direct dependency](https://www.reddit.com/r/golang/comments/ip49bg/dependency_requires_different_version_of_a_direct/)
+- url: https://www.reddit.com/r/golang/comments/ip49bg/dependency_requires_different_version_of_a_direct/
+---
+We depend on [go.etcd.io/etcd](https://go.etcd.io/etcd) which depends on google.golang.org/grpc v1.26.0 but we also depend on protoc-gen-go which requires google.golang.org/grpc v1.31.1 but breaks [go.etcd.io/etcd](https://go.etcd.io/etcd).
 
-Any recommendations for articles/resources targeted at getting out of OOP mindset and into idiomatic Go?
-
-Thanks.
-## [4][Beware of upgrading gorilla/handlers to 1.5.0](https://www.reddit.com/r/golang/comments/ios44w/beware_of_upgrading_gorillahandlers_to_150/)
+Is there a solution to this?
+## [10][Beware of upgrading gorilla/handlers to 1.5.0](https://www.reddit.com/r/golang/comments/ios44w/beware_of_upgrading_gorillahandlers_to_150/)
 - url: https://www.reddit.com/r/golang/comments/ios44w/beware_of_upgrading_gorillahandlers_to_150/
 ---
 Currently gzip compression is broken, see [https://github.com/gorilla/handlers/issues/194](https://github.com/gorilla/handlers/issues/194). Keep 1.4.2 or use commit hash [d453eff](https://github.com/gorilla/handlers/commit/d453effd20e6817a8acfd9d278dadd21371da0ba).
-## [5][What other languages have something akin to Go's interfaces?](https://www.reddit.com/r/golang/comments/iorveh/what_other_languages_have_something_akin_to_gos/)
-- url: https://www.reddit.com/r/golang/comments/iorveh/what_other_languages_have_something_akin_to_gos/
----
-Well except duck-typed OOP language which do have somewhat similar possibilities but only incidentally.
-
-I've looked at this multiple times in the past, but I can't find another language that has the feature of implicitly satisfying interfaces. Rusts `impl &lt;trait&gt; for &lt;type&gt;` seems to allow similar flexibility but with explicit notation.
-## [6][What is New in the go 1.15](https://www.reddit.com/r/golang/comments/iomyzw/what_is_new_in_the_go_115/)
-- url: https://www.loginradius.com/engineering/blog/what-is-the-new-go-1.15/
----
-
-## [7][When to use buffered channels in go](https://www.reddit.com/r/golang/comments/iorcmp/when_to_use_buffered_channels_in_go/)
-- url: https://medium.com/@ss7loginov/when-to-use-buffered-channels-in-go-317d3593d28f
----
-
-## [8][http.Get returns empty response but curl (on same machine) gets data](https://www.reddit.com/r/golang/comments/iorwxj/httpget_returns_empty_response_but_curl_on_same/)
-- url: https://www.reddit.com/r/golang/comments/iorwxj/httpget_returns_empty_response_but_curl_on_same/
----
-This issue is in two parts. I'm trying to simply request data from an endpoint (it's a CDN). Originally I was doing my request against `https://endpoint`. It was working with both my Go application as well as curl.
-
-Then that stopped working, for *both* my application *and* curl. Because it is a CDN I figured it was some caching issue. So then I generated a random number and appended it as a query param. The new url would be similar to `https://endpoint/?nocache=1234`.
-
-This worked for both my application as well as curl!!
-
-... and then it stopped working for my application. But it continued to work for curl. This is all on a single host.
-
-I would have my Go application print out the used url (e.g. `https://endpoint/?nocache=9876`) as well as the response.ContentLength (now it is always 0, but used to be -1 when it was actually getting data), and the status (*always* `200 OK`).
-
-Zero data from my Go application. But then I would take the same exact url and curl it: `curl "https://endpoint/9876`. And I receive data.
-
-Has anybody else seen this before? I'm wondering if the edge servers for this CDN have somehow recognized a header or something from my Go application that it is "filtering" of sorts.
-
-Outside of getting out a network tracing tool to see the packets, I'm not sure how to proceed from here. I'd hate to shell out to curl from my application, but this is a pretty hard stop here.
-
-Hoping that maybe I'm not the first to deal with this problem. Thanks in advance!
-## [9][Generate RESTful service and swagger documentation with gRPC gateway. This enables us to write code just once but serving both gRPC and HTTP JSON requests at the same time.](https://www.reddit.com/r/golang/comments/ioswkv/generate_restful_service_and_swagger/)
+## [11][Generate RESTful service and swagger documentation with gRPC gateway. This enables us to write code just once but serving both gRPC and HTTP JSON requests at the same time.](https://www.reddit.com/r/golang/comments/ioswkv/generate_restful_service_and_swagger/)
 - url: https://youtu.be/Zf9G2KzYs7w
 ---
 
-## [10][go-pg Postgres ORM v10 with support for map[string]interface{}](https://www.reddit.com/r/golang/comments/ioopad/gopg_postgres_orm_v10_with_support_for/)
-- url: https://github.com/go-pg/pg/blob/v10/CHANGELOG.md#changelog
----
-
-## [11][Introducing TA, a technical analysis Go library](https://www.reddit.com/r/golang/comments/iohi6o/introducing_ta_a_technical_analysis_go_library/)
-- url: https://www.reddit.com/r/golang/comments/iohi6o/introducing_ta_a_technical_analysis_go_library/
----
-I'd like to introduce my newest toy project, [ta](https://github.com/OneOfOne/ta), a technical analysis library with strategy / backtest helpers and csv loader.
-
-Right now it's pre-alpha, the API is unstable, however the functions were tested for accuracy against the python version of [talib](https://github.com/mrjbq7/ta-lib).
-
-All feedback and pull requests are welcome.

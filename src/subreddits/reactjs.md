@@ -85,94 +85,74 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][Learn React Native with me 😀](https://www.reddit.com/r/reactjs/comments/ioogkh/learn_react_native_with_me/)
-- url: https://www.reddit.com/r/reactjs/comments/ioogkh/learn_react_native_with_me/
----
-Hello there 👋🏾
-
-I've been writing react for a little over a year, but have also kept my eyes on mobile development. I recently decided to explore cross-platform mobile development with react native.
-
-As a RN beginner, I'm trying to get into the react-native community and make a few friends. I'm on twitter as [@vick\_onrails](https://twitter.com/vick_OnRails). I'll be majorly twitting about my [30 days of react-native](https://github.com/vickOnRails/react-native-30/) exercise
-
-If you have experience with RN, I'd love to follow and get to know you on Twitter.
-
-Thanks 😊
-## [4][Making Draggable Components in React ✋](https://www.reddit.com/r/reactjs/comments/iop6zv/making_draggable_components_in_react/)
-- url: https://lo-victoria.com/making-draggable-components-in-react
+## [3][A progressive web app that syncs videos, so you can have virtual watch parties with friends](https://www.reddit.com/r/reactjs/comments/ioy1yi/a_progressive_web_app_that_syncs_videos_so_you/)
+- url: https://v.redd.it/eed1yaeplyl51
 ---
 
-## [5][reactjs-popup v2 is Here 🎉🎉: Modals, Tooltips and Menus - All in one (3kb)](https://www.reddit.com/r/reactjs/comments/io4995/reactjspopup_v2_is_here_modals_tooltips_and_menus/)
-- url: https://v.redd.it/7qzgkre0zol51
+## [4][React + Typescript ❤️: The good parts ⚡️](https://www.reddit.com/r/reactjs/comments/ipeb9g/react_typescript_the_good_parts/)
+- url: https://dev.to/diemax/react-typescript-the-good-parts-428f
 ---
 
-## [6]["Flatten The Curve" Pandemic simulator...built entirely in React!](https://www.reddit.com/r/reactjs/comments/iokz9m/flatten_the_curve_pandemic_simulatorbuilt/)
-- url: https://www.reddit.com/r/reactjs/comments/iokz9m/flatten_the_curve_pandemic_simulatorbuilt/
----
-Here's an early version of my simulator: [https://flattenthecurve.zaklaughton.dev](https://flattenthecurve.zaklaughton.dev)
-
-I wanted to get a better idea of how pandemic measures such as mask usage and social distancing can help the effects of a pandemic. This is an early version of a simulator I built in React to help visualize it!
-
-People who are **socially distanced** have a moderately lower chance of movement, transmission, and infection.
-
-People who are **wearing masks** have a slightly lower chance of getting infected, and a significantly lower chance of transmitting infections to others.
-
-Visit the site, hit the **PLAY** button, adjust the numbers, and let me know what you think!
-## [7][Correctly Use Javascript’s Imports To Improve Bundle Size](https://www.reddit.com/r/reactjs/comments/iop3zw/correctly_use_javascripts_imports_to_improve/)
-- url: https://www.reddit.com/r/reactjs/comments/iop3zw/correctly_use_javascripts_imports_to_improve/
----
-Hi!  😄   
-I wrote an article about how you should **Correctly import your packages into your project to improve bundle size.**  
-[https://iryl.info/2020/07/28/correctly-use-javascripts-imports-to-improve-bundle-size/](https://iryl.info/2020/07/28/correctly-use-javascripts-imports-to-improve-bundle-size/)  
-I'd appreciate any feedback, and how can the article be improved further.
-## [8][Kea 2.2 with TypeScript support (React State Management)](https://www.reddit.com/r/reactjs/comments/iot7yw/kea_22_with_typescript_support_react_state/)
-- url: https://www.reddit.com/r/reactjs/comments/iot7yw/kea_22_with_typescript_support_react_state/
----
-They said it couldn't be done, but the newly released version 2.2 of Kea now comes with native support for TypeScript!
-
-Because logic in Kea is written in a very funky way, I had to build a clever workaround to get this support. Read on for more details!
-
-Blog: [https://kea.js.org/blog/kea-2.2](https://kea.js.org/blog/kea-2.2)
-
-Guide: [https://kea.js.org/docs/guide/typescript](https://kea.js.org/docs/guide/typescript)
-## [9][Heroku alternatives for a node (express) and react site?](https://www.reddit.com/r/reactjs/comments/ioswvh/heroku_alternatives_for_a_node_express_and_react/)
-- url: https://www.reddit.com/r/reactjs/comments/ioswvh/heroku_alternatives_for_a_node_express_and_react/
----
-I already prefer to host my Postgres db on AWS, but I'm really trying to save a bit on the hosting of the site itself. Heroku was okay, but I always had issues, had to restart the server, etc. which I just can't have for this site.
-
-I'd love to find something else that's $10-20/mo to host both my node server and my React app. Unless you guys think they should be on separate services...I thought I always read it was faster to keep them together.
-
-I have a little experience with Digital Ocean with a Django site I did a while back, but I'm not super savvy when it comes to that stuff. If you guys say it's the best way to go though, I'll figure it out.
-
-Any advice would be great. Just looking for something reliable, and bonus points if it's pretty easy to deploy/update.
-
-Thanks
-## [10][Is React REALLY more difficult to learn than Vue?](https://www.reddit.com/r/reactjs/comments/iosns1/is_react_really_more_difficult_to_learn_than_vue/)
-- url: https://www.reddit.com/r/reactjs/comments/iosns1/is_react_really_more_difficult_to_learn_than_vue/
----
-Long story short, I’ve been dabbling with both Vue and React to see what resonates with me. When I started I thought Vue would be the answer, as I always hear how it is easier to learn than React. 
-
-I haven’t found that to be the case though. With React, I already know Javascript, and that’s all I’m writing. Only different is dealing with state. With Vue, I need to learn all the little Vue specific templating. All the v-for, v-bind, etc is just something else that I need to learn on top of everything else. 
-
-Anyone else had the same experience? For me, I’m finding React simpler to wrap my head around than Vue.
-## [11][CRUD Operations in React, Axios, and Firebase | React Tutorial for Beginners](https://www.reddit.com/r/reactjs/comments/iosfij/crud_operations_in_react_axios_and_firebase_react/)
-- url: https://youtu.be/qOsrF_ap0JU
+## [5][Jotai: A new state management library heavily inspired by Recoil, from "react-spring" org](https://www.reddit.com/r/reactjs/comments/ipcnic/jotai_a_new_state_management_library_heavily/)
+- url: https://twitter.com/0xca0a/status/1303354125246255104
 ---
 
-## [12][I built a Netflix Clone! (clones clones everywhere)](https://www.reddit.com/r/reactjs/comments/io9ehm/i_built_a_netflix_clone_clones_clones_everywhere/)
-- url: https://www.reddit.com/r/reactjs/comments/io9ehm/i_built_a_netflix_clone_clones_clones_everywhere/
+## [6][Can you scaffold an entire React Application just by writing GraphQL Queries?](https://www.reddit.com/r/reactjs/comments/ipflq5/can_you_scaffold_an_entire_react_application_just/)
+- url: https://www.reddit.com/r/reactjs/comments/ipflq5/can_you_scaffold_an_entire_react_application_just/
 ---
-Hello devs of  r/reactjs!
+I've developed a new concept where we take Persisted Queries one step further.
 
-I built a frontend Netflix clone using React and Redux to learn hooks in a practical manner. As this has been my first real project using React, I would really love it if you could take a look at the website, and, more importantly, the code. Any feedback at all would be a godsend. 
+Based on the Queries we might be able to scaffold UI components or event an entire Application.
 
-&amp;#x200B;
+Here's a quick example:
 
-[Demo Video](https://reddit.com/link/io9ehm/video/scgtxz6lsql51/player)
+    query AllTasks($email: String! @fromClaim(name: "email"))
+        @ui(page: "/tasks", component: TABLE)
+    {
+      queryTask(filter: {email: {eq: $email}}){
+        ... @ui(linkTo: "/tasks/:id") {
+            id @ui(columnName: "ID")
+            title @ui(columnName: "Title")
+            completed @ui(columnName: "Completed")
+        }
+      }
+    }
 
-&amp;#x200B;
+There are a few questions I'd like to ask the community around this concept. We're mixing a lot of things together here. Data Fetching, Authorization and UI components, all in one view. Is this really something we should pursue? I see potential use cases for low code scenarios when you want to build Admin Dashboards but beyond that. I'm still not sure if this is a good idea. Would be great to hear your thoughts. If you want to get a bit more details on the idea here's a link to the full concept.
 
-Thank you for your time, and happy coding! 
+[https://wundergraph.com/blog/2020/09/06/scaffolding\_react\_app\_with\_graphql](https://wundergraph.com/blog/2020/09/06/scaffolding_react_app_with_graphql)
+## [7][What is the way to showing images on react project?](https://www.reddit.com/r/reactjs/comments/ipfk0u/what_is_the_way_to_showing_images_on_react_project/)
+- url: https://www.reddit.com/r/reactjs/comments/ipfk0u/what_is_the_way_to_showing_images_on_react_project/
+---
+I'm using MERN stack.
+## [8][Using Chakra UI with React-Hooks-Form](https://www.reddit.com/r/reactjs/comments/ipfcko/using_chakra_ui_with_reacthooksform/)
+- url: https://www.reddit.com/r/reactjs/comments/ipfcko/using_chakra_ui_with_reacthooksform/
+---
+I'm using chakra-ui with react-hook-form. However, I am having trouble using the RadioGroup and Radio component from chakra as it seems to be missing the 'name' prop and hence I can seem to set the value of selected radio button. Can anyone please guide me with this?
+## [9][Free server with ssh support?](https://www.reddit.com/r/reactjs/comments/ipfa3u/free_server_with_ssh_support/)
+- url: https://www.reddit.com/r/reactjs/comments/ipfa3u/free_server_with_ssh_support/
+---
+I have previously used 000webhost to learn hosting site, now i want to learn how to upload file using ssh-ftp instead of ftp but 000webhost allow ssh-ftp for only premium, is there any site which can provide free ssh-ftp support server.  
+Note: this is only for testing and learning so, i dont want to enroll in paid subscription.  
+Thank You.
+## [10][Is there any good library for viewing an object in 3d?](https://www.reddit.com/r/reactjs/comments/ipf22t/is_there_any_good_library_for_viewing_an_object/)
+- url: https://www.reddit.com/r/reactjs/comments/ipf22t/is_there_any_good_library_for_viewing_an_object/
+---
+We bought a camera to take a 360 picture of a product and we want to put it inside a React app module of sort. We currently have a demo, but it's using jQuery. I was wondering what were the easiest library in React I can use for this.
+## [11][CovMap covid 19 india web-gis](https://www.reddit.com/r/reactjs/comments/ipetvk/covmap_covid_19_india_webgis/)
+- url: https://www.reddit.com/r/reactjs/comments/ipetvk/covmap_covid_19_india_webgis/
+---
+I developed a covid 19 web-gis for India in react js and mapbox.
+http://www.covmap.live
+P.S. it works only on desktop and I'm currently working on it
+## [12][I made a website where you can view and download templates to better your HTML and CSS skills!](https://www.reddit.com/r/reactjs/comments/ipefnd/i_made_a_website_where_you_can_view_and_download/)
+- url: https://www.reddit.com/r/reactjs/comments/ipefnd/i_made_a_website_where_you_can_view_and_download/
+---
+Hi everyone,
 
-Code: [https://github.com/Azazel5/NetflixClone](https://github.com/Azazel5/NetflixClone) 
+This is my first React app and it's sort of on the very beginner side. I'm a designer who wants to get better at bringing their projects to live so I used to use Frontend Mentor which is just a collection of coding challenges, Good Code is basically their alternative.  Also, would you say this is a good first React project? I know there really isn't any authentication or anything that makes an app, an app, but the dynamic part was really fun for me to make! :)
 
-LiveDemo: [https://azazel5.github.io/NetflixClone/](https://azazel5.github.io/NetflixClone/)
+Let me know what you think and if there are any bugs that need fixing. 
+
+So here's the React version (which isn't secure, it's on Netlify): [http://good-code.netlify.app/](http://good-code.netlify.app/)  
+and here's the static version (which is secure): [https://moeminm.github.io/goodcode](https://moeminm.github.io/goodcode)

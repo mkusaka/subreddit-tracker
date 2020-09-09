@@ -31,87 +31,91 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][This is how we turn a 5 minutes build down to 15 seconds](https://www.reddit.com/r/androiddev/comments/iolnah/this_is_how_we_turn_a_5_minutes_build_down_to_15/)
-- url: https://proandroiddev.com/android-build-and-the-journey-to-the-end-game-55c9766325c5
+## [3][Rendering Markdown using Jetpack Compose](https://www.reddit.com/r/androiddev/comments/ipcftx/rendering_markdown_using_jetpack_compose/)
+- url: https://www.reddit.com/r/androiddev/comments/ipcftx/rendering_markdown_using_jetpack_compose/
+---
+I wrote a post and a sample app for how to render Markdown content using Jetpack Compose. 
+
+Hope you like it!
+
+[https://www.hellsoft.se/rendering-markdown-with-jetpack-compose/](https://www.hellsoft.se/rendering-markdown-with-jetpack-compose/)
+## [4][PSA: BuildCompat.isAtLeastR() incompatible with released version of 11/R](https://www.reddit.com/r/androiddev/comments/ipdv64/psa_buildcompatisatleastr_incompatible_with/)
+- url: https://www.reddit.com/r/androiddev/comments/ipdv64/psa_buildcompatisatleastr_incompatible_with/
+---
+This is defined as:
+```
+public static boolean isAtLeastR() {  
+ return VERSION.CODENAME.length() == 1  
+ &amp;&amp; VERSION.CODENAME.charAt(0) &gt;= 'R'  
+ &amp;&amp; VERSION.CODENAME.charAt(0) &lt;= 'Z';  
+}
+```
+The release version of 11 `CODENAME` is `"REL"` so `length() &gt; 1` and returns `false`.
+
+This is using:
+```
+implementation 'androidx.core:core:1.3.1'
+implementation 'androidx.core:core-ktx:1.3.1'
+```
+The latest stable version (at time of writing).
+
+Be warned!
+
+Workaround:
+`Build.VERSION.SDK_INT &gt;= 30` or `Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.R`
+
+Edit:
+Markdown had italics highlighting by mistake. Forgot `=` in workaround.
+
+Additional edit:
+I now realise that `BuildCompat` is precisely for targeting pre-release versions of Android. So using it in production code is not intended. Either way it's likely to be fixed with a real version check in future.
+## [5][Android 11 has arrived](https://www.reddit.com/r/androiddev/comments/ioxlor/android_11_has_arrived/)
+- url: https://blog.google/products/android/android-11
 ---
 
-## [4][DataStore - Jetpack alternative for SharedPreference](https://www.reddit.com/r/androiddev/comments/ioq7ox/datastore_jetpack_alternative_for_sharedpreference/)
-- url: https://howtodoandroid.com/datastore-android-jetpack/
+## [6][Do people still use MPAndroidChart?](https://www.reddit.com/r/androiddev/comments/ipe4oe/do_people_still_use_mpandroidchart/)
+- url: https://www.reddit.com/r/androiddev/comments/ipe4oe/do_people_still_use_mpandroidchart/
+---
+I was just going to suggest using it for a project and saw the last release was well over a year ago. As well as that, there's \~1700 issues on the [repo.](https://github.com/PhilJay/MPAndroidChart) Just wondering if people are still actively adding this to projects, and if not, what's the best alternative? I'm looking for something that has a few different graphs, and ideally supports some interaction.
+## [7][ShapeableImageView - Material components for android](https://www.reddit.com/r/androiddev/comments/ip6q3q/shapeableimageview_material_components_for_android/)
+- url: https://howtodoandroid.com/shapeableimageview-material-components-android/
 ---
 
-## [5][Designing complex UI using Android ConstraintLayout](https://www.reddit.com/r/androiddev/comments/iosv86/designing_complex_ui_using_android/)
-- url: https://blog.codemagic.io/designing-complex-ui-using-android-constraintlayout/
+## [8][ViewBinding Delegate — one line](https://www.reddit.com/r/androiddev/comments/ipe6tm/viewbinding_delegate_one_line/)
+- url: https://medium.com/@hoc081098/viewbinding-delegate-one-line-4d0cdcbf53ba
 ---
 
-## [6][Basic Dependency Injection with Hilt](https://www.reddit.com/r/androiddev/comments/io8rop/basic_dependency_injection_with_hilt/)
-- url: https://codingtroops.com/android/basic-dependency-injection-with-hilt/
+## [9][Android 11 Wireless Debugging](https://www.reddit.com/r/androiddev/comments/ipd0ph/android_11_wireless_debugging/)
+- url: https://www.reddit.com/r/androiddev/comments/ipd0ph/android_11_wireless_debugging/
+---
+Here's a video on how to use wireless debugging in Android 11.
+
+[https://www.youtube.com/watch?v=azZPiGY9lFs](https://www.youtube.com/watch?v=azZPiGY9lFs)
+## [10][Questions about Square Workflow](https://www.reddit.com/r/androiddev/comments/ipfnvu/questions_about_square_workflow/)
+- url: https://www.reddit.com/r/androiddev/comments/ipfnvu/questions_about_square_workflow/
+---
+I've seen the video about Square Workflow at Droidcon and tried it out with a dummy project, but I still have a few questions about it and think this is the right place to discuss about it.
+
+* Do you use it in production ? What is your experience with it ?
+* Does it work well with asynchronous source of data ? I'm thinking about an app that heavily rely on Firestore to write and read data.
+* Does it work well with more complex Android UI Components like ViewPager2 ?
+## [11][Memoji Stickers For Android (Proper Catagories)](https://www.reddit.com/r/androiddev/comments/ipfhh4/memoji_stickers_for_android_proper_catagories/)
+- url: https://www.reddit.com/r/androiddev/comments/ipfhh4/memoji_stickers_for_android_proper_catagories/
+---
+Switching from Iphone to Android ,users miss one thing while texting, MEMOJIs. So i decided to find a way to use the same memojis of apple on android.
+Now there are alot of apps already providing you with memojis on android, problem is that they havent catagorized it with a proper plain, or most of them havent catagorized them at all. 
+So , i have grouped the memojis on the basis of proper catagories based on the Hair color, Skin Tone and wearing accessories. The first build has 9 catagories, new catagories will be uploaded every week.
+
+Question from developers ?
+
+I need suggestion in code,  on how to add tags to each memoji, so that users can choose on the basis of those tags. The tags might include Hair colors, Face Color , Accessories etc
+
+
+Google Play Store Link : 
+[Memoji stickers for android](https://play.google.com/store/apps/details?id=com.memoji_wasticekrs_applememoji_sortscript.stickers)
+
+Thank you :)
+## [12][Getting started and developing an application with Jetpack Compose](https://www.reddit.com/r/androiddev/comments/ipf2u3/getting_started_and_developing_an_application/)
+- url: https://blog.codemagic.io/getting-started-with-jetpack-compose/
 ---
 
-## [7][How to save:state of an updateable listview in Android:Studio?](https://www.reddit.com/r/androiddev/comments/iot6g9/how_to_savestate_of_an_updateable_listview_in/)
-- url: https://www.reddit.com/r/androiddev/comments/iot6g9/how_to_savestate_of_an_updateable_listview_in/
----
-In android-studio, I used an edit-text to add an item to a listview after a button is clicked.
-
-Is there a way to save the state of the listview-items even after the app is closed?
-
-I want the listview-items not to be erased, and stay as it is even after the app has restarted.
-## [8][Licenses Library - Provides license texts of common licenses for easy use in your project](https://www.reddit.com/r/androiddev/comments/iodhou/licenses_library_provides_license_texts_of_common/)
-- url: https://www.reddit.com/r/androiddev/comments/iodhou/licenses_library_provides_license_texts_of_common/
----
-Hi,
-
-I finished my second open source Android library (furthermore I'm still a student with not that much time, so please be considerate):
-
-[https://github.com/cyb3rko/android-licenses-library](https://github.com/cyb3rko/android-licenses-library)
-
-You can easily get the most common licenses in formatted and plain text form as Spanned objects.
-
-You can get a license text by just calling  `AndroidLicenses.get(AndroidLicenses.CC_BY_SA_4_0`. For more on the usage you can findd in my repo README.
-
-&amp;#x200B;
-
-I hope my library works as intended and it helps somebody in making their apps.
-
-I would really appreciate feedback!
-
-Some example photos ( Only the shown text belongs to the library, the ui and the app belongs to the sample app):
-
-[Formatted Spanned](https://preview.redd.it/hay944suurl51.png?width=320&amp;format=png&amp;auto=webp&amp;s=257caaf79112a794515c992544a29e78716baedb)
-
-[Plain Spanned](https://preview.redd.it/va39jngvurl51.png?width=320&amp;format=png&amp;auto=webp&amp;s=7055c505347987441f2cedfee608a05203b9c03e)
-
-Thanks a lot!
-## [9][What to expect when applying for an exception for SMS permissions on play store?](https://www.reddit.com/r/androiddev/comments/iogcvg/what_to_expect_when_applying_for_an_exception_for/)
-- url: https://www.reddit.com/r/androiddev/comments/iogcvg/what_to_expect_when_applying_for_an_exception_for/
----
-I am building a finance management app, and want to include automated tracking via SMS. The app is already published on play store, and I'm planning to add the new SMS permissions in the next release and had a couple of questions.
-
-1. How long does the review for permissions take?
-
-2. What should I expect from the review?
-
-3. Do I absolutely need to include a video for the feature? The issue is I'd compromising my PII while demoing the feature on a video.
-
-4. Any other things to keep in mind for the same? 
-
-Will really appreciate your help! Thanks in advance!
-## [10][How did Instagram do this?](https://www.reddit.com/r/androiddev/comments/iooiz0/how_did_instagram_do_this/)
-- url: https://www.reddit.com/r/androiddev/comments/iooiz0/how_did_instagram_do_this/
----
-I have Rooted phone with Xposed installed. I have xPrivacyLua which controls what fake information will be fed to apps. I have Facebook installed few days back. Today, I installed Instagram. In my xPrivacyLua setting, I only gave access to 'clipboard' for Insta. However, as soon as I opened the instagram, it gave me option to login using my Facebook and also showed names of few of my friends using Instagram.
-
-I know Instagram will obviously have access to my Facebook data. However, how did Instagram know that I have Facebook with my login on my mobile? xPrivacyLua works flawlessly for most of other apps. When I block access to apps, it will block it. Then how did this bypassed it?
-
-Technically, only other way I can think of is to have some special `Intent` which Facebook app can catch and then respond to it. Anyone know what is going on?
-## [11][I recieve this weird notification everyday, i m worried a bit. Can someone help me what is this and why it appers.](https://www.reddit.com/r/androiddev/comments/iorhuf/i_recieve_this_weird_notification_everyday_i_m/)
-- url: https://i.imgur.com/eT3ZvFG.jpg
----
-
-## [12][Learned today Android's ListAdapter is not your friend](https://www.reddit.com/r/androiddev/comments/iomwob/learned_today_androids_listadapter_is_not_your/)
-- url: https://www.reddit.com/r/androiddev/comments/iomwob/learned_today_androids_listadapter_is_not_your/
----
-&gt;When submitList is called the first time, the adapter  renders all the items, but when submitList is called again with updated  object properties it does not re-render the view which has changed.
-
-Seems it will only respect the change when you add or remove a new element from the array. Check out the Stackoverflow post for more info. Hopefully you won't bang your head against the wall like I did
-
-[https://stackoverflow.com/a/50031492/3316842](https://stackoverflow.com/a/50031492/3316842)

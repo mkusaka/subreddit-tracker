@@ -23,59 +23,105 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/ioc6ld/whats_everyone_working_on_this_week_372020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-37-2020/48445?u=llogiq)!
-## [3][How to speed up the Rust compiler one last time](https://www.reddit.com/r/rust/comments/ioh9yi/how_to_speed_up_the_rust_compiler_one_last_time/)
-- url: https://blog.mozilla.org/nnethercote/2020/09/08/how-to-speed-up-the-rust-compiler-one-last-time/
+## [3][The first two posts about making a language with Rust are out!](https://www.reddit.com/r/rust/comments/ip9v9g/the_first_two_posts_about_making_a_language_with/)
+- url: https://arzg.github.io/lang/0
 ---
 
-## [4][On finally learning to program at the age of 40](https://www.reddit.com/r/rust/comments/iopo8m/on_finally_learning_to_program_at_the_age_of_40/)
-- url: https://github.com/Dhghomon/programming_at_40/blob/master/README.md
+## [4][As a hobbyist rust developer, I want to think less about error handling](https://www.reddit.com/r/rust/comments/ip5dhv/as_a_hobbyist_rust_developer_i_want_to_think_less/)
+- url: https://mbuffett.com/posts/rust-less-error-handling/
 ---
 
-## [5][Juniper - fast &amp; type-safe GraphQL servers in Rust](https://www.reddit.com/r/rust/comments/ioskx6/juniper_fast_typesafe_graphql_servers_in_rust/)
-- url: https://blog.graphqleditor.com/graphql-rust-juniper/
+## [5][Map/Set traits to be generic over (Hash|BTree)(Map|Set)?](https://www.reddit.com/r/rust/comments/ipbz03/mapset_traits_to_be_generic_over_hashbtreemapset/)
+- url: https://www.reddit.com/r/rust/comments/ipbz03/mapset_traits_to_be_generic_over_hashbtreemapset/
 ---
+When writing algorithms that process a map (or set), I often write functions over `HashMap` for simplicity. Indeed, `HashMap` is now state-of-the-art optimized and suits for most cases. However, most algorithms are actually agnostic to the underlying map implementation - the only requirements are a collection supporting map operations: `insert()`, `remove()`, `entry()`, etc. So they may as well work over a `BTreeMap` if it's what the caller has.
 
-## [6][I Made A Rust Quine](https://www.reddit.com/r/rust/comments/iocgex/i_made_a_rust_quine/)
-- url: https://www.reddit.com/r/rust/comments/iocgex/i_made_a_rust_quine/
+In particular, although `HashMap` works best in most cases, there are still use cases where `BTreeMap` is preferable.
+
+- In `no_std` environments (but with liballoc enabled), only `BTreeMap` is available (I believe it's due to the fact that no randomness source is available in bare-metal `no_std` to randomize the hash map and avoid DoS attacks?).
+- When the caller already has a `BTreeMap` available (e.g. for other reasons the map has to be sorted), converting it into a temporary `HashMap` may not be beneficial.
+- For key types that - for some reason - don't have a hash function available, or are expensive to hash (but cheap to order)?
+
+
+I haven't seen any `Map` trait (that `HashMap` and `BTreeMap` would implement) in the standard library to encompass that, so I was curious about why.
+
+- Did the use case I mention not arise yet?
+- Is the use case too narrow to include in the stdlib - and should rather be implemented by a separate crate?
+- Is such a trait already available in a crate (I must admit I haven't searched thoroughly)?
+- Would it be more complex to define and use such a trait than I naively think?
+## [6][Introducing inline_tweak: tweak values directly from the source](https://www.reddit.com/r/rust/comments/ip30up/introducing_inline_tweak_tweak_values_directly/)
+- url: https://www.reddit.com/r/rust/comments/ip30up/introducing_inline_tweak_tweak_values_directly/
 ---
-A quine is a simple script that prints it's source. After playing around with the RustBot in the Rust Programming Discord, I realized it actually marks all the output code blocks with the \`rust\` language tag, giving it Rust markdown. I then knew what I had to do next.
+I recently published [inline_tweak](https://crates.io/crates/inline_tweak), a crate well received by the gamedev community, so I thought it could assist some people here.  
 
-    fn main() {
-        macro_rules! script {() =&gt; {"fn main() {{\n\tmacro_rules! script {{() =&gt; {{{:?}}}}}\n\tprintln!(script!(), script!());\n}}"}}
-        println!(script!(), script!());
+The idea is to easily tweak any number/boolean literal where modifying the value in the _source code_ also changes it in the program.  
+
+A small example to get the idea:
+
+    loop {
+        // try changing the value while the program is running
+        println!("{}", inline_tweak::tweak!(3.0));
     }
 
-It's as simple as it gets. Macro is used so we can reference the string twice (println! requires a string literal as the first argument), and then we format it with itself.
+It also has a bunch of cool extra features which you can find [in the README](https://github.com/Uriopass/inline_tweak).
 
-Try it out for yourself [here](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=6145572e99a52183c707980d3618d648)!
-## [7][swc v1.2.23 is out! Much better performance, jsx pragma, etc...](https://www.reddit.com/r/rust/comments/ioka4e/swc_v1223_is_out_much_better_performance_jsx/)
-- url: https://swc-project.github.io/blog/2020/09/08/swc-1.2.23
+It is disabled in release mode and is extra light (only 1 dependency), so you can keep it around and it won't impact neither compile times nor performance.
+
+How does it work? Thanks to the `file!()`, `line!()` and `column!()` macros, `inline_tweak` watches the file and parses the changes which it keeps in a `lazy_static` hashmap.
+## [7][Introducing `auditable`: audit Rust binaries for known bugs or vulnerabilities in production](https://www.reddit.com/r/rust/comments/iotx5u/introducing_auditable_audit_rust_binaries_for/)
+- url: https://www.reddit.com/r/rust/comments/iotx5u/introducing_auditable_audit_rust_binaries_for/
+---
+Rust is very promising for security-critical applications due to its memory safety guarantees. However, while vulnerabilities in Rust crates are rare, they [still exist](https://rustsec.org/advisories/), and Rust is currently missing the tooling to deal with them.
+
+For example, Linux distros alert you if you're running a vulnerable version, and you can even opt in to automatic security updates. Cargo not only has no security update infrastructure, it doesn't even know which libraries or library versions went into compiling a certain binary, so there's no way to check if your system is vulnerable or not.
+
+ I've embarked on a quest to fix that.
+
+Today I'm pleased to announce the initial release of `auditable` crate. It embeds the dependency tree into the compiled executable so you can check which crates exactly were used in the build. The primary motivation is to make it possible to answer the question **"Do the Rust binaries we're actually running in production have any known vulnerabilities?"** - and even enable third parties such as cloud providers to automatically do that for you.
+
+We provide [crates](http://docs.rs/auditable_extract/) to consume this information and easily build your own tooling, and a converter to Cargo.lock format for compatibility with existing tools. This information can already be used in conjunction with [cargo-audit](https://github.com/RustSec/cargo-audit), see example usage [here](https://github.com/Shnatsel/rust-audit#demo).
+
+See the [repository](https://github.com/Shnatsel/rust-audit) for a demo and more info on the internals, including the [frequently asked questions](https://github.com/Shnatsel/rust-audit#faq) such as binary bloat.
+
+The end goal is to integrate this functionality in Cargo and enable it by default on all platforms that are not tightly constrained on the size of the executable. A yet-unmerged RFC to that effect can be found [here](https://github.com/rust-lang/rfcs/pull/2801). Right now the primary blockers are:
+
+1. [This bug in rustc](https://github.com/rust-lang/rust/issues/47384) is blocking a proper implementation that could be uplifed into Cargo.
+1. We need to get some experience with the data format before we stabilize it.
+
+If you're running production Rust workloads and would like to be able to audit them for security vulnerabilites, please get in touch. I'd be happy to assist deploying `auditable` used in a real-world setting to iron out the kinks.
+
+And if you can hack on rustc, [you know what to do](https://github.com/rust-lang/rust/issues/47384) ;)
+## [8][** Rust &amp;&amp; C++ London Joint Meetup**](https://www.reddit.com/r/rust/comments/ipf4sp/rust_c_london_joint_meetup/)
+- url: https://www.reddit.com/r/rust/comments/ipf4sp/rust_c_london_joint_meetup/
+---
+Rust London and C++ London are proud to announce our first joint meetup The Rust &amp;&amp; C++ LDN Talks. This is the first in a series of collaborative events between our two communities which have been compared and contrasted for several years.  
+
+
+The purpose of these events is to begin an exchange of ideas and experiences between our user groups.  
+The Rust London User Group will open up the LDN Talks platform to the C++ London community. We will have speakers from C++ London who will share their perspectives, opinions and learning experiences with the Rust Programming language.
+
+&amp;#x200B;
+
+Check out the Meetup Page below
+
+[https://www.meetup.com/Rust-London-User-Group/events/273056379/](https://www.meetup.com/Rust-London-User-Group/events/273056379/)
+## [9][What makes Actix faster than other frameworks?](https://www.reddit.com/r/rust/comments/ip88wb/what_makes_actix_faster_than_other_frameworks/)
+- url: https://www.reddit.com/r/rust/comments/ip88wb/what_makes_actix_faster_than_other_frameworks/
+---
+Why is it that Actix is so much faster than other web frameworks? Is speed a consequence of the actor model behind Actix or something else?
+
+&amp;#x200B;
+
+[https://www.techempower.com/benchmarks/#section=data-r18](https://www.techempower.com/benchmarks/#section=data-r18)
+## [10][Is there a go-to distributed tasks queue in Rust?](https://www.reddit.com/r/rust/comments/ip438x/is_there_a_goto_distributed_tasks_queue_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/ip438x/is_there_a_goto_distributed_tasks_queue_in_rust/
+---
+I'm looking for something like Celery is for Python, maybe slightly more lightweight since I don't care about periodic tasks, or multiple possible backends -- I just need a solution that works for basic FIFO jobs. I've found https://github.com/rusty-celery/rusty-celery -- has anyone managed to use it in production? It seems that the project is well maintained but I'm afraid it's still in early stages of development.
+## [11][`const_trait_impl` is pretty sweet](https://www.reddit.com/r/rust/comments/iouec5/const_trait_impl_is_pretty_sweet/)
+- url: https://play.rust-lang.org/?version=nightly&amp;mode=debug&amp;edition=2018&amp;gist=19df65c14cd0f82b1f0b4a957cf7defd
 ---
 
-## [8][Macro to chain block effects such as unsafe, async, etc.](https://www.reddit.com/r/rust/comments/ioqx0u/macro_to_chain_block_effects_such_as_unsafe_async/)
-- url: https://crates.io/crates/block_effects
----
-
-## [9][Is there some guide for Linux From Scratch but with with only Rust code mostly?](https://www.reddit.com/r/rust/comments/ioqr7t/is_there_some_guide_for_linux_from_scratch_but/)
-- url: https://www.reddit.com/r/rust/comments/ioqr7t/is_there_some_guide_for_linux_from_scratch_but/
----
-There is [https://github.com/mesalock-linux/mesalock-distro](https://github.com/mesalock-linux/mesalock-distro) but last commit is from 2018-11-12.
-
-I would like to try such distro using only what is needed to run all applications written in Rust.
-
-Some low-level stuff would need to be in C/C++ but we already have nushell, smithay etc.  
-
-
-My goal would be to have cargo manage dependencies and some minimal/existing? pacakge manager for C/C++ deps.
-## [10][Is there any way to represent some_slice[1..33] as a [T; 32] instead of just a [T]?](https://www.reddit.com/r/rust/comments/ioogfn/is_there_any_way_to_represent_some_slice133_as_a/)
-- url: https://www.reddit.com/r/rust/comments/ioogfn/is_there_any_way_to_represent_some_slice133_as_a/
----
-
-## [11][generic-simd: easy, safe, cross-platform SIMD](https://www.reddit.com/r/rust/comments/ioe0u6/genericsimd_easy_safe_crossplatform_simd/)
-- url: https://crates.io/crates/generic-simd
----
-
-## [12][This Month in Rust GameDev #13 - August 2020](https://www.reddit.com/r/rust/comments/ioftll/this_month_in_rust_gamedev_13_august_2020/)
-- url: https://rust-gamedev.github.io/posts/newsletter-013
+## [12][Juniper - fast &amp; type-safe GraphQL servers in Rust](https://www.reddit.com/r/rust/comments/ioskx6/juniper_fast_typesafe_graphql_servers_in_rust/)
+- url: https://blog.graphqleditor.com/graphql-rust-juniper/
 ---
 

@@ -1,11 +1,58 @@
 # ruby
-## [1][Need study buddy](https://www.reddit.com/r/ruby/comments/iopopr/need_study_buddy/)
-- url: https://www.reddit.com/r/ruby/comments/iopopr/need_study_buddy/
+## [1][Gem API design question](https://www.reddit.com/r/ruby/comments/ipce8i/gem_api_design_question/)
+- url: https://www.reddit.com/r/ruby/comments/ipce8i/gem_api_design_question/
 ---
-Hi there! I am currently learning Ruby, solving challenges on codewars kyu 7-5. Looking for a study buddy to do live sessions to practice coding in front of someone else. Language doesn’t really matter, it’s more about practicing coding in an ‘interview-like’ manner.
+Hi,
 
-DM me to arrange a session.
-## [2][my deployment of rails api to digitalocean is failing. can someone point me in a direction to hunt down why?](https://www.reddit.com/r/ruby/comments/iorexx/my_deployment_of_rails_api_to_digitalocean_is/)
+I'm new to the Ruby world, and a project at work is using a gem implementing a wrapper to a remote service API. What troubles me is that this gem is exposing only class-level methods, including the "configure" method which does *not* return an object instance.
+
+Its usage is something like this :
+
+```ruby  
+ZooApiWrapper.configure { |config|
+  config.token = "abcdef1234"
+  config.url = "https://my.api/"
+}
+
+lions = ZooApiWrapper.animals.lions
+
+new_pet = ZooApiWrapper::Animal::Dog.new
+new_pet.name = "Spot"
+new_pet.save
+
+# etc...
+```
+
+I would have expected to have the configure call return a wrapper object, and use this wrapper object to access the various resources exposed via the API. Is it usual to use global state for such things instead in Ruby ?
+## [2][The difference between let, let! and instance variables in RSpec](https://www.reddit.com/r/ruby/comments/ip0se6/the_difference_between_let_let_and_instance/)
+- url: https://www.codewithjason.com/difference-let-let-instance-variables-rspec/
+---
+
+## [3][Writing a Ractor-based web server](https://www.reddit.com/r/ruby/comments/iozx5h/writing_a_ractorbased_web_server/)
+- url: https://kirshatrov.com/2020/09/08/ruby-ractor-web-server/
+---
+
+## [4][Rails 6.1 adds --minimal option support](https://www.reddit.com/r/ruby/comments/iovpbj/rails_61_adds_minimal_option_support/)
+- url: https://blog.bigbinary.com/2020/09/08/rails-6-1-adds-minimal-option-support.html
+---
+
+## [5][Working Set - a new tool for your programmer workbench. Written in ruby with actor-model concurrency, unix sockets for IPC, and an ncurses UI. Integrates with Vim, other editors possible.](https://www.reddit.com/r/ruby/comments/ip0b1e/working_set_a_new_tool_for_your_programmer/)
+- url: https://github.com/coderifous/working_set
+---
+
+## [6][Introducing Eventide Fixtures: Testing So Easy It Feels Like Cheating](https://www.reddit.com/r/ruby/comments/iow78t/introducing_eventide_fixtures_testing_so_easy_it/)
+- url: https://blog.eventide-project.org/articles/introducing-eventide-fixtures/
+---
+
+## [7][Integrating Chargebee subscriptions and recurring billing with a Rails app](https://www.reddit.com/r/ruby/comments/ioym5b/integrating_chargebee_subscriptions_and_recurring/)
+- url: https://vitobotta.com/2020/09/08/integrating-chargebee-subscriptions-and-recurring-billing-with-a-rails-app/
+---
+
+## [8][New to ruby. I've been stuck on the coding part for a minute. I've been following this guys tutorial, following the exact same coding. His works but on my end, I get the 204 error code. In my sublime text, can someone help me with this coding? Post is not redirecting to my show controller.](https://www.reddit.com/r/ruby/comments/ip5j4q/new_to_ruby_ive_been_stuck_on_the_coding_part_for/)
+- url: https://www.reddit.com/gallery/ip5j4q
+---
+
+## [9][my deployment of rails api to digitalocean is failing. can someone point me in a direction to hunt down why?](https://www.reddit.com/r/ruby/comments/iorexx/my_deployment_of_rails_api_to_digitalocean_is/)
 - url: https://www.reddit.com/r/ruby/comments/iorexx/my_deployment_of_rails_api_to_digitalocean_is/
 ---
 i've been trying to deploy my rails api (to be paired with a react front end) to digitalocean and have been getting stuck at the same 2 spots and i'm just not really sure why. i feel like there's something obvious i'm missing, but i don't think i know enough to spot it.
@@ -31,54 +78,9 @@ in capfile you add these lines (but it fails on migration after getting thru pre
 i went thru a bootcamp but they never touched on deploying and only suggested using heroku, so i'm curious if i just didn't learn something obvious. i've spent a ton of time on trying to get it to work but at this point i want to know what i'm not understanding before just using an easy setup deployment service.
 
 thanks for any help!
-## [3][GitHub Actions](https://www.reddit.com/r/ruby/comments/io6g0t/github_actions/)
-- url: https://www.driftingruby.com/episodes/github-actions?utm_medium=social&amp;utm_campaign=weekly_episode&amp;utm_source=reddit
+## [10][Need study buddy](https://www.reddit.com/r/ruby/comments/iopopr/need_study_buddy/)
+- url: https://www.reddit.com/r/ruby/comments/iopopr/need_study_buddy/
 ---
+Hi there! I am currently learning Ruby, solving challenges on codewars kyu 7-5. Looking for a study buddy to do live sessions to practice coding in front of someone else. Language doesn’t really matter, it’s more about practicing coding in an ‘interview-like’ manner.
 
-## [4][backup - a github repo backup command line tool (powered by gitti/backup)](https://www.reddit.com/r/ruby/comments/iobrxj/backup_a_github_repo_backup_command_line_tool/)
-- url: https://github.com/rubycoco/gitti/tree/master/gitti-backup
----
-
-## [5][Help to optimize a method that gets called frequently.](https://www.reddit.com/r/ruby/comments/ioa2em/help_to_optimize_a_method_that_gets_called/)
-- url: https://www.reddit.com/r/ruby/comments/ioa2em/help_to_optimize_a_method_that_gets_called/
----
-There is a method that gets called for every request in my rails application and I optimized it to cut a few iterations inside a loop on every method call. The thing is I'm not sure how much of a better code this is.  I ran some benchmarks on the newer and existing code and this is how the data looks 
-
-    10M iterations
-                    user     system      total        real
-    Exisintg =&gt; 55.180000   0.930000  56.110000 ( 56.397975)
-     New =&gt; 46.250000   0.570000  46.820000 ( 46.973160)
-
-    20M Iterations
-                    user     system      total        real
-    Exising =&gt; 105.620000   1.700000 107.320000 (108.221156)
-    New =&gt;.     87.840000   1.000000  88.840000 ( 88.970525)
-
-I used the [Benchmark.bm](https://Benchmark.bm) method to measure this data. What I'm trying to understand is how can I processed to more accurately find the performance improvements so I can go ahead with this approach.   
-Things I'm worried about. 
-
-1. the accuracy of bm isn't the best and wouldn't translate to real-world systems and I'm not able to get it to work with bmbm which is more accurate than this. 
-2. Have to justify the testing and development effort is worth the gains. 
-3. Does shaving a few iterations for every request actually worth it. For an individual request, I would say no but when a system receives say 30M requests it would increase the throughput of the system right? even if the average response time for a call doesn't go down by much?
-
-Can anyone give me more insight into what I need to do to move forward with this?
-## [6][retest: a gem to help you refactor your ruby projects faster](https://www.reddit.com/r/ruby/comments/io0uae/retest_a_gem_to_help_you_refactor_your_ruby/)
-- url: https://github.com/AlexB52/retest
----
-
-## [7][Survey finds only 3% of Ruby on Rails developers use Windows](https://www.reddit.com/r/ruby/comments/inpgox/survey_finds_only_3_of_ruby_on_rails_developers/)
-- url: https://developers.slashdot.org/story/20/09/06/0028214/survey-finds-only-3-of-ruby-on-rails-developers-use-windows
----
-
-## [8][HashWithIndifferentAccess in Rails](https://www.reddit.com/r/ruby/comments/io1trg/hashwithindifferentaccess_in_rails/)
-- url: https://www.sandipmane.dev/hash-with-indifferent-access-in-rails
----
-
-## [9][Command-line Arguments in Ruby: Part I](https://www.reddit.com/r/ruby/comments/inmgds/commandline_arguments_in_ruby_part_i/)
-- url: https://medium.com/rubycademy/command-line-arguments-in-ruby-part-i-8a89479cb70f
----
-
-## [10][Integrate Doorkeeper gem – API only ruby on rails course (chapter 10)](https://www.reddit.com/r/ruby/comments/inne5q/integrate_doorkeeper_gem_api_only_ruby_on_rails/)
-- url: https://duetcode.io/rails-api-only-course/integrate-doorkeeper-gem
----
-
+DM me to arrange a session.

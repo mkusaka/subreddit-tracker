@@ -1,11 +1,5 @@
 # javascript
-## [1][Showoff Saturday (September 05, 2020)](https://www.reddit.com/r/javascript/comments/imzsna/showoff_saturday_september_05_2020/)
-- url: https://www.reddit.com/r/javascript/comments/imzsna/showoff_saturday_september_05_2020/
----
-Did you find or create something cool this week in javascript? 
-
-Show us here!
-## [2][Your /r/javascript recap for the week of August 31 - September 06](https://www.reddit.com/r/javascript/comments/io4504/your_rjavascript_recap_for_the_week_of_august_31/)
+## [1][Your /r/javascript recap for the week of August 31 - September 06](https://www.reddit.com/r/javascript/comments/io4504/your_rjavascript_recap_for_the_week_of_august_31/)
 - url: https://www.reddit.com/r/javascript/comments/io4504/your_rjavascript_recap_for_the_week_of_august_31/
 ---
 **Monday, August 31 - Sunday, September 06**
@@ -85,43 +79,51 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][Learn about common performance issues with front-end JavaScript, and how to detect and fix them.](https://www.reddit.com/r/javascript/comments/ipcxea/learn_about_common_performance_issues_with/)
+## [2][WTF Wednesday (September 09, 2020)](https://www.reddit.com/r/javascript/comments/ipis9s/wtf_wednesday_september_09_2020/)
+- url: https://www.reddit.com/r/javascript/comments/ipis9s/wtf_wednesday_september_09_2020/
+---
+Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
+Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
+this is the place.
+
+[Named after this comic](https://davidwalsh.name/demo/code-review.png)
+## [3][Monadic error handling for TypeScript](https://www.reddit.com/r/javascript/comments/ipwtxr/monadic_error_handling_for_typescript/)
+- url: https://www.npmjs.com/package/amonad
+---
+
+## [4][Interactive fractal generator](https://www.reddit.com/r/javascript/comments/iq2ib5/interactive_fractal_generator/)
+- url: https://js.project-zeta.org/fractal/
+---
+
+## [5][Rewriting Facebook's "Recoil" React library from scratch in 100 lines](https://www.reddit.com/r/javascript/comments/ipg1cp/rewriting_facebooks_recoil_react_library_from/)
+- url: https://bennetthardwick.com/blog/recoil-js-clone-from-scratch-in-100-lines/
+---
+
+## [6][Learn about common performance issues with front-end JavaScript, and how to detect and fix them.](https://www.reddit.com/r/javascript/comments/ipcxea/learn_about_common_performance_issues_with/)
 - url: https://www.debugbear.com/blog/front-end-javascript-performance
 ---
 
-## [4][There's a new decorator proposal and it seems like it's scheduled to be discussed by TC39 in the September 2020 meeting.](https://www.reddit.com/r/javascript/comments/iow8w4/theres_a_new_decorator_proposal_and_it_seems_like/)
-- url: https://github.com/tc39/proposal-decorators/blob/simplified/README.md
+## [7][Ketting v6. A generic REST client for Javascript](https://www.reddit.com/r/javascript/comments/ipokot/ketting_v6_a_generic_rest_client_for_javascript/)
+- url: https://evertpot.com/ketting-6/
 ---
 
-## [5][A realtime communication framework so devs can build multiplayer games without worrying about the networking side of it](https://www.reddit.com/r/javascript/comments/ipcdw0/a_realtime_communication_framework_so_devs_can/)
-- url: https://dev.to/ablydev/building-realtime-multiplayer-games-has-never-been-easier-presenting-a-realtime-communication-framework-for-games-1lk7
+## [8][List of JavaScript GUI Control libraries (dat.GUI alternatives)](https://www.reddit.com/r/javascript/comments/iq39ev/list_of_javascript_gui_control_libraries_datgui/)
+- url: https://xosh.org/javascript-control-ui/
 ---
 
-## [6][AdminKit - Open Source Bootstrap 5 admin template in vanilla JS](https://www.reddit.com/r/javascript/comments/ipeprz/adminkit_open_source_bootstrap_5_admin_template/)
-- url: https://github.com/adminkit/adminkit
+## [9][Falldown – A game rendered in web console](https://www.reddit.com/r/javascript/comments/ipo8fn/falldown_a_game_rendered_in_web_console/)
+- url: https://bernhardfritz.github.io/falldown/
 ---
 
-## [7][Cross App Bundling — A different approach for Micro Frontends](https://www.reddit.com/r/javascript/comments/ipeo6t/cross_app_bundling_a_different_approach_for_micro/)
-- url: https://medium.com/@tobiasuhlig/cross-app-bundling-a-different-approach-for-micro-frontends-e4f212b6a9a?source=friends_link&amp;sk=a0b098b4ac792f05348b20cdc007d83c
+## [10][Chrome DevTools engineering blog - Architecture refresh: Migrating to JavaScript modules](https://www.reddit.com/r/javascript/comments/iplsyd/chrome_devtools_engineering_blog_architecture/)
+- url: https://developers.google.com/web/updates/2020/09/migrating-to-js-modules
 ---
 
-## [8][SweetAlert2 - a beautiful, responsive, highly customizable and accessible (WAI-ARIA) replacement for JavaScript's popup boxes (alert, prompt, dialog, toast, side panel, drawer, etc.)](https://www.reddit.com/r/javascript/comments/iorbus/sweetalert2_a_beautiful_responsive_highly/)
-- url: https://sweetalert2.github.io/
+## [11][I made a snake game with pure javascript and html canvas](https://www.reddit.com/r/javascript/comments/iq1k1g/i_made_a_snake_game_with_pure_javascript_and_html/)
+- url: https://github.com/artuncolak/SnakeyGame
 ---
 
-## [9][Dynamic task scheduling with NodeJS and MongoDB](https://www.reddit.com/r/javascript/comments/ioopfe/dynamic_task_scheduling_with_nodejs_and_mongodb/)
-- url: https://medium.com/yudiz-solutions/dynamic-task-scheduling-with-nodejs-and-mongodb-43052fdd811f?source=friends_link&amp;sk=cbdd11e0afdac9bfea79bbe9eb41adee
----
-
-## [10][Svelte Weekly (Issue #1)](https://www.reddit.com/r/javascript/comments/ipaiuo/svelte_weekly_issue_1/)
-- url: https://svelteweekly.substack.com/p/svelte-weekly-issue-1?r=9dsag&amp;utm_campaign=post&amp;utm_medium=web&amp;utm_source=reddit
----
-
-## [11][Autogenerated Screenshots in Markdown](https://www.reddit.com/r/javascript/comments/iouv40/autogenerated_screenshots_in_markdown/)
-- url: https://nicolodavis.com/blog/autogenerating-screenshots/
----
-
-## [12][Support JavaScript modules in snippets](https://www.reddit.com/r/javascript/comments/ip7sk6/support_javascript_modules_in_snippets/)
-- url: https://meta.stackoverflow.com/questions/389108/support-javascript-modules-in-snippets
+## [12][An Introduction to Reusable Components and how to create Typography Component](https://www.reddit.com/r/javascript/comments/ipi4la/an_introduction_to_reusable_components_and_how_to/)
+- url: https://dev.to/nghiemthu/an-introduction-about-reusable-components-and-creating-typography-component-4c6o
 ---
 

@@ -12,48 +12,114 @@ This coming episode we want to try something a little different - we want to mak
 To make this happen we would like everyone here to post any Go-related questions that you would like us to discuss on air, and we will try to get to as many as possible. I'll also try to type up answers here while we discuss them on the episode.
 
 We will be answering questions live tomorrow, Tuesday, Sep 8. We will repeat questions on air, and since we record live you can join in on the Gophers Slack to ask follow-up questions or to elaborate on questions.
-## [2][Generate, Monitor, and Throttle CPU Load in Go 👨‍💻](https://www.reddit.com/r/golang/comments/ipbq1k/generate_monitor_and_throttle_cpu_load_in_go/)
-- url: https://blog.fekr.tech/generate-monitor-and-throttle-cpu-load-in-go-cke9wmddd000t65s15l7q2pd6
+## [2][Go Modules have a v2+ Problem](https://www.reddit.com/r/golang/comments/ipwea6/go_modules_have_a_v2_problem/)
+- url: https://donatstudios.com/Go-v2-Modules
 ---
 
-## [3][[Looking for feedback] Hostman- A simple cloud hosting platform where you can deploy your web apps with just a few clicks](https://www.reddit.com/r/golang/comments/ipe4jg/looking_for_feedback_hostman_a_simple_cloud/)
-- url: https://www.reddit.com/r/golang/comments/ipe4jg/looking_for_feedback_hostman_a_simple_cloud/
+## [3][Golang 1.15.2 released](https://www.reddit.com/r/golang/comments/ipwctk/golang_1152_released/)
+- url: https://www.reddit.com/r/golang/comments/ipwctk/golang_1152_released/
 ---
-We are trying to get user feedback and are providing a **$50 bonus (no credit card required)** on signup for you to test it out and let us know what you think about the platform. We support frameworks like Gin, Beego, and many more!
-
-Here's the link: [https://hostman.com/?coupon=reddit50](https://hostman.com/?coupon=reddit50)
-## [4][I wrote Conway's Game of Life in Go](https://www.reddit.com/r/golang/comments/iperd1/i_wrote_conways_game_of_life_in_go/)
-- url: https://www.reddit.com/r/golang/comments/iperd1/i_wrote_conways_game_of_life_in_go/
----
-[https://github.com/foxyblue/game-of-life](https://github.com/foxyblue/game-of-life)  
-My code isn't as great as I would like it to be, but I wrote this to tryout \`[github.com/faiface/pixel\`](https://github.com/faiface/pixel`) which was a little bit of fun.
-## [5][GraphQL: Centralize existing REST API endpoints for easier development](https://www.reddit.com/r/golang/comments/ipeip8/graphql_centralize_existing_rest_api_endpoints/)
-- url: https://www.reddit.com/r/golang/comments/ipeip8/graphql_centralize_existing_rest_api_endpoints/
----
-One of the GraphQL’s goals is Abstracting many different services into a single place and allowing the developers very fine-grained control over the data they require is. [This post](https://medium.com/@roelofjanelsinga/graphql-centralize-existing-rest-api-endpoints-for-easier-development-abd7b007d7c4?source=friends_link&amp;sk=ab9ebb693fb471a0e669777524c52c17) look over a GraphQL implementation by considering this goal.
-## [6][Turn asterisk-indented text lines into mind maps.](https://www.reddit.com/r/golang/comments/iow83p/turn_asteriskindented_text_lines_into_mind_maps/)
-- url: https://github.com/lucasepe/crumbs
+[https://github.com/golang/go/issues?q=milestone%3AGo1.15.2+label%3ACherryPickApproved](https://github.com/golang/go/issues?q=milestone%3AGo1.15.2+label%3ACherryPickApproved)
+## [4][🔐 prvt 0.5 is out. Personal, E2E encrypted storage, accessible through your browser](https://www.reddit.com/r/golang/comments/ipue2p/prvt_05_is_out_personal_e2e_encrypted_storage/)
+- url: https://github.com/ItalyPaleAle/prvt
 ---
 
-## [7][Applying seccomp filters in Go - a 2 parts blog post (would love some feedback)](https://www.reddit.com/r/golang/comments/ipfawu/applying_seccomp_filters_in_go_a_2_parts_blog/)
-- url: https://dev.bitolog.com/go-seccomp-filters-part-1/
+## [5][I tried to build a minimal load balancer](https://www.reddit.com/r/golang/comments/ipzyu6/i_tried_to_build_a_minimal_load_balancer/)
+- url: https://youtu.be/4i7_5NE6tlM
 ---
 
-## [8][Use Twitter over satellite, send Emails over telephone, watch YouTube on Windows 98 - what more can a geek desire? Check out laitos v4.1!](https://www.reddit.com/r/golang/comments/iou5w0/use_twitter_over_satellite_send_emails_over/)
-- url: https://github.com/HouzuoGuo/laitos
+## [6][Are design patterns important in Go ?](https://www.reddit.com/r/golang/comments/iprdy9/are_design_patterns_important_in_go/)
+- url: https://www.reddit.com/r/golang/comments/iprdy9/are_design_patterns_important_in_go/
+---
+Hi all! I know that certain concepts like dependency injection are necessary to write a well testable code in Go , but what about the design patterns mentioned in the Gang of Four book like visitor pattern , observer pattern etc . Are these design patterns language agnostic ? Do these patterns make sense in the context of Go ?
+
+Are these patterns important to write a well maintainable code in Go ?
+## [7][Guide to Environment variables in Go](https://www.reddit.com/r/golang/comments/ipzna1/guide_to_environment_variables_in_go/)
+- url: https://www.reddit.com/r/golang/comments/ipzna1/guide_to_environment_variables_in_go/
+---
+Hey Gophers 👋
+
+Do you store your application configs like DB Passwords, API secrets, etc in your code?   
+In this article, I try to cover ways to manage them in better ways.
+
+Understand what are environment variables/configs and how to manage them in Go.
+
+Check this out here -  
+[https://www.mohitkhare.com/blog/environment-variable-golang](https://www.mohitkhare.com/blog/environment-variable-golang)
+
+Do suggest feedbacks and improvements!
+
+[environment-variable-golang](https://preview.redd.it/yrsem12baam51.png?width=673&amp;format=png&amp;auto=webp&amp;s=d00a78bba75c74a3a41b91c3b831750b19cf0fe0)
+## [8][RD Gateway Client](https://www.reddit.com/r/golang/comments/iq07ph/rd_gateway_client/)
+- url: https://www.reddit.com/r/golang/comments/iq07ph/rd_gateway_client/
+---
+Hi,
+
+At the moment I'm trying to implement a RD Gateway client in go. Is someone of you familiar with the MS RD Gateway protocol? Currently I'm stuck at the initial handshake after opening the 'in' and 'out' channels.
+
+I uploaded my code here: https://github.com/develerik/rdtunnel
+
+It would be great if you could help me :)
+## [9][go template for whole folder (tree) structure](https://www.reddit.com/r/golang/comments/iq2j69/go_template_for_whole_folder_tree_structure/)
+- url: https://www.reddit.com/r/golang/comments/iq2j69/go_template_for_whole_folder_tree_structure/
+---
+As I couldn't find a suitable folder structure generator, I've created a simple one for my needs. I hope you like ti too: [https://github.com/lorands/tymlate](https://github.com/lorands/tymlate)
+## [10][Implementing of python's threading.Event using golang channels](https://www.reddit.com/r/golang/comments/ipuvdp/implementing_of_pythons_threadingevent_using/)
+- url: https://github.com/trivigy/event
 ---
 
-## [9][Dependency requires different version of a direct dependency](https://www.reddit.com/r/golang/comments/ip49bg/dependency_requires_different_version_of_a_direct/)
-- url: https://www.reddit.com/r/golang/comments/ip49bg/dependency_requires_different_version_of_a_direct/
+## [11][[CGO] How to create a struct with nested array of struct?](https://www.reddit.com/r/golang/comments/iq0q5s/cgo_how_to_create_a_struct_with_nested_array_of/)
+- url: https://www.reddit.com/r/golang/comments/iq0q5s/cgo_how_to_create_a_struct_with_nested_array_of/
 ---
-We depend on [go.etcd.io/etcd](https://go.etcd.io/etcd) which depends on google.golang.org/grpc v1.26.0 but we also depend on protoc-gen-go which requires google.golang.org/grpc v1.31.1 but breaks [go.etcd.io/etcd](https://go.etcd.io/etcd).
+I am trying to create a struct, in Go, where one of it's children is an array of struct and then translate it to C using CGO.
 
-Is there a solution to this?
-## [10][Beware of upgrading gorilla/handlers to 1.5.0](https://www.reddit.com/r/golang/comments/ios44w/beware_of_upgrading_gorillahandlers_to_150/)
-- url: https://www.reddit.com/r/golang/comments/ios44w/beware_of_upgrading_gorillahandlers_to_150/
----
-Currently gzip compression is broken, see [https://github.com/gorilla/handlers/issues/194](https://github.com/gorilla/handlers/issues/194). Keep 1.4.2 or use commit hash [d453eff](https://github.com/gorilla/handlers/commit/d453effd20e6817a8acfd9d278dadd21371da0ba).
-## [11][Generate RESTful service and swagger documentation with gRPC gateway. This enables us to write code just once but serving both gRPC and HTTP JSON requests at the same time.](https://www.reddit.com/r/golang/comments/ioswkv/generate_restful_service_and_swagger/)
-- url: https://youtu.be/Zf9G2KzYs7w
----
+I tried something like this in Go
 
+```
+*/
+typedef struct FileInfo{
+	int64_t Size;
+	char *Name;
+}FileInfo;
+
+typedef struct Result{
+	FileInfo **files;
+}Result;
+
+int64_t GetResult(void **presult, FileInfo **files) {
+	Result *result = (Result *)malloc(sizeof(Result));
+	result-&gt;files=files;
+
+	*presult = result;
+
+	int64_t ptr = (int64_t)result;
+
+	return ptr;
+}
+*/
+import "C"
+```
+
+```
+func Run() {
+	var arr []*C.struct_FileInfo
+
+	ai := C.struct_FileInfo{
+		Size: C.int64_t(1234),
+		Name: C.CString("some name"),
+	}
+
+	arr = append(arr, &amp;ai)
+
+	var presult unsafe.Pointer
+	ptr := C.GetResult(&amp;presult, &amp;arr[0])
+
+	println("\nResult struct pointer: %v", ptr)
+}
+```
+
+
+It threw an `panic: runtime error: cgo argument has Go pointer to Go pointer` error.
+
+
+How to I fix this error?

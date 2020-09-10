@@ -31,91 +31,65 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Rendering Markdown using Jetpack Compose](https://www.reddit.com/r/androiddev/comments/ipcftx/rendering_markdown_using_jetpack_compose/)
-- url: https://www.reddit.com/r/androiddev/comments/ipcftx/rendering_markdown_using_jetpack_compose/
----
-I wrote a post and a sample app for how to render Markdown content using Jetpack Compose. 
-
-Hope you like it!
-
-[https://www.hellsoft.se/rendering-markdown-with-jetpack-compose/](https://www.hellsoft.se/rendering-markdown-with-jetpack-compose/)
-## [4][PSA: BuildCompat.isAtLeastR() incompatible with released version of 11/R](https://www.reddit.com/r/androiddev/comments/ipdv64/psa_buildcompatisatleastr_incompatible_with/)
-- url: https://www.reddit.com/r/androiddev/comments/ipdv64/psa_buildcompatisatleastr_incompatible_with/
----
-This is defined as:
-```
-public static boolean isAtLeastR() {  
- return VERSION.CODENAME.length() == 1  
- &amp;&amp; VERSION.CODENAME.charAt(0) &gt;= 'R'  
- &amp;&amp; VERSION.CODENAME.charAt(0) &lt;= 'Z';  
-}
-```
-The release version of 11 `CODENAME` is `"REL"` so `length() &gt; 1` and returns `false`.
-
-This is using:
-```
-implementation 'androidx.core:core:1.3.1'
-implementation 'androidx.core:core-ktx:1.3.1'
-```
-The latest stable version (at time of writing).
-
-Be warned!
-
-Workaround:
-`Build.VERSION.SDK_INT &gt;= 30` or `Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.R`
-
-Edit:
-Markdown had italics highlighting by mistake. Forgot `=` in workaround.
-
-Additional edit:
-I now realise that `BuildCompat` is precisely for targeting pre-release versions of Android. So using it in production code is not intended. Either way it's likely to be fixed with a real version check in future.
-## [5][Android 11 has arrived](https://www.reddit.com/r/androiddev/comments/ioxlor/android_11_has_arrived/)
-- url: https://blog.google/products/android/android-11
+## [3][I'm working on Augmented reality based system which based on Iron man's Holographic system, need some suggestion to make it perfect](https://www.reddit.com/r/androiddev/comments/ipxf16/im_working_on_augmented_reality_based_system/)
+- url: https://www.youtube.com/watch?v=n_bxsWXHDUE&amp;feature=youtu.be
 ---
 
-## [6][Do people still use MPAndroidChart?](https://www.reddit.com/r/androiddev/comments/ipe4oe/do_people_still_use_mpandroidchart/)
-- url: https://www.reddit.com/r/androiddev/comments/ipe4oe/do_people_still_use_mpandroidchart/
+## [4][New android packaging (graphical R8/Proguard-like) tool](https://www.reddit.com/r/androiddev/comments/iq1s3g/new_android_packaging_graphical_r8proguardlike/)
+- url: https://www.reddit.com/r/androiddev/comments/iq1s3g/new_android_packaging_graphical_r8proguardlike/
 ---
-I was just going to suggest using it for a project and saw the last release was well over a year ago. As well as that, there's \~1700 issues on the [repo.](https://github.com/PhilJay/MPAndroidChart) Just wondering if people are still actively adding this to projects, and if not, what's the best alternative? I'm looking for something that has a few different graphs, and ideally supports some interaction.
-## [7][ShapeableImageView - Material components for android](https://www.reddit.com/r/androiddev/comments/ip6q3q/shapeableimageview_material_components_for_android/)
-- url: https://howtodoandroid.com/shapeableimageview-material-components-android/
----
-
-## [8][ViewBinding Delegate — one line](https://www.reddit.com/r/androiddev/comments/ipe6tm/viewbinding_delegate_one_line/)
-- url: https://medium.com/@hoc081098/viewbinding-delegate-one-line-4d0cdcbf53ba
+["Clyze: analyze, obfuscate, optimize"](https://medium.com/@magical_red_porpoise_431/e64a92524a96?source=friends_link&amp;sk=2daf69f115ca7b1545360399ffa9c11b): new tool for android packaging, in early-access release. [clyze.com](https://clyze.com) is the actual site from the article.
+## [5][Released Kotlin 1.4.10](https://www.reddit.com/r/androiddev/comments/iq2hva/released_kotlin_1410/)
+- url: https://github.com/JetBrains/kotlin/releases/tag/v1.4.10
 ---
 
-## [9][Android 11 Wireless Debugging](https://www.reddit.com/r/androiddev/comments/ipd0ph/android_11_wireless_debugging/)
-- url: https://www.reddit.com/r/androiddev/comments/ipd0ph/android_11_wireless_debugging/
+## [6][My usb-c charger broke and the one in the mail didn't arrive overnight, hello 2015 macbook](https://www.reddit.com/r/androiddev/comments/ipgk3v/my_usbc_charger_broke_and_the_one_in_the_mail/)
+- url: https://i.redd.it/l23b7mohq4m51.png
 ---
-Here's a video on how to use wireless debugging in Android 11.
 
-[https://www.youtube.com/watch?v=azZPiGY9lFs](https://www.youtube.com/watch?v=azZPiGY9lFs)
-## [10][Questions about Square Workflow](https://www.reddit.com/r/androiddev/comments/ipfnvu/questions_about_square_workflow/)
-- url: https://www.reddit.com/r/androiddev/comments/ipfnvu/questions_about_square_workflow/
+## [7][How does an app gets mentioned on New releases section of the play store?](https://www.reddit.com/r/androiddev/comments/ipwden/how_does_an_app_gets_mentioned_on_new_releases/)
+- url: https://www.reddit.com/r/androiddev/comments/ipwden/how_does_an_app_gets_mentioned_on_new_releases/
 ---
-I've seen the video about Square Workflow at Droidcon and tried it out with a dummy project, but I still have a few questions about it and think this is the right place to discuss about it.
-
-* Do you use it in production ? What is your experience with it ?
-* Does it work well with asynchronous source of data ? I'm thinking about an app that heavily rely on Firestore to write and read data.
-* Does it work well with more complex Android UI Components like ViewPager2 ?
-## [11][Memoji Stickers For Android (Proper Catagories)](https://www.reddit.com/r/androiddev/comments/ipfhh4/memoji_stickers_for_android_proper_catagories/)
-- url: https://www.reddit.com/r/androiddev/comments/ipfhh4/memoji_stickers_for_android_proper_catagories/
+Does a new app automatically get mentioned on gaining popularity, Or do you need to apply for it separately?
+## [8][Understanding phone internals](https://www.reddit.com/r/androiddev/comments/ipy4kw/understanding_phone_internals/)
+- url: https://www.reddit.com/r/androiddev/comments/ipy4kw/understanding_phone_internals/
 ---
-Switching from Iphone to Android ,users miss one thing while texting, MEMOJIs. So i decided to find a way to use the same memojis of apple on android.
-Now there are alot of apps already providing you with memojis on android, problem is that they havent catagorized it with a proper plain, or most of them havent catagorized them at all. 
-So , i have grouped the memojis on the basis of proper catagories based on the Hair color, Skin Tone and wearing accessories. The first build has 9 catagories, new catagories will be uploaded every week.
+I'm looking for a resource or hub to learn and collaborate about phone hardware and writing software for it at the bare metal level.
 
-Question from developers ?
+I'm aware of Lineage OS and I guess in practical terms you could also phrase my question as "where are the resources used by Lineage OS devs when they are trying to port to a new phone?"
 
-I need suggestion in code,  on how to add tags to each memoji, so that users can choose on the basis of those tags. The tags might include Hair colors, Face Color , Accessories etc
+I want to come up with novel uses for old (and new) phones and create resources for others who are interested in doing the same.
 
+Thanks
+## [9][Live Template for Creating LiveData](https://www.reddit.com/r/androiddev/comments/iq1h0v/live_template_for_creating_livedata/)
+- url: https://www.reddit.com/r/androiddev/comments/iq1h0v/live_template_for_creating_livedata/
+---
+Hi guys,
 
-Google Play Store Link : 
-[Memoji stickers for android](https://play.google.com/store/apps/details?id=com.memoji_wasticekrs_applememoji_sortscript.stickers)
+Today I manage to create Live Templates for creating private MutableLiveData inside viewModel and also public function to expose it.
 
-Thank you :)
-## [12][Getting started and developing an application with Jetpack Compose](https://www.reddit.com/r/androiddev/comments/ipf2u3/getting_started_and_developing_an_application/)
-- url: https://blog.codemagic.io/getting-started-with-jetpack-compose/
+Here is the github repo [link](https://github.com/100nandoo/android-studio-live-templates)
+
+Feel free to give feedbacks or submit pull request.
+
+Cheers, hope it helps.
+## [10][Has anyone noticed delays in Google Play store listing updates?](https://www.reddit.com/r/androiddev/comments/iq015d/has_anyone_noticed_delays_in_google_play_store/)
+- url: https://www.reddit.com/r/androiddev/comments/iq015d/has_anyone_noticed_delays_in_google_play_store/
+---
+Hi! Not a developer, but an app marketer here. Hope I'm not breaking any rules with this post.
+
+Anyway, has anyone noticed delays in Google Play store listing updates recently?
+
+I know that due to Covid the app review times have increased but does the same apply to store listing information like app title, description, screenshots, etc.?
+
+It used to be 2-3 hours at most, but now it's been almost 2 days since I changed the store listing information and it hasn't gone live on Google Play yet.
+
+Should I start to worry and contact Google Play support or is it normal during these times?
+## [11][How to Create a Book App with Advance Features and Make Money?](https://www.reddit.com/r/androiddev/comments/iq1xtw/how_to_create_a_book_app_with_advance_features/)
+- url: https://blog.svapinfotech.com/how-to-create-a-book-app/
+---
+
+## [12][What is Jetpack DataDtore](https://www.reddit.com/r/androiddev/comments/iq1mqe/what_is_jetpack_datadtore/)
+- url: https://proandroiddev.com/lets-explore-jetpack-datastore-in-android-621f3564b57
 ---
 

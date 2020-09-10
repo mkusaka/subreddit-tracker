@@ -1,123 +1,79 @@
 # aws
-## [1][Week of Sept 8th - What are you building this week on AWS?](https://www.reddit.com/r/aws/comments/iot7kv/week_of_sept_8th_what_are_you_building_this_week/)
-- url: https://www.reddit.com/r/aws/comments/iot7kv/week_of_sept_8th_what_are_you_building_this_week/
----
-Share your victories with the community
-## [2][Is it possible to record the speaker output of an EC2 instance?](https://www.reddit.com/r/aws/comments/ip15mq/is_it_possible_to_record_the_speaker_output_of_an/)
-- url: https://www.reddit.com/r/aws/comments/ip15mq/is_it_possible_to_record_the_speaker_output_of_an/
----
-SOLVED! I commented which solution worked in the comments below. Thank you everyone!
-
-I'm a highschooler trying out AWS for the first time, so forgive me if this is a dumb question.
-
-How can I record the speaker output of an AWS instance? I'm using the Amazon Linux 2 AMI. I see that when I install pulseaudio and list the sinks, there's a "Dummy Speaker" (or something along the lines of that).
-
-I’ll describe my project really quick:
-Essentially, I’m making a “Zoom bot” (similar to a discord one) that can do transcriptions, and also act as a Chatbot within in meeting chat. For transcriptions, I’m trying to record the audio and send it to Amazon Transcribe. Other Zoom apps that offer transcription capability need you to have a paid zoom account for either cloud recording or custom live streaming.
-## [3][Security September: Escaping CodeBuild - The compromise that wasn't – One Cloud Please](https://www.reddit.com/r/aws/comments/ip477h/security_september_escaping_codebuild_the/)
-- url: https://onecloudplease.com/blog/security-september-escaping-codebuild
+## [1][API Gateway HTTP APIs authorization now supports Lambda and IAM](https://www.reddit.com/r/aws/comments/iptsk8/api_gateway_http_apis_authorization_now_supports/)
+- url: https://aws.amazon.com/about-aws/whats-new/2020/09/api-gateway-http-apis-now-supports-lambda-and-iam-authorization-options/
 ---
 
-## [4][With the fires in the West, I'd like to be able to plan accordingly. Does anyone know where us-west-2 is, exactly (or even vaguely)?](https://www.reddit.com/r/aws/comments/ip4iqe/with_the_fires_in_the_west_id_like_to_be_able_to/)
-- url: https://www.reddit.com/r/aws/comments/ip4iqe/with_the_fires_in_the_west_id_like_to_be_able_to/
----
-Subject pretty much says it all, I just want to know if there is a fast moving fire heading toward my organization's stuff.  Does anyone know where the various AZs of us-west-2 are?
-## [5][Self hosted Docker Registry with S3 storage - high ListBucket usage](https://www.reddit.com/r/aws/comments/ipf0rr/self_hosted_docker_registry_with_s3_storage_high/)
-- url: https://www.reddit.com/r/aws/comments/ipf0rr/self_hosted_docker_registry_with_s3_storage_high/
----
-Hey everybody,
-
-I just inherited an account and performed few initial Cost Explorer checks looking for quick easy wins. I noticed there's a recurring $70 fee for S3 even though the account itself does not utilize S3 that much. 99% of the cost comes from EU-Requests-Tier1 and after downloading a detailed report of the S3 costs I was able to extract useful piece of info - there are around 230-250k ListBucket requests per day(a constant stream of 15-18k per hour), to a bucket serving as a Storage to a self hosted [Docker Registry](https://docs.docker.com/registry/) on ECS. 
-
-Of course, there are various applications running on the account(Consul, Hazelcast, RabbitMQ, Grafana, Vault, ELK stack and few self-made Java/Kotlin apps on ECS) which may be overloading the Registry with their requests. 
-
-I just wanted to perform a reddit sanity check that this is not some known issue with Registry itself. This may of course be some app overloading the registry by a constant stream of requests. I'd rather not dive into code of the [S3 driver](https://docs.docker.com/registry/storage-drivers/s3/) to look up when exactly the `ListBucket` is triggered and then somehow set up a hook to see which app constantly triggers the call, unless absolutely necessary.
-## [6][Considering moving our entire infrastructure to AWS. Could use some tips/information.](https://www.reddit.com/r/aws/comments/ipevga/considering_moving_our_entire_infrastructure_to/)
-- url: https://www.reddit.com/r/aws/comments/ipevga/considering_moving_our_entire_infrastructure_to/
----
-Hi,
-
-I am the sole sysadmin for a SaaS shop which at some client locations also provides some hardware. Currently our entire infrastructure is self managed in a private VMWare cluster in a single DC. The hardware we have running for this is entirely overkill as we maybe use 20% of it's capacity. Other than a few VM's I have never used anything public cloud related for production use. Yet I am considering moving all our stuff to AWS to easy overall sysadmin tasks and give devs a bit more control/flexibility. Maybe even reduce cost.
-
-Before I spent tons of money, I have a lot of questions. Hopefully some of you can help out.
-
-**Some key info:**
-
-* I am eying Frankfurt or Paris as the Region.
-* We need Site to Site IPSec VPN's to ~30 of customers to be able to manage their hardware components. Some big clients need double NAT IPSec.
-* Our office is connected to the DC with a IPSec VPN.
-* We want to host everything in at least 2 AZ's with auto failover or active-active. I guess we could use Route53 and/or AWS Load Balancers?
-* Stuff we use/need:
- * MariaDB (Can be moved to Multi-AZ RDS which solves headaches of managing our own cluster)
- * Elasticsearch (Containerized but AWS provides this as a service)
- * We currently run some of our services on a 3 node Docker Swarm cluster with HaProxy to provide some HA between the Docker nodes.
- * Webservers (Containerized)
- * Python API's (Containerized)
- * RabbitMQ (Containerized, but can be moved to SQS)
- * VerneMQ MQTT Broker (Containerized but AWS IoT Core should be able to handle this)
- * InfluxDB (Containerized)
- * Prometheus (with a bunch of exporters) for monitoring (Containerized)
- * A few internal services like Confluence for documentation. All of these run in Docker.
- * Ansible to manage most of the VM's.
- * We are currently also using JumpCloud as a SAML/SSO solution and SSH Key manager so I can easily decide who gets to access what and can let some devs use SSH on some VM's.
-
-I did notice some of their services are missing from the pricing calculator, like Fargate. Is this an error or is not everything on there?
-
-**Questions:**
-
-* Multi AZ: Does AWS take care of replicating EKS, ECS, SQS etc. to another AZ?
-* Containers: I have never used Kubernetes, it looks daunting. Should I take the deep dive and run EKS or just use ECS on EC2 or Fargate. What does Amazon use for ECS, is this "regular" Docker Swarm?
-* Should I stand up a hosted Cisco/Fortigate/Juniper/etc firewall inside AWS for all the VPN's? Using a VPC VPN for each customer is pretty damn expensive and IIRC AWS does not support double NAT. If so, any recommendations?
-* Running ECS/EKS and/or normal EC2 instances: How would you setup failover to another AZ? Does AWS do this for you?
-* How would I go about organizing some security/network segmentation inside AWS? Especially if combined with a virtual firewall for example.
-* I guess we could use their Application Load Balancers with Elastic IP's to organize where certain traffic goes. How does this work over multiple AZ's and with containers?
-
-Any recommendations or remarks after reading the above? :-)
-
-Thanks!
-## [7][Stream Kinesis to a React App](https://www.reddit.com/r/aws/comments/ipesvg/stream_kinesis_to_a_react_app/)
-- url: https://www.reddit.com/r/aws/comments/ipesvg/stream_kinesis_to_a_react_app/
----
-Hi All,
-
-I have a data stream in Kinesis that I would like to expose and display in a simple React app in close to real time.
-
-What is the best way to do this? AppSync?
-
-I could save to a DB then have react poll every X seconds but that seems like a waste of API calls if not much data is changing.
-
-&amp;#x200B;
-
-Thanks for any help
-## [8][A GitHub repo template for maintaining a multiple environment infrastructure with Terraform in AWS](https://www.reddit.com/r/aws/comments/ios8d6/a_github_repo_template_for_maintaining_a_multiple/)
-- url: https://www.reddit.com/r/aws/comments/ios8d6/a_github_repo_template_for_maintaining_a_multiple/
----
-[https://github.com/unfor19/terraform-multienv](https://github.com/unfor19/terraform-multienv) \- This template includes a CI/CD process, that applies the infrastructure in an AWS account.
-
-[CI\/CD status](https://preview.redd.it/5hb4mf96ywl51.png?width=1258&amp;format=png&amp;auto=webp&amp;s=7128a30365d8a1e6346cf610a268d5cdd31d6038)
-## [9][Large file transfer to/from S3 with custom domain name](https://www.reddit.com/r/aws/comments/ipbja4/large_file_transfer_tofrom_s3_with_custom_domain/)
-- url: https://www.reddit.com/r/aws/comments/ipbja4/large_file_transfer_tofrom_s3_with_custom_domain/
----
-Is there a way to make large file transfers to/from S3 using my own domain name? My first thought was to use API Gateway as a proxy but there is a 10MB payload limit.
-
-I basically want to abstract the S3 bucket endpoint from the transfer but still keep it RESTful, if possible. 
-
-Any thoughts? Thanks!
-## [10][An intro to EventBridge](https://www.reddit.com/r/aws/comments/ioz4ff/an_intro_to_eventbridge/)
-- url: https://medium.com/@tschoffelen/migrating-to-serverless-building-the-bridge-840ddc7cc9d9
+## [2][In praise of S3, the greatest cloud service of all time](https://www.reddit.com/r/aws/comments/iq20le/in_praise_of_s3_the_greatest_cloud_service_of_all/)
+- url: https://acloudguru.com/blog/engineering/brazeal-in-praise-of-s3-the-greatest-cloud-service-of-all-time
 ---
 
-## [11][cPanel AWS - Multiple Dedicated IPs](https://www.reddit.com/r/aws/comments/ipcu5w/cpanel_aws_multiple_dedicated_ips/)
-- url: https://www.reddit.com/r/aws/comments/ipcu5w/cpanel_aws_multiple_dedicated_ips/
+## [3][Lamdba functions: does adding layers add cost?](https://www.reddit.com/r/aws/comments/iq33gf/lamdba_functions_does_adding_layers_add_cost/)
+- url: https://www.reddit.com/r/aws/comments/iq33gf/lamdba_functions_does_adding_layers_add_cost/
 ---
 Hi all,
 
-I am setting up cPanel and would like to host multiple websites on it, however I only have one elastic IP. When I create a new user on cPanel and select Dedicated IP it says there are no free IPs.
+I'm running some lambdas and they import a few layers. When the instance boots up, is this time that you get charged for, or is it only the 'computation' time later on that you get charged for?
 
-&amp;#x200B;
+What's a way to optimise this process, don't worry about being overly detailed, just point me at a link - I'd be very grateful.
 
-How do I add more than one Elastic IP and add them to the cPanel please?
+Thanks in advance!
+## [4][[OC] Boolean parameters in CloudFormation](https://www.reddit.com/r/aws/comments/iq30k6/oc_boolean_parameters_in_cloudformation/)
+- url: https://awholenother.com/2020/06/20/boolean-parameters-in-cloudformation.html
+---
 
-&amp;#x200B;
+## [5][Create a Cost Intelligence Dashboard (AWS Well-Architected Lab)](https://www.reddit.com/r/aws/comments/iphlhv/create_a_cost_intelligence_dashboard_aws/)
+- url: https://wellarchitectedlabs.com/cost/200_labs/200_enterprise_dashboards/
+---
 
-Many Thanks
+## [6][AWS Lambda and PyTorch](https://www.reddit.com/r/aws/comments/ipzy43/aws_lambda_and_pytorch/)
+- url: https://www.reddit.com/r/aws/comments/ipzy43/aws_lambda_and_pytorch/
+---
+I wish to deploy a python flask application on aws lambda, but it has PyTorch as a dependency. And thus I am unable to do so, due to the [AWS Lambda limits](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html). 
+
+I have found a solution to this, explained in this [post](https://aws.amazon.com/blogs/aws/new-a-shared-file-system-for-your-lambda-functions/) which uses shared files system for the lambda function. It would be great if someone could explain to me the pros and cons of this approach.
+
+And how is it better than this approach (taken from [here](https://github.com/mattmcclean/sam-pytorch-example))
+
+&gt;AWS Lambda has a limit of 250 MB for the deployment package size including lamba layers. PyTorch plus its dependencies is more than this so we need to implement a trick to get around this limit. We will create a zipfile called \`.requirements.zip\` with all the PyTorch and associated packages. We will then add this zipfile to the Lambda Layer zipfile along with a python script called \`unzip\_requirements.py\`. The python script will extract the zipfile \`.requirements.zip\` to the /tmp when the Lambda execution context is created.
+
+And are there any other ways to do the same?
+## [7][How to store private patient records in an S3 bucket?](https://www.reddit.com/r/aws/comments/iq2hdi/how_to_store_private_patient_records_in_an_s3/)
+- url: https://www.reddit.com/r/aws/comments/iq2hdi/how_to_store_private_patient_records_in_an_s3/
+---
+Say I have bucket of hospital records s3://hospital and I want to store patient records by prefix, s3://hospital/patientZero/covid_results.txt.
+
+I know I could use ${aws:username} as described https://aws.amazon.com/premiumsupport/knowledge-center/iam-s3-user-specific-folder/ to limit access to that prefix to ${aws:username}, assuming that username is "patientZero".
+
+But I am aware of HIPAA where you're not allowed to have user identifiable names (metadate) in the paths like "patientZero". So is there a way to **hash** it in the policy? Or is there some other approach I'm missing?
+
+The idea is only the assumed role/user can access his/her prefix/path of object data. If there is good guidelines / best practices for private file hosting in a bucket, do please let me know! Perhaps I should ask this question on SO?
+## [8][What is the the fastest instance/networking/way to transfer S3 bucket from one account to another?](https://www.reddit.com/r/aws/comments/iq2a1i/what_is_the_the_fastest_instancenetworkingway_to/)
+- url: https://www.reddit.com/r/aws/comments/iq2a1i/what_is_the_the_fastest_instancenetworkingway_to/
+---
+I am Copying an S3 bucket from one AWS account to another. I did some research and am now using an instance using m5n.2xlarge with enhanced networking enabled for the transfer machine. I have seen speeds between 5 and 10 MiB/s.
+
+What would you recommend to use or do to get a faster transfer of the S3 bucket?
+## [9][Consume data from external Kafka](https://www.reddit.com/r/aws/comments/iq24ts/consume_data_from_external_kafka/)
+- url: https://www.reddit.com/r/aws/comments/iq24ts/consume_data_from_external_kafka/
+---
+I’m curious if there is a best practice for consuming data from an Kafka (not AWS managed, but within the AWS IaaS environment) into an AWS account via VPC peering.
+
+Some options I’ve explored are:
+
+- Kafka to S3
+- Kafka to CloudWatch Logs
+- Kafka to Vector.io (Fargate) and then to CloudWatch or S3
+## [10][ffprobe - aws sagemaker](https://www.reddit.com/r/aws/comments/iq1b7w/ffprobe_aws_sagemaker/)
+- url: https://www.reddit.com/r/aws/comments/iq1b7w/ffprobe_aws_sagemaker/
+---
+Hi everyone ,
+
+I'm a new user of AWS. I want to run my machine learning model in this platform.  
+
+When I try to import that library  `from pydub import AudioSegment` , 
+
+I am taking that error: `FileNotFoundError: [Errno 2] No such file or directory: 'ffprobe': 'ffprobe'` 
+
+I tried to use that commands -&gt; `!sudo yum install AudioSegment` and `!pip install ffprobe` and `!sudo yum install -y pydub` and other combinations but there is still same error.  
+
+Some one help to me? Thanx.

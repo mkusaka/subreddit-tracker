@@ -1,13 +1,74 @@
 # Kotlin
-## [1][Played around with WebGL and a bug gave me this.](https://www.reddit.com/r/Kotlin/comments/ipedbe/played_around_with_webgl_and_a_bug_gave_me_this/)
+## [1][Yummy](https://www.reddit.com/r/Kotlin/comments/ipp2hi/yummy/)
+- url: https://i.imgur.com/083WLuJ.png
+---
+
+## [2][How do I contribute to the Kotlin Community? Any Recommendations?](https://www.reddit.com/r/Kotlin/comments/iq2qm2/how_do_i_contribute_to_the_kotlin_community_any/)
+- url: https://www.reddit.com/r/Kotlin/comments/iq2qm2/how_do_i_contribute_to_the_kotlin_community_any/
+---
+So I am in my 4th Year at University, and I just got introduced to Kotlin in my Android Development class last quarter and I got to say, despite my reluctance(my first language ever was Java), I have become a fan.
+
+Now I am really excited about Kotlin MultiPlatform, but it hasn't exactly caught some steam yet. Thus I was wondering if there was any way that I could contribute to the community by helping with some small issues initially. To that effect, I was also wondering if I could help with something more complicated later, for my Senior Project(maybe helping with the compiler/library).
+## [3][Released Kotlin 1.4.10](https://www.reddit.com/r/Kotlin/comments/iq2i5u/released_kotlin_1410/)
+- url: https://github.com/JetBrains/kotlin/releases/tag/v1.4.10
+---
+
+## [4][Played around with WebGL and a bug gave me this.](https://www.reddit.com/r/Kotlin/comments/ipedbe/played_around_with_webgl_and_a_bug_gave_me_this/)
 - url: https://i.redd.it/pfe9csik14m51.png
 ---
 
-## [2][Simple &amp; effective G1 GC tuning tips](https://www.reddit.com/r/Kotlin/comments/ipawvp/simple_effective_g1_gc_tuning_tips/)
+## [5][Value-based classes and domain modelling in Kotlin](https://www.reddit.com/r/Kotlin/comments/iprss6/valuebased_classes_and_domain_modelling_in_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/iprss6/valuebased_classes_and_domain_modelling_in_kotlin/
+---
+Just published an article about value-based classes and using Kotlin's type system to enforce your domain rules.
+
+https://medium.com/@dev.ahmedmourad73744/value-based-classes-and-error-handling-in-kotlin-3f14727c0565?source=friends\_link&amp;sk=a16186408e1c8e317e3e11fd16e33710
+## [6][How to print a matrix? I'm only getting addresses.](https://www.reddit.com/r/Kotlin/comments/ipx74e/how_to_print_a_matrix_im_only_getting_addresses/)
+- url: https://www.reddit.com/r/Kotlin/comments/ipx74e/how_to_print_a_matrix_im_only_getting_addresses/
+---
+Input: 
+
+package minesweeper  
+import java.util.Scanner  
+import java.util.Random  
+import java.util.Arrays  
+fun main() {  
+val scanner = Scanner(System.\`in\`)  
+println("How many mines do you want on the field?")  
+val numMines = scanner.nextInt()  
+val grid = Array(9) { IntArray(9) }  
+for (i in grid) {  
+println(Arrays.toString(grid))  
+}  
+}
+
+&amp;#x200B;
+
+Output:  
+
+
+ How many mines do you want on the field? &gt; 1 \[\[I@5b10315, \[I@74e65231, \[I@78ccfd04, \[I@5d55cb0, \[I@8f14eb4, \[I@4e40e241, \[I@517b0250, \[I@7e64f413, \[I@7c628185\] \[\[I@5b10315, \[I@74e65231, \[I@78ccfd04, \[I@5d55cb0, \[I@8f14eb4, \[I@4e40e241, \[I@517b0250, \[I@7e64f413, \[I@7c628185\] \[\[I@5b10315, \[I@74e65231, \[I@78ccfd04, \[I@5d55cb0, \[I@8f14eb4, \[I@4e40e241, \[I@517b0250, \[I@7e64f413, \[I@7c628185\] \[\[I@5b10315, \[I@74e65231, \[I@78ccfd04, \[I@5d55cb0, \[I@8f14eb4, \[I@4e40e241, \[I@517b0250, \[I@7e64f413, \[I@7c628185\] \[\[I@5b10315, \[I@74e65231, \[I@78ccfd04, \[I@5d55cb0, \[I@8f14eb4, \[I@4e40e241, \[I@517b0250, \[I@7e64f413, \[I@7c628185\] \[\[I@5b10315, \[I@74e65231, \[I@78ccfd04, \[I@5d55cb0, \[I@8f14eb4, \[I@4e40e241, \[I@517b0250, \[I@7e64f413, \[I@7c628185\] \[\[I@5b10315, \[I@74e65231, \[I@78ccfd04, \[I@5d55cb0, \[I@8f14eb4, \[I@4e40e241, \[I@517b0250, \[I@7e64f413, \[I@7c628185\] \[\[I@5b10315, \[I@74e65231, \[I@78ccfd04, \[I@5d55cb0, \[I@8f14eb4, \[I@4e40e241, \[I@517b0250, \[I@7e64f413, \[I@7c628185\] \[\[I@5b10315, \[I@74e65231, \[I@78ccfd04, \[I@5d55cb0, \[I@8f14eb4, \[I@4e40e241, \[I@517b0250, \[I@7e64f413, \[I@7c628185\]
+## [7][Need help with caret handling](https://www.reddit.com/r/Kotlin/comments/ipqisg/need_help_with_caret_handling/)
+- url: https://www.reddit.com/r/Kotlin/comments/ipqisg/need_help_with_caret_handling/
+---
+ I was making a plugin for IntelliJ IDEA and came across an idea to make one that will search the highlighted code on StackOverflow. I've managed to do it, but the part that handles the highlighted text was adopted from another Java project and then converted into Kotlin code. I would love if someone could help me understand the code a bit more. 
+
+    val modelCaret = (e.getData(LangDataKeys.EDITOR) as Editor).caretModel
+    val thisCaret = modelCaret.currentCarret
+    val highlightedText = currentCaret.selectedText
+
+What does LangDataKeys do in this case exactly?  
+Could anybody be kind enough to help me figure caret manipulation out?  
+All I was trying to do is get the user selected text out, but couldn't find an easier (or proper) way to do it via Kotlin.
+## [8][Simple &amp; effective G1 GC tuning tips](https://www.reddit.com/r/Kotlin/comments/ipawvp/simple_effective_g1_gc_tuning_tips/)
 - url: https://blog.gceasy.io/2020/06/02/simple-effective-g1-gc-tuning-tips/
 ---
 
-## [3][How we built Localazy CLI: Kotlin MPP and Github Actions](https://www.reddit.com/r/Kotlin/comments/ipce9o/how_we_built_localazy_cli_kotlin_mpp_and_github/)
+## [9][Starting kotlin for development as a beginner](https://www.reddit.com/r/Kotlin/comments/ipirr6/starting_kotlin_for_development_as_a_beginner/)
+- url: https://www.reddit.com/r/Kotlin/comments/ipirr6/starting_kotlin_for_development_as_a_beginner/
+---
+Is kotlin that I learn from codeacademy the same for Android Development?
+## [10][How we built Localazy CLI: Kotlin MPP and Github Actions](https://www.reddit.com/r/Kotlin/comments/ipce9o/how_we_built_localazy_cli_kotlin_mpp_and_github/)
 - url: https://www.reddit.com/r/Kotlin/comments/ipce9o/how_we_built_localazy_cli_kotlin_mpp_and_github/
 ---
 **How we built Localazy CLI, command-line friendly software localization tool for smart&amp;lazy developers.** 
@@ -32,165 +93,3 @@ For HTTP communication, good old *HTTPUrlConnection* is used for Java and *ktor 
 **Everything seemed to be great, except it wasn’t…read more at the link below.**
 
 [https://localazy.com/blog/localazy-cli-sofware-localization-tool-kotlin-github](https://localazy.com/blog/localazy-cli-sofware-localization-tool-kotlin-github)
-## [4][A Cake for Kotlin: Exploring framework-less dependency injection for Kotlin](https://www.reddit.com/r/Kotlin/comments/iot8oo/a_cake_for_kotlin_exploring_frameworkless/)
-- url: https://knowitlabs.no/a-cake-for-kotlin-exploring-framework-less-dependency-injection-for-kotlin-3f93b076aa8c
----
-
-## [5][http4k blog: A retrospective on http4k v3](https://www.reddit.com/r/Kotlin/comments/iobqsq/http4k_blog_a_retrospective_on_http4k_v3/)
-- url: https://www.http4k.org/blog/retrospective_v3/
----
-
-## [6][select image from gallery for button and display guys please help](https://www.reddit.com/r/Kotlin/comments/iowdnw/select_image_from_gallery_for_button_and_display/)
-- url: https://stackoverflow.com/questions/63778471/select-image-from-gallery-for-button-and-display-kotlin-android-studio
----
-
-## [7][How to create a List of Strings out of a List&lt;CharArray&gt;?](https://www.reddit.com/r/Kotlin/comments/iogw7i/how_to_create_a_list_of_strings_out_of_a/)
-- url: https://www.reddit.com/r/Kotlin/comments/iogw7i/how_to_create_a_list_of_strings_out_of_a/
----
-Is it possible to create a list of strings given a list of CharArray, in which each string is formed  by the elements that occupy the index i in each CharArray in the list? Like this:
-List&lt;CharArray&gt; = {[A,B,C],[D,E,F]} then the resulting List&lt;String&gt; = {“AD”, “BE”, “CF”}. If it is possible to do this using as many collections functions as possible. I wish to understand them as much as I can, here is where Kotlin shines (besides its concise and pretty syntax)
-## [8][Is there an unsigned byte literal?](https://www.reddit.com/r/Kotlin/comments/iodvoe/is_there_an_unsigned_byte_literal/)
-- url: https://www.reddit.com/r/Kotlin/comments/iodvoe/is_there_an_unsigned_byte_literal/
----
-I have a function that returns a `UByte`. I cannot use an equality operator because I do not know how to create a `UByte` literal:
-
-```kotlin
-fun foo(): UByte = 0u
-
-fun bar(): Boolean = foo() == 0u
-```
-(This reports that the `==` operator cannot compare a `UByte` and a `UInt`)
-
-My best workaround is
-
-```kotlin
-fun foo(): UByte = 0u
-
-fun bar(): Boolean = foo() == run {
-    val x: UByte = 0u
-    x
-}
-```
-
-but this looks odd.
-
-With `(0u as UByte)` IDEA reports that the cast will never succeed.
-
-If there isn't a UByte literal, is there a cleaner way to do this?
-## [9][Hibernate cascading with no cascade types set (hibernate+kotlin)](https://www.reddit.com/r/Kotlin/comments/io9sxn/hibernate_cascading_with_no_cascade_types_set/)
-- url: https://www.reddit.com/r/Kotlin/comments/io9sxn/hibernate_cascading_with_no_cascade_types_set/
----
-Hey guys, I'm having an issue where hibernate is cascading the `merge` operation to child entities when I don't want it to. I have my entities pasted at the bottom of this post. 
-
-I'm trying to merge the `Munch` entity without merging any `Swipes` since they're handled in a different part of the application. My understanding is that hibernate by default should `cascade` none of the DB operations for a `@OneToMany` collection or a `@ManyToOne` object unless `CascadeTypes` are explicitly specified. 
-
-
-Given the entities at the bottom of the post, when I add a `Swipe` to `munch.swipes` and run the following code, the munch is updated if any of its fields have changed and the added swipe is merged into the db:
-```
-    fun mergeMunch(
-        munch: Munch
-    ) = databaseExecutor.executeAndRollbackOnFailure { entityManager -&gt;
-        entityManager.merge(munch)
-        entityManager.transaction.commit()
-    }
-```
-
-If anyone could shed some light on either what I'm misunderstanding or misconfiguring it would be much appreciated. 
-
-
-The `executeAndRollbackOnFailure()` function just in case its useful:
-```
-    fun &lt;T&gt; executeAndRollbackOnFailure(
-        task: (EntityManager) -&gt; T
-    ): T {
-        val em = emf.createEntityManager()
-        return try {
-            em.transaction.begin()
-            task.invoke(em)
-        } catch (e: Exception) {
-            em.transaction.rollback()
-            throw e
-        } finally {
-            em.close()
-        }
-    }
-```
-
-Here are my entities:
-
-`Munch`
-```
-
-@Entity
-data class Munch(
-    @Column
-    val name: String,
-    @OneToMany(
-        fetch = FetchType.LAZY,
-        mappedBy = "munch",
-    )
-    val swipes: MutableList&lt;Swipe&gt; = mutableListOf(),
-) {
-    @Id
-    @GenericGenerator(name = "generator", strategy = "uuid")
-    @GeneratedValue(generator = "generator")
-    lateinit var munchId: String
-
-    fun addSwipe(swipe: Swipe) {
-        swipes.add(swipe)
-        swipe.munch = this
-    }
-}
-```
-
-`Swipe`
-
-```
-@Entity
-data class Swipe(
-    @EmbeddedId
-    val swipeIdKey: SwipeIdKey,
-    @Column(nullable = true)
-    val liked: Boolean,
-) : Serializable {
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "munchId")
-    @MapsId("munchId")
-    lateinit var munch: Munch
-
-    @Transient
-    var updated = false
-```
-
-`SwipeIdKey`
-
-```
-@Embeddable
-class SwipeIdKey : Serializable {
-
-    @Column(nullable = false)
-    lateinit var restaurantId: String
-
-    @Column(nullable = true)
-    lateinit var userId: String
-
-    @Column(nullable = true)
-    var munchId: String? = null
-}
-```
-## [10][Setting and getting an explanation](https://www.reddit.com/r/Kotlin/comments/iohzmx/setting_and_getting_an_explanation/)
-- url: https://www.reddit.com/r/Kotlin/comments/iohzmx/setting_and_getting_an_explanation/
----
-Hey guys,
-
-I recently started to learn Kotlin, and I'm having some troubles understanding the usage and the meaning of get and set methods in classes creation. I do not have any Java background (this is killing me, tbh) and I recently found them while starting to learn OOP and classes management. 
-
-The online class I'm following is trying to explain me the importance of get and set, especially while checking for correct parameter inputs in classes but I can't seem to get the point.
-
-Why using set and get methods if I can check for a parameter value directly inside the init method? Is there something I'm missing? 
-
-I also looked on the documentation about them, but it shows how they works, not for what or when they are used.
-
-Can someone better explain to me the meaning and the usage of these two methods? A brief explanations would be great if it is a huge thematic to talk about.
-
-Thank you a lot! :D

@@ -56,11 +56,81 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][C++ is now the fastest-growing programming language](https://www.reddit.com/r/cpp/comments/ip9i8h/c_is_now_the_fastestgrowing_programming_language/)
+## [2][C++ London joins with Rust London to deliver cross-over content](https://www.reddit.com/r/cpp/comments/iq0y0m/c_london_joins_with_rust_london_to_deliver/)
+- url: https://www.reddit.com/r/cpp/comments/iq0y0m/c_london_joins_with_rust_london_to_deliver/
+---
+Hi all,
+
+This month the C++ London meetup are joining up with the Rust London meet-up and we have some talks lined on introducing Rust to C++ developers, include some comparing and contrasting. Rust has become a particular interest of many C++ developers (and many Rust developers are curious about C++ too). We aim to do a few of these - and while we're meeting online, this is, of course, open to everyone!
+
+For more details, and to register, here's the meet-up link:
+
+[https://www.meetup.com/CppLondon/events/273113055/](https://www.meetup.com/CppLondon/events/273113055/)
+
+Note we'll be using Remo to host the meet-ups - the same platform that hosted C++ on Sea, and will host CppCon next week (and a few other upcoming conferences).
+
+If you have any proposals for future events in this series, we'd be very interested to hear from you, too.
+## [3][C++ version of Python itertools in STL?](https://www.reddit.com/r/cpp/comments/iproag/c_version_of_python_itertools_in_stl/)
+- url: https://www.reddit.com/r/cpp/comments/iproag/c_version_of_python_itertools_in_stl/
+---
+Good idea or bad idea? Here is one implementation: [https://github.com/ryanhaining/cppitertools](https://github.com/ryanhaining/cppitertools). I'd personally like to see this.
+## [4][cpp-lazy: Haskell inspired lazy evaluation library in C++.](https://www.reddit.com/r/cpp/comments/iphwu0/cpplazy_haskell_inspired_lazy_evaluation_library/)
+- url: https://github.com/MarcDirven/cpp-lazy
+---
+
+## [5][Pack of functions](https://www.reddit.com/r/cpp/comments/iq08x3/pack_of_functions/)
+- url: https://lists.isocpp.org/std-proposals/2020/09/1743.php
+---
+
+## [6][Hi newby!!!](https://www.reddit.com/r/cpp/comments/iq33fn/hi_newby/)
+- url: https://www.reddit.com/r/cpp/comments/iq33fn/hi_newby/
+---
+Hi, I am a newby in this and just having a lot of problems with VS code have been trying to install C++ in VS code and have followed the instruction, and still has not been able to run my code. I just want to try to use the same IDE for all my clases in VS code since started studying CS please if there is someone that would like to mentor a newby in the correct way please feel free to contact me.
+
+thank you,
+## [7][Introduction to modern CMake for beginners](https://www.reddit.com/r/cpp/comments/iq2bdg/introduction_to_modern_cmake_for_beginners/)
+- url: https://internalpointers.com/post/modern-cmake-beginner-introduction
+---
+
+## [8][C++ is now the fastest-growing programming language](https://www.reddit.com/r/cpp/comments/ip9i8h/c_is_now_the_fastestgrowing_programming_language/)
 - url: https://www.reddit.com/r/cpp/comments/ip9i8h/c_is_now_the_fastestgrowing_programming_language/
 ---
 [https://www.techrepublic.com/article/c-is-now-the-fastest-growing-programming-language/](https://www.techrepublic.com/article/c-is-now-the-fastest-growing-programming-language/)
-## [3][Why are there no genuine type-lists (aka packs)?](https://www.reddit.com/r/cpp/comments/ip6nyj/why_are_there_no_genuine_typelists_aka_packs/)
+## [9][C++ Basic encryptor-decryptor implementation with wxwidgets GUI](https://www.reddit.com/r/cpp/comments/ipoeqw/c_basic_encryptordecryptor_implementation_with/)
+- url: https://github.com/trantor00/basicencryptorGUI
+---
+
+## [10][consteval question](https://www.reddit.com/r/cpp/comments/ipp9il/consteval_question/)
+- url: https://www.reddit.com/r/cpp/comments/ipp9il/consteval_question/
+---
+Hello,
+
+I'm an embedded C programmer.  The consteval feature in c++ has caught my attention as something that would be useful in the embedded world.  I was wonder if something like the following was possible:
+
+&amp;#x200B;
+
+`const uint32_t register_val = calculate_register(500,2,6);`
+
+`....`
+
+`consteval uint32_t calculate_register(int val1, int val2, int val3)`
+
+`{`
+
+`// Do stuff to calculate what final register value should be`
+
+`fprintf(//save register value to file at compile time`
+
+`}`
+
+&amp;#x200B;
+
+Important:  The code should not try to link to the fprintf symbol.  Pulling in libc is a big no.
+
+&amp;#x200B;
+
+&amp;#x200B;
+## [11][Why are there no genuine type-lists (aka packs)?](https://www.reddit.com/r/cpp/comments/ip6nyj/why_are_there_no_genuine_typelists_aka_packs/)
 - url: https://www.reddit.com/r/cpp/comments/ip6nyj/why_are_there_no_genuine_typelists_aka_packs/
 ---
 Template parameter packs are such a powerful thing, but IMHO a very basic/fundamental thing is missing.
@@ -84,83 +154,3 @@ Now, the question simply is: Why is there no built-in way to have
 On two quite different occasions the existence of such a 'type list' would have simplified my code a lot. It's hard to see how a compiler that can handle all the intricacies of packs, fold expressions, etc. could not handle a simple list like that.
 
 Note: Please don't mention tuple before thinking about it.
-## [4][Why are gcc and clang behaving differently here for brace-initialization?](https://www.reddit.com/r/cpp/comments/iotebm/why_are_gcc_and_clang_behaving_differently_here/)
-- url: https://godbolt.org/z/b74MP6
----
-
-## [5][Algorithm Books C++](https://www.reddit.com/r/cpp/comments/ipbvwz/algorithm_books_c/)
-- url: https://www.reddit.com/r/cpp/comments/ipbvwz/algorithm_books_c/
----
- 
-
-This a poll for the most recommended book for **BEGINNERS** in Algorithms (CLRS and art of computer programming are for experienced). Please vote and type the reason in comments so it is easier for other beginners to start their journey. If any other book pls write in comments. Please remember this is language specific. In this post, I have kept it to C++ .
-
-Thank you.
-
-[View Poll](https://www.reddit.com/poll/ipbvwz)
-## [6][C++ package managers](https://www.reddit.com/r/cpp/comments/ioytr0/c_package_managers/)
-- url: https://www.reddit.com/r/cpp/comments/ioytr0/c_package_managers/
----
-Hello
-
-Is there a recommended package manager for C++ nowadays?
-What do you use for your projects/CI? 
-What would you recommend for mobile dev?
-
-From my limited experience, I’ve tried vcpkg, which works nice until it doesn’t, then it’s a nightmare to fix. Has no clear package versioning scheme. Lacks good support for mobile. 
-
-Conan lacks in graphics and gui libraries, it also tries to pull system libraries even when it really shouldn’t. Can fail if the binaries differ, then it tries to build from source. It also requires updating config files when a compiler is updated. It also lacks good support for mobile. 
-
-CMake (via git submodules or fetch content), works unless you’re dependency doesn’t use cmake. 
-
-I haven’t tried hunter nor build2’s package manager. I’m not sure if meson has some form of package management.
-## [7][KDevelop 5.6 released](https://www.reddit.com/r/cpp/comments/ioz5d4/kdevelop_56_released/)
-- url: https://www.kdevelop.org/news/kdevelop-560-released
----
-
-## [8][Crash Course in C++](https://www.reddit.com/r/cpp/comments/ip4ryw/crash_course_in_c/)
-- url: https://www.reddit.com/r/cpp/comments/ip4ryw/crash_course_in_c/
----
-I just finished reading the extensive C++ tutorials at learncpp.com. Is there anything I should know about the language or naming conventions that I can’t learn from a book before I fully enter the world of writing code? Any advice or tips or concepts are greatly appreciated!!
-## [9][ABI versioning](https://www.reddit.com/r/cpp/comments/iorwq2/abi_versioning/)
-- url: https://www.reddit.com/r/cpp/comments/iorwq2/abi_versioning/
----
-Going by recent discussions on ABI stability/breakage, I believe ABI versioning is the way forward. What are the reasons why the community is not working with vendors to put in place mechanisms to support versioning the C++ ABI on each platform? This is the direction Herb Sutter proposed in N4028 if I’m correct.
-## [10][Best C++ book](https://www.reddit.com/r/cpp/comments/iordgd/best_c_book/)
-- url: https://www.reddit.com/r/cpp/comments/iordgd/best_c_book/
----
-Now I have decided to start C++. I am complete beginner. I can learn fast. My mathematical background is very good. I prefer learning from books as they are more detailed and contain a smooth learning curve. What do you feel is the best book: C++ Primer ,  Programming: Principles and Practice Using C++, 2nd Edition, by Bjarne Stroustrup , The programming language C++ , C++ for dummies , C++ how to program , C++ crash course :a fast paced introduction, Absolute c++.
-
-&amp;#x200B;
-
-Hey I have finally narrowed the list of easiest and detailed C++ books to these 3 books :
-
-1. Programming: Principles and Practice Using C++ is a Book by Bjarne Stroustrup
-2. C++ Primer is a Book by  Stanley B. Lippman
-3. Absolute C++ is a Book by Walter S.
-
-Feel free to express your opinion. ☺☻
-
-apart from these we have (this part contains other books and the reasons why they aren't in the top 3):
-
-1)The C++ programming language -- more of a reference for experienced programmer.
-
-2)C++ crash course -- fast paced and tried to give a lot of extra info in tables which was not shown in codes. confuses a beginner. however if you can take the speed , go for it.
-
-3)a tour of C++ -- too short .(good for a brush up)
-
-4) effective C++ -- too short .(good for a brush up)
-
-5) thinking in C++ - SUPERB for concepts. Just a bit too old (2003) . no new editions.
-
-6)C++:how to program --- Very very very long(3200 pages.) . But Superb if you have the time.
-
-7)C++ for dummies -- not great reviews. But check it out yourself
-
-NOTE: IF YOU WANT ANY BOOK IN ANY PROGRAMMING LANGUAGE , PRIVATE MESSAGE ME, I WILL GIVE YOU A FREE LINK. 
-
-[View Poll](https://www.reddit.com/poll/iordgd)
-## [11][C++ code for neural network and CUDA](https://www.reddit.com/r/cpp/comments/ioy954/c_code_for_neural_network_and_cuda/)
-- url: https://github.com/dwha/SimpleCudaNeuralNet
----
-

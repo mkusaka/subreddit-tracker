@@ -85,74 +85,145 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][A progressive web app that syncs videos, so you can have virtual watch parties with friends](https://www.reddit.com/r/reactjs/comments/ioy1yi/a_progressive_web_app_that_syncs_videos_so_you/)
-- url: https://v.redd.it/eed1yaeplyl51
+## [3][React in 100 seconds](https://www.reddit.com/r/reactjs/comments/ipzuil/react_in_100_seconds/)
+- url: https://www.youtube.com/watch?v=Tn6-PIqc4UM&amp;ab_channel=Fireship
 ---
 
 ## [4][React + Typescript ❤️: The good parts ⚡️](https://www.reddit.com/r/reactjs/comments/ipeb9g/react_typescript_the_good_parts/)
 - url: https://dev.to/diemax/react-typescript-the-good-parts-428f
 ---
 
-## [5][Jotai: A new state management library heavily inspired by Recoil, from "react-spring" org](https://www.reddit.com/r/reactjs/comments/ipcnic/jotai_a_new_state_management_library_heavily/)
-- url: https://twitter.com/0xca0a/status/1303354125246255104
+## [5][My friend and I created a unique COVID-19 dashboard that not only tracks the latest statistics in Indiana, but also how a global pandemic can cause health disparities within our community.](https://www.reddit.com/r/reactjs/comments/iq36tu/my_friend_and_i_created_a_unique_covid19/)
+- url: https://indcovid.com
 ---
 
-## [6][Can you scaffold an entire React Application just by writing GraphQL Queries?](https://www.reddit.com/r/reactjs/comments/ipflq5/can_you_scaffold_an_entire_react_application_just/)
-- url: https://www.reddit.com/r/reactjs/comments/ipflq5/can_you_scaffold_an_entire_react_application_just/
+## [6][React Native Shared Element Transition in React Navigation V5](https://www.reddit.com/r/reactjs/comments/iq2hoi/react_native_shared_element_transition_in_react/)
+- url: https://youtu.be/C2Q_MPxqLMI
 ---
-I've developed a new concept where we take Persisted Queries one step further.
 
-Based on the Queries we might be able to scaffold UI components or event an entire Application.
+## [7][class-based components vs functional components](https://www.reddit.com/r/reactjs/comments/iq1dc4/classbased_components_vs_functional_components/)
+- url: https://www.reddit.com/r/reactjs/comments/iq1dc4/classbased_components_vs_functional_components/
+---
+With the introduction of Hooks and Context API, have class-based components lost their worth as the go-to option for smart-components or is it still better to use them to handle fetching/updating/removal of data and as parent-components.
 
-Here's a quick example:
+Also, can an entire application be created using just functional components? If so, then is Redux even worth using?
+## [8][If you’re frustrated with state management using Redux, this is a great alternative.](https://www.reddit.com/r/reactjs/comments/iq0hiy/if_youre_frustrated_with_state_management_using/)
+- url: https://recoiljs.org/
+---
 
-    query AllTasks($email: String! @fromClaim(name: "email"))
-        @ui(page: "/tasks", component: TABLE)
-    {
-      queryTask(filter: {email: {eq: $email}}){
-        ... @ui(linkTo: "/tasks/:id") {
-            id @ui(columnName: "ID")
-            title @ui(columnName: "Title")
-            completed @ui(columnName: "Completed")
-        }
-      }
+## [9][Microsoft shows off React Native for Surface Duo - 1 screen is good, 2 is better. Join React Wednesdays @ 1PM Today.](https://www.reddit.com/r/reactjs/comments/ipgl2d/microsoft_shows_off_react_native_for_surface_duo/)
+- url: https://www.reddit.com/r/reactjs/comments/ipgl2d/microsoft_shows_off_react_native_for_surface_duo/
+---
+ **Live today: 1 PM ET** 
+
+Get calendar invites and/or join broadcast: [https://www.telerik.com/react-wednesdays](https://www.telerik.com/react-wednesdays) 
+
+Craig Dunn and Keil Aloia from the Microsoft Surface Duo team show how to build React Native apps for the Duo, then we’ll ask them a bunch of questions—like, why is Microsoft investing in React Native and what is Android doing to help support dual-screen devices? 
+
+* Are you fascinated by phones with two screens? 
+* Have you ever wondered about what it’s like to build a dual-screen app?
+* Are you very confused by folding phones and want to see one live? 
+
+The device ships tomorrow (Sept 10th). **Get early info today.**
+
+We'll end by asking each guest if folding phones are the future or a fad, and 10 years from now we’ll laugh at everyone that gets it wrong.
+
+Bring your questions!
+## [10][history.push doesn't reload navbar](https://www.reddit.com/r/reactjs/comments/iq04jn/historypush_doesnt_reload_navbar/)
+- url: https://www.reddit.com/r/reactjs/comments/iq04jn/historypush_doesnt_reload_navbar/
+---
+Hi all, when history.push is called on login, the location changes but the Navbar doesn't seem to reload When i login, I would like the login and signup links to change to cart and logout.
+
+Thanks!
+
+    // app.js
+    function App() {
+      return (
+        &lt;Router history={history}&gt;
+          &lt;Layout&gt;
+    	&lt;Switch&gt;
+             &lt;Route exact path="/" component={Home} /&gt;					
+              &lt;Route path="/shop" component={Shop} /&gt;
+              &lt;Route path="/login" component={Login} /&gt;
+              &lt;Route path="/signup" component={Signup} /&gt;
+              &lt;Route path="/contact" component={ContactForm} /&gt;
+    	&lt;/Switch&gt;
+          &lt;/Layout&gt;
+        &lt;/Router&gt;
+      );
     }
+    
+    // submit login 
+      function handleSubmit(e) {
+        e.preventDefault();
+        authenticationService.login(username, password)
+          .then(res =&gt; {
+            history.push("/");
+          })
+          .catch(error =&gt; {
+            setError(error.message || error);
+          })
+      }
+    
+    // login function
+    
+    function login(username, password) {
+      return axios.post(api.auth.login, {
+        username, password
+      })
+      .then(res =&gt; {
+        localStorage.setItem("token", res.data.key);
+        return res;
+      })
+    }
+    
+    // navbar
+        &lt;Nav&gt;
+          {authenticationService.isAuthenticated ? (
+            &lt;&gt;
+    	{/*&lt;Nav.Link href="#deets"&gt;Cart&lt;/Nav.Link&gt;*/}
+    	&lt;Nav.Link href="" onClick={() =&gt; authenticationService.logout()}&gt;Logout&lt;/Nav.Link&gt;
+            &lt;/&gt;
+          ) : (
+            &lt;&gt;
+    	&lt;Nav.Link href="/login"&gt;Login&lt;/Nav.Link&gt;
+    	&lt;Nav.Link eventKey={2} href="/signup"&gt;Sign Up&lt;/Nav.Link&gt;
+            &lt;/&gt;
+          )}
+        &lt;/Nav&gt;
+## [11][Examples that explain what "this" refers to in different scenarios and why?](https://www.reddit.com/r/reactjs/comments/ipv84j/examples_that_explain_what_this_refers_to_in/)
+- url: https://www.reddit.com/r/reactjs/comments/ipv84j/examples_that_explain_what_this_refers_to_in/
+---
+I've learned how "this" refers to the object which called the function, and how arrow functions make "this" implicitly bound so that it always refers to the object which defines the function, but every tutorial I look at has one or two examples but I need something that compares different scenarios and says why "this" is different in each of them  
 
-There are a few questions I'd like to ask the community around this concept. We're mixing a lot of things together here. Data Fetching, Authorization and UI components, all in one view. Is this really something we should pursue? I see potential use cases for low code scenarios when you want to build Admin Dashboards but beyond that. I'm still not sure if this is a good idea. Would be great to hear your thoughts. If you want to get a bit more details on the idea here's a link to the full concept.
 
-[https://wundergraph.com/blog/2020/09/06/scaffolding\_react\_app\_with\_graphql](https://wundergraph.com/blog/2020/09/06/scaffolding_react_app_with_graphql)
-## [7][What is the way to showing images on react project?](https://www.reddit.com/r/reactjs/comments/ipfk0u/what_is_the_way_to_showing_images_on_react_project/)
-- url: https://www.reddit.com/r/reactjs/comments/ipfk0u/what_is_the_way_to_showing_images_on_react_project/
----
-I'm using MERN stack.
-## [8][Using Chakra UI with React-Hooks-Form](https://www.reddit.com/r/reactjs/comments/ipfcko/using_chakra_ui_with_reacthooksform/)
-- url: https://www.reddit.com/r/reactjs/comments/ipfcko/using_chakra_ui_with_reacthooksform/
----
-I'm using chakra-ui with react-hook-form. However, I am having trouble using the RadioGroup and Radio component from chakra as it seems to be missing the 'name' prop and hence I can seem to set the value of selected radio button. Can anyone please guide me with this?
-## [9][Free server with ssh support?](https://www.reddit.com/r/reactjs/comments/ipfa3u/free_server_with_ssh_support/)
-- url: https://www.reddit.com/r/reactjs/comments/ipfa3u/free_server_with_ssh_support/
----
-I have previously used 000webhost to learn hosting site, now i want to learn how to upload file using ssh-ftp instead of ftp but 000webhost allow ssh-ftp for only premium, is there any site which can provide free ssh-ftp support server.  
-Note: this is only for testing and learning so, i dont want to enroll in paid subscription.  
-Thank You.
-## [10][Is there any good library for viewing an object in 3d?](https://www.reddit.com/r/reactjs/comments/ipf22t/is_there_any_good_library_for_viewing_an_object/)
-- url: https://www.reddit.com/r/reactjs/comments/ipf22t/is_there_any_good_library_for_viewing_an_object/
----
-We bought a camera to take a 360 picture of a product and we want to put it inside a React app module of sort. We currently have a demo, but it's using jQuery. I was wondering what were the easiest library in React I can use for this.
-## [11][CovMap covid 19 india web-gis](https://www.reddit.com/r/reactjs/comments/ipetvk/covmap_covid_19_india_webgis/)
-- url: https://www.reddit.com/r/reactjs/comments/ipetvk/covmap_covid_19_india_webgis/
----
-I developed a covid 19 web-gis for India in react js and mapbox.
-http://www.covmap.live
-P.S. it works only on desktop and I'm currently working on it
-## [12][I made a website where you can view and download templates to better your HTML and CSS skills!](https://www.reddit.com/r/reactjs/comments/ipefnd/i_made_a_website_where_you_can_view_and_download/)
-- url: https://www.reddit.com/r/reactjs/comments/ipefnd/i_made_a_website_where_you_can_view_and_download/
----
-Hi everyone,
+ I need something which gives examples for about 6-8 use cases that would look something like  
 
-This is my first React app and it's sort of on the very beginner side. I'm a designer who wants to get better at bringing their projects to live so I used to use Frontend Mentor which is just a collection of coding challenges, Good Code is basically their alternative.  Also, would you say this is a good first React project? I know there really isn't any authentication or anything that makes an app, an app, but the dynamic part was really fun for me to make! :)
 
-Let me know what you think and if there are any bugs that need fixing. 
+Example 1
 
-So here's the React version (which isn't secure, it's on Netlify): [http://good-code.netlify.app/](http://good-code.netlify.app/)  
-and here's the static version (which is secure): [https://moeminm.github.io/goodcode](https://moeminm.github.io/goodcode)
+    some code
+    let func = someFunction(
+        this.someVariable
+    )
+
+What is this?: \_\_\_\_\_\_
+
+The answer is \_\_\_\_ because \_\_\_\_\_\_\_\_
+
+Example 2
+
+    some code
+    this.someFunction()
+
+What is this?: \_\_\_\_\_\_
+
+The answer is \_\_\_\_ because \_\_\_\_\_\_\_\_
+
+Example 3
+
+...
+## [12][I made a simple Spotify UI clone with Electron + React + Typescript](https://www.reddit.com/r/reactjs/comments/ipl4bz/i_made_a_simple_spotify_ui_clone_with_electron/)
+- url: https://www.reddit.com/r/reactjs/comments/ipl4bz/i_made_a_simple_spotify_ui_clone_with_electron/
+---
+Repo: [https://github.com/matpandino/spotify-ui-clone](https://github.com/matpandino/spotify-ui-clone)

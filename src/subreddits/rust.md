@@ -23,67 +23,59 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/09/09/this-week-in-rust-355/
 ---
 
-## [3][Rustbot, are you okay?](https://www.reddit.com/r/rust/comments/ipzctt/rustbot_are_you_okay/)
-- url: https://i.redd.it/sjul1r9q5am51.jpg
+## [3][Apple is starting to use Rust for low-level programming](https://www.reddit.com/r/rust/comments/iqnt58/apple_is_starting_to_use_rust_for_lowlevel/)
+- url: https://twitter.com/oskargroth/status/1301502690409709568?s=10
 ---
 
-## [4][rust-steward](https://www.reddit.com/r/rust/comments/iq17rw/ruststeward/)
-- url: https://www.reddit.com/r/rust/comments/iq17rw/ruststeward/
----
-Hi, 
-
-Scala has a wonderful tool, [scala-steward](https://github.com/scala-steward-org/scala-steward). It checks a project's dependencies and creates pull requests when updates are available.
-
-Similarly, GitHub has a bot that checks for security issues.
-
-Would anyone be aware of a similar tool for Rust?
-## [5][Meuse, a free private crate registry, 1.0.0 release](https://www.reddit.com/r/rust/comments/ipmkqe/meuse_a_free_private_crate_registry_100_release/)
-- url: https://mcorbin.fr/posts/2020-09-09-meuse-1.0.0/
+## [4][CCS811 Indoor Air Quality Sensor Driver in Rust](https://www.reddit.com/r/rust/comments/iq9csu/ccs811_indoor_air_quality_sensor_driver_in_rust/)
+- url: https://i.redd.it/30lu8hvi7dm51.jpg
 ---
 
-## [6][Opinions on Rust future](https://www.reddit.com/r/rust/comments/iq1mde/opinions_on_rust_future/)
-- url: https://www.reddit.com/r/rust/comments/iq1mde/opinions_on_rust_future/
----
-I come from a Java/C/Python background and I'm interested in learning a new programming language. I've always heard about Rust but I started to get interested only recently when I read about its concurrency and security. I know only a little about it but my main fear is that I start learning Rust and then the language won't be used anymore in 5-10 years as it's used today (basically I'm afraid to learn a language that will teach me things but won't give me job opportunities). So my question is: I'm interested in Rust potentialities, but I'm also interested in the long-term use of the language... I know no one can see the future, but has Rust the capability to compete against other famous programming languages (like Javascript, Python, Java, C#,... or the emerging Go, Kotlin,...) or it's a "niche" language and it will only be used in specific areas?
-## [7][Make A Language: Part Three](https://www.reddit.com/r/rust/comments/iq2gaa/make_a_language_part_three/)
-- url: https://arzg.github.io/lang/3/
+## [5][Announcing Actix-Web v3.0](https://www.reddit.com/r/rust/comments/iqq8k9/announcing_actixweb_v30/)
+- url: https://paper.dropbox.com/published/Announcing-Actix-Web-v3.0--A7YI~P9U9aqhEOXyZJaGffjfBg-QOXXb1lXgTubzXHzUq9ONY5
 ---
 
-## [8][Are there cyptolibs written in rust or bindings to other cryptolibs which you consider production ready ?](https://www.reddit.com/r/rust/comments/iq17z0/are_there_cyptolibs_written_in_rust_or_bindings/)
-- url: https://www.reddit.com/r/rust/comments/iq17z0/are_there_cyptolibs_written_in_rust_or_bindings/
----
-I want to write a simple backup tool in rust which basically should just combine some files and a mariadb sql dump into a tar ball and then encrypt that tarball using a key derived from a password.
-
-With PHP I would use the built-in bindings to libsodium. 
-
-Rust also has bindings for libsodium through the [sodiumoxide](https://github.com/sodiumoxide/sodiumoxide) project but the version of the latest release (0.2.6) makes me hesitant to use it in production. 
-
-So would you use sodiumoxide in production and if not is there a cryptolib written in rust or some bindings to another well known cryptolib that you can recommend ?
-## [9][** Rust &amp;&amp; C++ London Joint Meetup**](https://www.reddit.com/r/rust/comments/ipf4sp/rust_c_london_joint_meetup/)
-- url: https://www.reddit.com/r/rust/comments/ipf4sp/rust_c_london_joint_meetup/
----
-Rust London and C++ London are proud to announce our first joint meetup The Rust &amp;&amp; C++ LDN Talks. This is the first in a series of collaborative events between our two communities which have been compared and contrasted for several years.  
-
-
-The purpose of these events is to begin an exchange of ideas and experiences between our user groups.  
-The Rust London User Group will open up the LDN Talks platform to the C++ London community. We will have speakers from C++ London who will share their perspectives, opinions and learning experiences with the Rust Programming language.
-
-&amp;#x200B;
-
-Check out the Meetup Page below
-
-[https://www.meetup.com/Rust-London-User-Group/events/273056379/](https://www.meetup.com/Rust-London-User-Group/events/273056379/)
-## [10][implement trait with different path](https://www.reddit.com/r/rust/comments/iq0be2/implement_trait_with_different_path/)
-- url: https://www.reddit.com/r/rust/comments/iq0be2/implement_trait_with_different_path/
----
-I try to implement a trait 'path::Example' for a type T. I only succeed to implement the trait 'other::Example' for T. The trait 'Example' is defined once in the file "other[.rs](https://good.rs)". I don't understand how to proceed and why the lib is searching the trait in "path" rather than "other" .
-
-Any suggestions? Thks
-## [11][Today I learned how to write procedural macros! My first one writes long enum expressions for tuple enums with differently-typed variants but which the same code would work on. enum_for_matches::run!(e, {TestEnum::I64(i) | TestEnum::U64(i)}, {s = i.to_string();}); Anyone mind reviewing my code?](https://www.reddit.com/r/rust/comments/iq1kuq/today_i_learned_how_to_write_procedural_macros_my/)
-- url: https://crates.io/crates/enum_for_matches
+## [6][Launching the 2020 State of Rust Survey | Rust Blog](https://www.reddit.com/r/rust/comments/iq5s5b/launching_the_2020_state_of_rust_survey_rust_blog/)
+- url: https://blog.rust-lang.org/2020/09/10/survey-launch.html
 ---
 
-## [12][[knurling] Learning Embedded Rust with Knurling-rs](https://www.reddit.com/r/rust/comments/ipg76a/knurling_learning_embedded_rust_with_knurlingrs/)
-- url: https://ferrous-systems.com/blog/knurling-sessions-introduction/
+## [7][Announcing yew-state 0.3.0 - Features custom scopes and new StateView component!](https://www.reddit.com/r/rust/comments/iqig64/announcing_yewstate_030_features_custom_scopes/)
+- url: https://crates.io/crates/yew-state
+---
+
+## [8][Deploying Rust Functions on AWS Lambda](https://www.reddit.com/r/rust/comments/iqqist/deploying_rust_functions_on_aws_lambda/)
+- url: https://www.reddit.com/r/rust/comments/iqqist/deploying_rust_functions_on_aws_lambda/
+---
+AWS Lambda is a serverless computing platform that lets you run code without provisioning or managing servers. The platform invokes your code in response to events such as HTTP requests.
+
+Currently, there's no official support for Rust programming language on Lambda.
+
+To run Rust code on Lambda, you will have to build a custom runtime that will run your code.
+
+This guide will help you build for Lambda in a quick and simple way.
+
+It is targeted at developers who have a reasonable understanding of Rust and systems programming, and intend to build serverless function on AWS.
+
+[https://adevait.com/rust/deploying-rust-functions-on-aws-lambda](https://adevait.com/rust/deploying-rust-functions-on-aws-lambda)
+## [9][Taming nalgebra's Rustdoc](https://www.reddit.com/r/rust/comments/iqdnq0/taming_nalgebras_rustdoc/)
+- url: https://jack.wrenn.fyi/blog/rustdocing-nalgebra/
+---
+
+## [10][Proto-vulcan, a miniKanren-family relational logic programming language embedded in Rust.](https://www.reddit.com/r/rust/comments/iqpp8l/protovulcan_a_minikanrenfamily_relational_logic/)
+- url: https://crates.io/crates/proto-vulcan
+---
+
+## [11][Flying Windows Screensaver Homage written in Rust!](https://www.reddit.com/r/rust/comments/iqp12w/flying_windows_screensaver_homage_written_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/iqp12w/flying_windows_screensaver_homage_written_in_rust/
+---
+Hello everyone!
+
+As an excuse to learn Rust/WASM interop, I decided to re-create the flying windows screensaver from the 90's. I was really impressed by the level of tooling and support with web interop in the Rust community. I also have an implementation in JavaScript, as a reference to help people understand the Rust a little better (if they come from a JS background).
+
+Code can be found here -&gt; [https://github.com/craftytrickster/flying-windows](https://github.com/craftytrickster/flying-windows)
+
+Demo link found here -&gt; [https://craftytrickster.github.io/flying-windows/](https://craftytrickster.github.io/flying-windows/)
+## [12][nanorand - fast, cross-platform, zero-dependency random number generation.](https://www.reddit.com/r/rust/comments/iq8rb9/nanorand_fast_crossplatform_zerodependency_random/)
+- url: https://crates.io/crates/nanorand
 ---
 

@@ -1,18 +1,12 @@
 # androiddev
-## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/io6s7l/weekly_whos_hiring_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/io6s7l/weekly_whos_hiring_thread/
+## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/iqpolu/weekly_anything_goes_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/iqpolu/weekly_anything_goes_thread/
 ---
-Looking for Android developers? Heard about a cool job posting? Let people know!
+Here's your chance to talk about whatever!
 
-Here is a suggested posting template:
+Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
 
-&gt; Company: &lt;Best Company Ever&gt;  
-&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
-&gt; Location: &lt;City, State, Country&gt;  
-&gt; Allows remote: &lt;Yes/No&gt;  
-&gt; Visa: &lt;Yes/No&gt;  
-
-Feel free to include any other information about the job.
+Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
 ## [2][Weekly Questions Thread - September 07, 2020](https://www.reddit.com/r/androiddev/comments/io5e9j/weekly_questions_thread_september_07_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/io5e9j/weekly_questions_thread_september_07_2020/
 ---
@@ -31,65 +25,152 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][I'm working on Augmented reality based system which based on Iron man's Holographic system, need some suggestion to make it perfect](https://www.reddit.com/r/androiddev/comments/ipxf16/im_working_on_augmented_reality_based_system/)
-- url: https://www.youtube.com/watch?v=n_bxsWXHDUE&amp;feature=youtu.be
+## [3][Reasons for 1 star review on Google Play.](https://www.reddit.com/r/androiddev/comments/iqmirx/reasons_for_1_star_review_on_google_play/)
+- url: https://www.reddit.com/r/androiddev/comments/iqmirx/reasons_for_1_star_review_on_google_play/
+---
+1️⃣
+
+User: Expects z feature.
+
+Your app: Has the best x, y features. Doesn't have z feature.
+
+User: "Garbage app. I want z feature."
+
+You: Never said I have z feature at all. 👁👄👁
+
+2️⃣
+
+User: "I hate ads. Too many ads."
+
+Your app: "One small banner ads at the bottom peacefully or pay $0.99 to remove ads."
+
+3️⃣
+
+Your app: "Pay $0.99 to unlock some premium features."
+
+User: "One star. Because I think it should be free. Greedy scammer developer!"
+
+You: 👁👄👁
+
+4️⃣
+
+You: "Don't ask user to rate so frequently. Don't annoy them. Only ask at the right time."
+
+Your app: Showing pop up dialog for the first time after 10 launched count. "If you love it, please write us a review on Google Play. Thanks :)"
+
+User: "One star. Because this app forced me to write review."
+
+Cancel button: "Am I a joke to you?"
+
+5️⃣
+
+User: Rated One star. "Great. I love it."●
+
+You: 👁👄👁
+## [4][Progress Indicators – Material Components For Android](https://www.reddit.com/r/androiddev/comments/iqjgye/progress_indicators_material_components_for/)
+- url: https://howtodoandroid.com/progress-indicators/
 ---
 
-## [4][New android packaging (graphical R8/Proguard-like) tool](https://www.reddit.com/r/androiddev/comments/iq1s3g/new_android_packaging_graphical_r8proguardlike/)
-- url: https://www.reddit.com/r/androiddev/comments/iq1s3g/new_android_packaging_graphical_r8proguardlike/
+## [5][Firebase Cloud Messaging (FCM) Android RANT](https://www.reddit.com/r/androiddev/comments/iqn47n/firebase_cloud_messaging_fcm_android_rant/)
+- url: https://www.reddit.com/r/androiddev/comments/iqn47n/firebase_cloud_messaging_fcm_android_rant/
 ---
-["Clyze: analyze, obfuscate, optimize"](https://medium.com/@magical_red_porpoise_431/e64a92524a96?source=friends_link&amp;sk=2daf69f115ca7b1545360399ffa9c11b): new tool for android packaging, in early-access release. [clyze.com](https://clyze.com) is the actual site from the article.
-## [5][Released Kotlin 1.4.10](https://www.reddit.com/r/androiddev/comments/iq2hva/released_kotlin_1410/)
-- url: https://github.com/JetBrains/kotlin/releases/tag/v1.4.10
+This is a **rant**. 
+
+First of all I want to say that Firebase is great and Google did a great job there. But this doesn't mean it's perfect.
+
+The following is something relatively small but it has been nagging me for a while now.
+
+Google Firebase Cloud Messaging has 3 ways of sending push notification
+
+1. Notification: this is received by your app if it is in foreground, and directly goes to the notification tray if your app is in background
+2. Data: always received by your app
+3. Notification+Data: mix of the two, it works like 1) but you get data when you open the notification.
+
+The Firebase Console has a cool tool to build notification of type 1) which give you a preview, let you chose when to send a notification, who to send to... yeah great.
+
+Small, tiny issue.... when you get type 1) in Android and your app is in background your app doesn't receive it, when you click the notification your app is opened but the Intent associated with it **CONTAINS NO DATA** of the notification (title, text, image, whatever).
+
+This is what you get in the extras: 
+
+```
+'google.delivered_priority' : 'high'
+'google.sent_time' : '1599808968376'
+'google.ttl' : '2419200'
+'google.original_priority' : 'high'
+'from' : '23094812394'
+'google.message_id' : '0:198347123094%9d7575989d2304341'
+'collapse_key' : 'your.app.package.id'
+```
+
+Completely useless, specially cause there's no service to obtain the notification from `google.message_id`. You can't even show the notification inside the app, your app "just opens". 
+
+Oh, but wait, you [could](https://firebase.google.com/docs/cloud-messaging/http-server-ref#notification-payload-support) at least add `click_action` to the notification to specific what to do when clicked **but** you cannot set it from the firebase console.
+
+Even more outraging: iOS receive that notification and all its data when the user clicks it (title, text, image and everything).
+
+I think we can all agree that a notification with text/image in it that when clicked disappear forever is never gonna be a good UX experience.
+
+So I really don't understand the logic behind this, why would Google give you this kind of behavior and a default backoffice that provides this crippled UX on Android only.
+
+It basically force everyone to always implement a backoffice even for the most basic of the use case even when you wouldn't need it for iOS.
+
+I really can't believe this is what they actually wanted.
+
+BONUS: when the app is in background it builds a notification using all the variable set in the Notification body (image, sound, ... etc) but if you receive it when the app is in foreground and you want to build that same exact notification you need to do it yourself, why not just expose an utility method to do exactly that, Google you already have the code, right?
+
+
+I just hope someone in Google agree with this and do something to put iOS and Android on par. Just make the notification data available in the extras effectively making your app receive the same information regardless.
+
+(Would be actually AWESOME if it could give a notification history service with read / unread notification out of the box but this is most likely asking too much).
+
+Am I missing something here? Do you agree?
+## [6][PSA: Android 11 leaks view hierarchy if you pass a Spannable to a TextView](https://www.reddit.com/r/androiddev/comments/iq56zn/psa_android_11_leaks_view_hierarchy_if_you_pass_a/)
+- url: https://www.reddit.com/r/androiddev/comments/iq56zn/psa_android_11_leaks_view_hierarchy_if_you_pass_a/
+---
+edit: Someone pointed out these issues are for Android 9+, which I initially missed. However, something must've changed with Android 11 (or Android 11 emulator), for me this issue is now triggered while on previous versions it's not. Don't believe me though, just install LeakCanary in your apps and check if your apps are still OK
+
+This just popped up from LeakCanary when I was testing app on a new Android 11 emulator. If the reports are correct (I haven't thoroughly tested myself), the view hierarchy will leak through `android.app.assist.AssistStructure`as soon as you set a `Spannable` as the `TextView`'s content. Some links for reference:
+
+* A twitter thread: https://twitter.com/piwai/status/1107731823625265152
+* Tracker issue (not even acknowledged): https://issuetracker.google.com/issues/146100180
+* Another issue, closed _because_: https://issuetracker.google.com/issues/62204023
+* LeakCanary thread: https://github.com/square/leakcanary/issues/1573
+
+edit: typo
+## [7][Looking for a experienced Livedata mentor.](https://www.reddit.com/r/androiddev/comments/iqo4zi/looking_for_a_experienced_livedata_mentor/)
+- url: https://www.reddit.com/r/androiddev/comments/iqo4zi/looking_for_a_experienced_livedata_mentor/
+---
+I'm looking for someone that can help me understand  livedata concept and all the complex thing that goes with it ( map, witchmap, custom mediator...), in a real project context.  
+I dont know why i'm struggling so much to understand these, i guess i miss a big point  but i cant get things done the way i want to.
+## [8][Why didn't Nintendo go with a heavily modified version of Android, as opposed to developing their own OS?](https://www.reddit.com/r/androiddev/comments/iqn66r/why_didnt_nintendo_go_with_a_heavily_modified/)
+- url: https://www.reddit.com/r/androiddev/comments/iqn66r/why_didnt_nintendo_go_with_a_heavily_modified/
+---
+I understand that Nintendo wanted a closed ecosystem, and that they wanted to reduce bloat. But couldn't they have just modified Android Go or something, and taken steps to remove all the bloat, in order to ensure that they would have a system that was still closed, but able to benefit from Android development libraries?
+
+Essentially... Couldn't Nintendo have gone with Android whilst ensuring a closed ecosystem?
+
+I think Amazon have succeeded in this, as they have the Fire OS which is used for their Kindle Fire tablet line.
+## [9][Android 11 tightens restrictions on CA certificates](https://www.reddit.com/r/androiddev/comments/iq77mf/android_11_tightens_restrictions_on_ca/)
+- url: https://httptoolkit.tech/blog/android-11-trust-ca-certificates
 ---
 
-## [6][My usb-c charger broke and the one in the mail didn't arrive overnight, hello 2015 macbook](https://www.reddit.com/r/androiddev/comments/ipgk3v/my_usbc_charger_broke_and_the_one_in_the_mail/)
-- url: https://i.redd.it/l23b7mohq4m51.png
+## [10][Play 2 songs from 2 apps at once](https://www.reddit.com/r/androiddev/comments/iqppxa/play_2_songs_from_2_apps_at_once/)
+- url: https://www.reddit.com/r/androiddev/comments/iqppxa/play_2_songs_from_2_apps_at_once/
 ---
-
-## [7][How does an app gets mentioned on New releases section of the play store?](https://www.reddit.com/r/androiddev/comments/ipwden/how_does_an_app_gets_mentioned_on_new_releases/)
-- url: https://www.reddit.com/r/androiddev/comments/ipwden/how_does_an_app_gets_mentioned_on_new_releases/
+Hello,
+I need help, I'm looking for a way to read several audio sources at the same time on my phone, without the first one being cut off. Example: Youtube and Spotify at the same time.
+Can you tell me how I could do this? Do I need a specific programme? I'm willing to pay for it. Thank you.
+## [11][How can I access all my monthly reports?](https://www.reddit.com/r/androiddev/comments/iqpbeq/how_can_i_access_all_my_monthly_reports/)
+- url: https://www.reddit.com/r/androiddev/comments/iqpbeq/how_can_i_access_all_my_monthly_reports/
 ---
-Does a new app automatically get mentioned on gaining popularity, Or do you need to apply for it separately?
-## [8][Understanding phone internals](https://www.reddit.com/r/androiddev/comments/ipy4kw/understanding_phone_internals/)
-- url: https://www.reddit.com/r/androiddev/comments/ipy4kw/understanding_phone_internals/
+I can only access a few of my monthly reports...
+
+&amp;#x200B;
+
+https://preview.redd.it/23dhdu79gim51.png?width=1126&amp;format=png&amp;auto=webp&amp;s=732f6a7c92e7d2e6e92a6f05263a937a28ecb1c2
+## [12][Need help to make my app compatible for android 10 &amp; 11](https://www.reddit.com/r/androiddev/comments/iqpbe9/need_help_to_make_my_app_compatible_for_android/)
+- url: https://www.reddit.com/r/androiddev/comments/iqpbe9/need_help_to_make_my_app_compatible_for_android/
 ---
-I'm looking for a resource or hub to learn and collaborate about phone hardware and writing software for it at the bare metal level.
+I have source code for an android app that currently supports up to android 9. How can I make it compatible to run on android 10 &amp; 11
 
-I'm aware of Lineage OS and I guess in practical terms you could also phrase my question as "where are the resources used by Lineage OS devs when they are trying to port to a new phone?"
-
-I want to come up with novel uses for old (and new) phones and create resources for others who are interested in doing the same.
-
-Thanks
-## [9][Live Template for Creating LiveData](https://www.reddit.com/r/androiddev/comments/iq1h0v/live_template_for_creating_livedata/)
-- url: https://www.reddit.com/r/androiddev/comments/iq1h0v/live_template_for_creating_livedata/
----
-Hi guys,
-
-Today I manage to create Live Templates for creating private MutableLiveData inside viewModel and also public function to expose it.
-
-Here is the github repo [link](https://github.com/100nandoo/android-studio-live-templates)
-
-Feel free to give feedbacks or submit pull request.
-
-Cheers, hope it helps.
-## [10][Has anyone noticed delays in Google Play store listing updates?](https://www.reddit.com/r/androiddev/comments/iq015d/has_anyone_noticed_delays_in_google_play_store/)
-- url: https://www.reddit.com/r/androiddev/comments/iq015d/has_anyone_noticed_delays_in_google_play_store/
----
-Hi! Not a developer, but an app marketer here. Hope I'm not breaking any rules with this post.
-
-Anyway, has anyone noticed delays in Google Play store listing updates recently?
-
-I know that due to Covid the app review times have increased but does the same apply to store listing information like app title, description, screenshots, etc.?
-
-It used to be 2-3 hours at most, but now it's been almost 2 days since I changed the store listing information and it hasn't gone live on Google Play yet.
-
-Should I start to worry and contact Google Play support or is it normal during these times?
-## [11][How to Create a Book App with Advance Features and Make Money?](https://www.reddit.com/r/androiddev/comments/iq1xtw/how_to_create_a_book_app_with_advance_features/)
-- url: https://blog.svapinfotech.com/how-to-create-a-book-app/
----
-
-## [12][What is Jetpack DataDtore](https://www.reddit.com/r/androiddev/comments/iq1mqe/what_is_jetpack_datadtore/)
-- url: https://proandroiddev.com/lets-explore-jetpack-datastore-in-android-621f3564b57
----
-
+BTW I am new to this sub and don't know which flair to choose.

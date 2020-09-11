@@ -56,7 +56,27 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][C++ London joins with Rust London to deliver cross-over content](https://www.reddit.com/r/cpp/comments/iq0y0m/c_london_joins_with_rust_london_to_deliver/)
+## [2][CppCon 2020 starts next week and new keynote speaker has been published](https://www.reddit.com/r/cpp/comments/iqgqmt/cppcon_2020_starts_next_week_and_new_keynote/)
+- url: https://www.reddit.com/r/cpp/comments/iqgqmt/cppcon_2020_starts_next_week_and_new_keynote/
+---
+Within 3 days to start CppCon, **Emery Berger** had been presented as keynote speaker with the talk titled: "**Performance Matters"**
+
+[https://cppcon.org/cppcon-2020-keynote-performance-matters-by-emery-berger/](https://cppcon.org/cppcon-2020-keynote-performance-matters-by-emery-berger/)
+
+This talk is scheduled on **Wednesday**, September 16 •    10:30 am- 11:30 am (MDT)
+## [3][Parsing floats in C++: benchmarking strtod vs. from_chars](https://www.reddit.com/r/cpp/comments/iqlnt4/parsing_floats_in_c_benchmarking_strtod_vs_from/)
+- url: https://lemire.me/blog/2020/09/10/parsing-floats-in-c-benchmarking-strtod-vs-from_chars/
+---
+
+## [4][What do you think about my C++ Study Plan?](https://www.reddit.com/r/cpp/comments/iqkoub/what_do_you_think_about_my_c_study_plan/)
+- url: https://www.reddit.com/r/cpp/comments/iqkoub/what_do_you_think_about_my_c_study_plan/
+---
+Hey! I just made this video sharing my plan to learn C++. What do you think? Are you using a different study plan?
+
+Be nice I am sensitive LOL! And having a crazy week from switching jobs. no trolls plz. ty.
+
+[https://www.youtube.com/watch?v=L40EENt4DXU](https://www.youtube.com/watch?v=L40EENt4DXU)
+## [5][C++ London joins with Rust London to deliver cross-over content](https://www.reddit.com/r/cpp/comments/iq0y0m/c_london_joins_with_rust_london_to_deliver/)
 - url: https://www.reddit.com/r/cpp/comments/iq0y0m/c_london_joins_with_rust_london_to_deliver/
 ---
 Hi all,
@@ -70,87 +90,45 @@ For more details, and to register, here's the meet-up link:
 Note we'll be using Remo to host the meet-ups - the same platform that hosted C++ on Sea, and will host CppCon next week (and a few other upcoming conferences).
 
 If you have any proposals for future events in this series, we'd be very interested to hear from you, too.
-## [3][C++ version of Python itertools in STL?](https://www.reddit.com/r/cpp/comments/iproag/c_version_of_python_itertools_in_stl/)
-- url: https://www.reddit.com/r/cpp/comments/iproag/c_version_of_python_itertools_in_stl/
----
-Good idea or bad idea? Here is one implementation: [https://github.com/ryanhaining/cppitertools](https://github.com/ryanhaining/cppitertools). I'd personally like to see this.
-## [4][cpp-lazy: Haskell inspired lazy evaluation library in C++.](https://www.reddit.com/r/cpp/comments/iphwu0/cpplazy_haskell_inspired_lazy_evaluation_library/)
-- url: https://github.com/MarcDirven/cpp-lazy
+## [6][Concept archetypes — update](https://www.reddit.com/r/cpp/comments/iqga5y/concept_archetypes_update/)
+- url: https://akrzemi1.wordpress.com/2020/09/10/concept-archetypes-update/
 ---
 
-## [5][Pack of functions](https://www.reddit.com/r/cpp/comments/iq08x3/pack_of_functions/)
-- url: https://lists.isocpp.org/std-proposals/2020/09/1743.php
+## [7][A few details and thoughts on online events like Meeting C++ online](https://www.reddit.com/r/cpp/comments/iqmukd/a_few_details_and_thoughts_on_online_events_like/)
+- url: http://meetingcpp.com/meetingcpp/news/items/A-few-details-and-thoughts-on-online-events-like-Meeting-Cpp-online.html
 ---
 
-## [6][Hi newby!!!](https://www.reddit.com/r/cpp/comments/iq33fn/hi_newby/)
-- url: https://www.reddit.com/r/cpp/comments/iq33fn/hi_newby/
----
-Hi, I am a newby in this and just having a lot of problems with VS code have been trying to install C++ in VS code and have followed the instruction, and still has not been able to run my code. I just want to try to use the same IDE for all my clases in VS code since started studying CS please if there is someone that would like to mentor a newby in the correct way please feel free to contact me.
-
-thank you,
-## [7][Introduction to modern CMake for beginners](https://www.reddit.com/r/cpp/comments/iq2bdg/introduction_to_modern_cmake_for_beginners/)
-- url: https://internalpointers.com/post/modern-cmake-beginner-introduction
+## [8][CppCast: Stdpar](https://www.reddit.com/r/cpp/comments/iqgszl/cppcast_stdpar/)
+- url: https://cppcast.com/stdpar-david-olsen/
 ---
 
-## [8][C++ is now the fastest-growing programming language](https://www.reddit.com/r/cpp/comments/ip9i8h/c_is_now_the_fastestgrowing_programming_language/)
-- url: https://www.reddit.com/r/cpp/comments/ip9i8h/c_is_now_the_fastestgrowing_programming_language/
+## [9][Return to C++ after a few years of Java](https://www.reddit.com/r/cpp/comments/iqo7z6/return_to_c_after_a_few_years_of_java/)
+- url: https://www.reddit.com/r/cpp/comments/iqo7z6/return_to_c_after_a_few_years_of_java/
 ---
-[https://www.techrepublic.com/article/c-is-now-the-fastest-growing-programming-language/](https://www.techrepublic.com/article/c-is-now-the-fastest-growing-programming-language/)
-## [9][C++ Basic encryptor-decryptor implementation with wxwidgets GUI](https://www.reddit.com/r/cpp/comments/ipoeqw/c_basic_encryptordecryptor_implementation_with/)
-- url: https://github.com/trantor00/basicencryptorGUI
+After about 6 years of professional C++ development, including top tech companies (think FAANG), I decided to move to finance. Since 2017, I've been working for one of the top-tier investment banks, developing trading systems in Java. While I'm totally enjoying working in this field, I'm not particularly happy about writing in Java and am missing C++ a lot.
+
+Unfortunately, my bank has nearly zero C++ openings, and even those are legacy projects. I am thinking to switch back to C++ by getting a job at another bank/prop trading/hedge fund.
+
+My main question - what is the best way to brush up my C++ after a few years of Java? I certainly haven't forgotten the basics, always use C++ for my Leetcode practice, but apparently that couldn't replace real work experience. Should I try and start a C++ pet project as a preparation / read Effective C++ / ... something else?
+
+Also, the last standard that I used in my work was C++11 (with a bit of '14). I have almost no experience with '17. What's the best way to  learn it, provided I'm not a complete noob?
+
+Thank you.
+## [10][Time Complexity of Every STL Container](https://www.reddit.com/r/cpp/comments/iqbo9q/time_complexity_of_every_stl_container/)
+- url: https://www.reddit.com/r/cpp/comments/iqbo9q/time_complexity_of_every_stl_container/
 ---
+Hi all, 
 
-## [10][consteval question](https://www.reddit.com/r/cpp/comments/ipp9il/consteval_question/)
-- url: https://www.reddit.com/r/cpp/comments/ipp9il/consteval_question/
+I am trying to find a reference sheet that displays the time complexity of EVERY STL container. Ideally for operations such as insert, delete find, sort etc.
+
+The ones I found by googling are pretty incomplete and not very useful for my purposes.
+
+If someone could point me in the right direction it would be appreciated.
+## [11][CppCon Academy: Managing Memory and instructor interview](https://www.reddit.com/r/cpp/comments/iqgvhd/cppcon_academy_managing_memory_and_instructor/)
+- url: https://www.reddit.com/r/cpp/comments/iqgvhd/cppcon_academy_managing_memory_and_instructor/
 ---
-Hello,
+Kevin Carpenter welcomes Patrice Roy for a discussion of his CppCon Academy class, Managing Memory.
 
-I'm an embedded C programmer.  The consteval feature in c++ has caught my attention as something that would be useful in the embedded world.  I was wonder if something like the following was possible:
+Interview: [https://cppcon.org/intrv\_patrice\_roy\_2020/](https://cppcon.org/intrv_patrice_roy_2020/)
 
-&amp;#x200B;
-
-`const uint32_t register_val = calculate_register(500,2,6);`
-
-`....`
-
-`consteval uint32_t calculate_register(int val1, int val2, int val3)`
-
-`{`
-
-`// Do stuff to calculate what final register value should be`
-
-`fprintf(//save register value to file at compile time`
-
-`}`
-
-&amp;#x200B;
-
-Important:  The code should not try to link to the fprintf symbol.  Pulling in libc is a big no.
-
-&amp;#x200B;
-
-&amp;#x200B;
-## [11][Why are there no genuine type-lists (aka packs)?](https://www.reddit.com/r/cpp/comments/ip6nyj/why_are_there_no_genuine_typelists_aka_packs/)
-- url: https://www.reddit.com/r/cpp/comments/ip6nyj/why_are_there_no_genuine_typelists_aka_packs/
----
-Template parameter packs are such a powerful thing, but IMHO a very basic/fundamental thing is missing.
-
-To get to the point, consider the ubiquitous pattern:
-
-    template &lt;typename T&gt;
-    struct MyThing
-    {
-        using Type = T;     // saves extra matching along the road
-    };
-
-Now, the question simply is: Why is there no built-in way to have
-
-    template &lt;typename... Ts&gt;
-    struct MyThing
-    {
-        using Types = Ts;
-    };
-
-On two quite different occasions the existence of such a 'type list' would have simplified my code a lot. It's hard to see how a compiler that can handle all the intricacies of packs, fold expressions, etc. could not handle a simple list like that.
-
-Note: Please don't mention tuple before thinking about it.
+Managing Memory class: [https://cppcon.org/class-2020-managing-memory/](https://cppcon.org/class-2020-managing-memory/)

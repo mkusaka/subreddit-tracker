@@ -1,79 +1,75 @@
 # aws
-## [1][API Gateway HTTP APIs authorization now supports Lambda and IAM](https://www.reddit.com/r/aws/comments/iptsk8/api_gateway_http_apis_authorization_now_supports/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/09/api-gateway-http-apis-now-supports-lambda-and-iam-authorization-options/
+## [1][Elastic Beanstalk introduces support for shared load balancers!](https://www.reddit.com/r/aws/comments/iqjxcw/elastic_beanstalk_introduces_support_for_shared/)
+- url: https://aws.amazon.com/blogs/containers/amazon-elastic-beanstalk-introduces-support-shared-load-balancers/
 ---
 
-## [2][In praise of S3, the greatest cloud service of all time](https://www.reddit.com/r/aws/comments/iq20le/in_praise_of_s3_the_greatest_cloud_service_of_all/)
+## [2][What is something you guys have learned while using AWS? (For me, establishing a disaster recovery plan is a must)](https://www.reddit.com/r/aws/comments/iqerhh/what_is_something_you_guys_have_learned_while/)
+- url: https://www.reddit.com/r/aws/comments/iqerhh/what_is_something_you_guys_have_learned_while/
+---
+&amp;#x200B;
+
+https://preview.redd.it/abdi3ga9lem51.png?width=825&amp;format=png&amp;auto=webp&amp;s=3c48af1f718e128711f6ca599a2d752c27a75bd6
+
+In March 2017, Amazon had an outage which affected businesses in many ways, including ours. We had about 25 separate user-facing systems that were unavailable, affecting users number in the 100s of thousands. When the outage first occurred, we tried to switch to an alternate region for those systems that are in multiple regions (not all of them are), but could not because we could not use the AWS load balancing service, which was also impacted by the outage. In the end, we just had to wait for Amazon to resolve the problem and test it.
+
+Now, I'm not saying Amazon is going to shut down. Our organization still uses and loves Amazon, but did it have an impact on our business? Absolutely.
+
+We have obviously recovered since this but have established a well-structured business continuity plan in the case that this ever happens again and are prepared. You should too!
+
+For those of you not familiar with business continuity plans, here is an example: [AWS Business Continuity Plan &amp; Template](https://www.allcode.com/aws-business-continuity-plan/)
+
+What is some advice that you would recommend to somebody starting on AWS? Or even something you have learned along the way that could help some people out?
+## [3][How big to size production VPC subnets with 3 tiers?](https://www.reddit.com/r/aws/comments/iqnndm/how_big_to_size_production_vpc_subnets_with_3/)
+- url: https://www.reddit.com/r/aws/comments/iqnndm/how_big_to_size_production_vpc_subnets_with_3/
+---
+Currently I'm thinking of the following setup where everything is balanced:
+
+* Public tier (load balancers + bastion): 3 subnets across 3 AZ with a /20 mask. (12,288 IP)
+* Private tier (application servers connected to NAT gateway): 3 subnets across 3 AZ with a /20 mask. (12,288 IP)
+* Restricted tier (database/cache servers): 3 subnets across 3 AZ with a /20 mask. (12,288 IP)
+
+The application servers auto-scale with ECS Fargate. I decided to make the public tier the same size as the private tier since I may remove NAT gateways and move the app servers into the public subnet in the future. This leaves [10.0.143.255](http://10.0.143.255/)\-10.0.255.255 un-allocated. 
+
+Anything I should consider/resize before rolling with this?
+## [4][AWS SSO adds some APIs and CloudFormation support for multi-account setups](https://www.reddit.com/r/aws/comments/iqggtx/aws_sso_adds_some_apis_and_cloudformation_support/)
+- url: https://aws.amazon.com/about-aws/whats-new/2020/09/aws-single-sign-on-adds-account-assignment-apis-and-aws-cloudformation-support-to-automate-multi-account-access-management/
+---
+
+## [5][In praise of S3, the greatest cloud service of all time](https://www.reddit.com/r/aws/comments/iq20le/in_praise_of_s3_the_greatest_cloud_service_of_all/)
 - url: https://acloudguru.com/blog/engineering/brazeal-in-praise-of-s3-the-greatest-cloud-service-of-all-time
 ---
 
-## [3][Lamdba functions: does adding layers add cost?](https://www.reddit.com/r/aws/comments/iq33gf/lamdba_functions_does_adding_layers_add_cost/)
-- url: https://www.reddit.com/r/aws/comments/iq33gf/lamdba_functions_does_adding_layers_add_cost/
+## [6][Lambda function check health application](https://www.reddit.com/r/aws/comments/iqjy9q/lambda_function_check_health_application/)
+- url: https://www.reddit.com/r/aws/comments/iqjy9q/lambda_function_check_health_application/
 ---
-Hi all,
-
-I'm running some lambdas and they import a few layers. When the instance boots up, is this time that you get charged for, or is it only the 'computation' time later on that you get charged for?
-
-What's a way to optimise this process, don't worry about being overly detailed, just point me at a link - I'd be very grateful.
-
-Thanks in advance!
-## [4][[OC] Boolean parameters in CloudFormation](https://www.reddit.com/r/aws/comments/iq30k6/oc_boolean_parameters_in_cloudformation/)
-- url: https://awholenother.com/2020/06/20/boolean-parameters-in-cloudformation.html
+Let's assume I completed a python script that checks an external web application outside of AWS network. From the lambda logs, I can see http status code of 200 which is a success. I'd like to record/store the date/timestamp of the code that checked the health of the remote application as well as the http status code into cloudwatch. That way, we might be able to pull those logs from cloudwatch and be able to create a chart/graph of the health history of the web application. Is this possible?
+## [7][Introducing security groups for pods](https://www.reddit.com/r/aws/comments/iq9rvu/introducing_security_groups_for_pods/)
+- url: https://aws.amazon.com/blogs/containers/introducing-security-groups-for-pods/
 ---
 
-## [5][Create a Cost Intelligence Dashboard (AWS Well-Architected Lab)](https://www.reddit.com/r/aws/comments/iphlhv/create_a_cost_intelligence_dashboard_aws/)
-- url: https://wellarchitectedlabs.com/cost/200_labs/200_enterprise_dashboards/
+## [8][Why are s3 egress costs lesser than cloudfront ?](https://www.reddit.com/r/aws/comments/iqov30/why_are_s3_egress_costs_lesser_than_cloudfront/)
+- url: https://www.reddit.com/r/aws/comments/iqov30/why_are_s3_egress_costs_lesser_than_cloudfront/
 ---
+I have the notion that when cloudfront is used the overall costs reduce because the number of origin hits decrease. But now when I see the pricing of S3 and Cloudfront, for India the egress costs of S3 are 0.1093$ while cloudfront costs 0.17$ which means I will be charged less if I just use S3. 
 
-## [6][AWS Lambda and PyTorch](https://www.reddit.com/r/aws/comments/ipzy43/aws_lambda_and_pytorch/)
-- url: https://www.reddit.com/r/aws/comments/ipzy43/aws_lambda_and_pytorch/
+&amp;#x200B;
+
+Was confused what has gone wrong here ?
+## [9][Having trouble sending outbound SMTP from ec2 to office 365 - does not seem to be an issue of throttling, happens on 25 and 587](https://www.reddit.com/r/aws/comments/iqo8j4/having_trouble_sending_outbound_smtp_from_ec2_to/)
+- url: https://www.reddit.com/r/aws/comments/iqo8j4/having_trouble_sending_outbound_smtp_from_ec2_to/
 ---
-I wish to deploy a python flask application on aws lambda, but it has PyTorch as a dependency. And thus I am unable to do so, due to the [AWS Lambda limits](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html). 
+Hi, so, I am using an application that sends mail using my office 365 email address. However the mail is failing to send
 
-I have found a solution to this, explained in this [post](https://aws.amazon.com/blogs/aws/new-a-shared-file-system-for-your-lambda-functions/) which uses shared files system for the lambda function. It would be great if someone could explain to me the pros and cons of this approach.
+Error sending email to example.user@mydomain.com, error:Could not open socket: stream\_socket\_client(): unable to connect to tcp://mydomain-com.mail.proection.outlook.com:25
 
-And how is it better than this approach (taken from [here](https://github.com/mattmcclean/sam-pytorch-example))
+I have security group rules for outbound - [0.0.0.0/0](https://0.0.0.0/0) all traffic and I have also added for smtp over port 25 from the same address, as well as port 587 tcp
 
-&gt;AWS Lambda has a limit of 250 MB for the deployment package size including lamba layers. PyTorch plus its dependencies is more than this so we need to implement a trick to get around this limit. We will create a zipfile called \`.requirements.zip\` with all the PyTorch and associated packages. We will then add this zipfile to the Lambda Layer zipfile along with a python script called \`unzip\_requirements.py\`. The python script will extract the zipfile \`.requirements.zip\` to the /tmp when the Lambda execution context is created.
+I have created a connector in office 365 with the public IP of the ec2 instance used to send the mail whitelisted....but the error persists
 
-And are there any other ways to do the same?
-## [7][How to store private patient records in an S3 bucket?](https://www.reddit.com/r/aws/comments/iq2hdi/how_to_store_private_patient_records_in_an_s3/)
-- url: https://www.reddit.com/r/aws/comments/iq2hdi/how_to_store_private_patient_records_in_an_s3/
+A telnet to my mx record just hangs at 'trying'
+
+What am I doing wrong?
+## [10][In Redshift how can I create an user which which has only user creation privileges?](https://www.reddit.com/r/aws/comments/iqo8e2/in_redshift_how_can_i_create_an_user_which_which/)
+- url: https://www.reddit.com/r/aws/comments/iqo8e2/in_redshift_how_can_i_create_an_user_which_which/
 ---
-Say I have bucket of hospital records s3://hospital and I want to store patient records by prefix, s3://hospital/patientZero/covid_results.txt.
-
-I know I could use ${aws:username} as described https://aws.amazon.com/premiumsupport/knowledge-center/iam-s3-user-specific-folder/ to limit access to that prefix to ${aws:username}, assuming that username is "patientZero".
-
-But I am aware of HIPAA where you're not allowed to have user identifiable names (metadate) in the paths like "patientZero". So is there a way to **hash** it in the policy? Or is there some other approach I'm missing?
-
-The idea is only the assumed role/user can access his/her prefix/path of object data. If there is good guidelines / best practices for private file hosting in a bucket, do please let me know! Perhaps I should ask this question on SO?
-## [8][What is the the fastest instance/networking/way to transfer S3 bucket from one account to another?](https://www.reddit.com/r/aws/comments/iq2a1i/what_is_the_the_fastest_instancenetworkingway_to/)
-- url: https://www.reddit.com/r/aws/comments/iq2a1i/what_is_the_the_fastest_instancenetworkingway_to/
----
-I am Copying an S3 bucket from one AWS account to another. I did some research and am now using an instance using m5n.2xlarge with enhanced networking enabled for the transfer machine. I have seen speeds between 5 and 10 MiB/s.
-
-What would you recommend to use or do to get a faster transfer of the S3 bucket?
-## [9][Consume data from external Kafka](https://www.reddit.com/r/aws/comments/iq24ts/consume_data_from_external_kafka/)
-- url: https://www.reddit.com/r/aws/comments/iq24ts/consume_data_from_external_kafka/
----
-I’m curious if there is a best practice for consuming data from an Kafka (not AWS managed, but within the AWS IaaS environment) into an AWS account via VPC peering.
-
-Some options I’ve explored are:
-
-- Kafka to S3
-- Kafka to CloudWatch Logs
-- Kafka to Vector.io (Fargate) and then to CloudWatch or S3
-## [10][ffprobe - aws sagemaker](https://www.reddit.com/r/aws/comments/iq1b7w/ffprobe_aws_sagemaker/)
-- url: https://www.reddit.com/r/aws/comments/iq1b7w/ffprobe_aws_sagemaker/
----
-Hi everyone ,
-
-I'm a new user of AWS. I want to run my machine learning model in this platform.  
-
-When I try to import that library  `from pydub import AudioSegment` , 
-
-I am taking that error: `FileNotFoundError: [Errno 2] No such file or directory: 'ffprobe': 'ffprobe'` 
-
-I tried to use that commands -&gt; `!sudo yum install AudioSegment` and `!pip install ffprobe` and `!sudo yum install -y pydub` and other combinations but there is still same error.  
-
-Some one help to me? Thanx.
+The primary requirement is to automatically create or alter users based on user information stored in a table. I am planning to write a stored procedure / use Databricks notebook to do the automation. The Redshift user which I use for creating other users in this automation should only user create/alter permissions. It is the only which should be performed from that user. I read that the option CREATEUSER option give super user like privileges to the user. How can i restrict/revoke other superuser privileges?

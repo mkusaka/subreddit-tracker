@@ -85,145 +85,89 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][React in 100 seconds](https://www.reddit.com/r/reactjs/comments/ipzuil/react_in_100_seconds/)
+## [3][Display Progress Bar on Page Scroll with ReactJs](https://www.reddit.com/r/reactjs/comments/iqmx39/display_progress_bar_on_page_scroll_with_reactjs/)
+- url: https://webomnizz.com/how-to-display-progress-bar-on-page-scroll-with-reactjs/
+---
+
+## [4][Job Posting React app - Material UI, Firebase](https://www.reddit.com/r/reactjs/comments/iqoms5/job_posting_react_app_material_ui_firebase/)
+- url: https://www.youtube.com/watch?v=LeH0kYI_HAw&amp;list=PL02g-PgcFojNzXd_GWuCTLc1PpQ_AXzDT&amp;index=2&amp;t=0s
+---
+
+## [5][React in 100 seconds](https://www.reddit.com/r/reactjs/comments/ipzuil/react_in_100_seconds/)
 - url: https://www.youtube.com/watch?v=Tn6-PIqc4UM&amp;ab_channel=Fireship
 ---
 
-## [4][React + Typescript ❤️: The good parts ⚡️](https://www.reddit.com/r/reactjs/comments/ipeb9g/react_typescript_the_good_parts/)
-- url: https://dev.to/diemax/react-typescript-the-good-parts-428f
+## [6][Free Online React Conference](https://www.reddit.com/r/reactjs/comments/iqm5ne/free_online_react_conference/)
+- url: https://www.reddit.com/r/reactjs/comments/iqm5ne/free_online_react_conference/
 ---
+Hey folks, join me at #ReactSummit for free on October 15-16, and get to see speakers like @kentcdodds, @mxstbr, @NikkitaFTW, @sharifshameem.
 
-## [5][My friend and I created a unique COVID-19 dashboard that not only tracks the latest statistics in Indiana, but also how a global pandemic can cause health disparities within our community.](https://www.reddit.com/r/reactjs/comments/iq36tu/my_friend_and_i_created_a_unique_covid19/)
-- url: https://indcovid.com
+Register with this link before September 20: https://lnkd.in/gBpnSnD
+
+Learn more: https://reactsummit.com
+## [7][Is there a reason React &amp; Django are not commonly used together? Should I avoid this combination? What are the pros and cons?](https://www.reddit.com/r/reactjs/comments/iqeijm/is_there_a_reason_react_django_are_not_commonly/)
+- url: https://www.reddit.com/r/reactjs/comments/iqeijm/is_there_a_reason_react_django_are_not_commonly/
 ---
-
-## [6][React Native Shared Element Transition in React Navigation V5](https://www.reddit.com/r/reactjs/comments/iq2hoi/react_native_shared_element_transition_in_react/)
-- url: https://youtu.be/C2Q_MPxqLMI
+Django seems like the best backend framework for what I want ( a post feed type application ) and react seems the best for what I want as far as hot reloads on the frontend. I also know both well. However, I am not seeing too much love for the combination...
+## [8][Security question about user authentication](https://www.reddit.com/r/reactjs/comments/iqme1e/security_question_about_user_authentication/)
+- url: https://www.reddit.com/r/reactjs/comments/iqme1e/security_question_about_user_authentication/
 ---
+I've setup my app with nextjs + express server + passport.js. Users can signup and login with email+password combo. After user is logged in i can check user info like this:
 
-## [7][class-based components vs functional components](https://www.reddit.com/r/reactjs/comments/iq1dc4/classbased_components_vs_functional_components/)
-- url: https://www.reddit.com/r/reactjs/comments/iq1dc4/classbased_components_vs_functional_components/
----
-With the introduction of Hooks and Context API, have class-based components lost their worth as the go-to option for smart-components or is it still better to use them to handle fetching/updating/removal of data and as parent-components.
-
-Also, can an entire application be created using just functional components? If so, then is Redux even worth using?
-## [8][If you’re frustrated with state management using Redux, this is a great alternative.](https://www.reddit.com/r/reactjs/comments/iq0hiy/if_youre_frustrated_with_state_management_using/)
-- url: https://recoiljs.org/
----
-
-## [9][Microsoft shows off React Native for Surface Duo - 1 screen is good, 2 is better. Join React Wednesdays @ 1PM Today.](https://www.reddit.com/r/reactjs/comments/ipgl2d/microsoft_shows_off_react_native_for_surface_duo/)
-- url: https://www.reddit.com/r/reactjs/comments/ipgl2d/microsoft_shows_off_react_native_for_surface_duo/
----
- **Live today: 1 PM ET** 
-
-Get calendar invites and/or join broadcast: [https://www.telerik.com/react-wednesdays](https://www.telerik.com/react-wednesdays) 
-
-Craig Dunn and Keil Aloia from the Microsoft Surface Duo team show how to build React Native apps for the Duo, then we’ll ask them a bunch of questions—like, why is Microsoft investing in React Native and what is Android doing to help support dual-screen devices? 
-
-* Are you fascinated by phones with two screens? 
-* Have you ever wondered about what it’s like to build a dual-screen app?
-* Are you very confused by folding phones and want to see one live? 
-
-The device ships tomorrow (Sept 10th). **Get early info today.**
-
-We'll end by asking each guest if folding phones are the future or a fad, and 10 years from now we’ll laugh at everyone that gets it wrong.
-
-Bring your questions!
-## [10][history.push doesn't reload navbar](https://www.reddit.com/r/reactjs/comments/iq04jn/historypush_doesnt_reload_navbar/)
-- url: https://www.reddit.com/r/reactjs/comments/iq04jn/historypush_doesnt_reload_navbar/
----
-Hi all, when history.push is called on login, the location changes but the Navbar doesn't seem to reload When i login, I would like the login and signup links to change to cart and logout.
-
-Thanks!
-
-    // app.js
-    function App() {
-      return (
-        &lt;Router history={history}&gt;
-          &lt;Layout&gt;
-    	&lt;Switch&gt;
-             &lt;Route exact path="/" component={Home} /&gt;					
-              &lt;Route path="/shop" component={Shop} /&gt;
-              &lt;Route path="/login" component={Login} /&gt;
-              &lt;Route path="/signup" component={Signup} /&gt;
-              &lt;Route path="/contact" component={ContactForm} /&gt;
-    	&lt;/Switch&gt;
-          &lt;/Layout&gt;
-        &lt;/Router&gt;
-      );
-    }
-    
-    // submit login 
-      function handleSubmit(e) {
-        e.preventDefault();
-        authenticationService.login(username, password)
-          .then(res =&gt; {
-            history.push("/");
-          })
-          .catch(error =&gt; {
-            setError(error.message || error);
-          })
+    static async getInitialProps({ req, query }) {
+        const userAgent = req
+          ? req.user
+          : null;
+        return userAgent;
       }
-    
-    // login function
-    
-    function login(username, password) {
-      return axios.post(api.auth.login, {
-        username, password
-      })
-      .then(res =&gt; {
-        localStorage.setItem("token", res.data.key);
-        return res;
-      })
-    }
-    
-    // navbar
-        &lt;Nav&gt;
-          {authenticationService.isAuthenticated ? (
-            &lt;&gt;
-    	{/*&lt;Nav.Link href="#deets"&gt;Cart&lt;/Nav.Link&gt;*/}
-    	&lt;Nav.Link href="" onClick={() =&gt; authenticationService.logout()}&gt;Logout&lt;/Nav.Link&gt;
-            &lt;/&gt;
-          ) : (
-            &lt;&gt;
-    	&lt;Nav.Link href="/login"&gt;Login&lt;/Nav.Link&gt;
-    	&lt;Nav.Link eventKey={2} href="/signup"&gt;Sign Up&lt;/Nav.Link&gt;
-            &lt;/&gt;
-          )}
-        &lt;/Nav&gt;
-## [11][Examples that explain what "this" refers to in different scenarios and why?](https://www.reddit.com/r/reactjs/comments/ipv84j/examples_that_explain_what_this_refers_to_in/)
-- url: https://www.reddit.com/r/reactjs/comments/ipv84j/examples_that_explain_what_this_refers_to_in/
+
+Whenever user is sending requests with axios I check on server side if user is logged in or have permission like this:
+
+    router.get("/getGroups", ensureAuthenticated, (req, res) =&gt; {
+      if(req.user.type != "Admin") {
+          res.send("auth error");
+          return;
+      }
+      Products.findAll({
+        where: { mainId: req.user.mainId },
+        attributes: ["group"],
+        group: ["group"]
+      }).then(data =&gt; {
+        res.json(data);
+      });
+    });
+
+ensureAuthenticated is checking with passport.js. What I'm asking is if it's possible to modify req.user on client side with some tools? Is this a secure way to check user authentication and permissions?
+## [9][Heard about the benefit of SSR and started learning Next.js. Now, do I need to update every time from create-react-app to Next or can I start my front-end entirely on Next?](https://www.reddit.com/r/reactjs/comments/iqqc8q/heard_about_the_benefit_of_ssr_and_started/)
+- url: https://www.reddit.com/r/reactjs/comments/iqqc8q/heard_about_the_benefit_of_ssr_and_started/
 ---
-I've learned how "this" refers to the object which called the function, and how arrow functions make "this" implicitly bound so that it always refers to the object which defines the function, but every tutorial I look at has one or two examples but I need something that compares different scenarios and says why "this" is different in each of them  
+Well, title says it all.
 
-
- I need something which gives examples for about 6-8 use cases that would look something like  
-
-
-Example 1
-
-    some code
-    let func = someFunction(
-        this.someVariable
-    )
-
-What is this?: \_\_\_\_\_\_
-
-The answer is \_\_\_\_ because \_\_\_\_\_\_\_\_
-
-Example 2
-
-    some code
-    this.someFunction()
-
-What is this?: \_\_\_\_\_\_
-
-The answer is \_\_\_\_ because \_\_\_\_\_\_\_\_
-
-Example 3
-
-...
-## [12][I made a simple Spotify UI clone with Electron + React + Typescript](https://www.reddit.com/r/reactjs/comments/ipl4bz/i_made_a_simple_spotify_ui_clone_with_electron/)
-- url: https://www.reddit.com/r/reactjs/comments/ipl4bz/i_made_a_simple_spotify_ui_clone_with_electron/
+I am so much used to CRA that I am finding it hard to understand if it's possible to start creating the entire frontend in Next or do I need to migrate to Next from CRA!
+## [10][Is it still important to know the lifecycle hooks of the React Class Components with Functional Components being the norm?](https://www.reddit.com/r/reactjs/comments/iqlugm/is_it_still_important_to_know_the_lifecycle_hooks/)
+- url: https://www.reddit.com/r/reactjs/comments/iqlugm/is_it_still_important_to_know_the_lifecycle_hooks/
 ---
-Repo: [https://github.com/matpandino/spotify-ui-clone](https://github.com/matpandino/spotify-ui-clone)
+I wonder if we still need to know all lifecycle hooks like \`componentWillReceiveProps\`, \`shouldComponentUpdate\`, etc. if we are never going to choose Class Components.
+
+What are your thoughts?
+## [11][Redux vs. Context Dilemma](https://www.reddit.com/r/reactjs/comments/iqj4vu/redux_vs_context_dilemma/)
+- url: https://www.reddit.com/r/reactjs/comments/iqj4vu/redux_vs_context_dilemma/
+---
+I have a question regarding heavy state management in React. I am currently developing a React app and am using Redux for state management. However, the more I look into further developing my app, the more I see that my Redux store might be loaded with lots of data and thus become slower eventually. So I was wondering if it is okay to use Context in combination with Redux for state management? Should I take the approach of one solution for all or maybe a combination of both? Is there any other pros or cons I should be aware of?
+
+Thank you very much!
+## [12][A bit of lag while horizontally scrolling](https://www.reddit.com/r/reactjs/comments/iqlwmy/a_bit_of_lag_while_horizontally_scrolling/)
+- url: https://www.reddit.com/r/reactjs/comments/iqlwmy/a_bit_of_lag_while_horizontally_scrolling/
+---
+Hi Guys 
+
+I am using React table with fixed columns. The scrollbar comes at the end of the table and I wanted to make it float. 
+
+So I made a dummy div with position fixed  and made sure the width of the table and this dummy div is same and then made the original scrollbar hidden
+
+ So I control the scrollLeft position of this scrollbar and change it in the body scrollLeft manually.
+
+Now when I start scrolling I see some stutter and then it becomes fine after I have scrolled once. 
+
+This happens only when I start scrolling. Not able to figure out how to solve this.   
+I also tried adding \`will-change\` property but does not seem to have any effect

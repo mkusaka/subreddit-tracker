@@ -1,17 +1,45 @@
 # ruby
-## [1][What happened to Jesse Storimer?](https://www.reddit.com/r/ruby/comments/iq1etj/what_happened_to_jesse_storimer/)
+## [1][Is there a name for this code smell?](https://www.reddit.com/r/ruby/comments/iqntuy/is_there_a_name_for_this_code_smell/)
+- url: https://www.reddit.com/r/ruby/comments/iqntuy/is_there_a_name_for_this_code_smell/
+---
+I have come across some code which calls a local private method with a parameter which is also a class variable.
+
+      def initialize
+        @record = find_record
+        do_something(@record)
+      end
+    
+      private
+    
+      def find_record
+        'record yo'
+      end
+    
+      def do_something(record)
+      end
+
+I feel like Sandi Metz would have something to say about that, or perhaps Rubocop would pick it up. How can I succinctly describe what is wrong here?
+## [2][An SMS Reminder With Ruby &amp; A Raspberry Pi](https://www.reddit.com/r/ruby/comments/iqqk9e/an_sms_reminder_with_ruby_a_raspberry_pi/)
+- url: https://emmanuelhayford.com/building-an-sms-reminder-with-ruby-raspberry-pi/
+---
+
+## [3][Enforcing Public/Private Access in Rails](https://www.reddit.com/r/ruby/comments/iqp2yk/enforcing_publicprivate_access_in_rails/)
+- url: https://medium.com/opendoor-labs/enforcing-public-private-access-in-rails-57e9c21d141d
+---
+
+## [4][What happened to Jesse Storimer?](https://www.reddit.com/r/ruby/comments/iq1etj/what_happened_to_jesse_storimer/)
 - url: https://www.reddit.com/r/ruby/comments/iq1etj/what_happened_to_jesse_storimer/
 ---
 Does anyone know what happened to Jesse Storimer, the author of the brilliant books “Working With Unix Processes“, “Working With TCP Sockets“ and “Working With Ruby Threads“? His GitHub profile shows that the last activity was in 2015 and I couldn’t find any information on what he’s been doing since. It’s sad because he is such a great teacher and I feel like there’s so much more he could cover to the benefit of the Ruby community.
-## [2][Ruby adds `Symbol#name` to return frozen string corresponding to the symbol name](https://www.reddit.com/r/ruby/comments/ipk3fu/ruby_adds_symbolname_to_return_frozen_string/)
+## [5][Ruby adds `Symbol#name` to return frozen string corresponding to the symbol name](https://www.reddit.com/r/ruby/comments/ipk3fu/ruby_adds_symbolname_to_return_frozen_string/)
 - url: https://blog.saeloun.com/2020/09/09/ruby-adds-name-method-to-symbol
 ---
 
-## [3][These Rails apps are overpacking their JavaScript bundles](https://www.reddit.com/r/ruby/comments/iplq0z/these_rails_apps_are_overpacking_their_javascript/)
+## [6][These Rails apps are overpacking their JavaScript bundles](https://www.reddit.com/r/ruby/comments/iplq0z/these_rails_apps_are_overpacking_their_javascript/)
 - url: https://rossta.net/blog/rails-apps-overpacking-with-webpacker.html
 ---
 
-## [4][Book suggestion for Rspec](https://www.reddit.com/r/ruby/comments/ipitcj/book_suggestion_for_rspec/)
+## [7][Book suggestion for Rspec](https://www.reddit.com/r/ruby/comments/ipitcj/book_suggestion_for_rspec/)
 - url: https://www.reddit.com/r/ruby/comments/ipitcj/book_suggestion_for_rspec/
 ---
 I am looking for a book to master Rspec.
@@ -19,7 +47,7 @@ I am looking for a book to master Rspec.
 I already know the basics of RSpec testing but I am looking to learn good practices and advanced topics in Rspec.
 
 I have not been able to find something online apart from basic tutorials. And was hoping for suggestions from you guys.
-## [5][Choosing solution for Chat Bot](https://www.reddit.com/r/ruby/comments/ipm3xt/choosing_solution_for_chat_bot/)
+## [8][Choosing solution for Chat Bot](https://www.reddit.com/r/ruby/comments/ipm3xt/choosing_solution_for_chat_bot/)
 - url: https://www.reddit.com/r/ruby/comments/ipm3xt/choosing_solution_for_chat_bot/
 ---
 Hi, In the near future I have the plan to implement a Slack bot.   
@@ -28,7 +56,7 @@ Are any of you used this or can recommend better solution for building a Slack b
 
 
 Thanks in advance
-## [6][Help with benchmark-ips](https://www.reddit.com/r/ruby/comments/ipgffm/help_with_benchmarkips/)
+## [9][Help with benchmark-ips](https://www.reddit.com/r/ruby/comments/ipgffm/help_with_benchmarkips/)
 - url: https://www.reddit.com/r/ruby/comments/ipgffm/help_with_benchmarkips/
 ---
 I am trying to benchmark a few ways I can check for equality, like so
@@ -91,7 +119,7 @@ I have a few questions regd. this
 2. How do I measure the memory consumption of each of the approaches, i.e. the numbers of objects each approach creates.
 
 Thanks.
-## [7][Gem API design question](https://www.reddit.com/r/ruby/comments/ipce8i/gem_api_design_question/)
+## [10][Gem API design question](https://www.reddit.com/r/ruby/comments/ipce8i/gem_api_design_question/)
 - url: https://www.reddit.com/r/ruby/comments/ipce8i/gem_api_design_question/
 ---
 Hi,
@@ -116,15 +144,3 @@ new_pet.save
 ```
 
 I would have expected to have the configure call return a wrapper object, and use this wrapper object to access the various resources exposed via the API. Is it usual to use global state for such things instead in Ruby ?
-## [8][The difference between let, let! and instance variables in RSpec](https://www.reddit.com/r/ruby/comments/ip0se6/the_difference_between_let_let_and_instance/)
-- url: https://www.codewithjason.com/difference-let-let-instance-variables-rspec/
----
-
-## [9][Writing a Ractor-based web server](https://www.reddit.com/r/ruby/comments/iozx5h/writing_a_ractorbased_web_server/)
-- url: https://kirshatrov.com/2020/09/08/ruby-ractor-web-server/
----
-
-## [10][Rails 6.1 adds --minimal option support](https://www.reddit.com/r/ruby/comments/iovpbj/rails_61_adds_minimal_option_support/)
-- url: https://blog.bigbinary.com/2020/09/08/rails-6-1-adds-minimal-option-support.html
----
-

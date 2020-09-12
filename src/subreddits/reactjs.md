@@ -85,89 +85,124 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][Display Progress Bar on Page Scroll with ReactJs](https://www.reddit.com/r/reactjs/comments/iqmx39/display_progress_bar_on_page_scroll_with_reactjs/)
-- url: https://webomnizz.com/how-to-display-progress-bar-on-page-scroll-with-reactjs/
+## [3][Serverless Video Chat App using Firebase and WebRTC in React](https://www.reddit.com/r/reactjs/comments/iraa9e/serverless_video_chat_app_using_firebase_and/)
+- url: https://www.youtube.com/watch?v=-d45WHNU9J4&amp;feature=share
 ---
 
-## [4][Job Posting React app - Material UI, Firebase](https://www.reddit.com/r/reactjs/comments/iqoms5/job_posting_react_app_material_ui_firebase/)
-- url: https://www.youtube.com/watch?v=LeH0kYI_HAw&amp;list=PL02g-PgcFojNzXd_GWuCTLc1PpQ_AXzDT&amp;index=2&amp;t=0s
+## [4][I coded this LEGO Bowser with react-three-fiber, react-native-web, and rendered it with povray](https://www.reddit.com/r/reactjs/comments/ir1w53/i_coded_this_lego_bowser_with_reactthreefiber/)
+- url: https://twitter.com/baconbrix/status/1304563193637933061?s=21
 ---
 
-## [5][React in 100 seconds](https://www.reddit.com/r/reactjs/comments/ipzuil/react_in_100_seconds/)
-- url: https://www.youtube.com/watch?v=Tn6-PIqc4UM&amp;ab_channel=Fireship
+## [5][Good open-source chart library to use in your React projects](https://www.reddit.com/r/reactjs/comments/ir9m3n/good_opensource_chart_library_to_use_in_your/)
+- url: https://apexcharts.com/react-chart-demos/
 ---
 
-## [6][Free Online React Conference](https://www.reddit.com/r/reactjs/comments/iqm5ne/free_online_react_conference/)
-- url: https://www.reddit.com/r/reactjs/comments/iqm5ne/free_online_react_conference/
+## [6][Learn React Hooks fast and easy with examples and snippets](https://www.reddit.com/r/reactjs/comments/irajbl/learn_react_hooks_fast_and_easy_with_examples_and/)
+- url: https://www.snippetsofhooks.dev/
 ---
-Hey folks, join me at #ReactSummit for free on October 15-16, and get to see speakers like @kentcdodds, @mxstbr, @NikkitaFTW, @sharifshameem.
 
-Register with this link before September 20: https://lnkd.in/gBpnSnD
-
-Learn more: https://reactsummit.com
-## [7][Is there a reason React &amp; Django are not commonly used together? Should I avoid this combination? What are the pros and cons?](https://www.reddit.com/r/reactjs/comments/iqeijm/is_there_a_reason_react_django_are_not_commonly/)
-- url: https://www.reddit.com/r/reactjs/comments/iqeijm/is_there_a_reason_react_django_are_not_commonly/
+## [7][I wrote a Reactive State-Management Library and seeking your feedback for API](https://www.reddit.com/r/reactjs/comments/iqrimm/i_wrote_a_reactive_statemanagement_library_and/)
+- url: https://www.reddit.com/r/reactjs/comments/iqrimm/i_wrote_a_reactive_statemanagement_library_and/
 ---
-Django seems like the best backend framework for what I want ( a post feed type application ) and react seems the best for what I want as far as hot reloads on the frontend. I also know both well. However, I am not seeing too much love for the combination...
-## [8][Security question about user authentication](https://www.reddit.com/r/reactjs/comments/iqme1e/security_question_about_user_authentication/)
-- url: https://www.reddit.com/r/reactjs/comments/iqme1e/security_question_about_user_authentication/
+Hi all!
+
+You might recognize me as the guy who created [radioactive-state](https://github.com/MananTank/radioactive-state#readme) library, It's been slowly gaining popularity. That library was just for local State Management, a replacement of useState hook.
+
+I wrote another library which is a superset of that library for **Global** State Management 
+
+Here is the Repo's readme: [https://github.com/MananTank/radioactive-store#readme](https://github.com/MananTank/radioactive-store#readme)
+
+My goal is to create the **easiest** global state management library and I want your feedback about the current API. What do you like, what you don't like? I am willing to change the API depending on your feedback and also willing to add features.
+
+I would really appreciate if you can help me out.
+
+Thanks ;)
+## [8][I created a serverless quiz generator with React &amp; Firebase](https://www.reddit.com/r/reactjs/comments/ircmt2/i_created_a_serverless_quiz_generator_with_react/)
+- url: https://v.redd.it/kmjwq14cypm51
 ---
-I've setup my app with nextjs + express server + passport.js. Users can signup and login with email+password combo. After user is logged in i can check user info like this:
 
-    static async getInitialProps({ req, query }) {
-        const userAgent = req
-          ? req.user
-          : null;
-        return userAgent;
-      }
-
-Whenever user is sending requests with axios I check on server side if user is logged in or have permission like this:
-
-    router.get("/getGroups", ensureAuthenticated, (req, res) =&gt; {
-      if(req.user.type != "Admin") {
-          res.send("auth error");
-          return;
-      }
-      Products.findAll({
-        where: { mainId: req.user.mainId },
-        attributes: ["group"],
-        group: ["group"]
-      }).then(data =&gt; {
-        res.json(data);
-      });
-    });
-
-ensureAuthenticated is checking with passport.js. What I'm asking is if it's possible to modify req.user on client side with some tools? Is this a secure way to check user authentication and permissions?
-## [9][Heard about the benefit of SSR and started learning Next.js. Now, do I need to update every time from create-react-app to Next or can I start my front-end entirely on Next?](https://www.reddit.com/r/reactjs/comments/iqqc8q/heard_about_the_benefit_of_ssr_and_started/)
-- url: https://www.reddit.com/r/reactjs/comments/iqqc8q/heard_about_the_benefit_of_ssr_and_started/
+## [9][Rex State - a handy utility to convert your hooks into shared states](https://www.reddit.com/r/reactjs/comments/ircgih/rex_state_a_handy_utility_to_convert_your_hooks/)
+- url: https://www.reddit.com/r/reactjs/comments/ircgih/rex_state_a_handy_utility_to_convert_your_hooks/
 ---
-Well, title says it all.
+# Introducing [Rex State](https://github.com/react-native-toolkit/rex-state) v1.0 
 
-I am so much used to CRA that I am finding it hard to understand if it's possible to start creating the entire frontend in Next or do I need to migrate to Next from CRA!
-## [10][Is it still important to know the lifecycle hooks of the React Class Components with Functional Components being the norm?](https://www.reddit.com/r/reactjs/comments/iqlugm/is_it_still_important_to_know_the_lifecycle_hooks/)
-- url: https://www.reddit.com/r/reactjs/comments/iqlugm/is_it_still_important_to_know_the_lifecycle_hooks/
+I initially built rex-state as a state management library, however, since it was using the Context API it wasn't very efficient with handling re-renders. 
+
+But then its another feature became more prominent. It can easily convert any hook into a shared state!
+
+Focusing on this functionality, Today I'm releasing Rex State 1.0. This tool is easy to use and will work with your existing hooks.
+
+## Usage
+Add rex-state to your project
+
+```sh
+yarn add rex-state
+
+# or
+
+npm i rex-state
+```
+
+Consider you have the following counter hook ﹣
+
+```jsx
+const useCounterHook = (initialCount) =&gt; {
+  const [count, setCount] = useState(initialCount || 0);
+
+  const increaseCount = () =&gt; setCount(count + 1);
+  const decreaseCount = () =&gt; setCount(count - 1);
+
+  return {
+    count,
+    increaseCount,
+    decreaseCount
+  };
+};
+```
+
+You can use rex-state to create a provider and a shared hook using the following code ﹣
+
+```jsx
+import { createRexStore } from "rex-state";
+
+const { 
+  useStore: useCounter, 
+  RexProvider: CountProvider 
+} = createRexStore(useCounterHook);
+```
+
+Wrap your application inside the `CountProvider` ﹣
+
+```jsx
+export default function App() {
+  // Starting off with an initial count of 10
+  return (
+    &lt;CountProvider value={10}&gt;
+      &lt;CountDisplay /&gt;
+      &lt;Controls /&gt;
+    &lt;/CountProvider&gt;
+  );
+}
+```
+
+Now you can use `useCounter` hook inside both `&lt;CountDisplay/&gt;` &amp; `&lt;Controls/&gt;` components. When the count changes in the `&lt;Controls/&gt;` component, it will cause the `&lt;CountProvider/&gt;` to re-render &amp; will also update the `&lt;CountDisplay/&gt;` component.
+
+This is based on the React.Context API. I have written a detailed page on its [performance](https://rex-state.netlify.app/?path=/story/intro-performance--page) &amp; when to use it in your application.
+
+Check out the working [codesandbox](https://codesandbox.io/s/rex-counter-2m4zy?file=/src/App.js) of the counter app
+
+Read about it detail on [Github](https://github.com/react-native-toolkit/rex-state)
+
+Share your thoughts about using this library. I'm open to feedbacks &amp; ideas!
+## [10][If React was a religion, what would classify as a sin?](https://www.reddit.com/r/reactjs/comments/iqxabo/if_react_was_a_religion_what_would_classify_as_a/)
+- url: https://www.reddit.com/r/reactjs/comments/iqxabo/if_react_was_a_religion_what_would_classify_as_a/
 ---
-I wonder if we still need to know all lifecycle hooks like \`componentWillReceiveProps\`, \`shouldComponentUpdate\`, etc. if we are never going to choose Class Components.
-
-What are your thoughts?
-## [11][Redux vs. Context Dilemma](https://www.reddit.com/r/reactjs/comments/iqj4vu/redux_vs_context_dilemma/)
-- url: https://www.reddit.com/r/reactjs/comments/iqj4vu/redux_vs_context_dilemma/
+The title is pretty self-explanatory 😅
+## [11][My first react native app!](https://www.reddit.com/r/reactjs/comments/irc2zm/my_first_react_native_app/)
+- url: https://v.redd.it/bewmleixrpm51
 ---
-I have a question regarding heavy state management in React. I am currently developing a React app and am using Redux for state management. However, the more I look into further developing my app, the more I see that my Redux store might be loaded with lots of data and thus become slower eventually. So I was wondering if it is okay to use Context in combination with Redux for state management? Should I take the approach of one solution for all or maybe a combination of both? Is there any other pros or cons I should be aware of?
 
-Thank you very much!
-## [12][A bit of lag while horizontally scrolling](https://www.reddit.com/r/reactjs/comments/iqlwmy/a_bit_of_lag_while_horizontally_scrolling/)
-- url: https://www.reddit.com/r/reactjs/comments/iqlwmy/a_bit_of_lag_while_horizontally_scrolling/
+## [12][What are some of the best engineered simple CRUD application using Typescript, Redux, Axios and implementing localization?](https://www.reddit.com/r/reactjs/comments/irc2cx/what_are_some_of_the_best_engineered_simple_crud/)
+- url: https://www.reddit.com/r/reactjs/comments/irc2cx/what_are_some_of_the_best_engineered_simple_crud/
 ---
-Hi Guys 
-
-I am using React table with fixed columns. The scrollbar comes at the end of the table and I wanted to make it float. 
-
-So I made a dummy div with position fixed  and made sure the width of the table and this dummy div is same and then made the original scrollbar hidden
-
- So I control the scrollLeft position of this scrollbar and change it in the body scrollLeft manually.
-
-Now when I start scrolling I see some stutter and then it becomes fine after I have scrolled once. 
-
-This happens only when I start scrolling. Not able to figure out how to solve this.   
-I also tried adding \`will-change\` property but does not seem to have any effect
+Trying to find a simple example, and improve upon it. It's the best way to learn. Finding the application that's the most well-made and looking at the best practices.

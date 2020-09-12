@@ -22,11 +22,70 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Building a Game With TypeScript. Drawing Grid 5/5](https://www.reddit.com/r/typescript/comments/iqn5nn/building_a_game_with_typescript_drawing_grid_55/)
+## [2][I made a ts template repo on github that has CI/CD actions configured, husky lint-staged, test running, eslint, prettier, and nodemon for people's usage in hacktoberfest.](https://www.reddit.com/r/typescript/comments/ir66mv/i_made_a_ts_template_repo_on_github_that_has_cicd/)
+- url: https://github.com/jakehamtexas/ts-lib-starter
+---
+
+## [3][What are some of the best engineered simple CRUD application using Typescript, Redux, Axios and implementing localization?](https://www.reddit.com/r/typescript/comments/irc69u/what_are_some_of_the_best_engineered_simple_crud/)
+- url: https://www.reddit.com/r/typescript/comments/irc69u/what_are_some_of_the_best_engineered_simple_crud/
+---
+Trying to find a simple example, and improve upon it. It's the best way to learn. Finding the application that's the most well-made and looking at the best practices.
+## [4][Could I get some advice about an error I'm getting?](https://www.reddit.com/r/typescript/comments/irahqn/could_i_get_some_advice_about_an_error_im_getting/)
+- url: https://www.reddit.com/r/typescript/comments/irahqn/could_i_get_some_advice_about_an_error_im_getting/
+---
+I'm writing a small number sequences game for my son to play - I've written a library in typescript with a buddy of mine - all it does is generate number sequences;
+
+[https://github.com/mikeyhogarth/number-sequences/tree/v1.2.1](https://github.com/mikeyhogarth/number-sequences/tree/v1.2.1)
+
+I then started creating a UI to use that library;
+
+[https://github.com/mikeyhogarth/number-sequences-game](https://github.com/mikeyhogarth/number-sequences-game) (it's deployed if anyone wants to take a look, but don't expect much at the moment!).
+
+When I first imported the \`number-sequences\` library, the compiler was throwing an error;
+
+    Could not find a declaration file for module 'number-sequences'. '/Users/mikey/Development/number-sequences-game/node_modules/number-sequences/dist/index.js' implicitly has an 'any' type.
+      Try `npm install @types/number-sequences` if it exists or add a new declaration (.d.ts) file containing `declare module 'number-sequences';`ts(7016)
+
+I got around this by adding the following line to \`react-app.d.ts\`
+
+**declare module "number-sequences";**
+
+But that feels like something I shouldn't have had to do - or is it? Is there something I could have done in the original library to prevent having to do this?
+## [5][What are some useful configuration that you can do to make Typescript development easier on Visual Studio Code?](https://www.reddit.com/r/typescript/comments/iqr21h/what_are_some_useful_configuration_that_you_can/)
+- url: https://www.reddit.com/r/typescript/comments/iqr21h/what_are_some_useful_configuration_that_you_can/
+---
+What are some useful configuration that you can do to make Typescript development easier on Visual Studio Code? I am wondering if you can catch all errors before transpilation and before runtime. Some coworker told me that there are type errors appearing at runtime for some reason on his side.
+## [6][Building a Game With TypeScript. Drawing Grid 5/5](https://www.reddit.com/r/typescript/comments/iqn5nn/building_a_game_with_typescript_drawing_grid_55/)
 - url: https://medium.com/gregsolo/building-a-game-with-typescript-drawing-grid-5-5-49454917b3af?source=friends_link&amp;sk=84924dff6c15ff16f3a01f6d35fe48d1
 ---
 
-## [3][Enums vs Object.freeze](https://www.reddit.com/r/typescript/comments/iqc2av/enums_vs_objectfreeze/)
+## [7][Adding a property switches an object from one type to another. Should I override this interpreter warning?](https://www.reddit.com/r/typescript/comments/iqtik7/adding_a_property_switches_an_object_from_one/)
+- url: https://www.reddit.com/r/typescript/comments/iqtik7/adding_a_property_switches_an_object_from_one/
+---
+    campaignCallData.map((record: IJoinedCampaignCall) =&gt; {
+          const weekDate: Moment = this.extractWeek(record.date);
+          const stringWeekDate: string = weekDate.format('YYYY-MM-DD');
+          (record as IFormattedCampaignCall).weekDate = stringWeekDate;
+          return record;
+        });
+    
+    /*
+    Conversion of type 'IJoinedCampaignCall' to type 'IFormattedCampaignCall' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+      Property '"weekDate"' is missing in type 'IJoinedCampaignCall' but required in type 'IFormattedCampaignCall'.ts(2352)
+    IFormattedCampaignCall.ts(11, 3): '"weekDate"' is declared here.
+    */
+
+If I follow the lint suggestion, this will work:
+
+     (record as unknown as IFormattedCampaignCall).weekDate = stringWeekDate;
+    
+
+My question is whether this is an appropriate place to override the interpreter using `unknown`? 
+
+The "no overlapping type" explanation is confusing since I'm obviously asseting from one type to a different one. 
+
+I lean towards yes, seems logical if  `IFormattedCampaignCall` has the additional property, and everything else is the same, it should be valid.
+## [8][Enums vs Object.freeze](https://www.reddit.com/r/typescript/comments/iqc2av/enums_vs_objectfreeze/)
 - url: https://www.reddit.com/r/typescript/comments/iqc2av/enums_vs_objectfreeze/
 ---
 I have read sentiment on here that Enums may have been a directional misfit. 
@@ -34,15 +93,15 @@ I have read sentiment on here that Enums may have been a directional misfit.
 And because I tend to use string Enums to avoid string arguments, I think I may do what one poster said and revert to `Object.freeze` again. 
 
 They are essentially the same right? Or is there a strong case for one over the other?
-## [4][Any React libraries you would recommend avoiding when working with Typescript?](https://www.reddit.com/r/typescript/comments/iqfq41/any_react_libraries_you_would_recommend_avoiding/)
+## [9][Any React libraries you would recommend avoiding when working with Typescript?](https://www.reddit.com/r/typescript/comments/iqfq41/any_react_libraries_you_would_recommend_avoiding/)
 - url: https://www.reddit.com/r/typescript/comments/iqfq41/any_react_libraries_you_would_recommend_avoiding/
 ---
 I had an issue with some library not long ago, and I was wondering if there were any other libraries that may become a pain in the ass because it's not well integrated with Typescript, or it's poorly designed and doesn't really use Typescript's features very well at all.
-## [5][Avoid Export Default](https://www.reddit.com/r/typescript/comments/ipou7q/avoid_export_default/)
+## [10][Avoid Export Default](https://www.reddit.com/r/typescript/comments/ipou7q/avoid_export_default/)
 - url: https://basarat.gitbook.io/typescript/main-1/defaultisbad
 ---
 
-## [6][Writing a schema parser in typescript](https://www.reddit.com/r/typescript/comments/iq003l/writing_a_schema_parser_in_typescript/)
+## [11][Writing a schema parser in typescript](https://www.reddit.com/r/typescript/comments/iq003l/writing_a_schema_parser_in_typescript/)
 - url: https://www.reddit.com/r/typescript/comments/iq003l/writing_a_schema_parser_in_typescript/
 ---
 Hi,
@@ -129,87 +188,3 @@ How do I achieve something similar in typescript while leveraging type checking 
 		lname: "Doe", 
 		active: true
 	}
-## [7][Extending enzyme to support wait](https://www.reddit.com/r/typescript/comments/ipzqwl/extending_enzyme_to_support_wait/)
-- url: https://www.reddit.com/r/typescript/comments/ipzqwl/extending_enzyme_to_support_wait/
----
-    import * as enzyme from 'enzyme';
-    import Adapter from 'enzyme-adapter-react-16';
-    import { act } from 'react-dom/test-utils';
-    import wait from 'waait';
-    
-    enzyme.configure({ adapter: new Adapter() });
-    
-    declare module 'enzyme' {
-      interface ReactWrapper {
-        waitForUpdate: () =&gt; void;
-      }
-    }
-    
-    enzyme.ReactWrapper.prototype.waitForUpdate = async function waitForUpdate() {
-      return act(async () =&gt; {
-        await wait(0);
-        this.setProps({});
-      });
-    };
-    
-
-and in test
-
-    it('should', async() =&gt; {
-    //do something
-    await wrapper.waitForUpdate()
-    //assert
-    ))
-
-any problem with this approach ?
-## [8][Need a "little" help with some Typings](https://www.reddit.com/r/typescript/comments/ipm5sn/need_a_little_help_with_some_typings/)
-- url: https://www.reddit.com/r/typescript/comments/ipm5sn/need_a_little_help_with_some_typings/
----
-So I have some Typescript I want to use to create DOM-Elements easily but I just can't get the Type Inference to do the Correct thing I would be happy for Ideas what I could change.
-
-[https://gist.github.com/mio991/c54e940e4ae599edec79488d30846db7](https://gist.github.com/mio991/c54e940e4ae599edec79488d30846db7)
-
-The End usage should look like this:
-
-    const templateFactory = div({})(
-        div({})(
-            h1({innerText: "title"})()
-            h3({innerText: "subtitle"})()
-        ),
-        div({})(
-            p({innerText: "article"})()
-        )
-    )
-    
-    // templateFactory should have the type: (context:{title:string; subtitle:string; article:string;})=&gt; HTMLDivElement
-## [9][Cleaning up this mapped type](https://www.reddit.com/r/typescript/comments/ipqaj6/cleaning_up_this_mapped_type/)
-- url: https://www.reddit.com/r/typescript/comments/ipqaj6/cleaning_up_this_mapped_type/
----
-I got it working but it's not pretty. Any improvements welcome. I especially want to get rid of that empty string `''`
-
-    interface myInt {
-      "p1": string;
-      "p2": string; 
-    } 
-    
-    export default class X {
-      private myMethod &lt;Record extends { [key in keyof myInt]: string }&gt;(matchPattern: RegExp, record: Record): boolean {
-        const matchFound: boolean = matchPattern.test(record['' as keyof myInt]);
-        return matchFound;
-      }
-## [10][Why does TS have a return type for void instead of using undefined?](https://www.reddit.com/r/typescript/comments/ipowhp/why_does_ts_have_a_return_type_for_void_instead/)
-- url: https://www.reddit.com/r/typescript/comments/ipowhp/why_does_ts_have_a_return_type_for_void_instead/
----
-Is this a carryover from Java, or some older language? Or is there a good reason to differentiate the default return `undefined` from `void`?
-## [11][Angle syntax before and after the parameter definitions](https://www.reddit.com/r/typescript/comments/iposqh/angle_syntax_before_and_after_the_parameter/)
-- url: https://www.reddit.com/r/typescript/comments/iposqh/angle_syntax_before_and_after_the_parameter/
----
-In Typescript do the angle brackets before and after the parameter definitions repesent different things?
-
-    async function a&lt;g extends {}&gt;(objs: Array&lt;g&gt;): Promise&lt;g&gt; {...}
-
-In the first angle brackets I see a generic type argument declaration
-
-In the 2nd and third angle brackets i see type constructors acting on a type argument `g`
-
-I think these have about the same level of connection as the {} that represents an object literal and the {} that represents a function body. Basically none. Correct?

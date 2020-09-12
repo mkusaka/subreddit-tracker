@@ -1,75 +1,95 @@
 # aws
-## [1][Elastic Beanstalk introduces support for shared load balancers!](https://www.reddit.com/r/aws/comments/iqjxcw/elastic_beanstalk_introduces_support_for_shared/)
+## [1][Amazon Career Day](https://www.reddit.com/r/aws/comments/ir5svb/amazon_career_day/)
+- url: https://www.reddit.com/r/aws/comments/ir5svb/amazon_career_day/
+---
+https://www.amazoncareerday.com/
+
+Disclaimer: I work at AWS as a Technical Consultant. This is *not* a third party recruiting link. I do not receive any kickbacks, referral fees, nor am I recruiter. I just thought that this would be of interest to this subreddit.
+## [2][Reminder - New S3 Buckets after 9/30/2020 won't support Path-Style Requests](https://www.reddit.com/r/aws/comments/iqwv17/reminder_new_s3_buckets_after_9302020_wont/)
+- url: https://www.reddit.com/r/aws/comments/iqwv17/reminder_new_s3_buckets_after_9302020_wont/
+---
+If you want a bucket you can access using path style requests (e.g. [https://s3.Region.amazonaws.com/bucket-name/key\_name](https://s3.Region.amazonaws.com/bucket-name/key_name)) you have just over two weeks to create your bucket.
+
+[https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html](https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html)
+
+&amp;#x200B;
+
+&gt;Important  
+&gt;  
+&gt;Buckets created after September 30, 2020, will support only virtual hosted-style requests.                                                                                  Path-style requests will continue to be supported for buckets created on or before                                           this date.
+## [3][I'm building a search engine for terminal commands and just added support for aws-cli. What do you think?](https://www.reddit.com/r/aws/comments/ir0ln7/im_building_a_search_engine_for_terminal_commands/)
+- url: https://www.reddit.com/r/aws/comments/ir0ln7/im_building_a_search_engine_for_terminal_commands/
+---
+Hey all!
+
+I'm working on an app that works as a search engine for anything terminal related. It's called [Sidekick](https://getsidekick.app). The idea is instead of searching stuff on Google and going through websites you just hit a shortcut, type what you want with natural language and the app gives you the command you need and copies it into the clipboard.
+
+Currently, the app supports full-text search through your history, history of your team, and popular CLIs like aws-cli, \`gcloud, heroku, etc. You can even quickly add flags, options, and parameters + look into some basic documentation for the CLI. 
+
+Searching for commands with Sidekick is much faster than with Google. You don't have even use your mouse. More importantly, you don't wait for websites to load and don't need to manually copy and paste commands from these websites.  
+
+
+I added a short video showcasing the basic functionality.
+
+[Sidekick - AWS search](https://reddit.com/link/ir0ln7/video/36isu8yuflm51/player)
+
+The app is in private beta right now but I'm sending out invites every week or so (happy to prioritize you if you want to try it out). **You can sign up** [**here**](https://getsidekick.app).  
+
+
+I'd love to know what you think! Thanks.
+## [4][AWS Taxation](https://www.reddit.com/r/aws/comments/irbd8s/aws_taxation/)
+- url: https://www.reddit.com/r/aws/comments/irbd8s/aws_taxation/
+---
+I have a UK business with a valid tax number yet I'm still charged for tax? Do all business pony up 20% and wait for a tax return or am I missing something?
+## [5][Global Accelerator with Media Services](https://www.reddit.com/r/aws/comments/ira01m/global_accelerator_with_media_services/)
+- url: https://www.reddit.com/r/aws/comments/ira01m/global_accelerator_with_media_services/
+---
+Hi there,
+
+Wondering if anyone has a workflow to allow MediaLive and MediaStore to be used as an endpoint for Global Accelerator?
+## [6][Does AWS translate ever produce other artifacts, more so than google translate?](https://www.reddit.com/r/aws/comments/ir9x0q/does_aws_translate_ever_produce_other_artifacts/)
+- url: https://www.reddit.com/r/aws/comments/ir9x0q/does_aws_translate_ever_produce_other_artifacts/
+---
+I'm doing a translation and aws seems to have produced a new artifact.  I translated the material  in aws, then translated it back with google translate to check it.  Then translated it back into aws and now there is a new word that completely changes the meaning of the material.  google translate is translating it perfectly now from the aws original translation, which should I go with, neural machine or google?
+## [7][Best way to organize Discord Bot data in DynamoDB?](https://www.reddit.com/r/aws/comments/ir77vq/best_way_to_organize_discord_bot_data_in_dynamodb/)
+- url: https://www.reddit.com/r/aws/comments/ir77vq/best_way_to_organize_discord_bot_data_in_dynamodb/
+---
+With my table, I want to answer these primary questions:
+
+* How many wins does the user have in rock, paper, scissors?
+* How many wins does the user have in boxing?
+* Who has the top 10 wins in the server?
+
+Keep in mind, I'm trying to go with the 'single' table approach. On a 'guild' object, there will be many configurations that exist: moderation, user levels, etc.
+
+I also am going to be using the 'user' entity to keep track of economy as well: item purchases, inventory, etc.
+
+[My current table design is here.](https://imgur.com/YxGbQoD) This works the way I need it to, for the most part; however, there's virtually no way to link a 'wins' column with the guild id. I only want to showcase the user wins that are *in* the guild on the leaderboard.
+## [8][Elastic Beanstalk introduces support for shared load balancers!](https://www.reddit.com/r/aws/comments/iqjxcw/elastic_beanstalk_introduces_support_for_shared/)
 - url: https://aws.amazon.com/blogs/containers/amazon-elastic-beanstalk-introduces-support-shared-load-balancers/
 ---
 
-## [2][What is something you guys have learned while using AWS? (For me, establishing a disaster recovery plan is a must)](https://www.reddit.com/r/aws/comments/iqerhh/what_is_something_you_guys_have_learned_while/)
-- url: https://www.reddit.com/r/aws/comments/iqerhh/what_is_something_you_guys_have_learned_while/
+## [9][Suggestions on reducing application startup time?](https://www.reddit.com/r/aws/comments/iquord/suggestions_on_reducing_application_startup_time/)
+- url: https://www.reddit.com/r/aws/comments/iquord/suggestions_on_reducing_application_startup_time/
 ---
-&amp;#x200B;
+I am working on an interactive application that currently requires one Windows g4dn.xlarge instance per active user (used to be a desktop app). At the moment it uses Auto Scaling Groups (ASG) and increases the desired capacity by 1 when a user logs in. 
 
-https://preview.redd.it/abdi3ga9lem51.png?width=825&amp;format=png&amp;auto=webp&amp;s=3c48af1f718e128711f6ca599a2d752c27a75bd6
-
-In March 2017, Amazon had an outage which affected businesses in many ways, including ours. We had about 25 separate user-facing systems that were unavailable, affecting users number in the 100s of thousands. When the outage first occurred, we tried to switch to an alternate region for those systems that are in multiple regions (not all of them are), but could not because we could not use the AWS load balancing service, which was also impacted by the outage. In the end, we just had to wait for Amazon to resolve the problem and test it.
-
-Now, I'm not saying Amazon is going to shut down. Our organization still uses and loves Amazon, but did it have an impact on our business? Absolutely.
-
-We have obviously recovered since this but have established a well-structured business continuity plan in the case that this ever happens again and are prepared. You should too!
-
-For those of you not familiar with business continuity plans, here is an example: [AWS Business Continuity Plan &amp; Template](https://www.allcode.com/aws-business-continuity-plan/)
-
-What is some advice that you would recommend to somebody starting on AWS? Or even something you have learned along the way that could help some people out?
-## [3][How big to size production VPC subnets with 3 tiers?](https://www.reddit.com/r/aws/comments/iqnndm/how_big_to_size_production_vpc_subnets_with_3/)
-- url: https://www.reddit.com/r/aws/comments/iqnndm/how_big_to_size_production_vpc_subnets_with_3/
----
-Currently I'm thinking of the following setup where everything is balanced:
-
-* Public tier (load balancers + bastion): 3 subnets across 3 AZ with a /20 mask. (12,288 IP)
-* Private tier (application servers connected to NAT gateway): 3 subnets across 3 AZ with a /20 mask. (12,288 IP)
-* Restricted tier (database/cache servers): 3 subnets across 3 AZ with a /20 mask. (12,288 IP)
-
-The application servers auto-scale with ECS Fargate. I decided to make the public tier the same size as the private tier since I may remove NAT gateways and move the app servers into the public subnet in the future. This leaves [10.0.143.255](http://10.0.143.255/)\-10.0.255.255 un-allocated. 
-
-Anything I should consider/resize before rolling with this?
-## [4][AWS SSO adds some APIs and CloudFormation support for multi-account setups](https://www.reddit.com/r/aws/comments/iqggtx/aws_sso_adds_some_apis_and_cloudformation_support/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/09/aws-single-sign-on-adds-account-assignment-apis-and-aws-cloudformation-support-to-automate-multi-account-access-management/
----
-
-## [5][In praise of S3, the greatest cloud service of all time](https://www.reddit.com/r/aws/comments/iq20le/in_praise_of_s3_the_greatest_cloud_service_of_all/)
-- url: https://acloudguru.com/blog/engineering/brazeal-in-praise-of-s3-the-greatest-cloud-service-of-all-time
----
-
-## [6][Lambda function check health application](https://www.reddit.com/r/aws/comments/iqjy9q/lambda_function_check_health_application/)
-- url: https://www.reddit.com/r/aws/comments/iqjy9q/lambda_function_check_health_application/
----
-Let's assume I completed a python script that checks an external web application outside of AWS network. From the lambda logs, I can see http status code of 200 which is a success. I'd like to record/store the date/timestamp of the code that checked the health of the remote application as well as the http status code into cloudwatch. That way, we might be able to pull those logs from cloudwatch and be able to create a chart/graph of the health history of the web application. Is this possible?
-## [7][Introducing security groups for pods](https://www.reddit.com/r/aws/comments/iq9rvu/introducing_security_groups_for_pods/)
-- url: https://aws.amazon.com/blogs/containers/introducing-security-groups-for-pods/
----
-
-## [8][Why are s3 egress costs lesser than cloudfront ?](https://www.reddit.com/r/aws/comments/iqov30/why_are_s3_egress_costs_lesser_than_cloudfront/)
-- url: https://www.reddit.com/r/aws/comments/iqov30/why_are_s3_egress_costs_lesser_than_cloudfront/
----
-I have the notion that when cloudfront is used the overall costs reduce because the number of origin hits decrease. But now when I see the pricing of S3 and Cloudfront, for India the egress costs of S3 are 0.1093$ while cloudfront costs 0.17$ which means I will be charged less if I just use S3. 
+The problem is that it is slow to start - \~5 minutes to launch the instance and another 5-10 minutes for the initial application start (which takes 1-2 minutes locally on a freshly booted machine). I understand it is slow because when using snapshots, each block is initially loaded from S3.
 
 &amp;#x200B;
 
-Was confused what has gone wrong here ?
-## [9][Having trouble sending outbound SMTP from ec2 to office 365 - does not seem to be an issue of throttling, happens on 25 and 587](https://www.reddit.com/r/aws/comments/iqo8j4/having_trouble_sending_outbound_smtp_from_ec2_to/)
-- url: https://www.reddit.com/r/aws/comments/iqo8j4/having_trouble_sending_outbound_smtp_from_ec2_to/
+I would like to reduce startup times while keeping costs down. Is that possible? I can think of several alternatives:
+
+1. Keep a few instances on (desired capacity &gt; 0) and increase/decrease when users log in/out. Application start time will be fast, but if I set capacity to 5 and 6 users log in at once the 6th one will face a slow starting time. At $0.71/hr per instance it is also pretty expensive.
+
+2. Use EBS fast snapshot restore with desired capacity at 0. This should have been pretty fast, but I am getting inconsistent results, even with subsequent launches in the same AZ. I am seeing about 1-3 minutes to launch the instance and another 1-5 minutes for initial startup.
+
+3. Avoid ASG and keep a few stopped machines in each AZ (to account for capacity issues). This should be fast and consistent, the main issue is that I need to implement ASG features. Standby cost would be $0.1/GB/hr, so not so expensive with 100 GB machines.
+
+&amp;#x200B;
+
+It looks like #3 would be the best option if considering both time and cost, am I missing something? It does require more dev work. I am also working on supporting multiple users per instance, switching to Linux and reducing load times, but that will take a while.
+## [10][Tiny library for generating safe DynamoDB sort-keys in JavaScript](https://www.reddit.com/r/aws/comments/iqtn5x/tiny_library_for_generating_safe_dynamodb/)
+- url: https://github.com/neuledge/sort-key
 ---
-Hi, so, I am using an application that sends mail using my office 365 email address. However the mail is failing to send
 
-Error sending email to example.user@mydomain.com, error:Could not open socket: stream\_socket\_client(): unable to connect to tcp://mydomain-com.mail.proection.outlook.com:25
-
-I have security group rules for outbound - [0.0.0.0/0](https://0.0.0.0/0) all traffic and I have also added for smtp over port 25 from the same address, as well as port 587 tcp
-
-I have created a connector in office 365 with the public IP of the ec2 instance used to send the mail whitelisted....but the error persists
-
-A telnet to my mx record just hangs at 'trying'
-
-What am I doing wrong?
-## [10][In Redshift how can I create an user which which has only user creation privileges?](https://www.reddit.com/r/aws/comments/iqo8e2/in_redshift_how_can_i_create_an_user_which_which/)
-- url: https://www.reddit.com/r/aws/comments/iqo8e2/in_redshift_how_can_i_create_an_user_which_which/
----
-The primary requirement is to automatically create or alter users based on user information stored in a table. I am planning to write a stored procedure / use Databricks notebook to do the automation. The Redshift user which I use for creating other users in this automation should only user create/alter permissions. It is the only which should be performed from that user. I read that the option CREATEUSER option give super user like privileges to the user. How can i restrict/revoke other superuser privileges?

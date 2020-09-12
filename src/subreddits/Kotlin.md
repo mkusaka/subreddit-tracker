@@ -1,52 +1,55 @@
 # Kotlin
-## [1][Arrow 0.11 released](https://www.reddit.com/r/Kotlin/comments/iqaglq/arrow_011_released/)
+## [1][Kotlin vs Java safe calls](https://www.reddit.com/r/Kotlin/comments/iraxza/kotlin_vs_java_safe_calls/)
+- url: https://rux.vc/2019.09/functional-kotlin-part-1-nullable-safe-calls/
+---
+
+## [2][Develop Kotlin games for mobile using FXGL 11.11](https://www.reddit.com/r/Kotlin/comments/irbsdc/develop_kotlin_games_for_mobile_using_fxgl_1111/)
+- url: https://www.reddit.com/r/Kotlin/comments/irbsdc/develop_kotlin_games_for_mobile_using_fxgl_1111/
+---
+&amp;#x200B;
+
+[Breakout screenshot](https://preview.redd.it/9iqvhlcgopm51.png?width=1714&amp;format=png&amp;auto=webp&amp;s=f38b8251304e750c638d71e24c1f8f4f02ba647e)
+
+The 11.11 release is now mobile-compatible, meaning existing FXGL games can be compiled to Android (if you have Linux) and iOS (if you have Mac OS).
+
+Sample games (a few of which are in Kotlin) and instructions are available at [FXGLGames](https://github.com/AlmasB/FXGLGames#build-for-mobile) As this is the first stable build, the process will be refined in future releases, based on feedback.
+
+Breakout on Android demo can be seen in the [original tweet](https://twitter.com/AlmasBaim/status/1304731964323307520)
+
+Whilst the demo used is written in Java, FXGL DSL and API try to be nice to both Java and Kotlin devs. So you can write Kotlin only, Java only, or Java-Kotlin hybrid source games.
+
+Should you wish to explore the FXGL engine's sources, most of the internals are written in Kotlin: [GitHub](https://github.com/AlmasB/FXGL) where you can also report any issues.
+
+Thanks for checking out!
+## [3][Data class - behind the mask. Not sure if I covered everything from the kotlin dataclass](https://www.reddit.com/r/Kotlin/comments/ir7wos/data_class_behind_the_mask_not_sure_if_i_covered/)
+- url: https://link.medium.com/L1dP69DkI9
+---
+
+## [4][Using Kotlin for hosting a REST API on a Raspberry Pi (tutorial)](https://www.reddit.com/r/Kotlin/comments/ir9gq4/using_kotlin_for_hosting_a_rest_api_on_a/)
+- url: https://javalin.io/2020/09/05/javalin-raspberry-pi-example.html
+---
+
+## [5][Using Testcontainers with Micronaut and Kotest](https://www.reddit.com/r/Kotlin/comments/iqr3rc/using_testcontainers_with_micronaut_and_kotest/)
+- url: https://akobor.me/posts/using-testcontainers-with-micronaut-and-kotest
+---
+
+## [6][Hi everybody, i just published this article about the Command Design Pattern (in Kotlin, of course) Tell me what you think about, pls](https://www.reddit.com/r/Kotlin/comments/iqw5ez/hi_everybody_i_just_published_this_article_about/)
+- url: https://medium.com/@acciarogennaro/the-command-design-pattern-in-kotlin-445ead6ca1f2?sk=5e754841dab19533ccd7c0cb47d776e4
+---
+
+## [7][Arrow 0.11 released](https://www.reddit.com/r/Kotlin/comments/iqaglq/arrow_011_released/)
 - url: https://twitter.com/arrow_kt/status/1304118618980900864?s=19
 ---
 
-## [2][Released Kotlin 1.4.10](https://www.reddit.com/r/Kotlin/comments/iq2i5u/released_kotlin_1410/)
+## [8][Released Kotlin 1.4.10](https://www.reddit.com/r/Kotlin/comments/iq2i5u/released_kotlin_1410/)
 - url: https://github.com/JetBrains/kotlin/releases/tag/v1.4.10
 ---
 
-## [3][Anyone interested in creating an coc.nvim extension for Kotlin?](https://www.reddit.com/r/Kotlin/comments/iqk4k8/anyone_interested_in_creating_an_cocnvim/)
+## [9][Anyone interested in creating an coc.nvim extension for Kotlin?](https://www.reddit.com/r/Kotlin/comments/iqk4k8/anyone_interested_in_creating_an_cocnvim/)
 - url: https://www.reddit.com/r/Kotlin/comments/iqk4k8/anyone_interested_in_creating_an_cocnvim/
 ---
 If you are a vim user and use the plugin coc.nvim (which is an autocompleter and much more for vim, here is the repo [https://github.com/neoclide/coc.nvim](https://github.com/neoclide/coc.nvim))  I want to create an extension for Kotlin. Unfortunately I am not very skilled in TypeScript (but I will use my energy in learning and finishing this) so if anyone is interested in helping me and contributing to the extension you are very much welcome. Here is the repo: [https://github.com/isaac025/coc-kotlin](https://github.com/isaac025/coc-kotlin) feel free for any suggestions. I am planning on using/forking VScode's Kotlin completer: [https://github.com/fwcd/vscode-kotlin](https://github.com/fwcd/vscode-kotlin)
-## [4][Yummy](https://www.reddit.com/r/Kotlin/comments/ipp2hi/yummy/)
+## [10][Yummy](https://www.reddit.com/r/Kotlin/comments/ipp2hi/yummy/)
 - url: https://i.imgur.com/083WLuJ.png
----
-
-## [5][Custom front-end for Kotlin IR](https://www.reddit.com/r/Kotlin/comments/iqb0kd/custom_frontend_for_kotlin_ir/)
-- url: https://www.reddit.com/r/Kotlin/comments/iqb0kd/custom_frontend_for_kotlin_ir/
----
-So this Kotlin IR feature came up a lot lately and I was wondering whether or not I can use this feature to make custom transpiler from Kotlin to another programming language, but all I could find for now was just information on how to turn it on for existing front-ends (Native, JS). Can we extend it somehow?
-## [6][How do I import a function from one kotlin file to another?](https://www.reddit.com/r/Kotlin/comments/iqiprw/how_do_i_import_a_function_from_one_kotlin_file/)
-- url: https://www.reddit.com/r/Kotlin/comments/iqiprw/how_do_i_import_a_function_from_one_kotlin_file/
----
-Hi, 
-
-I am very new to this and I don't know-how to important a function in android studio. Could someone please show me an example or reference I can't find anything on youtube.
-## [7][How do I contribute to the Kotlin Community? Any Recommendations?](https://www.reddit.com/r/Kotlin/comments/iq2qm2/how_do_i_contribute_to_the_kotlin_community_any/)
-- url: https://www.reddit.com/r/Kotlin/comments/iq2qm2/how_do_i_contribute_to_the_kotlin_community_any/
----
-So I am in my 4th Year at University, and I just got introduced to Kotlin in my Android Development class last quarter and I got to say, despite my reluctance(my first language ever was Java), I have become a fan.
-
-Now I am really excited about Kotlin MultiPlatform, but it hasn't exactly caught some steam yet. Thus I was wondering if there was any way that I could contribute to the community by helping with some small issues initially. To that effect, I was also wondering if I could help with something more complicated later, for my Senior Project(maybe helping with the compiler/library).
-## [8][Having trouble with KProperty1.get()](https://www.reddit.com/r/Kotlin/comments/iq975h/having_trouble_with_kproperty1get/)
-- url: https://www.reddit.com/r/Kotlin/comments/iq975h/having_trouble_with_kproperty1get/
----
-I'm trying to use a class reflector to iterate over the properties of a class. But I don't really understand `KProperty.get()` and the whole reflector thing. There isn't much documentation on kotlinlang.org, although I did find a [question on StackOverflow](https://stackoverflow.com/questions/45875491/what-is-a-receiver-in-kotlin) on the subject. The answer is very well written and based on it I have come up with this: 
-```kotlin
-for (trait: ItemTrait in traits) {
-  val traitObject = JSONObject()   
-trait::class.declaredMemberProperties.toList().stream().filter{it.hasAnnotation&lt;TraitData&gt;()}.forEach{property -&gt;
-    traitObject.put(property.name, property.get(ItemTrait.()))```
-
-But the compiler still wants an expression in the brackets next to ItemTrait. What on earth does it mean? Possibly relevant sidenote, in the docs for KProperty1 it states that the reciever passed into `get()` needs to be a class instance but I don't really know what that means
-## [9][What is the best way to generate a random number?](https://www.reddit.com/r/Kotlin/comments/iq7u86/what_is_the_best_way_to_generate_a_random_number/)
-- url: https://www.reddit.com/r/Kotlin/comments/iq7u86/what_is_the_best_way_to_generate_a_random_number/
----
-
-## [10][Played around with WebGL and a bug gave me this.](https://www.reddit.com/r/Kotlin/comments/ipedbe/played_around_with_webgl_and_a_bug_gave_me_this/)
-- url: https://i.redd.it/pfe9csik14m51.png
 ---
 

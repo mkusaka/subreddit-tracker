@@ -23,59 +23,74 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/09/09/this-week-in-rust-355/
 ---
 
-## [3][Apple is starting to use Rust for low-level programming](https://www.reddit.com/r/rust/comments/iqnt58/apple_is_starting_to_use_rust_for_lowlevel/)
+## [3][Clone git faster than git itself with Gitoxide 0.4](https://www.reddit.com/r/rust/comments/ir8mwq/clone_git_faster_than_git_itself_with_gitoxide_04/)
+- url: https://github.com/Byron/gitoxide/releases/tag/v0.4.0
+---
+
+## [4][Announcing ultraviolet 0.6 - including support for 256-bit AVX vectors, f64 double-precision types, and performance improvements](https://www.reddit.com/r/rust/comments/ir24mp/announcing_ultraviolet_06_including_support_for/)
+- url: https://fusha.moe/blog/posts/ultraviolet-0.6/
+---
+
+## [5][Apple is starting to use Rust for low-level programming](https://www.reddit.com/r/rust/comments/iqnt58/apple_is_starting_to_use_rust_for_lowlevel/)
 - url: https://twitter.com/oskargroth/status/1301502690409709568?s=10
 ---
 
-## [4][CCS811 Indoor Air Quality Sensor Driver in Rust](https://www.reddit.com/r/rust/comments/iq9csu/ccs811_indoor_air_quality_sensor_driver_in_rust/)
-- url: https://i.redd.it/30lu8hvi7dm51.jpg
----
-
-## [5][Announcing Actix-Web v3.0](https://www.reddit.com/r/rust/comments/iqq8k9/announcing_actixweb_v30/)
+## [6][Announcing Actix-Web v3.0](https://www.reddit.com/r/rust/comments/iqq8k9/announcing_actixweb_v30/)
 - url: https://paper.dropbox.com/published/Announcing-Actix-Web-v3.0--A7YI~P9U9aqhEOXyZJaGffjfBg-QOXXb1lXgTubzXHzUq9ONY5
 ---
 
-## [6][Launching the 2020 State of Rust Survey | Rust Blog](https://www.reddit.com/r/rust/comments/iq5s5b/launching_the_2020_state_of_rust_survey_rust_blog/)
-- url: https://blog.rust-lang.org/2020/09/10/survey-launch.html
+## [7][A Few Github Action “Recipes” for Rust](https://www.reddit.com/r/rust/comments/ir16fl/a_few_github_action_recipes_for_rust/)
+- url: https://shift.click/blog/github-actions-rust
 ---
 
-## [7][Announcing yew-state 0.3.0 - Features custom scopes and new StateView component!](https://www.reddit.com/r/rust/comments/iqig64/announcing_yewstate_030_features_custom_scopes/)
-- url: https://crates.io/crates/yew-state
+## [8][Trait bound for "One or More"](https://www.reddit.com/r/rust/comments/ir5ue1/trait_bound_for_one_or_more/)
+- url: https://www.reddit.com/r/rust/comments/ir5ue1/trait_bound_for_one_or_more/
+---
+How can I express a generic type that allows calling a function with a value or a slice of values? Example:
+
+\`\`\`
+
+fn myfunc&lt;T: OneOrMore&gt;(values: T) {
+
+...
+
+mycontainre.from\_iter(values.into\_iter());
+
+....
+
+}
+
+myfunc(1);
+
+myfunc(&amp;\[1, 2\]);
+
+\`\`\`
+
+&amp;#x200B;
+
+Is there something like this "OneOrMore" trait? or can it be accomplished in a different way?
+## [9][Conway's Game of Life on 10,000 by 10,000 Grid](https://www.reddit.com/r/rust/comments/ir2j2p/conways_game_of_life_on_10000_by_10000_grid/)
+- url: https://www.reddit.com/r/rust/comments/ir2j2p/conways_game_of_life_on_10000_by_10000_grid/
+---
+Hi everyone,
+
+I have been learning Rust for the past few months and for my first project, I decided to implement Conway's Game of Life on a 10,000 by 10,000 grid, as suggested by this reddit post([https://www.reddit.com/r/learnprogramming/comments/9c6yo4/a\_collection\_of\_projects\_for\_learning/](https://www.reddit.com/r/learnprogramming/comments/9c6yo4/a_collection_of_projects_for_learning/)). You can use the arrow keys to move around the grid, as this grid size will not be able to fit onto your screen. And since the computation time for the next generation is at around 1.5 seconds right now, I made the arrow key movement asynchronous so it won't feel "laggy".
+
+&amp;#x200B;
+
+In any case, any tips on the code quality and/or speed optimizations would be much appreciated!
+
+[https://github.com/bbli/fast\_game\_of\_life](https://github.com/bbli/fast_game_of_life)
+## [10][Any Experienced C Programmers Who Switched to Rust?](https://www.reddit.com/r/rust/comments/iqrear/any_experienced_c_programmers_who_switched_to_rust/)
+- url: https://www.reddit.com/r/rust/comments/iqrear/any_experienced_c_programmers_who_switched_to_rust/
+---
+As the title says, I’m really curious if anyone with serious C experience, e.g. 5+ years of professional use, has switched to Rust for problems they used to solve in C. I’m interested in getting a perspective from C++ people as well, but that’s a huge can of worms because of how much C++11 improved things, and the likelihood that the C++ code experienced programmers are dealing with uses a ton of pre-C++11 patterns.
+## [11][Typed Arrays from String Arrays for Dataset Operation](https://www.reddit.com/r/rust/comments/irbw0w/typed_arrays_from_string_arrays_for_dataset/)
+- url: https://datacrayon.com/posts/programming/rust-notebooks/typed-arrays-from-string-arrays-for-dataset-operation/
 ---
 
-## [8][Deploying Rust Functions on AWS Lambda](https://www.reddit.com/r/rust/comments/iqqist/deploying_rust_functions_on_aws_lambda/)
-- url: https://www.reddit.com/r/rust/comments/iqqist/deploying_rust_functions_on_aws_lambda/
+## [12][i2c communication](https://www.reddit.com/r/rust/comments/irasr6/i2c_communication/)
+- url: https://www.reddit.com/r/rust/comments/irasr6/i2c_communication/
 ---
-AWS Lambda is a serverless computing platform that lets you run code without provisioning or managing servers. The platform invokes your code in response to events such as HTTP requests.
-
-Currently, there's no official support for Rust programming language on Lambda.
-
-To run Rust code on Lambda, you will have to build a custom runtime that will run your code.
-
-This guide will help you build for Lambda in a quick and simple way.
-
-It is targeted at developers who have a reasonable understanding of Rust and systems programming, and intend to build serverless function on AWS.
-
-[https://adevait.com/rust/deploying-rust-functions-on-aws-lambda](https://adevait.com/rust/deploying-rust-functions-on-aws-lambda)
-## [9][Taming nalgebra's Rustdoc](https://www.reddit.com/r/rust/comments/iqdnq0/taming_nalgebras_rustdoc/)
-- url: https://jack.wrenn.fyi/blog/rustdocing-nalgebra/
----
-
-## [10][Proto-vulcan, a miniKanren-family relational logic programming language embedded in Rust.](https://www.reddit.com/r/rust/comments/iqpp8l/protovulcan_a_minikanrenfamily_relational_logic/)
-- url: https://crates.io/crates/proto-vulcan
----
-
-## [11][Flying Windows Screensaver Homage written in Rust!](https://www.reddit.com/r/rust/comments/iqp12w/flying_windows_screensaver_homage_written_in_rust/)
-- url: https://www.reddit.com/r/rust/comments/iqp12w/flying_windows_screensaver_homage_written_in_rust/
----
-Hello everyone!
-
-As an excuse to learn Rust/WASM interop, I decided to re-create the flying windows screensaver from the 90's. I was really impressed by the level of tooling and support with web interop in the Rust community. I also have an implementation in JavaScript, as a reference to help people understand the Rust a little better (if they come from a JS background).
-
-Code can be found here -&gt; [https://github.com/craftytrickster/flying-windows](https://github.com/craftytrickster/flying-windows)
-
-Demo link found here -&gt; [https://craftytrickster.github.io/flying-windows/](https://craftytrickster.github.io/flying-windows/)
-## [12][nanorand - fast, cross-platform, zero-dependency random number generation.](https://www.reddit.com/r/rust/comments/iq8rb9/nanorand_fast_crossplatform_zerodependency_random/)
-- url: https://crates.io/crates/nanorand
----
-
+Hey, rustaceans! I am trying to use Rust for embedded programming and I have microbit v1.5   
+I am really struggling with i2c accelerometer communication, does anyone have working examples on how to read data from accelerometer with i2c?

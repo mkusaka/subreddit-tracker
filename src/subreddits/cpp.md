@@ -56,53 +56,51 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][CppCon 2020 starts next week and new keynote speaker has been published](https://www.reddit.com/r/cpp/comments/iqgqmt/cppcon_2020_starts_next_week_and_new_keynote/)
-- url: https://www.reddit.com/r/cpp/comments/iqgqmt/cppcon_2020_starts_next_week_and_new_keynote/
+## [2][Async C++ with fibers](https://www.reddit.com/r/cpp/comments/ir87xf/async_c_with_fibers/)
+- url: https://www.reddit.com/r/cpp/comments/ir87xf/async_c_with_fibers/
 ---
-Within 3 days to start CppCon, **Emery Berger** had been presented as keynote speaker with the talk titled: "**Performance Matters"**
+I would like to ask the community to share their thoughts and experience on building I/O bound C++ backend services on fibers (stackfull coroutines).
 
-[https://cppcon.org/cppcon-2020-keynote-performance-matters-by-emery-berger/](https://cppcon.org/cppcon-2020-keynote-performance-matters-by-emery-berger/)
+Asynchronous  responses/requests/streams (thinking of grpc-like server service) cycle is quite difficult to write in C++.
 
-This talk is scheduled on **Wednesday**, September 16 •    10:30 am- 11:30 am (MDT)
-## [3][Parsing floats in C++: benchmarking strtod vs. from_chars](https://www.reddit.com/r/cpp/comments/iqlnt4/parsing_floats_in_c_benchmarking_strtod_vs_from/)
-- url: https://lemire.me/blog/2020/09/10/parsing-floats-in-c-benchmarking-strtod-vs-from_chars/
+Callback-based (like original boost.asio approach) is quite a mess: difficult to reason about lifetimes, program flow and error handling.
+
+C++20 Coroutines are not quite here and one needs to have some experience to rewrite "single threaded" code to coroutine based. And here is also a dangling reference problem could exist.
+
+The last approach is fibers. It seems very easy to think about and work with (like boost.fibers). One writes just a "single threaded" code, which under the hood turned into interruptible/resumable code. The program flow and error handlings are the same like in the single threaded program.
+
+&amp;#x200B;
+
+What do you think about fibers approach to write i/o bound services? Did I forget some fibers drawbacks that make them not so attractive to use?
+## [3][Any progress on clang concepts?](https://www.reddit.com/r/cpp/comments/irbrus/any_progress_on_clang_concepts/)
+- url: https://www.reddit.com/r/cpp/comments/irbrus/any_progress_on_clang_concepts/
 ---
-
-## [4][What do you think about my C++ Study Plan?](https://www.reddit.com/r/cpp/comments/iqkoub/what_do_you_think_about_my_c_study_plan/)
-- url: https://www.reddit.com/r/cpp/comments/iqkoub/what_do_you_think_about_my_c_study_plan/
+[short-circuiting](https://godbolt.org/z/E6r9z3) still not working and only std::same_as is implemented in [&lt;concepts&gt;](https://github.com/llvm/llvm-project/blob/master/libcxx/include/concepts), which makes it quite unusable.
+## [4][How to perform automated performance tests on a framework?](https://www.reddit.com/r/cpp/comments/ir7ute/how_to_perform_automated_performance_tests_on_a/)
+- url: https://www.reddit.com/r/cpp/comments/ir7ute/how_to_perform_automated_performance_tests_on_a/
 ---
-Hey! I just made this video sharing my plan to learn C++. What do you think? Are you using a different study plan?
+Hi guys,
 
-Be nice I am sensitive LOL! And having a crazy week from switching jobs. no trolls plz. ty.
+&amp;#x200B;
 
-[https://www.youtube.com/watch?v=L40EENt4DXU](https://www.youtube.com/watch?v=L40EENt4DXU)
-## [5][C++ London joins with Rust London to deliver cross-over content](https://www.reddit.com/r/cpp/comments/iq0y0m/c_london_joins_with_rust_london_to_deliver/)
-- url: https://www.reddit.com/r/cpp/comments/iq0y0m/c_london_joins_with_rust_london_to_deliver/
----
-Hi all,
+I am working on a bigger c++ software module. I am using GTest for testing, and valgrind for checking for memory leaks. I am wondering if there is a framework that allows me to write timing tests for high-performance code.
 
-This month the C++ London meetup are joining up with the Rust London meet-up and we have some talks lined on introducing Rust to C++ developers, include some comparing and contrasting. Rust has become a particular interest of many C++ developers (and many Rust developers are curious about C++ too). We aim to do a few of these - and while we're meeting online, this is, of course, open to everyone!
+&amp;#x200B;
 
-For more details, and to register, here's the meet-up link:
-
-[https://www.meetup.com/CppLondon/events/273113055/](https://www.meetup.com/CppLondon/events/273113055/)
-
-Note we'll be using Remo to host the meet-ups - the same platform that hosted C++ on Sea, and will host CppCon next week (and a few other upcoming conferences).
-
-If you have any proposals for future events in this series, we'd be very interested to hear from you, too.
-## [6][Concept archetypes — update](https://www.reddit.com/r/cpp/comments/iqga5y/concept_archetypes_update/)
-- url: https://akrzemi1.wordpress.com/2020/09/10/concept-archetypes-update/
+Any suggestions would be appreciated!
+## [5][For what inputs is std::sort unstable?](https://www.reddit.com/r/cpp/comments/iqwnug/for_what_inputs_is_stdsort_unstable/)
+- url: https://quuxplusone.github.io/blog/2020/09/11/unstable-sort-inputs/
 ---
 
-## [7][A few details and thoughts on online events like Meeting C++ online](https://www.reddit.com/r/cpp/comments/iqmukd/a_few_details_and_thoughts_on_online_events_like/)
-- url: http://meetingcpp.com/meetingcpp/news/items/A-few-details-and-thoughts-on-online-events-like-Meeting-Cpp-online.html
+## [6][Herb Sutter: My plans at CppCon](https://www.reddit.com/r/cpp/comments/iqxhhi/herb_sutter_my_plans_at_cppcon/)
+- url: https://herbsutter.com/2020/09/11/my-plans-at-cppcon/
 ---
 
-## [8][CppCast: Stdpar](https://www.reddit.com/r/cpp/comments/iqgszl/cppcast_stdpar/)
-- url: https://cppcast.com/stdpar-david-olsen/
+## [7][Tips on progression](https://www.reddit.com/r/cpp/comments/ir8nb9/tips_on_progression/)
+- url: https://www.reddit.com/r/cpp/comments/ir8nb9/tips_on_progression/
 ---
-
-## [9][Return to C++ after a few years of Java](https://www.reddit.com/r/cpp/comments/iqo7z6/return_to_c_after_a_few_years_of_java/)
+I know a good amount of libraries, how to set things up manage memory and can do lots with SFML. Should I start making bigger projects using my knowledge of graphics programming and basic c++? I’m just kind of out of things to learn. I suppose there’s more GUI design to learn and implementation of two languages at once.
+## [8][Return to C++ after a few years of Java](https://www.reddit.com/r/cpp/comments/iqo7z6/return_to_c_after_a_few_years_of_java/)
 - url: https://www.reddit.com/r/cpp/comments/iqo7z6/return_to_c_after_a_few_years_of_java/
 ---
 After about 6 years of professional C++ development, including top tech companies (think FAANG), I decided to move to finance. Since 2017, I've been working for one of the top-tier investment banks, developing trading systems in Java. While I'm totally enjoying working in this field, I'm not particularly happy about writing in Java and am missing C++ a lot.
@@ -114,21 +112,19 @@ My main question - what is the best way to brush up my C++ after a few years of 
 Also, the last standard that I used in my work was C++11 (with a bit of '14). I have almost no experience with '17. What's the best way to  learn it, provided I'm not a complete noob?
 
 Thank you.
-## [10][Time Complexity of Every STL Container](https://www.reddit.com/r/cpp/comments/iqbo9q/time_complexity_of_every_stl_container/)
-- url: https://www.reddit.com/r/cpp/comments/iqbo9q/time_complexity_of_every_stl_container/
+## [9][Parsing floats in C++: benchmarking strtod vs. from_chars](https://www.reddit.com/r/cpp/comments/iqlnt4/parsing_floats_in_c_benchmarking_strtod_vs_from/)
+- url: https://lemire.me/blog/2020/09/10/parsing-floats-in-c-benchmarking-strtod-vs-from_chars/
 ---
-Hi all, 
 
-I am trying to find a reference sheet that displays the time complexity of EVERY STL container. Ideally for operations such as insert, delete find, sort etc.
-
-The ones I found by googling are pretty incomplete and not very useful for my purposes.
-
-If someone could point me in the right direction it would be appreciated.
-## [11][CppCon Academy: Managing Memory and instructor interview](https://www.reddit.com/r/cpp/comments/iqgvhd/cppcon_academy_managing_memory_and_instructor/)
-- url: https://www.reddit.com/r/cpp/comments/iqgvhd/cppcon_academy_managing_memory_and_instructor/
+## [10][CppCon 2020 starts next week and new keynote speaker has been published](https://www.reddit.com/r/cpp/comments/iqgqmt/cppcon_2020_starts_next_week_and_new_keynote/)
+- url: https://www.reddit.com/r/cpp/comments/iqgqmt/cppcon_2020_starts_next_week_and_new_keynote/
 ---
-Kevin Carpenter welcomes Patrice Roy for a discussion of his CppCon Academy class, Managing Memory.
+Within 3 days to start CppCon, **Emery Berger** had been presented as keynote speaker with the talk titled: "**Performance Matters"**
 
-Interview: [https://cppcon.org/intrv\_patrice\_roy\_2020/](https://cppcon.org/intrv_patrice_roy_2020/)
+[https://cppcon.org/cppcon-2020-keynote-performance-matters-by-emery-berger/](https://cppcon.org/cppcon-2020-keynote-performance-matters-by-emery-berger/)
 
-Managing Memory class: [https://cppcon.org/class-2020-managing-memory/](https://cppcon.org/class-2020-managing-memory/)
+This talk is scheduled on **Wednesday**, September 16 •    10:30 am- 11:30 am (MDT)
+## [11][A few details and thoughts on online events like Meeting C++ online](https://www.reddit.com/r/cpp/comments/iqmukd/a_few_details_and_thoughts_on_online_events_like/)
+- url: http://meetingcpp.com/meetingcpp/news/items/A-few-details-and-thoughts-on-online-events-like-Meeting-Cpp-online.html
+---
+

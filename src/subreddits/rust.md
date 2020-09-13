@@ -19,78 +19,111 @@ The unofficial Rust community Discord: [https://bit.ly/rust-community](https://b
 Also check out [last weeks' thread](https://reddit.com/r/rust/comments/ijvwsk/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][This Week in Rust 355](https://www.reddit.com/r/rust/comments/ippv0q/this_week_in_rust_355/)
-- url: https://this-week-in-rust.org/blog/2020/09/09/this-week-in-rust-355/
+## [2][Official /r/rust "Who's Hiring" thread for job-seekers and job-offerers [Rust 1.46]](https://www.reddit.com/r/rust/comments/iix8vw/official_rrust_whos_hiring_thread_for_jobseekers/)
+- url: https://www.reddit.com/r/rust/comments/iix8vw/official_rrust_whos_hiring_thread_for_jobseekers/
+---
+Welcome once again to the official /r/rust Who's Hiring thread!
+
+Before we begin, job-seekers should also remember to peruse [the prior thread](https://www.reddit.com/r/rust/comments/htnv19/official_rrust_whos_hiring_thread_for_jobseekers/).
+
+This thread will be periodically stickied to the top of /r/rust for improved visibility. The thread will be refreshed and posted anew when the next version of Rust releases in six weeks.
+
+Please adhere to the following rules when posting:
+# Rules for individuals:
+
+ * Don't create top-level comments; those are for employers.
+ * Feel free to reply to top-level comments with on-topic questions.
+ * Anyone seeking work should reply to my stickied top-level comment.
+ * Meta-discussion should be reserved for the distinguished comment at the very bottom.
+
+# Rules for employers:
+
+ * To find individuals seeking work, see the replies to the stickied top-level comment; you will need to click the "more comments" link at the bottom of the top-level comment in order to make these replies visible.
+ * To make a top-level comment you must be hiring directly; no third-party recruiters.
+ * One top-level comment per employer. If you have multiple job openings, please consolidate their descriptions or mention them in replies to your own top-level comment.
+ * Proofread your comment after posting it and edit it if necessary to correct mistakes.
+ * Please base your comment on the following template:
+
+COMPANY: *[Company name; please link to your company's website or careers page.]*
+
+TYPE: *[Full time, part time, internship, contract, etc.]*
+
+DESCRIPTION: *[What does your company do, and what are you using Rust for? How much experience are you seeking and what seniority levels are you hiring for? The more details the better.]*
+
+LOCATION: *[Where are your office or offices located? If your workplace language isn't English, please specify it.]*
+
+REMOTE: *[Do you offer the option of working remotely? If so, do you require employees to live in certain areas or time zones?]*
+
+VISA: *[Does your company sponsor visas?]*
+
+CONTACT: *[How can someone get in touch with you?]*
+## [3][OpenPGP in Rust](https://www.reddit.com/r/rust/comments/irtcks/openpgp_in_rust/)
+- url: https://sequoia-pgp.org/
 ---
 
-## [3][Clone git faster than git itself with Gitoxide 0.4](https://www.reddit.com/r/rust/comments/ir8mwq/clone_git_faster_than_git_itself_with_gitoxide_04/)
+## [4][Blog Post: Rust in 2021](https://www.reddit.com/r/rust/comments/irhj4o/blog_post_rust_in_2021/)
+- url: https://matklad.github.io/2020/09/12/rust-in-2021.html
+---
+
+## [5][I'm goung to give a presentation titled "Lessons from Rust for C++ developers" on my company. Do you have any ideas ?](https://www.reddit.com/r/rust/comments/iru7vl/im_goung_to_give_a_presentation_titled_lessons/)
+- url: https://www.reddit.com/r/rust/comments/iru7vl/im_goung_to_give_a_presentation_titled_lessons/
+---
+Hi all,
+
+Title says it all. I'm currently planning to talk about triats, ownership and error handling. If you have any better ideas/ points or critisim i would really like to hear.
+## [6][Porting PineTime Watch Face from C to Rust On RIOT with LVGL](https://www.reddit.com/r/rust/comments/irri4f/porting_pinetime_watch_face_from_c_to_rust_on/)
+- url: https://lupyuen.github.io/pinetime-rust-riot/articles/watch_face
+---
+
+## [7][rustbucket: Access your car's diagnostics with a BeagleBone Blue and Rust](https://www.reddit.com/r/rust/comments/irxfg3/rustbucket_access_your_cars_diagnostics_with_a/)
+- url: https://github.com/KoffeinFlummi/rustbucket
+---
+
+## [8][nanorand 0.3 - Now with Pcg64 and ChaCha support!](https://www.reddit.com/r/rust/comments/irqi06/nanorand_03_now_with_pcg64_and_chacha_support/)
+- url: https://crates.io/crates/nanorand
+---
+
+## [9][Fastest Jsonnet implementation, written in Rust](https://www.reddit.com/r/rust/comments/irx7wg/fastest_jsonnet_implementation_written_in_rust/)
+- url: https://github.com/CertainLach/jrsonnet
+---
+
+## [10][Clone git faster than git itself with Gitoxide 0.4](https://www.reddit.com/r/rust/comments/ir8mwq/clone_git_faster_than_git_itself_with_gitoxide_04/)
 - url: https://github.com/Byron/gitoxide/releases/tag/v0.4.0
 ---
 
-## [4][Announcing ultraviolet 0.6 - including support for 256-bit AVX vectors, f64 double-precision types, and performance improvements](https://www.reddit.com/r/rust/comments/ir24mp/announcing_ultraviolet_06_including_support_for/)
-- url: https://fusha.moe/blog/posts/ultraviolet-0.6/
+## [11][Request for feedback on a data structure I wrote: a hash map / LRU cache for compressible values](https://www.reddit.com/r/rust/comments/irpdjt/request_for_feedback_on_a_data_structure_i_wrote/)
+- url: https://www.reddit.com/r/rust/comments/irpdjt/request_for_feedback_on_a_data_structure_i_wrote/
 ---
+Here's the code: https://github.com/bonsairobo/compressible-map
 
-## [5][Apple is starting to use Rust for low-level programming](https://www.reddit.com/r/rust/comments/iqnt58/apple_is_starting_to_use_rust_for_lowlevel/)
-- url: https://twitter.com/oskargroth/status/1301502690409709568?s=10
+Things I'd like feedback on:
+
+- the public APIs / ergonomics
+- performance characteristics
+- the use of unsafe in the LocalCache implementation
+- general style
+
+During implementation, I've struggled most with two operations that seem at odds with each other:
+
+1. borrowing multiple values at a time
+2. decompressing values and placing them in the cache
+
+Of course, it would be trivial to allow borrows of the values in the cache if I didn't update the cache to reflect those accesses. But that kind of defeats the whole LRU scheme. And I didn't want to add too much overhead with extra heap indirection (boxing all values) and smart pointers.
+
+So what I came up with was a compromise where the main cache stays immutable, but readers can use a LocalCache object to store any values that weren't present in the cache and required decompression. Then after all of the borrows get dropped and we get mutable access to the global cache, the LocalCache can be flushed back into the global cache.
+
+The only issue here is that even the LocalCache can't be mutable, since then you can't borrow multiple values from it. To get around this, I used interior mutability via UnsafeCell. I did my best to make sure all of the unsafe code is sound, but this is my first time doing something like this, so please let me know if you spot anything unsound!
+
+Of course, I expect a lot of suggestions to avoid unsafe entirely and just use things like RefCell. I'm open to suggestions like this, but it would be ideal if I didn't have to compromise performance, since this data structure will be used in hot paths of my application. But I haven't actually done any benchmarking yet, I've just been trying to reason about theoretical overhead involved. I'll try to stay open-minded, but will ultimately resort to benchmarking to make final decisions on implementation.
+## [12][General Question: 🦀 How many times did you read The Rust Programming Language before you could write simple code to solve problems?](https://www.reddit.com/r/rust/comments/irex9q/general_question_how_many_times_did_you_read_the/)
+- url: https://www.reddit.com/r/rust/comments/irex9q/general_question_how_many_times_did_you_read_the/
 ---
+**Edit:** Thank you so much everyone! A lot of your comments really encouraged me to keep at it! And some of you who gave tips to the points that I was confused about really cleared a lot of clouds as well. 🦀 You guys are awesome! 🦀
 
-## [6][Announcing Actix-Web v3.0](https://www.reddit.com/r/rust/comments/iqq8k9/announcing_actixweb_v30/)
-- url: https://paper.dropbox.com/published/Announcing-Actix-Web-v3.0--A7YI~P9U9aqhEOXyZJaGffjfBg-QOXXb1lXgTubzXHzUq9ONY5
----
+I started learning Rust a bit over a week ago using the book *The Rust Programming Language* as well as Exercism with a background in Python and some familiarity with Go. In the book I'm around Chapter 9 on error handling but have briefly seen other topics like *generics* and *lifetime*.
 
-## [7][A Few Github Action “Recipes” for Rust](https://www.reddit.com/r/rust/comments/ir16fl/a_few_github_action_recipes_for_rust/)
-- url: https://shift.click/blog/github-actions-rust
----
+As of now I still feel like I cannot think well in Rust. The `String` and `&amp;str` types still throw me off sometimes during compiling. Reading the official documentation is sometimes confusing when I found that I could use `to_lowercase` on a `String` type and have very little clue what `Methods from Defef&lt;Target=str&gt;` means. Not to mention not remembering when `collect` can be used or what the difference between `iter` and `into_iter` are. The list goes on.
 
-## [8][Trait bound for "One or More"](https://www.reddit.com/r/rust/comments/ir5ue1/trait_bound_for_one_or_more/)
-- url: https://www.reddit.com/r/rust/comments/ir5ue1/trait_bound_for_one_or_more/
----
-How can I express a generic type that allows calling a function with a value or a slice of values? Example:
+Given my non-technical background, the learning curve is naturally steep and I imagine I'd read the official book, consult many other resources, and fight the compiler messages many many times before I imprint the concepts and patterns onto my brain.
 
-\`\`\`
-
-fn myfunc&lt;T: OneOrMore&gt;(values: T) {
-
-...
-
-mycontainre.from\_iter(values.into\_iter());
-
-....
-
-}
-
-myfunc(1);
-
-myfunc(&amp;\[1, 2\]);
-
-\`\`\`
-
-&amp;#x200B;
-
-Is there something like this "OneOrMore" trait? or can it be accomplished in a different way?
-## [9][Conway's Game of Life on 10,000 by 10,000 Grid](https://www.reddit.com/r/rust/comments/ir2j2p/conways_game_of_life_on_10000_by_10000_grid/)
-- url: https://www.reddit.com/r/rust/comments/ir2j2p/conways_game_of_life_on_10000_by_10000_grid/
----
-Hi everyone,
-
-I have been learning Rust for the past few months and for my first project, I decided to implement Conway's Game of Life on a 10,000 by 10,000 grid, as suggested by this reddit post([https://www.reddit.com/r/learnprogramming/comments/9c6yo4/a\_collection\_of\_projects\_for\_learning/](https://www.reddit.com/r/learnprogramming/comments/9c6yo4/a_collection_of_projects_for_learning/)). You can use the arrow keys to move around the grid, as this grid size will not be able to fit onto your screen. And since the computation time for the next generation is at around 1.5 seconds right now, I made the arrow key movement asynchronous so it won't feel "laggy".
-
-&amp;#x200B;
-
-In any case, any tips on the code quality and/or speed optimizations would be much appreciated!
-
-[https://github.com/bbli/fast\_game\_of\_life](https://github.com/bbli/fast_game_of_life)
-## [10][Any Experienced C Programmers Who Switched to Rust?](https://www.reddit.com/r/rust/comments/iqrear/any_experienced_c_programmers_who_switched_to_rust/)
-- url: https://www.reddit.com/r/rust/comments/iqrear/any_experienced_c_programmers_who_switched_to_rust/
----
-As the title says, I’m really curious if anyone with serious C experience, e.g. 5+ years of professional use, has switched to Rust for problems they used to solve in C. I’m interested in getting a perspective from C++ people as well, but that’s a huge can of worms because of how much C++11 improved things, and the likelihood that the C++ code experienced programmers are dealing with uses a ton of pre-C++11 patterns.
-## [11][Typed Arrays from String Arrays for Dataset Operation](https://www.reddit.com/r/rust/comments/irbw0w/typed_arrays_from_string_arrays_for_dataset/)
-- url: https://datacrayon.com/posts/programming/rust-notebooks/typed-arrays-from-string-arrays-for-dataset-operation/
----
-
-## [12][i2c communication](https://www.reddit.com/r/rust/comments/irasr6/i2c_communication/)
-- url: https://www.reddit.com/r/rust/comments/irasr6/i2c_communication/
----
-Hey, rustaceans! I am trying to use Rust for embedded programming and I have microbit v1.5   
-I am really struggling with i2c accelerometer communication, does anyone have working examples on how to read data from accelerometer with i2c?
+Nevertheless, I'm curious to know how other Rustaceans here first started learning Rust? How many times have you read the book? And how did you get out of this befuddled feeling even when reading official documentation? 🙏🏻

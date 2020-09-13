@@ -12,81 +12,67 @@ This coming episode we want to try something a little different - we want to mak
 To make this happen we would like everyone here to post any Go-related questions that you would like us to discuss on air, and we will try to get to as many as possible. I'll also try to type up answers here while we discuss them on the episode.
 
 We will be answering questions live tomorrow, Tuesday, Sep 8. We will repeat questions on air, and since we record live you can join in on the Gophers Slack to ask follow-up questions or to elaborate on questions.
-## [2][What books are best for learning Golang?](https://www.reddit.com/r/golang/comments/ir8t5l/what_books_are_best_for_learning_golang/)
-- url: https://www.reddit.com/r/golang/comments/ir8t5l/what_books_are_best_for_learning_golang/
+## [2][Converts 'go mod graph' output into Graphviz's DOT language](https://www.reddit.com/r/golang/comments/irupxd/converts_go_mod_graph_output_into_graphvizs_dot/)
+- url: https://www.reddit.com/r/golang/comments/irupxd/converts_go_mod_graph_output_into_graphvizs_dot/
 ---
-The speed of C++ and the ease of developement like python Ive decided I want to learn Go! What resources can I use to get started. Do you know of any excellent books I can use that are on the same level  of something like Automate the boring stuff or better?
-## [3][Parse RSS, Atom and JSON feeds in Go](https://www.reddit.com/r/golang/comments/ir42b5/parse_rss_atom_and_json_feeds_in_go/)
-- url: https://golangweekly.com/link/95041/5616be026c
----
-
-## [4][New to microservices](https://www.reddit.com/r/golang/comments/irbifl/new_to_microservices/)
-- url: https://www.reddit.com/r/golang/comments/irbifl/new_to_microservices/
----
-Hey guys, I'm new to the world of microservices, can you highlight books that would help me develop and can you share some that you have? Thanks
-## [5][What’s everyone’s take on ORM or plain SQL?](https://www.reddit.com/r/golang/comments/ircaxk/whats_everyones_take_on_orm_or_plain_sql/)
-- url: https://www.reddit.com/r/golang/comments/ircaxk/whats_everyones_take_on_orm_or_plain_sql/
----
-I’ve started learning go and after I built my CRUD application I realized that there was a neat ORM library called GORM.
-
-Which method do you prefer and why?
-## [6][LRU cache code generator](https://www.reddit.com/r/golang/comments/ir9t71/lru_cache_code_generator/)
-- url: https://github.com/maxim2266/go-LRU-cache
----
-
-## [7][Project introduces breaking changes to library - bumps minor versioning instead of major version because go module's v2+ handling is so quirky](https://www.reddit.com/r/golang/comments/iqoiok/project_introduces_breaking_changes_to_library/)
-- url: https://www.reddit.com/r/golang/comments/iqoiok/project_introduces_breaking_changes_to_library/
----
-I'm very unhappy with go modules and this project shying away from bumping the major version in favor of bumping the minor version while introducing huge breaking changes just speaks for itself.
-
-[https://github.com/gofiber/fiber/issues/736#issuecomment-690750255](https://github.com/gofiber/fiber/issues/736#issuecomment-690750255)
-
-What do you think?
-
-I just can't stop thinking that in other ecosystems people are not scared to stick to semantic versioning, so this might be a "smell" that Go has, that is not present in other languages.
-
-Oh and please please *don't you all jump into that Github issue and tell the maintainers how they should run their project*. I don't want to cause them any trouble by posting here!
-## [8][Small tool to update DNS record on Namecheap web hosting provider](https://www.reddit.com/r/golang/comments/ir7k0b/small_tool_to_update_dns_record_on_namecheap_web/)
-- url: https://www.reddit.com/r/golang/comments/ir7k0b/small_tool_to_update_dns_record_on_namecheap_web/
----
-[https://github.com/Kulak/namecheap-ddns](https://github.com/Kulak/namecheap-ddns)
-
-100% GO language.
-## [9][Using Gonum Graphs to Solve Word Ladder Puzzles | Gonum](https://www.reddit.com/r/golang/comments/iqt2iu/using_gonum_graphs_to_solve_word_ladder_puzzles/)
-- url: https://www.gonum.org/post/word_ladder/
----
-
-## [10][Final Year Project](https://www.reddit.com/r/golang/comments/iqt4gr/final_year_project/)
-- url: https://www.reddit.com/r/golang/comments/iqt4gr/final_year_project/
----
-Let me start off with the fact that I'm not such a smart man .I've slogged through each semester and found that I'm not fascinated about anything particular until I started learning Go. Though I've fallen in love with it , I just know the basic stuff.
-
-The thing is all my classmates have teamed up for the final year project and left me to fend for myself .I'm really lost as to how I'll manage this situation.  I really need your help , I beg you, to please give me  an idea for a project that can span for a period of 2-3 months .
-
-I really appreciate Go and this community  for making me realize how much passionate I am about this language.
-## [11][io.Writer mutex question](https://www.reddit.com/r/golang/comments/iqt34v/iowriter_mutex_question/)
-- url: https://www.reddit.com/r/golang/comments/iqt34v/iowriter_mutex_question/
----
-    var wg sync.WaitGroup
-    for i := 0; i &lt; 200000; i++ {
-    	go func(id int) {
-    		wg.Add(1)
-    		os.Stdout.Write(append(bytes.Repeat([]byte("01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29"), 500), byte('\n')))
-    		wg.Done()
-    	}(i)
-    }
-    wg.Wait()
-
-I'm trying to check cases without mutex, but got something unexpected.. This maybe due to I'm new to Go..
-
-    ~$ ./myProg &gt; out.txt
-
-This creates about 8GB text file. My expectation was lines will be messed up as it will print large enough in a goroutine. Below are what I expected from at least some line in the 8GB output. (messed up order)
-
-    01 02 01 03 02 04 ...
-
-However, when I run it, I didn't see any of those cases.. This was same even when I output to `*os.File` instead of `os.Stdout`. Is this normal?? I always thought I had to use mutex, but if this is true, probably I don't have to on any io.Writer?
+[https://github.com/lucasepe/modgv](https://github.com/lucasepe/modgv)
 
 &amp;#x200B;
 
-# SOLVED: 0xjnml answered, "POSIX mandates atomic writes."
+Graphically view the dependencies of your latest project.
+
+https://preview.redd.it/9t2h8xumnvm51.jpg?width=1280&amp;format=pjpg&amp;auto=webp&amp;s=fa3b692eb4ddfb50f5a3192f7f820f68acc36a05
+## [3][Playwright for Go: a browser automation library to control Chromium, Firefox and WebKit with a single API.](https://www.reddit.com/r/golang/comments/irvizx/playwright_for_go_a_browser_automation_library_to/)
+- url: https://github.com/mxschmitt/playwright-go
+---
+
+## [4][Go Discord Bot to Auto-mute players in Among Us](https://www.reddit.com/r/golang/comments/irpja2/go_discord_bot_to_automute_players_in_among_us/)
+- url: https://github.com/denverquane/amongusdiscord
+---
+
+## [5][Asynq v0.12 released with Redis Cluster support](https://www.reddit.com/r/golang/comments/irrwts/asynq_v012_released_with_redis_cluster_support/)
+- url: https://www.reddit.com/r/golang/comments/irrwts/asynq_v012_released_with_redis_cluster_support/
+---
+[Asynq](https://github.com/hibiken/asynq) is a Redis-backed task queue library in Go.
+
+The library has always supported connecting to a single Redis instance or connecting to Redis using Sentinels.
+
+With v0.12 release, the library now [supports Redis Cluster](https://github.com/hibiken/asynq/wiki/Redis-Cluster). It shards task data by queue, so the application developer has control over how the data are split. It also comes with the CLI support, just append `--cluster` flag to run the commands against Redis cluster.
+
+&amp;#x200B;
+
+[Overview of Asynq with Redis cluster](https://preview.redd.it/4bi41s2xgum51.png?width=811&amp;format=png&amp;auto=webp&amp;s=342dda7d88e3c70c75a644f102cfad6c5bec826b)
+
+Please check it out and feedbacks are appreciated! Thank you :)
+## [6][Go gRPC Backend Playground](https://www.reddit.com/r/golang/comments/irwro2/go_grpc_backend_playground/)
+- url: https://backend-playground.transcendent.app/
+---
+
+## [7][Leaf – General purpose hot-reloader for all projects](https://www.reddit.com/r/golang/comments/irgv18/leaf_general_purpose_hotreloader_for_all_projects/)
+- url: https://github.com/vrongmeal/leaf
+---
+
+## [8][The go/ast package is seriously cool. Let's build an automatic document generator for a NATS microservice!](https://www.reddit.com/r/golang/comments/irfkf9/the_goast_package_is_seriously_cool_lets_build_an/)
+- url: https://medium.com/@riptidedata/cool-stuff-with-gos-ast-package-pt-1-981460cddcd7
+---
+
+## [9][Casbin-Forum: Next-generation forum software based on React + Golang](https://www.reddit.com/r/golang/comments/irplrs/casbinforum_nextgeneration_forum_software_based/)
+- url: https://github.com/casbin/casbin-forum
+---
+
+## [10][I had previously uploaded a video where I built a load balancer in Go. It got a good response. So, I made a follow-up video where I add a "health check" functionality to it. Do check it out and let me know what you think](https://www.reddit.com/r/golang/comments/iryd9w/i_had_previously_uploaded_a_video_where_i_built_a/)
+- url: https://youtu.be/r9mcmZEhD9Q
+---
+
+## [11][Using CSV as a DB](https://www.reddit.com/r/golang/comments/irpenw/using_csv_as_a_db/)
+- url: https://www.reddit.com/r/golang/comments/irpenw/using_csv_as_a_db/
+---
+I'm writing a small daemon for personal use -- 1 user -- and I'd like to retain the ability to manually edit the data with my editor. I'm not yet sure how many rows, but I doubt it'll be more than 1,000. Might have a few "tables" (CSV files) with cross-referenced IDs (probably just mirroring line numbers).
+
+I'm wondering if anyone has experience / insights using CSV for this. I came across a project that allowed querying CSV with SQL -- that's overkill for my use case. And I'll also be writing to the file -- updating rows.
+
+I'm wondering if there are known limits to this approach. E.g., does it start to get perceptibly slow at 100,000 or 1,000,000 rows? Are field updates tedious because you have to scan newlines, then commas -- and then deal with insertions?
+
+Any recommended literature for working with the filesystem like this?
+
+Still just exploring the idea -- apologies for the lack of detail.

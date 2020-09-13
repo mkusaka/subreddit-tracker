@@ -19,7 +19,91 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][cache warming strategy recs](https://www.reddit.com/r/rails/comments/ira56v/cache_warming_strategy_recs/)
+## [2][Whats the best thing to do? Write test after or before a feature?](https://www.reddit.com/r/rails/comments/irt5u9/whats_the_best_thing_to_do_write_test_after_or/)
+- url: https://www.reddit.com/r/rails/comments/irt5u9/whats_the_best_thing_to_do_write_test_after_or/
+---
+
+## [3][I'm listing unmaintained Ruby projects](https://www.reddit.com/r/rails/comments/iredl3/im_listing_unmaintained_ruby_projects/)
+- url: https://www.reddit.com/r/rails/comments/iredl3/im_listing_unmaintained_ruby_projects/
+---
+Hello everyone!
+
+Yesterday  I was looking for some unmaintained open source Ruby project to put  some hours in and turns out they are quite hard to find.  
+So I started listing and came up with a small collection.
+
+I'm not thinking about building a huge list of projects, but to help those projects to meet their new maintainers.
+
+Any help will be awesome!
+
+The github repo is here: [https://github.com/attics/ruby\_attic](https://github.com/attics/ruby_attic)
+## [4][Different Concerns with the same name for the same action for the same model](https://www.reddit.com/r/rails/comments/irubps/different_concerns_with_the_same_name_for_the/)
+- url: https://www.reddit.com/r/rails/comments/irubps/different_concerns_with_the_same_name_for_the/
+---
+Suppose I have two concerns like this
+
+    module Concerns::FirstConcern
+      extend ActiveSupport::Concern
+    
+      included do
+        after_commit :on_create, on: :create
+      end
+    
+      private
+    
+      def on_create
+        puts 'First Concern Create'
+      end  
+    end
+
+and the second one like this
+
+    module Concerns::SecondConcern
+      extend ActiveSupport::Concern
+    
+      included do
+        after_commit :on_create, on: :create
+      end
+    
+      private
+    
+      def on_create
+        puts 'Second Concern Create'
+      end  
+    end
+
+And then in the user model have these both included
+
+    class User &lt; ActiveRecord::Base
+
+include Concerns::FirstConcern include Concerns::SecondConcern end
+
+And then I see all the registered callback it gives me this.`User._commit_callbacks.select { |item| item.kind == :after }.map(&amp;:filter)`
+
+I only get `[:on_create]`
+
+I have two questions
+
+1. Where can I find documentation of how these callbacks will be combined and which ones will be overridden? I'm assuming if it has the same name only the last included module ones will be included.
+2. From the `_commit_callbacks` I can find out all the names of the registered callbacks. How do I find the location where they are defined.
+## [5][What is the most efficient way to develop Achievements](https://www.reddit.com/r/rails/comments/irhnrk/what_is_the_most_efficient_way_to_develop/)
+- url: https://www.reddit.com/r/rails/comments/irhnrk/what_is_the_most_efficient_way_to_develop/
+---
+Hey! So I'm developing an achievement system for my app. There are going to be lots of achievements, maybe 50.
+
+What is the most efficient way to achieve this? For now, I created an `Achievement` model which logs achievement's: name, description, medal(gold, silver, bronze). And I have the `UserAchievement` model which tracks which achievement has user completed, and it contains only user_id and achievement_id.
+
+Also, for now, I did something like this. Let's say there is an achievement that is completed after you complete 5 "jobs"(or anything). I added a function to the "Job" model called `check_achievement_completion`. And it basically checks whether the user who completed the Job has completed 5 of them, if so, I create `UserAchievement`.
+
+And I soon realized that that function would get massive if there were 40 achievements only for Jobs.
+
+What is the go-to strategy to develop the Achievement system and make it efficient?
+
+Please let me know if you need any code snippets that could help you in understanding this issue.
+## [6][Saving last 10 search results in cookies or local storage for ransack search/user](https://www.reddit.com/r/rails/comments/irgrtv/saving_last_10_search_results_in_cookies_or_local/)
+- url: https://www.reddit.com/r/rails/comments/irgrtv/saving_last_10_search_results_in_cookies_or_local/
+---
+I'm simply trying to keep track of what the user searched for with ransack. Has anyone managed to pull this off? Even if the user is not logged in, their search results should show on the landing page.
+## [7][cache warming strategy recs](https://www.reddit.com/r/rails/comments/ira56v/cache_warming_strategy_recs/)
 - url: https://www.reddit.com/r/rails/comments/ira56v/cache_warming_strategy_recs/
 ---
 In my rails app, I generate a lot of dashboards which aggregates data on the order of GBs. using the pull based caching strategy won’t work for me because the cache miss would take about 10 seconds to repopulate the cache.
@@ -29,7 +113,21 @@ the data is also high dimensionality. the dashboards can group by multiple colum
 I’m doing all sorts of gymnastics in order to warm up the cache in a lot of different places in the app, but it is getting unruly to the point where i’m not even sure if a cache populating line of code is getting used in the app. 
 
 are there any gems that help with this problem?
-## [3][How to get the most out of GoRails as a newbie?](https://www.reddit.com/r/rails/comments/iqv8si/how_to_get_the_most_out_of_gorails_as_a_newbie/)
+## [8][Has anyone considered building a SIEM with (or based on) rails?](https://www.reddit.com/r/rails/comments/ircyvq/has_anyone_considered_building_a_siem_with_or/)
+- url: https://www.reddit.com/r/rails/comments/ircyvq/has_anyone_considered_building_a_siem_with_or/
+---
+So, as i am browsing the web on my endless quest for perfection, i started to wonder if someone ever considered building a SIEM (Security information and event management) with rails as a component.
+
+The way i see it, SIEM is all about getting data in a big database, and producing human readable stuff from that data (simplyfied explaination, obviously) so, using Rails to build a SIEM isnt all that far fetched i think?
+
+There are some pretty expensive SIEMs out there that have a very “easy on the eyes” good looking interface, and good alerting. And then there are some pretty cheap SIEMs dat are build of “mix’n’match” opensource components, which is, if you have to look st it all day long, not easy on the eyes.
+
+Surely, with RAILS one should be able to build a SIEM that is both low on budget and still easy on the eyes?
+
+Preferable also scalable, and easy to extend?
+
+Obviously, i know about ELK, Apache Metron, SIEMonster, AlienVault etc. Etc. But they are not based on Ruby on Rails ;-)
+## [9][How to get the most out of GoRails as a newbie?](https://www.reddit.com/r/rails/comments/iqv8si/how_to_get_the_most_out_of_gorails_as_a_newbie/)
 - url: https://www.reddit.com/r/rails/comments/iqv8si/how_to_get_the_most_out_of_gorails_as_a_newbie/
 ---
 I managed to get a free year subscription of GoRails thanks to the Github Student Development Pack. I'm still learning Rails. I managed to get the basics of Rails down thanks to Michael Hartl Rails book.
@@ -40,7 +138,7 @@ I'm looking to learn more about Rails and follow along step by step projects, bu
 Anyways, what's the best way to use this site to get the most out of my free 1 year subscription and make myself a better Rails Dev?
 
 Thanks.
-## [4][Real life application with Rails and Stimulus Reflex compared to the SPA approach](https://www.reddit.com/r/rails/comments/iqqnvg/real_life_application_with_rails_and_stimulus/)
+## [10][Real life application with Rails and Stimulus Reflex compared to the SPA approach](https://www.reddit.com/r/rails/comments/iqqnvg/real_life_application_with_rails_and_stimulus/)
 - url: https://www.reddit.com/r/rails/comments/iqqnvg/real_life_application_with_rails_and_stimulus/
 ---
 Hi Rails and JS devs, 
@@ -66,25 +164,7 @@ Here's the repo: [https://github.com/guillaumebriday/modern-datatables](https://
 &amp;#x200B;
 
 Let me know how do you build reactive apps these days!
-## [5][The best and the simplest authentication method for Rails API](https://www.reddit.com/r/rails/comments/iqrjxj/the_best_and_the_simplest_authentication_method/)
-- url: https://www.reddit.com/r/rails/comments/iqrjxj/the_best_and_the_simplest_authentication_method/
----
-Hey everyone,   
-I've been trying to complete a rails API backend and VueJS frontend movie browser app where you can signup, login, change the password, and follow movies, genres and stars then get recommendations according to your follows for a technical test.  
-It's really simple when you think about it but I'm having a crisis with authentication methods. I'm not experienced with Rails API. So please give me some insights and tips about where to look for a simple authentication method.  
-First I've tried Knock and JWT, which went well it was working like a charm on localhost until I switch to production and push the project to Heroku and Netlify.  It was working with login/signup but when I do follow actions it was giving 401 unauthorized even tough there was a Bearer token in Headers.   
-Then on the same project, I switched back to devise and simple\_auth\_token which causes huge errors.  
-Then I decided to code the backend from scratch and I've tried the followings: 
-
-  
-https://github.com/madeindjs/api\_on\_rails  
-https://armaizadenwala.com/blog/social-media-app/  
-[https://gorails.com/series/how-to-build-apis-with-rails](https://gorails.com/series/how-to-build-apis-with-rails)  
-None of the above really helped me and I'm still struggling to finish the authentication so I can land a job.   
-What is the ultimate resource for a rails API?
-
-Thank you.
-## [6][Managing Rails cache low-level concurrency](https://www.reddit.com/r/rails/comments/iqy3i3/managing_rails_cache_lowlevel_concurrency/)
+## [11][Managing Rails cache low-level concurrency](https://www.reddit.com/r/rails/comments/iqy3i3/managing_rails_cache_lowlevel_concurrency/)
 - url: https://www.reddit.com/r/rails/comments/iqy3i3/managing_rails_cache_lowlevel_concurrency/
 ---
 Let's say I have the following Worker:
@@ -107,43 +187,3 @@ end
 ```
 
 Ideally, what I would like to happen, is that the code wrapped by the `fetch` call is only called once. Is this possible if I fire, simultaneously, tons of `ModelWorker` at the same time? Or will all jobs call `Client.new.fetch_data`?
-## [7][Anyone know of a product that acts like an internal stackoverflow?](https://www.reddit.com/r/rails/comments/iqn0mm/anyone_know_of_a_product_that_acts_like_an/)
-- url: https://www.reddit.com/r/rails/comments/iqn0mm/anyone_know_of_a_product_that_acts_like_an/
----
-I’d like to be able to log any blockers that devs come across in our team, from small annoying things to larger issues.
-
-I’ve had countless times where one of us will encounter an issue that someone else in our team has already found a solution to but it hasn’t been logged anywhere.
-
-Are there any products out there that do this sort of thing?
-## [8][Authorizing social media even when logged in](https://www.reddit.com/r/rails/comments/iqink2/authorizing_social_media_even_when_logged_in/)
-- url: https://www.reddit.com/r/rails/comments/iqink2/authorizing_social_media_even_when_logged_in/
----
-A social media analytics app will get data from many sources like facebook, twitter, instagram,etc. A user who logs in my analytics app will see the option to connect these 3 social media to periodically fetch from those sources.  
-
-
-How is that handled via devise? I dont want code I want to understand the flow. My confusion is that I am already logged in then how can I connect those 3 social media? Is that still oauth?
-## [9][Web-Based bug tracking system.](https://www.reddit.com/r/rails/comments/iqffxx/webbased_bug_tracking_system/)
-- url: https://www.reddit.com/r/rails/comments/iqffxx/webbased_bug_tracking_system/
----
-Hello people. I need some help finding out gems that i can use to build bug tracking system.  
-I'm new to rails and programming. I'm looking to expand my knowledge and try to build some good projects.
-## [10][I need a Rails developer](https://www.reddit.com/r/rails/comments/iqvbd3/i_need_a_rails_developer/)
-- url: https://www.reddit.com/r/rails/comments/iqvbd3/i_need_a_rails_developer/
----
-Hello! I am working on a restaurant reservations web application. Already have a react developer who is taking care of doing SSR, app routing, and different kind of changes in front end, that require to commit changes in Rails too, so I want somebody to take care of the Rails part through coordinating the Rails code with the React one. Also, there are 2 bugs to be fixed and finally deployment in Heroku. If you want to have a look at the codebase, please send me a message so I can send it to you in order to have a clearer idea. My budget is $100, since I am a college student who will have other expenses related to this start up, but would love to work with the rails developer and hire for other tasks even after the web app will be launched. PM me if you're interested. Thank you.
-## [11][Dockerizing and deploying rails on AWS](https://www.reddit.com/r/rails/comments/iq112b/dockerizing_and_deploying_rails_on_aws/)
-- url: https://www.reddit.com/r/rails/comments/iq112b/dockerizing_and_deploying_rails_on_aws/
----
-Hi, please excuse me if this is a simple question, but I am new to Docker and AWS, but not to rails.
-
-I want to get my Docker skills better, and I want to get my AWS skills better!  I want to deploy my application using Docker on AWS. I dont know where to start.
-
-I have a rails API only application (created using the API flag), which now has a Dockerfile and docker-compose.yml file. There are so many Docker tutorials and I understand how Docker works in its basic form - but here is what I don't understand:
-
-1) if the database is created on a separate container, how does the application connect with it, and how do I deploy it on AWS? does it need a separate cluster? Does it need a separate Dockerfile? is docker-compose only used for development, but not for production? 
-
-I don't expect anyone to give me a long explanation, but if you could point me in the right direction of some good learning materials, or give me a brief overview, or tell me I'm barking up the right/wrong tree, that would be great. 
-
-&amp;#x200B;
-
-Thanks so much

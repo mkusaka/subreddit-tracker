@@ -1,18 +1,17 @@
 # ruby
-## [1][Testing Rails generators with ease.](https://www.reddit.com/r/ruby/comments/ir8tor/testing_rails_generators_with_ease/)
-- url: https://www.abhaynikam.me/posts/rails_generator_testing/
+## [1][Conditional class opening in Ruby](https://www.reddit.com/r/ruby/comments/irtuw8/conditional_class_opening_in_ruby/)
+- url: https://medium.com/rubycademy/conditional-class-opening-in-ruby-49a4524b7f85
 ---
 
-## [2][.each method not working? RUBY](https://www.reddit.com/r/ruby/comments/ir8z7j/each_method_not_working_ruby/)
-- url: https://www.reddit.com/r/ruby/comments/ir8z7j/each_method_not_working_ruby/
+## [2][Should I stick with Ruby or learn a more modern language like C#, Python, or PHP?](https://www.reddit.com/r/ruby/comments/irxxwb/should_i_stick_with_ruby_or_learn_a_more_modern/)
+- url: /r/learnprogramming/comments/irlp9c/stick_with_learning_ruby_or_switch_over_to/
 ---
-Hi, can someone please tell me why my each is not working to get all the character upcase? 
 
-def asf(str)  
-str.split("").each {|char| char.upcase}  
-end   
-puts asf("what a string")
-## [3][Ruby Jard - Just Another Ruby Debugger](https://www.reddit.com/r/ruby/comments/ircolf/ruby_jard_just_another_ruby_debugger/)
+## [3][Did you know that Time#utc modifies the receiver?](https://www.reddit.com/r/ruby/comments/irkhj2/did_you_know_that_timeutc_modifies_the_receiver/)
+- url: https://i.redd.it/vv5ac7il4sm51.png
+---
+
+## [4][Ruby Jard - Just Another Ruby Debugger](https://www.reddit.com/r/ruby/comments/ircolf/ruby_jard_just_another_ruby_debugger/)
 - url: https://www.reddit.com/r/ruby/comments/ircolf/ruby_jard_just_another_ruby_debugger/
 ---
 Hi all, I would like to show you guys a Ruby debugger, named Ruby  Jard, that I'm working on recently. Ruby Jard provides a rich Terminal  UI that visualizes everything your need, navigates your program with  pleasure, stops at matter places only, reduces manual and mental  efforts. You can now focus on real debugging.
@@ -43,7 +42,29 @@ https://preview.redd.it/yn0aa6spypm51.png?width=1248&amp;format=png&amp;auto=web
 https://preview.redd.it/m5oh3azrypm51.png?width=1251&amp;format=png&amp;auto=webp&amp;s=cf94a3cecfb756d26824bf324f2a9536be654742
 
 [Debug Rails on 2K screen](https://preview.redd.it/f0mt8bzsypm51.png?width=2559&amp;format=png&amp;auto=webp&amp;s=ca3522c663fa6f1b102ae5498d8db853f1137760)
-## [4][Caeser cipher exercise Ruby](https://www.reddit.com/r/ruby/comments/ir9lk4/caeser_cipher_exercise_ruby/)
+## [5][The Most Popular Programming Languages - 1965/2020](https://www.reddit.com/r/ruby/comments/irh1dr/the_most_popular_programming_languages_19652020/)
+- url: https://youtu.be/UNSoPa-XQN0
+---
+
+## [6][How would I implement Regexp#optional? ?](https://www.reddit.com/r/ruby/comments/irmbsq/how_would_i_implement_regexpoptional/)
+- url: https://www.reddit.com/r/ruby/comments/irmbsq/how_would_i_implement_regexpoptional/
+---
+Given some random regular expression passed into a method, how do I determine if it's optional? ie. how do I see if it would match the empty string without trying to match the empty string?
+
+This works, but seems like a bad idea:
+
+    class Regexp
+        def optional?
+            not self.match('').nil?
+        end
+    end
+
+Is there a better way?
+## [7][Testing Rails generators with ease.](https://www.reddit.com/r/ruby/comments/ir8tor/testing_rails_generators_with_ease/)
+- url: https://www.abhaynikam.me/posts/rails_generator_testing/
+---
+
+## [8][Caeser cipher exercise Ruby](https://www.reddit.com/r/ruby/comments/ir9lk4/caeser_cipher_exercise_ruby/)
 - url: https://www.reddit.com/r/ruby/comments/ir9lk4/caeser_cipher_exercise_ruby/
 ---
 Can someone help me review this code? still having trouble solving this problem: It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of 3, D would be replaced by A, E would become B, and so on. 
@@ -76,57 +97,16 @@ newChar = uppercase\[remainder\]
  return output  
 end  
 caeser\_cipher("What a string!", 5)
-## [5][Took a performance pass over DragonRuby Game Toolkit. Pretty decent results!](https://www.reddit.com/r/ruby/comments/iqrddq/took_a_performance_pass_over_dragonruby_game/)
+## [9][.each method not working? RUBY](https://www.reddit.com/r/ruby/comments/ir8z7j/each_method_not_working_ruby/)
+- url: https://www.reddit.com/r/ruby/comments/ir8z7j/each_method_not_working_ruby/
+---
+Hi, can someone please tell me why my each is not working to get all the character upcase? 
+
+def asf(str)  
+str.split("").each {|char| char.upcase}  
+end   
+puts asf("what a string")
+## [10][Took a performance pass over DragonRuby Game Toolkit. Pretty decent results!](https://www.reddit.com/r/ruby/comments/iqrddq/took_a_performance_pass_over_dragonruby_game/)
 - url: https://www.youtube.com/watch?v=UuY7CWdvyWM&amp;feature=youtu.be&amp;ab_channel=AmirRajan
----
-
-## [6][Help VSCode RSpec](https://www.reddit.com/r/ruby/comments/ir1yar/help_vscode_rspec/)
-- url: https://www.reddit.com/r/ruby/comments/ir1yar/help_vscode_rspec/
----
-Hey guys I'm trying to do rspec on vscode but it isnt working. I did bundle exec rspec in the terminal but its just showing whats on the bottom. There should be clear rspec like in the second picture. Thanks!
-
-&amp;#x200B;
-
-https://preview.redd.it/g5wv6smitlm51.png?width=1920&amp;format=png&amp;auto=webp&amp;s=b3a87f02368926440f9b94b47492008fd42cb4f1
-
-https://preview.redd.it/r5vormedulm51.png?width=850&amp;format=png&amp;auto=webp&amp;s=2efcd99bc4c4260d7fc3d39129175b48cd385bbf
-## [7][An SMS Reminder With Ruby &amp; A Raspberry Pi](https://www.reddit.com/r/ruby/comments/iqqk9e/an_sms_reminder_with_ruby_a_raspberry_pi/)
-- url: https://emmanuelhayford.com/building-an-sms-reminder-with-ruby-raspberry-pi/
----
-
-## [8][Is there a name for this code smell?](https://www.reddit.com/r/ruby/comments/iqntuy/is_there_a_name_for_this_code_smell/)
-- url: https://www.reddit.com/r/ruby/comments/iqntuy/is_there_a_name_for_this_code_smell/
----
-I have come across some code which calls a local private method with a parameter which is also a class variable.
-
-      def initialize
-        @record = find_record
-        do_something(@record)
-      end
-    
-      private
-    
-      def find_record
-        'record yo'
-      end
-    
-      def do_something(record)
-      end
-
-I feel like Sandi Metz would have something to say about that, or perhaps Rubocop would pick it up. How can I succinctly describe what is wrong here?
-## [9][Can someone please explain this line by line using num = 3?](https://www.reddit.com/r/ruby/comments/iqqnuq/can_someone_please_explain_this_line_by_line/)
-- url: https://www.reddit.com/r/ruby/comments/iqqnuq/can_someone_please_explain_this_line_by_line/
----
-I just started to learn Ruby. I would really appreciate any help! 
-
-def fibs(num)  
- return arr\[0...num\] if num &lt;= 2  
-  ary = \[0, 1\]  
- (3..num).each { |i| ary &lt;&lt; (ary\[i - 3\] + ary\[i - 2\])}  
-  ary  
-end  
-p fibs(3)
-## [10][Enforcing Public/Private Access in Rails](https://www.reddit.com/r/ruby/comments/iqp2yk/enforcing_publicprivate_access_in_rails/)
-- url: https://medium.com/opendoor-labs/enforcing-public-private-access-in-rails-57e9c21d141d
 ---
 

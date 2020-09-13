@@ -85,124 +85,82 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][Serverless Video Chat App using Firebase and WebRTC in React](https://www.reddit.com/r/reactjs/comments/iraa9e/serverless_video_chat_app_using_firebase_and/)
+## [3][I just published another vscode extension that allows you to search through 20+ free icon sets and paste them into your code all within the editor.](https://www.reddit.com/r/reactjs/comments/irs96o/i_just_published_another_vscode_extension_that/)
+- url: https://v.redd.it/c7vkbsarlum51
+---
+
+## [4][Serverless Video Chat App using Firebase and WebRTC in React](https://www.reddit.com/r/reactjs/comments/iraa9e/serverless_video_chat_app_using_firebase_and/)
 - url: https://www.youtube.com/watch?v=-d45WHNU9J4&amp;feature=share
 ---
 
-## [4][I coded this LEGO Bowser with react-three-fiber, react-native-web, and rendered it with povray](https://www.reddit.com/r/reactjs/comments/ir1w53/i_coded_this_lego_bowser_with_reactthreefiber/)
-- url: https://twitter.com/baconbrix/status/1304563193637933061?s=21
+## [5][How can I run an API call AFTER the results from my useSelector() hook?](https://www.reddit.com/r/reactjs/comments/iry5hs/how_can_i_run_an_api_call_after_the_results_from/)
+- url: https://www.reddit.com/r/reactjs/comments/iry5hs/how_can_i_run_an_api_call_after_the_results_from/
+---
+I am trying to use some data that will come from my `useSelector()`  
+ hook in a network API call. However, with the code below, I get the error `TypeError: cannot read property 'query' of undefined.`
+
+I understand this is because the query has not come back from the `useSelector()`  
+ yet. Is there a way I can wait for that data THEN call the API?
+
+`const pageContent = useSelector(getPageContent);`
+
+  
+`useEffect(() =&gt; {`  
+`axios`  
+`.get('https://www.googleapis.com/youtube/v3/search', {\`  
+`params: {`  
+`key: process.env.API_KEY,`  
+`part: 'snippet',`  
+`type: 'video',`  
+`q: pageContent.data.query,`  
+`},`  
+`})`  
+`.then((res) =&gt; res)`  
+`.then((data) =&gt; console.log(data));`  
+`}, []);`
+## [6][Would you use useMemo for memoizing components?](https://www.reddit.com/r/reactjs/comments/irxtsd/would_you_use_usememo_for_memoizing_components/)
+- url: https://www.reddit.com/r/reactjs/comments/irxtsd/would_you_use_usememo_for_memoizing_components/
+---
+I saw in a project I am working on a use of useMemo for a small (a potential additional icon) component within a larger component. Is it something you would do? Is it a common?
+## [7][Help with react-testing-library and Firebase](https://www.reddit.com/r/reactjs/comments/irxobp/help_with_reacttestinglibrary_and_firebase/)
+- url: https://www.reddit.com/r/reactjs/comments/irxobp/help_with_reacttestinglibrary_and_firebase/
+---
+*tl;dr*: How do I mock firebase(initializeApp, auth, etc) using jest and react-testing-library
+
+I'm creating a form component that uses firebase to authenticate a user, either using email-password or google. I'm trying to test the component but can't mock firebase(don't know how, tbh). Can someone please help me? How do I mock firebase(initializeApp, auth, etc) using jest and react-testing-library?
+
+For example, how do I check if `firebase.initializeApp()` is called by my component on mount, using jest and react-testing-library?
+
+Also, what are some good resources that i can use to learn jest and react-testing-library.
+## [8][What do I do?](https://www.reddit.com/r/reactjs/comments/irnkiy/what_do_i_do/)
+- url: https://www.reddit.com/r/reactjs/comments/irnkiy/what_do_i_do/
+---
+Hello everyone. hope anyone can give me some advice or guide me.
+
+I'm an engineer student and decided to start programming on my own because yes, I got a lot of logic thinking on my career but I was missing a lot of new tech that jobs are looking for to apply.
+
+I have some background with Visual Basic (my first programming language when I was a teenager) , C++, Java and C where I learned the fundamentals about it and now I'm focused with Javascript and React (MERN) / React Native because I love how it works. I have been doing FreeCodeCamp (1800hs done), Udemy, TreeHouse, Scrimba, SoloLearn and even more among free and paid courses but I feel like I need to get my hands on real projects. I have my github (It's growing and I feel very proud of the green dots showing) where I upload my practices and some apps that I made and I try to work everyday because despite all, I enjoy programming.
+
+And here comes my question.. how to get a job where my skills can be used? I mean, I find all job offers looking for Senior developers and if they are for Jr developers, they ask for 2 years of experience and even more... that's crazy.
+
+I'm not giving up because I love to work in the tech field but its kinda frustrating right now.
+## [9][Creating a Custom React Hook: Use Window Size](https://www.reddit.com/r/reactjs/comments/irlpdr/creating_a_custom_react_hook_use_window_size/)
+- url: https://www.youtube.com/watch?v=OHvJqOjToes
 ---
 
-## [5][Good open-source chart library to use in your React projects](https://www.reddit.com/r/reactjs/comments/ir9m3n/good_opensource_chart_library_to_use_in_your/)
-- url: https://apexcharts.com/react-chart-demos/
+## [10][I built a SERVERLESS VIDEO CHAT app in REACTJS using WEBRTC and FIREBASE](https://www.reddit.com/r/reactjs/comments/ir7cxa/i_built_a_serverless_video_chat_app_in_reactjs/)
+- url: https://v.redd.it/z8a5iznyrnm51
 ---
 
-## [6][Learn React Hooks fast and easy with examples and snippets](https://www.reddit.com/r/reactjs/comments/irajbl/learn_react_hooks_fast_and_easy_with_examples_and/)
-- url: https://www.snippetsofhooks.dev/
+## [11][Using Context with Radio Button](https://www.reddit.com/r/reactjs/comments/irx0we/using_context_with_radio_button/)
+- url: https://www.reddit.com/r/reactjs/comments/irx0we/using_context_with_radio_button/
+---
+I am trying to set context on a category react component using the context API, which occurs when a radio button is checked. Whenever I click, nothing is happening. I want the radio button to remember the previously checked item when the component is unmounted. Am i doing something wrong?
+
+[https://imgur.com/a/Ea1dWAl](https://imgur.com/a/Ea1dWAl)
+
+The other styles are Checkmark which is a span, and the Container is a label. Thanks in advance.
+## [12][Covid-19 Map: Complete Tutorial using react leaflet, hooks and bootstrap - Choropleth map](https://www.reddit.com/r/reactjs/comments/irkvxl/covid19_map_complete_tutorial_using_react_leaflet/)
+- url: https://youtu.be/4cliojOu3as
 ---
 
-## [7][I wrote a Reactive State-Management Library and seeking your feedback for API](https://www.reddit.com/r/reactjs/comments/iqrimm/i_wrote_a_reactive_statemanagement_library_and/)
-- url: https://www.reddit.com/r/reactjs/comments/iqrimm/i_wrote_a_reactive_statemanagement_library_and/
----
-Hi all!
-
-You might recognize me as the guy who created [radioactive-state](https://github.com/MananTank/radioactive-state#readme) library, It's been slowly gaining popularity. That library was just for local State Management, a replacement of useState hook.
-
-I wrote another library which is a superset of that library for **Global** State Management 
-
-Here is the Repo's readme: [https://github.com/MananTank/radioactive-store#readme](https://github.com/MananTank/radioactive-store#readme)
-
-My goal is to create the **easiest** global state management library and I want your feedback about the current API. What do you like, what you don't like? I am willing to change the API depending on your feedback and also willing to add features.
-
-I would really appreciate if you can help me out.
-
-Thanks ;)
-## [8][I created a serverless quiz generator with React &amp; Firebase](https://www.reddit.com/r/reactjs/comments/ircmt2/i_created_a_serverless_quiz_generator_with_react/)
-- url: https://v.redd.it/kmjwq14cypm51
----
-
-## [9][Rex State - a handy utility to convert your hooks into shared states](https://www.reddit.com/r/reactjs/comments/ircgih/rex_state_a_handy_utility_to_convert_your_hooks/)
-- url: https://www.reddit.com/r/reactjs/comments/ircgih/rex_state_a_handy_utility_to_convert_your_hooks/
----
-# Introducing [Rex State](https://github.com/react-native-toolkit/rex-state) v1.0 
-
-I initially built rex-state as a state management library, however, since it was using the Context API it wasn't very efficient with handling re-renders. 
-
-But then its another feature became more prominent. It can easily convert any hook into a shared state!
-
-Focusing on this functionality, Today I'm releasing Rex State 1.0. This tool is easy to use and will work with your existing hooks.
-
-## Usage
-Add rex-state to your project
-
-```sh
-yarn add rex-state
-
-# or
-
-npm i rex-state
-```
-
-Consider you have the following counter hook ﹣
-
-```jsx
-const useCounterHook = (initialCount) =&gt; {
-  const [count, setCount] = useState(initialCount || 0);
-
-  const increaseCount = () =&gt; setCount(count + 1);
-  const decreaseCount = () =&gt; setCount(count - 1);
-
-  return {
-    count,
-    increaseCount,
-    decreaseCount
-  };
-};
-```
-
-You can use rex-state to create a provider and a shared hook using the following code ﹣
-
-```jsx
-import { createRexStore } from "rex-state";
-
-const { 
-  useStore: useCounter, 
-  RexProvider: CountProvider 
-} = createRexStore(useCounterHook);
-```
-
-Wrap your application inside the `CountProvider` ﹣
-
-```jsx
-export default function App() {
-  // Starting off with an initial count of 10
-  return (
-    &lt;CountProvider value={10}&gt;
-      &lt;CountDisplay /&gt;
-      &lt;Controls /&gt;
-    &lt;/CountProvider&gt;
-  );
-}
-```
-
-Now you can use `useCounter` hook inside both `&lt;CountDisplay/&gt;` &amp; `&lt;Controls/&gt;` components. When the count changes in the `&lt;Controls/&gt;` component, it will cause the `&lt;CountProvider/&gt;` to re-render &amp; will also update the `&lt;CountDisplay/&gt;` component.
-
-This is based on the React.Context API. I have written a detailed page on its [performance](https://rex-state.netlify.app/?path=/story/intro-performance--page) &amp; when to use it in your application.
-
-Check out the working [codesandbox](https://codesandbox.io/s/rex-counter-2m4zy?file=/src/App.js) of the counter app
-
-Read about it detail on [Github](https://github.com/react-native-toolkit/rex-state)
-
-Share your thoughts about using this library. I'm open to feedbacks &amp; ideas!
-## [10][If React was a religion, what would classify as a sin?](https://www.reddit.com/r/reactjs/comments/iqxabo/if_react_was_a_religion_what_would_classify_as_a/)
-- url: https://www.reddit.com/r/reactjs/comments/iqxabo/if_react_was_a_religion_what_would_classify_as_a/
----
-The title is pretty self-explanatory 😅
-## [11][My first react native app!](https://www.reddit.com/r/reactjs/comments/irc2zm/my_first_react_native_app/)
-- url: https://v.redd.it/bewmleixrpm51
----
-
-## [12][What are some of the best engineered simple CRUD application using Typescript, Redux, Axios and implementing localization?](https://www.reddit.com/r/reactjs/comments/irc2cx/what_are_some_of_the_best_engineered_simple_crud/)
-- url: https://www.reddit.com/r/reactjs/comments/irc2cx/what_are_some_of_the_best_engineered_simple_crud/
----
-Trying to find a simple example, and improve upon it. It's the best way to learn. Finding the application that's the most well-made and looking at the best practices.

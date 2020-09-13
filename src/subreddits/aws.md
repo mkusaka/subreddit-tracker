@@ -1,95 +1,88 @@
 # aws
-## [1][Amazon Career Day](https://www.reddit.com/r/aws/comments/ir5svb/amazon_career_day/)
+## [1][Moving 25TB data from one S3 bucket to another took 7 engineers, 4 parallel sessions each and 2 full days](https://www.reddit.com/r/aws/comments/irkshm/moving_25tb_data_from_one_s3_bucket_to_another/)
+- url: https://www.reddit.com/r/aws/comments/irkshm/moving_25tb_data_from_one_s3_bucket_to_another/
+---
+We recently moved 25tb data from s3 bucket to another. Our estimate was 2 hours for one engineer. After starting the process, we quickly realized it's going pretty slow. Specifically because there were millions of small files with few mbs. All 7 engineers got behind the effort and we finished it in 2 days with help of 7 engineers, keeping the session alive 24/7
+
+We used aws cli and cp/mv command.
+
+We used 
+
+"Run parallel uploads using the AWS Command Line Interface (AWS CLI)" 
+
+"Use Amazon S3 batch operations" 
+
+from following link 
+ https://aws.amazon.com/premiumsupport/knowledge-center/s3-large-transfer-between-buckets/
+
+I believe making network request for every small file is what caused the slowness. Had it been bigger files, it wouldn't have taken as long. 
+
+There has to be a better way. Please help me find the options for the next time we do this.
+## [2][What does your cloud stack looks like?](https://www.reddit.com/r/aws/comments/irwi76/what_does_your_cloud_stack_looks_like/)
+- url: https://www.reddit.com/r/aws/comments/irwi76/what_does_your_cloud_stack_looks_like/
+---
+So I’ve been expanding my knowledge and skill set about and around cloud and was wondering what does your company’s cloud stack comprises of? This would give a better insight to what tech to learn about.
+## [3][Does AWS Amplify remove the DynamoTable after change the schema?](https://www.reddit.com/r/aws/comments/irvb7h/does_aws_amplify_remove_the_dynamotable_after/)
+- url: https://www.reddit.com/r/aws/comments/irvb7h/does_aws_amplify_remove_the_dynamotable_after/
+---
+Right now has 4 dynamodb tables with data. 
+
+I want to add one property to one of that tables, (imageURL). 
+
+If I update the model, AWS Amplify will remove all tables? 
+
+I guess no, but I'm not pretty sure about this.
+## [4][Amazon Career Day](https://www.reddit.com/r/aws/comments/ir5svb/amazon_career_day/)
 - url: https://www.reddit.com/r/aws/comments/ir5svb/amazon_career_day/
 ---
 https://www.amazoncareerday.com/
 
 Disclaimer: I work at AWS as a Technical Consultant. This is *not* a third party recruiting link. I do not receive any kickbacks, referral fees, nor am I recruiter. I just thought that this would be of interest to this subreddit.
-## [2][Reminder - New S3 Buckets after 9/30/2020 won't support Path-Style Requests](https://www.reddit.com/r/aws/comments/iqwv17/reminder_new_s3_buckets_after_9302020_wont/)
-- url: https://www.reddit.com/r/aws/comments/iqwv17/reminder_new_s3_buckets_after_9302020_wont/
+## [5][HOW TO: AWS Lambda CloudWatch Logs Structured as JSON with Python Runtime](https://www.reddit.com/r/aws/comments/irt7tu/how_to_aws_lambda_cloudwatch_logs_structured_as/)
+- url: https://www.reddit.com/r/aws/comments/irt7tu/how_to_aws_lambda_cloudwatch_logs_structured_as/
 ---
-If you want a bucket you can access using path style requests (e.g. [https://s3.Region.amazonaws.com/bucket-name/key\_name](https://s3.Region.amazonaws.com/bucket-name/key_name)) you have just over two weeks to create your bucket.
+hello, my AWS lambda function written in Python runtime runs fine but CloudWatch is rendering the function’s JSON messages in one line. 
 
-[https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html](https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html)
+    {'version': '0', 'id': '4d26b655-60d4-422a-27d3-9142221a19b1', 'detail-type': 'New Event', 'source': 'new payment', 'account': '397521619882', 'time': '2020-09-13T06:19:59Z', 'region': 'us-east-1', 'resources': [], 'detail': {'state': 'deposit', 'id': '123', 'amount': '100'}}
 
-&amp;#x200B;
+Same function written in Node.Js when invoked shows up structured in JSON in CloudWatch logs. Which is easy to ready.
 
-&gt;Important  
-&gt;  
-&gt;Buckets created after September 30, 2020, will support only virtual hosted-style requests.                                                                                  Path-style requests will continue to be supported for buckets created on or before                                           this date.
-## [3][I'm building a search engine for terminal commands and just added support for aws-cli. What do you think?](https://www.reddit.com/r/aws/comments/ir0ln7/im_building_a_search_engine_for_terminal_commands/)
-- url: https://www.reddit.com/r/aws/comments/ir0ln7/im_building_a_search_engine_for_terminal_commands/
+How can I get Python to log function's message in JSON? Is there a sample I can look at?
+## [6][How to choose between AWS and other Cloud providers](https://www.reddit.com/r/aws/comments/irk7b2/how_to_choose_between_aws_and_other_cloud/)
+- url: https://www.reddit.com/r/aws/comments/irk7b2/how_to_choose_between_aws_and_other_cloud/
 ---
-Hey all!
+I am struggling to get in to the cloud. Most of my programming life has been on embedded products, and websites back in my day were just simple things. Now we have AWS et al and it's extremely complex in both good and confusing ways.
 
-I'm working on an app that works as a search engine for anything terminal related. It's called [Sidekick](https://getsidekick.app). The idea is instead of searching stuff on Google and going through websites you just hit a shortcut, type what you want with natural language and the app gives you the command you need and copies it into the clipboard.
+My app is a dead simple Node.js app that converts HTML pages into PDFs and then concatenate the PDFs together. For this I require two packages
 
-Currently, the app supports full-text search through your history, history of your team, and popular CLIs like aws-cli, \`gcloud, heroku, etc. You can even quickly add flags, options, and parameters + look into some basic documentation for the CLI. 
+1. Puppeteer, which requires an installation of Chromium (which it does on its own)
+2. node-pdftk, which requires an installation of PDFTK
 
-Searching for commands with Sidekick is much faster than with Google. You don't have even use your mouse. More importantly, you don't wait for websites to load and don't need to manually copy and paste commands from these websites.  
+I have this exact app running on my local Windows environment, and I even deployed it to Heroku using some buildpacks. I was so happy when it finally ran, only to find out that you cannot actually write files like PDFs on your Heroku environment and even if you could, all files are erased on reboot. I don't think any of these providers explain any of there products to newbies properly... How could I have no idea that you cannot write files!? Anyways..
 
+Now I am looking at AWS because it has S3 which I guess is where I will store my PDFs. But trying to choose between EC2, EBS, and Lambda is driving me crazy. I even looked at Firebase but the more I read the less confident I get in any of these systems.
 
-I added a short video showcasing the basic functionality.
+All I want is to be able to run my simple Node.js app and be able to install a couple things like PDFTK and Chromium. I only expect a peak of 100s to 1000s of users at a time trying to generate PDFs and not in the realm of 10s of 1000s or more. 
 
-[Sidekick - AWS search](https://reddit.com/link/ir0ln7/video/36isu8yuflm51/player)
+So I was starting to spin up a Lambda server but I think it's the same thing as my Heroku server. It seems that there are some ways to use puppeteer and pdftk with lambda but there seems to be lots of issues with EC2/EBS (dependencies, having to change the OS, etc). 
 
-The app is in private beta right now but I'm sending out invites every week or so (happy to prioritize you if you want to try it out). **You can sign up** [**here**](https://getsidekick.app).  
-
-
-I'd love to know what you think! Thanks.
-## [4][AWS Taxation](https://www.reddit.com/r/aws/comments/irbd8s/aws_taxation/)
-- url: https://www.reddit.com/r/aws/comments/irbd8s/aws_taxation/
+In the ideal world I would have a linux or windows server that I could just install whatever I want on it and it was easy to start up my node  app and handle HTTP requests.
+## [7][Howdy. New to IaC.](https://www.reddit.com/r/aws/comments/irr3oc/howdy_new_to_iac/)
+- url: https://www.reddit.com/r/aws/comments/irr3oc/howdy_new_to_iac/
 ---
-I have a UK business with a valid tax number yet I'm still charged for tax? Do all business pony up 20% and wait for a tax return or am I missing something?
-## [5][Global Accelerator with Media Services](https://www.reddit.com/r/aws/comments/ira01m/global_accelerator_with_media_services/)
-- url: https://www.reddit.com/r/aws/comments/ira01m/global_accelerator_with_media_services/
+Where do I start? I am transitioning from Linux system administration to AWS IaC. I need to pick up typescript for Cloud Development Kit. My coding background is bash and ansible playbooks. Any suggestions for learning typescript?
+## [8][One or more ALB / Listeners / TG's per application or microservice](https://www.reddit.com/r/aws/comments/irqrz8/one_or_more_alb_listeners_tgs_per_application_or/)
+- url: https://www.reddit.com/r/aws/comments/irqrz8/one_or_more_alb_listeners_tgs_per_application_or/
 ---
-Hi there,
+I have a Fargate service behind a ALB. HTTPS listener works fine and Fargate tasks register fine with the TargetGroup.
 
-Wondering if anyone has a workflow to allow MediaLive and MediaStore to be used as an endpoint for Global Accelerator?
-## [6][Does AWS translate ever produce other artifacts, more so than google translate?](https://www.reddit.com/r/aws/comments/ir9x0q/does_aws_translate_ever_produce_other_artifacts/)
-- url: https://www.reddit.com/r/aws/comments/ir9x0q/does_aws_translate_ever_produce_other_artifacts/
----
-I'm doing a translation and aws seems to have produced a new artifact.  I translated the material  in aws, then translated it back with google translate to check it.  Then translated it back into aws and now there is a new word that completely changes the meaning of the material.  google translate is translating it perfectly now from the aws original translation, which should I go with, neural machine or google?
-## [7][Best way to organize Discord Bot data in DynamoDB?](https://www.reddit.com/r/aws/comments/ir77vq/best_way_to_organize_discord_bot_data_in_dynamodb/)
-- url: https://www.reddit.com/r/aws/comments/ir77vq/best_way_to_organize_discord_bot_data_in_dynamodb/
----
-With my table, I want to answer these primary questions:
-
-* How many wins does the user have in rock, paper, scissors?
-* How many wins does the user have in boxing?
-* Who has the top 10 wins in the server?
-
-Keep in mind, I'm trying to go with the 'single' table approach. On a 'guild' object, there will be many configurations that exist: moderation, user levels, etc.
-
-I also am going to be using the 'user' entity to keep track of economy as well: item purchases, inventory, etc.
-
-[My current table design is here.](https://imgur.com/YxGbQoD) This works the way I need it to, for the most part; however, there's virtually no way to link a 'wins' column with the guild id. I only want to showcase the user wins that are *in* the guild on the leaderboard.
-## [8][Elastic Beanstalk introduces support for shared load balancers!](https://www.reddit.com/r/aws/comments/iqjxcw/elastic_beanstalk_introduces_support_for_shared/)
-- url: https://aws.amazon.com/blogs/containers/amazon-elastic-beanstalk-introduces-support-shared-load-balancers/
+I'm adding a few more (Fargate) services for different application. I can't find a lot of good information on best practices when using ALB and running more then one services.   
+Do you add more listeners and TG's on the same ALB? Or do you add more ALB's? Any pointers?
+## [9][Any one used AWS Step Functions with Map state for anything. Example code would be really useful. Thank You.](https://www.reddit.com/r/aws/comments/irmu8x/any_one_used_aws_step_functions_with_map_state/)
+- url: https://www.reddit.com/r/aws/comments/irmu8x/any_one_used_aws_step_functions_with_map_state/
 ---
 
-## [9][Suggestions on reducing application startup time?](https://www.reddit.com/r/aws/comments/iquord/suggestions_on_reducing_application_startup_time/)
-- url: https://www.reddit.com/r/aws/comments/iquord/suggestions_on_reducing_application_startup_time/
----
-I am working on an interactive application that currently requires one Windows g4dn.xlarge instance per active user (used to be a desktop app). At the moment it uses Auto Scaling Groups (ASG) and increases the desired capacity by 1 when a user logs in. 
-
-The problem is that it is slow to start - \~5 minutes to launch the instance and another 5-10 minutes for the initial application start (which takes 1-2 minutes locally on a freshly booted machine). I understand it is slow because when using snapshots, each block is initially loaded from S3.
-
-&amp;#x200B;
-
-I would like to reduce startup times while keeping costs down. Is that possible? I can think of several alternatives:
-
-1. Keep a few instances on (desired capacity &gt; 0) and increase/decrease when users log in/out. Application start time will be fast, but if I set capacity to 5 and 6 users log in at once the 6th one will face a slow starting time. At $0.71/hr per instance it is also pretty expensive.
-
-2. Use EBS fast snapshot restore with desired capacity at 0. This should have been pretty fast, but I am getting inconsistent results, even with subsequent launches in the same AZ. I am seeing about 1-3 minutes to launch the instance and another 1-5 minutes for initial startup.
-
-3. Avoid ASG and keep a few stopped machines in each AZ (to account for capacity issues). This should be fast and consistent, the main issue is that I need to implement ASG features. Standby cost would be $0.1/GB/hr, so not so expensive with 100 GB machines.
-
-&amp;#x200B;
-
-It looks like #3 would be the best option if considering both time and cost, am I missing something? It does require more dev work. I am also working on supporting multiple users per instance, switching to Linux and reducing load times, but that will take a while.
-## [10][Tiny library for generating safe DynamoDB sort-keys in JavaScript](https://www.reddit.com/r/aws/comments/iqtn5x/tiny_library_for_generating_safe_dynamodb/)
-- url: https://github.com/neuledge/sort-key
+## [10][Thoughts on Interoperability Between AWS CDK, AWS SAM and AWS Chalice](https://www.reddit.com/r/aws/comments/irluzi/thoughts_on_interoperability_between_aws_cdk_aws/)
+- url: https://softwhat.com/thoughts-on-interoperability-between-aws-cdk-aws-sam-and-aws-chalice/
 ---
 

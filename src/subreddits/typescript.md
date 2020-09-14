@@ -22,11 +22,69 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][From Rust to TypeScript](https://www.reddit.com/r/typescript/comments/irhluf/from_rust_to_typescript/)
-- url: https://valand.dev/blog/post/from-rust-to-typescript
+## [2][Effective Typescript | A Non-Technical Guide](https://www.reddit.com/r/typescript/comments/is5d0m/effective_typescript_a_nontechnical_guide/)
+- url: https://matthewmullin.io/effective-typescript/
 ---
 
-## [3][Pipe and compose](https://www.reddit.com/r/typescript/comments/irxcjg/pipe_and_compose/)
+## [3][Reactive formControl default dependant on other formControl](https://www.reddit.com/r/typescript/comments/isied7/reactive_formcontrol_default_dependant_on_other/)
+- url: https://www.reddit.com/r/typescript/comments/isied7/reactive_formcontrol_default_dependant_on_other/
+---
+Hello,
+
+I have two dropdown menus. The first control:
+
+`&lt;select formControlName="colorName"&gt;&lt;option *ngFor="let color of sortedColor" value="color.value"&gt;{{`[`color.name`](https://color.name)`}}&lt;/option&gt;&lt;/select&gt;`
+
+The second control:
+
+`&lt;select formControlName="colorDescription"&gt;`
+
+//I am supposed to do a mutable pre-selection of the description here, you can change the description, but this dropdown is suposed to match the color name from the previous dropdown at first`&lt;option *ngFor="let description of sortedColor" value="color.value"&gt;{{color.description }}&lt;/option&gt;&lt;/select&gt;`
+
+I am basically accessing the same Enum and need to match up and I do so by subscribing to the valueChanges of my formControl "colorName", but I don't know how to retrieve the matching color Enum from the formControl and comparing it to my list "sortedColor" and creating the default value for my second formControl
+
+&amp;#x200B;
+
+Thanks for taking the time to read
+## [4][How do I set minimum and maximum elements for an array?](https://www.reddit.com/r/typescript/comments/isi7dn/how_do_i_set_minimum_and_maximum_elements_for_an/)
+- url: https://www.reddit.com/r/typescript/comments/isi7dn/how_do_i_set_minimum_and_maximum_elements_for_an/
+---
+basically, I want to limit the length of the `coordinates` parameter in the `getDirection` function.
+
+how do I force the caller to pass an array of `LatLng` with a minimum length of 2 and a maximum elements of 25?
+
+  
+please take a look at my codes below
+
+&amp;#x200B;
+
+    interface LatLng {
+     lat: number
+     lng: number
+    }
+    
+    const getDirection = async (coordinates: LatLng[]) {
+    
+    }
+
+Iv'e seen tuple examples but it looks like it's only for setting a minimum or fixed length of elements.
+## [5][Any solid barebone React, Redux, axios application?](https://www.reddit.com/r/typescript/comments/is8te2/any_solid_barebone_react_redux_axios_application/)
+- url: https://www.reddit.com/r/typescript/comments/is8te2/any_solid_barebone_react_redux_axios_application/
+---
+Any solid barebone React, Typescript, Redux, axios application? I am looking for a skeleton that's easy to understand so I can get functional as quickly as possible. Is there anything good you could recommend?
+## [6][Total newbie wanting to learn](https://www.reddit.com/r/typescript/comments/is7dnb/total_newbie_wanting_to_learn/)
+- url: https://www.reddit.com/r/typescript/comments/is7dnb/total_newbie_wanting_to_learn/
+---
+I am a Linux admin with my coding background being bash and yaml gor Ansible playbooks. The team I just joined is transitioning to Amazon's Cloud Developer Kit for Infrastructure as Code using Typescript.
+
+So where is a good source to learn TS from the ground up that does not assume a JS background?
+## [7][How did you get really good at typescript?](https://www.reddit.com/r/typescript/comments/is6i00/how_did_you_get_really_good_at_typescript/)
+- url: https://www.reddit.com/r/typescript/comments/is6i00/how_did_you_get_really_good_at_typescript/
+---
+I’ve used typescript for about two years every day at work. I am very comfortable with 99% of typescript, but sometimes I look at package typing (e.g. vue 3) and it is clear that some people are at a completely different level. 
+
+When it comes to generics I feel I can get by, but not write anything too complicates. Is there a good resource (book, course, video, site) to help with this? Any good sites to practice it on?
+## [8][Pipe and compose](https://www.reddit.com/r/typescript/comments/irxcjg/pipe_and_compose/)
 - url: https://www.reddit.com/r/typescript/comments/irxcjg/pipe_and_compose/
 ---
 How would you type a compose function , pipe function in Typescript  ?
@@ -36,7 +94,13 @@ How would you type a compose function , pipe function in Typescript  ?
 `const compose = (...fns) =&gt; (x) =&gt; fns.reduceRight((acc, fn) =&gt; fn(acc), x);`
 
 `const pipe = (...fns) =&gt; (x) =&gt; fns.reduce((acc, fn) =&gt; fn(acc), x);`
-## [4][Typescript type definition for role property with Identity Server 4 token auth](https://www.reddit.com/r/typescript/comments/irwt8d/typescript_type_definition_for_role_property_with/)
+## [9][Good resources for learning more deep metaprogramming of typescript?](https://www.reddit.com/r/typescript/comments/irvlhf/good_resources_for_learning_more_deep/)
+- url: https://www.reddit.com/r/typescript/comments/irvlhf/good_resources_for_learning_more_deep/
+---
+I want to improve my typescript skills by learning more complex, advanced techniques with typescript to develop better APIs etc for parts of the app. Any good resources such as sites or blogs?
+
+Edit: I'll read the Typescript handbook. Surprisingly haven't read the whole thing all this time...
+## [10][Typescript type definition for role property with Identity Server 4 token auth](https://www.reddit.com/r/typescript/comments/irwt8d/typescript_type_definition_for_role_property_with/)
 - url: https://www.reddit.com/r/typescript/comments/irwt8d/typescript_type_definition_for_role_property_with/
 ---
 I'm wondering if anyone's encountered this before....but using the token auth implementation of Identity Server 4, the role property can either be a string or an array of strings, coming back, depending on whether or not a user has more than one role:
@@ -44,52 +108,7 @@ I'm wondering if anyone's encountered this before....but using the token auth im
 https://github.com/IdentityServer/IdentityServer4/issues/2468 
 
 I'm wondering if anyone's encountered this and come up with a good workaround, rather than my dirty `Array.isArray()` check on the role property?
-## [5][Good resources for learning more deep metaprogramming of typescript?](https://www.reddit.com/r/typescript/comments/irvlhf/good_resources_for_learning_more_deep/)
-- url: https://www.reddit.com/r/typescript/comments/irvlhf/good_resources_for_learning_more_deep/
----
-I want to improve my typescript skills by learning more complex, advanced techniques with typescript to develop better APIs etc for parts of the app. Any good resources such as sites or blogs?
-
-Edit: I'll read the Typescript handbook. Surprisingly haven't read the whole thing all this time...
-## [6][Fully tested apps?](https://www.reddit.com/r/typescript/comments/iriilx/fully_tested_apps/)
-- url: https://www.reddit.com/r/typescript/comments/iriilx/fully_tested_apps/
----
-I am looking for a React Typescript project with a full suite of unit, integration and e2e testing. I need to get better at unit, integration and e2e testing and how to write succinct functions and components that are easy to test.
-## [7][Do I need babel when using typescript?](https://www.reddit.com/r/typescript/comments/irkgdu/do_i_need_babel_when_using_typescript/)
-- url: https://www.reddit.com/r/typescript/comments/irkgdu/do_i_need_babel_when_using_typescript/
----
-Hello guys, I am pretty new to this ecosystem and I am getting really overwhelmed with all the informations.I am setting up environment for my little project and I was wondering if I even need babel when I am using typescript? If I understand correctly typescript transpiles my modern code into es3 if I set "target" to ES3 in tsconfig, so why would I use babel? Am I missing something?
-
-Edit: my project is using react if that changes anything
-## [8][I made a ts template repo on github that has CI/CD actions configured, husky lint-staged, test running, eslint, prettier, and nodemon for people's usage in hacktoberfest.](https://www.reddit.com/r/typescript/comments/ir66mv/i_made_a_ts_template_repo_on_github_that_has_cicd/)
-- url: https://github.com/jakehamtexas/ts-lib-starter
+## [11][From Rust to TypeScript](https://www.reddit.com/r/typescript/comments/irhluf/from_rust_to_typescript/)
+- url: https://valand.dev/blog/post/from-rust-to-typescript
 ---
 
-## [9][Disable any `any`](https://www.reddit.com/r/typescript/comments/irin9e/disable_any_any/)
-- url: https://www.reddit.com/r/typescript/comments/irin9e/disable_any_any/
----
-Hi there! Is there a way to forcefully replace all `any` with `unknown`, e. g. also for imported libraries? I would like to experiment around with a bit more strict typing in TypeScript, but unfortunately so far I only found `noImplicitAny` and `noExplicitAny` (from eslint).
-## [10][What are some of the best engineered simple CRUD application using Typescript, Redux, Axios and implementing localization?](https://www.reddit.com/r/typescript/comments/irc69u/what_are_some_of_the_best_engineered_simple_crud/)
-- url: https://www.reddit.com/r/typescript/comments/irc69u/what_are_some_of_the_best_engineered_simple_crud/
----
-Trying to find a simple example, and improve upon it. It's the best way to learn. Finding the application that's the most well-made and looking at the best practices.
-## [11][Could I get some advice about an error I'm getting?](https://www.reddit.com/r/typescript/comments/irahqn/could_i_get_some_advice_about_an_error_im_getting/)
-- url: https://www.reddit.com/r/typescript/comments/irahqn/could_i_get_some_advice_about_an_error_im_getting/
----
-I'm writing a small number sequences game for my son to play - I've written a library in typescript with a buddy of mine - all it does is generate number sequences;
-
-[https://github.com/mikeyhogarth/number-sequences/tree/v1.2.1](https://github.com/mikeyhogarth/number-sequences/tree/v1.2.1)
-
-I then started creating a UI to use that library;
-
-[https://github.com/mikeyhogarth/number-sequences-game](https://github.com/mikeyhogarth/number-sequences-game) (it's deployed if anyone wants to take a look, but don't expect much at the moment!).
-
-When I first imported the \`number-sequences\` library, the compiler was throwing an error;
-
-    Could not find a declaration file for module 'number-sequences'. '/Users/mikey/Development/number-sequences-game/node_modules/number-sequences/dist/index.js' implicitly has an 'any' type.
-      Try `npm install @types/number-sequences` if it exists or add a new declaration (.d.ts) file containing `declare module 'number-sequences';`ts(7016)
-
-I got around this by adding the following line to \`react-app.d.ts\`
-
-**declare module "number-sequences";**
-
-But that feels like something I shouldn't have had to do - or is it? Is there something I could have done in the original library to prevent having to do this?

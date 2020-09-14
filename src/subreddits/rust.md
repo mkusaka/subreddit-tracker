@@ -57,73 +57,73 @@ REMOTE: *[Do you offer the option of working remotely? If so, do you require emp
 VISA: *[Does your company sponsor visas?]*
 
 CONTACT: *[How can someone get in touch with you?]*
-## [3][OpenPGP in Rust](https://www.reddit.com/r/rust/comments/irtcks/openpgp_in_rust/)
-- url: https://sequoia-pgp.org/
+## [3][What I Learnt from Benchmarking Http4k, Ktor (Kotlin) and Actix v2, v3 (Rust) Microservices](https://www.reddit.com/r/rust/comments/is9onc/what_i_learnt_from_benchmarking_http4k_ktor/)
+- url: https://matej.laitl.cz/bench-rust-kotlin-microservices/
 ---
 
-## [4][Blog Post: Rust in 2021](https://www.reddit.com/r/rust/comments/irhj4o/blog_post_rust_in_2021/)
-- url: https://matklad.github.io/2020/09/12/rust-in-2021.html
+## [4][Rust now no. 18 for September on the TIOBE index](https://www.reddit.com/r/rust/comments/isi49d/rust_now_no_18_for_september_on_the_tiobe_index/)
+- url: https://www.tiobe.com/tiobe-index/
 ---
 
-## [5][I'm goung to give a presentation titled "Lessons from Rust for C++ developers" on my company. Do you have any ideas ?](https://www.reddit.com/r/rust/comments/iru7vl/im_goung_to_give_a_presentation_titled_lessons/)
-- url: https://www.reddit.com/r/rust/comments/iru7vl/im_goung_to_give_a_presentation_titled_lessons/
+## [5][Why can't lifetimes be elided from structs containing references?](https://www.reddit.com/r/rust/comments/isgjkj/why_cant_lifetimes_be_elided_from_structs/)
+- url: https://www.reddit.com/r/rust/comments/isgjkj/why_cant_lifetimes_be_elided_from_structs/
 ---
-Hi all,
+So I've been working more with [lifetimes](https://doc.rust-lang.org/1.9.0/book/lifetimes.html#lifetime-elision) recently, and one detail which is not clear to me is why they can be elided from function signatures but not struct declarations.
 
-Title says it all. I'm currently planning to talk about triats, ownership and error handling. If you have any better ideas/ points or critisim i would really like to hear.
-## [6][Porting PineTime Watch Face from C to Rust On RIOT with LVGL](https://www.reddit.com/r/rust/comments/irri4f/porting_pinetime_watch_face_from_c_to_rust_on/)
-- url: https://lupyuen.github.io/pinetime-rust-riot/articles/watch_face
----
+What I mean is, when declaring structs with references, I almost always find myself declaring a lifetime for the struct which is shared by the references within:
 
-## [7][rustbucket: Access your car's diagnostics with a BeagleBone Blue and Rust](https://www.reddit.com/r/rust/comments/irxfg3/rustbucket_access_your_cars_diagnostics_with_a/)
-- url: https://github.com/KoffeinFlummi/rustbucket
----
+    struct Foo&lt;'a&gt; {
+         bar: &amp;'a Bar
+    }
 
-## [8][nanorand 0.3 - Now with Pcg64 and ChaCha support!](https://www.reddit.com/r/rust/comments/irqi06/nanorand_03_now_with_pcg64_and_chacha_support/)
-- url: https://crates.io/crates/nanorand
----
+Maybe I'm missing something, but it seems like this is the obvious "default case", so my question is:
 
-## [9][Fastest Jsonnet implementation, written in Rust](https://www.reddit.com/r/rust/comments/irx7wg/fastest_jsonnet_implementation_written_in_rust/)
-- url: https://github.com/CertainLach/jrsonnet
+1. Could this be assumed by the compiler to save a bit of boilerplate?  If not why not?
+
+2. If it could be assumed as the default, what's the reasoning for requiring this to be typed explicitly each time when it's elided in the case of functions?
+## [6][[knurling] One Month of Knurling-rs](https://www.reddit.com/r/rust/comments/isjqo5/knurling_one_month_of_knurlingrs/)
+- url: https://ferrous-systems.com/blog/knurling-one-month/
 ---
 
-## [10][Clone git faster than git itself with Gitoxide 0.4](https://www.reddit.com/r/rust/comments/ir8mwq/clone_git_faster_than_git_itself_with_gitoxide_04/)
-- url: https://github.com/Byron/gitoxide/releases/tag/v0.4.0
+## [7][rudiments: A drum machine written in Rust](https://www.reddit.com/r/rust/comments/is0inl/rudiments_a_drum_machine_written_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/is0inl/rudiments_a_drum_machine_written_in_rust/
+---
+I created a drum machine as a vehicle for learning Rust.
+
+[https://github.com/jonasrmichel/rudiments](https://github.com/jonasrmichel/rudiments)
+
+I'm very interested in feedback on overall structure, data flow, and types.
+
+The project includes some example patterns -- give it a try!
+## [8][I spy that Pyo3 0.12 is released!](https://www.reddit.com/r/rust/comments/is74w7/i_spy_that_pyo3_012_is_released/)
+- url: https://www.reddit.com/r/rust/comments/is74w7/i_spy_that_pyo3_012_is_released/
+---
+Everyone has been hard at work improving python-rust interop, culminating in a new release:
+
+[https://github.com/PyO3/pyo3/releases/tag/v0.12.0](https://github.com/PyO3/pyo3/releases/tag/v0.12.0)
+
+As usual with each new release, it's simpler and safer than the previous version. I'm constantly impressed by everyone's efforts striving to make python-rust interop as seamless as possible.
+
+&amp;#x200B;
+
+Personally I'm particularly excited to try out the initial support for ADTs/Enums (in the rust world) that map to Unions in python. Read all about that here:
+
+[https://pyo3.rs/v0.12.0/conversions/traits.html#deriving-a-hrefhttpsdocsrspyo3latestpyo3conversiontraitfrompyobjecthtmlfrompyobjecta-for-enums](https://pyo3.rs/v0.12.0/conversions/traits.html#deriving-a-hrefhttpsdocsrspyo3latestpyo3conversiontraitfrompyobjecthtmlfrompyobjecta-for-enums)
+## [9][Rust 2021](https://www.reddit.com/r/rust/comments/is3ucs/rust_2021/)
+- url: https://hsivonen.fi/rust2021/
 ---
 
-## [11][Request for feedback on a data structure I wrote: a hash map / LRU cache for compressible values](https://www.reddit.com/r/rust/comments/irpdjt/request_for_feedback_on_a_data_structure_i_wrote/)
-- url: https://www.reddit.com/r/rust/comments/irpdjt/request_for_feedback_on_a_data_structure_i_wrote/
+## [10][Outdated openssl-sys](https://www.reddit.com/r/rust/comments/isjuoy/outdated_opensslsys/)
+- url: https://www.reddit.com/r/rust/comments/isjuoy/outdated_opensslsys/
 ---
-Here's the code: https://github.com/bonsairobo/compressible-map
+In my time with rust I now have come over quite a few crates that depend on an outdated version of openssl-sys(0.9.\*). The problem is that they all fail to build with current versions of libssl-dev.
 
-Things I'd like feedback on:
-
-- the public APIs / ergonomics
-- performance characteristics
-- the use of unsafe in the LocalCache implementation
-- general style
-
-During implementation, I've struggled most with two operations that seem at odds with each other:
-
-1. borrowing multiple values at a time
-2. decompressing values and placing them in the cache
-
-Of course, it would be trivial to allow borrows of the values in the cache if I didn't update the cache to reflect those accesses. But that kind of defeats the whole LRU scheme. And I didn't want to add too much overhead with extra heap indirection (boxing all values) and smart pointers.
-
-So what I came up with was a compromise where the main cache stays immutable, but readers can use a LocalCache object to store any values that weren't present in the cache and required decompression. Then after all of the borrows get dropped and we get mutable access to the global cache, the LocalCache can be flushed back into the global cache.
-
-The only issue here is that even the LocalCache can't be mutable, since then you can't borrow multiple values from it. To get around this, I used interior mutability via UnsafeCell. I did my best to make sure all of the unsafe code is sound, but this is my first time doing something like this, so please let me know if you spot anything unsound!
-
-Of course, I expect a lot of suggestions to avoid unsafe entirely and just use things like RefCell. I'm open to suggestions like this, but it would be ideal if I didn't have to compromise performance, since this data structure will be used in hot paths of my application. But I haven't actually done any benchmarking yet, I've just been trying to reason about theoretical overhead involved. I'll try to stay open-minded, but will ultimately resort to benchmarking to make final decisions on implementation.
-## [12][General Question: 🦀 How many times did you read The Rust Programming Language before you could write simple code to solve problems?](https://www.reddit.com/r/rust/comments/irex9q/general_question_how_many_times_did_you_read_the/)
-- url: https://www.reddit.com/r/rust/comments/irex9q/general_question_how_many_times_did_you_read_the/
+Is there a better way than just forking all the crates and bumping the version manually?
+## [11][Cargo with less noise](https://www.reddit.com/r/rust/comments/is9o7x/cargo_with_less_noise/)
+- url: https://github.com/alopatindev/cargo-limit
 ---
-**Edit:** Thank you so much everyone! A lot of your comments really encouraged me to keep at it! And some of you who gave tips to the points that I was confused about really cleared a lot of clouds as well. 🦀 You guys are awesome! 🦀
 
-I started learning Rust a bit over a week ago using the book *The Rust Programming Language* as well as Exercism with a background in Python and some familiarity with Go. In the book I'm around Chapter 9 on error handling but have briefly seen other topics like *generics* and *lifetime*.
+## [12][Bunt: a simple, macro-based terminal coloring/styling library based on `termcolor`](https://www.reddit.com/r/rust/comments/is1x2o/bunt_a_simple_macrobased_terminal_coloringstyling/)
+- url: https://github.com/LukasKalbertodt/bunt
+---
 
-As of now I still feel like I cannot think well in Rust. The `String` and `&amp;str` types still throw me off sometimes during compiling. Reading the official documentation is sometimes confusing when I found that I could use `to_lowercase` on a `String` type and have very little clue what `Methods from Defef&lt;Target=str&gt;` means. Not to mention not remembering when `collect` can be used or what the difference between `iter` and `into_iter` are. The list goes on.
-
-Given my non-technical background, the learning curve is naturally steep and I imagine I'd read the official book, consult many other resources, and fight the compiler messages many many times before I imprint the concepts and patterns onto my brain.
-
-Nevertheless, I'm curious to know how other Rustaceans here first started learning Rust? How many times have you read the book? And how did you get out of this befuddled feeling even when reading official documentation? 🙏🏻

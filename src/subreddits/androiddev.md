@@ -1,29 +1,20 @@
 # androiddev
-## [1][App Feedback Thread - September 12, 2020](https://www.reddit.com/r/androiddev/comments/irbpmb/app_feedback_thread_september_12_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/irbpmb/app_feedback_thread_september_12_2020/
+## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/isk58n/weekly_whos_hiring_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/isk58n/weekly_whos_hiring_thread/
 ---
-This thread is for getting feedback on your own apps.
+Looking for Android developers? Heard about a cool job posting? Let people know!
 
-####Developers:
+Here is a suggested posting template:
 
-- must **provide feedback** for others
-- must include **Play Store**, **GitHub**, or **BitBucket** link
-- must make top level comment
-- must make effort to respond to questions and feedback from commenters
-- may be open or closed source
+&gt; Company: &lt;Best Company Ever&gt;  
+&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
+&gt; Location: &lt;City, State, Country&gt;  
+&gt; Allows remote: &lt;Yes/No&gt;  
+&gt; Visa: &lt;Yes/No&gt;  
 
-####Commenters:
-
-- must give **constructive feedback** in replies to top level comments
-- must not include links to other apps
-
-To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
-
-As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
-
-\- Da Mods
-## [2][Weekly Questions Thread - September 07, 2020](https://www.reddit.com/r/androiddev/comments/io5e9j/weekly_questions_thread_september_07_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/io5e9j/weekly_questions_thread_september_07_2020/
+Feel free to include any other information about the job.
+## [2][Weekly Questions Thread - September 14, 2020](https://www.reddit.com/r/androiddev/comments/isiooc/weekly_questions_thread_september_14_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/isiooc/weekly_questions_thread_september_14_2020/
 ---
 This thread is for simple questions that don't warrant their own thread (although we suggest checking the sidebar, [the wiki](http://www.reddit.com/r/androiddev/wiki/), [our Discord](https://discord.gg/D2cNrqX), or [Stack Overflow](http://stackoverflow.com) before posting). Examples of questions:
 
@@ -40,58 +31,155 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Android Fragment Lifecycle Explained! — AndroidVille](https://www.reddit.com/r/androiddev/comments/irszfr/android_fragment_lifecycle_explained_androidville/)
-- url: https://ayusch.com/android-fragment-lifecycle-explained/
+## [3][Dynamic BASE_URL using Retrofit and Dagger Hilt](https://www.reddit.com/r/androiddev/comments/isihfj/dynamic_base_url_using_retrofit_and_dagger_hilt/)
+- url: https://www.reddit.com/r/androiddev/comments/isihfj/dynamic_base_url_using_retrofit_and_dagger_hilt/
+---
+I am struggling passing a dynamic BASE_URL to Retrofit at runtime. I found a solution passing the whole API @Url as an argument to the endpoint, but it does not look very good to me. Does anyone have any experience with this?
+## [4][JetInstagram an Instagram clone using Jetpack Compose](https://www.reddit.com/r/androiddev/comments/is34qm/jetinstagram_an_instagram_clone_using_jetpack/)
+- url: https://www.reddit.com/r/androiddev/comments/is34qm/jetinstagram_an_instagram_clone_using_jetpack/
+---
+An Instagram clone with Like Animation and Exoplayer integration for Instagram reels feature.
+
+Code: [https://github.com/vipulasri/JetInstagram](https://github.com/vipulasri/JetInstagram)
+
+&amp;#x200B;
+
+[JetInstagram](https://reddit.com/link/is34qm/video/uuzdg7klgym51/player)
+
+&amp;#x200B;
+## [5][YouTube + Twitch channel about Jetpack Compose by Leland Richardson](https://www.reddit.com/r/androiddev/comments/is6r07/youtube_twitch_channel_about_jetpack_compose_by/)
+- url: https://youtu.be/WNkIMx3Mr9o
 ---
 
-## [4][Exploring Jetpack Compose: Padding Modifier](https://www.reddit.com/r/androiddev/comments/irupem/exploring_jetpack_compose_padding_modifier/)
+## [6][Why we switched from Amplitude to Firebase, BigQuery &amp; Google Data Studio for our android app analytics](https://www.reddit.com/r/androiddev/comments/isjked/why_we_switched_from_amplitude_to_firebase/)
+- url: https://www.reddit.com/r/androiddev/comments/isjked/why_we_switched_from_amplitude_to_firebase/
+---
+ Hey everyone,
+
+We run a transcription app (VoxRec) which is currently at $2k MRR (doubled last month!)
+
+We use analytics to help make app development choices. At the beginning of the year, we switched from Amplitude to Firebase, BigQuery &amp; Google Data Studio for our app analytics. This is why we did it:
+
+**Cost**
+
+The free tier in Amplitude allows up to 10 million events per month. After that, it’ll cost between 40,000 to 70,000 USD/year!
+
+We calculated that using BigQuery and Google Data Studio, our cost would be about $350/year for the same amount of data!
+
+**Data Ownership**
+
+If we find that we’ve defined some events incorrectly, we can fix data retrospectively. On any other platform, once the data is logged, it's what it is.
+
+**Advanced Analytics**
+
+The features in the Amplitude free tier are limited. We did not have access to the cohorts for example. We were able to recreate these features in BigQuery. For example, we can now look at user retention based on cohorts of country/events/registration status/payment status….
+
+So far, we are very happy with the switch
+
+While creating our reports, we realised that large parts are reusable. We’ve spun it out into a template. You can check out the template [here](https://datastudio.google.com/reporting/359b7631-ed2e-48fa-8d88-38f41ce4343e/page/Gt6KB/?anddev)
+
+If you'd like to get the template (along with set up instructions) let me know in the comments or DM me and I'll hook you up.
+## [7][Which blogs can you recommend? I'll start.](https://www.reddit.com/r/androiddev/comments/is6t91/which_blogs_can_you_recommend_ill_start/)
+- url: https://www.reddit.com/r/androiddev/comments/is6t91/which_blogs_can_you_recommend_ill_start/
+---
+I am always on the hunt to grow my feed reader. Which Android &amp; Kotlin related blogs are you following and recommending? Below are my currently subscribed blogs. I marked blogs which I can highly recommend with an '(!)'.
+
+I am also following every Android related article on Medium but that can be overwhelming. Any better way to get notified about high quality Medium posts?
+
+Companies:
+
+* [Android Developers Blog](https://android-developers.googleblog.com/) (!)
+* [Android Studio Release Notes](https://androidstudio.googleblog.com/) (!)
+* [Jet Brains](https://blog.jetbrains.com/) (There is an RSS Feed for only Kotlin related articles) (!)
+* [Firebase](https://firebase.googleblog.com/)
+* [Ray Wenderlich](https://www.raywenderlich.com/library?domain_ids%5B%5D=2)
+
+Individuals:
+
+* [CommonsWare](https://commonsware.com/blog) \- Mark Murphy (!)
+* [Styling Android](https://blog.stylingandroid.com/) \- Mark Allison (!)
+* [Android Design Patterns](https://www.androiddesignpatterns.com/) \- Alex Lockwood (!)
+* [Antonio Leiva](https://antonioleiva.com/)
+* [Jake Wharton](https://jakewharton.com/)
+* [Philipp Hauer](https://phauer.com/) (!)
+* [Chris Banes](https://chris.banes.dev/)
+* [Dan Lew](https://blog.danlew.net/)
+* [Philippe Breault](http://www.developerphil.com/renaming-your-gradle-build-files/)
+* [Hellsoft](https://www.hellsoft.se/) \- Erik Hellman
+* [Jeroen Mols](https://jeroenmols.com/)
+* [Joe Birch](https://joebirch.co/)
+* [Kaushik Gopal](https://blog.jkl.gg/)
+* [Lord Codes](https://www.lordcodes.com/android/) \- Andrew Lord
+* [Nicola Corti](https://ncorti.com/)
+* [Philosophical Hacker](https://www.philosophicalhacker.com/) \- Matt Dupree
+* [Tech Your Chances](https://www.techyourchance.com/) \- Vasiliy Zukanov
+## [8][Grid list with LazyColumnFor in Jetpack Compose](https://www.reddit.com/r/androiddev/comments/isi643/grid_list_with_lazycolumnfor_in_jetpack_compose/)
+- url: https://www.reddit.com/r/androiddev/comments/isi643/grid_list_with_lazycolumnfor_in_jetpack_compose/
+---
+I guess a composable for grid lists like LazyColumnFor or LazyRowFor isn't available (yet).
+
+As a workaround, I'm splitting the list into sublists for each row:
+
+    @Composable
+    fun CharactersList(
+        items: List&lt;Character&gt; = listOf(),
+        cols: Int = 3
+    ) {
+        val chunkedList = items.chunked(cols)
+        LazyColumnFor(items = chunkedList) {
+            Row {
+                for(character in it) {
+                    CharacterItem(character, Modifier.weight(1f))
+                }
+            }
+        }
+    }
+
+&amp;#x200B;
+
+https://preview.redd.it/klkq9swb93n51.png?width=356&amp;format=png&amp;auto=webp&amp;s=439ea3a59646d47717cb56b463907f3e81d57ccc
+
+What do you guys think about this? Is there any other (better) way?
+## [9][Need help theming big project](https://www.reddit.com/r/androiddev/comments/ishv4b/need_help_theming_big_project/)
+- url: https://www.reddit.com/r/androiddev/comments/ishv4b/need_help_theming_big_project/
+---
+Can you tell me good approach to theme big projects?
+
+I have "ui kit" gradle module with a lot of custom views. Views and resources from "ui kit" are used in other library/app modules. I want to make "ui kit" styleable — each app should be able to specify its own color scheme for "ui kit", which will then be applied to all ui-kit-dependent modules.
+
+The only solution I know — convert values into attr-references and specify values for them right in app theme of each app. But I see a lot of disadvantages here:
+
+1. I want to customize many of views independently — so there will be hundreds of references without any structural organization
+2. I have to add all these hundreds of references right inside each app theme file, or app will crash saying that attr has no value
+3. I can't set default value for each reference
+4. I can't reuse one color-scheme in different apps — only copy-paste values again and again
+
+What I really need is:
+
+* define all attributes inside something like my color scheme (R.style.MyLibTheme)
+* create multiple color-schemes right in "ui kit" module (R.style.MyLibTheme.X, R.style.MyLibTheme.Y, ...)
+* in each app theme I add only 1 xml line - color scheme "ui kit" should use (&lt;item name="myLibTheme"&gt;@style/MyLibTheme.Y&lt;/item&gt;)
+
+But I don't know how to do it. If I specify attr value in app theme, I can access it easily in XML via "?myAttrName". If I put attr value inside my custom style, I won't able to access it (I can't call "?myLibTheme/myAttrName". There are a lot of other things I also don't know how to do to implement it
+## [10][Using LiveData in MVP?](https://www.reddit.com/r/androiddev/comments/ishp3p/using_livedata_in_mvp/)
+- url: https://www.reddit.com/r/androiddev/comments/ishp3p/using_livedata_in_mvp/
+---
+It's clear that LiveData works amazingly with MVVM, but are there any interesting use cases for LiveData with MVP? I'd be interested to know.
+
+Also curious to know if LiveData particularly shines in any other architectural patterns
+## [11][Exploring Jetpack Compose: Padding Modifier](https://www.reddit.com/r/androiddev/comments/irupem/exploring_jetpack_compose_padding_modifier/)
 - url: https://joebirch.co/android/exporing-jetpack-compose-padding-modifier/
 ---
 
-## [5][DataStore Preferences and migrating from SharedPreferences](https://www.reddit.com/r/androiddev/comments/irlke8/datastore_preferences_and_migrating_from/)
-- url: https://www.rockandnull.com/jetpack-datastore/
+## [12][How do you improve &amp; optimize upgrade/subscription conversions in your apps?](https://www.reddit.com/r/androiddev/comments/is4of1/how_do_you_improve_optimize_upgradesubscription/)
+- url: https://www.reddit.com/r/androiddev/comments/is4of1/how_do_you_improve_optimize_upgradesubscription/
 ---
+Hey, r/androiddev!
 
-## [6][Lint to check new lib versions even with kotlin-dsl on gradle](https://www.reddit.com/r/androiddev/comments/irv7o5/lint_to_check_new_lib_versions_even_with/)
-- url: https://github.com/PicPay/version-checker-gradle-lint
----
+I'm wondering what other devs do to optimize their freemium/subscription service upgrade pages &amp; experiences.
 
-## [7][Part 2: Proto DataStore - Hello DataStore, Bye SharedPreferences](https://www.reddit.com/r/androiddev/comments/irdcyx/part_2_proto_datastore_hello_datastore_bye/)
-- url: https://medium.com/scalereal/hello-datastore-bye-sharedpreferences-android-part-2-proto-datastore-2716fbfd4783
----
+I have an app with a freemium model. I relaunched it recently and with that, I've re-done my freemium upgrade screen. I also made it more obvious through the app as to what features require the premium upgrade.  Conversion has increased slightly, but not as much as I had originally expected.
 
-## [8][6 — 12 September Android Newsletter](https://www.reddit.com/r/androiddev/comments/irvw23/6_12_september_android_newsletter/)
-- url: https://www.reddit.com/r/androiddev/comments/irvw23/6_12_september_android_newsletter/
----
-Stay up to date with Android development, in this week's edition:  
-🏗️ Prepare your app for Android 11   
-🧪 Try Jetpack Compose   
-💾 Explore Proto DataStore   
-🔑 Secure your app with modern tools
+I'd hope to not completely re-design my experience, but rather A/B test or experiment on different approaches. 
 
-and much more!
-
-🔥 Featuring [@suspendfunction](https://twitter.com/suspendfunction) [@imShreyasPatil](https://twitter.com/imShreyasPatil) [@deniskrrr](https://twitter.com/deniskrrr) [@SumargoErick](https://twitter.com/SumargoErick) [@appedus](https://twitter.com/appedus) [@AnupAmmanavar](https://twitter.com/AnupAmmanavar) [@elye\_project](https://twitter.com/elye_project)
-
-💚 Enjoy [https://vladsonkin.com/android-newsletter-11/](https://vladsonkin.com/android-newsletter-11/)
-## [9][I'm teaching the Android intro class at Stanford- what's missing from this Android Studio 4.0 walkthrough?](https://www.reddit.com/r/androiddev/comments/irt8fp/im_teaching_the_android_intro_class_at_stanford/)
-- url: https://youtu.be/4M0hNugPJV8
----
-
-## [10][HarmonyOS Developer Site](https://www.reddit.com/r/androiddev/comments/irv7kd/harmonyos_developer_site/)
-- url: https://developer.harmonyos.com/en/home
----
-
-## [11][I've imported these files into android studio. Where should I look to update the domain name that is recently changed, so it updates in app?](https://www.reddit.com/r/androiddev/comments/irxtnp/ive_imported_these_files_into_android_studio/)
-- url: https://i.redd.it/ucil6x2sxwm51.jpg
----
-
-## [12][Android equivalent to Reality Composer?](https://www.reddit.com/r/androiddev/comments/iru7lt/android_equivalent_to_reality_composer/)
-- url: https://www.reddit.com/r/androiddev/comments/iru7lt/android_equivalent_to_reality_composer/
----
-Hey all. Working heavily with GLB GLTF and USDZ for Web AR developement.
-I found reality composer to be incredible for certain functions that I literally cannot seem to do with android 
-Anyone know of similar functionality to reality composer for android?!?!
-
-Edit: added web ar specific. 
-This is for web ar development.
+Would love to discuss what you've done to improve your conversions.

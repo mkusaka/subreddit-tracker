@@ -5,99 +5,123 @@
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [2][Introducing Rome: A linter for JavaScript and TypeScript.](https://www.reddit.com/r/javascript/comments/iru0l8/introducing_rome_a_linter_for_javascript_and/)
-- url: https://romefrontend.dev/blog/2020/08/08/introducing-rome.html
+## [2][Your /r/javascript recap for the week of September 07 - September 13](https://www.reddit.com/r/javascript/comments/ishet8/your_rjavascript_recap_for_the_week_of_september/)
+- url: https://www.reddit.com/r/javascript/comments/ishet8/your_rjavascript_recap_for_the_week_of_september/
+---
+**Monday, September 07 - Sunday, September 13**
+
+###Top Posts
+
+| score | comments | title &amp; link |
+|--|--|--|
+| 304  | [13 comments](https://www.reddit.com/r/javascript/comments/ipcxea/learn_about_common_performance_issues_with/) | [Learn about common performance issues with front-end JavaScript, and how to detect and fix them.](https://www.debugbear.com/blog/front-end-javascript-performance)|
+| 288  | [29 comments](https://www.reddit.com/r/javascript/comments/iqwcbj/i_made_a_farming_simulator_with_vanilla/) | [I made a farming simulator with Vanilla JavaScript for a hackathon](https://farming-sim.uzairashraf.dev/)|
+| 257  | [104 comments](https://www.reddit.com/r/javascript/comments/iow8w4/theres_a_new_decorator_proposal_and_it_seems_like/) | [There's a new decorator proposal and it seems like it's scheduled to be discussed by TC39 in the September 2020 meeting.](https://github.com/tc39/proposal-decorators/blob/simplified/README.md)|
+| 240  | [66 comments](https://www.reddit.com/r/javascript/comments/iq5p06/i_created_a_0_runtime_css_in_js_library_that/) | [I created a 0 runtime CSS in JS library that compiles away. Inspired by facebook's unreleased library](https://github.com/hydrophobefireman/catom)|
+| 203  | [24 comments](https://www.reddit.com/r/javascript/comments/irzj9w/most_common_security_vulnerabilities_using/) | [Most Common Security Vulnerabilities Using JavaScript](https://www.securecoding.com/most-common-security-vulnerabilities-using-javascript/)|
+| 187  | [14 comments](https://www.reddit.com/r/javascript/comments/iqjwzw/an_article_i_wrote_on_asynchronous_javascript_the/) | [An article I wrote on asynchronous JavaScript: the event loop, callbacks, promises, and async/await](https://www.taniarascia.com/asynchronous-javascript-event-loop-callbacks-promises-async-await/)|
+| 176  | [8 comments](https://www.reddit.com/r/javascript/comments/ioax2m/flexbox_spec_for_threejs_and_react_for_aligned/) | [Flexbox spec for Three.js and React, for aligned, responsive WebGL content](https://github.com/react-spring/react-three-flex)|
+| 148  | [29 comments](https://www.reddit.com/r/javascript/comments/ipg1cp/rewriting_facebooks_recoil_react_library_from/) | [Rewriting Facebook's "Recoil" React library from scratch in 100 lines](https://bennetthardwick.com/blog/recoil-js-clone-from-scratch-in-100-lines/)|
+| 122  | [33 comments](https://www.reddit.com/r/javascript/comments/iqa30z/visual_studio_code_august_2020/) | [Visual Studio Code August 2020](https://code.visualstudio.com/updates/v1_49)|
+| 122  | [16 comments](https://www.reddit.com/r/javascript/comments/iqpbjx/natively_format_javascript_numbers/) | [Natively Format JavaScript Numbers](https://elijahmanor.com/blog/format-js-numbers)|
+
+
+
+
+&amp;nbsp;
+
+###Most Commented Posts
+
+| score | comments | title &amp; link |
+|--|--|--|
+| 108  | [60 comments](https://www.reddit.com/r/javascript/comments/ira5gz/askjs_do_you_use_exact_or_range_versions_for_your/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Do you use exact or range versions for your dependencies?|
+| 84  | [34 comments](/r/javascript/comments/irly2m/askjs_what_classless_libraryrepos_code_you_like/) | `[AskJS]` &amp;#91;AskJS&amp;#93; What classless library/repo's code you like because of its clean and readable code?|
+| 0  | [28 comments](https://www.reddit.com/r/javascript/comments/ior3ca/askjs_to_those_who_swear_against_oo_programming/) | [&amp;#91;AskJS&amp;#93; To those who swear against OO programming, give me an example of dependency injection or a pattern that achieves the same goals](/r/learnjavascript/comments/inah6q/to_those_who_swear_against_oo_programming_give_me/)|
+| 45  | [25 comments](https://www.reddit.com/r/javascript/comments/ipwtxr/monadic_error_handling_for_typescript/) | [Monadic error handling for TypeScript](https://www.npmjs.com/package/amonad)|
+| 79  | [22 comments](https://www.reddit.com/r/javascript/comments/io52nj/typing_react_context_to_avoid_an_undefined/) | [Typing React Context to avoid an undefined default value](https://medium.com/@rivoltafilippo/typing-react-context-to-avoid-an-undefined-default-value-2c7c5a7d5947)|
+
+
+
+
+&amp;nbsp;
+
+###Top Ask JS
+
+| score | comments | title &amp; link |
+|--|--|--|
+| 15  | [4 comments](https://www.reddit.com/r/javascript/comments/io4re3/askjs_what_are_good_ways_to_get_commercial/) | `[AskJS]` &amp;#91;AskJS&amp;#93; what are good ways to get commercial experience?|
+| 6  | [2 comments](https://www.reddit.com/r/javascript/comments/irv263/askjs_how_would_you_go_about_creating_javascript/) | `[AskJS]` &amp;#91;AskJS&amp;#93; How would you go about creating javascript code into ASCII art?|
+| 3  | [8 comments](https://www.reddit.com/r/javascript/comments/iqgz0z/askjs_why_you_prefer_to_program_in_javascript/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Why you prefer to program in Javascript over another programming languge C#, JAVA, C++, PYTHON etc and do you believe the language has evolved on the right path compared the good old days 1995-2010 ?|
+
+
+
+
+&amp;nbsp;
+
+###Top Showoffs
+
+| score  |  comment  |
+|--|--|
+| 8  |  /u/mburakerman said [🎮 📓 I made a game controller using tensorflow.js webcam transfer learning.  📹 &amp;#91;https://github.com/mburakerman/tensorflowjs-webcam-transfer-learning#--preview&amp;#93;&amp;#40;https://github.com/mburakerma...](/r/javascript/comments/irb676/showoff_saturday_september_12_2020/g4xe7pg/?context=5) |
+| 5  |  /u/zaygo said [Zelta : A secure and feature rich messaging service for the terminal  &amp;#91;https://www.zelta.gq&amp;#93;&amp;#40;https://www.zelta.gq&amp;#41;](/r/javascript/comments/irb676/showoff_saturday_september_12_2020/g4xxv26/?context=5) |
+| 3  |  /u/thisisreallyjofrank said [ I made a fun game to share with your team/friends - Depict-It! &amp;#91;https://depictit.ably.dev/&amp;#93;&amp;#40;https://depictit.ably.dev/&amp;#41;   It is an online multiplayer game where you draw from a prompt...](/r/javascript/comments/imzsna/showoff_saturday_september_05_2020/g4t92nv/?context=5) |
+
+
+
+
+&amp;nbsp;
+
+###Top Comments
+
+| score  |  comment  |
+|--|--|
+| 138  |  /u/elgordio said [Given the negativity of other commenters in  this thread I’ll just say I enjoy using VS Code every day and very much appreciate the effort all the contributors make.](/r/javascript/comments/iqa30z/visual_studio_code_august_2020/g4rev55/?context=5) |
+| 96  |  /u/license-bot said [Thanks for sharing your open source project, but it looks like you haven't specified a license.  &gt; When you make a creative work &amp;#40;which includes code&amp;#41;, the work is under exclusive copyright by...](/r/javascript/comments/iq5p06/i_created_a_0_runtime_css_in_js_library_that/g4p4ahs/?context=5) |
+| 84  |  /u/ILikeChangingMyMind said [Great news ... for the five people who still think complex class stuff is the best way to write good JS code ;-&amp;#41;  Yes, *of course* I'm being hyperbolic: *of course* it's a heck of a lot more than ...](/r/javascript/comments/iow8w4/theres_a_new_decorator_proposal_and_it_seems_like/g4gb8kr/?context=5) |
+| 84  |  /u/Spongeroberto said [Exact.   I am sick and tired of packages having a new minor release that breaks something - usually the build still works and you only notice it after deploy, and the devs never notice it because loca...](/r/javascript/comments/ira5gz/askjs_do_you_use_exact_or_range_versions_for_your/g4x3fzu/?context=5) |
+| 53  |  /u/MrStLouis said [Everyone in the comments has never used nestjs or angular](/r/javascript/comments/iow8w4/theres_a_new_decorator_proposal_and_it_seems_like/g4ggurz/?context=5) |
+
+
+
+
+&amp;nbsp;
+## [3][6 open source repos to develop easily installable JSX components](https://www.reddit.com/r/javascript/comments/ishmy3/6_open_source_repos_to_develop_easily_installable/)
+- url: https://medium.com/@chris.czopp/6-open-source-repos-to-develop-easily-installable-jsx-components-ca8543230a
 ---
 
-## [3][I built a PWA to open WhatsApp chat without saving their contact first (it is painful for us to save contact just so that we can send a WhatsApp to another person)](https://www.reddit.com/r/javascript/comments/irrez7/i_built_a_pwa_to_open_whatsapp_chat_without/)
-- url: http://whatsapp-anyone.netlify.com
+## [4][Most Common Security Vulnerabilities Using JavaScript](https://www.reddit.com/r/javascript/comments/irzj9w/most_common_security_vulnerabilities_using/)
+- url: https://www.securecoding.com/most-common-security-vulnerabilities-using-javascript/
 ---
 
-## [4][[AskJS] What classless library/repo's code you like because of its clean and readable code?](https://www.reddit.com/r/javascript/comments/irly2m/askjs_what_classless_libraryrepos_code_you_like/)
-- url: https://www.reddit.com/r/javascript/comments/irly2m/askjs_what_classless_libraryrepos_code_you_like/
----
-I have never been a fan of classes and some other OOP concepts. I am trying to find the right balance between FP and OOP. I'm an expert at none of them :)
-
-It is hard to find good examples or real applications of JS, as it's a very flexible language and easy to make a mess with it. What are good examples of that I can read? (no huge libraries if possible)
-## [5][How To Build A Twitter Clone With NestJS, Prisma And React ( Part 1 )](https://www.reddit.com/r/javascript/comments/irvu03/how_to_build_a_twitter_clone_with_nestjs_prisma/)
-- url: https://dev.to/darioielardi/how-to-build-a-twitter-clone-with-nestjs-prisma-and-react-part-1-lgd
+## [5][জাভাস্ক্রিপ্ট — var, let, const](https://www.reddit.com/r/javascript/comments/iskucm/জভসকরপট_var_let_const/)
+- url: https://dev.to/bipon68/var-let-const-4f3j
 ---
 
-## [6][A little bit of plain Javascript can do a lot](https://www.reddit.com/r/javascript/comments/irxy37/a_little_bit_of_plain_javascript_can_do_a_lot/)
-- url: https://jvns.ca/blog/2020/06/19/a-little-bit-of-plain-javascript-can-do-a-lot/
+## [6][Question on Prototypal Inheritance, if B is derives from A, what can't b(instance of B) call methodDeclaredInA?](https://www.reddit.com/r/javascript/comments/isg6xa/question_on_prototypal_inheritance_if_b_is/)
+- url: https://stackoverflow.com/q/63877924/6897265
 ---
 
-## [7][CyberCode Online; I made a discreet MMORPG game that disguises as VS Code](https://www.reddit.com/r/javascript/comments/irg78z/cybercode_online_i_made_a_discreet_mmorpg_game/)
-- url: https://cybercodeonline.com/
+## [7][I made a Next.js-inspired Node.js framework for GraphQL APIs that allows you to create new APIs purely from schema definition files in minutes](https://www.reddit.com/r/javascript/comments/iskhks/i_made_a_nextjsinspired_nodejs_framework_for/)
+- url: https://github.com/yamalight/graffiti/
 ---
 
-## [8][[AskJS] How would you go about creating javascript code into ASCII art?](https://www.reddit.com/r/javascript/comments/irv263/askjs_how_would_you_go_about_creating_javascript/)
-- url: https://www.reddit.com/r/javascript/comments/irv263/askjs_how_would_you_go_about_creating_javascript/
+## [8][colvertize - a library to conveniently convert between (CSS-)colors](https://www.reddit.com/r/javascript/comments/isk908/colvertize_a_library_to_conveniently_convert/)
+- url: https://github.com/Philipp-M/colvertize
 ---
-For example i have seen this been done in C
 
-    #  include&lt;stdio.h&gt;//  .IOCCC                                         Fluid-  #
-    #  include &lt;unistd.h&gt;  //2012                                         _Sim!_  #
-    #  include&lt;complex.h&gt;  //||||                     ,____.              IOCCC-  #
-    #  define              h for(                     x=011;              2012/*  #
-    #  */-1&gt;x              ++;)b[                     x]//-'              winner  #
-    #  define              f(p,e)                                         for(/*  #
-    #  */p=a;              e,p&lt;r;                                        p+=5)//  #
-    #  define              z(e,i)                                        f(p,p/*  #
-    ## */[i]=e)f(q,w=cabs  (d=*p-  *q)/2-     1)if(0  &lt;(x=1-      w))p[i]+=w*/// ##
-       double complex a [  97687]  ,*p,*q     ,*r=a,  w=0,d;    int x,y;char b/* ##
-    ## */[6856]="\x1b[2J"  "\x1b"  "[1;1H     ", *o=  b, *t;   int main   (){/** ##
-    ## */for(              ;0&lt;(x=  getc (     stdin)  );)w=x  &gt;10?32&lt;     x?4[/* ##
-    ## */*r++              =w,r]=  w+1,*r     =r[5]=  x==35,  r+=9:0      ,w-I/* ##
-    ## */:(x=              w+2);;  for(;;     puts(o  ),o=b+  4){z(p      [1]*/* ##
-    ## */9,2)              w;z(G,  3)(d*(     3-p[2]  -q[2])  *P+p[4      ]*V-/* ##
-    ## */q[4]              *V)/p[  2];h=0     ;f(p,(  t=b+10  +(x=*p      *I)+/* ##
-    ## */80*(              y=*p/2  ),*p+=p    [4]+=p  [3]/10  *!p[1])     )x=0/* ##
-    ## */ &lt;=x              &amp;&amp;x&lt;79   &amp;&amp;0&lt;=y&amp;&amp;y&lt;23?1[1  [*t|=8   ,t]|=4,t+=80]=1/* ##
-    ## */, *t              |=2:0;    h=" '`-.|//,\\"  "|\\_"    "\\/\x23\n"[x/** ##
-    ## */%80-              9?x[b]      :16];;usleep(  12321)      ;}return 0;}/* ##
-    ####                                                                       ####
-    ###############################################################################
-    **###########################################################################*/Y
-
-And im pretty sure you can do it in JavaScript. i tried using figlet to generate ASCII art then replacing the characters but it just doesn't seem to be working. i found a 5 year old project which is in clojure but cant get it running too ([https://github.com/asivokon/harnocode](https://github.com/asivokon/harnocode)) This is more of a puzzle kinda thing :P
-## [9][[AskJS] A huge problem with .offsetTop](https://www.reddit.com/r/javascript/comments/irx0mx/askjs_a_huge_problem_with_offsettop/)
-- url: https://www.reddit.com/r/javascript/comments/irx0mx/askjs_a_huge_problem_with_offsettop/
+## [9][Emotion controls for the web](https://www.reddit.com/r/javascript/comments/isjnan/emotion_controls_for_the_web/)
+- url: https://dev.to/vivirenremoto/emotion-controls-for-the-web-3ja3
 ---
-So I know that without a positioned ancestor, .offsetTop is measured from the top of the &lt;body&gt; element. 
 
-I am trying to to slide in elements when they are half shown with JavaScript. 
-
-So the Javascript code calculates how far the image is from the top of the window and if the image is half shown, a CSS class is applied to the element.
-
-But, since the parent element of the image (footer) is set to position:relative the offsetTop doesn't work anymore.
-
-The code looks like this
-
-    const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
-    const imageBottom = sliderImage.offsetTop + sliderImage.height;   
-    const isHalfShown = slideInAt &gt; sliderImage.offsetTop;   
-    const isNotScrolledPast = window.scrollY &lt; imageBottom;  
-
-    if (isHalfShown &amp;&amp; isNotScrolledPast) {
-      sliderImage.classList.add('active');
-    } else {
-      sliderImage.classList.remove('active');
-    }
-
-Here is the real life example: https://bluishbanana.github.io/
-
-Any ideas how to solve that?
-## [10][[AskJS] Do you use exact or range versions for your dependencies?](https://www.reddit.com/r/javascript/comments/ira5gz/askjs_do_you_use_exact_or_range_versions_for_your/)
-- url: https://www.reddit.com/r/javascript/comments/ira5gz/askjs_do_you_use_exact_or_range_versions_for_your/
+## [10][maze_generator: A JavaScript module I made for generating, solving and displaying mazes](https://www.reddit.com/r/javascript/comments/is2uxn/maze_generator_a_javascript_module_i_made_for/)
+- url: https://github.com/TheWizardBear/maze_generator
 ---
-I just wanted to to have a discussion about how you guys mange your dependencies in package.json
 
-I know that a lot of people just use the range operator \^ which is what npm uses by default.  
-I  personally don't like it and use exact instead. I have been burned in the past by packages not following semver and breaking their libraries  in minor updates.
+## [11][Dyne - A small node express framework writtern in typescript](https://www.reddit.com/r/javascript/comments/ishwaq/dyne_a_small_node_express_framework_writtern_in/)
+- url: https://github.com/dynejs/dyne
+---
 
-What do you use in your projects? What are your thoughts ?
-## [11][JavaScript alert on close tab](https://www.reddit.com/r/javascript/comments/irwd4e/javascript_alert_on_close_tab/)
-- url: https://www.foxinfotech.in/2020/09/javascript-on-close-tab-show-warning-message.html
+## [12][Functional Programming in JS, part I - Composition (Currying, Lodash and Ramda)](https://www.reddit.com/r/javascript/comments/irzbll/functional_programming_in_js_part_i_composition/)
+- url: https://dev.to/mpodlasin/functional-programming-in-js-part-i-composition-currying-lodash-and-ramda-1ohb
 ---
 

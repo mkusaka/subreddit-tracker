@@ -85,82 +85,60 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][I just published another vscode extension that allows you to search through 20+ free icon sets and paste them into your code all within the editor.](https://www.reddit.com/r/reactjs/comments/irs96o/i_just_published_another_vscode_extension_that/)
+## [3][Is anyone else’s Typescript Intellisense on VS Code really slow?](https://www.reddit.com/r/reactjs/comments/isdgfk/is_anyone_elses_typescript_intellisense_on_vs/)
+- url: https://www.reddit.com/r/reactjs/comments/isdgfk/is_anyone_elses_typescript_intellisense_on_vs/
+---
+It’s more noticeable when I’m in files longer than 100 lines but that’s pretty damn common. Usually takes VS Code between 10-15 seconds to complete the Intellisense check. Any fixes?
+## [4][My first MERN project!!!](https://www.reddit.com/r/reactjs/comments/isklgf/my_first_mern_project/)
+- url: https://v.redd.it/j0bpn7z454n51
+---
+
+## [5][React Project Continuous Deployment with GitHub and AWS](https://www.reddit.com/r/reactjs/comments/isa1gd/react_project_continuous_deployment_with_github/)
+- url: https://czetsuya-tech.blogspot.com/2020/08/react-project-continuous-deployment-with-github-and-aws.html.html
+---
+
+## [6][I just published another vscode extension that allows you to search through 20+ free icon sets and paste them into your code all within the editor.](https://www.reddit.com/r/reactjs/comments/irs96o/i_just_published_another_vscode_extension_that/)
 - url: https://v.redd.it/c7vkbsarlum51
 ---
 
-## [4][Serverless Video Chat App using Firebase and WebRTC in React](https://www.reddit.com/r/reactjs/comments/iraa9e/serverless_video_chat_app_using_firebase_and/)
-- url: https://www.youtube.com/watch?v=-d45WHNU9J4&amp;feature=share
+## [7][Pushing to Github screws up indentation of template literals being used in React project in VSCode. Please help!](https://www.reddit.com/r/reactjs/comments/ise9ji/pushing_to_github_screws_up_indentation_of/)
+- url: https://www.reddit.com/r/reactjs/comments/ise9ji/pushing_to_github_screws_up_indentation_of/
+---
+I'm using TailwindCSS in this particular project. To organize my classes, I use template literals in the classNames tag and logically split up CSS properties on each line. It looks fine in VSCode ([https://imgur.com/a/y8e1nFj](https://imgur.com/a/y8e1nFj)), but when I commit to my code to Github the indentation gets messed up badly ([https://imgur.com/a/8mUwn6U](https://imgur.com/a/8mUwn6U)).
+
+I've been pulling my hair out trying to solve this issue. Please help me out. Any feedback would be greatly appreciated!
+## [8][Live Wednesday - Making React Native Fast With Hermes. Bring your questions!](https://www.reddit.com/r/reactjs/comments/iskjw5/live_wednesday_making_react_native_fast_with/)
+- url: https://www.reddit.com/r/reactjs/comments/iskjw5/live_wednesday_making_react_native_fast_with/
+---
+ On this episode we’ll chat with Ram ([@nparashuram](https://twitter.com/nparashuram)) and team from Facebook. Ram is an engineering manager on Oculus, where he works on the React Native companion app, and on the headset itself, using React VR.
+
+As part of that work, Ram gets to play with [Hermes](https://github.com/facebook/hermes), the JavaScript engine designed to help React Native apps start up fast. We plan on asking Parashuram important questions, like “Is working on VR as awesome as it sounds?”, and, “How can I be cool like you when I grow up?” We’ll probably ask questions about Hermes too.  
+
+
+The format is interview-style with show and tell. Get a calendar invite or join the broadcast here: 
+
+[https://www.telerik.com/react-wednesdays](https://www.telerik.com/react-wednesdays)
+## [9][Lightweight, Modern React.js Setup for GraphQL using Vite and urql](https://www.reddit.com/r/reactjs/comments/iskjbz/lightweight_modern_reactjs_setup_for_graphql/)
+- url: https://zaiste.net/posts/modern-lightweight-reactjs-setup-graphql-vite-urql/
 ---
 
-## [5][How can I run an API call AFTER the results from my useSelector() hook?](https://www.reddit.com/r/reactjs/comments/iry5hs/how_can_i_run_an_api_call_after_the_results_from/)
-- url: https://www.reddit.com/r/reactjs/comments/iry5hs/how_can_i_run_an_api_call_after_the_results_from/
+## [10][Is Electron still the go-to for desktop apps?](https://www.reddit.com/r/reactjs/comments/is3v8d/is_electron_still_the_goto_for_desktop_apps/)
+- url: https://www.reddit.com/r/reactjs/comments/is3v8d/is_electron_still_the_goto_for_desktop_apps/
 ---
-I am trying to use some data that will come from my `useSelector()`  
- hook in a network API call. However, with the code below, I get the error `TypeError: cannot read property 'query' of undefined.`
+(I know this kind of question is asked frequently, so I apologize for potentially asking something redundant. It's just that everything seems to change so quickly, and I realize even resources from six months ago could be stale. I really don't know what I'm doing when it comes to translating a React app to desktop, so I figured the best thing to do was ask people with more experience.)
 
-I understand this is because the query has not come back from the `useSelector()`  
- yet. Is there a way I can wait for that data THEN call the API?
+Anyway, I ran into a problem with a project yesterday and realized I'm not going to be able to run it as a browser app. This is because I need to use certain reserved keyboard shortcuts, and there's no way to prevent the browser from responding to them.
 
-`const pageContent = useSelector(getPageContent);`
-
-  
-`useEffect(() =&gt; {`  
-`axios`  
-`.get('https://www.googleapis.com/youtube/v3/search', {\`  
-`params: {`  
-`key: process.env.API_KEY,`  
-`part: 'snippet',`  
-`type: 'video',`  
-`q: pageContent.data.query,`  
-`},`  
-`})`  
-`.then((res) =&gt; res)`  
-`.then((data) =&gt; console.log(data));`  
-`}, []);`
-## [6][Would you use useMemo for memoizing components?](https://www.reddit.com/r/reactjs/comments/irxtsd/would_you_use_usememo_for_memoizing_components/)
-- url: https://www.reddit.com/r/reactjs/comments/irxtsd/would_you_use_usememo_for_memoizing_components/
+I was going to just make the app normally then bring Electron in. Is that going to work? Or is there something else I should use? Would I have significant difficulties modifying it for desktop, or can I just carry on and plan to move forward as a regular React app for now?
+## [11][My First React App](https://www.reddit.com/r/reactjs/comments/isie5c/my_first_react_app/)
+- url: https://www.reddit.com/r/reactjs/comments/isie5c/my_first_react_app/
 ---
-I saw in a project I am working on a use of useMemo for a small (a potential additional icon) component within a larger component. Is it something you would do? Is it a common?
-## [7][Help with react-testing-library and Firebase](https://www.reddit.com/r/reactjs/comments/irxobp/help_with_reacttestinglibrary_and_firebase/)
-- url: https://www.reddit.com/r/reactjs/comments/irxobp/help_with_reacttestinglibrary_and_firebase/
----
-*tl;dr*: How do I mock firebase(initializeApp, auth, etc) using jest and react-testing-library
+Hello everyone. I am looking for feedback on my first ever React app. It is a simple meditation journal I use everyday and uses Firebase for authentication and the database. Any kind of feedback would be greatly appreciated. Thanks.
 
-I'm creating a form component that uses firebase to authenticate a user, either using email-password or google. I'm trying to test the component but can't mock firebase(don't know how, tbh). Can someone please help me? How do I mock firebase(initializeApp, auth, etc) using jest and react-testing-library?
+Live demo: [http://meditation-journal-app.herokuapp.com/dashboard](http://meditation-journal-app.herokuapp.com/dashboard)
 
-For example, how do I check if `firebase.initializeApp()` is called by my component on mount, using jest and react-testing-library?
-
-Also, what are some good resources that i can use to learn jest and react-testing-library.
-## [8][What do I do?](https://www.reddit.com/r/reactjs/comments/irnkiy/what_do_i_do/)
-- url: https://www.reddit.com/r/reactjs/comments/irnkiy/what_do_i_do/
----
-Hello everyone. hope anyone can give me some advice or guide me.
-
-I'm an engineer student and decided to start programming on my own because yes, I got a lot of logic thinking on my career but I was missing a lot of new tech that jobs are looking for to apply.
-
-I have some background with Visual Basic (my first programming language when I was a teenager) , C++, Java and C where I learned the fundamentals about it and now I'm focused with Javascript and React (MERN) / React Native because I love how it works. I have been doing FreeCodeCamp (1800hs done), Udemy, TreeHouse, Scrimba, SoloLearn and even more among free and paid courses but I feel like I need to get my hands on real projects. I have my github (It's growing and I feel very proud of the green dots showing) where I upload my practices and some apps that I made and I try to work everyday because despite all, I enjoy programming.
-
-And here comes my question.. how to get a job where my skills can be used? I mean, I find all job offers looking for Senior developers and if they are for Jr developers, they ask for 2 years of experience and even more... that's crazy.
-
-I'm not giving up because I love to work in the tech field but its kinda frustrating right now.
-## [9][Creating a Custom React Hook: Use Window Size](https://www.reddit.com/r/reactjs/comments/irlpdr/creating_a_custom_react_hook_use_window_size/)
-- url: https://www.youtube.com/watch?v=OHvJqOjToes
----
-
-## [10][I built a SERVERLESS VIDEO CHAT app in REACTJS using WEBRTC and FIREBASE](https://www.reddit.com/r/reactjs/comments/ir7cxa/i_built_a_serverless_video_chat_app_in_reactjs/)
-- url: https://v.redd.it/z8a5iznyrnm51
----
-
-## [11][Using Context with Radio Button](https://www.reddit.com/r/reactjs/comments/irx0we/using_context_with_radio_button/)
-- url: https://www.reddit.com/r/reactjs/comments/irx0we/using_context_with_radio_button/
----
-I am trying to set context on a category react component using the context API, which occurs when a radio button is checked. Whenever I click, nothing is happening. I want the radio button to remember the previously checked item when the component is unmounted. Am i doing something wrong?
-
-[https://imgur.com/a/Ea1dWAl](https://imgur.com/a/Ea1dWAl)
-
-The other styles are Checkmark which is a span, and the Container is a label. Thanks in advance.
-## [12][Covid-19 Map: Complete Tutorial using react leaflet, hooks and bootstrap - Choropleth map](https://www.reddit.com/r/reactjs/comments/irkvxl/covid19_map_complete_tutorial_using_react_leaflet/)
-- url: https://youtu.be/4cliojOu3as
+GitHub repo: [https://github.com/sammacfarlane23/react-meditation-journal](https://github.com/sammacfarlane23/react-meditation-journal)
+## [12][The Open/Closed React Component](https://www.reddit.com/r/reactjs/comments/isibq7/the_openclosed_react_component/)
+- url: https://twitter.com/diegohaz/status/1305450112890662914
 ---
 

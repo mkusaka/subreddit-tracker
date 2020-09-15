@@ -85,60 +85,102 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][Is anyone else’s Typescript Intellisense on VS Code really slow?](https://www.reddit.com/r/reactjs/comments/isdgfk/is_anyone_elses_typescript_intellisense_on_vs/)
-- url: https://www.reddit.com/r/reactjs/comments/isdgfk/is_anyone_elses_typescript_intellisense_on_vs/
+## [3][Made a very complex OS simulator with React](https://www.reddit.com/r/reactjs/comments/it2mls/made_a_very_complex_os_simulator_with_react/)
+- url: https://www.reddit.com/r/reactjs/comments/it2mls/made_a_very_complex_os_simulator_with_react/
 ---
-It’s more noticeable when I’m in files longer than 100 lines but that’s pretty damn common. Usually takes VS Code between 10-15 seconds to complete the Intellisense check. Any fixes?
+[small video demo](https://reddit.com/link/it2mls/video/d1rm37m109n51/player)
+
+Hey fellow Programmers,
+
+This is my first proper post in this community. Bare with me :)
+
+So I have created an OS simulator with react and thinking of the use cases I thought maybe I can make an OS themed interactive resume for myself. It is fully written by myself probably that's why the code is clunky. I would like people to check this out, So Please take a look and let me know what you guys think of this :)
+
+Link of demo : [Click Here](https://rajagopalan-gangadharan.github.io/Portfolio/)
+
+Repo Link: [Click Here](https://github.com/RAJAGOPALAN-GANGADHARAN/JS-OS) (Do give it a star if you like it )
+
+&amp;#x200B;
+
+Show me some ❤ guys...
+
+&amp;#x200B;
+
+P.S. This is just a WIP and I can help any beginners who would love to contribute to the project.
+
+P.P.S. It is not optimized for mobiles yet. Please try this on a PC thanks 😄
 ## [4][My first MERN project!!!](https://www.reddit.com/r/reactjs/comments/isklgf/my_first_mern_project/)
 - url: https://v.redd.it/j0bpn7z454n51
 ---
 
-## [5][React Project Continuous Deployment with GitHub and AWS](https://www.reddit.com/r/reactjs/comments/isa1gd/react_project_continuous_deployment_with_github/)
-- url: https://czetsuya-tech.blogspot.com/2020/08/react-project-continuous-deployment-with-github-and-aws.html.html
+## [5][A framework to build modern API and easily scaffold fully-featured web client in React](https://www.reddit.com/r/reactjs/comments/it6obb/a_framework_to_build_modern_api_and_easily/)
+- url: https://blog.graphqleditor.com/api-platform/
 ---
 
-## [6][I just published another vscode extension that allows you to search through 20+ free icon sets and paste them into your code all within the editor.](https://www.reddit.com/r/reactjs/comments/irs96o/i_just_published_another_vscode_extension_that/)
-- url: https://v.redd.it/c7vkbsarlum51
+## [6][My random recipe manual](https://www.reddit.com/r/reactjs/comments/it2321/my_random_recipe_manual/)
+- url: https://v.redd.it/pnopedqus8n51
 ---
 
-## [7][Pushing to Github screws up indentation of template literals being used in React project in VSCode. Please help!](https://www.reddit.com/r/reactjs/comments/ise9ji/pushing_to_github_screws_up_indentation_of/)
-- url: https://www.reddit.com/r/reactjs/comments/ise9ji/pushing_to_github_screws_up_indentation_of/
----
-I'm using TailwindCSS in this particular project. To organize my classes, I use template literals in the classNames tag and logically split up CSS properties on each line. It looks fine in VSCode ([https://imgur.com/a/y8e1nFj](https://imgur.com/a/y8e1nFj)), but when I commit to my code to Github the indentation gets messed up badly ([https://imgur.com/a/8mUwn6U](https://imgur.com/a/8mUwn6U)).
-
-I've been pulling my hair out trying to solve this issue. Please help me out. Any feedback would be greatly appreciated!
-## [8][Live Wednesday - Making React Native Fast With Hermes. Bring your questions!](https://www.reddit.com/r/reactjs/comments/iskjw5/live_wednesday_making_react_native_fast_with/)
-- url: https://www.reddit.com/r/reactjs/comments/iskjw5/live_wednesday_making_react_native_fast_with/
----
- On this episode we’ll chat with Ram ([@nparashuram](https://twitter.com/nparashuram)) and team from Facebook. Ram is an engineering manager on Oculus, where he works on the React Native companion app, and on the headset itself, using React VR.
-
-As part of that work, Ram gets to play with [Hermes](https://github.com/facebook/hermes), the JavaScript engine designed to help React Native apps start up fast. We plan on asking Parashuram important questions, like “Is working on VR as awesome as it sounds?”, and, “How can I be cool like you when I grow up?” We’ll probably ask questions about Hermes too.  
-
-
-The format is interview-style with show and tell. Get a calendar invite or join the broadcast here: 
-
-[https://www.telerik.com/react-wednesdays](https://www.telerik.com/react-wednesdays)
-## [9][Lightweight, Modern React.js Setup for GraphQL using Vite and urql](https://www.reddit.com/r/reactjs/comments/iskjbz/lightweight_modern_reactjs_setup_for_graphql/)
-- url: https://zaiste.net/posts/modern-lightweight-reactjs-setup-graphql-vite-urql/
+## [7][Why React Keys Matter: An Introduction](https://www.reddit.com/r/reactjs/comments/it4yob/why_react_keys_matter_an_introduction/)
+- url: https://lo-victoria.com/why-react-keys-matter-an-introduction
 ---
 
-## [10][Is Electron still the go-to for desktop apps?](https://www.reddit.com/r/reactjs/comments/is3v8d/is_electron_still_the_goto_for_desktop_apps/)
-- url: https://www.reddit.com/r/reactjs/comments/is3v8d/is_electron_still_the_goto_for_desktop_apps/
----
-(I know this kind of question is asked frequently, so I apologize for potentially asking something redundant. It's just that everything seems to change so quickly, and I realize even resources from six months ago could be stale. I really don't know what I'm doing when it comes to translating a React app to desktop, so I figured the best thing to do was ask people with more experience.)
-
-Anyway, I ran into a problem with a project yesterday and realized I'm not going to be able to run it as a browser app. This is because I need to use certain reserved keyboard shortcuts, and there's no way to prevent the browser from responding to them.
-
-I was going to just make the app normally then bring Electron in. Is that going to work? Or is there something else I should use? Would I have significant difficulties modifying it for desktop, or can I just carry on and plan to move forward as a regular React app for now?
-## [11][My First React App](https://www.reddit.com/r/reactjs/comments/isie5c/my_first_react_app/)
-- url: https://www.reddit.com/r/reactjs/comments/isie5c/my_first_react_app/
----
-Hello everyone. I am looking for feedback on my first ever React app. It is a simple meditation journal I use everyday and uses Firebase for authentication and the database. Any kind of feedback would be greatly appreciated. Thanks.
-
-Live demo: [http://meditation-journal-app.herokuapp.com/dashboard](http://meditation-journal-app.herokuapp.com/dashboard)
-
-GitHub repo: [https://github.com/sammacfarlane23/react-meditation-journal](https://github.com/sammacfarlane23/react-meditation-journal)
-## [12][The Open/Closed React Component](https://www.reddit.com/r/reactjs/comments/isibq7/the_openclosed_react_component/)
-- url: https://twitter.com/diegohaz/status/1305450112890662914
+## [8][Guidelines to improve your React folder structure](https://www.reddit.com/r/reactjs/comments/it81ee/guidelines_to_improve_your_react_folder_structure/)
+- url: https://maxrozen.com/guidelines-improve-react-app-folder-structure/
 ---
 
+## [9][A deep look into React.useImperativeHandle and a real-life example](https://www.reddit.com/r/reactjs/comments/it7i47/a_deep_look_into_reactuseimperativehandle_and_a/)
+- url: http://dev.to/poeticgeek/concrete-example-for-react-useimperativehandle-52l8
+---
+
+## [10][React input tagging/tokens library that supports copy/paste](https://www.reddit.com/r/reactjs/comments/it7dn4/react_input_taggingtokens_library_that_supports/)
+- url: https://www.reddit.com/r/reactjs/comments/it7dn4/react_input_taggingtokens_library_that_supports/
+---
+Does anybody know of a tag/token input library that allows copy-paste?
+
+https://github.com/olahol/react-tagsinput seems to be the most popular lib, but once tags are entered they become impossible to interact with, except to delete them individually. They have [a demo](https://olahol.github.io/react-tagsinput/) for example, and ctrl+a just selects the understanding plain text, shift+left can't select tags, and you can't drag to select them either. That's not enough for my use case, where users are likely to frequently want to copy and paste chunks of the input, and want to ctrl+a then delete to clear the whole lot.
+
+I want to enter a few tags, then press ctrl/cmd+a, ctrl+x (leaving the input entirely empty), ctrl+p, and end up with the tags I started with.
+
+Gmail's email input does this perfectly. Stack overflow's tag input isn't quite as elegant, but effectively makes the same thing work.
+
+Is there a react component anywhere that can do this?
+## [11][Made an I18n lib that automates entire workflow](https://www.reddit.com/r/reactjs/comments/it750n/made_an_i18n_lib_that_automates_entire_workflow/)
+- url: https://www.reddit.com/r/reactjs/comments/it750n/made_an_i18n_lib_that_automates_entire_workflow/
+---
+**GitHub:** [**https://github.com/FallenMax/a18n**](https://github.com/FallenMax/a18n)
+
+This lib wraps and extract text in js/ts/jsx/tsx files using AST manipulation, making adding i18n support a breeze. 
+
+It's already running in a dozen of my company product for 2 years so I think it's mature enough to promote. 
+
+(NOTE: \`wrap\` feature is only available for *non-English* projects due to technical reasons)
+
+Thanks for any feedback!
+## [12][Movies/TV web app built with React, GraphQL and Fastify](https://www.reddit.com/r/reactjs/comments/it481w/moviestv_web_app_built_with_react_graphql_and/)
+- url: https://www.reddit.com/r/reactjs/comments/it481w/moviestv_web_app_built_with_react_graphql_and/
+---
+I created this Movies/TV app just as a side project to understand all the finer details of building a Fullstack APP using React and GraphQL.
+
+Project Home:  [https://github.com/prabhuignoto/flixy](https://github.com/prabhuignoto/flixy) 
+
+Demo:  [https://movies.prabhumurthy.com](https://movies.prabhumurthy.com/movies)
+
+[flixy\_demo](https://reddit.com/link/it481w/video/tlnmal1jl9n51/player)
+
+The App is powered by  [themoviedb.org](https://www.themoviedb.org/). 
+
+Here is the complete tech stack which i used to build this app. 
+
+* [React](https://reactjs.org/)
+* [Styled Components](https://styled-components.com/)
+* [React Spring](https://www.react-spring.io/)
+* [Typescript](https://www.typescriptlang.org/)
+* [Node](https://nodejs.org/en/)
+* [Fastify](https://www.fastify.io/)
+* [GraphQL](https://graphql.org/)
+* [Apollo Client &amp; Server](https://www.apollographql.com/)
+
+Let me know what you guys think.  Feedback's &amp; suggestions are welcome.
+
+Thanks

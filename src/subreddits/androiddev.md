@@ -31,155 +31,86 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Dynamic BASE_URL using Retrofit and Dagger Hilt](https://www.reddit.com/r/androiddev/comments/isihfj/dynamic_base_url_using_retrofit_and_dagger_hilt/)
-- url: https://www.reddit.com/r/androiddev/comments/isihfj/dynamic_base_url_using_retrofit_and_dagger_hilt/
+## [3][Kaspresso 1.2.0: AdbServer](https://www.reddit.com/r/androiddev/comments/it5bg1/kaspresso_120_adbserver/)
+- url: https://www.reddit.com/r/androiddev/comments/it5bg1/kaspresso_120_adbserver/
 ---
-I am struggling passing a dynamic BASE_URL to Retrofit at runtime. I found a solution passing the whole API @Url as an argument to the endpoint, but it does not look very good to me. Does anyone have any experience with this?
-## [4][JetInstagram an Instagram clone using Jetpack Compose](https://www.reddit.com/r/androiddev/comments/is34qm/jetinstagram_an_instagram_clone_using_jetpack/)
-- url: https://www.reddit.com/r/androiddev/comments/is34qm/jetinstagram_an_instagram_clone_using_jetpack/
----
-An Instagram clone with Like Animation and Exoplayer integration for Instagram reels feature.
+Hello everyone!
 
-Code: [https://github.com/vipulasri/JetInstagram](https://github.com/vipulasri/JetInstagram)
+We are happy to announce a new version of Kaspresso!
+
+Shortly, Kaspresso is a great framework for UI testing. Based on [Espresso](https://developer.android.com/training/testing/espresso) and [UI Automator](https://developer.android.com/training/testing/ui-automator), Kaspresso provides a wide range of additional amazing features, such as:
+
+* 100% stability, no flakiness.
+* Significantly faster execution of UI Automator commands. With Kaspresso, some UI Automator commands run **10 times faster**!
+* Excellent readability due to human DSL.
+* Incredible mechanism of interceptors that allows you to catch all actions and assertions in one place.
+* Full logging.
+* Ability to call ADB commands.
+* UI tests writing philosophy, implemented with DSL.
+* Features screenshotting.
+
+All details about the new version of Kaspresso are [here](https://github.com/KasperskyLab/Kaspresso/releases/tag/v1.2.0).
+## [4][What are the current caveats in KMM?](https://www.reddit.com/r/androiddev/comments/it2c9r/what_are_the_current_caveats_in_kmm/)
+- url: https://www.reddit.com/r/androiddev/comments/it2c9r/what_are_the_current_caveats_in_kmm/
+---
+Recently JB released [KMM 1.0 alpha](https://www.reddit.com/r/androiddev/comments/ik1zu8/kotlin_multiplatform_mobile_goes_alpha_kotlin_blog/) and they are [addressing memory model](https://www.google.com/search?q=memory+model+kotlin+native) issue but what about other issues?
+
+* Tooling : IDE, Gradle
+* Ecosystem
+* iOS performance issues
+
+Does Android / iOS app 
+
+* performance get affected
+* .apk / .ipa size increases 
+
+with KMM?
+
+Can anyone please share your experience?  Can we confidently share code between iOS and Android platforms without much hassle?
+## [5][Java 15 is now available.](https://www.reddit.com/r/androiddev/comments/it85li/java_15_is_now_available/)
+- url: http://openjdk.java.net/projects/jdk/15/
+---
+
+## [6][Turning it up to 11: Android 11 for developers](https://www.reddit.com/r/androiddev/comments/it5o5a/turning_it_up_to_11_android_11_for_developers/)
+- url: https://android-developers.googleblog.com/2020/09/android11-final-release.html
+---
+
+## [7][Kotlin 1.4 Online Event – Kotlin Blog](https://www.reddit.com/r/androiddev/comments/islbfb/kotlin_14_online_event_kotlin_blog/)
+- url: https://blog.jetbrains.com/kotlin/2020/09/kotlin-1-4-online-event/
+---
+
+## [8][What is really going in these lines (except the intent declarartion part)](https://www.reddit.com/r/androiddev/comments/it8gx9/what_is_really_going_in_these_lines_except_the/)
+- url: https://www.reddit.com/r/androiddev/comments/it8gx9/what_is_really_going_in_these_lines_except_the/
+---
+ public static Drawable getActivityIcon(Context context, String packageName, String activityName) { PackageManager pm = context.getPackageManager(); 
+
+Intent intent = new Intent(); 
+
+intent.setComponent(new ComponentName(packageName, activityName));
+
+ResolveInfo resolveInfo = pm.resolveActivity(intent, 0);
+
+return resolveInfo.loadIcon(pm); 
+
+}
+## [9][Anyone got affected by new google algorithm change?](https://www.reddit.com/r/androiddev/comments/it84t1/anyone_got_affected_by_new_google_algorithm_change/)
+- url: https://www.reddit.com/r/androiddev/comments/it84t1/anyone_got_affected_by_new_google_algorithm_change/
+---
+I checked App Tweak, and it shows that on 15th of August, Google changed their algorithm again and that's exactly when I started to lose a lot of downloads, has anyone got affected by it? I was getting around 1500 downloads daily, but now I am getting around 500, and it's still dropping more and more, I have no idea what's happening.
+## [10][Printing document](https://www.reddit.com/r/androiddev/comments/it1xnn/printing_document/)
+- url: https://www.reddit.com/r/androiddev/comments/it1xnn/printing_document/
+---
+Hello Redditors, I’m working on a app in Java for billing purposes. I need to get printed invoices on a Bluetooth printer. Can someone tell me how to get it done?
+Thank you
+## [11][Custom component with own logic](https://www.reddit.com/r/androiddev/comments/it78fj/custom_component_with_own_logic/)
+- url: https://www.reddit.com/r/androiddev/comments/it78fj/custom_component_with_own_logic/
+---
+Hey guys! I'm trying to create a custom component that has its own logic. I'm using MVI architecture and for each feature I have a fragment, view, presenter, viewstate. I want to include my component inside one of my fragments. Is it bad for my component to also be a fragment? I know that having a fragment inside a fragment is an antipattern, but I don't know how to create something else that will have its own logic, presenter, states and everything. 
 
 &amp;#x200B;
 
-[JetInstagram](https://reddit.com/link/is34qm/video/uuzdg7klgym51/player)
-
-&amp;#x200B;
-## [5][YouTube + Twitch channel about Jetpack Compose by Leland Richardson](https://www.reddit.com/r/androiddev/comments/is6r07/youtube_twitch_channel_about_jetpack_compose_by/)
-- url: https://youtu.be/WNkIMx3Mr9o
+Thank you!
+## [12][Mixin Messenger, an open-source End-to-End Encryption Messenger.](https://www.reddit.com/r/androiddev/comments/it76c0/mixin_messenger_an_opensource_endtoend_encryption/)
+- url: https://github.com/mixinnetwork/android-app
 ---
 
-## [6][Why we switched from Amplitude to Firebase, BigQuery &amp; Google Data Studio for our android app analytics](https://www.reddit.com/r/androiddev/comments/isjked/why_we_switched_from_amplitude_to_firebase/)
-- url: https://www.reddit.com/r/androiddev/comments/isjked/why_we_switched_from_amplitude_to_firebase/
----
- Hey everyone,
-
-We run a transcription app (VoxRec) which is currently at $2k MRR (doubled last month!)
-
-We use analytics to help make app development choices. At the beginning of the year, we switched from Amplitude to Firebase, BigQuery &amp; Google Data Studio for our app analytics. This is why we did it:
-
-**Cost**
-
-The free tier in Amplitude allows up to 10 million events per month. After that, it’ll cost between 40,000 to 70,000 USD/year!
-
-We calculated that using BigQuery and Google Data Studio, our cost would be about $350/year for the same amount of data!
-
-**Data Ownership**
-
-If we find that we’ve defined some events incorrectly, we can fix data retrospectively. On any other platform, once the data is logged, it's what it is.
-
-**Advanced Analytics**
-
-The features in the Amplitude free tier are limited. We did not have access to the cohorts for example. We were able to recreate these features in BigQuery. For example, we can now look at user retention based on cohorts of country/events/registration status/payment status….
-
-So far, we are very happy with the switch
-
-While creating our reports, we realised that large parts are reusable. We’ve spun it out into a template. You can check out the template [here](https://datastudio.google.com/reporting/359b7631-ed2e-48fa-8d88-38f41ce4343e/page/Gt6KB/?anddev)
-
-If you'd like to get the template (along with set up instructions) let me know in the comments or DM me and I'll hook you up.
-## [7][Which blogs can you recommend? I'll start.](https://www.reddit.com/r/androiddev/comments/is6t91/which_blogs_can_you_recommend_ill_start/)
-- url: https://www.reddit.com/r/androiddev/comments/is6t91/which_blogs_can_you_recommend_ill_start/
----
-I am always on the hunt to grow my feed reader. Which Android &amp; Kotlin related blogs are you following and recommending? Below are my currently subscribed blogs. I marked blogs which I can highly recommend with an '(!)'.
-
-I am also following every Android related article on Medium but that can be overwhelming. Any better way to get notified about high quality Medium posts?
-
-Companies:
-
-* [Android Developers Blog](https://android-developers.googleblog.com/) (!)
-* [Android Studio Release Notes](https://androidstudio.googleblog.com/) (!)
-* [Jet Brains](https://blog.jetbrains.com/) (There is an RSS Feed for only Kotlin related articles) (!)
-* [Firebase](https://firebase.googleblog.com/)
-* [Ray Wenderlich](https://www.raywenderlich.com/library?domain_ids%5B%5D=2)
-
-Individuals:
-
-* [CommonsWare](https://commonsware.com/blog) \- Mark Murphy (!)
-* [Styling Android](https://blog.stylingandroid.com/) \- Mark Allison (!)
-* [Android Design Patterns](https://www.androiddesignpatterns.com/) \- Alex Lockwood (!)
-* [Antonio Leiva](https://antonioleiva.com/)
-* [Jake Wharton](https://jakewharton.com/)
-* [Philipp Hauer](https://phauer.com/) (!)
-* [Chris Banes](https://chris.banes.dev/)
-* [Dan Lew](https://blog.danlew.net/)
-* [Philippe Breault](http://www.developerphil.com/renaming-your-gradle-build-files/)
-* [Hellsoft](https://www.hellsoft.se/) \- Erik Hellman
-* [Jeroen Mols](https://jeroenmols.com/)
-* [Joe Birch](https://joebirch.co/)
-* [Kaushik Gopal](https://blog.jkl.gg/)
-* [Lord Codes](https://www.lordcodes.com/android/) \- Andrew Lord
-* [Nicola Corti](https://ncorti.com/)
-* [Philosophical Hacker](https://www.philosophicalhacker.com/) \- Matt Dupree
-* [Tech Your Chances](https://www.techyourchance.com/) \- Vasiliy Zukanov
-## [8][Grid list with LazyColumnFor in Jetpack Compose](https://www.reddit.com/r/androiddev/comments/isi643/grid_list_with_lazycolumnfor_in_jetpack_compose/)
-- url: https://www.reddit.com/r/androiddev/comments/isi643/grid_list_with_lazycolumnfor_in_jetpack_compose/
----
-I guess a composable for grid lists like LazyColumnFor or LazyRowFor isn't available (yet).
-
-As a workaround, I'm splitting the list into sublists for each row:
-
-    @Composable
-    fun CharactersList(
-        items: List&lt;Character&gt; = listOf(),
-        cols: Int = 3
-    ) {
-        val chunkedList = items.chunked(cols)
-        LazyColumnFor(items = chunkedList) {
-            Row {
-                for(character in it) {
-                    CharacterItem(character, Modifier.weight(1f))
-                }
-            }
-        }
-    }
-
-&amp;#x200B;
-
-https://preview.redd.it/klkq9swb93n51.png?width=356&amp;format=png&amp;auto=webp&amp;s=439ea3a59646d47717cb56b463907f3e81d57ccc
-
-What do you guys think about this? Is there any other (better) way?
-## [9][Need help theming big project](https://www.reddit.com/r/androiddev/comments/ishv4b/need_help_theming_big_project/)
-- url: https://www.reddit.com/r/androiddev/comments/ishv4b/need_help_theming_big_project/
----
-Can you tell me good approach to theme big projects?
-
-I have "ui kit" gradle module with a lot of custom views. Views and resources from "ui kit" are used in other library/app modules. I want to make "ui kit" styleable — each app should be able to specify its own color scheme for "ui kit", which will then be applied to all ui-kit-dependent modules.
-
-The only solution I know — convert values into attr-references and specify values for them right in app theme of each app. But I see a lot of disadvantages here:
-
-1. I want to customize many of views independently — so there will be hundreds of references without any structural organization
-2. I have to add all these hundreds of references right inside each app theme file, or app will crash saying that attr has no value
-3. I can't set default value for each reference
-4. I can't reuse one color-scheme in different apps — only copy-paste values again and again
-
-What I really need is:
-
-* define all attributes inside something like my color scheme (R.style.MyLibTheme)
-* create multiple color-schemes right in "ui kit" module (R.style.MyLibTheme.X, R.style.MyLibTheme.Y, ...)
-* in each app theme I add only 1 xml line - color scheme "ui kit" should use (&lt;item name="myLibTheme"&gt;@style/MyLibTheme.Y&lt;/item&gt;)
-
-But I don't know how to do it. If I specify attr value in app theme, I can access it easily in XML via "?myAttrName". If I put attr value inside my custom style, I won't able to access it (I can't call "?myLibTheme/myAttrName". There are a lot of other things I also don't know how to do to implement it
-## [10][Using LiveData in MVP?](https://www.reddit.com/r/androiddev/comments/ishp3p/using_livedata_in_mvp/)
-- url: https://www.reddit.com/r/androiddev/comments/ishp3p/using_livedata_in_mvp/
----
-It's clear that LiveData works amazingly with MVVM, but are there any interesting use cases for LiveData with MVP? I'd be interested to know.
-
-Also curious to know if LiveData particularly shines in any other architectural patterns
-## [11][Exploring Jetpack Compose: Padding Modifier](https://www.reddit.com/r/androiddev/comments/irupem/exploring_jetpack_compose_padding_modifier/)
-- url: https://joebirch.co/android/exporing-jetpack-compose-padding-modifier/
----
-
-## [12][How do you improve &amp; optimize upgrade/subscription conversions in your apps?](https://www.reddit.com/r/androiddev/comments/is4of1/how_do_you_improve_optimize_upgradesubscription/)
-- url: https://www.reddit.com/r/androiddev/comments/is4of1/how_do_you_improve_optimize_upgradesubscription/
----
-Hey, r/androiddev!
-
-I'm wondering what other devs do to optimize their freemium/subscription service upgrade pages &amp; experiences.
-
-I have an app with a freemium model. I relaunched it recently and with that, I've re-done my freemium upgrade screen. I also made it more obvious through the app as to what features require the premium upgrade.  Conversion has increased slightly, but not as much as I had originally expected.
-
-I'd hope to not completely re-design my experience, but rather A/B test or experiment on different approaches. 
-
-Would love to discuss what you've done to improve your conversions.

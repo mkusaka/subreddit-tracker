@@ -56,7 +56,39 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][Updates in Dragonbox](https://www.reddit.com/r/cpp/comments/ishdj9/updates_in_dragonbox/)
+## [2][Bjarne Stroustrup: C++ Today (2016)](https://www.reddit.com/r/cpp/comments/it54o4/bjarne_stroustrup_c_today_2016/)
+- url: https://www.youtube.com/watch?v=aPvbxuOBQ70&amp;list=WL&amp;index=11&amp;t=0s
+---
+
+## [3][C++ in Visual Studio Code reaches version 1.0! | C++ Team Blog](https://www.reddit.com/r/cpp/comments/ista1w/c_in_visual_studio_code_reaches_version_10_c_team/)
+- url: https://devblogs.microsoft.com/cppblog/c-in-visual-studio-code-reaches-version-1-0/
+---
+
+## [4][Standard C++20 Modules support with MSVC in Visual Studio 2019 version 16.8 | C++ Team Blog](https://www.reddit.com/r/cpp/comments/ispeiy/standard_c20_modules_support_with_msvc_in_visual/)
+- url: https://devblogs.microsoft.com/cppblog/standard-c20-modules-support-with-msvc-in-visual-studio-2019-version-16-8/
+---
+
+## [5][C11 and C17 Standard Support Arriving in MSVC](https://www.reddit.com/r/cpp/comments/isusdb/c11_and_c17_standard_support_arriving_in_msvc/)
+- url: https://devblogs.microsoft.com/cppblog/c11-and-c17-standard-support-arriving-in-msvc/
+---
+
+## [6][Raytracer project](https://www.reddit.com/r/cpp/comments/it4ng6/raytracer_project/)
+- url: https://www.reddit.com/r/cpp/comments/it4ng6/raytracer_project/
+---
+I have decided to write a raytracer for my University project. However, I was wondering what could be done to make it different. I've seen lots of source code out there on how to make the raytracer. But I was hoping to add some other cool elements to it. I'm not sure if this is possible but what do you suggest or think is doable but not impossible. Thanks
+## [7][C++ Weekly Episode 237 - Teach Yourself C++ in ∞ Days](https://www.reddit.com/r/cpp/comments/isweg9/c_weekly_episode_237_teach_yourself_c_in_days/)
+- url: https://youtu.be/zUQz4LBBz7M
+---
+
+## [8][P2011: A pipeline-rewrite operator. What are your thoughts?](https://www.reddit.com/r/cpp/comments/iso0fp/p2011_a_pipelinerewrite_operator_what_are_your/)
+- url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p2011r1.html
+---
+
+## [9][How to set up an ARM64 playground on Ubuntu 18.04](https://www.reddit.com/r/cpp/comments/it25o3/how_to_set_up_an_arm64_playground_on_ubuntu_1804/)
+- url: https://offlinemark.com/2020/06/24/how-to-set-up-an-arm64-playground-on-ubuntu-18-04/
+---
+
+## [10][Updates in Dragonbox](https://www.reddit.com/r/cpp/comments/ishdj9/updates_in_dragonbox/)
 - url: https://www.reddit.com/r/cpp/comments/ishdj9/updates_in_dragonbox/
 ---
 Hi all, Dragonbox ([https://github.com/jk-jeon/dragonbox](https://github.com/jk-jeon/dragonbox)) is a float-to-string conversion algorithm with:
@@ -82,86 +114,7 @@ Here are some updates:
 Please check the repository ([https://github.com/jk-jeon/dragonbox](https://github.com/jk-jeon/dragonbox)) if you are interested, thanks.
 
 I'm planning to work on things like Ryu-printf and string-to-float algorithms from now on, if time permits. I would appreciate it if you guys can share some interesting ideas or thoughts.
-## [3][bitflags v1.2.0 - single-header C++ library for easily managing set of auto-generated type-safe flags](https://www.reddit.com/r/cpp/comments/isekmx/bitflags_v120_singleheader_c_library_for_easily/)
-- url: https://www.reddit.com/r/cpp/comments/isekmx/bitflags_v120_singleheader_c_library_for_easily/
----
-Hi everybody!
-
-About a week ago, I posted a link to the initial implementation of my [bitflags](https://github.com/m-peko/bitflags) library. Here is the [link](https://www.reddit.com/r/cpp/comments/im9opm/bitflags_c17_singleheader_library_for_easily/) to that post which gave me an inspiration to other things that would be good to have implemented in the library.
-
-Since then I have implemented few things and now, you can specify your flags as simple as:
-
-    BEGIN_BITFLAGS(Flags)
-        FLAG(none)
-        FLAG(flag_a)
-        FLAG(flag_b)
-        FLAG(flag_c)
-    END_BITFLAGS(Flags)
-
-It looks cool, right? No more specifying flag values and no more specifying appropriate type for flags :)
-
-Please take a look at my library on [Github](https://github.com/m-peko/bitflags) (don't forget to give a star if you like it :) ) and let me know your thoughts!
-
-Thanks in advance!
-## [4][libclang-static-build: Static Builds Of Libclang](https://www.reddit.com/r/cpp/comments/iskit5/libclangstaticbuild_static_builds_of_libclang/)
-- url: https://github.com/deech/libclang-static-build
----
-
-## [5][Recursive Lambdas in C++](https://www.reddit.com/r/cpp/comments/irupel/recursive_lambdas_in_c/)
-- url: https://artificial-mind.net/blog/2020/09/12/recursive-lambdas
----
-
-## [6][How I Improved My Legacy C++ Project with PVS-Studio](https://www.reddit.com/r/cpp/comments/ish6bd/how_i_improved_my_legacy_c_project_with_pvsstudio/)
-- url: https://www.bfilipek.com/2020/09/pvs-studio-checking.html
----
-
-## [7][Any way to "merge" a const and non-const getter?](https://www.reddit.com/r/cpp/comments/irva9b/any_way_to_merge_a_const_and_nonconst_getter/)
-- url: https://www.reddit.com/r/cpp/comments/irva9b/any_way_to_merge_a_const_and_nonconst_getter/
----
-Like, now i have it setup like this:
-
-    MyClass&amp; Get(int index) 
-    {
-    return ...;
-    }
-    
-    const MyClass&amp; Get(int index) const
-    {
-    return...;
-    }
-
-Is there any way to merge the logic? Like something like this:
-
-    MyClass&amp; Get(int index) 
-    {
-        return Get(index); // Explicitly call the const variant from below and return as non-const
-    }
-    
-    const MyClass&amp; Get(int index) const
-    {
-    return...;
-    }
-
-Because right now i basically have all the logic from these getters duplicated.. which is shit
-## [8][Should I use make or python to build my source?](https://www.reddit.com/r/cpp/comments/ise4he/should_i_use_make_or_python_to_build_my_source/)
-- url: https://www.reddit.com/r/cpp/comments/ise4he/should_i_use_make_or_python_to_build_my_source/
----
-I have 3 different builds, release/optimize, debug1, debug2 (which is even slower), debug3 (like debug1 but changes some dependencies so valgrind will work correctly)
-
-1. I have no idea how to tell make how to compile my code. For example how do I say all of these builds should have their object files compiled into different folders? Looking at make 5 [here](https://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/) and reading [this](https://felixcrux.com/blog/creating-basic-makefile) didn't help.
-2. Next issue I have is validating if the test pass/failed. If I can't write a one line bash script to use with make I'd need to put it into a python file? Almost feels like I should just do everything in the python file
-3. Last is if I make a git hook I'll need to use return codes to say if it passed/failed (unless I remember wrong?). Can I do that in make?
-
-I haven't tried doing all of this in python but have tried in bash and hated it. So I was wondering if I should use python, if there's going to be any pain points if I try to do it in python, if make can do what I need and if there's another tool I should look into?
-## [9][The Most Popular Programming Languages - 1965/2020](https://www.reddit.com/r/cpp/comments/irfs7m/the_most_popular_programming_languages_19652020/)
-- url: https://youtu.be/UNSoPa-XQN0
----
-
-## [10][The Design of C++ , lecture by Bjarne Stroustrup](https://www.reddit.com/r/cpp/comments/irissi/the_design_of_c_lecture_by_bjarne_stroustrup/)
-- url: https://youtu.be/69edOm889V4
----
-
-## [11][CppCon: Classic STL Class Announcement](https://www.reddit.com/r/cpp/comments/irlm0w/cppcon_classic_stl_class_announcement/)
-- url: https://quuxplusone.github.io/blog/2020/09/12/classic-stl-at-cppcon-2020/
+## [11][Simple scripting VM example (parser + bytecode) with strings, arithmetic, control flow (no functions (yet!)); nan-tagging and indirect-threading; based on "Crafting Interpreters" book; faster than PUC-Rio Lua and Node.js (JIT off) in arithmetic loop benchmark](https://www.reddit.com/r/cpp/comments/isrwxi/simple_scripting_vm_example_parser_bytecode_with/)
+- url: https://godbolt.org/z/5GbhnK
 ---
 

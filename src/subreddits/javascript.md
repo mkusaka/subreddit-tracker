@@ -85,43 +85,43 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][6 open source repos to develop easily installable JSX components](https://www.reddit.com/r/javascript/comments/ishmy3/6_open_source_repos_to_develop_easily_installable/)
-- url: https://medium.com/@chris.czopp/6-open-source-repos-to-develop-easily-installable-jsx-components-ca8543230a
+## [3][Moment.js Throws in the Towel: "It is not dead, but it is indeed done."](https://www.reddit.com/r/javascript/comments/it1dx5/momentjs_throws_in_the_towel_it_is_not_dead_but/)
+- url: https://momentjs.com/docs/#/-project-status/
 ---
 
-## [4][Most Common Security Vulnerabilities Using JavaScript](https://www.reddit.com/r/javascript/comments/irzj9w/most_common_security_vulnerabilities_using/)
-- url: https://www.securecoding.com/most-common-security-vulnerabilities-using-javascript/
+## [4][Effective limited parallel execution in JavaScript](https://www.reddit.com/r/javascript/comments/iso9u8/effective_limited_parallel_execution_in_javascript/)
+- url: https://medium.com/@arsenyyankovsky/effective-limited-parallel-execution-in-javascript-ea2a1fb9a632
 ---
 
-## [5][জাভাস্ক্রিপ্ট — var, let, const](https://www.reddit.com/r/javascript/comments/iskucm/জভসকরপট_var_let_const/)
-- url: https://dev.to/bipon68/var-let-const-4f3j
+## [5][Learn how to debug JavaScript memory leaks in Chrome DevTools](https://www.reddit.com/r/javascript/comments/it7cad/learn_how_to_debug_javascript_memory_leaks_in/)
+- url: https://www.debugbear.com/blog/debugging-javascript-memory-leaks
 ---
 
-## [6][Question on Prototypal Inheritance, if B is derives from A, what can't b(instance of B) call methodDeclaredInA?](https://www.reddit.com/r/javascript/comments/isg6xa/question_on_prototypal_inheritance_if_b_is/)
-- url: https://stackoverflow.com/q/63877924/6897265
+## [6][A little code snippet of how I added a moving watermark to an html video that works in small and fullscreen mode. this can be used for anything, overlaying information, navigation, components etc](https://www.reddit.com/r/javascript/comments/it747g/a_little_code_snippet_of_how_i_added_a_moving/)
+- url: https://codepen.io/mahmoudthepeltist/pen/abNjvqR
 ---
 
-## [7][I made a Next.js-inspired Node.js framework for GraphQL APIs that allows you to create new APIs purely from schema definition files in minutes](https://www.reddit.com/r/javascript/comments/iskhks/i_made_a_nextjsinspired_nodejs_framework_for/)
-- url: https://github.com/yamalight/graffiti/
+## [7][Performance on the web with Houssein Djirdeh | Svelte Radio](https://www.reddit.com/r/javascript/comments/it6v87/performance_on_the_web_with_houssein_djirdeh/)
+- url: https://www.svelteradio.com/episodes/performance-on-the-web-with-houssein-djirdeh
 ---
 
-## [8][colvertize - a library to conveniently convert between (CSS-)colors](https://www.reddit.com/r/javascript/comments/isk908/colvertize_a_library_to_conveniently_convert/)
-- url: https://github.com/Philipp-M/colvertize
+## [8][MERN stack - TypiNation - Multiplayer typing game where you can compete &amp; improve your typing speed along with other players all around the world. Also available on Google Play](https://www.reddit.com/r/javascript/comments/iswqsf/mern_stack_typination_multiplayer_typing_game/)
+- url: https://www.typination.com/
 ---
 
-## [9][Emotion controls for the web](https://www.reddit.com/r/javascript/comments/isjnan/emotion_controls_for_the_web/)
-- url: https://dev.to/vivirenremoto/emotion-controls-for-the-web-3ja3
+## [9][Visualizing metrics of a distributed cluster or why we calculate integrals on the front-end](https://www.reddit.com/r/javascript/comments/it8c7j/visualizing_metrics_of_a_distributed_cluster_or/)
+- url: https://blog.goncharov.page/how-to-display-a-gazillion-of-metrics-and-keep-your-sanity
 ---
 
-## [10][maze_generator: A JavaScript module I made for generating, solving and displaying mazes](https://www.reddit.com/r/javascript/comments/is2uxn/maze_generator_a_javascript_module_i_made_for/)
-- url: https://github.com/TheWizardBear/maze_generator
+## [10][SpeakeasyJS – a meetup for mad science, hacking, and experiments](https://www.reddit.com/r/javascript/comments/isvgri/speakeasyjs_a_meetup_for_mad_science_hacking_and/)
+- url: https://dev.to/feross/speakeasyjs-a-meetup-for-mad-science-hacking-and-experiments-2ai7?a=1
 ---
 
-## [11][Dyne - A small node express framework writtern in typescript](https://www.reddit.com/r/javascript/comments/ishwaq/dyne_a_small_node_express_framework_writtern_in/)
-- url: https://github.com/dynejs/dyne
+## [11][Juliette v1.0 Is Released - Framework-Agnostic State Management Powered by RxJS](https://www.reddit.com/r/javascript/comments/it7btv/juliette_v10_is_released_frameworkagnostic_state/)
+- url: https://github.com/markostanimirovic/juliette
 ---
 
-## [12][Functional Programming in JS, part I - Composition (Currying, Lodash and Ramda)](https://www.reddit.com/r/javascript/comments/irzbll/functional_programming_in_js_part_i_composition/)
-- url: https://dev.to/mpodlasin/functional-programming-in-js-part-i-composition-currying-lodash-and-ramda-1ohb
+## [12][A small node backend that prints your uploaded PDFs](https://www.reddit.com/r/javascript/comments/it79ju/a_small_node_backend_that_prints_your_uploaded/)
+- url: https://github.com/chrispanag/printer-api
 ---
 

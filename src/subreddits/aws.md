@@ -1,112 +1,117 @@
 # aws
-## [1][AWS WAF and AWS Shield: The Ultimate Web App Protection Combo - IOD](https://www.reddit.com/r/aws/comments/ish6vb/aws_waf_and_aws_shield_the_ultimate_web_app/)
-- url: https://iamondemand.com/blog/aws-waf-and-aws-shield-the-ultimate-web-app-protection-combo/
+## [1][Week of Sept 14th - What are your favorite container/serverless tips in AWS?](https://www.reddit.com/r/aws/comments/isls8o/week_of_sept_14th_what_are_your_favorite/)
+- url: https://www.reddit.com/r/aws/comments/isls8o/week_of_sept_14th_what_are_your_favorite/
+---
+Share your container/serverless tips
+## [2][New EC2 T4g Instances – Burstable Performance Powered by AWS Graviton2 – Try Them for Free | Amazon Web Services](https://www.reddit.com/r/aws/comments/isvuym/new_ec2_t4g_instances_burstable_performance/)
+- url: https://aws.amazon.com/blogs/aws/new-t4g-instances-burstable-performance-powered-by-aws-graviton2/
 ---
 
-## [2][Learning Lambda - Suggest A Project?](https://www.reddit.com/r/aws/comments/isk7if/learning_lambda_suggest_a_project/)
-- url: https://www.reddit.com/r/aws/comments/isk7if/learning_lambda_suggest_a_project/
+## [3][Not sure where to start on AWS? Check out these 25 services. (Getting started and video tutorial links included)](https://www.reddit.com/r/aws/comments/isrbo2/not_sure_where_to_start_on_aws_check_out_these_25/)
+- url: https://www.reddit.com/r/aws/comments/isrbo2/not_sure_where_to_start_on_aws_check_out_these_25/
 ---
-I was tasked with learning about Lambda, but not given any actual direction on what to do with it.
+See a service you’re interested in learning about? Click the link below for the links to getting started: [Getting started with AWS services](https://www.allcode.com/top-aws-services/)  
 
-What task could I tackle in a test environment that would teach me good fundamentals about it?
-## [3][Why do new accounts only get access to 2 AZs in us-west-1?](https://www.reddit.com/r/aws/comments/isdvi0/why_do_new_accounts_only_get_access_to_2_azs_in/)
-- url: https://www.reddit.com/r/aws/comments/isdvi0/why_do_new_accounts_only_get_access_to_2_azs_in/
----
-I normally never have anything in the US regions (beyond whatever AWS has centralised) as I’m on the other side of the planet, however we are looking to expand into the US and I’m trying to decide on a region. 
 
-For me, west coast will probably be best latency-wise so I’m trying to decide between us-west-1 and us-west-2 but I’m puzzled by Northern California having 3 zones but only 2 available to new accounts. Anyone know what that’s about?
-
-Sorry if this has been asked before I tried searching and couldn’t find anything. 
-
-See here, there’s an asterisks: https://aws.amazon.com/about-aws/global-infrastructure/regions_az/
-## [4][Which AWS service to use for backing up office files?](https://www.reddit.com/r/aws/comments/ishmja/which_aws_service_to_use_for_backing_up_office/)
-- url: https://www.reddit.com/r/aws/comments/ishmja/which_aws_service_to_use_for_backing_up_office/
----
-Use case:
-My fathers company wants to backup all their office data on AWS from their in-house server as they are moving to a remote first model.
-Their requirements are, CRD files and have access levels for which employees can access which files and folders. 
-
-I have zero experience with AWS but I looked into S3 and it’s very easy to use from the console for managing the files. But I couldn’t see how to set access levels for storage system.
-
-I want avoid creating a custom console and write all the APIs for accessing the storage system.
-
-Help would be very much appreciated.
-
-EDIT:
-
-Thanks a lot for the help. I’ll look into the provided solutions 🙏🏻
-## [5][Slapping up a temp site on AWS while the devs work on the real one](https://www.reddit.com/r/aws/comments/is657y/slapping_up_a_temp_site_on_aws_while_the_devs/)
-- url: https://www.reddit.com/r/aws/comments/is657y/slapping_up_a_temp_site_on_aws_while_the_devs/
----
-Hi all, I'm working on a Code for America project called [BallotNav](https://github.com/hackforla/ballotnav), we're creating a tool to help people find in-person locations they can drop off their mail-in ballot if they are concerned about the reliability of USPS and COVID safety at the polls.
-
-I'm trying to poop a temp site up at our URL to send press to, recruit non-tech volunteers, and let ppl sign up for launch notification emails, just quick n dirty until we can launch the real site.
-
-I am a non-tech volunteer who can handle a wordpress site etc. and would like to be able to build and update this myself without drawing time/effort away from the real site build.  Is there any kind of simplistic CMS like that for AWS? My devs don't know, cuz they've never needed one, thought I'd toss it out to the crowd.
-
-ETA: Never mind, turns out I can build one in wix or whatever and they can point to it, I got confused because I had to kill the redirect in Namecheap where I registered it when we did the custom nameservers.
-
-With that said, anyone who’d like to volunteer in any capacity, come aboard!
-## [6][How to setup Lake Formation to handle daily full datasets](https://www.reddit.com/r/aws/comments/isjzvc/how_to_setup_lake_formation_to_handle_daily_full/)
-- url: https://www.reddit.com/r/aws/comments/isjzvc/how_to_setup_lake_formation_to_handle_daily_full/
----
-Hi everyone I am trying to use lake formation to register my tables. I have a process that will put my entire dataset into an s3 bucket daily. The structure looks like this currently.
-
-Bucket -&gt; databasename -&gt; table name1 -&gt; dated parquetfolder1
-Bucket -&gt; databasename -&gt; table name1 -&gt; dated parquetfolder2
-Bucket -&gt; databasename -&gt; table name1 -&gt; json file telling which parquet is the newest
-Bucket -&gt; databasename -&gt; table name2-&gt; dated parquetfolder1
-Bucket -&gt; databasename -&gt; table name2 -&gt; dated parquetfolder2
-Bucket -&gt; databasename -&gt; table name2 -&gt; json file tellling which parquet is the newest
-
-But currently when I setup a glue crawler it literally flattens out database name and table name and just gives me 6 tables. On for tech dated parquet and two for the json config. Since they both have the same name one gets a hash.
-
-In reality I want two tables and I want the path to swap when the json file changes. Or if I need to save the data in a different structure to achieve snapping of my data that is also fine
-## [7][Best way to move CloudTrail logs to Glacier?](https://www.reddit.com/r/aws/comments/is8k2e/best_way_to_move_cloudtrail_logs_to_glacier/)
-- url: https://www.reddit.com/r/aws/comments/is8k2e/best_way_to_move_cloudtrail_logs_to_glacier/
----
-I can't simply use lifecycle rule for that, because for lots of smaller files Glacier just increases costs.
-
-The only way to move log files to Glacier without incurring too much cost is concating and pushing to Glacier. As far as I know, there are no existing solution that allows this, so I would need to create lambda function that package log files in S3 and move it to Glacier.
-
-I want to do the same for log files created by other services, such as CloudFront logs, CloudWatch logs exprorted to S3, etc.
-## [8][AWS Load Balancing and Web App redirecting to SSL](https://www.reddit.com/r/aws/comments/iskm73/aws_load_balancing_and_web_app_redirecting_to_ssl/)
-- url: https://www.reddit.com/r/aws/comments/iskm73/aws_load_balancing_and_web_app_redirecting_to_ssl/
----
-We have a [legacy] web application that redirects non-SSL requests (port 80) to SSL (port 443). The web server is IIS (if that matters).
-
-Now I wish to put a load balancer in front of this app. That will be step one towards scaling in a future project phase.
-
-However, the redirecting to SSL is causing problems that I can't quite get my head around.
-
-I have the AWS Network Load Balancer (NLB) listening on both 80 and 443. Apparently it can only send to the target group (my web server) on **one** port.
-
-* If I have it sending to port 80 then we go into a redirect loop because the web server assumes every request is non-SSL.
-* If I have it sending to port 443 then we never redirect because, again, the web server assumes all requests are already secure
-
-I chose NLB because it will allow me to use my existing web server's elastic IP which makes the cutover a bit more seamless (and, I'm told, some of our API clients have that IP address allow-listed already so a change is hard). I think that logic rules out using an Application Load Balancer (can't use elastic IP)? NLB is layer 4 though, so I can't play any games with headers.
-
-I can't help but think this "redirect to SSL" thing has already been solved by smarter people than me... so how'd you do it?
-## [9][Charges in AWS Educate Account](https://www.reddit.com/r/aws/comments/isjc8w/charges_in_aws_educate_account/)
-- url: https://www.reddit.com/r/aws/comments/isjc8w/charges_in_aws_educate_account/
----
-Hi all!
+Did I miss any? Let me know and I will add them to the list with links to getting started. Thanks for your help!
 
 &amp;#x200B;
 
-I have a AWS account, that came with Github Education, and I'm wondering why I'm being charged for a EC2 instance, using the free tier (**t2.micro**)
+1. Amazon EC2 (Elastic Compute Cloud)
+2. Amazon RDS (Relational Database Services)
+3. Amazon S3 (Simple Storage Service)
+4. Amazon Lambda
+5. Amazon CloudFront
+6. Amazon Glacier
+7. Amazon SNS (Simple Notification Service)
+8. Amazon EBS (Elastic Block Store)
+9. Amazon VPC (Virtual Private Cloud)
+10. Amazon Kinesis
+11. Amazon Auto-scaling
+12. Amazon IAM (Identity and Access Management)
+13. Amazon SQS (Simple Queue Service)
+14. Amazon Elastic Beanstalk
+15. Dynamo DB
+16. Amazon ElastiCache
+17. Amazon Redshift
+18. Amazon Sagemaker
+19. Amazon Lightsail
+20. Amazon EFS (Elastic File System)
+21. Amazon Cloudwatch
+22. Amazon Chime
+23. Amazon Cloud Directory
+24. Amazon Cognito
+25. Amazon Inspector
+## [4][[Glacier] Restoring a 130GB file from Glacier, using MultipartCopy to transfer back to standard returns an "internal error" after a while?](https://www.reddit.com/r/aws/comments/it8ete/glacier_restoring_a_130gb_file_from_glacier_using/)
+- url: https://www.reddit.com/r/aws/comments/it8ete/glacier_restoring_a_130gb_file_from_glacier_using/
+---
+There is a file sitting in S3 under Glacier. We trigger a RestoreObject on this key. Once the Restore has completed, we trigger a MultipartCopy back to the Standard class - as the Restore will only remain for 2 days.
 
-As I have a Educate account, I can't acess the billing console.
+However - it seems like many large files are hitting errors during this MultipartCopy:
+
+&gt; An exception occurred while uploading parts to a multipart upload. The following parts had errors:
+- Part 6289: Error executing "UploadPartCopy" on "https://mybucket.s3.amazonaws.com/projects/ID/source-files/ID/master/ID.mov?partNumber=6289&amp;uploadId=uploadIdToken";
+
+&gt; AWS HTTP error: Server error: `PUT https://mybucket.s3.amazonaws.com/projects/ID/source-files/ID/master/ID.mov?partNumber=6289&amp;uploadId=uploadIdToken` resulted in a `500 Internal Server Error` response:
+
+&gt; &lt;Error&gt;&lt;Code&gt;InternalError&lt;/Code&gt;&lt;Message&gt;**We encountered an internal error. Please try again.**&lt;/Message&gt;
+
+Is there anything obvious here?
+## [5][Wondering about S3 supplements/alternatives for the high bandwidth website](https://www.reddit.com/r/aws/comments/it7lmm/wondering_about_s3_supplementsalternatives_for/)
+- url: https://www.reddit.com/r/aws/comments/it7lmm/wondering_about_s3_supplementsalternatives_for/
+---
+Hi guys! I've recently watched a lecture on the differences between geo.distributed and centralized storage models ([https://youtu.be/TOnZ78ay3rs](https://youtu.be/TOnZ78ay3rs)). My personal project to create and deliver a 4k resolution stock video through the private subscription.  I am with S3 for 4+years now, but the transfer costs are killing me.
+
+1. I was wondering if anyone used geographically distributed storage for the heavy files storage and delivery as a replacement or alongside AWS S3?
+2. Talking about geo-distributed storage services, any recommendations? I've spent hours searching and found only two so far: JUCE ([https://juce.cloud/](https://juce.cloud/)) and Eco4cloud ([http://www.eco4cloud.com/](http://www.eco4cloud.com/)).
+3. The first one offers 20tb storage and unlimited transfer for €1800 per month. It would cut my expenses more than 5 times, but I couldn't find any reviews on them online, and this kind of puts me off.  Do you think it worth trying out?
+
+If you have any other suggestions/solutions not related to geo-distributed storage - I'd be more than happy to hear them. The main idea is to cut the transfer-related costs while delivering 4k videos to the USA and Asia (this is where most of my clients are).
+## [6][To "lift-and-shift" or not to "lift-and-shift"?](https://www.reddit.com/r/aws/comments/it7fdu/to_liftandshift_or_not_to_liftandshift/)
+- url: https://www.reddit.com/r/aws/comments/it7fdu/to_liftandshift_or_not_to_liftandshift/
+---
+Under the very high pressure of time constraints (migration out of data centers by mid-2021) a lot of application owners are engaging consultants specialized in their specific areas, who - of course - offer almost exclusively "lift-and-shift" solutions, i.e. acquire "x" EC2/AMI machines of sizes "a", "b", ..., databases (PostegreSQL, Oracle, SQL) of other machine sizes, and "connect them together" identically to how they look on-prem. The only area where I was able to "insert" something more cloud-native, was in the replacement of very crude LB functions, presently conducted on F5s, which could be easily addressed via simple ELB configurations.
+
+Question: while an approach of "like-to-like" seems logical, is there anything in the world of tooling, for AWS, which would allow an analysis of an app architecture and/or data flow, with ability to recommend maybe some AWS native solutions, where the traditional server/DB/storage/connectivity package is suboptimal for that specific usage?
+## [7][SES Not Delivering to outlook.com email](https://www.reddit.com/r/aws/comments/it80r5/ses_not_delivering_to_outlookcom_email/)
+- url: https://www.reddit.com/r/aws/comments/it80r5/ses_not_delivering_to_outlookcom_email/
+---
+Anyone else having issues with Amazon SES not delivering emails to [outlook.com](https://outlook.com) mailboxes?  I just set the service up and cannot get emails to deliver to my two [outlook.com](https://outlook.com) email accounts.  Other accounts seems to be working.  SPF is passing.
+## [8][Lambda@edge returns JS as content-type: text/html](https://www.reddit.com/r/aws/comments/it7u86/lambdaedge_returns_js_as_contenttype_texthtml/)
+- url: https://www.reddit.com/r/aws/comments/it7u86/lambdaedge_returns_js_as_contenttype_texthtml/
+---
+I have a website (Django site) deployed with Lambda and CloudFront and it works fine with no problems. I decided to try Lambda@edge with origin request set and it deployed without errors but when I visit it my site it will load all my JS except one script.
+
+[https://xxxx.cloudfront.net/js/main.js](https://xxxx.cloudfront.net/js/main.js)
+
+**content-type: text/html**
+
+# 502 ERROR
+
+## The request could not be satisfied.
+
+The Lambda function returned invalid json: The json output must be an object type.
+## [9][Seeing t4g instances going live](https://www.reddit.com/r/aws/comments/isulkr/seeing_t4g_instances_going_live/)
+- url: https://www.reddit.com/r/aws/comments/isulkr/seeing_t4g_instances_going_live/
+---
+Seeing them available for spin up in my accounts. The pricing information is also live in the usual places, but no formal announcement as at the time of this post.
+## [10][Starting stopped Gs.xlarge instance gives limits error, but allows me to start it.](https://www.reddit.com/r/aws/comments/it6rmw/starting_stopped_gsxlarge_instance_gives_limits/)
+- url: https://www.reddit.com/r/aws/comments/it6rmw/starting_stopped_gsxlarge_instance_gives_limits/
+---
+We have one instance that we're working on and today I've got this error message.
+
+But I was allowed to start it.
+
+What does this mean actually?
 
 &amp;#x200B;
 
-Thank you!
-## [10][AWS work question](https://www.reddit.com/r/aws/comments/isj6fp/aws_work_question/)
-- url: https://www.reddit.com/r/aws/comments/isj6fp/aws_work_question/
+https://preview.redd.it/10i7hd9span51.png?width=852&amp;format=png&amp;auto=webp&amp;s=a8d405688d7a5b8b07802e02f7c7be8da909b63b
+## [11][Centrally enabling AWS Config across all accounts/regions with Organizations?](https://www.reddit.com/r/aws/comments/it6fe9/centrally_enabling_aws_config_across_all/)
+- url: https://www.reddit.com/r/aws/comments/it6fe9/centrally_enabling_aws_config_across_all/
 ---
-I'm using for work AWS, and I was wondering, can they see what device I connect with, like am I on my laptop or iPad? (Because it's strictly not allowed on tablets/phones etc just PC/desktop)  
+We have a situation where we can't use the Organizations integration for AWS config, but want to easily enable it across a number of accounts and all of the regions in those accounts. Is there any easy/preferred way to do this with Terraform? The thought of having X number of providers for each region multiplied accounts seems completely out of hand.
 
+We don't use much Cloudformation, but I'd consider it for the better stack support across regions/accounts.
 
-Sorry if I'm not in the right place, but I didn't know where to ask this!
-
-Thank you!
+Is there a good CLI example? Also, is it simply just creating an S3 bucket in a central account, granting the permissions to to the other accounts and then enabling the recorders from there?

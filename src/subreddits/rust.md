@@ -1,6 +1,6 @@
 # rust
-## [1][Hey Rustaceans! Got an easy question? Ask here (37/2020)!](https://www.reddit.com/r/rust/comments/ioc56i/hey_rustaceans_got_an_easy_question_ask_here/)
-- url: https://www.reddit.com/r/rust/comments/ioc56i/hey_rustaceans_got_an_easy_question_ask_here/
+## [1][Hey Rustaceans! Got an easy question? Ask here (38/2020)!](https://www.reddit.com/r/rust/comments/ismh8n/hey_rustaceans_got_an_easy_question_ask_here/)
+- url: https://www.reddit.com/r/rust/comments/ismh8n/hey_rustaceans_got_an_easy_question_ask_here/
 ---
 Mystified about strings? Borrow checker have you in a headlock? Seek help here! There are no stupid questions, only docs that haven't been written yet.
 
@@ -16,114 +16,70 @@ The official Rust Programming Language Discord: [https://discord.gg/rust-lang](h
 
 The unofficial Rust community Discord: [https://bit.ly/rust-community](https://bit.ly/rust-community)
 
-Also check out [last weeks' thread](https://reddit.com/r/rust/comments/ijvwsk/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
+Also check out [last weeks' thread](https://reddit.com/r/rust/comments/ioc56i/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][Official /r/rust "Who's Hiring" thread for job-seekers and job-offerers [Rust 1.46]](https://www.reddit.com/r/rust/comments/iix8vw/official_rrust_whos_hiring_thread_for_jobseekers/)
-- url: https://www.reddit.com/r/rust/comments/iix8vw/official_rrust_whos_hiring_thread_for_jobseekers/
+## [2][What's everyone working on this week (38/2020)?](https://www.reddit.com/r/rust/comments/ismi9w/whats_everyone_working_on_this_week_382020/)
+- url: https://www.reddit.com/r/rust/comments/ismi9w/whats_everyone_working_on_this_week_382020/
 ---
-Welcome once again to the official /r/rust Who's Hiring thread!
-
-Before we begin, job-seekers should also remember to peruse [the prior thread](https://www.reddit.com/r/rust/comments/htnv19/official_rrust_whos_hiring_thread_for_jobseekers/).
-
-This thread will be periodically stickied to the top of /r/rust for improved visibility. The thread will be refreshed and posted anew when the next version of Rust releases in six weeks.
-
-Please adhere to the following rules when posting:
-# Rules for individuals:
-
- * Don't create top-level comments; those are for employers.
- * Feel free to reply to top-level comments with on-topic questions.
- * Anyone seeking work should reply to my stickied top-level comment.
- * Meta-discussion should be reserved for the distinguished comment at the very bottom.
-
-# Rules for employers:
-
- * To find individuals seeking work, see the replies to the stickied top-level comment; you will need to click the "more comments" link at the bottom of the top-level comment in order to make these replies visible.
- * To make a top-level comment you must be hiring directly; no third-party recruiters.
- * One top-level comment per employer. If you have multiple job openings, please consolidate their descriptions or mention them in replies to your own top-level comment.
- * Proofread your comment after posting it and edit it if necessary to correct mistakes.
- * Please base your comment on the following template:
-
-COMPANY: *[Company name; please link to your company's website or careers page.]*
-
-TYPE: *[Full time, part time, internship, contract, etc.]*
-
-DESCRIPTION: *[What does your company do, and what are you using Rust for? How much experience are you seeking and what seniority levels are you hiring for? The more details the better.]*
-
-LOCATION: *[Where are your office or offices located? If your workplace language isn't English, please specify it.]*
-
-REMOTE: *[Do you offer the option of working remotely? If so, do you require employees to live in certain areas or time zones?]*
-
-VISA: *[Does your company sponsor visas?]*
-
-CONTACT: *[How can someone get in touch with you?]*
-## [3][What I Learnt from Benchmarking Http4k, Ktor (Kotlin) and Actix v2, v3 (Rust) Microservices](https://www.reddit.com/r/rust/comments/is9onc/what_i_learnt_from_benchmarking_http4k_ktor/)
-- url: https://matej.laitl.cz/bench-rust-kotlin-microservices/
+New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-38-2020/48763?u=llogiq)!
+## [3][I've been working on adding WSL support to IntelliJ Rust for the past few months. Should make Windows and Rust development a bit nicer for everyone!](https://www.reddit.com/r/rust/comments/it82wo/ive_been_working_on_adding_wsl_support_to/)
+- url: https://github.com/intellij-rust/intellij-rust/pull/5014
 ---
 
-## [4][Rust now no. 18 for September on the TIOBE index](https://www.reddit.com/r/rust/comments/isi49d/rust_now_no_18_for_september_on_the_tiobe_index/)
-- url: https://www.tiobe.com/tiobe-index/
+## [4][Oxidizing XDG portals with zbus](https://www.reddit.com/r/rust/comments/it2hij/oxidizing_xdg_portals_with_zbus/)
+- url: https://belmoussaoui.com/article/13-oxidizing-portals
 ---
 
-## [5][Why can't lifetimes be elided from structs containing references?](https://www.reddit.com/r/rust/comments/isgjkj/why_cant_lifetimes_be_elided_from_structs/)
-- url: https://www.reddit.com/r/rust/comments/isgjkj/why_cant_lifetimes_be_elided_from_structs/
+## [5][How to make VSCode reliable for editing Rust?](https://www.reddit.com/r/rust/comments/it4exz/how_to_make_vscode_reliable_for_editing_rust/)
+- url: https://www.reddit.com/r/rust/comments/it4exz/how_to_make_vscode_reliable_for_editing_rust/
 ---
-So I've been working more with [lifetimes](https://doc.rust-lang.org/1.9.0/book/lifetimes.html#lifetime-elision) recently, and one detail which is not clear to me is why they can be elided from function signatures but not struct declarations.
+I was using VSCode, but recent updates broke important functionality:
 
-What I mean is, when declaring structs with references, I almost always find myself declaring a lifetime for the struct which is shared by the references within:
+* vscode-rust extension + rust language server don't work for tokio and other crates with optional features:
+  https://github.com/rust-lang/vscode-rust/issues/637
+* vscode-rust extension + rust-analyzer are broken:
+  https://github.com/rust-lang/vscode-rust/issues/852
 
-    struct Foo&lt;'a&gt; {
-         bar: &amp;'a Bar
+Is there any combination of versions of VSCode, VSCode Rust Extension, RLS/rust-analyzer, and rust toolchain that just work?
+
+For now, I've gone back to IntelliJ.  It resolves all of the tokio symbols and shows compiler errors and warnings.
+* IntelliJ IDEA CE 2020.1.4
+* IntelliJ Rust plugin 0.3.130.3337-201
+* rust 1.47.0-beta.3
+## [6][A call for contributors from the WG-prioritization team](https://www.reddit.com/r/rust/comments/isvai5/a_call_for_contributors_from_the_wgprioritization/)
+- url: https://blog.rust-lang.org/2020/09/14/wg-prio-call-for-contributors.html
+---
+
+## [7][Your Language Sucks, It Doesn’t Matter](https://www.reddit.com/r/rust/comments/ismzmm/your_language_sucks_it_doesnt_matter/)
+- url: https://matklad.github.io//2020/09/13/your-language-sucks.html
+---
+
+## [8][rust warns of unused variables if not using a feature](https://www.reddit.com/r/rust/comments/it201w/rust_warns_of_unused_variables_if_not_using_a/)
+- url: https://www.reddit.com/r/rust/comments/it201w/rust_warns_of_unused_variables_if_not_using_a/
+---
+    fn main(){
+        let thing = 1;
+        #[cfg(feature="print_thing")]
+        println!("The thing is {}", thing);
     }
 
-Maybe I'm missing something, but it seems like this is the obvious "default case", so my question is:
-
-1. Could this be assumed by the compiler to save a bit of boilerplate?  If not why not?
-
-2. If it could be assumed as the default, what's the reasoning for requiring this to be typed explicitly each time when it's elided in the case of functions?
-## [6][[knurling] One Month of Knurling-rs](https://www.reddit.com/r/rust/comments/isjqo5/knurling_one_month_of_knurlingrs/)
-- url: https://ferrous-systems.com/blog/knurling-one-month/
+The above code warns about an unused variable when the `print_thing` feature is not enabled, but the variable is only sometimes unused. Is it possible to configure the compiler to only warn about unused variables if they are unused in all configs?
+## [9][Just released: C++ for Visual Studio Code v1.0. Does it improve Rust debugging experience in VS Code?](https://www.reddit.com/r/rust/comments/it3sfy/just_released_c_for_visual_studio_code_v10_does/)
+- url: https://devblogs.microsoft.com/cppblog/c-in-visual-studio-code-reaches-version-1-0/
 ---
 
-## [7][rudiments: A drum machine written in Rust](https://www.reddit.com/r/rust/comments/is0inl/rudiments_a_drum_machine_written_in_rust/)
-- url: https://www.reddit.com/r/rust/comments/is0inl/rudiments_a_drum_machine_written_in_rust/
----
-I created a drum machine as a vehicle for learning Rust.
-
-[https://github.com/jonasrmichel/rudiments](https://github.com/jonasrmichel/rudiments)
-
-I'm very interested in feedback on overall structure, data flow, and types.
-
-The project includes some example patterns -- give it a try!
-## [8][I spy that Pyo3 0.12 is released!](https://www.reddit.com/r/rust/comments/is74w7/i_spy_that_pyo3_012_is_released/)
-- url: https://www.reddit.com/r/rust/comments/is74w7/i_spy_that_pyo3_012_is_released/
----
-Everyone has been hard at work improving python-rust interop, culminating in a new release:
-
-[https://github.com/PyO3/pyo3/releases/tag/v0.12.0](https://github.com/PyO3/pyo3/releases/tag/v0.12.0)
-
-As usual with each new release, it's simpler and safer than the previous version. I'm constantly impressed by everyone's efforts striving to make python-rust interop as seamless as possible.
-
-&amp;#x200B;
-
-Personally I'm particularly excited to try out the initial support for ADTs/Enums (in the rust world) that map to Unions in python. Read all about that here:
-
-[https://pyo3.rs/v0.12.0/conversions/traits.html#deriving-a-hrefhttpsdocsrspyo3latestpyo3conversiontraitfrompyobjecthtmlfrompyobjecta-for-enums](https://pyo3.rs/v0.12.0/conversions/traits.html#deriving-a-hrefhttpsdocsrspyo3latestpyo3conversiontraitfrompyobjecthtmlfrompyobjecta-for-enums)
-## [9][Rust 2021](https://www.reddit.com/r/rust/comments/is3ucs/rust_2021/)
-- url: https://hsivonen.fi/rust2021/
+## [10][rust-analyzer changelog #42 – now with async blocks and more!](https://www.reddit.com/r/rust/comments/isl3cy/rustanalyzer_changelog_42_now_with_async_blocks/)
+- url: https://rust-analyzer.github.io/thisweek/2020/09/14/changelog-42.html
 ---
 
-## [10][Outdated openssl-sys](https://www.reddit.com/r/rust/comments/isjuoy/outdated_opensslsys/)
-- url: https://www.reddit.com/r/rust/comments/isjuoy/outdated_opensslsys/
+## [11][Learning resources for Rust patterns](https://www.reddit.com/r/rust/comments/isxxdm/learning_resources_for_rust_patterns/)
+- url: https://www.reddit.com/r/rust/comments/isxxdm/learning_resources_for_rust_patterns/
 ---
-In my time with rust I now have come over quite a few crates that depend on an outdated version of openssl-sys(0.9.\*). The problem is that they all fail to build with current versions of libssl-dev.
+Hey! I've been learning Rust for some months and I've been struggling to find some good resources to learn more about the patterns used in Rust like the builder pattern. I already read the Rust Programming Language Book but now I'm looking for something to read more related to patterns, good practices, etc.
 
-Is there a better way than just forking all the crates and bumping the version manually?
-## [11][Cargo with less noise](https://www.reddit.com/r/rust/comments/is9o7x/cargo_with_less_noise/)
-- url: https://github.com/alopatindev/cargo-limit
+Any recommendation of books, articles, blog posts, etc.?
+## [12][I2C in rust](https://www.reddit.com/r/rust/comments/it8sj6/i2c_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/it8sj6/i2c_in_rust/
 ---
-
-## [12][Bunt: a simple, macro-based terminal coloring/styling library based on `termcolor`](https://www.reddit.com/r/rust/comments/is1x2o/bunt_a_simple_macrobased_terminal_coloringstyling/)
-- url: https://github.com/LukasKalbertodt/bunt
----
-
+does anyone here know how to create code to receive and send any keyboard typed data to and from the I2C port on the Rpi in Rust, also using the arduino.

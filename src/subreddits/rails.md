@@ -19,7 +19,77 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][i made a ruby gem API wrapper for Google Pagespeed Insights](https://www.reddit.com/r/rails/comments/is782v/i_made_a_ruby_gem_api_wrapper_for_google/)
+## [2][How to write this piece of code.](https://www.reddit.com/r/rails/comments/it7j0j/how_to_write_this_piece_of_code/)
+- url: https://www.reddit.com/r/rails/comments/it7j0j/how_to_write_this_piece_of_code/
+---
+I have a requirement where I need to scope based on a few conditions. like so
+
+    posts = case when type == 'deleted'
+    posts.where(deleted: true)
+    when type == 'block'
+    posts.where(blocked: true)
+    else 
+    # return empty
+    end
+
+And then I'll loop through this like 
+
+`posts.find_each(batch_size: 10) ...`
+
+Now, how I do I return something to signify empty AR object list so that the find\_each fails and it doesn't get inside the loop
+
+I was thinking I'd use  `nil`  and then user `posts&amp;.find_each`   
+
+
+Is there a better way to do this?
+## [3][Connecting to WordPress DB from rails](https://www.reddit.com/r/rails/comments/it350w/connecting_to_wordpress_db_from_rails/)
+- url: https://www.reddit.com/r/rails/comments/it350w/connecting_to_wordpress_db_from_rails/
+---
+Hey all,
+
+Our company has a DB or blog articles up in WordPress and a separate website made with RoR. Now, we need to be able to fetch the lists of articles but through the Rails back end and display it on the website.
+
+Has anyone done this type of work before or have any solutions to this? Preferably one that is stable and up to date. Thanks!
+## [4][need help with an array of objects](https://www.reddit.com/r/rails/comments/isvu94/need_help_with_an_array_of_objects/)
+- url: https://www.reddit.com/r/rails/comments/isvu94/need_help_with_an_array_of_objects/
+---
+Hello all -
+
+I have an array of objects (users). each object has an id, username, email, etc...
+I'm trying to loop over the array and print ONLY the username (in rails console)
+
+I've done quite a bit of googling, and can't get this to work - it always seems to print out the ENTIRE user object when I loop over the array.
+
+what I want to do is something like:
+
+user.each do |x|
+puts x.username
+end
+
+I've tried x['username'], x[username], x.username, x[:username]. kind of at a loss here
+
+Thanks in advance
+## [5][your suggestion for a good rails API documentation](https://www.reddit.com/r/rails/comments/islkz9/your_suggestion_for_a_good_rails_api_documentation/)
+- url: https://www.reddit.com/r/rails/comments/islkz9/your_suggestion_for_a_good_rails_api_documentation/
+---
+Hello, i started to learn both ruby and rails in the past two weeks, the problem is i'm really struggling while reading the rails API documentation, in their main site [https://api.rubyonrails.org/](https://api.rubyonrails.org/) i can't find a way to get all the inherited/included methods for a class, i was looking for the `render` method in `ActionController::API` and didn't find it so i went to `ActionController::Metal` and `ActionController::Base` and still didn't find it i really had to do a google search to find it, i'm just looking for a documentation to show me all the available methods you can use inside a class just same as the MDN documentation for JavaScript.
+
+or if you could help me with the correct way to read the official documentation i would be really thankful
+## [6][Error with blogger app](https://www.reddit.com/r/rails/comments/ism550/error_with_blogger_app/)
+- url: https://www.reddit.com/r/rails/comments/ism550/error_with_blogger_app/
+---
+Hello, I am completely new to Rails and I am currently following a tutorial to create a blogger app ([http://tutorials.jumpstartlab.com/projects/blogger.html](http://tutorials.jumpstartlab.com/projects/blogger.html)) but I have run into a problem even though I believe that I did everything exactly as I was supposed to.
+
+&amp;#x200B;
+
+[The error](https://preview.redd.it/u4m1qf3ck4n51.png?width=1091&amp;format=png&amp;auto=webp&amp;s=70a41e1c025ddfe21ba4112a0aa8adc1d4f06127)
+
+&amp;#x200B;
+
+[My code](https://preview.redd.it/oghgpxapk4n51.png?width=1846&amp;format=png&amp;auto=webp&amp;s=c09dc49b9c4904c4cc60c1848d967cce44d9c0a0)
+
+Could anyone help identifying where the problem is?
+## [7][i made a ruby gem API wrapper for Google Pagespeed Insights](https://www.reddit.com/r/rails/comments/is782v/i_made_a_ruby_gem_api_wrapper_for_google/)
 - url: https://www.reddit.com/r/rails/comments/is782v/i_made_a_ruby_gem_api_wrapper_for_google/
 ---
 Hi, i posted the gem here because maybe could be useful for somebody someday. If you want, you can star and contribute to the project on github ;), Thanks you.
@@ -27,7 +97,7 @@ Hi, i posted the gem here because maybe could be useful for somebody someday. If
 Repo: [https://github.com/kevyder/ruby\_pagespeed\_insights](https://github.com/kevyder/ruby_pagespeed_insights)
 
 Rubygems: [https://rubygems.org/gems/ruby\_pagespeed\_insights](https://rubygems.org/gems/ruby_pagespeed_insights)
-## [3][Video Tutorial: How to Host Two Different Rails Apps on One EC2 Instance](https://www.reddit.com/r/rails/comments/irz7l8/video_tutorial_how_to_host_two_different_rails/)
+## [8][Video Tutorial: How to Host Two Different Rails Apps on One EC2 Instance](https://www.reddit.com/r/rails/comments/irz7l8/video_tutorial_how_to_host_two_different_rails/)
 - url: https://www.reddit.com/r/rails/comments/irz7l8/video_tutorial_how_to_host_two_different_rails/
 ---
 I just posted my latest AWS + Rails tutorial: 2 rails apps on the same server.  This was a particularly difficult topic for me when I started learning how to host apps on EC2.  
@@ -37,7 +107,7 @@ My hope is that I can help others figure this out much more quickly and with sig
 If you are interested in learning, check it out and let me know what you think
 
 [https://youtu.be/3U-uJzNEm1c](https://youtu.be/3U-uJzNEm1c)
-## [4][Ruby on Rails Livestreams: Sundae Club](https://www.reddit.com/r/rails/comments/is1su4/ruby_on_rails_livestreams_sundae_club/)
+## [9][Ruby on Rails Livestreams: Sundae Club](https://www.reddit.com/r/rails/comments/is1su4/ruby_on_rails_livestreams_sundae_club/)
 - url: https://www.reddit.com/r/rails/comments/is1su4/ruby_on_rails_livestreams_sundae_club/
 ---
 Hi everyone,
@@ -53,7 +123,7 @@ https://youtu.be/vQjw5uUAx5k
 We covered adding our initial models and associations, we also added Tailwind as a CSS library.
 
 You can find the first stream from last week [here](https://youtu.be/2_pUPKCVX28).
-## [5][nokogiri installation error](https://www.reddit.com/r/rails/comments/is1w0a/nokogiri_installation_error/)
+## [10][nokogiri installation error](https://www.reddit.com/r/rails/comments/is1w0a/nokogiri_installation_error/)
 - url: https://www.reddit.com/r/rails/comments/is1w0a/nokogiri_installation_error/
 ---
 Hello.
@@ -536,7 +606,7 @@ gem\_make.out :
     make: *** [Makefile:202: .sitearchdir.-.nokogiri.time] Error 127
     
     make install failed, exit code 2
-## [6][Digital signage using rails framework?](https://www.reddit.com/r/rails/comments/is1bjq/digital_signage_using_rails_framework/)
+## [11][Digital signage using rails framework?](https://www.reddit.com/r/rails/comments/is1bjq/digital_signage_using_rails_framework/)
 - url: https://www.reddit.com/r/rails/comments/is1bjq/digital_signage_using_rails_framework/
 ---
 So, i was looking at this: [https://github.com/wassgha/digital-signage](https://github.com/wassgha/digital-signage)
@@ -544,139 +614,3 @@ So, i was looking at this: [https://github.com/wassgha/digital-signage](https://
 Does anyone know if there's a rails based digital signage thing?
 
 I think it should be possible to create this in Rails, would it be hard?
-## [7][Whats the best thing to do? Write test after or before a feature?](https://www.reddit.com/r/rails/comments/irt5u9/whats_the_best_thing_to_do_write_test_after_or/)
-- url: https://www.reddit.com/r/rails/comments/irt5u9/whats_the_best_thing_to_do_write_test_after_or/
----
-
-## [8][year and years](https://www.reddit.com/r/rails/comments/is4jr5/year_and_years/)
-- url: https://www.reddit.com/r/rails/comments/is4jr5/year_and_years/
----
-I am new on rails. I know that if I have to check just ONE year ago, I have to use `year`
-
-    1.year.ago
-
-but if I have to check "more years" I have to use `years`, right?
-
-    3.years.ago
-
-How to do if I have to set a scope with a number that can be 1 or 2, 3, 4, etc.?
-
-Can I use `year` (singular) also for more "years"?
-
-        scope :anniversary, lambda { |number|
-          where('created_at &gt; ?', (number).year.ago)
-        }
-## [9][Can't extract 'access-token' from Rails API call on my VueJS front-end](https://www.reddit.com/r/rails/comments/irz13r/cant_extract_accesstoken_from_rails_api_call_on/)
-- url: https://www.reddit.com/r/rails/comments/irz13r/cant_extract_accesstoken_from_rails_api_call_on/
----
-I'm having a hard time getting the 'access-token', 'expiry', 'token-type', 'uid', 'client' information from the response.headers with devise token auth gem. 
-
-My files are as followed : 
-
-&amp;#x200B;
-
-[My cors file](https://preview.redd.it/b153b3iwaxm51.png?width=877&amp;format=png&amp;auto=webp&amp;s=93181d7eec05bf25192fc9668091e0a3f20a2605)
-
-&amp;#x200B;
-
-[config.change\_headers\_on\_each\_request set to false on devise\_token\_auth.rb](https://preview.redd.it/8mypfar1bxm51.png?width=877&amp;format=png&amp;auto=webp&amp;s=f11039dc2699f1fbae7b07d8b7b559b4901a9a80)
-
-&amp;#x200B;
-
-[Concerns added](https://preview.redd.it/yyoslwb5bxm51.png?width=877&amp;format=png&amp;auto=webp&amp;s=1a9d21b1f6cf4d638ca30bc45ead61c7749c9b48)
-
-&amp;#x200B;
-
-[Concerns added](https://preview.redd.it/zw6wzd07bxm51.png?width=877&amp;format=png&amp;auto=webp&amp;s=dcdd29985cf0bd0f51d112d19465ec706bf50564)
-
-&amp;#x200B;
-
-[My post request on the frontend](https://preview.redd.it/n3sw2gj8bxm51.png?width=743&amp;format=png&amp;auto=webp&amp;s=5e59d95d1a6e13084d74d8ca0ca96e0303233850)
-
-&amp;#x200B;
-
-[returned data](https://preview.redd.it/ay9plkyabxm51.png?width=392&amp;format=png&amp;auto=webp&amp;s=55a162a47df4eadda565c3f94a59c5ba0c3191f7)
-
-&amp;#x200B;
-
-[returned data on Postman](https://preview.redd.it/01ufjw3cbxm51.png?width=844&amp;format=png&amp;auto=webp&amp;s=0bf3ed63a8ebcc022fedbd065daf9a6347f989fb)
-
-&amp;#x200B;
-
-How can I get the headers in my Axios call ? 
-
-&amp;#x200B;
-
-When I try to get the headers with a curl through terminal : 
-
-curl -v -H "Content-Type: application/json" -X POST -d '{"email": ["a@b.com](mailto:"a@b.com)","password":"123456"}' [http://localhost:3000/api/v1/auth/sign\_in](http://localhost:3000/api/v1/auth/sign_in) | json\_pp
-
-&amp;#x200B;
-
-[I get the desired information from the headers but with Axios I can't](https://preview.redd.it/kgznytsmbxm51.png?width=683&amp;format=png&amp;auto=webp&amp;s=825ea576965f656c1a03b4f391978d82beb25b40)
-
-&amp;#x200B;
-
-Huge thanks in advance.
-## [10][Different Concerns with the same name for the same action for the same model](https://www.reddit.com/r/rails/comments/irubps/different_concerns_with_the_same_name_for_the/)
-- url: https://www.reddit.com/r/rails/comments/irubps/different_concerns_with_the_same_name_for_the/
----
-Suppose I have two concerns like this
-
-    module Concerns::FirstConcern
-      extend ActiveSupport::Concern
-    
-      included do
-        after_commit :on_create, on: :create
-      end
-    
-      private
-    
-      def on_create
-        puts 'First Concern Create'
-      end  
-    end
-
-and the second one like this
-
-    module Concerns::SecondConcern
-      extend ActiveSupport::Concern
-    
-      included do
-        after_commit :on_create, on: :create
-      end
-    
-      private
-    
-      def on_create
-        puts 'Second Concern Create'
-      end  
-    end
-
-And then in the user model have these both included
-
-    class User &lt; ActiveRecord::Base
-
-include Concerns::FirstConcern include Concerns::SecondConcern end
-
-And then I see all the registered callback it gives me this.`User._commit_callbacks.select { |item| item.kind == :after }.map(&amp;:filter)`
-
-I only get `[:on_create]`
-
-I have two questions
-
-1. Where can I find documentation of how these callbacks will be combined and which ones will be overridden? I'm assuming if it has the same name only the last included module ones will be included.
-2. From the `_commit_callbacks` I can find out all the names of the registered callbacks. How do I find the location where they are defined.
-## [11][I'm listing unmaintained Ruby projects](https://www.reddit.com/r/rails/comments/iredl3/im_listing_unmaintained_ruby_projects/)
-- url: https://www.reddit.com/r/rails/comments/iredl3/im_listing_unmaintained_ruby_projects/
----
-Hello everyone!
-
-Yesterday  I was looking for some unmaintained open source Ruby project to put  some hours in and turns out they are quite hard to find.  
-So I started listing and came up with a small collection.
-
-I'm not thinking about building a huge list of projects, but to help those projects to meet their new maintainers.
-
-Any help will be awesome!
-
-The github repo is here: [https://github.com/attics/ruby\_attic](https://github.com/attics/ruby_attic)

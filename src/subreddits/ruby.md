@@ -1,74 +1,65 @@
 # ruby
-## [1][dry-system - why? | from manual dependency injection to a full-blown architecture](https://www.reddit.com/r/ruby/comments/isgjfz/drysystem_why_from_manual_dependency_injection_to/)
+## [1][Here is a list with a few job openings for ruby developers that auto-updates everyday. Maybe can help someone!](https://www.reddit.com/r/ruby/comments/it6uzw/here_is_a_list_with_a_few_job_openings_for_ruby/)
+- url: https://docs.google.com/spreadsheets/d/e/2PACX-1vTjk1rnmRduqHpBl-3QxgGultV2FpKh96h8wfUx4gfKm5rfa1P7vyI5l8yVs7Q55K9yXAdIf6UstPyW/pubhtml
+---
+
+## [2][I wrote a Ruby circuit-breaker library for decoupling external dependencies and improving fault-tolerance in production applications at my company](https://www.reddit.com/r/ruby/comments/isrily/i_wrote_a_ruby_circuitbreaker_library_for/)
+- url: https://github.com/ParentSquare/faulty
+---
+
+## [3][football.db Gem Family 2020.9 Update for Season 2020/21 incl. all FIFA countries, world's top football leagues &amp; clubs](https://www.reddit.com/r/ruby/comments/it4038/footballdb_gem_family_20209_update_for_season/)
+- url: https://github.com/sportdb/football.db
+---
+
+## [4][Another Reason to Avoid constantize in Rails](https://www.reddit.com/r/ruby/comments/isz2db/another_reason_to_avoid_constantize_in_rails/)
+- url: https://blog.presidentbeef.com/blog/2020/09/14/another-reason-to-avoid-constantize-in-rails/
+---
+
+## [5][How might I run RSpec on files that have recently changed?](https://www.reddit.com/r/ruby/comments/it260y/how_might_i_run_rspec_on_files_that_have_recently/)
+- url: https://www.reddit.com/r/ruby/comments/it260y/how_might_i_run_rspec_on_files_that_have_recently/
+---
+I'm working on a project that has a LOT of files under `spec/`. Rather than typing out the full path to files I want to run when I want to run _just that test_, I'm lazy so I run `bundle exec rake spec` and it runs them all.
+
+Well that's not efficient right? But I want to _stay lazy_. So I'd like to be able to run a command on files that only recently changed. But I don't want this done _automatically_, only via a rake task when I call it. I'm basically trying to create a one-liner "fire and forget" command to run specs that "have changed" since the last time this command was run.
+
+So conceptually, this might be something like:
+
+1. Run rake task, gather up `mtime` on each `_spec.rb` file
+1. Save that somewhere
+1. Run rake task again, and look for changed `mtime` and run specs for only those files
+
+Does anyone know of a **simple** way to implement something like this?
+
+I'd like to stay away from anything that shells out to git, or something like that, if possible. I have my reasons.
+
+Appreciate your thoughts. Thank you.
+## [6][Function Composition: Python vs Ruby](https://www.reddit.com/r/ruby/comments/it8spw/function_composition_python_vs_ruby/)
+- url: https://www.reddit.com/gallery/it8spw
+---
+
+## [7][dry-system - why? | from manual dependency injection to a full-blown architecture](https://www.reddit.com/r/ruby/comments/isgjfz/drysystem_why_from_manual_dependency_injection_to/)
 - url: https://www.youtube.com/watch?v=BQkAGgSCoZ4
 ---
 
-## [2][In case you missed celebrating over the weekend, Happy Day of the Programmer!](https://www.reddit.com/r/ruby/comments/iskwz0/in_case_you_missed_celebrating_over_the_weekend/)
-- url: https://i.redd.it/nohc0ztk84n51.png
+## [8][cant run ruby files](https://www.reddit.com/r/ruby/comments/issvkl/cant_run_ruby_files/)
+- url: https://www.reddit.com/r/ruby/comments/issvkl/cant_run_ruby_files/
 ---
+Hello friend,
 
-## [3][Results form the 2020 Ruby on Rails developer community survey](https://www.reddit.com/r/ruby/comments/is35ga/results_form_the_2020_ruby_on_rails_developer/)
-- url: https://rails-hosting.com/2020/
----
-
-## [4][i made a ruby gem API wrapper for Google Pagespeed Insights](https://www.reddit.com/r/ruby/comments/is77qc/i_made_a_ruby_gem_api_wrapper_for_google/)
-- url: https://www.reddit.com/r/ruby/comments/is77qc/i_made_a_ruby_gem_api_wrapper_for_google/
----
-Hi, i posted the gem here because maybe could be useful for somebody someday. If you want, you can star and contribute to the project on github ;), Thanks you.
+I am trying to run the following command on ruby in terminal. I am using a framework that's called "ruby2d" the file is called "rub.rb" when i do the following command in terminal "ruby rub.rb" it gives me an error saying "no file found" I am running windows 10. Here is the code...
 
 &amp;#x200B;
 
-Repo: [https://github.com/kevyder/ruby\_pagespeed\_insights](https://github.com/kevyder/ruby_pagespeed_insights)
+require 'ruby2d'
 
-Rubygems: [https://rubygems.org/gems/ruby\_pagespeed\_insights](https://rubygems.org/gems/ruby_pagespeed_insights)
-## [5][3 ways to make class methods private in Ruby](https://www.reddit.com/r/ruby/comments/isfick/3_ways_to_make_class_methods_private_in_ruby/)
+&amp;#x200B;
+
+show
+## [9][3 ways to make class methods private in Ruby](https://www.reddit.com/r/ruby/comments/isfick/3_ways_to_make_class_methods_private_in_ruby/)
 - url: https://medium.com/rubycademy/3-ways-to-make-class-methods-private-in-ruby-64b970e54613
 ---
 
-## [6][Document token information endpoint – API only ruby on rails course (chapter 11)](https://www.reddit.com/r/ruby/comments/is4s3l/document_token_information_endpoint_api_only_ruby/)
-- url: https://duetcode.io/rails-api-only-course/document-token-information-endpoint
----
-
-## [7][Conditional class opening in Ruby](https://www.reddit.com/r/ruby/comments/irtuw8/conditional_class_opening_in_ruby/)
-- url: https://medium.com/rubycademy/conditional-class-opening-in-ruby-49a4524b7f85
----
-
-## [8][Did you know that Time#utc modifies the receiver?](https://www.reddit.com/r/ruby/comments/irkhj2/did_you_know_that_timeutc_modifies_the_receiver/)
-- url: https://i.redd.it/vv5ac7il4sm51.png
----
-
-## [9][Ruby Jard - Just Another Ruby Debugger](https://www.reddit.com/r/ruby/comments/ircolf/ruby_jard_just_another_ruby_debugger/)
-- url: https://www.reddit.com/r/ruby/comments/ircolf/ruby_jard_just_another_ruby_debugger/
----
-Hi all, I would like to show you guys a Ruby debugger, named Ruby  Jard, that I'm working on recently. Ruby Jard provides a rich Terminal  UI that visualizes everything your need, navigates your program with  pleasure, stops at matter places only, reduces manual and mental  efforts. You can now focus on real debugging.
-
-Ruby Jard wraps around Byebug, and Pry and provides a series of features and enhancements. Some significant features:
-
-* Rich intuitive Terminal UI, runs directly in terminal emulators.
-* Navigate with pleasure. No more next, next, next, next, and have no idea what you are doing.
-* Debug filter. Prevent your program from stepping into weird places.  You can specify which layer (application only, gems, standard libs,  etc.) you are interested in, and can combine with the included/excluded  list.
-* Visualize everything you need, grab important things at one glance. A  totally new variable inspection that helps you comprehend any variable  data shape, and peek at its data.
-* Powerful REPL console
-* Flexible customization
-
-It is still in Beta version. So, it would be great to hear the feedback so that I can improve it in the future.
-
-You can see it in action at [https://rubyjard.org/](https://rubyjard.org/). Or watch the following video: [https://asciinema.org/a/358874](https://asciinema.org/a/358874).
-
-Some screenshots:
-
-https://preview.redd.it/q6yjcltmypm51.png?width=1240&amp;format=png&amp;auto=webp&amp;s=ad3853be5c6de571e6a8ee446cdde06a378b9d41
-
-https://preview.redd.it/7c6i1yrpypm51.png?width=1272&amp;format=png&amp;auto=webp&amp;s=8dcbc1c1a04b48bd60c11725d07a08fa121e9a71
-
-https://preview.redd.it/h0rzk0spypm51.png?width=1252&amp;format=png&amp;auto=webp&amp;s=6ceeacf144199ba5fd4f1c90fc88eb94c64d656d
-
-https://preview.redd.it/yn0aa6spypm51.png?width=1248&amp;format=png&amp;auto=webp&amp;s=e3d940e7b3bad638537d2121959a2b7bdec02b6d
-
-https://preview.redd.it/m5oh3azrypm51.png?width=1251&amp;format=png&amp;auto=webp&amp;s=cf94a3cecfb756d26824bf324f2a9536be654742
-
-[Debug Rails on 2K screen](https://preview.redd.it/f0mt8bzsypm51.png?width=2559&amp;format=png&amp;auto=webp&amp;s=ca3522c663fa6f1b102ae5498d8db853f1137760)
-## [10][The Most Popular Programming Languages - 1965/2020](https://www.reddit.com/r/ruby/comments/irh1dr/the_most_popular_programming_languages_19652020/)
-- url: https://youtu.be/UNSoPa-XQN0
+## [10][Results form the 2020 Ruby on Rails developer community survey](https://www.reddit.com/r/ruby/comments/is35ga/results_form_the_2020_ruby_on_rails_developer/)
+- url: https://rails-hosting.com/2020/
 ---
 

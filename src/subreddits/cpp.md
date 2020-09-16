@@ -56,65 +56,123 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][Bjarne Stroustrup: C++ Today (2016)](https://www.reddit.com/r/cpp/comments/it54o4/bjarne_stroustrup_c_today_2016/)
+## [2][I made this ASCII Tetris clone demo in console](https://www.reddit.com/r/cpp/comments/itscqo/i_made_this_ascii_tetris_clone_demo_in_console/)
+- url: https://youtu.be/_rQ3RHeVDRQ
+---
+
+## [3][CppScript: the evolution of modern C++](https://www.reddit.com/r/cpp/comments/itsj2n/cppscript_the_evolution_of_modern_c/)
+- url: https://www.reddit.com/r/cpp/comments/itsj2n/cppscript_the_evolution_of_modern_c/
+---
+This is a thread following [this thread](https://www.reddit.com/r/cpp/comments/i0i0e4/constexpr_if_and_requires_expressions_changed/) and [this post](https://www.reddit.com/r/cpp/comments/i15g4p/c_has_become_easier_to_write_than_java/fzuq0jp/?context=3).
+
+There's an emerging modern cpp subset, I personally call it "CppScript", that closely resembles the coding style of most popular dynamically typed languages. consider the following Python program:
+
+    class TypeA:
+        def f(self):
+            return 'TypeA'
+        def g(self):
+            return 'Hello!'
+        
+    class TypeB:
+        def f(self):
+            return 'TypeB'
+        
+    def Test(obj):
+        if hasattr(obj, 'g'):
+            print(obj.f() + ' says ' + obj.g())
+        else:
+            print('g() is missing from ' + obj.f())
+            
+    Test(TypeA())
+    Test(TypeB())
+
+Below are the corresponding C++ programs that accurately replicate the behavior of the Python program above, in different versions of C++ (I have also tried to further downgrade from C++11 to C++98 but I failed because SFINAE seems exceptionally hard in C++98, I can't figure out the syntax to describe `decltype(&amp;T::g)` in C++98):
+
+C++20: [https://godbolt.org/z/xG5v4s](https://godbolt.org/z/xG5v4s)
+
+C++17: [https://godbolt.org/z/v9nY9P](https://godbolt.org/z/v9nY9P)
+
+C++14: [https://godbolt.org/z/5Eh1Mv](https://godbolt.org/z/5Eh1Mv)
+
+C++11: [https://godbolt.org/z/961dnY](https://godbolt.org/z/961dnY)
+
+as you can see, the C++20 version is bit-identical (by "bit-identical", I mean each line of the C++ code **directly** corresponds to a line of the Python code above) to the Python code and as the C++ version gets older, the code gets more intricate and the coding style gradually deviates from the script looking Python/C++20 to more traditional template metaprogramming.
+
+The CppScript subset of modern C++ is very easy to learn and write, you just need to follow these rules:
+
+1. `auto` everywhere, this is not that much about "I just don't bother with typing the types", `auto` is essential to duck typing and letting your code ***automatically*** generalize to any compatible type.
+2. favor duck typing (static polymorphism) over dynamic polymorphism (type erasure + virtual functions) whenever possible. This is because C++ is after all, statically typed, and the type information is either mostly erased (if RTTI is enabled or if there's any virtual function) or completely erased at runtime, therefore any functionality that relies on runtime type information will be very limited. many extremely powerful features including duck typing and dependent types are compile time only for C++ and you will want to take advantage of these features.
+3. Don't overcomplicate things with a million classes and design patterns, use `requires` expressions and `constexpr if` if you want to query the behavior of something and change the behavior of your code accordingly.
+4. Think in dynamic typing, but be aware that any type related stuff must be determined at compile time. You don't need a highly constrained mindset like you do for other less permissive statically typed languages like Java. C++ is very flexible at compile time, for instance, functions (function templates to be precise) could have return values of potentially different types, as long as the exact return type is reachable at compile time.
+
+&amp;#x200B;
+
+    template&lt;auto x&gt;
+    auto f() {
+        if constexpr (x == 0)
+            return 42;
+        else
+            return 2.71;
+    }
+    f&lt;0&gt;(); // returns int
+    f&lt;1&gt;(); // returns double
+
+personally I don't see a huge gap between the CppScript subset and dynamically typed languages like Python for most use cases, and I think it's a great startpoint for anyone that struggles to learn C++, it is much simpler, easier and more intuitive than the rest of C++
+## [4][CppCon: Try out CppCon 2020 on the cheap](https://www.reddit.com/r/cpp/comments/itl0l8/cppcon_try_out_cppcon_2020_on_the_cheap/)
+- url: https://www.reddit.com/r/cpp/comments/itl0l8/cppcon_try_out_cppcon_2020_on_the_cheap/
+---
+CppCon 2020 is off to a great start in its "online venue."
+
+If you've been curious about attending CppCon or attending an online C++ conference, now may be the time.
+
+Since the conference is about half over, registrations are now available at half-off the regular $300 registration fee (with discount code).
+
+To register at the $150 discounted registration fee use this registration code: [https://cppcon2020.eventbrite.com/?discount=TasteOf\_CppCon\_Reddit](https://cppcon2020.eventbrite.com/?discount=TasteOf_CppCon_Reddit)
+## [5][Happy new Jewish year - A C++20 Jewish Date library](https://www.reddit.com/r/cpp/comments/itct0i/happy_new_jewish_year_a_c20_jewish_date_library/)
+- url: https://www.reddit.com/r/cpp/comments/itct0i/happy_new_jewish_year_a_c20_jewish_date_library/
+---
+[https://github.com/royalbee/jewish\_date](https://github.com/royalbee/jewish_date)
+
+A header only std::chrono date like library to handle [Jewish Dates](https://en.wikipedia.org/wiki/Hebrew_calendar).
+
+    #include &lt;jewish/date.h&gt;
+    
+    using namespace jewish::literals;
+    
+    static_assert(5781_y / Tishrei / 1 == jewish::year_month_day(date::year(2020) / 9 / 19));
+    static_assert(date::year_month_day(5781_y / Tishrei / 1) == date::year(2020) / 9 / 19);
+
+Since I Couldn't find any standard library supporting chrono date it Currently uses [Howard Hinnant's date library](https://github.com/HowardHinnant/date).
+
+&amp;#x200B;
+
+Happy Healthy Peaceful Year
+## [6][What are the advantages of a weak ownership model in modules?](https://www.reddit.com/r/cpp/comments/ita6xn/what_are_the_advantages_of_a_weak_ownership_model/)
+- url: https://www.reddit.com/r/cpp/comments/ita6xn/what_are_the_advantages_of_a_weak_ownership_model/
+---
+As the title says, there are two different ownership models allowed by the standard in modules
+
+1. Strong Ownership Model
+2. Weak Ownership Model
+
+What are the advantages of the weak ownership model as compared to strong ownership models?
+## [7][Structure Padding in C++](https://www.reddit.com/r/cpp/comments/itv4zw/structure_padding_in_c/)
+- url: https://thoughts-on-coding.com/2020/09/14/structure-padding-in-cpp/
+---
+
+## [8][Refactoring from single to multi purpose](https://www.reddit.com/r/cpp/comments/ituksf/refactoring_from_single_to_multi_purpose/)
+- url: http://meetingcpp.com/blog/items/Refactoring-from-single-to-multi-purpose.html
+---
+
+## [9][Bjarne Stroustrup: C++ Today (2016)](https://www.reddit.com/r/cpp/comments/it54o4/bjarne_stroustrup_c_today_2016/)
 - url: https://www.youtube.com/watch?v=aPvbxuOBQ70&amp;list=WL&amp;index=11&amp;t=0s
 ---
 
-## [3][C++ in Visual Studio Code reaches version 1.0! | C++ Team Blog](https://www.reddit.com/r/cpp/comments/ista1w/c_in_visual_studio_code_reaches_version_10_c_team/)
+## [10][C++ in Visual Studio Code reaches version 1.0! | C++ Team Blog](https://www.reddit.com/r/cpp/comments/ista1w/c_in_visual_studio_code_reaches_version_10_c_team/)
 - url: https://devblogs.microsoft.com/cppblog/c-in-visual-studio-code-reaches-version-1-0/
 ---
 
-## [4][Standard C++20 Modules support with MSVC in Visual Studio 2019 version 16.8 | C++ Team Blog](https://www.reddit.com/r/cpp/comments/ispeiy/standard_c20_modules_support_with_msvc_in_visual/)
+## [11][Standard C++20 Modules support with MSVC in Visual Studio 2019 version 16.8 | C++ Team Blog](https://www.reddit.com/r/cpp/comments/ispeiy/standard_c20_modules_support_with_msvc_in_visual/)
 - url: https://devblogs.microsoft.com/cppblog/standard-c20-modules-support-with-msvc-in-visual-studio-2019-version-16-8/
----
-
-## [5][C11 and C17 Standard Support Arriving in MSVC](https://www.reddit.com/r/cpp/comments/isusdb/c11_and_c17_standard_support_arriving_in_msvc/)
-- url: https://devblogs.microsoft.com/cppblog/c11-and-c17-standard-support-arriving-in-msvc/
----
-
-## [6][Raytracer project](https://www.reddit.com/r/cpp/comments/it4ng6/raytracer_project/)
-- url: https://www.reddit.com/r/cpp/comments/it4ng6/raytracer_project/
----
-I have decided to write a raytracer for my University project. However, I was wondering what could be done to make it different. I've seen lots of source code out there on how to make the raytracer. But I was hoping to add some other cool elements to it. I'm not sure if this is possible but what do you suggest or think is doable but not impossible. Thanks
-## [7][C++ Weekly Episode 237 - Teach Yourself C++ in ∞ Days](https://www.reddit.com/r/cpp/comments/isweg9/c_weekly_episode_237_teach_yourself_c_in_days/)
-- url: https://youtu.be/zUQz4LBBz7M
----
-
-## [8][P2011: A pipeline-rewrite operator. What are your thoughts?](https://www.reddit.com/r/cpp/comments/iso0fp/p2011_a_pipelinerewrite_operator_what_are_your/)
-- url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/p2011r1.html
----
-
-## [9][How to set up an ARM64 playground on Ubuntu 18.04](https://www.reddit.com/r/cpp/comments/it25o3/how_to_set_up_an_arm64_playground_on_ubuntu_1804/)
-- url: https://offlinemark.com/2020/06/24/how-to-set-up-an-arm64-playground-on-ubuntu-18-04/
----
-
-## [10][Updates in Dragonbox](https://www.reddit.com/r/cpp/comments/ishdj9/updates_in_dragonbox/)
-- url: https://www.reddit.com/r/cpp/comments/ishdj9/updates_in_dragonbox/
----
-Hi all, Dragonbox ([https://github.com/jk-jeon/dragonbox](https://github.com/jk-jeon/dragonbox)) is a float-to-string conversion algorithm with:
-
-1. Round-trip guarantee,
-2. Shortest number of digits guarantee, and
-3. Correct rounding guarantee,
-
-which performs better than Ryu and also my previous algorithm Grisu-Exact.
-
-I already have posted about Dragonbox two weeks ago here ([https://www.reddit.com/r/cpp/comments/ika6ml/dragonbox\_yet\_another\_floattostring\_conversion/](https://www.reddit.com/r/cpp/comments/ika6ml/dragonbox_yet_another_floattostring_conversion/)), but I shouldn't have done that at that time because it was quite incomplete, though I couldn't really realize. Sorry for spamming! :(
-
-Now I think it is finally sorta completed, and perhaps this is a better timing to share it with you guys.
-
-Here are some updates:
-
-1. I finished writing a [paper](https://github.com/jk-jeon/dragonbox/blob/master/other_files/Dragonbox.pdf) for the algorithm. I hope it is readable to anyone who are interested in this topic, but I know my writing is horrible, so please give me some feedback if you ever have tried reading it.
-2. Fixed some bugs in less-tested rounding modes. I believe they are all correct now.
-3. Added a version using a compressed cache table for `double`'s. It uses only about 11% of static data table compared to the original one, at the cost of being about 20% slower. (The original one uses about 10KB, while the new one uses about 1.1KB.) It is but still way faster than the double-conversion library, for example.
-4. Did more tests, including exhaustive test for `float`'s against a reverse (decimal-to-binary) conversion algorithm and confirmed successful round-trip of every single `float`. Now I'm pretty confident about the correctness.
-5. Simplified the way of passing policy arguments.
-
-Please check the repository ([https://github.com/jk-jeon/dragonbox](https://github.com/jk-jeon/dragonbox)) if you are interested, thanks.
-
-I'm planning to work on things like Ryu-printf and string-to-float algorithms from now on, if time permits. I would appreciate it if you guys can share some interesting ideas or thoughts.
-## [11][Simple scripting VM example (parser + bytecode) with strings, arithmetic, control flow (no functions (yet!)); nan-tagging and indirect-threading; based on "Crafting Interpreters" book; faster than PUC-Rio Lua and Node.js (JIT off) in arithmetic loop benchmark](https://www.reddit.com/r/cpp/comments/isrwxi/simple_scripting_vm_example_parser_bytecode_with/)
-- url: https://godbolt.org/z/5GbhnK
 ---
 

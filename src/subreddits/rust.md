@@ -23,63 +23,80 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/ismi9w/whats_everyone_working_on_this_week_382020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-38-2020/48763?u=llogiq)!
-## [3][I've been working on adding WSL support to IntelliJ Rust for the past few months. Should make Windows and Rust development a bit nicer for everyone!](https://www.reddit.com/r/rust/comments/it82wo/ive_been_working_on_adding_wsl_support_to/)
+## [3][Dropbox open sources protobuf codegen!](https://www.reddit.com/r/rust/comments/ittov9/dropbox_open_sources_protobuf_codegen/)
+- url: https://www.reddit.com/r/rust/comments/ittov9/dropbox_open_sources_protobuf_codegen/
+---
+Hey everyone! At Dropbox we built our own protobuf framework to meet our production needs. We're now open sourcing it!
+
+Back in 2015 when we were building our [Storage System](https://dropbox.tech/infrastructure/inside-the-magic-pocket) we needed a framework that supported zero copy de-serialization, which prompted the creation of our own library. Since, we've began using it for several parts of Dropbox, including our [Sync Engine](https://dropbox.tech/infrastructure/rewriting-the-heart-of-our-sync-engine). Along with zero copy de-serialization we also provide a number of "Rustic" proto extensions. 
+
+Feel free to give it a look, file an issue, open a PR, and stay on the lookout for more open source Rust libraries from Dropbox 
+
+[GitHub](https://github.com/dropbox/pb-jelly) | [crates.io](https://crates.io/crates/pb-jelly)
+
+&amp;#x200B;
+
+P.S. proto service generation coming soon...
+## [4][Blog Post: Challenging LR Parsing](https://www.reddit.com/r/rust/comments/itsr7u/blog_post_challenging_lr_parsing/)
+- url: https://rust-analyzer.github.io/blog/2020/09/16/challeging-LR-parsing.html
+---
+
+## [5][Should I publish a library of which I believe that no one would use it?](https://www.reddit.com/r/rust/comments/itr5qn/should_i_publish_a_library_of_which_i_believe/)
+- url: https://www.reddit.com/r/rust/comments/itr5qn/should_i_publish_a_library_of_which_i_believe/
+---
+Hello, I wrote [u16\_tic\_tac\_toe](https://github.com/EikeSchulze/u16_tic_tac_toe), a library that uses an u16 to represent a tic-tac-toe grid.
+
+I personally can not see anyone wanting to use a library for such a trivial problem, so I wanted to get the opinions of the community, whether I should publish this to [crates.io](https://crates.io).
+
+So, what do you think?
+
+[View Poll](https://www.reddit.com/poll/itr5qn)
+## [6][Initial C API for hyper (Pull Request)](https://www.reddit.com/r/rust/comments/itgcar/initial_c_api_for_hyper_pull_request/)
+- url: https://github.com/hyperium/hyper/pull/2278
+---
+
+## [7][js-sandbox: securely embed JavaScript into Rust code](https://www.reddit.com/r/rust/comments/ittnir/jssandbox_securely_embed_javascript_into_rust_code/)
+- url: https://www.reddit.com/r/rust/comments/ittnir/jssandbox_securely_embed_javascript_into_rust_code/
+---
+**js-sandbox** is a crate with a minimal API that allows calling JavaScript from Rust. It is based on the Deno project, which again uses the V8 engine.
+
+Very basic example:
+
+```rust
+fn main() -&gt; Result&lt;(), ErrBox&gt; {
+    let js_code = "function triple(a) { return 3 * a; }"
+    let mut script = Script::from_string(js_code)?;
+    
+    let arg = 7;
+    let result: i32 = script.call("triple", &amp;arg)?;
+    
+    assert_eq!(result, 21);
+    Ok(())
+}
+```
+
+More examples are available [on the GitHub page](https://github.com/Bromeon/js-sandbox) or [docs.rs](https://docs.rs/js-sandbox/).
+
+Possible use cases are plugin systems or mods for games. JavaScript may not be a typical language for this, however it has been battle-tested for security and there are [many languages that transpile to JS](https://github.com/jashkenas/coffeescript/wiki/List-of-languages-that-compile-to-JS).
+
+Plans for the near future are updating to latest deno\_core version, as well as extending the API to cover basic use cases. I would like to keep js-sandbox as simple and minimal as possible, it's meant to be a high-level abstraction and not a massively configurable interpreter :)
+## [8][Which Parsing Approach?](https://www.reddit.com/r/rust/comments/itjxvv/which_parsing_approach/)
+- url: https://tratt.net/laurie/blog/entries/which_parsing_approach.html
+---
+
+## [9][I've been working on adding WSL support to IntelliJ Rust for the past few months. Should make Windows and Rust development a bit nicer for everyone!](https://www.reddit.com/r/rust/comments/it82wo/ive_been_working_on_adding_wsl_support_to/)
 - url: https://github.com/intellij-rust/intellij-rust/pull/5014
 ---
 
-## [4][Oxidizing XDG portals with zbus](https://www.reddit.com/r/rust/comments/it2hij/oxidizing_xdg_portals_with_zbus/)
-- url: https://belmoussaoui.com/article/13-oxidizing-portals
+## [10][Announcing KeySeeBee and Keyberon v0.1.0](https://www.reddit.com/r/rust/comments/ita9va/announcing_keyseebee_and_keyberon_v010/)
+- url: https://i.redd.it/zu2iys17rbn51.jpg
 ---
 
-## [5][How to make VSCode reliable for editing Rust?](https://www.reddit.com/r/rust/comments/it4exz/how_to_make_vscode_reliable_for_editing_rust/)
-- url: https://www.reddit.com/r/rust/comments/it4exz/how_to_make_vscode_reliable_for_editing_rust/
----
-I was using VSCode, but recent updates broke important functionality:
-
-* vscode-rust extension + rust language server don't work for tokio and other crates with optional features:
-  https://github.com/rust-lang/vscode-rust/issues/637
-* vscode-rust extension + rust-analyzer are broken:
-  https://github.com/rust-lang/vscode-rust/issues/852
-
-Is there any combination of versions of VSCode, VSCode Rust Extension, RLS/rust-analyzer, and rust toolchain that just work?
-
-For now, I've gone back to IntelliJ.  It resolves all of the tokio symbols and shows compiler errors and warnings.
-* IntelliJ IDEA CE 2020.1.4
-* IntelliJ Rust plugin 0.3.130.3337-201
-* rust 1.47.0-beta.3
-## [6][A call for contributors from the WG-prioritization team](https://www.reddit.com/r/rust/comments/isvai5/a_call_for_contributors_from_the_wgprioritization/)
-- url: https://blog.rust-lang.org/2020/09/14/wg-prio-call-for-contributors.html
+## [11][Announcing juggle v0.1.0, async cooperative multitasking library.](https://www.reddit.com/r/rust/comments/itg5p1/announcing_juggle_v010_async_cooperative/)
+- url: https://crates.io/crates/juggle
 ---
 
-## [7][Your Language Sucks, It Doesn’t Matter](https://www.reddit.com/r/rust/comments/ismzmm/your_language_sucks_it_doesnt_matter/)
-- url: https://matklad.github.io//2020/09/13/your-language-sucks.html
+## [12][Next-Generation Programming: Rust &amp; Elm with Richard Feldman](https://www.reddit.com/r/rust/comments/itufpa/nextgeneration_programming_rust_elm_with_richard/)
+- url: https://youtu.be/ukVqQGbxM9A?list=PLEx5khR4g7PL-JwckuOkkc5cR6X5hn6ug
 ---
 
-## [8][rust warns of unused variables if not using a feature](https://www.reddit.com/r/rust/comments/it201w/rust_warns_of_unused_variables_if_not_using_a/)
-- url: https://www.reddit.com/r/rust/comments/it201w/rust_warns_of_unused_variables_if_not_using_a/
----
-    fn main(){
-        let thing = 1;
-        #[cfg(feature="print_thing")]
-        println!("The thing is {}", thing);
-    }
-
-The above code warns about an unused variable when the `print_thing` feature is not enabled, but the variable is only sometimes unused. Is it possible to configure the compiler to only warn about unused variables if they are unused in all configs?
-## [9][Just released: C++ for Visual Studio Code v1.0. Does it improve Rust debugging experience in VS Code?](https://www.reddit.com/r/rust/comments/it3sfy/just_released_c_for_visual_studio_code_v10_does/)
-- url: https://devblogs.microsoft.com/cppblog/c-in-visual-studio-code-reaches-version-1-0/
----
-
-## [10][rust-analyzer changelog #42 – now with async blocks and more!](https://www.reddit.com/r/rust/comments/isl3cy/rustanalyzer_changelog_42_now_with_async_blocks/)
-- url: https://rust-analyzer.github.io/thisweek/2020/09/14/changelog-42.html
----
-
-## [11][Learning resources for Rust patterns](https://www.reddit.com/r/rust/comments/isxxdm/learning_resources_for_rust_patterns/)
-- url: https://www.reddit.com/r/rust/comments/isxxdm/learning_resources_for_rust_patterns/
----
-Hey! I've been learning Rust for some months and I've been struggling to find some good resources to learn more about the patterns used in Rust like the builder pattern. I already read the Rust Programming Language Book but now I'm looking for something to read more related to patterns, good practices, etc.
-
-Any recommendation of books, articles, blog posts, etc.?
-## [12][I2C in rust](https://www.reddit.com/r/rust/comments/it8sj6/i2c_in_rust/)
-- url: https://www.reddit.com/r/rust/comments/it8sj6/i2c_in_rust/
----
-does anyone here know how to create code to receive and send any keyboard typed data to and from the I2C port on the Rpi in Rust, also using the arduino.

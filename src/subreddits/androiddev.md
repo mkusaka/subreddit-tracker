@@ -31,7 +31,90 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Kaspresso 1.2.0: AdbServer](https://www.reddit.com/r/androiddev/comments/it5bg1/kaspresso_120_adbserver/)
+## [3][My First Real App](https://www.reddit.com/r/androiddev/comments/itrsko/my_first_real_app/)
+- url: https://www.reddit.com/r/androiddev/comments/itrsko/my_first_real_app/
+---
+Hello everyone, this is my first time writing in this subreddit.
+
+I wrote a pokédex like app in kotlin and I wanted to showcase it and get your advice as everything I did came from self learning.
+
+&amp;#x200B;
+
+[Link to the app](https://github.com/FabZanna/FabulousPokedex)
+
+&amp;#x200B;
+
+I hope to receive many feedbacks!
+
+Thank you for your time
+## [4][This is how "Anonymous Usage Reporting" requests should be like](https://www.reddit.com/r/androiddev/comments/itfuq3/this_is_how_anonymous_usage_reporting_requests/)
+- url: https://i.redd.it/gl3pqanu5dn51.jpg
+---
+
+## [5][Youtube Concept UI](https://www.reddit.com/r/androiddev/comments/itsghz/youtube_concept_ui/)
+- url: https://www.reddit.com/r/androiddev/comments/itsghz/youtube_concept_ui/
+---
+Hello World;  ◉‿◉
+
+I have been experimenting with Flutter for the last few days, Got to learn many things while working on this fun project so here is my concept UI for YouTube.
+
+Check the project on GitHub: [Project Link](https://github.com/sahq-azhar/Flutter-Future_Google-YouTube_UI)
+
+⭐ the repository if you liked it.
+
+Would love for any suggestions and improvements from your side.  ᕙ(  • ‿ •  )ᕗ
+
+Peace✌️
+
+Good day folks!
+
+\------------------------------------------------------------------------------------------------
+
+Happy Coding.
+
+[GitHub Profile](https://github.com/sahq-azhar)
+
+&amp;#x200B;
+
+https://reddit.com/link/itsghz/video/1wtnzbnvchn51/player
+## [6][Android Studio 4.1 RC 3 available](https://www.reddit.com/r/androiddev/comments/ite354/android_studio_41_rc_3_available/)
+- url: https://androidstudio.googleblog.com/2020/09/android-studio-41-rc-3-available.html
+---
+
+## [7][Build Actions For Google Assistant Using the new Actions Builder (Codelab 2)](https://www.reddit.com/r/androiddev/comments/ittmpb/build_actions_for_google_assistant_using_the_new/)
+- url: https://www.reddit.com/r/androiddev/comments/ittmpb/build_actions_for_google_assistant_using_the_new/
+---
+ Learn how to build Actions for Google Assistant using the new Actions Builder from scratch.  Learn to build sophisticated conversational Actions for the Google Assistant.   
+
+
+**Youtube Video**: [Build Actions For Google Assistant Using Actions Builder (Codelab 2)](https://www.youtube.com/watch?v=I7p6A-GI6E8&amp;list=PLG9FQRMgm_JK2YnJaY2_sdbR-WmNumwD3&amp;index=1)
+
+&amp;#x200B;
+
+https://i.redd.it/95l72f8dwhn51.gif
+
+**What you'll learn** 
+
+* How to use slots to gather data from the user 
+* How to use conditions to add logic to a scene 
+* How to add a game loop 
+* How to add a supportive path
+## [8][For those who paid the 25usd developer fee for Google Play - if you're making a game with another person, what do you put as Business Name if you are not a business?](https://www.reddit.com/r/androiddev/comments/ittl7c/for_those_who_paid_the_25usd_developer_fee_for/)
+- url: https://www.reddit.com/r/androiddev/comments/ittl7c/for_those_who_paid_the_25usd_developer_fee_for/
+---
+Like can you come up with anything you want? Epic Durability Gamee Entertainment, Lappendixois Studios, etc...
+
+Do you have to register or copyright your name? How do you prove it or back it up?
+
+Or you just use your real name? But then that will show up also for the customers in the bank statements. Or you just use your game's name? But whag if you release 2 games, then you cant do that
+## [9][Enterpise App Subscription model](https://www.reddit.com/r/androiddev/comments/itsb40/enterpise_app_subscription_model/)
+- url: https://www.reddit.com/r/androiddev/comments/itsb40/enterpise_app_subscription_model/
+---
+I am currently looking for a solution to charge a company for the usage of my app based on the amount of users they buy a license for. For example, a company has 1000 devices. I want them to pay 2$ per device. The payment should reoccur annually. If the user/company does not pay for the service they don’t have access anymore.
+
+My idea was to let them buy an annual subscription per device via in app purchase, but I don’t know if that is possible to handle for enterprise apps. Does someone here have experience in that field or had a similar requirement?
+It would be nice, if I could achieve this with the google play Store
+## [10][Kaspresso 1.2.0: AdbServer](https://www.reddit.com/r/androiddev/comments/it5bg1/kaspresso_120_adbserver/)
 - url: https://www.reddit.com/r/androiddev/comments/it5bg1/kaspresso_120_adbserver/
 ---
 Hello everyone!
@@ -50,67 +133,11 @@ Shortly, Kaspresso is a great framework for UI testing. Based on [Espresso](http
 * Features screenshotting.
 
 All details about the new version of Kaspresso are [here](https://github.com/KasperskyLab/Kaspresso/releases/tag/v1.2.0).
-## [4][What are the current caveats in KMM?](https://www.reddit.com/r/androiddev/comments/it2c9r/what_are_the_current_caveats_in_kmm/)
-- url: https://www.reddit.com/r/androiddev/comments/it2c9r/what_are_the_current_caveats_in_kmm/
----
-Recently JB released [KMM 1.0 alpha](https://www.reddit.com/r/androiddev/comments/ik1zu8/kotlin_multiplatform_mobile_goes_alpha_kotlin_blog/) and they are [addressing memory model](https://www.google.com/search?q=memory+model+kotlin+native) issue but what about other issues?
-
-* Tooling : IDE, Gradle
-* Ecosystem
-* iOS performance issues
-
-Does Android / iOS app 
-
-* performance get affected
-* .apk / .ipa size increases 
-
-with KMM?
-
-Can anyone please share your experience?  Can we confidently share code between iOS and Android platforms without much hassle?
-## [5][Java 15 is now available.](https://www.reddit.com/r/androiddev/comments/it85li/java_15_is_now_available/)
+## [11][Java 15 is now available.](https://www.reddit.com/r/androiddev/comments/it85li/java_15_is_now_available/)
 - url: http://openjdk.java.net/projects/jdk/15/
 ---
 
-## [6][Turning it up to 11: Android 11 for developers](https://www.reddit.com/r/androiddev/comments/it5o5a/turning_it_up_to_11_android_11_for_developers/)
-- url: https://android-developers.googleblog.com/2020/09/android11-final-release.html
----
-
-## [7][Kotlin 1.4 Online Event – Kotlin Blog](https://www.reddit.com/r/androiddev/comments/islbfb/kotlin_14_online_event_kotlin_blog/)
-- url: https://blog.jetbrains.com/kotlin/2020/09/kotlin-1-4-online-event/
----
-
-## [8][What is really going in these lines (except the intent declarartion part)](https://www.reddit.com/r/androiddev/comments/it8gx9/what_is_really_going_in_these_lines_except_the/)
-- url: https://www.reddit.com/r/androiddev/comments/it8gx9/what_is_really_going_in_these_lines_except_the/
----
- public static Drawable getActivityIcon(Context context, String packageName, String activityName) { PackageManager pm = context.getPackageManager(); 
-
-Intent intent = new Intent(); 
-
-intent.setComponent(new ComponentName(packageName, activityName));
-
-ResolveInfo resolveInfo = pm.resolveActivity(intent, 0);
-
-return resolveInfo.loadIcon(pm); 
-
-}
-## [9][Anyone got affected by new google algorithm change?](https://www.reddit.com/r/androiddev/comments/it84t1/anyone_got_affected_by_new_google_algorithm_change/)
-- url: https://www.reddit.com/r/androiddev/comments/it84t1/anyone_got_affected_by_new_google_algorithm_change/
----
-I checked App Tweak, and it shows that on 15th of August, Google changed their algorithm again and that's exactly when I started to lose a lot of downloads, has anyone got affected by it? I was getting around 1500 downloads daily, but now I am getting around 500, and it's still dropping more and more, I have no idea what's happening.
-## [10][Printing document](https://www.reddit.com/r/androiddev/comments/it1xnn/printing_document/)
-- url: https://www.reddit.com/r/androiddev/comments/it1xnn/printing_document/
----
-Hello Redditors, I’m working on a app in Java for billing purposes. I need to get printed invoices on a Bluetooth printer. Can someone tell me how to get it done?
-Thank you
-## [11][Custom component with own logic](https://www.reddit.com/r/androiddev/comments/it78fj/custom_component_with_own_logic/)
-- url: https://www.reddit.com/r/androiddev/comments/it78fj/custom_component_with_own_logic/
----
-Hey guys! I'm trying to create a custom component that has its own logic. I'm using MVI architecture and for each feature I have a fragment, view, presenter, viewstate. I want to include my component inside one of my fragments. Is it bad for my component to also be a fragment? I know that having a fragment inside a fragment is an antipattern, but I don't know how to create something else that will have its own logic, presenter, states and everything. 
-
-&amp;#x200B;
-
-Thank you!
-## [12][Mixin Messenger, an open-source End-to-End Encryption Messenger.](https://www.reddit.com/r/androiddev/comments/it76c0/mixin_messenger_an_opensource_endtoend_encryption/)
-- url: https://github.com/mixinnetwork/android-app
+## [12][What tool is available for notifying me of uptime monitoring and issues for my Android app, iOS app, and Website?](https://www.reddit.com/r/androiddev/comments/itiz4s/what_tool_is_available_for_notifying_me_of_uptime/)
+- url: https://www.reddit.com/r/androiddev/comments/itiz4s/what_tool_is_available_for_notifying_me_of_uptime/
 ---
 

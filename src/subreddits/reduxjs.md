@@ -1,5 +1,9 @@
 # reduxjs
-## [1][What's your approach to the size of redux state slices?](https://www.reddit.com/r/reduxjs/comments/iswhn1/whats_your_approach_to_the_size_of_redux_state/)
+## [1][Advanced Express JS REST API [#1] Introduction | Building REST API Node JS | Full Course - Please subscribe](https://www.reddit.com/r/reduxjs/comments/itgx6u/advanced_express_js_rest_api_1_introduction/)
+- url: https://m.youtube.com/watch?v=CLdkGgv9Miw&amp;list=PLs1waz0ZKTGO7agN0cntpe6ro6TIka0ow&amp;index=2&amp;t=0s
+---
+
+## [2][What's your approach to the size of redux state slices?](https://www.reddit.com/r/reduxjs/comments/iswhn1/whats_your_approach_to_the_size_of_redux_state/)
 - url: https://www.reddit.com/r/reduxjs/comments/iswhn1/whats_your_approach_to_the_size_of_redux_state/
 ---
 I like to have my redux state slices small and focused on specific parts of the interface.
@@ -9,7 +13,7 @@ But at the same time, I am feeling a growing resistance from the library to spli
 I've examined the [docs](https://redux.js.org/recipes/structuring-reducers/beyond-combinereducers#sharing-data-between-slice-reducers) to see what they advise. The first suggestion (passing parent state as the third argument) [does not seem to be supported by the typescript definitions](https://github.com/reduxjs/redux/pull/3465). The second suggestion — just use thunks — is something I am currently doing, but this both feels like a hack (thunks were intended to handle async code; that's why they are called thunks, or long-running computations), and ruins most of the elegance of redux-toolkit.
 
 What has your experience been? How large are your state slices? Do you often need to look up data from other slices? How do you manage this?
-## [2][AWS Amplify + Redux Saga: Adding Amazon Cognito Attributes on Auth.signUp?](https://www.reddit.com/r/reduxjs/comments/it14y6/aws_amplify_redux_saga_adding_amazon_cognito/)
+## [3][AWS Amplify + Redux Saga: Adding Amazon Cognito Attributes on Auth.signUp?](https://www.reddit.com/r/reduxjs/comments/it14y6/aws_amplify_redux_saga_adding_amazon_cognito/)
 - url: https://www.reddit.com/r/reduxjs/comments/it14y6/aws_amplify_redux_saga_adding_amazon_cognito/
 ---
 **My Goal:**
@@ -92,7 +96,7 @@ Link: [https://docs.amplify.aws/lib/auth/emailpassword/q/platform/js#sign-up](ht
             // React Navigation: Sign Up Confirm
             yield ReactNavigation.navigate('Sign Up Confirm');
           }
-## [3][How can I run an API call AFTER the results from my useSelector() hook?](https://www.reddit.com/r/reduxjs/comments/iry4g4/how_can_i_run_an_api_call_after_the_results_from/)
+## [4][How can I run an API call AFTER the results from my useSelector() hook?](https://www.reddit.com/r/reduxjs/comments/iry4g4/how_can_i_run_an_api_call_after_the_results_from/)
 - url: https://www.reddit.com/r/reduxjs/comments/iry4g4/how_can_i_run_an_api_call_after_the_results_from/
 ---
 I am trying to use some data that will come from my `useSelector()` hook in a network API call. However, with the code below, I get the error `TypeError: cannot read property 'query' of undefined.`
@@ -115,7 +119,7 @@ I understand this is because the query has not come back from the `useSelector()
  `.then((res) =&gt; res)`  
  `.then((data) =&gt; console.log(data));`  
  `}, []);`
-## [4][Using Redux with very large flat arrays](https://www.reddit.com/r/reduxjs/comments/irzdsw/using_redux_with_very_large_flat_arrays/)
+## [5][Using Redux with very large flat arrays](https://www.reddit.com/r/reduxjs/comments/irzdsw/using_redux_with_very_large_flat_arrays/)
 - url: https://www.reddit.com/r/reduxjs/comments/irzdsw/using_redux_with_very_large_flat_arrays/
 ---
 I am developing an app for recording and editing paths on a map. These paths can be large (up to 20000 {x, y} points), and they can be edited by dragging these points and applying automatic pathfinding. Custom info can be attached to any point, and the sidebar computes some statistics on the fly. While I don't need to show all the points simultaneously, the user should be able to view and edit at least 1000-2000 at the same time.
@@ -164,7 +168,7 @@ I fell like an ideal solution would be a normalized Redux-like store, but withou
 Is there a way to achieve acceptable performance using Redux in my case? Or is there an alternative state management solution suitable for working with large datasets?
 
 Any help is appreciated!
-## [5][Using an action type as a value in state](https://www.reddit.com/r/reduxjs/comments/irkgi9/using_an_action_type_as_a_value_in_state/)
+## [6][Using an action type as a value in state](https://www.reddit.com/r/reduxjs/comments/irkgi9/using_an_action_type_as_a_value_in_state/)
 - url: https://www.reddit.com/r/reduxjs/comments/irkgi9/using_an_action_type_as_a_value_in_state/
 ---
 I'm putting together a video playlist and 3 of the actions involve incorporating *repeat* functionality, which can be found on most music and video players. For those not familiar, pressing the button once will repeat an album infinitely, pressing it a second time will repeat the currently playing track infinitely, and a third press will turn off repeating entirely.
@@ -217,7 +221,7 @@ Since this can be 3 values I opted not to use a boolean. Setting this as a numer
     };
 
 &amp;#x200B;
-## [6][Redux Saga: How to use eventChannel to listen to Auth.currentAuthenticatedUser()](https://www.reddit.com/r/reduxjs/comments/iqloll/redux_saga_how_to_use_eventchannel_to_listen_to/)
+## [7][Redux Saga: How to use eventChannel to listen to Auth.currentAuthenticatedUser()](https://www.reddit.com/r/reduxjs/comments/iqloll/redux_saga_how_to_use_eventchannel_to_listen_to/)
 - url: https://www.reddit.com/r/reduxjs/comments/iqloll/redux_saga_how_to_use_eventchannel_to_listen_to/
 ---
 **What I'm Trying To Do:**
@@ -248,15 +252,15 @@ I've found a Stackoverflow post where they were able to implement an eventChanne
       // result is what you pass to the emit function. In this case, it's an object like { user: { name: 'xyz' } }
       ...
     }
-## [7][How to implement Redux Saga with ReactJS and Redux?](https://www.reddit.com/r/reduxjs/comments/iouo4e/how_to_implement_redux_saga_with_reactjs_and_redux/)
+## [8][How to implement Redux Saga with ReactJS and Redux?](https://www.reddit.com/r/reduxjs/comments/iouo4e/how_to_implement_redux_saga_with_reactjs_and_redux/)
 - url: https://medium.com/fabisiakradoslaw/how-to-implement-redux-saga-with-reactjs-and-redux-d6116efcc90?source=friends_link&amp;sk=1a4f940ea36c4e6ae12770040f1d10bc
 ---
 
-## [8][The “Container” Pattern for Better State Management in React.](https://www.reddit.com/r/reduxjs/comments/io1fg3/the_container_pattern_for_better_state_management/)
+## [9][The “Container” Pattern for Better State Management in React.](https://www.reddit.com/r/reduxjs/comments/io1fg3/the_container_pattern_for_better_state_management/)
 - url: https://medium.com/@spencerpauly/the-container-pattern-for-better-state-management-in-react-9351fe4381d1
 ---
 
-## [9][Try Mobx, I'm sure you will love it.](https://www.reddit.com/r/reduxjs/comments/imz2xj/try_mobx_im_sure_you_will_love_it/)
+## [10][Try Mobx, I'm sure you will love it.](https://www.reddit.com/r/reduxjs/comments/imz2xj/try_mobx_im_sure_you_will_love_it/)
 - url: https://www.reddit.com/r/reduxjs/comments/imz2xj/try_mobx_im_sure_you_will_love_it/
 ---
 Hey Guys!
@@ -268,14 +272,3 @@ feel free to enroll and share with your friends, free for the next 3 days.
 
 
 [https://www.udemy.com/course/mobx-in-depth-with-react/?couponCode=68D474E01D1CECEA3507](https://www.udemy.com/course/mobx-in-depth-with-react/?couponCode=68D474E01D1CECEA3507)
-## [10][Redux or Mobx for larger applications](https://www.reddit.com/r/reduxjs/comments/il6ix6/redux_or_mobx_for_larger_applications/)
-- url: https://www.reddit.com/r/reduxjs/comments/il6ix6/redux_or_mobx_for_larger_applications/
----
-Hello all,  
-   I'm wondering if anyone has experience of using Redux and/or Mobx for larger applications and what their experiences are.  
-Currently I have some experience with Redux but it seems like Mobx could be a decent alternative.   
-With Redux there is a lot of boilerplate and also a steep learning curve for newer developers.   
-Mobx looks to have less boiler plate and will take less time to develop in.  
-It's also more OO instead of functional so would be easier for new JS developers to pick up.  
-I'm wondering if anyone has any experience of using either in larger applications and what the advantages and pitfalls are?  
-Any input would be appreciated.

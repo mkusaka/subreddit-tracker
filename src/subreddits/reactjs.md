@@ -1,27 +1,5 @@
 # reactjs
-## [1][Who's Hiring? [September 2020]](https://www.reddit.com/r/reactjs/comments/ikn3vo/whos_hiring_september_2020/)
-- url: https://www.reddit.com/r/reactjs/comments/ikn3vo/whos_hiring_september_2020/
----
-We alternate between **Who's Hiring** (on the 1st of the month, [most recent one here][hiring:most recent]) and **Who's Available** (on the 15th, [most recent one here][available:most recent])
-
-Welcome to **the biggest React job board in the world!** This is like Hacker News' **Who's Hiring** but just for React. Top Level comments must be **Job Opportunities.**
-
-⚠️ NEW: WE ARE REQUESTING EVERYBODY FOLLOW [THE HN Who's Hiring FORMAT][format:hiring:hn]
-
-**Company inc. | Job Title | City/State Location | Full-time/Part-Time | On-site/Remote | (Optional) Salary range | Website jobs page, other hard requirements etc.**
-
-examples:
-
-- **Thorn | San Francisco or Remote (US based) | Full-time Contract | $100k - $150k | Software Engineer | https://www.wearethorn.org/**
-- **PolicyStat | Full-Stack Python+Django Software Engineer | Indianapolis, Vancouver, or REMOTE | Full Time | +\$80k**
-
-Please include as much information as possible. **If you are remote-friendly, or open to sponsoring work visas to your country, say so! These are the top 2 questions!**
-
-If you are looking for jobs, send a PM to the poster or post in our [Who's Available thread!][available:most recent]
-
-[hiring:most recent]: https://www.reddit.com/r/reactjs/comments/i1u8a4/whos_hiring_august_2020/
-[available:most recent]: https://www.reddit.com/r/reactjs/comments/iaggwf/whos_available_august_2020/
-## [2][Beginner's Thread / Easy Questions (September 2020)](https://www.reddit.com/r/reactjs/comments/illwv0/beginners_thread_easy_questions_september_2020/)
+## [1][Beginner's Thread / Easy Questions (September 2020)](https://www.reddit.com/r/reactjs/comments/illwv0/beginners_thread_easy_questions_september_2020/)
 - url: https://www.reddit.com/r/reactjs/comments/illwv0/beginners_thread_easy_questions_september_2020/
 ---
 &gt; Previous Beginner's Threads can be found in the [wiki][wiki previous threads].
@@ -85,102 +63,148 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [3][Made a very complex OS simulator with React](https://www.reddit.com/r/reactjs/comments/it2mls/made_a_very_complex_os_simulator_with_react/)
-- url: https://www.reddit.com/r/reactjs/comments/it2mls/made_a_very_complex_os_simulator_with_react/
+## [2][Who's Available? [September 2020]](https://www.reddit.com/r/reactjs/comments/itrbgt/whos_available_september_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/itrbgt/whos_available_september_2020/
 ---
-[small video demo](https://reddit.com/link/it2mls/video/d1rm37m109n51/player)
+We alternate between hirers (on the 1st of the month) and agencies/freelancers/jobseekers (on the 15th).  
+If you are looking to post or reply to React job postings, please check [this month's Who's Hiring post here.][hiring:this month]
 
-Hey fellow Programmers,
-
-This is my first proper post in this community. Bare with me :)
-
-So I have created an OS simulator with react and thinking of the use cases I thought maybe I can make an OS themed interactive resume for myself. It is fully written by myself probably that's why the code is clunky. I would like people to check this out, So Please take a look and let me know what you guys think of this :)
-
-Link of demo : [Click Here](https://rajagopalan-gangadharan.github.io/Portfolio/)
-
-Repo Link: [Click Here](https://github.com/RAJAGOPALAN-GANGADHARAN/JS-OS) (Do give it a star if you like it )
-
-&amp;#x200B;
-
-Show me some ❤ guys...
-
-&amp;#x200B;
-
-P.S. This is just a WIP and I can help any beginners who would love to contribute to the project.
-
-P.P.S. It is not optimized for mobiles yet. Please try this on a PC thanks 😄
-## [4][My first MERN project!!!](https://www.reddit.com/r/reactjs/comments/isklgf/my_first_mern_project/)
-- url: https://v.redd.it/j0bpn7z454n51
 ---
 
-## [5][A framework to build modern API and easily scaffold fully-featured web client in React](https://www.reddit.com/r/reactjs/comments/it6obb/a_framework_to_build_modern_api_and_easily/)
-- url: https://blog.graphqleditor.com/api-platform/
+If your post or comment is removed wrongly, please [send a message][message:mods] to mods  
+because Automods bot is not perfect :)
+
 ---
 
-## [6][My random recipe manual](https://www.reddit.com/r/reactjs/comments/it2321/my_random_recipe_manual/)
-- url: https://v.redd.it/pnopedqus8n51
+Top Level comments must be Agencies and React Devs available for contract/permanent work.
+
+Please include Location or any other Requirements in your comment. You can choose to use this format if it helps:
+
+## (Fulltime | Contract | USA | Remote)
+
+or
+
+## (Agency | Europe | Remote)
+
+Then we recommend adding a 2-3 sentence bio as well.
+
+Not required, but may help:
+
+- Link to Github/Portfolio
+- Notable [r/reactjs][r/reactjs] submissions
+- Preferred stack
+- Former companies or clients
+- Design or backend dev experience
+- anything else you consider relevant. Put on your best show!
+- Listing years of experience NOT required, it's a poor metric
+
+If you are looking to hire, you can send a PM, or reply so that others might see your job opening.  
+**Note**: Due to the sensitive nature of availability while currently in a job, users may be using alternate accounts.
+
+For more ideas on what to include, look at the [last Who's Available posts][available:last month].
+
+If you just want some portfolio feedback, check the stickied post below.
+
+Good luck! #WriteOnceApplyEverywhere
+
+[r/reactjs]: https://www.reddit.com/r/reactjs/
+[available:last month]: https://www.reddit.com/r/reactjs/comments/iaggwf/whos_available_august_2020/
+[hiring:this month]: https://www.reddit.com/r/reactjs/comments/ikn3vo/whos_hiring_september_2020/
+[message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
+## [3][Building a Netflix Clone - Styled Components - Compound Components - Firebase (Firestore &amp; Authentication)](https://www.reddit.com/r/reactjs/comments/itrvon/building_a_netflix_clone_styled_components/)
+- url: https://www.youtube.com/watch?v=x_EEwGe-a9o
 ---
 
-## [7][Why React Keys Matter: An Introduction](https://www.reddit.com/r/reactjs/comments/it4yob/why_react_keys_matter_an_introduction/)
-- url: https://lo-victoria.com/why-react-keys-matter-an-introduction
+## [4][NETFLIX clone - React and Firebase](https://www.reddit.com/r/reactjs/comments/iteqzk/netflix_clone_react_and_firebase/)
+- url: https://v.redd.it/3tccwhlvvcn51
 ---
 
-## [8][Guidelines to improve your React folder structure](https://www.reddit.com/r/reactjs/comments/it81ee/guidelines_to_improve_your_react_folder_structure/)
-- url: https://maxrozen.com/guidelines-improve-react-app-folder-structure/
+## [5][Protab - I created a highly customizable chrome productivity extension with lots of features. Link in the comments.](https://www.reddit.com/r/reactjs/comments/itsy0n/protab_i_created_a_highly_customizable_chrome/)
+- url: https://v.redd.it/8ewuzl3flhn51
 ---
 
-## [9][A deep look into React.useImperativeHandle and a real-life example](https://www.reddit.com/r/reactjs/comments/it7i47/a_deep_look_into_reactuseimperativehandle_and_a/)
-- url: http://dev.to/poeticgeek/concrete-example-for-react-useimperativehandle-52l8
+## [6][Today. 1PM ET Live. Learn about Hermes and Making React Native fast with React Core Team Members](https://www.reddit.com/r/reactjs/comments/ituvrl/today_1pm_et_live_learn_about_hermes_and_making/)
+- url: https://www.reddit.com/r/reactjs/comments/ituvrl/today_1pm_et_live_learn_about_hermes_and_making/
+---
+Today at 1PM ET on React Wednesday,  we’ll chat with Ram ([@nparashuram](https://twitter.com/nparashuram)) and team from Facebook. Ram is an engineering manager on Oculus, where he works on the React Native companion app, and on the headset itself, using React VR.
+
+As part of that work, Ram gets to play with [Hermes](https://github.com/facebook/hermes), the JavaScript engine designed to help React Native apps start up fast. We plan on asking Ram and team important questions, like “Is working on VR as awesome as it sounds?”, and, “How can I be cool like you when I grow up?” We’ll probably ask questions about Hermes too.
+
+The format is interview-style with show and tell. 
+
+**Get a calendar invite or join the broadcast here:**
+
+[https://www.telerik.com/react-wednesdays](https://www.telerik.com/react-wednesdays)
+## [7][React Hook Form Server-side Validation](https://www.reddit.com/r/reactjs/comments/itojtn/react_hook_form_serverside_validation/)
+- url: https://www.carlrippon.com/react-hook-form-server-validation/
 ---
 
-## [10][React input tagging/tokens library that supports copy/paste](https://www.reddit.com/r/reactjs/comments/it7dn4/react_input_taggingtokens_library_that_supports/)
-- url: https://www.reddit.com/r/reactjs/comments/it7dn4/react_input_taggingtokens_library_that_supports/
+## [8][How to deploy/Host React project on fire base free](https://www.reddit.com/r/reactjs/comments/itquq5/how_to_deployhost_react_project_on_fire_base_free/)
+- url: https://www.reddit.com/r/reactjs/comments/itquq5/how_to_deployhost_react_project_on_fire_base_free/
 ---
-Does anybody know of a tag/token input library that allows copy-paste?
+```
+$ npm install -g firebase-tools
 
-https://github.com/olahol/react-tagsinput seems to be the most popular lib, but once tags are entered they become impossible to interact with, except to delete them individually. They have [a demo](https://olahol.github.io/react-tagsinput/) for example, and ctrl+a just selects the understanding plain text, shift+left can't select tags, and you can't drag to select them either. That's not enough for my use case, where users are likely to frequently want to copy and paste chunks of the input, and want to ctrl+a then delete to clear the whole lot.
+$ firebase login
 
-I want to enter a few tags, then press ctrl/cmd+a, ctrl+x (leaving the input entirely empty), ctrl+p, and end up with the tags I started with.
+$ firebase init
 
-Gmail's email input does this perfectly. Stack overflow's tag input isn't quite as elegant, but effectively makes the same thing work.
+◯ Database: Deploy Firebase Realtime Database Rules
 
-Is there a react component anywhere that can do this?
-## [11][Made an I18n lib that automates entire workflow](https://www.reddit.com/r/reactjs/comments/it750n/made_an_i18n_lib_that_automates_entire_workflow/)
-- url: https://www.reddit.com/r/reactjs/comments/it750n/made_an_i18n_lib_that_automates_entire_workflow/
+◯ Firestore: Deploy rules and create indexes for Firestore
+
+◯ Functions: Configure and deploy Cloud Functions
+
+❯◯ Hosting: Configure and deploy Firebase Hosting sites
+(use space to select)
+◯ Storage: Deploy Cloud Storage security rules
+
+? Select a default Firebase project for this directory:
+
+-&gt; react-project-abod (react-project)
+
+i Using project react-project (react-project)
+
+? What do you want to use as your public directory? build
+
+? Configure as a single-page app (rewrite all urls to /index.html)? Yes
+
+? File public/index.html already exists. Overwrite? No
+
+$ npm run build
+
+$ firebase deploy
+
+``` 
+[video tutorial](https://youtu.be/mUsdZRtc8QI) click to watch video
+## [9][Redux toolkit, useSelector is always one state behind](https://www.reddit.com/r/reactjs/comments/itrely/redux_toolkit_useselector_is_always_one_state/)
+- url: https://www.reddit.com/r/reactjs/comments/itrely/redux_toolkit_useselector_is_always_one_state/
 ---
-**GitHub:** [**https://github.com/FallenMax/a18n**](https://github.com/FallenMax/a18n)
+Hey guys, so I'm using createAsyncActions to dispatch my actions, but the error selector is always displaying the previous state.  
+for example if I entered a wrong username, it displays an empty snack cause the initial state Is undefined and so on
 
-This lib wraps and extract text in js/ts/jsx/tsx files using AST manipulation, making adding i18n support a breeze. 
+`const error = useSelector(selectError);`
 
-It's already running in a dozen of my company product for 2 years so I think it's mature enough to promote. 
+`const status = useSelector(selectAuthentication);`
 
-(NOTE: \`wrap\` feature is only available for *non-English* projects due to technical reasons)
-
-Thanks for any feedback!
-## [12][Movies/TV web app built with React, GraphQL and Fastify](https://www.reddit.com/r/reactjs/comments/it481w/moviestv_web_app_built_with_react_graphql_and/)
-- url: https://www.reddit.com/r/reactjs/comments/it481w/moviestv_web_app_built_with_react_graphql_and/
+`const onSubmit = async (data: object) =&gt; {`  
+ `await dispatch(loginUser(data));`  
+ `if (status) {`  
+ `navigation.navigate('Home');`  
+    `}`  
+ `setSnack({ visible: true, msg: error });`  
+  `};`
+## [10][react-nil a null renderer for node and the fullstack](https://www.reddit.com/r/reactjs/comments/itsogt/reactnil_a_null_renderer_for_node_and_the/)
+- url: https://github.com/pmndrs/react-nil
 ---
-I created this Movies/TV app just as a side project to understand all the finer details of building a Fullstack APP using React and GraphQL.
 
-Project Home:  [https://github.com/prabhuignoto/flixy](https://github.com/prabhuignoto/flixy) 
+## [11][How is the displayed code calls setState multiple times](https://www.reddit.com/r/reactjs/comments/itviex/how_is_the_displayed_code_calls_setstate_multiple/)
+- url: https://www.reddit.com/r/reactjs/comments/itviex/how_is_the_displayed_code_calls_setstate_multiple/
+---
+I am quite new to react, learning it. I was going through [reactjs.org](https://reactjs.org) for some study and found this to be confusing. How is the code (dark background) calls setState multiple times?
 
-Demo:  [https://movies.prabhumurthy.com](https://movies.prabhumurthy.com/movies)
+IMAGE: [https://ibb.co/JvxQWdN](https://ibb.co/JvxQWdN)
+## [12][React-redux example for beginners](https://www.reddit.com/r/reactjs/comments/itvad1/reactredux_example_for_beginners/)
+- url: /r/reactjs/comments/itv6gt/reactredux_example_for_beginners/
+---
 
-[flixy\_demo](https://reddit.com/link/it481w/video/tlnmal1jl9n51/player)
-
-The App is powered by  [themoviedb.org](https://www.themoviedb.org/). 
-
-Here is the complete tech stack which i used to build this app. 
-
-* [React](https://reactjs.org/)
-* [Styled Components](https://styled-components.com/)
-* [React Spring](https://www.react-spring.io/)
-* [Typescript](https://www.typescriptlang.org/)
-* [Node](https://nodejs.org/en/)
-* [Fastify](https://www.fastify.io/)
-* [GraphQL](https://graphql.org/)
-* [Apollo Client &amp; Server](https://www.apollographql.com/)
-
-Let me know what you guys think.  Feedback's &amp; suggestions are welcome.
-
-Thanks

@@ -1,11 +1,5 @@
 # javascript
-## [1][Showoff Saturday (September 12, 2020)](https://www.reddit.com/r/javascript/comments/irb676/showoff_saturday_september_12_2020/)
-- url: https://www.reddit.com/r/javascript/comments/irb676/showoff_saturday_september_12_2020/
----
-Did you find or create something cool this week in javascript? 
-
-Show us here!
-## [2][Your /r/javascript recap for the week of September 07 - September 13](https://www.reddit.com/r/javascript/comments/ishet8/your_rjavascript_recap_for_the_week_of_september/)
+## [1][Your /r/javascript recap for the week of September 07 - September 13](https://www.reddit.com/r/javascript/comments/ishet8/your_rjavascript_recap_for_the_week_of_september/)
 - url: https://www.reddit.com/r/javascript/comments/ishet8/your_rjavascript_recap_for_the_week_of_september/
 ---
 **Monday, September 07 - Sunday, September 13**
@@ -85,43 +79,43 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][Moment.js Throws in the Towel: "It is not dead, but it is indeed done."](https://www.reddit.com/r/javascript/comments/it1dx5/momentjs_throws_in_the_towel_it_is_not_dead_but/)
+## [2][Understanding end to end (E2E) testing](https://www.reddit.com/r/javascript/comments/itr6tr/understanding_end_to_end_e2e_testing/)
+- url: https://www.testcraft.io/end-to-end-testing//#
+---
+
+## [3][Major security updates released for all active versions of Node.js](https://www.reddit.com/r/javascript/comments/itteyx/major_security_updates_released_for_all_active/)
+- url: https://groups.google.com/g/nodejs-sec/c/r5wshz4RJRQ/m/ir6CK1nLBAAJ
+---
+
+## [4][Vime (open-source) - collection of components for building and customizing your own media player](https://www.reddit.com/r/javascript/comments/ittkvl/vime_opensource_collection_of_components_for/)
+- url: https://vimejs.com
+---
+
+## [5][How To Shuffle Arrays](https://www.reddit.com/r/javascript/comments/itqp2c/how_to_shuffle_arrays/)
+- url: https://dev.to/muhammadev/how-to-shuffle-arrays-3h41
+---
+
+## [6][Moment.js Throws in the Towel: "It is not dead, but it is indeed done."](https://www.reddit.com/r/javascript/comments/it1dx5/momentjs_throws_in_the_towel_it_is_not_dead_but/)
 - url: https://momentjs.com/docs/#/-project-status/
 ---
 
-## [4][Effective limited parallel execution in JavaScript](https://www.reddit.com/r/javascript/comments/iso9u8/effective_limited_parallel_execution_in_javascript/)
-- url: https://medium.com/@arsenyyankovsky/effective-limited-parallel-execution-in-javascript-ea2a1fb9a632
+## [7][I'm Building a 16-bit Virtual Machine in JavaScript, along with Assembler, C-ish Language, and Later Turning the Whole Thing into a Fantasy Game Console. Here I'm Extending the Assembler to Parse and Resolve Data and Constant Directives](https://www.reddit.com/r/javascript/comments/itvf8v/im_building_a_16bit_virtual_machine_in_javascript/)
+- url: https://www.youtube.com/watch?v=TXSgQZsVW8w
 ---
 
-## [5][Learn how to debug JavaScript memory leaks in Chrome DevTools](https://www.reddit.com/r/javascript/comments/it7cad/learn_how_to_debug_javascript_memory_leaks_in/)
-- url: https://www.debugbear.com/blog/debugging-javascript-memory-leaks
+## [8][Game of Drones: The Donald vs. Karens - an iterated prisoner's dilemma simulation](https://www.reddit.com/r/javascript/comments/itutwi/game_of_drones_the_donald_vs_karens_an_iterated/)
+- url: https://electric-eloquence.io/game-of-drones.html
 ---
 
-## [6][A little code snippet of how I added a moving watermark to an html video that works in small and fullscreen mode. this can be used for anything, overlaying information, navigation, components etc](https://www.reddit.com/r/javascript/comments/it747g/a_little_code_snippet_of_how_i_added_a_moving/)
-- url: https://codepen.io/mahmoudthepeltist/pen/abNjvqR
+## [9][JavaScript Short Circuit Assignment](https://www.reddit.com/r/javascript/comments/itutld/javascript_short_circuit_assignment/)
+- url: https://samwalpole.com/javascript-short-circuit-assignment/
 ---
 
-## [7][Performance on the web with Houssein Djirdeh | Svelte Radio](https://www.reddit.com/r/javascript/comments/it6v87/performance_on_the_web_with_houssein_djirdeh/)
-- url: https://www.svelteradio.com/episodes/performance-on-the-web-with-houssein-djirdeh
+## [10][Applying Watermarks to Images with FilePond](https://www.reddit.com/r/javascript/comments/ituib3/applying_watermarks_to_images_with_filepond/)
+- url: https://pqina.nl/blog/applying-watermarks-to-images-with-filepond/
 ---
 
-## [8][MERN stack - TypiNation - Multiplayer typing game where you can compete &amp; improve your typing speed along with other players all around the world. Also available on Google Play](https://www.reddit.com/r/javascript/comments/iswqsf/mern_stack_typination_multiplayer_typing_game/)
-- url: https://www.typination.com/
----
-
-## [9][Visualizing metrics of a distributed cluster or why we calculate integrals on the front-end](https://www.reddit.com/r/javascript/comments/it8c7j/visualizing_metrics_of_a_distributed_cluster_or/)
-- url: https://blog.goncharov.page/how-to-display-a-gazillion-of-metrics-and-keep-your-sanity
----
-
-## [10][SpeakeasyJS – a meetup for mad science, hacking, and experiments](https://www.reddit.com/r/javascript/comments/isvgri/speakeasyjs_a_meetup_for_mad_science_hacking_and/)
-- url: https://dev.to/feross/speakeasyjs-a-meetup-for-mad-science-hacking-and-experiments-2ai7?a=1
----
-
-## [11][Juliette v1.0 Is Released - Framework-Agnostic State Management Powered by RxJS](https://www.reddit.com/r/javascript/comments/it7btv/juliette_v10_is_released_frameworkagnostic_state/)
-- url: https://github.com/markostanimirovic/juliette
----
-
-## [12][A small node backend that prints your uploaded PDFs](https://www.reddit.com/r/javascript/comments/it79ju/a_small_node_backend_that_prints_your_uploaded/)
-- url: https://github.com/chrispanag/printer-api
+## [11][DIY Multilanguage In JavaScript Project](https://www.reddit.com/r/javascript/comments/ittm9p/diy_multilanguage_in_javascript_project/)
+- url: https://medium.com/@varg92/diy-multilanguage-in-javascript-project-65f8aa91a506
 ---
 

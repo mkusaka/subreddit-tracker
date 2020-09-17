@@ -19,15 +19,79 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][upload files in a specific folder in AWS bucket](https://www.reddit.com/r/rails/comments/iturlf/upload_files_in_a_specific_folder_in_aws_bucket/)
+## [2][Gimme Gems Thursdays - Found an awesome new gem? Post it here!](https://www.reddit.com/r/rails/comments/iui4p8/gimme_gems_thursdays_found_an_awesome_new_gem/)
+- url: https://www.reddit.com/r/rails/comments/iui4p8/gimme_gems_thursdays_found_an_awesome_new_gem/
+---
+Please use this thread to discuss **cool** but relatively **unknown** gems you've found.
+
+You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
+
+Please include a **description** and a **link** to the gem's homepage in your comment.
+## [3][Zipping active storage has_one_attached &amp; has_many_attached files in one zip file for a model](https://www.reddit.com/r/rails/comments/iui5g4/zipping_active_storage_has_one_attached_has_many/)
+- url: https://www.reddit.com/r/rails/comments/iui5g4/zipping_active_storage_has_one_attached_has_many/
+---
+I'm using the active\_storage-send-zip, but it seems to only focus on has\_many\_attached.  I need to zip all files from the model at once. I can't seem to combine the two, to get the results that I want.
+
+&amp;#x200B;
+
+For example:
+
+User.rb
+
+has\_one\_attached :avatar
+
+has\_many\_attached :photos
+
+&amp;#x200B;
+
+zip all photos + their avatar image
+## [4][How to upload and access a file?](https://www.reddit.com/r/rails/comments/iucars/how_to_upload_and_access_a_file/)
+- url: https://www.reddit.com/r/rails/comments/iucars/how_to_upload_and_access_a_file/
+---
+This is a bit of a n00b question (I'm sure), but ...
+
+I'm writing a simple Rails application that allows the user to upload a PDF file with two pages of scanned text. Once uploaded, the application should perform OCR on the PDF and display the "extracted" text. This sounds simple.
+
+I'm using Rails 6, Active Storage, and the local disk during development.
+
+I'm able to upload a PDF and attach it to a Case, but I don't know how to access it so I can send it to the OCR method (I'm using Docsplit with Tesseract for now).
+
+I want to be able to say something like this in my controller:
+
+    @c = Case.first
+    @c.ocr_text = Docsplit.extract_text(@c.attachement)
+
+And something like this in my view:
+
+    &lt;p&gt;The text from the PDF is:&lt;/p&gt;
+    &lt;%= @c.ocr_text %&gt;
+
+It's so easy to upload a file. I'm surprised it isn't as easy (apparently) to get access to the file. Am I misunderstanding something?
+
+AtDhVaAnNkCsE (thanks in ADVANCE)
+## [5][I am using carrierwave to upload the image and parsley for validation. when I tried to edit the form it shows required value in image field though the image is uploaded.](https://www.reddit.com/r/rails/comments/iuhi7w/i_am_using_carrierwave_to_upload_the_image_and/)
+- url: https://www.reddit.com/r/rails/comments/iuhi7w/i_am_using_carrierwave_to_upload_the_image_and/
+---
+
+## [6][Rails + WordPress integration](https://www.reddit.com/r/rails/comments/ityz8r/rails_wordpress_integration/)
+- url: https://www.reddit.com/r/rails/comments/ityz8r/rails_wordpress_integration/
+---
+Hi there,
+
+We are planning on having a WordPress site to manage content and a rails app as our platform after the user signs-in.
+However, on our WordPress site we have the need of showing a list of items that is inside our platform's database. 
+What's the best way of doing that? Is there a way of making our platform return the HTML to WordPress or even return a json and generate the HTML inside WordPress?
+## [7][upload files in a specific folder in AWS bucket](https://www.reddit.com/r/rails/comments/iturlf/upload_files_in_a_specific_folder_in_aws_bucket/)
 - url: https://www.reddit.com/r/rails/comments/iturlf/upload_files_in_a_specific_folder_in_aws_bucket/
 ---
 im using **gem 'aws-sdk-s3'** &amp; im successfully able to upload my files on **AWS** bucket but I don't know how can I upload my files in a specific folder in my bucket ?
-## [3][Where did concept of service object come from?](https://www.reddit.com/r/rails/comments/itivdn/where_did_concept_of_service_object_come_from/)
+
+I'm using Active-Storage 
+## [8][Where did concept of service object come from?](https://www.reddit.com/r/rails/comments/itivdn/where_did_concept_of_service_object_come_from/)
 - url: https://www.reddit.com/r/rails/comments/itivdn/where_did_concept_of_service_object_come_from/
 ---
 I ve gone through a bit of rails open source codes and am observing a lot of service objects - a class with one static function 'call'. Never really heard of this in Java Python or Node. If im correct Ruby is OOP language in the first place. I see this service object things is annoying since it looks like its just throwing the OOP concept away, and this doesnt seem to take any advantages of Ruby OOP. Some people say its because SRP but SRP doesnt strictly mean that a file or a class should only have one function that does only one thing. Well, if used correctly, It'd be the best but feels like SO concept combined with SRP is leading some to wrong way and to no good practice. Why is it popular in rails?
-## [4][Trying to deploy my web app on DigitalOcean (always used Heroku before)](https://www.reddit.com/r/rails/comments/ito2ou/trying_to_deploy_my_web_app_on_digitalocean/)
+## [9][Trying to deploy my web app on DigitalOcean (always used Heroku before)](https://www.reddit.com/r/rails/comments/ito2ou/trying_to_deploy_my_web_app_on_digitalocean/)
 - url: https://www.reddit.com/r/rails/comments/ito2ou/trying_to_deploy_my_web_app_on_digitalocean/
 ---
 I don't understand why I have problems with the Nginx configuration...
@@ -44,7 +108,7 @@ I followed [this guide](https://gorails.com/deploy/ubuntu/18.04#nginx) (not to t
 ```
 
 The strange thing is that if I use standalone passenger it seems to work correctly...
-## [5][Ok... how the F do I test model concerns in isolation (Minitest/mocha)?](https://www.reddit.com/r/rails/comments/itjoev/ok_how_the_f_do_i_test_model_concerns_in/)
+## [10][Ok... how the F do I test model concerns in isolation (Minitest/mocha)?](https://www.reddit.com/r/rails/comments/itjoev/ok_how_the_f_do_i_test_model_concerns_in/)
 - url: https://www.reddit.com/r/rails/comments/itjoev/ok_how_the_f_do_i_test_model_concerns_in/
 ---
 I’m working on a feature for work that lends itself very well to a concern. It works fantastic but I can’t figure out the best way to test it in isolation. 
@@ -52,7 +116,7 @@ I’m working on a feature for work that lends itself very well to a concern. It
 It’s basically a locking feature for individual records based on domain logic. To make it simple for an example let’s say that we have a `lock!(locked_by:)` method which just calls `update!(locked_at: Time.zone.now, locked_by: locked_by)` and an `unlock!` method to nullifies those two columns in the database. Sorry for the formatting, I’m on my phone at the moment. 
 
 There’s more to it than this but how would I go about testing this concern in isolation?
-## [6][Using ActiveStorage with Aws in Rails Api](https://www.reddit.com/r/rails/comments/itfzhr/using_activestorage_with_aws_in_rails_api/)
+## [11][Using ActiveStorage with Aws in Rails Api](https://www.reddit.com/r/rails/comments/itfzhr/using_activestorage_with_aws_in_rails_api/)
 - url: https://www.reddit.com/r/rails/comments/itfzhr/using_activestorage_with_aws_in_rails_api/
 ---
 Hi, guys hope you are fine!
@@ -67,41 +131,7 @@ I'm learning rails and I have a task to make an API in rails that can take image
 But i don't know what kind of params I'll get from the front-end developer &amp;  how can I test that params or URL in my postman from my side . &amp; how to return that image in json format to the frontend developer after saving it.
 
 i want to upload restaurant images from users. 
-## [7][[Help] How to include timezone offset in a `form.datetime_local_field`?](https://www.reddit.com/r/rails/comments/itewqz/help_how_to_include_timezone_offset_in_a/)
-- url: https://www.reddit.com/r/rails/comments/itewqz/help_how_to_include_timezone_offset_in_a/
----
-Hey everyone, I've tried searching for an answer to this but found nothing, maybe someone here could help me out.
-
-I have a model called `Task` which has two dates: `start_date` and `end_date`. Both of these are stored in UTC time, and for displaying them to the user I use [the `local_time` gem](https://github.com/basecamp/local_time). But I have a problem with forms for the creation and editing of tasks.
-
-I use a `form.datetime_local_field` for both of them. But when the form is submitted there's no timezone offset included in those dates, so Rails treats them as UTC and when displaying them to the user, `local_time` adds the timezone offset again, so it ends up displaying the wrong time.
-
-So, how do I include the timezone in the actual parameter sent to the task controller? The best I could think of is add a script to the form view that does something like this:
-
-    function convertToUTC(value) {
-      return new Date(value).toISOString()
-    }
-
-    ...
-    document.getElementById('form').onsubmit = function() {
-      startDate.value = convertToUTC(startDate.value)
-      endDate.value = convertToUTC(endDate.value)
-    }
-
-But of course this doesn't work, because `datetime_local_field.value` accepts only a date, not a string.
-
-Thanks for any pointers to possible solutions.
-## [8][React on Rails App](https://www.reddit.com/r/rails/comments/itg9pp/react_on_rails_app/)
-- url: https://www.reddit.com/r/rails/comments/itg9pp/react_on_rails_app/
----
-Hey guys, so I’m wanting to work on a project that would honestly be best used on a smartphone. But I do want a desktop version of it as well. It’s a personal project that I think would be very useful for me as well as many other folks. 
-
-There’s some planning involved (mostly for PC on this side) and there’s some actions involved (mostly for smartphones here). I’ve only ever done web apps hosted on Heroku before, so I’m not sure what are some of the challenges on a project like this. Some questions I’d like answered specifically are:
-
-1) Do I need to create separate projects for the web and mobile versions?
-2) Are smartphone apps hosted similarly to Web Apps? (Good resources highly appreciated here)
-3) Would it be wise to just open source something that’s typically used for profit? Or specifically, is it possible to monetize an open source project?
-## [9][Need someone to critique my Product inventory models.](https://www.reddit.com/r/rails/comments/itg4uz/need_someone_to_critique_my_product_inventory/)
+## [12][Need someone to critique my Product inventory models.](https://www.reddit.com/r/rails/comments/itg4uz/need_someone_to_critique_my_product_inventory/)
 - url: https://www.reddit.com/r/rails/comments/itg4uz/need_someone_to_critique_my_product_inventory/
 ---
 So, basically I've been trying to finally use my newly learned Rails knowledge and actually build something useful. The basic idea is this: I want to be able to build a Product model that should have the following attributes: a name, color, sizes, quantity, and a couple of pictures attached. I'll be adding more attributes in the future but for now I just want feedback.
@@ -151,37 +181,3 @@ Since Red Jordan's Image already exists, I shouldn't create a new image, I just 
 
 
 Thanks.
-## [10][How to write this piece of code.](https://www.reddit.com/r/rails/comments/it7j0j/how_to_write_this_piece_of_code/)
-- url: https://www.reddit.com/r/rails/comments/it7j0j/how_to_write_this_piece_of_code/
----
-I have a requirement where I need to scope based on a few conditions. like so
-
-    posts = case when type == 'deleted'
-    posts.where(deleted: true)
-    when type == 'block'
-    posts.where(blocked: true)
-    else 
-    # return empty
-    end
-
-And then I'll loop through this like 
-
-`posts.find_each(batch_size: 10) ...`
-
-Now, how I do I return something to signify empty AR object list so that the find\_each fails and it doesn't get inside the loop
-
-I was thinking I'd use  `nil`  and then user `posts&amp;.find_each`   
-
-
-Is there a better way to do this?
-## [11][How to align multiple checkboxes with rails form helpers?](https://www.reddit.com/r/rails/comments/it99mp/how_to_align_multiple_checkboxes_with_rails_form/)
-- url: https://www.reddit.com/r/rails/comments/it99mp/how_to_align_multiple_checkboxes_with_rails_form/
----
-Working on creating a form and it's driving me crazy that the alignment of checkboxes + labels is all over the place. Any way to nicely stack each checkbox on the left hand side so they're well aligned? Sample code snippet below:
-
-    &lt;div style = "form-row"&gt;
-        &lt;% flavor_list.each do |flavor| %&gt;
-            &lt;%= f.check_box :flavor_option, {multiple: true, class: "checkbox-mobile"}, flavor, false %&gt;
-            &lt;%= f.label flavor, class: "subtitle-description-mobile" %&gt;&lt;br&gt;
-        &lt;% end %&gt;
-    &lt;/div&gt;

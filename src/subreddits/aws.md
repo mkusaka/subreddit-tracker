@@ -1,73 +1,123 @@
 # aws
-## [1][Week of Sept 14th - What are your favorite container/serverless tips in AWS?](https://www.reddit.com/r/aws/comments/isls8o/week_of_sept_14th_what_are_your_favorite/)
-- url: https://www.reddit.com/r/aws/comments/isls8o/week_of_sept_14th_what_are_your_favorite/
+## [1][Another outage?](https://www.reddit.com/r/aws/comments/iu686c/another_outage/)
+- url: https://www.reddit.com/r/aws/comments/iu686c/another_outage/
 ---
-Share your container/serverless tips
-## [2][Amazon CloudFront announces support for Brotli compression](https://www.reddit.com/r/aws/comments/ithz5w/amazon_cloudfront_announces_support_for_brotli/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/09/cloudfront-brotli-compression/
+Looks like this one might be IAM related.
+
+&gt;\[03:17 PM PDT\] We are investigating increased authentication error rates and latencies affecting IAM. IAM related requests to other AWS services may also be impacted. 
+
+My eb and aws cli are both affected, can't push anything.
+## [2][New AWS Console with favorites menu inside the services button](https://www.reddit.com/r/aws/comments/iufnk5/new_aws_console_with_favorites_menu_inside_the/)
+- url: https://www.reddit.com/r/aws/comments/iufnk5/new_aws_console_with_favorites_menu_inside_the/
 ---
+Now i need two clicks to visit a service instead of right clicking my favorite small icon service and opening in a new tab.
 
-## [3][Fastest and most cost efficient way to copy over an S3 bucket from another AWS account](https://www.reddit.com/r/aws/comments/itvd0f/fastest_and_most_cost_efficient_way_to_copy_over/)
-- url: https://www.reddit.com/r/aws/comments/itvd0f/fastest_and_most_cost_efficient_way_to_copy_over/
+I know this console is not at all used if you do IaC but sometimes this needs to be shown to others in a graphical way
+## [3][Τ-family instances](https://www.reddit.com/r/aws/comments/iug6j1/τfamily_instances/)
+- url: https://www.reddit.com/r/aws/comments/iug6j1/τfamily_instances/
 ---
-I have an S3 bucket that is 9TB and I want to copy it over to another AWS account.
+After the announcement of the new T4g we are checking the wider T-family. Unpredictable pricing is a little awkward. On the other hand, the bursting concept seems convenient.
 
-What would  be the fastest and most cost efficient way to copy it? 
+Interestingly enough their base price is lower than respective Ms. For example, in Ohio:
 
-I know I can rsync them and also use S3 replication.
+T3.xlarge (4 vCPUs, 16GB RAM) is at $0.1664/hr
+M5.xlarge (4 vCPUs, 16GB RAM) is at $0.192/hr 
 
-Rsync I think will take too long and I think be a bit pricey.
-
-I have not played with S3 replication so I am not sure of its speed and cost.
-
-Are there any other methods that I might not be aware of?
-
-FYI - The source and destination buckets will be in the same region (but different accounts).
-## [4][You can now share your Amazon CloudWatch dashboards outside the AWS console - by username/password, SSO and public URLs. Dark mode by default, can be embedded in other websites. With extremely long login/sessions timeouts perfect for TV dashboards.](https://www.reddit.com/r/aws/comments/ite4im/you_can_now_share_your_amazon_cloudwatch/)
-- url: https://i.redd.it/nkrtmnavpcn51.png
+Have you used T-family instances? What do you think about them?
+## [4][S3 Replication RTC with CloudFormation?](https://www.reddit.com/r/aws/comments/iuj0ww/s3_replication_rtc_with_cloudformation/)
+- url: https://www.reddit.com/r/aws/comments/iuj0ww/s3_replication_rtc_with_cloudformation/
 ---
+Hey Guys!
 
-## [5][Amazon Transcribe Now Supports Automatic Language Identification](https://www.reddit.com/r/aws/comments/iteso8/amazon_transcribe_now_supports_automatic_language/)
-- url: https://aws.amazon.com/blogs/aws/amazon-transcribe-now-supports-automatic-language-identification/
+I've been writing a CF template that will create two S3 buckets and setup SRR (Same Region Replication) between them. Got everything working fine and the buckets replicate no bother. But when i try to add RTC (and get the 15 minutes replication time) to the template it all fails and i can't even deploy it.
+
+I've followed along with the S3 CloudFormation docs and did exactly as it said. The problem seems to be from this document and the one it links to. I've found no examples online or anything and im beginning to think this feature barely exists lol.
+
+Error im getting inside CloudFormation is :
+
+*Encountered unsupported property ReplicationConfiguration*
+
+My code is below that im using for the bucket creation that im adding RTC to (with the bucket names changed), any help would be so appreciated!
+
+      OriginalBucket:
+        Type: AWS::S3::Bucket
+        Properties:
+          BucketName: original-bucket
+          VersioningConfiguration:
+            Status: Enabled
+            ReplicationConfiguration:
+              Role: !GetAtt ReplicationRole.Arn
+              Rules:
+              - Destination:
+                  Bucket: !GetAtt DestinationBucket.Arn
+                  ReplicationTime:
+                    Status: Enabled
+                    Time: 
+                      Minutes: 15
+                  Metrics:
+                    Status: Enabled
+                    EventThreshold:
+                      Minutes: 15
+                Prefix: ""
+                Status: Enabled
+## [5][docker container - simplest way to host?](https://www.reddit.com/r/aws/comments/iuiuza/docker_container_simplest_way_to_host/)
+- url: https://www.reddit.com/r/aws/comments/iuiuza/docker_container_simplest_way_to_host/
 ---
+Hi,
 
-## [6][Please, return back the shortcuts in the top panel... I like the new looks but I want the top panel back](https://www.reddit.com/r/aws/comments/itraqb/please_return_back_the_shortcuts_in_the_top_panel/)
-- url: https://i.redd.it/5v316o9mtgn51.png
+All my experience uptil now is on kubernetes.
+
+I am prototyping an idea and need a cheap and simple way to deploy it on aws. 
+
+Requirements:
+
+\- supports container
+
+\- needs RDS
+
+\- needs internet access (for external apis)
+
+\- should support basic ci/cd pipeline. (I use gitlab)
+
+&amp;#x200B;
+
+ECS seems the route but as soon as I put it inside vpc, it lose internet and nat gateway is way expensive for small prototype!
+
+&amp;#x200B;
+
+Thanks.
+## [6][Anyone else having console issues in us-east-1 right now?](https://www.reddit.com/r/aws/comments/itwd8q/anyone_else_having_console_issues_in_useast1/)
+- url: https://www.reddit.com/r/aws/comments/itwd8q/anyone_else_having_console_issues_in_useast1/
 ---
-
-## [7][How to track RDS minor version upgrade in code?](https://www.reddit.com/r/aws/comments/ituisc/how_to_track_rds_minor_version_upgrade_in_code/)
-- url: https://www.reddit.com/r/aws/comments/ituisc/how_to_track_rds_minor_version_upgrade_in_code/
+Getting a lot of errors in EC2 right now.
+## [7][Following the Juli 2020 ruling of the EU court that the EU/US Privacy shield is invalid: Will we be able to use AWS for customer projects in the near future?](https://www.reddit.com/r/aws/comments/iuf9uu/following_the_juli_2020_ruling_of_the_eu_court/)
+- url: https://www.reddit.com/r/aws/comments/iuf9uu/following_the_juli_2020_ruling_of_the_eu_court/
 ---
-I have an RDS, created using a basic Cloudformation template.  My question is, how do you keep the version defined in the template and the actual version in sync, if I enable automatic minor version upgrade?
-
-
-Should I use some sort of lambda function to keep that value in an SSM parameter, and have the CF template refer to the param?    Or is it better to disable automatic upgrade and do it manually through update-stack?
-
-Or is this simply a problem not worth solving?
-## [8][Making a scheduled task communicate with other tasks in an ECS Fargate service](https://www.reddit.com/r/aws/comments/itszqh/making_a_scheduled_task_communicate_with_other/)
-- url: https://www.reddit.com/r/aws/comments/itszqh/making_a_scheduled_task_communicate_with_other/
+I have heard several opinions on the EU/Privacy Shield Rulings and the german politics is pretty much silent on the specifics so far. Given that we (In Germany) have no real alternative to AWS here, the situation seems to be that AWS, Azure, Google Cloud, Digital Ocean etc. are not good for projects storing customer sensitive data (aka everything with a login).   
+So fellow Europeans, Germanz and other people of the world: What do you think is the case?
+## [8][Licensing of MS products in AWS - mostly for "desktop-like" use](https://www.reddit.com/r/aws/comments/iuhuke/licensing_of_ms_products_in_aws_mostly_for/)
+- url: https://www.reddit.com/r/aws/comments/iuhuke/licensing_of_ms_products_in_aws_mostly_for/
 ---
-I have a web service built in Java running in ECS Fargate with 3 tasks that have 1 container each. All 3 of these containers cache a table from a DB in JVM heap inside the container and I need to refresh this cache periodically. Ideally, I would just move the cache outside the container to something like Elasticache and try to use that, but for reasons that are beyond my control I am limited to storing and updating the cache inside these containers for the time being. There is an http end point in the service that accepts requests to refresh this cache. So where I am at right now is trying to figure out how I can make a request to the refresh cache end point in the service periodically and have that request routed exactly once to all 3 of these containers. I have come across scheduled tasks in ECS, so in theory I can spin up that scheduled task on a specified time interval in the same service and have it make that refresh cache request to all the other tasks in the service, but I am unsure about how to make it communicate with the other tasks. I am also aware of the risk of one of the containers restarting or being replaced and having it's cache out of sync with the other containers, but I am willing to accept that risk for the time being.
-## [9][Security September: Racing against CloudWatch Synthetics Canaries – One Cloud Please](https://www.reddit.com/r/aws/comments/itjt4j/security_september_racing_against_cloudwatch/)
-- url: https://onecloudplease.com/blog/security-september-racing-against-cloudwatch-synthetics-canaries
+For those in need to run MSOffice (incl. Outlook) apps in a "desktop like" setup, in AWS, I think there are a few options:
+
+- AWS workspaces - which is actually Windows server, with a "Windows 10 like skin" (a.k.a. "desktop experience")
+
+- EC2 w/Windows 10 (maybe as described [here](https://gist.github.com/peterforgacs/abebc777fcd6f4b67c07b2283cd31777)) - vague concerning licensing
+
+- Windows 10 in dedicated instance or dedicated hosting - [per MS](https://aws.amazon.com/windows/faq/#byol-win-cl), although I have no idea why someone would choose a dedicated **host** for a desktop need
+
+- an actual Windows server
+
+Someone pointed us the other day to the [following document](https://blogs.gartner.com/stephen-white/2020/06/10/organizations-running-office-365-windows-applications-and-windows-10-in-amazon-google-and-alibaba-should-re-check-licensing/), which adds to the concern I wanted to address, thus the true reason for my post: has someone actually figured out the **cost optimal** (OS license, O365 license, Outlook license, etc., etc.) solution of running applications (someone was even suggesting Office Plus) - mostly Excel, Word and also Outlook, in a desktop like fashion (users logged in and using the environment as "desktop")?
+## [9][We are the AWS EC2 Team - Ask the Experts - Sep 24th @ 9AM PT / 12PM ET / 4PM GMT!](https://www.reddit.com/r/aws/comments/iu0c8d/we_are_the_aws_ec2_team_ask_the_experts_sep_24th/)
+- url: https://www.reddit.com/r/aws/comments/iu0c8d/we_are_the_aws_ec2_team_ask_the_experts_sep_24th/
 ---
+Hey r/aws! u/AmazonWebServices here.
 
-## [10][Statistical simulations in the cloud?](https://www.reddit.com/r/aws/comments/itsdaq/statistical_simulations_in_the_cloud/)
-- url: https://www.reddit.com/r/aws/comments/itsdaq/statistical_simulations_in_the_cloud/
+The AWS EC2 team will be hosting an Ask the Experts session here **in this thread** to answer any questions you may have about **deploying your machine learning models to Amazon EC2 Inf1 instances powered by the** [**AWS Inferentia chip**](https://aws.amazon.com/machine-learning/inferentia/), which is custom designed by AWS to provide high performance and cost-effective machine learning inference in the cloud. These instances provide up to 30% higher throughput, and 45% lower cost per inference over comparable GPU-based instances for a wide variety of machine learning use cases such as image and video analysis, conversational agents, fraud detection, financial forecasting, healthcare automation, recommendation engines, text analytics, and transcription. It's easy to get started and popular frameworks such as TensorFlow, PyTorch, and MXNet are supported.
+
+Already have questions? Post them below and we'll answer them starting at 9AM PT on Sep 24, 2020!
+## [10][Starting with AWS SDK](https://www.reddit.com/r/aws/comments/iugy1y/starting_with_aws_sdk/)
+- url: https://www.reddit.com/r/aws/comments/iugy1y/starting_with_aws_sdk/
 ---
-Dear all,  
-is it possible to run simulations in the AWS cloud using Stata for a person that is not an expert with cloud computing? I am looking for a machine with 16 to 64 cores and about 8GB of RAM. What are the approximate costs if this simulation runs about 12h? What type of machine can you recommend? Thanks for some info.
-## [11][Are there any intentions of lowering the price of EBS volumes?](https://www.reddit.com/r/aws/comments/itkhk9/are_there_any_intentions_of_lowering_the_price_of/)
-- url: https://www.reddit.com/r/aws/comments/itkhk9/are_there_any_intentions_of_lowering_the_price_of/
----
-An honest question, not complaining or anything, just wondering if it's on the "roadmap".
-
-[2014 vs 2020 pricing](https://preview.redd.it/xblvi08ween51.jpg?width=595&amp;format=pjpg&amp;auto=webp&amp;s=44d97859d0d8f393c076e95255b29a2748023cd2)
-
-A good article talking regarding the pricing of SSD drives over here years - [https://www.minitool.com/news/ssd-prices-fall.html](https://www.minitool.com/news/ssd-prices-fall.html) (not mine, just a good ref).
-
-**Sources**
-
-2014-Jun [https://aws.amazon.com/blogs/aws/new-ssd-backed-elastic-block-storage/](https://aws.amazon.com/blogs/aws/new-ssd-backed-elastic-block-storage/)
-
-2020-Sep (Updated constantly) [https://aws.amazon.com/ebs/pricing/](https://aws.amazon.com/ebs/pricing/)
+Going to build some application to integrate with aws, e.g. getting some cloudwatch metrics. Any way i can make request to aws and test the api free? Any sample data response?

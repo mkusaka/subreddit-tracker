@@ -79,43 +79,53 @@
 
 
 &amp;nbsp;
-## [2][Understanding end to end (E2E) testing](https://www.reddit.com/r/javascript/comments/itr6tr/understanding_end_to_end_e2e_testing/)
-- url: https://www.testcraft.io/end-to-end-testing//#
+## [2][WTF Wednesday (September 16, 2020)](https://www.reddit.com/r/javascript/comments/ityh6x/wtf_wednesday_september_16_2020/)
+- url: https://www.reddit.com/r/javascript/comments/ityh6x/wtf_wednesday_september_16_2020/
+---
+Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
+Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
+this is the place.
+
+[Named after this comic](https://davidwalsh.name/demo/code-review.png)
+## [3][I created a highly customizable chrome productivity extension called ProTab. You can design your own new tab layout with widgets and have easy access to all the productivity tools you will ever need. It has tab manager, todos, notes, read laters, collections and much more.](https://www.reddit.com/r/javascript/comments/iud08m/i_created_a_highly_customizable_chrome/)
+- url: https://getprotab.com/
 ---
 
-## [3][Major security updates released for all active versions of Node.js](https://www.reddit.com/r/javascript/comments/itteyx/major_security_updates_released_for_all_active/)
-- url: https://groups.google.com/g/nodejs-sec/c/r5wshz4RJRQ/m/ir6CK1nLBAAJ
+## [4][[AskJS] Thoughts on hyperapp?](https://www.reddit.com/r/javascript/comments/iuhe5y/askjs_thoughts_on_hyperapp/)
+- url: https://www.reddit.com/r/javascript/comments/iuhe5y/askjs_thoughts_on_hyperapp/
 ---
+What are your thoughts on hyperapp? It's yet another JS framework, but I haven't seen it being discussed a whole lot.
 
-## [4][Vime (open-source) - collection of components for building and customizing your own media player](https://www.reddit.com/r/javascript/comments/ittkvl/vime_opensource_collection_of_components_for/)
-- url: https://vimejs.com
----
-
-## [5][How To Shuffle Arrays](https://www.reddit.com/r/javascript/comments/itqp2c/how_to_shuffle_arrays/)
-- url: https://dev.to/muhammadev/how-to-shuffle-arrays-3h41
----
-
-## [6][Moment.js Throws in the Towel: "It is not dead, but it is indeed done."](https://www.reddit.com/r/javascript/comments/it1dx5/momentjs_throws_in_the_towel_it_is_not_dead_but/)
-- url: https://momentjs.com/docs/#/-project-status/
----
-
-## [7][I'm Building a 16-bit Virtual Machine in JavaScript, along with Assembler, C-ish Language, and Later Turning the Whole Thing into a Fantasy Game Console. Here I'm Extending the Assembler to Parse and Resolve Data and Constant Directives](https://www.reddit.com/r/javascript/comments/itvf8v/im_building_a_16bit_virtual_machine_in_javascript/)
+Link to the repo: [https://github.com/jorgebucaran/hyperapp](https://github.com/jorgebucaran/hyperapp)
+## [5][I'm Building a 16-bit Virtual Machine in JavaScript, along with Assembler, C-ish Language, and Later Turning the Whole Thing into a Fantasy Game Console. Here I'm Extending the Assembler to Parse and Resolve Data and Constant Directives](https://www.reddit.com/r/javascript/comments/itvf8v/im_building_a_16bit_virtual_machine_in_javascript/)
 - url: https://www.youtube.com/watch?v=TXSgQZsVW8w
 ---
 
-## [8][Game of Drones: The Donald vs. Karens - an iterated prisoner's dilemma simulation](https://www.reddit.com/r/javascript/comments/itutwi/game_of_drones_the_donald_vs_karens_an_iterated/)
-- url: https://electric-eloquence.io/game-of-drones.html
+## [6][ava-dom: Port of jest-dom to ava](https://www.reddit.com/r/javascript/comments/iub97j/avadom_port_of_jestdom_to_ava/)
+- url: https://www.npmjs.com/package/ava-dom
 ---
 
-## [9][JavaScript Short Circuit Assignment](https://www.reddit.com/r/javascript/comments/itutld/javascript_short_circuit_assignment/)
-- url: https://samwalpole.com/javascript-short-circuit-assignment/
+## [7][Major security updates released for all active versions of Node.js](https://www.reddit.com/r/javascript/comments/itteyx/major_security_updates_released_for_all_active/)
+- url: https://groups.google.com/g/nodejs-sec/c/r5wshz4RJRQ/m/ir6CK1nLBAAJ
 ---
 
-## [10][Applying Watermarks to Images with FilePond](https://www.reddit.com/r/javascript/comments/ituib3/applying_watermarks_to_images_with_filepond/)
-- url: https://pqina.nl/blog/applying-watermarks-to-images-with-filepond/
+## [8][Mastering JavaScript high performance - Learn how JavaScript engines work and how you can help them optimize your JavaScript code. Become a master of micro-optimizations. Know all about when to avoid and when to use them.](https://www.reddit.com/r/javascript/comments/iuiyft/mastering_javascript_high_performance_learn_how/)
+- url: https://marcradziwill.com/blog/mastering-javascript-high-performance/
 ---
 
-## [11][DIY Multilanguage In JavaScript Project](https://www.reddit.com/r/javascript/comments/ittm9p/diy_multilanguage_in_javascript_project/)
-- url: https://medium.com/@varg92/diy-multilanguage-in-javascript-project-65f8aa91a506
+## [9][Understanding end to end (E2E) testing](https://www.reddit.com/r/javascript/comments/itr6tr/understanding_end_to_end_e2e_testing/)
+- url: https://www.testcraft.io/end-to-end-testing//#
+---
+
+## [10][Eleventy MICRO TIP: Add a generator meta tag to your Eleventy website](https://www.reddit.com/r/javascript/comments/iufo8u/eleventy_micro_tip_add_a_generator_meta_tag_to/)
+- url: https://dev.to/loige/add-a-generator-meta-tag-to-your-eleventy-website-48f1
+---
+
+## [11][Classes are just a fancy way of writing higher order functions](https://www.reddit.com/r/javascript/comments/itze8f/classes_are_just_a_fancy_way_of_writing_higher/)
+- url: https://stopa.io/post/250
+---
+
+## [12][Hands-on Reactive Programming with RxJS](https://www.reddit.com/r/javascript/comments/itw6tr/handson_reactive_programming_with_rxjs/)
+- url: https://goodguydaniel.com/blog/hands-on-reactive-programming-rxjs
 ---
 

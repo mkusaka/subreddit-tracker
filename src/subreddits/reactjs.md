@@ -111,100 +111,71 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/iaggwf/whos_available_august_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/ikn3vo/whos_hiring_september_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Building a Netflix Clone - Styled Components - Compound Components - Firebase (Firestore &amp; Authentication)](https://www.reddit.com/r/reactjs/comments/itrvon/building_a_netflix_clone_styled_components/)
+## [3][Create-React-App v4 coming soon with TypeScript 4 support, Fast Refresh and ESLint upgrades and experimental support for React 17's new JSX transform.](https://www.reddit.com/r/reactjs/comments/iu7lnx/createreactapp_v4_coming_soon_with_typescript_4/)
+- url: https://twitter.com/iansu/status/1306375307553693697?s=20
+---
+
+## [4][Building a Netflix Clone - Styled Components - Compound Components - Firebase (Firestore &amp; Authentication)](https://www.reddit.com/r/reactjs/comments/itrvon/building_a_netflix_clone_styled_components/)
 - url: https://www.youtube.com/watch?v=x_EEwGe-a9o
 ---
 
-## [4][NETFLIX clone - React and Firebase](https://www.reddit.com/r/reactjs/comments/iteqzk/netflix_clone_react_and_firebase/)
-- url: https://v.redd.it/3tccwhlvvcn51
+## [5][I'm new to reactjs, this is my first project. Any feedback would be appreciated!](https://www.reddit.com/r/reactjs/comments/iuevq6/im_new_to_reactjs_this_is_my_first_project_any/)
+- url: https://youtu.be/ziHDnFvDW4U
 ---
 
-## [5][Protab - I created a highly customizable chrome productivity extension with lots of features. Link in the comments.](https://www.reddit.com/r/reactjs/comments/itsy0n/protab_i_created_a_highly_customizable_chrome/)
-- url: https://v.redd.it/8ewuzl3flhn51
+## [6][Got promoted as a tech lead for react project/team. How do you guys keep up with tech ? Any advice or reddit to follow?](https://www.reddit.com/r/reactjs/comments/iuaqwc/got_promoted_as_a_tech_lead_for_react_projectteam/)
+- url: https://www.reddit.com/r/reactjs/comments/iuaqwc/got_promoted_as_a_tech_lead_for_react_projectteam/
+---
+I was a developer for my entire career and my new position will barely allow me to code on the project anymore (words from the previous teammate in this position). This is my first time as a lead and I'm scared of not keeping up with the good stuff.
+## [7][Meet react-colorful v4. The modern color picker for React apps. 20+ times lighter than react-color, modular, customizable, fast, well-tested, supports alpha channel, and a variety of color formats.](https://www.reddit.com/r/reactjs/comments/iujckn/meet_reactcolorful_v4_the_modern_color_picker_for/)
+- url: https://omgovich.github.io/react-colorful/
 ---
 
-## [6][Today. 1PM ET Live. Learn about Hermes and Making React Native fast with React Core Team Members](https://www.reddit.com/r/reactjs/comments/ituvrl/today_1pm_et_live_learn_about_hermes_and_making/)
-- url: https://www.reddit.com/r/reactjs/comments/ituvrl/today_1pm_et_live_learn_about_hermes_and_making/
+## [8][CRA, Next.js or Gatsby for an app that is hosted on same backend server?](https://www.reddit.com/r/reactjs/comments/iufxlc/cra_nextjs_or_gatsby_for_an_app_that_is_hosted_on/)
+- url: https://www.reddit.com/r/reactjs/comments/iufxlc/cra_nextjs_or_gatsby_for_an_app_that_is_hosted_on/
 ---
-Today at 1PM ET on React Wednesday,  we’ll chat with Ram ([@nparashuram](https://twitter.com/nparashuram)) and team from Facebook. Ram is an engineering manager on Oculus, where he works on the React Native companion app, and on the headset itself, using React VR.
+Hello everyone! I am a Junior React dev and recently I got placed in a team as a solo front end developer.
 
-As part of that work, Ram gets to play with [Hermes](https://github.com/facebook/hermes), the JavaScript engine designed to help React Native apps start up fast. We plan on asking Ram and team important questions, like “Is working on VR as awesome as it sounds?”, and, “How can I be cool like you when I grow up?” We’ll probably ask questions about Hermes too.
+I made in the past a couple of other projects made in CRA but they were hosted on a different FTP server.
 
-The format is interview-style with show and tell. 
+Now I need to create the front end that is in the same back end project structure (spring application) and the output .war will be just 1. Should I still use the CRA or maybe I should dive into other libraries (gatsby or next) as I have like 1 week of studying before getting hand on the code.
 
-**Get a calendar invite or join the broadcast here:**
-
-[https://www.telerik.com/react-wednesdays](https://www.telerik.com/react-wednesdays)
-## [7][React Hook Form Server-side Validation](https://www.reddit.com/r/reactjs/comments/itojtn/react_hook_form_serverside_validation/)
-- url: https://www.carlrippon.com/react-hook-form-server-validation/
+Thanks in advance!
+## [9][Browser notification in react](https://www.reddit.com/r/reactjs/comments/iufqim/browser_notification_in_react/)
+- url: https://www.reddit.com/r/reactjs/comments/iufqim/browser_notification_in_react/
 ---
-
-## [8][How to deploy/Host React project on fire base free](https://www.reddit.com/r/reactjs/comments/itquq5/how_to_deployhost_react_project_on_fire_base_free/)
-- url: https://www.reddit.com/r/reactjs/comments/itquq5/how_to_deployhost_react_project_on_fire_base_free/
+I am trying to implement notification in react + type script
+## [10][What is Virtual DOM and what problem does it solve?](https://www.reddit.com/r/reactjs/comments/iuii5m/what_is_virtual_dom_and_what_problem_does_it_solve/)
+- url: https://www.reddit.com/r/reactjs/comments/iuii5m/what_is_virtual_dom_and_what_problem_does_it_solve/
 ---
-```
-$ npm install -g firebase-tools
+This post attempts to offer a jargon-free answer to the following questions:
 
-$ firebase login
+* Why do frameworks like React &amp; Vue use Virtual DOM?
+* What is Virtual DOM?
+* What problem does it solve?
+* Does it make rendering to the UI faster or slower?
 
-$ firebase init
+Link : [https://www.tezify.com/post/what-is-virtual-dom-and-what-problem-does-it-solve/](https://www.tezify.com/post/what-is-virtual-dom-and-what-problem-does-it-solve/)
 
-◯ Database: Deploy Firebase Realtime Database Rules
+====================================
 
-◯ Firestore: Deploy rules and create indexes for Firestore
-
-◯ Functions: Configure and deploy Cloud Functions
-
-❯◯ Hosting: Configure and deploy Firebase Hosting sites
-(use space to select)
-◯ Storage: Deploy Cloud Storage security rules
-
-? Select a default Firebase project for this directory:
-
--&gt; react-project-abod (react-project)
-
-i Using project react-project (react-project)
-
-? What do you want to use as your public directory? build
-
-? Configure as a single-page app (rewrite all urls to /index.html)? Yes
-
-? File public/index.html already exists. Overwrite? No
-
-$ npm run build
-
-$ firebase deploy
-
-``` 
-[video tutorial](https://youtu.be/mUsdZRtc8QI) click to watch video
-## [9][Redux toolkit, useSelector is always one state behind](https://www.reddit.com/r/reactjs/comments/itrely/redux_toolkit_useselector_is_always_one_state/)
-- url: https://www.reddit.com/r/reactjs/comments/itrely/redux_toolkit_useselector_is_always_one_state/
+Note - I'm trying to improve my tech writing (make it jargon free to explain fundamentals). So, if you have feedback about the post from that perspective - kindly share.
+## [11][Self doubting myself](https://www.reddit.com/r/reactjs/comments/iuici2/self_doubting_myself/)
+- url: https://www.reddit.com/r/reactjs/comments/iuici2/self_doubting_myself/
 ---
-Hey guys, so I'm using createAsyncActions to dispatch my actions, but the error selector is always displaying the previous state.  
-for example if I entered a wrong username, it displays an empty snack cause the initial state Is undefined and so on
-
-`const error = useSelector(selectError);`
-
-`const status = useSelector(selectAuthentication);`
-
-`const onSubmit = async (data: object) =&gt; {`  
- `await dispatch(loginUser(data));`  
- `if (status) {`  
- `navigation.navigate('Home');`  
-    `}`  
- `setSnack({ visible: true, msg: error });`  
-  `};`
-## [10][react-nil a null renderer for node and the fullstack](https://www.reddit.com/r/reactjs/comments/itsogt/reactnil_a_null_renderer_for_node_and_the/)
-- url: https://github.com/pmndrs/react-nil
+Hi, can you suggest me what should i do. I was getting so much confused and get into tutorial hell. I start learning react js in march and for first 2 month i just directly go into building project with react and firebase but not able to as i was thinking it easy to build a project then i also learn mern stack and firebase by seing tutorial and courses on udemy. But i am self doubting myself as you dont know anything look what other are building. I can build i know more then basics and able to understand other codes but still thinking how can i build like them. I learn react 3 time from scratch as i am missing something but i know all the stuff that i am learning.
+Can you please suggest what should i do. Now its been so frustrating. 
+This monday i deside to build a money tracker with some graph to show monthly usage. I build ui and then do authentication with firebase its working but once again i was thing that something was missing you are not doing it write
+## [12][Can you suggest a tutorial on using React Hooks?](https://www.reddit.com/r/reactjs/comments/iui709/can_you_suggest_a_tutorial_on_using_react_hooks/)
+- url: https://www.reddit.com/r/reactjs/comments/iui709/can_you_suggest_a_tutorial_on_using_react_hooks/
 ---
+Hello redditers!
 
-## [11][How is the displayed code calls setState multiple times](https://www.reddit.com/r/reactjs/comments/itviex/how_is_the_displayed_code_calls_setstate_multiple/)
-- url: https://www.reddit.com/r/reactjs/comments/itviex/how_is_the_displayed_code_calls_setstate_multiple/
----
-I am quite new to react, learning it. I was going through [reactjs.org](https://reactjs.org) for some study and found this to be confusing. How is the code (dark background) calls setState multiple times?
+I'm new to reactjs, but can do alot of things in HTML, CSS and Javascript. React is very interesting IMO, but there are some things I can't seem to get. 
 
-IMAGE: [https://ibb.co/JvxQWdN](https://ibb.co/JvxQWdN)
-## [12][React-redux example for beginners](https://www.reddit.com/r/reactjs/comments/itvad1/reactredux_example_for_beginners/)
-- url: /r/reactjs/comments/itv6gt/reactredux_example_for_beginners/
----
+I'm trying to add animations to my components (scroll reveal, appear on click, etc.) and I found some tutorials on useState, useRef and useEffect, but i don't seem to fully understand how they work.
 
+So I'm looking for some tutorials that will describe them, or someone that can mentor me a little bit.
+
+Any help is much appriciated!
+Thank you, wonderful people of reddit

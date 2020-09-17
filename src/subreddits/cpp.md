@@ -56,11 +56,88 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][I made this ASCII Tetris clone demo in console](https://www.reddit.com/r/cpp/comments/itscqo/i_made_this_ascii_tetris_clone_demo_in_console/)
+## [2][I'm pretty sure there's a massive, widespread misconception about std::random (most particularly mt19937), and that it's actually trivially easy to use.](https://www.reddit.com/r/cpp/comments/iufxze/im_pretty_sure_theres_a_massive_widespread/)
+- url: https://www.reddit.com/r/cpp/comments/iufxze/im_pretty_sure_theres_a_massive_widespread/
+---
+I hear several things parroted over and over about mt19937. Some points are fair (it has a large internal state, which can be overkill in certain applications like embedded computing), some I can't be sure of (PRNG experts have purportedly found flaws in it in the time since its conception), and I'd like some clarification on that (i.e. further reading and specification of what cases it's now considered unsuitable for).
+
+--But some points made don't gibe with my readings on cppreference.com. Perhaps a bit of code will help clarify what I mean:
+
+	auto random_point_on_a_circle(double radius = 1.0) -&gt; std::array&lt;double, 2&gt;
+	{
+		using namespace std;
+		
+		static random_device rd{};
+		static seed_seq seeder {rd(), rd(), rd(), rd(), 0xDEAD'FACE}; // 128 bits and a bit of salt.
+		static mt19937 rand_eng {seeder};
+		
+		static uniform_real_distribution choose_angle {0.0, 2.0 * numbers::pi};
+		
+		auto angle = choose_angle(rand_eng);
+		return {cos(angle) * radius, sin(angle) * radius};
+	}
+
+Here, I've decided that one "state collision" in 2^128 is plenty of distance between hypothetical runs, so I call upon random_device to supply 32 bits to my seed sequence 4 times. For good measure, in case random_device is deterministic and a user recognizes the output, I tack on a silly magic number term with no semantic meaning. If you like, chuck on `std::chrono::steady_clock::now().count()` (modulo 2^32 is implicit, maybe. I'd have to play around/look deeper).
+
+The constructor for mt19937 then takes that seed sequence and calls on `seed_seq.generate()` for us, with the proper values required for its particular needs in order to eliminate any practical chance that its internal state is "degenerate", e.g. containing mostly null or uninitialized bytes.
+
+Then we use the vastly superior `std::distribution`s, saying a permanent goodbye to all that rampant `rand() % 100` garbage that was never very elegant.
+
+Alternatively, if we hate typing `rd()` multiple times, a seed_seq can be constructed by passing in *any* pair of iterators that dereference to an int. Notably, they can be forward-only, and no assumption is made that state is preserved after an increment. You can wrap `rd()` in a loop. You can use a string, standard input (just mash your keyboard), some low bits from your camera (if you know how), etc. `std::seed_seq` just uses the lowest 32 bits of each de-referenced element.
+
+Alternatively, if we don't care about seeding the engine at all (e.g. we're just setting values in a game's particle system), mt19937 has a default constructor with a default seed.
+
+	// Literally just this, no need for a random_device and a seed_seq
+	static mt19937 rand_eng {};
+## [3][I just started a Highschool programming course which focuses primarily on C++ so I’m very new to all this, and I just want to ask what some of the possibilities of C++ are](https://www.reddit.com/r/cpp/comments/iubwvb/i_just_started_a_highschool_programming_course/)
+- url: https://www.reddit.com/r/cpp/comments/iubwvb/i_just_started_a_highschool_programming_course/
+---
+
+## [4][Any GSOC Alternatives Focused on C++](https://www.reddit.com/r/cpp/comments/iujdkj/any_gsoc_alternatives_focused_on_c/)
+- url: https://www.reddit.com/r/cpp/comments/iujdkj/any_gsoc_alternatives_focused_on_c/
+---
+Hi,
+
+Are there any organisations, or maybe a list somewhere, for organisations looking for C++ developers to be mentored / volunteer? I know Google Summer of Code is a good one, but they are not C++ focused, and are for uni students. Id also just be interested in maybe a IRC / Discord channel where people get C++ stuff built, or maybe some other active C++ community.
+
+Some background below as to why I ask this, and perhaps someone knows better alternatives - I know, this is not cscareerquestions...
+
+I'll be honest, I am career changer, and have no commercial C++ experience (though used it a lot during my grad degree). I see a lot of jobs and their job requirements are "can seepeepee anywhere, has been doing so for 5+ years". Now obviously I lack the experience and so keep getting rejected; my plan was to maybe just volunteer myself and learn and build experience that way.
+## [5][Two new ticket types for Meeting C++!](https://www.reddit.com/r/cpp/comments/iuf512/two_new_ticket_types_for_meeting_c/)
+- url: https://meetingcpp.com/meetingcpp/news/items/Two-new-ticket-types-for-Meeting-Cpp-.html
+---
+
+## [6][I made this ASCII Tetris clone demo in console](https://www.reddit.com/r/cpp/comments/itscqo/i_made_this_ascii_tetris_clone_demo_in_console/)
 - url: https://youtu.be/_rQ3RHeVDRQ
 ---
 
-## [3][CppScript: the evolution of modern C++](https://www.reddit.com/r/cpp/comments/itsj2n/cppscript_the_evolution_of_modern_c/)
+## [7][Reading large code bases](https://www.reddit.com/r/cpp/comments/iu05bb/reading_large_code_bases/)
+- url: https://www.reddit.com/r/cpp/comments/iu05bb/reading_large_code_bases/
+---
+Hello,
+
+I'm using C++ since a few years now and I know and understand most of the C++11 Standard. I would call myself decently competent and experienced in writing C++ programs from scratch. But now, I'm working on someone else's code for the first time in my life (680 k lines of code and 270 k lines of header code, not that much documentation, called OpenFOAM). I still can write self-contained code, but I'm completely unable to read and understand that code and writing new code that interacts with the old code is extremely hard for me. What is the best way to learn to read and understand large codebases?
+## [8][is the {fmt} library and std::format from c++20 the same?](https://www.reddit.com/r/cpp/comments/ityf5m/is_the_fmt_library_and_stdformat_from_c20_the_same/)
+- url: https://www.reddit.com/r/cpp/comments/ityf5m/is_the_fmt_library_and_stdformat_from_c20_the_same/
+---
+was {fmt} adopted by c++20 like some boost libraries get adopted into the standard? they seem very close when it comes to using.
+ 
+and if it was, can i expect the same performance from std::format implementation as the {fmt} library?
+ 
+thanks in advance.
+## [9][Utility Library for Imaging System : ULIS - C++ graphic libary](https://www.reddit.com/r/cpp/comments/ity88h/utility_library_for_imaging_system_ulis_c_graphic/)
+- url: https://www.reddit.com/r/cpp/comments/ity88h/utility_library_for_imaging_system_ulis_c_graphic/
+---
+Hi people ! I just wanted to share a graphic library developed by Praxinos team, named ULIS.  We developed this library to answer specific needs that were not fullfilled by other graphic libraries (OpenCV, littleCMS, etc.)
+
+ULIS reunites a large set of algorithm to manage color models, color spaces, image files formats, blending modes (like in Photoshop), animated sequences, etc. It is written in C++, it is optimized and well-documented.
+
+You can access the sources for free and, its use is also free-of-charge for non-commercial purposes only. Hopefully this library can help you to make your own plugins or software.
+
+Here is the link to Github : [https://github.com/Praxinos/ULIS](https://github.com/Praxinos/ULIS)
+
+If you have any question, feel free answer this thread or contact us on our website :[https://praxinos.coop/contact.php](https://praxinos.coop/contact.php)
+## [10][CppScript: the evolution of modern C++](https://www.reddit.com/r/cpp/comments/itsj2n/cppscript_the_evolution_of_modern_c/)
 - url: https://www.reddit.com/r/cpp/comments/itsj2n/cppscript_the_evolution_of_modern_c/
 ---
 This is a thread following [this thread](https://www.reddit.com/r/cpp/comments/i0i0e4/constexpr_if_and_requires_expressions_changed/) and [this post](https://www.reddit.com/r/cpp/comments/i15g4p/c_has_become_easier_to_write_than_java/fzuq0jp/?context=3).
@@ -118,7 +195,7 @@ The CppScript subset of modern C++ is very easy to learn and write, you just nee
     f&lt;1&gt;(); // returns double
 
 personally I don't see a huge gap between the CppScript subset and dynamically typed languages like Python for most use cases, and I think it's a great startpoint for anyone that struggles to learn C++, it is much simpler, easier and more intuitive than the rest of C++
-## [4][CppCon: Try out CppCon 2020 on the cheap](https://www.reddit.com/r/cpp/comments/itl0l8/cppcon_try_out_cppcon_2020_on_the_cheap/)
+## [11][CppCon: Try out CppCon 2020 on the cheap](https://www.reddit.com/r/cpp/comments/itl0l8/cppcon_try_out_cppcon_2020_on_the_cheap/)
 - url: https://www.reddit.com/r/cpp/comments/itl0l8/cppcon_try_out_cppcon_2020_on_the_cheap/
 ---
 CppCon 2020 is off to a great start in its "online venue."
@@ -128,51 +205,3 @@ If you've been curious about attending CppCon or attending an online C++ confere
 Since the conference is about half over, registrations are now available at half-off the regular $300 registration fee (with discount code).
 
 To register at the $150 discounted registration fee use this registration code: [https://cppcon2020.eventbrite.com/?discount=TasteOf\_CppCon\_Reddit](https://cppcon2020.eventbrite.com/?discount=TasteOf_CppCon_Reddit)
-## [5][Happy new Jewish year - A C++20 Jewish Date library](https://www.reddit.com/r/cpp/comments/itct0i/happy_new_jewish_year_a_c20_jewish_date_library/)
-- url: https://www.reddit.com/r/cpp/comments/itct0i/happy_new_jewish_year_a_c20_jewish_date_library/
----
-[https://github.com/royalbee/jewish\_date](https://github.com/royalbee/jewish_date)
-
-A header only std::chrono date like library to handle [Jewish Dates](https://en.wikipedia.org/wiki/Hebrew_calendar).
-
-    #include &lt;jewish/date.h&gt;
-    
-    using namespace jewish::literals;
-    
-    static_assert(5781_y / Tishrei / 1 == jewish::year_month_day(date::year(2020) / 9 / 19));
-    static_assert(date::year_month_day(5781_y / Tishrei / 1) == date::year(2020) / 9 / 19);
-
-Since I Couldn't find any standard library supporting chrono date it Currently uses [Howard Hinnant's date library](https://github.com/HowardHinnant/date).
-
-&amp;#x200B;
-
-Happy Healthy Peaceful Year
-## [6][What are the advantages of a weak ownership model in modules?](https://www.reddit.com/r/cpp/comments/ita6xn/what_are_the_advantages_of_a_weak_ownership_model/)
-- url: https://www.reddit.com/r/cpp/comments/ita6xn/what_are_the_advantages_of_a_weak_ownership_model/
----
-As the title says, there are two different ownership models allowed by the standard in modules
-
-1. Strong Ownership Model
-2. Weak Ownership Model
-
-What are the advantages of the weak ownership model as compared to strong ownership models?
-## [7][Structure Padding in C++](https://www.reddit.com/r/cpp/comments/itv4zw/structure_padding_in_c/)
-- url: https://thoughts-on-coding.com/2020/09/14/structure-padding-in-cpp/
----
-
-## [8][Refactoring from single to multi purpose](https://www.reddit.com/r/cpp/comments/ituksf/refactoring_from_single_to_multi_purpose/)
-- url: http://meetingcpp.com/blog/items/Refactoring-from-single-to-multi-purpose.html
----
-
-## [9][Bjarne Stroustrup: C++ Today (2016)](https://www.reddit.com/r/cpp/comments/it54o4/bjarne_stroustrup_c_today_2016/)
-- url: https://www.youtube.com/watch?v=aPvbxuOBQ70&amp;list=WL&amp;index=11&amp;t=0s
----
-
-## [10][C++ in Visual Studio Code reaches version 1.0! | C++ Team Blog](https://www.reddit.com/r/cpp/comments/ista1w/c_in_visual_studio_code_reaches_version_10_c_team/)
-- url: https://devblogs.microsoft.com/cppblog/c-in-visual-studio-code-reaches-version-1-0/
----
-
-## [11][Standard C++20 Modules support with MSVC in Visual Studio 2019 version 16.8 | C++ Team Blog](https://www.reddit.com/r/cpp/comments/ispeiy/standard_c20_modules_support_with_msvc_in_visual/)
-- url: https://devblogs.microsoft.com/cppblog/standard-c20-modules-support-with-msvc-in-visual-studio-2019-version-16-8/
----
-

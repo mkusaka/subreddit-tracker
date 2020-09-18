@@ -27,7 +27,127 @@ Please use this thread to discuss **cool** but relatively **unknown** gems you'v
 You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
 Please include a **description** and a **link** to the gem's homepage in your comment.
-## [3][Zipping active storage has_one_attached &amp; has_many_attached files in one zip file for a model](https://www.reddit.com/r/rails/comments/iui5g4/zipping_active_storage_has_one_attached_has_many/)
+## [3][Please help me with my N+1 Problem](https://www.reddit.com/r/rails/comments/iv2ga7/please_help_me_with_my_n1_problem/)
+- url: https://www.reddit.com/r/rails/comments/iv2ga7/please_help_me_with_my_n1_problem/
+---
+I have a model 
+
+    class Posts
+      has_many :comments
+ 
+      def latest_comment
+        comments.order(:created_at).last
+      end
+    end
+
+If I do
+
+    Post.includes(:comments).each do |post|
+        puts post.latest_comment
+    end
+
+The ***instance method*** seems to ignore the ```includes``` and runs a query for each post to get the latest comment for each post.
+
+I'm able to circumvent this via a static/class method which is:
+
+    def self.get_latest_comment(post)
+        post.comments.sort_by{|x|x.created_at}.last
+    end
+
+but this feels inelegant. Is this the only solution?
+
+Thanks in advance!
+
+**Edit** fixed my example
+## [4][Any number of spaces after :: is okay?](https://www.reddit.com/r/rails/comments/iv3849/any_number_of_spaces_after_is_okay/)
+- url: https://www.reddit.com/r/rails/comments/iv3849/any_number_of_spaces_after_is_okay/
+---
+How and why does this work?   
+
+
+    class User &lt; ActiveRecord::Base
+      CONSTANT = 1
+    end
+
+And when I add space in between class and const name it still prints the value.   
+
+
+    User::CONSTANT # prints 1
+    User::                   CONSTANT # prints 1
+## [5][Is this a banana solution?](https://www.reddit.com/r/rails/comments/iutmqo/is_this_a_banana_solution/)
+- url: https://www.reddit.com/r/rails/comments/iutmqo/is_this_a_banana_solution/
+---
+A few days ago I posted a problem I had with [Nginx (also Apache)](https://www.reddit.com/r/rails/comments/ito2ou/trying_to_deploy_my_web_app_on_digitalocean/), so at the end what I did was:
+
+1. Use standalone passenger and serve my web app on ports 5000 (HTTP) and 5001 (HTTPS)
+2. redirect port `80` to `5000` and 443 to `5001` with `iptables`, example: `sudo iptables -t nat -I PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 5000`
+
+Is this a banana solution?
+## [6][webpacker breaks CSP](https://www.reddit.com/r/rails/comments/iusays/webpacker_breaks_csp/)
+- url: https://www.reddit.com/r/rails/comments/iusays/webpacker_breaks_csp/
+---
+I would like to set webpacker to user a nonce. My app's CSP breaks ever since I installed it. I think it has something to do with `style-loader`. The browser console error looks like this:
+
+`Content Security Policy: The page’s settings observed the loading of a resource at inline (“style-src”). A CSP report is being sent. injectStylesIntoStyleTag.js:117`
+
+`Content Security Policy: The page’s settings observed the loading of a resource at inline (“style-src”). A CSP report is being sent. injectStylesIntoStyleTag.js:190`
+
+The code in question:
+
+    function insertStyleElement(options) {
+      var style = document.createElement('style');      
+      ...
+      if (typeof options.insert === 'function') {
+        options.insert(style);
+      } else {
+        var target = getTarget(options.insert || 'head');
+        if (!target) {
+          throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
+        }
+        target.appendChild(style); //LINE 117//
+      }
+      return style;
+    }
+
+And:
+
+    function applyToTag(style, options, obj) {
+      var css = obj.css;
+      ...
+      if (style.styleSheet) {
+        style.styleSheet.cssText = css;
+      } else {
+        while (style.firstChild) {
+          style.removeChild(style.firstChild);
+        }
+        style.appendChild(document.createTextNode(css)); //LINE 190//
+      }
+    }
+
+How do I whitelist this? Note that I'm using Turbolinks. This ([https://webpack.js.org/guides/csp/](https://webpack.js.org/guides/csp/)) says to add `__webpack_nonce__ = 'random'` to my entry file ( in this case `app/javascript/packs/application.js`), yet adding that nonce to my csp file has no effect on the style-src violation. Which in this case, looks like this: `config.style_src :self, '`[`https://fonts.googleapis.com`](https://fonts.googleapis.com)`', 'nonce-random'`
+## [7][anyone successfully convert a model into a queue for ETL purposes?](https://www.reddit.com/r/rails/comments/iumw4v/anyone_successfully_convert_a_model_into_a_queue/)
+- url: https://www.reddit.com/r/rails/comments/iumw4v/anyone_successfully_convert_a_model_into_a_queue/
+---
+Please correct me if you see any better way to organize my problem. 
+
+&amp;#x200B;
+
+I am doing data backup from a 3rd party provider. Their data is provided daily, and is not finalized for 14-days. 
+
+&amp;#x200B;
+
+Meaning we basically have 14 days of "fresh" data to fetch, and the oldest is more important than the newest.
+
+&amp;#x200B;
+
+Everyday we take all records for the last 14 days and mark them as "new"
+
+Every 10 minutes we fetch data on records sorted oldest to newest mostly to make sure we don't hit API limits but i really don't have much observability into how often we retry jobs due to the API limits. 
+
+&amp;#x200B;
+
+Anyone have a rock-solid solution that has ETL experience and whatnot?
+## [8][Zipping active storage has_one_attached &amp; has_many_attached files in one zip file for a model](https://www.reddit.com/r/rails/comments/iui5g4/zipping_active_storage_has_one_attached_has_many/)
 - url: https://www.reddit.com/r/rails/comments/iui5g4/zipping_active_storage_has_one_attached_has_many/
 ---
 I'm using the active\_storage-send-zip, but it seems to only focus on has\_many\_attached.  I need to zip all files from the model at once. I can't seem to combine the two, to get the results that I want.
@@ -45,7 +165,65 @@ has\_many\_attached :photos
 &amp;#x200B;
 
 zip all photos + their avatar image
-## [4][How to upload and access a file?](https://www.reddit.com/r/rails/comments/iucars/how_to_upload_and_access_a_file/)
+## [9][rails code style for model callbacks](https://www.reddit.com/r/rails/comments/iujskb/rails_code_style_for_model_callbacks/)
+- url: https://www.reddit.com/r/rails/comments/iujskb/rails_code_style_for_model_callbacks/
+---
+From robocops style guidelines this is what they suggest. [https://github.com/rubocop-hq/rails-style-guide#callbacks-order](https://github.com/rubocop-hq/rails-style-guide#callbacks-order)
+
+    #bad
+    class Person
+      after_commit :after_commit_callback
+      before_validation :before_validation_callback
+    end
+    
+    #good
+    class Person
+      before_validation :before_validation_callback
+      after_commit :after_commit_callback
+    end
+
+My question is suppose we have something like this  
+
+
+    class Person
+      after_save :after_user_update on: :update
+      after_save :after_user_save on: :create
+      before_validation :validate_user_update on: :update
+      before_validation :validate_user_destroy on: :destroy
+    end
+
+In that case, what is the best approach? 
+
+Option 1) Group all before\_validations for create, update, delete and then after\_validation and so on
+
+    class Person
+      before_validation :validate_user_update on: :update
+      before_validation :validate_user_destroy on: :destroy
+      after_save :after_user_save on: :create
+      after_save :after_user_update on: :update
+    end
+
+Or   
+go with the all the callbacks together for each of the action, first set for create and then update and delete.   
+from the list here [https://guides.rubyonrails.org/active\_record\_callbacks.html#available-callbacks](https://guides.rubyonrails.org/active_record_callbacks.html#available-callbacks)
+
+    class Person
+      before_validation :validate_user_update on: :update
+      after_save :after_user_save on: :create
+      before_validation :validate_user_destroy on: :destroy
+      after_save :after_user_update on: :update
+    end
+
+What are your thoughts?
+## [10][I am using carrierwave to upload the image and parsley for validation. when I tried to edit the form it shows required value in image field though the image is uploaded.](https://www.reddit.com/r/rails/comments/iuhi7w/i_am_using_carrierwave_to_upload_the_image_and/)
+- url: https://www.reddit.com/r/rails/comments/iuhi7w/i_am_using_carrierwave_to_upload_the_image_and/
+---
+
+## [11][Rails upgrade experts wanted](https://www.reddit.com/r/rails/comments/iuu79l/rails_upgrade_experts_wanted/)
+- url: https://www.reddit.com/r/rails/comments/iuu79l/rails_upgrade_experts_wanted/
+---
+Have you helped companies specifically just upgrade their Rails app to the latest version? then, We might have your next challenge to conquer. Please leave your email here if you are interested and I will reach out to you.
+## [12][How to upload and access a file?](https://www.reddit.com/r/rails/comments/iucars/how_to_upload_and_access_a_file/)
 - url: https://www.reddit.com/r/rails/comments/iucars/how_to_upload_and_access_a_file/
 ---
 This is a bit of a n00b question (I'm sure), but ...
@@ -69,115 +247,3 @@ And something like this in my view:
 It's so easy to upload a file. I'm surprised it isn't as easy (apparently) to get access to the file. Am I misunderstanding something?
 
 AtDhVaAnNkCsE (thanks in ADVANCE)
-## [5][I am using carrierwave to upload the image and parsley for validation. when I tried to edit the form it shows required value in image field though the image is uploaded.](https://www.reddit.com/r/rails/comments/iuhi7w/i_am_using_carrierwave_to_upload_the_image_and/)
-- url: https://www.reddit.com/r/rails/comments/iuhi7w/i_am_using_carrierwave_to_upload_the_image_and/
----
-
-## [6][Rails + WordPress integration](https://www.reddit.com/r/rails/comments/ityz8r/rails_wordpress_integration/)
-- url: https://www.reddit.com/r/rails/comments/ityz8r/rails_wordpress_integration/
----
-Hi there,
-
-We are planning on having a WordPress site to manage content and a rails app as our platform after the user signs-in.
-However, on our WordPress site we have the need of showing a list of items that is inside our platform's database. 
-What's the best way of doing that? Is there a way of making our platform return the HTML to WordPress or even return a json and generate the HTML inside WordPress?
-## [7][upload files in a specific folder in AWS bucket](https://www.reddit.com/r/rails/comments/iturlf/upload_files_in_a_specific_folder_in_aws_bucket/)
-- url: https://www.reddit.com/r/rails/comments/iturlf/upload_files_in_a_specific_folder_in_aws_bucket/
----
-im using **gem 'aws-sdk-s3'** &amp; im successfully able to upload my files on **AWS** bucket but I don't know how can I upload my files in a specific folder in my bucket ?
-
-I'm using Active-Storage 
-## [8][Where did concept of service object come from?](https://www.reddit.com/r/rails/comments/itivdn/where_did_concept_of_service_object_come_from/)
-- url: https://www.reddit.com/r/rails/comments/itivdn/where_did_concept_of_service_object_come_from/
----
-I ve gone through a bit of rails open source codes and am observing a lot of service objects - a class with one static function 'call'. Never really heard of this in Java Python or Node. If im correct Ruby is OOP language in the first place. I see this service object things is annoying since it looks like its just throwing the OOP concept away, and this doesnt seem to take any advantages of Ruby OOP. Some people say its because SRP but SRP doesnt strictly mean that a file or a class should only have one function that does only one thing. Well, if used correctly, It'd be the best but feels like SO concept combined with SRP is leading some to wrong way and to no good practice. Why is it popular in rails?
-## [9][Trying to deploy my web app on DigitalOcean (always used Heroku before)](https://www.reddit.com/r/rails/comments/ito2ou/trying_to_deploy_my_web_app_on_digitalocean/)
-- url: https://www.reddit.com/r/rails/comments/ito2ou/trying_to_deploy_my_web_app_on_digitalocean/
----
-I don't understand why I have problems with the Nginx configuration...
-
-I followed [this guide](https://gorails.com/deploy/ubuntu/18.04#nginx) (not to the letter) and everything seems to be fine, except for one thing, when I do a request to my web app I get an [`ERR_CONNECTION_REFUSED` error](https://i.imgur.com/l0P5AWu.png), and when I look at the nginx error logs I see the following lines for each request:
-
-```
-[ N 2020-09-16 02:18:46.2063 6335/T1 age/Wat/WatchdogMain.cpp:1373 ]: Starting Passenger watchdog...
-[ N 2020-09-16 02:18:46.2363 6342/T1 age/Cor/CoreMain.cpp:1340 ]: Starting Passenger core...
-[ N 2020-09-16 02:18:46.2365 6342/T1 age/Cor/CoreMain.cpp:256 ]: Passenger core running in multi-application mode.
-[ N 2020-09-16 02:18:46.2445 6342/T1 age/Cor/CoreMain.cpp:1015 ]: Passenger core online, PID 6342
-[ N 2020-09-16 02:18:48.3100 6342/T5 age/Cor/SecurityUpdateChecker.h:519 ]: Security update check: no update found (next check in 24 hours)
-2020/09/16 02:19:08 [info] 6375#6375: Using 32768KiB of shared memory for nchan in /etc/nginx/nginx.conf:63
-```
-
-The strange thing is that if I use standalone passenger it seems to work correctly...
-## [10][Ok... how the F do I test model concerns in isolation (Minitest/mocha)?](https://www.reddit.com/r/rails/comments/itjoev/ok_how_the_f_do_i_test_model_concerns_in/)
-- url: https://www.reddit.com/r/rails/comments/itjoev/ok_how_the_f_do_i_test_model_concerns_in/
----
-I’m working on a feature for work that lends itself very well to a concern. It works fantastic but I can’t figure out the best way to test it in isolation. 
-
-It’s basically a locking feature for individual records based on domain logic. To make it simple for an example let’s say that we have a `lock!(locked_by:)` method which just calls `update!(locked_at: Time.zone.now, locked_by: locked_by)` and an `unlock!` method to nullifies those two columns in the database. Sorry for the formatting, I’m on my phone at the moment. 
-
-There’s more to it than this but how would I go about testing this concern in isolation?
-## [11][Using ActiveStorage with Aws in Rails Api](https://www.reddit.com/r/rails/comments/itfzhr/using_activestorage_with_aws_in_rails_api/)
-- url: https://www.reddit.com/r/rails/comments/itfzhr/using_activestorage_with_aws_in_rails_api/
----
-Hi, guys hope you are fine!
-
-I'm learning rails and I have a task to make an API in rails that can take image params from the front-end and save it to the backend in the image model with its caption.
-
-1. I have credentials from Aws secret id &amp; key as well.
-2. yes, I know how to install Active Storage , gem "aws-sdk-s3",  gem "active storage validation.
-3. I know to configure storage.yml &amp; production.rb.
-4. I'll add a line has\_one\_attached :image in my Restaurant Model.
-
-But i don't know what kind of params I'll get from the front-end developer &amp;  how can I test that params or URL in my postman from my side . &amp; how to return that image in json format to the frontend developer after saving it.
-
-i want to upload restaurant images from users. 
-## [12][Need someone to critique my Product inventory models.](https://www.reddit.com/r/rails/comments/itg4uz/need_someone_to_critique_my_product_inventory/)
-- url: https://www.reddit.com/r/rails/comments/itg4uz/need_someone_to_critique_my_product_inventory/
----
-So, basically I've been trying to finally use my newly learned Rails knowledge and actually build something useful. The basic idea is this: I want to be able to build a Product model that should have the following attributes: a name, color, sizes, quantity, and a couple of pictures attached. I'll be adding more attributes in the future but for now I just want feedback.
-
-
-An example of what I want to keep track is this:
-
-
-* I have a Product named "Jordans" that is color "Red", and I have '2 pairs' (quantity) of 'size 6; and a 4 pictures of red Jordans
-* I have a Product named "Jordans" that is color "Red", and I have '1 pairs' (quantity) of 'size 7' and THE SAME picture of the red Jordans used above.
-* I have a Product named "Jordans" that is color "Blue", and I have '1 pairs' (quantity) of 'size 9' and 4 pictures of blue Jordans.
-* I have a Product named "Nike" that is color "Yellow", and I have '4 pairs' (quantity) of 'size 10' and 4 pictures of yellow Nike.
-
-
-And so on and so fourth. Below are the Models that I came up with. This is where I need help. I'm not sure if I have the right idea or not or it can be done better.
-
-
-    #This will hold every Product based on the color and size. Ex: '2 pairs' of 'red' 'Jordans' 
-    class ColorBySize &lt; ActiveRecord::Base
-        belongs_to :product
-        
-        validates :color, presence: :true
-        validates :quantity, presence: :true
-        validates :US_size, presence: :true
-    end 
-
-
-    #will be having an association with ColorBySize
-    class Product &lt; ActiveRecord::Base
-        has_many :color_by_sizes
-
-        validates :name, presence: :true
-    end 
-
-
-At the moment, this is working well. It keeps track of the Product based on the color and size. I was wondering if there needs any refactoring done or if it can be done better? 
-
-
-Another issue that I have is attaching an image. I'm aware that I can use ActiveStorage for this, but I'm not sure if I should create an association on the Product or ColorBySize model.  As the example above:
-
-
-* I have a Product named "Jordans" that is color red, and I have 2 pairs (quantity) of size 6 and a 4 pictures of red Jordans
-* I have a Product named "Jordans" that is color red, and I have 1 pairs (quantity) of size 7 and THE SAME picture of the red Jordans used above.
-
-
-Since Red Jordan's Image already exists, I shouldn't create a new image, I just used the already existing one. The last issue that I'm facing is limiting the number of pictures I can upload. I only want 4 done. I did reaserch on this and a StackOverFlow thread mentioned that Javascript is needed to restrict the number of images that can be uploaded. Not sure if this is the only solution or if there is another? 
-
-
-Thanks.

@@ -1,5 +1,57 @@
 # Kotlin
-## [1][Using createPortal in functionalComponent of Kotlin-react](https://www.reddit.com/r/Kotlin/comments/iui3th/using_createportal_in_functionalcomponent_of/)
+## [1][Moving to kotlin for native android Java Developers](https://www.reddit.com/r/Kotlin/comments/iv159n/moving_to_kotlin_for_native_android_java/)
+- url: https://gwaza.hashnode.dev/moving-to-kotlin-for-native-android-java-developers-ckf7p3ovz00v06ds1ah8r9c7l
+---
+
+## [2][Firebase Admin Kotlin SDK](https://www.reddit.com/r/Kotlin/comments/iv58tw/firebase_admin_kotlin_sdk/)
+- url: https://www.reddit.com/r/Kotlin/comments/iv58tw/firebase_admin_kotlin_sdk/
+---
+Is there a firebase admin SDK solely developed in Kotlin for adding admin SDK to the Server?  Now since Kotlin is interoperable with Java i can also use the Firebase Admin Java SDK but then obviously it wouldn't provide me the coroutine support for asynchronous execution of my code.
+## [3][How to set up Kotlin for NodeJS with TS dependencies?](https://www.reddit.com/r/Kotlin/comments/iujq6a/how_to_set_up_kotlin_for_nodejs_with_ts/)
+- url: https://www.reddit.com/r/Kotlin/comments/iujq6a/how_to_set_up_kotlin_for_nodejs_with_ts/
+---
+Hey, I've been using Kotlin in the JVM for a few years and I decided to try it on nodejs (I'm also working with node for a few years, so I'm not newbie in the platform).
+
+&amp;#x200B;
+
+I went to IDEA &gt; New Project &gt; Gradle &gt; Kotlin (NodeJS). Added a few dependencies and enable the experimental Dukat:
+
+build.gradle.kts`dependencies {implementation(kotlin("stdlib-js"))implementation(npm("firebase", "7.20.0"))implementation(npm("left-pad", "1.3.0"))}`
+
+&amp;#x200B;
+
+gradle.properties
+
+`kotlin.code.style=officialkotlin.js.experimental.generateKotlinExternals=true`
+
+Both firebase and left-pad (obviously I'm using this for test) does have typescript mappings, so the kotlin mappings should be generated, right?
+
+I refreshed Gradle and went to the src/main trying to import the dependencies, but nothing happened and I don't know why. Looking at build/js/node\_modules the dependencies are there.
+
+&amp;#x200B;
+
+I tried to run the Dukat gradle tasks and nothing happened too.
+
+&amp;#x200B;
+
+This section about external dependencies is very bad documented, I need some help to set it up.
+
+btw I'm on Kotlin 1.4, my full build.gradle looks like this:`plugins {id("org.jetbrains.kotlin.js") version "1.4.10"}group = "dev.nathanpb"version = "1.0.0"repositories {mavenCentral()}dependencies {implementation(kotlin("stdlib-js"))implementation(npm("firebase", "7.20.0"))implementation(npm("left-pad", "1.3.0"))}kotlin {js {nodejs {}binaries.executable()}}`
+
+&amp;#x200B;
+
+Thank you all, hope I will be using this in production soon
+
+&amp;#x200B;
+
+**SOLUTION:** I'm stupid and can't read documentations: [https://kotlinlang.org/docs/reference/js-external-declarations-with-dukat.html#generating-external-declarations-at-build-time](https://kotlinlang.org/docs/reference/js-external-declarations-with-dukat.html#generating-external-declarations-at-build-time)
+## [4][Kotlin for Backend](https://www.reddit.com/r/Kotlin/comments/iuxzsa/kotlin_for_backend/)
+- url: https://www.reddit.com/r/Kotlin/comments/iuxzsa/kotlin_for_backend/
+---
+Hello everyone!
+I was thinking of using GraphQL with Kotlin for my server side of my web application. Now there are a lot of frameworks and all of them have their own features but I just wanted to know which of them will be most compatible with GraphQL. Have anyone of you worked with GraphQL and built the server side without any trouble?
+For now I'm thinking about Javalin or Micronaut. I'm considering Vert.x (but listened it's steeper to learn) and Spring (didn't find anything related to Graphql on their website) too.
+## [5][Using createPortal in functionalComponent of Kotlin-react](https://www.reddit.com/r/Kotlin/comments/iui3th/using_createportal_in_functionalcomponent_of/)
 - url: https://www.reddit.com/r/Kotlin/comments/iui3th/using_createportal_in_functionalcomponent_of/
 ---
 Does anyone have some idea how to use createPortal in kotlin-react for example to render a modal? i have tried several ways and nothing is working. I´m new at Kotlin. Here is one way i tryed:
@@ -34,15 +86,50 @@ its just how its working in good old TS and i tried to transfer it to kotlin-rea
 &amp;#x200B;
 
 It would be nice if some could give me an example of how implement this example correct in react-kotlin.
-## [2][Discover Zoe, the new Kafka CLI written in Kotlin and the story behind it : )](https://www.reddit.com/r/Kotlin/comments/itvh82/discover_zoe_the_new_kafka_cli_written_in_kotlin/)
+## [6][Thread within coroutine](https://www.reddit.com/r/Kotlin/comments/iuqh7t/thread_within_coroutine/)
+- url: https://www.reddit.com/r/Kotlin/comments/iuqh7t/thread_within_coroutine/
+---
+Is this a bad idea or is it fine?
+
+Because when I'm done writing to a file I flush it but the flush function uses synchronized block so I start a thread within a coroutine to run the flush function but this has weird side effects (very strange bugs I can't really explain right now).
+## [7][Is *variable interop with Java broken in 1.4.10?](https://www.reddit.com/r/Kotlin/comments/iuncdv/is_variable_interop_with_java_broken_in_1410/)
+- url: https://www.reddit.com/r/Kotlin/comments/iuncdv/is_variable_interop_with_java_broken_in_1410/
+---
+[Screenshot of the below code.](https://imgur.com/a/Wf7wHOg)
+
+The function was working just fine in 1.3.72, but not anymore. What can I do?
+
+&amp;#x200B;
+
+Java:
+
+    public void createBarrier(int id, int direction, int margin, int... referenced) {
+    ConstraintSet.Constraint constraint = this.get(id);
+    constraint.layout.mHelperType = 1;
+    constraint.layout.mBarrierDirection = direction;
+    constraint.layout.mBarrierMargin = margin;
+    constraint.layout.mIsGuideline = false;
+    constraint.layout.mReferenceIds = referenced; }
+
+Kotlin:
+
+    fun barrier(barrier: Barrier, orientation: Int, vararg view: View) = apply {
+    createBarrier(barrier.applyId().id, orientation, *view.map { it.id }.toIntArray()) }
+
+What I get:
+
+    Type mismatch.
+    Required: Int
+    Found: IntArray
+
+Also:
+
+    The spread operator (*foo) may only be applied in a vararg position.
+## [8][Discover Zoe, the new Kafka CLI written in Kotlin and the story behind it : )](https://www.reddit.com/r/Kotlin/comments/itvh82/discover_zoe_the_new_kafka_cli_written_in_kotlin/)
 - url: https://medium.com/@adevinta_techblog/zoe-the-kafka-cli-for-humans-3e01584d0d3f
 ---
 
-## [3][Which One Should You Prefer? For Your Next Mobile Application.](https://www.reddit.com/r/Kotlin/comments/iuim2m/which_one_should_you_prefer_for_your_next_mobile/)
-- url: https://kodytechnolab.com/flutter-vs-kotlin-comparison
----
-
-## [4][ConcurrentModificationException](https://www.reddit.com/r/Kotlin/comments/iu4odb/concurrentmodificationexception/)
+## [9][ConcurrentModificationException](https://www.reddit.com/r/Kotlin/comments/iu4odb/concurrentmodificationexception/)
 - url: https://www.reddit.com/r/Kotlin/comments/iu4odb/concurrentmodificationexception/
 ---
 Hey guys,
@@ -66,48 +153,7 @@ In particular, this example I've been trying on is not working:
 Can someone explain to me where I am wrong?
 
 Thanks a lot!
-## [5][Which one do you choose? : Flutter Vs. Kotlin](https://www.reddit.com/r/Kotlin/comments/iuftgh/which_one_do_you_choose_flutter_vs_kotlin/)
+## [10][Which one do you choose? : Flutter Vs. Kotlin](https://www.reddit.com/r/Kotlin/comments/iuftgh/which_one_do_you_choose_flutter_vs_kotlin/)
 - url: https://kodytechnolab.com/flutter-vs-kotlin-comparison
----
-
-## [6][Kotlin Quarkus OAuth2 and security with Keycloak - Piotr's TechBlog](https://www.reddit.com/r/Kotlin/comments/itr232/kotlin_quarkus_oauth2_and_security_with_keycloak/)
-- url: https://piotrminkowski.com/2020/09/16/quarkus-oauth2-and-security-with-keycloak/
----
-
-## [7][Newbie Question: IDEA not catching all compile errors](https://www.reddit.com/r/Kotlin/comments/itfydp/newbie_question_idea_not_catching_all_compile/)
-- url: https://www.reddit.com/r/Kotlin/comments/itfydp/newbie_question_idea_not_catching_all_compile/
----
-I'm new to IDEA/Kotlin but not jetbrains.  I'm curious if this is how its  supposed to work or do I need to configure something.
-
-Here's a test:
-
-```kotlin
-open class SomeSuper {
-    val someprop = ""
-}
-
-class SomeSub: SomeSuper() {
-    override val someprop = "someval"
-}
-```
-
-```shell
-$ kotlinc play.kt &amp;&amp; kotlin PlayKt
-
-play.kt:44:5: error: 'someprop' in 'SomeSuper' is final and cannot be overridden
-    override val someprop = "someval
-```
-
-Shouldn't the IDE catch this as I'm typing it?  I'm sure I'm overlooking something. Nothing is shown in "problems window".
-## [8][Simple Kotlin Null Check for Multiple Mutable Variables](https://www.reddit.com/r/Kotlin/comments/it6ghq/simple_kotlin_null_check_for_multiple_mutable/)
-- url: https://medium.com/mobile-app-development-publication/simple-kotlin-null-check-for-multiple-mutable-variables-b095f7ac9bf1?source=friends_link&amp;sk=c182bb5d89f7d10985392d8e36f4c228
----
-
-## [9][Should I learn Dart/Flutter or Kotlin?](https://www.reddit.com/r/Kotlin/comments/it4lpf/should_i_learn_dartflutter_or_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/it4lpf/should_i_learn_dartflutter_or_kotlin/
----
-
-## [10][shellin- a Kotlin library for launching processes](https://www.reddit.com/r/Kotlin/comments/isul3h/shellin_a_kotlin_library_for_launching_processes/)
-- url: https://github.com/ScottPeterJohnson/shellin
 ---
 

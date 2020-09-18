@@ -1,5 +1,83 @@
 # golang
-## [1][Datatable : opensource go in-memory table](https://www.reddit.com/r/golang/comments/iufaui/datatable_opensource_go_inmemory_table/)
+## [1][golang-dev : Implementing Generics](https://www.reddit.com/r/golang/comments/iv4idd/golangdev_implementing_generics/)
+- url: https://groups.google.com/forum/#!topic/golang-dev/OcW0ATRS4oM
+---
+
+## [2][Decoding JSON, the... a way](https://www.reddit.com/r/golang/comments/iv2zpd/decoding_json_the_a_way/)
+- url: https://www.reddit.com/r/golang/comments/iv2zpd/decoding_json_the_a_way/
+---
+ [https://twitter.com/caarlos0/status/1306447785831673867?s=19](https://twitter.com/caarlos0/status/1306447785831673867?s=19)
+## [3][What is the most efficient algorithm for an HTTP router?](https://www.reddit.com/r/golang/comments/iuvhxd/what_is_the_most_efficient_algorithm_for_an_http/)
+- url: https://www.reddit.com/r/golang/comments/iuvhxd/what_is_the_most_efficient_algorithm_for_an_http/
+---
+Yes I know, there are TONS os really good HTTP routers for Go. But this is for a custom project and I would like to implement the router as an exercise.
+
+Isn't really an HTTP framework or something like that. It's a sort of hooks to be executed on given URLs and that's why a need a router to do that.
+
+Memory usage is not a problem because the number of endpoints is limited, usually less than 100. I would like to have the most performance possible at the router.
+## [4][Opting for a distributed Pub/Sub system VS in-process comm. Pub/Sub VS neither](https://www.reddit.com/r/golang/comments/iv2zgc/opting_for_a_distributed_pubsub_system_vs/)
+- url: https://www.reddit.com/r/golang/comments/iv2zgc/opting_for_a_distributed_pubsub_system_vs/
+---
+Hello,I am working on bringing up a server from scratch, for a tiny startup that will have a decent, yet not a crazy-massive scale in the beginning. I have doubts about a certain part of the architecture, and would VERY much appreciate some helpful insights and pieces of advice.
+
+I have two services : one for mobile Pushes (FCM), and the other for Emails (SendGrid at the moment).
+
+When I got to implementing it and using the services (for example upon user registration sending a welcome email), it seemed to me that the wisest thing in terms of best practices, fault-tolerance, scalability and performance would be to have a Pub/Sub system, like RabbitMQ.
+
+So instead of :
+
+    // registration endpoint's controller : 
+     user := service.SignUp(...)  
+     email_service.SendEmail(user.id)  
+
+push\_service.SendPush(user.id) ...
+
+I would have something like this I guess :
+
+    // registration endpoint's controller : 
+     user := service.SignUp(...) 
+     publisher.Publish(Type.EMAIL, user.id) 
+     publisher.Publish(Type.PUSH, user.id) ... 
+
+Then I stumbled upon some technical dilemmas, that first started from things like "are Email and Push different exchanges? or simply two different Queues with different Topics, to one Exchange ?",and then proceeded some other complexities, like how to manage the different errors and reconnections that can (and probably will) happen unexpectedly sometime.
+
+Which led me to the following question - why not simply leverage Go's capabilities and implement an in-process solution as depicted here : [https://eli.thegreenplace.net/2020/pubsub-using-channels-in-go/](https://eli.thegreenplace.net/2020/pubsub-using-channels-in-go/)  using Goroutines &amp; Channels.
+
+Drawbacks :
+
+I lose the fault-tolerance, and the second one is perhaps the problematic scalability if we have to add more instances in the future as scale grows bigger (but I'm not sure about that?)
+
+Advantages :
+
+Much simpler to maintain and less error-prone (because it doesn't have all the edge cases that a real pub/sub system like rabbit can have, like unexpected different errors, etc.)
+
+**However** :
+
+1. Since at the moment we will have one server, is there really a point for a pub/sub system like rabbit? or is it better to prepare for large scale from the start ?
+2. Since the tasks are not really time consuming (the Consumers/Subscribers would only need to query the DB to get some users' details (e.g - user's fcm token)), is there really a point in having a pub/sub AT ALL?
+
+**Ultimately**, my main goal here is to learn and understand - what are the questions that have to be answered when making a choice between those 3 options :
+
+1. distributed pub/sub system (be it RabbitMQ, Google Pub/Sub, Kafka, etc.)
+2. in-process pub/sub system - like here: [https://eli.thegreenplace.net/2020/pubsub-using-channels-in-go/](https://eli.thegreenplace.net/2020/pubsub-using-channels-in-go/)
+3. simply running the code in the endpoint's controller, be it in a blocking way, or simply spawning a goroutine for it "on-the-fly"
+## [5][Awesome Go Repos](https://www.reddit.com/r/golang/comments/iv5mbd/awesome_go_repos/)
+- url: https://aggregatedawesome.com/go
+---
+
+## [6][What is The Best GraphQL Library for Go?](https://www.reddit.com/r/golang/comments/iv1xx1/what_is_the_best_graphql_library_for_go/)
+- url: https://www.reddit.com/r/golang/comments/iv1xx1/what_is_the_best_graphql_library_for_go/
+---
+What i want:
+
+* Type safe
+* Simple API
+* Easy to convert endpoint to serve NonHTTP/WebSocket request eg: AMQP, Kafka etc
+## [7][Experimental tool for major version updates](https://www.reddit.com/r/golang/comments/iuovci/experimental_tool_for_major_version_updates/)
+- url: https://github.com/icholy/gomajor
+---
+
+## [8][Datatable : opensource go in-memory table](https://www.reddit.com/r/golang/comments/iufaui/datatable_opensource_go_inmemory_table/)
 - url: https://www.reddit.com/r/golang/comments/iufaui/datatable_opensource_go_inmemory_table/
 ---
 Hi all,
@@ -11,149 +89,13 @@ Select, sort, join, agregate, import from csv...See features and howto on github
 [https://github.com/datasweet/datatable](https://github.com/datasweet/datatable)
 
 Please Try it and give us feedback.
-## [2][Live debug go in prod using eBPF](https://www.reddit.com/r/golang/comments/itzsrc/live_debug_go_in_prod_using_ebpf/)
-- url: https://www.reddit.com/r/golang/comments/itzsrc/live_debug_go_in_prod_using_ebpf/
----
-Link: [https://blog.pixielabs.ai/blog/ebpf-function-tracing/post/](https://blog.pixielabs.ai/blog/ebpf-function-tracing/post/)
-
-https://i.redd.it/l0rwtzsvkjn51.gif
-## [3][Good restful api tutorial](https://www.reddit.com/r/golang/comments/iuib51/good_restful_api_tutorial/)
-- url: https://www.reddit.com/r/golang/comments/iuib51/good_restful_api_tutorial/
----
-Hi I am learning Go and love it.
-
-I have worked through the Alex Edwards book, Lets Go and also the tour. I have done other dev, JS (inc node) and PHP as the primary over the recent years. 
-
-I am now wanting to create a restful api for a server so it can be hooked up for front end service. (React not that it matters i guess). 
-
-Just wondering if there is any good resources that show a best practice for it? I know there are plenty of results that come up on google but want to learn the correct way. PHP gave me a bad experience of going with tutorials as not all are great.
-
-Would love to hear your thoughts!
-
-Matthew
-## [4][Missing Padding](https://www.reddit.com/r/golang/comments/iuf962/missing_padding/)
-- url: https://www.reddit.com/r/golang/comments/iuf962/missing_padding/
----
-I ran into and issue that gave me sleepless night, 
-
-```
-sign_test.go:31: got a29kkB5HdwZj+IQgtzIIuMh1Pl+8KooSIrrEC7WcrNwA5+8tufTHGNkzjwmocKfV5pl+BBpdqJnTG0w66ymIB2hlbGxv, want a29kkB5HdwZj+IQgtzIIuMh1Pl+8KooSIrrEC7WcrNwA5+8tufTHGNkzjwmocKfV5pl+BBpdqJnTG0w66ymIBw==
-```
-
-After hours wasted, i realized the problem may be from the `base64`
-
-
-```go
-const data = "AdRNDeBxM96UcaTQ+FijHLMCkm6pnkVUJPWkAOkTh3p106HzVCgeFkWfLCw1+KRzzQJTd39ZfoFkkSmuefPXAg=="
-
-func main() {
-
-	b, err := base64.StdEncoding.DecodeString(data)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	out := base64.RawStdEncoding.EncodeToString(b)
-
-	fmt.Println("expected: ", data)
-	fmt.Println("output  : ", out)
-
-	if out != data {
-		log.Fatal("somthing went wrong")
-	}
-}
-```
-
-#### Output
-```
-expected:  AdRNDeBxM96UcaTQ+FijHLMCkm6pnkVUJPWkAOkTh3p106HzVCgeFkWfLCw1+KRzzQJTd39ZfoFkkSmuefPXAg==
-output  :  AdRNDeBxM96UcaTQ+FijHLMCkm6pnkVUJPWkAOkTh3p106HzVCgeFkWfLCw1+KRzzQJTd39ZfoFkkSmuefPXAg
-2009/11/10 23:00:00 somthing went wrong
-```
-
-test: https://play.golang.org/p/BLzzAje2Q_c
-
-
-Can anyone please clarify why the padding `==` is missing ?
-## [5][gopls v0.5.0](https://www.reddit.com/r/golang/comments/itq7ih/gopls_v050/)
-- url: https://github.com/golang/tools/releases/tag/gopls%2Fv0.5.0
+## [9][How we built a Lucene-inspired parser in Go](https://www.reddit.com/r/golang/comments/iv1q42/how_we_built_a_luceneinspired_parser_in_go/)
+- url: https://www.mailgun.com/blog/how-we-built-a-lucene-inspired-parser-in-go
 ---
 
-## [6][Github action golang test annotator](https://www.reddit.com/r/golang/comments/iuevjd/github_action_golang_test_annotator/)
-- url: https://www.reddit.com/r/golang/comments/iuevjd/github_action_golang_test_annotator/
+## [10][Is there a frontend you recommend for using with Go?](https://www.reddit.com/r/golang/comments/iuygz1/is_there_a_frontend_you_recommend_for_using_with/)
+- url: https://www.reddit.com/r/golang/comments/iuygz1/is_there_a_frontend_you_recommend_for_using_with/
 ---
-Hey,
+Wondering if anything in particular sticks out for being efficient or very friendly with Go?
 
-I didn't find any GitHub action which annotates about failed tests, so I've implemented one. Available in the marketplace [https://github.com/marketplace/actions/golang-test-annotations](https://github.com/marketplace/actions/golang-test-annotations).
-## [7][hasql: Library for accessing multi-host SQL databases from Go](https://www.reddit.com/r/golang/comments/itzdm7/hasql_library_for_accessing_multihost_sql/)
-- url: https://github.com/yandex/go-hasql
----
-
-## [8][docx: Simple pure Go (golang) library for creating DOCX file](https://www.reddit.com/r/golang/comments/itv2qw/docx_simple_pure_go_golang_library_for_creating/)
-- url: https://github.com/gingfrederik/docx
----
-
-## [9][Sending form data to a different request URL](https://www.reddit.com/r/golang/comments/iucg51/sending_form_data_to_a_different_request_url/)
-- url: https://www.reddit.com/r/golang/comments/iucg51/sending_form_data_to_a_different_request_url/
----
-Hello, I am trying to take form data submitted to a route on my website and forward it to another route.
-
-So from my understanding there are two ways to submit form data of r.Values
-
-http.PostForm()
-
-but I cannot set the headers so I am not using this, and
-
-[http.Post](https://http.Post)()
-
-My question is, do I have to consider anything when sending r.Form (r.Values) from one route to another?
-
-I tried:
-
-resp, err := http.PostForm("[http://localhost:3000/](http://localhost:3000/sci/outbox)post", r.Form)
-
-and
-
-req, err := http.NewRequest("POST", "[http://localhost:3000/](http://localhost:3000/sci/outbox)post", strings.NewReader(r.Form.Encode))
-
-and
-
-req, err := http.NewRequest("POST", "[http://localhost:3000/](http://localhost:3000/sci/outbox)post", r.Body)
-
-also
-
-req, err := http.Post("[http://localhost:3000/](http://localhost:3000/sci/outbox)post", "multipart/form-data", r.Body)
-
-non of these once it gets the [http://localhost:3000/](http://localhost:3000/sci/outbox)post retains any of the form or body data
-
-Would anyone know how to correctly send formdata/values from one route to a next?
-
-Any help would be appreciated.
-
-&amp;#x200B;
-
-Here is the client routing 
-
-[https://paste.debian.net/1164143/](https://paste.debian.net/1164143/)
-
-here is the server routing
-
-[https://paste.debian.net/1164145/](https://paste.debian.net/1164145/)
-
-Nothing is accessible on server side
-
-&amp;#x200B;
-
-I have tried to reference this [https://stackoverflow.com/questions/20205796/post-data-using-the-content-type-multipart-form-data](https://stackoverflow.com/questions/20205796/post-data-using-the-content-type-multipart-form-data) but for my use cases I am wondering how to send form data from one location to the next I am currently submiting a form to localhost:2000 and I want to send the same form data to localhost:3000
-## [10][Why is golang extensively used in Network Security?](https://www.reddit.com/r/golang/comments/ityww8/why_is_golang_extensively_used_in_network_security/)
-- url: https://www.reddit.com/r/golang/comments/ityww8/why_is_golang_extensively_used_in_network_security/
----
-Hello! First post in this sub. Just a disclaimer, I am not here to ignite a war between programming languages, I am genuinely curious and unknowledgeable. 
-
-I am an avid Rust user and played with the pros and cons Go vs Rust for quite a while before settling on Rust. This year has been crazy and I’ve changed industries and landed a role going into Penetration testing and network security. I’ve participated in loads of CTF events and all majority of pre-baked tools I have come across are either written in Golang or Python. Python I can understand why, but I don’t get the favoritism of Golang. Is this just coincidence of netsec over the years or does Golang provide tools that Rust doesn’t in terms of exploitation and netsec programs?
-
-Thanks for the help.
-
-Edit:
-
-The purpose of my question is to see if I should allocate some of my time to learn Golang, but in my opinion programming languages are all just abstract and you could do mostly the same thing in any language. But I want to see if there is enough value for me to add golang to my “bucket”
+I have experience with React, and Django. Was wondering if I should learn something else for the frontend or if I can use React or Django and there's not a performance problem?

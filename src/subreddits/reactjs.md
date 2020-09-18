@@ -111,71 +111,192 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/iaggwf/whos_available_august_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/ikn3vo/whos_hiring_september_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Create-React-App v4 coming soon with TypeScript 4 support, Fast Refresh and ESLint upgrades and experimental support for React 17's new JSX transform.](https://www.reddit.com/r/reactjs/comments/iu7lnx/createreactapp_v4_coming_soon_with_typescript_4/)
-- url: https://twitter.com/iansu/status/1306375307553693697?s=20
+## [3][I made a Full Stack App with React and Django](https://www.reddit.com/r/reactjs/comments/iuz8pk/i_made_a_full_stack_app_with_react_and_django/)
+- url: https://v.redd.it/a95vvjls0un51
 ---
 
-## [4][Building a Netflix Clone - Styled Components - Compound Components - Firebase (Firestore &amp; Authentication)](https://www.reddit.com/r/reactjs/comments/itrvon/building_a_netflix_clone_styled_components/)
-- url: https://www.youtube.com/watch?v=x_EEwGe-a9o
+## [4][Building complex animations with React and Framer Motion](https://www.reddit.com/r/reactjs/comments/iukir6/building_complex_animations_with_react_and_framer/)
+- url: https://able.bio/drenther/building-complex-animations-with-react-and-framer-motion--2d5cbc0e
 ---
 
-## [5][I'm new to reactjs, this is my first project. Any feedback would be appreciated!](https://www.reddit.com/r/reactjs/comments/iuevq6/im_new_to_reactjs_this_is_my_first_project_any/)
-- url: https://youtu.be/ziHDnFvDW4U
+## [5][Is there a good app that shows how to properly setup and do unit and integration testing using Jest?](https://www.reddit.com/r/reactjs/comments/iuuk80/is_there_a_good_app_that_shows_how_to_properly/)
+- url: https://www.reddit.com/r/reactjs/comments/iuuk80/is_there_a_good_app_that_shows_how_to_properly/
+---
+Just trying to learn by looking at the best examples available online. Is there any project on GitHub you would recommend?
+## [6][Google calendar api problem with dates](https://www.reddit.com/r/reactjs/comments/iv4q2l/google_calendar_api_problem_with_dates/)
+- url: https://www.reddit.com/r/reactjs/comments/iv4q2l/google_calendar_api_problem_with_dates/
+---
+Hello everyone. So i am trying to import events from my google calendar and everything seems to be okay except for the events that are one day only for example independence day. It's 4th of july and it shows like: 4th of july-5th of july. So the question is how can I check if the event is one day only or is there any other way to fix this issue? thanks a lot!
+## [7][What is a better resumé project: Facebook Clone, Youtube Clone, Amazon Clone, Pinterest Clone?](https://www.reddit.com/r/reactjs/comments/iv4nzy/what_is_a_better_resumé_project_facebook_clone/)
+- url: https://www.reddit.com/r/reactjs/comments/iv4nzy/what_is_a_better_resumé_project_facebook_clone/
+---
+I know there are thousands of personal projects that don't involve cloning an existent website. However from the feedback I have been receiving from recruiters, making a clone is very helpful as they immediately understand what the project is when they read the title.
+## [8][Mutation works fine at graphql playground but at the front end i am seeing this error and not working](https://www.reddit.com/r/reactjs/comments/iv3s81/mutation_works_fine_at_graphql_playground_but_at/)
+- url: /r/reactnative/comments/iv3me1/mutation_works_fine_at_graphql_playground_but_at/
 ---
 
-## [6][Got promoted as a tech lead for react project/team. How do you guys keep up with tech ? Any advice or reddit to follow?](https://www.reddit.com/r/reactjs/comments/iuaqwc/got_promoted_as_a_tech_lead_for_react_projectteam/)
-- url: https://www.reddit.com/r/reactjs/comments/iuaqwc/got_promoted_as_a_tech_lead_for_react_projectteam/
+## [9][Any caveats to using Next.js?](https://www.reddit.com/r/reactjs/comments/iuswby/any_caveats_to_using_nextjs/)
+- url: https://www.reddit.com/r/reactjs/comments/iuswby/any_caveats_to_using_nextjs/
 ---
-I was a developer for my entire career and my new position will barely allow me to code on the project anymore (words from the previous teammate in this position). This is my first time as a lead and I'm scared of not keeping up with the good stuff.
-## [7][Meet react-colorful v4. The modern color picker for React apps. 20+ times lighter than react-color, modular, customizable, fast, well-tested, supports alpha channel, and a variety of color formats.](https://www.reddit.com/r/reactjs/comments/iujckn/meet_reactcolorful_v4_the_modern_color_picker_for/)
-- url: https://omgovich.github.io/react-colorful/
+Hi,
+
+I've heard a lot of good things about Next.js, tried it for a pet project, and liked the overall developer experience. I haven't used it for anything big though; and now, when considering migration of a fairly large and growing project from vanilla React over to Next, I would love to hear about your experience with it and whether there are any caveats that you've discovered and would like to share. Like, isn't the file-based routing giving you troubles? Do you use Next's `/api` routes, are you upset that they can only exist under the `/api` namespace, and have you been bitten by the fact that Next automatically parses request body (as discussed [here](https://github.com/vercel/next.js/discussions/11036))? Are you happy with your choice or would you have chosen different tools/frameworks/tech stack if given another chance?
+## [10][Items are not displayed after being pushed to an array](https://www.reddit.com/r/reactjs/comments/iv3gd9/items_are_not_displayed_after_being_pushed_to_an/)
+- url: https://www.reddit.com/r/reactjs/comments/iv3gd9/items_are_not_displayed_after_being_pushed_to_an/
 ---
+Hi,
 
-## [8][CRA, Next.js or Gatsby for an app that is hosted on same backend server?](https://www.reddit.com/r/reactjs/comments/iufxlc/cra_nextjs_or_gatsby_for_an_app_that_is_hosted_on/)
-- url: https://www.reddit.com/r/reactjs/comments/iufxlc/cra_nextjs_or_gatsby_for_an_app_that_is_hosted_on/
+I am doing a project with pure Javascript I stuck at the moment when pushed items are not shown on the page.
+
+&amp;#x200B;
+
+[See the pic here](https://drive.google.com/file/d/1HAiVxqFlVKnf66swaAthHgy06fRe7PT1/view?usp=sharing)
+
+&amp;#x200B;
+
+As you can see from the picture, items should be shown above after being clicked (pushed to `answer` array), with react it is simple vy using setState, how can I achieve the same with javascript.
+
+Please pay attention to these ones.
+
+`const answer = [];`
+
+`&lt;div class="answer-field"&gt;${answer.map((ans) =&gt; (\&lt;button value=${ans} class="word"&gt;${ans}&lt;/button&gt;\`    )).join(' ')}  &lt;/div&gt;\``
+
+`word.forEach(item =&gt; item.addEventListener('click', (e) =&gt; {answerFunc(e.target.value);console.log(e.target.value);}))`
+
+&amp;#x200B;
+
+//Entire code
+
+ 
+
+`const board = document.querySelector('.board');`  
+`const tts = window.speechSynthesis;`  
+`let incr = 0;`  
+`const randomWordsArr = [];`  
+`const answer = [];`  
+
+
+`data.map((obj) =&gt; {`  
+ `splittedStr = obj.engPhrase.split(" ");`  
+ `return randomWordsArr.push(...splittedStr);`  
+`});`  
+`//console.log('line 11', randomWordsArr);`  
+`function shuffle(array) {`  
+ `var currentIndex = array.length, temporaryValue, randomIndex;`  
+ `// While there remain elements to shuffle...`  
+ `while (0 !== currentIndex) {`  
+ `// Pick a remaining element...`  
+ `randomIndex = Math.floor(Math.random() * currentIndex);`  
+ `currentIndex -= 1;`  
+ `// And swap it with the current element.`  
+ `temporaryValue = array[currentIndex];`  
+ `array[currentIndex] = array[randomIndex];`  
+ `array[randomIndex] = temporaryValue;`  
+  `}`  
+ `return array;`  
+`}`  
+
+
+`board.innerHTML =`  
+ `\``  
+  `&lt;div class="target-lang-container"&gt;`  
+`&lt;img src=${data[incr].pic} /&gt;`  
+`&lt;div class="speech-bubble"&gt;`  
+`&lt;div class="sent-container"&gt;`  
+`&lt;img id="speaker" src="/assets/speaker.svg" /&gt;`  
+ `${data[incr].phraseByWord.map((word) =&gt; {`  
+ `return \`&lt;button value=${word.word} class="word-item ${word.highlighted &amp;&amp; 'highlighted'}"&gt;${word.word}&lt;/button&gt;\`;`  
+  `}).join(' ')}`  
+`&lt;/div&gt;`  
+`&lt;/div&gt;`  
+  `&lt;/div&gt;`  
+  `&lt;div class="answer-field"&gt;`  
+ `${answer.map((ans) =&gt; (`  
+ `\`&lt;button value=${ans} class="word"&gt;${ans}&lt;/button&gt;\``  
+`)).join(' ')}`  
+  `&lt;/div&gt;`  
+  `&lt;div class="random-words-field"&gt;`  
+ `${shuffle(randomWordsArr).map((item) =&gt; (`  
+ `\`&lt;button value=${item} class="word"&gt;${item}&lt;/button&gt;\``  
+  `)).join(' ')`  
+ `}`  
+  `&lt;/div&gt;`  
+  `\`;`  
+
+
+`const speaker = document.getElementById('speaker');`  
+`const speak = (phrase, lang) =&gt; {`  
+ `let toSpeak = new SpeechSynthesisUtterance(phrase);`  
+ `toSpeak.lang = lang;`  
+ `tts.speak(toSpeak);`  
+`};`  
+`speaker.addEventListener('click', () =&gt; {`  
+ `speak(data[incr].frPhrase, 'fr-FR');`  
+`});`  
+`const wordItems = document.querySelectorAll('.word-item');`  
+`const word = document.querySelectorAll('.word');`  
+`//console.log(wordItems)`  
+`wordItems.forEach(wordItem =&gt; wordItem.addEventListener('mouseover', (e) =&gt; {`  
+ `//console.log(e.target.value);`  
+ `speak(e.target.value, 'fr-FR');`  
+`}));`  
+`function answerFunc(val) {`  
+ `return answer.push(val)`  
+`}`  
+`word.forEach(item =&gt; item.addEventListener('click', (e) =&gt; {`  
+ `answerFunc(e.target.value);`  
+ `console.log(e.target.value);`  
+`}))`  
+
+## [11][I've created this online tool http://appiconhero.co/](https://www.reddit.com/r/reactjs/comments/iv34im/ive_created_this_online_tool_httpappiconheroco/)
+- url: https://www.reddit.com/r/reactjs/comments/iv34im/ive_created_this_online_tool_httpappiconheroco/
 ---
-Hello everyone! I am a Junior React dev and recently I got placed in a team as a solo front end developer.
-
-I made in the past a couple of other projects made in CRA but they were hosted on a different FTP server.
-
-Now I need to create the front end that is in the same back end project structure (spring application) and the output .war will be just 1. Should I still use the CRA or maybe I should dive into other libraries (gatsby or next) as I have like 1 week of studying before getting hand on the code.
-
-Thanks in advance!
-## [9][Browser notification in react](https://www.reddit.com/r/reactjs/comments/iufqim/browser_notification_in_react/)
-- url: https://www.reddit.com/r/reactjs/comments/iufqim/browser_notification_in_react/
+At first, I use Reactjs to build app, but soon I recognize that CSR is not good for SEO, so I convert them to Nextjs, just a few adjustments, the SEO increase significantly. With this tool, you can easily generate your app icons in just 1 or 2 seconds.
+## [12][Web-worker issue: Uncaught DOMException: Failed to execute 'postMessage' on 'Worker](https://www.reddit.com/r/reactjs/comments/iv2uzu/webworker_issue_uncaught_domexception_failed_to/)
+- url: https://www.reddit.com/r/reactjs/comments/iv2uzu/webworker_issue_uncaught_domexception_failed_to/
 ---
-I am trying to implement notification in react + type script
-## [10][What is Virtual DOM and what problem does it solve?](https://www.reddit.com/r/reactjs/comments/iuii5m/what_is_virtual_dom_and_what_problem_does_it_solve/)
-- url: https://www.reddit.com/r/reactjs/comments/iuii5m/what_is_virtual_dom_and_what_problem_does_it_solve/
----
-This post attempts to offer a jargon-free answer to the following questions:
+Hi,
 
-* Why do frameworks like React &amp; Vue use Virtual DOM?
-* What is Virtual DOM?
-* What problem does it solve?
-* Does it make rendering to the UI faster or slower?
+I have a barchart made with chartjs in a React app. It works well, but the data parsing could be handled by a web worker so as to speed up the page loading.
 
-Link : [https://www.tezify.com/post/what-is-virtual-dom-and-what-problem-does-it-solve/](https://www.tezify.com/post/what-is-virtual-dom-and-what-problem-does-it-solve/)
+I have declared my web worker in a useEffect function:
 
-====================================
+      let data = React.useRef([]);
+    
+      useEffect(() =&gt; {
+        const dataWorker: Worker = new Worker("./worker.ts");
+        dataWorker.postMessage({
+          msg: "formatData",
+          data: { series, theme, range },
+        });
+        dataWorker.onmessage = (e: MessageEvent) =&gt; {
+          if (e &amp;&amp; e.data) {
+            data.current = e.data;
+          }
+        };
+      }, [range, series, theme]);
 
-Note - I'm trying to improve my tech writing (make it jargon free to explain fundamentals). So, if you have feedback about the post from that perspective - kindly share.
-## [11][Self doubting myself](https://www.reddit.com/r/reactjs/comments/iuici2/self_doubting_myself/)
-- url: https://www.reddit.com/r/reactjs/comments/iuici2/self_doubting_myself/
----
-Hi, can you suggest me what should i do. I was getting so much confused and get into tutorial hell. I start learning react js in march and for first 2 month i just directly go into building project with react and firebase but not able to as i was thinking it easy to build a project then i also learn mern stack and firebase by seing tutorial and courses on udemy. But i am self doubting myself as you dont know anything look what other are building. I can build i know more then basics and able to understand other codes but still thinking how can i build like them. I learn react 3 time from scratch as i am missing something but i know all the stuff that i am learning.
-Can you please suggest what should i do. Now its been so frustrating. 
-This monday i deside to build a money tracker with some graph to show monthly usage. I build ui and then do authentication with firebase its working but once again i was thing that something was missing you are not doing it write
-## [12][Can you suggest a tutorial on using React Hooks?](https://www.reddit.com/r/reactjs/comments/iui709/can_you_suggest_a_tutorial_on_using_react_hooks/)
-- url: https://www.reddit.com/r/reactjs/comments/iui709/can_you_suggest_a_tutorial_on_using_react_hooks/
----
-Hello redditers!
+And the webworker is defined in a separate file worker.ts:
 
-I'm new to reactjs, but can do alot of things in HTML, CSS and Javascript. React is very interesting IMO, but there are some things I can't seem to get. 
+    self.onmessage = async (e) =&gt; {
+      if (e &amp;&amp; e.data &amp;&amp; e.data.msg === "formatData") {
+        const { sortedSeries, theme, range } = e.data;
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        const data = useFormatData(sortedSeries, theme, range);
+        self.postMessage(data);
+      }
+    };
+    
+    function useFormatData(series, theme, range) {
+      return useMemo(() =&gt; {
+       // do stuff
+        };
+      }, [range, sortedSeries, theme]);
+    }
 
-I'm trying to add animations to my components (scroll reveal, appear on click, etc.) and I found some tutorials on useState, useRef and useEffect, but i don't seem to fully understand how they work.
+The worker makes the page crash with the following error:
 
-So I'm looking for some tutorials that will describe them, or someone that can mentor me a little bit.
+&gt;Uncaught DOMException: Failed to execute 'postMessage' on 'Worker: function (number) { var b = number % 10, output = toInt((number...... } could not be cloned.
 
-Any help is much appriciated!
-Thank you, wonderful people of reddit
+How to fix this? Thanks!

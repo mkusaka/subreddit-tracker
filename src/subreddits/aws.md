@@ -1,123 +1,79 @@
 # aws
-## [1][Another outage?](https://www.reddit.com/r/aws/comments/iu686c/another_outage/)
-- url: https://www.reddit.com/r/aws/comments/iu686c/another_outage/
+## [1][Congrats to r/aws on 140k subscribers!](https://www.reddit.com/r/aws/comments/iv4gen/congrats_to_raws_on_140k_subscribers/)
+- url: https://www.reddit.com/r/aws/comments/iv4gen/congrats_to_raws_on_140k_subscribers/
 ---
-Looks like this one might be IAM related.
-
-&gt;\[03:17 PM PDT\] We are investigating increased authentication error rates and latencies affecting IAM. IAM related requests to other AWS services may also be impacted. 
-
-My eb and aws cli are both affected, can't push anything.
-## [2][New AWS Console with favorites menu inside the services button](https://www.reddit.com/r/aws/comments/iufnk5/new_aws_console_with_favorites_menu_inside_the/)
-- url: https://www.reddit.com/r/aws/comments/iufnk5/new_aws_console_with_favorites_menu_inside_the/
+Great to see a growing and vibrant community
+## [2][Api Gateway now supports mTLS](https://www.reddit.com/r/aws/comments/iv4ex9/api_gateway_now_supports_mtls/)
+- url: https://aws.amazon.com/blogs/compute/introducing-mutual-tls-authentication-for-amazon-api-gateway/
 ---
-Now i need two clicks to visit a service instead of right clicking my favorite small icon service and opening in a new tab.
 
-I know this console is not at all used if you do IaC but sometimes this needs to be shown to others in a graphical way
-## [3][Τ-family instances](https://www.reddit.com/r/aws/comments/iug6j1/τfamily_instances/)
-- url: https://www.reddit.com/r/aws/comments/iug6j1/τfamily_instances/
+## [3][Yikes: AWS Aurora PostgreSQL versions vanish from the mega-cloud for days, leaving customers in the dark](https://www.reddit.com/r/aws/comments/iuojz9/yikes_aws_aurora_postgresql_versions_vanish_from/)
+- url: https://www.reddit.com/r/aws/comments/iuojz9/yikes_aws_aurora_postgresql_versions_vanish_from/
 ---
-After the announcement of the new T4g we are checking the wider T-family. Unpredictable pricing is a little awkward. On the other hand, the bursting concept seems convenient.
+Surprisingly, I saw this via /u/quinnypig's Twitter account. Has anybody here been affected by this? 
 
-Interestingly enough their base price is lower than respective Ms. For example, in Ohio:
-
-T3.xlarge (4 vCPUs, 16GB RAM) is at $0.1664/hr
-M5.xlarge (4 vCPUs, 16GB RAM) is at $0.192/hr 
-
-Have you used T-family instances? What do you think about them?
-## [4][S3 Replication RTC with CloudFormation?](https://www.reddit.com/r/aws/comments/iuj0ww/s3_replication_rtc_with_cloudformation/)
-- url: https://www.reddit.com/r/aws/comments/iuj0ww/s3_replication_rtc_with_cloudformation/
+[AWS Aurora PostgreSQL versions vanish from the mega-cloud for days, leaving customers in the dark](https://www.theregister.com/2020/09/16/aws_aurora_postgresql_versions_disappeared/)
+## [4][Features of a proper pipeline service - my improvement roadmap for AWS CodePipeline](https://www.reddit.com/r/aws/comments/iv5k1q/features_of_a_proper_pipeline_service_my/)
+- url: https://www.sentiatechblog.com/features-of-a-proper-pipeline-service?utm_source=reddit&amp;utm_medium=social&amp;utm_campaign=proper_pipeline
 ---
-Hey Guys!
 
-I've been writing a CF template that will create two S3 buckets and setup SRR (Same Region Replication) between them. Got everything working fine and the buckets replicate no bother. But when i try to add RTC (and get the 15 minutes replication time) to the template it all fails and i can't even deploy it.
-
-I've followed along with the S3 CloudFormation docs and did exactly as it said. The problem seems to be from this document and the one it links to. I've found no examples online or anything and im beginning to think this feature barely exists lol.
-
-Error im getting inside CloudFormation is :
-
-*Encountered unsupported property ReplicationConfiguration*
-
-My code is below that im using for the bucket creation that im adding RTC to (with the bucket names changed), any help would be so appreciated!
-
-      OriginalBucket:
-        Type: AWS::S3::Bucket
-        Properties:
-          BucketName: original-bucket
-          VersioningConfiguration:
-            Status: Enabled
-            ReplicationConfiguration:
-              Role: !GetAtt ReplicationRole.Arn
-              Rules:
-              - Destination:
-                  Bucket: !GetAtt DestinationBucket.Arn
-                  ReplicationTime:
-                    Status: Enabled
-                    Time: 
-                      Minutes: 15
-                  Metrics:
-                    Status: Enabled
-                    EventThreshold:
-                      Minutes: 15
-                Prefix: ""
-                Status: Enabled
-## [5][docker container - simplest way to host?](https://www.reddit.com/r/aws/comments/iuiuza/docker_container_simplest_way_to_host/)
-- url: https://www.reddit.com/r/aws/comments/iuiuza/docker_container_simplest_way_to_host/
+## [5][Curated AWS SSM Scripts](https://www.reddit.com/r/aws/comments/iv5h7p/curated_aws_ssm_scripts/)
+- url: https://rewind.io/blog/curated-aws-ssm-scripts
 ---
-Hi,
 
-All my experience uptil now is on kubernetes.
+## [6][AmazonLinux2 package repos | S3 VPC endpoint sufficient or Internet access required? seems needed](https://www.reddit.com/r/aws/comments/iv2a12/amazonlinux2_package_repos_s3_vpc_endpoint/)
+- url: https://www.reddit.com/r/aws/comments/iv2a12/amazonlinux2_package_repos_s3_vpc_endpoint/
+---
+Hi all,
 
-I am prototyping an idea and need a cheap and simple way to deploy it on aws. 
+I was under the impression that the Amazon Linux package repo's were hosted in Amazons [own s3 buckets](https://aws.amazon.com/amazon-linux-ami/faqs/) ...but that article is old and referencing the Amazon Linux 1 AMI, not 2. Im not sure why AWS wouldn't host a mirror in their own S3 buckets, that would seem to 'finish off' Systems Manager capabilities in not requiring instances to leave private link, but allowing package updates via repos in S3 via S3 endpoint. Seems like this would be a easy win for them to satisfy customers egress concerns.
 
-Requirements:
+[Amazon Linux AMI basics](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/amazon-linux-ami-basics.html#package-repository) AWS page shows that EC2 instances 'must have internet access'. To test I setup NACL and SG to only allow traffic to/from S3 VPC endpoint. I do see in the yum configs for Amazon Linux 2 that there are a few repo files in /etc/yum.repos.d/, but for brevity there is:
 
-\- supports container
+amzn2-core.repo which has \[amzn2-core\] enabled with mirror list:
 
-\- needs RDS
+http//amazonlinux.$awsregion.$awsdomain/$releasever/$product/$target/$basearch/mirror.list
 
-\- needs internet access (for external apis)
+If I run a yum update I can see traffic timing out to:
 
-\- should support basic ci/cd pipeline. (I use gitlab)
+http//amazonlinux.us-east-1.amazonaws.com/2/core/2.0/x86\_64/7bd66e56187a1363571cafcbc92d6f3a57fa4ac69ed6e5859f3f5rd3b166c8/repodata/repomd.xml?instance\_id=i-*instanceId*&amp;region=us-west-2:
+
+Which If i hit from an internet connected machine I receive the xml which shows its a public hosted mirror at Duke University: [http://linux.duke.edu/metadata/repo](http://linux.duke.edu/metadata/repo)
+
+Now I could setup a proxy like Squid, host a mirror locally or in S3, or just allow my subnet out to the internet, but it seems like AWS hosting their own mirrors in their own S3 buckets wouldn't be that much farther to go, I mean they have their own distro flavor and a repo named 'amzn-\*'. Thoughts? Its 1:30 am and I may not be thinking clearly, I was working on setting up patching for AmznLinux2 instances today and ran into this since we dont allow outbound internet from this particular environment.
+## [7][Availability of t4g instances in zone eu-est-1 (Ireland)](https://www.reddit.com/r/aws/comments/iv20gc/availability_of_t4g_instances_in_zone_euest1/)
+- url: https://www.reddit.com/r/aws/comments/iv20gc/availability_of_t4g_instances_in_zone_euest1/
+---
+Following the announcement of new t4g instances I updated my autoscaler launch configuration to use it as *"*[*T4g instances*](https://aws.amazon.com/ec2/instance-types/t4/) *are available today \[14 Sept.\] in US East (N. Virginia, Ohio), US West (Oregon), Asia Pacific (Tokyo, Mumbai), Europe (Frankfurt, Ireland)."*
+
+But when launching a new instance I got the message :
+
+&gt;Launching a new EC2 instance. Status Reason: The requested configuration is currently not supported. Please check the documentation for supported configurations. Launching EC2 instance failed.
+
+Is there something I missed ?
+## [8][Network outage sa-east-1??](https://www.reddit.com/r/aws/comments/iusmks/network_outage_saeast1/)
+- url: https://www.reddit.com/r/aws/comments/iusmks/network_outage_saeast1/
+---
+different services (EC2 &amp; RDS) are suffering to communicate here. São Paulo (sa-east-1).
+
+Someone else with the same problem?
+## [9][How do I check how much data I have analyzed?](https://www.reddit.com/r/aws/comments/iuyyvp/how_do_i_check_how_much_data_i_have_analyzed/)
+- url: https://www.reddit.com/r/aws/comments/iuyyvp/how_do_i_check_how_much_data_i_have_analyzed/
+---
+Well, the title's pretty vague, so I'll try to explain my situation here. I'm attempting to use Rekognition to do some simple facial emotion recognition. The problem is that I do not want to spend any money. Good news is that Amazon allows for up to 5,000 images to be processed a month for 12 months for free on Rekognition. Bad news is that I can't figure out how many photos I have analyzed so far. I can't seem to find a dashboard, or webpage, on Amazon Web Services that states how many images or how long I have (in terms of images left to analyze) until I'm out of free images for the month. Would appreciate any help, thanks!
 
 &amp;#x200B;
 
-ECS seems the route but as soon as I put it inside vpc, it lose internet and nat gateway is way expensive for small prototype!
-
-&amp;#x200B;
-
-Thanks.
-## [6][Anyone else having console issues in us-east-1 right now?](https://www.reddit.com/r/aws/comments/itwd8q/anyone_else_having_console_issues_in_useast1/)
-- url: https://www.reddit.com/r/aws/comments/itwd8q/anyone_else_having_console_issues_in_useast1/
+(also, this is my first time using AWS, its frickin awesome)
+## [10][App architecture](https://www.reddit.com/r/aws/comments/iuyqkh/app_architecture/)
+- url: https://www.reddit.com/r/aws/comments/iuyqkh/app_architecture/
 ---
-Getting a lot of errors in EC2 right now.
-## [7][Following the Juli 2020 ruling of the EU court that the EU/US Privacy shield is invalid: Will we be able to use AWS for customer projects in the near future?](https://www.reddit.com/r/aws/comments/iuf9uu/following_the_juli_2020_ruling_of_the_eu_court/)
-- url: https://www.reddit.com/r/aws/comments/iuf9uu/following_the_juli_2020_ruling_of_the_eu_court/
----
-I have heard several opinions on the EU/Privacy Shield Rulings and the german politics is pretty much silent on the specifics so far. Given that we (In Germany) have no real alternative to AWS here, the situation seems to be that AWS, Azure, Google Cloud, Digital Ocean etc. are not good for projects storing customer sensitive data (aka everything with a login).   
-So fellow Europeans, Germanz and other people of the world: What do you think is the case?
-## [8][Licensing of MS products in AWS - mostly for "desktop-like" use](https://www.reddit.com/r/aws/comments/iuhuke/licensing_of_ms_products_in_aws_mostly_for/)
-- url: https://www.reddit.com/r/aws/comments/iuhuke/licensing_of_ms_products_in_aws_mostly_for/
----
-For those in need to run MSOffice (incl. Outlook) apps in a "desktop like" setup, in AWS, I think there are a few options:
+Hey guys, I’m new to the dev side of AWS. Long time on AWS infrastructure, have a idea for an app but unsure what services to go with. 
 
-- AWS workspaces - which is actually Windows server, with a "Windows 10 like skin" (a.k.a. "desktop experience")
+The general flow is user logs in, fills out a form, based on their choices it will generate a pdf with dynamic content. The user could then view their content and share it. 
 
-- EC2 w/Windows 10 (maybe as described [here](https://gist.github.com/peterforgacs/abebc777fcd6f4b67c07b2283cd31777)) - vague concerning licensing
+I’ve heard good things about Amplify, but am not sure if it would work here. As I’ve read it is for static websites. 
 
-- Windows 10 in dedicated instance or dedicated hosting - [per MS](https://aws.amazon.com/windows/faq/#byol-win-cl), although I have no idea why someone would choose a dedicated **host** for a desktop need
+I’m thinking - Some combination of S3, api gateway and lambda and Cognito. 
 
-- an actual Windows server
-
-Someone pointed us the other day to the [following document](https://blogs.gartner.com/stephen-white/2020/06/10/organizations-running-office-365-windows-applications-and-windows-10-in-amazon-google-and-alibaba-should-re-check-licensing/), which adds to the concern I wanted to address, thus the true reason for my post: has someone actually figured out the **cost optimal** (OS license, O365 license, Outlook license, etc., etc.) solution of running applications (someone was even suggesting Office Plus) - mostly Excel, Word and also Outlook, in a desktop like fashion (users logged in and using the environment as "desktop")?
-## [9][We are the AWS EC2 Team - Ask the Experts - Sep 24th @ 9AM PT / 12PM ET / 4PM GMT!](https://www.reddit.com/r/aws/comments/iu0c8d/we_are_the_aws_ec2_team_ask_the_experts_sep_24th/)
-- url: https://www.reddit.com/r/aws/comments/iu0c8d/we_are_the_aws_ec2_team_ask_the_experts_sep_24th/
----
-Hey r/aws! u/AmazonWebServices here.
-
-The AWS EC2 team will be hosting an Ask the Experts session here **in this thread** to answer any questions you may have about **deploying your machine learning models to Amazon EC2 Inf1 instances powered by the** [**AWS Inferentia chip**](https://aws.amazon.com/machine-learning/inferentia/), which is custom designed by AWS to provide high performance and cost-effective machine learning inference in the cloud. These instances provide up to 30% higher throughput, and 45% lower cost per inference over comparable GPU-based instances for a wide variety of machine learning use cases such as image and video analysis, conversational agents, fraud detection, financial forecasting, healthcare automation, recommendation engines, text analytics, and transcription. It's easy to get started and popular frameworks such as TensorFlow, PyTorch, and MXNet are supported.
-
-Already have questions? Post them below and we'll answer them starting at 9AM PT on Sep 24, 2020!
-## [10][Starting with AWS SDK](https://www.reddit.com/r/aws/comments/iugy1y/starting_with_aws_sdk/)
-- url: https://www.reddit.com/r/aws/comments/iugy1y/starting_with_aws_sdk/
----
-Going to build some application to integrate with aws, e.g. getting some cloudwatch metrics. Any way i can make request to aws and test the api free? Any sample data response?
+Any advice??

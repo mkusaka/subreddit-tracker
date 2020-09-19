@@ -1,12 +1,27 @@
 # androiddev
-## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/iv5bh5/weekly_anything_goes_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/iv5bh5/weekly_anything_goes_thread/
+## [1][App Feedback Thread - September 19, 2020](https://www.reddit.com/r/androiddev/comments/ivrob6/app_feedback_thread_september_19_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/ivrob6/app_feedback_thread_september_19_2020/
 ---
-Here's your chance to talk about whatever!
+This thread is for getting feedback on your own apps.
 
-Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
+####Developers:
 
-Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
+- must **provide feedback** for others
+- must include **Play Store**, **GitHub**, or **BitBucket** link
+- must make top level comment
+- must make effort to respond to questions and feedback from commenters
+- may be open or closed source
+
+####Commenters:
+
+- must give **constructive feedback** in replies to top level comments
+- must not include links to other apps
+
+To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
+
+As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
+
+\- Da Mods
 ## [2][Weekly Questions Thread - September 14, 2020](https://www.reddit.com/r/androiddev/comments/isiooc/weekly_questions_thread_september_14_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/isiooc/weekly_questions_thread_september_14_2020/
 ---
@@ -25,60 +40,59 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][A small Disney project using Jetpack Compose, Dagger-Hilt based on MVVM architecture.](https://www.reddit.com/r/androiddev/comments/iv1w2g/a_small_disney_project_using_jetpack_compose/)
+## [3][Google rewrites Google Pay app in Flutter](https://www.reddit.com/r/androiddev/comments/ivlxm1/google_rewrites_google_pay_app_in_flutter/)
+- url: https://twitter.com/googledevs/status/1307126032349224960?s=19
+---
+
+## [4][What are effective approaches for Android dialogs in 2020?](https://www.reddit.com/r/androiddev/comments/ivf6xm/what_are_effective_approaches_for_android_dialogs/)
+- url: https://www.reddit.com/r/androiddev/comments/ivf6xm/what_are_effective_approaches_for_android_dialogs/
+---
+We have seen many large changes to Android development since 2017 (Kotlin, JetPack, AAC etc), but what about good old dialogs? I remember dialogs being in a state of chaos on Android. Use Dialog class? No, use AlertDialog. Then Google gave us DialogFragment where you can inflate a view like a standard fragment or override onCreateDialog(). Which was for a long time an improvement. Then came Material Design, and it seemed like if we wanted Material dialogs we better implement them ourselves with custom layouts. Maybe that is why a library like afollestad's Material Dialogs has almost 20,000 stars on GitHub -- it provides a simple API for material styled dialogs. This is what everybody wants but of course Google does not make it easy. So now developers choose between hand-rolling custom fragments versus a third party library. And then of course others are writing dialogs as custom views and probably enjoy the benefits of flexibility at the cost of a higher learning curve or just having to know how to "do it right". And then there's the topic of dialogs and how they fit into app architecture, which can vary based on how you model your dialogs. I get the sense it is still a wild west on this one? Are we converging on something?
+## [5][Jump Into Chrome Custom Tabs](https://www.reddit.com/r/androiddev/comments/ivrrkw/jump_into_chrome_custom_tabs/)
+- url: https://www.reddit.com/r/androiddev/comments/ivrrkw/jump_into_chrome_custom_tabs/
+---
+In this article, you'll jump into the Chrome Custom Tabs and learn performance tips to speed up ⚡ URL loading almost by 50%.
+
+Enjoy 💚[https://vladsonkin.com/jump-into-chrome-custom-tabs/](https://vladsonkin.com/jump-into-chrome-custom-tabs/)
+## [6][What is the best way to make a mobile app?](https://www.reddit.com/r/androiddev/comments/ivrd8w/what_is_the_best_way_to_make_a_mobile_app/)
+- url: https://www.reddit.com/r/androiddev/comments/ivrd8w/what_is_the_best_way_to_make_a_mobile_app/
+---
+I recently started learning python, made it all the way to classes and object orienting, then I suddenly had this very great idea, but it needs to be a mobile app, so which is the best way to make one? ( I prefer if you guys might guide me to a way that includes python and not a new language )
+## [7][A small Disney project using Jetpack Compose, Dagger-Hilt based on MVVM architecture.](https://www.reddit.com/r/androiddev/comments/iv1w2g/a_small_disney_project_using_jetpack_compose/)
 - url: https://v.redd.it/rs0v48rx3vn51
 ---
 
-## [4][The day Android threw away all their code](https://www.reddit.com/r/androiddev/comments/iv4u58/the_day_android_threw_away_all_their_code/)
-- url: https://www.youtube.com/watch?v=E1TobozA5og&amp;feature=youtu.be
+## [8][Is there any point in having a repository that just delegates method calls?](https://www.reddit.com/r/androiddev/comments/ivojht/is_there_any_point_in_having_a_repository_that/)
+- url: https://www.reddit.com/r/androiddev/comments/ivojht/is_there_any_point_in_having_a_repository_that/
+---
+Is there any benefit in having a repository that just has a bunch of these methods and no own logic?
+
+     suspend fun insert(task: Task) = taskDao.insert(task)
+    
+     suspend fun update(task: Task) = taskDao.update(task)
+    
+     suspend fun deleteTask(task: Task) = taskDao.deleteTask(task)
+## [9][Exploring Jetpack Compose: Column](https://www.reddit.com/r/androiddev/comments/ivbj6d/exploring_jetpack_compose_column/)
+- url: https://joebirch.co/android/exploring-jetpack-compose-column/
 ---
 
-## [5][Benefits of RxJava over Coroutines?](https://www.reddit.com/r/androiddev/comments/iutfin/benefits_of_rxjava_over_coroutines/)
-- url: https://www.reddit.com/r/androiddev/comments/iutfin/benefits_of_rxjava_over_coroutines/
+## [10][Paging jetpack with multiple module clean architecture](https://www.reddit.com/r/androiddev/comments/ivmfu2/paging_jetpack_with_multiple_module_clean/)
+- url: https://www.reddit.com/r/androiddev/comments/ivmfu2/paging_jetpack_with_multiple_module_clean/
 ---
-Hi folks, I was wondering if anyone knew of any benefits of RxJava over Kotlin Coroutines. I've spent most of my time learning RxJava but as time goes on I see most people making the switch to coroutines. I know RxJava still has some operators (like debounce) that are missing on coroutines but it seems like that gap will eventually be closed. 
-
-I've also read that coroutines are faster and more efficient, and most people believe they are easier to learn. Anyone know what the pros are for RxJava (vs coroutines)?
-## [6][Material Preferences: library for bulding preferences screen through Kotlin DSL](https://www.reddit.com/r/androiddev/comments/iv4huc/material_preferences_library_for_bulding/)
-- url: https://www.reddit.com/r/androiddev/comments/iv4huc/material_preferences_library_for_bulding/
----
-https://preview.redd.it/xlxm7gxh8wn51.png?width=1240&amp;format=png&amp;auto=webp&amp;s=e5dd7996f703866d0b79f851967102260674be94
-
- A beautiful and extensible API for bulding preferences screen
-
-## ⭐ Features
-
-* Convenient and extensible DSL
-* Flexible appearance settings
-* Unified view on Lollipop and Pre-Lollipop
-* Ability to use custom storage
-* Default prefs values
-* Light and dark themes
-
-[https://github.com/ImangazalievM/material-prefs](https://github.com/ImangazalievM/material-prefs)
-## [7][Replace SingleLiveEvent with kotlin Channel / Flow](https://www.reddit.com/r/androiddev/comments/iv5et5/replace_singleliveevent_with_kotlin_channel_flow/)
-- url: https://www.reddit.com/r/androiddev/comments/iv5et5/replace_singleliveevent_with_kotlin_channel_flow/
----
-[Replace SingleLiveEvent with kotlin Channel / Flow](https://medium.com/@cesarmorigaki/replace-singleliveevent-with-kotlin-channel-flow-b983f095a47a?source=friends_link&amp;sk=3301f1b1afafddd7f03d33c4e94e46c4)
-## [8][Android Studio 4.2 Canary 11 available](https://www.reddit.com/r/androiddev/comments/iunmvg/android_studio_42_canary_11_available/)
-- url: https://androidstudio.googleblog.com/2020/09/android-studio-42-canary-11-available.html
+I am trying to put jetpack pagination and clean architecture together in the demo project. I stuck in domain module which is pure java/kotlin causes paging need to return flow paging data in the repository. I want domain separating from android component. How can I handle this?
+## [11][Which language are you using for Android App Development ?](https://www.reddit.com/r/androiddev/comments/ivoa7h/which_language_are_you_using_for_android_app/)
+- url: https://www.reddit.com/r/androiddev/comments/ivoa7h/which_language_are_you_using_for_android_app/
 ---
 
-## [9][DataStore: Wire](https://www.reddit.com/r/androiddev/comments/iv3p56/datastore_wire/)
-- url: https://blog.stylingandroid.com/datastore-wire/
----
 
-## [10][Android Studio layout frustrations](https://www.reddit.com/r/androiddev/comments/iv0ziw/android_studio_layout_frustrations/)
-- url: https://www.reddit.com/r/androiddev/comments/iv0ziw/android_studio_layout_frustrations/
+[View Poll](https://www.reddit.com/poll/ivoa7h)
+## [12][Are you going to add sellers.json to your Admob account?](https://www.reddit.com/r/androiddev/comments/iv9k3h/are_you_going_to_add_sellersjson_to_your_admob/)
+- url: https://www.reddit.com/r/androiddev/comments/iv9k3h/are_you_going_to_add_sellersjson_to_your_admob/
 ---
-I'm a rookie to Android Studio and the layout design editor has been giving me endless problems, I feel like I'm missing something. I usually always drag items from the Pallete to the design editor, sometimes the editor freezes, sometimes everything gets stuck to the top left corner - even when using layouts like relative and linear and disabling the autoconnection to parent option, many times the position of the items doesn't match that on my phone when I test run despite the default view Nexus 5 being similar to my phone's screen size. 
+I know it's not mandatory (up until now, who know what requirements will be in the future), but there are 2 huge yellow and red warning notifications in my Admob account (also I've received 2 emails regarding to this).
 
-I feel like I'm just banging my head against the wall, is there something I should be doing differently?  Should I stop using the design editor and do everything through XML? Should I never use nested layouts?
-## [11][How much is it to use Google maps SDK?](https://www.reddit.com/r/androiddev/comments/iv29wo/how_much_is_it_to_use_google_maps_sdk/)
-- url: https://www.reddit.com/r/androiddev/comments/iv29wo/how_much_is_it_to_use_google_maps_sdk/
----
-If you want to display map and use polylines and your own GPS data how much does it cost is it just $200 per month?
-## [12][The internals of Lottie Animation Library - Article](https://www.reddit.com/r/androiddev/comments/iufv1z/the_internals_of_lottie_animation_library_article/)
-- url: https://codingwithmitch.com/blog/understanding-the-internals-of-lottie-rendering-the-animation-file/
----
+Admob states that this will bring "transaprency" and " This will help advertisers to verify your inventory. If your information isn't made transparent, advertisers won't be able to see your business name, which might impact your revenue. "
 
+I haven't added yet, but I'm thinking about adding it, however I'm not okay declaring my real/business name and address in the public json file.
+
+Have you added sellers.json to your Admob settings?

@@ -56,7 +56,29 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][On the relevance of debug performance](https://www.reddit.com/r/cpp/comments/iuzcha/on_the_relevance_of_debug_performance/)
+## [2][Fire: create a C++ command line interface from a function signature](https://www.reddit.com/r/cpp/comments/ivpi0b/fire_create_a_c_command_line_interface_from_a/)
+- url: https://github.com/kongaskristjan/fire-hpp
+---
+
+## [3][Destructuring Assertions](https://www.reddit.com/r/cpp/comments/ivql73/destructuring_assertions/)
+- url: https://artificial-mind.net/blog/2020/09/19/destructuring-assertions
+---
+
+## [4][C++ in Small Game Engines?](https://www.reddit.com/r/cpp/comments/ivbe2v/c_in_small_game_engines/)
+- url: https://www.reddit.com/r/cpp/comments/ivbe2v/c_in_small_game_engines/
+---
+Where is it's place in game engines? I understand that there are engines that use C++ but those are mainly for AAA productions (Such as the Unreal Engine.) but is it anywhere in small engines?
+## [5][Cmath trigonometry functions giving wired results?](https://www.reddit.com/r/cpp/comments/ivrlic/cmath_trigonometry_functions_giving_wired_results/)
+- url: https://www.reddit.com/r/cpp/comments/ivrlic/cmath_trigonometry_functions_giving_wired_results/
+---
+So in cmath the cos function is giving me wired results for example cos of 1.570 radians (so around 90 degrees) is -1.03412e-13 even do from my knowlege it should be around 0.
+
+I know c++ does some optimizations and doesnt give perfet results but -1.03412e-13 isn't even close to 0. I tried diffrent online cos calculators and they gave the correct results. Why is that happening?
+## [6][How to automatically generate std::ostream &amp;operator&lt;&lt; for C++ enums and structs](https://www.reddit.com/r/cpp/comments/ivg7wj/how_to_automatically_generate_stdostream_operator/)
+- url: https://rigtorp.se/generating-ostream-operator/
+---
+
+## [7][On the relevance of debug performance](https://www.reddit.com/r/cpp/comments/iuzcha/on_the_relevance_of_debug_performance/)
 - url: https://www.reddit.com/r/cpp/comments/iuzcha/on_the_relevance_of_debug_performance/
 ---
 I had heard that some people really care about debug performance and out of pure curiosity I've recently been investigating code that is generated at -O0 and -Og and found the generated assembly to be shockingly bad.
@@ -68,19 +90,19 @@ I have a few simple questions based on that observation:
 - What is your optimization level in debug mode?
 
 Edit: If you use -O0, have you tried -Og? If so, why do you prefer -O0?
-## [3][CppCast: Microsoft Announcements at CppCon 2020](https://www.reddit.com/r/cpp/comments/iuyfyk/cppcast_microsoft_announcements_at_cppcon_2020/)
+## [8][Apple Clang 12 still doesn't have concepts.](https://www.reddit.com/r/cpp/comments/ivlvdg/apple_clang_12_still_doesnt_have_concepts/)
+- url: https://www.reddit.com/r/cpp/comments/ivlvdg/apple_clang_12_still_doesnt_have_concepts/
+---
+Is apple abandoning C++ or macos or both?
+## [9][CppCast: Microsoft Announcements at CppCon 2020](https://www.reddit.com/r/cpp/comments/iuyfyk/cppcast_microsoft_announcements_at_cppcon_2020/)
 - url: https://cppcast.com/msvc-cppcon-2020/
 ---
 
-## [4][Project-based C++ learning](https://www.reddit.com/r/cpp/comments/iukh9r/projectbased_c_learning/)
+## [10][Project-based C++ learning](https://www.reddit.com/r/cpp/comments/iukh9r/projectbased_c_learning/)
 - url: https://learncppthroughprojects.com
 ---
 
-## [5][Clang Format Extended, A Clang-Format Interface with support for taking Blobs as input and ignoring files in .gitignore and .clang-format-ignore](https://www.reddit.com/r/cpp/comments/iuxqfl/clang_format_extended_a_clangformat_interface/)
-- url: https://www.npmjs.com/package/clang-format-ex
----
-
-## [6][What are the problems with modules in C++20?](https://www.reddit.com/r/cpp/comments/iukqju/what_are_the_problems_with_modules_in_c20/)
+## [11][What are the problems with modules in C++20?](https://www.reddit.com/r/cpp/comments/iukqju/what_are_the_problems_with_modules_in_c20/)
 - url: https://www.reddit.com/r/cpp/comments/iukqju/what_are_the_problems_with_modules_in_c20/
 ---
 I'm new to C++, but one of things I've heard being talked about most is the new feature called modules in C++, which apparently are able to reduce compilation times and clean up code.
@@ -91,64 +113,3 @@ https://vector-of-bool.github.io/2019/01/27/modules-doa.html
 https://izzys.casa/2017/10/millennials-are-killing-the-modules-ts/
 
 and a few other reddit posts. However, I can't really understand what all these posts are saying, so can somebody summarize all the perceived problems with modules here please?
-## [7][I'm pretty sure there's a massive, widespread misconception about std::random (most particularly mt19937), and that it's actually trivially easy to use.](https://www.reddit.com/r/cpp/comments/iufxze/im_pretty_sure_theres_a_massive_widespread/)
-- url: https://www.reddit.com/r/cpp/comments/iufxze/im_pretty_sure_theres_a_massive_widespread/
----
-I hear several things parroted over and over about mt19937. Some points are fair (it has a large internal state, which can be overkill in certain applications like embedded computing), some I can't be sure of (PRNG experts have purportedly found flaws in it in the time since its conception), and I'd like some clarification on that (i.e. further reading and specification of what cases it's now considered unsuitable for).
-
---But some points made don't gibe with my readings on cppreference.com. Perhaps a bit of code will help clarify what I mean:
-
-	auto random_point_on_a_circle(double radius = 1.0) -&gt; std::array&lt;double, 2&gt;
-	{
-		using namespace std;
-		
-		static random_device rd{};
-		static seed_seq seeder {rd(), rd(), rd(), rd(), 0xDEAD'FACE}; // 128 bits and a bit of salt.
-		static mt19937 rand_eng {seeder};
-		
-		static uniform_real_distribution choose_angle {0.0, 2.0 * numbers::pi};
-		
-		auto angle = choose_angle(rand_eng);
-		return {cos(angle) * radius, sin(angle) * radius};
-	}
-
-Here, I've decided that one "state collision" in 2^128 is plenty of distance between hypothetical runs, so I call upon random_device to supply 32 bits to my seed sequence 4 times. For good measure, in case random_device is deterministic and a user recognizes the output, I tack on a silly magic number term with no semantic meaning. If you like, chuck on `std::chrono::steady_clock::now().count()` (modulo 2^32 is implicit, maybe. I'd have to play around/look deeper).
-
-The constructor for mt19937 then takes that seed sequence and calls on `seed_seq.generate()` for us, with the proper values required for its particular needs in order to eliminate any practical chance that its internal state is "degenerate", e.g. containing mostly null or uninitialized bytes.
-
-Then we use the vastly superior `std::distribution`s, saying a permanent goodbye to all that rampant `rand() % 100` garbage that was never very elegant.
-
-Alternatively, if we hate typing `rd()` multiple times, a seed_seq can be constructed by passing in *any* pair of iterators that dereference to an int. Notably, they can be forward-only, and no assumption is made that state is preserved after an increment. You can wrap `rd()` in a loop. You can use a string, standard input (just mash your keyboard), some low bits from your camera (if you know how), etc. `std::seed_seq` just uses the lowest 32 bits of each de-referenced element.
-
-Alternatively, if we don't care about seeding the engine at all (e.g. we're just setting values in a game's particle system), mt19937 has a default constructor with a default seed.
-
-	// Literally just this, no need for a random_device and a seed_seq
-	static mt19937 rand_eng {};
-## [8][Creating type traits using ADL (proof of concept with traits for bitmasks)](https://www.reddit.com/r/cpp/comments/iuojms/creating_type_traits_using_adl_proof_of_concept/)
-- url: https://www.reddit.com/r/cpp/comments/iuojms/creating_type_traits_using_adl_proof_of_concept/
----
-I got an idea to try and make type traits using a function found with ADL. So that way you could kind of get around the limitation of not being able to specialize templates in a non-enclosing namespace. The cool thing you can with this is that you can specialize, for example, bitmask operators for a scoped enum, and then use them in the namespace you defined them in without having to break out of the namespace to specialize a template.
-
-Here's a link the gist: 
-
-[https://gist.github.com/Hamondorf/66c37e519f8f7b55066dd6c10cc1b972](https://gist.github.com/Hamondorf/66c37e519f8f7b55066dd6c10cc1b972) 
-
-I'm super open to feedback/criticism.
-## [9][periodic-function: a small header only library to call a function at a specific time interval.](https://www.reddit.com/r/cpp/comments/iun0qh/periodicfunction_a_small_header_only_library_to/)
-- url: https://www.reddit.com/r/cpp/comments/iun0qh/periodicfunction_a_small_header_only_library_to/
----
-Hello all! 
-
-I wanted to share a small C++ header only library I've been working on. I routinely run into situations where I need to repeatedly probe the state of hardware at a regular time interval and I wanted something I could use outside of other larger frameworks (i.e. `Qt` and `Boost.Signals`) and thus [periodic-function](https://github.com/DeveloperPaul123/periodic-function) was born!
-
-I would be very grateful for any feedback/suggestions you have on anything at all (code organization, optimizations and so on).
-
-Also, special thanks to u/TheLartians for taking the time to look at the code.
-## [10][Where can I find Raspberry Pi projects written in C++?](https://www.reddit.com/r/cpp/comments/iuvcbb/where_can_i_find_raspberry_pi_projects_written_in/)
-- url: https://www.reddit.com/r/cpp/comments/iuvcbb/where_can_i_find_raspberry_pi_projects_written_in/
----
-Title. Does anyone know any site where can I find these projects?
-## [11][Exception safety in the composite pattern](https://www.reddit.com/r/cpp/comments/iuu9ut/exception_safety_in_the_composite_pattern/)
-- url: https://stackoverflow.com/questions/63945051/exception-safety-in-the-composite-pattern
----
-

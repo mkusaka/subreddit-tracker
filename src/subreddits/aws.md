@@ -1,79 +1,60 @@
 # aws
-## [1][Congrats to r/aws on 140k subscribers!](https://www.reddit.com/r/aws/comments/iv4gen/congrats_to_raws_on_140k_subscribers/)
+## [1][AVC Website - all the official Amazon videos related to each individual AWS Service](https://www.reddit.com/r/aws/comments/iveja2/avc_website_all_the_official_amazon_videos/)
+- url: https://www.reddit.com/r/aws/comments/iveja2/avc_website_all_the_official_amazon_videos/
+---
+[AWS Video Catalog](https://awsvideocatalog.com/) is a website that collects all the official Amazon videos related to each individual AWS Service and categorizes them in a way that makes it easy to find what you are looking for. No more fighting YouTube search or relying on an algorithm to find what you are looking for. Everything is in one place. – This means that AWS Video Catalog will allow you to discover older videos that are still invaluable.
+## [2][A question on data security in transit between instances](https://www.reddit.com/r/aws/comments/ivruji/a_question_on_data_security_in_transit_between/)
+- url: https://www.reddit.com/r/aws/comments/ivruji/a_question_on_data_security_in_transit_between/
+---
+On the docs it says AWS provides secure and private connectivity between EC2 instnsces of al types. What exactly do they mean here though? Got a client with a requirement that all traffic internally and externally is TLS encrypted. So my question ishow do instances within a VPC communicate. do we need to set up TLS ourselves or is aws handling this already?
+## [3][How to get the most out of parallel processing in aws?](https://www.reddit.com/r/aws/comments/ivo92v/how_to_get_the_most_out_of_parallel_processing_in/)
+- url: https://www.reddit.com/r/aws/comments/ivo92v/how_to_get_the_most_out_of_parallel_processing_in/
+---
+I have a c++ program that i'd like to run across many different workers / threads. None of the workers need to interact with eachother, but they should all be able to signal success / keep their own logs of their best results. This is a one off simulation i'd like to run, and there seem to be quite a few options for how to achieve this in aws.
+
+One option is to spin up an EC2, but this seems wasteful and would have many extra steps. https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html seems closer to what i'm looking for, but then there's also https://aws.amazon.com/hpc/.
+## [4][Congrats to r/aws on 140k subscribers!](https://www.reddit.com/r/aws/comments/iv4gen/congrats_to_raws_on_140k_subscribers/)
 - url: https://www.reddit.com/r/aws/comments/iv4gen/congrats_to_raws_on_140k_subscribers/
 ---
 Great to see a growing and vibrant community
-## [2][Api Gateway now supports mTLS](https://www.reddit.com/r/aws/comments/iv4ex9/api_gateway_now_supports_mtls/)
+## [5][Microsoft Teams optimizations on Amazon Workspaces](https://www.reddit.com/r/aws/comments/ivru4i/microsoft_teams_optimizations_on_amazon_workspaces/)
+- url: https://www.reddit.com/r/aws/comments/ivru4i/microsoft_teams_optimizations_on_amazon_workspaces/
+---
+ Hi, does anyone have Teams optimizations for Amazon Workspaces? I haven't seen much out there so i figured i'd ask. Workspaces is not even listed as being supported on Microsoft teams website....
+## [6][Why some regions are disabled by default?](https://www.reddit.com/r/aws/comments/ivqpg9/why_some_regions_are_disabled_by_default/)
+- url: https://www.reddit.com/r/aws/comments/ivqpg9/why_some_regions_are_disabled_by_default/
+---
+The following 4 regions are disabled by default:
+
+* Africa (Cape Town)
+* Asia Pacific (Hong Kong)
+* Europe (Milan)
+* Middle East (Bahrain)
+
+What is the reason for not having enabled by default why the rest of the zones? Is it due to higher costs or different legislation in these countries?
+## [7][AWS DFx and on-prem. FS](https://www.reddit.com/r/aws/comments/ivpay2/aws_dfx_and_onprem_fs/)
+- url: https://www.reddit.com/r/aws/comments/ivpay2/aws_dfx_and_onprem_fs/
+---
+Hi all,
+I'm evaluating if AWS FSx is an option for my company, but still would like to offer the full power of the LAN connection with an on-prem. fileserver for the office users.
+
+So I was thinking DFS with on target on-prem. and one in AWS. But I don't find anyone on the internet who has done this setup. Probably because DFS-r is not supported.
+
+My questions: 
+- Can I replace DFS-r with AWS Data sync?
+  - two sync jobs(back and forth)?
+- Did anyone try this out? Does it work as expected (fast everywhere and admins happy)?
+## [8][Considering AWS - How will AWS help us transition / train staff](https://www.reddit.com/r/aws/comments/ivj53c/considering_aws_how_will_aws_help_us_transition/)
+- url: https://www.reddit.com/r/aws/comments/ivj53c/considering_aws_how_will_aws_help_us_transition/
+---
+We have a company of 250 people, and we are growing quite quickly. We are considering AWS because we worry about security and scaling issues. My partner is worried about the transition as our engineers don't have much / any experience with AWS and it is important that we don't have down time due to our lack of knowledge. I looked at their site, but I'm not sure how they will help us train staff / assist us in migrating, and what that will cost us. I have seen solutions architects mentioned before, but do they charge for access to them, or is that part of the support plan?
+## [9][Help! ftp upload files to wp -&gt; cdn -&gt; s3](https://www.reddit.com/r/aws/comments/ivny3v/help_ftp_upload_files_to_wp_cdn_s3/)
+- url: https://www.reddit.com/r/aws/comments/ivny3v/help_ftp_upload_files_to_wp_cdn_s3/
+---
+Hi..  I'm still new to wordpress and aws so forgive me if the question is dumb. I successfully configured wp-&gt;cloudfront-&gt;s3 via offload media. I upload the files ftp to wp but that's not actually upload to cdn. How do i upload the files via ftp like the usual wp UI upload which are directly available on media library and cdn links attached on it? I tried manual upload to S3 but then i'm not sure how to embed the videos. 
+
+Really hit a major stone here guys.. please help, thanks!
+## [10][Api Gateway now supports mTLS](https://www.reddit.com/r/aws/comments/iv4ex9/api_gateway_now_supports_mtls/)
 - url: https://aws.amazon.com/blogs/compute/introducing-mutual-tls-authentication-for-amazon-api-gateway/
 ---
 
-## [3][Yikes: AWS Aurora PostgreSQL versions vanish from the mega-cloud for days, leaving customers in the dark](https://www.reddit.com/r/aws/comments/iuojz9/yikes_aws_aurora_postgresql_versions_vanish_from/)
-- url: https://www.reddit.com/r/aws/comments/iuojz9/yikes_aws_aurora_postgresql_versions_vanish_from/
----
-Surprisingly, I saw this via /u/quinnypig's Twitter account. Has anybody here been affected by this? 
-
-[AWS Aurora PostgreSQL versions vanish from the mega-cloud for days, leaving customers in the dark](https://www.theregister.com/2020/09/16/aws_aurora_postgresql_versions_disappeared/)
-## [4][Features of a proper pipeline service - my improvement roadmap for AWS CodePipeline](https://www.reddit.com/r/aws/comments/iv5k1q/features_of_a_proper_pipeline_service_my/)
-- url: https://www.sentiatechblog.com/features-of-a-proper-pipeline-service?utm_source=reddit&amp;utm_medium=social&amp;utm_campaign=proper_pipeline
----
-
-## [5][Curated AWS SSM Scripts](https://www.reddit.com/r/aws/comments/iv5h7p/curated_aws_ssm_scripts/)
-- url: https://rewind.io/blog/curated-aws-ssm-scripts
----
-
-## [6][AmazonLinux2 package repos | S3 VPC endpoint sufficient or Internet access required? seems needed](https://www.reddit.com/r/aws/comments/iv2a12/amazonlinux2_package_repos_s3_vpc_endpoint/)
-- url: https://www.reddit.com/r/aws/comments/iv2a12/amazonlinux2_package_repos_s3_vpc_endpoint/
----
-Hi all,
-
-I was under the impression that the Amazon Linux package repo's were hosted in Amazons [own s3 buckets](https://aws.amazon.com/amazon-linux-ami/faqs/) ...but that article is old and referencing the Amazon Linux 1 AMI, not 2. Im not sure why AWS wouldn't host a mirror in their own S3 buckets, that would seem to 'finish off' Systems Manager capabilities in not requiring instances to leave private link, but allowing package updates via repos in S3 via S3 endpoint. Seems like this would be a easy win for them to satisfy customers egress concerns.
-
-[Amazon Linux AMI basics](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/amazon-linux-ami-basics.html#package-repository) AWS page shows that EC2 instances 'must have internet access'. To test I setup NACL and SG to only allow traffic to/from S3 VPC endpoint. I do see in the yum configs for Amazon Linux 2 that there are a few repo files in /etc/yum.repos.d/, but for brevity there is:
-
-amzn2-core.repo which has \[amzn2-core\] enabled with mirror list:
-
-http//amazonlinux.$awsregion.$awsdomain/$releasever/$product/$target/$basearch/mirror.list
-
-If I run a yum update I can see traffic timing out to:
-
-http//amazonlinux.us-east-1.amazonaws.com/2/core/2.0/x86\_64/7bd66e56187a1363571cafcbc92d6f3a57fa4ac69ed6e5859f3f5rd3b166c8/repodata/repomd.xml?instance\_id=i-*instanceId*&amp;region=us-west-2:
-
-Which If i hit from an internet connected machine I receive the xml which shows its a public hosted mirror at Duke University: [http://linux.duke.edu/metadata/repo](http://linux.duke.edu/metadata/repo)
-
-Now I could setup a proxy like Squid, host a mirror locally or in S3, or just allow my subnet out to the internet, but it seems like AWS hosting their own mirrors in their own S3 buckets wouldn't be that much farther to go, I mean they have their own distro flavor and a repo named 'amzn-\*'. Thoughts? Its 1:30 am and I may not be thinking clearly, I was working on setting up patching for AmznLinux2 instances today and ran into this since we dont allow outbound internet from this particular environment.
-## [7][Availability of t4g instances in zone eu-est-1 (Ireland)](https://www.reddit.com/r/aws/comments/iv20gc/availability_of_t4g_instances_in_zone_euest1/)
-- url: https://www.reddit.com/r/aws/comments/iv20gc/availability_of_t4g_instances_in_zone_euest1/
----
-Following the announcement of new t4g instances I updated my autoscaler launch configuration to use it as *"*[*T4g instances*](https://aws.amazon.com/ec2/instance-types/t4/) *are available today \[14 Sept.\] in US East (N. Virginia, Ohio), US West (Oregon), Asia Pacific (Tokyo, Mumbai), Europe (Frankfurt, Ireland)."*
-
-But when launching a new instance I got the message :
-
-&gt;Launching a new EC2 instance. Status Reason: The requested configuration is currently not supported. Please check the documentation for supported configurations. Launching EC2 instance failed.
-
-Is there something I missed ?
-## [8][Network outage sa-east-1??](https://www.reddit.com/r/aws/comments/iusmks/network_outage_saeast1/)
-- url: https://www.reddit.com/r/aws/comments/iusmks/network_outage_saeast1/
----
-different services (EC2 &amp; RDS) are suffering to communicate here. São Paulo (sa-east-1).
-
-Someone else with the same problem?
-## [9][How do I check how much data I have analyzed?](https://www.reddit.com/r/aws/comments/iuyyvp/how_do_i_check_how_much_data_i_have_analyzed/)
-- url: https://www.reddit.com/r/aws/comments/iuyyvp/how_do_i_check_how_much_data_i_have_analyzed/
----
-Well, the title's pretty vague, so I'll try to explain my situation here. I'm attempting to use Rekognition to do some simple facial emotion recognition. The problem is that I do not want to spend any money. Good news is that Amazon allows for up to 5,000 images to be processed a month for 12 months for free on Rekognition. Bad news is that I can't figure out how many photos I have analyzed so far. I can't seem to find a dashboard, or webpage, on Amazon Web Services that states how many images or how long I have (in terms of images left to analyze) until I'm out of free images for the month. Would appreciate any help, thanks!
-
-&amp;#x200B;
-
-(also, this is my first time using AWS, its frickin awesome)
-## [10][App architecture](https://www.reddit.com/r/aws/comments/iuyqkh/app_architecture/)
-- url: https://www.reddit.com/r/aws/comments/iuyqkh/app_architecture/
----
-Hey guys, I’m new to the dev side of AWS. Long time on AWS infrastructure, have a idea for an app but unsure what services to go with. 
-
-The general flow is user logs in, fills out a form, based on their choices it will generate a pdf with dynamic content. The user could then view their content and share it. 
-
-I’ve heard good things about Amplify, but am not sure if it would work here. As I’ve read it is for static websites. 
-
-I’m thinking - Some combination of S3, api gateway and lambda and Cognito. 
-
-Any advice??

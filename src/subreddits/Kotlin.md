@@ -1,13 +1,27 @@
 # Kotlin
-## [1][Moving to kotlin for native android Java Developers](https://www.reddit.com/r/Kotlin/comments/iv159n/moving_to_kotlin_for_native_android_java/)
+## [1][[P] ML With Android 11](https://www.reddit.com/r/Kotlin/comments/ivqd4f/p_ml_with_android_11/)
+- url: https://www.reddit.com/r/Kotlin/comments/ivqd4f/p_ml_with_android_11/
+---
+Hey,
+
+I open-sourced this repo by me demonstrating how you can get started with Machine Learning in Android 11 with Kotlin, all that is new. I further even explain how the code works so you can very easily get started with implementing Machine Learning in your Android apps with cool examples!
+
+(PS: Leave me a star if this looks good to you, helps me a lot.)
+
+[https://github.com/Rishit-dagli/ML-with-Android-11](https://github.com/Rishit-dagli/ML-with-Android-11)
+## [2][Moving to kotlin for native android Java Developers](https://www.reddit.com/r/Kotlin/comments/iv159n/moving_to_kotlin_for_native_android_java/)
 - url: https://gwaza.hashnode.dev/moving-to-kotlin-for-native-android-java-developers-ckf7p3ovz00v06ds1ah8r9c7l
 ---
 
-## [2][Firebase Admin Kotlin SDK](https://www.reddit.com/r/Kotlin/comments/iv58tw/firebase_admin_kotlin_sdk/)
+## [3][Firebase Admin Kotlin SDK](https://www.reddit.com/r/Kotlin/comments/iv58tw/firebase_admin_kotlin_sdk/)
 - url: https://www.reddit.com/r/Kotlin/comments/iv58tw/firebase_admin_kotlin_sdk/
 ---
 Is there a firebase admin SDK solely developed in Kotlin for adding admin SDK to the Server?  Now since Kotlin is interoperable with Java i can also use the Firebase Admin Java SDK but then obviously it wouldn't provide me the coroutine support for asynchronous execution of my code.
-## [3][How to set up Kotlin for NodeJS with TS dependencies?](https://www.reddit.com/r/Kotlin/comments/iujq6a/how_to_set_up_kotlin_for_nodejs_with_ts/)
+## [4][Kotlin Developer Course](https://www.reddit.com/r/Kotlin/comments/iv91z3/kotlin_developer_course/)
+- url: https://www.google.com/amp/s/onlinecoursesgalore.com/complete-kotlin-developer-course-rob-percival/amp/
+---
+
+## [5][How to set up Kotlin for NodeJS with TS dependencies?](https://www.reddit.com/r/Kotlin/comments/iujq6a/how_to_set_up_kotlin_for_nodejs_with_ts/)
 - url: https://www.reddit.com/r/Kotlin/comments/iujq6a/how_to_set_up_kotlin_for_nodejs_with_ts/
 ---
 Hey, I've been using Kotlin in the JVM for a few years and I decided to try it on nodejs (I'm also working with node for a few years, so I'm not newbie in the platform).
@@ -45,13 +59,13 @@ Thank you all, hope I will be using this in production soon
 &amp;#x200B;
 
 **SOLUTION:** I'm stupid and can't read documentations: [https://kotlinlang.org/docs/reference/js-external-declarations-with-dukat.html#generating-external-declarations-at-build-time](https://kotlinlang.org/docs/reference/js-external-declarations-with-dukat.html#generating-external-declarations-at-build-time)
-## [4][Kotlin for Backend](https://www.reddit.com/r/Kotlin/comments/iuxzsa/kotlin_for_backend/)
+## [6][Kotlin for Backend](https://www.reddit.com/r/Kotlin/comments/iuxzsa/kotlin_for_backend/)
 - url: https://www.reddit.com/r/Kotlin/comments/iuxzsa/kotlin_for_backend/
 ---
 Hello everyone!
 I was thinking of using GraphQL with Kotlin for my server side of my web application. Now there are a lot of frameworks and all of them have their own features but I just wanted to know which of them will be most compatible with GraphQL. Have anyone of you worked with GraphQL and built the server side without any trouble?
 For now I'm thinking about Javalin or Micronaut. I'm considering Vert.x (but listened it's steeper to learn) and Spring (didn't find anything related to Graphql on their website) too.
-## [5][Using createPortal in functionalComponent of Kotlin-react](https://www.reddit.com/r/Kotlin/comments/iui3th/using_createportal_in_functionalcomponent_of/)
+## [7][Using createPortal in functionalComponent of Kotlin-react](https://www.reddit.com/r/Kotlin/comments/iui3th/using_createportal_in_functionalcomponent_of/)
 - url: https://www.reddit.com/r/Kotlin/comments/iui3th/using_createportal_in_functionalcomponent_of/
 ---
 Does anyone have some idea how to use createPortal in kotlin-react for example to render a modal? i have tried several ways and nothing is working. I´m new at Kotlin. Here is one way i tryed:
@@ -86,13 +100,13 @@ its just how its working in good old TS and i tried to transfer it to kotlin-rea
 &amp;#x200B;
 
 It would be nice if some could give me an example of how implement this example correct in react-kotlin.
-## [6][Thread within coroutine](https://www.reddit.com/r/Kotlin/comments/iuqh7t/thread_within_coroutine/)
+## [8][Thread within coroutine](https://www.reddit.com/r/Kotlin/comments/iuqh7t/thread_within_coroutine/)
 - url: https://www.reddit.com/r/Kotlin/comments/iuqh7t/thread_within_coroutine/
 ---
 Is this a bad idea or is it fine?
 
 Because when I'm done writing to a file I flush it but the flush function uses synchronized block so I start a thread within a coroutine to run the flush function but this has weird side effects (very strange bugs I can't really explain right now).
-## [7][Is *variable interop with Java broken in 1.4.10?](https://www.reddit.com/r/Kotlin/comments/iuncdv/is_variable_interop_with_java_broken_in_1410/)
+## [9][Is *variable interop with Java broken in 1.4.10?](https://www.reddit.com/r/Kotlin/comments/iuncdv/is_variable_interop_with_java_broken_in_1410/)
 - url: https://www.reddit.com/r/Kotlin/comments/iuncdv/is_variable_interop_with_java_broken_in_1410/
 ---
 [Screenshot of the below code.](https://imgur.com/a/Wf7wHOg)
@@ -125,35 +139,7 @@ What I get:
 Also:
 
     The spread operator (*foo) may only be applied in a vararg position.
-## [8][Discover Zoe, the new Kafka CLI written in Kotlin and the story behind it : )](https://www.reddit.com/r/Kotlin/comments/itvh82/discover_zoe_the_new_kafka_cli_written_in_kotlin/)
+## [10][Discover Zoe, the new Kafka CLI written in Kotlin and the story behind it : )](https://www.reddit.com/r/Kotlin/comments/itvh82/discover_zoe_the_new_kafka_cli_written_in_kotlin/)
 - url: https://medium.com/@adevinta_techblog/zoe-the-kafka-cli-for-humans-3e01584d0d3f
----
-
-## [9][ConcurrentModificationException](https://www.reddit.com/r/Kotlin/comments/iu4odb/concurrentmodificationexception/)
-- url: https://www.reddit.com/r/Kotlin/comments/iu4odb/concurrentmodificationexception/
----
-Hey guys,
-
-I'm a Kotlin newcomer and I'm trying to get a solution for a small script I wrote in which I try to remove an element from a list if a condition is tested true. I'm getting stuck at this ConcurrentModificationException error. I didn't want to use iterators because the list I'm trying to modify is inserted in a nested loop, and that would become hard to manage. 
-
-So I tried to look for some solutions on the Internet and on stackoverflow I found that Kotlin implements the .removeIf method to use in these very cases. Problem is it doesn't seem to work properly.
-
-In particular, this example I've been trying on is not working: 
-
-    fun main () {
-     
-        var lista = mutableListOf("Nicola","Simon","Anna","Gianni","Mario")
-        
-        for (name in lista) {
-            lista.removeIf{it == "Anna"}
-        }
-         
-    }
-
-Can someone explain to me where I am wrong?
-
-Thanks a lot!
-## [10][Which one do you choose? : Flutter Vs. Kotlin](https://www.reddit.com/r/Kotlin/comments/iuftgh/which_one_do_you_choose_flutter_vs_kotlin/)
-- url: https://kodytechnolab.com/flutter-vs-kotlin-comparison
 ---
 

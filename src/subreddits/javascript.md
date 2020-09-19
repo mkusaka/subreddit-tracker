@@ -7,45 +7,57 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [2][Visualize Data Structures in VSCode](https://www.reddit.com/r/javascript/comments/iv1ksi/visualize_data_structures_in_vscode/)
-- url: https://addyosmani.com/blog/visualize-data-structures-vscode/
+## [2][Showoff Saturday (September 19, 2020)](https://www.reddit.com/r/javascript/comments/ivr3xo/showoff_saturday_september_19_2020/)
+- url: https://www.reddit.com/r/javascript/comments/ivr3xo/showoff_saturday_september_19_2020/
+---
+Did you find or create something cool this week in javascript? 
+
+Show us here!
+## [3][VueJS 3.0 has been released](https://www.reddit.com/r/javascript/comments/iv9kf5/vuejs_30_has_been_released/)
+- url: https://github.com/vuejs/vue-next/releases/tag/v3.0.0
 ---
 
-## [3][How we wrote the Fastest JavaScript UI Framework, Again!](https://www.reddit.com/r/javascript/comments/iv376z/how_we_wrote_the_fastest_javascript_ui_framework/)
+## [4][I made a scraper that finds the best senior, remote JS jobs posted every week on the Internet](https://www.reddit.com/r/javascript/comments/ivpynf/i_made_a_scraper_that_finds_the_best_senior/)
+- url: https://blog.noicejobs.com/best-senior-javascript-remote-jobs-between-sep-11-and-sep-18/
+---
+
+## [5][Deno 1.4 - "Our largest release yet"](https://www.reddit.com/r/javascript/comments/ivi0wd/deno_14_our_largest_release_yet/)
+- url: https://deno.land/posts/v1.4
+---
+
+## [6][[AskJS] localStorage vs IndexedDB](https://www.reddit.com/r/javascript/comments/ivq27f/askjs_localstorage_vs_indexeddb/)
+- url: https://www.reddit.com/r/javascript/comments/ivq27f/askjs_localstorage_vs_indexeddb/
+---
+When would I want to use local storage over IndexedDB?
+
+There's the `localforage` package that gives me access to IndedexDB with a simpler API, so I no longer see the point in using local storage at all.
+
+Am I missing something?
+## [7][Social Media Cross-Platform App Development Made Simple](https://www.reddit.com/r/javascript/comments/ivs6lh/social_media_crossplatform_app_development_made/)
+- url: https://github.com/awwabtahir/Social-Media-IOS-Andriod-App#social-media-cross-platform-app-development-made-simple
+---
+
+## [8][Made an HTML5/JS template for Portfolio website. I'd appreciate any feedback and feel free to use it. An SPA with hash-router, search, filter, error handling, dark-mode, hot-key detection, and everything is managed out of a JSON file. The site can be hosted with GH-Pages or any static hosting.](https://www.reddit.com/r/javascript/comments/ivqzzb/made_an_html5js_template_for_portfolio_website_id/)
+- url: https://github.com/GuptaSiddhant/LifeLine
+---
+
+## [9][Save the Date: AMA on developer tools and hacks with Chris Heilmann and Marie Hoeger](https://www.reddit.com/r/javascript/comments/ivoqdb/save_the_date_ama_on_developer_tools_and_hacks/)
+- url: https://createserverlessopenmic5.splashthat.com/
+---
+
+## [10][[AskJS] How to convert Blob url to file object ?](https://www.reddit.com/r/javascript/comments/ivr1vq/askjs_how_to_convert_blob_url_to_file_object/)
+- url: https://www.reddit.com/r/javascript/comments/ivr1vq/askjs_how_to_convert_blob_url_to_file_object/
+---
+I need to send File object to my flask server    
+example:    
+blob_url = "blob:http://127.0.0.1:5000/86e4285a-65ee-4af8-a8b8-aa79ccb1ed91"   
+var image = new File([blob_url], "image.jpg");   
+Doesn't work
+## [11][How we wrote the Fastest JavaScript UI Framework, Again!](https://www.reddit.com/r/javascript/comments/iv376z/how_we_wrote_the_fastest_javascript_ui_framework/)
 - url: https://medium.com/@ryansolid/how-we-wrote-the-fastest-javascript-ui-framework-again-db097ddd99b6
 ---
 
-## [4][Yesterday, I released v1.1.0 of Halfmoon, a Bootstrap alternative with a built-in dark mode. It is also fully customizable using CSS variables, and uses plain vanilla JS (no jQuery)](https://www.reddit.com/r/javascript/comments/iul1qb/yesterday_i_released_v110_of_halfmoon_a_bootstrap/)
-- url: https://www.gethalfmoon.com/
----
-
-## [5][[Robot] Generate Google Slides from Wikipedia content](https://www.reddit.com/r/javascript/comments/iv4okp/robot_generate_google_slides_from_wikipedia/)
-- url: https://github.com/vilmacio/gslides-maker
----
-
-## [6][Archive Inactive Slack Channels on a Schedule using Node.js and Autocode](https://www.reddit.com/r/javascript/comments/iv1bbp/archive_inactive_slack_channels_on_a_schedule/)
-- url: https://autocode.com/app/threesided/slack-archive-channels/
----
-
-## [7][I recently released the first version of my IDE, IcicleDevelop. I build it using Electron. It's pretty lightweight and fast. It isn't feature packed, but it's a step in the right direction, I hope.](https://www.reddit.com/r/javascript/comments/iuxr3u/i_recently_released_the_first_version_of_my_ide/)
-- url: https://github.com/icedjuro/IcicleDevelop
----
-
-## [8][Liaison 1.0 Is Out — A Set of JS/TS Libraries to Dramatically Simplify the Development of Full-Stack Applications](https://www.reddit.com/r/javascript/comments/iv5rfg/liaison_10_is_out_a_set_of_jsts_libraries_to/)
-- url: https://liaison.dev/
----
-
-## [9][Mastering JavaScript high performance - Learn how JavaScript engines work and how you can help them optimize your JavaScript code. Become a master of micro-optimizations. Know all about when to avoid and when to use them.](https://www.reddit.com/r/javascript/comments/iuiyft/mastering_javascript_high_performance_learn_how/)
-- url: https://marcradziwill.com/blog/mastering-javascript-high-performance/
----
-
-## [10][[AskJS] Thoughts on hyperapp?](https://www.reddit.com/r/javascript/comments/iuhe5y/askjs_thoughts_on_hyperapp/)
-- url: https://www.reddit.com/r/javascript/comments/iuhe5y/askjs_thoughts_on_hyperapp/
----
-What are your thoughts on hyperapp? It's yet another JS framework, but I haven't seen it being discussed a whole lot.
-
-Link to the repo: [https://github.com/jorgebucaran/hyperapp](https://github.com/jorgebucaran/hyperapp)
-## [11][I made a todo app that is actually usable](https://www.reddit.com/r/javascript/comments/iuxw9y/i_made_a_todo_app_that_is_actually_usable/)
-- url: https://github.com/aditya-azad/destined
+## [12][Announcing TypeScript 4.1 Beta](https://www.reddit.com/r/javascript/comments/ivdamj/announcing_typescript_41_beta/)
+- url: https://devblogs.microsoft.com/typescript/announcing-typescript-4-1-beta/
 ---
 

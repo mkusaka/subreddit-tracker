@@ -111,192 +111,105 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/iaggwf/whos_available_august_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/ikn3vo/whos_hiring_september_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][I made a Full Stack App with React and Django](https://www.reddit.com/r/reactjs/comments/iuz8pk/i_made_a_full_stack_app_with_react_and_django/)
+## [3][Music Analyzer - MERN Stack Web app using the Spotify API](https://www.reddit.com/r/reactjs/comments/ivotz2/music_analyzer_mern_stack_web_app_using_the/)
+- url: https://www.reddit.com/r/reactjs/comments/ivotz2/music_analyzer_mern_stack_web_app_using_the/
+---
+Hi everyone !
+
+I want to share with you an interesting project I have been working on recently.
+
+Spotify have an amazing API that anyone can use to get info about music from their repository.
+
+ A very interesting feature that I was exposed to is called Audio Features, which contains metrics about the nature of the song. 
+
+Like: denceability, how suitable a song is for dancing
+
+ energy, how fast and noisy the song is.
+
+An interesting idea that came to my mind is to use these parameters to compare the nature of the music of different artists according to their most famous song metrics.
+
+I built a website that allows you to make the comparison and see the results on a graph.
+
+ Link to website: [https://music-analyze.herokuapp.com/](https://music-analyze.herokuapp.com/)
+
+ The project has been uploaded to GitHub, feel free to use it as you wish: [https://github.com/stavelmashally/music-analyzer](https://github.com/stavelmashally/music-analyzer) 
+
+The project was built using React &amp; Node.js. 
+
+I would love to receive suggestions for improvement or addition of additional features.
+## [4][Looking for feedback! I built a website that helps you practice frontend skills through projects.](https://www.reddit.com/r/reactjs/comments/ivhvvq/looking_for_feedback_i_built_a_website_that_helps/)
+- url: https://www.reddit.com/r/reactjs/comments/ivhvvq/looking_for_feedback_i_built_a_website_that_helps/
+---
+Hey everyone!
+
+A few months ago, I [made a post on Reddit](https://www.reddit.com/r/learnjavascript/comments/gu38sc/help_how_long_have_you_been_selfstudying/) to understand how I could help others with their frontend journey. I've noticed that people have a hard time build projects, despite them being a really good way to improve technical skills.
+
+I created a website ([https://www.codeaway.io/](https://www.codeaway.io/)) that provides frontend developers with [ready-to-go projects](https://www.codeaway.io/restaurant-recommendations) that they can use to practice their technical skills while they're on the job search or at their current role.
+
+I'd appreciate your feedback on the website and any suggestions for projects/skills you'd want to work on!
+## [5][Vue 3.0](https://www.reddit.com/r/reactjs/comments/iv9uu7/vue_30/)
+- url: https://github.com/vuejs/vue-next/releases/tag/v3.0.0
+---
+
+## [6][Learning to Think in React by Building a Shopping Cart using Vanilla JS and then React](https://www.reddit.com/r/reactjs/comments/ivpkke/learning_to_think_in_react_by_building_a_shopping/)
+- url: https://youtu.be/LDKnz5gwdz4?t=6
+---
+
+## [7][Portfolio Feedback. Am I job ready?](https://www.reddit.com/r/reactjs/comments/ivjnwo/portfolio_feedback_am_i_job_ready/)
+- url: https://www.reddit.com/r/reactjs/comments/ivjnwo/portfolio_feedback_am_i_job_ready/
+---
+Hello dear friends,
+
+For the past 7 months I have been focusing on learning front-end web development. I have completed first 4 certificate programs on freecodecamp and watched some courses and tutorials on Udemy, Scrimba and Youtube.
+
+Currently my tech stack is Javascript, React, HTML5, CSS, Sass (SCSS), Bootstrap, D3.js, Git. And I have some understanding of Redux, jQuery, BEM. And also some basic knowledge previously learnt in Python and SQL.
+
+So I have created a [portfolio site](https://konstantinkrumin.github.io/#/) with all my front-end projects and hosted it on Github Pages. It is basically the main portfolio website that has links on separately deployed 16 projects that I have worked on (everything should be mobile friendly and work well on bigger resolution screens as well). All projects were built with React and using Create-React-App.
+
+Could you please checkout my portfolio website and provide some feedback? Please let me know if you find any bugs or design issues.
+
+And also based on what you see, could you tell me whether am I ready to start looking for a job as a junior developer or there are some things that you would recommend to work on (whether some other technology to learn or improve my knowledge in my current stack).
+
+Deployed website: [konstantinkrumin.github.io](https://konstantinkrumin.github.io/#/)
+
+My code and documentation: [github repository](https://github.com/konstantinkrumin/konstantinkrumin.github.io/tree/master)
+
+Cheers,
+
+Konstantin :)
+## [8][I cloned myself to explain Dynamic Data in React js for beginners, can you please check it out and provide your feedback. Thank you.](https://www.reddit.com/r/reactjs/comments/ivq4z0/i_cloned_myself_to_explain_dynamic_data_in_react/)
+- url: https://youtu.be/KKIFRBkI7Vw
+---
+
+## [9][I made a Full Stack App with React and Django](https://www.reddit.com/r/reactjs/comments/iuz8pk/i_made_a_full_stack_app_with_react_and_django/)
 - url: https://v.redd.it/a95vvjls0un51
 ---
 
-## [4][Building complex animations with React and Framer Motion](https://www.reddit.com/r/reactjs/comments/iukir6/building_complex_animations_with_react_and_framer/)
-- url: https://able.bio/drenther/building-complex-animations-with-react-and-framer-motion--2d5cbc0e
+## [10][Some updates on Relatable](https://www.reddit.com/r/reactjs/comments/ivrlmq/some_updates_on_relatable/)
+- url: https://www.reddit.com/r/reactjs/comments/ivrlmq/some_updates_on_relatable/
 ---
+Hey guys I made some updates on my web app Relatable, now you can only vote once and if you want to keep track of your posts you can sign up!  Still not a lot of content to browse so I'm counting on you, and thanks for your feedback
 
-## [5][Is there a good app that shows how to properly setup and do unit and integration testing using Jest?](https://www.reddit.com/r/reactjs/comments/iuuk80/is_there_a_good_app_that_shows_how_to_properly/)
-- url: https://www.reddit.com/r/reactjs/comments/iuuk80/is_there_a_good_app_that_shows_how_to_properly/
+[Relatable](https://dry-reaches-23822.herokuapp.com/browse)
+## [11][Rewrote my previous ugly portfolio in React](https://www.reddit.com/r/reactjs/comments/ivqzb2/rewrote_my_previous_ugly_portfolio_in_react/)
+- url: https://www.reddit.com/r/reactjs/comments/ivqzb2/rewrote_my_previous_ugly_portfolio_in_react/
 ---
-Just trying to learn by looking at the best examples available online. Is there any project on GitHub you would recommend?
-## [6][Google calendar api problem with dates](https://www.reddit.com/r/reactjs/comments/iv4q2l/google_calendar_api_problem_with_dates/)
-- url: https://www.reddit.com/r/reactjs/comments/iv4q2l/google_calendar_api_problem_with_dates/
+After multiple tries to find a design or make the portfolio, like i had pictured in mind and on my paper sketches, i finally came through.
+
+React only helped for routing and the component structure,but was familiar with the framework so, why not! 
+
+Inspired by tons of dribbble shots and amazing dev portfolios seen here on other sites.
+
+[https://rajatkulkarni.dev/](https://rajatkulkarni.dev/)
+
+Check the source here  [https://github.com/rajatkulkarni95/portfolio-v3](https://github.com/rajatkulkarni95/portfolio-v3)
+
+Let me know what you people think of it, and would recruiters find this good to give me a call back!!
+## [12][Is react-query needed when using Firestore realtime updates?](https://www.reddit.com/r/reactjs/comments/ivqlg6/is_reactquery_needed_when_using_firestore/)
+- url: https://www.reddit.com/r/reactjs/comments/ivqlg6/is_reactquery_needed_when_using_firestore/
 ---
-Hello everyone. So i am trying to import events from my google calendar and everything seems to be okay except for the events that are one day only for example independence day. It's 4th of july and it shows like: 4th of july-5th of july. So the question is how can I check if the event is one day only or is there any other way to fix this issue? thanks a lot!
-## [7][What is a better resumé project: Facebook Clone, Youtube Clone, Amazon Clone, Pinterest Clone?](https://www.reddit.com/r/reactjs/comments/iv4nzy/what_is_a_better_resumé_project_facebook_clone/)
-- url: https://www.reddit.com/r/reactjs/comments/iv4nzy/what_is_a_better_resumé_project_facebook_clone/
----
-I know there are thousands of personal projects that don't involve cloning an existent website. However from the feedback I have been receiving from recruiters, making a clone is very helpful as they immediately understand what the project is when they read the title.
-## [8][Mutation works fine at graphql playground but at the front end i am seeing this error and not working](https://www.reddit.com/r/reactjs/comments/iv3s81/mutation_works_fine_at_graphql_playground_but_at/)
-- url: /r/reactnative/comments/iv3me1/mutation_works_fine_at_graphql_playground_but_at/
----
+In the past I have used Firestore realtime updates along with Redux but lately I've been convinced that I've been putting too much server state into my redux store, which I agree with. Therefore, I decided to try out `react-query` which looks amazing but I don't think it makes sense to use with realtime updates. It seems perfect for apps which use a traditional REST endpoint to prevent unnecessary calls and the caching mechanism is genius to allow you to use hooks to replace storing your remote state along with client state.
 
-## [9][Any caveats to using Next.js?](https://www.reddit.com/r/reactjs/comments/iuswby/any_caveats_to_using_nextjs/)
-- url: https://www.reddit.com/r/reactjs/comments/iuswby/any_caveats_to_using_nextjs/
----
-Hi,
+&amp;nbsp;
 
-I've heard a lot of good things about Next.js, tried it for a pet project, and liked the overall developer experience. I haven't used it for anything big though; and now, when considering migration of a fairly large and growing project from vanilla React over to Next, I would love to hear about your experience with it and whether there are any caveats that you've discovered and would like to share. Like, isn't the file-based routing giving you troubles? Do you use Next's `/api` routes, are you upset that they can only exist under the `/api` namespace, and have you been bitten by the fact that Next automatically parses request body (as discussed [here](https://github.com/vercel/next.js/discussions/11036))? Are you happy with your choice or would you have chosen different tools/frameworks/tech stack if given another chance?
-## [10][Items are not displayed after being pushed to an array](https://www.reddit.com/r/reactjs/comments/iv3gd9/items_are_not_displayed_after_being_pushed_to_an/)
-- url: https://www.reddit.com/r/reactjs/comments/iv3gd9/items_are_not_displayed_after_being_pushed_to_an/
----
-Hi,
-
-I am doing a project with pure Javascript I stuck at the moment when pushed items are not shown on the page.
-
-&amp;#x200B;
-
-[See the pic here](https://drive.google.com/file/d/1HAiVxqFlVKnf66swaAthHgy06fRe7PT1/view?usp=sharing)
-
-&amp;#x200B;
-
-As you can see from the picture, items should be shown above after being clicked (pushed to `answer` array), with react it is simple vy using setState, how can I achieve the same with javascript.
-
-Please pay attention to these ones.
-
-`const answer = [];`
-
-`&lt;div class="answer-field"&gt;${answer.map((ans) =&gt; (\&lt;button value=${ans} class="word"&gt;${ans}&lt;/button&gt;\`    )).join(' ')}  &lt;/div&gt;\``
-
-`word.forEach(item =&gt; item.addEventListener('click', (e) =&gt; {answerFunc(e.target.value);console.log(e.target.value);}))`
-
-&amp;#x200B;
-
-//Entire code
-
- 
-
-`const board = document.querySelector('.board');`  
-`const tts = window.speechSynthesis;`  
-`let incr = 0;`  
-`const randomWordsArr = [];`  
-`const answer = [];`  
-
-
-`data.map((obj) =&gt; {`  
- `splittedStr = obj.engPhrase.split(" ");`  
- `return randomWordsArr.push(...splittedStr);`  
-`});`  
-`//console.log('line 11', randomWordsArr);`  
-`function shuffle(array) {`  
- `var currentIndex = array.length, temporaryValue, randomIndex;`  
- `// While there remain elements to shuffle...`  
- `while (0 !== currentIndex) {`  
- `// Pick a remaining element...`  
- `randomIndex = Math.floor(Math.random() * currentIndex);`  
- `currentIndex -= 1;`  
- `// And swap it with the current element.`  
- `temporaryValue = array[currentIndex];`  
- `array[currentIndex] = array[randomIndex];`  
- `array[randomIndex] = temporaryValue;`  
-  `}`  
- `return array;`  
-`}`  
-
-
-`board.innerHTML =`  
- `\``  
-  `&lt;div class="target-lang-container"&gt;`  
-`&lt;img src=${data[incr].pic} /&gt;`  
-`&lt;div class="speech-bubble"&gt;`  
-`&lt;div class="sent-container"&gt;`  
-`&lt;img id="speaker" src="/assets/speaker.svg" /&gt;`  
- `${data[incr].phraseByWord.map((word) =&gt; {`  
- `return \`&lt;button value=${word.word} class="word-item ${word.highlighted &amp;&amp; 'highlighted'}"&gt;${word.word}&lt;/button&gt;\`;`  
-  `}).join(' ')}`  
-`&lt;/div&gt;`  
-`&lt;/div&gt;`  
-  `&lt;/div&gt;`  
-  `&lt;div class="answer-field"&gt;`  
- `${answer.map((ans) =&gt; (`  
- `\`&lt;button value=${ans} class="word"&gt;${ans}&lt;/button&gt;\``  
-`)).join(' ')}`  
-  `&lt;/div&gt;`  
-  `&lt;div class="random-words-field"&gt;`  
- `${shuffle(randomWordsArr).map((item) =&gt; (`  
- `\`&lt;button value=${item} class="word"&gt;${item}&lt;/button&gt;\``  
-  `)).join(' ')`  
- `}`  
-  `&lt;/div&gt;`  
-  `\`;`  
-
-
-`const speaker = document.getElementById('speaker');`  
-`const speak = (phrase, lang) =&gt; {`  
- `let toSpeak = new SpeechSynthesisUtterance(phrase);`  
- `toSpeak.lang = lang;`  
- `tts.speak(toSpeak);`  
-`};`  
-`speaker.addEventListener('click', () =&gt; {`  
- `speak(data[incr].frPhrase, 'fr-FR');`  
-`});`  
-`const wordItems = document.querySelectorAll('.word-item');`  
-`const word = document.querySelectorAll('.word');`  
-`//console.log(wordItems)`  
-`wordItems.forEach(wordItem =&gt; wordItem.addEventListener('mouseover', (e) =&gt; {`  
- `//console.log(e.target.value);`  
- `speak(e.target.value, 'fr-FR');`  
-`}));`  
-`function answerFunc(val) {`  
- `return answer.push(val)`  
-`}`  
-`word.forEach(item =&gt; item.addEventListener('click', (e) =&gt; {`  
- `answerFunc(e.target.value);`  
- `console.log(e.target.value);`  
-`}))`  
-
-## [11][I've created this online tool http://appiconhero.co/](https://www.reddit.com/r/reactjs/comments/iv34im/ive_created_this_online_tool_httpappiconheroco/)
-- url: https://www.reddit.com/r/reactjs/comments/iv34im/ive_created_this_online_tool_httpappiconheroco/
----
-At first, I use Reactjs to build app, but soon I recognize that CSR is not good for SEO, so I convert them to Nextjs, just a few adjustments, the SEO increase significantly. With this tool, you can easily generate your app icons in just 1 or 2 seconds.
-## [12][Web-worker issue: Uncaught DOMException: Failed to execute 'postMessage' on 'Worker](https://www.reddit.com/r/reactjs/comments/iv2uzu/webworker_issue_uncaught_domexception_failed_to/)
-- url: https://www.reddit.com/r/reactjs/comments/iv2uzu/webworker_issue_uncaught_domexception_failed_to/
----
-Hi,
-
-I have a barchart made with chartjs in a React app. It works well, but the data parsing could be handled by a web worker so as to speed up the page loading.
-
-I have declared my web worker in a useEffect function:
-
-      let data = React.useRef([]);
-    
-      useEffect(() =&gt; {
-        const dataWorker: Worker = new Worker("./worker.ts");
-        dataWorker.postMessage({
-          msg: "formatData",
-          data: { series, theme, range },
-        });
-        dataWorker.onmessage = (e: MessageEvent) =&gt; {
-          if (e &amp;&amp; e.data) {
-            data.current = e.data;
-          }
-        };
-      }, [range, series, theme]);
-
-And the webworker is defined in a separate file worker.ts:
-
-    self.onmessage = async (e) =&gt; {
-      if (e &amp;&amp; e.data &amp;&amp; e.data.msg === "formatData") {
-        const { sortedSeries, theme, range } = e.data;
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        const data = useFormatData(sortedSeries, theme, range);
-        self.postMessage(data);
-      }
-    };
-    
-    function useFormatData(series, theme, range) {
-      return useMemo(() =&gt; {
-       // do stuff
-        };
-      }, [range, sortedSeries, theme]);
-    }
-
-The worker makes the page crash with the following error:
-
-&gt;Uncaught DOMException: Failed to execute 'postMessage' on 'Worker: function (number) { var b = number % 10, output = toInt((number...... } could not be cloned.
-
-How to fix this? Thanks!
+In my app I simply have a few "todo like" lists which users can add, edit and remove from. I store this data in Firestore and with the Firestore realtime updates I get instant updates when something changes, no need to re-fetch. Therefore, I was wondering if I should just set up these realtime subscriptions in a higher level component and use the Context API  to share the data with child components?

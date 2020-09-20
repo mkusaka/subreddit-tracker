@@ -1,192 +1,80 @@
 # golang
-## [1][Super Excited - Writing my first Golang book](https://www.reddit.com/r/golang/comments/ivdt43/super_excited_writing_my_first_golang_book/)
-- url: https://www.reddit.com/r/golang/comments/ivdt43/super_excited_writing_my_first_golang_book/
+## [1][This is a JavaScript bundler and minifier. It packages up JavaScript and TypeScript code for distribution on the web.](https://www.reddit.com/r/golang/comments/iw9kfv/this_is_a_javascript_bundler_and_minifier_it/)
+- url: https://github.com/evanw/esbuild
 ---
-Hey all :)
 
-Super pumped about this and I want to ensure I keep the community up to date. I'm writing my first Golang book and Apress is the publisher. I'll be posting stories and updates about my journey.
-
-If you'd like to follow along, check out my Twitter:  [https://twitter.com/TheNJDevOpsGuy](https://twitter.com/TheNJDevOpsGuy)
-## [2][How can I combine multiple files to one for different clients?](https://www.reddit.com/r/golang/comments/ivqv5d/how_can_i_combine_multiple_files_to_one_for/)
-- url: https://www.reddit.com/r/golang/comments/ivqv5d/how_can_i_combine_multiple_files_to_one_for/
+## [2][Typesafe database access for Go](https://www.reddit.com/r/golang/comments/iw02hp/typesafe_database_access_for_go/)
+- url: https://github.com/prisma/prisma-client-go
 ---
-Hello,
+
+## [3][YoMo is an open-source project for building your own IoT edge computing applications. With YoMo, you can speed up the development of microservices-based applications, and your industrial IoT platform will take full advantage of the low latency and high bandwidth brought by 5G.](https://www.reddit.com/r/golang/comments/iw1b3z/yomo_is_an_opensource_project_for_building_your/)
+- url: https://github.com/yomorun/yomo
+---
+
+## [4][A load testing tool with a real-time analyzer, written in Go](https://www.reddit.com/r/golang/comments/iwdx5v/a_load_testing_tool_with_a_realtime_analyzer/)
+- url: https://i.redd.it/bf5f5nb42bo51.gif
+---
+
+## [5][When should you use(or not use) a blank identifier in Go?](https://www.reddit.com/r/golang/comments/ivuzfr/when_should_you_useor_not_use_a_blank_identifier/)
+- url: https://www.youtube.com/watch?v=FKaMiSGmQoE
+---
+
+## [6][Go implementation of a WebRTC Selective Forwarding Unit](https://www.reddit.com/r/golang/comments/iw5pk0/go_implementation_of_a_webrtc_selective/)
+- url: https://github.com/pion/ion-sfu
+---
+
+## [7][[Student Research Project] Collaborated Code Reviews using Customised Static Code Analysis (Go, C#, PHP, Python)](https://www.reddit.com/r/golang/comments/iw58wn/student_research_project_collaborated_code/)
+- url: https://www.reddit.com/r/golang/comments/iw58wn/student_research_project_collaborated_code/
+---
+This year I have developed a growing interest in coding and software development. When it came time to choose a topic for my final research project at my university, I decided to conduct research about a local and interesting startup in New Zealand.
+
+They collaboratively automize code reviews by enabling teams to discuss and code their own rules using a sophisticated engine for static code analysis.
+
+Alongside interviews, I have also compiled a survey to explore how such prototype creates value for software development teams. I would like to invite you to participate in my research. Your professional input will be highly valuable for the research report and further development of this prototype.
+
+If you are interested and want to know more, it takes ten minutes to complete my survey which provides further details. Your support would be immensely appreciated. [You can find the survey here.](https://otagopolytechnic.au1.qualtrics.com/jfe/form/SV_b15riYH1K3pDkb3)
+
+Happy coding!
+## [8][Cool Stuff with Go's AST Package Pt 2: Comments and Token Positions](https://www.reddit.com/r/golang/comments/iw7zrk/cool_stuff_with_gos_ast_package_pt_2_comments_and/)
+- url: https://medium.com/@riptidedata/cool-stuff-with-gos-ast-package-pt-2-e4d39ab7e9db
+---
+
+## [9][Which of OpenTracing, OpenCensus and OpenTelemetry is better and why?](https://www.reddit.com/r/golang/comments/ivzzks/which_of_opentracing_opencensus_and_opentelemetry/)
+- url: https://www.reddit.com/r/golang/comments/ivzzks/which_of_opentracing_opencensus_and_opentelemetry/
+---
+They all looks similar and all of them are big and complicated, so it's hard to compare and choose.
+
+Is anyone using any of this instrumentations tools or any other?
+
+Why did you choose it?  
+What are pros and cons?
+## [10][Have issue with Golang structure](https://www.reddit.com/r/golang/comments/iw3bux/have_issue_with_golang_structure/)
+- url: https://www.reddit.com/r/golang/comments/iw3bux/have_issue_with_golang_structure/
+---
+I created a Database on mysql and create an Sql file to add my table to my database, i am trying to Build a CRUD app, so in my struct, the the naming is different from what is in my struct, 
+
+// Golang struct
+
+type Client struct {  
+gorm.Model  
+clientID    uint \`gorm:"primary\_key"\`  
+ActiveAt    time.Time  
+CreatedAt   time.Time  
+UpdatedAt   time.Time  
+Client\_name string  
+}
 
 &amp;#x200B;
 
-I have multiple files (around 500-2000) from 5kb to 10gb in size. The average file is about 250mb. Each user Needs to download different files. So I can't just pack it into a Zip.
+//Mysql table
 
-I don't really want to download each file separately because the connection closing/opening is taking a lot of time and the time adds up for such amounts of files.
+CREATE TABLE IF NOT EXISTS \`client\` (  
+ \`client\_id\` BIGINT UNSIGNED AUTO\_INCREMENT,  
+ \`created\_at\` DATETIME NOT NULL,  
+ \`updated\_at\` DATETIME DEFAULT CURRENT\_TIMESTAMP ON UPDATE CURRENT\_TIMESTAMP,  
+ \`active\` BOOLEAN,  
+ \`client\_name\` VARCHAR(255) NOT NULL,  
+ PRIMARY KEY (\`client\_id\`)  
+)
 
-&amp;#x200B;
-
-I was wondering if I could dynamically pack it into some sort of file format (Just storage properly) and sent this file to the users that need the files.
-
-The max amount of users that want to download files at once is about 50-80.
-## [3][Learning Go and Git together with "gogit", an implementation of git from scratch in Golang.](https://www.reddit.com/r/golang/comments/ivg4a8/learning_go_and_git_together_with_gogit_an/)
-- url: https://www.reddit.com/r/golang/comments/ivg4a8/learning_go_and_git_together_with_gogit_an/
----
-[https://github.com/ssrathi/gogit](https://github.com/ssrathi/gogit)
-
-I have always liked Git, and have recently started using Golang, both in my personal and professional projects. So the most logical thing to do is to implement parts of Git internals in Golang as a learning exercise.
-
-This is my first large scale Go project. Feedback/comments welcome!
-## [4][golang-dev : Implementing Generics](https://www.reddit.com/r/golang/comments/iv4idd/golangdev_implementing_generics/)
-- url: https://groups.google.com/forum/#!topic/golang-dev/OcW0ATRS4oM
----
-
-## [5][Is there a better way to do this?](https://www.reddit.com/r/golang/comments/ivdoat/is_there_a_better_way_to_do_this/)
-- url: https://www.reddit.com/r/golang/comments/ivdoat/is_there_a_better_way_to_do_this/
----
-TLDR; [is this code shit?](https://github.com/oze4/godaddygo)
-
-Lately, I have been learning Go. I come from a mostly Node background with some C#. So far, I have been absolutely loving it.
-
-I suppose I am getting a little "imposter syndrome" and was hoping someone would be kind enough to "review" some code I wrote?
-
-It is an SDK for the GoDaddy API (don't focus on what it is, rather how it is implemented) and is currently rather small.
-
-I just wanted to make sure I am using the correct project structure, using interfaces/structs correctly, and that I am using Go correctly.
-
-[You can find the repo, godaddygo, here](https://github.com/oze4/godaddygo)
-
-edit: if this is the wrong place for this, please let me know!
-
-edit2: why down-vote without commenting? I don't mind criticism, but I do mind lack of feedback. I'm trying to improve here...and if you don't like that ----&gt; there's the door.
-## [6][cockroachdb/pebble: RocksDB/LevelDB inspired key-value database in Go](https://www.reddit.com/r/golang/comments/iv67vp/cockroachdbpebble_rocksdbleveldb_inspired/)
-- url: https://github.com/cockroachdb/pebble
----
-
-## [7][The Most Popular Programming Languages - 1965/2020](https://www.reddit.com/r/golang/comments/ivp0pd/the_most_popular_programming_languages_19652020/)
-- url: https://youtu.be/UNSoPa-XQN0
----
-
-## [8][How do I get started with golang web development](https://www.reddit.com/r/golang/comments/ivctja/how_do_i_get_started_with_golang_web_development/)
-- url: https://www.reddit.com/r/golang/comments/ivctja/how_do_i_get_started_with_golang_web_development/
----
-Hi guys,
-
-I am a Nodejs developer, highly interested in Golang backend development
-
-can you recommend any books/courses ?
-
-someone told me this [https://www.udemy.com/course/go-programming-language/](https://www.udemy.com/course/go-programming-language/)
-
-but I am not sure if 2017 is too old
-## [9][Decoding JSON, the... a way](https://www.reddit.com/r/golang/comments/iv2zpd/decoding_json_the_a_way/)
-- url: https://www.reddit.com/r/golang/comments/iv2zpd/decoding_json_the_a_way/
----
- [https://twitter.com/caarlos0/status/1306447785831673867?s=19](https://twitter.com/caarlos0/status/1306447785831673867?s=19)
-## [10][Structs in REST API framework](https://www.reddit.com/r/golang/comments/iv67s1/structs_in_rest_api_framework/)
-- url: https://www.reddit.com/r/golang/comments/iv67s1/structs_in_rest_api_framework/
----
-I used to maintain Ruby on Rails backend and now I have to use Go-Gin + MongoDB and I find it very confusing cos I'm used to the magic in rails
-
-Let's say I have a POST Person API to create a person and PUT Person API to update a person's details.
-
-The request for POST Person API is:
-
-    {
-      "name": "John",
-      "age": 21,
-      "fav_color": "Green",
-      "current_pet": {
-         "name": Birdie",
-         "species": "parrot"
-      }
-    }
-
-The response of POST and PUT API is:
-
-    {
-      "id": "232dwdwd2-231232",
-      "name": "John",
-      "age": 21,
-      "fav_color": "Green",
-      "current_pet": {
-         "id": "43324dwdwd3d-23edwwd",
-         "name": Birdie",
-         "species": "parrot"
-      }
-    }
-
-The request for PUT Person API (PUT person/232dwdwd2-23123) is:
-
-    {
-      "fav_color": "Green" // any field that needs to be updated
-    }
-
-Although the JSON fields have the same name, for POST Person API, the person's name is required but for PUT Person API, it is not, only the fields to be updated should be supplied. To tackle this problem, I'm writing the structs 3 times in 3 diff files:
-
-    // models/person_post.go
-    
-    type PetPostResponse struct {
-      Name string `json:"name"`
-      Species string `json:"species"`
-    }
-    
-    type PersonPostResponse struct {
-      Name string `json:"name" binding:"required"`
-      Age int `json:"age"`
-      FavColor string `json:"fav_color"`
-      CurrentPet PetPostResponse `json:"current_pet"`
-    }
-
-The PUT Person API structs need BSON omit empty so that the fields that are not updated are not included in the update query of collection.FindOneAndUpdate() so that it doesn't override the old values:
-
-    // models/person_put.go
-    
-    type PetPutResponse struct {
-      Name string `bson:",omitempty" json:"name"`
-      Species string `bson:",omitempty" json:"species"`
-    }
-    
-    type PersonPutResponse struct {
-      Name string `bson:",omitempty" json:"name" binding:"required"`
-      Age int `bson:",omitempty" json:"age"`
-      FavColor string `bson:",omitempty" json:"fav_color"`
-      CurrentPet PetPutResponse `bson:",omitempty" json:"current_pet"`
-    }
-
-&amp;#x200B;
-
-    // models/person.go
-    
-    type Pet struct {
-      Id string `json:"id"`
-      Name string `json:"name"`
-      Species string `json:"species"`
-    }
-    
-    type Person struct {
-      Id primitive.ObjectID `bson:"_id,omitempty" json:"id"`
-      Name string `json:"name"`
-      Age int `json:"age"`
-      FavColor string `bson:fav_color" json:"fav_color"`
-      CurrentPet Pet `json:"current_pet"`
-    }
-
-I convert the API structs to DB structs using this helper method:
-
-    func ConvertApiToDbStruct(i interface{}) ds.Person {
-      apiStruct, ok := i.(ds.PersonPostRequest)
-      if !ok {
-        return ds.Person{} 
-      } 
-      p := ds.Person{ 
-         Name: apiStruct.Name,
-         Age: apiStruct.Age,
-         CurrentPet: ds.Pet{ 
-           Name: apiStruct.Pet.Name, 
-           Species: apiStruct.Pet.Species 
-         } 
-      } 
-      return p
-    }
-
-I would like to ask:
-
-1. Is this normal to define the struct 3 times because only the DB struct have IDs and the json and bson tags differ among them? In reality I have 17 fields but I don't know other better way to do this
-2. Is there anyway to make the ConvertApiToDbStruct more generic ? So that if I add another Person field, I don't need to add another line of code in that function
-
-Thanks so much and sorry if its confusing
+could this be the issue why my code is not working?

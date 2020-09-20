@@ -111,7 +111,65 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/iaggwf/whos_available_august_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/ikn3vo/whos_hiring_september_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Music Analyzer - MERN Stack Web app using the Spotify API](https://www.reddit.com/r/reactjs/comments/ivotz2/music_analyzer_mern_stack_web_app_using_the/)
+## [3][Dunning Kruger Effect](https://www.reddit.com/r/reactjs/comments/ivy7ic/dunning_kruger_effect/)
+- url: https://res.cloudinary.com/cinemakers/image/upload/f_auto/v1550898438/Screenshot_2019-02-22_at_22.25.14.png
+---
+
+## [4][Getting started with Microsoft Fluent UI React](https://www.reddit.com/r/reactjs/comments/iwao0l/getting_started_with_microsoft_fluent_ui_react/)
+- url: https://sumitkharche.hashnode.dev/getting-started-with-microsoft-fluent-ui-react-ckfavwvb803qt2zs19k53c58w
+---
+
+## [5][React's list items and keys](https://www.reddit.com/r/reactjs/comments/iwdfa3/reacts_list_items_and_keys/)
+- url: https://www.reddit.com/r/reactjs/comments/iwdfa3/reacts_list_items_and_keys/
+---
+I quite understand the importance and the idea of the "key" attribute when rendering lists in React. Today, however, I was trying to observe the behavior of reconciliation when not passing keys to list items. It seems to me that React hooks the state from the item with the same index in the old list in the item with the same index in the new list. So I'm concluding that React falls back to indexes when not providing keys? Am I right?
+
+Demo: [https://codesandbox.io/s/stoic-germain-853mx?file=/src/App.js](https://codesandbox.io/s/stoic-germain-853mx?file=/src/App.js)
+## [6][How to avoid name conflicts between smart and dumb Redux components?](https://www.reddit.com/r/reactjs/comments/iwcwep/how_to_avoid_name_conflicts_between_smart_and/)
+- url: https://www.reddit.com/r/reactjs/comments/iwcwep/how_to_avoid_name_conflicts_between_smart_and/
+---
+First of all, I love the idea of splitting components into smart/containers (which retrieve data from the store) and dumb/presentational ones (which simply render things). Makes them much easier to work with.
+
+My problem is that their names are often duplicated. For example: 
+
+    // Presentational component
+
+    export function PurchaseButton(props) {
+        return (
+            &lt;button&gt;Purchase {props.count} items&lt;/button&gt;
+        );
+    }
+    
+    // Container component
+    import {PurchaseButton as PurchaseButtonPresentation} from '../presentation/purchase-button';
+
+    export function PurchaseButton() {
+        const orderItems = useSelector(state =&gt; getOrderItems(state));
+        return &lt;PurchaseButtonPresentation count={orderItems.length} /&gt;;
+    }
+
+As you can see, I had to rename the import to be able to use it in my container component, which has the same name.
+
+But an even bigger issue are automatic imports in IDEs. When I start typing `PurchaseB...`, the IDE suggests to import `PurchaseButton` automatically. But there are multiple components with this name in the project. So before agreeing to import the button, I need to  look at the suggested options very carefully and make sure that I am importing what I want (e.g. the presentational component, not the container). And the first auto-import suggestion is often wrong.
+
+Here are some suggested solutions I've heard:
+
+- Using default exports. I don't know why this was even suggested - not only they don't solve the problems of auto-imports, but bring a few new ones, being a bad practice in general.
+- Renaming things on import to avoid name conflicts. This is what I'm doing right now in my example, but, as I said before, there are still issues with automatic import suggestions.
+- Using prefixes or suffixes for component names (e.g. `PurchaseButtonContainer` and `PurchaseButtonPresentation`). This seems sensible, but I've never ever seen this. Every code base I've worked with had `&lt;Panel&gt;&lt;PurchaseButton /&gt;&lt;/Panel&gt;`, not something like `&lt;PanelPresentation&gt;&lt;PurchaseButtonContainer /&gt;&lt;/PanelPresentation&gt;`. The lack of a common approach to this is the only thing stopping me from using these.
+
+Is there a commonly accepted solution for this naming problem?
+
+Thanks!
+## [7][Is it true that HOC and render props are not popular to use anymore?](https://www.reddit.com/r/reactjs/comments/iw485u/is_it_true_that_hoc_and_render_props_are_not/)
+- url: https://www.reddit.com/r/reactjs/comments/iw485u/is_it_true_that_hoc_and_render_props_are_not/
+---
+How frequently do you see the following in your own code base?
+
+HOCs
+Render props
+Hooks
+## [8][Music Analyzer - MERN Stack Web app using the Spotify API](https://www.reddit.com/r/reactjs/comments/ivotz2/music_analyzer_mern_stack_web_app_using_the/)
 - url: https://www.reddit.com/r/reactjs/comments/ivotz2/music_analyzer_mern_stack_web_app_using_the/
 ---
 Hi everyone !
@@ -137,79 +195,29 @@ I built a website that allows you to make the comparison and see the results on 
 The project was built using React &amp; Node.js. 
 
 I would love to receive suggestions for improvement or addition of additional features.
-## [4][Looking for feedback! I built a website that helps you practice frontend skills through projects.](https://www.reddit.com/r/reactjs/comments/ivhvvq/looking_for_feedback_i_built_a_website_that_helps/)
-- url: https://www.reddit.com/r/reactjs/comments/ivhvvq/looking_for_feedback_i_built_a_website_that_helps/
+## [9][Component/library for creating desktop-like windows?](https://www.reddit.com/r/reactjs/comments/iw8y6y/componentlibrary_for_creating_desktoplike_windows/)
+- url: https://www.reddit.com/r/reactjs/comments/iw8y6y/componentlibrary_for_creating_desktoplike_windows/
 ---
-Hey everyone!
+Hi,
 
-A few months ago, I [made a post on Reddit](https://www.reddit.com/r/learnjavascript/comments/gu38sc/help_how_long_have_you_been_selfstudying/) to understand how I could help others with their frontend journey. I've noticed that people have a hard time build projects, despite them being a really good way to improve technical skills.
+I'm working on a project using React where I need to create something akin to a Windows desktop in the browser. I've been looking for a component or library that can provide windowing capabilities like you'd see in a typical Windows desktop, but I've come up empty.
 
-I created a website ([https://www.codeaway.io/](https://www.codeaway.io/)) that provides frontend developers with [ready-to-go projects](https://www.codeaway.io/restaurant-recommendations) that they can use to practice their technical skills while they're on the job search or at their current role.
+Does anyone know of any you can point me at before I go through the effort of making one myself?
 
-I'd appreciate your feedback on the website and any suggestions for projects/skills you'd want to work on!
-## [5][Vue 3.0](https://www.reddit.com/r/reactjs/comments/iv9uu7/vue_30/)
-- url: https://github.com/vuejs/vue-next/releases/tag/v3.0.0
+Thanks!
+## [10][Is it a good idea to replace redux with apollo and GraphQL when using Django with React](https://www.reddit.com/r/reactjs/comments/iwbir9/is_it_a_good_idea_to_replace_redux_with_apollo/)
+- url: https://www.reddit.com/r/reactjs/comments/iwbir9/is_it_a_good_idea_to_replace_redux_with_apollo/
 ---
+ I am starting a new project from scratch and I decided to use Django with React. But when I say react there are many developers who use redux as an essential library for state management but I think redux adds a lot of complexity in code. So I searched an alternative for this and I found some developers are not using redux at all instead they are using GraphQL + Apollo as an alternative. And I found this beautiful repository as well on Github that uses the Django with React but this is not using redux at all.
 
-## [6][Learning to Think in React by Building a Shopping Cart using Vanilla JS and then React](https://www.reddit.com/r/reactjs/comments/ivpkke/learning_to_think_in_react_by_building_a_shopping/)
-- url: https://youtu.be/LDKnz5gwdz4?t=6
----
+*Link to a package.json file of that GitHub repository* \- [https://github.com/mirumee/saleor-dashboard/blob/0d9f8662299a98de4c89bbdf5b8142a0e1790bc7/package.json](https://github.com/mirumee/saleor-dashboard/blob/0d9f8662299a98de4c89bbdf5b8142a0e1790bc7/package.json)
 
-## [7][Portfolio Feedback. Am I job ready?](https://www.reddit.com/r/reactjs/comments/ivjnwo/portfolio_feedback_am_i_job_ready/)
-- url: https://www.reddit.com/r/reactjs/comments/ivjnwo/portfolio_feedback_am_i_job_ready/
----
-Hello dear friends,
-
-For the past 7 months I have been focusing on learning front-end web development. I have completed first 4 certificate programs on freecodecamp and watched some courses and tutorials on Udemy, Scrimba and Youtube.
-
-Currently my tech stack is Javascript, React, HTML5, CSS, Sass (SCSS), Bootstrap, D3.js, Git. And I have some understanding of Redux, jQuery, BEM. And also some basic knowledge previously learnt in Python and SQL.
-
-So I have created a [portfolio site](https://konstantinkrumin.github.io/#/) with all my front-end projects and hosted it on Github Pages. It is basically the main portfolio website that has links on separately deployed 16 projects that I have worked on (everything should be mobile friendly and work well on bigger resolution screens as well). All projects were built with React and using Create-React-App.
-
-Could you please checkout my portfolio website and provide some feedback? Please let me know if you find any bugs or design issues.
-
-And also based on what you see, could you tell me whether am I ready to start looking for a job as a junior developer or there are some things that you would recommend to work on (whether some other technology to learn or improve my knowledge in my current stack).
-
-Deployed website: [konstantinkrumin.github.io](https://konstantinkrumin.github.io/#/)
-
-My code and documentation: [github repository](https://github.com/konstantinkrumin/konstantinkrumin.github.io/tree/master)
-
-Cheers,
-
-Konstantin :)
-## [8][I cloned myself to explain Dynamic Data in React js for beginners, can you please check it out and provide your feedback. Thank you.](https://www.reddit.com/r/reactjs/comments/ivq4z0/i_cloned_myself_to_explain_dynamic_data_in_react/)
-- url: https://youtu.be/KKIFRBkI7Vw
+**So, Is this a good idea of using Apollo + GraphQL instead of redux?**
+## [11][Scroll to Top (Back To Top) - React , Gatsby and MaterialUI](https://www.reddit.com/r/reactjs/comments/iw7zzi/scroll_to_top_back_to_top_react_gatsby_and/)
+- url: https://www.youtube.com/watch?v=zwCaIrZ64M4
 ---
 
-## [9][I made a Full Stack App with React and Django](https://www.reddit.com/r/reactjs/comments/iuz8pk/i_made_a_full_stack_app_with_react_and_django/)
-- url: https://v.redd.it/a95vvjls0un51
+## [12][The importance and use of React Hooks(useState) with React Native.](https://www.reddit.com/r/reactjs/comments/iw7ush/the_importance_and_use_of_react_hooksusestate/)
+- url: https://youtu.be/dmv8Vcm9c-U
 ---
 
-## [10][Some updates on Relatable](https://www.reddit.com/r/reactjs/comments/ivrlmq/some_updates_on_relatable/)
-- url: https://www.reddit.com/r/reactjs/comments/ivrlmq/some_updates_on_relatable/
----
-Hey guys I made some updates on my web app Relatable, now you can only vote once and if you want to keep track of your posts you can sign up!  Still not a lot of content to browse so I'm counting on you, and thanks for your feedback
-
-[Relatable](https://dry-reaches-23822.herokuapp.com/browse)
-## [11][Rewrote my previous ugly portfolio in React](https://www.reddit.com/r/reactjs/comments/ivqzb2/rewrote_my_previous_ugly_portfolio_in_react/)
-- url: https://www.reddit.com/r/reactjs/comments/ivqzb2/rewrote_my_previous_ugly_portfolio_in_react/
----
-After multiple tries to find a design or make the portfolio, like i had pictured in mind and on my paper sketches, i finally came through.
-
-React only helped for routing and the component structure,but was familiar with the framework so, why not! 
-
-Inspired by tons of dribbble shots and amazing dev portfolios seen here on other sites.
-
-[https://rajatkulkarni.dev/](https://rajatkulkarni.dev/)
-
-Check the source here  [https://github.com/rajatkulkarni95/portfolio-v3](https://github.com/rajatkulkarni95/portfolio-v3)
-
-Let me know what you people think of it, and would recruiters find this good to give me a call back!!
-## [12][Is react-query needed when using Firestore realtime updates?](https://www.reddit.com/r/reactjs/comments/ivqlg6/is_reactquery_needed_when_using_firestore/)
-- url: https://www.reddit.com/r/reactjs/comments/ivqlg6/is_reactquery_needed_when_using_firestore/
----
-In the past I have used Firestore realtime updates along with Redux but lately I've been convinced that I've been putting too much server state into my redux store, which I agree with. Therefore, I decided to try out `react-query` which looks amazing but I don't think it makes sense to use with realtime updates. It seems perfect for apps which use a traditional REST endpoint to prevent unnecessary calls and the caching mechanism is genius to allow you to use hooks to replace storing your remote state along with client state.
-
-&amp;nbsp;
-
-In my app I simply have a few "todo like" lists which users can add, edit and remove from. I store this data in Firestore and with the Firestore realtime updates I get instant updates when something changes, no need to re-fetch. Therefore, I was wondering if I should just set up these realtime subscriptions in a higher level component and use the Context API  to share the data with child components?

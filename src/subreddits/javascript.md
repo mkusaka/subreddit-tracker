@@ -13,19 +13,35 @@ this is the place.
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][VueJS 3.0 has been released](https://www.reddit.com/r/javascript/comments/iv9kf5/vuejs_30_has_been_released/)
+## [3][Writing Better Quality Code in JavaScript](https://www.reddit.com/r/javascript/comments/iwcbp5/writing_better_quality_code_in_javascript/)
+- url: https://acodementor.com/writing-better-quality-code-in-javascript-
+---
+
+## [4][Use Javascript's Array Methods to Handle API Data](https://www.reddit.com/r/javascript/comments/iw9qmh/use_javascripts_array_methods_to_handle_api_data/)
+- url: https://blog.bearer.sh/javascript-api-array-data-manipulation/
+---
+
+## [5][[AskJS] what is the difference in expression or statement](https://www.reddit.com/r/javascript/comments/iwaras/askjs_what_is_the_difference_in_expression_or/)
+- url: https://www.reddit.com/r/javascript/comments/iwaras/askjs_what_is_the_difference_in_expression_or/
+---
+Please give answer in laymen terms i studied on the internet and coudnt understand it
+## [6][Numeric Separators - The human eye faces difficulty in parsing large numbers, a new proposal in Javascript to make this easier.](https://www.reddit.com/r/javascript/comments/ivtbq3/numeric_separators_the_human_eye_faces_difficulty/)
+- url: https://dev.to/shubhambattoo/numeric-separators-p4b
+---
+
+## [7][BildX: An alternative to imgix and other services for your projects!](https://www.reddit.com/r/javascript/comments/iw6vaa/bildx_an_alternative_to_imgix_and_other_services/)
+- url: https://github.com/adamazad/bildx
+---
+
+## [8][Dysfunctional programming in JavaScript](https://www.reddit.com/r/javascript/comments/iw4w4z/dysfunctional_programming_in_javascript/)
+- url: https://medium.com/@petilon404/dysfunctional-programming-in-javascript-cae5c085a76e
+---
+
+## [9][VueJS 3.0 has been released](https://www.reddit.com/r/javascript/comments/iv9kf5/vuejs_30_has_been_released/)
 - url: https://github.com/vuejs/vue-next/releases/tag/v3.0.0
 ---
 
-## [4][I made a scraper that finds the best senior, remote JS jobs posted every week on the Internet](https://www.reddit.com/r/javascript/comments/ivpynf/i_made_a_scraper_that_finds_the_best_senior/)
-- url: https://blog.noicejobs.com/best-senior-javascript-remote-jobs-between-sep-11-and-sep-18/
----
-
-## [5][Deno 1.4 - "Our largest release yet"](https://www.reddit.com/r/javascript/comments/ivi0wd/deno_14_our_largest_release_yet/)
-- url: https://deno.land/posts/v1.4
----
-
-## [6][[AskJS] localStorage vs IndexedDB](https://www.reddit.com/r/javascript/comments/ivq27f/askjs_localstorage_vs_indexeddb/)
+## [10][[AskJS] localStorage vs IndexedDB](https://www.reddit.com/r/javascript/comments/ivq27f/askjs_localstorage_vs_indexeddb/)
 - url: https://www.reddit.com/r/javascript/comments/ivq27f/askjs_localstorage_vs_indexeddb/
 ---
 When would I want to use local storage over IndexedDB?
@@ -33,31 +49,13 @@ When would I want to use local storage over IndexedDB?
 There's the `localforage` package that gives me access to IndedexDB with a simpler API, so I no longer see the point in using local storage at all.
 
 Am I missing something?
-## [7][Social Media Cross-Platform App Development Made Simple](https://www.reddit.com/r/javascript/comments/ivs6lh/social_media_crossplatform_app_development_made/)
-- url: https://github.com/awwabtahir/Social-Media-IOS-Andriod-App#social-media-cross-platform-app-development-made-simple
+## [11][[AskJS] AI !== Algorithms ?](https://www.reddit.com/r/javascript/comments/ivy3sa/askjs_ai_algorithms/)
+- url: https://www.reddit.com/r/javascript/comments/ivy3sa/askjs_ai_algorithms/
 ---
+At the risk of sounding dead basic. Is their a difference between ai and algorithms? For my course I've been given a remit of building something that utilises ai, of course I can go back to my tutor but It's the weekend and if I can get an alternate consensus in the mean time...
 
-## [8][Made an HTML5/JS template for Portfolio website. I'd appreciate any feedback and feel free to use it. An SPA with hash-router, search, filter, error handling, dark-mode, hot-key detection, and everything is managed out of a JSON file. The site can be hosted with GH-Pages or any static hosting.](https://www.reddit.com/r/javascript/comments/ivqzzb/made_an_html5js_template_for_portfolio_website_id/)
-- url: https://github.com/GuptaSiddhant/LifeLine
----
-
-## [9][Save the Date: AMA on developer tools and hacks with Chris Heilmann and Marie Hoeger](https://www.reddit.com/r/javascript/comments/ivoqdb/save_the_date_ama_on_developer_tools_and_hacks/)
-- url: https://createserverlessopenmic5.splashthat.com/
----
-
-## [10][[AskJS] How to convert Blob url to file object ?](https://www.reddit.com/r/javascript/comments/ivr1vq/askjs_how_to_convert_blob_url_to_file_object/)
-- url: https://www.reddit.com/r/javascript/comments/ivr1vq/askjs_how_to_convert_blob_url_to_file_object/
----
-I need to send File object to my flask server    
-example:    
-blob_url = "blob:http://127.0.0.1:5000/86e4285a-65ee-4af8-a8b8-aa79ccb1ed91"   
-var image = new File([blob_url], "image.jpg");   
-Doesn't work
-## [11][How we wrote the Fastest JavaScript UI Framework, Again!](https://www.reddit.com/r/javascript/comments/iv376z/how_we_wrote_the_fastest_javascript_ui_framework/)
-- url: https://medium.com/@ryansolid/how-we-wrote-the-fastest-javascript-ui-framework-again-db097ddd99b6
----
-
-## [12][Announcing TypeScript 4.1 Beta](https://www.reddit.com/r/javascript/comments/ivdamj/announcing_typescript_41_beta/)
-- url: https://devblogs.microsoft.com/typescript/announcing-typescript-4-1-beta/
+So, if for example I built a game of checkers and created an algorithm that picks a move for the computer. Is that ai? If it's not, then isn't it going down the path of machine learning?
+## [12][Deno 1.4 - "Our largest release yet"](https://www.reddit.com/r/javascript/comments/ivi0wd/deno_14_our_largest_release_yet/)
+- url: https://deno.land/posts/v1.4
 ---
 

@@ -40,59 +40,162 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Google rewrites Google Pay app in Flutter](https://www.reddit.com/r/androiddev/comments/ivlxm1/google_rewrites_google_pay_app_in_flutter/)
+## [3][Howdy Android Devs 🤩👋, I have developed a little pet project called JetQuotes App made with Jetpack compose UI 📝.](https://www.reddit.com/r/androiddev/comments/iw9pne/howdy_android_devs_i_have_developed_a_little_pet/)
+- url: https://github.com/Spikeysanju/JetQuotes
+---
+
+## [4][[UPDATE] 100 Open-source Android apps written in Kotlin. Organized by Tech Stack and Architecture/Patterns.](https://www.reddit.com/r/androiddev/comments/ivtvg4/update_100_opensource_android_apps_written_in/)
+- url: https://www.reddit.com/r/androiddev/comments/ivtvg4/update_100_opensource_android_apps_written_in/
+---
+About: Awesome Android Kotlin Apps aims to be the starting point for developers to find an Android app with a particular Tech Stack / Libraries.
+
+Project URL: [https://github.com/androiddevnotes/awesome-android-kotlin-apps](https://github.com/androiddevnotes/awesome-android-kotlin-apps)
+
+This list is based on the effort of Android Open-source Contributors.
+
+The apps are organized according to the Architecture and Patterns as shown below:
+
+## Contents
+
+[**Pattern**](https://github.com/androiddevnotes/awesome-android-kotlin-apps#art-pattern)
+
+* [Jetpack Compose Apps](https://github.com/androiddevnotes/awesome-android-kotlin-apps#jetpack-compose-apps)
+* [Model View ViewModel (MVVM)](https://github.com/androiddevnotes/awesome-android-kotlin-apps#mvvm)
+   * [Normal](https://github.com/androiddevnotes/awesome-android-kotlin-apps#normal)
+   * [Clean Architecture](https://github.com/androiddevnotes/awesome-android-kotlin-apps#clean-architecture)
+* [Model View Intent (MVI)](https://github.com/androiddevnotes/awesome-android-kotlin-apps#mvi)
+   * [Normal](https://github.com/androiddevnotes/awesome-android-kotlin-apps#normal-1)
+   * [Clean Architecture](https://github.com/androiddevnotes/awesome-android-kotlin-apps#clean-architecture-1)
+* [Model View Presenter (MVP)](https://github.com/androiddevnotes/awesome-android-kotlin-apps#mvp)
+* [Model View Controller (MVC) and Other Patterns](https://github.com/androiddevnotes/awesome-android-kotlin-apps#other)
+## [5][13 — 19 September Android Newsletter](https://www.reddit.com/r/androiddev/comments/iwc3bb/13_19_september_android_newsletter/)
+- url: https://www.reddit.com/r/androiddev/comments/iwc3bb/13_19_september_android_newsletter/
+---
+Stay up to date with Android development, in this week's edition:  
+💡 Chrome Custom Tabs  
+🧪 Proto DataStore experiments  
+😮 4 ways to level up your app  
+👀 Android Biometrics  
+and much more!  
+💚 Enjoy [https://vladsonkin.com/android-newsletter-12/](https://vladsonkin.com/android-newsletter-12/)
+
+Featuring [@tbfJohn](https://twitter.com/tbfJohn) [@stephenvinouze](https://twitter.com/stephenvinouze) [@HusaynaHakeem](https://twitter.com/HusaynaHakeem) [@rockandnull](https://twitter.com/rockandnull) [@MarkIAllison](https://twitter.com/MarkIAllison) [@deniskrrr](https://twitter.com/deniskrrr) [@elye\_project](https://twitter.com/elye_project) [@hitherejoe](https://twitter.com/hitherejoe)
+
+Subscribe and receive new editions directly to your email. Weekly, no spam, unsub anytime. Here is an example: [https://mailchi.mp/a1826b677900/android-newsletter-12](https://mailchi.mp/a1826b677900/android-newsletter-12)
+## [6][adb now available over Wi-Fi](https://www.reddit.com/r/androiddev/comments/ivuuex/adb_now_available_over_wifi/)
+- url: https://i.redd.it/7jcpidn7k4o51.jpg
+---
+
+## [7][Is it possible to take 7 day for reviewing app updates?](https://www.reddit.com/r/androiddev/comments/iw95pm/is_it_possible_to_take_7_day_for_reviewing_app/)
+- url: https://i.redd.it/iu7o16fq59o51.jpg
+---
+
+## [8][Best Caches available](https://www.reddit.com/r/androiddev/comments/iw6ax4/best_caches_available/)
+- url: https://www.reddit.com/r/androiddev/comments/iw6ax4/best_caches_available/
+---
+iOS offers [NSCache](https://developer.apple.com/documentation/foundation/nscache) where it will automatically evict objects based on system resources. Makes it super easy for devs. I couldn't find anything for Android development. Closest was [LRUCache](https://developer.android.com/reference/kotlin/android/util/LruCache) but it doesn't automatically take system resources into account. Seems you have to manually come up with a number for its size. Maybe there is an android equivalent to NSCache or maybe there is a way to determine the best cache size by using some system APIs?
+## [9][Wtf tutorials](https://www.reddit.com/r/androiddev/comments/iwa02x/wtf_tutorials/)
+- url: https://www.reddit.com/r/androiddev/comments/iwa02x/wtf_tutorials/
+---
+Could someone please, please, please provide an example of fully functional FloatingActionButton? All the tutorials on line seem to be copied from developer.android .com home page, only more wordy. And non of them provide any information that would make the dumb thing do anything.
+
+Or should just find other hobbies?
+## [10][Clean Architecture + MVP Sample App Using: Dagger 2 + RxJava 2 vs Tootpick + Coroutines](https://www.reddit.com/r/androiddev/comments/ivwyob/clean_architecture_mvp_sample_app_using_dagger_2/)
+- url: https://i.redd.it/ric3dg1s15o51.png
+---
+
+## [11][Google rewrites Google Pay app in Flutter](https://www.reddit.com/r/androiddev/comments/ivlxm1/google_rewrites_google_pay_app_in_flutter/)
 - url: https://twitter.com/googledevs/status/1307126032349224960?s=19
 ---
 
-## [4][What are effective approaches for Android dialogs in 2020?](https://www.reddit.com/r/androiddev/comments/ivf6xm/what_are_effective_approaches_for_android_dialogs/)
-- url: https://www.reddit.com/r/androiddev/comments/ivf6xm/what_are_effective_approaches_for_android_dialogs/
+## [12][How can I save my Map Markers when returning from Map Activity to my Main Activity?](https://www.reddit.com/r/androiddev/comments/iw5fv7/how_can_i_save_my_map_markers_when_returning_from/)
+- url: https://www.reddit.com/r/androiddev/comments/iw5fv7/how_can_i_save_my_map_markers_when_returning_from/
 ---
-We have seen many large changes to Android development since 2017 (Kotlin, JetPack, AAC etc), but what about good old dialogs? I remember dialogs being in a state of chaos on Android. Use Dialog class? No, use AlertDialog. Then Google gave us DialogFragment where you can inflate a view like a standard fragment or override onCreateDialog(). Which was for a long time an improvement. Then came Material Design, and it seemed like if we wanted Material dialogs we better implement them ourselves with custom layouts. Maybe that is why a library like afollestad's Material Dialogs has almost 20,000 stars on GitHub -- it provides a simple API for material styled dialogs. This is what everybody wants but of course Google does not make it easy. So now developers choose between hand-rolling custom fragments versus a third party library. And then of course others are writing dialogs as custom views and probably enjoy the benefits of flexibility at the cost of a higher learning curve or just having to know how to "do it right". And then there's the topic of dialogs and how they fit into app architecture, which can vary based on how you model your dialogs. I get the sense it is still a wild west on this one? Are we converging on something?
-## [5][Jump Into Chrome Custom Tabs](https://www.reddit.com/r/androiddev/comments/ivrrkw/jump_into_chrome_custom_tabs/)
-- url: https://www.reddit.com/r/androiddev/comments/ivrrkw/jump_into_chrome_custom_tabs/
----
-In this article, you'll jump into the Chrome Custom Tabs and learn performance tips to speed up ⚡ URL loading almost by 50%.
+I am trying to create markers based on data I receive from the 3 axis of the phone. Each time I get a new Pothole location I create a Marker inside the Map Activity with the coordinates I have received. But whenever I return from my Map Activity to my Main Activity. My markers don't get saved. I have read the documentation about the savedInstanceState but I cannot seem to get it to work. Being a novice on Map SDK any help would be greatly appreciated.
 
-Enjoy 💚[https://vladsonkin.com/jump-into-chrome-custom-tabs/](https://vladsonkin.com/jump-into-chrome-custom-tabs/)
-## [6][What is the best way to make a mobile app?](https://www.reddit.com/r/androiddev/comments/ivrd8w/what_is_the_best_way_to_make_a_mobile_app/)
-- url: https://www.reddit.com/r/androiddev/comments/ivrd8w/what_is_the_best_way_to_make_a_mobile_app/
----
-I recently started learning python, made it all the way to classes and object orienting, then I suddenly had this very great idea, but it needs to be a mobile app, so which is the best way to make one? ( I prefer if you guys might guide me to a way that includes python and not a new language )
-## [7][A small Disney project using Jetpack Compose, Dagger-Hilt based on MVVM architecture.](https://www.reddit.com/r/androiddev/comments/iv1w2g/a_small_disney_project_using_jetpack_compose/)
-- url: https://v.redd.it/rs0v48rx3vn51
----
+Map Activity:
 
-## [8][Is there any point in having a repository that just delegates method calls?](https://www.reddit.com/r/androiddev/comments/ivojht/is_there_any_point_in_having_a_repository_that/)
-- url: https://www.reddit.com/r/androiddev/comments/ivojht/is_there_any_point_in_having_a_repository_that/
----
-Is there any benefit in having a repository that just has a bunch of these methods and no own logic?
+			public class MapsActivity extends FragmentActivity					   
+			implements OnMapReadyCallback, LocationListener {
 
-     suspend fun insert(task: Task) = taskDao.insert(task)
-    
-     suspend fun update(task: Task) = taskDao.update(task)
-    
-     suspend fun deleteTask(task: Task) = taskDao.deleteTask(task)
-## [9][Exploring Jetpack Compose: Column](https://www.reddit.com/r/androiddev/comments/ivbj6d/exploring_jetpack_compose_column/)
-- url: https://joebirch.co/android/exploring-jetpack-compose-column/
----
+    private GoogleMap mMap;
+    double latitude = 0;
+    double longitude = 0;
+    private LocationManager locationManager;
+    private static final long MIN_TIME = 400;
+    private static final float MIN_DISTANCE = 1000;
 
-## [10][Paging jetpack with multiple module clean architecture](https://www.reddit.com/r/androiddev/comments/ivmfu2/paging_jetpack_with_multiple_module_clean/)
-- url: https://www.reddit.com/r/androiddev/comments/ivmfu2/paging_jetpack_with_multiple_module_clean/
----
-I am trying to put jetpack pagination and clean architecture together in the demo project. I stuck in domain module which is pure java/kotlin causes paging need to return flow paging data in the repository. I want domain separating from android component. How can I handle this?
-## [11][Which language are you using for Android App Development ?](https://www.reddit.com/r/androiddev/comments/ivoa7h/which_language_are_you_using_for_android_app/)
-- url: https://www.reddit.com/r/androiddev/comments/ivoa7h/which_language_are_you_using_for_android_app/
----
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        //onSaveInstanceState(true);
+        setContentView(R.layout.activity_maps);
 
 
-[View Poll](https://www.reddit.com/poll/ivoa7h)
-## [12][Are you going to add sellers.json to your Admob account?](https://www.reddit.com/r/androiddev/comments/iv9k3h/are_you_going_to_add_sellersjson_to_your_admob/)
-- url: https://www.reddit.com/r/androiddev/comments/iv9k3h/are_you_going_to_add_sellersjson_to_your_admob/
----
-I know it's not mandatory (up until now, who know what requirements will be in the future), but there are 2 huge yellow and red warning notifications in my Admob account (also I've received 2 emails regarding to this).
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+        // mapFragment.getMapAsync(this);
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &amp;&amp; ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME, MIN_DISTANCE, this);
+        //Get the bundle
 
-Admob states that this will bring "transaprency" and " This will help advertisers to verify your inventory. If your information isn't made transparent, advertisers won't be able to see your business name, which might impact your revenue. "
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            latitude = extras.getDouble("lat");
+            longitude = extras.getDouble("long");
+        }
+        else{
+            Location location = new Location("Provider");
+            latitude = location.getLatitude();
+            longitude = location.getLongitude();
+        }
+    }
 
-I haven't added yet, but I'm thinking about adding it, however I'm not okay declaring my real/business name and address in the public json file.
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+        mMap.setMyLocationEnabled(true);
+        mMap.getUiSettings().setMyLocationButtonEnabled(true);
 
-Have you added sellers.json to your Admob settings?
+        LatLng pothole = new LatLng(latitude, longitude);
+        mMap.addMarker(new 
+ 
+ 
+     				
+						MarkerOptions().position(pothole).title("Pothole").icon(BitmapDescriptorFactory.fromResource(R.drawable.potholesmall)));
+       			mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(pothole, 10));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
+
+    }
+
+
+    @Override
+    public void onLocationChanged(Location location) {
+
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+
+    }
+
+    @Override
+    public void onProviderEnabled(String provider) {
+
+    }
+
+    @Override
+    public void onProviderDisabled(String provider) {
+
+    }
+    @Override
+    public void onSaveInstanceState(Bundle savedInstance) {
+        super.onSaveInstanceState(savedInstance);
+
+    }
+
+    }

@@ -111,113 +111,97 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/iaggwf/whos_available_august_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/ikn3vo/whos_hiring_september_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Dunning Kruger Effect](https://www.reddit.com/r/reactjs/comments/ivy7ic/dunning_kruger_effect/)
-- url: https://res.cloudinary.com/cinemakers/image/upload/f_auto/v1550898438/Screenshot_2019-02-22_at_22.25.14.png
+## [3][My First Large React App: Travel Map for saving cities/countries visited](https://www.reddit.com/r/reactjs/comments/iwup06/my_first_large_react_app_travel_map_for_saving/)
+- url: https://v.redd.it/gafhgc3jxfo51
 ---
 
-## [4][Getting started with Microsoft Fluent UI React](https://www.reddit.com/r/reactjs/comments/iwao0l/getting_started_with_microsoft_fluent_ui_react/)
-- url: https://sumitkharche.hashnode.dev/getting-started-with-microsoft-fluent-ui-react-ckfavwvb803qt2zs19k53c58w
+## [4][Redux in 2020: Much, much less boilerplate thanks to ‘@reduxjs/toolkit’ (Includes video of converting a project from Redux to ReduxJs/Toolkit)](https://www.reddit.com/r/reactjs/comments/iwy8xx/redux_in_2020_much_much_less_boilerplate_thanks/)
+- url: https://medium.com/@brianboyko/redux-in-2020-much-much-less-boilerplate-thanks-to-reduxjs-toolkit-ed1e7082d3ab
 ---
 
-## [5][React's list items and keys](https://www.reddit.com/r/reactjs/comments/iwdfa3/reacts_list_items_and_keys/)
-- url: https://www.reddit.com/r/reactjs/comments/iwdfa3/reacts_list_items_and_keys/
----
-I quite understand the importance and the idea of the "key" attribute when rendering lists in React. Today, however, I was trying to observe the behavior of reconciliation when not passing keys to list items. It seems to me that React hooks the state from the item with the same index in the old list in the item with the same index in the new list. So I'm concluding that React falls back to indexes when not providing keys? Am I right?
-
-Demo: [https://codesandbox.io/s/stoic-germain-853mx?file=/src/App.js](https://codesandbox.io/s/stoic-germain-853mx?file=/src/App.js)
-## [6][How to avoid name conflicts between smart and dumb Redux components?](https://www.reddit.com/r/reactjs/comments/iwcwep/how_to_avoid_name_conflicts_between_smart_and/)
-- url: https://www.reddit.com/r/reactjs/comments/iwcwep/how_to_avoid_name_conflicts_between_smart_and/
----
-First of all, I love the idea of splitting components into smart/containers (which retrieve data from the store) and dumb/presentational ones (which simply render things). Makes them much easier to work with.
-
-My problem is that their names are often duplicated. For example: 
-
-    // Presentational component
-
-    export function PurchaseButton(props) {
-        return (
-            &lt;button&gt;Purchase {props.count} items&lt;/button&gt;
-        );
-    }
-    
-    // Container component
-    import {PurchaseButton as PurchaseButtonPresentation} from '../presentation/purchase-button';
-
-    export function PurchaseButton() {
-        const orderItems = useSelector(state =&gt; getOrderItems(state));
-        return &lt;PurchaseButtonPresentation count={orderItems.length} /&gt;;
-    }
-
-As you can see, I had to rename the import to be able to use it in my container component, which has the same name.
-
-But an even bigger issue are automatic imports in IDEs. When I start typing `PurchaseB...`, the IDE suggests to import `PurchaseButton` automatically. But there are multiple components with this name in the project. So before agreeing to import the button, I need to  look at the suggested options very carefully and make sure that I am importing what I want (e.g. the presentational component, not the container). And the first auto-import suggestion is often wrong.
-
-Here are some suggested solutions I've heard:
-
-- Using default exports. I don't know why this was even suggested - not only they don't solve the problems of auto-imports, but bring a few new ones, being a bad practice in general.
-- Renaming things on import to avoid name conflicts. This is what I'm doing right now in my example, but, as I said before, there are still issues with automatic import suggestions.
-- Using prefixes or suffixes for component names (e.g. `PurchaseButtonContainer` and `PurchaseButtonPresentation`). This seems sensible, but I've never ever seen this. Every code base I've worked with had `&lt;Panel&gt;&lt;PurchaseButton /&gt;&lt;/Panel&gt;`, not something like `&lt;PanelPresentation&gt;&lt;PurchaseButtonContainer /&gt;&lt;/PanelPresentation&gt;`. The lack of a common approach to this is the only thing stopping me from using these.
-
-Is there a commonly accepted solution for this naming problem?
-
-Thanks!
-## [7][Is it true that HOC and render props are not popular to use anymore?](https://www.reddit.com/r/reactjs/comments/iw485u/is_it_true_that_hoc_and_render_props_are_not/)
-- url: https://www.reddit.com/r/reactjs/comments/iw485u/is_it_true_that_hoc_and_render_props_are_not/
----
-How frequently do you see the following in your own code base?
-
-HOCs
-Render props
-Hooks
-## [8][Music Analyzer - MERN Stack Web app using the Spotify API](https://www.reddit.com/r/reactjs/comments/ivotz2/music_analyzer_mern_stack_web_app_using_the/)
-- url: https://www.reddit.com/r/reactjs/comments/ivotz2/music_analyzer_mern_stack_web_app_using_the/
----
-Hi everyone !
-
-I want to share with you an interesting project I have been working on recently.
-
-Spotify have an amazing API that anyone can use to get info about music from their repository.
-
- A very interesting feature that I was exposed to is called Audio Features, which contains metrics about the nature of the song. 
-
-Like: denceability, how suitable a song is for dancing
-
- energy, how fast and noisy the song is.
-
-An interesting idea that came to my mind is to use these parameters to compare the nature of the music of different artists according to their most famous song metrics.
-
-I built a website that allows you to make the comparison and see the results on a graph.
-
- Link to website: [https://music-analyze.herokuapp.com/](https://music-analyze.herokuapp.com/)
-
- The project has been uploaded to GitHub, feel free to use it as you wish: [https://github.com/stavelmashally/music-analyzer](https://github.com/stavelmashally/music-analyzer) 
-
-The project was built using React &amp; Node.js. 
-
-I would love to receive suggestions for improvement or addition of additional features.
-## [9][Component/library for creating desktop-like windows?](https://www.reddit.com/r/reactjs/comments/iw8y6y/componentlibrary_for_creating_desktoplike_windows/)
-- url: https://www.reddit.com/r/reactjs/comments/iw8y6y/componentlibrary_for_creating_desktoplike_windows/
----
-Hi,
-
-I'm working on a project using React where I need to create something akin to a Windows desktop in the browser. I've been looking for a component or library that can provide windowing capabilities like you'd see in a typical Windows desktop, but I've come up empty.
-
-Does anyone know of any you can point me at before I go through the effort of making one myself?
-
-Thanks!
-## [10][Is it a good idea to replace redux with apollo and GraphQL when using Django with React](https://www.reddit.com/r/reactjs/comments/iwbir9/is_it_a_good_idea_to_replace_redux_with_apollo/)
-- url: https://www.reddit.com/r/reactjs/comments/iwbir9/is_it_a_good_idea_to_replace_redux_with_apollo/
----
- I am starting a new project from scratch and I decided to use Django with React. But when I say react there are many developers who use redux as an essential library for state management but I think redux adds a lot of complexity in code. So I searched an alternative for this and I found some developers are not using redux at all instead they are using GraphQL + Apollo as an alternative. And I found this beautiful repository as well on Github that uses the Django with React but this is not using redux at all.
-
-*Link to a package.json file of that GitHub repository* \- [https://github.com/mirumee/saleor-dashboard/blob/0d9f8662299a98de4c89bbdf5b8142a0e1790bc7/package.json](https://github.com/mirumee/saleor-dashboard/blob/0d9f8662299a98de4c89bbdf5b8142a0e1790bc7/package.json)
-
-**So, Is this a good idea of using Apollo + GraphQL instead of redux?**
-## [11][Scroll to Top (Back To Top) - React , Gatsby and MaterialUI](https://www.reddit.com/r/reactjs/comments/iw7zzi/scroll_to_top_back_to_top_react_gatsby_and/)
-- url: https://www.youtube.com/watch?v=zwCaIrZ64M4
+## [5][My first react library published to NPM registry!](https://www.reddit.com/r/reactjs/comments/iwfbg8/my_first_react_library_published_to_npm_registry/)
+- url: https://www.reddit.com/r/reactjs/comments/iwfbg8/my_first_react_library_published_to_npm_registry/
 ---
 
-## [12][The importance and use of React Hooks(useState) with React Native.](https://www.reddit.com/r/reactjs/comments/iw7ush/the_importance_and_use_of_react_hooksusestate/)
-- url: https://youtu.be/dmv8Vcm9c-U
+Hello there!
+
+I have published my first library for React, in NPM Registry. 
+
+React formsio - An easy to use and light weight form validation library for React.
+
+Give it a try, and let me know your suggestions 
+
+If you like it, don’t forget to give a ⭐️ on Github :)
+
+To install, use: npm i react-formsio
+
+Check out documentation here: https://www.npmjs.com/package/react-formsio
+
+Repository link - https://github.com/itzzmeakhi/react-formsio
+## [6][All Frontend Armory Articles are now free](https://www.reddit.com/r/reactjs/comments/iwtpm6/all_frontend_armory_articles_are_now_free/)
+- url: https://frontarm.com/james-k-nelson/demonetization/
+---
+
+## [7][Check this React Gatsby Site for Motivation (Source Code Included)](https://www.reddit.com/r/reactjs/comments/iwy3aq/check_this_react_gatsby_site_for_motivation/)
+- url: https://v.redd.it/y7mo64v7cho51
+---
+
+## [8][How do I dynamically create components from templates requested via an API?](https://www.reddit.com/r/reactjs/comments/ix0api/how_do_i_dynamically_create_components_from/)
+- url: https://www.reddit.com/r/reactjs/comments/ix0api/how_do_i_dynamically_create_components_from/
+---
+I am currently working in a project where the components are not predefined and I have to display content by merging template json and a data json which are fetched from an API and I am currently using MustacheJS and react-mustache-template to acheive this. I can easily creates lists and simple components.
+
+But the problem comes while creating components with interactivity, not simple lists but graphs , charts and carousels; and Mustache templates does not help me acheive this, furthermore since I am using react-mustache-template package I can onlly use pure HTML elements in my templates , custom React components or library components do not work, how do I solve this problem?
+## [9][Ruby on Rails vs Node.js: What Should You Choose?](https://www.reddit.com/r/reactjs/comments/iwzfoe/ruby_on_rails_vs_nodejs_what_should_you_choose/)
+- url: https://inveritasoft.com/blog/ruby-on-rails-vs-node-js-what-should-you-choose
+---
+
+## [10][I was recently let go, so I thought I'd revamp my React Portfolio! I'd love to hear your thoughts :)](https://www.reddit.com/r/reactjs/comments/iwz0jk/i_was_recently_let_go_so_i_thought_id_revamp_my/)
+- url: https://andri.co/
+---
+
+## [11][async issue changing state with custom hook](https://www.reddit.com/r/reactjs/comments/iwyqpu/async_issue_changing_state_with_custom_hook/)
+- url: https://www.reddit.com/r/reactjs/comments/iwyqpu/async_issue_changing_state_with_custom_hook/
+---
+ 
+
+Calling getSearchResults WebAPI with Axios and update the state with response using setSearchResults() custom hook. It looks like my view is not getting re-rendered thought I get response. I assume it is due due async method call, can someone help how to resolve the issue to bind my state with view once the state is updated?  
+
+
+    code block 
+
+const handleSearchSubmit = () =&gt; {  
+getSearchResults(formatSearchCriteriaSelections())  
+.then(data =&gt; {  
+setSearchResults(data)  
+})  
+};  
+Updating State:  
+
+
+    code block 
+
+case "SET\_SEARCH\_RESULTS":  
+return {  
+...state,  
+searchData:  
+{  
+...state.searchData,  
+results:  
+{  
+projects: \[state.searchData.results.projects, Object.entries(action.payload.filter(result =&gt; result.ResultType === 'Project'))\],  
+proposals: \[state.searchData.results.proposals, Object.entries(action.payload.filter(result =&gt; result.ResultType === 'Proposal'))\]  
+},  
+criteria: state.searchData  
+}  
+};  
+My view simply displays:  
+
+
+    code block 
+
+({searchData.results.length &gt; 0 ? searchData.results.proposals\[0\].name : ''})
+## [12][5 React Good Practices](https://www.reddit.com/r/reactjs/comments/iwybkd/5_react_good_practices/)
+- url: https://blog.codingbrah.com/5-react-good-practices
 ---
 

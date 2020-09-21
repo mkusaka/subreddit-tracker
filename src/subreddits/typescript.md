@@ -22,41 +22,98 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][How can I type a decorator ?](https://www.reddit.com/r/typescript/comments/iwbbq7/how_can_i_type_a_decorator/)
-- url: https://www.reddit.com/r/typescript/comments/iwbbq7/how_can_i_type_a_decorator/
+## [2][A SQL database implemented purely in TypeScript type annotations.](https://www.reddit.com/r/typescript/comments/iww4hs/a_sql_database_implemented_purely_in_typescript/)
+- url: https://github.com/codemix/ts-sql
 ---
-[playground link of what I have done so far.](https://www.typescriptlang.org/play?#code/GYVwdgxgLglg9mABAQ2vMAeAKogpgDylzABMBnRAMXDQQD4AKYMALkSwEoWcBvAKACQAJ1xQQQpAwB0M5EIDmZDogC8dRPwECA9NrJwAtrkRkxwYIIC+Abj42gA)
-## [3][Can we use TypeScript in place of JavaScript?](https://www.reddit.com/r/typescript/comments/iw8ukw/can_we_use_typescript_in_place_of_javascript/)
+
+## [3][Debug Visualizer A VS Code extension for visualizing data structures while debugging. Like the VS Code's watch view, but with rich visualizations of the watched value.](https://www.reddit.com/r/typescript/comments/iwpzbm/debug_visualizer_a_vs_code_extension_for/)
+- url: https://marketplace.visualstudio.com/items?itemName=hediet.debug-visualizer&amp;1
+---
+
+## [4][Safe Lookup Table in typescript](https://www.reddit.com/r/typescript/comments/iwsfwl/safe_lookup_table_in_typescript/)
+- url: https://www.reddit.com/r/typescript/comments/iwsfwl/safe_lookup_table_in_typescript/
+---
+Is it possible to create a lookup table in typescript with functions that accept different type arguments?
+I'm have a function that returns  a discriminated union with a type property that determines the type of data it holds, I would like to then use the type property as a key to an object with functions that accept types that the discriminated union was formed from
+For example
+
+    type a = {
+        type:"obj1";
+        foo:string;
+    }
+    type b={
+        type:"obj2";
+        bar:number;
+    }
+    type union= a or b;
+    const lookupTable={
+        obj1:({foo}:a)=&gt;foo.toLowerCase();
+        obj2:({bar}:b)=&gt;(bar**2).toString(); // all the functions return the same type
+    }
+    //That all works, my issue comes when attempting to do something like
+    const unionObj:union = {type:"obj1", foo:"str"}; // my code returns this from a function
+    const result = lookupTable[unionObj.type](unionObj);
+    // complicated type errors cause it can't tell that unionObj has been narrowed down to the right type
+
+Can anyone please help with this
+## [5][Compiler - Extract the type of union type tuple](https://www.reddit.com/r/typescript/comments/iwkt0i/compiler_extract_the_type_of_union_type_tuple/)
+- url: https://www.reddit.com/r/typescript/comments/iwkt0i/compiler_extract_the_type_of_union_type_tuple/
+---
+If I have an array of type `string[]` and I want to extract the type from the array, I must do: 
+
+    const typeArgs = type.typeArguments();
+    typeArgs[0]; // string
+
+But what if I have a tuple of type \[number, string\] and want to get the type union of `string | number`?
+## [6][Can we use TypeScript in place of JavaScript?](https://www.reddit.com/r/typescript/comments/iw8ukw/can_we_use_typescript_in_place_of_javascript/)
 - url: https://www.reddit.com/r/typescript/comments/iw8ukw/can_we_use_typescript_in_place_of_javascript/
 ---
 I have a confession to make, I am one of those guys who tried to learn JavaScript many times but failed miserably despite having coding skills in many other languages. Recently I heard about TypeScript and really liked its way of programming. Can I ask if we can replace JS and in its place use TS.
 
 Lets say I have to built a simple calculator with HTML+JS+CSS only. Could I use TS to write the code,  then compile it to JS and use this for my above calculator project? Will TS code be able to interact with the DOM elements like native JS?
-## [4][My first typescript project - OpenGrow: An open-source IoT plant care system for automated watering and data tracking!](https://www.reddit.com/r/typescript/comments/ivvb8u/my_first_typescript_project_opengrow_an/)
-- url: https://www.reddit.com/r/typescript/comments/ivvb8u/my_first_typescript_project_opengrow_an/
+## [7][Anybody looking for TypeScript interns?](https://www.reddit.com/r/typescript/comments/iwrhg3/anybody_looking_for_typescript_interns/)
+- url: https://www.reddit.com/r/typescript/comments/iwrhg3/anybody_looking_for_typescript_interns/
 ---
-Hello everyone,
+Currently in college for a cs degree, and I’d rather work with TypeScript than a legacy codebase.  
+  
+Feel like I have a very strong amount of TypeScript and web dev knowledge for a college student, so if your teams recruiting or you have resources for who is lmk!
+## [8][How can I type a decorator ?](https://www.reddit.com/r/typescript/comments/iwbbq7/how_can_i_type_a_decorator/)
+- url: https://www.reddit.com/r/typescript/comments/iwbbq7/how_can_i_type_a_decorator/
+---
+[playground link of what I have done so far.](https://www.typescriptlang.org/play?#code/GYVwdgxgLglg9mABAQ2vMAeAKogpgDylzABMBnRAMXDQQD4AKYMALkSwEoWcBvAKACQAJ1xQQQpAwB0M5EIDmZDogC8dRPwECA9NrJwAtrkRkxwYIIC+Abj42gA)
+## [9][I created a Web Development Discord server for TypeScript!](https://www.reddit.com/r/typescript/comments/iwk6m9/i_created_a_web_development_discord_server_for/)
+- url: https://www.reddit.com/r/typescript/comments/iwk6m9/i_created_a_web_development_discord_server_for/
+---
+Wonderful news!
 
-I have recently completed my first typescript project! It is an open-source IoT plant care system called OpenGrow. The web-application component of the system is built using the MERN stack. I had a great experience using typescript as it helped avoid mistakes in sending/handling data packets sent across the web application.
+&amp;#x200B;
 
-[Fully assembled OpenGrow system with snapshots of web-app.](https://preview.redd.it/kgw4ddvko4o51.jpg?width=789&amp;format=pjpg&amp;auto=webp&amp;s=e57774134d56df68ac1da984c3b8c2ab0482e5fb)
+I created my first Discord server and I'm so happy for what I've made. It's called "The Web Dev Heaven" it's a friendly community where web developers and designers are welcomed to talk about the latest technologies and languages. So we can all learn about different ( Databases, Frameworks, Adobe XD plugins, Algorithms, CMS's, etc. ) to improve our code. We are here for supporting our projects ( So if you are looking to gain traffic with your website or feedback on your project, we are here for you! ).
 
-With OpenGrow, you can set-up any of your plants to be automatically watered to maintain a configurable soil moisture level. The system also takes measurements of soil-moisture and ambient light every 5 minutes which the user can view from a responsive plot (made with Nivo graphs) on the web-app.
+&amp;#x200B;
 
-The STM32 microcontroller used at the edge is running FreeRTOS based firmware. The ESP8266 used for wi-fi communication runs on NodeMCU. This project also features its own MQTT broker which was made using NodeJs and the Aedes framework.
+[https://discord.gg/uXE4E7n](https://discord.gg/uXE4E7n)
 
-For those interested, I have made the project easy to set-up with readily available parts and a detailed guide!
+&amp;#x200B;
 
-Links:
+Thank you, if you join!  
+Thank you, for the support!  
+Thank you, for the upvote!
+## [10][First TypeScript Projects: sentence-engine &amp; reduce-to-chunks](https://www.reddit.com/r/typescript/comments/iwgz2i/first_typescript_projects_sentenceengine/)
+- url: https://www.reddit.com/r/typescript/comments/iwgz2i/first_typescript_projects_sentenceengine/
+---
+Hello hello! 
 
-[Github repository](https://github.com/esyywar/OpenGrow-IoT-Plant-Monitor)
+For some time now, I've been enjoying getting into TypeScript. I started by refactoring and expanding a previous project of mine, and now find myself wanting to use TS for most anything. However, I feel like there are a lot of simple things I just don't know about or need some pointers on how to get right, such as best practises around custom types and exporting them. 
 
-[Medium article on the full system](https://medium.com/@rahuleswar_84677/opengrow-building-an-automated-iot-solution-for-plant-care-with-the-stm32-esp8266-and-mern-stack-cd4bb144326e)
+I'd love to get some general feedback on the two projects I've been tinkering with so far, and also just wanna share in case either of them happen to be useful to anyone on here. :)
 
-The system has been working well for over a week in my home and I hope others will be able to replicate or modify it. This project touches on all the important components for a full IoT solution so I think it can also be a great learning resource for those interested in IoT!
+The project that I recently refactored from JS to TS is sentence-engine, a string templating engine that I try to make as versatile and configurable as possible.   
+**sentence-engine:** [Repo](https://github.com/sindrekjr/sentence-engine) | [NPM](https://www.npmjs.com/package/sentence-engine)
 
-If anyone encounters issues or finds problems, please raise an issue on the github repo and I will address it.
-## [5][ORM or not](https://www.reddit.com/r/typescript/comments/iw2wgt/orm_or_not/)
+This weekend I also put together a very small util function called reduce-to-chunks, which may not be as efficient as a for-loop but should offer some handy utility. This was provoked by my wanting a utility to concisely reduce arrays of dates into arrays of weeks.  
+**reduce-to-chunks:** [Repo](https://github.com/sindrekjr/reduceToChunks) | [NPM](https://www.npmjs.com/package/reduce-to-chunks)
+## [11][ORM or not](https://www.reddit.com/r/typescript/comments/iw2wgt/orm_or_not/)
 - url: https://www.reddit.com/r/typescript/comments/iw2wgt/orm_or_not/
 ---
  Before I learned about the use of an [ORM](https://en.wikipedia.org/wiki/Object-relational_mapping) (Object-Relational Mapping), I handled all interactions with the database through either stored procedures or building a query and setting up parameters. It was not the most exciting part of development. When I was introduced to NHibernate, an ORM for .net based on Hibernate, an ORM for java, I jumped right in and started bringing it into my projects.
@@ -74,127 +131,3 @@ In my experience, to properly use most ORMs, you have to adapt your system to us
 I am a fan of almost anything that simplifies and speeds up development. Yes, ORMs do exactly that, but sometimes the way they do it can cause pain in the long run. I believe that anyone who uses an ORM should understand SQL well enough to understand the SQL that is generated. I also want to caution when using more advanced ORM features such as lazy-loading. These features can provide a lot of value but they can also cause unintended side-effects. I’ll never forget a bug that took too much time to track down. I was handling an object returned from NHibernate that had quite a few other table dependencies that were set up for lazy-loading. You could force the loading of the data at the time of the queries execution or you can let the ORM query the extra data when you need to use it. An example could be a User table. A user might have one or more roles. You would get a user object from the ORM and when you access that objects roles property, the ORM will execute an additional query to load that uses roles. This can be an awesome feature that can provide huge performance boosts. That said, it can also cause issues if your lazy-loading loads other lazy-loaded data. My bug was just that. Because of all of the lazy-loading, the state of my object and its properties were hard to debug. My issue ended up being that the state of the object didn’t always reflect the state of the database, especially as other processes were interacting with the same underlying data, changing the state of my dependencies as I accessed the lazy-loaded properties.
 
 I’m taking my stab at creating an ORM for Typescript that is extremely lite and using its helpers is completely optional. I would say I’m about 60% done and I hope to finish it by October. I’m naming it nORM which stands for no ORM. when I’m ready, I’ll publish it to GitHub and create an NPM package.
-## [6][@node-cool: The fastest way to write a node server with TypeScript](https://www.reddit.com/r/typescript/comments/iwb970/nodecool_the_fastest_way_to_write_a_node_server/)
-- url: https://hacklone.github.io/node-cool?r=reddit-typescript
----
-
-## [7][Is it possible to use webpack with a library that uses dependency injection?](https://www.reddit.com/r/typescript/comments/iwankx/is_it_possible_to_use_webpack_with_a_library_that/)
-- url: https://www.reddit.com/r/typescript/comments/iwankx/is_it_possible_to_use_webpack_with_a_library_that/
----
-Hi all,
-
-I'm pretty new to webpack so apologies if this is an obvious answer. I'm currently trying to deploy a typescript lambda api to AWS using this library: [https://www.npmjs.com/package/ts-lambda-api](https://www.npmjs.com/package/ts-lambda-api)
-
-The library uses Inversify for dependency injection: [https://github.com/inversify/InversifyJS](https://github.com/inversify/InversifyJS)
-
-The library also advises building by just using zip but I'd like to use webpack if I can.
-
-I currently have two files for my api, a main api.ts file and then a controller.ts file. Currently the api class finds the controllers using the same lines as in the ts-lambda-api docs:
-
-    const controllersPath = [path.join(__dirname, "controllers")] 
-    const app = new ApiLambdaApp(controllersPath, appConfig) 
-
-As a result I need the controller directory to be available to the api.ts class once it's been bundled. Currently my webpack config looks like this:
-
-    import path = require('path')
-    import webpack = require('webpack')
-    
-    const config: webpack.Configuration = {
-        module: {
-            rules: [
-                { test: /\.js\.map$/, use: "ignore-loader" },
-                { test: /\.d\.ts$/, use: "ignore-loader" }
-            ]
-        },
-        mode: 'production',
-        entry: {
-            my_api: ['./src/my-api.js'],
-        },
-        output: {
-            path: path.resolve(__dirname, 'dist'),
-            filename: '[name]/main.js',
-            library: '[name]',
-            libraryTarget: 'commonjs2'
-        },
-        target: 'node',
-        externals: [/aws-sdk.*/, 'aws-lambda']
-    };
-    
-    export default config
-
-How can I add to it to allow my api access to the other classes it needs? The webpack docs have a page on multiple entry points ([https://webpack.js.org/concepts/entry-points/#multi-page-application](https://webpack.js.org/concepts/entry-points/#multi-page-application)) but that doesn't seem to be what I'm looking for as it gives me multiple bundles.
-
-I can put multiple files into one bundle by doing something like:
-
-    api: ['./src/api.js','./src/controllers/controller.js], 
-
-Although this won't then work with the Injectable annotations. Anyone have any other ideas?
-## [8][Having an error with a generic React component](https://www.reddit.com/r/typescript/comments/iw2ksw/having_an_error_with_a_generic_react_component/)
-- url: https://www.reddit.com/r/typescript/comments/iw2ksw/having_an_error_with_a_generic_react_component/
----
-Hi. Alright, so I'm in the process of refactoring some old code I wrote into TypeScript. This particular piece of code is a function that builds a React component. I MAY turn it into a functional component during the refactor, but there are a lot of factors in that decision, and that's a whole separate discussion.
-
-Anyway, the purpose of the code snippet I'm going to provide is that it takes in a React component type plus some arguments, does a bunch of fancy setup, and then returns the component (plus a lot of other things, but again, I'm simplifying here). The React component has a generic type for its props to keep it in sync with some of the arguments being passed in. However, when I try to use the component in JSX, I get this error: 
-
-    JSX element type doesn't have any construct or call signatures
-
-Before I go any further, here is an extremely simplified version of my function:
-
-    import React, { ElementType } from 'react';
-    
-    interface Args&lt;Props extends object&gt; {
-    	// Arg properties go here
-    }
-    
-    const componentBuilder = &lt;Props extends object&gt;(component: ElementType&lt;Props&gt;, args: Args&lt;Props&gt;) =&gt; {
-    	// Skipping over logic
-    
-    	const Component: ElementType&lt;Props&gt; = component; // Just want the C to be capital for the JSX element. My OCD...
-    
-    	return (
-    		&lt;div&gt;
-    			&lt;Component /&gt;
-    		&lt;/div&gt;
-    	);
-    };
-
-So, when I try using Component like that in this example, is when I get the error. I don't understand why. After experimenting, I know it has something to do with the generic type. If I remove the generic parameter, everything works.
-
-So, what can I do to make the generic parameter work? It's extremely important that it does. Thanks.
-## [9][Array lookup in TypeScript should return "T | undefined" and not "T"](https://www.reddit.com/r/typescript/comments/ivlxdk/array_lookup_in_typescript_should_return_t/)
-- url: https://www.reddit.com/r/typescript/comments/ivlxdk/array_lookup_in_typescript_should_return_t/
----
-Is there a workaround for this? I found an issue report with no progress:
-
-https://github.com/microsoft/TypeScript/issues/11122
-
-&gt; const xs = [1,2,3];
-&gt; const x5 = xs[5]; // type is number, expected number | undefined
-&gt;
-&gt; The type system doesn't know of care about the length of xs, so I would expect any lookup in the array to return T | undefined.
-
-This has bitten me a few times and seems like an obvious hole. The best I've got is to define my own "safeArrayGet(arr, index)" function.
-## [10][Bad pattern or not: Inline object literal for AS type assertion](https://www.reddit.com/r/typescript/comments/ivyw5o/bad_pattern_or_not_inline_object_literal_for_as/)
-- url: https://www.reddit.com/r/typescript/comments/ivyw5o/bad_pattern_or_not_inline_object_literal_for_as/
----
-    jsonwebtoken.sign((req.user as { user_id: string }).user_id, process.env.JWT_SECRET!);
-    
-
-It cleared the error. And I was a bit unsure about how much info the dB query would be returning in this example. I thought about taking the interface for the full user record and using Pick to assert that the user\_id was there at minimum. But then I wrote this instead. 
-
-i'm curious if you guys think inlining a concrete type is a bad pattern in general or acceptable in these situatons.
-## [11][code.store : A new TypeScript &amp; GraphQL backend as a service in beta.](https://www.reddit.com/r/typescript/comments/iv50px/codestore_a_new_typescript_graphql_backend_as_a/)
-- url: https://www.reddit.com/r/typescript/comments/iv50px/codestore_a_new_typescript_graphql_backend_as_a/
----
-Hi guys!
-
-We've been working on this project for one year now. [code.store](https://code.store/) is a GraphQL + TypeScript back-end as a service with a focus on micro/macro-services re-use.  
-· You can create scalable, serverless, back-end, and re-use them in different projects with a single command line.  
-· We wanted to make it as simple as possible, so you can work on business logic, and we try to take care of everything else: database and code generation, automatic versioning, continuous integration, and deployments, backups and data migrations, and scaling.  
-We see potential use cases:  
-· Back-end for mobile applications, PWA, or any front-end apps.  
-· Company-wide catalog of reusable, live microservices, that can be instantly deployed on new projects or applications.
-
-It's our first public release, we would be happy with any feedback if you have time to play with it.
-
-[https://code.store](https://code.store/)

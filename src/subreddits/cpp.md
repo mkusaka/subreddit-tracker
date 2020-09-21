@@ -56,88 +56,43 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][Libcu++: Nvidia C++ Standard Library](https://www.reddit.com/r/cpp/comments/iw9oxm/libcu_nvidia_c_standard_library/)
+## [2][CppCon 2020 slides](https://www.reddit.com/r/cpp/comments/iwzixs/cppcon_2020_slides/)
+- url: https://github.com/CppCon/CppCon2020
+---
+
+## [3][Some source-level techniques for speeding up C++ compilation](https://www.reddit.com/r/cpp/comments/iwkcxp/some_sourcelevel_techniques_for_speeding_up_c/)
+- url: https://codingnest.com/the-little-things-speeding-up-c-compilation/
+---
+
+## [4][Code Review of toml++](https://www.reddit.com/r/cpp/comments/iwych1/code_review_of_toml/)
+- url: https://medium.com/@julienjorge/code-review-of-toml-f816a6071120
+---
+
+## [5][Flexclass - a library for flexible array members](https://www.reddit.com/r/cpp/comments/iwpfkp/flexclass_a_library_for_flexible_array_members/)
+- url: http://github.com/brenoguim/flexclass
+---
+
+## [6][vcpkg: Accelerate your team development environment with binary caching and manifests | C++ Team Blog](https://www.reddit.com/r/cpp/comments/ix090v/vcpkg_accelerate_your_team_development/)
+- url: https://devblogs.microsoft.com/cppblog/vcpkg-accelerate-your-team-development-environment-with-binary-caching-and-manifests/
+---
+
+## [7][Libcu++: Nvidia C++ Standard Library](https://www.reddit.com/r/cpp/comments/iw9oxm/libcu_nvidia_c_standard_library/)
 - url: https://github.com/NVIDIA/libcudacxx
 ---
 
-## [3][Protips for GDB?](https://www.reddit.com/r/cpp/comments/iw3h9w/protips_for_gdb/)
-- url: https://www.reddit.com/r/cpp/comments/iw3h9w/protips_for_gdb/
+## [8][Deploying Doxygen](https://www.reddit.com/r/cpp/comments/iwzaon/deploying_doxygen/)
+- url: https://www.reddit.com/r/cpp/comments/iwzaon/deploying_doxygen/
 ---
-I use vscode for debugging and I just realize `*myptr@len` works in the watch window. IIRC the debug prompt there is gdb but I know very little. I should learn GDB
-
-Do you guys have any protips about what I should learn/use ASAP? Somehow I have never seen @ in any gdb tutorials I looked at so I prefer to know a little so I can tell if the tutorial is low quality/missing a lot
-## [4][Fire: create a C++ command line interface from a function signature](https://www.reddit.com/r/cpp/comments/ivpi0b/fire_create_a_c_command_line_interface_from_a/)
-- url: https://github.com/kongaskristjan/fire-hpp
+I have documented the code using doxygen. Is there any site like github or gitlab where we could publish the documentation?
+## [9][What is the best resource for learning C++ 11 and later versions?](https://www.reddit.com/r/cpp/comments/iwyqku/what_is_the_best_resource_for_learning_c_11_and/)
+- url: https://www.reddit.com/r/cpp/comments/iwyqku/what_is_the_best_resource_for_learning_c_11_and/
 ---
-
-## [5][We need the constexpr ternary operator in C++23](https://www.reddit.com/r/cpp/comments/ivwf41/we_need_the_constexpr_ternary_operator_in_c23/)
-- url: https://www.reddit.com/r/cpp/comments/ivwf41/we_need_the_constexpr_ternary_operator_in_c23/
----
-Currently, the code to initialize a variable of a dependent type is very verbose and hard to read or write
-
-    auto f(auto x) {
-        auto result = [&amp;] {
-            if constexpr (requires { x.size(); })
-                return std::vector&lt;int&gt;{};
-            else
-                return 0;
-        }();
-        return result;
-    }
-
-things would get a lot easier if there's a `constexpr` version of operator?:
-
-    auto f(auto x) {
-        constexpr auto is_container = requires { x.size(); };
-        auto result = constexpr is_container ? std::vector&lt;int&gt;{} : 0;
-        return result;
-    }
-
-there could be other better syntax to describe the same idea, I'm just making something up like temporarily here. what do you think?
-## [6][Why do I get a linker error with static const and value_or?](https://www.reddit.com/r/cpp/comments/ivwq82/why_do_i_get_a_linker_error_with_static_const_and/)
-- url: https://quuxplusone.github.io/blog/2020/09/19/value-or-pitfall/
+I've 10 yrs experience in writing C++ but still stuck with almost C++ 98 and writing a very little C++ 11 here and there. But I want to learn specifically latest features on C++ and looking to find out how to use them to get more acquainted with them. Please suggest.
+## [10][Making Iterators, Views and Containers Easier to Write with Boost.STLInterfaces - Zach Laine - Meeting C++ online](https://www.reddit.com/r/cpp/comments/iwfu7d/making_iterators_views_and_containers_easier_to/)
+- url: https://www.youtube.com/watch?v=Sv_hqkjra2Y
 ---
 
-## [7][Is CTest worth the effort?](https://www.reddit.com/r/cpp/comments/iwbdx7/is_ctest_worth_the_effort/)
-- url: https://www.reddit.com/r/cpp/comments/iwbdx7/is_ctest_worth_the_effort/
+## [11][Publishing the Doxygen Documentation](https://www.reddit.com/r/cpp/comments/iwysgf/publishing_the_doxygen_documentation/)
+- url: https://www.reddit.com/r/cpp/comments/iwysgf/publishing_the_doxygen_documentation/
 ---
-recently I discovered CTest, which is a test runner bundled with CMake.
-
-From the little I've seen, it looks like it is very basic in it's functionality and you have to write your tests in a way that is ctest aware (for example, ctest communicates with the test executable with command line arguments and exit code).
-
-ctest doesn't provide any testing macros/functions/classes on its own. it's just a test runner.
-
-&amp;#x200B;
-
-So my questions are:
-
-1. what is you experience with ctest? Is it worth the effort?
-2. what are the common pitfalls with it? what are some hacks and tricks you've come along using ctest?
-3. do you have any experience using ctest with open-source CI/CD systems like Github actions, Gitlab, Travis etc?
-4. Is there a better alternative?
-
-&amp;#x200B;
-
-Thanks.
-## [8][Manipulating image data in a texture class](https://www.reddit.com/r/cpp/comments/iwb7fl/manipulating_image_data_in_a_texture_class/)
-- url: https://www.reddit.com/r/cpp/comments/iwb7fl/manipulating_image_data_in_a_texture_class/
----
-Hello everyone. I'm using [nanogui](https://github.com/mitsuba-renderer/nanogui) for the UI in my project. It's elegant and fairly straightforward to use, even for a weak coder like me!
-
-I'm using nanogui's [ImageView](https://github.com/mitsuba-renderer/nanogui/blob/master/include/nanogui/imageview.h) widget to display images. What I want to do is display images that have been created and modified within the program, not loaded in. The problem is that ImageView displays only images in the form of nanogui's own [Texture](https://github.com/mitsuba-renderer/nanogui/blob/master/include/nanogui/texture.h) class. This class doesn't have any methods for reading/writing pixels in the image it contains - it can only load the image as a whole in from a file. My C++ knowledge isn't good enough for me to understand quite how [the source code](https://github.com/mitsuba-renderer/nanogui/blob/master/src/texture.cpp) for the class stores the image data, so I can't write my own methods for modifying it.
-
-The workaround I'm using at the moment involves creating my images using SFML's [Image](https://www.sfml-dev.org/documentation/2.5.1/classsf_1_1Image.php) class, then saving them to the hard drive, then loading them back in to nanogui's Texture class. This is (a) obviously ridiculous and (b) slow. Is there a way that I can manipulate the image data within nanogui's Texture class directly? Or, failing that, is there a way I can transfer image data from an sf::Image (or some similar object that allows reading/writing individual pixels) into a nanogui::Texture without having to save it and re-load it?
-
-Thank you for any ideas!
-## [9][Destructuring Assertions](https://www.reddit.com/r/cpp/comments/ivql73/destructuring_assertions/)
-- url: https://artificial-mind.net/blog/2020/09/19/destructuring-assertions
----
-
-## [10][CppCon 2020 lightning talk - C++ community surveys](https://www.reddit.com/r/cpp/comments/ivuahn/cppcon_2020_lightning_talk_c_community_surveys/)
-- url: https://www.youtube.com/watch?v=fPbETQUafFk
----
-
-## [11][C++ vs Java | Which One You Should Learn And Why?](https://www.reddit.com/r/cpp/comments/iwcon4/c_vs_java_which_one_you_should_learn_and_why/)
-- url: https://techbiason.com/cpp-vs-java/
----
-
+I have generated doxygen html files for my code. Is it possible to publish it in github or gitlab?

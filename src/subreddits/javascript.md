@@ -13,49 +13,75 @@ this is the place.
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][Writing Better Quality Code in JavaScript](https://www.reddit.com/r/javascript/comments/iwcbp5/writing_better_quality_code_in_javascript/)
-- url: https://acodementor.com/writing-better-quality-code-in-javascript-
+## [3][tsParticles - New Documentation Website (made with typedoc and typedoc-particles-theme)](https://www.reddit.com/r/javascript/comments/iwppfz/tsparticles_new_documentation_website_made_with/)
+- url: https://dev.to/matteobruni/tsparticles-documentation-website-2ihe
 ---
 
-## [4][Use Javascript's Array Methods to Handle API Data](https://www.reddit.com/r/javascript/comments/iw9qmh/use_javascripts_array_methods_to_handle_api_data/)
+## [4][[Research Project] Collaborated Code Reviews using Customised Static Code Analysis (Javascript, C#, Go, PHP, Python)](https://www.reddit.com/r/javascript/comments/iwp09h/research_project_collaborated_code_reviews_using/)
+- url: https://otagopolytechnic.au1.qualtrics.com/jfe/form/SV_b15riYH1K3pDkb3
+---
+
+## [5][Building a toy interpreter](https://www.reddit.com/r/javascript/comments/iwi4lb/building_a_toy_interpreter/)
+- url: https://github.com/bergsans/crudelang
+---
+
+## [6][Use Javascript's Array Methods to Handle API Data](https://www.reddit.com/r/javascript/comments/iw9qmh/use_javascripts_array_methods_to_handle_api_data/)
 - url: https://blog.bearer.sh/javascript-api-array-data-manipulation/
 ---
 
-## [5][[AskJS] what is the difference in expression or statement](https://www.reddit.com/r/javascript/comments/iwaras/askjs_what_is_the_difference_in_expression_or/)
-- url: https://www.reddit.com/r/javascript/comments/iwaras/askjs_what_is_the_difference_in_expression_or/
+## [7][[AskJS] Passing Parameters from 1 page to another into (dojo/request/xhr)](https://www.reddit.com/r/javascript/comments/iwke6s/askjs_passing_parameters_from_1_page_to_another/)
+- url: https://www.reddit.com/r/javascript/comments/iwke6s/askjs_passing_parameters_from_1_page_to_another/
 ---
-Please give answer in laymen terms i studied on the internet and coudnt understand it
-## [6][Numeric Separators - The human eye faces difficulty in parsing large numbers, a new proposal in Javascript to make this easier.](https://www.reddit.com/r/javascript/comments/ivtbq3/numeric_separators_the_human_eye_faces_difficulty/)
-- url: https://dev.to/shubhambattoo/numeric-separators-p4b
+Hi,
+
+i have a script which starts with the following and works fine when left as it is:
+
+&amp;#x200B;
+
+but I'm wanting to pass parameters from another page into the xhr URL
+
+example:
+
+**input.html**
+
+have 2 input boxes requesting Type + Year and on submit, output.html is loaded with the relevant URL
+
+**Output.html**
+
+    &lt;script&gt;dojoConfig = {parseOnLoad: true}&lt;/script&gt;
+    &lt;script src="//ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojo/dojo.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+    require(['dojo/_base/lang', 'dojox/grid/DataGrid', 'dojo/data/ItemFileWriteStore', 'dojo/dom', 'dojo/domReady!', 'dojo/request/xhr'],
+    function (lang, DataGrid, ItemFileWriteStore, Button, dom, xhr) {
+     
+        // make the API request with dojo/request/xhr
+        xhr('/api-rest/get/PRG001/ListDocs?Type=1&amp;Year=2020', {
+           method: 'GET',
+           withCredentials: true,
+           user: 'user1',
+           password: '********',
+           headers: {'Accept': 'application/json'},
+           handleAs: 'json',
+        }).then(render);
+
+any help appreciated
+## [8][Best way to add image posters to embeded youtube videos?](https://www.reddit.com/r/javascript/comments/iwjlz2/best_way_to_add_image_posters_to_embeded_youtube/)
+- url: /r/Frontend/comments/iwafpa/best_way_to_add_image_posters_to_embeded_youtube/
 ---
 
-## [7][BildX: An alternative to imgix and other services for your projects!](https://www.reddit.com/r/javascript/comments/iw6vaa/bildx_an_alternative_to_imgix_and_other_services/)
+## [9][BildX: An alternative to imgix and other services for your projects!](https://www.reddit.com/r/javascript/comments/iw6vaa/bildx_an_alternative_to_imgix_and_other_services/)
 - url: https://github.com/adamazad/bildx
 ---
 
-## [8][Dysfunctional programming in JavaScript](https://www.reddit.com/r/javascript/comments/iw4w4z/dysfunctional_programming_in_javascript/)
+## [10][Numeric Separators - The human eye faces difficulty in parsing large numbers, a new proposal in Javascript to make this easier.](https://www.reddit.com/r/javascript/comments/ivtbq3/numeric_separators_the_human_eye_faces_difficulty/)
+- url: https://dev.to/shubhambattoo/numeric-separators-p4b
+---
+
+## [11][Dysfunctional programming in JavaScript](https://www.reddit.com/r/javascript/comments/iw4w4z/dysfunctional_programming_in_javascript/)
 - url: https://medium.com/@petilon404/dysfunctional-programming-in-javascript-cae5c085a76e
 ---
 
-## [9][VueJS 3.0 has been released](https://www.reddit.com/r/javascript/comments/iv9kf5/vuejs_30_has_been_released/)
-- url: https://github.com/vuejs/vue-next/releases/tag/v3.0.0
+## [12][[AskJS] Any recommendations for a good JavaScript course?](https://www.reddit.com/r/javascript/comments/iweofi/askjs_any_recommendations_for_a_good_javascript/)
+- url: https://www.reddit.com/r/javascript/comments/iweofi/askjs_any_recommendations_for_a_good_javascript/
 ---
-
-## [10][[AskJS] localStorage vs IndexedDB](https://www.reddit.com/r/javascript/comments/ivq27f/askjs_localstorage_vs_indexeddb/)
-- url: https://www.reddit.com/r/javascript/comments/ivq27f/askjs_localstorage_vs_indexeddb/
----
-When would I want to use local storage over IndexedDB?
-
-There's the `localforage` package that gives me access to IndedexDB with a simpler API, so I no longer see the point in using local storage at all.
-
-Am I missing something?
-## [11][[AskJS] AI !== Algorithms ?](https://www.reddit.com/r/javascript/comments/ivy3sa/askjs_ai_algorithms/)
-- url: https://www.reddit.com/r/javascript/comments/ivy3sa/askjs_ai_algorithms/
----
-At the risk of sounding dead basic. Is their a difference between ai and algorithms? For my course I've been given a remit of building something that utilises ai, of course I can go back to my tutor but It's the weekend and if I can get an alternate consensus in the mean time...
-
-So, if for example I built a game of checkers and created an algorithm that picks a move for the computer. Is that ai? If it's not, then isn't it going down the path of machine learning?
-## [12][Deno 1.4 - "Our largest release yet"](https://www.reddit.com/r/javascript/comments/ivi0wd/deno_14_our_largest_release_yet/)
-- url: https://deno.land/posts/v1.4
----
-
+Have a lot of home office and want to use the time. Any recommendations?

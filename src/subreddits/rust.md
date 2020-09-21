@@ -1,6 +1,6 @@
 # rust
-## [1][Hey Rustaceans! Got an easy question? Ask here (38/2020)!](https://www.reddit.com/r/rust/comments/ismh8n/hey_rustaceans_got_an_easy_question_ask_here/)
-- url: https://www.reddit.com/r/rust/comments/ismh8n/hey_rustaceans_got_an_easy_question_ask_here/
+## [1][Hey Rustaceans! Got an easy question? Ask here (39/2020)!](https://www.reddit.com/r/rust/comments/iwxitt/hey_rustaceans_got_an_easy_question_ask_here/)
+- url: https://www.reddit.com/r/rust/comments/iwxitt/hey_rustaceans_got_an_easy_question_ask_here/
 ---
 Mystified about strings? Borrow checker have you in a headlock? Seek help here! There are no stupid questions, only docs that haven't been written yet.
 
@@ -16,100 +16,84 @@ The official Rust Programming Language Discord: [https://discord.gg/rust-lang](h
 
 The unofficial Rust community Discord: [https://bit.ly/rust-community](https://bit.ly/rust-community)
 
-Also check out [last weeks' thread](https://reddit.com/r/rust/comments/ioc56i/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
+Also check out [last weeks' thread](https://reddit.com/r/rust/comments/ismh8n/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][Official /r/rust "Who's Hiring" thread for job-seekers and job-offerers [Rust 1.46]](https://www.reddit.com/r/rust/comments/iix8vw/official_rrust_whos_hiring_thread_for_jobseekers/)
-- url: https://www.reddit.com/r/rust/comments/iix8vw/official_rrust_whos_hiring_thread_for_jobseekers/
+## [2][What's everyone working on this week (39/2020)?](https://www.reddit.com/r/rust/comments/iwxjdh/whats_everyone_working_on_this_week_392020/)
+- url: https://www.reddit.com/r/rust/comments/iwxjdh/whats_everyone_working_on_this_week_392020/
 ---
-Welcome once again to the official /r/rust Who's Hiring thread!
-
-Before we begin, job-seekers should also remember to peruse [the prior thread](https://www.reddit.com/r/rust/comments/htnv19/official_rrust_whos_hiring_thread_for_jobseekers/).
-
-This thread will be periodically stickied to the top of /r/rust for improved visibility. The thread will be refreshed and posted anew when the next version of Rust releases in six weeks.
-
-Please adhere to the following rules when posting:
-# Rules for individuals:
-
- * Don't create top-level comments; those are for employers.
- * Feel free to reply to top-level comments with on-topic questions.
- * Anyone seeking work should reply to my stickied top-level comment.
- * Meta-discussion should be reserved for the distinguished comment at the very bottom.
-
-# Rules for employers:
-
- * To find individuals seeking work, see the replies to the stickied top-level comment; you will need to click the "more comments" link at the bottom of the top-level comment in order to make these replies visible.
- * To make a top-level comment you must be hiring directly; no third-party recruiters.
- * One top-level comment per employer. If you have multiple job openings, please consolidate their descriptions or mention them in replies to your own top-level comment.
- * Proofread your comment after posting it and edit it if necessary to correct mistakes.
- * Please base your comment on the following template:
-
-COMPANY: *[Company name; please link to your company's website or careers page.]*
-
-TYPE: *[Full time, part time, internship, contract, etc.]*
-
-DESCRIPTION: *[What does your company do, and what are you using Rust for? How much experience are you seeking and what seniority levels are you hiring for? The more details the better.]*
-
-LOCATION: *[Where are your office or offices located? If your workplace language isn't English, please specify it.]*
-
-REMOTE: *[Do you offer the option of working remotely? If so, do you require employees to live in certain areas or time zones?]*
-
-VISA: *[Does your company sponsor visas?]*
-
-CONTACT: *[How can someone get in touch with you?]*
-## [3][Iced: a high performance and correct x86 (16/32/64-bit) instruction decoder, disassembler and assembler written in Rust](https://www.reddit.com/r/rust/comments/iw9zyj/iced_a_high_performance_and_correct_x86_163264bit/)
-- url: https://github.com/0xd4d/iced
+New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-39-2020/49088?u=llogiq)!
+## [3][A New Backend for Cranelift, Part 1: Instruction Selection](https://www.reddit.com/r/rust/comments/iwumjn/a_new_backend_for_cranelift_part_1_instruction/)
+- url: https://cfallin.org/blog/2020/09/18/cranelift-isel-1/
 ---
 
-## [4][Bevy 0.2](https://www.reddit.com/r/rust/comments/iw1yyp/bevy_02/)
-- url: https://bevyengine.org/news/bevy-0-2
+## [4][Blog Post: Why Not Rust?](https://www.reddit.com/r/rust/comments/iwij5i/blog_post_why_not_rust/)
+- url: https://matklad.github.io/2020/09/20/why-not-rust.html
 ---
 
-## [5][Throw-away Code](https://www.reddit.com/r/rust/comments/iwbp4d/throwaway_code/)
+## [5][Face Detection with Rust, TensorFlow, and WebAssembly](https://www.reddit.com/r/rust/comments/iwyj85/face_detection_with_rust_tensorflow_and/)
+- url: https://www.secondstate.io/articles/face-detection-ai-as-a-service/
+---
+
+## [6][rust-analyzer changelog #43](https://www.reddit.com/r/rust/comments/iwzja8/rustanalyzer_changelog_43/)
+- url: https://rust-analyzer.github.io/thisweek/2020/09/21/changelog-43.html
+---
+
+## [7][Text-Based Web Browser for Rust newbies](https://www.reddit.com/r/rust/comments/iwvn00/textbased_web_browser_for_rust_newbies/)
+- url: https://www.reddit.com/r/rust/comments/iwvn00/textbased_web_browser_for_rust_newbies/
+---
+[LINK TO REPOSITORY](https://github.com/Debmalya99/TermSurf)
+
+Hi all, I created **TermSurf: A text-based web browser in Rust** for learning purposes. I am not a great programmer, so I learnt a lot of new concepts as I made this project. 
+
+A web browser has a javascript engine inside it, and it can render HTML and CSS styles. Now, since my project is text-based, and has no GUI, it **does not feature HTML rendering or CSS.** It simply displays text.
+
+But the problem was with Javascript. I wanted to create functional applications that could be run using the browser, but I had never written a program that had an embedded scripting engine inside it. 
+
+**Here was my plan, that browser will be:**
+
+* A simple Http client that would make web requests to some server.
+* The server would return some text response.
+* The text response will actually be source code for a scripting language.
+* The browser will have a scripting engine embedded into it, so it can run the obtained source code.
+* The scripting language will have functions to make web requests to the server for interactivity.
+
+**As an example, I have made some sample servers** all of which can be run in your localhost if you have python and flask installed. All of this server code is included in the repository itself. More information is provided in the README.md
+
+**The Scripting Language that is currently in use:** I have used the [Rhai](https://github.com/jonathandturner/rhai) scripting language for Rust. It is very easy to learn and use, very similar to rust itself, but without the explicit declaration of types.
+
+**Thank you for your time in reading this, if you feel interested please check it out. I am looking for contributors to this project. If you are a Rust newbie like me and would like to help, it will be very helpful.**
+## [8][A Bazel Persistent Worker for Rust](https://www.reddit.com/r/rust/comments/iwpg98/a_bazel_persistent_worker_for_rust/)
+- url: https://nikhilism.com/post/2020/bazel-persistent-worker-rust/
+---
+
+## [9][API documentation... how to improve my experience?](https://www.reddit.com/r/rust/comments/iwqcjv/api_documentation_how_to_improve_my_experience/)
+- url: https://www.reddit.com/r/rust/comments/iwqcjv/api_documentation_how_to_improve_my_experience/
+---
+I'll preface this by explaining that most of my dev work is done in Go, including 80% of my professional work.
+
+I'm trying to learn (and eventually master) Rust, because I think it will have serious value in the work that my organization is trying to accomplish. However, I'm having a hell of a time. My default mode of learning is to reimplement examples I find scattered around the web, using API documentation to understand exactly what the function I'm calling is doing.
+
+Unfortunately... it's extremely hard to find that function, sometimes. With Go's API documentation, the function is always listed under the struct or package that implements it, regardless of whether it's implementing an external interface. That doesn't seem to be the case with Rust. As a (possibly not great) example, the `to_string` method on an `i32`; yes, I (now) understand that it's implementing the `std::string::ToString` trait, but without already knowing that, discovering that that is the source of the `to_string` method on `i32` is not straightforward.
+
+I guess I'm looking for two outcomes on this post: 1) tips on how to more effectively and efficiently use the Rust API documentation to find what I'm looking for, and 2) hopefully either bring attention to this issue to people in a place to do something about it, or at least gather experiences so that I can put together a comprehensive report/request myself.
+
+Thanks for your advice and experience.
+## [10][How to set buffer size on Tokio UDP socket?](https://www.reddit.com/r/rust/comments/iwxqul/how_to_set_buffer_size_on_tokio_udp_socket/)
+- url: https://www.reddit.com/r/rust/comments/iwxqul/how_to_set_buffer_size_on_tokio_udp_socket/
+---
+I need to set the receive buffer size on a Tokio UDP socket. There is no way to do this directly.
+
+`from_std()` looks promising, but net2's UdpBuilder also doesn't offer this functionality.
+
+I thought about getting the raw socket handle—and setting the buffer size myself—using the AsRawFd trait, but I couldn't get that to work - the compiler insists there is no method called `as_raw_fd()`. Is it called something else on Windows, perhaps?
+
+Any help much appreciated!
+## [11][Unique Array Elements and their Frequency](https://www.reddit.com/r/rust/comments/iwz1xr/unique_array_elements_and_their_frequency/)
+- url: https://datacrayon.com/posts/programming/rust-notebooks/unique-array-elements-and-their-frequency/
+---
+
+## [12][Throw-away Code](https://www.reddit.com/r/rust/comments/iwbp4d/throwaway_code/)
 - url: https://vorner.github.io/2020/09/20/throw-away-code.html
----
-
-## [6][mouse-rs: Library for controlling your mouse in rust](https://www.reddit.com/r/rust/comments/iwac0l/mousers_library_for_controlling_your_mouse_in_rust/)
-- url: https://github.com/DankDumpster/mouse-rs
----
-
-## [7][Ouroboros, a crate for easily creating self-referencing structs.](https://www.reddit.com/r/rust/comments/iw56vl/ouroboros_a_crate_for_easily_creating/)
-- url: https://www.reddit.com/r/rust/comments/iw56vl/ouroboros_a_crate_for_easily_creating/
----
-[https://crates.io/crates/ouroboros](https://crates.io/crates/ouroboros). Due to the `rental` crate no longer being maintained, I decided to take a stab at making a crate with similar features but with what I believe is a simpler and more flexible API.
-## [8][A month and a half ago, I hadn't written a line of Rust code. Today, I published my first app to crates.io!](https://www.reddit.com/r/rust/comments/ivv94g/a_month_and_a_half_ago_i_hadnt_written_a_line_of/)
-- url: https://www.reddit.com/r/rust/comments/ivv94g/a_month_and_a_half_ago_i_hadnt_written_a_line_of/
----
-What the title says! A month ago, I made a post asking how to get started with Rust development, whether I should prototype in Python, etc etc.
-
-Today, I'm proud to announce that:
-
-a. I did *not* prototype in Python, and
-
-b. I published my first app to [crates.io](https://crates.io).
-
-I'm really happy about this, this is my first ever big software development project (I'm 19) and the first big thing I've written in Rust. I've fallen in love with this language and I expect to be using it a lot more in the future.
-
-What I've written is a TUI app that queries the [Discogs](https://discogs.com) database using a given username and auth token, and displays that information in a TUI. It also stores that data in an sqlite database, which means apart from querying the Discogs API, it is completely offline. The repository is [here](https://github.com/cartoon-raccoon/cogsy).
-
-I'm still extremely new to Rust and my code will probably make you want to take a quick trip to r/eyebleach, but I'm extremely open to constructive criticism and I hope you can take the time to look through my code and give some feedback on how I can make better use of Rust's features. My code is also full of `.clone()`s and `.unwrap()`s so I could use some feedback on how to better leverage the ownership system instead of cloning everywhere.
-
-From here, I plan to write a GraphQL web API using Rocket, mongodb and juniper, and then delve into systems programming with Rust and C. If anyone can give me advice on this path, I'd be extremely grateful.
-
-Thanks for reading!
-## [9][Updated "Learn Wgpu" to 0.6](https://www.reddit.com/r/rust/comments/iw1z6g/updated_learn_wgpu_to_06/)
-- url: /r/rust_gamedev/comments/iw1yup/updated_learn_wgpu_to_06/
----
-
-## [10][TL;DR Rust](https://www.reddit.com/r/rust/comments/ivv67v/tldr_rust/)
-- url: https://christine.website/blog/TLDR-rust-2020-09-19
----
-
-## [11][gRPC services using Rust. I started learning Rust and thought I’d blog about it as I learn](https://www.reddit.com/r/rust/comments/iwb4g2/grpc_services_using_rust_i_started_learning_rust/)
-- url: https://www.swiftdiaries.com/rust/
----
-
-## [12][I started a port of Blueprintjs.com to Yew](https://www.reddit.com/r/rust/comments/ivrmbr/i_started_a_port_of_blueprintjscom_to_yew/)
-- url: https://github.com/cecton/blueprint-rs
 ---
 

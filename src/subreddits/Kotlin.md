@@ -1,116 +1,125 @@
 # Kotlin
-## [1][Having worked with kotlin sealed classes for some time now, I feel that the Java 15 version of sealed classes are more flexible and allows better readability with the offence of being verbose on the declaration. Which one will you prefer?](https://www.reddit.com/r/Kotlin/comments/iwx5j4/having_worked_with_kotlin_sealed_classes_for_some/)
+## [1][Kotlin for live coding music - a new track made with Punkt 0.3.0 library](https://www.reddit.com/r/Kotlin/comments/ixkblv/kotlin_for_live_coding_music_a_new_track_made/)
+- url: https://www.youtube.com/watch?v=T1kspTlFH0Y
+---
+
+## [2][cashapp/tempest – a type safe DynamoDB API for Kotlin and Java](https://www.reddit.com/r/Kotlin/comments/ixho1x/cashapptempest_a_type_safe_dynamodb_api_for/)
+- url: https://cashapp.github.io/2020-08-31/announcing-tempest-1-0
+---
+
+## [3][Is It possible to choose topass function arguement by value or by name as in Scala](https://www.reddit.com/r/Kotlin/comments/ixkfw6/is_it_possible_to_choose_topass_function/)
+- url: https://www.reddit.com/r/Kotlin/comments/ixkfw6/is_it_possible_to_choose_topass_function/
+---
+Hi,
+
+the question is in the title
+
+Example in scala
+
+    def func(byValue: A, byName: =&gt; B):C = ...
+
+Thanks in advance
+
+EDIT:
+
+By name definition : [https://docs.scala-lang.org/tour/by-name-parameters.html](https://docs.scala-lang.org/tour/by-name-parameters.html)
+## [4][Are there any sources I can study Kotlin basics on my own?](https://www.reddit.com/r/Kotlin/comments/ixe03y/are_there_any_sources_i_can_study_kotlin_basics/)
+- url: https://www.reddit.com/r/Kotlin/comments/ixe03y/are_there_any_sources_i_can_study_kotlin_basics/
+---
+I learned java basics through AP CSA last year and I'm having a hard time learning kotlin in android development class this year. I don't get how each functions work in android development at all.  Can you recommend some sources teaching kotlin basics? Books are also good.
+## [5][What's the best free Kotlin course most I have found aren't updated to 1.4 syntax](https://www.reddit.com/r/Kotlin/comments/ixlaxw/whats_the_best_free_kotlin_course_most_i_have/)
+- url: https://www.reddit.com/r/Kotlin/comments/ixlaxw/whats_the_best_free_kotlin_course_most_i_have/
+---
+I have already went through Codecademy's course and read through the documentation, but I am trying to fine an in-depth course (That isn't only focused on android development)
+## [6][Best practices for packages](https://www.reddit.com/r/Kotlin/comments/ixd0n3/best_practices_for_packages/)
+- url: https://www.reddit.com/r/Kotlin/comments/ixd0n3/best_practices_for_packages/
+---
+tl/dr; First real project with kotlin, wondering for best practices for code organization.
+
+Hi there, I'm working on my first Kotlin project (coming from Java).
+
+The system is pretty basic, right now all I have is a couple of data classes (value objects) with the corresponding repositories.
+
+For those I have two files, model.kt and repositories.kt.
+
+Back in Java (with the one file one class rule) I would make a model package and a persistence package. Trying to keep that _sense of order_ I have made the packages, but there's a single file on each with multiple (simple) classes. (Each of those have 20 lines or less).
+
+Right now I feel that the packages (as a directory structure) are not needed, but having all my files on the root directory feels wrong. But, again, I don't know if that's just some kind of stockholm syndrome.
+
+Any suggestion will be appreciated.
+## [7][Can someone explain to me why @JvmOverloads doesn't work in this case?](https://www.reddit.com/r/Kotlin/comments/ixhqnq/can_someone_explain_to_me_why_jvmoverloads_doesnt/)
+- url: https://i.redd.it/o8hw17vn1no51.png
+---
+
+## [8][Having worked with kotlin sealed classes for some time now, I feel that the Java 15 version of sealed classes are more flexible and allows better readability with the offence of being verbose on the declaration. Which one will you prefer?](https://www.reddit.com/r/Kotlin/comments/iwx5j4/having_worked_with_kotlin_sealed_classes_for_some/)
 - url: https://www.reddit.com/gallery/iwx5j4
 ---
 
-## [2][[P] ML With Android 11](https://www.reddit.com/r/Kotlin/comments/ivqd4f/p_ml_with_android_11/)
-- url: https://www.reddit.com/r/Kotlin/comments/ivqd4f/p_ml_with_android_11/
+## [9][When with subject capturing: bug or strange behaviour?](https://www.reddit.com/r/Kotlin/comments/ixcktr/when_with_subject_capturing_bug_or_strange/)
+- url: https://www.reddit.com/r/Kotlin/comments/ixcktr/when_with_subject_capturing_bug_or_strange/
 ---
-Hey,
+Let's assume I have this:
+```
+data class Wrapper(val value: Any?)
+data class Value(val value: String)
 
-I open-sourced this repo by me demonstrating how you can get started with Machine Learning in Android 11 with Kotlin, all that is new. I further even explain how the code works so you can very easily get started with implementing Machine Learning in your Android apps with cool examples!
+fun main() {
+    println(test(Wrapper(Value("ABC"))))
+}
+```
 
-(PS: Leave me a star if this looks good to you, helps me a lot.)
+When I evaluate it this way, it yields “ABC” (as expected):
+```
+fun test(input: Wrapper?): String {
+    val value = input?.value
+    return when {
+        value !is Value -&gt; "Not a Value"
+        value.value == "ABC" -&gt; "ABC"
+        else -&gt; "Not ABC"
+    }
+}
+```
 
-[https://github.com/Rishit-dagli/ML-with-Android-11](https://github.com/Rishit-dagli/ML-with-Android-11)
-## [3][Solicitar Bloque de Anuncios Admob y Android #1 ✅Curso de Programación A...](https://www.reddit.com/r/Kotlin/comments/iw2tur/solicitar_bloque_de_anuncios_admob_y_android_1/)
-- url: https://www.youtube.com/watch?v=0U75khKzJ50&amp;feature=share
+But when I evaluate it this way, it yields “Not ABC”:
+```
+fun test(input: Wrapper?) =
+    when(val value = input?.value) {
+        !is Value -&gt; "Not a Value"
+        // IDE says value is smart-casted here because of the previous !is
+        value.value == "ABC" -&gt; "ABC"
+        else -&gt; "Not ABC"
+    }
+```
+
+This won't even compile:
+```
+fun test(input: Wrapper?) =
+    when(val value = input?.value) {
+        value !is Value -&gt; "Not a Value"
+        // IDE says value is Any? here so it's not smart-casted by previous !is
+        value.value == "ABC" -&gt; "ABC"
+        else -&gt; "Not ABC"
+    }
+```
+
+And this yields “ABC” and not “Matched” so the value in `input` is correct, just not matched in `when`:
+```
+fun test(input: Wrapper?) =
+    when(val value = input?.value) {
+        !is Value -&gt; "Not a Value"
+        value.value == "ABC" -&gt; "Matched"
+        else -&gt; value.value
+    }
+```
+
+I have just tested these snippets in the playground so it's not using any hidden variables from outside.
+
+Can anyone explain this behaviour?
+
+EDIT: Added fourth snippet
+## [10][DecimalFormat for Kotlin Multiplatform](https://www.reddit.com/r/Kotlin/comments/ixb0gt/decimalformat_for_kotlin_multiplatform/)
+- url: https://www.reddit.com/r/Kotlin/comments/ixb0gt/decimalformat_for_kotlin_multiplatform/
 ---
+Hello,
 
-## [4][Moving to kotlin for native android Java Developers](https://www.reddit.com/r/Kotlin/comments/iv159n/moving_to_kotlin_for_native_android_java/)
-- url: https://gwaza.hashnode.dev/moving-to-kotlin-for-native-android-java-developers-ckf7p3ovz00v06ds1ah8r9c7l
----
-
-## [5][Firebase Admin Kotlin SDK](https://www.reddit.com/r/Kotlin/comments/iv58tw/firebase_admin_kotlin_sdk/)
-- url: https://www.reddit.com/r/Kotlin/comments/iv58tw/firebase_admin_kotlin_sdk/
----
-Is there a firebase admin SDK solely developed in Kotlin for adding admin SDK to the Server?  Now since Kotlin is interoperable with Java i can also use the Firebase Admin Java SDK but then obviously it wouldn't provide me the coroutine support for asynchronous execution of my code.
-## [6][Kotlin Developer Course](https://www.reddit.com/r/Kotlin/comments/iv91z3/kotlin_developer_course/)
-- url: https://www.google.com/amp/s/onlinecoursesgalore.com/complete-kotlin-developer-course-rob-percival/amp/
----
-
-## [7][Kotlin for Backend](https://www.reddit.com/r/Kotlin/comments/iuxzsa/kotlin_for_backend/)
-- url: https://www.reddit.com/r/Kotlin/comments/iuxzsa/kotlin_for_backend/
----
-Hello everyone!
-I was thinking of using GraphQL with Kotlin for my server side of my web application. Now there are a lot of frameworks and all of them have their own features but I just wanted to know which of them will be most compatible with GraphQL. Have anyone of you worked with GraphQL and built the server side without any trouble?
-For now I'm thinking about Javalin or Micronaut. I'm considering Vert.x (but listened it's steeper to learn) and Spring (didn't find anything related to Graphql on their website) too.
-## [8][How to set up Kotlin for NodeJS with TS dependencies?](https://www.reddit.com/r/Kotlin/comments/iujq6a/how_to_set_up_kotlin_for_nodejs_with_ts/)
-- url: https://www.reddit.com/r/Kotlin/comments/iujq6a/how_to_set_up_kotlin_for_nodejs_with_ts/
----
-Hey, I've been using Kotlin in the JVM for a few years and I decided to try it on nodejs (I'm also working with node for a few years, so I'm not newbie in the platform).
-
-&amp;#x200B;
-
-I went to IDEA &gt; New Project &gt; Gradle &gt; Kotlin (NodeJS). Added a few dependencies and enable the experimental Dukat:
-
-build.gradle.kts`dependencies {implementation(kotlin("stdlib-js"))implementation(npm("firebase", "7.20.0"))implementation(npm("left-pad", "1.3.0"))}`
-
-&amp;#x200B;
-
-gradle.properties
-
-`kotlin.code.style=officialkotlin.js.experimental.generateKotlinExternals=true`
-
-Both firebase and left-pad (obviously I'm using this for test) does have typescript mappings, so the kotlin mappings should be generated, right?
-
-I refreshed Gradle and went to the src/main trying to import the dependencies, but nothing happened and I don't know why. Looking at build/js/node\_modules the dependencies are there.
-
-&amp;#x200B;
-
-I tried to run the Dukat gradle tasks and nothing happened too.
-
-&amp;#x200B;
-
-This section about external dependencies is very bad documented, I need some help to set it up.
-
-btw I'm on Kotlin 1.4, my full build.gradle looks like this:`plugins {id("org.jetbrains.kotlin.js") version "1.4.10"}group = "dev.nathanpb"version = "1.0.0"repositories {mavenCentral()}dependencies {implementation(kotlin("stdlib-js"))implementation(npm("firebase", "7.20.0"))implementation(npm("left-pad", "1.3.0"))}kotlin {js {nodejs {}binaries.executable()}}`
-
-&amp;#x200B;
-
-Thank you all, hope I will be using this in production soon
-
-&amp;#x200B;
-
-**SOLUTION:** I'm stupid and can't read documentations: [https://kotlinlang.org/docs/reference/js-external-declarations-with-dukat.html#generating-external-declarations-at-build-time](https://kotlinlang.org/docs/reference/js-external-declarations-with-dukat.html#generating-external-declarations-at-build-time)
-## [9][Using createPortal in functionalComponent of Kotlin-react](https://www.reddit.com/r/Kotlin/comments/iui3th/using_createportal_in_functionalcomponent_of/)
-- url: https://www.reddit.com/r/Kotlin/comments/iui3th/using_createportal_in_functionalcomponent_of/
----
-Does anyone have some idea how to use createPortal in kotlin-react for example to render a modal? i have tried several ways and nothing is working. I´m new at Kotlin. Here is one way i tryed:
-
-  
-`interface Modalprops:RProps{`  
- `var visible:Boolean`  
-`}`  
-
-
-`val modal = functionalComponent&lt;Modalprops&gt; {props-&gt;`  
- `val (container) = useState(document.create.div{+"asdasdsa"})`  
- `useEffectWithCleanup(emptyList()) {`  
- `document.body?.appendChild(container)`  
- `return@useEffectWithCleanup { document.body?.removeChild(container)}`  
-`}`  
- `createPortal(container){`  
- `if(props.visible) {`  
- `div { +"asdasd" }`  
- `}`  
- `}`  
-`}`  
-`fun RBuilder.OModal(isvisible:Boolean, handler:Modalprops.()-&gt;Unit) = child(modal){`  
- `attrs{`  
- `visible=isvisible`  
- `}`  
-`}`  
-
-
-its just how its working in good old TS and i tried to transfer it to kotlin-react but createPortal seems to do nothing in this case.
-
-&amp;#x200B;
-
-It would be nice if some could give me an example of how implement this example correct in react-kotlin.
-## [10][Thread within coroutine](https://www.reddit.com/r/Kotlin/comments/iuqh7t/thread_within_coroutine/)
-- url: https://www.reddit.com/r/Kotlin/comments/iuqh7t/thread_within_coroutine/
----
-Is this a bad idea or is it fine?
-
-Because when I'm done writing to a file I flush it but the flush function uses synchronized block so I start a thread within a coroutine to run the flush function but this has weird side effects (very strange bugs I can't really explain right now).
+I'm trying to build a multiplatform library with Kotlin. The library I'm building deals with logic for formatting decimal. The only easy way I know for this would be to use Java DecimalFormat but since this is going to be multi-platform, using anything from Java is not possible. I noticed there is this open issue related to decimal formatting for Kotlin multiplatform: [https://youtrack.jetbrains.com/issue/KT-21644?\_ga=2.88225499.1133820560.1600725580-928101732.1566781632](https://slack-redir.net/link?url=https%3A%2F%2Fyoutrack.jetbrains.com%2Fissue%2FKT-21644%3F_ga%3D2.88225499.1133820560.1600725580-928101732.1566781632). So I guess currently there is no multiplatform library for decimal format? If you happened to run into this, what was your work around? Did you end up having to create your own library from scratch?

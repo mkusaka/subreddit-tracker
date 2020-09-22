@@ -31,78 +31,55 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Android 11 Lifecycle Changes?](https://www.reddit.com/r/androiddev/comments/iwwq55/android_11_lifecycle_changes/)
-- url: https://www.reddit.com/r/androiddev/comments/iwwq55/android_11_lifecycle_changes/
+## [3][Introduction to the core concepts of Android Navigation](https://www.reddit.com/r/androiddev/comments/ixhxpv/introduction_to_the_core_concepts_of_android/)
+- url: https://blog.codemagic.io/android-navigation-introduction/
 ---
-Have there been any noticeable lifecycle changes on Android 11 that anyone has noticed? 
 
-&amp;#x200B;
+## [4][I was checking out Kotlin Multiplatform Mobile, looks promising!](https://www.reddit.com/r/androiddev/comments/ixjfs0/i_was_checking_out_kotlin_multiplatform_mobile/)
+- url: https://x-team.com/blog/kotlin-multiplatform/
+---
 
-My app works fine on pre-Android 11 OSes but on my Pixel 4 is crashing out everytime with the error: 
+## [5][Are your apps profitable?](https://www.reddit.com/r/androiddev/comments/ix28ow/are_your_apps_profitable/)
+- url: https://www.reddit.com/r/androiddev/comments/ix28ow/are_your_apps_profitable/
+---
+I'm trying to figure out the best monetization template so I'm asking.
 
-E/AndroidRuntime: FATAL EXCEPTION: main  
+1. Your total app profits? 
+2. How many apps? 
+3. Via Paid app, in-app, ads?
+4. How many years took you to reach that?
 
+Thanks!
+## [6][Do Instant Apps through the web still work ?](https://www.reddit.com/r/androiddev/comments/ixdftx/do_instant_apps_through_the_web_still_work/)
+- url: https://www.reddit.com/r/androiddev/comments/ixdftx/do_instant_apps_through_the_web_still_work/
+---
+Hey I am working on a small instant app project for my company and cannot seem to see any websites that link to an instant app. For eg If I go to the play store page for vimeo, it shows up a "Try Now" button next to install, but searching on chrome, vimeo links take me to the website and not the instant app.
 
-java.lang.IllegalStateException: Fragment host has been destroyed
+I also have the settings enabled for allowing to upgrade web links. Does this features still exist or are instant apps limited to the try now button on play store ?
+## [7][Processor for Android Development](https://www.reddit.com/r/androiddev/comments/ixjzwu/processor_for_android_development/)
+- url: https://www.reddit.com/r/androiddev/comments/ixjzwu/processor_for_android_development/
+---
+I am on a look for a new laptop especially for developing Android Apps, what processor should I be shooting for ? Any help on  other requirements will also be beneficial.
+## [8][Hilt- A new and easy way to use Dagger](https://www.reddit.com/r/androiddev/comments/ixmqci/hilt_a_new_and_easy_way_to_use_dagger/)
+- url: https://blog.yudiz.com/hilt-a-new-and-easy-way-to-use-dagger/
+---
 
-&amp;#x200B;
+## [9][4 Mobile App Onboarding mistakes to Avoid for New App Users: by Joe Dawson](https://www.reddit.com/r/androiddev/comments/ix74ss/4_mobile_app_onboarding_mistakes_to_avoid_for_new/)
+- url: https://appedus.com/mistakes-to-avoid-when-onboarding-new-app-users/
+---
 
-Is there anything under the hood that anyone else has noticed to just affect their app on Android 11?
-## [4][Understanding the internals of Glide Image Loading Library - Analyzing the Source Code](https://www.reddit.com/r/androiddev/comments/iwis5d/understanding_the_internals_of_glide_image/)
+## [10][Will I be able to transfer closed test version to release immediately after the test version is reviewed by Google? Or it will reqiure another review?](https://www.reddit.com/r/androiddev/comments/ix68c0/will_i_be_able_to_transfer_closed_test_version_to/)
+- url: https://www.reddit.com/r/androiddev/comments/ix68c0/will_i_be_able_to_transfer_closed_test_version_to/
+---
+I am publishing new application from new account and I need to make sure the app will be released in time. I submitted the app for a closed test and I still couldn't open the link for testers (I guess because of the review?).
+
+After review finishes, will I be able to transfer this version to release immediately, or will it require another review from Google?
+## [11][Understanding the internals of Glide Image Loading Library - Analyzing the Source Code](https://www.reddit.com/r/androiddev/comments/iwis5d/understanding_the_internals_of_glide_image/)
 - url: https://www.youtube.com/watch?v=3o1kGd708a4
 ---
 
-## [5][Safe Dot - iOS 14 feature for Android](https://www.reddit.com/r/androiddev/comments/iwzizj/safe_dot_ios_14_feature_for_android/)
-- url: https://www.reddit.com/r/androiddev/comments/iwzizj/safe_dot_ios_14_feature_for_android/
----
-Yes, The app that brings you IOS 14 feature of showing you an indication when a third party apps or services use your device camera or microphone. 
-
-I tryed to recreate that for android. Currently, it shows a green (cam) &amp; orange (mic) dot on the top right or left corner of your screen when an app uses your camera or microphone.
-
-
-
-Available on Google Play Store (Open Beta Testing)
-https://play.google.com/store/apps/details?id=com.aravi.dot
-
-If you use a samsung device and want to download a Samsung optimised version : https://galaxy.store/dotsafe
-
-
-Future plans :
-
-- Log of usage by apps
-- Notification alert
-- more...
-
-Feel free to report bugs or suggestions in the comments. 
-
-Peace ✌️
-## [6][How to create a layout to display Images in a Grid like LinkedIn or facebook does in their Main Feed page? also want to know about a way to overlay a text view with a number in the last picture.](https://www.reddit.com/r/androiddev/comments/iwz1tm/how_to_create_a_layout_to_display_images_in_a/)
-- url: https://i.redd.it/1snpz4otqho51.png
----
-
-## [7][File Encryption on Android with Jetpack Security](https://www.reddit.com/r/androiddev/comments/iwuc15/file_encryption_on_android_with_jetpack_security/)
-- url: https://howtodoandroid.com/file-encryption-android-jetpack/
----
-
-## [8][Changes to RemoteViews for Android 11](https://www.reddit.com/r/androiddev/comments/iwx0bz/changes_to_remoteviews_for_android_11/)
+## [12][Changes to RemoteViews for Android 11](https://www.reddit.com/r/androiddev/comments/iwx0bz/changes_to_remoteviews_for_android_11/)
 - url: https://www.reddit.com/r/androiddev/comments/iwx0bz/changes_to_remoteviews_for_android_11/
 ---
 Has there been any changes to RemoteView in Android 11. In my existing apps for displaying larger images on notification, which works fine on &lt;=Android 10 devices, earlier I was seeing an error printed that 'Removed too large RemoteViews'. But this has now been switched to a warning 'RemoteViews too large on this might be stripped in a future release'.  
 Are any of these changes documented for Android 11.
-## [9][Discover what are the hidden forces that shape our digital decisions by peering into behavioral science.](https://www.reddit.com/r/androiddev/comments/iwzwbf/discover_what_are_the_hidden_forces_that_shape/)
-- url: https://youtu.be/zOPGByrWoyg?list=PLEx5khR4g7PL-JwckuOkkc5cR6X5hn6ug
----
-
-## [10][Running Go Code on iOS and Android](https://www.reddit.com/r/androiddev/comments/iwl2vr/running_go_code_on_ios_and_android/)
-- url: https://rogchap.com/2020/09/14/running-go-code-on-ios-and-android/
----
-
-## [11][JetMessenger: Facebook Messenger clone with Jetpack Compose (because why not)](https://www.reddit.com/r/androiddev/comments/iwfsfk/jetmessenger_facebook_messenger_clone_with/)
-- url: https://github.com/ashar-7/JetMessenger
----
-
-## [12][What are the best practices to fork an open source Android app ?](https://www.reddit.com/r/androiddev/comments/iwwglv/what_are_the_best_practices_to_fork_an_open/)
-- url: https://www.reddit.com/r/androiddev/comments/iwwglv/what_are_the_best_practices_to_fork_an_open/
----
-To not  have conflicts with source files if there is an update etc... Is it  possible to overwrite a feature or design by adding code that don't  touch the source files ?  
-I looked at differents repo like Lawnchair for example and they have inside the project of launcher 3 their own folder with their source files, is this a good practice ?

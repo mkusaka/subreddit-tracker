@@ -23,77 +23,72 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/iwxjdh/whats_everyone_working_on_this_week_392020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-39-2020/49088?u=llogiq)!
-## [3][A New Backend for Cranelift, Part 1: Instruction Selection](https://www.reddit.com/r/rust/comments/iwumjn/a_new_backend_for_cranelift_part_1_instruction/)
-- url: https://cfallin.org/blog/2020/09/18/cranelift-isel-1/
+## [3][My Least Favorite Rust Type](https://www.reddit.com/r/rust/comments/ix751t/my_least_favorite_rust_type/)
+- url: https://ridiculousfish.com/blog/posts/least-favorite-rust-type.html
 ---
 
-## [4][Blog Post: Why Not Rust?](https://www.reddit.com/r/rust/comments/iwij5i/blog_post_why_not_rust/)
-- url: https://matklad.github.io/2020/09/20/why-not-rust.html
+## [4][Small tip to transform an Option&lt;impl Iterator&lt;_&gt;&gt; into an impl Iterator&lt;_&gt;](https://www.reddit.com/r/rust/comments/ixj7f3/small_tip_to_transform_an_optionimpl_iterator/)
+- url: https://www.reddit.com/r/rust/comments/ixj7f3/small_tip_to_transform_an_optionimpl_iterator/
+---
+If you ever encounter a situation where you need an `impl Iterator&lt;Item = T&gt;` out of an `Option&lt;impl Iterator&lt;Item = T&gt;&gt;`, doing `iter_option.unwrap_or(iter::empty())` will not work because the types in the `None` and `Some` cases are different.
+
+The tip is to flatten the option: `iter_option.into_iter().flatten()`.
+## [5][gui-tools -- A cross-platform drawing kit for creating GUIs](https://www.reddit.com/r/rust/comments/ixh1m3/guitools_a_crossplatform_drawing_kit_for_creating/)
+- url: https://www.reddit.com/r/rust/comments/ixh1m3/guitools_a_crossplatform_drawing_kit_for_creating/
+---
+As of late, I've been examining the model that GTK+ uses to create a GUI interface. One of the most interesting parts is that it separates its code into three parts: the widget toolkit (GTK), the drawing toolkit (GDK), and the runtime for the type system (GLib). 
+
+gui-tools aims to be the drawing kit part of that equation. It provides an event runtime, interfaces to native libraries, and APIs for drawing on surfaces. It doesn't aim to be a full graphics framework; rather, it aims to be an unopinionated part of one.
+
+At the moment, it's in a primitive state. supports the xlib and win32 backends somewhat reliably. Some things I want to do with this in the future:
+
+* Add support for text rendering via the `fontdue` crate.
+* Add a backend for OSX's AppKit API.
+* Add a backend for the DOM. That way it becomes easy to port apps using `gui-tools` from the desktop to the web.
+* Currently, `gui-tools` uses native drawing APIs (e.g. GDI+ and GC), which create unnecessary expenditure on the CPU. If we use OpenGL, we can both transfer that work to the GPU and make the drawing style more consistent.
+* Add async support.
+
+https://github.com/not-a-seagull/gui-tools
+## [6][A simple library for benchmarking](https://www.reddit.com/r/rust/comments/ixlbqi/a_simple_library_for_benchmarking/)
+- url: https://www.reddit.com/r/rust/comments/ixlbqi/a_simple_library_for_benchmarking/
+---
+It imitates test::bench, but supports async and has beautiful output.
+
+&amp;#x200B;
+
+&gt;I am a rust beginner, please correct me if the code is bad. Thank you
+
+&amp;#x200B;
+
+https://preview.redd.it/cduz8lngmoo51.png?width=1108&amp;format=png&amp;auto=webp&amp;s=6111b6fb13f8c3b2aa1a0df1612b4325038b1421
+
+[https://github.com/juzi5201314/bench-rs](https://github.com/juzi5201314/bench-rs)
+## [7][Updating the little book of rust macros to current Rust](https://www.reddit.com/r/rust/comments/ix0jni/updating_the_little_book_of_rust_macros_to/)
+- url: https://www.reddit.com/r/rust/comments/ix0jni/updating_the_little_book_of_rust_macros_to/
+---
+The Little Book of Rust Macros is a great learning resource when it comes to macros, or well it was. Unfortunately the original author has disappear since 2016 which in turn kept the book frozen in time. Rust has changed quite a bit since then, and so did macros. The book is still quite helpful even to this day but it is missing some valuable additions that have been made to the macro system. The practical introduction actually guides the user through building a macro that does not even compile in current Rust anymore.
+
+Due to this I want to revive the project and bring it up to date with current Rust so that new people get a great learning resource back when it comes to learning about macros, especially since it is one of the topics a lot of new people seem to struggle with.
+
+I've already started updating the majority of the book, the methodical introduction, to current Rust here https://github.com/Veykril/tlborm.
+Help is deeply appreciated as there is a lot of new stuff to cover!
+## [8][IntelliJ Rust Changelog #131](https://www.reddit.com/r/rust/comments/ix0wgl/intellij_rust_changelog_131/)
+- url: https://intellij-rust.github.io/2020/09/21/changelog-131.html
 ---
 
-## [5][Face Detection with Rust, TensorFlow, and WebAssembly](https://www.reddit.com/r/rust/comments/iwyj85/face_detection_with_rust_tensorflow_and/)
-- url: https://www.secondstate.io/articles/face-detection-ai-as-a-service/
----
-
-## [6][rust-analyzer changelog #43](https://www.reddit.com/r/rust/comments/iwzja8/rustanalyzer_changelog_43/)
+## [9][rust-analyzer changelog #43](https://www.reddit.com/r/rust/comments/iwzja8/rustanalyzer_changelog_43/)
 - url: https://rust-analyzer.github.io/thisweek/2020/09/21/changelog-43.html
 ---
 
-## [7][Text-Based Web Browser for Rust newbies](https://www.reddit.com/r/rust/comments/iwvn00/textbased_web_browser_for_rust_newbies/)
-- url: https://www.reddit.com/r/rust/comments/iwvn00/textbased_web_browser_for_rust_newbies/
----
-[LINK TO REPOSITORY](https://github.com/Debmalya99/TermSurf)
-
-Hi all, I created **TermSurf: A text-based web browser in Rust** for learning purposes. I am not a great programmer, so I learnt a lot of new concepts as I made this project. 
-
-A web browser has a javascript engine inside it, and it can render HTML and CSS styles. Now, since my project is text-based, and has no GUI, it **does not feature HTML rendering or CSS.** It simply displays text.
-
-But the problem was with Javascript. I wanted to create functional applications that could be run using the browser, but I had never written a program that had an embedded scripting engine inside it. 
-
-**Here was my plan, that browser will be:**
-
-* A simple Http client that would make web requests to some server.
-* The server would return some text response.
-* The text response will actually be source code for a scripting language.
-* The browser will have a scripting engine embedded into it, so it can run the obtained source code.
-* The scripting language will have functions to make web requests to the server for interactivity.
-
-**As an example, I have made some sample servers** all of which can be run in your localhost if you have python and flask installed. All of this server code is included in the repository itself. More information is provided in the README.md
-
-**The Scripting Language that is currently in use:** I have used the [Rhai](https://github.com/jonathandturner/rhai) scripting language for Rust. It is very easy to learn and use, very similar to rust itself, but without the explicit declaration of types.
-
-**Thank you for your time in reading this, if you feel interested please check it out. I am looking for contributors to this project. If you are a Rust newbie like me and would like to help, it will be very helpful.**
-## [8][A Bazel Persistent Worker for Rust](https://www.reddit.com/r/rust/comments/iwpg98/a_bazel_persistent_worker_for_rust/)
-- url: https://nikhilism.com/post/2020/bazel-persistent-worker-rust/
+## [10][robusta — a proc macro to ease Rust⬄Java interop!](https://www.reddit.com/r/rust/comments/ix7f0l/robusta_a_proc_macro_to_ease_rustjava_interop/)
+- url: https://github.com/giovanniberti/robusta/
 ---
 
-## [9][API documentation... how to improve my experience?](https://www.reddit.com/r/rust/comments/iwqcjv/api_documentation_how_to_improve_my_experience/)
-- url: https://www.reddit.com/r/rust/comments/iwqcjv/api_documentation_how_to_improve_my_experience/
----
-I'll preface this by explaining that most of my dev work is done in Go, including 80% of my professional work.
-
-I'm trying to learn (and eventually master) Rust, because I think it will have serious value in the work that my organization is trying to accomplish. However, I'm having a hell of a time. My default mode of learning is to reimplement examples I find scattered around the web, using API documentation to understand exactly what the function I'm calling is doing.
-
-Unfortunately... it's extremely hard to find that function, sometimes. With Go's API documentation, the function is always listed under the struct or package that implements it, regardless of whether it's implementing an external interface. That doesn't seem to be the case with Rust. As a (possibly not great) example, the `to_string` method on an `i32`; yes, I (now) understand that it's implementing the `std::string::ToString` trait, but without already knowing that, discovering that that is the source of the `to_string` method on `i32` is not straightforward.
-
-I guess I'm looking for two outcomes on this post: 1) tips on how to more effectively and efficiently use the Rust API documentation to find what I'm looking for, and 2) hopefully either bring attention to this issue to people in a place to do something about it, or at least gather experiences so that I can put together a comprehensive report/request myself.
-
-Thanks for your advice and experience.
-## [10][How to set buffer size on Tokio UDP socket?](https://www.reddit.com/r/rust/comments/iwxqul/how_to_set_buffer_size_on_tokio_udp_socket/)
-- url: https://www.reddit.com/r/rust/comments/iwxqul/how_to_set_buffer_size_on_tokio_udp_socket/
----
-I need to set the receive buffer size on a Tokio UDP socket. There is no way to do this directly.
-
-`from_std()` looks promising, but net2's UdpBuilder also doesn't offer this functionality.
-
-I thought about getting the raw socket handle—and setting the buffer size myself—using the AsRawFd trait, but I couldn't get that to work - the compiler insists there is no method called `as_raw_fd()`. Is it called something else on Windows, perhaps?
-
-Any help much appreciated!
-## [11][Unique Array Elements and their Frequency](https://www.reddit.com/r/rust/comments/iwz1xr/unique_array_elements_and_their_frequency/)
-- url: https://datacrayon.com/posts/programming/rust-notebooks/unique-array-elements-and-their-frequency/
+## [11][Porting EBU R128 audio loudness analysis from C to Rust](https://www.reddit.com/r/rust/comments/ixn7ju/porting_ebu_r128_audio_loudness_analysis_from_c/)
+- url: https://coaxion.net/blog/2020/09/porting-ebu-r128-audio-loudness-analysis-from-c-to-rust/
 ---
 
-## [12][Throw-away Code](https://www.reddit.com/r/rust/comments/iwbp4d/throwaway_code/)
-- url: https://vorner.github.io/2020/09/20/throw-away-code.html
+## [12][How to get started with Rust?](https://www.reddit.com/r/rust/comments/ixlkla/how_to_get_started_with_rust/)
+- url: https://edfloreshz.blog/how-to-get-started-with-rust
 ---
 

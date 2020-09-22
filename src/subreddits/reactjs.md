@@ -111,97 +111,99 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/iaggwf/whos_available_august_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/ikn3vo/whos_hiring_september_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][My First Large React App: Travel Map for saving cities/countries visited](https://www.reddit.com/r/reactjs/comments/iwup06/my_first_large_react_app_travel_map_for_saving/)
+## [3][Trying something different for my portfolio, what do you guys think?](https://www.reddit.com/r/reactjs/comments/ixjngh/trying_something_different_for_my_portfolio_what/)
+- url: https://v.redd.it/hrbljlrmwno51
+---
+
+## [4][A responsive multi-level menu component I created using react hooks](https://www.reddit.com/r/reactjs/comments/ix52xu/a_responsive_multilevel_menu_component_i_created/)
+- url: https://v.redd.it/1ksbj5tpdjo51
+---
+
+## [5][Building a rich text editor in React with SlateJS](https://www.reddit.com/r/reactjs/comments/ixmz6v/building_a_rich_text_editor_in_react_with_slatejs/)
+- url: https://blog.kitemaker.co/building-a-rich-text-editor-in-react-with-slatejs
+---
+
+## [6][My First Large React App: Travel Map for saving cities/countries visited](https://www.reddit.com/r/reactjs/comments/iwup06/my_first_large_react_app_travel_map_for_saving/)
 - url: https://v.redd.it/gafhgc3jxfo51
 ---
 
-## [4][Redux in 2020: Much, much less boilerplate thanks to ‘@reduxjs/toolkit’ (Includes video of converting a project from Redux to ReduxJs/Toolkit)](https://www.reddit.com/r/reactjs/comments/iwy8xx/redux_in_2020_much_much_less_boilerplate_thanks/)
-- url: https://medium.com/@brianboyko/redux-in-2020-much-much-less-boilerplate-thanks-to-reduxjs-toolkit-ed1e7082d3ab
+## [7][Need to click twice to set state](https://www.reddit.com/r/reactjs/comments/ixmtnf/need_to_click_twice_to_set_state/)
+- url: https://www.reddit.com/r/reactjs/comments/ixmtnf/need_to_click_twice_to_set_state/
+---
+how can i change code so that new state data is returned on one click?
+
+    class Button extends React.Component {
+      constructor(props) {
+        super(props);
+    
+        //state
+        this.state = {
+          variant: "",
+          class_name: "",
+          mode_class: "",
+        };
+      }
+    
+    //this is supposed to call when clicking button from another component
+    componentWillReceiveProps() {
+        const { className, mode } = this.props;
+        this.setState({ class_name: className || "" });
+        switch (mode) {
+          case "active":
+            this.setState({
+              mode_class: "atoms-Button-active",
+              variant: "primary"
+            });
+            break;
+          case "success":
+            this.setState({
+              mode_class: "atoms-Button-edit",
+              variant: "success"
+            });
+            break;
+          default:
+            break;
+        }
+      }
+    
+      render() {
+        const { variant, class_name, mode_class } = this.state;
+        console.log("variant", variant);
+        return (
+          &lt;ButtonBB
+            variant={variant}
+            onClick={this.props.onClick}
+            disabled={this.props.disabled}
+            className={"shadow-none atoms-button" + class_name + " " + mode_class}
+          &gt;
+            {this.props.children }
+          &lt;/ButtonBB&gt;
+        );
+      }
+    }
+## [8][Reactjs Javascript Tutorial - Full Course 10 Hours (2020) with TensorflowJS](https://www.reddit.com/r/reactjs/comments/ixhcjr/reactjs_javascript_tutorial_full_course_10_hours/)
+- url: https://www.youtube.com/watch?v=I6tbhNUU96Y
 ---
 
-## [5][My first react library published to NPM registry!](https://www.reddit.com/r/reactjs/comments/iwfbg8/my_first_react_library_published_to_npm_registry/)
-- url: https://www.reddit.com/r/reactjs/comments/iwfbg8/my_first_react_library_published_to_npm_registry/
+## [9][Table of content navigation pane using React/React-bootstrap](https://www.reddit.com/r/reactjs/comments/ixm27z/table_of_content_navigation_pane_using/)
+- url: https://www.reddit.com/r/reactjs/comments/ixm27z/table_of_content_navigation_pane_using/
 ---
+Hi,
 
-Hello there!
-
-I have published my first library for React, in NPM Registry. 
-
-React formsio - An easy to use and light weight form validation library for React.
-
-Give it a try, and let me know your suggestions 
-
-If you like it, don’t forget to give a ⭐️ on Github :)
-
-To install, use: npm i react-formsio
-
-Check out documentation here: https://www.npmjs.com/package/react-formsio
-
-Repository link - https://github.com/itzzmeakhi/react-formsio
-## [6][All Frontend Armory Articles are now free](https://www.reddit.com/r/reactjs/comments/iwtpm6/all_frontend_armory_articles_are_now_free/)
-- url: https://frontarm.com/james-k-nelson/demonetization/
+I am new to front-end and need help designing a table of contents pane which is placed on the right side of a page to easily navigate through it. Something similar to the pane on the right side of this [page](https://react-bootstrap.github.io/components/navs/). Any links to material design/tutorials would be appreciated. If there is an existing react component which I can use directly that would be amazing.
+## [10][A To-Do List App](https://www.reddit.com/r/reactjs/comments/ixej4j/a_todo_list_app/)
+- url: https://www.reddit.com/r/reactjs/comments/ixej4j/a_todo_list_app/
 ---
+Hello everyone! I created a simple To-Do List app. I am fairly new to React, and this is one of my projects.
 
-## [7][Check this React Gatsby Site for Motivation (Source Code Included)](https://www.reddit.com/r/reactjs/comments/iwy3aq/check_this_react_gatsby_site_for_motivation/)
-- url: https://v.redd.it/y7mo64v7cho51
+[https://realtechnerd.github.io/reacttodolist/](https://realtechnerd.github.io/reacttodolist/)
+## [11][Sample Task Management](https://www.reddit.com/r/reactjs/comments/ixl2jq/sample_task_management/)
+- url: https://www.reddit.com/r/reactjs/comments/ixl2jq/sample_task_management/
 ---
+Hi, I'm create sample Task Management app, written by reactjs, using reduxjs as state management and formik.
 
-## [8][How do I dynamically create components from templates requested via an API?](https://www.reddit.com/r/reactjs/comments/ix0api/how_do_i_dynamically_create_components_from/)
-- url: https://www.reddit.com/r/reactjs/comments/ix0api/how_do_i_dynamically_create_components_from/
----
-I am currently working in a project where the components are not predefined and I have to display content by merging template json and a data json which are fetched from an API and I am currently using MustacheJS and react-mustache-template to acheive this. I can easily creates lists and simple components.
-
-But the problem comes while creating components with interactivity, not simple lists but graphs , charts and carousels; and Mustache templates does not help me acheive this, furthermore since I am using react-mustache-template package I can onlly use pure HTML elements in my templates , custom React components or library components do not work, how do I solve this problem?
-## [9][Ruby on Rails vs Node.js: What Should You Choose?](https://www.reddit.com/r/reactjs/comments/iwzfoe/ruby_on_rails_vs_nodejs_what_should_you_choose/)
-- url: https://inveritasoft.com/blog/ruby-on-rails-vs-node-js-what-should-you-choose
----
-
-## [10][I was recently let go, so I thought I'd revamp my React Portfolio! I'd love to hear your thoughts :)](https://www.reddit.com/r/reactjs/comments/iwz0jk/i_was_recently_let_go_so_i_thought_id_revamp_my/)
-- url: https://andri.co/
----
-
-## [11][async issue changing state with custom hook](https://www.reddit.com/r/reactjs/comments/iwyqpu/async_issue_changing_state_with_custom_hook/)
-- url: https://www.reddit.com/r/reactjs/comments/iwyqpu/async_issue_changing_state_with_custom_hook/
----
- 
-
-Calling getSearchResults WebAPI with Axios and update the state with response using setSearchResults() custom hook. It looks like my view is not getting re-rendered thought I get response. I assume it is due due async method call, can someone help how to resolve the issue to bind my state with view once the state is updated?  
-
-
-    code block 
-
-const handleSearchSubmit = () =&gt; {  
-getSearchResults(formatSearchCriteriaSelections())  
-.then(data =&gt; {  
-setSearchResults(data)  
-})  
-};  
-Updating State:  
-
-
-    code block 
-
-case "SET\_SEARCH\_RESULTS":  
-return {  
-...state,  
-searchData:  
-{  
-...state.searchData,  
-results:  
-{  
-projects: \[state.searchData.results.projects, Object.entries(action.payload.filter(result =&gt; result.ResultType === 'Project'))\],  
-proposals: \[state.searchData.results.proposals, Object.entries(action.payload.filter(result =&gt; result.ResultType === 'Proposal'))\]  
-},  
-criteria: state.searchData  
-}  
-};  
-My view simply displays:  
-
-
-    code block 
-
-({searchData.results.length &gt; 0 ? searchData.results.proposals\[0\].name : ''})
-## [12][5 React Good Practices](https://www.reddit.com/r/reactjs/comments/iwybkd/5_react_good_practices/)
-- url: https://blog.codingbrah.com/5-react-good-practices
+[GitHub link](https://github.com/navand/sample-task-management)
+## [12][MDX blog just displays markdown content instead of rendering it while using `MDXProvider` from `@mdx-js/react` in Next JS](https://www.reddit.com/r/reactjs/comments/ixkvn2/mdx_blog_just_displays_markdown_content_instead/)
+- url: /r/nextjs/comments/ixktm0/mdx_blog_just_displays_markdown_content_instead/
 ---
 

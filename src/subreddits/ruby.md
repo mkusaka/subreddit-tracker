@@ -1,9 +1,90 @@
 # ruby
-## [1][Rails 6.1 deprecates rails db:structure:dump and rails db:structure:load | The Official BigBinary Blog | BigBinary](https://www.reddit.com/r/ruby/comments/ixjs28/rails_61_deprecates_rails_dbstructuredump_and/)
+## [1][My First open-source Project: Building AmazonPay Gem](https://www.reddit.com/r/ruby/comments/iy7m2f/my_first_opensource_project_building_amazonpay_gem/)
+- url: https://www.reddit.com/r/ruby/comments/iy7m2f/my_first_opensource_project_building_amazonpay_gem/
+---
+I built my first open-sourc project and I wrote about it and my motivations here: [https://blog.everistus.xyz/my-first-open-source-project-building-amazonpay-gem-ckff8s5ov043o65s13ngx0pil](https://blog.everistus.xyz/my-first-open-source-project-building-amazonpay-gem-ckff8s5ov043o65s13ngx0pil)
+## [2][Rails will allow a module with extend ActiveSupport::Concern to be prepended](https://www.reddit.com/r/ruby/comments/iy91jy/rails_will_allow_a_module_with_extend/)
+- url: https://blog.saeloun.com/2020/09/23/prepend-class-methods-for-concerns.html
+---
+
+## [3][Triage with Me - 11 issues &amp; 2 PRs in 1.5 hours](https://www.reddit.com/r/ruby/comments/ixrqh4/triage_with_me_11_issues_2_prs_in_15_hours/)
+- url: https://schneems.com/2020/09/22/triage-with-me-11-issues-2-prs-in-15-hours/
+---
+
+## [4][tty-editor - new release supports opening multiple files and searches more editor commands](https://www.reddit.com/r/ruby/comments/ixyq3n/ttyeditor_new_release_supports_opening_multiple/)
+- url: https://github.com/piotrmurach/tty-editor
+---
+
+## [5][Writing Good Test Descriptions](https://www.reddit.com/r/ruby/comments/ixtuar/writing_good_test_descriptions/)
+- url: https://guilhermesimoes.github.io/blog/writing-good-test-descriptions
+---
+
+## [6][Rails 6.1 deprecates rails db:structure:dump and rails db:structure:load | The Official BigBinary Blog | BigBinary](https://www.reddit.com/r/ruby/comments/ixjs28/rails_61_deprecates_rails_dbstructuredump_and/)
 - url: https://blog.bigbinary.com/2020/09/22/rails-6-1-deprecates-rails-db-structure-dump.html
 ---
 
-## [2][Ruby Courses - Advanced Ruby: Behind the Magic](https://www.reddit.com/r/ruby/comments/ix35gf/ruby_courses_advanced_ruby_behind_the_magic/)
+## [7][api code structure ideas](https://www.reddit.com/r/ruby/comments/ixqj0r/api_code_structure_ideas/)
+- url: https://www.reddit.com/r/ruby/comments/ixqj0r/api_code_structure_ideas/
+---
+Hello world,
+ let's imagine we have a rails app:
+
+- 200 models 
+- 400 controllers
+- 300 services
+
+and is a mess :)
+
+I want to move to roda, but I dont know how to structure the code properly
+using:
+
+ - pg
+ - pg replicas
+ - elasticsearch
+ - redis
+ - influxdb
+
+we have api's for:
+
+ - clients
+ - integrations
+ - desktop app
+ - frontend app
+
+connections via:
+
+ - oauth
+ - token
+ - sessions
+
+api response:
+
+ - json
+ - xml
+
+we also have:
+
+ - jobs (200)
+ - mailers(mailgun, sendgrid, default email from AR)
+ - reports
+ - import tools
+
+tests that take forever
+
+currently we do follow the rails mvc, but is a mess, boot time is slow, tests are slow
+
+dreams?
+
+- roda
+- sequel
+- ??
+
+any ideas will be appreciated :)
+## [8][Testing elasticsearch](https://www.reddit.com/r/ruby/comments/ixvm64/testing_elasticsearch/)
+- url: https://www.reddit.com/r/ruby/comments/ixvm64/testing_elasticsearch/
+---
+So in my current project we are using elastic to index data and in specs we are doing sleep after every import and sleep function to let the import finish, which slows the whole test suite a lot. What is the best way to have the data imported to elastic when testing queries, controllers?
+## [9][Ruby Courses - Advanced Ruby: Behind the Magic](https://www.reddit.com/r/ruby/comments/ix35gf/ruby_courses_advanced_ruby_behind_the_magic/)
 - url: https://www.reddit.com/r/ruby/comments/ix35gf/ruby_courses_advanced_ruby_behind_the_magic/
 ---
 It seems like biggest ruby resources are screencasts, blogs and books. And yes, they offer tons of value. 
@@ -15,7 +96,7 @@ Also, has anyone tried this one “Advanced Ruby: Behind the Magic”
 https://courses.gorails.com/advanced-ruby-for-rails-devs
 
 (To me, 300 bucks seems to be on the higher end for 30 screencasts..)
-## [3][Any downsides storing database host/username/password in ruby ENV?](https://www.reddit.com/r/ruby/comments/ixazdi/any_downsides_storing_database/)
+## [10][Any downsides storing database host/username/password in ruby ENV?](https://www.reddit.com/r/ruby/comments/ixazdi/any_downsides_storing_database/)
 - url: https://www.reddit.com/r/ruby/comments/ixazdi/any_downsides_storing_database/
 ---
 I have this code
@@ -33,68 +114,3 @@ secret\_env\_file.yml is not uploaded on source control. So, everything stays sa
 &amp;#x200B;
 
 Are there any downsides of using ENV to store all those information while the app boots up? I think ENV\['anything\_password'\] is still accessible later on as long as the app is still up and running. Like for sinatra/rails etc.
-## [4][Any good Ruby library to load test a Rails application?](https://www.reddit.com/r/ruby/comments/ix6ltq/any_good_ruby_library_to_load_test_a_rails/)
-- url: https://www.reddit.com/r/ruby/comments/ix6ltq/any_good_ruby_library_to_load_test_a_rails/
----
-Hello fellow ruby developers,
-
-I'm currently maintaining [Gatling load test](https://gatling.io/) scenario for a quite decent Rails app (\~250k rpm).
-
-It's working well but it is very hard to maintain and implement new features on the scenario because everything's written in Scala which my team and I are not quite familiar with.
-
-The scenario we are writing are RPM-based meaning that we are trying our best to get as close as possible from production in terms of rpm for most endpoints.
-
-Does anyone know if there is a Ruby implementation somewhere that we could try?
-
-I heard that Ruby wasn't made for this kind of task and languages/frameworks such as Gatling, NodeJs, ... and they were way better at it. Could someone explain me why?
-
-Cheers from France!
-## [5][Issues with pattern matching on JSON / array of hashes](https://www.reddit.com/r/ruby/comments/ix7a1h/issues_with_pattern_matching_on_json_array_of/)
-- url: https://www.reddit.com/r/ruby/comments/ix7a1h/issues_with_pattern_matching_on_json_array_of/
----
-Is there a way to get pattern matching to work on an array of hashes? My use case is a JSON document ([here](https://www.dph.illinois.gov/sitefiles/COVIDHospitalRegions.json?nocache=1)) that has a few arrays of hashes. I don't know if this is a potential use for pattern matching, but I would *like* to use it to match against particular items, acting sort of like a `where` clause:
-
-    require 'net/http'
-    require 'json'
-
-    HOSPITAL_DATA_URI = URI("https://www.dph.illinois.gov/sitefiles/COVIDHospitalRegions.json?nocache=1").freeze
-
-    hospital_data = JSON.parse(Net::HTTP.get(HOSPITAL_DATA_URI), symbolize_names: true)
-    region_values = hospital_data[:regionValues]
-
-    case region_values
-      in [{id: 10, **unimportant_attributes} =&gt; region_10]
-        puts 'We found region 10!'
-    else
-      puts 'aw shucks'
-    end
-
-    binding.irb
-
-Does anyone know if this is possible?
-
-EDIT - wrote a StackOverflow question for it as well: https://stackoverflow.com/questions/63998870/how-can-i-pattern-match-on-an-array-of-hashes-in-ruby-2-7
-## [6][What's a snippet of code that makes you happiest that you learnt Ruby?](https://www.reddit.com/r/ruby/comments/iwy3c4/whats_a_snippet_of_code_that_makes_you_happiest/)
-- url: https://www.reddit.com/r/ruby/comments/iwy3c4/whats_a_snippet_of_code_that_makes_you_happiest/
----
-For me currently it's:
-
-    puts`dd`
-
-8 character identity algorithm (outputs any input without any alteration). :) Keen to see other examples.
-## [7][Secure way of doing OAuth for SPA &amp; Native Apps](https://www.reddit.com/r/ruby/comments/iwztni/secure_way_of_doing_oauth_for_spa_native_apps/)
-- url: https://blog.joshsoftware.com/2020/05/18/secure-way-of-doing-oauth-for-spa-native-apps/
----
-
-## [8][Compile Ruby to C](https://www.reddit.com/r/ruby/comments/iwr3pn/compile_ruby_to_c/)
-- url: https://github.com/agrafix/rubyspeed
----
-
-## [9][An SMS Reminder Service With Ruby &amp; A Raspberry Pi](https://www.reddit.com/r/ruby/comments/iwoh4f/an_sms_reminder_service_with_ruby_a_raspberry_pi/)
-- url: https://emmanuelhayford.com/building-an-sms-reminder-with-ruby-raspberry-pi/
----
-
-## [10][An RSpec custom matcher to test application code that logs information into log files](https://www.reddit.com/r/ruby/comments/iwl1fq/an_rspec_custom_matcher_to_test_application_code/)
-- url: https://github.com/juanmanuelramallo/rspec-log_matcher
----
-

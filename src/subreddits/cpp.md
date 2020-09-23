@@ -56,73 +56,103 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][Why is it such an abysmal pain to use libraries in C++ compared to pretty much anything else?](https://www.reddit.com/r/cpp/comments/ix9n1u/why_is_it_such_an_abysmal_pain_to_use_libraries/)
-- url: https://www.reddit.com/r/cpp/comments/ix9n1u/why_is_it_such_an_abysmal_pain_to_use_libraries/
----
-# I recently realized something that's been annoying me for so long
-## How to add a library in JavaScript:
-- Type `npm install 'library'` in a shell on your project's directory.
-
-## How to add a library in C#:
-- Type `dotnet add package 'library'` in a shell on your project's directory.
-
-## How to add a library in Go:
-- Type `go get 'library_link'` in a shell. 
-
-## How to add a library in Rust (And this is so "C++ is compiled" isn't an excuse):
-- Lookup the last version of the library.
-- Type `'library' = 'library_version'` on your project file.
-- Restart your editor so the language server can get the symbols from the new library.
-
-#### If you install `cargo-edit` you can alternatively just:
-- Type `cargo add 'library'` in a shell on your project's directory. `cargo-edit` will do everything for you.
-
-## How to add a library in C++:
-- Prepare two folders for header include files, and library binaries.
-- Append flags to your compiler to recognize them accordingly.
-- Investigate which way the library works, praying the documentation of that is actually good.
-### If the library is header-only:
-- Add the header's required to your include path. 
-- You should probably moduralize the code or spend 30 minutes setting up precompiled headers to avoid adding a lot to your compile times.
-- And also lower your warning level, because even if you put `#pragma`s around the headers editors probably wont recognize them.
-### Else, if the library distributes its binaries:
-- Download the `.lib` or `.a` files from the last release and put them in your library folder.
-- Tell the compiler to link your libraries.
-- Put the downloaded header files in your include folder.
-- If the library needs a `.dll`,  download it and paste it in the folder of your compiled executable. Distribute it with your shipped application.
-- If you want to keep your application as a single executable, or distribute less dependencies, or have no need for an installer, all perfectly valid reasons, library owners *usually* have a static version.
-- If they don't have a static version, spend an afternoon fighting the linker figuring out how to build the library yourself.
-- If you want the library to link against the static runtime, the step above is required as well.
-- Make sure to select the correct runtime library, or face really weird linker errors.
-### If the library *doesn't* distribute its binaries:
-- Clone the repository of the library and figure out how to build it yourself. There's usually a tutorial so it's not that complicated.
-- Make sure to select the correct runtime library, or face really weird linker errors.
-- Do this for every platform you want to distribute in.
-### If the library uses CMake ᵒʰ ᵍᵒᵈ ʷʰʸ:
-- You can choose two options:
-#### Use CMake too
-- Abandon your project's build system and spend days learning an entirely new language that everyone complains about
-- Spend a lot of time googling and [figuring out the complicated "right" ways to do what's usually pretty simple](https://qrikko.blogspot.com/2016/05/cmake-and-how-to-copy-resources-during.html)
-- Probably suffer from a loss in build time
-#### Generate files for your compiler
-- Install CMake GUI
-- Learn how to use it and configure what you desire.
-- Alternatively, learn yet another command line tool, or a tiny bit of CMake syntax to change what you want.
-- Generate the files according to your platform and IDE.
-- Build the library with a bloated IDE, or alternatively research how to build it with the much less known and documented command line tools.
-- Make sure to select the correct runtime library, or face really weird linker errors.
-### If you run into linker errors when running your program (and you will):
-- If it's an unresolved external symbol, most likely your library needs another dependency linked. Lookup the function's name, what library it belongs to, and link against that too.
-- If the unresolved function belongs to the standard library, you messed up. Compile the library again with the runtime library your compiler wants.
-- If it's something else, google the error code and spend 30 minutes staring at StackOverflow.
-# Just... why?
-Am I missing something? Am I stupid and doing everything wrong? I really hope that's the case so I can get back to programming instead of fighting the linker. Every single time I see I need a library I'm like "Oh fuck..." to the point sometimes I just don't bother and decide to write things myself. 
-Sorry about the rant. I'm kinda tired. Do you all have any similar experiences with this? Any tips to ease on the pain a bit? Thank you.
-## [3][Attending the virtual CppCon 2020](https://www.reddit.com/r/cpp/comments/ixmfrb/attending_the_virtual_cppcon_2020/)
-- url: http://meetingcpp.com/blog/items/Attending-the-virtual-CppCon-2020.html
+## [2][September 2020 C++ standard mailing](https://www.reddit.com/r/cpp/comments/iy77zr/september_2020_c_standard_mailing/)
+- url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/#mailing2020-09
 ---
 
-## [4][This feels weird, but it does work. (std::map with a std::any, get/set templates). Please tell me what you think.](https://www.reddit.com/r/cpp/comments/ixn7lq/this_feels_weird_but_it_does_work_stdmap_with_a/)
+## [3][Implementation Challenge: Replacing std::move and std::forward](https://www.reddit.com/r/cpp/comments/ixwtcm/implementation_challenge_replacing_stdmove_and/)
+- url: https://foonathan.net/2020/09/move-forward/
+---
+
+## [4][Back to Basics: The Abstract Machine - Bob Steagall - CppCon 2020](https://www.reddit.com/r/cpp/comments/ixv8d3/back_to_basics_the_abstract_machine_bob_steagall/)
+- url: https://www.youtube.com/watch?v=ZAji7PkXaKY
+---
+
+## [5][Back to Basics: The Structure of a Program - Bob Steagall - CppCon 2020](https://www.reddit.com/r/cpp/comments/ixz9gn/back_to_basics_the_structure_of_a_program_bob/)
+- url: https://www.youtube.com/watch?v=3KoXeegncrs
+---
+
+## [6][Powerful C++ metaprogramming: find all shortest path between nodes in Graph at compile/run time!](https://www.reddit.com/r/cpp/comments/iy7usx/powerful_c_metaprogramming_find_all_shortest_path/)
+- url: https://www.reddit.com/r/cpp/comments/iy7usx/powerful_c_metaprogramming_find_all_shortest_path/
+---
+for more details, see [https://godbolt.org/z/av4Yb1](https://godbolt.org/z/av4Yb1), [https://github.com/netcan/recipes/blob/master/cpp/metaproggramming/FindShortestPath.cpp](https://github.com/netcan/recipes/blob/master/cpp/metaproggramming/FindShortestPath.cpp)
+
+demo:
+
+    struct A: Node&lt;'A'&gt; {};
+    struct B: Node&lt;'B'&gt; {};
+    struct C: Node&lt;'C'&gt; {};
+    struct D: Node&lt;'D'&gt; {};
+    struct E: Node&lt;'E'&gt; {};
+    using g = Graph&lt;
+        __link(__node(A) -&gt; __node(B) -&gt; __node(C) -&gt; __node(D)),
+        __link(__node(A) -&gt; __node(C)),
+        __link(__node(B) -&gt; __node(A)),
+        __link(__node(A) -&gt; __node(E)) &gt;;
+    
+    static_assert(g::getPath('A', 'D').sz == 3);
+    static_assert(g::getPath('A', 'A').sz == 1);
+    static_assert(g::getPath('B', 'D').sz == 3);
+    static_assert(g::getPath('B', 'E').sz == 3);
+    static_assert(g::getPath('D', 'E').sz == 0);
+    
+    int main(int argc, char** argv) {
+        char from = 'A';
+        char to = 'D';
+        if (argc &gt; 2) {
+            from = argv[1][0]; // A
+            to = argv[2][0]; // D
+        }
+        auto path = g::getPath(from, to);
+        std::cout &lt;&lt; "from " &lt;&lt; from &lt;&lt; " to " &lt;&lt; to &lt;&lt; " path size: " &lt;&lt; path.sz &lt;&lt; std::endl;
+        for (size_t i = 0; i &lt; path.sz; ++i) {
+            std::cout &lt;&lt; path.path[i];
+            if (i != path.sz - 1) {
+                std::cout &lt;&lt; "-&gt;";
+            }
+        }
+        std::cout &lt;&lt; std::endl;
+    
+        return 0;
+    }
+## [7][What makes modern C++ modern?](https://www.reddit.com/r/cpp/comments/iy06mn/what_makes_modern_c_modern/)
+- url: https://www.reddit.com/r/cpp/comments/iy06mn/what_makes_modern_c_modern/
+---
+I understand that "modern" C++began with C++11, but I would guess not every feature is required to be considered modern
+
+What C++ features would you really consider the fundamental features for a C++ codebase to be considered modern?  Is it smart pointers?  Auto keyword? Constexpr?
+
+(Go easy on me, I'm a C dev by trade)
+## [8][CppCon 2020 videos](https://www.reddit.com/r/cpp/comments/ixyfs8/cppcon_2020_videos/)
+- url: https://www.youtube.com/playlist?list=PLHTh1InhhwT6VxYHtoWIvOup9gz0p95Qr
+---
+
+## [9][September 23: Free Talk with Emery Berger on Optimizing Application Performance](https://www.reddit.com/r/cpp/comments/ixx2bz/september_23_free_talk_with_emery_berger_on/)
+- url: https://www.reddit.com/r/cpp/comments/ixx2bz/september_23_free_talk_with_emery_berger_on/
+---
+On September 23, join 2019 ACM Fellow Emery Berger (Professor of Computer Science at UMass-Amherst) for the free ACM TechTalk, "[Performance (Really) Matters.](https://webinars.on24.com/acm/berger?partnerref=red)"
+
+Learn why current approaches to evaluating and optimizing performance don't work; how complicated performance has become on modern systems, and how compiler optimizations have essentially run out of steam; and learn about a couple of radically new performance profilers that could help.
+
+One is is Coz, a new "causal profiler" for C/C++/Rust that lets programmers optimize for throughput or latency, and which pinpoints and accurately predicts the impact of optimizations via what we call "virtual speedup" experiments. Coz's approach unlocks previously unknown optimization opportunities. Guided by Coz, we improved the performance of applications by as much as 68%; in most cases, this involved modifying less than 10 lines of code and took under half an hour (without any prior understanding of the programs!). Coz now ships as part of standard Linux distros (apt install coz-profiler). 
+
+[Register](https://webinars.on24.com/acm/berger?partnerref=red) for free to attend live or be alerted when a recording is available.
+## [10][Ideal ratio of library - number of files - number of lines per file - number of lines per function](https://www.reddit.com/r/cpp/comments/iy7cg6/ideal_ratio_of_library_number_of_files_number_of/)
+- url: https://www.reddit.com/r/cpp/comments/iy7cg6/ideal_ratio_of_library_number_of_files_number_of/
+---
+For most of the questions the right answer is "depends", and I know there is no typical C++ project.
+Nevertheless, in general, what would be for you the ideal ratio between the various metrics you see in a typical C++ project? and above all, what are the underlying motivations?
+
+I would say:
+
+-Functions -&gt; as small as possible, even [1-5] lines per function are ok
+-Members per class -&gt; as few as possible: [1-5] members.. more members acceptable for complex algorithms
+-Number of lines per files -&gt; in this case it depends on the files included (dependencies), but even here less is better.  You must always be able to include only what you need, not more.
+
+-Number of Libraries per application: in this case,  in my opinion it is reasonable to have many (indirect) library dependencies, or better this is the output of my reasoning.
+
+Why this reasoning? in two words: complexity management
+## [11][This feels weird, but it does work. (std::map with a std::any, get/set templates). Please tell me what you think.](https://www.reddit.com/r/cpp/comments/ixn7lq/this_feels_weird_but_it_does_work_stdmap_with_a/)
 - url: https://www.reddit.com/r/cpp/comments/ixn7lq/this_feels_weird_but_it_does_work_stdmap_with_a/
 ---
 I need opinions if this is good/bad/ugly/python. If you would do a code review and saw this, what would you think? Do you feel uncomfortable with all this dynamic auto unknown? 
@@ -157,55 +187,3 @@ It's used as a sort of pseudo k/v:
 The programmer must ensure both sides use the correct key and validate the data in it.
 
 The data that is passed around is unknown beforehand, either comes from a sybase database or user defined json (sometimes having base64 image in it). It's used purely for passing around data between class instances.
-## [5][Ideas to use C++ for to try it out](https://www.reddit.com/r/cpp/comments/ixn62j/ideas_to_use_c_for_to_try_it_out/)
-- url: https://www.reddit.com/r/cpp/comments/ixn62j/ideas_to_use_c_for_to_try_it_out/
----
-Hey,
-
-I've been curious about C++ for a while. I am a developer myself knowing C# after years of working with .NET backend, but it would be fun to do something in C++, to learn the language and see how it works. However, I am a bit lost where you use this today. One area seems to be game development. I would like to do some small project on the freetime to try C++ out. I am thinking of trying out game programming, Unreal Engine, to be precise.
-
-I've done only some simple XML 2D game back in the old day but Unreal Engine seems pretty cool. Saw some YouTube videos where they use C++ and the Engine combined to create some nice things. Anyways, what I am wondering here is if you would do some fun side project using C++, what are some nice try-out things you could do? Is game programming as I am mentioning here the way to go or is something complete different better as game programming might be too much to take in for a simple side project?
-## [6][CppCon 2020 slides](https://www.reddit.com/r/cpp/comments/iwzixs/cppcon_2020_slides/)
-- url: https://github.com/CppCon/CppCon2020
----
-
-## [7][CliWidgets: a little library for create simple widgets in your terminal programs](https://www.reddit.com/r/cpp/comments/ix68a0/cliwidgets_a_little_library_for_create_simple/)
-- url: https://www.reddit.com/r/cpp/comments/ix68a0/cliwidgets_a_little_library_for_create_simple/
----
-Hi, I have made this library as a first project with the idea to apply my acquired knowledge about c++ during the quarentine.
-
-The idea of the library is to help people in the part of programing menus and other "widgets" for the terminal. 
-
-The repo link is this: [https://github.com/lazaro92/CliWidget](https://github.com/lazaro92/CliWidget)
-## [8][vcpkg: Accelerate your team development environment with binary caching and manifests | C++ Team Blog](https://www.reddit.com/r/cpp/comments/ix090v/vcpkg_accelerate_your_team_development/)
-- url: https://devblogs.microsoft.com/cppblog/vcpkg-accelerate-your-team-development-environment-with-binary-caching-and-manifests/
----
-
-## [9][DAW JSON Link v2 is release](https://www.reddit.com/r/cpp/comments/ix2ld6/daw_json_link_v2_is_release/)
-- url: https://www.reddit.com/r/cpp/comments/ix2ld6/daw_json_link_v2_is_release/
----
-Version two marks the culmination of some nice changes in JSON Link
-
-* Non-intrusive mapping of your C++ structures to JSON classes and parsing without an intermediary DOM type.  Because we can specify the types, we can do extra type based checks on the input data too.
-
-* A new lazy parsing DOM for exploring data.  This can be specified in the mappings above as a member type too.  The interface, also, allows iteration over array and class types.
-
-* A new event based(SAX) parser 
-
-* Constexpr
-
-* Helper support for mapping to types like variant's and JSON array's to C++ classes, the cookbook section of the project has lots of documentation on mapping your JSON to C++
-
-* Lots of documents with real working examples
-
-The library is https://github.com/beached/daw_json_link
-
-And there is a sample cmake project that uses it to make a config file parser, with C++ comment support https://github.com/beached/daw_json_link_config_parser
-## [10][Inheritance](https://www.reddit.com/r/cpp/comments/ixmedw/inheritance/)
-- url: https://www.reddit.com/r/cpp/comments/ixmedw/inheritance/
----
-Hi can someone explain me Inheritance in depth?
-## [11][Code Review of toml++](https://www.reddit.com/r/cpp/comments/iwych1/code_review_of_toml/)
-- url: https://medium.com/@julienjorge/code-review-of-toml-f816a6071120
----
-

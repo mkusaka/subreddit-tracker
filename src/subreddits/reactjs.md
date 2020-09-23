@@ -111,99 +111,245 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/iaggwf/whos_available_august_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/ikn3vo/whos_hiring_september_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Trying something different for my portfolio, what do you guys think?](https://www.reddit.com/r/reactjs/comments/ixjngh/trying_something_different_for_my_portfolio_what/)
+## [3][Understand React Rendering with examples](https://www.reddit.com/r/reactjs/comments/iy6jdz/understand_react_rendering_with_examples/)
+- url: https://www.loginradius.com/engineering/blog/understanding-react-rendering/
+---
+
+## [4][Do you guys test?](https://www.reddit.com/r/reactjs/comments/iy4njr/do_you_guys_test/)
+- url: https://www.reddit.com/r/reactjs/comments/iy4njr/do_you_guys_test/
+---
+Hey guys,
+
+I've been developing on react for almost 2 years now. Most of the time we have to be a fullstack (laravel backend) in the company. However our schedule and projects have been pretty tight on time. Thus me and my team do not do testing at all (i know, embarrassing!). 
+
+For the past 2 sprints, i've been thinking to do a good habit and try to change my development to TDD. However i'm really confused where to start, I did test from small components that are already developed like custom form fields, small  forms etc. However when i want to write a test before writing the code, i'm getting confused. Especially with the tech stacks that we are using right now, i.e formik, material ui, material ui picker (i spent half day to find examples to test this), redux saga etc. Honestly its slowing me down and i'm really chased by deadlines. 
+
+How did you guys start? Were you forced by your manager? Did you follow any tutorial at first to write tests? Any suggestion on starting please
+
+Thanks
+## [5][Trying something different for my portfolio, what do you guys think?](https://www.reddit.com/r/reactjs/comments/ixjngh/trying_something_different_for_my_portfolio_what/)
 - url: https://v.redd.it/hrbljlrmwno51
 ---
 
-## [4][A responsive multi-level menu component I created using react hooks](https://www.reddit.com/r/reactjs/comments/ix52xu/a_responsive_multilevel_menu_component_i_created/)
-- url: https://v.redd.it/1ksbj5tpdjo51
+## [6][Building Multistep Forms with MaterialUI and React Hooks](https://www.reddit.com/r/reactjs/comments/iy51k4/building_multistep_forms_with_materialui_and/)
+- url: https://blog.ifeanyimuogbo.tech/building-multistep-forms-with-materialui-and-react-hooks
 ---
 
-## [5][Building a rich text editor in React with SlateJS](https://www.reddit.com/r/reactjs/comments/ixmz6v/building_a_rich_text_editor_in_react_with_slatejs/)
-- url: https://blog.kitemaker.co/building-a-rich-text-editor-in-react-with-slatejs
+## [7][I created a blog post to help developers easily build a contact form in react](https://www.reddit.com/r/reactjs/comments/iy6sfd/i_created_a_blog_post_to_help_developers_easily/)
+- url: https://javaadpatel.com/step-by-step-how-to-build-forms-with-formik-and-react/
 ---
 
-## [6][My First Large React App: Travel Map for saving cities/countries visited](https://www.reddit.com/r/reactjs/comments/iwup06/my_first_large_react_app_travel_map_for_saving/)
-- url: https://v.redd.it/gafhgc3jxfo51
+## [8][Understanding Integration Testing in React](https://www.reddit.com/r/reactjs/comments/iy9i8a/understanding_integration_testing_in_react/)
+- url: https://maxrozen.com/understanding-integration-testing-react/
 ---
 
-## [7][Need to click twice to set state](https://www.reddit.com/r/reactjs/comments/ixmtnf/need_to_click_twice_to_set_state/)
-- url: https://www.reddit.com/r/reactjs/comments/ixmtnf/need_to_click_twice_to_set_state/
+## [9][Introducing the New JSX Transform](https://www.reddit.com/r/reactjs/comments/ixpbga/introducing_the_new_jsx_transform/)
+- url: https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html
 ---
-how can i change code so that new state data is returned on one click?
 
-    class Button extends React.Component {
-      constructor(props) {
-        super(props);
+## [10][I made a bot that finds the Best React Remote Jobs every week and posts them here](https://www.reddit.com/r/reactjs/comments/iy6kja/i_made_a_bot_that_finds_the_best_react_remote/)
+- url: https://blog.noicejobs.com/best-senior-react-remote-jobs-between-sep-11-and-sep-18/
+---
+
+## [11][[For hire] Finally had the courage to submit my resignation after 5 years of working in a company that doesn't care about my career growth and my mental health. I am now looking for a career reset.](https://www.reddit.com/r/reactjs/comments/ixssjp/for_hire_finally_had_the_courage_to_submit_my/)
+- url: https://www.reddit.com/r/reactjs/comments/ixssjp/for_hire_finally_had_the_courage_to_submit_my/
+---
+*First of all, I'm not sure if this kind of post is allowed in this sub so feel free to remove my post if it breaks any ToC. Also, I will only disclose my personal information on demand since I don't want to associate my personal details with this post.*
+
+&amp;#x200B;
+
+So I finally had the courage to resign from my current company. It is my first job after I graduated in September 2014 and I started working here in January 2015. It was a pretty decent company at first but it went downhill very fast. For the whole duration of 5 years working here, I was never given the chance to work with any tech lead or senior developers. 
+
+Almost all of the projects that I was assigned to was a solo dev project. I have to design systems that I know nothing about and have to code from scratch. It has tight deadlines too. I ended up had to spend 90% of my free time studying and doing research on my own since I had no one to guide me on anything. I never had a good sleep since 2017.
+
+I think it almost destroyed me mentally but I'm still lucky that I have great friends, family and a girlfriend that never stop supporting me.  
+
+I have officially resigned on  14th of September after postponing it for a few months due to Covid. Now I'm looking for a remote job and a chance to reset my career.
+
+&amp;#x200B;
+
+A little bit about myself:
+
+* Age: 29
+* Race: Asian
+* Citizenship: Malaysian
+* Country: Malaysia
+* Highest education: Bachelor's Degree in Software Engineering
+* Hobby: Browsing Reddit, play games, watch movies, play the guitar
+* Favourite games: Final Fantasy VIII, Metal Gear Solid 3: Snake Eater, DotA 2
+* Favourite musicians: Coldplay, Manic Street Preachers, John Mayer, Green Day, Arctic Monkeys, Kacey Musgraves
+* Favourite movies: The Prestige, Kung Fu Hustle, Interstellar, Terminator 2, Predator, Harry Potter series
+* I also plan to read a lot of books once I found a new job
+
+&amp;#x200B;
+
+16personalities test result:
+
+* The Advocate (INFJ-T)
+
+&amp;#x200B;
+
+Technical Skills:
+
+* Strongest languages: **Javascript** and **Python**
+* Other languages that I know: PHP and Java
+* Frameworks and libraries: React, Redux, Express, SCSS, jQuery, Flask
+* Databases: MySQL, MongoDB, DynamoDB
+* Others: Git, Jest, Adobe Photoshop
+* Techs that I'm planning to learn in the next few months: Typescript, Next.js, Django, React Native
+
+&amp;#x200B;
+
+Notable experience in my current company:
+
+* Lead developer for an internal UI framework/design-system development used in our flagship product
+   * Stack used: **Javascript**, **React**, **Redux**
+* Fullstack developer for a facial-recognition-based security system
+   * Stack used: **Python**, **Flask**, **React**, **jQuery**, **Tornado**
+
+&amp;#x200B;
+
+Why I want to reset my career:
+
+* I feel like I've learned nothing meaningful about professional Software Engineering in the last 5 years. All the knowledge that I have came from sources that does not have professional level standard (e.g. Udemy, Youtube) 
+* I'm a pretty decent programmer and problem solver but I'm not great at many other parts of Software Engineering (e.g. architecture, design patterns, unit testing)
+
+&amp;#x200B;
+
+What I'm looking for in my next job:
+
+* Fully remote position, preferably a more junior/mid-level role
+* Salary range: USD40,000 annually
+* Front End (React) or Full Stack (React front end and Javascript or Python backend)  role
+* I appreciate if I can mostly work in my timezone (GMT+8) but I don't really mind working in yours
+* A chance to work with a mentor and a dedicated tech lead (I promise I will not ask stupid questions)
+* Decent work-life balance (I don't want to feel guilty watching movies on a Saturday night)
+* A team of passionate developers
+
+&amp;#x200B;
+
+What I want to learn in my new job:
+
+* Best practices
+* Better development processes and flow
+* Large-scale code design
+* Architecture
+* Testing (Unit, Integration and End-to-end)
+* Improve my English
+
+&amp;#x200B;
+
+Why I'm a pretty decent hire (as a junior developer):
+
+* Although I'm looking for a mentor and a tech lead, I already have a few years of working experiences so I don't need to be spoonfed
+* I am a very independent developer
+* I have experience mentoring juniors (and I love doing it)
+* I am passionate, hardworking, and dedicated
+* I love solving problems
+
+&amp;#x200B;
+
+What I'm bad at:
+
+* Leetcode/Hackerrank
+* Presentation (my public speaking skills is trash)
+
+&amp;#x200B;
+
+Other information:
+
+* I have a very good internet connection (500Mbps)
+* I have a very good PC (i7-8700, GTX1080, 32GB RAM)
+* I have a good mic and a good webcam
+* I speak pretty decent English
+
+&amp;#x200B;
+
+Common interview questions:
+
+Q: What is your greatest strength?
+
+A: I have great attention to details
+
+&amp;#x200B;
+
+Q: What is your greatest weakness?
+
+A: I can be a bit disorganized when I have too many tasks at hands
+
+&amp;#x200B;
+
+Q: Where do you see yourself in the next 5 years?
+
+A: I want to improve myself from a decent programmer to a great software engineer
+
+&amp;#x200B;
+
+Q: Why do you want to work with us?
+
+A: To be honest, at this point I would accept anyone that is willing to give me a chance to restart my career and provide me with adequate opportunity for me to grow as a software engineer
+
+&amp;#x200B;
+
+Q: Why are you leaving your current job?
+
+A: I'm looking for a better opportunity to grow (both financially and technically)
+
+&amp;#x200B;
+
+Feel free to DM me if you're interested with me.
+## [12][How to make a stories.mdx file in Storybook?](https://www.reddit.com/r/reactjs/comments/iy9t99/how_to_make_a_storiesmdx_file_in_storybook/)
+- url: https://www.reddit.com/r/reactjs/comments/iy9t99/how_to_make_a_storiesmdx_file_in_storybook/
+---
+I would like to add documentation alongside my components in Storybook thanks to markdown syntax. I've followed Storybook's guidelines, but when launching the app, I receive the following error in my terminal:
+
+&gt;FATAL ERROR: CALL\_AND\_RETRY\_LAST Allocation failed - JavaScript heap out of memory. (...) Command failed with signal "SIGABRT".
+
+Here is my storybook config:
+
+    // main.ts
+    module.exports = {
+      stories: ["../**/stories.tsx", "../**/stories.mdx"],
+      addons: [
+        {
+          name: "@storybook/addon-essentials",
+          options: { backgrounds: false, docs: false, viewport: false },
+        },
+        "storybook-addons-abstract/register",
+      ],
+    };
     
-        //state
-        this.state = {
-          variant: "",
-          class_name: "",
-          mode_class: "",
-        };
-      }
-    
-    //this is supposed to call when clicking button from another component
-    componentWillReceiveProps() {
-        const { className, mode } = this.props;
-        this.setState({ class_name: className || "" });
-        switch (mode) {
-          case "active":
-            this.setState({
-              mode_class: "atoms-Button-active",
-              variant: "primary"
-            });
-            break;
-          case "success":
-            this.setState({
-              mode_class: "atoms-Button-edit",
-              variant: "success"
-            });
-            break;
-          default:
-            break;
-        }
-      }
-    
-      render() {
-        const { variant, class_name, mode_class } = this.state;
-        console.log("variant", variant);
-        return (
-          &lt;ButtonBB
-            variant={variant}
-            onClick={this.props.onClick}
-            disabled={this.props.disabled}
-            className={"shadow-none atoms-button" + class_name + " " + mode_class}
-          &gt;
-            {this.props.children }
-          &lt;/ButtonBB&gt;
-        );
-      }
+    // webpack.config.js
+    module: {
+       rules: [
+            { test: /\.mdx?$/, use: ["babel-loader", "@mdx-js/loader"]}
+            //... + all necessary loaders such as ts-loader, etc.)
+            ]
     }
-## [8][Reactjs Javascript Tutorial - Full Course 10 Hours (2020) with TensorflowJS](https://www.reddit.com/r/reactjs/comments/ixhcjr/reactjs_javascript_tutorial_full_course_10_hours/)
-- url: https://www.youtube.com/watch?v=I6tbhNUU96Y
----
 
-## [9][Table of content navigation pane using React/React-bootstrap](https://www.reddit.com/r/reactjs/comments/ixm27z/table_of_content_navigation_pane_using/)
-- url: https://www.reddit.com/r/reactjs/comments/ixm27z/table_of_content_navigation_pane_using/
----
-Hi,
+My component:
 
-I am new to front-end and need help designing a table of contents pane which is placed on the right side of a page to easily navigate through it. Something similar to the pane on the right side of this [page](https://react-bootstrap.github.io/components/navs/). Any links to material design/tutorials would be appreciated. If there is an existing react component which I can use directly that would be amazing.
-## [10][A To-Do List App](https://www.reddit.com/r/reactjs/comments/ixej4j/a_todo_list_app/)
-- url: https://www.reddit.com/r/reactjs/comments/ixej4j/a_todo_list_app/
----
-Hello everyone! I created a simple To-Do List app. I am fairly new to React, and this is one of my projects.
+    import React from "react";
+    
+    export default function Text({ content }) {
+      return &lt;h1&gt;{content}&lt;/h1&gt;;
+    }
 
-[https://realtechnerd.github.io/reacttodolist/](https://realtechnerd.github.io/reacttodolist/)
-## [11][Sample Task Management](https://www.reddit.com/r/reactjs/comments/ixl2jq/sample_task_management/)
-- url: https://www.reddit.com/r/reactjs/comments/ixl2jq/sample_task_management/
----
-Hi, I'm create sample Task Management app, written by reactjs, using reduxjs as state management and formik.
+And the story (stories.mdx):
 
-[GitHub link](https://github.com/navand/sample-task-management)
-## [12][MDX blog just displays markdown content instead of rendering it while using `MDXProvider` from `@mdx-js/react` in Next JS](https://www.reddit.com/r/reactjs/comments/ixkvn2/mdx_blog_just_displays_markdown_content_instead/)
-- url: /r/nextjs/comments/ixktm0/mdx_blog_just_displays_markdown_content_instead/
----
+    import { Story, Meta, Canvas } from "@storybook/components";
+    import Text from ".";
+    
+    &lt;Meta title="MDX/Text" component={Text} /&gt;
+    
+    # Checkbox
+    
+    Here is the text component:
+    
+    &lt;Canvas&gt;
+      &lt;Story name="defaut"&gt;
+        &lt;Text text="hello" /&gt;
+      &lt;/Story&gt;
+    &lt;/Canvas&gt;
 
+How to fix this? Thanks!

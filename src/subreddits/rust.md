@@ -23,72 +23,79 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/iwxjdh/whats_everyone_working_on_this_week_392020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-39-2020/49088?u=llogiq)!
-## [3][My Least Favorite Rust Type](https://www.reddit.com/r/rust/comments/ix751t/my_least_favorite_rust_type/)
-- url: https://ridiculousfish.com/blog/posts/least-favorite-rust-type.html
+## [3][Neovim and Rust - An effective development experience](https://www.reddit.com/r/rust/comments/iy15dw/neovim_and_rust_an_effective_development/)
+- url: https://sharksforarms.dev/posts/neovim-rust/
 ---
 
-## [4][Small tip to transform an Option&lt;impl Iterator&lt;_&gt;&gt; into an impl Iterator&lt;_&gt;](https://www.reddit.com/r/rust/comments/ixj7f3/small_tip_to_transform_an_optionimpl_iterator/)
-- url: https://www.reddit.com/r/rust/comments/ixj7f3/small_tip_to_transform_an_optionimpl_iterator/
----
-If you ever encounter a situation where you need an `impl Iterator&lt;Item = T&gt;` out of an `Option&lt;impl Iterator&lt;Item = T&gt;&gt;`, doing `iter_option.unwrap_or(iter::empty())` will not work because the types in the `None` and `Some` cases are different.
-
-The tip is to flatten the option: `iter_option.into_iter().flatten()`.
-## [5][gui-tools -- A cross-platform drawing kit for creating GUIs](https://www.reddit.com/r/rust/comments/ixh1m3/guitools_a_crossplatform_drawing_kit_for_creating/)
-- url: https://www.reddit.com/r/rust/comments/ixh1m3/guitools_a_crossplatform_drawing_kit_for_creating/
----
-As of late, I've been examining the model that GTK+ uses to create a GUI interface. One of the most interesting parts is that it separates its code into three parts: the widget toolkit (GTK), the drawing toolkit (GDK), and the runtime for the type system (GLib). 
-
-gui-tools aims to be the drawing kit part of that equation. It provides an event runtime, interfaces to native libraries, and APIs for drawing on surfaces. It doesn't aim to be a full graphics framework; rather, it aims to be an unopinionated part of one.
-
-At the moment, it's in a primitive state. supports the xlib and win32 backends somewhat reliably. Some things I want to do with this in the future:
-
-* Add support for text rendering via the `fontdue` crate.
-* Add a backend for OSX's AppKit API.
-* Add a backend for the DOM. That way it becomes easy to port apps using `gui-tools` from the desktop to the web.
-* Currently, `gui-tools` uses native drawing APIs (e.g. GDI+ and GC), which create unnecessary expenditure on the CPU. If we use OpenGL, we can both transfer that work to the GPU and make the drawing style more consistent.
-* Add async support.
-
-https://github.com/not-a-seagull/gui-tools
-## [6][A simple library for benchmarking](https://www.reddit.com/r/rust/comments/ixlbqi/a_simple_library_for_benchmarking/)
-- url: https://www.reddit.com/r/rust/comments/ixlbqi/a_simple_library_for_benchmarking/
----
-It imitates test::bench, but supports async and has beautiful output.
-
-&amp;#x200B;
-
-&gt;I am a rust beginner, please correct me if the code is bad. Thank you
-
-&amp;#x200B;
-
-https://preview.redd.it/cduz8lngmoo51.png?width=1108&amp;format=png&amp;auto=webp&amp;s=6111b6fb13f8c3b2aa1a0df1612b4325038b1421
-
-[https://github.com/juzi5201314/bench-rs](https://github.com/juzi5201314/bench-rs)
-## [7][Updating the little book of rust macros to current Rust](https://www.reddit.com/r/rust/comments/ix0jni/updating_the_little_book_of_rust_macros_to/)
-- url: https://www.reddit.com/r/rust/comments/ix0jni/updating_the_little_book_of_rust_macros_to/
----
-The Little Book of Rust Macros is a great learning resource when it comes to macros, or well it was. Unfortunately the original author has disappear since 2016 which in turn kept the book frozen in time. Rust has changed quite a bit since then, and so did macros. The book is still quite helpful even to this day but it is missing some valuable additions that have been made to the macro system. The practical introduction actually guides the user through building a macro that does not even compile in current Rust anymore.
-
-Due to this I want to revive the project and bring it up to date with current Rust so that new people get a great learning resource back when it comes to learning about macros, especially since it is one of the topics a lot of new people seem to struggle with.
-
-I've already started updating the majority of the book, the methodical introduction, to current Rust here https://github.com/Veykril/tlborm.
-Help is deeply appreciated as there is a lot of new stuff to cover!
-## [8][IntelliJ Rust Changelog #131](https://www.reddit.com/r/rust/comments/ix0wgl/intellij_rust_changelog_131/)
-- url: https://intellij-rust.github.io/2020/09/21/changelog-131.html
+## [4][OMG WTF RS - Resources to help you get started with Rust](https://www.reddit.com/r/rust/comments/iy81jn/omg_wtf_rs_resources_to_help_you_get_started_with/)
+- url: https://ferrous-systems.com/blog/omg-wtf-rs-resources-to-help-you-get-started-with-rust/
 ---
 
-## [9][rust-analyzer changelog #43](https://www.reddit.com/r/rust/comments/iwzja8/rustanalyzer_changelog_43/)
-- url: https://rust-analyzer.github.io/thisweek/2020/09/21/changelog-43.html
+## [5][iou version 0.3](https://www.reddit.com/r/rust/comments/ixvltf/iou_version_03/)
+- url: https://without.boats/blog/iou-0-3/
 ---
 
-## [10][robusta — a proc macro to ease Rust⬄Java interop!](https://www.reddit.com/r/rust/comments/ix7f0l/robusta_a_proc_macro_to_ease_rustjava_interop/)
-- url: https://github.com/giovanniberti/robusta/
+## [6][PyO3 based modelling &amp; simulation framework (~300 loc, 4X speed of Python implementation - let's make it faster!)](https://www.reddit.com/r/rust/comments/iy6j8p/pyo3_based_modelling_simulation_framework_300_loc/)
+- url: https://www.reddit.com/r/rust/comments/iy6j8p/pyo3_based_modelling_simulation_framework_300_loc/
+---
+Hey everyone! I'm quite new to Rust. I've started converting a "dynamical systems" modelling and simulation framework  from Python to Rust using PyO3 to create a native Python module.
+
+What's  amazing is that it's only 300 loc so far, and already implements most of  the features seen in the existing Python module, at 4X the speed (which  is important for simulations). The reason it isn't faster, in my Rust  newbie mind, is because it relies on making calls back to Python from Rust (this is a requirement, to utilize the Python stack). It's a simple code-base, and I'd love a code review if anyone is up for it,  specifically about how I can optimize it for speed and memory  efficiency: [https://github.com/BenSchZA/radCAD](https://github.com/BenSchZA/radCAD)
+
+I think it's a great use-case for Rust, and although the code-base is simple, it has interesting use-cases and opportunities for benchmarking - so I'm keen to see just how fast we can get these simulations to run using PyO3.
+## [7][Async Iteration Semantics](https://www.reddit.com/r/rust/comments/ixwazy/async_iteration_semantics/)
+- url: https://blog.yoshuawuyts.com/async-iteration/
 ---
 
-## [11][Porting EBU R128 audio loudness analysis from C to Rust](https://www.reddit.com/r/rust/comments/ixn7ju/porting_ebu_r128_audio_loudness_analysis_from_c/)
+## [8][Nushell Survey 2020 (for users and non-users)](https://www.reddit.com/r/rust/comments/ixwyhv/nushell_survey_2020_for_users_and_nonusers/)
+- url: https://docs.google.com/forms/d/e/1FAIpQLScEFzDh7j3jfAuVMBCQtQE-qfKAhugLCiUaaGL583QtGwz5fw/viewform
+---
+
+## [9][I created a Window Hello style authentication for Linux like Howdy, but with rust.](https://www.reddit.com/r/rust/comments/iy16di/i_created_a_window_hello_style_authentication_for/)
+- url: https://github.com/saanuregh/hola
+---
+
+## [10][Porting EBU R128 audio loudness analysis from C to Rust](https://www.reddit.com/r/rust/comments/ixn7ju/porting_ebu_r128_audio_loudness_analysis_from_c/)
 - url: https://coaxion.net/blog/2020/09/porting-ebu-r128-audio-loudness-analysis-from-c-to-rust/
 ---
 
-## [12][How to get started with Rust?](https://www.reddit.com/r/rust/comments/ixlkla/how_to_get_started_with_rust/)
-- url: https://edfloreshz.blog/how-to-get-started-with-rust
+## [11][Trunk 0.5.0 | Proxy System](https://www.reddit.com/r/rust/comments/iya08b/trunk_050_proxy_system/)
+- url: https://www.reddit.com/r/rust/comments/iya08b/trunk_050_proxy_system/
 ---
+Build, bundle &amp; ship your Rust WASM application to the web.
 
+- [Github repo](https://github.com/thedodd/trunk)
+- [Release notes](https://github.com/thedodd/trunk/releases/tag/v0.5.0)
+
+Trunk now ships with a built-in proxy which can be enabled when running `trunk serve`. There are two ways to configure the proxy, each discussed below. All Trunk proxies will transparently pass along the request body, headers, and query parameters to the proxy backend.
+
+### proxy cli flags
+The `trunk serve` command accepts two proxy related flags.
+
+`--proxy-backend` specifies the URL of the backend server to which requests should be proxied. The URI segment of the given URL will be used as the path on the Trunk server to handle proxy requests. E.G., `trunk serve --proxy-backend=http://localhost:9000/api/` will proxy any requests received on the path `/api/` to the server listening at `http://localhost:9000/api/`. Further path segments or query parameters will be seamlessly passed along.
+
+`--proxy-rewrite` specifies an alternative URI on which the Trunk server is to listen for proxy requests. Any requests received on the given URI will be rewritten to match the URI of the proxy backend, effectively stripping the rewrite prefix. E.G., `trunk serve --proxy-backend=http://localhost:9000/ --proxy-rewrite=/api/` will proxy any requests received on `/api/` over to `http://localhost:9000/` with the `/api/` prefix stripped from the request, while everything following the `/api/` prefix will be left unchanged.
+
+### config file
+The `Trunk.toml` config file accepts multiple `[[proxy]]` sections, which allows for multiple proxies to be configured. Each section requires at least the `backend` field, and optionally accepts the `rewrite` field, both corresponding to the `--proxy-*` CLI flags discussed above.
+
+As it is with other Trunk config, a proxy declared via CLI will take final precedence and will cause any config file proxies to be ignored, even if there are multiple proxies declared in the config file.
+
+The following is a snippet from the `Trunk.toml` file in this repo:
+
+```toml
+[[proxy]]
+rewrite = "/api/v1/"
+backend = "http://localhost:9000/"
+```
+## [12][Are there any gotchas to converting '&amp;T' into '&amp;[T; 1]'?](https://www.reddit.com/r/rust/comments/ixqzkf/are_there_any_gotchas_to_converting_t_into_t_1/)
+- url: https://www.reddit.com/r/rust/comments/ixqzkf/are_there_any_gotchas_to_converting_t_into_t_1/
+---
+Hi rustaceans,
+
+I'm working on a project where I have a function that has to return a slice from a reference of the same type.  The type is `Copy`, but I can't return it using `&amp;[*x]` because doing so would store the slice on the stack frame of the function, which gets invalidated when the function returns.  So I'm using `std::slice::from_raw_parts` to convert the reference into an immutable slice of length `1` with an `unsafe` block.
+
+So, my question is: are there any gotchas that I'm letting myself in on?  I can't see how a `&amp;'a [T; 1]` is any different from an `&amp;'a T`, but there might be something I've overlooked.
+This code currently only happens inside the test suite so I'm OK with a bit of potential UB there (since UB is highly likely to just cause my tests to break which fails safe), but in the future I'm going to have **a lot** of these conversions going on and I'm making a text editor with some very spicy data structures so memory corruption would be really bad.  As a result, I'd like to avoid using `unsafe` unless forced.  Edit: my tests do seem to be working fine...
+
+Thanks!

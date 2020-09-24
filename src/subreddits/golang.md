@@ -1,125 +1,75 @@
 # golang
-## [1][vs-code like icons and git integration in terminal](https://www.reddit.com/r/golang/comments/ixrinq/vscode_like_icons_and_git_integration_in_terminal/)
-- url: https://i.redd.it/v7p22v1ldqo51.png
+## [1][Rob's frustration resulted in this beautiful language](https://www.reddit.com/r/golang/comments/iypbin/robs_frustration_resulted_in_this_beautiful/)
+- url: https://www.reddit.com/r/golang/comments/iypbin/robs_frustration_resulted_in_this_beautiful/
+---
+I've stumbled upon a paper written by Rob Pike in 2000.
+
+[http://herpolhode.com/rob/utah2000.pdf](http://herpolhode.com/rob/utah2000.pdf) 
+
+I think his frustration is still relevant and looks like go language is an outcome of that. Particularly reflecting on:
+
+1. Not depending on existing tool chain
+2. Incompatible (with C) ABI
+3. unconventional assembly
+4. goroutine scheduler
+## [2][embed, cmd/go: add support for embedded files · Issue #41191 [Accepted !]](https://www.reddit.com/r/golang/comments/iys6wu/embed_cmdgo_add_support_for_embedded_files_issue/)
+- url: https://github.com/golang/go/issues/41191
 ---
 
-## [2][In-process caching in Go: scaling lakeFS to 100k requests/second](https://www.reddit.com/r/golang/comments/iy9wvq/inprocess_caching_in_go_scaling_lakefs_to_100k/)
+## [3][TamaGo – bare metal Go for ARM SoCs](https://www.reddit.com/r/golang/comments/iyv2zd/tamago_bare_metal_go_for_arm_socs/)
+- url: https://github.com/f-secure-foundry/tamago
+---
+
+## [4][Writing API with swagger vs by hand](https://www.reddit.com/r/golang/comments/iynmtg/writing_api_with_swagger_vs_by_hand/)
+- url: https://www.reddit.com/r/golang/comments/iynmtg/writing_api_with_swagger_vs_by_hand/
+---
+Hello
+I have been writing API with go without swagger and I love the process. But recently I got a requirement to generate code with swagger, which seemed more complex and verbose. I wanted to know how many of you use swagger to do code generation and wanted to know thought of using swagger vs writing by hand
+## [5][thinkpad-led tool manager](https://www.reddit.com/r/golang/comments/iywmd5/thinkpadled_tool_manager/)
+- url: https://www.reddit.com/r/golang/comments/iywmd5/thinkpadled_tool_manager/
+---
+Hi, I've just written this simple tool to manage the red back led of your Thinkpad (under Linux).
+
+If the topic arouses you some interest, this is the link of my project:
+
+[https://github.com/alegrey91/thinkpad-led](https://github.com/alegrey91/thinkpad-led)
+
+A really thank [u/sali20](https://www.reddit.com/u/sali20/) for his amazing post ([https://www.reddit.com/r/thinkpad/comments/7n8eyu/thinkpad\_led\_control\_under\_gnulinux/](https://www.reddit.com/r/thinkpad/comments/7n8eyu/thinkpad_led_control_under_gnulinux/)), which inspired me to make my own tool.
+## [6][Interface argument - copy or reference](https://www.reddit.com/r/golang/comments/iyvr60/interface_argument_copy_or_reference/)
+- url: https://www.reddit.com/r/golang/comments/iyvr60/interface_argument_copy_or_reference/
+---
+I have question about functions which accepts interface as a argument. Will the underlying struct be copied during function call or not. How to control it?
+## [7][In-process caching in Go: scaling lakeFS to 100k requests/second](https://www.reddit.com/r/golang/comments/iy9wvq/inprocess_caching_in_go_scaling_lakefs_to_100k/)
 - url: https://lakefs.io/2020/09/23/in-process-caching-in-go-scaling-lakefs-to-100k-requests-second/
 ---
 
-## [3][Type question](https://www.reddit.com/r/golang/comments/iy91ix/type_question/)
-- url: https://www.reddit.com/r/golang/comments/iy91ix/type_question/
+## [8][I need a second opinion on a code snippet](https://www.reddit.com/r/golang/comments/iyxaux/i_need_a_second_opinion_on_a_code_snippet/)
+- url: https://www.reddit.com/r/golang/comments/iyxaux/i_need_a_second_opinion_on_a_code_snippet/
 ---
-Should a database driver return a value in a row as an int32 or an int64, would there be a possible issue with storing it in an int? Similarly, would there be a possible issue with storing sql.RawBytes into a pointer to a string? I apologize if my question isn't worded well, and I appreciate any help.
-## [4][Running Go in the Browser with WASM and Web Workers](https://www.reddit.com/r/golang/comments/iya00u/running_go_in_the_browser_with_wasm_and_web/)
-- url: https://qvault.io/2020/09/23/running-go-in-the-browser-with-wasm-and-web-workers/
+I am writing a little program to learn channel usage in golang. The program gives you n number of tickets for a given period. At each period, tickets are replenished whatever you use it or not. I wrote a struct to hold the tickets and refill them periodically. To replenish the tickets, I started a goroutine when a new instance of the struct was initialized. My question is that is it acceptable to start a background goroutine to update some fields of the struct periodically or are there any better ways to accomplish the same task.  you can find the sample code here:
+
+[https://play.golang.org/p/KbW9Eoq9V7B](https://play.golang.org/p/KbW9Eoq9V7B)
+
+thnx for your help.
+## [9][SQL Migration options (2020)](https://www.reddit.com/r/golang/comments/iywzd7/sql_migration_options_2020/)
+- url: https://www.reddit.com/r/golang/comments/iywzd7/sql_migration_options_2020/
+---
+Hey everyone-
+
+We're starting our first Go project coming off of two fully loaded frameworks:  Rails and Django.   I'm curious what people are having success with for SQL Migrations (Postgres in our case)?
+
+Looking through Awesome Go, these seems like the projects that are most healthy:
+
+[https://github.com/golang-migrate/migrate](https://github.com/golang-migrate/migrate) \- seems most active and maintained
+
+[https://github.com/rubenv/sql-migrate](https://github.com/rubenv/sql-migrate) \- was the previous recommendation for the thread I read 3 years ago, but last commit was 5 months ago so not sure if maintained
+
+[https://github.com/go-gorm/gorm](https://github.com/go-gorm/gorm) \- full ORM with support for migrations.  Feels closest to where we are coming from.
+
+Others?
+
+Thanks for any advice!
+## [10][Go Syntax: Literal functions, closures, and the defer keyword](https://www.reddit.com/r/golang/comments/iywuvx/go_syntax_literal_functions_closures_and_the/)
+- url: https://youtu.be/CTMxVSwB4o8
 ---
 
-## [5][kafka-transformer : consume, transform, produce easily](https://www.reddit.com/r/golang/comments/iy6t54/kafkatransformer_consume_transform_produce_easily/)
-- url: https://www.reddit.com/r/golang/comments/iy6t54/kafkatransformer_consume_transform_produce_easily/
----
-Hi,
-
-If you are looking for a message transformation library written in GO, here it is:
-
-[https://github.com/etf1/kafka-transformer](https://github.com/etf1/kafka-transformer)
-
-You can read from a topic, make a custom transformation and produce or project the message to external system (like redis ou a database), just implement one interface.
-## [6][Excelize 2.3.1 is Released – Go library for spreadsheet (Excel) files, now support to open the spreadsheet with password protection](https://www.reddit.com/r/golang/comments/ixqmwi/excelize_231_is_released_go_library_for/)
-- url: https://www.reddit.com/r/golang/comments/ixqmwi/excelize_231_is_released_go_library_for/
----
-Excelize is a library written in pure Go providing a set of functions that allow you to write to and read from XLSX / XLSM / XLTM files. Supports reading and writing spreadsheet documents generated by Microsoft Excel™ 2007 and later. Supports complex components by high compatibility, and provided streaming API for generating or reading data from a worksheet with huge amounts of data.
-
-GitHub: [github.com/xuri/excelize](https://github.com/xuri/excelize)
-
-A summary of changes is available in the [Release Notes](https://github.com/360EntSecGroup-Skylar/excelize/releases/tag/v2.3.1). A full list of changes is available in the [changelog](https://github.com/360EntSecGroup-Skylar/excelize/compare/v2.3.0...v2.3.1).
-
-Release Notes
-------------
-The most notable changes in this release are:
-
-#### Notable Features
-
-* Support open spreadsheet with password protection by ECMA-376 document standard encryption, relate issue #199
-* Add checking and limits for the worksheet
-* Extend pivot table functionality: support set the header, style, and table options for the pivot table
-* Security vulnerabilities and patches 
-
-#### Improve the Compatibility
-
-* Compatible with Go 1.15, fix unit test failed on Windows and potential race condition, relate issue #689
-* Default row height compatibility with Apache OpenOffice and Kingsoft WPS&amp;trade;
-* Improve compatibility for the phonetic hint and sheet tab color
-
-#### Bug Fixes
-
-* Fix `RemoveRow` slice bounds out of range cause panic in some case, resolve #686
-* Fix stream writer generated corrupted files issue
-* Fix the scale for add picture not work, resolve #691
-
-#### Miscellaneous
-
-* Unit tests update and typo fixed
-* [Documentation website](https://xuri.me/excelize) with multilingual: English, French, Russian, Chinese, Japanese, and Korean, which has been updated
-* Welcome join [the Slack channel](https://join.slack.com/t/xuri/shared_invite/zt-eriqdkeo-wV04zcCdBiiZveFgY86Wzw) to meet other members of our community
-## [7][Trying to find a way to code daily](https://www.reddit.com/r/golang/comments/ixn337/trying_to_find_a_way_to_code_daily/)
-- url: https://www.reddit.com/r/golang/comments/ixn337/trying_to_find_a_way_to_code_daily/
----
-Hello all. My process of learning Go has been ongoing and at this point im starting to feel like im getting stuck in tutorial hell. I did Todd Mcleods intro to go about a year ago and really enjoyed that class. Iv since moved in to doing cs50x to get some foundational CS knowledge and am working my way through jon Calhons Web Dev course. I know the old saying "work on any project" but I guess my issue is im not sure where to even begin. 
-
- At this point I felt comfortable enough to write a small go app at work for simple influxdb parsing but since my job doesnt not necessarily offer too many opportunities to code id like to find a project, opensource or even possibly some sort of contract work to really rely less on courses to continue learning and start implementing some really world solutions.
-
-For context Iv been digging through many oreilly go books and even watched a couple of videos from the Ultimate Go courses to get better familiar with channels and go routines but I also feel that until im met with a task that requires them I wont fully grasp their usage. My day to day revolves around implementing "devops" practices via ci/cd pipelines and working with a java based team to maintain, deploy, and migrate their apps to k8s with more focus on GCP in the near future.
-## [8][Organizing go test and go coverage by package namr](https://www.reddit.com/r/golang/comments/iy3yzl/organizing_go_test_and_go_coverage_by_package_namr/)
-- url: https://www.reddit.com/r/golang/comments/iy3yzl/organizing_go_test_and_go_coverage_by_package_namr/
----
-Right now I have go test run through the go-junit-report tool. It reports by directory name. Running gocov does the same thing.
-
-How can I get the results reported by package name?
-
-Something like:
-Package name with tests failed skip
-
-------directory with tests failed skip
-
-----------file with tests failed skip and exact lines of code coverage for coverage test passes.
-
-Is there something like this?
-## [9][Replacing Lines In a File](https://www.reddit.com/r/golang/comments/iy3gab/replacing_lines_in_a_file/)
-- url: https://www.reddit.com/r/golang/comments/iy3gab/replacing_lines_in_a_file/
----
-Hi guys. I'm have quite a few files that I need to update since the package I'm using was updated and breaks backwards compatibility (this was on purpose) so I'm stuck with updating numerous files to use the new interface. It's actually not that complicated but I'm having trouble reading and updating the necessary lines to use the new interface.
-
-Essentially, I have a func that has this:
-
-```
-func foo() {
-... some other lines
-	if err != nil {
-		boo.Doo = doo
-		boo.Loo = loo
-                ... return
-	}
-}
-```
-
-What I am trying to achieve is this:
-
-```
-func foo() {
-... some other lines
-	if err != nil {
-		boo.Doo(doo)
-		boo.Loo(loo)
-                ... return
-	}
-}
-```
-
-I think the simplest way to do this is to read the lines one by one and then assembling them to an array and if the conditions are met, update the line and then rewrite the file with the updated content. My problem is, I'm having a hard time determining what "character" is the "tab/space" between "boo" and the left edge of the file. Because essentially, I just need to get the value on the right side of the variable assignment so I can use it as a parameter to the new interface. And my problem is, I need to preserve the formatting.
-
-Any ideas on how to do this?
-## [10][Where can I find a good tutorial of GoLearn?](https://www.reddit.com/r/golang/comments/ixzhbm/where_can_i_find_a_good_tutorial_of_golearn/)
-- url: https://www.reddit.com/r/golang/comments/ixzhbm/where_can_i_find_a_good_tutorial_of_golearn/
----
-Does anyone knows a good tutorial of GoLearn (to someone who doesn't understand nothing about AI ir data science)

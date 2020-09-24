@@ -1,107 +1,96 @@
 # aws
-## [1][Week of Sept 21st - What are you building this week in AWS?](https://www.reddit.com/r/aws/comments/ix0dmq/week_of_sept_21st_what_are_you_building_this_week/)
-- url: https://www.reddit.com/r/aws/comments/ix0dmq/week_of_sept_21st_what_are_you_building_this_week/
----
-Share what you are working on
-## [2][Why were the pins removed from the navigation bar?](https://www.reddit.com/r/aws/comments/ixzfho/why_were_the_pins_removed_from_the_navigation_bar/)
-- url: https://www.reddit.com/r/aws/comments/ixzfho/why_were_the_pins_removed_from_the_navigation_bar/
----
-I had pins setup to 1 click navigate around the console. EC2, R53, Cloudwatch,cloudformation etc etc. Middle click the pin create a new tab to check some logs etc. 
-
-Who in their right mind thought, you know what lets take away users ease of access to our services and make them click 2x as much. /rant
-## [3][When using Step Functions, I find that the interaction between different paths is fiddly and hard to get exactly right. I made a web page where you can type in a payload, ResultPath, OutputPath etc and see the final and intermediate steps instantly](https://www.reddit.com/r/aws/comments/iy6wrq/when_using_step_functions_i_find_that_the/)
-- url: https://www.mdavis.xyz/step-funcs/
+## [1][S3 Path Deprecation Plan Updated](https://www.reddit.com/r/aws/comments/iyd84u/s3_path_deprecation_plan_updated/)
+- url: https://aws.amazon.com/blogs/aws/amazon-s3-path-deprecation-plan-the-rest-of-the-story/
 ---
 
-## [4][My experience after 4 months of backing up Synology to Amazon Glacier](https://www.reddit.com/r/aws/comments/iy6yzd/my_experience_after_4_months_of_backing_up/)
-- url: https://www.reddit.com/r/aws/comments/iy6yzd/my_experience_after_4_months_of_backing_up/
+## [2][We are the AWS EC2 Team - Ask the Experts - Sep 24th @ 9AM PT / 12PM ET / 4PM GMT!](https://www.reddit.com/r/aws/comments/iu0c8d/we_are_the_aws_ec2_team_ask_the_experts_sep_24th/)
+- url: https://www.reddit.com/r/aws/comments/iu0c8d/we_are_the_aws_ec2_team_ask_the_experts_sep_24th/
 ---
-I created a small project to [setup AWS to host Synologies backups to Glacier](https://github.com/0x4447/0x4447_product_synology_backup). And after 4 months of using it I must say I'm happy with the results. As of now I stored 31.2 GB and the total costs of this 4 months is of $5.01 where the first month was the most expensive due to the initial backup. The backup is set to be daily at 1AM and I normally add one or two documents a day. Nothing major. And then the occasional few GB video file once a month. Bellow is the full brake down. 
+Hey r/aws! u/AmazonWebServices here.
 
-### June 2020 - $3.69
+The AWS EC2 team will be hosting an Ask the Experts session here **in this thread** to answer any questions you may have about **deploying your machine learning models to Amazon EC2 Inf1 instances powered by the** [**AWS Inferentia chip**](https://aws.amazon.com/machine-learning/inferentia/), which is custom designed by AWS to provide high performance and cost-effective machine learning inference in the cloud. These instances provide up to 30% higher throughput, and 45% lower cost per inference over comparable GPU-based instances for a wide variety of machine learning use cases such as image and video analysis, conversational agents, fraud detection, financial forecasting, healthcare automation, recommendation engines, text analytics, and transcription. It's easy to get started and popular frameworks such as TensorFlow, PyTorch, and MXNet are supported.
 
-```
-    Amazon Glacier EarlyDelete-ByteHrs  
-    $0.012 per GB - Early Delete 2.036 GB-Mo $0.01
-
-    Amazon Glacier Requests-Tier1
-    $0.050 per 1,000 Requests 72,578.000 Requests $3.63
-
-    Amazon Glacier TimedStorage-ByteHrs$0.06
-    $0.004 per GB / month - Storage 13.994 GB-Mo $0.06
-```
-
-### July 2020 - $0.61
-
-```
-    Amazon Glacier EarlyDelete-ByteHrs
-    $0.012 per GB - Early Delete 5.920 GB-Mo $0.02
-
-    Amazon Glacier Requests-Tier1
-    $0.050 per 1,000 Requests 9,250.000 Requests $0.46
-
-    Amazon Glacier TimedStorage-ByteHrs
-    $0.004 per GB / month - Storage 29.967 GB-Mo $0.12
-```
-
-### August 2020 - $0.15
-
-```
-    Amazon Glacier EarlyDelete-ByteHrs$
-    $0.012 per GB - Early Delete 5.968 GB-Mo $0.02
-
-    Amazon Glacier Requests-Tier1
-    $0.050 per 1,000 Requests 63.000 Requests $0.00
-
-    Amazon Glacier TimedStorage-ByteHrs
-    $0.004 per GB / month - Storage 31.091 GB-Mo $0.12
-```
-
-### September 2020 - $0.56
-
-```
-    Amazon Glacier EarlyDelete-ByteHrs
-    $0.012 per GB - Early Delete 3.572 GB-Mo $0.01
-
-    Amazon Glacier Requests-Tier1
-    $0.050 per 1,000 Requests 31.000 Requests $0.00
-
-    Amazon Glacier TimedStorage-ByteHrs
-    $0.004 per GB / month - Storage 18.748 GB-Mo $0.07
-```
-## [5][I want to do a security audit on my company AWS account, not sure where to start](https://www.reddit.com/r/aws/comments/iy8jvr/i_want_to_do_a_security_audit_on_my_company_aws/)
-- url: https://www.reddit.com/r/aws/comments/iy8jvr/i_want_to_do_a_security_audit_on_my_company_aws/
+Already have questions? Post them below and we'll answer them starting at 9AM PT on Sep 24, 2020!
+## [3][Security issue in CloudFormation was leaking role session credentials for customer accounts](https://www.reddit.com/r/aws/comments/iyr4yr/security_issue_in_cloudformation_was_leaking_role/)
+- url: https://onecloudplease.com/blog/security-september-cataclysms-in-the-cloud-formations?reup
 ---
-where do I start and check/test security vulnerability of our AWS account
-## [6][Do you think AWS will open new regions in the US?](https://www.reddit.com/r/aws/comments/iy78oo/do_you_think_aws_will_open_new_regions_in_the_us/)
-- url: https://www.reddit.com/r/aws/comments/iy78oo/do_you_think_aws_will_open_new_regions_in_the_us/
----
-Hello, currently there are Oregon, N. California, Ohio and N. Virginia. (not counting GovCloud). However, I was wondering if it would be possible to add more regions, like Texas for example. Azure has regions in those places.
-## [7][AWS Org testing accounts](https://www.reddit.com/r/aws/comments/iy9q9y/aws_org_testing_accounts/)
-- url: https://www.reddit.com/r/aws/comments/iy9q9y/aws_org_testing_accounts/
----
-Hi,
 
-In our company we use an AWS org with Azure AD SSO for IAM. We have developers looking to test things like Control Tower, which means they need access to a master account of an AWS org. Obviously giving devs access to our prod master account isn't something we're going to do but creating new accounts solely for testing takes far longer than just spinning up a new sub account, as we still want some semblance of access management and billing access.
+## [4][Can AWS bring back the pinned favorites option in the navigation bar?](https://www.reddit.com/r/aws/comments/iyree9/can_aws_bring_back_the_pinned_favorites_option_in/)
+- url: https://www.reddit.com/r/aws/comments/iyree9/can_aws_bring_back_the_pinned_favorites_option_in/
+---
+It was a good feature. Now there's a lot of wasted space in the nav bar :(
+## [5][IAM Console us-east-1 not working?](https://www.reddit.com/r/aws/comments/iywyxm/iam_console_useast1_not_working/)
+- url: https://www.reddit.com/r/aws/comments/iywyxm/iam_console_useast1_not_working/
+---
+Is anyone else having problems bringing up IAM in us-east-1?
+## [6][WAF rules](https://www.reddit.com/r/aws/comments/iywh6s/waf_rules/)
+- url: https://www.reddit.com/r/aws/comments/iywh6s/waf_rules/
+---
+Hey Guys,
+
+I've recently been upgraded from a junior system administrator to a cloud engineer and in need of some help.
 
 &amp;#x200B;
 
-What are you guys doing for testing requirements like this? Do I just have to grin and bear it, or is there a solution I'm missing?
-## [8][AWS Perspective - Visualize Workloads as Architecture Diagrams](https://www.reddit.com/r/aws/comments/ixocei/aws_perspective_visualize_workloads_as/)
-- url: https://aws.amazon.com/solutions/implementations/aws-perspective/
----
+So I need to implement some WAF rules to better protect against DDoS, XSS and the usual fun you get on the web, but I am struggling to find some good resources on some 'Good starter rules'
 
-## [9][Careful, ELBs are relatively expensive](https://www.reddit.com/r/aws/comments/iy8vck/careful_elbs_are_relatively_expensive/)
-- url: https://www.reddit.com/r/aws/comments/iy8vck/careful_elbs_are_relatively_expensive/
----
-Just a reminder to watch your billing stats as ELBs can get very expensive even with the most basic configuration.
-## [10][Need help with Kinesis video streams for facial analysis](https://www.reddit.com/r/aws/comments/iy788q/need_help_with_kinesis_video_streams_for_facial/)
-- url: https://www.reddit.com/r/aws/comments/iy788q/need_help_with_kinesis_video_streams_for_facial/
----
-* I have to process the video stream to identify emotions. For which I need to use AWS Rekognition/custom model on SageMaker. With Kinesis WebRTC javascript sdk, currently video can be streamed only into the kinesis signalling channel. Signalling channel data is available for streaming only and not processing (ML). So, how can I get real time data for processing into Kinesis Streams from the frontend?
-   * For streaming the video from frontend to backend into the Kinesis Video Streams for processing, I tested with Kinesis webRTC Javascript SDK and I am facing issues while implementing as mentioned above, so would Chime SDK serve as an alternative to this?
-   * In Rekognition, "create-stream-processor" has a settings parameter. This currently only supports FaceSearch. I am looking to Detect and analyze faces. Is that possible with “create-stream-processor" in the Python SDK? Or do I have to use the Java SDK?
-## [11][Security September: Cataclysms in the Cloud Formations – One Cloud Please](https://www.reddit.com/r/aws/comments/iy2w1o/security_september_cataclysms_in_the_cloud/)
-- url: https://onecloudplease.com/blog/security-september-cataclysms-in-the-cloud-formations
----
+Suffice to say I am slightly in over my head
 
+Does anyone have a good document or suggestions I should look in to?
+
+Thanks,
+
+\-Chin
+## [7][Why AWS DocumentDB charges hourly for instances and DynamoDB only charges for read, write and storage?](https://www.reddit.com/r/aws/comments/iytkxq/why_aws_documentdb_charges_hourly_for_instances/)
+- url: https://www.reddit.com/r/aws/comments/iytkxq/why_aws_documentdb_charges_hourly_for_instances/
+---
+I'm new to AWS and little confused on Dynamo and Document pricing?
+
+
+Thanks in advance
+## [8][Sharing Access to Elastic Beanstalk Application](https://www.reddit.com/r/aws/comments/iyw81b/sharing_access_to_elastic_beanstalk_application/)
+- url: https://www.reddit.com/r/aws/comments/iyw81b/sharing_access_to_elastic_beanstalk_application/
+---
+Sorry if this a stupid question, but I'm not sure how to do it. I'm working with a group and have used Elastic Beanstalk to create an web application. Now I would like to give everyone else in the group the ability to go in and edit the environment's configuration. How do I do this?
+## [9][Setting Up a Redundant VPN Tunnel Between AWS &amp; CheckPoint](https://www.reddit.com/r/aws/comments/iyw5hu/setting_up_a_redundant_vpn_tunnel_between_aws/)
+- url: https://www.reddit.com/r/aws/comments/iyw5hu/setting_up_a_redundant_vpn_tunnel_between_aws/
+---
+Hi all. I've been asked if it's possible to setup a redundant VPN tunnel between AWS and our office. I'm not familiar with AWS so have been looking at documentation and from what I've read, AWS VPCs can be setup with 2 gateways. On the CheckPoint side, these AWS gateways can be put in a star VPN community with the on-prem gateways.
+
+What I would like confirming is, if our on-prem CheckPoint fails over to our backup line, would the tunnel to AWS still stay up? Is there a way of defining a primary and a backup IP for the CheckPoint side on AWS?
+## [10][Connecting to Oracle DB using Python via Lambda](https://www.reddit.com/r/aws/comments/iyuxc5/connecting_to_oracle_db_using_python_via_lambda/)
+- url: https://www.reddit.com/r/aws/comments/iyuxc5/connecting_to_oracle_db_using_python_via_lambda/
+---
+I am trying to connect to Oracle RDS from my python code using lamda handler but the due to huge size of  my code owing mainly to Oracle library that's coming upto 250 MB, I am unable to deploy it. 
+1) I tried using layers for libraries but they also have a size limitation.
+2) zipping the files is also not helping. It's still huge.
+
+Is there any way to make it work? A different library I can use? Please let me know.
+## [11][[EFS] Trouble mounting EFS Access Point to ECS Volume](https://www.reddit.com/r/aws/comments/iyux0b/efs_trouble_mounting_efs_access_point_to_ecs/)
+- url: https://www.reddit.com/r/aws/comments/iyux0b/efs_trouble_mounting_efs_access_point_to_ecs/
+---
+Hi guys,
+
+I ran into a problem trying to mount an ECS Volume to EFS through an EFS access point. 
+
+The task role is set up with ClientWrite, ClientRead, and ClientRootAccess to that file system.
+
+The access point is setup with posix userid 1001 and groupid 1001 with permission 755.
+
+The cluster and the file system are in the correct VPC. 
+
+But ECS failed to spin up a task with this error:
+
+Error response from daemon: failed to copy file info for /var/lib/ecs/volumes/{{task-name}}: failed to chown /var/lib/ecs/volumes/{{task-name}}
+
+I was able to spin up the task if i set the access point's POSIX userid and groupid  to 0 as in root. But i feel like its not the best choice for security reason in a shared FS.
+## [12][Trouble launching g4dn instances in US-East-2.](https://www.reddit.com/r/aws/comments/iyp0m2/trouble_launching_g4dn_instances_in_useast2/)
+- url: https://www.reddit.com/r/aws/comments/iyp0m2/trouble_launching_g4dn_instances_in_useast2/
+---
+So at the moment I am trying to launch an instance to customize an AMI. It's a g4dn.xlarge in particular (or 2xlarge) so that I can install Nvidia drivers and the Nvidia container runtime. Most of today I haven't been able to launch the instance (US-East-2). I receive a "We currently do not have sufficient g4dn.xlarge capacity in the Availability Zone you requested (us-east-2a)."
+
+It doesn't matter which availability zone I choose as it goes, and I can come back later and it will eventually work.
+
+My actual question revolves around elastic beanstalk. I have an app that uses this same instance type and I run into this same error when auto scaling kicks in, except it cycles through all the availability zones and tries both spot and on demand (to no avail). How do I account for this? Do I need to make the app in another region, and if so, what happens when this occurs there at some point in the future? Scaling up through the instance types probably works, but the lack of extra GPUs (until the g4dn.12xlarge) means I'm not scaling anything except my budget.
+
+Thoughts?

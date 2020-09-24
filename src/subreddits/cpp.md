@@ -56,134 +56,66 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][September 2020 C++ standard mailing](https://www.reddit.com/r/cpp/comments/iy77zr/september_2020_c_standard_mailing/)
-- url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/#mailing2020-09
+## [2][LTL: A C++ 17 library to write functional code](https://www.reddit.com/r/cpp/comments/iyt4wo/ltl_a_c_17_library_to_write_functional_code/)
+- url: https://www.reddit.com/r/cpp/comments/iyt4wo/ltl_a_c_17_library_to_write_functional_code/
+---
+I would like to present you a C++17 library I am working on since few months.
+
+The idea is to bring the power of C++ ranges / range-v3 with some improvements, like the `&gt;&gt;` notation, and extends it to the `Option` monad and the `Error` monad.
+
+Some differences with the C++ range :
+  1. Supports rvalue references
+  2. Supports `&gt;&gt;` notation
+  3. Extends the _pipelining_ of algorithms to `std::optional` and an home craft `expected`
+  4. Supports some action like finding a value inside a container
+  5. Supports function composition
+  6. There is far more functionality in ranges-v3 than in my implementation
+  7. There is probably some bugs and missing functionality that will be fixed / added in a near future
+
+I hope you will like it, and don't hesitate to give feedback :)
+
+https://github.com/qnope/Little-Type-Library/
+## [3][C++ for fun ... ctional programmers... ???](https://www.reddit.com/r/cpp/comments/iyivts/c_for_fun_ctional_programmers/)
+- url: https://www.youtube.com/watch?v=2vJfJE4K0zg
 ---
 
-## [3][Implementation Challenge: Replacing std::move and std::forward](https://www.reddit.com/r/cpp/comments/ixwtcm/implementation_challenge_replacing_stdmove_and/)
-- url: https://foonathan.net/2020/09/move-forward/
+## [4][The Hidden Secrets of Move Semantics - Nicolai Josuttis - CppCon 2020](https://www.reddit.com/r/cpp/comments/iyr0wt/the_hidden_secrets_of_move_semantics_nicolai/)
+- url: https://www.youtube.com/watch?v=TFMKjL38xAI
 ---
 
-## [4][Back to Basics: The Abstract Machine - Bob Steagall - CppCon 2020](https://www.reddit.com/r/cpp/comments/ixv8d3/back_to_basics_the_abstract_machine_bob_steagall/)
-- url: https://www.youtube.com/watch?v=ZAji7PkXaKY
+## [5][New C++ features in GCC 10](https://www.reddit.com/r/cpp/comments/iyvgge/new_c_features_in_gcc_10/)
+- url: https://developers.redhat.com/blog/2020/09/24/new-c-features-in-gcc-10/
 ---
 
-## [5][Back to Basics: The Structure of a Program - Bob Steagall - CppCon 2020](https://www.reddit.com/r/cpp/comments/ixz9gn/back_to_basics_the_structure_of_a_program_bob/)
-- url: https://www.youtube.com/watch?v=3KoXeegncrs
+## [6][How expensive is integer overflow trapping in C++?](https://www.reddit.com/r/cpp/comments/iyqz18/how_expensive_is_integer_overflow_trapping_in_c/)
+- url: https://lemire.me/blog/2020/09/23/how-expensive-is-integer-overflow-trapping-in-c
 ---
 
-## [6][Powerful C++ metaprogramming: find all shortest path between nodes in Graph at compile/run time!](https://www.reddit.com/r/cpp/comments/iy7usx/powerful_c_metaprogramming_find_all_shortest_path/)
-- url: https://www.reddit.com/r/cpp/comments/iy7usx/powerful_c_metaprogramming_find_all_shortest_path/
+## [7][ZenMake - A cross-platform build system for C/C++ and some other languages](https://www.reddit.com/r/cpp/comments/iytf9g/zenmake_a_crossplatform_build_system_for_cc_and/)
+- url: https://www.reddit.com/r/cpp/comments/iytf9g/zenmake_a_crossplatform_build_system_for_cc_and/
 ---
-for more details, see [https://godbolt.org/z/av4Yb1](https://godbolt.org/z/av4Yb1), [https://github.com/netcan/recipes/blob/master/cpp/metaproggramming/FindShortestPath.cpp](https://github.com/netcan/recipes/blob/master/cpp/metaproggramming/FindShortestPath.cpp)
+Hi people! I develop my own build system for C/C++ and some other languages.
 
-demo:
+ZenMake is a build system based on the meta build system/framework [Waf](https://waf.io/). The main purpose of ZenMake is to be as simple to use as possible but remain flexible. And I will be glad if my project will be useful not only for me.
 
-    struct A: Node&lt;'A'&gt; {};
-    struct B: Node&lt;'B'&gt; {};
-    struct C: Node&lt;'C'&gt; {};
-    struct D: Node&lt;'D'&gt; {};
-    struct E: Node&lt;'E'&gt; {};
-    using g = Graph&lt;
-        __link(__node(A) -&gt; __node(B) -&gt; __node(C) -&gt; __node(D)),
-        __link(__node(A) -&gt; __node(C)),
-        __link(__node(B) -&gt; __node(A)),
-        __link(__node(A) -&gt; __node(E)) &gt;;
-    
-    static_assert(g::getPath('A', 'D').sz == 3);
-    static_assert(g::getPath('A', 'A').sz == 1);
-    static_assert(g::getPath('B', 'D').sz == 3);
-    static_assert(g::getPath('B', 'E').sz == 3);
-    static_assert(g::getPath('D', 'E').sz == 0);
-    
-    int main(int argc, char** argv) {
-        char from = 'A';
-        char to = 'D';
-        if (argc &gt; 2) {
-            from = argv[1][0]; // A
-            to = argv[2][0]; // D
-        }
-        auto path = g::getPath(from, to);
-        std::cout &lt;&lt; "from " &lt;&lt; from &lt;&lt; " to " &lt;&lt; to &lt;&lt; " path size: " &lt;&lt; path.sz &lt;&lt; std::endl;
-        for (size_t i = 0; i &lt; path.sz; ++i) {
-            std::cout &lt;&lt; path.path[i];
-            if (i != path.sz - 1) {
-                std::cout &lt;&lt; "-&gt;";
-            }
-        }
-        std::cout &lt;&lt; std::endl;
-    
-        return 0;
-    }
-## [7][What makes modern C++ modern?](https://www.reddit.com/r/cpp/comments/iy06mn/what_makes_modern_c_modern/)
-- url: https://www.reddit.com/r/cpp/comments/iy06mn/what_makes_modern_c_modern/
----
-I understand that "modern" C++began with C++11, but I would guess not every feature is required to be considered modern
+Why yet another build system? Yes, I know, we already have a lot of them. I decided to create this project because I couldn’t find a build tool for Linux which is quick and easy to use, flexible, ready to use, with declarative configuration, without the need to learn one more special language and suitable for my needs. Full description can be found here: [https://zenmake.readthedocs.io/en/latest/why.html](https://zenmake.readthedocs.io/en/latest/why.html)
 
-What C++ features would you really consider the fundamental features for a C++ codebase to be considered modern?  Is it smart pointers?  Auto keyword? Constexpr?
+Primary git repository of the project: [https://gitlab.com/pustotnik/zenmake](https://gitlab.com/pustotnik/zenmake)
 
-(Go easy on me, I'm a C dev by trade)
-## [8][CppCon 2020 videos](https://www.reddit.com/r/cpp/comments/ixyfs8/cppcon_2020_videos/)
-- url: https://www.youtube.com/playlist?list=PLHTh1InhhwT6VxYHtoWIvOup9gz0p95Qr
+Documentation: [https://zenmake.readthedocs.io](https://zenmake.readthedocs.io/)
+## [8][Tips &amp; Tricks for Effective SYCL Development (SYCL Summer Sessions 2020)](https://www.reddit.com/r/cpp/comments/iysxim/tips_tricks_for_effective_sycl_development_sycl/)
+- url: https://www.youtube.com/watch?v=4Jo-Sb1AX_c
 ---
 
-## [9][September 23: Free Talk with Emery Berger on Optimizing Application Performance](https://www.reddit.com/r/cpp/comments/ixx2bz/september_23_free_talk_with_emery_berger_on/)
-- url: https://www.reddit.com/r/cpp/comments/ixx2bz/september_23_free_talk_with_emery_berger_on/
+## [9][C++20 ranges lazy set_intersection](https://www.reddit.com/r/cpp/comments/iyw7yk/c20_ranges_lazy_set_intersection/)
+- url: https://www.reddit.com/r/cpp/comments/iyw7yk/c20_ranges_lazy_set_intersection/
 ---
-On September 23, join 2019 ACM Fellow Emery Berger (Professor of Computer Science at UMass-Amherst) for the free ACM TechTalk, "[Performance (Really) Matters.](https://webinars.on24.com/acm/berger?partnerref=red)"
-
-Learn why current approaches to evaluating and optimizing performance don't work; how complicated performance has become on modern systems, and how compiler optimizations have essentially run out of steam; and learn about a couple of radically new performance profilers that could help.
-
-One is is Coz, a new "causal profiler" for C/C++/Rust that lets programmers optimize for throughput or latency, and which pinpoints and accurately predicts the impact of optimizations via what we call "virtual speedup" experiments. Coz's approach unlocks previously unknown optimization opportunities. Guided by Coz, we improved the performance of applications by as much as 68%; in most cases, this involved modifying less than 10 lines of code and took under half an hour (without any prior understanding of the programs!). Coz now ships as part of standard Linux distros (apt install coz-profiler). 
-
-[Register](https://webinars.on24.com/acm/berger?partnerref=red) for free to attend live or be alerted when a recording is available.
-## [10][Ideal ratio of library - number of files - number of lines per file - number of lines per function](https://www.reddit.com/r/cpp/comments/iy7cg6/ideal_ratio_of_library_number_of_files_number_of/)
-- url: https://www.reddit.com/r/cpp/comments/iy7cg6/ideal_ratio_of_library_number_of_files_number_of/
+It seems like there is no lazy version of set\_intersection and other similar algorithms that operate on ranges. However, rangev3 seems to have one under views::set\_intersection. Why is this discrepancy?
+## [10][Collaborative C++ Development with Visual Code - Julia Reid - CppCon 2020](https://www.reddit.com/r/cpp/comments/iyt7dw/collaborative_c_development_with_visual_code/)
+- url: https://youtu.be/qCn6zT76zTs
 ---
-For most of the questions the right answer is "depends", and I know there is no typical C++ project.
-Nevertheless, in general, what would be for you the ideal ratio between the various metrics you see in a typical C++ project? and above all, what are the underlying motivations?
 
-I would say:
-
--Functions -&gt; as small as possible, even [1-5] lines per function are ok
--Members per class -&gt; as few as possible: [1-5] members.. more members acceptable for complex algorithms
--Number of lines per files -&gt; in this case it depends on the files included (dependencies), but even here less is better.  You must always be able to include only what you need, not more.
-
--Number of Libraries per application: in this case,  in my opinion it is reasonable to have many (indirect) library dependencies, or better this is the output of my reasoning.
-
-Why this reasoning? in two words: complexity management
-## [11][This feels weird, but it does work. (std::map with a std::any, get/set templates). Please tell me what you think.](https://www.reddit.com/r/cpp/comments/ixn7lq/this_feels_weird_but_it_does_work_stdmap_with_a/)
-- url: https://www.reddit.com/r/cpp/comments/ixn7lq/this_feels_weird_but_it_does_work_stdmap_with_a/
+## [11][Back to Basics: Class Layout - Stephen Dewhurst - CppCon 2020](https://www.reddit.com/r/cpp/comments/iyi16h/back_to_basics_class_layout_stephen_dewhurst/)
+- url: https://www.youtube.com/watch?v=SShSV_iV1Ko
 ---
-I need opinions if this is good/bad/ugly/python. If you would do a code review and saw this, what would you think? Do you feel uncomfortable with all this dynamic auto unknown? 
 
-    /* some legacy class which there are a lot of instances off, which sometimes need to transfer data to another instance */
-
-    std::map&lt;std::string, std::any&gt; _tVars;
-
-    template &lt;typename T&gt;
-    T getValue(const std::string &amp;key, T defaultValue) const
-    {
-        auto it = _tVars.find(key);
-        if (it == _tVars.end())
-            return std::any_cast&lt;T&gt;(defaultValue);
-
-        return std::any_cast&lt;T&gt;(it-&gt;second);
-    };
-
-    template &lt;typename T&gt;
-    void setValue(const std::string &amp;key, T value)
-    {
-        _tVars[key] = value;
-    };
-
-
-It's used as a sort of pseudo k/v:
-
-    exampleClass.setValue("blah", aRandomTypeInstance);
-    // somewhere else
-    auto blah = exampleClass.getValue("blah", defaultValue);
-   // blah should be aRandomTypeInstance, if it is not set, then it's a "defaultValue"
-The programmer must ensure both sides use the correct key and validate the data in it.
-
-The data that is passed around is unknown beforehand, either comes from a sybase database or user defined json (sometimes having base64 image in it). It's used purely for passing around data between class instances.

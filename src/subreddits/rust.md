@@ -23,151 +23,61 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/09/23/this-week-in-rust-357/
 ---
 
-## [3][I want to donate to Rust, not Mozilla. When will it be possible?](https://www.reddit.com/r/rust/comments/iyttcn/i_want_to_donate_to_rust_not_mozilla_when_will_it/)
-- url: https://www.reddit.com/r/rust/comments/iyttcn/i_want_to_donate_to_rust_not_mozilla_when_will_it/
----
-I heard about Rust becoming an association. Then we could donate directly to them. I like Mozilla a lot, but how they manage their ressources is scaring me.
-
-Is there a date when Rust is becoming an association?
-## [4][Building even faster interpreters in Rust](https://www.reddit.com/r/rust/comments/iyvk73/building_even_faster_interpreters_in_rust/)
-- url: https://blog.cloudflare.com/building-even-faster-interpreters-in-rust/
+## [3][AMD is looking for a "3D Driver Development Engineer" with Rust experience](https://www.reddit.com/r/rust/comments/iz6ric/amd_is_looking_for_a_3d_driver_development/)
+- url: https://jobs.amd.com/job/Boxborough-3D-Driver-Development-Engineer-80489-Mass/677678000/
 ---
 
-## [5][CPPCON will have a talk about bridging the gap between Rust and C++!](https://www.reddit.com/r/rust/comments/iyo6tu/cppcon_will_have_a_talk_about_bridging_the_gap/)
-- url: https://www.youtube.com/watch?v=_pQGRr4P16w
+## [4][spotifyd needs your help! The maintainer needs 2-3 devs with rust experience to help keep it going..](https://www.reddit.com/r/rust/comments/izfaob/spotifyd_needs_your_help_the_maintainer_needs_23/)
+- url: https://github.com/Spotifyd/spotifyd/issues/682
 ---
 
-## [6][[ANN] cargo-lock v5.0: self-contained Cargo.lock parser library with CLI (list dependencies, show dependency trees, translate lockfiles)](https://www.reddit.com/r/rust/comments/iyhme0/ann_cargolock_v50_selfcontained_cargolock_parser/)
-- url: https://www.reddit.com/r/rust/comments/iyhme0/ann_cargolock_v50_selfcontained_cargolock_parser/
----
-Announcing v5.0.0 of the `cargo-lock` crate, a self-contained Cargo.lock parser/serializer with full support for the V1 and V2 (merge friendly) lockfile formats based on `serde`:
-
-- GitHub: https://github.com/RustSec/cargo-lock
-- Docs.rs: https://docs.rs/cargo-lock/
-- Crates.io: https://crates.io/crates/cargo-lock
-
-The `cargo-lock` crate is entirely self-contained, relying on the `Cargo.lock` file alone as opposed to requiring an entire Cargo project/workspace. This is particularly useful for embedding `Cargo.lock` information in compiled binaries, such as in [rust-audit](https://github.com/Shnatsel/rust-audit). This release adds WASM support, in case you'd like to consume/visualize Cargo.lock in a browser!
-
-It's primarily intended for use as a library, and is used by the following projects in that capacity:
-
-- [`rustsec` crate](https://github.com/RustSec/rustsec-crate): client library for the [RustSec Security Advisory Database](https://rustsec.org), used by the following clients:
-  - [cargo-audit](https://github.com/RustSec/cargo-audit): audit Cargo.lock files for dependencies with security vulnerabilities
-  - [cargo-deny](https://github.com/EmbarkStudios/cargo-deny): dependency linter which provides `cargo-audit`-like functionality with additional features
-- [built](https://crates.io/crates/built): include metadata about builds in built artifacts
-- [cargo-raze](https://crates.io/crates/cargo-raze): Bazel BUILD file generator for external dependencies of monorepos.
-
-That said, in addition to functioning as a library, it also provides an installable CLI!
-
-# Command Line Interface
-
-Do you find yourself doing `less Cargo.lock`, `cat Cargo.lock`, or `grep Cargo.lock` often to check your dependency information? Check out the `cli` feature of `cargo-lock`:
-
-    $ cargo install cargo-lock --features cli
-
-This release includes a number of improvements to the CLI. For one, you can now list your dependencies by running `cargo lock`, which outputs them in a YAML-like format:
-
-    $ cargo lock
-    - autocfg 1.0.0
-    - cargo-lock 5.0.0
-    - fixedbitset 0.2.0
-    - gumdrop 0.8.0
-    - gumdrop_derive 0.8.0
-    - idna 0.2.0
-    - indexmap 1.3.2
-    [...]
-
-You can also include information about transitive dependencies in the output by adding the `-d` flag:
-
-    $ cargo lock -d
-    - autocfg 1.0.0
-    - cargo-lock 5.0.0
-      - gumdrop 0.8.0
-      - petgraph 0.5.1
-      - semver 0.10.0
-      - serde 1.0.116
-      - toml 0.5.6
-      - url 2.1.1
-    - fixedbitset 0.2.0
-    - gumdrop 0.8.0
-      - gumdrop_derive 0.8.0
-    - gumdrop_derive 0.8.0
-      - proc-macro2 1.0.21
-      - quote 1.0.3
-      - syn 1.0.40
-    [...]
-
-Want information for a single dependency? Use the `-p` option (which is nice to combine with `-d`):
-
-    $ cargo lock -p url -d
-    - url 2.1.1
-      - idna 0.2.0
-      - matches 0.1.8
-      - percent-encoding 2.1.0
-
-Want full source information for each crate? Use the `-s` option:
-
-    $ cargo lock -s
-    - autocfg 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)
-    - cargo-lock 5.0.0
-    - fixedbitset 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)
-    - gumdrop 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)
-    - gumdrop_derive 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)
-    [...]
-
-For fans of `cargo tree`, there's an equivalent `cargo lock tree` which can print similar-looking dependency trees using data from Cargo.lock alone:
-
-    $ cargo lock tree
-    cargo-lock 5.0.0
-    ├── url 2.1.1
-    │   ├── percent-encoding 2.1.0
-    │   ├── matches 0.1.8
-    │   └── idna 0.2.0
-    │       ├── unicode-normalization 0.1.12
-    │       │   └── smallvec 1.2.0
-    │       ├── unicode-bidi 0.3.4
-    │       │   └── matches 0.1.8
-    │       └── matches 0.1.8
-    ├── toml 0.5.6
-    [...]
-
-Finally, the `cargo lock translate` command provides bidirectional translation between the V1 and V2 (a.k.a. "merge friendly") Cargo.lock formats. This also serves as a demonstration of the crate's Cargo.lock serialization support, which should now produce identical output to Cargo itself for either the V1 or V2 formats.
-
-Enjoy!
-## [7][I just finished my first personal Rust project: an interpreter for a programming language I created made of buzzwords](https://www.reddit.com/r/rust/comments/iyko2l/i_just_finished_my_first_personal_rust_project_an/)
-- url: https://github.com/rotoclone/strategic-communication
+## [5][AMD Is Hiring To Work On New Radeon Driver Tooling Written In Rust](https://www.reddit.com/r/rust/comments/izi8q2/amd_is_hiring_to_work_on_new_radeon_driver/)
+- url: https://www.phoronix.com/scan.php?page=news_item&amp;px=AMD-Hiring-Radeon-Rust
 ---
 
-## [8][Thursday is the last day to take the Official 2020 State of Rust Survey! Even if you're new to Rust, even if you've never used Rust, even if you've barely heard of Rust, we want to hear from you!](https://www.reddit.com/r/rust/comments/iyf101/thursday_is_the_last_day_to_take_the_official/)
-- url: https://blog.rust-lang.org/2020/09/10/survey-launch.html
+## [6][Are we IPFS yet? v0.2 of the IPFS crate now released!](https://www.reddit.com/r/rust/comments/izdun1/are_we_ipfs_yet_v02_of_the_ipfs_crate_now_released/)
+- url: https://areweipfsyet.rs/
 ---
 
-## [9][type-vec: A type-safe vector with type-level length done by TYP language](https://www.reddit.com/r/rust/comments/iyu6ey/typevec_a_typesafe_vector_with_typelevel_length/)
-- url: https://www.reddit.com/r/rust/comments/iyu6ey/typevec_a_typesafe_vector_with_typelevel_length/
----
-type-vec: A type-safe vector with type-level length done by TYP language
-
-Hey rustaceans,
-
-I'm glad to announce the first release of [TYP](https://github.com/jerry73204/typ) programming language, and [type-vec](https://github.com/jerry73204/rust-type-vec), a practical application based TYP.
-
-TYP is a type-level programming embedded in Rust. It allows you to *compute* types in an expressive language. type-vec demonstrates the construction of the vector with a type-checked length in compile time. It unleashes the true power of Rust's zero abstraction and type safety features. It is made possible by TYP language.
-
-Since I built [type-freak](https://github.com/jerry73204/rust-type-freak) and learned the power of the type system, I wondered an language that makes type-level programming more approachable. Thanks to willcrichton's [Tyrade](https://github.com/willcrichton/tyrade). It proves the idea can be real. TYP is a direct improvement of Tyrade, and is designed to be in used practice.
-
-Those interested can visit the repo and read the book. Your feedback are welcome!
-
-* TYP repo: [https://github.com/jerry73204/typ/](https://github.com/jerry73204/typ/)
-* TYP book: [https://github.com/jerry73204/typ-book/](https://github.com/jerry73204/typ-book/)
-* type-vec repo: [https://github.com/jerry73204/rust-type-vec/](https://github.com/jerry73204/rust-type-vec/)
-## [10][Haskell's Children](https://www.reddit.com/r/rust/comments/iyawej/haskells_children/)
-- url: https://owenlynch.org/posts/2020-09-16-haskells-children/
+## [7][Yoshua Wuyts Rust 2021 - let's take a break](https://www.reddit.com/r/rust/comments/iz7lmv/yoshua_wuyts_rust_2021_lets_take_a_break/)
+- url: https://blog.yoshuawuyts.com/rust-2021/
 ---
 
-## [11][TiKV, a CNCF graduated project, is calling for CommunityBridge mentees!](https://www.reddit.com/r/rust/comments/iyr1gs/tikv_a_cncf_graduated_project_is_calling_for/)
-- url: https://www.reddit.com/r/rust/comments/iyr1gs/tikv_a_cncf_graduated_project_is_calling_for/
----
-**Hey Rustaceans!** TiKV, a CNCF graduated project, is calling for CommunityBridge mentees! (recommended skills include Rust!)  [https://twitter.com/tikvproject/status/1308706660349693952](https://twitter.com/tikvproject/status/1308706660349693952)
-## [12][OMG WTF RS - Resources to help you get started with Rust](https://www.reddit.com/r/rust/comments/iy81jn/omg_wtf_rs_resources_to_help_you_get_started_with/)
-- url: https://ferrous-systems.com/blog/omg-wtf-rs-resources-to-help-you-get-started-with-rust/
+## [8][Rust in 2021: Leveraging the Type System for Infallible Message Buffers](https://www.reddit.com/r/rust/comments/izextq/rust_in_2021_leveraging_the_type_system_for/)
+- url: https://christian.amsuess.com/blog/website/2020-09-24_rust_2021/
 ---
 
+## [9][What are some traits every rust developer should know by heart?](https://www.reddit.com/r/rust/comments/iz9kqf/what_are_some_traits_every_rust_developer_should/)
+- url: https://www.reddit.com/r/rust/comments/iz9kqf/what_are_some_traits_every_rust_developer_should/
+---
+I'm a new rust developer and after spending 3 long months reading the book, I can pretty much  code without an IDE.
+
+But the challenge is to memorize the common trait implementations on structs and I hopelessly stare at RLS spitting suggestions in VSCODE.
+
+What are those 5 to 10 odd common traits and the impl fns that I should remember which every hands-on developer would be using regularly?
+
+I came across `Into` , `From`, `Read/Writ` , `BufRead` etc.
+## [10][Rust 2021 Roadmap Wishlist](https://www.reddit.com/r/rust/comments/izd2ap/rust_2021_roadmap_wishlist/)
+- url: https://aldaronlau.com/rust-2021/
+---
+
+## [11][Drop order in Rust: It's tricky](https://www.reddit.com/r/rust/comments/iz5r0y/drop_order_in_rust_its_tricky/)
+- url: https://vojtechkral.github.io/blag/rust-drop-order/
+---
+
+## [12][Announcing rt-graph](https://www.reddit.com/r/rust/comments/iz3tub/announcing_rtgraph/)
+- url: https://www.reddit.com/r/rust/comments/iz3tub/announcing_rtgraph/
+---
+A real-time graphing experiment written in Rust.
+
+&amp;#x200B;
+
+https://preview.redd.it/w7247opxh5p51.png?width=816&amp;format=png&amp;auto=webp&amp;s=a4ad23bf71d288061b4513d4238ae7d2b6412320
+
+Many other graphing tools do not efficiently update the display when new data is added, for example redrawing the whole screen when only a few pixels of new data are added.
+
+This crate tries to do the minimum incremental work required to update the graph when new data is added: draw the few pixels of new data, and scroll the graph with efficient large copies, which can and should be accelerated by GPU hardware.
+
+As a result of this design rt-graph easily copes with 30k new points per second, at 60 FPS, using just 3% CPU (tested on a Lenovo T460 laptop from 2016 with 2.4 GHz Intel Core i5-6300U, running Ubuntu 18.04.5).
+
+[https://crates.io/crates/rt-graph](https://crates.io/crates/rt-graph)

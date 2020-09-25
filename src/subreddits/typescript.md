@@ -22,24 +22,54 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Not quite what I was looking for](https://www.reddit.com/r/typescript/comments/iyur8c/not_quite_what_i_was_looking_for/)
+## [2][Can anyone show me why react-typescript is good?](https://www.reddit.com/r/typescript/comments/izixhl/can_anyone_show_me_why_reacttypescript_is_good/)
+- url: https://www.reddit.com/r/typescript/comments/izixhl/can_anyone_show_me_why_reacttypescript_is_good/
+---
+There is this company I am interested in working for. But they insist on using react in combination with typescript. 
+
+I followed some tutorials about the combination of the two but I honestly feel like typescript is bloating the syntaxes more than it should. Some comments could also do the trick in my opinion. That is because react already offers 'a form' of structure to its code. 
+
+This said, I am stil pretty inexperienced when it comes to developing bigger projects. That is why I would like to ask some people woth experience to show me some code examples where typoscript obviously make react code better. And/Or draw me a situation where it would obviously help. 
+
+Thanks in advance!
+## [3][Not quite what I was looking for](https://www.reddit.com/r/typescript/comments/iyur8c/not_quite_what_i_was_looking_for/)
 - url: https://twitter.com/FarPixel/status/1309077814117904389
 ---
 
-## [3][types vs. interfaces](https://www.reddit.com/r/typescript/comments/iylqrr/types_vs_interfaces/)
+## [4][Passing a union to an overloaded function](https://www.reddit.com/r/typescript/comments/izgrsx/passing_a_union_to_an_overloaded_function/)
+- url: https://www.reddit.com/r/typescript/comments/izgrsx/passing_a_union_to_an_overloaded_function/
+---
+The following code doesn't type-check unless the third function declaration is uncommented. I feel like I'm missing something here; shouldn't it be rather simple for the compiler to figure out the return type when the union is provided without me having to explicitly define it?
+
+    type Foo = {type: "foo"};
+    type Bar = {type: "bar"};
+
+    declare function f(x: Foo): 1;
+    declare function f(x: Bar): 2;
+    // declare function f(x: Foo | Bar): 1 | 2;
+
+    declare const input: Foo | Bar;
+    f(input);
+
+[Relevant TypeScript Playground](https://www.typescriptlang.org/play?#code/C4TwDgpgBAYg9nKBeKBvUkBcUBEAzBHAXwG4AoDaAIQEMAnZNS7HAI3uPLIBMIBjADb1oeAK4A7PsACWccVDwAKAB7Z4cAJTYAjOV6DhCiVNnylqqLTpaoAJnIB6B1H1C6I4zLkKVahFAAfS3obbUC7LldDPjkAZ2AoaXEwUWA-RCCrciUklOANEiA)
+## [5][The first thing I do on any Typescript/Angular project](https://www.reddit.com/r/typescript/comments/izghe1/the_first_thing_i_do_on_any_typescriptangular/)
+- url: https://medium.com/@ciesielskico/the-first-thing-i-do-on-any-typescript-angular-project-628d26ffd2a7?source=friends_link&amp;sk=5eed949a2c5e30c48709fbcafad1d00c
+---
+
+## [6][tsPEG: 2.0.0 now available! The TypeScript parser generator](https://www.reddit.com/r/typescript/comments/iz55ud/tspeg_200_now_available_the_typescript_parser/)
+- url: https://www.npmjs.com/package/tspeg
+---
+
+## [7][types vs. interfaces](https://www.reddit.com/r/typescript/comments/iylqrr/types_vs_interfaces/)
 - url: https://www.youtube.com/watch?v=IXAT3If0pGI
 ---
 
-## [4][What’s Structural Typing And How Typescript Uses It To Its Benefit?](https://www.reddit.com/r/typescript/comments/iywrt5/whats_structural_typing_and_how_typescript_uses/)
-- url: https://medium.com/@mahdighajary/whats-structural-typing-and-how-typescript-use-it-to-its-benefit-6cf491f1564?source=friends_link&amp;sk=e0265b7bf135cc7e5d912d9e74d57afb
----
-
-## [5][TS4.1: Is there a way to define this property path type that isn't excessively deep?](https://www.reddit.com/r/typescript/comments/iywewf/ts41_is_there_a_way_to_define_this_property_path/)
+## [8][TS4.1: Is there a way to define this property path type that isn't excessively deep?](https://www.reddit.com/r/typescript/comments/iywewf/ts41_is_there_a_way_to_define_this_property_path/)
 - url: https://www.reddit.com/r/typescript/comments/iywewf/ts41_is_there_a_way_to_define_this_property_path/
 ---
 Experimenting with the upcoming TypeScript 4.1's template literal types, I tried to define a generic type that can check property paths.
 
-Until TS 4.1, there was no possible way to type an expression such as 'foo.bar.baz', and you would have to settle for string. Now, with template literal types, I want to be able to type these property paths, and use them for things such as MongoDB queries and projection objects. For example:
+Until TS 4.1, there was no possible way to type an expression such as `'foo.bar.baz'`, and you would have to settle for `string`. Now, with template literal types, I want to be able to type these property paths, and use them for things such as MongoDB queries and projection objects. For example:
 
 `db.someCollection.find({ 'foo.bar.baz': { $exists: true } });`
 
@@ -59,11 +89,11 @@ type PropsPath&lt;T&gt; =
 [Full example in TS Playground](https://www.typescriptlang.org/play?ts=4.1.0-dev.20200921#code/C4TwDgpgBACgTgezAZxgQ2ACwDwBUB8UAvAFBTlS5QQAewEAdgCbJQIBGAVhAMbBkVBAfkrU6jFlDQMQAbQC6AwcqgiGAVwC27CHCUqKALigBvfQeWyYUAJYMoAawggEAM0rzj1gD5QABgAkJjAAvgB0QfBIqBg4uFby+CF+5gYhsk4u7riKFsYA5PkA3CQkdvRwrmg80ADKCJoQuODQZoKuCAjGbQbsaHDGGtq6JYIh+n0AXsbsnQA2ENIl4yQ8CAzIwFBgXogo6FjY9Y3NkIREUPkdCMWlaxtbYIjcfDbrXv3ANmhz2ABKvAQcCY2Ci+1iRwaTRa+AANFAhjo4PhzqZ9FdOmE+nB8sYAIwkEJFIA)
 
 Sadly, this type is considered "excessively deep or possibly infinite" by TS compiler. Is there any way to redefine it in a way that doesn't throw an error?
-## [6][What’s Structural Typing And How Typescript Use It To Its Benefit?](https://www.reddit.com/r/typescript/comments/iywe8t/whats_structural_typing_and_how_typescript_use_it/)
+## [9][What’s Structural Typing And How Typescript Uses It To Its Benefit?](https://www.reddit.com/r/typescript/comments/iywrt5/whats_structural_typing_and_how_typescript_uses/)
 - url: https://medium.com/@mahdighajary/whats-structural-typing-and-how-typescript-use-it-to-its-benefit-6cf491f1564?source=friends_link&amp;sk=e0265b7bf135cc7e5d912d9e74d57afb
 ---
 
-## [7][Need some help with index signature and OR](https://www.reddit.com/r/typescript/comments/iyh08i/need_some_help_with_index_signature_and_or/)
+## [10][Need some help with index signature and OR](https://www.reddit.com/r/typescript/comments/iyh08i/need_some_help_with_index_signature_and_or/)
 - url: https://www.reddit.com/r/typescript/comments/iyh08i/need_some_help_with_index_signature_and_or/
 ---
 Spent a lot of time trying to find an explanation of the following behavior:
@@ -92,7 +122,7 @@ Spent a lot of time trying to find an explanation of the following behavior:
             };
 
 Can somebody explain why the first 2 assignments are passing the TS checks?
-## [8][Why does setting 'as const' allow a string to match a string union type?](https://www.reddit.com/r/typescript/comments/iy8b7t/why_does_setting_as_const_allow_a_string_to_match/)
+## [11][Why does setting 'as const' allow a string to match a string union type?](https://www.reddit.com/r/typescript/comments/iy8b7t/why_does_setting_as_const_allow_a_string_to_match/)
 - url: https://www.reddit.com/r/typescript/comments/iy8b7t/why_does_setting_as_const_allow_a_string_to_match/
 ---
 I had to use this inside a fetch request, I consider it hacky but it works:
@@ -100,66 +130,3 @@ I had to use this inside a fetch request, I consider it hacky but it works:
         mode: 'cors' as const, // allows string to match a string union type
 
 I learned this here but never found an explanation for it. why does asserting the string as a const variable suddenly let it match a string union type (which I saw in the error popup)?
-## [9][Discriminated unions with functions](https://www.reddit.com/r/typescript/comments/iyc8fj/discriminated_unions_with_functions/)
-- url: https://www.reddit.com/r/typescript/comments/iyc8fj/discriminated_unions_with_functions/
----
-I am working on trying to narrow some typing in a library that needs to take a user defined function. I only want to support a narrow scope of function definitions, and I'm hoping to get help from the compiler. I was able to strip things down to the smallest example of the issue I'm seeing here:
-
-    type ValidateString = (value: string) =&gt; boolean;
-    type ValidateNumber = (value: number) =&gt; boolean;
-    type ValidationType&lt;T extends Validations&gt; = 
-        T extends ValidateString ? string 
-        : T extends ValidateNumber ? number
-        : never
-    type Validations = ValidateString|ValidateNumber
-    function validate&lt;T extends Validations&gt;(validation: T, value: ValidationType&lt;T&gt;) {
-        return validation(value) // &lt;-- Error
-    }
-
-The error explained under `value`:
-
-    Argument of type 'ValidationType&lt;T&gt;' is not assignable to parameter of type 'never'.
-      Type 'string | (T extends ValidateNumber ? number : never)' is not assignable to type 'never'.
-        Type 'string' is not assignable to type 'never'.
-          Type 'string | number' is not assignable to type 'never'.
-            Type 'string' is not assignable to type 'never'.(2345)
-
-Ultimately this is part of a bigger library where the library will receive a "schema" with attributes. Each attribute could optionally have a "validation" property, which would include a user defined function to validate the attribute. If you know of any examples in other applications that does this, or something similar, that would also be helpful.
-## [10][[Question] Letting HR people using my fullstack app](https://www.reddit.com/r/typescript/comments/iycznf/question_letting_hr_people_using_my_fullstack_app/)
-- url: https://www.reddit.com/r/typescript/comments/iycznf/question_letting_hr_people_using_my_fullstack_app/
----
-**TLDR:** Im making a full-stack app (some kind of a very simple CRM system). I want to show to HR people how my app looks like from inside but in the same time people in the company I work at use this app. How to let HR people use my app in a secure and easy way without showing them real data?
-
-***Full story:***  
-I'm building a full-stack app for the small company that I am currently working at. It will be some kind of a very simple CRM.
-
-Employees have to manage their sales. This app will help them. It provides CRUD operations with those sales, show statistics and many more nice little features.  
-This app will be really used by the company so it will store sensitive data in the database.
-
-I want to show how it works from inside, but I know that HR people won't clone and run the repo, so I need a feature like "LOGIN AS GUEST".  
-Guest can look around whole app, but I can't show them any data inserted by my company.
-
-So I have a few ideas (sorted from best one to worst one in my opinion) and I need your advice:
-
-1. Make a completely different deployment for hr people and different one for the company
-2. Make a seperate connection for guest users, they will connect to completely different DB where they can CRUD but they will connect with the same server (same deployment).
-3. Don't make guest user feature, just record a short nice video how things look, maybe put it on the landing page with some informations.
-4. Allow guests to use the app, connect them to the same database my company use but check in backend if user has role of a guest they cannot CRUD anything or they get their own tables in the database and they can CRUD. I don't feel safe when thinking about this approach
-
-I really want to give a good view on that app as I feel it will be a game-changer for my career and maybe I will land my first job as developer.
-
-Please let me know what you think, maybe you've got some other ideas?
-## [11][Wrapping Utility Types with typeof Internally](https://www.reddit.com/r/typescript/comments/iygdqq/wrapping_utility_types_with_typeof_internally/)
-- url: https://www.reddit.com/r/typescript/comments/iygdqq/wrapping_utility_types_with_typeof_internally/
----
-Struggling to figure something out and now I'm  questioning if it's even possible. In a generator functions, the yield keyword still isn't well supported so I'm trying to wrap the utility types I've been using.
-
-Instead of:
-
-    const data: ReturnType&lt;typeof myFunction&gt; = yield myFunction();
-
-Something like:
-
-    type YieldReturn&lt;F&gt; = ReturnType&lt;typeof F&gt;;
-    
-    const data: YieldReturn&lt;myFunction&gt; = yield myFunction();

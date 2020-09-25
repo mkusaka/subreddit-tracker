@@ -1,75 +1,116 @@
 # golang
-## [1][Rob's frustration resulted in this beautiful language](https://www.reddit.com/r/golang/comments/iypbin/robs_frustration_resulted_in_this_beautiful/)
-- url: https://www.reddit.com/r/golang/comments/iypbin/robs_frustration_resulted_in_this_beautiful/
----
-I've stumbled upon a paper written by Rob Pike in 2000.
-
-[http://herpolhode.com/rob/utah2000.pdf](http://herpolhode.com/rob/utah2000.pdf) 
-
-I think his frustration is still relevant and looks like go language is an outcome of that. Particularly reflecting on:
-
-1. Not depending on existing tool chain
-2. Incompatible (with C) ABI
-3. unconventional assembly
-4. goroutine scheduler
-## [2][embed, cmd/go: add support for embedded files · Issue #41191 [Accepted !]](https://www.reddit.com/r/golang/comments/iys6wu/embed_cmdgo_add_support_for_embedded_files_issue/)
-- url: https://github.com/golang/go/issues/41191
+## [1][I just finished and released v1.0 of my programming language, written entirely in Go! I have no idea how to properly write a language but I gave it my best shot](https://www.reddit.com/r/golang/comments/izgz5w/i_just_finished_and_released_v10_of_my/)
+- url: https://github.com/odddollar/Leafscript
 ---
 
-## [3][TamaGo – bare metal Go for ARM SoCs](https://www.reddit.com/r/golang/comments/iyv2zd/tamago_bare_metal_go_for_arm_socs/)
+## [2][Run protoc with docker](https://www.reddit.com/r/golang/comments/izbx4b/run_protoc_with_docker/)
+- url: https://www.reddit.com/r/golang/comments/izbx4b/run_protoc_with_docker/
+---
+I just want to share my personal project for runing protoc with docker.
+
+[https://github.com/haunt98/docker-protoc](https://github.com/haunt98/docker-protoc)
+
+The problem when I generate protobuf and grpc in golang is grpc version seems to be different between OS. And man, version conflict is so hard. So I wrap everything should need to run protoc inside docker.
+## [3][Create Secure Clients and Servers in Go using HTTPS](https://www.reddit.com/r/golang/comments/iz5otz/create_secure_clients_and_servers_in_go_using/)
+- url: https://www.reddit.com/r/golang/comments/iz5otz/create_secure_clients_and_servers_in_go_using/
+---
+[https://youngkin.github.io/post/gohttpsclientserver/](https://youngkin.github.io/post/gohttpsclientserver/)
+
+Spent some time trying to add HTTPS to a service and turned my notes into a blog post. Feedback is welcome
+## [4][gomponents: declarative view components in Go](https://www.reddit.com/r/golang/comments/izh5dm/gomponents_declarative_view_components_in_go/)
+- url: https://www.maragu.dk/blog/gomponents-declarative-view-components-in-go/
+---
+
+## [5][gin-gonic/gin metrics exporter for Prometheus.](https://www.reddit.com/r/golang/comments/izfdnt/gingonicgin_metrics_exporter_for_prometheus/)
+- url: https://www.reddit.com/r/golang/comments/izfdnt/gingonicgin_metrics_exporter_for_prometheus/
+---
+Hello everyone, i just want to share my personal project, that add metrics for Prometheus when run a gin http-server
+
+Repo address: [https://github.com/penglongli/gin-metrics](https://github.com/penglongli/gin-metrics)
+
+# Intoduction
+
+gin-metrics defines some metrics for gin http-server. There have easy way to use it.
+
+Below is the detailed description for every metric.
+
+|*Metric*|*Type*|*Description*|
+|:-|:-|:-|
+|gin\_request\_total|Counter|all the server received request num.|
+|gin\_request\_uv|Counter|all the server received ip num.|
+|gin\_uri\_request\_total|Counter|all the server received request num with every uri.|
+|gin\_request\_body\_total|Counter|the server received request body size, unit byte.|
+|gin\_response\_body\_total|Counter|the server send response body size, unit byte.|
+|gin\_request\_duration|Histogram|the time server took to handle the request.|
+|gin\_slow\_request\_total|Counter|the server handled slow requests counter, t=%d.|
+
+# Usage
+
+Your can see some metrics across [*http://localhost:8080/metrics*](http://localhost:8080/metrics)
+
+    package main
+    
+    import (
+    	"github.com/gin-gonic/gin"
+    	
+    	"github.com/penglongli/gin-metrics/ginmetrics"
+    )
+    
+    func main() {
+    	r := gin.Default()
+    
+    	// get global Monitor object
+    	m := ginmetrics.GetMonitor()
+    
+    	// +optional set metric path, default /debug/metrics
+    	m.SetMetricPath("/metrics")
+    	// +optional set slow time, default 5s
+    	m.SetSlowTime(10)
+    	// +optional set request duration, default {0.1, 0.3, 1.2, 5, 10}
+    	// used to p95, p99
+    	m.SetDuration([]float64{0.1, 0.3, 1.2, 5, 10})
+    
+    	// set middleware for gin
+    	m.Use(r)
+    
+    	r.GET("/product/:id", func(ctx *gin.Context) {
+    			"productId": ctx.Param("id"),
+    		})
+    	})
+    	_ = r.Run()
+    }
+
+# Custom Metric
+
+You can use it to custom your own metric, contain ***Gauge/Counter/Histogram/Summary*** type.
+
+If you met some problems, you can new an ISSUE for me.
+## [6][Why does json.Marshal return error type?](https://www.reddit.com/r/golang/comments/izjbej/why_does_jsonmarshal_return_error_type/)
+- url: https://www.reddit.com/r/golang/comments/izjbej/why_does_jsonmarshal_return_error_type/
+---
+json.Marshal is used in a lot of places, including in error handling for HTTP endpoints. Any extraneous error values here lead to wasteful boilerplate.
+
+Is there a specific reason that json.Marshal features an error return type?
+
+I get why json.Unmarshal could fail. An error type makes sense there.
+
+But say a Go entity is logically unable to JSON encode (it has circular references). Would the encoder truly expend the effort to detect such cases? What kinds of real world errors does json.Marshal return? Some native Go types like chan that are unencodable? Out of memory errors?
+
+Note that many unencodable situations could theoretically be detected at compile time, rather than lingering for runtime.
+## [7][[help wanted] - MongoDB Filter](https://www.reddit.com/r/golang/comments/izg5su/help_wanted_mongodb_filter/)
+- url: https://www.reddit.com/r/golang/comments/izg5su/help_wanted_mongodb_filter/
+---
+I have this starting point: [https://mongoplayground.net/p/Wue-aotf4cw](https://mongoplayground.net/p/Wue-aotf4cw) and I am trying to implement the specified filter with Go.: [https://play.golang.org/p/tco0rOADi7q](https://play.golang.org/p/tco0rOADi7q) ...but unfortunately it does not work...  
+What am I doing wrong?
+## [8][Live programming a Terraform Provider #3 - Writing a better API client (starts at 5pm est)](https://www.reddit.com/r/golang/comments/iz5nst/live_programming_a_terraform_provider_3_writing_a/)
+- url: https://www.twitch.tv/bobbytables
+---
+
+## [9][TamaGo – bare metal Go for ARM SoCs](https://www.reddit.com/r/golang/comments/iyv2zd/tamago_bare_metal_go_for_arm_socs/)
 - url: https://github.com/f-secure-foundry/tamago
 ---
 
-## [4][Writing API with swagger vs by hand](https://www.reddit.com/r/golang/comments/iynmtg/writing_api_with_swagger_vs_by_hand/)
-- url: https://www.reddit.com/r/golang/comments/iynmtg/writing_api_with_swagger_vs_by_hand/
----
-Hello
-I have been writing API with go without swagger and I love the process. But recently I got a requirement to generate code with swagger, which seemed more complex and verbose. I wanted to know how many of you use swagger to do code generation and wanted to know thought of using swagger vs writing by hand
-## [5][thinkpad-led tool manager](https://www.reddit.com/r/golang/comments/iywmd5/thinkpadled_tool_manager/)
-- url: https://www.reddit.com/r/golang/comments/iywmd5/thinkpadled_tool_manager/
----
-Hi, I've just written this simple tool to manage the red back led of your Thinkpad (under Linux).
-
-If the topic arouses you some interest, this is the link of my project:
-
-[https://github.com/alegrey91/thinkpad-led](https://github.com/alegrey91/thinkpad-led)
-
-A really thank [u/sali20](https://www.reddit.com/u/sali20/) for his amazing post ([https://www.reddit.com/r/thinkpad/comments/7n8eyu/thinkpad\_led\_control\_under\_gnulinux/](https://www.reddit.com/r/thinkpad/comments/7n8eyu/thinkpad_led_control_under_gnulinux/)), which inspired me to make my own tool.
-## [6][Interface argument - copy or reference](https://www.reddit.com/r/golang/comments/iyvr60/interface_argument_copy_or_reference/)
-- url: https://www.reddit.com/r/golang/comments/iyvr60/interface_argument_copy_or_reference/
----
-I have question about functions which accepts interface as a argument. Will the underlying struct be copied during function call or not. How to control it?
-## [7][In-process caching in Go: scaling lakeFS to 100k requests/second](https://www.reddit.com/r/golang/comments/iy9wvq/inprocess_caching_in_go_scaling_lakefs_to_100k/)
-- url: https://lakefs.io/2020/09/23/in-process-caching-in-go-scaling-lakefs-to-100k-requests-second/
----
-
-## [8][I need a second opinion on a code snippet](https://www.reddit.com/r/golang/comments/iyxaux/i_need_a_second_opinion_on_a_code_snippet/)
-- url: https://www.reddit.com/r/golang/comments/iyxaux/i_need_a_second_opinion_on_a_code_snippet/
----
-I am writing a little program to learn channel usage in golang. The program gives you n number of tickets for a given period. At each period, tickets are replenished whatever you use it or not. I wrote a struct to hold the tickets and refill them periodically. To replenish the tickets, I started a goroutine when a new instance of the struct was initialized. My question is that is it acceptable to start a background goroutine to update some fields of the struct periodically or are there any better ways to accomplish the same task.  you can find the sample code here:
-
-[https://play.golang.org/p/KbW9Eoq9V7B](https://play.golang.org/p/KbW9Eoq9V7B)
-
-thnx for your help.
-## [9][SQL Migration options (2020)](https://www.reddit.com/r/golang/comments/iywzd7/sql_migration_options_2020/)
-- url: https://www.reddit.com/r/golang/comments/iywzd7/sql_migration_options_2020/
----
-Hey everyone-
-
-We're starting our first Go project coming off of two fully loaded frameworks:  Rails and Django.   I'm curious what people are having success with for SQL Migrations (Postgres in our case)?
-
-Looking through Awesome Go, these seems like the projects that are most healthy:
-
-[https://github.com/golang-migrate/migrate](https://github.com/golang-migrate/migrate) \- seems most active and maintained
-
-[https://github.com/rubenv/sql-migrate](https://github.com/rubenv/sql-migrate) \- was the previous recommendation for the thread I read 3 years ago, but last commit was 5 months ago so not sure if maintained
-
-[https://github.com/go-gorm/gorm](https://github.com/go-gorm/gorm) \- full ORM with support for migrations.  Feels closest to where we are coming from.
-
-Others?
-
-Thanks for any advice!
-## [10][Go Syntax: Literal functions, closures, and the defer keyword](https://www.reddit.com/r/golang/comments/iywuvx/go_syntax_literal_functions_closures_and_the/)
-- url: https://youtu.be/CTMxVSwB4o8
+## [10][Looks more like a Gopher to me](https://www.reddit.com/r/golang/comments/iz9ikc/looks_more_like_a_gopher_to_me/)
+- url: https://i.imgur.com/ZDx5XoV.jpg
 ---
 

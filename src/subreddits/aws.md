@@ -3,94 +3,113 @@
 - url: https://aws.amazon.com/blogs/aws/amazon-s3-path-deprecation-plan-the-rest-of-the-story/
 ---
 
-## [2][We are the AWS EC2 Team - Ask the Experts - Sep 24th @ 9AM PT / 12PM ET / 4PM GMT!](https://www.reddit.com/r/aws/comments/iu0c8d/we_are_the_aws_ec2_team_ask_the_experts_sep_24th/)
-- url: https://www.reddit.com/r/aws/comments/iu0c8d/we_are_the_aws_ec2_team_ask_the_experts_sep_24th/
+## [2][Cross region Cloudformation. Now you can do it with a single file!](https://www.reddit.com/r/aws/comments/izihe8/cross_region_cloudformation_now_you_can_do_it/)
+- url: https://www.reddit.com/r/aws/comments/izihe8/cross_region_cloudformation_now_you_can_do_it/
 ---
-Hey r/aws! u/AmazonWebServices here.
+A few days ago I wanted to use a single file (ie a single thing for people to update in a single place) to create some resources in different regions. I started down a few dead end ideas like SSM parameters and the like. They're all region locked.
 
-The AWS EC2 team will be hosting an Ask the Experts session here **in this thread** to answer any questions you may have about **deploying your machine learning models to Amazon EC2 Inf1 instances powered by the** [**AWS Inferentia chip**](https://aws.amazon.com/machine-learning/inferentia/), which is custom designed by AWS to provide high performance and cost-effective machine learning inference in the cloud. These instances provide up to 30% higher throughput, and 45% lower cost per inference over comparable GPU-based instances for a wide variety of machine learning use cases such as image and video analysis, conversational agents, fraud detection, financial forecasting, healthcare automation, recommendation engines, text analytics, and transcription. It's easy to get started and popular frameworks such as TensorFlow, PyTorch, and MXNet are supported.
+I could have scripted it, but people struggle to set up roles/etc. on their CLI so console access was preferred.
 
-Already have questions? Post them below and we'll answer them starting at 9AM PT on Sep 24, 2020!
-## [3][Security issue in CloudFormation was leaking role session credentials for customer accounts](https://www.reddit.com/r/aws/comments/iyr4yr/security_issue_in_cloudformation_was_leaking_role/)
-- url: https://onecloudplease.com/blog/security-september-cataclysms-in-the-cloud-formations?reup
+Eventually I found that AWS have added StackSets as Cloudformation objects a few days previously.
+
+To me this is a game changer. We can now supply code inline in a template for a second template that includes variables defined in the upper level template. I'd be interested to hear other uses for that. My first thought was a template that creates an update failed alarm on the sub-stack. BUT you can't yet get the IDs of the sub-stacks to know what that alarm needs to look at. (without a lamdba/macro).
+
+BUT now, with one file you can create resources that reference other region's resources. If you've ever tried to Cloudformation ACM and Cloudfront, you know what I'm talking about. ("But the cert needs to be in us-east-1 even though all my other infrastructure isn't in us-east-1.. Wut?")
+
+If you want more detail I made a blog post with a simple example and a run down of some of the other things you can do to achieve this (the StackSet doesn't quite work for all scenarios, I have some alternative ideas that \_might\_ help which I still need to test! At the moment it is "parent can pass values to children only". You can't pass values between children or back to the parent.)  
+
+
+[https://surevine.com/creating-cloudformation-stacks-in-multiple-aws-regions-with-common-resources/](https://surevine.com/creating-cloudformation-stacks-in-multiple-aws-regions-with-common-resources/)
+## [3][Amazon Elasticsearch Service now offers T3 Instances](https://www.reddit.com/r/aws/comments/iz48gt/amazon_elasticsearch_service_now_offers_t3/)
+- url: https://aws.amazon.com/about-aws/whats-new/2020/09/amazon-elasticsearch-service-offers-t3-instances/
 ---
 
-## [4][Can AWS bring back the pinned favorites option in the navigation bar?](https://www.reddit.com/r/aws/comments/iyree9/can_aws_bring_back_the_pinned_favorites_option_in/)
-- url: https://www.reddit.com/r/aws/comments/iyree9/can_aws_bring_back_the_pinned_favorites_option_in/
+## [4][Someone uses the AWS App?](https://www.reddit.com/r/aws/comments/izfiiq/someone_uses_the_aws_app/)
+- url: https://www.reddit.com/r/aws/comments/izfiiq/someone_uses_the_aws_app/
 ---
-It was a good feature. Now there's a lot of wasted space in the nav bar :(
-## [5][IAM Console us-east-1 not working?](https://www.reddit.com/r/aws/comments/iywyxm/iam_console_useast1_not_working/)
-- url: https://www.reddit.com/r/aws/comments/iywyxm/iam_console_useast1_not_working/
+Every time I use the AWS App I see it really useless, you can hardly do anything.
+
+you feel the same?
+## [5][New EC2 Experience - need New Permission to control resources?](https://www.reddit.com/r/aws/comments/izg0v0/new_ec2_experience_need_new_permission_to_control/)
+- url: https://www.reddit.com/r/aws/comments/izg0v0/new_ec2_experience_need_new_permission_to_control/
 ---
-Is anyone else having problems bringing up IAM in us-east-1?
-## [6][WAF rules](https://www.reddit.com/r/aws/comments/iywh6s/waf_rules/)
-- url: https://www.reddit.com/r/aws/comments/iywh6s/waf_rules/
+Hello,
+
+One of our IAM user has permissions only for starting and stopping tagged EC2 instances.
+
+(based on this document : [https://docs.aws.amazon.com/IAM/latest/UserGuide/reference\_policies\_examples\_ec2\_tag-owner.html](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_examples_ec2_tag-owner.html))
+
+I found out that in new ec2 experience, the error  occured while changing instance state saying that I need describe vpcs permission and others.
+
+It doesn't give me any error when I switched back to old console and instance is started successfully
+
+I had to put those action in the user's policy if I want to use new console.
+
+Is there any API changes when it's operating on new console?
+
+I couldn't find any documents about this.
+
+Thank you.
+## [6][What's your CICD process for API Gateway backed by Lambdas using Versions &amp; Aliases?](https://www.reddit.com/r/aws/comments/iz8nq2/whats_your_cicd_process_for_api_gateway_backed_by/)
+- url: https://www.reddit.com/r/aws/comments/iz8nq2/whats_your_cicd_process_for_api_gateway_backed_by/
 ---
-Hey Guys,
 
-I've recently been upgraded from a junior system administrator to a cloud engineer and in need of some help.
-
-&amp;#x200B;
-
-So I need to implement some WAF rules to better protect against DDoS, XSS and the usual fun you get on the web, but I am struggling to find some good resources on some 'Good starter rules'
-
-Suffice to say I am slightly in over my head
-
-Does anyone have a good document or suggestions I should look in to?
-
-Thanks,
-
-\-Chin
-## [7][Why AWS DocumentDB charges hourly for instances and DynamoDB only charges for read, write and storage?](https://www.reddit.com/r/aws/comments/iytkxq/why_aws_documentdb_charges_hourly_for_instances/)
-- url: https://www.reddit.com/r/aws/comments/iytkxq/why_aws_documentdb_charges_hourly_for_instances/
+## [7][Using AWS cognito to deal with user authentication and api key token creation](https://www.reddit.com/r/aws/comments/izicyu/using_aws_cognito_to_deal_with_user/)
+- url: https://www.reddit.com/r/aws/comments/izicyu/using_aws_cognito_to_deal_with_user/
 ---
-I'm new to AWS and little confused on Dynamo and Document pricing?
+Hello all,
 
+We have the following use case. We have an application running on AWS where we do the authentication of users manually^[1]. We are looking to migrate to using AWS Cognito to handle the user authentication and authorization. So far this all seems pretty easy and doable. The only roadblock is the generation of api_keys. When users login into our application they have the option to generate api_keys so that they can use our developer API from their own application. Picture something like [stripe](https://stripe.com/en-gb-nl) where you can make an account and login and within the application lets you generate api keys.
 
-Thanks in advance
-## [8][Sharing Access to Elastic Beanstalk Application](https://www.reddit.com/r/aws/comments/iyw81b/sharing_access_to_elastic_beanstalk_application/)
-- url: https://www.reddit.com/r/aws/comments/iyw81b/sharing_access_to_elastic_beanstalk_application/
+Is it possible to leverage Cognito to do handle the creation of api keys (or something similar like client credentials in Oauth2) as well? The thing we tried are User Pool App Clients for every user but there is a limit of 1000 clients per user pool so it doesn't seem like this is meant to be used for every single user.
+
+Another thing we looked at is the client credentials flow on a single app client. So we create a single app client for our application and turn on client credentials and let users login using that. However a cursory glance makes it seem like client credentials are for our own machines and not so much third party developers?
+
+[1] With manually I mean that we have an endpoint where people sign up with a username and password, save those in an RDS and when people login we simply check if the user exists and give them a JWT token
+## [8][AWS instance shortage in US-EAST-1](https://www.reddit.com/r/aws/comments/iz2mmf/aws_instance_shortage_in_useast1/)
+- url: https://www.reddit.com/r/aws/comments/iz2mmf/aws_instance_shortage_in_useast1/
 ---
-Sorry if this a stupid question, but I'm not sure how to do it. I'm working with a group and have used Elastic Beanstalk to create an web application. Now I would like to give everyone else in the group the ability to go in and edit the environment's configuration. How do I do this?
-## [9][Setting Up a Redundant VPN Tunnel Between AWS &amp; CheckPoint](https://www.reddit.com/r/aws/comments/iyw5hu/setting_up_a_redundant_vpn_tunnel_between_aws/)
-- url: https://www.reddit.com/r/aws/comments/iyw5hu/setting_up_a_redundant_vpn_tunnel_between_aws/
+Recently we ran into big difficulties to obtain some type of instances in us-east-1 (whatever the az).
+
+m5.xlarge, r5.4xlarge etc.. very basic one. 
+
+Are we alone in this situation ? are all customers already reserved all instances for holidays seasons ?
+## [9][Dedicated hosts Vs dedicated instances](https://www.reddit.com/r/aws/comments/izcp0w/dedicated_hosts_vs_dedicated_instances/)
+- url: https://www.reddit.com/r/aws/comments/izcp0w/dedicated_hosts_vs_dedicated_instances/
 ---
-Hi all. I've been asked if it's possible to setup a redundant VPN tunnel between AWS and our office. I'm not familiar with AWS so have been looking at documentation and from what I've read, AWS VPCs can be setup with 2 gateways. On the CheckPoint side, these AWS gateways can be put in a star VPN community with the on-prem gateways.
-
-What I would like confirming is, if our on-prem CheckPoint fails over to our backup line, would the tunnel to AWS still stay up? Is there a way of defining a primary and a backup IP for the CheckPoint side on AWS?
-## [10][Connecting to Oracle DB using Python via Lambda](https://www.reddit.com/r/aws/comments/iyuxc5/connecting_to_oracle_db_using_python_via_lambda/)
-- url: https://www.reddit.com/r/aws/comments/iyuxc5/connecting_to_oracle_db_using_python_via_lambda/
+Hi guys are dedicated hosts basically an entire physical server rack that customers can select and can choose which individual physical server in rack that the instances can be deployed on ? Is dedicated instances basically instances that are running on the same physical server on a shared rack ? Each time a dedicated instance is stopped started , it goes onto a new physical server which only the company can spin up new vms ?
+## [10][Using lamba to replace bash scripts in theory.](https://www.reddit.com/r/aws/comments/izgcay/using_lamba_to_replace_bash_scripts_in_theory/)
+- url: https://www.reddit.com/r/aws/comments/izgcay/using_lamba_to_replace_bash_scripts_in_theory/
 ---
-I am trying to connect to Oracle RDS from my python code using lamda handler but the due to huge size of  my code owing mainly to Oracle library that's coming upto 250 MB, I am unable to deploy it. 
-1) I tried using layers for libraries but they also have a size limitation.
-2) zipping the files is also not helping. It's still huge.
+Looking at the possibility on moving a legacy solution up to the cloud
 
-Is there any way to make it work? A different library I can use? Please let me know.
-## [11][[EFS] Trouble mounting EFS Access Point to ECS Volume](https://www.reddit.com/r/aws/comments/iyux0b/efs_trouble_mounting_efs_access_point_to_ecs/)
-- url: https://www.reddit.com/r/aws/comments/iyux0b/efs_trouble_mounting_efs_access_point_to_ecs/
+Current situation:
+Multiple times a day a dmz linux vm rsyncs some files from a third party ftp share. It then does some remote renaming operations to tag the files previously downloaded and unzips downloaded files and stores them locally. 
+
+At different multiple times a different linux vm inside our main network running an oracle database then downloads and processes these files from the first vm to oracle readable files, injests the updates then deletes the files from the first vm
+
+Lock files are used to stop the two processes conflicting. Honestly yes it's as bad as it sounds. 
+
+This is all triggered by cron using bash scripts. 
+
+I was considering the benefits of migrating the oracle database to oracle rds but would then need something to replace the function of said bash scripts. 
+
+Very new to aws, but was thinking in theory could this be achieved with a couple of lambda functions. 
+
+The logic would need some reworking and I am guessing it would need to be written in python and attach some s3 storage to hold the files but in theory is it possible and a good idea?
+## [11][Code that refuses to let the AWS SDK initialize itself and breaks if I don't feed it access keys](https://www.reddit.com/r/aws/comments/iz51lk/code_that_refuses_to_let_the_aws_sdk_initialize/)
+- url: https://www.reddit.com/r/aws/comments/iz51lk/code_that_refuses_to_let_the_aws_sdk_initialize/
 ---
-Hi guys,
+I keep running into code written by devs who just assume that I'm going to be feeding in a key/secret pair to a library that wants to talk to AWS. I set `AWS_PROFILE` to test locally and the whole library just throws a fit and tells me to go RTFM.
 
-I ran into a problem trying to mount an ECS Volume to EFS through an EFS access point. 
+Right now, I'm dealing with Ruby code that does:
 
-The task role is set up with ClientWrite, ClientRead, and ClientRootAccess to that file system.
+     AWS::EC2.new(
+        access_key_id: fetch(:ec2_access_key_id),
+        secret_access_key: fetch(:ec2_secret_access_key),
+        region: region
+      )
 
-The access point is setup with posix userid 1001 and groupid 1001 with permission 755.
+And when those are `nil`, the whole thing dies trying to talk to the metadata service. On my home network.
 
-The cluster and the file system are in the correct VPC. 
-
-But ECS failed to spin up a task with this error:
-
-Error response from daemon: failed to copy file info for /var/lib/ecs/volumes/{{task-name}}: failed to chown /var/lib/ecs/volumes/{{task-name}}
-
-I was able to spin up the task if i set the access point's POSIX userid and groupid  to 0 as in root. But i feel like its not the best choice for security reason in a shared FS.
-## [12][Trouble launching g4dn instances in US-East-2.](https://www.reddit.com/r/aws/comments/iyp0m2/trouble_launching_g4dn_instances_in_useast2/)
-- url: https://www.reddit.com/r/aws/comments/iyp0m2/trouble_launching_g4dn_instances_in_useast2/
----
-So at the moment I am trying to launch an instance to customize an AMI. It's a g4dn.xlarge in particular (or 2xlarge) so that I can install Nvidia drivers and the Nvidia container runtime. Most of today I haven't been able to launch the instance (US-East-2). I receive a "We currently do not have sufficient g4dn.xlarge capacity in the Availability Zone you requested (us-east-2a)."
-
-It doesn't matter which availability zone I choose as it goes, and I can come back later and it will eventually work.
-
-My actual question revolves around elastic beanstalk. I have an app that uses this same instance type and I run into this same error when auto scaling kicks in, except it cycles through all the availability zones and tries both spot and on demand (to no avail). How do I account for this? Do I need to make the app in another region, and if so, what happens when this occurs there at some point in the future? Scaling up through the instance types probably works, but the lack of extra GPUs (until the g4dn.12xlarge) means I'm not scaling anything except my budget.
-
-Thoughts?
+Am I doing something wrong that I keep seeing this out in the wild, or am I doomed to keep forking source and fixing it by removing code?

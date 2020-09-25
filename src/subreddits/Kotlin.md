@@ -1,5 +1,78 @@
 # Kotlin
-## [1][Construct object through parent sealed class, and child private constructor](https://www.reddit.com/r/Kotlin/comments/iyw1mo/construct_object_through_parent_sealed_class_and/)
+## [1][Any Kotlin/Google tech speakers?](https://www.reddit.com/r/Kotlin/comments/izgwwb/any_kotlingoogle_tech_speakers/)
+- url: https://www.reddit.com/r/Kotlin/comments/izgwwb/any_kotlingoogle_tech_speakers/
+---
+\#gdg #devfest #google  
+We know there are great speakers among us, technology guru’s, leaders of the pack… Yeah! That’s you we are speaking about!
+
+We want to offer you to take part in GDG Devfest POLAND 2020 as a speaker and share your precious knowledge with our attendees.  
+Kotlin is already well settled in Android, well it's a primary language there already, so if you would like to share your story please join us, and submit your talk at [https://sessionize.com/devfest-poland-2020-with-gdg/](https://sessionize.com/devfest-poland-2020-with-gdg/)  
+The conference will be held online, but it's still a great opportunity for speakers and attendees to meet other awesome people :)
+## [2][Are there any free courses that combined learning Kotlin and Java](https://www.reddit.com/r/Kotlin/comments/izhq2y/are_there_any_free_courses_that_combined_learning/)
+- url: https://www.reddit.com/r/Kotlin/comments/izhq2y/are_there_any_free_courses_that_combined_learning/
+---
+I learned Kotlin first, and now learning Java to help me with Kotlin, and feel a course that combines the two or teaches you them simultaneously first java then what kotklin took and improved upon in Java would help me pick up Java quicker
+## [3][The Dark Secrets of Fast Compilation for Kotlin – Kotlin Blog](https://www.reddit.com/r/Kotlin/comments/iyyiaf/the_dark_secrets_of_fast_compilation_for_kotlin/)
+- url: https://blog.jetbrains.com/kotlin/2020/09/the-dark-secrets-of-fast-compilation-for-kotlin/
+---
+
+## [4][Ktor Design Process](https://www.reddit.com/r/Kotlin/comments/izivwv/ktor_design_process/)
+- url: https://blog.jetbrains.com/ktor/2020/09/24/ktor-design-process/
+---
+
+## [5][When- matching a bad practice?](https://www.reddit.com/r/Kotlin/comments/izg7yr/when_matching_a_bad_practice/)
+- url: https://www.reddit.com/r/Kotlin/comments/izg7yr/when_matching_a_bad_practice/
+---
+I was wondering, because I use `when`\-matching extensively for checking enums and sealed classes, if it isn't just an extension of `instanceof` checking in Java and as such is considered a bad practice?
+
+Sealed classes allow the compiler to warn you if the match is not exhaustive, but this is not the case for enums.
+## [6][Announcing a painless Kotlin/Multiplatform NoSQL embedded database](https://www.reddit.com/r/Kotlin/comments/iziu2q/announcing_a_painless_kotlinmultiplatform_nosql/)
+- url: https://medium.com/kodein-koders/announcing-a-painless-kotlin-multiplatform-nosql-embedded-database-30fed677549c
+---
+
+## [7][Dependency injection and test api application](https://www.reddit.com/r/Kotlin/comments/izb6kw/dependency_injection_and_test_api_application/)
+- url: https://www.reddit.com/r/Kotlin/comments/izb6kw/dependency_injection_and_test_api_application/
+---
+Hello everyone!
+
+First time using kotlin and I'm trying to write a simple api server on it (looking at ktor or javalin for this) 
+Coming from a c# background, the first thing I tried to configure was DI, and I found out about guice and koin. On c# apps it is quite common to bind some services lifetimes to the duration of an HTTP request (such as domain services, Db sessions, etc). However all the examples I've seen for both javalin and ktor seem to have either static controllers (meaning any dependency required by using koin's inject is bound to a singleton lifetime) or eagerly resolved controllers/routes which also cause services to be either singleton or eagerly instantiated.
+
+My question is: is it not a good practice to somehow bind controllers services and Db "instances" to the lifetime of an htto request, instead of making them singletons/statics?
+
+
+EDIT: I meant rest api in the title, I'm dumb
+## [8][Hello, i need some help with RelativeLayout](https://www.reddit.com/r/Kotlin/comments/iz90fm/hello_i_need_some_help_with_relativelayout/)
+- url: https://www.reddit.com/r/Kotlin/comments/iz90fm/hello_i_need_some_help_with_relativelayout/
+---
+Hello, i´m new, my name is Diego, i´m starting learning Kotlin, but i have some troubles with RelativeLayout, i can´t move the elements and i don´t know why, please help me.
+
+[This is the video of my code](https://reddit.com/link/iz90fm/video/d0whpukhq6p51/player)
+## [9][[Codewars] Implement a simple for-comprehension](https://www.reddit.com/r/Kotlin/comments/iz3pc0/codewars_implement_a_simple_forcomprehension/)
+- url: https://www.reddit.com/r/Kotlin/comments/iz3pc0/codewars_implement_a_simple_forcomprehension/
+---
+I came across this problem and I honestly have no idea how to do it!
+https://www.codewars.com/kata/5a6f71185084d76d2000001b/kotlin
+
+I know it's probably a faux pas to discuss the solution publicly, but if you know how you'd do it, would you at least shoot me a private message?
+
+I can see the "shape" of a solution would be something like this:
+
+    object OptionalSyntax {
+        fun &lt;T&gt; bind(o: Optional&lt;T&gt;): T = TODO()
+        fun &lt;T&gt; yield(() -&gt; T): Complete&lt;T&gt; = TODO()
+
+        class Complete&lt;T&gt; private constructor(val t: T)
+    }
+    
+    fun &lt;T&gt; `for`(OptionalSyntax.() -&gt; Complete&lt;T&gt;): Optional&lt;T&gt; = TODO()
+
+But I have very little clue how I'd implement something like that. I suppose you could throw a privately defined Exception in `bind` and then catch it in `for`... But can we do it without exceptions?
+
+Can we use suspend functions to do something here? Would that let us avoid throwing exceptions?
+
+I know Kotlin Arrow has the Fx stuff, but that involves their higher-kinded types, etc, and is very hard to skim the code to see what they're actually doing...
+## [10][Construct object through parent sealed class, and child private constructor](https://www.reddit.com/r/Kotlin/comments/iyw1mo/construct_object_through_parent_sealed_class_and/)
 - url: https://www.reddit.com/r/Kotlin/comments/iyw1mo/construct_object_through_parent_sealed_class_and/
 ---
 Hi,
@@ -23,130 +96,3 @@ I wanted to know if it is possible to make child class (`Success` and `Failure`)
     data class Failure&lt;T&gt;(val e: Exception) : Try&lt;T&gt;()
 
 Thanks in advance :D
-## [2][[HELP] Struggling at pair programming interviews](https://www.reddit.com/r/Kotlin/comments/iymjtq/help_struggling_at_pair_programming_interviews/)
-- url: https://www.reddit.com/r/Kotlin/comments/iymjtq/help_struggling_at_pair_programming_interviews/
----
-Hello everyone,
-
-&amp;#x200B;
-
-*TL;DR: trying to get a job but keep failing at pair programming interviews over and over. Don't know what to do and am considering leaving the tech industry to seek something else out of frustration.*
-
-&amp;#x200B;
-
-I'll start with a little bit of background so you can understand where I'm coming from. I started out as a web/java developer(4\~ years exp)  then became an Android developer (5+ years exp) and have led small sized Android teams over the last 2.5years. 
-
-&amp;#x200B;
-
-Unfortunately, I lost my job in late March. Over the last 3 months I have been aggressively looking for a job but I seem to keep failing in the technical department when it comes to pair programming interviews. Though, I must say that I feel a lot more confident when I'm given one of those take-home tests where I feel like I can excel without being judged or something but that doesn't seem to be the case nowadays as 90% of the companies I've interviewed with thus far didn't do it. Out of all the companies I interviewed with, 4 of them I managed to get to very last step of their hiring process. But like you'd guess, they turned me down in the end. I tried to practice more, going to those code challenge websites along with working on my own small project to try and keep my mind sharp but that also doesn't seem to help at all. With that being said, like the title says, I keep failing at pair programming interviews and I don't know what to do about it anymore and decided to take it to the internet.
-
-&amp;#x200B;
-
-As a matter of fact, I do understand how software architecture works and what purpose they serve (MVVM for instance) and I can talk about it for hours because I really find it interesting. Not to mention the new Google Jetpack APIs etc. But for some weird reason my mind blacks out when in that scenario.  
-
-
-Lastly, what really intrigues me too is the fact that I see so many developers getting new jobs within weeks and I'm really starting to feel that I might've just "got lucky" so far in my career and that I might not be as good as I thought I was to begin with. I'm actually considering completely deserting the industry altogether to pursue something else instead.  
-
-
-  
-Any thoughts?
-## [3][Cute trick for making sealed classes have a constructor/factory](https://www.reddit.com/r/Kotlin/comments/iywyvf/cute_trick_for_making_sealed_classes_have_a/)
-- url: https://www.reddit.com/r/Kotlin/comments/iywyvf/cute_trick_for_making_sealed_classes_have_a/
----
-EDIT: The code I posted didn't actually work, but /u/SkiFire13 posted a correct version:
-
-    sealed class Foo {
-        companion object {
-            operator fun invoke(p1: String): Foo {
-                return if (p1 == "bar") Bar() else Baz()
-            }
-        }
-    }
-    val f1 = Foo("bar") // is Bar
-    val f2 = Foo("something") // is Baz
-
-Instead of the typical approach of having a companion object with a factory method.
-## [4][Dependency injection with function types has some shortcomings compared to interfaces](https://www.reddit.com/r/Kotlin/comments/iyfv3q/dependency_injection_with_function_types_has_some/)
-- url: https://www.reddit.com/r/Kotlin/comments/iyfv3q/dependency_injection_with_function_types_has_some/
----
-One thing you sometimes find is that a code base may have a Foo interface that has several methods. When you're writing a new function, you may only need one of those methods to operate:
-
-
-    interface Foo {
-        fun doSomethingWithInt(x: Int): Int?
-        fun doSomethingWithString(x: String): String?
-        fun doSomethingWithBar(x: Bar): Bar?
-    }
-    
-    fun coolNewStringFeature(foo: Foo): String? {
-        // stuff
-        return foo.doSomethingWithString("string")
-    }
-
-Now, if you want to test your `coolNewStringFeature` you have to mock/stub the *whole* interface. Either by hand, or with some mock library like mockk. On the other hand, if you just wrote your function as:
-
-
-    fun coolNewStringFeature(doSomethingWithString: (String) -&gt; String?): String? {
-        // stuff
-        return doSomethingWithString("string")
-    }
-
-Now you just have to write a trivial closure to test the function! And it's easy to quickly test a bunch of different inputs, instead of fiddling with your mocks or whatever.
-
-But there are problems. 
-
-Problem #1: Function types can't have arg labels.
-
-
-    fun withRange(operation: (min: Int, max: Int) -&gt; Boolean) {
-        operation(min = 0, max = 2) // compile error
-        operation(0, 2) // which one means what?
-    }
-
-    interface MinMaxinator {
-        fun operation(min: Int, max: Int) = //...
-    }
-
-    fun withRange(operator: MinMaxinator) {
-        operator.operation(min = 0, max = 2) // okay!
-    }
-
-Problem #2: Functions with default args can't be used as function types without those args.
-
-
-    fun importantWork(x: Int, y: Int, z: Int = 10) = //...
-
-    fun doWith(work: (Int, Int) -&gt; Unit) = //...
-
-    doWith(::importantWork) // compile error
-
-
-Just putting this out there. No real question. Just generally complaining about stuff :)
-
-I like the idea of passing functions around instead of objects, but I keep running into papercuts.
-## [5][Artificial Intelligence in Kotlin: coding a planning optimization application from scratch](https://www.reddit.com/r/Kotlin/comments/iycc4e/artificial_intelligence_in_kotlin_coding_a/)
-- url: https://www.youtube.com/watch?v=n6fl60gR8Gc
----
-
-## [6][Kotlin - Room Architecture Components - Room Database with CRUD Operations](https://www.reddit.com/r/Kotlin/comments/iypvuw/kotlin_room_architecture_components_room_database/)
-- url: https://www.rrtutors.com/SQLite-Database-with-CRUD-Operations
----
-
-## [7][Create Hello World App with KMM 📱- Android &amp; IOS](https://www.reddit.com/r/Kotlin/comments/iy7hd5/create_hello_world_app_with_kmm_android_ios/)
-- url: https://medium.com/@iamanbansal/create-hello-world-app-in-kmm-android-ios-79cc8c9bb84b
----
-
-## [8][Can paging 3.0 be used to paginate data from an online db such as cloud firestore?](https://www.reddit.com/r/Kotlin/comments/iyjrvg/can_paging_30_be_used_to_paginate_data_from_an/)
-- url: https://www.reddit.com/r/Kotlin/comments/iyjrvg/can_paging_30_be_used_to_paginate_data_from_an/
----
-While building a chat application,i came across the need to paginate the amount of text messages between 2 users. Adding stack overflow link that contains the whole shebang below. How should i proceed? 
-
-https://stackoverflow.com/questions/64027103/can-paging-3-0-be-used-to-paginate-data-from-an-online-db-such-as-cloud-firestor
-## [9][SQLCipher and KMM](https://www.reddit.com/r/Kotlin/comments/iycdzh/sqlcipher_and_kmm/)
-- url: https://medium.com/@kpgalligan/sqlcipher-and-kmm-58d96ea8095d
----
-
-## [10][I am trying to create a terminal-like app in Kotlin using TornadoFX](https://www.reddit.com/r/Kotlin/comments/iy4q8x/i_am_trying_to_create_a_terminallike_app_in/)
-- url: https://www.reddit.com/r/Kotlin/comments/iy4q8x/i_am_trying_to_create_a_terminallike_app_in/
----
-I am currently not concerned with commands, or any sort of restriction concerning user input. I was hoping if somebody could point me out in as to what controls should I use to just have a prompt and the user input anything. Should I use a textfield and make it the same color in my styles files?

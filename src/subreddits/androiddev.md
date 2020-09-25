@@ -1,18 +1,12 @@
 # androiddev
-## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/iwzpbu/weekly_whos_hiring_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/iwzpbu/weekly_whos_hiring_thread/
+## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/izipbu/weekly_anything_goes_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/izipbu/weekly_anything_goes_thread/
 ---
-Looking for Android developers? Heard about a cool job posting? Let people know!
+Here's your chance to talk about whatever!
 
-Here is a suggested posting template:
+Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
 
-&gt; Company: &lt;Best Company Ever&gt;  
-&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
-&gt; Location: &lt;City, State, Country&gt;  
-&gt; Allows remote: &lt;Yes/No&gt;  
-&gt; Visa: &lt;Yes/No&gt;  
-
-Feel free to include any other information about the job.
+Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
 ## [2][Weekly Questions Thread - September 21, 2020](https://www.reddit.com/r/androiddev/comments/iwy6cm/weekly_questions_thread_september_21_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/iwy6cm/weekly_questions_thread_september_21_2020/
 ---
@@ -31,42 +25,97 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Store v4 is finally in Beta!](https://www.reddit.com/r/androiddev/comments/iyrrnf/store_v4_is_finally_in_beta/)
-- url: https://github.com/Dropbox/Store
+## [3][Why use Room for offline caching when Retrofit/ OkHttp provide a better alternative?](https://www.reddit.com/r/androiddev/comments/izeone/why_use_room_for_offline_caching_when_retrofit/)
+- url: https://www.reddit.com/r/androiddev/comments/izeone/why_use_room_for_offline_caching_when_retrofit/
+---
+I have been going through multiple tutorials and it seems the common/ accepted practice is to use Room to save data for offline caching. 
+
+The first problem I faced with Room as the single source of truth was that I had to manually delete data from the app that has been removed from the backend. This made the process like this -
+
+1. Make API call to get data
+2. If API call is a success, delete old entries and add new ones from the API response and then display the data from the DB (Room with LiveData makes this easy)
+3. If API call fails, fetch data from the app's database directly
+
+Now, this seems unnecessary complex - inserting/ deleting entries from db after every API request.
+
+I came across [this article](https://krtkush.com/2016/06/01/caching-using-okhttp-part-1.html) which explains that we can use an okHttp interceptor to store response for a defined time period and fetch it only if the API fails. 
+    
+    /**
+     * Interceptor to cache data and maintain it for four weeks.
+     *
+     * If the device is offline, stale (at most four weeks old)
+     * response is fetched from the cache.
+     */
+    private static class OfflineResponseCacheInterceptor implements Interceptor {
+        @Override
+        public okhttp3.Response intercept(Chain chain) throws IOException {
+            Request request = chain.request();
+            if (!UtilityMethods.isNetworkAvailable()) {
+                request = request.newBuilder()
+                        .header("Cache-Control",
+                          "public, only-if-cached, max-stale=" + 2419200)
+                        .build();
+            }
+            return chain.proceed(request);
+        }
+    }
+
+I found this a better approach and less complex. 
+
+Thoghts?
+## [4][Jetpack Compose image loading library for requesting and displaying images using Fresco.](https://www.reddit.com/r/androiddev/comments/izgukk/jetpack_compose_image_loading_library_for/)
+- url: https://github.com/skydoves/Frescomposable
 ---
 
-## [4][The Composable Images is a library providing Jetpack Compose wrapper for Glide, Picasso, and Coil.](https://www.reddit.com/r/androiddev/comments/iytpnl/the_composable_images_is_a_library_providing/)
-- url: https://github.com/wasabeef/composable-images
+## [5][Announcing a painless Kotlin/Multiplatform NoSQL embedded database](https://www.reddit.com/r/androiddev/comments/iziuf1/announcing_a_painless_kotlinmultiplatform_nosql/)
+- url: https://medium.com/kodein-koders/announcing-a-painless-kotlin-multiplatform-nosql-embedded-database-30fed677549c
 ---
 
-## [5][Building on the Wrong Abstraction](https://www.reddit.com/r/androiddev/comments/iyqoke/building_on_the_wrong_abstraction/)
-- url: https://publicobject.com/2020/09/24/building-on-the-wrong-abstraction/?s=09
+## [6][All developers will get the new Google Play Console on November 2, 2020](https://www.reddit.com/r/androiddev/comments/iz2avj/all_developers_will_get_the_new_google_play/)
+- url: https://android-developers.googleblog.com/2020/09/all-developers-will-get-new-google-play.html
 ---
 
-## [6][Is it alright to have a navigation graph this big? Or should I take the extra effort to split it?](https://www.reddit.com/r/androiddev/comments/iyu6hf/is_it_alright_to_have_a_navigation_graph_this_big/)
-- url: https://www.reddit.com/r/androiddev/comments/iyu6hf/is_it_alright_to_have_a_navigation_graph_this_big/
+## [7][Rant: Surprised how uncomfortable/bad Room DB is for developers](https://www.reddit.com/r/androiddev/comments/izjbhq/rant_surprised_how_uncomfortablebad_room_db_is/)
+- url: https://www.reddit.com/r/androiddev/comments/izjbhq/rant_surprised_how_uncomfortablebad_room_db_is/
 ---
-So currently my Navigation Graph looks something like this:
+After developing backend applications with Spring Boot for a while, I recently joined a mobile dev team again. They use Room as DB.    
+I can see the pros: like being developed by Google, optimised for mobile and so on....   
 
-https://preview.redd.it/mhvn4pq4g2p51.png?width=554&amp;format=png&amp;auto=webp&amp;s=07f84cca0e0ed6fa330a14b9f3a56c9748f01787
 
-As per the documentation, I can split this into multiple nav graphs to make it smaller. But is it worth doing it since this nav graph is only around 240 lines of code and much smaller than some layouts.
+But i was shocked how complicated such a trivial task as one-to-many relationships are with Room.  
 
-Is it worth splitting it into multiple parts? Or do you have bigger nav graphs than this?
-## [7][Our app revenue is fluctuating.](https://www.reddit.com/r/androiddev/comments/iyu1vl/our_app_revenue_is_fluctuating/)
-- url: https://www.reddit.com/r/androiddev/comments/iyu1vl/our_app_revenue_is_fluctuating/
+
+You can't just have a list of items inside an entity. No, you need to manually persist all items in their own table and manually set the foreign keys. But if you let Room generate the ID of the "One" for you, it's pretty complicated to get this generated ID back, because room will only tell you the row number as result of the insert, but not the ID of the inserted item.   
+
+
+Fortunately Room has at least some sort of support for reading one-to-many relationships. So you can define a class with the relation and room will at least create a join query.   
+
+
+Maybe i miss something but based on the [official documentation](https://developer.android.com/training/data-storage/room/relationships) and some research i did that's how it needs to be done :(  
+
+
+Honestly, in 2020 i would have expected way better tooling for RDBMS even on mobile platforms.
+## [8][I want to create PixelArt icon packs](https://www.reddit.com/r/androiddev/comments/izjb7z/i_want_to_create_pixelart_icon_packs/)
+- url: https://www.reddit.com/r/androiddev/comments/izjb7z/i_want_to_create_pixelart_icon_packs/
 ---
-We have a utility app for car owners and we sell yearly/lifetime subscription. Our weekly revenue fluctuates a lot.  
+Hello.
 
-We get most of our install through Google Adwords and the spend/week is more or less is the same.   
-One week the revenue is going to be - $200 and the next week it would be $100 and so on.    
-What could be the reason for this?   
-we have looked at the ad campaign and they are performing well. We send notifications but they are also the same.
-## [8][Released Contour v1.0](https://www.reddit.com/r/androiddev/comments/iygxyh/released_contour_v10/)
-- url: https://github.com/cashapp/contour/releases/tag/1.0.0
+&amp;#x200B;
+
+First of all, let me be clear: i'm a noob and have 0 programming experience. Still, i have an Android publisher licence because i used app builders for things. I'm a PixelArtist and i want to create icon packs for Android (and possibly iOS if that's possible). Is there any understandable tutorial that might help me? If not, any developer that might want to collaborate in RevShare?
+## [9][COVID related apps](https://www.reddit.com/r/androiddev/comments/izikfk/covid_related_apps/)
+- url: https://www.reddit.com/r/androiddev/comments/izikfk/covid_related_apps/
+---
+Was reading an android games website, and it informed that google has a policy regarding COVID related apps (it was about a virus fighting game, but they couldn't add a COVID name in the game, even though the virus is round):
+
+[https://support.google.com/googleplay/android-developer/answer/9889712?hl=en](https://support.google.com/googleplay/android-developer/answer/9889712?hl=en)
+
+During quarantine, I practiced my app developing skills making an app that got COVID-19 related data from an API, and shows in a human comprehensible form, no judgement on data or info on what should be done with it, in local language (brazilian portuguese). So I guess that due to that policy I wouldn't be able to publish that app, is that right?
+## [10][Migrating SharedPreferences to Jetpack DataStore](https://www.reddit.com/r/androiddev/comments/izijtq/migrating_sharedpreferences_to_jetpack_datastore/)
+- url: https://medium.com/@jurajkunier/migrating-sharedpreferences-to-jetpack-datastore-9deb8259063
 ---
 
-## [9][PSA: Android Studio's 'Local history' has all your changes if you need to revert something](https://www.reddit.com/r/androiddev/comments/iyvtdu/psa_android_studios_local_history_has_all_your/)
+## [11][PSA: Android Studio's 'Local history' has all your changes if you need to revert something](https://www.reddit.com/r/androiddev/comments/iyvtdu/psa_android_studios_local_history_has_all_your/)
 - url: https://www.reddit.com/r/androiddev/comments/iyvtdu/psa_android_studios_local_history_has_all_your/
 ---
 I didn't even know what was Local history until now. 
@@ -76,15 +125,7 @@ I thought i was done with the current feature, so i made my "final commit". But 
 Turns out, AS / IJ keeps track of your changes. So i was able to reset the last 'External change' (git), reverting my changes (restoring the commit).
 
 I have no affiliation with Coding in Flow, but he has a 5min tutorial on [Local History](https://www.youtube.com/watch?v=2A5F34TofMY)
-## [10][Ktor - Networking Client For Android](https://www.reddit.com/r/androiddev/comments/iysuja/ktor_networking_client_for_android/)
-- url: https://howtodoandroid.com/ktor-android/
----
-
-## [11][What I Like About Views](https://www.reddit.com/r/androiddev/comments/iyxc5c/what_i_like_about_views/)
-- url: https://cashapp.github.io/2020-09-23/what-i-like-about-views
----
-
-## [12][UK COVID-19 contact tracing app with Google's Exposure Notifications API available on Github](https://www.reddit.com/r/androiddev/comments/iyth6j/uk_covid19_contact_tracing_app_with_googles/)
-- url: https://github.com/nhsx/covid-19-app-android-ag-public
+## [12][An Android transformation library providing a variety of image transformations for Coil, Glide, Picasso, and Fresco.](https://www.reddit.com/r/androiddev/comments/izgpqz/an_android_transformation_library_providing_a/)
+- url: https://github.com/wasabeef/transformers
 ---
 

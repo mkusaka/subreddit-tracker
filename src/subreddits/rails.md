@@ -27,7 +27,260 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][automatically getting more inputs and how to handle them in the backend](https://www.reddit.com/r/rails/comments/iynsdf/automatically_getting_more_inputs_and_how_to/)
+## [3][Sending partials over javascript](https://www.reddit.com/r/rails/comments/izbmit/sending_partials_over_javascript/)
+- url: https://www.reddit.com/r/rails/comments/izbmit/sending_partials_over_javascript/
+---
+I'm trying to customize a rails scaffold so it doesnt go to a new page every time I want to edit or create a new resource. 
+
+Right now what I'm doing is using stimulus to prevent default behavior of links, then fetch `e. target.href` to display the form partial within a bootstrap modal. I then use `remote: true` to send the forms w/ javascript and respond with the resource partial like `format.js { render partial: "partial", locals: { resource: @resource }, content_type: "text" } `. I respond with the resource partial because it gets added to the DOM with `insertAdjacentHTML`.
+
+Now that works and all but it feels kinda hacked together and dirty. Is there a better way to do this?
+## [4][uploading multiple images to s3 with presign endpoint using shrine and uppy](https://www.reddit.com/r/rails/comments/iz9ux5/uploading_multiple_images_to_s3_with_presign/)
+- url: https://www.reddit.com/r/rails/comments/iz9ux5/uploading_multiple_images_to_s3_with_presign/
+---
+Sorry in advance for the overly broad question, but this isn't about bugs so much as it is about architecture and confusion brought on by trying to twist two docs into one objective. My hope is that someone could help untangle my brain.
+
+I would like to: upload (to s3) and process multiple images using Shrine and Uppy with a nested form in Rails.
+
+However, what I am getting is a POST request that only creates a parent. The child `photos` are neither uploaded to s3 nor saved to the database.
+
+`Processing by ItemsController#create as HTML`
+
+`Parameters: {"utf8"=&gt;"✓", "authenticity_token"=&gt;"[FILTERED]", "files"=&gt;[#&lt;ActionDispatch::Http::UploadedFile:0x00007f9cbc59a050 u/tempfile=#&lt;Tempfile:/var/folders/hj/g_90jx_n7s58m73qlf9h0c4w0000gn/T/RackMultipart20200924-5853-1pb0sdf.jpg&gt;, u/original_filename="in.jpg", u/content_type="image/jpeg", u/headers="Content-Disposition: form-data; name=\"files[]\"; filename=\"in.jpg\"\r\nContent-Type: image/jpeg\r\n"&gt;], "item"=&gt;{"title"=&gt;"dip", "price"=&gt;"900"}, "commit"=&gt;"Submit"}`
+
+`Item Create (10.1ms) INSERT INTO "items" ("created_at", "updated_at", "title", "price", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id" [["created_at", "2020-09-24 22:04:41.333195"], ["updated_at", "2020-09-24 22:04:41.333195"], ["title", "dip"], ["price", 900], ["user_id", 1]]`
+
+The Shrine docs for [multiple uploads](https://shrinerb.com/docs/multiple-files#4b-direct-upload) suggest a model, controller, and view structure that looks like this:
+
+**Models**
+
+    class Photo &lt; ApplicationRecord
+     include ImagesUploader::Attachment(:image)
+     belongs_to :item
+     validates_presence_of :image
+    end
+    
+    class Item &lt; ApplicationRecord
+     has_many :photos, dependent: :destroy
+     accepts_nested_attributes_for :photos, allow_destroy: true
+    end
+
+**Controller**
+
+    class ItemsController &lt; ApplicationController
+     def create
+      @item = Item.create(item_params)
+      @item.save
+     end
+    
+     private
+     def item_params
+      params.require(:item).permit(:title, photos_attributes: { image: [] })
+     end
+    end
+
+**View**
+
+    &lt;%= form_for @item, html: { enctype: "multipart/form-data" } do |f| %&gt;
+     &lt;%= f.text_field :title %&gt;
+     &lt;%= f.fields_for :photos do |i| %&gt;
+      &lt;%= i.label :image %&gt;
+      &lt;%= i.hidden_field :image, value: i.object.cached_photos_data, class: "upload-data" %&gt;
+      &lt;%= i.file_field :image, class: "upload-file" %&gt;
+     &lt;% end %&gt;
+     &lt;%= file_field_tag "files[]", multiple: true %&gt;
+     &lt;%= f.submit "Submit" %&gt;
+    &lt;% end %&gt;
+
+Ignoring my confusion over how this double `file_field/file_field_tag` works (and why I only see the latter), I go to [this github wiki](https://github.com/shrinerb/shrine/wiki/Adding-Direct-S3-Uploads) to set up the presign endpoint with an initializer and a route:
+
+**shrine.rb**
+
+    require "shrine"
+    require "shrine/storage/file_system"
+    require "shrine/storage/s3"
+    
+    Shrine.plugin :presign_endpoint, presign_options: -&gt; (request) {
+      filename = request.params["filename"]
+      type     = request.params["type"]
+    
+      {
+        content_disposition:    ContentDisposition.inline(filename), 
+        content_type:           type,                                
+        content_length_range:   0..(5*1024*1024),                  
+      }
+    }
+    
+    Shrine.plugin :activerecord
+    Shrine.plugin :cached_attachment_data
+    Shrine.plugin :restore_cached_data
+    Shrine.plugin :validation
+    Shrine.plugin :validation_helpers
+    Shrine.plugin :determine_mime_type, analyzer: :marcel
+    Shrine.plugin :remove_invalid
+
+**routes.rb**
+
+    get 'presign/s3/params', to: 'presigns#image'
+
+Moved response to a controller for authorization:
+
+    class PresignsController &lt; InheritedResources::Base
+     before_action :authenticate_user!
+    
+     def image
+      set_rack_response ImagesUploader.presign_response(:cache, request.env)
+     end
+    
+     private
+     def set_rack_response((status, headers, body))
+      self.status = status
+      self.headers.merge!(headers)
+      self.response_body = body
+     end
+    end
+
+To confirm that this is set up correctly, I visit `/presign/s3/params?filename=test&amp;type=jpg` and see JSON and my AWS credentials in the browser. Although the browser tab says `ActionController: Exception caught`, it seems to work as expected.
+
+Thinking I'm good, I add the uploader and the javascript for handling direct uploads:
+
+**uploader**
+
+    class ImagesUploader &lt; Shrine
+      require "image_processing/mini_magick"
+      plugin :pretty_location
+      plugin :derivatives
+    
+      s3 = { 
+       bucket: ENV['S3_BUCKET_NAME'],
+       region: ENV['AWS_REGION'],
+       access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+       secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
+      }
+      Shrine.storages = { 
+       cache: Shrine::Storage::S3.new(prefix: "cache", **s3), 
+       store: Shrine::Storage::S3.new(prefix: "store", **s3)
+      }
+    
+      Attacher.validate do
+       validate_min_size	10.kilobytes	
+       validate_max_size	5.megabytes, message: 'must be smaller than 5MB'
+       validate_mime_type 	%w[image/jpeg image/png]
+       validate_extension 	%w[jpg jpeg png]
+      end
+    
+      Attacher.derivatives do |original|
+       magick = ImageProcessing::MiniMagick.source(original)
+       {
+    	large: magick.resize_to_limit!(1000, 1000),
+    	small: magick.resize_and_pad!(225, 220)
+       }
+      end
+    end
+
+**app/javascript/fileUpload.js**
+
+    import 'uppy/dist/uppy.min.css'
+    
+    import {
+      Core,
+      FileInput,
+      Informer,
+      ProgressBar,
+      ThumbnailGenerator,
+      AwsS3,
+    } from 'uppy'
+    
+    function fileUpload(fileInput) {
+      const hiddenInput = document.querySelector('.upload-data'),
+            imagePreview = document.querySelector('.upload-preview img'),
+            formGroup = fileInput.parentNode
+    
+      formGroup.removeChild(fileInput)
+    
+      const uppy = Core({
+          autoProceed: true,
+        })
+        .use(FileInput, {
+          target: formGroup,
+        })
+        .use(Informer, {
+          target: formGroup,
+        })
+        .use(ProgressBar, {
+          target: imagePreview.parentNode,
+        })
+        .use(ThumbnailGenerator, {
+          thumbnailWidth: 600,
+        })
+        .use(AwsS3, {
+          companionUrl: '/presign/s3/params', // i set this to my presign endpoint, which I checked by visting site.com/presign/s3/params?filename=test&amp;type=jpg
+        })
+    
+      uppy.on('thumbnail:generated', (file, preview) =&gt; {
+        imagePreview.src = preview
+      })
+    
+      uppy.on('upload-success', (file, response) =&gt; {
+        const uploadedFileData = {
+          id: file.meta['key'].match(/^cache\/(.+)/)[1],
+          storage: 'cache',
+          metadata: {
+            size: file.size,
+            filename: file.name,
+            mime_type: file.type,
+          }
+        }
+    
+        hiddenInput.value = JSON.stringify(uploadedFileData)
+      })
+    }
+    
+    export default fileUpload
+
+**javascript/packs/application.js**
+
+    import fileUpload from 'fileUpload'
+    
+    document.addEventListener('turbolinks:load', () =&gt; {
+      document.querySelectorAll('.upload-file').forEach(fileInput =&gt; {
+        fileUpload(fileInput)
+      })
+    })
+
+Some questions.
+
+1. How does that double `file_field` work and why is it that the stray `file_field_tag` is the one that submits the files? I do not intuitively grasp how the two are connected. If the tag is named `files[]`, shouldn't my whitelisted params be something like `photos_attributes: { files: [] }`?
+2. If uppy and shrine upload the files to an s3 cache, how do I get that information into my controller? Presumably I would get a JSON response. The doc has this to say, but I'm confused by what it means:
+
+&gt;Once files are uploaded asynchronously, you can dynamically insert photo attachment fields for the `image` attachment attribute into the form, where the hidden field is filled with uploaded file data in JSON format, just like when doing single direct uploads. The attachment field names should be namespaced according to the convention that the nested attributes feature expects. In this case it should be `album[photos_attributes][&lt;uid&gt;]`, where `&lt;uid&gt;` is any unique string.
+## [5][Relational DB tutorial?](https://www.reddit.com/r/rails/comments/iz6o8m/relational_db_tutorial/)
+- url: https://www.reddit.com/r/rails/comments/iz6o8m/relational_db_tutorial/
+---
+Anyone have a good resource to understand Relational DB linking in rails? 
+
+I’ve read the docs, handheld a few tutorials and just cannot wrap my brain around how to properly understand it.
+## [6][Auto-save the current form without refresh](https://www.reddit.com/r/rails/comments/iyyhzh/autosave_the_current_form_without_refresh/)
+- url: https://www.reddit.com/r/rails/comments/iyyhzh/autosave_the_current_form_without_refresh/
+---
+Is it possible to use AJAX to auto-save the form that's currently in view, but leave the default submit button active?  
+
+
+I'm using wicked, and I have a fairly large form that needed to be sliced into pieces. Now, I want to save each individual form step with autosave using a timed function. Is it possible?
+## [7][How to improve my tests?](https://www.reddit.com/r/rails/comments/iyz9e7/how_to_improve_my_tests/)
+- url: https://www.reddit.com/r/rails/comments/iyz9e7/how_to_improve_my_tests/
+---
+Hi! I'm in the process of writing tests for a new Rails app.
+
+This is one my controller tests: [Gist](https://gist.github.com/ImMaax/6bd4802cb283e1cf4fe69bcd0a1f3eaf)
+
+Even though this test works perfectly fine, it just feels pretty wrong, as I repeat myself a lot and I'm unsure whether that's "the right way" to write a controller test. I've also seen integration tests, but I'm not quite sure where to put which tests now. Can someone help me? How would you optimize those tests?
+## [8][Indie Hacker : a possible meaning](https://www.reddit.com/r/rails/comments/iyyv2q/indie_hacker_a_possible_meaning/)
+- url: https://www.reddit.com/r/rails/comments/iyyv2q/indie_hacker_a_possible_meaning/
+---
+I just wrote an article about what it means to be an Indie Hacker, in a dev point of view.  
+Spoiler : I use Rails for this kind of project :) All thought are based on experience, which means very subjective and open to criticism :) [http://bdavidxyz.com/blog/indie-hacker-meaning/](http://bdavidxyz.com/blog/indie-hacker-meaning/)
+## [9][automatically getting more inputs and how to handle them in the backend](https://www.reddit.com/r/rails/comments/iynsdf/automatically_getting_more_inputs_and_how_to/)
 - url: https://www.reddit.com/r/rails/comments/iynsdf/automatically_getting_more_inputs_and_how_to/
 ---
 I know this might be more of a frontend issue, but I have the habit of having anything in one place (I think this might be a harmful thought, but I do most of my projects alone, so I keep them the way I can handle!). So, I'm a musician and when I was uploading an album on bandcamp, I noticed something. 
@@ -35,7 +288,7 @@ I know this might be more of a frontend issue, but I have the habit of having an
 When you use "album", the damn thing automatically gives you a field of new song. I thing that be a really good feature to have, but I don't know what that's called and how I can have on that a rails project. If you guys have any experiences, I'd love to know. 
 
 Thanks!
-## [4][Having trouble with wizard gem](https://www.reddit.com/r/rails/comments/iyegbd/having_trouble_with_wizard_gem/)
+## [10][Having trouble with wizard gem](https://www.reddit.com/r/rails/comments/iyegbd/having_trouble_with_wizard_gem/)
 - url: https://www.reddit.com/r/rails/comments/iyegbd/having_trouble_with_wizard_gem/
 ---
 I can't seem to access the wizard without receiving this error "**The requested step did not match any steps defined for this controller**". I don't know why its not starting the steps process when I send the user over to the controller for Wicked with the business form id. I'm also using friendly\_id btw.
@@ -75,7 +328,7 @@ business\_*form\_wizard\_controller.rb*
 `render_wizard @business_form`
 
 `end`
-## [5][Rails: testing with MySQL](https://www.reddit.com/r/rails/comments/iyc18w/rails_testing_with_mysql/)
+## [11][Rails: testing with MySQL](https://www.reddit.com/r/rails/comments/iyc18w/rails_testing_with_mysql/)
 - url: https://www.reddit.com/r/rails/comments/iyc18w/rails_testing_with_mysql/
 ---
 Hi. My Rails app uses MySQL for prod and dev, but uses SQLite for testing. The problem with that is that everytime I run the tests, it overwrites the schema.rb file to fit SQLite instead of MySQL.
@@ -84,7 +337,7 @@ The problem with using MySQL for testing is that Rails always tries to access a 
 
 Is it possible to do MySQL-based tests or do I have to stick to SQLite for that?
 If I have to stick to SQLite, how can I stop Rails from overwriting `schema.rb`?
-## [6][flag_shih_tzu gem , return same value for any key](https://www.reddit.com/r/rails/comments/iy9u1k/flag_shih_tzu_gem_return_same_value_for_any_key/)
+## [12][flag_shih_tzu gem , return same value for any key](https://www.reddit.com/r/rails/comments/iy9u1k/flag_shih_tzu_gem_return_same_value_for_any_key/)
 - url: https://www.reddit.com/r/rails/comments/iy9u1k/flag_shih_tzu_gem_return_same_value_for_any_key/
 ---
 I'm using **flag\_shih\_tzu** gem and at my User model I include that lines  
@@ -116,82 +369,3 @@ but when I set Flags value to 2 or 3 it doesn't matter It will always return me 
     true
     User.second.moderator?
     false
-## [7][Where to start](https://www.reddit.com/r/rails/comments/iy3dmv/where_to_start/)
-- url: https://www.reddit.com/r/rails/comments/iy3dmv/where_to_start/
----
-Hey everyone,
-
-I have an interview for a Java/Ruby position next Monday. I am proficient in Java but I have no exposure to Ruby and I am looking for resources to get started. I read the first few chapters of 'Eloquent Ruby' this afternoon and it seems to share similarities with Python/Elixir - both of which I have experience with. 
-
-Any advice would be appreciated :)
-
-Thanks in advance!
-## [8][Why is dependent: :destroy not working for me?](https://www.reddit.com/r/rails/comments/ixwox5/why_is_dependent_destroy_not_working_for_me/)
-- url: https://www.reddit.com/r/rails/comments/ixwox5/why_is_dependent_destroy_not_working_for_me/
----
-I have two models:
-
-    class Detection &lt; ApplicationRecord
-      has_many :links, foreign_key: 'start_id', dependent: :destroy
-      has_many :links, foreign_key: 'end_id', dependent: :destroy
-    end
-    
-    class Link &lt; ApplicationRecord
-      belongs_to :start, class_name: 'Detection', foreign_key: :start_id
-      belongs_to :end, class_name: 'Detection', foreign_key: :end_id
-    end
-
-When I delete a detection, I want the associated links to be destroyed. However, I'm getting a failed foreign-key constraint from pg when I try to delete a Detection, suggesting that my associations are not being described correctly here:
-
-    PG::ForeignKeyViolation: ERROR: update or delete on table "detections" violates foreign key constraint "fk_rails_8633ff3bb0" on table "links" DETAIL: Key (id)=(1) is still referenced from table "links".
-
-
-How do I tell Rails to delete any links where start\_id or end\_id match the deleted Detection's id?
-## [9][Is there a better way to do what I just did??](https://www.reddit.com/r/rails/comments/ixw4kt/is_there_a_better_way_to_do_what_i_just_did/)
-- url: https://www.reddit.com/r/rails/comments/ixw4kt/is_there_a_better_way_to_do_what_i_just_did/
----
-Hi all, I’m a Rails beginner and just implemented a feature that has resulted in using multiple conditionals in my controllers and views, and am just wondering if there might be a more elegant way to do this?
-
-I’m working on a practice app that lets you create online Invoices, and now finished a letting you create Estimates as well....which are simply Invoice records, but with a “estimate” Boolean attribute set to TRUE. 
-
-So I have a “New Invoice” button that calls the ‘new’ action in the Invoices controller, AND I have a “New Estimate” button that also calls that same action, but passes in a “estimate: true” hash. 
-
-Then, in the controller, I use an if/else conditional to check for that hash, and if it’s there, I create a new record with the ‘estimate’ Boolean set to true. Otherwise, I create a new record without setting the estimate boolean. 
-
-Finally, for my Invoice views (show and  \_form, along with Active Mailer views) I also do a conditional check so the views properly display the words “Invoice” or “Estimate” depending on what the record’s estimate Boolean is, and also displays a different ‘Back’ or ‘Cancel’ button which brings you back to either the Invoices or Estimates index page (speaking of which, buttons to the Invoices page and Estimates page work the same way, with a conditional passed to the Index controller action, and that action using a conditional to serve up either invoices or estimates).
-
-So that’s how it works, and it DOES work, but I just wonder if there might be a better, cleaner way to do something like this? I haven’t figured one out despite some research, but Rails is filled with so many clever tools, I thought I’d ask here!
-
-Thanks very much!
-## [10][Becoming a regular Rails contributor?](https://www.reddit.com/r/rails/comments/ixn3qh/becoming_a_regular_rails_contributor/)
-- url: https://www.reddit.com/r/rails/comments/ixn3qh/becoming_a_regular_rails_contributor/
----
-Are there any regular Rails contributors here?
-
-It's been an old goal of mine to become one. Now I"m not expecting to reach Tenderlove's level, but I want to get to the level where I have at least a vague idea how to solve regular bugs in ActiveRecord. That I know enough about the internals I can come up with solutions given enough time. When I now look at Rails bugs, especially ActiveRecord, I usually wouldn't know even what files are causing the problem - is it AssociationReflection? AssociationProxy maybe?. When I look at someone's bug fix it sorta makes sense,  but the interaction between all the different classes and modules is too much for my brain to handle.
-
-I guess I need to practice more, but it seems like ordinary bugs are often times too hard for me to practice on. It seems like regular contributors have a tons of contextual knowledge on ActiveRecord that I'm missing.
-
-P.S : I'm not sure why but I'm more interested in ActiveRecord than other parts of Rails, and it makes sense to me to focus on one part in any case.
-
-Has anyone here made the transition to becoming a regular contributor and care to share how this came to be?
-## [11][3rd party vendor SaaS is sending us us 'action' variable in POST](https://www.reddit.com/r/rails/comments/ixj48w/3rd_party_vendor_saas_is_sending_us_us_action/)
-- url: https://www.reddit.com/r/rails/comments/ixj48w/3rd_party_vendor_saas_is_sending_us_us_action/
----
-Hi,
-
-Got a problem. 3rd party vendor SaaS is sending us 'action' variable in POST, which is getting overwritten by the Rails routing with the method name.
-
-Do you have an idea for a workaround? 
-
-The only idea we have now is to create a front app that will receive such payload and will change the action parameter to action2 (or something) and then it will send it to our rails app.
-## [12][Decorating API response before](https://www.reddit.com/r/rails/comments/ixkeic/decorating_api_response_before/)
-- url: https://www.reddit.com/r/rails/comments/ixkeic/decorating_api_response_before/
----
-Hi everyone, so I'm back after [this](https://www.reddit.com/r/rails/comments/it350w/connecting_to_wordpress_db_from_rails/). I've essentially created an adapter to connect the crud operations from WP API so that it can be used in our app. We've stored some of the posts' data inside our DB and sync regularly for updated content.
-
-Currently, the front end is fetching the posts via the WP API but now, we want to add some fields to the posts records using information we have in our DB.
-
-The original plan would be to simply send the related information (with post ids) to the front end and cross-check them with the fetched post ids, then combine them. However, it doesn't feel really clean IMO.
-
-My question is would it be better to fetch the posts on the back end, "decorate" the response with the new fields, then sending the decorated response to the front end? Seems like a roundabout way of doing things but is there a pros/cons to it? Or if anyone else have any suggestions would be much appreciated!

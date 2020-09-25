@@ -111,118 +111,221 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/iaggwf/whos_available_august_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/ikn3vo/whos_hiring_september_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3]["import React from 'react'" will go away in distant future](https://www.reddit.com/r/reactjs/comments/iyehol/import_react_from_react_will_go_away_in_distant/)
-- url: https://twitter.com/dan_abramov/status/1308739731551858689?s=20
+## [3][My first React project - a personal site.](https://www.reddit.com/r/reactjs/comments/izghl9/my_first_react_project_a_personal_site/)
+- url: https://v.redd.it/40o2j93kj9p51
 ---
 
-## [4][Web app I made for AlgoExpert SWE competition (link to the app and github repository in the comments)](https://www.reddit.com/r/reactjs/comments/iyih4n/web_app_i_made_for_algoexpert_swe_competition/)
-- url: https://v.redd.it/0mluh7iajyo51
+## [4][Any good reasons to not be using TypeScript for a React app now? (with Create React App)](https://www.reddit.com/r/reactjs/comments/iz9vgt/any_good_reasons_to_not_be_using_typescript_for_a/)
+- url: https://www.reddit.com/r/reactjs/comments/iz9vgt/any_good_reasons_to_not_be_using_typescript_for_a/
+---
+I just recently started looking into TypeScript out of curiosity. I started a test project, and everything seemed to work the same using Create React App (automatic recompilation, etc.).
+
+Given that I don't have to manually compile anything, is there any disadvantage to using TypeScript with React? Even if I just write straight JavaScript without explicitly declaring types or using other features, it still does type checking on inferred types.
+
+It's just that I haven't seen a lot of people using it, and I was wondering if there's a reason I might not want to. I've only played around with it a little bit. Is there maybe a noticeable increase in compilation time as a project grows or something else I should be aware of that might bite me in the ass later?
+## [5][Material UI Dashboard with React](https://www.reddit.com/r/reactjs/comments/iyyrel/material_ui_dashboard_with_react/)
+- url: https://material-ui-dashboard.cube.dev/
 ---
 
-## [5][How do I fetch data from multiple sources then copy them in an object and render them when fetching is complete?](https://www.reddit.com/r/reactjs/comments/iyvqps/how_do_i_fetch_data_from_multiple_sources_then/)
-- url: https://www.reddit.com/r/reactjs/comments/iyvqps/how_do_i_fetch_data_from_multiple_sources_then/
+## [6][I built this - what do you think?](https://www.reddit.com/r/reactjs/comments/izh5t5/i_built_this_what_do_you_think/)
+- url: https://www.reddit.com/r/reactjs/comments/izh5t5/i_built_this_what_do_you_think/
 ---
-Hello.
+When COVID-19 hit, I decided to quit my day job and found a startup. Pretty daunting, but you never know what you can do until you actually start.
 
-Yes, another problem .. 😅
+[ViTeach](https://www.viteach.de/?ac_src=reddit) is an app that sets out to make math tutoring much more financially accessible to all students (especially students from weaker socio-economic backgrounds) and thus making sure that no student is left behind! The idea is to replace traditional math tutoring with a machine learning-based intelligent virtual tutor (we call her VI). Long way to go, but small steps!
 
-I'm using the following docs page
+[Student Demo](https://reddit.com/link/izh5t5/video/y8hc1patu9p51/player)
 
-[https://reactjs.org/docs/faq-ajax.html](https://reactjs.org/docs/faq-ajax.html)
+The app was initially built with "create-react-app", but we have since transitioned to "next.js". The app is entirely free at this point and will stay so for the foreseeable future.
 
-However there's a difference, I'm using an object URL which has shrugs/parts in it
+**The stack involves:**
 
-```js
-const [dataSet, setDataSet] = useState({
- users: [],
- posts: []
-})
+\- MongoDb
 
-const URL = {
- posts: "https://jsonplaceholder.typicode.com/posts",
- users: "https://jsonplaceholder.typicode.com/users"
-};
+\- Node.js/Express.js
 
-```
+\- Passport.js (for authentication)
 
-And I want my data to get fetched with useEffect()
-If I use:
+\- Google Pub/Sub
 
-```js
-useEffect(() =&gt; {
- const newDataSet = {...dataSet } 
- ...
- fetch(URL.posts)
- ...
- newDataSet.posts = [...posts]
-setDataSet(newDataSet)
-}, [])
-```
+\- [Socket.io](https://socket.io/) (for realtime chat)
 
-React says that that useEffect requires the URL &amp; data as a dependencies.
+\- **react.js** for the entire frontend
 
-However I ran into infinite loops, crashes and fetching data from the server without stopping.
+\- Python (leveraging the serverless framework) **auto-response generation**, custom tracking, data collection
 
-Here's a code sandbox where I have more questions in my comments:
-https://codesandbox.io/s/mystifying-tdd-ercsz?file=/src/App.js
-## [6][Validate forms in React, without the tears 😭](https://www.reddit.com/r/reactjs/comments/iyuvkw/validate_forms_in_react_without_the_tears/)
-- url: https://www.reddit.com/r/reactjs/comments/iyuvkw/validate_forms_in_react_without_the_tears/
----
-Hello React Community 
+More than happy to discuss any of the components and lend a helping hand where I can.
 
-I am currently working on a open source project called Reactrix , it's provides a convenient method \`useValidate\` to validate incoming data with a variety of powerful validation rules.
+**First successes:**
 
-Whether you're helping us fix bugs, improve the docs, or spread the word, we'd love to have you as part of the community! 💪💜  See [CONTRIBUTING.md](https://CONTRIBUTING.md) for more information on what we're looking for and how to get started.
+\- we are already working with a few schools (very happy about that)
 
-Link: [https://github.com/getspooky/Reactrix](https://github.com/getspooky/Reactrix)
-## [7][Tabs/Slider mui](https://www.reddit.com/r/reactjs/comments/iyx2oz/tabsslider_mui/)
-- url: https://www.reddit.com/r/reactjs/comments/iyx2oz/tabsslider_mui/
----
-Hello, 
+\- first online marketing and SEO successes.
 
-I’m trying to move the slider (red underline and highlighted tab) when selecting “Item One”, i want it to move to “Item Two”.
+\- amazing student feedback
 
-This is the sandbox
+Check it out and let me know what you think!
 
-https://codesandbox.io/s/cbn97
-
-any help appreciated, thanks
-## [8][What’s Structural Typing And How Typescript Uses It To Its Benefit?](https://www.reddit.com/r/reactjs/comments/iywtx4/whats_structural_typing_and_how_typescript_uses/)
-- url: https://medium.com/@mahdighajary/whats-structural-typing-and-how-typescript-use-it-to-its-benefit-6cf491f1564?source=friends_link&amp;sk=e0265b7bf135cc7e5d912d9e74d57afb
+Cheers
+## [7][@HeadlessUI/react from Tailwind Labs](https://www.reddit.com/r/reactjs/comments/izc7ac/headlessuireact_from_tailwind_labs/)
+- url: https://github.com/tailwindlabs/headlessui/blob/develop/packages/%40headlessui-react/README.md
 ---
 
-## [9][How to handle many state changes in react? App feels laggy](https://www.reddit.com/r/reactjs/comments/iywtsl/how_to_handle_many_state_changes_in_react_app/)
-- url: https://www.reddit.com/r/reactjs/comments/iywtsl/how_to_handle_many_state_changes_in_react_app/
+## [8][Since we're a Netflix-clone sub now, here's my space-themed Netflix clone I finished in July that helped me land my first engineering job](https://www.reddit.com/r/reactjs/comments/iz3zwz/since_were_a_netflixclone_sub_now_heres_my/)
+- url: http://spaceflix.herokuapp.com/
 ---
-Hello, 
 
-I´m currently working on a project where i have a editable component ( dragging, rotating, translatingX ...). All the changes will be reflected in a preview canvas. So if I move my editable div, the element in the canvas also gets moved. I manage the state in a parent component (childs are the editable component and the canvasPreview, and a few more).  I update the state on every change to editable component, and then all child components get rerendered. 
+## [9][Building and using custom React hooks in our application - CodeSource.io](https://www.reddit.com/r/reactjs/comments/izg1p4/building_and_using_custom_react_hooks_in_our/)
+- url: https://codesource.io/building-and-using-custom-react-hooks-in-our-application/
+---
+
+## [10][Hook error in Route Container component using useParams](https://www.reddit.com/r/reactjs/comments/izj6so/hook_error_in_route_container_component_using/)
+- url: https://www.reddit.com/r/reactjs/comments/izj6so/hook_error_in_route_container_component_using/
+---
+EDIT: Posted on stackoverflow if you want some points there [https://stackoverflow.com/questions/64064811/hook-error-in-route-container-component-using-useparams](https://stackoverflow.com/questions/64064811/hook-error-in-route-container-component-using-useparams)
+
+I am using a route like this:
+
+`&lt;Route path={"/:userType/banks/:bank"} component={&lt;BankContainer/&gt;}/&gt;`
+
+The Bank component is a redux container component. Inside I have a conditional render based off the user type.
+
+`const BankContainer = (props) =&gt; {`
+
+`const { userType } = useParams();`
+
+`return (`
+
+`userType === "admin" ? &lt;Bank/&gt; : &lt;CustomerBank/&gt;`
+
+`)`
+
+`}`
 
 &amp;#x200B;
 
-Somehow the app seems to be laggy. I´m thinking about adding the useMemo hook to revent unnessecary rerenders.
+I get a react warning and then a react error
+
+Warning I got:
+
+`Warning: React has detected a change in the order of Hooks called by ConnectFunction. This will lead to bugs and errors if not fixed. For more information, read the Rules of Hooks`
+
+`Previous render Next render`
+
+`------------------------------------------------------`
+
+`1. useMemo useMemo`
+
+`2. useMemo useMemo`
+
+`3. useContext useContext`
+
+`4. useMemo useMemo`
+
+`5. useMemo useMemo`
+
+`6. useMemo useMemo`
+
+`7. useReducer useReducer`
+
+`8. useRef useRef`
+
+`9. useRef useRef`
+
+`10. useRef useRef`
+
+`11. useRef useRef`
+
+`12. useMemo useMemo`
+
+`13. useContext useLayoutEffect`
+
+`^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^`
 
 &amp;#x200B;
 
-Does my explanation make sense?
-## [10][For portfolio projects, is heroku for backend &amp; netlify for frontend enough?](https://www.reddit.com/r/reactjs/comments/iywf3i/for_portfolio_projects_is_heroku_for_backend/)
-- url: https://www.reddit.com/r/reactjs/comments/iywf3i/for_portfolio_projects_is_heroku_for_backend/
+`in ConnectFunction (at Admin.js:68)`
+
+`in Route (at Admin.js:68)`
+
+`in Switch (at Admin.js:63)`
+
+`in div (at Admin.js:59)`
+
+`in Admin (created by ConnectFunction)`
+
+`in ConnectFunction (at ProtectedRoute.js:13)`
+
+`in Route (at ProtectedRoute.js:29)`
+
+`in ProtectedRoute (at ProtectedRoute.js:46)`
+
+`in ProtectedAdminRoute (created by ConnectFunction)`
+
+`in ConnectFunction (at Main.js:46)`
+
+`in Switch (at Main.js:45)`
+
+`in Router (created by BrowserRouter)`
+
+`in BrowserRouter (at Main.js:44)`
+
+`in Main (created by ConnectFunction)`
+
+`in ConnectFunction (at src/index.js:63)`
+
+`in App (at src/index.js:69)`
+
+`in Provider (at src/index.js:68)`
+
+&amp;#x200B;
+
+Error I got:
+
+`Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:`
+
+`1. You might have mismatching versions of React and the renderer (such as React DOM)`
+
+`2. You might be breaking the Rules of Hooks`
+
+`3. You might have more than one copy of React in the same app`
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+my package.json versions:
+
+`"react-redux": "^7.2.0",`
+
+`"react-router-dom": "5.2.0",`
+
+`"react": "16.13.1",`
+
+`"react-dom": "16.13.1",`
+
+&amp;#x200B;
+
+Thing's I've tried:
+
+1. Checked for react bundler issues
+2. Switched to view rather than just a react container
+3. Tried other hooks, still same issue
+
+&amp;#x200B;
+## [11][New very easy to use Form library for React](https://www.reddit.com/r/reactjs/comments/izhxsj/new_very_easy_to_use_form_library_for_react/)
+- url: https://www.reddit.com/r/reactjs/comments/izhxsj/new_very_easy_to_use_form_library_for_react/
 ---
-Hi there,
+I'm trying to promote my new form library for ReactJs [https://github.com/joegasewicz/react-bare-forms](https://github.com/joegasewicz/react-bare-forms)
 
-As you know, Heroku suspend apps after 30 mins or so, then it has to be loaded once to get normal load speed for another 30 mins. 
+It's developed to be the easiest Form library for React. If you just need a simple form &amp; don't want to learn a complex API, then this library is for you!
 
-Would it leave bad impression on portfolio projects? Do employers even click link &amp; check respective projects? (Because I will provide screenshots in github repo &amp; portfolio site)
+Any code contributions, feedback etc is more than welcome!
 
- Would it be ok, if it loads for such long time? Frontend is fast enough (because it's on netlify), but slow loading on nodejs heroku makes it ugly.
+&amp;#x200B;
 
-
-I can't afford any paid service at the moment, even if it may seem cheap to you in US. (I'm in South Asia)
-## [11][Best JQ-Grid Alternative for react](https://www.reddit.com/r/reactjs/comments/iywe30/best_jqgrid_alternative_for_react/)
-- url: https://www.reddit.com/r/reactjs/comments/iywe30/best_jqgrid_alternative_for_react/
----
-Hi guys, whats the best react library for getting the JQ-Grid Functionalities?
-## [12][Are you tired of making a react app using create-react-app and wasting time deleting all those unwanted stuffs , checkout this package which is build on top of CRA.It has in-built routing and removes all unnecessary code including the logo that comes with standard CRA](https://www.reddit.com/r/reactjs/comments/iyw8cf/are_you_tired_of_making_a_react_app_using/)
-- url: https://github.com/abhinav-TB/clean-react-app
+Thanks
+## [12][💥 How to deploy React.js with no downtime 🚀](https://www.reddit.com/r/reactjs/comments/izhhdo/how_to_deploy_reactjs_with_no_downtime/)
+- url: https://youtu.be/mmexLa-o6E8?t=85
 ---
 

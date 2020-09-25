@@ -13,43 +13,43 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][What boilerplate do you use for VanillaJS apps?](https://www.reddit.com/r/javascript/comments/iyvb12/what_boilerplate_do_you_use_for_vanillajs_apps/)
-- url: /r/webdev/comments/iykt9c/what_boilerplate_do_you_use_for_vanillajs_apps_is/
+## [3][fflate - the fastest JavaScript compression/decompression library, 8kB](https://www.reddit.com/r/javascript/comments/izb5p9/fflate_the_fastest_javascript/)
+- url: https://github.com/101arrowz/fflate
 ---
 
-## [4][Job Interviews in 2020](https://www.reddit.com/r/javascript/comments/iy8ku7/job_interviews_in_2020/)
-- url: /r/webdev/comments/ixoac8/job_interviews_in_2020/
+## [4][Material UI Dashboard with React](https://www.reddit.com/r/javascript/comments/iyymar/material_ui_dashboard_with_react/)
+- url: https://material-ui-dashboard.cube.dev/
 ---
 
-## [5][Testing a11y: How can I theoretically predict what my screen reader will tell me?](https://www.reddit.com/r/javascript/comments/iyoiny/testing_a11y_how_can_i_theoretically_predict_what/)
-- url: https://github.com/jonathanlinat/accessible-name-automation-proof-of-concept
----
-
-## [6][What’s Structural Typing And How Typescript Uses It To Its Benefit?](https://www.reddit.com/r/javascript/comments/iywtou/whats_structural_typing_and_how_typescript_uses/)
+## [5][What’s Structural Typing And How Typescript Uses It To Its Benefit?](https://www.reddit.com/r/javascript/comments/iywtou/whats_structural_typing_and_how_typescript_uses/)
 - url: https://medium.com/@mahdighajary/whats-structural-typing-and-how-typescript-use-it-to-its-benefit-6cf491f1564?source=friends_link&amp;sk=e0265b7bf135cc7e5d912d9e74d57afb
 ---
 
-## [7][Reference | A 3D tool to create human postures for reference](https://www.reddit.com/r/javascript/comments/iywboe/reference_a_3d_tool_to_create_human_postures_for/)
-- url: https://getreference.vercel.app/
+## [6][billboard.js 2.1.0 release: Another big step for performance improvement &amp; more!](https://www.reddit.com/r/javascript/comments/izeuw9/billboardjs_210_release_another_big_step_for/)
+- url: https://medium.com/@alberto.park/billboard-js-2-1-0-release-another-big-step-for-performance-improvement-more-9f0b9357d9d5
 ---
 
-## [8][How I Built a Pseudo-3D Racing Game in only 13kb of file size for the js13k game jam](https://www.reddit.com/r/javascript/comments/iybpjs/how_i_built_a_pseudo3d_racing_game_in_only_13kb/)
-- url: https://www.radcade.com/building-a-pseudo-3d-racing-game-for-the-2020-js13k-game-jam/
+## [7][Best way to show Active Links in the navigation using Gatsby](https://www.reddit.com/r/javascript/comments/izepkf/best_way_to_show_active_links_in_the_navigation/)
+- url: https://medium.com/@mohammedmodi/best-way-to-show-active-links-in-the-navigation-using-gatsby-544145b37e78
 ---
 
-## [9][Introducing the New JSX Transform](https://www.reddit.com/r/javascript/comments/ixt6wx/introducing_the_new_jsx_transform/)
-- url: https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html
+## [8][I made an "all in one" validator if anyone else needs one.](https://www.reddit.com/r/javascript/comments/izaejn/i_made_an_all_in_one_validator_if_anyone_else/)
+- url: https://github.com/oslllo/validator
 ---
 
-## [10][JavaScript – Tarih ve Saat İşlemleri-3](https://www.reddit.com/r/javascript/comments/iythvu/javascript_tarih_ve_saat_işlemleri3/)
-- url: https://www.codernsoft.com/javascript-tarih-ve-saat-islemleri-3/
+## [9][esbuild. An alternative builder to webpack, rollup, parcel, 100X faster for Javascript/Typescript webapp](https://www.reddit.com/r/javascript/comments/izi34s/esbuild_an_alternative_builder_to_webpack_rollup/)
+- url: https://github.com/evanw/esbuild
 ---
 
-## [11][Day.js - 2KB immutable date-time library alternative to Moment.js with the same modern API](https://www.reddit.com/r/javascript/comments/iy5suz/dayjs_2kb_immutable_datetime_library_alternative/)
-- url: https://github.com/iamkun/dayjs
+## [10][LinkedIn's new UI greatly improved speed with underdog technology](https://www.reddit.com/r/javascript/comments/izh0wh/linkedins_new_ui_greatly_improved_speed_with/)
+- url: https://emberjs.com?0
 ---
 
-## [12][Twitter toxicity detector using Tensorflow.js](https://www.reddit.com/r/javascript/comments/iyfnb0/twitter_toxicity_detector_using_tensorflowjs/)
-- url: https://github.com/MCarlomagno/TwitterToxicityDetector
+## [11][Run android emulator on CircleCI](https://www.reddit.com/r/javascript/comments/izgnx6/run_android_emulator_on_circleci/)
+- url: https://resolvedpromise.hashnode.dev/run-android-emulator-on-circleci
+---
+
+## [12][Updates from 78th meeting of TC39](https://www.reddit.com/r/javascript/comments/iyyb2v/updates_from_78th_meeting_of_tc39/)
+- url: https://dev.to/hemanth/updates-from-78th-meeting-of-tc39-2cbm
 ---
 

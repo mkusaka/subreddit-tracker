@@ -56,7 +56,37 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][LTL: A C++ 17 library to write functional code](https://www.reddit.com/r/cpp/comments/iyt4wo/ltl_a_c_17_library_to_write_functional_code/)
+## [2][Meeting C++ online - Basit Ayantunde - Functional Error and Optional value Handling with STX](https://www.reddit.com/r/cpp/comments/izfknm/meeting_c_online_basit_ayantunde_functional_error/)
+- url: https://www.youtube.com/watch?v=8CZhJa8UJk0
+---
+
+## [3][Plenary: The Beauty and Power of "Primitive" C++ - Bjarne Stroustrup - CppCon 2020](https://www.reddit.com/r/cpp/comments/iziw57/plenary_the_beauty_and_power_of_primitive_c/)
+- url: https://youtu.be/ERzENfQ51Ck
+---
+
+## [4][New C++ features in GCC 10](https://www.reddit.com/r/cpp/comments/iyvgge/new_c_features_in_gcc_10/)
+- url: https://developers.redhat.com/blog/2020/09/24/new-c-features-in-gcc-10/
+---
+
+## [5][Do you have a preferred library for constexpr data structures?](https://www.reddit.com/r/cpp/comments/izhmre/do_you_have_a_preferred_library_for_constexpr/)
+- url: https://www.reddit.com/r/cpp/comments/izhmre/do_you_have_a_preferred_library_for_constexpr/
+---
+Do y'all have a preferred library of constexpr data structures? I'm trying to find something like the embedded STL [https://www.etlcpp.com/](https://www.etlcpp.com/)  but with constexpr support. I was wondering if there were any  alternatives. I've found quite a few header only implementation of  single data structures, but not a solid colllection. This also isn't  strictly embedded, but I assume the people likely to use this are people  working in embedded. 
+
+I'm working on designing a real time system, and so I'm trying to put as much of the work at compile time. Not necessarily embedded, but doing any unnecessary work at runtime is not preferred. 
+
+Also while I'm here, given that information, should I implement a threadpool, scheduler, and event system myself? I wasn't able to find a thread pool with considerations like this (liberal use of shared\_ptr on a few implmentations), so I'm curious to see if anyone could point me in the right direction.
+## [6][Any recommendations for a decent and free memory leak detection tool?](https://www.reddit.com/r/cpp/comments/iz4w17/any_recommendations_for_a_decent_and_free_memory/)
+- url: https://www.reddit.com/r/cpp/comments/iz4w17/any_recommendations_for_a_decent_and_free_memory/
+---
+For context, I have Visual Leak Detector, but it crashes my application. Not sure if this is due to incompatibility with C++17 (I'm running version 2.5.1) but it makes me sad. I also tried Dr. Memory, but am also getting an internal crash with that too! I'm filled with sorrow.
+
+Edit: Since I'm a fool and failed to mention it, I am on Windows with MSVC (in case you couldn't tell from the fact that I'm using VLD).
+## [7][std::exchange Patterns: Fast, Safe, Expressive, and Probably Underused](https://www.reddit.com/r/cpp/comments/izjgdw/stdexchange_patterns_fast_safe_expressive_and/)
+- url: https://www.fluentcpp.com/2020/09/25/stdexchange-patterns-fast-safe-expressive-and-probably-underused/
+---
+
+## [8][LTL: A C++ 17 library to write functional code](https://www.reddit.com/r/cpp/comments/iyt4wo/ltl_a_c_17_library_to_write_functional_code/)
 - url: https://www.reddit.com/r/cpp/comments/iyt4wo/ltl_a_c_17_library_to_write_functional_code/
 ---
 I would like to present you a C++17 library I am working on since few months.
@@ -75,47 +105,20 @@ Some differences with the C++ range :
 I hope you will like it, and don't hesitate to give feedback :)
 
 https://github.com/qnope/Little-Type-Library/
-## [3][C++ for fun ... ctional programmers... ???](https://www.reddit.com/r/cpp/comments/iyivts/c_for_fun_ctional_programmers/)
-- url: https://www.youtube.com/watch?v=2vJfJE4K0zg
+## [9][Generating compile_cemmands.json from eclipse project](https://www.reddit.com/r/cpp/comments/izdbi4/generating_compile_cemmandsjson_from_eclipse/)
+- url: https://www.reddit.com/r/cpp/comments/izdbi4/generating_compile_cemmandsjson_from_eclipse/
 ---
+How can i generate compile_commands.json for eclipse c/c++ project.
+I used use bear and compiledb for other c projects that has make files.
 
-## [4][The Hidden Secrets of Move Semantics - Nicolai Josuttis - CppCon 2020](https://www.reddit.com/r/cpp/comments/iyr0wt/the_hidden_secrets_of_move_semantics_nicolai/)
+ Eclipse also generate make files but i couldn't generate compile commands from that make file. Since eclipse completely builds the project, if i clean the build it will also clean make files
+
+EDIT: solved it by just adding `bear` behind make in project builder settings
+## [10][The Hidden Secrets of Move Semantics - Nicolai Josuttis - CppCon 2020](https://www.reddit.com/r/cpp/comments/iyr0wt/the_hidden_secrets_of_move_semantics_nicolai/)
 - url: https://www.youtube.com/watch?v=TFMKjL38xAI
 ---
 
-## [5][New C++ features in GCC 10](https://www.reddit.com/r/cpp/comments/iyvgge/new_c_features_in_gcc_10/)
-- url: https://developers.redhat.com/blog/2020/09/24/new-c-features-in-gcc-10/
----
-
-## [6][How expensive is integer overflow trapping in C++?](https://www.reddit.com/r/cpp/comments/iyqz18/how_expensive_is_integer_overflow_trapping_in_c/)
-- url: https://lemire.me/blog/2020/09/23/how-expensive-is-integer-overflow-trapping-in-c
----
-
-## [7][ZenMake - A cross-platform build system for C/C++ and some other languages](https://www.reddit.com/r/cpp/comments/iytf9g/zenmake_a_crossplatform_build_system_for_cc_and/)
-- url: https://www.reddit.com/r/cpp/comments/iytf9g/zenmake_a_crossplatform_build_system_for_cc_and/
----
-Hi people! I develop my own build system for C/C++ and some other languages.
-
-ZenMake is a build system based on the meta build system/framework [Waf](https://waf.io/). The main purpose of ZenMake is to be as simple to use as possible but remain flexible. And I will be glad if my project will be useful not only for me.
-
-Why yet another build system? Yes, I know, we already have a lot of them. I decided to create this project because I couldn’t find a build tool for Linux which is quick and easy to use, flexible, ready to use, with declarative configuration, without the need to learn one more special language and suitable for my needs. Full description can be found here: [https://zenmake.readthedocs.io/en/latest/why.html](https://zenmake.readthedocs.io/en/latest/why.html)
-
-Primary git repository of the project: [https://gitlab.com/pustotnik/zenmake](https://gitlab.com/pustotnik/zenmake)
-
-Documentation: [https://zenmake.readthedocs.io](https://zenmake.readthedocs.io/)
-## [8][Tips &amp; Tricks for Effective SYCL Development (SYCL Summer Sessions 2020)](https://www.reddit.com/r/cpp/comments/iysxim/tips_tricks_for_effective_sycl_development_sycl/)
-- url: https://www.youtube.com/watch?v=4Jo-Sb1AX_c
----
-
-## [9][C++20 ranges lazy set_intersection](https://www.reddit.com/r/cpp/comments/iyw7yk/c20_ranges_lazy_set_intersection/)
-- url: https://www.reddit.com/r/cpp/comments/iyw7yk/c20_ranges_lazy_set_intersection/
----
-It seems like there is no lazy version of set\_intersection and other similar algorithms that operate on ranges. However, rangev3 seems to have one under views::set\_intersection. Why is this discrepancy?
-## [10][Collaborative C++ Development with Visual Code - Julia Reid - CppCon 2020](https://www.reddit.com/r/cpp/comments/iyt7dw/collaborative_c_development_with_visual_code/)
-- url: https://youtu.be/qCn6zT76zTs
----
-
-## [11][Back to Basics: Class Layout - Stephen Dewhurst - CppCon 2020](https://www.reddit.com/r/cpp/comments/iyi16h/back_to_basics_class_layout_stephen_dewhurst/)
-- url: https://www.youtube.com/watch?v=SShSV_iV1Ko
+## [11][C++ for fun ... ctional programmers... ???](https://www.reddit.com/r/cpp/comments/iyivts/c_for_fun_ctional_programmers/)
+- url: https://www.youtube.com/watch?v=2vJfJE4K0zg
 ---
 
